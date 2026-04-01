@@ -43,13 +43,20 @@ structure UnitParticleState (C : Type u) [CategoryTheory.Category.{v} C]
   generator : (CategoryTheory.MonoidalCategory.tensorUnit C) ⟶ cohomObj
   /-- The inclusion of the cohomology into A (for stating the ODE). -/
   incl : cohomObj ⟶ substrate
-  /-- The q-differential equation: d_q ∘ Li_q = (log_q)⁻¹.
-      Expressed categorically: generator ≫ incl ≫ dq factors through
-      logq. This is the defining ODE d_q Li_q(z) = dz / log_q(z). -/
-  q_diff_eq : generator ≫ incl ≫ dq = generator ≫ incl ≫ logq
-  /-- Uniqueness up to scalar: the hom-space 𝟙 → H¹_{𝔪₁}(A) is
-      one-dimensional, i.e. any morphism factors through generator. -/
-  unique_generator : CategoryTheory.Subsingleton
+  /-- The q-differential equation: d_q Li_q = dz / log_q(z).
+      Expressed categorically: applying d_q after embedding Li_q into A
+      equals applying the reciprocal q-logarithm (log_q)⁻¹.
+      Here `logq_inv` encodes the morphism (log_q)⁻¹ : A → A. -/
+  logq_inv : substrate ⟶ substrate
+  /-- logq and logq_inv are mutual inverses (on the image of incl). -/
+  logq_inv_spec : logq ≫ logq_inv = 𝟙 substrate
+  /-- The defining ODE: d_q ∘ incl(Li_q) = (log_q)⁻¹ ∘ incl(Li_q). -/
+  q_diff_eq : generator ≫ incl ≫ dq = generator ≫ incl ≫ logq_inv
+  /-- Uniqueness: the hom-space 𝟙 → H¹_{𝔪₁}(A) is at most
+      one-dimensional. In a monoidal category this means any two
+      global sections of the cohomology object are equal (the
+      generator is essentially unique, not merely up to scalar). -/
+  unique_generator : Subsingleton
     ((CategoryTheory.MonoidalCategory.tensorUnit C) ⟶ cohomObj)
 
 end QOU.AlgebraicSubstrate

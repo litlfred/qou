@@ -14,10 +14,10 @@ coassociative counital coalgebra object, with antipode
 $S \colon A \to A$ satisfying the Hopf compatibility:
 
 $$
-\varepsilon \circ \mu = \varepsilon \otimes \varepsilon
+\varepsilon \circ \mu = u \circ (\varepsilon \otimes \varepsilon),
 $$
 
-as a coalgebra map.
+where $u \colon \mathbf{1} \otimes \mathbf{1} \xrightarrow{\cong} \mathbf{1}$ is the canonical unit isomorphism, so that $\varepsilon$ is an algebra map into the monoidal unit.
 
 **Frobenius relation.** The Frobenius form $\lambda$ satisfies:
 

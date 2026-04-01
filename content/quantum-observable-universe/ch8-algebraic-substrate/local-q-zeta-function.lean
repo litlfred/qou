@@ -35,12 +35,15 @@ structure LocalQZetaFunction where
   q_pos : q > 0
   /-- The 8 fundamental Frobenius eigenvalues α₁, …, α₈. -/
   eigenvalues : Fin 8 → ℂ
-  /-- The characteristic polynomial P(t) = ∏ᵢ (1 - αᵢ t). -/
+  /-- The *reversed* characteristic polynomial P̃(X) = ∏ᵢ (X - αᵢ).
+      Related to the standard form P(t) = ∏ᵢ (1 - αᵢ t) by
+      P(t) = t^{2g} · P̃(1/t), so the roots of P̃ are the eigenvalues
+      αᵢ themselves (not their reciprocals). We use this convention
+      to match Lean's polynomial root factorization. -/
   charPoly : ℂ[X]
-  /-- P has degree 2g = 8. -/
+  /-- P̃ has degree 2g = 8. -/
   charPoly_degree : charPoly.natDegree = 2 * bringsGenus
-  /-- P factors as ∏ᵢ (1 - αᵢ t). -/
-  -- Ref: [manuscript] Chapter 8, Section 4
+  /-- P̃ factors as ∏ᵢ (X - αᵢ). -/
   charPoly_roots :
     charPoly = ∏ i : Fin 8, (X - C (eigenvalues i))
 

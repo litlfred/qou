@@ -18,27 +18,41 @@ namespace QOU.AlgebraicSubstrate
 
 universe u v
 
-/-- **substrate_self_duality**: the Frobenius form of a
-    Frobenius–Hopf substrate `A` induces a self-duality
-    quasi-isomorphism `A ≃ ω_A•`.
+/-- The self-duality morphism `φ : A → A` induced by the Frobenius
+    pairing. Constructed as the composition:
 
-    The non-degenerate Frobenius pairing `⟨a, b⟩_F = λ(μ(a ⊗ b))`
-    defines an `A`-bimodule map whose cone is acyclic.
+      A  →[Δ]  A ⊗ A  →[id ⊗ λ]  A ⊗ 𝟙  →[ρ]  A
 
-    LaTeX: `\label{thm:substrate-self-duality}` -/
-theorem substrate_self_duality (C : Type u) [Category.{v} C]
+    where Δ is comultiplication and λ is the Frobenius form.
+    This is the categorical analog of `a ↦ Σ a₍₁₎ · λ(a₍₂₎)`. -/
+def selfDualityMorphism {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (S : FrobeniusHopfSubstrate C) :
-    -- The Frobenius form induces an isomorphism A ≅ A∨
-    -- (self-duality at the level of objects in C).
-    -- Full derived-category statement requires chain complex
-    -- infrastructure beyond current scope.
-    -- The self-duality isomorphism A ≅ A∨ is induced by the
-    -- Frobenius pairing: compose coevaluation with (frobeniusForm ⊗ id).
-    -- The snake identities of the substrate guarantee this is an
-    -- isomorphism (they are exactly the zig-zag identities).
-    S.obj ≅ S.obj := by
-  -- Ref: [yekutieli2015] https://doi.org/10.1090/S0002-9947-2014-6theory
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  exact Iso.refl S.obj
+    S.obj ⟶ S.obj :=
+  S.comul ≫ (S.obj ◁ S.frobeniusForm) ≫ (ρ_ S.obj).hom
+
+/-- **Substrate self-duality**: The Frobenius pairing of a
+    Frobenius–Hopf substrate induces an isomorphism `A ≅ A`.
+
+    The self-duality morphism `φ = ρ ∘ (id ⊗ λ) ∘ Δ` is an
+    isomorphism, with inverse `ψ = λ ∘ (η̃ ⊗ id) ∘ μ`.
+    This follows from the snake identities (non-degeneracy axioms)
+    of `FrobeniusHopfSubstrate`, which are precisely the zig-zag
+    identities expressing that `(A, A, λ∘μ, η̃)` form a duality pair.
+
+    The full statement is that the Frobenius pairing identifies
+    `A ≅ A∨` in the internal-hom sense. In a rigid monoidal category
+    this is expressed as `A ≅ A` since `A∨ ≅ A` by self-duality.
+    The non-tautological content is that the *specific* morphism
+    `selfDualityMorphism` (not just any isomorphism) is invertible. -/
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 §2.3
+-- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
+theorem substrate_self_duality {C : Type u} [Category.{v} C]
+    [MonoidalCategory C] (S : FrobeniusHopfSubstrate C) :
+    IsIso (selfDualityMorphism S) := by
+  -- The proof that selfDualityMorphism is an isomorphism uses
+  -- the snake identities (S.snake_left and S.snake_right),
+  -- which assert the zig-zag relations for the duality pair.
+  -- See [kock2004] §2.3, Theorem 2.3.24.
+  sorry
 
 end QOU.AlgebraicSubstrate

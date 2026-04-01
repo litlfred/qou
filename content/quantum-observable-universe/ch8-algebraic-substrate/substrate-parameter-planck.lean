@@ -29,9 +29,8 @@ theorem hbar_q_ne_zero (p : SubstrateParameterPlanck) (hq1 : p.q ≠ 1) :
   simp only [SubstrateParameterPlanck.hbar_q]
   intro h
   apply hq1
-  have : q⁻¹ = 1 - (1 - q⁻¹) := by ring
-  rw [show (1 : ℂ) - p.q⁻¹ = p.hbar_q from rfl] at h ⊢
-  simp [h, inv_eq_one] at *
-  exact (mul_right_cancel₀ p.hq_ne_zero (by rwa [mul_inv_cancel₀ p.hq_ne_zero, mul_one])).symm
+  -- h : 1 - p.q⁻¹ = 0, so p.q⁻¹ = 1, so p.q = 1
+  have hinv : p.q⁻¹ = 1 := by linarith
+  rwa [inv_eq_one] at hinv
 
 end QOU.AlgebraicSubstrate

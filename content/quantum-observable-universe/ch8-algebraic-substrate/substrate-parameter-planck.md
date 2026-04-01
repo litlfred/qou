@@ -19,7 +19,11 @@ Two structural properties follow directly from the definition.
 First, the invertibility condition $q \ne 0$ ensures that $A$ is a
 genuine Hopf algebra (the antipode is well-defined). Second,
 $\hbar_q \ne 0$ whenever $q \ne 1$, so the non-commutative regime
-$q \ne 1$ always carries a non-trivial quantum scale. The substrate
-parameter therefore provides a single real degree of freedom that
-interpolates continuously between the quantum substrate and the
-classical continuum.
+$q \ne 1$ always carries a non-trivial quantum scale.
+
+In the categorical formulation of [Chapter 1](#def:substrate-parameter),
+the substrate parameter is an element of $\mathrm{End}(\mathbf{1}) \cong k^\times$.
+Here we work with the concrete representative $q \in \mathbb{C}^*$
+obtained by evaluating this endomorphism. In geometric realisations
+(Chapter 6), $q$ further specialises to a real parameter $q > 1$
+governing the Descartes universe.
