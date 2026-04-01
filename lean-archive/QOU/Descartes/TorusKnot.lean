@@ -12,7 +12,7 @@ Bring surface `Σ₄`.
 
 ## References
 
-- [cohomological-embedding] Prop. 2.X: torus knots exhaust H¹(Σ_g).
+- [manuscript] §5/embeddability-closure: torus knots exhaust H¹(Σ_g).
 - [rosso-jones1993] Rosso–Jones formula for torus knot invariants.
 -/
 

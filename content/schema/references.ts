@@ -1327,6 +1327,144 @@ export const references: CSLData[] = [
     page: "443-458",
     DOI: "10.1016/S0550-3213(98)00668-3",
   }),
+
+  // ── Thurston 1978 ──────────────────────────────────────────────
+  ref({
+    id: "thurston1978",
+    type: "book",
+    title: "The Geometry and Topology of Three-Manifolds",
+    author: [{ family: "Thurston", given: "William P." }],
+    publisher: "Princeton University",
+    note: "Lecture notes",
+    issued: { "date-parts": [[1978]] },
+  }),
+
+  // ── Bring 1786 ────────────────────────────────────────────────
+  ref({
+    id: "bring1786",
+    type: "article-journal",
+    title: "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum",
+    author: [{ family: "Bring", given: "Erland Samuel" }],
+    "container-title": "Promotionschrift, Lund",
+    issued: { "date-parts": [[1786]] },
+  }),
+
+  // ── Deligne 2007 ──────────────────────────────────────────────
+  ref({
+    id: "deligne2007",
+    type: "chapter",
+    title: "Catégories tannakiennes",
+    author: [{ family: "Deligne", given: "Pierre" }],
+    "container-title": "The Grothendieck Festschrift",
+    publisher: "Birkhäuser Boston",
+    volume: "II",
+    page: "111-195",
+    DOI: "10.1007/978-0-8176-4575-5_3",
+    issued: { "date-parts": [[2007]] },
+  }),
+
+  // ── Kauffman 1991 ─────────────────────────────────────────────
+  ref({
+    id: "kauffman1991",
+    type: "book",
+    title: "Knots and Physics",
+    author: [{ family: "Kauffman", given: "Louis H." }],
+    publisher: "World Scientific",
+    "publisher-place": "Singapore",
+    ISBN: "978-981-02-0344-3",
+    issued: { "date-parts": [[1991]] },
+  }),
+
+  // ── Kawauchi 1996 ─────────────────────────────────────────────
+  ref({
+    id: "kawauchi1996",
+    type: "book",
+    title: "A Survey of Knot Theory",
+    author: [{ family: "Kawauchi", given: "Akio" }],
+    publisher: "Birkhäuser Verlag",
+    "publisher-place": "Basel",
+    ISBN: "978-3-0348-9227-8",
+    DOI: "10.1007/978-3-0348-9227-8",
+    issued: { "date-parts": [[1996]] },
+  }),
+
+  // ── Morton 1986 ───────────────────────────────────────────────
+  ref({
+    id: "morton1986",
+    type: "article-journal",
+    title: "Seifert circles and knot polynomials",
+    author: [{ family: "Morton", given: "Hugh R." }],
+    "container-title": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    volume: "99",
+    issue: "1",
+    page: "107-109",
+    DOI: "10.1017/S0305004100063982",
+    issued: { "date-parts": [[1986]] },
+  }),
+
+  // ── Murphy 1992 ───────────────────────────────────────────────
+  ref({
+    id: "murphy1992",
+    type: "article-journal",
+    title: "On the representation theory of the symmetric groups and associated Hecke algebras",
+    author: [{ family: "Murphy", given: "G. E." }],
+    "container-title": "Journal of Algebra",
+    volume: "152",
+    issue: "2",
+    page: "492-513",
+    DOI: "10.1016/0021-8693(92)90139-D",
+    issued: { "date-parts": [[1992]] },
+  }),
+
+  // ── Rosso–Jones 1993 ──────────────────────────────────────────
+  ref({
+    id: "rosso-jones1993",
+    type: "article-journal",
+    title: "On the invariants of torus knots derived from quantum groups",
+    author: [
+      { family: "Rosso", given: "Marc" },
+      { family: "Jones", given: "Vaughan F. R." },
+    ],
+    "container-title": "Journal of Knot Theory and Its Ramifications",
+    volume: "2",
+    issue: "1",
+    page: "97-112",
+    DOI: "10.1142/S0218216593000064",
+    issued: { "date-parts": [[1993]] },
+  }),
+
+  // ── Kazhdan–Lusztig 1979 ──────────────────────────────────────
+  ref({
+    id: "kazhdan-lusztig1979",
+    type: "article-journal",
+    title: "Representations of Coxeter groups and Hecke algebras",
+    author: [
+      { family: "Kazhdan", given: "David" },
+      { family: "Lusztig", given: "George" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    volume: "53",
+    issue: "2",
+    page: "165-184",
+    DOI: "10.1007/BF01390031",
+    issued: { "date-parts": [[1979]] },
+  }),
+
+  // ── Kronheimer–Mrowka 2004 ────────────────────────────────────
+  ref({
+    id: "kronheimer2004",
+    type: "article-journal",
+    title: "Witten's conjecture and Property P",
+    author: [
+      { family: "Kronheimer", given: "Peter B." },
+      { family: "Mrowka", given: "Tomasz S." },
+    ],
+    "container-title": "Geometry & Topology",
+    volume: "8",
+    page: "295-310",
+    DOI: "10.2140/gt.2004.8.295",
+    issued: { "date-parts": [[2004]] },
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
