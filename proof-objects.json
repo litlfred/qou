@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-01T12:49:04.786296+00:00",
+    "generated_at": "2026-04-01T14:16:01.827749+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -3228,11 +3228,82 @@
       ]
     },
     {
+      "label": "prop:vertex-algebra-relations",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/path-integrals-and-braiding.tex",
+        "line": 1812,
+        "chapter": 5
+      },
+      "title": "{QU and QUO axioms as relations on Hecke generators}",
+      "lean": {
+        "decl": "QOU.VertexAlgebra.descartes_genus",
+        "file": "QOU/PathIntegrals.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-universe",
+        "def:quantum-observable-universe",
+        "def:vertex-operator",
+        "def:frobenius-pairing",
+        "prop:frobenius-relation",
+        "def:snake-identity",
+        "thm:jones-markov-trace",
+        "rem:r-matrix-braiding",
+        "def:braid-group",
+        "def:higher-forms",
+        "def:categorical-q-ext-deriv",
+        "prop:categorical-dq-squared",
+        "def:categorical-hodge-star",
+        "rem:hodge-laplacian-relation",
+        "prop:euler-char-stability",
+        "def:quantum-characteristic-classes",
+        "prop:cohomological-embedding",
+        "rem:instanton-on-shell",
+        "def:categorical-connection"
+      ]
+    },
+    {
+      "label": "prop:vertex-algebra-jet-relations",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/path-integrals-and-braiding.tex",
+        "line": 2628,
+        "chapter": 5
+      },
+      "title": "{QU/QUO and cohomological relations on the jet bundle}",
+      "lean": {
+        "decl": "QOU.VertexAlgebra.JetRelations.euler_level_stable",
+        "file": "QOU/PathIntegrals.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "prop:vertex-algebra-relations",
+        "prop:jet-prolongation",
+        "def:recursive-brane-tower",
+        "def:descent-involution",
+        "prop:descent-eigenspaces",
+        "def:quantum-characteristic-classes",
+        "prop:euler-char-stability",
+        "def:vertex-operator",
+        "thm:jones-markov-trace",
+        "prop:categorical-dq-squared",
+        "rem:instanton-on-shell",
+        "rem:prolongation-categorical"
+      ]
+    },
+    {
       "label": "def:hadron",
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 1815,
+        "line": 3151,
         "chapter": 5
       },
       "title": "{Hadron (stable knot composite)}",
@@ -3254,7 +3325,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 1862,
+        "line": 3198,
         "chapter": 5
       },
       "title": "{Closure of hadron operations under braiding, Hopf linking, skein action, and fusion}",
@@ -3275,7 +3346,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 1890,
+        "line": 3226,
         "chapter": 5
       },
       "title": "{Operations on hadrons}",
@@ -3289,7 +3360,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 1942,
+        "line": 3278,
         "chapter": 5
       },
       "title": "{Knot factorization through tensor powers of $V$}",
@@ -3304,7 +3375,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 1985,
+        "line": 3321,
         "chapter": 5
       },
       "title": "{Localized hadron}",
@@ -3327,7 +3398,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2010,
+        "line": 3346,
         "chapter": 5
       },
       "title": "{Fibre-compatible hadron embedding}",
@@ -3348,7 +3419,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2078,
+        "line": 3414,
         "chapter": 5
       },
       "title": "{Skein generation of hadrons from mass-zero fundamentals}",
@@ -3370,7 +3441,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2154,
+        "line": 3490,
         "chapter": 5
       },
       "title": "{Knot-particle generation from $T_{m,n}$ torus knot generators}",
@@ -3393,7 +3464,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2303,
+        "line": 3639,
         "chapter": 5
       },
       "title": "{Knot--particle correspondence via $q$-Schur--Weyl duality}",
@@ -3416,7 +3487,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2332,
+        "line": 3668,
         "chapter": 5
       },
       "title": "{Knot–particle dictionary}",
@@ -3430,7 +3501,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2378,
+        "line": 3714,
         "chapter": 5
       },
       "title": "{Bundle initial conditions (big bang state)}",
@@ -3452,7 +3523,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2416,
+        "line": 3752,
         "chapter": 5
       },
       "title": "{Sorting deposits energy $q + q^{-1}$ per crossing in the colour fibre}",
@@ -3466,7 +3537,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2523,
+        "line": 3859,
         "chapter": 5
       },
       "title": "{Isotopy equivalence of bundle initial conditions}",
@@ -3488,7 +3559,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2546,
+        "line": 3882,
         "chapter": 5
       },
       "title": "{Torsion-driven knot flow}",
@@ -3510,7 +3581,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2606,
+        "line": 3942,
         "chapter": 5
       },
       "title": "{Borromean baryon}",
@@ -3532,7 +3603,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2669,
+        "line": 4005,
         "chapter": 5
       },
       "title": "{Fermions are knots, bosons are links}",
@@ -3553,7 +3624,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2751,
+        "line": 4087,
         "chapter": 5
       },
       "title": "{Reidemeister invariance of mass and binding energy}",
@@ -3574,7 +3645,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 2898,
+        "line": 4234,
         "chapter": 5
       },
       "title": "{Stability pairs from Borromean spin-orbit intruder levels}",
@@ -3595,7 +3666,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 3056,
+        "line": 4392,
         "chapter": 5
       },
       "title": "{Topological Decomposition of Mass}",
@@ -3618,7 +3689,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 3229,
+        "line": 4565,
         "chapter": 5
       },
       "title": "{Skein binding Lagrangian for multi-nucleon links}",
@@ -3641,7 +3712,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 3364,
+        "line": 4700,
         "chapter": 5
       },
       "title": "{Beta-stability line from the Skein binding Lagrangian}",
@@ -5410,6 +5481,161 @@
     {
       "from": "rem:skein-decomposition",
       "to": "prop:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:quantum-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:vertex-operator",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:frobenius-pairing",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "prop:frobenius-relation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:snake-identity",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "thm:jones-markov-trace",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "rem:r-matrix-braiding",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:braid-group",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:higher-forms",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:categorical-q-ext-deriv",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "prop:categorical-dq-squared",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:categorical-hodge-star",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "rem:hodge-laplacian-relation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "prop:euler-char-stability",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "prop:cohomological-embedding",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "rem:instanton-on-shell",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-relations",
+      "to": "def:categorical-connection",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "prop:vertex-algebra-relations",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "prop:jet-prolongation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "def:descent-involution",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "prop:descent-eigenspaces",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "prop:euler-char-stability",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "def:vertex-operator",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "thm:jones-markov-trace",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "prop:categorical-dq-squared",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "rem:instanton-on-shell",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vertex-algebra-jet-relations",
+      "to": "rem:prolongation-categorical",
       "relation": "uses"
     },
     {

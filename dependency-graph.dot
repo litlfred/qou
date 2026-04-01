@@ -201,6 +201,8 @@ digraph ProofDependencies {
     prop_transfer_matrix_level_independence [label="Prop\ntransfer-matrix-l..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:transfer-matrix-level-independence" tooltip="{Transfer matrix level independence}" target="_blank"];
     prop_topological_mass_formula [label="Prop\ntopological-mass-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:topological-mass-formula" tooltip="{Topological mass formula (Archimedean)}" target="_blank"];
     rem_skein_decomposition [label="Rem\nskein-decomposition" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:skein-decomposition" tooltip="{Skein Decomposition and Topological Mass Ratios}" target="_blank"];
+    prop_vertex_algebra_relations [label="Prop\nvertex-algebra-re..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:vertex-algebra-relations" tooltip="{QU and QUO axioms as relations on Hecke generators}" target="_blank"];
+    prop_vertex_algebra_jet_relations [label="Prop\nvertex-algebra-je..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:vertex-algebra-jet-relations" tooltip="{QU/QUO and cohomological relations on the jet bundle}" target="_blank"];
     def_hadron [label="Def\nhadron" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:hadron" tooltip="{Hadron (stable knot composite)}" target="_blank"];
     prop_hadron_operations_closure [label="Prop\nhadron-operations..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:hadron-operations-closure" tooltip="{Closure of hadron operations under braiding, Hopf linking, skein action, and fusion}" target="_blank"];
     rem_hadron_operations [label="Rem\nhadron-operations" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:hadron-operations" tooltip="{Operations on hadrons}" target="_blank"];
@@ -222,7 +224,7 @@ digraph ProofDependencies {
     thm_topological_mass [label="Thm\ntopological-mass" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:topological-mass" tooltip="{Topological Decomposition of Mass}" target="_blank"];
     def_skein_binding_lagrangian [label="Def\nskein-binding-lag..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:skein-binding-lagrangian" tooltip="{Skein binding Lagrangian for multi-nucleon links}" target="_blank"];
     prop_beta_stability [label="Prop\nbeta-stability" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:beta-stability" tooltip="{Beta-stability line from the Skein binding Lagrangian}" target="_blank"];
-    { rank=same; prop_braid_action_tensor; thm_jones_markov_trace; prop_knot_eigenbasis_complete; def_braid_group; def_su2_basis; def_su2_generators; def_so3_generators; def_braid_twist_flip; rem_holonomy_trefoil; def_quantum_su2; prop_r_matrix_braiding_structure; rem_r_matrix_braiding; prop_skein_crossing_asymmetry; rem_skein_crossing_asymmetry; prop_mobius_energy; cor_non_self_intersection; def_crossing_energy; def_coulomb_charge; prop_lagrange_resolvent_transform; rem_lagrange_resolvents; def_q_momentum; def_q_angular_momentum; def_q_energy; def_exceptional_divisor; def_reeb_bundle; def_vertex_operator; prop_vertex_is_exceptional_divisor; thm_markov_trace_product; def_categorical_transfer_matrix; prop_transfer_matrix_level_independence; prop_topological_mass_formula; rem_skein_decomposition; def_hadron; prop_hadron_operations_closure; rem_hadron_operations; rem_knot_factorization; def_localized_hadron; def_hadron_fibre_embedding; prop_skein_generation; def_knot_particle_generation; prop_knot_particle_correspondence; rem_knot_particle_dictionary; def_bundle_initial_conditions; prop_sorting_color_energy; def_bundle_isotopy_equivalence; def_torsion_knot_flow; def_borromean_baryon; prop_fermion_boson_knot_link; prop_reidemeister_mass_invariance; prop_nuclear_shell_intruder; thm_topological_mass; def_skein_binding_lagrangian; prop_beta_stability; }
+    { rank=same; prop_braid_action_tensor; thm_jones_markov_trace; prop_knot_eigenbasis_complete; def_braid_group; def_su2_basis; def_su2_generators; def_so3_generators; def_braid_twist_flip; rem_holonomy_trefoil; def_quantum_su2; prop_r_matrix_braiding_structure; rem_r_matrix_braiding; prop_skein_crossing_asymmetry; rem_skein_crossing_asymmetry; prop_mobius_energy; cor_non_self_intersection; def_crossing_energy; def_coulomb_charge; prop_lagrange_resolvent_transform; rem_lagrange_resolvents; def_q_momentum; def_q_angular_momentum; def_q_energy; def_exceptional_divisor; def_reeb_bundle; def_vertex_operator; prop_vertex_is_exceptional_divisor; thm_markov_trace_product; def_categorical_transfer_matrix; prop_transfer_matrix_level_independence; prop_topological_mass_formula; rem_skein_decomposition; prop_vertex_algebra_relations; prop_vertex_algebra_jet_relations; def_hadron; prop_hadron_operations_closure; rem_hadron_operations; rem_knot_factorization; def_localized_hadron; def_hadron_fibre_embedding; prop_skein_generation; def_knot_particle_generation; prop_knot_particle_correspondence; rem_knot_particle_dictionary; def_bundle_initial_conditions; prop_sorting_color_energy; def_bundle_isotopy_equivalence; def_torsion_knot_flow; def_borromean_baryon; prop_fermion_boson_knot_link; prop_reidemeister_mass_invariance; prop_nuclear_shell_intruder; thm_topological_mass; def_skein_binding_lagrangian; prop_beta_stability; }
   }
 
   subgraph cluster_ch6 {
@@ -477,6 +479,29 @@ digraph ProofDependencies {
   def_bundle_isotopy_equivalence -> prop_transfer_matrix_level_independence [color="#555555" style="solid"];
   thm_topological_mass -> prop_topological_mass_formula [color="#555555" style="solid"];
   prop_topological_mass_formula -> rem_skein_decomposition [color="#555555" style="solid"];
+  def_quantum_universe -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_vertex_operator -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_frobenius_pairing -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  prop_frobenius_relation -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_snake_identity -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  thm_jones_markov_trace -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  rem_r_matrix_braiding -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_braid_group -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_higher_forms -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_categorical_hodge_star -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  prop_euler_char_stability -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_quantum_characteristic_classes -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  def_categorical_connection -> prop_vertex_algebra_relations [color="#555555" style="solid"];
+  prop_vertex_algebra_relations -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  prop_jet_prolongation -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  def_recursive_brane_tower -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  def_descent_involution -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  prop_descent_eigenspaces -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  def_quantum_characteristic_classes -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  prop_euler_char_stability -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  def_vertex_operator -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  thm_jones_markov_trace -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
+  rem_prolongation_categorical -> prop_vertex_algebra_jet_relations [color="#555555" style="solid"];
   def_coulomb_charge -> def_hadron [color="#555555" style="solid"];
   def_exceptional_divisor -> def_hadron [color="#555555" style="solid"];
   def_hadron -> prop_hadron_operations_closure [color="#555555" style="solid"];
