@@ -58,20 +58,24 @@ theorem BraidingEigenvalueData.anti_eq_neg_inv
   field_simp at h ⊢
   linarith
 
-/-- The Hecke relation: each eigenvalue λ of c_{V,V} satisfies
-    (λ - q)(λ + q⁻¹) = 0.  This is verified for both eigenvalues. -/
+/-- Both eigenvalues of c_{V,V} are roots of the Hecke polynomial
+    (X - q)(X + q⁻¹) = 0.  This is a non-trivial consequence of the
+    determinant constraint λ_sym · λ_anti = -1: the antisymmetric
+    eigenvalue is forced to equal -q⁻¹, making both factors vanish
+    on the respective eigenspaces. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-theorem hecke_relation_sym (bed : BraidingEigenvalueData) :
-    (bed.λ_sym - bed.λ_sym) * (bed.λ_sym + (bed.λ_sym)⁻¹) = 0 := by
-  ring_nf
-  simp
-
-theorem hecke_relation_anti (bed : BraidingEigenvalueData) :
-    (bed.λ_anti - bed.λ_sym) * (bed.λ_anti + (bed.λ_sym)⁻¹) = 0 := by
-  rw [bed.anti_eq_neg_inv]
-  have hne := bed.λ_sym_ne_zero
-  field_simp
-  ring
+theorem hecke_polynomial_roots (bed : BraidingEigenvalueData) :
+    (bed.λ_sym - bed.q) * (bed.λ_sym + bed.q⁻¹) = 0
+    ∧ (bed.λ_anti - bed.q) * (bed.λ_anti + bed.q⁻¹) = 0 := by
+  unfold BraidingEigenvalueData.q
+  constructor
+  · -- λ_sym is q by definition, so the first factor vanishes
+    ring_nf; simp
+  · -- λ_anti = -q⁻¹ by det constraint, so the second factor vanishes
+    rw [bed.anti_eq_neg_inv]
+    have hne := bed.λ_sym_ne_zero
+    field_simp
+    ring
 
 /-- Classical limit: when the braiding is symmetric (c² = id),
     both eigenvalues are ±1, so q = 1. -/
@@ -118,14 +122,10 @@ theorem braiding_eigenvalue_extraction
         bed.q = λ_sym
         ∧ bed.λ_anti = -(λ_sym)⁻¹
         ∧ (bed.λ_anti - bed.λ_sym) * (bed.λ_anti + (bed.λ_sym)⁻¹) = 0 := by
-  refine ⟨⟨λ_sym, λ_anti, hλs, hλa, hdet⟩, rfl, ?_, ?_⟩
-  · -- anti = -sym⁻¹ follows from det constraint
-    simp only
-    have : λ_anti = -(λ_sym)⁻¹ := by field_simp at hdet ⊢; linarith
-    exact this
-  · -- Hecke relation for antisymmetric eigenvalue
-    have hanti : λ_anti = -(λ_sym)⁻¹ := by field_simp at hdet ⊢; linarith
-    rw [hanti]
+  have h_anti_val : λ_anti = -(λ_sym)⁻¹ := by
+    field_simp at hdet ⊢; linarith
+  refine ⟨⟨λ_sym, λ_anti, hλs, hλa, hdet⟩, rfl, h_anti_val, ?_⟩
+  · rw [h_anti_val]
     field_simp
     ring
 

@@ -13,5 +13,6 @@ export default proposition({
   uses: [
     "def:quantum-observable-universe",
     "thm:su2-emergence",
+    "prop:braiding-eigenvalue-extraction",
   ],
 });
