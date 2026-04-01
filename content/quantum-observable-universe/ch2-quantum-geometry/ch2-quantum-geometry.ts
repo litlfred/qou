@@ -105,6 +105,8 @@ export default chapter({
       label: "sec:substrate-parameter",
       blocks: [
         "quantum-universe-explication",
+        "braiding-eigenvalue-extraction",
+        "tannaka-krein-reconstruction",
         "substrate-parameter",
         "substrate-parameter-exists",
         "substrate-parameter-exists-proof",
