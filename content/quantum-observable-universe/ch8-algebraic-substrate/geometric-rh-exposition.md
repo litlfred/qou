@@ -4,36 +4,56 @@ $|\alpha_i| = q^{1/2}$ unconditionally, but the reader may wonder:
 entire chain of categorical machinery to a single geometric constraint.
 
 **Step 1: Global coherence demands vanishing Chern classes.**
-For the Yekutieli multiplicative integral to be globally well-defined
---- that is, for the path-ordered product of holonomy matrices to yield
-a consistent answer regardless of how one triangulates the bounding
-surface --- the connection on $\mathrm{Ad}(A)$ must be *flat*. In
-cohomological terms, this is precisely the measurability condition
-$c_1(\mathrm{Ad}(A)) = 0$, $c_2(\mathrm{Ad}(A)) = 0$
-([nonabelian Stokes](#rem:yekutieli-stokes)). The first Chern class
-vanishing ensures path-independence of the parallel transport; the
-second ensures the absence of topological phases around
-non-contractible cycles.
+The Yekutieli multiplicative integral computes a path-ordered product
+of holonomy matrices along the Reeb flow. For this product to be
+globally well-defined --- yielding the same answer regardless of how
+one triangulates the bounding surface --- the connection on the
+adjoint bundle $\mathrm{Ad}(A)$ must be *flat*. This is a standard
+consequence of the nonabelian Stokes theorem
+([nonabelian Stokes](#rem:yekutieli-stokes)): if the curvature
+$F_\nabla$ of the connection were nonzero, different triangulations
+of a surface $\Sigma$ bounding the same curve would produce different
+path-ordered products, because the surface integral
+$\prod^{\to}_\Sigma \exp(F_\nabla)$ would contribute a
+triangulation-dependent factor. Consistency therefore requires
+$F_\nabla = 0$, which in cohomological terms is the measurability
+condition $c_1(\mathrm{Ad}(A)) = 0$, $c_2(\mathrm{Ad}(A)) = 0$.
+The first Chern class vanishing ensures path-independence of the
+parallel transport; the second ensures the absence of topological
+phases around non-contractible cycles.
 
 **Step 2: Flatness forces unitarity.**
-A flat connection on a compact space has holonomy valued in a compact
-group. Since the adjoint bundle $\mathrm{Ad}(A)$ is self-dual (by the
-Frobenius compatibility) and the connection is flat (by the Chern class
-vanishing), the holonomy around any closed curve --- including the
-prime orbits of the Reeb flow --- must lie in a *unitary* subgroup
-of $\mathrm{GL}(V)$. Concretely, the Frobenius endomorphism $\varphi$
-acts on the $H^1$ of Bring's curve $\mathcal{B}$ as a unitary
-operator with respect to the Weil pairing: the Castelnuovo--Severi
-inequality then gives $|\alpha_i|^2 = q$ for all eigenvalues, which is
-exactly $|\alpha_i| = q^{1/2}$.
+A flat connection on a vector bundle over a compact base has holonomy
+valued in the structure group of that bundle. The adjoint bundle
+$\mathrm{Ad}(A)$ inherits a *Hermitian structure* from the Frobenius
+form $\lambda \colon A \to \mathbf{1}$: the pairing
+$\langle x, y \rangle = \lambda(\mu(x \otimes S(y)))$ (where $S$ is
+the antipode) defines a positive-definite inner product preserved by
+the adjoint action. Since the connection is flat and the bundle carries
+this Hermitian structure, the holonomy around any closed curve ---
+including the prime orbits of the Reeb flow --- must lie in the
+*unitary group* $\mathrm{U}(V)$ rather than the full
+$\mathrm{GL}(V)$.
+
+On the algebraic-geometric side, this translates directly to the
+Castelnuovo--Severi argument
+([Hasse--Weil bound](#thm:hasse-weil-bound)): the Frobenius
+endomorphism $\varphi$ acts on $H^1(\mathcal{B}, \mathbb{Q}_\ell)$
+as a unitary operator with respect to the Weil pairing (which is the
+$\ell$-adic avatar of the Frobenius Hermitian structure). The
+Castelnuovo--Severi inequality on the self-product
+$\mathcal{B} \times \mathcal{B}$ then gives $|\alpha_i|^2 = q$ for
+all 8 eigenvalues, i.e. $|\alpha_i| = q^{1/2}$.
 
 **Step 3: Unitarity locks the zeros to the critical line.**
 The eigenvalues $\alpha_i$ of the Frobenius endomorphism are the
 reciprocal roots of the local zeta function $Z_q(t)$. The condition
-$|\alpha_i| = q^{1/2}$ translates, under the change of variable
-$t = q^{-s}$, to the statement that all zeros of $Z_q(s)$ satisfy
-$\mathrm{Re}(s) = 1/2$
-([spectral half-line](#prop:spectral-half-line)). This is the Riemann
+$|\alpha_i| = q^{1/2}$ translates, under the standard change of
+variable $t = q^{-s}$, to the statement that all zeros of $Z_q(s)$
+satisfy $\mathrm{Re}(s) = 1/2$: if $\alpha_i = q^{1/2} e^{i\phi}$
+then $q^{-s} = \alpha_i^{-1}$ gives $s = 1/2 - i\phi/\ln q$, which
+has real part exactly $1/2$
+([spectral half-line](#cor:spectral-half-line)). This is the Riemann
 hypothesis for Bring's curve over $\mathbb{F}_q$ --- an
 *unconditional theorem*, not a conjecture.
 
@@ -42,7 +62,7 @@ are eigenvalues of the Reeb flow, and each eigenvalue corresponds to a
 fundamental oscillation mode of the substrate. The unitary constraint
 means that no mode grows or decays: the substrate is in a *critical
 phase* of exact balance between order and disorder
-([unitary stability](#prop:unitary-stability)). If any eigenvalue
+([unitary stability](#rem:unitary-stability)). If any eigenvalue
 drifted off the critical line, the holonomy around the corresponding
 prime orbit would cease to be unitary, the Chern classes would become
 nonzero, and the Yekutieli integral would develop an anomaly --- the

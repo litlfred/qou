@@ -26,7 +26,7 @@ $\mathrm{Li}(x)$ as follows:
 
 | Classical | Quantum substrate |
 |-----------|-------------------|
-| Scalar weight $1/\ln t$ | Matrix-valued weight $[\rho]_q^{-1}$ |
+| Scalar weight $1/\ln t$ | Matrix-valued weight $X^\rho / [\rho]_q$ (trace of holonomy) |
 | Ordinary integral $\int dt$ | Path-ordered product $\prod^{\to}$ |
 | Additive (abelian) | Multiplicative (nonabelian) |
 | Result: a real number $\mathrm{Li}(x)$ | Result: a holonomy matrix in $\mathrm{GL}(V)$ |

@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "def:q-von-mangoldt-function",
     "def:q-chebyshev-function",
-    "prop:explicit-formula",
+    "thm:explicit-formula",
     "rem:yekutieli-stokes",
     "prop:yekutieli-lifting",
   ],
