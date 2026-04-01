@@ -63,7 +63,7 @@ the braid word to the other.
 The photon has no crossings of its own — it is topologically
 trivial ($K = \varnothing$).  But it couples to the gauge field
 ($F_A^+$) because it propagates as exceptional-divisor flux
-([photon wavefront](#ex:photon-wavefront-example)).  Threading
+([photon wavefront](#ex:photon-wavefront)).  Threading
 it through $\mathfrak{H}$ forces it to traverse every crossing of $\beta_{\mathfrak{H}}$,
 and each crossing it encounters contributes a Hecke reduction.
 

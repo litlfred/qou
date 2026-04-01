@@ -161,15 +161,16 @@ representations in Gröbner bases.
 
 [Chapter 5](#chap:models-qou) examines concrete realisations of
 the QOU axioms: archimedean, $p$-adic, and finite-field models.
-For the Descartes universe ($\chi(A) = -6$), we study Bring's
-surface $\Sigma_4$ — the universal genus-$4$ curve with
-automorphism group $S_5$ — as a model for QOU.  This concrete
-realisation provides coordinate systems for the red, green, and
-blue coral tubes — the exceptional divisors where all particle
-interactions occur — and serves as a model for understanding our
-own world.
 
-[Chapter 6](#chap:observations) reaps the rewards of the
+[Chapter 6](#chap:descartes-universe) studies Bring's surface
+$\Sigma_4$ — the universal genus-$4$ curve with automorphism
+group $S_5$ — as a model for the Descartes universe
+($\chi(A) = -6$).  This concrete realisation provides coordinate
+systems for the red, green, and blue coral tubes — the exceptional
+divisors where all particle interactions occur — and serves as a
+model for understanding our own world.
+
+[Chapter 7](#chap:observations) reaps the rewards of the
 mathematical machinery.  The substrate parameter $q$ is estimated
 from the muon-to-electron mass ratio:
 
@@ -185,7 +186,7 @@ transfer matrices then describe hadron half-lives that align with
 observation.  The same mathematical infrastructure computes the
 energetics of hydrocarbons.
 
-[Chapter 7](#chap:info-theory) addresses Wigner's mystery
+[Chapter 8](#chap:info-theory) addresses Wigner's mystery
 directly.  The mechanics of the quantum observable universe turn
 out to be Turing complete: the combinatorics supporting logic and
 computation is a property of the algebraic substrate, not the

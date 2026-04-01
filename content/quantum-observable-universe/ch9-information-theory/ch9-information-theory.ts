@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * and alternative Euler-characteristic scenarios.
  */
 export default chapter({
-  number: 7,
+  number: 8,
   title: "Information-Theoretic Perspectives",
   label: "chap:info-theory",
   sections: [

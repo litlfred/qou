@@ -37,8 +37,8 @@ structure GroebnerBasis where
   ideal : Set A
   /-- Every element of the ideal has a Gröbner representation. -/
   has_representation : ∀ h ∈ ideal, h ≠ 0 → True
-  -- Ref: [manuscript] §1/unital-groebner-basis
-  sorry
+  -- TODO: refine has_representation to produce actual Gröbner data
+  -- (multipliers λ_k, u_k, v_k, γ_k with leading monomial control)
 
 /-- The **unital condition** on a Gröbner basis:
     1. All generators have leading coefficient in R×
@@ -51,8 +51,7 @@ structure IsUnital (G : GroebnerBasis R B A) where
   lc_units : ∀ g ∈ G.generators, True
   /-- Products preserve the unit leading coefficient property. -/
   product_lc_units : ∀ g ∈ G.generators, True
-  -- Ref: [manuscript] §1/unital-groebner-basis
-  sorry
+  -- TODO: replace True with actual leading-coefficient unit conditions
 
 /-- An **S-polynomial** about f, f' ∈ A is constructible when their
     leading terms can be aligned:
@@ -67,7 +66,6 @@ structure SPolynomial where
   f' : A
   /-- The S-polynomial value. -/
   value : A
-  -- Ref: [manuscript] §1/unital-groebner-basis
-  sorry
+  -- TODO: add alignment witness (u, v, u', v', λ, λ')
 
 end QOU.UnitalGroebner
