@@ -2,50 +2,76 @@
 # QOU.AlgebraicSubstrate.quantum_gap_collapse
 
 Collapse of the quantum gap under the classical limit functor L.
-The four simultaneous degenerations: Planck constant → 0,
-q-differential → ordinary derivative, braiding → symmetric swap,
-Reeb period → ∞.
+Two analytic degenerations: Planck constant → 0 and Reeb period → ∞.
+The categorical degenerations (braiding trivialization, q-differential
+smoothing) are stated in `ClassicalLimitFunctor`.
 
 LaTeX label: `thm:quantum-gap-collapse`
 -/
 
 set_option autoImplicit false
 
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Order.Filter.Basic
+import Mathlib.Topology.Order.Basic
+import Mathlib.Topology.Algebra.Order.Field
 
-open CategoryTheory MonoidalCategory
+open Filter Topology
 
 namespace QOU.AlgebraicSubstrate
 
-/-- The Planck constant ℏ_q = 1 - q⁻¹. -/
-noncomputable def planck_q (q : ℝ) (hq : q > 0) : ℝ := 1 - q⁻¹
+/-- The Planck constant as a plain function: ℏ(q) = 1 - q⁻¹. -/
+noncomputable def planck (q : ℝ) : ℝ := 1 - q⁻¹
 
-/-- The Reeb period Ω_q, inversely related to ℏ_q. -/
-noncomputable def reeb_period (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) : ℝ :=
-  (planck_q q hq)⁻¹
+/-- The Reeb period as a plain function: Ω(q) = (1 - q⁻¹)⁻¹. -/
+noncomputable def reebPeriod (q : ℝ) : ℝ := (planck q)⁻¹
 
-/-- **Quantum gap collapse**: Under the classical limit q → 1,
-    four degenerations occur simultaneously.
+/-- ℏ(1) = 0. -/
+@[simp] theorem planck_one : planck 1 = 0 := by
+  simp [planck, inv_one]
 
-    (1) ℏ_q → 0
-    (2) The Jackson q-derivative converges to the ordinary derivative
-    (3) The braided monoidal category degenerates to a symmetric one
-    (4) The Reeb period Ω_q → ∞
+/-- For q > 1, ℏ(q) > 0. -/
+theorem planck_pos {q : ℝ} (hq : 1 < q) : 0 < planck q := by
+  simp only [planck]
+  have : q⁻¹ < 1 := inv_lt_one_of_one_lt hq
+  linarith
 
-    LaTeX: `\label{thm:quantum-gap-collapse}`
-    Ref: [manuscript] Chapter 8, Section 5 -/
-theorem quantum_gap_collapse :
-    /- (1) Planck constant vanishes: ℏ_q → 0 as q → 1 -/
-    Filter.Tendsto (fun q => planck_q q (by linarith : q > 0))
-      (nhdsWithin 1 (Set.Ioi 1)) (nhds 0)
-    ∧
-    /- (4) Reeb period diverges: Ω_q → ∞ as q → 1 -/
-    Filter.Tendsto (fun q => |reeb_period q (by linarith : q > 0) (by linarith : q ≠ 1)|)
-      (nhdsWithin 1 (Set.Ioi 1)) Filter.atTop
-    := by
-  -- Ref: [manuscript] Chapter 8, Section 5
+/-- For q > 1, ℏ(q) ≠ 0. -/
+theorem planck_ne_zero {q : ℝ} (hq : 1 < q) : planck q ≠ 0 :=
+  ne_of_gt (planck_pos hq)
+
+/-- **Quantum gap collapse (part 1)**: ℏ_q → 0 as q → 1⁺.
+
+    Since ℏ(q) = 1 - q⁻¹ is continuous and ℏ(1) = 0, this follows
+    from continuity of subtraction and inversion at q = 1 ≠ 0. -/
+-- Ref: [manuscript] Chapter 8, Section 5
+theorem planck_tendsto_zero :
+    Tendsto planck (nhdsWithin 1 (Set.Ioi 1)) (nhds 0) := by
+  rw [← planck_one]
+  exact ((continuous_const.sub continuous_inv₀).tendsto 1).mono_left
+    nhdsWithin_le_nhds
+
+/-- **Quantum gap collapse (part 2)**: |Ω_q| → ∞ as q → 1⁺.
+
+    Since Ω(q) = ℏ(q)⁻¹ and ℏ(q) → 0⁺ from the right,
+    the Reeb period diverges. -/
+-- Ref: [manuscript] Chapter 8, Section 5
+theorem reeb_period_tendsto_atTop :
+    Tendsto (fun q => |reebPeriod q|)
+      (nhdsWithin 1 (Set.Ioi 1)) atTop := by
+  -- ℏ(q) → 0⁺ as q → 1⁺, so ℏ(q)⁻¹ → +∞
+  -- This requires Filter.Tendsto.inv_tendsto_zero applied to planck
   sorry
+
+/-- **Quantum gap collapse (combined)**: Under the classical limit
+    q → 1, the Planck constant vanishes and the Reeb period diverges.
+
+    The remaining two degenerations (Jackson q-derivative → ordinary
+    derivative, braiding → symmetric swap) are categorical statements
+    encoded in `ClassicalLimitFunctor.braiding_trivializes`. -/
+theorem quantum_gap_collapse :
+    Tendsto planck (nhdsWithin 1 (Set.Ioi 1)) (nhds 0)
+    ∧ Tendsto (fun q => |reebPeriod q|)
+        (nhdsWithin 1 (Set.Ioi 1)) atTop :=
+  ⟨planck_tendsto_zero, reeb_period_tendsto_atTop⟩
 
 end QOU.AlgebraicSubstrate
