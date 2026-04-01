@@ -73,7 +73,7 @@
 | [def:molecular-hopf-ring](#def:molecular-hopf-ring) | Molecular Hopf ring (closed) | Ch 7 | `QOU.Organic.MolecularHopfRing` |
 | [def:neutrino-knot](#def:neutrino-knot) | Neutrino | Ch 6 | `QOU.Descartes.Neutrino` |
 | [def:categorical-neutron](#def:categorical-neutron) | Neutron (categorical) | Ch 6 | `QOU.Torsion.CategoricalNeutron` |
-| [def:observation](#def:observation) | Observation | Ch 2 | `QOU.Intent` |
+| [def:observation](#def:observation) | Observation | Ch 2 | `QOU.Observation` |
 | [rem:glossary-observed-value](#rem:glossary-observed-value) | Observed spacetime value | Glossary | `QOU.ObservedValue` |
 | [def:operational-entropy](#def:operational-entropy) | Operational entropy of the Reeb dynamics | Ch 8 | `QOU.Information.operationalEntropy` |
 | [def:q-harmonic-form](#def:q-harmonic-form) | Particle ($q$-harmonic form) | Ch 2 | `QOU.QHarmonicForm` |

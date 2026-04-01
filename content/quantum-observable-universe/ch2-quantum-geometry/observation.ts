@@ -5,13 +5,13 @@ export default definition({
   title: "Observation",
   tags: ["observation", "quantum"],
   lean: {
-    decl: "QOU.Intent",
+    decl: "QOU.Observation",
     validation: "not_checked",
   },
   uses: [
     "def:substrate-parameter",
     "def:categorical-point",
-    "prop:fibre-functor-atlas",
+    "def:quantum-observable-universe",
   ],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/observation-0.svg", blockIndex: 0, hash: "dc276429434c" },
