@@ -101,12 +101,12 @@ The parameter $q$ plays three roles simultaneously:
 |------|-------------|
 | Algebraic | Deformation parameter of $H_A(q)$: $T^2 = (q - q^{-1})T + 1$ |
 | Topological | Variable of the Skein polynomial $P_{\mathcal{N}}(q)$ |
-| Physical | Substrate parameter the substrate $q$ from $\chi(A) = -6$ |
+| Physical | Substrate parameter $q$ from $\chi(A) = -6$ |
 
 These are not three different objects — they are the **same $q$**.
 The Hecke relation generates the polynomial; the Markov trace
-makes it a link invariant; evaluating at the substrate parameter $q$ projects
-the topological invariant to the physical energy.
+makes it a link invariant; evaluating at $q$ projects the
+topological invariant to the physical energy.
 
 **Degree bounds for specific nuclei.**
 

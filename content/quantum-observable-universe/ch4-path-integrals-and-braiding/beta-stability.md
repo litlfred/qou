@@ -59,7 +59,7 @@ At $q = q_0$ with $a_C = (q - q^{-1}) \times 3.334 \approx
 0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces
 observed stable neutron numbers across the periodic table with
 mean error $|\Delta n| \approx 1.4$ neutrons (see
-[knot-periodic table](#knot-periodic-table)).
+[knot-periodic table](#prose:knot-periodic-table)).
 
 **Limiting behaviour.**
 
