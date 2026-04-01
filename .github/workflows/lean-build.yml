@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'lean-archive/**'
+      - 'content/quantum-observable-universe/lean/**'
       - 'chapters/**'
       - 'proof-objects.json'
       - 'glossary.json'
