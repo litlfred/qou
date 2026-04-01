@@ -414,8 +414,8 @@ href="https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState"><sup>
 class="math inline">\(\forall\)</span></span></sup></a> The Bring’s
 surface visualizer renders quaternionic spectral resolvents as
 interactive 3D surfaces. The viewport state is fully serialisable (see
-VizState in schemas/qou-types.ts) and can be embedded in URLs or
-Markdown to reproduce a specific view.</em></p>
+<code>VizState</code> in <code>schemas/qou-types.ts</code>) and can be
+embedded in URLs or Markdown to reproduce a specific view.</em></p>
 <p><em><strong>Viewport parameters:</strong></em></p>
 <ul>
 <li><p><em><span class="math inline">\(q\)</span> — torsion/chirality
@@ -423,9 +423,9 @@ parameter. <span class="math inline">\(q = 0\)</span> is classical;
 <span class="math inline">\(q &gt; 0\)</span> introduces chiral twist in
 the colour-sector coordinates <span class="math inline">\((\mathfrak{r},
 \mathfrak{g}, \mathfrak{b})\)</span>.</em></p></li>
-<li><p><em><strong>Mode</strong> — CP1 shows the <span
-class="math inline">\(\mathbb{C}P^1\)</span> exceptional fibre; cone
-shows the outgoing chiral tube cones.</em></p></li>
+<li><p><em><strong>Mode</strong> — <code>CP1</code> shows the <span
+class="math inline">\(\mathbb{C}P^1\)</span> exceptional fibre;
+<code>cone</code> shows the outgoing chiral tube cones.</em></p></li>
 <li><p><em><strong>Camera</strong> — spherical coordinates <span
 class="math inline">\((\theta, \phi, r)\)</span> with configurable
 look-at target.</em></p></li>
@@ -448,8 +448,8 @@ is the 3-manifold obtained by removing a tubular neighbourhood of a knot
 class="math inline">\(K\)</span> is hyperbolic, the complement admits a
 unique complete hyperbolic structure (by Mostow rigidity), and its
 volume is a topological invariant.</em></p>
-<p><em>The SnapPea kernel (@snappea/kernel, compiled to WebAssembly)
-computes:</em></p>
+<p><em>The SnapPea kernel (<code>@snappea/kernel</code>, compiled to
+WebAssembly) computes:</em></p>
 <ul>
 <li><p><em><strong>Hyperbolic volume</strong> via ideal
 triangulations</em></p></li>

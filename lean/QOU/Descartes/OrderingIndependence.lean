@@ -59,6 +59,7 @@ namespace QOU.Descartes
 noncomputable def skeinPolynomialSym (config : NuclearConfig) : R_t :=
   -- e_{(n)} · B(config) · e_{(n)} evaluated via Markov trace
   -- Ordering-independent by the symmetrizer averaging property
+  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
   sorry -- requires Young idempotent construction
 
 /-! ## §2  Ordering independence theorem -/
@@ -86,6 +87,7 @@ theorem ordering_independence
     skeinPolynomialSym config₁ = skeinPolynomialSym config₂ := by
   -- The Young symmetrizer absorbs permutations:
   -- e · T_w = q^{ℓ(w)} · e for the symmetric idempotent
+  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
   sorry -- requires formalization of the symmetrizer eigenvalue property
 
 /-! ## §3  The unique Q-value -/

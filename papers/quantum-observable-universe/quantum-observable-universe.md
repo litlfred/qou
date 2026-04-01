@@ -40,13 +40,13 @@ The QOU Visualizer provides interactive views of the mathematical structures des
 
 <div id="def:viz-brings-surface" class="definition">
 
-**Definition 1.1** (Bring’s surface viewport). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState) The Bring’s surface visualizer renders quaternionic spectral resolvents as interactive 3D surfaces. The viewport state is fully serialisable (see VizState in schemas/qou-types.ts) and can be embedded in URLs or Markdown to reproduce a specific view.*
+**Definition 1.1** (Bring’s surface viewport). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState) The Bring’s surface visualizer renders quaternionic spectral resolvents as interactive 3D surfaces. The viewport state is fully serialisable (see `VizState` in `schemas/qou-types.ts`) and can be embedded in URLs or Markdown to reproduce a specific view.*
 
 ***Viewport parameters:***
 
 - *$q$ — torsion/chirality parameter. $q = 0$ is classical; $q > 0$ introduces chiral twist in the colour-sector coordinates $(\mathfrak{r}, \mathfrak{g}, \mathfrak{b})$.*
 
-- ***Mode** — CP1 shows the $\mathbb{C}P^1$ exceptional fibre; cone shows the outgoing chiral tube cones.*
+- ***Mode** — `CP1` shows the $\mathbb{C}P^1$ exceptional fibre; `cone` shows the outgoing chiral tube cones.*
 
 - ***Camera** — spherical coordinates $(\theta, \phi, r)$ with configurable look-at target.*
 
@@ -61,7 +61,7 @@ The QOU Visualizer provides interactive views of the mathematical structures des
 
 **Definition 1.2** (Knot complement (SnapPea)). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.KnotComplement) A **knot complement** $S^3 \setminus K$ is the 3-manifold obtained by removing a tubular neighbourhood of a knot $K$ from the 3-sphere. When $K$ is hyperbolic, the complement admits a unique complete hyperbolic structure (by Mostow rigidity), and its volume is a topological invariant.*
 
-*The SnapPea kernel (@snappea/kernel, compiled to WebAssembly) computes:*
+*The SnapPea kernel (`@snappea/kernel`, compiled to WebAssembly) computes:*
 
 - ***Hyperbolic volume** via ideal triangulations*
 

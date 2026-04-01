@@ -27,6 +27,7 @@ digraph ProofDependencies {
     ex_rigid_monoidal_vect [label="Ex\nrigid-monoidal-vect" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:rigid-monoidal-vect" tooltip="{$\mathbb{C}[z" target="_blank"];
     def_quantum_universe [label="Def\nquantum-universe" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:quantum-universe" tooltip="{Quantum Universe}" target="_blank"];
     def_frobenius_pairing [label="Def\nfrobenius-pairing" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:frobenius-pairing" tooltip="{Frobenius pairing}" target="_blank"];
+    ex_frobenius_pairing_su2 [label="Ex\nfrobenius-pairing..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:frobenius-pairing-su2" tooltip="{The Frobenius pairing on $\mathcal{O}(\mathrm{SU}(2))$}" target="_blank"];
     ex_quantum_universe_su2 [label="Ex\nquantum-universe-su2" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:quantum-universe-su2" tooltip="{$\mathrm{SU}(2)$ as a quantum universe}" target="_blank"];
     def_higher_forms [label="Def\nhigher-forms" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:higher-forms" tooltip="{Higher differential forms}" target="_blank"];
     ex_higher_forms_su2 [label="Ex\nhigher-forms-su2" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:higher-forms-su2" tooltip="{Higher forms on $\mathcal{O}(\mathrm{SU}(2))$}" target="_blank"];
@@ -37,7 +38,7 @@ digraph ProofDependencies {
     def_categorical_jet [label="Def\ncategorical-jet" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-jet" tooltip="{Categorical jet object}" target="_blank"];
     def_categorical_hodge_star [label="Def\ncategorical-hodge..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-hodge-star" tooltip="{Categorical Hodge star}" target="_blank"];
     ex_hodge_su2 [label="Ex\nhodge-su2" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:hodge-su2" tooltip="{Hodge star on $\mathcal{O}(\mathrm{SU}(2))$}" target="_blank"];
-    { rank=same; def_no_quasi_zeros; def_snake_identity; def_rigid_monoidal_category; ex_rigid_monoidal_vect; def_quantum_universe; def_frobenius_pairing; ex_quantum_universe_su2; def_higher_forms; ex_higher_forms_su2; prop_frobenius_relation; def_involutive_structure; prop_positive_definite_dagger; def_categorical_connection; def_categorical_jet; def_categorical_hodge_star; ex_hodge_su2; }
+    { rank=same; def_no_quasi_zeros; def_snake_identity; def_rigid_monoidal_category; ex_rigid_monoidal_vect; def_quantum_universe; def_frobenius_pairing; ex_frobenius_pairing_su2; ex_quantum_universe_su2; def_higher_forms; ex_higher_forms_su2; prop_frobenius_relation; def_involutive_structure; prop_positive_definite_dagger; def_categorical_connection; def_categorical_jet; def_categorical_hodge_star; ex_hodge_su2; }
   }
 
   subgraph cluster_ch3 {
@@ -49,16 +50,16 @@ digraph ProofDependencies {
     rem_braid_group_action [label="Rem\nbraid-group-action" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:braid-group-action" tooltip="{Braid-group action on the resolvents}" target="_blank"];
     def_color_tube_coordinates [label="Def\ncolor-tube-coordi..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:color-tube-coordinates" tooltip="{Color tube coordinates}" target="_blank"];
     rem_color_tube_interpretation [label="Rem\ncolor-tube-interp..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:color-tube-interpretation" tooltip="{Interpretation of the color tube}" target="_blank"];
-    prop_chiral_elliptic [label="Prop\nchiral-elliptic" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:chiral-elliptic" tooltip="{Chiral fibre as an elliptic curve}" target="_blank"];
+    prop_coral_elliptic [label="Prop\ncoral-elliptic" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:coral-elliptic" tooltip="{Coral fibre as an elliptic curve}" target="_blank"];
     rem_color_tube_cubic [label="Rem\ncolor-tube-cubic" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:color-tube-cubic" tooltip="{Color tube cubic}" target="_blank"];
     def_color_tube_fibers [label="Def\ncolor-tube-fibers" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:color-tube-fibers" tooltip="{Color tube fibers}" target="_blank"];
-    rem_chiral_bundles [label="Rem\nchiral-bundles" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:chiral-bundles" tooltip="{Chiral space as spectral curve and spinor bundle}" target="_blank"];
+    rem_coral_bundles [label="Rem\ncoral-bundles" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:coral-bundles" tooltip="{Coral space as spectral curve and spinor bundle}" target="_blank"];
     prop_brings_smoothness_resolution [label="Prop\nbrings-smoothness..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:brings-smoothness-resolution" tooltip="{Smoothness of the Bring's surface and intrinsic resolution of projection singularities}" target="_blank"];
     rem_brings_smoothness [label="Rem\nbrings-smoothness" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:brings-smoothness" tooltip="{Smoothness of Bring's surface and resolution of spacetime defects}" target="_blank"];
     def_briggs_klein_chart [label="Def\nbriggs-klein-chart" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:briggs-klein-chart" tooltip="{Briggs--Klein affine chart}" target="_blank"];
     def_quaternionic_spectral_resolvents [label="Def\nquaternionic-spec..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:quaternionic-spectral-resolvents" tooltip="{Quaternionic spectral resolvents}" target="_blank"];
     prop_mi_sw_abelianisation [label="Prop\nmi-sw-abelianisation" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:mi-sw-abelianisation" tooltip="{Abelianisation of the MI integral on exceptional divisors}" target="_blank"];
-    def_chiral_sector_coords [label="Def\nchiral-sector-coords" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:chiral-sector-coords" tooltip="{Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$}" target="_blank"];
+    def_coral_sector_coords [label="Def\ncoral-sector-coords" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:coral-sector-coords" tooltip="{Coral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$}" target="_blank"];
     cor_descartes_braid_structure [label="Cor\ndescartes-braid-s..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-braid-structure" tooltip="{Braid-group structure of a Descartes universe}" target="_blank"];
     cor_descartes_knot_eigenbasis [label="Cor\ndescartes-knot-ei..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-knot-eigenbasis" tooltip="{Knot eigenbasis completeness for a Descartes universe}" target="_blank"];
     prop_descartes_elliptic_curve [label="Prop\ndescartes-ellipti..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:descartes-elliptic-curve" tooltip="{The Descartes elliptic curve $E_q$}" target="_blank"];
@@ -120,7 +121,7 @@ digraph ProofDependencies {
     thm_descartes [label="Thm\ndescartes" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:descartes" tooltip="{Descartes theorem}" target="_blank"];
     ex_descartes_yekutieli [label="Ex\ndescartes-yekutieli" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:descartes-yekutieli" tooltip="{Bring's surface and Yekutieli obstructions}" target="_blank"];
     prop_terminal_resolution [label="Prop\nterminal-resolution" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:terminal-resolution" tooltip="{Terminal Resolution of Hadronic Mass}" target="_blank"];
-    { rank=same; def_brings_surface; prop_brings_is_qou; rem_braid_group_action; def_color_tube_coordinates; rem_color_tube_interpretation; prop_chiral_elliptic; rem_color_tube_cubic; def_color_tube_fibers; rem_chiral_bundles; prop_brings_smoothness_resolution; rem_brings_smoothness; def_briggs_klein_chart; def_quaternionic_spectral_resolvents; prop_mi_sw_abelianisation; def_chiral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; prop_descartes_elliptic_curve; def_descartes_condition; prop_genus_maximal_descent; rem_descartes_chirality; rem_light_cone_affine; rem_chirality_trefoil; prop_torus_knot_generators; thm_embeddability_closure; prop_genus_filtration_ideal; prop_torus_embeddable_complete; thm_generation_completeness; def_up_quark; def_down_quark; def_electron_knot; def_positron_knot; def_neutrino_knot; def_antineutrino_knot; rem_linking_relations_table; def_q_value_transition; def_categorical_proton; def_categorical_neutron; prop_antiparticle_crossing_reversal; rem_chirality_trefoil_electron_positron; def_stable_nucleus; prop_torus_hopf_stability; rem_unmapped_torus_knots; rem_force_knot_identification; prop_em_coupling_projection; prop_integer_stability; rem_diophantine_valley; def_beta_decay_skein; def_lepton_number_categorical; prop_parity_violation_skein; prop_nuclear_spin_parity; prop_hadron_half_life; prop_hadron_q_self_correction; prop_skein_coulomb_enhancement; prop_nuclear_groebner_reduction; thm_groebner_shirshov_energy; prop_box_braid_irreducibility; prop_generator_volume_decomposition; thm_markov_trace_factorization; prop_skein_polynomial_transfer_matrix; def_transfer_matrix_operator; prop_beta_decay_transfer_matrix; prop_shell_structure_eigenvalues; prop_quantum_dilogarithm_volume; prop_reidemeister_action_table; conj_elliptic_stability_locus; prop_shell_closure_normal_form; prop_skein_finiteness_bound; cor_spectral_decomposition_qvalue; conj_electron_shells_hopf; prop_noble_gas_characterization; prop_metallic_character_knot; prop_hydrogen_shell_writhe; thm_descartes; ex_descartes_yekutieli; prop_terminal_resolution; }
+    { rank=same; def_brings_surface; prop_brings_is_qou; rem_braid_group_action; def_color_tube_coordinates; rem_color_tube_interpretation; prop_coral_elliptic; rem_color_tube_cubic; def_color_tube_fibers; rem_coral_bundles; prop_brings_smoothness_resolution; rem_brings_smoothness; def_briggs_klein_chart; def_quaternionic_spectral_resolvents; prop_mi_sw_abelianisation; def_coral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; prop_descartes_elliptic_curve; def_descartes_condition; prop_genus_maximal_descent; rem_descartes_chirality; rem_light_cone_affine; rem_chirality_trefoil; prop_torus_knot_generators; thm_embeddability_closure; prop_genus_filtration_ideal; prop_torus_embeddable_complete; thm_generation_completeness; def_up_quark; def_down_quark; def_electron_knot; def_positron_knot; def_neutrino_knot; def_antineutrino_knot; rem_linking_relations_table; def_q_value_transition; def_categorical_proton; def_categorical_neutron; prop_antiparticle_crossing_reversal; rem_chirality_trefoil_electron_positron; def_stable_nucleus; prop_torus_hopf_stability; rem_unmapped_torus_knots; rem_force_knot_identification; prop_em_coupling_projection; prop_integer_stability; rem_diophantine_valley; def_beta_decay_skein; def_lepton_number_categorical; prop_parity_violation_skein; prop_nuclear_spin_parity; prop_hadron_half_life; prop_hadron_q_self_correction; prop_skein_coulomb_enhancement; prop_nuclear_groebner_reduction; thm_groebner_shirshov_energy; prop_box_braid_irreducibility; prop_generator_volume_decomposition; thm_markov_trace_factorization; prop_skein_polynomial_transfer_matrix; def_transfer_matrix_operator; prop_beta_decay_transfer_matrix; prop_shell_structure_eigenvalues; prop_quantum_dilogarithm_volume; prop_reidemeister_action_table; conj_elliptic_stability_locus; prop_shell_closure_normal_form; prop_skein_finiteness_bound; cor_spectral_decomposition_qvalue; conj_electron_shells_hopf; prop_noble_gas_characterization; prop_metallic_character_knot; prop_hydrogen_shell_writhe; thm_descartes; ex_descartes_yekutieli; prop_terminal_resolution; }
   }
 
   subgraph cluster_ch4 {
@@ -257,6 +258,8 @@ digraph ProofDependencies {
   def_rigid_monoidal_category -> ex_rigid_monoidal_vect [color="#555555" style="solid"];
   def_rigid_monoidal_category -> def_quantum_universe [color="#555555" style="solid"];
   def_quantum_universe -> def_frobenius_pairing [color="#555555" style="solid"];
+  ex_quantum_universe_su2 -> ex_frobenius_pairing_su2 [color="#555555" style="solid"];
+  def_frobenius_pairing -> ex_frobenius_pairing_su2 [color="#555555" style="solid"];
   def_frobenius_pairing -> ex_quantum_universe_su2 [color="#555555" style="solid"];
   ex_rigid_monoidal_vect -> ex_quantum_universe_su2 [color="#555555" style="solid"];
   def_quantum_universe -> def_higher_forms [color="#555555" style="solid"];
@@ -280,12 +283,12 @@ digraph ProofDependencies {
   def_braid_twist_flip -> rem_braid_group_action [color="#555555" style="solid"];
   rem_braid_group_action -> def_color_tube_coordinates [color="#555555" style="solid"];
   def_color_tube_coordinates -> rem_color_tube_interpretation [color="#555555" style="solid"];
-  rem_braid_group_action -> prop_chiral_elliptic [color="#555555" style="solid"];
-  rem_holonomy_trefoil -> prop_chiral_elliptic [color="#555555" style="solid"];
-  prop_chiral_elliptic -> rem_color_tube_cubic [color="#555555" style="solid"];
+  rem_braid_group_action -> prop_coral_elliptic [color="#555555" style="solid"];
+  rem_holonomy_trefoil -> prop_coral_elliptic [color="#555555" style="solid"];
+  prop_coral_elliptic -> rem_color_tube_cubic [color="#555555" style="solid"];
   def_color_tube_coordinates -> rem_color_tube_cubic [color="#555555" style="solid"];
   rem_color_tube_cubic -> def_color_tube_fibers [color="#555555" style="solid"];
-  rem_chiral_bundles -> prop_brings_smoothness_resolution [color="#555555" style="solid"];
+  rem_coral_bundles -> prop_brings_smoothness_resolution [color="#555555" style="solid"];
   def_briggs_klein_chart -> prop_brings_smoothness_resolution [color="#555555" style="solid"];
   prop_brings_smoothness_resolution -> rem_brings_smoothness [color="#555555" style="solid"];
   def_brings_surface -> def_briggs_klein_chart [color="#555555" style="solid"];
@@ -295,10 +298,10 @@ digraph ProofDependencies {
   def_mass_identity -> prop_mi_sw_abelianisation [color="#555555" style="solid"];
   rem_weight_space_decomposition -> prop_mi_sw_abelianisation [color="#555555" style="solid"];
   rem_color_tube_cubic -> prop_mi_sw_abelianisation [color="#555555" style="solid"];
-  def_exceptional_divisor -> def_chiral_sector_coords [color="#555555" style="solid"];
-  rem_chirality_trefoil -> def_chiral_sector_coords [color="#555555" style="solid"];
+  def_exceptional_divisor -> def_coral_sector_coords [color="#555555" style="solid"];
+  rem_chirality_trefoil -> def_coral_sector_coords [color="#555555" style="solid"];
   prop_braid_action_tensor -> cor_descartes_braid_structure [color="#555555" style="solid"];
-  def_chiral_sector_coords -> cor_descartes_braid_structure [color="#555555" style="solid"];
+  def_coral_sector_coords -> cor_descartes_braid_structure [color="#555555" style="solid"];
   rem_r_matrix_braiding -> cor_descartes_braid_structure [color="#555555" style="solid"];
   prop_brings_is_qou -> cor_descartes_braid_structure [color="#555555" style="solid"];
   cor_descartes_braid_structure -> cor_descartes_knot_eigenbasis [color="#555555" style="solid"];
@@ -354,6 +357,7 @@ digraph ProofDependencies {
   rem_force_knot_identification -> prop_box_braid_irreducibility [color="#555555" style="solid"];
   rem_unmapped_torus_knots -> prop_box_braid_irreducibility [color="#555555" style="solid"];
   prop_nuclear_groebner_reduction -> prop_box_braid_irreducibility [color="#555555" style="solid"];
+  thm_groebner_shirshov_energy -> prop_box_braid_irreducibility [color="#555555" style="solid"];
   def_mass_identity -> prop_box_braid_irreducibility [color="#555555" style="solid"];
   prop_reidemeister_action_table -> prop_box_braid_irreducibility [color="#555555" style="solid"];
   thm_groebner_shirshov_energy -> prop_generator_volume_decomposition [color="#555555" style="solid"];
