@@ -462,8 +462,8 @@
     .print-dialog .pd-ch-row:hover{background:var(--bg-s)}
     .print-dialog .pd-ch-row input{margin:0}
     .print-dialog .pd-ch-actions{display:flex;gap:.5rem;font-size:.65rem;margin-top:.3rem}
-    .print-dialog .pd-ch-actions a{color:var(--ac);cursor:pointer;text-decoration:none}
-    .print-dialog .pd-ch-actions a:hover{text-decoration:underline}
+    .print-dialog .pd-ch-actions button{color:var(--ac);cursor:pointer;background:none;border:none;font-size:.65rem;font-family:var(--f-head);padding:0}
+    .print-dialog .pd-ch-actions button:hover{text-decoration:underline}
     .print-dialog .pd-opts{display:flex;flex-direction:column;gap:.4rem;margin-top:.5rem}
     .print-dialog .pd-opt{display:flex;align-items:center;gap:.4rem;font-size:.75rem}
     .print-dialog .pd-opt input{margin:0}
@@ -1128,8 +1128,8 @@
           <div class="pd-section-title">Select chapters</div>
           <div class="pd-chapters" id="pd-ch-list"></div>
           <div class="pd-ch-actions">
-            <a id="pd-ch-all">Select all</a>
-            <a id="pd-ch-none">Select none</a>
+            <button type="button" id="pd-ch-all">Select all</button>
+            <button type="button" id="pd-ch-none">Select none</button>
           </div>
         </div>
         <div class="pd-section">
@@ -1165,9 +1165,6 @@
       <div class="pd-panel" data-pd-panel="tex">
         <div class="pd-section">
           <p style="font-size:.75rem;color:var(--fg-d);margin:0 0 .8rem">Download the complete LaTeX source (main.tex, chapter files, preamble, bibliography) to compile on your own machine.</p>
-          <div class="pd-opts">
-            <label class="pd-opt"><input type="checkbox" id="pd-tex-journal" checked> Journal format (clean, no UI tags)</label>
-          </div>
         </div>
       </div>
       <div class="pd-btns">
@@ -1463,17 +1460,19 @@
         const activeTab = printOverlay.querySelector('.pd-tab.active')?.dataset.pdTab;
 
         if (activeTab === 'lightning') {
-          // Lightning print — open dependency chain in preview route
+          // Lightning print — open dependency chain in a new window
           if (!pdLightningSelected) { alert('Select a block to print its dependency chain.'); return; }
+          // Open window immediately (before await) to avoid popup blocker
+          const win = window.open('', '_blank');
+          if (!win) return;
           printOverlay.classList.remove('open');
           const incRm = document.getElementById('pd-lt-inc-remarks').checked;
           const incEx = document.getElementById('pd-lt-inc-examples').checked;
+          // Show loading state while indexing
+          win.document.write('<!DOCTYPE html><html><body><p>Loading dependency chain...</p></body></html>');
           // Ensure all blocks are indexed for dep graph
           if (paper?._ensureAllBlocksIndexed) await paper._ensureAllBlocksIndexed();
           const blocks = collectDepChainBlocks(pdLightningSelected, { includeExamples: incEx, includeRemarks: incRm });
-          // Open print window (reuse dep-print logic)
-          const win = window.open('', '_blank');
-          if (!win) return;
           const root = bix.get(pdLightningSelected);
           const title = root?.title || pdLightningSelected;
           const theme = document.documentElement.dataset.theme || '';
@@ -1488,9 +1487,14 @@
             const {html: bh, texBlocks: tx} = parseMd(b.md || '');
             return { block: b, html: bh, texBlocks: tx };
           });
+          // Rewrite the window with full content
+          win.document.open();
           win.document.write(`<!DOCTYPE html><html data-theme="${esc(theme)}"><head>
             <title>${esc(title)} — Lightning Print</title>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+            <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>
+            <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+              onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false})"><\/script>
             <style>
               :root{--fg:#222;--fg-b:#333;--fg-d:#888;--bg:#fff;--bg-r:#fafafa;--bg-s:#f5f5f5;--brd:#e0e0e0;--ac:#4f46e5;
                 --f-body:'Crimson Pro',Georgia,serif;--f-head:'Inter',system-ui,sans-serif;--f-mono:'JetBrains Mono',monospace}
@@ -1558,13 +1562,8 @@
           }
           win.document.write(`</body></html>`);
           win.document.close();
-          // Render KaTeX in the popup
-          win.addEventListener('load', () => {
-            if (win.renderMathInElement) win.renderMathInElement(win.document.body, { throwOnError: false });
-          });
         } else if (activeTab === 'tex') {
-          // TeX export — download LaTeX source files
-          printOverlay.classList.remove('open');
+          // TeX export — download LaTeX source files as a self-extracting shell script
           const printBtn = document.getElementById('pd-print');
           const origText = printBtn.textContent;
           printBtn.textContent = 'Exporting...';
@@ -1572,19 +1571,22 @@
           try {
             const r = await fetch('/api/tex-export');
             if (!r.ok) { alert('TeX export failed: ' + (await r.json()).error); return; }
+            printOverlay.classList.remove('open');
             const data = await r.json();
-            // Download each file, or create a single zip-like download
-            // For simplicity, create a combined .tar-like blob using JSZip-free approach
-            // Pack all files into a single downloadable .tex if only one, or offer each
             if (data.files.length === 1) {
               downloadFile(data.files[0].name, data.files[0].content, 'application/x-tex');
             } else {
-              // Create a simple shell script that recreates the directory structure
+              // Create a shell script that recreates the directory structure
               let script = '#!/bin/bash\n# QOU LaTeX source — extract and compile with: bash this_file.sh\n# Or just copy the files below.\n\n';
+              let fileIdx = 0;
               for (const f of data.files) {
                 const dir = f.name.includes('/') ? f.name.substring(0, f.name.lastIndexOf('/')) : '';
+                // Generate a unique heredoc delimiter that cannot appear in the file content
+                let delim;
+                do { delim = `EOF_${fileIdx}_${Math.random().toString(36).slice(2)}`; } while (f.content.includes(delim));
                 if (dir) script += `mkdir -p "${dir}"\n`;
-                script += `cat > "${f.name}" << 'ENDOFFILE'\n${f.content}\nENDOFFILE\n\n`;
+                script += `cat > "${f.name}" << '${delim}'\n${f.content}\n${delim}\n\n`;
+                fileIdx++;
               }
               script += '\necho "Files extracted. Compile with: latexmk -pdf main.tex"\n';
               downloadFile('qou-latex-source.sh', script, 'application/x-sh');
@@ -1634,16 +1636,19 @@
           if (incRemarks) remarkWraps.forEach(el => { el.dataset.prevDisplay = el.style.display; el.style.display = ''; });
           if (incExamples) exampleWraps.forEach(el => { el.dataset.prevDisplay = el.style.display; el.style.display = ''; });
 
+          // Restore state via afterprint event (handles async print dialogs)
+          const restorePrintState = () => {
+            document.body.classList.remove('print-hide-remarks', 'print-hide-examples', 'print-journal');
+            chDivs.forEach(cd => {
+              cd.classList.remove('print-hidden');
+              cd.style.display = prevDisplay.get(cd) ?? '';
+            });
+            if (incRemarks) remarkWraps.forEach(el => { el.style.display = el.dataset.prevDisplay ?? ''; delete el.dataset.prevDisplay; });
+            if (incExamples) exampleWraps.forEach(el => { el.style.display = el.dataset.prevDisplay ?? ''; delete el.dataset.prevDisplay; });
+          };
+          const onAfterPrint = () => { restorePrintState(); window.removeEventListener('afterprint', onAfterPrint); };
+          window.addEventListener('afterprint', onAfterPrint);
           window.print();
-
-          // Restore state after print
-          document.body.classList.remove('print-hide-remarks', 'print-hide-examples', 'print-journal');
-          chDivs.forEach(cd => {
-            cd.classList.remove('print-hidden');
-            cd.style.display = prevDisplay.get(cd) ?? '';
-          });
-          if (incRemarks) remarkWraps.forEach(el => { el.style.display = el.dataset.prevDisplay ?? ''; delete el.dataset.prevDisplay; });
-          if (incExamples) exampleWraps.forEach(el => { el.style.display = el.dataset.prevDisplay ?? ''; delete el.dataset.prevDisplay; });
         }
       });
     }
