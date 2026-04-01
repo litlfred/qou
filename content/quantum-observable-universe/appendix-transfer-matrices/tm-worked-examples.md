@@ -87,30 +87,34 @@ Two crossings: $(0, 1)$ and $(0, 2)$.
 | $(0, 1)$ | $\mathfrak{p}_0$-$\mathfrak{p}_1$ | pp | $T_{pp}$ |
 | $(0, 2)$ | $\mathfrak{p}_0$-$\mathfrak{n}_2$ | mix | $T_{\mathrm{mix}}$ |
 
-Product (right to left in the braid word):
+Product (decreasing $j$, per notation convention):
 
 $$
-  M_0(q) \;=\; T_{\mathrm{mix}}(q) \cdot T_{pp}(q)
+  M_0(q) \;=\; T_{pp}(q) \cdot T_{\mathrm{mix}}(q)
 $$
+
+(Here $j = 2$ contributes $T_{\mathrm{mix}}$ and $j = 1$
+contributes $T_{pp}$; since these specific matrices commute,
+the product equals $T_{\mathrm{mix}} \cdot T_{pp}$ as well.)
 
 **Step-by-step multiplication:**
 
 $$
   M_0 \;=\;
   \begin{pmatrix}
-    \frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2} & \frac{1+q^2}{2} \\
-    \frac{1+q^2}{2} & -\frac{qs}{2}
+    q-q^{-1} & 1 \\
+    1 & 0
   \end{pmatrix}
   \cdot
   \begin{pmatrix}
-    q-q^{-1} & 1 \\
-    1 & 0
+    \frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2} & \frac{1+q^2}{2} \\
+    \frac{1+q^2}{2} & -\frac{qs}{2}
   \end{pmatrix}
 $$
 
 $$
   (M_0)_{11} \;=\;
-    \left[\frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2}\right](q-q^{-1})
+    (q-q^{-1})\left[\frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2}\right]
     \;+\; \frac{1+q^2}{2}
 $$
 
@@ -122,7 +126,8 @@ $$
 
 $$
   (M_0)_{12} \;=\;
-    \frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2}
+    (q-q^{-1})\!\cdot\!\frac{1+q^2}{2}
+    \;-\; \frac{qs}{2}
 $$
 
 $$
@@ -181,7 +186,7 @@ Two protons, two neutrons.
 | $(0, 3)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |
 
 $$
-  M_0(q) \;=\; T_{\mathrm{mix}} \cdot T_{\mathrm{mix}} \cdot T_{pp}
+  M_0(q) \;=\; T_{pp} \cdot T_{\mathrm{mix}} \cdot T_{\mathrm{mix}}
 $$
 
 ### Generator $\sigma_1$ (2 crossings)
@@ -251,7 +256,7 @@ $M_1^{\mathrm{par}} = T_{nn}$
 | $(0, 1)$ | $\mathfrak{p}$-$\mathfrak{p}$ = pp | $T_{pp}$ |
 | $(0, 2)$ | $\mathfrak{p}$-$\mathfrak{n}$ = mix | $T_{\mathrm{mix}}$ |
 
-$M_0^{\mathrm{dau}} = T_{\mathrm{mix}} \cdot T_{pp}$
+$M_0^{\mathrm{dau}} = T_{pp} \cdot T_{\mathrm{mix}}$
 
 **Generator $\sigma_1$:**
 

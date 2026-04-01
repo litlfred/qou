@@ -331,19 +331,16 @@ $$
 
 ### 4e. Knot--mirror knot (any $K$ with $\overline{K}$)
 
-For a knot $K$ paired with its mirror $\overline{K}$:
+For a knot $K$ paired with its mirror $\overline{K}$ via
+**connected sum**, $J_{K \# \overline{K}} = J_K \cdot J_{\overline{K}}$
+gives $c = 1$, $d = 0$, so $T_{K,\overline{K}} = T_{pp}$.
 
-$$
-  c_{K, \overline{K}} = \frac{J_K(q) \cdot J_{\overline{K}}(q)}{J_{K \# \overline{K}}(q)},
-  \qquad
-  d_{K, \overline{K}} = -c \cdot \frac{qs}{1 + J_K(q) \cdot J_{\overline{K}}(q)}
-$$
-
-Since $J_{K \# \overline{K}}(q) = J_K(q) \cdot J_{\overline{K}}(q)$ for
-connected sums, this gives $c = 1$, $d = 0$ when the connected sum
-formula applies.  However, for nucleon crossings the relevant
-composition is not the connected sum but the **Hecke product**,
-which yields the non-trivial nuclear coefficients in Section 2.
+However, for **nucleon crossings** (the physically relevant
+case), the composition is via the Hecke product, not the
+connected sum.  The Hecke product yields the non-trivial
+nuclear coefficients $(c, d) \neq (1, 0)$ listed in Section 2
+— this is precisely the origin of the distinct $T_{nn}$ and
+$T_{\mathrm{mix}}$ matrices.
 
 ---
 
