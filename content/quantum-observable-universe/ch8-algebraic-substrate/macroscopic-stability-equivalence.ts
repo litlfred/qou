@@ -20,5 +20,5 @@ export default theorem({
     "macroscopic",
     "continuum",
   ],
-  cites: ["weil1948"],
+  cites: ["vonkoch1901", "weil1948"],
 });

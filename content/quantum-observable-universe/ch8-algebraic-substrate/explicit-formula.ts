@@ -18,5 +18,5 @@ export default theorem({
     "fourier-transform",
     "spectral-geometric",
   ],
-  cites: ["reshetikhin1991"],
+  cites: ["rosen2002", "weil1948", "reshetikhin1991"],
 });

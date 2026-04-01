@@ -15,5 +15,5 @@ export default theorem({
     "castelnuovo-severi",
     "riemann-hypothesis-finite-field",
   ],
-  cites: ["weil1948"],
+  cites: ["weil1948", "rosen2002", "milne2013"],
 });

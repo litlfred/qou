@@ -47,9 +47,14 @@ noncomputable def spectralSide
 /-- For q > 1, the q-integer [n]_q is positive for positive n. -/
 theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
     0 < qInteger q hq ρ := by
-  -- q^ρ > q^{-ρ} when q > 1 and ρ > 0, so numerator > 0.
-  -- q - q⁻¹ > 0 when q > 1. Hence the ratio is positive.
-  sorry
+  unfold qInteger
+  apply div_pos
+  · -- q^ρ > q^{-ρ} when q > 1 and ρ > 0
+    have hq_pos : (0 : ℝ) < q := by linarith
+    exact sub_pos.mpr (Real.rpow_lt_rpow_of_exponent_lt hq (by linarith : -ρ < ρ))
+  · -- q - q⁻¹ > 0 when q > 1
+    have : q⁻¹ < 1 := inv_lt_one_of_one_lt hq
+    linarith
 
 /-- The q-logarithm converges to the ordinary logarithm as q → 1. -/
 theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
@@ -76,7 +81,8 @@ theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
 
     This is the non-commutative analog of the classical explicit formula
     of prime number theory (Riemann–von Mangoldt). -/
--- Ref: [manuscript] Ch 8 §3
+-- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
+-- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
 -- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
 theorem explicit_formula
     (q : ℝ) (hq : 1 < q)

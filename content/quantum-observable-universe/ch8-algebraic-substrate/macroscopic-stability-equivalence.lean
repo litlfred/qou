@@ -42,8 +42,12 @@ def SpectralPersistence (spectral_limit : ℕ → Fin 8 → ℝ) : Prop :=
 
 /-- The equivalence (1) ↔ (2) is classical: the prime number theorem
     with optimal error term is equivalent to the Riemann hypothesis.
-    This was established by von Koch (1901). -/
--- Ref: [manuscript] Chapter 8, Section 5
+
+    Von Koch (1901) proved: RH ⟹ ψ(x) = x + O(x^{1/2} log²x).
+    The converse (optimal error ⟹ RH) follows from the explicit
+    formula: if any zero has Re(ρ) > 1/2, the oscillatory term
+    X^ρ/ρ violates the error bound. -/
+-- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
 theorem macroscopic_iff_rh (ψ : ℝ → ℝ) (ζ : ℂ → ℂ) :
     MacroscopicStability ψ ↔ RiemannHypothesis ζ := by
   sorry

@@ -25,8 +25,12 @@ namespace QOU.AlgebraicSubstrate
 
 /-- The functional equation of the local zeta function constrains
     eigenvalue norms: if αᵢ is an eigenvalue, so is q/αᵢ.
-    This pairs eigenvalues such that |αᵢ| · |q/αᵢ| = q. -/
+    This pairs eigenvalues such that |αᵢ| · |q/αᵢ| = q.
+
+    See [weil1948] §IV, or [rosen2002] Ch 5, Thm 5.9
+    (functional equation for the zeta function of a curve). -/
 -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
 theorem eigenvalue_functional_equation
     (Z : LocalQZetaFunction) (i : Fin 8) :
     ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i := by
@@ -34,16 +38,25 @@ theorem eigenvalue_functional_equation
 
 /-- The Castelnuovo–Severi inequality on B × B bounds the
     self-intersection of the Frobenius correspondence, yielding
-    |αᵢ|² ≤ q for all i. -/
+    |αᵢ|² ≤ q for all i.
+
+    See [weil1948] §V; [milne2013] §27 for the étale-cohomological
+    formulation; or [rosen2002] Ch 5, Thm 5.10 (Riemann hypothesis
+    for function fields). -/
 -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
 theorem castelnuovo_severi_bound
     (Z : LocalQZetaFunction) (i : Fin 8) :
     Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q := by
   sorry
 
 /-- The functional equation + Castelnuovo–Severi together force
-    |αᵢ|² = q (not just ≤). -/
--- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+    |αᵢ|² = q (not just ≤).
+
+    The functional equation gives |αᵢ| · |q/αᵢ| = q for paired
+    eigenvalues, so |αᵢ|² ≥ q. Combined with CS, equality holds.
+    See [rosen2002] Ch 5, proof of Thm 5.12. -/
+-- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
 theorem eigenvalue_norm_sq
     (Z : LocalQZetaFunction) (i : Fin 8)
     (h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)

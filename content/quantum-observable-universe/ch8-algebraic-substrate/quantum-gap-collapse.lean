@@ -58,8 +58,9 @@ theorem planck_tendsto_zero :
 theorem reeb_period_tendsto_atTop :
     Tendsto (fun q => |reebPeriod q|)
       (nhdsWithin 1 (Set.Ioi 1)) atTop := by
-  -- ℏ(q) → 0⁺ as q → 1⁺, so ℏ(q)⁻¹ → +∞
-  -- This requires Filter.Tendsto.inv_tendsto_zero applied to planck
+  -- planck q → 0⁺ as q → 1⁺ (planck_tendsto_zero), and planck q > 0
+  -- for q > 1 (planck_pos). The inverse of a positive function tending
+  -- to 0 tends to +∞: Filter.Tendsto.inv_tendsto_zero in Mathlib.
   sorry
 
 /-- **Quantum gap collapse (combined)**: Under the classical limit

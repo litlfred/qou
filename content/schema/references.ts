@@ -1340,6 +1340,50 @@ export const references: CSLData[] = [
     "publisher-place": "Paris",
     issued: { "date-parts": [[1948]] },
   }),
+
+  // ── von Koch 1901 (RH ↔ PNT error) ─────────────────────────
+  ref({
+    id: "vonkoch1901",
+    type: "article-journal",
+    title: "Sur la distribution des nombres premiers",
+    author: [
+      { family: "von Koch", given: "Helge" },
+    ],
+    "container-title": "Acta Mathematica",
+    issued: { "date-parts": [[1901]] },
+    volume: "24",
+    page: "159-182",
+    DOI: "10.1007/BF02403071",
+  }),
+
+  // ── Rosen 2002 (Function-field number theory) ───────────────
+  ref({
+    id: "rosen2002",
+    type: "book",
+    title: "Number Theory in Function Fields",
+    author: [
+      { family: "Rosen", given: "Michael" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[2002]] },
+    DOI: "10.1007/978-1-4757-6046-0",
+    collection_title: "Graduate Texts in Mathematics",
+    volume: "210",
+  }),
+
+  // ── Milne 2013 (Lectures on Étale Cohomology) ──────────────
+  ref({
+    id: "milne2013",
+    type: "book",
+    title: "Lectures on Étale Cohomology",
+    author: [
+      { family: "Milne", given: "James S." },
+    ],
+    publisher: "online notes",
+    issued: { "date-parts": [[2013]] },
+    URL: "https://www.jmilne.org/math/CourseNotes/LEC.pdf",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
