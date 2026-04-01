@@ -647,9 +647,8 @@ function lambdaPlus(qVal){
 }
 // Outermost electron shell index for Z
 function outerShell(Z){
-  // Approximate: period number from EL data
   const el=EL.find(e=>e[0]===Z);
-  return el?el[5]:1; // period field (index 5 = kalpha, use period at index 6)
+  return el?el[6]:1; // period is at index 6
 }
 function electronPeriod(Z){
   const el=EL.find(e=>e[0]===Z);
