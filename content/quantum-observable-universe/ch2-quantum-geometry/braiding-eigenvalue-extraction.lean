@@ -119,8 +119,12 @@ structure BraidingEigenvalueData where
   /-- The braiding is non-degenerate: both eigenvalues are nonzero. -/
   λ_sym_ne_zero : λ_sym ≠ 0
   λ_anti_ne_zero : λ_anti ≠ 0
-  /-- Determinant condition: λ_sym · λ_anti = -1.
-      Follows from Λ²V ≅ 𝟙 and functoriality of det. -/
+  /-- Hecke product condition: λ_sym · λ_anti = -1.
+      This is the product of roots of the Hecke polynomial
+      (T - q)(T + q⁻¹) = T² - (q - q⁻¹)T - 1, whose constant
+      term is -1.  Note: this is *not* the 4D determinant of
+      c_{V,V} on V ⊗ V (which would be q³·(-q⁻¹) = -q²), but
+      rather the product of the two *distinct* eigenvalues. -/
   det_constraint : λ_sym * λ_anti = -1
 
 /-- The deformation parameter q extracted from braiding eigenvalues.
