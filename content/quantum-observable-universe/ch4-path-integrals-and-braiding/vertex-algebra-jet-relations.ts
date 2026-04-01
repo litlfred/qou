@@ -2,10 +2,6 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:vertex-algebra-jet-relations",
-  lean: {
-    decl: "QOU.vertex_algebra_jet_relations",
-    validation: "not_checked",
-  },
   title: "QU/QUO and cohomological relations on the jet bundle",
   tags: [
     "vertex-operator", "jet-prolongation", "brane-tower",

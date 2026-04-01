@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:vertex-algebra-relations",
   lean: {
-    decl: "QOU.vertex_algebra_relations",
+    decl: "QOU.VertexAlgebra.descartes_genus",
     validation: "not_checked",
   },
   title: "QU and QUO axioms as relations on Hecke generators",
@@ -32,5 +32,5 @@ export default proposition({
     "rem:instanton-on-shell",
     "def:categorical-connection",
   ],
-  cites: ["kassel1995", "jones1987", "turaev1988", "yekutieli2010"],
+  cites: ["kassel1995", "jones1987", "yekutieli2010"],
 });

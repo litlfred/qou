@@ -234,7 +234,7 @@ entirely determined by level $n$.
 ### D-4: Bosonic vs fermionic modes
 
 The descent eigenspaces
-([descent eigenspaces](#rem:descent-eigenspaces)) separate
+([descent eigenspaces](#prop:descent-eigenspaces)) separate
 modes by statistics:
 
 - **Bosonic (longitudinal)**: $w \in \mathcal{A}^{\mathrm{desc}}_{n+1}$
