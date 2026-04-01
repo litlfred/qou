@@ -28,7 +28,7 @@ $$
 $$
 
 arising from the Skein resolution asymmetry between the
-$u$-$u$ and $d$-$d$ crossing pairs within $\mathcal{B}_3$.
+$\mathfrak{u}$-$\mathfrak{u}$ and $\mathfrak{d}$-$\mathfrak{d}$ crossing pairs within $\mathcal{B}_3$.
 
 **Coulomb charge.**
 
@@ -38,8 +38,8 @@ $$
 $$
 
 The neutron is electrically neutral: its one positive-orientation
-unknot ($u$) is exactly cancelled by two negative-orientation
-unknots ($d$).  Inter-neutron Hopf crossings pick up the
+unknot ($\mathfrak{u}$) is exactly cancelled by two negative-orientation
+unknots ($\mathfrak{d}$).  Inter-neutron Hopf crossings pick up the
 coefficient $q^{-1}$ (negative crossings), producing an
 attractive enhancement — the categorical expression of
 electric neutrality.

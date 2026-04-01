@@ -25,8 +25,8 @@ with quark strands:
   ([categorical neutron](#def:categorical-neutron))
 
 The crossing type at each generator $\sigma_i$ depends on the
-quark flavours of the two strands: $u$-$u$ (positive), $d$-$d$
-(negative), or $u$-$d$ (mixed).
+quark flavours of the two strands: $\mathfrak{u}$-$\mathfrak{u}$ (positive), $\mathfrak{d}$-$\mathfrak{d}$
+(negative), or $\mathfrak{u}$-$\mathfrak{d}$ (mixed).
 
 ## The $T_{3,5}$ weak vertex
 
@@ -144,7 +144,7 @@ $$
   = \frac{q \mu_b + q^{-1} \mu_a}{q^{1/2} + q^{-1/2}}
 $$
 
-When $\mu_a \neq \mu_b$ (i.e., $\mu_u \neq \mu_d$), the two
+When $\mu_a \neq \mu_b$ (i.e., $\mu_{\mathfrak{u}} \neq \mu_{\mathfrak{d}}$), the two
 are distinct: the asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba}
 = (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the
 **weak asymmetry** that drives the $Q$-value.
