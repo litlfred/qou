@@ -22,6 +22,7 @@ LaTeX label: `prop:tannaka-krein-reconstruction`
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 
@@ -91,7 +92,10 @@ to make the dependency explicit: this is a published result we cite,
 not a gap we intend to fill within this project.
 
 The three hypotheses are:
-1. **Rigidity**: every object in C has a dual (left and right).
+1. **Rigidity**: C is a rigid monoidal category (Mathlib's
+   `RigidCategory` typeclass — every object has both left and
+   right duals with evaluation/coevaluation satisfying the
+   zig-zag identities).
 2. **Faithfulness**: the fibre functor τ reflects isomorphisms.
 3. **Exactness**: τ preserves and reflects exact sequences.
 
@@ -105,8 +109,10 @@ them to actual functor properties is tracked as future work. -/
 axiom tannaka_krein_reconstruction
     (C : Type u) [Category.{v} C] [MonoidalCategory C]
     (k : Type*) [CommRing k]
-    -- C is rigid (every object has a left dual)
-    (hrigid : ∀ (X : C), ∃ (Y : C), Nonempty (X ⊗ Y ≅ 𝟙_ C))
+    -- C is rigid: every object has left and right duals with
+    -- evaluation/coevaluation maps satisfying zig-zag identities
+    -- (ExactPairing, HasLeftDual, HasRightDual).
+    [RigidCategory C]
     -- τ : C → k-Mod is faithful
     (τ_faithful : Prop)
     -- τ : C → k-Mod is exact
