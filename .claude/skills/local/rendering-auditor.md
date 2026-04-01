@@ -44,7 +44,7 @@ passes (garbage-in-garbage-out).
 
 ## Pass 1: Markdown + TeX Syntax
 
-**Tools**: remark AST (remark-math), unified-latex AST, Zod schema
+**Tools**: remark AST (remark-gfm + remark-math), unified-latex AST, Zod schema
 **Speed**: Fast (no compilation)
 
 ### Checks
@@ -59,7 +59,9 @@ passes (garbage-in-garbage-out).
 | No `$$...$$` with content on same line as delimiters | **error** | Pipeline splits opening `\[` from closing `$$`, producing mixed-delimiter LaTeX error |
 | No bare `\eqref{}` outside math mode | **error** | Renders as literal text in HTML; use `[text](#label)` cross-ref instead |
 | Markdown list syntax correct (`1.` / `-` with proper indentation) | **warning** | remark AST — malformed lists produce paragraph nodes instead |
-| Markdown table syntax valid (pipe-delimited, header separator) | **warning** | remark AST parse — invalid tables render as plain text |
+| Markdown table syntax valid (pipe-delimited, header separator) | **warning** | remark-gfm AST parse — invalid tables render as plain text; valid tables become `\begin{tabular}` with booktabs |
+| Bare `_` in table cells outside math/code | **error** | Underscores trigger LaTeX subscript; wrap in backticks or `$...$` |
+| Table cells with bare identifiers (Lean decls etc.) | **error** | Must use backtick inline code: `` `QOU.Foo.bar_baz` `` → `\texttt{QOU.Foo.bar\_baz}` |
 | Block `.ts` manifest validates against Zod schema | **error** | `BlockSchema.safeParse()` |
 | Title math preserved in `$...$` delimiters (not bare TeX) | **error** | Check `.ts` title field for bare `\mathrm{}` etc. without `$` wrapping |
 | Fenced code blocks have language tag | **info** | `` ``` `` without `tex` tag won't pass through correctly |
