@@ -38,9 +38,9 @@ The mass functional `𝓜(K)` for a knot/link `K` satisfies:
 ## References
 
 - [turaev2010] V. Turaev, *Quantum Invariants of Knots and 3-Manifolds*, de Gruyter 2010.
-- [CODATA2022] NIST CODATA 2022 Recommended Values of Fundamental Constants.
+- [codata2022] NIST CODATA 2022 Recommended Values of Fundamental Constants.
   https://physics.nist.gov/cuu/Constants/
-- [KronheimerMrowka2004] P. Kronheimer & T. Mrowka, *Witten's Conjecture and
+- [kronheimer2004] P. Kronheimer & T. Mrowka, *Witten's Conjecture and
   Property P*, Geom. Topol. 2004.
 -/
 

@@ -18,10 +18,10 @@ namespace QOU
 
 /-- **CR manifold data** for the ℂ realisation.
 
-    A 5-tuple `(M, θ, G, P, E)` as in Example 1.3.  `M` is a CR manifold
-    of hypersurface type with non-degenerate Levi form; `θ` is the contact
-    form (pseudo-Hermitian structure); `G = SU(2)`; `P → M` is a principal
-    `G`-bundle; `E = P ×_G CP¹` is the state bundle.
+    Canonical 4-tuple `(C, θ, G, S)`: `C = Rep(SU_q(2))` is the monoidal
+    category; `θ` is the contact form (pseudo-Hermitian structure) on a
+    CR manifold `M` (implicit as domain of `θ`); `G = SU(2)`;
+    `S = P ×_G CP¹` is the state bundle (principal bundle `P` implicit).
 
     LaTeX: `\label{def:c-quantum-universe}` -/
 structure CRManifoldData where
@@ -49,9 +49,9 @@ structure CQuantumObservableUniverse extends CRManifoldData where
   adjointSections : Type*
   /-- `H⁰(M, Ad(P))` is trivial. -/
   adjoint_cohomology_vanishes : Subsingleton adjointSections
-  /-- The type of compactly supported sections of the state bundle `E`. -/
+  /-- The type of compactly supported sections of the state bundle `S`. -/
   compactStateSections : Type*
-  /-- `Γ_c(M, E)` is trivial. -/
+  /-- `Γ_c(M, S)` is trivial. -/
   state_sections_vanish : Subsingleton compactStateSections
 
 /-- **Instanton connection** on a principal bundle `P` over a CR manifold.

@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Frederick Leitner" />
-  <meta name="dcterms.date" content="2004-10-14" />
+  <meta name="author" content="litlfred" />
+  <meta name="dcterms.date" content="2026-04-01" />
   <title>Quantum Observable Universe</title>
   <style>
     html {
@@ -84,17 +84,6 @@
       padding-left: 1em;
       border-left: 2px solid #e6e6e6;
       color: #606060;
-    }
-    div.abstract {
-      margin: 2em 2em 2em 2em;
-      text-align: left;
-      font-size: 85%;
-    }
-    div.abstract-title {
-      font-weight: bold;
-      text-align: center;
-      padding: 0;
-      margin-bottom: 0.5em;
     }
     code {
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
@@ -348,11 +337,10 @@ code { font-size: 90%; }
     <span class="toc-wrapper">
       <button id="toc-btn" class="toc-btn">&#9776; Contents</button>
       <div id="toc-dropdown" class="toc-dropdown">
-        <a class="toc-ch" href="#chap:ugb">Unital Gröbner Bases over Arbitrary Commutative Ground Rings</a>
-        <a class="toc-sec" href="#sec:ugb-introduction">Introduction</a>
-        <a class="toc-sec" href="#sec:ugb-definitions">Monomials, orderings, and admissible systems</a>
-        <a class="toc-sec" href="#sec:ugb-division">Division algorithm and Gröbner bases</a>
-        <a class="toc-sec" href="#sec:ugb-main-results">Main results</a>
+        <a class="toc-ch" href="#chap:viz-overview">Overview</a>
+        <a class="toc-sec" href="#sec:viz-intro">Introduction</a>
+        <a class="toc-sec" href="#sec:viz-brings">Bring&#x27;s Surface</a>
+        <a class="toc-sec" href="#sec:viz-knots">Knot Complements</a>
       </div>
     </span>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">&#x1F319;</button>
@@ -362,26 +350,8 @@ code { font-size: 90%; }
 
 <header id="title-block-header">
 <h1 class="title">Quantum Observable Universe</h1>
-<p class="author">Frederick Leitner</p>
-<p class="date">2004-10-14</p>
-<div class="abstract">
-<div class="abstract-title">Abstract</div>
-<p>Let <span class="math inline">\(R\)</span> be a commutative ring with
-unity and let <span class="math inline">\(A\)</span> be a not
-necessarily commutative <span class="math inline">\(R\)</span>-algebra
-which is free as an <span class="math inline">\(R\)</span>-module. If
-<span class="math inline">\(I\)</span> is an ideal in <span
-class="math inline">\(A\)</span>, one can ask when <span
-class="math inline">\(A/I\)</span> is also free as an <span
-class="math inline">\(R\)</span>-module. We show that if <span
-class="math inline">\(A\)</span> has an admissible system and <span
-class="math inline">\(I\)</span> has a unital Gröbner basis then <span
-class="math inline">\(A/I\)</span> is free as an <span
-class="math inline">\(R\)</span>-module. We prove a version of
-Buchberger’s theorem over <span class="math inline">\(R\)</span> and, as
-a corollary, we obtain a Gröbner basis proof of the
-Poincaré–Birkhoff–Witt Theorem over a commutative ground ring.</p>
-</div>
+<p class="author">litlfred</p>
+<p class="date">2026-04-01</p>
 </header>
 <div class="center">
 
@@ -416,558 +386,88 @@ class="math inline">\(\times\)</span></span></td>
 </tr>
 </tbody>
 </table>
-<h1
-id="unital-gröbner-bases-over-arbitrary-commutative-ground-rings">Unital
-Gröbner Bases over Arbitrary Commutative Ground Rings</h1>
-<h2 id="<span id="sec:ugb-introduction"></span>introduction">Introduction</h2>
-<p>There have been several generalizations of Gröbner basis theory,
-coming in one of two flavors: noncommutative theory and theories for
-working over special ground rings, e.g. Euclidean domains, PID’s or
-UFD’s. Over a field, one of the main uses of a Gröbner basis is to find
-a basis for the quotient of an algebra <span
-class="math inline">\(A\)</span> by a (left or two-sided) ideal <span
-class="math inline">\(I\)</span>.</p>
-<p>A consideration of the standard examples shows that the ground field
-<span class="math inline">\(k\)</span> never enters into the picture.
-Specifically, one does not need to invert any constants, and this leads
-to the notion of a <em>unital Gröbner basis</em>. We view the inability
-of classical Gröbner basis techniques to apply to these mild
-generalizations as an unsatisfactory state of affairs.</p>
-<h2 id="monomials-orderings-and-admissible-systems">Monomials,
-orderings, and admissible systems</h2>
-<div id="def:monomial-basis" class="definition">
-
-<p><strong>Definition 1.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.AlgElement" target="_blank" title="Lean: QOU.GrobnerShirshov.AlgElement">&#x2200; stated</a></strong> (Monomials, monomial bases, and
-leading terms). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.AlgElement"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a> Throughout,
-<span class="math inline">\(R\)</span> is a commutative ring with unity
-and <span class="math inline">\(A\)</span> is an <span
-class="math inline">\(R\)</span>-algebra without quasi-zeros
-(i.e. elements <span class="math inline">\(a \in A\)</span> such that
-<span class="math inline">\(bac = 0\)</span> for all <span
-class="math inline">\(b, c \in A\)</span> not both <span
-class="math inline">\(1\)</span>).</em></p>
-<p><em>Choose a set of algebra generators <span class="math inline">\(A
-= R\langle x_i \mid i \in \Lambda\rangle\)</span> for some index set
-<span class="math inline">\(\Lambda\)</span>.</em></p>
-<p><em><strong>Monomials.</strong> Let <span
-class="math inline">\(\alpha = \alpha_1 \alpha_2 \cdots
-\alpha_n\)</span> be a finite-length word in <span
-class="math inline">\(\Lambda\)</span>. A <em>monomial</em> in <span
-class="math inline">\(A\)</span> is the ordered product</em></p>
-<p><em><span class="math display">\[x_\alpha := x_{\alpha_1} \cdot
-x_{\alpha_2} \cdots x_{\alpha_n}.\]</span></em></p>
-<p><em><strong>Monomial basis.</strong> Suppose <span
-class="math inline">\(A\)</span> is free as an <span
-class="math inline">\(R\)</span>-module. We say <span
-class="math inline">\(A\)</span> has a <em>monomial basis</em> <span
-class="math inline">\(B\)</span> subordinate to <span
-class="math inline">\(\Lambda\)</span> if <span
-class="math inline">\(B\)</span> is a subset of all finite-length words
-in <span class="math inline">\(\Lambda\)</span> such that</em></p>
-<p><em><span class="math display">\[A = R\{x_\beta \mid \beta \in
-B\}.\]</span></em></p>
-<p><em>We identify <span class="math inline">\(\beta\)</span> with <span
-class="math inline">\(x_\beta\)</span> to simplify notation.</em></p>
-<p><em><strong>Leading terms.</strong> Assume <span
-class="math inline">\(B\)</span> is well-ordered by <span
-class="math inline">\(&lt;\)</span>. For <span class="math inline">\(f
-\in A\)</span>, write <span class="math inline">\(f\)</span> uniquely
-as</em></p>
-<p><em><span class="math display">\[f = c_1 b_1 + c_2 b_2 + \cdots + c_n
-b_n,
-\qquad c_i \in R^* := R \setminus \{0\},\;
-b_i \in B,\;
-b_1 &gt; b_2 &gt; \cdots &gt; b_n.\]</span></em></p>
-<p><em>Then define:</em></p>
+<h1 id="<span id="chap:viz-overview"></span>overview">Overview</h1>
+<h2 id="<span id="sec:viz-intro"></span>introduction">Introduction</h2>
+<p>The QOU Visualizer provides interactive views of the mathematical
+structures described in the Quantum Observable Universe paper. Rather
+than duplicating content, it references definitions and theorems from
+the main paper via cross-references and renders them through specialized
+visualization modes:</p>
 <ul>
-<li><p><em><span class="math inline">\(\mathrm{LM}(f) := b_1\)</span>
-(the <em>leading monomial</em>),</em></p></li>
-<li><p><em><span class="math inline">\(\mathrm{LC}(f) := c_1\)</span>
-(the <em>leading coefficient</em>),</em></p></li>
-<li><p><em><span class="math inline">\(\mathrm{LT}(f) :=
-\mathrm{LC}(f)\,\mathrm{LM}(f)\)</span> (the <em>leading
-term</em>).</em></p></li>
+<li><p><strong>Bring’s surface</strong> — quaternionic spectral
+resolvents rendered as 3D surfaces, with controls for the torsion
+parameter <span class="math inline">\(q\)</span>, projection mode, and
+camera orbit.</p></li>
+<li><p><strong><span id="sec:viz-knots"></span>Knot complements</strong> — hyperbolic 3-manifold
+computations via the SnapPea kernel (compiled to WebAssembly), providing
+volumes, Dehn fillings, fundamental group presentations, and homology
+for knot complements in the particle registry.</p></li>
+<li><p><strong>Dependency graph</strong> — the content-object DAG,
+showing how definitions, theorems, and conjectures depend on each other,
+with formalization status overlaid from the Lean build.</p></li>
 </ul>
-</div>
+<h2 id="brings-surface">Bring’s Surface</h2>
+<div id="def:viz-brings-surface" class="definition">
 
-<div id="def:admissible-system" class="definition">
-
-<p><strong>Definition 1.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.AdmissibleOrder" target="_blank" title="Lean: QOU.GrobnerShirshov.AdmissibleOrder">&#x2200; stated</a></strong> (Monomial ordering and admissible
-system). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.AdmissibleOrder"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>A <em>monomial ordering</em> for a <a
-href="#def:monomial-basis">monomial basis</a> <span
-class="math inline">\(B\)</span> of an algebra <span
-class="math inline">\(A\)</span> is a well-ordering <span
-class="math inline">\(&lt;\)</span> on <span
-class="math inline">\(B\)</span> such that for <span
-class="math inline">\(b, b&#39;, r, s \in B\)</span>:</em></p>
-<ol type="1">
-<li><p><em>If <span class="math inline">\(b &lt; b&#39;\)</span> then
-<span class="math inline">\(r \cdot b \cdot s &lt; r \cdot b&#39; \cdot
-s\)</span> whenever <span class="math inline">\(r \cdot b \cdot s \neq
-0\)</span> and <span class="math inline">\(\mathrm{LM}(r \cdot b&#39;
-\cdot s) \neq 0\)</span>.</em></p></li>
-<li><p><em>If <span class="math inline">\(b&#39; = \mathrm{LM}(r \cdot b
-\cdot s) \neq 0\)</span> with <span class="math inline">\(r\)</span> or
-<span class="math inline">\(s \neq 1\)</span>, then <span
-class="math inline">\(b &lt; \mathrm{LM}(b&#39;)\)</span>.</em></p></li>
-</ol>
-<p><em>If <span class="math inline">\(B\)</span> admits a monomial
-ordering <span class="math inline">\(&lt;\)</span>, then the pair <span
-class="math inline">\((B, &lt;)\)</span> is an <em>admissible
-system</em>.</em></p>
-<p><em><strong>Divisibility.</strong> If <span class="math inline">\((B,
-&lt;)\)</span> is an admissible system and <span class="math inline">\(0
-\neq f \in A\)</span>, we say <span class="math inline">\(\beta \in
-B\)</span> <em>divides</em> <span class="math inline">\(f\)</span>
-(written <span class="math inline">\(\beta \mid f\)</span>) if there
-exist <span class="math inline">\(u, v \in B\)</span> and <span
-class="math inline">\(\lambda \in R^*\)</span> such that</em></p>
-<p><em><span class="math display">\[\lambda\,\mathrm{LT}(u \cdot \beta
-\cdot v) = \mathrm{LT}(f).\]</span></em></p>
-</div>
-
-<div id="def:remainder-module" class="definition">
-
-<p><strong>Definition 1.3 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.isNormalForm" target="_blank" title="Lean: QOU.GrobnerShirshov.isNormalForm">&#x2200; stated</a></strong> (Remainder modules <span
-class="math inline">\(O(I)\)</span> and <span
-class="math inline">\(\tilde{O}(I)\)</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.isNormalForm"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\(R\)</span> be a commutative ring
-with unity, <span class="math inline">\(A\)</span> an <span
-class="math inline">\(R\)</span>-algebra which is free as an <span
-class="math inline">\(R\)</span>-module and without quasi-zeros, <span
-class="math inline">\((B, &lt;)\)</span> an <a
-href="#def:admissible-system">admissible system</a> on <span
-class="math inline">\(A\)</span>, and <span class="math inline">\(I
-\subseteq A\)</span> a subset.</em></p>
-<p><em>Define the <span class="math inline">\(R\)</span>-submodule <span
-class="math inline">\(O(I)\)</span> of <span
-class="math inline">\(A\)</span> as the <span
-class="math inline">\(R\)</span>-submodule spanned by the set</em></p>
-<p><em><span class="math display">\[o(I) := \bigl\{\lambda\beta
-\;\big|\;
-\lambda \in R^*,\; \beta \in B,\;
-\forall\, h \in I\colon \mathrm{LT}(h) \neq
-\lambda\beta\bigr\}.\]</span></em></p>
-<p><em>Define also the <span class="math inline">\(R\)</span>-module
-<span class="math inline">\(\tilde{O}(I)\)</span> as the <span
-class="math inline">\(R\)</span>-submodule spanned by</em></p>
-<p><em><span class="math display">\[\tilde{o}(I) := B \setminus
-\{\mathrm{LM}(h) \mid h \in I\}.\]</span></em></p>
-<p><em>Clearly <span class="math inline">\(\tilde{O}(I)\)</span> is a
-free <span class="math inline">\(R\)</span>-module.</em></p>
-</div>
-
-<h2 id="division-algorithm-and-gröbner-bases">Division algorithm and
-Gröbner bases</h2>
-<div id="def:division-algorithm" class="definition">
-
-<p><strong>Definition 1.4 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.reduce" target="_blank" title="Lean: QOU.GrobnerShirshov.reduce">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:division-algorithm">Division algorithm</a>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.reduce"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em><strong>Input:</strong> <span class="math inline">\(R\)</span> a
-commutative ring with unity, <span class="math inline">\(A\)</span> an
-<span class="math inline">\(R\)</span>-algebra which is free as an <span
-class="math inline">\(R\)</span>-module and without quasi-zeros, <span
-class="math inline">\((B, &lt;)\)</span> an <a
-href="#def:admissible-system">admissible system</a> on <span
-class="math inline">\(A\)</span>, a subset <span class="math inline">\(I
-\subseteq A\)</span>, and <span class="math inline">\(f \in
-A\)</span>.</em></p>
-<p><em><strong>Output:</strong> <span class="math inline">\(\tilde{f}
-\in I\)</span> and <span class="math inline">\(r \in O(I)\)</span> (the
-<em>remainder</em> of <span class="math inline">\(f\)</span> on division
-by <span class="math inline">\(I\)</span>) so that <span
-class="math inline">\(f = r + \tilde{f}\)</span>.</em></p>
-<ol type="1">
-<li><p><em>Set <span class="math inline">\(i := 0\)</span>, <span
-class="math inline">\(f_0 := f\)</span>.</em></p></li>
-<li><p><em><strong>While</strong> <span class="math inline">\(f_i \neq
-0\)</span>:</em></p>
+<p><strong>Definition 1.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState" target="_blank" title="Lean: QOU.BringsSurface.ViewportState">&#x2200; stated</a></strong> (Bring’s surface viewport). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a> The Bring’s
+surface visualizer renders quaternionic spectral resolvents as
+interactive 3D surfaces. The viewport state is fully serialisable (see
+VizState in schemas/qou-types.ts) and can be embedded in URLs or
+Markdown to reproduce a specific view.</em></p>
+<p><em><strong>Viewport parameters:</strong></em></p>
 <ul>
-<li><p><em>Set <span class="math inline">\(i := i +
-1\)</span>.</em></p></li>
-<li><p><em><strong>If</strong> there is no <span class="math inline">\(h
-\in I\)</span> with <span class="math inline">\(\mathrm{LT}(h) \mid
-f\)</span>: set <span class="math inline">\(r_i :=
-\mathrm{LT}(f)\)</span> and <span class="math inline">\(f_i := f_{i-1} -
-r_i\)</span>.</em></p></li>
-<li><p><em><strong>Else</strong>: choose <span class="math inline">\(h_i
-\in I\)</span> with <span class="math inline">\(0 \neq \mathrm{LT}(h_i)
-\mid f_{i-1}\)</span>; choose <span class="math inline">\(\lambda_i \in
-R^*\)</span>, <span class="math inline">\(u_i, v_i \in B\)</span> so
-that <span class="math inline">\(\lambda_i \mathrm{LT}(u_i \cdot h_i
-\cdot v_i) = \mathrm{LT}(f_{i-1})\)</span>; set <span
-class="math inline">\(f_i := f_{i-1} - \lambda_i u_i \cdot h_i \cdot
-v_i\)</span> and <span class="math inline">\(r_i :=
-0\)</span>.</em></p></li>
-</ul></li>
-<li><p><em>Return <span class="math inline">\(r := \sum_i r_i\)</span>
-and <span class="math inline">\(\tilde{f} := \sum_i \lambda_i u_i \cdot
-h_i \cdot v_i = f - r\)</span>.</em></p></li>
-</ol>
-<p><em>Because we do not specify how to choose <span
-class="math inline">\(h_i\)</span> (nor <span class="math inline">\(u_i,
-v_i\)</span>), the output is not in general unique.</em></p>
+<li><p><em><span class="math inline">\(q\)</span> — torsion/chirality
+parameter. <span class="math inline">\(q = 0\)</span> is classical;
+<span class="math inline">\(q &gt; 0\)</span> introduces chiral twist in
+the colour-sector coordinates <span class="math inline">\((\mathfrak{r},
+\mathfrak{g}, \mathfrak{b})\)</span>.</em></p></li>
+<li><p><em><strong>Mode</strong> — CP1 shows the <span
+class="math inline">\(\mathbb{C}P^1\)</span> exceptional fibre; cone
+shows the outgoing chiral tube cones.</em></p></li>
+<li><p><em><strong>Camera</strong> — spherical coordinates <span
+class="math inline">\((\theta, \phi, r)\)</span> with configurable
+look-at target.</em></p></li>
+</ul>
+<p><em><span class="math display">\[\rho(s) = s \cdot \ell_P \cdot
+\sigma \cdot \Xi_q, \qquad
+\psi_i(s) = \frac{2\pi i}{3} + q \cdot 2\pi s \cdot Q \cdot
+\gamma\]</span></em></p>
 </div>
 
-<div id="def:groebner-basis" class="definition">
+<h2 id="knot-complements">Knot Complements</h2>
+<div id="def:viz-knot-complement" class="definition">
 
-<p><strong>Definition 1.5 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.IsGrobnerShirshovBasis" target="_blank" title="Lean: QOU.GrobnerShirshov.IsGrobnerShirshovBasis">&#x2200; stated</a></strong> (Gröbner basis and unital Gröbner
-basis). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.IsGrobnerShirshovBasis"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\(R\)</span> be a commutative ring
-with unity, <span class="math inline">\(A\)</span> an <span
-class="math inline">\(R\)</span>-algebra which is free as an <span
-class="math inline">\(R\)</span>-module and without quasi-zeros, <span
-class="math inline">\((B, &lt;)\)</span> an <a
-href="#def:admissible-system">admissible system</a>, and <span
-class="math inline">\(I\)</span> a two-sided ideal in <span
-class="math inline">\(A\)</span>.</em></p>
-<p><em><strong>Gröbner basis.</strong> A set of generators <span
-class="math inline">\(G = \{g_\gamma \mid \gamma \in \Gamma\}\)</span>
-for <span class="math inline">\(I\)</span> is a <em>Gröbner basis</em>
-with respect to <span class="math inline">\((B, &lt;)\)</span> if for
-every <span class="math inline">\(h \in I\)</span> we have a
-representation</em></p>
-<p><em><span class="math display">\[h = \sum_{k \in K} \lambda_k\, u_k
-\cdot g_{\gamma_k} \cdot v_k\]</span></em></p>
-<p><em>for <span class="math inline">\(K\)</span> an index set, <span
-class="math inline">\(\gamma_k \in \Gamma\)</span>, <span
-class="math inline">\(\lambda_k \in R^*\)</span>, <span
-class="math inline">\(u_k, v_k \in B\)</span>, such that <span
-class="math inline">\(\mathrm{LM}(u_k \cdot g_{\gamma_k} \cdot v_k) \leq
-\mathrm{LM}(h)\)</span> whenever <span class="math inline">\(u_k \cdot
-g_{\gamma_k} \cdot v_k \neq 0\)</span>.</em></p>
-<p><em><strong>Unital.</strong> A subset <span class="math inline">\(G
-\subseteq A\)</span> is <em>unital</em> if:</em></p>
-<ol type="1">
-<li><p><em>For all <span class="math inline">\(\gamma \in
-\Gamma\)</span>: <span class="math inline">\(\mathrm{LC}(g_\gamma) \in
-R^\times\)</span> (the units of <span
-class="math inline">\(R\)</span>).</em></p></li>
-<li><p><em>For all <span class="math inline">\(\gamma \in
-\Gamma\)</span> and <span class="math inline">\(\alpha, \beta \in
-B\)</span>: <span class="math inline">\(\mathrm{LC}(\alpha \cdot
-g_\gamma \cdot \beta) \in R^\times\)</span> whenever <span
-class="math inline">\(\alpha \cdot g_\gamma \cdot \beta \neq
-0\)</span>.</em></p></li>
-</ol>
-<p><em><strong><span
-class="math inline">\(S\)</span>-polynomial.</strong> For <span
-class="math inline">\(f, f&#39; \in A\)</span>, an <em><span
-class="math inline">\(S\)</span>-polynomial</em> is constructible about
-<span class="math inline">\(f\)</span> and <span
-class="math inline">\(f&#39;\)</span> if there exist <span
-class="math inline">\(u, u&#39;, v, v&#39; \in B\)</span>, <span
-class="math inline">\(\lambda, \lambda&#39; \in R^*\)</span> such
-that</em></p>
-<p><em><span class="math display">\[\lambda\,\mathrm{LT}(u \cdot
-\mathrm{LT}(f) \cdot v)
-= \lambda&#39;\,\mathrm{LT}(u&#39; \cdot \mathrm{LT}(f&#39;) \cdot
-v&#39;).\]</span></em></p>
-<p><em>In this case,</em></p>
-<p><em><span class="math display">\[S(f, f&#39;) := \lambda\, u \cdot f
-\cdot v
-- \lambda&#39;\, u&#39; \cdot f&#39; \cdot v&#39;.\]</span></em></p>
-<p><em>If the ground ring is a field, every Gröbner basis is
-automatically unital. If <span class="math inline">\(B\)</span> is
-closed under multiplication, condition (b) follows from (a).</em></p>
-</div>
-
-<h2 id="main-results"><span id="sec:ugb-main-results"></span>Main results</h2>
-<div id="lem:generator-choice" class="lemma">
-
-<p><strong>Lemma 1.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Generator choice in the division
-algorithm).</p>
-<p><em>Let <span class="math inline">\(R\)</span> be a commutative ring
-with unity, <span class="math inline">\(A\)</span> an <span
-class="math inline">\(R\)</span>-algebra which is free as an <span
-class="math inline">\(R\)</span>-module, <span class="math inline">\((B,
-&lt;)\)</span> an <a href="#def:admissible-system">admissible
-system</a>, and let <span class="math inline">\(I\)</span> be a
-two-sided ideal of <span class="math inline">\(A\)</span> generated by a
-unital <a href="#def:groebner-basis">Gröbner basis</a> <span
-class="math inline">\(G = \{g_\gamma \mid \gamma \in
-\Gamma\}\)</span>.</em></p>
-<p><em>Then in the <a href="#def:division-algorithm">division
-algorithm</a>, we may choose <span class="math inline">\(h_i \in
-I\)</span> so that <span class="math inline">\(h_i =
-g_{\gamma_i}\)</span> for some <span class="math inline">\(\gamma_i \in
-\Gamma\)</span>.</em></p>
-</div>
-
-<div class="proof">
-
-<p><em>Proof.</em>
-<span id="prf:generator-choice" label="prf:generator-choice"></span></p>
-<p>Set <span class="math inline">\(h := h_i\)</span>, <span
-class="math inline">\(f := f_i\)</span>. Since <span
-class="math inline">\(G\)</span> is a Gröbner basis, write</p>
-<p><span class="math display">\[h = \sum_{k \in K} \lambda_k\, u_k \cdot
-g_{\gamma_k} \cdot v_k\]</span></p>
-<p>with <span class="math inline">\(\lambda_k \in R^*\)</span>, <span
-class="math inline">\(u_k, v_k \in B\)</span>, <span
-class="math inline">\(\gamma_k \in \Gamma\)</span>. Set <span
-class="math inline">\(\alpha := \mathrm{LM}(h)\)</span>.</p>
-<p>Choose a representation with <span
-class="math inline">\(\alpha\)</span> minimal, and define <span
-class="math inline">\(T := \{k \in K \mid \mathrm{LM}(u_k \cdot
-g_{\gamma_k} \cdot v_k) = \alpha\}\)</span>. Further choose so that
-<span class="math inline">\(|T|\)</span> is minimal. If <span
-class="math inline">\(|T| = 1\)</span>, we are done.</p>
-<p>Otherwise, let <span class="math inline">\(k_1 \neq k_2 \in
-T\)</span> and set <span class="math inline">\(c_{k_i} :=
-\mathrm{LC}(u_{k_i} \cdot g_{\gamma_{k_i}} \cdot v_{k_i})\)</span>. By
-unitality, <span class="math inline">\(c_{k_i} \in R^\times\)</span>, so
-we may form the <span class="math inline">\(S\)</span>-polynomial</p>
-<p><span class="math display">\[S :=
-\lambda_{k_2}\,\frac{c_{k_2}}{c_{k_1}}\,
-u_{k_1} \cdot g_{\gamma_{k_1}} \cdot v_{k_1}
-- \lambda_{k_2}\, u_{k_2} \cdot g_{\gamma_{k_2}} \cdot
-v_{k_2}.\]</span></p>
-<p>Substituting back, either all terms with leading monomial <span
-class="math inline">\(\alpha\)</span> cancel (contradicting minimality
-of <span class="math inline">\(\alpha\)</span>) or we reduce <span
-class="math inline">\(|T|\)</span> by at least one (contradicting
-minimality of <span class="math inline">\(|T|\)</span>). Thus <span
-class="math inline">\(|T| = 1\)</span>. ◻</p>
-</div>
-
-<div id="thm:unital-groebner-decomposition" class="theorem">
-
-<p><strong>Theorem 1.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Free module decomposition via unital
-Gröbner bases).</p>
-<p><em>Let <span class="math inline">\(R\)</span> be a commutative ring
-with unity. Let <span class="math inline">\(A\)</span> be an <span
-class="math inline">\(R\)</span>-algebra which is free as an <span
-class="math inline">\(R\)</span>-module and without quasi-zeros. Let
-<span class="math inline">\((B, &lt;)\)</span> be an <a
-href="#def:admissible-system">admissible system</a> on <span
-class="math inline">\(A\)</span> and let <span
-class="math inline">\(I\)</span> be a two-sided ideal of <span
-class="math inline">\(A\)</span> with a unital <a
-href="#def:groebner-basis">Gröbner basis</a> <span
-class="math inline">\(G\)</span>. Define <span
-class="math inline">\(\tilde{O}(G)\)</span> to be the <a
-href="#def:remainder-module">free <span
-class="math inline">\(R\)</span>-module</a> spanned by the monomials
-which do not occur as leading monomials of members of <span
-class="math inline">\(G\)</span>. Then:</em></p>
-<ol type="1">
-<li><p><em>There is an <span class="math inline">\(R\)</span>-module
-isomorphism <span class="math inline">\(A/I \cong \tilde{O}(G)\)</span>
-of free <span class="math inline">\(R\)</span>-modules.</em></p></li>
-<li><p><em><span class="math inline">\(A = I \oplus
-\tilde{O}(G)\)</span>.</em></p></li>
-</ol>
-</div>
-
-<div class="proof">
-
-<p><em>Proof.</em>
-<span id="prf:unital-groebner-decomposition" label="prf:unital-groebner-decomposition"></span></p>
-<p>Let <span class="math inline">\(f \in A\)</span>. The <a
-href="#def:division-algorithm">division algorithm</a> writes <span
-class="math inline">\(f = r + \tilde{f}\)</span> with <span
-class="math inline">\(r \in O(I)\)</span> and <span
-class="math inline">\(\tilde{f} \in I\)</span>. By <a
-href="#lem:generator-choice">Lemma (generator choice)</a>, we can take
-<span class="math inline">\(r \in \tilde{O}(G)\)</span>. As <span
-class="math inline">\(f\)</span> is arbitrary, <span
-class="math inline">\(A = I + \tilde{O}(G)\)</span>.</p>
-<p>It remains to show the sum is direct, which follows from uniqueness
-of <span class="math inline">\(r\)</span>. Suppose the division
-algorithm produces two representations:</p>
-<p><span class="math display">\[f = \tilde{f} + r = \tilde{f}&#39; +
-r&#39;.\]</span></p>
-<p>Then <span class="math inline">\(\tilde{f} - \tilde{f}&#39; \in
-I\)</span>, so <span class="math inline">\(r - r&#39; \in I\)</span>. If
-<span class="math inline">\(r - r&#39; \neq 0\)</span>, then by <a
-href="#lem:generator-choice">Lemma (generator choice)</a> there exists
-<span class="math inline">\(g_\gamma \in G\)</span> with <span
-class="math inline">\(\mathrm{LT}(g_\gamma) \mid (r - r&#39;)\)</span>.
-But by construction of <span class="math inline">\(r\)</span> and <span
-class="math inline">\(r&#39;\)</span>, no such <span
-class="math inline">\(g_\gamma\)</span> exists — contradiction. Thus
-<span class="math inline">\(r = r&#39;\)</span> and the sum is
-direct. ◻</p>
-</div>
-
-<div id="prop:s-polynomial-decomposition" class="proposition">
-
-<p><strong>Proposition 1.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
-class="math inline">\(S\)</span>-polynomial decomposition of cancelling
-sums).</p>
-<p><em>Let <span class="math inline">\(R\)</span> be a commutative ring
-with unity, <span class="math inline">\(A\)</span> an <span
-class="math inline">\(R\)</span>-algebra which is free as an <span
-class="math inline">\(R\)</span>-module, <span class="math inline">\((B,
-&lt;)\)</span> an <a href="#def:admissible-system">admissible
-system</a>. Let <span class="math inline">\(\alpha \in B\)</span> and
-suppose <span class="math inline">\(f_1, \ldots, f_n \in A\)</span>
-satisfy <span class="math inline">\(\mathrm{LM}(f_i) = \alpha\)</span>
-and <span class="math inline">\(\mathrm{LC}(f_i) \in R^\times\)</span>.
-If</em></p>
-<p><em><span class="math display">\[f := \sum_i c_i f_i, \qquad c_i \in
-R^*,\]</span></em></p>
-<p><em>satisfies <span class="math inline">\(\mathrm{LM}(f) &lt;
-\alpha\)</span>, then we may write</em></p>
-<p><em><span class="math display">\[f = \sum_{i \neq j} d_{i,j}\,
-S_{i,j}\]</span></em></p>
-<p><em>where the <span class="math inline">\(S_{i,j}\)</span> are the
-<span class="math inline">\(S\)</span>-polynomials about <span
-class="math inline">\(f_i\)</span> and <span
-class="math inline">\(f_j\)</span>:</em></p>
-<p><em><span class="math display">\[S_{i,j} := \frac{1}{a_i} f_i -
-\frac{1}{a_j} f_j,
-\qquad a_i := \mathrm{LC}(f_i),\; a_j := \mathrm{LC}(f_j) \in
-R^\times.\]</span></em></p>
-</div>
-
-<div class="proof">
-
-<p><em>Proof.</em>
-<span id="prf:s-polynomial-decomposition" label="prf:s-polynomial-decomposition"></span></p>
-<p>Because all terms involving <span
-class="math inline">\(\alpha\)</span> cancel, <span
-class="math inline">\(\sum_i c_i = 0\)</span>. Then:</p>
-<p><span class="math display">\[f = c_1 a_1 \cdot \frac{1}{a_1} f_1 +
-\cdots + c_n a_n \cdot \frac{1}{a_n} f_n.\]</span></p>
-<p>Telescoping:</p>
-<p><span class="math display">\[f = c_1 a_1\, S_{1,2}
-+ (c_1 a_1 + c_2 a_2)\, S_{2,3}
-+ \cdots
-+ (c_1 a_1 + \cdots + c_{n-1} a_{n-1})\, S_{n-1,n}
-+ \underbrace{(c_1 a_1 + \cdots + c_n a_n)}_{= 0} \cdot \frac{1}{a_n}
-f_n,\]</span></p>
-<p>giving the desired result. ◻</p>
-</div>
-
-<div id="thm:buchberger" class="theorem">
-
-<p><strong>Theorem 1.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Buchberger’s theorem over commutative
-rings).</p>
-<p><em>Let <span class="math inline">\(R\)</span> be a commutative ring
-with unity, <span class="math inline">\(A\)</span> an <span
-class="math inline">\(R\)</span>-algebra which is free as an <span
-class="math inline">\(R\)</span>-module, <span class="math inline">\((B,
-&lt;)\)</span> an <a href="#def:admissible-system">admissible
-system</a>. Let <span class="math inline">\(I \leq A\)</span> be an
-ideal generated by a unital set <span class="math inline">\(G :=
-\{g_\gamma \mid \gamma \in \Gamma\}\)</span>.</em></p>
-<p><em>Then <span class="math inline">\(G\)</span> is a <a
-href="#def:groebner-basis">Gröbner basis</a> for <span
-class="math inline">\(I\)</span> if and only if all <span
-class="math inline">\(S\)</span>-polynomials for <span
-class="math inline">\(G\)</span> have zero remainder under the <a
-href="#def:division-algorithm">division algorithm</a>.</em></p>
-</div>
-
-<div class="proof">
-
-<p><em>Proof.</em>
-<span id="prf:buchberger" label="prf:buchberger"></span></p>
-<p>We show that if all <span
-class="math inline">\(S\)</span>-polynomials reduce to zero and <span
-class="math inline">\(f \in I\)</span>, then <span
-class="math inline">\(f\)</span> has a Gröbner basis representation.
-Since <span class="math inline">\(G\)</span> generates <span
-class="math inline">\(I\)</span>, choose a representation</p>
-<p><span class="math display">\[f = \sum_i h_i \cdot g_{\gamma_i} \cdot
-h_i&#39;, \qquad
-h_i, h_i&#39; \in A,\; \gamma_i \in \Gamma.\]</span></p>
-<p>Expanding in the monomial basis <span
-class="math inline">\(B\)</span>, write <span class="math inline">\(f =
-\sum_{i,k,k&#39;} c_k c_{k&#39;}&#39; \beta_k \cdot g_i \cdot
-\beta_{k&#39;}&#39;\)</span>.</p>
-<p>If for some representation all terms satisfy <span
-class="math inline">\(\mathrm{LM}(\beta_k \cdot g_i \cdot
-\beta_{k&#39;}&#39;) \leq \mathrm{LM}(f)\)</span>, we are done.
-Otherwise, define <span class="math inline">\(\alpha :=
-\max\{\mathrm{LM}(h_i \cdot g_i \cdot h_i&#39;)\}\)</span> with <span
-class="math inline">\(\alpha &gt; \mathrm{LM}(f)\)</span>; choose <span
-class="math inline">\(\alpha\)</span> minimal over all
-representations.</p>
-<p>Set <span class="math inline">\(T := \{i \mid \mathrm{LM}(h_i \cdot
-g_i \cdot h_i&#39;) = \alpha\}\)</span> and <span
-class="math inline">\(g := \sum_{i \in T} \mathrm{LT}(h_i) \cdot g_i
-\cdot \mathrm{LT}(h_i&#39;)\)</span>. By unitality, the leading
-coefficients are units, so <a
-href="#prop:s-polynomial-decomposition">Proposition (<span
-class="math inline">\(S\)</span>-polynomial decomposition)</a>
-applies:</p>
-<p><span class="math display">\[g = \sum_{i \neq j \in T} d_{i,j}\,
-S_{i,j}.\]</span></p>
-<p>The <span class="math inline">\(S_{i,j}\)</span> are also <span
-class="math inline">\(S\)</span>-polynomials about <span
-class="math inline">\(g_i, g_j\)</span>; by assumption they reduce to
-zero, i.e.<br />
-<span class="math inline">\(S_{i,j} = \sum_l \lambda_l^{i,j}\, u_l^{i,j}
-\cdot g_{l}^{i,j}
-\cdot v_l^{i,j}\)</span> with <span
-class="math inline">\(\mathrm{LM}(S_{i,j}) &lt; \alpha\)</span>.
-Substituting back gives a new representation of <span
-class="math inline">\(f\)</span> with strictly smaller maximal term —
-contradiction. ◻</p>
-</div>
-
-<div id="cor:pbw" class="corollary">
-
-<p><strong>Corollary 1.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Poincaré–Birkhoff–Witt theorem over
-commutative rings).</p>
-<p><em>Let <span class="math inline">\(\mathfrak{g}\)</span> be a Lie
-algebra over <span class="math inline">\(R\)</span>, a commutative ring
-with unity, with Lie bracket <span
-class="math inline">\([\,{,}\,]_{\mathfrak{g}}\)</span>. Then the
-universal enveloping algebra</em></p>
-<p><em><span class="math display">\[U\mathfrak{g} = T\mathfrak{g} / J,
-\qquad
-J = \bigl(xy - yx - [x,y]_{\mathfrak{g}}
-\;\big|\; x, y \in \mathfrak{g} \hookrightarrow
-T\mathfrak{g}\bigr)\]</span></em></p>
-<p><em>is isomorphic as an <span class="math inline">\(R\)</span>-module
-to <span class="math inline">\(S\mathfrak{g}\)</span>, the symmetric
-algebra on <span class="math inline">\(\mathfrak{g}\)</span>.</em></p>
-<p><em>In particular, if <span class="math inline">\(R\)</span> is a
-<span class="math inline">\(\mathbb{Q}\)</span>-algebra, we obtain a
-Gröbner basis proof of the equivalence of the category of
-(finite-dimensional) Lie algebras over <span
-class="math inline">\(R\)</span> and (finite-dimensional) smooth formal
-groups over <span class="math inline">\(R\)</span>.</em></p>
-</div>
-
-<div class="proof">
-
-<p><em>Proof.</em> <span id="prf:pbw" label="prf:pbw"></span></p>
-<p>Choose a well-ordered basis <span class="math inline">\(\{x_i \mid i
-\in I\}\)</span> for <span class="math inline">\(\mathfrak{g}\)</span>.
-Then <span class="math inline">\(T\mathfrak{g}\)</span> has a
-multiplicative monomial basis consisting of the words of finite length
-in the <span class="math inline">\(x_i\)</span>’s with the graded
-lexicographic ordering. The symmetric algebra <span
-class="math inline">\(S\mathfrak{g}\)</span> has a basis of words
-written in non-decreasing order.</p>
-<p>The ideal <span class="math inline">\(J\)</span> is generated by</p>
-<p><span class="math display">\[G := \{g_{i,j} := x_i x_j - x_j x_i -
-[x_i, x_j]_{\mathfrak{g}}
-\mid x_i &gt; x_j\}.\]</span></p>
-<p>The argument that <span class="math inline">\(G\)</span> is a Gröbner
-basis is exactly as in the classical setting, using <a
-href="#thm:buchberger">Buchberger’s theorem</a>. As the leading terms
-<span class="math inline">\(\mathrm{LT}(g_{i,j}) = x_i x_j\)</span> are
-monic and the basis is multiplicative, <span
-class="math inline">\(G\)</span> is a <em>unital</em> Gröbner basis. The
-corollary then follows from the <a
-href="#thm:unital-groebner-decomposition">main decomposition
-theorem</a>. ◻</p>
+<p><strong>Definition 1.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.KnotComplement" target="_blank" title="Lean: QOU.KnotComplement">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:viz-knot-complement">Knot complement (SnapPea)</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.KnotComplement"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a> A <strong>knot
+complement</strong> <span class="math inline">\(S^3 \setminus K\)</span>
+is the 3-manifold obtained by removing a tubular neighbourhood of a knot
+<span class="math inline">\(K\)</span> from the 3-sphere. When <span
+class="math inline">\(K\)</span> is hyperbolic, the complement admits a
+unique complete hyperbolic structure (by Mostow rigidity), and its
+volume is a topological invariant.</em></p>
+<p><em>The SnapPea kernel (@snappea/kernel, compiled to WebAssembly)
+computes:</em></p>
+<ul>
+<li><p><em><strong>Hyperbolic volume</strong> via ideal
+triangulations</em></p></li>
+<li><p><em><strong>Dehn filling</strong> coefficients <span
+class="math inline">\((m, l)\)</span> on cusps</em></p></li>
+<li><p><em><strong>Fundamental group</strong> presentations <span
+class="math inline">\(\pi_1(S^3 \setminus K)\)</span></em></p></li>
+<li><p><em><strong>Homology</strong> <span class="math inline">\(H_1(S^3
+\setminus K; \mathbb{Z})\)</span> via Smith normal form</em></p></li>
+<li><p><em><strong>Chern–Simons invariant</strong> (when
+defined)</em></p></li>
+<li><p><em><strong>Canonical form</strong> for isometry
+detection</em></p></li>
+</ul>
+<p><em>In the QOU particle registry, each knot <span
+class="math inline">\(K\)</span> (indexed by Alexander–Briggs notation)
+corresponds to a particle, with the hyperbolic volume encoding the
+particle’s mass scale.</em></p>
 </div>
 
 <script>
