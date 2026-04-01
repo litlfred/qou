@@ -1,8 +1,8 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-25 20:16:49 UTC
-Commit:    522ea709c4f8e7a6ad239b9faf48d9790d43d8e3
+Generated: 2026-04-01 14:25:28 UTC
+Commit:    unknown
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
@@ -14,7 +14,7 @@ Status: ✅ BUILD PASSED (no type errors)
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 421
+Total sorry occurrences: 643
 
   File                                          sorry count
   --------------------------------------------------------
@@ -47,8 +47,6 @@ Total sorry occurrences: 421
   .lake/packages/batteries/BatteriesTest/lintsimp.lean 1
   .lake/packages/batteries/BatteriesTest/lintunused.lean 3
   .lake/packages/batteries/BatteriesTest/simpa.lean 2
-  .lake/packages/doc-gen4/DocGen4/Output/Module.lean 1
-  .lake/packages/doc-gen4/DocGen4/Process/TheoremInfo.lean 1
   .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean 2
   .lake/packages/mathlib/Mathlib/Algebra/Group/Hom/Defs.lean 2
   .lake/packages/mathlib/Mathlib/Algebra/Group/Invertible/Defs.lean 1
@@ -121,8 +119,16 @@ Total sorry occurrences: 421
   .lake/packages/mathlib/MathlibTest/toAdditive.lean 2
   .lake/packages/plausible/Test/Tactic.lean        3
   .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean 1
+  QOU/BringsSurface.lean                           58
   QOU/CODATAChain.lean                             1
+  QOU/Descartes/AxialCoupling.lean                 3
+  QOU/Descartes/OrderingIndependence.lean          2
+  QOU/DescartesUniverse.lean                       8
   QOU/FormalGroups.lean                            1
+  QOU/Glossary.lean                                67
+  QOU/PathIntegrals.lean                           46
+  QOU/QuantumObservableUniverse.lean               12
+  QOU/Torsion.lean                                 28
 
 ------------------------------------------------------------------------
 §3  AXIOM DECLARATIONS
@@ -816,6 +822,9 @@ Total axiom declarations in source: 242
   axiom normal_forms_preserved
     File: QOU/GrobnerShirshov/Flatness.lean
 
+  axiom hecke_is_gs_basis
+    File: QOU/GrobnerShirshov/HeckeGS.lean
+
   axiom qSerreRewritingSystem
     File: QOU/GrobnerShirshov/NormalForms.lean
 
@@ -852,9 +861,6 @@ Total axiom declarations in source: 242
   axiom skein_mass_relation_holds
     File: QOU/HadronicMass.lean
 
-  axiom derive_substrate_q_bound
-    File: QOU/MassDerivation.lean
-
 
 ------------------------------------------------------------------------
 §4  AXIOM DEPENDENCIES OF KEY THEOREMS
@@ -864,43 +870,56 @@ The following key declarations were checked for axiom dependencies.
 Any use of `sorryAx` indicates an incomplete proof.
 
   #print axioms QOU.MassDerivation.topological_mass_formula
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.derive_substrate_q
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.mass_ratio_from_volume
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.vol_figure_eight
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.experimental_mu_e_ratio
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.quantum_planck
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.KnotTheory.PlanarDiagram
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.KnotTheory.figureEight
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.KnotRegistry.figureEightEntry
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.KnotRegistry.registry_volume_eq_mass_derivation
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.Calculations.full_derivation_chain
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.Calculations.substrate_error_bound
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
   #print axioms QOU.Glossary.FrobeniusHopfObject
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: lean-archive/_axiom_check.lean
 
 ------------------------------------------------------------------------
 §5  TOPOLOGICAL MASS THEOREM TRANSPARENCY
@@ -952,6 +971,27 @@ TopologicalMassFormula structures, with no axioms required.
 Each `sorry` below represents an unproved obligation.  Where a
 `-- Ref: [key] url` comment precedes the sorry, the citation and
 link to the foundational reference are shown.
+
+  ┌─ Gaps with bibliographic references ─────────────────────────────┐
+
+  QOU/Descartes/AxialCoupling.lean:60  halfBorromean
+    Citation: [manuscript]
+
+  QOU/Descartes/AxialCoupling.lean:72  borromeanColorAvg
+    Citation: [manuscript]
+
+  QOU/Descartes/AxialCoupling.lean:93  axialCouplingRatio
+    Citation: [manuscript]
+
+  QOU/Descartes/OrderingIndependence.lean:63  skeinPolynomialSym
+    Citation: [murphy1992]
+    Link:     https://doi.org/10.1016/0021-8693(92)90139-D
+
+  QOU/Descartes/OrderingIndependence.lean:91  ordering_independence
+    Citation: [murphy1992]
+    Link:     https://doi.org/10.1016/0021-8693(92)90139-D
+
+  └──────────────────────────────────────────────────────────────────┘
 
   ⚠  Gaps WITHOUT bibliographic references (needs annotation):
 
@@ -1048,8 +1088,6 @@ link to the foundational reference are shown.
     .lake/packages/batteries/BatteriesTest/lintunused.lean:7  Foo
     .lake/packages/batteries/BatteriesTest/simpa.lean:82  thm
     .lake/packages/batteries/BatteriesTest/simpa.lean:85  thm2
-    .lake/packages/doc-gen4/DocGen4/Output/Module.lean:48  docInfoHeader
-    .lake/packages/doc-gen4/DocGen4/Process/TheoremInfo.lean:17  TheoremInfo.ofTheoremVal
     .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean:58  (unknown)
     .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean:63  (unknown)
     .lake/packages/mathlib/Mathlib/Algebra/Group/Hom/Defs.lean:218  fooMonoidHom
@@ -1340,10 +1378,229 @@ link to the foundational reference are shown.
     .lake/packages/plausible/Test/Tactic.lean:134  (unknown)
     .lake/packages/plausible/Test/Tactic.lean:145  (unknown)
     .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean:157  ConvSelectionPanel
+    QOU/BringsSurface.lean:300  brings_is_qou
+    QOU/BringsSurface.lean:306  coral_elliptic
+    QOU/BringsSurface.lean:312  ColorTubeFibers
+    QOU/BringsSurface.lean:318  brings_smoothness_resolution
+    QOU/BringsSurface.lean:324  QuaternionicSpectralResolvents
+    QOU/BringsSurface.lean:330  CoralSectorCoords
+    QOU/BringsSurface.lean:336  descartes_braid_structure
+    QOU/BringsSurface.lean:342  descartes_knot_eigenbasis
+    QOU/BringsSurface.lean:348  descartes_elliptic_curve
+    QOU/BringsSurface.lean:354  DescartesCondition
+    QOU/BringsSurface.lean:360  genus_maximal_descent
+    QOU/BringsSurface.lean:366  torus_knot_generators_finite
+    QOU/BringsSurface.lean:372  embeddability_closure
+    QOU/BringsSurface.lean:378  genus_filtration_ideal
+    QOU/BringsSurface.lean:384  torus_embeddable_complete
+    QOU/BringsSurface.lean:390  generation_completeness
+    QOU/BringsSurface.lean:396  UpQuark
+    QOU/BringsSurface.lean:402  DownQuark
+    QOU/BringsSurface.lean:408  Electron
+    QOU/BringsSurface.lean:414  Positron
+    QOU/BringsSurface.lean:420  Neutrino
+    QOU/BringsSurface.lean:426  Antineutrino
+    QOU/BringsSurface.lean:432  QValueTransition
+    QOU/BringsSurface.lean:438  CategoricalProton
+    QOU/BringsSurface.lean:444  CategoricalNeutron
+    QOU/BringsSurface.lean:450  antiparticle_crossing_reversal
+    QOU/BringsSurface.lean:456  StableNucleus
+    QOU/BringsSurface.lean:462  torus_hopf_stability
+    QOU/BringsSurface.lean:468  em_coupling_projection
+    QOU/BringsSurface.lean:474  integer_stability
+    QOU/BringsSurface.lean:480  BetaDecaySkein
+    QOU/BringsSurface.lean:486  LeptonNumber
+    QOU/BringsSurface.lean:492  parity_violation_skein
+    QOU/BringsSurface.lean:498  nuclear_spin_parity
+    QOU/BringsSurface.lean:504  hadron_half_life
+    QOU/BringsSurface.lean:510  hadron_q_self_correction
+    QOU/BringsSurface.lean:516  skein_coulomb_enhancement
+    QOU/BringsSurface.lean:522  nuclear_groebner_reduction
+    QOU/BringsSurface.lean:528  groebner_shirshov_energy
+    QOU/BringsSurface.lean:534  BoxBraidIrreducibility
+    QOU/BringsSurface.lean:540  generator_volume_decomposition
+    QOU/BringsSurface.lean:546  markov_trace_factorization
+    QOU/BringsSurface.lean:552  skein_polynomial_transfer_matrix
+    QOU/BringsSurface.lean:558  TransferMatrixOperator
+    QOU/BringsSurface.lean:564  beta_decay_transfer_matrix
+    QOU/BringsSurface.lean:570  shell_structure_eigenvalues
+    QOU/BringsSurface.lean:576  quantum_dilogarithm_volume
+    QOU/BringsSurface.lean:582  reidemeister_action_table
+    QOU/BringsSurface.lean:588  elliptic_stability_locus
+    QOU/BringsSurface.lean:594  shell_closure_normal_form
+    QOU/BringsSurface.lean:600  skein_finiteness_bound
+    QOU/BringsSurface.lean:606  spectral_decomposition_qvalue
+    QOU/BringsSurface.lean:612  electron_shells_hopf
+    QOU/BringsSurface.lean:618  noble_gas_characterization
+    QOU/BringsSurface.lean:624  metallic_character_knot
+    QOU/BringsSurface.lean:630  hydrogen_shell_writhe
+    QOU/BringsSurface.lean:636  descartes
+    QOU/BringsSurface.lean:642  terminal_resolution
     QOU/CODATAChain.lean:197  end_to_end_nucleon_ratio
+    QOU/DescartesUniverse.lean:180  QYangMillsLevi
+    QOU/DescartesUniverse.lean:186  main_commutative_diagram
+    QOU/DescartesUniverse.lean:192  heisenberg_commutator
+    QOU/DescartesUniverse.lean:198  SpatialRealizationFunctor
+    QOU/DescartesUniverse.lean:204  categorical_archimedean_bridge
+    QOU/DescartesUniverse.lean:210  WittVectorLift
+    QOU/DescartesUniverse.lean:216  skew_poisson_integration
+    QOU/DescartesUniverse.lean:222  discrete_vortex_spectrum
     QOU/FormalGroups.lean:29  (unknown)
+    QOU/Glossary.lean:28  NoQuasiZeros
+    QOU/Glossary.lean:35  SnakeIdentity
+    QOU/Glossary.lean:44  RigidMonoidalCategory
+    QOU/Glossary.lean:51  QuantumUniverse
+    QOU/Glossary.lean:58  FrobeniusPairing
+    QOU/Glossary.lean:65  HigherForms
+    QOU/Glossary.lean:72  InvolutiveStructure
+    QOU/Glossary.lean:79  CategoricalConnection
+    QOU/Glossary.lean:86  CategoricalJet
+    QOU/Glossary.lean:93  CategoricalHodgeStar
+    QOU/Glossary.lean:100  BringsSurface
+    QOU/Glossary.lean:109  ColorTubeCoordinates
+    QOU/Glossary.lean:116  ColorTubeFibers
+    QOU/Glossary.lean:123  BriggsKleinChart
+    QOU/Glossary.lean:130  QuaternionicSpectralResolvents
+    QOU/Glossary.lean:137  CoralSectorCoords
+    QOU/Glossary.lean:144  DescartesCondition
+    QOU/Glossary.lean:151  UpQuark
+    QOU/Glossary.lean:158  DownQuark
+    QOU/Glossary.lean:165  ElectronKnot
+    QOU/Glossary.lean:172  PositronKnot
+    QOU/Glossary.lean:179  NeutrinoKnot
+    QOU/Glossary.lean:186  AntineutrinoKnot
+    QOU/Glossary.lean:193  QValueTransition
+    QOU/Glossary.lean:200  CategoricalProton
+    QOU/Glossary.lean:207  CategoricalNeutron
+    QOU/Glossary.lean:214  StableNucleus
+    QOU/Glossary.lean:221  BetaDecaySkein
+    QOU/Glossary.lean:228  LeptonNumberCategorical
+    QOU/Glossary.lean:235  TransferMatrixOperator
+    QOU/Glossary.lean:242  RecursiveBraneTower
+    QOU/Glossary.lean:249  CategoricalQReebFlow
+    QOU/Glossary.lean:256  DescentInvolution
+    QOU/Glossary.lean:263  YekutieliLiftingCondition
+    QOU/Glossary.lean:270  QuantumCharacteristicClasses
+    QOU/Glossary.lean:279  DirectLimitAlgebra
+    QOU/Glossary.lean:286  MassIdentity
+    QOU/Glossary.lean:293  BraneBoundary
+    QOU/Glossary.lean:300  YekutieliTriple
+    QOU/Glossary.lean:307  LocalizedKnot
+    QOU/Glossary.lean:316  BraidGroup
+    QOU/Glossary.lean:323  Su2Basis
+    QOU/Glossary.lean:330  Su2Generators
+    QOU/Glossary.lean:337  So3Generators
+    QOU/Glossary.lean:344  BraidTwistFlip
+    QOU/Glossary.lean:351  QuantumSu2
+    QOU/Glossary.lean:358  CrossingEnergy
+    QOU/Glossary.lean:365  CoulombCharge
+    QOU/Glossary.lean:372  QMomentum
+    QOU/Glossary.lean:379  QAngularMomentum
+    QOU/Glossary.lean:386  QEnergy
+    QOU/Glossary.lean:393  ExceptionalDivisor
+    QOU/Glossary.lean:400  ReebBundle
+    QOU/Glossary.lean:407  VertexOperator
+    QOU/Glossary.lean:414  CategoricalTransferMatrix
+    QOU/Glossary.lean:421  Hadron
+    QOU/Glossary.lean:428  LocalizedHadron
+    QOU/Glossary.lean:435  HadronFibreEmbedding
+    QOU/Glossary.lean:442  KnotParticleGeneration
+    QOU/Glossary.lean:451  BundleInitialConditions
+    QOU/Glossary.lean:458  BundleIsotopyEquivalence
+    QOU/Glossary.lean:465  TorsionKnotFlow
+    QOU/Glossary.lean:472  BorromeanBaryon
+    QOU/Glossary.lean:479  SkeinBindingLagrangian
+    QOU/Glossary.lean:486  QYangMillsLevi
+    QOU/Glossary.lean:495  SpatialRealizationFunctor
+    QOU/Glossary.lean:502  WittVectorLift
+    QOU/PathIntegrals.lean:481  braid_action_tensor
+    QOU/PathIntegrals.lean:487  JonesMarkovTrace
+    QOU/PathIntegrals.lean:493  BraidGroup
+    QOU/PathIntegrals.lean:499  Su2Basis
+    QOU/PathIntegrals.lean:505  Su2Generators
+    QOU/PathIntegrals.lean:511  So3Generators
+    QOU/PathIntegrals.lean:517  BraidTwistFlip
+    QOU/PathIntegrals.lean:523  QuantumSu2
+    QOU/PathIntegrals.lean:529  r_matrix_braiding_structure
+    QOU/PathIntegrals.lean:535  skein_crossing_asymmetry
+    QOU/PathIntegrals.lean:541  mobius_energy
+    QOU/PathIntegrals.lean:547  non_self_intersection
+    QOU/PathIntegrals.lean:553  CrossingEnergy
+    QOU/PathIntegrals.lean:559  CoulombCharge
+    QOU/PathIntegrals.lean:565  lagrange_resolvent_transform
+    QOU/PathIntegrals.lean:571  QMomentum
+    QOU/PathIntegrals.lean:577  QAngularMomentum
+    QOU/PathIntegrals.lean:583  QEnergy
+    QOU/PathIntegrals.lean:589  ExceptionalDivisor
+    QOU/PathIntegrals.lean:595  ReebBundle
+    QOU/PathIntegrals.lean:601  VertexOperator
+    QOU/PathIntegrals.lean:607  vertex_is_exceptional_divisor
+    QOU/PathIntegrals.lean:613  markov_trace_product
+    QOU/PathIntegrals.lean:619  CategoricalTransferMatrix
+    QOU/PathIntegrals.lean:625  transfer_matrix_level_independence
+    QOU/PathIntegrals.lean:631  ArchimedeanMassFormula
+    QOU/PathIntegrals.lean:637  descartes_genus
+    QOU/PathIntegrals.lean:643  euler_level_stable
+    QOU/PathIntegrals.lean:649  Hadron
+    QOU/PathIntegrals.lean:655  hadron_operations_closure
+    QOU/PathIntegrals.lean:661  LocalizedHadron
+    QOU/PathIntegrals.lean:667  HadronFibreEmbedding
+    QOU/PathIntegrals.lean:673  skein_generation
+    QOU/PathIntegrals.lean:679  KnotParticleGeneration
+    QOU/PathIntegrals.lean:685  knot_particle_correspondence
+    QOU/PathIntegrals.lean:691  BundleInitialConditions
+    QOU/PathIntegrals.lean:697  sorting_color_energy
+    QOU/PathIntegrals.lean:703  BundleIsotopyEquiv
+    QOU/PathIntegrals.lean:709  ParticleState
+    QOU/PathIntegrals.lean:715  BorromeanBaryon
+    QOU/PathIntegrals.lean:721  fermion_boson_knot_link
+    QOU/PathIntegrals.lean:727  reidemeister_mass_invariance
+    QOU/PathIntegrals.lean:733  nuclear_shell_intruder
+    QOU/PathIntegrals.lean:739  mass_decomposition_categorical
+    QOU/PathIntegrals.lean:745  SkeinBindingLagrangian
+    QOU/PathIntegrals.lean:751  beta_stability
+    QOU/QuantumObservableUniverse.lean:20  NoQuasiZeros
+    QOU/QuantumObservableUniverse.lean:26  snake_identity_left
+    QOU/QuantumObservableUniverse.lean:32  RigidMonoidalCategory
+    QOU/QuantumObservableUniverse.lean:38  QuantumUniverse
+    QOU/QuantumObservableUniverse.lean:44  frobeniusForm
+    QOU/QuantumObservableUniverse.lean:50  HigherForms
+    QOU/QuantumObservableUniverse.lean:56  frobenius_relation
+    QOU/QuantumObservableUniverse.lean:62  InvolutiveStructure
+    QOU/QuantumObservableUniverse.lean:68  frobenius_dagger_positive_definite
+    QOU/QuantumObservableUniverse.lean:74  CategoricalConnection
+    QOU/QuantumObservableUniverse.lean:80  CategoricalJet
+    QOU/QuantumObservableUniverse.lean:86  CatHodgeInvolution
+    QOU/Torsion.lean:17  JetProlongation
+    QOU/Torsion.lean:23  RecursiveBraneTower
+    QOU/Torsion.lean:29  categorical_jet_prolongation
+    QOU/Torsion.lean:35  CategoricalQReebFlow
+    QOU/Torsion.lean:41  DescentLemma
+    QOU/Torsion.lean:47  DescentInvolution
+    QOU/Torsion.lean:53  YekutieliLiftingCondition
+    QOU/Torsion.lean:59  QuantumCharacteristicClass
+    QOU/Torsion.lean:65  YekutieliLifting
+    QOU/Torsion.lean:71  QuToQou
+    QOU/Torsion.lean:77  DirectLimitAlgebra
+    QOU/Torsion.lean:83  invariant_functional_unique
+    QOU/Torsion.lean:89  global_gluing
+    QOU/Torsion.lean:95  ordering_jet_compatibility
+    QOU/Torsion.lean:101  euler_char_constant
+    QOU/Torsion.lean:107  categoricalMass
+    QOU/Torsion.lean:113  algebraic_filter_classification
+    QOU/Torsion.lean:119  idempotent_direct_sum_decomposition
+    QOU/Torsion.lean:125  braneBoundary
+    QOU/Torsion.lean:131  brane_boundary_structure
+    QOU/Torsion.lean:137  YekutieliTripleMapping
+    QOU/Torsion.lean:143  cosimplicial_crossed_groupoid_exists
+    QOU/Torsion.lean:149  descent_condition
+    QOU/Torsion.lean:155  weak_equiv_invariance
+    QOU/Torsion.lean:161  LocalizedKnot
+    QOU/Torsion.lean:167  jet_prolongation_C
+    QOU/Torsion.lean:173  MassIdentityC
+    QOU/Torsion.lean:179  quantum_dilogarithm
 
-  Summary: 0 referenced / 387 unreferenced / 387 total gaps
+  Summary: 5 referenced / 604 unreferenced / 609 total gaps
 
 ========================================================================
 END OF REPORT
