@@ -37,6 +37,7 @@ export default paper({
     chapterRef({ dir: "ch6-descartes-universe" }),
     chapterRef({ dir: "ch5-brings-surface" }),
     chapterRef({ dir: "ch7-observations" }),
+    chapterRef({ dir: "ch8-algebraic-substrate" }),
     chapterRef({ dir: "ch9-information-theory" }),
     chapterRef({ dir: "ch8-glossary" }),
     chapterRef({ dir: "appendix-knot-periodic-table" }),
