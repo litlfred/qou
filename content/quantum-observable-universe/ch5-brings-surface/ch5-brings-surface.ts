@@ -110,6 +110,7 @@ export default chapter({
         // Torus knot generators from χ = -6
         "torus-knot-generators",
         "embeddability-closure",
+        "genus-filtration-ideal",
         "torus-embeddable-complete",
         "generation-completeness",
         // Fundamental fermions (Descartes-specific assignments)

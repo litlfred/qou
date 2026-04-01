@@ -794,6 +794,59 @@ End every response with suggested follow-ups:
       }
     }
 
+    // TeX export — build content pipeline and serve files as JSON manifest
+    if (path === "/api/tex-export") {
+      try {
+        const { spawnSync } = require("child_process") as typeof import("child_process");
+
+        const buildResult = spawnSync("bun", ["run", join(this.repoRoot, "content/pipeline/build.ts")], {
+          cwd: this.repoRoot, stdio: "pipe", timeout: 60_000,
+        });
+        if (buildResult.status !== 0) {
+          return Response.json({ error: "Build failed: " + (buildResult.stderr?.toString() || "unknown error") }, { status: 500, headers: CORS });
+        }
+
+        const files: { name: string; data: Buffer }[] = [];
+
+        const mainTexPath = resolve(this.repoRoot, "main.tex");
+        if (existsSync(mainTexPath)) {
+          files.push({ name: "main.tex", data: readFileSync(mainTexPath) as Buffer });
+        }
+
+        const chaptersDir = resolve(this.repoRoot, "chapters");
+        if (existsSync(chaptersDir)) {
+          for (const f of readdirSync(chaptersDir)) {
+            if (f.endsWith(".tex")) {
+              files.push({ name: `chapters/${f}`, data: readFileSync(join(chaptersDir, f)) as Buffer });
+            }
+          }
+        }
+
+        const preamblePath = resolve(this.repoRoot, "latex/preamble.tex");
+        if (existsSync(preamblePath)) {
+          files.push({ name: "latex/preamble.tex", data: readFileSync(preamblePath) as Buffer });
+        }
+
+        const bibPath = resolve(this.repoRoot, "references.bib");
+        if (existsSync(bibPath)) {
+          files.push({ name: "references.bib", data: readFileSync(bibPath) as Buffer });
+        }
+
+        if (files.length === 0) {
+          return Response.json({ error: "No TeX files generated" }, { status: 500, headers: CORS });
+        }
+
+        const manifest = files.map(f => ({
+          name: f.name,
+          content: f.data.toString("utf-8"),
+        }));
+
+        return Response.json({ files: manifest }, { headers: CORS });
+      } catch (e) {
+        return Response.json({ error: String(e) }, { status: 500, headers: CORS });
+      }
+    }
+
     return null;
   }
 
