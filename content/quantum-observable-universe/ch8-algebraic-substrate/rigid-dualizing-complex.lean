@@ -38,20 +38,15 @@ structure RigidDualizingComplex (A : Type*) [Ring A] where
 
 -- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
 /-- Existence of a rigid dualizing complex for a suitable
-    non-commutative algebra.
+    non-commutative algebra satisfying van den Bergh conditions.
 
-    Constructed by taking A itself as the carrier with homdim 0.
-    The Prop-valued fields are existentially witnessed; the full
-    derived-category content is in the downstream `substrate_self_duality`
-    theorem which uses the snake identities of FrobeniusHopfSubstrate. -/
+    The Prop-valued fields are proof obligations; instantiation
+    requires derived-category infrastructure beyond current Mathlib.
+    See [yekutieli2015] Theorem 4.2 for the full construction. -/
+-- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230  Theorem 4.2
 theorem rigid_dualizing_exists (A : Type*) [Ring A] :
-    Nonempty (RigidDualizingComplex A) :=
-  ⟨{
-    carrier := A
-    homdim := 0
-    rigidifying_iso := True
-    finite_inj_dim := True
-    vdb_duality := True
-  }⟩
+    Nonempty (RigidDualizingComplex A) := by
+  -- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
+  sorry
 
 end QOU.AlgebraicSubstrate
