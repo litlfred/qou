@@ -16,6 +16,7 @@ set_option autoImplicit false
 
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
 import Mathlib.Data.Fin.Basic
 
 open Complex Real
@@ -68,8 +69,13 @@ theorem hasse_weil_bound
   have h_cs := castelnuovo_severi_bound Z i
   have h_fe := eigenvalue_functional_equation Z i
   have h_sq := eigenvalue_norm_sq Z i h_cs h_fe
-  -- |αᵢ|² = q  implies  |αᵢ| = q^{1/2}  (since |αᵢ| ≥ 0)
-  -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
-  sorry
+  -- |αᵢ|² = q  implies  |αᵢ| = q^{1/2}  (since |αᵢ| ≥ 0, q > 0)
+  have h_nn : (0 : ℝ) ≤ Complex.abs (Z.eigenvalues i) := Complex.abs.nonneg _
+  have h_qnn : (0 : ℝ) ≤ Z.q := le_of_lt Z.q_pos
+  -- |α| = √(|α|²) = √q = q^{1/2}
+  rw [← Real.sqrt_eq_rpow]
+  rw [← Real.sqrt_sq h_nn]
+  congr 1
+  exact h_sq
 
 end QOU.AlgebraicSubstrate
