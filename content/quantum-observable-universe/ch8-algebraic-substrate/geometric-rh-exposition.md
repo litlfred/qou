@@ -57,6 +57,20 @@ has real part exactly $1/2$
 hypothesis for Bring's curve over $\mathbb{F}_q$ --- an
 *unconditional theorem*, not a conjecture.
 
+**Concrete example: $\mathrm{SU}(2)$.** In the archimedean
+realisation $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}(2))$, the
+adjoint representation $\mathrm{Ad}(A)$ is the 3-dimensional real
+representation on $\mathfrak{su}(2)$. The Frobenius form
+$\lambda = \mathrm{tr}$ gives the Killing inner product, and the
+flatness condition $c_1 = c_2 = 0$ says the $\mathrm{SU}(2)$
+connection has zero curvature on the adjoint bundle. Since
+$\mathrm{SU}(2)$ is compact, the holonomy of a flat connection lies
+in $\mathrm{U}(1) \subset \mathrm{SU}(2)$: any closed loop yields
+a pure phase $e^{i\phi}$. The Frobenius eigenvalues are
+$\alpha = q^{1/2} e^{i\phi}$, with $|\alpha| = q^{1/2}$ by
+construction --- the critical-line property is visibly forced by the
+compactness of the gauge group.
+
 **The physical picture.** The non-trivial zeros of the zeta function
 are eigenvalues of the Reeb flow, and each eigenvalue corresponds to a
 fundamental oscillation mode of the substrate. The unitary constraint

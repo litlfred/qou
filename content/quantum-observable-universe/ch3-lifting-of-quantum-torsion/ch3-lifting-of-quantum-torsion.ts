@@ -39,6 +39,7 @@ export default chapter({
         "categorical-jet-prolongation",
         "categorical-jet-prolongation-proof",
         "categorical-q-reeb-flow",
+        "reeb-primes-as-orbits",
       ],
     }),
 
