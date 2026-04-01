@@ -105,7 +105,7 @@ evaluate transcendental/irrational real numbers via `norm_num`.
 ### Axiom 1: Substrate q bound
 
 ```lean
--- File: lean-archive/QOU/MassDerivation.lean:161
+-- File: content/quantum-observable-universe/lean/QOU/MassDerivation.lean:161
 axiom derive_substrate_q_bound (q : ℝ) (hq : q > 1) :
     experimental_mu_e_ratio = vol_figure_eight / (quantum_planck q) ^ 2 →
     |q - substrate_q| < 0.001
@@ -118,7 +118,7 @@ axiom derive_substrate_q_bound (q : ℝ) (hq : q > 1) :
 ### Axioms 2–3: Hadronic mass skein approximations
 
 ```lean
--- File: lean-archive/QOU/HadronicMass.lean:402, 417
+-- File: content/quantum-observable-universe/lean/QOU/HadronicMass.lean:402, 417
 axiom proton_pair_skein_approx :
     |proton_from_pair_skein - proton_topological| < 0.5
 axiom neutron_pair_skein_approx :
@@ -131,7 +131,7 @@ axiom neutron_pair_skein_approx :
 ### Axiom 4: Skein mass relation
 
 ```lean
--- File: lean-archive/QOU/HadronicMass.lean:544
+-- File: content/quantum-observable-universe/lean/QOU/HadronicMass.lean:544
 axiom skein_mass_relation_holds :
     substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
       (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV
@@ -152,7 +152,7 @@ External CAS verification is documented for each.
 
 **Result: 0 active `sorry` markers in the critical path.**
 
-Per `lean-archive/QOU/PLACEHOLDER_CHECKLIST.md`, all 11 original sorry markers
+Per `content/quantum-observable-universe/lean/QOU/PLACEHOLDER_CHECKLIST.md`, all 11 original sorry markers
 have been resolved.
 
 ---

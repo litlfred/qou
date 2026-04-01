@@ -362,7 +362,7 @@ jobs:
       - name: Collect documentation output
         run: |
           mkdir -p _lean_docs
-          # doc-gen4 outputs to lean-archive/.lake/build/doc/
+          # doc-gen4 outputs to content/quantum-observable-universe/lean/.lake/build/doc/
           if [ -d content/quantum-observable-universe/lean/.lake/build/doc ]; then
             cp -r content/quantum-observable-universe/lean/.lake/build/doc/* _lean_docs/
           elif [ -d lean-docs ]; then

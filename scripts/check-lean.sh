@@ -9,7 +9,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean-archive"
+LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
 LAKEFILE="$LEAN_DIR/lakefile.toml"
 MANIFEST="$LEAN_DIR/lake-manifest.json"
 CONFIG="$REPO_ROOT/lean-mcp.config.json"

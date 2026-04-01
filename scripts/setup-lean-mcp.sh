@@ -20,7 +20,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean-archive"
+LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
 TOOLCHAIN_FILE="$LEAN_DIR/lean-toolchain"
 LAKEFILE="$LEAN_DIR/lakefile.toml"
 

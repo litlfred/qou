@@ -136,24 +136,24 @@ echo "::group::Lean checks summary"
 # Count sorry markers in each version
 MAIN_SORRY=0
 BRANCH_SORRY=0
-if [ -d "$MAIN_DIR/lean-archive" ]; then
-  MAIN_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' "$MAIN_DIR/lean-archive/" 2>/dev/null \
+if [ -d "$MAIN_DIR/content/quantum-observable-universe/lean" ]; then
+  MAIN_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' "$MAIN_DIR/content/quantum-observable-universe/lean/" 2>/dev/null \
     | awk -F: '{s+=$NF} END {print s+0}' || echo 0)
 fi
 # For sorry counting, use feature branch sources if available, else working tree
-if [ -n "$FEATURE_REF" ] && [ "$FEATURE_SHA" != "$(git rev-parse HEAD)" ] && [ -d "$FEATURE_DIR/lean-archive" ]; then
-  BRANCH_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' "$FEATURE_DIR/lean-archive/" 2>/dev/null \
+if [ -n "$FEATURE_REF" ] && [ "$FEATURE_SHA" != "$(git rev-parse HEAD)" ] && [ -d "$FEATURE_DIR/content/quantum-observable-universe/lean" ]; then
+  BRANCH_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' "$FEATURE_DIR/content/quantum-observable-universe/lean/" 2>/dev/null \
     | awk -F: '{s+=$NF} END {print s+0}' || echo 0)
-elif [ -d lean-archive ]; then
-  BRANCH_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' lean-archive/ 2>/dev/null \
+elif [ -d content/quantum-observable-universe/lean ]; then
+  BRANCH_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' content/quantum-observable-universe/lean/ 2>/dev/null \
     | awk -F: '{s+=$NF} END {print s+0}' || echo 0)
 fi
 
 # Collect changed Lean files (use FEATURE_SHA instead of HEAD)
-LEAN_CHANGED_FILES=$(git diff --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'lean-archive/**/*.lean' 2>/dev/null || true)
-LEAN_ADDED_FILES=$(git diff --diff-filter=A --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'lean-archive/**/*.lean' 2>/dev/null || true)
-LEAN_DELETED_FILES=$(git diff --diff-filter=D --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'lean-archive/**/*.lean' 2>/dev/null || true)
-LEAN_MODIFIED_FILES=$(git diff --diff-filter=M --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'lean-archive/**/*.lean' 2>/dev/null || true)
+LEAN_CHANGED_FILES=$(git diff --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'content/quantum-observable-universe/lean/**/*.lean' 2>/dev/null || true)
+LEAN_ADDED_FILES=$(git diff --diff-filter=A --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'content/quantum-observable-universe/lean/**/*.lean' 2>/dev/null || true)
+LEAN_DELETED_FILES=$(git diff --diff-filter=D --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'content/quantum-observable-universe/lean/**/*.lean' 2>/dev/null || true)
+LEAN_MODIFIED_FILES=$(git diff --diff-filter=M --name-only "$MERGE_BASE" "$FEATURE_SHA" -- 'content/quantum-observable-universe/lean/**/*.lean' 2>/dev/null || true)
 
 # Count changed files
 N_CHANGED=$(echo "$LEAN_CHANGED_FILES" | grep -c . 2>/dev/null || echo 0)
@@ -191,7 +191,7 @@ fi
 # Generate the Lean diff body (unified diff of Lean files, truncated)
 LEAN_DIFF=""
 if [ -n "$LEAN_CHANGED_FILES" ]; then
-  LEAN_DIFF=$(git diff "$MERGE_BASE" "$FEATURE_SHA" -- 'lean-archive/**/*.lean' 2>/dev/null | head -200 || true)
+  LEAN_DIFF=$(git diff "$MERGE_BASE" "$FEATURE_SHA" -- 'content/quantum-observable-universe/lean/**/*.lean' 2>/dev/null | head -200 || true)
 fi
 
 # Inject Lean checks appendix before \end{document}

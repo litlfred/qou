@@ -529,12 +529,12 @@ jobs:
           python3 .github/scripts/generate-folio-index.py "${FOLIO_ARGS[@]}"
 
           # ── Copy Lean source files to gh-pages ───────────────────────────────
-          if [ -d lean-archive ]; then
+          if [ -d content/quantum-observable-universe/lean ]; then
             mkdir -p _site/lean
-            cp -r lean-archive/QOU    _site/lean/QOU    2>/dev/null || true
-            cp    lean-archive/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
-            cp    lean-archive/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
-            cp    lean-archive/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+            cp -r content/quantum-observable-universe/lean/QOU    _site/lean/QOU    2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
           fi
 
           # ── Copy schema docs (TypeDoc) to gh-pages ────────────────────────────

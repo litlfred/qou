@@ -32,10 +32,10 @@ function hasCommand(cmd: string): boolean {
   }
 }
 
-/** Resolve the Lean project directory. lean-archive/ is the default. */
+/** Resolve the Lean project directory. content/quantum-observable-universe/lean/ is the default. */
 function leanProjectDir(dir?: string): string {
   if (dir) return resolve(REPO_ROOT, dir);
-  const leanArchive = join(REPO_ROOT, "lean-archive");
+  const leanArchive = join(REPO_ROOT, "content/quantum-observable-universe/lean");
   if (existsSync(join(leanArchive, "lakefile.toml")) || existsSync(join(leanArchive, "lakefile.lean"))) {
     return leanArchive;
   }
@@ -123,14 +123,14 @@ export function registerLeanTools(server: McpServer): void {
   server.tool(
     "lean_build",
     "Run `lake build` in the Lean project directory. Returns build output. " +
-    "Defaults to lean-archive/ if it contains a lakefile.",
+    "Defaults to content/quantum-observable-universe/lean/ if it contains a lakefile.",
     {
       clean: z.boolean().default(false)
         .describe("Run `lake clean` first"),
       project: z.string().optional()
         .describe("Specific library to build (e.g. 'QOU'). Default: build all."),
       dir: z.string().optional()
-        .describe("Lean project directory relative to repo root (default: auto-detect lean-archive/ or lean/)"),
+        .describe("Lean project directory relative to repo root (default: auto-detect content/quantum-observable-universe/lean/ or lean/)"),
     },
     async ({ clean, project, dir }) => {
       if (!hasCommand("lake")) {
@@ -178,12 +178,12 @@ export function registerLeanTools(server: McpServer): void {
     "lean_check",
     "Run `lake check` to type-check Lean files without full compilation. " +
     "Faster than lean_build — useful for quick validation after edits. " +
-    "Defaults to lean-archive/ if it contains a lakefile.",
+    "Defaults to content/quantum-observable-universe/lean/ if it contains a lakefile.",
     {
       project: z.string().optional()
         .describe("Specific library to check (e.g. 'QOU'). Default: check all."),
       dir: z.string().optional()
-        .describe("Lean project directory relative to repo root (default: auto-detect lean-archive/ or lean/)"),
+        .describe("Lean project directory relative to repo root (default: auto-detect content/quantum-observable-universe/lean/ or lean/)"),
     },
     async ({ project, dir }) => {
       if (!hasCommand("lake")) {
