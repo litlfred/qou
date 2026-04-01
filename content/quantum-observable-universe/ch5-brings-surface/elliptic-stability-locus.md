@@ -28,15 +28,15 @@ $$
 $$
 
 Both are cubics in one variable parametrized by another.  The
-chiral cubic (C) has parameter $z$ (spacetime) and variable $X$
-(chiral coordinate); the stability cubic (S) has parameter $p$
+color cubic (C) has parameter $z$ (spacetime) and variable $X$
+(color coordinate); the stability cubic (S) has parameter $p$
 (Coulomb charge) and variable $t$ (cube root of mass number).
 
 **Genus comparison.**
 
 The stability cubic (S) is rational: solving for $p$ gives
 $p = t^3 / (2 + 2ct^2)$, so the curve has genus $0$.  The
-chiral cubic (C) has genus $1$ for generic $z$ (it is an
+color cubic (C) has genus $1$ for generic $z$ (it is an
 elliptic curve with $j$-invariant varying as a rational function
 of $z$).
 
@@ -74,7 +74,7 @@ of genus $1$.
    over $\mathbb{Q}(q)$.*
 
 2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(p)}$
-   to the chiral fiber of the Bring's surface, where $z(p)$ is
+   to the color fiber of the Bring's surface, where $z(p)$ is
    the spacetime ratio at which the color-tube cubic
    ([color tube cubic](#rem:color-tube-cubic)) specialises to
    the stability cubic:*
@@ -93,7 +93,7 @@ $$
 
 **Coefficient matching.**
 
-The chiral cubic at $z = -1/(2cp)$ is
+The color cubic at $z = -1/(2cp)$ is
 
 $$
   X^3 + \left(1 - \frac{1}{2cp}\right) X^2
@@ -137,7 +137,7 @@ locus would intersect the stability curve.
 
 If the conjecture holds, then:
 
-- The **three coral tubes** $(r, g, b)$ of the chiral
+- The **three coral tubes** $(r, g, b)$ of the color
   fibration correspond to the **three sectors** of nuclear
   binding: volume (strong), Coulomb (electromagnetic), and
   Pauli (exclusion).
@@ -160,7 +160,7 @@ If the conjecture holds, then:
 
 **Computational evidence.**
 
-The chiral elliptic curve
+The color elliptic curve
 ([Descartes elliptic curve](#prop:descartes-elliptic-curve))
 at the substrate parameter $q$ is
 
@@ -198,7 +198,7 @@ lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ —
 and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
 then acquire an interpretation as integer points of $\mathcal{E}_p$ —
 remains an open question.  The structural parallel between the
-stability cubic and the chiral cubic (identical algebraic origin
+stability cubic and the color cubic (identical algebraic origin
 in the Bring's surface, coefficient matching at $p \approx 68$)
 is suggestive but not yet proven.
 
@@ -207,8 +207,8 @@ is suggestive but not yet proven.
 - The stable nuclei are lattice points on the stability cubic
   (exact, from the Skein binding Lagrangian).
 - The Descartes elliptic curve $\mathcal{E}_q$ exists and has the stated
-  invariants (exact, from the chiral fibration).
-- The stability cubic and the chiral cubic share their algebraic
+  invariants (exact, from the color fibration).
+- The stability cubic and the color cubic share their algebraic
   origin in the Bring's surface (exact, by construction).
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds
   (exact, from the $(s^2 + s - 1)$ factor).

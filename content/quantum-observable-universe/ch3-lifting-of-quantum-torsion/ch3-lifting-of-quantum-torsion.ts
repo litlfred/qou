@@ -169,6 +169,7 @@ export default chapter({
         "mass-geometric-drag",
         "euler-char-stability-C",
         "brane-boundary-structure-proof",
+        "topological-mass-conjecture",
         "topological-mass-proof",
         "quantum-dilogarithm",
         "quantum-dilogarithm-proof",

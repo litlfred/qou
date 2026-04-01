@@ -45,7 +45,7 @@ Bring's surface:
    the electromagnetic coupling is the component of the Skein
    pairing that is *odd* under this involution.
 
-2. **The complex structure** on the chiral elliptic curve $\mathcal{E}_z$:
+2. **The complex structure** on the color elliptic curve $\mathcal{E}_z$:
    the Bring's surface admits a Kähler structure inherited from the
    embedding $\Sigma_4 \hookrightarrow \mathbb{P}^4$.  The complex
    structure $J$ satisfies $J^2 = -1$ and determines the phase of
@@ -55,7 +55,7 @@ Bring's surface:
 
 3. **The symplectic pairing** on the coral tube coordinates:
    the T-duality involution $\iota \colon (X, z) \mapsto (z, X)$
-   on the symmetric cubic $F(X, z) = F(z, X)$ exchanges chiral
+   on the symmetric cubic $F(X, z) = F(z, X)$ exchanges color
    and spacetime degrees of freedom.  The symplectic form
    $\omega = dX \wedge dz$ is preserved by $\iota$, and the
    Coulomb interaction is the component of the crossing energy

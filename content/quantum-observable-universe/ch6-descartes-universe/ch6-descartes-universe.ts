@@ -116,6 +116,7 @@ export default chapter({
       label: "sec:brane-fluid",
       blocks: [
         "brane-fluid",
+        "madelung-fluid",
         "geodesic-vortices",
         "braid-fluid",
         "planck-reynolds",
