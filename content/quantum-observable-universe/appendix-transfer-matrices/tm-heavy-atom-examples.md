@@ -234,9 +234,9 @@ $\binom{210}{2} = 21{,}945$ transfer matrix multiplications
 
 | Nucleon count | $m_{\leq}$ | $n_{\mathrm{out}}$ | Shell size |
 |:---:|:---:|:---:|:---:|
-| $Z = 83$ | $82$ | $1$ | $82 - 50 = 32$ |
+| $Z = 83$ | $82$ | $1$ | $126 - 82 = 44$ |
 | $N = 127$ | $126$ | $1$ | $126 - 82 = 44$ |
-| $Z' = 84$ | $82$ | $2$ | $32$ |
+| $Z' = 84$ | $82$ | $2$ | $44$ |
 | $N' = 126$ | $126$ | **$0$ (magic!)** | $44$ |
 
 Both parent nucleon counts sit **one above** a magic number.

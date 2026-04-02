@@ -2,7 +2,7 @@ import { prose } from "../../schema/builders";
 
 export default prose({
   label: "tm-worked-examples",
-  title: "Worked examples",
+  title: "Worked examples (light nuclei)",
   uses: [
     "def:transfer-matrix-operator",
     "prop:skein-polynomial-transfer-matrix",

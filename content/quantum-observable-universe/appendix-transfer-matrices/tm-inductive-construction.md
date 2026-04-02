@@ -35,7 +35,7 @@ where $T_{\tau_i, \tau_A}$ is determined by the pair type:
 
 | Pair $(\tau_i, \tau_A)$ | Transfer matrix |
 |:-----------------------:|:---------------:|
-| $(\mathfrak{p}, \mathfrak{p})$ or $(\mathfrak{p}, \mathfrak{n}\text{-up})$ | $T_{pp}$ |
+| $(\mathfrak{p}, \mathfrak{p})$ | $T_{pp}$ |
 | $(\mathfrak{n}, \mathfrak{n})$ | $T_{nn}$ |
 | $(\mathfrak{p}, \mathfrak{n})$ or $(\mathfrak{n}, \mathfrak{p})$ | $T_{\mathrm{mix}}$ |
 
@@ -190,7 +190,7 @@ $$
 The Gröbner reduction has **zero Yang--Baxter steps** and
 **zero far-commutativity steps**.  Only Hecke reductions
 ($T^2 \to (q-q^{-1})T + 1$) are needed.  Therefore the
-per-generator transfer matrix chain IS the exact Gröbner
+per-generator transfer matrix chain is the exact Gröbner
 normal form — no reordering of generators occurs.
 
 ## Shell closure signatures
