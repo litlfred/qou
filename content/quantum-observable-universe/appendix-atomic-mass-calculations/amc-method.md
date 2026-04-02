@@ -124,41 +124,43 @@ values with uncertainties of order $\sim 0.5$--$1$ MeV.
 
 ## The $q$-torsion hypothesis for synthetic elements
 
-Synthetic elements ($Z \geq 93$) were assembled under conditions
-very different from stellar nucleosynthesis:
+This appendix uses AME2020 binding energies $B/A$ as input.
+Since the same $B/A$ enters both the QOU formula and the
+observed mass derivation, the deviations shown here are small
+($< 0.1$ MeV) for all elements, natural and synthetic alike.
+
+The deeper test of the QOU framework is whether the Skein
+polynomial computed purely at $q_0$ reproduces the AME2020
+$B/A$ values.  For naturally occurring elements ($Z \leq 92$),
+the transfer matrix calculation
+([transfer matrix operator](#def:transfer-matrix-operator))
+confirms this to high precision.
+
+For synthetic elements ($Z \geq 93$), a distinct prediction
+arises.  These nuclei were assembled under conditions very
+different from stellar nucleosynthesis:
 
 1. **Neutron capture in reactors** ($Z = 93$--$100$): high
    thermal neutron flux, moderate gauge-field curvature.
    The local substrate parameter is expected to be close to
-   $q_0$, so deviations should be small.
+   $q_0$.
 
 2. **Heavy-ion fusion** ($Z = 101$--$118$): nuclei are created
    in transient heavy-ion collision fireballs
    ($\sqrt{s_{NN}} \sim$ GeV, lifetime $\sim 10^{-23}$ s)
-   where the quark-gluon plasma produces concentrated
-   gauge-field curvature
-   ([half-life as $q$-probe](#rem:half-life-as-q-probe)).
-   The local substrate parameter in the fireball is
-   $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|(p) > q_0$.
+   where concentrated gauge-field curvature may shift the
+   local substrate parameter to $q_{\mathrm{eff}} > q_0$.
 
-In the QOU framework, the nuclear Skein polynomial is evaluated
-at the substrate parameter of the formation environment.  If the
-crossing resolutions "lock in" at the formation-time $q$, then
-superheavy nuclei assembled at $q_{\mathrm{eff}} > q_0$ carry a
-residual $q$-torsion imprint.  The topological mass formula
-evaluated at the ambient $q_0$ will therefore show systematic
-deviations for accelerator-produced nuclei — deviations that
-grow with $Z$ as the $q$-stability window narrows
-([stability ranges](#rem:q-stability-ranges): for $Z > 50$,
-$\Delta q < 0.01$).
+If the crossing resolutions of the nuclear Skein polynomial
+"lock in" at the formation-time $q_{\mathrm{eff}}$, then
+superheavy nuclei would carry a residual $q$-torsion imprint.
+The Skein-derived $B/A$ at $q_0$ would then differ from the
+experimentally measured $B/A$, producing systematic mass
+deviations that grow with $Z$.
 
-**Prediction.** The percentage deviation between QOU-predicted
-and observed masses should be:
-- $< 0.01\%$ for naturally occurring elements ($Z \leq 92$)
-- Systematically larger ($\sim 0.1$--$0.5\%$) for synthetic
-  superheavy elements ($Z \geq 101$), with the deviation
-  increasing monotonically with $Z$
-
-This is a falsifiable prediction: improved mass measurements of
-superheavy elements (e.g.\ at RIKEN or GSI) would either confirm
-or refute the $q$-torsion formation hypothesis.
+**Prediction.** When $B/A$ is computed from the Skein
+polynomial at $q_0$ (rather than taken from AME2020),
+the deviations for accelerator-produced elements should be
+systematically larger than for natural elements.  Improved
+mass measurements of superheavy elements (e.g.\ at RIKEN
+or GSI) would test this prediction.

@@ -7,7 +7,8 @@ export default prose({
     "def:mass-identity",
     "prop:terminal-resolution",
     "def:knot-particle-generation",
-    "rem:half-life-as-q-probe",
+    "ex:electron-knot-concrete",
+    "def:transfer-matrix-operator",
   ],
   tags: [
     "atomic-mass",
