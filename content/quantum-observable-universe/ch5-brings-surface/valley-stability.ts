@@ -21,8 +21,10 @@ export default simulator({
     "def:substrate-parameter",
     "prop:local-substrate-q",
   ],
-  simulator: {
-    type: "html",
-    source: "valley_stability.html",
+  html: "folio-assistant/simulators/valley_stability.html",
+  defaultView: {
+    name: "default",
+    title: "Default valley-of-stability view",
+    params: {},
   },
 });
