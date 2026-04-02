@@ -188,10 +188,15 @@ jobs:
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
+      # Each paper is built into its own subdirectory (build/<paper-dir>/) to
+      # prevent later papers from overwriting earlier ones.  The primary paper
+      # (quantum-observable-universe) is then symlinked to the top-level
+      # chapters/ and main.tex for LaTeX compilation.
       - name: Validate and build content objects for all papers
         continue-on-error: true
         run: |
           cd content
+          PRIMARY_PAPER="quantum-observable-universe"
           for paper_dir in $(cat ../papers.json | python3 -c "import sys,json; [print(p['dir']) for p in json.load(sys.stdin)]"); do
             echo "── Validating: ${paper_dir}"
             if ls "${paper_dir}"/*/*.ts 2>/dev/null | head -1 > /dev/null; then
@@ -201,18 +206,29 @@ jobs:
             fi
 
             echo "── Building: ${paper_dir}"
+            mkdir -p "../build/${paper_dir}/chapters"
             bun run pipeline/build.ts \
               "${paper_dir}/${paper_dir}.ts" \
-              --out-dir ../chapters/ \
+              --out-dir "../build/${paper_dir}/chapters/" \
               --generate-main \
-              --main-out ../main.tex \
+              --main-out "../build/${paper_dir}/main.tex" \
               --preamble ../latex/preamble.tex \
               || echo "::warning::Content build had issues for ${paper_dir}"
           done
-          echo "Generated chapters:"
-          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
-          echo "Generated main.tex:"
-          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
+
+          # Copy the primary paper's output to the top-level locations
+          # expected by the LaTeX compilation step
+          if [ -d "../build/${PRIMARY_PAPER}/chapters" ]; then
+            mkdir -p ../chapters
+            cp ../build/${PRIMARY_PAPER}/chapters/*.tex ../chapters/ 2>/dev/null || true
+            cp ../build/${PRIMARY_PAPER}/main.tex ../main.tex 2>/dev/null || true
+            echo "Primary paper (${PRIMARY_PAPER}) chapters:"
+            ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+            echo "Primary paper main.tex:"
+            head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
+          else
+            echo "::error::Primary paper ${PRIMARY_PAPER} build directory not found"
+          fi
 
       # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
       - name: Build schema docs
