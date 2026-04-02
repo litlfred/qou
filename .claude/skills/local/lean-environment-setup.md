@@ -38,21 +38,16 @@ The paper-assistant's Lean tools require these on the PATH:
 
 ### Step 1: Check current state
 
-```bash
-export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
-which elan lean lake 2>/dev/null
-cat /tmp/qou-lean-build-status.json 2>/dev/null
-```
+Use the `lean_status` MCP tool. It reports the current mode
+(local/remote/local-degraded/none) and what's missing.
 
 ### Step 2: Install Lean toolchain
 
-Run the setup script if lean/elan are missing:
+Use the `lean_setup` MCP tool. It handles the full installation:
+elan, lean, lake, uv, ripgrep, lake update, Mathlib cache, and build.
+Safe to re-run — skips already-installed components.
 
-```bash
-./scripts/setup-lean-mcp.sh
-```
-
-If the script fails (e.g., 403 errors from network restrictions in
+If `lean_setup` fails (e.g., 403 errors from network restrictions in
 sandboxed environments), proceed to Step 3.
 
 ### Step 3: Diagnose network restrictions
@@ -71,32 +66,8 @@ Lean tools require running Claude Code locally where lean/lake are installed.
 
 ### Step 4: Verify Lean tools via paper-assistant
 
-After setup, test that MCP Lean tools work:
-
-```
-lean_build (via paper-assistant MCP)
-lean_status (via paper-assistant MCP)
-```
-
-If these return results, Lean is operational.
-
-## MCP Configuration
-
-The `.mcp.json` has a single entry — `paper-assistant`:
-
-```json
-{
-  "mcpServers": {
-    "paper-assistant": {
-      "command": "./scripts/start-folio-assistant.sh",
-      "args": ["--stdio"]
-    }
-  }
-}
-```
-
-The paper-assistant auto-detects lean/lake on the PATH and reports
-availability in its startup dependency status output.
+After setup, verify with the `lean_status` MCP tool. If mode is
+`local`, Lean is fully operational.
 
 ## Fallback: Structural Analysis Without Lean
 
@@ -130,10 +101,10 @@ What agents **cannot** do without Lean:
 
 ## PATH Configuration
 
-The `lean-build-bg.sh` and `session-status.sh` scripts both set:
+All session scripts source `scripts/lib/lean-env.sh`, which sets:
 
 ```bash
-export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.elan/bin:$HOME/.local/bin:$HOME/.bun/bin:$PATH"
 ```
 
 The paper-assistant inherits the shell's PATH when launched via `.mcp.json`.

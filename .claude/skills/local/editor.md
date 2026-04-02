@@ -17,14 +17,8 @@ check**, then **triage**:
 
 ### 0. Check Lean availability (local → remote fallback)
 
-Before routing any request, run the Lean health check:
-
-```bash
-./scripts/check-lean.sh
-```
-
-The script checks local Lean first, then probes the remote MCP server
-at the domain in `lean-mcp.config.json`. It returns a `mode` field:
+Use the `lean_status` MCP tool (provided by paper-assistant). It reports
+a `mode` field:
 
 #### `mode: "local"` — Local Lean fully ready
 
@@ -37,35 +31,24 @@ hosted server at the `remote_url` is responding. **Use the remote
 MCP server.** Tell the author:
 
 > Local Lean not available — using remote MCP at `<remote_url>`.
-> All Lean MCP tools work normally. To set up local Lean for
-> faster response: `./scripts/setup-lean-mcp.sh`
-
-To use remote mode, the MCP tools should be called via the remote
-server URL. The `.mcp.json` defines the local stdio server; for
-remote, the agent should note the `remote_url` from the check
-output and use it for any HTTP-based MCP tool calls.
+> All Lean MCP tools work normally. To set up local Lean, use
+> the `lean_setup` MCP tool.
 
 #### `mode: "local-degraded"` — Lean installed but deps/cache missing
 
-Local Lean exists but isn't fully ready. Show the `message` field
-which explains what to run (e.g. `lake update`, `lake exe cache get`).
-If the remote is also available (`remote_ok: true`), offer:
+Local Lean exists but isn't fully ready. The `lean_status` output
+explains what's missing. If the remote is also available, offer:
 
 > Local Lean needs setup. Remote MCP is available at `<remote_url>`.
-> Use remote now, or fix local?
+> Use remote now, or fix local with `lean_setup`?
 
 #### `mode: "none"` — No Lean available anywhere
 
 Neither local nor remote is reachable. If the request requires Lean:
 
 > No Lean MCP available (local not installed, remote unreachable).
->
-> **Local setup:**
-> ```bash
-> ./scripts/setup-lean-mcp.sh
-> ```
->
-> **Remote server:** check if `folio.litlfred.org` is running.
+> Run the `lean_setup` MCP tool to install, or check if the remote
+> server is running.
 >
 > Proceed with LaTeX-only work?
 

@@ -631,16 +631,41 @@ configured via `.mcp.json`. It provides Claude Code with:
 
 Prerequisites: `git`, `curl`.
 
+Use the `lean_setup` MCP tool (provided by paper-assistant). It installs:
+uv, elan, the Lean toolchain pinned in
+`content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache,
+ripgrep, and runs `lake build`.
+
+Alternatively, from the command line:
+
 ```bash
-./scripts/setup-lean-mcp.sh
+cd content/quantum-observable-universe/lean
+lake exe cache get && lake build
 ```
 
-This installs: uv (Python package manager), elan, the Lean toolchain
-pinned in `content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
-`lean-lsp-mcp` via uvx.
+### Local Mathlib cache
 
-**Important**: Run `lake build` in `content/quantum-observable-universe/lean/` before first MCP session to avoid
-timeouts.
+To avoid re-cloning Mathlib from GitHub on every fresh `.lake/` build,
+keep a persistent local clone one directory above the repo:
+
+```bash
+cd ..  # parent of the repo root
+git clone https://github.com/leanprover-community/mathlib4.git
+```
+
+The build tools automatically detect this clone (configured in
+`lean-mcp.config.json` → `lean.local_mathlib_path`) and set a git
+`insteadOf` redirect so Lake fetches from the local clone instead of
+GitHub. This is transparent — no changes to `lakefile.toml` needed.
+
+| Config key | Default | Purpose |
+|-----------|---------|---------|
+| `lean.local_mathlib_path` | `../mathlib4` | Path to local clone (relative to repo root) |
+| `lean.mathlib_git_url` | `https://github.com/leanprover-community/mathlib4` | Upstream URL to redirect |
+
+The `lean_build` tool warns if the local clone is >7 days stale and
+offers `update_local_mathlib: true` to fetch the latest commits.
+Shell scripts use `scripts/lib/lean-env.sh` for the same logic.
 
 ### Remote MCP server
 
@@ -675,10 +700,11 @@ To extract the deploy infrastructure for another repo, copy `deploy/`,
 
 ### Session-start hook
 
-A `SessionStart` hook in `.claude/settings.json` runs `scripts/check-lean.sh`
-at the beginning of every session. If Lean or uv is not available and the
-user's request requires Lean, the editor skill will prompt the author with
-setup instructions rather than silently failing.
+A `SessionStart` hook in `.claude/settings.json` runs `scripts/session-status.sh`
+at the beginning of every session. It sources `scripts/lib/lean-env.sh` for
+shared Lean environment detection. If Lean is not available and the user's
+request requires Lean, the editor skill will suggest the `lean_setup` MCP
+tool rather than silently failing.
 
 ## Project structure
 
