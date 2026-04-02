@@ -201,8 +201,7 @@ $$
 $$
 
 Since $T_{\gamma e}$ has eigenvalues
-$\lambda_{\pm} = \frac{1}{2}\bigl[(q - q^{-1}) \pm
-\sqrt{(q - q^{-1})^2 + 4}\bigr]$, the $n$-th power grows as
+$\lambda_{\pm} = \frac{1}{2}\bigl[(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}\bigr]$, the $n$-th power grows as
 $\lambda_+^n$, and the energy scales as:
 
 $$

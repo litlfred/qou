@@ -17,17 +17,14 @@ base is a discrete (Artinian) scheme.
 *Item (2): $\kappa_0$ equals the Euler class.*
 The first Yekutieli obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$
 is the connecting homomorphism image of the bundle class $[A_0]$ under the
-central extension $1 \to \mathcal{B} \to \mathfrak{G}_1 \to \mathfrak{G}_0
-\to 1$ ([Yekutieli lifting](#prop:yekutieli-lifting)).  In the archimedean
+central extension $1 \to \mathcal{B} \to \mathfrak{G}_1 \to \mathfrak{G}_0 \to 1$ ([Yekutieli lifting](#prop:yekutieli-lifting)).  In the archimedean
 realisation, this identifies with the Euler class $e$ of the Reeb
 $\mathrm{U}(1)$-bundle via the Gysin sequence.  The trace map sends
 $\kappa_0$ to $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$.
 
 *Item (3): Perpetual obstruction.*
-The class $\kappa_0$ lies in the image of $H^2(\mathcal{S}, \underline{R})
-\to H^2(\mathcal{S}, \mathcal{B})$ (constant/topological classes), while jet
-corrections at level $n$ lie in the image of $H^2(\mathcal{S},
-\mathcal{O}_{\mathcal{S}}) \to H^2(\mathcal{S}, \mathcal{B})$ (analytic/algebraic
+The class $\kappa_0$ lies in the image of $H^2(\mathcal{S}, \underline{R}) \to H^2(\mathcal{S}, \mathcal{B})$ (constant/topological classes), while jet
+corrections at level $n$ lie in the image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) \to H^2(\mathcal{S}, \mathcal{B})$ (analytic/algebraic
 classes).  When $\kappa_0$ is non-torsion, these images are complementary
 subgroups, so the corrections cannot cancel $\kappa_0$.  In the archimedean
 realisation, the splitting follows from the exponential sequence; in the

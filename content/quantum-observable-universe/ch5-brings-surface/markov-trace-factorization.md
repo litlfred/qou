@@ -117,8 +117,7 @@ This works because:
    (a linear combination of $\sigma_i$ and the identity).
 
 2. The Markov property $\mathrm{tr}(x \sigma_n) = z\,\mathrm{tr}(x)$
-   applies to the $\sigma_i$ term, and $\mathrm{tr}(x \cdot 1)
-   = \mathrm{tr}(x)$ for the identity term.
+   applies to the $\sigma_i$ term, and $\mathrm{tr}(x \cdot 1) = \mathrm{tr}(x)$ for the identity term.
 
 3. Generator $\sigma_i$ is the **rightmost** active generator
    when processing from right to left, so the Markov property

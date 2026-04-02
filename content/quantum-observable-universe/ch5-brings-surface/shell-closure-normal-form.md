@@ -13,12 +13,10 @@ proton–neutron Hopf linking:
    in $H_1(q)$).
 2. **Hopf-link** the next nucleon: append crossings
    $\sigma_j^{\epsilon(j,k)}$ for all existing nucleons $j < k$.
-3. **Reduce** via the Gröbner basis $G = \{\sigma_i^2 -
-   (q - q^{-1})\sigma_i - 1,\; \text{YB},\; \text{far-comm}\}$.
+3. **Reduce** via the Gröbner basis $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \text{YB},\; \text{far-comm}\}$.
 4. Record the **Hecke reduction energy** $\Delta E_k$
    ([Gröbner–Shirshov energy](#thm:groebner-shirshov-energy))
-   and the **word-length histogram** $h_k(\ell) = \#\{w \in
-   \mathrm{supp}(\bar{\mathcal{N}}) : |w| = \ell\}$.
+   and the **word-length histogram** $h_k(\ell) = \#\{w \in \mathrm{supp}(\bar{\mathcal{N}}) : |w| = \ell\}$.
 
 Repeat until $A = p + n$ nucleons are linked.
 

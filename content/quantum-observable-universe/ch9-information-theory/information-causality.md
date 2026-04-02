@@ -66,8 +66,7 @@ $$
   \quad \text{(bits per Planck time)}.
 $$
 
-At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2
-\approx 82$ nats per Planck time.
+At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2 \approx 82$ nats per Planck time.
 
 **5. Pawlowski's information causality.**
 Information causality [pawlowski2009] states that if Alice sends

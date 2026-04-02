@@ -145,8 +145,7 @@ $$
 $$
 
 When $\mu_a \neq \mu_b$ (i.e., $\mu_u \neq \mu_d$), the two
-are distinct: the asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba}
-= (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the
+are distinct: the asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba} = (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the
 **weak asymmetry** that drives the $Q$-value.
 
 ## The lepton pair from $T_{3,5}$ decomposition

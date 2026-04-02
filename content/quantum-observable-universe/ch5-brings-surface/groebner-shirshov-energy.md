@@ -5,9 +5,7 @@ invariant, computed by the division algorithm with no path
 dependence.
 
 **Theorem.**
-Let $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\;
-\sigma_i \sigma_{i+1} \sigma_i - \sigma_{i+1} \sigma_i \sigma_{i+1},\;
-\sigma_i \sigma_j - \sigma_j \sigma_i\}$ be the Gröbner basis
+Let $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \sigma_i \sigma_{i+1} \sigma_i - \sigma_{i+1} \sigma_i \sigma_{i+1},\; \sigma_i \sigma_j - \sigma_j \sigma_i\}$ be the Gröbner basis
 for $H_A(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 Define the **energy functional** on $H_A(q)$ by
@@ -21,8 +19,7 @@ $\overline{\mathcal{N}(Z, N)}$ and $\ell(w)$ is the word length.
 Then:
 
 1. **Only Hecke reductions change energy.**
-   The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i
-   = \sigma_{i+1} \sigma_i \sigma_{i+1}$ and the far
+   The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ and the far
    commutativity $\sigma_i \sigma_j = \sigma_j \sigma_i$
    preserve all coefficients and word lengths.  The Hecke
    relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ is the
@@ -57,8 +54,7 @@ Then:
 **Proof.**
 
 *Part 1.*
-The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i
-= \sigma_{i+1} \sigma_i \sigma_{i+1}$ has the same word length
+The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ has the same word length
 on both sides ($\ell = 3$) and coefficient $1$.  Applying it to a
 term $c \cdot w$ produces $c \cdot w'$ where $|c| = |c|$ and
 $\ell(w') = \ell(w)$.  Similarly for far commutativity.  Only
@@ -88,8 +84,7 @@ $|c(q-q^{-1})| + |c| - |c| = |c| \cdot |q - q^{-1}|$.
 **Physical interpretation.**
 The energy functional $E(\overline{\mathcal{N}(Z, N)})$ is the
 **Skein binding energy** of the nucleus, expressed in the
-Gröbner--Shirshov normal form.  Each Hecke step $\sigma_i^2
-\to (q - q^{-1})\sigma_i + 1$ resolves a double crossing into
+Gröbner--Shirshov normal form.  Each Hecke step $\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$ resolves a double crossing into
 a weighted single crossing plus a resolved (identity) term:
 
 $$
@@ -122,8 +117,7 @@ part 1 of the theorem.
 
 **The beta-decay energy difference.**
 The half-life is determined by
-$\Delta E = E(\overline{\mathcal{N}(p+1,n-1)})
-- E(\overline{\mathcal{N}(Z, N)})$, which counts the difference
+$\Delta E = E(\overline{\mathcal{N}(p+1,n-1)}) - E(\overline{\mathcal{N}(Z, N)})$, which counts the difference
 in Hecke steps between parent and daughter normal forms.  This
 difference is **always negative** (verified computationally for
 all $A \leq 6$): the daughter has fewer Hecke steps, consistent

@@ -54,8 +54,7 @@ arising from the single datum $T \subset G$:
    lives.
 
 5. **Longitudinal backbone.**
-   In the harmonic decomposition of $H^1(\mathcal{S}_n,
-   \mathrm{ad}\,\mathcal{S}_n)$, the $U_1(R)$-modes
+   In the harmonic decomposition of $H^1(\mathcal{S}_n, \mathrm{ad}\,\mathcal{S}_n)$, the $U_1(R)$-modes
    are the **longitudinal backbone**: steady-state flows
    aligned with the Reeb direction.  The off-diagonal
    modes ($E_{\pm}$) are the **ladder modes**: entangling

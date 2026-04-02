@@ -14,8 +14,7 @@ g = \begin{pmatrix} \alpha & -\bar{\beta} \\ \beta & \bar{\alpha} \end{pmatrix},
 \qquad |\alpha|^2 + |\beta|^2 = 1,
 $$
 
-the inverse is $g^{-1} = g^\dagger = \bigl(\begin{smallmatrix}
-\bar{\alpha} & \bar{\beta} \\ -\beta & \alpha \end{smallmatrix}\bigr)$,
+the inverse is $g^{-1} = g^\dagger = \bigl(\begin{smallmatrix} \bar{\alpha} & \bar{\beta} \\ -\beta & \alpha \end{smallmatrix}\bigr)$,
 so the Maurer--Cartan form evaluates to:
 
 $$
@@ -28,8 +27,7 @@ $$
 \end{pmatrix}.
 $$
 
-Using the constraint $\alpha \, d\bar{\alpha} + \bar{\alpha} \, d\alpha
-+ \beta \, d\bar{\beta} + \bar{\beta} \, d\beta = 0$ (differentiation of
+Using the constraint $\alpha \, d\bar{\alpha} + \bar{\alpha} \, d\alpha + \beta \, d\bar{\beta} + \bar{\beta} \, d\beta = 0$ (differentiation of
 $|\alpha|^2 + |\beta|^2 = 1$), one verifies that $\theta$ is
 traceless and skew-Hermitian: $\theta \in \Omega^1(G; \mathfrak{su}(2))$.
 

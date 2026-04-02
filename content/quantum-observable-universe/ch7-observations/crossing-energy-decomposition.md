@@ -15,14 +15,12 @@ $\mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) = \sum_i \epsilon_i$ where
 $\epsilon_i \in \{q, -q^{-1}\}$:
 
 1. **Symmetric channel.**  The component
-   $E_{\mathrm{sym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \cosh(\ln q)
-   \cdot \mathrm{sgn}(\epsilon_i)$
+   $E_{\mathrm{sym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \cosh(\ln q) \cdot \mathrm{sgn}(\epsilon_i)$
    is invariant under the mirror operation $\sigma$ (which reverses
    all crossing signs).
 
 2. **Antisymmetric channel.**  The component
-   $E_{\mathrm{asym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \sinh(\ln q)
-   \cdot \mathrm{sgn}(\epsilon_i)$
+   $E_{\mathrm{asym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \sinh(\ln q) \cdot \mathrm{sgn}(\epsilon_i)$
    reverses sign under $\sigma$.
 
 3. **Pair cancellation.**  For a particle--antiparticle pair

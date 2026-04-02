@@ -13,8 +13,7 @@ define a category $\mathrm{Bun}(\mathbb{P}(V))$:
   concatenation.
 
 The torsion flow $\Phi_t^q$ ([Definition](#def:torsion-knot-flow)) is an
-endofunctor $\Phi_t^q \colon \mathrm{Bun}(\mathbb{P}(V)) \to
-\mathrm{Bun}(\mathbb{P}(V))$ that acts on objects by moving base points
+endofunctor $\Phi_t^q \colon \mathrm{Bun}(\mathbb{P}(V)) \to \mathrm{Bun}(\mathbb{P}(V))$ that acts on objects by moving base points
 and acts on morphisms by conjugating the isotopies with the flow.  The
 family $\{\Phi_t^q\}_{t \geq 0}$ assembles into a continuous functor from
 $(\mathbb{R}_{\geq 0}, +)$ — viewed as a one-object category — into the

@@ -4,8 +4,7 @@ $G = \mathrm{SU}(2)$.
 
 **Level 0.** $A_0 = \mathcal{O}(\mathrm{SU}(2))$, the coordinate ring
 of polynomial functions on $\mathrm{SU}(2)$.  As a representation of
-$\mathrm{SU}(2)$, it decomposes as $A_0 \cong \bigoplus_{j \geq 0} V_j
-\otimes V_j^*$ (Peter--Weyl), where $V_j$ is the spin-$j$
+$\mathrm{SU}(2)$, it decomposes as $A_0 \cong \bigoplus_{j \geq 0} V_j \otimes V_j^*$ (Peter--Weyl), where $V_j$ is the spin-$j$
 representation of dimension $2j + 1$.
 
 **Level 1.** $A_1 = J^1(A_0) = A_0 \otimes \Omega^1(A_0)$.  Since

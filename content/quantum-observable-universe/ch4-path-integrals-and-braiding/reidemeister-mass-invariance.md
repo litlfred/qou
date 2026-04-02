@@ -103,8 +103,7 @@ $$
 
 The bare mass $\mathfrak{m}_e$ is unchanged (R-I is a knot invariant).
 The binding energy $E_n = -13.6/n^2$ eV changes (R-I is NOT
-an embedding invariant).  The difference $\Delta E = E_{n+1}
-- E_n$ is the photon energy.
+an embedding invariant).  The difference $\Delta E = E_{n+1} - E_n$ is the photon energy.
 
 **Summary.**
 

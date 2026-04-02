@@ -30,8 +30,7 @@ controlled by $\hbar_q$.
 Bretin et al. \cite{bretin2003} observed quadrupole
 oscillations of a single vortex in a ${}^{87}\mathrm{Rb}$
 condensate, identified as the lowest Kelvin mode ($k = 1$).
-The measured frequency $\omega_1^{\text{exp}} = 2\pi \times
-(6.2 \pm 0.1)$ Hz matches the Kelvin dispersion relation.
+The measured frequency $\omega_1^{\text{exp}} = 2\pi \times (6.2 \pm 0.1)$ Hz matches the Kelvin dispersion relation.
 The $q$-deformed prediction replaces $k^2$ with
 $[k]_q^2 = [1]_q^2 = 1 + O((q-1)^2)$, indistinguishable
 from the classical value at laboratory $q$.

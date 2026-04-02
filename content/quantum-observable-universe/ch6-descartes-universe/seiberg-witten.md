@@ -55,8 +55,7 @@ pairs $(w_1, w_4)$ and $(w_2, w_3)$ with
 $\overline{w_k} = w_{5-k}$.  The quadric
 constraint is
 $w_1 w_4 + w_2 w_3 = 0$,
-which is the Plucker relation $\Lambda^2 V \hookrightarrow
-V \otimes V$.  The induced symplectic $2$-form on the chiral fibre is
+which is the Plucker relation $\Lambda^2 V \hookrightarrow V \otimes V$.  The induced symplectic $2$-form on the chiral fibre is
 
 ```tex
 \begin{equation}\label{eq:chiral-symplectic-form}
@@ -65,8 +64,7 @@ V \otimes V$.  The induced symplectic $2$-form on the chiral fibre is
 \end{equation}
 ```
 
-and $\Omega = \tfrac{1}{2}\,\omega_{\mathrm{ch}} \wedge
-\omega_{\mathrm{ch}}$, so the non-degeneracy of $\Omega$
+and $\Omega = \tfrac{1}{2}\,\omega_{\mathrm{ch}} \wedge \omega_{\mathrm{ch}}$, so the non-degeneracy of $\Omega$
 (i.e. $\det(J) \neq 0$) is equivalent to the non-degeneracy of
 $\omega_{\mathrm{ch}}$, which is exactly the fibre-functor image of the
 categorical volume form $\epsilon$.

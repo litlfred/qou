@@ -121,8 +121,7 @@ a pair of pants composed either way gives the same surface.
 
 **(QU-2c) Non-degenerate Frobenius pairing** ($A \cong A^{\vee}$):
 
-The Frobenius pairing $\int_A \circ \mu\colon A \otimes A \to
-\mathbf{1}$ is the **Markov trace of the product**:
+The Frobenius pairing $\int_A \circ \mu\colon A \otimes A \to \mathbf{1}$ is the **Markov trace of the product**:
 
 $$
   \langle a, b \rangle_F
@@ -414,8 +413,7 @@ centre of $H_n(q)$).
 
 ### C-2: $q$-Deformed obstruction to nilpotence ($d_q^2 \neq 0$)
 
-The $q$-exterior derivative $d_q = q^{-1}d + (1 - q^{-1})\pi_V
-\circ d$ satisfies
+The $q$-exterior derivative $d_q = q^{-1}d + (1 - q^{-1})\pi_V \circ d$ satisfies
 ([categorical $d_q^2$](#prop:categorical-dq-squared)):
 
 $$
@@ -529,8 +527,7 @@ embeddable torus knots to the 7 generators $\mathcal{G}$.
 
 ### C-5: Yekutieli obstruction classes
 
-The quantum characteristic classes $\kappa_n \in H^2(\mathcal{S},
-\mathcal{B})$
+The quantum characteristic classes $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$
 ([quantum characteristic classes](#def:quantum-characteristic-classes))
 obstruct lifting from brane level $n$ to $n+1$.  In knot
 variables, the obstruction is detected by the failure of
@@ -595,8 +592,7 @@ $$
   \bigr\} \cdot \mathrm{Alt}_k,
 $$
 
-with $\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\,
-q^{-\ell(\pi)}\, T_\pi$ the $q$-antisymmetriser.
+with $\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\, q^{-\ell(\pi)}\, T_\pi$ the $q$-antisymmetriser.
 
 **Euler check**: $\chi = \sum_k (-1)^k b_k = -6$ reproduces C-4b.
 
@@ -762,8 +758,7 @@ to patch into a global knot invariant.
 ## Summary: complete presentation
 
 The vertex operator algebra of a QUO is the quotient of the free
-algebra on generators $\{T_i, \cup, \cap, L_{-1},
-\mathrm{tr}_M, d, d_q, \star\}$ by the relations:
+algebra on generators $\{T_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by the relations:
 
 **Structural relations (QU/QUO axioms)**:
 

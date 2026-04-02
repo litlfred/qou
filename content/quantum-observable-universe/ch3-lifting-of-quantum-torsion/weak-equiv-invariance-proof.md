@@ -23,8 +23,7 @@ each of which preserves the Haar state by equivariance
 ([descent](#lem:descent), Step 5).
 
 Therefore the expectation value
-$\tau(\iota_n(a|_n)) = \tau^{(n)}(a|_n) = \tau^{(m)}(a|_m) =
-\tau(\iota_m(a|_m))$
+$\tau(\iota_n(a|_n)) = \tau^{(n)}(a|_n) = \tau^{(m)}(a|_m) = \tau(\iota_m(a|_m))$
 is invariant under weak equivalence.
 
 For the GNS representation: the Hilbert space

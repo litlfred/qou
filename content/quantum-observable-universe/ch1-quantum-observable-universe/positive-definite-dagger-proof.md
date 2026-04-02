@@ -1,19 +1,16 @@
 **Involutivity.** The antipode of a Hopf algebra satisfies
 $S^2 = \mathrm{id}$ (since the Frobenius pairing forces $A$ to be
 commutative via faithfulness of $\tau$). Therefore
-$f^{\dagger\dagger} = \int_A \circ \mu(S(S(f)) \otimes -) =
-\int_A \circ \mu(f \otimes -) = f$,
+$f^{\dagger\dagger} = \int_A \circ \mu(S(S(f)) \otimes -) = \int_A \circ \mu(f \otimes -) = f$,
 confirming $\dagger$ is an involution.
 
 **Contravariance.** For composable morphisms $f, g$:
-$(g \circ f)^{\dagger} = \int_A \circ \mu(S(g \circ f) \otimes -)
-= \int_A \circ \mu(S(f) \cdot S(g) \otimes -)$
+$(g \circ f)^{\dagger} = \int_A \circ \mu(S(g \circ f) \otimes -) = \int_A \circ \mu(S(f) \cdot S(g) \otimes -)$
 since $S$ is an anti-homomorphism. The Frobenius associativity then
 gives $f^{\dagger} \circ g^{\dagger}$.
 
 **Positive-definiteness.** Let $f \colon \mathbf{1} \to X$ be
-non-zero. The composite $f^{\dagger} \circ f \in
-\mathrm{End}(\mathbf{1}) \cong R$ evaluates as
+non-zero. The composite $f^{\dagger} \circ f \in \mathrm{End}(\mathbf{1}) \cong R$ evaluates as
 
 $$
   f^{\dagger} \circ f

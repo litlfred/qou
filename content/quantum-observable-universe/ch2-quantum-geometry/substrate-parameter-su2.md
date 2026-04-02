@@ -29,8 +29,7 @@ $$
 where $ab = ba$, $ac = ca$, etc. This is the setting of the classical
 [brane tower](#ex:recursive-brane-tower-su2).
 
-**Quantum case.** For $q_0 = e^{\pi i / \kappa}$ with $\kappa \in
-\mathbb{Z}_{\geq 2}$ the Chern--Simons level, the specialisation
+**Quantum case.** For $q_0 = e^{\pi i / \kappa}$ with $\kappa \in \mathbb{Z}_{\geq 2}$ the Chern--Simons level, the specialisation
 produces $\mathcal{O}_{q_0}(\mathrm{SU}(2))$ with non-commutative
 relations:
 

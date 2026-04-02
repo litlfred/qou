@@ -92,9 +92,7 @@ Writing in terms of $T_{pp}$ and $\mathbb{I}$:
 the off-diagonal entries $\frac{1-q^2}{2}$ match
 $\frac{1-q^2}{2} \cdot 1$ (the off-diagonal of
 $\frac{1-q^2}{2} T_{pp}$).  The $(2,2)$ entry
-$\frac{qs}{2}$ is $\frac{1-q^2}{2} \cdot 0 + \frac{qs}{2}
-\cdot 1$.  The $(1,1)$ entry is $\frac{1-q^2}{2}(q - q^{-1})
-+ \frac{qs}{2} \cdot 1$.  $\square$
+$\frac{qs}{2}$ is $\frac{1-q^2}{2} \cdot 0 + \frac{qs}{2} \cdot 1$.  The $(1,1)$ entry is $\frac{1-q^2}{2}(q - q^{-1}) + \frac{qs}{2} \cdot 1$.  $\square$
 
 **Explicit entries at the substrate parameter $q$:**
 
@@ -108,8 +106,7 @@ $$
 
 ## Universality
 
-The universality $\Delta_\beta^{nn \to \mathrm{mix}} =
-\Delta_\beta^{\mathrm{mix} \to pp}$ means that **the matrix
+The universality $\Delta_\beta^{nn \to \mathrm{mix}} = \Delta_\beta^{\mathrm{mix} \to pp}$ means that **the matrix
 perturbation produced by converting one nucleon from
 $\mathfrak{n}$ to $\mathfrak{p}$ is the same regardless of
 whether the partner nucleon is a proton or a neutron.**

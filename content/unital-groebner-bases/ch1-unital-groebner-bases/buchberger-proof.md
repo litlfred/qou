@@ -29,8 +29,7 @@ $$
 
 The $S_{i,j}$ are also $S$-polynomials about $g_i, g_j$; by
 assumption they reduce to zero, i.e.\
-$S_{i,j} = \sum_l \lambda_l^{i,j}\, u_l^{i,j} \cdot g_{l}^{i,j}
-\cdot v_l^{i,j}$
+$S_{i,j} = \sum_l \lambda_l^{i,j}\, u_l^{i,j} \cdot g_{l}^{i,j} \cdot v_l^{i,j}$
 with $\mathrm{LM}(S_{i,j}) < \alpha$. Substituting back gives a new
 representation of $f$ with strictly smaller maximal term —
 contradiction.

@@ -1,8 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$ denote the substrate parameter.  Let
 $\mathcal{A}_\infty$ be its
-([direct limit algebra](#def:direct-limit-algebra)).  Let $G_q =
-\mathrm{Aut}^{\otimes}(\tau)$ be the
+([direct limit algebra](#def:direct-limit-algebra)).  Let $G_q = \mathrm{Aut}^{\otimes}(\tau)$ be the
 ([quantum gauge group](#def:quantum-gauge-group)), acting on
 $\mathcal{A}_\infty$ by conjugation.  Then there exists a unique
 $R$-linear functional

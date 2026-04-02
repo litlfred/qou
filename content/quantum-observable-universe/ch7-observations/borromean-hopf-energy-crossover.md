@@ -11,9 +11,7 @@ configurations:
 
 - **Diquark phase** ($\mathcal{P}_D$): three Hopf diquark
   pairs ([Hopf diquark](#def:hopf-diquark))
-  $D_{[\mathfrak{u}\mathfrak{d}]} \cdot
-  D_{[\mathfrak{d}\mathfrak{s}]} \cdot
-  D_{[\mathfrak{s}\mathfrak{u}]}$, each bound by $\mathcal{L}_H$.
+  $D_{[\mathfrak{u}\mathfrak{d}]} \cdot D_{[\mathfrak{d}\mathfrak{s}]} \cdot D_{[\mathfrak{s}\mathfrak{u}]}$, each bound by $\mathcal{L}_H$.
 
 Then:
 
