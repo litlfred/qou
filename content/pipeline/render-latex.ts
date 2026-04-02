@@ -365,7 +365,10 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
         lines.push("\\end{figure}");
       } else {
         // TeX-based diagram (tikzcd, etc.)
-        const tex = block.tex || extractMathContent(mdContent);
+        // Use markdownToLatex (not extractMathContent) so that prose
+        // paragraphs surrounding the tikzcd block render correctly —
+        // in particular, inline math keeps its $...$ delimiters.
+        const tex = block.tex || markdownToLatex(mdContent);
         if (block.label) lines.push(`% diagram: ${block.label}`);
         lines.push(tex);
         if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
