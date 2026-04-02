@@ -14,9 +14,9 @@ $\mathcal{N}$ by a sequence of $k$ Skein crossing changes.
 The **lepton number** of the transition is $L = k$.
 
 Each smoothing $L_0^{\pm}$ contributes:
-- One charged lepton ($T_{2,3}$ or $\sigma(T_{2,3})$) with
+- One charged lepton ($T_{2,3}$ or $T_{2,3}^{\sigma}$) with
   lepton number $+1$
-- One (anti)neutrino ($K_{0_1}$ or $\bar{K}_{0_1}$) with lepton
+- One (anti)neutrino ($K_{0_1}$ or $K_{0_1}^{\sigma}$) with lepton
   number $-1$
 
 The net lepton number of each $L_0^{\pm}$ pair is $+1 + (-1) = 0$.
@@ -52,9 +52,9 @@ do not change the smoothing count).
 | Particle | Knot type | Lepton number $L$ | Origin |
 |----------|-----------|:---:|--------|
 | $e^-$ | $T_{2,3}$ (trefoil) | $+1$ | $L_0^{-}$ charged component ($\beta^-$) |
-| $e^+$ | $\sigma(T_{2,3})$ (mirror trefoil) | $-1$ | $L_0^{+}$ charged component ($\beta^+$) |
+| $e^+$ | $T_{2,3}^{\sigma}$ (mirror trefoil) | $-1$ | $L_0^{+}$ charged component ($\beta^+$) |
 | $\nu_e$ | $K_{0_1}$ (unknot) | $+1$ | $L_0^{+}$ neutral component ($\beta^+$) |
-| $\bar{\nu}_e$ | $\overline{K_{0_1}}$ (mirror unknot) | $-1$ | $L_0^{-}$ neutral component ($\beta^-$) |
+| $\nu_e^{\sigma}$ | $K_{0_1}^{\sigma}$ (mirror unknot) | $-1$ | $L_0^{-}$ neutral component ($\beta^-$) |
 
 The charged lepton carries $L = +1$ (or $-1$ for the
 antiparticle) and the neutrino carries $L = -1$ (or $+1$)

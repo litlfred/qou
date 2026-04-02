@@ -1,4 +1,4 @@
-The **positron** is the mirror trefoil $\sigma(T_{2,3})$ in the
+The **positron** is the mirror trefoil $T_{2,3}^{\sigma}$ in the
 lepton sector — the antiparticle of the electron.
 
 $$

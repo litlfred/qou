@@ -15,7 +15,7 @@
 | [def:q-momentum](#def:q-momentum) | $q$-Momentum from the braid writhe | Ch 4 | `QOU.Descartes.QMomentum` |
 | [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-Weighted Yang--Mills--Levi functional | Ch 5 | `QOU.QYangMillsLevi` |
 | [def:no-quasi-zeros](#def:no-quasi-zeros) | Algebra without quasi-zeros | Ch 1 | `QOU.NoQuasiZeros` |
-| [def:antineutrino-knot](#def:antineutrino-knot) | Antineutrino as mirror unknot $\overline{T_{1,0}}$ | Ch 6 | `QOU.Descartes.Antineutrino` |
+| [def:antineutrino-knot](#def:antineutrino-knot) | Antineutrino as mirror unknot $T_{1,0}^{\sigma}$ | Ch 6 | `QOU.Descartes.Antineutrino` |
 | [def:beta-decay-skein](#def:beta-decay-skein) | Beta decay as a Skein crossing change on the Gröbner normal form | Ch 6 | `QOU.Descartes.BetaDecaySkein` |
 | [def:borromean-baryon](#def:borromean-baryon) | Borromean baryon | Ch 4 | `QOU.Braiding.BorromeanBaryon` |
 | [def:braid-group](#def:braid-group) | Braid group on three strands | Ch 4 | `QOU.BraidGroup` |
@@ -221,7 +221,7 @@
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 3 | `QOU.Torsion.brane_boundary_structure` |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 | `QOU.substrate_radial_coordinate` |
 | [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 6 | `QOU.Experimental.terminal_resolution` |
-| [prop:box-braid-irreducibility](#prop:box-braid-irreducibility) | The $\gamma\gamma \to \nu\bar{\nu}$ box braid is irreducible | Ch 6 | `QOU.Descartes.BoxBraidIrreducibility` |
+| [prop:box-braid-irreducibility](#prop:box-braid-irreducibility) | The $\gamma\gamma \to \nu\nu^{\sigma}$ box braid is irreducible | Ch 6 | `QOU.Descartes.BoxBraidIrreducibility` |
 | [prop:ordering-jet-compatibility](#prop:ordering-jet-compatibility) | The admissible ordering extends through the jet tower | Ch 3 | — |
 | [prop:braiding-induced-ordering](#prop:braiding-induced-ordering) | The braiding induces a canonical admissible well-ordering on the Hecke basis | Ch 2 | `QOU.braiding_induced_ordering` |
 | [prop:descartes-elliptic-curve](#prop:descartes-elliptic-curve) | The Descartes elliptic curve $\mathcal{E}_q$ | Ch 6 | `QOU.Descartes.descartes_elliptic_curve` |
@@ -321,5 +321,5 @@
 | [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Terminal resolution in $\mathbb{C}[z]$ | Ch 7 | `QOU.Examples.czTerminalResolution` |
 | [ex:nitrogen-14-threading](#ex:nitrogen-14-threading) | The ${}^{14}\mathrm{N}$ maximal braid shortcut vs ${}^{14}\mathrm{C}$ broken alternation | Ch 7 | — |
 | [ex:trefoil-operator-algebra](#ex:trefoil-operator-algebra) | Trefoil braid relation and operator algebra | Ch 4 | — |
-| [ex:tritium-decay-knot-equation](#ex:tritium-decay-knot-equation) | Tritium decay as a Skein crossing change: ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \bar{\nu}_e$ | Ch 7 | — |
+| [ex:tritium-decay-knot-equation](#ex:tritium-decay-knot-equation) | Tritium decay as a Skein crossing change: ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \nu_e^{\sigma}$ | Ch 7 | — |
 

@@ -6,7 +6,7 @@ action.
 ## Definition (categorical, primary)
 
 For a beta decay $\mathcal{N}_{\mathrm{par}} \to \mathcal{N}_{\mathrm{dau}}
-+ e + \bar{\nu}$, the **$\mathcal{Q}_q$-value** is the net change
++ e + \nu^{\sigma}$, the **$\mathcal{Q}_q$-value** is the net change
 in categorical action at the Skein crossing change:
 
 $$
@@ -18,7 +18,7 @@ $$
   \;-\;
   S_q(e)
   \;-\;
-  S_q(\bar{\nu})
+  S_q(\nu^{\sigma})
 $$
 
 where $S_q(K) = \mathrm{tr}_\tau(\rho(\beta_K))$ is the
@@ -52,7 +52,7 @@ $$
   \;-\; S_q(e)
 $$
 
-(dropping $S_q(\bar{\nu}) = 0$ since the unknot has trivial
+(dropping $S_q(\nu^{\sigma}) = 0$ since the unknot has trivial
 action).
 
 ## Classical limit and the $q$-anomaly
@@ -65,7 +65,7 @@ of energy:
 $$
   Q_{\mathrm{classical}}
   \;=\;
-  T_e + T_{\bar{\nu}} + T_{\mathrm{recoil}}
+  T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}
   \;\stackrel{?}{=}\;
   M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e
 $$
@@ -101,7 +101,7 @@ $$
   \;:=\;
   \mathcal{Q}_q
   \;-\;
-  (T_e + T_{\bar{\nu}} + T_{\mathrm{recoil}})
+  (T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}})
 $$
 
 This anomaly does NOT vanish in general.  It is a genuine
@@ -173,7 +173,7 @@ $$
   \;+\;
   S_q(e)
   \;+\;
-  S_q(\bar{\nu})
+  S_q(\nu^{\sigma})
   \;+\;
   \text{kinetic terms}
 $$
@@ -195,7 +195,7 @@ The $q$-momentum ([q-momentum](#def:q-momentum)) satisfies
 a similar non-conservation.  Classically:
 
 $$
-  \vec{p}_{\mathrm{par}} = \vec{p}_{\mathrm{dau}} + \vec{p}_e + \vec{p}_{\bar{\nu}}
+  \vec{p}_{\mathrm{par}} = \vec{p}_{\mathrm{dau}} + \vec{p}_e + \vec{p}_{\nu^{\sigma}}
 $$
 
 In the $q$-deformed case, the Hecke algebra non-commutativity
@@ -204,7 +204,7 @@ means:
 $$
   p_q(\mathrm{par})
   \;=\;
-  p_q(\mathrm{dau}) + p_q(e) + p_q(\bar{\nu})
+  p_q(\mathrm{dau}) + p_q(e) + p_q(\nu^{\sigma})
   \;+\;
   \delta p_q
 $$

@@ -185,7 +185,7 @@ is its own antiparticle (the Hopf link is amphichiral).
 
 At step 2 there is still no chirality: the quadratic jet has a
 discriminant but no handedness.  All particles so far (photon,
-$\nu$, $\bar{\nu}$, gluon) are either self-conjugate or
+$\nu$, $\nu^{\sigma}$, gluon) are either self-conjugate or
 distinguished only by orientation.
 
 **Step 3: chirality, the electron, and the positron.**
@@ -220,24 +220,24 @@ structure requires step 4).
 **Step 4: the muon and the first hadrons.**
 The figure-eight knot $4_1$ has crossing number $4$ and is the
 first **hyperbolic** knot: $\mathrm{Vol}(4_1) = 2.0299$.  It is
-amphichiral ($4_1 \cong \overline{4_1}$), so the muon $\mu^-$ and
+amphichiral ($4_1 \cong 4_1^{\sigma}$), so the muon $\mu^-$ and
 antimuon $\mu^+$ are the same knot type, distinguished only by
 orientation — like the neutrino but with non-trivial topology.
 
 Also at step 4: the **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$.
-Although each constituent quark ($T_{2,3}$ or $\overline{T_{2,3}}$)
+Although each constituent quark ($T_{2,3}$ or $T_{2,3}^{\sigma}$)
 has crossing number $3$, the three-component Borromean linking
 requires the quartic jet to resolve the inter-component holonomy.
 The proton $p$ and neutron $n$ first appear here, along with
-their antiparticles $\bar{p}$ and $\bar{n}$ (obtained by mirroring
+their antiparticles $p^{\sigma}$ and $n^{\sigma}$ (obtained by mirroring
 all constituent quarks).
 
 **Step 5: the tau and heavy quarks.**
 The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus
-$2$.  It is chiral: $5_1 \neq \overline{5_1}$.  This produces:
+$2$.  It is chiral: $5_1 \neq 5_1^{\sigma}$.  This produces:
 
-- **Tau** $\tau^- = T_{2,5}$ and **anti-tau** $\tau^+ = \overline{T_{2,5}}$
-- **Bottom quark** $b = T_{2,5}$ and **strange quark** $s = \overline{T_{2,5}}$
+- **Tau** $\tau^- = T_{2,5}$ and **anti-tau** $\tau^+ = T_{2,5}^{\sigma}$
+- **Bottom quark** $b = T_{2,5}$ and **strange quark** $s = T_{2,5}^{\sigma}$
 
 (The strange and bottom quarks are the mirror pair at genus 2,
 as the up and down quarks are the mirror pair at genus 1.)
@@ -247,13 +247,13 @@ as the up and down quarks are the mirror pair at genus 1.)
 | Step | Jet | New particles | Antiparticles | Chirality | New structure |
 |:----:|-----|--------------|---------------|:---------:|---------------|
 | 0 | value $a_0$ | photon $\gamma$ | (self) | — | fiber value |
-| 1 | linear | $\nu$ | $\bar{\nu}$ (orientation only) | no | transport, winding |
+| 1 | linear | $\nu$ | $\nu^{\sigma}$ (orientation only) | no | transport, winding |
 | 2 | quadratic | gluon $g$ | (self) | no | curvature, linking |
-| 3 | **cubic** | $e^-$, $u$, $d$ | $e^+$, $\bar{u}$, $\bar{d}$ | **yes** | chirality, $\varphi$, $B_3$ |
-| 4 | quartic | $\mu^\pm$, $p$, $n$ | (amphi), $\bar{p}$, $\bar{n}$ | mixed | hyperbolic volume, baryons |
-| 5 | quintic | $\tau^-$, $b$, $s$ | $\tau^+$, $\bar{b}$, $\bar{s}$ | yes | genus 2 |
-| 7 | septic | $c$ | $\bar{c}$ | yes | heavy torus knots |
-| 8 | octic | $t$ | $\bar{t}$ | yes | $T_{3,4}$ sector |
+| 3 | **cubic** | $e^-$, $u$, $d$ | $e^+$, $u^{\sigma}$, $d^{\sigma}$ | **yes** | chirality, $\varphi$, $B_3$ |
+| 4 | quartic | $\mu^\pm$, $p$, $n$ | (amphi), $p^{\sigma}$, $n^{\sigma}$ | mixed | hyperbolic volume, baryons |
+| 5 | quintic | $\tau^-$, $b$, $s$ | $\tau^+$, $b^{\sigma}$, $s^{\sigma}$ | yes | genus 2 |
+| 7 | septic | $c$ | $c^{\sigma}$ | yes | heavy torus knots |
+| 8 | octic | $t$ | $t^{\sigma}$ | yes | $T_{3,4}$ sector |
 
 Each row is one Planck step, one tick of discrete time at the
 Big Bang.  The universe does not spring into existence fully
@@ -272,7 +272,7 @@ all emerge together in a single Planck step.
 The particle table above describes **encodability**: which knot
 types have enough polynomial degree to be *resolvable* at each
 jet order.  This is not a scattering process.  Step 0 → Step 1
-does not mean "$\gamma + \gamma \to \nu + \bar{\nu}$".  It means
+does not mean "$\gamma + \gamma \to \nu + \nu^{\sigma}$".  It means
 that the first application of $\nabla_q$ creates horizontal
 transport, and the unknot $0_1$ — which requires one winding with
 zero crossings — becomes encodable for the first time.  The
@@ -280,7 +280,7 @@ neutrino is not *produced from* the photon; it becomes
 *resolvable* once the jet structure supports winding.
 
 Actual scattering processes require far more structure.  Consider
-$\gamma\gamma \to \nu\bar{\nu}$: in standard QFT this cannot
+$\gamma\gamma \to \nu\nu^{\sigma}$: in standard QFT this cannot
 happen at tree level because neutrinos carry no electric charge,
 so it requires a box diagram with virtual charged particles and a
 $Z^0$ mediator.  In the QOU framework the same obstruction

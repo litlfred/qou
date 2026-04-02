@@ -26,11 +26,11 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
    reverses sign under $\sigma$.
 
 3. **Pair cancellation.**  For a particle--antiparticle pair
-   $(\mathfrak{H}, \sigma(\mathfrak{H}))$, the combined crossing energy is purely
+   $(\mathfrak{H}, \mathfrak{H}^{\sigma})$, the combined crossing energy is purely
    antisymmetric:
 
    $$
-     \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathbf{E}_{\mathrm{cross}}(\sigma(\mathfrak{H}))
+     \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma})
      \;=\; 2\,E_{\mathrm{asym}}(\mathfrak{H}).
    $$
 

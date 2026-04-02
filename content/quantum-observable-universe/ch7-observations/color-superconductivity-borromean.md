@@ -154,7 +154,7 @@ together predict a layered structure in neutron stars:
 | Layer | Density | Topology | Phase |
 |-------|---------|----------|-------|
 | Crust | $\rho < \rho_0$ | $\mathcal{B}_3$ baryons in lattice | Nuclear solid |
-| Outer core | $\rho_0 < \rho < 2\rho_0$ | $\mathcal{B}_3$ with hyperons ($\overline{T_{2,5}}$) | Hyperonic fluid |
+| Outer core | $\rho_0 < \rho < 2\rho_0$ | $\mathcal{B}_3$ with hyperons ($T_{2,5}^{\sigma}$) | Hyperonic fluid |
 | Inner core | $2\rho_0 < \rho < \rho_c$ | Borromean dissolution | Quark matter |
 | Deep core | $\rho > \rho_c$ | $D_{[ij]}^{[ab]}$ Hopf condensate | CFL superconductor |
 

@@ -6,7 +6,7 @@ three constituents are linked in a
 In the knot-particle correspondence, the up quark $\mathfrak{u}$ is
 the torus knot $\tau(2,3)$ (the trefoil) and the down quark
 $\mathfrak{d}$ is the trefoil with reversed orientation,
-$\overline{\tau}(2,3)$.  The proton $\mathfrak{p}$ consists of two
+$\tau(2,3)^{\sigma}$.  The proton $\mathfrak{p}$ consists of two
 up quarks and one down quark:
 
 $$

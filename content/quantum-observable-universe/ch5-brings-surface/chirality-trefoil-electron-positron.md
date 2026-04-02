@@ -1,34 +1,34 @@
 The left trefoil $T_{2,3}$ and the right trefoil
-$\sigma(T_{2,3})$ are the **electron** and **positron**
+$T_{2,3}^{\sigma}$ are the **electron** and **positron**
 respectively.  The choice of which chirality is assigned to
 which particle is arbitrary — it is a convention, not a
 physical distinction.  What matters is that the two are
-**mirror images**: $\sigma(T_{2,3})$ is $T_{2,3}$ with all
+**mirror images**: $T_{2,3}^{\sigma}$ is $T_{2,3}$ with all
 crossings reversed.
 
 **Antiparticles from crossing reversal.**
 
 An **antihadron** is the hadron constructed from positrons
 instead of electrons: replace every $T_{2,3}$ with
-$\sigma(T_{2,3})$ in the knot formula.  The proton's
+$T_{2,3}^{\sigma}$ in the knot formula.  The proton's
 antiquark content is obtained by mirroring:
 
 $$
-  \bar{\mathfrak{p}}
+  \mathfrak{p}^{\sigma}
   \;=\;
-  [\sigma(u), \sigma(u), \sigma(d)]_p \bowtie \mathcal{L}_H
+  [u^{\sigma}, u^{\sigma}, d^{\sigma}]_p \bowtie \mathcal{L}_H
 $$
 
-where $\sigma(u) = \sigma(T_{2,3})$ and
-$\sigma(d) = \sigma(\sigma(T_{2,3})) = T_{2,3}$.  The
-crossing energy of $\bar{\mathfrak{p}}$ has the opposite sign
+where $\sigma(u) = T_{2,3}^{\sigma}$ and
+$\sigma(d) = (T_{2,3}^{\sigma})^{\sigma} = T_{2,3}$.  The
+crossing energy of $\mathfrak{p}^{\sigma}$ has the opposite sign
 to that of $\mathfrak{p}$: the Coulomb charge reverses,
-$Q(\bar{\mathfrak{p}}) = -1$.
+$Q(\mathfrak{p}^{\sigma}) = -1$.
 
 **Time reversal and the exceptional divisor.**
 
 If a trefoil can **change chirality** — passing from $T_{2,3}$
-to $\sigma(T_{2,3})$ — while traversing the exceptional divisor
+to $T_{2,3}^{\sigma}$ — while traversing the exceptional divisor
 of the brane tower, this would correspond to a particle
 travelling **backward in time** (in the Feynman--Stueckelberg
 sense: an electron moving forward in time is a positron moving

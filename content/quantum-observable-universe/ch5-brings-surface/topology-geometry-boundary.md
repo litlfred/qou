@@ -17,7 +17,7 @@ and the categorical definitions:
 | Trace sign structure | $\mathrm{sign}(\mathrm{tr})$ per nucleus | Exact (Singular) |
 | Hecke step count | $\Delta(\text{R2 steps}) = -1$ universally | Computed |
 | Writhe change | $\Delta w = A - 1$ | Computed |
-| Emission topology | $L_0^{-} = T_{2,3} \sqcup \overline{T_{1,0}}$ ($\beta^-$: $e^- + \bar{\nu}_e$) | Derived |
+| Emission topology | $L_0^{-} = T_{2,3} \sqcup T_{1,0}^{\sigma}$ ($\beta^-$: $e^- + \nu_e^{\sigma}$) | Derived |
 | Shell blocking | $e_i p_n = 0$ in TL (Jones-Wenzl kills smoothing) | Algebraic |
 | Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} \approx 938.272$ MeV | From $q$ (terminal resolution) |
 | Mass splitting | $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} \approx 1.290$ MeV | From $q$ |

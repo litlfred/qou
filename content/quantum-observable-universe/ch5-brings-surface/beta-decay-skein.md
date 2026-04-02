@@ -109,14 +109,14 @@ the transition amplitude.
 ## Definition ($\beta^+$ decay)
 
 *A $\beta^+$ transition is the mirror operation, inserting the
-conjugate $\overline{T_{3,5}}$ braid (with $q \leftrightarrow q^{-1}$):*
+conjugate $T_{3,5}^{\sigma}$ braid (with $q \leftrightarrow q^{-1}$):*
 
 $$
-  \mathcal{N}(Z, N) \cdot \overline{\beta_{T_{3,5}}}
+  \mathcal{N}(Z, N) \cdot \beta_{T_{3,5}}^{\sigma}
   \;\xrightarrow{\;\text{reduce}\;}
   \mathcal{N}(Z - 1, \, N + 1)
   \;\sqcup\;
-  \overline{T_{2,3}}
+  T_{2,3}^{\sigma}
   \;\sqcup\;
   K_{0_1}
 $$
@@ -128,10 +128,10 @@ $q \mapsto q^{-1}$ on the Hecke algebra, which acts as:
 
 | $\beta^-$ | $\beta^+$ |
 |:---:|:---:|
-| $\mathfrak{d} \to \mathfrak{u}$ via $T_{3,5}$ | $\mathfrak{u} \to \mathfrak{d}$ via $\overline{T_{3,5}}$ |
+| $\mathfrak{d} \to \mathfrak{u}$ via $T_{3,5}$ | $\mathfrak{u} \to \mathfrak{d}$ via $T_{3,5}^{\sigma}$ |
 | $q \, [L_+]$ | $q^{-1} [L_+]$ |
-| electron $T_{2,3}$ | positron $\sigma(T_{2,3})$ |
-| antineutrino $\bar{K}_{0_1}$ | neutrino $K_{0_1}$ |
+| electron $T_{2,3}$ | positron $T_{2,3}^{\sigma}$ |
+| antineutrino $K_{0_1}^{\sigma}$ | neutrino $K_{0_1}$ |
 | $\mathcal{S}_{ab}(q)$ | $\mathcal{S}_{ba}(q) = \mathcal{S}_{ab}(q^{-1})$ |
 
 This $\mathbb{Z}/2$ acts on the pair Skein mass formula:
@@ -159,12 +159,12 @@ for $0$.  The remaining $7$ crossings are the **weak vertex
 residue** — absorbed into R2 moves during re-reduction.
 
 $$
-  L_0^{-} \;=\; T_{2,3} \;\sqcup\; \overline{T_{1,0}}
-  \qquad (\beta^- \text{ decay: } e^- + \bar{\nu}_e)
+  L_0^{-} \;=\; T_{2,3} \;\sqcup\; T_{1,0}^{\sigma}
+  \qquad (\beta^- \text{ decay: } e^- + \nu_e^{\sigma})
 $$
 
 $$
-  L_0^{+} \;=\; \overline{T_{2,3}} \;\sqcup\; T_{1,0}
+  L_0^{+} \;=\; T_{2,3}^{\sigma} \;\sqcup\; T_{1,0}
   \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
 $$
 
