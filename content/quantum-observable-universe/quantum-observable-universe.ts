@@ -42,6 +42,7 @@ export default paper({
     chapterRef({ dir: "ch8-glossary" }),
     chapterRef({ dir: "appendix-knot-periodic-table" }),
     chapterRef({ dir: "appendix-transfer-matrices" }),
+    chapterRef({ dir: "appendix-atomic-mass-calculations" }),
     chapterRef({ dir: "index-of-definitions" }),
   ],
 });
