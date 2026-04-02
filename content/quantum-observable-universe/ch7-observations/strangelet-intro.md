@@ -1,5 +1,5 @@
-The strange quark $\mathfrak{s} = \overline{T_{2,5}}$ has five
-crossings; the down quark $\mathfrak{d} = \overline{T_{2,3}}$
+The strange quark $\mathfrak{s} = T_{2,5}^{\sigma}$ has five
+crossings; the down quark $\mathfrak{d} = T_{2,3}^{\sigma}$
 has three.  More crossings means more strong binding.  Strange
 quark matter therefore binds harder — by a factor of $4/3$ per
 baryon — and is automatically electromagnetically neutral

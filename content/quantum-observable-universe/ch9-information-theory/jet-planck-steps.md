@@ -124,16 +124,16 @@ degree to encode $c$ crossings of the braid closure.
 | Step | Jet | $c$ | Knot | Particles | Mirror | Why |
 |:----:|-----|:---:|------|-----------|--------|-----|
 | 0 | value | — | $\varnothing$ | **Photon** | (self) | No knot, no transport — fiber value only |
-| 1 | linear | 0 | $0_1$ | **Neutrino** $\nu$ | $\bar{\nu}$ (orientation) | Unknot; amphichiral — $\nu/\bar{\nu}$ distinguished by framing, not knot type |
+| 1 | linear | 0 | $0_1$ | **Neutrino** $\nu$ | $\nu^{\sigma}$ (orientation) | Unknot; amphichiral — $\nu/\nu^{\sigma}$ distinguished by framing, not knot type |
 | 2 | quadratic | 0 | $L2a1$ | **Gluon** | (self) | Hopf link; linking number requires curvature |
-| 3 | cubic | 3 | $3_1$ | **Electron** $e^-$, **up** $u$ | **Positron** $e^+$, **down** $\bar{u}$ | Trefoil is *chiral*: $T_{2,3} \neq \overline{T_{2,3}}$; mirror = antiparticle |
-| 3 | cubic | 3 | $\overline{3_1}$ | **Positron** $e^+$, **down** $d$ | **Electron** $e^-$, $\bar{d}$ | Right trefoil; same crossing number, opposite chirality |
-| 4 | quartic | 4 | $4_1$ | **Muon** $\mu^{\pm}$ | (self) | Figure-eight is *amphichiral*: $\mu^- = \overline{\mu^-}$ as knots |
-| 4 | quartic | 0+0+0 | $\mathcal{B}_3$ | **Proton** $p$, **neutron** $n$ | $\bar{p}$, $\bar{n}$ | Borromean link of 3 quarks; linking structure needs quartic |
-| 5 | quintic | 5 | $5_1$ | **Tau** $\tau^-$, **bottom** $b$ | $\tau^+$, $\bar{b}$ | Cinquefoil; chiral; genus 2 |
-| 5 | quintic | 5 | $\overline{5_1}$ | **Anti-tau** $\tau^+$, **strange** $s$ | $\tau^-$, $\bar{s}$ | Mirror cinquefoil |
-| 7 | septic | 7 | $7_1$ | **Charm** $c$ | $\bar{c}$ | Heavy sector torus knot |
-| 8 | octic | 8 | $8_{19}$ | **Top** $t$ | $\bar{t}$ | $T_{3,4}$; first $(3,n)$ torus knot |
+| 3 | cubic | 3 | $3_1$ | **Electron** $e^-$, **up** $u$ | **Positron** $e^+$, **down** $u^{\sigma}$ | Trefoil is *chiral*: $T_{2,3} \neq T_{2,3}^{\sigma}$; mirror = antiparticle |
+| 3 | cubic | 3 | $3_1^{\sigma}$ | **Positron** $e^+$, **down** $d$ | **Electron** $e^-$, $d^{\sigma}$ | Right trefoil; same crossing number, opposite chirality |
+| 4 | quartic | 4 | $4_1$ | **Muon** $\mu^{\pm}$ | (self) | Figure-eight is *amphichiral*: $\mu^- = (\mu^-)^{\sigma}$ as knots |
+| 4 | quartic | 0+0+0 | $\mathcal{B}_3$ | **Proton** $p$, **neutron** $n$ | $p^{\sigma}$, $n^{\sigma}$ | Borromean link of 3 quarks; linking structure needs quartic |
+| 5 | quintic | 5 | $5_1$ | **Tau** $\tau^-$, **bottom** $b$ | $\tau^+$, $b^{\sigma}$ | Cinquefoil; chiral; genus 2 |
+| 5 | quintic | 5 | $5_1^{\sigma}$ | **Anti-tau** $\tau^+$, **strange** $s$ | $\tau^-$, $s^{\sigma}$ | Mirror cinquefoil |
+| 7 | septic | 7 | $7_1$ | **Charm** $c$ | $c^{\sigma}$ | Heavy sector torus knot |
+| 8 | octic | 8 | $8_{19}$ | **Top** $t$ | $t^{\sigma}$ | $T_{3,4}$; first $(3,n)$ torus knot |
 
 **Step 0: only the photon.**
 Before any transport, only the fiber value exists.  The photon is
@@ -154,10 +154,10 @@ $J_\nu(q) = 1$ is a degree-0 polynomial — consistent with living
 at the linear (degree 1) jet, where the only available structure
 is a single winding with slope but no self-intersection.
 
-The unknot is **amphichiral**: $T_{1,0} \cong \overline{T_{1,0}}$
+The unknot is **amphichiral**: $T_{1,0} \cong T_{1,0}^{\sigma}$
 as unoriented knots
 ([antineutrino](#def:antineutrino-knot)).  The neutrino $\nu$
-and antineutrino $\bar{\nu}$ are the same knot distinguished by
+and antineutrino $\nu^{\sigma}$ are the same knot distinguished by
 **orientation** (framing), not by knot type.  Both appear at
 step 1.  This is the first matter-antimatter pair, but it is a
 degenerate one: the two are topologically identical, differing
@@ -195,14 +195,14 @@ $R$-matrix evaluations.  It cannot exist before the cubic jet.
 
 Step 3 is where **chirality appears** for the first time.  The
 trefoil is **not** amphichiral: the left trefoil $T_{2,3}$ and the
-right trefoil $\overline{T_{2,3}}$ are distinct knots
+right trefoil $T_{2,3}^{\sigma}$ are distinct knots
 ([chirality: electron and positron](#rem:chirality-trefoil-electron-positron)).
 The mirror operation $\sigma$ (reversing all crossings) produces
 a genuinely different topological object.  This is the origin of
 the particle-antiparticle distinction for chiral matter:
 
 - **Electron** $e^- = T_{2,3}$ (left trefoil, solid ●)
-- **Positron** $e^+ = \overline{T_{2,3}}$ (right trefoil, outlined ○)
+- **Positron** $e^+ = T_{2,3}^{\sigma}$ (right trefoil, outlined ○)
 
 Both have crossing number $3$ and appear at the same Planck step.
 The trefoil and its mirror are the two monodromy generators of the
@@ -212,7 +212,7 @@ without the positron**: the cubic jet produces both chiralities
 simultaneously.
 
 The same step also produces the **up quark** ($u = T_{2,3}$) and
-**down quark** ($d = \overline{T_{2,3}}$) — the same trefoil pair
+**down quark** ($d = T_{2,3}^{\sigma}$) — the same trefoil pair
 in the color-tube sector.  With quarks available, the first
 composite hadrons become constructible (though their linking
 structure requires step 4).
