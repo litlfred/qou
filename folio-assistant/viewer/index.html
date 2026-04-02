@@ -5948,7 +5948,7 @@
     //   #/diff/paper-id                             → diff mode (current branch vs main)
     //   #/diff/paper-id@branch/name                 → diff mode on branch
     //   #label                                      → standalone block detail view
-    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
+    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap|prose|sim|app):/;
     let pendingScroll = null;
 
     /** Split "slug@branch/name" → { slug, branch } or { slug, branch: null }. */
@@ -5981,11 +5981,13 @@
       const hash = location.hash || '#/';
       const raw = hash.slice(1); // remove #
 
-      // Shorthand: #rem:foo or #rem:foo@branch → standalone block detail view
+      // Shorthand: #rem:foo or #rem:foo@branch → load paper and scroll to block
       if (LABEL_RE.test(raw) || (raw.includes('@') && LABEL_RE.test(raw.split('@')[0]))) {
         const { slug, branch } = parseBranchFromSlug(raw);
         applyUrlBranch(branch);
-        await routeBlock(slug);
+        pendingScroll = slug;
+        if (!paper) await loadDefaultPaper();
+        else scrollToLabel(slug);
         return;
       }
 
@@ -6059,6 +6061,17 @@
         if (!paper) await loadDefaultPaper();
         else scrollToLabel(slug);
       } else {
+        // Check for paper-id/label format: #/view/quantum-observable-universe/prose:foo
+        const slashIdx = slug.indexOf('/');
+        if (slashIdx > 0) {
+          const paperId = slug.slice(0, slashIdx);
+          const label = slug.slice(slashIdx + 1);
+          if (LABEL_RE.test(label)) {
+            pendingScroll = label;
+            await loadPaper(paperId);
+            return;
+          }
+        }
         // It's a paper id
         await loadPaper(slug);
       }

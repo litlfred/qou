@@ -12,8 +12,14 @@ export default remark({
     "nuclear-shell",
     "electron-shell",
     "borromean",
-    "intruder",
-    "todo",
+    "magic-receptive",
+    "transfer-matrix",
+    "skein-polynomial",
   ],
-  uses: ["prop:nuclear-shell-intruder"],
+  uses: [
+    "prop:nuclear-shell-intruder",
+    "prop:shell-structure-eigenvalues",
+    "thm:generation-completeness",
+    "rem:knot-exhaustiveness",
+  ],
 });
