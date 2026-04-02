@@ -52,7 +52,7 @@ export async function buildPaper(
   const paper: Paper = paperMod.default;
 
   // 2. Resolve chapters and load all blocks
-  const resolvedChapters: Chapter[] = [];
+  const resolvedChapters: { chapter: Chapter; manifestIdx: number }[] = [];
   const chapterSlugs = new Map<number, string>();
   const blocks = new Map<string, { block: Block; mdContent: string; sourceDir?: string }>();
 
@@ -69,7 +69,7 @@ export async function buildPaper(
     try {
       const chMod = await import(chPath);
       const chapter: Chapter = chMod.default;
-      resolvedChapters.push(chapter);
+      resolvedChapters.push({ chapter, manifestIdx: chIdx });
 
       // Extract slug from dir name: "ch1-quantum-observable-universe" → "quantum-observable-universe"
       const slug = chRef.dir.replace(/^ch\d+-/, "");
@@ -114,10 +114,9 @@ export async function buildPaper(
   const chapters = new Map<number, string>();
   let astValid = true;
 
-  for (let i = 0; i < resolvedChapters.length; i++) {
-    const chapter = resolvedChapters[i];
+  for (const { chapter, manifestIdx } of resolvedChapters) {
     const latex = renderChapter(chapter, blocks, opts);
-    chapters.set(i, latex);
+    chapters.set(manifestIdx, latex);
 
     // AST validation
     const ast = validateLatexAst(latex);
