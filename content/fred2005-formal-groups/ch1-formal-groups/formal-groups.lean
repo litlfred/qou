@@ -1,5 +1,10 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Prime.Basic
+-- TODO: cross-paper dependency on unital-groebner-bases
+-- The QOU bridge module (content/fred2005-formal-groups/lean/QOU/FormalGroups.lean) imports:
+--   import QOU.GrobnerShirshov.Basic
+-- This will need a cross-paper reference once the content pipeline
+-- supports lean cross-paper imports.
 
 /-!
 # Formal Groups and the Lifting Theorem

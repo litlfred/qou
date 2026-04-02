@@ -1,8 +1,8 @@
 /-!
 # QOU.qExtDeriv
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/qExtDeriv.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/qExtDeriv.lean (monolithic)
 -/
 
 import QOU.Basic

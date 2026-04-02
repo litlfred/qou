@@ -10,7 +10,7 @@
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean-archive"
+LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
 CONFIG="$REPO_ROOT/lean-mcp.config.json"
 
 export PATH="$HOME/.elan/bin:$HOME/.local/bin:$HOME/.bun/bin:$PATH"
@@ -93,8 +93,8 @@ if has lean; then
     else
         LEAN_MODE="local-degraded"
         [ "$UV_OK" = false ] && LEAN_FIX="Install uv: curl -LsSf https://astral.sh/uv/install.sh | sh"
-        [ "$DEPS_OK" = false ] && LEAN_FIX="Run: cd lean-archive && lake update"
-        [ "$CACHE_OK" = false ] && LEAN_FIX="Run: cd lean-archive && lake exe cache get"
+        [ "$DEPS_OK" = false ] && LEAN_FIX="Run: cd content/quantum-observable-universe/lean && lake update"
+        [ "$CACHE_OK" = false ] && LEAN_FIX="Run: cd content/quantum-observable-universe/lean && lake exe cache get"
     fi
 fi
 

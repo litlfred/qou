@@ -10,7 +10,7 @@
 #
 # Writes status to /tmp/qou-lean-build-status.json for session-status.sh
 # and the editor skill to consume. Status values:
-#   unavailable  — lean not installed or lean-archive/ missing
+#   unavailable  — lean not installed or content/quantum-observable-universe/lean/ missing
 #   updating     — running lake update
 #   caching      — running lake exe cache get
 #   building     — running lake build
@@ -30,7 +30,7 @@
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean-archive"
+LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
 STATUS_FILE="/tmp/qou-lean-build-status.json"
 LOG_DIR="/tmp"
 TIMING_FILE="/tmp/qou-lean-build-timing.txt"
@@ -118,7 +118,7 @@ if ! command -v lake &>/dev/null; then
 fi
 
 if [ ! -d "$LEAN_DIR" ]; then
-    write_status "unavailable" "lean-archive/ not found" "check" 0
+    write_status "unavailable" "content/quantum-observable-universe/lean/ not found" "check" 0
     exit 0
 fi
 

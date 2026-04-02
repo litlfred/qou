@@ -24,9 +24,9 @@ build-warnings.log
 _site/
 
 # Lean build artifacts
-lean-archive/.lake/
-lean-archive/lake-packages/
-lean-archive/build/
+content/quantum-observable-universe/lean/.lake/
+content/quantum-observable-universe/lean/lake-packages/
+content/quantum-observable-universe/lean/build/
 
 # Generated graph intermediate files
 dependency-graph.dot

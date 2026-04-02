@@ -121,7 +121,7 @@ const leanCitations = new Set<string>();
 // Scan .lean files for -- Ref: [key] patterns
 const leanDir = join(REPO_ROOT, "lean");
 const contentDir = join(REPO_ROOT, "content");
-const leanArchiveDir = join(REPO_ROOT, "lean-archive");
+const leanArchiveDir = join(REPO_ROOT, "content/quantum-observable-universe/lean");
 
 function scanFilesRecursive(dir: string, ext: string): string[] {
   if (!existsSync(dir)) return [];

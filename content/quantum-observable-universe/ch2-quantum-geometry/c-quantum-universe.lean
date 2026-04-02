@@ -1,8 +1,8 @@
 /-!
 # QOU.CRManifoldData
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/CRManifoldData.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/CRManifoldData.lean (monolithic)
 -/
 
 import QOU.Basic

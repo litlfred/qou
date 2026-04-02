@@ -399,7 +399,7 @@ the new resolution also fails.
 
 ### Multiple Lean projects
 
-This repo has multiple Lean projects (`lean/`, `lean-archive/`).
+This repo has multiple Lean projects (`lean/`, `content/quantum-observable-universe/lean/`).
 Each has its own `lakefile.toml` and `lean-toolchain`. They may
 target different Lean versions. Always `cd` into the correct project
 directory before running `lake` commands.

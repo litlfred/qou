@@ -79,7 +79,7 @@ Definitions that require `.lean` files but don't have them:
 | `def:categorical-q-torsion-leaf` | ch1 |
 
 **Fix**: Create `.lean` stub files for each. Some already have
-partial formalizations in `lean-archive/QOU/Torsion.lean` that
+partial formalizations in `content/quantum-observable-universe/lean/QOU/Torsion.lean` that
 could be copied/adapted.
 
 #### 4. Missing Lean declarations (39 warnings)
@@ -99,4 +99,4 @@ These are warnings, not errors. Lower priority.
 - `content/schema/types.ts` — block kind discriminator
 - `content/schema/constraints.ts` — Zod validation schemas
 - `content/pipeline/validate.ts` — validation pipeline
-- `lean-archive/QOU/Torsion.lean` — existing torsion formalizations
+- `content/quantum-observable-universe/lean/QOU/Torsion.lean` — existing torsion formalizations

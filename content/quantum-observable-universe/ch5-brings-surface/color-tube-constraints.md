@@ -2,7 +2,7 @@ The Bring's surface constraints take the following form in color tube coordinate
 
 **Spacetime recovery.**
 Substituting into $z = S/D$
-(equation [](#eq:z-from-SD)) yields $z(\chi_\zeta(c) - z) = p_1(c) + 4z$,
+(equation [$z = S/D$](#eq:z-from-SD)) yields $z(\chi_\zeta(c) - z) = p_1(c) + 4z$,
 which rearranges to
 
 ```tex

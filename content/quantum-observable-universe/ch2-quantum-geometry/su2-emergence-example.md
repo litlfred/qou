@@ -1,4 +1,4 @@
-Continuing [Examples](#ex:frobenius-su2)--[](#ex:dagger-su2), let
+Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$,
 $A = \mathcal{O}(\mathrm{SU}(2))$, $\tau$ the forgetful functor.
 

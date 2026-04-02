@@ -12,7 +12,7 @@
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean-archive"
+LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
 TIMING_LOG="/tmp/qou-build-timing.csv"
 REPORT="/tmp/qou-build-timing-report.txt"
 

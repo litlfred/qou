@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:descartes-elliptic-curve",
   title:
-    "The Descartes elliptic curve $E_q$",
+    "The Descartes elliptic curve $\\mathcal{E}_q$",
   tags: [
     "elliptic-curve",
     "descartes",

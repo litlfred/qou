@@ -6,12 +6,12 @@ autoImplicit = false
 profiler = true          # report per-declaration elaboration times
 
 [[lean_lib]]
-name = "Fred2005"
-srcDir = "."
-
-[[lean_lib]]
 name = "QOU"
 srcDir = "."
+
+# NOTE: Fred2005 has moved to content/fred2005-formal-groups/lean/
+# NOTE: GrobnerShirshov (formerly QOU.GrobnerShirshov) has moved to
+#       content/unital-groebner-bases/lean/
 
 [[require]]
 name = "mathlib"

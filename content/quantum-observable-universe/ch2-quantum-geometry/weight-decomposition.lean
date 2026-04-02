@@ -4,8 +4,8 @@
 The `T`-weight decomposition of differential forms `Ω^k(A)` into
 horizontal (weight-0) and vertical (non-zero weight) components.
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic

@@ -1,0 +1,30 @@
+/-!
+# QOU.ObservedValue — Glossary: observed spacetime value
+
+The spacetime coordinate z recovered from coral tube coordinates
+via the Vieta identity z = S/D.
+
+LaTeX label: `rem:glossary-observed-value`
+-/
+
+import Mathlib.Data.Real.Basic
+
+namespace QOU
+
+/-- The observed spacetime value: the element of 𝔸¹ recovered
+    from coral tube coordinates by the Vieta identity z = S/D,
+    where S = Σ cᵢ and D = Σ cᵢcⱼ. -/
+-- Ref: [manuscript] Ch. 8 Glossary
+structure ObservedValue where
+  /-- The spacetime coordinate z. -/
+  z : ℝ
+  /-- Sum of color coordinates S. -/
+  color_sum : ℝ
+  /-- Pairwise product sum D. -/
+  color_product_sum : ℝ
+  /-- D ≠ 0 (non-degeneracy). -/
+  denom_ne_zero : color_product_sum ≠ 0
+  /-- Vieta relation: z = S/D. -/
+  vieta : z = color_sum / color_product_sum
+
+end QOU

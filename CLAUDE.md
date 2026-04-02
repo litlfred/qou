@@ -636,10 +636,10 @@ Prerequisites: `git`, `curl`.
 ```
 
 This installs: uv (Python package manager), elan, the Lean toolchain
-pinned in `lean-archive/lean-toolchain`, Mathlib cache, ripgrep, and verifies
+pinned in `content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
 `lean-lsp-mcp` via uvx.
 
-**Important**: Run `lake build` in `lean-archive/` before first MCP session to avoid
+**Important**: Run `lake build` in `content/quantum-observable-universe/lean/` before first MCP session to avoid
 timeouts.
 
 ### Remote MCP server
@@ -701,7 +701,7 @@ setup instructions rather than silently failing.
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
-| `lean-archive/` | Lean 4 formalization (lakefile.toml, QOU/) |
+| `content/quantum-observable-universe/lean/` | Lean 4 formalization (lakefile.toml, QOU/) |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
@@ -726,7 +726,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | Workflow | Artifacts deployed to gh-pages |
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `lean-archive/` (source browser), `lean-archive/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
+| `lean_ci.yml` | `content/quantum-observable-universe/lean/` (source browser), `content/quantum-observable-universe/lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
 | `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents
@@ -742,8 +742,8 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
 | `blueprint.pdf` | blueprint.yml | Print blueprint |
 | `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
-| `lean-archive/` | lean_ci.yml | Raw Lean source files |
-| `lean-archive/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
+| `content/quantum-observable-universe/lean/` | lean_ci.yml | Raw Lean source files |
+| `content/quantum-observable-universe/lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
 | `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
 | `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
 | `schema-docs/` | publish.yml | TypeDoc content-object type reference |

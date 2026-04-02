@@ -1,7 +1,10 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
-import QOU.GrobnerShirshov
-import QOU.GrobnerShirshov.HeckeGS
+-- NOTE: QOU.GrobnerShirshov has moved to content/unital-groebner-bases/lean/
+-- The GS Hecke algebra types are now in the unital-groebner-bases paper.
+-- To restore these imports, add unital-groebner-bases as a Lake dependency.
+-- import QOU.GrobnerShirshov
+-- import QOU.GrobnerShirshov.HeckeGS
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
 
@@ -38,7 +41,8 @@ is defined by the GS normal form, not by the witness.
 namespace QOU.PhotonThreading
 
 open QOU
-open QOU.GrobnerShirshov.Hecke
+-- NOTE: QOU.GrobnerShirshov.Hecke namespace moved to unital-groebner-bases
+-- open QOU.GrobnerShirshov.Hecke
 
 /-! ## Braid word -/
 
@@ -57,6 +61,12 @@ def BraidWord.crossings (β : BraidWord) : ℕ := β.generators.length
 
 /-! ## Crossing energy defined via GS normal form -/
 
+-- NOTE: The following definitions depend on HeckeParams, heckeCost, and
+-- augmentedBraidElement from QOU.GrobnerShirshov.Hecke, which has moved
+-- to content/unital-groebner-bases/lean/.  They are commented out until
+-- the cross-paper Lean dependency is wired up.
+
+/-
 /-- **Crossing energy** of a hadron: the Hecke cost of the augmented
     braid element in the GS framework.
 
@@ -132,6 +142,7 @@ theorem photon_heckeCost_zero (hp : HeckeParams) :
     heckeCost (augmentedBraidElement hp ([] : List ℤ)) =
     heckeCost (augmentedBraidElement hp []) :=
   rfl
+-/
 
 /-! ## Threading witness (for display, not for energy definition) -/
 

@@ -78,6 +78,7 @@ export default chapter({
         "braid-involutions-intro",
         "braid-twist-flip",
         "holonomy-trefoil",
+        "rho-s3-holonomy-exposition",
       ],
     }),
 

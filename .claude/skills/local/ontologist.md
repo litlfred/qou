@@ -154,7 +154,7 @@ apply these rulings when scanning narrative text:
 
 All formal proofs over ℤ[q, q⁻¹].  Modules over ℝ or ℂ are the
 archimedean realisation (Chapter 7 only) and NOT part of the formal
-proof chain.  See `lean-archive/QOU/GroundRingAnnotations.lean`.
+proof chain.  See `content/quantum-observable-universe/lean/QOU/GroundRingAnnotations.lean`.
 
 When an ambiguity is detected, the Ontologist outputs:
 

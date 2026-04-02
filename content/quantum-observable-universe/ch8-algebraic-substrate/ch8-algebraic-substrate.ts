@@ -22,6 +22,7 @@ export default chapter({
         "frobenius-hopf-substrate",
         "substrate-parameter-planck",
         "categorical-reeb-derivation",
+        "reeb-flow-bridge",
         "brings-coordinate-ring",
         "rigid-dualizing-complex",
         "substrate-self-duality",
@@ -53,6 +54,7 @@ export default chapter({
         "q-chebyshev-function",
         "tannaka-krein-isomorphism",
         "explicit-formula",
+        "yekutieli-quantum-li",
       ],
     }),
 
@@ -65,6 +67,7 @@ export default chapter({
         "local-q-zeta-function",
         "hasse-weil-bound",
         "spectral-half-line",
+        "geometric-rh-exposition",
         "unitary-stability",
       ],
     }),
