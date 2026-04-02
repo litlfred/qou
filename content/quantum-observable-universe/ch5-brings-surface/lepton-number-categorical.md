@@ -8,9 +8,9 @@ exactly one lepton--antilepton pair.  Lepton number counts these
 smoothings.
 
 **Definition.**
-Let $\bar{\mathcal{N}}$ be a nuclear link in Gröbner normal
-form and let $\bar{\mathcal{N}}'$ be obtained from
-$\bar{\mathcal{N}}$ by a sequence of $k$ Skein crossing changes.
+Let $\mathcal{N}$ be a nuclear link in Gröbner normal
+form and let $\mathcal{N}'$ be obtained from
+$\mathcal{N}$ by a sequence of $k$ Skein crossing changes.
 The **lepton number** of the transition is $L = k$.
 
 Each smoothing $L_0^{\pm}$ contributes:

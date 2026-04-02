@@ -3,8 +3,11 @@ $B_A$ ([braid group](#def:braid-group)), where $A = Z + N$.  This
 braid word is not unique — different orderings of the Hopf crossings
 give different representatives of the same link.  The **Gröbner
 reduction** in the Hecke algebra $H_A(q)$ produces a unique
-**normal form** $\overline{\mathcal{N}(Z, N)}$ — the lowest-energy
-representative.
+**normal form** — the lowest-energy representative.
+
+**Convention.** Throughout this paper, $\mathcal{N}(Z, N)$ always
+denotes the **reduced** (Gröbner normal form) nuclear braid word
+unless explicitly stated otherwise.
 
 **Proposition.**
 Let $R = \mathbb{Z}[q, q^{-1}]$, let $R[B_A]$ be the group algebra
@@ -45,9 +48,9 @@ algorithm
 is the **unique normal form**:
 
 $$
-  \overline{\mathcal{N}(Z, N)}
+  \mathcal{N}(Z, N)
   \;:=\;
-  r\bigl(\mathcal{N}(Z, N),\, G\bigr)
+  r\bigl(\mathcal{N}_{\mathrm{raw}}(Z, N),\, G\bigr)
   \;\in\; H_A(q).
 $$
 
@@ -112,7 +115,7 @@ with beta decay releasing energy.
 The reduced braid word for tritium is:
 
 $$
-  \overline{\mathcal{N}(1, 2)}
+  \mathcal{N}(1, 2)
   \;=\;
   -0.145
   \;+\; (-0.015)\,\sigma_0
@@ -129,8 +132,8 @@ The beta-decay half-life depends on the **difference** between the
 parent and daughter normal forms:
 
 $$
-  \overline{\mathcal{N}(Z, N)}
-  - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
+  \mathcal{N}(Z, N)
+  - \mathcal{N}(p\!+\!1, n\!-\!1)
   \;=\;
   \sum_{w \in B} \Delta c_w \cdot w
 $$
@@ -143,8 +146,8 @@ $$
   \;\propto\;
   \left|
     \mathrm{tr}_{\mathrm{Markov}}\!\left(
-      \overline{\mathcal{N}(Z, N)}
-      - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
+      \mathcal{N}(Z, N)
+      - \mathcal{N}(p\!+\!1, n\!-\!1)
     \right)
   \right|^2.
 $$

@@ -205,7 +205,7 @@ where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
 The nuclear energy decomposes as:
 
 $$
-  \ln|\mathrm{tr}(\bar{\mathcal{N}})| \;=\;
+  \ln|\mathrm{tr}(\mathcal{N})| \;=\;
   \sum_{i=0}^{A-2} \ln|\hat{V}_i|
 $$
 

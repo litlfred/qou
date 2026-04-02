@@ -14,7 +14,7 @@ plus the emitted lepton pair.
 A nucleus $\mathcal{N}(Z, N)$ is a satellite link of $A = Z + N$
 Borromean components ([stable nucleus](#def:stable-nucleus)).
 Its braid word in $B_{3A}$ reduces to a unique Gröbner normal form
-$\bar{\mathcal{N}}(Z, N)$ in the Hecke algebra $H_{3A}(q)$
+$\mathcal{N}(Z, N)$ in the Hecke algebra $H_{3A}(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 
 Each nucleon is a Borromean link $\mathcal{B}_3(q_1, q_2, q_3)$
@@ -79,12 +79,12 @@ approximation misses $6$ of these $7$ crossings.
 
 *A $\beta^-$ transition inserts the $T_{3,5}$ braid at the
 converting $\mathfrak{d}$-quark crossing of the Gröbner normal form
-$\bar{\mathcal{N}}(Z, N)$, followed by re-reduction:*
+$\mathcal{N}(Z, N)$, followed by re-reduction:*
 
 $$
-  \bar{\mathcal{N}}(Z, N) \cdot \beta_{T_{3,5}}
+  \mathcal{N}(Z, N) \cdot \beta_{T_{3,5}}
   \;\xrightarrow{\;\text{reduce}\;}
-  \bar{\mathcal{N}}(Z + 1, \, N - 1)
+  \mathcal{N}(Z + 1, \, N - 1)
   \;\sqcup\;
   T_{2,3}
   \;\sqcup\;
@@ -112,9 +112,9 @@ the transition amplitude.
 conjugate $\overline{T_{3,5}}$ braid (with $q \leftrightarrow q^{-1}$):*
 
 $$
-  \bar{\mathcal{N}}(Z, N) \cdot \overline{\beta_{T_{3,5}}}
+  \mathcal{N}(Z, N) \cdot \overline{\beta_{T_{3,5}}}
   \;\xrightarrow{\;\text{reduce}\;}
-  \bar{\mathcal{N}}(Z - 1, \, N + 1)
+  \mathcal{N}(Z - 1, \, N + 1)
   \;\sqcup\;
   \overline{T_{2,3}}
   \;\sqcup\;
@@ -177,9 +177,9 @@ crossings of the $T_{3,5}$ insertion:
 $$
   \mathcal{Q}_q
   \;=\;
-  \mathcal{S}_q[\bar{\mathcal{N}}(Z, N)]
+  \mathcal{S}_q[\mathcal{N}(Z, N)]
   \;-\;
-  \mathcal{S}_q[\bar{\mathcal{N}}(Z \pm 1, N \mp 1)]
+  \mathcal{S}_q[\mathcal{N}(Z \pm 1, N \mp 1)]
   \;-\;
   m_e
 $$

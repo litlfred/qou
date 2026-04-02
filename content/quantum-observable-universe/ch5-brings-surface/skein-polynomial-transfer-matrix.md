@@ -11,7 +11,7 @@ $$
   P_{\mathcal{N}}(q)
   \;:=\;
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
-    \overline{\mathcal{N}(Z, N)}
+    \mathcal{N}(Z, N)
   \bigr)
   \;=\;
   \prod_{i=0}^{A-2} \hat{V}_i(q)

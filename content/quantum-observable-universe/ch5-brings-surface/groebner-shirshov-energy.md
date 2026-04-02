@@ -17,7 +17,7 @@ $$
 $$
 
 where $\xi = \sum_w c_w(q) \cdot w$ is the normal form
-$\overline{\mathcal{N}(Z, N)}$ and $\ell(w)$ is the word length.
+$\mathcal{N}(Z, N)$ and $\ell(w)$ is the word length.
 Then:
 
 1. **Only Hecke reductions change energy.**
@@ -31,7 +31,7 @@ Then:
 2. **Energy is path-independent.**
    The total energy change from the unreduced braid word
    $\mathcal{N}(Z, N)$ to the normal form
-   $\overline{\mathcal{N}(Z, N)}$ is independent of the order
+   $\mathcal{N}(Z, N)$ is independent of the order
    in which the Gröbner basis elements are applied.  This
    follows from the confluence (diamond lemma) of the
    Gröbner--Shirshov basis: all reduction paths lead to the
@@ -86,7 +86,7 @@ The total weight changes by
 $|c(q-q^{-1})| + |c| - |c| = |c| \cdot |q - q^{-1}|$.
 
 **Physical interpretation.**
-The energy functional $E(\overline{\mathcal{N}(Z, N)})$ is the
+The energy functional $E(\mathcal{N}(Z, N))$ is the
 **Skein binding energy** of the nucleus, expressed in the
 Gröbner--Shirshov normal form.  Each Hecke step $\sigma_i^2
 \to (q - q^{-1})\sigma_i + 1$ resolves a double crossing into
@@ -122,8 +122,8 @@ part 1 of the theorem.
 
 **The beta-decay energy difference.**
 The half-life is determined by
-$\Delta E = E(\overline{\mathcal{N}(p+1,n-1)})
-- E(\overline{\mathcal{N}(Z, N)})$, which counts the difference
+$\Delta E = E(\mathcal{N}(p+1,n-1))
+- E(\mathcal{N}(Z, N))$, which counts the difference
 in Hecke steps between parent and daughter normal forms.  This
 difference is **always negative** (verified computationally for
 all $A \leq 6$): the daughter has fewer Hecke steps, consistent

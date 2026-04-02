@@ -30,8 +30,8 @@ invoked.  $\mathcal{Q}_q$ is a computable function of $q$ alone.
 
 ## Crossing-level decomposition
 
-The parent and daughter normal forms $\bar{\mathcal{N}}(p,n)$
-and $\bar{\mathcal{N}}(p+1, n-1)$ differ at exactly $|\delta p|$
+The parent and daughter normal forms $\mathcal{N}(p,n)$
+and $\mathcal{N}(p+1, n-1)$ differ at exactly $|\delta p|$
 crossings (the converting nucleon's quarks).  At each changed
 crossing:
 
