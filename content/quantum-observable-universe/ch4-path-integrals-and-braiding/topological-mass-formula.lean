@@ -15,7 +15,7 @@ LaTeX label: `prop:topological-mass-formula`
 
 - [manuscript] §4/topological-mass-formula
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [thurston1979] https://doi.org/10.1007/978-1-4612-9903-6
+- [thurston1978] https://doi.org/10.1007/978-1-4612-9903-6
 -/
 
 import Mathlib.Data.Real.Basic
@@ -52,7 +52,7 @@ noncomputable def archimedeanMass (q : ℝ) (vol : ℝ) : ℝ :=
     2. Exceptional divisor contributions → Vol(K) · (1/ℏ_q² - 1)
     3. Total: m = Vol(K)/ℏ_q² -/
 -- Ref: [manuscript] §4/topological-mass-formula
--- Ref: [thurston1979] https://doi.org/10.1007/978-1-4612-9903-6
+-- Ref: [thurston1978] https://doi.org/10.1007/978-1-4612-9903-6
 theorem ArchimedeanMassFormula
     (q : ℝ) (hq : 1 < q)
     (vol : ℝ) (hvol : 0 < vol)

@@ -36,12 +36,12 @@ noncomputable def weierstrassProjection
     derivative of ℘_q at z equals the cubic polynomial evaluated
     at ℘_q(z). -/
 -- Ref: [manuscript] §5/weierstrass-projection
--- Ref: [silverman2009] https://doi.org/10.1007/978-0-387-09494-6
+-- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6
 theorem weierstrass_diff_eq (g2 g3 : ℝ) (z : ℂ)
     (hz : z ≠ 0) :
     ∃ (wp_deriv wp_val : ℂ),
       wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3 := by
-  -- Ref: [silverman2009] https://doi.org/10.1007/978-0-387-09494-6  Theorem VI.3.6
+  -- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6  Theorem VI.3.6
   sorry
 
 end QOU.Descartes
