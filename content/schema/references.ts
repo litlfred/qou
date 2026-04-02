@@ -1522,6 +1522,38 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2013]] },
     URL: "https://www.jmilne.org/math/CourseNotes/LEC.pdf",
   }),
+
+  // ── Coecke & Kissinger 2017 (Picturing Quantum Processes) ──
+  ref({
+    id: "coecke2017",
+    type: "book",
+    title: "Picturing Quantum Processes: A First Course in Quantum Theory and Diagrammatic Reasoning",
+    author: [
+      { family: "Coecke", given: "Bob" },
+      { family: "Kissinger", given: "Aleks" },
+    ],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[2017]] },
+    ISBN: "978-1-107-10422-8",
+    DOI: "10.1017/9781316219317",
+  }),
+
+  // ── Haag 1996 (Local Quantum Physics) ─────────────────────
+  ref({
+    id: "haag1996",
+    type: "book",
+    title: "Local Quantum Physics: Fields, Particles, Algebras",
+    author: [
+      { family: "Haag", given: "Rudolf" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "Berlin, Heidelberg",
+    issued: { "date-parts": [[1996]] },
+    edition: "2",
+    "collection-title": "Texts and Monographs in Physics",
+    ISBN: "978-3-642-61458-3",
+    DOI: "10.1007/978-3-642-61458-3",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

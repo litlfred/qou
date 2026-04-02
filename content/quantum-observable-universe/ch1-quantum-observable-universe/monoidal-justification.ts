@@ -1,0 +1,10 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  interprets: "def:rigid-monoidal-category",
+  label: "rem:monoidal-justification",
+  title: "Why monoidal categories?",
+  uses: [],
+  tags: ["category-theory", "monoidal", "motivation"],
+  cites: ["coecke2017", "haag1996"],
+});
