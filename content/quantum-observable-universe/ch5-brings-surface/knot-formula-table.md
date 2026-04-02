@@ -105,8 +105,7 @@ to the base manifold.
 | Oxygen-16 | $16$ | $8$ | $8\mathfrak{p} \bowtie 8\mathfrak{n} \bowtie 8T_{2,3}$ |
 | Iron-56 | $56$ | $26$ | $26\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 26T_{2,3}$ |
 
-For heavier nuclei the formula $Z\mathfrak{p} \bowtie N\mathfrak{n}
-\bowtie ZT_{2,3}$ remains valid, but the Skein polynomial $Q(q)$
+For heavier nuclei the formula $Z\mathfrak{p} \bowtie N\mathfrak{n} \bowtie ZT_{2,3}$ remains valid, but the Skein polynomial $Q(q)$
 of the multi-body link grows combinatorially in $A$.  The binding
 energy at each Hopf junction is computable in principle from the
 pair Skein mass formula

@@ -2,8 +2,7 @@ Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2),
 we verify the [descent lemma](#lem:descent) at the first level.
 
 **The descent map.** The descent
-$\mathfrak{d}_1 \colon \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))
-\to \mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))$ sends a jet-level
+$\mathfrak{d}_1 \colon \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2))) \to \mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))$ sends a jet-level
 endomorphism to its base-level shadow by averaging over the cotangent
 fibre directions.
 
@@ -16,8 +15,7 @@ $T^*\mathrm{SU}(2)$). The codomain
 $\mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))$ is $3$-dimensional,
 spanned by the adjoint action of $\mathfrak{su}(2)$.
 
-**Surjectivity.** Every base-level endomorphism $\phi \in
-\mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))$ lifts to
+**Surjectivity.** Every base-level endomorphism $\phi \in \mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))$ lifts to
 $\tilde{\phi} = \phi \otimes \mathrm{id}_{\Omega^1}$ in
 $\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$, giving
 $\mathfrak{d}_1(\tilde{\phi}) = \phi$. Hence $\mathfrak{d}_1$ is

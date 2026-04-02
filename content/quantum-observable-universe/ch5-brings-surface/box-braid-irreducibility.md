@@ -157,8 +157,7 @@ via any process.
      m_\nu \;=\; \mu_0(q - 1).
    $$
 
-   The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot
-   (q + 1) / q \approx 19$ at the substrate parameter $q$: the box
+   The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot (q + 1) / q \approx 19$ at the substrate parameter $q$: the box
    energy barrier is $\sim 19$ times the neutrino mass.
 
 3. **No simpler process.** $T_{3,5}$ is the unique cross-family

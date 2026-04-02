@@ -25,8 +25,7 @@ $c_{V,V} \colon V \otimes V \to V \otimes V$.  Then:
    This is a *categorical invariant*: it is determined by the
    braiding endomorphism of $\mathbf{C}$ alone.
 
-3. **Hecke relation.** The eigenvalue pair $(\lambda_+, \lambda_-)
-   = (q, -q^{-1})$ is equivalent to the Hecke relation on
+3. **Hecke relation.** The eigenvalue pair $(\lambda_+, \lambda_-) = (q, -q^{-1})$ is equivalent to the Hecke relation on
    $T = \tau(c_{V,V})$:
 
    $$

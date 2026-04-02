@@ -23,7 +23,6 @@ given on the Artin generators by
 ```
 
 The braid relation
-$\rho_n(\sigma_i)\,\rho_n(\sigma_{i+1})\,\rho_n(\sigma_i)
-= \rho_n(\sigma_{i+1})\,\rho_n(\sigma_i)\,\rho_n(\sigma_{i+1})$
+$\rho_n(\sigma_i)\,\rho_n(\sigma_{i+1})\,\rho_n(\sigma_i) = \rho_n(\sigma_{i+1})\,\rho_n(\sigma_i)\,\rho_n(\sigma_{i+1})$
 is equivalent to the Yang--Baxter equation for the braiding $c_{V,V}$.
 

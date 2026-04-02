@@ -3,8 +3,7 @@ Descartes elliptic curve $\mathcal{E}_q$
 ([golden ratio degeneration](#rem:golden-ratio-degeneration)): once as
 a **metric property** (the conformal modulus of the elliptic fiber at
 our $q = q_0$) and once as an **algebraic property** (the root of
-the degeneration polynomial $s^2 + s - 1 = 0$ at $q_{\mathrm{gold}}
-= 1/\varphi^2$).  Parallel transport along the $q$-connection
+the degeneration polynomial $s^2 + s - 1 = 0$ at $q_{\mathrm{gold}} = 1/\varphi^2$).  Parallel transport along the $q$-connection
 ([categorical $q$-connection](#def:categorical-q-connection))
 reveals these as the same $\varphi$, seen from opposite ends of a
 geodesic in the substrate parameter space.
@@ -25,8 +24,7 @@ the chiral fiber at that value of $q$.
 
 **Transport equations.**
 The $q$-connection
-$\nabla_q = q^{-1}\,\nabla + (1 - q^{-1})\,(\iota_\xi\,\nabla)\,
-\theta_A$
+$\nabla_q = q^{-1}\,\nabla + (1 - q^{-1})\,(\iota_\xi\,\nabla)\, \theta_A$
 has coefficients that depend continuously on $q$.  As $q$ decreases
 from $q_0$ to $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$,
 the connection weight shifts:

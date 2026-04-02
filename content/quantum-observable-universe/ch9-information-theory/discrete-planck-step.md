@@ -101,8 +101,7 @@ $\mathbb{F}_\pp$ into short-period and long-period orbits.
 **$p$-Adic Planck step.**
 Over $\mathbb{Q}_\pp$, the substrate parameter $q$ has a $\pp$-adic
 valuation.  The Planck time $t_P = q/(q-1)$ has
-$v_\pp(t_P) = v_\pp(q) - v_\pp(q-1)$.  When $q \equiv 1
-\pmod{\pp^n}$ (near the classical limit in the $\pp$-adic
+$v_\pp(t_P) = v_\pp(q) - v_\pp(q-1)$.  When $q \equiv 1 \pmod{\pp^n}$ (near the classical limit in the $\pp$-adic
 topology), $v_\pp(q-1) \geq n$ and $t_P$ has large $\pp$-adic
 valuation — the Planck time is "$\pp$-adically large",
 corresponding to slow dynamics.  When $v_\pp(q-1) = 0$ (the
@@ -115,8 +114,7 @@ $\mathbb{F}_\pp$ orbit structure to a $\mathbb{Z}_\pp$-lattice:
 the finite orbits of $f_q$ over $\mathbb{F}_\pp$ lift to
 Teichmüller representatives in $\mathbb{Z}_\pp$, and the
 $\pp$-adic Planck step acts on these lifts via the Frobenius
-endomorphism.  The passage $\mathbb{F}_\pp \to \mathbb{Q}_\pp \to
-\mathbb{C}$ is the arithmetic analogue of the cosmological
+endomorphism.  The passage $\mathbb{F}_\pp \to \mathbb{Q}_\pp \to \mathbb{C}$ is the arithmetic analogue of the cosmological
 progression from discrete (Big Bang) to continuous (classical
 limit).
 

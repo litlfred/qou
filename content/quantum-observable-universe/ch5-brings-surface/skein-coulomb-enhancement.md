@@ -140,8 +140,7 @@ correctly determines:
    the overall decay-rate scale from the single parameter $q$.
 2. **The $A$-dependence**: $t_{1/2} \propto A^{5/3}$ at fixed
    $|\delta p|$ and fixed transition class.
-3. **The $q$-sensitivity**: $\partial \ln \Gamma / \partial \ln q
-   \approx 48$, a parameter-free prediction.
+3. **The $q$-sensitivity**: $\partial \ln \Gamma / \partial \ln q \approx 48$, a parameter-free prediction.
 4. **The Coulomb enhancement structure**: $F_q(Z, E)$ emerges from
    the Skein crossing weights, unifying the electromagnetic and
    weak interactions through the single deformation parameter $q$.

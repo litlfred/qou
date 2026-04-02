@@ -12,10 +12,8 @@ level $n$) and **transient** (genuinely new at level $n{+}1$).
 Write $T_i^{(n)}$ for the Hecke generators at brane level $n$,
 $\mathrm{tr}_M^{(n)}$ for the level-$n$ Markov trace, and
 $\check{R}^{(n)}$ for the $R$-matrix at level $n$.  The
-jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow
-H^{(n+1)}(q)$ with $\ell_n(T_i^{(n)}) = T_i^{(n+1)}$, and
-the descent is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to
-H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
+jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow H^{(n+1)}(q)$ with $\ell_n(T_i^{(n)}) = T_i^{(n+1)}$, and
+the descent is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
 
 ---
 
@@ -28,11 +26,9 @@ quadratic, braid, and locality relations:
 
 **(J-1a)** $\;T_i^{(n)\,2} \;=\; (q - q^{-1})\,T_i^{(n)} + 1$
 
-**(J-1b)** $\;T_i^{(n)}\, T_{i+1}^{(n)}\, T_i^{(n)}
-\;=\; T_{i+1}^{(n)}\, T_i^{(n)}\, T_{i+1}^{(n)}$
+**(J-1b)** $\;T_i^{(n)}\, T_{i+1}^{(n)}\, T_i^{(n)} \;=\; T_{i+1}^{(n)}\, T_i^{(n)}\, T_{i+1}^{(n)}$
 
-**(J-1c)** $\;T_i^{(n)}\, T_j^{(n)} \;=\; T_j^{(n)}\, T_i^{(n)}
-\qquad (|i - j| \geq 2)$
+**(J-1c)** $\;T_i^{(n)}\, T_j^{(n)} \;=\; T_j^{(n)}\, T_i^{(n)} \qquad (|i - j| \geq 2)$
 
 The substrate parameter $q$ is the **same at every level** —
 this is the content of the Euler characteristic stability
@@ -65,8 +61,7 @@ $$
   \bigr).
 $$
 
-**(J-2b) Antipode at level $n$**: $\;S_n(T_i^{(n)}) = T_i^{(n)\,-1}
-= T_i^{(n)} - (q - q^{-1})$.
+**(J-2b) Antipode at level $n$**: $\;S_n(T_i^{(n)}) = T_i^{(n)\,-1} = T_i^{(n)} - (q - q^{-1})$.
 
 **(J-2c) Level-$n$ Frobenius pairing**:
 
@@ -158,8 +153,7 @@ $$
   \epsilon_n \circ (\Lambda^2 g_V^{(n)}) = \epsilon_n.
 $$
 
-The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} =
-\frac{1}{[2]_q}(\mathrm{id} - q^{-1} T_1^{(n)})$ has the same
+The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} = \frac{1}{[2]_q}(\mathrm{id} - q^{-1} T_1^{(n)})$ has the same
 form at every level (same $q$), so the volume constraint is
 **level-independent**.
 
@@ -167,8 +161,7 @@ form at every level (same $q$), so the volume constraint is
 
 ## II. Descent decomposition of relations
 
-The descent involution $\hat{\tau}_n = \ell_n \circ
-\mathfrak{d}_{n+1}$ is idempotent on $H^{(n+1)}(q)$ and
+The descent involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ is idempotent on $H^{(n+1)}(q)$ and
 splits every relation into descended and transient parts.
 
 ### D-1: Descended Hecke generators
@@ -191,8 +184,7 @@ Hecke relation QU-1a is purely descended.
 
 At level $n{+}1$, the jet prolongation may produce new
 generators $T^{(n+1)}_{\mathrm{new}}$ in the transient
-complement $\mathcal{A}^{\mathrm{trans}}_{n+1} =
-\ker\,\hat{\tau}_n$.  These satisfy:
+complement $\mathcal{A}^{\mathrm{trans}}_{n+1} = \ker\,\hat{\tau}_n$.  These satisfy:
 
 $$
   \hat{\tau}_n(T^{(n+1)}_{\mathrm{new}}) \;=\; 0,
@@ -278,8 +270,7 @@ $$
   q^{-1}(1 - q^{-1})\;\omega_V^{(n)} \wedge_q [\xi_n,\, \alpha],
 $$
 
-where $\omega_V^{(n)} = \sum_{i<j}(T_i^{(n)} T_j^{(n)} -
-T_j^{(n)} T_i^{(n)})\,dz^i \wedge dz^j$ is the level-$n$
+where $\omega_V^{(n)} = \sum_{i<j}(T_i^{(n)} T_j^{(n)} - T_j^{(n)} T_i^{(n)})\,dz^i \wedge dz^j$ is the level-$n$
 Hecke Casimir.  Since $q$ is level-independent, the
 obstruction to $d_q^2 = 0$ has the **same algebraic form**
 at every level — but acts on a larger algebra.

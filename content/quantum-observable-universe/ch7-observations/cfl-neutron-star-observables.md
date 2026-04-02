@@ -27,16 +27,14 @@ $$
   \rho^{5/3} \cdot \frac{(q-1)^2}{q^2 \cdot (q + q^{-1})}.
 $$
 
-The ratio $P_D / P_B \sim V_B / [\hbar_q^2 \cdot (q + q^{-1})]
-\gg 1$: the CFL phase has a **much stiffer equation of state**.
+The ratio $P_D / P_B \sim V_B / [\hbar_q^2 \cdot (q + q^{-1})] \gg 1$: the CFL phase has a **much stiffer equation of state**.
 This produces a **kink** in the mass-radius relation $M(R)$
 at the critical central density $\rho_c$.
 
 **Prediction**: neutron stars with $M \gtrsim 2\,M_\odot$ (those
 with CFL cores) should have systematically **larger radii** at a
 given mass than predicted by purely hadronic equations of state.
-The NICER X-ray timing mission has measured $R \approx
-12\text{--}13$ km for $\sim 2\,M_\odot$ pulsars, consistent with
+The NICER X-ray timing mission has measured $R \approx 12\text{--}13$ km for $\sim 2\,M_\odot$ pulsars, consistent with
 stiffening but not yet discriminating the mechanism.
 
 **2. Cooling anomaly: the CFL gap suppresses neutrino emission.**

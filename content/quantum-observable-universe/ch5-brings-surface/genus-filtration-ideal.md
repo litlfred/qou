@@ -164,8 +164,7 @@ $\deg_u a_p \leq g$.*
 For $g = 4$ (as determined by Hecke completeness):
 $\mathfrak{I}_4 = (u^5)$.  Every $T_{2,p}$ with $p \geq 11$
 has $a_p \in \mathfrak{I}_4$ because $\deg_u a_p \geq 5$.
-The ideal $(u^5)$ catches all of them simultaneously: $u^k
-= u^{k-5} \cdot u^5 \in (u^5)$ for all $k \geq 5$.
+The ideal $(u^5)$ catches all of them simultaneously: $u^k = u^{k-5} \cdot u^5 \in (u^5)$ for all $k \geq 5$.
 
 ## Part III: Yekutieli obstruction = leading coefficient
 
@@ -191,8 +190,7 @@ nonzero for every prime $p \geq 2g + 3 = 11$.*
 
 ## Formal coordinates: unwinding $d_q^2 \neq 0$
 
-The non-nilpotence $d_q^2 \alpha = q^{-1}(1-q^{-1})\,
-\omega_V \wedge_q [\xi, \alpha]$
+The non-nilpotence $d_q^2 \alpha = q^{-1}(1-q^{-1})\, \omega_V \wedge_q [\xi, \alpha]$
 ([categorical $d_q^2$](#prop:categorical-dq-squared)) provides
 the differential-geometric mechanism.
 
@@ -203,16 +201,14 @@ Maurer--Cartan form on $H_2(q)$) and $u = s^2$ acts as a
 grading parameter.
 
 The weight decomposition assigns degree $k$ in $u$ to the
-$k$-th Seifert cycle: $\alpha_p = \sum_{k=0}^{g_p} c_k \,
-u^k \omega_T$, with $[\xi, u^k \omega_T] = k \cdot u^k \omega_T$
+$k$-th Seifert cycle: $\alpha_p = \sum_{k=0}^{g_p} c_k \, u^k \omega_T$, with $[\xi, u^k \omega_T] = k \cdot u^k \omega_T$
 (the Lie derivative counts Seifert cycles).
 
 Applying $d_q^2$ iteratively:
 
 1. **At genus level $k \leq g$:** The component $c_k u^k \omega_T$
    maps under $\iota_*$ to a class in $H^1(\Sigma_g)$.
-   The obstruction $d_q^2(c_k u^k \omega_T) \propto
-   k \cdot \omega_V \wedge c_k u^k \omega_T$ is absorbed by
+   The obstruction $d_q^2(c_k u^k \omega_T) \propto k \cdot \omega_V \wedge c_k u^k \omega_T$ is absorbed by
    the available $H^2(\Sigma_g)$ pairing --- it vanishes on the
    horizontal subcomplex ($\xi$-invariant forms project the
    surplus away).

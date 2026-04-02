@@ -81,8 +81,7 @@ Every quantity on the right is determined:
 | $qq' \to W$ (LHC, $pp$ sea) | $\alpha_W x^2$ | $\lesssim 10^{-6}$ | $\lesssim 1$ MeV | $\sim 3$ MeV | Consistent |
 
 The mass shift is computed from the sensitivity
-$\partial \ln m / \partial \ln q = (q_0^2 + 1)/(q_0^2 - 1)
-\approx 9.62$:
+$\partial \ln m / \partial \ln q = (q_0^2 + 1)/(q_0^2 - 1) \approx 9.62$:
 
 $$
   \delta m = \frac{\delta q}{q_0}
@@ -166,8 +165,7 @@ $\alpha_s / \alpha_W \approx 3.5$.
 ## Inferred $\delta q$ per experiment
 
 The backward-inferred $\delta q$ is obtained by inverting:
-$\delta q / q_0 = (\delta m / m) / (\partial \ln m / \partial
-\ln q)$ with sensitivity $9.62$.  These values **restate the
+$\delta q / q_0 = (\delta m / m) / (\partial \ln m / \partial \ln q)$ with sensitivity $9.62$.  These values **restate the
 mass deviations** in units of the substrate parameter — they are
 not independent measurements.  The hypothesis is tested by
 comparing the *pattern* against the forward prediction.

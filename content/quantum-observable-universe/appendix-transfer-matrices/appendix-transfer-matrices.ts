@@ -41,10 +41,24 @@ export default chapter({
       ],
     }),
     section({
-      title: "Worked examples",
+      title: "Worked examples (light nuclei)",
       label: "sec:tm-worked-examples",
       blocks: [
         "tm-worked-examples",
+      ],
+    }),
+    section({
+      title: "Inductive construction ($A \\to A+1$)",
+      label: "sec:tm-inductive-construction",
+      blocks: [
+        "tm-inductive-construction",
+      ],
+    }),
+    section({
+      title: "Heavy-atom worked examples",
+      label: "sec:tm-heavy-atom-examples",
+      blocks: [
+        "tm-heavy-atom-examples",
       ],
     }),
   ],

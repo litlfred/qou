@@ -49,13 +49,10 @@ where:
    $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
 
 The decomposition follows from the idempotent splitting
-$\mathrm{End}_{\mathbf{C}}(A_{n+1}) =
-\mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}$
+$\mathrm{End}_{\mathbf{C}}(A_{n+1}) = \mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}$
 ([descent eigenspaces](#prop:descent-eigenspaces)) and the linearity of
 the categorical trace.  When the splitting is orthogonal with respect to
-the Frobenius norm, $\lVert \alpha \rVert^2 =
-\lVert \hat{\tau}_n(\alpha) \rVert^2 +
-\lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2$, the mass decomposes additively
+the Frobenius norm, $\lVert \alpha \rVert^2 = \lVert \hat{\tau}_n(\alpha) \rVert^2 + \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2$, the mass decomposes additively
 as stated.
 
 For the archimedean realisation---where the descended trace becomes the

@@ -74,8 +74,7 @@ critical point.  Over $\mathbb{F}_\pp$: whether the quadratic has
 roots is a quadratic residue condition.
 
 **Step 3: the cubic approximation.**
-$J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}\,d^2 E \cdot (\delta p)^2
-+ \tfrac{1}{6}\,d^3 E \cdot (\delta p)^3$.
+$J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}\,d^2 E \cdot (\delta p)^2 + \tfrac{1}{6}\,d^3 E \cdot (\delta p)^3$.
 
 The third jet is where the **coral structure appears**.  The coral
 elliptic curve ([coral elliptic](#prop:coral-elliptic))
@@ -335,8 +334,7 @@ steps) to continuous (the full jet shell) is the arithmetic version
 of the cosmological progression from Big Bang to classical limit.
 
 **Why cubic and not higher?**
-The Bring's surface is defined by constraints $\sum x_i = \sum x_i^2
-= \sum x_i^3 = 0$ in $\mathbb{CP}^4$.  The power-sum conditions
+The Bring's surface is defined by constraints $\sum x_i = \sum x_i^2 = \sum x_i^3 = 0$ in $\mathbb{CP}^4$.  The power-sum conditions
 use degrees 1, 2, and 3 — exactly the first three non-trivial jets.
 The fourth power sum $\sum x_i^4$ is *not* independent: by Newton's
 identities it is determined by the lower power sums.  The chiral

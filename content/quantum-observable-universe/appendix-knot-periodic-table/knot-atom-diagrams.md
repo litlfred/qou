@@ -68,8 +68,7 @@ The shell structure of these atoms is governed by the
 photon-electron transfer matrix eigenvalue $\lambda_+ = 1.1073$
 ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)).
 Hydrogen has one electron-proton junction ($T_{\gamma e}^1$);
-helium has a closed $1s$ shell ($T_{\gamma e}^1 \otimes
-T_{\gamma e}^1$); lithium adds the first $2s$ electron
+helium has a closed $1s$ shell ($T_{\gamma e}^1 \otimes T_{\gamma e}^1$); lithium adds the first $2s$ electron
 ($T_{\gamma e}^2$ at the third junction).
 
 An interactive version with SVG knot diagrams is available at

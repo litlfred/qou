@@ -9,8 +9,7 @@ condition ([Yekutieli lifting condition](#def:yekutieli-lifting-condition),
 is a quantum observable universe with the following structural properties:
 
 1. *Descent terminates.*  The geometric descent tower has finite
-   length, bounded by $\mathrm{Krull\;dim}\,
-   Z(\mathrm{End}_{\mathbf{C}}(A))$.  Observability ensures each step
+   length, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathbf{C}}(A))$.  Observability ensures each step
    is a strict reduction (the $G_q$-action is faithful, so fixed-point
    reduction strictly decreases dimension).
 2. *First obstruction equals the Euler class.*  The Yekutieli

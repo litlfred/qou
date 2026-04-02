@@ -133,8 +133,7 @@ quarks between generations and converts quarks to leptons (and vice
 versa) because $T_{3,5}$ topologically connects both sectors.
 
 **Parity violation** follows from the Skein asymmetry at $q \neq 1$:
-the Skein relation $q[L_+] - q^{-1}[L_-] =
-(q^{1/2} - q^{-1/2})[L_0]$ treats positive and negative crossings
+the Skein relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$ treats positive and negative crossings
 differently.  The weak force, mediated by $T_{3,5}$, inherits this
 asymmetry maximally because $T_{3,5}$ has the highest crossing count
 ($10$) among generators — the $q$-vs-$q^{-1}$ imbalance accumulates

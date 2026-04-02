@@ -41,8 +41,7 @@ detecting local $q$-gradients.
    $q \gg q_0$.  Beta-decay rates in the crust should be
    dramatically faster than terrestrial values.  This directly
    affects the r-process nucleosynthesis path: the waiting-point
-   half-lives that determine abundance peaks (at $A \approx 80,
-   130, 195$) are set by the *local* $q$, not the laboratory
+   half-lives that determine abundance peaks (at $A \approx 80, 130, 195$) are set by the *local* $q$, not the laboratory
    $q_0$.  A shift of $\Delta q / q_0 \sim 1\%$ at the
    $A = 130$ waiting point changes the r-process yield by an
    order of magnitude.
@@ -68,8 +67,7 @@ detecting local $q$-gradients.
 
 4. **Gravitational field gradients.**  The Levi form $L_\theta$
    couples $q$ to spacetime curvature.  Near the Earth's surface,
-   the Schwarzschild curvature produces $\Delta q / q_0 \sim
-   10^{-9}$ per metre of altitude — far too small for direct
+   the Schwarzschild curvature produces $\Delta q / q_0 \sim 10^{-9}$ per metre of altitude — far too small for direct
    detection, but relevant for precision comparisons of half-lives
    measured at different altitudes or on orbiting platforms.
    A space-based ${}^{60}\mathrm{Co}$ source compared with a

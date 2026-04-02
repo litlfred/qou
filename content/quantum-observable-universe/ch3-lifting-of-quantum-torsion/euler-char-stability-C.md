@@ -23,8 +23,7 @@ $\chi(S^2) = 2$.  Nonetheless, the Euler characteristic is preserved for the
 following reason.
 
 The Leray--Serre spectral sequence of
-$S^2 \hookrightarrow \mathcal{S}_{n+1} \to \mathcal{S}_n$ has $E_2^{p,q} = H^p(\mathcal{S}_n;\,
-H^q(S^2;\, \mathbb{Z}))$.  The quantum characteristic classes $\kappa_n$
+$S^2 \hookrightarrow \mathcal{S}_{n+1} \to \mathcal{S}_n$ has $E_2^{p,q} = H^p(\mathcal{S}_n;\, H^q(S^2;\, \mathbb{Z}))$.  The quantum characteristic classes $\kappa_n$
 ([quantum characteristic classes](#def:quantum-characteristic-classes)) are precisely the
 obstructions to trivial monodromy of the fibre cohomology $H^*(S^2)$.  By
 the vanishing condition of the quantum observable universe axioms---which

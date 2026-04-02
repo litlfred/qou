@@ -16,5 +16,4 @@ $A_1 = \mathcal{O}(\mathcal{B}_{\mathrm{cl}})$, the coordinate ring
 of the classical Bring's curve over $\mathbb{C}$. The self-duality
 $A_q \simeq \omega_{A_q}^\bullet$ descends to the classical Serre
 duality
-$H^i(\mathcal{B}_{\mathrm{cl}}, \mathcal{O}) \cong
-H^{g-i}(\mathcal{B}_{\mathrm{cl}}, \Omega^1)^\vee$.
+$H^i(\mathcal{B}_{\mathrm{cl}}, \mathcal{O}) \cong H^{g-i}(\mathcal{B}_{\mathrm{cl}}, \Omega^1)^\vee$.

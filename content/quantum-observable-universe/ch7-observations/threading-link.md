@@ -74,8 +74,7 @@ less weight.
 
 **Contrast with pairwise Hopf links.**
 The pairwise picture bonds $N$ atoms with $N$ separate Hopf
-links, giving total Alexander weight $N \cdot \Delta_{T(2,2)}(q)
-= N$.  The threading link replaces all $N$ bonds with a single
+links, giving total Alexander weight $N \cdot \Delta_{T(2,2)}(q) = N$.  The threading link replaces all $N$ bonds with a single
 invariant:
 
 $$

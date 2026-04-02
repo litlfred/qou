@@ -26,8 +26,7 @@ $$
 Evaluating on each basis element:
 
 - $\sigma(e_1 \otimes e_1) = q\, e_1 \otimes e_1$,
-- $\sigma(e_1 \otimes e_2) = e_2 \otimes e_1
-  + (q - q^{-1})\, e_1 \otimes e_2$,
+- $\sigma(e_1 \otimes e_2) = e_2 \otimes e_1 + (q - q^{-1})\, e_1 \otimes e_2$,
 - $\sigma(e_2 \otimes e_1) = e_1 \otimes e_2$,
 - $\sigma(e_2 \otimes e_2) = q\, e_2 \otimes e_2$.
 
@@ -78,8 +77,7 @@ the positive eigenvalue $q$ (attractive/binding) and the antisymmetric
 channel to $-q^{-1}$ (repulsive).
 
 **Braid group action.**
-The braid group $B_3 = \langle \sigma_1, \sigma_2 \mid
-\sigma_1 \sigma_2 \sigma_1 = \sigma_2 \sigma_1 \sigma_2 \rangle$ acts
+The braid group $B_3 = \langle \sigma_1, \sigma_2 \mid \sigma_1 \sigma_2 \sigma_1 = \sigma_2 \sigma_1 \sigma_2 \rangle$ acts
 on $V^{\otimes 3}$ by letting $\sigma_i$ braid the $i$-th and
 $(i+1)$-th tensor factors using the $R$-matrix above.  On
 $V \otimes V$ itself, the representation factors through the Hecke

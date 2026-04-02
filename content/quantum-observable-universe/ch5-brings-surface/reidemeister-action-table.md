@@ -1,6 +1,5 @@
 Every braid move acts on the three sectors of the categorical
-action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} +
-\mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
+action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} + \mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
 ([canonical action](#prop:qou-canonical-action)).  This table
 gives the complete accounting: what each move preserves, what it
 changes, and what must be tracked for mass and energy calculations.
@@ -121,8 +120,7 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
      $(q - q^{-1})$ of Coulomb energy and $1$ of volume binding.
    - R3 and far-comm rearrange crossings without energy cost.
 
-3. **$Q$-value** $= \mathcal{S}_q[\text{parent}]
-   - \mathcal{S}_q[\text{daughter}]$.
+3. **$Q$-value** $= \mathcal{S}_q[\text{parent}] - \mathcal{S}_q[\text{daughter}]$.
    - The Skein crossing change ($\mathfrak{d} \to \mathfrak{u}$) produces the transition.
    - The $L_0$ emission carries the electron + antineutrino.
    - The energy released = difference in gauge sector between

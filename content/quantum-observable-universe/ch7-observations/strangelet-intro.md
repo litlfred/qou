@@ -59,8 +59,7 @@ integer-valued and jumps from $1$ (Borromean, confined) to $0$
 two phases.
 
 The quantitative picture reduces to two numbers and a topology
-change.  The Borromean complement has $\mathrm{Vol}(\mathcal{B}_3)
-\approx 7.33$: massive, soft, confined.  The Hopf link complement has
+change.  The Borromean complement has $\mathrm{Vol}(\mathcal{B}_3) \approx 7.33$: massive, soft, confined.  The Hopf link complement has
 $\mathrm{Vol}(\mathcal{L}_H) = 0$: zero volume contribution,
 ultra-stiff, superconducting.  The Borromean phase binds at
 $749$ Skein units per baryon; the Hopf diquark phase at $3$.

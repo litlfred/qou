@@ -19,8 +19,8 @@ $$
   [u^{\sigma}, u^{\sigma}, d^{\sigma}]_p \bowtie \mathcal{L}_H
 $$
 
-where $\sigma(u) = T_{2,3}^{\sigma}$ and
-$\sigma(d) = (T_{2,3}^{\sigma})^{\sigma} = T_{2,3}$.  The
+where $u^{\sigma} = T_{2,3}^{\sigma}$ and
+$d^{\sigma} = (T_{2,3}^{\sigma})^{\sigma} = T_{2,3}$.  The
 crossing energy of $\mathfrak{p}^{\sigma}$ has the opposite sign
 to that of $\mathfrak{p}$: the Coulomb charge reverses,
 $Q(\mathfrak{p}^{\sigma}) = -1$.

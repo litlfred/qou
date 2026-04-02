@@ -1,7 +1,6 @@
 Let $\ell_n \colon A_n \hookrightarrow A_{n+1}$ denote the ascent embedding
 ([jet prolongation](#prop:jet-prolongation)) and
-$\mathfrak{d}_{n+1} \colon \mathrm{End}_{\mathbf{C}}(A_{n+1}) \to
-\mathrm{End}_{\mathbf{C}}(A_n)$ the descent homomorphism
+$\mathfrak{d}_{n+1} \colon \mathrm{End}_{\mathbf{C}}(A_{n+1}) \to \mathrm{End}_{\mathbf{C}}(A_n)$ the descent homomorphism
 ([descent](#lem:descent)).  The *descent involution* at level $n$ is
 the endomorphism of the level-$(n{+}1)$ endomorphism algebra:
 
@@ -31,7 +30,6 @@ $$
 $$
 
 so $\hat{\tau}_n$ is idempotent.  Its image is the
-*descended subalgebra* $\mathcal{A}_{n+1}^{\mathrm{desc}} \subseteq
-\mathrm{End}_{\mathbf{C}}(A_{n+1})$, consisting of endomorphisms at
+*descended subalgebra* $\mathcal{A}_{n+1}^{\mathrm{desc}} \subseteq \mathrm{End}_{\mathbf{C}}(A_{n+1})$, consisting of endomorphisms at
 level $n{+}1$ that factor through the level-$n$ algebra via the ascent
 embedding.

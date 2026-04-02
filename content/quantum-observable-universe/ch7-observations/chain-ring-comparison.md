@@ -20,16 +20,14 @@ $$
 1. The substrate parameter $q$ is fixed by $\chi(A) = -6$
    ([substrate parameter](#def:substrate-parameter)).
 
-2. The nuclear crossing energy quantum $|q + q^{-1}|_{\mathrm{nuc}}
-   \sim 8\,\mathrm{MeV}$ is determined by the Skein binding
+2. The nuclear crossing energy quantum $|q + q^{-1}|_{\mathrm{nuc}} \sim 8\,\mathrm{MeV}$ is determined by the Skein binding
    Lagrangian volume term.
 
 3. $\alpha$ and $m_e/m_p$ are determined by the knot spectrum
    ([topological mass formula](#prop:topological-mass-formula)).
 
 4. The molecular crossing energy quantum follows by scale
-   separation: $|q + q^{-1}|_{\mathrm{mol}} = (\alpha^2 m_e / m_p)
-   \cdot |q + q^{-1}|_{\mathrm{nuc}}$.
+   separation: $|q + q^{-1}|_{\mathrm{mol}} = (\alpha^2 m_e / m_p) \cdot |q + q^{-1}|_{\mathrm{nuc}}$.
 
 5. The Alexander polynomial $\Delta_{T(2,6)}(q) = q^2 + 1 + q^{-2}$
    is a topological invariant — it requires no input beyond $q$.

@@ -9,8 +9,7 @@ $$
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ is the
-proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p
-\bowtie \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
+proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
 (electron), and $\bowtie$ denotes Hopf linking.
 Here $Z$ is the atomic number (proton count) and $N$ is the
 neutron count, with $A = Z + N$ the mass number.
@@ -75,8 +74,7 @@ At the substrate parameter $q$, the dominant eigenvalue
 $\lambda_+ = 1.1073$ governs shell energy scaling via the
 Chebyshev recurrence
 $\hat{V}(n+1, q) = (q - q^{-1}) \hat{V}(n, q) + \hat{V}(n-1, q)$,
-reproducing the Rydberg formula $\mathbf{E}_{\mathrm{bind}}
-\propto \lambda_+^{-n} \approx 1/n^2$ for low shells.  Sub-shell
+reproducing the Rydberg formula $\mathbf{E}_{\mathrm{bind}} \propto \lambda_+^{-n} \approx 1/n^2$ for low shells.  Sub-shell
 structure ($s, p, d, f$ with capacities $2, 6, 10, 14$) emerges
 from tensor product eigenvalue degeneracies of multi-electron
 atoms.

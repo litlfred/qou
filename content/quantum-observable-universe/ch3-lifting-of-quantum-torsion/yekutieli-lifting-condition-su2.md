@@ -9,8 +9,7 @@ $\mathrm{SU}(2)$).
 
 **The gerbe.** The $\mathrm{SU}(2)$-principal bundle
 $\pi \colon \mathrm{SU}(2) \to \mathbb{CP}^1$ defines a gerbe
-$\mathfrak{G}$ on $\mathcal{S}$: objects over an open $U \subseteq
-\mathbb{CP}^1$ are local lifts of $\pi$, and morphisms are bundle
+$\mathfrak{G}$ on $\mathcal{S}$: objects over an open $U \subseteq \mathbb{CP}^1$ are local lifts of $\pi$, and morphisms are bundle
 isomorphisms.  The banding sheaf is
 $\mathcal{B} = \mathcal{O}_{\mathbb{CP}^1}^{\times}$, the sheaf of
 nowhere-vanishing holomorphic functions.
@@ -27,8 +26,7 @@ $$
 
 The obstruction to lifting a line bundle $L$ on $\mathbb{CP}^1$ to the
 total space of the gerbe is its first Chern class
-$\kappa(L) = c_1(L) \in H^2(\mathbb{CP}^1, \mathbb{Z}) \cong
-\mathbb{Z}$.
+$\kappa(L) = c_1(L) \in H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$.
 
 **Verification.** The lifting condition requires that $L$ admits a lift
 if and only if $\kappa(L) = 0$.  For $\mathbb{CP}^1$:

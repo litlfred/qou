@@ -18,9 +18,7 @@ category.
 
 *Step 2: Inherited Frobenius--Hopf structure.*
 The Frobenius relation
-$(\mathrm{Id} \otimes m) \circ (\Delta \otimes \mathrm{Id})
- = \Delta \circ m
- = (m \otimes \mathrm{Id}) \circ (\mathrm{Id} \otimes \Delta)$
+$(\mathrm{Id} \otimes m) \circ (\Delta \otimes \mathrm{Id}) = \Delta \circ m = (m \otimes \mathrm{Id}) \circ (\mathrm{Id} \otimes \Delta)$
 ensures that the comultiplication $\Delta\colon A \to A \otimes A$ restricts
 to a well-defined comultiplication
 $\Delta'\colon J^1(A) \to J^1(A) \otimes J^1(A)$, and the counit

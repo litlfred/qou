@@ -93,8 +93,7 @@ $$
   \;\approx\; 210 \;\mathrm{MeV}.
 $$
 
-This corresponds to a density $\rho_{\mathrm{hyp}} \approx
-2\text{--}3\,\rho_0$ (two to three times nuclear saturation
+This corresponds to a density $\rho_{\mathrm{hyp}} \approx 2\text{--}3\,\rho_0$ (two to three times nuclear saturation
 density), consistent with the onset of hyperonic matter in
 nuclear physics calculations.  Above this density:
 

@@ -118,11 +118,9 @@ crossings:
 
 - Crossing energy: $E_{e^-} = 3q \approx 3.330$
   Skein units.
-- Predicted mass: $\mathfrak{m}_{e^-} = E \cdot (q-1)^2
-  = 3q(q-1)^2$.
+- Predicted mass: $\mathfrak{m}_{e^-} = E \cdot (q-1)^2 = 3q(q-1)^2$.
 
-At $q = q_0$: $\mathfrak{m}_{e^-} = 3 q_0 \times 0.01203
-\approx 0.0401$ (in Reeb mass units).
+At $q = q_0$: $\mathfrak{m}_{e^-} = 3 q_0 \times 0.01203 \approx 0.0401$ (in Reeb mass units).
 
 **Pair creation reinterpreted.**
 The pair production threshold
@@ -135,12 +133,9 @@ $$
 $$
 
 The net crossing energy of the pair is
-$E_{e^-} + E_{e^+} = 3(q - q^{-1})
-\approx 0.630$ (pure Coulomb repulsion).  But the minimum photon
+$E_{e^-} + E_{e^+} = 3(q - q^{-1}) \approx 0.630$ (pure Coulomb repulsion).  But the minimum photon
 energy must supply both **absolute** crossing energies:
-$|E_{e^-}| + |E_{e^+}|
-= 3q + 3q^{-1} = 3(q + q^{-1})
-= 6\cosh(\ln q) \approx 6.033$ Skein units.
+$|E_{e^-}| + |E_{e^+}| = 3q + 3q^{-1} = 3(q + q^{-1}) = 6\cosh(\ln q) \approx 6.033$ Skein units.
 
 **Archimedean realisation.**
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's

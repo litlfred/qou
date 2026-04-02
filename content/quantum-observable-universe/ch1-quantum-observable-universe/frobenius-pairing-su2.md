@@ -34,8 +34,7 @@ element to its dual functional scaled by $1/(2j+1)$.
 of $\mathcal{O}(\mathrm{SU}(2))$ are
 $\alpha, \beta, \bar{\alpha}, \bar{\beta}$ with
 $|\alpha|^2 + |\beta|^2 = 1$.  The spin-$\tfrac{1}{2}$
-matrix coefficients are $D^{1/2}_{mn} \in \{\alpha, \beta,
--\bar{\beta}, \bar{\alpha}\}$.  We compute:
+matrix coefficients are $D^{1/2}_{mn} \in \{\alpha, \beta, -\bar{\beta}, \bar{\alpha}\}$.  We compute:
 
 $$
   \langle \alpha, \alpha \rangle_A
@@ -52,12 +51,8 @@ the Peter–Weyl normalisation for spin $j = \tfrac{1}{2}$.
 
 **The snake identity** (non-degeneracy in categorical language):
 the coevaluation $\tilde{\eta} \colon \mathbf{1} \to A \otimes A$
-sends $1 \mapsto \sum_{j,m,n} (2j+1)\,D^j_{mn} \otimes
-\overline{D^j_{mn}}$.  The composite
-$A \xrightarrow{\mathrm{id} \otimes \tilde{\eta}}
-A \otimes A \otimes A
-\xrightarrow{(\int_A \circ \mu) \otimes \mathrm{id}}
-A$ acts as
+sends $1 \mapsto \sum_{j,m,n} (2j+1)\,D^j_{mn} \otimes \overline{D^j_{mn}}$.  The composite
+$A \xrightarrow{\mathrm{id} \otimes \tilde{\eta}} A \otimes A \otimes A \xrightarrow{(\int_A \circ \mu) \otimes \mathrm{id}} A$ acts as
 
 $$
   f \;\longmapsto\; \sum_{j,m,n} (2j+1)\,

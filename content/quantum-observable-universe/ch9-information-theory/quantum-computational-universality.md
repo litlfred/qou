@@ -23,12 +23,10 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
    ideal $(q^{k+2} - 1)$.*
 
 2. **(Quantum universality.)** *At $q_k$ with $k \geq 3$, the
-   braiding representation $\rho_{q_k} \colon B_n \to
-   \mathrm{End}(V^{\otimes n})$ is dense in $\mathrm{SU}(2^n)$
+   braiding representation $\rho_{q_k} \colon B_n \to \mathrm{End}(V^{\otimes n})$ is dense in $\mathrm{SU}(2^n)$
    \cite{freedman2003}.  Every quantum circuit on $n$ qubits
    with $N$ gates can be approximated to precision $\epsilon$
-   by a braid $\beta$ with $c = O(N \cdot
-   \mathrm{polylog}(1/\epsilon))$ crossings.*
+   by a braid $\beta$ with $c = O(N \cdot \mathrm{polylog}(1/\epsilon))$ crossings.*
 
 3. **(Descent projects quantum to classical.)** *The descent
    involution $\hat{\tau}$
@@ -42,8 +40,7 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
    $$
 
    *([descent eigenspaces](#prop:descent-eigenspaces)).
-   The descended subalgebra $\mathcal{A}^{\mathrm{desc}} =
-   \mathrm{im}\,\hat{\tau}$ is the classical shadow — the
+   The descended subalgebra $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}$ is the classical shadow — the
    Toffoli computation at real $q$.  The transient complement
    $\mathcal{A}^{\mathrm{trans}} = \ker\,\hat{\tau}$ carries
    the quantum parallelism: exponentially many Skein

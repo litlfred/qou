@@ -63,8 +63,7 @@ groupoid) to the Hecke algebra computation of Ch5 (the generator
 volumes).
 
 **The beta-decay $Q$-value.**
-The $Q$-value for the transition $\mathcal{N}(Z, N) \to
-\mathcal{N}(p\!+\!1, n\!-\!1)$ is the mass difference:
+The $Q$-value for the transition $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$ is the mass difference:
 
 $$
   Q_\beta
@@ -125,8 +124,7 @@ the cosimplicial crossed groupoid
   Borromean crossings.  The crossing change $\mathfrak{d} \to \mathfrak{u}$ inside one
   nucleon produces the **$Q$-value** — the mass difference between
   parent and daughter.  This is where the neutron-proton mass
-  splitting $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}
-  \approx 1.293$ MeV originates.
+  splitting $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} \approx 1.293$ MeV originates.
 
 The coface map $\delta^0 \colon \mathfrak{G}_0 \to \mathfrak{G}_1$
 from the cosimplicial structure embeds the Level 0 computation into
