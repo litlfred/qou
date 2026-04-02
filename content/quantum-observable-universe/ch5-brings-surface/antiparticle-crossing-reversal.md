@@ -1,13 +1,13 @@
 Let $T_{2,3}$ be the left trefoil (the electron generator) and
-$\sigma(T_{2,3})$ its mirror image (all crossings reversed).
+$T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
 
 **Statement.**
 
 1. **Crossing reversal defines antiparticles.**  The antihadron
-   $\sigma(\mathfrak{H})$ of a composite hadron
+   $\mathfrak{H}^{\sigma}$ of a composite hadron
    $\mathfrak{H} = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ is obtained by
    replacing every constituent $K_i$ with its mirror
-   $\sigma(K_i)$.  The braid word $\beta$ representing the linking
+   $K_i^{\sigma}$.  The braid word $\beta$ representing the linking
    has all crossing signs reversed.
 
 2. **Crossing energy sign reversal.**  If the
@@ -21,7 +21,7 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
    then the crossing energy of the antihadron satisfies
 
    $$
-     \mathbf{E}_{\mathrm{cross}}(\sigma(\mathfrak{H})) = -\mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
+     \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma}) = -\mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
      \bigg|_{q \leftrightarrow q^{-1}},
    $$
 
@@ -30,10 +30,10 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
 
 3. **Coulomb charge reversal.**  The antisymmetric component of
    the crossing energy (the Coulomb channel) reverses sign:
-   $Q(\sigma(\mathfrak{H})) = -Q(\mathfrak{H})$.  In particular,
-   $Q(\bar{\mathfrak{p}}) = -1$ for the antiproton.
+   $Q(\mathfrak{H}^{\sigma}) = -Q(\mathfrak{H})$.  In particular,
+   $Q(\mathfrak{p}^{\sigma}) = -1$ for the antiproton.
 
 4. **Bare mass invariance.**  The mirror operation preserves the
    knot type (and hence hyperbolic volume), so the bare mass of
    a particle equals that of its antiparticle:
-   $m_{\mathrm{bare}}(\sigma(\mathfrak{H})) = m_{\mathrm{bare}}(\mathfrak{H})$.
+   $m_{\mathrm{bare}}(\mathfrak{H}^{\sigma}) = m_{\mathrm{bare}}(\mathfrak{H})$.

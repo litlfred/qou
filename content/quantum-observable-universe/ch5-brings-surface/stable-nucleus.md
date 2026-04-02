@@ -49,7 +49,7 @@ multi-component composites.  The stability condition restricts
 the physically realised nuclei to the **valley of stability**:
 only configurations $(Z, N)$ satisfying the beta-stability
 equation above are long-lived.  Nuclei outside this valley undergo
-beta decay ($\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}$ or
+beta decay ($\mathfrak{n} \to \mathfrak{p} + e^- + \nu^{\sigma}$ or
 $\mathfrak{p} \to \mathfrak{n} + e^+ + \nu$) until the stable
 configuration is reached.
 

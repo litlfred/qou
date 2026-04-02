@@ -6,9 +6,9 @@ $Z \leq 4$, with closed sub-Hopf links indicated.
 - **Solid trefoil** (filled): left trefoil $T_{2,3}$ — the
   proton quark constituent.
 - **Outline trefoil** (unfilled): right trefoil
-  $\sigma(T_{2,3})$ — the electron.
+  $T_{2,3}^{\sigma}$ — the electron.
 - **Circle**: unknot $K_{0_1}$ — the neutron.
-- **Dashed circle**: mirror unknot $\overline{T_{1,0}}$ — the
+- **Dashed circle**: mirror unknot $T_{1,0}^{\sigma}$ — the
   antineutrino ([antineutrino knot](#def:antineutrino-knot)),
   distinguished from the neutrino by orientation, not knot type.
 - **Interlocked circles**: Hopf link $\mathcal{L}_H$ — the

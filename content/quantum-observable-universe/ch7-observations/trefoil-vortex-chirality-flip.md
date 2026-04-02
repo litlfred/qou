@@ -68,7 +68,7 @@ $\mathrm{SU}_q(2)$.  The key distinctions are:
 
 The categorical trefoil's chirality is a **knot invariant**, not an
 embedding property.  The Jones polynomial distinguishes
-$T_{2,3}$ from $\sigma(T_{2,3})$: $J_{T_{2,3}}(q) \neq J_{\sigma(T_{2,3})}(q)$.
+$T_{2,3}$ from $T_{2,3}^{\sigma}$: $J_{T_{2,3}}(q) \neq J_{T_{2,3}^{\sigma}}(q)$.
 No continuous deformation (Reidemeister moves) can convert one to the
 other.
 
@@ -82,7 +82,7 @@ classical fluids:
    [fiber adjoint involution](#prop:fiber-adjoint-involution) reverses
    the Reeb flow direction and, if it extends to the
    [exceptional divisor](#def:exceptional-divisor), maps $T_{2,3}$
-   to $\sigma(T_{2,3})$.  This is not a continuous deformation
+   to $T_{2,3}^{\sigma}$.  This is not a continuous deformation
    of the knot but a **discrete jump** at the blow-up locus — the
    categorical analogue of a pair-creation event.  The trefoil vortex
    does not "unwind"; instead, it passes through a singular point
@@ -94,7 +94,8 @@ classical fluids:
    the chirality operator $\mathcal{X}_\varphi$ rotates the phase
    of $q$ continuously.  The
    [chirality rotation conjecture](#conj:complex-chirality-rotation)
-   proposes that the discrete flip $T_{2,3} \leftrightarrow \sigma(T_{2,3})$ is the $\mathbb{Z}_2$ shadow of a continuous
+   proposes that the discrete flip $T_{2,3} \leftrightarrow
+   T_{2,3}^{\sigma}$ is the $\mathbb{Z}_2$ shadow of a continuous
    $\mathrm{U}(1)$ rotation in the $\theta$-direction.  After
    projection to the observable sector ($\theta = 0$), only the
    endpoints of this rotation survive as particle and antiparticle.

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:box-braid-irreducibility",
   title:
-    "The $\\gamma\\gamma \\to \\nu\\bar{\\nu}$ box braid is irreducible",
+    "The $\\gamma\\gamma \\to \\nu\\nu^{\\sigma}$ box braid is irreducible",
   tags: [
     "neutrino",
     "stability",

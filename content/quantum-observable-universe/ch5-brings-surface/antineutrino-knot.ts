@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:antineutrino-knot",
-  title: "Antineutrino as mirror unknot $\\overline{T_{1,0}}$",
+  title: "Antineutrino as mirror unknot $T_{1,0}^{\\sigma}$",
   tags: [
     "antineutrino",
     "unknot",

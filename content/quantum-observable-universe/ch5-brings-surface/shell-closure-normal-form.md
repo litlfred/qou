@@ -1,4 +1,4 @@
-The Gröbner normal form $\bar{\mathcal{N}}(p, n)$ of a nucleus
+The Gröbner normal form $\mathcal{N}(p, n)$ of a nucleus
 built by sequential Hopf linking
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction))
 exhibits a **shell closure signature** when $(p, n)$ is a
@@ -9,39 +9,40 @@ doubly-magic configuration.
 Build the nucleus one nucleon at a time by alternating
 proton–neutron Hopf linking:
 
-1. Start with $\bar{\mathcal{N}}(1, 0) = \mathbf{1}$ (identity
+1. Start with $\mathcal{N}(1, 0) = \mathbf{1}$ (identity
    in $H_1(q)$).
 2. **Hopf-link** the next nucleon: append crossings
    $\sigma_j^{\epsilon(j,k)}$ for all existing nucleons $j < k$.
 3. **Reduce** via the Gröbner basis $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \text{YB},\; \text{far-comm}\}$.
 4. Record the **Hecke reduction energy** $\Delta E_k$
    ([Gröbner–Shirshov energy](#thm:groebner-shirshov-energy))
-   and the **word-length histogram** $h_k(\ell) = \#\{w \in \mathrm{supp}(\bar{\mathcal{N}}) : |w| = \ell\}$.
+   and the **word-length histogram** $h_k(\ell) = \#\{w \in
+   \mathrm{supp}(\mathcal{N}) : |w| = \ell\}$.
 
 Repeat until $A = p + n$ nucleons are linked.
 
 ## Proposition
 
-**Let $q > 1$ and let $\bar{\mathcal{N}}(p, n)$ be the Gröbner
+**Let $q > 1$ and let $\mathcal{N}(p, n)$ be the Gröbner
 normal form of the nuclear braid in $H_A(q)$ constructed by
 sequential Hopf linking with alternating $\mathfrak{p}$-$\mathfrak{n}$
 filling.**
 
 **(i) Normal form (inductive, for all $A$).**
-$\bar{\mathcal{N}}(p, n)$ is in Gröbner normal form for **every**
+$\mathcal{N}(p, n)$ is in Gröbner normal form for **every**
 $A \geq 1$, by induction on $A$:
 
-- **Base case.** $\bar{\mathcal{N}}(1, 0) = \mathbf{1}$ is trivially
+- **Base case.** $\mathcal{N}(1, 0) = \mathbf{1}$ is trivially
   in normal form (the empty word has no squares, no YB triples, no
   far-comm pairs).
 
-- **Inductive step.** Given $\bar{\mathcal{N}}$ at step $A$ in normal
+- **Inductive step.** Given $\mathcal{N}$ at step $A$ in normal
   form in $H_A(q)$, the Hopf-link step produces:
 
   $$
     \xi_{A+1}
     \;=\;
-    \bar{\mathcal{N}}(A)
+    \mathcal{N}(A)
     \;\cdot\;
     \prod_{j=0}^{A-1}(c_j \sigma_j + d_j)
   $$
@@ -55,7 +56,7 @@ $A \geq 1$, by induction on $A$:
   with the Hecke basis $G$:
 
   $$
-    \bar{\mathcal{N}}(A+1)
+    \mathcal{N}(A+1)
     \;:=\;
     r(\xi_{A+1},\, G)
   $$
@@ -70,7 +71,7 @@ $A \geq 1$, by induction on $A$:
   3. The remainder is in **normal form** (no word in its support
      contains a leading monomial of any $g \in G$).
 
-  Therefore $\bar{\mathcal{N}}(A+1)$ is in normal form.  $\square$
+  Therefore $\mathcal{N}(A+1)$ is in normal form.  $\square$
 
 The normal form has at most $A!$ terms (the dimension of $H_A(q)$
 over $\mathbb{Z}[q^{\pm 1}]$, equal to $|S_A|$).  This is a

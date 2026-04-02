@@ -25,14 +25,15 @@ $$
 $$
 
 The antisymmetric component — the Coulomb channel — reverses sign
-under the crossing reversal involution $\sigma \colon K \mapsto \sigma(K)$, which implements charge conjugation $C$ at the
+under the crossing reversal involution $\sigma \colon K \mapsto
+K^{\sigma}$, which implements charge conjugation $C$ at the
 categorical level.  Electromagnetic charge is therefore the
 **eigenvalue of the involution** $\sigma$ acting on the crossing
 energy:
 
 $$
   Q(K) \;=\; \frac{1}{2}\bigl(\mathbf{E}_{\mathrm{cross}}(K)
-  - \mathbf{E}_{\mathrm{cross}}(\sigma(K))\bigr).
+  - \mathbf{E}_{\mathrm{cross}}(K^{\sigma})\bigr).
 $$
 
 This involution descends from three interlocking structures on the

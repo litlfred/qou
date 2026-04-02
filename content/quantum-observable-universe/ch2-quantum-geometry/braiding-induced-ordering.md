@@ -82,15 +82,15 @@ arrow of time from two complementary viewpoints:
   $c_{V,V}$ advances $\phi_t^q$ by one tick.
 
 **Crossing reversal = time reversal.**  The crossing reversal
-involution $\sigma \colon K \mapsto \bar{K}$ (mirror all
+involution $\sigma \colon K \mapsto K^{\sigma}$ (mirror all
 crossings) corresponds to switching the braiding:
 $c_{V,V} \leftrightarrow \bar{c}_{V,V}$.  This flips the
 ordering $\prec_c$ and reverses the Reeb flow
 $\xi \mapsto -\xi$.  In the Feynman–Stueckelberg
-interpretation, an antiparticle ($\bar{K}$) is its particle
+interpretation, an antiparticle ($K^{\sigma}$) is its particle
 ($K$) with time reversed — precisely the opposite braiding.
 CPT symmetry is the statement that the QOU axioms are
 invariant under simultaneous
 $c_{V,V} \leftrightarrow \bar{c}_{V,V}$ (T),
-$K \mapsto \bar{K}$ (C), and
+$K \mapsto K^{\sigma}$ (C), and
 $\sigma_i \mapsto \sigma_{n-i}$ (P, strand reflection).

@@ -44,10 +44,10 @@ where $\rho: B_n \to H_n(q)$ is the Hecke representation.
    $\pm [1]_q$.  This is the $q$-analogue of adding one unit
    of momentum.
 
-4. **Parity**: Under the mirror $\sigma: \beta \mapsto \bar{\beta}$
-   (reverse all crossings), $p_q(\bar{\beta}) = -p_{q^{-1}}(\beta)$.
+4. **Parity**: Under the mirror $\sigma: \beta \mapsto \beta^{\sigma}$
+   (reverse all crossings), $p_q(\beta^{\sigma}) = -p_{q^{-1}}(\beta)$.
    Parity violation at $q \neq 1$ means
-   $p_q(\bar{\beta}) \neq -p_q(\beta)$.
+   $p_q(\beta^{\sigma}) \neq -p_q(\beta)$.
 
 **Building block values.**
 
@@ -55,6 +55,6 @@ where $\rho: B_n \to H_n(q)$ is the Hecke representation.
 |------|-----------|:----------:|:-------------:|
 | $0_1$ (unknot) | $e$ | $0$ | $0$ |
 | $3_1$ (trefoil) | $\sigma_1^3$ | $+3$ | $+3$ |
-| $\overline{3_1}$ | $\sigma_1^{-3}$ | $-3$ | $-3$ |
+| $3_1^{\sigma}$ | $\sigma_1^{-3}$ | $-3$ | $-3$ |
 | $4_1$ (figure-eight) | $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$ | $0$ | $0$ |
 | $5_1$ (cinquefoil) | $\sigma_1^5$ | $+5$ | $+5$ |

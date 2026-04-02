@@ -9,9 +9,9 @@ strangelet core locked away.
 
 When two neutron stars collide, tidal forces decompress the
 strangelet cores.  As the density drops below the hyperon
-threshold, each strange quark ($\overline{T_{2,5}}$,
+threshold, each strange quark ($T_{2,5}^{\sigma}$,
 $|J| = 1.176$) must convert to a down quark
-($\overline{T_{2,3}}$, $|J| = 0.960$).  The Skein polynomial
+($T_{2,3}^{\sigma}$, $|J| = 0.960$).  The Skein polynomial
 cost that was "paid" by compression is now **released** as
 conversion energy:
 

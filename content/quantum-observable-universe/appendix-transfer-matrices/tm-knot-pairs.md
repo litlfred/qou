@@ -94,7 +94,7 @@ Note: $\lambda_+ \cdot \lambda_- = -1$ (determinant), $\lambda_+ + \lambda_- = q
 
 ### 2b. Neutron--neutron ($\mathfrak{n}$-$\mathfrak{n}$)
 
-Knots: $K_1 = \overline{T_{2,3}}$ (down quark), $K_2 = \overline{T_{2,3}}$ (down quark).
+Knots: $K_1 = T_{2,3}^{\sigma}$ (down quark), $K_2 = T_{2,3}^{\sigma}$ (down quark).
 
 Crossing coefficients: $c = q^2$, $d = -qs$.
 
@@ -127,7 +127,7 @@ $$
 
 ### 2c. Mixed ($\mathfrak{p}$-$\mathfrak{n}$, proton--neutron)
 
-Knots: $K_1 = T_{2,3}$ (up quark), $K_2 = \overline{T_{2,3}}$ (down quark).
+Knots: $K_1 = T_{2,3}$ (up quark), $K_2 = T_{2,3}^{\sigma}$ (down quark).
 
 Crossing coefficients: $c = \dfrac{1 + q^2}{2}$, $d = -\dfrac{qs}{2}$.
 
@@ -219,7 +219,7 @@ $$
 
 ### 3d. Photon--positron ($\gamma$-$e^+$)
 
-Knots: $K_1 = T_{1,0}$, $K_2 = \overline{T_{2,3}}$.
+Knots: $K_1 = T_{1,0}$, $K_2 = T_{2,3}^{\sigma}$.
 
 Since $J_{T_{1,0}}(q) = 1$: $c = 1$, $d = 0$.
 
@@ -238,7 +238,7 @@ of the partner's chirality.
 
 ### 3e. Electron--positron ($e^-$-$e^+$)
 
-Knots: $K_1 = T_{2,3}$, $K_2 = \overline{T_{2,3}}$.
+Knots: $K_1 = T_{2,3}$, $K_2 = T_{2,3}^{\sigma}$.
 
 Same as mixed nuclear crossing (trefoil meets mirror trefoil):
 
@@ -329,11 +329,11 @@ $$
   }
 $$
 
-### 4e. Knot--mirror knot (any $K$ with $\overline{K}$)
+### 4e. Knot--mirror knot (any $K$ with $K^{\sigma}$)
 
-For a knot $K$ paired with its mirror $\overline{K}$ via
-**connected sum**, $J_{K \# \overline{K}} = J_K \cdot J_{\overline{K}}$
-gives $c = 1$, $d = 0$, so $T_{K,\overline{K}} = T_{pp}$.
+For a knot $K$ paired with its mirror $K^{\sigma}$ via
+**connected sum**, $J_{K \# K^{\sigma}} = J_K \cdot J_{K^{\sigma}}$
+gives $c = 1$, $d = 0$, so $T_{K,K^{\sigma}} = T_{pp}$.
 
 However, for **nucleon crossings** (the physically relevant
 case), the composition is via the Hecke product, not the

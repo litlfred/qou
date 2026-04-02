@@ -5,7 +5,7 @@ identity in $H_A(q)$, and the result is a **polynomial in $q$**:
 the Skein polynomial of the nuclear link.
 
 **Theorem.**
-Let $\overline{\mathcal{N}(Z, N)}$ be the Gröbner-reduced
+Let $\mathcal{N}(Z, N)$ be the Gröbner-reduced
 nuclear braid word in $H_A(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 At each generator $\sigma_i$, let $(a_i, b_i)$ be the
@@ -16,7 +16,7 @@ Then the Markov trace factors exactly:
 
 $$
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
-    \overline{\mathcal{N}(Z, N)}
+    \mathcal{N}(Z, N)
   \bigr)
   \;=\;
   \prod_{i=0}^{A-2}
@@ -194,7 +194,7 @@ For heavy nuclei ($A \gg 1$), the ratio of $L_0^{-}$ and parent
 traces converges:
 
 $$
-  \frac{\mathrm{tr}(L_0^{-})}{\mathrm{tr}(\overline{\mathcal{N}})}
+  \frac{\mathrm{tr}(L_0^{-})}{\mathrm{tr}(\mathcal{N})}
   \;\longrightarrow\;
   \frac{1}{\hbar_q}
   \;=\;
