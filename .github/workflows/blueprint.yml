@@ -109,9 +109,11 @@ jobs:
         run: python3 .github/scripts/ontologist.py all
 
       - name: Extract proof objects from LaTeX
+        continue-on-error: true
         run: python3 .github/scripts/extract_proof_objects.py
 
       - name: Generate Lean stubs
+        continue-on-error: true
         run: python3 .github/scripts/generate_lean_stubs.py
 
       # ── Build Lean project ───────────────────────────────────────

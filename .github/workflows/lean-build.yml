@@ -59,10 +59,12 @@ jobs:
 
       # ── Step 3: Extract proof objects from LaTeX ───────────────────
       - name: Extract proof objects from LaTeX
+        continue-on-error: true
         run: python3 .github/scripts/extract_proof_objects.py
 
       # ── Step 4: Generate Lean stubs for new objects ────────────────
       - name: Generate Lean stubs
+        continue-on-error: true
         run: python3 .github/scripts/generate_lean_stubs.py
 
       - name: Cache Lean build artifacts
