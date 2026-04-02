@@ -631,16 +631,17 @@ configured via `.mcp.json`. It provides Claude Code with:
 
 Prerequisites: `git`, `curl`.
 
+Use the `lean_setup` MCP tool (provided by paper-assistant). It installs:
+uv, elan, the Lean toolchain pinned in
+`content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache,
+ripgrep, and runs `lake build`.
+
+Alternatively, from the command line:
+
 ```bash
-./scripts/setup-lean-mcp.sh
+cd content/quantum-observable-universe/lean
+lake exe cache get && lake build
 ```
-
-This installs: uv (Python package manager), elan, the Lean toolchain
-pinned in `content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
-`lean-lsp-mcp` via uvx.
-
-**Important**: Run `lake build` in `content/quantum-observable-universe/lean/` before first MCP session to avoid
-timeouts.
 
 ### Remote MCP server
 
@@ -675,10 +676,11 @@ To extract the deploy infrastructure for another repo, copy `deploy/`,
 
 ### Session-start hook
 
-A `SessionStart` hook in `.claude/settings.json` runs `scripts/check-lean.sh`
-at the beginning of every session. If Lean or uv is not available and the
-user's request requires Lean, the editor skill will prompt the author with
-setup instructions rather than silently failing.
+A `SessionStart` hook in `.claude/settings.json` runs `scripts/session-status.sh`
+at the beginning of every session. It sources `scripts/lib/lean-env.sh` for
+shared Lean environment detection. If Lean is not available and the user's
+request requires Lean, the editor skill will suggest the `lean_setup` MCP
+tool rather than silently failing.
 
 ## Project structure
 

@@ -137,7 +137,7 @@ export function registerLeanTools(server: McpServer): void {
         return {
           content: [{
             type: "text" as const,
-            text: "Error: lake not installed. Run: ./scripts/setup-lean-mcp.sh",
+            text: "Error: lake not installed. Use MCP tool: lean_setup",
           }],
         };
       }
@@ -190,7 +190,7 @@ export function registerLeanTools(server: McpServer): void {
         return {
           content: [{
             type: "text" as const,
-            text: "Error: lake not installed. Run: ./scripts/setup-lean-mcp.sh",
+            text: "Error: lake not installed. Use MCP tool: lean_setup",
           }],
         };
       }

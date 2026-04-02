@@ -1,18 +1,17 @@
 /**
- * Lean LSP proxy — delegates to lean-lsp-mcp subprocess.
+ * Lean toolchain management — setup, status, build, check.
  *
- * Rather than re-implementing all Lean tools, this spawns the existing
- * lean-lsp-mcp server as a subprocess and provides a meta-tool for
- * checking its status.
+ * This is the single source of truth for Lean environment management.
+ * Shell scripts (session-status.sh, lean-build-bg.sh) use
+ * scripts/lib/lean-env.sh for shared helpers, but this module owns
+ * the authoritative tools:
  *
- * The actual Lean MCP tools are registered via .mcp.json's separate
- * lean-lsp entry. This module provides coordination tools:
- *
- *   lean_status   — Check if Lean toolchain and lean-lsp-mcp are available
+ *   lean_setup    — Install elan, lean, lake, uv, ripgrep + fetch deps + build
+ *   lean_status   — Check toolchain availability and readiness mode
  *   lean_build    — Trigger a Lean build (lake build)
  *   lean_check    — Quick type-check (lake check) — faster than full build
  *
- * @module scripts/mcp-server/tools/lean
+ * @module folio-assistant/adapters/paper/tools/lean
  */
 
 import { z } from "zod";
@@ -21,7 +20,6 @@ import { existsSync, readFileSync } from "fs";
 import { join, resolve } from "path";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { LEAN_DIR, REPO_ROOT } from "../paths.js";
-// Note: paths are resolved from the paper adapter's paths module.
 
 /** Check if a command is available. */
 function hasCommand(cmd: string): boolean {
@@ -54,12 +52,123 @@ function processSpawnOutput(result: SpawnSyncReturns<Buffer>): { output: string;
 
 export function registerLeanTools(server: McpServer): void {
 
+  // ── lean_setup ──────────────────────────────────────────────
+
+  server.tool(
+    "lean_setup",
+    "Install the full Lean 4 toolchain: elan, lean, lake, uv, ripgrep, " +
+    "fetch Mathlib cache, and build the project. Safe to re-run — skips " +
+    "already-installed components. This is the single entry point for " +
+    "getting Lean working locally.",
+    {
+      skip_build: z.boolean().default(false)
+        .describe("Skip the final `lake build` step (just install + fetch cache)"),
+    },
+    async ({ skip_build }) => {
+      const steps: string[] = [];
+      const leanDir = leanProjectDir();
+
+      // 1. uv
+      if (hasCommand("uv")) {
+        steps.push(`✓ uv already installed`);
+      } else {
+        const r = spawnSync("bash", ["-c", "curl -LsSf https://astral.sh/uv/install.sh | sh"], {
+          stdio: "pipe", timeout: 60_000,
+          env: { ...process.env, PATH: `${process.env.HOME}/.local/bin:${process.env.PATH}` },
+        });
+        steps.push(r.status === 0 ? "✓ uv installed" : `✗ uv install failed: ${r.stderr?.toString().slice(-200)}`);
+      }
+
+      // 2. elan + lean
+      if (hasCommand("elan")) {
+        steps.push(`✓ elan already installed`);
+      } else {
+        const r = spawnSync("bash", ["-c",
+          "curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none"
+        ], {
+          stdio: "pipe", timeout: 120_000,
+          env: { ...process.env, PATH: `${process.env.HOME}/.elan/bin:${process.env.PATH}` },
+        });
+        steps.push(r.status === 0 ? "✓ elan installed" : `✗ elan install failed: ${r.stderr?.toString().slice(-200)}`);
+      }
+
+      // Ensure elan/lean on PATH for subsequent steps
+      const envPath = `${process.env.HOME}/.elan/bin:${process.env.HOME}/.local/bin:${process.env.PATH}`;
+      const env = { ...process.env, PATH: envPath };
+
+      // 3. Pin toolchain
+      const tcFile = join(leanDir, "lean-toolchain");
+      if (existsSync(tcFile)) {
+        const tc = readFileSync(tcFile, "utf-8").trim();
+        const r = spawnSync("elan", ["toolchain", "install", tc], {
+          stdio: "pipe", timeout: 300_000, env,
+        });
+        const out = (r.stdout?.toString() || "") + (r.stderr?.toString() || "");
+        steps.push(out.includes("already installed") ? `✓ Toolchain ${tc} already installed` : `✓ Toolchain ${tc} installed`);
+      } else {
+        steps.push("✗ No lean-toolchain file found");
+      }
+
+      // 4. ripgrep
+      if (hasCommand("rg")) {
+        steps.push("✓ ripgrep already installed");
+      } else {
+        const r = spawnSync("sudo", ["apt-get", "install", "-y", "-qq", "ripgrep"], {
+          stdio: "pipe", timeout: 30_000, env,
+        });
+        steps.push(r.status === 0 ? "✓ ripgrep installed" : "○ ripgrep not available (optional)");
+      }
+
+      // 5. lake update
+      steps.push("▸ Running lake update...");
+      const updateR = spawnSync("lake", ["update"], {
+        cwd: leanDir, stdio: "pipe", timeout: 300_000, env,
+      });
+      steps.push(updateR.status === 0 ? "✓ Dependencies fetched" : "⚠ lake update had issues (continuing)");
+
+      // 6. Mathlib cache
+      steps.push("▸ Fetching Mathlib cache...");
+      const cacheR = spawnSync("lake", ["exe", "cache", "get"], {
+        cwd: leanDir, stdio: "pipe", timeout: 600_000, env,
+      });
+      steps.push(cacheR.status === 0 ? "✓ Mathlib cache fetched" : "⚠ Cache fetch had issues (continuing)");
+
+      // 7. Build (optional)
+      if (!skip_build) {
+        steps.push("▸ Running lake build...");
+        const buildR = spawnSync("lake", ["build"], {
+          cwd: leanDir, stdio: "pipe", timeout: 600_000, env,
+        });
+        const buildOut = (buildR.stdout?.toString() || "") + (buildR.stderr?.toString() || "");
+        const last500 = buildOut.slice(-500);
+        steps.push(buildR.status === 0
+          ? "✓ Build succeeded"
+          : `⚠ Build had errors:\n${last500}`);
+      } else {
+        steps.push("○ Build skipped (--skip_build)");
+      }
+
+      // Summary
+      const leanVer = (() => {
+        try { return execSync("lean --version", { encoding: "utf-8", env }).trim(); }
+        catch { return "not found"; }
+      })();
+
+      return {
+        content: [{
+          type: "text" as const,
+          text: `Lean Setup Complete\n${"=".repeat(40)}\n${steps.join("\n")}\n\nLean: ${leanVer}\nProject: ${leanDir}`,
+        }],
+      };
+    },
+  );
+
   // ── lean_status ──────────────────────────────────────────────
 
   server.tool(
     "lean_status",
-    "Check availability of Lean toolchain, lake, lean-lsp-mcp, " +
-    "and the remote MCP server. Reports what's available and what's missing.",
+    "Check Lean environment readiness. Reports mode (local/remote/" +
+    "local-degraded/none), what's installed, what's missing, and fix hints.",
     {},
     async () => {
       const checks: Record<string, string> = {};
@@ -68,18 +177,8 @@ export function registerLeanTools(server: McpServer): void {
       checks.lean = hasCommand("lean") ? execSync("lean --version", { encoding: "utf-8" }).trim() : "not installed";
       checks.lake = hasCommand("lake") ? "available" : "not installed";
       checks.elan = hasCommand("elan") ? "available" : "not installed";
-
-      // lean-lsp-mcp
-      checks["lean-lsp-mcp"] = hasCommand("uvx")
-        ? (() => {
-          try {
-            execSync("uvx lean-lsp-mcp --help", { stdio: "pipe", timeout: 10_000 });
-            return "available (via uvx)";
-          } catch {
-            return "uvx available but lean-lsp-mcp failed";
-          }
-        })()
-        : "uvx not installed";
+      checks.uv = hasCommand("uv") ? "available" : "not installed";
+      checks.ripgrep = hasCommand("rg") ? "available" : "not installed (optional)";
 
       // Toolchain
       const tcFile = join(LEAN_DIR, "lean-toolchain");
@@ -87,21 +186,23 @@ export function registerLeanTools(server: McpServer): void {
         ? readFileSync(tcFile, "utf-8").trim()
         : "lean-toolchain not found";
 
-      // Lake manifest
-      checks.lake_manifest = existsSync(join(LEAN_DIR, "lake-manifest.json"))
-        ? "present" : "missing (run lake update)";
+      // Lake manifest + Mathlib cache
+      const manifestOk = existsSync(join(LEAN_DIR, "lake-manifest.json"));
+      checks.lake_manifest = manifestOk ? "present" : "missing (run lean_setup or lake update)";
+
+      const cacheOk = existsSync(join(LEAN_DIR, ".lake/packages/mathlib/.lake/build/lib"));
+      checks.mathlib_cache = cacheOk ? "present" : "missing (run lean_setup or lake exe cache get)";
 
       // Remote MCP
+      let remoteOk = false;
       try {
         const configFile = join(REPO_ROOT, "lean-mcp.config.json");
         if (existsSync(configFile)) {
           const config = JSON.parse(readFileSync(configFile, "utf-8"));
           const domain = config.domain;
-          const result = spawnSync("curl", [
-            "-sf", "--max-time", "5",
-            `https://${domain}/health`,
-          ], { stdio: "pipe" });
-          checks.remote_mcp = result.status === 0 ? `available (${domain})` : `unreachable (${domain})`;
+          const result = spawnSync("curl", ["-sf", "--max-time", "5", `https://${domain}/health`], { stdio: "pipe" });
+          remoteOk = result.status === 0;
+          checks.remote_mcp = remoteOk ? `available (${domain})` : `unreachable (${domain})`;
         } else {
           checks.remote_mcp = "no config file";
         }
@@ -109,12 +210,46 @@ export function registerLeanTools(server: McpServer): void {
         checks.remote_mcp = "check failed";
       }
 
+      // Determine mode
+      const leanOk = hasCommand("lean");
+      const uvOk = hasCommand("uv");
+      let mode = "none";
+      let fix = "";
+
+      if (leanOk && uvOk && manifestOk && cacheOk) {
+        mode = "local";
+      } else if (leanOk) {
+        mode = "local-degraded";
+        if (!uvOk) fix = "Install uv: curl -LsSf https://astral.sh/uv/install.sh | sh";
+        else if (!manifestOk) fix = "Run lean_setup or: cd content/quantum-observable-universe/lean && lake update";
+        else if (!cacheOk) fix = "Run lean_setup or: cd content/quantum-observable-universe/lean && lake exe cache get";
+      } else if (remoteOk) {
+        mode = "remote";
+      } else {
+        fix = "Run the lean_setup MCP tool to install the full Lean toolchain";
+      }
+
+      // Background build status
+      let buildStatus = "";
+      try {
+        const bsFile = "/tmp/qou-lean-build-status.json";
+        if (existsSync(bsFile)) {
+          const bs = JSON.parse(readFileSync(bsFile, "utf-8"));
+          buildStatus = `\n  build_status: ${bs.status} — ${bs.message}`;
+        }
+      } catch { /* ignore */ }
+
       const status = Object.entries(checks)
         .map(([k, v]) => `  ${k.padEnd(20)} ${v}`)
         .join("\n");
 
+      const fixLine = fix ? `\n\nTo fix: ${fix}` : "";
+
       return {
-        content: [{ type: "text" as const, text: `Lean status:\n${status}` }],
+        content: [{
+          type: "text" as const,
+          text: `Lean status (mode: ${mode}):\n${status}${buildStatus}${fixLine}`,
+        }],
       };
     },
   );
@@ -138,7 +273,7 @@ export function registerLeanTools(server: McpServer): void {
         return {
           content: [{
             type: "text" as const,
-            text: "Error: lake not installed. Run: ./scripts/setup-lean-mcp.sh",
+            text: "Error: lake not installed. Use the lean_setup MCP tool to install.",
           }],
         };
       }
@@ -191,7 +326,7 @@ export function registerLeanTools(server: McpServer): void {
         return {
           content: [{
             type: "text" as const,
-            text: "Error: lake not installed. Run: ./scripts/setup-lean-mcp.sh",
+            text: "Error: lake not installed. Use the lean_setup MCP tool to install.",
           }],
         };
       }

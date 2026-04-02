@@ -29,13 +29,12 @@
 
 set -uo pipefail
 
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
+# Shared Lean env helpers (sets REPO_ROOT, LEAN_DIR, PATH, has())
+source "$(dirname "$0")/lib/lean-env.sh"
+
 STATUS_FILE="/tmp/qou-lean-build-status.json"
 LOG_DIR="/tmp"
 TIMING_FILE="/tmp/qou-lean-build-timing.txt"
-
-export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 
 write_status() {
     local status="$1" msg="$2" step="$3" attempt="${4:-0}"
@@ -107,13 +106,13 @@ print_timing_report() {
 }
 
 # ── Pre-check: is lean even available? ────────────────────────────
-if ! command -v lean &>/dev/null; then
-    write_status "unavailable" "Lean not installed. Run: ./scripts/setup-lean-mcp.sh" "check" 0
+if ! has lean; then
+    write_status "unavailable" "Lean not installed. Use MCP tool: lean_setup" "check" 0
     exit 0
 fi
 
-if ! command -v lake &>/dev/null; then
-    write_status "unavailable" "Lake not installed. Run: ./scripts/setup-lean-mcp.sh" "check" 0
+if ! has lake; then
+    write_status "unavailable" "Lake not installed. Use MCP tool: lean_setup" "check" 0
     exit 0
 fi
 
