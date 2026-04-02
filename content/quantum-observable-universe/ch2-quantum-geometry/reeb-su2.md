@@ -1,7 +1,7 @@
 Continuing [maximal torus of SU(2)](#ex:maximal-torus-su2), the maximal torus is
 $T = \mathrm{U}(1)$ with generator
-$\xi = e_3 = \frac{1}{2}\begin{psmallmatrix} 1 & 0 \\ 0 & -1
-\end{psmallmatrix} \in \mathfrak{su}(2)$.
+$\xi = e_3 = \frac{1}{2}\begin{smallmatrix} 1 & 0 \\ 0 & -1
+\end{smallmatrix} \in \mathfrak{su}(2)$.
 On $A = \mathcal{O}(\mathrm{SU}(2))$, $\xi$ acts by
 $(\xi \cdot f)(g) = \frac{d}{dt}\big|_{t=0} f(e^{-t\xi} g)$
 (left-invariant vector field). The canonical $1$-form is

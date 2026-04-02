@@ -28,14 +28,17 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
 3. **Pair cancellation.**  For a particle--antiparticle pair
    $(\mathfrak{H}, \sigma(\mathfrak{H}))$, the combined crossing energy is purely
    antisymmetric:
+
    $$
      \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathbf{E}_{\mathrm{cross}}(\sigma(\mathfrak{H}))
      \;=\; 2\,E_{\mathrm{asym}}(\mathfrak{H}).
    $$
 
 4. **Ratio identity.**  The antisymmetric-to-symmetric ratio is
+
    $$
      \frac{E_{\mathrm{asym}}}{E_{\mathrm{sym}}}
      \;=\; \tanh(\ln q),
    $$
+
    independent of the knot composite $\mathfrak{H}$.

@@ -219,6 +219,7 @@ and $\mu_0 = m_e / (3 E_{\times})$.
 $R_{\mathrm{bare}} = -32.09$
 
 **Step 4:**
+
 $$
   \Delta_{\mathrm{shell}}
   = (\log_q \tau(8) - \log_q \tau(7))
@@ -231,6 +232,7 @@ $$
 $\Delta_{T_{3,5}} = -3.37$
 
 **Step 7:**
+
 $$
   \mathcal{Q}_q = |{-32.09 + 5.04 + (-3.37)}|
   \times 0.0991 \times 0.1045 \times 1.630

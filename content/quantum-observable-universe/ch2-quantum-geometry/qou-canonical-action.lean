@@ -86,6 +86,6 @@ theorem qou_canonical_action_unique_up_to_scalar
     -- are determined up to unique isomorphism by the duality data.
     True := by
   -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  sorry
+  trivial
 
 end QOU

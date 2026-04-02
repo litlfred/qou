@@ -30,6 +30,7 @@ This trace has two key properties:
 
 In the archimedean realisation with $G = \mathrm{SU}(2)$, the adjoint
 trace recovers the Killing form on $\mathfrak{su}(2)$:
+
 $$
   \mathrm{tr}_{\mathrm{Ad}}(f)
   \;=\;

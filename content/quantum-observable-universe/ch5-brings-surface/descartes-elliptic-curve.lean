@@ -75,7 +75,9 @@ theorem descartes_elliptic_curve (q : ℝ) (hq : 0 < q) :
 theorem classical_limit_p : weierstrass_p 1 = 2/3 := by
   unfold weierstrass_p
   -- Ref: [manuscript] §5/descartes-elliptic-curve
-  sorry
+  -- At q = 1: first term = 2·(1-1+1)/(3·1) = 2/3, second term = 0/(3·1) = 0.
+  simp [one_rpow]
+  ring
 
 /-- The golden ratio degeneration: r(q) has factor (s² + s - 1)
     which vanishes at s = 1/φ, i.e. q = 1/φ² = (3 - √5)/2. -/

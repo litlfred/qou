@@ -31,6 +31,9 @@ theorem speedOfLight_eq_ratio {k : Type*} [Field k] (q : k)
     (hq0 : q ≠ 0) (hq1 : q ≠ 1) :
     speedOfLight q hq1 = q⁻¹ / (1 - q⁻¹) := by
   -- Ref: [manuscript] §9/information-speed-of-light
-  sorry
+  -- 1/(q-1) = q⁻¹ · q/(q-1) = q⁻¹/((q-1)/q) = q⁻¹/(1 - q⁻¹).
+  unfold speedOfLight
+  have hq_sub : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
+  field_simp
 
 end QOU.Information

@@ -8,6 +8,7 @@ $\mathrm{Vol}(4_1) \approx 2.02988$.
 
 Applying the [topological mass theorem](#thm:topological-mass) to the muon--electron mass
 *ratio* eliminates the overall mass scale and gives
+
 $$
   \frac{m_\mu}{m_e}
   \;=\;
@@ -15,8 +16,10 @@ $$
   \;=\;
   \frac{\mathrm{Vol}(4_1)}{\hbar_q^{\,2}}.
 $$
+
 Substituting $\hbar_q = 1 - q^{-1}$ and the CODATA value
 $m_\mu / m_e = 206.768\,2827(46)$, one solves for $\hbar_q$:
+
 $$
   \hbar_q^{\,2}
   = \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
@@ -25,11 +28,14 @@ $$
   \qquad
   \hbar_q \approx 0.09908.
 $$
+
 Inverting $\hbar_q = 1 - 1/q$ yields
 $1/q = 1 - 0.09908 = 0.90092$, so
+
 $$
   q \;\approx\; 1.10997.
 $$
+
 The Skein relation itself is the mass-functional analogue of the Kauffman
 bracket recursion. At each crossing in the color-exchange diagram of a
 hadron, the three resolutions $L_+$, $L_-$, $L_0$ satisfy

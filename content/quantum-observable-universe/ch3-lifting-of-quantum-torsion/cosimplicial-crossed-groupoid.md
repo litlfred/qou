@@ -3,9 +3,11 @@ $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)); let $q$ denote the substrate parameter.  Equipped with the Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
 [Yekutieli triple](#def:yekutieli-triple).  Then the assignment
+
 $$
   [n] \;\longmapsto\; \mathfrak{G}_n
 $$
+
 from the simplex category $\Delta$ to the $2$-category of gerbes on $M$
 extends to a *cosimplicial crossed groupoid*: a cosimplicial object
 in the category of crossed groupoids, where

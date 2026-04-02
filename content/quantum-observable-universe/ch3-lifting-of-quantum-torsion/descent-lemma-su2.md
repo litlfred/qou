@@ -25,11 +25,13 @@ surjective.
 
 **Equivariance.** The descent map intertwines the
 $\mathrm{SU}_q(2)$-actions: for $q = 1$ (the classical case),
+
 $$
   \mathfrak{d}_1(g \cdot \phi \cdot g^{-1})
   \;=\; g \cdot \mathfrak{d}_1(\phi) \cdot g^{-1},
   \qquad g \in \mathrm{SU}(2).
 $$
+
 At $q \neq 1$, the same identity holds with $g$ replaced by the
 quantum group action of $\mathrm{SU}_q(2)$, ensuring compatibility with
 deformation.

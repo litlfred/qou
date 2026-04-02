@@ -1,5 +1,6 @@
 Let $R$ be a commutative ring with unity and let $A$ be an
 $R$-algebra. An element $a \in A$ is called a **quasi-zero** if
+
 $$
   bac = 0 \qquad \text{for all } b, c \in A \text{ not both } 1.
 $$

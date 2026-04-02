@@ -28,10 +28,12 @@ how much $d$ fails to preserve the weight grading. On a weight-$n$
 form $\alpha_n$, we have $d\alpha_n = (d\alpha_n)_H + (d\alpha_n)_V$;
 the weight-shift arises from the Lie derivative along $\xi$ (the
 generator of $T$), giving
+
 $$
   [d, \pi_V]\,\alpha = \mathcal{L}_\xi(\alpha) - \pi_V(\mathcal{L}_\xi(\alpha))
   = \pi_H(\mathcal{L}_\xi\,\alpha).
 $$
+
 Since $\pi_H + \pi_V = \mathrm{id}$ and
 $\mathcal{L}_\xi = \iota_\xi \circ d + d \circ \iota_\xi$
 (Cartan's formula), the middle term simplifies:

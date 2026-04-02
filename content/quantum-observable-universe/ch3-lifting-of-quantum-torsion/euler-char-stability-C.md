@@ -8,9 +8,11 @@ orthonormal frames of the first jet bundle $J^1 \mathcal{S}_n$
 ([jet prolongation](#prop:jet-prolongation)).  The Euler characteristic of a
 fibre bundle $F \hookrightarrow \mathcal{S}_{n+1} \to \mathcal{S}_n$ satisfies the
 multiplicativity formula
+
 $$
   \chi(\mathcal{S}_{n+1}) \;=\; \chi(\mathcal{S}_n) \cdot \chi(F),
 $$
+
 provided the fibre $F$ has the homotopy type of a finite CW-complex and the
 base acts trivially on $H^*(F;\, \mathbb{Q})$.  In the brane tower the fibre
 is $\mathrm{SU}(2) \cong S^3$, which has $\chi(S^3) = 0$ for the odd-dimensional

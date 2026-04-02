@@ -4,9 +4,11 @@ $\mathbf{C}$ is braided monoidal with braiding
 $c_{X,Y}\colon X\otimes Y \xrightarrow{\;\sim\;} Y\otimes X$.
 For each object $V$ in $\mathbf{C}$ and each $n \geq 2$, there is a
 group homomorphism
+
 $$
   \rho_n\colon B_n \;\longrightarrow\; \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})
 $$
+
 given on the Artin generators by
 
 ```tex

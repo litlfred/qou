@@ -17,9 +17,11 @@ $Z(\mathrm{End}_{\mathbf{C}}(A)) \cong \mathcal{O}(\mathrm{SU}(2))^{\mathrm{SU}(
 the $\mathrm{SU}(2)$-invariant functions, which form a ring of Krull
 dimension $\mathrm{rank}(\mathrm{SU}(2)) = 1$.  The geometric descent
 tower is
+
 $$
   \mathbb{CP}^1 \;\longrightarrow\; \mathrm{pt},
 $$
+
 which terminates in $1$ step (since
 $\mathrm{Krull\;dim}\, Z(\mathrm{End}(A)) = 1$).  At each step, the
 $G_q$-action is faithful (observability ensures strict dimension
@@ -29,6 +31,7 @@ reduction).
 The Yekutieli obstruction $\kappa_0 \in H^2(\mathbb{CP}^1, \mathbb{Z})
 \cong \mathbb{Z}$ equals the Euler class of the Reeb bundle, which for
 the Hopf fibration is $c_1(\text{Hopf}) = 1$.  Under the trace map,
+
 $$
   \kappa_0 \;\longmapsto\; \chi(A)
   \;=\; \mathrm{tr}(\mathrm{id}_A)
@@ -49,10 +52,12 @@ The projective line object is $\mathbb{P}(V) = \mathbb{CP}^1$
 ([projective line for SU(2)](#ex:projective-line-su2)).  The descent map
 $\mathbb{CP}^1 \to \mathbb{CP}^1$ has degree $d = 1$ (the identity
 covering).  The Riemann--Hurwitz formula gives
+
 $$
   R_{\mathrm{tot}} \;=\; 2d + |\chi(A)|
   \;=\; 2 \cdot 1 + |2| \;=\; 4,
 $$
+
 with $B = 2$ branch points (the north and south poles of $\mathbb{CP}^1
 \cong S^2$), each with ramification index $e = 2$.
 
@@ -60,12 +65,14 @@ with $B = 2$ branch points (the north and south poles of $\mathbb{CP}^1
 At each branch point $p \in \{0, \infty\} \subset \mathbb{CP}^1$, the
 QOU reduces to fiber data
 $(\mathcal{O}(\mathrm{SU}(2)),\, \tau,\, q(p))$ with the involution
+
 $$
   \sigma \colon \mathbb{CP}^1
   \;\hookrightarrow\;
   \mathrm{Ad}(\mathrm{SU}(2))
   \;=\; \mathfrak{su}(2).
 $$
+
 This embedding realizes $\mathbb{CP}^1 \cong S^2$ as the unit sphere in
 $\mathfrak{su}(2) \cong \mathbb{R}^3$.  At the north pole $p = 0$, the
 involution acts as $\sigma(v) = e_3 v e_3^{-1}$ (conjugation by the
