@@ -1,24 +1,100 @@
 # Quantum Observable Universe
 
 [![Lean CI](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml)
+[![Build & Publish](https://github.com/litlfred/qou/actions/workflows/publish.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/publish.yml)
+[![Blueprint](https://github.com/litlfred/qou/actions/workflows/blueprint.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/blueprint.yml)
 
-A LaTeX mathematics paper exploring the Quantum Observable Universe (QOU),
-quantum torsion, and related topics — with machine-checked Lean 4 formalization.
+A formal mathematics paper exploring the Quantum Observable Universe (QOU)
+with machine-checked **Lean 4** formalization, **content-object architecture**
+(TypeScript + Markdown + Lean triples), and an interactive **Folio Assistant**
+platform for browsing, reviewing, and exploring the work.
+
+## Content-Object Architecture
+
+Content is organized as **atomic knowledge units** — each definition,
+theorem, remark, or proof is a self-contained file triple:
+
+```
+content/<paper>/<chapter>/
+  <block>.ts    ← Typed manifest (kind, label, dependencies, metadata)
+  <block>.md    ← Narrative content (Markdown + TeX snippets)
+  <block>.lean  ← Lean 4 formalization (when required by block kind)
+```
+
+The pipeline validates content objects against Zod schemas, checks
+cross-references, renders LaTeX, and runs AST validation before
+producing `chapters/*.tex` output. LaTeX is a **rendering target**,
+not the source of truth.
+
+## Papers
+
+The repository hosts multiple papers as a **folio**:
+
+| Paper | Directory |
+|-------|-----------|
+| On the Mechanics of Quantum Observable Universes | `content/quantum-observable-universe/` |
+| Controlled Double-Slit Electron Diffraction | `content/bach2013-double-slit/` |
+| Integration of Skewed-Poisson Structures on Non-commutative Formal Groups | `content/fred2005-formal-groups/` |
+| QOU Visualizer | `content/visualizer/` |
+| Unital Gröbner Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` |
+
+## Chapters (Quantum Observable Universe)
+
+| # | Directory | Title |
+|---|-----------|-------|
+| 0 | `ch0-introduction/` | Introduction |
+| 1 | `ch1-quantum-observable-universe/` | Quantum Universes |
+| 2 | `ch2-quantum-geometry/` | Quantum Observable Universes |
+| 3 | `ch3-lifting-of-quantum-torsion/` | Lifting and Descent |
+| 4 | `ch4-path-integrals-and-braiding/` | Braids and Knots |
+| 5 | `ch6-descartes-universe/` | Models of QOUs |
+| 6 | `ch5-brings-surface/` | The Descartes Universe |
+| 7 | `ch7-observations/` | Physical Observations |
+| 8 | `ch8-algebraic-substrate/` | The Algebraic Substrate |
+| 9 | `ch9-information-theory/` | Information-Theoretic Perspectives |
+| 10 | `ch8-glossary/` | Glossary |
+| App | `appendix-knot-periodic-table/` | Knot-Periodic Table of the Elements |
+| App | `appendix-transfer-matrices/` | Transfer Matrices |
+| — | `index-of-definitions/` | Index of Definitions |
 
 ## Lean 4 Formalization
 
-The `lean/` directory contains a Lean 4 formalization of the key mathematical
-structures and the mass-parameter derivation from the manuscript.
+The Lean 4 formalization lives in `content/quantum-observable-universe/lean/`
+and covers the key mathematical structures, mass-parameter derivations,
+knot theory, and categorical constructions from the manuscript.
 
-| Module | Content |
-|--------|---------|
-| `QOU.Glossary` | Semantic registry — types for all mathematical objects |
-| `QOU.KnotTheory` | Combinatorial knot representations (PD codes) |
-| `QOU.KnotRegistry` | Alexander-Briggs knot registry with Knot Atlas URLs |
-| `QOU.MassDerivation` | Topological mass conjecture and CODATA derivation |
-| `QOU.Calculations` | Skein-deformed residue proofs and substrate derivation |
-| `QOU.Basic` | Shared foundations |
-| `QOU.*` (chapters) | Per-chapter formalizations |
+### Modules
+
+| Module | Source |
+|--------|--------|
+| `QOU.ArchimedeanMassFormula` | `ArchimedeanMassFormula.lean` |
+| `QOU.Basic` | `Basic.lean` |
+| `QOU.BringsSurface` | `BringsSurface.lean` |
+| `QOU.Calculations` | `Calculations.lean` |
+| `QOU.CODATAChain` | `CODATAChain.lean` |
+| `QOU.Descartes` | `Descartes.lean` |
+| `QOU.DescartesUniverse` | `DescartesUniverse.lean` |
+| `QOU.Elaboration` | `Elaboration.lean` |
+| `QOU.GaugeFieldFluidDynamics` | `GaugeFieldFluidDynamics.lean` |
+| `QOU.Glossary` | `Glossary.lean` |
+| `QOU.GroundRingAnnotations` | `GroundRingAnnotations.lean` |
+| `QOU.HadronicMass` | `HadronicMass.lean` |
+| `QOU.InformationTheory` | `InformationTheory.lean` |
+| `QOU.KnotRegistry` | `KnotRegistry.lean` |
+| `QOU.KnotTheory` | `KnotTheory.lean` |
+| `QOU.LightningPath` | `LightningPath.lean` |
+| `QOU.MassDerivation` | `MassDerivation.lean` |
+| `QOU.MathConstants` | `MathConstants.lean` |
+| `QOU.MobiusEnergy` | `MobiusEnergy.lean` |
+| `QOU.PAdicQuantumGroups` | `PAdicQuantumGroups.lean` |
+| `QOU.PathIntegrals` | `PathIntegrals.lean` |
+| `QOU.PhotonThreading` | `PhotonThreading.lean` |
+| `QOU.QuantumObservableUniverse` | `QuantumObservableUniverse.lean` |
+| `QOU.RepresentationTheory` | `RepresentationTheory.lean` |
+| `QOU.Torsion` | `Torsion.lean` |
+| `QOU.Descartes.*` | `6 files` |
+| `QOU.QuantumObservableUniverse.*` | `9 files` |
+| `QOU.Torsion.*` | `6 files` |
 
 ### Knot Registry
 
@@ -33,20 +109,31 @@ link to [The Knot Atlas](http://katlas.org/).
 | 4₁ | Muon (Gen 2, mass residue) | 2.0298832128 | [4_1](http://katlas.org/wiki/4_1) |
 | 0₁ | Photon (exceptional divisor) | 0 | [0_1](http://katlas.org/wiki/0_1) |
 
-The `Calculations.lean` module proves that the figure-eight volume feeds
-through the mass-ratio formula to yield substrate parameter q ≈ 1.1097
-within tolerance |q − 1.1097| < 0.0001.
-
-**Interactive documentation**: [GitHub Pages](https://litlfred.github.io/qou/lean/docs/)
-| [Source](https://github.com/litlfred/qou/tree/main/lean)
-
-**Verification report**: [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt)
-| [Source](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) —
-includes the **Theoretical Gap Report** listing every `sorry` with its
-bibliographic reference and clickable DOI link.
-
 Every `sorry` in the Lean source is preceded by a `-- Ref: [key] url` comment
 linking to the foundational reference that would resolve the gap.
+
+## Folio Assistant
+
+The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
+
+- **MCP Server** — Model Context Protocol server for AI-assisted editing
+- **Viewer** — Web-based paper viewer with paper/visualizer toggle
+- **Chat UI** — Assistant interface with role-based access (reader/collaborator/owner)
+- **Simulators** — Interactive WebGL/HTML visualizations
+- **Feedback** — User feedback collection (committed to main)
+- **Auth** — Dual OAuth (Google viewers + GitHub collaborators)
+
+### Interactive Simulators
+
+| Simulator | File |
+|-----------|------|
+| Brings Surface | `simulators/brings_surface.html` |
+| Double Slit Simulator | `simulators/double_slit_simulator.html` |
+| Knot Atom Diagrams | `simulators/knot_atom_diagrams.html` |
+| Knot Periodic Table | `simulators/knot_periodic_table.html` |
+| Q Double Slit | `simulators/q_double_slit.html` |
+| Quantum Brings Surface | `simulators/quantum_brings_surface.html` |
+| Valley Stability | `simulators/valley_stability.html` |
 
 ## Published Artefacts (GitHub Pages)
 
@@ -55,57 +142,92 @@ linking to the foundational reference that would resolve the gap.
 
 | Artefact | GitHub Pages | GitHub Source |
 |----------|-------------|--------------|
-| Landing page (paper + visualizer) | [index.html](https://litlfred.github.io/qou/) | [home_page/](https://github.com/litlfred/qou/tree/main/home_page) |
-| Paper (HTML) | [paper.html](https://litlfred.github.io/qou/paper.html) | [main.tex](https://github.com/litlfred/qou/blob/main/main.tex) |
-| Paper (PDF) | [quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) | [main.tex](https://github.com/litlfred/qou/blob/main/main.tex) |
-| Paper (Markdown) | [quantum-observable-universe.md](https://litlfred.github.io/qou/quantum-observable-universe.md) | [main.tex](https://github.com/litlfred/qou/blob/main/main.tex) |
-| Bring's Surface Visualizer | [visualizer.html](https://litlfred.github.io/qou/visualizer.html) | [brings_surface.html](https://github.com/litlfred/qou/blob/main/brings_surface.html) |
-| Feature Builds Manifest | [builds.json](https://litlfred.github.io/qou/builds.json) | [.github/workflows/](https://github.com/litlfred/qou/tree/main/.github/workflows) |
-| Lean Interactive Docs | [lean/docs/](https://litlfred.github.io/qou/lean/docs/) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
-| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) | [axiom-report.txt](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) |
-| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) | [dependency-graph.svg](https://github.com/litlfred/qou/blob/gh-pages/dependency-graph.svg) |
-| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) | [proof-objects.json](https://github.com/litlfred/qou/blob/gh-pages/proof-objects.json) |
+| Folio landing page | [index.html](https://litlfred.github.io/qou/) | [home_page/](https://github.com/litlfred/qou/tree/main/home_page) |
+| Paper viewer | [papers/quantum-observable-universe/](https://litlfred.github.io/qou/papers/quantum-observable-universe/) | [folio-assistant/viewer/](https://github.com/litlfred/qou/tree/main/folio-assistant/viewer) |
+| Paper (PDF) | [quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) | [content/](https://github.com/litlfred/qou/tree/main/content) |
+| Blueprint (interactive graph) | [blueprint/](https://litlfred.github.io/qou/blueprint/) | [blueprint/src/](https://github.com/litlfred/qou/tree/main/blueprint/src) |
+| Lean interactive docs | [docs/](https://litlfred.github.io/qou/docs/) | [content/.../lean/](https://github.com/litlfred/qou/tree/main/content/quantum-observable-universe/lean) |
+| Schema docs (TypeDoc) | [schema-docs/](https://litlfred.github.io/qou/schema-docs/) | [content/schema/](https://github.com/litlfred/qou/tree/main/content/schema) |
+| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) | [.github/scripts/](https://github.com/litlfred/qou/tree/main/.github/scripts) |
+| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) | CI-generated |
+| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) | CI-generated |
+| Glossary | [glossary.json](https://litlfred.github.io/qou/glossary.json) | CI-generated |
+| Feature branch drafts | [drafts/](https://litlfred.github.io/qou/drafts/) | CI-generated |
 
-Recent feature builds are listed on the [landing page](https://litlfred.github.io/qou/)
-([source](https://github.com/litlfred/qou/tree/main/home_page))
-under the **Feature Builds** tab, showing the 5 most recent branch builds with
-links to their PDF, diff PDF, HTML preview, and source branch.
+## Project Structure
 
-## Structure
-
-| File | Description |
+| Path | Description |
 |------|-------------|
-| `main.tex` | Top-level document — includes all chapters |
-| `chapters/quantum-observable-universe.tex` | Chapter 1: Quantum Observable Universe |
-| `chapters/qou-elaboration.tex` | Chapter 2: Categorical & Analytic Elaboration |
-| `chapters/path-integrals-and-braiding.tex` | Chapter 3: Path Integrals and Braiding |
-| `chapters/lifting-of-quantum-torsion.tex` | Chapter 4: Lifting of Quantum Torsion |
-| `chapters/brings-surface.tex` | Chapter 5: Bring's Surface |
-| `chapters/descartes-universe.tex` | Chapter 6: Descartes Universe |
-| `chapters/p-adic-quantum-groups.tex` | Chapter 7: p-Adic Quantum Observable Universe |
-| `chapters/gauge-field-fluid-dynamics.tex` | Chapter 8: Gauge Field Fluid Dynamics |
-| `chapters/information-theory.tex` | Chapter 9: Information Theory |
-| `chapters/interpretations.tex` | Chapter 10: Interpretations |
-| `chapters/experimental-evidence.tex` | Chapter 11: Experimental Evidence |
-| `chapters/speculations.tex` | Chapter 12: Speculations |
-| `references.bib` | BibTeX bibliography |
-| `brings_surface.html` | Interactive 3D Bring's Surface visualizer |
+| `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
+| `content/schema/` | Type system, Zod schemas, builder functions |
+| `content/pipeline/` | Validation, rendering, build pipelines |
+| `content/quantum-observable-universe/` | Main paper — chapters, appendices, Lean |
+| `content/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
+| `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI, simulators |
+| `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
+| `folio-assistant/simulators/` | Interactive HTML/WebGL visualizations |
+| `blueprint/src/` | LeanBlueprint source (dependency graph) |
+| `deploy/` | Remote MCP deployment (Docker Compose, Caddy, auth) |
+| `.github/workflows/` | CI/CD: Lean build, publish, blueprint, deploy |
+| `.claude/skills/` | AI skill definitions (local + synced packages) |
+| `scripts/` | Build, setup, and utility scripts |
+| `main.tex` | LaTeX preamble (rendering target, not source of truth) |
+| `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
+| `references.bib` | Auto-generated BibTeX (source: `content/schema/references.ts`) |
+| `home_page/` | Jekyll landing page for GitHub Pages |
+
+## CI/CD Workflows
+
+| Workflow | Purpose |
+|----------|---------|
+| `agent-review.yml` | AI-assisted code review |
+| `blueprint.yml` | Blueprint compilation, dependency graph, doc-gen4 |
+| `build-latex-image.yml` | Build LaTeX CI Docker image |
+| `build-lean-mcp.yml` | Build Lean MCP Docker image |
+| `deploy-folio.yml` | Deploy Folio Assistant to remote server |
+| `docker-ci-image.yml` | Build general CI Docker image |
+| `lean-build.yml` | Lean build and proof status updates |
+| `lean_ci.yml` | Lean build, proof status, axiom report, doc generation |
+| `publish.yml` | Full paper build — PDF, HTML, viewer, schema docs, deploy to gh-pages |
+| `release-folio-assistant.yml` | Release Folio Assistant package |
+| `snappea_wasm.yml` | SnapPea WASM build and test |
+| `sync-skills.yml` | Sync external skill packages |
 
 ## Building
 
-Compile with `pdflatex` (run twice to resolve cross-references):
+### Content validation and LaTeX generation
 
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+bun install                          # Install dependencies (root + content/)
+bun run validate                     # Validate content objects
+bun run build:content                # Generate chapters/*.tex from content objects
 ```
 
-Or use `latexmk`:
+### Paper compilation
 
 ```bash
-latexmk -pdf main.tex
+latexmk -pdf main.tex               # Compile PDF from generated LaTeX
+```
+
+### Lean formalization
+
+```bash
+cd content/quantum-observable-universe/lean
+lake build                           # Build all Lean modules
+```
+
+### Folio Assistant
+
+```bash
+cd folio-assistant && bun install
+bun run start                        # Start MCP server
+bun run start:http                   # Start in HTTP mode
+```
+
+### Schema documentation
+
+```bash
+bun run build:docs                   # Generate TypeDoc documentation
 ```
 
 ## License

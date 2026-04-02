@@ -6,7 +6,8 @@
     "validate": "cd content && bun run pipeline/validate.ts quantum-observable-universe/",
     "build:content": "cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
     "build:docs": "typedoc",
-    "export-json": "cd content && bun run pipeline/export-json.ts"
+    "export-json": "cd content && bun run pipeline/export-json.ts",
+    "generate-readme": "./scripts/generate-readme.sh"
   },
   "devDependencies": {
     "typedoc": "^0.28.17",
