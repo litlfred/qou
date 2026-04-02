@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>QA Report — Quantum Observable Universe</title>
+  <style>
+:root {
+  --bg: #fff; --fg: #222; --hdr: #f0f0f0; --warn-bg: #fff8e1;
+  --err-bg: #ffeaea; --ok-bg: #e8f5e9; --border: #ddd; --link: #0055cc;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #181a1b; --fg: #d4d4d4; --hdr: #23272a; --warn-bg: #3e3520;
+    --err-bg: #3e2020; --ok-bg: #1e3e20; --border: #444; --link: #6cb4ff;
+  }
+}
+[data-theme="dark"] {
+  --bg: #181a1b; --fg: #d4d4d4; --hdr: #23272a; --warn-bg: #3e3520;
+  --err-bg: #3e2020; --ok-bg: #1e3e20; --border: #444; --link: #6cb4ff;
+}
+body {
+  max-width: 900px; margin: 0 auto; padding: 2rem 1.2rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--fg); background: var(--bg); line-height: 1.6;
+}
+h1 { font-size: 1.4rem; }
+a { color: var(--link); }
+.summary { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
+.card {
+  padding: 0.8rem 1.2rem; border-radius: 8px; min-width: 120px;
+  text-align: center; font-size: 1.1rem; font-weight: 700;
+}
+.card small { display: block; font-weight: 400; font-size: 0.8rem; color: var(--fg); }
+.card.warn { background: var(--warn-bg); }
+.card.err  { background: var(--err-bg); }
+.card.ok   { background: var(--ok-bg); }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+th { background: var(--hdr); position: sticky; top: 0; }
+tr:hover td { background: var(--warn-bg); }
+.badge {
+  display: inline-block; padding: 1px 7px; border-radius: 8px; font-size: 0.78rem;
+  font-weight: 600; background: var(--hdr); margin-right: 0.3rem;
+}
+.gh-badge {
+  display: inline-block; background: var(--hdr); color: var(--fg);
+  padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; text-decoration: none;
+  margin-right: 0.4rem;
+}
+</style>
+</head>
+<body>
+<h1>&#x1F50D; QA Report — Build Warnings</h1>
+<div style="margin:0.5rem 0">
+  <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/audit-lean-rendering-EdO18">&#x1F33F; claude/audit-lean-rendering-EdO18</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/b6a32c979f3bc3e63d67067636b5c4306f5a0d70">&#x1F4DD; b6a32c9</a>
+</div>
+<div class="summary">
+  <div class="card warn">1<small>Total warnings</small></div>
+  <div class="card warn">1<small>LaTeX</small></div>
+</div>
+<table>
+  <thead><tr><th>#</th><th>Category</th><th>Message</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Empty `thebibliography&#x27; environment on input line 3.</td></tr>
+  </tbody>
+</table>
+</body>
+</html>
