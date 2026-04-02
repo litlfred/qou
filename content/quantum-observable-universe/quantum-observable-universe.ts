@@ -41,6 +41,7 @@ export default paper({
     chapterRef({ dir: "ch9-information-theory" }),
     chapterRef({ dir: "ch8-glossary" }),
     chapterRef({ dir: "appendix-knot-periodic-table" }),
+    chapterRef({ dir: "appendix-atomic-mass-calculations" }),
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "index-of-definitions" }),
   ],
