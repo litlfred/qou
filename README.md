@@ -30,32 +30,32 @@ not the source of truth.
 
 The repository hosts multiple papers as a **folio**:
 
-| Paper | Directory | Description |
-|-------|-----------|-------------|
-| Controlled Double-Slit Electron Diffraction | `content/bach2013-double-slit/` | bach2013-double-slit |
-| fred2005-formal-groups | `content/fred2005-formal-groups/` | fred2005-formal-groups |
-| On the Mechanics of Quantum Observable Universes | `content/quantum-observable-universe/` | quantum-observable-universe |
-| Unital Gröbner Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` | unital-groebner-bases |
-| QOU Visualizer | `content/visualizer/` | visualizer |
+| Paper | Directory |
+|-------|-----------|
+| On the Mechanics of Quantum Observable Universes | `content/quantum-observable-universe/` |
+| Controlled Double-Slit Electron Diffraction | `content/bach2013-double-slit/` |
+| Integration of Skewed-Poisson Structures on Non-commutative Formal Groups | `content/fred2005-formal-groups/` |
+| QOU Visualizer | `content/visualizer/` |
+| Unital Gröbner Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` |
 
 ## Chapters (Quantum Observable Universe)
 
-| Chapter | Directory |
-|---------|-----------|
-| ch0 | `ch0-introduction/` — Introduction |
-| ch1 | `ch1-quantum-observable-universe/` — Quantum Observable Universe |
-| ch2 | `ch2-quantum-geometry/` — Quantum Geometry |
-| ch3 | `ch3-lifting-of-quantum-torsion/` — Lifting Of Quantum Torsion |
-| ch4 | `ch4-path-integrals-and-braiding/` — Path Integrals And Braiding |
-| ch5 | `ch5-brings-surface/` — Brings Surface |
-| ch6 | `ch6-descartes-universe/` — Descartes Universe |
-| ch7 | `ch7-observations/` — Observations |
-| ch8 | `ch8-algebraic-substrate/` — Algebraic Substrate |
-| ch8 | `ch8-glossary/` — Glossary |
-| ch9 | `ch9-information-theory/` — Information Theory |
-| ch10 | `ch10-organic-chemistry/` — Organic Chemistry |
-| Appendix | `appendix-knot-periodic-table/` — Knot Periodic Table |
-| Appendix | `appendix-transfer-matrices/` — Transfer Matrices |
+| # | Directory | Title |
+|---|-----------|-------|
+| 0 | `ch0-introduction/` | Introduction |
+| 1 | `ch1-quantum-observable-universe/` | Quantum Universes |
+| 2 | `ch2-quantum-geometry/` | Quantum Observable Universes |
+| 3 | `ch3-lifting-of-quantum-torsion/` | Lifting and Descent |
+| 4 | `ch4-path-integrals-and-braiding/` | Braids and Knots |
+| 5 | `ch6-descartes-universe/` | Models of QOUs |
+| 6 | `ch5-brings-surface/` | The Descartes Universe |
+| 7 | `ch7-observations/` | Physical Observations |
+| 8 | `ch8-algebraic-substrate/` | The Algebraic Substrate |
+| 9 | `ch9-information-theory/` | Information-Theoretic Perspectives |
+| 10 | `ch8-glossary/` | Glossary |
+| App | `appendix-knot-periodic-table/` | Knot-Periodic Table of the Elements |
+| App | `appendix-transfer-matrices/` | Transfer Matrices |
+| — | `index-of-definitions/` | Index of Definitions |
 
 ## Lean 4 Formalization
 
@@ -70,8 +70,8 @@ knot theory, and categorical constructions from the manuscript.
 | `QOU.ArchimedeanMassFormula` | `ArchimedeanMassFormula.lean` |
 | `QOU.Basic` | `Basic.lean` |
 | `QOU.BringsSurface` | `BringsSurface.lean` |
-| `QOU.CODATAChain` | `CODATAChain.lean` |
 | `QOU.Calculations` | `Calculations.lean` |
+| `QOU.CODATAChain` | `CODATAChain.lean` |
 | `QOU.Descartes` | `Descartes.lean` |
 | `QOU.DescartesUniverse` | `DescartesUniverse.lean` |
 | `QOU.Elaboration` | `Elaboration.lean` |
@@ -92,9 +92,9 @@ knot theory, and categorical constructions from the manuscript.
 | `QOU.QuantumObservableUniverse` | `QuantumObservableUniverse.lean` |
 | `QOU.RepresentationTheory` | `RepresentationTheory.lean` |
 | `QOU.Torsion` | `Torsion.lean` |
-| `QOU.Descartes.*` | 6 files |
-| `QOU.QuantumObservableUniverse.*` | 9 files |
-| `QOU.Torsion.*` | 6 files |
+| `QOU.Descartes.*` | `6 files` |
+| `QOU.QuantumObservableUniverse.*` | `9 files` |
+| `QOU.Torsion.*` | `6 files` |
 
 ### Knot Registry
 

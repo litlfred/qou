@@ -5,8 +5,9 @@
 #   --check   Print diff and exit non-zero if README.md would change (for CI)
 #
 # This script assembles README.md from static prose and dynamic sections
-# derived from the actual file tree (chapters, Lean modules, simulators,
-# papers, workflows).  Run it whenever project structure changes.
+# derived from the actual file tree.  Metadata extraction (paper titles,
+# chapter order, Lean modules, etc.) is handled by readme-metadata.ts
+# via bun, avoiding GNU-specific shell tools for portability.
 
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
@@ -14,12 +15,18 @@ cd "$(git rev-parse --show-toplevel)"
 OUT="$(mktemp)"
 trap 'rm -f "$OUT"' EXIT
 
+# ── Extract metadata via bun (portable) ─────────────────────────────────────
+
+META="$(bun run scripts/readme-metadata.ts)"
+
+# jq-free JSON access via bun one-liners
+json_get() { echo "$META" | bun -e "const d=JSON.parse(await Bun.stdin.text()); $1"; }
+
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 section() { printf '\n## %s\n\n' "$1" >> "$OUT"; }
 subsection() { printf '\n### %s\n\n' "$1" >> "$OUT"; }
 line() { printf '%s\n' "$1" >> "$OUT"; }
-blank() { printf '\n' >> "$OUT"; }
 
 # ── Header ───────────────────────────────────────────────────────────────────
 
@@ -61,55 +68,36 @@ ARCH
 
 section "Papers"
 
-cat >> "$OUT" << 'PAPERS'
-The repository hosts multiple papers as a **folio**:
+line "The repository hosts multiple papers as a **folio**:"
+line ""
+line "| Paper | Directory |"
+line "|-------|-----------|"
 
-| Paper | Directory | Description |
-|-------|-----------|-------------|
-PAPERS
-
-# Detect papers from content/ directories that have a .ts manifest
-for dir in content/*/; do
-  name="$(basename "$dir")"
-  # Skip non-paper directories
-  [[ "$name" == "schema" || "$name" == "pipeline" || "$name" == "node_modules" ]] && continue
-  manifest="$dir${name}.ts"
-  if [[ -f "$manifest" ]]; then
-    # Extract title from the manifest if possible
-    title=$(grep -oP "title:\s*['\"]\\K[^'\"]*" "$manifest" 2>/dev/null | head -1 || echo "$name")
-    [[ -z "$title" ]] && title="$name"
-    line "| ${title} | \`content/${name}/\` | $(basename "$dir") |"
-  fi
-done
+json_get '
+  for (const p of d.papers)
+    console.log(`| ${p.title} | \`content/${p.dir}/\` |`);
+' >> "$OUT"
 
 # ── Chapters (main paper) ───────────────────────────────────────────────────
 
 section "Chapters (Quantum Observable Universe)"
 
-line "| Chapter | Directory |"
-line "|---------|-----------|"
+line "| # | Directory | Title |"
+line "|---|-----------|-------|"
 
-for dir in $(ls -d content/quantum-observable-universe/ch*/ | sort -t'-' -k1 -V); do
-  [[ -d "$dir" ]] || continue
-  chapter_dir="$(basename "$dir")"
-  # Parse chapter number and name from directory
-  chapter_num="${chapter_dir%%-*}"
-  chapter_name="${chapter_dir#*-}"
-  chapter_name="${chapter_name//-/ }"
-  # Capitalize first letter of each word
-  chapter_name="$(echo "$chapter_name" | sed 's/\b\(.\)/\u\1/g')"
-  line "| ${chapter_num} | \`${chapter_dir}/\` — ${chapter_name} |"
-done
-
-# Appendices
-for dir in content/quantum-observable-universe/appendix-*/; do
-  [[ -d "$dir" ]] || continue
-  app_dir="$(basename "$dir")"
-  app_name="${app_dir#appendix-}"
-  app_name="${app_name//-/ }"
-  app_name="$(echo "$app_name" | sed 's/\b\(.\)/\u\1/g')"
-  line "| Appendix | \`${app_dir}/\` — ${app_name} |"
-done
+json_get '
+  let chNum = 0;
+  for (const c of d.chapters) {
+    if (c.kind === "chapter") {
+      console.log(`| ${chNum} | \`${c.dir}/\` | ${c.title} |`);
+      chNum++;
+    } else if (c.kind === "appendix") {
+      console.log(`| App | \`${c.dir}/\` | ${c.title} |`);
+    } else {
+      console.log(`| — | \`${c.dir}/\` | ${c.title} |`);
+    }
+  }
+' >> "$OUT"
 
 # ── Lean 4 Formalization ────────────────────────────────────────────────────
 
@@ -126,22 +114,10 @@ subsection "Modules"
 line "| Module | Source |"
 line "|--------|--------|"
 
-# List top-level .lean files under QOU/
-lean_dir="content/quantum-observable-universe/lean/QOU"
-if [[ -d "$lean_dir" ]]; then
-  for f in "$lean_dir"/*.lean; do
-    [[ -f "$f" ]] || continue
-    mod="QOU.$(basename "$f" .lean)"
-    line "| \`${mod}\` | \`$(basename "$f")\` |"
-  done
-  # List subdirectory modules
-  for sub in "$lean_dir"/*/; do
-    [[ -d "$sub" ]] || continue
-    subname="$(basename "$sub")"
-    count=$(find "$sub" -name '*.lean' | wc -l)
-    line "| \`QOU.${subname}.*\` | ${count} files |"
-  done
-fi
+json_get '
+  for (const m of d.leanModules)
+    console.log(`| \`${m.name}\` | \`${m.source}\` |`);
+' >> "$OUT"
 
 subsection "Knot Registry"
 
@@ -181,15 +157,10 @@ subsection "Interactive Simulators"
 line "| Simulator | File |"
 line "|-----------|------|"
 
-if [[ -d "folio-assistant/simulators" ]]; then
-  for f in folio-assistant/simulators/*.html; do
-    [[ -f "$f" ]] || continue
-    name="$(basename "$f" .html)"
-    # Convert underscores to spaces and capitalize
-    pretty="$(echo "$name" | tr '_' ' ' | sed 's/\b\(.\)/\u\1/g')"
-    line "| ${pretty} | \`simulators/${name}.html\` |"
-  done
-fi
+json_get '
+  for (const s of d.simulators)
+    console.log(`| ${s.name} | \`${s.file}\` |`);
+' >> "$OUT"
 
 # ── Published Artefacts ──────────────────────────────────────────────────────
 
@@ -247,31 +218,10 @@ section "CI/CD Workflows"
 line "| Workflow | Purpose |"
 line "|----------|---------|"
 
-declare -A workflow_desc=(
-  ["lean_ci.yml"]="Lean build, proof status, axiom report, doc generation"
-  ["publish.yml"]="Full paper build — PDF, HTML, viewer, schema docs, deploy to gh-pages"
-  ["blueprint.yml"]="Blueprint compilation, dependency graph, doc-gen4"
-  ["lean-build.yml"]="Lean build and proof status updates"
-  ["deploy-folio.yml"]="Deploy Folio Assistant to remote server"
-  ["build-lean-mcp.yml"]="Build Lean MCP Docker image"
-  ["build-latex-image.yml"]="Build LaTeX CI Docker image"
-  ["docker-ci-image.yml"]="Build general CI Docker image"
-  ["agent-review.yml"]="AI-assisted code review"
-  ["release-folio-assistant.yml"]="Release Folio Assistant package"
-  ["snappea_wasm.yml"]="SnapPea WASM build and test"
-  ["sync-skills.yml"]="Sync external skill packages"
-)
-
-for wf in .github/workflows/*.yml; do
-  [[ -f "$wf" ]] || continue
-  name="$(basename "$wf")"
-  desc="${workflow_desc[$name]:-}"
-  if [[ -z "$desc" ]]; then
-    # Try to extract name from the file
-    desc=$(grep -m1 '^name:' "$wf" 2>/dev/null | sed 's/^name:\s*//' || echo "")
-  fi
-  line "| \`${name}\` | ${desc} |"
-done
+json_get '
+  for (const w of d.workflows)
+    console.log(`| \`${w.file}\` | ${w.description} |`);
+' >> "$OUT"
 
 # ── Building ─────────────────────────────────────────────────────────────────
 
@@ -337,7 +287,7 @@ if [[ "${1:-}" == "--check" ]]; then
     exit 0
   else
     echo "README.md is out of date. Run: ./scripts/generate-readme.sh"
-    diff --color=auto README.md "$OUT" || true
+    diff README.md "$OUT" || true
     exit 1
   fi
 fi
