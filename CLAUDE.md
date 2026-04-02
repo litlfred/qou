@@ -643,6 +643,30 @@ cd content/quantum-observable-universe/lean
 lake exe cache get && lake build
 ```
 
+### Local Mathlib cache
+
+To avoid re-cloning Mathlib from GitHub on every fresh `.lake/` build,
+keep a persistent local clone one directory above the repo:
+
+```bash
+cd ..  # parent of the repo root
+git clone https://github.com/leanprover-community/mathlib4.git
+```
+
+The build tools automatically detect this clone (configured in
+`lean-mcp.config.json` → `lean.local_mathlib_path`) and set a git
+`insteadOf` redirect so Lake fetches from the local clone instead of
+GitHub. This is transparent — no changes to `lakefile.toml` needed.
+
+| Config key | Default | Purpose |
+|-----------|---------|---------|
+| `lean.local_mathlib_path` | `../mathlib4` | Path to local clone (relative to repo root) |
+| `lean.mathlib_git_url` | `https://github.com/leanprover-community/mathlib4` | Upstream URL to redirect |
+
+The `lean_build` tool warns if the local clone is >7 days stale and
+offers `update_local_mathlib: true` to fetch the latest commits.
+Shell scripts use `scripts/lib/lean-env.sh` for the same logic.
+
 ### Remote MCP server
 
 A Docker-based remote deployment is available in `deploy/`:

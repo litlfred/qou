@@ -16,7 +16,7 @@
 
 import { z } from "zod";
 import { execSync, spawnSync, type SpawnSyncReturns } from "child_process";
-import { existsSync, readFileSync } from "fs";
+import { existsSync, readFileSync, statSync } from "fs";
 import { join, resolve } from "path";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { LEAN_DIR, REPO_ROOT } from "../paths.js";
@@ -48,6 +48,96 @@ function processSpawnOutput(result: SpawnSyncReturns<Buffer>): { output: string;
   const output = (stdout + "\n" + stderr).trim();
   const last2k = output.slice(-2000);
   return { output, last2k };
+}
+
+// ── Local Mathlib cache helpers ──────────────────────────────────
+
+interface MathlibConfig {
+  localPath: string;        // absolute path to local mathlib4 clone
+  gitUrl: string;           // upstream URL Lake uses for mathlib
+  available: boolean;       // local clone exists and is a git repo
+  ageDays: number | null;   // days since last fetch, or null if unknown
+}
+
+function getMathlibConfig(): MathlibConfig {
+  const configFile = join(REPO_ROOT, "lean-mcp.config.json");
+  let relPath = "../mathlib4";
+  let gitUrl = "https://github.com/leanprover-community/mathlib4";
+
+  if (existsSync(configFile)) {
+    try {
+      const config = JSON.parse(readFileSync(configFile, "utf-8"));
+      relPath = config.lean?.local_mathlib_path ?? relPath;
+      gitUrl = config.lean?.mathlib_git_url ?? gitUrl;
+    } catch { /* use defaults */ }
+  }
+
+  const localPath = resolve(REPO_ROOT, relPath);
+  const available = existsSync(join(localPath, ".git"));
+
+  let ageDays: number | null = null;
+  if (available) {
+    try {
+      const fetchHead = join(localPath, ".git", "FETCH_HEAD");
+      if (existsSync(fetchHead)) {
+        const fetchTime = statSync(fetchHead).mtimeMs;
+        ageDays = Math.floor((Date.now() - fetchTime) / 86_400_000);
+      }
+    } catch { /* ignore */ }
+  }
+
+  return { localPath, gitUrl, available, ageDays };
+}
+
+/**
+ * Set git insteadOf so Lake redirects mathlib fetches to a local clone.
+ * Uses repo-local git config (doesn't pollute global config).
+ */
+function enableMathlibRedirect(leanDir: string): string[] {
+  const ml = getMathlibConfig();
+  const msgs: string[] = [];
+
+  if (!ml.available) {
+    msgs.push(`○ No local mathlib at ${ml.localPath} — using GitHub`);
+    return msgs;
+  }
+
+  // Set repo-local git config for both HTTPS and SSH URLs
+  const fileUrl = `file://${ml.localPath}`;
+  for (const upstream of [
+    ml.gitUrl,
+    "git@github.com:leanprover-community/mathlib4.git",
+  ]) {
+    spawnSync("git", ["config", "--local", `url.${fileUrl}.insteadOf`, upstream], {
+      cwd: leanDir, stdio: "pipe",
+    });
+  }
+
+  msgs.push(`✓ Mathlib redirect: ${ml.localPath} (${ml.ageDays !== null ? `${ml.ageDays}d since last fetch` : "age unknown"})`);
+  return msgs;
+}
+
+/** Remove the local mathlib redirect. */
+function disableMathlibRedirect(leanDir: string): void {
+  const ml = getMathlibConfig();
+  const fileUrl = `file://${ml.localPath}`;
+  spawnSync("git", ["config", "--local", "--unset-all", `url.${fileUrl}.insteadOf`], {
+    cwd: leanDir, stdio: "pipe",
+  });
+}
+
+/** Update the local mathlib clone (git fetch --all). */
+function updateLocalMathlib(): string {
+  const ml = getMathlibConfig();
+  if (!ml.available) return `No local mathlib at ${ml.localPath}`;
+
+  const r = spawnSync("git", ["fetch", "--all", "--prune"], {
+    cwd: ml.localPath, stdio: "pipe", timeout: 120_000,
+  });
+  const out = (r.stdout?.toString() || "") + (r.stderr?.toString() || "");
+  return r.status === 0
+    ? `Updated local mathlib at ${ml.localPath}`
+    : `Fetch failed: ${out.slice(-200)}`;
 }
 
 export function registerLeanTools(server: McpServer): void {
@@ -119,7 +209,10 @@ export function registerLeanTools(server: McpServer): void {
         steps.push(r.status === 0 ? "✓ ripgrep installed" : "○ ripgrep not available (optional)");
       }
 
-      // 5. lake update
+      // 5. Local mathlib redirect (if available)
+      steps.push(...enableMathlibRedirect(leanDir));
+
+      // 6. lake update
       steps.push("▸ Running lake update...");
       const updateR = spawnSync("lake", ["update"], {
         cwd: leanDir, stdio: "pipe", timeout: 300_000, env,
@@ -193,6 +286,15 @@ export function registerLeanTools(server: McpServer): void {
       const cacheOk = existsSync(join(LEAN_DIR, ".lake/packages/mathlib/.lake/build/lib"));
       checks.mathlib_cache = cacheOk ? "present" : "missing (run lean_setup or lake exe cache get)";
 
+      // Local mathlib clone
+      const ml = getMathlibConfig();
+      if (ml.available) {
+        const age = ml.ageDays !== null ? `${ml.ageDays}d since fetch` : "age unknown";
+        checks.local_mathlib = `${ml.localPath} (${age})`;
+      } else {
+        checks.local_mathlib = `not found at ${ml.localPath}`;
+      }
+
       // Remote MCP
       let remoteOk = false;
       try {
@@ -259,7 +361,9 @@ export function registerLeanTools(server: McpServer): void {
   server.tool(
     "lean_build",
     "Run `lake build` in the Lean project directory. Returns build output. " +
-    "Defaults to content/quantum-observable-universe/lean/ if it contains a lakefile.",
+    "Defaults to content/quantum-observable-universe/lean/ if it contains a lakefile. " +
+    "Automatically uses local mathlib clone (if configured in lean-mcp.config.json) " +
+    "to avoid re-downloading from GitHub.",
     {
       clean: z.boolean().default(false)
         .describe("Run `lake clean` first"),
@@ -267,8 +371,10 @@ export function registerLeanTools(server: McpServer): void {
         .describe("Specific library to build (e.g. 'QOU'). Default: build all."),
       dir: z.string().optional()
         .describe("Lean project directory relative to repo root (default: auto-detect content/quantum-observable-universe/lean/ or lean/)"),
+      update_local_mathlib: z.boolean().default(false)
+        .describe("Fetch latest commits in the local mathlib clone before building"),
     },
-    async ({ clean, project, dir }) => {
+    async ({ clean, project, dir, update_local_mathlib }) => {
       if (!hasCommand("lake")) {
         return {
           content: [{
@@ -279,8 +385,22 @@ export function registerLeanTools(server: McpServer): void {
       }
 
       const cwd = leanProjectDir(dir);
+      const preamble: string[] = [];
 
       try {
+        // Enable local mathlib redirect if available
+        preamble.push(...enableMathlibRedirect(cwd));
+
+        // Optionally update local mathlib clone
+        if (update_local_mathlib) {
+          preamble.push(updateLocalMathlib());
+        } else {
+          const ml = getMathlibConfig();
+          if (ml.available && ml.ageDays !== null && ml.ageDays > 7) {
+            preamble.push(`⚠ Local mathlib is ${ml.ageDays} days old — consider update_local_mathlib: true`);
+          }
+        }
+
         if (clean) {
           spawnSync("lake", ["clean"], { cwd, stdio: "pipe", timeout: 30_000 });
         }
@@ -293,11 +413,12 @@ export function registerLeanTools(server: McpServer): void {
         });
 
         const { last2k } = processSpawnOutput(result);
+        const pre = preamble.length ? preamble.join("\n") + "\n\n" : "";
 
         return {
           content: [{
             type: "text" as const,
-            text: `lake build ${result.status === 0 ? "succeeded" : "failed"} (exit ${result.status}, cwd: ${cwd})\n\n${last2k}`,
+            text: `${pre}lake build ${result.status === 0 ? "succeeded" : "failed"} (exit ${result.status}, cwd: ${cwd})\n\n${last2k}`,
           }],
         };
       } catch (e) {

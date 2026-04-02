@@ -123,6 +123,11 @@ fi
 
 cd "$LEAN_DIR"
 
+# ── Step 0: local mathlib redirect (if configured) ──────────────
+if mathlib_local_available; then
+    mathlib_enable_local_redirect
+fi
+
 # ── Step 1: lake update (always run to ensure deps match lakefile) ─
 write_status "updating" "Running lake update..." "update" 0
 if lake update > "$LOG_DIR/qou-lake-update.log" 2>&1; then
