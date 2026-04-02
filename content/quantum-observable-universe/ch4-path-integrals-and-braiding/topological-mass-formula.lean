@@ -64,7 +64,10 @@ theorem ArchimedeanMassFormula
   rw [h_baseline, h_exceptional]
   -- Vol + Vol · (1/ℏ² - 1) = Vol · (1 + 1/ℏ² - 1) = Vol/ℏ²
   -- Ref: [manuscript] §4/topological-mass-formula
-  sorry
+  have hℏ : (quantumPlanck q) ^ 2 ≠ 0 :=
+    pow_ne_zero 2 (ne_of_gt (quantumPlanck_pos q hq))
+  field_simp
+  ring
 
 /-- The archimedean mass is positive for hyperbolic knots (Vol > 0). -/
 -- Ref: [manuscript] §4/topological-mass-formula

@@ -95,6 +95,8 @@ interface ExportedPaper {
   chapters: ExportedChapter[];
   /** Full bibliography database (CSL-JSON) for cross-linking. */
   references?: CSLData[];
+  /** Custom LaTeX macros (name → {tex, unicode}) for KaTeX rendering. */
+  macros?: Record<string, { tex: string; unicode?: string }>;
   meta?: Record<string, unknown>;
   _hash: string;
   _built: string;
@@ -266,6 +268,7 @@ async function main() {
     date: paper.date,
     chapters,
     references,
+    macros: (paper as any).macros,
     meta: paper.meta,
     _built: new Date().toISOString(),
   };

@@ -278,6 +278,16 @@ that pass compilation but produce wrong visual output.
 | No overlapping text in PDF | **error** | Check for text collisions in dense sections |
 | Fenced `` ```tex `` blocks with pre-rendered SVGs display correctly | **warning** | Verify SVG embed or image fallback is present |
 
+### Viewer-specific checks (discovered 2026-04-02 audit)
+
+| Check | Severity | How |
+|-------|----------|-----|
+| Multi-line inline `$...$` renders in list items | **error** | The viewer `parseMd()` joins list continuation lines; `inl()` must handle escaped braces `\{`/`\}` (skip `\` + next char, don't count as depth) |
+| Title math in `$...$` renders (not raw) | **error** | `mkBlockHeader()` calls `inl(title)` then `renderMath(div)`; if KaTeX is not yet loaded or macros empty, math shows as raw — verify KaTeX loads before block rendering |
+| Simulator blocks validate against current schema | **error** | `SimulatorBlock` requires `html: string` + `defaultView: SimulatorView`; deprecated `simulator: {type, source}` field causes Zod parse failure |
+| Content blocks in correct chapter directory | **error** | Block `.ts`/`.md` must be in the chapter directory that references them in its manifest |
+| `\{` and `\}` in inline math don't break `$` parser | **error** | The `inl()` brace-depth tracker must skip `\{`/`\}` (escaped braces); otherwise the closing `$` is never found and math shows as raw text |
+
 ### HTML visual verification procedure
 
 1. Build the paper JSON:

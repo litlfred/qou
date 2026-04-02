@@ -658,6 +658,12 @@
     .txb{background:transparent;border:none;border-radius:4px;padding:.8rem;margin:.8rem 0;text-align:center;overflow-x:auto}
     .txb img,.txb svg{max-width:100%;height:auto;filter:var(--svg-f);transform:scale(1.25);transform-origin:center}
     .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left}
+    .txb.diagram-ph{background:var(--bg-s);border:1px dashed var(--fg-d);border-radius:6px;padding:1rem;text-align:center;font-size:.75rem;color:var(--fg-d)}
+    .txb.diagram-ph .diagram-label{font-style:italic;margin-bottom:.4rem}
+    .txb.diagram-ph .diagram-math{margin:.6rem 0}
+    .txb.diagram-ph details{text-align:left;margin-top:.6rem;font-size:.65rem}
+    .txb.diagram-ph details summary{cursor:pointer;opacity:.6}
+    .txb.diagram-ph details pre{white-space:pre-wrap;word-break:break-all;margin:.4rem 0;max-height:10rem;overflow:auto}
 
     /* Folio */
     .folio-list{display:flex;flex-direction:column;gap:1rem}
@@ -1514,6 +1520,11 @@
               .txb{text-align:center;padding:.8rem;margin:.8rem 0}
               .txb img,.txb svg{max-width:100%;height:auto}
               .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+              .txb.diagram-ph{background:var(--bg-s);border:1px dashed var(--fg-d);border-radius:6px;padding:1rem;text-align:center;font-size:.75rem;color:var(--fg-d)}
+              .txb.diagram-ph .diagram-label{font-style:italic;margin-bottom:.4rem}
+              .txb.diagram-ph details{text-align:left;margin-top:.6rem;font-size:.65rem}
+              .txb.diagram-ph details summary{cursor:pointer;opacity:.6}
+              .txb.diagram-ph details pre{white-space:pre-wrap;word-break:break-all;margin:.4rem 0;max-height:10rem;overflow:auto}
               table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
               th,td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
               th{background:var(--bg-s);font-weight:600}
@@ -1553,6 +1564,11 @@
               const a = b.rendered?.find(r => r.blockIndex === i);
               if (a && (a.mime === 'image/svg+xml' || a.mime?.startsWith('image/'))) {
                 return `<div class="txb"><img src="${a.url}" alt="${escapedTex}" loading="lazy"></div>`;
+              }
+              // Show styled placeholder with collapsible source for tikzcd/complex envs
+              if (/\\begin\{tikzcd\}|\\begin\{tabular/.test(texSrc)) {
+                const label = /\\begin\{tikzcd\}/.test(texSrc) ? 'Commutative diagram' : 'Table';
+                return `<div class="txb diagram-ph"><div class="diagram-label">[${label}]</div><details><summary>LaTeX source</summary><pre>${escapedTex}</pre></details></div>`;
               }
               return `<div class="txb ph">${escapedTex}</div>`;
             });
@@ -2156,6 +2172,10 @@
         if (t[i] === '$' && t[i+1] !== '$') {
           let j = i + 1, depth = 0;
           while (j < t.length) {
+            if (t[j] === '\\' && j+1 < t.length) {
+              j += 2; // skip escaped char (e.g. \{, \}, \\)
+              continue;
+            }
             if (t[j] === '{') depth++;
             else if (t[j] === '}') depth--;
             else if (t[j] === '$' && depth === 0) break;
@@ -2177,7 +2197,11 @@
     // ── KaTeX ────────────────────────────────────────────
     let katexMacros = {};
     function buildKatexMacros(paperMacros) {
-      const m = {};
+      const m = {
+        // Built-in fallbacks for common macros not in KaTeX
+        '\\bigbowtie': '\\bowtie',
+        '\\smallmatrix': '\\begin{smallmatrix}',
+      };
       if (paperMacros) {
         for (const [name, def] of Object.entries(paperMacros)) {
           m['\\' + name] = def.tex;
@@ -2457,7 +2481,11 @@
           if (a && a.mime?.startsWith('image/')) {
             return `<div class="txb"><img src="${a.url}" alt="${escapedTex}" title="LaTeX source (hover)" loading="lazy"></div>`;
           }
-          // Fallback: show LaTeX source
+          // Fallback: styled placeholder with collapsible source for tikzcd/complex envs
+          if (/\\begin\{tikzcd\}|\\begin\{tabular/.test(texSrc)) {
+            const label = /\\begin\{tikzcd\}/.test(texSrc) ? 'Commutative diagram' : 'Table';
+            return `<div class="txb diagram-ph"><div class="diagram-label">[${label}]</div><details><summary>LaTeX source</summary><pre>${escapedTex}</pre></details></div>`;
+          }
           return `<div class="txb ph">${escapedTex}</div>`;
         });
         win.document.write(`<div class="bb">${bodyHtml}</div>`);
@@ -3259,7 +3287,13 @@
         const d = mk('div','blk');
         if (block.label) d.id = block.label;
         if (block.rendered?.length) d.innerHTML = renderAsset(block.rendered[0]);
-        else d.innerHTML = `<div class="txb ph">${esc(block.tex||block.md||'')}</div>`;
+        else {
+          const texSrc = block.tex||block.md||'';
+          if (/\\begin\{tikzcd\}|\\begin\{tabular/.test(texSrc)) {
+            const label = /\\begin\{tikzcd\}/.test(texSrc) ? 'Commutative diagram' : 'Table';
+            d.innerHTML = `<div class="txb diagram-ph"><div class="diagram-label">[${label}]</div><details><summary>LaTeX source</summary><pre>${esc(texSrc)}</pre></details></div>`;
+          } else d.innerHTML = `<div class="txb ph">${esc(texSrc)}</div>`;
+        }
         return d;
       }
 
@@ -3867,18 +3901,60 @@
         const a = rendered?.find(r => r.blockIndex === i);
         if (a) { t.innerHTML = renderAsset(a, tx[i]); t.classList.remove('ph'); }
         else {
-          // Try KaTeX rendering before falling back to raw source
           const src = tx[i] || '';
           // Strip outer \begin{equation}...\end{equation} wrapper if present
-          const stripped = src.replace(/^\s*\\begin\{equation\}(\[.*?\])?\\label\{[^}]*\}\s*/s, '')
-                              .replace(/^\s*\\begin\{equation\}\s*/s, '')
-                              .replace(/\s*\\end\{equation\}\s*$/s, '')
+          let stripped = src.replace(/^\s*\\begin\{equation\}(\[.*?\])?\\label\{[^}]*\}\s*/s, '')
+                            .replace(/^\s*\\begin\{equation\}\s*/s, '')
+                            .replace(/\s*\\end\{equation\}\s*$/s, '')
+                            .trim();
+          // Detect tikzcd / tabular / complex environments that KaTeX can't render
+          const hasTikzcd = /\\begin\{tikzcd\}/.test(stripped);
+          const hasTabular = /\\begin\{tabular/.test(stripped);
+          const hasGatheredTikz = hasTikzcd && /\\begin\{gathered\}/.test(stripped);
+          if (hasTikzcd || hasTabular) {
+            // Build a structured placeholder with extractable math
+            t.classList.remove('ph'); t.classList.add('diagram-ph');
+            const label = hasTikzcd ? 'Commutative diagram' : 'Table';
+            // Extract \text{...} labels from tikzcd for context
+            const labels = [];
+            const textMatches = src.matchAll(/\\text\{\\small\s*\(([^)]+)\)\}/g);
+            for (const m of textMatches) labels.push(m[1]);
+            // Extract any standalone math lines between gathered blocks
+            const mathParts = [];
+            const gatherSplit = stripped.split(/\\begin\{tikzcd\}[\s\S]*?\\end\{tikzcd\}/g);
+            for (const part of gatherSplit) {
+              const clean = part.replace(/\\begin\{gathered\}/g,'').replace(/\\end\{gathered\}/g,'')
+                               .replace(/\\qquad/g,'').replace(/\\\\(\[.*?\])?/g,'').trim();
+              if (clean && !/^\\(text|label|small)/.test(clean)) {
+                mathParts.push(clean);
+              }
+            }
+            let html = `<div class="diagram-label">[${esc(label)}${labels.length ? ': ' + esc(labels.join(', ')) : ''}]</div>`;
+            // Try to render extracted math parts via KaTeX
+            for (const mp of mathParts) {
+              try {
+                const span = document.createElement('div');
+                span.className = 'diagram-math';
+                katex.render(mp, span, {throwOnError: true, displayMode: true, macros: katexMacros});
+                html += span.outerHTML;
+              } catch(e) {}
+            }
+            html += `<details><summary>LaTeX source</summary><pre>${esc(src)}</pre></details>`;
+            t.innerHTML = html;
+          } else {
+            // Try full KaTeX rendering
+            // Also strip \begin{gathered}...\end{gathered} wrapper for simple gathered blocks
+            stripped = stripped.replace(/^\s*\\begin\{gathered\}\s*/s, '')
+                              .replace(/\s*\\end\{gathered\}\s*$/s, '')
                               .trim();
-          try {
-            katex.render(stripped, t, {throwOnError: true, displayMode: true, macros: katexMacros});
-            t.classList.remove('ph'); t.classList.add('katex-display');
-          } catch(e) {
-            t.textContent = src; t.classList.add('ph');
+            try {
+              katex.render(stripped, t, {throwOnError: true, displayMode: true, macros: katexMacros});
+              t.classList.remove('ph'); t.classList.add('katex-display');
+            } catch(e) {
+              // Final fallback: styled placeholder with source in details
+              t.classList.remove('ph'); t.classList.add('diagram-ph');
+              t.innerHTML = `<div class="diagram-label">[LaTeX environment]</div><details><summary>LaTeX source</summary><pre>${esc(src)}</pre></details>`;
+            }
           }
         }
       }

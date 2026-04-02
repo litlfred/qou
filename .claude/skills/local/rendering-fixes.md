@@ -420,6 +420,84 @@ patterns without `\approx` or `O(`.
 
 ---
 
+## F16: Multi-line inline math in viewer
+
+**Pattern**: Inline math `$...$` spans multiple lines in the `.md` source.
+The viewer's `parseMd()` joins paragraph lines with spaces, so multi-line
+inline math works — but the `inl()` function's `$`-parser must correctly
+track brace depth to find the closing `$`. Escaped braces `\{` and `\}`
+must be skipped (they don't change nesting depth).
+
+**Authoring rule**: Multi-line inline math is valid per CLAUDE.md §2.
+No source change needed. If rendering fails, the bug is in the viewer's
+parser (see `inl()` function in `viewer/index.html`).
+
+**Common pitfalls**:
+- `\{` and `\}` (literal braces) treated as depth changes → **fixed in viewer**
+- Continuation lines in list items not joined properly → check indentation is 2+ spaces
+- `$...$` inside bold `**...**` — the bold regex in `inl()` runs first and may split the math token
+
+---
+
+## F17: Simulator block schema mismatch
+
+**Pattern**: A `simulator()` block uses a deprecated field format instead of
+the current `SimulatorBlock` schema. The build fails with Zod validation
+errors about missing `html`, `defaultView`, or `ref` fields.
+
+**Old format** (deprecated):
+```ts
+simulator: { type: "html", source: "file.html" }
+```
+
+**Current format** (required):
+```ts
+html: "folio-assistant/simulators/file.html",
+defaultView: {
+  name: "default",
+  title: "Default view",
+  params: { q: 1.1097 },
+},
+```
+
+**Fix**: Replace the `simulator:` field with `html:` + `defaultView:`.
+Use an existing simulator block (e.g. `q-double-slit.ts`) as a template.
+
+---
+
+## F18: Orphaned content block (wrong chapter directory)
+
+**Pattern**: A content block's `.ts` and `.md` files are in one chapter
+directory but referenced from a different chapter's manifest. The build
+fails with "Cannot find module" because it looks for the file relative
+to the manifest.
+
+**Fix**: Move the block files to the chapter directory that references them,
+or update the manifest to point to the correct location.
+
+---
+
+## F19: tikzcd/gathered blocks showing as raw LaTeX in HTML viewer
+
+**Pattern**: A ````tex` fenced block containing `\begin{tikzcd}` or
+`\begin{gathered}` shows as raw LaTeX text in the HTML viewer. This
+happens because:
+1. The `rendered[]` field in the `.ts` manifest is empty (no pre-rendered SVG)
+2. KaTeX cannot render tikzcd environments
+3. The viewer falls back to displaying raw source text
+
+**Fix** (preferred): Run the pre-rendering pipeline:
+```bash
+cd content && bun run render-tex
+```
+This generates SVGs and updates `.ts` manifests with `rendered[]` entries.
+
+**Fix** (when pdflatex unavailable): The viewer now shows a styled
+placeholder with a "[Commutative diagram]" label and collapsible source
+instead of raw text. This is automatic — no content change needed.
+
+---
+
 ## Pre-commit checklist (for agents editing content)
 
 Before committing changes to a content block, verify:

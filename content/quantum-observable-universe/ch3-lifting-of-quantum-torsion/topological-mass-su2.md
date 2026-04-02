@@ -4,9 +4,11 @@ $G = \mathrm{SU}(2)$.
 
 **The decomposition.** By the topological mass theorem, the mass of a
 cycle $\varrho$ decomposes according to the eigenspace splitting:
+
 $$
   \mathfrak{m}(\varrho) \;=\; \mathfrak{m}_{\mathrm{desc}}(\varrho) + \mathfrak{m}_{\mathrm{trans}}(\varrho),
 $$
+
 where $\mathfrak{m}_{\mathrm{desc}} = \lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \rVert$
 is the descended (persistent) contribution and
 $\mathfrak{m}_{\mathrm{trans}} = \lVert \mathrm{tr}_{\mathrm{trans}}(\varrho) \rVert$
@@ -17,9 +19,11 @@ factors through the projection $\hat{\tau}$ onto
 $\mathfrak{A}^{\mathrm{desc}} \cong \mathfrak{su}(2)$. For the Hopf
 fibration $\mathrm{SU}(2) \to \mathbb{CP}^1$, the descended mass of
 the fundamental cycle is
+
 $$
   \mathfrak{m}_{\mathrm{desc}} \;=\; \chi(\mathbb{CP}^1) \;=\; 2,
 $$
+
 the Euler characteristic of $\mathbb{CP}^1 \cong S^2$. This is the
 topologically protected part: it is invariant under continuous
 deformations of the cycle and the metric.

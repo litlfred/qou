@@ -2,11 +2,13 @@
 Since $\hat{\tau}_n$ is an idempotent endomorphism of the $R$-algebra
 $\mathrm{End}_{\mathbf{C}}(A_{n+1})$, the standard idempotent splitting
 gives a direct sum decomposition
+
 $$
   \mathrm{End}_{\mathbf{C}}(A_{n+1})
   \;=\;
   \mathrm{im}\,\hat{\tau}_n \;\oplus\; \ker\,\hat{\tau}_n.
 $$
+
 Indeed, every $\alpha \in \mathrm{End}_{\mathbf{C}}(A_{n+1})$ decomposes
 uniquely as $\alpha = \hat{\tau}_n(\alpha) + (\alpha - \hat{\tau}_n(\alpha))$, where
 $\hat{\tau}_n(\hat{\tau}_n(\alpha)) = \hat{\tau}_n(\alpha)$ (so $\hat{\tau}_n(\alpha) \in

@@ -33,6 +33,7 @@ then classifies particles by their vertical component under the
 horizontal ($\alpha_V = 0$), fermions have non-trivial vertical part.
 
 The complete logical chain is:
+
 $$
   \text{QOU} \;\xrightarrow{d_q}\;
   \text{$q$-exterior derivative}

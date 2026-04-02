@@ -4,6 +4,7 @@ export default simulator({
   label: "sim:valley-stability",
   title:
     "Valley of stability: beta-stability curve vs integer lattice",
+  html: "folio-assistant/simulators/valley_stability.html",
   tags: [
     "simulator",
     "valley-of-stability",
@@ -21,10 +22,12 @@ export default simulator({
     "def:substrate-parameter",
     "prop:local-substrate-q",
   ],
-  html: "folio-assistant/simulators/valley_stability.html",
   defaultView: {
     name: "default",
-    title: "Default valley-of-stability view",
-    params: {},
+    title: "Default: valley of stability",
+    params: {
+      q: 1.1097,
+      Z_max: 118,
+    },
   },
 });

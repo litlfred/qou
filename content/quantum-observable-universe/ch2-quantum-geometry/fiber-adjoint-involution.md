@@ -13,6 +13,7 @@ which:
    determines $\mathbb{P}(V)$ from $\mathrm{Ad}(A)$ and vice versa;
 3. the non-degeneracy of the [Frobenius pairing](#def:frobenius-pairing) forces the
    observability condition:
+
    $$
      \mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0.
    $$

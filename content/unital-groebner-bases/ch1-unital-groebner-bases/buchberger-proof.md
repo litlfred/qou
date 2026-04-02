@@ -1,6 +1,7 @@
 We show that if all $S$-polynomials reduce to zero and $f \in I$,
 then $f$ has a Gröbner basis representation. Since $G$ generates $I$,
 choose a representation
+
 $$
   f = \sum_i h_i \cdot g_{\gamma_i} \cdot h_i', \qquad
   h_i, h_i' \in A,\; \gamma_i \in \Gamma.
@@ -21,6 +22,7 @@ and $g := \sum_{i \in T} \mathrm{LT}(h_i) \cdot g_i \cdot \mathrm{LT}(h_i')$.
 By unitality, the leading coefficients are units, so
 [Proposition ($S$-polynomial decomposition)](#prop:s-polynomial-decomposition)
 applies:
+
 $$
   g = \sum_{i \neq j \in T} d_{i,j}\, S_{i,j}.
 $$

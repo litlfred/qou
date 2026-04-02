@@ -1,6 +1,7 @@
 
 The categorical Euler characteristic $\chi(A_n) = \mathrm{tr}(\mathrm{id}_{A_n})$
 is the rigidity trace of the identity, computed as the composition
+
 $$
   \chi(A_n)
   \;=\;
@@ -27,6 +28,7 @@ $\mathrm{coev}_{n+1} = \mathrm{coev}_n$ as elements of
 $\mathrm{Hom}(\mathbf{1}, \mathbf{1}) \cong R$.
 
 Therefore:
+
 $$
   \chi(A_{n+1})
   \;=\;
