@@ -32,6 +32,7 @@ export default chapter({
       blocks: [
         "no-quasi-zeros",
         "snake-identity",
+        "monoidal-justification",
         "rigid-monoidal-category",
         "rigid-monoidal-vect",
       ],

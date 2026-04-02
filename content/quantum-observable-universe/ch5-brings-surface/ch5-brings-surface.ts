@@ -165,7 +165,6 @@ export default chapter({
         "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
-        "skein-shell-correction",
         "shell-closure-normal-form",
         "skein-finiteness-bound",
         "spectral-decomposition-qvalue",
