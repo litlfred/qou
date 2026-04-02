@@ -56,7 +56,8 @@ export async function buildPaper(
   const chapterSlugs = new Map<number, string>();
   const blocks = new Map<string, { block: Block; mdContent: string; sourceDir?: string }>();
 
-  for (const chRef of paper.chapters) {
+  for (let chIdx = 0; chIdx < paper.chapters.length; chIdx++) {
+    const chRef = paper.chapters[chIdx];
     const chDir = join(paperDir, chRef.dir);
     const chPath = join(chDir, `${chRef.dir}.ts`);
 
@@ -72,8 +73,8 @@ export async function buildPaper(
 
       // Extract slug from dir name: "ch1-quantum-observable-universe" → "quantum-observable-universe"
       const slug = chRef.dir.replace(/^ch\d+-/, "");
-      const key = chapter.number ?? -(resolvedChapters.length);
-      chapterSlugs.set(key, slug);
+      // Use manifest index as key to preserve author-defined chapter order
+      chapterSlugs.set(chIdx, slug);
 
       // Load blocks from the chapter directory
       for (const sec of chapter.sections) {
@@ -113,10 +114,10 @@ export async function buildPaper(
   const chapters = new Map<number, string>();
   let astValid = true;
 
-  for (const chapter of resolvedChapters) {
+  for (let i = 0; i < resolvedChapters.length; i++) {
+    const chapter = resolvedChapters[i];
     const latex = renderChapter(chapter, blocks, opts);
-    const chKey = chapter.number ?? -(resolvedChapters.indexOf(chapter) + 1);
-    chapters.set(chKey, latex);
+    chapters.set(i, latex);
 
     // AST validation
     const ast = validateLatexAst(latex);
