@@ -1,7 +1,20 @@
 This appendix carries out the atomic mass calculation for every
-naturally occurring element ($Z = 1$ through $Z = 92$) from the
-QOU topological mass formula.  Every intermediate step is shown
-so that the reader can reproduce each result independently.
+known element ($Z = 1$ through $Z = 118$) from the QOU topological
+mass formula.  Every intermediate step is shown so that the reader
+can reproduce each result independently.
+
+The elements divide into two groups:
+
+- **Naturally occurring** ($Z = 1$--$92$, Hydrogen through
+  Uranium): formed in stellar nucleosynthesis under ambient
+  substrate parameter $q = q_0$.  Observed masses are precise
+  (AME2020).
+
+- **Synthetic** ($Z = 93$--$118$, Neptunium through Oganesson):
+  produced in nuclear reactors (Z = 93--100) or heavy-ion
+  accelerators (Z = 101--118).  Observed masses carry larger
+  uncertainties; for $Z > 109$ the AME2020 values are
+  extrapolated from systematics.
 
 ## The topological mass formula
 
@@ -106,4 +119,46 @@ calculation shows the explicit $B/A$ value used.
 Observed atomic masses $M_o$ are taken from the AME2020 Atomic
 Mass Evaluation (nuclear mass plus $Z \cdot m_e$), expressed in
 MeV/$c^2$.  The most stable (longest-lived) isotope is listed for
-each element.
+each element.  For $Z > 109$, AME2020 provides extrapolated
+values with uncertainties of order $\sim 0.5$--$1$ MeV.
+
+## The $q$-torsion hypothesis for synthetic elements
+
+Synthetic elements ($Z \geq 93$) were assembled under conditions
+very different from stellar nucleosynthesis:
+
+1. **Neutron capture in reactors** ($Z = 93$--$100$): high
+   thermal neutron flux, moderate gauge-field curvature.
+   The local substrate parameter is expected to be close to
+   $q_0$, so deviations should be small.
+
+2. **Heavy-ion fusion** ($Z = 101$--$118$): nuclei are created
+   in transient heavy-ion collision fireballs
+   ($\sqrt{s_{NN}} \sim$ GeV, lifetime $\sim 10^{-23}$ s)
+   where the quark-gluon plasma produces concentrated
+   gauge-field curvature
+   ([half-life as $q$-probe](#rem:half-life-as-q-probe)).
+   The local substrate parameter in the fireball is
+   $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|(p) > q_0$.
+
+In the QOU framework, the nuclear Skein polynomial is evaluated
+at the substrate parameter of the formation environment.  If the
+crossing resolutions "lock in" at the formation-time $q$, then
+superheavy nuclei assembled at $q_{\mathrm{eff}} > q_0$ carry a
+residual $q$-torsion imprint.  The topological mass formula
+evaluated at the ambient $q_0$ will therefore show systematic
+deviations for accelerator-produced nuclei — deviations that
+grow with $Z$ as the $q$-stability window narrows
+([stability ranges](#rem:q-stability-ranges): for $Z > 50$,
+$\Delta q < 0.01$).
+
+**Prediction.** The percentage deviation between QOU-predicted
+and observed masses should be:
+- $< 0.01\%$ for naturally occurring elements ($Z \leq 92$)
+- Systematically larger ($\sim 0.1$--$0.5\%$) for synthetic
+  superheavy elements ($Z \geq 101$), with the deviation
+  increasing monotonically with $Z$
+
+This is a falsifiable prediction: improved mass measurements of
+superheavy elements (e.g.\ at RIKEN or GSI) would either confirm
+or refute the $q$-torsion formation hypothesis.

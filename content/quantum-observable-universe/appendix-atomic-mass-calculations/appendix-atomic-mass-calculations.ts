@@ -4,7 +4,7 @@ import { chapter, section } from "../../schema/builders";
  * Appendix C: Atomic Mass Calculations.
  *
  * Self-contained, fully worked calculations of the atomic mass for
- * every naturally occurring element (Z = 1 to 92) from the QOU
+ * every known element (Z = 1 to 118) from the QOU
  * topological mass formula.  Each step is shown explicitly so
  * that any reader can verify the arithmetic independently.
  *
@@ -25,7 +25,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Worked calculations for all elements ($Z = 1$ to $92$)",
+      title: "Worked calculations for all elements ($Z = 1$ to $118$)",
       label: "sec:amc-calculations",
       blocks: [
         "amc-calculations",
