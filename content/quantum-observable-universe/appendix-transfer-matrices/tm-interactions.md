@@ -96,7 +96,7 @@ shell $n$ is $T_{pp}^n$ (the $n$-th matrix power), and
 the energy scales as $\lambda_+^n$ where $\lambda_+$ is
 the larger eigenvalue of $T_{pp}$.
 
-## 4. Pair creation ($\gamma \to e^- e^+$)
+## 4. Pair creation ($\gamma\gamma \to e^- e^+$)
 
 $$
   \boxed{
@@ -110,8 +110,13 @@ $$
   }
 $$
 
-Pair creation has the same matrix as $\beta^+$ decay:
-a chirality-changing crossing replacement.
+Pair creation consumes a **two-photon crossing** (unknot–unknot)
+and produces a **particle–antiparticle crossing** (trefoil–mirror
+trefoil).  A single photon cannot pair-produce in vacuum
+(momentum conservation requires either a second photon or a
+nearby nucleus to absorb recoil).  The transfer matrix change
+is the same as $\beta^+$ decay: a chirality-changing crossing
+replacement.
 
 ## 5. Double beta decay ($2\beta$)
 
@@ -178,6 +183,6 @@ type.  A single crossing carries no type information.
 | $\beta^+$ decay ($\mathfrak{u} \to \mathfrak{d}$) | $-\Delta_\beta$ | $\frac{q^2-1}{2} T_{pp} - \frac{qs}{2}\mathbb{I}$ |
 | Photon absorption | $T_{pp}$ (appended) | $\begin{pmatrix} q-q^{-1} & 1 \\ 1 & 0 \end{pmatrix}$ (new factor) |
 | Photon emission | $T_{pp}^{-1}$ (removed) | Remove one factor from chain |
-| Pair creation $\gamma \to e^- e^+$ | $-\Delta_\beta$ | Same as $\beta^+$ |
+| Pair creation $\gamma\gamma \to e^- e^+$ | $-\Delta_\beta$ | Same as $\beta^+$ |
 | Pair annihilation $e^- e^+ \to \gamma\gamma$ | $\Delta_\beta$ | Same as $\beta^-$ |
 | $2\beta$ (quadratic term) | $\Delta_\beta \cdot C \cdot \Delta_\beta$ | Depends on intervening matrices $C$ |
