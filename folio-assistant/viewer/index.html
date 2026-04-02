@@ -123,9 +123,14 @@
     .sb-ch-body > .sb-ch-body-inner{overflow:hidden}
     .sb-ch.open+.sb-ch-body{grid-template-rows:1fr}
     .sb-ch .katex,.sb-ch .katex *{color:inherit!important}
-    .sb-sec{padding:.25rem .8rem .25rem 1.2rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
+    .sb-sec{padding:.25rem .8rem .25rem 1.2rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s;display:flex;align-items:center;gap:.3rem}
     .sb-sec:hover{color:var(--ac);border-left-color:var(--ac)}
     .sb-sec.active{color:var(--ac);border-left-color:var(--ac);font-weight:500}
+    .sb-sec-arrow{font-size:.45rem;transition:transform .15s;flex-shrink:0}
+    .sb-sec-wrap.open > .sb-sec .sb-sec-arrow{transform:rotate(90deg)}
+    .sb-blks{display:grid;grid-template-rows:0fr;transition:grid-template-rows .15s ease}
+    .sb-blks > .sb-blks-inner{overflow:hidden}
+    .sb-sec-wrap.open > .sb-blks{grid-template-rows:1fr}
     .sb-sec .katex,.sb-sec .katex *{color:inherit!important}
     .sb-blk{padding:.15rem .8rem .15rem 1.8rem;color:var(--fg-d);cursor:pointer;font-size:.6rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
     .sb-blk:hover{color:var(--fg)}
@@ -4146,7 +4151,8 @@
 
                 // Populate block list in sidebar
                 const blkList = sEl.nextElementSibling;
-                if (blkList && blkList.children.length === 0) {
+                const blkInner = blkList?.querySelector('.sb-blks-inner');
+                if (blkInner && blkInner.children.length === 0) {
                   for (const bs of secDetail.blockStubs || []) {
                     const kind = bs.kind[0].toUpperCase();
                     const bEl = mk('div','sb-blk');
@@ -4185,7 +4191,7 @@
                         }
                       }, 150);
                     };
-                    blkList.appendChild(bEl);
+                    blkInner.appendChild(bEl);
                   }
                 }
               });
@@ -4301,8 +4307,8 @@
         sb.appendChild(chEl);
 
         for (const sec of ch.sections) {
+          const secWrap = mk('div','sb-sec-wrap');
           const sEl = mk('div','sb-sec');
-          sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
 
           if (!isLazy) {
@@ -4318,26 +4324,28 @@
             if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
             if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
             if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
-            sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : '<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem"></span>'}`;
+            sEl.innerHTML = `<span class="sb-sec-arrow">&#9654;</span><span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : '<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem"></span>'}`;
           } else {
             // Lazy: badges placeholder (filled when chapter detail loads)
             const blockCount = sec._blockCount || 0;
-            sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span><span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${blockCount} block${blockCount !== 1 ? 's' : ''}</span>`;
+            sEl.innerHTML = `<span class="sb-sec-arrow">&#9654;</span><span style="flex:1">${inl(sec.title)}</span><span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${blockCount} block${blockCount !== 1 ? 's' : ''}</span>`;
           }
 
-          const blkList = mk('div','');
-          blkList.style.display = 'none';
+          const blkList = mk('div','sb-blks');
+          const blkInner = mk('div','sb-blks-inner');
+          blkList.appendChild(blkInner);
 
           sEl.onclick = (e) => {
             e.stopPropagation();
+            secWrap.classList.toggle('open');
             showChapter(ch.number);
             requestAnimationFrame(() => {
               const t = document.getElementById(sec.label);
               if (t) window.scrollTo({ top: t.offsetTop - 48, behavior: 'instant' });
             });
-            blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
-          chBodyInner.appendChild(sEl);
+          secWrap.appendChild(sEl);
+          chBodyInner.appendChild(secWrap);
 
           if (!isLazy) {
             // Non-lazy: populate block list immediately
@@ -4399,12 +4407,12 @@
                   }
                 });
               };
-              blkList.appendChild(bEl);
+              blkInner.appendChild(bEl);
             }
           }
           // Lazy: block list populated by loadChapterDetail callback
 
-          chBodyInner.appendChild(blkList);
+          secWrap.appendChild(blkList);
         }
         sb.appendChild(chBody);
       }

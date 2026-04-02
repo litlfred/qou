@@ -398,13 +398,12 @@
       const secList = h("div", "sb-secs");
       const secInner = h("div", "sb-secs-inner");
       for (const sec of ch.sections || []) {
-        const secEl = h("div", "sb-sec", esc(sec.title));
+        const secWrap = h("div", "sb-sec-wrap");
+        const secEl = h("div", "sb-sec", `<span class="sb-sec-arrow">&#9654;</span> ${esc(sec.title)}`);
         if (sec.label) secEl.dataset.sbLabel = sec.label;
-        secEl.onclick = () => {
-          const target = document.getElementById(sec.label || "");
-          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-        };
-        secInner.appendChild(secEl);
+
+        const blkList = h("div", "sb-blks");
+        const blkInner = h("div", "sb-blks-inner");
 
         // block-level labels under each section
         for (const blk of sec.blocks || []) {
@@ -417,8 +416,20 @@
             const target = document.getElementById(blk.label);
             if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
           };
-          secInner.appendChild(blkEl);
+          blkInner.appendChild(blkEl);
         }
+        blkList.appendChild(blkInner);
+
+        secEl.onclick = (e) => {
+          e.stopPropagation();
+          secWrap.classList.toggle("open");
+          const target = document.getElementById(sec.label || "");
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+
+        secWrap.appendChild(secEl);
+        secWrap.appendChild(blkList);
+        secInner.appendChild(secWrap);
       }
       secList.appendChild(secInner);
       chEl.onclick = () => { chEl.classList.toggle("open"); };

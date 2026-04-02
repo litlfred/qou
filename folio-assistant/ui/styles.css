@@ -85,9 +85,14 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .sb-secs{display:grid;grid-template-rows:0fr;transition:grid-template-rows .15s ease;padding-left:1rem}
 .sb-secs > .sb-secs-inner{overflow:hidden}
 .sb-ch.open + .sb-secs{grid-template-rows:1fr}
-.sb-sec{padding:.2rem 1rem;cursor:pointer;font-family:var(--f-body);font-size:.7rem;color:var(--fg-d);transition:color .15s}
+.sb-sec{padding:.2rem 1rem;cursor:pointer;font-family:var(--f-body);font-size:.7rem;color:var(--fg-d);transition:color .15s;display:flex;align-items:center;gap:.2rem}
 .sb-sec:hover{color:var(--fg-b)}
 .sb-sec.active{color:var(--ac)}
+.sb-sec-arrow{font-size:.5rem;transition:transform .15s;flex-shrink:0}
+.sb-sec-wrap.open > .sb-sec .sb-sec-arrow{transform:rotate(90deg)}
+.sb-blks{display:grid;grid-template-rows:0fr;transition:grid-template-rows .15s ease}
+.sb-blks > .sb-blks-inner{overflow:hidden}
+.sb-sec-wrap.open > .sb-blks{grid-template-rows:1fr}
 .sb-blk{padding:.15rem 1rem .15rem 1.8rem;cursor:pointer;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);transition:color .15s,background .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sb-blk:hover{color:var(--fg-b)}
 .sb-blk.active{color:var(--ac);background:var(--bg-r)}
