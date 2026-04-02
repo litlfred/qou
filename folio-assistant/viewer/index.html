@@ -1379,7 +1379,7 @@
             row.className = 'pd-ch-row';
             const cb = document.createElement('input');
             cb.type = 'checkbox'; cb.checked = true;
-            cb.dataset.chNum = ch.number != null ? String(ch.number) : '';
+            cb.dataset.chNum = String(chKey(ch));
             row.appendChild(cb);
             const span = document.createElement('span');
             span.textContent = (ch.number != null ? ch.number + '. ' : '') + ch.title;
@@ -1547,9 +1547,9 @@
           for (const {block: b, html: bh, texBlocks: tx} of blockData) {
             const loc = blockChSec.get(b.label);
             if (loc) {
-              const chKey = loc.chNum ?? loc.chTitle;
-              if (chKey !== lastCh) {
-                lastCh = chKey; lastSec = null;
+              const chGroup = loc.chNum ?? loc.chTitle;
+              if (chGroup !== lastCh) {
+                lastCh = chGroup; lastSec = null;
                 win.document.write(`<h2 style="font-family:var(--f-head);font-size:1.1rem;margin-top:1.5rem;border-bottom:2px solid var(--brd);padding-bottom:.3rem">${loc.chNum != null ? loc.chNum + '. ' : ''}${esc(loc.chTitle)}</h2>`);
               }
               if (loc.secTitle !== lastSec) {
@@ -2510,9 +2510,9 @@
         win.document.write(`<div style="font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:1rem">${leanEntries.length} Lean source files</div>`);
         let lnLastCh = null, lnLastSec = null;
         for (const le of leanEntries) {
-          const chKey = le.chNum ?? le.chTitle;
-          if (chKey !== lnLastCh) {
-            lnLastCh = chKey; lnLastSec = null;
+          const chGroup = le.chNum ?? le.chTitle;
+          if (chGroup !== lnLastCh) {
+            lnLastCh = chGroup; lnLastSec = null;
             if (le.chTitle) win.document.write(`<h3 style="font-family:var(--f-head);font-size:.95rem;margin-top:1.2rem;border-bottom:1px solid var(--brd);padding-bottom:.2rem">${le.chNum != null ? le.chNum + '. ' : ''}${esc(le.chTitle)}</h3>`);
           }
           if (le.secTitle && le.secTitle !== lnLastSec) {
@@ -3598,6 +3598,9 @@
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
 
+    /** Stable chapter identifier: number if present, else tabLabel or dir. */
+    function chKey(ch) { return ch.number != null ? ch.number : (ch.tabLabel || ch._dir || ch.title); }
+
     /** Extract sorry references from Lean source: `-- Ref: [key] url` lines before `sorry`. */
     function extractSorryRefs(source) {
       if (!source) return [];
@@ -4061,10 +4064,11 @@
       const restoredChapters = new Set(_storedChapters || []);
 
       // ── Chapter containers (one per chapter, show/hide) ──
-      const chapterDivs = new Map(); // number → DOM element
+      const chapterDivs = new Map(); // chKey → DOM element
       const chapterHydrated = new Set(); // track which chapters have been hydrated
       const sidebarChapterBodies = new Map(); // chapterDir → sidebar body element
       let activeChapter = null;
+
 
       // ── Lazy section loading ──────────────────────────────
       async function loadSection(paperId, chapterDir, sectionIndex, sectionDiv) {
@@ -4181,7 +4185,7 @@
                     }
 
                     bEl.onclick = () => {
-                      showChapter(ch.number);
+                      showChapter(chKey(ch));
                       setTimeout(() => {
                         const t = document.getElementById(bs.label);
                         if (t) {
@@ -4224,7 +4228,7 @@
         cd.style.display = '';
 
         // Lazy load: trigger chapter detail + section loads on first show
-        const ch = p.chapters.find(c => c.number === num);
+        const ch = p.chapters.find(c => chKey(c) === num);
         if (isLazy && ch?._dir && !chapterHydrated.has(num)) {
           chapterHydrated.add(num);
           loadChapterDetail(p.id, ch).then(() => {
@@ -4264,7 +4268,7 @@
         for (const ch of p.chapters) {
           for (const sec of ch.sections) {
             for (const b of sec.blocks) {
-              if (b.label === label) return ch.number;
+              if (b.label === label) return chKey(ch);
             }
           }
         }
@@ -4275,7 +4279,7 @@
             if (detail) {
               for (const sec of detail.sections) {
                 for (const bs of sec.blockStubs || []) {
-                  if (bs.label === label) return ch.number;
+                  if (bs.label === label) return chKey(ch);
                 }
               }
             }
@@ -4286,7 +4290,7 @@
 
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
-        chEl.dataset.num = ch.tabLabel || (ch.number != null ? String(ch.number) : '');
+        chEl.dataset.num = String(chId);
         chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number != null ? ch.number + '. ' : ''}${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
         const chBodyInner = mk('div','sb-ch-body-inner');
@@ -4294,7 +4298,8 @@
         if (ch._dir) sidebarChapterBodies.set(ch._dir, chBodyInner);
 
         // Restore open/closed state from localStorage
-        if (restoredChapters.has(String(ch.number))) {
+        const chId = chKey(ch);
+        if (restoredChapters.has(String(chId))) {
           chEl.classList.add('open');
         }
 
@@ -4302,7 +4307,7 @@
         chEl.onclick = (e) => {
           chEl.classList.toggle('open');
           saveSbOpenChapters();
-          showChapter(ch.number);
+          showChapter(chId);
         };
         sb.appendChild(chEl);
 
@@ -4338,7 +4343,7 @@
           sEl.onclick = (e) => {
             e.stopPropagation();
             secWrap.classList.toggle('open');
-            showChapter(ch.number);
+            showChapter(chId);
             requestAnimationFrame(() => {
               const t = document.getElementById(sec.label);
               if (t) window.scrollTo({ top: t.offsetTop - 48, behavior: 'instant' });
@@ -4392,7 +4397,7 @@
               }
 
               bEl.onclick = () => {
-                showChapter(ch.number);
+                showChapter(chId);
                 requestAnimationFrame(() => {
                   const t = document.getElementById(b.label);
                   if (t) {
@@ -4493,7 +4498,7 @@
       // Render each chapter into its own hidden div
       for (const ch of p.chapters) {
         const cd = mk('div','ch');
-        cd.dataset.chNum = ch.number != null ? String(ch.number) : '';
+        cd.dataset.chNum = String(chKey(ch));
         cd.style.display = 'none';
         if (ch.label) cd.id = ch.label;
         cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text">${ch.number != null ? `<span class="n">Chapter ${ch.number}.</span> ` : ''}${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
@@ -4525,7 +4530,7 @@
         if (ch.bibliography?.length) {
           cd.appendChild(renderChapterBibliography(ch.bibliography));
         }
-        chapterDivs.set(ch.number, cd);
+        chapterDivs.set(chKey(ch), cd);
         app.appendChild(cd);
       }
 
@@ -4541,7 +4546,7 @@
         for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
           if (b.cites) for (const k of b.cites) {
             if (!refCitedBy.has(k)) refCitedBy.set(k, []);
-            refCitedBy.get(k).push({ label: b.label, kind: b.kind, title: b.title, chapter: ch.number });
+            refCitedBy.get(k).push({ label: b.label, kind: b.kind, title: b.title, chapter: chKey(ch) });
           }
         }
 
@@ -4572,7 +4577,7 @@
           qaHtml += `<details class="bib-dangling" open><summary>${danglingCites.length} dangling citation(s) — key cited but not in references.ts</summary><ul>`;
           for (const k of danglingCites) {
             const citers = refCitedBy.get(k) || [];
-            const links = citers.map(c => `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${c.chapter});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`).join(', ');
+            const links = citers.map(c => `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${JSON.stringify(c.chapter)});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`).join(', ');
             qaHtml += `<li><code>${esc(k)}</code> — cited by: ${links}</li>`;
           }
           qaHtml += `</ul></details>`;
@@ -4612,7 +4617,7 @@
           let backlinks = '';
           if (citers.length) {
             backlinks = `<div class="bib-backlinks">Cited by: ${citers.map(c =>
-              `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${c.chapter});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`
+              `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${JSON.stringify(c.chapter)});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`
             ).join(', ')}</div>`;
           }
 
@@ -4700,7 +4705,7 @@
             }
 
             stub.onclick = () => {
-              showChapter(ch.number);
+              showChapter(chKey(ch));
               requestAnimationFrame(() => {
                 if (b.label) {
                   const el = document.getElementById(b.label);
@@ -4780,7 +4785,7 @@
       };
 
       // Show first chapter (or the one containing pendingScroll)
-      let startChapter = p.chapters[0]?.number || 1;
+      let startChapter = p.chapters[0] ? chKey(p.chapters[0]) : 1;
 
       if (pendingScroll && isLazy) {
         // In lazy mode, load all chapter details to find which chapter contains the label
