@@ -16,6 +16,7 @@ $$
   t_{1/2}(p, A)
   \;=\;
   \frac{\ln 2}{\Gamma_\beta(p, A)}
+
 $$
 
 where the decay rate $\Gamma_\beta$ depends on $q$ and the single
@@ -45,6 +46,7 @@ $$
   |\mathcal{M}_q|^2
   \;\cdot\;
   f(\mathcal{Q}_q)
+
 $$
 
 where every factor is determined by $q$:
@@ -75,6 +77,7 @@ where every factor is determined by $q$:
      \left|
        \frac{\hat{V}_i^{\,\mathrm{par}}}{\hat{V}_i^{\,\mathrm{dau}}}
      \right|^2
+
    $$
 
    where $\hat{V}_i = z \cdot a_i + b_i$ is the Markov-traced
@@ -129,6 +132,7 @@ $$
   \;=\;
   \frac{243\,\mathbf{E}_{\times}}{2\,N_v^4}
   \;\cdot\; \mu_0
+
 $$
 
 where $N_v = v / (\mathbf{E}_{\times}\,\mu_0)$ is the effective crossing
@@ -181,6 +185,7 @@ $$
   5\,\frac{q^2 + 1}{q^2 - 1}
   \;\approx\; 48
   \quad\text{at } q = q_0.
+
 $$
 
 A $1\%$ shift in $q$ changes decay rates by $\sim 50\%$.

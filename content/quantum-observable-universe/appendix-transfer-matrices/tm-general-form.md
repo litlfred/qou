@@ -10,6 +10,7 @@ $$
     c(q - q^{-1}) + d & c \\
     c & d
   \end{pmatrix}
+
 $$
 
 The coefficients $(c, d) \in \mathbb{Z}[q^{\pm 1/2}]$ depend
@@ -35,6 +36,7 @@ $$
   T(c, d)
   \;\cdot\;
   \begin{pmatrix} a \\ b \end{pmatrix}
+
 $$
 
 Explicitly:
@@ -43,6 +45,7 @@ $$
   a' \;=\; ac(q - q^{-1}) + ad + bc,
   \qquad
   b' \;=\; ac + bd
+
 $$
 
 ## Properties of $T(c, d)$
@@ -52,6 +55,7 @@ $$
 $$
   \det T(c, d) \;=\; d\bigl[c(q - q^{-1}) + d\bigr] - c^2
   \;=\; cd(q - q^{-1}) + d^2 - c^2
+
 $$
 
 **Eigenvalues** (when $c \neq 0$):
@@ -64,6 +68,7 @@ $$
     \;\pm\;
     \sqrt{\bigl[c(q - q^{-1})\bigr]^2 + 4c^2}
   \Bigr]
+
 $$
 
 **Special cases:**

@@ -8,6 +8,7 @@ $$
   \wp_q(z) \;=\; \frac{1}{z^2}
   \;+\; \sum_{\omega \in \Lambda_q \setminus \{0\}}
   \left(\frac{1}{(z - \omega)^2} - \frac{1}{\omega^2}\right).
+
 $$
 
 **Period lattice.**
@@ -25,6 +26,7 @@ $$
   \mathbb{C}/\Lambda_q \;\xrightarrow{\;\sim\;}\; \mathcal{E}_q,
   \qquad
   z \;\longmapsto\; [\wp_q(z) : \wp_q'(z) : 1]
+
 $$
 
 is an isomorphism of Riemann surfaces (with $0 \mapsto [0:1:0]$, the
@@ -38,6 +40,7 @@ $$
   \wp_q'(z)^2 \;=\; 4\,\wp_q(z)^3
   \;+\; 4\,p(q)\,\wp_q(z)
   \;+\; 4\,r(q),
+
 $$
 
 which is the standard Weierstrass equation $\wp'^2 = 4\wp^3 - g_2\wp - g_3$
@@ -45,6 +48,7 @@ with invariants
 
 $$
   g_2(q) = -4\,p(q), \qquad g_3(q) = -4\,r(q).
+
 $$
 
 The factor of $4$ arises from converting the short Weierstrass form

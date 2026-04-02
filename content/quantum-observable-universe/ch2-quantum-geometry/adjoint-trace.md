@@ -11,6 +11,7 @@ $$
     \circ \mathrm{coev}_V
   \;\in\;
   \mathrm{Hom}(\mathbf{1}, \mathbf{1}) \cong R,
+
 $$
 
 where $\mathrm{coev}_V \colon \mathbf{1} \to V \otimes V^{\vee}$ is
@@ -30,10 +31,12 @@ This trace has two key properties:
 
 In the archimedean realisation with $G = \mathrm{SU}(2)$, the adjoint
 trace recovers the Killing form on $\mathfrak{su}(2)$:
+
 $$
   \mathrm{tr}_{\mathrm{Ad}}(f)
   \;=\;
   \mathrm{tr}(\mathrm{ad}(f))
   \;=\;
   -2\,\mathrm{tr}_{\mathbb{C}^2}(f).
+
 $$

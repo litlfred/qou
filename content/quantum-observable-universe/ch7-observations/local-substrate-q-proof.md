@@ -5,6 +5,7 @@ $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{\,2}$ with
 $\hbar_q = 1 - q^{-1}$ (see the proof of
 [skein mass relation](#rem:skein-mass-relation)). Rearranging yields
 the equation above. Substituting the numerical values,
+
 $$
   (1 - q^{-1})^{2}
   = \frac{2.02988}{206.7683}
@@ -13,7 +14,9 @@ $$
   1 - q^{-1} \approx 0.09908,
   \qquad
   q \approx 1.10998.
+
 $$
+
 The numerical values are independently verified by the SnapPy witness
 ([knot volumes verification](#prf:knot-volumes-verification)), which computes
 $q = 1.10998$ from $\mathrm{Vol}(4_1) = 2.02988321281931$ and

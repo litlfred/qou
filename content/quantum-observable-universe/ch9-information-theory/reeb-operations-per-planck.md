@@ -7,6 +7,7 @@ one Reeb circuit is*
 
 $$
   n_R(q) \;=\; t_P(q) \;=\; \frac{q}{q - 1} \;=\; \frac{1}{\hbar_q}.
+
 $$
 
 *Each iteration is one braiding evaluation (one $R$-matrix
@@ -58,6 +59,7 @@ The information processed per Planck unit is
 
 $$
   I_P(q) \;=\; n_R(q) \cdot \eta_q
+
 $$
 
 where $\eta_q = (2q-1)/q^3$ is the operational entropy

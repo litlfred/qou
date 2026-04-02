@@ -16,6 +16,7 @@ $$
     c(q - q^{-1}) + d & c \\
     c & d
   \end{pmatrix}
+
 $$
 
 with crossing coefficients $(c, d)$ depending on the pair type:
@@ -32,6 +33,7 @@ $$
     q^2(q - q^{-1}) - qs & q^2 \\
     q^2 & -qs
   \end{pmatrix}
+
 $$
 
 $$
@@ -41,6 +43,7 @@ $$
       & \frac{1+q^2}{2} \\[4pt]
     \frac{1+q^2}{2} & -\frac{q s}{2}
   \end{pmatrix}
+
 $$
 
 where $s = q^{1/2} - q^{-1/2}$ is the Skein amplitude.
@@ -56,6 +59,7 @@ $$
   \;=\; T_{\mathrm{mix}}(q) - T_{nn}(q)
   \;=\; T_{pp}(q) - T_{\mathrm{mix}}(q)
   \;=\; \Delta_\beta^{\mathrm{mix} \to pp}(q)
+
 $$
 
 *There is a single universal beta decay matrix:*
@@ -68,6 +72,7 @@ $$
     \;+\;
     \tfrac{1}{2}\, q \, s \;\mathbb{I}
   }
+
 $$
 
 *where $\mathbb{I}$ is the $2 \times 2$ identity.*
@@ -104,6 +109,7 @@ $$
     +0.0337 & -0.1161 \\
     -0.1161 & +0.0579
   \end{pmatrix}
+
 $$
 
 ## Universality
@@ -119,6 +125,7 @@ This is a consequence of the crossing coefficients being
 
 $$
   T_{\mathrm{mix}} = \tfrac{1}{2}(T_{pp} + T_{nn})
+
 $$
 
 The mixed matrix is exactly the midpoint.  Therefore the step
@@ -139,6 +146,7 @@ at position $p$), the transfer matrix product factors as:
 
 $$
   M_i^{\mathrm{par}}(q) = L_i(q) \cdot T_{\mathrm{par}}(q) \cdot R_i(q)
+
 $$
 
 where $L_i$ is the product of matrices to the left of the
@@ -147,12 +155,14 @@ converting crossing (unchanged) and $R_i$ to the right
 
 $$
   M_i^{\mathrm{dau}}(q) = L_i(q) \cdot (T_{\mathrm{par}}(q) + \Delta_\beta(q)) \cdot R_i(q)
+
 $$
 
 The change in the transfer matrix product:
 
 $$
   \Delta M_i(q) = L_i(q) \cdot \Delta_\beta(q) \cdot R_i(q)
+
 $$
 
 The change in the Markov-traced volume:
@@ -161,6 +171,7 @@ $$
   \Delta \hat{V}_i(q)
   \;=\;
   z \cdot (\Delta M_i)_{11} + (\Delta M_i)_{21}
+
 $$
 
 The $\mathcal{Q}_q$-value
@@ -170,6 +181,7 @@ $$
   \ln \frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}
   \;=\;
   \sum_{i=0}^{p} \ln \frac{\hat{V}_i^{\mathrm{dau}}(q)}{\hat{V}_i^{\mathrm{par}}(q)}
+
 $$
 
 where the sum runs only over generators affected by the
@@ -192,11 +204,13 @@ $$
   M_0^{\mathrm{par}} = T_{\mathrm{mix}} \cdot T_{\mathrm{mix}},
   \quad
   M_0^{\mathrm{dau}} = T_{pp} \cdot T_{\mathrm{mix}}
+
 $$
 
 $$
   \hat{V}_0^{\mathrm{par}} = 0.7684, \quad
   \hat{V}_0^{\mathrm{dau}} = 0.7510
+
 $$
 
 **Generator $\sigma_1$** (1 crossing: with nucleon 2):
@@ -209,11 +223,13 @@ $$
   M_1^{\mathrm{par}} = T_{nn},
   \quad
   M_1^{\mathrm{dau}} = T_{\mathrm{mix}}
+
 $$
 
 $$
   \hat{V}_1^{\mathrm{par}} = 1.3029, \quad
   \hat{V}_1^{\mathrm{dau}} = 1.2036
+
 $$
 
 **Skein polynomial ratio:**
@@ -225,11 +241,13 @@ $$
   \;=\;
   \frac{0.9039}{1.0011}
   \;=\; 0.9029
+
 $$
 
 $$
   \ln\!\left(\frac{P_{{}^3\mathrm{He}}}{P_{{}^3\mathrm{H}}}\right)
   \;=\; -0.1021
+
 $$
 
 Per-generator contribution:
@@ -255,6 +273,7 @@ $$
   L_i \cdot \Delta_\beta \cdot C_i \cdot \Delta_\beta \cdot R_i
   \;+\;
   (\text{linear terms})
+
 $$
 
 where $C_i$ is the product of unchanged matrices between the

@@ -4,6 +4,7 @@ tangent frame $(T_1, T_2)$.  Set $R = R_{\mathbb{P}^1(\mathbb{C})}$ and
 
 $$
   O(p) \;=\; p + R\,N(p).
+
 $$
 
 The *exceptional divisor* at $p$ is the fibre of the state bundle
@@ -17,6 +18,7 @@ $$
     \;:\;
     \phi \in [0,\pi],\; \psi \in [0,2\pi)
   \,\bigr\},
+
 $$
 
 where $\pi\colon \widetilde{M} \to M$ is the blow-up map that replaces $p$

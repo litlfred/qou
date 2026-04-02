@@ -25,6 +25,7 @@ $$
   - \mathcal{L}_{\mathrm{Coul}}
   - \mathcal{L}_{\mathrm{Pauli}}
   + \mathcal{L}_{\mathrm{pair}}
+
 $$
 
 with each term arising from the Skein polynomial structure of $L$:
@@ -38,6 +39,7 @@ with each term arising from the Skein polynomial structure of $L$:
    $$
      \mathcal{L}_{\mathrm{vol}}
      \;=\; \frac{q + q^{-1}}{2} \cdot \lambda_V \cdot A
+
    $$
 
    where $\lambda_V$ is the per-junction energy scale.
@@ -49,6 +51,7 @@ with each term arising from the Skein polynomial structure of $L$:
    $$
      \mathcal{L}_{\mathrm{surf}}
      \;=\; \frac{q + q^{-1}}{2} \cdot \lambda_S \cdot A^{2/3}.
+
    $$
 
 3. **Coulomb repulsion** (crossing asymmetry on $\mathfrak{p}$--$\mathfrak{p}$
@@ -63,6 +66,7 @@ with each term arising from the Skein polynomial structure of $L$:
      \mathcal{L}_{\mathrm{Coul}}
      \;=\; (q - q^{-1}) \cdot \lambda_C
      \cdot \frac{p(p-1)}{A^{1/3}}.
+
    $$
 
 4. **Pauli asymmetry** (antisymmetric product cost).  The hadron
@@ -74,6 +78,7 @@ with each term arising from the Skein polynomial structure of $L$:
    $$
      \mathcal{L}_{\mathrm{Pauli}}
      \;=\; \lambda_A \cdot \frac{(n - p)^2}{4A}.
+
    $$
 
 5. **Pairing** (Cooper-like Hopf loops).  Two identical nucleons
@@ -90,6 +95,7 @@ $$
   a_C = (q - q^{-1}) \cdot \lambda_C,
   \qquad
   a_S = \tfrac{1}{2}(q + q^{-1}) \cdot \lambda_S.
+
 $$
 
 At $q = q_0$: $a_V \approx 15.56$ MeV,
@@ -107,6 +113,7 @@ $$
   \;=\; \frac{q - q^{-1}}{q + q^{-1}}
   \cdot \frac{\lambda_C}{\lambda_V}
   \;=\; \tanh(\ln q) \cdot \frac{\lambda_C}{\lambda_V}
+
 $$
 
 controls the balance between the strong and electromagnetic

@@ -8,6 +8,7 @@ $$
   s^3 \cdot r(q)
   \;=\;
   \frac{5\,(s^2 + s - 1)\,(4s^4 - s^3 - 4s^2 + s + 4)}{27}.
+
 $$
 
 The factor $(s^2 + s - 1)$ vanishes at
@@ -16,6 +17,7 @@ $$
   s \;=\; \frac{\sqrt{5} - 1}{2}
   \;=\; \frac{1}{\varphi}
   \;=\; \varphi - 1,
+
 $$
 
 where $\varphi = (1 + \sqrt{5})/2$ is the golden ratio.
@@ -26,6 +28,7 @@ $$
   \;=\; \frac{1}{\varphi^2}
   \;=\; \frac{3 - \sqrt{5}}{2}
   \;\approx\; 0.382.
+
 $$
 
 At $q = q_{\mathrm{gold}}$, the constant term $r(q)$ vanishes
@@ -68,6 +71,7 @@ $$
   q - q_{\mathrm{gold}}
   \;=\; q_0 - 0.382
   \;=\; 0.7277,
+
 $$
 
 measures the **stability margin** of the Descartes universe:

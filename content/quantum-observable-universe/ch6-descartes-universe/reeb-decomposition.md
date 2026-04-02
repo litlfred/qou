@@ -8,6 +8,7 @@ on $M$ decomposes uniquely as
 
 $$
   \alpha = \alpha_H + \theta \wedge \iota_\xi\,\alpha,
+
 $$
 
 where $\alpha_H := \alpha - \theta \wedge \iota_\xi\,\alpha$ is the

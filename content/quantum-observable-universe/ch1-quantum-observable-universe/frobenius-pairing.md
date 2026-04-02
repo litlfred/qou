@@ -26,6 +26,7 @@ A \xrightarrow{\rho^{-1}} A \otimes \mathbf{1}
   \xrightarrow{\alpha^{-1}} (A \otimes A) \otimes A
   \xrightarrow{(\int_A \circ \mu) \otimes \mathrm{id}} \mathbf{1} \otimes A
   \xrightarrow{\lambda_A} A
+
 $$
 
 and its mirror are both equal to $\mathrm{id}_A$.

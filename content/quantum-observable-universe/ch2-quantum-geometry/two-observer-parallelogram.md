@@ -29,6 +29,7 @@ $$
   \;=\;
   \mathfrak{I}_{1,p}(\mathfrak{I}_{2,p}(\alpha_p))
   - \mathfrak{I}_{2,p}(\mathfrak{I}_{1,p}(\alpha_p)).
+
 $$
 
 Each observation perturbs the substrate parameter at $p$ by
@@ -41,6 +42,7 @@ $$
   [\mathfrak{I}_{1,p},\, \mathfrak{I}_{2,p}](\alpha_p)
   \;=\;
   [q_1'(p),\, q_2'(p)] \cdot (\alpha_V)_p.
+
 $$
 
 This vanishes if and only if $[q_1'(p), q_2'(p)] = 0$ (the shifted

@@ -1,6 +1,7 @@
 
 The categorical Euler characteristic $\chi(A_n) = \mathrm{tr}(\mathrm{id}_{A_n})$
 is the rigidity trace of the identity, computed as the composition
+
 $$
   \chi(A_n)
   \;=\;
@@ -13,6 +14,7 @@ $$
   \mathbf{1}\bigr)
   \;=\;
   \mathrm{ev}_n \circ \mathrm{coev}_n.
+
 $$
 
 Jet prolongation is a functor on $\mathbf{C}$ that preserves the
@@ -27,6 +29,7 @@ $\mathrm{coev}_{n+1} = \mathrm{coev}_n$ as elements of
 $\mathrm{Hom}(\mathbf{1}, \mathbf{1}) \cong R$.
 
 Therefore:
+
 $$
   \chi(A_{n+1})
   \;=\;
@@ -35,6 +38,7 @@ $$
   \mathrm{ev}_n \circ \mathrm{coev}_n
   \;=\;
   \chi(A_n).
+
 $$
 
 By induction, $\chi(A_n) = \chi(A_0)$ for all $n \geq 0$.

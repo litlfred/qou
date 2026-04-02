@@ -15,6 +15,8 @@ If $B$ admits a monomial ordering $<$, then the pair $(B, <)$ is an
 $0 \neq f \in A$, we say $\beta \in B$ *divides* $f$ (written
 $\beta \mid f$) if there exist $u, v \in B$ and $\lambda \in R^*$
 such that
+
 $$
   \lambda\,\mathrm{LT}(u \cdot \beta \cdot v) = \mathrm{LT}(f).
+
 $$

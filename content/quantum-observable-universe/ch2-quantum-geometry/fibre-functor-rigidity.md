@@ -4,6 +4,7 @@ The reason is cohomological: the observability axiom
 
 $$
   \mathrm{Hom}_{\mathbf{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0
+
 $$
 
 is equivalent to the vanishing of zeroth adjoint cohomology,

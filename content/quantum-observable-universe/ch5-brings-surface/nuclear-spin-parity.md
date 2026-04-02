@@ -12,10 +12,12 @@ Then the total angular momentum $J$ satisfies:*
 
 $$
   J \in \mathbb{Z} \quad \Longleftrightarrow \quad A \in 2\mathbb{Z}
+
 $$
 
 $$
   J \in \mathbb{Z} + \tfrac{1}{2} \quad \Longleftrightarrow \quad A \in 2\mathbb{Z} + 1
+
 $$
 
 *Proof.*
@@ -35,6 +37,7 @@ $$
   \left(\tfrac{1}{2}\right)^{\otimes A}
   \;=\;
   \bigoplus_{J = J_{\min}}^{A/2} V_J^{\oplus m_J}
+
 $$
 
 where $J_{\min} = 0$ if $A$ is even and $J_{\min} = \tfrac{1}{2}$
@@ -56,6 +59,7 @@ $\beta$ (sum of crossing signs) has parity:
 
 $$
   w(\beta) \equiv \binom{A}{2} \pmod{2}
+
 $$
 
 for the standard nuclear braid representative (all pairs

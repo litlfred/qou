@@ -4,6 +4,7 @@ negative crossings in $\beta$.  The *Coulomb charge* of $\mathfrak{H}$ is
 
 $$
   Q(\mathfrak{H}) \;=\; \tfrac{1}{2}\bigl(n_+(\beta) - n_-(\beta)\bigr).
+
 $$
 
 The crossing energy ([crossing energy](#def:crossing-energy))
@@ -15,6 +16,7 @@ $$
   \underbrace{\tfrac{1}{2}(n_+ + n_-)(q + q^{-1})}_{\text{baseline (strong)}}
   \;+\;
   \underbrace{Q(\mathfrak{H}) \cdot (q - q^{-1})}_{\text{Coulomb correction}}.
+
 $$
 
 The first term is symmetric in $q \leftrightarrow q^{-1}$ and

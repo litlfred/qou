@@ -16,6 +16,7 @@ $$
   - (q^{1/2} - q^{-1/2})
   \;\in\; I
   \qquad (i = 1, \ldots, A-1).
+
 $$
 
 The Hecke algebra $H_A(q) = R[B_A] / I$ has an admissible system
@@ -49,6 +50,7 @@ $$
   \;:=\;
   r\bigl(\mathcal{N}(Z, N),\, G\bigr)
   \;\in\; H_A(q).
+
 $$
 
 Uniqueness follows from the main theorem of the Gröbner basis theory
@@ -64,6 +66,7 @@ $$
   \;=\;
   \prod_{1 \leq i < j \leq A}
   \sigma_{i}^{\epsilon(i, j)}
+
 $$
 
 where the crossing sign $\epsilon(i, j)$ depends on the nucleon
@@ -77,6 +80,7 @@ $$
     0  & \text{if mixed (resolved as }
          \tfrac{1}{2}(\sigma_i + \sigma_i^{-1})\text{)}
   \end{cases}
+
 $$
 
 In $H_A(q)$, the inverse $\sigma_i^{-1}$ is eliminated via the
@@ -118,6 +122,7 @@ $$
   \;+\; (-0.015)\,\sigma_0
   \;+\; 1.539\,\sigma_1
   \;+\; 0.162\,\sigma_0\,\sigma_1.
+
 $$
 
 The dominant term is $+1.539\,\sigma_1$ — the strong-force Hopf
@@ -133,6 +138,7 @@ $$
   - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
   \;=\;
   \sum_{w \in B} \Delta c_w \cdot w
+
 $$
 
 where $\Delta c_w$ are the coefficient differences.  The Markov
@@ -147,6 +153,7 @@ $$
       - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
     \right)
   \right|^2.
+
 $$
 
 This is the quantity that determines the half-life via the Fermi

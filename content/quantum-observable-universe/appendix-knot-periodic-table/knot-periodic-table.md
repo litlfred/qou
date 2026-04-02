@@ -6,6 +6,7 @@ The knot formula for an atom with $Z$ protons and $N$ neutrons is
 $$
   Z\,\mathfrak{p} \;\bowtie\; N\,\mathfrak{n}
   \;\bowtie\; Z \cdot T_{2,3}
+
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ is the
@@ -23,6 +24,7 @@ $$
   \;+\; N \cdot m_{\mathfrak{n}}
   \;-\; (Z + N) \cdot (B/A)
   \;+\; Z \cdot m_e
+
 $$
 
 where $m_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$
@@ -58,6 +60,7 @@ $$
   P_{\mathcal{N}}(q)
   \;=\;
   \prod_{i=0}^{A-2} \hat{V}_i(q)
+
 $$
 
 computed by exactly $\binom{A}{2}$ transfer matrix multiplications

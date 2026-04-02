@@ -14,6 +14,7 @@ $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n})
   \;=\; \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}}
   \;=\; 0.
+
 $$
 
 Mass is not an intrinsic property of the generator — it is
@@ -29,6 +30,7 @@ $$
   T_{2,3} \mathbin{\cup_{\mathrm{Hopf}}} T_{1,0}
   \;\xrightarrow{\;\text{Skein}\;}
   \sum_i c_i(q)\, K_i
+
 $$
 
 where the $K_i$ include the trefoil itself (with a brane-tower
@@ -39,6 +41,7 @@ at $q = q_0$:
 $$
   m_e \;=\; \sum_i c_i(q) \cdot
   \frac{\mathrm{Vol}(K_i)}{\hbar_q^{\,2}}.
+
 $$
 
 **Step 3: Skein transmutation generates generations.**
@@ -49,6 +52,7 @@ $$
   T_{2,3} \mathbin{\cup_{\mathrm{Hopf}}} T_{2,3}
   \;\xrightarrow{\;\sigma\;}
   4_1 \;+\; \text{(remainder)}.
+
 $$
 
 The figure-eight has hyperbolic volume
@@ -60,6 +64,7 @@ $$
   \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^{\,2}}
   \;\approx\; \frac{2.02988}{(1 - q^{-1})^2}
   \;=\; 206.768\ldots
+
 $$
 
 matching CODATA to six significant figures
@@ -77,6 +82,7 @@ $$
   \text{Proton} \;=\;
   \ell_c\bigl(T_{2,3},\; T_{2,3},\; \sigma(T_{2,3})\bigr)
   \;\otimes\; \mathcal{L}_{\mathrm{Hopf}}
+
 $$
 
 where $\ell_c$ threads two trefoils (up quarks) and one Skein
@@ -86,6 +92,7 @@ $\mathcal{L}_{\mathrm{Hopf}}$ binds them.  The mass is:
 $$
   m_p \;=\; Q_p(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})
   \;+\; \Delta\mathcal{M}_{\mathrm{color}}
+
 $$
 
 where $Q_p(q) \in \mathbb{Z}[q^{\pm 1}]$ is the Skein polynomial

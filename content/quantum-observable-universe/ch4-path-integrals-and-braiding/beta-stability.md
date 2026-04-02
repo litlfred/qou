@@ -15,6 +15,7 @@ $$
   p^*(A)
   \;=\;
   \frac{A}{2 + a_C \, A^{2/3} / (2\,a_A)}
+
 $$
 
 where $a_C = (q - q^{-1}) \cdot \lambda_C$ is the Coulomb
@@ -26,6 +27,7 @@ fixed point of
 
 $$
   A^*(p) = p \left(2 + \frac{a_C}{2\,a_A}\, {A^*}^{2/3}\right)
+
 $$
 
 and $n^*(p) = A^*(p) - p$.
@@ -42,6 +44,7 @@ $$
   + \frac{a_C \, (2p - 1)}{A^{1/3}}
   - \frac{a_A \, (A - 2p)}{A}
   = 0.
+
 $$
 
 Solving for $p$ (dropping the $-1$ and mass-difference correction,
@@ -52,6 +55,7 @@ $$
   = a_C \, \frac{2p}{A^{1/3}},
   \qquad
   p = \frac{A}{2 + a_C \, A^{2/3} / (2\,a_A)}.
+
 $$
 
 **Verification.**

@@ -15,6 +15,7 @@ $$
   S_q[A, \theta]
   \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
   \theta \wedge (d\theta)^n
+
 $$
 
 with respect to the Levi form $L_\theta$.  The gravitational
@@ -60,6 +61,7 @@ $$
   S_{\mathrm{cell}}(q)
   \;=\; \sum_{k=1}^{\infty}
   \eta_q^{(k)},
+
 $$
 
 where $\eta_q^{(k)}$ is the entropy contributed by sections at jet
@@ -84,6 +86,7 @@ Concretely, the entropy at jet level $k$ is suppressed by the
 $$
   \eta_q^{(k)}
   \;=\; \eta_q \cdot \hbar_q^{2k},
+
 $$
 
 where the exponent $2k$ reflects that the codimension-$2$
@@ -97,6 +100,7 @@ $$
   S_{\mathrm{cell}}(q)
   \;=\; \eta_q \sum_{k=1}^{\infty} \hbar_q^{2k}
   \;=\; \frac{\eta_q \cdot \hbar_q^2}{1 - \hbar_q^2}.
+
 $$
 
 **Exact algebraic closure.**
@@ -108,6 +112,7 @@ $$
   S_{\mathrm{cell}}
   \;=\; \frac{(2q-1)/q^3 \cdot (q-1)^2/q^2}{(2q-1)/q^2}
   \;=\; \frac{(q-1)^2}{q^3}.
+
 $$
 
 This is **exactly** the value required for $G_{\mathrm{Planck}} = 1$.
@@ -122,6 +127,7 @@ $$
   \;=\; \frac{c_q^3 \cdot \hbar_q \cdot (1 - \hbar_q^2)}
              {\eta_q \cdot \hbar_q^2}
   \;=\; \frac{c_q^3 \cdot (2q - 1)}{q^2 \cdot \eta_q \cdot \hbar_q},
+
 $$
 
 where $c_q = 1/(q-1)$ is the speed of light
@@ -132,6 +138,7 @@ $$
   G_{\mathrm{Planck}}
   \;=\; G(q) \cdot \left(\frac{\hbar_q}{c_q}\right)^2
   \;=\; 1
+
 $$
 
 identically for all $q > 1$.
@@ -171,6 +178,7 @@ The corrected formula predicts
 
 $$
   d_H(q) \;=\; \frac{(2q-1)^2}{q^3}.
+
 $$
 
 | $q$ | $d_H$ predicted | $d_H$ box-counting | Known exact | Note |

@@ -17,6 +17,7 @@ $$
   \bar{\mathfrak{p}}
   \;=\;
   [\sigma(u), \sigma(u), \sigma(d)]_p \bowtie \mathcal{L}_H
+
 $$
 
 where $\sigma(u) = \sigma(T_{2,3})$ and

@@ -12,6 +12,7 @@ parameterization of the Mandelbrot set:
 $$
   c(q) \;=\; \tfrac{1}{2}\,e^{2\pi i q}
   - \tfrac{1}{4}\,e^{4\pi i q}.
+
 $$
 
 The associated quadratic map $f_q(z) = z^2 + c(q)$ is the
@@ -39,6 +40,7 @@ $$
   \theta_{\mathrm{gold}}
   \;=\; 2\pi/\varphi^2
   \;\approx\; 137.5°
+
 $$
 
 — the **golden angle**.  This is the most irrational angle: its
@@ -58,6 +60,7 @@ $$
   \;=\; 2\pi(\varphi^2 - 2)
   \;=\; 2\pi/\varphi
   \;\approx\; 222.5°,
+
 $$
 
 the **golden complement** ($360° - 137.5°$).  By the symmetry of the
@@ -66,6 +69,7 @@ cardioid parameterization, the Julia set at $q = \varphi^2$ has the
 
 $$
   d_H(\varphi^2) \;=\; d_H(1/\varphi^2).
+
 $$
 
 **The asymmetry: Julia meets fiber.**
@@ -106,6 +110,7 @@ $$
   \frac{d_H}{2}\,
   \bigl(1 + (1 - q^{-1})^2\,
   \langle\Delta_\xi\rangle_e / \langle\Delta\rangle_e\bigr).
+
 $$
 
 This ratio depends only on $q$ (not slit width or wavelength),

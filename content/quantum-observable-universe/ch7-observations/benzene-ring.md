@@ -15,6 +15,7 @@ $$
   [\mathcal{A}(6,6)_1, \ldots, \mathcal{A}(6,6)_6]
   \;\bowtie\;
   T(2,6).
+
 $$
 
 The threading link $T(2,6)$ has braid word
@@ -43,6 +44,7 @@ $$
   q^2 + 1 + q^{-2}
   \;=\;
   (q + q^{-1})^2 - 1.
+
 $$
 
 The crossing energy of benzene is proportional to this

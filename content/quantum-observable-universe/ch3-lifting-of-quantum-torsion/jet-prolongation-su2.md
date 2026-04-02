@@ -6,28 +6,37 @@ $A = \mathcal{O}(\mathrm{SU}(2))$.
 **Kahler differentials.** The module of Kahler differentials is
 $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$, which for the
 left-invariant calculus on $\mathrm{SU}(2)$ gives
+
 $$
   \Omega^1(A) \;=\; \mathrm{span}_A\{\omega_1,\, \omega_2,\, \omega_3\},
+
 $$
+
 where $\omega_a$ are the left-invariant $1$-forms dual to the Lie
 algebra basis $\{e_1, e_2, e_3\}$ of $\mathfrak{su}(2)$.
 
 **The jet object.** By [jet prolongation](#prop:jet-prolongation),
+
 $$
   J^1(A) \;:=\; A \otimes \Omega^1(A)
   \;\cong\; \mathcal{O}(\mathrm{SU}(2)) \otimes
   \mathrm{span}\{\omega_1, \omega_2, \omega_3\}.
+
 $$
+
 As a vector space, $J^1(A)$ consists of $\mathcal{O}(\mathrm{SU}(2))$-valued
 $1$-forms on $\mathrm{SU}(2)$, which are precisely the sections of the
 frame bundle $F(\mathrm{SU}(2))$.
 
 **Inherited Frobenius--Hopf structure.** The comultiplication on $J^1(A)$
 is defined by
+
 $$
   \Delta'(f \otimes \theta)(x, y)
   \;=\; f(xy) \otimes \theta_y,
+
 $$
+
 where $\theta_y$ denotes the left-translate of $\theta$ to $T_y G$.
 The counit and antipode extend similarly:
 $\varepsilon'(f \otimes \theta) = f(e)\,\theta_e$ and

@@ -7,6 +7,7 @@ $$
   \;=\;
   \mathcal{B}_3(u,\, d,\, d)
   \;\bowtie\; \mathcal{L}_H
+
 $$
 
 **Mass.**
@@ -15,6 +16,7 @@ $$
   m_{\mathfrak{n}}
   \;=\;
   2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
+
 $$
 
 At the CODATA value $q_0$: $m_{\mathfrak{n}}(q_0) \approx 939.565$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
@@ -25,6 +27,7 @@ $$
   \;=\;
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   \;\approx\; 1.293 \text{ MeV}
+
 $$
 
 arising from the Skein resolution asymmetry between the
@@ -35,6 +38,7 @@ $u$-$u$ and $d$-$d$ crossing pairs within $\mathcal{B}_3$.
 $$
   Q(\mathfrak{n}) \;=\;
   1 \cdot (+\tfrac{2}{3}) + 2 \cdot (-\tfrac{1}{3}) \;=\; 0.
+
 $$
 
 The neutron is electrically neutral: its one positive-orientation

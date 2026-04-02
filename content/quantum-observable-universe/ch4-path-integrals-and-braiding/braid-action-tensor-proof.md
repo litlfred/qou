@@ -1,6 +1,7 @@
 
 The hexagon axioms of a braided monoidal category guarantee that
 $c_{V,V}$ satisfies the Yang--Baxter equation
+
 $$
   (c \otimes \mathrm{id})
   \circ (\mathrm{id} \otimes c)
@@ -9,7 +10,9 @@ $$
   (\mathrm{id} \otimes c)
   \circ (c \otimes \mathrm{id})
   \circ (\mathrm{id} \otimes c)
+
 $$
+
 on $V^{\otimes 3}$.  This is exactly the braid relation for adjacent
 generators, and the far-commutativity relation
 $\sigma_i\sigma_j = \sigma_j\sigma_i$ ($\lvert i-j\rvert \geq 2$) follows

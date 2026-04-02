@@ -4,6 +4,7 @@ geometric sum (over defects) to the spectral trace (over Reeb eigenvalues):
 
 $$
 \psi_q(X) = X - \sum_{\rho \in \mathrm{Spec}(\xi_q)} \frac{X^\rho}{[\rho]_q} - \ln_q(2\pi\Omega_q) - \frac{1}{2}\ln_q(1 - X^{-2})
+
 $$
 
 where $[\rho]_q = \frac{q^\rho - q^{-\rho}}{q - q^{-1}}$ is the

@@ -26,6 +26,11 @@ theorem torus_knot_generators_finite
         ∀ m n, m ≥ 2 → n > m → Nat.Coprime m n →
           seifertGenus m n ≤ g → (m, n) ∈ S := by
   -- Ref: [manuscript] Ch. 5, §torus-knot-generators
-  sorry
+  -- Any finite set containing the 6 solutions suffices as a witness.
+  subst hg
+  exact ⟨{(2,3), (2,5), (2,7), (2,9), (3,4), (3,5)}, fun m n hm hmn hcop hg => by
+    simp only [Finset.mem_insert, Prod.mk.injEq, Finset.mem_singleton]
+    unfold seifertGenus at hg
+    interval_cases m <;> interval_cases n <;> simp_all [Nat.Coprime] <;> omega⟩
 
 end QOU.Torsion

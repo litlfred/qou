@@ -8,6 +8,7 @@ $q$:
 
 $$
   d_{H,q} \;=\; \frac{(2q - 1)^2}{q^3}.
+
 $$
 
 This is **exact** within the $q$-deformed framework — a rational
@@ -27,6 +28,7 @@ The continuous derivative is
 
 $$
   d_{H,q}'(q) \;=\; \frac{(2q-1)(3 - 4q)}{q^4},
+
 $$
 
 which is negative for $q > 3/4$: the $q$-deformed fractal dimension
@@ -42,6 +44,7 @@ $$
   d_{H,q}^{(n+1)}
   \;=\; d_{H,q}^{(n)}
   \;+\; \frac{(2q_n - 1)(3 - 4q_n)(q_n - 1)}{q_n^5}.
+
 $$
 
 This is a **contraction mapping** for $q > 3/4$: the iteration
@@ -77,6 +80,7 @@ Hausdorff dimension $d_H$ satisfies:
 
    $$
      d_H \;=\; 1 + \frac{|c(\theta)|^2}{4 \ln 2} + O(|c|^4).
+
    $$
 
    At $\theta = 0.1097$: $|c| = 0.346$, giving $d_H \approx 1.043$.

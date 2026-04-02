@@ -62,6 +62,7 @@ $$
   \;\approx\;
   0.225 \times 749
   \;\approx\; 168 \;\text{Skein units}.
+
 $$
 
 The crossing-energy gain from the extra $2$ negative crossings is
@@ -91,6 +92,7 @@ $$
   \;\approx\;
   \frac{168}{749} \times 938 \;\mathrm{MeV}
   \;\approx\; 210 \;\mathrm{MeV}.
+
 $$
 
 This corresponds to a density $\rho_{\mathrm{hyp}} \approx

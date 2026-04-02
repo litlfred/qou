@@ -19,6 +19,7 @@ constant term satisfies
 
 $$
   4z^3 + 3z^2 + 2z + 1 \;=\; \frac{d}{dz}(z^4 + z^3 + z^2 + z).
+
 $$
 
 Vieta's formulas for the three roots give:

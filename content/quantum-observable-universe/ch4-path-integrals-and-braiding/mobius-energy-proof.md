@@ -21,6 +21,7 @@ $$
   \bigr)
   \;\xrightarrow{q \to 1}\;
   \frac{1}{\lvert \gamma(s) - \gamma(t) \rvert^2}.
+
 $$
 
 The repulsive kernel $1/r^2$ is thus the classical shadow of the

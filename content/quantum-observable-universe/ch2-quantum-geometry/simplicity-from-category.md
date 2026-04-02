@@ -14,6 +14,7 @@ $$
   B = F_A^+
   \;\Longrightarrow\;
   F_A^- = 0
+
 $$
 
 is forced by the axioms of the quantum observable universe, with no

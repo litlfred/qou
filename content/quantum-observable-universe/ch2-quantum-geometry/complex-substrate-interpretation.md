@@ -5,6 +5,7 @@ Over $k = \mathbb{C}$, write $q$ in polar form:
 
 $$
   q \;=\; |q|\,e^{i\theta}, \qquad |q| \geq 1,\quad \theta \in (-\pi, \pi].
+
 $$
 
 The deformed differential becomes
@@ -12,6 +13,7 @@ The deformed differential becomes
 $$
   d_q \;=\; |q|^{-1} e^{-i\theta}\,d
   \;+\; \bigl(1 - |q|^{-1} e^{-i\theta}\bigr)\,\pi_V \circ d,
+
 $$
 
 and the quantum Planck constant generalises to
@@ -19,6 +21,7 @@ and the quantum Planck constant generalises to
 $$
   \hbar_q \;=\; 1 - q^{-1}
   \;=\; 1 - |q|^{-1} e^{-i\theta}.
+
 $$
 
 When $\theta \neq 0$, $\hbar_q$ acquires an imaginary part
@@ -38,6 +41,7 @@ to be the formal adjoint of $d_q$, which holds if and only if
 
 $$
   \overline{q^{-1}} = q^{-1},
+
 $$
 
 i.e. $q \in \mathbb{R}_{>0}$.  The positivity axiom $q \geq 1$ then

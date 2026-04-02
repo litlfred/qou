@@ -7,6 +7,7 @@ exterior derivative* $d_q \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is
 
 $$
   d_q \;=\; q^{-1}\,d + (1 - q^{-1})\,\pi_V \circ d,
+
 $$
 
 where $d \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is the differential

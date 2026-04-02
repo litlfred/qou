@@ -17,6 +17,7 @@ $$
   \underbrace{\sum_{\text{crossings}} \mathcal{S}_{ij}(q)}_{\text{gauge}}
   \;+\;
   \underbrace{\mathcal{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
+
 $$
 
 The gauge sector decomposes via the Hecke algebra:

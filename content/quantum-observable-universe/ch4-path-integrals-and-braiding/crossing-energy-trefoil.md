@@ -11,6 +11,7 @@ $$
   \mathbf{E}_{\mathrm{cross}}^{(+)} = q,
   \qquad
   \mathbf{E}_{\mathrm{cross}}^{(-)} = -q^{-1}.
+
 $$
 
 The net energy of a single positive crossing minus a single negative
@@ -24,6 +25,7 @@ crossings.  Its total crossing energy is
 $$
   \mathbf{E}_{\mathrm{cross}}(\tau(2,3))
   \;=\; 3q.
+
 $$
 
 At the substrate parameter $q \approx 1.110$:
@@ -32,6 +34,7 @@ $$
   \mathbf{E}_{\mathrm{cross}}(\tau(2,3))
   \;\approx\; 3 \times 1.110
   \;=\; 3.330.
+
 $$
 
 This is positive, reflecting the fact that the trefoil is a single
@@ -52,6 +55,7 @@ $$
   \underbrace{\sum_{i} \mathbf{E}_{\mathrm{cross}}(K_i)}_{\text{self-crossings (positive)}}
   \;+\;
   \underbrace{\mathbf{E}_{\mathrm{cross}}(\mathcal{L})}_{\text{mutual crossings (can be negative)}}.
+
 $$
 
 The composite is *bound* when the total is negative:

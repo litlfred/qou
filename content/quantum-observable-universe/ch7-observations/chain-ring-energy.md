@@ -74,6 +74,7 @@ $$
   \;\approx\;
   2
   \quad (|q| \approx 1)
+
 $$
 
 in additional Alexander weight — the ring must "expand" its

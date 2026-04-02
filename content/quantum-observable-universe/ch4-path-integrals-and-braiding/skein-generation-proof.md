@@ -15,6 +15,7 @@ admits a **terminal Skein resolution**: iterating the Skein relation
 $$
   q \cdot L_+ \;-\; q^{-1} \cdot L_-
   \;=\; (q - q^{-1}) \cdot L_0
+
 $$
 
 at every crossing terminates in a finite polynomial
@@ -22,6 +23,7 @@ at every crossing terminates in a finite polynomial
 $$
   [H] \;=\; \sum_{\alpha} c_\alpha(q) \cdot
   [K_{i_1}] \cdots [K_{i_k}]
+
 $$
 
 where each $[K_{i_j}]$ is the class of a fundamental knot and
@@ -37,6 +39,7 @@ $$
   \;+\;
   \underbrace{\sum_{i=1}^{n}
   \frac{\mathrm{Vol}(K_i)}{\hbar_q^{\,2}}}_{\text{constituent mass (zero for torus knots)}}
+
 $$
 
 where $Q(q) \in \mathbb{Z}[q^{\pm 1}]$ is the Skein polynomial of
@@ -48,4 +51,5 @@ arises from the linking topology:
 
 $$
   \mathcal{M}(H) \;=\; Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}).
+
 $$

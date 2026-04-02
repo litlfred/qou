@@ -17,22 +17,27 @@ The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$ has six
 crossings organised into three crossing pairs, one pair per color-exchange
 channel. At each pair involving quarks of species $a$ and $b$, a double
 application of the Skein relation yields the *pair Skein mass*
+
 $$
   \mathcal{S}_{ab}(q)
   \;=\;
   \frac{q\,\mu_a \;+\; q^{-1}\,\mu_b}
        {q^{1/2} + q^{-1/2}},
+
 $$
+
 where $\mu_a$ is the *dressed quark Skein mass* of species $a$ --- the
 mass contribution of a single quark strand including its strong-field dressing
 from the Hopf-link interaction with the color background.
 The total nucleon mass is the sum over the three crossing pairs:
+
 $$
   m_N
   \;=\;
   \mathcal{S}_{q_1 q_2}(q)
   + \mathcal{S}_{q_1 q_3}(q)
   + \mathcal{S}_{q_2 q_3}(q).
+
 $$
 
 *Step 2a: Proton ($uud$).*
@@ -59,16 +64,20 @@ quark replaces the same-flavor pair:
 
 *Step 2c: The $u$-$d$ mass splitting.*
 The proton--neutron mass difference isolates the same-flavor crossing pair:
+
 $$
   m_n - m_p
   \;=\;
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   \;=\;
   \frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).
+
 $$
+
 Substituting $q = q_0$ and the CODATA splitting
 $m_n - m_p \approx 1.293\,332\,51\;\mathrm{MeV}$ determines the dressed quark
 mass difference:
+
 $$
   \mu_d - \mu_u
   \;=\;
@@ -76,7 +85,9 @@ $$
   \;=\;
   \frac{2.0027}{2.0109} \times 1.293
   \;\approx\; 1.288\;\mathrm{MeV},
+
 $$
+
 and the individual dressed masses are
 $\mu_u \approx 311.10\;\mathrm{MeV}$ and
 $\mu_d \approx 312.39\;\mathrm{MeV}$.

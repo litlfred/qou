@@ -9,6 +9,7 @@ $$
   \mathfrak{m}_{\mathfrak{H}}
   \;=\; (q - 1)^2 \sum_{\text{Hecke steps}}
   |c_w| \cdot |q - q^{-1}|,
+
 $$
 
 *where the sum is over all Hecke reductions
@@ -91,6 +92,7 @@ $1/c_q^2$:
 $$
   \mathfrak{m}_{\mathfrak{H}} \;=\; \frac{E_{\mathfrak{H}}}{c_q^2}
   \;=\; (q-1)^2 \cdot E_{\mathfrak{H}}.
+
 $$
 
 Each Hecke step costs $|q - q^{-1}|$ in Skein units (spatial

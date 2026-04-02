@@ -66,6 +66,8 @@ theorem neutron_proton_splitting :
     neutron_mass q - (7.32772475341775 / (1 - q⁻¹) ^ 2) =
     (1 / 2) * (q - q⁻¹) := by
   -- Ref: [manuscript] Ch. 5, §Categorical neutron
-  sorry
+  intro q _hq
+  unfold neutron_mass
+  ring
 
 end QOU.Torsion

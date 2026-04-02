@@ -19,6 +19,7 @@ $$
   (N-1) \cdot \Delta_{T(2,2)}(q)
   \;=\;
   N - 1,
+
 $$
 
 $$
@@ -28,6 +29,7 @@ $$
   \;=\;
   \frac{q^{N/2} - q^{-N/2}}{q - q^{-1}}
   \quad (\text{for even } N).
+
 $$
 
 For $N = 6$:
@@ -41,6 +43,7 @@ $$
   q^2 + 1 + q^{-2}
   \;\approx\; 3
   \quad (|q| \approx 1).
+
 $$
 
 The ring has **lower crossing energy** than the chain.  It binds
@@ -69,6 +72,7 @@ $$
     \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N),\;
     \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_N)
   \bigr).
+
 $$
 
 The activation barrier is the energy required to reach this
@@ -87,6 +91,7 @@ $$
   (N - 1) - \Delta_{T(2,N)}(q)
   \;+\;
   E_{\mathrm{activation}}.
+
 $$
 
 For $N = 6$: the threading provides $5 - 3 = 2$ units of

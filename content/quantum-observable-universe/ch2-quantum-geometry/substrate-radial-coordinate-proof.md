@@ -20,6 +20,7 @@ proportional to the quantum Planck constant:
 
 $$
   \mathcal{L}_\xi\,Z \;=\; J\,\hbar_q\,Z,
+
 $$
 
 where $\hbar_q = 1 - q^{-1}$

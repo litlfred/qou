@@ -6,6 +6,7 @@ Define the *Frobenius dagger* on morphisms by
 
 $$
   f^{\dagger} \;=\; \int_A \circ \mu(S(f) \otimes -).
+
 $$
 
 Then $\dagger$ is a positive-definite involutive structure on

@@ -3,6 +3,7 @@ The finiteness bound
 
 $$
   [A\!-\!1]_q! \;>\; [2]_q^{\,A-1}
+
 $$
 
 is a **$q$-deformed Pauli exclusion principle** for nuclear
@@ -45,6 +46,7 @@ $$
   [A\!-\!1]_q! \;>\; [2]_q^{A-1}
   \quad\Longleftrightarrow\quad
   \text{many-body complexity} \;>\; \text{binding coherence}
+
 $$
 
 When the number of independent configurations exceeds the

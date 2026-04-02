@@ -15,6 +15,7 @@ $$
   \prod_{i=0}^{n-2} \hat{V}_i(q),
   \qquad
   \hat{V}_i(q) \;=\; z \cdot a_i + b_i,
+
 $$
 
 where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov trace parameter.
@@ -32,6 +33,7 @@ $$
   \mathrm{tr}_M(\cdots (a_i \sigma_i + b_i))
   \;=\;
   (z \cdot a_i + b_i) \cdot \mathrm{tr}_M(\cdots).
+
 $$
 
 This works because:
@@ -58,6 +60,7 @@ single vertex operator insertion:
 $$
   \hat{V}_i(q) \;=\;
   \bigl\langle\, Y(\sigma_i, z_i) \,\bigr\rangle_{\mathrm{Markov}}.
+
 $$
 
 The product formula is the **factorization of the $n$-point
@@ -69,6 +72,7 @@ $$
   \;=\;
   \prod_{i=0}^{n-2}
   \bigl\langle\, Y(\sigma_i, z_i) \,\bigr\rangle.
+
 $$
 
 This factorization is **not** an approximation --- it is an exact
@@ -96,6 +100,7 @@ $$
   \prod_{i} \hat{V}_i(q)
   \;=\;
   P_\beta(q)
+
 $$
 
 Each step preserves the link invariant.  The polynomial

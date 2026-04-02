@@ -25,6 +25,7 @@ $$
   m_{\mathrm{bare}} \;=\;
   \frac{\mathrm{Vol}(S^3 \setminus K)}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}.
+
 $$
 
 The hyperbolic volume is a **topological invariant** of the
@@ -36,6 +37,7 @@ of R-I, R-II, R-III moves:
 $$
   m_{\mathrm{bare}}
   \;\text{is invariant under R-I, R-II, R-III.}
+
 $$
 
 The electron mass $\mathfrak{m}_e \approx 0.511$ MeV (from vacuum drag, since
@@ -56,6 +58,7 @@ $$
   \;=\;
   \sum_{\text{crossings of link}}
   \epsilon_i \cdot q^{\pm 1}
+
 $$
 
 where the sum runs over the crossings of the **embedding** of
@@ -82,6 +85,7 @@ one particle's knot inside the other's Seifert surface.
 $$
   \mathbf{E}_{\mathrm{bind}}
   \;\text{is invariant under R-II, R-III but \textbf{not} R-I.}
+
 $$
 
 **Shell transitions are R-I moves.**
@@ -99,6 +103,7 @@ $$
   w \to w + 2
   \qquad\Longleftrightarrow\qquad
   \text{two R-I moves on the embedding.}
+
 $$
 
 The bare mass $\mathfrak{m}_e$ is unchanged (R-I is a knot invariant).

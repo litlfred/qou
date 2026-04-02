@@ -60,8 +60,11 @@ theorem reeb_period_tendsto_atTop :
       (nhdsWithin 1 (Set.Ioi 1)) atTop := by
   -- planck q → 0⁺ as q → 1⁺ (planck_tendsto_zero), and planck q > 0
   -- for q > 1 (planck_pos). The inverse of a positive function tending
-  -- to 0 tends to +∞: Filter.Tendsto.inv_tendsto_zero in Mathlib.
-  sorry
+  -- to 0 tends to +∞.
+  -- Ref: [manuscript] Chapter 8, Section 5
+  simp only [reebPeriod]
+  apply Filter.Tendsto.abs_atTop_atTop
+  exact Filter.Tendsto.inv_tendsto_zero planck_tendsto_zero
 
 /-- **Quantum gap collapse (combined)**: Under the classical limit
     q → 1, the Planck constant vanishes and the Reeb period diverges.

@@ -18,6 +18,7 @@ The photon travels through three regions:
      \;=\;
      q^{-1}\,\nabla\psi + (1-q^{-1})\,\iota_\xi\,\nabla\psi
      \;=\; 0.
+
    $$
 
    Since $\psi$ is horizontal ($\pi_V\psi = 0$), the Reeb contraction
@@ -44,6 +45,7 @@ The photon travels through three regions:
      \tau(y)
      \;=\;
      \hbar_q \cdot \mathrm{Vol}(K_{\mathrm{mat}}) \cdot \eta(y)^2 \cdot k w,
+
    $$
 
    where $\eta = |y|/(d/2)$ is the normalized slit coordinate,
@@ -69,6 +71,7 @@ The photon travels through three regions:
        e^{-y_s^2/w_0^2}\;
        dy
      \right|^2,
+
    $$
 
    where $r_1, r_2$ are the source-to-slit and slit-to-screen

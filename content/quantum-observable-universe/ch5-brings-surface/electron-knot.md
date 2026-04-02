@@ -4,6 +4,7 @@ coral tube.
 
 $$
   e^- \;=\; T_{2,3} \qquad \text{(trefoil, solid ●)}
+
 $$
 
 The electron and the up quark are the *same knot* $T_{2,3}$.

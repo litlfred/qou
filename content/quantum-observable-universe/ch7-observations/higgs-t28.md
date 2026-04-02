@@ -47,6 +47,7 @@ direction.  The total angular momentum is
 
 $$
   J \;=\; J_1 + J_2 \;=\; +4 + (-4) \;=\; 0.
+
 $$
 
 $T(2,8)$ is therefore a **scalar** (spin-$0$) boson — the only
@@ -65,6 +66,7 @@ $$
   m_{\mathrm{Higgs}} \;\propto\;
   \#\,\text{crossings with } T(2,8)
   \;\times\; \frac{q - q^{-1}}{q + q^{-1}}
+
 $$
 
 Particles that cross all three exceptional divisors (heavy
@@ -84,6 +86,7 @@ polynomial of $T(2,8)$ evaluated at $q = q_0$:
 $$
   m_H \;=\; \frac{\mathrm{Vol}(\text{Seifert}(T(2,8)))}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}
+
 $$
 
 The Higgs mass is set by the genus-$3$ Seifert surface volume,

@@ -1,10 +1,13 @@
 In Feynman's formulation, the transition amplitude between two states is
 computed by summing over *all* paths in configuration space:
+
 $$
   \langle\psi_f|\psi_i\rangle
   \;=\;
   \int \mathcal{D}\phi\;\,e^{iS[\phi]/\hbar}.
+
 $$
+
 This expression is basis-independent --- it does not privilege any
 decomposition of the Hilbert space --- but the price is a
 continuum integral over an infinite-dimensional space that requires
@@ -33,6 +36,7 @@ the *categorical trace*
 representation.  Concretely, for a closed cycle
 $\varrho \colon \mathbf{1} \to A$ representing a particle propagating
 around a vortex filament, the mass is
+
 $$
   \mathfrak{m}(\varrho)
   \;=\;
@@ -43,7 +47,9 @@ $$
     \circ \varrho
   \bigr)
   \,\bigr\rVert,
+
 $$
+
 where $\int_A$ is the Frobenius form and $\Delta$ the comultiplication.
 This is a *finite* expression: $A$ is a finite-dimensional
 Frobenius--Hopf object, $\Delta$ and $\int_A$ are morphisms in the

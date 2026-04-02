@@ -37,6 +37,7 @@ The Skein relation
 $$
   q \, [L_+] - q^{-1} [L_-]
   = (q^{1/2} - q^{-1/2}) [L_0]
+
 $$
 
 forces **negative coefficients** into the expansion: the term
@@ -88,6 +89,7 @@ maps the Skein module to non-negative reals:
 
 $$
   \tau \colon \mathcal{S}_q(\mathbf{C}) \to \mathbb{R}_{\geq 0}
+
 $$
 
 but this map is positive only on the **$S_5$-invariant** submodule.
@@ -123,6 +125,7 @@ $$
   (\hat{c}_r, \hat{c}_g, \hat{c}_b)
   \;=\;
   \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}
+
 $$
 
 where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the

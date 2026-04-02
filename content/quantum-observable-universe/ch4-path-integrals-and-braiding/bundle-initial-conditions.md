@@ -4,6 +4,7 @@ base points:
 
 $$
   \mathcal{S}_0 \;=\; \sum_{i \in I} (p_i,\, H_i)
+
 $$
 
 where each $(p_i, H_i)$ is a localized hadron
@@ -19,6 +20,7 @@ $$
   \mathcal{S}_0 \;\in\;
   \Gamma\!\bigl(\mathbb{P}(V),\;
   \mathrm{Free}_{\mathrm{CMon}}(\mathcal{H})\bigr).
+
 $$
 
 This is the **position-only** specification: at the initial moment the

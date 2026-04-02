@@ -46,6 +46,7 @@ $A \geq 1$, by induction on $A$:
     \bar{\mathcal{N}}(A)
     \;\cdot\;
     \prod_{j=0}^{A-1}(c_j \sigma_j + d_j)
+
   $$
 
   where each factor $(c_j \sigma_j + d_j)$ is the crossing element
@@ -60,6 +61,7 @@ $A \geq 1$, by induction on $A$:
     \bar{\mathcal{N}}(A+1)
     \;:=\;
     r(\xi_{A+1},\, G)
+
   $$
 
   By the **main theorem** of Gröbner basis theory
@@ -85,6 +87,7 @@ $h(\ell)$ is a **palindrome**:
 $$
   h(\ell) \;=\; h(L - \ell)
   \qquad \text{for all } 0 \leq \ell \leq L
+
 $$
 
 where $L$ is the maximum word length in the support.

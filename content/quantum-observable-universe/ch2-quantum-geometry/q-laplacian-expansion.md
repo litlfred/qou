@@ -37,6 +37,7 @@ $$
     + (\mathcal{L}_\xi^* \iota_\xi)d
   \bigr]
   \;+\; (1 - q^{-1})^2\,\Delta_{\xi},
+
 $$
 
 where $\Delta_\xi = (\theta \wedge \mathcal{L}_\xi)

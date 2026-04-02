@@ -6,6 +6,7 @@ given by
 $$
   d_q^2\,\alpha
   \;=\; q^{-1}(1 - q^{-1})\;\omega_V \wedge_q [\xi,\, \alpha],
+
 $$
 
 where $\omega_V \in \Omega^2(A)$ is the curvature of the weight

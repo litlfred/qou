@@ -36,6 +36,7 @@ conditions hold:
    $$
    c_i(X) \;:=\; c_i\!\bigl(\tau(X)\bigr)
      \;\in\; H^{2i}_{\mathrm{dR}}\!\bigl(\mathrm{Spec}\,R\bigr),
+
    $$
 
    where the right-hand side is the classical Chern class of the
@@ -50,6 +51,7 @@ conditions hold:
      c_1(\mathrm{Ad}(A)) = 0
      \qquad\text{and}\qquad
      c_2(\mathrm{Ad}(A)) = 0.
+
    $$
 
    The first condition ensures the adjoint bundle is

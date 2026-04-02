@@ -7,6 +7,7 @@ $$
   H \;=\; \mathrm{End}^{\otimes}(\tau)
   \;=\; \int^{X \in \mathbf{C}}
   \tau(X)^{\vee} \otimes_R \tau(X)
+
 $$
 
 carries a canonical Hopf algebra structure

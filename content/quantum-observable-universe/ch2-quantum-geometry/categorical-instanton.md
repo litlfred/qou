@@ -7,6 +7,7 @@ $F_\nabla \in \Omega^2(A)$ is $\star_q$-self-dual:
 
 $$
   \star_q\, F_\nabla \;=\; F_\nabla.
+
 $$
 
 Equivalently, the curvature factors through the self-dual projection:

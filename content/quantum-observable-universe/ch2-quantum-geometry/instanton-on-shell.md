@@ -9,6 +9,7 @@ $$
   \lVert F_\nabla^+ \rVert^2 + \lVert F_\nabla^- \rVert^2
   \;=\;
   c_2(A) + 2\lVert F_\nabla^- \rVert^2,
+
 $$
 
 where $c_2(A)$ is the second Chern number (a topological invariant).
@@ -17,6 +18,7 @@ of the Lagrangian becomes purely topological:
 
 $$
   \mathcal{D}_\nabla^{\,2} \;=\; F_\nabla^+ \;=\; c_2(A).
+
 $$
 
 The full Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian))
@@ -28,6 +30,7 @@ $$
   c_2(A)
   \;+\;
   \psi^* \otimes \mathcal{D}_\nabla\,\psi.
+
 $$
 
 ```tex

@@ -25,6 +25,7 @@ The three sectors tile the exceptional divisor exactly:
 
 $$
   \mathcal{S}_p \;=\; \mathfrak{r}(p) \;\cup\; \mathfrak{g}(p) \;\cup\; \mathfrak{b}(p),
+
 $$
 
 where adjacent sectors share only their boundary meridians

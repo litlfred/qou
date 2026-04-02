@@ -49,6 +49,7 @@ The Bring curve is the projective variety
 $$
   \Sigma_4 \;:\; x_1^5 + x_2^5 + x_3^5 + x_4^5 + x_5^5 = 0
   \quad\subset\; \mathbb{P}^3
+
 $$
 
 (after fixing $x_1 + x_2 + x_3 + x_4 + x_5 = 0$).  The
@@ -78,6 +79,7 @@ $$
   \;=\;
   \frac{1 + \sqrt{5}}{2}
   \;\approx\; 1.618
+
 $$
 
 the golden ratio.  In the Bring surface: the five sheets at a

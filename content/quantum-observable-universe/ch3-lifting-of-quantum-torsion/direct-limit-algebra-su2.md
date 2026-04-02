@@ -4,6 +4,7 @@ $A_\infty$ for $G = \mathrm{SU}(2)$.
 
 **The tower.** The recursive brane tower produces a sequence of
 jet-level endomorphism algebras
+
 $$
   \mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))
   \;\hookrightarrow\;
@@ -11,7 +12,9 @@ $$
   \;\hookrightarrow\;
   \mathrm{End}(J^2\mathcal{O}(\mathrm{SU}(2)))
   \;\hookrightarrow\; \cdots
+
 $$
+
 connected by the jet prolongation maps
 $\ell_n \colon \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2)))
 \hookrightarrow \mathrm{End}(J^{n+1}\mathcal{O}(\mathrm{SU}(2)))$.
@@ -20,10 +23,13 @@ from $\mathfrak{su}(2)$ plus $3n$ from the $n$-th order cotangent
 directions.
 
 **The direct limit.** The direct limit algebra is
+
 $$
   A_\infty
   \;=\; \varinjlim_n \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2)))),
+
 $$
+
 the union of all finite-order jet endomorphisms. An element of
 $A_\infty$ is an endomorphism that acts on jets of some finite (but
 arbitrarily large) order.
@@ -34,10 +40,12 @@ $\mathrm{SU}(2)$. The direct limit coincides with the algebra
 $\mathcal{D}(\mathrm{SU}(2))^{\mathrm{SU}(2)}$ of left-invariant
 differential operators, which is isomorphic to the universal enveloping
 algebra $U(\mathfrak{su}(2))$ by the Poincar\'e--Birkhoff--Witt theorem:
+
 $$
   A_\infty \;\cong\; U(\mathfrak{su}(2))
   \;\cong\; \mathbb{C}\langle e_1, e_2, e_3 \rangle
   \big/ \bigl(e_a e_b - e_b e_a - \epsilon_{abc}\, e_c\bigr).
+
 $$
 
 **Filtration.** The jet order induces a filtration

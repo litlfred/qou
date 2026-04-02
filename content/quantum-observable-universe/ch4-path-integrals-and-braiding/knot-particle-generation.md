@@ -16,6 +16,7 @@ $$
   \mathcal{G} \;=\; \bigl\{\, T_{m,n} \;\big|\;
   \gcd(m,n) = 1,\; m < n,\;
   m + n \leq N(\chi) \,\bigr\}
+
 $$
 
 where $N(\chi)$ is a cutoff determined by the Euler characteristic
@@ -39,6 +40,7 @@ under the topological mass formula
 $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n}) \;=\;
   \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}} \;=\; 0.
+
 $$
 
 Mass arises *entirely* through the linking operations below.
@@ -56,6 +58,7 @@ $$
   T_{m_1,n_1},\; T_{m_2,n_2}
   \;\longmapsto\;
   T_{m_1,n_1} \mathbin{\cup_{\mathrm{Hopf}}} T_{m_2,n_2}
+
 $$
 
 producing a two-component link in $S^3$ fibered over $\mathcal{S}_c$.
@@ -87,6 +90,7 @@ $$
   \;\longmapsto\;
   T_{m_1,n_1} \mathbin{\cup_r} T_{m_2,n_2}
   \mathbin{\cup_g} T_{m_3,n_3}
+
 $$
 
 The $S_3 \subset S_5$ permutation symmetry of the color coordinates
@@ -101,6 +105,7 @@ The $q$-deformed Skein relation at a crossing
 $$
   q \, L_+ \;-\; q^{-1} L_-
   \;=\; (q^{1/2} - q^{-1/2})\, L_0
+
 $$
 
 acts as a *transmutation* operation: resolving or introducing
@@ -113,6 +118,7 @@ $$
   T_{2,3} \mathbin{\cup_{\mathrm{Hopf}}} T_{2,3}
   \;\xrightarrow{\;\sigma\;}
   4_1 \;+\; \text{(Skein remainder)}.
+
 $$
 
 The muon is literally a Skein excitation of the electron.
@@ -132,6 +138,7 @@ $$
   \bigl(\,
     q\,L_+ - q^{-1}L_- - (q^{1/2} - q^{-1/2})\,L_0
   \,\bigr)
+
 $$
 
 where $\mathcal{G}$ is the torus knot generator set and the

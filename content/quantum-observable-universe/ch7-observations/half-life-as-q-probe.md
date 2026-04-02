@@ -26,6 +26,7 @@ $$
   \frac{\Delta \Gamma_\beta}{\Gamma_\beta}
   \;\approx\;
   48 \cdot \frac{\Delta q}{q_0}.
+
 $$
 
 Equivalently, a $1\%$ shift in $q$ changes the half-life by

@@ -11,6 +11,7 @@ $$
   \int_A \!\circ\; \mu \circ
     (\phi^{\dagger} \circ \psi \otimes \mathrm{id})
     \circ \mathrm{coev}_{V_j}.
+
 $$
 
 ```tex
@@ -34,6 +35,7 @@ $$
   \langle T_{\lambda}, T_{\mu} \rangle_{\mathrm{PL}}
   \;=\;
   \delta_{\lambda\mu}\; \|T_{\lambda}\|^2,
+
 $$
 
 where the norm-squared $\|T_{\lambda}\|^2$ is a positive rational

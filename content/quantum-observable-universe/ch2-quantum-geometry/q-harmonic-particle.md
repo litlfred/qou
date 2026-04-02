@@ -13,6 +13,7 @@ $$
   d_q\,\alpha = 0
   \;\;\text{and}\;\;
   \delta_q\,\alpha = 0.
+
 $$
 
 This equivalence follows from $\langle \Delta_q \alpha, \alpha
@@ -33,6 +34,7 @@ then classifies particles by their vertical component under the
 horizontal ($\alpha_V = 0$), fermions have non-trivial vertical part.
 
 The complete logical chain is:
+
 $$
   \text{QOU} \;\xrightarrow{d_q}\;
   \text{$q$-exterior derivative}
@@ -44,4 +46,5 @@ $$
   \text{particle}
   \;\xrightarrow{\pi_H \oplus \pi_V}\;
   \text{boson $\oplus$ fermion.}
+
 $$

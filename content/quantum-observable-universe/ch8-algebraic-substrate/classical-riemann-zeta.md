@@ -7,6 +7,7 @@ $$
 \zeta(s) = \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}}
          = \sum_{n=1}^{\infty} \frac{1}{n^s},
   \qquad \mathrm{Re}(s) > 1
+
 $$
 
 The passage from $Z(\mathcal{B}, t)$ to $\zeta(s)$ can be understood

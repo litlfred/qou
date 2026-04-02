@@ -11,6 +11,7 @@ $$
   J_q^2(K) \;=\; [j]_q \, [j+1]_q
   \;=\; \frac{q^j - q^{-j}}{q - q^{-1}} \cdot
         \frac{q^{j+1} - q^{-(j+1)}}{q - q^{-1}}
+
 $$
 
 where $j$ is the spin quantum number determined by the
@@ -27,6 +28,7 @@ $$
   [J_z, J_{\pm}] = \pm J_{\pm}, \qquad
   [J_+, J_-] = [2 J_z]_q
   \;=\; \frac{q^{2J_z} - q^{-2J_z}}{q - q^{-1}}
+
 $$
 
 This differs from the classical $[J_+, J_-] = 2J_z$ by
@@ -43,6 +45,7 @@ trace over the spin-$\tfrac{1}{2}$ representation:
 
 $$
   J_K(q) \;=\; \mathrm{tr}_{V_{1/2}}(\rho(\beta))
+
 $$
 
 The colored Jones polynomial $J_K^{(j)}(q)$ uses the
@@ -53,6 +56,7 @@ polynomials:
 $$
   J_K^{(j+1/2)}(q) \;=\; [2j+1]_q \cdot J_K^{(j)}(q)
   \;+\; \text{(lower-order terms)}
+
 $$
 
 **Building block values.**
@@ -77,6 +81,7 @@ For a nucleus $\mathcal{N}(Z, N)$ with $A = Z + N$:
 
 $$
   J_q^2(\mathcal{N}) \;=\; [J]_q \, [J+1]_q
+
 $$
 
 where $J$ is the ground-state spin determined by the nuclear

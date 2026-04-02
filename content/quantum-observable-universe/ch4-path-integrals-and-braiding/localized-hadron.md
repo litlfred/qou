@@ -10,6 +10,7 @@ $$
   \mathrm{Sym}^n\!\bigl(\mathcal{K}_p\bigr)
   \;\otimes\;
   \mathcal{L}_{p}^{\mathrm{bind}}
+
 $$
 
 where $\mathcal{K}_p$ denotes the fibre of knot types at $p$ and

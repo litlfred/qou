@@ -11,6 +11,7 @@ $$
   q \, [L_+] \;-\; q^{-1} [L_-]
   \;=\;
   (q^{1/2} - q^{-1/2}) \, [L_0].
+
 $$
 
 In beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$,
@@ -98,6 +99,7 @@ $$
   \frac{[1]_q \, [2]_q}{[3]_q}
   \;\approx\; 0.665
   \quad\text{at } q = q_0.
+
 $$
 
 This is the **intrinsic Borromean suppression**: the Borromean
@@ -133,6 +135,7 @@ $$
   \underbrace{\frac{[1]_q \, [2]_q}{[3]_q}}_{\text{Borromean factor}}
   \;\times\;
   \underbrace{f(m, k, q)}_{\text{shell modulation}}
+
 $$
 
 Both factors are determined by $q$ and the nuclear braid topology.

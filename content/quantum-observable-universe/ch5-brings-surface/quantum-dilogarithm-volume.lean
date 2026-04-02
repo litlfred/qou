@@ -71,7 +71,7 @@ theorem beta_decay_qvalue
        quantumDilogarithmVolume daughterFactors) / (hbar_q q) ^ 2 := by
   unfold bindingEnergy
   -- Ref: [manuscript] §5/quantum-dilogarithm-volume
-  sorry
+  ring
 
 /-- At q = 1 (classical limit), ℏ_q = 0, reflecting that the
     classical regime has no binding energy (degenerate configurations). -/

@@ -23,6 +23,7 @@ $$
     \frac{d\varrho}{ds} \wedge_q \frac{d\varrho}{dt}
   \Bigr\rVert\,
   ds\, dt\,,
+
 $$
 
 where $\Delta$ is the Hopf comultiplication, $\int_A$ is the
@@ -37,6 +38,7 @@ $$
   \;=\;
   \frac{1}{4}\, E(\varrho)
   \;+\; \text{const}\,.
+
 $$
 
 Here $E(\varrho)$ is the classical Möbius energy
@@ -52,6 +54,7 @@ $$
   \Bigr)
   \lvert \varrho'(s) \rvert \, \lvert \varrho'(t) \rvert\,
   ds\, dt\,.
+
 $$
 
 Here $D(\varrho(s), \varrho(t))$ denotes the intrinsic arc-length distance

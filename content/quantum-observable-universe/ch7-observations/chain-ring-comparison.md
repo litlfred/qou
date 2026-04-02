@@ -15,6 +15,7 @@ $$
   |q + q^{-1}|_{\mathrm{mol}}
   \;\xrightarrow{\Delta_{T(2,6)}(q)}\;
   \mathbf{E}_{\mathrm{cross}}.
+
 $$
 
 1. The substrate parameter $q$ is fixed by $\chi(A) = -6$
@@ -43,6 +44,7 @@ $$
   \;\propto\;
   \bigl[(N-1) - \Delta_{T(2,N)}(q)\bigr]
   \cdot |q + q^{-1}|_{\mathrm{mol}}.
+
 $$
 
 For $N = 6$ with $|q + q^{-1}|_{\mathrm{mol}} \sim 1\text{--}2$
@@ -57,6 +59,7 @@ $$
   2\text{--}4\;\mathrm{eV}
   \;\approx\;
   193\text{--}386\;\mathrm{kJ/mol}.
+
 $$
 
 (Conversion: $1\;\mathrm{eV} = 96.485\;\mathrm{kJ/mol}$.)

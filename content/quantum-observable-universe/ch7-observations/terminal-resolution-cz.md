@@ -9,6 +9,7 @@ $\mathcal{O}_{q(p)}(\mathrm{SU}(2)) \otimes_{\mathbb{Z}[q,q^{-1}]}
 
 $$
   \hbar_q(p) = 1 - q(p)^{-1}.
+
 $$
 
 Specialising the topological mass formula
@@ -20,6 +21,7 @@ $$
   \hbar_{q_0} = 1 - q_0^{-1} \approx 0.09889,
   \qquad
   \hbar_{q_0}^{-2} \approx 102.25.
+
 $$
 
 The mass predictions then evaluate as follows over $\mathbb{C}[z]$

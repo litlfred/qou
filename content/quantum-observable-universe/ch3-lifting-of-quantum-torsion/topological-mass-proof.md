@@ -7,6 +7,7 @@ and evaluation via the quantum dilogarithm.
 *Step 1: Eigenspace decomposition of the mass integrand.*
 By the ([mass identity](#def:mass-identity)), the mass of
 the vortex $\varrho$ is
+
 $$
   \mathfrak{m}(\varrho)
   \;=\;
@@ -14,7 +15,9 @@ $$
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert,
+
 $$
+
 where $\Sigma$ is a surface with $\partial\Sigma = \varrho$.  The
 integrand $(\nabla_A q,\; L \wedge F^+)$ is a section of the
 connection--curvature bundle over $\Sigma$, and as such it is an element
@@ -28,13 +31,16 @@ $\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
 idempotent $*$-endomorphism, the Killing-form norm
 $\lVert\cdot\rVert$ on $\mathfrak{su}(2)$ respects the orthogonal
 decomposition:
+
 $$
   \lVert \alpha \rVert^2
   \;=\;
   \lVert \hat{\tau}_n(\alpha) \rVert^2
   \;+\;
   \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2
+
 $$
+
 for every section $\alpha$.  Applying this to the mass integrand and
 using the additivity of the nonabelian multiplicative integral over
 orthogonal direct sums [Proposition 5.3, yekutieli2015]:
@@ -53,6 +59,7 @@ orthogonal direct sums [Proposition 5.3, yekutieli2015]:
 where the product is in the group $\mathrm{SU}_{q}(2)$.  Taking norms
 and using the submultiplicativity of $\lVert\cdot\rVert$ (which is an
 equality for the orthogonal decomposition of an idempotent):
+
 $$
   \mathfrak{m}(\varrho)
   \;=\;
@@ -64,6 +71,7 @@ $$
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr)
   \,\bigr\rVert.
+
 $$
 
 *Step 2: Descended term is the unknot-core holonomy.*
@@ -79,13 +87,16 @@ On $\Sigma_0$ the transient component vanishes
 ($\alpha - \hat{\tau}_n(\alpha) = 0$ on the unknot complement, since $\varrho_0$
 has trivial topology and all sections there factor through level $n$).
 Hence:
+
 $$
   \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha)
   \;=\;
   \mathrm{MI}\!\!\int_{\Sigma_0} \alpha
   \;=\;
   \mathrm{Hol}_{\nabla_A}\!\bigl(\varrho_0;\, \mathfrak{G}\bigr),
+
 $$
+
 where the second equality is the nonabelian Stokes
 theorem [yekutieli2015] applied to the disc $\Sigma_0$.
 
@@ -104,6 +115,7 @@ On the surface $\Sigma$, the transient integrand is therefore supported
 on the discs $D_i$ centred at the blow-up points.  Since the $D_i$ are
 disjoint (each blow-up introduces a new connected component of
 $\partial \mathcal{S}_n$), the multiplicative integral splits as a product:
+
 $$
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr)
@@ -111,12 +123,15 @@ $$
   \prod_{i=1}^{N}\;
   \mathrm{MI}\!\!\int_{D_i}
   \bigl(\nabla_A q,\; L \wedge F^+\bigr).
+
 $$
+
 Since the $D_i$ are geometrically disjoint and the group elements commute
 up to the central band $\mathcal{O}_M^{\times}$ of the gerbe
 (the transient modes are localised at distinct points, and the central
 extension ensures that the group-valued integrals commute modulo the
 band), the norm of the product equals the sum of the norms:
+
 $$
   \bigl\lVert\,
   \prod_{i=1}^{N}\;
@@ -129,12 +144,15 @@ $$
   \mathrm{MI}\!\!\int_{E_i}
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert,
+
 $$
+
 where we replace $D_i$ by $E_i$ since the integrand is supported on the
 exceptional fibre $E_i \subset D_i$.
 
 *Step 4: Quantum dilogarithm evaluation.*
 Combining Steps 1--3:
+
 $$
   \mathfrak{m}(\varrho)
   \;=\;
@@ -147,7 +165,9 @@ $$
   \mathrm{MI}\!\!\int_{E_i}
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert.
+
 $$
+
 This is the claimed decomposition [eq:topological-mass-decomp](#eq:topological-mass-decomp).
 The identification of each summand with the quantum dilogarithm
 $\Phi_q(z_i)$ follows from the Corollary below: integration of the

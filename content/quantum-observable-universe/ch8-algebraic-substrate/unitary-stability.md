@@ -7,6 +7,7 @@ Concretely, the oscillatory terms in the explicit formula satisfy:
 
 $$
 \left|\frac{X^{\rho_i}}{[\rho_i]_q}\right| = \frac{X^{1/2}}{|[\rho_i]_q|}
+
 $$
 
 for all $X > 0$. This means:

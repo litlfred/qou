@@ -8,6 +8,7 @@ $$
     R[x_0,\dots,x_4]\Big/\bigl(\textstyle\sum x_j,\;
     \textstyle\sum x_j^2,\; \textstyle\sum x_j^3\bigr)
   \right),
+
 $$
 
 defined by the vanishing of the first three power sums.  Over any

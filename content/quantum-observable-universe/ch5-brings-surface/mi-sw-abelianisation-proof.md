@@ -17,6 +17,7 @@ $$
   A^+ \otimes E_+
   \;+\;
   A^- \otimes E_-,
+
 $$
 
 where $H, E_\pm$ are the standard generators of $\mathfrak{su}(2)$.

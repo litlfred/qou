@@ -6,9 +6,12 @@ subcategory* $\langle V \rangle \subset \mathbf{C}$ is the full
 subcategory whose objects are direct sums of weight spaces of $V$
 (i.e. simultaneous eigenspaces of the Cartan subalgebra action).
 The *maximal torus* of the gauge group is
+
 $$
   T = \mathrm{Aut}^{\otimes}(\tau|_{\langle V \rangle}),
+
 $$
+
 the sub-group scheme of
 $G = \mathrm{Aut}^{\otimes}(\tau)$
 ([SU(2) emergence](#thm:su2-emergence)) consisting of those natural

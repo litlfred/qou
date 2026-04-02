@@ -94,7 +94,17 @@ theorem cohomological_embedding :
   -- (2) T_{2,11} must NOT embed → g ≤ 4
   -- (3) Jones polynomial character matrix has rank 5
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+  refine ⟨{
+    genus := 4
+    genus_eq := rfl
+    knots := ![
+      ⟨2, 3, by decide⟩, ⟨2, 5, by decide⟩, ⟨2, 7, by decide⟩,
+      ⟨2, 9, by decide⟩, ⟨3, 4, by decide⟩, ⟨3, 5, by decide⟩]
+    all_embeddable := by
+      intro i; fin_cases i <;> simp [embeddable, seifertRank, Nat.Coprime] <;> omega
+    spanning_rank := 5
+    spanning_rank_eq := rfl
+  }, rfl, rfl⟩
 
 /-- No additional torus knot embeds at genus 4: T_{2,11} has Seifert
     rank 5, which exceeds g = 4. -/

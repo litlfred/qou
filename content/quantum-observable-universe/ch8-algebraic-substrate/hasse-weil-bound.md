@@ -3,6 +3,7 @@ the Hasse--Weil bound:
 
 $$
 |\alpha_i| = q^{1/2} \qquad \text{for all } i = 1, \ldots, 8
+
 $$
 
 **Proof sketch.** The argument proceeds via the Castelnuovo--Severi
@@ -15,6 +16,7 @@ the Castelnuovo--Severi inequality:
 
 $$
 \bigl(D \cdot D\bigr) \le 2g \cdot \bigl(D \cdot H\bigr)
+
 $$
 
 for any correspondence $D$ and ample divisor $H$. Applied to

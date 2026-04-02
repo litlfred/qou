@@ -47,6 +47,7 @@ At $q = q_0$
 $$
   P_{7,6}(q_0) = +0.0495, \qquad
   t_P(q_0) \approx 10.11
+
 $$
 
 The gate is slow and quiet, but it works.  That it works

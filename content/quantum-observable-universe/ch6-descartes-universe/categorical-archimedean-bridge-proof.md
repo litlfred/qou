@@ -20,6 +20,7 @@ precisely the component along the Reeb direction:
 $$
   \pi_V(d\alpha) = \theta \wedge \iota_\xi(d\alpha)
   = \theta \wedge (\mathcal{L}_\xi\alpha - d(\iota_\xi\alpha)).
+
 $$
 
 On horizontal forms ($\iota_\xi\alpha = 0$), this reduces to
@@ -28,9 +29,12 @@ writing $\alpha = \alpha_H + \theta \wedge \beta$ and using
 $\mathcal{L}_\xi\theta = 0$, we obtain
 $\pi_V(d\alpha) = \theta \wedge \mathcal{L}_\xi\alpha$ in all
 cases. Therefore
+
 $$
   \tau(d_q) = q^{-1} d + (1 - q^{-1})\,\theta \wedge
   \mathcal{L}_\xi,
+
 $$
+
 which is precisely the archimedean formula for $d_q$
 ([archimedean $q$-exterior derivative](#ex:q-ext-deriv)).

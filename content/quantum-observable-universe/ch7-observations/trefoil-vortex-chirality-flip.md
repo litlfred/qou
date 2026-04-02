@@ -20,6 +20,7 @@ $$
   \mathcal{H} \;=\; \underbrace{Wr}_{\text{writhe}}
   \;+\; \underbrace{Tw}_{\text{twist}}, \qquad
   \Delta Wr = -\Delta Tw \quad (\text{during reconnection}).
+
 $$
 
 After several reconnections the trefoil reduces to unknotted loops,

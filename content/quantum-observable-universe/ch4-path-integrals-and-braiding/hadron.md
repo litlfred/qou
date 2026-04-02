@@ -8,12 +8,14 @@ their internal entanglement.  A **hadron** is a composite
 
 $$
   \mathfrak{H}_p \;=\; [K_1, \ldots, K_n]_p \;\bowtie\; \mathcal{L}
+
 $$
 
 satisfying the **stability condition**
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}_p) \;<\; 0
+
 $$
 
 where $\mathbf{E}_{\mathrm{cross}}$ is the crossing energy

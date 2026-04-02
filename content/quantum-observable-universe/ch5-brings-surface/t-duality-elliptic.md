@@ -3,6 +3,7 @@ $X\leftrightarrow z$: writing
 
 $$
   F(X,z)\;=\;X^3+(z+1)\,X^2+(z^2+z+1)\,X+(z^3+z^2+z+1),
+
 $$
 
 one verifies $F(X,z)=F(z,X)$ term by term.  This involution

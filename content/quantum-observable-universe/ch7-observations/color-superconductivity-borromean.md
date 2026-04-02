@@ -101,6 +101,7 @@ $$
   \mathrm{lk}(a, b)
   \;=\;
   \epsilon^{abc}\,\delta_{c, \text{spectator}},
+
 $$
 
   where the "spectator" color $c$ is the tube not participating
@@ -120,6 +121,7 @@ $$
   \;=\;
   q + q^{-1}
   \;\approx\; 2.011 \quad\text{Skein units}.
+
 $$
 
 This is the strong-channel energy of a single Hopf-link crossing
@@ -135,6 +137,7 @@ $$
   \frac{2.011}{749.2}
   \;\times\; 938 \;\mathrm{MeV}
   \;\approx\; 2.5 \;\mathrm{MeV}.
+
 $$
 
 This is close to perturbative QCD estimates of

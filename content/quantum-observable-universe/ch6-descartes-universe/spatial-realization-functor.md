@@ -1,10 +1,13 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([quantum observable universe](#def:quantum-observable-universe)).
 The *spatial realization* of $A$ is the space
+
 $$
   M = \mathrm{Spec}(A) = \{ p \colon \mathbf{1} \to A \mid
   p \text{ is a categorical point} \}
+
 $$
+
 ([categorical point](#def:categorical-point)),
 equipped with the following structures derived purely within
 $\mathbf{C}$:
@@ -14,10 +17,12 @@ $\mathbf{C}$:
    the functions vanishing at $p$. The quotient
    $\mathfrak{m}_p / \mathfrak{m}_p^2$ is functorially dual to the
    tangent space $T_p M$, giving the first-order germ decomposition
+
    $$
      A / \mathfrak{m}_p^2
      \;\cong\;
      \mathbf{1} \oplus \mathfrak{m}_p / \mathfrak{m}_p^2.
+
    $$
 
 2. **Kähler differentials.** The module $\Omega^1(A)$ of Kähler

@@ -29,6 +29,7 @@ $$
   \quad\text{or}\quad
   \ell(w) = \ell(w') \;\text{and}\;
   (i_1, \ldots, i_k) <_{\mathrm{lex}} (i_1', \ldots, i_k')
+
 $$
 
 where $\ell(w) = k$ is the word length (number of crossings)

@@ -3,10 +3,13 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum universe over $R$
 $\Omega^k(A)$ ([higher forms](#def:higher-forms)). The
 *categorical Hodge star* is the involution
 $\star \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
+
 $$
   \alpha \wedge \star \beta
   = \int_A\!\bigl(\alpha^* \cdot \beta\bigr)\;\mathrm{vol},
+
 $$
+
 ```tex
 \begin{equation}\label{eq:categorical-hodge-diagram}
 \begin{tikzcd}[row sep=2.5em, column sep=3em]

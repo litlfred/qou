@@ -22,6 +22,7 @@ $$
   \;\times\;
   \frac{V_B}{\hbar_q^2}
   \;\approx\; 168 \;\text{Skein units per strange quark}.
+
 $$
 
 In physical units (scaling by $m_p c^2 = 938$ MeV and
@@ -32,6 +33,7 @@ $$
   \;\approx\;
   \frac{168}{749} \times 938
   \;\approx\; 210 \;\mathrm{MeV\;per\;baryon}.
+
 $$
 
 **The energy budget.**

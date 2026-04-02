@@ -12,6 +12,7 @@ $\mathfrak{su}(2)$-valued 1-form.
 $$
 g = \begin{pmatrix} \alpha & -\bar{\beta} \\ \beta & \bar{\alpha} \end{pmatrix},
 \qquad |\alpha|^2 + |\beta|^2 = 1,
+
 $$
 
 the inverse is $g^{-1} = g^\dagger = \bigl(\begin{smallmatrix}
@@ -26,6 +27,7 @@ $$
 -\beta \, d\alpha + \alpha \, d\beta &
 -\beta \, d(-\bar{\beta}) + \alpha \, d\bar{\alpha}
 \end{pmatrix}.
+
 $$
 
 Using the constraint $\alpha \, d\bar{\alpha} + \bar{\alpha} \, d\alpha
@@ -37,6 +39,7 @@ traceless and skew-Hermitian: $\theta \in \Omega^1(G; \mathfrak{su}(2))$.
 
 $$
 F = d\theta + \theta \wedge \theta.
+
 $$
 
 The **Maurer--Cartan equation** states that $F = 0$ identically.
@@ -45,6 +48,7 @@ This follows from $d(g^{-1}) = -g^{-1} (dg) \, g^{-1}$:
 $$
 d\theta = d(g^{-1} dg) = d(g^{-1}) \wedge dg
 = -g^{-1} dg \wedge g^{-1} dg = -\theta \wedge \theta,
+
 $$
 
 so $F = d\theta + \theta \wedge \theta = 0$. The Maurer--Cartan form

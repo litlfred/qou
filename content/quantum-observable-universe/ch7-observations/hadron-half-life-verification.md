@@ -115,6 +115,7 @@ $$
   \mathcal{Q}_q({}^3\mathrm{H})
   \;=\;
   P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0) - P_e(q_0)
+
 $$
 
 With the self-deformation correction (daughter at
@@ -125,6 +126,7 @@ $$
   \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
   \;=\;
   P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0 + \Delta q) - P_e(q_0)
+
 $$
 
 The corrected half-life prediction:
@@ -182,6 +184,7 @@ $$
   \mathcal{Q}_{\mathrm{bare}}
   \;\times\;
   \prod_{\tau(r,s)} F(\tau(r,s),\, N)
+
 $$
 
 where $\mathcal{Q}_{\mathrm{bare}} = |\log_q(P_{\mathrm{dau}}/
@@ -252,6 +255,7 @@ $$
   \mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)
   \approx 0.7036
   \qquad\text{at } q = q_0
+
 $$
 
 The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ reduces to $6$ terms
@@ -280,6 +284,7 @@ $$
   \frac{\delta \alpha_{\mathrm{EM}}}{\alpha_{\mathrm{EM}}}
   \;\oplus\;
   48 \,\frac{\delta q}{q}
+
 $$
 
 | Source | Value $\pm$ error | $\delta x / x$ | $\to \delta t/t$ |

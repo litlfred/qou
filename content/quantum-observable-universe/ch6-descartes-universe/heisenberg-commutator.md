@@ -22,6 +22,7 @@ $p \in M$ is
 $$
   [\hat{X},\, \hat{P}]_q := J\,\hbar_q(p),
   \qquad \hbar_q(p) = 1 - q(p)^{-1}.
+
 $$
 
 As $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$ (classicality: one sits at

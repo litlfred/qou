@@ -51,6 +51,7 @@ $$
   (\mathrm{id} \otimes \Delta_n)
   \;=\;
   \Delta_n \circ \mu_n.
+
 $$
 
 In knot variables:
@@ -63,6 +64,7 @@ $$
   \mathrm{tr}_M^{(n)}\!\bigl(
     \rho_n(\beta_1 \cdot \beta_2) \cdot \rho_n(\beta_3)
   \bigr).
+
 $$
 
 **(J-2b) Antipode at level $n$**: $\;S_n(T_i^{(n)}) = T_i^{(n)\,-1}
@@ -76,6 +78,7 @@ $$
   \mathrm{tr}_M^{(n)}\!\bigl(
     \rho_n(\hat{\beta}_a \cdot \hat{\beta}_b)
   \bigr).
+
 $$
 
 Non-degeneracy: $\det G^{(n)}_{ij} \neq 0$ at every brane level.
@@ -89,6 +92,7 @@ $$
   \;=\;
   \mathrm{tr}_M^{(n)}(w \cdot T_i^{(n)})
   \qquad \forall\, w \in H^{(n)}(q).
+
 $$
 
 **(J-3b) Stabilisation**:
@@ -99,6 +103,7 @@ $$
   \frac{1}{\delta}\;\mathrm{tr}_M^{(n)}(w),
   \qquad
   \delta = -(q + q^{-1}).
+
 $$
 
 **(J-3c) Inter-level compatibility** (jet prolongation preserves
@@ -109,6 +114,7 @@ $$
   \;=\;
   \mathrm{tr}_M^{(n)}(w)
   \qquad \forall\, w \in H^{(n)}(q).
+
 $$
 
 This is the knot-variable form of Euler stability: the Jones
@@ -120,6 +126,7 @@ polynomial of a knot is independent of brane level.
 
 $$
   [L_{-1},\, a_m^{(n)}] \;=\; -m\, a_{m-1}^{(n+1)},
+
 $$
 
 where $a_m^{(n)} = \mathrm{tr}_M^{(n)}(\check{R}^{(n)}_{(a)}\, z^m)$
@@ -132,6 +139,7 @@ modes to level-$(n{+}1)$ modes — the translation operator is the
 $$
   |0\rangle^{(n)} \;=\; \ell_{n-1} \circ \cdots \circ \ell_0\,(|0\rangle)
   \;=\; 1 \in A_n.
+
 $$
 
 The unknot embeds identically at every level.
@@ -143,6 +151,7 @@ $$
   \;\;\forall\, i
   \quad\Longrightarrow\quad
   w \in R \cdot 1 \;\;\text{in } H^{(n)}(q).
+
 $$
 
 The vanishing of $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A_n))$
@@ -156,6 +165,7 @@ $$
   \epsilon_n \circ \mathrm{Alt}_2^{(n)} \;=\; \epsilon_n,
   \qquad
   \epsilon_n \circ (\Lambda^2 g_V^{(n)}) = \epsilon_n.
+
 $$
 
 The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} =
@@ -181,6 +191,7 @@ $$
   \ell_n(T_i^{(n)})
   \;=\;
   T_i^{(n+1)}.
+
 $$
 
 For $i \leq n-1$: the base Hecke generators are **entirely
@@ -198,6 +209,7 @@ $$
   \hat{\tau}_n(T^{(n+1)}_{\mathrm{new}}) \;=\; 0,
   \qquad
   \mathfrak{d}_{n+1}(T^{(n+1)}_{\mathrm{new}}) \;=\; 0.
+
 $$
 
 Transient generators have no pre-image at level $n$.  They
@@ -209,6 +221,7 @@ $$
     \mathfrak{d}_{n+1}(T^{(n+1)}_{\mathrm{new}})
   \bigr)
   \;=\; 0.
+
 $$
 
 ### D-3: Descent of the Frobenius relation
@@ -225,6 +238,7 @@ $$
   \underbrace{
     (1 - \hat{\tau}_n)(\Delta_{n+1} \circ \mu_{n+1})
   }_{\text{transient correction}}.
+
 $$
 
 The transient correction encodes the **jet curvature**: the
@@ -243,6 +257,7 @@ modes by statistics:
 
 $$
   \mathrm{tr}_M^{(n+1)}(w) \;=\; \mathrm{tr}_M^{(n)}(\mathfrak{d}_{n+1}(w)).
+
 $$
 
 - **Fermionic (ladder)**: $w \in \mathcal{A}^{\mathrm{trans}}_{n+1}$
@@ -251,6 +266,7 @@ $$
 
 $$
   \mathrm{tr}_M^{(n)}(\mathfrak{d}_{n+1}(w)) \;=\; 0.
+
 $$
 
 Fermionic modes are the jet-created braid words with no
@@ -265,6 +281,7 @@ analogue at the previous level.
 $$
   d_n^2 \;=\; 0
   \qquad\text{on } \Omega^k_H(A_n),
+
 $$
 
 where $\Omega^k_H(A_n)$ is the horizontal subcomplex at level $n$
@@ -276,6 +293,7 @@ $$
   d_{q,n}^2\,\alpha
   \;=\;
   q^{-1}(1 - q^{-1})\;\omega_V^{(n)} \wedge_q [\xi_n,\, \alpha],
+
 $$
 
 where $\omega_V^{(n)} = \sum_{i<j}(T_i^{(n)} T_j^{(n)} -
@@ -295,6 +313,7 @@ $$
   \;=\;
   \chi(A_0)
   \;=\; -6.
+
 $$
 
 The rigidity trace of the identity is level-invariant.  In Hecke
@@ -310,6 +329,7 @@ $$
     \check{R}^{(n+1)} - \ell_n(\check{R}^{(n)})
   \bigr)
   \;\in\; H^2(\mathcal{S},\, \mathcal{B}).
+
 $$
 
 In Hecke generators, this measures the **transient part of the
@@ -321,6 +341,7 @@ $$
   \mathrm{tr}_M^{(n+1)}\!\bigl(
     (1 - \hat{\tau}_n)\, \check{R}^{(n+1)}
   \bigr).
+
 $$
 
 The perpetual obstruction $\kappa_n \neq 0$ means: at every
@@ -334,6 +355,7 @@ $$
   b_k(A_{n+1})
   \;=\;
   b_k^{\mathrm{desc}}(A_{n+1}) + b_k^{\mathrm{trans}}(A_{n+1}),
+
 $$
 
 where
@@ -348,6 +370,7 @@ $$
   }
   \;=\;
   b_k(A_n)
+
 $$
 
 and $b_k^{\mathrm{trans}}$ counts genuinely new cohomology
@@ -360,6 +383,7 @@ $$
   H^p\!\bigl(A_n,\; H^r(\Omega^1(A_n))\bigr)
   \;\Longrightarrow\;
   H^{p+r}(A_{n+1}),
+
 $$
 
 with differentials controlled by $\kappa_n$.
@@ -370,6 +394,7 @@ $$
   S_n\!\bigl([T_i^{(n)},\, T_j^{(n)}]\bigr)^*
   \;=\;
   [T_i^{(n)},\, T_j^{(n)}].
+
 $$
 
 Self-duality of the curvature holds at every level by
@@ -380,6 +405,7 @@ $$
   c_2(A_n)
   \;=\;
   c_2^{\mathrm{desc}}(A_n) + c_2^{\mathrm{trans}}(A_n),
+
 $$
 
 where $c_2^{\mathrm{desc}} = c_2(A_{n-1})$ is inherited and
@@ -394,6 +420,7 @@ $$
   d_{q,n}\, T_\beta^{(n)} = 0
   \;\;\text{and}\;\;
   \delta_{q,n}\, T_\beta^{(n)} = 0.
+
 $$
 
 The harmonic space decomposes under descent:
@@ -408,6 +435,7 @@ $$
   \underbrace{
     \ker \Delta_{q,n+1} \cap \mathcal{A}^{\mathrm{trans}}_{n+1}
   }_{\text{new particles at level $n{+}1$}}.
+
 $$
 
 Descended harmonics are the particles already present at
@@ -422,6 +450,7 @@ $$
   T_{a^{(n)}_{ij}} \cdot T_{g^{(n)}_{ikl}} \cdot
   T_{a^{(n)}_{kl}}^{-1}
   \qquad\text{in } H^{(n)}(q).
+
 $$
 
 The cosimplicial structure links adjacent levels: the coface
@@ -433,6 +462,7 @@ $$
   \ell_n(T_{g^{(n)}_{ijk}}) \;=\; T_{g^{(n+1)}_{\delta^i(ijk)}},
   \qquad
   \mathfrak{d}_{n+1}(T_{g^{(n+1)}_{ijk}}) \;=\; T_{g^{(n)}_{\sigma^j(ijk)}}.
+
 $$
 
 ### JC-9: Global gluing (direct limit)
@@ -451,6 +481,7 @@ $$
   \;=\;
   \mathrm{tr}_M^{(n)}(w^{(n)})
   \qquad\text{(level-independent)}.
+
 $$
 
 All structural and cohomological relations hold in

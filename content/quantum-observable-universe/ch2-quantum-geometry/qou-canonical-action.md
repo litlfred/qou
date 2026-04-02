@@ -12,6 +12,7 @@ $$
   \mathcal{S}_q
   \;=\;
   \mathrm{tr}(\mathcal{L}_q),
+
 $$
 
 where $\mathcal{L}_q = \mathcal{L}_q(\nabla, \psi)$ is the categorical
@@ -28,6 +29,7 @@ $$
   q \cdot R_{\int} \;+\; \mathrm{tr}_A\!\bigl(
     F_\nabla \wedge_q \star_q F_\nabla
   \bigr),
+
 $$
 
 so the categorical action expands to three terms:

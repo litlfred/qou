@@ -20,6 +20,7 @@ $c_{V,V} \colon V \otimes V \to V \otimes V$.  Then:
      q \;:=\; \lambda_+,
      \qquad
      \lambda_- \;=\; -q^{-1}.
+
    $$
 
    This is a *categorical invariant*: it is determined by the
@@ -31,6 +32,7 @@ $c_{V,V} \colon V \otimes V \to V \otimes V$.  Then:
 
    $$
      (T - q)(T + q^{-1}) \;=\; 0,
+
    $$
 
    and the product $\lambda_+ \cdot \lambda_- = -1$ (which follows

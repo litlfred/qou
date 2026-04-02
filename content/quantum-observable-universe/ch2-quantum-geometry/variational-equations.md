@@ -9,6 +9,7 @@ equations are:
    $$
      R_{\int} - \tfrac{1}{2}\,\mathrm{tr}(R_{\int})\,\mathrm{id}_A
      \;=\; T_q[\nabla, \psi],
+
    $$
 
    where $T_q$ is the stress-energy endomorphism constructed from the
@@ -21,6 +22,7 @@ equations are:
    $$
      \nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
      \;=\; J_\psi,
+
    $$
 
    where $J_\psi = \psi^* \otimes D_\nabla\psi - D_\nabla\psi^* \otimes \psi$
@@ -32,6 +34,7 @@ equations are:
 
    $$
      D_\nabla\,\psi \;=\; 0.
+
    $$
 
 ```tex

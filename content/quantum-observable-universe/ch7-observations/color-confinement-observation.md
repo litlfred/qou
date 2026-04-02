@@ -75,6 +75,7 @@ quark in isolation scales as
 
 $$
   P_{\mathrm{isolation}} \sim (-q^{-1})^n \to 0
+
 $$
 
 exponentially in the number of crossings.  The proton, with
@@ -85,6 +86,7 @@ giving
 
 $$
   P_{\mathrm{isolation}} \sim q^{-18} \approx 0.13
+
 $$
 
 at the bare level.  Confinement is not *topologically* absolute

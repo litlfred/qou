@@ -3,6 +3,7 @@ Let $A_q$ denote the $q$-deformed connection
 
 $$
   \Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q,
+
 $$
 
 where $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket

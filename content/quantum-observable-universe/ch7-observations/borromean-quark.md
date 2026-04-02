@@ -14,6 +14,7 @@ $$
   \;=\;
   \mathcal{B}_3(\nu_r,\, \nu_g,\, \nu_b)
   \;\bowtie\; \mathcal{L}_H
+
 $$
 
 *where $\nu_r$, $\nu_g$, $\nu_b$ are unknots
@@ -45,6 +46,7 @@ But the Borromean link has nonzero hyperbolic volume:
 
 $$
   \mathrm{Vol}(S^3 \setminus \mathcal{B}_3) \;=\; 7.32772\ldots
+
 $$
 
 By the topological mass formula
@@ -133,6 +135,7 @@ $$
   \;=\;
   \sum_j P_j(q)\,\mathcal{M}(\nu)
   \;+\; \sum_k Q_k(q)\,\mathcal{M}(\mathcal{L}_H)
+
 $$
 
 In the Borromean picture, $\mathcal{M}(\nu) \approx 0$ (unknot

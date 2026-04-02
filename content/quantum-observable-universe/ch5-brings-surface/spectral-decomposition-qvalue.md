@@ -31,6 +31,7 @@ $$
     \prod_{\tau(r,s) \in \mathcal{E}_g}
     F\!\bigl(\tau(r,s),\, N\bigr)
   }_{\displaystyle\text{knot operator product}}
+
 $$
 
 *where:*
@@ -77,6 +78,7 @@ $$
     \bigr)\bigr|}{\bigl|\mathrm{tr}_M\!\bigl(T_{\beta\text{-decay}}(q)\bigr)\bigr|}
     & \text{active shell, fully filled (Pauli)}
   \end{cases}
+
 $$
 
 *with $T_{\beta\text{-decay}}(q) = \sigma_0 \sigma_1^{-1} \in H_3(q)$ the

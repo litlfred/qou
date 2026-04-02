@@ -52,6 +52,7 @@ $$
   \;\sim\;
   \tfrac{1}{2}(n_+ + n_-)\bigl[(q + q^{-1}) -
   (q_{\mathrm{gold}} + q_{\mathrm{gold}}^{-1})\bigr]
+
 $$
 
    which is nonzero for $q \neq q_{\mathrm{gold}}$.
@@ -80,6 +81,7 @@ $$
   |\mathbf{E}_{\mathrm{cross}}(\mathfrak{p})|
   \;\sim\;
   \tfrac{1}{2}(q + q^{-1}) \cdot n_{\mathrm{link}},
+
 $$
 
 where $n_{\mathrm{link}}$ is the number of Hopf-link crossings
@@ -97,6 +99,7 @@ $$
   \;=\;
   \frac{q_0 - 0.382}{q_0}
   \;\approx\; 0.656.
+
 $$
 
 **The golden ratio is the deconfinement threshold.**

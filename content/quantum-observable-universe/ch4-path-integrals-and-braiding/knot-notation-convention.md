@@ -2,6 +2,7 @@ Throughout this paper, particles **are** their knots.  We write
 
 $$
   \mathfrak{K}_x^{\pm}
+
 $$
 
 where $x$ is the traditional physics symbol for the particle and
@@ -56,4 +57,5 @@ coupling and $\bowtie$ denotes the linking operation.  The proton:
 $$
   \mathfrak{p} = [\mathfrak{K}_u, \mathfrak{K}_u, \mathfrak{K}_d]_p
   \bowtie \mathcal{L}_H
+
 $$

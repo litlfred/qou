@@ -16,4 +16,5 @@ Markdown to reproduce a specific view.
 $$
 \rho(s) = s \cdot \ell_P \cdot \sigma \cdot \Xi_q, \qquad
 \psi_i(s) = \frac{2\pi i}{3} + q \cdot 2\pi s \cdot Q \cdot \gamma
+
 $$

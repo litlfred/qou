@@ -64,6 +64,7 @@ $$
   \frac{d_H}{2}\,
   \frac{1 + (1 - q^{-1})^2\,\langle\Delta_\xi\rangle_e /
             \langle\Delta\rangle_e}{1},
+
 $$
 
 where $d_H = d_H(q)$ is the Hausdorff dimension of $J(f_q) \cap S^1$.

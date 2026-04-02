@@ -9,6 +9,7 @@ boundary). The $q$-deformed Reeb flow rotates the phase of $Z$:
 
 $$
   \mathcal{L}_\xi\,Z \;=\; J\,\hbar_q\,Z,
+
 $$
 
 where $\hbar_q = 1 - q^{-1}$

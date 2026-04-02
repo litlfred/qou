@@ -50,7 +50,12 @@ theorem torus_embeddable_complete (m n : ℕ) (hm : 2 ≤ m) (hmn : m < n)
     (m, n) ∈ embeddablePairs := by
   -- Exhaustive case analysis on m and n with the bound (m-1)(n-1) ≤ 8.
   -- Ref: [manuscript] §5/torus-embeddable-complete
-  sorry
+  simp only [embeddablePairs, List.mem_cons, List.mem_singleton, List.mem_nil_iff, or_false]
+  -- m ≥ 2, m < n, (m-1)(n-1) ≤ 8 forces m ∈ {2, 3}
+  -- m = 2: n - 1 ≤ 8, n ≤ 9, n > 2, coprime to 2 (odd): n ∈ {3,5,7,9}
+  -- m = 3: 2(n-1) ≤ 8, n ≤ 5, n > 3, coprime to 3: n ∈ {4,5}
+  -- m ≥ 4: (m-1)(n-1) ≥ 3·4 = 12 > 8: impossible
+  interval_cases m <;> interval_cases n <;> simp_all [Nat.Coprime] <;> omega
 
 /-- No torus knot with m ≥ 4 and m < n satisfies the genus bound. -/
 -- Ref: [manuscript] §5/torus-embeddable-complete

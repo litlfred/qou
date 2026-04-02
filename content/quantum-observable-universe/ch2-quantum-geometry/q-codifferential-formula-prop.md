@@ -7,6 +7,7 @@ $\langle \cdot, \cdot \rangle_\theta$ is
 $$
   \delta_q \;=\; q^{-1}\,\delta
   \;+\; (1 - q^{-1})\,\mathcal{L}_\xi^* \circ \iota_\xi,
+
 $$
 
 characterised uniquely by the adjoint relation
@@ -15,6 +16,7 @@ $$
   \langle d_q\,\alpha,\, \beta \rangle_\theta
   \;=\;
   \langle \alpha,\, \delta_q\,\beta \rangle_\theta
+
 $$
 
 for all compactly supported forms $\alpha, \beta$.

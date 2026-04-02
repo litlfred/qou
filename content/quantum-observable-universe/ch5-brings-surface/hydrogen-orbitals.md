@@ -43,6 +43,7 @@ $$
   w \to w + 2
   \qquad\Longleftrightarrow\qquad
   \text{two R-I moves at exceptional divisor.}
+
 $$
 
 The bare mass $m_e \approx 0.511$ MeV is unchanged — R-I preserves
@@ -57,6 +58,7 @@ The **shell number** $n$ is the writhe level:
 $$
   n \;=\; \frac{w - 1}{2} \;=\; 1, 2, 3, 4, \ldots
   \qquad\text{for}\quad w = 3, 5, 7, 9, \ldots
+
 $$
 
 The curls added by R-I are **localized at the exceptional
@@ -90,6 +92,7 @@ onto the sphere, are the spherical harmonics $Y_\ell^m$):
 $$
   \sum_{\ell=0}^{n-1} (2\ell + 1) \;=\; n^2
   \quad\text{orbitals per shell.}
+
 $$
 
 This matches observation exactly for all $n$.
@@ -149,6 +152,7 @@ $2n^2$ electrons:
 $$
   2n^2 \;=\; 2 \sum_{\ell=0}^{n-1} (2\ell + 1)
   \;=\; 2(1 + 3 + 5 + \cdots + (2n-1))
+
 $$
 
 For hydrogen (one electron), only the $n = 1$, $\ell = 0$
@@ -165,6 +169,7 @@ scales as $1/n^2$ (same energy spread over larger area):
 $$
   E_n \;=\; -\frac{E_{\mathrm{ion}}}{n^2}
   \;=\; -\frac{13.6 \text{ eV}}{n^2}
+
 $$
 
 This is the Rydberg formula, derived from the R-I crossing

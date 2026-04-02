@@ -3,12 +3,15 @@ Let $(\mathbf{C}, A, \tau)$ be a
 $\{A_n\}_{n \geq 0}$ be the
 ([recursive brane tower](#def:recursive-brane-tower)).  The central extensions of
 gerbes
+
 $$
   1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1
+
 $$
+
 arising from the
 ([jet prolongation](#prop:jet-prolongation)) satisfy the Yekutieli Lifting
 Condition ([Yekutieli lifting condition](#def:yekutieli-lifting-condition)).  In the

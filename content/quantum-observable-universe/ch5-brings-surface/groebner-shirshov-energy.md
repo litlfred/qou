@@ -14,6 +14,7 @@ Define the **energy functional** on $H_A(q)$ by
 
 $$
   E(\xi) \;=\; \sum_{w \in B} |c_w(q)| \cdot \ell(w)
+
 $$
 
 where $\xi = \sum_w c_w(q) \cdot w$ is the normal form
@@ -48,6 +49,7 @@ Then:
      |c| \cdot \bigl(|q - q^{-1}| + 1 - 1\bigr)
      \;=\;
      |c| \cdot |q - q^{-1}|
+
    $$
 
    where $c$ is the coefficient of the $\sigma_i^2$ term.  Every
@@ -98,6 +100,7 @@ $$
   \underset{\text{weighted single}}{(q - q^{-1})\,\sigma_i}
   \;+\;
   \underset{\text{resolved}}{1}
+
 $$
 
 The factor $(q - q^{-1})$ is the **crossing asymmetry** — the same

@@ -58,6 +58,7 @@ neutron to convert).
 
 $$
   \mathcal{M} = \{0, 2, 8, 20, 28, 50, 82, 126\}
+
 $$
 
 For nucleon count $X$, define:
@@ -84,11 +85,13 @@ Compute for parent and daughter:
 $$
   n_p^{\mathrm{par}} = n_{\mathrm{out}}(Z), \qquad
   n_n^{\mathrm{par}} = n_{\mathrm{out}}(N)
+
 $$
 
 $$
   n_p^{\mathrm{dau}} = n_{\mathrm{out}}(Z + 1), \qquad
   n_n^{\mathrm{dau}} = n_{\mathrm{out}}(N - 1)
+
 $$
 
 If any of these are zero (magic closure), the corresponding
@@ -103,6 +106,7 @@ in $H_2(q)$:
 
 $$
   \tau(n) = \mathrm{tr}_{\mathrm{Markov}}(\sigma^n, 2)
+
 $$
 
 If $n = 0$ (magic closure), use $\tau(n_{\mathrm{shell}})$
@@ -122,12 +126,14 @@ $$
   \text{pp}: (c, d) = (1, 0), \qquad
   \text{nn}: (c, d) = (q^2, -q(q^{1/2} - q^{-1/2})), \qquad
   \text{mix}: (c, d) = \tfrac{1}{2}(1+q^2,\, -q(q^{1/2} - q^{-1/2}))
+
 $$
 
 The bare ratio in $\log_q$:
 
 $$
   R_{\mathrm{bare}} = \log_q(P_{\mathrm{dau}} / P_{\mathrm{par}})
+
 $$
 
 ### Step 4: Outer shell correction
@@ -147,6 +153,7 @@ $$
     \log_q \tau(n_n^{\mathrm{dau}})
     - \log_q \tau(n_n^{\mathrm{par}})
   }_{\text{neutron shell change}}
+
 $$
 
 This captures:
@@ -162,6 +169,7 @@ The $T_{3,5}$ weak vertex contributes:
 
 $$
   \Delta_{T_{3,5}} = \log_q \mathrm{tr}_{\mathrm{Markov}}(T_{3,5}, 3) = -3.370
+
 $$
 
 ### Step 6: Inner shell dressing
@@ -172,6 +180,7 @@ are conjugated by $T_{2,9}$:
 $$
   \Delta_{\mathrm{inner}} = 0
   \qquad\text{(cancels: same shells on both sides)}
+
 $$
 
 **(C3)** is used here.
@@ -190,6 +199,7 @@ $$
     \;\times\;
     \hbar_q \cdot E_{\times}(q) \cdot \mu_0
   }
+
 $$
 
 where $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$,
@@ -219,23 +229,27 @@ and $\mu_0 = m_e / (3 E_{\times})$.
 $R_{\mathrm{bare}} = -32.09$
 
 **Step 4:**
+
 $$
   \Delta_{\mathrm{shell}}
   = (\log_q \tau(8) - \log_q \tau(7))
   + (\log_q \tau(4) - \log_q \tau(5))
   = (5.29 - 2.51) + (2.19 - (-0.07))
   \approx 2.78 + 2.26 = +5.04
+
 $$
 
 **Step 5:**
 $\Delta_{T_{3,5}} = -3.37$
 
 **Step 7:**
+
 $$
   \mathcal{Q}_q = |{-32.09 + 5.04 + (-3.37)}|
   \times 0.0991 \times 0.1045 \times 1.630
   \approx 30.42 \times 0.01688
   \approx 0.513 \;\text{MeV}
+
 $$
 
 $\mathcal{Q}_{\mathrm{exp}} \approx 0.318 \pm 0.0001$ MeV.

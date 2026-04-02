@@ -4,12 +4,15 @@ $\{A_n\}_{n \geq 0}$ be the
 restriction morphism $r_n \colon A_n \to A_{n-1}$ yields a Frobenius--Hopf
 object $A_{n-1}$ such that $(\mathbf{C}, A_{n-1}, \tau)$ is again a
 quantum observable universe.  Moreover, the induced descent homomorphism
+
 $$
   \mathfrak{d}_n \;\colon\;
   \mathrm{End}_{\mathbf{C}}(A_n)
   \;\longrightarrow\;
   \mathrm{End}_{\mathbf{C}}(A_{n-1})
+
 $$
+
 is a surjective algebra homomorphism that intertwines the $G_q$-actions at
 levels $n$ and $n{-}1$.  In the archimedean realisation, this recovers
 the surjective $*$-homomorphism

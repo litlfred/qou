@@ -6,6 +6,7 @@ $$
   \Delta_{K_1 K_2 \to K_1' K_2'}(q)
   \;=\;
   T_{K_1', K_2'}(q) - T_{K_1, K_2}(q)
+
 $$
 
 ## 1. The universal beta decay matrix
@@ -19,6 +20,7 @@ $$
   T_{\mathrm{mix}}(q) - T_{nn}(q)
   \;=\;
   T_{pp}(q) - T_{\mathrm{mix}}(q)
+
 $$
 
 In closed form:
@@ -31,6 +33,7 @@ $$
     \;+\;
     \tfrac{1}{2}\,q\,s\;\mathbb{I}
   }
+
 $$
 
 **Explicit entries:**
@@ -42,6 +45,7 @@ $$
       & \dfrac{1 - q^2}{2} \\[6pt]
     \dfrac{1 - q^2}{2} & \dfrac{qs}{2}
   \end{pmatrix}
+
 $$
 
 | Entry | Expanded formula |
@@ -64,6 +68,7 @@ $$
   \boxed{
     \Delta_{\beta^+}(q) \;=\; -\Delta_\beta(q)
   }
+
 $$
 
 $\beta^+$ decay is $\mathfrak{u} \to \mathfrak{d}$, the reverse
@@ -81,6 +86,7 @@ $$
     M_i^{(n+1)}(q) \;=\; T_{\gamma e}(q) \cdot M_i^{(n)}(q)
     \;=\; T_{pp}(q) \cdot M_i^{(n)}(q)
   }
+
 $$
 
 The energy change for shell $n \to n+1$:
@@ -89,6 +95,7 @@ $$
   \Delta E_{n \to n+1}
   \;=\;
   \hat{V}(M_i^{(n+1)}) - \hat{V}(M_i^{(n)})
+
 $$
 
 For hydrogen (single generator), the transfer matrix at
@@ -108,6 +115,7 @@ $$
     \;=\;
     -\Delta_\beta(q)
   }
+
 $$
 
 Pair creation has the same matrix as $\beta^+$ decay:
@@ -126,6 +134,7 @@ $$
   L_i \cdot \Delta_\beta \cdot R_i'
   \;+\;
   L_i' \cdot \Delta_\beta \cdot R_i
+
 $$
 
 where $C_i$ is the product of unchanged transfer matrices
@@ -145,6 +154,7 @@ The target-flip amplitude factors as:
 
 $$
   P_{\mathrm{flip}}(q;\, k_1, k_2) \;=\; c_{k_1 k_2}(q) \cdot \Phi(q)
+
 $$
 
 where $c_{k_1 k_2}$ is the control--control crossing
@@ -155,6 +165,7 @@ $$
     \Phi(q) \;=\;
     \frac{(q-1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1)}{2(q+1)^2}
   }
+
 $$
 
 The full $2 \times 2$ Toffoli transfer matrix $\mathbf{M}(q)$:

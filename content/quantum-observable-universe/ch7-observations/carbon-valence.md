@@ -6,6 +6,7 @@ $$
   \underbrace{T_{2,3} \bowtie T_{2,3}}_{\text{closed } 1s^2}
   \;\bowtie\;
   \underbrace{T_{2,3} \bowtie T_{2,3} \bowtie T_{2,3} \bowtie T_{2,3}}_{\text{residual } R, \; |R| = 4}.
+
 $$
 
 The second shell has capacity $2 \cdot 2^2 = 8$

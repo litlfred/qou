@@ -6,6 +6,7 @@ Borromean link $\mathcal{B}_3$
 $$
   d \;=\; \nu \,\big|_{\mathcal{B}_3,\, -}
   \qquad\text{(unknot, negative orientation in } \mathcal{B}_3\text{)}
+
 $$
 
 The down quark differs from the up quark

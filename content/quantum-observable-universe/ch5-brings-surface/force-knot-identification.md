@@ -22,6 +22,7 @@ $$
   \underbrace{E_{\mathrm{sym}}}_{\text{mass (strong)}}
   \;+\;
   \underbrace{E_{\mathrm{anti}}}_{\text{Coulomb (EM)}}.
+
 $$
 
 The antisymmetric component — the Coulomb channel — reverses sign
@@ -34,6 +35,7 @@ energy:
 $$
   Q(K) \;=\; \frac{1}{2}\bigl(\mathbf{E}_{\mathrm{cross}}(K)
   - \mathbf{E}_{\mathrm{cross}}(\sigma(K))\bigr).
+
 $$
 
 This involution descends from three interlocking structures on the

@@ -67,6 +67,7 @@ the algebraic skeleton encoded in the triple
 
 $$
   (\mathbf{C},\; A,\; \tau)
+
 $$
 
 — a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf
@@ -97,6 +98,7 @@ archimedean tuple
 
 $$
   (\mathbf{C},\; \theta,\; G,\; \mathcal{S}).
+
 $$
 
 The chapter then constructs a categorical Dirac operator
@@ -117,6 +119,7 @@ $$
   \bigr)}_{\text{gauge}}
   \;+\;
   \underbrace{\textstyle\int_A\!\bigl(\psi^{\ast} \cdot \mathcal{D}_\nabla\,\psi\bigr)}_{\text{matter}},
+
 $$
 
 constructed entirely from the rigid monoidal structure.  Varying
@@ -144,6 +147,7 @@ topological mass formula
 
 $$
   \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}}
+
 $$
 
 expresses the mass of a particle knot $K$ in terms of the
@@ -178,6 +182,7 @@ $$
   (1 - q^{-1})^2 \;=\; \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
   \qquad\Longrightarrow\qquad
   q \;=\; q_0 \;+\; O\!\bigl(2.2 \times 10^{-8}\bigr).
+
 $$
 
 From this single parameter we compute estimated masses for all
@@ -198,6 +203,7 @@ Hausdorff dimension
 
 $$
   d_H(q) = \frac{(2q-1)^2}{q^3}.
+
 $$
 
 Crossing energy relates to categorical mass by
@@ -206,6 +212,7 @@ $$
   E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{\,2},
   \qquad
   c_q = \frac{1}{q - 1},
+
 $$
 
 where $c_q$ is the information speed of light — $E = mc^2$

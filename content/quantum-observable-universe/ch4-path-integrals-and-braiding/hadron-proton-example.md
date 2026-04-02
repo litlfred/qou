@@ -14,6 +14,7 @@ $$
   \;=\;
   [\mathfrak{u},\, \mathfrak{u},\, \mathfrak{d}]_p
   \;\bowtie\; \mathcal{L}_{\mathrm{Bor}},
+
 $$
 
 where $\mathcal{L}_{\mathrm{Bor}}$ is the Borromean link.
@@ -46,6 +47,7 @@ $$
   2\,\mathfrak{m}(\mathfrak{u})
   + \mathfrak{m}(\mathfrak{d})
   + \mathbf{E}_{\mathrm{bind}},
+
 $$
 
 where $\mathbf{E}_{\mathrm{bind}}$ is the binding energy from the
@@ -65,6 +67,7 @@ parameter $q \approx 1.110$, the full computation yields
 
 $$
   \mathfrak{m}_{\mathfrak{p}}(q) \;\approx\; 938.272 \;\text{MeV},
+
 $$
 
 matching the experimental proton mass to high precision.

@@ -7,6 +7,7 @@ defined by
 $$
   \xi_q(a) \;=\; q^{-1}\,\xi(a)
   + (1 - q^{-1})\,[\xi,\, X_a]_q,
+
 $$
 
 where $X_a$ is the horizontal derivation associated to $a$ (i.e.

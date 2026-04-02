@@ -23,6 +23,7 @@ $$
   \underbrace{2\mathfrak{p} \bowtie 2\mathfrak{n}}_{\alpha\text{-particle}}
   \;\bowtie\;
   \underbrace{T_{2,3} \bowtie T_{2,3}}_{1s^2\text{ shell (closed)}}
+
 $$
 
 **Why the shell is closed.**  The linking matrix of the
@@ -30,6 +31,7 @@ two-electron Hopf link is
 
 $$
   L \;=\; \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
+
 $$
 
 This matrix has rank $1$.  Adding a third component $e_3$
@@ -57,6 +59,7 @@ $$
   \underbrace{(T_{2,3} \bowtie T_{2,3})}_{1s^2}
   \;\bowtie\;
   \underbrace{T_{2,3}}_{2s^1}
+
 $$
 
 The third electron links to the closed $1s^2$ sub-link at a

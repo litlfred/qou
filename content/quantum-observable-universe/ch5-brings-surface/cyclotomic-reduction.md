@@ -15,6 +15,7 @@ $$
   S_{\mathfrak{p}}
   \;:=\;
   \Sigma_4\;\cap\;\mathbb{Z}_{\zeta_{\mathfrak{p}}}^{\,5},
+
 $$
 
 that is, the set of points on Bring's surface whose resolvent coordinates

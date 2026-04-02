@@ -37,13 +37,16 @@ rank $1$. The induced operator $\Lambda^2 g_V$ acts on this rank-$1$
 module as scalar multiplication by $\det(g_V)$. Following
 diagram [above](#eq:su2-emergence-diagram) from the top-left to the
 bottom-right:
+
 $$
   \tau(\epsilon) \circ \Lambda^2 g_V
   =
   g_{\mathbf{1}} \circ \tau(\epsilon)
   =
   \tau(\epsilon).
+
 $$
+
 Since $\tau(\epsilon)$ is non-degenerate (hence non-zero), this forces
 
 ```tex
@@ -73,6 +76,7 @@ Combining both constraints:
 $$
   G \;=\; \mathrm{SL}(2) \;\cap\; \mathrm{U}(2)
   \;=\; \mathrm{SU}(2).
+
 $$
 
 The volume constraint provides the special-linear condition

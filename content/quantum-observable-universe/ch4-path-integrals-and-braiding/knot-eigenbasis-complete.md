@@ -6,12 +6,15 @@ representation.  Suppose $q$ is not a root of unity.  Then:
    $H_n(q) = \mathrm{End}_{B_n}(V^{\otimes n})$ is semisimple, and
    $V^{\otimes n}$ admits a complete decomposition into irreducible
    $H_n(q)$-modules:
+
    $$
      V^{\otimes n}
      \;\cong\;
      \bigoplus_{\lambda \,\vdash\, n}
      V_\lambda \otimes S_\lambda,
+
    $$
+
    where $\lambda$ ranges over partitions of $n$ with at most two parts
    (the $q$-analogue of Schur--Weyl duality), $V_\lambda$ is the
    irreducible $\mathrm{SU}_q(2)$-module of spin
@@ -24,11 +27,14 @@ representation.  Suppose $q$ is not a root of unity.  Then:
    closure $\hat{\beta}$ the value
    $\mathrm{tr}_M(\rho_n(\beta))$, which equals the Jones polynomial
    $J_L(q)$ up to a framing factor.  In particular, the map
+
    $$
      \{\text{knot types}\}
      \;\longrightarrow\;
      \{\text{irreducible summands of } V^{\otimes n},\; n \geq 1\}
+
    $$
+
    given by $L \mapsto$ the summand in which $\mathrm{tr}_M(\rho_n(\beta))$
    is supported, has image containing every irreducible summand.
 3. **(Density in the physical Hilbert space.)**  In the

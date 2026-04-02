@@ -5,6 +5,7 @@ $$
   \int_A(F_\nabla^* \cdot F_\nabla)
   \;=\; 2\,\int_A({F_\nabla^-}^* \cdot F_\nabla^-)
         + \int_A(F_\nabla \wedge_q F_\nabla),
+
 $$
 
 where the second term is topological (determined by the class

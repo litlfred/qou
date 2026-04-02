@@ -13,6 +13,7 @@ $$
   P_{\mathrm{flip}}(q;\, k_1, k_2)
   \;=\;
   c_{k_1 k_2}(q) \;\cdot\; \Phi(q)
+
 $$
 
 *where $c_{k_1 k_2}$ is the crossing coefficient of the
@@ -28,6 +29,7 @@ $$
   }{
     2\,(q + 1)^2
   }
+
 $$
 
 | Control pair | $c_{k_1 k_2}$ | Weight |
@@ -54,6 +56,7 @@ $$
 $$
   P_{7,6}(q) = 1 \cdot \Phi(q)
   = \frac{(q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1)}{2(q+1)^2}
+
 $$
 
 4. **(Antisymmetry.)** $P_{6,7}(q) = -P_{7,6}(q)$.*
@@ -66,6 +69,7 @@ $$
 
 $$
   P_{7,7}(q) = \frac{q + q^{1/2} - 1}{q + 1}
+
 $$
 
 *This entry vanishes at $q = 1/\varphi^2$
@@ -87,6 +91,7 @@ crossing type.  Direct computation:
 
 $$
   \hat{V}_1^{(pp)} = z \cdot 1 + 0 = z
+
 $$
 
 $$
@@ -95,6 +100,7 @@ $$
   = \frac{(1+q^2)}{2(q^{1/2}+q^{-1/2})}
     - \frac{q(q^{1/2}-q^{-1/2})}{2}
   = z
+
 $$
 
 $$
@@ -103,6 +109,7 @@ $$
   = \frac{q^2}{q^{1/2}+q^{-1/2}}
     - q(q^{1/2}-q^{-1/2})
   = z
+
 $$
 
 All three equal $z$.  (Algebraically:
@@ -122,6 +129,7 @@ $$
   P_{\mathrm{flip}} = \hat{V}_1 \cdot \Delta_0
   = z \cdot \bigl(\hat{V}_0^{(\mathrm{par})} -
     \hat{V}_0^{(\mathrm{dau})}\bigr)
+
 $$
 
 The chain at $\sigma_0$ has two crossings: $(0,1)$ and

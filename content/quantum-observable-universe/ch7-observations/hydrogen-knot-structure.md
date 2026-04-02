@@ -10,6 +10,7 @@ $$
   }_{\mathfrak{p}\text{ (proton)}}
   \;\bowtie\;
   \underbrace{T_{2,3}}_{e^-\text{ (electron)}}
+
 $$
 
 **Knot inventory.**
@@ -52,6 +53,7 @@ ground state ($n = 1$).  The ionization energy is
 $$
   E_{\mathrm{ion}} \;=\; \frac{m_e \cdot \alpha^2}{2}
   \;=\; 13.6 \text{ eV}
+
 $$
 
 where $\alpha$ is the fine structure constant.  In the QOU
@@ -59,6 +61,7 @@ framework, $\alpha$ relates to the substrate parameter via
 
 $$
   \alpha \;=\; \frac{\tanh(\ln q)}{C_{\mathrm{geom}}}
+
 $$
 
 The fundamental formula for $\alpha$ is the EM coupling
@@ -69,6 +72,7 @@ $$
   \alpha_{\mathrm{EM}}(q)
   \;=\;
   \frac{q^{-1}}{[9]_q \cdot [10]_q}
+
 $$
 
 where $q^{-1}$ is the antisymmetric eigenvalue of the $R$-matrix
@@ -88,6 +92,7 @@ $$
   \;=\;
   \frac{(q^2 - 1) \cdot [9]_q \cdot [10]_q}{q^2 + 1}
   \;\approx\; 14.26.
+
 $$
 
 **Physical reading:** the electromagnetic coupling is the
@@ -112,6 +117,7 @@ $$
   \Delta E_{n \to n'}
   \;=\; 13.6 \left(\frac{1}{n^2} - \frac{1}{n'^2}\right)
   \text{ eV}
+
 $$
 
 The $1/n^2$ dependence should arise from the Skein resolution

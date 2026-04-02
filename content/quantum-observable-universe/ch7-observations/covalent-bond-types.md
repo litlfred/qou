@@ -14,6 +14,7 @@ $$
   B_k(R_1, R_2)
   \;=\;
   \underbrace{T_{2,3} \bowtie \cdots \bowtie T_{2,3}}_{k \text{ shared trefoils}}
+
 $$
 
 where each shared trefoil is simultaneously Hopf-linked to one
@@ -34,6 +35,7 @@ $$
   k \cdot \mathbf{E}_{\mathrm{cross}}(T(2,2))
   \;+\;
   \binom{k}{2} \, \Delta E_{\mathrm{inter}},
+
 $$
 
 where $T(2,2)$ is the Hopf link

@@ -4,13 +4,16 @@ $\mathcal{S}_n$ with values in the adjoint bundle $\mathrm{ad}\, \mathcal{S}_n$.
 characterised by the self-duality condition relative to the instanton
 connection $A_n$
 ([recursive brane tower](#def:recursive-brane-tower)):
+
 $$
   \alpha_{n,i} \in \mathcal{H}^1
   \iff
   d_{A_n}\,\alpha = 0
   \quad\text{and}\quad
   d_{A_n}^*\,\alpha = 0,
+
 $$
+
 where the Hodge-star operator is induced by the Hermitian metric that the
 Levi form $L$ ([substrate parameter](#def:substrate-parameter)) defines on the
 horizontal distribution.

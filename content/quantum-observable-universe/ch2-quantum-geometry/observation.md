@@ -12,6 +12,7 @@ where $\epsilon \in \{+1, -1\}$ is the **direction** and
 $$
   \mathfrak{I} \;\in\;
   \Gamma\bigl(U,\; \mathrm{Ad}(J^1 \mathcal{S})\bigr)
+
 $$
 
 is a section of the adjoint bundle of the $1$-jet

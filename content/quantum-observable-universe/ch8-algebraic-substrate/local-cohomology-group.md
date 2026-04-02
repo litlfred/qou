@@ -4,6 +4,7 @@ $\Gamma_{\mathfrak{m}_1}$:
 
 $$
 H^1_{\mathfrak{m}_1}(A) = R^1\Gamma_{\mathfrak{m}_1}(A)
+
 $$
 
 This group measures the algebraic obstruction to extending sections

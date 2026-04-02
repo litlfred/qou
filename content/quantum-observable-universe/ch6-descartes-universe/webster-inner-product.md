@@ -7,6 +7,7 @@ $$
   \langle X, Y \rangle_\theta := g_\theta(X, Y),
   \qquad
   \langle \alpha, \beta \rangle_\theta := g_\theta(\alpha^{\sharp}, \beta^{\sharp}).
+
 $$
 
 This notation makes several dualities visually transparent:

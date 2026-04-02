@@ -70,6 +70,7 @@ $$
   d_q^2(\gamma_5^*\, \omega_T)
   \;=\;
   q^{-1}(1 - q^{-1}) \cdot 5 \cdot \omega_V \wedge_q \omega_T
+
 $$
 
 which is nonzero for $q \neq 1$.  The integer coefficient $5$

@@ -14,6 +14,7 @@ $$
   X^3 + (z + 1)\,X^2 + (z^2 + z + 1)\,X
   + (z^3 + z^2 + z + 1) = 0.
   \tag{C}
+
 $$
 
 The nuclear stability condition
@@ -25,6 +26,7 @@ $$
   \qquad c = \frac{a_C}{2\,a_A}
   = \frac{(q - q^{-1})\,\lambda_C}{2\,a_A}.
   \tag{S}
+
 $$
 
 Both are cubics in one variable parametrized by another.  The
@@ -50,6 +52,7 @@ $$
   t^3 - 2c\,p\,t^2 - 2p
   \;=\; \frac{2\lambda_P}{a_A} \cdot t^{3/2}.
   \tag{D}
+
 $$
 
 Squaring to clear the half-integer exponent and substituting
@@ -59,6 +62,7 @@ $$
   \bigl(u^6 - 2c\,p\,u^4 - 2p\bigr)^2
   \;=\; \frac{4\lambda_P^2}{a_A^2} \cdot u^6.
   \tag{D$'$}
+
 $$
 
 This is a degree-12 curve in $(p, u)$.  After factoring out the
@@ -81,6 +85,7 @@ of genus $1$.
 
 $$
   z(p) \;=\; -\frac{1}{2c\,p}
+
 $$
 
    *so that the coefficients of (C) at $z = z(p)$ match
@@ -99,6 +104,7 @@ $$
   X^3 + \left(1 - \frac{1}{2cp}\right) X^2
   + \left(\frac{1}{4c^2p^2} - \frac{1}{2cp} + 1\right) X
   + \cdots = 0.
+
 $$
 
 The stability cubic, rewritten as a monic cubic in $t$
@@ -106,6 +112,7 @@ with parameter $p$:
 
 $$
   t^3 - 2cp \cdot t^2 + 0 \cdot t - 2p = 0.
+
 $$
 
 Under the substitution $t = \alpha X + \beta$ with
@@ -123,6 +130,7 @@ $$
   4c^3 p^2 + c = 1,
   \qquad\text{i.e.,}\qquad
   p^2 = \frac{1 - c}{4c^3}.
+
 $$
 
 At $c = a_C/(2a_A) \approx 0.01497$, this gives
@@ -167,6 +175,7 @@ at the substrate parameter $q$ is
 $$
   \mathcal{E}_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
   \qquad \Delta = -18.95, \quad j = 129.9.
+
 $$
 
 Since $\Delta < 0$, the real locus $\mathcal{E}_q(\mathbb{R})$ has a single
@@ -181,6 +190,7 @@ $(Q, N)$ on the genus-$0$ **stability cubic**
 $$
   t^3 \;=\; 2p\,(1 + c\,t^2),
   \qquad A = Z + N = t^3.
+
 $$
 
 This is a rational curve: $p = t^3/(2 + 2ct^2)$.  For each

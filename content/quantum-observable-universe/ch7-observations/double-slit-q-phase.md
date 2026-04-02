@@ -11,6 +11,7 @@ $$
   \;=\; \frac{1}{\hbar_q}\!\int_{\gamma_i}\! d_q\,\psi
   \;=\; q^{-1}\,\Phi_{\mathrm{geom}}^{(i)}(y)
         \;+\; (1 - q^{-1})\,\Phi_{\mathrm{Reeb}}^{(i)}(y),
+
 $$
 
 where:
@@ -38,6 +39,7 @@ $$
   \;=\; \Phi_q^{(1)}(y) - \Phi_q^{(2)}(y)
   \;=\; q^{-1}\,\frac{2\pi\,d\sin\theta}{\lambda}
         \;+\; (1 - q^{-1})\,\Delta\phi_\xi(y),
+
 $$
 
 where $\theta$ is the scattering angle and

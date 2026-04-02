@@ -13,6 +13,7 @@ $$
   \iota_{j_i} \colon V_{j_i}
   \;\hookrightarrow\;
   V_{1/2}^{\otimes 2j_i},
+
 $$
 
 so a hadron $\mathfrak{H} \in V_{j_1} \otimes \cdots \otimes V_{j_n}$ can be
@@ -21,6 +22,7 @@ written in a universal tensor form:
 $$
   \mathfrak{H} \;\hookrightarrow\;
   V_{1/2}^{\otimes 2(j_1 + \cdots + j_n)}.
+
 $$
 
 This embedding is *not* unique — the choice of

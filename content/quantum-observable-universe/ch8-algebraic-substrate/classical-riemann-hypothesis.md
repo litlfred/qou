@@ -3,6 +3,7 @@ zeta function $\zeta(s)$ satisfy
 
 $$
 \mathrm{Re}(s) = \frac{1}{2}
+
 $$
 
 In the language of the substrate, this asserts that the critical-line

@@ -12,6 +12,7 @@ $$
   \;+\;
   \psi^* \otimes \mathcal{D}_\nabla\,\psi
   \;\;\in\; \mathrm{End}_{\mathbf{C}}(A),
+
 $$
 
 where $\psi^* = \int_A \!\circ\, S(\psi) \colon A \to \mathbf{1}$ is the

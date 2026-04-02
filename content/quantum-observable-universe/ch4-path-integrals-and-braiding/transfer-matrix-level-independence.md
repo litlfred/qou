@@ -15,6 +15,7 @@ Then:
      \hat{V}^{\mathrm{comp}}(q)
      \;=\;
      P_{K_{\mathfrak{H}}}(q).
+
    $$
 
 2. **Path independence on $\mathcal{S}_p$.**  Two braiding operations

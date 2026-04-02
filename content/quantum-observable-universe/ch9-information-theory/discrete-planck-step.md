@@ -12,6 +12,7 @@ state ([substrate radial coordinate](#rem:substrate-radial-coordinate)):
 
 $$
   \mathcal{L}_\xi\,Z \;=\; J\,\hbar_q\,Z.
+
 $$
 
 The naive period of this rotation is $T = 2\pi/\hbar_q$, but the
@@ -26,6 +27,7 @@ $$
   t_P(q) \;:=\; \frac{1}{\hbar_q}
   \;=\; \frac{1}{1 - q^{-1}}
   \;=\; \frac{q}{q - 1}.
+
 $$
 
 This is a **rational function of $q$** — it makes sense over any
@@ -68,6 +70,7 @@ $$
   \;=\; \hbar_q \cdot t_P
   \;=\; (1 - q^{-1}) \cdot \frac{q}{q-1}
   \;=\; 1.
+
 $$
 
 The Planck length is **identically $1$** over any field.  What
@@ -154,6 +157,7 @@ $$
   \;=\; \frac{1/\varphi^2}{1/\varphi^2 - 1}
   \;=\; \frac{1}{1 - \varphi^2}
   \;=\; -\frac{1}{\varphi}.
+
 $$
 
 The **negative sign** is physical: at $q < 1$, $\hbar_q < 0$ and
@@ -178,6 +182,7 @@ $$
   N(q_0, q)
   \;=\; \int_{q}^{q_0}
   \frac{dq'}{t_P(q')\,\dot{q}(q')}
+
 $$
 
 where $\dot{q}$ is the rate of change of the substrate parameter

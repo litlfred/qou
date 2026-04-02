@@ -7,6 +7,7 @@ $$
   \mathcal{R}_{12}\,\mathcal{R}_{13}\,\mathcal{R}_{23}
   \;=\;
   \mathcal{R}_{23}\,\mathcal{R}_{13}\,\mathcal{R}_{12},
+
 $$
 
 and the braid operator $\check{R} = P \circ \mathcal{R}$ (where $P$ is

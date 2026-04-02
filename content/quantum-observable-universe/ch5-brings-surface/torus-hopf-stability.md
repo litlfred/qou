@@ -7,6 +7,7 @@ condition
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) \;<\; 0
+
 $$
 
 and is therefore a hadron in the sense of
