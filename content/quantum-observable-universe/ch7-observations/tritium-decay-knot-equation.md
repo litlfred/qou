@@ -17,7 +17,6 @@ $$
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}_1}
   \;\bowtie_{\mathrm{Hopf}}\;
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}_2}
-
 $$
 
 Helium-3 $\mathcal{N}(2, 1)$ has the same $A = 3$:
@@ -30,7 +29,6 @@ $$
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})}_{\mathfrak{p}_2}
   \;\bowtie_{\mathrm{Hopf}}\;
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}}
-
 $$
 
 Each $\mathcal{B}_3$ is a Borromean link (3 quark strands),
@@ -50,7 +48,6 @@ $$
   \cdot (\sigma_4 \sigma_5^{-1})^3
   \cdot (\sigma_7 \sigma_8^{-1})^3
   \cdot \text{(inter-nucleon crossings)}
-
 $$
 
 The internal Borromean crossings at strands 0-2 have types:
@@ -81,7 +78,6 @@ $$
   \;\left[\;
     T_{2,3} \;\sqcup\; K_{0_1}
   \;\right]
-
 $$
 
 In expanded link notation:
@@ -103,7 +99,6 @@ $$
   \;\Big[\;
     T_{2,3} \sqcup K_{0_1}
   \;\Big]
-
 $$
 
 **Markov trace of the transition.**
@@ -115,13 +110,11 @@ gives the parent and daughter traces as products over generators:
 $$
   \mathrm{tr}(\bar{\mathcal{N}}(1,2))
   = \prod_{i=0}^{7} (z \cdot a_i^{\mathrm{par}} + b_i^{\mathrm{par}})
-
 $$
 
 $$
   \mathrm{tr}(\bar{\mathcal{N}}(2,1))
   = \prod_{i=0}^{7} (z \cdot a_i^{\mathrm{dau}} + b_i^{\mathrm{dau}})
-
 $$
 
 The traces differ only at generators $\sigma_4$ and $\sigma_5$
@@ -143,7 +136,6 @@ $$
   \frac{q \mu_d + q^{-1} \mu_d}{q^{1/2} + q^{-1/2}}
   \;-\;
   \frac{q \mu_u + q^{-1} \mu_d}{q^{1/2} + q^{-1/2}}
-
 $$
 
 $$
@@ -151,7 +143,6 @@ $$
   \frac{(q - 1)(\mu_d - \mu_u) + q^{-1}(\mu_d - \mu_d)}{q^{1/2} + q^{-1/2}}
   \;=\;
   \frac{q(\mu_d - \mu_u)}{q^{1/2} + q^{-1/2}}
-
 $$
 
 Wait — this needs the full pair Skein difference, not just the
@@ -182,7 +173,6 @@ $$
     - \mathcal{S}_{a_k b_k}^{\mathrm{dau}}(q)
   \right)
   \;-\; m_e
-
 $$
 
 This is the exact knot equation for the tritium $Q$-value:

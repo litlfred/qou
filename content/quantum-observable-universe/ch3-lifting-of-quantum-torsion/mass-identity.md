@@ -17,7 +17,6 @@ $$
   A \otimes A^{\vee}
   \xrightarrow{\;\mathrm{ev}\;}
   \mathbf{1}\bigr),
-
 $$
 
 where $\mathrm{coev}$ and $\mathrm{ev}$ are the rigidity morphisms.
@@ -38,7 +37,6 @@ $$
     \circ \varrho
   \bigr)
   \,\bigr\rVert,
-
 $$
 
 where $\lVert \cdot \rVert$ is the norm on $R$ induced by the

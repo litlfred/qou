@@ -6,7 +6,6 @@ triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
 
 $$
   [n] \;\longmapsto\; \mathfrak{G}_n
-
 $$
 
 from the simplex category $\Delta$ to the $2$-category of gerbes on $M$

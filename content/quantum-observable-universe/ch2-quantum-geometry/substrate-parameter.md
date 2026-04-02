@@ -15,7 +15,6 @@ parametrised by $q \in \mathrm{End}(\mathbf{1}) \cong k^{\times}$:
 
 $$
   d_q \;=\; q^{-1}\,d \;+\; (1 - q^{-1})\,\pi_V \circ d.
-
 $$
 
 ```tex

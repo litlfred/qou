@@ -3,7 +3,6 @@ lepton sector — the antiparticle of the electron.
 
 $$
   e^+ \;=\; \sigma(T_{2,3}) \qquad \text{(mirror trefoil, outlined ○)}
-
 $$
 
 The positron is the same knot as the down quark, distinguished

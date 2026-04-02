@@ -6,7 +6,6 @@ relation
 $$
   q \, L_+ \;-\; q^{-1} L_-
   \;=\; (q^{1/2} - q^{-1/2})\, L_0
-
 $$
 
 weights positive crossings by $q$ and negative crossings by
@@ -28,7 +27,6 @@ $$
   \;=\; q \;-\; \tfrac{1}{2}(q + q^{-1})
   \;=\; \tfrac{1}{2}(q - q^{-1})
   \;> 0.
-
 $$
 
 **Unification of strong and electromagnetic interactions.**
@@ -50,7 +48,6 @@ $$
   \frac{\text{Coulomb}}{\text{Strong}}
   \;=\; \frac{q - q^{-1}}{q + q^{-1}}
   \;=\; \tanh\!\left(\ln q\right).
-
 $$
 
 At $q = 1$ (classical limit), the asymmetry vanishes and the

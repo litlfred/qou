@@ -5,7 +5,6 @@ object* is
 
 $$
   J^1(A) := A \otimes_{\mathbf{C}} \Omega^1(A),
-
 $$
 
 where $\Omega^1(A) = \ker(\mu \colon A \otimes A \to A)$ is the

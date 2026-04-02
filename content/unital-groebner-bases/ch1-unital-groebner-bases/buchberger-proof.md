@@ -5,7 +5,6 @@ choose a representation
 $$
   f = \sum_i h_i \cdot g_{\gamma_i} \cdot h_i', \qquad
   h_i, h_i' \in A,\; \gamma_i \in \Gamma.
-
 $$
 
 Expanding in the monomial basis $B$, write
@@ -26,7 +25,6 @@ applies:
 
 $$
   g = \sum_{i \neq j \in T} d_{i,j}\, S_{i,j}.
-
 $$
 
 The $S_{i,j}$ are also $S$-polynomials about $g_i, g_j$; by

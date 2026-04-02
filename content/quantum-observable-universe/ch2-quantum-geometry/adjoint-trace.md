@@ -11,7 +11,6 @@ $$
     \circ \mathrm{coev}_V
   \;\in\;
   \mathrm{Hom}(\mathbf{1}, \mathbf{1}) \cong R,
-
 $$
 
 where $\mathrm{coev}_V \colon \mathbf{1} \to V \otimes V^{\vee}$ is
@@ -38,5 +37,4 @@ $$
   \mathrm{tr}(\mathrm{ad}(f))
   \;=\;
   -2\,\mathrm{tr}_{\mathbb{C}^2}(f).
-
 $$

@@ -3,7 +3,6 @@ on the substrate:
 
 $$
 \mathbf{Rep}_{\mathrm{loc}}(A) \simeq \mathbf{Comod}(H_\xi)
-
 $$
 
 where $\mathbf{Rep}_{\mathrm{loc}}(A)$ is the category of localized

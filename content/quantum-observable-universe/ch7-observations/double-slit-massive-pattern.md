@@ -9,7 +9,6 @@ $$
   \;=\; 4\,I_0\,\cos^2\!\!\left(\frac{\Delta\Phi_q(\theta)}{2}\right)
         \cdot
         \left(\frac{\sin\beta_q(\theta)}{\beta_q(\theta)}\right)^{\!2},
-
 $$
 
 where the *interference phase* is
@@ -18,7 +17,6 @@ $$
   \Delta\Phi_q(\theta)
   \;=\; q^{-1}\,\frac{2\pi\,d\sin\theta}{\lambda}
         \;+\; (1 - q^{-1})\,\Delta\phi_\xi(\theta)
-
 $$
 
 from the [$q$-deformed path phase](#def:double-slit-q-phase), and the
@@ -28,7 +26,6 @@ $$
   \beta_q(\theta)
   \;=\; q^{-1}\,\frac{\pi\,a\sin\theta}{\lambda}
         \;+\; (1 - q^{-1})^2\,\beta_\xi(\theta),
-
 $$
 
 with $\beta_\xi(\theta)$ the contribution from the spin-core term of
@@ -53,7 +50,6 @@ The fringe spacing on the screen is $q$-corrected:
 
 $$
   \Delta y_q \;=\; \frac{q\,\lambda\,L}{d},
-
 $$
 
 and the envelope half-width is broadened relative to Fraunhofer:
@@ -62,7 +58,6 @@ $$
   w_q \;=\; \frac{q^2\,\lambda\,L}{a}
         \left(1 \;+\; (1 - q^{-1})^2\,
         \frac{\langle\Delta_\xi\rangle}{\langle\Delta\rangle}\right),
-
 $$
 
 where $\langle\Delta_\xi\rangle / \langle\Delta\rangle$ is the ratio

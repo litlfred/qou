@@ -13,7 +13,6 @@ $$
   \frac{v v^{\dagger}}{\lVert v \rVert^2}
   - \tfrac{1}{2}\,\mathrm{id}_V
   \in \mathfrak{su}(2).
-
 $$
 
 This identifies $\mathbb{P}^1(\mathbb{C})$ with the unit $2$-sphere

@@ -3,7 +3,6 @@ pairing on products:
 
 $$
   \int_A ab \;:=\; \int_A \!\circ\; \mu(a \otimes b).
-
 $$
 
 The non-degeneracy condition (i) of

@@ -12,7 +12,6 @@ $$
   \varphi(g \cdot a) = \varphi(a)
   \quad\text{for all } g \in G_q,\;
   a \in \mathcal{A}_\infty.
-
 $$
 
 In the archimedean realisation, $G_q = \mathrm{SU}_q(2)$ and

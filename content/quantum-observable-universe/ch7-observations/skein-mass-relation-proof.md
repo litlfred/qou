@@ -15,7 +15,6 @@ $$
   \frac{\mathrm{Vol}(4_1) / \hbar_q^{\,2}}{m_e / m_e}
   \;=\;
   \frac{\mathrm{Vol}(4_1)}{\hbar_q^{\,2}}.
-
 $$
 
 Substituting $\hbar_q = 1 - q^{-1}$ and the CODATA value
@@ -28,7 +27,6 @@ $$
   \approx 0.009\,817,
   \qquad
   \hbar_q \approx 0.09908.
-
 $$
 
 Inverting $\hbar_q = 1 - 1/q$ yields
@@ -36,7 +34,6 @@ $1/q = 1 - 0.09908 = 0.90092$, so
 
 $$
   q \;\approx\; 1.10997.
-
 $$
 
 The Skein relation itself is the mass-functional analogue of the Kauffman

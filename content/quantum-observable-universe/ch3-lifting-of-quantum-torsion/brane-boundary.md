@@ -11,7 +11,6 @@ $$
   \;=\;
   \bigl\{\, S \hookrightarrow A_n \;\bigm|\;
     \ker(r_n|_S) \neq 0 \,\bigr\}.
-
 $$
 
 In the archimedean realisation,

@@ -7,7 +7,6 @@ $$
   D_{ij}^{[ab]}
   \;=\;
   \mathfrak{q}_i^a \;\bowtie\; \mathfrak{q}_j^b,
-
 $$
 
 where $i, j \in \{\mathfrak{u}, \mathfrak{d}, \mathfrak{s}\}$ are
@@ -39,7 +38,6 @@ $$
   \epsilon_j \cdot q^{\epsilon_j}
   \;+\;
   \mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H),
-
 $$
 
 where $\mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H)$ is the
@@ -56,7 +54,6 @@ $$
   \bar{\mathbf{3}}_c
   \;=\;
   \epsilon^{abc}\,\mathfrak{q}^b \otimes \mathfrak{q}^c.
-
 $$
 
 The antisymmetry $D^{[ab]} = -D^{[ba]}$ is automatic from the
@@ -76,7 +73,6 @@ $$
   D_{[\mathfrak{d}\mathfrak{s}]},
   \quad
   D_{[\mathfrak{s}\mathfrak{u}]}.
-
 $$
 
 These are the three Cooper pair species in the CFL condensate.

@@ -20,7 +20,6 @@ tower is
 
 $$
   \mathbb{CP}^1 \;\longrightarrow\; \mathrm{pt},
-
 $$
 
 which terminates in $1$ step (since
@@ -37,7 +36,6 @@ $$
   \kappa_0 \;\longmapsto\; \chi(A)
   \;=\; \mathrm{tr}(\mathrm{id}_A)
   \;=\; \chi(\mathbb{CP}^1) \;=\; 2.
-
 $$
 
 **(3) Perpetual obstruction.**
@@ -58,7 +56,6 @@ covering).  The Riemann--Hurwitz formula gives
 $$
   R_{\mathrm{tot}} \;=\; 2d + |\chi(A)|
   \;=\; 2 \cdot 1 + |2| \;=\; 4,
-
 $$
 
 with $B = 2$ branch points (the north and south poles of $\mathbb{CP}^1
@@ -74,7 +71,6 @@ $$
   \;\hookrightarrow\;
   \mathrm{Ad}(\mathrm{SU}(2))
   \;=\; \mathfrak{su}(2).
-
 $$
 
 This embedding realizes $\mathbb{CP}^1 \cong S^2$ as the unit sphere in

@@ -25,7 +25,6 @@ $$
   \hat{\tau}(\phi)(f \otimes \omega_a)
   \;=\; \frac{1}{2\pi} \int_0^{2\pi}
   \phi\bigl(e^{i\theta} \cdot (f \otimes \omega_a)\bigr)\, d\theta,
-
 $$
 
 where $e^{i\theta}$ acts via the $\mathrm{U}(1) \hookrightarrow \mathrm{SU}(2)$

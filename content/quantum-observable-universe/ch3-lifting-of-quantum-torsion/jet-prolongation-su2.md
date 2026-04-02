@@ -9,7 +9,6 @@ left-invariant calculus on $\mathrm{SU}(2)$ gives
 
 $$
   \Omega^1(A) \;=\; \mathrm{span}_A\{\omega_1,\, \omega_2,\, \omega_3\},
-
 $$
 
 where $\omega_a$ are the left-invariant $1$-forms dual to the Lie
@@ -21,7 +20,6 @@ $$
   J^1(A) \;:=\; A \otimes \Omega^1(A)
   \;\cong\; \mathcal{O}(\mathrm{SU}(2)) \otimes
   \mathrm{span}\{\omega_1, \omega_2, \omega_3\}.
-
 $$
 
 As a vector space, $J^1(A)$ consists of $\mathcal{O}(\mathrm{SU}(2))$-valued
@@ -34,7 +32,6 @@ is defined by
 $$
   \Delta'(f \otimes \theta)(x, y)
   \;=\; f(xy) \otimes \theta_y,
-
 $$
 
 where $\theta_y$ denotes the left-translate of $\theta$ to $T_y G$.

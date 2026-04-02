@@ -7,7 +7,6 @@ $\xi$ ([categorical Reeb](#def:categorical-reeb)).  The
 $$
   U_1(R) \;:=\; T
   \;=\; \mathrm{Aut}^{\otimes}(\tau|_{\langle V \rangle})
-
 $$
 
 — the maximal torus of the gauge group $G$, viewed as a

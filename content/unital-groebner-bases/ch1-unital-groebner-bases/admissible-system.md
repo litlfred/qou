@@ -18,5 +18,4 @@ such that
 
 $$
   \lambda\,\mathrm{LT}(u \cdot \beta \cdot v) = \mathrm{LT}(f).
-
 $$

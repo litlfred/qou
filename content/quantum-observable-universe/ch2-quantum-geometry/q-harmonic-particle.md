@@ -13,7 +13,6 @@ $$
   d_q\,\alpha = 0
   \;\;\text{and}\;\;
   \delta_q\,\alpha = 0.
-
 $$
 
 This equivalence follows from $\langle \Delta_q \alpha, \alpha
@@ -46,5 +45,4 @@ $$
   \text{particle}
   \;\xrightarrow{\pi_H \oplus \pi_V}\;
   \text{boson $\oplus$ fermion.}
-
 $$

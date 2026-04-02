@@ -9,7 +9,6 @@ Let $k$ be a (commutative) field with unity.
 
    $$
      A/\mathfrak{m}^2 = k\{1, x_1, \ldots, x_n\}.
-
    $$
 
 2. If $\mathfrak{g}$ is a Lie algebra with bracket
@@ -20,7 +19,6 @@ Let $k$ be a (commutative) field with unity.
    $$
      J = \bigl(xy - yx - [x,y]_{\mathfrak{g}}
        \;\big|\; x, y \in \mathfrak{g} \hookrightarrow T\mathfrak{g}\bigr).
-
    $$
 
    Choosing a total ordering $<$ on an index set $I$ for a $k$-basis

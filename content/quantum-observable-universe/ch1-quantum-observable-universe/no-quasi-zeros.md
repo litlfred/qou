@@ -3,7 +3,6 @@ $R$-algebra. An element $a \in A$ is called a **quasi-zero** if
 
 $$
   bac = 0 \qquad \text{for all } b, c \in A \text{ not both } 1.
-
 $$
 
 We say $A$ is an **algebra without quasi-zeros** if no such element

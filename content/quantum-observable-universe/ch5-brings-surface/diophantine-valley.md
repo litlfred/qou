@@ -13,7 +13,6 @@ $$
   t^3 \;=\; 2p\,(1 + c\,t^2),
   \qquad
   c = \frac{a_C}{2\,a_A},
-
 $$
 
 a plane curve $\mathcal{S} \subset \mathbb{A}^2$ parametrising
@@ -29,7 +28,6 @@ The coral elliptic curve of Bring's surface
 $$
   X^3 + (z + 1)\,X^2 + (z^2 + z + 1)\,X
   + (z^3 + z^2 + z + 1) = 0
-
 $$
 
 in the chiral variable $X$ at spacetime ratio $z$.  The
@@ -50,7 +48,6 @@ $$
   \frac{A^*(p)}{p} - 1
   \;=\;
   1 + 2c \cdot {A^*}^{2/3} + O(1/p)
-
 $$
 
 where $A^*(p)$ is the mass number solving $p = A/(2 + cA^{2/3})$.

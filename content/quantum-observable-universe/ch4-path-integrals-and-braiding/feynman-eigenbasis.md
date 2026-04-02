@@ -5,7 +5,6 @@ $$
   \langle\psi_f|\psi_i\rangle
   \;=\;
   \int \mathcal{D}\phi\;\,e^{iS[\phi]/\hbar}.
-
 $$
 
 This expression is basis-independent --- it does not privilege any
@@ -47,7 +46,6 @@ $$
     \circ \varrho
   \bigr)
   \,\bigr\rVert,
-
 $$
 
 where $\int_A$ is the Frobenius form and $\Delta$ the comultiplication.

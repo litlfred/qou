@@ -3,7 +3,6 @@ $\overline{T_{1,0}}$ — the antiparticle of the neutrino.
 
 $$
   \bar{\nu} \;=\; \overline{T_{1,0}} \qquad \text{(mirror unknot, dashed circle ⊙)}
-
 $$
 
 Since the unknot is amphichiral ($T_{1,0} \cong \overline{T_{1,0}}$
@@ -36,7 +35,6 @@ crossing change produces:
 $$
   L_0^{-} \;=\; T_{2,3} \;\sqcup\; \overline{T_{1,0}}
   \quad=\quad e^- \;+\; \bar{\nu}_e
-
 $$
 
 The electron $T_{2,3}$ carries the topological mass

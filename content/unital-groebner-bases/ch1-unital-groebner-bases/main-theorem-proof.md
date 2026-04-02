@@ -8,7 +8,6 @@ of $r$. Suppose the division algorithm produces two representations:
 
 $$
   f = \tilde{f} + r = \tilde{f}' + r'.
-
 $$
 
 Then $\tilde{f} - \tilde{f}' \in I$, so $r - r' \in I$. If

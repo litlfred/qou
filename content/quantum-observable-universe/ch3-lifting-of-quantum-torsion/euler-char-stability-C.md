@@ -11,7 +11,6 @@ multiplicativity formula
 
 $$
   \chi(\mathcal{S}_{n+1}) \;=\; \chi(\mathcal{S}_n) \cdot \chi(F),
-
 $$
 
 provided the fibre $F$ has the homotopy type of a finite CW-complex and the

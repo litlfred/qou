@@ -32,7 +32,6 @@ generator of $T$), giving
 $$
   [d, \pi_V]\,\alpha = \mathcal{L}_\xi(\alpha) - \pi_V(\mathcal{L}_\xi(\alpha))
   = \pi_H(\mathcal{L}_\xi\,\alpha).
-
 $$
 
 Since $\pi_H + \pi_V = \mathrm{id}$ and

@@ -9,7 +9,6 @@ a photon near a nucleus creates an $e^- e^+$ pair, requiring
 
 $$
   E_{\gamma} \;\geq\; 2\,m_e\,c^2 \;=\; 1.022 \;\text{MeV}.
-
 $$
 
 The original electron is unchanged; a new pair appears from the
@@ -25,7 +24,6 @@ $$
   \;\approx\; 3 \, q_0
   \;=\; 3.330
   \quad (\text{in Skein units}).
-
 $$
 
 The positron is the mirror $\sigma(T_{2,3})$ with $3$ negative crossings:
@@ -36,7 +34,6 @@ $$
   \;\approx\; -3 \times 0.9010
   \;=\; -2.703
   \quad (\text{in Skein units}).
-
 $$
 
 The **crossing energy gap** between the two chiralities is
@@ -47,7 +44,6 @@ $$
   \;=\; 3(q + q^{-1})
   \;\approx\; 6.033
   \quad (\text{in Skein units}).
-
 $$
 
 This decomposes into symmetric and antisymmetric parts:
@@ -59,7 +55,6 @@ $$
   \;=\;
   6 \cosh(\ln q)
   \;\approx\; 6.033.
-
 $$
 
 **Three energy scales for "conversion".**
@@ -85,7 +80,6 @@ $$
      \;=\; 3(q - q^{-1})
      \;\approx\; 0.630
      \quad (\text{Skein units}).
-
    $$
 
    The residual $3(q - q^{-1}) > 0$ is the **net Coulomb repulsion**
@@ -96,7 +90,6 @@ $$
      \frac{q - q^{-1}}{q + q^{-1}}
      \;=\; \tanh(\ln q)
      \;\approx\; 0.104
-
    $$
 
    measures the electromagnetic-to-strong ratio for the electron,

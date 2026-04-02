@@ -14,7 +14,6 @@ $$
   1 - q^{-1} \approx 0.09908,
   \qquad
   q \approx 1.10998.
-
 $$
 
 The numerical values are independently verified by the SnapPy witness

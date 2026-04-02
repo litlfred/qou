@@ -16,7 +16,6 @@ At dimension 1 the physical content simplifies drastically.
      \bigl\lVert\,
      \mathrm{Hol}_{\nabla_A}\!\bigl(M_k;\, \mathfrak{G}\bigr)
      \,\bigr\rVert,
-
    $$
 
    so that mass represents the fundamental holonomy resistance of

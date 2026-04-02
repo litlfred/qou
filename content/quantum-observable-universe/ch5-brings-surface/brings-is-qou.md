@@ -21,7 +21,6 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
      M_S \;\xrightarrow{\;\mathrm{Reeb}\;}\; \Sigma_4
      \;\xrightarrow{\;\pi\;}\; \mathbb{P}(V)
      \;\xrightarrow{\;\mathrm{branch}\;}\; \{6\;\text{points}\}.
-
    $$
 
    The degree-$4$ covering $\pi$ has $6$ branch points with total

@@ -20,7 +20,6 @@ $$
   \cdots
   \;\underset{B_1}{\bowtie}\;
   \mathcal{A}(6,6)_6
-
 $$
 
 The linking matrix is the $6 \times 6$ tridiagonal matrix:
@@ -36,7 +35,6 @@ $$
     0 & 0 & 0 & 1 & 0 & 1 \\
     0 & 0 & 0 & 0 & 1 & 0
   \end{pmatrix}.
-
 $$
 
 **Crossing energy.**
@@ -46,7 +44,6 @@ $$
   \mathbf{E}_{\mathrm{cross}}(\mathrm{C}_6^{\mathrm{chain}})
   \;=\;
   5 \cdot E_{\mathrm{bond}}(1).
-
 $$
 
 **Spring behaviour.**

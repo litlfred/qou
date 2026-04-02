@@ -19,7 +19,6 @@ $$
   \underbrace{a_A}_{\gamma}
   p
   \;+\; \delta(A)
-
 $$
 
 where $a_C = (q - q^{-1}) \cdot \lambda_C$ is the Coulomb
@@ -31,7 +30,6 @@ The continuous minimum is
 $$
   p^*(A) \;=\; \frac{\gamma}{2\alpha(A)}
   \;=\; \frac{a_A \cdot A}{2(a_A + a_C \cdot A^{2/3})}.
-
 $$
 
 Since $E$ is strictly convex in $p$, the integer minimiser is
@@ -44,7 +42,6 @@ $$
   \;\in\;
   \bigl\{\lfloor p^*(A) \rfloor,\;
   \lceil p^*(A) \rceil\bigr\}.
-
 $$
 
 There is no approximation error — the integer minimiser of a
@@ -71,7 +68,6 @@ $$
     \frac{a_C \cdot (2k + 1)}{2a_A}
   \right)^{3/2}
   \quad\text{(to leading order).}
-
 $$
 
 These are the **beta-decay thresholds**: at $A = A_k$, the nuclei

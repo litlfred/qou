@@ -5,7 +5,6 @@ contact manifold $(A, \theta)$ satisfies:
 
 $$
 \theta\big|_{\mathrm{supp}(\mathrm{Li}_q)} = 0
-
 $$
 
 This means the defect is maximally tangent to the contact

@@ -6,7 +6,6 @@ derivation ([categorical Reeb derivation](#def:categorical-reeb)).  The
 $$
   \nabla_q \;=\; q^{-1}\,\nabla
   + (1 - q^{-1})\,(\iota_\xi\, \nabla)\,\theta_A.
-
 $$
 
 ```tex

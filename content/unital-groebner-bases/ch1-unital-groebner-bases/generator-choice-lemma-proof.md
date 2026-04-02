@@ -2,7 +2,6 @@ Set $h := h_i$, $f := f_i$. Since $G$ is a Gröbner basis, write
 
 $$
   h = \sum_{k \in K} \lambda_k\, u_k \cdot g_{\gamma_k} \cdot v_k
-
 $$
 
 with $\lambda_k \in R^*$, $u_k, v_k \in B$, $\gamma_k \in \Gamma$.
@@ -21,7 +20,6 @@ $$
   S := \lambda_{k_2}\,\frac{c_{k_2}}{c_{k_1}}\,
     u_{k_1} \cdot g_{\gamma_{k_1}} \cdot v_{k_1}
     - \lambda_{k_2}\, u_{k_2} \cdot g_{\gamma_{k_2}} \cdot v_{k_2}.
-
 $$
 
 Substituting back, either all terms with leading monomial $\alpha$

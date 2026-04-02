@@ -6,7 +6,6 @@ cocommutativity square
 
 $$
   \sigma \circ \Delta \;\neq\; \Delta,
-
 $$
 
 where $\sigma$ is the tensor swap.  At $q = 1$ one has
@@ -29,7 +28,6 @@ $$
   \hat{X}\hat{P} - q\,\hat{P}\hat{X}
   \;=\;
   i\hbar_q,
-
 $$
 
 which replaces the classical $1/r^2$ repulsion kernel with the
@@ -40,7 +38,6 @@ $$
   \;\longmapsto\;
   \frac{[2]_q}{\lvert \varrho(s) - \varrho(t) \rvert^2
   - \hbar_q^{\,2}},
-
 $$
 
 where $[2]_q = q + q^{-1}$ is the quantum integer and

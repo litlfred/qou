@@ -10,7 +10,6 @@ $$
   \;=\;
   q^{-1}\,\nabla \;+\; (1 - q^{-1})\,\iota_\xi\,\nabla
   \;\colon\; A \to \Omega^1(A).
-
 $$
 
 When $q = 1$ this reduces to $\mathcal{D}_\nabla = \nabla$, the

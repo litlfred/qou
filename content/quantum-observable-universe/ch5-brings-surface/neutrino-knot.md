@@ -3,7 +3,6 @@ with no crossings.
 
 $$
   \nu \;=\; K_{0_1} \qquad \text{(unknot, circle ○)}
-
 $$
 
 The unknot has Seifert genus $0$, crossing number $0$, and

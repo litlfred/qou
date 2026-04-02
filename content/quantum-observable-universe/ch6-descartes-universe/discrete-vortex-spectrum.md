@@ -9,7 +9,6 @@ sections of the normal bundle $N_\varrho$.  Then:
    $$
      \lambda_k^{(q)} \;=\;
      [k]_q^2 \cdot \frac{\hbar_q}{L_q^2},
-
    $$
 
    where $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ is the
@@ -23,7 +22,6 @@ sections of the normal bundle $N_\varrho$.  Then:
    $$
      E_j^{(q)} \;=\;
      \frac{\hbar_q}{2I_q}\,[j]_q\,[j+1]_q,
-
    $$
 
    where $I_q$ is the $q$-deformed moment of inertia of the
@@ -38,7 +36,6 @@ sections of the normal bundle $N_\varrho$.  Then:
      \Delta E_{j \to j'} \;=\;
      \frac{\hbar_q}{2I_q}
      \bigl([j']_q[j'+1]_q - [j]_q[j+1]_q\bigr).
-
    $$
 
 4. In the classical limit $q \to 1$:

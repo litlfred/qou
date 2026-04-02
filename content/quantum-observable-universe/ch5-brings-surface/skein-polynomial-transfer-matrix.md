@@ -15,7 +15,6 @@ $$
   \bigr)
   \;=\;
   \prod_{i=0}^{A-2} \hat{V}_i(q)
-
 $$
 
 *is a polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$.  Each
@@ -23,7 +22,6 @@ factor*
 
 $$
   \hat{V}_i(q) \;=\; z(q) \cdot a_i(q) + b_i(q)
-
 $$
 
 *is a rational function in $q^{1/2}$, where $a_i(q), b_i(q) \in
@@ -55,7 +53,6 @@ $$
     c_j & d_j
   \end{pmatrix}
   \;\in\; \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])
-
 $$
 
 has entries that are Laurent polynomials in $q^{1/2}$.  The
@@ -64,7 +61,6 @@ product of $k_i = A - i - 1$ such matrices at generator $\sigma_i$:
 $$
   M_i(q) \;=\; \prod_{j=i+1}^{A-1} T_j(q)
   \;\in\; \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])
-
 $$
 
 has entries that are polynomials in $q^{1/2}$ of degree $\leq 2k_i$.
@@ -72,7 +68,6 @@ The traced volume:
 
 $$
   \hat{V}_i(q) \;=\; z(q) \cdot (M_i)_{11}(q) + (M_i)_{21}(q)
-
 $$
 
 is a rational function in $q^{1/2}$ (the $z$ denominator
@@ -91,7 +86,6 @@ $$
   2 \cdot \frac{A(A-1)}{2} + (A-1)
   \;=\;
   A^2 - 1.
-
 $$
 
 The computation requires exactly
@@ -141,7 +135,6 @@ $$
   P_{\mathcal{N}_{\mathrm{dau}}}(q)
   \;-\;
   P_{e}(q)
-
 $$
 
 (in action units).  Since the parent and daughter polynomials
@@ -166,7 +159,6 @@ $$
   \bigl[P_{\mathcal{N}}^{(\beta_1)}(q) - P_{\mathcal{N}}^{(\mathrm{par})}(q)\bigr]
   \;+\;
   \bigl[P_{\mathcal{N}}^{(\beta_2)}(q) - P_{\mathcal{N}}^{(\mathrm{par})}(q)\bigr]
-
 $$
 
 The difference is the 2-jet cross-term: a polynomial in $q$

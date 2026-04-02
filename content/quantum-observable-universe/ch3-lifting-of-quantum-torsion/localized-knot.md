@@ -5,7 +5,6 @@ projective line object $\mathbb{P}(V) = G/T$
 $$
   (p, K) \;\in\; \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A^{\mathrm{co}\,T})
   \;\times\; \mathrm{Knot}
-
 $$
 
 where:

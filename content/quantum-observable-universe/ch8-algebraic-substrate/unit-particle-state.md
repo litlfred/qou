@@ -4,7 +4,6 @@ scalar) element satisfying the $q$-differential equation:
 
 $$
 d_q \mathrm{Li}_q(z) = \frac{1}{\log_q z}\, dz
-
 $$
 
 where $d_q$ is the Jackson $q$-derivative and

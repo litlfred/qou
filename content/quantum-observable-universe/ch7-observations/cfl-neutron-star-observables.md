@@ -13,7 +13,6 @@ $$
   \rho^{5/3} \cdot \frac{\hbar_q^2}{V_B / \hbar_q^2}
   \;\propto\;
   \rho^{5/3} \cdot \frac{(q-1)^4}{q^4 \cdot V_B}.
-
 $$
 
 In the CFL phase, $\mathrm{Vol}(\mathcal{L}_H) = 0$ and the
@@ -26,7 +25,6 @@ $$
   \rho^{5/3} \cdot \frac{\hbar_q^2}{(q + q^{-1})}
   \;\propto\;
   \rho^{5/3} \cdot \frac{(q-1)^2}{q^2 \cdot (q + q^{-1})}.
-
 $$
 
 The ratio $P_D / P_B \sim V_B / [\hbar_q^2 \cdot (q + q^{-1})]
@@ -55,7 +53,6 @@ $$
   \frac{2.5 \;\mathrm{MeV}}{8.617 \times 10^{-5} \;\mathrm{eV/K}}
   \;\approx\;
   2.9 \times 10^{10} \;\mathrm{K}.
-
 $$
 
 **Prediction**: neutron stars with CFL cores should show a
@@ -81,7 +78,6 @@ $$
   f_0 \cdot \frac{V_B / \hbar_q^2}{V_B / \hbar_q^2 + (q + q^{-1})}
   \;\approx\;
   0.996\, f_0.
-
 $$
 
 The density jump is nearly total (the Borromean contribution

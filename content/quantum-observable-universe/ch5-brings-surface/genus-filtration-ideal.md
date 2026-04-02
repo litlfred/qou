@@ -77,7 +77,6 @@ Computing $T^p$ --- the $p$-th power of the braid generator
 
 $$
   T^p \;=\; a_p \cdot T \;+\; a_{p-1} \cdot \mathbf{1}
-
 $$
 
 The coefficients $a_n$ satisfy the recurrence
@@ -97,7 +96,6 @@ $$
   U_{p-1}\!\left(\tfrac{s}{2}\right)
   \;=\;
   \sum_{j=0}^{(p-1)/2} c_j\, u^j
-
 $$
 
 with leading coefficient $c_{(p-1)/2} = 1$.
@@ -109,7 +107,6 @@ complexity of the knot (the Seifert genus $g(T_{2,p})$):
 
 $$
   \deg_u a_p \;=\; \frac{p-1}{2} \;=\; g(T_{2,p}).
-
 $$
 
 Each monomial $u^k$ in $a_p$ represents the $k$-th independent
@@ -158,7 +155,6 @@ $$
   \bigl\{\, f(u) \in \mathbb{Z}[u] : \deg f > g \,\bigr\}
   \;=\;
   (u^{g+1}).
-
 $$
 
 *A torus knot $T_{2,p}$ admits a localized knot structure on
@@ -188,7 +184,6 @@ $$
       \text{if } (p-1)/2 > g \quad
       (\text{obstructed: overflow}).
   \end{cases}
-
 $$
 
 *Since $c_{(p-1)/2} = 1$ for all odd $p$, the obstruction is
@@ -231,7 +226,6 @@ Applying $d_q^2$ iteratively:
      \;=\;
      q^{-1}(1-q^{-1})\,(g+1)\, c_{g+1}\, u^{g+1}\,
      \omega_V \wedge_q \omega_T
-
    $$
 
    is a **nonzero class in $\Omega^2(A)$** that does not pair
@@ -248,7 +242,6 @@ Applying $d_q^2$ iteratively:
      \;=\;
      (g+1) \cdot q^{-1}(1-q^{-1}) \cdot [\omega_V \wedge_q \omega_T]
      \;\in\; H^2(\Sigma_g,\, \mathbb{Z})
-
    $$
 
    which is nonzero for $q \neq 1$.  At $q = 1$ (the classical

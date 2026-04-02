@@ -13,7 +13,6 @@ $$
 \omega_A^\bullet
 \;\simeq\;
 R\mathrm{Hom}_{A^e}(A,\, A^e)
-
 $$
 
 in $D(A^e)$, where $A^e = A \otimes A^{\mathrm{op}}$ is the enveloping
@@ -28,7 +27,6 @@ $$
 \mathrm{Ext}^i_A(M,\, \omega_A^\bullet)
 \;\cong\;
 H^{d-i}(M)^\vee,
-
 $$
 
 where $d$ is the homological dimension of $A$.

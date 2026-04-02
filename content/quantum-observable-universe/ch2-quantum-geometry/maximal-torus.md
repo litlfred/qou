@@ -9,7 +9,6 @@ The *maximal torus* of the gauge group is
 
 $$
   T = \mathrm{Aut}^{\otimes}(\tau|_{\langle V \rangle}),
-
 $$
 
 the sub-group scheme of

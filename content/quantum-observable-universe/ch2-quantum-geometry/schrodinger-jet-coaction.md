@@ -8,7 +8,6 @@ Schrödinger dynamics take the form
 
 $$
   J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\; \hat{H}_q\, \psi,
-
 $$
 
 where $\hat{H}_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$ is the

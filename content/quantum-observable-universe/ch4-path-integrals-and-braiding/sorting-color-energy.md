@@ -11,7 +11,6 @@ Then:*
      V \otimes V
      \;=\;
      \mathrm{Sym}^2(V) \;\oplus\; \textstyle\bigwedge^2(V)
-
    $$
 
    *with eigenvalues $q$ (symmetric, ordered) and $-q^{-1}$
@@ -36,7 +35,6 @@ Then:*
      \Delta E_{\mathrm{colour}}
      \;=\; q - (-q^{-1})
      \;=\; q + q^{-1}
-
    $$
 
    *At $q = q_0$: $\Delta E = 2.011$ action units per
@@ -53,7 +51,6 @@ Then:*
      E_{\mathrm{colour}}(\pi)
      \;=\;
      \mathrm{inv}(\pi) \cdot (q + q^{-1})
-
    $$
 
    *The worst case (reverse permutation) requires
@@ -67,7 +64,6 @@ corresponding idempotents are:
 $$
   e_+ = \frac{T + q^{-1}}{q + q^{-1}}, \qquad
   e_- = \frac{q - T}{q + q^{-1}}
-
 $$
 
 with $e_+ + e_- = 1$ and $e_+ e_- = 0$.  The image of $e_+$

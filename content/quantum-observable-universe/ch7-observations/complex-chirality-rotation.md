@@ -15,7 +15,6 @@ is governed by the phase $\theta$:
      \mathcal{S}_c(T_{p,k};\, |q|\,e^{i\theta})
      \;=\;
      \mathcal{S}_c(T_{p,k};\, |q|)\,e^{i\,n_c\,\theta},
-
    $$
 
    where $n_c$ is the crossing number.  The mirror image
@@ -59,7 +58,6 @@ $$
   \frac{|\mathcal{S}_c(T_{2,3})| - |\mathcal{S}_c(\sigma(T_{2,3}))|}{|\mathcal{S}_c(T_{2,3})| + |\mathcal{S}_c(\sigma(T_{2,3}))|}
   \;\sim\;
   \mathcal{O}(\theta^2),
-
 $$
 
 which vanishes to first order (consistent with the observed

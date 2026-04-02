@@ -7,7 +7,6 @@ $\star \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
 $$
   \alpha \wedge \star \beta
   = \int_A\!\bigl(\alpha^* \cdot \beta\bigr)\;\mathrm{vol},
-
 $$
 
 ```tex

@@ -24,7 +24,6 @@ three families of relations:
 $$
   T_i^2 \;=\; (q - q^{-1})\,T_i + 1
   \qquad (1 \leq i \leq n-1).
-
 $$
 
 Equivalently $(T_i - q)(T_i + q^{-1}) = 0$: the eigenvalues $q$
@@ -38,7 +37,6 @@ $$
   \;=\;
   T_{i+1}\, T_i\, T_{i+1}
   \qquad (1 \leq i \leq n-2).
-
 $$
 
 This is the hexagon axiom of the braided monoidal category,
@@ -49,7 +47,6 @@ expressed in the Hecke basis.
 $$
   T_i\, T_j \;=\; T_j\, T_i
   \qquad (|i - j| \geq 2).
-
 $$
 
 Strands that do not share a crossing commute: locality of the
@@ -64,14 +61,12 @@ $$
   (\cap \otimes \mathrm{id}_V) \circ
   (\mathrm{id}_V \otimes \cup)
   \;=\; \mathrm{id}_V,
-
 $$
 
 $$
   (\mathrm{id}_{V^{\vee}} \otimes \cap) \circ
   (\cup \otimes \mathrm{id}_{V^{\vee}})
   \;=\; \mathrm{id}_{V^{\vee}}.
-
 $$
 
 In the graphical calculus these are the zig-zag straightenings.
@@ -92,7 +87,6 @@ $$
   \;=\;
   \mu \circ (\mathrm{id} \otimes \mu)
   \colon A^{\otimes 3} \to A.
-
 $$
 
 In knot coordinates: merging three strands is independent of
@@ -106,7 +100,6 @@ $$
   \mathrm{tr}_M\!\bigl(
     \rho(\beta_1) \cdot \rho(\beta_2 \cdot \beta_3)
   \bigr).
-
 $$
 
 **(QU-2b) Frobenius relation** (sliding):
@@ -119,7 +112,6 @@ $$
   \;=\;
   (\mathrm{id} \otimes \mu) \circ
   (\Delta \otimes \mathrm{id}).
-
 $$
 
 In knot coordinates this is the **saddle-point relation**: a
@@ -138,7 +130,6 @@ $$
   \int_A \mu(a \otimes b)
   \;=\;
   \mathrm{tr}_M\!\bigl(\rho(\hat{\beta}_a \cdot \hat{\beta}_b)\bigr),
-
 $$
 
 where $\hat{\beta}_a$ is the braid word representing state $a$.
@@ -154,7 +145,6 @@ $$
   \eta \circ \varepsilon
   \;=\;
   \mu \circ (\mathrm{id} \otimes S) \circ \Delta.
-
 $$
 
 In knot coordinates, the antipode $S$ is the **braid reversal**
@@ -164,7 +154,6 @@ $$
   S(T_i) \;=\; T_i^{-1}
   \;=\; T_i - (q - q^{-1})
   \qquad\text{(from the Hecke relation)}.
-
 $$
 
 The Hopf relation then reads: closing a braid word against its
@@ -178,7 +167,6 @@ $$
   \mathrm{tr}_M(1)
   \;=\;
   J_{0_1}(q).
-
 $$
 
 **(QU-2e) Coassociativity and counit**:
@@ -193,7 +181,6 @@ $$
   \mathrm{id}
   \;=\;
   (\mathrm{id} \otimes \varepsilon) \circ \Delta.
-
 $$
 
 In knot coordinates: splitting a strand into three is independent
@@ -214,7 +201,6 @@ $$
   \;=\;
   \mathrm{tr}_M\!\bigl(w \cdot T_i\bigr)
   \qquad \forall\, w \in H_n(q).
-
 $$
 
 **(QU-3b) Markov property II** (stabilisation):
@@ -224,7 +210,6 @@ $$
   \;=\;
   \frac{1}{\delta}\;\mathrm{tr}_M(w)
   \qquad \text{for } w \in H_n(q) \subset H_{n+1}(q),
-
 $$
 
 where $\delta = -(q + q^{-1})$ is the writhe normalisation.
@@ -236,7 +221,6 @@ $$
   \;\;\forall\, \beta \in B_n
   \quad\Longrightarrow\quad
   \rho(\beta) = 0 \;\text{in } H_n(q).
-
 $$
 
 The fibre functor detects every nonzero morphism — equivalently,
@@ -258,14 +242,12 @@ $$
   \partial_z Y(a, z)
   \;=\;
   Y(L_{-1}\, a,\, z).
-
 $$
 
 In Hecke generators, the mode expansion gives:
 
 $$
   [L_{-1},\, a_m] \;=\; -m\, a_{m-1},
-
 $$
 
 where $a_m = \mathrm{tr}_M(\check{R}_{(a)}\, z^m)$ is the
@@ -276,7 +258,6 @@ $m$-th mode of the vertex operator.
 $$
   Y(|0\rangle, z) \;=\; \mathrm{id}_V, \qquad
   L_{-1}\,|0\rangle \;=\; 0.
-
 $$
 
 The unknot ($|0\rangle = 1 \in A_0$) produces the identity
@@ -297,7 +278,6 @@ $$
   \;\;\forall\, \beta'
   \quad\Longrightarrow\quad
   \beta = \varnothing \;\text{(empty braid)}.
-
 $$
 
 Equivalently, the Gram matrix
@@ -316,7 +296,6 @@ $$
   \quad\Longrightarrow\quad
   w \in R \cdot 1
   \;\text{(scalar multiple of the identity)}.
-
 $$
 
 Equivalently: the only braid word commuting with all generators
@@ -338,7 +317,6 @@ $$
     T_i - T_i^{-1}
   \bigr)
   \;=\; 0.
-
 $$
 
 This is the total writhe of the adjoint representation being
@@ -352,7 +330,6 @@ $$
     [T_i, T_j]\,[T_i, T_j]^{\dagger}
   \bigr)
   \;=\; 0,
-
 $$
 
 where $[T_i, T_j] = T_i T_j - T_j T_i$ and $\dagger$ is the
@@ -372,7 +349,6 @@ $$
   \frac{1}{[2]_q}\bigl(\mathrm{id} - q^{-1}\, T_1\bigr),
   \qquad
   [2]_q = q + q^{-1}.
-
 $$
 
 The volume constraint is:
@@ -382,7 +358,6 @@ $$
   \;=\;
   \epsilon
   \colon V^{\otimes 2} \to \mathbf{1},
-
 $$
 
 and for every gauge automorphism
@@ -390,7 +365,6 @@ $g \in \mathrm{Aut}^{\otimes}(\tau)$:
 
 $$
   \epsilon \circ (\Lambda^2 g_V) \;=\; \epsilon.
-
 $$
 
 In Hecke generators, this becomes: the antisymmetric contraction
@@ -400,7 +374,6 @@ $$
   \epsilon\!\bigl(v \otimes w - q^{-1}\,(T_1 \cdot v \otimes w)\bigr)
   \;=\;
   [2]_q\;\epsilon(v \otimes w)
-
 $$
 
 and is gauge-invariant, fixing the $q$-deformed volume element.
@@ -433,7 +406,6 @@ $$
     \check{R}_{(a)}\, z^{m}
   \Bigr)
   \;=\; 0
-
 $$
 
 for all $\xi$-invariant states $a$ (those annihilated by the
@@ -450,7 +422,6 @@ $$
   d_q^2\,\alpha
   \;=\;
   q^{-1}(1 - q^{-1})\;\omega_V \wedge_q [\xi,\, \alpha].
-
 $$
 
 In knot variables, the weight operator $\xi$ acts on modes as the
@@ -463,7 +434,6 @@ $$
   \qquad
   \mathrm{wr}(a) = \sum_i \mathrm{tr}_M(T_i - T_i^{-1})
   \;\text{(writhe of $\hat{\beta}_a$)}.
-
 $$
 
 The curvature 2-form $\omega_V$ is the Hecke Casimir:
@@ -473,7 +443,6 @@ $$
   \;=\;
   \sum_{i < j}
   (T_i\, T_j - T_j\, T_i)\, dz^i \wedge dz^j.
-
 $$
 
 So $d_q^2 = 0$ if and only if $q = 1$ (classical limit) or
@@ -498,7 +467,6 @@ $$
   \;=\;
   (T_i^{-1})_m^*
   \qquad\text{where } (\cdot)^* \text{ is Frobenius conjugation.}
-
 $$
 
 **Poincar\'e duality** in knot coordinates: for all braid words
@@ -514,7 +482,6 @@ $$
   \bigr)
   \;=\;
   \delta_{\beta,\, \beta'}\;\mathrm{vol},
-
 $$
 
 where $\mathrm{vol} = \int_A(\mathrm{vol}) = 1$ normalises
@@ -535,7 +502,6 @@ $$
   [n]_q!
   \;=\;
   \prod_{k=1}^{n} \frac{q^k - q^{-k}}{q - q^{-1}}.
-
 $$
 
 **Stability under jet prolongation** (C-4a):
@@ -544,7 +510,6 @@ $$
   \mathrm{tr}_M\!\bigl(\mathrm{id}_{J^1 H_n(q)}\bigr)
   \;=\;
   \mathrm{tr}_M\!\bigl(\mathrm{id}_{H_n(q)}\bigr).
-
 $$
 
 The translation operator $L_{-1}$ preserves the Euler
@@ -557,7 +522,6 @@ $$
   \chi(A) \;=\; -6
   \qquad\Longleftrightarrow\qquad
   \mathrm{tr}_M(\mathrm{id}) \;=\; -6.
-
 $$
 
 This forces genus $g = 4$ (Bring's surface), bounding the
@@ -580,7 +544,6 @@ $$
   \bigr)
   \;\in\;
   H^2(\mathcal{S}_p,\, \mathcal{B}),
-
 $$
 
 where $\check{R}_{(n)}$ is the $R$-matrix at brane level $n$.
@@ -593,7 +556,6 @@ prolongation.
 $$
   \kappa_n \;\neq\; 0
   \qquad \forall\, n \geq 0.
-
 $$
 
 In Hecke generators: at every brane level, there exist braid
@@ -618,7 +580,6 @@ $$
   }{
     \mathrm{im}\!\bigl(d\colon \Omega^{k-1}_{H_n(q)} \to \Omega^k_{H_n(q)}\bigr)
   },
-
 $$
 
 where $\Omega^k_{H_n(q)}$ is the space of degree-$k$ antisymmetric
@@ -632,7 +593,6 @@ $$
     \;\big|\;
     i_1 < i_2 < \cdots < i_k
   \bigr\} \cdot \mathrm{Alt}_k,
-
 $$
 
 with $\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\,
@@ -653,7 +613,6 @@ $$
   [T_i,\, T_j]
   \;+\;
   \sum_k f^k_{ij}\, T_k,
-
 $$
 
 where $f^k_{ij}$ are the structure constants of the Hecke algebra.
@@ -667,7 +626,6 @@ $$
   S\!\bigl([T_i, T_j]\bigr)^*
   \;=\;
   [T_i, T_j].
-
 $$
 
 That is, the curvature is invariant under the combined
@@ -685,7 +643,6 @@ $$
   \bigr)
   \;=\;
   c_2(A).
-
 $$
 
 By QUO-3b this vanishes for the adjoint — the adjoint bundle
@@ -708,7 +665,6 @@ $$
     \;+\;
     \iota_\xi\, \omega_V \wedge_q
   \bigr),
-
 $$
 
 where $\Delta = d\delta + \delta d$ is the undeformed Laplacian
@@ -723,7 +679,6 @@ $$
   d_q\,T_\beta = 0
   \;\;\text{and}\;\;
   \delta_q\, T_\beta = 0.
-
 $$
 
 The space $\ker \Delta_q$ is the **particle Hilbert space** —
@@ -752,7 +707,6 @@ $$
     T_{(4_1)}^*,\;
     \mathrm{vol}
   \bigr\},
-
 $$
 
 where $T_{(m,n)} = \mathrm{tr}_M(\rho(\sigma^{(m,n)}))$
@@ -786,7 +740,6 @@ $$
   \;=\;
   a^{(n)}_{ij} \cdot g^{(n)}_{ijk} \cdot
   \bigl(a^{(n)}_{jk}\bigr)^{-1},
-
 $$
 
 where $g^{(n)}_{ijk} \in H_n(q)$ is the transition braid word
@@ -798,7 +751,6 @@ $$
   \;=\;
   T_{a_{ij}} \cdot T_{g_{ikl}} \cdot T_{a_{kl}}^{-1}
   \qquad\text{(in $H_n(q)$)},
-
 $$
 
 where $T_g = \rho(g)$ denotes the Hecke image of a braid word.

@@ -9,7 +9,6 @@ $$
   \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}
   \;\longrightarrow\;
   \mathcal{S}_p
-
 $$
 
 satisfying the following conditions:
@@ -29,7 +28,6 @@ satisfying the following conditions:
 
    $$
      \mathcal{E}_{\mathrm{Mob}}(\iota_p) \;<\; \infty,
-
    $$
 
    which prevents the knot complement from developing cusps that

@@ -8,7 +8,6 @@ $$
 \dfrac{N(\mathfrak{m})^{\hbar_q} - 1}{\hbar_q} & \text{if } \mathfrak{m} \text{ corresponds to a fundamental defect}, \\[6pt]
 0 & \text{otherwise}.
 \end{cases}
-
 $$
 
 A maximal ideal is a **fundamental defect** if it lies over a prime ideal

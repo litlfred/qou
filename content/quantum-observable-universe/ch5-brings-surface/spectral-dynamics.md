@@ -33,7 +33,6 @@ $$
   \cos_q(x)=\frac{\exp_q(ix)+\exp_q(-ix)}{2},
   \qquad
   \sin_q(x)=\frac{\exp_q(ix)-\exp_q(-ix)}{2i},
-
 $$
 
 and $\mathbf{u}\in\mathrm{Im}\mathbb{H}$ is a fixed unit imaginary

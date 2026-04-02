@@ -15,7 +15,6 @@ $$
   \;=\; \ker\bigl(\mathcal{O}(\mathrm{SU}(2))
   \xrightarrow{r_0|_S} \mathcal{O}(\mathrm{U}(1)_N)
   \oplus \mathcal{O}(\mathrm{U}(1)_S)\bigr),
-
 $$
 
 where $\mathrm{U}(1)_N$ and $\mathrm{U}(1)_S$ are the stabiliser

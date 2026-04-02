@@ -13,7 +13,6 @@ $$
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1.
-
 $$
 
 The banding sheaf is
@@ -33,7 +32,6 @@ $$
   H^2(\mathbb{CP}^1, \mathcal{O}^{\times})
   \;\cong\; H^2(\mathbb{CP}^1, \mathbb{Z})
   \;\cong\; \mathbb{Z},
-
 $$
 
 which is torsion-free and has no higher ambiguity.  The Yekutieli

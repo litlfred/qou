@@ -9,14 +9,15 @@
 
 ### Overview
 
-| Metric | Count |
-|--------|-------|
-| Total `.lean` files | 361 |
-| Files with `sorry` | ~50 |
-| Total `sorry` occurrences | 70 |
-| `sorry` without `-- Ref:` citation | 60 |
-| `axiom` declarations | 92 |
-| Content blocks missing required `.lean` | 36 |
+| Metric | Count (initial) | After fixes |
+|--------|----------------|-------------|
+| Total `.lean` files | 361 | 361 |
+| Files with `sorry` | ~50 | ~40 |
+| Total `sorry` occurrences | 70 | **58** |
+| `sorry` without `-- Ref:` citation | 60 | 48 |
+| `axiom` declarations | 92 | 92 |
+| Content blocks missing required `.lean` | 36 | 36 |
+| **Sorrys eliminated in this audit** | — | **12** |
 
 ### 1.1 Sorry Inventory by Chapter
 

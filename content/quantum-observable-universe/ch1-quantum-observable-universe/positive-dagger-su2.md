@@ -8,7 +8,6 @@ transpose:
 
 $$
 f^\dagger = \bar{f}^{\,T} \colon W \to V.
-
 $$
 
 This is well-defined because $\mathrm{SU}(2)$ acts by unitary matrices:
@@ -23,7 +22,6 @@ preserves this inner product by definition: for $g \in \mathrm{SU}(2)$,
 $$
 \langle gv, gw \rangle = (gv)^\dagger (gw) = v^\dagger g^\dagger g \, w
 = v^\dagger w = \langle v, w \rangle.
-
 $$
 
 Now take any endomorphism $f \colon V \to V$ in
@@ -33,7 +31,6 @@ $$
 \langle f^\dagger f \, v, v \rangle
 = \langle f \, v, f \, v \rangle
 = \| f v \|^2 \geq 0
-
 $$
 
 for all $v \in V$. Hence $f^\dagger f$ has real non-negative eigenvalues,
@@ -47,7 +44,6 @@ irreducible). Then:
 $$
 f^\dagger f = \bar{\lambda} \lambda \, \mathrm{id}
 = |\lambda|^2 \, \mathrm{id},
-
 $$
 
 which is manifestly non-negative. For reducible representations

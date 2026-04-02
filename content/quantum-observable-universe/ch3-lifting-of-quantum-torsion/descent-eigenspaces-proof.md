@@ -7,7 +7,6 @@ $$
   \mathrm{End}_{\mathbf{C}}(A_{n+1})
   \;=\;
   \mathrm{im}\,\hat{\tau}_n \;\oplus\; \ker\,\hat{\tau}_n.
-
 $$
 
 Indeed, every $\alpha \in \mathrm{End}_{\mathbf{C}}(A_{n+1})$ decomposes

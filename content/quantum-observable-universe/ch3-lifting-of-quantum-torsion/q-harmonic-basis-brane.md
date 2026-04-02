@@ -11,7 +11,6 @@ $$
   d_{A_n}\,\alpha = 0
   \quad\text{and}\quad
   d_{A_n}^*\,\alpha = 0,
-
 $$
 
 where the Hodge-star operator is induced by the Hermitian metric that the

@@ -39,7 +39,6 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
      \mathrm{End}(V^{\otimes n})
      \;=\;
      \mathcal{A}^{\mathrm{desc}} \;\oplus\; \mathcal{A}^{\mathrm{trans}}
-
    $$
 
    *([descent eigenspaces](#prop:descent-eigenspaces)).
@@ -80,7 +79,6 @@ $$
   q_k = e^{2\pi i/(k+2)}
   \;\xrightarrow{\;\hat{\tau}\;}
   q_{\mathrm{real}}
-
 $$
 
 *is the quantum computation: the lift explores the full

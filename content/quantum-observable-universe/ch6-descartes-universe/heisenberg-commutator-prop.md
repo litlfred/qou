@@ -9,7 +9,6 @@ $$
   [\hat{X},\, \hat{P}]_q \;=\; J\,\hbar_q(p),
   \qquad
   \hbar_q(p) \;=\; 1 - q(p)^{-1},
-
 $$
 
 where $\hbar_q$ is the quantum Planck constant

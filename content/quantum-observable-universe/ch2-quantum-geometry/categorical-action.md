@@ -42,7 +42,6 @@ them with an inserted endomorphism produces the categorical trace:
 
 $$
   \mathcal{S} = \mathrm{tr}(\Phi).
-
 $$
 
 As a string diagram, the action is a single closed loop with $\Phi$

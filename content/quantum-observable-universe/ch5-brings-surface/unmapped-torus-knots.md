@@ -68,7 +68,6 @@ The candidate identification is:
 
 $$
   T_{2,9} \;\longleftrightarrow\; \text{strong force (gluonic binding)}.
-
 $$
 
 The $9$ crossings of $T_{2,9}$ — all of the same sign, as for any

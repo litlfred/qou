@@ -15,7 +15,6 @@ $S \colon A \to A$ satisfying the Hopf compatibility:
 
 $$
 \varepsilon \circ \mu = u \circ (\varepsilon \otimes \varepsilon),
-
 $$
 
 where $u \colon \mathbf{1} \otimes \mathbf{1} \xrightarrow{\cong} \mathbf{1}$ is the canonical unit isomorphism, so that $\varepsilon$ is an algebra map into the monoidal unit.
@@ -25,7 +24,6 @@ where $u \colon \mathbf{1} \otimes \mathbf{1} \xrightarrow{\cong} \mathbf{1}$ is
 $$
 \mu \circ \Delta
 = (\Delta \otimes \mathrm{id}) \circ \alpha \circ (\mathrm{id} \otimes \mu)
-
 $$
 
 where $\alpha$ is the associator in $\mathbf{C}$.

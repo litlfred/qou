@@ -16,7 +16,6 @@ which:
 
    $$
      \mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0.
-
    $$
 
 ```tex

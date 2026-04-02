@@ -22,7 +22,6 @@ Each crossing change in the Skein relation
 $$
   q\,L_+ - q^{-1}\,L_- = s\,L_0,
   \qquad s = q^{1/2} - q^{-1/2},
-
 $$
 
 produces an $L_0$ smoothing — a split into an electron (or
@@ -37,7 +36,6 @@ $$
   s^4
   \;=\;
   (q^{1/2} - q^{-1/2})^4.
-
 $$
 
 At $q = q_0$:
@@ -48,7 +46,6 @@ $$
   s^2 = 0.01084,
   \qquad
   s^4 = 1.18 \times 10^{-4}.
-
 $$
 
 **The Skein amplitude is the EM/strong ratio.**
@@ -68,7 +65,6 @@ $$
   \;\sim\;
   \left(\frac{\text{EM}}{\text{strong}}\right)^4
   \;\approx\; 10^{-4}.
-
 $$
 
 This is a **parameter-free prediction**: the suppression factor
@@ -84,7 +80,6 @@ $$
   \;4_1\;(4\text{ crossings})
   \;\xrightarrow{\;L_0\;}
   \;\overline{T_{2,3}}\;(3\text{ crossings}).
-
 $$
 
 The intermediate knot is the **figure-eight** $4_1$ — the

@@ -11,7 +11,6 @@ $$
     q   & \text{positive crossing } (L_+), \\
     -q^{-1} & \text{negative crossing } (L_-),
   \end{cases}
-
 $$
 
 where $q$ is the substrate parameter
@@ -21,7 +20,6 @@ convention follows the Skein relation
 $$
   q \, L_+ \;-\; q^{-1} L_-
   \;=\; (q^{1/2} - q^{-1/2})\, L_0.
-
 $$
 
 The crossing energy measures the net Skein weight of the composite:

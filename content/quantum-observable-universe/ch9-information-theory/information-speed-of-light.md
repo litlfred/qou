@@ -14,7 +14,6 @@ $$
   \;+\; (1 - q^{-1})\,\iota_\xi A\;\theta
   \;=\; q^{-1}\,A
   \;+\; \hbar_q\,\iota_\xi A\;\theta.
-
 $$
 
 The weight $q^{-1}$ controls horizontal information transfer
@@ -33,7 +32,6 @@ $$
   c_q \;:=\; \frac{q^{-1}}{\hbar_q}
   \;=\; \frac{q^{-1}}{1 - q^{-1}}
   \;=\; \frac{1}{q - 1}.
-
 $$
 
 This is the contact affine coordinate
@@ -60,7 +58,6 @@ $$
                    {\text{temporal advance per step}}
   \;=\; \frac{q^{-1}}{\hbar_q}
   \;=\; \frac{1}{q - 1}.
-
 $$
 
 **Regime behaviour.**
@@ -112,7 +109,6 @@ $$
   \bigr\rVert
   \;\leq\;
   C \, e^{-\mu\,(d(x,y)\, - \, n \cdot c_q \cdot \hbar_q)}
-
 $$
 
 for constants $C, \mu > 0$ depending on $q$.  The causal cone
@@ -132,7 +128,6 @@ $$
   \;=\; \frac{\eta_q}{\hbar_q \cdot (q-1)}
   \;=\; \frac{\eta_q}{q^{-1}(q-1)^2}
   \;=\; \frac{q \cdot \eta_q}{(q-1)^2}.
-
 $$
 
 At $q = q_0$:

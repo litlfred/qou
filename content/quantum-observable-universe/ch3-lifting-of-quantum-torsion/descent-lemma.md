@@ -10,7 +10,6 @@ $$
   \mathrm{End}_{\mathbf{C}}(A_n)
   \;\longrightarrow\;
   \mathrm{End}_{\mathbf{C}}(A_{n-1})
-
 $$
 
 is a surjective algebra homomorphism that intertwines the $G_q$-actions at

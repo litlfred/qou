@@ -18,7 +18,6 @@ $$
   \mathrm{tr}_n(\alpha)
   \;=\;
   (\varepsilon \circ \alpha \circ \eta)(\mathbf{1}),
-
 $$
 
 where $\eta \colon \mathbf{1} \to A_n$ and $\varepsilon \colon A_n \to

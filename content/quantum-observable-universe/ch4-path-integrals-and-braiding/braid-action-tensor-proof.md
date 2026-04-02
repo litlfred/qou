@@ -10,7 +10,6 @@ $$
   (\mathrm{id} \otimes c)
   \circ (c \otimes \mathrm{id})
   \circ (\mathrm{id} \otimes c)
-
 $$
 
 on $V^{\otimes 3}$.  This is exactly the braid relation for adjacent

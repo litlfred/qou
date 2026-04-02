@@ -13,7 +13,6 @@ $$
   Q(\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s}))
   \;=\; +\tfrac{2}{3} - \tfrac{1}{3} - \tfrac{1}{3}
   \;=\; 0.
-
 $$
 
    The strangelet is **electromagnetically neutral** for all $q > 0$.
@@ -27,7 +26,6 @@ $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{S}_N)
   \;=\;
   N \cdot \tfrac{1}{2}(n_+ + n_-)(q + q^{-1})
-
 $$
 
    with **no Coulomb correction**.  The entire crossing energy is
@@ -43,7 +41,6 @@ $$
   n_-^{(\mathrm{uds})} = 3 + 5 = 8,
   \qquad
   n_-^{(\mathrm{udd})} = 3 + 3 = 6.
-
 $$
 
    The binding component per baryon satisfies
@@ -53,7 +50,6 @@ $$
   \;=\; 8\,q^{-1}
   \;>\; 6\,q^{-1}
   \;=\; \mathbf{E}_{\mathrm{bind}}^{(\mathrm{udd})}
-
 $$
 
    for all $q > 0$.  Strange matter has **strictly more

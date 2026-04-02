@@ -14,7 +14,6 @@ spacetime ratio satisfies
 
 $$
   z-z_c\;\sim\;\delta^2,
-
 $$
 
 so while the projection map develops a ramification cusp, $\delta$ passes

@@ -13,7 +13,6 @@ $$
     \begin{pmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{pmatrix}
     : \theta \in \mathbb{R}
   \right\},
-
 $$
 
 the diagonal matrices in $\mathrm{SU}(2)$. Each element of $T$ acts on

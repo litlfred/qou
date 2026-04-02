@@ -17,7 +17,6 @@ barrier between connected components requires energy
 
 $$
   \mathbf{E}_{\text{flip}}(e^-) \;=\; +\infty.
-
 $$
 
 No finite energy process can convert a single electron into a single
@@ -54,7 +53,6 @@ Therefore:
 $$
   \mathbf{E}_{\text{flip}}(\mathfrak{p}) \;=\; +\infty, \qquad
   \mathbf{E}_{\text{flip}}(\mathfrak{n}) \;=\; +\infty.
-
 $$
 
 The only way to produce $\bar{\mathfrak{p}}$ is pair creation at the

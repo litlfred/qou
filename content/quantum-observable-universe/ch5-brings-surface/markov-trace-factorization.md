@@ -21,7 +21,6 @@ $$
   \;=\;
   \prod_{i=0}^{A-2}
   \bigl(z \cdot a_i + b_i\bigr).
-
 $$
 
 Each $\hat{V}_i = z \cdot a_i + b_i$ is a **polynomial in
@@ -41,7 +40,6 @@ $$
     c_j(q - q^{-1}) + d_j & c_j \\
     c_j & d_j
   \end{pmatrix}
-
 $$
 
 has entries that are polynomials in $q$.  The crossing types
@@ -59,14 +57,12 @@ polynomials in $q$ of degree $\leq 2k_i$.  Then:
 
 $$
   \hat{V}_i(q) \;=\; z \cdot (M_i)_{11} + (M_i)_{21}
-
 $$
 
 is a polynomial in $q^{1/2}$.  The nuclear Skein polynomial is:
 
 $$
   P_{\mathcal{N}}(q) \;=\; \prod_{i=0}^{A-2} \hat{V}_i(q)
-
 $$
 
 **This product IS the Skein polynomial of the nuclear link
@@ -113,7 +109,6 @@ $$
   \mathrm{tr}(\cdots (a_i \sigma_i + b_i))
   \;=\;
   (z \cdot a_i + b_i) \cdot \mathrm{tr}(\cdots).
-
 $$
 
 This works because:
@@ -164,7 +159,6 @@ $$
   \prod_{i} \hat{V}_i(q)
   \;=\;
   P_{\mathcal{N}}(q)
-
 $$
 
 Each step preserves the link invariant.  The polynomial
@@ -188,7 +182,6 @@ $$
   (A-1)(A+1)
   \;=\;
   A^2 - 1
-
 $$
 
 For ${}^{14}\mathrm{C}$: $\deg \leq 195$.  For
@@ -209,7 +202,6 @@ $$
   \frac{1}{1 - q^{-1}}
   \;\approx\; 10.09
   \quad\text{as } A \to \infty.
-
 $$
 
 The sub-leading correction is $O(1/A)$ and carries the

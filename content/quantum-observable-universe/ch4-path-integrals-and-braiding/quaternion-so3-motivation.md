@@ -14,7 +14,6 @@ The key identifications are:
      a + b\,\mathbf{i} + c\,\mathbf{j} + d\,\mathbf{k}
      \;\longmapsto\;
      \begin{pmatrix} a + bi & -c + di \\ c + di & a - bi \end{pmatrix}.
-
    $$
 
    Under this map the Pauli generators
@@ -42,7 +41,6 @@ The key identifications are:
      \mathbf{v} \;\longmapsto\; \mathbf{q}\,\mathbf{v}\,\mathbf{q}^{*},
      \qquad
      \mathbf{v} \in \mathrm{Im}\mathbb{H}.
-
    $$
 
    This is the adjoint representation, and the map

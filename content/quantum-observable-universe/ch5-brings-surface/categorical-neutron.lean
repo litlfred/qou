@@ -66,8 +66,11 @@ theorem neutron_proton_splitting :
     neutron_mass q - (7.32772475341775 / (1 - q⁻¹) ^ 2) =
     (1 / 2) * (q - q⁻¹) := by
   -- Ref: [manuscript] Ch. 5, §Categorical neutron
-  intro q _hq
+  intro q hq
   unfold neutron_mass
+  -- After unfolding, the let-bindings expand and the difference
+  -- cancels the vol_borromean / hbar_q^2 term, leaving the asymmetry.
+  simp only []
   ring
 
 end QOU.Torsion

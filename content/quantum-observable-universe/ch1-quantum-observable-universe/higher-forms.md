@@ -5,7 +5,6 @@ calculus $\Omega^1(A)$ ([quantum universe](#def:quantum-universe)). The
 $$
   \Omega^k(A) \;=\; \bigwedge\nolimits_A^k \Omega^1(A),
   \qquad k = 0, 1, 2, \ldots
-
 $$
 
 (exterior powers of the $A$-bimodule $\Omega^1(A)$ in $\mathbf{C}$),

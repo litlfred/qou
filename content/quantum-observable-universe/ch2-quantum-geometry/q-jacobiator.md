@@ -9,7 +9,6 @@ $\theta(U) = \theta(V) = \theta(W) = 0$). The *Jacobiator*
 $$
   \mathrm{Jac}_q(U,V,W)
   \;:=\; [[U,V]_q, W]_q + [[V,W]_q, U]_q + [[W,U]_q, V]_q
-
 $$
 
 is given by
@@ -18,7 +17,6 @@ $$
   \mathrm{Jac}_q(U,V,W)
   \;=\; -q^{-1}(1-q^{-1})\!\sum_{\mathrm{cyc}}
         d\theta(V,W)\,\mathcal{L}_\xi U,
-
 $$
 
 where the sum is over cyclic permutations of $(U,V,W)$. In particular,

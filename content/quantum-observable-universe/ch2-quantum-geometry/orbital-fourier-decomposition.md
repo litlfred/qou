@@ -16,7 +16,6 @@ $S^1$:
 $$
   N_p \;=\; T_p \Sigma_4 \,/\, T_p \varrho
   \qquad\text{for } p \in \varrho(S^1).
-
 $$
 
 At each point of the trefoil, $N_p \cong \mathbb{R}^2$ — two
@@ -43,7 +42,6 @@ $$
     c_\ell \cos(\ell\theta) + d_\ell \sin(\ell\theta)
   \bigr)
   \,\hat{n}_2(\theta)
-
 $$
 
 where $\hat{n}_1(\theta), \hat{n}_2(\theta)$ are an
@@ -57,7 +55,6 @@ $$
   \;=\;
   \frac{1}{2\pi} \oint_{S^1}
   \kappa(\sigma, \hat{n}_1) \, d\theta
-
 $$
 
 where $\kappa$ is the rotation angle of $\sigma$ relative to
@@ -75,7 +72,6 @@ constrains the total energy:
 
 $$
   E_n \;=\; -\frac{E_{\mathrm{ion}}}{n^2}.
-
 $$
 
 The twist $k$ is the norm-squared of $\sigma$ in the $L^2$
@@ -85,7 +81,6 @@ $$
   k \;=\;
   \sum_{\ell=0}^{\infty}
   \ell \, (a_\ell^2 + b_\ell^2 + c_\ell^2 + d_\ell^2).
-
 $$
 
 At fixed $k = 2(n-1)$, only finitely many Fourier modes can
@@ -102,7 +97,6 @@ $\lambda_\ell = [\ell]_q [\ell + 1]_q$ under the
 
 $$
   [\ell]_q \;=\; \frac{q^\ell - q^{-\ell}}{q - q^{-1}}
-
 $$
 
 is the $q$-integer.  At $q = 1$, this recovers the classical
@@ -145,7 +139,6 @@ $V_\ell$ relative to the Reeb axis
 $$
   V_\ell \;=\;
   \bigoplus_{m=-\ell}^{+\ell} \mathbb{C} \cdot Y_\ell^m
-
 $$
 
 where $Y_\ell^m$ is the spherical harmonic — the restriction
@@ -179,7 +172,6 @@ $$
   \qquad
   s = -\tfrac{1}{2}: \quad
   \sigma \;\text{in the } (-1)\text{-eigenspace}.
-
 $$
 
 This doubles the orbital count: each of the $n^2$ orbitals
@@ -196,7 +188,6 @@ $$
   \mathbb{C}
   \qquad
   \text{(dimension } 2n^2\text{)}
-
 $$
 
 | Quantum number | Fourier origin | Representation |

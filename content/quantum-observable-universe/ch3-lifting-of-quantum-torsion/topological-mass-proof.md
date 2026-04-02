@@ -15,7 +15,6 @@ $$
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert,
-
 $$
 
 where $\Sigma$ is a surface with $\partial\Sigma = \varrho$.  The
@@ -38,7 +37,6 @@ $$
   \lVert \hat{\tau}_n(\alpha) \rVert^2
   \;+\;
   \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2
-
 $$
 
 for every section $\alpha$.  Applying this to the mass integrand and
@@ -71,7 +69,6 @@ $$
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr)
   \,\bigr\rVert.
-
 $$
 
 *Step 2: Descended term is the unknot-core holonomy.*
@@ -94,7 +91,6 @@ $$
   \mathrm{MI}\!\!\int_{\Sigma_0} \alpha
   \;=\;
   \mathrm{Hol}_{\nabla_A}\!\bigl(\varrho_0;\, \mathfrak{G}\bigr),
-
 $$
 
 where the second equality is the nonabelian Stokes
@@ -123,7 +119,6 @@ $$
   \prod_{i=1}^{N}\;
   \mathrm{MI}\!\!\int_{D_i}
   \bigl(\nabla_A q,\; L \wedge F^+\bigr).
-
 $$
 
 Since the $D_i$ are geometrically disjoint and the group elements commute
@@ -144,7 +139,6 @@ $$
   \mathrm{MI}\!\!\int_{E_i}
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert,
-
 $$
 
 where we replace $D_i$ by $E_i$ since the integrand is supported on the
@@ -165,7 +159,6 @@ $$
   \mathrm{MI}\!\!\int_{E_i}
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert.
-
 $$
 
 This is the claimed decomposition [eq:topological-mass-decomp](#eq:topological-mass-decomp).

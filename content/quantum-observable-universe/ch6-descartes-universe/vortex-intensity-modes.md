@@ -15,7 +15,6 @@ dispersion relation is
 $$
   \omega_k \;=\; \frac{\Gamma}{4\pi a^2}\,k^2
   \bigl(\ln(L/a) - \text{const}\bigr),
-
 $$
 
 with vortex core radius $a$ and circulation $\Gamma$.  These
@@ -31,7 +30,6 @@ $$
   \omega_k^{(q)} \;=\;
   \frac{\Gamma_q}{4\pi a_q^2}\,[k]_q^2
   \bigl(\ln_q(L/a_q) - c_q\bigr).
-
 $$
 
 As $q \to 1$ the $q$-integers collapse to ordinary integers and

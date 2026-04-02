@@ -9,7 +9,6 @@ $\Delta_\mu$ as the transpose of $\mu$ under $\phi$:
 
 $$
   \Delta_\mu = (\phi^{-1} \otimes \phi^{-1}) \circ \mu^{\vee} \circ \phi,
-
 $$
 
 where $\mu^{\vee} \colon A^{\vee} \to A^{\vee} \otimes A^{\vee}$ is
@@ -30,7 +29,6 @@ $$
   (\mathrm{id} \otimes \Delta_\mu)(a \otimes b),\; c \bigr\rangle
   = \int_A \mu\bigl(\mu(a \otimes b_1) \otimes b_2\bigr) \cdot c
   = \int_A \mu\bigl(a \otimes \mu(b_1 \otimes b_2)\bigr) \cdot c,
-
 $$
 
 where $\Delta_\mu(b) = b_1 \otimes b_2$ (Sweedler notation) and the
@@ -41,7 +39,6 @@ For the right-hand side:
 $$
   \bigl\langle \Delta_\mu(\mu(a \otimes b)),\; c \bigr\rangle
   = \int_A \mu\bigl(a \otimes \mu(b_1 \otimes b_2)\bigr) \cdot c.
-
 $$
 
 Both sides equal the same expression, so the Frobenius relation holds.

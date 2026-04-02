@@ -4,7 +4,6 @@ universe, the substrate parameter $q$
 
 $$
   q\big|_U \;=\; 1.1097 \;\pm\; 0.001.
-
 $$
 
 More precisely, $q|_U$ is the unique real root $q > 1$ of the equation
@@ -13,7 +12,6 @@ $$
   (1 - q^{-1})^{2}
   \;=\;
   \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e},
-
 $$
 
 where $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$ is the

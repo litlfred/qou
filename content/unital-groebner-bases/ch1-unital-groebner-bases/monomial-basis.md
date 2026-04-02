@@ -12,7 +12,6 @@ product
 
 $$
   x_\alpha := x_{\alpha_1} \cdot x_{\alpha_2} \cdots x_{\alpha_n}.
-
 $$
 
 **Monomial basis.** Suppose $A$ is free as an $R$-module. We say $A$
@@ -21,7 +20,6 @@ of all finite-length words in $\Lambda$ such that
 
 $$
   A = R\{x_\beta \mid \beta \in B\}.
-
 $$
 
 We identify $\beta$ with $x_\beta$ to simplify notation.
@@ -34,7 +32,6 @@ $$
   \qquad c_i \in R^* := R \setminus \{0\},\;
   b_i \in B,\;
   b_1 > b_2 > \cdots > b_n.
-
 $$
 
 Then define:

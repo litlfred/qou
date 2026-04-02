@@ -7,7 +7,6 @@ $$
   \alpha_{\mathrm{EM}}(q)
   \;=\;
   \frac{q^{-1}}{[9]_q \cdot [10]_q}.
-
 $$
 
 The crossing numbers $9$ and $10$ are determined by the force-carrier
@@ -36,7 +35,6 @@ gives
 
 $$
   q_{\mathrm{CODATA}} = 1.110\,23.
-
 $$
 
 This is consistent with the substrate parameter determined
@@ -54,7 +52,6 @@ $$
   \;=\; -1 \;-\;
   \frac{9 \, q^9 [10]_q + 10 \, q^{10} [9]_q}
        {[9]_q [10]_q (q - q^{-1})}.
-
 $$
 
 At $q = q_0$ this evaluates to approximately $-20$: a $1\%$ shift

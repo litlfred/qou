@@ -14,7 +14,6 @@ $$
   \;=\; 0
   \qquad\Longrightarrow\qquad
   \mathrm{Ric}_{g_\theta} \;=\; T^{(q)},
-
 $$
 
 where $\mathrm{Ric}_{g_\theta}$ is the Webster Ricci curvature and

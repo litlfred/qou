@@ -19,7 +19,6 @@ The resulting closed formula is:
 $$
   \delta_q \;=\; q^{-1}\,\delta
   \;+\; (1 - q^{-1})\,\mathcal{L}_\xi^* \circ \iota_\xi.
-
 $$
 
 In words: where $d_q$ uses the Reeb vector field to *add* a vertical
@@ -35,7 +34,6 @@ $$
   \langle d_q\,\alpha,\, \beta \rangle_\theta
   \;=\;
   \langle \alpha,\, \delta_q\,\beta \rangle_\theta
-
 $$
 
 for all compactly supported forms $\alpha, \beta$.

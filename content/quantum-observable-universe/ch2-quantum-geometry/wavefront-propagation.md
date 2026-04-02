@@ -3,7 +3,6 @@ yields the *categorical transport equation*
 
 $$
   \mathcal{D}_\nabla\,\psi \;=\; 0,
-
 $$
 
 where $\mathcal{D}_\nabla = q^{-1}\nabla + (1-q^{-1})\iota_\xi\nabla$
@@ -46,7 +45,6 @@ $$
   \underbrace{\mathcal{D}_\nabla^{\,2}}_{\text{gauge (curvature)}}
   \;+\;
   \underbrace{\psi^* \otimes \mathcal{D}_\nabla\,\psi}_{\text{matter (propagation)}},
-
 $$
 
 so that the on-shell condition $\mathcal{D}_\nabla\psi = 0$ eliminates

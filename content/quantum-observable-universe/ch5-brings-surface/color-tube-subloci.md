@@ -15,7 +15,6 @@ Over $\mathbb{C}$, the two solutions are
 
 $$
   p_1(c) \;=\; z\,\frac{-5 \pm \sqrt{-7}}{2};
-
 $$
 
 these are non-real for $z \ne 0$, so the locus $h_3(c) = 0$
@@ -29,7 +28,6 @@ vanishes on
 
 $$
   \{b = 0\} \;\cup\; \{br + g^2 = 0\}.
-
 $$
 
 The condition $b = 0$ means $w_4 = z$: the fourth resolvent

@@ -6,7 +6,6 @@ $$
   U\mathfrak{g} = T\mathfrak{g} / J, \qquad
   J = \bigl(xy - yx - [x,y]_{\mathfrak{g}}
     \;\big|\; x, y \in \mathfrak{g} \hookrightarrow T\mathfrak{g}\bigr)
-
 $$
 
 is isomorphic as an $R$-module to $S\mathfrak{g}$, the symmetric

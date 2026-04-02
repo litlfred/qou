@@ -12,7 +12,6 @@ $$
   E_{\mathfrak{H}}
   \;=\; \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2
   \;=\; \frac{\mathfrak{m}_{\mathfrak{H}}}{(q - 1)^2}.
-
 $$
 
 **Content of the theorem.**
@@ -49,7 +48,6 @@ $$
     q   & \text{positive crossing}, \\
     -q^{-1} & \text{negative crossing}.
   \end{cases}
-
 $$
 
 The right-hand side is $E_{\mathfrak{H}}$.  Each crossing
@@ -69,7 +67,6 @@ $$
       \circ \Delta \circ \varrho
     \bigr)
   \bigr\rVert
-
 $$
 
 where $\varrho$ denotes a generic closed vortex (morphism from
@@ -96,7 +93,6 @@ $$
   \;=\; c_q^2
   \;=\; \frac{1}{(q-1)^2}.
   \qquad\square
-
 $$
 
 **Regime behaviour of $E = \mathfrak{m} \cdot c_q^2$.**
@@ -136,7 +132,6 @@ $$
   E_{\gamma} \;\geq\;
   (\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}) \cdot c_q^2
   \;=\; \frac{\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}}{(q-1)^2}.
-
 $$
 
 The net crossing energy of the pair is
@@ -161,7 +156,6 @@ $$
   \mathrm{MI}\!\!\int_\Sigma
   (\nabla_A q,\; L \wedge F^+)
   \,\bigr\rVert,
-
 $$
 
 identifying the discrete Skein weight (spatial) with the rescaled

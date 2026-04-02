@@ -20,7 +20,6 @@ $$
     c(q - q^{-1}) + d & c \\
     c & d
   \end{pmatrix}
-
 $$
 
 where the **crossing coefficients** $(c, d) \in \mathbb{Z}[q^{\pm 1/2}]^2$
@@ -34,7 +33,6 @@ $$
   d_{K_1, K_2}
   \;=\;
   -c \cdot \frac{q \, s}{1 + J_{K_1}(q) \cdot J_{K_2}(q)}
-
 $$
 
 where $J_K(q)$ is the Jones polynomial of knot $K$ and
@@ -61,7 +59,6 @@ $$
   (c\sigma + d)(a\sigma + b)
   \;\stackrel{T^2 = (q-q^{-1})T + 1}{\longrightarrow}\;
   a'\sigma + b'
-
 $$
 
 where:
@@ -70,7 +67,6 @@ $$
   a' = ac(q - q^{-1}) + ad + bc,
   \qquad
   b' = ac + bd.
-
 $$
 
 In matrix form:
@@ -81,7 +77,6 @@ $$
   T_{K_1, K_2}(q)
   \;\cdot\;
   \begin{pmatrix} a \\ b \end{pmatrix}
-
 $$
 
 The product of $k$ transfer matrices at generator $\sigma_i$
@@ -98,7 +93,6 @@ $$
   T_{K_1 K_3} \circ T_{K_1 K_2}
   \;=\;
   T_{K_1, K_3}(q) \cdot T_{K_1, K_2}(q)
-
 $$
 
 (matrix multiplication).  This is **non-commutative** — the
@@ -110,7 +104,6 @@ $$
   I_i \;=\; \ker\!\left(
     \prod_{j} T_j(q) - M_i(q)
   \right)
-
 $$
 
 The ideal $I_i$ at generator $\sigma_i$ absorbs the terms
@@ -149,7 +142,6 @@ $$
   T_{\gamma e}(q)
   \;=\;
   T_{T_{1,0}, T_{2,3}}(q)
-
 $$
 
 Since the unknot has $J_{T_{1,0}}(q) = 1$:
@@ -163,7 +155,6 @@ $$
     q - q^{-1} & 1 \\
     1 & 0
   \end{pmatrix}
-
 $$
 
 **The photon-electron transfer matrix is the same as the
@@ -184,7 +175,6 @@ The R-I move at the electron-nucleus junction:
 
 $$
   \sigma_i \;\mapsto\; \sigma_i \cdot \sigma_n
-
 $$
 
 adds one transfer matrix factor $T_{\gamma e}$ to the chain
@@ -198,7 +188,6 @@ $$
   z \cdot (T_{\gamma e} \cdot M_i^{(n)})_{11}
   + (T_{\gamma e} \cdot M_i^{(n)})_{21}
   - \hat{V}_i^{(n)}
-
 $$
 
 For hydrogen ($A = 1$, single electron-proton junction):
@@ -209,7 +198,6 @@ $$
   E_n \;\propto\; \hat{V}(T_{\gamma e}^n)
   \;=\;
   z \cdot (T_{\gamma e}^n)_{11} + (T_{\gamma e}^n)_{21}
-
 $$
 
 Since $T_{\gamma e}$ has eigenvalues
@@ -219,7 +207,6 @@ $\lambda_+^n$, and the energy scales as:
 
 $$
   E_n \;\propto\; \lambda_+^n
-
 $$
 
 The **energy difference** between shells:
@@ -230,7 +217,6 @@ $$
   \hat{V}(T_{\gamma e}^{n+1}) - \hat{V}(T_{\gamma e}^n)
   \;=\;
   \hat{V}(T_{\gamma e}^n) \cdot (\lambda_+ - 1)
-
 $$
 
 This gives the photon energy for shell transitions — a
@@ -247,7 +233,6 @@ $$
   \Delta_{K_1 K_2 \to K_1' K_2'}(q)
   \;=\;
   T_{K_1', K_2'}(q) - T_{K_1, K_2}(q)
-
 $$
 
 This is a 2×2 matrix with polynomial entries in $q$.
@@ -275,7 +260,6 @@ the same generator):
 $$
   \Delta_{\mathrm{total}} = \Delta_2 \cdot T_{\mathrm{between}} \cdot \Delta_1
   + \Delta_1 + \Delta_2
-
 $$
 
 **Parallel interactions** (interactions at different generators):
@@ -284,7 +268,6 @@ $$
   \frac{P_{\mathrm{final}}}{P_{\mathrm{initial}}}
   \;=\;
   \prod_{i \in \mathrm{affected}} \frac{\hat{V}_i^{\mathrm{final}}}{\hat{V}_i^{\mathrm{initial}}}
-
 $$
 
 The generators factorize — each affected generator contributes

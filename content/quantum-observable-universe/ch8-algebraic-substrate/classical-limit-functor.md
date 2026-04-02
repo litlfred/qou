@@ -2,7 +2,6 @@ Define the classical limit as a monoidal functor
 
 $$
 \mathcal{L} : \mathbf{C}_q \longrightarrow \mathbf{C}_1
-
 $$
 
 from the braided monoidal category $\mathbf{C}_q$ (at deformation

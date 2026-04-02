@@ -52,7 +52,6 @@ $$
   \bigl[\, T \,\bigr]_{\sim}
   \;\in\;
   \mathrm{End}\bigl(H_n(q)\bigr) \,\big/\, \sim
-
 $$
 
 where $T$ is any braiding operation on $\mathfrak{H}$ (at either level)
@@ -64,7 +63,6 @@ $$
   \quad\Longleftrightarrow\quad
   \hat{V}(T_1, q) = \hat{V}(T_2, q)
   \quad\text{as polynomials in } q.
-
 $$
 
 This is well-defined because the vertex volume $\hat{V}_i(q)$

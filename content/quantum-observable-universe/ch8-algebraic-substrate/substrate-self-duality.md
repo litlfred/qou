@@ -6,7 +6,6 @@ $\omega_A^\bullet$:
 $$
 A \;\xrightarrow{\;\sim\;}\; \omega_A^\bullet
 \quad\text{in } D(A).
-
 $$
 
 More precisely, the non-degenerate Frobenius pairing

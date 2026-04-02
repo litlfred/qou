@@ -16,7 +16,6 @@ become
 
 $$
   H_1=\exp(T\theta\,e_1),\qquad H_2=\exp(T\theta\,e_2),
-
 $$
 
 with $T$ the geometric torsion scalar and $\theta$ a branch angle, so

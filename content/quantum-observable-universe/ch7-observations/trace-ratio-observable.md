@@ -17,7 +17,6 @@ $$
   \left|
     \frac{\hat{V}_i^{\,\mathrm{par}}}{\hat{V}_i^{\,\mathrm{dau}}}
   \right|^2
-
 $$
 
 where $\hat{V}_i = z \cdot a_i + b_i$ is the Markov-traced
@@ -38,7 +37,6 @@ $$
   \;=\;
   \prod_{i=0}^{A-2}
   \frac{\hat{V}_i^{\,\mathrm{par}}}{\hat{V}_i^{\,\mathrm{dau}}}.
-
 $$
 
 For generators $i > p$: the crossings from nucleon $i$ to
@@ -59,7 +57,6 @@ $$
     \frac{\mathrm{tr}(\overline{\mathcal{N}(Z, N)})}
          {\mathrm{tr}(\overline{\mathcal{N}(p+1, n-1)})}
   \right|^2
-
 $$
 
 where $\mathrm{skein\_amp} = q^{1/2} - q^{-1/2}$.  $\square$
@@ -106,7 +103,6 @@ $$
   \left|
     \frac{\hat{V}_i^{\,\mathrm{dau}}}{\hat{V}_i^{\,\mathrm{par}}}
   \right|^2
-
 $$
 
 where $s = q^{1/2} - q^{-1/2}$ is the Skein amplitude,

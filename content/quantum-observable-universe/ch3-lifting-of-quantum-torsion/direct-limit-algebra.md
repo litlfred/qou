@@ -10,7 +10,6 @@ $$
   \;=\;
   \varinjlim_{n}\,
   \mathrm{End}_{\mathbf{C}}(A_n),
-
 $$
 
 taken over the tower of endomorphism algebras with the transition maps

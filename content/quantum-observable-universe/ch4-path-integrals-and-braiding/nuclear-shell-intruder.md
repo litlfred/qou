@@ -14,7 +14,6 @@ other nucleons.  The 3D harmonic oscillator has shell sizes
 $$
   s_N \;=\; (N + 1)(N + 2),
   \qquad N = 0, 1, 2, \ldots
-
 $$
 
 and cumulative closures
@@ -22,7 +21,6 @@ and cumulative closures
 $$
   C_N \;=\; \sum_{k=0}^{N} (k+1)(k+2)
   \;=\; \frac{(N+1)(N+2)(N+3)}{3}.
-
 $$
 
 | $N$ | Size $s_N$ | Cumulative $C_N$ |
@@ -50,7 +48,6 @@ $$
   j = \ell + \tfrac{1}{2}
   \qquad\text{and}\qquad
   j = \ell - \tfrac{1}{2}
-
 $$
 
 having $2j + 1$ states each.  The spin-orbit coupling energy
@@ -62,7 +59,6 @@ $$
   \;\propto\;
   [\ell]_q [\ell + 1]_q
   \cdot (j - \ell)
-
 $$
 
 where $j - \ell = +\tfrac{1}{2}$ for the high-$j$ level
@@ -82,7 +78,6 @@ The coupling exceeds the HO level spacing when
 $$
   3 \cdot [\ell]_q [\ell + 1]_q \;>\; 2(N + 1)
   \qquad\text{(level spacing)}
-
 $$
 
 At $q = 1$, this reduces to $3 \cdot N(N+1) > 2(N+1)$, i.e.

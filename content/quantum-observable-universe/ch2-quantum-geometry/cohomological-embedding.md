@@ -19,7 +19,6 @@ $$
   \mathrm{rank}\, H_1(\mathrm{Seifert}(T_{r,s}))
   \;=\; \frac{(r-1)(s-1)}{2}
   \;\leq\; g
-
 $$
 
 **(ii) Fiber degree.**
@@ -30,7 +29,6 @@ $$
   k_{\max}(r, p, g)
   \;=\;
   \max\!\left\{k : \frac{(r-1)(p^k - 1)}{2} \leq g\right\}
-
 $$
 
 *Degree $1$ knots define **shells**.  Degree $2$ knots define
@@ -92,7 +90,6 @@ $$
   \underbrace{H^{1,0}}_{\dim 4}
   \;\oplus\;
   \underbrace{H^{0,1}}_{\dim 4}
-
 $$
 
 | Cohomology | dim | Degree | Knot basis element | Knot-particle / force |
@@ -149,7 +146,6 @@ $$
   \;=\;
   \sum_{\lambda \,\vdash\, r}
   d_\lambda(q) \;\chi_\lambda(T_{r,s})
-
 $$
 
 where $d_\lambda$ is the $q$-dimension and $\chi_\lambda$ is the

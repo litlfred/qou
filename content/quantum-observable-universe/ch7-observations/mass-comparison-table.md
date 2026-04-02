@@ -11,7 +11,6 @@ $$
   q = q_0, \quad
   \hbar_q = 1 - q^{-1} = 0.09905, \quad
   \mathrm{Vol}(4_1) = 2.02988.
-
 $$
 
 **Table 2: Predicted vs.\ observed masses.**

@@ -10,7 +10,6 @@ $$
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\right\rVert,
-
 $$
 
 where $\mathrm{MI}\!\int_\Sigma$ denotes the $2$-dimensional twisted
@@ -26,5 +25,4 @@ $$
   \bigl\lVert\,
   \mathrm{Hol}_{\nabla_A}\!\bigl(\varrho;\, \mathfrak{G}\bigr)
   \,\bigr\rVert.
-
 $$

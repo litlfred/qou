@@ -5,7 +5,6 @@ $$
   \mathrm{End}_{\mathbf{C}}(A_{n+1})
   \;=\;
   \mathcal{A}_{n+1}^{\mathrm{desc}} \;\oplus\; \mathcal{A}_{n+1}^{\mathrm{trans}},
-
 $$
 
 where $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$ is the

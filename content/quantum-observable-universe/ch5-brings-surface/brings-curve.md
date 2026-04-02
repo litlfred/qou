@@ -8,7 +8,6 @@ $$
   \sum_{j=0}^{4} x_j^2 = 0,
   \qquad
   \sum_{j=0}^{4} x_j^3 = 0.
-
 $$
 
 The symmetric group $S_5$ acts by permuting the five homogeneous coordinates,

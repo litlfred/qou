@@ -11,7 +11,6 @@ $\delta=x_2-x_3$.  The local geometry satisfies
 
 $$
   z-z_c\;\sim\;\delta^2,
-
 $$
 
 proving that the spacetime base "bounces" at the defect: the chiral
@@ -49,7 +48,6 @@ $$
   \epsilon(v \wedge w)
   \;=\; v_1 w_2 - v_2 w_1,
   \qquad v, w \in V.
-
 $$
 
 On the Brings surface, the spectral coordinates split into conjugate

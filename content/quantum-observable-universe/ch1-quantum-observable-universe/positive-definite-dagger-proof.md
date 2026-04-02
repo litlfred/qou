@@ -19,7 +19,6 @@ $$
   f^{\dagger} \circ f
   \;=\; \int_A \mu(S(f) \otimes f)
   \;=\; \int_A |f|^2
-
 $$
 
 where $|f|^2 = S(f) \cdot f = \overline{f} \cdot f$ under the

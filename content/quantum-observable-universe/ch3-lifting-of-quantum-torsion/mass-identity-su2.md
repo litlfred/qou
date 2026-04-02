@@ -15,7 +15,6 @@ $$
   \mathfrak{m}(\varrho)
   \;=\; \bigl\lVert \mathrm{tr}\bigl((\int_A \otimes \mathrm{id})
   \circ \Delta \circ \varrho\bigr) \bigr\rVert.
-
 $$
 
 Since $\Delta(f)(x, y) = f(xy)$, the inner composition evaluates to
@@ -31,7 +30,6 @@ $$
   \;=\; \biggl\lVert \int_{\mathrm{SU}(2)}
   \mathrm{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr)\, d\mu
   \biggr\rVert.
-
 $$
 
 The comultiplication maps $f(x) \mapsto f(xy)$, so the trace picks out

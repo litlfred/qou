@@ -8,5 +8,4 @@ $\phi_t^q \colon M \to M$, $t \in \mathbb{R}$:
 $$
   \frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ \phi_t^q,
   \qquad \phi_0^q = \mathrm{id}_M.
-
 $$

@@ -7,7 +7,6 @@ $$
   \exists\;\text{unit-root F-crystal on } H
   \;\iff\;
   \exists\;G / \mathbb{Z}_p \text{ with } G \bmod p \cong H.
-
 $$
 
 The forward direction uses the

@@ -6,7 +6,6 @@ the connection $A_n$:
 $$
   A_n|_{U_j} \;=\; g_{ij}^{(n)} \cdot A_n|_{U_i} \cdot
   (g_{ij}^{(n)})^{-1} + (g_{ij}^{(n)})^{-1}\, dg_{ij}^{(n)}.
-
 $$
 
 On a triple overlap $U_i \cap U_j \cap U_k$, the ordinary cocycle
@@ -19,7 +18,6 @@ to those at level $n$ by
 
 $$
   g_{ij}^{(n+1)} \;=\; a_{ij}^{(n)} \cdot g_{ij}^{(n)},
-
 $$
 
 where $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$ is the local lift datum
@@ -44,7 +42,6 @@ $$
   \;=\;
   a_{ij}^{(n)} \cdot a_{jk}^{(n)} \cdot (a_{ik}^{(n)})^{-1}
   \cdot g_{ijk}^{(n)}.
-
 $$
 
 The distributional connection $A_\infty$ is globally consistent if and
@@ -55,7 +52,6 @@ $$
   d(g_{ijk}^{(n)})
   \;=\;
   a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot (a_{jk}^{(n)})^{-1},
-
 $$
 
 where the left-hand side is the Cech coboundary

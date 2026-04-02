@@ -12,7 +12,6 @@ dimension $2$, define the traceless component
 $$
   \sigma(\rho) = \rho - \tfrac{1}{2}\,\mathrm{id}_V
   \;\in\; \mathrm{Ad}(A).
-
 $$
 
 This is well-defined because
@@ -31,7 +30,6 @@ $$
   = \bigl(\rho - \tfrac{1}{2}\,\mathrm{id}_V\bigr)^2
   = \rho^2 - \rho + \tfrac{1}{4}\,\mathrm{id}_V
   = \tfrac{1}{4}\,\mathrm{id}_V.
-
 $$
 
 Thus $2\sigma(\rho)$ is an involution in $\mathrm{End}(V)$: it

@@ -4,7 +4,6 @@ The *projective line object* is the quotient
 
 $$
   \mathbb{P}(V) = G / T,
-
 $$
 
 regarded as an object of $\mathrm{Ind}(\mathbf{C})$ via its function
@@ -16,7 +15,6 @@ realises as the scheme-theoretic projective line over $R$:
 
 $$
   \tau\bigl(\mathbb{P}(V)\bigr) \;=\; \mathbb{P}^1(R)
-
 $$
 
 ([scheme notation](#rem:scheme-notation)).  The notation

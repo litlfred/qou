@@ -52,7 +52,6 @@ $$
   \ell_n(\mathcal{I}_4^{(n)}) \subseteq \mathcal{I}_4^{(n+1)},
   \qquad
   \mathfrak{d}_{n+1}(\mathcal{I}_4^{(n+1)}) \subseteq \mathcal{I}_4^{(n)}.
-
 $$
 
 $T_{2,11}$ is **entirely descended** at every level:
@@ -61,7 +60,6 @@ $$
   \hat{\tau}_n(T_{(2,11)}^{(n+1)}) = T_{(2,11)}^{(n+1)},
   \qquad
   (1 - \hat{\tau}_n)(T_{(2,11)}^{(n+1)}) = 0.
-
 $$
 
 It has no transient component, contributes nothing to the
@@ -81,7 +79,6 @@ $$
   \mathcal{T}_{T_{2,11}}(q) = \mathbf{I}_{2 \times 2},
   \qquad
   F(T_{2,11}, N) = 1 \;\;\forall\, N.
-
 $$
 
 - **No shell structure**: eigenvalues $(1, 1)$ give the
@@ -106,7 +103,6 @@ $$
   = \mathbb{Z}_{11} \rtimes \mathbb{Z}_2
   = D_{11}
   \qquad (\text{order } 22).
-
 $$
 
 - $\mathbb{Z}_{11}$: rotational symmetry (winding number $11$,
@@ -122,7 +118,6 @@ $11 > 5$ means no element of order $11$ exists:
 $$
   \mathbb{Z}_{11} \not\hookrightarrow S_5
   = \mathrm{Aut}(\Sigma_4).
-
 $$
 
 This is a **crystallographic obstruction at the group level**:
@@ -157,7 +152,6 @@ away.  The physical Skein relation on $\Sigma_4$ becomes:
 $$
   q\,\mathcal{M}[L_+] = q^{-1}\mathcal{M}[L_-]
   \qquad\text{when } g(L_0) > 4,
-
 $$
 
 fusing the two crossing channels.  The $\mathbb{Z}_{11}$

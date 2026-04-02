@@ -11,7 +11,6 @@ $$
   p_q(\beta) \;=\; \sum_{j=1}^{k} \epsilon_j \,
   \frac{q^{\epsilon_j} - q^{-\epsilon_j}}{q - q^{-1}}
   \;=\; \sum_{j=1}^{k} \frac{q^{2\epsilon_j} - 1}{q^2 - 1}
-
 $$
 
 At $q = 1$: $p_q(\beta) \to w(\beta)$, the classical writhe
@@ -27,7 +26,6 @@ in the fundamental representation of $H_n(q)$:
 
 $$
   p_q(\beta) \;=\; \mathrm{tr}_{\mathrm{fund}}(\rho(\beta))
-
 $$
 
 where $\rho: B_n \to H_n(q)$ is the Hecke representation.

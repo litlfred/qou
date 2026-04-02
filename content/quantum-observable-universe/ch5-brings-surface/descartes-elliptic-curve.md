@@ -10,7 +10,6 @@ $$
   y^2 \;=\; x^3
   \;+\; \frac{2s^4 + s^3 - 2s^2 - s + 2}{3s^2}\,x
   \;+\; \frac{5(s^2 + s - 1)(4s^4 - s^3 - 4s^2 + s + 4)}{27s^3}
-
 $$
 
 with Weierstrass coefficients expressible directly in $q$:
@@ -19,7 +18,6 @@ $$
   p(q) \;=\;
   \frac{2(q^2 - q + 1)}{3q}
   \;+\; \frac{q - 1}{3\sqrt{q}},
-
 $$
 
 $$
@@ -28,7 +26,6 @@ $$
   \;+\; \frac{5(q - 1)^2}{9q}
   \;+\; \frac{5(\sqrt{q} - 1/\sqrt{q})}{9}
   \;+\; \frac{20}{27}.
-
 $$
 
 **Invariants.**
@@ -47,7 +44,6 @@ to
 $$
   E_1 \;:\; y^2 = x^3 + \tfrac{2}{3}\,x + \tfrac{20}{27},
   \qquad \Delta = -16, \quad j = 128.
-
 $$
 
 Clearing denominators ($X = 3x$, $Y = 3\sqrt{3}\,y$) gives the

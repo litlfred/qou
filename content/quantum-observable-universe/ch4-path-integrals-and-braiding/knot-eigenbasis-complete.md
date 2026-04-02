@@ -12,7 +12,6 @@ representation.  Suppose $q$ is not a root of unity.  Then:
      \;\cong\;
      \bigoplus_{\lambda \,\vdash\, n}
      V_\lambda \otimes S_\lambda,
-
    $$
 
    where $\lambda$ ranges over partitions of $n$ with at most two parts
@@ -32,7 +31,6 @@ representation.  Suppose $q$ is not a root of unity.  Then:
      \{\text{knot types}\}
      \;\longrightarrow\;
      \{\text{irreducible summands of } V^{\otimes n},\; n \geq 1\}
-
    $$
 
    given by $L \mapsto$ the summand in which $\mathrm{tr}_M(\rho_n(\beta))$

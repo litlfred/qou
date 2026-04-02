@@ -7,7 +7,6 @@ $$
   B \;=\;
   \mathcal{B}_3(K_{0_1},\, K_{0_1},\, K_{0_1})
   \;\bowtie\; \mathcal{L}_H
-
 $$
 
 **Properties of the Borromean link.**
@@ -46,7 +45,6 @@ $$
   \frac{\mathrm{Vol}(S^3 \setminus \mathcal{B}_3)}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}
   \;+\; \text{Skein corrections from orientation partition}.
-
 $$
 
 **Confinement.**

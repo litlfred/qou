@@ -17,7 +17,6 @@ $$
   \frac{3}{5}\,
   \frac{\hbar_q^2\,(3\pi^2)^{2/3}}{2\,M_B}
   \, n_B^{5/3},
-
 $$
 
 $$
@@ -25,7 +24,6 @@ $$
   \;=\;
   \frac{\hbar_q^2\,(3\pi^2)^{2/3}}{5\,M_B}
   \, n_B^{5/3}.
-
 $$
 
 The speed of sound in the Borromean phase is
@@ -37,7 +35,6 @@ $$
   \;=\;
   \frac{2}{3}\,
   \frac{E_F}{M_B + E_F}
-
 $$
 
 where $E_F = \hbar_q^2(3\pi^2 n_B)^{2/3} / (2M_B)$ is the
@@ -62,7 +59,6 @@ $$
   \, (3 n_B)^{5/3}
   \;-\;
   \frac{3\,\Delta_{\mathrm{CFL}}^2\, \mu_q^2}{\pi^2},
-
 $$
 
 $$
@@ -72,7 +68,6 @@ $$
   \, (3 n_B)^{5/3}
   \;+\;
   \frac{3\,\Delta_{\mathrm{CFL}}^2\, \mu_q^2}{\pi^2},
-
 $$
 
 where $\mu_q = \hbar_q(3\pi^2 n_q)^{1/3}/(2M_D)^{1/2}$ is
@@ -89,7 +84,6 @@ $$
   \frac{M_B}{M_D} \cdot 3^{5/3}
   \;+\;
   \frac{3\,\Delta_{\mathrm{CFL}}^2\, \mu_q^2}{\pi^2\, P_B}.
-
 $$
 
 The first term gives the dominant contribution.  At
@@ -102,7 +96,6 @@ $$
   \;=\;
   \frac{749.2}{0.670}
   \;\approx\; 1118.
-
 $$
 
 Including the $3^{5/3} \approx 6.24$ factor:
@@ -112,7 +105,6 @@ $$
   \;\approx\;
   1118 \times 6.24
   \;\approx\; 6977.
-
 $$
 
 The CFL equation of state is **nearly $7000\times$ stiffer** than
@@ -127,7 +119,6 @@ $$
   \;\to\;
   \frac{1}{3}
   \qquad (\text{as } n_B \to \infty).
-
 $$
 
 This is the **conformal limit** $c_s^2 = 1/3$ — the maximum

@@ -11,7 +11,6 @@ $$
   \mathrm{End}_{\mathbf{C}}(A_{n+1})
   \;\longrightarrow\;
   \mathrm{End}_{\mathbf{C}}(A_{n+1}).
-
 $$
 
 Since $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$ on
@@ -29,7 +28,6 @@ $$
   \ell_n \circ \mathrm{id} \circ \mathfrak{d}_{n+1}
   \;=\;
   \hat{\tau}_n,
-
 $$
 
 so $\hat{\tau}_n$ is idempotent.  Its image is the

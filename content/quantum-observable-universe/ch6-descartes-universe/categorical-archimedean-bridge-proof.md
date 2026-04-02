@@ -20,7 +20,6 @@ precisely the component along the Reeb direction:
 $$
   \pi_V(d\alpha) = \theta \wedge \iota_\xi(d\alpha)
   = \theta \wedge (\mathcal{L}_\xi\alpha - d(\iota_\xi\alpha)).
-
 $$
 
 On horizontal forms ($\iota_\xi\alpha = 0$), this reduces to
@@ -33,7 +32,6 @@ cases. Therefore
 $$
   \tau(d_q) = q^{-1} d + (1 - q^{-1})\,\theta \wedge
   \mathcal{L}_\xi,
-
 $$
 
 which is precisely the archimedean formula for $d_q$

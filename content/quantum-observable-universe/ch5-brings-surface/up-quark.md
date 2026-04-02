@@ -6,7 +6,6 @@ within the Borromean link $\mathcal{B}_3$
 $$
   u \;=\; \nu \,\big|_{\mathcal{B}_3,\, +}
   \qquad\text{(unknot, positive orientation in } \mathcal{B}_3\text{)}
-
 $$
 
 The up quark is not a distinct knot type — it is the unknot

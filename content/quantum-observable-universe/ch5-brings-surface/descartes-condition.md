@@ -5,7 +5,6 @@ categorical Euler characteristic
 
 $$
   \chi(A) \;=\; \mathrm{tr}(\mathrm{id}_A) \;=\; -6 \;\in\; R.
-
 $$
 
 This requires $6 \in R^{\times}$ (i.e. $\mathrm{char}(R) \nmid 6$).  The

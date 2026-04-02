@@ -12,7 +12,6 @@ $$
     \circ \varrho
   \bigr)
   \,\bigr\rVert.
-
 $$
 
 The integrand $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta
@@ -26,7 +25,6 @@ $\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus
 
 $$
   \alpha \;=\; \hat{\tau}_n(\alpha) \;+\; (\alpha - \hat{\tau}_n(\alpha)).
-
 $$
 
 When the [Frobenius pairing](#def:frobenius-pairing) is compatible with the $*$-involution
@@ -40,7 +38,6 @@ $$
   \lVert \hat{\tau}_n(\alpha) \rVert^2
   \;+\;
   \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2,
-
 $$
 
 and by the linearity of the categorical trace:
@@ -55,7 +52,6 @@ $$
   \bigl\lVert\,
   \mathrm{tr}(\alpha - \hat{\tau}_n(\alpha))
   \,\bigr\rVert.
-
 $$
 
 *Step 2: Descended term is the base-level mass.*
@@ -75,7 +71,6 @@ $$
   \mathrm{tr}_n(\mathfrak{d}_{n+1}(\alpha))
   \;=\;
   \mathrm{tr}_n(\alpha_0),
-
 $$
 
 where $\alpha_0 = (\int_A \otimes \mathrm{id}) \circ \Delta
@@ -96,7 +91,6 @@ $$
   \mathrm{tr}(\alpha - \hat{\tau}_n(\alpha))
   \;=\;
   \sum_{i=1}^{N} \mathrm{tr}_{\mathrm{trans}}(\varrho, p_i),
-
 $$
 
 and the norm of the sum equals the sum of the norms (by disjointness

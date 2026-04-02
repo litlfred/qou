@@ -30,7 +30,6 @@ $$
   \frac{1}{4g^2}\!\int_M \mathrm{Tr}(F \wedge \star F)
   \;+\;
   \int_M \bar\psi\, D\!\!\!\!/\;\psi\,\mathrm{dvol},
-
 $$
 
 the Einstein--Hilbert + Yang--Mills + Dirac action, with $q \to 1$.

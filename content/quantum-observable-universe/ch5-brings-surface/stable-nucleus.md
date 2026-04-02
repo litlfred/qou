@@ -16,7 +16,6 @@ $$
   \underbrace{\mathfrak{p} \bowtie \cdots \bowtie \mathfrak{p}}_{Z}
   \;\bowtie\;
   \underbrace{\mathfrak{n} \bowtie \cdots \bowtie \mathfrak{n}}_{N}.
-
 $$
 
 The nucleus $\mathcal{N}(Z, N)$ is **stable** if $(Z, N)$ is a
@@ -32,7 +31,6 @@ $$
   = 0
   \qquad \Longleftrightarrow \qquad
   Z = \frac{A}{2 + a_C \, A^{2/3} / (2\,a_A)}
-
 $$
 
 where $a_C = (q - q^{-1}) \cdot \lambda_C$ and $a_A$ is the Pauli
@@ -44,7 +42,6 @@ $$
   \mathcal{A}(Z, N)
   \;=\;
   \mathcal{N}(Z, N) \;\bowtie\; Z \cdot T_{2,3}.
-
 $$
 
 **Restricting the hadron definition.**

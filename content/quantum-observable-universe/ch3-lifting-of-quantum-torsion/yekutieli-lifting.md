@@ -9,7 +9,6 @@ $$
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1
-
 $$
 
 arising from the

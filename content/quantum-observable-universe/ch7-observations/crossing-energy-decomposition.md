@@ -7,7 +7,6 @@ parts under the mirror operation $\sigma$:
 $$
   q \;=\; \cosh\lambda + \sinh\lambda, \qquad
   q^{-1} \;=\; \cosh\lambda - \sinh\lambda.
-
 $$
 
 **Statement.**
@@ -33,7 +32,6 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
    $$
      \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathbf{E}_{\mathrm{cross}}(\sigma(\mathfrak{H}))
      \;=\; 2\,E_{\mathrm{asym}}(\mathfrak{H}).
-
    $$
 
 4. **Ratio identity.**  The antisymmetric-to-symmetric ratio is
@@ -41,7 +39,6 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
    $$
      \frac{E_{\mathrm{asym}}}{E_{\mathrm{sym}}}
      \;=\; \tanh(\ln q),
-
    $$
 
    independent of the knot composite $\mathfrak{H}$.

@@ -17,7 +17,6 @@ $$
   = \langle \delta_q\,\alpha,\, \delta_q\,\beta \rangle_\theta
   + \langle d_q\,\alpha,\, d_q\,\beta \rangle_\theta
   = \langle \alpha,\, \Delta_q\,\beta \rangle_\theta.
-
 $$
 
 Self-adjointness guarantees real eigenvalues and orthogonal

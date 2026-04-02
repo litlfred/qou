@@ -16,7 +16,6 @@ $$
   \prod_{j=i+1}^{A-1} C_{ij}(\sigma_i)
   \;=\;
   a_i \, \sigma_i + b_i
-
 $$
 
 where each crossing factor is $C_{ij}(\sigma_i) = c_j \sigma_i
@@ -30,7 +29,6 @@ $$
     (\tfrac{1+q^2}{2}, -\tfrac{q}{2}(q^{1/2} - q^{-1/2}))
       & \text{if mixed}
   \end{cases}
-
 $$
 
 The coefficients $(a_i, b_i)$ satisfy the recurrence: starting
@@ -42,7 +40,6 @@ $$
   a_{k+1} = a_k c_j (q - q^{-1}) + a_k d_j + b_k c_j,
   \qquad
   b_{k+1} = a_k c_j + b_k d_j.
-
 $$
 
 This is a $2 \times 2$ **transfer matrix** $T_j$ at each crossing.
@@ -53,7 +50,6 @@ The transfer matrix product at generator $\sigma_i$:
 
 $$
   M_i \;=\; \prod_{j=i+1}^{A-1} T_j
-
 $$
 
 is a product of $k_i = A - i - 1$ matrices.  This product
@@ -66,7 +62,6 @@ $$
   \;+\; \underbrace{\sum_{j < k} T_j^{(1)} T_k^{(1)}}_{\text{2-jet: triple correlations}}
   \;+\; \cdots
   \;+\; \underbrace{\prod_{j} T_j^{(1)}}_{\text{$k_i$-jet: full product}}
-
 $$
 
 where $T_j = \mathbb{1} + T_j^{(1)}$ and $T_j^{(1)}$ is the
@@ -88,7 +83,6 @@ $$
   \sum_{i=0}^{A-2} \sum_{r=0}^{k_i} \binom{k_i}{r}
   \;=\;
   \sum_{i=0}^{A-2} 2^{k_i}
-
 $$
 
 which is exponential.  But the **transfer matrix product computes
@@ -103,7 +97,6 @@ $$
   \frac{A(A-1)}{2}
   \;=\;
   \binom{A}{2}
-
 $$
 
 This is **exact** — not an approximation.  No terms are dropped.
@@ -120,7 +113,6 @@ variable $\tau_p \in \{\mathfrak{p}, \mathfrak{n}\}$:
 
 $$
   \delta E \;=\; \sum_{i=0}^{p} (V_i^{\mathrm{dau}} - V_i^{\mathrm{par}})
-
 $$
 
 summing only over generators affected by the converting
@@ -143,7 +135,6 @@ $$
   \underbrace{\delta E_{p_1} + \delta E_{p_2}}_{\text{sum of single variations}}
   \;+\;
   \underbrace{\Delta_{p_1 p_2}}_{\text{2-jet cross-term}}
-
 $$
 
 The cross-term $\Delta_{p_1 p_2}$ arises because at generators
@@ -166,7 +157,6 @@ $$
     + (\text{rest}) \cdot \delta T_{p_2}}_{\text{1-jet terms (linear)}}
   \;+\;
   \underbrace{\delta T_{p_1} \cdot (\text{between}) \cdot \delta T_{p_2}}_{\text{2-jet cross-term}}
-
 $$
 
 The 2-jet cross-term is **not** negligible — it encodes the
@@ -209,7 +199,6 @@ The Markov-traced volume at generator $\sigma_i$ is:
 
 $$
   \hat{V}_i \;=\; z \cdot a_i + b_i
-
 $$
 
 where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
@@ -218,7 +207,6 @@ The nuclear energy decomposes as:
 $$
   \ln|\mathrm{tr}(\bar{\mathcal{N}})| \;=\;
   \sum_{i=0}^{A-2} \ln|\hat{V}_i|
-
 $$
 
 Each term $\ln|\hat{V}_i|$ is determined by exactly $k_i$
@@ -232,7 +220,6 @@ The **ideal volume** at generator $i$ is:
 
 $$
   V_i^I \;=\; k_i - V_i
-
 $$
 
 where $k_i = A - i - 1$ is the number of crossings.  This is

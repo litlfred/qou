@@ -2,17 +2,14 @@ Bring's surface $\Sigma_4$ is the projective curve in $\mathbb{CP}^4$ defined by
 
 $$
   x_1 + x_2 + x_3 + x_4 + x_5 = 0
-
 $$
 
 $$
   x_1^2 + x_2^2 + x_3^2 + x_4^2 + x_5^2 = 0
-
 $$
 
 $$
   x_1^3 + x_2^3 + x_3^3 + x_4^3 + x_5^3 = 0
-
 $$
 
 This is a smooth curve of genus 4, so $\chi = 2 - 2g = 2 - 8 = -6$. Its automorphism group is $S_5$ (permutations of the five coordinates).

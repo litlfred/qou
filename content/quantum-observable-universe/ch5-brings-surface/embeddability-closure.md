@@ -53,7 +53,6 @@ alters the Seifert genus by at most $\pm 1$:
 $$
   |g(L_+) - g(L_-)| \leq 1, \qquad
   g(L_0) \leq \max\{g(L_+), g(L_-)\}.
-
 $$
 
 Starting from generators with $g(T_{m,n}) \leq 4$, a crossing
@@ -70,7 +69,6 @@ The spectral filter acts at the level of the Skein resolution:
 $$
   q \, [L_+] - q^{-1} [L_-]
   = (q^{1/2} - q^{-1/2}) [L_0]
-
 $$
 
 in the Skein module $\mathcal{S}_q(\mathbf{C})$.  Terms whose knot

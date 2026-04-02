@@ -24,7 +24,6 @@ $$
   \begin{pmatrix} a & b \\ c & d \end{pmatrix}
   \mapsto
   \begin{pmatrix} a & b \\ c & d \end{pmatrix},
-
 $$
 
 where $ab = ba$, $ac = ca$, etc. This is the setting of the classical
@@ -38,7 +37,6 @@ relations:
 $$
   ab = q_0\, ba, \quad ac = q_0\, ca, \quad
   bc = cb, \quad ad - da = (q_0 - q_0^{-1})\, bc.
-
 $$
 
 The representation category
@@ -54,7 +52,6 @@ of $V_j$ is
 $$
   \dim_q(V_j) = \frac{q_0^{2j+1} - q_0^{-(2j+1)}}{q_0 - q_0^{-1}}
   = [2j + 1]_{q_0},
-
 $$
 
 the quantum integer. For $q_0 = 1$ this reduces to the classical

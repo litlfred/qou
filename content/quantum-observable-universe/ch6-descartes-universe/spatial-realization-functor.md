@@ -5,7 +5,6 @@ The *spatial realization* of $A$ is the space
 $$
   M = \mathrm{Spec}(A) = \{ p \colon \mathbf{1} \to A \mid
   p \text{ is a categorical point} \}
-
 $$
 
 ([categorical point](#def:categorical-point)),
@@ -22,7 +21,6 @@ $\mathbf{C}$:
      A / \mathfrak{m}_p^2
      \;\cong\;
      \mathbf{1} \oplus \mathfrak{m}_p / \mathfrak{m}_p^2.
-
    $$
 
 2. **Kähler differentials.** The module $\Omega^1(A)$ of Kähler

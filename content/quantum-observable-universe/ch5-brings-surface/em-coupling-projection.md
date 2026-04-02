@@ -20,7 +20,6 @@ $$
   \frac{q^{-1}}{[c_s]_q \cdot [c_w]_q}
   \;=\;
   \frac{q^{-1}}{[9]_q \cdot [10]_q}
-
 $$
 
 where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is the $q$-integer.
@@ -40,7 +39,6 @@ $\sigma$
 $$
   Q_q(K) \;=\; [w(K)]_q
   \;=\; \frac{q^{w(K)} - q^{-w(K)}}{q - q^{-1}}
-
 $$
 
 where $w(K) = \sum_i \epsilon_i \in \mathbb{Z}$ is the writhe (signed
@@ -54,7 +52,6 @@ $\dagger$-eigenspaces:
 
 $$
   \sigma = \sigma_{\mathrm{sym}} \oplus \sigma_{\mathrm{anti}}.
-
 $$
 
 The antisymmetric eigenvalue of the $R$-matrix for
@@ -62,7 +59,6 @@ $\mathrm{SU}_q(2)$ is $-q^{-1/2}$, giving
 
 $$
   |\mathrm{tr}_\tau(\sigma_{\mathrm{anti}})|^2 = q^{-1}.
-
 $$
 
 This is the **bare coupling**: the probability amplitude for an
@@ -87,7 +83,6 @@ $$
   \frac{|\mathrm{tr}_\tau(\sigma_{\mathrm{anti}})|^2}{[c_s]_q \cdot [c_w]_q}
   \;=\;
   \frac{q^{-1}}{[9]_q \cdot [10]_q}.
-
 $$
 
 The denominator $[9]_q \cdot [10]_q$ is the product of the

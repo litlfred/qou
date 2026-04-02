@@ -53,7 +53,6 @@ $$
   \;\text{infinite strip}
   \;\xrightarrow{\;\text{pinch}\;}
   \;\text{node}.
-
 $$
 
 The golden-ratio diagonal, which at $q = q_0$ encoded a finite

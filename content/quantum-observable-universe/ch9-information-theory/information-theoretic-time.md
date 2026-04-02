@@ -12,7 +12,6 @@ the cumulative Reeb operation count
 $$
   \mathcal{T}(q) \;:=\; \sum_{n=0}^{N-1} 1
   \;=\; N
-
 $$
 
 where $N$ is the total number of iterations of $f_q$ applied
@@ -30,7 +29,6 @@ count
 $$
   t \;=\; \frac{\mathcal{T}}{t_P(q)}
   \;=\; \hbar_q \cdot \mathcal{T}
-
 $$
 
 where $t_P(q) = q/(q-1)$ is the Planck time
@@ -76,7 +74,6 @@ $$
   \frac{1}{t_P} \sum_{n=0}^{t_P - 1} g\!\left(\frac{n}{t_P}\right)
   \;\xrightarrow{t_P \to \infty}\;
   \int_0^1 g(s)\,ds.
-
 $$
 
 The left side is the average of $g$ over $t_P$ discrete Reeb

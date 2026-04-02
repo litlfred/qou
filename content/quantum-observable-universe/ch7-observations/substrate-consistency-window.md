@@ -9,7 +9,6 @@ overlap.
 
 $$
   q \;\in\; [1.109,\; 1.112].
-
 $$
 
 | Determination | Observable | $q$ value | Source |

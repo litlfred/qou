@@ -8,7 +8,6 @@ The value $\chi(A) = -6$ is not assumed but derived. Here is the complete chain,
 
 $$
   \chi(V) = d + r(1 - g) = 0 + 2(1 - g) = 2 - 2g
-
 $$
 
 **Step 4: Yekutieli obstructions require $g \geq 1$.** The Yekutieli lifting obstructions require $\kappa_n \neq 0$ at every level of the brane tower. The obstruction classes lie in $H^2(M_0, B)$ where $B$ depends on the central extension. For these to be non-trivial, we need $H^2(M_0, \mathbb{C}^*) \neq 0$, which requires $g \geq 1$.

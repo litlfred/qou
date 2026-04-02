@@ -82,7 +82,6 @@ elliptic curve ([coral elliptic](#prop:coral-elliptic))
 
 $$
   X^3 + (z+1)\,X^2 + (z^2+z+1)\,X + (z^3+z^2+z+1) = 0
-
 $$
 
 is a cubic in $X$ — it is a **third-order approximation** of the

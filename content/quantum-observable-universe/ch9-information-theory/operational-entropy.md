@@ -7,7 +7,6 @@ substrate parameter $q$ is
 
 $$
   \eta_q \;:=\; \frac{2q - 1}{q^3},
-
 $$
 
 measuring the information generated per $f_q$-iteration in
@@ -23,7 +22,6 @@ circle) is replaced by the $q$-deformed exponent
 
 $$
   \chi_q \;=\; \frac{1}{2q - 1}.
-
 $$
 
 The replacement $\ln 2 \to 1/(2q-1)$ reflects that the QOU
@@ -39,7 +37,6 @@ $$
   d_{H,q} \;:=\; \frac{\eta_q}{\chi_q}
   \;=\; \eta_q \cdot (2q - 1)
   \;=\; \frac{(2q - 1)^2}{q^3}.
-
 $$
 
 **$d_{H,q}$ vs. $d_H$: two different quantities.**
@@ -94,7 +91,6 @@ $$
   I_P(q) \;=\; n_R(q) \cdot \eta_q
   \;=\; \frac{\eta_q}{\hbar_q}
   \;=\; \frac{(2q-1)}{q^2(q-1)},
-
 $$
 
 where $n_R(q) = 1/\hbar_q$ is the iteration count per Planck

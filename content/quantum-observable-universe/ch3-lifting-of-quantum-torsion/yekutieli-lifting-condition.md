@@ -5,7 +5,6 @@ $$
   \;\longrightarrow\; \mathfrak{G}'
   \;\longrightarrow\; \mathfrak{G}
   \;\longrightarrow\; 1
-
 $$
 
 be a central extension of gerbes on a site $\mathcal{S}$, banded by an
@@ -18,7 +17,6 @@ cohomology class
 
 $$
   \kappa(x) \;\in\; H^2(\mathcal{S},\, \mathcal{B}),
-
 $$
 
 and $x$ admits a lift if and only if $\kappa(x) = 0$.

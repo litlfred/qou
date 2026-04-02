@@ -43,7 +43,6 @@ $$
   \text{shared sub-link } R_{ab}
   \;=\;
   R_a \cup R_b \text{ with merged linking sites.}
-
 $$
 
 The delocalised trefoils form a **lattice-spanning sub-Hopf
@@ -121,7 +120,6 @@ $$
   \lambda(R) = 0 \;\Longleftrightarrow\; \text{noble gas},
   \qquad
   \lambda(R) > 0 \;\Longleftrightarrow\; \text{non-inert}.
-
 $$
 
 Metallic character is strongest when $\lambda(R)$ is small

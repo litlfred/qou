@@ -24,7 +24,6 @@ $$
   F_q(Z, E)
   \;=\;
   \frac{2\pi\eta_q}{1 - e^{-2\pi\eta_q}}
-
 $$
 
 where the $q$-deformed Sommerfeld parameter is
@@ -34,7 +33,6 @@ $$
   \;=\;
   \alpha_{\mathrm{EM}}(q)
   \cdot \frac{Z}{\beta_e}
-
 $$
 
 with $\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$
@@ -55,7 +53,6 @@ $$
   \sum_{j=1}^{Z} \mathcal{S}_{e\text{-}p_j}
   \;+\;
   \mathcal{S}_q\big|_{T_{2,3}}
-
 $$
 
 where the middle sum runs over electron-proton crossings.  Each
@@ -68,7 +65,6 @@ $$
   \delta_\ell
   \;=\;
   \arg \Gamma(\ell + 1 + i\eta_q).
-
 $$
 
 The coherent product of $Z$ such scattering amplitudes,
@@ -81,7 +77,6 @@ $$
   |\psi_e(0)|^2_{\text{free}}
   \;\times\;
   F_q(Z, E).
-
 $$
 
 The decay rate is proportional to $|\psi_e(0)|^2$ (the electron

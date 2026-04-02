@@ -17,7 +17,6 @@ $$
   \cdots
   \;\underset{B_k}{\bowtie}\;
   \mathcal{A}_N
-
 $$
 
 where $B_k(R_i, R_{i+1})$ is a covalent bond of order $k$ between
@@ -31,7 +30,6 @@ $$
     k & \text{if } |i - j| = 1, \\
     0 & \text{otherwise}.
   \end{cases}
-
 $$
 
 This is a **tridiagonal** matrix — each atom is linked only to its
@@ -53,7 +51,6 @@ $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N^{(k)})
   \;=\;
   (N - 1) \cdot E_{\mathrm{bond}}(k).
-
 $$
 
 The absence of a bond between $\mathcal{A}_1$ and $\mathcal{A}_N$

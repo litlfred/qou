@@ -5,7 +5,6 @@ $$
   \lVert\boldsymbol{\omega}'\rVert^2
   =\lVert\boldsymbol{\omega}\rVert^2
   =\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_2+\omega_3\bar{\omega}_3,
-
 $$
 
 the quadric constraint remains satisfied and

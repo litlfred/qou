@@ -13,7 +13,6 @@ and **zero** transfer matrix multiplications.
 
 $$
   P_{{}^1\mathrm{H}}(q) \;=\; 1 \quad\text{(empty product)}
-
 $$
 
 Hydrogen has no nuclear Skein polynomial — its mass comes
@@ -43,7 +42,6 @@ $$
       & \frac{1+q^2}{2} \\[4pt]
     \frac{1+q^2}{2} & -\frac{qs}{2}
   \end{pmatrix}
-
 $$
 
 **Markov-traced volume:**
@@ -56,14 +54,12 @@ $$
   z \cdot \left[\frac{1+q^2}{2}(q - q^{-1}) - \frac{qs}{2}\right]
   \;+\;
   \frac{1+q^2}{2}
-
 $$
 
 **Nuclear Skein polynomial:**
 
 $$
   P_{{}^2\mathrm{H}}(q) \;=\; \hat{V}_0(q)
-
 $$
 
 This is a single factor — no product needed.  The polynomial
@@ -95,7 +91,6 @@ Product (decreasing $j$, per notation convention):
 
 $$
   M_0(q) \;=\; T_{pp}(q) \cdot T_{\mathrm{mix}}(q)
-
 $$
 
 (Here $j = 2$ contributes $T_{\mathrm{mix}}$ and $j = 1$
@@ -115,40 +110,34 @@ $$
     \frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2} & \frac{1+q^2}{2} \\
     \frac{1+q^2}{2} & -\frac{qs}{2}
   \end{pmatrix}
-
 $$
 
 $$
   (M_0)_{11} \;=\;
     (q-q^{-1})\left[\frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2}\right]
     \;+\; \frac{1+q^2}{2}
-
 $$
 
 $$
   (M_0)_{21} \;=\;
     \frac{1+q^2}{2}(q-q^{-1})
     \;-\; \frac{qs}{2}
-
 $$
 
 $$
   (M_0)_{12} \;=\;
     (q-q^{-1})\!\cdot\!\frac{1+q^2}{2}
     \;-\; \frac{qs}{2}
-
 $$
 
 $$
   (M_0)_{22} \;=\; \frac{1+q^2}{2}
-
 $$
 
 **Traced volume:**
 
 $$
   \hat{V}_0(q) \;=\; z \cdot (M_0)_{11} + (M_0)_{21}
-
 $$
 
 ### Generator $\sigma_1$
@@ -161,21 +150,18 @@ One crossing: $(1, 2)$.
 
 $$
   M_1(q) \;=\; T_{\mathrm{mix}}(q)
-
 $$
 
 **Traced volume:**
 
 $$
   \hat{V}_1(q) \;=\; z \cdot (T_{\mathrm{mix}})_{11} + (T_{\mathrm{mix}})_{21}
-
 $$
 
 ### Nuclear Skein polynomial
 
 $$
   P_{{}^3\mathrm{He}}(q) \;=\; \hat{V}_0(q) \cdot \hat{V}_1(q)
-
 $$
 
 **Computation count:** $\binom{3}{2} = 3$ transfer matrix
@@ -201,7 +187,6 @@ Two protons, two neutrons.
 
 $$
   M_0(q) \;=\; T_{pp} \cdot T_{\mathrm{mix}} \cdot T_{\mathrm{mix}}
-
 $$
 
 ### Generator $\sigma_1$ (2 crossings)
@@ -213,7 +198,6 @@ $$
 
 $$
   M_1(q) \;=\; T_{\mathrm{mix}} \cdot T_{\mathrm{mix}} \;=\; T_{\mathrm{mix}}^2
-
 $$
 
 ### Generator $\sigma_2$ (1 crossing)
@@ -224,14 +208,12 @@ $$
 
 $$
   M_2(q) \;=\; T_{nn}
-
 $$
 
 ### Nuclear Skein polynomial
 
 $$
   P_{{}^4\mathrm{He}}(q) \;=\; \hat{V}_0(q) \cdot \hat{V}_1(q) \cdot \hat{V}_2(q)
-
 $$
 
 **Computation count:** $\binom{4}{2} = 6$ transfer matrix
@@ -291,7 +273,6 @@ At $\sigma_0$: only the $(0,1)$ crossing changes
 
 $$
   \Delta M_0 = T_{\mathrm{mix}} \cdot \Delta_\beta
-
 $$
 
 At $\sigma_1$: the $(1,2)$ crossing changes
@@ -299,7 +280,6 @@ At $\sigma_1$: the $(1,2)$ crossing changes
 
 $$
   \Delta M_1 = \Delta_\beta
-
 $$
 
 ### $\mathcal{Q}_q$-value
@@ -310,7 +290,6 @@ $$
   \ln \frac{\hat{V}_0^{\mathrm{dau}}}{\hat{V}_0^{\mathrm{par}}}
   \;+\;
   \ln \frac{\hat{V}_1^{\mathrm{dau}}}{\hat{V}_1^{\mathrm{par}}}
-
 $$
 
 Each term is computable from the explicit matrices above and

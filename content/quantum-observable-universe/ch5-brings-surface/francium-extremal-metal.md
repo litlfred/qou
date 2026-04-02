@@ -15,7 +15,6 @@ $$
   \text{ electrons in closed sub-links (radon core)}}
   \;\sqcup\;
   \underbrace{R}_{|R| = 1}.
-
 $$
 
 The inner 86 trefoils form the
@@ -85,7 +84,6 @@ $$
   \underbrace{\text{Fr}: |R| = 1}_{\text{most metallic}}
   \qquad\longleftrightarrow\qquad
   \underbrace{\text{F}: |R| = 2n^2 - 1}_{\text{most nonmetallic}}
-
 $$
 
 The entire metallic--nonmetallic spectrum is thus parametrised

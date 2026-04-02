@@ -10,7 +10,6 @@ $$
   q_{\mathrm{eff}}(p, n)
   \;=\;
   q_0 \;+\; \delta q(p, n)
-
 $$
 
 where the substrate $q_0$ is the background value
@@ -30,7 +29,6 @@ $$
   \;=\;
   \frac{\ell_{\mathrm{net}}(p, n)}{A^2}
   \cdot \hbar_q^2
-
 $$
 
 where $\hbar_q = 1 - q_0^{-1}$ is the quantum Planck constant and
@@ -42,7 +40,6 @@ $$
   \binom{p}{2} - \binom{n}{2}
   \;=\;
   \frac{p(p-1) - n(n-1)}{2}.
-
 $$
 
 For nuclei on the neutron-rich side of the valley ($n > p$),
@@ -95,7 +92,6 @@ $$
   \delta q(p+1, n-1) - \delta q(p, n)
   \;=\;
   \frac{A - 1}{A^2} \cdot \hbar_q^2.
-
 $$
 
 This is always positive: the daughter (with one more proton) has

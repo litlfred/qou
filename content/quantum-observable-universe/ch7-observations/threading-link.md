@@ -9,7 +9,6 @@ a cycle.  The **threading link** of the ring is the torus link
 
 $$
   \mathcal{T}_N \;=\; T(2, N),
-
 $$
 
 whose closure in the braid group $B_N$ is
@@ -18,7 +17,6 @@ $$
   \hat{\beta}_N
   \;=\;
   (\sigma_1 \, \sigma_2 \, \cdots \, \sigma_{N-1})^2.
-
 $$
 
 The threading link winds **twice** around the torus defined by
@@ -46,7 +44,6 @@ $$
   \Delta_{T(2,2m)}(t)
   \;=\;
   \frac{t^m - t^{-m}}{t - t^{-1}}.
-
 $$
 
 Evaluated at the substrate parameter $t = q$:
@@ -67,7 +64,6 @@ $$
   q^2 + 1 + q^{-2}
   \;=\;
   (q + q^{-1})^2 - 1.
-
 $$
 
 The threading link's Alexander weight is **one less than the
@@ -89,7 +85,6 @@ $$
   \;\approx\;
   \frac{1}{2}
   \qquad (|q| \approx 1).
-
 $$
 
 The threading carries **half the Alexander weight** of the

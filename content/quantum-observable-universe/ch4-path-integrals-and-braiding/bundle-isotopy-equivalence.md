@@ -6,7 +6,6 @@ within each fibre:
 $$
   \{(p_i, H_i)\}_{i \in I} \;\sim\;
   \{(p_{\sigma(i)}, H_{\sigma(i)}')\}_{i \in I}
-
 $$
 
 where $\sigma$ is a bijection on $I$ and each $H_{\sigma(i)}'$ is

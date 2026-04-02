@@ -12,7 +12,6 @@ and the Skein polynomial is the product:
 
 $$
   P_{\bar{\mathcal{N}}(p,n)}(q) \;=\; \prod_{i=0}^{A-2} \hat{V}_i(q).
-
 $$
 
 The transfer matrix $T(c, d)$ at each crossing has eigenvalues
@@ -20,7 +19,6 @@ The transfer matrix $T(c, d)$ at each crossing has eigenvalues
 $$
   \lambda_{\pm} \;=\;
   \frac{\mathrm{tr}\,T \;\pm\; \sqrt{(\mathrm{tr}\,T)^2 - 4\det T}}{2}
-
 $$
 
 which are **real and opposite in sign** (since $\det T < 0$ for
@@ -36,7 +34,6 @@ The chain of $k$ crossings at generator $\sigma_i$ gives
 
 $$
   \hat{V}_i \;=\; c_+\,\lambda_+^k \;+\; c_-\,\lambda_-^k
-
 $$
 
 where $c_{\pm}$ depend on $z$ and the crossing coefficients.
@@ -51,7 +48,6 @@ the Skein polynomial is positive:*
 
 $$
   P_{\bar{\mathcal{N}}(p,n)}(q) \;>\; 0.
-
 $$
 
 *This is equivalent to the **lattice inequality**: for each
@@ -65,7 +61,6 @@ $$
   c_-^{(i)}\,\lambda_-^{k_i}
   \;>\; 0
   \qquad (i = 0, \ldots, A-2)
-
 $$
 
 *where $k_i$ is the number of crossings at generator $i$
@@ -94,7 +89,6 @@ $$
   \left|\frac{\lambda_-}{\lambda_+}\right|^{A-1}
   \;=\; q^{-2(A-1)}
   \qquad\text{(pp-type)}
-
 $$
 
 This is automatically satisfied for $q > 1$ because the
@@ -142,7 +136,6 @@ the Markov height.  The trace magnitude is:
 $$
   |P(q)| \;\leq\; \sum_w |c_w| \cdot z^{f(w)}
   \;\sim\; (A-1)! \cdot q^{\binom{A}{2}} \cdot z^{A-1}
-
 $$
 
 while the dominant contribution (without cross-term cancellation)
@@ -162,7 +155,6 @@ term.  The critical condition is:
 
 $$
   (A-1)! \;>\; [2]_q^{\,A-1}
-
 $$
 
 The $q$-deformed version uses $q$-factorials throughout (no
@@ -172,14 +164,12 @@ $$
   [n]_q! \;=\; \prod_{k=1}^{n} [k]_q
   \qquad\text{where}\quad
   [k]_q \;=\; \frac{q^k - q^{-k}}{q - q^{-1}}
-
 $$
 
 The critical condition is:
 
 $$
   \boxed{[A-1]_q! \;>\; [2]_q^{\,A-1}}
-
 $$
 
 Equivalently: the **average $q$-integer** exceeds $[2]_q$:
@@ -188,7 +178,6 @@ $$
   \frac{1}{A-1}\sum_{k=1}^{A-1} \ln [k]_q
   \;>\;
   \ln [2]_q
-
 $$
 
 Since $[k]_q$ is strictly increasing in $k$ (for $q > 1$) and
@@ -242,7 +231,6 @@ $$
     (p, n) \in \mathbb{N}^2 :
     P_{\bar{\mathcal{N}}(p,n)}(q) > 0
   \bigr\}
-
 $$
 
 This lattice is bounded by:

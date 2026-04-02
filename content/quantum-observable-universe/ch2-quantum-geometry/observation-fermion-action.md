@@ -9,7 +9,6 @@ $$
   \underbrace{\mathrm{Sym}^2(V)}_{\text{bosonic, eigenvalue } q}
   \;\oplus\;
   \underbrace{\textstyle\bigwedge^2(V)}_{\text{fermionic, eigenvalue } {-q^{-1}}}
-
 $$
 
 The two idempotents are:
@@ -17,7 +16,6 @@ The two idempotents are:
 $$
   e_+ = \frac{T + q^{-1}}{q + q^{-1}}, \qquad
   e_- = \frac{q - T}{q + q^{-1}}
-
 $$
 
 with $e_+$ projecting onto $\mathrm{Sym}^2$ (bosonic) and

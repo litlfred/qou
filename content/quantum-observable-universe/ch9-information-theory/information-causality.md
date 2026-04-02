@@ -47,7 +47,6 @@ operation count is $n_R(q) = 1/\hbar_q$.  The bound becomes:
 $$
   n_R(q) \;\leq\; \frac{2\,m \cdot c_q^2}{\pi\,\hbar_q}
   \;=\; \frac{2\,m}{\pi\,\hbar_q\,(q-1)^2}.
-
 $$
 
 The Reeb dynamics saturates this bound (up to the factor $2/\pi$):
@@ -65,7 +64,6 @@ $$
   \;=\; c_q \cdot n_R(q) \cdot \eta_q
   \;=\; \frac{q\,\eta_q}{(q-1)^2}
   \quad \text{(bits per Planck time)}.
-
 $$
 
 At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2
@@ -91,7 +89,6 @@ $$
   S_{\mathrm{fibre}} \;\leq\; \eta_q
   \;=\; \frac{2q - 1}{q^3}
   \quad \text{(nats per operation)}.
-
 $$
 
 **7. Summary: QOU position in the landscape.**

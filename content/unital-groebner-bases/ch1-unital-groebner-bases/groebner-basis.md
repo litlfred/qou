@@ -10,7 +10,6 @@ representation
 
 $$
   h = \sum_{k \in K} \lambda_k\, u_k \cdot g_{\gamma_k} \cdot v_k
-
 $$
 
 for $K$ an index set, $\gamma_k \in \Gamma$, $\lambda_k \in R^*$,
@@ -32,7 +31,6 @@ $u, u', v, v' \in B$, $\lambda, \lambda' \in R^*$ such that
 $$
   \lambda\,\mathrm{LT}(u \cdot \mathrm{LT}(f) \cdot v)
   = \lambda'\,\mathrm{LT}(u' \cdot \mathrm{LT}(f') \cdot v').
-
 $$
 
 In this case,
@@ -40,7 +38,6 @@ In this case,
 $$
   S(f, f') := \lambda\, u \cdot f \cdot v
     - \lambda'\, u' \cdot f' \cdot v'.
-
 $$
 
 If the ground ring is a field, every Gröbner basis is automatically

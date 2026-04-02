@@ -11,7 +11,6 @@ $$
   \langle f, g \rangle_A
   \;=\; \int_A \!\circ\, \mu(f \otimes g)
   \;=\; \int_{\mathrm{SU}(2)} f(g)\,h(g)\,d\mu_{\mathrm{Haar}}(g).
-
 $$
 
 This is the $L^2$ inner product on SU(2).
@@ -26,7 +25,6 @@ $\{D^j_{mn}\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ satisfying
 $$
   \langle D^j_{mn},\, D^{j'}_{m'n'} \rangle_A
   \;=\; \frac{1}{2j+1}\,\delta_{jj'}\,\delta_{mm'}\,\delta_{nn'}.
-
 $$
 
 The isomorphism $A \xrightarrow{\sim} A^{\vee}$ sends each basis
@@ -47,7 +45,6 @@ $$
   \langle \alpha, \beta \rangle_A
   \;=\; \int_{\mathrm{SU}(2)} \alpha\,\beta\,d\mu
   \;=\; 0.
-
 $$
 
 The factor $\tfrac{1}{2} = 1/(2 \cdot \tfrac{1}{2} + 1)$ confirms
@@ -66,7 +63,6 @@ $$
   f \;\longmapsto\; \sum_{j,m,n} (2j+1)\,
   \langle f,\, D^j_{mn} \rangle_A \cdot \overline{D^j_{mn}}
   \;=\; f,
-
 $$
 
 by Peter–Weyl completeness.  This is $\mathrm{id}_A$, confirming

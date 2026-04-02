@@ -16,7 +16,6 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
    $$
      \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) = \sum_{\text{crossings}} \epsilon_i,
      \qquad \epsilon_i \in \{q, -q^{-1}\},
-
    $$
 
    then the crossing energy of the antihadron satisfies
@@ -24,7 +23,6 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
    $$
      \mathbf{E}_{\mathrm{cross}}(\sigma(\mathfrak{H})) = -\mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
      \bigg|_{q \leftrightarrow q^{-1}},
-
    $$
 
    i.e. positive crossings ($+q$) become negative ($-q^{-1}$) and

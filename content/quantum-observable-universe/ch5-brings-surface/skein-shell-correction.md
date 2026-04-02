@@ -18,7 +18,6 @@ $$
   \mathbf{E}_{\mathrm{cross}} \;\xrightarrow{\text{Skein binding}}\;
   \mathcal{L}_{\mathrm{bind}} \;\xrightarrow{\partial/\partial p}\;
   p^*(A)
-
 $$
 
 The last step (beta-stability) gives the smooth curve.  The
@@ -42,7 +41,6 @@ $$
   -\lambda_{\mathrm{shell}} \cdot
   \sum_{\text{closed sub-links } L_i \subset \mathcal{N}}
   \frac{|J_{L_i}(q)|}{|J_{\mathcal{N}}(q)|}
-
 $$
 
 *where the sum runs over maximal closed (unlinked) sub-links
@@ -99,7 +97,6 @@ $$
   k \times \mathcal{N}(2, 2) \;\bowtie\;
   (p - 2k)\,\mathfrak{p} \;\bowtie\;
   (n - 2k)\,\mathfrak{n}
-
 $$
 
 for $k = \min(\lfloor p/2 \rfloor, \lfloor n/2 \rfloor)$.
@@ -113,7 +110,6 @@ $$
   -\lambda_{\mathrm{shell}} \cdot
   \min\!\left(\left\lfloor \frac{p}{2} \right\rfloor,
   \left\lfloor \frac{n}{2} \right\rfloor\right).
-
 $$
 
 This is **maximised** when both $p$ and $n$ are even (even-even

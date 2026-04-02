@@ -16,7 +16,6 @@ $$
     q - q^{-1} & 1 \\
     1 & 0
   \end{pmatrix}
-
 $$
 
 Its **characteristic polynomial** is:
@@ -26,7 +25,6 @@ $$
   \;=\;
   \lambda^2 - (q - q^{-1})\lambda - 1
   \;=\; 0
-
 $$
 
 with eigenvalues:
@@ -35,7 +33,6 @@ $$
   \lambda_{\pm}(q)
   \;=\;
   \frac{(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}}{2}
-
 $$
 
 **At the substrate parameter $q$:**
@@ -43,13 +40,11 @@ $$
 $$
   q - q^{-1} = 0.2091, \quad
   \sqrt{0.2091^2 + 4} = 2.0054
-
 $$
 
 $$
   \lambda_+ = 1.1073, \quad
   \lambda_- = -0.9027
-
 $$
 
 **Properties:**
@@ -78,7 +73,6 @@ $$
     0 & \lambda_-^n
   \end{pmatrix}
   S^{-1}
-
 $$
 
 where the eigenvector matrix is:
@@ -89,7 +83,6 @@ $$
     \lambda_+ & \lambda_- \\
     1 & 1
   \end{pmatrix}
-
 $$
 
 The entries of $T_{\gamma e}^n$:
@@ -102,7 +95,6 @@ $$
   (T^n)_{21}
   \;=\;
   \frac{\lambda_+^n - \lambda_-^n}{\lambda_+ - \lambda_-}
-
 $$
 
 These are **Chebyshev polynomials of the second kind** in the
@@ -110,7 +102,6 @@ variable $\frac{1}{2}(q - q^{-1})$:
 
 $$
   (T^n)_{21} \;=\; U_{n-1}\!\left(\tfrac{q - q^{-1}}{2}\right)
-
 $$
 
 ## The traced volume at shell $n$
@@ -124,7 +115,6 @@ $$
   \;=\;
   \frac{(z\lambda_+ + 1)\lambda_+^n - (z\lambda_- + 1)\lambda_-^n}
        {\lambda_+ - \lambda_-}
-
 $$
 
 where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
@@ -134,7 +124,6 @@ Define:
 $$
   \alpha \;=\; z\lambda_+ + 1, \qquad
   \beta \;=\; z\lambda_- + 1
-
 $$
 
 Then:
@@ -143,7 +132,6 @@ $$
   \hat{V}(n, q) \;=\;
   \frac{\alpha \cdot \lambda_+^n - \beta \cdot \lambda_-^n}
        {\lambda_+ - \lambda_-}
-
 $$
 
 Since $|\lambda_+| > 1 > |\lambda_-|$, the dominant term for
@@ -153,7 +141,6 @@ $$
   \hat{V}(n, q) \;\sim\;
   \frac{\alpha}{\lambda_+ - \lambda_-} \cdot \lambda_+^n
   \qquad (n \gg 1)
-
 $$
 
 The sub-dominant term $\beta \cdot \lambda_-^n = \beta \cdot
@@ -172,7 +159,6 @@ $$
     \;+\;
     \hat{V}(n-1, q)
   }
-
 $$
 
 with initial conditions $\hat{V}(0, q) = 1$ (no crossings)
@@ -201,7 +187,6 @@ $$
   E_n(q)
   \;=\;
   E_0 \cdot \hat{V}(n, q)
-
 $$
 
 where $E_0$ is the ground-state energy scale (from the
@@ -216,7 +201,6 @@ $$
   \;=\;
   E_0 \bigl[(q - q^{-1} - 1) \hat{V}(n, q)
   + \hat{V}(n-1, q)\bigr]
-
 $$
 
 For the dominant term ($n \gg 1$):
@@ -226,7 +210,6 @@ $$
   \;\sim\;
   E_0 \cdot \frac{\alpha}{\lambda_+ - \lambda_-}
   \cdot \lambda_+^n \cdot (\lambda_+ - 1)
-
 $$
 
 The **Rydberg scaling** $E_n \propto 1/n^2$ emerges in the
@@ -237,7 +220,6 @@ $\epsilon = 0.1073$.  For low shells ($n = 1, 2, 3, \ldots$):
 $$
   \lambda_+^n \approx e^{n\epsilon}
   \approx 1 + n\epsilon + \tfrac{1}{2}n^2\epsilon^2 + \cdots
-
 $$
 
 The binding energy at shell $n$ (relative to ionization):
@@ -250,7 +232,6 @@ $$
   \frac{1}{\lambda_+^n}
   \;\approx\;
   e^{-n\epsilon}
-
 $$
 
 For small $\epsilon$, this approximates $1/n^2$ over the
@@ -282,7 +263,6 @@ $$
   T_{\mathrm{total}}^{(i)}
   \;=\;
   \bigotimes_{e=1}^{Z} T_{\gamma e}^{(e, i)}
-
 $$
 
 The eigenvalues of the tensor product are **products** of

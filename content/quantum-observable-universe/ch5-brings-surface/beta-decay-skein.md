@@ -36,7 +36,6 @@ braid word in $B_3$ is:
 
 $$
   \beta_{T_{3,5}} \;=\; (\sigma_1 \sigma_2)^5
-
 $$
 
 This word has **$10$ crossings**.  In the Hecke algebra $H_3(q)$,
@@ -50,7 +49,6 @@ $$
   \;:=\;
   \mathrm{tr}_{\mathrm{Markov}}\bigl((\sigma_1 \sigma_2)^5\bigr)
   \;\in\; \mathbb{Z}[q^{\pm 1/2}]
-
 $$
 
 The single-crossing Skein amplitude $s = q^{1/2} - q^{-1/2}$
@@ -91,7 +89,6 @@ $$
   T_{2,3}
   \;\sqcup\;
   K_{0_1}
-
 $$
 
 The $10$ crossings of $T_{3,5}$ are partitioned by the
@@ -104,7 +101,6 @@ In the Skein relation at each of the $10$ crossings:
 $$
   q \, [L_+] \;-\; q^{-1} [L_-]
   \;=\; (q^{1/2} - q^{-1/2}) \, [L_0]
-
 $$
 
 The accumulated effect of $10$ such relations (not $1$) determines
@@ -123,7 +119,6 @@ $$
   \overline{T_{2,3}}
   \;\sqcup\;
   K_{0_1}
-
 $$
 
 ## The $\mathbb{Z}/2$ symmetry
@@ -147,7 +142,6 @@ $$
   \;\;\xrightarrow{\;q \leftrightarrow q^{-1}\;}\;\;
   \mathcal{S}_{ba}(q)
   = \frac{q \mu_b + q^{-1} \mu_a}{q^{1/2} + q^{-1/2}}
-
 $$
 
 When $\mu_a \neq \mu_b$ (i.e., $\mu_u \neq \mu_d$), the two
@@ -167,13 +161,11 @@ residue** — absorbed into R2 moves during re-reduction.
 $$
   L_0^{-} \;=\; T_{2,3} \;\sqcup\; \overline{T_{1,0}}
   \qquad (\beta^- \text{ decay: } e^- + \bar{\nu}_e)
-
 $$
 
 $$
   L_0^{+} \;=\; \overline{T_{2,3}} \;\sqcup\; T_{1,0}
   \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
-
 $$
 
 ## The $\mathcal{Q}_q$-value (10-crossing)
@@ -190,7 +182,6 @@ $$
   \mathcal{S}_q[\bar{\mathcal{N}}(Z \pm 1, N \mp 1)]
   \;-\;
   m_e
-
 $$
 
 The parent and daughter normal forms differ at all crossings
@@ -219,7 +210,6 @@ $$
   \mathcal{Q}_q \;=\; \Delta(\text{R2 steps from 10 crossings})
   \;\times\; (q - q^{-1})
   \;\times\; (\text{pair Skein scale})
-
 $$
 
 ## Why single-crossing was insufficient

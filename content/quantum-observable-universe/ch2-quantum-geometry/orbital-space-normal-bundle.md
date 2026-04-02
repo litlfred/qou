@@ -13,7 +13,6 @@ $$
     \Delta_{T}\,\sigma = \lambda\,\sigma, \quad
     \lambda \leq \lambda_{n-1}
   \bigr\}
-
 $$
 
 where $\mathrm{tw}(\sigma)$ is the total twist (self-linking
@@ -45,7 +44,6 @@ eigenvalues
 $$
   \lambda_\ell \;=\; [\ell]_q \, [\ell + 1]_q,
   \qquad \ell = 0, 1, 2, \ldots
-
 $$
 
 where $[\ell]_q = (q^\ell - q^{-\ell})/(q - q^{-1})$ is the
@@ -67,7 +65,6 @@ $$
   \sigma(\theta)
   \;=\;
   A_\ell \, e^{i\ell\theta} \, \hat{n}(\theta)
-
 $$
 
 The direction $\hat{n}(\theta)$ rotates as we go around the
@@ -113,7 +110,6 @@ $$
   \sum_{\ell=0}^{n-1} (2\ell + 1)
   \;=\; n^2.
   \qquad\square
-
 $$
 
 **The critical step.**
@@ -146,7 +142,6 @@ $$
   E_\ell
   \;=\;
   \frac{[\ell]_q \, [\ell + 1]_q}{[n]_q^2} \cdot E_{\mathrm{ion}}
-
 $$
 
 where $E_{\mathrm{ion}} = 13.6$ eV and $[\ell]_q [\ell+1]_q$

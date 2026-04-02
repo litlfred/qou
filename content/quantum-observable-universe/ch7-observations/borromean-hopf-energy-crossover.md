@@ -27,7 +27,6 @@ $$
   \frac{2 \times 7.32772}{((q-1)/q)^2}
   \;=\;
   \frac{14.6554\, q^2}{(q-1)^2}.
-
 $$
 
    The diquark phase has mass from crossing energy only
@@ -40,7 +39,6 @@ $$
   \;=\;
   q + q^{-1}
   \;\approx\; 2.011 \;\text{Skein units}.
-
 $$
 
    Since $\mathrm{Vol}(\mathcal{L}_H) = 0$, the diquark
@@ -67,7 +65,6 @@ $$
   \frac{V_B}{\hbar_q^2}
   \;=\;
   \frac{7.32772\, q^2}{(q-1)^2}.
-
 $$
 
 3. **At $q = q_0$.**
@@ -79,7 +76,6 @@ $$
   \;=\;
   \frac{3}{2} \times 2.0108
   \;=\; 3.016.
-
 $$
 
 $$
@@ -89,7 +85,6 @@ $$
   \;=\;
   \frac{7.32772}{0.009781}
   \;=\; 749.2.
-
 $$
 
    At $q = q_0$: $3.016 \ll 749.2$.  The Borromean
@@ -104,7 +99,6 @@ $$
   \mathbf{E}_{\mathrm{comp}}(\rho)
   \;\sim\;
   \frac{\hbar_q^2}{2\mathfrak{m}} \cdot (3\pi^2 \rho)^{2/3},
-
 $$
 
    which grows as $\rho^{2/3}$.  The compression energy
@@ -120,7 +114,6 @@ $$
   \frac{V_B}{\hbar_q^2}
   \;-\;
   \frac{3}{2}(q + q^{-1}),
-
 $$
 
    i.e., the compression energy closes the gap between

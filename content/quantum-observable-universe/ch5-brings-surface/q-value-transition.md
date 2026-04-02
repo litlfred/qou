@@ -19,7 +19,6 @@ $$
   S_q(e)
   \;-\;
   S_q(\bar{\nu})
-
 $$
 
 where $S_q(K) = \mathrm{tr}_\tau(\rho(\beta_K))$ is the
@@ -41,7 +40,6 @@ $$
   \;=\;
   \mathbf{E}_\times^{(\epsilon_{\mathrm{par}})}(q)
   - \mathbf{E}_\times^{(\epsilon_{\mathrm{dau}})}(q)
-
 $$
 
 For a $\mathfrak{d} \to \mathfrak{u}$ change ($\sigma_k^{-1} \to \sigma_k$):
@@ -52,7 +50,6 @@ $$
   \;=\;
   \sum_{\text{changed crossings}} \Delta \mathbf{E}_\times
   \;-\; S_q(e)
-
 $$
 
 (dropping $S_q(\bar{\nu}) = 0$ since the unknot has trivial
@@ -71,7 +68,6 @@ $$
   T_e + T_{\bar{\nu}} + T_{\mathrm{recoil}}
   \;\stackrel{?}{=}\;
   M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e
-
 $$
 
 This equality uses $E_{\mathrm{before}} = E_{\mathrm{after}}$
@@ -82,12 +78,10 @@ does not satisfy $d_q^2 = 0$:
 
 $$
   d_q f(x) \;=\; \frac{f(qx) - f(x)}{(q-1)x}
-
 $$
 
 $$
   d_q(f \cdot g) \;=\; (d_q f) \cdot g \;+\; f(qx) \cdot (d_q g)
-
 $$
 
 The $q$-Leibniz rule has a **shift** $f(qx)$ rather than $f(x)$.
@@ -96,7 +90,6 @@ sum of differentials.  Squaring:
 
 $$
   d_q^2 \;\neq\; 0 \quad \text{for } q \neq 1
-
 $$
 
 **Consequence:** The total $q$-energy of the products need not
@@ -109,7 +102,6 @@ $$
   \mathcal{Q}_q
   \;-\;
   (T_e + T_{\bar{\nu}} + T_{\mathrm{recoil}})
-
 $$
 
 This anomaly does NOT vanish in general.  It is a genuine
@@ -127,7 +119,6 @@ Each R2 move shifts the local $q$-environment by:
 
 $$
   q_{\mathrm{eff}} \;\mapsto\; q_{\mathrm{eff}} + \Delta q
-
 $$
 
 where $\Delta q \propto \hbar_q^2 = (1 - q^{-1})^2$.
@@ -140,7 +131,6 @@ $$
   \Delta q_{\mathrm{eff}}
   \;=\;
   \frac{A - 1}{A^2} \cdot \hbar_q^2
-
 $$
 
 This shift modifies $\mathcal{Q}_q$ at second order:
@@ -151,7 +141,6 @@ $$
   \underbrace{\Delta S_q - S_q(e)}_{\text{leading (crossing change)}}
   \;+\;
   \underbrace{\frac{\partial S_q}{\partial q} \cdot \Delta q_{\mathrm{eff}}}_{\delta_q \text{ (q-anomaly)}}
-
 $$
 
 **At $q = 1$:** $\delta_q = 0$ and
@@ -187,7 +176,6 @@ $$
   S_q(\bar{\nu})
   \;+\;
   \text{kinetic terms}
-
 $$
 
 Note: the daughter is evaluated at the **shifted** $q$, not the
@@ -208,7 +196,6 @@ a similar non-conservation.  Classically:
 
 $$
   \vec{p}_{\mathrm{par}} = \vec{p}_{\mathrm{dau}} + \vec{p}_e + \vec{p}_{\bar{\nu}}
-
 $$
 
 In the $q$-deformed case, the Hecke algebra non-commutativity
@@ -220,7 +207,6 @@ $$
   p_q(\mathrm{dau}) + p_q(e) + p_q(\bar{\nu})
   \;+\;
   \delta p_q
-
 $$
 
 where $\delta p_q \propto \hbar_q$ is a $q$-anomaly in momentum.

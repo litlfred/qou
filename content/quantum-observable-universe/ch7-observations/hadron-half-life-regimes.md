@@ -32,7 +32,6 @@ $$
   \frac{q^2 - 1}{q^2 + 1}
   \;+\;
   5\,\frac{q^2 + 1}{q^2 - 1},
-
 $$
 
 where the first term comes from $\partial_{\ln q}\ln(q + q^{-1})$

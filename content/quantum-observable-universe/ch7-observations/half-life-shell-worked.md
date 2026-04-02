@@ -39,7 +39,6 @@ $\mathcal{N}(2, 1) = \mathfrak{p} \bowtie \mathfrak{p} \bowtie
 
 $$
   \ell_{\mathrm{net}}(2, 1) = \textstyle\binom{2}{2} - \binom{1}{2} = +1
-
 $$
 
 **Why the transition is superallowed ($\log ft = 3.05$).**
@@ -49,7 +48,6 @@ conjugation.  In the Skein algebra of the Hopf link, this means
 
 $$
   J_{\mathcal{N}(2,1)}(q) = J_{\mathcal{N}(1,2)}(q^{-1}).
-
 $$
 
 The beta-decay matrix element is the overlap between the parent and
@@ -91,7 +89,6 @@ protons Hopf-linked to eight neutrons.
 $$
   \ell_{\mathrm{net}}(6, 8) = \textstyle\binom{6}{2} - \binom{8}{2}
   = 15 - 28 = -13
-
 $$
 
 The 8 neutrons include a **closed sub-link**: the $n = 8$ shell
@@ -101,7 +98,6 @@ configuration admits the factorization
 
 $$
   8\mathfrak{n} = 4 \times \mathcal{N}(0, 2)_{\mathrm{pair}}
-
 $$
 
 where each $\mathcal{N}(0, 2)_{\mathrm{pair}}$ is a
@@ -111,7 +107,6 @@ polynomial factors accordingly:
 $$
   J_{8\mathfrak{n}}(q)
   = J_{\mathcal{N}(0,2)}(q)^4 \cdot (\text{linking factors}).
-
 $$
 
 **Daughter link.**
@@ -121,7 +116,6 @@ stable nitrogen-14 configuration.
 $$
   \ell_{\mathrm{net}}(7, 7) = \textstyle\binom{7}{2} - \binom{7}{2}
   = 0 \quad\text{(perfectly balanced)}
-
 $$
 
 The daughter has $n = 7$, which is **not** a magic number.  The
@@ -142,7 +136,6 @@ $$
   \frac{|J_{\mathcal{N}(7,7)}(q)|}{|J_{\mathcal{N}(6,8)}(q)|}
   \;\cdot\;
   \frac{1}{|J_{\mathcal{N}(0,2)}(q)|}
-
 $$
 
 The denominator $|J_{\mathcal{N}(0,2)}(q)|$ is the Skein weight of
@@ -168,7 +161,6 @@ $$
   \;\approx\;
   -5 \cdot \frac{\delta E_{\mathrm{shell}}}{Q_0}
   \;\approx\; -17\%
-
 $$
 
 giving $\delta E_{\mathrm{shell}} \approx 0.17 \times Q_0 / 5

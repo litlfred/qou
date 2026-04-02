@@ -8,7 +8,6 @@ The **Planck time** is
 $$
   t_P(q) \;:=\; \frac{1}{\hbar_q}
   \;=\; \frac{q}{q - 1}.
-
 $$
 
 This is a rational function of $q$ defined over any field $k$ in
@@ -49,7 +48,6 @@ angular displacement is
 
 $$
   \ell_P(q) \;=\; \hbar_q \cdot t_P \;=\; 1
-
 $$
 
 identically over any field.  The Planck length is always $1$;

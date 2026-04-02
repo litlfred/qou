@@ -5,7 +5,6 @@ $$
   \mathcal{R}\;\in\;
   \mathcal{U}_q(\mathfrak{su}(2))\;\hat{\otimes}\;
   \mathcal{U}_q(\mathfrak{su}(2))
-
 $$
 
 satisfying the Yang--Baxter equation

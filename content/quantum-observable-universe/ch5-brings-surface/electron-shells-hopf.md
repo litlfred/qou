@@ -16,7 +16,6 @@ $$
   \underbrace{Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}}_{\text{nucleus}}
   \;\bowtie\;
   \underbrace{p \cdot T_{2,3}}_{\text{electron cloud}}.
-
 $$
 
 The electron cloud $p \cdot T_{2,3}$ is a chain of $p$
@@ -92,7 +91,6 @@ The ionization energy of the outermost electron is
 $$
   E_{\mathrm{ion}} \;\propto\;
   \frac{\mathbf{E}_{\mathrm{cross}}(\text{electron--nucleus link})}{n^2}
-
 $$
 
 where $n$ is the shell number.  The atom becomes unstable

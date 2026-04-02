@@ -8,7 +8,6 @@ $$
   \;=\;
   \mathcal{B}_3(u,\, u,\, d)
   \;\bowtie\; \mathcal{L}_H
-
 $$
 
 where:
@@ -36,7 +35,6 @@ $$
   \frac{\mathrm{Vol}(S^3 \setminus \mathcal{B}_3)}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}
   \;+\; \text{Skein corrections}
-
 $$
 
 The Skein corrections arise from the crossing asymmetry between
@@ -46,7 +44,6 @@ $$
   m_{\mathfrak{p}}
   \;=\;
   \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
-
 $$
 
 At the CODATA value $q_0$: $m_{\mathfrak{p}}(q_0) \approx 938.272$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
@@ -58,5 +55,4 @@ giving a net Coulomb charge
 
 $$
   Q(\mathfrak{p}) \;=\; 2 \cdot (+\tfrac{2}{3}) + 1 \cdot (-\tfrac{1}{3}) \;=\; +1.
-
 $$

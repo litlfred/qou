@@ -7,7 +7,6 @@ group homomorphism
 
 $$
   \rho_n\colon B_n \;\longrightarrow\; \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})
-
 $$
 
 given on the Artin generators by

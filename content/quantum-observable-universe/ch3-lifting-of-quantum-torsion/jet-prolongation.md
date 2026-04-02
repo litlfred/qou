@@ -4,7 +4,6 @@ ring $R$ ([quantum observable universe](#def:quantum-observable-universe)).  Def
 
 $$
   J^1(A) \;:=\; A \otimes \Omega^1(A),
-
 $$
 
 where $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$ is the bimodule of

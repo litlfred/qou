@@ -10,7 +10,6 @@ equals the $2$-form datum:
 
 $$
   F_\nabla = B.
-
 $$
 
 This is not an independent axiom. It is a derived consequence of the

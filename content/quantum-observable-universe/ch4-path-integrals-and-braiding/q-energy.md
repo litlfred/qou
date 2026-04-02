@@ -12,7 +12,6 @@ $$
   \underbrace{p_q(\beta)^2 \cdot \hbar_q / (2\,[n]_q)}_{\text{translational}}
   \;+\;
   \underbrace{S_q(K)}_{\text{action (rest mass)}}
-
 $$
 
 where:
@@ -48,7 +47,6 @@ where:
 $$
   S_q(K) \;=\; \sum_{\text{crossings}} \mathbf{E}_\times(q)
   \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
-
 $$
 
 The action term dominates: for hadrons, $S_q \sim 10^3$ MeV
@@ -58,7 +56,6 @@ while the rotational and translational terms are $O(\hbar_q) \sim 0.1$.
 
 $$
   \mathbf{E}_q(K)\big|_{\text{rest}} \;=\; S_q(K) \;=\; \mathfrak{m}(K) c^2
-
 $$
 
 recovering the topological mass formula.
@@ -79,7 +76,6 @@ of the mass scale $\mu_0$).  The total action is:
 
 $$
   S_q(K) \;=\; \sum_{j=1}^{k} \mathbf{E}_\times^{(\epsilon_j)}(q)
-
 $$
 
 where $\epsilon_j = \pm 1$ is the crossing sign.  For a

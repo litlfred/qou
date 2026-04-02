@@ -20,7 +20,6 @@ $$
   q(p) = 1 + \bigl\lvert\langle L_\theta,\,
   F_A^+\rangle\bigr\rvert(p)
   \;>\; q_0.
-
 $$
 
 The perturbation $\delta q = q(p_{\mathrm{vertex}}) - q_0$
@@ -42,7 +41,6 @@ depends on two factors:
    $$
      \int_{\Sigma_4} K\, dA = 2\pi\chi(\Sigma_4) = -12\pi,
      \qquad |\chi(\Sigma_4)| = 6.
-
    $$
 
    A single production channel couples to one coral tube out
@@ -61,7 +59,6 @@ $$
   \;\cdot\;
   \frac{1}{|\chi(\Sigma_4)|}
   \;}
-
 $$
 
 Every quantity on the right is determined:
@@ -91,7 +88,6 @@ $$
   \delta m = \frac{\delta q}{q_0}
   \cdot (\partial \ln m / \partial \ln q)
   \cdot m.
-
 $$
 
 ## Why CDF differs from ATLAS and CMS
@@ -116,7 +112,6 @@ $$
   \;\approx\;
   \frac{\alpha_W}{2\pi} \cdot x^2
   \;\sim\; 10^{-5}.
-
 $$
 
 This drives $\delta q$ below $10^{-6}$ at the LHC — explaining
@@ -140,7 +135,6 @@ $$
   \;=\;
   0.10998 \times \frac{0.118}{2\pi} \times \frac{1}{6}
   \;=\; 3.4 \times 10^{-4}
-
 $$
 
 which is $3.5\times$ larger than the CDF $W$ shift, driven by

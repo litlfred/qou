@@ -24,7 +24,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 **This is the simplest non-identity transfer matrix.**
@@ -45,7 +44,6 @@ $$
     \end{pmatrix}
     \;=\; \mathbb{I}
   }
-
 $$
 
 This is the $c = 0, d = 1$ case: the strand contributes
@@ -73,7 +71,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 **Explicit entries:**
@@ -91,7 +88,6 @@ $$
 
 $$
   \lambda_{\pm} \;=\; \frac{(q - q^{-1}) \pm \sqrt{(q-q^{-1})^2 + 4}}{2}
-
 $$
 
 Note: $\lambda_+ \cdot \lambda_- = -1$ (determinant), $\lambda_+ + \lambda_- = q - q^{-1}$ (trace).
@@ -110,7 +106,6 @@ $$
       q^2 & -qs
     \end{pmatrix}
   }
-
 $$
 
 **Explicit entries:**
@@ -128,7 +123,6 @@ $$
 
 $$
   T_{nn}(q) \;=\; q^2 \cdot T_{pp}(q) \;-\; qs \cdot \mathbb{I}
-
 $$
 
 ### 2c. Mixed ($\mathfrak{p}$-$\mathfrak{n}$, proton--neutron)
@@ -146,7 +140,6 @@ $$
       \dfrac{1+q^2}{2} & -\dfrac{qs}{2}
     \end{pmatrix}
   }
-
 $$
 
 **Explicit entries:**
@@ -163,7 +156,6 @@ $$
 
 $$
   T_{\mathrm{mix}}(q) \;=\; \tfrac{1}{2}\bigl(T_{pp}(q) + T_{nn}(q)\bigr)
-
 $$
 
 This midpoint property is the reason beta decay has a
@@ -188,7 +180,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 The photon (unknot, $J = 1$) contributes no deformation.
@@ -208,7 +199,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 ### 3c. Photon--photon ($\gamma$-$\gamma$)
@@ -225,7 +215,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 ### 3d. Photon--positron ($\gamma$-$e^+$)
@@ -242,7 +231,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 The unknot is invisible to the transfer matrix regardless
@@ -263,7 +251,6 @@ $$
       \dfrac{1+q^2}{2} & -\dfrac{qs}{2}
     \end{pmatrix}
   }
-
 $$
 
 ---
@@ -286,7 +273,6 @@ $$
     T_{T_{1,0}, K}(q) \;=\; T_{pp}(q)
     \quad\text{for every knot } K
   }
-
 $$
 
 **The unknot is universally invisible.**
@@ -305,7 +291,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 **All same-chirality identical-knot pairs give $T_{pp}$.**
@@ -326,7 +311,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 ### 4d. $T_{3,4}$--$T_{3,4}$ (top--top, $\mathfrak{t}$-$\mathfrak{t}$)
@@ -343,7 +327,6 @@ $$
       1 & 0
     \end{pmatrix}
   }
-
 $$
 
 ### 4e. Knot--mirror knot (any $K$ with $\overline{K}$)
@@ -379,16 +362,13 @@ degenerate $c = 0$, $d = 1$ case.
 
 $$
   T_{\mathrm{mix}} = \tfrac{1}{2}(T_{pp} + T_{nn})
-
 $$
 
 $$
   T_{nn} = q^2 \, T_{pp} - qs \, \mathbb{I}
-
 $$
 
 $$
   T_{\gamma e} = T_{ee} = T_{\gamma\gamma} = T_{\nu\nu}
   = T_{\mathfrak{b}\mathfrak{b}} = T_{\mathfrak{t}\mathfrak{t}} = T_{pp}
-
 $$

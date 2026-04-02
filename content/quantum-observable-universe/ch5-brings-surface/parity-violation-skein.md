@@ -14,7 +14,6 @@ $$
   q \, [L_+] \;-\; q^{-1} [L_-]
   \;=\;
   (q^{1/2} - q^{-1/2}) \, [L_0]
-
 $$
 
 Apply the mirror $\mathcal{P}$: $L_+ \mapsto L_-$,
@@ -25,7 +24,6 @@ $$
   q \, [L_-] \;-\; q^{-1} [L_+]
   \;=\;
   (q^{1/2} - q^{-1/2}) \, [\mathcal{P}(L_0)]
-
 $$
 
 Rearranging:
@@ -34,7 +32,6 @@ $$
   q^{-1} [L_+] \;-\; q \, [L_-]
   \;=\;
   -(q^{1/2} - q^{-1/2}) \, [\mathcal{P}(L_0)]
-
 $$
 
 Compare with the original:
@@ -43,7 +40,6 @@ $$
   q \, [L_+] \;-\; q^{-1} [L_-]
   \;=\;
   (q^{1/2} - q^{-1/2}) \, [L_0]
-
 $$
 
 These are the **same** equation if and only if $q = q^{-1}$,
@@ -75,7 +71,6 @@ The **degree of parity violation** is controlled by:
 
 $$
   q - q^{-1} = 0.209 \quad (\text{at } q = q_0)
-
 $$
 
 This is the same quantity that appears in the Skein amplitude

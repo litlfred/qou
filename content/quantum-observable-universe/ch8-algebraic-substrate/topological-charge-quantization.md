@@ -4,7 +4,6 @@ $\Phi$, equals unity:
 
 $$
 \mathrm{Res}_q(\omega, 1) = \Phi\bigl(\mathrm{Res}_{\xi}(\omega)\bigr) = 1
-
 $$
 
 where $\omega$ is the canonical differential form on $A$ and

@@ -7,7 +7,6 @@ $$
   H^0(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
   \Gamma_c(M, \mathcal{S}) = 0.
-
 $$
 
 These analytic conditions are the archimedean realisation of the

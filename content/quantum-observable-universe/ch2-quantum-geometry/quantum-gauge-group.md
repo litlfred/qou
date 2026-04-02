@@ -15,7 +15,6 @@ $$
   G_q \;=\; \mathrm{SU}_q(2),
   \qquad
   q = \text{eigenvalue of } c_{V,V} \text{ on } S^2 V.
-
 $$
 
 The classical gauge group

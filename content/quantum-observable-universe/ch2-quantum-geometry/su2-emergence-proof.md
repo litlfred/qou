@@ -44,7 +44,6 @@ $$
   g_{\mathbf{1}} \circ \tau(\epsilon)
   =
   \tau(\epsilon).
-
 $$
 
 Since $\tau(\epsilon)$ is non-degenerate (hence non-zero), this forces
@@ -76,7 +75,6 @@ Combining both constraints:
 $$
   G \;=\; \mathrm{SL}(2) \;\cap\; \mathrm{U}(2)
   \;=\; \mathrm{SU}(2).
-
 $$
 
 The volume constraint provides the special-linear condition

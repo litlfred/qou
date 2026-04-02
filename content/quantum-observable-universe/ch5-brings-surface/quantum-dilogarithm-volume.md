@@ -24,7 +24,6 @@ $$
   \mathbf{E}_{\mathrm{bind}}(p, n)
   \;=\;
   \frac{\Phi_q(\mathcal{N}(Z, N))}{\hbar_q^2}
-
 $$
 
 where the quantum dilogarithm volume is the log of the
@@ -36,7 +35,6 @@ $$
   \sum_{i=0}^{A-2} \log |z \cdot a_i + b_i|
   \;=\;
   \log \prod_{i=0}^{A-2} |\hat{V}_i|.
-
 $$
 
 This is the natural $q$-deformation of the hyperbolic volume:
@@ -78,7 +76,6 @@ $$
   \log \left|
     \frac{\hat{V}_i^{\mathrm{par}}}{\hat{V}_i^{\mathrm{dau}}}
   \right|
-
 $$
 
 where the sum runs only over the affected generators ($i \leq p$),
@@ -102,7 +99,6 @@ $$
   \left|
     \frac{\hat{V}_i^{\mathrm{dau}}}{\hat{V}_i^{\mathrm{par}}}
   \right|^2
-
 $$
 
 where $s = q^{1/2} - q^{-1/2}$,

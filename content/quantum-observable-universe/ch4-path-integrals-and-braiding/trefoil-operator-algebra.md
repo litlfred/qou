@@ -5,7 +5,6 @@ $xyx=yxy$ becomes the operator identity
 $$
   \alpha\,\beta\,\alpha
   \;=\;\beta\,\alpha\,\beta
-
 $$
 
 for the generators $\alpha$ and
@@ -15,7 +14,6 @@ $$
   \alpha=\begin{pmatrix}e^{i\pi/3}&0\\0&e^{-i\pi/3}\end{pmatrix},
   \qquad
   \beta=\begin{pmatrix}0&i\\i&0\end{pmatrix},
-
 $$
 
 both products evaluate to
@@ -24,7 +22,6 @@ $$
   \alpha\beta\alpha
   = \begin{pmatrix}0&ie^{2i\pi/3}\\ie^{-2i\pi/3}&0\end{pmatrix}
   = \beta\alpha\beta.
-
 $$
 
 The eigenvalues of the composite $\alpha\beta$ govern the phases

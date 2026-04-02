@@ -40,7 +40,6 @@ $S_3$ structure emerges on the projective ratios
 
 $$
   \eta_1=\frac{w_1}{w_2},\qquad\eta_2=\frac{w_3}{w_4}:
-
 $$
 
 $\sigma_1$ inverts both ratios $(\eta_1\mapsto\eta_1^{-1},\;

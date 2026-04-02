@@ -8,7 +8,6 @@ $V_{1/2}^{\otimes n}$ with $n \geq 2j$, the intertwiner space
 $$
   \mathrm{Hom}_{\mathrm{SU}(2)}\!\bigl(V_j,\;
     V_{1/2}^{\otimes n}\bigr)
-
 $$
 
 admits a *canonical* basis — the **PawLei basis** — indexed by
@@ -50,7 +49,6 @@ $$
     V_{1/2}^{\otimes n}\bigr)
   \;=\;
   \frac{(2j+1)\, n!}{(\tfrac{n}{2}+j+1)!\;(\tfrac{n}{2}-j)!}
-
 $$
 
 when $n \equiv 2j \pmod{2}$, and zero otherwise.

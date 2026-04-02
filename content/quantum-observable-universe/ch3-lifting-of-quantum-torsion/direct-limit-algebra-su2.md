@@ -12,7 +12,6 @@ $$
   \;\hookrightarrow\;
   \mathrm{End}(J^2\mathcal{O}(\mathrm{SU}(2)))
   \;\hookrightarrow\; \cdots
-
 $$
 
 connected by the jet prolongation maps
@@ -27,7 +26,6 @@ directions.
 $$
   A_\infty
   \;=\; \varinjlim_n \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2)))),
-
 $$
 
 the union of all finite-order jet endomorphisms. An element of
@@ -45,7 +43,6 @@ $$
   A_\infty \;\cong\; U(\mathfrak{su}(2))
   \;\cong\; \mathbb{C}\langle e_1, e_2, e_3 \rangle
   \big/ \bigl(e_a e_b - e_b e_a - \epsilon_{abc}\, e_c\bigr).
-
 $$
 
 **Filtration.** The jet order induces a filtration

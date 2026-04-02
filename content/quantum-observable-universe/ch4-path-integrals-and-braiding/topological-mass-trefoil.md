@@ -13,7 +13,6 @@ $$
   \mathfrak{m}(\tau(2,3))
   \;=\;
   \frac{\mathrm{Li}_2(q^{-2})}{\hbar_q^{\,2}},
-
 $$
 
 where $\mathrm{Li}_2$ is the quantum dilogarithm and
@@ -26,7 +25,6 @@ $q \approx 1.110$:
 
 $$
   \hbar_q \;\approx\; \frac{0.110}{1.110} \;\approx\; 0.0990.
-
 $$
 
 **Figure-eight knot $4_1$ — the muon.**
@@ -34,7 +32,6 @@ The figure-eight knot *is* hyperbolic, with complement volume
 
 $$
   \mathrm{Vol}(S^3 \setminus 4_1) \;\approx\; 2.0299.
-
 $$
 
 By the mass formula, the topological mass is
@@ -48,7 +45,6 @@ $$
   \;\approx\;
   \frac{2.0299}{0.00980}
   \;\approx\; 207.1.
-
 $$
 
 **Physical interpretation.**
@@ -57,7 +53,6 @@ The ratio of topological masses is
 $$
   \frac{\mathfrak{m}(4_1)}{\mathfrak{m}(\tau(2,3))}
   \;\approx\; 207.1,
-
 $$
 
 which matches the muon-to-electron mass ratio
@@ -70,7 +65,6 @@ $$
   \tau(2,3) \;\longleftrightarrow\; e^-
   \qquad\text{and}\qquad
   4_1 \;\longleftrightarrow\; \mu^-
-
 $$
 
 is determined entirely by the knot topology — no free parameters

@@ -64,7 +64,6 @@ $$
   \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2
   \sigma_1\sigma_2\sigma_1\sigma_2
   \qquad\text{(10 crossings)}
-
 $$
 
 *Proof that $c(T_{3,5}) = 10$ is irreducible.*
@@ -74,7 +73,6 @@ $\gcd(m,n) = 1$ and $2 \leq m < n$ is
 
 $$
   c(T_{m,n}) \;=\; \min\bigl((m-1)n,\; (n-1)m\bigr).
-
 $$
 
 For $T_{3,5}$: $\min(2 \cdot 5,\; 4 \cdot 3) = \min(10, 12) = 10$.
@@ -157,7 +155,6 @@ via any process.
      10 \cdot (q - q^{-1}) \cdot \mu_0
      \;\gg\;
      m_\nu \;=\; \mu_0(q - 1).
-
    $$
 
    The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot

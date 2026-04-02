@@ -15,7 +15,6 @@ space is the brane tower:
 $$
   V \;=\; \bigoplus_{n \geq 0} V_n,
   \qquad V_n \;=\; A_n \;=\; J^n(A_0),
-
 $$
 
 where $A_0 = \mathcal{O}(\mathrm{SU}_q(2))$ is the coordinate ring
@@ -28,7 +27,6 @@ $L_0 = \xi_q^{(0)}$ (the zero-mode of the $q$-Reeb vector field).
 
 $$
   Y \colon V \;\longrightarrow\; (\mathrm{End}\,V)[\![z, z^{-1}]\!]
-
 $$
 
 assigns to each state $a \in V_n$ a **vertex operator** (formal
@@ -36,7 +34,6 @@ Laurent series in the coordinate $z$ on $\mathcal{S}_p$):
 
 $$
   Y(a, z) \;=\; \sum_{m \in \mathbb{Z}} a_m\, z^{-m-1},
-
 $$
 
 where the **modes** $a_m \in \mathrm{End}\,V$ are defined by the
@@ -50,7 +47,6 @@ $$
   \mathrm{tr}_M\!\bigl(
     \check{R}_{(a)}\, z^m
   \bigr),
-
 $$
 
 with $\check{R}_{(a)} = P \circ \mathcal{R}$ the braid operator
@@ -65,7 +61,6 @@ along a fibre of the Reeb bundle $\mathcal{R}_p$.
 $$
   |0\rangle = 1 \in A_0, \qquad
   T = L_{-1} = j \colon A_n \to A_{n+1},
-
 $$
 
 where $j$ is the jet prolongation map.  The vacuum is the unknot
@@ -80,7 +75,6 @@ $$
   \;\sim\;
   \sum_{n \geq 0}
   \frac{Y(c_n, w)}{(z - w)^{n+1}}
-
 $$
 
 has its **leading singularity** governed by the Hecke relation
@@ -88,7 +82,6 @@ $(T_i - q)(T_i + q^{-1}) = 0$, which is the Skein relation
 
 $$
   L_+ - L_- \;=\; (q - q^{-1})\, L_0.
-
 $$
 
 The collision $z \to w$ is two strands meeting on $\mathcal{S}_p$; the

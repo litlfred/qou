@@ -77,7 +77,6 @@ The mass of a knot $K$ is:
 $$
   \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
   \;+\; \sum_{\text{crossings}} \mathbf{E}_{\times}(q)
-
 $$
 
 where $\hbar_q = 1 - q^{-1}$ and

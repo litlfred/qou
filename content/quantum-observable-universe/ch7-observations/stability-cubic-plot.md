@@ -4,7 +4,6 @@ At $q = q_0$, the stability cubic
 $$
   t^3 \;=\; 2p\,(1 + c\,t^2),
   \qquad c = 0.01497, \quad A = t^3
-
 $$
 
 parametrises the valley of stability as a rational curve in the

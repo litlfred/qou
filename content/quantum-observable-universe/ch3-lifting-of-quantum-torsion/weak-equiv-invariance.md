@@ -14,7 +14,6 @@ $$
   \cdots
   \xrightarrow{\;\delta\;}
   \mathfrak{G}_m
-
 $$
 
 in the cosimplicial crossed groupoid.  Then for every observable
@@ -25,7 +24,6 @@ $$
   \tau\!\bigl(\iota_n(a|_n)\bigr)
   \;=\;
   \tau\!\bigl(\iota_m(a|_m)\bigr),
-
 $$
 
 where $\iota_n \colon \Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2))

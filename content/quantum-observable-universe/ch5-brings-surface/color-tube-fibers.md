@@ -21,7 +21,6 @@ are related to the Lagrange resolvents by
 $$
   \mathbf{r}_z = w_2 - z, \qquad \mathbf{g}_z = w_3 - z, \qquad
   \mathbf{b}_z = w_4 - z.
-
 $$
 
 As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the coral

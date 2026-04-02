@@ -6,7 +6,6 @@ $$
   d_q\,\alpha
   = q^{-1}\,d\alpha
         + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha.
-
 $$
 
 The vertical projection $\pi_V \circ d$ becomes

@@ -18,7 +18,6 @@ independent generators but are expressed in terms of $T_{2,3}$:
 $$
   \mathfrak{u} \;=\; T_{2,3}, \qquad
   \mathfrak{d} \;=\; \sigma(T_{2,3}).
-
 $$
 
 Here $\mathfrak{d}$ denotes the three-twist knot $5_2$, a Skein
@@ -33,7 +32,6 @@ $$
   \mathfrak{p} \;=\; [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H,
   \qquad
   \mathfrak{n} \;=\; [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H.
-
 $$
 
 **Nuclear composites** are iterated Hopf linkings of nucleons.
@@ -45,7 +43,6 @@ $$
   \underbrace{\mathfrak{p} \bowtie \cdots \bowtie \mathfrak{p}}_{Z}
   \;\bowtie\;
   \underbrace{\mathfrak{n} \bowtie \cdots \bowtie \mathfrak{n}}_{N}
-
 $$
 
 where $A = Z + N$.  A neutral atom appends $Z$ electrons:
@@ -56,7 +53,6 @@ $$
   {}^A_Z\!\mathcal{K}
   \;\bowtie\;
   Z \cdot T_{2,3}.
-
 $$
 
 **Table 1: Topological knot formulas.**

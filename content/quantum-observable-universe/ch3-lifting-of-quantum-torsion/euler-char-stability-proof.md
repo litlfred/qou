@@ -14,7 +14,6 @@ $$
   \mathbf{1}\bigr)
   \;=\;
   \mathrm{ev}_n \circ \mathrm{coev}_n.
-
 $$
 
 Jet prolongation is a functor on $\mathbf{C}$ that preserves the
@@ -38,7 +37,6 @@ $$
   \mathrm{ev}_n \circ \mathrm{coev}_n
   \;=\;
   \chi(A_n).
-
 $$
 
 By induction, $\chi(A_n) = \chi(A_0)$ for all $n \geq 0$.

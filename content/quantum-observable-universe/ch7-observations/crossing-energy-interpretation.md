@@ -21,7 +21,6 @@ $$
   \mathbf{E}_{\mathrm{cross}}(e^-) + \mathbf{E}_{\mathrm{cross}}(e^+)
   \;=\; 6\sinh(\ln q)
   \;\approx\; 0.630 \quad (\text{Skein units}).
-
 $$
 
 The symmetric (strong) contributions cancel.  The residual
@@ -34,7 +33,6 @@ At $q = q_0$:
 
 $$
   \tanh(\ln q_0) \;\approx\; 0.104.
-
 $$
 
 Electromagnetism is approximately **10\%** of the strong force at the

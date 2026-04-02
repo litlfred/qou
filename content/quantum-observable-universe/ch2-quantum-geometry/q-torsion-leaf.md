@@ -9,5 +9,4 @@ $$
   \qquad\text{and}\qquad
   \phi_t^q(L) = L
   \quad\text{for all } t \in \mathbb{R}.
-
 $$

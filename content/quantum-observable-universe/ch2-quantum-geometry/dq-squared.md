@@ -7,7 +7,6 @@ $\Omega^k(M)$:
 $$
   d_q^2\,\alpha
   \;=\; q^{-1}(1 - q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha.
-
 $$
 
 ```tex

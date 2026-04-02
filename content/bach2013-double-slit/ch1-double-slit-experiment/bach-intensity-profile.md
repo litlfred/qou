@@ -17,7 +17,6 @@ The standard Fraunhofer prediction for these parameters is
 $$
   I(\theta) = \cos^2\!\left(\frac{\pi\,d\sin\theta}{\lambda}\right)
   \cdot \mathrm{sinc}^2\!\left(\frac{\pi\,a\sin\theta}{\lambda}\right),
-
 $$
 
 which predicts fringe spacing

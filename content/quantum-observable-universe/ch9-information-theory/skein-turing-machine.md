@@ -13,7 +13,6 @@ link into three branches:
 
 $$
   q \, L_+ \;-\; q^{-1}\, L_- \;=\; s \, L_0
-
 $$
 
 where $s = q^{1/2} - q^{-1/2}$.  Each resolution replaces
@@ -52,7 +51,6 @@ $\leq c^2 - 1$ but is computed in factored form:
 
 $$
   P_L(q) = \prod_{i=0}^{n-2} \hat{V}_i(q)
-
 $$
 
 This compression from $3^c$ paths to $O(c)$ factors is the

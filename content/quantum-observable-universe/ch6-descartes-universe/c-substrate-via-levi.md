@@ -11,7 +11,6 @@ in the archimedean realisation to the smooth field
 $$
   q(p) = 1 + \bigl\lvert\langle L_\theta,\, F_A^+ \rangle\bigr\rvert(p),
   \qquad p \in M,
-
 $$
 
 with $q = 1$ at classicality ($F_A^+ = 0$) and $q \to \infty$ in the

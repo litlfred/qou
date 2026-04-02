@@ -3,7 +3,6 @@ behaviour of the group operation: for elements $A,B$ near the identity,
 
 $$
   e^A e^B \;=\; e^{A+B+\tfrac{1}{2}[A,B]+\cdots},
-
 $$
 
 so the commutator $[e_a,e_b]$ is the first-order Taylor polynomial of
