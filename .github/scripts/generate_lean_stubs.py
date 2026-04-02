@@ -95,10 +95,9 @@ def main():
 
     manifest = load_manifest(args.manifest)
     if not manifest.get("objects"):
-        print(f"⚠️  No objects in manifest: {args.manifest}")
+        print(f"❌ No objects in manifest: {args.manifest}")
         print("Run extract_proof_objects.py first (content build may have failed).")
-        print("Skipping stub generation.")
-        sys.exit(0)
+        sys.exit(1)
 
     # Group objects by chapter
     by_chapter = {}
