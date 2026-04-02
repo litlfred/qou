@@ -32,7 +32,7 @@ locally (at one crossing), it transmutes quark flavour.
 |-------|-----------|--------|-----------------|
 | $T_{2,3}$ ($e^-$, $u$) | Global mirror $\sigma$ | $T_{2,3}^{\sigma}$ ($e^+$, $d$) | Particle → antiparticle |
 | $T_{2,5}$ ($b$) | Global mirror $\sigma$ | $T_{2,5}^{\sigma}$ ($s$) | Bottom → strange |
-| $T_{2,7}$ ($c$) | Global mirror $\sigma$ | $T_{2,7}^{\sigma}$ ($\bar{c}$) | Charm → anticharm |
+| $T_{2,7}$ ($c$) | Global mirror $\sigma$ | $T_{2,7}^{\sigma}$ ($c^{\sigma}$) | Charm → anticharm |
 | $T_{1,0}$ ($\nu$) | Global mirror $\sigma$ | $T_{1,0}^{\sigma}$ ($\nu^{\sigma}$) | Neutrino → antineutrino |
 | $4_1$ ($\mu$) | Global mirror $\sigma$ | $4_1$ ($\mu$) | Self-mirror (amphichiral) |
 | $\mathfrak{n}$ = $[u,d,d]_p$ | Local $\sigma$ at one $d$ | $\mathfrak{p}$ = $[u,u,d]_p$ | Beta decay ($n \to p$) |
