@@ -2172,6 +2172,10 @@
         if (t[i] === '$' && t[i+1] !== '$') {
           let j = i + 1, depth = 0;
           while (j < t.length) {
+            if (t[j] === '\\' && j+1 < t.length) {
+              j += 2; // skip escaped char (e.g. \{, \}, \\)
+              continue;
+            }
             if (t[j] === '{') depth++;
             else if (t[j] === '}') depth--;
             else if (t[j] === '$' && depth === 0) break;
@@ -2193,7 +2197,11 @@
     // ── KaTeX ────────────────────────────────────────────
     let katexMacros = {};
     function buildKatexMacros(paperMacros) {
-      const m = {};
+      const m = {
+        // Built-in fallbacks for common macros not in KaTeX
+        '\\bigbowtie': '\\bowtie',
+        '\\smallmatrix': '\\begin{smallmatrix}',
+      };
       if (paperMacros) {
         for (const [name, def] of Object.entries(paperMacros)) {
           m['\\' + name] = def.tex;
