@@ -293,6 +293,32 @@ jobs:
           BRANCH_URL: https://github.com/${{ github.repository }}/tree/${{ env.HEAD_REF }}
         run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
 
+      # ── 1a-debug. Write build diagnostics to a deployed file ─────────────��
+      - name: Write build diagnostics
+        if: always()
+        run: |
+          {
+            echo "=== Build Diagnostics ==="
+            echo "Date: $(date -u)"
+            echo "Commit: ${{ env.HEAD_SHA }}"
+            echo ""
+            echo "=== main.tex title ==="
+            grep '\\title{' main.tex 2>/dev/null || echo "(no main.tex or no title)"
+            echo ""
+            echo "=== main.tex \\input lines ==="
+            grep '\\input{' main.tex 2>/dev/null | grep -v print-mode || echo "(none)"
+            echo ""
+            echo "=== chapters/ directory ==="
+            ls -la chapters/*.tex 2>/dev/null || echo "(no chapters)"
+            echo ""
+            echo "=== chapters/introduction.tex first 5 lines ==="
+            head -5 chapters/introduction.tex 2>/dev/null || echo "(not found)"
+            echo ""
+            echo "=== main-flat.tex size ==="
+            wc -c main-flat.tex 2>/dev/null || echo "(not yet created)"
+          } > build-diagnostics.txt
+          cat build-diagnostics.txt
+
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
         run: |
@@ -395,6 +421,9 @@ jobs:
           FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           mkdir -p _site
+
+          # Deploy build diagnostics for debugging
+          cp build-diagnostics.txt _site/build-diagnostics.txt 2>/dev/null || true
 
           # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
           # Each paper discovered from folio.ts gets its own subdirectory.
