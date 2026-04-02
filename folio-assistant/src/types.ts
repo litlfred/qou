@@ -58,7 +58,8 @@ export interface OutlineSection {
 }
 
 export interface OutlineChapter {
-  number: number;
+  number?: number;
+  tabLabel?: string;
   title: string;
   label?: string;
   dir: string;
@@ -100,7 +101,8 @@ export interface ResolvedSection {
 }
 
 export interface ResolvedChapter {
-  number: number;
+  number?: number;
+  tabLabel?: string;
   title: string;
   label?: string;
   sections: ResolvedSection[];
@@ -178,7 +180,8 @@ export interface SectionStub {
 }
 
 export interface ChapterDetail {
-  number: number;
+  number?: number;
+  tabLabel?: string;
   title: string;
   label?: string;
   dir: string;
