@@ -3,7 +3,7 @@ author:
 - litlfred
 bibliography:
 - references.bib
-date: 2026-04-01
+date: 2026-04-02
 title: QOU Visualizer
 ---
 
