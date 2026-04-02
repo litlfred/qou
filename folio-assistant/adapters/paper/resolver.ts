@@ -144,7 +144,7 @@ export class PaperResolver {
         sections.push({ title: section.title, label: section.label, blockCount: section.blocks.length });
       }
 
-      chapters.push({ number: ch.number, title: ch.title, label: ch.label, dir: chRef.dir, sections });
+      chapters.push({ number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, dir: chRef.dir, sections });
     }
 
     const result: ContentOutline = {
@@ -206,6 +206,7 @@ export class PaperResolver {
     const chTodos = this.feedbackStore.read(paperId, `__chapter:${chapterDir}`);
     const result: ChapterDetail = {
       number: ch.number,
+      tabLabel: ch.tabLabel,
       title: ch.title,
       label: ch.label,
       dir: chapterDir,
@@ -272,6 +273,7 @@ export class PaperResolver {
       const chTodos = this.feedbackStore.read(id, `__chapter:${chRef.dir}`);
       chapters.push({
         number: ch.number,
+        tabLabel: ch.tabLabel,
         title: ch.title,
         label: ch.label,
         sections,

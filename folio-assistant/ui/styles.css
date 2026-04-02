@@ -75,19 +75,20 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .sidebar .sidebar-header{white-space:nowrap;overflow:hidden}
 .sb-hidden .sidebar{width:0;min-width:0;padding:0;border-right:none}
 .sidebar-header{padding:.5rem 1rem;font-family:var(--f-head);font-size:.8rem;color:var(--fg-b);border-bottom:1px solid var(--brd);margin-bottom:.5rem}
-.sb-ch{padding:.3rem .5rem .3rem .5rem;cursor:pointer;font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);transition:all .15s;display:flex;align-items:center;gap:.3rem;white-space:nowrap;overflow:hidden}
+.sb-ch{padding:.3rem .5rem .3rem .5rem;cursor:pointer;font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);transition:color .15s,background .15s;display:flex;align-items:center;gap:.3rem;white-space:nowrap;overflow:hidden}
 .sb-tab{width:20px;min-width:20px;text-align:center;font-weight:600;font-size:.7rem;color:var(--ac);flex-shrink:0}
 .sb-ch-title{overflow:hidden;text-overflow:ellipsis}
 .sb-ch:hover{color:var(--fg-b);background:var(--bg-r)}
 .sb-ch.active{color:var(--ac);background:var(--bg-r)}
 .sb-ch .arrow{font-size:.6rem;transition:transform .2s}
 .sb-ch.open .arrow{transform:rotate(90deg)}
-.sb-secs{display:none;padding-left:1rem}
-.sb-ch.open + .sb-secs{display:block}
-.sb-sec{padding:.2rem 1rem;cursor:pointer;font-family:var(--f-body);font-size:.7rem;color:var(--fg-d);transition:all .15s}
+.sb-secs{display:grid;grid-template-rows:0fr;transition:grid-template-rows .15s ease;padding-left:1rem}
+.sb-secs > .sb-secs-inner{overflow:hidden}
+.sb-ch.open + .sb-secs{grid-template-rows:1fr}
+.sb-sec{padding:.2rem 1rem;cursor:pointer;font-family:var(--f-body);font-size:.7rem;color:var(--fg-d);transition:color .15s}
 .sb-sec:hover{color:var(--fg-b)}
 .sb-sec.active{color:var(--ac)}
-.sb-blk{padding:.15rem 1rem .15rem 1.8rem;cursor:pointer;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-blk{padding:.15rem 1rem .15rem 1.8rem;cursor:pointer;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);transition:color .15s,background .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sb-blk:hover{color:var(--fg-b)}
 .sb-blk.active{color:var(--ac);background:var(--bg-r)}
 .sb-bk{font-weight:600;font-size:.55rem;text-transform:uppercase;letter-spacing:.03em;margin-right:.2rem}

@@ -396,6 +396,7 @@
       const tabLbl = ch.tabLabel || (ch.number != null ? String(ch.number) : "");
       const chEl = h("div", "sb-ch", `<span class="sb-tab">${esc(tabLbl)}</span><span class="arrow">&#9654;</span> <span class="sb-ch-title">${esc(ch.title)}</span>`);
       const secList = h("div", "sb-secs");
+      const secInner = h("div", "sb-secs-inner");
       for (const sec of ch.sections || []) {
         const secEl = h("div", "sb-sec", esc(sec.title));
         if (sec.label) secEl.dataset.sbLabel = sec.label;
@@ -403,7 +404,7 @@
           const target = document.getElementById(sec.label || "");
           if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
         };
-        secList.appendChild(secEl);
+        secInner.appendChild(secEl);
 
         // block-level labels under each section
         for (const blk of sec.blocks || []) {
@@ -416,9 +417,10 @@
             const target = document.getElementById(blk.label);
             if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
           };
-          secList.appendChild(blkEl);
+          secInner.appendChild(blkEl);
         }
       }
+      secList.appendChild(secInner);
       chEl.onclick = () => { chEl.classList.toggle("open"); };
       sb.appendChild(chEl);
       sb.appendChild(secList);

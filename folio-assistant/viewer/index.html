@@ -119,8 +119,9 @@
     .sb-ch.active{color:var(--ac)}
     .sb-ch .sb-arrow{font-size:.5rem;transition:transform .15s;flex-shrink:0}
     .sb-ch.open .sb-arrow{transform:rotate(90deg)}
-    .sb-ch-body{display:none}
-    .sb-ch.open+.sb-ch-body{display:block}
+    .sb-ch-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .15s ease}
+    .sb-ch-body > .sb-ch-body-inner{overflow:hidden}
+    .sb-ch.open+.sb-ch-body{grid-template-rows:1fr}
     .sb-ch .katex,.sb-ch .katex *{color:inherit!important}
     .sb-sec{padding:.25rem .8rem .25rem 1.2rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
     .sb-sec:hover{color:var(--ac);border-left-color:var(--ac)}
@@ -1728,8 +1729,6 @@
       if (!sb) return;
       sb.querySelectorAll('.sb-ch.open').forEach(ch => {
         ch.classList.remove('open');
-        const body = ch.nextElementSibling;
-        if (body?.classList.contains('sb-ch-body')) body.style.display = 'none';
       });
     }
     document.getElementById('sb-toggle').addEventListener('click', () => {
@@ -4034,8 +4033,6 @@
         sb.querySelectorAll('.sb-ch.open').forEach(ch => {
           savedOpenChapters.add(ch.dataset.num);
           ch.classList.remove('open');
-          const body = ch.nextElementSibling;
-          if (body?.classList.contains('sb-ch-body')) body.style.display = 'none';
         });
       });
       sb.addEventListener('mouseenter', () => {
@@ -4044,8 +4041,6 @@
         sb.querySelectorAll('.sb-ch').forEach(ch => {
           if (savedOpenChapters.has(ch.dataset.num)) {
             ch.classList.add('open');
-            const body = ch.nextElementSibling;
-            if (body?.classList.contains('sb-ch-body')) body.style.display = 'block';
           }
         });
       });
@@ -4254,8 +4249,6 @@
           el.classList.toggle('active', isActive);
           if (isActive && !el.classList.contains('open')) {
             el.classList.add('open');
-            const body = el.nextElementSibling;
-            if (body?.classList.contains('sb-ch-body')) body.style.display = 'block';
           }
         });
       }
@@ -4290,18 +4283,18 @@
         chEl.dataset.num = ch.tabLabel || (ch.number != null ? String(ch.number) : '');
         chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number != null ? ch.number + '. ' : ''}${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
-        if (ch._dir) sidebarChapterBodies.set(ch._dir, chBody);
+        const chBodyInner = mk('div','sb-ch-body-inner');
+        chBody.appendChild(chBodyInner);
+        if (ch._dir) sidebarChapterBodies.set(ch._dir, chBodyInner);
 
         // Restore open/closed state from localStorage
         if (restoredChapters.has(String(ch.number))) {
           chEl.classList.add('open');
-          chBody.style.display = 'block';
         }
 
         // Click chapter title → show chapter content
         chEl.onclick = (e) => {
           chEl.classList.toggle('open');
-          chBody.style.display = chEl.classList.contains('open') ? 'block' : 'none';
           saveSbOpenChapters();
           showChapter(ch.number);
         };
@@ -4344,7 +4337,7 @@
             });
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
-          chBody.appendChild(sEl);
+          chBodyInner.appendChild(sEl);
 
           if (!isLazy) {
             // Non-lazy: populate block list immediately
@@ -4411,7 +4404,7 @@
           }
           // Lazy: block list populated by loadChapterDetail callback
 
-          chBody.appendChild(blkList);
+          chBodyInner.appendChild(blkList);
         }
         sb.appendChild(chBody);
       }
@@ -4422,6 +4415,8 @@
         bibEl.dataset.num = 'B';
         bibEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>Bibliography</span>`;
         const bibBody = mk('div','sb-ch-body');
+        const bibBodyInner = mk('div','sb-ch-body-inner');
+        bibBody.appendChild(bibBodyInner);
 
         // Build QA summary
         const totalRefs = p.references.length;
@@ -4442,7 +4437,7 @@
           + (noYear ? `<div class="sb-bib-stat warn">${noYear} missing year</div>` : '')
           + (uncited ? `<div class="sb-bib-stat info">${uncited} uncited</div>` : '')
           + `<div class="sb-bib-stat">${citedKeys.size} cited in paper</div>`;
-        bibBody.appendChild(qaDiv);
+        bibBodyInner.appendChild(qaDiv);
 
         // List all references as clickable entries
         const refList = mk('div','sb-bib-list');
@@ -4463,11 +4458,10 @@
           };
           refList.appendChild(rEl);
         }
-        bibBody.appendChild(refList);
+        bibBodyInner.appendChild(refList);
 
         bibEl.onclick = () => {
           bibEl.classList.toggle('open');
-          bibBody.style.display = bibEl.classList.contains('open') ? 'block' : 'none';
           showChapter('bib');
         };
         sb.appendChild(bibEl);
@@ -4630,9 +4624,10 @@
       ciEl.dataset.num = 'I';
       ciEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>I. Content Index</span>`;
       const ciBody = mk('div','sb-ch-body');
+      const ciBodyInner = mk('div','sb-ch-body-inner');
+      ciBody.appendChild(ciBodyInner);
       ciEl.onclick = (e) => {
         ciEl.classList.toggle('open');
-        ciBody.style.display = ciEl.classList.contains('open') ? 'block' : 'none';
         saveSbOpenChapters();
         showChapter(ciNum);
       };
