@@ -15,7 +15,6 @@ export default conjecture({
     "absorption",
   ],
   uses: [
-    "conj:skein-shell-correction",
     "prop:torus-hopf-stability",
   ],
 });
