@@ -105,8 +105,7 @@ $$
 | $H^{0,1}$ | $1$ | $2$ | $4_1$ (figure-eight) | Higgs boson (mass mechanism) |
 | $H^{0,1}$ | $1$ | $2$ | $4_1^{-1} = 4_1$ (amphichiral) | Higgs $=$ own antiparticle |
 
-**Dimension count**: $\dim H^0 + \dim H^1 + \dim H^2 = 1 + 8 + 1
-= 10$.  Euler characteristic: $\chi = 1 - 8 + 1 = -6$.  The $8$
+**Dimension count**: $\dim H^0 + \dim H^1 + \dim H^2 = 1 + 8 + 1 = 10$.  Euler characteristic: $\chi = 1 - 8 + 1 = -6$.  The $8$
 generators of $H^1$ comprise $4$ holomorphic ($H^{1,0}$, degree-$1$
 torus knots) and $4$ antiholomorphic ($H^{0,1}$, degree-$2$ knots
 $+$ the amphichiral Higgs).
@@ -160,8 +159,7 @@ space of irrep characters.
 **Completeness**: any pointed knot observable on $\Sigma_4$ is
 a function of the irrep characters, which are spanned by the
 $6$ torus knots.  No knot on $\Sigma_4$ can have an invariant
-independent of $\{T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4},
-T_{3,5}\}$.
+independent of $\{T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}\}$.
 
 ## Consequences
 

@@ -22,8 +22,7 @@ The nucleus $\mathcal{N}(Z, N)$ is **stable** if $(Z, N)$ is a
 critical point of the Skein binding Lagrangian
 $\mathcal{L}_{\mathrm{bind}}$
 ([Skein binding Lagrangian](#def:skein-binding-lagrangian))
-under beta variation (exchange of $\mathfrak{p} \leftrightarrow
-\mathfrak{n}$ at fixed $A = Z + N$):
+under beta variation (exchange of $\mathfrak{p} \leftrightarrow \mathfrak{n}$ at fixed $A = Z + N$):
 
 $$
   \frac{\partial \mathcal{L}_{\mathrm{bind}}}{\partial Z}

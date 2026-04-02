@@ -14,13 +14,11 @@ $$
   \,\bigr\rVert.
 $$
 
-The integrand $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta
-\circ \varrho$ is an element of $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
+The integrand $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$ is an element of $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
 The descent involution $\hat{\tau}_n$
 ([descent involution](#def:descent-involution)) decomposes this algebra
 into the direct sum
-$\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus
-\mathcal{A}_{n+1}^{\mathrm{trans}}$
+$\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
 ([descent eigenspaces](#prop:descent-eigenspaces)):
 
 $$
@@ -73,13 +71,11 @@ $$
   \mathrm{tr}_n(\alpha_0),
 $$
 
-where $\alpha_0 = (\int_A \otimes \mathrm{id}) \circ \Delta
-\circ \varrho_0$ is the mass integrand of the base-level cycle.  Hence
+where $\alpha_0 = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho_0$ is the mass integrand of the base-level cycle.  Hence
 $\lVert \mathrm{tr}(\hat{\tau}_n(\alpha)) \rVert = m(\varrho_0)$.
 
 *Step 3: Transient terms localise to blow-up centres.*
-The transient component $\alpha - \hat{\tau}_n(\alpha) \in
-\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\hat{\tau}_n$.  By the structure
+The transient component $\alpha - \hat{\tau}_n(\alpha) \in \mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\hat{\tau}_n$.  By the structure
 of the brane boundary ([brane boundary](#def:brane-boundary)), the
 support of a transient endomorphism is contained in the union of the
 kernels $\ker(\mathfrak{d}_{n+1}|_{p_i})$ at the blow-up centres

@@ -13,8 +13,7 @@ through the two extreme cases.
 ## Example 1: Tritium ${}^{3}\mathrm{H} \to {}^{3}\mathrm{He}$
 
 **Parent link.**
-$\mathcal{N}(1, 2) = \mathfrak{p} \bowtie \mathfrak{n} \bowtie
-\mathfrak{n}$: one proton
+$\mathcal{N}(1, 2) = \mathfrak{p} \bowtie \mathfrak{n} \bowtie \mathfrak{n}$: one proton
 ([categorical proton](#def:categorical-proton)) Hopf-linked to two
 neutrons ([categorical neutron](#def:categorical-neutron)).
 
@@ -34,8 +33,7 @@ Crossing structure:
 - $\mathfrak{p}$--$\mathfrak{n}$: 2 mixed crossings (neutral)
 
 **Daughter link.**
-$\mathcal{N}(2, 1) = \mathfrak{p} \bowtie \mathfrak{p} \bowtie
-\mathfrak{n}$: the mirror configuration.
+$\mathcal{N}(2, 1) = \mathfrak{p} \bowtie \mathfrak{p} \bowtie \mathfrak{n}$: the mirror configuration.
 
 $$
   \ell_{\mathrm{net}}(2, 1) = \textstyle\binom{2}{2} - \binom{1}{2} = +1
@@ -71,8 +69,7 @@ Borromean link — the ratio of antisymmetric to symmetric Markov
 traces — is an open computation.)
 
 **Result.**
-The categorical computation predicts $t_{1/2} \approx
-12.4$ yr vs observed 12.3 yr (ratio 1.01).  The shell correction
+The categorical computation predicts $t_{1/2} \approx 12.4$ yr vs observed 12.3 yr (ratio 1.01).  The shell correction
 $\delta E_{\mathrm{shell}} = 0$ for both parent and daughter
 (neither has a closed sub-link: $A = 3$ is too small for
 $\alpha$-clustering).  The excellent agreement confirms that for
@@ -140,8 +137,7 @@ $$
 
 The denominator $|J_{\mathcal{N}(0,2)}(q)|$ is the Skein weight of
 the broken pair — it penalises the transition for disrupting the
-closed sub-link.  At $q = q_0$, $|J_{\mathcal{N}(0,2)}(q)|
-\approx q + q^{-1} = 2.01$, and the full suppression
+closed sub-link.  At $q = q_0$, $|J_{\mathcal{N}(0,2)}(q)| \approx q + q^{-1} = 2.01$, and the full suppression
 (including the spin-parity mismatch $0^+ \to 1^+$) gives
 $|\mathcal{M}|^2 \sim 10^{-6}$ — six orders of magnitude below the
 tritium mirror value.
@@ -163,8 +159,7 @@ $$
   \;\approx\; -17\%
 $$
 
-giving $\delta E_{\mathrm{shell}} \approx 0.17 \times Q_0 / 5
-\approx 0.005$ MeV for this transition — consistent with the
+giving $\delta E_{\mathrm{shell}} \approx 0.17 \times Q_0 / 5 \approx 0.005$ MeV for this transition — consistent with the
 expected shell correction scale at the $p$-shell closure.
 
 ---

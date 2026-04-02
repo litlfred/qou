@@ -4,6 +4,5 @@ object $J^1(A) = A \otimes \Omega^1(A)$ inherits a braiding from the
 tensor product of braidings on $A$ and $\Omega^1(A)$.  Consequently the
 braid-group representations $\rho_n$ at each level of the brane tower are
 compatible with the transition maps, and the direct-limit algebra
-$\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 \mathcal{S}_n,\,
-\mathrm{SU}_{q_n}(2))$ carries a well-defined $B_n$-action for
+$\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2))$ carries a well-defined $B_n$-action for
 every $n$.

@@ -85,8 +85,7 @@ The cascade is:
 **The $\epsilon^{abc}$ from linking orientation.**
 
 In the CFL phase, the pairing pattern locks color and flavor:
-$\langle \mathfrak{q}_i^a\, \mathfrak{q}_j^b \rangle \propto
-\epsilon^{abc}\,\epsilon_{ijk}$ \cite{alford1999}.  In QOU,
+$\langle \mathfrak{q}_i^a\, \mathfrak{q}_j^b \rangle \propto \epsilon^{abc}\,\epsilon_{ijk}$ \cite{alford1999}.  In QOU,
 the antisymmetric tensor arises from the **Hopf linking number**:
 
 - The Hopf link $\mathcal{L}_H$ has linking number
@@ -174,8 +173,7 @@ The conjecture predicts:
    pressure).  This should produce a kink in the $M(R)$
    relation at $\rho_c$.
 
-2. **Cooling rate**: the CFL gap $\Delta_{\mathrm{CFL}}
-   \approx 2.5$ MeV suppresses neutrino emission below
+2. **Cooling rate**: the CFL gap $\Delta_{\mathrm{CFL}} \approx 2.5$ MeV suppresses neutrino emission below
    $T \sim \Delta_{\mathrm{CFL}} / k_B \sim 3 \times 10^{10}$ K.
    Stars with CFL cores cool more slowly at intermediate ages.
 

@@ -1,7 +1,6 @@
 **Tritium beta decay written as a knot/link equation.**
 
-The decay ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- +
-\bar{\nu}_e$ (half-life $\approx 12.3$ yr) is the simplest
+The decay ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \bar{\nu}_e$ (half-life $\approx 12.3$ yr) is the simplest
 non-trivial beta decay: $A = 3$, one neutron converts to a
 proton.
 

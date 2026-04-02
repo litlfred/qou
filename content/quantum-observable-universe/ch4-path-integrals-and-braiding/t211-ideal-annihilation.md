@@ -108,8 +108,7 @@ $$
 - $\mathbb{Z}_{11}$: rotational symmetry (winding number $11$,
   not strand count — $T_{2,11}$ is a 2-strand braid
   $\sigma_1^{11} \in B_2$).
-- $\mathbb{Z}_2$: strand swap $S_2$ from $B_2 / \langle
-  \sigma_1^2 = 1\rangle$.
+- $\mathbb{Z}_2$: strand swap $S_2$ from $B_2 / \langle \sigma_1^2 = 1\rangle$.
 
 **$\mathbb{Z}_{11}$ cannot embed in $S_5$.**  The maximum
 element order in $S_5$ is $6$ (cycle type $(2,3)$), and

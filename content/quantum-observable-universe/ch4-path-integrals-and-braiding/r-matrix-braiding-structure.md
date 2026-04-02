@@ -1,6 +1,5 @@
 The universal $R$-matrix
-$\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \;\hat{\otimes}\;
-\mathcal{U}_q(\mathfrak{su}(2))$
+$\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \;\hat{\otimes}\; \mathcal{U}_q(\mathfrak{su}(2))$
 ([quantum SU(2)](#def:quantum-su2)) satisfies the Yang--Baxter equation
 
 $$

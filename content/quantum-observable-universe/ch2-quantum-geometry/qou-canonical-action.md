@@ -53,8 +53,7 @@ so the categorical action expands to three terms:
 ```
 
 with notation as in [categorical action notation](#rem:categorical-action-notation).
-Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-})
-\circ \mathrm{coev}_A$ is the categorical trace, which plays the role of
+Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$ is the categorical trace, which plays the role of
 spacetime integration; $R_{\int}$ is the Frobenius--Ricci endomorphism;
 and $F_\nabla = \nabla^2$ is the curvature.
 
@@ -75,8 +74,7 @@ $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
 ([QOU axiom 2](#def:quantum-observable-universe)) ensures that the
 trace $\mathrm{tr} \colon \mathrm{End}(A) \to R$ is faithful --- no
 endomorphism is "invisible" to integration.  Relaxing this condition
-(allowing hidden symmetries, $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))
-\neq 0$) introduces a nontrivial kernel in the trace, and the
+(allowing hidden symmetries, $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \neq 0$) introduces a nontrivial kernel in the trace, and the
 obstruction to recovering a well-defined action is classified by the
 same cohomology class $\kappa \in H^2(\mathcal{S}, \mathcal{B})$
 that obstructs lifting in the Yekutieli sense

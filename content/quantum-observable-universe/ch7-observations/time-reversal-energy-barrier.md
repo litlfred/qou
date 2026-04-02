@@ -60,8 +60,7 @@ exceptional divisor, at cost $2m_p \approx 1876.5$ MeV, and similarly
 $2m_n \approx 1879.1$ MeV for antineutron creation.
 
 **Beta decay is not chirality reversal.**
-A neutron can convert to a proton via $\mathfrak{n} \to \mathfrak{p}
-+ e^- + \bar{\nu}$, but this is *not* time reversal.  Beta decay
+A neutron can convert to a proton via $\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}$, but this is *not* time reversal.  Beta decay
 changes the crossing orientation partition of the Borromean link
 (from $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ to $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]$) — an R-I embedding move that
 alters binding energy while preserving both the Borromean link type

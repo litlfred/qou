@@ -12,8 +12,7 @@ conditions hold:
    isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
 2. *(observability)* there are no hidden global symmetries:
-   $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1},\,
-   \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
+   $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
    ($A$ acted on by conjugation). Physically, this means every
    internal degree of freedom is accessible to measurement — no
    gauge transformation acts trivially on all observables. The

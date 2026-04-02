@@ -223,8 +223,7 @@ multiplications (3 at $\sigma_0$, 2 at $\sigma_1$, 1 at $\sigma_2$).
 
 ## Example 5: Tritium beta decay (${}^3\mathrm{H} \to {}^3\mathrm{He}$)
 
-${}^3\mathrm{H}(\mathfrak{p}, \mathfrak{n}, \mathfrak{n})
-\to {}^3\mathrm{He}(\mathfrak{p}, \mathfrak{p}, \mathfrak{n})$.
+${}^3\mathrm{H}(\mathfrak{p}, \mathfrak{n}, \mathfrak{n}) \to {}^3\mathrm{He}(\mathfrak{p}, \mathfrak{p}, \mathfrak{n})$.
 
 Converting nucleon: position 1 ($\mathfrak{n} \to \mathfrak{p}$).
 

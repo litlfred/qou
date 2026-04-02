@@ -57,9 +57,7 @@ $S \subset \{1, \ldots, p+n\}$ of nucleons such that:
    disjoint from the remaining nucleons.
 
 2. The Skein polynomial of $\mathcal{N}|_S$ divides
-   $J_{\mathcal{N}}$: $J_{\mathcal{N}} =
-   J_{\mathcal{N}|_S} \cdot J_{\mathcal{N}|_{S^c}} \cdot
-   (\text{linking factor})$.
+   $J_{\mathcal{N}}$: $J_{\mathcal{N}} = J_{\mathcal{N}|_S} \cdot J_{\mathcal{N}|_{S^c}} \cdot (\text{linking factor})$.
 
 When this occurs, the link "factorizes" and the nucleons in
 $S$ form an internally bound cluster that contributes extra
@@ -131,8 +129,7 @@ sense to be made precise.
    $\mathcal{N}(2,2)$.
 
 3. **Corrected stability formula**: show that the total
-   binding energy $\mathcal{L}_{\mathrm{bind}} +
-   \delta E_{\mathrm{shell}}$ reproduces the observed stable
+   binding energy $\mathcal{L}_{\mathrm{bind}} + \delta E_{\mathrm{shell}}$ reproduces the observed stable
    isotopes to $|\Delta n| \leq 1$ for all $p \leq 103$.
 
 4. **Genus lift**: show that including

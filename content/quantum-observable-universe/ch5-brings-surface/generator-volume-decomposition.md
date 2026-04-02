@@ -18,8 +18,7 @@ $$
   a_i \, \sigma_i + b_i
 $$
 
-where each crossing factor is $C_{ij}(\sigma_i) = c_j \sigma_i
-+ d_j$ with coefficients depending on the pair type:
+where each crossing factor is $C_{ij}(\sigma_i) = c_j \sigma_i + d_j$ with coefficients depending on the pair type:
 
 $$
   (c_j, d_j) \;=\;

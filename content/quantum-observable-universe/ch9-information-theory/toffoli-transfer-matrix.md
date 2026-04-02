@@ -111,8 +111,7 @@ crossing coefficients satisfy
 $c \cdot z + d = z$ identically — the Markov parameter
 $z$ is a fixed point of every single-crossing transfer.)
 
-Therefore $\Delta_1 = \hat{V}_1^{(\mathrm{par})} -
-\hat{V}_1^{(\mathrm{dau})} = z - z = 0$ for every
+Therefore $\Delta_1 = \hat{V}_1^{(\mathrm{par})} - \hat{V}_1^{(\mathrm{dau})} = z - z = 0$ for every
 transition.
 
 **Target-flip amplitude.**  Since $\Delta_1 = 0$, the
@@ -160,8 +159,7 @@ types coincide, $\Delta_0 = 0$.  The factor $(q - 1)$
 in $\Phi$ confirms this.
 
 **Golden ratio zero of $P_{7,7}$.**  The numerator
-$q + q^{1/2} - 1$ vanishes when $q^{1/2} = (\sqrt{5} - 1)/2
-= 1/\varphi$, i.e., $q = 1/\varphi^2 = (3 - \sqrt{5})/2$.
+$q + q^{1/2} - 1$ vanishes when $q^{1/2} = (\sqrt{5} - 1)/2 = 1/\varphi$, i.e., $q = 1/\varphi^2 = (3 - \sqrt{5})/2$.
 $\square$
 
 **Explicit values at $q = q_0$

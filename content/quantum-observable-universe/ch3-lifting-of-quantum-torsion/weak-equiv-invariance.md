@@ -26,8 +26,7 @@ $$
   \tau\!\bigl(\iota_m(a|_m)\bigr),
 $$
 
-where $\iota_n \colon \Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2))
-\hookrightarrow \mathcal{A}_\infty$ is the canonical embedding and
+where $\iota_n \colon \Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2)) \hookrightarrow \mathcal{A}_\infty$ is the canonical embedding and
 $a|_n$ denotes the restriction of $a$ to level $n$.  In particular,
 physical states (the GNS vectors of $\tau$) are invariant under
 fluctuations of the substrate parameter $q(p)$ across brane levels.

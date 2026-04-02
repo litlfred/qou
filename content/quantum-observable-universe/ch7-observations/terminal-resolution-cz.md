@@ -3,8 +3,7 @@ In the archimedean realisation
 the substrate parameter is a smooth function
 $q \colon M \to \mathbb{C}^{\times}$.  At a point $p \in M$ where the
 substrate is locally constant, the fibre algebra is
-$\mathcal{O}_{q(p)}(\mathrm{SU}(2)) \otimes_{\mathbb{Z}[q,q^{-1}]}
-\mathbb{C}$, and the quantum Planck constant
+$\mathcal{O}_{q(p)}(\mathrm{SU}(2)) \otimes_{\mathbb{Z}[q,q^{-1}]} \mathbb{C}$, and the quantum Planck constant
 ([quantum Planck constant](#def:quantum-planck-constant)) evaluates to
 
 $$

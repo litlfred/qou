@@ -12,6 +12,5 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
 
 3. the comultiplication on $\mathrm{Dist}(G)$ satisfies the
    *strong multiplicativity* condition: the Frobenius relation
-   $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id})
-   = \Delta\circ m$ is preserved under the deformation.
+   $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id}) = \Delta\circ m$ is preserved under the deformation.
 

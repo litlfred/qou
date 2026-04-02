@@ -7,8 +7,7 @@ $P \to M$, the three constituents of the
 ([categorical action](#def:categorical-action)) acquire their
 classical meanings:
 
-1. The *categorical trace* $\mathrm{tr} = \mathrm{ev}_A \circ
-   (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$
+1. The *categorical trace* $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$
    becomes integration against the volume form:
    $\mathrm{tr}(\cdot) \to \int_M (\cdot)\,\mathrm{dvol}$.
 

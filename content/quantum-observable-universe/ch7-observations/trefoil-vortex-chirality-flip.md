@@ -94,8 +94,7 @@ classical fluids:
    the chirality operator $\mathcal{X}_\varphi$ rotates the phase
    of $q$ continuously.  The
    [chirality rotation conjecture](#conj:complex-chirality-rotation)
-   proposes that the discrete flip $T_{2,3} \leftrightarrow
-   \sigma(T_{2,3})$ is the $\mathbb{Z}_2$ shadow of a continuous
+   proposes that the discrete flip $T_{2,3} \leftrightarrow \sigma(T_{2,3})$ is the $\mathbb{Z}_2$ shadow of a continuous
    $\mathrm{U}(1)$ rotation in the $\theta$-direction.  After
    projection to the observable sector ($\theta = 0$), only the
    endpoints of this rotation survive as particle and antiparticle.

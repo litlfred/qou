@@ -39,8 +39,7 @@ $$
 The Skein relation itself is the mass-functional analogue of the Kauffman
 bracket recursion. At each crossing in the color-exchange diagram of a
 hadron, the three resolutions $L_+$, $L_-$, $L_0$ satisfy
-$q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) =
-(q^{1/2}-q^{-1/2})\,\mathcal{M}(L_0)$. This relation is inherited from the
+$q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2}-q^{-1/2})\,\mathcal{M}(L_0)$. This relation is inherited from the
 $q$-deformed $\mathrm{SU}(2)$ Chern--Simons functional on the
 $1$-jet bundle prolongation of the CR manifold
 (see [Chapter](#chap:path-integrals-braiding)).

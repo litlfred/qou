@@ -34,13 +34,10 @@ From $q$ and $\mu_0$ alone:
    ([building blocks](#rem:building-block-knots)).
    This is NOT defined by classical energy conservation
    ($E_{\mathrm{before}} = E_{\mathrm{after}}$ fails at $q \neq 1$).
-3. **Matrix element** $|\mathcal{M}_q|^2 = s^2 \cdot
-   \prod_i |\hat{V}_i^{\mathrm{par}} / \hat{V}_i^{\mathrm{dau}}|^2$
+3. **Matrix element** $|\mathcal{M}_q|^2 = s^2 \cdot \prod_i |\hat{V}_i^{\mathrm{par}} / \hat{V}_i^{\mathrm{dau}}|^2$
    from the factorization theorem.
-4. **Sensitivity** $\partial \ln \Gamma / \partial \ln q
-   = (q^2-1)/(q^2+1) + 5(q^2+1)/(q^2-1) \approx 48$ — exact.
-5. **Self-deformation** $\Delta q_{\mathrm{eff}} =
-   (A-1)/A^2 \cdot \hbar_q^2$ — the $q$-anomaly $\delta_q$;
+4. **Sensitivity** $\partial \ln \Gamma / \partial \ln q = (q^2-1)/(q^2+1) + 5(q^2+1)/(q^2-1) \approx 48$ — exact.
+5. **Self-deformation** $\Delta q_{\mathrm{eff}} = (A-1)/A^2 \cdot \hbar_q^2$ — the $q$-anomaly $\delta_q$;
    the daughter is evaluated at the shifted $q + \Delta q_{\mathrm{eff}}$.
 6. **Deuteron binding** $B_d \approx 1.29$ MeV from
    Vol$(\mathcal{B}_3 \bowtie_{\mathrm{Hopf}} \mathcal{B}_3) / \hbar_q^2$.
@@ -61,8 +58,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 
 2. **$\mathcal{Q}_q$-values for $A > 4$.** RESOLVED.
    The representation-theoretic formula
-   $\mathcal{Q}_q = \mathcal{Q}_{\mathrm{bare}} \times
-   F_{\mathrm{deg}} \times F_{\mathrm{Pauli}}$
+   $\mathcal{Q}_q = \mathcal{Q}_{\mathrm{bare}} \times F_{\mathrm{deg}} \times F_{\mathrm{Pauli}}$
    ([torus knot shell binding](#cor:spectral-decomposition-qvalue))
    gives all six test nuclei within $\pm 9\%$ using Level 0
    (nucleon) transfer matrices — no Level 1 (quark) braid needed.
@@ -74,9 +70,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 3. **$g_A$ (axial coupling) from the Borromean color average.** RESOLVED.
    The $3$-fold color average of the half-Borromean braid
    $h_{ij} = \sigma_i^{-1}\sigma_j\sigma_i\sigma_j^{-1}$ gives:
-   $g_A(q) = (5/3) \times |\mathrm{tr}_{\mathrm{std}}(\tfrac{1}{3}
-   \sum h_{ij})| \,/\, |\mathrm{tr}_{\mathrm{sym}}(\tfrac{1}{3}
-   \sum h_{ij})| \approx 1.277$ ($+0.1\%$ from PDG $1.2754$).
+   $g_A(q) = (5/3) \times |\mathrm{tr}_{\mathrm{std}}(\tfrac{1}{3} \sum h_{ij})| \,/\, |\mathrm{tr}_{\mathrm{sym}}(\tfrac{1}{3} \sum h_{ij})| \approx 1.277$ ($+0.1\%$ from PDG $1.2754$).
    The sum is over $3$ cyclic orderings of quark colors $(r,g,b)$.
    Script: `folio-assistant/computations/borromean-axial-coupling.py`.
 
@@ -118,8 +112,7 @@ $$
 $$
 
 With the self-deformation correction (daughter at
-$q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2
-\approx 0.00218$):
+$q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2 \approx 0.00218$):
 
 $$
   \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
@@ -184,8 +177,7 @@ $$
   \prod_{\tau(r,s)} F(\tau(r,s),\, N)
 $$
 
-where $\mathcal{Q}_{\mathrm{bare}} = |\log_q(P_{\mathrm{dau}}/
-P_{\mathrm{par}})| \times \hbar_q \cdot m_e/3$
+where $\mathcal{Q}_{\mathrm{bare}} = |\log_q(P_{\mathrm{dau}}/ P_{\mathrm{par}})| \times \hbar_q \cdot m_e/3$
 uses the $q$-natural logarithm ($\log_q = \ln/\ln q$) with
 the quantum Planck constant $\hbar_q = (q-1)/q$, and
 $F(\tau(r,s), N)$ is the knot operator for each torus knot.
@@ -207,8 +199,7 @@ term — the converting neutron's shell knot $T_{k^*}$.
 All six nuclei within $\pm 9\%$.  Mean absolute error: $5.0\%$;
 RMS: $5.6\%$.
 
-**Degree-$1$ shells** ($N \leq 28$; active knot $\in \{T_{2,3},
-T_{2,5}, T_{2,7}, T_{3,5}\}$): the knot operator gives $F = 1$
+**Degree-$1$ shells** ($N \leq 28$; active knot $\in \{T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}\}$): the knot operator gives $F = 1$
 because degree-$1$ binding is already captured by the crossing
 coefficients in $\mathcal{Q}_{\mathrm{bare}}$.
 
@@ -232,11 +223,9 @@ have zero topological action on $\Sigma_4$.  Inner shells
 (unchanged by the decay) also contribute $F = 1$ because
 they cancel in the $P_{\mathrm{dau}}/P_{\mathrm{par}}$ ratio.
 
-**Error structure.**  Let $\varepsilon = \delta q / q \approx
-1.2 \times 10^{-8}$ (CODATA).  The parametric error is
+**Error structure.**  Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$ (CODATA).  The parametric error is
 $\delta \mathcal{Q}_q / \mathcal{Q}_q = O(\varepsilon)$,
-dominated by $\partial \ln \mathcal{Q}_{\mathrm{bare}} /
-\partial \ln q \approx 10$.  The observed $5$–$9\%$ deviations
+dominated by $\partial \ln \mathcal{Q}_{\mathrm{bare}} / \partial \ln q \approx 10$.  The observed $5$–$9\%$ deviations
 are $O(1)$ relative to $\varepsilon$ — they are structural
 (nucleon ordering, degree-$2$ averaging, degree tower truncation),
 not parametric.
@@ -256,8 +245,7 @@ $$
 
 The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ reduces to $6$ terms
 in $H_3(q)$ via $38$ Hecke steps and $18$ Yang–Baxter steps.
-The vertex ratio $|\mathcal{M}_{T_{3,5}}|^2 / |\mathcal{M}_{\mathrm{single}}|^2
-\approx 0.890$ ($11\%$ reduction in transition amplitude).
+The vertex ratio $|\mathcal{M}_{T_{3,5}}|^2 / |\mathcal{M}_{\mathrm{single}}|^2 \approx 0.890$ ($11\%$ reduction in transition amplitude).
 Witness: `folio-assistant/computations/t35-weak-vertex.witness.json`.
 
 ## Error budget
@@ -290,8 +278,7 @@ $$
 | $\alpha_{\mathrm{EM}}(q)$ | $1/136.82$ ($q$-derived) | $0.16\%$ | $\sim 0.1\%$ (via $F_q$) |
 | $q$ (CODATA) | $1.10998 \pm 1.3 \times 10^{-8}$ | $1.2 \times 10^{-6}\%$ | $48 \times 10^{-6}\% \approx 0\%$ |
 
-**Combined** (quadrature): $\sqrt{0.27^2 + 0.20^2 + 0.1^2}
-\approx 0.36\%$ for tritium.  The observed $0.3\%$ deviation
+**Combined** (quadrature): $\sqrt{0.27^2 + 0.20^2 + 0.1^2} \approx 0.36\%$ for tritium.  The observed $0.3\%$ deviation
 is **within** this error budget.
 
 For heavier nuclei, $\delta Q / Q$ is smaller (better-measured

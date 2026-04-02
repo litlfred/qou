@@ -3,8 +3,7 @@ geometry, we briefly recall how the classical operators appear in the
 language of differential forms on a smooth Riemannian manifold
 $(M, g)$.
 
-**Forms by degree.** A $0$-form is a scalar field $f \colon M \to
-\mathbb{R}$ (temperature, electrostatic potential). A $1$-form
+**Forms by degree.** A $0$-form is a scalar field $f \colon M \to \mathbb{R}$ (temperature, electrostatic potential). A $1$-form
 $\alpha$ assigns to each tangent vector a number — it is the
 geometric version of a vector field (velocity, force, the gradient
 of a potential). A $2$-form $\beta$ measures oriented flux through

@@ -107,8 +107,7 @@ circuit ([Planck time](#def:planck-time)).
 
 **The golden crossover.**
 The formula $d_{H,q} = (2q-1)^2/q^3$ equals $1$ at exactly two
-points: $q = 1$ and $q = (3 + \sqrt{5})/2 = \varphi^2
-\approx 2.618$, where $\varphi = (1+\sqrt{5})/2$ is the golden
+points: $q = 1$ and $q = (3 + \sqrt{5})/2 = \varphi^2 \approx 2.618$, where $\varphi = (1+\sqrt{5})/2$ is the golden
 ratio.  For $1 < q < \varphi^2$, the Julia set is strictly
 more fractal than a circle ($d_{H,q} > 1$).  Beyond $\varphi^2$,
 the Julia set is less complex than a circle ($d_{H,q} < 1$, tending

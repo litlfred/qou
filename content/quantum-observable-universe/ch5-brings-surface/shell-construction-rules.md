@@ -13,9 +13,7 @@ the per-generator transfer matrix chain IS the exact Gröbner
 normal form.
 
 **(P2)** The transfer matrix at each generator $\sigma_i$ is
-$T(c, d) = \bigl(\begin{smallmatrix}
-c(q-q^{-1})+d & c \\ c & d
-\end{smallmatrix}\bigr)$
+$T(c, d) = \bigl(\begin{smallmatrix} c(q-q^{-1})+d & c \\ c & d \end{smallmatrix}\bigr)$
 with crossing coefficient $(c, d)$ determined by the nucleon
 pair type (pp, nn, or mix).
 
@@ -115,8 +113,7 @@ no numerical reduction needed.
 
 Compute the Level 0 transfer matrix Skein polynomials
 $P_{\mathrm{par}}(q)$ and $P_{\mathrm{dau}}(q)$ using the
-naive ordering $[\underbrace{p \cdots p}_{Z}\,
-\underbrace{n \cdots n}_{N}]$ with bare crossing coefficients:
+naive ordering $[\underbrace{p \cdots p}_{Z}\, \underbrace{n \cdots n}_{N}]$ with bare crossing coefficients:
 
 $$
   \text{pp}: (c, d) = (1, 0), \qquad

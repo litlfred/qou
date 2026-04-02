@@ -127,8 +127,7 @@ This follows from two facts:
    this $S^2$ acts on the normal-bundle sections.
 
 2. A Fourier mode $\ell$ on $S^1$, embedded in $\mathbb{R}^3$
-   via the trefoil map $\gamma: S^1 \to \Sigma_4 \hookrightarrow
-   \mathbb{R}^3$, transforms under $\mathrm{SO}(3)$ rotations
+   via the trefoil map $\gamma: S^1 \to \Sigma_4 \hookrightarrow \mathbb{R}^3$, transforms under $\mathrm{SO}(3)$ rotations
    of the ambient space as $V_\ell$.  This is because the
    $\ell$-th Fourier mode of a curve in $\mathbb{R}^3$, when
    restricted to the unit sphere, is a degree-$\ell$ spherical

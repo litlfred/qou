@@ -1,6 +1,5 @@
 
-The Frobenius isomorphism $A \cong A^{\vee}$ sends $a \mapsto \int_A \circ
-\mu(a \otimes -)$, which is non-degenerate by the Frobenius--Hopf axiom.
+The Frobenius isomorphism $A \cong A^{\vee}$ sends $a \mapsto \int_A \circ \mu(a \otimes -)$, which is non-degenerate by the Frobenius--Hopf axiom.
 
 **(1) Embedding via rank-$1$ projectors.**
 Let $\rho \colon V \to V$ be a rank-$1$ projector in $\mathbf{C}$:

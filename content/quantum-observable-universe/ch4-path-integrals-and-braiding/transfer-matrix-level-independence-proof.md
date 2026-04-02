@@ -30,8 +30,7 @@ $\hat{\beta}_1, \hat{\beta}_2$ are ambient-isotopic.  By the
 link invariance of the Markov trace
 ([Jones--Markov trace](#thm:jones-markov-trace), property 3),
 $\mathrm{tr}_M(\rho(\beta_1)) = \mathrm{tr}_M(\rho(\beta_2))$.
-Hence $\hat{V}(T_1) = \hat{V}(T_2)$ and $\mathcal{T}(T_1)
-= \mathcal{T}(T_2)$.
+Hence $\hat{V}(T_1) = \hat{V}(T_2)$ and $\mathcal{T}(T_1) = \mathcal{T}(T_2)$.
 
 The specific sequence of crossings within $\mathcal{S}_p$ does not matter:
 all that matters is the isotopy class of the resulting link.  This

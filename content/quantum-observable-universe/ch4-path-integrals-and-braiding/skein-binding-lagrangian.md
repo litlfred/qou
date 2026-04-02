@@ -5,8 +5,7 @@ field configuration $\psi = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$.
 
 The categorical Lagrangian
 ([categorical Lagrangian](#def:categorical-lagrangian))
-$\mathcal{L}_q = \mathcal{D}_\nabla^2 + \psi^* \otimes
-\mathcal{D}_\nabla\psi$ decomposes via the Frobenius--Hopf structure
+$\mathcal{L}_q = \mathcal{D}_\nabla^2 + \psi^* \otimes \mathcal{D}_\nabla\psi$ decomposes via the Frobenius--Hopf structure
 into gravity + gauge + matter sectors.  When the state $\psi$ is a
 multi-nucleon Hopf link, the Skein crossing asymmetry
 ([crossing asymmetry](#rem:skein-crossing-asymmetry)) further

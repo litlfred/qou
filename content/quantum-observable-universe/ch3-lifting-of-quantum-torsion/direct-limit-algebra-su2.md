@@ -15,8 +15,7 @@ $$
 $$
 
 connected by the jet prolongation maps
-$\ell_n \colon \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2)))
-\hookrightarrow \mathrm{End}(J^{n+1}\mathcal{O}(\mathrm{SU}(2)))$.
+$\ell_n \colon \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2))) \hookrightarrow \mathrm{End}(J^{n+1}\mathcal{O}(\mathrm{SU}(2)))$.
 At level $n$, the algebra is $(3 + 3n)$-dimensional: $3$ dimensions
 from $\mathfrak{su}(2)$ plus $3n$ from the $n$-th order cotangent
 directions.
@@ -49,6 +48,5 @@ $$
 $A_\infty^{(0)} \subset A_\infty^{(1)} \subset \cdots$ with
 $A_\infty^{(n)} = \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2)))$.
 The associated graded is the symmetric algebra
-$\mathrm{gr}(A_\infty) \cong \mathrm{Sym}(\mathfrak{su}(2)^*)
-\cong \mathbb{C}[x_1, x_2, x_3]$, the algebra of polynomial functions
+$\mathrm{gr}(A_\infty) \cong \mathrm{Sym}(\mathfrak{su}(2)^*) \cong \mathbb{C}[x_1, x_2, x_3]$, the algebra of polynomial functions
 on $\mathfrak{su}(2)$.

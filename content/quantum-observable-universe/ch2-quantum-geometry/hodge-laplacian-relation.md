@@ -8,8 +8,7 @@ $q$-codifferential $\delta_q$ inherits this deformation.
 
 The $q$-Laplacian $\Delta_q = d_q\,\delta_q + \delta_q\,d_q$ is
 formally self-adjoint with respect to the Webster inner product.
-By the defining property $\langle d_q \alpha, \beta \rangle_\theta
-= \langle \alpha, \delta_q \beta \rangle_\theta$
+By the defining property $\langle d_q \alpha, \beta \rangle_\theta = \langle \alpha, \delta_q \beta \rangle_\theta$
 ([codifferential formula](#rem:q-codifferential-formula)):
 
 $$

@@ -77,15 +77,12 @@ $A \sim 300$ by periodically restoring $P(q) > 0$.
 
 The bound predicts instability at $A = 5$.  Experimentally:
 
-- ${}^5\mathrm{He}$: **unbound** (resonance, $\Gamma \approx
-  0.6$ MeV, decays to ${}^4\mathrm{He} + n$).
-- ${}^5\mathrm{Li}$: **unbound** (resonance, $\Gamma \approx
-  1.5$ MeV, decays to ${}^4\mathrm{He} + p$).
+- ${}^5\mathrm{He}$: **unbound** (resonance, $\Gamma \approx 0.6$ MeV, decays to ${}^4\mathrm{He} + n$).
+- ${}^5\mathrm{Li}$: **unbound** (resonance, $\Gamma \approx 1.5$ MeV, decays to ${}^4\mathrm{He} + p$).
 
 **Both $A = 5$ nuclei are unbound.** This is the famous
 "$A = 5$ gap" in nuclear physics — no stable nucleus exists
-with $A = 5$.  The QOU predicts this exactly: $[4]_q! = 25.15
-> [2]_q^4 = 16.35$ at $q = q_0$.
+with $A = 5$.  The QOU predicts this exactly: $[4]_q! = 25.15 > [2]_q^4 = 16.35$ at $q = q_0$.
 
 ### The $\mathbf{A = 8}$ gap
 

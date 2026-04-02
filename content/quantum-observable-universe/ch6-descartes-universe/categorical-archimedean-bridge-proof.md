@@ -6,8 +6,7 @@ The fibre functor $\tau$ maps:
 - the maximal torus generator $\xi$ to the Reeb vector field
   satisfying $\iota_\xi\theta = 1$ and $\iota_\xi\,d\theta = 0$,
 - the weight decomposition $\pi_H, \pi_V$ to the splitting
-  $\Omega^k(M) = \Omega^k_H(M) \oplus \theta \wedge
-  \Omega^{k-1}_H(M)$ induced by the Reeb direction.
+  $\Omega^k(M) = \Omega^k_H(M) \oplus \theta \wedge \Omega^{k-1}_H(M)$ induced by the Reeb direction.
 
 For a form $\alpha \in \Omega^k(M)$, the vertical projection
 $\pi_V(d\alpha)$ extracts the component of $d\alpha$ carrying

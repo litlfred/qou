@@ -9,8 +9,7 @@ through the Frobenius--Ricci endomorphism $R_{\int}$.  Varying
 $\int_A \mapsto \int_A + \delta\!\int_A$ and requiring
 $\delta\mathcal{S}_q = 0$ for all $\delta\!\int_A$ gives, by
 non-degeneracy of the categorical trace,
-$R_{\int} - \tfrac{1}{2}\,\mathrm{tr}(R_{\int})\,\mathrm{id}_A
-= T_q[\nabla, \psi]$,
+$R_{\int} - \tfrac{1}{2}\,\mathrm{tr}(R_{\int})\,\mathrm{id}_A = T_q[\nabla, \psi]$,
 where the stress-energy $T_q$ collects the $\int_A$-dependence of the
 gauge and matter terms.  The trace subtraction ensures
 $\mathrm{tr}(T_q) = \tfrac{1}{2}\,\mathrm{tr}(R_{\int})$ (the
@@ -22,8 +21,7 @@ $\int_A \circ \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$
 depends on $\nabla$ through $F_\nabla = \nabla^2$.  A standard
 computation using $\delta F_\nabla = \nabla(\delta\nabla)$ and
 integration by parts (via non-degeneracy of $\int_A$) yields
-$\nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
-= J_\psi$.
+$\nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla] = J_\psi$.
 The commutator term $q \cdot [F_\nabla, \star_q F_\nabla]$ arises from
 the non-commutativity of the $q$-deformed wedge product; it vanishes
 when $q = 1$ (the abelian/classical limit).

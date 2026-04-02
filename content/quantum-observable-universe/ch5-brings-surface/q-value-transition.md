@@ -5,8 +5,7 @@ action.
 
 ## Definition (categorical, primary)
 
-For a beta decay $\mathcal{N}_{\mathrm{par}} \to \mathcal{N}_{\mathrm{dau}}
-+ e + \bar{\nu}$, the **$\mathcal{Q}_q$-value** is the net change
+For a beta decay $\mathcal{N}_{\mathrm{par}} \to \mathcal{N}_{\mathrm{dau}} + e + \bar{\nu}$, the **$\mathcal{Q}_q$-value** is the net change
 in categorical action at the Skein crossing change:
 
 $$

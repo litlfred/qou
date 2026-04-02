@@ -205,13 +205,11 @@ $A = 4$).
 also crosses at $A = 5$.  The bound is **topological** (from
 the Hecke algebra dimension $A!$), not dependent on $q$.
 
-**At $q \to \infty$:** $[k]_q \sim q^{k-1}$, so $[A\!-\!1]_q!
-\sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$.  The
+**At $q \to \infty$:** $[k]_q \sim q^{k-1}$, so $[A\!-\!1]_q! \sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$.  The
 crossover shifts to $(A-1)(A-2)/2 > A-1$, i.e., $A > 4$,
 which is the same.
 
-**Note:** This bound applies to the alternating $\mathfrak{p}
-\mathfrak{n}$ filling order.  Shell closures
+**Note:** This bound applies to the alternating $\mathfrak{p} \mathfrak{n}$ filling order.  Shell closures
 ([shell closure](#prop:shell-closure-normal-form)) create
 **stability islands** beyond $A_{\max}$ where the palindromic
 Poincaré distribution restores $P > 0$.  The physical nuclear

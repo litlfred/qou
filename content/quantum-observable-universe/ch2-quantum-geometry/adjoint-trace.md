@@ -19,12 +19,10 @@ multiplication on $A$.
 
 This trace has two key properties:
 
-1. **Cyclicity**: $\mathrm{tr}_{\mathrm{Ad}}(f \circ g) =
-   \mathrm{tr}_{\mathrm{Ad}}(g \circ f)$, inherited from the
+1. **Cyclicity**: $\mathrm{tr}_{\mathrm{Ad}}(f \circ g) = \mathrm{tr}_{\mathrm{Ad}}(g \circ f)$, inherited from the
    Frobenius relation.
 2. **Non-degeneracy**: the induced pairing
-   $\langle f, g \rangle_{\mathrm{Ad}} =
-   \mathrm{tr}_{\mathrm{Ad}}(f^{\dagger} \circ g)$
+   $\langle f, g \rangle_{\mathrm{Ad}} = \mathrm{tr}_{\mathrm{Ad}}(f^{\dagger} \circ g)$
    is non-degenerate, because $\int_A$ is non-degenerate and the
    dagger is positive-definite.
 

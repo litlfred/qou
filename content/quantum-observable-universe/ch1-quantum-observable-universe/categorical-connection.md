@@ -3,8 +3,7 @@ differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)).
 
 A *connection* on $A$ is a morphism
 $\nabla \colon A \to A \otimes \Omega^1(A)$ in $\mathbf{C}$ satisfying
-the Leibniz rule: $\nabla(\mu(a \otimes b)) =
-\nabla(a) \cdot b + a \cdot \nabla(b)$, expressed by the commutativity
+the Leibniz rule: $\nabla(\mu(a \otimes b)) = \nabla(a) \cdot b + a \cdot \nabla(b)$, expressed by the commutativity
 of the *Leibniz triangle*:
 
 ```tex
