@@ -8,7 +8,9 @@
 --   - `proof-objects.json` in the repo root tracks formalization status
 --   - LeanBlueprint macros in the LaTeX source link to declarations here
 
-import Fred2005
+-- NOTE: Fred2005 has moved to content/fred2005-formal-groups/lean/
+-- import Fred2005
+
 import QOU.Basic
 import QOU.Glossary
 import QOU.KnotTheory

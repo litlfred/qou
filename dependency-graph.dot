@@ -62,7 +62,7 @@ digraph ProofDependencies {
     def_coral_sector_coords [label="Def\ncoral-sector-coords" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:coral-sector-coords" tooltip="{Coral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$}" target="_blank"];
     cor_descartes_braid_structure [label="Cor\ndescartes-braid-s..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-braid-structure" tooltip="{Braid-group structure of a Descartes universe}" target="_blank"];
     cor_descartes_knot_eigenbasis [label="Cor\ndescartes-knot-ei..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-knot-eigenbasis" tooltip="{Knot eigenbasis completeness for a Descartes universe}" target="_blank"];
-    prop_descartes_elliptic_curve [label="Prop\ndescartes-ellipti..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:descartes-elliptic-curve" tooltip="{The Descartes elliptic curve $E_q$}" target="_blank"];
+    prop_descartes_elliptic_curve [label="Prop\ndescartes-ellipti..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:descartes-elliptic-curve" tooltip="{The Descartes elliptic curve $\mathcal{E}_q$}" target="_blank"];
     def_descartes_condition [label="Def\ndescartes-condition" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:descartes-condition" tooltip="{Descartes condition}" target="_blank"];
     prop_genus_maximal_descent [label="Prop\ngenus-maximal-des..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:genus-maximal-descent" tooltip="{Genus of the one-complex-dimensional descent}" target="_blank"];
     rem_descartes_chirality [label="Rem\ndescartes-chirality" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:descartes-chirality" tooltip="{Chirality as Reeb orientation}" target="_blank"];
@@ -406,6 +406,7 @@ digraph ProofDependencies {
   def_recursive_brane_tower -> def_quantum_characteristic_classes [color="#555555" style="solid"];
   def_yekutieli_lifting_condition -> def_quantum_characteristic_classes [color="#555555" style="solid"];
   def_quantum_characteristic_classes -> prop_yekutieli_lifting [color="#555555" style="solid"];
+  def_yekutieli_lifting_condition -> prop_yekutieli_lifting [color="#555555" style="solid"];
   prop_yekutieli_lifting -> thm_qu_to_qou [color="#555555" style="solid"];
   def_recursive_brane_tower -> def_direct_limit_algebra [color="#555555" style="solid"];
   def_direct_limit_algebra -> rem_jet_shell [color="#555555" style="solid"];

@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-02T05:49:23.665940+00:00",
+    "generated_at": "2026-04-02T11:19:26.882887+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -709,7 +709,7 @@
         "line": 809,
         "chapter": 3
       },
-      "title": "{The Descartes elliptic curve $E_q$}",
+      "title": "{The Descartes elliptic curve $\\mathcal{E}_q$}",
       "lean": {
         "decl": "QOU.Descartes.descartes_elliptic_curve",
         "file": "QOU/BringsSurface.lean",
@@ -2110,7 +2110,8 @@
       },
       "formalization_status": "stated",
       "uses": [
-        "def:quantum-characteristic-classes"
+        "def:quantum-characteristic-classes",
+        "def:yekutieli-lifting-condition"
       ]
     },
     {
@@ -5026,6 +5027,11 @@
     {
       "from": "prop:yekutieli-lifting",
       "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:yekutieli-lifting",
+      "to": "def:yekutieli-lifting-condition",
       "relation": "uses"
     },
     {
