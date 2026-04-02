@@ -191,13 +191,10 @@ jobs:
       # Build the primary paper (quantum-observable-universe) for PDF generation.
       # Other papers are validated but not compiled to LaTeX, since the workflow
       # only compiles and deploys one PDF.
-      - name: Validate and build content objects for all papers
+      - name: Validate content objects
         continue-on-error: true
         run: |
           cd content
-          PRIMARY_PAPER="quantum-observable-universe"
-
-          # Validate all papers
           for paper_dir in $(cat ../papers.json | python3 -c "import sys,json; [print(p['dir']) for p in json.load(sys.stdin)]"); do
             echo "── Validating: ${paper_dir}"
             if ls "${paper_dir}"/*/*.ts 2>/dev/null | head -1 > /dev/null; then
@@ -207,20 +204,31 @@ jobs:
             fi
           done
 
-          # Build only the primary paper (the one compiled to PDF)
+      - name: Build primary paper content objects
+        run: |
+          cd content
+          PRIMARY_PAPER="quantum-observable-universe"
           echo "── Building primary paper: ${PRIMARY_PAPER}"
+          echo "Paper manifest: ${PRIMARY_PAPER}/${PRIMARY_PAPER}.ts"
+          ls -la "${PRIMARY_PAPER}/${PRIMARY_PAPER}.ts"
+          echo "Preamble: ../latex/preamble.tex"
+          ls -la ../latex/preamble.tex
+
           bun run pipeline/build.ts \
             "${PRIMARY_PAPER}/${PRIMARY_PAPER}.ts" \
             --out-dir ../chapters/ \
             --generate-main \
             --main-out ../main.tex \
-            --preamble ../latex/preamble.tex \
-            || echo "::warning::Content build had issues for ${PRIMARY_PAPER}"
+            --preamble ../latex/preamble.tex
 
-          echo "Generated chapters:"
-          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
-          echo "Generated main.tex title:"
-          grep '\\title{' ../main.tex 2>/dev/null || echo "  (not generated)"
+          echo "=== Build output ==="
+          echo "Chapters generated:"
+          ls -la ../chapters/*.tex 2>/dev/null | wc -l
+          ls ../chapters/*.tex 2>/dev/null
+          echo "main.tex title:"
+          grep '\\title{' ../main.tex
+          echo "main.tex input lines:"
+          grep '\\input{' ../main.tex
 
       # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
       - name: Build schema docs
