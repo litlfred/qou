@@ -157,21 +157,28 @@ function htmlTableToLatex(html: string): string {
     const aligns: (string | null)[] = [];
     let hasHeader = false;
     for (const cellHtml of cellMatches) {
-      if (cellHtml.startsWith("<th")) hasHeader = true;
-      // Extract align attribute
-      const alignMatch = cellHtml.match(/align="?(\w+)"?/i);
+      if (/^<th/i.test(cellHtml)) hasHeader = true;
+      // Extract align attribute (avoid matching valign)
+      const alignMatch = cellHtml.match(/(?:^|\s)align\s*=\s*"?(\w+)"?/i);
       aligns.push(alignMatch ? alignMatch[1].toLowerCase() : null);
       // Extract cell content
       const content = cellHtml
         .replace(/<t[hd][^>]*>/i, "")
         .replace(/<\/t[hd]>/i, "")
         .trim();
-      const cleaned = content
-        .replace(/<strong>([\s\S]*?)<\/strong>/gi, "\\textbf{$1}")
-        .replace(/<em>([\s\S]*?)<\/em>/gi, "\\emph{$1}")
-        .replace(/<code>([\s\S]*?)<\/code>/gi, "\\texttt{$1}")
+      // First extract formatting markers, then strip remaining tags,
+      // then escape for LaTeX, then apply LaTeX formatting commands.
+      // This order ensures escaping doesn't corrupt LaTeX commands.
+      const withMarkers = content
+        .replace(/<strong>([\s\S]*?)<\/strong>/gi, "\x01BOLD\x02$1\x01/BOLD\x02")
+        .replace(/<em>([\s\S]*?)<\/em>/gi, "\x01EM\x02$1\x01/EM\x02")
+        .replace(/<code>([\s\S]*?)<\/code>/gi, "\x01TT\x02$1\x01/TT\x02")
         .replace(/<[^>]*>/g, "");
-      cells.push(cleaned);
+      const escaped = escapeLatex(withMarkers)
+        .replace(/\x01BOLD\x02/g, "\\textbf{").replace(/\x01\/BOLD\x02/g, "}")
+        .replace(/\x01EM\x02/g, "\\emph{").replace(/\x01\/EM\x02/g, "}")
+        .replace(/\x01TT\x02/g, "\\texttt{").replace(/\x01\/TT\x02/g, "}");
+      cells.push(escaped);
     }
     rows.push(cells);
     isHeaderRow.push(hasHeader);
@@ -312,11 +319,12 @@ function renderMdastNode(node: any): string {
     case "html": {
       // Raw HTML in markdown — handle <table> elements for LaTeX
       const html: string = node.value ?? "";
-      if (html.includes("<table") || html.includes("<tr") || html.includes("<td") || html.includes("<th")) {
-        return htmlTableToLatex(html);
+      if (html.includes("<table") || html.includes("<tr")) {
+        const table = htmlTableToLatex(html);
+        if (table) return table;
       }
-      // Non-table HTML: strip tags, keep text
-      return html.replace(/<[^>]*>/g, "");
+      // Non-table HTML: strip tags, escape for LaTeX
+      return escapeLatex(html.replace(/<[^>]*>/g, ""));
     }
 
     default:

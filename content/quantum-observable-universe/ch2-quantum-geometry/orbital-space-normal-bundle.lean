@@ -18,6 +18,9 @@ LaTeX label: `prop:orbital-space-normal-bundle`
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 
 import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
+import Mathlib.LinearAlgebra.Dimension
+import Mathlib.Data.Real.Basic
 
 open Finset
 
@@ -103,7 +106,8 @@ theorem orbital_dim_eq_square (n : ℕ) :
 -- Ref: [manuscript] Ch. 6, §3 — "The critical step"
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 axiom mode_is_so3_irrep :
-  ∀ (ℓ : ℕ), ∃ (V : Type) [inst_acg : AddCommGroup V] [inst_mod : Module ℝ V],
+  ∀ (ℓ : ℕ), ∃ (V : Type) [inst_acg : AddCommGroup V] [inst_mod : Module ℝ V]
+    [inst_fd : FiniteDimensional ℝ V],
     Module.finrank ℝ V = 2 * ℓ + 1
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -137,6 +141,13 @@ theorem mode_cutoff_conv {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ ≤ n - 1) :
 theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :
     ℓ * (ℓ + 1) ≤ n * (n - 1) ↔ ℓ ≤ n - 1 :=
   ⟨mode_cutoff hn, mode_cutoff_conv hn⟩
+
+/-- The orbital space at shell n has dimension n².
+    This is the declaration referenced by the content manifest
+    `prop:orbital-space-normal-bundle`. -/
+theorem orbital_space_normal_bundle (n : ℕ) :
+    (range n).sum (fun ℓ => 2 * ℓ + 1) = n ^ 2 :=
+  orbital_space_dim n
 
 end QOU
 
