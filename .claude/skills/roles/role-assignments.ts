@@ -25,15 +25,15 @@ export const roleAssignments: RoleAssignment[] = [
   },
   {
     userPattern: "*",
-    identitySource: "google-oauth",
-    actorId: "reader",
-    priority: 30,
-  },
-  {
-    userPattern: "*",
     identitySource: "bearer-token",
     actorId: "collaborator",
     priority: 40,
+  },
+  {
+    userPattern: "*",
+    identitySource: "google-oauth",
+    actorId: "reader",
+    priority: 30,
   },
   {
     userPattern: "*",

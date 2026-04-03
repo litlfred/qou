@@ -10,10 +10,7 @@ import type { PackageManifest } from "../framework/package-manifest.js";
 export const authoringMathManifest: PackageManifest = {
   packageId: "local",
   name: "authoring-math",
-  description:
-    "Formal mathematics authoring assistant for the Quantum Observable " +
-    "Universe paper — Lean 4 formalization, LaTeX rendering, content " +
-    "validation, and MCP server.",
+  description: `Formal mathematics authoring assistant for the Quantum Observable Universe paper — Lean 4 formalization, LaTeX rendering, content validation, and MCP server.`,
   baseImage: "ubuntu:24.04",
   architectures: ["amd64", "arm64"],
 

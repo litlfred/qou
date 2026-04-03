@@ -51,6 +51,9 @@ import { contentChangeReview } from "./requirements/content-change-review.js";
 import { sorryCitation } from "./requirements/sorry-citation.js";
 import { commitHygiene } from "./requirements/commit-hygiene.js";
 
+// Role assignments
+import { roleAssignments } from "./roles/role-assignments.js";
+
 export const registry: SkillRegistry = {
   schemaVersion: "1.0",
   repository: "litlfred/qou",
@@ -151,4 +154,6 @@ export const registry: SkillRegistry = {
       ],
     },
   ],
+
+  roleAssignments,
 };
