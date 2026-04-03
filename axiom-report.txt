@@ -1,22 +1,20 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-04-03 14:22:34 UTC
-Commit:    2d14e0fd4d17450414ecb9934810c6b7ea0655ec
+Generated: 2026-04-03 20:59:52 UTC
+Commit:    unknown
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
 ------------------------------------------------------------------------
 §1  BUILD STATUS
 ------------------------------------------------------------------------
-Status: ❌ BUILD FAILED
-
-Errors:
+Status: ✅ BUILD PASSED (no type errors)
 
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 423
+Total sorry occurrences: 490
 
   File                                          sorry count
   --------------------------------------------------------
@@ -124,6 +122,7 @@ Total sorry occurrences: 423
   QOU/CODATAChain.lean                             1
   QOU/Descartes/AxialCoupling.lean                 3
   QOU/Descartes/OrderingIndependence.lean          2
+  QOU/Glossary.lean                                67
 
 ------------------------------------------------------------------------
 §3  AXIOM DECLARATIONS
@@ -814,43 +813,56 @@ The following key declarations were checked for axiom dependencies.
 Any use of `sorryAx` indicates an incomplete proof.
 
   #print axioms QOU.MassDerivation.topological_mass_formula
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.derive_substrate_q
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.mass_ratio_from_volume
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.vol_figure_eight
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.experimental_mu_e_ratio
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.MassDerivation.quantum_planck
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.KnotTheory.PlanarDiagram
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.KnotTheory.figureEight
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.KnotRegistry.figureEightEntry
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.KnotRegistry.registry_volume_eq_mass_derivation
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.Calculations.full_derivation_chain
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.Calculations.substrate_error_bound
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
   #print axioms QOU.Glossary.FrobeniusHopfObject
-    (could not run — project may not be built)
+    no such file or directory (error code: 2)
+    file: content/quantum-observable-universe/lean/_axiom_check.lean
 
 ------------------------------------------------------------------------
 §5  TOPOLOGICAL MASS THEOREM TRANSPARENCY
@@ -914,11 +926,11 @@ link to the foundational reference are shown.
   QOU/Descartes/AxialCoupling.lean:93  axialCouplingRatio
     Citation: [manuscript]
 
-  QOU/Descartes/OrderingIndependence.lean:63  skeinPolynomialSym
+  QOU/Descartes/OrderingIndependence.lean:64  skeinPolynomialSym
     Citation: [murphy1992]
     Link:     https://doi.org/10.1016/0021-8693(92)90139-D
 
-  QOU/Descartes/OrderingIndependence.lean:91  ordering_independence
+  QOU/Descartes/OrderingIndependence.lean:92  ordering_independence
     Citation: [murphy1992]
     Link:     https://doi.org/10.1016/0021-8693(92)90139-D
 
@@ -1309,9 +1321,76 @@ link to the foundational reference are shown.
     .lake/packages/plausible/Test/Tactic.lean:134  (unknown)
     .lake/packages/plausible/Test/Tactic.lean:145  (unknown)
     .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean:157  ConvSelectionPanel
-    QOU/CODATAChain.lean:197  end_to_end_nucleon_ratio
+    QOU/CODATAChain.lean:202  end_to_end_nucleon_ratio
+    QOU/Glossary.lean:28  NoQuasiZeros
+    QOU/Glossary.lean:35  SnakeIdentity
+    QOU/Glossary.lean:44  RigidMonoidalCategory
+    QOU/Glossary.lean:51  QuantumUniverse
+    QOU/Glossary.lean:58  FrobeniusPairing
+    QOU/Glossary.lean:65  HigherForms
+    QOU/Glossary.lean:72  InvolutiveStructure
+    QOU/Glossary.lean:79  CategoricalConnection
+    QOU/Glossary.lean:86  CategoricalJet
+    QOU/Glossary.lean:93  CategoricalHodgeStar
+    QOU/Glossary.lean:100  BringsSurface
+    QOU/Glossary.lean:109  ColorTubeCoordinates
+    QOU/Glossary.lean:116  ColorTubeFibers
+    QOU/Glossary.lean:123  BriggsKleinChart
+    QOU/Glossary.lean:130  QuaternionicSpectralResolvents
+    QOU/Glossary.lean:137  CoralSectorCoords
+    QOU/Glossary.lean:144  DescartesCondition
+    QOU/Glossary.lean:151  UpQuark
+    QOU/Glossary.lean:158  DownQuark
+    QOU/Glossary.lean:165  ElectronKnot
+    QOU/Glossary.lean:172  PositronKnot
+    QOU/Glossary.lean:179  NeutrinoKnot
+    QOU/Glossary.lean:186  AntineutrinoKnot
+    QOU/Glossary.lean:193  QValueTransition
+    QOU/Glossary.lean:200  CategoricalProton
+    QOU/Glossary.lean:207  CategoricalNeutron
+    QOU/Glossary.lean:214  StableNucleus
+    QOU/Glossary.lean:221  BetaDecaySkein
+    QOU/Glossary.lean:228  LeptonNumberCategorical
+    QOU/Glossary.lean:235  TransferMatrixOperator
+    QOU/Glossary.lean:242  RecursiveBraneTower
+    QOU/Glossary.lean:249  CategoricalQReebFlow
+    QOU/Glossary.lean:256  DescentInvolution
+    QOU/Glossary.lean:263  YekutieliLiftingCondition
+    QOU/Glossary.lean:270  QuantumCharacteristicClasses
+    QOU/Glossary.lean:279  DirectLimitAlgebra
+    QOU/Glossary.lean:286  MassIdentity
+    QOU/Glossary.lean:293  BraneBoundary
+    QOU/Glossary.lean:300  YekutieliTriple
+    QOU/Glossary.lean:307  LocalizedKnot
+    QOU/Glossary.lean:316  BraidGroup
+    QOU/Glossary.lean:323  Su2Basis
+    QOU/Glossary.lean:330  Su2Generators
+    QOU/Glossary.lean:337  So3Generators
+    QOU/Glossary.lean:344  BraidTwistFlip
+    QOU/Glossary.lean:351  QuantumSu2
+    QOU/Glossary.lean:358  CrossingEnergy
+    QOU/Glossary.lean:365  CoulombCharge
+    QOU/Glossary.lean:372  QMomentum
+    QOU/Glossary.lean:379  QAngularMomentum
+    QOU/Glossary.lean:386  QEnergy
+    QOU/Glossary.lean:393  ExceptionalDivisor
+    QOU/Glossary.lean:400  ReebBundle
+    QOU/Glossary.lean:407  VertexOperator
+    QOU/Glossary.lean:414  CategoricalTransferMatrix
+    QOU/Glossary.lean:421  Hadron
+    QOU/Glossary.lean:428  LocalizedHadron
+    QOU/Glossary.lean:435  HadronFibreEmbedding
+    QOU/Glossary.lean:442  KnotParticleGeneration
+    QOU/Glossary.lean:451  BundleInitialConditions
+    QOU/Glossary.lean:458  BundleIsotopyEquivalence
+    QOU/Glossary.lean:465  TorsionKnotFlow
+    QOU/Glossary.lean:472  BorromeanBaryon
+    QOU/Glossary.lean:479  SkeinBindingLagrangian
+    QOU/Glossary.lean:486  QYangMillsLevi
+    QOU/Glossary.lean:495  SpatialRealizationFunctor
+    QOU/Glossary.lean:502  WittVectorLift
 
-  Summary: 5 referenced / 384 unreferenced / 389 total gaps
+  Summary: 5 referenced / 451 unreferenced / 456 total gaps
 
 ========================================================================
 END OF REPORT
