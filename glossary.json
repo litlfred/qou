@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-03T12:47:32.178324+00:00",
-  "commit_sha": "f0baf648bbea99f48c66eea88d91cac04a34173c",
+  "generated_at": "2026-04-03T14:16:22.862341+00:00",
+  "commit_sha": "2d14e0fd4d17450414ecb9934810c6b7ea0655ec",
   "entry_count": 67,
   "ambiguity_count": 6,
   "entries": [
@@ -175,7 +175,7 @@
       "narrative_term": "{Down quark}",
       "lean_name": "QOU.BringsSurface.DownQuark",
       "kind": "def",
-      "narrative_definition": "The  is an unknot (neutrino) localized in a coral tube with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [ d ;=; nu ,big|__3,, - qquad _3 ]  The down quark differs from the up quark (hyperref[def:up-quark]up quark) only in : at each crossing point within _3, the down quark's strand passes under where the up quark passes over.  This reversal contributes q^-1 instead of q to the Skein polynomial, giving the down quark a Coulomb charge contribution of -",
+      "narrative_definition": "The  is an unknot (neutrino) localized in a coral tube with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [  ;=; nu ,big|__3,, - qquad _3 ]  The down quark differs from the up quark (hyperref[def:up-quark]up quark) only in : at each crossing point within _3, the down quark's strand passes under where the up quark passes over.  This reversal contributes q^-1 instead of q to the Skein polynomial, giving the down quark a Coulomb charge contribution of -1",
       "latex_label": "def:down-quark",
       "chapter": 3
     },
@@ -223,7 +223,7 @@
       "narrative_term": "{Proton (categorical)}",
       "lean_name": "QOU.BringsSurface.CategoricalProton",
       "kind": "def",
-      "narrative_definition": "The  is the baryon with 2 + 1 crossing partition: two up quarks (positive orientation) and one down quark (negative orientation) in the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark).  [  ;=; _3(u,, u,, d) ;bowtie; _H ]  where:   item _3(, , ) is the Borromean link of three unknots threaded through coral tubes (r, g, b) (hyperref[def:color-tube-coordinates]color tube coordinates): two with positive crossing orientation (u, hyperref[def:up-quark]up quark) and one with negative ",
+      "narrative_definition": "The  is the baryon with 2 + 1 crossing partition: two up quarks (positive orientation) and one down quark (negative orientation) in the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark).  [  ;=; _3(,, ,, ) ;bowtie; _H ]  where:   item _3(, , ) is the Borromean link of three unknots threaded through coral tubes (r, g, b) (hyperref[def:color-tube-coordinates]color tube coordinates): two with positive crossing orientation (, hyperref[def:up-quark]up quark) and one with negative orie",
       "latex_label": "def:categorical-proton",
       "chapter": 3
     },
@@ -231,7 +231,7 @@
       "narrative_term": "{Neutron (categorical)}",
       "lean_name": "QOU.BringsSurface.CategoricalNeutron",
       "kind": "def",
-      "narrative_definition": "The  is the baryon with 1 + 2 crossing partition: one up quark and two down quarks in the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark).  [  ;=; _3(u,, d,, d) ;bowtie; _H ]    [ m_ ;=; 2,_(q) + _(q) ]  At the CODATA value q_0: m_(q_0) approx 939.565 MeV, derived from the substrate parameter (hyperref[prop:local-substrate-q]local substrate).  The proton--neutron mass splitting is  [ m_ - m_ ;=; _(q) - _(q) ;approx; 1.293  ]  arising from the Skein resolution asymmetry between ",
+      "narrative_definition": "The  is the baryon with 1 + 2 crossing partition: one up quark and two down quarks in the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark).  [  ;=; _3(,, ,, ) ;bowtie; _H ]    [ m_ ;=; 2,_(q) + _(q) ]  At the CODATA value q_0: m_(q_0) approx 939.565 MeV, derived from the substrate parameter (hyperref[prop:local-substrate-q]local substrate).  The proton--neutron mass splitting is  [ m_ - m_ ;=; _(q) - _(q) ;approx; 1.293  ]  arising from the Skein resolution asymmetry between the",
       "latex_label": "def:categorical-neutron",
       "chapter": 3
     },
