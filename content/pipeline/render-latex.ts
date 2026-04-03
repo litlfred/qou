@@ -90,6 +90,7 @@ const mdParser = remark().use(remarkGfm).use(remarkMath);
  *   | link(url)     | \href{url}{children}                 |
  *   | list(ordered) | \begin{enumerate} \item ...\end{...} |
  *   | list(unord.)  | \begin{itemize} \item ...\end{...}   |
+ *   | table         | \begin{tabular}...\end{tabular}      |
  *   | paragraph     | children + blank line                |
  */
 export function markdownToLatex(md: string): string {
@@ -129,6 +130,79 @@ export function extractMathContent(md: string): string {
   }
 
   return parts.join("\n").trim();
+}
+
+// ── HTML table → LaTeX conversion ────────────────────────────────
+
+/**
+ * Convert an HTML `<table>` to LaTeX `\begin{tabular}`.
+ *
+ * Handles `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`.
+ * Inline math (`$...$`) inside cells is preserved.
+ * The `align` attribute on `<td>`/`<th>` is respected.
+ */
+function htmlTableToLatex(html: string): string {
+  const rowMatches = html.match(/<tr[^>]*>([\s\S]*?)<\/tr>/gi);
+  if (!rowMatches || rowMatches.length === 0) return "";
+
+  const rows: string[][] = [];
+  const isHeaderRow: boolean[] = [];
+  const cellAligns: (string | null)[][] = [];
+
+  for (const rowHtml of rowMatches) {
+    const cellMatches = rowHtml.match(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi);
+    if (!cellMatches) { rows.push([]); isHeaderRow.push(false); cellAligns.push([]); continue; }
+
+    const cells: string[] = [];
+    const aligns: (string | null)[] = [];
+    let hasHeader = false;
+    for (const cellHtml of cellMatches) {
+      if (cellHtml.startsWith("<th")) hasHeader = true;
+      // Extract align attribute
+      const alignMatch = cellHtml.match(/align="?(\w+)"?/i);
+      aligns.push(alignMatch ? alignMatch[1].toLowerCase() : null);
+      // Extract cell content
+      const content = cellHtml
+        .replace(/<t[hd][^>]*>/i, "")
+        .replace(/<\/t[hd]>/i, "")
+        .trim();
+      const cleaned = content
+        .replace(/<strong>([\s\S]*?)<\/strong>/gi, "\\textbf{$1}")
+        .replace(/<em>([\s\S]*?)<\/em>/gi, "\\emph{$1}")
+        .replace(/<code>([\s\S]*?)<\/code>/gi, "\\texttt{$1}")
+        .replace(/<[^>]*>/g, "");
+      cells.push(cleaned);
+    }
+    rows.push(cells);
+    isHeaderRow.push(hasHeader);
+    cellAligns.push(aligns);
+  }
+
+  if (rows.length === 0) return "";
+
+  const colCount = Math.max(...rows.map(r => r.length));
+
+  // Determine column alignment from first row's align attributes
+  const colSpec = Array.from({ length: colCount }, (_, i) => {
+    const align = cellAligns[0]?.[i];
+    if (align === "center") return "c";
+    if (align === "right") return "r";
+    return "l";
+  }).join(" ");
+
+  const lines: string[] = [];
+  lines.push(`\\begin{tabular}{${colSpec}}`);
+  lines.push("\\toprule");
+  for (let r = 0; r < rows.length; r++) {
+    const padded = rows[r].concat(
+      Array(Math.max(0, colCount - rows[r].length)).fill("")
+    );
+    lines.push(`${padded.join(" & ")} \\\\`);
+    if (isHeaderRow[r]) lines.push("\\midrule");
+  }
+  lines.push("\\bottomrule");
+  lines.push("\\end{tabular}");
+  return lines.join("\n");
 }
 
 // ── AST node → LaTeX rendering ──────────────────────────────────
@@ -234,6 +308,16 @@ function renderMdastNode(node: any): string {
     case "tableCell":
       // Handled by renderTable; should not be reached directly
       return renderChildren(node).join("");
+
+    case "html": {
+      // Raw HTML in markdown — handle <table> elements for LaTeX
+      const html: string = node.value ?? "";
+      if (html.includes("<table") || html.includes("<tr") || html.includes("<td") || html.includes("<th")) {
+        return htmlTableToLatex(html);
+      }
+      // Non-table HTML: strip tags, keep text
+      return html.replace(/<[^>]*>/g, "");
+    }
 
     default:
       // Unknown node — render children if any, otherwise empty
