@@ -7,6 +7,7 @@ export default remark({
   uses: [
     "ex:q-torsion-leaf",
     "rem:q-torsion-existence",
+    "ex:q-reeb-flow",
     "def:categorical-q-connection",
     "def:quantum-gauge-group",
   ],
