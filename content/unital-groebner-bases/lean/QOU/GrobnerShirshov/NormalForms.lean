@@ -281,7 +281,8 @@ private theorem lexLt_implies_listLex :
 theorem lexLt_wf : WellFounded lexLt :=
   Subrelation.wf
     (fun {a b} h => lexLt_implies_listLex a b h)
-    (by haveI : IsWellFounded _ rankRel := ⟨rankRel_wf⟩; exact IsWellFounded.wf)
+    (by haveI : IsWellFounded _ rankRel := ⟨rankRel_wf⟩
+        exact (List.Lex.isWellFounded (α := SU2Gen) (r := rankRel)).wf)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 theorem degLexLt_wf : WellFounded degLexLt :=
