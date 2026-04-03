@@ -114,9 +114,10 @@ lemma mu_e_ratio_approx :
   unfold experimental_mu_e_ratio
   norm_num
 
-/-- The quantum Planck constant for q ≈ 1.1097 is approximately 0.09908. -/
+/-- The quantum Planck constant for q ≈ 1.1097 is approximately 0.09886.
+    (The exact value is 1097/11097 ≈ 0.098856; the error vs 0.09908 is ~2.3e-4.) -/
 lemma quantum_planck_approx :
-    |quantum_planck substrate_q - 0.09908| < 1e-3 := by
+    |quantum_planck substrate_q - 0.09908| < 3e-4 := by
   -- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
   unfold quantum_planck substrate_q
   norm_num
