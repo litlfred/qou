@@ -3,8 +3,20 @@ $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor
 at a brane point $p$
 ([exceptional divisor](#def:exceptional-divisor)), and let
 $\mathcal{R}_p$ be the Reeb bundle over $\mathcal{S}_p$
-([Reeb bundle](#def:reeb-bundle)).  Write $z$ for the standard
-affine coordinate on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$.
+([Reeb bundle](#def:reeb-bundle)).
+
+**The formal variable.**
+In the standard VOA formalism, the formal variable $z$ is an
+indeterminate in the ring of formal Laurent series.  In the QOU it
+has a geometric realisation: $z$ is the affine coordinate
+$z = v_1/v_2$ on the projective line
+$\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
+([projective line](#ex:projective-line-su2)), which coincides with
+the contact affine coordinate $Z = \alpha_H / \iota_\xi\,\alpha$
+([contact affine chart](#def:contact-affine-chart)) restricted to
+the fibre $\mathcal{S}_p$.  Algebraically, $z$ generates the
+function algebra
+$\mathcal{O}(\mathcal{S}_p) = \mathbb{C}[z]$.
 
 The **vertex operator algebra** of the QOU at $p$ is the triple
 $(V, Y, |0\rangle)$ defined as follows.
@@ -29,8 +41,8 @@ $$
   Y \colon V \;\longrightarrow\; (\mathrm{End}\,V)[\![z, z^{-1}]\!]
 $$
 
-assigns to each state $a \in V_n$ a **vertex operator** (formal
-Laurent series in the coordinate $z$ on $\mathcal{S}_p$):
+assigns to each state $a \in V_n$ a **vertex operator** (a formal
+Laurent series in $z$):
 
 $$
   Y(a, z) \;=\; \sum_{m \in \mathbb{Z}} a_m\, z^{-m-1},

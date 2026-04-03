@@ -9,7 +9,7 @@ formalism \cite{frenkel2004} and QOU structures.
 |-------------|----------------|----------|
 | Graded state space $V = \bigoplus V_n$ | Brane tower $\bigoplus A_n = \bigoplus J^n(A_0)$ | [brane tower](#def:recursive-brane-tower) |
 | Conformal weight $n$ | Jet prolongation level $n$ | [jet prolongation](#prop:jet-prolongation) |
-| Formal variable $z$ | Affine coordinate on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ | [exceptional divisor](#def:exceptional-divisor) |
+| Formal variable $z$ | Affine coordinate $z = v_1/v_2$ on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$; generates $\mathcal{O}(\mathcal{S}_p) = \mathbb{C}[z]$ | [vertex operator](#def:vertex-operator) |
 | Vertex operator $Y(a, z)$ | $R$-matrix insertion at $z \in \mathcal{S}_p$ | [R-matrix braiding](#rem:r-matrix-braiding) |
 | Modes $a_m$ | Laurent coefficients of $\check{R}_{(a)}$ on $\mathcal{S}_p$ | [vertex operator](#def:vertex-operator) |
 | $L_0$ (conformal weight operator) | Reeb charge: zero-mode of $\xi_q$ | [Reeb bundle](#def:reeb-bundle) |

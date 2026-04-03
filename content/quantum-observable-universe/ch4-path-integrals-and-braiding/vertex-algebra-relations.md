@@ -2,9 +2,9 @@ The vertex operator algebra $(V, Y, |0\rangle)$
 ([vertex operator](#def:vertex-operator)) inherits every QU and QUO
 axiom as a relation on the Hecke generators $T_1, \ldots, T_{n-1}$
 of $H_n(q)$.  Below we list each axiom and its explicit
-translation into **formal knot coordinates** — i.e.\ braid words
-in $T_i$, the formal variable $z$ on $\mathcal{S}_p$, the Markov
-trace $\mathrm{tr}_M$, and cup/cap morphisms
+translation into **knot coordinates** — braid words in $T_i$,
+the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace
+$\mathrm{tr}_M$, and cup/cap morphisms
 $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$,
 $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
 

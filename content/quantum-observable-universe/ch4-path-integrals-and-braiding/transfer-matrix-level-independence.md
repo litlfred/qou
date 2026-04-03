@@ -5,9 +5,9 @@ be the categorical transfer matrix
 Then:
 
 1. **Constituent-composite agreement.**  The Markov trace computed
-   by operating on the constituent variables $(z_1, \ldots, z_n)$
-   and the Markov trace computed from the composite knot variable
-   $z_H$ yield the same Skein polynomial:
+   from the constituent insertion points $(z_1, \ldots, z_n)$
+   and the Markov trace computed from the composite insertion
+   point $z_H$ yield the same Skein polynomial:
 
    $$
      \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{const}}(q)

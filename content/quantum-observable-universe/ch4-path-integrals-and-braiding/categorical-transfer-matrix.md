@@ -4,17 +4,30 @@ Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a
 exceptional divisor at $p$
 ([exceptional divisor](#def:exceptional-divisor)).
 
-**Formal knot variables.**
+**Insertion points and the configuration space.**
 The constituent knots $K_i$ are simple objects in $\mathbf{C}$,
 each factoring through a tensor power of $V$
 ([knot factorization](#rem:knot-factorization)):
 $K_i \hookrightarrow V^{\otimes 2j_i}$ via the PawLei embedding
-$\iota_{j_i}$.  The **formal knot variables** of $\mathfrak{H}$ are the
-formal variables $z_1, \ldots, z_n$ on $\mathcal{S}_p$, one for each
-constituent, recording the insertion point of the
-[vertex operator](#def:vertex-operator) $Y(K_i, z_i)$.
+$\iota_{j_i}$.  Each constituent has a
+[vertex operator](#def:vertex-operator) $Y(K_i, z_i)$ inserted at
+a point $z_i \in \mathcal{S}_p$.  The $n$-tuple of insertion points
+is a point of the **configuration space**
 
-These variables are **not free** after the first crossing:
+$$
+  (z_1, \ldots, z_n) \;\in\;
+  \mathrm{Conf}_n(\mathcal{S}_p)
+  \;=\;
+  \bigl\{\,(p_1, \ldots, p_n) \in \mathcal{S}_p^{\,n}
+  : p_i \neq p_j \text{ for } i \neq j\,\bigr\},
+$$
+
+where each $z_i$ is the affine coordinate
+([vertex operator](#def:vertex-operator)) of the $i$-th insertion.
+The constraint $z_i \neq z_j$ is the source of OPE
+singularities $(z_i - z_j)^{-k}$.
+
+These insertion points are **not free** after the first crossing:
 the link $\mathcal{L}$ encoding the internal entanglement
 imposes algebraic relations among them.  Concretely, each
 Hopf link between $K_i$ and $K_j$ constrains the pair
@@ -26,17 +39,17 @@ entanglements of the constituents.
 **Two levels of braiding operation.**
 A braiding operation on $\mathfrak{H}$ can be described at two levels:
 
-1. **Constituent level.**  Operate on the constituent
-   variables $(z_1, \ldots, z_n)$ individually.  A crossing
+1. **Constituent level.**  Operate on the insertion points
+   $(z_1, \ldots, z_n)$ individually.  A crossing
    between $K_i$ and $K_j$ applies the vertex operator
    $Y(\sigma_k, z_k)$ at the relevant generator $\sigma_k$,
    producing a transfer matrix
    $T_{K_i, K_j}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$
    that acts on the Hecke chain at $\sigma_k$.
 
-2. **Composite level.**  Operate on the **hadron knot
-   variable** $z_H$ --- the single formal variable of the
-   composite knot $K_{\mathfrak{H}} = \hat{\beta}_{\mathfrak{H}}$ (the closure of the
+2. **Composite level.**  Operate on the single insertion point
+   $z_H$ of the composite knot
+   $K_{\mathfrak{H}} = \hat{\beta}_{\mathfrak{H}}$ (the closure of the
    hadron braid word).  The Markov trace of the full braid
    word factors as a product of vertex volumes
    ([Markov trace product](#thm:markov-trace-product)):
