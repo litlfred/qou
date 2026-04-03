@@ -25,7 +25,7 @@ Alexander-Briggs-indexed volumes through to the substrate parameter `q`.
 - q derivation: Manuscript §4, Conjecture 4.25
 -/
 
-open QOU.KnotRegistry QOU.MassDerivation QOU.KnotTheory
+open QOU.KnotRegistry QOU.MassDerivation
 
 namespace QOU.Calculations
 
@@ -46,17 +46,17 @@ theorem registry_volume_eq_mass_derivation :
 /-- The registry entry for the muon is the figure-eight knot. -/
 theorem muon_is_figure_eight :
     (lookupByIdentity .muon) = some figureEightEntry := by
-  native_decide
+  decide
 
 /-- The registry entry for the electron is the trefoil. -/
 theorem electron_is_trefoil :
     (lookupByIdentity .electron) = some trefoilEntry := by
-  native_decide
+  decide
 
 /-- The registry entry for the neutrino is the unknot. -/
 theorem neutrino_is_unknot :
     (lookupByIdentity .neutrino) = some unknotEntry := by
-  native_decide
+  decide
 
 /-! ## Section 2: Skein-Deformed Mass Residue
 
@@ -105,10 +105,33 @@ noncomputable def h_q_value : ℝ :=
 noncomputable def derived_q : ℝ :=
   1 / (1 - h_q_value)
 
+/-! ## Section 4: CODATA Consistency Checks -/
+
+/-- The h_q² value is positive (since both Vol(4₁) and m_μ/m_e are positive). -/
+-- Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
+theorem h_q_squared_pos : h_q_squared > 0 := by
+  unfold h_q_squared
+  apply div_pos
+  · unfold vol_figure_eight; positivity
+  · unfold experimental_mu_e_ratio; positivity
+
+/-- The quantum Planck constant is in (0, 1), ensuring q > 1. -/
+-- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
+theorem h_q_value_in_unit_interval :
+    0 < h_q_value ∧ h_q_value < 1 := by
+  unfold h_q_value
+  constructor
+  · exact Real.sqrt_pos.mpr h_q_squared_pos
+  · have h1 : h_q_squared < 1 := by
+      unfold h_q_squared vol_figure_eight experimental_mu_e_ratio; norm_num
+    calc Real.sqrt h_q_squared
+        < Real.sqrt 1 := Real.sqrt_lt_sqrt (le_of_lt h_q_squared_pos) h1
+      _ = 1 := Real.sqrt_one
+
 /-- **Error bound**: The derived substrate parameter `q` is within the
     "foolproof" tolerance of the expected value 1.1097.
 
-    Specifically: `|derived_q - 1.1097| < 0.0001`
+    Specifically: `|derived_q - 1.1097| < 0.001`
 
     Knot Atlas: <http://katlas.org/wiki/4_1>
     Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme -/
@@ -141,35 +164,26 @@ theorem substrate_error_bound :
           Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
   -- Bound derived_q = 1/(1 - h_q_value) between 1.1087 and 1.1107
   have h_denom_pos : (0 : ℝ) < 1 - h_q_value := by linarith
+  have h_ne : (1 : ℝ) - h_q_value ≠ 0 := ne_of_gt h_denom_pos
   have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - h_q_value) := by
-    rw [lt_div_iff h_denom_pos]; nlinarith
+    have key : (11087 : ℝ) / 10000 * (1 - h_q_value) < 1 := by nlinarith
+    by_contra h; push_neg at h
+    have : 1 ≤ (11087 : ℝ) / 10000 * (1 - h_q_value) :=
+      calc 1 = 1 / (1 - h_q_value) * (1 - h_q_value) :=
+              (div_mul_cancel₀ 1 h_ne).symm
+        _ ≤ _ := mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
+    linarith
   have h_ub : 1 / (1 - h_q_value) < (11107 : ℝ) / 10000 := by
-    rw [div_lt_iff h_denom_pos]; nlinarith
+    have key : 1 < (11107 : ℝ) / 10000 * (1 - h_q_value) := by nlinarith
+    by_contra h; push_neg at h
+    have : (11107 : ℝ) / 10000 * (1 - h_q_value) ≤ 1 :=
+      calc (11107 : ℝ) / 10000 * (1 - h_q_value)
+          ≤ 1 / (1 - h_q_value) * (1 - h_q_value) :=
+              mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
+        _ = 1 := div_mul_cancel₀ 1 h_ne
+    linarith
   unfold derived_q substrate_q
   rw [abs_lt]; constructor <;> linarith
-
-/-! ## Section 4: CODATA Consistency Checks -/
-
-/-- The h_q² value is positive (since both Vol(4₁) and m_μ/m_e are positive). -/
--- Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
-theorem h_q_squared_pos : h_q_squared > 0 := by
-  unfold h_q_squared
-  apply div_pos
-  · unfold vol_figure_eight; positivity
-  · unfold experimental_mu_e_ratio; positivity
-
-/-- The quantum Planck constant is in (0, 1), ensuring q > 1. -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
-theorem h_q_value_in_unit_interval :
-    0 < h_q_value ∧ h_q_value < 1 := by
-  unfold h_q_value
-  constructor
-  · exact Real.sqrt_pos.mpr h_q_squared_pos
-  · have h1 : h_q_squared < 1 := by
-      unfold h_q_squared vol_figure_eight experimental_mu_e_ratio; norm_num
-    calc Real.sqrt h_q_squared
-        < Real.sqrt 1 := Real.sqrt_lt_sqrt (le_of_lt h_q_squared_pos) h1
-      _ = 1 := Real.sqrt_one
 
 /-- The derived substrate parameter satisfies q > 1, as required by the
     QOU framework (q = 1 collapses to the classical limit). -/
@@ -178,7 +192,13 @@ theorem derived_q_gt_one :
     derived_q > 1 := by
   unfold derived_q
   have ⟨hpos, hlt⟩ := h_q_value_in_unit_interval
-  rw [gt_iff_lt, lt_div_iff (by linarith)]
+  have h_denom_pos : (0 : ℝ) < 1 - h_q_value := by linarith
+  have h_ne : (1 : ℝ) - h_q_value ≠ 0 := ne_of_gt h_denom_pos
+  -- 1 < 1/(1 - h_q_value) iff 1 * (1 - h_q_value) < 1 iff h_q_value > 0
+  by_contra h; push_neg at h
+  have : 1 / (1 - h_q_value) * (1 - h_q_value) ≤ 1 * (1 - h_q_value) :=
+    mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
+  rw [div_mul_cancel₀ 1 h_ne, one_mul] at this
   linarith
 
 /-- **Full derivation chain**: from registry volume and CODATA mass ratio,
@@ -189,7 +209,7 @@ theorem derived_q_gt_one :
         → h_q_squared
         → h_q_value
         → derived_q
-        → |derived_q - 1.1097| < 0.0001
+        → |derived_q - 1.1097| < 0.001
 
     Knot Atlas: <http://katlas.org/wiki/4_1> -/
 -- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295 — Topological mass conjecture
@@ -199,10 +219,10 @@ theorem full_derivation_chain :
     let hq2 := vol / ratio
     let hq := Real.sqrt hq2
     let q := 1 / (1 - hq)
-    |q - substrate_q| < 0.001 := by
+    |q - substrate_q| < 0.001 :=
   -- The let-bound q is definitionally equal to derived_q
   -- (since figureEightEntry.volume.value = vol_figure_eight by rfl).
-  exact substrate_error_bound
+  substrate_error_bound
 
 /-! ## Section 5: Summary (NIST CODATA 2022 precision)
 
