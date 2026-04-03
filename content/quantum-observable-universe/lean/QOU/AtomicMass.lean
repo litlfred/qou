@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import QOU.HadronicMass
+
 /-!
   QOU Atomic Mass Predictions — CODATA 2022 vs AME2020 Audit
 
@@ -14,9 +17,6 @@
   The systematic difference is Z × 0.015 keV (electron binding energy
   of hydrogen, absent in CODATA m_p + m_e but present in AME2020 M_H).
 -/
-
-import Mathlib.Data.Real.Basic
-import QOU.HadronicMass
 
 namespace QOU.AtomicMass
 
