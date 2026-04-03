@@ -38,8 +38,10 @@ structure InsertionConfig where
        A_0 ↪ A_1 ↪ A_2 ↪ ⋯ grows with each Planck step.
        At jet level k, knots with crossing number ≤ k become
        encodable; insertion points acquire k-th order Taylor data.
-       The initial state may have infinitely many constituents
-       (all photons at step 0).
+       A configuration S_0 at any reference point in the affine
+       chart may contain arbitrarily many constituents (hadrons
+       and photons); S_k represents the k-th step of the forward
+       light cone from that reference point.
 
     2. **Descending (Hecke relations).**  Within a given jet level,
        each crossing adds a Hecke relation to an interaction ideal

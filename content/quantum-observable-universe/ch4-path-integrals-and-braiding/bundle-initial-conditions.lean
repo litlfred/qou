@@ -1,9 +1,13 @@
 /-!
-# QOU.BundleInitialConditions — Big bang state over the projective line
+# QOU.BundleInitialConditions — Bundle initial conditions over the projective line
 
-A bundle initial condition is a finite collection of localized knots
-on CP¹.  This is the "position-only" specification at the initial
-moment: positions are known exactly, momenta are undetermined.
+A bundle initial condition is a collection of localized knots
+(hadrons and photons) on CP¹ at a reference point in an affine chart.
+This is a "position-only" specification: positions are known exactly,
+momenta are undetermined.  The forward light cone S_1, S_2, ...
+represents successive Reeb flow iterations; the backward light cone
+S_{-1}, S_{-2}, ... reverses computation.  Whether the sequence
+extends infinitely in either direction is not assumed.
 
 ## References
 

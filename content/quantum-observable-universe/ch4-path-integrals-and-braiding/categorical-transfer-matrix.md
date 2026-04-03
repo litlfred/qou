@@ -51,11 +51,16 @@ the two sources of structure in the Reeb flow
    Planck step.  At step $k$, the configuration space lifts to
    the $k$-th jet: insertion points acquire $k$-th order Taylor data,
    and knots with crossing number $\leq k$ become encodable
-   ([jet-Planck steps](#rem:jet-planck-steps)).  The initial state
+   ([jet-Planck steps](#rem:jet-planck-steps)).  A configuration
    $\mathcal{S}_0 = \sum_i (p_i, H_i)$
    ([bundle initial conditions](#def:bundle-initial-conditions))
-   may have infinitely many constituents --- all photons ($K = \varnothing$,
-   step $0$) --- each carrying only zeroth-order fibre data.
+   at any reference point in the affine chart may contain
+   arbitrarily many constituents --- including hadrons and photons
+   ($K = \varnothing$) --- each carrying only zeroth-order fibre data.
+   The subsequent configurations $\mathcal{S}_1, \mathcal{S}_2, \ldots$
+   represent the forward light cone of interactions from that
+   reference point; $\mathcal{S}_{-1}, \mathcal{S}_{-2}, \ldots$
+   represent the backward light cone (undoing computation).
 
 2. **Descending (Hecke relations).**  Within a given jet level,
    each crossing between slots $i$ and $j$ adds a Hecke relation

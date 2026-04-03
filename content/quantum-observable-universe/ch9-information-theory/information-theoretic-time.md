@@ -15,7 +15,7 @@ $$
 $$
 
 where $N$ is the total number of iterations of $f_q$ applied
-since the initial state
+since a reference configuration $\mathcal{S}_0$
 ([bundle initial conditions](#def:bundle-initial-conditions)).
 Each iteration advances the admissible ordering by one step:
 $\mathcal{T}$ counts the position in the braiding-induced ordering $\prec_c$
