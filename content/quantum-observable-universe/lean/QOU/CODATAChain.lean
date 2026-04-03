@@ -52,7 +52,7 @@ Proton, Neutron, Deuteron, Binding Energy matching CODATA
 -/
 
 
-open QOU.Torsion QOU.MassDerivation QOU.KnotRegistry QOU.KnotTheory
+open QOU.Torsion QOU.MassDerivation QOU.KnotRegistry
 open QOU.Calculations QOU.HadronicMass
 
 namespace QOU.CODATAChain
