@@ -213,7 +213,7 @@ For $p \neq n$, the histogram is **not** palindromic.
 **(ii) Dominant term jump.**  The dominant coefficient
 $|c_w|$ jumps discontinuously at shell closures:
 
-| $A$ | $(p,n)$ | Dominant $|c_w|$ | Ratio to $A-1$ |
+| $A$ | $(p,n)$ | Dominant $\lvert c_w\rvert$ | Ratio to $A-1$ |
 |:---:|:-------:|:----------------:|:--------------:|
 | $3$ | $(2,1)$ | $1.246$ | — |
 | $4$ | $(2,2)$ | $1.946$ | $\times 1.56$ $\star$ |

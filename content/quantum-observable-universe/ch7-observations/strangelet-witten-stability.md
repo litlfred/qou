@@ -41,7 +41,7 @@ each hadronic link into a sum of unknots and Hopf links weighted
 by Skein polynomial coefficients.  These coefficients depend on
 the Jones polynomial of each constituent.  At $q = q_0$:
 
-| Quark | Knot | Jones polynomial | $|J(q_0)|$ |
+| Quark | Knot | Jones polynomial | $\lvert J(q_0)\rvert$ |
 |-------|------|-----------------|:-------------:|
 | Up $\mathfrak{u}$ | $T_{2,3}$ | $-q^{-4} + q^{-3} + q^{-1}$ | $0.973$ |
 | Down $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $-q^{4} + q^{3} + q$ | $0.960$ |
@@ -75,7 +75,7 @@ strange matter is **decisively not** the ground state.
 |-------------|-----------|----------------|-----------|
 | Strong binding (crossing) | $8 q^{-1}$ | $6 q^{-1}$ | SQM by $4/3$ |
 | Coulomb correction | $0$ | $Q \cdot (q - q^{-1})$ | SQM (no EM drag) |
-| Jones polynomial cost | $|J_{\mathfrak{s}}| = 1.176$ | $|J_{\mathfrak{d}}| = 0.960$ | Ordinary ($22\%$ lighter) |
+| Jones polynomial cost | $\lvert J_{\mathfrak{s}}\rvert = 1.176$ | $\lvert J_{\mathfrak{d}}\rvert = 0.960$ | Ordinary ($22\%$ lighter) |
 | Borromean volume | $V_B = 7.328$ (same) | $V_B = 7.328$ (same) | Tie |
 
 **Where strangelets DO exist: neutron star cores.**
@@ -122,7 +122,7 @@ cost).  This constrains the $q$ range:
 | Regime | $q$ range | Strangelets? | Why |
 |--------|-----------|:------------|-----|
 | Deconfined | $q < q_{\mathrm{gold}} \approx 0.382$ | **No** | No hadrons at all — elliptic fiber degenerate, $S_5$ broken, quarks free |
-| Sub-classical | $q_{\mathrm{gold}} < q < 1$ | **No** | Hadrons exist but $|J_{\mathfrak{s}}|/|J_{\mathfrak{d}}|$ diverges as $q \to q_{\mathrm{gold}}$ — strange quarks become infinitely expensive near the degeneration |
+| Sub-classical | $q_{\mathrm{gold}} < q < 1$ | **No** | Hadrons exist but $\lvert J_{\mathfrak{s}}\rvert/\lvert J_{\mathfrak{d}}\rvert$ diverges as $q \to q_{\mathrm{gold}}$ — strange quarks become infinitely expensive near the degeneration |
 | Classical limit | $q = 1$ | **Trivial** | All Jones polynomials evaluate to $1$; no mass differences, no flavor physics |
 | Physical | $q > 1$ (ours: $q_0$) | **Yes, at high density** | Jones polynomial cost finite; Fermi energy can overcome it at $\rho \gtrsim 2\rho_0$ |
 

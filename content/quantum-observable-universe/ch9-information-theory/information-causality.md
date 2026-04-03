@@ -96,6 +96,6 @@ $$
 |----------|-----------------|-------------------------------|-----|
 | $c$ | Postulated constant | Emergent (various) | $c_q = 1/(q-1)$: spatial/temporal coupling ratio |
 | $E = mc^2$ | Lorentz invariance | Lloyd: computational bound | $E = m/(q-1)^2$: ribbon trace $\times$ info speed${}^2$ |
-| Causal structure | Light-cone axiom | Jacobson: entropy $\Rightarrow$ Einstein eqs | $|Z| = c_q$ cone from $q$-connection |
+| Causal structure | Light-cone axiom | Jacobson: entropy $\Rightarrow$ Einstein eqs | $\lvert Z\rvert = c_q$ cone from $q$-connection |
 | Bekenstein bound | Semiclassical gravity | Holographic principle | Fibre entropy $\leq \eta_q$ per operation |
 | Margolus--Levitin | Energy--time uncertainty | Quantum speed limit | Saturated: $n_R(q) \sim mc_q^2/\hbar_q$ |

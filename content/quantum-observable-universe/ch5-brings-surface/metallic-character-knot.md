@@ -57,13 +57,13 @@ The number of electrons in the residual sub-link $|R|$ and
 the next shell capacity $2n_{k+1}^2$ determine the
 metallic properties:
 
-| $|R|$ vs. capacity | Character | Examples |
+| $\lvert R\rvert$ vs. capacity | Character | Examples |
 |--------------------:|-----------|----------|
-| $|R| = 1$ | Strong metal (alkalis) | Li, Na, K |
-| $|R| = 2$ | Strong metal (alkaline earths) | Mg, Ca, Sr |
-| $|R| \approx \tfrac{1}{2} \cdot 2n^2$ | Transition metal | Fe, Cu, Ni |
-| $|R| = 2n^2 - 1$ | Weak nonmetal (halogens) | F, Cl, Br |
-| $|R| = 2n^2$ | Noble gas (no residual) | He, Ne, Ar |
+| $\lvert R\rvert = 1$ | Strong metal (alkalis) | Li, Na, K |
+| $\lvert R\rvert = 2$ | Strong metal (alkaline earths) | Mg, Ca, Sr |
+| $\lvert R\rvert \approx \tfrac{1}{2} \cdot 2n^2$ | Transition metal | Fe, Cu, Ni |
+| $\lvert R\rvert = 2n^2 - 1$ | Weak nonmetal (halogens) | F, Cl, Br |
+| $\lvert R\rvert = 2n^2$ | Noble gas (no residual) | He, Ne, Ar |
 
 **Alkali metals** ($|R| = 1$) have a single trefoil in the
 residual — one loose curl.  The crossing energy to detach it

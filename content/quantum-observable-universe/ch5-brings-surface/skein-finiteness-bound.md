@@ -24,7 +24,7 @@ $$
 which are **real and opposite in sign** (since $\det T < 0$ for
 all three crossing types):
 
-| Crossing type | $\lambda_+$ | $\lambda_-$ | $|\lambda_+/\lambda_-|$ |
+| Crossing type | $\lambda_+$ | $\lambda_-$ | $\lvert\lambda_+/\lambda_-\rvert$ |
 |:---:|:---:|:---:|:---:|
 | pp | $q$ | $-q^{-1}$ | $q^2$ |
 | nn | $q^3$ | $-q^{-1}$ | $q^4$ |
@@ -142,7 +142,7 @@ while the dominant contribution (without cross-term cancellation)
 scales as $q^{\binom{A}{2}} \cdot z^{A-1}$.  The cancellation
 ratio $1 - |P|/\Sigma|c_w|$ measures destructive interference:
 
-| $A$ | $|P|$ | $\Sigma|c_w|$ | Cancellation |
+| $A$ | $\lvert P\rvert$ | $\Sigma\lvert c_w\rvert$ | Cancellation |
 |:---:|:-----:|:-------------:|:------------:|
 | $1$ | $1.000$ | $1.00$ | $0\%$ |
 | $3$ | $0.601$ | $1.52$ | $60\%$ |

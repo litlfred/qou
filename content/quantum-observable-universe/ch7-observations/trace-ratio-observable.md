@@ -65,7 +65,7 @@ where $\mathrm{skein\_amp} = q^{1/2} - q^{-1/2}$.  $\square$
 The trace ratio $\hat{V}^{\mathrm{par}} / \hat{V}^{\mathrm{dau}}$
 at each affected generator, for all six verification nuclei:
 
-| Nucleus | Affected gens | $\prod |\hat{V}^{\mathrm{par}}/\hat{V}^{\mathrm{dau}}|$ | $|\mathcal{M}_q|^2$ rel. |
+| Nucleus | Affected gens | $\prod \lvert\hat{V}^{\mathrm{par}}/\hat{V}^{\mathrm{dau}}\rvert$ | $\lvert\mathcal{M}_q\rvert^2$ rel. |
 |---------|:---:|---:|---:|
 | ${}^{3}\mathrm{H}$ | $\sigma_0, \sigma_1$ | $1.09$ | $1.00$ (ref) |
 | ${}^{14}\mathrm{C}$ | $\sigma_0$--$\sigma_6$ | $1.72$ | $2.47$ |

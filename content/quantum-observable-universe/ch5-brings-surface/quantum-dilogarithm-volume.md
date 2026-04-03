@@ -9,7 +9,7 @@ $A$.  The **physical energy** is not the product itself but its
 | Volume | Formula | Scaling | Used for |
 |--------|---------|---------|----------|
 | Hyperbolic | $\text{Vol}(S^3 \setminus K)$ | $O(1)$ per knot | Single-particle mass |
-| Hecke weight | $\sum \|c_w\| \cdot \ell(w)$ | $O(e^A)$ | Gröbner energy (algebraic) |
+| Hecke weight | $\sum \lVert c_w\rVert \cdot \ell(w)$ | $O(e^A)$ | Gröbner energy (algebraic) |
 | Quantum dilogarithm | $\Phi_q(z) = \sum_i \log \hat{V}_i$ | $O(A)$ | **Nuclear binding energy** |
 
 The hyperbolic volume is the classical ($q \to 1$) limit of

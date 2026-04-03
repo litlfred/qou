@@ -27,8 +27,8 @@ vanishing of $A_0$.  The difference is contextual:
 
 | Concept | Algebraic condition | Role |
 |:--------|:---:|:---|
-| Jet horizon | $A_0|_{\mathcal{H}} = 0$ | Boundary within an affine chart |
-| Big bang state | $A_0|_{\mathcal{S}_0} = 0$ | Reference configuration of an affine chart |
+| Jet horizon | $A_0\vert_{\mathcal{H}} = 0$ | Boundary within an affine chart |
+| Big bang state | $A_0\vert_{\mathcal{S}_0} = 0$ | Reference configuration of an affine chart |
 
 A jet horizon is a **boundary**; a big bang state is an
 **initial condition**.  The same vanishing ideal $\mathfrak{h}$
