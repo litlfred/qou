@@ -22,8 +22,8 @@ namespace QOU
 
 /-- A vertex operator on the exceptional divisor 𝒮_p.
     Given a state a ∈ V_n (level n of the brane tower), the vertex
-    operator Y(a, z) is a formal Laurent series in the coordinate z
-    on 𝒮_p whose modes are R-matrix insertions. -/
+    operator Y(a, z) is a formal Laurent series in the affine
+    coordinate z = v₁/v₂ on 𝒮_p whose modes are R-matrix insertions. -/
 structure VertexOperator (q : ℝ) where
   /-- The Reeb bundle (base space for the insertion) -/
   bundle : ReebBundle q

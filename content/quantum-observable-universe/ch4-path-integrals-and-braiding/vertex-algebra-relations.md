@@ -379,7 +379,7 @@ and is gauge-invariant, fixing the $q$-deformed volume element.
 
 ---
 
-## Cohomological Constraints in Knot Variables
+## Cohomological Constraints in Knot Coordinates
 
 The QU/QUO axioms imply a suite of cohomological constraints.
 Each translates into a relation on braid words, Hecke generators,
@@ -389,7 +389,7 @@ and the Markov trace.
 
 The de Rham differential $d\colon \Omega^k(A) \to \Omega^{k+1}(A)$
 acts on modes via $d(a_m\, z^{-m-1}\, dz) = a_{m-1}\, z^{-m}\, dz$.
-In knot variables, the nilpotence $d^2 = 0$ on the horizontal
+In knot coordinates, the nilpotence $d^2 = 0$ on the horizontal
 subcomplex $\Omega_H^k(A)$ reads:
 
 $$
@@ -422,7 +422,7 @@ $$
   q^{-1}(1 - q^{-1})\;\omega_V \wedge_q [\xi,\, \alpha].
 $$
 
-In knot variables, the weight operator $\xi$ acts on modes as the
+In knot coordinates, the weight operator $\xi$ acts on modes as the
 writhe grading:
 
 $$
@@ -455,7 +455,7 @@ curvature.
 The categorical Hodge star
 ([categorical Hodge star](#def:categorical-hodge-star))
 $\star\colon \Omega^k(A) \to \Omega^{n-k}(A)$ satisfies
-$\star^2 = \mathrm{id}$.  In knot variables, $\star$ acts on
+$\star^2 = \mathrm{id}$.  In knot coordinates, $\star$ acts on
 modes via the antipode:
 
 $$
@@ -649,7 +649,7 @@ is flat.  For the fundamental representation, $c_2(A)$ is the
 
 The $q$-Laplacian $\Delta_q = d_q\, \delta_q + \delta_q\, d_q$
 ([Hodge--Laplacian](#rem:hodge-laplacian-relation)) is
-self-adjoint.  In knot variables:
+self-adjoint.  In knot coordinates:
 
 $$
   \Delta_q
@@ -685,7 +685,7 @@ knot-particles at each brane level.
 
 The cohomology of the moduli surface $\Sigma_g$
 ([cohomological embedding](#prop:cohomological-embedding))
-admits a knot basis.  In knot variables, each cohomology
+admits a knot basis.  In knot coordinates, each cohomology
 generator is a specific Hecke word:
 
 $$
@@ -800,6 +800,6 @@ These **26 relations** (14 structural + 12 cohomological),
 together with the Hecke--Skein dictionary
 $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$,
 $1 \leftrightarrow L_0$, constitute a complete presentation of
-the QOU vertex algebra in formal knot coordinates — encoding
+the QOU vertex algebra in knot coordinates — encoding
 both algebraic structure and cohomological topology in the
 single language of braid words and the Markov trace.

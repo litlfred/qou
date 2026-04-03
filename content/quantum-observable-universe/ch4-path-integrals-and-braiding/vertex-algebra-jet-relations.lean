@@ -55,7 +55,7 @@ theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
 
 /-- J-3c: The Markov trace is level-independent on descended elements.
     tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w) for all w ∈ H^{(n)}(q).
-    This is the knot-variable form of Euler characteristic stability:
+    This is the knot-coordinate form of Euler characteristic stability:
     the Jones polynomial of a knot does not depend on brane level. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
