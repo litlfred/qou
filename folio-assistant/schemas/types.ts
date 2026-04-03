@@ -85,12 +85,16 @@
  * | `theorem` etc.      | Full markdown (statement body)                    |
  * | `proof`             | Full markdown (proof body)                        |
  * | `equation`          | TeX math ONLY — no lists, no bold, no prose       |
- * | `diagram`           | Raw TeX ONLY (tikzcd, figure, etc.)              |
+ * | `diagram`           | Fenced TeX (```tex) + optional prose / inline math |
  *
- * **Critical**: For `equation` and `diagram` blocks, the pipeline uses
+ * **Critical**: For `equation` blocks, the pipeline uses
  * `extractMathContent()` (not `markdownToLatex()`) to prevent list
  * environments from appearing inside math mode. Authors should put
- * pure TeX in these .md files, not markdown prose.
+ * pure TeX in equation .md files, not markdown prose.
+ *
+ * `diagram` blocks use `markdownToLatex()` so that surrounding prose
+ * and inline math (e.g. `$\mathrm{SU}(2)$`) render correctly.
+ * All TeX environments (tikzcd, etc.) must be in fenced ```tex blocks.
  *
  * ### Validation pipeline
  *
