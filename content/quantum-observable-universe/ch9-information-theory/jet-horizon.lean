@@ -83,6 +83,21 @@ structure CMBBoundaryDatum where
 -- Ref: [manuscript] §9/cmb-boundary-datum
 sorry
 
+/-- The observable subcategory Bun°(P(V)): the full subcategory
+    of Bun(P(V)) on objects where A_0 ≠ 0.  This is where the
+    full observational apparatus (Frobenius pairing on A_0) is
+    well-defined.  Its connected components are the aeons. -/
+structure ObservableSubcategory where
+  /-- Index type for all observable bundle configurations. -/
+  objects : Type*
+  /-- All objects have non-trivial degree-0 algebra. -/
+  degree_zero_nontrivial : ∀ (x : objects), Prop  -- Γ(S_x, A_0) ≠ 0
+  /-- Morphisms: permutation-isotopy pairs (inherited from Bun). -/
+  -- In full formalization: CategoryStruct on objects
+
+-- Ref: [manuscript] §9/observable-subcategory
+sorry
+
 /-- An aeon: a connected component of the observable subcategory
     Bun°(P(V)) — the full subcategory of Bun(P(V)) on objects where
     A_0 ≠ 0.
@@ -120,21 +135,41 @@ sorry
 def Aeon.adjacent (a₁ a₂ : Aeon) : Prop :=
   ∃ (h : JetHorizon), h ∈ a₁.boundary ∧ h ∈ a₂.boundary
 
-/-- **Conjecture (aeon boundary generates chart).**
+/-- The horizon functor ∂: sends each aeon (connected component
+    of Bun°) to its boundary (jet horizons where A_0 = 0). -/
+-- Ref: [manuscript] §9/horizon-functor
+def horizonFunctor (a : Aeon) : List JetHorizon := a.boundary
 
-    If two aeons are adjacent and the degree-1 boundary data
-    satisfies the integrability condition of ∇_q, then the
-    forward light cone of the boundary datum defines a new
-    affine chart with the degree ≥ 1 data as its reference
-    configuration. -/
+/-- The CMB functor: composition of the horizon functor with
+    the colimit of (A_1/A_0 ⊕ A_2/A_0) over the boundary.
+    Sends each aeon to the degree ≥ 1 jet data surviving its
+    terminal horizon. -/
+-- Ref: [manuscript] §9/cmb-functor
+structure CMBFunctorValue where
+  /-- The source aeon. -/
+  source : Aeon
+  /-- Degree-1 colimit data (winding modes) over the boundary. -/
+  degree_one_colimit : Prop  -- In full formalization: colim Γ(∂A, A_1/A_0)
+  /-- Degree-2 colimit data (curvature modes) over the boundary. -/
+  degree_two_colimit : Prop  -- In full formalization: colim Γ(∂A, A_2/A_0)
+
+-- Ref: [manuscript] §9/cmb-functor
+sorry
+
+/-- **Conjecture (aeon recycling).**
+
+    The composition Φ_1^q ∘ CMB — applying the first Planck step
+    to the CMB of an aeon — lands back in Bun°.  If this holds for
+    all aeons, it extends to a recycling functor
+    R : π_0(Bun°) → π_0(Bun°) sending each aeon to its successor.
+
+    A fixed point of R would be a self-recycling aeon. -/
 -- Ref: [manuscript] §9/aeon-boundary-generates-chart
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
-axiom aeon_boundary_generates_chart
-    (a₁ a₂ : Aeon)
-    (hadj : a₁.adjacent a₂)
-    (integrable : Prop)  -- integrability of ∇_q on A_1/A_0
-    : -- The boundary datum seeds a new affine chart
-      -- with non-trivial degree-0 data at the first step.
+axiom aeon_recycling
+    (cmb : CMBFunctorValue)
+    (integrable : Prop)  -- integrability of ∇_q on the degree-1 component
+    : -- Φ_1^q(CMB(A)) has A_0 ≠ 0, i.e. lands in Bun°.
       Prop
 
 /-- **Conformal invariance at the jet horizon.**

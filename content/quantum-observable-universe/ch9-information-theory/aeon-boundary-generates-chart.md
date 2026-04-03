@@ -1,44 +1,65 @@
-**Conjecture.**
-*Let $\mathcal{A} = (a, b)$ and $\mathcal{A}' = (b, c)$ be
-adjacent aeons ([aeon](#def:aeon)) sharing a boundary at
-$\mathcal{S}_b$, and let $\partial\mathcal{A}|_b$ be the
-boundary datum (degree $\geq 1$ jet data surviving the
-horizon).*
+**Conjecture (Aeon recycling).**
+*Let $\mathrm{CMB}$ be the CMB functor
+([CMB functor](#def:cmb-functor)),
+let $\Phi_1^q$ denote the first Planck step of the torsion flow
+([torsion-driven knot flow](#def:torsion-knot-flow)),
+and let $\nabla_q$ be the $q$-connection.*
 
-*If the degree-$1$ data
-$\Gamma(U, A_1/A_0)|_{\mathcal{S}_b}$ satisfies the
-integrability condition of the $q$-connection
-$\nabla_q$, then:*
+*If the degree-$1$ component of $\mathrm{CMB}(\mathcal{A})$
+satisfies the integrability condition of $\nabla_q$, then the
+composition*
 
-1. *The forward light cone of $\partial\mathcal{A}|_b$
-   defines a new affine chart $U'$ with reference
-   configuration*
+$$
+  \Phi_1^q \circ \mathrm{CMB}
+  \;\colon\;
+  \pi_0\!\bigl(\mathrm{Bun}^{\circ}\bigr)
+  \;\longrightarrow\;
+  \mathrm{Bun}^{\circ}(\mathbb{P}(V))
+$$
 
-   $$
-     \mathcal{S}_0'
-     \;=\;
-     \bigl(\,A_1/A_0\,\bigr)\big|_{\mathcal{S}_b}
-   $$
+*is well-defined — i.e.\ the first Planck step applied to
+the CMB of an aeon produces an object with $A_0 \neq 0$,
+landing back inside $\mathrm{Bun}^{\circ}$.*
 
-   *as its bundle initial condition.*
+**What the conjecture says.**
 
-2. *The first Planck step in $U'$ regenerates non-trivial
-   degree-$0$ data: $\Gamma(U', A_0|_{\mathcal{S}_1'}) \neq 0$.*
+1. **The CMB regenerates particles.**  The degree-$1$ transport
+   data (winding modes) in $\mathrm{CMB}(\mathcal{A})$, when
+   iterated once by the Reeb flow $f_q$, produces non-trivial
+   degree-$0$ fibre data.  This is the "condensation" of
+   thermal radiation into particle states.
 
-3. *The aeon $\mathcal{A}'$ is the maximal interval of
-   non-trivial degree-$0$ sections in $U'$.*
+2. **The recycling map lands in a new aeon.**  The output
+   $\Phi_1^q(\mathrm{CMB}(\mathcal{A}))$ lies in
+   $\mathrm{Bun}^{\circ}$, hence in some connected component
+   — a (possibly new) aeon $\mathcal{A}'$.
 
-**Motivation.**
-The conjecture asserts that aeon boundaries are
-**generative**: the thermal remnant (degree $\geq 1$ jet data)
-left by one aeon is sufficient to seed the next.  The
-integrability condition on $\nabla_q$ is the requirement that
-the linear transport data is compatible with the Reeb flow —
-it can be iterated forward to produce a new brane tower.
+3. **Adjacent aeons are connected by the recycling map.**
+   If $\mathcal{A}$ and $\mathcal{A}'$ are adjacent
+   ([aeon](#def:aeon)), then
+   $\Phi_1^q(\mathrm{CMB}(\mathcal{A})) \in \mathcal{A}'$.
 
-If the conjecture holds, then the sequence of aeons
-$\ldots, \mathcal{A}_{-1}, \mathcal{A}_0, \mathcal{A}_1, \ldots$
-is a **chain** in which each aeon inherits its initial data
-from the terminal horizon of its predecessor.  The chain may
-extend infinitely in both directions, or terminate at an aeon
-that is past-complete or future-complete.
+**The integrability condition.**
+The $q$-connection $\nabla_q$ defines parallel transport
+along the Reeb flow.  The integrability condition is
+$\nabla_q^2 = F_{\nabla_q}$ — the curvature of the
+connection controls whether degree-$1$ data can be iterated
+coherently.  When $F_{\nabla_q}$ is compatible with the
+degree-$2$ component of the CMB, the transport data fits
+together globally and the recycling map is well-defined.
+
+**Categorical formulation.**
+If the conjecture holds for all aeons, then
+$\Phi_1^q \circ \mathrm{CMB}$ extends to a functor
+
+$$
+  \mathcal{R}
+  \;\colon\;
+  \pi_0(\mathrm{Bun}^{\circ})
+  \;\longrightarrow\;
+  \pi_0(\mathrm{Bun}^{\circ})
+$$
+
+— the **recycling functor** — that sends each aeon to its
+successor.  A fixed point of $\mathcal{R}$ would be a
+self-recycling aeon: one whose CMB regenerates itself.

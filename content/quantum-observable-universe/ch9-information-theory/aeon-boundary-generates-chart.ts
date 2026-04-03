@@ -2,19 +2,19 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:aeon-boundary-generates-chart",
-  title: "Aeon boundary generates an affine chart",
+  title: "Aeon recycling: $\\Phi_1^q \\circ \\mathrm{CMB}$ lands in $\\mathrm{Bun}^{\\circ}$",
   tags: [
-    "aeon", "jet-horizon", "affine-chart",
-    "integrability", "light-cone",
+    "aeon", "recycling-functor", "cmb-functor",
+    "integrability", "torsion-flow",
   ],
   lean: {
     decl: "QOU.aeon_boundary_generates_chart",
     validation: "not_checked",
   },
   uses: [
+    "def:cmb-functor",
+    "def:observable-subcategory",
     "def:aeon",
-    "def:jet-horizon",
-    "def:big-bang-state",
-    "def:bundle-initial-conditions",
+    "def:torsion-knot-flow",
   ],
 });
