@@ -176,7 +176,7 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- r = vol/ratio = (1 - 1/q)²
   set r := vol_figure_eight / experimental_mu_e_ratio
   have hr_pos : r > 0 := by
-    unfold_let r
+    show vol_figure_eight / experimental_mu_e_ratio > 0
     apply div_pos
     · unfold vol_figure_eight; positivity
     · unfold experimental_mu_e_ratio; positivity
@@ -193,14 +193,16 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- Now sandwich √r between 99/1000 and 996/10000
   have hv_lb : (99 : ℝ) / 1000 < Real.sqrt r := by
     have hsq_lb : ((99 : ℝ) / 1000) ^ 2 < r := by
-      unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num
+      show _ < vol_figure_eight / experimental_mu_e_ratio
+      unfold vol_figure_eight experimental_mu_e_ratio; norm_num
     calc (99 : ℝ) / 1000
         = Real.sqrt (((99 : ℝ) / 1000) ^ 2) :=
           (Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 99 / 1000)).symm
       _ < Real.sqrt r := Real.sqrt_lt_sqrt (by positivity) hsq_lb
   have hv_ub : Real.sqrt r < (996 : ℝ) / 10000 := by
     have hsq_ub : r < ((996 : ℝ) / 10000) ^ 2 := by
-      unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num
+      show vol_figure_eight / experimental_mu_e_ratio < _
+      unfold vol_figure_eight experimental_mu_e_ratio; norm_num
     calc Real.sqrt r
         < Real.sqrt (((996 : ℝ) / 10000) ^ 2) :=
           Real.sqrt_lt_sqrt (le_of_lt hr_pos) hsq_ub
