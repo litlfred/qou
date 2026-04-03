@@ -18,7 +18,7 @@ export default simulator({
     "prop:skein-polynomial-transfer-matrix",
     "prop:skein-coulomb-enhancement",
     "rem:hadron-half-life-regimes",
-    "def:shell-construction-rules",
+    "cor:spectral-decomposition-qvalue",
     "def:transfer-matrix-operator",
     "ex:hadron-half-life-verification",
   ],

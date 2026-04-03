@@ -88,7 +88,7 @@ input[type=radio],input[type=checkbox]{margin-right:4px;cursor:pointer;}
   </div>
   <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
     <div class="panel-title">Options</div>
-    <div style="margin:4px 0;"><label><input type="checkbox" id="cb-shell"> Shell correction</label></div>
+    <div style="margin:4px 0;"><label><input type="checkbox" id="cb-shell" checked> Knot operator F(T<sub>k*</sub>)</label></div>
   </div>
 </div>
 <canvas id="cv"></canvas>
@@ -174,51 +174,42 @@ function skeinPoly(Z, N, q) {
   return {logP, volumes, sign: signCount % 2 === 0 ? 1 : -1};
 }
 
-// ── Shell correction (shell-construction-rules.md) ──────────────
-function mLeq(X) {
-  let best = 0;
-  for (const m of MAGIC) if (m <= X) best = m;
-  return best;
-}
-function mLess(X) {
-  let best = 0;
-  for (const m of MAGIC) if (m < X) best = m;
-  return best;
-}
-function nOut(X) { return X - mLeq(X); }
-function nShell(X) { return mLeq(X) - mLess(X); }
+// ── Knot operator correction (spectral-decomposition-qvalue) ────
+// Shell table: [start, end, size, degree]
+// degree 1 → F = 1 (bare coefficients already capture it)
+// degree 2, partial → F = 0.5949 (Schur-Weyl irrep average)
+// degree 2, full (N at magic) → F = 0.5949 × 0.6382 = 0.3797
+const SHELLS = [
+  [0,   2,  2,  1],  // Shell 1: T₂,₃
+  [2,   8,  6,  1],  // Shell 2: T₂,₅
+  [8,  20, 12,  1],  // Shell 3: T₂,₇
+  [20, 28,  8,  1],  // Shell 4: T₃,₅
+  [28, 50, 22,  2],  // Shell 5: T₂,₉
+  [50, 82, 32,  2],  // Shell 6: T₃,₄
+  [82,126, 44,  2],  // Shell 7: T₂,₉
+];
+const F_DEG2_PARTIAL = 0.5949;
+const F_DEG2_FULL = 0.3797;
 
-function torusKnotTrace(n, q) {
-  if (n <= 0) return 1;
-  const ha = q - 1/q;
-  const z = 1 / (Math.sqrt(q) + 1/Math.sqrt(q));
-  let cp = 0, dp = 1; // sigma^0
-  let cc = 1, dc2 = 0; // sigma^1
-  for (let k = 1; k < n; k++) {
-    const cn = ha * cc + cp;
-    const dn = ha * dc2 + dp;
-    cp = cc; dp = dc2;
-    cc = cn; dc2 = dn;
+function getShellDegree(X) {
+  for (const [start, end, , deg] of SHELLS) {
+    if (X > start && X <= end) return deg;
   }
-  return z * cc + dc2;
+  return X > 126 ? 2 : 1;
 }
 
-function shellCorrection(Z, N, q) {
-  const lq = Math.log(q);
-  const np_par = nOut(Z);
-  const nn_par = nOut(N);
-  const np_dau = nOut(Z+1);
-  const nn_dau = nOut(N-1);
+function isMagic(X) { return MAGIC.indexOf(X) >= 0; }
 
-  const tp_par = np_par===0 ? torusKnotTrace(nShell(Z), q) : torusKnotTrace(np_par, q);
-  const tn_par = nn_par===0 ? torusKnotTrace(nShell(N), q) : torusKnotTrace(nn_par, q);
-  const tp_dau = np_dau===0 ? torusKnotTrace(nShell(Z+1), q) : torusKnotTrace(np_dau, q);
-  const tn_dau = nn_dau===0 ? torusKnotTrace(nShell(N-1), q) : torusKnotTrace(nn_dau, q);
-
-  const delta_shell = (Math.log(Math.abs(tp_dau))/lq - Math.log(Math.abs(tp_par))/lq)
-                    + (Math.log(Math.abs(tn_dau))/lq - Math.log(Math.abs(tn_par))/lq);
-  const delta_T35 = -3.370;
-  return {delta_shell, delta_T35};
+function knotOperatorF(N_converting) {
+  // The converting neutron's shell determines the correction.
+  // degree-1 shells: F = 1 (already in bare Q)
+  // degree-2 shells, partial occupancy: F = 0.5949
+  // degree-2 shells, fully occupied (N at magic): F = 0.3797
+  const deg = getShellDegree(N_converting);
+  if (deg === 1) return {F: 1, label: 'deg-1', deg: 1};
+  if (isMagic(N_converting))
+    return {F: F_DEG2_FULL, label: 'deg-2 full', deg: 2};
+  return {F: F_DEG2_PARTIAL, label: 'deg-2 partial', deg: 2};
 }
 
 // ── Phase space integral with Coulomb ───────────────────────────
@@ -241,7 +232,7 @@ function phaseSpace(Z_d, Q_MeV, q) {
 }
 
 // ── Half-life computation ───────────────────────────────────────
-function computeHalfLife(Z, N, q, useQexp, useShell) {
+function computeHalfLife(Z, N, q, useQexp, useKnotOp) {
   const dc = derivedConsts(q);
   const A = Z + N;
   const Z_d = Z + 1;
@@ -251,18 +242,13 @@ function computeHalfLife(Z, N, q, useQexp, useShell) {
   const dau = skeinPoly(Z+1, N-1, q);
   const lnRatio = dau.logP - par.logP;
 
-  // Q-value
-  let Q_bare = Math.abs(lnRatio) * dc.E_cross * dc.mu_0;
-  let Q_shell = Q_bare;
-  let sc = {delta_shell:0, delta_T35:0};
+  // Q_bare = |ln(P_dau/P_par)| × E_× × μ₀
+  const Q_bare = Math.abs(lnRatio) * dc.E_cross * dc.mu_0;
 
-  if (useShell) {
-    sc = shellCorrection(Z, N, q);
-    const lq = Math.log(q);
-    const R_bare = lnRatio / lq; // log_q ratio
-    Q_shell = Math.abs(R_bare + sc.delta_shell + sc.delta_T35)
-              * dc.hbar_q * dc.E_cross * dc.mu_0;
-  }
+  // Knot operator correction: Q_corrected = Q_bare × F(T_k*, N)
+  // The converting neutron is at position N; its shell determines F.
+  const kop = knotOperatorF(N);
+  const Q_knot = Q_bare * kop.F;
 
   // Which Q to use for half-life
   let Q_use;
@@ -272,7 +258,7 @@ function computeHalfLife(Z, N, q, useQexp, useShell) {
     Q_exp = NUCLEI[nucIdx].Q_exp;
     Q_use = Q_exp;
   } else {
-    Q_use = useShell ? Q_shell : Q_bare;
+    Q_use = useKnotOp ? Q_knot : Q_bare;
   }
 
   // Phase space
@@ -289,8 +275,8 @@ function computeHalfLife(Z, N, q, useQexp, useShell) {
   const sens = (q*q-1)/(q*q+1) + 5*(q*q+1)/(q*q-1);
 
   return {
-    par, dau, lnRatio, Q_bare, Q_shell, Q_use, Q_exp,
-    f_val, Gamma, t_half_s, dc, sc, sens, Z_d, A
+    par, dau, lnRatio, Q_bare, Q_knot, Q_use, Q_exp, kop,
+    f_val, Gamma, t_half_s, dc, sens, Z_d, A
   };
 }
 
@@ -323,7 +309,7 @@ function getState() {
   document.getElementById('v-q').textContent = q.toFixed(3);
   const selVal = document.getElementById('sel-nuc').value;
   const useQexp = document.querySelector('input[name=mode]:checked').value === 'from-Qexp';
-  const useShell = document.getElementById('cb-shell').checked;
+  const useKnotOp = document.getElementById('cb-shell').checked;
   let Z, N;
   if (selVal === 'custom') {
     Z = parseInt(document.getElementById('in-Z').value) || 1;
@@ -334,19 +320,19 @@ function getState() {
     Z = nuc.Z; N = nuc.N;
     document.getElementById('custom-div').classList.remove('show');
   }
-  return {q, Z, N, useQexp, useShell};
+  return {q, Z, N, useQexp, useKnotOp};
 }
 
 // ── Draw ────────────────────────────────────────────────────────
 let sweepCache = null;
 
-function computeSweep(Z, N, useQexp, useShell) {
+function computeSweep(Z, N, useQexp, useKnotOp) {
   const A = Z + N;
   const nPts = A > 30 ? 60 : 150;
   const pts = [];
   for (let i = 0; i < nPts; i++) {
     const q = 1.005 + (2.0 - 1.005) * i / (nPts - 1);
-    const r = computeHalfLife(Z, N, q, useQexp, useShell);
+    const r = computeHalfLife(Z, N, q, useQexp, useKnotOp);
     if (r.t_half_s > 0 && isFinite(r.t_half_s)) {
       pts.push({q, logT: Math.log10(r.t_half_s)});
     }
@@ -355,13 +341,13 @@ function computeSweep(Z, N, useQexp, useShell) {
 }
 
 function draw() {
-  const {q, Z, N, useQexp, useShell} = getState();
-  const r = computeHalfLife(Z, N, q, useQexp, useShell);
+  const {q, Z, N, useQexp, useKnotOp} = getState();
+  const r = computeHalfLife(Z, N, q, useQexp, useKnotOp);
 
   // Sweep (cached by Z,N,mode)
-  const key = `${Z},${N},${useQexp},${useShell}`;
+  const key = `${Z},${N},${useQexp},${useKnotOp}`;
   if (!sweepCache || sweepCache.key !== key) {
-    sweepCache = {key, pts: computeSweep(Z, N, useQexp, useShell)};
+    sweepCache = {key, pts: computeSweep(Z, N, useQexp, useKnotOp)};
   }
   const pts = sweepCache.pts;
 
@@ -495,9 +481,9 @@ function updateResults(r, Z, N, nucIdx) {
   rows += a('ln(P_d/P_p)', r.lnRatio.toFixed(6), '');
   rows += a('Q_bare', sci(r.Q_bare), 'MeV');
   if (document.getElementById('cb-shell').checked) {
-    rows += a('\u0394_shell', r.sc.delta_shell.toFixed(3), 'log_q');
-    rows += a('\u0394_T35', r.sc.delta_T35.toFixed(3), 'log_q');
-    rows += a('Q_shell', sci(r.Q_shell), 'MeV');
+    rows += a('T_k* shell', r.kop.label, 'deg ' + r.kop.deg);
+    rows += a('F(T_k*, N)', r.kop.F.toFixed(4), r.kop.F < 1 ? 'suppressed' : 'unity');
+    rows += a('Q_knot', sci(r.Q_knot), 'MeV');
   }
   if (r.Q_exp !== null) rows += a('Q_exp', sci(r.Q_exp), 'MeV');
   rows += a('Q_used', sci(r.Q_use), 'MeV');
