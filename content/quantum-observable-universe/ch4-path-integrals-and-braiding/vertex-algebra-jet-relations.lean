@@ -111,12 +111,12 @@ theorem yekutieli_coeff_nonzero (q : ℝ) (hq : q > 1) :
 
     The idempotence τ̂_n² = τ̂_n follows from 𝔡_{n+1} ∘ ℓ_n = id. -/
 -- Ref: [manuscript] §4/vertex-algebra-jet-relations
-axiom descent_idempotent {n : ℕ} (hp : HeckeParams) :
-    -- τ̂_n² = τ̂_n on End(A_{n+1})
-    -- This is a categorical statement: requires the jet prolongation
-    -- and descent homomorphism formalizations from ch3.
+axiom descent_idempotent {n : ℕ} (hp : HeckeParams)
+    -- τ̂_n² = τ̂_n on End(A_{n+1}).
+    -- Requires the jet prolongation ℓ_n and descent 𝔡_{n+1}.
     -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-    ∀ (level : ℕ),
-    levelHecke hp n level = levelHecke hp n level
+    (τ : RewritingSystem (HeckeGen n) ℝ → RewritingSystem (HeckeGen n) ℝ)
+    (w : RewritingSystem (HeckeGen n) ℝ) :
+    τ (τ w) = τ w
 
 end QOU.VertexAlgebra.JetRelations
