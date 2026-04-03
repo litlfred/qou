@@ -11,7 +11,7 @@ predicts a stable neutron number $n_{\mathrm{pred}}(p)$ for
 each proton number $p$.  Comparing with the observed most
 stable isotope (AME2020/NUBASE2020) for all $103$ elements:
 
-| Discrepancy $|\Delta n|$ | Elements | Count |
+| Discrepancy $\lvert\Delta n\rvert$ | Elements | Count |
 |:------------------------:|:---------|------:|
 | $0$ | He, C, F, Na, Ti, V, Mn, As, Rb, Ru, In, Sb, Eu, Lu, Ta, W, Re, Pt, ... | 18 |
 | $1$ | H, Li, Be, B, N, O, Ne, Al, P, Ar, Sc, Co, ... | 42 |

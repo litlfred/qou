@@ -90,6 +90,7 @@ const mdParser = remark().use(remarkGfm).use(remarkMath);
  *   | link(url)     | \href{url}{children}                 |
  *   | list(ordered) | \begin{enumerate} \item ...\end{...} |
  *   | list(unord.)  | \begin{itemize} \item ...\end{...}   |
+ *   | table         | \begin{tabular}...\end{tabular}      |
  *   | paragraph     | children + blank line                |
  */
 export function markdownToLatex(md: string): string {
@@ -129,6 +130,86 @@ export function extractMathContent(md: string): string {
   }
 
   return parts.join("\n").trim();
+}
+
+// ── HTML table → LaTeX conversion ────────────────────────────────
+
+/**
+ * Convert an HTML `<table>` to LaTeX `\begin{tabular}`.
+ *
+ * Handles `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`.
+ * Inline math (`$...$`) inside cells is preserved.
+ * The `align` attribute on `<td>`/`<th>` is respected.
+ */
+function htmlTableToLatex(html: string): string {
+  const rowMatches = html.match(/<tr[^>]*>([\s\S]*?)<\/tr>/gi);
+  if (!rowMatches || rowMatches.length === 0) return "";
+
+  const rows: string[][] = [];
+  const isHeaderRow: boolean[] = [];
+  const cellAligns: (string | null)[][] = [];
+
+  for (const rowHtml of rowMatches) {
+    const cellMatches = rowHtml.match(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi);
+    if (!cellMatches) { rows.push([]); isHeaderRow.push(false); cellAligns.push([]); continue; }
+
+    const cells: string[] = [];
+    const aligns: (string | null)[] = [];
+    let hasHeader = false;
+    for (const cellHtml of cellMatches) {
+      if (/^<th/i.test(cellHtml)) hasHeader = true;
+      // Extract align attribute (avoid matching valign)
+      const alignMatch = cellHtml.match(/(?:^|\s)align\s*=\s*"?(\w+)"?/i);
+      aligns.push(alignMatch ? alignMatch[1].toLowerCase() : null);
+      // Extract cell content
+      const content = cellHtml
+        .replace(/<t[hd][^>]*>/i, "")
+        .replace(/<\/t[hd]>/i, "")
+        .trim();
+      // First extract formatting markers, then strip remaining tags,
+      // then escape for LaTeX, then apply LaTeX formatting commands.
+      // This order ensures escaping doesn't corrupt LaTeX commands.
+      const withMarkers = content
+        .replace(/<strong>([\s\S]*?)<\/strong>/gi, "\x01BOLD\x02$1\x01/BOLD\x02")
+        .replace(/<em>([\s\S]*?)<\/em>/gi, "\x01EM\x02$1\x01/EM\x02")
+        .replace(/<code>([\s\S]*?)<\/code>/gi, "\x01TT\x02$1\x01/TT\x02")
+        .replace(/<[^>]*>/g, "");
+      const escaped = escapeLatex(withMarkers)
+        .replace(/\x01BOLD\x02/g, "\\textbf{").replace(/\x01\/BOLD\x02/g, "}")
+        .replace(/\x01EM\x02/g, "\\emph{").replace(/\x01\/EM\x02/g, "}")
+        .replace(/\x01TT\x02/g, "\\texttt{").replace(/\x01\/TT\x02/g, "}");
+      cells.push(escaped);
+    }
+    rows.push(cells);
+    isHeaderRow.push(hasHeader);
+    cellAligns.push(aligns);
+  }
+
+  if (rows.length === 0) return "";
+
+  const colCount = Math.max(...rows.map(r => r.length));
+
+  // Determine column alignment from first row's align attributes
+  const colSpec = Array.from({ length: colCount }, (_, i) => {
+    const align = cellAligns[0]?.[i];
+    if (align === "center") return "c";
+    if (align === "right") return "r";
+    return "l";
+  }).join(" ");
+
+  const lines: string[] = [];
+  lines.push(`\\begin{tabular}{${colSpec}}`);
+  lines.push("\\toprule");
+  for (let r = 0; r < rows.length; r++) {
+    const padded = rows[r].concat(
+      Array(Math.max(0, colCount - rows[r].length)).fill("")
+    );
+    lines.push(`${padded.join(" & ")} \\\\`);
+    if (isHeaderRow[r]) lines.push("\\midrule");
+  }
+  lines.push("\\bottomrule");
+  lines.push("\\end{tabular}");
+  return lines.join("\n");
 }
 
 // ── AST node → LaTeX rendering ──────────────────────────────────
@@ -234,6 +315,17 @@ function renderMdastNode(node: any): string {
     case "tableCell":
       // Handled by renderTable; should not be reached directly
       return renderChildren(node).join("");
+
+    case "html": {
+      // Raw HTML in markdown — handle <table> elements for LaTeX
+      const html: string = node.value ?? "";
+      if (html.includes("<table") || html.includes("<tr")) {
+        const table = htmlTableToLatex(html);
+        if (table) return table;
+      }
+      // Non-table HTML: strip tags, escape for LaTeX
+      return escapeLatex(html.replace(/<[^>]*>/g, ""));
+    }
 
     default:
       // Unknown node — render children if any, otherwise empty

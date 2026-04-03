@@ -140,4 +140,4 @@ $\mathcal{B} = q\,\eta_q/(q-1)^2 \approx 82$ nats per Planck time.
 | Margolus--Levitin (1998) | $\leq 2E/\pi\hbar$ ops/sec | $n_R(q) = 1/\hbar_q$ ops per Planck time |
 | Bremermann (1962) | $\leq mc^2/h$ bits/sec/kg | $\mathcal{B}(q) = q\,\eta_q / (q-1)^2$ bits per Planck time |
 | Bekenstein (1981) | $S \leq 2\pi RE / \hbar c$ | Fibre entropy $\leq \eta_q$ per operation |
-| Pawlowski (2009) | No-signaling from information causality | Lieb--Robinson decay outside $|Z| = c_q$ cone |
+| Pawlowski (2009) | No-signaling from information causality | Lieb--Robinson decay outside $\lvert Z\rvert = c_q$ cone |

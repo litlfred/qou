@@ -22,8 +22,8 @@ and the categorical definitions:
 | Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} \approx 938.272$ MeV | From $q$ (terminal resolution) |
 | Mass splitting | $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} \approx 1.290$ MeV | From $q$ |
 | Deuteron binding | $B_d \approx 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | From $q$ (SnapPy) |
-| Relative decay rates | $\propto \prod_{i \leq p} |\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}|^2$ | Computed |
-| Environmental $q$-shift | $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|$ | Predicted |
+| Relative decay rates | $\propto \prod_{i \leq p} \lvert\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}\rvert^2$ | Computed |
+| Environmental $q$-shift | $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert$ | Predicted |
 
 **What is not yet computed from $q$ alone.**
 

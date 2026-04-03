@@ -68,7 +68,7 @@ Every quantity on the right is determined:
 | $q_0$ | $1.10998$ | CODATA $m_\mu/m_e$ ([local substrate](#prop:local-substrate-q)) |
 | $q_0 - 1$ | $0.10998$ | Derived |
 | $\alpha$ | $\alpha_s \approx 0.118$ or $\alpha_W \approx 0.034$ | Coupling at vertex |
-| $|\chi(\Sigma_4)|$ | $6$ | Bring surface, genus $4$, $\chi = 2 - 2g$ |
+| $\lvert\chi(\Sigma_4)\rvert$ | $6$ | Bring surface, genus $4$, $\chi = 2 - 2g$ |
 
 ## Predictions for each production channel
 
@@ -231,7 +231,7 @@ being independent of beam energy.
 | Quantity | QOU value | Experiment | Status |
 |---|:-:|:-:|:-:|
 | $q_0$ (CODATA) | $1.10998$ | $m_\mu/m_e \approx 206.768$ | Input |
-| $|\chi(\Sigma_4)|$ | $6$ | Bring surface | Derived |
+| $\lvert\chi(\Sigma_4)\rvert$ | $6$ | Bring surface | Derived |
 | $\kappa_{\mathrm{geom}}$ | $1/6$ | Gauss--Bonnet | **Derived** |
 | $\delta q$ CDF $W$ (forward) | $9.9 \times 10^{-5}$ | — | **Predicted** |
 | $\delta m_W$ CDF (forward) | $69$ MeV | $77 \pm 9$ MeV | $0.9\sigma$ |

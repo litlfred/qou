@@ -106,7 +106,7 @@ is **not** a palindrome.
 The coefficient of the dominant term (largest $|c_w|$) **jumps
 discontinuously** at shell closures:
 
-| $A$ | $(p,n)$ | Dominant $|c_w|$ | Word length | Ratio to $A-1$ |
+| $A$ | $(p,n)$ | Dominant $\lvert c_w\rvert$ | Word length | Ratio to $A-1$ |
 |-----|---------|:----------------:|:-----------:|:---------------:|
 | $3$ | $(2,1)$ | $1.246$ | $1$ | — |
 | $4$ | $(2,2)$ | $1.946$ | $4$ | $\times 1.56$ ★ |

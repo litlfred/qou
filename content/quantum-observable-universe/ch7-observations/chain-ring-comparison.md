@@ -95,7 +95,7 @@ barriers for even-$N$ cyclic molecules (where $T(2,N)$ is a
 2-component link and the Alexander formula
 $\Delta_{T(2,2m)}(q) = (q^m - q^{-m})/(q - q^{-1})$ applies):
 
-| Ring | $N$ | $\Delta_{T(2,N)}(q \approx 1)$ | Chain weight | $\Delta E / |q+q^{-1}|_{\mathrm{mol}}$ |
+| Ring | $N$ | $\Delta_{T(2,N)}(q \approx 1)$ | Chain weight | $\Delta E / \lvert q+q^{-1}\rvert_{\mathrm{mol}}$ |
 |------|:---:|---:|:---:|---:|
 | Cyclobutadiene | 4 | 2 | 3 | 1 |
 | **Benzene** | **6** | **3** | **5** | **2** |
