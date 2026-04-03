@@ -1,6 +1,5 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
-import QOU.FormalGroups
 import QOU.Glossary
 import Mathlib.Data.Real.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
