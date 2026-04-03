@@ -4,12 +4,12 @@ Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a
 exceptional divisor at $p$
 ([exceptional divisor](#def:exceptional-divisor)).
 
-**Pointed knot variables.**
+**Formal knot variables.**
 The constituent knots $K_i$ are simple objects in $\mathbf{C}$,
 each factoring through a tensor power of $V$
 ([knot factorization](#rem:knot-factorization)):
 $K_i \hookrightarrow V^{\otimes 2j_i}$ via the PawLei embedding
-$\iota_{j_i}$.  The **pointed knot variables** of $\mathfrak{H}$ are the
+$\iota_{j_i}$.  The **formal knot variables** of $\mathfrak{H}$ are the
 formal variables $z_1, \ldots, z_n$ on $\mathcal{S}_p$, one for each
 constituent, recording the insertion point of the
 [vertex operator](#def:vertex-operator) $Y(K_i, z_i)$.
