@@ -421,6 +421,16 @@ All interactions **must** be optimized for minimal typing:
 - **Internal tracking**: use `TodoWrite` to track progress on multi-item work.
   Keep the todo list current — mark items complete immediately, add new items
   as they are discovered. The user sees these as a progress indicator.
+- **Commit early, commit often.** Never let computation results live only
+  in `-c` inline scripts or in-memory sessions.  After any substantive
+  computation (new formula, updated witness, changed script):
+  1. Write results to a file (script, witness JSON, or content `.md`).
+  2. `git add` + `git commit` immediately with a descriptive message.
+  3. `git push` at natural milestones (end of a computation round,
+     before starting a new approach).
+  Lost work from uncommitted in-memory scripts is unrecoverable.
+  A chain of small commits is always better than one large commit
+  that never happens.
 
 ### "What next?" prompt (after completing a task)
 
