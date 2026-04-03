@@ -1,0 +1,15 @@
+name = "unital-groebner-bases"
+defaultTargets = ["QOU"]
+
+[leanOptions]
+autoImplicit = false
+profiler = true
+
+[[lean_lib]]
+name = "QOU"
+srcDir = "."
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
