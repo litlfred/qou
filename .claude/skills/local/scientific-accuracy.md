@@ -55,6 +55,23 @@ peer-review practices and the methodology of
   identities to reduce transfer matrix products to $q$-integer
   expressions rather than floating-point chains.
 - **NO APPROXIMATIONS unless explicitly labeled as such.**
+- **DISTINGUISH 'degree' FROM 'length' IN GRÖBNER COMPUTATIONS.**
+  - **Degree** = genus of the knot = (r-1)(s-1)/2 for torus knot T_{r,s}.
+    This is the physical degree from the shell structure on Σ₄.
+    Degree 0 = unknot/trivial, degree 1 = T_{2,3}/T_{3,2},
+    degree 2 = T_{2,5}, degree 3 = T_{2,7}, degree 4 = T_{3,5}/T_{2,9}.
+  - **Length** = word length in the Hecke algebra = number of σ_i
+    generators in a reduced word. This is the Gröbner reduction
+    length, NOT the knot degree.
+  - A length-4 word like σ₀·σ₁·σ₀·σ₂ can be degree 0 (genus 0)
+    if its closure is the unknot.
+  - The protium atom lives entirely in **degree 0** (ground state).
+    Its length-4 dominant term is the Borromean core, which is a
+    LINK (not a knot) with genus 0.
+  - NEVER say "degree 4" when you mean "length 4".
+  - The 6 embeddable torus knots on Σ₄ start at degree 1 (T_{2,3}).
+    T_{2,1} = unknot = neutrino (degree 0).
+    T_{3,1} is also degree 0 (not in the physical catalog).
 - **NO correction factors, fudge factors, or empirical scaling.**
 - **NO formulas that are not derived from the categorical action.**
 - **PARTICLE INTERACTIONS MUST USE GRÖBNER BASIS REDUCTION.**
