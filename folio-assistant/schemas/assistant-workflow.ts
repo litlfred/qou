@@ -32,7 +32,7 @@
  * @module assistant-workflow
  */
 
-import type { Conformance, SkillDefinition } from "./assistant-types";
+import type { Conformance } from "./assistant-types";
 
 // ---------------------------------------------------------------------------
 // Lifecycle stages

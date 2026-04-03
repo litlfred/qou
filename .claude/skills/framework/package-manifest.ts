@@ -9,4 +9,4 @@ export type {
   PythonDependency,
   NodeDependency,
   PackageManifest,
-} from "../../../schemas/assistant-package.js";
+} from "../../../folio-assistant/schemas/assistant-package.js";

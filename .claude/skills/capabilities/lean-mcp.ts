@@ -9,5 +9,5 @@ export const leanMcp: CapabilityDefinition = {
     endpoint: "lean-lsp",
     healthPath: "/health",
   },
-  requires: ["lean-toolchain"],
+  requires: [],
 };

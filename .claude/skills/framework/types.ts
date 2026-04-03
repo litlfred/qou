@@ -27,4 +27,4 @@ export type {
   HookCommand,
   RoleAssignment,
   SkillRegistry,
-} from "../../../schemas/assistant-types.js";
+} from "../../../folio-assistant/schemas/assistant-types.js";

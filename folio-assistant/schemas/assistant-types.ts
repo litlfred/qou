@@ -483,5 +483,5 @@ export interface SkillRegistry {
   /** Lifecycle hooks. */
   hooks: SessionHook[];
   /** Identity-source → actor mapping rules, evaluated by priority (highest first). */
-  roleAssignments?: RoleAssignment[];
+  roleAssignments: RoleAssignment[];
 }

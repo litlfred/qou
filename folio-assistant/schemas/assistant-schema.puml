@@ -17,6 +17,7 @@ package "Registry" <<Rectangle>> {
     requirements: Requirement[]
     packages: SkillPackageRef[]
     hooks: SessionHook[]
+    roleAssignments: RoleAssignment[]
   }
 }
 
@@ -39,11 +40,11 @@ package "Actors & Roles" <<Rectangle>> {
   }
 
   enum IdentitySource {
-    git-config
-    github-oauth
-    google-oauth
-    env-var
-    bearer-token
+    git_config
+    github_oauth
+    google_oauth
+    env_var
+    bearer_token
     default
   }
 }
@@ -141,7 +142,7 @@ package "Requirements (FHIR R5)" <<Rectangle>> {
     SHALL
     SHOULD
     MAY
-    SHALL_NOT
+    "SHALL NOT"
   }
 }
 
@@ -186,10 +187,10 @@ package "Docker Packaging" <<Rectangle>> {
     installers?: InstallerDependency[]
     python?: PythonDependency[]
     node?: NodeDependency[]
-    envVars?: EnvVar[]
-    exposedPorts?: Port[]
-    healthcheck?: Healthcheck
-    ociAnnotations?: OCI
+    envVars?: { name, description, required }[]
+    exposedPorts?: { port, protocol, service }[]
+    healthcheck?: { test, interval, timeout, retries }
+    ociAnnotations?: Record<string, string>
   }
 }
 
@@ -200,6 +201,7 @@ SkillRegistry "1" *-- "many" CapabilityDefinition
 SkillRegistry "1" *-- "many" SkillDefinition
 SkillRegistry "1" *-- "many" Requirement
 SkillRegistry "1" *-- "many" SessionHook : hooks
+SkillRegistry "1" *-- "many" RoleAssignment : roleAssignments
 
 ActorDefinition "0..*" --> "0..*" ActorDefinition : inherits
 ActorDefinition "0..*" --> "0..*" CapabilityDefinition : capabilities
