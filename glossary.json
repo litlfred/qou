@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-01T14:24:58.719259+00:00",
-  "commit_sha": "c79633be87afcdf5ceb540d712bf092e2e8813ad",
+  "generated_at": "2026-04-03T03:56:36.669659+00:00",
+  "commit_sha": "6d81fe6943691843d6dbba11ccd1e4cd8d417ea4",
   "entry_count": 67,
   "ambiguity_count": 6,
   "entries": [
@@ -191,7 +191,7 @@
       "narrative_term": "{Positron}",
       "lean_name": "QOU.BringsSurface.PositronKnot",
       "kind": "def",
-      "narrative_definition": "The  is the mirror trefoil sigma(T_2,3) in the lepton sector — the antiparticle of the electron.  [ e^+ ;=; sigma(T_2,3) qquad  ]  The positron is the same knot as the down quark, distinguished by environment (orbital vs. coral tube).  It carries reversed crossing chirality: where the electron has Coulomb charge Q = -1, the positron has Q = +1.   The positron is drawn as an  trefoil (reversed time direction).    The mirror operation sigma reverses all crossings, which in the Reeb flow correspond",
+      "narrative_definition": "The  is the mirror trefoil T_2,3^sigma in the lepton sector — the antiparticle of the electron.  [ e^+ ;=; T_2,3^sigma qquad  ]  The positron is the same knot as the down quark, distinguished by environment (orbital vs. coral tube).  It carries reversed crossing chirality: where the electron has Coulomb charge Q = -1, the positron has Q = +1.   The positron is drawn as an  trefoil (reversed time direction).    The mirror operation sigma reverses all crossings, which in the Reeb flow corresponds ",
       "latex_label": "def:positron-knot",
       "chapter": 3
     },
@@ -204,10 +204,10 @@
       "chapter": 3
     },
     {
-      "narrative_term": "{Antineutrino as mirror unknot $\\overline{T_{1,0}}$}",
+      "narrative_term": "{Antineutrino as mirror unknot $T_{1,0}^{\\sigma}$}",
       "lean_name": "QOU.BringsSurface.AntineutrinoKnot",
       "kind": "def",
-      "narrative_definition": "The  is the mirror unknot  — the antiparticle of the neutrino.  [  ;=;  qquad  ]  Since the unknot is amphichiral (T_1,0 cong  as unoriented knots), the antineutrino has the  knot invariants as the neutrino:   item Jones polynomial: J_(q) = 1 item Alexander polynomial: Delta_(t) = 1 item Hyperbolic volume: () = 0 item Seifert genus: g = 0 item Crossing number: c = 0   The distinction between nu and  is carried by  (framing), not by knot type.  In the braid group, the neutrino is the identity bra",
+      "narrative_definition": "The  is the mirror unknot T_1,0^sigma — the antiparticle of the neutrino.  [ nu^sigma ;=; T_1,0^sigma qquad  ]  Since the unknot is amphichiral (T_1,0 cong T_1,0^sigma as unoriented knots), the antineutrino has the  knot invariants as the neutrino:   item Jones polynomial: J_nu^sigma(q) = 1 item Alexander polynomial: Delta_nu^sigma(t) = 1 item Hyperbolic volume: (nu^sigma) = 0 item Seifert genus: g = 0 item Crossing number: c = 0   The distinction between nu and nu^sigma is carried by  (framing)",
       "latex_label": "def:antineutrino-knot",
       "chapter": 3
     },
@@ -215,7 +215,7 @@
       "narrative_term": "{$\\mathcal{Q}_q$-Value as Categorical Action Difference}",
       "lean_name": "QOU.BringsSurface.QValueTransition",
       "kind": "def",
-      "narrative_definition": "The _q-value of a nuclear transition is the q-deformed transition energy.  It is NOT defined by classical energy conservation — it is defined directly from the categorical action.    For a beta decay textbackslashmathcalNmathrmpar textbackslashto textbackslashmathcalNtextbackslashmathrmdau   item e + textbackslashbartextbackslashnu, the **textbackslashmathcalQ_q-value** is the net change in categorical action at the Skein crossing change:   [ _q ;:=; S_q(_) ;-; S_q(_) ;-; S_q(e) ;-; S_q() ]  whe",
+      "narrative_definition": "The _q-value of a nuclear transition is the q-deformed transition energy.  It is NOT defined by classical energy conservation — it is defined directly from the categorical action.    For a beta decay textbackslashmathcalNmathrmpar textbackslashto textbackslashmathcalNtextbackslashmathrmdau   item e + textbackslashnutextbackslashsigma, the **textbackslashmathcalQ_q-value** is the net change in categorical action at the Skein crossing change:   [ _q ;:=; S_q(_) ;-; S_q(_) ;-; S_q(e) ;-; S_q(nu^sig",
       "latex_label": "def:q-value-transition",
       "chapter": 3
     },
@@ -255,7 +255,7 @@
       "narrative_term": "{Categorical Lepton Number}",
       "lean_name": "QOU.BringsSurface.LeptonNumberCategorical",
       "kind": "def",
-      "narrative_definition": "Each beta decay (hyperref[def:beta-decay-skein]beta decay) applies the Skein relation at one crossing, producing a smoothing L_0^pm that contains exactly one lepton--antilepton pair.  Lepton number counts these smoothings.   Let  be a nuclear link in Gröbner normal form and let ' be obtained from  by a sequence of k Skein crossing changes. The  of the transition is L = k.  Each smoothing L_0^pm contributes:   item One charged lepton (T_2,3 or sigma(T_2,3)) with lepton number +1 item One (anti)ne",
+      "narrative_definition": "Each beta decay (hyperref[def:beta-decay-skein]beta decay) applies the Skein relation at one crossing, producing a smoothing L_0^pm that contains exactly one lepton--antilepton pair.  Lepton number counts these smoothings.   Let  be a nuclear link in Gröbner normal form and let ' be obtained from  by a sequence of k Skein crossing changes. The  of the transition is L = k.  Each smoothing L_0^pm contributes:   item One charged lepton (T_2,3 or T_2,3^sigma) with lepton number +1 item One (anti)neu",
       "latex_label": "def:lepton-number-categorical",
       "chapter": 3
     },

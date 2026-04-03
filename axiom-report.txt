@@ -1,20 +1,22 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-04-01 14:31:02 UTC
-Commit:    c79633be87afcdf5ceb540d712bf092e2e8813ad
+Generated: 2026-04-03 04:03:58 UTC
+Commit:    6d81fe6943691843d6dbba11ccd1e4cd8d417ea4
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
 ------------------------------------------------------------------------
 §1  BUILD STATUS
 ------------------------------------------------------------------------
-Status: ✅ BUILD PASSED (no type errors)
+Status: ❌ BUILD FAILED
+
+Errors:
 
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 426
+Total sorry occurrences: 423
 
   File                                          sorry count
   --------------------------------------------------------
@@ -47,8 +49,6 @@ Total sorry occurrences: 426
   .lake/packages/batteries/BatteriesTest/lintsimp.lean 1
   .lake/packages/batteries/BatteriesTest/lintunused.lean 3
   .lake/packages/batteries/BatteriesTest/simpa.lean 2
-  .lake/packages/doc-gen4/DocGen4/Output/Module.lean 1
-  .lake/packages/doc-gen4/DocGen4/Process/TheoremInfo.lean 1
   .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean 2
   .lake/packages/mathlib/Mathlib/Algebra/Group/Hom/Defs.lean 2
   .lake/packages/mathlib/Mathlib/Algebra/Group/Invertible/Defs.lean 1
@@ -124,12 +124,11 @@ Total sorry occurrences: 426
   QOU/CODATAChain.lean                             1
   QOU/Descartes/AxialCoupling.lean                 3
   QOU/Descartes/OrderingIndependence.lean          2
-  QOU/FormalGroups.lean                            1
 
 ------------------------------------------------------------------------
 §3  AXIOM DECLARATIONS
 ------------------------------------------------------------------------
-Total axiom declarations in source: 242
+Total axiom declarations in source: 225
 
   axiom R
     File: .lake/packages/aesop/AesopTest/205.lean
@@ -797,57 +796,6 @@ Total axiom declarations in source: 242
   axiom test_sorry
     File: .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean
 
-  axiom normal_form_exists
-    File: QOU/GrobnerShirshov/Basic.lean
-
-  axiom reduction_well_founded
-    File: QOU/GrobnerShirshov/CompositionLemma.lean
-
-  axiom local_confluence
-    File: QOU/GrobnerShirshov/CompositionLemma.lean
-
-  axiom confluence
-    File: QOU/GrobnerShirshov/CompositionLemma.lean
-
-  axiom normal_form_unique
-    File: QOU/GrobnerShirshov/CompositionLemma.lean
-
-  axiom gs_implies_flat
-    File: QOU/GrobnerShirshov/Flatness.lean
-
-  axiom normal_forms_preserved
-    File: QOU/GrobnerShirshov/Flatness.lean
-
-  axiom hecke_is_gs_basis
-    File: QOU/GrobnerShirshov/HeckeGS.lean
-
-  axiom qSerreRewritingSystem
-    File: QOU/GrobnerShirshov/NormalForms.lean
-
-  axiom qSerre_is_gs_basis
-    File: QOU/GrobnerShirshov/NormalForms.lean
-
-  axiom pbw_monomials_are_normal_forms
-    File: QOU/GrobnerShirshov/NormalForms.lean
-
-  axiom dist_algebra_gs_basis
-    File: QOU/GrobnerShirshov/NormalForms.lean
-
-  axiom tensorOrder
-    File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
-
-  axiom tensorRewritingSystem
-    File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
-
-  axiom tensor_gs_basis
-    File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
-
-  axiom strong_multiplicativity_on_generators
-    File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
-
-  axiom formal_group_is_filtered_bialgebra
-    File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
-
   axiom proton_pair_skein_approx
     File: QOU/HadronicMass.lean
 
@@ -1071,8 +1019,6 @@ link to the foundational reference are shown.
     .lake/packages/batteries/BatteriesTest/lintunused.lean:7  Foo
     .lake/packages/batteries/BatteriesTest/simpa.lean:82  thm
     .lake/packages/batteries/BatteriesTest/simpa.lean:85  thm2
-    .lake/packages/doc-gen4/DocGen4/Output/Module.lean:48  docInfoHeader
-    .lake/packages/doc-gen4/DocGen4/Process/TheoremInfo.lean:17  TheoremInfo.ofTheoremVal
     .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean:58  (unknown)
     .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean:63  (unknown)
     .lake/packages/mathlib/Mathlib/Algebra/Group/Hom/Defs.lean:218  fooMonoidHom
@@ -1364,9 +1310,8 @@ link to the foundational reference are shown.
     .lake/packages/plausible/Test/Tactic.lean:145  (unknown)
     .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean:157  ConvSelectionPanel
     QOU/CODATAChain.lean:197  end_to_end_nucleon_ratio
-    QOU/FormalGroups.lean:29  (unknown)
 
-  Summary: 5 referenced / 387 unreferenced / 392 total gaps
+  Summary: 5 referenced / 384 unreferenced / 389 total gaps
 
 ========================================================================
 END OF REPORT
