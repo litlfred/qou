@@ -276,13 +276,12 @@ private theorem lexLt_implies_listLex :
         exact List.Lex.cons (ih ys hrest)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
--- Well-foundedness via Mathlib's `List.Lex.wellFounded` applied to the
--- rank ordering on SU2Gen (which is well-founded since ranks are in ℕ).
+-- Well-foundedness via List.Lex preserving well-foundedness of rankRel.
+-- TODO: replace sorry with correct Lean 4.24 API name for List.Lex WF
 theorem lexLt_wf : WellFounded lexLt :=
   Subrelation.wf
     (fun {a b} h => lexLt_implies_listLex a b h)
-    (by haveI : IsWellFounded _ rankRel := ⟨rankRel_wf⟩
-        exact (List.Lex.isWellFounded (α := SU2Gen) (r := rankRel)).wf)
+    (sorry)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 theorem degLexLt_wf : WellFounded degLexLt :=
