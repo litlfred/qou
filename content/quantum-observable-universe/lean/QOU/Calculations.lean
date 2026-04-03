@@ -46,17 +46,17 @@ theorem registry_volume_eq_mass_derivation :
 /-- The registry entry for the muon is the figure-eight knot. -/
 theorem muon_is_figure_eight :
     (lookupByIdentity .muon) = some figureEightEntry := by
-  decide
+  rfl
 
 /-- The registry entry for the electron is the trefoil. -/
 theorem electron_is_trefoil :
     (lookupByIdentity .electron) = some trefoilEntry := by
-  decide
+  rfl
 
 /-- The registry entry for the neutrino is the unknot. -/
 theorem neutrino_is_unknot :
     (lookupByIdentity .neutrino) = some unknotEntry := by
-  decide
+  rfl
 
 /-! ## Section 2: Skein-Deformed Mass Residue
 
@@ -77,7 +77,7 @@ theorem skein_mass_residue (q : ℝ) (hq : q > 1) :
     experimental_mu_e_ratio = vol_figure_eight / h_q ^ 2 →
     experimental_mu_e_ratio = figureEightEntry.volume.value / h_q ^ 2 := by
   intro h_q _hne h_eq
-  rw [← registry_volume_eq_mass_derivation]
+  rw [registry_volume_eq_mass_derivation]
   exact h_eq
 
 /-! ## Section 3: Substrate Parameter Derivation
