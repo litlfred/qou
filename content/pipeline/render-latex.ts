@@ -98,9 +98,9 @@ export function markdownToLatex(md: string): string {
 }
 
 /**
- * Extract raw TeX content from markdown for math-context blocks
- * (equation and diagram). Walks the AST but only emits math and
- * fenced-tex nodes — lists, prose, and formatting are skipped.
+ * Extract raw TeX content from markdown for equation blocks.
+ * Walks the AST but only emits math and fenced-tex nodes —
+ * lists, prose, and formatting are skipped.
  */
 export function extractMathContent(md: string): string {
   const tree = mdParser.parse(md);
