@@ -24,7 +24,7 @@ namespace QOU.Information
 
 /-- **Speed of light** at a point p ∈ M.
     c_q(p) = 1 / (q(p) - 1).
-    Diverges at classicality (q → 1), vanishes at Big Bang (q → ∞).
+    Diverges at classicality (q → 1), vanishes in the deep-quantum regime (q → ∞).
     Label: def:information-speed-of-light -/
 noncomputable def speedOfLight {M : Type*} (sp : SubstrateParameter M)
     (p : M) : ℝ :=

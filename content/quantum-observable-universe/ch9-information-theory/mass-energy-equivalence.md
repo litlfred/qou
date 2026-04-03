@@ -99,7 +99,7 @@ $$
 
 | Regime | $q$ | $c_q^2$ | Physics |
 |--------|-----|----------|---------|
-| Big Bang | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
+| Deep-quantum | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
 | Deep quantum | $\varphi^2$ | $\approx 0.382$ | Sub-relativistic: mass dominates energy |
 | Our universe | $q_0$ | $\approx 83.2$ | $E \approx 83\,\mathfrak{m}$: large amplification |
 | Near-classical | $1.01$ | $10{,}000$ | Extreme amplification: tiny mass $\to$ large energy |

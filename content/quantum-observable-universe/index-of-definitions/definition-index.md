@@ -22,7 +22,7 @@
 | [def:braid-twist-flip](#def:braid-twist-flip) | Braid involutions: twist and flip | Ch 4 | `QOU.BraidTwistFlip` |
 | [def:briggs-klein-chart](#def:briggs-klein-chart) | Briggs--Klein affine chart | Ch 6 | `QOU.BriggsKleinChart` |
 | [def:brings-surface](#def:brings-surface) | Bring's surface | Ch 6 | `QOU.BringsSurface` |
-| [def:bundle-initial-conditions](#def:bundle-initial-conditions) | Bundle initial conditions (big bang state) | Ch 4 | `QOU.BundleInitialConditions` |
+| [def:bundle-initial-conditions](#def:bundle-initial-conditions) | Bundle initial conditions | Ch 4 | `QOU.BundleInitialConditions` |
 | [def:categorical-q-connection](#def:categorical-q-connection) | Categorical $q$-deformed connection | Ch 2 | `QOU.CategoricalQConnection` |
 | [def:categorical-q-ext-deriv](#def:categorical-q-ext-deriv) | Categorical $q$-deformed exterior derivative | Ch 2 | `QOU.CategoricalQExtDeriv` |
 | [def:categorical-q-lie-bracket](#def:categorical-q-lie-bracket) | Categorical $q$-Lie bracket | Ch 2 | `QOU.CategoricalQLieBracket` |

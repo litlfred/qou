@@ -48,8 +48,8 @@ theorem localPlanckLength_classical {M : Type*} (sp : SubstrateParameter M)
 
 /-- **Information transfer rate**: quantifies the rate of information
     propagation at a point, proportional to `ℏ_q`.  Time slows at
-    heat death (`q → 1`, rate → 0) and runs fast at the Big Bang
-    (`q → ∞`, rate → 1).
+    the classical regime (`q → 1`, rate → 0) and runs fast in the
+    deep-quantum regime (`q → ∞`, rate → 1).
 
     LaTeX: `\label{sec:time-info}` -/
 noncomputable def informationRate {M : Type*} (sp : SubstrateParameter M)

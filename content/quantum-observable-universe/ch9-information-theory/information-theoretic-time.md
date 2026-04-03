@@ -40,7 +40,7 @@ into a continuous flow parameter.
 
 **Three regimes.**
 
-1. **Discrete regime** ($q \to \infty$, Big Bang).
+1. **Discrete regime** ($q \to \infty$, deep-quantum).
    $t_P \to 1$, so $t = \mathcal{T}$: the Reeb time coordinate
    *is* the integer step count.  Each tick is individually
    meaningful — one braiding, one jet prolongation, one link
