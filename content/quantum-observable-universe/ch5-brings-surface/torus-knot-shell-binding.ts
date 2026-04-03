@@ -1,0 +1,32 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:torus-knot-shell-binding",
+  title:
+    "Shell binding from the torus knot hierarchy: $T_{2,3} \\to T_{2,5} \\to T_{2,7} \\to T_{2,9}$",
+  tags: [
+    "torus-knot",
+    "shell-binding",
+    "magic-numbers",
+    "chebyshev",
+    "hecke-algebra",
+    "transfer-matrix",
+    "nuclear-structure",
+    "inductive-construction",
+  ],
+  lean: {
+    decl: "QOU.Descartes.torus_knot_shell_binding",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:shell-closure-normal-form",
+    "prop:torus-knot-generators",
+    "def:transfer-matrix-operator",
+    "prop:nuclear-groebner-reduction",
+    "thm:groebner-shirshov-energy",
+    "prop:skein-finiteness-bound",
+  ],
+  examples: [
+    "rem:shell-construction-rules",
+  ],
+});
