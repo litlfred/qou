@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:braid-twist-flip",
   label: "rem:holonomy-trefoil",
   title: "Holonomy generators and the trefoil",
   tags: ["holonomy", "trefoil", "braid-group", "branched-cover"],

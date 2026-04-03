@@ -10,12 +10,14 @@ At dimension 1 the physical content simplifies drastically.
    multiplicative integral reduces by the nonabelian Stokes
    theorem [yekutieli2015] to the holonomy of the connection
    $\nabla_A$ around $M_k$:
+
    $$
      m \;=\;
      \bigl\lVert\,
      \mathrm{Hol}_{\nabla_A}\!\bigl(M_k;\, \mathfrak{G}\bigr)
      \,\bigr\rVert,
    $$
+
    so that mass represents the fundamental holonomy resistance of
    the $1$-dimensional flow against the $\mathrm{SU}(2)$ rotation.
 3. *Lepton generations.*  Since the number of lepton generations is

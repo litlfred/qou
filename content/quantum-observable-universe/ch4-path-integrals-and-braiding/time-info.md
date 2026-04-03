@@ -1,1 +1,0 @@
-Time as a measure of information transfer and change. Time slows at heat death ($q \to 1$) because information transfer rate decreases. Time runs fast at the Big Bang ($q \to \infty$, equivalently $\hbar_q \to 1$) because information transfer is high; torsion of $E$ provides the driving mechanism.

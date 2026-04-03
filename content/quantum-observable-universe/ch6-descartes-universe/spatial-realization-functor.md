@@ -1,0 +1,66 @@
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
+([quantum observable universe](#def:quantum-observable-universe)).
+The *spatial realization* of $A$ is the space
+
+$$
+  M = \mathrm{Spec}(A) = \{ p \colon \mathbf{1} \to A \mid
+  p \text{ is a categorical point} \}
+$$
+
+([categorical point](#def:categorical-point)),
+equipped with the following structures derived purely within
+$\mathbf{C}$:
+
+1. **Local germs.** For each point $p$, the *augmentation ideal*
+   $\mathfrak{m}_p = \ker(p^* \colon A \to \mathbf{1})$ captures
+   the functions vanishing at $p$. The quotient
+   $\mathfrak{m}_p / \mathfrak{m}_p^2$ is functorially dual to the
+   tangent space $T_p M$, giving the first-order germ decomposition
+
+   $$
+     A / \mathfrak{m}_p^2
+     \;\cong\;
+     \mathbf{1} \oplus \mathfrak{m}_p / \mathfrak{m}_p^2.
+   $$
+
+2. **Kähler differentials.** The module $\Omega^1(A)$ of Kähler
+   differentials exists in $\mathbf{C}$ by hypothesis. Under the
+   fibre functor, $\tau(\Omega^1(A))$ maps to sections of the
+   cotangent bundle $\Gamma(T^* M)$.
+
+3. **The contact form.** The Frobenius form
+   $\int_A \colon A \to \mathbf{1}$
+   ([Frobenius pairing](#def:frobenius-pairing)) induces a canonical
+   $1$-form $\theta_A \in \Omega^1(A)$ via pullback along the
+   universal derivation $d \colon A \to \Omega^1(A)$.
+
+4. **The Reeb derivation.** The generator $\xi$ of the maximal torus
+   action ([categorical Reeb](#def:categorical-reeb)) satisfies the
+   Cartan relations $\iota_\xi \theta_A = \mathrm{id}_{\mathbf{1}}$
+   and $\iota_\xi\,d\theta_A = 0$ within the non-commutative
+   differential calculus.
+
+```tex
+\begin{equation}\label{eq:spatial-realization-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  A \ar[r, "\tau"] \ar[d, "d"']
+  & C^{\infty}(M) \ar[d, "d"] \\
+  \Omega^1(A) \ar[r, "\tau"']
+  & \Gamma(T^* M)
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \theta_A \ar[r, mapsto, "\tau"]
+  & \theta \\
+  \xi \ar[r, mapsto, "\tau"']
+  & \xi_{\mathrm{Reeb}}
+\end{tikzcd}
+\qquad\text{(spatial realisation)}
+\end{equation}
+```
+
+Under $\tau$, these algebraic objects map to their geometric
+counterparts: $\theta_A$ becomes the global contact $1$-form
+$\theta$, $\xi$ becomes the Reeb vector field, and non-degeneracy
+of $\int_A$ guarantees that $d\theta$ is maximally non-degenerate
+on $\ker\theta$ — the defining property of a contact manifold.

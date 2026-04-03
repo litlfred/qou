@@ -1,5 +1,5 @@
-**Monoidal category.** A category $\mathcal{C}$ equipped with a
-bifunctor $\otimes \colon \mathcal{C} \times \mathcal{C} \to \mathcal{C}$
+**Monoidal category.** A category $\mathbf{C}$ equipped with a
+bifunctor $\otimes \colon \mathbf{C} \times \mathbf{C} \to \mathbf{C}$
 (the *tensor product*), a distinguished unit object $\mathbf{1}$, and
 coherent natural isomorphisms for associativity ($\alpha$), left
 unitality ($\lambda$), and right unitality ($\rho$), satisfying

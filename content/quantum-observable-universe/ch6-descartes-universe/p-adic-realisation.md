@@ -1,15 +1,15 @@
-Let $k = \mathbb{Q}_\pp$ and let $\mathcal{C}$ be the category of
+Let $k = \mathbb{Q}_\pp$ and let $\mathbf{C}$ be the category of
 $F$-isocrystals over $\mathbb{Q}_\pp$ (modules over the Dieudonne ring
 $\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional
 over $\mathbb{Q}_\pp$).
 This is a $\mathbb{Q}_\pp$-linear rigid monoidal category.
 The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
 to $\mathbb{Q}_\pp$ provides a Frobenius--Hopf object $A$, where the
-Frobenius form $\lambda$ arises from the $\pp$-adic Haar measure.
-The Frobenius endomorphism $\varphi$ on $\mathcal{C}$ plays the
-role of the Levi-form contraction: the substrate parameter is
-$q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
-[substrate parameter](#def:substrate-parameter)).  The fibre functor $\omega$
+Frobenius form $\int_A$ arises from the $\pp$-adic Haar measure.
+The Frobenius endomorphism $\varphi$ on $\mathbf{C}$ plays the
+role of the Levi-form contraction: the categorical substrate parameter
+([substrate parameter](#def:substrate-parameter)) specialises to
+$q = \pp^{\,-v_\pp(\det\varphi)} \in \mathrm{End}(\mathbf{1}) \cong \mathbb{Q}_\pp$.  The fibre functor $\tau$
 is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
 The observability condition
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the

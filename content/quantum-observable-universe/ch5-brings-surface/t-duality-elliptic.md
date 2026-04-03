@@ -7,8 +7,8 @@ $$
 
 one verifies $F(X,z)=F(z,X)$ term by term.  This involution
 $\iota\colon(X,z)\mapsto(z,X)$ is a *T-duality*: it identifies
-every chiral fibre $E_z$ with its dual spacetime wrapping $E_X$, so
-the internal and external degrees of freedom of the Bring surface are
+every color fibre $\mathcal{E}_z$ with its dual spacetime wrapping $\mathcal{E}_X$, so
+the internal and external degrees of freedom of the Bring's surface are
 algebraically indistinguishable.
 
 **Quotient space.**
@@ -22,7 +22,7 @@ becomes
 ```
 
 which is rational in $u$.  Hence the quotient
-$E_z/\langle\iota\rangle\cong\mathbb{P}^1(\mathbb{C})$: folding the torus along
+$\mathcal{E}_z/\langle\iota\rangle\cong\mathbb{P}^1(\mathbb{C})$: folding the torus along
 its $X=z$ diagonal collapses it to a genus-$0$ Riemann sphere.
 
 **Weierstrass normal form.**
@@ -40,4 +40,4 @@ term:
 The discriminant $\Delta(z)=-4\,p(z)^3-27\,q(z)^2$ is a polynomial in $z$
 whose roots determine the singular fibres of the elliptic
 fibration $\mathcal{S}\to\mathbb{P}^1(\mathbb{C})$.  At those roots the
-$j$-invariant $j(E_z)=-1728\cdot 64\,p(z)^3/\Delta(z)$ degenerates.
+$j$-invariant $j(\mathcal{E}_z)=-1728\cdot 64\,p(z)^3/\Delta(z)$ degenerates.

@@ -148,8 +148,9 @@ When a Lean declaration corresponds to an existing mathlib result:
 ## Output Format
 
 The `proof-objects.json` manifest follows the schema at
-`schemas/proof-objects.schema.json`.  Lean declarations are referenced by
-their doc-gen4 URL — the Lean data model is **not** duplicated in JSON.
+`folio-assistant/schemas/qou-types.ts` (§1 ProofObjectsManifest).  Lean declarations are
+referenced by their doc-gen4 URL — the Lean data model is **not** duplicated
+in JSON.
 
 ## Blueprint Synchronization
 
@@ -162,8 +163,8 @@ in sync — it is the **author's responsibility** to ensure consistency:
 | `\lean{QOU.Ch.foo}` in blueprint | Actual declaration name in `lean/QOU/Ch.lean` |
 | `\uses{def:bar}` in blueprint | Existing `\label{def:bar}` in same file |
 | `\leanok` in blueprint | Zero `sorry` in the linked Lean declaration |
-| `-- Ref: [key]` before sorry | Entry `@article{key,...}` in `references.bib` |
-| `\cite{key}` in blueprint | Entry `@article{key,...}` in `references.bib` |
+| `-- Ref: [key]` before sorry | Citation key `key` in `content/schema/references.ts` |
+| `\cite{key}` in blueprint | Citation key `key` in `content/schema/references.ts` |
 
 ### Blueprint update workflow
 
@@ -189,6 +190,14 @@ content-object-aware:
 | `example`, `remark`, `conjecture` | Optional | Only if author requests |
 | `prose`, `equation`, `diagram` | N/A | Skip |
 
+### CRITICAL: `.lean` files are NEVER standalone
+
+A `.lean` file MUST always be part of a content triple (`.ts` + `.md` +
+`.lean`).  There is no valid scenario where a `.lean` file exists without
+a corresponding `.ts` manifest.  The `.ts` manifest is the authoritative
+record of the block's kind, label, lean declaration, status, and
+dependency graph.  An orphan `.lean` file is always a bug.
+
 ### Content-object-aware stub generation
 
 Instead of extracting from LaTeX, read the `.ts` manifest:
@@ -201,8 +210,12 @@ Instead of extracting from LaTeX, read the `.ts` manifest:
 
 ### The `uses[]` dependency graph
 
-The `uses` field in content `.ts` manifests forms a dependency DAG:
-- Generate stubs in topological order (dependencies first)
+The `uses` field in content `.ts` manifests forms a dependency DAG.
+**List only immediate neighbors** — transitive deps are derived by
+walking the graph. Run `bun run pipeline/prune-transitive-deps.ts`
+after edits.
+
+- Generate stubs in topological order (walk the graph for full ordering)
 - The Lean import graph should reflect the `uses[]` ordering
 - When a definition changes, re-validate all blocks that `uses` it
 
@@ -224,6 +237,6 @@ The `lean.decl` field in the `.ts` manifest is the canonical mapping.
 - [ ] `\lean{}` macros in LaTeX match the Lean declaration names exactly
 - [ ] `\uses{}` macros capture all mathematical dependencies
 - [ ] Every `sorry` has a preceding `-- Ref: [key] url` comment
-- [ ] Every `-- Ref: [key]` key exists in `references.bib`
+- [ ] Every `-- Ref: [key]` key exists in `content/schema/references.ts`
 - [ ] `blueprint/src/content.tex` mirrors all `\lean{}` macros from chapters
 - [ ] `\leanok` only appears for sorry-free declarations

@@ -1,6 +1,7 @@
 
 The categorical Euler characteristic $\chi(A_n) = \mathrm{tr}(\mathrm{id}_{A_n})$
 is the rigidity trace of the identity, computed as the composition
+
 $$
   \chi(A_n)
   \;=\;
@@ -15,7 +16,7 @@ $$
   \mathrm{ev}_n \circ \mathrm{coev}_n.
 $$
 
-Jet prolongation is a functor on $\mathcal{C}$ that preserves the
+Jet prolongation is a functor on $\mathbf{C}$ that preserves the
 Frobenius--Hopf structure
 ([jet prolongation](#prop:jet-prolongation)): the prolonged object
 $A_{n+1}$ inherits its rigidity data from $A_n$.  Specifically, the
@@ -27,6 +28,7 @@ $\mathrm{coev}_{n+1} = \mathrm{coev}_n$ as elements of
 $\mathrm{Hom}(\mathbf{1}, \mathbf{1}) \cong R$.
 
 Therefore:
+
 $$
   \chi(A_{n+1})
   \;=\;

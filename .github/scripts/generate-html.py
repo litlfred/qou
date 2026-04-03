@@ -290,6 +290,10 @@ code { font-size: 90%; }
 .proof-status.mathlib-ok {
   background: #006400; color: #fff;
 }
+.proof-status.sorry-ref {
+  background: #d4a017; color: #fff; cursor: pointer;
+}
+.proof-status.sorry-ref:hover { filter: brightness(1.1); }
 /* Legend bar */
 .proof-legend {
   text-align: center; padding: 6px 0; font-size: 0.8rem;
@@ -419,15 +423,45 @@ def _proof_status_for_def(d: dict, manifest_lookup: dict) -> str:
     return "not_started"
 
 
-def _make_status_badge(status: str, lean_decl: str = "", lean_file: str = "") -> str:
+def _extract_sorry_refs(lean_source: str) -> list[dict]:
+    """Extract -- Ref: [key] url lines preceding sorry from Lean source."""
+    refs = []
+    lines = lean_source.split("\n")
+    for i, line in enumerate(lines):
+        if re.match(r"\s*sorry\b", line):
+            for j in range(i - 1, max(-1, i - 6), -1):
+                m = re.match(r"\s*--\s*Ref:\s*\[([^\]]+)\]\s*(https?://\S+)?", lines[j])
+                if m:
+                    refs.append({"key": m.group(1), "url": m.group(2)})
+                elif not re.match(r"\s*(--|$)", lines[j]):
+                    break
+    return refs
+
+
+def _make_status_badge(status: str, lean_decl: str = "", lean_file: str = "",
+                       lean_source: str = "") -> str:
     """Build an HTML badge element for the given proof status."""
     label_text, css_class = _STATUS_LABELS.get(status, _STATUS_LABELS["not_started"])
+    parts = []
     if lean_decl:
         href = f"{_LEAN_DOCS_BASE}{lean_decl}"
-        return (f'<a class="proof-status {css_class}" href="{href}" '
-                f'target="_blank" title="Lean: {html_mod.escape(lean_decl)}">'
-                f'{label_text}</a>')
-    return f'<span class="proof-status {css_class}">{label_text}</span>'
+        parts.append(f'<a class="proof-status {css_class}" href="{href}" '
+                     f'target="_blank" title="Lean: {html_mod.escape(lean_decl)}">'
+                     f'{label_text}</a>')
+    else:
+        parts.append(f'<span class="proof-status {css_class}">{label_text}</span>')
+    # Add sorry-ref badges for has_sorry status
+    if status == "has_sorry" and lean_source:
+        for ref in _extract_sorry_refs(lean_source):
+            key = html_mod.escape(ref["key"])
+            if ref.get("url"):
+                parts.append(f'<a class="proof-status sorry-ref" href="{ref["url"]}" '
+                             f'target="_blank" title="Ref: [{key}]">'
+                             f'\U0001F4D6 {key}</a>')
+            else:
+                parts.append(f'<span class="proof-status sorry-ref" '
+                             f'title="Ref: [{key}]">\U0001F4D6 {key}</span>')
+    return " ".join(parts)
 
 
 def _make_proof_legend() -> str:
@@ -476,10 +510,12 @@ def _inject_proof_badges(
             lean_info = manifest_lookup[label].get("lean", {})
             lean_decl = lean_info.get("decl", "")
         lean_file = ""
+        lean_source = ""
         if label in manifest_lookup:
             lean_file = manifest_lookup[label].get("lean", {}).get("file", "")
+            lean_source = manifest_lookup[label].get("lean", {}).get("source", "")
 
-        badge = _make_status_badge(status, lean_decl, lean_file)
+        badge = _make_status_badge(status, lean_decl, lean_file, lean_source)
 
         # Find the anchor for this label and insert badge after the heading text
         anchor_id = label.replace(":", "-")

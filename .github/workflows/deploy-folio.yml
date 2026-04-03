@@ -26,8 +26,7 @@ on:
     paths:
       - 'deploy/**'
       - 'lean-mcp.config.json'
-      - 'assistant/**'
-      - 'viewer/**'
+      - 'folio-assistant/**'
   workflow_run:
     workflows: ["Build Paper Assistant Image"]
     types: [completed]

@@ -1,0 +1,166 @@
+#!/usr/bin/env bun
+/**
+ * readme-metadata.ts — Extracts project metadata for README generation.
+ *
+ * Outputs JSON with papers, chapters, lean modules, simulators, and workflows.
+ * Used by scripts/generate-readme.sh to avoid GNU-specific shell tools.
+ */
+
+import { readdir, stat, readFile } from "fs/promises";
+import { join, basename } from "path";
+
+const root = join(import.meta.dir, "..");
+
+// ── Papers ──────────────────────────────────────────────────────────────────
+
+interface PaperInfo { title: string; dir: string; abstract?: string }
+
+async function getPapers(): Promise<PaperInfo[]> {
+  const contentDir = join(root, "content");
+  const skip = new Set(["schema", "pipeline", "node_modules"]);
+  const entries = await readdir(contentDir, { withFileTypes: true });
+  const papers: PaperInfo[] = [];
+
+  for (const e of entries) {
+    if (!e.isDirectory() || skip.has(e.name)) continue;
+    const manifest = join(contentDir, e.name, `${e.name}.ts`);
+    try {
+      await stat(manifest);
+    } catch { continue; }
+    const src = await readFile(manifest, "utf-8");
+    const titleMatch = src.match(/title:\s*["']([^"']+)["']/);
+    const abstractMatch = src.match(/abstract:\s*\n?\s*["']([^"']+)["']/);
+    papers.push({
+      title: titleMatch?.[1] ?? e.name,
+      dir: e.name,
+      abstract: abstractMatch?.[1],
+    });
+  }
+  return papers;
+}
+
+// ── Chapters (from paper manifest, preserving authored order) ───────────────
+
+interface ChapterInfo { dir: string; title: string; kind: "chapter" | "appendix" | "index" }
+
+async function getChapters(): Promise<ChapterInfo[]> {
+  const manifest = join(root, "content/quantum-observable-universe/quantum-observable-universe.ts");
+  const src = await readFile(manifest, "utf-8");
+  // Extract dir values from chapterRef({ dir: "..." }) in order
+  const dirs = [...src.matchAll(/chapterRef\(\{\s*dir:\s*["']([^"']+)["']/g)].map(m => m[1]);
+
+  const chapters: ChapterInfo[] = [];
+  for (const dir of dirs) {
+    const chapterTs = join(root, "content/quantum-observable-universe", dir, `${dir}.ts`);
+    let title = dir;
+    try {
+      const chSrc = await readFile(chapterTs, "utf-8");
+      const m = chSrc.match(/title:\s*["']([^"']+)["']/);
+      if (m) title = m[1];
+    } catch {}
+
+    const kind = dir.startsWith("appendix-") ? "appendix"
+               : dir.startsWith("index-") ? "index"
+               : "chapter";
+    chapters.push({ dir, title, kind });
+  }
+  return chapters;
+}
+
+// ── Lean modules ────────────────────────────────────────────────────────────
+
+interface LeanModule { name: string; source: string; fileCount?: number }
+
+async function getLeanModules(): Promise<LeanModule[]> {
+  const qouDir = join(root, "content/quantum-observable-universe/lean/QOU");
+  const modules: LeanModule[] = [];
+
+  try {
+    const entries = await readdir(qouDir, { withFileTypes: true });
+
+    // Top-level .lean files
+    for (const e of entries.filter(e => e.isFile() && e.name.endsWith(".lean")).sort((a, b) => a.name.localeCompare(b.name))) {
+      modules.push({ name: `QOU.${basename(e.name, ".lean")}`, source: e.name });
+    }
+
+    // Subdirectories
+    for (const e of entries.filter(e => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
+      const subFiles = await readdir(join(qouDir, e.name));
+      const count = subFiles.filter(f => f.endsWith(".lean")).length;
+      modules.push({ name: `QOU.${e.name}.*`, source: `${count} files`, fileCount: count });
+    }
+  } catch {}
+
+  return modules;
+}
+
+// ── Simulators ──────────────────────────────────────────────────────────────
+
+interface SimInfo { name: string; file: string }
+
+async function getSimulators(): Promise<SimInfo[]> {
+  const simDir = join(root, "folio-assistant/simulators");
+  const sims: SimInfo[] = [];
+  try {
+    const entries = await readdir(simDir);
+    for (const f of entries.filter(f => f.endsWith(".html")).sort()) {
+      const raw = basename(f, ".html");
+      // Title-case: split on underscores, capitalize each word
+      const pretty = raw.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+      sims.push({ name: pretty, file: `simulators/${raw}.html` });
+    }
+  } catch {}
+  return sims;
+}
+
+// ── Workflows ───────────────────────────────────────────────────────────────
+
+interface WorkflowInfo { file: string; description: string }
+
+const WORKFLOW_DESCRIPTIONS: Record<string, string> = {
+  "lean_ci.yml": "Lean build, proof status, axiom report, doc generation",
+  "publish.yml": "Full paper build — PDF, HTML, viewer, schema docs, deploy to gh-pages",
+  "blueprint.yml": "Blueprint compilation, dependency graph, doc-gen4",
+  "lean-build.yml": "Lean build and proof status updates",
+  "deploy-folio.yml": "Deploy Folio Assistant to remote server",
+  "build-lean-mcp.yml": "Build Lean MCP Docker image",
+  "build-latex-image.yml": "Build LaTeX CI Docker image",
+  "docker-ci-image.yml": "Build general CI Docker image",
+  "agent-review.yml": "AI-assisted code review",
+  "release-folio-assistant.yml": "Release Folio Assistant package",
+  "snappea_wasm.yml": "SnapPea WASM build and test",
+  "sync-skills.yml": "Sync external skill packages",
+};
+
+async function getWorkflows(): Promise<WorkflowInfo[]> {
+  const wfDir = join(root, ".github/workflows");
+  const workflows: WorkflowInfo[] = [];
+  try {
+    const entries = await readdir(wfDir);
+    for (const f of entries.filter(f => f.endsWith(".yml")).sort()) {
+      let desc = WORKFLOW_DESCRIPTIONS[f];
+      if (!desc) {
+        // Extract name: from YAML
+        try {
+          const src = await readFile(join(wfDir, f), "utf-8");
+          const m = src.match(/^name:\s*(.+)$/m);
+          desc = m?.[1]?.trim().replace(/^["']|["']$/g, "") ?? "";
+        } catch { desc = ""; }
+      }
+      workflows.push({ file: f, description: desc });
+    }
+  } catch {}
+  return workflows;
+}
+
+// ── Main ────────────────────────────────────────────────────────────────────
+
+const [papers, chapters, leanModules, simulators, workflows] = await Promise.all([
+  getPapers(),
+  getChapters(),
+  getLeanModules(),
+  getSimulators(),
+  getWorkflows(),
+]);
+
+console.log(JSON.stringify({ papers, chapters, leanModules, simulators, workflows }, null, 2));

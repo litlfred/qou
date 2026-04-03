@@ -6,47 +6,55 @@ import { chapter, section } from "../../schema/builders";
  * Covers jet prolongation, the recursive brane tower, Yekutieli lifting,
  * the main QOU theorem, cosimplicial structure, descent, mass decomposition,
  * and the quantum dilogarithm.
+ *
+ * Hadron, proton/neutron, bundle, and topological-mass blocks moved to
+ * ch4-path-integrals-and-braiding and ch11-experimental-evidence during
+ * chapter restructuring (2026-03).
  */
 export default chapter({
   number: 3,
   title: "Lifting and Descent",
   label: "chap:torsion",
   sections: [
+    // ── Foundations ─────────────────────────────────────────────────────
+    // (Recursive Brane Tower merged here — only 2 blocks)
     section({
-      title: "Jet Prolongation",
+      title: "Jet Prolongation and the Recursive Brane Tower",
       label: "sec:jet-prolongation",
       blocks: [
         "jet-prolongation",
         "jet-prolongation-proof",
         "prolongation-categorical",
-      ],
-    }),
-
-    section({
-      title: "Recursive Brane Tower",
-      label: "sec:recursive-brane-tower",
-      blocks: [
         "recursive-brane-tower",
         "brane-tower-levels",
       ],
     }),
 
+    // ── Categorical lifting (from ch2 elaboration) ─────────────────────
     section({
-      title: "Cosimplicial Crossed Groupoid Structure",
-      label: "ssec:cosimplicial-crossed-groupoid",
+      title: "Categorical Lifting: Transport and Torsion",
+      label: "sec:lifting",
       blocks: [
-        "cosimplicial-intro",
-        "yekutieli-triple",
-        "cosimplicial-crossed-groupoid",
-        "cosimplicial-crossed-groupoid-proof",
-        "jet-as-descent",
-        "descent-condition",
-        "descent-condition-proof",
-        "weak-equiv-invariance",
-        "weak-equiv-invariance-proof",
+        "lifting-intro",
+        "categorical-jet-prolongation",
+        "categorical-jet-prolongation-proof",
+        "categorical-q-reeb-flow",
+        "reeb-primes-as-orbits",
       ],
     }),
 
+    // ── Descent primitives (only need jet + brane tower) ───────────────
+    section({
+      title: "Descent Preliminaries",
+      label: "ssec:descent-prelim",
+      blocks: [
+        "descent-lemma",
+        "descent-lemma-proof",
+        "descent-involution",
+      ],
+    }),
+
+    // ── Yekutieli lifting (needed by cosimplicial + descent) ───────────
     section({
       title: "Yekutieli Lifting and Quantum Characteristic Classes",
       label: "sec:yekutieli-lifting",
@@ -60,18 +68,7 @@ export default chapter({
       ],
     }),
 
-    section({
-      title: "Betti Numbers and Harmonic Basis",
-      label: "sec:betti-harmonic",
-      blocks: [
-        "betti-numbers-brane",
-        "q-harmonic-basis-brane",
-        "weight-space-decomposition-brane",
-        "algebraic-filter",
-        "distributional-connection",
-      ],
-    }),
-
+    // ── Algebraic infrastructure ───────────────────────────────────────
     section({
       title: "Direct Limit Algebra",
       label: "sec:direct-limit",
@@ -80,10 +77,11 @@ export default chapter({
         "direct-limit-lusztig",
         "jet-shell",
         "stack-like-structure",
-        "global-gluing",
-        "global-gluing-proof",
         "vacuum-state",
         "vacuum-state-proof",
+        "global-gluing",
+        "global-gluing-proof",
+        "ordering-jet-compatibility",
       ],
     }),
 
@@ -99,69 +97,66 @@ export default chapter({
     }),
 
     section({
-      title: "Yekutieli Categorical Mapping",
-      label: "sec:yekutieli-mapping",
+      title: "Betti Numbers and Harmonic Basis",
+      label: "sec:betti-harmonic",
       blocks: [
-        "yekutieli-mapping-table",
+        "betti-numbers-brane",
+        "q-harmonic-basis-brane",
+        "weight-space-decomposition-brane",
+        "algebraic-filter-classification",
+        "algebraic-filter",
+        "distributional-connection",
       ],
     }),
 
+    // ── Descent (must precede cosimplicial groupoid) ───────────────────
     section({
       title: "Descent",
       label: "ssec:descent",
       blocks: [
         "descent-intro",
-        "descent",
-        "descent-lemma",
-        "descent-lemma-proof",
-        "descent-involution",
         "descent-eigenspaces",
         "descent-eigenspaces-proof",
         "brane-boundary",
         "brane-boundary-structure",
-        "descent-reduction",
-        "descent-physical",
         "descent-reduction-zero",
         "descent-physical-zero",
+        "descent-reduction",
+        "descent-physical",
         "descent-fixed-point",
       ],
     }),
 
+    // ── Cosimplicial structure (now all deps are upstream) ─────────────
+    // (Yekutieli Categorical Mapping merged here — only 1 block)
     section({
-      title: "Localized Knots, Hadrons, and Bundle Initial Conditions",
-      label: "sec:localized-knots-bundles",
+      title: "Cosimplicial Crossed Groupoid Structure",
+      label: "ssec:cosimplicial-crossed-groupoid",
+      blocks: [
+        "cosimplicial-intro",
+        "yekutieli-triple",
+        "cosimplicial-crossed-groupoid",
+        "cosimplicial-crossed-groupoid-proof",
+        "jet-as-descent",
+        "descent-condition",
+        "descent-condition-proof",
+        "weak-equiv-invariance",
+        "weak-equiv-invariance-proof",
+        "yekutieli-mapping-table",
+      ],
+    }),
+
+    // ── Localized knots (trimmed — hadrons/particles moved out) ────────
+    section({
+      title: "Localized Knots",
+      label: "sec:localized-knots",
       blocks: [
         "localized-knot-intro",
         "localized-knot",
-        "hadron",
-        "hadron-operations",
-        "localized-hadron",
-        "hadron-fibre-embedding",
-        "skein-generation",
-        "bundle-initial-conditions",
-        "bundle-isotopy-equivalence",
-        "knot-particle-dictionary",
-        "torsion-knot-flow",
-        "bundle-category",
       ],
     }),
 
-    section({
-      title: "Topological Decomposition of Mass",
-      label: "sec:topological-mass",
-      blocks: [
-        "topological-mass",
-        "topological-mass-categorical-proof",
-        "qdlog-julia",
-        "julia-s1-photon-scatter",
-      ],
-    }),
-
-    // ── Archimedean specialisations ──────────────────────────────────────
-    // All results below require the archimedean realisation (manifolds,
-    // gauge theory, Killing forms, Stokes theorem, etc.).  The categorical
-    // statements they specialise remain in the sections above.
-
+    // ── Archimedean specialisations ──────────────────────────────────
     section({
       title: "Archimedean Specialisations",
       label: "sec:archimedean-lifting",
@@ -171,11 +166,14 @@ export default chapter({
         "yekutieli-archimedean-band",
         "qu-to-qou-proof",
         "mass-identity-C",
+        "mass-identity-C-proof",
         "mass-geometric-drag",
         "euler-char-stability-C",
         "brane-boundary-structure-proof",
-        "topological-mass-proof",
         "quantum-dilogarithm",
+        "quantum-dilogarithm-proof",
+        "topological-mass-conjecture",
+        "topological-mass-proof",
       ],
     }),
   ],

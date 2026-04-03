@@ -1,0 +1,105 @@
+{
+  "nucleus": "Li-6",
+  "p": 3,
+  "n": 3,
+  "A": 6,
+  "q": 1.11,
+  "timestamp": "2026-03-27T14:13:45.802041+00:00",
+  "parent": {
+    "ordering": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "ordering_visual": "\u25cb\u25cf\u25cb\u25cf\u25cf\u25cb",
+    "sign": 1,
+    "log_trace": -3.633930222332663,
+    "trace_numerical": 0.026412174433800555,
+    "n_negative_generators": 0,
+    "negative_generator_positions": [],
+    "ground_state_method": "exhaustive",
+    "n_orderings_searched": 20,
+    "generator_volumes": [
+      {
+        "i": 0,
+        "V_hat": 0.19411487010851047,
+        "sign": 1,
+        "log_abs": -1.6393051811877188,
+        "n_crossings": 5
+      },
+      {
+        "i": 1,
+        "V_hat": 1.116479224014241,
+        "sign": 1,
+        "log_abs": 0.11018018398722673,
+        "n_crossings": 4
+      },
+      {
+        "i": 2,
+        "V_hat": 0.2933932758739523,
+        "sign": 1,
+        "log_abs": -1.226241331484232,
+        "n_crossings": 3
+      },
+      {
+        "i": 3,
+        "V_hat": 1.0522036897663876,
+        "sign": 1,
+        "log_abs": 0.05088671702424296,
+        "n_crossings": 2
+      },
+      {
+        "i": 4,
+        "V_hat": 0.39477053352403985,
+        "sign": 1,
+        "log_abs": -0.9294506106721815,
+        "n_crossings": 1
+      }
+    ]
+  },
+  "daughter": {
+    "p": 4,
+    "n": 2,
+    "ordering": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "ordering_visual": "\u25cb\u25cf\u25cb\u25cf\u25cf\u25cf",
+    "sign": 1,
+    "log_trace": -2.5629945373476386,
+    "trace_numerical": 0.07707359477079577,
+    "n_negative_generators": 0,
+    "negative_generator_positions": [],
+    "ground_state_method": "exhaustive"
+  },
+  "transition": {
+    "same_sign": true,
+    "delta_phi": -1.0709356849850242,
+    "intensive_delta_tr": 0.6573122803945239,
+    "converting_position": 5,
+    "eIeR": null
+  },
+  "experimental": {
+    "Q_exp_MeV": null,
+    "t_obs": null,
+    "t_unit": null
+  },
+  "computation": {
+    "elapsed_s": 0.0004911422729492188,
+    "engine": "braid-registry.py",
+    "factored_trace_theorem": "thm:markov-trace-factorization",
+    "parameters": {
+      "z_markov": 0.4993200830735895,
+      "ha": 0.2090990990990993,
+      "hbar_q2": 0.009820631442253083,
+      "M_total_MeV": 3838.7665869302245
+    }
+  }
+}

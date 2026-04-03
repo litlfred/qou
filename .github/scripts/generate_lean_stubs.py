@@ -96,7 +96,7 @@ def main():
     manifest = load_manifest(args.manifest)
     if not manifest.get("objects"):
         print(f"❌ No objects in manifest: {args.manifest}")
-        print("Run extract_proof_objects.py first.")
+        print("Run extract_proof_objects.py first (content build may have failed).")
         sys.exit(1)
 
     # Group objects by chapter

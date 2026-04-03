@@ -1,1 +1,0 @@
-Link to Verlinde's entropic gravity programme and related work on emergent gravity from an information-theoretic perspective. Connection to the entropic-gravity signatures discussed in [Section](#sec:entropic-gravity).

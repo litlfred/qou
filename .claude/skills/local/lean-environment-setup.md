@@ -14,7 +14,7 @@ allowed-tools: Read Edit Bash Grep Glob
 ## Architecture
 
 All MCP functionality — including Lean tools — is served through a single
-`paper-assistant` MCP server (`./scripts/start-assistant.sh`). There is
+`paper-assistant` MCP server (`./scripts/start-folio-assistant.sh`). There is
 **no separate lean-lsp MCP entry**. The paper-assistant detects lean/lake
 on the PATH and enables Lean tools automatically.
 
@@ -38,21 +38,16 @@ The paper-assistant's Lean tools require these on the PATH:
 
 ### Step 1: Check current state
 
-```bash
-export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
-which elan lean lake 2>/dev/null
-cat /tmp/qou-lean-build-status.json 2>/dev/null
-```
+Use the `lean_status` MCP tool. It reports the current mode
+(local/remote/local-degraded/none) and what's missing.
 
 ### Step 2: Install Lean toolchain
 
-Run the setup script if lean/elan are missing:
+Use the `lean_setup` MCP tool. It handles the full installation:
+elan, lean, lake, uv, ripgrep, lake update, Mathlib cache, and build.
+Safe to re-run — skips already-installed components.
 
-```bash
-./scripts/setup-lean-mcp.sh
-```
-
-If the script fails (e.g., 403 errors from network restrictions in
+If `lean_setup` fails (e.g., 403 errors from network restrictions in
 sandboxed environments), proceed to Step 3.
 
 ### Step 3: Diagnose network restrictions
@@ -71,32 +66,8 @@ Lean tools require running Claude Code locally where lean/lake are installed.
 
 ### Step 4: Verify Lean tools via paper-assistant
 
-After setup, test that MCP Lean tools work:
-
-```
-lean_build (via paper-assistant MCP)
-lean_status (via paper-assistant MCP)
-```
-
-If these return results, Lean is operational.
-
-## MCP Configuration
-
-The `.mcp.json` has a single entry — `paper-assistant`:
-
-```json
-{
-  "mcpServers": {
-    "paper-assistant": {
-      "command": "./scripts/start-assistant.sh",
-      "args": ["--stdio"]
-    }
-  }
-}
-```
-
-The paper-assistant auto-detects lean/lake on the PATH and reports
-availability in its startup dependency status output.
+After setup, verify with the `lean_status` MCP tool. If mode is
+`local`, Lean is fully operational.
 
 ## Fallback: Structural Analysis Without Lean
 
@@ -124,16 +95,16 @@ What agents **cannot** do without Lean:
 | "No such file or directory: 'lake'" | lean not on PATH | `export PATH="$HOME/.elan/bin:$PATH"` or install elan |
 | elan install 403 | Network restrictions | Run Claude Code locally where lean is installed |
 | "lake update" hangs | Git fetch blocked | Check `git ls-remote` works for mathlib4 |
-| Lean tools timeout | Project not built | Run `lake build` in `lean-archive/` first |
-| "toolchain not installed" | Wrong lean version | `cd lean-archive && elan toolchain install $(cat lean-toolchain)` |
+| Lean tools timeout | Project not built | Run `lake build` in `content/quantum-observable-universe/lean/` first |
+| "toolchain not installed" | Wrong lean version | `cd content/quantum-observable-universe/lean && elan toolchain install $(cat lean-toolchain)` |
 | paper-assistant shows `✗ lean` | lean not on PATH | Add `$HOME/.elan/bin` to PATH in shell profile |
 
 ## PATH Configuration
 
-The `lean-build-bg.sh` and `session-status.sh` scripts both set:
+All session scripts source `scripts/lib/lean-env.sh`, which sets:
 
 ```bash
-export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.elan/bin:$HOME/.local/bin:$HOME/.bun/bin:$PATH"
 ```
 
 The paper-assistant inherits the shell's PATH when launched via `.mcp.json`.

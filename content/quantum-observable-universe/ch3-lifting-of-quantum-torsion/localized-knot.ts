@@ -8,10 +8,8 @@ export default definition({
     decl: "QOU.LocalizedKnot",
     validation: "not_checked",
   },
-  status: "has_sorry",
   uses: [
     "def:categorical-point",
     "def:projective-line-object",
-    "def:quantum-observable-universe",
   ],
 });

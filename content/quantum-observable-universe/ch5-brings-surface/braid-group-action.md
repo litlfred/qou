@@ -10,7 +10,7 @@ and the $\mathrm{SU}(2)$/$\mathrm{SO}(3)$ matrices of
 [SU(2) generators](#def:su2-generators)--[SO(3) generators](#def:so3-generators).
 
 **(i) Spacetime action ($\mathbb{P}^1(\mathbb{C})$ base).**
-Fix the chiral-like coordinates $x_2,x_3,x_4$ as internal fiber
+Fix the color coordinates $x_2,x_3,x_4$ as internal fiber
 degrees of freedom.  The constraint
 $w_0=0$ forces $x_0+x_1=C$ (constant), so
 the spacetime degrees of freedom collapse projectively to the ratio
@@ -28,7 +28,7 @@ In the resolvent basis this acts as
 \end{equation}
 ```
 
-an affine shift that fixes the chiral modes and translates the
+an affine shift that fixes the color modes and translates the
 $\mathbb{P}^1(\mathbb{C})$ fibre.
 
 **(ii) Spectral $S_3$ (trefoil action).**
@@ -42,8 +42,7 @@ $$
   \eta_1=\frac{w_1}{w_2},\qquad\eta_2=\frac{w_3}{w_4}:
 $$
 
-$\sigma_1$ inverts both ratios $(\eta_1\mapsto\eta_1^{-1},\;
-\eta_2\mapsto\eta_2^{-1})$, while $\sigma_2$ exchanges them
+$\sigma_1$ inverts both ratios $(\eta_1\mapsto\eta_1^{-1},\; \eta_2\mapsto\eta_2^{-1})$, while $\sigma_2$ exchanges them
 $(\eta_1\mapsto\eta_2^{-1},\;\eta_2\mapsto\eta_1^{-1})$.  The
 $2$-cycle (reflection) swaps the pairs
 $(w_1,w_4)\leftrightarrow(w_2,w_3)$; the $3$-cycle (rotation) sends

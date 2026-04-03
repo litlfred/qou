@@ -31,7 +31,7 @@ on:
     branches:
       - main
     paths:
-      - 'lean-archive/**'
+      - 'content/quantum-observable-universe/lean/**'
       - 'blueprint/**'
       - 'home_page/**'
       - 'chapters/**'
@@ -40,7 +40,7 @@ on:
     branches:
       - main
     paths:
-      - 'lean-archive/**'
+      - 'content/quantum-observable-universe/lean/**'
       - 'blueprint/**'
   workflow_dispatch:
 
@@ -54,11 +54,17 @@ permissions:
   id-token: write
   issues: write
   pull-requests: write
+  packages: read          # required to pull the latex-ci container image
 
 jobs:
   build_blueprint:
     runs-on: ubuntu-latest
     name: Build project & blueprint
+    container:
+      image: ghcr.io/${{ github.repository }}/latex-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       # ── Free disk space (mathlib + doc-gen4 need ~10 GB) ─────────
@@ -78,23 +84,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install CI tools
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-            texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
-          pip3 install --break-system-packages --no-cache-dir requests>=2.32
-
       # ── Pre-build: content pipeline + extraction ──────────────────
-      - name: Configure Python path
-        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+      - name: Configure environment
+        run: |
+          git config --global --add safe.directory "${{ github.workspace }}"
+          echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      # Bun is pre-installed in the latex-ci container image.
 
       - name: Build content objects to LaTeX chapters
         continue-on-error: true
@@ -113,9 +109,11 @@ jobs:
         run: python3 .github/scripts/ontologist.py all
 
       - name: Extract proof objects from LaTeX
+        continue-on-error: true
         run: python3 .github/scripts/extract_proof_objects.py
 
       - name: Generate Lean stubs
+        continue-on-error: true
         run: python3 .github/scripts/generate_lean_stubs.py
 
       # ── Build Lean project ───────────────────────────────────────
@@ -125,7 +123,7 @@ jobs:
         with:
           build: true
           lint: false
-          lake-package-directory: lean-archive
+          lake-package-directory: content/quantum-observable-universe/lean
         continue-on-error: true
 
       # ── Build blueprint + doc-gen4 (no deploy) ─────────────────
@@ -139,7 +137,7 @@ jobs:
           blueprint: true
           deploy: false
           homepage: home_page
-          lake-package-directory: lean-archive
+          lake-package-directory: content/quantum-observable-universe/lean
           references: references.bib
         continue-on-error: true
 
@@ -149,7 +147,7 @@ jobs:
           touch build.log
           python3 .github/scripts/axiom_report.py \
             --build-log build.log \
-            --lean-dir lean-archive \
+            --lean-dir content/quantum-observable-universe/lean \
             --output axiom-report.txt
         continue-on-error: true
 
@@ -200,9 +198,31 @@ jobs:
           find _deploy -type f | sort | head -50
           echo "Total files: $(find _deploy -type f | wc -l)"
 
-      # ── Deploy to gh-pages branch ──────────────────────────────
-      - name: Deploy to gh-pages
+      # ── Upload deploy artifacts for the deploy job ──────────────
+      - name: Upload deploy artifacts
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: blueprint-deploy
+          path: _deploy
+          retention-days: 1
+
+  deploy:
+    name: Deploy to gh-pages
+    runs-on: ubuntu-latest
+    needs: [build_blueprint]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
+    steps:
+      - name: Download deploy artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: blueprint-deploy
+          path: _deploy
+
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

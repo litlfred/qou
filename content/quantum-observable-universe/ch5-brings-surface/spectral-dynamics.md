@@ -9,7 +9,7 @@ and time-like sectors of the Bring's surface:
 - *$\omega_2,\omega_3$ (time-like):* the factor
   $\exp_q(r)-1$ vanishes at $r=0$ and grows rapidly for small $r$,
   driven by the $q$-deformed Reeb flow
-  ([$q$-Reeb flow](#def:q-reeb-flow)).  These ladder modes expand at the big
+  ([$q$-Reeb flow](#ex:q-reeb-flow)).  These ladder modes expand at the big
   bang before tapering as the geometric viscosity
   ([$q$-harmonic physical interpretation](#rem:q-harmonic-physical)) takes hold.
 
@@ -35,7 +35,7 @@ $$
   \sin_q(x)=\frac{\exp_q(ix)-\exp_q(-ix)}{2i},
 $$
 
-and $\mathbf{u}\in\operatorname{Im}\mathbb{H}$ is a fixed unit imaginary
+and $\mathbf{u}\in\mathrm{Im}\mathbb{H}$ is a fixed unit imaginary
 quaternion.  The conjugation
 $\boldsymbol{\omega}'=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}$
 gives maximum twist ($\theta=\pi/2$) in the deep-quantum regime $r\to 0$

@@ -8,9 +8,9 @@ import { paper, chapterRef } from "../schema/builders";
  * `<dir>/<dir>.ts` by convention (or uses `uri` override).
  */
 export default paper({
-  title: "Quantum Observable Universe",
+  title: "On the Mechanics of Quantum Observable Universes",
   authors: ["Frederick Carl Leitner"],
-  affiliations: ["World Health Organization"],
+  affiliations: [],
   date: "2026-03-21",
   abstract:
     "This paper presents a mathematical framework for the Quantum Observable " +
@@ -20,19 +20,29 @@ export default paper({
     "discussed in the final chapter.",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
+    nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
     frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },
     frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },
+    frakI: { tex: "\\mathfrak{I}",  unicode: "ℑ" },
+    frakK: { tex: "\\mathfrak{K}",  unicode: "𝔎" },
+    frakP: { tex: "\\mathfrak{P}",  unicode: "𝔓" },
   },
   chapters: [
     chapterRef({ dir: "ch0-introduction" }),
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
-    chapterRef({ dir: "ch5-brings-surface" }),
+    chapterRef({ dir: "ch2-quantum-geometry" }),
     chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
     chapterRef({ dir: "ch4-path-integrals-and-braiding" }),
     chapterRef({ dir: "ch6-descartes-universe" }),
-    chapterRef({ dir: "ch11-experimental-evidence" }),
-    chapterRef({ dir: "ch10-interpretations" }),
+    chapterRef({ dir: "ch5-brings-surface" }),
+    chapterRef({ dir: "ch7-observations" }),
+    chapterRef({ dir: "ch8-algebraic-substrate" }),
+    chapterRef({ dir: "ch9-information-theory" }),
     chapterRef({ dir: "ch8-glossary" }),
+    chapterRef({ dir: "appendix-knot-periodic-table" }),
+    chapterRef({ dir: "appendix-transfer-matrices" }),
+    chapterRef({ dir: "appendix-atomic-mass-calculations" }),
+    chapterRef({ dir: "index-of-definitions" }),
   ],
 });

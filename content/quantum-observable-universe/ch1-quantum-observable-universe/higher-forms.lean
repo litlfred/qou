@@ -1,8 +1,8 @@
 /-!
 # QOU.HigherForms
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/HigherForms.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/HigherForms.lean (monolithic)
 -/
 
 import QOU.Basic
@@ -43,5 +43,8 @@ structure HigherForms (C : Type u) [CategoryTheory.Category.{v} C]
   degree_zero : formObj 0 = frobHopf.obj
   /-- The differential `d : Ωᵏ(A) → Ωᵏ⁺¹(A)`. -/
   d : (k : ℕ) → formObj k ⟶ formObj (k + 1)
+  /-- **Closure** (`d² = 0`): the composite `d_{k+1} ∘ d_k = 0`.
+      This is the defining property of a cochain complex. -/
+  d_squared_zero : ∀ (k : ℕ), d k ≫ d (k + 1) = 0
 
 end QOU

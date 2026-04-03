@@ -2,8 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:braid-group",
-  lean: { decl: "QOU.BraidGroup" },
-  status: "not_started",
+  lean: { decl: "QOU.BraidGroup", validation: "not_checked" },
   title: "Braid group on three strands",
   tags: ["braid-group", "group-theory"],
   uses: [],

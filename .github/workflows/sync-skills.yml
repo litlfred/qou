@@ -39,6 +39,13 @@ jobs:
 
             echo "::group::Syncing package: $NAME from $REPO ($REF)"
 
+            MODE=$(jq -r ".packages[$i].mode // \"sync\"" "$CONFIG")
+            if [ "$MODE" = "reference" ]; then
+              echo "  Skipping $NAME (mode=reference, fetched on demand)"
+              echo "::endgroup::"
+              continue
+            fi
+
             DEST=".claude/skills/$NAME"
             CLONE_DIR=$(mktemp -d)
 

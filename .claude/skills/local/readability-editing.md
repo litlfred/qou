@@ -52,6 +52,10 @@ ideas to a graduate-level reader.
 
 ### 5. Consistency
 - Notation introduced in one section is used consistently throughout.
+- Categories use bold ($\mathbf{C}$, $\mathbf{Rep}$), never calligraphic
+  $\mathcal{C}$. Calligraphic is reserved for sheaves, sites, algebras.
+- The fibre functor is $\tau$ throughout; minimise its appearance where the
+  QOU datum $(\mathbf{C}, A)$ suffices.
 - Acronyms are expanded on first use and used bare thereafter.
 - Displayed equations ending a sentence include a period inside the
   environment.
@@ -60,7 +64,7 @@ ideas to a graduate-level reader.
 - Every `\label{def:foo}` / `\label{thm:foo}` in chapter files should
   have a corresponding entry in `blueprint/src/content.tex` with a
   `\lean{}` macro.  Flag missing blueprint entries as minor issues.
-- Verify that `\cite{key}` keys are consistent with `references.bib`
+- Verify that `\cite{key}` keys are consistent with `content/schema/references.ts`
   naming convention (`<firstauthorlastname><year>`).
 - When narrative text introduces a definition that appears in the
   glossary, the first use should reference it with `\emph{}` and the

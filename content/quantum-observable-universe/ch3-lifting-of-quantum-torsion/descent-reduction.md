@@ -4,11 +4,11 @@ universe collapse as follows.
 1. *Connection.*  The $\mathrm{SU}(2)$ connection $A_k$ restricts to
    a single dimension; its holonomy reduces to a $\mathrm{U}(1)$ phase
    around $S^1$.
-2. *Bundle.*  The principal $\mathrm{SU}(2)$ bundle $E$ descends to a
+2. *Bundle.*  The principal $\mathrm{SU}(2)$ bundle $\mathcal{S}$ descends to a
    bundle over the $1$-dimensional base whose fibre dynamics are locked
    into a single periodic flow.
 3. *Reeb direction.*  The inverse of the Reeb vector field
-   ([$q$-Reeb vector field](#def:q-reeb-vector-field)) becomes the only direction
+   ([$q$-Reeb vector field](#ex:q-reeb-vector-field)) becomes the only direction
    of motion; the horizontal distribution is trivial and no bosonic modes
    ([algebraic filter](#rem:algebraic-filter)) survive.
 

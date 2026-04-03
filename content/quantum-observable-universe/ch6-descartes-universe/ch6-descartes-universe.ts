@@ -1,86 +1,71 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 6: Universes.
+ * Chapter 5: Models of QOUs.
  *
- * The Descartes condition, its implications for genus-4 base curves,
- * chirality, colour sectors, braid-group structure, and the Descartes
- * theorem; followed by p-adic, finite-field, and Witt-vector realisations.
+ * Concrete realisations of the QOU axioms.  First half: general models
+ * (Archimedean, p-adic, finite-field, Witt-vector, Jones, fluid).
+ * Second half: the Descartes universe — the specific realisation with
+ * χ(A) = −6 and Bring's surface as fibre geometry.
+ *
+ * Merged from former Ch 5 (Models of QOU) + Ch 6 (The Descartes Universe).
  */
 export default chapter({
   number: 5,
-  title: "Universes",
-  label: "chap:universes",
+  title: "Models of QOUs",
+  label: "chap:models-qou",
   sections: [
+    // ═══════════════════════════════════════════════════════════════════
+    // PART A: GENERAL MODELS
+    // ═══════════════════════════════════════════════════════════════════
+
+    // ── Physical interpretation and main result ─────────────────────
     section({
-      title: "The Descartes condition",
-      label: "sec:descartes-condition",
+      title: "Physical interpretation and the main result",
+      label: "sec:physical-interpretation",
       blocks: [
-        "descartes-condition",
-        "descartes-calabi-yau",
-        "descent-one-dim",
-        "genus-maximal-descent",
-        "genus-maximal-descent-proof",
+        "q-yang-mills-levi",
+        "gr-substrate-geometry",
+        "main-commutative-diagram",
+        "main-commutative-diagram-proof",
       ],
     }),
 
+    // ── Archimedean realisations ────────────────────────────────────
     section({
-      title: "Leptons and chirality",
-      label: "sec:descartes-leptons-chirality",
+      title: "Archimedean specialisations",
+      label: "sec:archimedean-models",
       blocks: [
-        "descartes-leptons",
-        "descartes-chirality",
-        "light-cone-affine",
+        "calabi-yau",
+        "ale",
+        "brings-surface-unit-circle",
+        "cosmological-limits",
+        "instanton",
+        "irreducible-connection",
+        "seiberg-witten",
+        "primordial-vortex",
+        "geometric-drag",
+        "self-dual-curvature",
+        "c-substrate-via-levi",
+        "webster-inner-product",
+        "heisenberg-commutator-prop",
+        "heisenberg-commutator",
+        "reeb-decomposition",
+        "observation-archimedean",
+        "spatial-realization-functor",
+        "categorical-archimedean-bridge",
+        "categorical-archimedean-bridge-proof",
       ],
     }),
 
-    section({
-      title: "Trefoil subgroups and Bring's curve",
-      label: "sec:trefoil-brings",
-      blocks: [
-        "chirality-trefoil",
-        "brings-curve",
-      ],
-    }),
-
-    section({
-      title: "Colour-sector coordinates on the exceptional fibre",
-      label: "sec:colour-sector-coords",
-      blocks: [
-        "exceptional-divisor",
-        "chiral-sector-coords",
-      ],
-    }),
-
-    section({
-      title: "Categorical braid structure",
-      label: "sec:descartes-braid",
-      blocks: [
-        "descartes-braid-structure",
-        "descartes-braid-structure-proof",
-        "skein-archimedean-shadow",
-      ],
-    }),
-
-    section({
-      title: "The Descartes theorem",
-      label: "sec:descartes-theorem",
-      blocks: [
-        "descartes",
-        "descartes-proof",
-        "universality-general",
-        "descartes-yekutieli",
-        "observation-brings",
-      ],
-    }),
-
-    // ── p-Adic and non-Archimedean realisations (formerly Ch. 7) ─
-
+    // ── Categorical reformulation ───────────────────────────────────
     section({
       title: "Key Results in Categorical Language",
       label: "sec:categorical-reformulation",
       blocks: ["categorical-reformulation"],
     }),
+
+    // ── Non-Archimedean models ──────────────────────────────────────
     section({
       title: "Universal Enveloping Algebras and Quantum Groups",
       label: "sec:enveloping-algebras",
@@ -107,6 +92,8 @@ export default chapter({
         "witt-lift-qou",
       ],
     }),
+
+    // ── Finite-field models ─────────────────────────────────────────
     section({
       title: "Quotient to Finite Fields",
       label: "sec:finite-fields",
@@ -115,10 +102,32 @@ export default chapter({
         "finite-fields-outlook",
       ],
     }),
+
+    // ── Jones polynomials ───────────────────────────────────────────
     section({
       title: "Jones Polynomials",
       label: "sec:jones-polynomials",
       blocks: ["jones-polynomials"],
     }),
+
+    // ── Fluid dynamics ──────────────────────────────────────────────
+    section({
+      title: "Fluid Dynamics of the Brane",
+      label: "sec:brane-fluid",
+      blocks: [
+        "brane-fluid",
+        "madelung-fluid",
+        "geodesic-vortices",
+        "braid-fluid",
+        "planck-reynolds",
+        "vortex-intensity-modes",
+        "discrete-vortex-spectrum",
+      ],
+    }),
+
+    // ═══════════════════════════════════════════════════════════════════
+    // PART B lives in ch5-brings-surface/ (same chapter number 5).
+    // The pipeline resolves blocks from that directory's own manifest.
+    // ═══════════════════════════════════════════════════════════════════
   ],
 });

@@ -1,16 +1,18 @@
 Continuing the [descent involution for SU(2)](#ex:descent-involution-su2),
-we compute the [descent eigenspaces](#prop:descent-eigenspaces) of $\tau$
+we compute the [descent eigenspaces](#prop:descent-eigenspaces) of $\hat{\tau}$
 on $\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$.
 
-**The splitting.** The idempotent $\tau$ splits the $6$-dimensional
+**The splitting.** The idempotent $\hat{\tau}$ splits the $6$-dimensional
 endomorphism algebra into two complementary subspaces:
+
 $$
   \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))
   \;=\; \mathfrak{A}^{\mathrm{desc}} \;\oplus\; \mathfrak{A}^{\mathrm{trans}},
 $$
-where $\mathfrak{A}^{\mathrm{desc}} = \operatorname{im}(\tau)$ is the
+
+where $\mathfrak{A}^{\mathrm{desc}} = \mathrm{im}(\hat{\tau})$ is the
 descended (persistent) eigenspace and
-$\mathfrak{A}^{\mathrm{trans}} = \ker(\tau)$ is the transient eigenspace.
+$\mathfrak{A}^{\mathrm{trans}} = \ker(\hat{\tau})$ is the transient eigenspace.
 
 **Descended eigenspace.** $\mathfrak{A}^{\mathrm{desc}}$ is
 $3$-dimensional, isomorphic to

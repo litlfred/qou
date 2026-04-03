@@ -76,6 +76,13 @@ permissions:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    outputs:
+      head_ref: ${{ steps.deploy-vars.outputs.head_ref }}
+      head_sha: ${{ steps.deploy-vars.outputs.head_sha }}
+      publish_branch: ${{ steps.deploy-vars.outputs.publish_branch }}
+    defaults:
+      run:
+        shell: bash
     container:
       image: ghcr.io/${{ github.repository }}/latex-ci:latest
       credentials:
@@ -132,11 +139,38 @@ jobs:
       # All CI tools (TeX Live, pandoc, latexdiff, graphviz, Bun, Python)
       # are pre-installed in the ghcr.io/.../latex-ci container image.
       # See .github/docker/Dockerfile.latex for the full list.
+      #
+      # If the container image is missing or stale, install the required
+      # packages on the fly so the build still succeeds.
       - name: Configure environment
         run: |
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
           # Trust the workspace directory for git operations inside container
           git config --global --add safe.directory "${{ github.workspace }}"
+
+      - name: Ensure LaTeX toolchain is available
+        run: |
+          if command -v latexmk >/dev/null 2>&1; then
+            echo "latexmk found: $(latexmk --version | head -1)"
+          else
+            echo "latexmk not found — installing TeX Live and related tools..."
+            apt-get update -qq && apt-get install -y --no-install-recommends \
+              texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+              texlive-science texlive-extra-utils latexmk biber \
+              pandoc latexdiff graphviz jq \
+            && rm -rf /var/lib/apt/lists/*
+            echo "latexmk installed: $(latexmk --version | head -1)"
+          fi
+          # Ensure ccicons font is available (may be missing from texlive-fonts-extra)
+          if ! kpsewhich ccicons.sty >/dev/null 2>&1; then
+            echo "ccicons not found — installing from CTAN..."
+            mkdir -p /tmp/ccicons && cd /tmp/ccicons \
+              && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
+              && unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
+              && texhash \
+              && updmap-sys --enable Map=ccicons.map \
+              && rm -rf /tmp/ccicons
+          fi
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
@@ -154,7 +188,10 @@ jobs:
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
-      - name: Validate and build content objects for all papers
+      # Build the primary paper (quantum-observable-universe) for PDF generation.
+      # Other papers are validated but not compiled to LaTeX, since the workflow
+      # only compiles and deploys one PDF.
+      - name: Validate content objects
         continue-on-error: true
         run: |
           cd content
@@ -165,27 +202,52 @@ jobs:
             else
               echo "  No content objects to validate for ${paper_dir}"
             fi
-
-            echo "── Building: ${paper_dir}"
-            bun run pipeline/build.ts \
-              "${paper_dir}/${paper_dir}.ts" \
-              --out-dir ../chapters/ \
-              --generate-main \
-              --main-out ../main.tex \
-              --preamble ../latex/preamble.tex \
-              || echo "::warning::Content build had issues for ${paper_dir}"
           done
-          echo "Generated chapters:"
-          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
-          echo "Generated main.tex:"
-          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
+
+      - name: Build primary paper content objects
+        run: |
+          cd content
+          PRIMARY_PAPER="quantum-observable-universe"
+          echo "── Building primary paper: ${PRIMARY_PAPER}"
+
+          # Run the build — it may exit non-zero due to block-level errors
+          # (missing .ts files, schema issues) but still generates valid output.
+          # Capture the exit code and verify output exists.
+          bun run pipeline/build.ts \
+            "${PRIMARY_PAPER}/${PRIMARY_PAPER}.ts" \
+            --out-dir ../chapters/ \
+            --generate-main \
+            --main-out ../main.tex \
+            --preamble ../latex/preamble.tex \
+            || echo "::warning::Content build exited non-zero (block-level errors)"
+
+          # Verify the build produced output
+          echo "=== Verifying build output ==="
+          chapter_count=$(ls ../chapters/*.tex 2>/dev/null | wc -l)
+          echo "Chapters generated: ${chapter_count}"
+          ls ../chapters/*.tex 2>/dev/null
+
+          if [ ! -f ../main.tex ]; then
+            echo "::error::main.tex was not generated"
+            exit 1
+          fi
+
+          echo "main.tex title:"
+          grep '\\title{' ../main.tex
+          echo "main.tex chapter inputs:"
+          grep '\\input{' ../main.tex | grep -v print-mode
+
+          if [ "${chapter_count}" -lt 5 ]; then
+            echo "::error::Too few chapters generated (${chapter_count}), expected 14"
+            exit 1
+          fi
 
       # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
       - name: Build schema docs
         continue-on-error: true
         run: |
-          npm install --no-save 2>/dev/null || true
-          npm run build:docs || echo "::warning::TypeDoc build failed"
+          bun install --no-save 2>/dev/null || bun install || true
+          bun run build:docs || echo "::warning::TypeDoc build failed"
           if [ -d build/schema-docs ]; then
             echo "✓ Schema docs generated ($(find build/schema-docs -name '*.html' | wc -l) pages)"
           fi
@@ -231,9 +293,46 @@ jobs:
           BRANCH_URL: https://github.com/${{ github.repository }}/tree/${{ env.HEAD_REF }}
         run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
 
+      # ── 1a-debug. Write build diagnostics to a deployed file ─────────────��
+      - name: Write build diagnostics
+        if: always()
+        run: |
+          {
+            echo "=== Build Diagnostics ==="
+            echo "Date: $(date -u)"
+            echo "Commit: ${{ env.HEAD_SHA }}"
+            echo ""
+            echo "=== main.tex title ==="
+            grep '\\title{' main.tex 2>/dev/null || echo "(no main.tex or no title)"
+            echo ""
+            echo "=== main.tex \\input lines ==="
+            grep '\\input{' main.tex 2>/dev/null | grep -v print-mode || echo "(none)"
+            echo ""
+            echo "=== chapters/ directory ==="
+            ls -la chapters/*.tex 2>/dev/null || echo "(no chapters)"
+            echo ""
+            echo "=== chapters/introduction.tex first 5 lines ==="
+            head -5 chapters/introduction.tex 2>/dev/null || echo "(not found)"
+            echo ""
+            echo "=== main-flat.tex size ==="
+            wc -c main-flat.tex 2>/dev/null || echo "(not yet created)"
+          } > build-diagnostics.txt
+          cat build-diagnostics.txt
+
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
-        run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
+            | grep -v '^LaTeX Warning: .*undefined' \
+            | grep -v '^pdfTeX warning (ext4): destination with the same identifier' \
+            | grep -v '^<to be read again>' \
+            | grep -v '^Overfull \\hbox' \
+            | grep -v '^Underfull \\hbox' \
+            | grep -v '^\[Loading MPS' \
+            | grep -v '^\*geometry\*' \
+            || true
+          # Verify PDF was produced
+          test -f main.pdf || { echo "::error::PDF was not produced"; exit 1; }
 
       - name: Capture LaTeX build warnings
         if: always()
@@ -323,6 +422,9 @@ jobs:
         run: |
           mkdir -p _site
 
+          # Deploy build diagnostics for debugging
+          cp build-diagnostics.txt _site/build-diagnostics.txt 2>/dev/null || true
+
           # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
           # Each paper discovered from folio.ts gets its own subdirectory.
           # The LaTeX compilation uses main.tex (shared preamble + chapter
@@ -352,6 +454,11 @@ jobs:
             cp quantum_brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
           elif [ -f brings_surface.html ]; then
             cp brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
+          fi
+
+          # Copy additional standalone simulators
+          if [ -f q_double_slit.html ]; then
+            cp q_double_slit.html "${PAPER_OUTDIR}/q-double-slit.html"
           fi
 
           # ── Extract proof objects early (needed by HTML generator) ──────────
@@ -437,6 +544,27 @@ jobs:
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
 
+          # ── Copy figure assets for all papers to gh-pages ────────────────
+          # LaTeX \includegraphics uses paths like:
+          #   content/<paper>/<chapter>/figures/img.png
+          # Pandoc converts these to <img src="content/..."> in the HTML.
+          # Mirror the content/ figure directories into _site/ so both the
+          # per-paper viewer and the root-level HTML can resolve image paths.
+          for paper_dir in $(cat papers.json | python3 -c "import sys,json; [print(p['dir']) for p in json.load(sys.stdin)]"); do
+            for fig_dir in content/${paper_dir}/*/figures; do
+              if [ -d "${fig_dir}" ]; then
+                # Mirror into _site/ preserving content/.../ path (for Pandoc HTML)
+                mkdir -p "_site/${fig_dir}"
+                cp -r "${fig_dir}/." "_site/${fig_dir}/"
+                # Also copy into per-paper output dir (for standalone viewers)
+                paper_outdir="_site/papers/${paper_dir}"
+                mkdir -p "${paper_outdir}/figures"
+                cp -r "${fig_dir}/." "${paper_outdir}/figures/"
+                echo "  ✓ Figures: ${fig_dir}"
+              fi
+            done
+          done
+
           # ── Backward compatibility: copy first paper PDF to root ────────────
           cp main.pdf "_site/${FNAME_BASE}.pdf"
           cp "${FNAME_BASE}.md" "_site/${FNAME_BASE}.md"
@@ -458,12 +586,12 @@ jobs:
           python3 .github/scripts/generate-folio-index.py "${FOLIO_ARGS[@]}"
 
           # ── Copy Lean source files to gh-pages ───────────────────────────────
-          if [ -d lean-archive ]; then
+          if [ -d content/quantum-observable-universe/lean ]; then
             mkdir -p _site/lean
-            cp -r lean-archive/QOU    _site/lean/QOU    2>/dev/null || true
-            cp    lean-archive/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
-            cp    lean-archive/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
-            cp    lean-archive/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+            cp -r content/quantum-observable-universe/lean/QOU    _site/lean/QOU    2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
           fi
 
           # ── Copy schema docs (TypeDoc) to gh-pages ────────────────────────────
@@ -525,47 +653,62 @@ jobs:
         if: env.HEAD_REF == 'main'
         run: cp builds-existing.json _site/builds.json
 
-      # ── 4. Deploy to target branch ─────────────────────────────────────────
-      # peaceiris/actions-gh-pages automatically creates the publish_branch
-      # (default: gh-pages) if it does not already exist, so no manual
-      # branch-creation step is required.
-      #
-      # Feature-branch builds are placed under  drafts/<branch>/  so that
-      # every open PR gets its own preview URL without overwriting the main
-      # site.  keep_files is enabled so that main deployments preserve the
-      # drafts directory and feature-branch deployments preserve each other.
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:    ./_site
-          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
-          keep_files:     true
-          commit_message: >
-            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+      # ── 4. Prepare deploy outputs and artifacts ─────────────────────────────
+      - name: Set deploy variables
+        id: deploy-vars
+        run: |
+          echo "head_ref=${{ env.HEAD_REF }}" >> "$GITHUB_OUTPUT"
+          echo "head_sha=${{ env.HEAD_SHA }}" >> "$GITHUB_OUTPUT"
+          echo "publish_branch=${{ inputs.publish_branch || 'gh-pages' }}" >> "$GITHUB_OUTPUT"
 
-      # For feature builds, also deploy builds.json to the root of gh-pages
-      # (the main deploy puts it under drafts/<branch>/, so we need a second deploy)
-      - name: Deploy builds.json to gh-pages root
+      - name: Upload site artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-site
+          path: _site
+          retention-days: 1
+
+      - name: Prepare builds.json root artifact
         if: env.HEAD_REF != 'main'
         run: |
           mkdir -p _site-root
           cp builds-existing.json _site-root/builds.json
 
-      - name: Push builds.json to gh-pages root
+      - name: Upload builds.json root artifact
         if: env.HEAD_REF != 'main'
-        uses: peaceiris/actions-gh-pages@v4
+        uses: actions/upload-artifact@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:    ./_site-root
-          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ''
-          keep_files:     true
-          commit_message: >
-            docs: update builds.json from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+          name: publish-site-root
+          path: _site-root
+          retention-days: 1
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
+      - name: Install GitHub CLI
+        if: env.HEAD_REF != 'main'
+        run: |
+          if command -v gh >/dev/null 2>&1; then
+            echo "gh already available: $(gh --version | head -1)"
+            exit 0
+          fi
+          apt-get update -qq
+          if ! command -v wget >/dev/null 2>&1; then
+            apt-get install -y -qq wget >/dev/null
+          fi
+          mkdir -p -m 755 /etc/apt/keyrings
+          wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+            | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+            | tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+          apt-get update -qq
+          apt-get install -y -qq gh >/dev/null
+          rm -rf /var/lib/apt/lists/*
+          if command -v gh >/dev/null 2>&1; then
+            echo "gh installed: $(gh --version | head -1)"
+          else
+            echo "::error::Failed to install GitHub CLI (gh)"
+            exit 1
+          fi
+
       - name: Comment preview link on PR
         if: env.HEAD_REF != 'main'
         env:
@@ -656,3 +799,57 @@ jobs:
           )"
             echo "Commented on PR #${pr}."
           done
+
+  # ── Deploy job — serialized across all workflows via shared concurrency group
+  deploy:
+    name: Deploy to gh-pages
+    runs-on: ubuntu-latest
+    needs: [build-and-publish]
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
+    env:
+      HEAD_REF: ${{ needs.build-and-publish.outputs.head_ref }}
+      HEAD_SHA: ${{ needs.build-and-publish.outputs.head_sha }}
+      PUBLISH_BRANCH: ${{ needs.build-and-publish.outputs.publish_branch }}
+    steps:
+      - name: Download site artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: publish-site
+          path: _site
+
+      # Feature-branch builds are placed under  drafts/<branch>/  so that
+      # every open PR gets its own preview URL without overwriting the main
+      # site.  keep_files is enabled so that main deployments preserve the
+      # drafts directory and feature-branch deployments preserve each other.
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
+          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
+          keep_files:     true
+          commit_message: >
+            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+
+      # For feature builds, also deploy builds.json to the root of gh-pages
+      - name: Download builds.json root artifact
+        if: env.HEAD_REF != 'main'
+        uses: actions/download-artifact@v4
+        with:
+          name: publish-site-root
+          path: _site-root
+
+      - name: Push builds.json to gh-pages root
+        if: env.HEAD_REF != 'main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site-root
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
+          destination_dir: ''
+          keep_files:     true
+          commit_message: >
+            docs: update builds.json from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}

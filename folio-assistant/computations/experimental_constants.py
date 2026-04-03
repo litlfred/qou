@@ -1,0 +1,131 @@
+"""
+Experimental constants with EXPLICIT uncertainties.
+
+Every observed value has a central value AND an uncertainty.
+No observed value may appear without ±.
+
+Sources:
+  CODATA 2022: https://physics.nist.gov/cuu/Constants/
+  NNDC/ENSDF:  https://www.nndc.bnl.gov/ensdf/
+  PDG 2024:    https://pdg.lbl.gov/
+  SnapPy 3.3.2: https://snappy.math.uic.edu/
+
+Usage:
+    from experimental_constants import *
+"""
+
+# ── Fundamental constants (CODATA 2022) ─────────────────────────
+
+M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV
+M_E_MEV_ERR = 0.00000000015
+
+M_P_MEV     = 938.27208816    # ± 0.00000029 MeV
+M_P_MEV_ERR = 0.00000029
+
+M_N_MEV     = 939.56542052    # ± 0.00000054 MeV
+M_N_MEV_ERR = 0.00000054
+
+G_F_MEV     = 1.1663788e-11   # ± 0.0000006e-11 MeV⁻²
+G_F_MEV_ERR = 0.0000006e-11
+
+HBAR_MEV_S  = 6.582119569e-22 # ± 0.000000030e-22 MeV·s (exact in SI since 2019)
+HBAR_MEV_S_ERR = 0.0          # exact by definition
+
+ALPHA_EM_INV     = 137.035999084  # ± 0.000000021 (CODATA 2018, Cs recoil)
+ALPHA_EM_INV_ERR = 0.000000021
+
+MU_OVER_E        = 206.7682830    # ± 0.0000046 (CODATA 2022)
+MU_OVER_E_ERR    = 0.0000046
+
+G_A_PDG     = 1.2754          # ± 0.0013 (PDG 2024)
+G_A_PDG_ERR = 0.0013
+
+# ── Knot volumes (SnapPy 3.3.2) ─────────────────────────────────
+
+VOL_FIGURE_EIGHT     = 2.029883212819307  # ± 1e-12 (numerical precision)
+VOL_FIGURE_EIGHT_ERR = 1e-12
+
+VOL_THREE_TWIST      = 2.828122088330783  # ± 1e-12
+VOL_THREE_TWIST_ERR  = 1e-12
+
+VOL_BORROMEAN        = 7.327724753846269  # ± 1e-12
+VOL_BORROMEAN_ERR    = 1e-12
+
+# ── Observed half-lives (NNDC/ENSDF) ────────────────────────────
+
+HALFLIFE_TRITIUM_YR     = 12.32    # ± 0.02 yr
+HALFLIFE_TRITIUM_YR_ERR = 0.02
+
+HALFLIFE_C14_YR     = 5730.0      # ± 40 yr
+HALFLIFE_C14_YR_ERR = 40.0
+
+HALFLIFE_CO60_YR     = 5.2714     # ± 0.0006 yr
+HALFLIFE_CO60_YR_ERR = 0.0006
+
+HALFLIFE_SR90_YR     = 28.79      # ± 0.06 yr
+HALFLIFE_SR90_YR_ERR = 0.06
+
+HALFLIFE_CS137_YR     = 30.17     # ± 0.16 yr
+HALFLIFE_CS137_YR_ERR = 0.16
+
+HALFLIFE_BI210_D     = 5.012      # ± 0.005 d
+HALFLIFE_BI210_D_ERR = 0.005
+
+# ── Observed Q-values (NNDC/ENSDF) ──────────────────────────────
+
+Q_TRITIUM_MEV     = 0.01861       # ± 0.00001 MeV
+Q_TRITIUM_MEV_ERR = 0.00001
+
+Q_C14_MEV     = 0.15648           # ± 0.00004 MeV
+Q_C14_MEV_ERR = 0.00004
+
+Q_CO60_MEV     = 0.31817          # ± 0.00013 MeV
+Q_CO60_MEV_ERR = 0.00013
+
+Q_SR90_MEV     = 0.54590          # ± 0.00007 MeV
+Q_SR90_MEV_ERR = 0.00007
+
+Q_CS137_MEV     = 0.51400         # ± 0.00021 MeV
+Q_CS137_MEV_ERR = 0.00021
+
+Q_BI210_MEV     = 1.16270         # ± 0.00006 MeV
+Q_BI210_MEV_ERR = 0.00006
+
+# ── Observed log ft values (NNDC/ENSDF) ──────────────────────────
+
+LOGFT_TRITIUM     = 3.053         # ± 0.001
+LOGFT_TRITIUM_ERR = 0.001
+
+LOGFT_C14     = 9.04              # ± 0.02
+LOGFT_C14_ERR = 0.02
+
+LOGFT_CO60     = 7.50             # ± 0.01
+LOGFT_CO60_ERR = 0.01
+
+LOGFT_SR90     = 7.63             # ± 0.01
+LOGFT_SR90_ERR = 0.01
+
+LOGFT_CS137     = 7.49            # ± 0.02
+LOGFT_CS137_ERR = 0.02
+
+LOGFT_BI210     = 7.10            # ± 0.02
+LOGFT_BI210_ERR = 0.02
+
+# ── Time conversions (exact) ────────────────────────────────────
+
+SEC_PER_YR  = 3.15576e7           # Julian year (365.25 × 86400), exact by convention
+SEC_PER_DAY = 86400.0             # exact
+
+# ── Error propagation helpers ────────────────────────────────────
+
+def rel_err(val, err):
+    """Relative error |δx/x|."""
+    return abs(err / val) if val != 0 else float('inf')
+
+def prop_power(val, err, n):
+    """Propagate through x^n: δ(x^n) = |n| × x^{n-1} × δx."""
+    return abs(n) * abs(val)**(n-1) * err
+
+def prop_power_rel(rel, n):
+    """Relative error of x^n = |n| × relative error of x."""
+    return abs(n) * rel

@@ -14,10 +14,12 @@ transition $A_n \hookrightarrow A_{n+1}$.
 **First obstruction.** The Hopf bundle
 $\pi \colon \mathrm{SU}(2) \to \mathbb{CP}^1$ is a principal
 $\mathrm{U}(1)$-bundle with first Chern class
+
 $$
   \kappa_0 \;=\; c_1(\text{Hopf}) \;=\; 1
   \;\in\; H^2(\mathbb{CP}^1, \mathbb{Z}) \;\cong\; \mathbb{Z}.
 $$
+
 Under the trace map $H^2(\mathcal{S}, \mathcal{B}) \to R$, the
 obstruction maps to the Euler characteristic:
 $\kappa_0 \mapsto \mathrm{tr}(\mathrm{id}_A) = \chi(\mathbb{CP}^1) = 2$.
@@ -28,10 +30,12 @@ and $\kappa_0 = 1 \neq 0$, the class $\kappa_0$ is non-torsion.
 
 **Higher obstructions.** At level $n$, the jet prolongation
 $A_n \hookrightarrow A_{n+1} = J^1(A_n)$ produces an obstruction
+
 $$
   \kappa_n \;=\; \kappa_0 + \delta_n
   \;\in\; H^2(\mathbb{CP}^1, \mathbb{Z}),
 $$
+
 where $\delta_n \in H^2(\mathbb{CP}^1, \mathbb{Z})$ is the correction
 from the jet structure at level $n$.  Since $\kappa_0 = 1$ generates
 $H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$ and

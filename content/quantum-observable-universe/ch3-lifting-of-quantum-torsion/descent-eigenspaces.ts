@@ -8,12 +8,9 @@ export default proposition({
     decl: "QOU.Torsion.idempotent_direct_sum_decomposition",
     validation: "not_checked",
   },
-  status: "proved",
   uses: [
     "def:descent-involution",
     "rem:algebraic-filter",
-    "rem:weight-space-decomposition",
-    "lem:descent",
   ],
   proofs: ["prf:descent-eigenspaces"],
 });

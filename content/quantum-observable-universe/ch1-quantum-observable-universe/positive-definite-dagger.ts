@@ -1,17 +1,16 @@
-import { definition } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default definition({
-  label: "def:positive-definite-dagger",
-  title: "Positive-definite structure",
+export default proposition({
+  label: "prop:positive-definite-dagger",
+  title: "Frobenius dagger is positive-definite",
   lean: {
-    decl: "QOU.PositiveDefiniteStructure",
+    decl: "QOU.frobenius_dagger_positive_definite",
     validation: "not_checked",
   },
-  status: "stated",
-  uses: ["def:involutive-structure"],
-  tags: ["category-theory", "positive-definite"],
+  uses: ["def:involutive-structure", "def:frobenius-pairing", "def:quantum-universe"],
+  proofs: ["prf:positive-definite-dagger"],
+  tags: ["category-theory", "positive-definite", "frobenius"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/positive-definite-dagger-0.svg", blockIndex: 0, hash: "60707ebb7060" },
   ],
-
 });

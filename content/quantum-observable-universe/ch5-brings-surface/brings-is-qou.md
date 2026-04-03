@@ -1,10 +1,9 @@
 Bring's surface $\Sigma_4$ ([Bring's surface](#def:brings-surface)) gives rise
 to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 
-1. *Quantum universe.*  Set $\mathcal{C} =
-   \mathrm{Rep}(\mathrm{SU}_{q}(2))$ over $R$,
+1. *Quantum universe.*  Set $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$ over $R$,
    $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
-   Haar state, and $\omega$ the forgetful functor to $R$-$\mathrm{Mod}$.
+   Haar state, and $\tau$ the forgetful functor to $R$-$\mathrm{Mod}$.
    The differential calculus $\Omega^1(A)$ is the Woronowicz
    $3$-dimensional calculus.
 2. *Observability.*
@@ -16,11 +15,13 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 4. *Euler characteristic.*  By [QU-to-QOU lifting](#thm:qu-to-qou),
    $\chi(A) = \mathrm{tr}(\mathrm{id}_A) = 2 - 2g = -6$.
 5. *Geometric descent* (for $n = 1$, $\dim M_S = 3$):
+
    $$
      M_S \;\xrightarrow{\;\mathrm{Reeb}\;}\; \Sigma_4
      \;\xrightarrow{\;\pi\;}\; \mathbb{P}(V)
      \;\xrightarrow{\;\mathrm{branch}\;}\; \{6\;\text{points}\}.
    $$
+
    The degree-$4$ covering $\pi$ has $6$ branch points with total
    ramification $R_{\mathrm{tot}} = 14$ (Riemann--Hurwitz), and the
    ramification profile is determined by the $S_5$-symmetry.

@@ -1,8 +1,8 @@
-The intrinsic color cubic $\widetilde{C}$ admits a natural decomposition into space-like and chiral sectors:
+The intrinsic color cubic $h_3(c)$ admits a natural decomposition into space-like and color sectors:
 
 ```tex
 \begin{equation}\label{eq:color-cubic-decomp}
-  \widetilde{C}
+  h_3(c)
   \;=\;
   \underbrace{\sigma(\sigma g + r^2)}_{\text{space--colour coupling}}
   \;+\;

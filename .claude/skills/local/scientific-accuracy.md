@@ -23,6 +23,132 @@ peer-review practices and the methodology of
 - Claims are supported by evidence or sound reasoning.
 - Scientific terminology is used correctly.
 - Referenced constants, data, or facts are accurate.
+- **PREFER $q$-DEFORMED FUNCTIONS over classical counterparts.**
+  Use $\exp_q$, $\ln_q$, $\cos_q$, $\sin_q$, $[n]_q$, $[n]_q!$
+  in all formulas unless explicitly working in the classical
+  ($q = 1$) limit.  The natural logarithm in the QOU is the
+  **base-$q$ logarithm** $\log_q(x) = \ln x / \ln q$, which
+  maps Skein polynomial ratios to $q$-integers:
+  $\log_q(q^n) = n$ exactly.  The Jackson $q$-logarithm
+  $\ln_q(x) = (x^{\hbar_q} - 1)/\hbar_q$ (where
+  $\hbar_q = 1 - q^{-1}$) is the appropriate $q$-analogue
+  for infinitesimal quantities.
+  **Keep all formulas parametric in $q$ as long as possible.**
+  Evaluate at $q = 1.110$ only at the final numerical step.
+  The $q$-rational structure (e.g., $\log_q(P_d/P_p) \approx
+  -(N-1)$ for neutron number $N$) is lost when classical
+  $\ln$ is used prematurely.
+  Classical $\ln$, $\exp$, $\cos$, $\sin$ are the $q \to 1$
+  limits and should be labeled as such when they appear.
+  **In Python computation scripts**: use `log_q(x) = math.log(x)/math.log(q)`
+  instead of bare `math.log(x)`. When `math.log` is needed for
+  intermediate computation (e.g., log-sum to avoid overflow),
+  divide by `ln_q = math.log(q)` immediately to convert to
+  base-$q$.  Never use `math.cos`; use $\cos_q$ (the $q$-deformed
+  cosine) or `cosh` with $q$-arguments.  The `math.exp` function
+  should be `q**x` (the $q$-exponential $\exp_q(x) = q^x$).
+- **$q$-integer identities simplify transfer matrix chains.**
+  The ratio $[n+1]_q / [n]_q = q + q^{-n}/[n]_q$ is exact.
+  For large $n$: $[n+1]_q / [n]_q \to q$ (exponentially fast).
+  The transfer matrix eigenvalue ratio $|\lambda_+/\lambda_-|
+  = q^2$ (for pp crossings) is a consequence.  Use these
+  identities to reduce transfer matrix products to $q$-integer
+  expressions rather than floating-point chains.
+- **NO APPROXIMATIONS unless explicitly labeled as such.**
+- **NO correction factors, fudge factors, or empirical scaling.**
+- **NO formulas that are not derived from the categorical action.**
+- **EVERY observed value MUST carry ± uncertainty.** No CODATA,
+  NNDC, PDG, or any experimental constant without an error bound.
+  Use `experimental_constants.py` as the single source of truth.
+- **EVERY derived quantity MUST propagate error.** If $f(x)$
+  depends on $x \pm \delta x$, then $\delta f = |f'(x)| \delta x$.
+  For products: relative errors add in quadrature. For $Q^5$:
+  $\delta\Gamma/\Gamma = 5 \,\delta Q/Q$. The $q$-sensitivity
+  $\partial\ln\Gamma/\partial\ln q \approx 48$ means even
+  $10^{-6}\%$ error in $q$ propagates to $\sim 5 \times 10^{-5}\%$
+  in the rate. Track this explicitly.
+- **NEVER use O(·) to discard polynomial structure.** The transfer
+  matrix product has $\binom{A}{2}$ steps — this is exact, not
+  "O(A²)". Each step is a nucleon pair. The polynomial degree is
+  $\leq A^2 - 1$. Say the exact number; do not asymptotize it away.
+- **NEVER assume classical energy conservation at $q \neq 1$.**
+  The $q$-differential satisfies $d_q^2 \neq 0$, so
+  $E_{\mathrm{before}} = E_{\mathrm{after}}$ fails.  Use the
+  categorical action difference $\mathcal{Q}_q = S_q(\mathrm{par})
+  - S_q(\mathrm{dau}) - S_q(e)$ instead. The daughter is evaluated
+  at the shifted $q + \Delta q_{\mathrm{eff}}$.  If you find yourself
+  writing "$Q = M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$", stop
+  — that is the $q = 1$ limit.
+- **Speculation is OK in conversation** with the author (to explore
+  ideas), but **NEVER commit speculative content** without explicit
+  author consent. If unsure, ask before committing.
+- **Every quantity must trace back to the categorical definitions:**
+  $(\mathbf{C}, A, \tau)$, $q$, $\chi$, and the Skein relation.
+- If a computation cannot be done exactly, say so. Do not introduce
+  smooth approximations (Bethe-Weizsäcker, power laws, fitted
+  coefficients) and present them as derived results.
+- **$q$ is simultaneously the Hecke deformation parameter, the Skein
+  polynomial variable, and the physical substrate parameter.**
+  These are the same $q$. The transfer matrix entries are polynomials
+  in $q$; the product $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$
+  IS the Skein polynomial; evaluating at $q = 1.110$ gives the
+  physical energy.  Never treat these as separate objects.
+- **USE TRANSFER MATRICES, NOT |M|².**
+  The decay rate comes from the **2×2 transfer matrix chain**
+  $T(c,d) = \bigl(\begin{smallmatrix} c(q-q^{-1})+d & c \\ c & d \end{smallmatrix}\bigr)$,
+  not from a scalar matrix element $|M|^2$.  The Skein polynomial
+  is $P = \prod_i \hat{V}_i$ where $\hat{V}_i = z \cdot M_{11} + M_{21}$
+  is the Markov-traced volume of the transfer matrix product at
+  generator $i$.  **Do not extract $|M|^2 = \prod |V_{\mathrm{par}}/V_{\mathrm{dau}}|^2$
+  and plug it into a Fermi golden rule** — this discards the
+  off-diagonal structure of the transfer matrices and gives
+  wrong results for $A > 3$.  The correct observable is the
+  **Skein polynomial ratio** $P_{\mathrm{dau}}(q)/P_{\mathrm{par}}(q)$,
+  computed as a product of 2×2 matrix chains.  For the T_{3,5}
+  weak vertex, the braid $(\sigma_1\sigma_2)^5$ is **appended**
+  (concatenated at the end) to the parent braid word and then
+  **reduced via Gröbner basis** — never inserted in the middle.
+  The Gröbner-Shirshov energy (Hecke steps only, YB and far-comm
+  preserve energy) gives the transition energy.
+- The pair Skein mass formula $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
+  is categorical. The BW coefficients $a_V, a_S, a_C, a_A, a_P$ are NOT.
+- **Derived constants from $q$ (canonical formulas):**
+  - Speed of light: $c_q = 1/(q-1)$ — ratio of spatial to temporal
+    coupling in $A_q = q^{-1}A + \hbar_q\,\iota_\xi A\,\theta$.
+  - Planck constant: $\hbar_q = (q-1)/q$.
+  - Mass-energy equivalence: $E_H = \mathfrak{m}_H \cdot c_q^2$,
+    i.e., $E_H = \mathfrak{m}_H/(q-1)^2$.  Plain $E_H$ is safe:
+    the exceptional divisor is now $\mathcal{S}_c$, so $E$ is
+    no longer overloaded.
+  - Generic closed vortex: $\varrho \colon \mathbf{1} \to A$ (not
+    $\gamma$, which is reserved for the photon).
+  - Operational entropy: $\eta_q = (2q-1)/q^3$.
+  - Hausdorff dimension: $d_H(q) = (2q-1)^2/q^3$.
+  - $q$-deformed Lyapunov exponent: $\chi_q = 1/(2q-1)$.
+  - Gravitational constant: $G_{\mathrm{Planck}} = 1$ (exact),
+    from in-progress braid entropy $S_{\mathrm{cell}} = (q-1)^2/q^3$
+    with quadratic suppression $\hbar_q^{2k}$ per jet level.
+  - Golden crossover: $d_H = 1$ at $q = 1$ and $q = (3+\sqrt{5})/2
+    = \varphi^2$.
+  - EM/strong ratio: $\tanh(\ln q)$.
+  - Fine structure: $\alpha_{\mathrm{EM}} = q^{-1}/([9]_q \cdot
+    [10]_q)$ where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$
+    (symmetric $q$-integer).
+  - Mass as photon threading cost: $\mathfrak{m}_H = E_H \cdot (q-1)^2$
+    = total Gröbner--Shirshov Hecke reduction cost of threading
+    $\gamma$ through $\beta_H$.  Three equivalent computations:
+    Yekutieli MI (analytic), ribbon trace (algebraic), Gröbner
+    reduction (computational).
+  These formulas are **derived**, not postulated. Agents must not
+  introduce alternative expressions for these quantities.
+- **Notation conventions (this session):**
+  - $E_H$ = crossing energy of composite $H$ (plain italic, safe
+    since exceptional divisor is now $\mathcal{S}_c$).
+  - $\mathfrak{m}_H$ = categorical mass of composite $H$ (fraktur).
+  - $c_q$ = speed of light (subscript, not function notation).
+  - $\varrho \colon \mathbf{1} \to A$ = generic closed vortex.
+  - $\gamma$ = photon (exclusively).  Never use for generic path.
+  - $\wp$ = reserved for Weierstrass projection (future use).
 
 ### 3. Statistical and Methodological Soundness
 - Statistical methods are appropriate for the analysis.
@@ -69,7 +195,7 @@ peer-review practices and the methodology of
   - `MassDerivation.experimental_mu_e_ratio` (206.768283)
   - `MassDerivation.substrate_q` (1.1097)
 - Every claim citing experimental data must have a `\cite{key}` whose
-  BibTeX entry includes a DOI or URL to the original source.
+  CSL-JSON entry in `content/schema/references.ts` includes a DOI or URL to the original source.
 - The `-- Ref: [key]` annotations in Lean `sorry` markers must cite the
   correct foundational reference for the gap.  Verify that the cited
   paper is relevant to the unproved obligation.

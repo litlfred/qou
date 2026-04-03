@@ -17,14 +17,8 @@ check**, then **triage**:
 
 ### 0. Check Lean availability (local → remote fallback)
 
-Before routing any request, run the Lean health check:
-
-```bash
-./scripts/check-lean.sh
-```
-
-The script checks local Lean first, then probes the remote MCP server
-at the domain in `lean-mcp.config.json`. It returns a `mode` field:
+Use the `lean_status` MCP tool (provided by paper-assistant). It reports
+a `mode` field:
 
 #### `mode: "local"` — Local Lean fully ready
 
@@ -37,35 +31,24 @@ hosted server at the `remote_url` is responding. **Use the remote
 MCP server.** Tell the author:
 
 > Local Lean not available — using remote MCP at `<remote_url>`.
-> All Lean MCP tools work normally. To set up local Lean for
-> faster response: `./scripts/setup-lean-mcp.sh`
-
-To use remote mode, the MCP tools should be called via the remote
-server URL. The `.mcp.json` defines the local stdio server; for
-remote, the agent should note the `remote_url` from the check
-output and use it for any HTTP-based MCP tool calls.
+> All Lean MCP tools work normally. To set up local Lean, use
+> the `lean_setup` MCP tool.
 
 #### `mode: "local-degraded"` — Lean installed but deps/cache missing
 
-Local Lean exists but isn't fully ready. Show the `message` field
-which explains what to run (e.g. `lake update`, `lake exe cache get`).
-If the remote is also available (`remote_ok: true`), offer:
+Local Lean exists but isn't fully ready. The `lean_status` output
+explains what's missing. If the remote is also available, offer:
 
 > Local Lean needs setup. Remote MCP is available at `<remote_url>`.
-> Use remote now, or fix local?
+> Use remote now, or fix local with `lean_setup`?
 
 #### `mode: "none"` — No Lean available anywhere
 
 Neither local nor remote is reachable. If the request requires Lean:
 
 > No Lean MCP available (local not installed, remote unreachable).
->
-> **Local setup:**
-> ```bash
-> ./scripts/setup-lean-mcp.sh
-> ```
->
-> **Remote server:** check if `folio.litlfred.org` is running.
+> Run the `lean_setup` MCP tool to install, or check if the remote
+> server is running.
 >
 > Proceed with LaTeX-only work?
 
@@ -75,22 +58,34 @@ If the request is LaTeX-only, proceed normally.
 hover docs, completions, LeanSearch, Loogle, and more — identically
 whether running locally (stdio) or remotely (Streamable HTTP).
 
-### 1. Check open todos
+### 1. Check open feedback
 
-The `scripts/check-todos.sh` hook runs at session start and outputs a
-JSON summary of open todos from `todos/`. If there are
-open todos, **present the summary and ask the user** (multiple-choice):
+The `scripts/check-todos.sh` hook runs at session start and scans
+`folio-assistant/feedback/<paper-dir>/*.ts` for open feedback items. If there are
+open items, **ask the user if they'd like to work on feedback**:
 
-- **Review open todos** — walk through each using the `todo-review` skill
-- **Start a new task** — proceed to normal triage, todos stay open
-- **Do research** — explore codebase, read content, no edits
+> **You have N open feedback items** (X high, Y medium, Z low).
+>
+> Would you like to work on feedback today?
 
-If there are no open todos, skip straight to step 1b.
+Options (multiple-choice):
+- **Yes, let's review feedback** — enter the `todo-review` skill's
+  structured workflow (overview → pick chapter → review items → iterate)
+- **No, I have something else in mind** — proceed to normal triage
 
-### 1b. Cross-reference todos with branch changes
+If there are no open items, skip straight to step 1b.
 
-When the current branch is not `main`, check whether any open todos
-target content blocks that were **modified in this branch**:
+When the user chooses to review feedback, hand off entirely to the
+`todo-review` skill which runs the full feedback cycle:
+1. Show overview grouped by chapter
+2. Let user pick scope (high priority / chapter / all)
+3. For each item: show feedback, read block, propose fix, ask approval
+4. Iterate until user says "done"
+
+### 1b. Cross-reference feedback with branch changes
+
+When the current branch is not `main`, check whether any open feedback
+targets content blocks that were **modified in this branch**:
 
 ```bash
 # Get content files changed in this branch vs main
@@ -98,12 +93,12 @@ git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content
 ```
 
 For each changed file, extract the block root name (filename without
-extension) and check if `todos/` has open todos referencing
-that block's label.
+extension) and check if `folio-assistant/feedback/<paper-dir>/` has open items
+referencing that block.
 
 **If matches are found**, present them to the user:
 
-> These open todos are on content blocks modified in this branch:
+> These open feedback items are on content blocks modified in this branch:
 >
 > - **[high]** `localized-knot`: "Add cross-ref to ch4 braiding"
 > - **[medium]** `hadron`: "Clarify meson binding vs baryon"
@@ -111,16 +106,14 @@ that block's label.
 > Address these now?
 
 Offer (multiple-choice):
-- **Address matching todos** — walk through just the branch-relevant
-  todos using the `todo-review` skill
-- **Skip for now** — proceed to triage, todos stay open
-- **Mark as resolved** — auto-close todos that the branch changes
-  already address (editor reviews the diff to confirm)
+- **Address matching feedback** — walk through just the branch-relevant
+  items using the `todo-review` skill
+- **Skip for now** — proceed to triage, items stay open
 
 **If no matches**, proceed to triage silently.
 
 This ensures that when a branch modifies content, any feedback left on
-those blocks surfaces immediately — preventing stale todos from
+those blocks surfaces immediately — preventing stale items from
 surviving past the work that should have resolved them.
 
 ### 2. Triage
@@ -151,6 +144,7 @@ surviving past the work that should have resolved them.
 | Generate docs / schema docs / TypeDoc | `docs-generation` | TypeDoc, dep graph, axiom report |
 | Build paper / compile PDF / render HTML | `docs-generation` | Content → PDF/HTML pipeline |
 | Visualizer | General-purpose agent | Dedicated visualizer context |
+| Fix lean build / lake build fails | `lean-build-fix` | Iterative error diagnosis + fix |
 | Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
 | Write / run / review tests | `test-engineer` | TypeScript/Bun tests |
@@ -164,7 +158,126 @@ surviving past the work that should have resolved them.
 | Critical path / context audit | `critical-path-analysis` | Archimedean vs categorical |
 | What assumptions does X need | `critical-path-analysis` | Dependency tracing |
 | Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
+| Review / audit chapter or paper | See §External Academic Review below | Tiered escalation |
+| Publication readiness check | See §External Academic Review below | Full integrity pass |
+| Evaluate new claim / evidence | `scientific-accuracy` → Tier 1 → Tier 2 | Escalation if unresolved |
 | **End-of-task review** (automatic) | `scientific-accuracy` + `readability-editing` + `content-validation` | **Mandatory** when any content changed in session |
+
+## External academic review (three-tier model)
+
+The editor has access to three tiers of review capability. **Always start
+at Tier 0 and escalate only when a lower tier raises unresolved issues or
+the user explicitly requests deeper review.**
+
+### Tier 0 — Local skills (always available)
+
+These are the repo-specific skills in `.claude/skills/local/`. They
+understand the content object architecture, Lean formalization, notation
+conventions, and the QOU-specific mathematical constraints. They run
+on every content change as the mandatory fallback.
+
+| Skill | Role in review |
+|-------|----------------|
+| `scientific-accuracy` | Mathematical correctness, q-deformation tracing, no approximations |
+| `readability-editing` | Prose quality, definition hygiene, forward-reference hygiene |
+| `content-validation` | Schema compliance, constraint rules, LaTeX AST, TeX snippets |
+| `content-block-review` | File triple completeness, label conventions, sorry discipline |
+| `remark-audit` | Dangling remarks, `interprets` links, physics↔category ambiguity |
+| `verify-local-substrate` | All observations trace to `def:substrate-parameter` via `uses[]` |
+| `chapter-complexity-review` | Backward edges, graph energy, optimal section ordering |
+| `critical-path-analysis` | Categorical vs archimedean classification, dependency tracing |
+
+### Tier 1 — K-Dense scientific skills (synced, read from disk)
+
+These are synced nightly from `K-Dense-AI/claude-scientific-skills` into
+`.claude/skills/claude-scientific-skills/`. They provide general-purpose
+scientific review capabilities. **Use as augmentation** when Tier 0
+raises issues that benefit from broader scientific methodology checks.
+
+| Skill | When to use |
+|-------|-------------|
+| `peer-review` | Section-by-section manuscript review with reporting-standards checklist |
+| `scientific-critical-thinking` | Claim evaluation, bias detection, logical fallacy identification |
+| `scientific-writing` | Prose quality patterns, IMRAD structure, two-stage writing process |
+| `citation-management` | Citation validation, metadata extraction, DOI checking |
+| `literature-review` | Literature coverage assessment, annotated bibliography |
+| `hypothesis-generation` | When exploring new conjectures or research directions |
+| `scientific-brainstorming` | Cross-disciplinary connections |
+| `arxiv-database` | Literature search, arXiv API queries |
+
+**How to invoke**: Read the `SKILL.md` from `.claude/skills/claude-scientific-skills/<skill>/SKILL.md`
+and follow its instructions. These skills are already on disk.
+
+**Exclude from use** (rendering, not review): `latex-posters`, `matplotlib`,
+`scientific-visualization`, `sympy`.
+
+### Tier 2 — Academic research skills (reference-only, fetched on demand)
+
+These are multi-agent pipeline skills from `Imbad0202/academic-research-skills`.
+They are **not synced locally** — fetch them via the `skill_fetch` MCP tool
+when escalation is needed. They provide the deepest level of academic QC.
+
+| Skill | Agents | When to escalate |
+|-------|--------|------------------|
+| `academic-paper-reviewer` | 7 (EIC + methodology + domain + perspective + devil's advocate + field analyst + editorial synthesizer) | User requests "full review" or "audit"; Tier 0/1 raises CRITICAL issues |
+| `deep-research` | 13 (source verification, evidence grading, GRADE framework) | New claims with uncertain evidence; fact-checking against literature |
+| `academic-pipeline` | 3 (integrity verification, claim verification, state tracking) | Publication readiness check; pre-submission integrity gates |
+
+**How to invoke**: Call `skill_fetch` with the skill identifier:
+
+```
+skill_fetch({ skill: "academic-paper-reviewer" })           # Main SKILL.md
+skill_fetch({ skill: "academic-paper-reviewer/quality-rubrics" })  # 0-100 scoring rubric
+skill_fetch({ skill: "academic-pipeline/integrity-verification" }) # Integrity protocol
+skill_fetch({ skill: "deep-research" })                     # Fact-check / evidence grading
+```
+
+Call `skill_list` to see all available fetchable skills.
+
+**Exclude from use** (rendering/formatting, not review):
+- `formatter_agent`, `visualization_agent`, `abstract_bilingual_agent` from academic-paper
+- All template files and LaTeX compilation
+- Style calibration (we have our own notation conventions)
+
+### Escalation protocol
+
+```
+Content change detected
+  │
+  ├─→ Tier 0: mandatory fallback (scientific-accuracy + readability-editing + content-validation)
+  │     │
+  │     ├─ All clear → DONE
+  │     │
+  │     ├─ Minor issues → fix locally, re-validate → DONE
+  │     │
+  │     └─ CRITICAL issue or user requests review
+  │           │
+  │           ├─→ Tier 1: read relevant K-Dense skill from disk
+  │           │     │
+  │           │     ├─ Resolved → DONE
+  │           │     │
+  │           │     └─ Unresolved or user requests "full review"
+  │           │           │
+  │           │           └─→ Tier 2: skill_fetch → follow fetched instructions
+  │           │                 │
+  │           │                 └─ Produce structured review report with 0-100 rubric
+  │           │
+  │           └─→ Tier 2 directly (if user says "full review" / "audit" / "publication check")
+  │
+  └─→ Formalization work → Tier 0 only (local Lean skills handle this)
+```
+
+### Review modes by request type
+
+| User request | Tier 0 | Tier 1 | Tier 2 |
+|-------------|--------|--------|--------|
+| "edit this section" | mandatory fallback | — | — |
+| "review chapter N" | full local pass | `peer-review` + `sci-critical-thinking` | escalate if CRITICAL |
+| "audit the paper" | full local pass | `peer-review` + `citation-management` | `academic-paper-reviewer` (full mode) |
+| "prepare for publication" | full local pass | all relevant Tier 1 | `academic-pipeline/integrity-verification` + `academic-paper-reviewer` |
+| "check this claim" | `scientific-accuracy` | `sci-critical-thinking` | `deep-research` (fact-check mode) |
+| "is the evidence solid?" | `verify-local-substrate` | `sci-critical-thinking` | `deep-research` (evidence grading) |
+| "full review with devil's advocate" | — | — | `academic-paper-reviewer` (full mode, includes devil's advocate) |
 
 ## Responsibilities
 
@@ -176,8 +289,9 @@ surviving past the work that should have resolved them.
 3. **Resolve concerns**: when an agent's output raises mathematical or
    structural questions, bring them to the author as multiple-choice questions
    (author cannot type easily).
-4. **Maintain consistency**: notation (R not k, K not ℂ), labeling conventions,
-   cross-references, glossary terms.
+4. **Maintain consistency**: notation ($R$ not $k$, $\mathbf{C}$ for categories
+   not $\mathcal{C}$, $\tau$ for fibre functor — see `copilot-instructions.md`
+   §11.3), labeling conventions, cross-references, glossary terms.
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each
@@ -238,7 +352,7 @@ testable errors and asks before writing tests.
 
 Whenever **any** content has been added or modified during the current session
 — `.md` narratives, `.ts` manifests, `.lean` formalizations, `.tex` chapters,
-or supporting files like `references.bib` — the editor **must** perform a
+or supporting files like `content/schema/references.ts` — the editor **must** perform a
 review pass before the task is considered complete. This applies regardless of
 how the session started — even if the original request was about Lean,
 infrastructure, or something else entirely.
@@ -258,18 +372,49 @@ The review pass consists of:
 5. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
    clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
    confirm `lean.decl` fields match actual Lean declarations.
+6. **Tier escalation** — if steps 1–5 surface CRITICAL issues (unsupported
+   claims, logical gaps, broken evidence chains), escalate per
+   §External Academic Review: Tier 1 (`sci-critical-thinking`,
+   `citation-management`) first, then Tier 2 (`skill_fetch`) if unresolved.
 
 If the review surfaces issues, fix them (or escalate to the author) before
 committing. This rule persists across sessions.
 
 ## Interaction style
 
-- Questions to author: always multiple-choice (2-4 options), concise labels.
+### Accessibility
+
+The author is disabled and has very limited ability to type.
+All interactions **must** be optimized for minimal typing:
+
+- **Always use structured prompts** (`AskUserQuestion` with options)
+  instead of open-ended text questions.
+- **Multiple-choice only**: 2–4 options with concise labels.
+  The author selects by number or single word, never by typing sentences.
 - **Multi-select by default**: when presenting actionable items where the user
   might want more than one, use `multiSelect: true` (checkboxes). Only use
   single-select (radio) when the options are mutually exclusive.
   - Checkboxes: "Which of these should I do next?" (can pick several)
   - Radio: "Which approach should we take?" (pick one)
+- **Interpret short/misspelled input generously**: the author may use
+  voice-to-text or abbreviated input. Parse intent, don't ask for
+  clarification on typos.
+- **Provide copy-paste commands**: for anything the author needs to run
+  locally, give a **single multi-line block** using `&&` and `\` that
+  the author can copy-paste in one action from the repo root. Always
+  start with `reset; git fetch && git switch <branch> && git pull`.
+  Never require the author to construct commands by hand.
+  Example:
+  ```
+  reset; git fetch && git switch claude/feature-branch && git pull && \
+  python3 folio-assistant/computations/script.py && \
+  conda activate qou-sage && sage folio-assistant/computations/script.sage
+  ```
+- **Batch confirmations**: instead of asking permission for each small
+  step, present a batch plan and get one confirmation.
+
+### General style
+
 - Status updates: brief, at natural milestones.
 - Never make mathematical decisions autonomously — always confirm with author.
 - When delegating, provide agents with full context so they work autonomously.
@@ -328,9 +473,29 @@ See `todo-review` skill for full details. Agents may create and
 
 ## Proof workflow (narrative and Lean)
 
-When the user wants to work on **missing proofs**:
+**CRITICAL**: Every theorem, lemma, proposition, and corollary **must**
+have a standalone proof block (`*-proof.ts` + `*-proof.md`). Without it,
+the proof will not appear in print preview or PDF output. The viewer's
+print mode includes proofs only via the parent's `proofs: ["prf:..."]`
+field.
 
-### Narrative proofs (`.md` blocks)
+### Proof block requirements
+
+For every provable block (theorem/lemma/proposition/corollary):
+
+1. **Separate statement from proof**: The theorem `.md` file contains
+   only the statement. All proof content lives in `*-proof.md`.
+2. **Three files per proof**: `*-proof.ts` (manifest with `proof()`
+   builder), `*-proof.md` (narrative), optional `*-proof.lean` (formal).
+3. **Link via `proofs:`**: The parent `.ts` must have
+   `proofs: ["prf:<label>"]`.
+4. **List in chapter manifest**: The proof block name must appear in the
+   chapter's `blocks[]` array, immediately after its parent theorem.
+5. **No TeX in `.lean` files**: Narrative proof content belongs
+   exclusively in `.md` files. `.lean` files contain only code, brief
+   docstrings, and `-- Ref:` citations.
+
+### Creating a narrative proof (`.md` block)
 
 1. Check if a `proof` block already exists for the target theorem/lemma.
 2. If not, ask the user (structured choice):
@@ -339,6 +504,7 @@ When the user wants to work on **missing proofs**:
      `uses[]` dependencies, drafts a proof, presents for review.
 3. Create the `proof` block (`.ts` + `.md` pair) and link via `proofs[]`
    on the parent theorem.
+4. Add proof block to chapter manifest `blocks[]` after the parent.
 
 ### Lean proofs (`.lean` files)
 

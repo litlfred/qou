@@ -2,14 +2,13 @@ Continuing [rigid monoidal Vect](#ex:rigid-monoidal-vect), we verify each axiom
 of [quantum universe](#def:quantum-universe) for $G = \mathrm{SU}(2)$.
 
 **(i) Category.**
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$, the category of
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$, the category of
 finite-dimensional complex representations. Objects are vector spaces
 $V$ with a continuous $G$-action $\rho_V \colon G \to \mathrm{GL}(V)$;
 morphisms are $G$-equivariant linear maps. This is an
 $\mathbb{C}$-linear rigid monoidal category
 ([rigid monoidal Vect](#ex:rigid-monoidal-vect)). The $G$-action on tensor
-products is diagonal: $g \cdot (v \otimes w) = (g \cdot v) \otimes
-(g \cdot w)$; on duals it is the contragredient:
+products is diagonal: $g \cdot (v \otimes w) = (g \cdot v) \otimes (g \cdot w)$; on duals it is the contragredient:
 $(g \cdot f)(v) = f(g^{-1} \cdot v)$.
 
 **(ii) Frobenius--Hopf object.**
@@ -23,21 +22,19 @@ functions on the group. Its Hopf structure encodes the group operations:
 | *Comultiplication* $\Delta(f)(x, y)$ | $f(xy)$ | pullback of group multiplication |
 | *Counit* $\varepsilon(f)$ | $f(e)$ | evaluation at the identity |
 | *Antipode* $S(f)(x)$ | $f(x^{-1})$ | pullback of inversion |
-| *Frobenius form* $\lambda(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
+| *Frobenius form* $\int_A(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
 
 The [Frobenius pairing](#def:frobenius-pairing)
-$\langle f, g \rangle = \lambda(\mu(f \otimes g)) = \int_G f g\, d\mu$
+$\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f(x)\, g(x)\, d\mu_{\mathrm{Haar}}(x)$
 is positive definite (faithfulness of the Haar integral).
 
 **(iii) Fibre functor.**
-$\omega \colon \mathrm{Rep}(\mathrm{SU}(2)) \to
-\mathrm{Vect}_{\mathbb{C}}$ is the forgetful functor: $\omega(V, \rho)
-= V$ (forget the $G$-action, keep the vector space). It is exact
+$\tau \colon \mathrm{Rep}(\mathrm{SU}(2)) \to \mathrm{Vect}_{\mathbb{C}}$ is the forgetful functor: $\tau(V, \rho) = V$ (forget the $G$-action, keep the vector space). It is exact
 (short exact sequences of representations split), faithful (a non-zero
 equivariant map is non-zero as a linear map), and monoidal
-($\omega(V \otimes W) = \omega(V) \otimes \omega(W)$).
-By Tannaka--Krein duality, $G$ can be recovered from $\omega$:
-$G \cong \mathrm{Aut}^{\otimes}(\omega)$, the group of monoidal natural
+($\tau(V \otimes W) = \tau(V) \otimes \tau(W)$).
+By Tannaka--Krein duality, $G$ can be recovered from $\tau$:
+$G \cong \mathrm{Aut}^{\otimes}(\tau)$, the group of monoidal natural
 automorphisms of the fibre functor.
 
 **(iv) Differential calculus.**

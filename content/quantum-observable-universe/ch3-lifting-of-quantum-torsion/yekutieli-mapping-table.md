@@ -11,7 +11,7 @@ quantization, and nonabelian multiplicative integration.
 \hline
 \textbf{QOU concept} & \textbf{Yekutieli counterpart} & \textbf{Reference} \\
 \hline
-Recursive Brane Tower $\{E_n\}$
+Recursive Brane Tower $\{\mathcal{S}_n\}$
   (Def.~\ref{def:recursive-brane-tower})
   & Central extension of gerbes
     $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$
@@ -32,7 +32,7 @@ Global gluing of $\mathcal{A}_\infty$
   (Prop.~\ref{prop:global-gluing})
   & Yekutieli's twisted quantization map on algebraic varieties
   & \cite[Thm.~4.5]{yekutieli2010} \\[6pt]
-Vacuum State $\omega$
+Vacuum State $\tau$
   (Prop.~\ref{prop:vacuum-state})
   & Unique MC element in the pronilpotent DG Lie algebra
   & \cite{yekutieli2009} \\[6pt]
@@ -47,7 +47,7 @@ $\mathrm{SU}_q(2)$ gauge flow
   (Def.~\ref{def:quantum-gauge-group})
   & Pronilpotent deformation of the coordinate algebra
   & \cite[\S2]{yekutieli2008} \\[6pt]
-Descartes condition $\chi(E) = -6$
+Descartes condition $\chi(\mathcal{S}) = -6$
   (Def.~\ref{def:descartes-condition})
   & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)
   & \cite{yekutieli2010}; Ex.~\ref{ex:descartes-yekutieli} \\[6pt]

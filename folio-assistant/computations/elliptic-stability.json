@@ -1,0 +1,61 @@
+{
+  "title": "Elliptic curve E_q from chiral fibration — stability pair analysis",
+  "date": "2026-03-26",
+  "precision": "100 decimal digits (mpmath)",
+  "parameters": {
+    "q": 1.10997,
+    "z_phys": 0.10438,
+    "a_C": 0.697,
+    "a_A": 23.29,
+    "c": 0.01497
+  },
+  "elliptic_curve": {
+    "weierstrass": "y² = x³ + 0.708724x + 0.805625",
+    "a": 0.708724,
+    "b": 0.805625,
+    "discriminant": -18.948,
+    "j_invariant": 129.86,
+    "real_components": 1,
+    "real_period_omega": 7.5565,
+    "torsion_2": {
+      "real_root": -0.6844,
+      "complex_roots": [0.3422, 1.0296]
+    }
+  },
+  "base_point": {
+    "label": "P₀ = (0, √b)",
+    "x": 0.0,
+    "y": 0.8976,
+    "winding_angle_theta": 0.16808,
+    "inverse_theta": 5.9496,
+    "order": "infinite (not torsion)",
+    "note": "High-precision computation (100 digits) confirms P₀ has infinite order. 56·P₀ = (17.09, 70.72) ≠ O. 28·P₀ = (-0.654, -0.251) ≠ T."
+  },
+  "stability_cubic": {
+    "equation": "t³ = 2Q(1 + ct²)",
+    "genus": 0,
+    "parametrisation": "Q = t³/(2 + 2ct²)",
+    "note": "Stable nuclei are exact N² lattice points on this rational curve. The integer minimiser of the convex quadratic E(Q,A) is determined exactly."
+  },
+  "key_multiples_of_P0": [
+    {"n": 2,   "x": 0.156,   "y": -0.959},
+    {"n": 8,   "x": 0.505,   "y": -1.137},
+    {"n": 20,  "x": 1.583,   "y": -2.428},
+    {"n": 28,  "x": -0.654,  "y": -0.251},
+    {"n": 50,  "x": 183.3,   "y": 2481.8},
+    {"n": 56,  "x": 17.09,   "y": 70.72},
+    {"n": 82,  "x": 7.859,   "y": -22.18},
+    {"n": 126, "x": 4.896,   "y": -11.03}
+  ],
+  "proven": [
+    "Stable nuclei are lattice points on the stability cubic (exact)",
+    "E_q exists with stated invariants (exact, from chiral fibration)",
+    "Stability cubic and chiral cubic share algebraic origin in Bring surface",
+    "Golden ratio degeneration at q = 1/φ² (exact, from (s²+s-1) factor)"
+  ],
+  "open": [
+    "Whether pairing energy lifts stability cubic from genus 0 to genus 1",
+    "Whether stability pairs acquire torsion interpretation on E_q",
+    "Exact relationship between stability cubic and chiral cubic via isogeny"
+  ]
+}

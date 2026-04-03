@@ -4,11 +4,10 @@ export default definition({
   label: "def:categorical-hodge-star",
   title: "Categorical Hodge star",
   lean: {
-    decl: "QOU.CategoricalHodgeStar",
+    decl: "QOU.CatHodgeInvolution",
     validation: "not_checked",
   },
-  status: "stated",
-  uses: ["def:quantum-universe", "def:higher-forms"],
+  uses: ["def:higher-forms"],
   examples: ["ex:hodge-su2"],
   tags: ["hodge-star"],
 });

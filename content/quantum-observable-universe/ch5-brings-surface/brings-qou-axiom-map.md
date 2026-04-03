@@ -3,13 +3,13 @@ We record how each axiom of a
 surface.
 
 **(i) Non-degeneracy.**
-The Frobenius form $\lambda = h_q$ is the Haar state on
+The Frobenius form $\int_A = h_q$ is the Haar state on
 $A = \mathcal{O}_q(\mathrm{SU}(2))$.  Faithfulness of $h_q$ for compact
 quantum groups gives the isomorphism
 $A \xrightarrow{\;\sim\;} A^{\vee}$.  The antipode $S$ and $h_q$
 together define the dagger $f^{\dagger} = h_q \circ \mu(S(f) \otimes -)$,
 which is positive-definite
-([positive definite dagger](#def:positive-definite-dagger)) because the Haar state
+([positive definite dagger](#prop:positive-definite-dagger)) because the Haar state
 satisfies $h_q(a^* a) > 0$ for $a \neq 0$.
 
 **(ii) Observability.**
@@ -22,10 +22,10 @@ Bring's surface has no global holomorphic vector field
 
 **(iii) Categorical volume constraint.**
 The fundamental object $V$ of
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ has categorical
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ has categorical
 dimension $2$.  In the archimedean realisation, $V$ is the rank-$2$
 defining representation carried by the state bundle fibre
-$E_p \cong \mathbb{C}^2$ ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple), item 3).
+$\mathcal{S}_p \cong \mathbb{C}^2$ ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple), item 3).
 The non-degenerate epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 is instantiated by the Levi form
 $L_\theta = -i\,d\theta|_{H \times H}$
@@ -37,7 +37,7 @@ $\mathrm{GL}(2)$.  In the spectral coordinates
 ([Lagrange resolvents](#rem:lagrange-resolvents)), this constraint appears as the
 Hermitian quadric $w_1 w_4 + w_2 w_3 = 0$, which is the $\mathrm{SL}(2)$
 Plucker relation for $\Lambda^2 V$.  The top-degree extension to the
-full chiral fibre is the spectral volume
+full color fibre is the spectral volume
 constraint; see
 [Seiberg--Witten](#rem:seiberg-witten) for the explicit symplectic
 form and its relation to $\epsilon$.

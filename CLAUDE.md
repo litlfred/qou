@@ -26,7 +26,10 @@ Skills are organized under `.claude/skills/`:
 - **`local/`** — repo-specific skills (latex-validation, scientific-accuracy,
   readability-editing)
 - **`<package-name>/`** — skills synced nightly from external packages defined
-  in `skills-config.json`
+  in `skills-config.json` (mode `"sync"`)
+- **Reference packages** — registered in `skills-config.json` with mode
+  `"reference"`, fetched on demand via the `skill_fetch` MCP tool (not
+  synced locally)
 
 ### Skill routing (quick reference)
 
@@ -42,6 +45,7 @@ When a user request arrives, route to the right skill(s):
 | "status / tracking / manifest" | `local/proof-status-tracking` | reader |
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
+| "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "simplify / streamline proofs" | `local/proof-simplifier` | collaborator |
 | "validate LaTeX" | `local/latex-validation` | reader |
 | "validate content objects" | `local/content-validation` | reader |
@@ -56,14 +60,55 @@ When a user request arrives, route to the right skill(s):
 | "deploy / auth / OAuth / roles" | `local/deployment-auth` | owner |
 | "import / arxiv / upload paper" | `local/paper-importer` | collaborator |
 | "import + formalize" | `local/paper-importer` + `local/formalizer` | collaborator |
+| "upload / scan / intake / process document" | `local/document-intake` | collaborator |
+| "WHO / guideline / L1 / L2 / normative" | `local/document-intake` | collaborator |
+| "uploads/ status / what's pending" | `local/document-intake` | collaborator |
 | "critical path / trace dependencies" | `local/critical-path-analysis` | collaborator |
 | "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
 | "what assumptions does X need" | `local/critical-path-analysis` | reader |
 | "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` | collaborator |
+| "simulator / simulation / interactive viz" | `local/simulator` + `local/content-validation` | collaborator |
 | "set up lean / install lean / lean not working" | `local/lean-environment-setup` | collaborator |
 | "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
+| "diff / changes / what changed / undo" | `local/diff` | reader |
+| "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
+| "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
+| "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |
+| "promote remark / add interprets / fix dangling" | `local/remark-audit` + `local/content-validation` | collaborator |
+| "review / audit chapter or paper" | Tier 0 → Tier 1 (`peer-review`) → Tier 2 (`academic-paper-reviewer`) | reader (review) / collaborator (act) |
+| "full review / devil's advocate" | `skill_fetch("academic-paper-reviewer")` (Tier 2) | collaborator |
+| "publication readiness / final check" | All tiers: local + `peer-review` + `skill_fetch("academic-pipeline/integrity-verification")` | collaborator |
+| "check claim / evidence quality" | `local/scientific-accuracy` → `sci-critical-thinking` → `skill_fetch("deep-research")` | reader |
+| "fact-check / source verification" | `skill_fetch("deep-research")` (fact-check mode) | reader |
+| "audit rendering / check rendering / rendering issues" | `local/rendering-auditor` | reader |
+| "rendering QC / visual check / overfull hbox" | `local/rendering-auditor` | reader |
+| "notation check / symbol audit / register compliance" | `local/rendering-auditor` (pass 2) + `local/ontologist` | reader |
+| "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
+
+### External skill packages
+
+Skills come from three sources, forming a tiered escalation model:
+
+| Tier | Source | Location | Mechanism |
+|------|--------|----------|-----------|
+| **0 — Local** | `.claude/skills/local/` | On disk (repo) | Always available, run on every content change |
+| **1 — K-Dense** | `K-Dense-AI/claude-scientific-skills` | On disk (synced nightly) | Read `SKILL.md` from `.claude/skills/claude-scientific-skills/<skill>/` |
+| **2 — Academic** | `Imbad0202/academic-research-skills` | Fetched on demand | Call `skill_fetch` MCP tool; cached for 30 min |
+
+**Tier 1 skills** (synced, for general scientific QC): `peer-review`,
+`scientific-writing`, `scientific-critical-thinking`, `citation-management`,
+`literature-review`, `hypothesis-generation`, `scientific-brainstorming`,
+`arxiv-database`.
+
+**Tier 2 skills** (fetched, for deep academic review):
+`academic-paper-reviewer` (7-agent multi-perspective review),
+`deep-research` (13-agent evidence grading / fact-check),
+`academic-pipeline` (integrity verification protocol).
+
+See `editor.md §External Academic Review` for the full escalation protocol,
+delegation flows, and review-mode mapping.
 
 ### Skill role assignments
 
@@ -73,8 +118,8 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -112,7 +157,8 @@ Agents **must** follow all of them; violations will be caught by the
 sorry
 ```
 
-- The `[key]` must match an entry in `references.bib` exactly (case-sensitive).
+- The `[key]` must match an entry in `content/schema/references.ts` exactly (case-sensitive).
+  (`references.bib` is auto-generated — run `bun run export-bibtex` in `content/`).
 - If no published reference exists, use `[manuscript]` and cite chapter/section.
 - A `sorry` without `-- Ref:` is always a review failure.
 
@@ -134,20 +180,58 @@ All declarations live under the `QOU` root namespace.
 | `definition` | **Yes** — enforced; will not build without it |
 | `theorem`, `lemma`, `proposition`, `corollary` | **Expected** — warning if missing |
 | `conjecture`, `example`, `remark` | Optional |
+| `simulator` | N/A |
 | `prose`, `equation`, `diagram` | N/A |
 
-### 4. Status field must reflect reality
+### 3a. Remark authoring convention — no dangling remarks
 
-| `status` value | Meaning |
-|---|---|
-| `not_started` | No Lean file yet |
-| `stated` | Lean statement exists, body is `sorry` |
-| `has_sorry` | Partial proof with some `sorry` |
-| `proved` | Complete proof, no `sorry` |
-| `mathlib_ok` | Validated and sorry-free |
+Every `remark` block must have **formal backing**. The correct
+authoring structure is:
 
-Agents must update the `.ts` manifest `status` whenever they change the
-`.lean` file.
+```
+definition / proposition / lemma / theorem   (.lean: formal statement)
+  └→ proof block                             (.lean: formal proof)
+       └→ remark block                       (.md: interpretation)
+            └→ example / simulator           (concrete instances)
+```
+
+**Rules:**
+
+1. **Interpretive remarks** must set `interprets: "prop:foo"` (or
+   `"def:foo"`, `"thm:foo"`, etc.) linking to the provable block
+   they interpret. The `.md` content provides physical interpretation,
+   motivation, or examples — not new mathematical claims.
+
+2. **Glossary remarks** (Ch 8 only) are exempt — they wrap Mathlib
+   types and carry the `"glossary"` tag.
+
+3. **Prose blocks** (`prose`) are for pure exposition with no logical
+   content (intros, abstracts, transitions). Use `prose`, not `remark`,
+   when there is no provable statement behind the text.
+
+4. A remark that makes a **mathematical claim** without `interprets`
+   is a **dangling remark**. Resolve by:
+   - **Promoting** the claim to `proposition` / `lemma` (with Lean)
+   - **Linking** via `interprets` to an existing provable block
+   - **Demoting** to `prose` if there is no logical content
+
+5. **Ambiguous physics terms** (energy, force, particle, degeneration,
+   etc.) in remark `.md` files must reference the corresponding
+   categorical definition via `uses[]`. Physics terms without
+   categorical backing are flagged by the `remark-audit` skill.
+
+**Audit tool:** `cd content && bun run pipeline/find-dangling-remarks.ts`
+
+**Constraint rules:** `remark-interprets` (warns on missing
+`interprets`), `interprets-resolve` (errors on broken reference).
+
+### 4. Formalization status is derived, not stored
+
+Formalization status (`not_started`, `stated`, `has_sorry`, `proved`,
+`mathlib_ok`) is **not stored in `.ts` manifests**. It is derived at
+build time by CI scripts from `.lean` file content and Lean build output,
+then written to `proof-objects.json`. Agents must **never** add a `status`
+field to content block `.ts` files.
 
 ### 4a. TodoItem lifecycle rules
 
@@ -225,11 +309,122 @@ the paper introduces genuinely new axioms/structure, add a definition.
 
 ### 7. Category theory conventions
 
+- **Category notation**: Use bold `$\mathbf{C}$` for categories
+  (Herrlich–Strecker style), never calligraphic `$\mathcal{C}$`.
+  Named categories are also bold: `$\mathbf{Rep}(\mathrm{SU}_q(2))$`.
+  Calligraphic letters are reserved for sheaves, sites, algebras,
+  bundles, and curves (`$\mathcal{S}$` = state bundle,
+  `$\mathcal{E}_q$` = elliptic curve, `$\mathcal{O}$`, `$\mathcal{A}$`).
+- **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`).
+  Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
+  is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
+  explicitly used.
+- **QOU archimedean tuple**: `$(\mathbf{C}, \theta, G, \mathcal{S})$`.
+  The old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**.
+  - $M$ (base manifold) is subordinate to $\theta$ (its domain).
+  - $P$ (principal bundle) is subordinate to $\mathcal{S}$ (frame bundle
+    of the state bundle under $G$). Mention $P$ only when discussing
+    gauge structure directly.
+  - $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$ is the
+    associated state bundle; replaces $E$.
 - Functors are bundled: `F.obj X`, `F.map f` — never treat `F` as a function.
 - Open `CategoryTheory.MonoidalCategory` for notation: `X ⊗ Y`, `𝟙_ C`,
   `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
+
+### 7aa. Notation register (STRICT)
+
+Every mathematical symbol belongs to exactly one register.
+Agents **must** use the correct font for each concept.
+
+| Register | Font | Symbols |
+|----------|------|---------|
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
+| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
+| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass), `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). **Never** plain `$m$` for categorical mass. |
+| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
+| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
+| Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
+| Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
+| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
+| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
+| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
+| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
+| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
+| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
+| Information | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
+| Measures | Greek | `$\mu_J$` (Julia-set measure) |
+| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
+| Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+| Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
+| Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
+| Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
+
+**Key collision avoidances:**
+- `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
+- `$b$` = generic variable (never bottom quark; bottom is `$\mathfrak{b}$`)
+- `$p$` = brane point (never proton number; proton number is `$Z$`)
+- `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
+  Use `$\mathcal{S}_p$`, `$\mathbf{E}$`, or `$\mathcal{E}_q$` respectively.
+  `$E_{\mathfrak{H}}$` (with hadron subscript) is allowed for crossing energy.
+- `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
+  **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
+- `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
+- `$q = 1.1097$` (or any specific numerical value of the substrate
+  parameter) **must not appear** outside the introduction and
+  Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
+  Exception: Chapter 9 (Information Theory) may use numerical `$q$` for
+  falsifiability computations.
+
+### 7ab. Observed / derived values — approximation convention (STRICT)
+
+When stating a numerical value derived from the substrate parameter
+`$q_0$` or compared to experimental data, **always** use `$\approx$`
+(or `$\simeq$`), **never** `$=$`.
+
+```latex
+% WRONG — implies exact equality
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272\;\text{MeV}$
+
+% RIGHT — derived approximation
+$\mathfrak{m}_{\mathfrak{p}}(q_0) \approx 938.272\;\text{MeV}$
+```
+
+**Exception:** You may write `$=$` when an explicit error term is
+present:
+
+```latex
+% OK — error term makes precision explicit
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272 + O(10^{-3})\;\text{MeV}$
+```
+
+This applies to all physical predictions, CODATA comparisons, and
+numerical evaluations at `$q_0$`. Exact algebraic identities
+(e.g. `$c_q = 1/(q-1)$`) use `$=$` since they hold for all `$q$`.
+
+### 7a. Hecke-Skein convention (STRICT)
+
+The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke
+relation, never $t$ or $A$ for the Jones polynomial variable).
+
+- **Hecke relation**: $(T - q)(T + q^{-1}) = 0$, equivalently
+  $T^2 = (q - q^{-1})T + 1$.
+- **Skein relation**: Multiply the Hecke relation by $T^{-1}$ to get
+  $T - T^{-1} = q - q^{-1}$, which is the Skein relation
+  $L_+ - L_- = (q - q^{-1})\,L_0$.
+- **Translation dictionary**:
+  - $T$ = positive crossing $L_+$
+  - $T^{-1}$ = negative crossing $L_-$
+  - $1$ = smoothed crossing $L_0$
+  - $q$ and $-q^{-1}$ are the eigenvalues of $T$ (symmetric and
+    antisymmetric channels respectively)
+- **Jones polynomial**: Always $J_K(q)$, never $V_K(t)$ or bracket
+  with variable $A$.  The Jones polynomial is the Markov trace
+  $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$ in $H_n(q)$.
+- **Braid generators**: $\sigma_i$ denotes the braid group generator
+  in $B_n$. The Hecke algebra image is $T_i = \rho(\sigma_i)$.
+  When writing the Hecke relation, always use $T$, not $\sigma$.
 
 ### 8. File hygiene
 
@@ -275,6 +470,7 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `definition` | **Yes** (enforced at type level) | `def:` |
 | `theorem`, `lemma`, `proposition`, `corollary` | Expected (warning if missing) | `thm:`, `lem:`, `prop:`, `cor:` |
 | `conjecture`, `example`, `remark` | Optional | `conj:`, `ex:`, `rem:` |
+| `simulator` | N/A | `sim:` |
 | `prose`, `equation`, `diagram` | N/A | — |
 
 ### Pipeline
@@ -298,8 +494,32 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `content/pipeline/validate.ts` | Three-level validation |
 | `content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
 | `content/pipeline/build.ts` | Full document build |
+| `content/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
+| `content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
+| `content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
+| `content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
+| `content/pipeline/find-dangling-remarks.ts` | Audit: find remarks without `interprets` |
+
+### Bibliography architecture
+
+The bibliography is managed as **typed CSL-JSON** in
+`content/schema/references.ts`. BibTeX (`references.bib`) is a downstream
+render target, auto-generated by `bun run export-bibtex`.
+
+- **Adding a reference**: use the `ref()` builder in `references.ts`
+- **Block citations**: `cites: string[]` field on blocks (auto-extracted
+  from `\cite{}` in .md by the pipeline, or set explicitly in .ts)
+- **Chapter bibliography**: aggregated at build time from all block cites
+- **Validation**: `bun run validate-refs` checks schema, uniqueness, DOIs,
+  and cross-references against Lean `-- Ref:` and LaTeX `\cite{}`
+- **Never edit `references.bib` directly** — it is regenerated on build
 
 ### Dependency graph integration
+
+The `uses[]` field lists **immediate neighbors only** — direct
+dependencies, not transitive ones.  If A→B and B→C, then A lists
+only B; C is reachable by walking the graph.  Run
+`bun run pipeline/prune-transitive-deps.ts` to enforce this.
 
 The `uses[]` field in content objects + Lean import graphs form a
 combined dependency DAG. Editors and proof-writers use this to:
@@ -313,6 +533,25 @@ combined dependency DAG. Editors and proof-writers use this to:
 - **Prioritize formalization**: find blocks with the most dependents
   that are still `not_started`
 
+### Cross-paper references
+
+The `uses[]` field supports three reference scopes:
+
+| Scope | Syntax | Example |
+|-------|--------|---------|
+| Same paper | bare label | `"def:quantum-universe"` |
+| Same folio | `"paper-dir:label"` | `"unital-groebner-bases:cor:pbw"` |
+| External folio | full URL | `"https://folio.example.org/viewer/#/view/paper-id"` |
+
+Cross-paper refs are validated at folio level, not per-paper. The
+`uses-resolve` constraint skips qualified refs (those matching
+`paper-dir:label` or starting with `https://`).
+
+Each paper in `content/folio.ts` has an optional `url` field for
+viewer routing. CSL-JSON entries in `content/schema/references.ts`
+for folio-hosted papers include a URL field matching the viewer hash route
+(e.g. `/viewer/#/view/unital-groebner-bases`).
+
 ### Markdown content convention (in .md files)
 
 - Inline math: `$...$`
@@ -320,6 +559,63 @@ combined dependency DAG. Editors and proof-writers use this to:
 - Complex TeX (tikzcd, align): fenced code block with `` ```tex `` tag
 - Bold → `\textbf{}`, italic → `\emph{}` in LaTeX output
 - Cross-refs: `[text](#label)` → `\hyperref[label]{text}`
+
+### TeX authoring patterns for agents
+
+These rules prevent rendering errors in the content pipeline.
+Violations produce broken LaTeX in titles, captions, and body text.
+
+**1. Math in titles is supported.** Block titles (in `.ts` manifests)
+may contain inline math. The `escapeLatex()` function preserves
+`$...$` segments verbatim. Always use `$...$` delimiters:
+
+```ts
+// CORRECT — math preserved in rendered \begin{example}[{...}]
+title: "Reeb derivation for $\\mathrm{SU}(2)$"
+
+// WRONG — bare LaTeX commands will be escaped to garbage
+title: "Reeb derivation for \\mathrm{SU}(2)"
+```
+
+**2. Multi-line inline math is valid.** The remark-math parser handles
+`$...$` spanning multiple lines. This is the standard pattern for long
+inline expressions in list items:
+
+```md
+1. **Cyclicity**: $\mathrm{tr}_{\mathrm{Ad}}(f \circ g) =
+   \mathrm{tr}_{\mathrm{Ad}}(g \circ f)$, inherited from the
+   Frobenius relation.
+```
+
+**3. Never use raw TeX commands in prose outside `$...$`.** The markdown
+→ LaTeX converter only passes through content inside math delimiters
+or `` ```tex `` fenced blocks. Bare `\mathrm{...}` outside delimiters
+renders as literal text.
+
+**4. Use `$$...$$` on separate lines for display math.** The `$$`
+delimiter must be alone on its line (or at the very start/end):
+
+```md
+The formula is:
+
+$$
+  \nabla^2 \phi = 0
+$$
+```
+
+**5. For complex environments (tikzcd, align), use fenced tex blocks:**
+
+````md
+```tex
+\begin{tikzcd}
+  A \arrow[r] & B
+\end{tikzcd}
+```
+````
+
+**6. Ampersands in math are fine.** The `&` character inside `$...$` or
+`` ```tex `` blocks is not escaped (it's a column separator in matrices
+and alignments). Only `&` in prose text causes LaTeX errors.
 
 ## Lean MCP server (lean-lsp-mcp)
 
@@ -335,16 +631,41 @@ configured via `.mcp.json`. It provides Claude Code with:
 
 Prerequisites: `git`, `curl`.
 
+Use the `lean_setup` MCP tool (provided by paper-assistant). It installs:
+uv, elan, the Lean toolchain pinned in
+`content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache,
+ripgrep, and runs `lake build`.
+
+Alternatively, from the command line:
+
 ```bash
-./scripts/setup-lean-mcp.sh
+cd content/quantum-observable-universe/lean
+lake exe cache get && lake build
 ```
 
-This installs: uv (Python package manager), elan, the Lean toolchain
-pinned in `lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
-`lean-lsp-mcp` via uvx.
+### Local Mathlib cache
 
-**Important**: Run `lake build` in `lean/` before first MCP session to avoid
-timeouts.
+To avoid re-cloning Mathlib from GitHub on every fresh `.lake/` build,
+keep a persistent local clone one directory above the repo:
+
+```bash
+cd ..  # parent of the repo root
+git clone https://github.com/leanprover-community/mathlib4.git
+```
+
+The build tools automatically detect this clone (configured in
+`lean-mcp.config.json` → `lean.local_mathlib_path`) and set a git
+`insteadOf` redirect so Lake fetches from the local clone instead of
+GitHub. This is transparent — no changes to `lakefile.toml` needed.
+
+| Config key | Default | Purpose |
+|-----------|---------|---------|
+| `lean.local_mathlib_path` | `../mathlib4` | Path to local clone (relative to repo root) |
+| `lean.mathlib_git_url` | `https://github.com/leanprover-community/mathlib4` | Upstream URL to redirect |
+
+The `lean_build` tool warns if the local clone is >7 days stale and
+offers `update_local_mathlib: true` to fetch the latest commits.
+Shell scripts use `scripts/lib/lean-env.sh` for the same logic.
 
 ### Remote MCP server
 
@@ -379,31 +700,43 @@ To extract the deploy infrastructure for another repo, copy `deploy/`,
 
 ### Session-start hook
 
-A `SessionStart` hook in `.claude/settings.json` runs `scripts/check-lean.sh`
-at the beginning of every session. If Lean or uv is not available and the
-user's request requires Lean, the editor skill will prompt the author with
-setup instructions rather than silently failing.
+A `SessionStart` hook in `.claude/settings.json` runs `scripts/session-status.sh`
+at the beginning of every session. It sources `scripts/lib/lean-env.sh` for
+shared Lean environment detection. If Lean is not available and the user's
+request requires Lean, the editor skill will suggest the `lean_setup` MCP
+tool rather than silently failing.
 
 ## Project structure
 
 | Path | Purpose |
 |------|---------|
 | `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
-| `content/schema/` | Type system, Zod schemas, builder functions |
+| `content/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
 | `content/pipeline/` | Validation, rendering, build pipelines |
 | `content/<paper>/` | Paper manifest + chapter directories |
+| `folio-assistant/` | **Platform package** — MCP server, auth, UI, blocks, viewer |
+| `folio-assistant/src/` | Generic core (server, types, routes, tools, blocks registry) |
+| `folio-assistant/adapters/paper/` | Paper content adapter (implements `ContentAdapter`) |
+| `folio-assistant/schemas/` | Shared TypeScript types (proof-objects, glossary, etc.) |
+| `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache Service Worker |
+| `folio-assistant/ui/` | Assistant chat SPA |
+| `folio-assistant/simulators/` | Interactive HTML simulators |
+| `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
+| `folio-assistant/computations/` | Computation scripts and witness data |
+| `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
-| `references.bib` | BibTeX database |
-| `lean/` | Lean 4 formalization (lakefile.lean, QOU/) |
-| `schemas/` | Shared TypeScript types (proof-objects, glossary, etc.) |
+| `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
+| `content/quantum-observable-universe/lean/` | Lean 4 formalization (lakefile.toml, QOU/) |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
+| `uploads/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
 | `todos/` | Work-tracking TodoItems, gitignored (external to paper content) |
+| `docs/` | Planning documents, migration plans, dependency graphs |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |
 | `deploy/` | Remote MCP server deployment (Docker Compose, auth, auto-update) |
@@ -419,7 +752,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | Workflow | Artifacts deployed to gh-pages |
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `lean/` (source browser), `lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
+| `lean_ci.yml` | `content/quantum-observable-universe/lean/` (source browser), `content/quantum-observable-universe/lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
 | `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents
@@ -435,8 +768,8 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
 | `blueprint.pdf` | blueprint.yml | Print blueprint |
 | `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
-| `lean/` | lean_ci.yml | Raw Lean source files |
-| `lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
+| `content/quantum-observable-universe/lean/` | lean_ci.yml | Raw Lean source files |
+| `content/quantum-observable-universe/lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
 | `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
 | `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
 | `schema-docs/` | publish.yml | TypeDoc content-object type reference |

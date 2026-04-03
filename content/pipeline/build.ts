@@ -12,7 +12,7 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { join, dirname, resolve } from "path";
+import { join, dirname, resolve, relative } from "path";
 import type { Paper, Chapter, Section, Block, RenderOptions } from "../schema/types";
 import { renderChapter, validateLatexAst } from "./render-latex";
 import { generateMainTex } from "./generate-main-tex";
@@ -52,11 +52,12 @@ export async function buildPaper(
   const paper: Paper = paperMod.default;
 
   // 2. Resolve chapters and load all blocks
-  const resolvedChapters: Chapter[] = [];
+  const resolvedChapters: { chapter: Chapter; manifestIdx: number }[] = [];
   const chapterSlugs = new Map<number, string>();
-  const blocks = new Map<string, { block: Block; mdContent: string }>();
+  const blocks = new Map<string, { block: Block; mdContent: string; sourceDir?: string }>();
 
-  for (const chRef of paper.chapters) {
+  for (let chIdx = 0; chIdx < paper.chapters.length; chIdx++) {
+    const chRef = paper.chapters[chIdx];
     const chDir = join(paperDir, chRef.dir);
     const chPath = join(chDir, `${chRef.dir}.ts`);
 
@@ -68,12 +69,12 @@ export async function buildPaper(
     try {
       const chMod = await import(chPath);
       const chapter: Chapter = chMod.default;
-      resolvedChapters.push(chapter);
+      resolvedChapters.push({ chapter, manifestIdx: chIdx });
 
       // Extract slug from dir name: "ch1-quantum-observable-universe" → "quantum-observable-universe"
       const slug = chRef.dir.replace(/^ch\d+-/, "");
-      const key = chapter.number ?? -(resolvedChapters.length);
-      chapterSlugs.set(key, slug);
+      // Use manifest index as key to preserve author-defined chapter order
+      chapterSlugs.set(chIdx, slug);
 
       // Load blocks from the chapter directory
       for (const sec of chapter.sections) {
@@ -89,7 +90,10 @@ export async function buildPaper(
             const mod = await import(tsPath);
             const block: Block = mod.default;
             const mdContent = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
-            blocks.set(rootName, { block, mdContent });
+            // sourceDir relative to repo root (one level above content/)
+            const repoRoot = resolve(paperDir, "..");
+            const sourceDir = relative(repoRoot, chDir);
+            blocks.set(rootName, { block, mdContent, sourceDir });
           } catch (e) {
             issues.push({
               level: "error",
@@ -110,10 +114,9 @@ export async function buildPaper(
   const chapters = new Map<number, string>();
   let astValid = true;
 
-  for (const chapter of resolvedChapters) {
+  for (const { chapter, manifestIdx } of resolvedChapters) {
     const latex = renderChapter(chapter, blocks, opts);
-    const chKey = chapter.number ?? -(resolvedChapters.indexOf(chapter) + 1);
-    chapters.set(chKey, latex);
+    chapters.set(manifestIdx, latex);
 
     // AST validation
     const ast = validateLatexAst(latex);

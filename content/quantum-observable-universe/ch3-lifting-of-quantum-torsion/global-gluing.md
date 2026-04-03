@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$ denote the substrate parameter.  The local
 deformations of the Frobenius--Hopf object $A$ parameterised by the
 substrate parameter $q$ induce a twisted associative deformation that

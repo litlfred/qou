@@ -6,6 +6,7 @@ import { chapter, section } from "../../schema/builders";
  * A guide to the paper's structure and main results.
  */
 export default chapter({
+  tabLabel: "I",
   title: "Introduction",
   label: "chap:introduction",
   sections: [
@@ -14,6 +15,8 @@ export default chapter({
       label: "sec:introduction-overview",
       blocks: [
         "ch0-intro",
+        "roadmap-guide",
+        "roadmap-diagram",
       ],
     }),
   ],

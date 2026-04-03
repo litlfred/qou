@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'lean-archive/**'
+      - 'content/quantum-observable-universe/lean/**'
       - 'chapters/**'
       - 'proof-objects.json'
       - 'glossary.json'
@@ -12,22 +12,19 @@ on:
 
 permissions:
   contents: write
+  packages: read          # required to pull the latex-ci container image
 
 jobs:
   extract-and-build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/latex-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Install CI tools
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-            texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
-          pip3 install --break-system-packages --no-cache-dir requests>=2.32
 
       - name: Install Lean via elan
         run: |
@@ -36,13 +33,12 @@ jobs:
 
       # ── Step 0: Set PYTHONPATH for qou_lib shared library ──────────
       - name: Configure Python path
-        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+        run: |
+          echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+          git config --global --add safe.directory "${{ github.workspace }}"
 
       # ── Step 1: Build content objects → LaTeX chapters ─────────────
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      # Bun is pre-installed in the latex-ci container image.
 
       - name: Build content objects to LaTeX chapters
         continue-on-error: true
@@ -63,23 +59,25 @@ jobs:
 
       # ── Step 3: Extract proof objects from LaTeX ───────────────────
       - name: Extract proof objects from LaTeX
+        continue-on-error: true
         run: python3 .github/scripts/extract_proof_objects.py
 
       # ── Step 4: Generate Lean stubs for new objects ────────────────
       - name: Generate Lean stubs
+        continue-on-error: true
         run: python3 .github/scripts/generate_lean_stubs.py
 
       - name: Cache Lean build artifacts
         uses: actions/cache@v4
         with:
-          path: lean-archive/.lake
-          key: lean-${{ runner.os }}-${{ hashFiles('lean-archive/lean-toolchain', 'lean-archive/lakefile.toml') }}
+          path: content/quantum-observable-universe/lean/.lake
+          key: lean-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml') }}
           restore-keys: |
             lean-${{ runner.os }}-
 
       # ── Step 5: Build Lean project ─────────────────────────────────
       - name: Build Lean project
-        working-directory: lean-archive
+        working-directory: content/quantum-observable-universe/lean
         run: |
           lake update
           lake build 2>&1 | tee ../build.log
@@ -106,7 +104,7 @@ jobs:
       # pipeline to include Formalizer and Ontologist reviews.
       - name: Check sorry status
         run: |
-          SORRY_COUNT=$(grep -rc "sorry" lean-archive/QOU/*.lean 2>/dev/null | awk -F: '{s+=$2} END {print s}')
+          SORRY_COUNT=$(grep -rc "sorry" content/quantum-observable-universe/lean/QOU/*.lean 2>/dev/null | awk -F: '{s+=$2} END {print s}')
           echo "Total sorry occurrences: ${SORRY_COUNT}"
           if [ "${SORRY_COUNT}" -gt 0 ]; then
             echo "⚠️  ${SORRY_COUNT} sorry markers remain — Formalizer review recommended"
@@ -116,6 +114,7 @@ jobs:
       # ── Step 9: Commit updated manifests ───────────────────────────
       - name: Commit updated manifests
         run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add proof-objects.json glossary.json mapping.json

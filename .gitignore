@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
-.qou-prefs.json
+.folio-assistant-prefs.json
+.folio-prefs.json
 build/
 
 # Generated LaTeX chapters (from content pipeline)
@@ -19,17 +20,19 @@ chapters/*.md
 diff.tex
 main-flat.tex
 print-mode.tex
+main.tex
 build-warnings.log
 _site/
 
 # Lean build artifacts
-lean-archive/.lake/
-lean-archive/lake-packages/
-lean-archive/build/
+content/quantum-observable-universe/lean/.lake/
+content/quantum-observable-universe/lean/lake-packages/
+content/quantum-observable-universe/lean/build/
 
 # Generated graph intermediate files
 dependency-graph.dot
 node_modules/
+node_modules
 
 # Deployment secrets and generated files (never commit)
 deploy/.env
@@ -37,9 +40,8 @@ deploy/authorized-emails.txt
 deploy/Caddyfile
 deploy/viewer/
 scripts/mcp-server/bun.lock
-schemas/bun.lock
-schemas/docs/
-viewer/paper.js
+folio-assistant/schemas/bun.lock
+folio-assistant/viewer/paper.js
 # Root-level dev dependencies (TypeDoc etc.)
 package-lock.json
 bun.lock
@@ -51,3 +53,9 @@ todos/
 .claude/local-state/
 .qou-feedback/
 .qou-tmp/
+.folio-feedback/
+.folio-tmp/
+.folio-assistant-tmp/
+
+# Feedback worktree (local checkout of main for committing feedback)
+.feedback-wt/

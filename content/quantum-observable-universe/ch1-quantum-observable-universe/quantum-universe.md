@@ -1,18 +1,21 @@
 Let $R$ be a commutative ring. A *quantum universe over $R$* is a
-triple $(\mathcal{C}, A, \omega)$ where:
+triple $(\mathbf{C}, A, \tau)$ where:
 
-1. $(\mathcal{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
-   monoidal category
-   ([rigid monoidal category](#def:rigid-monoidal-category));
+1. $(\mathbf{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
+   braided monoidal category
+   ([rigid monoidal category](#def:rigid-monoidal-category)) with
+   braiding $c_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$ — the braiding is required for
+   exterior powers $\Lambda^k V$ and need not be symmetric
+   ($c^2 \neq \mathrm{id}$ in general);
 
-2. $A$ is a *Frobenius--Hopf object* in $\mathcal{C}$: an
+2. $A$ is a *Frobenius--Hopf object* in $\mathbf{C}$: an
    object equipped with morphisms
 
    ```tex
    \[
    \begin{tikzcd}[row sep=1.5em, column sep=2.5em]
      A \otimes A \ar[r, "\mu"]
-     & A \ar[r, "\lambda"]
+     & A \ar[r, "\int_A"]
      & \mathbf{1}
      & {\scriptstyle\text{(multiplication, Frobenius form)}}
      \\
@@ -31,19 +34,19 @@ triple $(\mathcal{C}, A, \omega)$ where:
 
    — multiplication $\mu$, unit $\eta$, comultiplication $\Delta$,
    counit $\varepsilon$, antipode $S$, and Frobenius
-   form $\lambda$ — satisfying:
+   form $\int_A$ — satisfying:
 
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
-   a Hopf algebra object in $\mathcal{C}$;
+   a Hopf algebra object in $\mathbf{C}$;
 
    **(F)** the [Frobenius pairing](#def:frobenius-pairing)
-   $\lambda \circ \mu \colon A \otimes A \to \mathbf{1}$ is
+   $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ is
    non-degenerate, inducing an isomorphism
    $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
-3. $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
+3. $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ is a
    *fibre functor*: an exact, faithful, $R$-linear monoidal
    functor;
 
 4. $A$ admits a *differential calculus*: the module of
-   K\"ahler differentials $\Omega^1(A)$ exists in $\mathcal{C}$.
+   K\"ahler differentials $\Omega^1(A)$ exists in $\mathbf{C}$.

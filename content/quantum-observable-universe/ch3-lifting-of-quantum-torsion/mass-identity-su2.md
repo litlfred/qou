@@ -3,32 +3,36 @@ compute the [mass identity](#def:mass-identity) for
 $G = \mathrm{SU}(2)$.
 
 **Setup.** Take $A = \mathcal{O}(\mathrm{SU}(2))$ with Frobenius form
-$\lambda = \int_{\mathrm{SU}(2)} (-)\, d\mu$, where $\mu$ is the
+$\int_A = \int_{\mathrm{SU}(2)} (-)\, d\mu$, where $\mu$ is the
 normalised Haar measure. The comultiplication is
 $\Delta(f)(x, y) = f(xy)$, and the categorical trace is
-$\operatorname{tr}(\phi) = (\lambda \otimes \mathrm{id}) \circ \Delta \circ \phi$.
+$\mathrm{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
 
-**The mass formula.** For a cycle $\gamma \in A$, the
+**The mass formula.** For a cycle $\varrho \in A$, the
 [mass identity](#def:mass-identity) gives
+
 $$
-  m(\gamma)
-  \;=\; \bigl\lVert \operatorname{tr}\bigl((\lambda \otimes \mathrm{id})
-  \circ \Delta \circ \gamma\bigr) \bigr\rVert.
+  \mathfrak{m}(\varrho)
+  \;=\; \bigl\lVert \mathrm{tr}\bigl((\int_A \otimes \mathrm{id})
+  \circ \Delta \circ \varrho\bigr) \bigr\rVert.
 $$
+
 Since $\Delta(f)(x, y) = f(xy)$, the inner composition evaluates to
-$(\lambda \otimes \mathrm{id})(\Delta(\gamma)) = \int_{\mathrm{SU}(2)} \gamma(xy)\, d\mu(x)$,
-which is the convolution of $\gamma$ with the Haar measure.
+$(\int_A \otimes \mathrm{id})(\Delta(\varrho)) = \int_{\mathrm{SU}(2)} \varrho(xy)\, d\mu(x)$,
+which is the convolution of $\varrho$ with the Haar measure.
 
 **Fundamental representation.** For the spin-$\tfrac{1}{2}$
-representation $V_{1/2}$, a cycle $\gamma$ encircling a vortex in
+representation $V_{1/2}$, a cycle $\varrho$ encircling a vortex in
 $\mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ has mass
+
 $$
-  m(\gamma)
+  \mathfrak{m}(\varrho)
   \;=\; \biggl\lVert \int_{\mathrm{SU}(2)}
-  \operatorname{tr}_{V_{1/2}}\!\bigl(\Delta(\gamma)\bigr)\, d\mu
+  \mathrm{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr)\, d\mu
   \biggr\rVert.
 $$
+
 The comultiplication maps $f(x) \mapsto f(xy)$, so the trace picks out
 the character $\chi_{1/2}(g) = 2\cos(\theta/2)$ of the fundamental
 representation. Integrating the character against a winding-number-$1$
-cycle yields $m(\gamma) = 1$.
+cycle yields $\mathfrak{m}(\varrho) = 1$.

@@ -1,16 +1,22 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 4: Braids, Knots and Fluid Dynamics.
+ * Chapter 3: Braids and Knots.
  *
  * Categorical origin of braiding, braid group representations,
- * SU(2)/SO(3) framework, knot groups, quantum groups,
- * varying Euler characteristic, gauge-field fluid dynamics,
- * and information-theoretic perspectives.
+ * SU(2)/SO(3) framework, knot groups, quantum groups, abstract hadron
+ * composites and topological mass, Möbius energy, and varying Euler
+ * characteristic.
+ *
+ * Hadron/knot/bundle blocks absorbed from ch3-lifting §11-12 during
+ * chapter restructuring (2026-03).  Proton/neutron definitions moved
+ * to the Descartes chapter (Option A: nuclear binding references the
+ * abstract hadron, not specific particles).
+ * Fluid dynamics and information theory moved to ch6 (Quantum Universes).
  */
 export default chapter({
   number: 4,
-  title: "Braids, Knots and Fluid Dynamics",
+  title: "Braids and Knots",
   label: "chap:path-integrals-braiding",
   sections: [
     section({
@@ -32,8 +38,11 @@ export default chapter({
         "symmetric-quotient-colour",
         "braid-base-field",
         "braid-lifting-compatibility",
+        "jones-markov-trace",
+        "markov-moves-brane-tower",
         "knot-eigenbasis-complete",
         "knot-eigenbasis-complete-proof",
+        "knot-exhaustiveness",
         "feynman-eigenbasis",
       ],
     }),
@@ -44,7 +53,8 @@ export default chapter({
       blocks: [
         "braid-symmetric-intro",
         "braid-group",
-        "s3-group",
+        "braid-group-su2",
+        "knot-notation-convention",
       ],
     }),
 
@@ -57,6 +67,7 @@ export default chapter({
         "first-order-taylor",
         "su2-generators",
         "so3-generators",
+        "quaternion-so3-motivation",
       ],
     }),
 
@@ -67,6 +78,7 @@ export default chapter({
         "braid-involutions-intro",
         "braid-twist-flip",
         "holonomy-trefoil",
+        "rho-s3-holonomy-exposition",
       ],
     }),
 
@@ -98,7 +110,10 @@ export default chapter({
         "enveloping-algebras-intro",
         "enveloping-algebra",
         "quantum-su2",
+        "r-matrix-braiding-structure",
         "r-matrix-braiding",
+        "skein-crossing-asymmetry-prop",
+        "skein-crossing-asymmetry",
       ],
     }),
 
@@ -113,73 +128,129 @@ export default chapter({
       ],
     }),
 
+    // ── Crossing energy and stability ───────────────────────────────────
     section({
-      title: "Varying Euler characteristic",
-      label: "sec:varying-euler",
+      title: "Crossing energy and Coulomb charge",
+      label: "sec:crossing-energy",
+      blocks: [
+        "crossing-energy",
+        "crossing-energy-trefoil",
+        "coulomb-charge",
+      ],
+    }),
+
+    // ── Lagrange resolvents (categorical DFT) ─────────────────────────
+    section({
+      title: "Lagrange Resolvents and $q$-Deformed Kinematics",
+      label: "sec:lagrange-q-kinematics",
+      blocks: [
+        // DFT decomposition of cyclic representations
+        "lagrange-resolvent-transform",
+        "lagrange-resolvents",
+        // q-deformed physical quantities (general QOU)
+        "q-momentum",
+        "q-angular-momentum",
+        "q-energy",
+        "noether-theorem-callout",
+      ],
+    }),
+
+    // ── Vertex operators and the Markov trace ────────────────────────
+    section({
+      title: "Vertex Operators and the Markov Trace",
+      label: "sec:vertex-operators-markov",
+      blocks: [
+        // Exceptional divisor and Reeb bundle (general QOU)
+        "exceptional-divisor",
+        "reeb-bundle",
+        "reeb-exceptional-divisor",
+        // Vertex operator algebra
+        "vertex-operator",
+        "vertex-operator-dictionary",
+        // Vertex operators factor through E_p
+        "vertex-is-exceptional-divisor",
+        "vertex-is-exceptional-divisor-proof",
+        // Product factorization of the Markov trace
+        "markov-trace-product",
+        // Categorical transfer matrix and level independence
+        "categorical-transfer-matrix",
+        "transfer-matrix-level-independence",
+        "transfer-matrix-level-independence-proof",
+        // Topological mass (archimedean specialization)
+        "topological-mass-formula",
+        "skein-decomposition",
+        // Categorical vs archimedean braiding
+        "skein-archimedean-shadow",
+        // QU/QUO axioms as relations on Hecke generators
+        "vertex-algebra-relations",
+        // Relations lifted to the jet bundle
+        "vertex-algebra-jet-relations",
+        // T_{2,11} annihilation by the spectral filter ideal
+        "t211-ideal-annihilation",
+      ],
+    }),
+
+    // ── Hadrons and knot composites ──────────────────────────────────
+    section({
+      title: "Hadrons and Knot Composites",
+      label: "sec:hadrons-knot-composites",
+      blocks: [
+        "hadron",
+        "hadron-operations-closure",
+        "hadron-operations",
+        "knot-factorization",
+        "localized-hadron",
+        "hadron-fibre-embedding",
+        "skein-generation",
+        "skein-generation-proof",
+        "knot-particle-generation",
+        "knot-particle-correspondence",
+        "knot-particle-dictionary",
+        "bundle-initial-conditions",
+        "observation-braid",
+        "sorting-color-energy",
+        "bundle-isotopy-equivalence",
+        "torsion-knot-flow",
+        "bundle-category",
+      ],
+    }),
+
+    // ── Borromean baryons and fermion/boson classification ─────────────
+    section({
+      title: "Borromean Baryons and Reidemeister Invariance",
+      label: "sec:borromean-reidemeister",
+      blocks: [
+        "borromean-baryon",
+        "hadron-proton-example",
+        "fermion-boson-knot-link",
+        "reidemeister-mass-invariance",
+        "nuclear-shell-intruder",
+      ],
+    }),
+
+    // ── Topological mass + nuclear binding (from ch3 §12 + ch4 §9) ───
+    section({
+      title: "Topological Mass and Nuclear Binding",
+      label: "sec:topological-mass-binding",
+      blocks: [
+        "topological-mass",
+        "topological-mass-categorical-proof",
+        "topological-mass-trefoil",
+        "skein-binding-lagrangian",
+        "beta-stability",
+      ],
+    }),
+
+    // ── Varying Euler + mirror bundle (merged — 2+2 blocks) ──────────
+    section({
+      title: "Varying Euler Characteristic and the Mirror Bundle",
+      label: "sec:varying-euler-mirror",
       blocks: [
         "varying-euler-intro",
         "genus-2-intro",
-      ],
-    }),
-
-    section({
-      title: "Descent from $E_1$ to $E_0$ and the mirror bundle $E_{-1}$",
-      label: "sec:descent-mirror",
-      blocks: [
         "descent-mirror-intro",
         "e-minus-one",
       ],
-    }),
-
-    // ── Gauge-field fluid dynamics (formerly Ch. 8) ──────────────
-
-    section({
-      title: "Fluid Dynamics of the Brane",
-      label: "sec:brane-fluid",
-      blocks: ["brane-fluid"],
-    }),
-    section({
-      title: "Geodesics as Stable Vortex Points",
-      label: "sec:geodesic-vortices",
-      blocks: ["geodesic-vortices"],
-    }),
-    section({
-      title: "Braid Operators in the Fluid Picture",
-      label: "sec:braid-fluid",
-      blocks: ["braid-fluid"],
-    }),
-    section({
-      title: "$q$-Parameter, Planck Limit, and Reynolds Number",
-      label: "sec:planck-reynolds",
-      blocks: ["planck-reynolds"],
-    }),
-
-    // ── Information-theoretic perspective (formerly Ch. 9) ───────
-
-    section({
-      title: "Emergent Gravity from Information Theory",
-      label: "sec:emergent-gravity-info",
-      blocks: ["emergent-gravity-info"],
-    }),
-    section({
-      title: "Local Planck Length as Minimal Information Unit",
-      label: "sec:planck-info-unit",
-      blocks: ["planck-info-unit"],
-    }),
-    section({
-      title: "Time as Information Transfer",
-      label: "sec:time-info",
-      blocks: ["time-info"],
-    }),
-    section({
-      title: "Big Bang as Initial Information State",
-      label: "sec:big-bang-info",
-      blocks: ["big-bang-info"],
-    }),
-    section({
-      title: "Planck Units and Computational Mechanics",
-      label: "sec:planck-computation",
-      blocks: ["planck-computation"],
     }),
   ],
 });

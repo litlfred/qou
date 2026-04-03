@@ -1,8 +1,8 @@
 /-!
 # QOU.PathIntegrals.KnotEigenbasisComplete
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/PathIntegrals.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/PathIntegrals.lean (monolithic)
 -/
 
 import QOU.Basic
@@ -30,7 +30,7 @@ namespace QOU.PathIntegrals
        irreducible summands (density).
 
     LaTeX: `\label{prop:knot-eigenbasis-complete}` -/
--- Ref: [chari1994guide] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
+-- Ref: [chari1994] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
 -- Ref: [alexander1923] J.W. Alexander, Proc. Natl. Acad. Sci. USA 9 (1923)
 -- Ref: [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987)
 structure KnotEigenbasisComplete where

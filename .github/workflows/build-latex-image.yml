@@ -34,6 +34,13 @@ jobs:
     timeout-minutes: 30
 
     steps:
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc \
+            /usr/local/share/powershell /usr/local/.ghcup
+          sudo docker system prune -af
+          df -h /
+
       - name: Checkout
         uses: actions/checkout@v4
 

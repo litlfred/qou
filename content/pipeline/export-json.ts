@@ -27,6 +27,10 @@ import type {
   RenderedAsset,
   LeanRef,
 } from "../schema/types";
+import type { Data as CSLData } from "csl-json";
+import { references, referenceMap } from "../schema/references";
+import { mergeCitations } from "./citations";
+import { isWitnessed, leanFileHash } from "../../scripts/lean-witness";
 
 const REPO_ROOT = resolve(import.meta.dir, "../..");
 const CONTENT_ROOT = join(REPO_ROOT, "content");
@@ -50,8 +54,9 @@ interface ExportedBlock {
   label?: string;
   title?: string;
   uses?: string[];
+  /** Resolved citation keys (explicit + auto-extracted from .md). */
+  cites?: string[];
   lean?: LeanRef & { source?: string };
-  status?: string;
   proofs?: string[];
   examples?: string[];
   tex?: string;
@@ -60,6 +65,12 @@ interface ExportedBlock {
   md: string;
   mdModified: string;
   meta?: Record<string, unknown>;
+  /** Simulator-specific fields */
+  html?: string;
+  defaultView?: { name: string; title?: string; params?: Record<string, unknown> };
+  views?: Array<{ name: string; title?: string; params?: Record<string, unknown> }>;
+  /** Remark interprets link */
+  interprets?: string;
 }
 
 interface ExportedSection {
@@ -73,6 +84,8 @@ interface ExportedChapter {
   title: string;
   label?: string;
   sections: ExportedSection[];
+  /** Aggregated bibliography: CSL-JSON entries cited by any block in this chapter. */
+  bibliography?: CSLData[];
 }
 
 interface ExportedPaper {
@@ -80,6 +93,10 @@ interface ExportedPaper {
   authors: string[];
   date?: string;
   chapters: ExportedChapter[];
+  /** Full bibliography database (CSL-JSON) for cross-linking. */
+  references?: CSLData[];
+  /** Custom LaTeX macros (name → {tex, unicode}) for KaTeX rendering. */
+  macros?: Record<string, { tex: string; unicode?: string }>;
   meta?: Record<string, unknown>;
   _hash: string;
   _built: string;
@@ -167,9 +184,27 @@ async function main() {
           const leanRef = "lean" in block ? (block.lean as LeanRef | undefined) : undefined;
           const colocatedLean = join(chDir, `${rootName}.lean`);
           const leanSource = readLeanSource(leanRef, colocatedLean);
+
+          // Compute lean hash and check witness cache
+          let leanHash: string | undefined;
+          let witnessed: boolean | undefined;
+          if (leanRef) {
+            const leanFilePath = existsSync(colocatedLean)
+              ? colocatedLean
+              : leanRef.file ? join(LEAN_ROOT, leanRef.file) : undefined;
+            if (leanFilePath && existsSync(leanFilePath)) {
+              const result = isWitnessed(leanFilePath);
+              leanHash = result.hash;
+              witnessed = result.witnessed;
+            }
+          }
           const rendered = "rendered" in block
             ? readRenderedAssets(block.rendered as RenderedAsset[] | undefined, chDir, OUT_DIR)
             : undefined;
+
+          // Merge explicit cites[] with auto-extracted from .md
+          const explicitCites = "cites" in block ? (block as any).cites as string[] | undefined : undefined;
+          const cites = mergeCitations(explicitCites, md);
 
           blocks.push({
             rootName,
@@ -177,8 +212,8 @@ async function main() {
             label: "label" in block ? block.label : undefined,
             title: "title" in block ? block.title : undefined,
             uses: "uses" in block ? block.uses : undefined,
-            lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
-            status: "status" in block ? block.status : undefined,
+            cites: cites.length > 0 ? cites : undefined,
+            lean: leanRef ? { ...leanRef, source: leanSource, leanHash, witnessed } : undefined,
             proofs: "proofs" in block ? block.proofs : undefined,
             examples: "examples" in block ? block.examples : undefined,
             tex: "tex" in block ? block.tex : undefined,
@@ -187,6 +222,10 @@ async function main() {
             md,
             mdModified: mdStat ? mdStat.mtime.toISOString() : "",
             meta: "meta" in block ? block.meta : undefined,
+            html: "html" in block ? (block as any).html : undefined,
+            defaultView: "defaultView" in block ? (block as any).defaultView : undefined,
+            views: "views" in block ? (block as any).views : undefined,
+            interprets: "interprets" in block ? (block as any).interprets : undefined,
           });
         } catch (e) {
           blocks.push({
@@ -201,11 +240,25 @@ async function main() {
       sections.push({ title: section.title, label: section.label, blocks });
     }
 
+    // Aggregate chapter-level bibliography from all blocks
+    const chapterCiteKeys = new Set<string>();
+    for (const sec of sections) {
+      for (const b of sec.blocks) {
+        if (b.cites) for (const key of b.cites) chapterCiteKeys.add(key);
+      }
+    }
+    const bibliography = [...chapterCiteKeys]
+      .sort()
+      .map(key => referenceMap.get(key))
+      .filter((r): r is CSLData => r !== undefined);
+
     chapters.push({
       number: ch.number,
+      tabLabel: ch.tabLabel,
       title: ch.title,
       label: ch.label,
       sections,
+      bibliography: bibliography.length > 0 ? bibliography : undefined,
     });
   }
 
@@ -214,6 +267,8 @@ async function main() {
     authors: paper.authors,
     date: paper.date,
     chapters,
+    references,
+    macros: (paper as any).macros,
     meta: paper.meta,
     _built: new Date().toISOString(),
   };

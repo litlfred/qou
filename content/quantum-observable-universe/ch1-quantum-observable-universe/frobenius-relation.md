@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum universe](#def:quantum-universe)). Denote by $\Delta_\mu$ the
 comultiplication on $A$ dual to the multiplication $\mu$ under the
 [Frobenius pairing](#def:frobenius-pairing). Then the following
@@ -25,6 +25,5 @@ diagram commutes (the *Frobenius relation*):
 
 That is, sliding a multiplication past a comultiplication (or vice versa)
 yields the same result as composing them:
-$(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu)
-= \Delta_\mu \circ \mu$.
+$(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu$.
 

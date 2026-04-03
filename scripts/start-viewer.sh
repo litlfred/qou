@@ -2,7 +2,7 @@
 #
 # Open the QOU content viewer.
 #
-# The viewer is served by the MCP assistant (start-assistant.sh).
+# The viewer is served by the MCP assistant (start-folio-assistant.sh).
 # This script just opens the browser to the viewer URL.
 #
 # Usage:
@@ -11,13 +11,14 @@
 #
 set -euo pipefail
 
-PORT="${1:-3200}"
-[[ "$1" == "--port" ]] && PORT="${2:-3200}"
+source "$(dirname "$0")/folio-port.sh"
+PORT="${1:-$FOLIO_PORT}"
+[[ "${1:-}" == "--port" ]] && PORT="${2:-$FOLIO_PORT}"
 
 URL="http://localhost:${PORT}/viewer/"
 
 echo "Opening viewer: $URL"
-echo "(Make sure the assistant is running: ./scripts/start-assistant.sh)"
+echo "(Make sure the assistant is running: ./scripts/start-folio-assistant.sh)"
 
 if command -v xdg-open &>/dev/null; then
   xdg-open "$URL"

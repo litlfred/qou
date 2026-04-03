@@ -1,10 +1,12 @@
 In Feynman's formulation, the transition amplitude between two states is
 computed by summing over *all* paths in configuration space:
+
 $$
   \langle\psi_f|\psi_i\rangle
   \;=\;
   \int \mathcal{D}\phi\;\,e^{iS[\phi]/\hbar}.
 $$
+
 This expression is basis-independent --- it does not privilege any
 decomposition of the Hilbert space --- but the price is a
 continuum integral over an infinite-dimensional space that requires
@@ -31,38 +33,39 @@ The "path integral" is then replaced by a finite algebraic operation:
 the *categorical trace*
 ([mass identity](#def:mass-identity)) evaluated on the braid-group
 representation.  Concretely, for a closed cycle
-$\gamma \colon \mathbf{1} \to A$ representing a particle propagating
+$\varrho \colon \mathbf{1} \to A$ representing a particle propagating
 around a vortex filament, the mass is
+
 $$
-  m(\gamma)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
-    (\lambda \otimes \mathrm{id})
+    (\int_A \otimes \mathrm{id})
     \circ \Delta
-    \circ \gamma
+    \circ \varrho
   \bigr)
   \,\bigr\rVert,
 $$
-where $\lambda$ is the Frobenius form and $\Delta$ the comultiplication.
+
+where $\int_A$ is the Frobenius form and $\Delta$ the comultiplication.
 This is a *finite* expression: $A$ is a finite-dimensional
-Frobenius--Hopf object, $\Delta$ and $\lambda$ are morphisms in the
+Frobenius--Hopf object, $\Delta$ and $\int_A$ are morphisms in the
 category, and the trace is the categorical trace of a rigid monoidal
 category.  No regularisation is required because the sum is over the
 finitely many irreducible summands of $V^{\otimes n}$, not over a
 continuum of paths.
 
 The connection to the skein-based mass calculation of
-[Chapter 5](#chap:experimental) is then as follows.  The skein relation
-$q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) =
-(q^{1/2} - q^{-1/2})\,\mathcal{M}(L_0)$
-([skein mass relation](#prop:skein-mass-relation)) is the
+[Chapter 6](#chap:descartes-universe) is then as follows.  The skein relation
+$q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\,\mathcal{M}(L_0)$
+([skein mass relation](#rem:skein-mass-relation)) is the
 *characteristic equation* of the braiding $c_{V,V}$ evaluated under
 the categorical trace: the three resolutions $L_+$, $L_-$, $L_0$ of a
 crossing correspond to the eigenvalues $q$ and $-q^{-1}$ of $c_{V,V}$
 and the trace of the identity strand.  Since the eigenvalues are
 determined by the $R$-matrix ([$R$-matrix braiding](#rem:r-matrix-braiding)), the
-mass ratios --- including $m_\mu/m_e \approx 206.768$ --- are computed by
+mass ratios --- including $\mathfrak{m}_\mu/\mathfrak{m}_e \approx 206.768$ --- are computed by
 a finite trace on a finite-dimensional representation, with the knot types
 serving as a *complete* eigenbasis
 ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)) that Feynman's

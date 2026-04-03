@@ -4,7 +4,7 @@ content is purely algebraic.
 1. *Primordial state.*  The vortex filaments, flows and spatial
    modes of higher-dimensional strata are absent; what remains is
    the initial datum of the fermionic content encoded in the
-   fibre $E_p$.
+   fibre $\mathcal{S}_p$.
 2. *Mass.*  With no base manifold over which to integrate, the
    nonabelian multiplicative integral of the
 ([mass identity](#def:mass-identity)) degenerates: the surface
@@ -15,5 +15,5 @@ content is purely algebraic.
    rather than a distributed one.
 3. *Lepton generations.*  All vertical harmonic forms
    ([Betti numbers on branes](#rem:betti-numbers-brane)) are concentrated at the
-   point; the Euler characteristic $\chi(E_p)$ retains the count of
+   point; the Euler characteristic $\chi(\mathcal{S}_p)$ retains the count of
    fermionic degrees of freedom without any spatial multiplicity.

@@ -1,8 +1,8 @@
 /-!
 # QOU.PositiveDefiniteStructure
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/PositiveDefiniteStructure.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/PositiveDefiniteStructure.lean (monolithic)
 -/
 
 import QOU.Basic
@@ -33,7 +33,7 @@ universe u v
     `f : 𝟙 → X`, the composite `f ≫ f† : 𝟙 → 𝟙` is positive
     in `End(𝟙) ≅ R`.
 
-    LaTeX: `\label{def:positive-definite-dagger}` -/
+    LaTeX: `\label{prop:positive-definite-dagger}` -/
 structure PositiveDefiniteStructure (C : Type u)
     [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]

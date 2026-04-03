@@ -2,15 +2,15 @@
 The proof proceeds in three steps.
 
 *Step 1: Abelianisation of the connection.*
-On the exceptional divisor $E_c \cong \mathbb{P}^1(\mathbb{C})$ the principal
+On the exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ the principal
 $\mathrm{SU}(2)$-bundle $P$ trivialises (every $\mathrm{SU}(2)$-bundle
 over $S^2$ is classified by $\pi_1(\mathrm{SU}(2)) = 0$).  The
 connection $\nabla_A$ therefore reduces to a $\mathfrak{su}(2)$-valued
-$1$-form $A|_{E_c}$.  By the weight-space decomposition
+$1$-form $A|_{\mathcal{S}_c}$.  By the weight-space decomposition
 ([weight space decomposition](#rem:weight-space-decomposition)), the restriction splits as
 
 $$
-  A\big|_{E_c}
+  A\big|_{\mathcal{S}_c}
   \;=\;
   A^0 \otimes H
   \;+\;
@@ -21,20 +21,20 @@ $$
 
 where $H, E_\pm$ are the standard generators of $\mathfrak{su}(2)$.
 The Cartan component $A^0$ is a $\mathrm{U}(1)$-valued $1$-form on
-$E_c$.  Since $E_c \cong \mathbb{P}^1(\mathbb{C})$ the spectral curve
-([chiral bundles](#rem:chiral-bundles)) restricts to a single sheet, and the
-Higgs-field eigenvalue is the chiral coordinate $X$.  The abelian
+$\mathcal{S}_c$.  Since $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ the spectral curve
+([coral bundles](#rem:coral-bundles)) restricts to a single sheet, and the
+Higgs-field eigenvalue is the color coordinate $X$.  The abelian
 component therefore satisfies $A^0 = X\,dz = \lambda_{\mathrm{SW}}$,
 recovering the Seiberg--Witten
 differential.
 
-*Step 2: Fake-flatness and the $2$-form datum.*
-The fake-flatness condition $F_A = B$ identifies
-the curvature $2$-form $L \wedge F^+$ on $E_c$ with the
-$\mathfrak{su}(2)$-valued $2$-form $B|_{E_c}$.  The simplicity constraint
-forces $B|_{E_c} = F_A^+|_{E_c}$, which on the $2$-sphere $E_c$ is
-proportional to the volume form $\mathrm{vol}_{E_c}$.  Consequently
-the pair $(\nabla_A q,\; L \wedge F^+)$ restricted to $E_c$ is
+*Step 2: Quantum flatness and the $2$-form datum.*
+The quantum flatness condition $F_A = B$ identifies
+the curvature $2$-form $L \wedge F^+$ on $\mathcal{S}_c$ with the
+$\mathfrak{su}(2)$-valued $2$-form $B|_{\mathcal{S}_c}$.  The simplicity constraint
+forces $B|_{\mathcal{S}_c} = F_A^+|_{\mathcal{S}_c}$, which on the $2$-sphere $\mathcal{S}_c$ is
+proportional to the volume form $\mathrm{vol}_{\mathcal{S}_c}$.  Consequently
+the pair $(\nabla_A q,\; L \wedge F^+)$ restricted to $\mathcal{S}_c$ is
 *abelian*: both components lie in the Cartan subalgebra after
 projection onto the weight-$0$ sector, and the nonabelian MI integral
 reduces to the ordinary (abelian) multiplicative integral, which equals
@@ -51,5 +51,5 @@ differential $\lambda_{\mathrm{SW}}^{(n)}$: the $1$-jet component is
 $dX$ (the implicit derivative of the color tube
 cubic), and higher jets follow by induction.
 The MI integral at jet level $n$ is the abelian integral of
-$\lambda_{\mathrm{SW}}^{(n)}$ over $E_c$ by the same argument as
+$\lambda_{\mathrm{SW}}^{(n)}$ over $\mathcal{S}_c$ by the same argument as
 Steps 1--2 applied to the prolonged connection $A'$ on $J^n E$.

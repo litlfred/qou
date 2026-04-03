@@ -1,6 +1,5 @@
 {
-  "$schema": "./skills-config-schema.json",
-  "description": "Skill package subscriptions synced nightly into .claude/skills/<package>/",
+  "description": "Skill package subscriptions synced nightly into .claude/skills/<package>/. Types: schemas/qou-types.ts §11 SkillsConfig",
   "packages": [
     {
       "name": "claude-scientific-skills",
@@ -20,6 +19,18 @@
         "scientific-visualization",
         "scientific-writing",
         "sympy"
+      ]
+    },
+    {
+      "name": "academic-research-skills",
+      "repo": "Imbad0202/academic-research-skills",
+      "path": ".",
+      "ref": "main",
+      "mode": "reference",
+      "skills": [
+        "academic-paper-reviewer",
+        "deep-research",
+        "academic-pipeline"
       ]
     }
   ]

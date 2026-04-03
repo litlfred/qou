@@ -37,6 +37,7 @@ block, with severity (error / warning / info).
 | `.lean` sibling exists for `definition` | **error** | Definitions **require** Lean formalization |
 | `.lean` sibling exists for `theorem`/`lemma`/`proposition`/`corollary` | **warning** | Provable blocks should have Lean |
 | Sibling files share the same root name | **error** | `foo.ts`, `foo.md`, `foo.lean` — not mismatched names |
+| **No orphan `.lean` files** | **error** | Every `.lean` file MUST have a `.ts` manifest sibling. A `.lean` file without a `.ts` is never valid — Lean files are always part of a content triple, never standalone. |
 
 ### 2. Label conventions
 
@@ -60,20 +61,11 @@ block, with severity (error / warning / info).
 | Check | Severity | Rule |
 |-------|----------|------|
 | Every `sorry` has a preceding `-- Ref: [key]` comment | **error** | Unannotated sorry is always a violation |
-| `[key]` in `-- Ref:` exists in `references.bib` | **error** | Orphan citation keys break the reference chain |
+| `[key]` in `-- Ref:` exists in `content/schema/references.ts` | **error** | Orphan citation keys break the reference chain |
 | No `admit` or `native_decide` (unless justified) | **warning** | These bypass the kernel |
 | No `axiom` declarations (unless `Axiom.lean`) | **warning** | Axioms should be centralized |
 
-### 5. Status accuracy
-
-| Check | Severity | Rule |
-|-------|----------|------|
-| `status: "proved"` but `.lean` contains `sorry` | **error** | Status lies about completion |
-| `status: "not_started"` but `.lean` exists with content | **warning** | Status is stale |
-| `status: "has_sorry"` but `.lean` has no `sorry` | **warning** | Status should be `proved` |
-| `status: "stated"` but proof body is not just `sorry` | **info** | May need promotion to `has_sorry` or `proved` |
-
-### 6. Markdown content quality
+### 5. Markdown content quality
 
 | Check | Severity | Rule |
 |-------|----------|------|
@@ -86,8 +78,8 @@ block, with severity (error / warning / info).
 
 | Check | Severity | Rule |
 |-------|----------|------|
-| `uses[]` entries all resolve | **error** | (Same as §2, but checked from graph perspective) |
-| No circular dependencies in `uses[]` | **error** | DAG must be acyclic |
+| `uses[]` entries all resolve | **error** | Bare labels must exist in same paper; qualified `"paper-dir:label"` refs are cross-paper (resolved at folio level) |
+| No circular dependencies in `uses[]` | **error** | DAG must be acyclic (cross-paper refs are leaf nodes in the local graph) |
 | Lean imports mirror `uses[]` ordering | **info** | Lean import graph should reflect narrative dependencies |
 | Blocks with most dependents are formalized first | **info** | Priority guidance, not a hard rule |
 
@@ -131,7 +123,7 @@ Report findings as a structured summary:
 2. For each block `.ts`, read the manifest and check §1–§8
 3. For blocks with `.lean`, read the Lean source and check §3–§4
 4. For `uses[]` and label uniqueness, collect all labels first (§2, §7)
-5. Cross-check against `references.bib` for sorry citations (§4)
+5. Cross-check against `content/schema/references.ts` for sorry citations (§4)
 
 ### Single chapter review
 

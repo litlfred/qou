@@ -25,10 +25,30 @@ export const LEAN_DIR = resolve(REPO_ROOT, "lean");
 export const BUILD_DIR = resolve(REPO_ROOT, "build");
 
 /** Preference storage file. */
-export const PREFS_FILE = resolve(REPO_ROOT, ".qou-prefs.json");
+export const PREFS_FILE = resolve(REPO_ROOT, ".folio-assistant-prefs.json");
 
 /** Gitignored todos directory (survives branch switches). */
 export const TODOS_DIR = resolve(REPO_ROOT, "todos");
 
-/** Gitignored feedback directory (global, hash-based IDs). */
-export const FEEDBACK_DIR = resolve(REPO_ROOT, ".qou-feedback");
+/** Feedback directory — committed to main via worktree.
+ *  Structure: feedback/<paper-dir>/<rootName>.ts */
+export const FEEDBACK_DIR = resolve(REPO_ROOT, "folio-assistant/feedback");
+
+/** Worktree directory for committing feedback to main. */
+export const FEEDBACK_WORKTREE = resolve(REPO_ROOT, ".feedback-wt");
+
+/** Global config file. */
+export const CONFIG_FILE = resolve(REPO_ROOT, "lean-mcp.config.json");
+
+/** Read viewer_port from lean-mcp.config.json (single source of truth). */
+function readViewerPort(): number {
+  try {
+    const cfg = JSON.parse(require("fs").readFileSync(CONFIG_FILE, "utf-8"));
+    return cfg.viewer_port ?? 8080;
+  } catch {
+    return 8080;
+  }
+}
+
+/** The port the viewer/assistant serves on (from lean-mcp.config.json). */
+export const FOLIO_PORT = parseInt(process.env.VIEWER_PORT || String(readViewerPort()), 10);

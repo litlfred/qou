@@ -45,7 +45,10 @@ content/
 ### Level 2: Constraint rules
 - **md-exists**: Every block has a sibling `.md` file
 - **lean-file-exists**: Definitions have a sibling `.lean` or `lean.file` reference
+- **no-orphan-lean**: Every `.lean` file MUST have a `.ts` manifest sibling — `.lean` files are NEVER standalone, always part of a content triple (`.ts` + `.md` + `.lean`)
 - **uses-resolve**: All labels in `uses[]` exist in the document
+  (or are qualified cross-paper refs in `"paper-dir:label"` format,
+  which are skipped — resolved at folio level)
 - **provable-lean-warning**: Theorems/lemmas without Lean get warnings
 
 ### Level 3: LaTeX AST validation
@@ -56,9 +59,12 @@ content/
 
 ### Level 4: TeX snippet validation (in .md files)
 
-The `.md` files are parsed using **remark + remark-math** (formal markdown
-grammar with math extension). Each extracted TeX snippet is validated via
-**unified-latex** AST parsing. This catches:
+The `.md` files are parsed using **remark + remark-gfm + remark-math**
+(formal markdown grammar with GFM table support and math extension).
+GFM pipe tables are converted to `\begin{tabular}` with `booktabs`
+rules; inline code (backticks) renders as `\texttt{}` with LaTeX
+escaping. Each extracted TeX snippet is validated via **unified-latex**
+AST parsing. This catches:
 
 - Non-math environments inside math mode (e.g. `\begin{itemize}` inside `$$`)
 - Unbalanced braces or environments in inline/display math
@@ -126,6 +132,51 @@ This skill is invoked automatically by the editor's **content-change fallback**
 (see `editor.md § Content-change fallback`). Whenever any content is modified
 during a session, the editor runs `content_validate` on affected chapters
 before the task is considered complete.
+
+## Block-kind classification rules
+
+When auditing or creating blocks, use these criteria to assign the correct kind:
+
+| Criterion | Kind | Example |
+|-----------|------|---------|
+| Introduces new structure/axioms | `definition` | quantum-universe, categorical-connection |
+| Asserts a consequence of upstream defs | `proposition` / `theorem` | spin-labels (consequence of SU(2) emergence) |
+| Proves something can be *constructed* from upstream | `theorem` (existence) | weight-decomposition-exists |
+| Lightweight wrapper / synonym for Mathlib type | `remark` (glossary) | rigid-monoidal-category |
+
+**Key test**: "Does this block introduce new mathematics, or does it assert
+something that *follows* from existing definitions?" If the latter, it should
+be a proposition/theorem, not a definition.
+
+**Conditional definitions**: Some definitions are only meaningful given
+upstream results (e.g. `def:maximal-torus` requires `thm:su2-emergence`).
+These remain definitions but MUST list the immediate upstream theorem in
+`uses[]` if it is a direct prerequisite.
+
+## Dependency completeness checks
+
+**Immediate neighbors only.** The `uses[]` array lists only direct
+dependencies — not the full transitive chain. If A→B and B→C, then A
+lists only B. Run `bun run pipeline/prune-transitive-deps.ts` to
+enforce this after edits.
+
+When auditing `uses[]` arrays:
+
+1. **Narrative cross-refs**: Every `[text](#label)` in the `.md` file should
+   have a corresponding entry in `uses[]` only if the referenced block is
+   a **direct** dependency (not if it's already reachable transitively
+   through another `uses[]` entry). Forward references and example/remark
+   references do not need entries.
+2. **Gauge group references**: Any block that references `G`, `SU(2)`,
+   or the gauge group should depend on `thm:su2-emergence` — but only
+   through the nearest intermediate block (e.g. `def:maximal-torus`),
+   not by listing `thm:su2-emergence` directly when it's already reachable.
+3. **Existence links**: Every definition that bundles fields should have a
+   corresponding existence theorem (`thm:<name>-exists`) that proves the
+   fields can be constructed from upstream structures.
+4. **Lazy-loading caveat**: The viewer dep graph force-loads all sections
+   before building edges. If edges appear missing in the UI, verify the
+   data is correct before assuming the `uses[]` is wrong.
 
 ## Integration with test-engineer
 

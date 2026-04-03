@@ -1,73 +1,61 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5: Bring's Surface.
+ * Chapter 6: The Descartes Universe.
  *
- * The classical and quantum geometry of Bring's surface as a
- * quantum observable universe: spectral resolvents, color tube
- * coordinates, chiral fibrations, and Seiberg--Witten theory.
+ * The concrete realisation with χ(A) = −6.  Sections:
+ * (1) Bring's surface geometry and coordinates,
+ * (2) spectral and gauge structures, (3) the Descartes condition,
+ * particles, and the Descartes theorem, (4) topological mass and the
+ * knot-particle spectrum.
  */
 export default chapter({
-  number: 2,
-  title: "Bring's Surface",
-  label: "chap:brings-surface",
+  number: 6,
+  title: "The Descartes Universe",
+  label: "chap:descartes-universe",
   sections: [
+    // ── Preamble (does not count as a numbered section) ──────────────
     section({
-      title: "Bring's surface as a QOU",
-      label: "sec:brings-qou",
+      title: "Why this universe",
+      label: "sec:descartes-preamble",
       blocks: [
-        "descent-to-zero",
+        "descartes-preamble",
+      ],
+    }),
+
+    // ── §1. Bring's surface: geometry and coordinates ────────────────
+    section({
+      title: "Bring's surface: geometry and coordinates",
+      label: "sec:brings-geometry",
+      blocks: [
+        // Bring's surface as a QOU
         "brings-surface",
+        "brings-surface-example",
         "brings-realisations",
         "brings-is-qou",
         "brings-is-qou-proof",
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
-      ],
-    }),
-
-    section({
-      title: "Lagrange resolvents and braid-group action",
-      label: "sec:resolvents-braid",
-      blocks: [
-        "lagrange-resolvents",
+        // Braid-group action (resolvents now in ch4 as categorical DFT)
         "braid-group-action",
-      ],
-    }),
-
-    section({
-      title: "Color tube coordinates",
-      label: "sec:color-tube",
-      blocks: [
+        // Color tube coordinates
         "color-tube-coordinates",
         "aggregate-color-quantities",
         "color-tube-constraints",
         "color-tube-interpretation",
         "c5-color-tube",
         "intrinsic-color-cubic-pairing",
-      ],
-    }),
-
-    section({
-      title: "Chiral fibration and elliptic curves",
-      label: "sec:chiral-fibration",
-      blocks: [
-        "chiral-elliptic",
-        "chiral-elliptic-proof",
+        // Coral fibration and elliptic curves
+        "coral-elliptic",
+        "coral-elliptic-proof",
         "t-duality-elliptic",
         "color-tube-cubic",
         "color-tube-fibers",
-        "observed-value",
         "t-duality-color-tube",
         "color-tube-subloci",
-      ],
-    }),
-
-    section({
-      title: "Bundle structures and smoothness",
-      label: "sec:bundle-structures",
-      blocks: [
-        "chiral-bundles",
+        // Bundle structures and smoothness
+        "coral-bundles",
+        "brings-smoothness-resolution",
         "brings-smoothness",
         "briggs-klein-chart",
         "radial-projection",
@@ -77,43 +65,139 @@ export default chapter({
       ],
     }),
 
+    // ── §2. Spectral resolvents and gauge structures ─────────────────
     section({
-      title: "Quaternionic spectral resolvents",
-      label: "sec:quaternionic-resolvents",
+      title: "Spectral resolvents and gauge structures",
+      label: "sec:spectral-gauge",
       blocks: [
+        // Quaternionic spectral resolvents (minus SO(3) motivation → ch4)
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",
-        "primordial-vortex",
-        "geometric-drag",
-      ],
-    }),
-
-    section({
-      title: "Geometric resolution and Seiberg--Witten theory",
-      label: "sec:seiberg-witten",
-      blocks: [
-        "seiberg-witten",
-        "reeb-exceptional-divisor",
+        // Seiberg--Witten on Bring's
         "generation-dependent-sw",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
+        // Categorical braid structure and colour sectors
+        "coral-sector-coords",
+        "descartes-braid-structure",
+        "descartes-braid-structure-proof",
+        "descartes-knot-eigenbasis",
+        // The Descartes elliptic curve E_q
+        "descartes-elliptic-curve",
       ],
     }),
 
+    // ── §3. The Descartes condition, particles, and the theorem ──────
     section({
-      title: "Quantum Brings",
-      label: "sec:quantum-brings",
+      title: "The Descartes condition, particles, and the Descartes theorem",
+      label: "sec:descartes-particles",
       blocks: [
-        "quantum-brings-intro",
+        // The Descartes condition
+        "descent-to-zero",
+        "descartes-condition",
+        "chi-minus-six-chain",
+        "descartes-calabi-yau",
+        "descent-one-dim",
+        "genus-maximal-descent",
+        "genus-maximal-descent-proof",
+        // Leptons, chirality, trefoil subgroups
+        "descartes-leptons",
+        "descartes-chirality",
+        "light-cone-affine",
+        "chirality-trefoil",
+        "brings-curve",
+        // Torus knot generators from χ = -6
+        "torus-knot-generators",
+        "embeddability-closure",
+        "genus-filtration-ideal",
+        "torus-embeddable-complete",
+        "generation-completeness",
+        // Fundamental fermions (Descartes-specific assignments)
+        "up-quark",
+        "down-quark",
+        "electron-knot",
+        "electron-knot-example",
+        "positron-knot",
+        "neutrino-knot",
+        "antineutrino-knot",
+        // Building block reference tables
+        "linking-relations-table",
+        // q-deformed kinematics (definitions now in ch4)
+        "q-value-transition",
+        // Proton, neutron, stable nucleus
+        "categorical-proton",
+        "categorical-neutron",
+        "antiparticle-crossing-reversal",
+        "chirality-trefoil-electron-positron",
+        "stable-nucleus",
+        "torus-hopf-stability",
+        "unmapped-torus-knots",
+        "torus-knot-prime-powers",
+        "force-knot-identification",
+        "em-coupling-projection",
+        "q-chromaticity",
+        // Integer stability and Diophantine valley
+        "integer-stability",
+        "diophantine-valley",
+        "valley-stability",
+        // Hadron half-life calculations relative to q
+        // Beta decay as categorical Skein operation
+        "beta-decay-skein",
+        "lepton-number-categorical",
+        "parity-violation-skein",
+        "nuclear-spin-parity",
+        // Half-life calculations
+        "hadron-half-life",
+        "hadron-q-self-correction",
+        "skein-coulomb-enhancement",
+        "nuclear-groebner-reduction",
+        "groebner-shirshov-energy",
+        "box-braid-irreducibility",
+        "generator-volume-decomposition",
+        "markov-trace-factorization",
+        "skein-polynomial-transfer-matrix",
+        "transfer-matrix-operator",
+        "beta-decay-transfer-matrix",
+        "shell-structure-eigenvalues",
+        "quantum-dilogarithm-volume",
+        "reidemeister-action-table",
+        "topology-geometry-boundary",
+        // Elliptic stability conjecture
+        "elliptic-stability-locus",
+        "shell-closure-normal-form",
+        "skein-finiteness-bound",
+        "spectral-decomposition-qvalue",
+        "shell-construction-rules",
+        "electron-shells-hopf",
+        "helium-hopf-diagram",
+        "noble-gas-characterization",
+        "metallic-character-knot",
+        "francium-extremal-metal",
+        "hydrogen-shell-writhe",
+        "hydrogen-orbitals",
+        // The Descartes theorem
+        "descartes",
+        "descartes-proof",
+        "universality-general",
+        "descartes-yekutieli",
+        "observation-brings",
       ],
     }),
 
+    // ── §4. Topological mass and the knot-particle spectrum ──────────
     section({
-      title: "Other Euler characteristics",
-      label: "sec:other-euler",
+      title: "Topological mass and the knot-particle spectrum",
+      label: "sec:topological-mass-spectrum",
       blocks: [
-        "other-euler-intro",
+        // Topological mass (Descartes-specific applications)
+        "hyperbolic-volumes-prose",
+        // Skein decomposition and hadronic mass
+        "ch11-intro",
+        "terminal-resolution",
+        // Knot-to-particle mass spectrum
+        "knot-formula-table",
+        "mass-from-generators",
       ],
     }),
   ],

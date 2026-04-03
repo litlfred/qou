@@ -124,7 +124,8 @@ lemma torsion_lifts_jet (A : FrobeniusHopfAlgebra) :
 ```
 
 **Rule**: Every `sorry` must have a `-- Ref:` annotation.  The `key`
-must match an entry in `references.bib` exactly (case-sensitive).  If no
+must match a citation key in `content/schema/references.ts` exactly (case-sensitive).
+(`references.bib` is auto-generated from this file — never edit `.bib` directly.)  If no
 published reference exists, use `[manuscript]` and cite the chapter/section.
 This is enforced by the axiom report's Theoretical Gap Report (§8).
 
@@ -159,7 +160,7 @@ PYTHONPATH=.github/scripts python .github/scripts/formalizer.py export-proof-sta
   --file lean/QOU/Torsion.lean --line 42
 ```
 
-Output follows the `ProofStateExport` schema in `schemas/qou-types.ts`.
+Output follows the `ProofStateExport` schema in `folio-assistant/schemas/qou-types.ts`.
 
 ## Integration with Ontologist
 
@@ -185,6 +186,71 @@ lean/
 ```
 
 ## Proven Patterns
+
+### Existence Constructors for Structure Definitions
+
+Every `structure` definition must have at least one **existence constructor**
+— a `def` or `noncomputable def` that builds an instance of the structure
+from its prerequisites. Without this, downstream theorems depend on
+structures that may be vacuously satisfiable.
+
+**Pattern**: The constructor takes upstream structures as parameters and
+returns the target structure. The type signature makes the dependency
+chain explicit — the type checker enforces it.
+
+```lean
+-- Definition: declares WHAT the structure looks like
+structure WeightDecomposition (C : Type u) [Category.{v} C]
+    [MonoidalCategory C] [Preadditive C] where
+  forms : C
+  proj_H : forms ⟶ forms
+  proj_V : forms ⟶ forms
+  complementary : proj_H + proj_V = 𝟙 forms
+  ...
+
+-- Existence constructor: proves THAT it can be built
+noncomputable def WeightDecomposition.ofMaximalTorus
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [Preadditive C]
+    (mt : MaximalTorus C) (forms : C) : WeightDecomposition C :=
+  { forms := forms
+    proj_H := sorry  -- Ref: [lusztig1993] ...
+    proj_V := sorry  -- Ref: [lusztig1993] ...
+    complementary := sorry  -- Ref: [lusztig1993] ...
+    ... }
+```
+
+**Naming convention**: `StructureName.ofPrerequisite` (e.g.,
+`CategoricalReeb.ofWeightDecomposition`,
+`SubstrateParameter.ofReebDecomposition`).
+
+**When to use each variant**:
+
+| Situation | Pattern | Example |
+|-----------|---------|---------|
+| Concrete construction (no sorry) | Direct `def` | `SubstrateParameter.ofConstant q₀ hq_pos hq_ge hq_root` |
+| Construction from upstream structures | `noncomputable def` with sorry | `CategoricalReeb.ofWeightDecomposition mt wd` |
+| Canonical/unique choice | `instance : Inhabited T` | `instance : Inhabited (SubstrateParameter ℝ)` |
+| Auto-resolved by typeclass | `class` + `instance` | `class HasSubstrateParameter M` |
+
+**Content object requirements**: Each existence constructor gets its own
+content block triple (`.ts` + `.md` + `.lean`):
+- Block kind: `theorem` (label: `thm:<name>-exists`)
+- `uses[]`: must list the definition it constructs AND its immediate prerequisite (the structure it's built from) — not the full transitive chain
+- `.lean`: the constructor function, with sorry-annotated fields citing references
+
+**Dependency graph rule**: If definition B's `.lean` `structure` takes a
+parameter of type A (another project structure), there MUST exist a
+`thm:<b>-exists` block whose `uses[]` includes `def:b` (and `def:a`
+only if A is an **immediate** prerequisite of the existence theorem,
+not already reachable via `def:b`'s own `uses[]`). The `uses[]` field
+lists only direct neighbors — transitive deps are walked by the graph.
+
+**Checklist for every `structure` definition**:
+- [ ] At least one `.ofFoo` constructor exists in a sibling `.lean` file
+- [ ] A `thm:*-exists` content block triple references it
+- [ ] The constructor's parameters include all upstream structures
+- [ ] Each `sorry` in the constructor has a `-- Ref:` annotation
+- [ ] The chapter manifest places the existence theorem after the definition
 
 ### Subsingleton as Categorical Vanishing
 
@@ -333,7 +399,7 @@ the new resolution also fails.
 
 ### Multiple Lean projects
 
-This repo has multiple Lean projects (`lean/`, `lean-archive/`).
+This repo has multiple Lean projects (`lean/`, `content/quantum-observable-universe/lean/`).
 Each has its own `lakefile.toml` and `lean-toolchain`. They may
 target different Lean versions. Always `cd` into the correct project
 directory before running `lake` commands.
@@ -357,7 +423,7 @@ LaTeX. Every formalizable block is defined by three sibling files:
 
 ```
 content/<paper>/<chapter>/
-  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[], status
+  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[]
   <block-name>.md    ← Narrative (markdown + TeX snippets)
   <block-name>.lean  ← Lean formalization (when required by kind)
 ```
@@ -373,20 +439,23 @@ content/<paper>/<chapter>/
 
 ### Workflow with content objects
 
-1. **Read the `.ts` manifest** to get `lean.decl`, `uses[]`, and `status`
+1. **Read the `.ts` manifest** to get `lean.decl` and `uses[]`
 2. **Check `uses[]`** to understand upstream dependencies — ensure they're
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
-4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed,
-   update `status` to reflect formalization progress
+4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules
 
 ### The `uses[]` dependency graph
 
-The `uses` field in `.ts` manifests forms a narrative dependency DAG:
-- When formalizing a theorem, check that all blocks it `uses` are already
-  formalized (or have `sorry`-bridged stubs)
+The `uses` field in `.ts` manifests forms a narrative dependency DAG.
+**List only immediate neighbors** — if A depends on B and B depends on C,
+A lists only B (not C). Transitive deps are derived by walking the graph.
+Run `bun run pipeline/prune-transitive-deps.ts` to enforce this.
+
+- When formalizing a theorem, walk the `uses[]` graph to check that all
+  upstream blocks are already formalized (or have `sorry`-bridged stubs)
 - The Lean import graph should mirror the `uses[]` graph
 - Use `uses[]` to prioritize: formalize blocks with the most dependents first
 
@@ -445,8 +514,8 @@ iterative proof development.
 - [ ] All theorem statements match the `.md` narrative originals
 - [ ] Import blocks are minimal and correct
 - [ ] Every `sorry` is tracked in `proof-objects.json`
-- [ ] Every `sorry` has a `-- Ref: [key] url` comment (bibtex-linked)
-- [ ] All `-- Ref:` keys exist in `references.bib`
+- [ ] Every `sorry` has a `-- Ref: [key] url` comment (citation-linked)
+- [ ] All `-- Ref:` keys exist in `content/schema/references.ts`
 - [ ] `lake build` succeeds (sorry warnings are expected)
 - [ ] Tactic choices match the narrative proof strategy
 - [ ] Proof state can be exported at every sorry site

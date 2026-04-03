@@ -10,14 +10,15 @@
  *
  *   lean_status   — Check if Lean toolchain and lean-lsp-mcp are available
  *   lean_build    — Trigger a Lean build (lake build)
+ *   lean_check    — Quick type-check (lake check) — faster than full build
  *
  * @module scripts/mcp-server/tools/lean
  */
 
 import { z } from "zod";
-import { execSync, spawnSync } from "child_process";
+import { execSync, spawnSync, type SpawnSyncReturns } from "child_process";
 import { existsSync, readFileSync } from "fs";
-import { join } from "path";
+import { join, resolve } from "path";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { LEAN_DIR, REPO_ROOT } from "../paths.js";
 
@@ -29,6 +30,25 @@ function hasCommand(cmd: string): boolean {
   } catch {
     return false;
   }
+}
+
+/** Resolve the Lean project directory. content/quantum-observable-universe/lean/ is the default. */
+function leanProjectDir(dir?: string): string {
+  if (dir) return resolve(REPO_ROOT, dir);
+  const leanArchive = join(REPO_ROOT, "content/quantum-observable-universe/lean");
+  if (existsSync(join(leanArchive, "lakefile.toml")) || existsSync(join(leanArchive, "lakefile.lean"))) {
+    return leanArchive;
+  }
+  return LEAN_DIR;
+}
+
+/** Extract stdout + stderr from a spawn result, truncated to the last 2000 chars. */
+function processSpawnOutput(result: SpawnSyncReturns<Buffer>): { output: string; last2k: string } {
+  const stdout = result.stdout?.toString() || "";
+  const stderr = result.stderr?.toString() || "";
+  const output = (stdout + "\n" + stderr).trim();
+  const last2k = output.slice(-2000);
+  return { output, last2k };
 }
 
 export function registerLeanTools(server: McpServer): void {
@@ -102,49 +122,107 @@ export function registerLeanTools(server: McpServer): void {
 
   server.tool(
     "lean_build",
-    "Run `lake build` in the lean/ directory. Returns build output.",
+    "Run `lake build` in the Lean project directory. Returns build output. " +
+    "Defaults to content/quantum-observable-universe/lean/ if it contains a lakefile.",
     {
       clean: z.boolean().default(false)
         .describe("Run `lake clean` first"),
       project: z.string().optional()
         .describe("Specific library to build (e.g. 'QOU'). Default: build all."),
+      dir: z.string().optional()
+        .describe("Lean project directory relative to repo root (default: auto-detect content/quantum-observable-universe/lean/ or lean/)"),
     },
-    async ({ clean, project }) => {
+    async ({ clean, project, dir }) => {
       if (!hasCommand("lake")) {
         return {
           content: [{
             type: "text" as const,
-            text: "Error: lake not installed. Run: ./scripts/setup-lean-mcp.sh",
+            text: "Error: lake not installed. Use MCP tool: lean_setup",
           }],
         };
       }
 
+      const cwd = leanProjectDir(dir);
+
       try {
         if (clean) {
-          spawnSync("lake", ["clean"], { cwd: LEAN_DIR, stdio: "pipe", timeout: 30_000 });
+          spawnSync("lake", ["clean"], { cwd, stdio: "pipe", timeout: 30_000 });
         }
 
         const args = project ? ["build", project] : ["build"];
         const result = spawnSync("lake", args, {
-          cwd: LEAN_DIR,
+          cwd,
           stdio: "pipe",
           timeout: 600_000, // 10 min
         });
 
-        const stdout = result.stdout?.toString() || "";
-        const stderr = result.stderr?.toString() || "";
-        const output = (stdout + "\n" + stderr).trim();
-        const last2k = output.slice(-2000);
+        const { last2k } = processSpawnOutput(result);
 
         return {
           content: [{
             type: "text" as const,
-            text: `lake build ${result.status === 0 ? "succeeded" : "failed"} (exit ${result.status})\n\n${last2k}`,
+            text: `lake build ${result.status === 0 ? "succeeded" : "failed"} (exit ${result.status}, cwd: ${cwd})\n\n${last2k}`,
           }],
         };
       } catch (e) {
         return {
           content: [{ type: "text" as const, text: `Build error: ${e instanceof Error ? e.message : String(e)}` }],
+        };
+      }
+    },
+  );
+
+  // ── lean_check ──────────────────────────────────────────────
+
+  server.tool(
+    "lean_check",
+    "Run `lake check` to type-check Lean files without full compilation. " +
+    "Faster than lean_build — useful for quick validation after edits. " +
+    "Defaults to content/quantum-observable-universe/lean/ if it contains a lakefile.",
+    {
+      project: z.string().optional()
+        .describe("Specific library to check (e.g. 'QOU'). Default: check all."),
+      dir: z.string().optional()
+        .describe("Lean project directory relative to repo root (default: auto-detect content/quantum-observable-universe/lean/ or lean/)"),
+    },
+    async ({ project, dir }) => {
+      if (!hasCommand("lake")) {
+        return {
+          content: [{
+            type: "text" as const,
+            text: "Error: lake not installed. Use MCP tool: lean_setup",
+          }],
+        };
+      }
+
+      const cwd = leanProjectDir(dir);
+
+      try {
+        const args = project ? ["check", project] : ["check"];
+        const result = spawnSync("lake", args, {
+          cwd,
+          stdio: "pipe",
+          timeout: 180_000, // 3 min
+        });
+
+        const { output, last2k } = processSpawnOutput(result);
+
+        // Count errors and warnings
+        const errors = (output.match(/^error:/gm) || []).length;
+        const warnings = (output.match(/^warning:/gm) || []).length;
+        const summary = result.status === 0
+          ? `lake check succeeded (${warnings} warnings)`
+          : `lake check failed: ${errors} errors, ${warnings} warnings`;
+
+        return {
+          content: [{
+            type: "text" as const,
+            text: `${summary} (exit ${result.status}, cwd: ${cwd})\n\n${last2k}`,
+          }],
+        };
+      } catch (e) {
+        return {
+          content: [{ type: "text" as const, text: `Check error: ${e instanceof Error ? e.message : String(e)}` }],
         };
       }
     },

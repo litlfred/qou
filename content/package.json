@@ -7,17 +7,25 @@
     "validate": "bun run pipeline/validate.ts",
     "render": "bun run pipeline/render-latex.ts",
     "export-json": "bun run pipeline/export-json.ts",
-    "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts"
+    "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts",
+    "export-bibtex": "bun run pipeline/export-bibtex.ts",
+    "validate-refs": "bun run pipeline/validate-references.ts",
+    "generate-index": "bun run pipeline/generate-index.ts"
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-arguments": "^1.8.0",
+    "@unified-latex/unified-latex-util-match": "^1.8.0",
     "@unified-latex/unified-latex-util-parse": "^1.8.0",
     "@unified-latex/unified-latex-util-print-raw": "^1.8.0",
     "@unified-latex/unified-latex-util-visit": "^1.8.0",
+    "biblatex-csl-converter": "^3.5.5",
+    "csl-json": "^0.1.0",
     "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "unist-util-visit": "^5.1.0",
+    "unist-util-visit-parents": "^6.0.2",
     "zod": "^3.23.0"
   }
 }

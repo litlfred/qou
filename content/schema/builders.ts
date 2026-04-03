@@ -15,6 +15,7 @@ export {
   prose,
   equation,
   diagram,
+  simulator,
   section,
   sectionRef,
   chapter,
@@ -23,4 +24,4 @@ export {
   paperRef,
   folio,
   document,
-} from "../../schemas/builders";
+} from "../../folio-assistant/schemas/builders";

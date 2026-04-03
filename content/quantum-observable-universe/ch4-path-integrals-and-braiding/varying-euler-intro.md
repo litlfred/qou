@@ -1,1 +1,1 @@
-<!-- Content pending: varying Euler characteristic and Bring surface variants. -->
+<!-- Content pending: varying Euler characteristic and Bring's surface variants. -->

@@ -1,7 +1,7 @@
 # Build and push the Paper Assistant Docker image to GHCR.
 #
 # Triggers on:
-#   - Push to main touching mcp-server/, content/, lean-archive/, or Dockerfile
+#   - Push to main touching mcp-server/, content/, content/quantum-observable-universe/lean/, or Dockerfile
 #   - Manual dispatch
 #   - Weekly (to pick up Mathlib cache updates)
 #
@@ -16,7 +16,7 @@ on:
     paths:
       - 'scripts/mcp-server/**'
       - 'content/**'
-      - 'lean-archive/**'
+      - 'content/quantum-observable-universe/lean/**'
       - 'scripts/mcp-server/Dockerfile'
   workflow_dispatch:
   schedule:

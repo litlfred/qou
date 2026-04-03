@@ -1,14 +1,14 @@
-The Bring surface $\mathcal{S}$ ([Bring's surface](#def:brings-surface)) is a
+The Bring's surface $\mathcal{S}$ ([Bring's surface](#def:brings-surface)) is a
 *smooth* algebraic variety: the three power-sum constraints are
 transverse in $\mathbb{P}^4$, so their intersection carries no singular
 points.  The six topological defects identified in
-[chiral bundles](#rem:chiral-bundles)---where the discriminant $\Delta(z)$
-vanishes and two chiral sheets $X_i,X_j$ collide---are singularities of
+[coral bundles](#rem:coral-bundles)---where the discriminant $\Delta(z)$
+vanishes and two color sheets $X_i,X_j$ collide---are singularities of
 the *projection* $\pi\colon\mathcal{S}\to\mathbb{P}^1(\mathbb{C})$, not of the
 surface itself.
 
 **Resolution in the $x_j$ coordinates.**
-At a branch point $z=z_c$ where, say, $x_2=x_3$, define the local chiral
+At a branch point $z=z_c$ where, say, $x_2=x_3$, define the local color
 coordinate $\delta=x_2-x_3$.  In a neighbourhood of the defect the
 spacetime ratio satisfies
 
@@ -19,7 +19,7 @@ $$
 so while the projection map develops a ramification cusp, $\delta$ passes
 smoothly through zero, carrying the geometry from one sheet to the other.
 The exceptional divisor of the blow-up at each branch point is therefore
-already embedded in the chiral coordinates $x_2,x_3,x_4$: no external
+already embedded in the color coordinates $x_2,x_3,x_4$: no external
 resolution is required.
 
 **Resolution in the $w_k$ coordinates.**

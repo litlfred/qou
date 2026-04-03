@@ -2,10 +2,10 @@
 name: todo-review
 roles: [reader, collaborator, owner]
 description: >
-  Monitor and triage open feedback todos across all content blocks.
-  Surface actionable items at session start and on demand. Uses
-  context-aware selection: scoped to current block when context exists,
-  otherwise presents structured choices (priority, chapter, section).
+  Monitor and triage open feedback across all content blocks.
+  At session start, ask the author if they'd like to work on feedback.
+  Provide overview, let them pick a chapter/section, then review and
+  iterate until done.
 allowed-tools: Read Edit Bash Grep Glob WebFetch AskUserQuestion Agent
 ---
 
@@ -13,191 +13,178 @@ allowed-tools: Read Edit Bash Grep Glob WebFetch AskUserQuestion Agent
 
 ## Role
 
-Monitor open feedback/todos across the manuscript. Surface them at session
-start and provide triage workflows so nothing falls through the cracks.
+Monitor open feedback across the manuscript. At session start, offer a
+structured todo workflow. Provide triage, context-aware selection, and
+a feedback cycle until the author is satisfied.
 
 ## When to Use This Skill
 
-- **Session start** (automatic): check for open todos, present summary
+- **Session start** (automatic): ask if author wants to work on feedback
 - User asks: "show todos", "what feedback is pending", "review todos"
 - User asks: "what needs attention", "any open items", "work on todos"
-- After completing a block of work, to check if related todos can be closed
+- After completing a block of work, to check if related items can be closed
 
-## Todo Storage
+## Feedback Storage
 
-Todos live in `todos/` at the repo root (**gitignored** — survives branch
-switches). They reference content blocks by `targetLabel` but are
-**external to paper content** — no `todos` field exists on any content
-block type.
+Feedback lives in `folio-assistant/feedback/<paper-dir>/` (**tracked in
+git**, committed to main via worktree). Each content block with feedback
+has a TypeScript file:
 
-Files:
-- `todos/content-todos.ts` — content-related todos (array of `TodoItem`)
-- `todos/infra-todos.ts` — infrastructure / feature request todos (optional)
+```
+folio-assistant/feedback/
+  quantum-observable-universe/
+    rigid-monoidal-category.ts
+    bundle-initial-conditions.ts
+    ...
+```
 
-### Todo structure
+Each file exports an array of `FeedbackItem` (extends `TodoItem` with
+`author`/`authorEmail`):
 
 ```typescript
-import type { TodoItem } from "../content/schema/types";
+import type { FeedbackItem } from "../../schemas/types";
 
-export const todos: TodoItem[] = [
+export default [
   {
-    id: "todo-001",
-    summary: "Short description (≤80 chars)",
-    comment: "Full markdown description of the issue",
-    status: "open",               // open | in_progress | blocked
-    priority: "medium",           // critical | high | medium | low
-    origin: "agent",              // agent | human | qc | extracted
-    targetLabel: "def:quantum-universe",  // links to a content block
-    assignee: "editor-agent",
-    createdAt: "2026-03-22T00:00:00Z",
-  },
-];
+    "id": "todo-mn159z53",
+    "summary": "this does not need to be finite in general",
+    "comment": "this does not need to be finite in general",
+    "status": "open",
+    "priority": "medium",
+    "origin": "human",
+    "assignee": "editor-agent",
+    "createdAt": "2026-03-22T02:35:33.543Z"
+  }
+] satisfies FeedbackItem[];
 ```
 
-## Context-Aware Todo Selection
+## Session Start: Todo Workflow
 
-When the user asks to "work on todos" or "process todos", follow this
-decision tree:
+When the editor skill enters the session start protocol and open
+feedback exists, follow this flow:
 
-### Step 1 — Check for active context
+### Step 0 — Offer the todo workflow
 
-Does the current conversation have a **focus block** (e.g. the user is
-editing `def:rigid-monoidal-category`, or just committed changes to a
-specific definition)?
+Present a brief overview and ask:
 
-- **Yes** → filter todos to those whose `targetLabel` matches the
-  current block (or blocks in the same section). Show those directly.
-  Skip to **Step 3**.
+> **You have N open feedback items** (X critical, Y high, Z medium).
+>
+> Would you like to work on feedback today?
 
-- **No** → proceed to **Step 2**.
+Options:
+- **Yes, let's review feedback** → proceed to Step 1
+- **No, I have something else in mind** → exit to normal triage
 
-### Step 2 — Ask the user (structured questions)
+### Step 1 — Overview and scope selection
 
-Use `AskUserQuestion` with structured multiple-choice options so the
-user doesn't have to type. Present **two questions**:
-
-**Question 1: Scope** — "How would you like to select todos?"
-  - "High priority" — show all `critical` and `high` priority todos
-  - "By chapter" — follow up with chapter list
-  - "By section" — follow up with section list (from a specific chapter)
-  - "Show all" — show everything, sorted by priority
-
-**Question 2 (conditional):** If the user chose "By chapter", present
-the chapter list as options:
-  - "Ch 0: Introduction"
-  - "Ch 1: Quantum Observable Universe"
-  - "Ch 2: Bring's Surface"
-  - etc. (populated dynamically from the paper manifest)
-
-If "By section", first ask for chapter, then list sections within it.
-
-### Step 3 — Present selected todos
-
-Show the filtered todo set as a summary table:
+Show a quick summary grouped by chapter:
 
 ```
-## Open Todos (3 items)
+## Feedback Overview
 
-| # | Priority | Target | Summary |
-|---|----------|--------|---------|
-| 1 | high | def:quantum-universe | Missing Lean formalization |
-| 2 | medium | thm:su2-emergence | Unresolved cross-reference |
-| 3 | low | rem:notation-note | Clarify notation convention |
+| Chapter | Open | Critical/High | Sample |
+|---------|------|---------------|--------|
+| Ch 1: Quantum Observable Universe | 12 | 3 | "this does not need to be finite" |
+| Ch 4: Path Integrals | 4 | 1 | "missing cross-ref to braiding" |
+| Ch 11: Experimental Evidence | 6 | 0 | "clarify mass ratio derivation" |
 ```
 
-Then ask: "Which todo(s) would you like to work on?" with multi-select.
+Then ask:
 
-### Step 4 — Hand off to editor for triage
+> Where would you like to start?
 
-For each selected todo:
+Options (dynamically generated):
+- **High priority first** — all critical + high items across paper
+- **Ch N: <title>** — one option per chapter that has feedback
+- **Show all** — flat list sorted by priority
 
-1. **Read the todo** — show summary, comment, priority, assignee, age
-2. **Read the block** — load the `.ts` manifest and `.md` content
-3. **Assess actionability** — can this be addressed with a text/code edit?
-4. **Route to the appropriate skill**:
-   - Content/prose issues → `scientific-accuracy` or `readability-editing`
-   - Lean formalization → `formalizer` or `proof-triage`
-   - Validation errors → `content-validation`
-   - Cross-reference issues → `content-block-review`
-5. **Execute the fix** (or explain why it can't be done now)
-6. **Update todo status** to `in_progress` (agents may do this)
-7. **Report outcome** — what was changed, what remains
-8. **Offer "what next?"** — context-aware follow-up (see below)
+### Step 2 — Present the selected feedback
 
-### Step 5 — "What next?" (after each todo)
+Show the filtered items as a table:
 
-After completing a todo, immediately offer context-aware next steps
-via `AskUserQuestion`. Options are derived from the current scope:
+```
+## Open Feedback — Ch 1 (12 items)
 
-1. **More todos on this block?** → "Next todo on `<block>`"
-2. **Related blocks in same section?** → "Next in §`<section>`"
-3. **More todos in this chapter?** → "Other Ch `<N>` todos"
-4. **Always include** → "Something else"
+| # | Priority | Block | Summary |
+|---|----------|-------|---------|
+| 1 | high | bundle-initial-conditions | this does not need to be finite |
+| 2 | high | categorical-point | need proposition for quantum gauge field |
+| 3 | medium | rigid-monoidal-category | clarify notation convention |
+| ... |
+```
 
-Keep to 3–4 options. If all todos in the current scope are done,
-congratulate briefly and offer to move to the next chapter or switch
-to a different kind of work (proofs, glossary, validation).
+Ask: **Which item(s) would you like to address?** (pick by number or "all")
 
-This ensures the user stays in flow without having to re-navigate
-the todo landscape after each item.
+### Step 3 — Review and address each item
 
-## Seeding Todos
+For each selected feedback item:
 
-When `todos/` is empty or doesn't exist, the skill can bootstrap an
-initial set by scanning for issues:
+1. **Show the feedback** — full comment, author, date, priority
+2. **Read the block** — load `content/<paper>/<chapter>/<rootName>.md`
+   and `.ts` manifest for context
+3. **Propose a fix** — suggest specific edits to the `.md` content
+4. **Ask for approval** — show the proposed changes and ask:
+   > Does this address the feedback? (yes / revise / skip)
+5. **Apply if approved** — edit the file, mark todo as `in_progress`
+6. **Iterate if "revise"** — ask what to change, re-propose
 
-### Sources for auto-generated todos
+### Step 4 — After each item, offer next steps
+
+After completing (or skipping) an item:
+
+> **Done with "this does not need to be finite".**
+> What next?
+
+Options (context-aware):
+- **Next item on this block** (if more exist)
+- **Next item in this section/chapter**
+- **Back to overview** — re-show the chapter summary
+- **Done for now** — exit todo workflow
+
+### Step 5 — Wrap up
+
+When the author says "done" or all items in scope are addressed:
+
+> **Session feedback summary:**
+> - Reviewed: 5 items
+> - Addressed: 3 (edits applied)
+> - Skipped: 2
+> - Remaining open: 9
+>
+> The addressed items are marked `in_progress`. You can resolve them
+> from the viewer feedback panel when you're satisfied with the changes.
+
+## Resolving Feedback
+
+**Only the human author** may resolve or remove a FeedbackItem
+(see CLAUDE.md §4a). Agents must never set status to `resolved` or
+`wontfix`, and must never delete items. Agents *may* set status to
+`in_progress` after making edits.
+
+Resolution happens in the viewer's feedback panel (click the status
+badge on any feedback item).
+
+## Seeding Feedback
+
+When `folio-assistant/feedback/` is empty or doesn't exist for a paper, the skill can
+bootstrap an initial set by scanning for issues:
 
 | Source | How to scan | Priority |
 |--------|-------------|----------|
 | Content validation errors | `content_validate` MCP tool | high |
 | Unresolved `uses[]` refs | Validation output | high |
-| Missing `.lean` files | Definitions without Lean | medium |
+| Missing `.lean` files for definitions | Check block kind vs siblings | medium |
 | Missing `.md` files | Blocks without narrative | medium |
 | `sorry` in Lean files | `grep sorry lean/` | medium |
-| Lean `not_started` status | `.ts` manifests with `status: "not_started"` | low |
-| Lean `stated` status | `.ts` manifests with `status: "stated"` | low |
-
-### Seeding workflow
-
-1. Run `content_validate` on all chapters
-2. Parse validation output for errors and warnings
-3. Group by `targetLabel` (one todo per block, not per issue)
-4. Create `todos/content-todos.ts` with the generated items
-5. Present summary to user
-
-## Creating Todos (Agent-originated)
-
-Agents create todos by appending to `todos/content-todos.ts`:
-
-```typescript
-{
-  id: `todo-${Date.now().toString(36)}`,
-  summary: "Short description",
-  comment: "Full description of the issue",
-  status: "open",
-  priority: "medium",
-  origin: "agent",
-  targetLabel: "def:block-label",
-  assignee: "editor-agent",
-  createdAt: new Date().toISOString(),
-}
-```
-
-## Resolving Todos
-
-**Only the human author** may resolve or remove a TodoItem (see CLAUDE.md §4a).
-Agents must never set status to `resolved` or `wontfix`, and must never
-delete items. Agents *may* set status to `in_progress`.
 
 ## Integration with Other Skills
 
 | Skill | Integration |
 |-------|-------------|
-| `editor` | Session start triage includes todo check |
-| `formalizer` | Creates todos when sorry bridges need attention |
-| `proof-status-tracking` | Todos track formalization gaps |
-| `content-validation` | Validation errors seed todos |
-| `scientific-accuracy` | Review comments become todos |
-| `proof-triage` | Lean sorry stubs generate high-priority todos |
-| `content-block-review` | Cross-reference issues become todos |
+| `editor` | Session start triage includes feedback check |
+| `formalizer` | Creates feedback when sorry bridges need attention |
+| `proof-status-tracking` | Feedback tracks formalization gaps |
+| `content-validation` | Validation errors seed feedback |
+| `scientific-accuracy` | Review comments become feedback |
+| `proof-triage` | Lean sorry stubs generate high-priority feedback |
+| `content-block-review` | Cross-reference issues become feedback |

@@ -1,10 +1,10 @@
 
 The proof proceeds in the rigid monoidal category underlying the quantum
 observable universe.  Let $A$ denote the Frobenius--Hopf object
-representing the gauge-bundle data of $(M,G,P,E)$.
+representing the gauge-bundle data of $(\mathbf{C}, \theta, G, \mathcal{S})$.
 
 *Step 1: Categorical jet object.*
-The first jet bundle $J^1 E$ is represented categorically by the object
+The first jet bundle $J^1 \mathcal{S}$ is represented categorically by the object
 $A \otimes \Omega^1(A)$, where
 $\Omega^1(A) = \ker(m\colon A\otimes A \to A)$
 is the kernel of the multiplication (the bimodule of Kähler
@@ -18,9 +18,7 @@ category.
 
 *Step 2: Inherited Frobenius--Hopf structure.*
 The Frobenius relation
-$(\mathrm{Id} \otimes m) \circ (\Delta \otimes \mathrm{Id})
- = \Delta \circ m
- = (m \otimes \mathrm{Id}) \circ (\mathrm{Id} \otimes \Delta)$
+$(\mathrm{Id} \otimes m) \circ (\Delta \otimes \mathrm{Id}) = \Delta \circ m = (m \otimes \mathrm{Id}) \circ (\mathrm{Id} \otimes \Delta)$
 ensures that the comultiplication $\Delta\colon A \to A \otimes A$ restricts
 to a well-defined comultiplication
 $\Delta'\colon J^1(A) \to J^1(A) \otimes J^1(A)$, and the counit
@@ -36,7 +34,7 @@ main theorem of [fred2005], which constructs $\mathrm{Dist}(G)$
 as a Gröbner--Shirshov deformation of the commutative
 $\mathrm{Dist}(H)$ and verifies the Frobenius relation at each stage
 (see also [skew poisson integration](#prop:skew-poisson-integration) in
-[Chapter](#chap:p-adic)).
+[Chapter](#chap:descartes-universe)).
 
 *Step 3: Non-degeneracy and vanishing.*
 The non-degeneracy of the Frobenius form on $A$ (the pairing
@@ -49,13 +47,13 @@ invariant in $\mathrm{Ad}(J^1(A))$ would project to a non-zero invariant in
 $\mathrm{Ad}(A)$, contradicting the hypothesis.
 
 *Step 4: Geometric realisation.*
-Applying the fibre functor $\omega\colon \mathcal{C} \to \mathrm{Vect}_k$
-(where $\mathcal{C}$ is the rigid monoidal category of the quantum
+Applying the fibre functor $\tau\colon \mathbf{C} \to \mathrm{Vect}_k$
+(where $\mathbf{C}$ is the rigid monoidal category of the quantum
 observable universe)
-recovers the geometric data: $\omega(J^1(A))$ is the space of sections of the
-first jet bundle $J^1 E$, the frame bundle $P'$ and orthonormal frame bundle
-$E'$ are the geometric counterparts of the Frobenius--Hopf structure on
-$J^1(A)$, and the connection $A'$ is the image under $\omega$ of the
+recovers the geometric data: $\tau(J^1(A))$ is the space of sections of the
+first jet bundle $J^1 \mathcal{S}$, the frame bundle $P'$ and orthonormal frame bundle
+$\mathcal{S}'$ are the geometric counterparts of the Frobenius--Hopf structure on
+$J^1(A)$, and the connection $A'$ is the image under $\tau$ of the
 comultiplication $\Delta'$.  Its uniqueness follows from the irreducibility
 of $A'$, which is guaranteed by the inherited vanishing condition of
 Step 3.
