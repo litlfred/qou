@@ -46,6 +46,20 @@ ask what its mechanics *do*.  Category theory is the natural
 language for this, because it describes structure and transformation
 without committing to any particular ontology.
 
+Noether taught us that every continuous symmetry of a physical
+system yields a conserved quantity.  Rotational invariance gives
+angular momentum; time-translation invariance gives energy; gauge
+invariance gives charge.  This principle is the engine that converts
+the symmetries we *observe* — the invariances listed above — into
+the quantities we *measure*.  The categorical framework of this
+paper is driven by that insight: we encode each observed symmetry
+as structure in a monoidal category, and the Frobenius trace
+$\int_A$ plays the role of the Noether current — the device that
+extracts a conserved scalar from each symmetry.  As we shall see,
+the $q$-deformation of the substrate shifts these conservation laws
+from exact identities to approximate ones, with anomalies that are
+themselves measurable.
+
 These everyday observations, once stated carefully, determine a
 specific algebraic structure: a *rigid monoidal category* equipped
 with a fibre functor and a Frobenius trace $\int_A$.  We call

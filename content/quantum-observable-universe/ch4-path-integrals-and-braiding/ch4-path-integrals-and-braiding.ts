@@ -151,6 +151,7 @@ export default chapter({
         "q-momentum",
         "q-angular-momentum",
         "q-energy",
+        "noether-theorem-callout",
       ],
     }),
 
