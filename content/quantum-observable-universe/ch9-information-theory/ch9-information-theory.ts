@@ -77,6 +77,19 @@ section({
       ],
     }),
     section({
+      title: "Horizons and Aeons",
+      label: "sec:horizons-aeons",
+      blocks: [
+        "jet-horizon",
+        "big-bang-state",
+        "hawking-radiation",
+        "aeon",
+        "aeon-boundary-generates-chart",
+        "horizon-conformal-invariance",
+        "penrose-ccc",
+      ],
+    }),
+    section({
       title: "Quantum Geometry Variants",
       label: "sec:info-geometry-variants",
       blocks: [

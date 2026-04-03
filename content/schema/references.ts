@@ -1554,6 +1554,46 @@ export const references: CSLData[] = [
     ISBN: "978-3-642-61458-3",
     DOI: "10.1007/978-3-642-61458-3",
   }),
+
+  // ── Hawking 1975 ────────────────────────────────────────────────
+  ref({
+    id: "hawking1975",
+    type: "article-journal",
+    title: "Particle creation by black holes",
+    author: [{ family: "Hawking", given: "S. W." }],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1975]] },
+    volume: "43",
+    issue: "3",
+    page: "199-220",
+    DOI: "10.1007/BF02345020",
+  }),
+
+  // ── Bekenstein 1973 ─────────────────────────────────────────────
+  ref({
+    id: "bekenstein1973",
+    type: "article-journal",
+    title: "Black holes and entropy",
+    author: [{ family: "Bekenstein", given: "J. D." }],
+    "container-title": "Physical Review D",
+    issued: { "date-parts": [[1973]] },
+    volume: "7",
+    issue: "8",
+    page: "2333-2346",
+    DOI: "10.1103/PhysRevD.7.2333",
+  }),
+
+  // ── Penrose 2010 ───────────────────────────────────────────────
+  ref({
+    id: "penrose2010",
+    type: "book",
+    title: "Cycles of Time: An Extraordinary New View of the Universe",
+    author: [{ family: "Penrose", given: "Roger" }],
+    publisher: "Bodley Head",
+    "publisher-place": "London",
+    issued: { "date-parts": [[2010]] },
+    ISBN: "978-0-224-08036-1",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
