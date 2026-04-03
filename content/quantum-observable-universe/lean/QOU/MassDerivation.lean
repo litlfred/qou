@@ -3,6 +3,11 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import QOU.Glossary
 import QOU.KnotTheory
 import QOU.Torsion
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.MassDerivation — Topological Mass-Parameter Derivation

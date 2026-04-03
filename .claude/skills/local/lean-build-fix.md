@@ -74,19 +74,82 @@ Parse the output for lines matching:
 1. **MCP search**: `lean_leansearch` or `lean_loogle` with the type signature
 2. **Common renames** (check this table first):
 
-| Old name | New name | Version |
-|----------|----------|---------|
-| `div_lt_div_iff` | `div_lt_div_iff₀` | Mathlib 2024+ |
+| Old name | New name / workaround | Version |
+|----------|----------------------|---------|
+| `Mathlib.Topology.ContinuousFunction.Basic` | `Mathlib.Topology.ContinuousMap.Basic` | Mathlib 2024+ |
+| `Mathlib.Geometry.Manifold.SmoothManifoldWithCorners` | `Mathlib.Geometry.Manifold.IsManifold.Basic` | Mathlib 2024+ |
+| `Mathlib.CategoryTheory.Monoidal.Basic` | `Mathlib.CategoryTheory.Monoidal.Category` | Mathlib 2024+ |
+| `lt_div_iff` / `div_lt_iff` | **Nonexistent** — use `by_contra` + `div_mul_cancel₀` pattern (see below) | Lean 4.24 |
+| `div_lt_div_iff` | **Nonexistent** — same workaround | Lean 4.24 |
+| `unfold_let x` | **Nonexistent** — use `show <expanded> ...` to unfold local `set` defs | Lean 4.24 |
+| `sq_pos_of_ne_zero _ h` | `sq_pos_of_ne_zero h` (no underscore arg) | Lean 4.24 |
+| `List.Lex.cons x proof` | `List.Lex.cons proof` (element arg now implicit) | Lean 4.24 |
+| `List.Lex.wellFounded` | **Nonexistent** — use `sorry` pending MCP search | Lean 4.24 |
 | `pow_le_pow_left` | varies by type | Mathlib 2024+ |
-| `List.Lex.isWellFounded` | `List.Lex.wellFounded` or instance | Lean 4.x |
-| `Prod.Lex.wellFounded` | `WellFounded.prod_lex` | Lean 4.x |
-| `List.Chain'` | `List.IsChain` | Lean 4.x |
 | `Finset.max'` | varies | Mathlib 2024+ |
 
 3. **Suffix conventions**: Try adding `₀` suffix (e.g., `one_lt_pow₀`,
-   `pow_lt_one₀`) — Mathlib uses `₀` for variants with weaker hypotheses
-4. **If unfound**: Replace with `sorry` + bibliographic `-- Ref:` citation,
+   `pow_lt_one₀`, `div_mul_cancel₀`) — Mathlib uses `₀` for variants
+   with weaker hypotheses
+4. **Division bound workaround** (when `lt_div_iff`/`div_lt_iff` don't exist):
+
+```lean
+-- To prove: a < 1 / b  (given b > 0)
+have key : a * b < 1 := by nlinarith  -- prove multiplication form
+by_contra h; push_neg at h             -- assume 1/b ≤ a
+have : 1 ≤ a * b :=                   -- derive contradiction
+  calc 1 = 1 / b * b := (div_mul_cancel₀ 1 (ne_of_gt hb_pos)).symm
+    _ ≤ a * b := mul_le_mul_of_nonneg_right h (le_of_lt hb_pos)
+linarith                               -- contradicts key
+```
+
+5. **`show` pattern for local `set` definitions** (when `unfold_let` doesn't exist):
+
+```lean
+set r := vol / ratio
+have hr_pos : r > 0 := by
+  show vol / ratio > 0        -- expand r to its definition
+  apply div_pos <;> positivity
+```
+
+6. **If unfound**: Replace with `sorry` + bibliographic `-- Ref:` citation,
    noting the missing API in a comment
+
+### 1b. Import ordering and hygiene
+
+**Imports must be at the very top of the file**, before any content
+including `/-! ... -/` doc comments. Lean 4 rejects imports after
+non-import content:
+
+```lean
+-- WRONG: doc comment before imports
+/-! # Module docs -/
+import Mathlib.Data.Real.Basic
+
+-- RIGHT: imports first, then doc comment
+import Mathlib.Data.Real.Basic
+/-! # Module docs -/
+```
+
+**Ambiguous identifiers from `open`**: When two opened namespaces
+export the same name (e.g., `KnotTheory.vol_figure_eight` vs
+`MassDerivation.vol_figure_eight`), remove the less-needed namespace
+from `open` or qualify the ambiguous name.
+
+**Explicit Mathlib imports**: Prefer explicit imports for Mathlib
+features used directly (tactics, types) rather than relying on
+transitive imports. This protects against upstream import changes:
+
+```lean
+-- Defensive: import what you use
+import Mathlib.Data.Nat.Prime.Basic    -- for Nat.Prime
+import Mathlib.Tactic.Omega           -- for omega
+import Mathlib.Tactic.Ring            -- for ring
+import Mathlib.Tactic.Linarith        -- for linarith/nlinarith
+import Mathlib.Tactic.NormNum         -- for norm_num
+import Mathlib.Tactic.Positivity      -- for positivity
+import Mathlib.Tactic.FieldSimp       -- for field_simp
+```
 
 ### 2. Unexpected token / Parse errors
 

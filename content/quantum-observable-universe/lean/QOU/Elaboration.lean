@@ -3,6 +3,8 @@ import QOU.QuantumObservableUniverse
 import QOU.Glossary
 import Mathlib.Data.Real.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
 
 /-!
 # Chapter 2 — Categorical & Analytic Foundations (Elaboration)

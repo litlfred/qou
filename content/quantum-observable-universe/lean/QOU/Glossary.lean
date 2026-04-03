@@ -7,6 +7,7 @@ import Mathlib.CategoryTheory.Category.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.Glossary — Formal Semantic Registry

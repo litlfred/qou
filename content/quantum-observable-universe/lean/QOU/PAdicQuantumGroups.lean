@@ -6,6 +6,7 @@ import Mathlib.Data.Nat.Prime.Basic
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Tactic.Omega
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.Tactic.Ring
 
 /-!
 # Chapter 7 — p-Adic Quantum Observable Universe

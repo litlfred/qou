@@ -3,6 +3,11 @@ import QOU.MassDerivation
 import QOU.KnotRegistry
 import QOU.Calculations
 import QOU.HadronicMass
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
 # QOU.CODATAChain — End-to-End: QOU Theory → CODATA Observables

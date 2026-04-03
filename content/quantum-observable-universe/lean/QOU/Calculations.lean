@@ -2,6 +2,9 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import QOU.KnotRegistry
 import QOU.MassDerivation
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.Calculations — Skein-Deformed Residue Proofs and Substrate Derivation

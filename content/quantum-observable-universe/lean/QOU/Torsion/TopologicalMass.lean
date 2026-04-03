@@ -1,6 +1,8 @@
 import QOU.Torsion.MassIdentity
 import QOU.Torsion.Descent
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Omega
+import Mathlib.Tactic.Linarith
 
 /-!
 # §11–§13  Topological Mass Decomposition, Dimensional Reduction,

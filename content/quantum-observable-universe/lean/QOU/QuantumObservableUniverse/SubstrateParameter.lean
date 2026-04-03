@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 /-!
 # §3  Substrate Parameter, Gauge Group, Planck Constant

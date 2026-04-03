@@ -1,6 +1,7 @@
 import QOU.Descartes.GroundRing
 import QOU.Descartes.TorusKnot
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
+import Mathlib.Tactic.Ring
 
 /-!
 # Transfer Matrices over ℤ[q, q⁻¹]

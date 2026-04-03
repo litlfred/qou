@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import QOU.KnotTheory
+import Mathlib.Tactic.NormNum
 
 /-!
 # QOU.KnotRegistry — Formal Knot Registry with Alexander-Briggs Indexing

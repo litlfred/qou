@@ -96,7 +96,38 @@ grep -rn '^import' content/*/lean/ --include='*.lean' | grep -v '.lake'
 Flag any import that references a module from a different paper's
 namespace (these need cross-paper Lake dependencies or should be removed).
 
-### 5. Sorry Audit
+### 5. Import Explicitness Audit
+
+Check that `.lean` files explicitly import the Mathlib modules they use,
+rather than relying on transitive imports (which break when upstream
+imports change):
+
+```bash
+# Find files using tactics without explicit imports
+for f in $(find content/*/lean/ -name '*.lean' -not -path '*/.lake/*'); do
+  uses_omega=$(grep -l '\bomega\b' "$f" 2>/dev/null)
+  imports_omega=$(grep -l 'Mathlib.Tactic.Omega' "$f" 2>/dev/null)
+  if [ -n "$uses_omega" ] && [ -z "$imports_omega" ]; then
+    echo "MISSING: $f uses omega but doesn't import Mathlib.Tactic.Omega"
+  fi
+done
+```
+
+Key Mathlib features that should be explicitly imported when used:
+
+| Feature | Required import |
+|---------|----------------|
+| `Nat.Prime` | `Mathlib.Data.Nat.Prime.Basic` |
+| `Nat.Coprime`, `Nat.gcd` | `Mathlib.Data.Nat.GCD.Basic` |
+| `omega` tactic | `Mathlib.Tactic.Omega` |
+| `norm_num` tactic | `Mathlib.Tactic.NormNum` |
+| `positivity` tactic | `Mathlib.Tactic.Positivity` |
+| `field_simp` tactic | `Mathlib.Tactic.FieldSimp` |
+| `linarith`/`nlinarith` | `Mathlib.Tactic.Linarith` |
+| `ring` tactic | `Mathlib.Tactic.Ring` |
+| `Real.sqrt` | `Mathlib.Analysis.SpecialFunctions.Pow.Real` |
+
+### 6. Sorry Audit
 
 List all `sorry` occurrences and verify each has a bibliographic citation:
 

@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import QOU.HadronicMass
+import Mathlib.Tactic.NormNum
 
 /-!
   QOU Atomic Mass Predictions — CODATA 2022 vs AME2020 Audit

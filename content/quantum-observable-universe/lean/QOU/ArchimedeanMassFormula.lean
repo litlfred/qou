@@ -1,6 +1,9 @@
 import QOU.QuantumObservableUniverse
 import QOU.Torsion
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-!
 # Proposition: Archimedean Topological Mass Formula

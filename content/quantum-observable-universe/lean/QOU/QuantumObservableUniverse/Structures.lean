@@ -1,5 +1,6 @@
 import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Preadditive.Basic
+import Mathlib.Tactic.Positivity
 
 /-!
 # §1⅓–§1½  Higher Forms, Involutive Structures, Abstract Hodge Theory

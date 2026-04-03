@@ -2,6 +2,8 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import QOU.MassDerivation
 import QOU.KnotRegistry
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.HadronicMass — Terminal Resolution of Hadronic Mass
