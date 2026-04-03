@@ -87,7 +87,7 @@ $$
 $$
 
 The first term gives the dominant contribution.  At
-$q = 1.1097$:
+$q = q_0$:
 
 $$
   \frac{M_B}{M_D}

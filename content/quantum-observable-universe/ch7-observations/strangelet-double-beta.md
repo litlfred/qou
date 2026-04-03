@@ -2,7 +2,7 @@
 Let $\mathcal{S}$ be a strangelet and let $\mathfrak{p}$ be an
 ordinary hadron interacting with it.  The interaction occurs in
 the **degree-$2$ fiber** of the chiral fibration — the sector
-governed by the cinquefoil $\overline{T_{2,5}}$ ($5$ crossings,
+governed by the cinquefoil $T_{2,5}^{\sigma}$ ($5$ crossings,
 genus $2$).  This sector is electromagnetically dark: the
 strangelet has $Q = 0$
 ([strangelet crossing energy](#prop:strangelet-crossing-energy)),
@@ -38,7 +38,7 @@ $$
   (q^{1/2} - q^{-1/2})^4.
 $$
 
-At $q = 1.1097$:
+At $q = q_0$:
 
 $$
   s = 0.1041,
@@ -68,34 +68,34 @@ $$
 $$
 
 This is a **parameter-free prediction**: the suppression factor
-is determined entirely by $q = 1.1097$.
+is determined entirely by $q_0$.
 
 **The intermediate state.**
 
 The path through the Skein resolution tree is:
 
 $$
-  \overline{T_{2,5}}\;(5\text{ crossings})
+  T_{2,5}^{\sigma}\;(5\text{ crossings})
   \;\xrightarrow{\;L_0\;}
   \;4_1\;(4\text{ crossings})
   \;\xrightarrow{\;L_0\;}
-  \;\overline{T_{2,3}}\;(3\text{ crossings}).
+  \;T_{2,3}^{\sigma}\;(3\text{ crossings}).
 $$
 
 The intermediate knot is the **figure-eight** $4_1$ — the
 amphichiral knot identified with the muon
 ([building block knots](#rem:building-block-knots)).  Its
-Jones polynomial at $q = 1.1097$ is $J(4_1) = 1.033$, close
+Jones polynomial at $q = q_0$ is $J(4_1) = 1.033$, close
 to $1$ (the unknot value).  The intermediate state is
 "almost trivial" — a fleeting muon-like excitation between
 the two beta decays.
 
 **The degree-$2$ to degree-$1$ fiber transition.**
 
-The cinquefoil $\overline{T_{2,5}}$ lives on the
+The cinquefoil $T_{2,5}^{\sigma}$ lives on the
 genus-$2$ part of Bring's surface: it wraps the surface with
 winding $(2, 5)$, engaging two of the five sheets.  The trefoil
-$\overline{T_{2,3}}$ lives on the genus-$1$ part: winding
+$T_{2,3}^{\sigma}$ lives on the genus-$1$ part: winding
 $(2, 3)$, engaging the same two sheets but with fewer
 crossings.
 
@@ -118,7 +118,7 @@ The double beta decay of a strangelet interaction produces:
   (scaling by $m_p c^2 / (V_B/\hbar_q^2)$).
 - **Angular correlation** between the two electrons set by the
   Skein polynomial at the intermediate ($4_1$) vertex: the
-  figure-eight's amphichirality ($4_1 = \overline{4_1}$) means
+  figure-eight's amphichirality ($4_1 = 4_1^{\sigma}$) means
   the correlation is **symmetric under parity**.
 
 The $2.3$ MeV endpoint and the $s^4 \approx 10^{-4}$

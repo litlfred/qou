@@ -5,8 +5,7 @@ $p \colon \mathbf{1} \to A$ be a
 $\alpha$ be a ([fermion](#def:fermion)) with germ
 $\alpha_p \in A / \mathfrak{m}_p^2$.
 Consider two independent observations at $p$,
-$\mathfrak{I}_{1,p},\, \mathfrak{I}_{2,p} \colon
-A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$
+$\mathfrak{I}_{1,p},\, \mathfrak{I}_{2,p} \colon A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$
 ([observation](#def:observation)).  These data
 assemble into a *parallelogram of observations at $p$*:
 

@@ -8,14 +8,14 @@ $\{A_n\}_{n \geq 0}$
 ([recursive brane tower](#def:recursive-brane-tower)), applied to a
 base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
 
-The mass $m(\varrho)$ ([mass identity](#def:mass-identity)) admits a
+The mass $\mathfrak{m}(\varrho)$ ([mass identity](#def:mass-identity)) admits a
 decomposition into descended and transient contributions via the
 descent involution $\hat{\tau}_n$
 ([descent involution](#def:descent-involution)):
 
 ```tex
 \begin{equation}\label{eq:topological-mass-decomp}
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}_{\mathrm{desc}}(\varrho)
@@ -49,13 +49,10 @@ where:
    $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
 
 The decomposition follows from the idempotent splitting
-$\mathrm{End}_{\mathbf{C}}(A_{n+1}) =
-\mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}$
+$\mathrm{End}_{\mathbf{C}}(A_{n+1}) = \mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}$
 ([descent eigenspaces](#prop:descent-eigenspaces)) and the linearity of
 the categorical trace.  When the splitting is orthogonal with respect to
-the Frobenius norm, $\lVert \alpha \rVert^2 =
-\lVert \hat{\tau}_n(\alpha) \rVert^2 +
-\lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2$, the mass decomposes additively
+the Frobenius norm, $\lVert \alpha \rVert^2 = \lVert \hat{\tau}_n(\alpha) \rVert^2 + \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2$, the mass decomposes additively
 as stated.
 
 For the archimedean realisation---where the descended trace becomes the

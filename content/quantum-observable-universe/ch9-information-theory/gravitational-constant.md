@@ -136,7 +136,7 @@ $$
 
 identically for all $q > 1$.
 
-**Numerical values at $q = 1.1097$.**
+**Numerical values at $q = q_0$.**
 
 | Quantity | Formula | Value |
 |----------|---------|-------|
@@ -161,8 +161,7 @@ exponent.
 
 This is the same reason that the Bekenstein--Hawking entropy scales
 as area (not volume): the information content of a region is
-determined by its boundary surface, and surfaces have area $\sim
-r^2$.  In the QOU, this is not postulated but **derived** from the
+determined by its boundary surface, and surfaces have area $\sim r^2$.  In the QOU, this is not postulated but **derived** from the
 codimension-$2$ structure of the exceptional divisors in the
 brane tower.
 
@@ -176,7 +175,7 @@ $$
 | $q$ | $d_H$ predicted | $d_H$ box-counting | Known exact | Note |
 |-----|----------------|--------------------|----|------|
 | $1$ | $1.000$ | — | $1.000$ (unit circle) | Exact match |
-| $1.1097$ | $1.088$ | $1.012$ | — | Box-counting underestimates thin quasicircles |
+| $q_0$ | $1.088$ | $1.012$ | — | Box-counting underestimates thin quasicircles |
 | $1.5$ | $1.185$ | — | — | Basilica root $c = -3/4$ (period-$2$ parabolic; known $d_H \sim 1.2$) |
 | $\varphi^2$ | $1.000$ | — | — | Golden crossover: $d_H$ returns to $1$ |
 
@@ -187,12 +186,11 @@ than a circle ($d_H > 1$), consistent with McMullen's theorem
 [mcmullen1998].
 
 **Testable prediction.**
-The value $d_H(1.1097) = 1.088$ is testable against high-precision
+The value $d_H(q_0) = 1.088$ is testable against high-precision
 computation of $d_H(J_c)$ at $c(0.1097) = 0.338 + 0.073i$ using
 transfer-operator methods (Ruelle 1982).  Box-counting gives
 $d_H \approx 1.01$ but systematically underestimates thin Jordan
-curves.  The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2)
-\approx 1.043$ is consistent with the QOU prediction.
+curves.  The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2) \approx 1.043$ is consistent with the QOU prediction.
 
 **Relation to the three fundamental constants.**
 

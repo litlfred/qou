@@ -53,7 +53,7 @@ export default chapter({
       blocks: [
         "braid-symmetric-intro",
         "braid-group",
-        "s3-group",
+        "braid-group-su2",
         "knot-notation-convention",
       ],
     }),
@@ -78,6 +78,7 @@ export default chapter({
         "braid-involutions-intro",
         "braid-twist-flip",
         "holonomy-trefoil",
+        "rho-s3-holonomy-exposition",
       ],
     }),
 
@@ -133,6 +134,7 @@ export default chapter({
       label: "sec:crossing-energy",
       blocks: [
         "crossing-energy",
+        "crossing-energy-trefoil",
         "coulomb-charge",
       ],
     }),
@@ -149,6 +151,7 @@ export default chapter({
         "q-momentum",
         "q-angular-momentum",
         "q-energy",
+        "noether-theorem-callout",
       ],
     }),
 
@@ -178,6 +181,12 @@ export default chapter({
         "skein-decomposition",
         // Categorical vs archimedean braiding
         "skein-archimedean-shadow",
+        // QU/QUO axioms as relations on Hecke generators
+        "vertex-algebra-relations",
+        // Relations lifted to the jet bundle
+        "vertex-algebra-jet-relations",
+        // T_{2,11} annihilation by the spectral filter ideal
+        "t211-ideal-annihilation",
       ],
     }),
 
@@ -212,6 +221,7 @@ export default chapter({
       label: "sec:borromean-reidemeister",
       blocks: [
         "borromean-baryon",
+        "hadron-proton-example",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",
         "nuclear-shell-intruder",
@@ -225,6 +235,7 @@ export default chapter({
       blocks: [
         "topological-mass",
         "topological-mass-categorical-proof",
+        "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",
       ],

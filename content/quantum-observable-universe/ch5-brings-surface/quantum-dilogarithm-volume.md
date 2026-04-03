@@ -21,7 +21,7 @@ The nuclear binding energy is the quantum dilogarithm volume
 of the Markov trace, normalised by $\hbar_q^2$:
 
 $$
-  \mathfrak{E}_{\mathrm{bind}}(p, n)
+  \mathbf{E}_{\mathrm{bind}}(p, n)
   \;=\;
   \frac{\Phi_q(\mathcal{N}(Z, N))}{\hbar_q^2}
 $$
@@ -45,7 +45,7 @@ asymmetry creates nonzero $\Phi_q$, and the nucleus is bound.
 **Derivation from the topological mass formula.**
 The topological mass formula
 ([topological mass](#prop:topological-mass-formula)) gives the
-mass of a knot $K$ as $m(K) = \text{Vol}(K) / \hbar_q^2$.
+mass of a knot $K$ as $\mathfrak{m}(K) = \text{Vol}(K) / \hbar_q^2$.
 For a multi-component link $\mathcal{N}(Z, N)$, the "volume"
 is no longer the hyperbolic volume of a single knot complement
 (the multi-nucleon link is not hyperbolic).  Instead, the
@@ -63,8 +63,7 @@ groupoid) to the Hecke algebra computation of Ch5 (the generator
 volumes).
 
 **The beta-decay $Q$-value.**
-The $Q$-value for the transition $\mathcal{N}(Z, N) \to
-\mathcal{N}(p\!+\!1, n\!-\!1)$ is the mass difference:
+The $Q$-value for the transition $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$ is the mass difference:
 
 $$
   Q_\beta
@@ -90,7 +89,7 @@ golden rule:
 $$
   t_{1/2}
   \;=\;
-  \frac{\ln 2 \cdot 2\,N_v^4}{243\,\mathfrak{E}_{\times} \cdot \mu_0}
+  \frac{\ln 2 \cdot 2\,N_v^4}{243\,\mathbf{E}_{\times} \cdot \mu_0}
   \;\cdot\;
   \frac{1}{[2]_q \;\cdot\; s^2
     \;\cdot\; f(Z_d, \mathcal{Q}_q)}
@@ -102,9 +101,9 @@ $$
 $$
 
 where $s = q^{1/2} - q^{-1/2}$,
-$\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
+$\mathbf{E}_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
 dimensional scale, and $N_v$ is the effective crossing count
-of the weak scale ($v = N_v\,\mathfrak{E}_{\times}\,\mu_0$).
+of the weak scale ($v = N_v\,\mathbf{E}_{\times}\,\mu_0$).
 The prefactor replaces $G_F^2\,m_e^5/(2\pi^3)$
 ([hadron half-life](#prop:hadron-half-life)).
 Every quantity is determined by the Hecke algebra computation
@@ -114,7 +113,7 @@ invariant of the weak scale — open computation).
 **Two-level structure (cosimplicial).**
 The computation has two levels, corresponding to levels 0 and 1 of
 the cosimplicial crossed groupoid
-([cosimplicial crossed groupoid](#def:cosimplicial-crossed-groupoid)):
+([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)):
 
 - **Level 0** ($B_A$, 1 strand per nucleon): the inter-nucleon
   crossings.  The quantum dilogarithm $\Phi_q$ gives the total
@@ -125,8 +124,7 @@ the cosimplicial crossed groupoid
   Borromean crossings.  The crossing change $\mathfrak{d} \to \mathfrak{u}$ inside one
   nucleon produces the **$Q$-value** — the mass difference between
   parent and daughter.  This is where the neutron-proton mass
-  splitting $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}
-  \approx 1.293$ MeV originates.
+  splitting $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} \approx 1.293$ MeV originates.
 
 The coface map $\delta^0 \colon \mathfrak{G}_0 \to \mathfrak{G}_1$
 from the cosimplicial structure embeds the Level 0 computation into

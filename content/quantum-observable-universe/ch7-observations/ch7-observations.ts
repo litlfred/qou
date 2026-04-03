@@ -190,6 +190,26 @@ export default chapter({
       ],
     }),
 
+    // ── Organic chemistry from Hopf chains ────────────────────────────
+    section({
+      title: "Organic Chemistry from Hopf Chains",
+      label: "sec:organic-chemistry",
+      blocks: [
+        "covalent-bond-types",
+        "carbon-valence",
+        "molecular-hopf-chain",
+        "threading-link",
+        "molecular-hopf-ring",
+        "chain-spring-modes",
+        "ring-closure-barrier",
+        "carbon-chain-c6",
+        "benzene-ring",
+        "chain-ring-energy",
+        "chain-ring-comparison",
+        "organic-chain-taxonomy",
+      ],
+    }),
+
     // ── Interactive simulations ───────────────────────────────────────
     section({
       title: "Interactive Simulations",
@@ -197,7 +217,7 @@ export default chapter({
       blocks: [
         "q-double-slit",
         "double-slit-analytical",
-        "brings-surface",
+        "brings-surface-simulator",
         "quantum-brings-surface",
       ],
     }),

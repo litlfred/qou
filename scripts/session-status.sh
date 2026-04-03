@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Session-start hook: consolidated "functionalities enabled" status check.
 #
-# Replaces individual check-lean.sh / check-todos.sh outputs with a single
+# Consolidated session status dashboard. Uses scripts/lib/lean-env.sh for
 # human-readable dashboard plus machine-readable JSON.
 #
 # Output format: JSON with { status: {...}, summary: "..." }
@@ -9,14 +9,9 @@
 
 set -uo pipefail
 
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean-archive"
+# Shared Lean env helpers (sets REPO_ROOT, LEAN_DIR, PATH, has())
+source "$(dirname "$0")/lib/lean-env.sh"
 CONFIG="$REPO_ROOT/lean-mcp.config.json"
-
-export PATH="$HOME/.elan/bin:$HOME/.local/bin:$HOME/.bun/bin:$PATH"
-
-# ── Helper: check command exists ────────────────────────────────
-has() { command -v "$1" &>/dev/null; }
 
 # ── 1. Core tools ───────────────────────────────────────────────
 BUN_OK=false;    BUN_VER=""
@@ -62,12 +57,9 @@ else
     PIPELINE_FIX="Install bun: curl -fsSL https://bun.sh/install | bash"
 fi
 
-# ── 4. Lean / MCP ──────────────────────────────────────────────
-LEAN_OK=false;    LEAN_VER=""
-LEAN_LOCAL_READY=false
-LEAN_REMOTE_OK=false
-LEAN_MODE="none"
-LEAN_FIX=""
+# ── 4. Lean / MCP (uses shared lean_detect from lib/lean-env.sh) ──
+lean_detect
+LEAN_FIX=$(lean_fix_hint)
 
 REMOTE_DOMAIN=""
 if [ -f "$CONFIG" ]; then
@@ -75,42 +67,6 @@ if [ -f "$CONFIG" ]; then
 fi
 REMOTE_URL=""
 [ -n "$REMOTE_DOMAIN" ] && REMOTE_URL="https://$REMOTE_DOMAIN/mcp"
-
-if has lean; then
-    LEAN_OK=true
-    LEAN_VER=$(lean --version 2>&1 | head -1)
-    # Check full readiness
-    DEPS_OK=true; CACHE_OK=true
-    if [ -f "$LEAN_DIR/lakefile.toml" ] && [ ! -f "$LEAN_DIR/lake-manifest.json" ]; then
-        DEPS_OK=false
-    fi
-    if [ ! -d "$LEAN_DIR/.lake/packages/mathlib/.lake/build/lib" ] 2>/dev/null; then
-        CACHE_OK=false
-    fi
-    if [ "$UV_OK" = true ] && [ "$DEPS_OK" = true ] && [ "$CACHE_OK" = true ]; then
-        LEAN_LOCAL_READY=true
-        LEAN_MODE="local"
-    else
-        LEAN_MODE="local-degraded"
-        [ "$UV_OK" = false ] && LEAN_FIX="Install uv: curl -LsSf https://astral.sh/uv/install.sh | sh"
-        [ "$DEPS_OK" = false ] && LEAN_FIX="Run: cd lean-archive && lake update"
-        [ "$CACHE_OK" = false ] && LEAN_FIX="Run: cd lean-archive && lake exe cache get"
-    fi
-fi
-
-# Check remote MCP
-if [ -n "$REMOTE_URL" ]; then
-    if curl -sf --max-time 3 -o /dev/null "$REMOTE_URL" 2>/dev/null; then
-        LEAN_REMOTE_OK=true
-        if [ "$LEAN_MODE" = "none" ]; then
-            LEAN_MODE="remote"
-        fi
-    fi
-fi
-
-if [ "$LEAN_MODE" = "none" ]; then
-    LEAN_FIX="Run: ./scripts/setup-lean-mcp.sh"
-fi
 
 # ── 5. MCP paper-assistant ─────────────────────────────────────
 ASSISTANT_OK=false

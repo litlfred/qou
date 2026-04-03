@@ -4,8 +4,8 @@
 The `q`-deformed connection:
 `∇_q = q⁻¹ ∇ + (1 − q⁻¹)(ξ ⌟ ∇) θ_A`.
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic

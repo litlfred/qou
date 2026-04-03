@@ -1,8 +1,8 @@
 /-!
 # QOU.qLieBracket
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/qLieBracket.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/qLieBracket.lean (monolithic)
 -/
 
 import QOU.Basic

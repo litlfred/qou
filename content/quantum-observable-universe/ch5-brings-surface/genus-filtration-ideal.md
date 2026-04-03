@@ -1,0 +1,286 @@
+The genus of the moduli surface is not assumed --- it is
+**determined by the Hecke algebra**.  The QOU axioms force
+$g = 4$ through a completeness condition on the irreducible
+representations of $H_2(q) \oplus H_3(q)$, and the
+genus-filtration ideal $\mathfrak{I}_4 = (u^5)$ is the
+algebraic obstruction that kills $T_{2,p}$ for all primes
+$p \geq 11$.
+
+## Part 0: the genus is determined by the algebra
+
+**Proposition (Genus from Hecke completeness).**
+*Let $(\mathbf{C}, A, \tau)$ be a QOU with
+$G = \mathrm{SU}_q(2)$.  The braiding on $V_1^{\otimes n}$
+gives the Hecke algebra $H_n(q)$.  The relevant strand
+counts are $n = 2$ and $n = 3$:*
+
+- *$H_2(q)$ has $2$ irreducible representations
+  (partitions of $2$: $(2)$ trivial, $(1,1)$ sign).*
+- *$H_3(q)$ has $3$ irreducible representations
+  (partitions of $3$: $(3)$, $(1,1,1)$, $(2,1)$).*
+- *Total: $5$ irreps.*
+
+*At genus $g$, the embeddable torus knots $T_{r,s}$ with
+$(r-1)(s-1) \leq 2g$ and $\gcd(r,s) = 1$ are the ones whose
+Jones polynomials can be evaluated on $\Sigma_g$.  Completeness
+([cohomological embedding](#prop:cohomological-embedding))
+requires that these evaluations **span all $5$ irrep
+characters**: the evaluation matrix
+$M_{ij} = \chi_{\lambda_j}(T_i)$ must have rank $5$.*
+
+*The strand counts $m \geq 4$ contribute no new knots: at genus
+$g$, the constraint $(m-1)(s-1) \leq 2g$ with $m \geq 4$ and
+$m < s$, $\gcd(m,s) = 1$, gives $s \leq 2g/(m-1) + 1$, which
+for $m = 4$ yields $T_{4,3} = T_{3,4}$ (already counted) and
+for $m \geq 5$ yields no valid $(m, s)$ pairs with $m < s$.
+Therefore $H_2(q) \oplus H_3(q)$ is the complete Hecke
+algebra of the QOU.*
+
+**The genus scan.**
+
+| $g$ | Embeddable torus knots | Count | Rank of $M$ | Complete? |
+|:---:|:---|:---:|:---:|:---:|
+| $2$ | $T_{2,3}$, $T_{2,5}$ | $2$ | $\leq 2$ | No |
+| $3$ | $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$ | $4$ | $\leq 4$ | **No** |
+| $4$ | $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{2,9}$, $T_{3,4}$, $T_{3,5}$ | $6$ | $5$ | **Yes** |
+| $5$ | $+\; T_{2,11}$ | $7$ | $5$ | Yes (redundant) |
+
+*At $g = 3$: only $4$ knots are available, but $5$ irreps
+must be spanned.  Rank $\leq 4 < 5$ --- incomplete.
+Observability
+($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$) would be
+violated: there would exist knot observables not determined
+by the generators.*
+
+*At $g = 4$: the two additional knots $T_{2,9}$ (Chebyshev
+degree $4$, saturates) and $T_{3,5}$ (genus $4$, saturates)
+bring the total to $6$ knots spanning $5$ irreps.
+Rank $= 5$ --- complete.*
+
+*At $g \geq 5$: $T_{2,11}$ and further knots embed, but they
+add no new irreps (rank stays $5$).  These extra knots predict
+**unobserved particles** --- the redundancy violates
+minimality.*
+
+*Therefore $g = 4$ is the **unique minimal genus** where the
+Hecke completeness condition holds.*
+
+## Part I: Chebyshev degree = Seifert genus
+
+**Why Chebyshev.**
+The Hecke algebra $H_2(q)$ is $2$-dimensional with basis
+$\{1, T\}$ and the single relation $T^2 = sT + 1$ where
+$s = q - q^{-1}$.  The generator $T$ has two eigenvalues:
+$q$ (symmetric channel) and $-q^{-1}$ (antisymmetric channel).
+Computing $T^p$ --- the $p$-th power of the braid generator
+--- reduces it via the relation:
+
+$$
+  T^p \;=\; a_p \cdot T \;+\; a_{p-1} \cdot \mathbf{1}
+$$
+
+The coefficients $a_n$ satisfy the recurrence
+$a_{n+1} = s \cdot a_n + a_{n-1}$ with $a_0 = 0$, $a_1 = 1$.
+This is the **Chebyshev recurrence**: powers of a matrix with
+two eigenvalues are always Chebyshev polynomials.  Precisely,
+$a_p = U_{p-1}(s/2)$, the Chebyshev polynomial of the second
+kind evaluated at $s/2$, where
+$U_n(\cos\theta) = \sin((n+1)\theta)/\sin\theta$.
+
+For odd $p$, only even powers of $s$ appear, so writing
+$u = s^2 = (q - q^{-1})^2$:
+
+$$
+  a_p(u)
+  \;=\;
+  U_{p-1}\!\left(\tfrac{s}{2}\right)
+  \;=\;
+  \sum_{j=0}^{(p-1)/2} c_j\, u^j
+$$
+
+with leading coefficient $c_{(p-1)/2} = 1$.
+
+**The degree--genus identity.**
+The algebraic complexity of the Hecke coefficient (the
+polynomial degree $\deg_u a_p$) equals the topological
+complexity of the knot (the Seifert genus $g(T_{2,p})$):
+
+$$
+  \deg_u a_p \;=\; \frac{p-1}{2} \;=\; g(T_{2,p}).
+$$
+
+Each monomial $u^k$ in $a_p$ represents the $k$-th independent
+$1$-cycle of the Seifert surface $F_p$.  To realise $T_{2,p}$
+as a localized knot on $\Sigma_g$, each cycle needs a target
+class in $H^1(\Sigma_g)$.  When $\deg_u a_p > g$, the
+polynomial encodes more topology than the surface can hold ---
+the surplus monomials have no geometric home.  This is the
+**Chebyshev overflow**: the Hecke algebra knows the knot
+doesn't fit, before any surface is chosen.
+
+## The Chebyshev table
+
+The Hecke recurrence $a_{n+1} = s \cdot a_n + a_{n-1}$ with
+$a_0 = 0$, $a_1 = 1$ gives, for odd $p$, the following
+polynomials in $u = s^2 = (q - q^{-1})^2$:
+
+| $p$ | $a_p(u)$ | $\deg_u$ | genus | status at $g = 4$ |
+|:---:|:---------|:---:|:---:|:---:|
+| $3$ | $u + 1$ | $1$ | $1$ | embeds |
+| $5$ | $u^2 + 3u + 1$ | $2$ | $2$ | embeds |
+| $7$ | $u^3 + 5u^2 + 6u + 1$ | $3$ | $3$ | embeds |
+| $9^*$ | $u^4 + 7u^3 + 15u^2 + 10u + 1$ | $4$ | $4$ | saturates |
+| $11$ | $u^5 + 9u^4 + 28u^3 + 35u^2 + 15u + 1$ | $5$ | $5$ | **overflow** |
+| $13$ | $u^6 + 11u^5 + 45u^4 + 84u^3 + 70u^2 + 21u + 1$ | $6$ | $6$ | **overflow** |
+
+($*$: $9 = 3^2$ is not prime but $T_{2,9}$ is the degree-$2$
+tower of the trefoil.)
+
+The saturation at $a_9$ (degree $4$) and the overflow at
+$a_{11}$ (degree $5$) are not coincidences --- they are the
+Chebyshev reflection of the Hecke completeness condition.
+The completeness scan (Part 0) shows that $g = 4$ is the
+minimum genus where all $5$ irreps are spanned.  The
+Chebyshev degree at the boundary is $\deg_u a_9 = 4 = g$,
+and $\deg_u a_{11} = 5 = g + 1$ is the first overflow.
+
+## Part II: the genus-filtration ideal
+
+*Define the genus-$g$ filtration ideal
+$\mathfrak{I}_g \subset \mathbb{Z}[u]$ by*
+
+$$
+  \mathfrak{I}_g
+  \;=\;
+  \bigl\{\, f(u) \in \mathbb{Z}[u] : \deg f > g \,\bigr\}
+  \;=\;
+  (u^{g+1}).
+$$
+
+*A torus knot $T_{2,p}$ admits a localized knot structure on
+$\Sigma_g$ if and only if $a_p \notin \mathfrak{I}_g$, i.e.,
+$\deg_u a_p \leq g$.*
+
+For $g = 4$ (as determined by Hecke completeness):
+$\mathfrak{I}_4 = (u^5)$.  Every $T_{2,p}$ with $p \geq 11$
+has $a_p \in \mathfrak{I}_4$ because $\deg_u a_p \geq 5$.
+The ideal $(u^5)$ catches all of them simultaneously: $u^k = u^{k-5} \cdot u^5 \in (u^5)$ for all $k \geq 5$.
+
+## Part III: Yekutieli obstruction = leading coefficient
+
+*The Yekutieli obstruction class
+$\kappa(T_{2,p}) \in H^2(\Sigma_g, \mathbb{Z})$ is
+the image of the leading monomial of $a_p$ under the
+projection $\pi_g \colon \mathbb{Z}[u] \to \mathbb{Z}[u]/(u^{g+1})$:*
+
+$$
+  \kappa(T_{2,p})
+  \;=\;
+  \begin{cases}
+    0 & \text{if } (p-1)/2 \leq g \quad
+      (\text{lifts: } a_p \text{ fits in } H^1(\Sigma_g)), \\[6pt]
+    c_{(p-1)/2} \cdot [u^{(p-1)/2}] \neq 0 &
+      \text{if } (p-1)/2 > g \quad
+      (\text{obstructed: overflow}).
+  \end{cases}
+$$
+
+*Since $c_{(p-1)/2} = 1$ for all odd $p$, the obstruction is
+nonzero for every prime $p \geq 2g + 3 = 11$.*
+
+## Formal coordinates: unwinding $d_q^2 \neq 0$
+
+The non-nilpotence $d_q^2 \alpha = q^{-1}(1-q^{-1})\, \omega_V \wedge_q [\xi, \alpha]$
+([categorical $d_q^2$](#prop:categorical-dq-squared)) provides
+the differential-geometric mechanism.
+
+Associate to $T_{2,p}$ the form
+$\alpha_p = a_p(u) \cdot \omega_T \in \Omega^1(A)$, where
+$\omega_T$ is the Hecke $1$-form (the $T$-component of the
+Maurer--Cartan form on $H_2(q)$) and $u = s^2$ acts as a
+grading parameter.
+
+The weight decomposition assigns degree $k$ in $u$ to the
+$k$-th Seifert cycle: $\alpha_p = \sum_{k=0}^{g_p} c_k \, u^k \omega_T$, with $[\xi, u^k \omega_T] = k \cdot u^k \omega_T$
+(the Lie derivative counts Seifert cycles).
+
+Applying $d_q^2$ iteratively:
+
+1. **At genus level $k \leq g$:** The component $c_k u^k \omega_T$
+   maps under $\iota_*$ to a class in $H^1(\Sigma_g)$.
+   The obstruction $d_q^2(c_k u^k \omega_T) \propto k \cdot \omega_V \wedge c_k u^k \omega_T$ is absorbed by
+   the available $H^2(\Sigma_g)$ pairing --- it vanishes on the
+   horizontal subcomplex ($\xi$-invariant forms project the
+   surplus away).
+
+2. **At genus level $k = g + 1$:** The component
+   $c_{g+1} u^{g+1} \omega_T$ has no target in $H^1(\Sigma_g)$.
+   The obstruction
+
+   $$
+     d_q^2(c_{g+1}\, u^{g+1}\, \omega_T)
+     \;=\;
+     q^{-1}(1-q^{-1})\,(g+1)\, c_{g+1}\, u^{g+1}\,
+     \omega_V \wedge_q \omega_T
+   $$
+
+   is a **nonzero class in $\Omega^2(A)$** that does not pair
+   to zero against $H_2(\Sigma_g)$.  The coefficient
+   $(g+1) \cdot c_{g+1} \cdot q^{-1}(1-q^{-1})$ is nonzero
+   for all $q > 1$, and $c_{g+1} = 1$ (the leading Chebyshev
+   coefficient is always $1$).
+
+3. **The obstruction class.** The $d_q^2$-obstruction at level
+   $g + 1$ descends to the Yekutieli class:
+
+   $$
+     \kappa(T_{2,p})
+     \;=\;
+     (g+1) \cdot q^{-1}(1-q^{-1}) \cdot [\omega_V \wedge_q \omega_T]
+     \;\in\; H^2(\Sigma_g,\, \mathbb{Z})
+   $$
+
+   which is nonzero for $q \neq 1$.  At $q = 1$ (the classical
+   limit), $d_q^2 = 0$ and all obstructions vanish ---
+   consistent with classical de Rham cohomology having no
+   genus constraint on embeddings.
+
+## The derivation chain
+
+The full argument is **non-circular**:
+
+1. **QOU axioms** give $G = \mathrm{SU}_q(2)$ with braiding
+   on $V_1^{\otimes n}$, producing $H_n(q)$.
+
+2. **Strand count closure**: for any genus $g$, the constraint
+   $(m-1)(s-1) \leq 2g$ with $m \geq 4$ contributes no new
+   torus knots beyond those from $m \in \{2, 3\}$.  The
+   relevant Hecke algebra is $H_2(q) \oplus H_3(q)$, with
+   $5$ irreps.
+
+3. **Hecke completeness**: the evaluation matrix of embeddable
+   torus knots must have rank $5$.  Scanning from $g = 1$
+   upward, the first genus where this holds is $g = 4$
+   (with $6$ embeddable knots).
+
+4. **Chebyshev overflow**: the polynomial $a_p(u)$ has degree
+   $(p-1)/2$ in $u = s^2$.  At $g = 4$, the last fitting
+   polynomial is $a_9$ (degree $4$); the first overflowing
+   one is $a_{11}$ (degree $5$).
+
+5. **Ideal**: the genus-filtration ideal $\mathfrak{I}_4 = (u^5)$
+   is generated by the overflow.  Every $T_{2,p}$ with
+   $p \geq 11$ has $a_p \in (u^5)$.
+
+6. **Yekutieli**: the leading Chebyshev coefficient $c_{g+1} = 1$
+   gives a nonzero obstruction $\kappa(T_{2,p}) \in H^2(\Sigma_4)$
+   via $d_q^2 \neq 0$.
+
+7. **Bring surface**: $\Sigma_4$ is the unique genus-$4$ curve
+   with maximal symmetry ($S_5$), determined by the Descartes
+   condition $\chi = 2 - 2g = -6$.
+
+The Bring surface is a **consequence** of the Hecke algebra,
+not an input.  The genus $g = 4$ emerges from representation
+completeness; the surface $\Sigma_4$ is then identified by its
+symmetry.

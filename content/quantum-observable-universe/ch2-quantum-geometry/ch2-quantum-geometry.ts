@@ -56,7 +56,6 @@ export default chapter({
       blocks: [
         "maximal-torus",
         "maximal-torus-su2",
-        "reeb-gauge-group",
         "weight-decomposition",
         "weight-decomposition-exists",
         "weight-decomposition-exists-proof",
@@ -106,6 +105,8 @@ export default chapter({
       label: "sec:substrate-parameter",
       blocks: [
         "quantum-universe-explication",
+        "braiding-eigenvalue-extraction",
+        "tannaka-krein-reconstruction",
         "substrate-parameter",
         "substrate-parameter-exists",
         "substrate-parameter-exists-proof",
@@ -223,6 +224,7 @@ export default chapter({
         "q-reeb-flow",
         "q-torsion-leaf",
         "q-torsion-existence",
+        "quantum-torsion-motivation",
       ],
     }),
 
@@ -238,7 +240,6 @@ export default chapter({
         "quantum-gauge-group-category",
         "hopf-structure-diagrams",
         "self-dual-2group",
-        "quantum-flatness",
         "emergence-to-quantum-flat",
         "emergence-to-quantum-flat-proof",
         "simplicity-from-category",

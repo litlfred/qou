@@ -9,4 +9,5 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:coulomb-charge", "def:exceptional-divisor"],
+  examples: ["rem:hadron-operations", "rem:knot-factorization", "rem:knot-particle-dictionary"],
 });

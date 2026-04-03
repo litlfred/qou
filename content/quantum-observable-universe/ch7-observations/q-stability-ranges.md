@@ -26,7 +26,7 @@ against local variations in $q$.
    particle is robust against nearly any value of $q > 1$.
 
 2. **Light elements** ($p \leq 6$): the $q$-stability window
-   extends from $q = 1$ to well above $q = 1.11$.  These nuclei
+   extends from $q = 1$ to well above $q = q_0$.  These nuclei
    would exist in *any* Descartes universe with $q > 1$.
 
 3. **Medium elements** ($p = 10$--$26$): the window narrows to
@@ -47,6 +47,6 @@ Coulomb term is negligible, are insensitive to $q$.
 
 This means the **periodic table is mostly determined by
 $q > 1$** (that is, by the existence of crossing asymmetry),
-not by the specific value $q = 1.1097$.  The fine structure —
+not by the specific value $q_0$.  The fine structure —
 which particular isotope is stable for each heavy element —
 is the part that depends on the precise value of $q$.

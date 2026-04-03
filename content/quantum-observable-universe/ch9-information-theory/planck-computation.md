@@ -9,7 +9,7 @@ representation of the local link structure.  The total
 computational work per Planck unit is therefore $n_R(q)$
 polynomial evaluations, each of constant algebraic complexity.
 
-At $q = 1.1097$: a Planck-length region performs $\sim 10$
+At $q = q_0$: a Planck-length region performs $\sim 10$
 degree-$2$ polynomial evaluations per Planck time.  This is the
 microscopic computational rate of the universe at our scale —
 the clock speed of the exceptional divisor dynamics, coarse-grained

@@ -5,9 +5,11 @@ $r \in \tilde{O}(G)$. As $f$ is arbitrary, $A = I + \tilde{O}(G)$.
 
 It remains to show the sum is direct, which follows from uniqueness
 of $r$. Suppose the division algorithm produces two representations:
+
 $$
   f = \tilde{f} + r = \tilde{f}' + r'.
 $$
+
 Then $\tilde{f} - \tilde{f}' \in I$, so $r - r' \in I$. If
 $r - r' \neq 0$, then by
 [Lemma (generator choice)](#lem:generator-choice) there exists

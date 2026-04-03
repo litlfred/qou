@@ -129,6 +129,33 @@ The glossary must track universe levels for category-theoretic types:
 
 ## Ambiguity Resolution Format
 
+### Standing disambiguation rulings (v2, 2026-03-29)
+
+The following terms have been resolved by the author.  Agents MUST
+apply these rulings when scanning narrative text:
+
+| Term | Ruling | Notes |
+|------|--------|-------|
+| **energy** (bare) | Replace with `κ` (Hecke cost) | Ban bare "energy"; always use κ(ξ), or qualify as binding/kinetic/crossing |
+| **crossing** | OK unqualified | Both "braid crossing" and "nuclear crossing" are just "crossing" — the context is unambiguous in this paper |
+| **shell** | Always "orbital shell" | Qualify by occupancy λ and degree [n], NOT by who occupies it. Use `𝔖_ℓ` for the formal object |
+| **trace** | Two traces only: **categorical** and **Markov** | (1) **Categorical trace** (the Frobenius pairing ∫_A). The terms "descended trace," "transient trace," and "Frobenius trace" are just the categorical trace restricted to parts of the bundle — NOT separate traces. Use "categorical trace of the descended part" etc. (2) **Markov trace** tr_M (braid/knot invariant on H_n(q)). Bare "trace" OK when context is clear. |
+| **dimension** | Always qualify | Quantum dimension d_λ(q), Hausdorff dimension d_H, categorical dim, topological dim — always say which |
+| **volume** | Always qualify | Hyperbolic Vol(K), traced volume V̂, categorical volume, physical volume — always say which |
+| **force** | Transfer matrix IS the force operator | Interactions are described by transfer matrices. No separate "force" concept. Newton's equations = transfer matrix composition |
+| **numerical values** | Never `=` for observed values; always `≈` | Write `g_A ≈ 1.275` not `g_A = 1.275`. Exception: `=` is OK when accompanied by `O(ε)` or `± δ` error bounds. Algebraic identities (over ℤ[q,q⁻¹]) use `=`. Numerical evaluations at q₀ use `≈`. |
+| **state** | OK unqualified | Not ambiguous in context |
+| **particle** | Always "knot-particle" or use 𝒦 | A particle IS a knot equivalence class 𝒦_x; always make this explicit |
+| **𝔈_{anything}** | BANNED | Use κ (Hecke cost) or specific qualified term. Fraktur E is banned in v2 notation |
+| **T_{m,n}** for torus knot | BANNED | Use τ(r,s) for torus knot label; T is for transfer matrices only |
+| **bar notation** on 𝒩 | BANNED | 𝒩_{Z,N} is assumed in Gröbner normal form; mark 𝒩^{unred} if unreduced |
+
+### Ground ring ruling
+
+All formal proofs over ℤ[q, q⁻¹].  Modules over ℝ or ℂ are the
+archimedean realisation (Chapter 7 only) and NOT part of the formal
+proof chain.  See `content/quantum-observable-universe/lean/QOU/GroundRingAnnotations.lean`.
+
 When an ambiguity is detected, the Ontologist outputs:
 
 ```json

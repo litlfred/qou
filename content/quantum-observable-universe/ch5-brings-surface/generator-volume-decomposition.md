@@ -18,8 +18,7 @@ $$
   a_i \, \sigma_i + b_i
 $$
 
-where each crossing factor is $C_{ij}(\sigma_i) = c_j \sigma_i
-+ d_j$ with coefficients depending on the pair type:
+where each crossing factor is $C_{ij}(\sigma_i) = c_j \sigma_i + d_j$ with coefficients depending on the pair type:
 
 $$
   (c_j, d_j) \;=\;
@@ -205,7 +204,7 @@ where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
 The nuclear energy decomposes as:
 
 $$
-  \ln|\mathrm{tr}(\bar{\mathcal{N}})| \;=\;
+  \ln|\mathrm{tr}(\mathcal{N})| \;=\;
   \sum_{i=0}^{A-2} \ln|\hat{V}_i|
 $$
 

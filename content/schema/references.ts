@@ -1327,6 +1327,273 @@ export const references: CSLData[] = [
     page: "443-458",
     DOI: "10.1016/S0550-3213(98)00668-3",
   }),
+
+  // ── Thurston 1978 ──────────────────────────────────────────────
+  ref({
+    id: "thurston1978",
+    type: "book",
+    title: "The Geometry and Topology of Three-Manifolds",
+    author: [{ family: "Thurston", given: "William P." }],
+    publisher: "Princeton University",
+    note: "Lecture notes",
+    issued: { "date-parts": [[1978]] },
+  }),
+
+  // ── Bring 1786 ────────────────────────────────────────────────
+  ref({
+    id: "bring1786",
+    type: "article-journal",
+    title: "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum",
+    author: [{ family: "Bring", given: "Erland Samuel" }],
+    "container-title": "Promotionschrift, Lund",
+    issued: { "date-parts": [[1786]] },
+  }),
+
+  // ── Deligne 2007 ──────────────────────────────────────────────
+  ref({
+    id: "deligne2007",
+    type: "chapter",
+    title: "Catégories tannakiennes",
+    author: [{ family: "Deligne", given: "Pierre" }],
+    "container-title": "The Grothendieck Festschrift",
+    publisher: "Birkhäuser Boston",
+    volume: "II",
+    page: "111-195",
+    DOI: "10.1007/978-0-8176-4575-5_3",
+    issued: { "date-parts": [[2007]] },
+  }),
+
+  // ── Kauffman 1991 ─────────────────────────────────────────────
+  ref({
+    id: "kauffman1991",
+    type: "book",
+    title: "Knots and Physics",
+    author: [{ family: "Kauffman", given: "Louis H." }],
+    publisher: "World Scientific",
+    "publisher-place": "Singapore",
+    ISBN: "978-981-02-0344-3",
+    issued: { "date-parts": [[1991]] },
+  }),
+
+  // ── Kawauchi 1996 ─────────────────────────────────────────────
+  ref({
+    id: "kawauchi1996",
+    type: "book",
+    title: "A Survey of Knot Theory",
+    author: [{ family: "Kawauchi", given: "Akio" }],
+    publisher: "Birkhäuser Verlag",
+    "publisher-place": "Basel",
+    ISBN: "978-3-0348-9227-8",
+    DOI: "10.1007/978-3-0348-9227-8",
+    issued: { "date-parts": [[1996]] },
+  }),
+
+  // ── Morton 1986 ───────────────────────────────────────────────
+  ref({
+    id: "morton1986",
+    type: "article-journal",
+    title: "Seifert circles and knot polynomials",
+    author: [{ family: "Morton", given: "Hugh R." }],
+    "container-title": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    volume: "99",
+    issue: "1",
+    page: "107-109",
+    DOI: "10.1017/S0305004100063982",
+    issued: { "date-parts": [[1986]] },
+  }),
+
+  // ── Murphy 1992 ───────────────────────────────────────────────
+  ref({
+    id: "murphy1992",
+    type: "article-journal",
+    title: "On the representation theory of the symmetric groups and associated Hecke algebras",
+    author: [{ family: "Murphy", given: "G. E." }],
+    "container-title": "Journal of Algebra",
+    volume: "152",
+    issue: "2",
+    page: "492-513",
+    DOI: "10.1016/0021-8693(92)90139-D",
+    issued: { "date-parts": [[1992]] },
+  }),
+
+  // ── Rosso–Jones 1993 ──────────────────────────────────────────
+  ref({
+    id: "rosso-jones1993",
+    type: "article-journal",
+    title: "On the invariants of torus knots derived from quantum groups",
+    author: [
+      { family: "Rosso", given: "Marc" },
+      { family: "Jones", given: "Vaughan F. R." },
+    ],
+    "container-title": "Journal of Knot Theory and Its Ramifications",
+    volume: "2",
+    issue: "1",
+    page: "97-112",
+    DOI: "10.1142/S0218216593000064",
+    issued: { "date-parts": [[1993]] },
+  }),
+
+  // ── Kazhdan–Lusztig 1979 ──────────────────────────────────────
+  ref({
+    id: "kazhdan-lusztig1979",
+    type: "article-journal",
+    title: "Representations of Coxeter groups and Hecke algebras",
+    author: [
+      { family: "Kazhdan", given: "David" },
+      { family: "Lusztig", given: "George" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    volume: "53",
+    issue: "2",
+    page: "165-184",
+    DOI: "10.1007/BF01390031",
+    issued: { "date-parts": [[1979]] },
+  }),
+
+  // ── Kronheimer–Mrowka 2004 ────────────────────────────────────
+  ref({
+    id: "kronheimer2004",
+    type: "article-journal",
+    title: "Witten's conjecture and Property P",
+    author: [
+      { family: "Kronheimer", given: "Peter B." },
+      { family: "Mrowka", given: "Tomasz S." },
+    ],
+    "container-title": "Geometry & Topology",
+    volume: "8",
+    page: "295-310",
+    DOI: "10.2140/gt.2004.8.295",
+    issued: { "date-parts": [[2004]] },
+  }),
+
+  // ── Weil 1948 (Courbes algébriques) ─────────────────────────
+  ref({
+    id: "weil1948",
+    type: "book",
+    title: "Sur les courbes algébriques et les variétés qui s'en déduisent",
+    author: [
+      { family: "Weil", given: "André" },
+    ],
+    publisher: "Hermann",
+    "publisher-place": "Paris",
+    issued: { "date-parts": [[1948]] },
+  }),
+
+  // ── von Koch 1901 (RH ↔ PNT error) ─────────────────────────
+  ref({
+    id: "vonkoch1901",
+    type: "article-journal",
+    title: "Sur la distribution des nombres premiers",
+    author: [
+      { family: "von Koch", given: "Helge" },
+    ],
+    "container-title": "Acta Mathematica",
+    issued: { "date-parts": [[1901]] },
+    volume: "24",
+    page: "159-182",
+    DOI: "10.1007/BF02403071",
+  }),
+
+  // ── Rosen 2002 (Function-field number theory) ───────────────
+  ref({
+    id: "rosen2002",
+    type: "book",
+    title: "Number Theory in Function Fields",
+    author: [
+      { family: "Rosen", given: "Michael" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[2002]] },
+    DOI: "10.1007/978-1-4757-6046-0",
+    collection_title: "Graduate Texts in Mathematics",
+    volume: "210",
+  }),
+
+  // ── Milne 2013 (Lectures on Étale Cohomology) ──────────────
+  ref({
+    id: "milne2013",
+    type: "book",
+    title: "Lectures on Étale Cohomology",
+    author: [
+      { family: "Milne", given: "James S." },
+    ],
+    publisher: "online notes",
+    issued: { "date-parts": [[2013]] },
+    URL: "https://www.jmilne.org/math/CourseNotes/LEC.pdf",
+  }),
+
+  // ── Coecke & Kissinger 2017 (Picturing Quantum Processes) ──
+  ref({
+    id: "coecke2017",
+    type: "book",
+    title: "Picturing Quantum Processes: A First Course in Quantum Theory and Diagrammatic Reasoning",
+    author: [
+      { family: "Coecke", given: "Bob" },
+      { family: "Kissinger", given: "Aleks" },
+    ],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[2017]] },
+    ISBN: "978-1-107-10422-8",
+    DOI: "10.1017/9781316219317",
+  }),
+
+  // ── Haag 1996 (Local Quantum Physics) ─────────────────────
+  ref({
+    id: "haag1996",
+    type: "book",
+    title: "Local Quantum Physics: Fields, Particles, Algebras",
+    author: [
+      { family: "Haag", given: "Rudolf" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "Berlin, Heidelberg",
+    issued: { "date-parts": [[1996]] },
+    edition: "2",
+    "collection-title": "Texts and Monographs in Physics",
+    ISBN: "978-3-642-61458-3",
+    DOI: "10.1007/978-3-642-61458-3",
+  }),
+
+  // ── Hawking 1975 ────────────────────────────────────────────────
+  ref({
+    id: "hawking1975",
+    type: "article-journal",
+    title: "Particle creation by black holes",
+    author: [{ family: "Hawking", given: "S. W." }],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1975]] },
+    volume: "43",
+    issue: "3",
+    page: "199-220",
+    DOI: "10.1007/BF02345020",
+  }),
+
+  // ── Bekenstein 1973 ─────────────────────────────────────────────
+  ref({
+    id: "bekenstein1973",
+    type: "article-journal",
+    title: "Black holes and entropy",
+    author: [{ family: "Bekenstein", given: "J. D." }],
+    "container-title": "Physical Review D",
+    issued: { "date-parts": [[1973]] },
+    volume: "7",
+    issue: "8",
+    page: "2333-2346",
+    DOI: "10.1103/PhysRevD.7.2333",
+  }),
+
+  // ── Penrose 2010 ───────────────────────────────────────────────
+  ref({
+    id: "penrose2010",
+    type: "book",
+    title: "Cycles of Time: An Extraordinary New View of the Universe",
+    author: [{ family: "Penrose", given: "Roger" }],
+    publisher: "Bodley Head",
+    "publisher-place": "London",
+    issued: { "date-parts": [[2010]] },
+    ISBN: "978-0-224-08036-1",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

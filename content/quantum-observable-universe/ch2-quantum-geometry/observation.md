@@ -82,8 +82,7 @@ physical roles:
 
 An intent at a **point** is the restriction
 $\mathfrak{I}_p = \mathfrak{I}|_p$, recovering the germ-level
-endomorphism $\mathfrak{I}_p \colon A / \mathfrak{m}_p^2 \to
-A / \mathfrak{m}_p^2$.  The sign $\epsilon$ determines
+endomorphism $\mathfrak{I}_p \colon A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$.  The sign $\epsilon$ determines
 whether the crossing injected at $p$ is $\sigma_i$ (forward,
 $\epsilon = +1$) or $\sigma_i^{-1}$ (backward,
 $\epsilon = -1$) in the braiding-induced ordering $\prec_c$.

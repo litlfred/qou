@@ -18,7 +18,7 @@ and antisymmetric channels
 ([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
 
 $$
-  \mathfrak{E}_{\mathrm{cross}} \;=\;
+  \mathbf{E}_{\mathrm{cross}} \;=\;
   \underbrace{E_{\mathrm{sym}}}_{\text{mass (strong)}}
   \;+\;
   \underbrace{E_{\mathrm{anti}}}_{\text{Coulomb (EM)}}.
@@ -26,14 +26,14 @@ $$
 
 The antisymmetric component — the Coulomb channel — reverses sign
 under the crossing reversal involution $\sigma \colon K \mapsto
-\sigma(K)$, which implements charge conjugation $C$ at the
+K^{\sigma}$, which implements charge conjugation $C$ at the
 categorical level.  Electromagnetic charge is therefore the
 **eigenvalue of the involution** $\sigma$ acting on the crossing
 energy:
 
 $$
-  Q(K) \;=\; \frac{1}{2}\bigl(\mathfrak{E}_{\mathrm{cross}}(K)
-  - \mathfrak{E}_{\mathrm{cross}}(\sigma(K))\bigr).
+  Q(K) \;=\; \frac{1}{2}\bigl(\mathbf{E}_{\mathrm{cross}}(K)
+  - \mathbf{E}_{\mathrm{cross}}(K^{\sigma})\bigr).
 $$
 
 This involution descends from three interlocking structures on the
@@ -45,7 +45,7 @@ Bring's surface:
    the electromagnetic coupling is the component of the Skein
    pairing that is *odd* under this involution.
 
-2. **The complex structure** on the chiral elliptic curve $E_z$:
+2. **The complex structure** on the chiral elliptic curve $\mathcal{E}_z$:
    the Bring's surface admits a Kähler structure inherited from the
    embedding $\Sigma_4 \hookrightarrow \mathbb{P}^4$.  The complex
    structure $J$ satisfies $J^2 = -1$ and determines the phase of
@@ -53,7 +53,7 @@ Bring's surface:
    number of this phase around the $\mathrm{U}(1)$ fiber of the
    Hopf map $\mathrm{SU}(2) \to \mathbb{CP}^1$.
 
-3. **The symplectic pairing** on the color tube coordinates:
+3. **The symplectic pairing** on the coral tube coordinates:
    the T-duality involution $\iota \colon (X, z) \mapsto (z, X)$
    on the symmetric cubic $F(X, z) = F(z, X)$ exchanges chiral
    and spacetime degrees of freedom.  The symplectic form
@@ -86,7 +86,7 @@ of the trefoil
 |----------|-------|---------------------|
 | Winding | $9 = 3 \times 3$ | Interpolates 3 color copies of $T_{2,3}$ |
 | Genus | $4$ (saturating) | Maximal topological complexity |
-| Crossings | $9$ (all same sign) | Three crossing triples, one per color tube |
+| Crossings | $9$ (all same sign) | Three crossing triples, one per coral tube |
 | Hyperbolic volume | $0$ | Massless carrier (gluon) |
 | Meridional strands | $m = 2$ | Same winding family as leptons/quarks |
 
@@ -107,7 +107,7 @@ surface.
 
 **Asymptotic freedom** (weakening at short distances) corresponds to
 the local triviality of the torus embedding: at scales smaller than
-the color tube radius, the three strands of $T_{2,9}$ are locally
+the coral tube radius, the three strands of $T_{2,9}$ are locally
 parallel, and the binding provided by their global winding becomes
 negligible.
 
@@ -133,8 +133,7 @@ quarks between generations and converts quarks to leptons (and vice
 versa) because $T_{3,5}$ topologically connects both sectors.
 
 **Parity violation** follows from the Skein asymmetry at $q \neq 1$:
-the Skein relation $q[L_+] - q^{-1}[L_-] =
-(q^{1/2} - q^{-1/2})[L_0]$ treats positive and negative crossings
+the Skein relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$ treats positive and negative crossings
 differently.  The weak force, mediated by $T_{3,5}$, inherits this
 asymmetry maximally because $T_{3,5}$ has the highest crossing count
 ($10$) among generators — the $q$-vs-$q^{-1}$ imbalance accumulates

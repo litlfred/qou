@@ -122,8 +122,8 @@ the two strands at the crossing:
 | Interaction | $K_1$ | $K_2$ | $T(q)$ | Physical |
 |-------------|-------|-------|--------|----------|
 | $\mathfrak{u}\mathfrak{u}$ | $T_{2,3}$ | $T_{2,3}$ | $T_{pp}$ | proton-proton repulsion |
-| $\mathfrak{d}\mathfrak{d}$ | $\overline{T_{2,3}}$ | $\overline{T_{2,3}}$ | $T_{nn}$ | neutron-neutron |
-| $\mathfrak{u}\mathfrak{d}$ | $T_{2,3}$ | $\overline{T_{2,3}}$ | $T_{\mathrm{mix}}$ | proton-neutron binding |
+| $\mathfrak{d}\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $T_{2,3}^{\sigma}$ | $T_{nn}$ | neutron-neutron |
+| $\mathfrak{u}\mathfrak{d}$ | $T_{2,3}$ | $T_{2,3}^{\sigma}$ | $T_{\mathrm{mix}}$ | proton-neutron binding |
 
 ### Electromagnetic interactions (electron-level)
 
@@ -201,8 +201,7 @@ $$
 $$
 
 Since $T_{\gamma e}$ has eigenvalues
-$\lambda_{\pm} = \frac{1}{2}\bigl[(q - q^{-1}) \pm
-\sqrt{(q - q^{-1})^2 + 4}\bigr]$, the $n$-th power grows as
+$\lambda_{\pm} = \frac{1}{2}\bigl[(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}\bigr]$, the $n$-th power grows as
 $\lambda_+^n$, and the energy scales as:
 
 $$

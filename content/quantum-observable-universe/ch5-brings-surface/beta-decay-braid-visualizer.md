@@ -49,8 +49,8 @@ table ([building blocks](#rem:building-block-knots)):
 The $\mathfrak{u}$-quark strands are drawn in blue (solid),
 $\mathfrak{d}$-quark strands in red (outlined), matching the
 crossing-chirality convention where positive crossings are
-$\mathfrak{u}$-$\mathfrak{u}$ and negative crossings are
-$\mathfrak{d}$-$\mathfrak{d}$.
+$\mathfrak{u}\text{-}\mathfrak{u}$ and negative crossings are
+$\mathfrak{d}\text{-}\mathfrak{d}$.
 
 ## The $10$-crossing budget
 

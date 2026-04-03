@@ -23,7 +23,7 @@ $$
    [crossing energy](#def:crossing-energy) reduces to
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(\mathcal{S}_N)
+  \mathbf{E}_{\mathrm{cross}}(\mathcal{S}_N)
   \;=\;
   N \cdot \tfrac{1}{2}(n_+ + n_-)(q + q^{-1})
 $$
@@ -33,9 +33,9 @@ $$
    ([decomposition](#prop:crossing-energy-decomposition)).
 
 3. **Enhanced binding per baryon.**  The strange quark
-   $\mathfrak{s} = \overline{T_{2,5}}$ contributes $5$ negative
+   $\mathfrak{s} = T_{2,5}^{\sigma}$ contributes $5$ negative
    crossings to the Borromean braid word, versus $3$ for the down
-   quark $\mathfrak{d} = \overline{T_{2,3}}$.  For each baryon unit:
+   quark $\mathfrak{d} = T_{2,3}^{\sigma}$.  For each baryon unit:
 
 $$
   n_-^{(\mathrm{uds})} = 3 + 5 = 8,
@@ -46,10 +46,10 @@ $$
    The binding component per baryon satisfies
 
 $$
-  \mathfrak{E}_{\mathrm{bind}}^{(\mathrm{uds})}
+  \mathbf{E}_{\mathrm{bind}}^{(\mathrm{uds})}
   \;=\; 8\,q^{-1}
   \;>\; 6\,q^{-1}
-  \;=\; \mathfrak{E}_{\mathrm{bind}}^{(\mathrm{udd})}
+  \;=\; \mathbf{E}_{\mathrm{bind}}^{(\mathrm{udd})}
 $$
 
    for all $q > 0$.  Strange matter has **strictly more
@@ -57,7 +57,7 @@ $$
 
 *Proof.*
 Part (1) follows from the crossing-orientation partition.
-In the Borromean triple, the up quark occupies a color tube
+In the Borromean triple, the up quark occupies a coral tube
 with positive orientation ($+2/3$ charge), while the down
 and strange quarks occupy tubes with negative orientation
 ($-1/3$ each).  The Coulomb charge
@@ -65,13 +65,13 @@ $Q = \frac{1}{2}(n_+ - n_-)$ vanishes by the partition
 $\{+, -, -\}$, independent of the specific torus knot types.
 
 Part (2) is immediate from the decomposition
-$\mathfrak{E}_{\mathrm{cross}} = \text{strong} + Q \cdot (q - q^{-1})$
+$\mathbf{E}_{\mathrm{cross}} = \text{strong} + Q \cdot (q - q^{-1})$
 with $Q = 0$.
 
 Part (3): the crossing count follows from the braid index.
 The trefoil $T_{2,3}$ has minimal braid word $\sigma_1^3$
 ($3$ crossings); the cinquefoil $T_{2,5}$ has $\sigma_1^5$
-($5$ crossings).  Under mirror, $\overline{T_{2,5}}$ has $5$
+($5$ crossings).  Under mirror, $T_{2,5}^{\sigma}$ has $5$
 negative crossings.  The binding component
 $n_- \cdot q^{-1}$ is therefore larger for strange matter by
 a factor of $8/6 = 4/3$. $\square$

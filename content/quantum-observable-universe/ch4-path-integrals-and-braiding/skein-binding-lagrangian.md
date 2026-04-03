@@ -1,12 +1,11 @@
 The **Skein binding Lagrangian** is not a new Lagrangian: it is
 the categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
-([canonical action](#def:qou-canonical-action)) evaluated on the
+([canonical action](#prop:qou-canonical-action)) evaluated on the
 field configuration $\psi = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$.
 
 The categorical Lagrangian
 ([categorical Lagrangian](#def:categorical-lagrangian))
-$\mathcal{L}_q = \mathcal{D}_\nabla^2 + \psi^* \otimes
-\mathcal{D}_\nabla\psi$ decomposes via the Frobenius--Hopf structure
+$\mathcal{L}_q = \mathcal{D}_\nabla^2 + \psi^* \otimes \mathcal{D}_\nabla\psi$ decomposes via the Frobenius--Hopf structure
 into gravity + gauge + matter sectors.  When the state $\psi$ is a
 multi-nucleon Hopf link, the Skein crossing asymmetry
 ([crossing asymmetry](#rem:skein-crossing-asymmetry)) further
@@ -92,7 +91,7 @@ $$
   a_S = \tfrac{1}{2}(q + q^{-1}) \cdot \lambda_S.
 $$
 
-At $q = 1.10997$: $a_V \approx 15.56$ MeV,
+At $q = q_0$: $a_V \approx 15.56$ MeV,
 $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV,
 $a_S \approx 17.23$ MeV, $a_A \approx 23.29$ MeV.
 
@@ -114,7 +113,7 @@ interactions.
 
 **Derivation from the canonical action.**
 The five terms arise from the three sectors of $\mathcal{S}_q$
-([canonical action](#def:qou-canonical-action)) as follows:
+([canonical action](#prop:qou-canonical-action)) as follows:
 
 | Canonical sector | Evaluation on $L$ | Nuclear term |
 |-----------------|-------------------|--------------|

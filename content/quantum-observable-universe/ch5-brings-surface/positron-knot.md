@@ -1,12 +1,12 @@
-The **positron** is the mirror trefoil $\sigma(T_{2,3})$ in the
+The **positron** is the mirror trefoil $T_{2,3}^{\sigma}$ in the
 lepton sector — the antiparticle of the electron.
 
 $$
-  e^+ \;=\; \sigma(T_{2,3}) \qquad \text{(mirror trefoil, outlined ○)}
+  e^+ \;=\; T_{2,3}^{\sigma} \qquad \text{(mirror trefoil, outlined ○)}
 $$
 
 The positron is the same knot as the down quark, distinguished
-by environment (orbital vs. color tube).  It carries reversed
+by environment (orbital vs. coral tube).  It carries reversed
 crossing chirality: where the electron has Coulomb charge
 $Q = -1$, the positron has $Q = +1$.
 

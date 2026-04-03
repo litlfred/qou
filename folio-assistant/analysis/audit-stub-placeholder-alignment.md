@@ -118,7 +118,7 @@ shown to be within tolerance of CODATA.
 **Severity**: **HIGH** — the terminal resolution is the paper's headline
 result. The Lean doesn't derive it; it asserts it.
 
-Note: The lean-archive file `HadronicMass.lean` does attempt this
+Note: The content/quantum-observable-universe/lean file `HadronicMass.lean` does attempt this
 derivation but uses 3 axioms for the `Real.rpow` computations.
 
 ---
@@ -421,7 +421,7 @@ conclusions.
 4. **Priority 4**: Add `d_squared_zero` to `HigherForms`.
 5. **Priority 5**: Make `terminal-resolution.lean` derive predictions
    from `substrate_q` rather than hardcoding them (or clearly mark
-   as axiom with `-- Ref:` citing the lean-archive derivation).
+   as axiom with `-- Ref:` citing the content/quantum-observable-universe/lean derivation).
 6. **Priority 6**: Convert key structure-as-theorem declarations
    (`RankOneGaugeData`) to actual theorems, or document the gap
    explicitly.

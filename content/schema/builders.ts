@@ -15,6 +15,7 @@ export {
   prose,
   equation,
   diagram,
+  simulator,
   section,
   sectionRef,
   chapter,

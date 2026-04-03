@@ -32,8 +32,7 @@ $|\theta|^{-2}$ falloff of classical Airy diffraction with
 $|\theta|^{-d_H}$.
 
 **Julia set at the golden ratio.**
-At the golden threshold $q_{\mathrm{gold}} = 1/\varphi^2
-\approx 0.382$, the effective angle on the main cardioid is
+At the golden threshold $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$, the effective angle on the main cardioid is
 
 $$
   \theta_{\mathrm{gold}}

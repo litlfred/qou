@@ -24,7 +24,7 @@ molecular collisions and continuous time from discrete Reeb
 operations.
 
 **Why $\sim 10$ operations is the crossover.**
-At $q = 1.1097$
+At $q = q_0$
 ([local substrate $q$](#prop:local-substrate-q)),
 $t_P \approx 10.1$
 ([iterations per Reeb circuit](#prop:reeb-operations-per-planck)).
@@ -32,8 +32,7 @@ The central limit theorem applies to sums of $\sim 10$
 independent operations: the statistical fluctuations in the
 aggregate are $O(1/\sqrt{10}) \approx 30\%$.  This is large
 enough that individual discrete steps are not yet fully smoothed
-— quantum-gravitational discreteness should produce $O(\hbar_q)
-\approx 10\%$ corrections to the continuous Reeb flow.
+— quantum-gravitational discreteness should produce $O(\hbar_q) \approx 10\%$ corrections to the continuous Reeb flow.
 
 By contrast, at $q = 1.01$ ($t_P \approx 101$), fluctuations
 are $O(1/\sqrt{101}) \approx 10\%$ and the continuous
@@ -51,7 +50,7 @@ tick.  The dynamics is fully resolved — the Julia set iteration
 $f_q$ is applied once, and the orbit structure of $f_q$ over
 $\mathbb{F}_\pp$ is visible step by step.
 
-At $q = 1.1097$ ($t_P \approx 10$): each Planck unit contains
+At $q = q_0$ ($t_P \approx 10$): each Planck unit contains
 $\sim 10$ braiding evaluations.  Within one Planck time, the
 exceptional divisor undergoes $\sim 10$ iterations of $f_q$,
 each advancing the link-length resolution by one crossing.

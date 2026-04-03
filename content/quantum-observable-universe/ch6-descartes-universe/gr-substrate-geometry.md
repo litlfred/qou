@@ -8,12 +8,14 @@ $M$.
 
 Variation of $S_q$ ([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)) with respect
 to the Levi form $L_\theta$ yields field equations of the schematic form
+
 $$
   \frac{\delta S_q}{\delta L_\theta}
   \;=\; 0
   \qquad\Longrightarrow\qquad
   \mathrm{Ric}_{g_\theta} \;=\; T^{(q)},
 $$
+
 where $\mathrm{Ric}_{g_\theta}$ is the Webster Ricci curvature and
 $T^{(q)}$ is a $q$-weighted stress-energy $2$-tensor on $H$ (both
 coordinate-free objects).  The geometry of $M$ is forced to curve to

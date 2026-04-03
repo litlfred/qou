@@ -26,7 +26,7 @@ reabsorbed before it can descend to the base level $A_0$.
 
 The [recursive brane tower](#def:recursive-brane-tower)
 $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
-stratifies excitations by their [jet prolongation](#def:jet-prolongation)
+stratifies excitations by their [jet prolongation](#prop:jet-prolongation)
 level.  Physical (on-shell) particles live at level $A_0$ — they are
 knot configurations in the base algebra.  Virtual particles live at
 levels $A_n$ with $n \geq 1$:

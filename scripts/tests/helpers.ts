@@ -12,7 +12,7 @@ import { execSync } from "child_process";
 // ── Paths ───────────────────────────────────────────────────────
 
 export const REPO_ROOT = resolve(import.meta.dir, "../..");
-export const LEAN_DIR = join(REPO_ROOT, "lean-archive");
+export const LEAN_DIR = join(REPO_ROOT, "content/quantum-observable-universe/lean");
 export const CHAPTERS_DIR = join(REPO_ROOT, "chapters");
 export const SCHEMAS_DIR = join(REPO_ROOT, "schemas");
 

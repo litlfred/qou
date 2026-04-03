@@ -1,7 +1,7 @@
 **Tritium beta decay written as a knot/link equation.**
 
 The decay ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- +
-\bar{\nu}_e$ (half-life $\approx 12.3$ yr) is the simplest
+\nu_e^{\sigma}$ (half-life $\approx 12.3$ yr) is the simplest
 non-trivial beta decay: $A = 3$, one neutron converts to a
 proton.
 
@@ -70,9 +70,9 @@ of $\mathfrak{n}_1$, at generator $\sigma_5$.  Before: $d$-$d$
 The **knot equation** for the decay:
 
 $$
-  q \, [\bar{\mathcal{N}}(1, 2)]
+  q \, [\mathcal{N}(1, 2)]
   \;-\;
-  q^{-1} [\bar{\mathcal{N}}(2, 1)]
+  q^{-1} [\mathcal{N}(2, 1)]
   \;=\;
   (q^{1/2} - q^{-1/2})
   \;\left[\;
@@ -108,12 +108,12 @@ The factored Markov trace
 gives the parent and daughter traces as products over generators:
 
 $$
-  \mathrm{tr}(\bar{\mathcal{N}}(1,2))
+  \mathrm{tr}(\mathcal{N}(1,2))
   = \prod_{i=0}^{7} (z \cdot a_i^{\mathrm{par}} + b_i^{\mathrm{par}})
 $$
 
 $$
-  \mathrm{tr}(\bar{\mathcal{N}}(2,1))
+  \mathrm{tr}(\mathcal{N}(2,1))
   = \prod_{i=0}^{7} (z \cdot a_i^{\mathrm{dau}} + b_i^{\mathrm{dau}})
 $$
 
@@ -133,16 +133,16 @@ $$
   \;=\;
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
   \;=\;
-  \frac{q \mu_d + q^{-1} \mu_d}{q^{1/2} + q^{-1/2}}
+  \frac{q \mu_{\mathfrak{d}} + q^{-1} \mu_{\mathfrak{d}}}{q^{1/2} + q^{-1/2}}
   \;-\;
-  \frac{q \mu_u + q^{-1} \mu_d}{q^{1/2} + q^{-1/2}}
+  \frac{q \mu_{\mathfrak{u}} + q^{-1} \mu_{\mathfrak{d}}}{q^{1/2} + q^{-1/2}}
 $$
 
 $$
   \;=\;
-  \frac{(q - 1)(\mu_d - \mu_u) + q^{-1}(\mu_d - \mu_d)}{q^{1/2} + q^{-1/2}}
+  \frac{(q - 1)(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}) + q^{-1}(\mu_{\mathfrak{d}} - \mu_{\mathfrak{d}})}{q^{1/2} + q^{-1/2}}
   \;=\;
-  \frac{q(\mu_d - \mu_u)}{q^{1/2} + q^{-1/2}}
+  \frac{q(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})}{q^{1/2} + q^{-1/2}}
 $$
 
 Wait — this needs the full pair Skein difference, not just the
@@ -177,4 +177,4 @@ $$
 
 This is the exact knot equation for the tritium $Q$-value:
 no approximation, no fitted parameter.  Every term is determined
-by $q = 1.110$ and the quark content of the nucleons.
+by $q_0$ and the quark content of the nucleons.

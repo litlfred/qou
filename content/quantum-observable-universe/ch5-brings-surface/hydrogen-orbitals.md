@@ -2,7 +2,7 @@
 Hydrogen is a large trefoil (electron) with a small Borromean
 knot (proton) threaded through it.  The proton sits at the
 center — a dense, compact $\mathcal{B}_3$ of three unknots with
-$\mathrm{Vol} = 7.328$.  The electron $T_{2,3}$ is a much
+$\mathrm{Vol} \approx 7.328$.  The electron $T_{2,3}$ is a much
 larger trefoil that loops around the proton, Hopf-linked by
 passing through the proton's Seifert surface once.
 
@@ -18,7 +18,7 @@ it wraps around the proton.
     \ar[d, "\bowtie"', "\text{Hopf}", dashed] & \\
   & \underset{\text{\normalsize small } \mathcal{B}_3}{\bullet}
     & \\
-  & \underset{\text{proton (anchor)}}{\mathrm{Vol} = 7.328} &
+  & \underset{\text{proton (anchor)}}{\mathrm{Vol} \approx 7.328} &
 \end{tikzcd}
 ```
 
@@ -45,7 +45,7 @@ $$
   \text{two R-I moves at exceptional divisor.}
 $$
 
-The bare mass $m_e = 0.511$ MeV is unchanged — R-I preserves
+The bare mass $m_e \approx 0.511$ MeV is unchanged — R-I preserves
 the knot type
 ([Reidemeister invariance](#prop:reidemeister-mass-invariance)).
 The binding energy $E_n = -13.6/n^2$ eV changes — R-I changes

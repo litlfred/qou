@@ -22,8 +22,6 @@ where $\Omega^{\pm}(A) = \ker(\mathrm{id} \mp \star_q)$.
 The instanton condition
 ([categorical instanton](#def:categorical-instanton)) is exactly
 $F_\nabla \in \ker(\pi^-)$, i.e. $F_\nabla^- = 0$.
-In the archimedean realisation ([self-dual curvature](#prop:self-dual-curvature)),
+In the archimedean realisation ([self-dual curvature](#ex:self-dual-curvature)),
 $\star_q$ specialises to $*_H$ and the sequence becomes
-$0 \to \Gamma(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)) \to
-\Gamma(\Lambda^2 H^* \otimes \mathrm{Ad}(P)) \to
-\Gamma(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)) \to 0$.
+$0 \to \Gamma(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)) \to \Gamma(\Lambda^2 H^* \otimes \mathrm{Ad}(P)) \to \Gamma(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)) \to 0$.

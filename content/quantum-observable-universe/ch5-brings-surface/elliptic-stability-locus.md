@@ -1,13 +1,13 @@
-The stability curve and the chiral fibration of Bring's surface
+The stability curve and the coral fibration of Bring's surface
 share the same algebraic origin.  We conjecture that the
 nuclear degeneracy locus — the curve in the $(p, A)$-plane where
 adjacent nuclei have equal energy — is an elliptic curve
-isogenous to the chiral fiber $E_z$.
+isogenous to the coral fiber $\mathcal{E}_z$.
 
 **The two cubics.**
 
-The chiral elliptic curve
-([chiral elliptic](#prop:chiral-elliptic)) at spacetime ratio
+The coral elliptic curve
+([coral elliptic](#prop:coral-elliptic)) at spacetime ratio
 $z$ is
 
 $$
@@ -137,12 +137,12 @@ locus would intersect the stability curve.
 
 If the conjecture holds, then:
 
-- The **three color tubes** $(r, g, b)$ of the chiral
+- The **three coral tubes** $(r, g, b)$ of the chiral
   fibration correspond to the **three sectors** of nuclear
   binding: volume (strong), Coulomb (electromagnetic), and
   Pauli (exclusion).
 
-- The **elliptic fiber** $E_z$ at spacetime $z$ encodes the
+- The **elliptic fiber** $\mathcal{E}_z$ at spacetime $z$ encodes the
   allowed baryon configurations at that point; the **stability
   elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed
   nuclear configurations at that proton count.

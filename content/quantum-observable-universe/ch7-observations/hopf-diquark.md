@@ -1,5 +1,5 @@
 A *Hopf diquark* is a pair of quarks
-$(\mathfrak{q}_i^a,\, \mathfrak{q}_j^b)$ in distinct color tubes
+$(\mathfrak{q}_i^a,\, \mathfrak{q}_j^b)$ in distinct coral tubes
 $a \neq b$ of the Bring's surface, joined by the Hopf link
 $\mathcal{L}_H$:
 
@@ -31,18 +31,18 @@ orientations $\epsilon_i, \epsilon_j \in \{+1, -1\}$, the Hopf
 crossing energy is
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(D_{ij}^{[ab]})
+  \mathbf{E}_{\mathrm{cross}}(D_{ij}^{[ab]})
   \;=\;
   \epsilon_i \cdot q^{\epsilon_i}
   \;+\;
   \epsilon_j \cdot q^{\epsilon_j}
   \;+\;
-  \mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H),
+  \mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H),
 $$
 
-where $\mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H)$ is the
+where $\mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H)$ is the
 linking contribution.  For an attractive (binding) diquark,
-$\mathfrak{E}_{\mathrm{cross}} < 0$ is required.
+$\mathbf{E}_{\mathrm{cross}} < 0$ is required.
 
 **Color representation.**
 

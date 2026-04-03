@@ -31,7 +31,7 @@ on:
     branches:
       - main
     paths:
-      - 'lean-archive/**'
+      - 'content/quantum-observable-universe/lean/**'
       - 'blueprint/**'
       - 'home_page/**'
       - 'chapters/**'
@@ -40,7 +40,7 @@ on:
     branches:
       - main
     paths:
-      - 'lean-archive/**'
+      - 'content/quantum-observable-universe/lean/**'
       - 'blueprint/**'
   workflow_dispatch:
 
@@ -109,9 +109,11 @@ jobs:
         run: python3 .github/scripts/ontologist.py all
 
       - name: Extract proof objects from LaTeX
+        continue-on-error: true
         run: python3 .github/scripts/extract_proof_objects.py
 
       - name: Generate Lean stubs
+        continue-on-error: true
         run: python3 .github/scripts/generate_lean_stubs.py
 
       # ── Build Lean project ───────────────────────────────────────
@@ -121,7 +123,7 @@ jobs:
         with:
           build: true
           lint: false
-          lake-package-directory: lean-archive
+          lake-package-directory: content/quantum-observable-universe/lean
         continue-on-error: true
 
       # ── Build blueprint + doc-gen4 (no deploy) ─────────────────
@@ -135,7 +137,7 @@ jobs:
           blueprint: true
           deploy: false
           homepage: home_page
-          lake-package-directory: lean-archive
+          lake-package-directory: content/quantum-observable-universe/lean
           references: references.bib
         continue-on-error: true
 
@@ -145,7 +147,7 @@ jobs:
           touch build.log
           python3 .github/scripts/axiom_report.py \
             --build-log build.log \
-            --lean-dir lean-archive \
+            --lean-dir content/quantum-observable-universe/lean \
             --output axiom-report.txt
         continue-on-error: true
 

@@ -1,6 +1,6 @@
 The axioms of
 [quantum universe](#def:quantum-universe)
-and [](#def:quantum-observable-universe) are grounded in the algebraic
+and [quantum observable universe](#def:quantum-observable-universe) are grounded in the algebraic
 framework of topological quantum field theory (TQFT).
 
 *Frobenius--Hopf objects and 2d TQFT.*

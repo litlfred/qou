@@ -8,15 +8,15 @@ hadrons dissolve into free quarks and gluons — corresponds to the
 Color confinement in QOU is enforced by the $S_5$-invariance of
 the Skein module on Bring's surface
 ([chromaticity](#rem:q-chromaticity)): only $S_5$-invariant
-combinations of knots in the three color tubes yield positive
+combinations of knots in the three coral tubes yield positive
 $\tau$-evaluation.  This $S_5$-invariance is a property of the
 **smooth elliptic fiber** $\mathcal{E}_q$ — the chiral structure
-that relates the three color tubes.
+that relates the three coral tubes.
 
 At $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$, the
 elliptic fiber degenerates: $\mathcal{E}_q$ acquires a node,
 two roots of the Weierstrass equation coincide, and the three
-color tubes collapse to a degenerate configuration.  At this
+coral tubes collapse to a degenerate configuration.  At this
 point:
 
 1. The $S_5$ symmetry that enforces color neutrality **breaks**.
@@ -67,7 +67,7 @@ $$
 
 **Effective $q$ at finite temperature.**
 
-The physical substrate has $q = 1.1097$.  Temperature does not
+The physical substrate has $q = q_0$.  Temperature does not
 change $q$ itself, but it changes the **effective crossing
 energy** available to disrupt the Borromean structure.
 At temperature $T$, the thermal fluctuations supply energy
@@ -77,7 +77,7 @@ thermal energy matches the Hopf binding energy per baryon:
 $$
   k_B T_c
   \;\sim\;
-  |\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p})|
+  |\mathbf{E}_{\mathrm{cross}}(\mathfrak{p})|
   \;\sim\;
   \tfrac{1}{2}(q + q^{-1}) \cdot n_{\mathrm{link}},
 $$
@@ -95,7 +95,7 @@ $$
   \;\sim\;
   \frac{q - q_{\mathrm{gold}}}{q}
   \;=\;
-  \frac{1.1097 - 0.382}{1.1097}
+  \frac{q_0 - 0.382}{q_0}
   \;\approx\; 0.656.
 $$
 

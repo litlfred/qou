@@ -20,8 +20,7 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    ```
 
 3. **Monoidal compatibility:**
-   $(\mathrm{id}_X \otimes f)^{\dagger}
-   = \mathrm{id}_X \otimes f^{\dagger}$, i.e.
+   $(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$, i.e.
    the following square commutes:
 
    ```tex

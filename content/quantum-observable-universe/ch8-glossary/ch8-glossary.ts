@@ -15,7 +15,6 @@ import { chapter, section } from "../../schema/builders";
  * block in the relevant chapter, not here.
  */
 export default chapter({
-  number: 9,
   tabLabel: "G",
   title: "Glossary",
   label: "chap:glossary",
@@ -57,6 +56,35 @@ export default chapter({
       label: "sec:glossary-enrichment",
       blocks: [
         "glossary-r-linear-category",
+      ],
+    }),
+
+    section({
+      title: "Geometry and transport",
+      label: "sec:glossary-geometry",
+      blocks: [
+        "glossary-quantum-flatness",
+        "glossary-reeb-gauge-group",
+        "glossary-categorical-transport",
+        "glossary-categorical-q-torsion-leaf",
+        "glossary-descent",
+      ],
+    }),
+
+    section({
+      title: "Groups and symmetry",
+      label: "sec:glossary-groups",
+      blocks: [
+        "glossary-s3-group",
+      ],
+    }),
+
+    section({
+      title: "Elliptic and surface geometry",
+      label: "sec:glossary-elliptic",
+      blocks: [
+        "glossary-observed-value",
+        "glossary-weierstrass-projection",
       ],
     }),
   ],

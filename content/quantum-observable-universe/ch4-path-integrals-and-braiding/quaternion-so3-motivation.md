@@ -21,26 +21,25 @@ The key identifications are:
    ([SU(2) generators](#def:su2-generators)) correspond to the half-quaternion
    basis $\frac{1}{2}\mathbf{i},\, \frac{1}{2}\mathbf{j},\, \frac{1}{2}\mathbf{k}$.
 
-2. **$\operatorname{Im}\mathbb{H} \cong \mathfrak{su}(2)$ as Lie algebras.**
+2. **$\mathrm{Im}\mathbb{H} \cong \mathfrak{su}(2)$ as Lie algebras.**
    The purely imaginary quaternions form a $3$-dimensional real Lie algebra under
    the commutator bracket
    $[p, q] = pq - qp$.  In the half-quaternion basis
    $e_1 = \frac{1}{2}\mathbf{i}$, $e_2 = \frac{1}{2}\mathbf{j}$,
    $e_3 = \frac{1}{2}\mathbf{k}$, the structure constants are exactly
    $[e_a, e_b] = \epsilon_{abc}\,e_c$
-   (e.g.\ $[\tfrac{1}{2}\mathbf{i},\, \tfrac{1}{2}\mathbf{j}]
-   = \tfrac{1}{4}(\mathbf{ij} - \mathbf{ji}) = \tfrac{1}{2}\mathbf{k} = e_3$).
+   (e.g.\ $[\tfrac{1}{2}\mathbf{i},\, \tfrac{1}{2}\mathbf{j}] = \tfrac{1}{4}(\mathbf{ij} - \mathbf{ji}) = \tfrac{1}{2}\mathbf{k} = e_3$).
 
 3. **Adjoint action $=$ double cover $\mathrm{SU}(2) \to \mathrm{SO}(3)$.**
    Conjugation by a unit quaternion $\mathbf{q}$ acts on
-   $\operatorname{Im}\mathbb{H} \cong \mathbb{R}^3$ by orientation-preserving
+   $\mathrm{Im}\mathbb{H} \cong \mathbb{R}^3$ by orientation-preserving
    rotation:
 
    $$
      \mathrm{Ad}_{\mathbf{q}}\colon
      \mathbf{v} \;\longmapsto\; \mathbf{q}\,\mathbf{v}\,\mathbf{q}^{*},
      \qquad
-     \mathbf{v} \in \operatorname{Im}\mathbb{H}.
+     \mathbf{v} \in \mathrm{Im}\mathbb{H}.
    $$
 
    This is the adjoint representation, and the map

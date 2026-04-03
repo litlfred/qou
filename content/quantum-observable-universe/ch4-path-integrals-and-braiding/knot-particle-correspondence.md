@@ -4,7 +4,7 @@ $\mathcal{U}_q(\mathfrak{su}(2))$ and let $B_n$ act faithfully on
 $V^{\otimes n}$ via the $R$-matrix braiding
 ([braid action on tensor products](#prop:braid-action-tensor)).
 By $q$-Schur--Weyl duality
-([knot eigenbasis completeness](#thm:knot-eigenbasis-complete)),
+([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)),
 $V^{\otimes n}$ decomposes into irreducible summands labelled by
 partitions $\lambda \vdash n$.
 

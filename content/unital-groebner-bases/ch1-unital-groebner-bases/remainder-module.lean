@@ -4,7 +4,7 @@
 Content block for `def:remainder-module`.
 
 The authoritative formalization lives in
-`lean-archive/QOU/GrobnerShirshov/Basic.lean`, which defines:
+`content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`, which defines:
 - `QOU.GrobnerShirshov.isNormalForm` — an element is in normal form
   iff no rule's leading monomial divides any monomial in its support
 
@@ -16,7 +16,7 @@ single monomials.
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 4
-- lean-archive/QOU/GrobnerShirshov/Basic.lean §3 (isNormalForm)
+- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §3 (isNormalForm)
 -/
 
 import Mathlib.Data.List.Basic

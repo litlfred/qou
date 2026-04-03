@@ -8,6 +8,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:weight-decomposition"],
-  examples: ["ex:reeb-su2"],
+  examples: ["ex:reeb-su2", "ex:connection-su2"],
   tags: ["reeb", "derivation"],
 });

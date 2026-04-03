@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * and alternative Euler-characteristic scenarios.
  */
 export default chapter({
-  number: 8,
+  number: 9,
   title: "Information-Theoretic Perspectives",
   label: "chap:info-theory",
   sections: [
@@ -74,6 +74,24 @@ section({
       label: "sec:stat-mech",
       blocks: [
         "stat-mech-intro",
+      ],
+    }),
+    section({
+      title: "Horizons and Aeons",
+      label: "sec:horizons-aeons",
+      blocks: [
+        "jet-horizon",
+        "big-bang-state",
+        "cmb-boundary-datum",
+        "hawking-radiation",
+        "observable-subcategory",
+        "aeon",
+        "horizon-functor",
+        "cmb-functor",
+        "aeon-boundary-generates-chart",
+        "horizon-conformal-invariance",
+        "qou-is-ccc",
+        "penrose-ccc",
       ],
     }),
     section({

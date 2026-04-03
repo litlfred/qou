@@ -12,8 +12,7 @@ book.  To prevent confusion:
 
 - The **physicist's adjoint** $A^{\dagger}_{\mathrm{phys}}$ of an
   operator $A$ on a Hilbert space $\mathcal{H}$ satisfies
-  $\langle A^{\dagger}_{\mathrm{phys}} v, w \rangle =
-  \langle v, A w \rangle$.
+  $\langle A^{\dagger}_{\mathrm{phys}} v, w \rangle = \langle v, A w \rangle$.
 
 In the $\mathrm{SU}(2)$ realisation all three coincide:
 $f^{\dagger} = \overline{f \circ \mathrm{inv}}$, and the

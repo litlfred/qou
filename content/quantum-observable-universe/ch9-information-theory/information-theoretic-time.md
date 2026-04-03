@@ -15,7 +15,7 @@ $$
 $$
 
 where $N$ is the total number of iterations of $f_q$ applied
-since the initial state
+since a reference configuration $\mathcal{S}_0$
 ([bundle initial conditions](#def:bundle-initial-conditions)).
 Each iteration advances the admissible ordering by one step:
 $\mathcal{T}$ counts the position in the braiding-induced ordering $\prec_c$
@@ -40,14 +40,14 @@ into a continuous flow parameter.
 
 **Three regimes.**
 
-1. **Discrete regime** ($q \to \infty$, Big Bang).
+1. **Discrete regime** ($q \to \infty$, deep-quantum).
    $t_P \to 1$, so $t = \mathcal{T}$: the Reeb time coordinate
    *is* the integer step count.  Each tick is individually
    meaningful — one braiding, one jet prolongation, one link
    resolved in the exceptional divisor.  There is no sub-step
    structure and no averaging.  Time is a natural number.
 
-2. **Statistical regime** ($q = 1.1097$
+2. **Statistical regime** ($q = q_0$
    ([local substrate $q$](#prop:local-substrate-q)), our universe).
    $t_P \approx 10$: approximately $10$ Reeb operations compose
    each Planck unit.  Individual operations are no longer
@@ -81,7 +81,7 @@ operations; the right side is the continuous-flow time-average.
 They agree to $O(1/t_P) = O(\hbar_q)$ — the error vanishes
 precisely as the quantum Planck constant goes to zero.
 
-At $q = 1.1097$
+At $q = q_0$
 ([local substrate $q$](#prop:local-substrate-q)),
 $t_P \approx 10$: the Riemann approximation has
 $O(1/10) \approx 10\%$ relative error.  This is the scale at

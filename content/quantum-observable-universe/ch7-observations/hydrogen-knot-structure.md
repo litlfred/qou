@@ -31,7 +31,7 @@ Total: **3 unknots** + **1 trefoil**, linked by **1 Borromean**
 
 | Source | Mechanism | Mass |
 |--------|-----------|-----:|
-| $\mathrm{Vol}(\mathcal{B}_3) = 7.328$ | Borromean volume | $\sim 938$ MeV |
+| $\mathrm{Vol}(\mathcal{B}_3) \approx 7.328$ | Borromean volume | $\sim 938$ MeV |
 | $\mathrm{Vol}(T_{2,3}) = 0$ | Trefoil (torus knot) | $0$ |
 | $\mathrm{Vol}(\mathcal{L}_H) = 0$ | Hopf link (torus link) | $0$ |
 | Skein correction | Crossing asymmetry | $\sim 0.3$ MeV |
@@ -74,7 +74,7 @@ $$
 where $q^{-1}$ is the antisymmetric eigenvalue of the $R$-matrix
 (the bare coupling at a single crossing), and $[9]_q$, $[10]_q$
 are the $q$-deformed crossing numbers of the strong ($T_{2,9}$)
-and weak ($T_{3,5}$) force-carrier generators.  At $q = 1.1097$
+and weak ($T_{3,5}$) force-carrier generators.  At $q = q_0$
 this gives $\alpha^{-1} \approx 136.84$ (0.14% from CODATA).
 
 The two formulations are consistent:

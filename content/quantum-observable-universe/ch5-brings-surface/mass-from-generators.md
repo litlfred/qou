@@ -12,7 +12,7 @@ are non-hyperbolic), so the topological mass formula
 
 $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n})
-  \;=\; \frac{\operatorname{Vol}(T_{m,n})}{\hbar_q^{\,2}}
+  \;=\; \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}}
   \;=\; 0.
 $$
 
@@ -34,11 +34,11 @@ $$
 where the $K_i$ include the trefoil itself (with a brane-tower
 correction) and hyperbolic knots arising from crossing changes.
 The mass of the electron is the evaluation of this Skein polynomial
-at $q \approx 1.10997$:
+at $q = q_0$:
 
 $$
   m_e \;=\; \sum_i c_i(q) \cdot
-  \frac{\operatorname{Vol}(K_i)}{\hbar_q^{\,2}}.
+  \frac{\mathrm{Vol}(K_i)}{\hbar_q^{\,2}}.
 $$
 
 **Step 3: Skein transmutation generates generations.**
@@ -52,12 +52,12 @@ $$
 $$
 
 The figure-eight has hyperbolic volume
-$\operatorname{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$,
+$\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$,
 so the muon-to-electron mass ratio is governed by:
 
 $$
   \frac{m_\mu}{m_e}
-  \;=\; \frac{\operatorname{Vol}(4_1)}{\hbar_q^{\,2}}
+  \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^{\,2}}
   \;\approx\; \frac{2.02988}{(1 - q^{-1})^2}
   \;=\; 206.768\ldots
 $$
@@ -68,19 +68,19 @@ the tau arises from linking $T_{2,5}$ configurations at Reeb
 degree $3$.
 
 **Step 4: Color-tube linking generates hadronic mass.**
-Baryons require three generators threaded through the color tubes
+Baryons require three generators threaded through the coral tubes
 $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The proton
 is:
 
 $$
   \text{Proton} \;=\;
-  \ell_c\bigl(T_{2,3},\; T_{2,3},\; \sigma(T_{2,3})\bigr)
+  \ell_c\bigl(T_{2,3},\; T_{2,3},\; T_{2,3}^{\sigma}\bigr)
   \;\otimes\; \mathcal{L}_{\mathrm{Hopf}}
 $$
 
 where $\ell_c$ threads two trefoils (up quarks) and one Skein
-descendant $\sigma(T_{2,3})$ (down quark) through the color tubes and
+descendant $T_{2,3}^{\sigma}$ (down quark) through the coral tubes and
 $\mathcal{L}_{\mathrm{Hopf}}$ binds them.  The mass is:
 
 $$
@@ -102,7 +102,7 @@ arranges into a chart:
 | Sector | Linking | Generators | Mass source | Examples |
 |--------|---------|------------|-------------|----------|
 | Leptonic | Hopf ($\ell_H$) | $T_{2,2k+1}$ | Skein volume | $e, \mu, \tau$ |
-| Mesonic | Hopf ($\ell_H$) | $T_{m,n} \cup \overline{T}_{m',n'}$ | Pair annihilation polynomial | $\pi, K, D$ |
+| Mesonic | Hopf ($\ell_H$) | $T_{m,n} \cup T_{m',n'}^{\sigma}$ | Pair annihilation polynomial | $\pi, K, D$ |
 | Baryonic | Color ($\ell_c$) + Hopf | $T_{m_i,n_i}^{\times 3}$ | Color-tube cubic + Skein | $p, n, \Lambda, \Sigma$ |
 | Nuclear | Iterated $\ell_H$ | Baryon composites | Multi-body Skein | $D, {}^4\mathrm{He}, \ldots$ |
 
@@ -114,7 +114,7 @@ participates.
 
 The entire chart is determined by three inputs:
 
-1. The substrate parameter $q \approx 1.10997$ (from CODATA),
+1. The substrate parameter $q_0$ (from CODATA),
 2. The seven $T_{m,n}$ generators (from $\chi = -6$), and
 3. The two linking operations $\ell_H$, $\ell_c$ (from the
    exceptional divisor and Bring's surface geometry).

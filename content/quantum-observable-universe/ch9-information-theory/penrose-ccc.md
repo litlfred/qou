@@ -1,0 +1,55 @@
+The aeon structure ([aeon](#def:aeon)) parallels Penrose's
+**Conformal Cyclic Cosmology** (CCC) \cite{penrose2010}, but
+the mechanism differs.
+
+**Penrose's CCC.**
+In CCC, the infinite future of one aeon — where all massive
+particles have decayed to massless radiation — is conformally
+identified with the Big Bang of the next aeon.  The key
+observation is that massless particles (photons, gravitons)
+are conformally invariant, so the conformal structure at
+$t \to \infty$ is compatible with the conformal structure at
+$t = 0$ of the successor aeon.  The transition is a conformal
+rescaling $g \mapsto \Omega^2 g$ with $\Omega \to 0$.
+
+**QOU translation.**
+In the QOU framework, the aeon boundary is not a conformal
+rescaling but a **degree-$0$ vanishing**: the horizon ideal
+$\mathfrak{h} \subset A_0$ annihilates all zeroth-order
+sections.  The translation dictionary is:
+
+| CCC concept | QOU realisation |
+|:---|:---|
+| Massless radiation | Degree $\geq 1$ jet data ($A_1/A_0$, $A_2/A_0$) |
+| Conformal structure | Brane tower quotient $A_k/A_0$ |
+| Conformal rescaling $\Omega^2 g$ | Vanishing of $A_0$; higher jets persist |
+| Aeon boundary | Jet horizon $\mathcal{H}$ ([jet horizon](#def:jet-horizon)) |
+| Next aeon's Big Bang | Big bang state $\mathcal{S}_0'$ seeded by boundary datum ([big bang state](#def:big-bang-state)) |
+| Penrose's "Hawking points" | Degree-$1$ winding modes concentrated at localized jet horizons |
+
+**Key differences.**
+
+1. **No conformal rescaling.** The QOU aeon boundary is
+   algebraic (ideal vanishing), not geometric (metric
+   rescaling).  The brane tower structure is preserved across
+   the boundary; only the lowest floor ($A_0$) is removed.
+
+2. **The CMB is degree $\geq 1$ data.**  In CCC, the CMB of
+   one aeon carries imprints from the previous aeon's final
+   state.  In the QOU, this is exactly the boundary datum
+   $\partial\mathcal{A}|_b$ — the first- and second-order
+   jet data that survives the horizon.
+
+3. **Local, not global.**  CCC is a global cosmological model
+   with a definite cyclic timeline.  The QOU aeon structure
+   is local to an affine chart: different charts may have
+   different numbers of aeons, or none at all.
+
+4. **Reverse flow.**  The backward iteration $f_q^{-1}$
+   of the Reeb dynamics may or may not reach a past
+   boundary ($A_0 \to 0$).  If it does, the affine chart
+   acquires a past jet horizon — a big bang state — and
+   the reverse flow terminates.  If it does not, the aeon
+   is past-complete and there is no cyclic structure in that
+   chart.  Cyclicity is a **consequence of dynamics**, not
+   an axiom.

@@ -38,7 +38,7 @@ under the topological mass formula
 
 $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n}) \;=\;
-  \frac{\operatorname{Vol}(T_{m,n})}{\hbar_q^{\,2}} \;=\; 0.
+  \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}} \;=\; 0.
 $$
 
 Mass arises *entirely* through the linking operations below.
@@ -74,7 +74,7 @@ This is the colorless ($U(1)$) binding operation:
 Iterating Hopf linking builds the leptonic and mesonic sectors.
 
 **Operation 2: Color-tube threading.**
-The three color tubes $(r, g, b) = (w_2 - z,\, w_3 - z,\, w_4 - z)$
+The three coral tubes $(r, g, b) = (w_2 - z,\, w_3 - z,\, w_4 - z)$
 from Bring's surface
 ([color tube coordinates](#def:color-tube-coordinates)) provide a
 second linking operation.  Given three generators

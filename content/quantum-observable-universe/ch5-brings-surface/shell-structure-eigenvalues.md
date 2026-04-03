@@ -143,8 +143,7 @@ $$
   \qquad (n \gg 1)
 $$
 
-The sub-dominant term $\beta \cdot \lambda_-^n = \beta \cdot
-(-1)^n / \lambda_+^n$ is an **alternating correction** that
+The sub-dominant term $\beta \cdot \lambda_-^n = \beta \cdot (-1)^n / \lambda_+^n$ is an **alternating correction** that
 decays exponentially.
 
 ## The Chebyshev recurrence
@@ -225,7 +224,7 @@ $$
 The binding energy at shell $n$ (relative to ionization):
 
 $$
-  \mathfrak{E}_{\mathrm{bind}}(n)
+  \mathbf{E}_{\mathrm{bind}}(n)
   \;=\;
   E_{\infty} - E_n
   \;\propto\;
@@ -250,8 +249,7 @@ low-$n$ hydrogen spectroscopy.
 | 4 | 1.504 | 1.296 | 1.232 | 0.063 |
 | 5 | 1.665 | 1.418 | 1.348 | 0.040 |
 
-The binding energy $\mathfrak{E}_{\mathrm{bind}}(n) = E_\infty - E_n
-\propto 1/\lambda_+^n$ gives the characteristic Rydberg
+The binding energy $\mathbf{E}_{\mathrm{bind}}(n) = E_\infty - E_n \propto 1/\lambda_+^n$ gives the characteristic Rydberg
 ratios for low $n$.
 
 ## Sub-shell structure from multi-electron tensor products
@@ -266,8 +264,7 @@ $$
 $$
 
 The eigenvalues of the tensor product are **products** of
-individual eigenvalues: $\lambda_{\pm}^{(1)} \cdot
-\lambda_{\pm}^{(2)} \cdots$.  The degeneracy structure of
+individual eigenvalues: $\lambda_{\pm}^{(1)} \cdot \lambda_{\pm}^{(2)} \cdots$.  The degeneracy structure of
 these products determines the sub-shells:
 
 - **$s$ orbital** ($\ell = 0$): both electrons in the same
@@ -304,8 +301,7 @@ the orbital shell structure is extracted by:
    eigenvalues $\lambda_{\pm}^{(i)}$.
 
 4. **Shell $n$** at generator $i$ is the $n$-th power:
-   $\hat{V}_i(n) = z(S\Lambda^n S^{-1})_{11}
-   + (S\Lambda^n S^{-1})_{21}$.
+   $\hat{V}_i(n) = z(S\Lambda^n S^{-1})_{11} + (S\Lambda^n S^{-1})_{21}$.
 
 5. **Sub-shells** from the tensor product eigenvalue
    degeneracies for multi-electron atoms.

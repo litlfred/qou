@@ -1,5 +1,5 @@
 The categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
-([canonical action](#def:qou-canonical-action)) evaluated on a nuclear
+([canonical action](#prop:qou-canonical-action)) evaluated on a nuclear
 link $\mathcal{N}(Z, N)$ produces observables at two levels.
 
 **What $q$ alone determines.**
@@ -13,15 +13,15 @@ and the categorical definitions:
 | Which nuclei are stable | $p^*(A)$ from the beta-stability line at $q$ | From $q$ |
 | Sensitivity to $q$ | $\partial \ln \Gamma / \partial \ln q \approx 48$ | Exact |
 | Ground-state ordering | Minimum $\Phi_q$ over braid representatives | Computed (A ≤ 14 exhaustive) |
-| Markov trace | $\mathrm{tr}(\overline{\mathcal{N}}) = \prod_i \hat{V}_i$ | **Theorem** |
+| Markov trace | $\mathrm{tr}(\mathcal{N}) = \prod_i \hat{V}_i$ | **Theorem** |
 | Trace sign structure | $\mathrm{sign}(\mathrm{tr})$ per nucleus | Exact (Singular) |
 | Hecke step count | $\Delta(\text{R2 steps}) = -1$ universally | Computed |
 | Writhe change | $\Delta w = A - 1$ | Computed |
-| Emission topology | $L_0^{-} = T_{2,3} \sqcup \overline{T_{1,0}}$ ($\beta^-$: $e^- + \bar{\nu}_e$) | Derived |
+| Emission topology | $L_0^{-} = T_{2,3} \sqcup T_{1,0}^{\sigma}$ ($\beta^-$: $e^- + \nu_e^{\sigma}$) | Derived |
 | Shell blocking | $e_i p_n = 0$ in TL (Jones-Wenzl kills smoothing) | Algebraic |
-| Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = 938.272$ MeV | From $q$ (terminal resolution) |
-| Mass splitting | $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} = 1.290$ MeV | From $q$ |
-| Deuteron binding | $B_d = 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | From $q$ (SnapPy) |
+| Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} \approx 938.272$ MeV | From $q$ (terminal resolution) |
+| Mass splitting | $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} \approx 1.290$ MeV | From $q$ |
+| Deuteron binding | $B_d \approx 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | From $q$ (SnapPy) |
 | Relative decay rates | $\propto \prod_{i \leq p} |\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}|^2$ | Computed |
 | Environmental $q$-shift | $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|$ | Predicted |
 
@@ -36,7 +36,7 @@ all crossings with Hecke compounding.  This computation is set up
 evaluated for $A > 2$.
 
 The mass formula for individual hadrons:
-$m = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume normalised
+$\mathfrak{m} = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume normalised
 by $\hbar_q^2 = (1 - q^{-1})^2$) gives sub-keV masses for the
 electron, muon, proton, and neutron.  For multi-nucleon links
 (satellite links with $\mathrm{Vol} = A \times \mathrm{Vol}(\mathcal{B}_3)$

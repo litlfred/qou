@@ -54,7 +54,7 @@ embeddability requires $(m-1)(n-1) \leq 2g = 8$.
 2. **Quark sector.** The $(3,n)$-family generators $T_{3,4}$ and
    $T_{3,5}$ populate the heavy quark sector (top, bottom
    candidates).  The three-strand meridional winding $m = 3$ of
-   these torus knots resonates with the three color tubes
+   these torus knots resonates with the three coral tubes
    ([color tube interpretation](#rem:color-tube-interpretation)):
    each meridional strand threads one color fiber.
 

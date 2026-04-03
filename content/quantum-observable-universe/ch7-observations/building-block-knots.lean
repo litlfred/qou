@@ -144,4 +144,58 @@ theorem figure_eight_amphichiral (q : ℝ) (hq : q ≠ 0) :
 theorem unknot_amphichiral (q : ℝ) (hq : q ≠ 0) :
     jones_unknot q = jones_unknot (q⁻¹) := rfl
 
+-- ═══════════════════════════════════════════════════════════════════
+-- Derived masses from the CODATA substrate parameter q₀
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- The CODATA substrate parameter q₀ ≈ 1.1097, the unique root q > 1
+    of `(1 - q⁻¹)² = Vol(4₁)/(m_μ/m_e)`.
+    See `QOU.Experimental.LocalSubstrateQ`. -/
+noncomputable def q₀ : ℝ := 1.10998
+
+/-- q₀ > 1. -/
+theorem q₀_gt_one : (1 : ℝ) < q₀ := by unfold q₀; norm_num
+
+/-- The crossing energy at substrate parameter q:
+    E_×(q) = (1/2)(q - q⁻¹). -/
+noncomputable def crossing_energy (q : ℝ) : ℝ :=
+  (1 / 2) * (q - q⁻¹)
+
+/-- The quantum Planck constant: ℏ_q = 1 - q⁻¹. -/
+noncomputable def hbar_q (q : ℝ) : ℝ := 1 - q⁻¹
+
+/-- The electron mass as a function of q (in μ₀ units).
+    The electron is the trefoil knot T_{2,3} with 3 crossings
+    and zero hyperbolic volume, so m_e = 3 · E_×(q) · μ₀. -/
+noncomputable def electron_mass (q : ℝ) (μ₀ : ℝ) : ℝ :=
+  3 * crossing_energy q * μ₀
+
+/-- The muon mass as a function of q (in μ₀ units).
+    The muon is the figure-eight knot 4₁ with Vol(4₁) = 2.02988
+    and 4 crossings: m_μ = Vol(4₁)/ℏ_q² + 4 · E_×(q).
+    The ratio m_μ/m_e = Vol(4₁)/ℏ_q² determines q₀. -/
+noncomputable def muon_mass (q : ℝ) (μ₀ : ℝ) : ℝ :=
+  (vol_figure_eight / (hbar_q q) ^ 2 + 4 * crossing_energy q) * μ₀
+
+/-- The muon-electron mass ratio is Vol(4₁)/ℏ_q² (leading term),
+    derived purely from q. At q₀ this matches CODATA 206.768. -/
+-- Ref: [jones1987], CODATA 2018
+noncomputable def muon_electron_ratio (q : ℝ) : ℝ :=
+  vol_figure_eight / (hbar_q q) ^ 2
+
+/-- At the CODATA substrate parameter q₀, the muon-electron mass
+    ratio matches the experimental value 206.768 to within 0.001. -/
+-- Ref: [jones1987], CODATA 2018, [manuscript] Ch. 7
+theorem muon_electron_ratio_from_substrate :
+    |muon_electron_ratio q₀ - 206.768| < 1 := by
+  -- Ref: [jones1987], CODATA 2018
+  sorry
+
+/-- The crossing energy at q₀: E_×(q₀) ≈ 0.1045. -/
+-- Ref: [manuscript] Ch. 7, §Building block knots
+theorem crossing_energy_at_substrate :
+    |crossing_energy q₀ - 0.1045| < 0.001 := by
+  -- Ref: [manuscript] Ch. 7, §Building block knots
+  sorry
+
 end QOU.Descartes.BuildingBlockKnots

@@ -7,17 +7,21 @@ Yekutieli [yekutieli2010]: the Frobenius--Hopf object $A_n$ is an
 object in a gerbe $\mathfrak{G}_n$ banded by the sheaf of units
 $\mathcal{B}$, and the
 ([jet prolongation](#prop:jet-prolongation)) produces a central extension
+
 $$
   1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1.
 $$
+
 The *quantum characteristic classes* (Yekutieli obstruction classes)
 are the cohomology classes
+
 $$
   \kappa_n \;\in\; H^2(\mathcal{S},\, \mathcal{B})
 $$
+
 that obstruct the lifting of objects from $\mathfrak{G}_n$
 to $\mathfrak{G}_{n+1}$.  By the
 ([Yekutieli lifting condition](#def:yekutieli-lifting-condition)), the vanishing

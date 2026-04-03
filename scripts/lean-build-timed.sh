@@ -12,7 +12,7 @@
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean-archive"
+LEAN_DIR="$REPO_ROOT/content/quantum-observable-universe/lean"
 TIMING_LOG="/tmp/qou-build-timing.csv"
 REPORT="/tmp/qou-build-timing-report.txt"
 
@@ -31,7 +31,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if ! command -v lake &>/dev/null; then
-    echo "Error: lake not found. Run ./scripts/setup-lean-mcp.sh first."
+    echo "Error: lake not found. Use MCP tool: lean_setup"
     exit 1
 fi
 

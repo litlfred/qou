@@ -3,12 +3,12 @@ category, and let $V$ be a simple object that is
 *symplectically self-dual*: there exists an isomorphism
 $\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying
 $\phi^{\vee} = -\phi$ (alternating). The alternating condition forces
-$\operatorname{rank}(V) = 2$: the composite
+$\mathrm{rank}(V) = 2$: the composite
 $\mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ factors through
 $\Lambda^2 V$, and for the resulting morphism
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$ to be a non-degenerate
-epimorphism one needs $\operatorname{rank}(\Lambda^2 V) = 1$, i.e.,
-$\operatorname{rank}(V) = 2$. The factorisation is (the
+epimorphism one needs $\mathrm{rank}(\Lambda^2 V) = 1$, i.e.,
+$\mathrm{rank}(V) = 2$. The factorisation is (the
 *volume form factorisation*):
 
 ```tex

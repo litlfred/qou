@@ -1,4 +1,5 @@
 Because all terms involving $\alpha$ cancel, $\sum_i c_i = 0$. Then:
+
 $$
   f = c_1 a_1 \cdot \frac{1}{a_1} f_1 + \cdots + c_n a_n \cdot \frac{1}{a_n} f_n.
 $$

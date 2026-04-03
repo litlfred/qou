@@ -6,7 +6,7 @@ linked by the Hopf link $\mathcal{L}_H$ satisfies the stability
 condition
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(H) \;<\; 0
+  \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) \;<\; 0
 $$
 
 and is therefore a hadron in the sense of
@@ -22,9 +22,9 @@ drawn from $\mathcal{G}$:
    crossing energy from the strong binding term
    $\tfrac{1}{2}(n_+ + n_-)(q + q^{-1})$.
 
-2. The Coulomb correction $Q(H) \cdot (q - q^{-1})$
+2. The Coulomb correction $Q(\mathfrak{H}) \cdot (q - q^{-1})$
    ([Coulomb charge](#def:coulomb-charge)) satisfies
-   $|Q(H)| \leq 1$ for all generators in $\mathcal{G}$, since
+   $|Q(\mathfrak{H})| \leq 1$ for all generators in $\mathcal{G}$, since
    the maximum crossing asymmetry between $m = 2$ and $m = 3$
    strands is bounded by the genus constraint.
 
@@ -34,14 +34,14 @@ drawn from $\mathcal{G}$:
 
 In particular:
 
-- **Proton** $\mathfrak{p} = [T_{2,3}, T_{2,3}, \sigma(T_{2,3})]_p
+- **Proton** $\mathfrak{p} = [T_{2,3}, T_{2,3}, T_{2,3}^{\sigma}]_p
   \bowtie \mathcal{L}_H$: Coulomb charge $Q(\mathfrak{p}) = +1$
   ([proton](#def:categorical-proton)).  The positive Coulomb
   correction reduces binding but does not overcome it:
-  $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.
+  $\mathbf{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.
 
-- **Neutron** $\mathfrak{n} = [T_{2,3}, \sigma(T_{2,3}),
-  \sigma(T_{2,3})]_p \bowtie \mathcal{L}_H$: Coulomb charge
+- **Neutron** $\mathfrak{n} = [T_{2,3}, T_{2,3}^{\sigma},
+  T_{2,3}^{\sigma}]_p \bowtie \mathcal{L}_H$: Coulomb charge
   $Q(\mathfrak{n}) = 0$
   ([neutron](#def:categorical-neutron)).  No Coulomb correction;
   the strong baseline binding is undiminished.

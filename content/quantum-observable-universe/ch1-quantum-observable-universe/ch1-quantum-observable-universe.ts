@@ -32,6 +32,7 @@ export default chapter({
       blocks: [
         "no-quasi-zeros",
         "snake-identity",
+        "monoidal-justification",
         "rigid-monoidal-category",
         "rigid-monoidal-vect",
       ],
@@ -44,6 +45,7 @@ export default chapter({
         "quantum-universe",
         "tau-notation",
         "frobenius-pairing",
+        "frobenius-pairing-su2",
         "frobenius-geometric-role",
         "quantum-universe-su2",
         "higher-forms",
@@ -60,9 +62,11 @@ export default chapter({
       blocks: [
         "frobenius-relation",
         "frobenius-relation-proof",
+        "frobenius-relation-su2",
         "involutive-structure",
         "positive-definite-dagger",
         "positive-definite-dagger-proof",
+        "positive-dagger-su2",
         "dagger-notation",
         "tannaka-krein-overview",
         "axiom-independence",
@@ -74,6 +78,7 @@ export default chapter({
       label: "sec:qu-structures",
       blocks: [
         "categorical-connection",
+        "categorical-connection-su2",
         "categorical-jet",
         "categorical-hodge-star",
         "hodge-su2",

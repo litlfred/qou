@@ -1,7 +1,6 @@
 The [adjoint trace](#rem:adjoint-trace) induces a canonical inner
 product on intertwiner spaces. For
-$\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\,
-V_{1/2}^{\otimes n})$, define
+$\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\, V_{1/2}^{\otimes n})$, define
 
 $$
   \langle \phi, \psi \rangle_{\mathrm{PL}}
@@ -42,7 +41,7 @@ number computable from the hook lengths of the tableau $\lambda$.
 This orthogonality has two consequences for the QOU framework:
 
 1. **Decomposition of hadron states.** A
-   [categorical hadron](#def:categorical-hadron) of valence $n$ can be
+   [categorical hadron](#def:hadron) of valence $n$ can be
    uniquely expanded in the PawLei basis, with
    coefficients that are physically interpretable as partial-wave
    amplitudes.

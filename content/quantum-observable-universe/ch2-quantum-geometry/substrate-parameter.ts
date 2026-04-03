@@ -10,4 +10,5 @@ export default definition({
     validation: "leanok",
   },
   uses: ["def:categorical-reeb"],
+  examples: ["ex:substrate-parameter-su2"],
 });

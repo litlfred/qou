@@ -10,14 +10,16 @@ is governed by the phase $\theta$:
 1. **Crossing energy acquires a phase.**  For a torus knot
    $T_{p,k}$ with [crossing energy](#def:crossing-energy)
    $\mathcal{S}_c(T_{p,k}; q)$, the complex extension satisfies
+
    $$
      \mathcal{S}_c(T_{p,k};\, |q|\,e^{i\theta})
      \;=\;
      \mathcal{S}_c(T_{p,k};\, |q|)\,e^{i\,n_c\,\theta},
    $$
+
    where $n_c$ is the crossing number.  The mirror image
-   $\sigma(T_{p,k})$ has crossing number $-n_c$, giving
-   $\mathcal{S}_c(\sigma(T_{p,k})) = \mathcal{S}_c(T_{p,k};\, |q|)\,e^{-i\,n_c\,\theta}$.
+   $T_{p,k}^{\sigma}$ has crossing number $-n_c$, giving
+   $\mathcal{S}_c(T_{p,k}^{\sigma}) = \mathcal{S}_c(T_{p,k};\, |q|)\,e^{-i\,n_c\,\theta}$.
 
 2. **Chirality interpolation.**  Define the chirality operator
    $\mathcal{X}_\varphi \colon \theta \mapsto \theta + \varphi$
@@ -53,7 +55,7 @@ electron--positron system:
 $$
   \delta_{\mathrm{CP}}
   \;=\;
-  \frac{|\mathcal{S}_c(T_{2,3})| - |\mathcal{S}_c(\sigma(T_{2,3}))|}{|\mathcal{S}_c(T_{2,3})| + |\mathcal{S}_c(\sigma(T_{2,3}))|}
+  \frac{|\mathcal{S}_c(T_{2,3})| - |\mathcal{S}_c(T_{2,3}^{\sigma})|}{|\mathcal{S}_c(T_{2,3})| + |\mathcal{S}_c(T_{2,3}^{\sigma})|}
   \;\sim\;
   \mathcal{O}(\theta^2),
 $$

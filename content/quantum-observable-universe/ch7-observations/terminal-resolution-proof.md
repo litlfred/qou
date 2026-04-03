@@ -1,5 +1,5 @@
 
-With $q = 1.1097$ fixed by the lepton mass ratio
+With $q = q_0$ fixed by the lepton mass ratio
 ([skein mass relation](#rem:skein-mass-relation)), the hadronic masses are
 determined without free parameters.
 
@@ -17,16 +17,19 @@ The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$ has six
 crossings organised into three crossing pairs, one pair per color-exchange
 channel. At each pair involving quarks of species $a$ and $b$, a double
 application of the Skein relation yields the *pair Skein mass*
+
 $$
   \mathcal{S}_{ab}(q)
   \;=\;
   \frac{q\,\mu_a \;+\; q^{-1}\,\mu_b}
        {q^{1/2} + q^{-1/2}},
 $$
+
 where $\mu_a$ is the *dressed quark Skein mass* of species $a$ --- the
 mass contribution of a single quark strand including its strong-field dressing
 from the Hopf-link interaction with the color background.
 The total nucleon mass is the sum over the three crossing pairs:
+
 $$
   m_N
   \;=\;
@@ -41,9 +44,9 @@ Skein masses are:
 
 | **Pair** | **Quarks** | **Skein mass** | **Value (MeV)** |
 |---|---|---|---|
-| I | $(u_1,\, u_2)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}$ | 312.36 |
-| II | $(u_1,\, d)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
-| III | $(u_2,\, d)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| I | $(u_1,\, u_2)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} = \frac{(q + q^{-1})\,\mu_{\mathfrak{u}}}{q^{1/2}+q^{-1/2}}$ | 312.36 |
+| II | $(u_1,\, d)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_{\mathfrak{u}} + q^{-1}\,\mu_{\mathfrak{d}}}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| III | $(u_2,\, d)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_{\mathfrak{u}} + q^{-1}\,\mu_{\mathfrak{d}}}{q^{1/2}+q^{-1/2}}$ | 312.97 |
 | | | **Total:** $m_p = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | **938.272** |
 
 *Step 2b: Neutron ($udd$).*
@@ -52,41 +55,45 @@ quark replaces the same-flavor pair:
 
 | **Pair** | **Quarks** | **Skein mass** | **Value (MeV)** |
 |---|---|---|---|
-| I | $(u,\, d_1)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
-| II | $(u,\, d_2)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
-| III | $(d_1,\, d_2)$ | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 313.65 |
+| I | $(u,\, d_1)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_{\mathfrak{u}} + q^{-1}\,\mu_{\mathfrak{d}}}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| II | $(u,\, d_2)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_{\mathfrak{u}} + q^{-1}\,\mu_{\mathfrak{d}}}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| III | $(d_1,\, d_2)$ | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} = \frac{(q + q^{-1})\,\mu_{\mathfrak{d}}}{q^{1/2}+q^{-1/2}}$ | 313.65 |
 | | | **Total:** $m_n = 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | **939.565** |
 
 *Step 2c: The $u$-$d$ mass splitting.*
 The proton--neutron mass difference isolates the same-flavor crossing pair:
+
 $$
   m_n - m_p
   \;=\;
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   \;=\;
-  \frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).
+  \frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}).
 $$
-Substituting $q = 1.1097$ and the CODATA splitting
-$m_n - m_p = 1.293\,332\,51\;\mathrm{MeV}$ determines the dressed quark
+
+Substituting $q = q_0$ and the CODATA splitting
+$m_n - m_p \approx 1.293\,332\,51\;\mathrm{MeV}$ determines the dressed quark
 mass difference:
+
 $$
-  \mu_d - \mu_u
+  \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
   \;=\;
   \frac{q^{1/2}+q^{-1/2}}{q+q^{-1}}\,(m_n - m_p)
   \;=\;
   \frac{2.0027}{2.0109} \times 1.293
   \;\approx\; 1.288\;\mathrm{MeV},
 $$
+
 and the individual dressed masses are
-$\mu_u \approx 311.10\;\mathrm{MeV}$ and
-$\mu_d \approx 312.39\;\mathrm{MeV}$.
+$\mu_{\mathfrak{u}} \approx 311.10\;\mathrm{MeV}$ and
+$\mu_{\mathfrak{d}} \approx 312.39\;\mathrm{MeV}$.
 
 *Step 3: Deuteron and binding energy.*
 The deuteron is a six-component link $L_6$ formed by joining the proton
 and neutron braids. Its mass is the Skein mass of $L_6$ minus the binding
 energy, which equals the change in the Skein polynomial when the
 proton--neutron crossing is smoothed:
-$\Delta \mathfrak{E}_{\mathrm{bind}} = 2.224\;\mathrm{MeV}$. The CODATA derived
+$\Delta \mathbf{E}_{\mathrm{bind}} \approx 2.224\;\mathrm{MeV}$. The CODATA derived
 value is $2.2246\;\mathrm{MeV}$, agreeing to sub-keV precision.
 
 The formal Lean verification of each row is recorded in

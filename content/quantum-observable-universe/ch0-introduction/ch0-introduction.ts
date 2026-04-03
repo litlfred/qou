@@ -15,6 +15,8 @@ export default chapter({
       label: "sec:introduction-overview",
       blocks: [
         "ch0-intro",
+        "roadmap-guide",
+        "roadmap-diagram",
       ],
     }),
   ],

@@ -5,7 +5,7 @@ $\mathcal{B}_3$ ([Borromean quark](#conj:borromean-quark)).
 $$
   \mathfrak{n}
   \;=\;
-  \mathcal{B}_3(u,\, d,\, d)
+  \mathcal{B}_3(\mathfrak{u},\, \mathfrak{d},\, \mathfrak{d})
   \;\bowtie\; \mathcal{L}_H
 $$
 
@@ -17,7 +17,7 @@ $$
   2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
-At $q = 1.10997$: $m_{\mathfrak{n}} = 939.565$ MeV.  The
+At the CODATA value $q_0$: $m_{\mathfrak{n}}(q_0) \approx 939.565$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
 proton--neutron mass splitting is
 
 $$
@@ -28,7 +28,7 @@ $$
 $$
 
 arising from the Skein resolution asymmetry between the
-$\mathfrak{u}$-$\mathfrak{u}$ and $\mathfrak{d}$-$\mathfrak{d}$ crossing pairs within $\mathcal{B}_3$.
+$\mathfrak{u}\text{-}\mathfrak{u}$ and $\mathfrak{d}\text{-}\mathfrak{d}$ crossing pairs within $\mathcal{B}_3$.
 
 **Coulomb charge.**
 

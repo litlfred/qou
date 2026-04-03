@@ -1,5 +1,5 @@
-The strange quark $\mathfrak{s} = \overline{T_{2,5}}$ has five
-crossings; the down quark $\mathfrak{d} = \overline{T_{2,3}}$
+The strange quark $\mathfrak{s} = T_{2,5}^{\sigma}$ has five
+crossings; the down quark $\mathfrak{d} = T_{2,3}^{\sigma}$
 has three.  More crossings means more strong binding.  Strange
 quark matter therefore binds harder — by a factor of $4/3$ per
 baryon — and is automatically electromagnetically neutral
@@ -9,7 +9,7 @@ of the knot assignments.  But all torus knots have zero
 hyperbolic volume; the mass difference between strange and
 non-strange baryons comes from the **Jones polynomial**, not
 from genus.  The cinquefoil's Jones polynomial evaluates
-$22\%$ higher than the trefoil's at $q = 1.1097$ ($1.176$ vs
+$22\%$ higher than the trefoil's at $q = q_0$ ($1.176$ vs
 $0.960$), and this Skein polynomial cost — roughly $168$ Skein
 units per strange quark — overwhelms the crossing-energy gain
 of $1.8$ Skein units by a factor of $93$.  At zero pressure,
@@ -59,8 +59,7 @@ integer-valued and jumps from $1$ (Borromean, confined) to $0$
 two phases.
 
 The quantitative picture reduces to two numbers and a topology
-change.  The Borromean complement has $\mathrm{Vol}(\mathcal{B}_3)
-\approx 7.33$: massive, soft, confined.  The Hopf link complement has
+change.  The Borromean complement has $\mathrm{Vol}(\mathcal{B}_3) \approx 7.33$: massive, soft, confined.  The Hopf link complement has
 $\mathrm{Vol}(\mathcal{L}_H) = 0$: zero volume contribution,
 ultra-stiff, superconducting.  The Borromean phase binds at
 $749$ Skein units per baryon; the Hopf diquark phase at $3$.

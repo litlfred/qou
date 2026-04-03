@@ -54,7 +54,7 @@ When the MCP server is available, **prefer MCP tools over shell commands**:
 When the MCP server is unavailable, parse `lake build` output directly:
 
 ```bash
-cd lean-archive && lake build 2>&1
+cd content/quantum-observable-universe/lean && lake build 2>&1
 ```
 
 Parse the output for lines matching:

@@ -5,8 +5,7 @@ reverse, working inside the rigid monoidal category $\mathbf{C}$.
 *Step 1: Frobenius restriction.*
 The jet object $J^1(A) = A \otimes \Omega^1(A)$ at level $n$ contains $A$
 as a direct summand via the unit section
-$\eta \otimes \mathrm{id}\colon \Omega^1(A) \hookrightarrow A \otimes
-\Omega^1(A)$.  Composing with the counit $\varepsilon\colon A \to \mathbf{1}$
+$\eta \otimes \mathrm{id}\colon \Omega^1(A) \hookrightarrow A \otimes \Omega^1(A)$.  Composing with the counit $\varepsilon\colon A \to \mathbf{1}$
 on the first tensor factor gives the restriction map
 $r_n\colon J^1(A) \to A$.  Because $A$ is Frobenius, $r_n$ is a coalgebra
 morphism: the comultiplication $\Delta$ commutes with restriction by the
@@ -31,9 +30,7 @@ unchanged since we recover the original object $A$.
 
 *Step 4: The descent homomorphism.*
 Applying the fibre functor $\tau$ to $r_n$ yields
-$\mathfrak{d}_n\colon
-\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2)) \to
-\Gamma(J^1 \mathcal{S}_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
+$\mathfrak{d}_n\colon \Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2)) \to \Gamma(J^1 \mathcal{S}_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
 This is a $*$-homomorphism because $r_n$ preserves multiplication and
 the antipode.  Surjectivity follows from the fact that the ascent map
 $\ell_n$ of [jet prolongation](#prop:jet-prolongation) is injective (it

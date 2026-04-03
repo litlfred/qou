@@ -6,10 +6,10 @@ $V$ is the unique (up to isomorphism) simple object of categorical
 dimension $2$.  Its dimension is not an independent assumption: in
 [Chapter 2](#chap:qou), the volume constraint (a non-degenerate
 epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$) forces
-$\operatorname{rank}(V) = 2$.  (If $\operatorname{rank}(V) = 1$ then
+$\mathrm{rank}(V) = 2$.  (If $\mathrm{rank}(V) = 1$ then
 $\Lambda^2 V = 0$ and no such epimorphism exists; if
-$\operatorname{rank}(V) \geq 3$ then
-$\operatorname{rank}(\Lambda^2 V) \geq 3$ and the non-degenerate
+$\mathrm{rank}(V) \geq 3$ then
+$\mathrm{rank}(\Lambda^2 V) \geq 3$ and the non-degenerate
 epimorphism to the rank-$1$ unit object $\mathbf{1}$ cannot exist.)
 In the SU(2) example
 ([Example](#ex:rigid-monoidal-vect)), $V = V_{1/2} \cong \mathbb{C}^2$

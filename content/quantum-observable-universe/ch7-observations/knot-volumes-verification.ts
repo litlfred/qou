@@ -16,7 +16,7 @@ export default proof({
   tags: ["computation", "snappea", "hyperbolic", "verification"],
   uses: [
     "prop:topological-mass-formula",
-    "rem:hyperbolic-volumes-prose",
+    "sec:hyperbolic-volumes-prose",
   ],
   computation: {
     engine: "snappea",

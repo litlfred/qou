@@ -39,6 +39,16 @@ export default folio({
       url: "/viewer/#/view/unital-groebner-bases",
     }),
     paperRef({
+      dir: "fred2005-formal-groups",
+      title: "Integration of Skewed-Poisson Structures on Non-commutative Formal Groups",
+      description:
+        "Skew-Poisson integration on formal groups over Z_p: " +
+        "lifts commutative formal groups to non-commutative ones via " +
+        "Gröbner-Shirshov deformation and strong multiplicativity.",
+      tags: ["formal-groups", "skew-poisson", "formalization"],
+      url: "/viewer/#/view/fred2005-formal-groups",
+    }),
+    paperRef({
       dir: "visualizer",
       title: "QOU Visualizer",
       description:
