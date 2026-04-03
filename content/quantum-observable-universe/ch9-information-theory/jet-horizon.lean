@@ -114,12 +114,18 @@ structure Aeon where
   configs : Type*
   /-- Each configuration is observable. -/
   observable : configs → ObservableConfig
-  /-- Connectedness witness: for any two objects, there is an
-      identification path in the nerve of the subcategory.
-      In full formalization, this would be a zigzag of morphisms. -/
-  connected : ∀ (x y : configs), x = y ∨ ∃ (z : configs), x = z ∨ y = z
-  -- In full formalization: path in the nerve of the subcategory.
-  -- Here we record the structural requirement.
+  /-- A relation witnessing that two configs are connected by a
+      flow map (one Planck step) within Bun°. -/
+  flow_step : configs → configs → Prop
+  /-- The flow relation is symmetric (reversible computation). -/
+  flow_symm : ∀ x y, flow_step x y → flow_step y x
+  /-- Connectedness: any two configs are related by a chain of
+      flow steps.  This is the transitive closure of flow_step. -/
+  connected : ∀ (x y : configs),
+    ∃ (path : List configs),
+      path.head? = some x ∧ path.getLast? = some y ∧
+      ∀ i : Fin (path.length - 1),
+        flow_step (path.get ⟨i, by omega⟩) (path.get ⟨i + 1, by omega⟩)
   /-- Boundary: jet horizons reachable as limits of directed
       diagrams in the aeon. -/
   boundary : List JetHorizon
@@ -153,10 +159,23 @@ structure CMBFunctorValue where
 
 /-! ## Aeon recycling conjecture -/
 
+/-- The result of applying one Planck step to CMB data:
+    a new graded jet algebra (the next aeon's algebra) that has
+    non-trivial degree-0 sections regenerated from the degree-1 CMB data. -/
+structure PlanckStepResult where
+  /-- The new graded jet algebra after the Planck step. -/
+  next_algebra : GradedJetAlgebra
+  /-- The new algebra has non-trivial degree-0 sections. -/
+  degree_zero_regenerated : ∃ (s : next_algebra.sections 0), s ≠ next_algebra.zero 0
+  /-- The degree-1 data is inherited from the CMB. -/
+  degree_one_inherited : ∃ (s : next_algebra.sections 1), s ≠ next_algebra.zero 1
+
 /-- **Conjecture (aeon recycling).**
 
     The first Planck step Φ₁ applied to the CMB of an aeon
-    produces a configuration with A_0 ≠ 0 (landing in Bun°).
+    produces a **new** graded jet algebra with non-trivial degree-0
+    sections (landing in Bun°).  The new algebra is distinct from the
+    horizon's algebra (where degree-0 vanishes by definition).
 
     If this holds for all aeons, it extends to a recycling functor
     R : π₀(Bun°) → π₀(Bun°). Fixed points = self-recycling aeons. -/
@@ -164,10 +183,8 @@ structure CMBFunctorValue where
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
 axiom aeon_recycling
     (cmb : CMBFunctorValue)
-    -- Integrability: the degree-1 data is compatible with ∇_q.
-    (integrable : cmb.cmb.degree_one_witness ≠ cmb.cmb.source.algebra.zero 1)
-    : -- The first Planck step produces a non-trivial degree-0 section.
-      ∃ (s : cmb.horizon.algebra.sections 0), s ≠ cmb.horizon.algebra.zero 0
+    : -- The Planck step produces a new algebra with A_0 ≠ 0.
+      PlanckStepResult
 
 /-! ## Conformal invariance at the horizon -/
 

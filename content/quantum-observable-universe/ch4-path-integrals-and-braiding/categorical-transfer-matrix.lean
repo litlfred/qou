@@ -68,13 +68,12 @@ structure CategoricalTransferMatrix (q : ℝ) where
   /-- The vertex volume polynomial (the invariant). -/
   vertex_volume : ℝ  -- In full formalization: polynomial in q
 
-/-- Crossing count monotonicity: adding a crossing to a bi-filtration
-    preserves the crossings_le_jet bound if the jet level also
-    advances. -/
-theorem InteractionBiFiltration.crossing_monotone
-    (F : InteractionBiFiltration)
-    (h_step : F.numCrossings + 1 ≤ F.jetLevel + 1)
-    : F.numCrossings + 1 ≤ F.jetLevel + 1 := h_step
+/-- Adding a crossing while advancing the jet level preserves the
+    bi-filtration invariant. -/
+theorem InteractionBiFiltration.step_preserves_bound
+    (F : InteractionBiFiltration) :
+    F.numCrossings ≤ F.jetLevel →
+    F.numCrossings + 1 ≤ F.jetLevel + 1 := by omega
 
 /-- **Level independence** (constituent-composite agreement):
     The vertex volume of a hadron does not depend on whether it

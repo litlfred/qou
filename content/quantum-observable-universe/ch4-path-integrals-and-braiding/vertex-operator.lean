@@ -31,20 +31,32 @@ structure VertexOperator (q : ℝ) where
   /-- Conformal weight (jet level) of the state. -/
   weight : ℕ
 
-/-- The OPE of two vertex operators has its leading singularity
-    governed by the Hecke relation (T - q)(T + q⁻¹) = 0,
-    i.e. the Skein relation L₊ - L₋ = (q - q⁻¹)L₀.
+/-- The OPE (operator product expansion) of two vertex operators.
+    Records the leading singularity data: the eigenvalues of the
+    Hecke generator T acting on the collision Y₁(z)Y₂(w) as z → w. -/
+structure OPE (q : ℝ) where
+  /-- The two vertex operators whose collision is being resolved. -/
+  left : VertexOperator q
+  right : VertexOperator q
+  /-- The symmetric (bosonic) eigenvalue of the Hecke generator. -/
+  bosonic_eigenvalue : ℝ
+  /-- The antisymmetric (fermionic) eigenvalue. -/
+  fermionic_eigenvalue : ℝ
 
-    The two eigenvalues q and -q⁻¹ correspond to the symmetric
-    (bosonic) and antisymmetric (fermionic) OPE channels. -/
+/-- The OPE of any two vertex operators in a QOU with q > 1 has
+    its leading singularity governed by the Hecke relation
+    (T - q)(T + q⁻¹) = 0: the bosonic eigenvalue is q and the
+    fermionic eigenvalue is -q⁻¹.
+
+    This is the Skein relation L₊ - L₋ = (q - q⁻¹)L₀ applied
+    to the strand collision on 𝒮_p. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 axiom ope_is_skein
     {q : ℝ} (hq : q > 1)
     (Y₁ Y₂ : VertexOperator q)
-    : -- The leading singularity of Y₁(z)Y₂(w) as z → w
-      -- decomposes into eigenvalues q (bosonic) and -q⁻¹ (fermionic).
-      -- Requires: the Hecke algebra representation on V^{⊗n}.
-      ∃ (eigenvalues : Fin 2 → ℝ),
-        eigenvalues 0 = q ∧ eigenvalues 1 = -(q⁻¹)
+    : ∃ (ope : OPE q),
+        ope.left = Y₁ ∧ ope.right = Y₂ ∧
+        ope.bosonic_eigenvalue = q ∧
+        ope.fermionic_eigenvalue = -(q⁻¹)
 
 end QOU
