@@ -83,30 +83,42 @@ structure CMBBoundaryDatum where
 -- Ref: [manuscript] §9/cmb-boundary-datum
 sorry
 
-/-- An aeon: a maximal connected interval (a, b) ⊂ ℤ of
-    information-theoretic time steps where the degree-0 algebra
-    is non-trivial.  Bounded by jet horizons (or extending to ±∞). -/
+/-- An aeon: a connected component of the observable subcategory
+    Bun°(P(V)) — the full subcategory of Bun(P(V)) on objects where
+    A_0 ≠ 0.
+
+    Categorically, an aeon is a maximal full subcategory of Bun° such
+    that any two objects are connected by a zigzag of morphisms (flow
+    maps, inclusions, or their inverses) staying within Bun°.  Each
+    light cone is a directed diagram within the aeon; the aeon is the
+    union of all light cones connected without crossing a jet horizon.
+
+    The boundary ∂𝒜 consists of objects that are limits of diagrams
+    in 𝒜 but have A_0 = 0 (jet horizons or big bang states).  The
+    boundary datum is the colimit of degree ≥ 1 data over diagrams
+    approaching the boundary. -/
 structure Aeon where
-  /-- Start step (or -∞ if past-complete). -/
-  start : Option ℤ
-  /-- End step (or +∞ if future-complete). -/
-  stop : Option ℤ
-  /-- The degree-0 algebra is non-trivial at every interior step. -/
-  interior_nontrivial : Prop
-  /-- If start is finite, the boundary is a jet horizon. -/
-  past_horizon : start.isSome → JetHorizon
-  /-- If stop is finite, the boundary is a jet horizon. -/
-  future_horizon : stop.isSome → JetHorizon
+  /-- Index type for objects in this connected component. -/
+  objects : Type*
+  /-- Each object is a bundle configuration. -/
+  -- In full formalization: objects → Bun(P(V))
+  /-- All interior objects have non-trivial degree-0 algebra. -/
+  interior_nontrivial : ∀ (x : objects), Prop  -- Γ(S_x, A_0) ≠ 0
+  /-- Connectedness: any two objects are connected by a zigzag. -/
+  connected : ∀ (x y : objects), Prop  -- ∃ zigzag x ↔ y in Bun°
+  /-- Maximality: no strictly larger connected subcategory of Bun°. -/
+  maximal : Prop
+  /-- Boundary objects (where A_0 = 0): jet horizons. -/
+  boundary : List JetHorizon
 
 -- Ref: [manuscript] §9/aeon
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
 sorry
 
-/-- Two aeons are adjacent if they share a boundary: the future
-    horizon of the first is the past horizon of the second. -/
+/-- Two aeons are adjacent if their boundaries share a common
+    jet horizon: ∂𝒜₁ ∩ ∂𝒜₂ ≠ ∅. -/
 def Aeon.adjacent (a₁ a₂ : Aeon) : Prop :=
-  ∃ (h₁ : a₁.stop.isSome) (h₂ : a₂.start.isSome),
-    a₁.stop = a₂.start
+  ∃ (h : JetHorizon), h ∈ a₁.boundary ∧ h ∈ a₂.boundary
 
 /-- **Conjecture (aeon boundary generates chart).**
 

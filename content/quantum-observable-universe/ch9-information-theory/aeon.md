@@ -1,57 +1,85 @@
-Let $U \subset M_0$ be an affine chart with information-theoretic
-time $\mathcal{T}$
-([information-theoretic time](#def:information-theoretic-time))
-and let $\mathcal{S}_k$ denote the configuration at step $k$
-([bundle initial conditions](#def:bundle-initial-conditions)).
+Let $\mathrm{Bun}(\mathbb{P}(V))$ be the category of finite
+bundles over the projective line
+([bundle category](#rem:bundle-category)), and let
+$A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
+be the brane tower
+([jet prolongation](#prop:jet-prolongation)).
 
-An **aeon** is a maximal connected open interval
-$(a, b) \subseteq \mathbb{Z}$ (with $a \in \mathbb{Z} \cup \{-\infty\}$,
-$b \in \mathbb{Z} \cup \{+\infty\}$) such that:
+**The observable subcategory.**
+Define the **observable subcategory**
+$\mathrm{Bun}^{\circ}(\mathbb{P}(V))$ as the full subcategory
+of $\mathrm{Bun}(\mathbb{P}(V))$ on objects $\mathcal{S}$ for
+which the degree-$0$ algebra is non-trivial:
 
-1. For every $k \in (a, b)$, the degree-$0$ algebra is
-   non-trivial: $\Gamma(U, A_0|_{\mathcal{S}_k}) \neq 0$.
-2. If $a > -\infty$, then $\mathcal{S}_a$ is a jet horizon
-   ([jet horizon](#def:jet-horizon)) or a big bang state
-   ([big bang state](#def:big-bang-state)):
-   $\Gamma(U, A_0|_{\mathcal{S}_a}) = 0$.
-3. If $b < +\infty$, then $\mathcal{S}_b$ is a jet horizon:
-   $\Gamma(U, A_0|_{\mathcal{S}_b}) = 0$.
+$$
+  \mathrm{Ob}\bigl(\mathrm{Bun}^{\circ}\bigr)
+  \;=\;
+  \bigl\{\,
+    \mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))
+    \;:\;
+    \Gamma(\mathcal{S},\, A_0) \neq 0
+  \,\bigr\}.
+$$
 
-The boundaries $\mathcal{S}_a$ and $\mathcal{S}_b$ (when finite)
-are the **aeon boundaries**.  An aeon is **past-complete** if
-$a = -\infty$ and **future-complete** if $b = +\infty$.
+This is the subcategory where degree-$0$ observations are
+well-defined — where the Frobenius pairing is non-degenerate
+on $A_0$.
 
-**Boundary data.**
-At an aeon boundary $\mathcal{S}_a$ or $\mathcal{S}_b$, the
-degree-$0$ data vanishes but the higher-jet data persists.  The
-**boundary datum** is the pair
+**Definition.**
+An **aeon** is a connected component of
+$\mathrm{Bun}^{\circ}(\mathbb{P}(V))$.
+
+Concretely, an aeon $\mathcal{A}$ is a maximal full subcategory
+of $\mathrm{Bun}^{\circ}$ such that any two objects $\mathcal{S}$,
+$\mathcal{S}'$ in $\mathcal{A}$ are connected by a zigzag of
+morphisms (flow maps, inclusions, or their inverses) that stays
+entirely within $\mathrm{Bun}^{\circ}$.  Each light cone is a
+directed diagram within the aeon; the aeon is the union of all
+light cones that can be connected without crossing a jet horizon
+([jet horizon](#def:jet-horizon)).
+
+**Boundary.**
+The **boundary** $\partial\mathcal{A}$ of an aeon is the set of
+objects $\mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))$ that are
+limits of diagrams in $\mathcal{A}$ but do not themselves lie in
+$\mathrm{Bun}^{\circ}$:
 
 $$
   \partial\mathcal{A}
   \;=\;
-  \bigl(\,
-    \Gamma(U,\, A_1/A_0)|_{\mathcal{S}_a},\;\;
-    \Gamma(U,\, A_2/A_0)|_{\mathcal{S}_a}
-  \,\bigr)
+  \overline{\mathcal{A}} \setminus \mathcal{A}^{\circ}
+  \;\subset\;
+  \bigl\{\,
+    \mathcal{S} : \Gamma(\mathcal{S}, A_0) = 0
+  \,\bigr\}.
 $$
 
-— the linear (degree-$1$) and curvature (degree-$2$) jet data
-that survives the horizon.  This is the algebraic analogue of
-the CMB: thermal radiation without particle identity.
+Each boundary object is a jet horizon or a big bang state
+([big bang state](#def:big-bang-state)).  The **boundary datum**
+at $\mathcal{S} \in \partial\mathcal{A}$ is the colimit of the
+degree $\geq 1$ data over all diagrams in $\mathcal{A}$
+approaching $\mathcal{S}$:
+
+$$
+  \mathrm{CMB}(\partial\mathcal{A})
+  \;=\;
+  \varinjlim_{\mathcal{S}' \to \mathcal{S}}
+  \bigl(A_1/A_0 \oplus A_2/A_0\bigr)\big|_{\mathcal{S}'}
+$$
+
+([CMB boundary datum](#def:cmb-boundary-datum)).
 
 **Aeon adjacency.**
-Two aeons $\mathcal{A} = (a, b)$ and $\mathcal{A}' = (b, c)$ are
-**adjacent** if they share a boundary at $\mathcal{S}_b$.
-The boundary datum $\partial\mathcal{A}|_b$ of the first aeon
-serves as the seed for the second: the forward light cone of
-$\mathcal{A}'$ unfolds from the degree $\geq 1$ data inherited
-from $\mathcal{A}$.
+Two aeons $\mathcal{A}$ and $\mathcal{A}'$ are **adjacent** if
+their boundaries share a common object:
+$\partial\mathcal{A} \cap \partial\mathcal{A}' \neq \varnothing$.
+The shared boundary object is simultaneously the terminal horizon
+of one aeon and the initial configuration of the next.
 
-**Reverse flow.**
-The backward iteration $f_q^{-1}$ applied to configurations
-$\mathcal{S}_k, \mathcal{S}_{k-1}, \ldots$ reverses
-computation.  If this sequence reaches a step $a$ where
-$A_0|_{\mathcal{S}_a} = 0$, the affine chart acquires a past
-boundary — a big bang state.  Whether this occurs depends on
-the dynamics: the framework does not assume past-completeness
-or past-incompleteness.
+**Maximality.**
+The connected-component definition automatically gives maximality:
+no larger subcategory of $\mathrm{Bun}^{\circ}$ containing
+$\mathcal{A}$ is connected.  This avoids the need for an
+explicit interval $(a, b) \subset \mathbb{Z}$ — the aeon is
+defined over the full structure of the category, encompassing
+all intersecting light cones.
