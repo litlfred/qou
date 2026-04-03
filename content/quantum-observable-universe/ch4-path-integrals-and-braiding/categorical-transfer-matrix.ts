@@ -6,7 +6,8 @@ export default definition({
   title: "Categorical transfer matrix",
   tags: [
     "transfer-matrix", "hadron", "vertex-operator",
-    "equivalence-class", "braiding",
+    "equivalence-class", "braiding", "configuration-space",
+    "interaction-filtration",
   ],
   uses: [
     "def:hadron",
@@ -14,5 +15,10 @@ export default definition({
     "def:exceptional-divisor",
     "rem:knot-factorization",
     "def:localized-hadron",
+    "prop:jet-prolongation",
+    "rem:jet-planck-steps",
+    "def:bundle-initial-conditions",
+    "rem:observation-braid",
+    "def:operational-entropy",
   ],
 });

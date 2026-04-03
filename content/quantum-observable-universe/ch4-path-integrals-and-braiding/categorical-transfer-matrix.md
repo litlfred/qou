@@ -41,30 +41,39 @@ $(T - q)(T + q^{-1}) = 0$ evaluated at the collision
 $z_i \to z_j$.
 
 **Interaction filtration.**
-Let $\mathcal{O}_n = \mathcal{O}(\mathrm{Conf}_n(\mathcal{S}_p))$ be the
-function algebra of the configuration space.  Before any crossing,
-the insertion points are free: all of $\mathcal{O}_n$ is available.
-Each crossing between slots $i$ and $j$ adds a Hecke relation to an
-**interaction ideal** $I_k \subset \mathcal{O}_n$, giving a
-descending filtration of quotient algebras:
+The configuration space algebra carries a **bi-filtration** reflecting
+the two sources of structure in the Reeb flow
+([observation braid](#rem:observation-braid)):
 
-$$
-  \mathcal{O}_n
-  \;\twoheadrightarrow\;
-  \mathcal{O}_n / I_1
-  \;\twoheadrightarrow\;
-  \cdots
-  \;\twoheadrightarrow\;
-  \mathcal{O}_n / I_m
-$$
+1. **Ascending (jet prolongation).**  The brane tower
+   $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
+   ([jet prolongation](#prop:jet-prolongation)) grows with each
+   Planck step.  At step $k$, the configuration space lifts to
+   the $k$-th jet: insertion points acquire $k$-th order Taylor data,
+   and knots with crossing number $\leq k$ become encodable
+   ([jet-Planck steps](#rem:jet-planck-steps)).  The initial state
+   $\mathcal{S}_0 = \sum_i (p_i, H_i)$
+   ([bundle initial conditions](#def:bundle-initial-conditions))
+   may have infinitely many constituents --- all photons ($K = \varnothing$,
+   step $0$) --- each carrying only zeroth-order fibre data.
 
-where $I_1 \subset I_2 \subset \cdots \subset I_m$ and $m$ is the
-total number of crossings in the link $\mathcal{L}$.  The ideals are
-nested: relations from earlier crossings are **never forgotten** ---
-each new interaction inherits all prior constraints and adds its own.
-The final quotient $\mathcal{O}_n / I_m$ is the algebra of functions
-on the constrained configuration space, encoding the full
-entanglement history of the hadron.
+2. **Descending (Hecke relations).**  Within a given jet level,
+   each crossing between slots $i$ and $j$ adds a Hecke relation
+   $(T - q)(T + q^{-1}) = 0$ to an **interaction ideal**
+   $I_k \subset \mathcal{O}(\mathrm{Conf}_n(\mathcal{S}_p))$.  The
+   ideals are nested: $I_1 \subset I_2 \subset \cdots \subset I_m$,
+   so relations from earlier crossings are **never forgotten**.
+   The quotient $\mathcal{O}_n / I_k$ shrinks monotonically --- the
+   insertion points become more constrained with each interaction.
+
+The two directions are complementary: jet prolongation **opens** new
+degrees of freedom (higher-order Taylor coefficients, heavier knot
+types), while Hecke relations **close** them (correlating the
+insertion points that have interacted).  The information-theoretic
+content of a hadron is the balance between these two: $\eta_q$
+nats of information per step
+([operational entropy](#def:operational-entropy)) measures the net
+rate at which the ascending tower outruns the descending constraints.
 
 **Two levels of braiding operation.**
 A braiding operation on $\mathfrak{H}$ can be described at two levels:

@@ -30,31 +30,42 @@ structure InsertionConfig where
       produce OPE singularities (z_i − z_j)^{−k}. -/
   distinct : ∀ (i j : Fin n), i ≠ j → points i ≠ points j
 
-/-- The interaction filtration on Conf_n(𝒮_p).
+/-- The interaction bi-filtration on the configuration space algebra.
 
-    Each crossing between slots i and j adds a Hecke relation
-    (T − q)(T + q⁻¹) = 0 to an interaction ideal I_k.
-    The ideals are nested: I_1 ⊂ I_2 ⊂ … ⊂ I_m, so relations
-    from earlier crossings are never forgotten.
+    Two filtrations act simultaneously:
 
-    The quotient 𝒪(Conf_n) / I_k is the algebra of functions on the
-    constrained configuration space after k crossings. -/
-structure InteractionFiltration where
+    1. **Ascending (jet prolongation).**  The brane tower
+       A_0 ↪ A_1 ↪ A_2 ↪ ⋯ grows with each Planck step.
+       At jet level k, knots with crossing number ≤ k become
+       encodable; insertion points acquire k-th order Taylor data.
+       The initial state may have infinitely many constituents
+       (all photons at step 0).
+
+    2. **Descending (Hecke relations).**  Within a given jet level,
+       each crossing adds a Hecke relation to an interaction ideal
+       I_k ⊂ 𝒪(Conf_n(𝒮_p)).  The ideals are nested:
+       I_1 ⊂ I_2 ⊂ ⋯ ⊂ I_m, so prior relations are never forgotten.
+
+    The information content is the balance between these two:
+    jet prolongation opens new degrees of freedom, Hecke relations
+    close them.  The operational entropy η_q measures the net rate. -/
+structure InteractionBiFiltration where
   /-- The underlying insertion configuration. -/
   config : InsertionConfig
-  /-- Total number of crossings in the link ℒ. -/
+  /-- Current jet level (Planck step count). -/
+  jetLevel : ℕ
+  /-- Total number of crossings resolved so far. -/
   numCrossings : ℕ
-  /-- The nested ideals I_1 ⊂ … ⊂ I_m, represented as sets of
-      slot pairs (i, j) whose Hecke relation has been imposed. -/
+  /-- Crossing number cannot exceed jet level:
+      a knot with c crossings requires at least c Planck steps. -/
+  crossings_le_jet : numCrossings ≤ jetLevel
+  /-- The ordered sequence of crossing pairs (slot i, slot j). -/
   crossingPairs : Fin numCrossings → Fin config.n × Fin config.n
   /-- Each crossing is between distinct slots. -/
   crossing_distinct : ∀ k, (crossingPairs k).1 ≠ (crossingPairs k).2
-  /-- Monotonicity: the relation set at step k is a subset of
-      the relation set at step k+1 (earlier relations persist). -/
-  -- In full formalization: I_k ⊂ I_{k+1} as ideals of 𝒪_n.
-  -- Here we encode the structural invariant that relations accumulate.
 
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [frenkel2004] https://doi.org/10.1090/surv/088
 sorry
 
 /-- The categorical transfer matrix: equivalence class of braiding
@@ -62,9 +73,9 @@ sorry
 structure CategoricalTransferMatrix (q : ℝ) where
   /-- The exceptional divisor where braiding takes place. -/
   base : ExceptionalDivisor
-  /-- The interaction filtration: insertion configuration together
-      with the accumulated Hecke relations from all crossings. -/
-  filtration : InteractionFiltration
+  /-- The bi-filtration: jet level (ascending) and accumulated
+      Hecke relations (descending) at the current Planck step. -/
+  filtration : InteractionBiFiltration
   /-- The vertex volume polynomial (the invariant). -/
   vertex_volume : ℝ  -- In full formalization: polynomial in q
 
