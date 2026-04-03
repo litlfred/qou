@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-03T03:56:36.669659+00:00",
-  "commit_sha": "6d81fe6943691843d6dbba11ccd1e4cd8d417ea4",
+  "generated_at": "2026-04-03T12:45:13.323255+00:00",
+  "commit_sha": "unknown",
   "entry_count": 67,
   "ambiguity_count": 6,
   "entries": [
@@ -477,7 +477,7 @@
       "narrative_term": "{Vertex operator on the exceptional divisor}",
       "lean_name": "QOU.PathIntegrals.VertexOperator",
       "kind": "def",
-      "narrative_definition": "Let (, theta, G, ) be a QOU, let _p cong ^1() be the exceptional divisor at a brane point p (hyperref[def:exceptional-divisor]exceptional divisor), and let _p be the Reeb bundle over _p (hyperref[def:reeb-bundle]Reeb bundle).  Write z for the standard affine coordinate on _p cong ^1().  The  of the QOU at p is the triple (V, Y, |0rangle) defined as follows.    The _geq 0-graded vector space is the brane tower:  [ V ;=; bigoplus_n geq 0 V_n, qquad V_n ;=; A_n ;=; J^n(A_0), ]  where A_0 = (_q(2)) ",
+      "narrative_definition": "Let (, theta, G, ) be a QOU, let _p cong ^1() be the exceptional divisor at a brane point p (hyperref[def:exceptional-divisor]exceptional divisor), and let _p be the Reeb bundle over _p (hyperref[def:reeb-bundle]Reeb bundle).   In the standard VOA formalism, the formal variable z is an indeterminate in the ring of formal Laurent series.  In the QOU it has a geometric realisation: z is the affine coordinate z = v_1/v_2 on the projective line _p cong ^1() (hyperref[ex:projective-line-su2]projectiv",
       "latex_label": "def:vertex-operator",
       "chapter": 5
     },
@@ -485,7 +485,7 @@
       "narrative_term": "{Categorical transfer matrix}",
       "lean_name": "QOU.PathIntegrals.CategoricalTransferMatrix",
       "kind": "def",
-      "narrative_definition": "Let _p = [K_1, ldots, K_n]_p bowtie  be a hyperref[def:hadron]hadron at a brane point p (hyperref[def:localized-hadron]localized hadron), and let _p be the exceptional divisor at p (hyperref[def:exceptional-divisor]exceptional divisor).   The constituent knots K_i are simple objects in , each factoring through a tensor power of V (hyperref[rem:knot-factorization]knot factorization): K_i hookrightarrow V^otimes 2j_i via the PawLei embedding iota_j_i.  The  of  are the formal variables z_1, ldots,",
+      "narrative_definition": "Let _p = [K_1, ldots, K_n]_p bowtie  be a hyperref[def:hadron]hadron at a brane point p (hyperref[def:localized-hadron]localized hadron), and let _p be the exceptional divisor at p (hyperref[def:exceptional-divisor]exceptional divisor).   The constituent knots K_i are simple objects in , each factoring through a tensor power of V (hyperref[rem:knot-factorization]knot factorization): K_i hookrightarrow V^otimes 2j_i via the PawLei embedding iota_j_i.  The index i labels the , not the knot type: s",
       "latex_label": "def:categorical-transfer-matrix",
       "chapter": 5
     },
@@ -522,10 +522,10 @@
       "chapter": 5
     },
     {
-      "narrative_term": "{Bundle initial conditions (big bang state)}",
+      "narrative_term": "{Bundle initial conditions}",
       "lean_name": "QOU.PathIntegrals.BundleInitialConditions",
       "kind": "def",
-      "narrative_definition": "A  (or ) over the projective line (V) is a formal sum of localized hadrons at base points:  [ _0 ;=; sum_i in I (p_i,, H_i) ]  where each (p_i, H_i) is a localized hadron (hyperref[def:localized-hadron]Definition).  The index set I may be infinite, and multiple hadrons may share the same base point (bosonic and fermionic statistics are determined by the Skein algebra, not by a support constraint).  Equivalently, _0 is a section of the free commutative monoid on the hadron sheaf :  [ _0 ;in; Gamm",
+      "narrative_definition": "A  over the projective line (V) at a reference point in an affine chart is a formal sum of localized hadrons and photons at base points:  [ _0 ;=; sum_i in I (p_i,, H_i) ]  where each (p_i, H_i) is a localized hadron (hyperref[def:localized-hadron]Definition) or a photon (H_i = varnothing). The index set I may be infinite, and multiple constituents may share the same base point (bosonic and fermionic statistics are determined by the Skein algebra, not by a support constraint).  Equivalently, _0 ",
       "latex_label": "def:bundle-initial-conditions",
       "chapter": 5,
       "ambiguity": {
