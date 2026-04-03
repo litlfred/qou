@@ -7,6 +7,9 @@ import QOU.QuantumObservableUniverse
 -- import QOU.GrobnerShirshov.HeckeGS
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-!
 # Photon Threading = Gröbner Energy

@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
 import QOU.Glossary
+import Mathlib.Tactic.NormNum
 
 /-!
 # QOU.KnotTheory — Combinatorial Knot Representations

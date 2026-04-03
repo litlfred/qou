@@ -2,6 +2,8 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import QOU.MassDerivation
 import QOU.KnotRegistry
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.HadronicMass — Terminal Resolution of Hadronic Mass
@@ -530,8 +532,9 @@ into self-contained statements suitable for cross-referencing. -/
     is inhabited at the derived substrate parameter `q = 1.1097`,
     using the proton/neutron/deuteron mass data.
 
-    LaTeX: `\label{prop:skein-mass-relation}` -/
-/-- The Skein relation involves `q ^ (1/2 : ℝ)` (Real.rpow), which
+    LaTeX: `\label{prop:skein-mass-relation}`
+
+    The Skein relation involves `q ^ (1/2 : ℝ)` (Real.rpow), which
     Lean 4 / Mathlib's `norm_num` cannot evaluate for non-integer exponents.
 
     **Numerical verification** (SageMath / Python `mpmath`):
