@@ -23,7 +23,7 @@ $$
 | $e^-$ | $T_{2,3}$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) / 3$ (input) | $0.511$ | $0.51100$ | CODATA |
 | $\mu^-$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
 
-The electron mass is an input (it fixes $\mu_u$ through the pair
+The electron mass is an input (it fixes $\mu_{\mathfrak{u}}$ through the pair
 Skein mass).  The muon mass is the first *prediction* — it equals
 $\mathrm{Vol}(4_1)/\hbar_q^2$ and reproduces the CODATA value
 to six significant figures with $q = q_0$.
@@ -52,7 +52,7 @@ to six significant figures with $q = q_0$.
 1. *One free parameter.* The substrate parameter $q$ is fixed by the
    muon--electron mass ratio.  All other entries are predictions (or
    consistency checks where the electron mass is used as input to
-   determine dressed quark masses $\mu_u$, $\mu_d$).
+   determine dressed quark masses $\mu_{\mathfrak{u}}$, $\mu_{\mathfrak{d}}$).
 
 2. *Hadronic masses.* The pair Skein formula
    ([terminal resolution](#prop:terminal-resolution)) determines
