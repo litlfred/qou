@@ -87,6 +87,7 @@ section({
         "aeon",
         "aeon-boundary-generates-chart",
         "horizon-conformal-invariance",
+        "qou-is-ccc",
         "penrose-ccc",
       ],
     }),
