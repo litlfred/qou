@@ -171,3 +171,50 @@ export type {
 } from "./qou-types";
 
 export { DEFAULT_TACTIC_MAPPINGS } from "./qou-types";
+
+// ── Assistant framework schemas ──────────────────────────────────
+
+export type {
+  // Actors
+  ActorType,
+  Conformance,
+  ActorDefinition,
+  // Capabilities
+  CapabilityDetection,
+  CapabilityDefinition,
+  // Skills
+  SkillCapabilityRef,
+  SkillDependency,
+  SkillScript,
+  SkillValidator,
+  SkillSchemaRef,
+  SkillDefinition,
+  // Requirements
+  SatisfiedByRef,
+  RequirementStatement,
+  Requirement,
+  // Registry
+  SkillPackageRef,
+  SessionHook,
+  HookCommand,
+  RoleAssignment,
+  SkillRegistry,
+} from "./assistant-types";
+
+export type {
+  AptDependency,
+  InstallerDependency,
+  PythonDependency,
+  NodeDependency,
+  PackageManifest,
+} from "./assistant-package";
+
+// Workflow lifecycle
+export type {
+  LifecycleStage,
+  StageTransition,
+  StageSkillBinding,
+  WorkflowDefinition,
+} from "./assistant-workflow";
+
+export { mathAuthoringWorkflow } from "./assistant-workflow";
