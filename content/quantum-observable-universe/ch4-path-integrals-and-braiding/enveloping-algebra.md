@@ -24,5 +24,4 @@ In the QOU framework this basis serves two purposes:
    [Chapter 2](#chap:torsion));
 2. it ensures flatness of the deformation $q \mapsto q_n$, so that
    the transition maps in the direct limit
-   $\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 \mathcal{S}_n,\,
-   \mathrm{SU}_{q_n}(2))$ are well-defined algebra homomorphisms.
+   $\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2))$ are well-defined algebra homomorphisms.

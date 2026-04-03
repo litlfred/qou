@@ -14,7 +14,7 @@ to the Skein polynomial than negative ones.  This asymmetry is
 the topological origin of electromagnetic repulsion.
 
 **Emergent Coulomb repulsion.**
-For a hadron $H$ with Coulomb charge $Q(H)$
+For a hadron $\mathfrak{H}$ with Coulomb charge $Q(\mathfrak{H})$
 ([Coulomb charge](#def:coulomb-charge)), the crossing energy
 ([crossing energy](#def:crossing-energy)) decomposes into a
 symmetric (strong) baseline and an antisymmetric (Coulomb)

@@ -26,13 +26,22 @@ namespace QOU.Descartes
 -- Ref: [manuscript] §5/weierstrass-projection
 noncomputable def weierstrassProjection
     (g2 g3 : ℝ) (z : ℂ) : ℂ :=
+  -- Ref: [manuscript] §5/weierstrass-projection
   sorry
 
 /-- The Weierstrass function satisfies the differential equation
-    ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃. -/
+    ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃.
+
+    Stated as: for all z not in the lattice Λ_q, the squared
+    derivative of ℘_q at z equals the cubic polynomial evaluated
+    at ℘_q(z). -/
 -- Ref: [manuscript] §5/weierstrass-projection
-theorem weierstrass_diff_eq (g2 g3 : ℝ) (z : ℂ) :
-    True := by  -- placeholder for the differential equation statement
+-- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6
+theorem weierstrass_diff_eq (g2 g3 : ℝ) (z : ℂ)
+    (hz : z ≠ 0) :
+    ∃ (wp_deriv wp_val : ℂ),
+      wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3 := by
+  -- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6  Theorem VI.3.6
   sorry
 
 end QOU.Descartes

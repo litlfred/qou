@@ -20,11 +20,13 @@ $\mathrm{SU}(2) \to \mathbb{CP}^1$) and $\ell$ is the ascent
 action and ascent re-embeds the result, we have $\hat{\tau}^2 = \hat{\tau}$. That
 is, $\hat{\tau}$ is a projection, not merely an involution of order $2$.
 Explicitly, for $\phi \in \mathrm{End}_{\mathbf{C}}(A_1)$,
+
 $$
   \hat{\tau}(\phi)(f \otimes \omega_a)
   \;=\; \frac{1}{2\pi} \int_0^{2\pi}
   \phi\bigl(e^{i\theta} \cdot (f \otimes \omega_a)\bigr)\, d\theta,
 $$
+
 where $e^{i\theta}$ acts via the $\mathrm{U}(1) \hookrightarrow \mathrm{SU}(2)$
 maximal torus. The fixed-point set $\mathrm{End}_{\mathbf{C}}(A_1)^{\hat{\tau}}$
 consists of the $\mathrm{U}(1)$-equivariant endomorphisms.

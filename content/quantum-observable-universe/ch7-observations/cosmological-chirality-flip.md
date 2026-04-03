@@ -55,7 +55,7 @@ Frobenius form is maintained but becomes trivial (the pairing
 carries no quantum content).
 
 In this limit, the distinction between $T_{2,3}$ and
-$\sigma(T_{2,3})$ becomes undetectable: with $\hbar_q = 0$,
+$T_{2,3}^{\sigma}$ becomes undetectable: with $\hbar_q = 0$,
 the crossing energy asymmetry
 $q - q^{-1} = 2\sinh(\ln q) \to 0$ vanishes.  The strong and
 Coulomb channels merge.  Chirality reversal does not require

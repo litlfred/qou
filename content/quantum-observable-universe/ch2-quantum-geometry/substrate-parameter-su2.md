@@ -14,6 +14,7 @@ via $\iota$.
 
 **Classical case.** Setting $q_0 = 1$ recovers the undeformed coordinate
 ring $\mathcal{O}(\mathrm{SU}(2))$ with its commutative multiplication:
+
 $$
   \iota_{q_0 = 1} \colon
   \mathcal{O}_q(\mathrm{SU}(2))
@@ -24,17 +25,19 @@ $$
   \mapsto
   \begin{pmatrix} a & b \\ c & d \end{pmatrix},
 $$
+
 where $ab = ba$, $ac = ca$, etc. This is the setting of the classical
 [brane tower](#ex:recursive-brane-tower-su2).
 
-**Quantum case.** For $q_0 = e^{\pi i / \kappa}$ with $\kappa \in
-\mathbb{Z}_{\geq 2}$ the Chern--Simons level, the specialisation
+**Quantum case.** For $q_0 = e^{\pi i / \kappa}$ with $\kappa \in \mathbb{Z}_{\geq 2}$ the Chern--Simons level, the specialisation
 produces $\mathcal{O}_{q_0}(\mathrm{SU}(2))$ with non-commutative
 relations:
+
 $$
   ab = q_0\, ba, \quad ac = q_0\, ca, \quad
   bc = cb, \quad ad - da = (q_0 - q_0^{-1})\, bc.
 $$
+
 The representation category
 $\mathrm{Rep}(\mathrm{SU}_{q_0}(2))$ is a modular tensor category
 with finitely many simple objects $V_0, V_{1/2}, \ldots, V_{(\kappa - 2)/2}$
@@ -44,10 +47,12 @@ when $q_0$ is a root of unity.
 spin-$j$ representations with $2j \geq \kappa - 1$ become reducible
 or zero, leaving a finite semisimple category. The quantum dimension
 of $V_j$ is
+
 $$
   \dim_q(V_j) = \frac{q_0^{2j+1} - q_0^{-(2j+1)}}{q_0 - q_0^{-1}}
   = [2j + 1]_{q_0},
 $$
+
 the quantum integer. For $q_0 = 1$ this reduces to the classical
 dimension $2j + 1$.
 

@@ -59,9 +59,12 @@ content/
 
 ### Level 4: TeX snippet validation (in .md files)
 
-The `.md` files are parsed using **remark + remark-math** (formal markdown
-grammar with math extension). Each extracted TeX snippet is validated via
-**unified-latex** AST parsing. This catches:
+The `.md` files are parsed using **remark + remark-gfm + remark-math**
+(formal markdown grammar with GFM table support and math extension).
+GFM pipe tables are converted to `\begin{tabular}` with `booktabs`
+rules; inline code (backticks) renders as `\texttt{}` with LaTeX
+escaping. Each extracted TeX snippet is validated via **unified-latex**
+AST parsing. This catches:
 
 - Non-math environments inside math mode (e.g. `\begin{itemize}` inside `$$`)
 - Unbalanced braces or environments in inline/display math

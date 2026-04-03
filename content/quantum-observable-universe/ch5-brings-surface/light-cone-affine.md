@@ -1,5 +1,5 @@
 Consider an open subset $U \subset M_0$ representing a portion of the
-descended universe from the big bang to heat death.  An *affine chart*
+descended universe between two regime boundaries.  An *affine chart*
 on $U$ is a local coordinate patch in which the metric on the base manifold
 $M_0$ defines a causal structure.  The *light cone* of the affine chart
 is the boundary of the causal future in $U$: it is determined by the metric

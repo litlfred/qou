@@ -23,6 +23,5 @@ the
 ([jet prolongation](#prop:jet-prolongation)) sends the triple at level $n$
 to the triple at level $n{+}1$, and the descent homomorphism
 $\mathfrak{d}_{n+1}$ ([descent](#lem:descent)) reverses this assignment.
-In the archimedean realisation, $g_{ij}^{(n)} \in
-\Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$ are gauge transition
+In the archimedean realisation, $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$ are gauge transition
 functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.

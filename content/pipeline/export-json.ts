@@ -65,6 +65,12 @@ interface ExportedBlock {
   md: string;
   mdModified: string;
   meta?: Record<string, unknown>;
+  /** Simulator-specific fields */
+  html?: string;
+  defaultView?: { name: string; title?: string; params?: Record<string, unknown> };
+  views?: Array<{ name: string; title?: string; params?: Record<string, unknown> }>;
+  /** Remark interprets link */
+  interprets?: string;
 }
 
 interface ExportedSection {
@@ -89,6 +95,8 @@ interface ExportedPaper {
   chapters: ExportedChapter[];
   /** Full bibliography database (CSL-JSON) for cross-linking. */
   references?: CSLData[];
+  /** Custom LaTeX macros (name → {tex, unicode}) for KaTeX rendering. */
+  macros?: Record<string, { tex: string; unicode?: string }>;
   meta?: Record<string, unknown>;
   _hash: string;
   _built: string;
@@ -214,6 +222,10 @@ async function main() {
             md,
             mdModified: mdStat ? mdStat.mtime.toISOString() : "",
             meta: "meta" in block ? block.meta : undefined,
+            html: "html" in block ? (block as any).html : undefined,
+            defaultView: "defaultView" in block ? (block as any).defaultView : undefined,
+            views: "views" in block ? (block as any).views : undefined,
+            interprets: "interprets" in block ? (block as any).interprets : undefined,
           });
         } catch (e) {
           blocks.push({
@@ -256,6 +268,7 @@ async function main() {
     date: paper.date,
     chapters,
     references,
+    macros: (paper as any).macros,
     meta: paper.meta,
     _built: new Date().toISOString(),
   };

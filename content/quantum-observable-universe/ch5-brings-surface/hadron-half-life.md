@@ -162,7 +162,7 @@ The decay rate depends on $q$ through four channels:
   ([transition energy](#def:q-value-transition)), determined by
   the pair Skein weights $\mathcal{S}_{ab}(q)$ which depend on $q$
   through the dressed quark masses $\mu_u, \mu_d$.  Note:
-  $\mathcal{Q}_q \neq T_e + T_{\bar{\nu}} + T_{\mathrm{recoil}}$
+  $\mathcal{Q}_q \neq T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}$
   at $q \neq 1$ (the $q$-anomaly $\delta_q \neq 0$).
 
 At $q = 1$ (classical limit): $s = 0$, $[2]_1 = 2$, the crossing

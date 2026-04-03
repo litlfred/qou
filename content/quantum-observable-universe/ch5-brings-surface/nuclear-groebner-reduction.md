@@ -3,8 +3,11 @@ $B_A$ ([braid group](#def:braid-group)), where $A = Z + N$.  This
 braid word is not unique — different orderings of the Hopf crossings
 give different representatives of the same link.  The **Gröbner
 reduction** in the Hecke algebra $H_A(q)$ produces a unique
-**normal form** $\overline{\mathcal{N}(Z, N)}$ — the lowest-energy
-representative.
+**normal form** — the lowest-energy representative.
+
+**Convention.** Throughout this paper, $\mathcal{N}(Z, N)$ always
+denotes the **reduced** (Gröbner normal form) nuclear braid word
+unless explicitly stated otherwise.
 
 **Proposition.**
 Let $R = \mathbb{Z}[q, q^{-1}]$, let $R[B_A]$ be the group algebra
@@ -22,8 +25,7 @@ The Hecke algebra $H_A(q) = R[B_A] / I$ has an admissible system
 ([admissible system](#unital-groebner-bases:def:admissible-system))
 $(B, <)$ where:
 
-- $B$ = positive braid monomials $\sigma_{i_1} \sigma_{i_2}
-  \cdots \sigma_{i_k}$ with $i_j \in \{1, \ldots, A-1\}$,
+- $B$ = positive braid monomials $\sigma_{i_1} \sigma_{i_2} \cdots \sigma_{i_k}$ with $i_j \in \{1, \ldots, A-1\}$,
 - $<$ = length-lexicographic ordering (shorter words first, then
   lexicographic on generator indices).
 
@@ -32,22 +34,21 @@ The Gröbner basis $G$ for $I$ with respect to $(B, <)$ consists of:
 1. **Hecke relation**: $T_i^2 - (q - q^{-1})\,T_i - 1$
    (eliminates all squares).
 
-2. **Yang--Baxter relation**: $\sigma_i\,\sigma_{i+1}\,\sigma_i
-   - \sigma_{i+1}\,\sigma_i\,\sigma_{i+1}$ (braid relation,
+2. **Yang--Baxter relation**: $\sigma_i\,\sigma_{i+1}\,\sigma_i - \sigma_{i+1}\,\sigma_i\,\sigma_{i+1}$ (braid relation,
    reduces to the length-lex-smaller form).
 
 3. **Far commutativity**: $\sigma_i\,\sigma_j - \sigma_j\,\sigma_i$
    for $|i - j| \geq 2$ (sorts distant generators).
 
-The remainder $r(\mathcal{N}(Z, N),\, G)$ under the division
+The remainder $r(\mathcal{N}_{\mathrm{raw}}(Z, N),\, G)$ under the division
 algorithm
 ([division algorithm](#unital-groebner-bases:def:division-algorithm))
 is the **unique normal form**:
 
 $$
-  \overline{\mathcal{N}(Z, N)}
+  \mathcal{N}(Z, N)
   \;:=\;
-  r\bigl(\mathcal{N}(Z, N),\, G\bigr)
+  r\bigl(\mathcal{N}_{\mathrm{raw}}(Z, N),\, G\bigr)
   \;\in\; H_A(q).
 $$
 
@@ -83,8 +84,7 @@ In $H_A(q)$, the inverse $\sigma_i^{-1}$ is eliminated via the
 Skein relation:
 $\sigma_i^{-1} = q^2\,\sigma_i - q(q^{1/2} - q^{-1/2})$.
 The mixed crossing $\tfrac{1}{2}(\sigma_i + \sigma_i^{-1})$
-becomes $\tfrac{1}{2}(1 + q^2)\,\sigma_i
-- \tfrac{1}{2}q(q^{1/2} - q^{-1/2})$.
+becomes $\tfrac{1}{2}(1 + q^2)\,\sigma_i - \tfrac{1}{2}q(q^{1/2} - q^{-1/2})$.
 
 This gives $2^{|{\mathrm{mixed}}|}$ terms in $H_A(q)$ before
 reduction (one per mixed crossing), where
@@ -112,7 +112,7 @@ with beta decay releasing energy.
 The reduced braid word for tritium is:
 
 $$
-  \overline{\mathcal{N}(1, 2)}
+  \mathcal{N}(1, 2)
   \;=\;
   -0.145
   \;+\; (-0.015)\,\sigma_0
@@ -129,8 +129,8 @@ The beta-decay half-life depends on the **difference** between the
 parent and daughter normal forms:
 
 $$
-  \overline{\mathcal{N}(Z, N)}
-  - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
+  \mathcal{N}(Z, N)
+  - \mathcal{N}(p\!+\!1, n\!-\!1)
   \;=\;
   \sum_{w \in B} \Delta c_w \cdot w
 $$
@@ -143,8 +143,8 @@ $$
   \;\propto\;
   \left|
     \mathrm{tr}_{\mathrm{Markov}}\!\left(
-      \overline{\mathcal{N}(Z, N)}
-      - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
+      \mathcal{N}(Z, N)
+      - \mathcal{N}(p\!+\!1, n\!-\!1)
     \right)
   \right|^2.
 $$
@@ -164,6 +164,5 @@ and sorts all commuting generators.  The maximum word length in
 the normal form is bounded by $A - 1$ (the longest reduced word
 in $H_A$ is $\sigma_1 \sigma_2 \cdots \sigma_{A-1}$).  For
 ${}^{14}\mathrm{C}$ ($A = 14$): the normal form has at most
-$\binom{13}{k}$ terms of length $k$, totalling at most $2^{13}
-= 8192$ terms — tractable for numerical evaluation via the
+$\binom{13}{k}$ terms of length $k$, totalling at most $2^{13} = 8192$ terms — tractable for numerical evaluation via the
 Markov trace.

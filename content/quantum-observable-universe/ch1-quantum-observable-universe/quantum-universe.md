@@ -4,8 +4,7 @@ triple $(\mathbf{C}, A, \tau)$ where:
 1. $(\mathbf{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
    braided monoidal category
    ([rigid monoidal category](#def:rigid-monoidal-category)) with
-   braiding $c_{X,Y} \colon X \otimes Y
-   \xrightarrow{\sim} Y \otimes X$ — the braiding is required for
+   braiding $c_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$ — the braiding is required for
    exterior powers $\Lambda^k V$ and need not be symmetric
    ($c^2 \neq \mathrm{id}$ in general);
 

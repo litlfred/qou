@@ -19,8 +19,8 @@ The strangelet proposition establishes three facts:
    factor of $4/3$.
 
 Fact (3) is the QOU version of Witten's observation: by replacing
-down quarks ($\overline{T_{2,3}}$, 3 negative crossings) with
-strange quarks ($\overline{T_{2,5}}$, 5 negative crossings), each
+down quarks ($T_{2,3}^{\sigma}$, 3 negative crossings) with
+strange quarks ($T_{2,5}^{\sigma}$, 5 negative crossings), each
 baryon gains $2q^{-1}$ additional binding in the strong channel.
 At $q = q_0$: this is $2 \times 0.9011 = 1.802$ Skein units
 per baryon.
@@ -44,8 +44,8 @@ the Jones polynomial of each constituent.  At $q = q_0$:
 | Quark | Knot | Jones polynomial | $|J(q_0)|$ |
 |-------|------|-----------------|:-------------:|
 | Up $\mathfrak{u}$ | $T_{2,3}$ | $-q^{-4} + q^{-3} + q^{-1}$ | $0.973$ |
-| Down $\mathfrak{d}$ | $\overline{T_{2,3}}$ | $-q^{4} + q^{3} + q$ | $0.960$ |
-| Strange $\mathfrak{s}$ | $\overline{T_{2,5}}$ | $-q^{10} + q^{9} - q^{8} + q^{7} + q^{5}$ | $1.176$ |
+| Down $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $-q^{4} + q^{3} + q$ | $0.960$ |
+| Strange $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $-q^{10} + q^{9} - q^{8} + q^{7} + q^{5}$ | $1.176$ |
 
 The strange quark's Jones polynomial evaluates **$22\%$ higher**
 than the down quark's.  This excess enters the Skein resolution
@@ -93,8 +93,7 @@ $$
   \;\approx\; 210 \;\mathrm{MeV}.
 $$
 
-This corresponds to a density $\rho_{\mathrm{hyp}} \approx
-2\text{--}3\,\rho_0$ (two to three times nuclear saturation
+This corresponds to a density $\rho_{\mathrm{hyp}} \approx 2\text{--}3\,\rho_0$ (two to three times nuclear saturation
 density), consistent with the onset of hyperonic matter in
 nuclear physics calculations.  Above this density:
 

@@ -1,6 +1,6 @@
 The number of stable nuclear configurations at a given substrate
 parameter $q$ is **finite**.  The stability boundary is the zero
-locus of the Skein polynomial $P_{\bar{\mathcal{N}}(p,n)}(q)$.
+locus of the Skein polynomial $P_{\mathcal{N}(p,n)}(q)$.
 
 ## The transfer matrix eigenvalue inequality
 
@@ -11,7 +11,7 @@ $\hat{V}_i = z \cdot M_{11}^{(i)} + M_{21}^{(i)}$
 and the Skein polynomial is the product:
 
 $$
-  P_{\bar{\mathcal{N}}(p,n)}(q) \;=\; \prod_{i=0}^{A-2} \hat{V}_i(q).
+  P_{\mathcal{N}(p,n)}(q) \;=\; \prod_{i=0}^{A-2} \hat{V}_i(q).
 $$
 
 The transfer matrix $T(c, d)$ at each crossing has eigenvalues
@@ -47,7 +47,7 @@ in sign** with $k$.
 the Skein polynomial is positive:*
 
 $$
-  P_{\bar{\mathcal{N}}(p,n)}(q) \;>\; 0.
+  P_{\mathcal{N}(p,n)}(q) \;>\; 0.
 $$
 
 *This is equivalent to the **lattice inequality**: for each
@@ -126,7 +126,7 @@ direct-term contribution, the sign flips.
 
 The sign flip comes from **factorial vs exponential** competition.
 
-The Hecke normal form $\bar{\mathcal{N}}$ has at most $A!$ terms
+The Hecke normal form $\mathcal{N}$ has at most $A!$ terms
 (the dimension of $H_A(q)$).  The dominant term has coefficient
 $\sim q^{\binom{A}{2}}$.  The Yang–Baxter cross-terms redistribute
 coefficient among up to $(A-1)!$ reduced words.  The Markov trace
@@ -205,13 +205,11 @@ $A = 4$).
 also crosses at $A = 5$.  The bound is **topological** (from
 the Hecke algebra dimension $A!$), not dependent on $q$.
 
-**At $q \to \infty$:** $[k]_q \sim q^{k-1}$, so $[A\!-\!1]_q!
-\sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$.  The
+**At $q \to \infty$:** $[k]_q \sim q^{k-1}$, so $[A\!-\!1]_q! \sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$.  The
 crossover shifts to $(A-1)(A-2)/2 > A-1$, i.e., $A > 4$,
 which is the same.
 
-**Note:** This bound applies to the alternating $\mathfrak{p}
-\mathfrak{n}$ filling order.  Shell closures
+**Note:** This bound applies to the alternating $\mathfrak{p} \mathfrak{n}$ filling order.  Shell closures
 ([shell closure](#prop:shell-closure-normal-form)) create
 **stability islands** beyond $A_{\max}$ where the palindromic
 Poincaré distribution restores $P > 0$.  The physical nuclear
@@ -229,7 +227,7 @@ $$
   \;=\;
   \bigl\{
     (p, n) \in \mathbb{N}^2 :
-    P_{\bar{\mathcal{N}}(p,n)}(q) > 0
+    P_{\mathcal{N}(p,n)}(q) > 0
   \bigr\}
 $$
 

@@ -1,9 +1,8 @@
 Every braid move acts on the three sectors of the categorical
-action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} +
-\mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
+action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} + \mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
 ([canonical action](#prop:qou-canonical-action)).  This table
 gives the complete accounting: what each move preserves, what it
-changes, and what you must track for mass and energy calculations.
+changes, and what must be tracked for mass and energy calculations.
 
 **The categorical action on a nuclear link.**
 For a nucleus $\mathcal{N}(Z, N)$ evaluated at the braid
@@ -121,8 +120,7 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
      $(q - q^{-1})$ of Coulomb energy and $1$ of volume binding.
    - R3 and far-comm rearrange crossings without energy cost.
 
-3. **$Q$-value** $= \mathcal{S}_q[\text{parent}]
-   - \mathcal{S}_q[\text{daughter}]$.
+3. **$Q$-value** $= \mathcal{S}_q[\text{parent}] - \mathcal{S}_q[\text{daughter}]$.
    - The Skein crossing change ($\mathfrak{d} \to \mathfrak{u}$) produces the transition.
    - The $L_0$ emission carries the electron + antineutrino.
    - The energy released = difference in gauge sector between
@@ -144,7 +142,7 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
    | Parent mass | $\text{Vol}(\mathcal{N}(6,8)) / \hbar_q^2$ | R2 steps in parent |
    | Daughter mass | $\text{Vol}(\mathcal{N}(7,7)) / \hbar_q^2$ | R2 steps in daughter |
    | $Q$-value | $M_{\text{par}} - M_{\text{dau}} - m_e$ | Difference in R2 steps |
-   | $L_0$ amplitude | Skein weight of $e^- \sqcup \bar{\nu}$ | Skein crossing change |
+   | $L_0$ amplitude | Skein weight of $e^- \sqcup \nu^{\sigma}$ | Skein crossing change |
    | Matrix element | $\|\hat{V}(L_0)\|^2$ | R2 at converting generator |
    | Writhe correction | $(-q^{3/4})^{-\Delta w}$ | R1 (writhe change = $A - 1$) |
    | Half-life | $\ln 2 / (\|M_q\|^2 \times f(Z, Q))$ | All of the above |

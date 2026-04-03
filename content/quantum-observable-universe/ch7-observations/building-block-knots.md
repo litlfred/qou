@@ -20,13 +20,13 @@ produces a distinct knot type; for amphichiral knots
 | Knot | $T_{m,n}$ | AB index | Genus | Crossings | Visual | Particle | Jones $J(q)$ | Vol |
 |------|-----------|----------|:-----:|:---------:|:------:|----------|-------------|:---:|
 | Unknot | $T_{1,0}$ | $0_1$ | $0$ | $0$ | ○ | $\nu$ (neutrino) | $1$ | $0$ |
-| Mirror unknot | $\overline{T_{1,0}}$ | $0_1$ | $0$ | $0$ | ⊙ | $\bar{\nu}$ (antineutrino) | $1$ | $0$ |
+| Mirror unknot | $T_{1,0}^{\sigma}$ | $0_1$ | $0$ | $0$ | ⊙ | $\nu^{\sigma}$ (antineutrino) | $1$ | $0$ |
 | Left trefoil | $T_{2,3}$ | $3_1$ | $1$ | $3$ | ● | $e^-$ (electron) / $u$ (up quark) | $-q^{-4} + q^{-3} + q^{-1}$ | $0$ |
-| Right trefoil | $\overline{T_{2,3}}$ | $\overline{3_1}$ | $1$ | $3$ | ○ | $e^+$ (positron) / $d$ (down quark) | $-q^{4} + q^{3} + q$ | $0$ |
+| Right trefoil | $T_{2,3}^{\sigma}$ | $3_1^{\sigma}$ | $1$ | $3$ | ○ | $e^+$ (positron) / $d$ (down quark) | $-q^{4} + q^{3} + q$ | $0$ |
 | Cinquefoil | $T_{2,5}$ | $5_1$ | $2$ | $5$ | ● | $b$ (bottom quark) | $-q^{-10} + q^{-9} - q^{-8} + q^{-7} + q^{-5}$ | $0$ |
-| Mirror cinquefoil | $\overline{T_{2,5}}$ | $\overline{5_1}$ | $2$ | $5$ | ○ | $s$ (strange quark) | $-q^{10} + q^{9} - q^{8} + q^{7} + q^{5}$ | $0$ |
+| Mirror cinquefoil | $T_{2,5}^{\sigma}$ | $5_1^{\sigma}$ | $2$ | $5$ | ○ | $s$ (strange quark) | $-q^{10} + q^{9} - q^{8} + q^{7} + q^{5}$ | $0$ |
 | Septafoil | $T_{2,7}$ | $7_1$ | $3$ | $7$ | ● | $c$ (charm quark) | $-q^{-18} + q^{-17} - q^{-16} + q^{-15} - q^{-14} + q^{-13} + q^{-11}$ | $0$ |
-| Mirror septafoil | $\overline{T_{2,7}}$ | $\overline{7_1}$ | $3$ | $7$ | ○ | $\bar{c}$ (anticharm) | mirror of above | $0$ |
+| Mirror septafoil | $T_{2,7}^{\sigma}$ | $7_1^{\sigma}$ | $3$ | $7$ | ○ | $c^{\sigma}$ (anticharm) | mirror of above | $0$ |
 | $T_{2,9}$ | $T_{2,9}$ | $9_1$ | $4$ | $9$ | ● | (saturating) | $-q^{-28} + \cdots + q^{-19}$ | $0$ |
 | $T_{3,4}$ | $T_{3,4}$ | $8_{19}$ | $3$ | $8$ | ● | $t$ (top quark) | $q^{-7} - q^{-6} + q^{-5} - 2q^{-4} + q^{-3} + q^{-1}$ | $0$ |
 | $T_{3,5}$ | $T_{3,5}$ | $10_{124}$ | $4$ | $10$ | ● | (heavy sector) | (10-term polynomial) | $0$ |
@@ -39,11 +39,11 @@ mass arises entirely from **crossing energy** at $q \neq 1$.
 
 | Knot | AB index | Source | Genus | Crossings | Visual | Particle | Vol |
 |------|----------|--------|:-----:|:---------:|:------:|----------|:---:|
-| Figure-eight | $4_1$ | $\sigma(T_{2,3} \bowtie T_{2,3})$ | $1$ | $4$ | ●=○ | $\mu^-$ (muon) | $2.0299$ |
-| Three-twist | $5_2$ | $\sigma(T_{2,3})$ variant | $1$ | $5$ | ● | — | $2.8281$ |
+| Figure-eight | $4_1$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $1$ | $4$ | ●=○ | $\mu^-$ (muon) | $2.0299$ |
+| Three-twist | $5_2$ | $T_{2,3}^{\sigma}$ variant | $1$ | $5$ | ● | — | $2.8281$ |
 
 The figure-eight knot $4_1$ is **amphichiral** (self-mirror),
-so $\mu^- = \overline{\mu^-}$ as knot types.  The muon-antimuon
+so $\mu^- = (\mu^-)^{\sigma}$ as knot types.  The muon-antimuon
 distinction is carried by orientation, like the neutrino.
 
 ## Table 3: Links (multi-component, for force carriers and composites)
@@ -62,13 +62,13 @@ operation $\sigma$.  For completeness:
 
 | Particle | Knot | Antiparticle | Knot | Same type? |
 |----------|------|-------------|------|:----------:|
-| $\nu$ | $T_{1,0}$ | $\bar{\nu}$ | $\overline{T_{1,0}}$ | Yes (amphichiral) |
-| $e^-$ | $T_{2,3}$ | $e^+$ | $\overline{T_{2,3}}$ | No (chiral) |
-| $\mu^-$ | $4_1$ | $\mu^+$ | $\overline{4_1}$ | Yes (amphichiral) |
-| $u$ | $T_{2,3}$ | $\bar{u}$ | $\overline{T_{2,3}}$ | No (chiral) |
-| $d$ | $\overline{T_{2,3}}$ | $\bar{d}$ | $T_{2,3}$ | No (chiral) |
-| $p$ | $\mathcal{B}_3(u,u,d)$ | $\bar{p}$ | $\sigma(\mathcal{B}_3(u,u,d))$ | No |
-| $n$ | $\mathcal{B}_3(u,d,d)$ | $\bar{n}$ | $\sigma(\mathcal{B}_3(u,d,d))$ | No |
+| $\nu$ | $T_{1,0}$ | $\nu^{\sigma}$ | $T_{1,0}^{\sigma}$ | Yes (amphichiral) |
+| $e^-$ | $T_{2,3}$ | $e^+$ | $T_{2,3}^{\sigma}$ | No (chiral) |
+| $\mu^-$ | $4_1$ | $\mu^+$ | $4_1^{\sigma}$ | Yes (amphichiral) |
+| $u$ | $T_{2,3}$ | $u^{\sigma}$ | $T_{2,3}^{\sigma}$ | No (chiral) |
+| $d$ | $T_{2,3}^{\sigma}$ | $d^{\sigma}$ | $T_{2,3}$ | No (chiral) |
+| $p$ | $\mathcal{B}_3(u,u,d)$ | $p^{\sigma}$ | $\mathcal{B}_3(u,u,d)^{\sigma}$ | No |
+| $n$ | $\mathcal{B}_3(u,d,d)$ | $n^{\sigma}$ | $\mathcal{B}_3(u,d,d)^{\sigma}$ | No |
 
 ## Mass from knot energy
 
@@ -100,7 +100,7 @@ energy at each self-crossing.
 |------|:----------:|
 | $0_1$ (unknot) | $1.0000$ |
 | $3_1$ (trefoil) | $0.8168$ |
-| $\overline{3_1}$ (mirror trefoil) | $3.5832$ |
+| $3_1^{\sigma}$ (mirror trefoil) | $3.5832$ |
 | $4_1$ (figure-eight) | $0.7854$ |
 | $5_1$ (cinquefoil) | $0.4854$ |
 | $L2a1$ (Hopf link) | $-2.2662$ |
@@ -134,7 +134,7 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 |----------|------|:-----:|:---------------:|:-----------------------:|:---------:|:--------------------:|
 | $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
 | $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
-| $e^+$ | $\overline{T_{2,3}}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
+| $e^+$ | $T_{2,3}^{\sigma}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
 | $\mu^-$ | $4_1$ | $4$ | $2.0299$ | $4\,\mathbf{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathbf{E}_{\times}$ | $207.1\,\mu_0$ |
 | $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,\mathbf{E}_{\times}$ | (bound; see below) |
 | $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,\mathbf{E}_{\times}$ | $5\,\mathbf{E}_{\times}\,\mu_0$ |
@@ -142,8 +142,7 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 | Proton $\mathfrak{p}$ | $\mathcal{B}_3(u,u,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | $746\,\mu_0$ |
 | Neutron $\mathfrak{n}$ | $\mathcal{B}_3(u,d,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 + \delta_{\mathrm{Skein}}$ | $747\,\mu_0$ |
 
-The neutron--proton mass difference $\delta_{\mathrm{Skein}} =
-\mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) \approx 1.293$ MeV
+The neutron--proton mass difference $\delta_{\mathrm{Skein}} = \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) \approx 1.293$ MeV
 arises from the pair Skein asymmetry between $\mathfrak{d}\mathfrak{d}$ and $\mathfrak{u}\mathfrak{u}$
 crossings — a pure function of $q$.
 

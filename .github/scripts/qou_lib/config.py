@@ -13,7 +13,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 CHAPTERS_DIR = REPO_ROOT / "chapters"
-LEAN_DIR = REPO_ROOT / "lean-archive"
+LEAN_DIR = REPO_ROOT / "content/quantum-observable-universe/lean"
 # Authoritative type definitions (TypeScript + Zod).
 # Runtime validation of JSON manifests is done via Zod in the TS pipeline
 # (schemas/constraints.ts), not via Python JSON Schema.

@@ -32,8 +32,7 @@ The central limit theorem applies to sums of $\sim 10$
 independent operations: the statistical fluctuations in the
 aggregate are $O(1/\sqrt{10}) \approx 30\%$.  This is large
 enough that individual discrete steps are not yet fully smoothed
-— quantum-gravitational discreteness should produce $O(\hbar_q)
-\approx 10\%$ corrections to the continuous Reeb flow.
+— quantum-gravitational discreteness should produce $O(\hbar_q) \approx 10\%$ corrections to the continuous Reeb flow.
 
 By contrast, at $q = 1.01$ ($t_P \approx 101$), fluctuations
 are $O(1/\sqrt{101}) \approx 10\%$ and the continuous

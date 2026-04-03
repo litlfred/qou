@@ -2,7 +2,7 @@
 # Warn (and block) if lake-manifest.json is staged for commit.
 # To intentionally commit it, use: git commit --no-verify
 
-MANIFEST="lean-archive/lake-manifest.json"
+MANIFEST="content/quantum-observable-universe/lean/lake-manifest.json"
 
 if git diff --cached --name-only | grep -qF "$MANIFEST"; then
     echo ""

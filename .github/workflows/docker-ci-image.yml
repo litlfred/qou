@@ -14,7 +14,7 @@ on:
     branches: [main]
     paths:
       - '.github/docker/Dockerfile'
-      - 'lean-archive/lean-toolchain'
+      - 'content/quantum-observable-universe/lean/lean-toolchain'
   schedule:
     - cron: '0 4 * * 1'   # Weekly Monday 04:00 UTC
   workflow_dispatch:
@@ -45,7 +45,7 @@ jobs:
       - name: Read Lean toolchain version
         id: toolchain
         run: |
-          TC=$(cat lean-archive/lean-toolchain)
+          TC=$(cat content/quantum-observable-universe/lean/lean-toolchain)
           echo "version=${TC}" >> "$GITHUB_OUTPUT"
           echo "Lean toolchain: ${TC}"
 

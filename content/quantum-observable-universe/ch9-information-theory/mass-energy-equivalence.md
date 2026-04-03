@@ -3,15 +3,15 @@
 observable universe with substrate parameter $q$ and speed of light
 $c_q = 1/(q-1)$
 ([speed of light](#def:information-speed-of-light)).  Let
-$H$ be a knot composite in the Frobenius--Hopf object $A$.  Then
+$\mathfrak{H}$ be a knot composite in the Frobenius--Hopf object $A$.  Then
 the crossing energy
 ([crossing energy](#def:crossing-energy)) and the categorical mass
 ([mass identity](#def:mass-identity)) satisfy*
 
 $$
-  E_H
-  \;=\; \mathfrak{m}_H \cdot c_q^2
-  \;=\; \frac{\mathfrak{m}_H}{(q - 1)^2}.
+  E_{\mathfrak{H}}
+  \;=\; \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2
+  \;=\; \frac{\mathfrak{m}_{\mathfrak{H}}}{(q - 1)^2}.
 $$
 
 **Content of the theorem.**
@@ -36,7 +36,7 @@ conversion factor.
 *Step 1: Ribbon trace computes crossing energy.*
 In the rigid monoidal category $\mathbf{C}$, the Frobenius--Hopf
 object $A$ carries a ribbon structure (braiding + twist).  For a
-composite $H$ represented by the braid word
+composite $\mathfrak{H}$ represented by the braid word
 $\beta \in B_n$, the Reshetikhin--Turaev construction [reshetikhin1991]
 gives
 
@@ -50,7 +50,7 @@ $$
   \end{cases}
 $$
 
-The right-hand side is $E_H$.  Each crossing
+The right-hand side is $E_{\mathfrak{H}}$.  Each crossing
 weight is a *spatial* quantity: it measures the $R$-matrix coupling
 between horizontally adjacent fibres at strength $q^{\pm 1}$.
 
@@ -87,7 +87,7 @@ $q^{\pm 1} \cdot \hbar_q / q^{-1} = q^{\pm 1} \cdot (q-1)$ to
 mass.  The ratio is:
 
 $$
-  \frac{E_H}{\mathfrak{m}_H}
+  \frac{E_{\mathfrak{H}}}{\mathfrak{m}_{\mathfrak{H}}}
   \;=\; \frac{q^{-1}}{\hbar_q}
   \cdot \frac{q^{-1}}{\hbar_q}
   \;=\; c_q^2
@@ -99,7 +99,7 @@ $$
 
 | Regime | $q$ | $c_q^2$ | Physics |
 |--------|-----|----------|---------|
-| Big Bang | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
+| Deep-quantum | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
 | Deep quantum | $\varphi^2$ | $\approx 0.382$ | Sub-relativistic: mass dominates energy |
 | Our universe | $q_0$ | $\approx 83.2$ | $E \approx 83\,\mathfrak{m}$: large amplification |
 | Near-classical | $1.01$ | $10{,}000$ | Extreme amplification: tiny mass $\to$ large energy |
@@ -118,11 +118,9 @@ crossings:
 
 - Crossing energy: $E_{e^-} = 3q \approx 3.330$
   Skein units.
-- Predicted mass: $\mathfrak{m}_{e^-} = E \cdot (q-1)^2
-  = 3q(q-1)^2$.
+- Predicted mass: $\mathfrak{m}_{e^-} = E \cdot (q-1)^2 = 3q(q-1)^2$.
 
-At $q = q_0$: $\mathfrak{m}_{e^-} = 3 q_0 \times 0.01203
-\approx 0.0401$ (in Reeb mass units).
+At $q = q_0$: $\mathfrak{m}_{e^-} = 3 q_0 \times 0.01203 \approx 0.0401$ (in Reeb mass units).
 
 **Pair creation reinterpreted.**
 The pair production threshold
@@ -135,18 +133,15 @@ $$
 $$
 
 The net crossing energy of the pair is
-$E_{e^-} + E_{e^+} = 3(q - q^{-1})
-\approx 0.630$ (pure Coulomb repulsion).  But the minimum photon
+$E_{e^-} + E_{e^+} = 3(q - q^{-1}) \approx 0.630$ (pure Coulomb repulsion).  But the minimum photon
 energy must supply both **absolute** crossing energies:
-$|E_{e^-}| + |E_{e^+}|
-= 3q + 3q^{-1} = 3(q + q^{-1})
-= 6\cosh(\ln q) \approx 6.033$ Skein units.
+$|E_{e^-}| + |E_{e^+}| = 3q + 3q^{-1} = 3(q + q^{-1}) = 6\cosh(\ln q) \approx 6.033$ Skein units.
 
 **Archimedean realisation.**
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's
 nonabelian multiplicative integral [yekutieli2015]
 ([mass over $\mathbb{C}$](#ex:mass-identity-C)), and
-$E_H = \mathfrak{m}_H \cdot c_q^2$ becomes
+$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes
 
 $$
   \sum_{\text{crossings}} \epsilon_i

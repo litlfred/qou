@@ -19,7 +19,7 @@ There is, consequently, nothing geometrically or algebraically interesting
 happening at the level of $\tau$ itself — the entire content of the
 theory lives in $(\mathbf{C}, A)$.
 
-If one relaxes the observability axiom — allowing
+If we relax the observability axiom — allowing
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \neq 0$ — the situation
 changes qualitatively. Non-trivial $G$-invariant sections of the
 adjoint bundle reappear, the automorphism group

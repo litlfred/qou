@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:lepton-number-categorical",
   title:
-    "Lepton number as the Skein smoothing count",
+    "Categorical Lepton Number",
   tags: [
     "lepton-number",
     "skein-relation",

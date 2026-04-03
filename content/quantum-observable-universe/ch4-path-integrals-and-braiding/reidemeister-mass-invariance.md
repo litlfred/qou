@@ -38,9 +38,9 @@ $$
   \;\text{is invariant under R-I, R-II, R-III.}
 $$
 
-The electron mass $m_e \approx 0.511$ MeV (from vacuum drag, since
+The electron mass $\mathfrak{m}_e \approx 0.511$ MeV (from vacuum drag, since
 $\mathrm{Vol}(T_{2,3}) = 0$) does not change when the electron
-is excited.  The proton mass $m_{\mathfrak{p}} = 938$ MeV
+is excited.  The proton mass $\mathfrak{m}_{\mathfrak{p}} \approx 938$ MeV
 (from $\mathrm{Vol}(\mathcal{B}_3)$) does not change when the
 atom is ionised.  Mass is a property of the **knot type**, not
 the diagram.
@@ -101,10 +101,9 @@ $$
   \text{two R-I moves on the embedding.}
 $$
 
-The bare mass $m_e$ is unchanged (R-I is a knot invariant).
+The bare mass $\mathfrak{m}_e$ is unchanged (R-I is a knot invariant).
 The binding energy $E_n = -13.6/n^2$ eV changes (R-I is NOT
-an embedding invariant).  The difference $\Delta E = E_{n+1}
-- E_n$ is the photon energy.
+an embedding invariant).  The difference $\Delta E = E_{n+1} - E_n$ is the photon energy.
 
 **Summary.**
 

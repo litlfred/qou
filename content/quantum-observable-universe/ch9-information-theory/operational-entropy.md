@@ -103,12 +103,11 @@ circuit ([Planck time](#def:planck-time)).
 | Classical limit | $q \to 1$ | $\to 1$ | $\to 1$ | One nat per step; Julia set = unit circle |
 | Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ nats |
 | Deep quantum | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
-| Big Bang | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
+| Deep-quantum | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
 
 **The golden crossover.**
 The formula $d_{H,q} = (2q-1)^2/q^3$ equals $1$ at exactly two
-points: $q = 1$ and $q = (3 + \sqrt{5})/2 = \varphi^2
-\approx 2.618$, where $\varphi = (1+\sqrt{5})/2$ is the golden
+points: $q = 1$ and $q = (3 + \sqrt{5})/2 = \varphi^2 \approx 2.618$, where $\varphi = (1+\sqrt{5})/2$ is the golden
 ratio.  For $1 < q < \varphi^2$, the Julia set is strictly
 more fractal than a circle ($d_{H,q} > 1$).  Beyond $\varphi^2$,
 the Julia set is less complex than a circle ($d_{H,q} < 1$, tending

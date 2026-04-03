@@ -64,7 +64,7 @@ $$
 
 | Regime | $q$ | $c_q = 1/(q-1)$ | Interpretation |
 |--------|-----|-------------------|----------------|
-| Big Bang | $q \to \infty$ | $\to 0$ | No spatial propagation; each fibre is isolated |
+| Deep-quantum | $q \to \infty$ | $\to 0$ | No spatial propagation; each fibre is isolated |
 | Deep quantum | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed |
 | Our universe | $q_0$ | $\approx 9.12$ | ${\sim}\,9$ fibres correlated per Reeb phase advance |
 | Near-classical | $1.01$ | $100$ | Fast spatial propagation; nearly continuous |

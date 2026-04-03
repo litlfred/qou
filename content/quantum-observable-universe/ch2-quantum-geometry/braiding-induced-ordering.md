@@ -10,8 +10,7 @@ basis $B$ of the Hecke algebra $H_n(q)$ of $A$.*
 of reduced positive braid monomials
 $w = \sigma_{i_1}\sigma_{i_2}\cdots\sigma_{i_k}$ —
 the images of the braiding $c_{V,V}$ under
-$\rho_n(\sigma_i) = \mathrm{id}^{\otimes(i-1)} \otimes
-c_{V,V} \otimes \mathrm{id}^{\otimes(n-i-1)}$
+$\rho_n(\sigma_i) = \mathrm{id}^{\otimes(i-1)} \otimes c_{V,V} \otimes \mathrm{id}^{\otimes(n-i-1)}$
 ([braid action on tensor powers](#prop:braid-action-tensor)).
 The braiding $c_{V,V}$ (as opposed to its inverse
 $c_{V,V}^{-1}$) defines "positive crossing" — forward time.
@@ -83,15 +82,15 @@ arrow of time from two complementary viewpoints:
   $c_{V,V}$ advances $\phi_t^q$ by one tick.
 
 **Crossing reversal = time reversal.**  The crossing reversal
-involution $\sigma \colon K \mapsto \bar{K}$ (mirror all
+involution $\sigma \colon K \mapsto K^{\sigma}$ (mirror all
 crossings) corresponds to switching the braiding:
 $c_{V,V} \leftrightarrow \bar{c}_{V,V}$.  This flips the
 ordering $\prec_c$ and reverses the Reeb flow
 $\xi \mapsto -\xi$.  In the Feynman–Stueckelberg
-interpretation, an antiparticle ($\bar{K}$) is its particle
+interpretation, an antiparticle ($K^{\sigma}$) is its particle
 ($K$) with time reversed — precisely the opposite braiding.
 CPT symmetry is the statement that the QOU axioms are
 invariant under simultaneous
 $c_{V,V} \leftrightarrow \bar{c}_{V,V}$ (T),
-$K \mapsto \bar{K}$ (C), and
+$K \mapsto K^{\sigma}$ (C), and
 $\sigma_i \mapsto \sigma_{n-i}$ (P, strand reflection).

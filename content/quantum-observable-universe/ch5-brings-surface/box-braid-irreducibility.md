@@ -1,5 +1,5 @@
 **Proposition.**
-*The process $\gamma\gamma \to \nu\bar{\nu}$ requires the
+*The process $\gamma\gamma \to \nu\nu^{\sigma}$ requires the
 $T_{3,5}$ torus knot topology (weak mediator,
 [force–knot identification](#rem:force-knot-identification)).
 The crossing number $c(T_{3,5}) = 10$ is a topological invariant:
@@ -15,7 +15,7 @@ application — one Planck step.  Therefore:*
 
 **The box braid: crossing-by-crossing.**
 
-The process $\gamma\gamma \to \nu\bar{\nu}$ has no tree-level
+The process $\gamma\gamma \to \nu\nu^{\sigma}$ has no tree-level
 realisation because photons ($K = \varnothing$,
 [photon](#ex:photon-wavefront-example)) carry no braid strands and
 neutrinos ($K_{0_1}$, [neutrino](#def:neutrino-knot)) have zero
@@ -31,7 +31,7 @@ tower level $A_1$
   & e^-_{\mathrm{virt}} \ar[d, "\text{Skein}_{T_{3,5}}" {right}]
   \\
   \gamma_2 \ar[u, "\text{EM}" {left}, "\dagger\text{-coupling}" {right}]
-  & \nu\,\bar{\nu} \ar[l, phantom, "\text{output}" {below}]
+  & \nu\,\nu^{\sigma} \ar[l, phantom, "\text{output}" {below}]
 \end{tikzcd}
 \]
 ```
@@ -46,7 +46,7 @@ At each vertex, a specific braid operation occurs:
   ([force–knot identification](#rem:force-knot-identification),
   §I), creating virtual $e^-e^+$ pairs at the exceptional
   divisor $\mathcal{S}_p$.  Each pair is a trefoil + mirror trefoil
-  ($T_{2,3} \sqcup \overline{T_{2,3}}$) at brane level $A_1$.
+  ($T_{2,3} \sqcup T_{2,3}^{\sigma}$) at brane level $A_1$.
 
 - **Weak vertices** ($e \to \nu$ via $T_{3,5}$): the Skein
   relation mediated by $T_{3,5}$
@@ -157,8 +157,7 @@ via any process.
      m_\nu \;=\; \mu_0(q - 1).
    $$
 
-   The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot
-   (q + 1) / q \approx 19$ at the substrate parameter $q$: the box
+   The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot (q + 1) / q \approx 19$ at the substrate parameter $q$: the box
    energy barrier is $\sim 19$ times the neutrino mass.
 
 3. **No simpler process.** $T_{3,5}$ is the unique cross-family

@@ -5,7 +5,7 @@
 # Args: $3 = 1 for branch checkout, 0 for file checkout
 [ "$3" = "1" ] || exit 0
 
-MANIFEST="lean-archive/lake-manifest.json"
+MANIFEST="content/quantum-observable-universe/lean/lake-manifest.json"
 
 if git ls-files --error-unmatch "$MANIFEST" >/dev/null 2>&1; then
     git checkout -- "$MANIFEST" 2>/dev/null

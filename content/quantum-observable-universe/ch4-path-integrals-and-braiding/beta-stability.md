@@ -33,8 +33,7 @@ and $n^*(p) = A^*(p) - p$.
 **Derivation.**
 At fixed $A$, beta decay converts
 $\mathfrak{n} \to \mathfrak{p}$ (or vice versa) while preserving
-$A$.  The mass $M(p, A) = p \cdot m_{\mathfrak{p}} + (A-p) \cdot
-m_{\mathfrak{n}} - \mathcal{L}_{\mathrm{bind}}(p, A-p)$ is minimized
+$A$.  The mass $M(p, A) = p \cdot m_{\mathfrak{p}} + (A-p) \cdot m_{\mathfrak{n}} - \mathcal{L}_{\mathrm{bind}}(p, A-p)$ is minimized
 when $\partial M / \partial p \big|_A = 0$:
 
 $$
@@ -55,11 +54,10 @@ $$
 $$
 
 **Verification.**
-At $q = q_0$ with $a_C = (q - q^{-1}) \times 3.334 \approx
-0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces
+At $q = q_0$ with $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces
 observed stable neutron numbers across the periodic table with
 mean error $|\Delta n| \approx 1.4$ neutrons (see
-[knot-periodic table](#knot-periodic-table)).
+[knot-periodic table](#prose:knot-periodic-table)).
 
 **Limiting behaviour.**
 

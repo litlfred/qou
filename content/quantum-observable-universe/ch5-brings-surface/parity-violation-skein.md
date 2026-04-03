@@ -108,7 +108,7 @@ exchanges $\beta^- \leftrightarrow \beta^+$
 $\mathcal{CP}$ operation: parity $\mathcal{P}$ (mirror all
 crossings) composed with charge conjugation $\mathcal{C}$
 (exchange particle $\leftrightarrow$ antiparticle, i.e.,
-$T_{2,3} \leftrightarrow \sigma(T_{2,3})$).
+$T_{2,3} \leftrightarrow T_{2,3}^{\sigma}$).
 
 - $\mathcal{P}$ alone: violated ($q \neq q^{-1}$)
 - $\mathcal{C}$ alone: violated (electron $\neq$ positron in

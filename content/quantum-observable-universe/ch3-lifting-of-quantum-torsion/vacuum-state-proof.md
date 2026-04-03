@@ -13,21 +13,20 @@ form on $\tau(A)$.  At each finite level, $\tau$ maps
 $\mathrm{End}_{\mathbf{C}}(A_n)$ to a finite-dimensional $R$-algebra
 $\mathrm{End}_R(\tau(A_n))$.  The Frobenius trace
 $\mathrm{tr}_n \colon \mathrm{End}_{\mathbf{C}}(A_n) \to R$ defined by
+
 $$
   \mathrm{tr}_n(\alpha)
   \;=\;
   (\varepsilon \circ \alpha \circ \eta)(\mathbf{1}),
 $$
-where $\eta \colon \mathbf{1} \to A_n$ and $\varepsilon \colon A_n \to
-\mathbf{1}$ are the Frobenius unit and counit, is $G_q$-invariant:
-for any $g \in G_q$, $\mathrm{tr}_n(g \cdot \alpha) =
-\mathrm{tr}_n(\alpha)$ by the naturality of $\eta$ and $\varepsilon$
+
+where $\eta \colon \mathbf{1} \to A_n$ and $\varepsilon \colon A_n \to \mathbf{1}$ are the Frobenius unit and counit, is $G_q$-invariant:
+for any $g \in G_q$, $\mathrm{tr}_n(g \cdot \alpha) = \mathrm{tr}_n(\alpha)$ by the naturality of $\eta$ and $\varepsilon$
 (they are morphisms in $\mathbf{C}$, hence invariant under monoidal
 automorphisms of the fibre functor).
 
 The descent homomorphisms $\mathfrak{d}_n$ ([descent](#lem:descent)) are
-equivariant and satisfy $\mathrm{tr}_n \circ \mathfrak{d}_{n+1} =
-\mathrm{tr}_{n+1}$ (compatibility of the Frobenius trace with descent).
+equivariant and satisfy $\mathrm{tr}_n \circ \mathfrak{d}_{n+1} = \mathrm{tr}_{n+1}$ (compatibility of the Frobenius trace with descent).
 By the universal property of the direct limit, the system
 $\{\mathrm{tr}_n\}$ determines a $G_q$-invariant $R$-linear functional
 $\varphi \colon \mathcal{A}_\infty \to R$.

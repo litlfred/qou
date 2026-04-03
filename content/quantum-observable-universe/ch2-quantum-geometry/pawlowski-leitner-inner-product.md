@@ -1,7 +1,6 @@
 The [adjoint trace](#rem:adjoint-trace) induces a canonical inner
 product on intertwiner spaces. For
-$\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\,
-V_{1/2}^{\otimes n})$, define
+$\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\, V_{1/2}^{\otimes n})$, define
 
 $$
   \langle \phi, \psi \rangle_{\mathrm{PL}}

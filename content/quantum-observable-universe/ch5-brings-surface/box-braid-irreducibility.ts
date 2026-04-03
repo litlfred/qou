@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:box-braid-irreducibility",
   title:
-    "The $\\gamma\\gamma \\to \\nu\\bar{\\nu}$ box braid is irreducible",
+    "The $\\gamma\\gamma \\to \\nu\\nu^{\\sigma}$ box braid is irreducible",
   tags: [
     "neutrino",
     "stability",
@@ -27,10 +27,10 @@ export default proposition({
     "rem:unmapped-torus-knots",
     "rem:virtual-particles-exceptional-divisor",
     "prop:nuclear-groebner-reduction",
-    "prop:groebner-shirshov-energy",
+    "thm:groebner-shirshov-energy",
     "rem:electron-immortality",
     "def:mass-identity",
-    "ex:photon-wavefront-example",
+    "ex:photon-wavefront",
     "prop:reidemeister-action-table",
   ],
 });

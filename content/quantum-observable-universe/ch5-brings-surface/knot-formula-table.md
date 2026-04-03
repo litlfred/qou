@@ -9,7 +9,7 @@ introduce the following shorthand.
 | $\bowtie$ | Hopf linking on exceptional divisor $\mathcal{S}_c$ |
 | $[\cdot,\cdot,\cdot]_p$ | Color-tube linking through $(r,g,b)$ fibers |
 | $\sigma$ | Skein crossing change (transmutation) |
-| $\overline{K}$ | Mirror (antiparticle) of knot $K$ |
+| $K^{\sigma}$ | Mirror (antiparticle) of knot $K$ |
 | $N \cdot K$ | $N$ copies of knot $K$ in a multi-component link |
 
 **Derived shorthand for quarks.** The up and down quarks are not
@@ -17,12 +17,12 @@ independent generators but are expressed in terms of $T_{2,3}$:
 
 $$
   \mathfrak{u} \;=\; T_{2,3}, \qquad
-  \mathfrak{d} \;=\; \sigma(T_{2,3}).
+  \mathfrak{d} \;=\; T_{2,3}^{\sigma}.
 $$
 
 Here $\mathfrak{d}$ denotes the three-twist knot $5_2$, a Skein
 descendant of the trefoil.  Similarly for the heavier quarks:
-$\mathfrak{s} = \sigma(T_{2,5})$, $\mathfrak{c} = T_{2,7}$,
+$\mathfrak{s} = T_{2,5}^{\sigma}$, $\mathfrak{c} = T_{2,7}$,
 $\mathfrak{b} = T_{2,5}$, $\mathfrak{t} = T_{3,4}$.
 
 **Nucleon shorthand.** The proton and neutron are color-tube-linked
@@ -71,11 +71,11 @@ to the base manifold.
 | Photon | $\gamma$ | $\varnothing$ (point) | $0$ |
 | Neutrino | $\nu$ | $T_{1,0}$ | $0$ |
 | Electron | $e^-$ | $T_{2,3}$ | $1$ |
-| Muon | $\mu^-$ | $\sigma(T_{2,3} \bowtie T_{2,3})$ | $1$ |
+| Muon | $\mu^-$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $1$ |
 | Tau | $\tau^-$ | $T_{2,5} \bowtie T_{1,0}$ | $2$ |
 | Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ |
-| Down quark | $\mathfrak{d}$ | $\sigma(T_{2,3})$ | $1$ |
-| Strange quark | $\mathfrak{s}$ | $\sigma(T_{2,5})$ | $1$ |
+| Down quark | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $1$ |
+| Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $1$ |
 | Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ |
 | Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ |
 | Top quark | $\mathfrak{t}$ | $T_{3,4}$ | $3$ |
@@ -86,9 +86,9 @@ to the base manifold.
 |----------|--------|-------------|
 | Proton | $\mathfrak{p}$ | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ |
 | Neutron | $\mathfrak{n}$ | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ |
-| $\pi^+$ | | $\mathfrak{u} \bowtie \overline{\mathfrak{d}}$ |
-| $\pi^0$ | | $(\mathfrak{u} \bowtie \overline{\mathfrak{u}} + \mathfrak{d} \bowtie \overline{\mathfrak{d}})/\!\sqrt{2}$ |
-| $K^+$ | | $\mathfrak{u} \bowtie \overline{\mathfrak{s}}$ |
+| $\pi^+$ | | $\mathfrak{u} \bowtie \mathfrak{d}^{\sigma}$ |
+| $\pi^0$ | | $(\mathfrak{u} \bowtie \mathfrak{u}^{\sigma} + \mathfrak{d} \bowtie \mathfrak{d}^{\sigma})/\!\sqrt{2}$ |
+| $K^+$ | | $\mathfrak{u} \bowtie \mathfrak{s}^{\sigma}$ |
 | $\Lambda$ | | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{s}]_p \bowtie \mathcal{L}_H$ |
 | $\Sigma^+$ | | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{s}]_p \bowtie \mathcal{L}_H$ |
 
@@ -105,8 +105,7 @@ to the base manifold.
 | Oxygen-16 | $16$ | $8$ | $8\mathfrak{p} \bowtie 8\mathfrak{n} \bowtie 8T_{2,3}$ |
 | Iron-56 | $56$ | $26$ | $26\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 26T_{2,3}$ |
 
-For heavier nuclei the formula $Z\mathfrak{p} \bowtie N\mathfrak{n}
-\bowtie ZT_{2,3}$ remains valid, but the Skein polynomial $Q(q)$
+For heavier nuclei the formula $Z\mathfrak{p} \bowtie N\mathfrak{n} \bowtie ZT_{2,3}$ remains valid, but the Skein polynomial $Q(q)$
 of the multi-body link grows combinatorially in $A$.  The binding
 energy at each Hopf junction is computable in principle from the
 pair Skein mass formula

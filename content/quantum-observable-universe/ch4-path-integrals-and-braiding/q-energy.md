@@ -65,7 +65,7 @@ recovering the topological mass formula.
 | Limit | $\mathbf{E}_q$ |
 |-------|-------|
 | $q = 1$ (classical) | $j(j+1) \cdot 0 + w^2 \cdot 0 + S_1 = S_1$ |
-| $q \to \infty$ (big bang) | $J_q^2 \to q^{2j+1}, \; p_q \to w \cdot q, \; S_q \to \infty$ |
+| $q \to \infty$ (deep-quantum) | $J_q^2 \to q^{2j+1}, \; p_q \to w \cdot q, \; S_q \to \infty$ |
 | Rest frame | $S_q(K)$ (mass) |
 
 **Relation to crossing energy.**

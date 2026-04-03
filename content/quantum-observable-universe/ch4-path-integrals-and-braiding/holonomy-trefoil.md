@@ -13,9 +13,11 @@ loops yields holonomy operators
 where $\sigma_1,\sigma_2$ are the braid generators.
 In the $\mathrm{SU}(2)$ embedding ([SU(2) generators](#def:su2-generators)) these
 become
+
 $$
   H_1=\exp(T\theta\,e_1),\qquad H_2=\exp(T\theta\,e_2),
 $$
+
 with $T$ the geometric torsion scalar and $\theta$ a branch angle, so
 the holonomy group is a representation of $B_3$ inside
 $\mathrm{SU}(2)$.
@@ -24,8 +26,7 @@ The fundamental group of the trefoil-knot complement admits the
 presentation $\langle x,y\mid xyx=yxy\rangle$, which is exactly
 $B_3$.  The assignment
 $x\mapsto H_1$, $y\mapsto H_2$ is therefore an isomorphism
-$\pi_1(S^3\setminus K_{3,2})\;\xrightarrow{\;\sim\;}\;
-\langle H_1,H_2\rangle$: the monodromy group of the branched cover
+$\pi_1(S^3\setminus K_{3,2})\;\xrightarrow{\;\sim\;}\; \langle H_1,H_2\rangle$: the monodromy group of the branched cover
 *is* the trefoil-knot group.
 
 The composite holonomy

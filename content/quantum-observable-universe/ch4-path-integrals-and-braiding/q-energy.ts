@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:q-energy",
   title:
-    "$q$-Energy: sum of $q$-angular momentum, $q$-momentum, and categorical action",
+    "$q$-Deformed Energy",
   tags: [
     "energy",
     "q-deformed",

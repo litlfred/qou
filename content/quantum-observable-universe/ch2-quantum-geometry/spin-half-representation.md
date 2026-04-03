@@ -9,8 +9,7 @@ $$
 
 the defining two-dimensional representation of $\mathrm{SU}(2)$.
 
-The [spin label](#prop:spin-labels) indexing $j \in \{0, \tfrac{1}{2},
-1, \tfrac{3}{2}, \ldots\}$ identifies each simple object $V_j$ with
+The [spin label](#prop:spin-labels) indexing $j \in \{0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \ldots\}$ identifies each simple object $V_j$ with
 the unique irreducible representation of $\mathrm{SU}(2)$ of dimension
 $2j+1$. In particular:
 

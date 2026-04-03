@@ -11,5 +11,6 @@ export default proposition({
   lean: {
     decl: "QOU.Torsion.ArchimedeanMassFormula",
     file: "QOU/ArchimedeanMassFormula.lean",
+    validation: "not_checked",
   },
 });

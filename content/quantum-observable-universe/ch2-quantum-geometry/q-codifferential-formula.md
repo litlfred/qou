@@ -9,8 +9,7 @@ replaced by its geometric mirror:
   $\delta$.
 - Wedging with the contact form ($\theta \wedge$) becomes
   contraction with the Reeb vector field ($\iota_\xi$), because
-  $\xi$ is the metric dual to $\theta$: $\theta(X) = \langle \xi,
-  X \rangle_\theta$ for all $X$.
+  $\xi$ is the metric dual to $\theta$: $\theta(X) = \langle \xi, X \rangle_\theta$ for all $X$.
 - The Lie derivative $\mathcal{L}_\xi$ becomes its formal adjoint
   $\mathcal{L}_\xi^*$.
 

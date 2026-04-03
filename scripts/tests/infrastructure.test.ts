@@ -123,8 +123,8 @@ describe(".gitignore", () => {
     expect(gitignore).toContain("deploy/.env");
   });
 
-  test("blocks lean-archive/.lake/", () => {
-    expect(gitignore).toContain("lean-archive/.lake/");
+  test("blocks content/quantum-observable-universe/lean/.lake/", () => {
+    expect(gitignore).toContain("content/quantum-observable-universe/lean/.lake/");
   });
 });
 

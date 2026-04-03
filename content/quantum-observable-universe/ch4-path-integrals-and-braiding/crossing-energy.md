@@ -1,10 +1,10 @@
-Let $H = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a composite
+Let $\mathfrak{H} = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a composite
 of knots linked by a link $\mathcal{L}$, with braid word
 $\beta \in B_n$ representing the linking.  The *crossing energy*
-of $H$ is
+of $\mathfrak{H}$ is
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(H)
+  \mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
   \;=\;
   \sum_{\text{crossings in } \beta}
   \begin{cases}

@@ -4,7 +4,7 @@
 Content block for `def:monomial-basis`.
 
 The authoritative formalization lives in
-`lean-archive/QOU/GrobnerShirshov/Basic.lean`, which defines:
+`content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`, which defines:
 - `QOU.GrobnerShirshov.Monomial G` — words in generators (abbrev for `List G`)
 - `QOU.GrobnerShirshov.AlgElement G k` — finitely supported linear
   combinations of monomials over a ring `k`
@@ -16,11 +16,11 @@ The paper's Definition 3.1–3.3 corresponds to these declarations.
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 3
-- lean-archive/QOU/GrobnerShirshov/Basic.lean §§1–2
+- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §§1–2
 -/
 
 -- Re-export the relevant types for documentation purposes.
--- In the lean-archive build these are imported via QOU.GrobnerShirshov.
+-- In the Lean build these are imported via QOU.GrobnerShirshov.
 
 import Mathlib.Data.List.Basic
 import Mathlib.Data.Finset.Basic

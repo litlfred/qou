@@ -20,4 +20,4 @@ The Hopf comultiplication satisfies *coassociativity*:
 Non-cocommutativity and the self-duality short exact sequence are
 developed categorically in
 [Remarks](#rem:hopf-non-cocommutativity)
-and [](#rem:self-dual-ses).
+and [Remark](#rem:self-dual-ses).

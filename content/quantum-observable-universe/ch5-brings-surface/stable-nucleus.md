@@ -22,8 +22,7 @@ The nucleus $\mathcal{N}(Z, N)$ is **stable** if $(Z, N)$ is a
 critical point of the Skein binding Lagrangian
 $\mathcal{L}_{\mathrm{bind}}$
 ([Skein binding Lagrangian](#def:skein-binding-lagrangian))
-under beta variation (exchange of $\mathfrak{p} \leftrightarrow
-\mathfrak{n}$ at fixed $A = Z + N$):
+under beta variation (exchange of $\mathfrak{p} \leftrightarrow \mathfrak{n}$ at fixed $A = Z + N$):
 
 $$
   \frac{\partial \mathcal{L}_{\mathrm{bind}}}{\partial Z}
@@ -50,7 +49,7 @@ multi-component composites.  The stability condition restricts
 the physically realised nuclei to the **valley of stability**:
 only configurations $(Z, N)$ satisfying the beta-stability
 equation above are long-lived.  Nuclei outside this valley undergo
-beta decay ($\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}$ or
+beta decay ($\mathfrak{n} \to \mathfrak{p} + e^- + \nu^{\sigma}$ or
 $\mathfrak{p} \to \mathfrak{n} + e^+ + \nu$) until the stable
 configuration is reached.
 

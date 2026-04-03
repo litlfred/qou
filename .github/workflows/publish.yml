@@ -188,7 +188,10 @@ jobs:
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
-      - name: Validate and build content objects for all papers
+      # Build the primary paper (quantum-observable-universe) for PDF generation.
+      # Other papers are validated but not compiled to LaTeX, since the workflow
+      # only compiles and deploys one PDF.
+      - name: Validate content objects
         continue-on-error: true
         run: |
           cd content
@@ -199,20 +202,45 @@ jobs:
             else
               echo "  No content objects to validate for ${paper_dir}"
             fi
-
-            echo "── Building: ${paper_dir}"
-            bun run pipeline/build.ts \
-              "${paper_dir}/${paper_dir}.ts" \
-              --out-dir ../chapters/ \
-              --generate-main \
-              --main-out ../main.tex \
-              --preamble ../latex/preamble.tex \
-              || echo "::warning::Content build had issues for ${paper_dir}"
           done
-          echo "Generated chapters:"
-          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
-          echo "Generated main.tex:"
-          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
+
+      - name: Build primary paper content objects
+        run: |
+          cd content
+          PRIMARY_PAPER="quantum-observable-universe"
+          echo "── Building primary paper: ${PRIMARY_PAPER}"
+
+          # Run the build — it may exit non-zero due to block-level errors
+          # (missing .ts files, schema issues) but still generates valid output.
+          # Capture the exit code and verify output exists.
+          bun run pipeline/build.ts \
+            "${PRIMARY_PAPER}/${PRIMARY_PAPER}.ts" \
+            --out-dir ../chapters/ \
+            --generate-main \
+            --main-out ../main.tex \
+            --preamble ../latex/preamble.tex \
+            || echo "::warning::Content build exited non-zero (block-level errors)"
+
+          # Verify the build produced output
+          echo "=== Verifying build output ==="
+          chapter_count=$(ls ../chapters/*.tex 2>/dev/null | wc -l)
+          echo "Chapters generated: ${chapter_count}"
+          ls ../chapters/*.tex 2>/dev/null
+
+          if [ ! -f ../main.tex ]; then
+            echo "::error::main.tex was not generated"
+            exit 1
+          fi
+
+          echo "main.tex title:"
+          grep '\\title{' ../main.tex
+          echo "main.tex chapter inputs:"
+          grep '\\input{' ../main.tex | grep -v print-mode
+
+          if [ "${chapter_count}" -lt 5 ]; then
+            echo "::error::Too few chapters generated (${chapter_count}), expected 14"
+            exit 1
+          fi
 
       # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
       - name: Build schema docs
@@ -264,6 +292,32 @@ jobs:
         env:
           BRANCH_URL: https://github.com/${{ github.repository }}/tree/${{ env.HEAD_REF }}
         run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
+
+      # ── 1a-debug. Write build diagnostics to a deployed file ─────────────��
+      - name: Write build diagnostics
+        if: always()
+        run: |
+          {
+            echo "=== Build Diagnostics ==="
+            echo "Date: $(date -u)"
+            echo "Commit: ${{ env.HEAD_SHA }}"
+            echo ""
+            echo "=== main.tex title ==="
+            grep '\\title{' main.tex 2>/dev/null || echo "(no main.tex or no title)"
+            echo ""
+            echo "=== main.tex \\input lines ==="
+            grep '\\input{' main.tex 2>/dev/null | grep -v print-mode || echo "(none)"
+            echo ""
+            echo "=== chapters/ directory ==="
+            ls -la chapters/*.tex 2>/dev/null || echo "(no chapters)"
+            echo ""
+            echo "=== chapters/introduction.tex first 5 lines ==="
+            head -5 chapters/introduction.tex 2>/dev/null || echo "(not found)"
+            echo ""
+            echo "=== main-flat.tex size ==="
+            wc -c main-flat.tex 2>/dev/null || echo "(not yet created)"
+          } > build-diagnostics.txt
+          cat build-diagnostics.txt
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
@@ -367,6 +421,9 @@ jobs:
           FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           mkdir -p _site
+
+          # Deploy build diagnostics for debugging
+          cp build-diagnostics.txt _site/build-diagnostics.txt 2>/dev/null || true
 
           # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
           # Each paper discovered from folio.ts gets its own subdirectory.
@@ -529,12 +586,12 @@ jobs:
           python3 .github/scripts/generate-folio-index.py "${FOLIO_ARGS[@]}"
 
           # ── Copy Lean source files to gh-pages ───────────────────────────────
-          if [ -d lean-archive ]; then
+          if [ -d content/quantum-observable-universe/lean ]; then
             mkdir -p _site/lean
-            cp -r lean-archive/QOU    _site/lean/QOU    2>/dev/null || true
-            cp    lean-archive/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
-            cp    lean-archive/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
-            cp    lean-archive/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+            cp -r content/quantum-observable-universe/lean/QOU    _site/lean/QOU    2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
+            cp    content/quantum-observable-universe/lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
           fi
 
           # ── Copy schema docs (TypeDoc) to gh-pages ────────────────────────────
@@ -626,6 +683,32 @@ jobs:
           retention-days: 1
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
+      - name: Install GitHub CLI
+        if: env.HEAD_REF != 'main'
+        run: |
+          if command -v gh >/dev/null 2>&1; then
+            echo "gh already available: $(gh --version | head -1)"
+            exit 0
+          fi
+          apt-get update -qq
+          if ! command -v wget >/dev/null 2>&1; then
+            apt-get install -y -qq wget >/dev/null
+          fi
+          mkdir -p -m 755 /etc/apt/keyrings
+          wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+            | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+            | tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+          apt-get update -qq
+          apt-get install -y -qq gh >/dev/null
+          rm -rf /var/lib/apt/lists/*
+          if command -v gh >/dev/null 2>&1; then
+            echo "gh installed: $(gh --version | head -1)"
+          else
+            echo "::error::Failed to install GitHub CLI (gh)"
+            exit 1
+          fi
+
       - name: Comment preview link on PR
         if: env.HEAD_REF != 'main'
         env:

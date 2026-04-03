@@ -17,8 +17,7 @@ $\mathcal{G}$.  Then:
 
 1. The Seifert genus of $K$ satisfies $g(K) \leq 4$.
 2. $K$ admits a localized knot structure
-   $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}\,T})
-   \times \mathrm{Knot}$ at some point $c$ of the base
+   $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}\,T}) \times \mathrm{Knot}$ at some point $c$ of the base
    $\mathbb{P}(V)$.
 3. The localized knot $(c, K)$ descends under $\tau$ to an
    observable morphism in $\mathbf{C}$: every generated particle
@@ -41,7 +40,7 @@ $g(K_2) \leq 4$, then both components of
 $K_1 \cup_{\mathrm{Hopf}} K_2$ remain embeddable.
 
 *Color-tube threading $\ell_c$.*
-Threading three knots through the color tubes $(r, g, b)$ similarly
+Threading three knots through the coral tubes $(r, g, b)$ similarly
 preserves each component's knot type.  The three-component link
 $K_1 \cup_r K_2 \cup_g K_3$ has each $K_i$ sitting in its own
 color fiber; the Seifert genus of each component is unchanged.
@@ -84,9 +83,9 @@ the embeddable terms.
 |------|------|--------|-------------|--------|
 | $0_1$ (unknot) | Generator $T_{1,0}$ | $0$ | Yes | Generator |
 | $3_1$ (trefoil) | Generator $T_{2,3}$ | $1$ | Yes | Generator |
-| $4_1$ (figure-eight) | Skein descendant | $1$ | Yes | $\sigma(T_{2,3} \cup_H T_{2,3})$ |
+| $4_1$ (figure-eight) | Skein descendant | $1$ | Yes | $(T_{2,3} \cup_H T_{2,3})^{\sigma}$ |
 | $5_1$ (cinquefoil) | Generator $T_{2,5}$ | $2$ | Yes | Generator |
-| $5_2$ (three-twist) | Skein descendant | $1$ | Yes | $\sigma(T_{2,3})$ |
+| $5_2$ (three-twist) | Skein descendant | $1$ | Yes | $T_{2,3}^{\sigma}$ |
 | $7_1$ | Generator $T_{2,7}$ | $3$ | Yes | Generator |
 | $8_{19}$ | Generator $T_{3,4}$ | $3$ | Yes | Generator |
 | $9_1$ | Generator $T_{2,9}$ | $4$ | Yes | Generator (saturates) |

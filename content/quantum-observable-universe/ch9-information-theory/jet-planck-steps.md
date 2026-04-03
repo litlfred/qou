@@ -74,11 +74,10 @@ critical point.  Over $\mathbb{F}_\pp$: whether the quadratic has
 roots is a quadratic residue condition.
 
 **Step 3: the cubic approximation.**
-$J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}\,d^2 E \cdot (\delta p)^2
-+ \tfrac{1}{6}\,d^3 E \cdot (\delta p)^3$.
+$J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}\,d^2 E \cdot (\delta p)^2 + \tfrac{1}{6}\,d^3 E \cdot (\delta p)^3$.
 
-The third jet is where the **chiral structure appears**.  The chiral
-elliptic curve ([chiral elliptic](#prop:chiral-elliptic))
+The third jet is where the **coral structure appears**.  The coral
+elliptic curve ([coral elliptic](#prop:coral-elliptic))
 
 $$
   X^3 + (z+1)\,X^2 + (z^2+z+1)\,X + (z^3+z^2+z+1) = 0
@@ -124,16 +123,16 @@ degree to encode $c$ crossings of the braid closure.
 | Step | Jet | $c$ | Knot | Particles | Mirror | Why |
 |:----:|-----|:---:|------|-----------|--------|-----|
 | 0 | value | — | $\varnothing$ | **Photon** | (self) | No knot, no transport — fiber value only |
-| 1 | linear | 0 | $0_1$ | **Neutrino** $\nu$ | $\bar{\nu}$ (orientation) | Unknot; amphichiral — $\nu/\bar{\nu}$ distinguished by framing, not knot type |
+| 1 | linear | 0 | $0_1$ | **Neutrino** $\nu$ | $\nu^{\sigma}$ (orientation) | Unknot; amphichiral — $\nu/\nu^{\sigma}$ distinguished by framing, not knot type |
 | 2 | quadratic | 0 | $L2a1$ | **Gluon** | (self) | Hopf link; linking number requires curvature |
-| 3 | cubic | 3 | $3_1$ | **Electron** $e^-$, **up** $u$ | **Positron** $e^+$, **down** $\bar{u}$ | Trefoil is *chiral*: $T_{2,3} \neq \overline{T_{2,3}}$; mirror = antiparticle |
-| 3 | cubic | 3 | $\overline{3_1}$ | **Positron** $e^+$, **down** $d$ | **Electron** $e^-$, $\bar{d}$ | Right trefoil; same crossing number, opposite chirality |
-| 4 | quartic | 4 | $4_1$ | **Muon** $\mu^{\pm}$ | (self) | Figure-eight is *amphichiral*: $\mu^- = \overline{\mu^-}$ as knots |
-| 4 | quartic | 0+0+0 | $\mathcal{B}_3$ | **Proton** $p$, **neutron** $n$ | $\bar{p}$, $\bar{n}$ | Borromean link of 3 quarks; linking structure needs quartic |
-| 5 | quintic | 5 | $5_1$ | **Tau** $\tau^-$, **bottom** $b$ | $\tau^+$, $\bar{b}$ | Cinquefoil; chiral; genus 2 |
-| 5 | quintic | 5 | $\overline{5_1}$ | **Anti-tau** $\tau^+$, **strange** $s$ | $\tau^-$, $\bar{s}$ | Mirror cinquefoil |
-| 7 | septic | 7 | $7_1$ | **Charm** $c$ | $\bar{c}$ | Heavy sector torus knot |
-| 8 | octic | 8 | $8_{19}$ | **Top** $t$ | $\bar{t}$ | $T_{3,4}$; first $(3,n)$ torus knot |
+| 3 | cubic | 3 | $3_1$ | **Electron** $e^-$, **up** $u$ | **Positron** $e^+$, **down** $u^{\sigma}$ | Trefoil is *chiral*: $T_{2,3} \neq T_{2,3}^{\sigma}$; mirror = antiparticle |
+| 3 | cubic | 3 | $3_1^{\sigma}$ | **Positron** $e^+$, **down** $d$ | **Electron** $e^-$, $d^{\sigma}$ | Right trefoil; same crossing number, opposite chirality |
+| 4 | quartic | 4 | $4_1$ | **Muon** $\mu^{\pm}$ | (self) | Figure-eight is *amphichiral*: $\mu^- = (\mu^-)^{\sigma}$ as knots |
+| 4 | quartic | 0+0+0 | $\mathcal{B}_3$ | **Proton** $p$, **neutron** $n$ | $p^{\sigma}$, $n^{\sigma}$ | Borromean link of 3 quarks; linking structure needs quartic |
+| 5 | quintic | 5 | $5_1$ | **Tau** $\tau^-$, **bottom** $b$ | $\tau^+$, $b^{\sigma}$ | Cinquefoil; chiral; genus 2 |
+| 5 | quintic | 5 | $5_1^{\sigma}$ | **Anti-tau** $\tau^+$, **strange** $s$ | $\tau^-$, $s^{\sigma}$ | Mirror cinquefoil |
+| 7 | septic | 7 | $7_1$ | **Charm** $c$ | $c^{\sigma}$ | Heavy sector torus knot |
+| 8 | octic | 8 | $8_{19}$ | **Top** $t$ | $t^{\sigma}$ | $T_{3,4}$; first $(3,n)$ torus knot |
 
 **Step 0: only the photon.**
 Before any transport, only the fiber value exists.  The photon is
@@ -154,10 +153,10 @@ $J_\nu(q) = 1$ is a degree-0 polynomial — consistent with living
 at the linear (degree 1) jet, where the only available structure
 is a single winding with slope but no self-intersection.
 
-The unknot is **amphichiral**: $T_{1,0} \cong \overline{T_{1,0}}$
+The unknot is **amphichiral**: $T_{1,0} \cong T_{1,0}^{\sigma}$
 as unoriented knots
 ([antineutrino](#def:antineutrino-knot)).  The neutrino $\nu$
-and antineutrino $\bar{\nu}$ are the same knot distinguished by
+and antineutrino $\nu^{\sigma}$ are the same knot distinguished by
 **orientation** (framing), not by knot type.  Both appear at
 step 1.  This is the first matter-antimatter pair, but it is a
 degenerate one: the two are topologically identical, differing
@@ -185,7 +184,7 @@ is its own antiparticle (the Hopf link is amphichiral).
 
 At step 2 there is still no chirality: the quadratic jet has a
 discriminant but no handedness.  All particles so far (photon,
-$\nu$, $\bar{\nu}$, gluon) are either self-conjugate or
+$\nu$, $\nu^{\sigma}$, gluon) are either self-conjugate or
 distinguished only by orientation.
 
 **Step 3: chirality, the electron, and the positron.**
@@ -195,14 +194,14 @@ $R$-matrix evaluations.  It cannot exist before the cubic jet.
 
 Step 3 is where **chirality appears** for the first time.  The
 trefoil is **not** amphichiral: the left trefoil $T_{2,3}$ and the
-right trefoil $\overline{T_{2,3}}$ are distinct knots
+right trefoil $T_{2,3}^{\sigma}$ are distinct knots
 ([chirality: electron and positron](#rem:chirality-trefoil-electron-positron)).
 The mirror operation $\sigma$ (reversing all crossings) produces
 a genuinely different topological object.  This is the origin of
 the particle-antiparticle distinction for chiral matter:
 
 - **Electron** $e^- = T_{2,3}$ (left trefoil, solid ●)
-- **Positron** $e^+ = \overline{T_{2,3}}$ (right trefoil, outlined ○)
+- **Positron** $e^+ = T_{2,3}^{\sigma}$ (right trefoil, outlined ○)
 
 Both have crossing number $3$ and appear at the same Planck step.
 The trefoil and its mirror are the two monodromy generators of the
@@ -212,7 +211,7 @@ without the positron**: the cubic jet produces both chiralities
 simultaneously.
 
 The same step also produces the **up quark** ($u = T_{2,3}$) and
-**down quark** ($d = \overline{T_{2,3}}$) — the same trefoil pair
+**down quark** ($d = T_{2,3}^{\sigma}$) — the same trefoil pair
 in the color-tube sector.  With quarks available, the first
 composite hadrons become constructible (though their linking
 structure requires step 4).
@@ -220,24 +219,24 @@ structure requires step 4).
 **Step 4: the muon and the first hadrons.**
 The figure-eight knot $4_1$ has crossing number $4$ and is the
 first **hyperbolic** knot: $\mathrm{Vol}(4_1) = 2.0299$.  It is
-amphichiral ($4_1 \cong \overline{4_1}$), so the muon $\mu^-$ and
+amphichiral ($4_1 \cong 4_1^{\sigma}$), so the muon $\mu^-$ and
 antimuon $\mu^+$ are the same knot type, distinguished only by
 orientation — like the neutrino but with non-trivial topology.
 
 Also at step 4: the **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$.
-Although each constituent quark ($T_{2,3}$ or $\overline{T_{2,3}}$)
+Although each constituent quark ($T_{2,3}$ or $T_{2,3}^{\sigma}$)
 has crossing number $3$, the three-component Borromean linking
 requires the quartic jet to resolve the inter-component holonomy.
 The proton $p$ and neutron $n$ first appear here, along with
-their antiparticles $\bar{p}$ and $\bar{n}$ (obtained by mirroring
+their antiparticles $p^{\sigma}$ and $n^{\sigma}$ (obtained by mirroring
 all constituent quarks).
 
 **Step 5: the tau and heavy quarks.**
 The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus
-$2$.  It is chiral: $5_1 \neq \overline{5_1}$.  This produces:
+$2$.  It is chiral: $5_1 \neq 5_1^{\sigma}$.  This produces:
 
-- **Tau** $\tau^- = T_{2,5}$ and **anti-tau** $\tau^+ = \overline{T_{2,5}}$
-- **Bottom quark** $b = T_{2,5}$ and **strange quark** $s = \overline{T_{2,5}}$
+- **Tau** $\tau^- = T_{2,5}$ and **anti-tau** $\tau^+ = T_{2,5}^{\sigma}$
+- **Bottom quark** $b = T_{2,5}$ and **strange quark** $s = T_{2,5}^{\sigma}$
 
 (The strange and bottom quarks are the mirror pair at genus 2,
 as the up and down quarks are the mirror pair at genus 1.)
@@ -247,13 +246,13 @@ as the up and down quarks are the mirror pair at genus 1.)
 | Step | Jet | New particles | Antiparticles | Chirality | New structure |
 |:----:|-----|--------------|---------------|:---------:|---------------|
 | 0 | value $a_0$ | photon $\gamma$ | (self) | — | fiber value |
-| 1 | linear | $\nu$ | $\bar{\nu}$ (orientation only) | no | transport, winding |
+| 1 | linear | $\nu$ | $\nu^{\sigma}$ (orientation only) | no | transport, winding |
 | 2 | quadratic | gluon $g$ | (self) | no | curvature, linking |
-| 3 | **cubic** | $e^-$, $u$, $d$ | $e^+$, $\bar{u}$, $\bar{d}$ | **yes** | chirality, $\varphi$, $B_3$ |
-| 4 | quartic | $\mu^\pm$, $p$, $n$ | (amphi), $\bar{p}$, $\bar{n}$ | mixed | hyperbolic volume, baryons |
-| 5 | quintic | $\tau^-$, $b$, $s$ | $\tau^+$, $\bar{b}$, $\bar{s}$ | yes | genus 2 |
-| 7 | septic | $c$ | $\bar{c}$ | yes | heavy torus knots |
-| 8 | octic | $t$ | $\bar{t}$ | yes | $T_{3,4}$ sector |
+| 3 | **cubic** | $e^-$, $u$, $d$ | $e^+$, $u^{\sigma}$, $d^{\sigma}$ | **yes** | chirality, $\varphi$, $B_3$ |
+| 4 | quartic | $\mu^\pm$, $p$, $n$ | (amphi), $p^{\sigma}$, $n^{\sigma}$ | mixed | hyperbolic volume, baryons |
+| 5 | quintic | $\tau^-$, $b$, $s$ | $\tau^+$, $b^{\sigma}$, $s^{\sigma}$ | yes | genus 2 |
+| 7 | septic | $c$ | $c^{\sigma}$ | yes | heavy torus knots |
+| 8 | octic | $t$ | $t^{\sigma}$ | yes | $T_{3,4}$ sector |
 
 Each row is one Planck step, one tick of discrete time at the
 Big Bang.  The universe does not spring into existence fully
@@ -272,7 +271,7 @@ all emerge together in a single Planck step.
 The particle table above describes **encodability**: which knot
 types have enough polynomial degree to be *resolvable* at each
 jet order.  This is not a scattering process.  Step 0 → Step 1
-does not mean "$\gamma + \gamma \to \nu + \bar{\nu}$".  It means
+does not mean "$\gamma + \gamma \to \nu + \nu^{\sigma}$".  It means
 that the first application of $\nabla_q$ creates horizontal
 transport, and the unknot $0_1$ — which requires one winding with
 zero crossings — becomes encodable for the first time.  The
@@ -280,7 +279,7 @@ neutrino is not *produced from* the photon; it becomes
 *resolvable* once the jet structure supports winding.
 
 Actual scattering processes require far more structure.  Consider
-$\gamma\gamma \to \nu\bar{\nu}$: in standard QFT this cannot
+$\gamma\gamma \to \nu\nu^{\sigma}$: in standard QFT this cannot
 happen at tree level because neutrinos carry no electric charge,
 so it requires a box diagram with virtual charged particles and a
 $Z^0$ mediator.  In the QOU framework the same obstruction
@@ -335,8 +334,7 @@ steps) to continuous (the full jet shell) is the arithmetic version
 of the cosmological progression from Big Bang to classical limit.
 
 **Why cubic and not higher?**
-The Bring's surface is defined by constraints $\sum x_i = \sum x_i^2
-= \sum x_i^3 = 0$ in $\mathbb{CP}^4$.  The power-sum conditions
+The Bring's surface is defined by constraints $\sum x_i = \sum x_i^2 = \sum x_i^3 = 0$ in $\mathbb{CP}^4$.  The power-sum conditions
 use degrees 1, 2, and 3 — exactly the first three non-trivial jets.
 The fourth power sum $\sum x_i^4$ is *not* independent: by Newton's
 identities it is determined by the lower power sums.  The chiral

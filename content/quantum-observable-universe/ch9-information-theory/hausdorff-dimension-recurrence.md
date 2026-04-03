@@ -69,8 +69,7 @@ Bang ($q \to \infty$, no fractal, $d_{H,q} = 0$).
 **$d_{H,q}$ vs. $d_H$: comparison with classical Hausdorff dimension.**
 
 For parameters $c(\theta)$ on the main cardioid of the Mandelbrot
-set (rotation number $\theta$, multiplier $\lambda = e^{2\pi i
-\theta}$), the Julia set is a quasicircle and the classical
+set (rotation number $\theta$, multiplier $\lambda = e^{2\pi i \theta}$), the Julia set is a quasicircle and the classical
 Hausdorff dimension $d_H$ satisfies:
 
 1. **Ruelle perturbative** (valid near $|c| \ll 1$):
@@ -81,8 +80,7 @@ Hausdorff dimension $d_H$ satisfies:
 
    At $\theta = 0.1097$: $|c| = 0.346$, giving $d_H \approx 1.043$.
 
-2. **Transfer operator** (numerical, Bowen–Ruelle): $d_H \approx
-   1.047$ at $N = 800$ grid points.
+2. **Transfer operator** (numerical, Bowen–Ruelle): $d_H \approx 1.047$ at $N = 800$ grid points.
 
 3. **QOU $q$-deformed**: $d_{H,q} = 1.088$.
 
@@ -117,8 +115,7 @@ operator.  The function $c \mapsto d_H(J_c)$ is:
   of parameters (Shishikura 1998).
 
 **Convergence from local $q$.**
-The downward iteration $q_{n+1} = q_n - \hbar_{q_n}
-= (q_n^2 - q_n + 1)/q_n$ flows $q$ toward the classical limit
+The downward iteration $q_{n+1} = q_n - \hbar_{q_n} = (q_n^2 - q_n + 1)/q_n$ flows $q$ toward the classical limit
 $q = 1$, which is a **superattracting fixed point** (the derivative
 $|1 - 1/q^2|$ vanishes at $q = 1$).  Starting from our local
 $q_0$:

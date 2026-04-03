@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Extract Lean declarations from monolithic files into per-content-block .lean files.
 
-Reads lean-archive/ source files, maps declarations to content blocks,
+Reads content/quantum-observable-universe/lean/ source files, maps declarations to content blocks,
 and writes individual .lean files alongside their .ts/.md siblings.
 """
 
@@ -299,8 +299,8 @@ def write_lean_file(output_path, decl_name, body_text, imports=CH1_IMPORTS, name
 /-!
 # {decl_name}
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/{decl_name.replace('.', '/')}.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/{decl_name.replace('.', '/')}.lean (monolithic)
 -/
 
 {imports}
@@ -317,7 +317,7 @@ end {namespace}
 
 
 def main():
-    archive = REPO / 'lean-archive'
+    archive = REPO / 'content/quantum-observable-universe/lean'
     qou_file = archive / 'QOU' / 'QuantumObservableUniverse.lean'
 
     if not qou_file.exists():
@@ -396,7 +396,7 @@ def main():
             stub = f"""\
 -- TODO: Formalize {decl_name}
 -- This declaration was referenced in the content manifest but not found
--- in the lean-archive/ source files. It may need to be written from scratch.
+-- in the content/quantum-observable-universe/lean/ source files. It may need to be written from scratch.
 -- Ref: [manuscript]
 sorry"""
             output_path = CH1_DIR / f"{block_name}.lean"
@@ -415,8 +415,8 @@ sorry"""
 /-!
 # QOU.PathIntegrals.KnotEigenbasisComplete
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/PathIntegrals.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/PathIntegrals.lean (monolithic)
 -/
 
 import QOU.Basic
@@ -456,8 +456,8 @@ end QOU.PathIntegrals
 /-!
 # {decl_name}
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/HadronicMass.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/HadronicMass.lean (monolithic)
 -/
 
 import QOU.Basic

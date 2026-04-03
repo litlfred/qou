@@ -15,7 +15,7 @@ $$
 $$
 
 where $N$ is the total number of iterations of $f_q$ applied
-since the initial state
+since a reference configuration $\mathcal{S}_0$
 ([bundle initial conditions](#def:bundle-initial-conditions)).
 Each iteration advances the admissible ordering by one step:
 $\mathcal{T}$ counts the position in the braiding-induced ordering $\prec_c$
@@ -40,7 +40,7 @@ into a continuous flow parameter.
 
 **Three regimes.**
 
-1. **Discrete regime** ($q \to \infty$, Big Bang).
+1. **Discrete regime** ($q \to \infty$, deep-quantum).
    $t_P \to 1$, so $t = \mathcal{T}$: the Reeb time coordinate
    *is* the integer step count.  Each tick is individually
    meaningful — one braiding, one jet prolongation, one link

@@ -4,8 +4,8 @@
 A categorical point of a Frobenius–Hopf object `A` is a morphism
 `p : 𝟙 → A` in the monoidal category `C`.
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic

@@ -15,14 +15,14 @@
 | [def:q-momentum](#def:q-momentum) | $q$-Momentum from the braid writhe | Ch 4 | `QOU.Descartes.QMomentum` |
 | [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-Weighted Yang--Mills--Levi functional | Ch 5 | `QOU.QYangMillsLevi` |
 | [def:no-quasi-zeros](#def:no-quasi-zeros) | Algebra without quasi-zeros | Ch 1 | `QOU.NoQuasiZeros` |
-| [def:antineutrino-knot](#def:antineutrino-knot) | Antineutrino as mirror unknot $\overline{T_{1,0}}$ | Ch 6 | `QOU.Descartes.Antineutrino` |
+| [def:antineutrino-knot](#def:antineutrino-knot) | Antineutrino as mirror unknot $T_{1,0}^{\sigma}$ | Ch 6 | `QOU.Descartes.Antineutrino` |
 | [def:beta-decay-skein](#def:beta-decay-skein) | Beta decay as a Skein crossing change on the Gröbner normal form | Ch 6 | `QOU.Descartes.BetaDecaySkein` |
 | [def:borromean-baryon](#def:borromean-baryon) | Borromean baryon | Ch 4 | `QOU.Braiding.BorromeanBaryon` |
 | [def:braid-group](#def:braid-group) | Braid group on three strands | Ch 4 | `QOU.BraidGroup` |
 | [def:braid-twist-flip](#def:braid-twist-flip) | Braid involutions: twist and flip | Ch 4 | `QOU.BraidTwistFlip` |
 | [def:briggs-klein-chart](#def:briggs-klein-chart) | Briggs--Klein affine chart | Ch 6 | `QOU.BriggsKleinChart` |
 | [def:brings-surface](#def:brings-surface) | Bring's surface | Ch 6 | `QOU.BringsSurface` |
-| [def:bundle-initial-conditions](#def:bundle-initial-conditions) | Bundle initial conditions (big bang state) | Ch 4 | `QOU.BundleInitialConditions` |
+| [def:bundle-initial-conditions](#def:bundle-initial-conditions) | Bundle initial conditions | Ch 4 | `QOU.BundleInitialConditions` |
 | [def:categorical-q-connection](#def:categorical-q-connection) | Categorical $q$-deformed connection | Ch 2 | `QOU.CategoricalQConnection` |
 | [def:categorical-q-ext-deriv](#def:categorical-q-ext-deriv) | Categorical $q$-deformed exterior derivative | Ch 2 | `QOU.CategoricalQExtDeriv` |
 | [def:categorical-q-lie-bracket](#def:categorical-q-lie-bracket) | Categorical $q$-Lie bracket | Ch 2 | `QOU.CategoricalQLieBracket` |
@@ -35,11 +35,11 @@
 | [def:categorical-lagrangian](#def:categorical-lagrangian) | Categorical Lagrangian | Ch 2 | `QOU.CategoricalLagrangian` |
 | [def:categorical-point](#def:categorical-point) | Categorical point | Ch 2 | `QOU.CategoricalPoint` |
 | [def:categorical-q-reeb-flow](#def:categorical-q-reeb-flow) | Categorical q-Reeb flow | Ch 3 | `QOU.CategoricalQReebFlow` |
-| [def:categorical-q-torsion-leaf](#def:categorical-q-torsion-leaf) | Categorical q-torsion leaf | Ch 3 | `QOU.CategoricalQTorsionLeaf` |
+| [rem:glossary-categorical-q-torsion-leaf](#rem:glossary-categorical-q-torsion-leaf) | Categorical q-torsion leaf | Glossary | `QOU.CategoricalQTorsionLeaf` |
 | [def:categorical-reeb](#def:categorical-reeb) | Categorical Reeb derivation | Ch 2 | `QOU.CategoricalReeb` |
 | [def:categorical-transfer-matrix](#def:categorical-transfer-matrix) | Categorical transfer matrix | Ch 4 | `QOU.CategoricalTransferMatrix` |
-| [def:categorical-transport](#def:categorical-transport) | Categorical transport equation | Ch 3 | `QOU.CategoricalTransport` |
-| [def:chiral-sector-coords](#def:chiral-sector-coords) | Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `QOU.ChiralSectorCoords` |
+| [rem:glossary-categorical-transport](#rem:glossary-categorical-transport) | Categorical transport equation | Glossary | `QOU.CategoricalTransport` |
+| [def:coral-sector-coords](#def:coral-sector-coords) | Coral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `QOU.CoralSectorCoords` |
 | [def:color-tube-coordinates](#def:color-tube-coordinates) | Color tube coordinates | Ch 6 | `QOU.ColorTubeCoordinates` |
 | [def:color-tube-fibers](#def:color-tube-fibers) | Color tube fibers | Ch 6 | `QOU.ColorTubeFibers` |
 | [def:contact-affine-chart](#def:contact-affine-chart) | Contact affine chart on $\mathbb{P}(V)$ | Ch 2 | `QOU.ContactAffineChart` |
@@ -48,7 +48,7 @@
 | [def:crossing-energy](#def:crossing-energy) | Crossing energy of a knot composite | Ch 4 | `QOU.Braiding.CrossingEnergy` |
 | [def:brane-boundary](#def:brane-boundary) | Defining boundary of the brane | Ch 3 | `QOU.braneBoundary` |
 | [def:descartes-condition](#def:descartes-condition) | Descartes condition | Ch 6 | `QOU.DescartesCondition` |
-| [def:descent](#def:descent) | Descent | Ch 3 | `QOU.DescentData` |
+| [rem:glossary-descent](#rem:glossary-descent) | Descent | Glossary | `QOU.DescentData` |
 | [def:descent-involution](#def:descent-involution) | Descent involution | Ch 3 | `QOU.DescentInvolution` |
 | [def:down-quark](#def:down-quark) | Down quark | Ch 6 | `QOU.Descartes.DownQuark` |
 | [def:electron-knot](#def:electron-knot) | Electron | Ch 6 | `QOU.Descartes.Electron` |
@@ -74,7 +74,7 @@
 | [def:neutrino-knot](#def:neutrino-knot) | Neutrino | Ch 6 | `QOU.Descartes.Neutrino` |
 | [def:categorical-neutron](#def:categorical-neutron) | Neutron (categorical) | Ch 6 | `QOU.Torsion.CategoricalNeutron` |
 | [def:observation](#def:observation) | Observation | Ch 2 | `QOU.Intent` |
-| [def:observed-value](#def:observed-value) | Observed spacetime value | Ch 6 | `QOU.ObservedValue` |
+| [rem:glossary-observed-value](#rem:glossary-observed-value) | Observed spacetime value | Glossary | `QOU.ObservedValue` |
 | [def:operational-entropy](#def:operational-entropy) | Operational entropy of the Reeb dynamics | Ch 8 | `QOU.Information.operationalEntropy` |
 | [def:q-harmonic-form](#def:q-harmonic-form) | Particle ($q$-harmonic form) | Ch 2 | `QOU.QHarmonicForm` |
 | [def:planck-time](#def:planck-time) | Planck Time | Ch 8 | `QOU.planckTime` |
@@ -82,7 +82,7 @@
 | [def:projective-line-object](#def:projective-line-object) | Projective line object | Ch 2 | `QOU.ProjectiveLineObject` |
 | [def:categorical-proton](#def:categorical-proton) | Proton (categorical) | Ch 6 | `QOU.Torsion.CategoricalProton` |
 | [def:quantum-characteristic-classes](#def:quantum-characteristic-classes) | Quantum Characteristic Classes (Yekutieli obstruction) | Ch 3 | `QOU.QuantumCharacteristicClass` |
-| [def:quantum-flatness](#def:quantum-flatness) | Quantum flatness | Ch 2 | `QOU.QuantumFlatness` |
+| [rem:glossary-quantum-flatness](#rem:glossary-quantum-flatness) | Quantum flatness | Glossary | `QOU.QuantumFlatness` |
 | [def:quantum-gauge-group](#def:quantum-gauge-group) | Quantum Gauge Group | Ch 2 | `QOU.QuantumGaugeGroup` |
 | [def:quantum-su2](#def:quantum-su2) | Quantum group $\mathcal{U}_q(\mathfrak{su}(2))$ | Ch 4 | `QOU.QuantumSu2` |
 | [def:quantum-observable-universe](#def:quantum-observable-universe) | Quantum Observable Universe | Ch 2 | `QOU.QuantumObservableUniverse` |
@@ -99,14 +99,14 @@
 | [def:information-speed-of-light](#def:information-speed-of-light) | Speed of light as Lieb--Robinson velocity | Ch 8 | `QOU.Information.speedOfLight` |
 | [def:stable-nucleus](#def:stable-nucleus) | Stable nucleus (Skein energy minimum) | Ch 6 | `QOU.Torsion.StableNucleus` |
 | [def:substrate-parameter](#def:substrate-parameter) | Substrate parameter | Ch 2 | `QOU.SubstrateParameter` |
-| [def:s3-group](#def:s3-group) | Symmetric group $S_3$ | Ch 4 | `QOU.S3Group` |
-| [def:reeb-gauge-group](#def:reeb-gauge-group) | The Reeb gauge group $U_1(R)$ | Ch 2 | `QOU.ReebGaugeGroup` |
+| [rem:glossary-s3-group](#rem:glossary-s3-group) | Symmetric group $S_3$ | Glossary | `QOU.S3Group` |
+| [rem:glossary-reeb-gauge-group](#rem:glossary-reeb-gauge-group) | The Reeb gauge group $U_1(R)$ | Glossary | `QOU.ReebGaugeGroup` |
 | [def:threading-link](#def:threading-link) | Threading link $T(2,N)$ | Ch 7 | `QOU.Organic.ThreadingLink` |
 | [def:torsion-knot-flow](#def:torsion-knot-flow) | Torsion-driven knot flow | Ch 4 | `QOU.ParticleState` |
 | [def:transfer-matrix-operator](#def:transfer-matrix-operator) | Transfer matrix operator on hadrons and Gröbner ideals | Ch 6 | `QOU.Descartes.TransferMatrixOperator` |
 | [def:up-quark](#def:up-quark) | Up quark | Ch 6 | `QOU.Descartes.UpQuark` |
 | [def:vertex-operator](#def:vertex-operator) | Vertex operator on the exceptional divisor | Ch 4 | `QOU.VertexOperator` |
-| [def:weierstrass-projection](#def:weierstrass-projection) | Weierstrass projection $\wp_q(z)$ | Ch 6 | `QOU.Descartes.weierstrassProjection` |
+| [rem:glossary-weierstrass-projection](#rem:glossary-weierstrass-projection) | Weierstrass projection $\wp_q(z)$ | Glossary | `QOU.Descartes.weierstrassProjection` |
 | [def:weight-decomposition](#def:weight-decomposition) | Weight decomposition | Ch 2 | `QOU.WeightDecomposition` |
 | [def:witt-vector-lift](#def:witt-vector-lift) | Witt vector lift of a formal group | Ch 5 | `QOU.WittVectorLift` |
 | [def:yekutieli-lifting-condition](#def:yekutieli-lifting-condition) | Yekutieli Lifting Condition | Ch 3 | `QOU.YekutieliLiftingCondition` |
@@ -126,7 +126,7 @@
 | [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `QOU.SubstrateParameter.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `QOU.WeightDecomposition.ofMaximalTorus` |
 | [thm:generation-completeness](#thm:generation-completeness) | Generation completeness: all embeddable knots are reachable | Ch 6 | `QOU.Descartes.generation_completeness` |
-| [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_H = \mathfrak{m}_H \cdot c_q^2$) | Ch 8 | `QOU.Information.massEnergyEquivalence` |
+| [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$) | Ch 8 | `QOU.Information.massEnergyEquivalence` |
 | [thm:markov-trace-product](#thm:markov-trace-product) | Product factorization of the Markov trace | Ch 4 | `QOU.markov_trace_product` |
 | [thm:qu-to-qou](#thm:qu-to-qou) | Quantum universe with observability and Yekutieli is a QOU | Ch 3 | `QOU.QuToQou` |
 | [thm:topological-mass](#thm:topological-mass) | Topological Decomposition of Mass | Ch 4 | `QOU.Torsion.mass_decomposition_categorical` |
@@ -146,7 +146,7 @@
 | [prop:mobius-energy](#prop:mobius-energy) | Categorical recovery of Möbius energy | Ch 4 | `QOU.Braiding.mobius_energy` |
 | [prop:categorical-self-duality](#prop:categorical-self-duality) | Categorical self-duality | Ch 2 | `QOU.categorical_self_duality` |
 | [prop:categorical-archimedean-bridge](#prop:categorical-archimedean-bridge) | Categorical--geometric correspondence | Ch 5 | `QOU.categorical_archimedean_bridge` |
-| [prop:chiral-elliptic](#prop:chiral-elliptic) | Chiral fibre as an elliptic curve | Ch 6 | `QOU.Brings.chiral_elliptic` |
+| [prop:coral-elliptic](#prop:coral-elliptic) | Coral fibre as an elliptic curve | Ch 6 | `QOU.Brings.coral_elliptic` |
 | [prop:q-codifferential-formula](#prop:q-codifferential-formula) | Closed formula for the $q$-codifferential $\delta_q$ | Ch 2 | `QOU.QuantumGeometry.q_codifferential_formula` |
 | [prop:hadron-operations-closure](#prop:hadron-operations-closure) | Closure of hadron operations under braiding, Hopf linking, skein action, and fusion | Ch 4 | `QOU.Hadron.hadron_operations_closure` |
 | [prop:cohomological-embedding](#prop:cohomological-embedding) | Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$ | Ch 2 | `QOU.Descartes.cohomological_embedding` |
@@ -221,7 +221,7 @@
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 3 | `QOU.Torsion.brane_boundary_structure` |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 | `QOU.substrate_radial_coordinate` |
 | [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 6 | `QOU.Experimental.terminal_resolution` |
-| [prop:box-braid-irreducibility](#prop:box-braid-irreducibility) | The $\gamma\gamma \to \nu\bar{\nu}$ box braid is irreducible | Ch 6 | `QOU.Descartes.BoxBraidIrreducibility` |
+| [prop:box-braid-irreducibility](#prop:box-braid-irreducibility) | The $\gamma\gamma \to \nu\nu^{\sigma}$ box braid is irreducible | Ch 6 | `QOU.Descartes.BoxBraidIrreducibility` |
 | [prop:ordering-jet-compatibility](#prop:ordering-jet-compatibility) | The admissible ordering extends through the jet tower | Ch 3 | — |
 | [prop:braiding-induced-ordering](#prop:braiding-induced-ordering) | The braiding induces a canonical admissible well-ordering on the Hecke basis | Ch 2 | `QOU.braiding_induced_ordering` |
 | [prop:descartes-elliptic-curve](#prop:descartes-elliptic-curve) | The Descartes elliptic curve $\mathcal{E}_q$ | Ch 6 | `QOU.Descartes.descartes_elliptic_curve` |
@@ -321,5 +321,5 @@
 | [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Terminal resolution in $\mathbb{C}[z]$ | Ch 7 | `QOU.Examples.czTerminalResolution` |
 | [ex:nitrogen-14-threading](#ex:nitrogen-14-threading) | The ${}^{14}\mathrm{N}$ maximal braid shortcut vs ${}^{14}\mathrm{C}$ broken alternation | Ch 7 | — |
 | [ex:trefoil-operator-algebra](#ex:trefoil-operator-algebra) | Trefoil braid relation and operator algebra | Ch 4 | — |
-| [ex:tritium-decay-knot-equation](#ex:tritium-decay-knot-equation) | Tritium decay as a Skein crossing change: ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \bar{\nu}_e$ | Ch 7 | — |
+| [ex:tritium-decay-knot-equation](#ex:tritium-decay-knot-equation) | Tritium decay as a Skein crossing change: ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \nu_e^{\sigma}$ | Ch 7 | — |
 

@@ -12,7 +12,7 @@ $T_{2,3} \cup \mathcal{N}(Z, N)$ gives the Coulomb enhancement.
 Let $(\mathbf{C}, A, \tau)$ be a Descartes universe with substrate
 parameter $q$.  In the beta decay
 $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1) + T_{2,3}
-+ \bar{\nu}$, the emitted electron $T_{2,3}$ crosses each of the
++ \nu^{\sigma}$, the emitted electron $T_{2,3}$ crosses each of the
 $Z = p + 1$ proton strands of the daughter nucleus as it exits the
 Hopf link.  The $q$-deformed wedge product $\wedge_q$
 ([crossing asymmetry](#rem:skein-crossing-asymmetry)) assigns weight
@@ -140,8 +140,7 @@ correctly determines:
    the overall decay-rate scale from the single parameter $q$.
 2. **The $A$-dependence**: $t_{1/2} \propto A^{5/3}$ at fixed
    $|\delta p|$ and fixed transition class.
-3. **The $q$-sensitivity**: $\partial \ln \Gamma / \partial \ln q
-   \approx 48$, a parameter-free prediction.
+3. **The $q$-sensitivity**: $\partial \ln \Gamma / \partial \ln q \approx 48$, a parameter-free prediction.
 4. **The Coulomb enhancement structure**: $F_q(Z, E)$ emerges from
    the Skein crossing weights, unifying the electromagnetic and
    weak interactions through the single deformation parameter $q$.

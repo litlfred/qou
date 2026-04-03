@@ -133,8 +133,8 @@ LABEL_OVERRIDES = {
     'skein-decomposition': 'skein decomposition',
     'skein-archimedean-shadow': 'skein archimedean shadow',
     # Surface / geometry
-    'chiral-elliptic': 'chiral elliptic curve',
-    'chiral-bundles': 'chiral bundles',
+    'coral-elliptic': 'coral elliptic curve',
+    'coral-bundles': 'coral bundles',
     'chirality-trefoil': 'chirality and trefoil',
     # Other specific labels
     'genus-maximal-descent': 'genus-maximal descent',

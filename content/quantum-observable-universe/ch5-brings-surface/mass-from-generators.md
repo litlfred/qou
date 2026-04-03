@@ -68,19 +68,19 @@ the tau arises from linking $T_{2,5}$ configurations at Reeb
 degree $3$.
 
 **Step 4: Color-tube linking generates hadronic mass.**
-Baryons require three generators threaded through the color tubes
+Baryons require three generators threaded through the coral tubes
 $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The proton
 is:
 
 $$
   \text{Proton} \;=\;
-  \ell_c\bigl(T_{2,3},\; T_{2,3},\; \sigma(T_{2,3})\bigr)
+  \ell_c\bigl(T_{2,3},\; T_{2,3},\; T_{2,3}^{\sigma}\bigr)
   \;\otimes\; \mathcal{L}_{\mathrm{Hopf}}
 $$
 
 where $\ell_c$ threads two trefoils (up quarks) and one Skein
-descendant $\sigma(T_{2,3})$ (down quark) through the color tubes and
+descendant $T_{2,3}^{\sigma}$ (down quark) through the coral tubes and
 $\mathcal{L}_{\mathrm{Hopf}}$ binds them.  The mass is:
 
 $$
@@ -102,7 +102,7 @@ arranges into a chart:
 | Sector | Linking | Generators | Mass source | Examples |
 |--------|---------|------------|-------------|----------|
 | Leptonic | Hopf ($\ell_H$) | $T_{2,2k+1}$ | Skein volume | $e, \mu, \tau$ |
-| Mesonic | Hopf ($\ell_H$) | $T_{m,n} \cup \overline{T}_{m',n'}$ | Pair annihilation polynomial | $\pi, K, D$ |
+| Mesonic | Hopf ($\ell_H$) | $T_{m,n} \cup T_{m',n'}^{\sigma}$ | Pair annihilation polynomial | $\pi, K, D$ |
 | Baryonic | Color ($\ell_c$) + Hopf | $T_{m_i,n_i}^{\times 3}$ | Color-tube cubic + Skein | $p, n, \Lambda, \Sigma$ |
 | Nuclear | Iterated $\ell_H$ | Baryon composites | Multi-body Skein | $D, {}^4\mathrm{He}, \ldots$ |
 

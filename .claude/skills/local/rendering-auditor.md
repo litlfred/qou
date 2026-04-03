@@ -44,7 +44,7 @@ passes (garbage-in-garbage-out).
 
 ## Pass 1: Markdown + TeX Syntax
 
-**Tools**: remark AST (remark-math), unified-latex AST, Zod schema
+**Tools**: remark AST (remark-gfm + remark-math), unified-latex AST, Zod schema
 **Speed**: Fast (no compilation)
 
 ### Checks
@@ -59,7 +59,9 @@ passes (garbage-in-garbage-out).
 | No `$$...$$` with content on same line as delimiters | **error** | Pipeline splits opening `\[` from closing `$$`, producing mixed-delimiter LaTeX error |
 | No bare `\eqref{}` outside math mode | **error** | Renders as literal text in HTML; use `[text](#label)` cross-ref instead |
 | Markdown list syntax correct (`1.` / `-` with proper indentation) | **warning** | remark AST — malformed lists produce paragraph nodes instead |
-| Markdown table syntax valid (pipe-delimited, header separator) | **warning** | remark AST parse — invalid tables render as plain text |
+| Markdown table syntax valid (pipe-delimited, header separator) | **warning** | remark-gfm AST parse — invalid tables render as plain text; valid tables become `\begin{tabular}` with booktabs |
+| Bare `_` in table cells outside math/code | **error** | Underscores trigger LaTeX subscript; wrap in backticks or `$...$` |
+| Table cells with bare identifiers (Lean decls etc.) | **error** | Must use backtick inline code: `` `QOU.Foo.bar_baz` `` → `\texttt{QOU.Foo.bar\_baz}` |
 | Block `.ts` manifest validates against Zod schema | **error** | `BlockSchema.safeParse()` |
 | Title math preserved in `$...$` delimiters (not bare TeX) | **error** | Check `.ts` title field for bare `\mathrm{}` etc. without `$` wrapping |
 | Fenced code blocks have language tag | **info** | `` ``` `` without `tex` tag won't pass through correctly |
@@ -275,6 +277,16 @@ that pass compilation but produce wrong visual output.
 | PDF equations match HTML equations | **info** | Visual comparison of key equations |
 | No overlapping text in PDF | **error** | Check for text collisions in dense sections |
 | Fenced `` ```tex `` blocks with pre-rendered SVGs display correctly | **warning** | Verify SVG embed or image fallback is present |
+
+### Viewer-specific checks (discovered 2026-04-02 audit)
+
+| Check | Severity | How |
+|-------|----------|-----|
+| Multi-line inline `$...$` renders in list items | **error** | The viewer `parseMd()` joins list continuation lines; `inl()` must handle escaped braces `\{`/`\}` (skip `\` + next char, don't count as depth) |
+| Title math in `$...$` renders (not raw) | **error** | `mkBlockHeader()` calls `inl(title)` then `renderMath(div)`; if KaTeX is not yet loaded or macros empty, math shows as raw — verify KaTeX loads before block rendering |
+| Simulator blocks validate against current schema | **error** | `SimulatorBlock` requires `html: string` + `defaultView: SimulatorView`; deprecated `simulator: {type, source}` field causes Zod parse failure |
+| Content blocks in correct chapter directory | **error** | Block `.ts`/`.md` must be in the chapter directory that references them in its manifest |
+| `\{` and `\}` in inline math don't break `$` parser | **error** | The `inl()` brace-depth tracker must skip `\{`/`\}` (escaped braces); otherwise the closing `$` is never found and math shows as raw text |
 
 ### HTML visual verification procedure
 

@@ -15,8 +15,7 @@ $$
   \delta_q\,\alpha = 0.
 $$
 
-This equivalence follows from $\langle \Delta_q \alpha, \alpha
-\rangle_\theta = \|d_q \alpha\|^2 + \|\delta_q \alpha\|^2$, which
+This equivalence follows from $\langle \Delta_q \alpha, \alpha \rangle_\theta = \|d_q \alpha\|^2 + \|\delta_q \alpha\|^2$, which
 vanishes only when both norms are zero.
 
 Physically:
@@ -33,6 +32,7 @@ then classifies particles by their vertical component under the
 horizontal ($\alpha_V = 0$), fermions have non-trivial vertical part.
 
 The complete logical chain is:
+
 $$
   \text{QOU} \;\xrightarrow{d_q}\;
   \text{$q$-exterior derivative}
