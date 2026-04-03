@@ -21,7 +21,7 @@ physical nuclei are the **integer points** of $\mathcal{S}$:
 pairs $(p, A) \in \mathbb{Z}^2$ with $t = A^{1/3}$ and
 $A = t^3 \in \mathbb{Z}$.
 
-**Comparison with the chiral fibration.**
+**Comparison with the color fibration.**
 The coral elliptic curve of Bring's surface
 ([coral elliptic](#prop:coral-elliptic)) is the cubic
 
@@ -30,13 +30,13 @@ $$
   + (z^3 + z^2 + z + 1) = 0
 $$
 
-in the chiral variable $X$ at spacetime ratio $z$.  The
-stability cubic (S) and the chiral cubic (C) are both cubics
+in the color variable $X$ at spacetime ratio $z$.  The
+stability cubic (S) and the color cubic (C) are both cubics
 in one variable parametrised by another, arising from the
 same $\chi = -6$ surface.  The
 [elliptic stability conjecture](#conj:elliptic-stability-locus)
 proposes that when the pairing energy lifts (S) to genus $1$,
-the resulting elliptic curve is isogenous to the chiral fiber.
+the resulting elliptic curve is isogenous to the color fiber.
 
 **The $n/p$ ratio.**
 For each proton number $p$, the stable neutron number

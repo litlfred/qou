@@ -7,7 +7,7 @@ $$
 
 one verifies $F(X,z)=F(z,X)$ term by term.  This involution
 $\iota\colon(X,z)\mapsto(z,X)$ is a *T-duality*: it identifies
-every chiral fibre $\mathcal{E}_z$ with its dual spacetime wrapping $\mathcal{E}_X$, so
+every color fibre $\mathcal{E}_z$ with its dual spacetime wrapping $\mathcal{E}_X$, so
 the internal and external degrees of freedom of the Bring's surface are
 algebraically indistinguishable.
 

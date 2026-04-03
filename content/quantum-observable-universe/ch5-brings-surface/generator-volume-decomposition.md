@@ -2,7 +2,7 @@ The nuclear binding energy decomposes as a **sum of generator
 volumes** — one for each braid generator $\sigma_i$ in $B_A$.
 Each generator's volume is computed by a transfer matrix product
 whose terms organize as a **jet expansion in the nucleon count**,
-with each jet order corresponding to a chiral degree.
+with each jet order corresponding to a color degree.
 
 **Proposition.**
 Let $\mathcal{N}(Z, N)$ be the nuclear braid word in $H_A(q)$
@@ -53,7 +53,7 @@ $$
 
 is a product of $k_i = A - i - 1$ matrices.  This product
 admits a **jet expansion** — a Taylor series in the number of
-crossings, where each order corresponds to a chiral degree:
+crossings, where each order corresponds to a color degree:
 
 $$
   M_i \;=\; \mathbb{1}
@@ -66,9 +66,9 @@ $$
 where $T_j = \mathbb{1} + T_j^{(1)}$ and $T_j^{(1)}$ is the
 deviation from the identity.
 
-**The chiral degree at generator $\sigma_i$ is exactly $k_i = A - i - 1$.**
+**The color degree at generator $\sigma_i$ is exactly $k_i = A - i - 1$.**
 
-| Jet order $r$ | Chiral degree | Physical content | Multiplicity |
+| Jet order $r$ | Color degree | Physical content | Multiplicity |
 |:---:|:---:|---|:---:|
 | $0$ | $0$ | Free nucleon (identity) | $1$ |
 | $1$ | $1$ | Pair interactions ($i$-$j$ crossings) | $k_i$ |
@@ -188,7 +188,7 @@ volumes $(V_0, \ldots, V_{A-2})$.
 | $r$-fold decay | $r$-jet ($r$-th derivative) |
 | Full transfer matrix product | $\infty$-jet (exact) |
 
-The chiral degree of the $r$-jet at generator $\sigma_i$ is
+The color degree of the $r$-jet at generator $\sigma_i$ is
 $\min(r, k_i)$, bounded by the number of crossings at that
 generator.
 
@@ -264,24 +264,24 @@ $\sigma_6$ differ (the 1-jet support of the single beta decay).
 
 Generator $\sigma_6$ — the converting neutron's own generator —
 has the **largest volume change** ($-1.660$, nearly half the total
-$\Delta E$).  Its chiral degree is $k_6 = 7$: it sees 7 crossings
+$\Delta E$).  Its color degree is $k_6 = 7$: it sees 7 crossings
 with downstream nucleons, ALL of which change type when the
-neutron converts to a proton.  This is the highest chiral degree
+neutron converts to a proton.  This is the highest color degree
 at the converting position.
 
 ## Connection to the Reeb decomposition
 
-The chiral degree at each generator corresponds to the
+The color degree at each generator corresponds to the
 **vertical degree** $\deg\alpha_V$ of the Reeb flow:
 
-- Generator $\sigma_0$: chiral degree $A - 1$ (sees all
+- Generator $\sigma_0$: color degree $A - 1$ (sees all
   other nucleons) — the "lowest" Reeb stratum
-- Generator $\sigma_{A-2}$: chiral degree $1$ (sees one
+- Generator $\sigma_{A-2}$: color degree $1$ (sees one
   nucleon) — the "highest" Reeb stratum
 
 The jet expansion at each generator is the **Taylor series
 of the transfer matrix product along the Reeb flow direction**.
-Each additional crossing adds one chiral degree, corresponding
+Each additional crossing adds one color degree, corresponding
 to one more nucleon entering the interaction region.
 
 This means the generator volume decomposition is the **discrete

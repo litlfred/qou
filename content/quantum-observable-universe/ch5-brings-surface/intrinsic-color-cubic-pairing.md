@@ -1,4 +1,4 @@
-The intrinsic color cubic $h_3(c)$ admits a natural decomposition into space-like and chiral sectors:
+The intrinsic color cubic $h_3(c)$ admits a natural decomposition into space-like and color sectors:
 
 ```tex
 \begin{equation}\label{eq:color-cubic-decomp}

@@ -1,7 +1,7 @@
 The T-duality involution $\iota \colon (X, z) \mapsto (z, X)$
 ([T-duality on elliptic fibres](#rem:t-duality-elliptic)) acts on color tube
 coordinates as follows.  Writing $c = X - z$, the dual point has
-base coordinate $z' = X = c + z$ and chiral coordinate $X' = z$,
+base coordinate $z' = X = c + z$ and color coordinate $X' = z$,
 giving dual color tube coordinate $c' = z - X = -c$.  Hence
 
 ```tex

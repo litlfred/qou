@@ -249,7 +249,7 @@ the same matrix for every nucleus.
 
 For photon absorption, the operator is not a difference but
 an **extension**: a new transfer matrix factor $T_{\gamma e}$
-is appended to the chain, increasing the chiral degree by $1$.
+is appended to the chain, increasing the color degree by $1$.
 
 ## Composition rules
 

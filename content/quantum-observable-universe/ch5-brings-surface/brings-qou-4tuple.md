@@ -1,12 +1,12 @@
 We construct the archimedean quantum observable universe
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) explicitly for Bring's
 surface.  The five homogeneous coordinates $x_j$, $j\in\{0,\dots,4\}$,
-split into *spacetime* and *chiral* degrees of freedom:
+split into *spacetime* and *color* degrees of freedom:
 
 $$
   \underbrace{x_0,\, x_1}_{\text{spacetime}}
   \qquad
-  \underbrace{x_2,\, x_3,\, x_4}_{\text{chiral}}.
+  \underbrace{x_2,\, x_3,\, x_4}_{\text{color}}.
 $$
 
 The projective ratio $z = x_0/x_1 \in \mathbb{P}^1(\mathbb{C})$ parametrises the
@@ -28,13 +28,13 @@ branch points) lifts to a principal $\mathrm{SU}(2)$-bundle
 $P \to M_S$.  In the spacetime coordinate $z$, the transition functions
 of $P$ are the $\mathrm{SU}(2)$ holonomy matrices
 $H_1,H_2$ around the branch cuts; in the
-chiral coordinates $(x_2,x_3,x_4)$, the $S_3$ permutation of the three
+color coordinates $(x_2,x_3,x_4)$, the $S_3$ permutation of the three
 sheets gives the $\mathrm{SO}(3)$ holonomy representation
 ([SU(2) generators](#def:su2-generators)--[SO(3) generators](#def:so3-generators)).
 
 **3. State bundle $\mathcal{S}$.**
 The associated state bundle is $\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C})$,
-whose fibre at each point of $M_S$ is the chiral
+whose fibre at each point of $M_S$ is the color
 $\mathbb{P}^1(\mathbb{C})$ parametrised by the three roots of the elliptic
 cubic.
 
@@ -50,7 +50,7 @@ $$
 $$
 
 where $\theta = \eta\,dz\big|_{M_S}$ and the horizontal distribution $H$ is
-spanned by the lifts of the chiral differentials $dx_2, dx_3, dx_4$ to
+spanned by the lifts of the color differentials $dx_2, dx_3, dx_4$ to
 $M_S$.  The
 ([substrate parameter](#def:substrate-parameter)) then reads
 
@@ -59,15 +59,15 @@ $$
   \qquad p \in M_S,
 $$
 
-coupling the chiral curvature to the contact geometry.  At the six branch
-points (where chiral sheets merge), $\lVert F_A^+\rVert$ is maximal and
+coupling the color curvature to the contact geometry.  At the six branch
+points (where color sheets merge), $\lVert F_A^+\rVert$ is maximal and
 $q \to \infty$ (deep-quantum regime); away from the defects,
 $q \to 1$ (classicality).
 
 **Summary.**
 The $4$-tuple $(\mathbf{C},\, \theta,\, G,\, \mathcal{S})$, with $G = \mathrm{SU}(2)$,
-constitutes an archimedean quantum observable universe
+constitutes a Descartes universe ($\chi(\mathcal{S}) = -6$)
 ([Bring's surface](#ex:brings-surface)), and every QOU structure---contact
 form, Reeb field, Levi form, substrate parameter, $q$-deformed
 operators---is determined by the spacetime coordinate $z = x_0/x_1$ and
-the chiral coordinates $(x_2, x_3, x_4)$.
+the color coordinates $(x_2, x_3, x_4)$.
