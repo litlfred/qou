@@ -1,6 +1,7 @@
 import Mathlib.RingTheory.Polynomial.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.ZMod.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # Ground Ring: ℤ[q, q⁻¹]

@@ -1,6 +1,7 @@
 import QOU.Descartes.GroundRing
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.BetaDecay
+import Mathlib.Tactic.Ring
 
 /-!
 # Ordering Independence of the Young-Symmetrized Q-Value

@@ -1,6 +1,9 @@
 import QOU.QuantumObservableUniverse
 import QOU.Torsion
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-!
 # Proposition: Archimedean Topological Mass Formula
@@ -81,8 +84,10 @@ theorem ArchimedeanMassFormula.h_q_ne_zero {M : Type*}
     (amf : ArchimedeanMassFormula M) : amf.h_q ≠ 0 := by
   rw [amf.h_q_def]
   have hq := amf.q_gt_one
+  have hq_ne : amf.q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
   intro h
-  have : amf.q = 1 := by linarith [show 1 / amf.q = 1 from by linarith]
+  have : 1 / amf.q = 1 := by linarith
+  have : amf.q = 1 := by field_simp at this; linarith
   linarith
 
 /-- **Theorem.** Given the two evaluation hypotheses, the total mass
@@ -110,7 +115,7 @@ theorem ArchimedeanMassFormula.mass_pos {M : Type*}
     0 < amf.totalMass := by
   rw [amf.mass_eq_vol_div_h_q_sq]
   apply div_pos amf.knotVolume_pos
-  apply sq_pos_of_ne_zero _ amf.h_q_ne_zero
+  exact sq_pos_of_ne_zero amf.h_q_ne_zero
 
 /-- The mass formula is consistent with the `MassDerivation` module:
     `h_q_def` guarantees `h_q = 1 - 1/q`, so we recover exactly

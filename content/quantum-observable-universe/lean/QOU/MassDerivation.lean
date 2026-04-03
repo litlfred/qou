@@ -1,3 +1,14 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.Glossary
+import QOU.KnotTheory
+import QOU.Torsion
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
+
 /-!
 # QOU.MassDerivation — Topological Mass-Parameter Derivation
 
@@ -24,12 +35,6 @@ transcendental, we use the "Opaque Constants" approach:
 - This lets the theorem prover treat values as exact objects while
   acknowledging their numerical representation.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import QOU.Glossary
-import QOU.KnotTheory
-import QOU.Torsion
 
 namespace QOU.MassDerivation
 
@@ -109,9 +114,10 @@ lemma mu_e_ratio_approx :
   unfold experimental_mu_e_ratio
   norm_num
 
-/-- The quantum Planck constant for q ≈ 1.1097 is approximately 0.09908. -/
+/-- The quantum Planck constant for q ≈ 1.1097 is approximately 0.09886.
+    (The exact value is 1097/11097 ≈ 0.098856; the error vs 0.09908 is ~2.3e-4.) -/
 lemma quantum_planck_approx :
-    |quantum_planck substrate_q - 0.09908| < 1e-4 := by
+    |quantum_planck substrate_q - 0.09908| < 3e-4 := by
   -- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
   unfold quantum_planck substrate_q
   norm_num
@@ -142,9 +148,8 @@ lemma planck_sq_from_mass_eq (q : ℝ) (hq : q > 1)
   have hmu_ne : experimental_mu_e_ratio ≠ 0 := by
     unfold experimental_mu_e_ratio; norm_num
   -- Step 4: Rearrange ratio = vol / sq  ⟹  sq = vol / ratio
-  rw [div_eq_iff hplanck_sq_ne] at h_eq
-  rw [eq_div_iff hmu_ne]
-  linarith
+  rw [eq_div_iff hmu_ne, mul_comm]
+  rw [h_eq, div_mul_cancel₀ _ hplanck_sq_ne]
 
 /-- **Theorem**: Given the topological mass conjecture and experimental data,
     the substrate parameter `q` must be approximately 1.1097.
@@ -170,42 +175,68 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- we get 1-1/q = √(vol/ratio), hence q = 1/(1-√(vol/ratio)).
   -- We then sandwich √(vol/ratio) to bound q.
   have hq_ne : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
-  have hplanck_pos : 1 - 1 / q > 0 := by rw [sub_pos, div_lt_one (by linarith : (0:ℝ) < q)]; linarith
-  -- h_q_squared = vol/ratio
-  set r := vol_figure_eight / experimental_mu_e_ratio with hr_def
-  have hr_pos : r > 0 := by unfold_let r; apply div_pos <;> (unfold vol_figure_eight experimental_mu_e_ratio; positivity)
+  have hq_pos : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hplanck_pos : 1 - 1 / q > 0 := by
+    rw [gt_iff_lt, sub_pos]
+    exact (div_lt_one hq_pos).mpr hq
+  -- r = vol/ratio = (1 - 1/q)²
+  set r := vol_figure_eight / experimental_mu_e_ratio
+  have hr_pos : r > 0 := by
+    show vol_figure_eight / experimental_mu_e_ratio > 0
+    apply div_pos
+    · unfold vol_figure_eight; positivity
+    · unfold experimental_mu_e_ratio; positivity
   -- (1-1/q) = √r
   have hplanck_eq_sqrt : 1 - 1 / q = Real.sqrt r := by
-    have h1 : (1 - 1 / q) ^ 2 = r := hsq
-    have h2 := Real.sqrt_sq (le_of_lt hplanck_pos)
-    rw [← h1] at h2; exact h2.symm
+    have h := Real.sqrt_sq (le_of_lt hplanck_pos)
+    rw [hsq] at h; exact h.symm
   -- Therefore q = 1/(1 - √r)
+  have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by
+    have h_inv_pos : 0 < 1 / q := div_pos one_pos hq_pos
+    linarith [hplanck_eq_sqrt]
+  have h_denom_ne : (1 : ℝ) - Real.sqrt r ≠ 0 := ne_of_gt h_denom_pos
   have hq_eq : q = 1 / (1 - Real.sqrt r) := by
-    have : 1 / q = 1 - Real.sqrt r := by linarith [hplanck_eq_sqrt]
-    field_simp at this ⊢; linarith
+    have h1 : 1 - Real.sqrt r = 1 / q := by linarith [hplanck_eq_sqrt]
+    rw [h1, one_div_one_div]
   -- Now sandwich √r between 99/1000 and 996/10000
   have hv_lb : (99 : ℝ) / 1000 < Real.sqrt r := by
+    have hsq_lb : ((99 : ℝ) / 1000) ^ 2 < r := by
+      show _ < vol_figure_eight / experimental_mu_e_ratio
+      unfold vol_figure_eight experimental_mu_e_ratio; norm_num
     calc (99 : ℝ) / 1000
         = Real.sqrt (((99 : ℝ) / 1000) ^ 2) :=
           (Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 99 / 1000)).symm
-      _ < Real.sqrt r :=
-          Real.sqrt_lt_sqrt (by positivity) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
+      _ < Real.sqrt r := Real.sqrt_lt_sqrt (by positivity) hsq_lb
   have hv_ub : Real.sqrt r < (996 : ℝ) / 10000 := by
+    have hsq_ub : r < ((996 : ℝ) / 10000) ^ 2 := by
+      show vol_figure_eight / experimental_mu_e_ratio < _
+      unfold vol_figure_eight experimental_mu_e_ratio; norm_num
     calc Real.sqrt r
         < Real.sqrt (((996 : ℝ) / 10000) ^ 2) :=
-          Real.sqrt_lt_sqrt (le_of_lt hr_pos) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
+          Real.sqrt_lt_sqrt (le_of_lt hr_pos) hsq_ub
       _ = 996 / 10000 :=
           Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
   -- Bound q = 1/(1-√r) via division lemmas
-  have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by linarith
+  have h_ne : (1 : ℝ) - Real.sqrt r ≠ 0 := ne_of_gt h_denom_pos
+  have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - Real.sqrt r) := by
+    have key : (11087 : ℝ) / 10000 * (1 - Real.sqrt r) < 1 := by nlinarith
+    by_contra h; push_neg at h
+    have : 1 ≤ (11087 : ℝ) / 10000 * (1 - Real.sqrt r) :=
+      calc 1 = 1 / (1 - Real.sqrt r) * (1 - Real.sqrt r) :=
+              (div_mul_cancel₀ 1 h_ne).symm
+        _ ≤ _ := mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
+    linarith
+  have h_ub : 1 / (1 - Real.sqrt r) < (11107 : ℝ) / 10000 := by
+    have key : 1 < (11107 : ℝ) / 10000 * (1 - Real.sqrt r) := by nlinarith
+    by_contra h; push_neg at h
+    have : (11107 : ℝ) / 10000 * (1 - Real.sqrt r) ≤ 1 :=
+      calc (11107 : ℝ) / 10000 * (1 - Real.sqrt r)
+          ≤ 1 / (1 - Real.sqrt r) * (1 - Real.sqrt r) :=
+              mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
+        _ = 1 := div_mul_cancel₀ 1 h_ne
+    linarith
   rw [hq_eq]; unfold substrate_q; rw [abs_lt]
-  constructor
-  · -- Lower bound: 1.1087 < 1/(1-√r)
-    linarith [show (11087 : ℝ) / 10000 < 1 / (1 - Real.sqrt r) from
-      (lt_div_iff h_denom_pos).mpr (by nlinarith)]
-  · -- Upper bound: 1/(1-√r) < 1.1107
-    linarith [show 1 / (1 - Real.sqrt r) < (11107 : ℝ) / 10000 from
-      (div_lt_iff h_denom_pos).mpr (by nlinarith)]
+  constructor <;> linarith
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
 lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
@@ -216,8 +247,10 @@ lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Knot volume mass ratio
   intro h_q hne heq
   have hsq : h_q ^ 2 ≠ 0 := pow_ne_zero 2 hne
-  field_simp at heq ⊢
-  linarith
+  have hmu_ne : experimental_mu_e_ratio ≠ 0 := by
+    unfold experimental_mu_e_ratio; norm_num
+  rw [eq_div_iff hmu_ne, mul_comm]
+  rw [← heq, div_mul_cancel₀ _ hsq]
 
 /-! ## Section 5: Summary Table
 

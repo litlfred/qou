@@ -1,3 +1,5 @@
+import Mathlib.Tactic.Ring
+
 /-!
 # Ground Ring Annotations
 
