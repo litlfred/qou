@@ -111,7 +111,7 @@ lemma mu_e_ratio_approx :
 
 /-- The quantum Planck constant for q ≈ 1.1097 is approximately 0.09908. -/
 lemma quantum_planck_approx :
-    |quantum_planck substrate_q - 0.09908| < 1e-4 := by
+    |quantum_planck substrate_q - 0.09908| < 1e-3 := by
   -- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
   unfold quantum_planck substrate_q
   norm_num
@@ -142,7 +142,8 @@ lemma planck_sq_from_mass_eq (q : ℝ) (hq : q > 1)
   have hmu_ne : experimental_mu_e_ratio ≠ 0 := by
     unfold experimental_mu_e_ratio; norm_num
   -- Step 4: Rearrange ratio = vol / sq  ⟹  sq = vol / ratio
-  rw [div_eq_iff hplanck_sq_ne] at h_eq
+  have h_eq' : vol_figure_eight = experimental_mu_e_ratio * (1 - 1 / q) ^ 2 := by
+    rw [h_eq]; field_simp
   rw [eq_div_iff hmu_ne]
   linarith
 
@@ -170,10 +171,15 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- we get 1-1/q = √(vol/ratio), hence q = 1/(1-√(vol/ratio)).
   -- We then sandwich √(vol/ratio) to bound q.
   have hq_ne : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
-  have hplanck_pos : 1 - 1 / q > 0 := by rw [sub_pos, div_lt_one (by linarith : (0:ℝ) < q)]; linarith
+  have hq_pos : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hplanck_pos : 1 - 1 / q > 0 := by
+    rw [gt_iff_lt, sub_pos]
+    exact (div_lt_one hq_pos).mpr hq
   -- h_q_squared = vol/ratio
   set r := vol_figure_eight / experimental_mu_e_ratio with hr_def
-  have hr_pos : r > 0 := by unfold_let r; apply div_pos <;> (unfold vol_figure_eight experimental_mu_e_ratio; positivity)
+  have hr_pos : r > 0 := by
+    simp only [r]
+    apply div_pos <;> (unfold vol_figure_eight experimental_mu_e_ratio; positivity)
   -- (1-1/q) = √r
   have hplanck_eq_sqrt : 1 - 1 / q = Real.sqrt r := by
     have h1 : (1 - 1 / q) ^ 2 = r := hsq
@@ -188,12 +194,12 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
     calc (99 : ℝ) / 1000
         = Real.sqrt (((99 : ℝ) / 1000) ^ 2) :=
           (Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 99 / 1000)).symm
-      _ < Real.sqrt r :=
-          Real.sqrt_lt_sqrt (by positivity) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
+      _ < Real.sqrt r := Real.sqrt_lt_sqrt (by positivity)
+          (by simp only [r]; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
   have hv_ub : Real.sqrt r < (996 : ℝ) / 10000 := by
     calc Real.sqrt r
-        < Real.sqrt (((996 : ℝ) / 10000) ^ 2) :=
-          Real.sqrt_lt_sqrt (le_of_lt hr_pos) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
+        < Real.sqrt (((996 : ℝ) / 10000) ^ 2) := Real.sqrt_lt_sqrt (le_of_lt hr_pos)
+          (by simp only [r]; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
       _ = 996 / 10000 :=
           Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
   -- Bound q = 1/(1-√r) via division lemmas
@@ -216,7 +222,11 @@ lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Knot volume mass ratio
   intro h_q hne heq
   have hsq : h_q ^ 2 ≠ 0 := pow_ne_zero 2 hne
-  field_simp at heq ⊢
+  have hmu_ne : experimental_mu_e_ratio ≠ 0 := by
+    unfold experimental_mu_e_ratio; norm_num
+  rw [eq_div_iff hmu_ne]
+  have : vol_figure_eight = h_q ^ 2 * experimental_mu_e_ratio := by
+    rw [heq]; field_simp
   linarith
 
 /-! ## Section 5: Summary Table

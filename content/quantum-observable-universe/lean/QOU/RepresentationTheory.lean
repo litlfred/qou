@@ -60,14 +60,14 @@ structure SimpleObject (C : Type u) [CategoryTheory.Category.{v} C]
     LaTeX: `\label{rem:simple-objects-V}`, `\label{rem:fundamental-object-explication}` -/
 def fundamentalSimpleObject (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] : SimpleObject C where
-  obj := default  -- abstract; instantiated by QOU.fundamentalObj
+  obj := 𝟙_ C
   catDim := 2
   catDim_pos := by norm_num
 
 /-- The adjoint simple object: categorical dimension 3. -/
 def adjointSimpleObject (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] : SimpleObject C where
-  obj := default
+  obj := 𝟙_ C
   catDim := 3
   catDim_pos := by norm_num
 
@@ -76,7 +76,7 @@ def adjointSimpleObject (C : Type u) [CategoryTheory.Category.{v} C]
     number). -/
 def spinSimpleObject (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (twice_j : ℕ) : SimpleObject C where
-  obj := default
+  obj := 𝟙_ C
   catDim := twice_j + 1
   catDim_pos := Nat.succ_pos _
 
@@ -131,6 +131,7 @@ theorem CategoricalHadron.meson_or_baryon_or_exotic
     [CategoryTheory.MonoidalCategory C] (h : CategoricalHadron C) :
     h.isMeson ∨ h.isBaryon ∨ h.valence ≥ 4 := by
   unfold isMeson isBaryon
+  have hv := h.valence_ge
   omega
 
 /-- The total tensor power needed to embed a categorical hadron into
@@ -194,7 +195,7 @@ private lemma half_sum (n : ℕ) : n / 2 + (n + 1) / 2 = n := by omega
 theorem pawLei_minimal_dim (twice_j : ℕ) :
     pawLeiDim twice_j twice_j = 1 := by
   unfold pawLeiDim
-  simp only [Nat.mod_self, ne_eq, not_true, ite_false, lt_self_iff_false]
+  simp only [ne_eq, not_true, ite_false, lt_self_iff_false]
   -- Goal: (twice_j + 1) * twice_j! / ((twice_j/2 + (twice_j+1)/2 + 1)! * (twice_j/2 - twice_j/2)!) = 1
   simp only [Nat.sub_self, Nat.factorial_zero, mul_one]
   -- Goal: (twice_j + 1) * twice_j! / (twice_j/2 + (twice_j+1)/2 + 1)! = 1
