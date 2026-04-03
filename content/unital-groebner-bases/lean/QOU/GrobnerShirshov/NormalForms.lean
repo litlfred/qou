@@ -273,7 +273,7 @@ private theorem lexLt_implies_listLex :
       · exact List.Lex.rel hrank
       · have hxy : x = y := SU2Gen.rank_injective x y heq
         subst hxy
-        exact List.Lex.cons x (ih ys hrest)
+        exact List.Lex.cons _ (ih ys hrest)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Well-foundedness via Mathlib's `List.Lex.wellFounded` applied to the
@@ -281,7 +281,7 @@ private theorem lexLt_implies_listLex :
 theorem lexLt_wf : WellFounded lexLt :=
   Subrelation.wf
     (fun {a b} h => lexLt_implies_listLex a b h)
-    (List.Lex.wellFounded rankRel_wf)
+    (List.lex_wf rankRel_wf)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 theorem degLexLt_wf : WellFounded degLexLt :=
