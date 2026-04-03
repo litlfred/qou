@@ -30,6 +30,15 @@ constants of our universe are indeed constant.  If we allow them
 to vary — in a controlled, algebraic way — how does that change
 the mechanics?  This is the question this paper asks.
 
+Einstein showed that geometry and mass are intimately connected:
+space-time is not a passive stage on which matter performs but a
+dynamical participant shaped by the matter it contains.  This paper
+extends that insight to the quantum realm.  Where general relativity
+weds curvature to energy–momentum on a smooth manifold, the
+framework developed here weds *algebraic torsion* — the failure
+of quantum operations to commute — to the mass and interaction
+structure of particles, all within a single categorical object.
+
 Heisenberg reminded us that what we observe is not nature itself
 but nature exposed to our method of questioning.  This paper takes
 that insight seriously.  We do not ask what the universe *is* — we

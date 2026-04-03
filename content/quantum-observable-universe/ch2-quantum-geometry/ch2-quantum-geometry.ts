@@ -224,6 +224,7 @@ export default chapter({
         "q-reeb-flow",
         "q-torsion-leaf",
         "q-torsion-existence",
+        "quantum-torsion-motivation",
       ],
     }),
 
