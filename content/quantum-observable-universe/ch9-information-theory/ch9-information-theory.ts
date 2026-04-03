@@ -82,6 +82,7 @@ section({
       blocks: [
         "jet-horizon",
         "big-bang-state",
+        "cmb-boundary-datum",
         "hawking-radiation",
         "aeon",
         "aeon-boundary-generates-chart",

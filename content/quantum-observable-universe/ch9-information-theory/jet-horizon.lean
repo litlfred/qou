@@ -59,6 +59,30 @@ structure BigBangState where
 -- Ref: [manuscript] §9/big-bang-state
 sorry
 
+/-- The CMB (cosmic microwave background) of a big bang state:
+    the degree ≥ 1 jet data (A_1 ⊕ A_2)|_{S_0} that survives
+    the degree-0 vanishing.  Contains winding (degree 1) and
+    curvature (degree 2) correlations but no particle identity
+    (degree 0).
+
+    The CMB seeds the forward light cone of an aeon: the first
+    Planck step regenerates degree-0 data from the degree-1
+    transport.  If the big bang state is also the terminal horizon
+    of a preceding aeon, the CMB is inherited from the previous
+    aeon's final state. -/
+structure CMBBoundaryDatum where
+  /-- The big bang state whose CMB this is. -/
+  source : BigBangState
+  /-- Degree-1 data (linear transport / winding) at the boundary. -/
+  degree_one_data : Prop  -- In full formalization: Γ(U, A_1/A_0)
+  /-- Degree-2 data (curvature / linking) at the boundary. -/
+  degree_two_data : Prop  -- In full formalization: Γ(U, A_2/A_0)
+  /-- Degree-0 data is absent (defining condition of big bang state). -/
+  no_degree_zero : source.horizon.degree_zero_vanishes
+
+-- Ref: [manuscript] §9/cmb-boundary-datum
+sorry
+
 /-- An aeon: a maximal connected interval (a, b) ⊂ ℤ of
     information-theoretic time steps where the degree-0 algebra
     is non-trivial.  Bounded by jet horizons (or extending to ±∞). -/
