@@ -38,8 +38,33 @@ imposes algebraic relations among them.  Concretely, each
 Hopf link between $K_i$ and $K_j$ constrains the pair
 $(z_i, z_j)$ via the OPE singularity --- the Hecke relation
 $(T - q)(T + q^{-1}) = 0$ evaluated at the collision
-$z_i \to z_j$.  The relations are precisely the prior
-entanglements of the constituents.
+$z_i \to z_j$.
+
+**Interaction filtration.**
+Let $\mathcal{O}_n = \mathcal{O}(\mathrm{Conf}_n(\mathcal{S}_p))$ be the
+function algebra of the configuration space.  Before any crossing,
+the insertion points are free: all of $\mathcal{O}_n$ is available.
+Each crossing between slots $i$ and $j$ adds a Hecke relation to an
+**interaction ideal** $I_k \subset \mathcal{O}_n$, giving a
+descending filtration of quotient algebras:
+
+$$
+  \mathcal{O}_n
+  \;\twoheadrightarrow\;
+  \mathcal{O}_n / I_1
+  \;\twoheadrightarrow\;
+  \cdots
+  \;\twoheadrightarrow\;
+  \mathcal{O}_n / I_m
+$$
+
+where $I_1 \subset I_2 \subset \cdots \subset I_m$ and $m$ is the
+total number of crossings in the link $\mathcal{L}$.  The ideals are
+nested: relations from earlier crossings are **never forgotten** ---
+each new interaction inherits all prior constraints and adds its own.
+The final quotient $\mathcal{O}_n / I_m$ is the algebra of functions
+on the constrained configuration space, encoding the full
+entanglement history of the hadron.
 
 **Two levels of braiding operation.**
 A braiding operation on $\mathfrak{H}$ can be described at two levels:
