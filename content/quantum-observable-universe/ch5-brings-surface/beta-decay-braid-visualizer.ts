@@ -1,0 +1,31 @@
+import { simulator } from "../../schema/builders";
+
+export default simulator({
+  label: "sim:beta-decay-braid",
+  title:
+    "Beta decay as $T_{3,5}$ braid insertion: crossing budget and transfer matrices",
+  tags: [
+    "simulator",
+    "beta-decay",
+    "braid",
+    "T35",
+    "weak-vertex",
+    "transfer-matrix",
+    "hecke-algebra",
+    "skein-relation",
+    "interactive",
+  ],
+  uses: [
+    "def:beta-decay-skein",
+    "prop:beta-decay-transfer-matrix",
+    "def:transfer-matrix-operator",
+    "def:categorical-proton",
+    "def:categorical-neutron",
+    "rem:building-block-knots",
+    "rem:force-knot-identification",
+  ],
+  simulator: {
+    type: "html",
+    source: "beta_decay_braid.html",
+  },
+});

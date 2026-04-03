@@ -157,6 +157,7 @@ export default chapter({
         "skein-polynomial-transfer-matrix",
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
+        "beta-decay-braid-visualizer",
         "shell-structure-eigenvalues",
         "quantum-dilogarithm-volume",
         "reidemeister-action-table",
