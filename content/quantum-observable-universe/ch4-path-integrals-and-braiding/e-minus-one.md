@@ -1,5 +1,5 @@
 In the descent from $\mathcal{S}_1$ (full torsion bundle) to $\mathcal{S}_0$ (trivial
-bundle), the self-duality of spacetime and chirality admits a flip: the
+bundle), the self-duality of spacetime and color admits a flip: the
 orientation of the color fibre can reverse relative to the spacetime
 base.  This produces a bundle $\mathcal{S}_{-1}$ that acts as a skew or mirror
 image of $\mathcal{S}_1$.  From the perspective of ascending the bundle hierarchy,

@@ -14,5 +14,5 @@ $$
 $$
 
 where $\Phi_q(z_i)$ is the quantum dilogarithm
-([quantum dilogarithm](#prop:quantum-dilogarithm)) evaluated at the
+([quantum dilogarithm](#cor:quantum-dilogarithm)) evaluated at the
 $i$-th blow-up centre $z_i$, and $\varrho_0$ is the unknot core of $\varrho$.

@@ -1,5 +1,3 @@
-**Remark** (Madelung transformation: quantum fluid, geodesics, and divisor topology).
-
 **The Madelung split.**
 Write $\psi = \sqrt{\rho}\,\exp(JS/\hbar_q)$ to decompose the
 [q-deformed Schrödinger equation](#rem:schrodinger-jet-coaction) into two
