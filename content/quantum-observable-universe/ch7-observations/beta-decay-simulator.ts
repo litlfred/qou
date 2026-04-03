@@ -19,6 +19,8 @@ export default simulator({
     "prop:skein-coulomb-enhancement",
     "rem:hadron-half-life-regimes",
     "def:shell-construction-rules",
+    "def:transfer-matrix-operator",
+    "ex:hadron-half-life-verification",
   ],
   tags: [
     "beta-decay",

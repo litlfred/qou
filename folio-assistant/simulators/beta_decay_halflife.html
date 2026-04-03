@@ -169,7 +169,7 @@ function skeinPoly(Z, N, q) {
     const V = dc.z * M[0][0] + M[1][0];
     volumes.push(V);
     if (V < 0) signCount++;
-    logP += Math.log(Math.abs(V));
+    if (V !== 0) logP += Math.log(Math.abs(V));
   }
   return {logP, volumes, sign: signCount % 2 === 0 ? 1 : -1};
 }
