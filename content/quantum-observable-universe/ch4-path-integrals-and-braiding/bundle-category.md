@@ -19,8 +19,10 @@ family $\{\Phi_t^q\}_{t \geq 0}$ assembles into a continuous functor from
 $(\mathbb{R}_{\geq 0}, +)$ — viewed as a one-object category — into the
 endofunctor category $\mathrm{End}(\mathrm{Bun}(\mathbb{P}(V)))$.
 
-The "big bang" is the moment $t = 0$; the physics is the trajectory
-$t \mapsto E_t$ in $\mathrm{Bun}(\mathbb{P}(V))$.
+The reference configuration $\mathcal{S}_0$ sits at $t = 0$; the physics
+is the trajectory $t \mapsto E_t$ in $\mathrm{Bun}(\mathbb{P}(V))$.
+(If a cosmological initial state exists in the given affine chart, it
+is one such $\mathcal{S}_0$.)
 
 This structure is the categorical counterpart of the Feynman path
 integral: instead of integrating over all field configurations, we

@@ -187,7 +187,7 @@ original.  This is the $q$-analogue of energy conservation.
 |-----|--------|:---:|:---:|
 | $q = 1$ | Classical | $0$ | $0$ |
 | the substrate $q$ | Our universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
-| $q \to \infty$ | Big bang | $\to \infty$ | $\to \infty$ |
+| $q \to \infty$ | Deep-quantum | $\to \infty$ | $\to \infty$ |
 
 ## $q$-Momentum
 

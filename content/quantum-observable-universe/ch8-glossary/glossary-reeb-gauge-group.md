@@ -66,9 +66,12 @@ arising from the single datum $T \subset G$:
    $\prec_c$
    ([temporal braiding](#def:quantum-observable-universe)),
    forward time is the direction of this flow.
-   The $U_1(R)$-action on the formal variable algebra
-   $\mathfrak{F}_n$ grades each variable $x_{\mathfrak{K},p}$
-   by Reeb degree — the number of vertical windings.
+   The $U_1(R)$-action on the function algebra
+   $\mathcal{O}(\mathrm{Conf}_n(\mathcal{S}_p))$ of the
+   configuration space
+   ([categorical transfer matrix](#def:categorical-transfer-matrix))
+   grades each insertion coordinate $z_i$ by Reeb degree —
+   the number of vertical windings.
 
 These six roles are not independent structures imposed
 separately — they are the same $U_1(R)$ seen from different

@@ -55,7 +55,7 @@ theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
 
 /-- J-3c: The Markov trace is level-independent on descended elements.
     tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w) for all w ∈ H^{(n)}(q).
-    This is the knot-variable form of Euler characteristic stability:
+    This is the knot-coordinate form of Euler characteristic stability:
     the Jones polynomial of a knot does not depend on brane level. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
@@ -104,19 +104,34 @@ theorem yekutieli_coeff_nonzero (q : ℝ) (hq : q > 1) :
 -- D-4: Descent decomposition (bosonic vs fermionic)
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- D-4: The descent involution τ̂_n = ℓ_n ∘ 𝔡_{n+1} is idempotent
-    on the level-(n+1) endomorphism algebra, splitting it into:
-    - Descended (bosonic): im(τ̂_n), Markov trace = level-n trace
-    - Transient (fermionic): ker(τ̂_n), Markov trace descends to 0
+/-- The descent operator τ̂_n = ℓ_n ∘ 𝔡_{n+1} on the Hecke algebra
+    at brane level n.  Built from jet prolongation ℓ_n and descent
+    homomorphism 𝔡_{n+1}.  This is a specific operator, not an
+    arbitrary endomorphism. -/
+-- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+structure DescentOperator (n : ℕ) (hp : HeckeParams) where
+  /-- The jet prolongation ℓ_n : H^{(n)} → H^{(n+1)}. -/
+  jet_embed : RewritingSystem (HeckeGen n) ℝ → RewritingSystem (HeckeGen n) ℝ
+  /-- The descent homomorphism 𝔡_{n+1} : H^{(n+1)} → H^{(n)}. -/
+  descent : RewritingSystem (HeckeGen n) ℝ → RewritingSystem (HeckeGen n) ℝ
+  /-- The key identity: 𝔡 ∘ ℓ = id. -/
+  descent_left_inv : ∀ w, descent (jet_embed w) = w
 
-    The idempotence τ̂_n² = τ̂_n follows from 𝔡_{n+1} ∘ ℓ_n = id. -/
+/-- D-4: The descent involution τ̂_n = ℓ_n ∘ 𝔡_{n+1} is idempotent.
+    This splits the algebra into descended (bosonic) and transient
+    (fermionic) parts.
+
+    Proof: τ̂² = (ℓ ∘ 𝔡) ∘ (ℓ ∘ 𝔡) = ℓ ∘ (𝔡 ∘ ℓ) ∘ 𝔡 = ℓ ∘ id ∘ 𝔡 = ℓ ∘ 𝔡 = τ̂. -/
 -- Ref: [manuscript] §4/vertex-algebra-jet-relations
-axiom descent_idempotent {n : ℕ} (hp : HeckeParams) :
-    -- τ̂_n² = τ̂_n on End(A_{n+1})
-    -- This is a categorical statement: requires the jet prolongation
-    -- and descent homomorphism formalizations from ch3.
-    -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-    ∀ (level : ℕ),
-    levelHecke hp n level = levelHecke hp n level
+-- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+theorem descent_idempotent {n : ℕ} {hp : HeckeParams}
+    (op : DescentOperator n hp)
+    (w : RewritingSystem (HeckeGen n) ℝ) :
+    let τ := fun x => op.jet_embed (op.descent x)
+    τ (τ w) = τ w := by
+  simp only
+  -- τ(τ(w)) = ℓ(𝔡(ℓ(𝔡(w)))) = ℓ(𝔡(w)) = τ(w)
+  -- using: 𝔡(ℓ(x)) = x for all x (descent_left_inv)
+  rw [op.descent_left_inv]
 
 end QOU.VertexAlgebra.JetRelations

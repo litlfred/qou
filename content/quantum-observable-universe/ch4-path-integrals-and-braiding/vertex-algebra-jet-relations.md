@@ -49,7 +49,7 @@ $$
   \Delta_n \circ \mu_n.
 $$
 
-In knot variables:
+In knot coordinates:
 
 $$
   \mathrm{tr}_M^{(n)}\!\bigl(
@@ -230,7 +230,7 @@ The descent eigenspaces
 modes by statistics:
 
 - **Bosonic (longitudinal)**: $w \in \mathcal{A}^{\mathrm{desc}}_{n+1}$
-  satisfies $\hat{\tau}_n(w) = w$.  In knot variables: braid words
+  satisfies $\hat{\tau}_n(w) = w$.  In knot coordinates: braid words
   whose Markov trace is fully determined at level $n$:
 
 $$
@@ -238,7 +238,7 @@ $$
 $$
 
 - **Fermionic (ladder)**: $w \in \mathcal{A}^{\mathrm{trans}}_{n+1}$
-  satisfies $\hat{\tau}_n(w) = 0$.  In knot variables: braid words
+  satisfies $\hat{\tau}_n(w) = 0$.  In knot coordinates: braid words
   whose Markov trace vanishes when descended:
 
 $$
@@ -418,7 +418,7 @@ $$
 The cosimplicial structure links adjacent levels: the coface
 map $\delta^i$ is jet prolongation $\ell_n$, and the
 codegeneracy $\sigma^j$ is descent $\mathfrak{d}_{n+1}$.
-The cosimplicial identities in knot variables:
+The cosimplicial identities in knot coordinates:
 
 $$
   \ell_n(T_{g^{(n)}_{ijk}}) \;=\; T_{g^{(n+1)}_{\delta^i(ijk)}},

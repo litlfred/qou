@@ -27,7 +27,7 @@ $\square$
 
 | $q$ | $n_R$ | Interpretation |
 |-----|-------|----------------|
-| $\to \infty$ | $\to 1$ | Big Bang: one iteration per circuit, fully discrete |
+| $\to \infty$ | $\to 1$ | Deep-quantum: one iteration per circuit, fully discrete |
 | $q_0$ | $\approx 10.1$ | Our universe ([local substrate $q$](#prop:local-substrate-q)): $\sim 10$ iterations per circuit |
 | $2$ | $2$ | Two iterations per circuit |
 | $1.01$ | $101$ | Near-classical: $\sim 100$ iterations per circuit |
@@ -65,7 +65,7 @@ where $\eta_q = (2q-1)/q^3$ is the operational entropy
 information generated per $f_q$-iteration, determined by the
 gravitational self-consistency condition.
 
-At the Big Bang ($q \to \infty$): $n_R \to 1$ and $\eta_q \to 0$
+In the deep-quantum regime ($q \to \infty$): $n_R \to 1$ and $\eta_q \to 0$
 (simplest dynamics), so $I_P \to 0$.
 At the classical limit ($q \to 1$): $\eta_q \to 1$ nat per step.
 At $q = q_0$: $I_P \approx 10.1 \times 0.892 \approx 9.0$

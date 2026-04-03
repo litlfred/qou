@@ -1,7 +1,7 @@
 The torus knots embeddable on the moduli surface $\Sigma_g$
 of a QOU form a **complete set of representations** — they
 exhaust the available cohomology and span the space of
-pointed-knot observables.
+knot observables.
 
 ## Statement
 
@@ -39,7 +39,7 @@ define sub-subshells.*
 *The Jones polynomials of the embeddable torus knots, evaluated
 in the irreducible representations of $H_2(q) \oplus H_3(q)$,
 **span** the space of knot invariants on $\Sigma_g$.  Every
-pointed knot observable on $\Sigma_g$ is a linear combination
+knot observable on $\Sigma_g$ is a linear combination
 of evaluations of the embeddable torus knots.*
 
 **(iv) Genus $4$ is forced.**
@@ -156,7 +156,7 @@ matrix has rank $5$ (= number of irreps, verified numerically).
 Therefore the $6$ knot evaluations **span** the $5$-dimensional
 space of irrep characters.
 
-**Completeness**: any pointed knot observable on $\Sigma_4$ is
+**Completeness**: any knot observable on $\Sigma_4$ is
 a function of the irrep characters, which are spanned by the
 $6$ torus knots.  No knot on $\Sigma_4$ can have an invariant
 independent of $\{T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}\}$.

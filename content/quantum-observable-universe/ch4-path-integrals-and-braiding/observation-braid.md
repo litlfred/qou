@@ -6,7 +6,7 @@ of an observation is not necessarily determined by the
 initial conditions $\mathcal{S}_0$
 ([bundle initial conditions](#def:bundle-initial-conditions)).
 New open neighbourhoods can be created in the state space
-that were not present in the Big Bang data.
+that were not present in the reference configuration $\mathcal{S}_0$.
 
 **Observation as crossing injection.**
 In the braid picture, an observation inserts a new crossing
