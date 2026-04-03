@@ -59,25 +59,28 @@ def BundleInitialConditions.particlesAt (b : BundleInitialConditions)
     (p : ℝ × ℝ) : List LocalizedKnot :=
   b.particles.filter (fun k => k.basePoint = p)
 
-/-- All particles are accounted for by the base-point partition.
-    This is an axiom of well-formed bundle initial conditions:
-    the dedup-then-filter partition covers every particle. -/
--- Ref: [manuscript] §3, Definition: Bundle initial conditions
-axiom BundleInitialConditions.partition_complete
-    (b : BundleInitialConditions) :
-    (b.basePoints.bind (b.particlesAt ·)).length = b.size
+/-- Every particle is in the cluster at its own base point. -/
+theorem BundleInitialConditions.particle_in_own_cluster
+    (b : BundleInitialConditions) (k : LocalizedKnot) (hk : k ∈ b.particles) :
+    k ∈ b.particlesAt k.basePoint := by
+  unfold particlesAt
+  simp [List.mem_filter]
+  exact ⟨hk, rfl⟩
 
-/-- Total crossing number equals the sum over base-point clusters.
-    Follows from partition_complete and additivity of foldl over bind. -/
--- Ref: [manuscript] §3
-axiom BundleInitialConditions.totalCrossings_additive
+/-- The cluster at a point p contains only particles with base point p. -/
+theorem BundleInitialConditions.cluster_basePoint_eq
+    (b : BundleInitialConditions) (p : ℝ × ℝ) (k : LocalizedKnot)
+    (hk : k ∈ b.particlesAt p) : k.basePoint = p := by
+  unfold particlesAt at hk
+  simp [List.mem_filter] at hk
+  exact hk.2
+
+/-- Total crossing number equals the sum of crossing numbers of
+    all particles (directly from the definition). -/
+theorem BundleInitialConditions.totalCrossings_eq_sum
     (b : BundleInitialConditions) :
-    b.totalCrossings =
-      b.basePoints.foldl
-        (fun acc p =>
-          acc + (b.particlesAt p).foldl
-            (fun a k => a + k.knot.crossingCount) 0)
-        0
+    b.totalCrossings = b.particles.foldl (fun acc p => acc + p.knot.crossingCount) 0 :=
+  rfl
 
 /-! ## Equivalence of bundle initial conditions
 
