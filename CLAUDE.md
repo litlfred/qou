@@ -46,6 +46,7 @@ When a user request arrives, route to the right skill(s):
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
 | "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
+| "audit lean / completeness / coverage" | `local/lean-completeness-audit` | collaborator |
 | "simplify / streamline proofs" | `local/proof-simplifier` | collaborator |
 | "validate LaTeX" | `local/latex-validation` | reader |
 | "validate content objects" | `local/content-validation` | reader |
@@ -119,7 +120,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
