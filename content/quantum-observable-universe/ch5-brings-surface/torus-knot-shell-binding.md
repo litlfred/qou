@@ -56,12 +56,12 @@ $$
   \boxed{
     c_n = U_{n-1}(\tfrac{q - q^{-1}}{2}),
     \qquad
-    d_n = -\,\frac{c_n \cdot q\,s}{1 + c_n}
+    d_n = -\,\frac{c_n \cdot q\,s_q}{1 + c_n}
   }
 $$
 
 where $U_k$ is the Chebyshev polynomial of the second kind and
-$s = q^{1/2} - q^{-1/2}$.
+$s_q = q^{1/2} - q^{-1/2}$.
 
 Equivalently, from the matrix power
 $T(1,0)^n = \bigl(\begin{smallmatrix} a_n & c_n \\ c_n & d_n \end{smallmatrix}\bigr)$:

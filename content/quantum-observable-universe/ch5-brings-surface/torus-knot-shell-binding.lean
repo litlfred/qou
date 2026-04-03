@@ -19,18 +19,22 @@ LaTeX label: `prop:torus-knot-shell-binding`
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
--- Import IsNormalForm and division_terminates_unique
--- from the shell closure normal form module
+-- When built as part of the QOU Lean project, uncomment:
 -- import QOU.Descartes.shell_closure_normal_form
+-- which provides IsNormalForm and division_terminates_unique.
+--
+-- Content-object .lean files are not yet wired into lakefile.toml,
+-- so we forward-declare the shared axiom for standalone checking.
 
 namespace QOU.Descartes
 
--- Re-use the IsNormalForm structure and division_terminates_unique axiom
--- defined in shell-closure-normal-form.lean.  In the Lean project these
--- share the QOU.Descartes namespace; the import above resolves them.
--- For standalone checking, we forward-declare the axiom:
-
+/-- Forward declaration — see shell-closure-normal-form.lean for the
+    full structure definition with no_squares, no_far_comm, no_yang_baxter. -/
 axiom IsNormalForm (support : List (List ℕ)) : Prop
+
+/-- Forward declaration — the Gröbner division algorithm terminates and
+    produces a unique normal form remainder.  Justified by
+    [unital-groebner-bases:thm:ugb-main-theorem]. -/
 axiom division_terminates_unique (n : ℕ) (q : ℝ) (hq : q > 1) :
   ∀ elem : List (List ℕ × ℝ),
   ∃ nf : List (List ℕ × ℝ),
@@ -60,13 +64,15 @@ noncomputable def chebyshev_crossing (q : ℝ) : ℕ → ℝ × ℝ
 theorem chebyshev_crossing_one (q : ℝ) :
     chebyshev_crossing q 1 = (1, 0) := rfl
 
-/-- The crossing element (c_n σ + d_n) is linear in σ — no σ² terms.
-    This is the key structural property that ensures Gröbner division
-    applies identically at inter-shell boundaries as at intra-shell steps. -/
+/-- The Chebyshev crossing data for T_{2,n} decomposes as (c_n, d_n).
+    The key observation is that the crossing element c_n σ + d_n is
+    linear in σ (degree 1 in the Hecke generator), so it introduces
+    no σ² terms by itself — only products with existing normal form
+    words can create squares, which the Gröbner division resolves. -/
 -- Ref: [manuscript] §6/torus-knot-shell-binding
-theorem crossing_element_linear (q : ℝ) (n : ℕ) :
-    ∃ c d : ℝ, chebyshev_crossing q n = (c, d) :=
-  ⟨(chebyshev_crossing q n).1, (chebyshev_crossing q n).2, Prod.ext rfl rfl⟩
+theorem chebyshev_crossing_coefficients (q : ℝ) (n : ℕ) :
+    chebyshev_crossing q n = ((chebyshev_crossing q n).1, (chebyshev_crossing q n).2) :=
+  Prod.ext rfl rfl
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART I: Inter-shell normalization preservation
@@ -137,12 +143,13 @@ noncomputable def shell_eigenvalue_ratio (q : ℝ) (n_s : ℕ) : ℝ :=
   q ^ (2 * n_s)
 
 /-- The eigenvalue ratio grows with shell size. -/
+-- Ref: [manuscript] §6/torus-knot-shell-binding
 theorem eigenvalue_ratio_monotone (q : ℝ) (hq : q > 1) (n m : ℕ) (h : n < m) :
     shell_eigenvalue_ratio q n < shell_eigenvalue_ratio q m := by
   unfold shell_eigenvalue_ratio
-  apply Real.rpow_lt_rpow_of_exponent_lt (by linarith)
-  -- Ref: [manuscript] §6/torus-knot-shell-binding
-  sorry
+  have hq1 : 1 ≤ q := le_of_lt hq
+  have hnm : 2 * n < 2 * m := Nat.mul_lt_mul_of_pos_left h (by omega)
+  exact pow_lt_pow_right hq hnm
 
 /-- First shell gap: He-4 → Li-5 gives ratio ≈ 14.8.
     This uses the witness data from sequential-nucleus-builder. -/
