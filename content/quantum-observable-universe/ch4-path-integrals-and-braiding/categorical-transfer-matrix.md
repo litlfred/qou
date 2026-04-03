@@ -9,23 +9,28 @@ The constituent knots $K_i$ are simple objects in $\mathbf{C}$,
 each factoring through a tensor power of $V$
 ([knot factorization](#rem:knot-factorization)):
 $K_i \hookrightarrow V^{\otimes 2j_i}$ via the PawLei embedding
-$\iota_{j_i}$.  Each constituent has a
+$\iota_{j_i}$.  The index $i$ labels the **constituent slot**,
+not the knot type: several slots may carry the same simple object
+(e.g.\ a proton has $K_1 = K_2 = T_{2,3}$ for two up quarks).
+Each constituent has a
 [vertex operator](#def:vertex-operator) $Y(K_i, z_i)$ inserted at
 a point $z_i \in \mathcal{S}_p$.  The $n$-tuple of insertion points
-is a point of the **configuration space**
+is a point of the **ordered configuration space**
 
 $$
   (z_1, \ldots, z_n) \;\in\;
   \mathrm{Conf}_n(\mathcal{S}_p)
   \;=\;
   \bigl\{\,(p_1, \ldots, p_n) \in \mathcal{S}_p^{\,n}
-  : p_i \neq p_j \text{ for } i \neq j\,\bigr\},
+  : p_i \neq p_j \text{ for } i \neq j\,\bigr\}.
 $$
 
-where each $z_i$ is the affine coordinate
-([vertex operator](#def:vertex-operator)) of the $i$-th insertion.
-The constraint $z_i \neq z_j$ is the source of OPE
-singularities $(z_i - z_j)^{-k}$.
+The ordering matches the constituent list of
+$\mathfrak{H} = [K_1, \ldots, K_n]$; identical knot types occupy
+distinct points on $\mathcal{S}_p$.  The constraint $z_i \neq z_j$
+is the source of OPE singularities $(z_i - z_j)^{-k}$ — it is
+what distinguishes two copies of the same knot within a single
+fibre.
 
 These insertion points are **not free** after the first crossing:
 the link $\mathcal{L}$ encoding the internal entanglement
