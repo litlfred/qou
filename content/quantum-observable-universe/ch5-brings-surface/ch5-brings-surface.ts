@@ -167,6 +167,7 @@ export default chapter({
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "shell-closure-normal-form",
+        "torus-knot-shell-binding",
         "skein-finiteness-bound",
         "spectral-decomposition-qvalue",
         "shell-construction-rules",
