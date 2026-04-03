@@ -81,8 +81,12 @@ structure DeepQuantumRegime (M : Type*) where
   sp : SubstrateParameter M
   /-- The point where the regime holds. -/
   point : M
-  /-- `q(p) ≥ 1` at this point (deep-quantum). -/
-  deep_quantum : sp.field point ≥ 1
+  /-- The deep-quantum threshold Q > 1 (e.g. Q = φ² ≈ 2.618). -/
+  threshold : ℝ
+  /-- The threshold exceeds classicality. -/
+  threshold_gt_one : threshold > 1
+  /-- `q(p) ≥ Q` at this point: genuinely deep-quantum. -/
+  deep_quantum : sp.field point ≥ threshold
 
 /-- **Classical regime** at a point: `q(p) = 1`, corresponding to
     vanishing torsion and zero information transfer.  This is the

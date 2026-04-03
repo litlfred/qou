@@ -21,8 +21,8 @@ $$
   (z_1, \ldots, z_n) \;\in\;
   \mathrm{Conf}_n(\mathcal{S}_p)
   \;=\;
-  \bigl\{\,(p_1, \ldots, p_n) \in \mathcal{S}_p^{\,n}
-  : p_i \neq p_j \text{ for } i \neq j\,\bigr\}.
+  \bigl\{\,(z_1, \ldots, z_n) \in \mathcal{S}_p^{\,n}
+  : z_i \neq z_j \text{ for } i \neq j\,\bigr\}.
 $$
 
 The ordering matches the constituent list of

@@ -14,9 +14,9 @@ $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([projective line](#ex:projective-line-su2)), which coincides with
 the contact affine coordinate $Z = \alpha_H / \iota_\xi\,\alpha$
 ([contact affine chart](#def:contact-affine-chart)) restricted to
-the fibre $\mathcal{S}_p$.  Algebraically, $z$ generates the
-function algebra
-$\mathcal{O}(\mathcal{S}_p) = \mathbb{C}[z]$.
+the fibre $\mathcal{S}_p$.  Algebraically, on the standard affine
+chart $v_2 \neq 0$, $z$ generates the coordinate ring
+$\mathbb{C}[z]$.
 
 The **vertex operator algebra** of the QOU at $p$ is the triple
 $(V, Y, |0\rangle)$ defined as follows.
