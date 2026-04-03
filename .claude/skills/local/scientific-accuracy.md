@@ -57,6 +57,30 @@ peer-review practices and the methodology of
 - **NO APPROXIMATIONS unless explicitly labeled as such.**
 - **NO correction factors, fudge factors, or empirical scaling.**
 - **NO formulas that are not derived from the categorical action.**
+- **PARTICLE INTERACTIONS MUST USE GRÖBNER BASIS REDUCTION.**
+  When modeling particle interactions (beta decay, scattering,
+  binding), do NOT use ad hoc transfer matrix ansätze or
+  bolted-on correction factors. Instead:
+  1. Start with the parent particle in Gröbner normal form
+     (built by sequential Hopf linking + reduction).
+  2. The ALLOWED interactions are the torus knot operators
+     $T_{r,s}$ acting as generators of the ideal $I$.
+  3. The ideal is $I = \{\text{Hecke}, \text{YB}, \text{far-comm},
+     \text{torus knot relations}\}$.
+  4. Insert the interaction operator (e.g., $T_{3,5}$ weak vertex
+     for beta decay) into the parent braid word.
+  5. Reduce the composed word through $I$ using `hecke_division.py`.
+  6. Track every reduction step: which rule fires (Hecke, YB,
+     far-comm), what the Hecke energy cost is.
+  7. The output after reduction = daughter particle(s) + emitted
+     particles (electron $T_{2,3}$, neutrino unknot, photon, etc.).
+  8. The Q-value = Hecke energy difference between input and
+     output normal forms.
+  **The transfer matrix approach is a SHORTCUT** that works for
+  the Skein polynomial ratio, but it misses the interaction
+  structure (particle emission, crossing budget, Borromean
+  un-ring/re-ring). For precision work, always verify against
+  the full Gröbner computation.
 - **EVERY observed value MUST carry ± uncertainty.** No CODATA,
   NNDC, PDG, or any experimental constant without an error bound.
   Use `experimental_constants.py` as the single source of truth.
