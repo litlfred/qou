@@ -186,8 +186,8 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
     rw [hsq] at h; exact h.symm
   -- Therefore q = 1/(1 - √r)
   have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by
-    have h1 : Real.sqrt r < 1 := by linarith [hplanck_eq_sqrt]
-    linarith
+    have h_inv_pos : 0 < 1 / q := div_pos one_pos hq_pos
+    linarith [hplanck_eq_sqrt]
   have h_denom_ne : (1 : ℝ) - Real.sqrt r ≠ 0 := ne_of_gt h_denom_pos
   have hq_eq : q = 1 / (1 - Real.sqrt r) := by
     have h1 : 1 - Real.sqrt r = 1 / q := by linarith [hplanck_eq_sqrt]
@@ -211,10 +211,24 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
       _ = 996 / 10000 :=
           Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
   -- Bound q = 1/(1-√r) via division lemmas
+  have h_ne : (1 : ℝ) - Real.sqrt r ≠ 0 := ne_of_gt h_denom_pos
   have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - Real.sqrt r) := by
-    rw [div_lt_div_iff (by norm_num : (0:ℝ) < 10000) h_denom_pos]; nlinarith
+    have key : (11087 : ℝ) / 10000 * (1 - Real.sqrt r) < 1 := by nlinarith
+    by_contra h; push_neg at h
+    have : 1 ≤ (11087 : ℝ) / 10000 * (1 - Real.sqrt r) :=
+      calc 1 = 1 / (1 - Real.sqrt r) * (1 - Real.sqrt r) :=
+              (div_mul_cancel₀ 1 h_ne).symm
+        _ ≤ _ := mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
+    linarith
   have h_ub : 1 / (1 - Real.sqrt r) < (11107 : ℝ) / 10000 := by
-    rw [div_lt_div_iff h_denom_pos (by norm_num : (0:ℝ) < 10000)]; nlinarith
+    have key : 1 < (11107 : ℝ) / 10000 * (1 - Real.sqrt r) := by nlinarith
+    by_contra h; push_neg at h
+    have : (11107 : ℝ) / 10000 * (1 - Real.sqrt r) ≤ 1 :=
+      calc (11107 : ℝ) / 10000 * (1 - Real.sqrt r)
+          ≤ 1 / (1 - Real.sqrt r) * (1 - Real.sqrt r) :=
+              mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
+        _ = 1 := div_mul_cancel₀ 1 h_ne
+    linarith
   rw [hq_eq]; unfold substrate_q; rw [abs_lt]
   constructor <;> linarith
 
