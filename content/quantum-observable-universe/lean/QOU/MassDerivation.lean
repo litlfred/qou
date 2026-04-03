@@ -182,10 +182,12 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
     · unfold experimental_mu_e_ratio; positivity
   -- (1-1/q) = √r
   have hplanck_eq_sqrt : 1 - 1 / q = Real.sqrt r := by
-    have := Real.sqrt_sq (le_of_lt hplanck_pos)
-    rwa [hsq] at this
+    have h := Real.sqrt_sq (le_of_lt hplanck_pos)
+    rw [hsq] at h; exact h.symm
   -- Therefore q = 1/(1 - √r)
-  have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by linarith
+  have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by
+    have h1 : Real.sqrt r < 1 := by linarith [hplanck_eq_sqrt]
+    linarith
   have h_denom_ne : (1 : ℝ) - Real.sqrt r ≠ 0 := ne_of_gt h_denom_pos
   have hq_eq : q = 1 / (1 - Real.sqrt r) := by
     have h1 : 1 - Real.sqrt r = 1 / q := by linarith [hplanck_eq_sqrt]
@@ -210,9 +212,9 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
           Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
   -- Bound q = 1/(1-√r) via division lemmas
   have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - Real.sqrt r) := by
-    rw [lt_div_iff h_denom_pos]; nlinarith
+    rw [div_lt_div_iff (by norm_num : (0:ℝ) < 10000) h_denom_pos]; nlinarith
   have h_ub : 1 / (1 - Real.sqrt r) < (11107 : ℝ) / 10000 := by
-    rw [div_lt_iff h_denom_pos]; nlinarith
+    rw [div_lt_div_iff h_denom_pos (by norm_num : (0:ℝ) < 10000)]; nlinarith
   rw [hq_eq]; unfold substrate_q; rw [abs_lt]
   constructor <;> linarith
 
