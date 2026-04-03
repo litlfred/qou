@@ -115,7 +115,7 @@ The nuclear matrix element $|\mathcal{M}_q|^2$ varies by six orders
 of magnitude across the verification set.  Measured $\log ft$ values
 (NNDC/ENSDF) classify the transitions:
 
-| Nucleus | $\log ft$ | Classification | $|\mathcal{M}|^2$ |
+| Nucleus | $\log ft$ | Classification | $\lvert\mathcal{M}\rvert^2$ |
 |---------|-----------|----------------|-------------------|
 | ${}^{3}\mathrm{H}$ | 3.05 | Superallowed | $\sim 6$ |
 | ${}^{14}\mathrm{C}$ | 9.04 | Hindered allowed | $\sim 10^{-6}$ |

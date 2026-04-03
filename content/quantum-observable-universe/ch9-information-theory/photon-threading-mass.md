@@ -25,7 +25,7 @@ that yield the same result:
 |--------|--------|------------------------------|
 | Yekutieli MI | Analytic | $\lVert\mathrm{MI}\int_\Sigma(\nabla_A q, L \wedge F^+)\rVert$ |
 | Ribbon trace | Algebraic | $\lVert\mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta_{\mathfrak{H}}))\rVert \cdot (q-1)^2$ |
-| Gröbner reduction | Computational | $(q-1)^2 \sum |c_w| \cdot |q - q^{-1}|$ |
+| Gröbner reduction | Computational | $(q-1)^2 \sum \lvert c_w\rvert \cdot \lvert q - q^{-1}\rvert$ |
 
 The first is the definition ([mass over $\mathbb{C}$](#ex:mass-identity-C)).
 The second follows from the ribbon category structure

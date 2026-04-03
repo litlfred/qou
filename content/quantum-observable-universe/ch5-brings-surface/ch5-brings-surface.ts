@@ -159,6 +159,7 @@ export default chapter({
         "skein-polynomial-transfer-matrix",
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
+        "beta-decay-braid-visualizer",
         "shell-structure-eigenvalues",
         "quantum-dilogarithm-volume",
         "reidemeister-action-table",
@@ -166,6 +167,7 @@ export default chapter({
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "shell-closure-normal-form",
+        "torus-knot-shell-binding",
         "skein-finiteness-bound",
         "spectral-decomposition-qvalue",
         "shell-construction-rules",

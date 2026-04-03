@@ -143,9 +143,9 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
    | Daughter mass | $\text{Vol}(\mathcal{N}(7,7)) / \hbar_q^2$ | R2 steps in daughter |
    | $Q$-value | $M_{\text{par}} - M_{\text{dau}} - m_e$ | Difference in R2 steps |
    | $L_0$ amplitude | Skein weight of $e^- \sqcup \nu^{\sigma}$ | Skein crossing change |
-   | Matrix element | $\|\hat{V}(L_0)\|^2$ | R2 at converting generator |
+   | Matrix element | $\lVert\hat{V}(L_0)\rVert^2$ | R2 at converting generator |
    | Writhe correction | $(-q^{3/4})^{-\Delta w}$ | R1 (writhe change = $A - 1$) |
-   | Half-life | $\ln 2 / (\|M_q\|^2 \times f(Z, Q))$ | All of the above |
+   | Half-life | $\ln 2 / (\lVert M_q\rVert^2 \times f(Z, Q))$ | All of the above |
 
 **The $q$-deformed R2 is the engine of nuclear physics.**
 

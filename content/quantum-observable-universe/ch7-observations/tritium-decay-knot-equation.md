@@ -133,16 +133,16 @@ $$
   \;=\;
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
   \;=\;
-  \frac{q \mu_d + q^{-1} \mu_d}{q^{1/2} + q^{-1/2}}
+  \frac{q \mu_{\mathfrak{d}} + q^{-1} \mu_{\mathfrak{d}}}{q^{1/2} + q^{-1/2}}
   \;-\;
-  \frac{q \mu_u + q^{-1} \mu_d}{q^{1/2} + q^{-1/2}}
+  \frac{q \mu_{\mathfrak{u}} + q^{-1} \mu_{\mathfrak{d}}}{q^{1/2} + q^{-1/2}}
 $$
 
 $$
   \;=\;
-  \frac{(q - 1)(\mu_d - \mu_u) + q^{-1}(\mu_d - \mu_d)}{q^{1/2} + q^{-1/2}}
+  \frac{(q - 1)(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}) + q^{-1}(\mu_{\mathfrak{d}} - \mu_{\mathfrak{d}})}{q^{1/2} + q^{-1/2}}
   \;=\;
-  \frac{q(\mu_d - \mu_u)}{q^{1/2} + q^{-1/2}}
+  \frac{q(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})}{q^{1/2} + q^{-1/2}}
 $$
 
 Wait — this needs the full pair Skein difference, not just the

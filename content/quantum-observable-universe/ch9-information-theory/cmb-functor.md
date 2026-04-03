@@ -34,8 +34,8 @@ boundary).
 
 | Factor | Jet degree | Content |
 |:---|:---:|:---|
-| $\varinjlim\, (A_1/A_0)|_{\partial\mathcal{A}}$ | $1$ | Linear transport: winding modes, first-order correlations |
-| $\varinjlim\, (A_2/A_0)|_{\partial\mathcal{A}}$ | $2$ | Curvature: linking modes, power spectrum |
+| $\varinjlim\, (A_1/A_0)\vert_{\partial\mathcal{A}}$ | $1$ | Linear transport: winding modes, first-order correlations |
+| $\varinjlim\, (A_2/A_0)\vert_{\partial\mathcal{A}}$ | $2$ | Curvature: linking modes, power spectrum |
 
 The colimit is taken over the directed system of all diagrams
 in $\mathcal{A}$ that converge to boundary objects.  It

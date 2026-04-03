@@ -161,7 +161,7 @@ The decay rate depends on $q$ through four channels:
 - $\mathcal{Q}_q^5$: the categorical action difference
   ([transition energy](#def:q-value-transition)), determined by
   the pair Skein weights $\mathcal{S}_{ab}(q)$ which depend on $q$
-  through the dressed quark masses $\mu_u, \mu_d$.  Note:
+  through the dressed quark masses $\mu_{\mathfrak{u}}, \mu_{\mathfrak{d}}$.  Note:
   $\mathcal{Q}_q \neq T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}$
   at $q \neq 1$ (the $q$-anomaly $\delta_q \neq 0$).
 

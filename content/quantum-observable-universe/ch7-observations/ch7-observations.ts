@@ -219,6 +219,7 @@ export default chapter({
         "double-slit-analytical",
         "brings-surface-simulator",
         "quantum-brings-surface",
+        "beta-decay-simulator",
       ],
     }),
   ],

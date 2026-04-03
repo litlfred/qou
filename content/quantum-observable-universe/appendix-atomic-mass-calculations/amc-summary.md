@@ -11,7 +11,7 @@ full-precision constants. Both use identical $B/A$ from AME2020.
 
 ## Natural Elements ($Z = 1$--$92$)
 
-| $Z$ | Element | $A$ | $M_q$ (MeV) | $M_o$ (MeV) | $|\Delta|$ (MeV) | $\delta$ (\%) |
+| $Z$ | Element | $A$ | $M_q$ (MeV) | $M_o$ (MeV) | $\lvert\Delta\rvert$ (MeV) | $\delta$ (\%) |
 |----:|:--------|----:|------------:|-----------:|----------------:|--------------:|
 | 1 | Hydrogen (H) | 1 | 938.8 | 938.8 | 0.0 | 0.0000 |
 | 2 | Helium (He) | 4 | 3728.4 | 3728.4 | 0.0 | 0.0000 |
@@ -108,7 +108,7 @@ full-precision constants. Both use identical $B/A$ from AME2020.
 
 ## Synthetic Elements ($Z = 93$--$118$)
 
-| $Z$ | Element | $A$ | $M_q$ (MeV) | $M_o$ (MeV) | $|\Delta|$ (MeV) | $\delta$ (\%) |
+| $Z$ | Element | $A$ | $M_q$ (MeV) | $M_o$ (MeV) | $\lvert\Delta\rvert$ (MeV) | $\delta$ (\%) |
 |----:|:--------|----:|------------:|-----------:|----------------:|--------------:|
 | 93 | Neptunium (Np)$^\dagger$ | 237 | 220808.8 | 220808.9 | 0.1 | 0.0000 |
 | 94 | Plutonium (Pu)$^\dagger$ | 244 | 227344.4 | 227344.5 | 0.1 | 0.0000 |
@@ -143,8 +143,8 @@ $^\dagger$ Synthetic element (reactor or accelerator produced).
 
 | Statistic | Natural ($Z \leq 92$) | Synthetic ($Z \geq 93$) | All |
 |:----------|---------------------:|------------------------:|----:|
-| Max $|\Delta|$ (MeV) | 0.1 | 0.1 | 0.1 |
-| Mean $|\Delta|$ (MeV) | 0.0318 | 0.0781 | 0.0420 |
+| Max $\lvert\Delta\rvert$ (MeV) | 0.1 | 0.1 | 0.1 |
+| Mean $\lvert\Delta\rvert$ (MeV) | 0.0318 | 0.0781 | 0.0420 |
 | Count | 92 | 26 | 118 |
 
 All deviations arise solely from rounding the CODATA constituent-mass constants
@@ -177,7 +177,7 @@ particles ($m_{\mathfrak{p}} + m_e = 938.78309$ MeV), while AME2020 uses the
 hydrogen atom mass ($M_H = u + \Delta_H = 938.78307$ MeV), which
 includes the 13.6 eV electron binding energy.
 
-| $Z$ range | Max $|M_{\mathrm{CODATA}} - M_{\mathrm{AME}}|$ |
+| $Z$ range | Max $\lvert M_{\mathrm{CODATA}} - M_{\mathrm{AME}}\rvert$ |
 |-----------|-----------------------------------------------|
 | $1$--$10$ | 0.15 keV |
 | $11$--$50$ | 0.77 keV |

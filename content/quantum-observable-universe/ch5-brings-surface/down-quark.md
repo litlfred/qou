@@ -4,7 +4,7 @@ Borromean link $\mathcal{B}_3$
 ([Borromean quark conjecture](#conj:borromean-quark)).
 
 $$
-  d \;=\; \nu \,\big|_{\mathcal{B}_3,\, -}
+  \mathfrak{d} \;=\; \nu \,\big|_{\mathcal{B}_3,\, -}
   \qquad\text{(unknot, negative orientation in } \mathcal{B}_3\text{)}
 $$
 
@@ -19,7 +19,7 @@ of $-1/3$ relative to the proton.
 **Mass splitting.**
 The up and down quarks are the same knot type (unknot) in the
 same environment (Borromean-linked in a coral tube).  Their
-mass difference $\mu_d - \mu_u$ arises from the **crossing
+mass difference $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ arises from the **crossing
 asymmetry** ([crossing asymmetry](#rem:skein-crossing-asymmetry)):
 the Skein relation weights positive crossings by $q$ and
 negative by $q^{-1}$, so the reversed-orientation component
