@@ -38,13 +38,15 @@ elif [ -f "$HOME/.cargo/env" ]; then
 fi
 
 HECKE_DIR="$REPO_ROOT/tools/hecke-engine"
-HECKE_BIN="$HECKE_DIR/target/release/v2"
+HECKE_BIN="$HECKE_DIR/target/release/hecke-engine"
+HECKE_VER_FILE="$HECKE_DIR/Cargo.toml"
 if [ -f "$HECKE_BIN" ]; then
-  HECKE_OK=true; HECKE_VER="v2 (packed u128)"
+  HECKE_OK=true
+  HECKE_VER=$(grep '^version' "$HECKE_VER_FILE" 2>/dev/null | head -1 | sed 's/.*"\(.*\)"/\1/')
 elif [ "$CARGO_OK" = true ] && [ -f "$HECKE_DIR/Cargo.toml" ]; then
-  # Auto-build if cargo available but binary missing
-  (cd "$HECKE_DIR" && cargo build --release --bin v2 2>/dev/null) && {
-    HECKE_OK=true; HECKE_VER="v2 (just built)"
+  (cd "$HECKE_DIR" && cargo build --release 2>/dev/null) && {
+    HECKE_OK=true
+    HECKE_VER=$(grep '^version' "$HECKE_VER_FILE" 2>/dev/null | head -1 | sed 's/.*"\(.*\)"/\1/')
   }
 fi
 

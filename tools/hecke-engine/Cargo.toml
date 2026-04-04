@@ -1,8 +1,22 @@
 [package]
 name = "hecke-engine"
-version = "0.1.0"
+version = "0.8.0"
 edition = "2021"
-description = "Fast Gröbner reduction engine for H_n(q) — nuclear normal forms"
+description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
+
+# Default binary is the latest (v8: inductive symbolic chaining)
+[[bin]]
+name = "hecke-engine"
+path = "src/bin/v8.rs"
+
+# Historical binaries (kept for reproducibility, not actively maintained)
+[[bin]]
+name = "hecke-v6-float"
+path = "src/bin/v6.rs"
+
+[[bin]]
+name = "hecke-v7-symbolic"
+path = "src/bin/v7.rs"
 
 [dependencies]
 rustc-hash = "2"
