@@ -36,16 +36,12 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
   have hqpos : q > 0 := by linarith
   have hinv : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hqpos
-  have hinv_le : q⁻¹ ^ k ≤ q⁻¹ ^ 1 := by
-    apply pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv) hk
-  simp [pow_one] at hinv_le
-  have hq_ge : q ^ k ≥ q := by
+  have hinv_le : q⁻¹ ^ k ≤ q⁻¹ := by
+    calc q⁻¹ ^ k ≤ q⁻¹ ^ 1 := pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv) hk
+      _ = q⁻¹ := pow_one _
+  have hq_ge : q ≤ q ^ k := by
     calc q = q ^ 1 := (pow_one q).symm
-      _ ≤ q ^ k := by
-        apply pow_right_mono₀ (le_of_lt hq)
-        exact hk
-  have h1 : q ^ k > 1 := by linarith
-  have h2 : q⁻¹ ^ k < 1 := by linarith
+      _ ≤ q ^ k := by apply pow_right_mono₀ (le_of_lt hq); exact hk
   linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
@@ -270,12 +266,22 @@ theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
   -- blowupTime = π*d₀²/Γ, so π*d₀² = Γ*blowupTime
   -- separation_sq t = (Γ*blowupTime - Γ*t)/π = Γ*(blowupTime - t)/π
   -- All factors positive.
-  show dyn.separation_sq t > 0
-  unfold AntiParallelDynamics.separation_sq
+  -- Direct: separation_sq t = d₀² - Γ*t/π.
+  -- We show separation_sq t * π > 0, then conclude separation_sq t > 0.
+  have hd := dyn.d₀_pos
+  suffices hsuff : dyn.separation_sq t * Real.pi > 0 by
+    by_contra h; push_neg at h; nlinarith
+  -- separation_sq t * π = d₀²*π - Γ*t  (by definition + field_simp)
+  have hexpand : dyn.separation_sq t * Real.pi =
+      dyn.d₀ ^ 2 * Real.pi - dyn.circulation * t := by
+    unfold AntiParallelDynamics.separation_sq
+    field_simp
+  rw [hexpand]
+  -- Now show d₀²*π - Γ*t > 0, i.e. Γ*t < d₀²*π
   unfold AntiParallelDynamics.blowupTime at ht
-  nlinarith [mul_pos hπ hΓ, sq_nonneg dyn.d₀,
-             mul_pos hΓ (show t ≥ 0 from ht0),
-             mul_lt_mul_of_pos_left ht hΓ]
+  -- ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
+  nlinarith [mul_lt_mul_of_pos_right ht hΓ,
+             div_mul_cancel₀ (Real.pi * dyn.d₀ ^ 2) (ne_of_gt hΓ)]
 
 /-- d(t)² = 0 at t = T* (collision). -/
 theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
