@@ -349,7 +349,7 @@ fn main() {
     let engine = HeckeEngine::new(1.10998);
 
     if args.len() < 2 {
-        eprintln!("Usage: hecke-engine [nucleus Z N | table Zmin Zmax [Amax]]");
+        eprintln!("Usage: hecke-engine [nucleus|table|pauli|shellfactor|qvalues] ...");
         std::process::exit(1);
     }
 
@@ -390,6 +390,115 @@ fn main() {
                 }
             }
             println!("\nAll optimal: {}  Total: {}ms", if all_opt {"YES"} else {"NO"}, t.elapsed().as_millis());
+        }
+
+        "pauli" => {
+            // F_Pauli^(A) = |tr_alt(NF)| / |net(NF)|
+            // tr_alt = Σ c_w × (-q⁻¹)^ℓ(w)
+            // net    = Σ c_w
+            // Computed from the FULL raw NF (before I₈+I₉ quotient).
+            // This is the A-strand alternating channel content.
+            //
+            // For the witness: the symbolic (exact in q) computation is in
+            // folio-assistant/computations/pauli-witness.py (A ≤ 7).
+            // This Rust version uses f64 at q₀ for A ≤ 12.
+            let z: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(0);
+            let n: usize = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(0);
+            let qi = 1.0 / engine.q;
+
+            let compute_pauli = |z: usize, n: usize| -> (f64, f64, f64, usize, Vec<usize>, bool, u128) {
+                let t0 = Instant::now();
+                let elem = engine.build_nucleus(z, n);
+                let raw = elem.n_terms();
+                let hist = elem.histogram();
+                let pal = is_palindromic(&hist);
+
+                let mut tr_alt = 0.0_f64;
+                let mut tr_sym = 0.0_f64;
+                let mut net = 0.0_f64;
+
+                for (word, &coeff) in &elem.reduced {
+                    let l = word.len();
+                    tr_alt += coeff * (-qi).powi(l as i32);
+                    tr_sym += coeff * engine.q.powi(l as i32);
+                    net += coeff;
+                }
+
+                (tr_alt, tr_sym, net, raw, hist, pal, t0.elapsed().as_millis())
+            };
+
+            if z > 0 && n > 0 {
+                // Single nucleus
+                let (tr_alt, tr_sym, net, raw, hist, pal, ms) = compute_pauli(z, n);
+                let a = z + n;
+                let f = tr_alt.abs() / net.abs();
+                println!("{}({},{}): A={}, {} terms, pal={}",
+                    nucleus_name(z, n), z, n, a, raw, if pal {"Y"} else {"N"});
+                println!("  tr_alt = {:+.10}", tr_alt);
+                println!("  tr_sym = {:+.10}", tr_sym);
+                println!("  net    = {:+.10}", net);
+                println!("  F_Pauli^(A) = {:.6}", f);
+                println!("  histogram: {:?}", hist);
+                println!("  {}ms", ms);
+
+                // JSON
+                println!("{}", serde_json::json!({
+                    "nucleus": nucleus_name(z, n), "z": z, "n": n, "a": a,
+                    "raw_terms": raw, "palindromic": pal,
+                    "tr_alt": tr_alt, "tr_sym": tr_sym, "net": net,
+                    "F_Pauli_A": f, "histogram": hist,
+                    "elapsed_ms": ms, "q": engine.q,
+                }));
+            } else {
+                // Table of all nuclei up to A_max
+                let a_max: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(8);
+                println!("F_PAULI^(A) TABLE (A ≤ {})", a_max);
+                println!("  tr_alt = Σ c_w × (-q⁻¹)^ℓ(w)");
+                println!("  F_Pauli = |tr_alt| / |net|");
+                println!("  q₀ = {:.5} (f64, not symbolic — see pauli-witness.py for exact)", engine.q);
+                println!();
+                println!("{:>12} {:>3} {:>3} {:>3} {:>8} {:>3} {:>12} {:>12} {:>10} {:>8}",
+                    "Nucleus","Z","N","A","Terms","Pal","tr_alt","net","F_Pauli","Time");
+                println!("{}", "-".repeat(90));
+
+                let mut json_results = Vec::new();
+                for zz in 1..=a_max {
+                    let n_min = if zz <= 1 { 1 } else { zz.saturating_sub(1) };
+                    for nn in n_min..=(zz+2) {
+                        let a = zz + nn;
+                        if a < 2 || a > a_max { continue; }
+                        // Skip proton-heavy (won't be palindromic, less interesting)
+                        if nn + 1 < zz { continue; }
+
+                        let (tr_alt, _tr_sym, net, raw, hist, pal, ms) = compute_pauli(zz, nn);
+                        let f = if net.abs() > 1e-30 { tr_alt.abs() / net.abs() } else { 0.0 };
+
+                        println!("{:>12} {:>3} {:>3} {:>3} {:>8} {:>3} {:>+12.6} {:>+12.6} {:>10.6} {:>6}ms",
+                            nucleus_name(zz, nn), zz, nn, a, raw,
+                            if pal {"Y"} else {" "}, tr_alt, net, f, ms);
+
+                        json_results.push(serde_json::json!({
+                            "nucleus": nucleus_name(zz, nn), "z": zz, "n": nn, "a": a,
+                            "raw_terms": raw, "palindromic": pal,
+                            "tr_alt": tr_alt, "net": net, "F_Pauli_A": f,
+                            "histogram": hist, "elapsed_ms": ms,
+                        }));
+                    }
+                }
+
+                // Write JSON witness
+                let witness = serde_json::json!({
+                    "computation": "pauli-witness-f64",
+                    "q": engine.q,
+                    "note": "f64 at q₀, not symbolic. See pauli-witness.py for exact-in-q.",
+                    "nuclei": json_results,
+                });
+                let out_path = format!("pauli-witness-A{}.json", a_max);
+                if let Ok(f) = std::fs::File::create(&out_path) {
+                    serde_json::to_writer_pretty(f, &witness).ok();
+                    println!("\nWitness: {}", out_path);
+                }
+            }
         }
 
         "shellfactor" => {
