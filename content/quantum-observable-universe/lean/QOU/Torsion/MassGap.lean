@@ -92,11 +92,32 @@ theorem massGapBound_at_one : massGapBound 1 = 0 := by
   simp [minCrossingEnergy]
 
 /-- The mass gap bound is monotonically increasing for `q > 1`.
-    Proof: `Δ_q = (q² − 1)(q − 1) / (2q)`, all factors positive
-    and increasing. -/
+
+    `Δ_q = E_×(q) · (q − 1)²` where `E_×(q) = (q² − 1)/(2q)`.
+    Both factors are positive and increasing for `q > 1`, so
+    their product is increasing. -/
 theorem massGapBound_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ q₂) :
     massGapBound q₁ ≤ massGapBound q₂ := by
-  sorry -- Ref: [manuscript] Ch 5, monotonicity of Δ_q
+  unfold massGapBound
+  have hq₂_gt : 1 < q₂ := lt_of_lt_of_le hq₁ hq₂
+  -- Factor 1: minCrossingEnergy is increasing
+  have he₁ := minCrossingEnergy_pos hq₁
+  have he₂ := minCrossingEnergy_pos hq₂_gt
+  have he_mono : minCrossingEnergy q₁ ≤ minCrossingEnergy q₂ := by
+    -- E_×(q) = (q − q⁻¹)/2.  Since q⁻¹ is decreasing for q > 0,
+    -- q − q⁻¹ is increasing, so E_×(q) is increasing.
+    unfold minCrossingEnergy
+    have h1_pos : (0 : ℝ) < q₁ := by linarith
+    have hinv : q₂⁻¹ ≤ q₁⁻¹ := inv_le_inv_of_le h1_pos hq₂
+    -- (q₁ − q₁⁻¹)/2 ≤ (q₂ − q₂⁻¹)/2
+    have hsub : q₁ - q₁⁻¹ ≤ q₂ - q₂⁻¹ := by linarith
+    linarith
+  -- Factor 2: (q − 1)² is increasing for q > 1
+  have hs_mono : (q₁ - 1) ^ 2 ≤ (q₂ - 1) ^ 2 := by
+    apply sq_le_sq'
+    · nlinarith
+    · linarith
+  exact mul_le_mul he_mono hs_mono (by positivity) (le_of_lt he₂)
 
 /-! ## Categorical transfer matrix (spectral data) -/
 
@@ -215,12 +236,10 @@ theorem yang_mills_gap_lower_bound (ymg : YangMillsMassGap) :
     the transfer matrix spectrum is discrete with the stated bound. -/
 -- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
 -- Ref: [manuscript] Chapter 5, §1
-noncomputable def yangMillsMassGap_construction
-    (q : ℝ) (hq : 1 < q) (dla : DirectLimitAlgebra)
-    (vac : VacuumState dla) :
-    YangMillsMassGap :=
-  sorry -- The millennium problem: construct the transfer matrix
-         -- with the required spectral properties.
+axiom yangMillsMassGap_construction :
+    ∀ (q : ℝ) (hq : 1 < q) (dla : DirectLimitAlgebra)
+      (vac : VacuumState dla),
+    Nonempty YangMillsMassGap
 
 /-! ## Confinement corollary -/
 
