@@ -419,4 +419,65 @@ theorem q_bkm_trivial {M : Type*} (sp : SubstrateParameter M)
     quantumPlanckConstant sp p > 0 :=
   quantumPlanckConstant_pos sp p hq
 
+-- ════════════════════════════════════════════════════════════════
+-- §13  NS regularity definition and obstruction
+-- ════════════════════════════════════════════════════════════════
+
+/-- **Boundary observability**: the limit of Hom(1, Ad(A_q)) as q → 1.
+    A QOU is NS-regular iff this is nonzero (observability fails
+    at the boundary, gauge mode appears, contact degenerates).
+    A QOU is NS-singular iff this is zero (observability persists,
+    contact stays non-degenerate, blowup occurs).
+
+    LaTeX: `\label{def:ns-regular-qou}` -/
+structure BoundaryObservability where
+  /-- Euler characteristic χ(A). -/
+  euler_char : ℤ
+  /-- χ(A) ≠ 0 (non-trivial topology). -/
+  euler_char_ne_zero : euler_char ≠ 0
+  /-- Whether boundary observability vanishes (NS-singular). -/
+  obs_vanishes : Prop
+
+/-- For χ(A) = -6 (Descartes/Bring), the Euler class is non-torsion. -/
+def descartes_boundary : BoundaryObservability where
+  euler_char := -6
+  euler_char_ne_zero := by norm_num
+  obs_vanishes := True  -- Conjectured: obstruction persists → NS-singular
+
+/-- **NS obstruction at level n**: the restriction of κ_n to Σ.
+    Nonzero iff the QOU is NS-singular at that level.
+
+    LaTeX: `\label{prop:ns-obstruction-tower}` -/
+structure NSObstructionLevel where
+  /-- Tower level. -/
+  level : ℕ
+  /-- Euler class contribution (topological). -/
+  euler_contribution : ℤ
+  /-- Linking number of the filament pair. -/
+  linking_number : ℤ
+  linking_number_pos : linking_number > 0
+  /-- Jet divergence rate: |j^n v| ~ 1/(T*-t)^{(n+1)/2}. -/
+  jet_divergence_exponent : ℝ
+  jet_exponent_eq : jet_divergence_exponent = (level + 1 : ℝ) / 2
+  /-- Analytic contribution nonzero when jets diverge. -/
+  analytic_nonzero : level ≥ 1 → jet_divergence_exponent > 0
+
+/-- For the anti-parallel pair at level n ≥ 1, the jet
+    divergence exponent is positive. -/
+def antiparallel_obstruction (n : ℕ) (hn : n ≥ 1) :
+    NSObstructionLevel where
+  level := n
+  euler_contribution := -6
+  linking_number := 1
+  linking_number_pos := by norm_num
+  jet_divergence_exponent := (n + 1 : ℝ) / 2
+  jet_exponent_eq := rfl
+  analytic_nonzero := fun _ => by positivity
+
+/-- The jet divergence exponent grows with level. -/
+theorem jet_exponent_increasing (n m : ℕ) (h : n < m) :
+    (n + 1 : ℝ) / 2 < (m + 1 : ℝ) / 2 := by
+  apply div_lt_div_of_pos_right _ (by norm_num : (2 : ℝ) > 0)
+  exact_mod_cast Nat.add_lt_add_right h 1
+
 end QOU.GaugeFieldFluidDynamics
