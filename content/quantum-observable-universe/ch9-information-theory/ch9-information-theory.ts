@@ -77,6 +77,10 @@ section({
         "p-bandwidth-bound",
         "p-vs-np-boundary",
         "p-vs-np-event-horizon",
+        "skein-resolution-obstruction",
+        "field-dependent-complexity",
+        "computational-kummer-specialisation",
+        "qou-p-neq-np",
       ],
     }),
     section({
