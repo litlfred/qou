@@ -272,41 +272,41 @@ theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
 structure LeviFormNormalPlane where
   lam_parallel : ℝ
   lam_perp : ℝ
-  lam_parallel_pos : λ_parallel > 0
-  lam_perp_pos : λ_perp > 0
+  lam_parallel_pos : lam_parallel > 0
+  lam_perp_pos : lam_perp > 0
 
 /-- Condition number: max(λ_∥/λ_⊥, λ_⊥/λ_∥). -/
 noncomputable def LeviFormNormalPlane.cond (L : LeviFormNormalPlane) : ℝ :=
-  max (L.lam_parallel / L.λ_perp) (L.λ_perp / L.lam_parallel)
+  max (L.lam_parallel / L.lam_perp) (L.lam_perp / L.lam_parallel)
 
 /-- cond ≥ 1 (equality iff isotropic). -/
 theorem levi_cond_ge_one (L : LeviFormNormalPlane) : L.cond ≥ 1 := by
   unfold LeviFormNormalPlane.cond
   apply le_max_iff.mpr
-  by_cases h : L.lam_parallel ≤ L.λ_perp
+  by_cases h : L.lam_parallel ≤ L.lam_perp
   · right; rw [le_div_iff L.lam_parallel_pos]; linarith
-  · left; push_neg at h; rw [le_div_iff L.λ_perp_pos]; linarith
+  · left; push_neg at h; rw [le_div_iff L.lam_perp_pos]; linarith
 
 /-- cond = 1 iff λ_∥ = λ_⊥ (isotropic core). -/
 theorem levi_cond_eq_one_iff (L : LeviFormNormalPlane) :
-    L.cond = 1 ↔ L.lam_parallel = L.λ_perp := by
+    L.cond = 1 ↔ L.lam_parallel = L.lam_perp := by
   unfold LeviFormNormalPlane.cond
   constructor
   · intro h
-    have h1 : L.lam_parallel / L.λ_perp ≤ 1 := by
+    have h1 : L.lam_parallel / L.lam_perp ≤ 1 := by
       by_contra hc; push_neg at hc
-      have : max (L.lam_parallel / L.λ_perp) (L.λ_perp / L.lam_parallel) ≥
-             L.lam_parallel / L.λ_perp := le_max_left _ _
+      have : max (L.lam_parallel / L.lam_perp) (L.lam_perp / L.lam_parallel) ≥
+             L.lam_parallel / L.lam_perp := le_max_left _ _
       linarith
-    have h2 : L.λ_perp / L.lam_parallel ≤ 1 := by
+    have h2 : L.lam_perp / L.lam_parallel ≤ 1 := by
       by_contra hc; push_neg at hc
-      have : max (L.lam_parallel / L.λ_perp) (L.λ_perp / L.lam_parallel) ≥
-             L.λ_perp / L.lam_parallel := le_max_right _ _
+      have : max (L.lam_parallel / L.lam_perp) (L.lam_perp / L.lam_parallel) ≥
+             L.lam_perp / L.lam_parallel := le_max_right _ _
       linarith
-    rw [div_le_one L.λ_perp_pos] at h1
+    rw [div_le_one L.lam_perp_pos] at h1
     rw [div_le_one L.lam_parallel_pos] at h2
     linarith
-  · intro h; simp [h, div_self (ne_of_gt L.λ_perp_pos)]
+  · intro h; simp [h, div_self (ne_of_gt L.lam_perp_pos)]
 
 /-- For q > 1, quantum pressure bounds cond by 1 + ℏ_q². -/
 structure QBoundedLeviForm extends LeviFormNormalPlane where
@@ -365,7 +365,7 @@ structure BlowupObstruction where
   dim_consistent : hausdorff_dim + 2 * level ≥ 3
 
 /-- The anti-parallel vortex pair candidate. -/
-def antiParallelVortexBlowup : BlowupObstruction where
+noncomputable def antiParallelVortexBlowup : BlowupObstruction where
   level := 2
   hausdorff_dim := 1
   linking_number := 1
@@ -407,7 +407,7 @@ theorem eigenspace_dim_pos (twice_j : ℕ) : eigenspace_dim twice_j > 0 := by
     Ref: [manuscript] Ch 5 §8 Quantum Peter-Weyl theorem -/
 theorem quantum_peter_weyl_completeness :
     ∀ (twice_j : ℕ), eigenspace_dim twice_j = (twice_j + 1) ^ 2 := by
-  intro twice_j; unfold eigenspace_dim
+  intro twice_j; rfl
 
 -- ════════════════════════════════════════════════════════════════
 -- §12  q-BKM criterion
