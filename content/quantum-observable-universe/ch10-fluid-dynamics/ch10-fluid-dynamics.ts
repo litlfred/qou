@@ -95,6 +95,7 @@ export default chapter({
         "q-bkm-criterion",
         "vorticity-lower-bound",
         "levi-degeneracy-conjecture",
+        "leray-profile",
         "q-ns-research-programme",
       ],
     }),
