@@ -162,4 +162,4 @@ axiom normal_forms_preserved
     (f : AlgElement G k) :
     isNormalForm ord sys_deformed f ↔ isNormalForm ord sys_graded f
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov

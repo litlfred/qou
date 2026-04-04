@@ -483,4 +483,4 @@ axiom dist_algebra_gs_basis
     (sys : RewritingSystem G k) :
     IsGrobnerShirshovBasis G k ord sys
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov

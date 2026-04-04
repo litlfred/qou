@@ -78,20 +78,14 @@ def CategoricalMordellWeil (E : C) : Type v :=
     Ref: [tate1974] https://doi.org/10.1007/BF01389745 -/
 theorem descartes_rank_zero
     {k : Type*} [Field k]
-    (Q : QuantumObservableUniverse.{u, v} k)
-    (E_q : Q.C) :
+    (Q : QuantumObservableUniverse.{u, v} k) :
     letI := Q.catInst
     letI := Q.monInst
-    -- The fundamental representation embeds into the adjoint:
-    -- there exists a monomorphism E_q ↪ Ad(A) in C.
-    -- (For SU(2): the fundamental V_{1/2} embeds into
-    -- Ad ≅ V_1 ⊕ V_0 via Clebsch-Gordan.)
-    (ι : E_q ⟶ Q.adjointObj) →
-    (ι_mono : ∀ (f g : (𝟙_ Q.C) ⟶ E_q), f ≫ ι = g ≫ ι → f = g) →
+    ∀ (E_q : Q.C)
+      (ι : E_q ⟶ Q.adjointObj)
+      (ι_mono : ∀ (f g : (𝟙_ Q.C) ⟶ E_q), f ≫ ι = g ≫ ι → f = g),
     Subsingleton (CategoricalMordellWeil E_q) := by
-  intro ι ι_mono
-  -- Any two morphisms 𝟙 → E_q compose with ι to give
-  -- morphisms 𝟙 → Ad(A), which are all equal by adjoint_vanishing.
+  intro E_q ι ι_mono
   constructor
   intro f g
   exact ι_mono f g (Q.adjoint_vanishing.elim (f ≫ ι) (g ≫ ι))

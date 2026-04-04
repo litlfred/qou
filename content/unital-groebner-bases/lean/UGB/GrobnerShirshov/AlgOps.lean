@@ -286,4 +286,4 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
         | @cons x xs ys _ ih =>
           exact List.Lex.cons (rank x) ih
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov

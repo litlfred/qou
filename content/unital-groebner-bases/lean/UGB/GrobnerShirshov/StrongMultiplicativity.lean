@@ -226,4 +226,4 @@ axiom formal_group_is_filtered_bialgebra
     (T : Type*) [Ring (AlgElement G k)] [Ring T] :
     FilteredBialgebra (AlgElement G k) T
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov

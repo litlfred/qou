@@ -192,4 +192,4 @@ theorem retraction_property
   rw [h_embed]
   exact composition_lemma ord sys hgs f
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov

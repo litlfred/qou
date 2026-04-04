@@ -45,19 +45,18 @@ namespace QOU.Torsion
 noncomputable def minCrossingEnergy (q : ℝ) : ℝ :=
   (q - q⁻¹) / 2
 
-/-- The minimum crossing energy is strictly positive for `q > 1`. -/
-theorem minCrossingEnergy_pos {q : ℝ} (hq : 1 < q) :
-    0 < minCrossingEnergy q := by
-  have hq_ne : q ≠ 0 := by linarith
-  rw [minCrossingEnergy_eq hq_ne]
-  exact div_pos (by nlinarith) (by positivity)
-
 /-- The minimum crossing energy equals `(q² − 1) / (2q)`. -/
 theorem minCrossingEnergy_eq {q : ℝ} (hq : q ≠ 0) :
     minCrossingEnergy q = (q ^ 2 - 1) / (2 * q) := by
   unfold minCrossingEnergy
   field_simp
   ring
+
+/-- The minimum crossing energy is strictly positive for `q > 1`. -/
+theorem minCrossingEnergy_pos {q : ℝ} (hq : 1 < q) :
+    0 < minCrossingEnergy q := by
+  rw [minCrossingEnergy_eq (by linarith)]
+  exact div_pos (by nlinarith) (by positivity)
 
 /-- Explicit formula: at any `q > 1`, the crossing energy
     is `(q² − 1) / (2q)` which is strictly positive. -/
@@ -66,9 +65,7 @@ theorem minCrossingEnergy_explicit_pos {q : ℝ} (hq : 1 < q) :
     0 < (q ^ 2 - 1) / (2 * q) := by
   constructor
   · exact minCrossingEnergy_eq (by linarith)
-  · apply div_pos
-    · nlinarith
-    · positivity
+  · exact div_pos (by nlinarith) (by positivity)
 
 /-! ## Mass gap lower bound -/
 
@@ -83,7 +80,9 @@ noncomputable def massGapBound (q : ℝ) : ℝ :=
 theorem massGapBound_pos {q : ℝ} (hq : 1 < q) :
     0 < massGapBound q := by
   unfold massGapBound
-  exact mul_pos (minCrossingEnergy_pos hq) (by positivity)
+  apply mul_pos (minCrossingEnergy_pos hq)
+  have : q - 1 ≠ 0 := by linarith
+  positivity
 
 /-- The mass gap bound vanishes at `q = 1` (classical limit:
     conformal symmetry restored, no mass gap). -/
@@ -93,30 +92,44 @@ theorem massGapBound_at_one : massGapBound 1 = 0 := by
 
 /-- The mass gap bound is monotonically increasing for `q > 1`.
 
-    `Δ_q = E_×(q) · (q − 1)²` where `E_×(q) = (q² − 1)/(2q)`.
+    `Δ_q = E_×(q) · (q − 1)²` where `E_×(q) = (q − q⁻¹)/2`.
     Both factors are positive and increasing for `q > 1`, so
     their product is increasing. -/
 theorem massGapBound_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ q₂) :
     massGapBound q₁ ≤ massGapBound q₂ := by
   unfold massGapBound
   have hq₂_gt : 1 < q₂ := lt_of_lt_of_le hq₁ hq₂
-  -- Factor 1: minCrossingEnergy is increasing
   have he₁ := minCrossingEnergy_pos hq₁
   have he₂ := minCrossingEnergy_pos hq₂_gt
+  -- Factor 1: minCrossingEnergy is increasing
   have he_mono : minCrossingEnergy q₁ ≤ minCrossingEnergy q₂ := by
-    -- E_×(q) = (q − q⁻¹)/2.  Since q⁻¹ is decreasing for q > 0,
-    -- q − q⁻¹ is increasing, so E_×(q) is increasing.
     unfold minCrossingEnergy
     have h1_pos : (0 : ℝ) < q₁ := by linarith
-    have hinv : q₂⁻¹ ≤ q₁⁻¹ := inv_le_inv_of_le h1_pos hq₂
-    -- (q₁ − q₁⁻¹)/2 ≤ (q₂ − q₂⁻¹)/2
-    have hsub : q₁ - q₁⁻¹ ≤ q₂ - q₂⁻¹ := by linarith
+    have h2_pos : (0 : ℝ) < q₂ := by linarith
+    -- q⁻¹ is antitone for positive reals:
+    -- q₁ ≤ q₂ and both positive → q₂⁻¹ ≤ q₁⁻¹
+    -- Proof: q₂⁻¹ * q₁ ≤ 1 ≤ q₁⁻¹ * q₁ so q₂⁻¹ ≤ q₁⁻¹
+    -- Or directly: (q₁ - q₁⁻¹) ≤ (q₂ - q₂⁻¹)
+    -- because q increases and q⁻¹ decreases.
+    -- We prove the combined inequality directly via nlinarith.
+    have hne1 : q₁ ≠ 0 := ne_of_gt h1_pos
+    have hne2 : q₂ ≠ 0 := ne_of_gt h2_pos
+    -- (q₁ - q₁⁻¹)/2 ≤ (q₂ - q₂⁻¹)/2
+    -- Equivalent to: q₁ * q₂ * (q₂ - q₁) + (q₂ - q₁) ≥ 0
+    -- i.e. (q₂ - q₁)(q₁ * q₂ + 1) ≥ 0
+    -- Both factors non-negative since q₁ ≤ q₂ and q₁, q₂ > 0.
+    have key : q₁ - q₁⁻¹ ≤ q₂ - q₂⁻¹ := by
+      have := mul_inv_cancel₀ hne1
+      have := mul_inv_cancel₀ hne2
+      nlinarith [mul_pos h1_pos h2_pos,
+                 mul_le_mul_of_nonneg_left hq₂ (le_of_lt (inv_pos.mpr h2_pos)),
+                 mul_le_mul_of_nonneg_right hq₂ (le_of_lt h1_pos)]
     linarith
-  -- Factor 2: (q − 1)² is increasing for q > 1
+  -- Factor 2: (q − 1)² is increasing for q ≥ 1
   have hs_mono : (q₁ - 1) ^ 2 ≤ (q₂ - 1) ^ 2 := by
-    apply sq_le_sq'
-    · nlinarith
-    · linarith
+    have h1 : 0 ≤ q₁ - 1 := by linarith
+    have h2 : q₁ - 1 ≤ q₂ - 1 := by linarith
+    nlinarith
   exact mul_le_mul he_mono hs_mono (by positivity) (le_of_lt he₂)
 
 /-! ## Categorical transfer matrix (spectral data) -/
@@ -155,17 +168,11 @@ noncomputable def CategoricalTransferMatrix.gapValue
 /-! ## Two-point function -/
 
 /-- The **categorical two-point function**: the Frobenius pairing
-    of a vortex morphism with its time-translated copy.
-
-    `⟨τ(ϱ(t)), τ(ϱ(0))⟩_Ω₀` -/
+    of a vortex morphism with its time-translated copy. -/
 structure TwoPointFunction where
-  /-- The transfer matrix providing spectral data. -/
   tm : CategoricalTransferMatrix
-  /-- Spectral coefficients `Aₙ` (non-negative). -/
   coefficients : ℕ → ℝ
   coefficients_nonneg : ∀ n, 0 ≤ coefficients n
-  /-- The two-point function is the spectral expansion
-      `G(t) = Σₙ Aₙ exp(−Δₙ t)`. -/
   eval : ℝ → ℝ
 
 /-- If the transfer matrix has a mass gap, the two-point function
@@ -180,81 +187,42 @@ theorem twoPoint_exponential_decay
 
 /-- **Conjecture (Yang–Mills existence and mass gap).**
 
-    For any quantum observable universe `(C, A, τ)` with substrate
-    parameter `q > 1`, equipped with a categorical connection ∇
-    that is a critical point of the q-Yang–Mills–Levi functional:
-
-    1. **Existence**: The vacuum state extends to a positive-definite
-       inner product on the Hilbert completion of 𝒜_∞.
-    2. **Mass gap**: The categorical transfer matrix has a mass gap
-       bounded below by `Δ_q = ½(q − q⁻¹)(q �� 1)² > 0`.
-
     LaTeX: `\label{conj:yang-mills-mass-gap}` -/
 structure YangMillsMassGap where
-  /-- The substrate parameter. -/
   q : ℝ
-  /-- `q > 1` (deformation is non-trivial). -/
   hq : 1 < q
-  /-- The direct limit algebra from the brane tower. -/
-  dla : DirectLimitAlgebra
-  /-- The vacuum state (exists and is unique by `vacuum_state_exists`). -/
-  vacuum : VacuumState dla
-  /-- The categorical transfer matrix. -/
+  /-- The categorical transfer matrix (bundles its own dla + vacuum). -/
   transferMatrix : CategoricalTransferMatrix
-  /-- The transfer matrix uses our vacuum state. -/
-  tm_vacuum : transferMatrix.vacuum = vacuum
   /-- **Mass gap**: the first excited eigenvalue is bounded below
       by the minimum crossing energy times `(q − 1)²`. -/
   mass_gap : massGapBound q ≤ transferMatrix.gapValue
-  /-- **Positivity of gap** (immediate from `massGapBound_pos`). -/
+  /-- **Positivity of gap**. -/
   gap_positive : transferMatrix.hasMassGap
 
-/-- **Key consequence**: in any `YangMillsMassGap` instance, the gap
-    is at least `½(q − q⁻¹)(q − 1)² > 0`. -/
+/-- In any `YangMillsMassGap` instance, the gap is positive. -/
 theorem yang_mills_gap_positive (ymg : YangMillsMassGap) :
     0 < ymg.transferMatrix.gapValue := ymg.gap_positive
 
-/-- **Key consequence**: the gap is bounded below by the provable
-    crossing-energy bound. -/
+/-- The gap is bounded below by the provable crossing-energy bound. -/
 theorem yang_mills_gap_lower_bound (ymg : YangMillsMassGap) :
     0 < massGapBound ymg.q ∧ massGapBound ymg.q ≤ ymg.transferMatrix.gapValue :=
   ⟨massGapBound_pos ymg.hq, ymg.mass_gap⟩
 
-/-- **Construction attempt** (open problem): given a QOU with `q > 1`,
-    construct a `YangMillsMassGap` instance.
-
-    The existence of the transfer matrix with the required spectral
-    properties is the core of the millennium problem.  In the QOU
-    framework, the strategy is:
-    - The Skein relation forces every non-trivial braid word to carry
-      at least one crossing with energy `E_×(q) > 0`.
-    - The mass–energy equivalence converts this to categorical mass
-      `≥ E_×(q) · (q − 1)²`.
-    - The topological decomposition shows mass is additive in crossings.
-
-    What remains open: constructing the Hilbert completion and proving
-    the transfer matrix spectrum is discrete with the stated bound. -/
+/-- **The millennium conjecture**: for any QOU with `q > 1`,
+    a `YangMillsMassGap` instance exists. -/
 -- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
 -- Ref: [manuscript] Chapter 5, §1
 axiom yangMillsMassGap_construction :
-    ∀ (q : ℝ) (hq : 1 < q) (dla : DirectLimitAlgebra)
-      (vac : VacuumState dla),
+    ∀ (q : ℝ) (_ : 1 < q) (tm : CategoricalTransferMatrix),
     Nonempty YangMillsMassGap
 
 /-! ## Confinement corollary -/
 
 /-- **Confinement**: if the mass gap holds, then every finite-energy
-    excitation is a colour singlet (the lightest glueball has mass
-    ≥ Δ_q > 0, so isolated colour charges have infinite energy). -/
+    excitation is a colour singlet. -/
 structure Confinement extends YangMillsMassGap where
-  /-- The lightest glueball mass (simplest non-trivial closed vortex). -/
   glueball_mass : ℝ
-  /-- The glueball mass is bounded below by the mass gap. -/
   glueball_bound : massGapBound q ≤ glueball_mass
-  /-- Isolated colour charges have infinite energy (they require
-      vortices of unbounded length). -/
-  no_isolated_colour : ∀ (energy_bound : ℝ),
-    ∃ (min_length : ℕ), ∀ (n : ℕ), min_length ≤ n → True
 
 /-- Confinement implies the glueball mass is positive. -/
 theorem confinement_glueball_pos (c : Confinement) :

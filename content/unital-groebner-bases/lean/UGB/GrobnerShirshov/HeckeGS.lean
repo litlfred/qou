@@ -272,4 +272,4 @@ theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
   exact heckeCost_well_defined (n + 1) hp
     (augmentedBraidElement hp hadron) nf₁ nf₂ h₁ h₂
 
-end QOU.GrobnerShirshov.Hecke
+end UGB.GrobnerShirshov.Hecke
