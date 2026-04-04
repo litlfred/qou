@@ -152,6 +152,8 @@ export default chapter({
         "core-levi-form",
         "core-levi-interpretation",
         "levi-degeneracy-conjecture",
+        "observability-in-fluid-context",
+        "observability-independent-motivation",
         "ns-regular-qou",
         "ns-obstruction-tower",
         "ns-obstruction-computation",
