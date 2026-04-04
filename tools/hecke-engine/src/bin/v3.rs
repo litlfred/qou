@@ -601,6 +601,48 @@ fn main() {
                 println!("  Reference: H₃(q) F_Pauli = 0.6382 (from 3-strand irrep theory).");
                 println!("  This A-strand F_Pauli is the multi-generator witness.");
                 println!("════════════════════════════════════════════════════════");
+
+                // Lean witness
+                let lean_name = format!("{}{}_{}", sym.to_lowercase(), a, if z == n { "balanced" }
+                    else if z < n { "neutron_rich" } else { "proton_rich" });
+                println!();
+                println!("-- LEAN WITNESS (paste into QOU/Descartes/PauliWitness.lean)");
+                println!("-- Computed by hecke-engine v3 at q₀ = {:.5}", engine.q);
+                println!();
+                println!("/-- F_Pauli for {}{} (Z={}, N={}).", a, sym, z, n);
+                println!("    Computed from the full Gröbner NF in H_{}(q).", a);
+                println!("    tr_alt = Σ c_w × (−q⁻¹)^ℓ(w) = {:+.10}", tr_alt);
+                println!("    net    = Σ c_w = {:+.10}", net);
+                println!("    F_Pauli = |tr_alt| / |net| = {:.10} -/", f);
+                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("theorem F_Pauli_{} :", lean_name);
+                println!("    F_Pauli_witness {} {} = {:.10} := by", z, n, f);
+                println!("  native_decide -- computed by hecke-engine v3");
+                println!();
+                println!("/-- The palindromic defect for {}{}.", a, sym);
+                println!("    δ = Σ_ℓ |W(ℓ) − W(L−ℓ)| / Σ_ℓ W(ℓ) = {:.10}", total_acc.palindromic_defect());
+                println!("    δ = 0 ↔ palindromic ↔ shell closure signature. -/");
+                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("theorem palindromic_defect_{} :", lean_name);
+                println!("    pal_defect_witness {} {} = {:.10} := by", z, n, total_acc.palindromic_defect());
+                println!("  native_decide -- computed by hecke-engine v3");
+                println!();
+                println!("/-- Per-length weight distribution for {}{}.", a, sym);
+                print!("    W(ℓ) = [");
+                for (i, w) in total_acc.per_length_abs.iter().enumerate() {
+                    if i > 0 { print!(", "); }
+                    print!("{:.6}", w);
+                }
+                println!("] -/");
+                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("theorem weight_dist_{} :", lean_name);
+                print!("    weight_distribution {} {} = ![", z, n);
+                for (i, w) in total_acc.per_length_abs.iter().enumerate() {
+                    if i > 0 { print!(", "); }
+                    print!("{:.10}", w);
+                }
+                println!("] := by");
+                println!("  native_decide -- computed by hecke-engine v3");
             } else {
                 let a_max: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(8);
                 println!("F_PAULI TABLE (A ≤ {}, tree-packed words up to 128 gens)", a_max);
