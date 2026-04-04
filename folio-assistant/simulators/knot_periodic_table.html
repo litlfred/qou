@@ -273,7 +273,14 @@ function findCrossings(pts, ax) {
   const proj = pts.map(p => projectPt(p[0], p[1], p[2], ax));
   const crossings = [];
   const n = pts.length - 1;
-  const threshold = 3.5;
+  // Derive threshold from bounding box for robustness to scale changes
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (const p of proj) {
+    minX = Math.min(minX, p[0]); maxX = Math.max(maxX, p[0]);
+    minY = Math.min(minY, p[1]); maxY = Math.max(maxY, p[1]);
+  }
+  const bbox = Math.max(maxX - minX, maxY - minY) || 1;
+  const threshold = bbox * 0.04;
   for (let i = 0; i < n; i++) {
     for (let j = i + 3; j < n; j++) {
       if (Math.abs(i - j) < 3 || Math.abs(i - j) > n - 3) continue;
@@ -293,10 +300,11 @@ function findCrossings(pts, ax) {
   }
   // Deduplicate nearby crossings
   const deduped = [];
+  const dedupDist = bbox * 0.08;
   for (const c of crossings) {
     let isDup = false;
     for (const d of deduped) {
-      if (Math.abs(c.x - d.x) < 5 && Math.abs(c.y - d.y) < 5) { isDup = true; break; }
+      if (Math.abs(c.x - d.x) < dedupDist && Math.abs(c.y - d.y) < dedupDist) { isDup = true; break; }
     }
     if (!isDup) deduped.push(c);
   }
@@ -904,6 +912,14 @@ function drawDecayBraid(q) {
   const ns = 'http://www.w3.org/2000/svg';
   const isMinus = decayType === '-';
 
+  // Resolve CSS variables for theme-aware colors
+  const bodyStyles = getComputedStyle(document.body);
+  const protonColor = bodyStyles.getPropertyValue('--proton-color').trim();
+  const neutronColor = bodyStyles.getPropertyValue('--neutron-color').trim();
+  const gapColor = bodyStyles.getPropertyValue('--gap-color').trim();
+  const dimColor = bodyStyles.getPropertyValue('--dim').trim();
+  const accent2Color = bodyStyles.getPropertyValue('--accent2').trim();
+
   // T_{3,5} braid: (sigma1 sigma2)^5 = 10 crossings
   const word = [];
   for (let i = 0; i < 5; i++) { word.push(1); word.push(2); }
@@ -917,7 +933,7 @@ function drawDecayBraid(q) {
 
   // Strand types
   const strandTypes = isMinus ? ['u', 'd', 'd'] : ['u', 'u', 'd'];
-  const strandColors = strandTypes.map(t => t === 'u' ? 'var(--proton-color)' : 'var(--neutron-color)');
+  const strandColors = strandTypes.map(t => t === 'u' ? protonColor : neutronColor);
 
   // Input labels
   const labels = strandTypes.map(t => t === 'u' ? '\uD835\uDD32' : '\uD835\uDD21');
@@ -927,7 +943,7 @@ function drawDecayBraid(q) {
     txt.setAttribute('y', yPos[i] + 4);
     txt.setAttribute('text-anchor', 'end');
     txt.setAttribute('font-size', '10');
-    txt.setAttribute('fill', strandColors[i].replace('var(--proton-color)', '#4488ee').replace('var(--neutron-color)', '#ee4444'));
+    txt.setAttribute('fill', strandColors[i]);
     txt.textContent = labels[i];
     svg.appendChild(txt);
   }
@@ -954,7 +970,7 @@ function drawDecayBraid(q) {
         line.setAttribute('x2', x - crossW / 2);
         line.setAttribute('y2', positions[s]);
         const origStrand = strandOrder[s];
-        line.setAttribute('stroke', origStrand === 0 ? '#4488ee' : (strandTypes[origStrand] === 'u' ? '#4488ee' : '#ee4444'));
+        line.setAttribute('stroke', strandColors[origStrand]);
         line.setAttribute('stroke-width', '2.5');
         line.setAttribute('stroke-linecap', 'round');
         if (strandTypes[origStrand] === 'd') line.setAttribute('stroke-dasharray', '6,3');
@@ -970,7 +986,7 @@ function drawDecayBraid(q) {
       line.setAttribute('x2', x - crossW / 2);
       line.setAttribute('y2', positions[idx]);
       const origStrand = strandOrder[idx];
-      line.setAttribute('stroke', strandTypes[origStrand] === 'u' ? '#4488ee' : '#ee4444');
+      line.setAttribute('stroke', strandColors[origStrand]);
       line.setAttribute('stroke-width', '2.5');
       line.setAttribute('stroke-linecap', 'round');
       if (strandTypes[origStrand] === 'd') line.setAttribute('stroke-dasharray', '6,3');
@@ -991,15 +1007,15 @@ function drawDecayBraid(q) {
       rect.setAttribute('height', Math.abs(y2 - y1) + 12);
       rect.setAttribute('rx', '3');
       rect.setAttribute('fill', 'rgba(255,85,51,0.15)');
-      rect.setAttribute('stroke', '#ff5533');
+      rect.setAttribute('stroke', accent2Color);
       rect.setAttribute('stroke-width', '1');
       svg.appendChild(rect);
     }
 
     const overOrig = strandOrder[si];
     const underOrig = strandOrder[si + 1];
-    const overColor = strandTypes[overOrig] === 'u' ? '#4488ee' : '#ee4444';
-    const underColor = strandTypes[underOrig] === 'u' ? '#4488ee' : '#ee4444';
+    const overColor = strandColors[overOrig];
+    const underColor = strandColors[underOrig];
 
     // Under strand (drawn first)
     const underPath = document.createElementNS(ns, 'path');
@@ -1014,7 +1030,7 @@ function drawDecayBraid(q) {
     // Gap
     const gapPath = document.createElementNS(ns, 'path');
     gapPath.setAttribute('d', `M${x - hw * 0.35},${y2 + (y1 - y2) * 0.35} Q${x},${y1} ${x + hw * 0.35},${y2 + (y1 - y2) * 0.35}`);
-    gapPath.setAttribute('stroke', getComputedStyle(document.body).getPropertyValue('--gap-color').trim() || '#020710');
+    gapPath.setAttribute('stroke', gapColor);
     gapPath.setAttribute('stroke-width', '7');
     gapPath.setAttribute('fill', 'none');
     gapPath.setAttribute('stroke-linecap', 'round');
@@ -1036,7 +1052,7 @@ function drawDecayBraid(q) {
     lbl.setAttribute('y', Math.min(y1, y2) - 8);
     lbl.setAttribute('text-anchor', 'middle');
     lbl.setAttribute('font-size', '7');
-    lbl.setAttribute('fill', isFlip ? '#ff5533' : '#3a4a78');
+    lbl.setAttribute('fill', isFlip ? accent2Color : dimColor);
     lbl.textContent = isFlip ? '\u03C3' + (si + 1) + '*' : '\u03C3' + (si + 1);
     svg.appendChild(lbl);
 
@@ -1059,7 +1075,7 @@ function drawDecayBraid(q) {
     line.setAttribute('x2', endX);
     line.setAttribute('y2', yPos[s]);
     const origStrand = strandOrder[s];
-    line.setAttribute('stroke', strandTypes[origStrand] === 'u' ? '#4488ee' : '#ee4444');
+    line.setAttribute('stroke', strandColors[origStrand]);
     line.setAttribute('stroke-width', '2.5');
     line.setAttribute('stroke-linecap', 'round');
     if (strandTypes[origStrand] === 'd') line.setAttribute('stroke-dasharray', '6,3');
@@ -1074,7 +1090,7 @@ function drawDecayBraid(q) {
     txt.setAttribute('y', yPos[i] + 4);
     txt.setAttribute('text-anchor', 'start');
     txt.setAttribute('font-size', '10');
-    txt.setAttribute('fill', outTypes[i] === '\uD835\uDD32' ? '#4488ee' : '#ee4444');
+    txt.setAttribute('fill', outTypes[i] === '\uD835\uDD32' ? protonColor : neutronColor);
     txt.textContent = outTypes[i];
     svg.appendChild(txt);
   }
@@ -1085,7 +1101,7 @@ function drawDecayBraid(q) {
   title.setAttribute('y', 16);
   title.setAttribute('text-anchor', 'middle');
   title.setAttribute('font-size', '9');
-  title.setAttribute('fill', '#3a4a78');
+  title.setAttribute('fill', dimColor);
   title.textContent = `T\u2083\u2085 braid: (\u03C3\u2081\u03C3\u2082)\u2075 = 10 crossings`;
   svg.appendChild(title);
 
@@ -1095,7 +1111,7 @@ function drawDecayBraid(q) {
   flipNote.setAttribute('y', 160);
   flipNote.setAttribute('text-anchor', 'middle');
   flipNote.setAttribute('font-size', '8');
-  flipNote.setAttribute('fill', '#ff5533');
+  flipNote.setAttribute('fill', accent2Color);
   flipNote.textContent = isMinus ? 'd\u2192u flip' : 'u\u2192d flip';
   svg.appendChild(flipNote);
 }

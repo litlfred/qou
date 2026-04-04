@@ -163,7 +163,7 @@ def draw_knot_with_crossings(ax, x, y, z, color=COLORS["knot_primary"],
         indices = np.arange(
             under_i - gap_radius - 2, under_i + gap_radius + 3
         ) % n
-        ax.plot(x[indices], y[indices], color="white",
+        ax.plot(x[indices], y[indices], color=COLORS["crossing_bg"],
                 linewidth=lw + GAP_WIDTH, solid_capstyle="round", zorder=1)
 
     # Draw the knot curve in segments, splitting at gaps
