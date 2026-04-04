@@ -280,8 +280,7 @@ impl Engine {
     }
 
     fn reduce_all(&self, elem: &mut HeckeElem) {
-        // Repeatedly scan for reducible terms and process them.
-        // Since terms are in a HashMap, we drain reducible ones in batches.
+        let mut pass = 0;
         loop {
             let mut to_reduce: Vec<(TreeWord, f64)> = Vec::new();
             let mut stable: FxHashMap<TreeWord, f64> = FxHashMap::default();
@@ -296,6 +295,7 @@ impl Engine {
             }
 
             if to_reduce.is_empty() { break; }
+            pass += 1;
 
             // Process all reducible terms
             for (word, coeff) in to_reduce {
@@ -319,7 +319,14 @@ impl Engine {
 
             elem.terms = stable;
             elem.clean();
+
+            let n_reduced = elem.n_terms();
+            if pass % 50 == 0 && n_reduced > 10000 {
+                eprint!("\r      reduce pass {}: {} stable    ",
+                    pass, n_reduced);
+            }
         }
+        if pass > 50 { eprintln!("      → {} passes total", pass); }
     }
 
     fn multiply_and_reduce(&self, elem: &mut HeckeElem, gen: u8, c: f64, d: f64) {
@@ -415,8 +422,16 @@ impl Engine {
         for k in 1..a {
             let t_strand = Instant::now();
             for i in 0..k {
+                let t_cross = Instant::now();
+                let n_before = elem.n_terms();
                 let (c, d) = self.crossing_coeffs(types[i], types[k]);
                 self.multiply_and_reduce(&mut elem, i as u8, c, d);
+                let cross_ms = t_cross.elapsed().as_millis();
+                if cross_ms > 500 || elem.n_terms() > 50000 {
+                    eprintln!("    crossing ({},{}) {}-{}: {} → {} terms, {}ms",
+                        i, k, types[i] as char, types[k] as char,
+                        n_before, elem.n_terms(), cross_ms);
+                }
             }
 
             let n_before = elem.n_terms();
