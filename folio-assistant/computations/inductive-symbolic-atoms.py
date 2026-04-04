@@ -259,6 +259,98 @@ if __name__ == '__main__':
     print(f"    Counts: {pal['counts']}")
     print(f"    Palindromic: {'★ YES' if pal['is_palindromic'] else 'NO'}")
 
+    # ── Poincaré duality check for He-4 ──────────────────────────
+
+    print(f"\n  POINCARÉ DUALITY CHECK (He-4):")
+    print(f"    S₄ has 24 elements, longest w₀ has length 6 = 4·3/2")
+    print(f"    Duality: w ↔ w₀·w maps length ℓ to length 6−ℓ")
+    print(f"    Occupied cells: {He4_nf.n_terms()} / 24 ({He4_nf.n_terms()/24*100:.0f}%)")
+    print()
+
+    # For each occupied word at length ℓ, check if dual at length 6-ℓ exists
+    he4_by_length = {}
+    for w, c in He4_nf.terms.items():
+        L = len(w)
+        he4_by_length.setdefault(L, []).append((w, c))
+
+    print(f"    {'Length':>6} {'Terms':>5} {'Dual len':>8} {'Dual terms':>10}")
+    print(f"    {'-'*35}")
+    max_len = max(len(w) for w in He4_nf.terms) if He4_nf.terms else 0
+    for L in sorted(he4_by_length.keys()):
+        dual_L = max_len - L
+        n_at_L = len(he4_by_length[L])
+        n_at_dual = len(he4_by_length.get(dual_L, []))
+        match = "★" if n_at_L == n_at_dual else "✗"
+        print(f"    {L:>6} {n_at_L:>5} {dual_L:>8} {n_at_dual:>10} {match}")
+
+    # Check coefficient pairing more carefully
+    print(f"\n    Coefficient pairing at q₀ = {q0}:")
+    he4_vals = He4_nf.evaluate(q0)
+    for L in sorted(he4_by_length.keys()):
+        dual_L = max_len - L
+        if dual_L < L:
+            continue  # avoid double-printing
+        terms_L = sorted(he4_by_length[L], key=lambda x: x[0])
+        terms_dual = sorted(he4_by_length.get(dual_L, []), key=lambda x: x[0])
+        if terms_L and terms_dual:
+            vals_L = sorted([float(c.subs(q, q0)) for _, c in terms_L])
+            vals_dual = sorted([float(c.subs(q, q0)) for _, c in terms_dual])
+            # Check if signs match
+            signs_L = ['+' if v > 0 else '-' for v in vals_L]
+            signs_dual = ['+' if v > 0 else '-' for v in vals_dual]
+            print(f"      ℓ={L} ↔ ℓ={dual_L}: "
+                  f"signs={signs_L} ↔ {signs_dual}")
+
+    # ── Duality check against FULL Bruhat lattice ─────────────
+
+    def bruhat_duality_check(nf, n_strands, name):
+        """Check Poincaré duality against the full S_n Bruhat lattice.
+
+        The longest element w₀ has length n(n-1)/2.
+        Duality: w ↔ w₀·w maps length ℓ to length n(n-1)/2 − ℓ.
+        Self-dual occupancy = palindromic histogram over FULL range.
+        """
+        max_bruhat = n_strands * (n_strands - 1) // 2
+        print(f"\n  {name} DUALITY CHECK (vs FULL S_{n_strands} Bruhat lattice):")
+        print(f"    |S_{n_strands}| = {sp.factorial(n_strands)}, "
+              f"longest w₀ length = {max_bruhat}")
+
+        by_length = {}
+        for w, c in nf.terms.items():
+            L = len(w)
+            by_length.setdefault(L, []).append((w, c))
+
+        # Build full histogram 0..max_bruhat
+        full_hist = [len(by_length.get(L, [])) for L in range(max_bruhat + 1)]
+        is_palindrome = full_hist == full_hist[::-1]
+
+        print(f"    Occupied: {nf.n_terms()} / {sp.factorial(n_strands)}")
+        print(f"    Full histogram [0..{max_bruhat}]: {full_hist}")
+        print(f"    Self-dual (palindromic): {'★ YES' if is_palindrome else '✗ NO'}")
+
+        if not is_palindrome:
+            # Show the defects
+            defects = []
+            for L in range(max_bruhat + 1):
+                dual_L = max_bruhat - L
+                n_L = full_hist[L]
+                n_dual = full_hist[dual_L]
+                if n_L != n_dual:
+                    defects.append((L, n_L, dual_L, n_dual))
+            if defects:
+                print(f"    Duality defects:")
+                for L, n_L, dual_L, n_dual in defects:
+                    print(f"      ℓ={L} ({n_L} terms) ↔ "
+                          f"ℓ={dual_L} ({n_dual} terms) — "
+                          f"{'excess' if n_L > n_dual else 'deficit'} at ℓ={L}")
+
+        return is_palindrome
+
+    bruhat_duality_check(He4_nf, 4, "He-4")
+    bruhat_duality_check(H3_nf, 3, "Tritium")
+    bruhat_duality_check(He3_nf, 3, "He-3")
+    bruhat_duality_check(D_nf, 2, "Deuterium")
+
     t1 = time.time()
     print(f"\n  Phase 1 time: {t1-t0:.1f}s")
 

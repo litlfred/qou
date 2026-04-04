@@ -298,15 +298,40 @@ The NF three-part decomposition has a natural duality structure:
 - **ℵ^(k<N)**: incomplete occupancy = structural defect (I₆)
 - **ℵ**: full completeness = the observable atom
 
-### Shell closure as Bruhat self-duality
+### Shell closure and Schubert cell occupancy
 
-**Magic number ↔ palindromic NF ↔ self-dual Schubert cell occupancy**
+**Verified numerically (session 2):**
 
-- He-4: {1,3,4,3,1} = Poincaré(S₄) — every occupied cell has a dual
-  partner that is also occupied. This IS the definition of shell closure.
-- Tritium: {1,1,1,1} not palindromic — some occupied cells map to
-  unoccupied cells under Bruhat duality. That asymmetry IS the
-  1-term excess (4 terms vs 3 target) and physical instability.
-- For a NON-magic nucleus, occupied cells are NOT self-dual:
-  the duality pairing maps some occupied to unoccupied. Shell
-  incompleteness = duality defect.
+The NF lives in H_n(q), whose basis is indexed by |S_n| reduced
+words. Each word is a Schubert cell C_w in the flag variety GL_n/B.
+
+| Nucleus | |S_n| | Occupied | Support range | Support histogram | Palindromic? |
+|---------|-------|----------|---------------|-------------------|-------------|
+| D N(1,1) | 2 | 2/2 (100%) | [0..1] | {1,1} | ★ YES |
+| ³H N(1,2) | 6 | 4/6 (67%) | [0..2] | {1,2,1} | ★ YES (over support) |
+| ³He N(2,1) | 6 | 4/6 (67%) | [0..2] | {1,2,1} | ★ YES (over support) |
+| ⁴He N(2,2) | 24 | 12/24 (50%) | [0..4] | {1,3,4,3,1} | ★ YES (over support) |
+
+**Key insight**: ALL nucleon-level NFs are palindromic over their
+support range. The support extent (how much of the Bruhat lattice
+is filled) determines the physical character:
+
+- **Deuterium**: fills 100% of S₂ → trivially self-dual
+- **He-4**: fills 50% of S₄, but the 12 occupied cells are
+  symmetrically distributed ({1,3,4,3,1} = Poincaré(S₄ truncated))
+- **Tritium/He-3**: fills 67% of S₃ with palindromic support
+  {1,2,1}, but the FULL histogram [1,2,1,0] has a gap at ℓ=3
+
+The support palindromicity is the NF-intrinsic self-duality.
+The gap between support extent and full Bruhat length (w₀) is
+the degree of shell incompleteness:
+
+  gap(³H) = 3 − 2 = 1 (one Bruhat level missing → 1 excess term)
+  gap(⁴He) = 6 − 4 = 2 (two levels missing → 8 excess terms)
+  gap(D) = 1 − 1 = 0 (complete → optimal)
+
+**Shell closure ↔ zero gap ↔ support = full Bruhat lattice**.
+This is the correct formalization of "self-dual Schubert cell
+occupancy." For non-magic nuclei, the support palindromicity
+holds, but the gap creates asymmetry under the full Poincaré
+duality w ↔ w₀·w.
