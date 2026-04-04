@@ -101,7 +101,7 @@ dimensions $[2j+1]_q > 0$.  The $q$-BSD data is:
 
 **(II) $\mathbb{G}_m$ torsion: roots of unity $q = \zeta_n$.**
 At the torsion points
-([root-of-unity truncation](#rem:root-of-unity-truncation)),
+([root-of-unity truncation](#prop:root-of-unity-truncation)),
 the representation category truncates to finitely many
 simple objects $V_0, V_{1/2}, \ldots, V_{(n-2)/2}$, forming
 a **modular tensor category** (Chern--Simons TQFT at level
@@ -179,7 +179,7 @@ objects whose spectral support contains $\rho$).  Define the
 map:
 
 $$
-\text{\textcyr{Sh}}_q(\mathcal{E}_q)
+\mathrm{Sha}_q(\mathcal{E}_q)
 \;:=\; \ker\!\left(
   H^1_{\otimes}(\mathbf{C},\, E_q)
   \;\longrightarrow\;
@@ -219,7 +219,7 @@ $$
 L(\mathcal{E}_q, 1)
 \;=\;
 \Omega_q
-\;\cdot\; |\text{\textcyr{Sh}}_q(\mathcal{E}_q)|
+\;\cdot\; |\mathrm{Sha}_q(\mathcal{E}_q)|
 \;\cdot\; \prod_{\mathfrak{m}} c_{\mathfrak{m}}(q)
 $$
 
@@ -235,7 +235,7 @@ $$
 \frac{L^{(r_q)}(\mathcal{E}_q, 1)}{[r_q]_q!}
 \;=\;
 \frac{\Omega_q \;\cdot\; \mathrm{Reg}_q(\mathcal{E}_q)
-  \;\cdot\; |\text{\textcyr{Sh}}_q(\mathcal{E}_q)|
+  \;\cdot\; |\mathrm{Sha}_q(\mathcal{E}_q)|
   \;\cdot\; \displaystyle\prod_{\mathfrak{m}} c_{\mathfrak{m}}(q)}
 {|\mathcal{E}_q(\mathbf{1})_{\mathrm{tors}}|^2_q}
 $$
@@ -294,7 +294,7 @@ by $(\mathbf{C}, A)$:
 | $E(\mathbb{Q})$ | $\tau(E_q)^G = 0$ | $V_{1/2}^{\mathrm{SU}(2)} = 0$ |
 | $\mathrm{rank}\, E(\mathbb{Q})$ | $r_q = 0$ | No trivial summand in $H^1(\mathcal{E}_q)$ |
 | $L(E, s)$ | $L(\mathcal{E}_q, s)$ | Frobenius on $H^1(\mathcal{E}_q) \subset H^1(\mathcal{B})$ |
-| $\text{\textcyr{Sh}}(E)$ | $\text{\textcyr{Sh}}_q(\mathcal{E}_q)$ | Monoidal $H^1$ localized at Reeb spectrum |
+| $\mathrm{Sha}(E)$ | $\mathrm{Sha}_q(\mathcal{E}_q)$ | Monoidal $H^1$ localized at Reeb spectrum |
 | $\Omega_E$ | $\Omega_q$ | Reeb period of the contact structure |
 
 **Classical limit.**

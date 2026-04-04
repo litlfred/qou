@@ -12,7 +12,7 @@ export default conjecture({
     "conj:classical-riemann-hypothesis",
     "prop:coral-elliptic",
     "rem:substrate-gm-torsion",
-    "rem:root-of-unity-truncation",
+    "prop:root-of-unity-truncation",
     "prop:ns-kummer-specialisation",
   ],
   tags: [

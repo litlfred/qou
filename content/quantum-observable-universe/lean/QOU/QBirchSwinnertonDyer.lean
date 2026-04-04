@@ -49,12 +49,17 @@ universe u v
 variable {C : Type u} [CategoryTheory.Category.{v} C]
   [CategoryTheory.MonoidalCategory C]
 
-/-- The **categorical Mordell–Weil group** of an object `E` in a monoidal
+/-- The **categorical Mordell–Weil type** of an object `E` in a monoidal
     category: morphisms from the monoidal unit to `E`.
+
+    The group law (when it exists) is induced by the chord-tangent
+    addition on the elliptic curve transported through the fibre functor.
+    This type may carry an `AddCommGroup` structure when `E` is an
+    elliptic curve object; here we define only the underlying type.
 
     In the QOU with `G = SU(2)`, `E = E_q` carries the fundamental
     representation `V_{1/2}`.  Since `V_{1/2}^{SU(2)} = 0`, this
-    Hom-space is trivial in the Descartes QOU.
+    Hom-space is trivial (Subsingleton) in the Descartes QOU.
 
     LaTeX: `𝓔_q(𝟙) := Hom_𝐂(𝟙, E_q)` -/
 def CategoricalMordellWeil (E : C) : Type v :=
@@ -91,24 +96,18 @@ theorem descartes_rank_zero
   -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
   sorry
 
-/-- **Weak q-BSD for the Descartes QOU**: since `r_q = 0`,
-    the conjecture reduces to `L(𝓔_q, 1) ≠ 0`.
+/-- **Weak q-BSD conjecture** as a `Prop`: for a given QOU, the
+    L-function of the Descartes elliptic curve does not vanish at s = 1.
 
-    At the q-scale this is an unconditional theorem: the Hasse–Weil
-    bound `|α_𝓔| = q^{1/2}` ensures all Euler factors of the
-    L-function are bounded away from zero at s = 1.
-
-    The conjecture is that this persists through the classical
-    limit q → 1, predicting L(E₁, 1) ≠ 0 for the curve
-    E₁ : y² = x³ + ⅔x + 20/27.
+    At the q-scale this is an unconditional theorem (Hasse–Weil).
+    The conjecture is that it persists through q → 1, predicting
+    L(E₁, 1) ≠ 0 for E₁ : y² = x³ + ⅔x + 20/27.
 
     Ref: [birch1965] https://doi.org/10.1515/crll.1965.218.79 -/
-axiom q_birch_swinnerton_dyer_weak
-    (L_value_at_one : ℝ)  -- L(𝓔_q, 1)
-    (h_q_scale : L_value_at_one ≠ 0)  -- proved at q-scale
-    : L_value_at_one ≠ 0  -- conjectured to persist at q → 1
+def WeakQBSD (L_value_at_one : ℝ) : Prop :=
+  L_value_at_one ≠ 0
 
-/-- **Full q-BSD for the Descartes QOU** (r_q = 0 case):
+/-- **Full q-BSD formula** (r_q = 0 case) as a `Prop`:
 
     L(𝓔_q, 1) = Ω_q · |Ш_q(𝓔_q)| · ∏ c_𝔪(q)
 
@@ -116,11 +115,12 @@ axiom q_birch_swinnerton_dyer_weak
     Mordell–Weil group is trivial.
 
     Ref: [birch1965] https://doi.org/10.1515/crll.1965.218.79 -/
-axiom q_bsd_full_rank_zero
+def FullQBSD_rank_zero
     (L_value : ℝ)           -- L(𝓔_q, 1)
     (reeb_period : ℝ)       -- Ω_q
     (sha_order : ℕ)         -- |Ш_q(𝓔_q)|
     (tamagawa_prod : ℝ)     -- ∏ c_𝔪(q)
-    : L_value = reeb_period * ↑sha_order * tamagawa_prod
+    : Prop :=
+  L_value = reeb_period * ↑sha_order * tamagawa_prod
 
 end QOU
