@@ -44,7 +44,10 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
       _ ≤ q ^ k := by
         apply pow_right_mono₀ (le_of_lt hq)
         exact hk
-  linarith
+  calc q ^ k ≥ q := hq_ge
+    _ > 1 := hq
+    _ > q⁻¹ := by linarith
+    _ ≥ q⁻¹ ^ k := hinv_le
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
 theorem qInteger_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
@@ -255,13 +258,14 @@ theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
   unfold AntiParallelDynamics.separation_sq AntiParallelDynamics.blowupTime at *
   have hπ : (0 : ℝ) < Real.pi := Real.pi_pos
   have hΓ := dyn.circ_pos
-  -- After unfold: ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
-  -- goal: dyn.d₀ ^ 2 - dyn.circulation * t / Real.pi > 0
   have hπ_ne : Real.pi ≠ 0 := ne_of_gt hπ
   have hΓ_ne : dyn.circulation ≠ 0 := ne_of_gt hΓ
-  rw [sub_pos]
-  rw [div_lt_iff₀ hπ]
-  rw [lt_div_iff₀ hΓ] at ht
+  -- ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
+  -- goal: dyn.d₀ ^ 2 - dyn.circulation * t / Real.pi > 0
+  have h1 : t * dyn.circulation < Real.pi * dyn.d₀ ^ 2 := by
+    rwa [lt_div_iff₀ hΓ, mul_comm] at ht
+  have h2 : dyn.circulation * t / Real.pi < dyn.d₀ ^ 2 := by
+    rw [div_lt_iff₀ hπ]; linarith [mul_comm dyn.circulation t]
   linarith
 
 /-- d(t)² = 0 at t = T* (collision). -/
