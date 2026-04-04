@@ -15,7 +15,6 @@ import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Data.List.Basic
 import Mathlib.Order.Filter.Basic
-import Mathlib.Tactic.Omega
 
 /-!
 # Chapter 3 — Path Integrals and Braiding
