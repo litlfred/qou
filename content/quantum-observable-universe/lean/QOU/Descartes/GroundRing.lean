@@ -1,4 +1,4 @@
-import Mathlib.RingTheory.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Tactic.Ring

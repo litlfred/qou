@@ -1,7 +1,7 @@
 import QOU.Descartes.GroundRing
 import QOU.Descartes.TransferMatrix
 import QOU.ClassicalLimitObstruction
-import Mathlib.RingTheory.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
