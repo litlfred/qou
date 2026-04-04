@@ -251,6 +251,87 @@ class SymbolicHeckeDivision:
 
         return elem, False
 
+    def collapse_formal_powers(self, elem):
+        """Collapse consecutive runs of the same formal variable.
+
+        ℵ₁·ℵ₁·ℵ₁ → (ℵ₁, completeness=3)
+
+        Each formal variable ℵ_k has n_components (from its NF).
+        A run of length n means n of those components were matched.
+        completeness = n / n_components.
+
+        We use (atom_id * 1000 - completeness) as the collapsed ID.
+        E.g. ℵ₁ with completeness 3 → formal var -1003.
+
+        Returns (new_elem, n_collapses, collapse_info).
+        """
+        new_terms = {}
+        n_collapses = 0
+        collapse_info = []
+
+        for word, coeff in elem.terms.items():
+            if coeff == 0:
+                continue
+
+            new_word = []
+            i = 0
+            while i < len(word):
+                if word[i] < 0:
+                    atom_id = word[i]
+                    run_len = 1
+                    while i + run_len < len(word) and word[i + run_len] == atom_id:
+                        run_len += 1
+
+                    if run_len > 1:
+                        # Collapse: annotate with completeness
+                        collapsed_id = atom_id * 1000 - run_len
+                        new_word.append(collapsed_id)
+                        n_collapses += 1
+
+                        # Track completeness relative to NF size
+                        info = self._quotient_relations.get(atom_id)
+                        if info:
+                            n_comp = info['n_components']
+                            collapse_info.append({
+                                'atom': info['name'],
+                                'run_len': run_len,
+                                'n_components': n_comp,
+                                'completeness': run_len / n_comp,
+                            })
+                    else:
+                        new_word.append(atom_id)
+
+                    i += run_len
+                else:
+                    new_word.append(word[i])
+                    i += 1
+
+            new_w = tuple(new_word)
+            new_terms[new_w] = sp.expand(
+                new_terms.get(new_w, sp.Integer(0)) + coeff)
+
+        return SymbolicHeckeElement(new_terms), n_collapses, collapse_info
+
+    def factor_content_classes(self, elem):
+        """Group terms by generator content (same set of σ_i, different ordering).
+
+        Terms in the same content class are related by YB reorderings.
+        The DOMINANT word (largest coefficient) represents the class.
+
+        Returns dict: {content_tuple: [(word, coeff), ...]}.
+        """
+        classes = {}
+        for w, c in elem.terms.items():
+            # Content = sorted tuple of non-negative generators
+            content = tuple(sorted(g for g in w if g >= 0))
+            classes.setdefault(content, []).append((w, c))
+
+        # Sort each class by coefficient magnitude (symbolic: use term count as proxy)
+        for content in classes:
+            classes[content].sort(key=lambda x: len(str(x[1])))
+
+        return classes
+
     # ── Structural ideals I₁-I₇ ──────────────────────────────────
 
     def register_structural_ideal(self, name, pattern_fn):
@@ -317,9 +398,80 @@ class SymbolicHeckeDivision:
 
             return elem, False  # annotation only for now
 
+        def I4_neutron_tail(elem):
+            """I₄: Factor out neutron tail σ₃·σ₄·σ₃·σ₅.
+
+            Terms containing the neutron tail sub-word can be factored
+            as (prefix) · 𝔫₁ · (suffix). The 66/210 split in deuterium
+            families: 66 complete (with 𝔫₁), 210 incomplete.
+            """
+            tail = (3, 4, 3, 5)
+            new_terms = dict(elem.terms)
+            did_reduce = False
+
+            for word, coeff in list(elem.terms.items()):
+                if coeff == 0 or len(word) < 4:
+                    continue
+                sigma_positions = [(i, word[i]) for i in range(len(word)) if word[i] >= 0]
+                # Check contiguous sub-words
+                for pos in range(len(word) - 3):
+                    if word[pos:pos + 4] == tail:
+                        # Replace with formal neutron tail variable (-2)
+                        prefix = word[:pos]
+                        suffix = word[pos + 4:]
+                        new_word = prefix + (-2,) + suffix
+                        del new_terms[word]
+                        new_terms[new_word] = sp.expand(
+                            new_terms.get(new_word, sp.Integer(0)) + coeff)
+                        did_reduce = True
+                        break
+                if did_reduce:
+                    break
+
+            return SymbolicHeckeElement(new_terms), did_reduce
+
         # Register (placeholders — will be filled as patterns emerge)
         self.register_structural_ideal('I1_sigma0_ext', I1_sigma0_extension)
+        self.register_structural_ideal('I4_neutron_tail', I4_neutron_tail)
         self.register_structural_ideal('I7_electron_bridge', I7_electron_bridge)
+
+    def apply_structural_ideals(self, elem, max_passes=100):
+        """Apply all registered structural ideals until convergence.
+
+        Returns (new_elem, total_reductions, log).
+        """
+        total = 0
+        log = []
+        for _ in range(max_passes):
+            any_reduced = False
+            for ideal in self._structural_ideals:
+                new_elem, did_reduce = ideal['fn'](elem)
+                if did_reduce:
+                    elem = new_elem
+                    total += 1
+                    log.append(ideal['name'])
+                    any_reduced = True
+                    break
+            if not any_reduced:
+                break
+        return elem, total, log
+
+    def extract_completeness_layers(self, elem, atom_id=-1):
+        """Separate an element into completeness layers.
+
+        For each term, count how many instances of ℵ_k appear.
+        Group terms by this count.
+
+        Returns dict: {n_formal: SymbolicHeckeElement}
+        """
+        layers = {}
+        for word, coeff in elem.terms.items():
+            n_formal = sum(1 for g in word if g == atom_id)
+            if n_formal not in layers:
+                layers[n_formal] = {}
+            layers[n_formal][word] = coeff
+
+        return {k: SymbolicHeckeElement(v) for k, v in layers.items()}
 
     # ── Crossing constructors ────────────────────────────────────
 

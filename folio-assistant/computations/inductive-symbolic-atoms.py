@@ -376,6 +376,137 @@ if __name__ == '__main__':
     formal_count = sum(1 for w in deut_nf.terms if any(g < 0 for g in w))
     print(f"    Terms containing ℵ₁: {formal_count}")
 
+    # ── Phase 3c: Collapse formal powers ──────────────────────────
+
+    print(f"\n  COLLAPSE: ℵ₁·ℵ₁·...·ℵ₁ → ℵ₁^n")
+    deut_collapsed, n_collapses, collapse_info = div_quark.collapse_formal_powers(deut_nf)
+    print(f"    Collapses: {n_collapses}")
+    print(f"    Terms before: {deut_nf.n_terms()}")
+    print(f"    Terms after:  {deut_collapsed.n_terms()}")
+
+    if collapse_info:
+        # Summarize completeness levels
+        comp_levels = {}
+        for ci in collapse_info:
+            key = (ci['run_len'], ci['n_components'])
+            comp_levels[key] = comp_levels.get(key, 0) + 1
+        print(f"    Completeness distribution:")
+        for (run, total), count in sorted(comp_levels.items()):
+            print(f"      ℵ₁^{run} (completeness {run}/{total} = {run/total:.1%}): {count} terms")
+
+    # Factor content classes on collapsed result
+    classes = div_quark.factor_content_classes(deut_collapsed)
+    print(f"\n    Content classes after collapse: {len(classes)}")
+
+    # Show collapsed NF histogram
+    hist_c = {}
+    for w in deut_collapsed.terms:
+        L = len(w)
+        hist_c[L] = hist_c.get(L, 0) + 1
+    print(f"    Word-length histogram: {dict(sorted(hist_c.items()))}")
+
+    # ── Phase 3d: Identify I₄ neutron tail pattern ────────────────
+
+    print(f"\n  I₄ NEUTRON TAIL ANALYSIS:")
+    neutron_tail = (3, 4, 3, 5)  # σ₃·σ₄·σ₃·σ₅
+
+    has_tail = 0
+    no_tail = 0
+    for w in deut_collapsed.terms:
+        sigma_part = tuple(g for g in w if g >= 0)
+        if len(sigma_part) >= 4:
+            # Check if neutron tail appears as sub-sequence
+            found = False
+            for pos in range(len(sigma_part) - 3):
+                if sigma_part[pos:pos+4] == neutron_tail:
+                    found = True
+                    break
+            if found:
+                has_tail += 1
+            else:
+                no_tail += 1
+        else:
+            no_tail += 1
+
+    print(f"    Terms with 𝔫₁ = σ₃·σ₄·σ₃·σ₅: {has_tail}")
+    print(f"    Terms without 𝔫₁: {no_tail}")
+    if has_tail + no_tail > 0:
+        print(f"    𝔫₁ prevalence: {has_tail/(has_tail+no_tail)*100:.0f}%")
+
+    # ── Phase 3e: Show top terms of collapsed NF ──────────────────
+
+    print(f"\n    Top 15 collapsed terms by |coeff| at q₀:")
+    vals_c = deut_collapsed.evaluate(q0)
+    sorted_c = sorted(vals_c.items(), key=lambda x: -abs(x[1]))[:15]
+    for w, v in sorted_c:
+        ws_parts = []
+        for g in w:
+            if g < -100:
+                # Collapsed formal variable
+                atom_id = -((-g) // 1000)
+                comp = -((-g) % 1000)
+                ws_parts.append(f"ℵ{-atom_id}^{comp}")
+            elif g < 0:
+                ws_parts.append(f"ℵ{-g}")
+            else:
+                ws_parts.append(f"σ_{g}")
+        ws = " · ".join(ws_parts) if ws_parts else "𝟏"
+        sign = "INPUT" if v < 0 else "OUTPUT"
+        print(f"      {sign:>6} ({v:+.6f}) · {ws}")
+
+    # ── Phase 3f: Completeness layer analysis ────────────────────
+
+    print(f"\n  COMPLETENESS LAYER ANALYSIS:")
+    layers = div_quark.extract_completeness_layers(deut_nf, atom_id=-1)
+    for n_formal in sorted(layers.keys(), reverse=True):
+        layer = layers[n_formal]
+        n_comp = 4  # protium has 4 NF terms
+        completeness = n_formal / n_comp if n_comp > 0 else 0
+        net = sum(layer.terms.values())
+        net_val = float(net.subs(q, q0))
+        print(f"    ℵ₁^{n_formal} (completeness {completeness:.0%}): "
+              f"{layer.n_terms()} terms, net={net_val:+.6f}")
+
+        if n_formal == 4:
+            print(f"      ↑ THIS IS THE ATOM (full protium completion)")
+            print(f"      Words in ℵ₁⁴ layer:")
+            for w, c in sorted(layer.terms.items(), key=lambda x: (len(x[0]), x[0])):
+                ws_parts = []
+                for g in w:
+                    if g < 0:
+                        ws_parts.append(f"ℵ₁")
+                    else:
+                        ws_parts.append(f"σ_{g}")
+                ws = " · ".join(ws_parts)
+                c_val = float(c.subs(q, q0))
+                print(f"        ({c_val:+.6f}) · {ws}")
+
+    # ── Phase 3g: Three-part decomposition ──────────────────────
+
+    print(f"\n  THREE-PART NF DECOMPOSITION:")
+    vals_all = deut_nf.evaluate(q0)
+    inputs = [(w, v) for w, v in vals_all.items() if v < 0]
+    outputs = [(w, v) for w, v in vals_all.items() if v > 0]
+
+    # Separate outputs into observable (ℵ₁⁴) and mediator (not ℵ₁⁴)
+    observable = [(w, v) for w, v in outputs
+                  if sum(1 for g in w if g == -1) == 4]
+    mediator = [(w, v) for w, v in outputs
+                if sum(1 for g in w if g == -1) != 4]
+
+    sum_input = sum(v for _, v in inputs)
+    sum_observable = sum(v for _, v in observable)
+    sum_mediator = sum(v for _, v in mediator)
+
+    print(f"    INPUTS (negative):     {len(inputs)} terms, sum = {sum_input:+.6f}")
+    print(f"    MEDIATOR (pos, <ℵ₁⁴): {len(mediator)} terms, sum = {sum_mediator:+.6f}")
+    print(f"    OBSERVABLE (pos, ℵ₁⁴): {len(observable)} terms, sum = {sum_observable:+.6f}")
+    print(f"    Total net: {sum_input + sum_observable + sum_mediator:+.6f}")
+
+    if sum_observable != 0:
+        g_A_quark = abs(sum_observable / (sum_observable + sum_input))
+        print(f"\n    g_A(quark) = |observable/(observable+input)| = {g_A_quark:.6f}")
+
     # Analyze deuterium NF structure
     print(f"\n  DEUTERIUM NF STRUCTURE ANALYSIS:")
 

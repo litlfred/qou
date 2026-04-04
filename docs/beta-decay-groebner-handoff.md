@@ -116,6 +116,69 @@ where:
    corrections, but is superseded by Gröbner computation.
 4. **Floating point** — all computations should use exact q.
 
+## Session 2 Results (2026-04-04)
+
+### Quotient reduction: 828 → 102 terms
+
+Implemented symbolic quotient ideals in `hecke_symbolic.py`:
+- **Whole-atom quotient**: match all NF terms proportionally → ℵ_k
+- **Sub-word quotient**: match individual NF terms as sub-words
+- **Formal power collapse**: ℵ₁·ℵ₁·ℵ₁ → ℵ₁³ (completeness tracking)
+
+Applied to deuterium at quark level (7 strands):
+- Raw: 828 terms
+- With sub-word quotient: **102 terms** (185 quotient reductions)
+- Quotient reduced all terms to ℵ₁^n · (neutron+bridge generators)
+
+### Completeness distribution
+
+| ℵ₁ power | Completeness | Terms | Meaning |
+|----------|-------------|-------|---------|
+| ℵ₁⁴ | 100% (4/4) | 7 | Full protium — THE ATOM |
+| ℵ₁³ | 75% (3/4) | 23 | Missing one protium component |
+| ℵ₁² | 50% (2/4) | 32 | Half protium |
+| ℵ₁¹ | 25% (1/4) | 32 | Single protium sub-word |
+| none | 0% | 8 | Pure σ terms |
+
+### Structural patterns in deuterium quark NF
+
+The dominant term (+3.625) is:
+```
+ℵ₁⁴ · σ₀ · σ₂·σ₃·σ₂ · σ₄·σ₃·σ₅
+      ↑       ↑              ↑
+      I₁     I₇(bridge)    I₄(neutron tail)
+```
+
+Three structural operations visible:
+- **σ₀**: σ₀-extension (I₁) — leading quark crossing
+- **σ₂·σ₃·σ₂**: electron bridge (I₇) — Borromean bridge
+- **σ₃·σ₄·σ₃·σ₅**: neutron tail (I₄, partial) — 12% of terms
+
+### Key insight: NF = interaction history
+
+Negative coefficients = input slots (what the atom is receptive to).
+Positive coefficients = observable + mediator.
+The Q-value is an algebraic function of q, not a numerical approximation.
+
+### Quark-level goal
+
+Not just nucleon-level (p,n strands) but quark-level optimal:
+- He-4 = 12 quarks + 2 electrons = 14 strands
+- Computationally intractable without quotient ideals
+- Strategy: register each atom as quotient variable, chain upward
+  - ℵ₁ = protium (4 terms at 4 strands)
+  - ℵ₂ = deuterium/N(1,1) quotient (target 7 terms)
+  - ℵ₃ = He-3 with ℵ₁,ℵ₂ (target 10 terms)
+  - ℵ₄ = He-4 with ℵ₁,ℵ₂,ℵ₃ (target 14 terms)
+
+### What still needs to happen (102 → 7)
+
+The 102 remaining terms need I₁-I₇ applied AS GROUP OPERATIONS:
+1. Group the 25 content classes into I₁-I₇ families
+2. Each family has one DOMINANT word + derived words
+3. Factor: ℵ₁⁴ · σ₀(I₁) · bridge(I₇) · tail(I₄) = single atom
+4. Non-ℵ₁⁴ terms (incomplete) are structural defects (I₆)
+
 ## Next Steps
 
 ### GOAL 1: Optimal Gröbner basis (n_terms = n_strands)
@@ -184,6 +247,7 @@ fibre operations for beta decay.
 | `groebner-beta-decay.py` | Free neutron decay + particle decomposition |
 | `inductive-quark-atoms.py` | Build atoms from vacuum (quark level) |
 | `qvalue-representation-theory.py` | Transfer matrix Q-values (superseded) |
+| `inductive-symbolic-atoms.py` | Symbolic inductive builder with quotient (exact in q) |
 
 ## Lean Files
 
