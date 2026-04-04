@@ -13,7 +13,7 @@ import { chapter, section } from "../../schema/builders";
  *     finite-time blowup.
  */
 export default chapter({
-  number: 10,
+  number: 7,
   title: "Fluid Dynamics of the Brane",
   label: "chap:fluid-dynamics",
   sections: [

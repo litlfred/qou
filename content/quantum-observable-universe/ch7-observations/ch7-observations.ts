@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * this chapter is purely observational data and predictions.
  */
 export default chapter({
-  number: 7,
+  number: 10,
   title: "Physical Observations",
   label: "chap:observations",
   sections: [

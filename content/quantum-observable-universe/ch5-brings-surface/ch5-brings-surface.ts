@@ -10,7 +10,7 @@ import { chapter, section } from "../../schema/builders";
  * knot-particle spectrum.
  */
 export default chapter({
-  number: 6,
+  number: 9,
   title: "The Descartes Universe",
   label: "chap:descartes-universe",
   sections: [
