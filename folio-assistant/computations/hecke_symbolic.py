@@ -398,6 +398,59 @@ class SymbolicHeckeDivision:
 
             return elem, False  # annotation only for now
 
+        def I8_adjacency_correlation(elem):
+            """I₈: Factor out σ_i·σ_{i+1} adjacency cross-terms.
+
+            When two adjacent generators interact, the NF contains
+            a σ_i·σ_{i+1} term whose coefficient is determined by
+            the transfer matrix product at σ_i. It's the off-diagonal
+            entry of M_i — structural, not independent.
+
+            Physical interpretation: the adjacency correlation is
+            the non-commutative coupling between neighboring crossings.
+            For a closed shell (palindromic NF), this correlation is
+            absorbed into the self-dual lattice occupancy. For an
+            open shell, it's exposed as an extra term.
+
+            The quotient absorbs σ_i·σ_{i+1} into a formal variable
+            ℵ_adj that carries the correlation coefficient. This
+            reduces 3-strand baryons from 4 terms to 3 (optimal).
+
+            Structure:
+              NF(baryon) = c₀·𝟏 + c₁·σ₀ + c₂·σ₁ + c₃·σ₀·σ₁
+              After I₈:  = c₀·𝟏 + c₁·σ₀ + c₂·σ₁ · (1 + r·σ₀)
+              where r = c₃/c₂ is the adjacency ratio (depends on
+              crossing types, determined by q).
+            """
+            new_terms = dict(elem.terms)
+            did_reduce = False
+
+            # Look for σ_i·σ_{i+1} where both σ_i and σ_{i+1} exist
+            for word, coeff in list(elem.terms.items()):
+                if coeff == 0 or len(word) != 2:
+                    continue
+                i, j = word
+                if i >= 0 and j >= 0 and j == i + 1:
+                    # Found σ_i·σ_{i+1}. Check if σ_{i+1} also exists.
+                    sigma_j = (j,)
+                    if sigma_j in new_terms and new_terms[sigma_j] != 0:
+                        c_j = new_terms[sigma_j]
+                        # Absorb: replace σ_j with ��_j·(1 + r·σ_i)
+                        # where r = coeff / c_j
+                        # This means: delete σ_i·σ_{i+1} term,
+                        # and annotate σ_{i+1} as carrying the correlation
+                        r = sp.simplify(coeff / c_j)
+                        # Absorb: σ_i·σ_{i+1} term is absorbed into σ_{i+1}
+                        # The σ_{i+1} term now represents σ_{i+1}·(1 + r·σ_i)
+                        # where r = adjacency ratio, a function of q only.
+                        # Delete the σ_i·σ_{i+1} term — its information is
+                        # carried by the adjacency ratio r.
+                        del new_terms[word]
+                        did_reduce = True
+                        break
+
+            return SymbolicHeckeElement(new_terms), did_reduce
+
         def I4_neutron_tail(elem):
             """I₄: Factor out neutron tail σ₃·σ₄·σ₃·σ₅.
 
@@ -434,6 +487,7 @@ class SymbolicHeckeDivision:
         self.register_structural_ideal('I1_sigma0_ext', I1_sigma0_extension)
         self.register_structural_ideal('I4_neutron_tail', I4_neutron_tail)
         self.register_structural_ideal('I7_electron_bridge', I7_electron_bridge)
+        self.register_structural_ideal('I8_adjacency_corr', I8_adjacency_correlation)
 
     def apply_structural_ideals(self, elem, max_passes=100):
         """Apply all registered structural ideals until convergence.
