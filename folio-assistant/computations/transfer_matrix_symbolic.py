@@ -67,9 +67,84 @@ z_markov = 1 / (q_half + q_half_inv)  # Markov parameter
 Q0 = 1.10998
 
 # Threshold: for A <= SYMBOLIC_THRESHOLD, keep the full Skein
-# polynomial symbolic. For larger nuclei, per-generator volumes
-# remain symbolic but P_N is evaluated numerically.
+# polynomial symbolic AND per-generator volumes symbolic.
+# For larger nuclei, construction and evaluation use numeric
+# fast paths to avoid sympy expression blowup.
 SYMBOLIC_THRESHOLD = 6
+
+
+# -- Numeric fast path for large nuclei ---------------------------------
+# Pre-compute numeric crossing coefficients and matrix ops at q0
+# so that large nuclei (A > SYMBOLIC_THRESHOLD) run in milliseconds.
+
+def _numeric_ha(q_val):
+    return q_val - 1.0 / q_val
+
+def _numeric_s(q_val):
+    return q_val**0.5 - q_val**(-0.5)
+
+def _numeric_z(q_val):
+    return 1.0 / (q_val**0.5 + q_val**(-0.5))
+
+def _numeric_crossing_coeffs(ti, tj, q_val):
+    """Return numeric (c, d) for nucleon types at given q."""
+    s = _numeric_s(q_val)
+    if ti == 'p' and tj == 'p':
+        return 1.0, 0.0
+    elif ti == 'n' and tj == 'n':
+        return q_val**2, -q_val * s
+    else:
+        return 0.5 * (1.0 + q_val**2), -0.5 * q_val * s
+
+def _numeric_T(c, d, ha_val):
+    """Build numeric 2x2 transfer matrix."""
+    return [[c * ha_val + d, c], [c, d]]
+
+def _numeric_mat_mul(A, B):
+    """Multiply two numeric 2x2 matrices."""
+    return [
+        [A[0][0]*B[0][0] + A[0][1]*B[1][0],
+         A[0][0]*B[0][1] + A[0][1]*B[1][1]],
+        [A[1][0]*B[0][0] + A[1][1]*B[1][0],
+         A[1][0]*B[0][1] + A[1][1]*B[1][1]],
+    ]
+
+def _numeric_traced_vol(M, z_val):
+    """Numeric Markov-traced volume."""
+    return z_val * M[0][0] + M[1][0]
+
+def _numeric_skein(Z_count, N_count, q_val, ordering=None):
+    """Compute P_N(q) and per-generator volumes numerically.
+
+    Returns (volumes_list, log_P, sign).
+    """
+    A = Z_count + N_count
+    if ordering is None:
+        ordering = ['p'] * Z_count + ['n'] * N_count
+    ha_val = _numeric_ha(q_val)
+    z_val = _numeric_z(q_val)
+
+    volumes = []
+    log_P = 0.0
+    sign = 1
+
+    for i in range(A - 1):
+        M = [[1, 0], [0, 1]]  # identity
+        for j in range(i + 1, A):
+            c, d = _numeric_crossing_coeffs(ordering[i], ordering[j], q_val)
+            T = _numeric_T(c, d, ha_val)
+            M = _numeric_mat_mul(M, T)
+        V = _numeric_traced_vol(M, z_val)
+        volumes.append(V)
+        if V < 0:
+            sign *= -1
+            log_P += math.log(-V)
+        elif V > 0:
+            log_P += math.log(V)
+        else:
+            return volumes, float('-inf'), 0
+
+    return volumes, log_P, sign
 
 
 # ========================================================================
@@ -263,10 +338,25 @@ class NucleusTransferMatrix:
         else:
             self.ordering = ['p'] * Z + ['n'] * N
 
-        # Build per-generator chains. Each generator sigma_i corresponds
-        # to nucleon i crossing with all nucleons j > i.
-        self._generator_matrices = []  # M_i = product of T matrices at gen i
-        self._volumes = []             # V_hat_i: symbolic expressions in q
+        # For small A: build symbolic per-generator chains.
+        # For large A: only build on demand (volumes are computed
+        # numerically via _numeric_skein for performance).
+        self._generator_matrices = None  # lazy: built on first access
+        self._volumes = None             # lazy: built on first access
+        self._skein_symbolic = None
+
+        if self.A <= SYMBOLIC_THRESHOLD:
+            self._build_symbolic()
+
+    def _build_symbolic(self):
+        """Build symbolic per-generator matrices and volumes.
+
+        Called automatically for small nuclei. Can be called
+        manually for larger ones if symbolic expressions are needed
+        (at the cost of computation time).
+        """
+        self._generator_matrices = []
+        self._volumes = []
 
         for i in range(self.A - 1):
             M = SymbolicTransferMatrix.identity()
@@ -276,12 +366,10 @@ class NucleusTransferMatrix:
             self._generator_matrices.append(M)
             self._volumes.append(M.markov_trace())
 
-        # Full Skein polynomial: symbolic product only for small A
-        self._skein_symbolic = None
-        if self.A <= SYMBOLIC_THRESHOLD:
-            self._skein_symbolic = sp.Integer(1)
-            for v in self._volumes:
-                self._skein_symbolic = expand(self._skein_symbolic * v)
+        # Full Skein polynomial: symbolic product
+        self._skein_symbolic = sp.Integer(1)
+        for v in self._volumes:
+            self._skein_symbolic = expand(self._skein_symbolic * v)
 
     @property
     def n_generators(self):
@@ -289,15 +377,37 @@ class NucleusTransferMatrix:
         return self.A - 1
 
     def generator_matrix(self, i):
-        """Return the composed transfer matrix at generator sigma_i."""
+        """Return the composed transfer matrix at generator sigma_i.
+
+        Requires symbolic build (A <= SYMBOLIC_THRESHOLD or manual
+        call to _build_symbolic).
+        """
+        if self._generator_matrices is None:
+            raise RuntimeError(
+                f"Symbolic matrices not built for A={self.A}. "
+                f"Call _build_symbolic() explicitly or use numeric methods.")
         return self._generator_matrices[i]
 
     def volume(self, i):
-        """Return V_hat_i(q) = z * M_i[0,0] + M_i[1,0] (symbolic)."""
+        """Return V_hat_i(q) = z * M_i[0,0] + M_i[1,0] (symbolic).
+
+        Requires symbolic build.
+        """
+        if self._volumes is None:
+            raise RuntimeError(
+                f"Symbolic volumes not built for A={self.A}. "
+                f"Call _build_symbolic() or use volume_at(i, q_val).")
         return self._volumes[i]
 
     def volumes(self):
-        """Return all per-generator volumes as a list of sympy expressions."""
+        """Return all per-generator volumes as a list of sympy expressions.
+
+        Requires symbolic build.
+        """
+        if self._volumes is None:
+            raise RuntimeError(
+                f"Symbolic volumes not built for A={self.A}. "
+                f"Use volumes_at(q_val) for numeric evaluation.")
         return list(self._volumes)
 
     def skein_polynomial(self):
@@ -316,36 +426,69 @@ class NucleusTransferMatrix:
     def skein_at(self, q_val):
         """Evaluate P_N(q) = prod_i V_hat_i(q) at q = q_val.
 
-        Works for any nucleus size. Evaluates each per-generator
-        volume numerically, then takes the product.
+        Works for any nucleus size. Uses the numeric fast path
+        for large nuclei.
         """
-        product = 1.0
-        for v in self._volumes:
-            product *= float(v.subs(q, q_val))
-        return product
+        if self._volumes is not None:
+            # Symbolic path: evaluate each expression
+            product = 1.0
+            for v in self._volumes:
+                product *= float(v.subs(q, q_val))
+            return product
+        else:
+            # Numeric fast path
+            vols, log_P, sign = _numeric_skein(
+                self.Z, self.N, q_val, self.ordering)
+            return sign * math.exp(log_P) if log_P != float('-inf') else 0.0
 
     def log_skein_at(self, q_val):
         """Evaluate ln|P_N(q)| at q = q_val.
 
         More numerically stable than log(skein_at) for large nuclei.
-        Also returns the sign.
+        Returns (log_abs_P, sign).
         """
-        log_sum = 0.0
-        sign = 1
-        for v in self._volumes:
-            vi = float(v.subs(q, q_val))
-            if vi < 0:
-                sign *= -1
-                log_sum += math.log(-vi)
-            elif vi > 0:
-                log_sum += math.log(vi)
-            else:
-                return float('-inf'), 0
-        return log_sum, sign
+        if self._volumes is not None:
+            log_sum = 0.0
+            sign = 1
+            for v in self._volumes:
+                vi = float(v.subs(q, q_val))
+                if vi < 0:
+                    sign *= -1
+                    log_sum += math.log(-vi)
+                elif vi > 0:
+                    log_sum += math.log(vi)
+                else:
+                    return float('-inf'), 0
+            return log_sum, sign
+        else:
+            _, log_P, sign = _numeric_skein(
+                self.Z, self.N, q_val, self.ordering)
+            return log_P, sign
 
     def volume_at(self, i, q_val):
-        """Evaluate V_hat_i at q = q_val."""
-        return float(self._volumes[i].subs(q, q_val))
+        """Evaluate V_hat_i at q = q_val.
+
+        Works for any nucleus size.
+        """
+        if self._volumes is not None:
+            return float(self._volumes[i].subs(q, q_val))
+        else:
+            vols, _, _ = _numeric_skein(
+                self.Z, self.N, q_val, self.ordering)
+            return vols[i]
+
+    def volumes_at(self, q_val):
+        """Evaluate all per-generator volumes at q = q_val.
+
+        Works for any nucleus size. Preferred over volume_at()
+        when you need all volumes (avoids recomputation for large A).
+        """
+        if self._volumes is not None:
+            return [float(v.subs(q, q_val)) for v in self._volumes]
+        else:
+            vols, _, _ = _numeric_skein(
+                self.Z, self.N, q_val, self.ordering)
+            return vols
 
     def compare(self, daughter):
         """Compare this nucleus (parent) with a daughter nucleus.
@@ -357,10 +500,12 @@ class NucleusTransferMatrix:
             'per_generator': [],
         }
 
-        n = min(self.n_generators, daughter.n_generators)
-        for i in range(n):
-            result['per_generator'].append(
-                (self._volumes[i], daughter._volumes[i]))
+        # Symbolic per-generator comparison only when available
+        if self._volumes is not None and daughter._volumes is not None:
+            n = min(self.n_generators, daughter.n_generators)
+            for i in range(n):
+                result['per_generator'].append(
+                    (self._volumes[i], daughter._volumes[i]))
 
         # Full symbolic ratio only for small nuclei
         if (self._skein_symbolic is not None
@@ -405,13 +550,24 @@ def beta_decay_qvalue(Z_par, N_par, q_val=Q0, label=""):
     ln_dau, sgn_dau = daughter.log_skein_at(q_val)
     ln_ratio_num = ln_dau - ln_par
 
-    P_par_num = sgn_par * math.exp(ln_par) if ln_par != float('-inf') else 0.0
-    P_dau_num = sgn_dau * math.exp(ln_dau) if ln_dau != float('-inf') else 0.0
+    # For large nuclei, ln|P| can exceed float range (~709).
+    # Keep log-space quantities; only exponentiate when safe.
+    def _safe_exp(log_val, sgn):
+        if log_val == float('-inf'):
+            return 0.0
+        if abs(log_val) < 700:
+            return sgn * math.exp(log_val)
+        return sgn * float('inf')
 
-    if P_par_num != 0:
+    P_par_num = _safe_exp(ln_par, sgn_par)
+    P_dau_num = _safe_exp(ln_dau, sgn_dau)
+
+    if P_par_num != 0 and math.isfinite(P_par_num) and math.isfinite(P_dau_num):
         ratio_num = P_dau_num / P_par_num
     else:
-        ratio_num = float('inf')
+        # Use log-space ratio (always well-defined)
+        ratio_num = sgn_par * sgn_dau * math.exp(
+            max(min(ln_ratio_num, 700), -700))
 
     result = {
         'label': label or f"N({Z_par},{N_par})",
