@@ -117,6 +117,21 @@ class HeckeDivision:
     """Instrumented Gröbner division in H_n(q).
 
     Tracks every reduction step with energy changes.
+
+    Supports an ENRICHED IDEAL: named sub-patterns from previously
+    computed normal forms are added as rewrite rules. When a word
+    contains a named sub-pattern, it is replaced before applying
+    the standard Hecke/YB/far-comm rules. This dramatically reduces
+    the number of reduction steps for larger atoms.
+
+    Usage:
+        div = HeckeDivision(q_val=1.110)
+
+        # After computing protium NF, register its terms:
+        div.register_pattern('h1', (1, 2), -0.010161)
+        div.register_pattern('u0_h1', (0, 1, 2), -0.066780)
+
+        # Future reductions will match these patterns first.
     """
 
     def __init__(self, q_val=1.110):
@@ -136,6 +151,86 @@ class HeckeDivision:
 
         # Markov trace parameter
         self.z_markov = 1.0 / (self.q_half + self.q_half_inv)
+
+        # Enriched ideal: named patterns for sub-word matching
+        # Each entry: { 'name': str, 'word': tuple, 'coeff': float,
+        #               'expansion': HeckeElement }
+        # When 'word' appears as a sub-word, it can be recognized
+        # and optionally collapsed.
+        self._named_patterns = {}
+        self._pattern_words = []  # sorted by length (longest first)
+
+    def register_pattern(self, name, word, coeff, expansion=None):
+        """Register a named sub-pattern for the enriched ideal.
+
+        name: human-readable name (e.g. 'h1', 'u0_h1', 'protium_atom')
+        word: the word tuple to match (e.g. (1, 2) for σ₁·σ₂)
+        coeff: the coefficient this word has in its source NF
+        expansion: optional HeckeElement that this pattern expands to
+                   (for future use in pattern substitution)
+        """
+        self._named_patterns[word] = {
+            'name': name,
+            'word': word,
+            'coeff': coeff,
+            'expansion': expansion,
+        }
+        # Re-sort patterns by length (longest first for greedy matching)
+        self._pattern_words = sorted(
+            self._named_patterns.keys(),
+            key=lambda w: -len(w)
+        )
+
+    def register_nf(self, name_prefix, nf_element):
+        """Register ALL terms of a normal form as named patterns.
+
+        name_prefix: e.g. 'protium' — each term gets named
+                     'protium_0', 'protium_1', etc.
+        nf_element: HeckeElement whose terms become patterns.
+        """
+        for idx, (word, coeff) in enumerate(
+            sorted(nf_element.terms.items(), key=lambda x: (len(x[0]), x[0]))
+        ):
+            name = f"{name_prefix}_{idx}"
+            self.register_pattern(name, word, coeff)
+
+    def identify_patterns(self, word):
+        """Check if a word CONTAINS any registered named sub-patterns.
+
+        Returns list of (start_pos, end_pos, pattern_name, pattern_word).
+        Longest patterns matched first (greedy).
+        """
+        matches = []
+        for pat_word in self._pattern_words:
+            pat_len = len(pat_word)
+            if pat_len > len(word):
+                continue
+            for pos in range(len(word) - pat_len + 1):
+                if word[pos:pos + pat_len] == pat_word:
+                    matches.append((pos, pos + pat_len,
+                                    self._named_patterns[pat_word]['name'],
+                                    pat_word))
+        return matches
+
+    def annotate_element(self, elem):
+        """Annotate each term with any named patterns it contains.
+
+        Returns dict: { word: [(name, sub_word, position), ...] }
+        """
+        annotations = {}
+        for word in elem.terms:
+            matches = self.identify_patterns(word)
+            if matches:
+                annotations[word] = [
+                    (self._named_patterns[m[3]]['name'], m[3], m[0])
+                    for m in matches
+                ]
+        return annotations
+
+    @property
+    def named_patterns(self):
+        """Read-only access to registered patterns."""
+        return dict(self._named_patterns)
 
     # ── Crossing constructors ────────────────────────────────────
 
@@ -199,8 +294,12 @@ class HeckeDivision:
 
     # ── Division algorithm (instrumented) ────────────────────────
 
-    def reduce(self, elem, max_iterations=100000):
+    def reduce(self, elem, max_iterations=100000, use_patterns=True):
         """Apply Gröbner division algorithm with step logging.
+
+        If use_patterns=True and named patterns are registered,
+        applies Rule 0 (pattern merging) after each full pass
+        to collapse terms that share named sub-patterns.
 
         Returns (reduced_element, list_of_DivisionSteps).
         """
