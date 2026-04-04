@@ -146,6 +146,8 @@ export default chapter({
         "p5-counterexample",
         "quantum-peter-weyl",
         "q-aubin-lions",
+        "q-bkm-criterion",
+        "vorticity-lower-bound",
         "q-ns-research-programme",
       ],
     }),
