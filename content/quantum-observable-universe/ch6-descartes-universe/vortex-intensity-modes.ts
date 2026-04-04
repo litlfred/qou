@@ -6,8 +6,8 @@ export default remark({
   title: "Vortex intensity modes: from classical fluids to $q$-deformation",
   uses: [
     "sec:brane-fluid",
-    "sec:geodesic-vortices",
-    "sec:planck-reynolds",
+    "rem:geodesic-vortices",
+    "rem:planck-reynolds",
     "rem:primordial-vortex",
   ],
   tags: ["vortex", "fluid-dynamics", "modes", "classical-bridge"],

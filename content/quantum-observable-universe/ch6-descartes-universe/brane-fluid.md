@@ -1,6 +1,39 @@
-- Describe the fluid dynamics on the brane whose thickness is determined by
-  the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)).
-- Investigate whether the viscosity gradient can be encoded by the
-  $q$-Laplacian $\Delta_q$.
-- Formulate a Navier--Stokes analogue in the $q$-deformed gauge-field
-  setting.
+The brane of a [quantum observable universe](#def:quantum-observable-universe)
+carries a natural fluid dynamics.  The [substrate parameter](#def:substrate-parameter)
+$q$ sets the effective brane thickness: at $q = 1$ the brane is
+infinitely thin (classical vacuum); at $q > 1$ it acquires a finite
+transverse extent controlled by the $q$-deformed contact geometry.
+The resulting dynamics inherits three features absent from ordinary
+Navier--Stokes theory:
+
+1. **Algebraic viscosity.**  The $q$-Laplacian $\Delta_q$
+   ([q-Laplacian interpretation](#rem:q-laplacian-interpretation))
+   replaces the classical Laplacian, and its eigenvalues are
+   $q$-integers $[k]_q$.  The viscous dissipation rate is therefore
+   algebraically quantised rather than continuously variable.
+
+2. **Gauge-covariant advection.**  The velocity field
+   $v = \nabla_A S$ is defined via the $\mathrm{SU}(2)$ connection
+   $A$ rather than a flat gradient.  Advection along $v$ preserves
+   the horizontal self-duality $F_A|_H = {*_H}F_A|_H$, coupling
+   the fluid motion to the gauge structure.
+
+3. **Topological vortex quantisation.**  The circulation around any
+   closed vortex filament $\varrho$ is constrained by the
+   $\mathrm{SU}_q(2)$ holonomy to discrete values
+   $[j]_q[j+1]_q$, producing the
+   [discrete vortex spectrum](#prop:discrete-vortex-spectrum).
+
+These three features are developed in the subsections that follow.
+The [Madelung transformation](#rem:madelung-fluid) decomposes the
+$q$-deformed Schrödinger equation into a continuity equation and a
+quantum Euler equation, establishing the fluid picture.
+[Geodesic vortices](#rem:geodesic-vortices) identifies stable
+vortex filaments with geodesics of the acoustic metric.  The
+[braid--fluid correspondence](#rem:braid-fluid) connects the
+categorical braid-group action of
+[Chapter](#chap:path-integrals-braiding) to the topological
+dynamics of vortex tubes.  Finally, the
+[Planck--Reynolds number](#rem:planck-reynolds) shows that $q$
+governs the transition from laminar to turbulent brane flow at
+the Planck scale.

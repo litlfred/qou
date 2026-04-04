@@ -55,7 +55,7 @@ vortices transition between topologically distinct stable
 configurations — columnar, bubble breakdown, spiral breakdown —
 separated by finite energy barriers.  These are discrete
 **states**, not modes.  In the brane fluid, the analogous
-transitions are the [geodesic vortex](#sec:geodesic-vortices)
+transitions are the [geodesic vortex](#rem:geodesic-vortices)
 fixed points of the $q$-deformed energy functional: each fixed
 point is a stable vortex configuration, and passage between
 them requires crossing a barrier set by $q$.
@@ -82,7 +82,7 @@ The following table summarises the correspondence:
 | Breakdown states (topological) | Geodesic vortex fixed points | $q$-energy functional critical set |
 | Stability eigenvalues | Weight-space longitudinal/ladder split | Adjoint bundle decomposition |
 | Superfluid $\Gamma_n = nh/m$ | Holonomy quantisation by $j$ | Topological charge of $\mathrm{SU}(2)$ |
-| Reynolds number $\mathrm{Re}$ | [Planck--Reynolds](#sec:planck-reynolds) $\mathrm{Re}_q$ | $q$-deformation parameter |
+| Reynolds number $\mathrm{Re}$ | [Planck--Reynolds](#rem:planck-reynolds) $\mathrm{Re}_q$ | $q$-deformation parameter |
 
 The essential point is that classical fluid dynamics already
 has discrete **modes** (Kelvin waves) and discrete **states**

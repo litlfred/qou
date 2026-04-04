@@ -122,6 +122,9 @@ export default chapter({
         "planck-reynolds",
         "vortex-intensity-modes",
         "discrete-vortex-spectrum",
+        "helicity-conservation",
+        "q-turbulence-spectrum",
+        "vortex-reconnection",
       ],
     }),
 
