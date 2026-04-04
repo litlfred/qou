@@ -11,19 +11,22 @@
 //! For A ≤ 16: generators 0..14 fit in 4 bits each, 16 per u64.
 //! For A > 16: fall back to Vec<u8>.
 
-/// Packed word: up to 16 generators in a u64 (4 bits each).
-/// Bits 60..63: length (0..15). Bits 0..59: generators (4 bits each, LSB first).
-/// Generator values 0..14. Value 15 = unused.
+/// Packed word: up to 31 generators in a u128 (4 bits each).
+/// Bits 124..127: length (0..31). Bits 0..123: generators (4 bits each, LSB first).
+/// Generator values 0..14. Enough for A ≤ 16 (max word length = 15*14/2 = 105... too big).
+/// Actually for A=8: max word length = 22. For A=10: max = 45.
+/// u128 with 4 bits/gen holds 31 generators — covers A ≤ 8 perfectly.
+/// For A=9+: words can exceed 31. Use truncation with warning.
 #[derive(Clone, Copy, PartialEq, Eq, Hash)]
-struct PackedWord(u64);
+struct PackedWord(u128);
 
 impl PackedWord {
-    const MAX_LEN: usize = 15;
+    const MAX_LEN: usize = 31;
     const EMPTY: PackedWord = PackedWord(0);
 
     #[inline]
     fn len(self) -> usize {
-        (self.0 >> 60) as usize
+        (self.0 >> 124) as usize
     }
 
     #[inline]
@@ -32,57 +35,51 @@ impl PackedWord {
     }
 
     #[inline]
-    fn push(self, gen: u8) -> PackedWord {
+    fn push(self, gen: u8) -> Option<PackedWord> {
         let l = self.len();
-        debug_assert!(l < Self::MAX_LEN);
-        let w = (self.0 & 0x0FFF_FFFF_FFFF_FFFF) // clear length bits
-            | ((gen as u64) << (l * 4))            // set new generator
-            | (((l + 1) as u64) << 60);            // set new length
-        PackedWord(w)
+        if l >= Self::MAX_LEN { return None; }
+        let w = (self.0 & 0x0FFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFFu128)
+            | ((gen as u128) << (l * 4))
+            | (((l + 1) as u128) << 124);
+        Some(PackedWord(w))
     }
 
     #[inline]
     fn drop_last(self) -> PackedWord {
         let l = self.len();
         if l == 0 { return self; }
-        let mask = (1u64 << ((l - 1) * 4)) - 1;
-        let w = (self.0 & mask) | (((l - 1) as u64) << 60);
+        let mask = (1u128 << ((l - 1) * 4)) - 1;
+        let w = (self.0 & mask) | (((l - 1) as u128) << 124);
         PackedWord(w)
     }
 
-    /// Remove element at position pos, shifting remaining left.
     fn remove_at(self, pos: usize) -> PackedWord {
         let l = self.len();
-        let mut result = 0u64;
+        let mut result = 0u128;
         let mut j = 0;
         for i in 0..l {
             if i == pos { continue; }
-            result |= (self.get(i) as u64) << (j * 4);
+            result |= (self.get(i) as u128) << (j * 4);
             j += 1;
         }
-        result |= ((l - 1) as u64) << 60;
+        result |= ((l - 1) as u128) << 124;
         PackedWord(result)
     }
 
-    /// Replace generators at positions pos, pos+1 (for Hecke: remove one copy)
     fn hecke_reduce(self, pos: usize) -> (PackedWord, PackedWord) {
-        let l = self.len();
-        // w1: replace σ_i² with σ_i (remove one copy)
         let w1 = self.remove_at(pos + 1);
-        // w2: replace σ_i² with 𝟏 (remove both copies)
         let w2 = w1.remove_at(pos);
         (w1, w2)
     }
 
-    /// Swap positions pos and pos+1
     fn swap(self, pos: usize) -> PackedWord {
         let a = self.get(pos);
         let b = self.get(pos + 1);
-        let mask_a = !(0xFu64 << (pos * 4));
-        let mask_b = !(0xFu64 << ((pos + 1) * 4));
+        let mask_a = !(0xFu128 << (pos * 4));
+        let mask_b = !(0xFu128 << ((pos + 1) * 4));
         let w = (self.0 & mask_a & mask_b)
-            | ((b as u64) << (pos * 4))
-            | ((a as u64) << ((pos + 1) * 4));
+            | ((b as u128) << (pos * 4))
+            | ((a as u128) << ((pos + 1) * 4));
         PackedWord(w)
     }
 
@@ -227,8 +224,8 @@ impl Engine {
             if d.abs() > 1e-15 {
                 *elem.terms.entry(w).or_insert(0.0) += coeff * d;
             }
-            if c.abs() > 1e-15 && w.len() < PackedWord::MAX_LEN {
-                let wg = w.push(gen);
+            if c.abs() > 1e-15 {
+                let Some(wg) = w.push(gen) else { continue };
                 // Junction check: only last 2-3 chars
                 if wg.junction_reduction().is_some() {
                     unreduced.push((wg, coeff * c));
@@ -285,23 +282,15 @@ impl Engine {
                             }
                         }
                         2 => {
-                            let mut w = word;
-                            let a = w.get(pos); let b = w.get(pos+1);
-                            w = w.swap(pos); // now (b, a, a) at pos
-                            // Actually need (b, a, b): swap pos+1 and pos+2
-                            w = w.swap(pos+1);
-                            // Hmm, this is wrong. Let me do it directly:
-                            // YB: (a,b,a) → (b,a,b). Need to set 3 positions.
-                            let l = word.len();
-                            let mut raw = word.0 & 0xF000_0000_0000_0000u64; // keep length
-                            // Copy unchanged parts
-                            for i in 0..l {
-                                let g = if i == pos { b }
-                                    else if i == pos + 1 { a }
-                                    else if i == pos + 2 { b }
-                                    else { word.get(i) };
-                                raw |= (g as u64) << (i * 4);
-                            }
+                            // YB: (a,b,a) → (b,a,b) at positions pos, pos+1, pos+2
+                            let a = word.get(pos);
+                            let b = word.get(pos+1);
+                            // Clear the 3 positions and set new values
+                            let mask = !(0xFFFu128 << (pos * 4)); // clear 12 bits at pos
+                            let raw = (word.0 & mask)
+                                | ((b as u128) << (pos * 4))
+                                | ((a as u128) << ((pos + 1) * 4))
+                                | ((b as u128) << ((pos + 2) * 4));
                             let w = PackedWord(raw);
                             if w.find_reduction().is_some() {
                                 next_batch.push((w, coeff));
@@ -384,7 +373,7 @@ impl Engine {
                 .copied().collect();
             let mut found = false;
             for &word in &adj {
-                let sigma_j = PackedWord::EMPTY.push(word.get(1));
+                let Some(sigma_j) = PackedWord::EMPTY.push(word.get(1)) else { continue };
                 if elem.terms.get(&sigma_j).map_or(false, |c| c.abs() > 1e-15) {
                     let coeff = elem.terms.remove(&word).unwrap_or(0.0);
                     removed.add(coeff, 2, self.q, self.qi);
