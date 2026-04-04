@@ -36,10 +36,10 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
           {[k+1]_q - [k]_q}.
    $$
 
-   The denominator $[k+1]_q - [k]_q = q^k$ grows exponentially,
-   so the transfer rate **decreases exponentially** at high
-   wavenumbers.  This provides a natural UV cutoff without
-   requiring an ad hoc viscous scale.
+   For the symmetric $q$-integer, the denominator satisfies
+   $[k+1]_q - [k]_q \sim q^k \cdot q/(q+1)$ for large $k$.
+   The transfer rate decreases exponentially at high
+   wavenumbers, providing a natural UV cutoff.
 
 3. **Finite cascade depth.**  The number of active modes in the
    cascade is bounded by
@@ -55,10 +55,10 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
      \biggr\rfloor.
    $$
 
-   At $q \approx 1.110$, this gives $N_{\mathrm{modes}} \approx 20$,
-   compared to the effectively infinite cascade of classical
-   turbulence.  The finite depth reflects the granularity of the
-   $q$-deformed brane.
+   At $q \approx 1.110$, $N_{\mathrm{modes}} \approx 21$.
+   (This counts all modes participating in the cascade; the
+   [Planck--Reynolds](#rem:planck-reynolds) bound $k_{\max} \approx 4$
+   is the stricter count of modes with significant amplitude.)
 
 4. **Spectral gap.**  Below the fundamental mode $k = 1$, there
    is a **spectral gap**

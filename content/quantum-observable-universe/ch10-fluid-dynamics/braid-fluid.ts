@@ -7,7 +7,7 @@ export default remark({
   uses: [
     "prop:braid-action-tensor",
     "prop:r-matrix-braiding-structure",
-    "prop:jones-markov-trace",
+    "thm:jones-markov-trace",
     "rem:madelung-fluid",
     "rem:webster-inner-product",
     "rem:skein-crossing-asymmetry",

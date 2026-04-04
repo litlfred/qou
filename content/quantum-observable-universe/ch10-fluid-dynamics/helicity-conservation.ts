@@ -5,7 +5,7 @@ export default proposition({
   title: "Categorical helicity conservation",
   uses: [
     "rem:braid-fluid",
-    "prop:jones-markov-trace",
+    "thm:jones-markov-trace",
     "rem:madelung-fluid",
     "prop:discrete-vortex-spectrum",
   ],

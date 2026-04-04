@@ -6,8 +6,8 @@ export default remark({
   title: "Planck--Reynolds number and the turbulence transition",
   uses: [
     "def:substrate-parameter",
-    "def:speed-of-light",
-    "def:planck-length",
+    "def:information-speed-of-light",
+    "def:planck-time",
     "def:quantum-planck-constant",
     "rem:madelung-fluid",
     "prop:discrete-vortex-spectrum",

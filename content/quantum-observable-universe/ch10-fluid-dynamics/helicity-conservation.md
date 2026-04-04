@@ -53,7 +53,7 @@ Then:
    same value to the unknot and the trefoil (both can have
    $\mathcal{H} = 0$).  The Jones polynomial
    $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$, computed as the
-   [Markov trace](#prop:jones-markov-trace) on the Hecke algebra,
+   [Markov trace](#thm:jones-markov-trace) on the Hecke algebra,
    is a **finer invariant** that separates these cases.  In the
    brane fluid,
 

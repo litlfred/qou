@@ -73,7 +73,7 @@ $$
 
 contains the representation $V_{j_{i'}} \otimes V_{j_{j'}}$
 as a summand.  This connects vortex reconnection to the
-[Clebsch--Gordan coefficients](#def:clebsch-gordan-q) of the
+Clebsch--Gordan coefficients of the
 quantum group.
 
 **Connection to chirality.**

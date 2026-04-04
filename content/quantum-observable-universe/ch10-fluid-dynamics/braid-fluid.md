@@ -41,8 +41,8 @@ three vortices is path-independent (Reidemeister III).
 | Braiding $c_{V,V}$ | Half-twist vortex exchange |
 | Yang--Baxter | Path-independence of 3-vortex braiding |
 | R-matrix eigenvalues $q, -q^{-1}$ | Symmetric / antisymmetric channels |
-| [Hecke relation](#sec:hecke-skein) | Pass-through vs reconnection |
-| [Markov trace](#prop:jones-markov-trace) | Topological helicity |
+| [Hecke relation](#rem:skein-crossing-asymmetry) | Pass-through vs reconnection |
+| [Markov trace](#thm:jones-markov-trace) | Topological helicity |
 | [Crossing energy](#def:crossing-energy) | Kinetic energy of exchange |
 
 **Hecke relation as scattering.**
@@ -60,7 +60,7 @@ fluid-dynamical origin of the
 [skein crossing asymmetry](#rem:skein-crossing-asymmetry).
 
 **Helicity as Markov trace.**
-The [Jones polynomial](#prop:jones-markov-trace) $J_L(q)$ is
+The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ is
 the **topological helicity** of the vortex tangle — a refinement
 of classical helicity $H = \int v \cdot \omega\,dV$ that
 distinguishes configurations invisible to $H$ (e.g. trefoil
