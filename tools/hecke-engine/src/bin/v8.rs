@@ -400,18 +400,14 @@ impl Eng {
             let mb = elem.mem_bytes() as f64 / 1_048_576.0;
             let elapsed = t0.elapsed().as_secs_f64();
 
-            // Inductive stripping: accumulate ALL, then strip.
-            // Also strip the LAST strand — the witness only needs tr_alt+net,
-            // not the 1M+ expanded words.
+            // Inductive stripping: strip and accumulate ONLY the removed terms.
+            // Survivors carry their coefficients into subsequent strands —
+            // their Pauli contribution is captured when they're eventually
+            // stripped or at the final computation.
             if (k + 1) as usize > strip_after {
-                // Accumulate Pauli data of ALL current terms (exact in q)
-                let mut strand_pauli = SymPauliAcc::zero();
-                strand_pauli.add_from_elem(&elem);
-                accum.merge(&strand_pauli);
-
-                // Strip to optimal basis
                 let n_pre = elem.n_terms();
-                Self::strip_quotient(&mut elem.terms);
+                let removed = Self::strip_with_pauli(&mut elem.terms);
+                accum.merge(&removed);
                 let info = format!("  strand {}/{}: {} → {} words (stripped), poly ~10^{:.0}, {:.0}MB, {:.1}s",
                     k, a-1, n_pre, elem.n_terms(),
                     if mc > 0 { (mc as f64).log10() } else { 0.0 },
