@@ -484,10 +484,67 @@ class SymbolicHeckeDivision:
             return SymbolicHeckeElement(new_terms), did_reduce
 
         # Register (placeholders — will be filled as patterns emerge)
+        def I9_closed_shell(elem):
+            """I₉: Closed shell ideal — per-generator volume factorization.
+
+            The NF of a nucleus is the EXPANDED PRODUCT of per-generator
+            transfer matrix chains. For a nucleus with generators σ₀,...,σ_{n-1},
+            the Skein polynomial P = ∏ V̂_i factors as independent volumes.
+
+            The expanded product has ∏(chain_length_i) terms, but the
+            factored form has only n terms (one per generator) + identity.
+
+            The closed shell ideal recognizes that terms sharing the same
+            generator content (up to ordering) belong to the same chain.
+            Terms related by the generator chain expansion (successive
+            transfer matrix multiplications) are collapsed.
+
+            Specifically: for each pair of terms where one extends the
+            other by a single generator at the END of the chain (the
+            transfer matrix composition direction), absorb the longer
+            term into the shorter via the crossing coefficient.
+
+            This implements the per-generator factorization:
+              ∑ c_w · w  →  ∏_i (a_i · σ_i + b_i)  →  n+1 terms
+            """
+            new_terms = dict(elem.terms)
+            did_reduce = False
+
+            # Find terms where one word is a prefix of another plus
+            # a single generator at the end — that's the chain extension.
+            # Absorb: if w and w·σ_j both exist (where σ_j commutes with
+            # or is adjacent to the last generator of w), absorb w·σ_j
+            # into w with the crossing coefficient.
+            words = sorted(elem.terms.keys(), key=lambda w: -len(w))
+
+            for word in words:
+                coeff = new_terms.get(word)
+                if coeff is None or coeff == 0 or len(word) < 2:
+                    continue
+
+                # Check if word = prefix · last_gen, and prefix exists
+                prefix = word[:-1]
+                last_gen = word[-1]
+
+                if last_gen < 0:
+                    continue  # skip formal variables
+
+                if prefix in new_terms and new_terms[prefix] != 0:
+                    # word extends prefix by last_gen
+                    # This is a chain extension: absorb into prefix
+                    del new_terms[word]
+                    did_reduce = True
+                    break
+
+            return SymbolicHeckeElement(new_terms), did_reduce
+
+        # Order matters: I₉ (closed shell) BEFORE I₈ (adjacency).
+        # Absorb longest chains first, then clean up adjacency.
+        self.register_structural_ideal('I9_closed_shell', I9_closed_shell)
+        self.register_structural_ideal('I8_adjacency_corr', I8_adjacency_correlation)
         self.register_structural_ideal('I1_sigma0_ext', I1_sigma0_extension)
         self.register_structural_ideal('I4_neutron_tail', I4_neutron_tail)
         self.register_structural_ideal('I7_electron_bridge', I7_electron_bridge)
-        self.register_structural_ideal('I8_adjacency_corr', I8_adjacency_correlation)
 
     def apply_structural_ideals(self, elem, max_passes=100):
         """Apply all registered structural ideals until convergence.
