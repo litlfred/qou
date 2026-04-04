@@ -212,15 +212,39 @@ fn crossing_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
 // Engine with junction-only reduction + stable/pending separation
 // ════════════════════════════════════════════════════════════════
 
-/// Symbolic accumulator for Pauli data (exact in q).
-struct SymPauliAcc { tr_alt: LPoly, net: LPoly }
+/// Symbolic accumulator for Pauli + coral content data (exact in q).
+///
+/// Tracks per-length net(ℓ) = Σ_{|w|=ℓ} c_w as a polynomial in q.
+/// This gives the full degree decomposition:
+///   net(0) + net(1) = observable (optimal basis, degree ≤ 1)
+///   Σ_{ℓ≥2} net(ℓ) = coral content (degree ≥ 1, the "M in CMB")
+///   tr_alt = Σ_ℓ net(ℓ) × (-q⁻¹)^ℓ = alternating channel (Pauli)
+#[derive(Clone)]
+struct SymPauliAcc {
+    tr_alt: LPoly,
+    net: LPoly,
+    /// Per-length net: net_by_len[ℓ] = Σ_{|w|=ℓ} c_w (exact in q)
+    net_by_len: Vec<LPoly>,
+    /// Per-length term count
+    count_by_len: Vec<u64>,
+}
 impl SymPauliAcc {
-    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero() } }
+    fn zero() -> Self {
+        Self { tr_alt: LPoly::zero(), net: LPoly::zero(),
+               net_by_len: Vec::new(), count_by_len: Vec::new() }
+    }
     fn add_term(&mut self, coeff: &LPoly, word_len: usize) {
         self.net = self.net.add(coeff);
         let l = word_len as i32;
         let sign = if l%2==0 { 1i128 } else { -1i128 };
         self.tr_alt = self.tr_alt.add(&coeff.scale(sign).shift(-2*l));
+        // Per-length tracking
+        while self.net_by_len.len() <= word_len {
+            self.net_by_len.push(LPoly::zero());
+            self.count_by_len.push(0);
+        }
+        self.net_by_len[word_len] = self.net_by_len[word_len].add(coeff);
+        self.count_by_len[word_len] += 1;
     }
     fn add_from_elem(&mut self, elem: &Elem) {
         for (w, c) in &elem.terms { self.add_term(c, w.len()); }
@@ -228,6 +252,26 @@ impl SymPauliAcc {
     fn merge(&mut self, other: &SymPauliAcc) {
         self.tr_alt = self.tr_alt.add(&other.tr_alt);
         self.net = self.net.add(&other.net);
+        for (i, p) in other.net_by_len.iter().enumerate() {
+            while self.net_by_len.len() <= i {
+                self.net_by_len.push(LPoly::zero());
+                self.count_by_len.push(0);
+            }
+            self.net_by_len[i] = self.net_by_len[i].add(p);
+            self.count_by_len[i] += other.count_by_len.get(i).copied().unwrap_or(0);
+        }
+    }
+    /// Observable amplitude: net(0) + net(1)
+    fn observable(&self) -> LPoly {
+        let mut obs = self.net_by_len.get(0).cloned().unwrap_or(LPoly::zero());
+        if let Some(n1) = self.net_by_len.get(1) { obs = obs.add(n1); }
+        obs
+    }
+    /// Coral content: Σ_{ℓ≥2} net(ℓ) = degree ≥ 1 interaction content
+    fn coral_content(&self) -> LPoly {
+        let mut coral = LPoly::zero();
+        for p in self.net_by_len.iter().skip(2) { coral = coral.add(p); }
+        coral
     }
 }
 
@@ -571,10 +615,16 @@ fn main() {
         std::process::exit(1);
     }
 
-    // Compute Pauli from kept terms + accumulated stripped terms
-    let (kept_alt, kept_net) = compute_pauli(&elem);
-    let tr_alt = kept_alt.add(&accum.tr_alt);
-    let net_poly = kept_net.add(&accum.net);
+    // Compute Pauli + coral from kept terms + accumulated stripped terms
+    let mut kept_acc = SymPauliAcc::zero();
+    kept_acc.add_from_elem(&elem);
+    let mut total = accum.clone();
+    total.merge(&kept_acc);
+
+    let tr_alt = total.tr_alt.clone();
+    let net_poly = total.net.clone();
+    let observable = total.observable();
+    let coral = total.coral_content();
     let ms = t_start.elapsed().as_millis();
 
     // Evaluate at q₀
@@ -583,6 +633,8 @@ fn main() {
     let denom = 2.0_f64.powi(elem.pn_count as i32);
     let tr_alt_val = tr_alt.eval(t0_val) / denom;
     let net_val = net_poly.eval(t0_val) / denom;
+    let obs_val = observable.eval(t0_val) / denom;
+    let coral_val = coral.eval(t0_val) / denom;
     let f = if net_val.abs() > 1e-30 { tr_alt_val.abs() / net_val.abs() } else { 0.0 };
 
     println!();
@@ -593,23 +645,50 @@ fn main() {
     println!("  max coeff: ~10^{:.0}", if elem.max_coeff()>0 { (elem.max_coeff() as f64).log10() } else { 0.0 });
     println!("  pn_count = {} (denominator 2^{})", elem.pn_count, elem.pn_count);
     println!();
-    println!("  tr_alt(t) = {}", tr_alt.display_short());
-    println!("  net(t)    = {}", net_poly.display_short());
+    println!("  tr_alt(t)     = {}", tr_alt.display_short());
+    println!("  net(t)        = {}", net_poly.display_short());
+    println!("  observable(t) = {} ({} terms)", observable.display_short(), observable.n_terms());
+    println!("  coral(t)      = {} ({} terms)", coral.display_short(), coral.n_terms());
     println!();
     println!("  At q₀ = {}:", Q0);
-    println!("  F_Pauli = {:.10}", f);
+    println!("  F_Pauli    = {:.10}", f);
+    println!("  Observable = {:+.10e} / 2^{}", obs_val * denom, elem.pn_count);
+    println!("  Coral      = {:+.10e} / 2^{}", coral_val * denom, elem.pn_count);
+    println!("  Coral/Net  = {:.6} (fraction of amplitude in degree ≥ 1)",
+        if net_val.abs() > 1e-30 { coral_val / net_val } else { 0.0 });
+    println!();
+    // Per-length distribution
+    let max_len = total.net_by_len.len();
+    if max_len > 0 {
+        println!("  Degree decomposition (net(ℓ) at q₀ / 2^{}):", elem.pn_count);
+        for l in 0..max_len {
+            let v = total.net_by_len[l].eval(t0_val) / denom;
+            let cnt = total.count_by_len.get(l).copied().unwrap_or(0);
+            if v.abs() > 1e-15 || cnt > 0 {
+                let label = match l {
+                    0 => "  ← identity (bare config)",
+                    1 => "  ← single generators (optimal basis)",
+                    _ => "",
+                };
+                println!("    ℓ={:>3}: net={:>+14.6e}, {} terms{}", l, v, cnt, label);
+            }
+        }
+    }
     println!("════════════════════════════════════════════════════════");
 
-    // Lean witness output
-    write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms, dm);
+    // Lean witness output — now includes observable and coral
+    write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+        elem.pn_count, f, ms, dm);
 
     // JSON checkpoint
-    write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms,
+    write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+        elem.pn_count, f, ms,
         elem.n_terms(), elem.total_poly_terms(), elem.max_coeff());
 }
 
 fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
-    tr_alt: &LPoly, net_poly: &LPoly, pn_count: u32, f: f64, ms: u128, dm: bool)
+    tr_alt: &LPoly, net_poly: &LPoly, observable: &LPoly, coral: &LPoly,
+    pn_count: u32, f: f64, ms: u128, dm: bool)
 {
     use std::io::Write;
     let lsym = sym.to_lowercase();
@@ -638,6 +717,21 @@ fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
     writeln!(file, "noncomputable def F_Pauli_{}{}_denom : ℕ := {}", a, lsym, 1u64 << pn_count).ok();
     writeln!(file).ok();
 
+    writeln!(file, "/-- Observable amplitude: net(0) + net(1) — the optimal basis.").ok();
+    writeln!(file, "    Degree 0 + 1 content of the Gröbner NF. -/").ok();
+    write!(file, "noncomputable def observable_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();
+    write_lpoly(&mut file, observable);
+    writeln!(file).ok();
+    writeln!(file).ok();
+
+    writeln!(file, "/-- Coral content: Σ_{{ℓ≥2}} net(ℓ) — the degree ≥ 1 interaction content.").ok();
+    writeln!(file, "    This is the \"M\" in the CMB analogy — the multi-body correlations").ok();
+    writeln!(file, "    that the transfer matrix cannot capture per-generator. -/").ok();
+    write!(file, "noncomputable def coral_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();
+    write_lpoly(&mut file, coral);
+    writeln!(file).ok();
+    writeln!(file).ok();
+
     eprintln!("  Lean witness: {}", filename);
 }
 
@@ -658,7 +752,8 @@ fn write_lpoly(file: &mut std::fs::File, poly: &LPoly) {
 }
 
 fn write_json_checkpoint(z: usize, n: usize, a: usize, sym: &str,
-    tr_alt: &LPoly, net_poly: &LPoly, pn_count: u32, f: f64, ms: u128,
+    tr_alt: &LPoly, net_poly: &LPoly, observable: &LPoly, coral: &LPoly,
+    pn_count: u32, f: f64, ms: u128,
     n_words: usize, n_poly: usize, max_coeff: i128)
 {
     use std::io::Write;
@@ -691,6 +786,27 @@ fn write_json_checkpoint(z: usize, n: usize, a: usize, sym: &str,
 
     write!(file, "  \"net_coeffs\": [").ok();
     for (i, (k, v)) in net_coeffs.iter().enumerate() {
+        if i > 0 { write!(file, ",").ok(); }
+        write!(file, "[{},\"{}\"]", k, v).ok();
+    }
+    write!(file, "],\n").ok();
+
+    // Observable and coral content
+    let obs_coeffs: Vec<(i32, i128)> = observable.terms.iter().map(|(&k, &v)| (k, v)).collect();
+    let coral_coeffs: Vec<(i32, i128)> = coral.terms.iter().map(|(&k, &v)| (k, v)).collect();
+
+    write!(file, "  \"observable_n_terms\": {},\n", observable.n_terms()).ok();
+    write!(file, "  \"coral_n_terms\": {},\n", coral.n_terms()).ok();
+
+    write!(file, "  \"observable_coeffs\": [").ok();
+    for (i, (k, v)) in obs_coeffs.iter().enumerate() {
+        if i > 0 { write!(file, ",").ok(); }
+        write!(file, "[{},\"{}\"]", k, v).ok();
+    }
+    write!(file, "],\n").ok();
+
+    write!(file, "  \"coral_coeffs\": [").ok();
+    for (i, (k, v)) in coral_coeffs.iter().enumerate() {
         if i > 0 { write!(file, ",").ok(); }
         write!(file, "[{},\"{}\"]", k, v).ok();
     }
@@ -744,9 +860,15 @@ fn batch_witness(a_min: usize, a_max: usize) {
             break;
         }
 
-        let (kept_alt, kept_net) = compute_pauli(&elem);
-        let tr_alt = kept_alt.add(&accum.tr_alt);
-        let net_poly = kept_net.add(&accum.net);
+        let mut kept_acc = SymPauliAcc::zero();
+        kept_acc.add_from_elem(&elem);
+        let mut total_batch = accum.clone();
+        total_batch.merge(&kept_acc);
+
+        let tr_alt = total_batch.tr_alt.clone();
+        let net_poly = total_batch.net.clone();
+        let observable = total_batch.observable();
+        let coral = total_batch.coral_content();
         let ms = t0.elapsed().as_millis();
 
         let t0_val = 1.10998_f64.sqrt();
@@ -761,8 +883,10 @@ fn batch_witness(a_min: usize, a_max: usize) {
             ms as f64 / 1000.0,
             if dm { " ★★" } else { "" });
 
-        write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms, dm);
-        write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms,
+        write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+            elem.pn_count, f, ms, dm);
+        write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+            elem.pn_count, f, ms,
             elem.n_terms(), elem.total_poly_terms(), elem.max_coeff());
         } // end for z
     } // end for a
