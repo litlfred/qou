@@ -151,6 +151,7 @@ export default chapter({
         "root-of-unity-truncation",
         "core-levi-form",
         "core-levi-interpretation",
+        "levi-degeneracy-conjecture",
         "q-ns-research-programme",
       ],
     }),
