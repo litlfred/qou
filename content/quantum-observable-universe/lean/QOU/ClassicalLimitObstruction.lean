@@ -74,7 +74,7 @@ theorem qou_obstruction_one_dimensional
     Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.03.006 -/
 theorem kummer_obstruction_divisibility
     (obs : ClassicalLimitObstruction ℝ)
-    (n : ℕ) (hn : n > 0)
+    (n : ℕ)
     : (obs.eulerChar % ↑n = 0) ↔ (↑n ∣ obs.eulerChar) := by
   constructor
   · intro h; exact Int.dvd_of_emod_eq_zero h

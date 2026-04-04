@@ -1,6 +1,5 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse.CategoricalFoundations
-import QOU.BringsSurface
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 
