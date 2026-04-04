@@ -507,35 +507,33 @@ class SymbolicHeckeDivision:
             This implements the per-generator factorization:
               ∑ c_w · w  →  ∏_i (a_i · σ_i + b_i)  →  n+1 terms
             """
+            # Recursive: strip longest words first, all the way down.
+            # Each pass removes one word whose prefix is present.
+            # Repeat until no more can be removed.
             new_terms = dict(elem.terms)
-            did_reduce = False
+            total_removed = 0
 
-            # Find terms where one word is a prefix of another plus
-            # a single generator at the end — that's the chain extension.
-            # Absorb: if w and w·σ_j both exist (where σ_j commutes with
-            # or is adjacent to the last generator of w), absorb w·σ_j
-            # into w with the crossing coefficient.
-            words = sorted(elem.terms.keys(), key=lambda w: -len(w))
-
-            for word in words:
-                coeff = new_terms.get(word)
-                if coeff is None or coeff == 0 or len(word) < 2:
-                    continue
-
-                # Check if word = prefix · last_gen, and prefix exists
-                prefix = word[:-1]
-                last_gen = word[-1]
-
-                if last_gen < 0:
-                    continue  # skip formal variables
-
-                if prefix in new_terms and new_terms[prefix] != 0:
-                    # word extends prefix by last_gen
-                    # This is a chain extension: absorb into prefix
-                    del new_terms[word]
-                    did_reduce = True
+            for _ in range(len(new_terms)):
+                words = sorted(
+                    [w for w, c in new_terms.items() if c != 0],
+                    key=lambda w: -len(w))
+                found = False
+                for word in words:
+                    if len(word) < 2:
+                        continue
+                    prefix = word[:-1]
+                    last_gen = word[-1]
+                    if last_gen < 0:
+                        continue
+                    if prefix in new_terms and new_terms[prefix] != 0:
+                        del new_terms[word]
+                        total_removed += 1
+                        found = True
+                        break
+                if not found:
                     break
 
+            did_reduce = total_removed > 0
             return SymbolicHeckeElement(new_terms), did_reduce
 
         # Order matters: I₉ (closed shell) BEFORE I₈ (adjacency).
