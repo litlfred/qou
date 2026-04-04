@@ -23,7 +23,8 @@ Usage:
 """
 
 import math
-from transfer_matrix_symbolic import NucleusTransferMatrix, Q0
+import time
+from transfer_matrix_symbolic import skein_ln_numeric, Q0
 
 # ---------------------------------------------------------------------------
 # Experimental natural abundances (approximate, in %)
@@ -77,14 +78,14 @@ def compute_ln_skein(Z, N_min, N_max, q_val):
     """Compute ln|P_N(q)| for all N in [N_min, N_max].
 
     Returns dict {N: (ln_abs_P, sign)}.
+    Uses purely numeric computation via skein_ln_numeric.
     """
     results = {}
     for N in range(N_min, N_max + 1):
         if Z + N < 1:
             continue  # skip A=0
         try:
-            nuc = NucleusTransferMatrix(Z, N)
-            ln_abs, sgn = nuc.log_skein_at(q_val)
+            ln_abs, sgn = skein_ln_numeric(Z, N, q_val)
             results[N] = (ln_abs, sgn)
         except Exception as e:
             # Some exotic combinations may fail; skip gracefully
@@ -185,9 +186,11 @@ def normalize_density(ln_abs_dict, Z):
 
 
 def main():
+    t_start = time.time()
     q_val = Q0
     print(f"Isotope Abundance from Skein Polynomial Ratios")
     print(f"q₀ = {q_val}")
+    print(f"Using purely numeric computation (no sympy)")
     print(f"=" * 100)
 
     # Collect all results for summary
@@ -198,8 +201,9 @@ def main():
         exp_data = EXPERIMENTAL.get(Z, {})
 
         # Range of neutron numbers to scan
+        # N=0 is needed for protium (¹H), so use max(0, Z-2)
         N_min = max(0, Z - 2)
-        N_max = Z + Z + 2
+        N_max = Z + 4
 
         # Compute Skein magnitudes
         ln_dict = compute_ln_skein(Z, N_min, N_max, q_val)
@@ -296,7 +300,7 @@ def main():
 
         # Compute predictions
         N_min = max(0, Z - 2)
-        N_max = Z + Z + 2
+        N_max = Z + 4
         ln_dict = compute_ln_skein(Z, N_min, N_max, q_val)
 
         models = {
@@ -342,8 +346,7 @@ def main():
         # Compute Skein only for experimentally known N values
         ln_known = {}
         for N in exp_data:
-            nuc = NucleusTransferMatrix(Z, N)
-            ln_abs, sgn = nuc.log_skein_at(q_val)
+            ln_abs, sgn = skein_ln_numeric(Z, N, q_val)
             ln_known[N] = (ln_abs, sgn)
 
         # Born-rule among known isotopes
@@ -383,7 +386,7 @@ def main():
         exp_data = EXPERIMENTAL.get(Z, {})
 
         N_min = max(0, Z - 2)
-        N_max = Z + Z + 2
+        N_max = Z + 4
         ln_dict = compute_ln_skein(Z, N_min, N_max, q_val)
 
         print(f"\n  {elem} (Z={Z}):")
@@ -422,7 +425,7 @@ def main():
         exp_data = EXPERIMENTAL.get(Z, {})
 
         N_min = max(0, Z - 2)
-        N_max = Z + Z + 2
+        N_max = Z + 4
         ln_dict = compute_ln_skein(Z, N_min, N_max, q_val)
 
         print(f"\n  {elem} (Z={Z}):")
@@ -455,6 +458,9 @@ def main():
         exp_dom_A = Z + exp_dom_N if exp_dom_N is not None else None
         ok_str = " (matches)" if best_A == exp_dom_A else f" (expt: A={exp_dom_A})"
         print(f"    Peak density at A={best_A}{ok_str}")
+
+    elapsed = time.time() - t_start
+    print(f"\nTotal runtime: {elapsed:.2f}s")
 
 
 if __name__ == "__main__":

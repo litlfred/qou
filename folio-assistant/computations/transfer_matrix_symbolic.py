@@ -147,6 +147,27 @@ def _numeric_skein(Z_count, N_count, q_val, ordering=None):
     return volumes, log_P, sign
 
 
+def skein_ln_numeric(Z, N, q_val):
+    """Compute ln|P_N(q)| using pure float arithmetic (no sympy).
+
+    This is the public API for numeric-only Skein magnitude computation.
+    Use this instead of NucleusTransferMatrix for large nuclei to avoid
+    sympy expression blowup.
+
+    Args:
+        Z: proton count
+        N: neutron count
+        q_val: numeric value of the substrate parameter q
+
+    Returns:
+        (ln_abs_P, sign) where sign is +1 or -1 (or 0 if P=0).
+    """
+    if Z + N < 1:
+        return (float('-inf'), 0)
+    _, log_P, sign = _numeric_skein(Z, N, q_val)
+    return (log_P, sign)
+
+
 # ========================================================================
 # 1. SymbolicTransferMatrix -- wraps a 2x2 sympy Matrix
 # ========================================================================
