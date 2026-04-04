@@ -450,6 +450,56 @@ impl Eng {
 
 // ════════════════════════════════════════════════════════════════
 
+fn element_symbol(z: usize) -> &'static str {
+    match z {
+        1=>"H",2=>"He",3=>"Li",4=>"Be",5=>"B",6=>"C",7=>"N",8=>"O",
+        9=>"F",10=>"Ne",11=>"Na",12=>"Mg",13=>"Al",14=>"Si",15=>"P",
+        16=>"S",17=>"Cl",18=>"Ar",19=>"K",20=>"Ca",_=>"?"
+    }
+}
+
+fn element_name(z: usize) -> &'static str {
+    match z {
+        1=>"Hydrogen",2=>"Helium",3=>"Lithium",4=>"Beryllium",5=>"Boron",
+        6=>"Carbon",7=>"Nitrogen",8=>"Oxygen",9=>"Fluorine",10=>"Neon",
+        11=>"Sodium",12=>"Magnesium",13=>"Aluminium",14=>"Silicon",15=>"Phosphorus",
+        16=>"Sulfur",17=>"Chlorine",18=>"Argon",19=>"Potassium",20=>"Calcium",_=>"Unknown"
+    }
+}
+
+fn isotope_name(z: usize, a: usize) -> String {
+    let sym = element_symbol(z);
+    let name = element_name(z);
+    // Common names for well-known isotopes
+    let common = match (z, a) {
+        (1, 1) => "Protium",
+        (1, 2) => "Deuterium",
+        (1, 3) => "Tritium",
+        (2, 3) => "Helium-3",
+        (2, 4) => "Helium-4 (α particle)",
+        (3, 6) => "Lithium-6",
+        (3, 7) => "Lithium-7",
+        (4, 9) => "Beryllium-9 (only stable Be)",
+        (4, 8) => "Beryllium-8 (unstable, → 2α)",
+        (5, 10) => "Boron-10",
+        (5, 11) => "Boron-11",
+        (6, 12) => "Carbon-12",
+        (6, 14) => "Carbon-14",
+        (8, 16) => "Oxygen-16",
+        (10, 20) => "Neon-20",
+        (20, 40) => "Calcium-40",
+        (20, 48) => "Calcium-48",
+        (26, 56) => "Iron-56 (most stable nucleus)",
+        (82, 208) => "Lead-208",
+        _ => "",
+    };
+    if common.is_empty() {
+        format!("{}-{} ({})", name, a, sym)
+    } else {
+        format!("{} ({}{})", common, a, sym)
+    }
+}
+
 fn compute_pauli(elem: &Elem) -> (LPoly, LPoly) {
     let mut tr_alt = LPoly::zero();
     let mut net = LPoly::zero();
@@ -464,23 +514,38 @@ fn compute_pauli(elem: &Elem) -> (LPoly, LPoly) {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    if args.len() < 3 {
-        eprintln!("Usage: v8 Z N [max_terms]");
-        eprintln!("  Symbolic Pauli witness, exact in q.");
-        eprintln!("  max_terms: strip threshold (default: no stripping)");
+    if args.len() < 2 {
+        eprintln!("hecke-engine {} — symbolic Pauli witness, exact in q", env!("CARGO_PKG_VERSION"));
+        eprintln!();
+        eprintln!("Usage:");
+        eprintln!("  hecke-engine Z N           Single nucleus (e.g. 4 4 for ⁸Be)");
+        eprintln!("  hecke-engine witness A_min A_max   Batch: all balanced nuclei A_min..A_max");
+        eprintln!("                                      Writes witness-*.lean + checkpoint-*.json");
+        eprintln!("                                      Skips nuclei with existing checkpoints.");
         std::process::exit(1);
+    }
+
+    // Batch witness mode
+    if args[1] == "witness" {
+        let a_min: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(2);
+        let a_max: usize = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(16);
+        batch_witness(a_min, a_max);
+        return;
     }
 
     let z: usize = args[1].parse().unwrap();
     let n: usize = args[2].parse().unwrap();
     let max_terms: usize = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(usize::MAX);
     let a = z + n;
-    let sym = match z {1=>"H",2=>"He",3=>"Li",4=>"Be",5=>"B",6=>"C",7=>"N",8=>"O",_=>"?"};
+    let sym = element_symbol(z);
     let magic = [2,8,20,28,50,82,126];
     let dm = magic.contains(&z) && magic.contains(&n);
+    let iname = isotope_name(z, a);
 
     println!("════════════════════════════════════════════════════════");
-    println!("  v8 symbolic: {}{} (Z={}, N={}, A={})", a, sym, z, n, a);
+    println!("  hecke-engine {} — symbolic Pauli witness", env!("CARGO_PKG_VERSION"));
+    println!("  {}", iname);
+    println!("  {}{} (Z={}, N={}, A={})", a, sym, z, n, a);
     println!("  Exact in t = q^{{1/2}} over ℤ. {}",
         if dm { "★★ DOUBLY MAGIC" } else { "" });
     if max_terms < usize::MAX {
@@ -537,26 +602,169 @@ fn main() {
     println!("  F_Pauli = {:.10}", f);
     println!("════════════════════════════════════════════════════════");
 
-    // Lean witness (compact for large polynomials)
-    if tr_alt.n_terms() <= 200 && net_poly.n_terms() <= 200 {
-        println!();
-        println!("-- LEAN: exact in ℤ[t, t⁻¹], denominator 2^{}", elem.pn_count);
-        let lsym = sym.to_lowercase();
-        println!("noncomputable def tr_alt_{}{} : LaurentPolynomial ℤ :=", a, lsym);
-        print!("  ");
-        let mut first = true;
-        for (&k, &v) in &tr_alt.terms {
-            if !first && v>0 { print!(" + "); } else if !first { print!(" - "); } else if v<0 { print!("-"); }
-            let av = v.unsigned_abs();
-            if k==0 { print!("{}", av); }
-            else if av==1 { print!("LaurentPolynomial.T {}", k); }
-            else { print!("{} • LaurentPolynomial.T {}", av, k); }
-            first = false;
-        }
-        println!();
-    } else {
-        println!();
-        println!("-- Polynomial too large for inline Lean ({} + {} terms).", tr_alt.n_terms(), net_poly.n_terms());
-        println!("-- Write to file: v8-witness-{}{}.json", a, sym.to_lowercase());
+    // Lean witness output
+    write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms, dm);
+
+    // JSON checkpoint
+    write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms,
+        elem.n_terms(), elem.total_poly_terms(), elem.max_coeff());
+}
+
+fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
+    tr_alt: &LPoly, net_poly: &LPoly, pn_count: u32, f: f64, ms: u128, dm: bool)
+{
+    use std::io::Write;
+    let lsym = sym.to_lowercase();
+    let filename = format!("witness-{}{}.lean", a, lsym);
+    let mut file = std::fs::OpenOptions::new()
+        .create(true).append(true).open(&filename).unwrap();
+
+    writeln!(file, "/-- F_Pauli for {}{} (Z={}, N={}, A={}), exact in t = q^{{1/2}}.", a, sym, z, n, a).ok();
+    if dm { writeln!(file, "    ★★ DOUBLY MAGIC.").ok(); }
+    writeln!(file, "    Computed by hecke-engine {}, {}ms.", env!("CARGO_PKG_VERSION"), ms).ok();
+    writeln!(file, "    F_Pauli(q₀) = {:.10}", f).ok();
+    writeln!(file, "    Denominator: 2^{}. -/", pn_count).ok();
+    writeln!(file, "-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou").ok();
+
+    // Write polynomials
+    write!(file, "noncomputable def tr_alt_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();
+    write_lpoly(&mut file, tr_alt);
+    writeln!(file).ok();
+    writeln!(file).ok();
+
+    write!(file, "noncomputable def net_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();
+    write_lpoly(&mut file, net_poly);
+    writeln!(file).ok();
+    writeln!(file).ok();
+
+    writeln!(file, "noncomputable def F_Pauli_{}{}_denom : ℕ := {}", a, lsym, 1u64 << pn_count).ok();
+    writeln!(file).ok();
+
+    eprintln!("  Lean witness: {}", filename);
+}
+
+fn write_lpoly(file: &mut std::fs::File, poly: &LPoly) {
+    use std::io::Write;
+    if poly.terms.is_empty() { write!(file, "0").ok(); return; }
+    let mut first = true;
+    for (&k, &v) in &poly.terms {
+        if !first && v > 0 { write!(file, " + ").ok(); }
+        else if !first && v < 0 { write!(file, " - ").ok(); }
+        else if v < 0 { write!(file, "-").ok(); }
+        let av = v.unsigned_abs();
+        if k == 0 { write!(file, "{}", av).ok(); }
+        else if av == 1 { write!(file, "LaurentPolynomial.T {}", k).ok(); }
+        else { write!(file, "{} • LaurentPolynomial.T {}", av, k).ok(); }
+        first = false;
     }
+}
+
+fn write_json_checkpoint(z: usize, n: usize, a: usize, sym: &str,
+    tr_alt: &LPoly, net_poly: &LPoly, pn_count: u32, f: f64, ms: u128,
+    n_words: usize, n_poly: usize, max_coeff: i128)
+{
+    use std::io::Write;
+    let filename = format!("checkpoint-{}{}.json", a, sym.to_lowercase());
+    let mut file = std::fs::File::create(&filename).unwrap();
+
+    // Write tr_alt and net as coefficient arrays
+    let tr_coeffs: Vec<(i32, i128)> = tr_alt.terms.iter().map(|(&k, &v)| (k, v)).collect();
+    let net_coeffs: Vec<(i32, i128)> = net_poly.terms.iter().map(|(&k, &v)| (k, v)).collect();
+
+    write!(file, "{{\n").ok();
+    write!(file, "  \"engine\": \"hecke-engine {}\",\n", env!("CARGO_PKG_VERSION")).ok();
+    write!(file, "  \"nucleus\": \"{}{}\",\n", a, sym).ok();
+    write!(file, "  \"Z\": {}, \"N\": {}, \"A\": {},\n", z, n, a).ok();
+    write!(file, "  \"pn_count\": {},\n", pn_count).ok();
+    write!(file, "  \"F_Pauli_at_q0\": {:.15},\n", f).ok();
+    write!(file, "  \"elapsed_ms\": {},\n", ms).ok();
+    write!(file, "  \"n_words\": {}, \"n_poly_terms\": {}, \"max_coeff_log10\": {:.1},\n",
+        n_words, n_poly, if max_coeff > 0 { (max_coeff as f64).log10() } else { 0.0 }).ok();
+    write!(file, "  \"tr_alt_n_terms\": {},\n", tr_alt.n_terms()).ok();
+    write!(file, "  \"net_n_terms\": {},\n", net_poly.n_terms()).ok();
+
+    // Write sparse coefficient arrays
+    write!(file, "  \"tr_alt_coeffs\": [").ok();
+    for (i, (k, v)) in tr_coeffs.iter().enumerate() {
+        if i > 0 { write!(file, ",").ok(); }
+        write!(file, "[{},\"{}\"]", k, v).ok();
+    }
+    write!(file, "],\n").ok();
+
+    write!(file, "  \"net_coeffs\": [").ok();
+    for (i, (k, v)) in net_coeffs.iter().enumerate() {
+        if i > 0 { write!(file, ",").ok(); }
+        write!(file, "[{},\"{}\"]", k, v).ok();
+    }
+    write!(file, "]\n}}\n").ok();
+
+    eprintln!("  Checkpoint: {}", filename);
+}
+
+/// Batch witness mode: compute all balanced nuclei from A_min to A_max.
+fn batch_witness(a_min: usize, a_max: usize) {
+    let magic = [2usize, 8, 20, 28, 50, 82, 126];
+
+    println!("════════════════════════════════════════════════════════");
+    println!("  Batch Pauli witness: A = {} to {}", a_min, a_max);
+    println!("  hecke-engine {}", env!("CARGO_PKG_VERSION"));
+    println!("  Each nucleus writes:");
+    println!("    witness-<A><sym>.lean  (exact Lean definitions)");
+    println!("    checkpoint-<A><sym>.json  (resumable checkpoint)");
+    println!("════════════════════════════════════════════════════════");
+    println!();
+
+    for a in a_min..=a_max {
+        // Balanced nucleus: Z = A/2, N = A - Z
+        let z = a / 2;
+        let n = a - z;
+        if n + 1 < z { continue; } // valley of stability
+
+        let sym = element_symbol(z);
+        let dm = magic.contains(&z) && magic.contains(&n);
+        let iname = isotope_name(z, a);
+
+        // Check if checkpoint already exists (skip if done)
+        let ckpt = format!("checkpoint-{}{}.json", a, sym.to_lowercase());
+        if std::path::Path::new(&ckpt).exists() {
+            eprintln!("  A={} {}: checkpoint exists, skipping.", a, iname);
+            continue;
+        }
+
+        eprintln!("╔══ {} (Z={}, N={}) {} ══╗", iname, z, n,
+            if dm { "★★ DOUBLY MAGIC" } else { "" });
+
+        let strip_after = if a > 9 { 8 } else { 999 };
+        let t0 = Instant::now();
+        let (elem, accum, _log) = Eng::build_inductive(z, n, strip_after);
+
+        if elem.has_overflow() {
+            eprintln!("  OVERFLOW at A={} — stopping batch.", a);
+            break;
+        }
+
+        let (kept_alt, kept_net) = compute_pauli(&elem);
+        let tr_alt = kept_alt.add(&accum.tr_alt);
+        let net_poly = kept_net.add(&accum.net);
+        let ms = t0.elapsed().as_millis();
+
+        let t0_val = 1.10998_f64.sqrt();
+        let denom = 2.0_f64.powi(elem.pn_count as i32);
+        let tr_alt_val = tr_alt.eval(t0_val) / denom;
+        let net_val = net_poly.eval(t0_val) / denom;
+        let f = if net_val.abs() > 1e-30 { tr_alt_val.abs() / net_val.abs() } else { 0.0 };
+
+        println!("  A={:>2} {}{}: F_Pauli={:.6}, {} poly terms, coeff~10^{:.0}, {:.1}s{}",
+            a, a, sym, f, elem.total_poly_terms(),
+            if elem.max_coeff() > 0 { (elem.max_coeff() as f64).log10() } else { 0.0 },
+            ms as f64 / 1000.0,
+            if dm { " ★★" } else { "" });
+
+        write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms, dm);
+        write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms,
+            elem.n_terms(), elem.total_poly_terms(), elem.max_coeff());
+    }
+
+    println!();
+    println!("Done. Lean witnesses and JSON checkpoints written.");
 }
