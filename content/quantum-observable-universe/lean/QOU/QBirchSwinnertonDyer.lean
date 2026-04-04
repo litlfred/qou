@@ -75,10 +75,10 @@ def CategoricalMordellWeil (E : C) : Type v :=
     fact that the fundamental representation of any semisimple group has
     no invariant vectors.
 
-    Ref: [tate1974] https://doi.org/10.1007/BF01389745 -/
-/-- In a QOU, the Mordell-Weil group of any object that embeds into
-    Ad(A) is trivial.  Stated directly: `Hom(𝟙, Ad(A))` is a
-    subsingleton by the adjoint_vanishing axiom. -/
+    Ref: [tate1974] https://doi.org/10.1007/BF01389745
+
+    Stated directly: `Hom(𝟙, Ad(A))` is a subsingleton by the
+    adjoint_vanishing axiom. -/
 theorem descartes_rank_zero
     {k : Type*} [Field k]
     (Q : QuantumObservableUniverse.{u, v} k) :
