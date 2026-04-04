@@ -39,7 +39,11 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
   have hinv_le : q⁻¹ ^ k ≤ q⁻¹ ^ 1 := by
     apply pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv) hk
   simp [pow_one] at hinv_le
-  have hq_ge : 1 ≤ q ^ k := one_le_pow_of_one_le (le_of_lt hq) k
+  have hq_ge : q ^ k ≥ q := by
+    calc q = q ^ 1 := (pow_one q).symm
+      _ ≤ q ^ k := by
+        apply pow_right_mono₀ (le_of_lt hq)
+        exact hk
   linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
@@ -253,7 +257,12 @@ theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
   have hΓ := dyn.circ_pos
   -- After unfold: ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
   -- goal: dyn.d₀ ^ 2 - dyn.circulation * t / Real.pi > 0
-  nlinarith [mul_pos hπ hΓ, sq_nonneg dyn.d₀]
+  have hπ_ne : Real.pi ≠ 0 := ne_of_gt hπ
+  have hΓ_ne : dyn.circulation ≠ 0 := ne_of_gt hΓ
+  rw [sub_pos]
+  rw [div_lt_iff₀ hπ]
+  rw [lt_div_iff₀ hΓ] at ht
+  linarith
 
 /-- d(t)² = 0 at t = T* (collision). -/
 theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
@@ -439,23 +448,23 @@ structure BoundaryObservability where
   /-- NS-singular: obstruction persists (Kummer non-divisibility). -/
   ns_singular : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ euler_char)
 
+/-- For κ ≥ 4, 2κ does not divide -6.
+    This is the key arithmetic: |2κ| ≥ 8 > 6 = |-6|. -/
+private theorem obstruction_persists' (κ : ℕ) (hκ : κ ≥ 4) :
+    ¬ ((2 * (κ : ℤ)) ∣ (-6 : ℤ)) := by
+  intro ⟨c, hc⟩
+  have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
+  have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
+  have : |(-6 : ℤ)| = |2 * (κ : ℤ) * c| := by rw [hc]
+  simp at this
+  nlinarith [Int.one_le_abs hc_ne]
+
 /-- For χ(A) = -6 (Descartes/Bring), the Euler class is non-torsion
     and the NS obstruction persists at all Kummer levels κ ≥ 4. -/
 def descartes_boundary : BoundaryObservability where
   euler_char := -6
   euler_char_ne_zero := by norm_num
-  ns_singular := fun κ hκ => by
-    intro ⟨c, hc⟩
-    have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
-    have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
-    have hab : |(-6 : ℤ)| < |2 * (κ : ℤ) * c| := by
-      simp [abs_of_nonneg (by omega : (2 * (κ : ℤ)) ≥ 0)]
-      calc 6 < 8 := by norm_num
-        _ ≤ 2 * (κ : ℤ) := by omega
-        _ ≤ |2 * (κ : ℤ)| * |c| := by
-            nlinarith [Int.one_le_abs hc_ne, abs_nonneg (2 * (κ : ℤ))]
-        _ = |2 * ↑κ * c| := (abs_mul _ _).symm
-    linarith [hc]
+  ns_singular := fun κ hκ => obstruction_persists' κ hκ
 
 /-- **NS obstruction at level n**: the restriction of κ_n to Σ.
     Nonzero iff the QOU is NS-singular at that level.
@@ -582,8 +591,7 @@ structure NSSingularityDescartes (C : Type*) where
   /-- Blowup time is finite. -/
   blowup_finite : vortex.blowupTime > 0 := blowup_time_pos vortex
   /-- Topological obstruction persists. -/
-  kummer_persists : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ chi) :=
-    fun κ hκ => obstruction_persists κ hκ
+  kummer_persists : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ chi)
 
 -- ════════════════════════════════════════════════════════════════
 -- §15  Leray self-similar profile
