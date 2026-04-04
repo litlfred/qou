@@ -126,15 +126,17 @@ noncomputable def heckeChain (init : StateVec) : CrossingSeq → StateVec
   | [] => init
   | (c, d) :: rest => heckeChain (heckeMultiply (sigmaCoeff init) (identCoeff init) c d) rest
 
-/-- Apply a crossing sequence via transfer matrices, folding from the left.
+/-- Apply a crossing sequence via transfer matrices, folding from the right.
 
-    M = T(c₁,d₁) · T(c₂,d₂) · ⋯ · T(cₙ,dₙ)
-    result = Mᵀ · init
+    M = T(cₙ,dₙ) · ⋯ · T(c₂,d₂) · T(c₁,d₁)
 
-    Note: we fold the product of transfer matrices, then apply to init. -/
+    This matches the Hecke chain left-fold: the FIRST crossing in the
+    sequence is applied FIRST (innermost in the matrix product).
+    So M.mulVec init = T(cₙ,dₙ) · ⋯ · T(c₁,d₁) · init,
+    which matches heckeChain evaluating (c₁,d₁) first. -/
 noncomputable def matrixChain : CrossingSeq → TMatrix
   | [] => 1
-  | (c, d) :: rest => transferMatrix c d * matrixChain rest
+  | (c, d) :: rest => matrixChain rest * transferMatrix c d
 
 /-- The iterated correspondence: Hecke chain = matrix chain applied to
     initial state. By induction on the crossing sequence, using
@@ -150,12 +152,25 @@ theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
   | cons hd tl ih =>
     obtain ⟨c, d⟩ := hd
     simp only [heckeChain, matrixChain]
+    -- heckeChain (heckeMultiply .. c d) tl = (matrixChain tl).mulVec (heckeMultiply .. c d)
+    -- by inductive hypothesis ih applied to the new initial state.
+    -- heckeMultiply a b c d = (transferMatrix c d).mulVec (mkState a b) by hecke_eq_transfer.
+    -- So: (matrixChain tl).mulVec ((transferMatrix c d).mulVec init)
+    --   = (transferMatrix c d * matrixChain tl).mulVec init  by Matrix.mulVec_mulVec
+    -- heckeChain init ((c,d)::rest) = heckeChain (heckeMultiply .. c d) rest
+    -- By ih: = (matrixChain rest).mulVec (heckeMultiply .. c d)
+    -- By hecke_eq_transfer: heckeMultiply = (transferMatrix c d).mulVec init
+    -- So: = (matrixChain rest).mulVec ((transferMatrix c d).mulVec init)
+    -- By mulVec_mulVec: = (matrixChain rest * transferMatrix c d).mulVec init
+    -- This is exactly matrixChain ((c,d)::rest) .mulVec init  ✓
     rw [ih]
-    -- Need: T(c,d) * matrixChain tl applied to init
-    --     = matrixChain tl applied to (T(c,d) · init)
-    -- This follows from matrix associativity + hecke_eq_transfer
-    -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-    sorry
+    conv_lhs => rw [hecke_eq_transfer (sigmaCoeff init) (identCoeff init) c d]
+    -- Now: (matrixChain rest).mulVec ((transferMatrix c d).mulVec (mkState ..))
+    -- Need to show mkState (sigmaCoeff init) (identCoeff init) = init
+    -- and then apply mulVec_mulVec
+    have h_init : mkState (sigmaCoeff init) (identCoeff init) = init := by
+      ext i; fin_cases i <;> simp [mkState, sigmaCoeff, identCoeff]
+    rw [h_init, Matrix.mulVec_mulVec]
 
 -- ════════════════════════════════════════════════════════════════
 -- §5  Traced volume extracts Markov trace data
@@ -229,15 +244,14 @@ theorem optimal_coeff_eq_transfer_state (seq : CrossingSeq) :
     sigmaCoeff (heckeChain initialState seq) = sigmaCoeff state ∧
     identCoeff (heckeChain initialState seq) = identCoeff state := by
   simp only
+  have h := chain_correspondence seq initialState
   constructor
-  · -- σ-coefficient
-    have h := chain_correspondence seq initialState
-    -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-    sorry
-  · -- 𝟏-coefficient
-    have h := chain_correspondence seq initialState
-    -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-    sorry
+  · -- σ-coefficient: extract component 0
+    show (heckeChain initialState seq) 0 = ((matrixChain seq).mulVec initialState) 0
+    rw [h]
+  · -- 𝟏-coefficient: extract component 1
+    show (heckeChain initialState seq) 1 = ((matrixChain seq).mulVec initialState) 1
+    rw [h]
 
 /-- **Corollary**: the traced volume V̂_i equals the Markov trace
     of the per-generator Hecke element.
@@ -282,8 +296,15 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
     (hj : j + 1 < config.length) :
     matrixChain (chainCrossings config j) =
     (buildChains config).get! j := by
+  -- Both compute ∏_{k > j} T(config[j], config[k]) but via different
+  -- recursion patterns. matrixChain folds right over (drop (j+1));
+  -- buildChains extends chains as nucleons are added left-to-right.
+  -- The products are equal because matrix multiplication is associative
+  -- and both iterate over the same set of crossings.
   -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-  sorry
+  -- Proof: unfold both definitions, show they produce the same product
+  -- by induction on config.length - j - 1.
+  sorry  -- definitional bridge; requires unfolding buildChains.foldl
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure

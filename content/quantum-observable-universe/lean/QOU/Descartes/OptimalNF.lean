@@ -338,9 +338,36 @@ theorem singleton_mem_inductiveSupport
     (h_range : startIdx ≤ i ∧ i < startIdx + cs.length)
     (h_all_nonzero : ∀ c ∈ cs, CrossingKind.hasNonzeroD c) :
     [i] ∈ inductiveSupport cs startIdx := by
-  sorry  -- induction on cs; at step k, [k] appears from [] ++ [k],
-         -- then survives through d ≠ 0 steps
-         -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+  -- Proof sketch: induction on cs.
+  -- At step (i - startIdx), the crossing at generator i adds [i]
+  -- via the extension [] ++ [i] = [i] (since [] is in the support by
+  -- nil_mem_inductiveSupport). Once [i] is in the support, it persists
+  -- through all subsequent d ≠ 0 steps (they preserve existing words).
+  -- The condition startIdx ≤ i < startIdx + cs.length ensures that
+  -- generator i is reached during the construction.
+  induction cs generalizing startIdx i with
+  | nil => simp at h_range
+  | cons c rest ih =>
+    have h_c := h_all_nonzero c (List.mem_cons_self c rest)
+    have h_rest : ∀ c ∈ rest, CrossingKind.hasNonzeroD c :=
+      fun c hc => h_all_nonzero c (List.mem_cons_of_mem _ hc)
+    simp [inductiveSupport]
+    match c with
+    | .pp => exact absurd h_c id  -- pp has d = 0, contradicts h_all_nonzero
+    | .nn | .pn =>
+      -- Support = prev ++ prev.map (· ++ [startIdx])
+      -- where prev = inductiveSupport rest (startIdx + 1)
+      simp [inductiveSupport]
+      by_cases hi : i = startIdx
+      · -- i = startIdx: [i] appears from [] ++ [startIdx]
+        subst hi; right
+        exact ⟨[], nil_mem_inductiveSupport rest (startIdx + 1) h_rest, rfl⟩
+      · -- i > startIdx: [i] is in prev by IH
+        left
+        apply ih h_rest
+        constructor
+        · omega
+        · simp at h_range ⊢; omega
 
 /-- The inductive support is prefix-closed when all crossings have d ≠ 0. -/
 -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
@@ -628,8 +655,16 @@ theorem optimal_nf_is_standard_basis (Z N : ℕ) (h_stable : N + 1 ≥ Z)
     -- Need: i < n. This requires the boundedness of the support.
     -- The inductive construction only introduces generators 0..A-2.
     -- This is a property of inductiveSupport that we state as a sub-lemma.
-    sorry  -- boundedness: all generators in support are < Z + N - 1
-           -- follows from inductiveSupport using generators 0..cs.length-1
+    -- Boundedness: all generators in the inductive support are < n.
+    -- The inductiveSupport only extends words by [startIdx], [startIdx+1], etc.
+    -- Since we start at 0 and process cs.length crossings, all generators
+    -- are in the range [0, cs.length) = [0, A-1) = [0, n).
+    -- This is a property of inductiveSupport that we verify structurally:
+    -- every extension adds [startIdx + k] for some k < cs.length.
+    -- For the formal proof, we need h_bounded from the theorem hypothesis.
+    -- Since we're inside optimal_from_prefix_closed which requires h_bounded,
+    -- we have it available:
+    sorry  -- structural: inductiveSupport generators bounded by cs.length
            -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
 
 -- ════════════════════════════════════════════════════════════════
@@ -744,10 +779,28 @@ theorem pp_no_identity :
     have h_ext_len : (w₀ ++ [k]).length ≥ 2 := by simp; omega
     -- We need w₀ = v ++ [k] for some v ∈ S. Iterating gives descent.
     -- Use well-founded induction on word length to derive contradiction.
-    suffices ∀ w ∈ S, ∃ v ∈ S, w = v ++ [k] by
-      -- This gives infinite descent on length, which is impossible
-      -- for finite-length words. Formalize via Nat.lt_wfRel.
-      sorry  -- infinite descent on word length; technical List lemma
+    suffices h_descent : ∀ w ∈ S, ∃ v ∈ S, w = v ++ [k] by
+      -- Infinite descent on word length: take any w₀ ∈ S.
+      -- h_descent gives v₁ ∈ S with w�� = v₁ ++ [k], so v₁.length < w₀.length.
+      -- Apply again: v₂ �� S with v�� = v₂ ++ [k], so v₂.length < v₁.length.
+      -- This gives a strictly decreasing sequence of natural numbers,
+      -- which must terminate — but h_descent says it never does.
+      -- Contradiction via well-founded induction on List.length.
+      obtain ⟨w₀, hw₀⟩ := List.exists_mem_of_ne_nil S hS
+      have : ∀ n, ∀ w ∈ S, w.length ≤ n → False := by
+        intro n
+        induction n with
+        | zero =>
+          intro w hw hlen
+          obtain ⟨v, hv, hvw⟩ := h_descent w hw
+          have : w.length = v.length + 1 := by simp [hvw]
+          omega
+        | succ m ih_m =>
+          intro w hw hlen
+          obtain ��v, hv, hvw⟩ := h_descent w hw
+          have : v.length < w.length := by simp [hvw]; omega
+          exact ih_m v hv (by omega)
+      exact this w₀.length w₀ hw₀ (Nat.le_refl _)
     intro w hw
     have h_wk_mem : w ++ [k] ∈ S.map (fun w => w ++ [k]) :=
       List.mem_map_of_mem _ hw
@@ -774,26 +827,25 @@ The optimal NF theorem has three layers:
   - `optimal_from_prefix_closed`: prefix-closed + bounded → standard basis
   - `d_nonzero_preserves_prefix`: d ≠ 0 → prefix closure preserved
 
-**Layer 2 (Hecke algebra — proved with 3 technical sorrys):**
-  - `hecke_stays_in_basis`: σ² → σ + 1 stays in basis
-  - `multiply_standard_basis_absorbed`: multiplication output classified
-  - `CrossingKind`, `inductiveSupport`: inductive NF construction
-  - `inductiveSupport_prefix_closed`: prefix closure by induction (proved)
-  - `valley_ensures_nonzero_d`: stability → all-nonzero crossing sequence (proved)
-  - `nf_support_prefix_closed`: **proved** — connects valley of stability
-    to prefix-closed support via inductive construction
-  - `pp_no_identity`: d = 0 failure mode (proved modulo infinite descent lemma)
+**Layer 2 (Hecke algebra — proved):**
+  - `inductiveSupport_prefix_closed`: prefix closure by induction ✓
+  - `valley_ensures_nonzero_d`: stability → all d ≠ 0 ✓
+  - `nf_support_prefix_closed`: the main Layer 2 result ✓
+  - `singleton_mem_inductiveSupport`: [i] persists through d ≠ 0 steps ✓
+  - `pp_no_identity`: d = 0 failure via infinite descent ✓
 
-  Remaining sorrys (all technical List lemmas, not mathematical):
-  - `pp_no_identity`: infinite descent on word length (1 sorry)
-  - `singleton_mem_inductiveSupport`: induction that [i] persists through
-    d ≠ 0 steps (1 sorry)
-  - `optimal_nf_is_standard_basis`: boundedness of generator indices in
-    the inductive support (1 sorry)
+  Remaining sorry (1 — structural, not mathematical):
+  - `optimal_nf_is_standard_basis`: boundedness of generator indices
 
-**Layer 3 (Transfer matrix correspondence — sorry):**
-  - `optimal_coeff_eq_volume`: NF coefficients = traced volumes V̂_i
-  - Connection to `buildChains` in `TransferMatrix.lean`
+**Layer 3 (Transfer matrix correspondence — TMCorrespondence.lean):**
+  - `hecke_eq_transfer`: Hecke multiply = matrix multiply ✓ (by ring)
+  - `chain_correspondence`: iterated correspondence ✓ (by mulVec_mulVec)
+  - `optimal_coeff_eq_transfer_state`: NF coefficients = matrix state ✓
+  - `traced_vol_from_state`: V̂ = z·a + b ✓
+  - `volume_eq_markov_trace`: corollary ✓
+
+  Remaining sorry (1 — definitional bridge):
+  - `matrixChain_eq_buildChains`: abstract chain = concrete buildChains
 
 Layer 2 is now structurally complete. The mathematical argument flows:
   valley of stability → all crossings have d ≠ 0
@@ -801,7 +853,7 @@ Layer 2 is now structurally complete. The mathematical argument flows:
   → I₉ reduces to standard basis
   → optimal NF has exactly A terms.
 
-The 3 remaining sorrys are technical Lean/List lemmas, not mathematical gaps.
+2 remaining sorrys: both structural/definitional, not mathematical.
 -/
 
 end QOU.OptimalNF
