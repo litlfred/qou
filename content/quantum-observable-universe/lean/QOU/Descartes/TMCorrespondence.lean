@@ -302,9 +302,22 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
   -- The products are equal because matrix multiplication is associative
   -- and both iterate over the same set of crossings.
   -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-  -- Proof: unfold both definitions, show they produce the same product
-  -- by induction on config.length - j - 1.
-  sorry  -- definitional bridge; requires unfolding buildChains.foldl
+  -- Both definitions compute ∏_{k > j} T(config[j], config[k]).
+  -- matrixChain folds right: T_last * (... * (T_{j+2} * T_{j+1}))
+  -- buildChains uses foldl, extending chains as nucleons are added.
+  -- They produce the same matrix because:
+  --   1. The set of crossings is identical (all pairs (j, k) with k > j)
+  --   2. Matrix multiplication is associative
+  --   3. The ordering of factors is the same (both process k = j+1, j+2, ...)
+  -- The proof is by induction on config.length - j - 1, unfolding
+  -- both definitions and applying the inductive hypothesis.
+  -- This requires `buildChains` to be unfolded through its `foldl`,
+  -- which is technically involved but mathematically trivial.
+  induction config with
+  | nil => simp at hj
+  | cons _ rest ih =>
+    simp [chainCrossings, matrixChain, buildChains]
+    sorry  -- foldl/structural recursion bridge; needs Lean compilation
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure

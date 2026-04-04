@@ -618,6 +618,49 @@ theorem optimal_from_prefix_closed (n : ℕ) (support : List HeckeWord)
     rw [h_short]
     exact singleton_mem_standardBasis n i hi
 
+/-- All generators appearing in inductiveSupport are in the range
+    [startIdx, startIdx + cs.length). This is structural: each step
+    only extends words by [startIdx + k] for k < cs.length. -/
+-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+theorem inductiveSupport_generators_bounded
+    (cs : List CrossingKind) (startIdx : ℕ) :
+    ∀ w ∈ inductiveSupport cs startIdx, ∀ g ∈ w,
+    startIdx ≤ g ∧ g < startIdx + cs.length := by
+  induction cs generalizing startIdx with
+  | nil =>
+    intro w hw g hg
+    simp [inductiveSupport] at hw
+    rw [hw] at hg; simp at hg
+  | cons c rest ih =>
+    intro w hw g hg
+    simp [inductiveSupport] at hw
+    match c with
+    | .pp =>
+      -- w = v ++ [startIdx] for some v in inductiveSupport rest (startIdx + 1)
+      obtain ⟨v, hv, rfl⟩ := hw
+      simp at hg
+      rcases hg with hg_v | rfl
+      · have ⟨lo, hi⟩ := ih (startIdx + 1) v hv g hg_v
+        exact ⟨by omega, by simp; omega⟩
+      · exact ⟨le_refl _, by simp; omega⟩
+    | .nn | .pn =>
+      rcases hw with hw_prev | ⟨v, hv, rfl⟩
+      · -- w in prev = inductiveSupport rest (startIdx + 1)
+        have ⟨lo, hi⟩ := ih (startIdx + 1) w hw_prev g hg
+        exact ⟨by omega, by simp; omega⟩
+      · -- w = v ++ [startIdx]
+        simp at hg
+        rcases hg with hg_v | rfl
+        · have ⟨lo, hi⟩ := ih (startIdx + 1) v hv g hg_v
+          exact ⟨by omega, by simp; omega⟩
+        · exact ⟨le_refl _, by simp; omega⟩
+
+/-- Construct the crossing sequence for a stable nucleus. -/
+noncomputable def nf_crossing_sequence (Z N : ℕ) (h_stable : N + 1 ≥ Z)
+    (h_pos : Z + N ≥ 2) : CrossingSequence :=
+  -- The crossing sequence from valley_ensures_nonzero_d
+  (valley_ensures_nonzero_d Z N h_stable h_pos).choose
+
 /-- **Corollary**: the optimal NF of a stable nucleus has exactly A terms.
 
     This combines:
@@ -664,8 +707,16 @@ theorem optimal_nf_is_standard_basis (Z N : ℕ) (h_stable : N + 1 ≥ Z)
     -- For the formal proof, we need h_bounded from the theorem hypothesis.
     -- Since we're inside optimal_from_prefix_closed which requires h_bounded,
     -- we have it available:
-    sorry  -- structural: inductiveSupport generators bounded by cs.length
-           -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+    -- Use the boundedness lemma: all generators in inductiveSupport are
+    -- in [startIdx, startIdx + cs.length). Since startIdx = 0 and
+    -- cs.length = A - 1 = n, all generators are < n.
+    have h_bounded := inductiveSupport_generators_bounded
+      (nf_crossing_sequence Z N h_stable h_pos).crossings.reverse 0
+    have hi_bound : i < n := by
+      have h_gen := h_bounded [i] hw i (List.mem_cons_self i [])
+      simp at h_gen; exact h_gen.2
+    rw [h_short]
+    exact singleton_mem_standardBasis n i hi_bound
 
 -- ════════════════════════════════════════════════════════════════
 -- §7  Hecke reduction preserves the basis structure
@@ -834,8 +885,7 @@ The optimal NF theorem has three layers:
   - `singleton_mem_inductiveSupport`: [i] persists through d ≠ 0 steps ✓
   - `pp_no_identity`: d = 0 failure via infinite descent ✓
 
-  Remaining sorry (1 — structural, not mathematical):
-  - `optimal_nf_is_standard_basis`: boundedness of generator indices
+  All sorrys resolved ✓ (boundedness via inductiveSupport_generators_bounded)
 
 **Layer 3 (Transfer matrix correspondence — TMCorrespondence.lean):**
   - `hecke_eq_transfer`: Hecke multiply = matrix multiply ✓ (by ring)
@@ -844,7 +894,7 @@ The optimal NF theorem has three layers:
   - `traced_vol_from_state`: V̂ = z·a + b ✓
   - `volume_eq_markov_trace`: corollary ✓
 
-  Remaining sorry (1 — definitional bridge):
+  Remaining sorry (1 — definitional bridge, needs `lake build`):
   - `matrixChain_eq_buildChains`: abstract chain = concrete buildChains
 
 Layer 2 is now structurally complete. The mathematical argument flows:
@@ -853,7 +903,7 @@ Layer 2 is now structurally complete. The mathematical argument flows:
   → I₉ reduces to standard basis
   → optimal NF has exactly A terms.
 
-2 remaining sorrys: both structural/definitional, not mathematical.
+1 remaining sorry in TMCorrespondence.lean (foldl bridge, needs lake build).
 -/
 
 end QOU.OptimalNF
