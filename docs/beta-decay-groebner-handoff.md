@@ -1,0 +1,218 @@
+# Beta Decay Gröbner Computation: Session Handoff
+
+Branch: `claude/review-beta-decay-error-kPCbe`
+Date: 2026-04-04
+
+## Goals
+
+1. **Optimal Gröbner basis**: achieve n_terms ≈ n_strands for each
+   atom's NF, prove minimality via Hilbert basis theorem
+2. **Beta decay at degree ≥ 1**: show the interaction operates in
+   the coral fibre (degree ≥ 1, not visible at degree 0)
+
+## Where We Are
+
+### Deuterium 828 → 276 → I₁-I₄ → I₅-I₇ explained
+
+Starting point: deuterium at quark level (7 strands) has 828 NF
+terms in the raw Gröbner normal form.
+
+**Step 1: 828 → 276 families.** Group terms by generator content
+(same set of σ_i, different braid ordering). Each group has one
+DOMINANT word plus YB-reorderings. 276 content classes, each
+with 1-5 members. The dominant word IS the irreducible relation;
+the others are derived via Yang-Baxter.
+
+**Step 2: 276 → 4 quotient ideals.** The 276 families share
+universal structural operations:
+
+| Ideal | Operation | What it does |
+|-------|-----------|-------------|
+| I₁ | σ₀-extension | Prepend u_r–u_g crossing. Universal ratio +0.315 |
+| I₂ | YB reordering | Yang-Baxter σ_iσ_{i+1}σ_i ↔ σ_{i+1}σ_iσ_{i+1}. Ratio +0.168 |
+| I₃ | B₃ Borromean prefix | Prepend σ₀·σ₁·σ₀ (proton core). Ratio +0.166/+0.534 |
+| I₄ | 𝔫₁ neutron tail | Append σ₃·σ₄·σ₃·σ₅ (electron-Borromean-neutron). 66 families, 78% weight |
+
+Every family has I₁ extension (σ₀ prepended with consistent ratio).
+Most have I₂ (YB variant). Many have I₃ (B₃ prefix). 66 of 276
+have I₄ (neutron tail). The remaining 210 have incomplete I₄
+variants (missing one bond each).
+
+**Step 3: → I₅-I₇.** Analyzing the quotient-reduced form reveals
+three MORE structural operations:
+
+| Ideal | Operation | What it does |
+|-------|-----------|-------------|
+| I₅ | Protium completeness | ℵ₁ⁿ counts how many of protium's 4 NF terms were matched (n/4 = completeness) |
+| I₆ | Structural defects | Missing-bond patterns: defect(σ₀), defect(σ₅), defect(B), defect(e⁻) |
+| I₇ | Electron bridge | σ₂·σ₃·σ₂ Borromean bridge (83% of terms involve electron) |
+
+With I₁-I₇, the 828 terms should collapse toward the 7-strand
+target. Currently: 436 terms after per-term quotient (47% reduction),
+with 24 terms at ℵ₁⁴ level (the atom itself, close to target).
+
+### Nucleon-level NFs (exact in q)
+
+| Nucleus | Strands | Terms | Target | Palindromic? |
+|---------|---------|-------|--------|-------------|
+| D N(1,1) | 2 | **2** | 2 | trivial |
+| ³H N(1,2) | 3 | **4** | 3 | No |
+| ³He N(2,1) | 3 | **4** | 3 | No |
+| ⁴He N(2,2) | 4 | **12** | 4 | **Yes ★** |
+
+Deuterium is ALREADY optimal. Tritium/He-3 are 1 term over.
+He-4 is 12 terms (3× target) because the shell closure fills
+the entire Bruhat lattice of S₄.
+
+All coefficients are exact in ℤ[q^½, q^{-½}]. Key factored forms:
+
+```
+tritium σ₁: q²(q+1)²(q²−q+1)/4
+he3 σ₁:    (q²+1)²/4
+```
+
+Beta decay Q-value = exact polynomial difference in q.
+
+### Key Results
+
+- **g_A = |α_proton/α_neutron| = 1.255** (PDG: 1.275, −1.6%)
+  from quark-level Gröbner decomposition
+- **Three-part NF structure**: every atom = inputs(−) + mediator(+, degree≥1) + observable(+, degree 0)
+- **He-4 palindromic**: {1, 3, 4, 3, 1} = Poincaré polynomial of S₄
+- **Protium = T_{2,1}** (single Hopf crossing, degree 0, the simplest atom)
+
+### Protium NF (exact, named)
+
+```
+𝒩̄(ℵ(1,0)) = −0.010 · 𝔥₁           (INPUT: Hopf chain receptivity)
+            − 0.067 · 𝔲₀ · 𝔥₁      (INPUT: leading quark + chain)
+            + 0.196 · YB(𝔲₀ · 𝔥₁)  (MEDIATOR: degree ≥ 1, not visible)
+            + 1.286 · B₃ ⋈ T_{2,1}(e⁻) (OBSERVABLE: the atom)
+
+where:
+  𝔲₀ = T_{2,1}(u_r) at σ₀
+  𝔥₁ = T_{3,1}(u_g, d_b, e⁻) at σ₁·σ₂
+  coefficients are exact in q (shown here at q₀ for readability)
+```
+
+## What WORKED
+
+1. **Symbolic Gröbner engine** (`hecke_symbolic.py`) — exact in q
+2. **Quotient ideals** I₁-I₇ — group structural operations
+3. **Three-part NF** — inputs/mediator/observable decomposition
+4. **ℵ₁ⁿ completeness** — protium component counting
+5. **Palindromic detection** — He-4 shell closure verified
+6. **g_A from amplitude ratio** — 1.255 from Gröbner, no fitting
+
+## What DID NOT Work
+
+1. **Per-term quotient** — substituting each protium NF word
+   independently produces ℵ₁⁴ instead of single ℵ₁. Need
+   whole-atom quotient.
+2. **Quark-level scaling** — tritium (10 strands) reaches 4.6M
+   terms without quotient, ~19K even with quotient. Need I₁-I₇
+   to reduce BEFORE multiplication, not after.
+3. **Transfer matrix ansatz** — gave MAE 4.9% with ad hoc
+   corrections, but is superseded by Gröbner computation.
+4. **Floating point** — all computations should use exact q.
+
+## Next Steps
+
+### GOAL 1: Optimal Gröbner basis (n_terms = n_strands)
+
+**Step A**: Implement whole-atom quotient in `hecke_symbolic.py`.
+When protium appears in deuterium, match ALL 4 NF terms as one
+entity (ℵ₁), not 4 separate substitutions.
+
+**Step B**: Quotient by I₁-I₇ at the START of each inductive step.
+The σ₀-extension (I₁, ratio +0.315), YB reordering (I₂, ratio
++0.168), and structural defects (I₆) are universal — they apply
+to every atom. Factor them out before multiplying by new crossings.
+
+**Step C**: After quotient, check term count vs strand count.
+If n_terms > n_strands, look for additional structural operations
+to add to the ideal. Iterate until optimal.
+
+**Step D**: Prove minimality. The reduced Gröbner basis is unique
+(diamond lemma). If n_terms = n_strands, the ideal is complete
+and the basis is minimal. This is the Hilbert basis theorem
+applied to H_n(q)/I.
+
+**Step E**: Scale to ⁴He (4 strands, target 4 terms). Currently
+12 terms — the palindromic shell closure fills the full Bruhat
+lattice. The quotient ideals should collapse the 8 non-essential
+terms. This is the first magic-number test case.
+
+### GOAL 2: Beta decay at degree ≥ 1
+
+**Step A**: Show that the mediator terms (YB reorderings, positive
+coefficient, degree ≥ 1) are the interaction channel. In the
+protium NF, the +0.196 · YB(𝔲₀·𝔥₁) term IS the mediator — it
+carries energy but is not directly observable (degree ≥ 1).
+
+**Step B**: For beta decay, the T_{3,5} weak vertex acts at
+degree ≥ 1 in the coral fibre. When N_n × T_{3,5} is reduced,
+the output should decompose into:
+- degree 0 terms (proton + electron + neutrino — VISIBLE)
+- degree ≥ 1 terms (interaction mediators — NOT visible)
+
+The g_A = 1.255 result already shows this: the ratio of
+observable to consumed amplitudes IS the axial coupling.
+
+**Step C**: The coral fibre is where the torus knot operators
+(T_{2,3}, T_{2,5}, ..., T_{3,5}) act. At magic shell closures,
+the palindromic NF means ALL Bruhat lattice words are occupied —
+the coral fibre is FULL. Beta decay across a shell boundary
+must un-fill the parent shell (degree ≥ 1 operation) and
+re-fill the daughter shell (degree ≥ 1 operation).
+
+**Step D**: The 66/210 split in deuterium's NF families
+(complete vs incomplete neutron tail) is the prototype. At
+magic numbers, the split will involve torus knot operators
+instead of 𝔫₁: the complete shell (palindromic) vs incomplete
+shell (missing one bond). These are the degree ≥ 1 coral
+fibre operations for beta decay.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `hecke_symbolic.py` | Symbolic Gröbner engine (exact in q) |
+| `hecke_division.py` | Float Gröbner engine (with quotient support) |
+| `protium-witness.py` | Protium NF with named notation |
+| `protium-deep-trace.py` | Deep trace of coefficient origins |
+| `groebner-beta-decay.py` | Free neutron decay + particle decomposition |
+| `inductive-quark-atoms.py` | Build atoms from vacuum (quark level) |
+| `qvalue-representation-theory.py` | Transfer matrix Q-values (superseded) |
+
+## Lean Files
+
+| File | Content |
+|------|---------|
+| `QuotientIdeal.lean` | I₁-I₇ quotient ideal generators |
+| `NuclearNormalForms.lean` | D, ³H, ³He, ⁴He NFs exact in q |
+
+## Skills Updated
+
+| Skill | Update |
+|-------|--------|
+| `scientific-accuracy` | Gröbner basis requirement, quotient ideals, Q algebraic in q, degree vs length |
+| `editor` | Commit early commit often |
+| `lean-witness-audit` | Witness quality checklist (notation, completeness, Lean compat) |
+
+## Notation
+
+| Symbol | Meaning |
+|--------|---------|
+| q | Substrate parameter (symbolic, NOT q₀) |
+| q₀ | Numerical value 1.10998 (ONLY for comparison to observation) |
+| degree | Genus of knot = (r−1)(s−1)/2 for T_{r,s} |
+| length | Word length in Hecke algebra (NOT degree) |
+| ℵ(Z,N) | Atom with Z protons, N neutrons |
+| 𝒩(Z,N) | Nucleus |
+| 𝒩̄(X) | Gröbner normal form of X |
+| ℵ₁, ℵ₂ | Formal atom variables in quotient algebra |
+| 𝔲₀ | T_{2,1}(u_r) — leading quark crossing |
+| 𝔥₁ | T_{3,1}(u_g, d_b, e⁻) — Hopf chain |
+| 𝔫₁ | σ₃·σ₄·σ₃·σ₅ — neutron tail |
+| I₁-I₇ | Quotient ideal generators (structural operations) |
