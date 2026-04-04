@@ -128,6 +128,11 @@ export default chapter({
         "q-turbulence-spectrum",
         "vortex-reconnection",
         "berry-vortex-moduli",
+        "kelvin-dispersion-derivation",
+        "acoustic-horizon-conditions",
+        "q-ns-wellposedness",
+        "regularity-breakdown",
+        "q-ns-research-programme",
       ],
     }),
 
