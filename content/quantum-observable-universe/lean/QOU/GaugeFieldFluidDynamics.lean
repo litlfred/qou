@@ -44,10 +44,8 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
       _ ≤ q ^ k := by
         apply pow_right_mono₀ (le_of_lt hq)
         exact hk
-  calc q ^ k ≥ q := hq_ge
-    _ > 1 := hq
-    _ > q⁻¹ := by linarith
-    _ ≥ q⁻¹ ^ k := hinv_le
+  -- hinv_le : q⁻¹ ^ k ≤ q⁻¹, hq_ge : q ^ k ≥ q, hinv : q⁻¹ < 1, hq : q > 1
+  linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
 theorem qInteger_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
@@ -262,11 +260,14 @@ theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
   have hΓ_ne : dyn.circulation ≠ 0 := ne_of_gt hΓ
   -- ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
   -- goal: dyn.d₀ ^ 2 - dyn.circulation * t / Real.pi > 0
-  have h1 : t * dyn.circulation < Real.pi * dyn.d₀ ^ 2 := by
-    rwa [lt_div_iff₀ hΓ, mul_comm] at ht
-  have h2 : dyn.circulation * t / Real.pi < dyn.d₀ ^ 2 := by
-    rw [div_lt_iff₀ hπ]; linarith [mul_comm dyn.circulation t]
-  linarith
+  -- Equivalent to: Γ*t/π < d₀², i.e. Γ*t < π*d₀²
+  -- From ht: t < π*d₀²/Γ, multiply by Γ > 0
+  have h1 : dyn.circulation * t < Real.pi * dyn.d₀ ^ 2 := by
+    have := mul_lt_mul_of_pos_right ht hΓ
+    rwa [div_mul_cancel₀ _ hΓ_ne] at this
+  -- Now: d₀² - Γ*t/π > 0 iff π*d₀² - Γ*t > 0 (multiply by π > 0)
+  rw [sub_pos]
+  rwa [div_lt_iff₀ hπ, mul_comm]
 
 /-- d(t)² = 0 at t = T* (collision). -/
 theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
