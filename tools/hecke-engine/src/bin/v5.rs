@@ -303,36 +303,36 @@ impl Engine {
 
     fn apply_quotient_with_pauli(&self, terms: &mut FxHashMap<TreeWord, f64>) -> PauliAcc {
         let mut removed = PauliAcc::default();
-        loop {
-            let mut words: Vec<TreeWord> = terms.keys()
-                .filter(|w| w.len() >= 2 && terms[*w].abs() > 1e-15)
-                .cloned().collect();
-            words.sort_unstable_by(|a, b| b.len().cmp(&a.len()));
-            let mut found = false;
-            for word in &words {
-                let prefix = word.drop_last();
-                if terms.get(&prefix).map_or(false, |c| c.abs() > 1e-15) {
-                    let coeff = terms.remove(word).unwrap_or(0.0);
-                    removed.add(coeff, word.len(), self.q, self.qi);
-                    found = true; break;
-                }
+        // I₉: strip ALL terms whose prefix exists, in one pass per length level.
+        // Process from longest to shortest: remove length L terms whose
+        // length L-1 prefix exists, then L-1 terms whose L-2 prefix exists, etc.
+        let max_len = terms.keys().map(|w| w.len()).max().unwrap_or(0);
+        for target_len in (2..=max_len).rev() {
+            let to_remove: Vec<TreeWord> = terms.keys()
+                .filter(|w| w.len() == target_len && terms[*w].abs() > 1e-15)
+                .filter(|w| {
+                    let prefix = w.drop_last();
+                    terms.get(&prefix).map_or(false, |c| c.abs() > 1e-15)
+                })
+                .cloned()
+                .collect();
+            for word in to_remove {
+                let coeff = terms.remove(&word).unwrap_or(0.0);
+                removed.add(coeff, word.len(), self.q, self.qi);
             }
-            if !found { break; }
         }
-        loop {
-            let adj: Vec<TreeWord> = terms.keys()
-                .filter(|w| w.len() == 2 && terms[*w].abs() > 1e-15 && w.get(1) == w.get(0) + 1)
-                .cloned().collect();
-            let mut found = false;
-            for word in &adj {
-                let sigma_j = TreeWord::EMPTY.push(word.get(1));
-                if terms.get(&sigma_j).map_or(false, |c| c.abs() > 1e-15) {
-                    let coeff = terms.remove(&word).unwrap_or(0.0);
-                    removed.add(coeff, 2, self.q, self.qi);
-                    found = true; break;
-                }
-            }
-            if !found { break; }
+        // I₈: strip adjacency pairs in one pass
+        let adj_remove: Vec<TreeWord> = terms.keys()
+            .filter(|w| w.len() == 2 && terms[*w].abs() > 1e-15 && w.get(1) == w.get(0) + 1)
+            .filter(|w| {
+                let sigma_j = TreeWord::EMPTY.push(w.get(1));
+                terms.get(&sigma_j).map_or(false, |c| c.abs() > 1e-15)
+            })
+            .cloned()
+            .collect();
+        for word in adj_remove {
+            let coeff = terms.remove(&word).unwrap_or(0.0);
+            removed.add(coeff, 2, self.q, self.qi);
         }
         terms.retain(|_, c| c.abs() > 1e-15);
         removed
