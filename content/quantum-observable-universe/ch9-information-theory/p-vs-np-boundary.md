@@ -1,122 +1,200 @@
-**Conjecture ($\mathrm{P} \neq \mathrm{NP}$ as boundary condition).**
-*There exist decision problems whose braid encodings
-$L = \hat{\beta}$ possess computational horizons
-([computational horizon](#def:computational-horizon)) — jet
-horizons in the resolution tree $\mathcal{R}(L)$ across which
-the degree-$0$ answer $P_L(q_0)$ cannot be extracted in
-$\mathrm{poly}(c)$ Planck steps.*
+**Setup.**
+Let $\beta$ be a braid on $n$ strands with $c$ crossings and
+$\mathcal{R}(\beta)$ its Skein resolution tree
+([Skein Turing machine](#rem:skein-turing-machine)).  Fix a
+polynomial bound $p(c) = c^d$.
 
-*Equivalently: $\mathrm{P} \neq \mathrm{NP}$ if and only if
-there exist braids whose Skein resolution trees have
-**irreducible exponential weight** — resolution trees where the
-$3^c$ histories do not destructively interfere down to
-polynomial effective size.*
+**Definition (polynomial observable subcategory).**
+The *polynomial observable subcategory* of the resolution
+tree is the full sub-poset
 
-**Reformulation as a boundary condition.**
+$$
+  \mathcal{R}^{\circ}(\beta, q)
+  \;=\;
+  \bigl\{\,
+    x \in \mathcal{R}(\beta)
+    \;:\;
+    \Gamma_{\mathrm{poly}}\!(x,\, A_0) \neq 0
+  \,\bigr\},
+$$
 
-The classical statement of $\mathrm{P}$ vs $\mathrm{NP}$ asks
-whether every problem whose solutions can be verified quickly
-can also be solved quickly \cite{cook1971}.  In the QOU
-framework, this becomes a question about the **permeability of
-the jet horizon** applied to computation:
+where $\Gamma_{\mathrm{poly}}(x, A_0)$ consists of those
+degree-$0$ sections at $x$ that are computable — via the
+Markov trace restricted to $\mathcal{R}_{p(c)}$ — in at most
+$p(c)$ Planck steps.  This is the computational analog of the
+observable subcategory
+$\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
+([observable subcategory](#def:observable-subcategory)): the
+nodes of the resolution tree from which the degree-$0$ answer
+$P_L(q)$ is polynomial-time accessible.
+
+**Definition (computational boundary).**
+The *computational boundary* is the frontier
+
+$$
+  \partial_{\mathrm{P}}(\beta, q)
+  \;=\;
+  \overline{\mathcal{R}^{\circ}}
+  \;\setminus\;
+  \mathcal{R}^{\circ},
+$$
+
+equivalently the vanishing locus of the computational
+horizon ideal:
+
+$$
+  \partial_{\mathrm{P}}(\beta, q)
+  \;=\;
+  V\!\bigl(\mathfrak{h}_{\mathrm{comp}}\bigr),
+  \qquad
+  \mathfrak{h}_{\mathrm{comp}}
+  \;=\;
+  \bigl\{\,
+    s \in \Gamma\bigl(\mathcal{R},\, A_0^{\mathrm{comp}}\bigr)
+    \;:\;
+    s\big|_{\partial_{\mathrm{P}}} = 0
+  \,\bigr\}.
+$$
+
+This is the locus in the resolution tree where every
+polynomial-time degree-$0$ section vanishes — the exact
+analog of the jet horizon
+$\mathcal{H} = V(\mathfrak{h})$
+([jet horizon](#def:jet-horizon)), with the brane tower
+replaced by the resolution tower and the Frobenius algebra
+replaced by the Hecke algebra.
+
+**Conjecture ($\mathrm{P}$ vs $\mathrm{NP}$ as emptiness
+of the boundary).**
 
 $$
   \boxed{
     \mathrm{P} = \mathrm{NP}
     \;\;\Longleftrightarrow\;\;
-    \text{every computational horizon is transparent}
+    \partial_{\mathrm{P}}(\beta, q) = \varnothing
+    \;\;\text{for every NP braid } \beta
   }
 $$
 
-where "transparent" means the degree-$0$ observable (the answer)
-can be reconstructed from a polynomial-depth sample of the
-degree $\geq 1$ data (the witnesses).
+*$\mathrm{P} \neq \mathrm{NP}$ if and only if there exists
+an NP-complete braid $\beta$ for which the computational
+boundary is non-empty:*
 
-**The three equivalent viewpoints.**
+$$
+  \mathrm{P} \neq \mathrm{NP}
+  \;\;\Longleftrightarrow\;\;
+  \exists\; \beta \;\text{(NP-complete)}
+  \;\;\text{with}\;\;
+  \partial_{\mathrm{P}}(\beta, q) \neq \varnothing.
+$$
 
-1. **Information-theoretic.**  $\mathrm{P} \neq \mathrm{NP}$
-   means there exist computations whose information content
-   exceeds the polynomial bandwidth budget
-   ([bandwidth bound](#prop:p-bandwidth-bound)).  The $3^c$
-   resolution paths carry $c \cdot \log 3$ nats of raw
-   information; in NP-complete problems, this information does
-   not compress below exponential size under the Markov trace.
-   The degree-$0$ answer requires aggregating exponentially many
-   degree $\geq 1$ witnesses.
+**What each case means geometrically.**
 
-2. **Topological.**  $\mathrm{P} \neq \mathrm{NP}$ means there
-   exist braid closures $L$ whose Skein polynomials $P_L(q)$ do
-   not factor into $\mathrm{poly}(c)$ terms.  The factored form
-   $\prod_i \hat{V}_i(q)$ requires $\omega(\mathrm{poly}(c))$
-   factors — the link $L$ has irreducible topological complexity
-   that no polynomial-time process can decompose.
+- **$\partial_{\mathrm{P}} = \varnothing$** (P = NP):
+  The polynomial observable subcategory $\mathcal{R}^{\circ}$
+  is **closed** — it equals its own closure.  Every degree-$0$
+  section that exists anywhere in $\mathcal{R}$ already extends
+  to polynomial depth.  The computational horizon ideal is
+  trivial: $\mathfrak{h}_{\mathrm{comp}} = (0)$.  No
+  information barrier separates the polynomial slice from the
+  full tree.  The resolution tree has no genuine boundary — it
+  is a **removable singularity**.
 
-3. **Gravitational (boundary condition).**  $\mathrm{P} \neq
-   \mathrm{NP}$ means the computational horizon is a genuine
-   event horizon: the exponential interior of the resolution
-   tree is **causally disconnected** from the polynomial
-   exterior.  The degree-$0$ answer is behind the horizon.  A
-   polynomial-time observer can sample degree $\geq 1$ data
-   (verify witnesses), but cannot reconstruct the degree-$0$
-   observable — exactly as a Schwarzschild observer receives
-   Hawking radiation (degree $\geq 1$ thermal data) but cannot
-   recover the infalling state (degree-$0$ particle identity).
+- **$\partial_{\mathrm{P}} \neq \varnothing$** (P $\neq$ NP):
+  The polynomial observable subcategory $\mathcal{R}^{\circ}$
+  is **not closed** — its closure includes points beyond
+  polynomial depth.  There exists a non-trivial computational
+  boundary: a codimension-$1$ locus where degree-$0$ sections
+  vanish.  The horizon ideal
+  $\mathfrak{h}_{\mathrm{comp}} \neq (0)$ contains non-zero
+  sections — polynomial-time algorithms that reach the boundary
+  and return $0$.  The resolution tree has a genuine event
+  horizon — an **essential singularity**.
 
-**The Planck step argument.**
+**Parallel with the jet horizon and NS obstruction.**
 
-Consider a braid $\beta$ with $c$ crossings encoding an
-NP-complete problem (e.g., Hamiltonian path encoded as a
-link \cite{freedman2003}).  At each Planck step, the
-$q$-connection $\nabla_q$ resolves one crossing, branching
-the resolution tree into three sub-histories.  After $c$
-steps, the tree has $3^c$ leaves.
+| Object | Jet horizon | NS boundary | Computational boundary |
+|--------|------------|-------------|----------------------|
+| Space | Brane tower $A_n$ | State bundle $\mathcal{S}$ | Resolution tree $\mathcal{R}$ |
+| Observable part | $\mathrm{Bun}^{\circ}$ ($A_0 \neq 0$) | $\mathcal{S} \setminus \Sigma$ (off collision) | $\mathcal{R}^{\circ}$ (poly-time computable) |
+| Boundary | $\mathcal{H} = V(\mathfrak{h})$ | $\Sigma$ (collision locus) | $\partial_{\mathrm{P}} = V(\mathfrak{h}_{\mathrm{comp}})$ |
+| Ideal | $\mathfrak{h} \subset \Gamma(A_0)$ | $I_\Sigma \subset \mathcal{O}_M$ | $\mathfrak{h}_{\mathrm{comp}} \subset \Gamma(A_0^{\mathrm{comp}})$ |
+| $\partial = \varnothing$ | All configs observable | No collision (global smooth flow) | P = NP |
+| $\partial \neq \varnothing$ | Horizon exists (aeons) | NS-singular (blowup) | P $\neq$ NP |
+| Obstruction | $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ | $\mathrm{NS}(A) = \kappa_0|_\Sigma$ | $\kappa_c^{\mathrm{comp}} \in H^2(\mathcal{R}, \mathbb{G}_m)$ |
 
-A polynomial-time algorithm would need to evaluate $P_L(q_0)$
-using only $\mathrm{poly}(c)$ of the $3^c$ paths.  This
-requires that the remaining $3^c - \mathrm{poly}(c)$ paths
-have cancelling contributions — that destructive interference
-in the Skein relation eliminates all but polynomially many
-surviving terms.
+**The three equivalent criteria for $\partial_{\mathrm{P}}
+\neq \varnothing$.**
 
-The conjecture asserts that for NP-complete problems, this
-cancellation does not occur.  The $3^c$ paths carry
-**irreducible weight**: every exponential-size subtree
-contributes non-trivially to $P_L(q_0)$.  No polynomial
-sample suffices.
+1. **Ideal-theoretic.**  The horizon ideal is non-trivial:
+   $\mathfrak{h}_{\mathrm{comp}} \neq (0)$.  There exist
+   polynomial-time algorithms that attempt to compute
+   $P_L(q_0)$ and return $0$ — they reach the boundary
+   and find no degree-$0$ data.
+
+2. **Cohomological.**  The Skein resolution obstruction
+   $\kappa_c^{\mathrm{comp}}(\beta, q) \neq 0$
+   ([Skein resolution obstruction](#def:skein-resolution-obstruction)).
+   The Yekutieli class obstructs the lift from polynomial
+   depth to full resolution.
+
+3. **Information-theoretic.**  The effective tree size after
+   interference exceeds the polynomial bandwidth budget
+   ([bandwidth bound](#prop:p-bandwidth-bound)):
+   $I(\mathrm{poly}(c)) < c \cdot \log 3$ nats.
+
+All three are equivalent: the ideal is non-trivial iff the
+obstruction class is non-vanishing iff the bandwidth is
+saturated.
+
+**The conjecture, formally.**
+
+*For the QOU at substrate parameter $q_0 \in
+\mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$
+(non-torsion, [substrate $\mathbb{G}_m$-torsion](#rem:substrate-gm-torsion)):*
+
+*There exists a family of braids
+$\{\beta_N\}_{N \geq 1}$ with $c_N = 3N$ crossings
+encoding an NP-complete problem \cite{cook1971} such
+that:*
+
+$$
+  \partial_{\mathrm{P}}(\beta_N, q_0) \;\neq\; \varnothing
+  \qquad\text{for all } N \geq N_0.
+$$
+
+*The computational boundary is non-empty — a genuine event
+horizon exists in the resolution tree — and
+$\mathrm{P} \neq \mathrm{NP}$ over $\mathbb{R}$ at
+$q = q_0$ \cite{freedman2003}.*
 
 **Connection to quantum computation.**
 
 The descent involution $\hat{\tau}$
 ([quantum universality](#conj:quantum-computational-universality))
-decomposes the computation at a root of unity $q_k$:
+acts on the boundary.  At a root of unity $q_k$:
 
 $$
-  \mathrm{End}(V^{\otimes n})
+  \partial_{\mathrm{P}}(\beta, q_k)
   \;=\;
-  \mathcal{A}^{\mathrm{desc}} \;\oplus\; \mathcal{A}^{\mathrm{trans}}
+  \partial_{\mathrm{P}}^{\mathrm{desc}}
+  \;\cup\;
+  \partial_{\mathrm{P}}^{\mathrm{trans}}.
 $$
 
-The descended part $\mathcal{A}^{\mathrm{desc}}$ is the
-classical computation (P if polynomial, NP-hard if not).  The
-transient part $\mathcal{A}^{\mathrm{trans}}$ is the quantum
-parallelism — the exponentially many interfering paths.
+The descended boundary $\partial_{\mathrm{P}}^{\mathrm{desc}}$
+is the classical horizon (opaque at real $q$).  The transient
+boundary $\partial_{\mathrm{P}}^{\mathrm{trans}}$ is the
+quantum correction.  For BQP problems:
+$\partial_{\mathrm{P}}^{\mathrm{trans}} =
+-\partial_{\mathrm{P}}^{\mathrm{desc}}$ (exact cancellation),
+giving $\partial_{\mathrm{P}} = \varnothing$ at the root of
+unity — the boundary dissolves under quantum interference.
 
-$\mathrm{BQP}$ (bounded-error quantum polynomial time) is the
-class where quantum parallelism at $q_k$ collapses the
-transient modes efficiently — where the lift to the root of
-unity and descent back to real $q$ can be done in polynomial
-depth.  The standard belief $\mathrm{P} \subsetneq
-\mathrm{BQP} \subseteq \mathrm{NP}$ translates to:
+The standard complexity hierarchy translates to:
 
-- **$\mathrm{P} \subsetneq \mathrm{BQP}$**: Quantum
-  interference (lift to $q_k$) can penetrate some computational
-  horizons that are opaque to classical (real $q$) computation.
-- **$\mathrm{BQP} \subseteq \mathrm{NP}$**: Even quantum
-  interference cannot penetrate **all** computational horizons.
-  Some NP-complete problems have horizons that are opaque even
-  at roots of unity.
-
-The computational horizon is the universal obstruction: it is
-the information-theoretic barrier that separates efficient from
-inefficient computation, and its opacity is the content of
-$\mathrm{P} \neq \mathrm{NP}$.
+| Class | Boundary at real $q$ | Boundary at $q_k$ |
+|-------|---------------------|-------------------|
+| P | $\varnothing$ | $\varnothing$ |
+| BQP $\setminus$ P | $\neq \varnothing$ | $\varnothing$ (quantum cancellation) |
+| NP $\setminus$ BQP | $\neq \varnothing$ | $\neq \varnothing$ (even quantum can't dissolve) |
