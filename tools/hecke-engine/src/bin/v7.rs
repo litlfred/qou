@@ -306,55 +306,82 @@ impl SymEngine {
         elem.clean();
     }
 
+    /// Smart reduction with separated pools (no rescan of stable terms).
+    /// Implements tail reduction: new terms from reductions go to pending,
+    /// stable terms are never rescanned.
     fn reduce_all(elem: &mut SymElem, ha: &LPoly) {
+        let mut pending: FxHashMap<TreeWord, LPoly> = std::mem::take(&mut elem.terms);
+        let mut stable: FxHashMap<TreeWord, LPoly> = FxHashMap::default();
+
         loop {
-            let mut to_reduce: Vec<(TreeWord, LPoly)> = Vec::new();
-            let mut stable: FxHashMap<TreeWord, LPoly> = FxHashMap::default();
+            let mut next: FxHashMap<TreeWord, LPoly> = FxHashMap::default();
+            let mut any_reduced = false;
 
-            for (word, coeff) in elem.terms.drain() {
+            for (word, coeff) in pending.iter() {
                 if coeff.is_zero() { continue; }
-                if word.find_reduction().is_some() {
-                    to_reduce.push((word, coeff));
-                } else {
-                    let e = stable.entry(word).or_insert(LPoly::zero());
-                    *e = e.add(&coeff);
-                }
-            }
-
-            if to_reduce.is_empty() { elem.terms = stable; break; }
-
-            for (word, coeff) in to_reduce {
                 if let Some((pos, rule)) = word.find_reduction() {
+                    any_reduced = true;
                     match rule {
-                        0 => { // Hecke: σ² → HA·σ + 1
+                        0 => {
                             let w1 = word.remove_at(pos + 1);
                             let w2 = w1.remove_at(pos);
                             let c1 = coeff.mul(ha);
-                            let e1 = stable.entry(w1).or_insert(LPoly::zero());
+                            let e1 = next.entry(w1).or_insert(LPoly::zero());
                             *e1 = e1.add(&c1);
-                            let e2 = stable.entry(w2).or_insert(LPoly::zero());
-                            *e2 = e2.add(&coeff);
+                            let e2 = next.entry(w2).or_insert(LPoly::zero());
+                            *e2 = e2.add(coeff);
                         }
-                        1 => { // Far-comm: swap
-                            let mut w = word;
+                        1 => {
+                            let mut w = *word;
                             let (a, b) = (w.get(pos), w.get(pos+1));
                             w.set(pos, b); w.set(pos+1, a);
-                            let e = stable.entry(w).or_insert(LPoly::zero());
-                            *e = e.add(&coeff);
+                            let e = next.entry(w).or_insert(LPoly::zero());
+                            *e = e.add(coeff);
                         }
-                        2 => { // YB
-                            let mut w = word;
+                        2 => {
+                            let mut w = *word;
                             let (a, b) = (w.get(pos), w.get(pos+1));
                             w.set(pos, b); w.set(pos+1, a); w.set(pos+2, b);
-                            let e = stable.entry(w).or_insert(LPoly::zero());
-                            *e = e.add(&coeff);
+                            let e = next.entry(w).or_insert(LPoly::zero());
+                            *e = e.add(coeff);
                         }
                         _ => {}
                     }
+                } else {
+                    // Stable — never rescanned
+                    let e = stable.entry(*word).or_insert(LPoly::zero());
+                    *e = e.add(coeff);
                 }
             }
-            elem.terms = stable;
+
+            if !any_reduced { break; }
+
+            // Inter-reduce: if a new term collides with a stable term,
+            // merge them and re-check (the merged coefficient might cancel)
+            let mut merged: FxHashMap<TreeWord, LPoly> = FxHashMap::default();
+            for (w, c) in next {
+                if c.is_zero() { continue; }
+                if let Some(existing) = stable.remove(&w) {
+                    let sum = existing.add(&c);
+                    if !sum.is_zero() {
+                        merged.insert(w, sum);
+                    }
+                } else {
+                    merged.insert(w, c);
+                }
+            }
+            pending = merged;
         }
+
+        // Merge any remaining pending into stable
+        for (w, c) in pending {
+            if !c.is_zero() {
+                let e = stable.entry(w).or_insert(LPoly::zero());
+                *e = e.add(&c);
+            }
+        }
+        stable.retain(|_, c| !c.is_zero());
+        elem.terms = stable;
     }
 
     fn build(z: usize, n: usize) -> SymElem {
