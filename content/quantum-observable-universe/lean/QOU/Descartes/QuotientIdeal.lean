@@ -144,4 +144,112 @@ torus knot tails instead of 𝔫₁.
 -- To be derived when computing magic-number transitions
 -- def shell_closure_ideal (shell : Nat) : Ideal := sorry
 
+/-! ## I₅: Protium completeness (whole-atom quotient)
+
+Protium has 4 NF terms. When the per-term quotient engine
+substitutes each independently, it produces ℵ₁ⁿ with n = 1..4
+counting how many of the 4 terms were matched.
+
+  ℵ₁⁴ = 4/4 components present (complete protium)
+  ℵ₁³ = 3/4 (one bond missing)
+  ℵ₁² = 2/4 (two bonds missing)
+  ℵ₁¹ = 1/4 (three bonds missing)
+
+This is an artifact of per-term substitution. The correct
+quotient treats protium as ONE object:
+
+  ℵ₁ = −0.010·𝔥₁ − 0.067·𝔲₀·𝔥₁ + 0.196·YB(𝔲₀·𝔥₁) + 1.286·B₃⋈T_{2,1}(e⁻)
+
+All 4 terms together = one protium. Partial matches (ℵ₁³ etc.)
+are structural defects — one or more bonds absent from the
+complete atom. These defects are universal (same across all atoms)
+and should be factored out as separate ideal generators.
+
+The ℵ₁ⁿ count distribution in deuterium:
+  ℵ₁⁴: 24 terms, 69% weight — complete protium (THE ATOM)
+  ℵ₁³: 92 terms, 26% weight — protium missing one bond (INPUT)
+  ℵ₁²: 176 terms, 3% weight — protium missing two bonds
+  ℵ₁¹: 144 terms, 0.5% weight — protium missing three bonds
+-/
+
+-- Protium completeness: ℵ₁ⁿ → single symbol per completeness level
+-- n = number of protium NF components present (0..4)
+def protium_completeness_levels : Nat := 4  -- protium has 4 NF terms
+
+/-! ## I₆: Structural defects (missing bonds)
+
+When an atom's NF contains a PARTIAL version of a known
+sub-structure (missing one specific bond), that defect is
+a universal structural operation with a known energy cost.
+
+Each defect is identified by WHICH bond is missing:
+
+  defect(σ₀) = missing u_r–u_g link (proton uu pair incomplete)
+  defect(σ₅) = missing d_g'–d_b' link (neutron dd pair incomplete)
+  defect(B)  = Borromean broken (σ₃ appears once, not twice)
+  defect(e⁻) = electron bridge absent (σ₂·σ₃ missing)
+
+These defects appear at EVERY fibre level (ℵ₁³, ℵ₁², ℵ₁¹)
+with consistent coefficient ratios. They are the "input slots"
+that describe what the atom is receptive to.
+
+In the deuterium NF:
+  "atom without u_r link"     → coeff −0.340 (defect(σ₀))
+  "atom with broken Borromean"→ coeff −0.340 (defect(B))
+  "atom minus dd link"        → coeff −0.617 (defect(σ₅))
+  "bare neutron slot"         → coeff −0.483 (defect(𝔫₁))
+-/
+
+-- Universal structural defects
+-- Each has a name, the missing generator(s), and energy cost
+structure StructuralDefect where
+  name : String
+  missing_generators : List Nat
+  energy_cost : Float
+
+def defect_uu_link : StructuralDefect :=
+  { name := "missing u_r–u_g link"
+    missing_generators := [0]
+    energy_cost := 0.340 }
+
+def defect_dd_link : StructuralDefect :=
+  { name := "missing d_g'–d_b' link"
+    missing_generators := [5]
+    energy_cost := 0.617 }
+
+def defect_borromean : StructuralDefect :=
+  { name := "broken Borromean (single σ₃)"
+    missing_generators := [3]  -- σ₃ should appear twice
+    energy_cost := 0.340 }
+
+def defect_electron_bridge : StructuralDefect :=
+  { name := "electron bridge absent"
+    missing_generators := [2, 3]  -- σ₂·σ₃ pattern missing
+    energy_cost := 0.503 }
+
+/-! ## I₇: Electron bridge (σ₂·σ₃·σ₂ Borromean bridge)
+
+The electron (strand 3) acts as a BRIDGE between proton
+and neutron. It is NOT visible as T_{2,3} — its trefoil
+structure was Hecke-reduced during construction.
+
+Instead, the electron appears as bridge crossings:
+  σ₂: d_b (proton) → e⁻
+  σ₃: e⁻ → u_r' (neutron)
+
+The dominant bridge pattern is σ₂·σ₃·σ₂ (Borromean bridge):
+  d_b wraps around e⁻ twice with u_r' between.
+
+In deuterium: 83% of terms involve σ₂ or σ₃ (the electron).
+Only 17% bypass the electron entirely (direct quark-quark).
+
+The electron bridge is a universal structural operation —
+every atom with Z ≥ 1 has at least one electron mediating
+nucleon interactions.
+-/
+
+-- Electron bridge pattern
+def electron_bridge_word : List Nat := [2, 3, 2]
+def electron_bridge_coverage : Float := 0.83  -- fraction of terms
+
 end QOU.QuotientIdeal
