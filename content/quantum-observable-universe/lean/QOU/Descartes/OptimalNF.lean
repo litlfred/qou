@@ -64,7 +64,9 @@ theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
     IsI9Absorbable support (a :: rest ++ [g]) := by
   refine ⟨?_, ?_⟩
   · simp
-  · sorry
+  · simp only [List.dropLast_append_of_ne_nil _ (by simp : [g] ≠ []),
+               List.dropLast_single, List.append_nil]
+    exact h_prefix
 
 -- ════════════════════════════════════════════════════════════════
 -- §3  The standard basis is non-absorbable
@@ -181,7 +183,9 @@ theorem multiply_standard_basis_absorbed (n k : ℕ) (hk : k < n) :
   · -- v = [i], w = [i, k]
     by_cases heq : i = k
     · -- i = k: [i, i] is Hecke-reducible (σ²), both outputs in basis
-      subst heq; sorry -- [i,i] after Hecke reduction → basis elements
+      subst heq
+      right; right
+      exact ⟨by simp, by simp [List.dropLast]; exact singleton_mem_standardBasis n i hi⟩
     · right; exact cross_term_absorbable n i k hi hk heq
 
 -- ════════════════════════════════════════════════════════════════
@@ -195,7 +199,16 @@ theorem multiply_standard_basis_absorbed (n k : ℕ) (hk : k < n) :
 theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
     (h_closed : IsPrefixClosed S) :
     IsPrefixClosed (S ++ S.map (fun w => w ++ [k])) := by
-  sorry -- technical: needs List.dropLast_append lemmas
+  intro w hw hlen
+  simp only [List.mem_append, List.mem_map] at hw ⊢
+  rcases hw with hw_left | ⟨v, hv, rfl⟩
+  · -- w ∈ S: by h_closed, w.dropLast ∈ S
+    left; exact h_closed w hw_left hlen
+  · -- w = v ++ [k]: dropLast is v, which is in S
+    left
+    simp only [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
+               List.dropLast_single, List.append_nil]
+    exact hv
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Valley of stability → prefix-closed NF

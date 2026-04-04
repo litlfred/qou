@@ -463,7 +463,13 @@ fn main() {
         }
 
         "qvalues" => {
-            let kappa = 0.510999 / 3.0;
+            // Use log_q(x) = ln(x)/ln(q) consistently.
+            // The q-integer structure: log_q(P_dau/P_par) ≈ −(N−1), where N is the
+            // number of strands whose crossing type changes in the β⁻ decay.
+            // Numerically: log_q × κ_q = ln × κ  (the ln(q) cancels), so the
+            // final Q-value prediction is unchanged from the bare-ln formulation.
+            let ln_q = engine.q.ln();
+            let kappa_q = 0.510999 / 3.0 * ln_q;  // κ_q = ln(q) × m_e/3
             let f_deg2 = 0.5949_f64; let f_pauli = 0.6382_f64;
             let magic = [2,8,20,28,50,82,126];
             let shell_degree = |n: usize| -> usize {
@@ -478,9 +484,9 @@ fn main() {
                 B{z:27,n:33,name:"⁶⁰Co→⁶⁰Ni",q_exp:0.31817},B{z:38,n:52,name:"⁹⁰Sr→⁹⁰Y",q_exp:0.54590},
                 B{z:55,n:82,name:"¹³⁷Cs→¹³⁷Ba",q_exp:0.51400},B{z:83,n:127,name:"²¹⁰Bi→²¹⁰Po",q_exp:1.16270},
             ];
-            println!("Q-VALUES (transfer matrix, κ={:.6} MeV, q₀={:.5})", kappa, engine.q);
-            println!("{:>16} {:>8} {:>8} {:>8} {:>7}", "Decay","Q_pred","Q_exp","F","Error");
-            println!("{}", "-".repeat(55));
+            println!("Q-VALUES (transfer matrix, log_q basis, κ_q={:.6} MeV, ln(q)={:.6}, q₀={:.5})", kappa_q, ln_q, engine.q);
+            println!("{:>16} {:>8} {:>8} {:>8} {:>8} {:>7}", "Decay","Q_pred","Q_exp","log_q","F","Error");
+            println!("{}", "-".repeat(65));
             let mut errs = Vec::new();
             for b in &benchmarks {
                 let a=b.z+b.n;
@@ -491,7 +497,8 @@ fn main() {
                 let mut lu=0.0f64; let mut lr=0.0f64; let mut luc=0.0f64;
                 for i in 0..a-1 {
                     if vp[i].abs()<1e-30||vd[i].abs()<1e-30 { continue; }
-                    let lratio = vd[i].abs().ln()-vp[i].abs().ln();
+                    // log_q(V_dau_i / V_par_i) = ln(V_dau_i / V_par_i) / ln(q)
+                    let lratio = (vd[i].abs().ln()-vp[i].abs().ln()) / ln_q;
                     let changed: Vec<_> = (i+1..a).filter(|&j| {
                         let pp=format!("{}{}",types_p[i] as char,types_p[j] as char);
                         let pd=format!("{}{}",types_d[i] as char,types_d[j] as char);
@@ -506,7 +513,11 @@ fn main() {
                         else{lu+=lratio*nu as f64/t as f64; lr+=lratio*nr as f64/t as f64;}
                     }
                 }
-                let q_qwt = (engine.q*lu+engine.qi*lr+luc).abs()*kappa;
+                // q-weighting unchanged: q × log_q(u) + q⁻¹ × log_q(r) + log_q(uc)
+                // Then Q = |weighted sum| × κ_q.  Since lratio is now log_q and
+                // κ_q = κ × ln(q), the product log_q × κ_q = ln × κ is invariant.
+                let q_qwt = (engine.q*lu+engine.qi*lr+luc).abs()*kappa_q;
+                let log_q_total = lu + lr + luc;  // total log_q(P_dau/P_par) ≈ −(N−1)
                 let deg=shell_degree(b.n);
                 let mut f = if deg>=2 {f_deg2} else {1.0};
                 if is_magic(b.n)&&deg>=2 { f*=f_pauli; }
@@ -514,10 +525,10 @@ fn main() {
                 let err=(q_pred-b.q_exp)/b.q_exp*100.0;
                 errs.push(err.abs());
                 let mark=if err.abs()<5.0 {"◀"} else {" "};
-                println!("{:>16} {:>8.5} {:>8.5} {:>8.4} {:>+6.1}%{}", b.name, q_pred, b.q_exp, f, err, mark);
+                println!("{:>16} {:>8.5} {:>8.5} {:>+8.3} {:>8.4} {:>+6.1}%{}", b.name, q_pred, b.q_exp, log_q_total, f, err, mark);
             }
             let mae: f64 = errs.iter().sum::<f64>()/errs.len() as f64;
-            println!("\nMAE = {:.1}%", mae);
+            println!("\nMAE = {:.1}%  (log_q(P_dau/P_par) should be ≈ −(N−1), a q-integer)", mae);
         }
 
         _ => { eprintln!("Unknown: {}", args[1]); std::process::exit(1); }
