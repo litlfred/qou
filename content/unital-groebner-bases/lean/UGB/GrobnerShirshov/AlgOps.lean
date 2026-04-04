@@ -1,5 +1,5 @@
-import QOU.GrobnerShirshov.Basic
-import QOU.GrobnerShirshov.NormalForms
+import UGB.GrobnerShirshov.Basic
+import UGB.GrobnerShirshov.NormalForms
 
 /-!
 # AlgElement Algebraic Operations
@@ -25,7 +25,7 @@ structure.  This module makes it an algebra.
 -/
 
 
-namespace QOU.GrobnerShirshov
+namespace UGB.GrobnerShirshov
 
 universe u v
 
@@ -286,4 +286,4 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
         | @cons x xs ys _ ih =>
           exact List.Lex.cons (rank x) ih
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov

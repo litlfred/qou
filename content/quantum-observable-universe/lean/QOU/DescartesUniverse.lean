@@ -3,7 +3,6 @@ import QOU.QuantumObservableUniverse
 import QOU.Glossary
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
-import Mathlib.Tactic.Omega
 
 /-!
 # Chapter 6 — The Descartes Universe

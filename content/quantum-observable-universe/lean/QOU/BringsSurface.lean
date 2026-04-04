@@ -4,7 +4,6 @@ import QOU.Glossary
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 import Mathlib.Data.Fin.Basic
-import Mathlib.Tactic.Omega
 
 /-!
 # Chapter 5 — Bring's Surface

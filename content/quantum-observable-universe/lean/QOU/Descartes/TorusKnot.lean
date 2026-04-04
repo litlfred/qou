@@ -1,6 +1,5 @@
 import QOU.Descartes.GroundRing
 import Mathlib.Data.Nat.GCD.Basic
-import Mathlib.Tactic.Omega
 
 /-!
 # Torus Knots and Embeddability on Σ_g

@@ -73,6 +73,34 @@ theorem vacuum_state_exists (dla : DirectLimitAlgebra) :
     Nonempty (VacuumState dla) :=
   ⟨⟨dla.limitState, dla.limitState_invariant, dla.limitState_extends⟩⟩
 
+/-- **Uniqueness of the vacuum state**: any two vacuum states on the
+    same direct limit algebra agree on all elements.
+
+    **Proof strategy:** Both states are constant (by `invariant`), and
+    they agree on embedded elements (by `extends_haar` + Haar uniqueness).
+    So they are equal everywhere.
+
+    This is the categorical analogue of the Schur uniqueness in
+    `QOU.Torsion.invariant_functional_unique` (vacuum-state.lean). -/
+-- Ref: [manuscript] §3, Proposition: Vacuum state (uniqueness)
+theorem vacuum_state_state_eq (dla : DirectLimitAlgebra)
+    (v₁ v₂ : VacuumState dla)
+    (n : ℕ) (a₀ : dla.sectionAlgebra n) :
+    ∀ (a : dla.limitAlgebra), v₁.state a = v₂.state a := by
+  intro a
+  -- v₁ is constant, so v₁.state a = v₁.state (embed n a₀)
+  rw [v₁.invariant a (dla.embed n a₀)]
+  -- v₂ is constant, so v₂.state a = v₂.state (embed n a₀)
+  rw [v₂.invariant a (dla.embed n a₀)]
+  -- Both extend the Haar state: vᵢ.state (embed n a₀) = haarState n a₀
+  rw [v₁.extends_haar n a₀, v₂.extends_haar n a₀]
+
+/-- The vacuum state value is determined by the Haar state at level 0. -/
+theorem vacuum_state_value_eq_haar (dla : DirectLimitAlgebra)
+    (v : VacuumState dla) (n : ℕ) (a : dla.sectionAlgebra n) :
+    v.state (dla.embed n a) = dla.haarState n a :=
+  v.extends_haar n a
+
 /-! ## §6  Euler Characteristic Stability -/
 
 /-- **Proposition (Stability of the Euler Characteristic).**

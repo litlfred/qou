@@ -1,4 +1,4 @@
-import QOU.GrobnerShirshov.Basic
+import UGB.GrobnerShirshov.Basic
 
 /-!
 # Gröbner–Shirshov Composition Lemma (Diamond Lemma)
@@ -27,7 +27,7 @@ reduction relations defined in `Basic.lean`:
 -/
 
 
-namespace QOU.GrobnerShirshov
+namespace UGB.GrobnerShirshov
 
 universe u v
 
@@ -192,4 +192,4 @@ theorem retraction_property
   rw [h_embed]
   exact composition_lemma ord sys hgs f
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov

@@ -4,7 +4,6 @@ import QOU.Glossary
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Prime.Basic
 import Mathlib.Data.Nat.GCD.Basic
-import Mathlib.Tactic.Omega
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Tactic.Ring
 

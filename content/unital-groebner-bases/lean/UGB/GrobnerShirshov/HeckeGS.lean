@@ -1,6 +1,6 @@
-import QOU.GrobnerShirshov.Basic
-import QOU.GrobnerShirshov.AlgOps
-import QOU.GrobnerShirshov.CompositionLemma
+import UGB.GrobnerShirshov.Basic
+import UGB.GrobnerShirshov.AlgOps
+import UGB.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Real.Basic
 import Mathlib.Logic.Function.Basic
 
@@ -29,9 +29,9 @@ Instantiation of the abstract GS framework for the Hecke algebra
 -/
 
 
-namespace QOU.GrobnerShirshov.Hecke
+namespace UGB.GrobnerShirshov.Hecke
 
-open QOU.GrobnerShirshov
+open UGB.GrobnerShirshov
 
 /-! ## §1  Hecke Generators -/
 
@@ -272,4 +272,4 @@ theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
   exact heckeCost_well_defined (n + 1) hp
     (augmentedBraidElement hp hadron) nf₁ nf₂ h₁ h₂
 
-end QOU.GrobnerShirshov.Hecke
+end UGB.GrobnerShirshov.Hecke
