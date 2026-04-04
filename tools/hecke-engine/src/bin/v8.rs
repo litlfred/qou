@@ -400,8 +400,10 @@ impl Eng {
             let mb = elem.mem_bytes() as f64 / 1_048_576.0;
             let elapsed = t0.elapsed().as_secs_f64();
 
-            // Inductive stripping: accumulate ALL, then strip
-            if (k + 1) as usize > strip_after && k < a - 1 {
+            // Inductive stripping: accumulate ALL, then strip.
+            // Also strip the LAST strand — the witness only needs tr_alt+net,
+            // not the 1M+ expanded words.
+            if (k + 1) as usize > strip_after {
                 // Accumulate Pauli data of ALL current terms (exact in q)
                 let mut strand_pauli = SymPauliAcc::zero();
                 strand_pauli.add_from_elem(&elem);
