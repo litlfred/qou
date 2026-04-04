@@ -28,7 +28,7 @@ Usage:
 """
 
 import math
-from q_parameter import Q as q, Q_INV as qi, E_CROSS, HBAR_Q, q_int
+from q_parameter import Q as q, Q_INV as qi, E_CROSS
 from experimental_constants import *
 
 HA = q - qi
@@ -50,7 +50,8 @@ def neutron_shell(N):
         if N <= m:
             return i + 1, N - prev, m - prev, (N == m)
         prev = m
-    return len(MAGIC) + 1, N - MAGIC[-1], 58, False
+    NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
+    return len(MAGIC) + 1, N - MAGIC[-1], NEXT_SHELL_SIZE, False
 
 
 # ══════════════════════════════════════════════════════════════
@@ -121,9 +122,7 @@ def Q_decomposed(Z, N):
             n_unbind = sum(1 for pp, _ in changed if pp == 'nn')
             n_rebind = sum(1 for _, dp in changed if dp == 'pp')
             total = n_unbind + n_rebind
-            if total == 0:
-                ln_unchanged += ln_ratio
-            elif n_rebind == 0:
+            if n_rebind == 0:
                 ln_unbind += ln_ratio
             elif n_unbind == 0:
                 ln_rebind += ln_ratio
@@ -165,7 +164,7 @@ nuclei = [
 
 print("═" * 100)
 print("Q-VALUE PREDICTIONS: TWO-STAGE CORRECTION")
-print("  Stage 1: Q_qwt = |q·ln(unbind) + q⁻¹·ln(rebind)| × κ")
+print("  Stage 1: Q_qwt = |q·ln(unbind) + q⁻¹·ln(rebind) + ln(unchanged)| × κ")
 print("  Stage 2: Q_full = Q_qwt × F_shell")
 print("═" * 100)
 print()

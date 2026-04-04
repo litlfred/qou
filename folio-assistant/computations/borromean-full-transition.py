@@ -40,7 +40,7 @@ from experimental_constants import *
 HA = q - qi
 S = q**0.5 - qi**0.5
 Z_m = 1.0 / (q**0.5 + qi**0.5)
-kappa = E_CROSS * M_E_MEV / (3 * E_CROSS)
+kappa = M_E_MEV / 3  # = E_CROSS * M_E_MEV / (3 * E_CROSS), simplified
 
 # ══════════════════════════════════════════════════════════════
 # §1  H₃(q) REPRESENTATIONS
@@ -91,6 +91,7 @@ def torus_word(r, s):
         for _ in range(s):
             w += [(0, 1), (1, 1)]
         return w
+    raise ValueError(f"Unsupported torus knot parameter r={r}; expected 2 or 3")
 
 def torus_inv(r, s):
     return [(g, -sgn) for g, sgn in reversed(torus_word(r, s))]
@@ -226,7 +227,8 @@ def get_shell(X):
         if X <= m:
             return i + 1, X - prev, m - prev, (X == m)
         prev = m
-    return len(MAGIC) + 1, X - MAGIC[-1], 58, False
+    NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
+    return len(MAGIC) + 1, X - MAGIC[-1], NEXT_SHELL_SIZE, False
 
 
 # ══════════════════════════════════════════════════════════════
