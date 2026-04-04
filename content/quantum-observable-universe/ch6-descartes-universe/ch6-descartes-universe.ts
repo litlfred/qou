@@ -148,6 +148,8 @@ export default chapter({
         "q-aubin-lions",
         "q-bkm-criterion",
         "vorticity-lower-bound",
+        "root-of-unity-truncation",
+        "core-levi-form",
         "q-ns-research-programme",
       ],
     }),
