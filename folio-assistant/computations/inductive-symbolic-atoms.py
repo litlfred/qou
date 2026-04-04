@@ -151,7 +151,7 @@ def compute_qvalue_polynomial(parent_elem, daughter_elem, n_strands, div):
 def check_palindromic(elem):
     """Check if word-length histogram is palindromic.
 
-    For He-4, expect {0:1, 1:3, 2:4, 3:3, 4:1} = Poincaré(S₄).
+    For He-4, expect {0:1, 1:3, 2:4, 3:3, 4:1} — palindromic over the occupied support.
     """
     hist = {}
     for w in elem.terms:
@@ -535,9 +535,9 @@ if __name__ == '__main__':
         for g in w:
             if g < -100:
                 # Collapsed formal variable
-                atom_id = -((-g) // 1000)
-                comp = -((-g) % 1000)
-                ws_parts.append(f"ℵ{-atom_id}^{comp}")
+                atom_k = (-g) // 1000
+                run = (-g) % 1000
+                ws_parts.append(f"ℵ{atom_k}^{run}")
             elif g < 0:
                 ws_parts.append(f"ℵ{-g}")
             else:
@@ -668,7 +668,7 @@ if __name__ == '__main__':
         print(f"  {name:>10} {A:>8} {nf.n_terms():>6} {A:>7} {status:>15}")
 
     if pal['is_palindromic']:
-        print(f"\n  ⁴He palindromic: {pal['counts']} = Poincaré(S₄) ★")
+        print(f"\n  ⁴He palindromic: {pal['counts']} = palindromic over support ★")
 
     print(f"\n  QUARK-LEVEL (exact in q):")
     print(f"  {'Particle':>10} {'Strands':>8} {'Terms':>6} {'Target':>7}")

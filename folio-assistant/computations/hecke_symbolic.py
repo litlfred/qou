@@ -151,12 +151,17 @@ class SymbolicHeckeDivision:
         if atom_id >= 0:
             raise ValueError("atom_id must be negative")
 
+        # Pre-compute the Markov trace of the NF (needed for correct
+        # trace computation when formal variables appear in words).
+        nf_trace = sum(nf_element.terms.values())  # net coefficient as approximation
+
         self._quotient_relations[atom_id] = {
             'name': name or f'atom_{-atom_id}',
             'atom_id': atom_id,
             'nf_terms': dict(nf_element.terms),
             'nf_words': set(nf_element.terms.keys()),
             'n_components': len(nf_element.terms),
+            'trace': nf_trace,  # Markov trace of the NF
         }
 
     def _try_whole_atom_quotient(self, elem):
@@ -216,38 +221,46 @@ class SymbolicHeckeDivision:
     def _try_subword_quotient(self, elem):
         """Try to replace registered NF sub-words with formal variables.
 
-        Per-term sub-word rewriting: if an NF word appears as a sub-word
-        of some term in elem, factor it out.
+        RESTRICTED to single-term NFs only. For multi-term NFs, the
+        whole-atom quotient (_try_whole_atom_quotient) is the correct
+        approach — it matches all NF terms proportionally.
+
+        For single-term NFs: replaces the monomial nf_word with atom_id,
+        scaling the coefficient by 1/nf_coeff.
 
         Returns (new_elem, did_reduce).
         """
         for atom_id, info in self._quotient_relations.items():
             nf_terms = info['nf_terms']
 
-            for nf_word, nf_coeff in nf_terms.items():
-                if nf_coeff == 0 or len(nf_word) == 0:
+            # Only apply to single-term NFs (multi-term needs whole-atom quotient)
+            nonzero = [(w, c) for w, c in nf_terms.items() if c != 0 and len(w) > 0]
+            if len(nonzero) != 1:
+                continue
+
+            nf_word, nf_coeff = nonzero[0]
+            nf_len = len(nf_word)
+
+            for word, coeff in list(elem.terms.items()):
+                if coeff == 0 or len(word) < nf_len:
                     continue
-                nf_len = len(nf_word)
 
-                for word, coeff in list(elem.terms.items()):
-                    if coeff == 0 or len(word) < nf_len:
-                        continue
+                for pos in range(len(word) - nf_len + 1):
+                    if word[pos:pos + nf_len] == nf_word:
+                        prefix = word[:pos]
+                        suffix = word[pos + nf_len:]
+                        new_word = prefix + (atom_id,) + suffix
+                        new_coeff = sp.expand(coeff / nf_coeff)
 
-                    for pos in range(len(word) - nf_len + 1):
-                        if word[pos:pos + nf_len] == nf_word:
-                            prefix = word[:pos]
-                            suffix = word[pos + nf_len:]
-                            new_word = prefix + (atom_id,) + suffix
+                        new_terms = dict(elem.terms)
+                        new_terms[word] = sp.expand(
+                            new_terms.get(word, sp.Integer(0)) - coeff)
+                        if sp.simplify(new_terms.get(word, 0)) == 0:
+                            new_terms.pop(word, None)
+                        new_terms[new_word] = sp.expand(
+                            new_terms.get(new_word, sp.Integer(0)) + new_coeff)
 
-                            new_terms = dict(elem.terms)
-                            new_terms[word] = sp.expand(
-                                new_terms.get(word, sp.Integer(0)) - coeff)
-                            if sp.simplify(new_terms.get(word, 0)) == 0:
-                                new_terms.pop(word, None)
-                            new_terms[new_word] = sp.expand(
-                                new_terms.get(new_word, sp.Integer(0)) + coeff)
-
-                            return SymbolicHeckeElement(new_terms), True
+                        return SymbolicHeckeElement(new_terms), True
 
         return elem, False
 
@@ -724,12 +737,32 @@ class SymbolicHeckeDivision:
         return sp.simplify(total)
 
     def _trace_word(self, word, n_strands):
-        """Recursive Markov trace of a braid monomial."""
+        """Recursive Markov trace of a braid monomial.
+
+        For formal variables (negative indices): uses the trace of their
+        registered NF, not 1. This is critical for correct Q-values when
+        quotient ideals have been applied.
+        """
         if not word:
             return sp.Integer(1)
 
-        # Filter to non-negative generators (skip formal variables)
+        # Handle formal variables: their trace = trace of their NF
         gens = [g for g in word if g >= 0]
+        formal = [g for g in word if g < 0]
+        if formal:
+            # Product of formal variable traces × trace of remaining gens
+            trace = sp.Integer(1)
+            for fv in formal:
+                info = self._quotient_relations.get(fv)
+                if info and 'trace' in info:
+                    trace *= info['trace']
+                else:
+                    trace *= sp.Integer(1)  # fallback: unknown formal var
+            if gens:
+                gen_word = tuple(gens)
+                trace *= self._trace_word(gen_word, n_strands)
+            return trace
+
         if not gens:
             return sp.Integer(1)
 

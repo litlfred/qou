@@ -39,6 +39,7 @@ Z_m = 1.0 / (q**0.5 + qi**0.5)
 
 # Shell structure
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
+NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
 SHELL_DEGREE = {1: 1, 2: 1, 3: 1, 4: 1, 5: 2, 6: 2, 7: 2}
 # Precomputed from H₃(q) Markov traces (see weight-space-correct.py):
 F_DEG2 = 0.5949    # ½(tr(T_{2,9}·Δ) + tr(T_{3,4}·Δ))
@@ -50,7 +51,6 @@ def neutron_shell(N):
         if N <= m:
             return i + 1, N - prev, m - prev, (N == m)
         prev = m
-    NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
     return len(MAGIC) + 1, N - MAGIC[-1], NEXT_SHELL_SIZE, False
 
 

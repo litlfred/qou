@@ -187,7 +187,7 @@ print(f"F_Pauli = |λ_alt(Δ_β)| / |λ_sym(Δ_β)| = {F_Pauli_symbolic}")
 print()
 
 # Evaluate at q₀
-q0 = 1.10998
+from q_parameter import Q as q0  # substrate parameter
 lam_alt = float(lambda_alt_delta.subs(q, q0))
 lam_sym = float(lambda_sym_delta.subs(q, q0))
 F_val = abs(lam_alt) / abs(lam_sym)

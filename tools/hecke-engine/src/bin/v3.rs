@@ -499,7 +499,10 @@ fn nucleus_name(z: usize, n: usize) -> String {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let engine = Engine::new(1.10998);
+    // Substrate parameter q₀ — derived from Vol(4_1)/m_μ/m_e.
+    // Single source of truth: q_parameter.py. This must match.
+    const Q0: f64 = 1.10998;
+    let engine = Engine::new(Q0);
 
     if args.len() < 2 {
         eprintln!("Usage: v3 pauli Z N | pauli A_max");

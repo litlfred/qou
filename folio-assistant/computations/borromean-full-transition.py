@@ -219,6 +219,7 @@ def full_transition_ratio(n_shell_knot, p_shell_knot, n_free):
 # ══════════════════════════════════════════════════════════════
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
+NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
 SHELL_KNOT_MAP = {1: "T23", 2: "T25", 3: "T27", 4: "T35", 5: "T29", 6: "T34", 7: "T29"}
 
 def get_shell(X):
@@ -227,7 +228,6 @@ def get_shell(X):
         if X <= m:
             return i + 1, X - prev, m - prev, (X == m)
         prev = m
-    NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
     return len(MAGIC) + 1, X - MAGIC[-1], NEXT_SHELL_SIZE, False
 
 

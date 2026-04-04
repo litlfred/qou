@@ -44,7 +44,7 @@ from hecke_symbolic import (
 # Helpers
 # ══════════════════════════════════════════════════════════════
 
-Q0 = 1.10998  # substrate parameter for numerical evaluation
+from q_parameter import Q as Q0  # substrate parameter — single source of truth
 
 
 def build_quark_atom(types, div, label=""):

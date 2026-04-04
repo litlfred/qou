@@ -81,6 +81,7 @@ H_INV = {k: [(g, -s) for g, s in reversed(v)] for k, v in H_OPS.items()}
 # ══════════════════════════════════════════════════════════════
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
+NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
 SHELL_KNOTS = {
     1: ('T23', 2, 3, 1),   # (name, r, s, degree)
     2: ('T25', 2, 5, 1),
@@ -98,7 +99,6 @@ def neutron_shell(N):
         if N <= m:
             return i + 1, N - prev, m - prev, (N == m)
         prev = m
-    NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
     return len(MAGIC) + 1, N - MAGIC[-1], NEXT_SHELL_SIZE, False
 
 def proton_shell(Z):
