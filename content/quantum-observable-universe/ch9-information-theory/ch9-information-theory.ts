@@ -70,6 +70,16 @@ section({
       ],
     }),
     section({
+      title: "P versus NP as a Boundary Condition",
+      label: "sec:p-vs-np-boundary",
+      blocks: [
+        "computational-horizon",
+        "p-bandwidth-bound",
+        "p-vs-np-boundary",
+        "p-vs-np-event-horizon",
+      ],
+    }),
+    section({
       title: "Statistical Mechanics",
       label: "sec:stat-mech",
       blocks: [
