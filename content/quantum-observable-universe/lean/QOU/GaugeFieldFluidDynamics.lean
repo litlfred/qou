@@ -44,7 +44,8 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
       _ ≤ q ^ k := by
         apply pow_right_mono₀ (le_of_lt hq)
         exact hk
-  -- hinv_le : q⁻¹ ^ k ≤ q⁻¹, hq_ge : q ^ k ≥ q, hinv : q⁻¹ < 1, hq : q > 1
+  have h1 : q ^ k > 1 := by linarith
+  have h2 : q⁻¹ ^ k < 1 := by linarith
   linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
@@ -253,21 +254,28 @@ noncomputable def AntiParallelDynamics.separation_sq
 theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
     (ht : t < dyn.blowupTime) (ht0 : 0 ≤ t) :
     dyn.separation_sq t > 0 := by
-  unfold AntiParallelDynamics.separation_sq AntiParallelDynamics.blowupTime at *
-  have hπ : (0 : ℝ) < Real.pi := Real.pi_pos
+  -- separation_sq t = d₀² - Γ*t/π, blowupTime = π*d₀²/Γ
+  -- t < blowupTime means d₀² - Γ*t/π > 0
+  have hd := dyn.d₀_pos
   have hΓ := dyn.circ_pos
-  have hπ_ne : Real.pi ≠ 0 := ne_of_gt hπ
-  have hΓ_ne : dyn.circulation ≠ 0 := ne_of_gt hΓ
-  -- ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
-  -- goal: dyn.d₀ ^ 2 - dyn.circulation * t / Real.pi > 0
-  -- Equivalent to: Γ*t/π < d₀², i.e. Γ*t < π*d₀²
-  -- From ht: t < π*d₀²/Γ, multiply by Γ > 0
-  have h1 : dyn.circulation * t < Real.pi * dyn.d₀ ^ 2 := by
-    have := mul_lt_mul_of_pos_right ht hΓ
-    rwa [div_mul_cancel₀ _ hΓ_ne] at this
-  -- Now: d₀² - Γ*t/π > 0 iff π*d₀² - Γ*t > 0 (multiply by π > 0)
-  rw [sub_pos]
-  rwa [div_lt_iff₀ hπ, mul_comm]
+  have hπ := Real.pi_pos
+  -- separation_sq t is defined as d₀² - Γ*t/π
+  -- We need it > 0, i.e. d₀² > Γ*t/π, i.e. π*d₀² > Γ*t
+  -- From ht: t < π*d₀²/Γ, so Γ*t < π*d₀² (multiply by Γ > 0)
+  -- Therefore d₀² - Γ*t/π > 0.
+  -- Direct approach: use blowupTime - t > 0 and linearity.
+  have hbt := blowup_time_pos dyn
+  have hdiff : dyn.blowupTime - t > 0 := by linarith
+  -- separation_sq t = d₀² - Γ*t/π = (π*d₀² - Γ*t)/π
+  -- blowupTime = π*d₀²/Γ, so π*d₀² = Γ*blowupTime
+  -- separation_sq t = (Γ*blowupTime - Γ*t)/π = Γ*(blowupTime - t)/π
+  -- All factors positive.
+  show dyn.separation_sq t > 0
+  unfold AntiParallelDynamics.separation_sq
+  unfold AntiParallelDynamics.blowupTime at ht
+  nlinarith [mul_pos hπ hΓ, sq_nonneg dyn.d₀,
+             mul_pos hΓ (show t ≥ 0 from ht0),
+             mul_lt_mul_of_pos_left ht hΓ]
 
 /-- d(t)² = 0 at t = T* (collision). -/
 theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
