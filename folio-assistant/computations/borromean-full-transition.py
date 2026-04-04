@@ -209,7 +209,7 @@ def full_transition_ratio(n_shell_knot, p_shell_knot, n_free):
 
     # Bare: no dressing, just T_{3,5}
     # In the mixed (standard) rep for undo, symmetric for redo:
-    bare = 2.0 * eval_triv(T35) * 1.0  # tr_std(I)=2, eval_triv(I)=1
+    bare = 2.0 * eval_triv(T35)  # tr_std(I)=2, eval_triv(I)=1
 
     return avg / bare if abs(bare) > 1e-10 else 1.0, traces
 
