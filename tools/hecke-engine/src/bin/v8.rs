@@ -715,10 +715,13 @@ fn batch_witness(a_min: usize, a_max: usize) {
     println!();
 
     for a in a_min..=a_max {
-        // Balanced nucleus: Z = A/2, N = A - Z
-        let z = a / 2;
+        // All isobars in valley of stability: N ≥ Z - 1
+        let z_min = if a <= 2 { 1 } else { (a.saturating_sub(1)) / 2 };
+        let z_max = std::cmp::min(a - 1, (a + 2) / 2);
+        for z in z_min..=z_max {
         let n = a - z;
         if n + 1 < z { continue; } // valley of stability
+        if z == 0 || n == 0 { continue; }
 
         let sym = element_symbol(z);
         let dm = magic.contains(&z) && magic.contains(&n);
@@ -763,7 +766,8 @@ fn batch_witness(a_min: usize, a_max: usize) {
         write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms, dm);
         write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, elem.pn_count, f, ms,
             elem.n_terms(), elem.total_poly_terms(), elem.max_coeff());
-    }
+        } // end for z
+    } // end for a
 
     println!();
     println!("Done. Lean witnesses and JSON checkpoints written.");
