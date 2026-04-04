@@ -75,7 +75,6 @@ theorem quantumPlanckConstant_pos {M : Type*} (sp : SubstrateParameter M)
     (p : M) (hq : sp.field p > 1) :
     quantumPlanckConstant sp p > 0 := by
   unfold quantumPlanckConstant
-  have hpos := sp.field_pos p
   have hinv : (sp.field p)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 

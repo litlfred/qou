@@ -176,7 +176,9 @@ theorem categoricalMass_pos_of_nontrivial {M : Type*}
     (hcost : 0 < heckeCost (augmentedBraidElement hp β.generators)) :
     0 < categoricalMass sp p hp β := by
   unfold categoricalMass
-  exact mul_pos (by positivity) (crossingEnergy_pos_of_nontrivial sp p hp β hq hcost)
+  apply mul_pos
+  · positivity
+  · exact crossingEnergy_pos_of_nontrivial sp p hp β hq hcost
 
 /-! ## Threading witness (for display, not for energy definition) -/
 
