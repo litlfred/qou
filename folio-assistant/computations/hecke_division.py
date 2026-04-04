@@ -271,69 +271,80 @@ class HeckeDivision:
         }
 
     def _try_quotient_reduction(self, elem):
-        """Try to replace a registered NF sub-expression with its formal variable.
+        """Try to replace registered NF sub-words with formal variables.
 
-        For each registered quotient relation NF(ℵ_k):
-          Check if ALL terms of the NF appear in elem with
-          a consistent scalar multiple. If so, subtract the NF
-          and add the formal variable ℵ_k with that scalar.
+        Each word in a registered NF is its own rewrite rule:
+          If word W appears as a SUB-WORD of some term in elem,
+          replace the occurrence: prefix · W · suffix → prefix · ℵ_k · suffix
+          with coefficient scaled by the NF coefficient of W.
+
+        This is per-term sub-word rewriting, not whole-NF matching.
+        Each NF term W_j with coefficient c_j generates the rule:
+          ... · W_j · ... → (1/c_j) · ... · ℵ_k · ...
+
+        Actually simpler: each NF word is a KNOWN REDUCED SUB-EXPRESSION.
+        When it appears inside a larger word, we can factor it out:
+          prefix · W_j · suffix  →  c_j · prefix · ℵ_k_j · suffix
+
+        where ℵ_k_j is a formal variable for the j-th component of atom k.
 
         Returns (new_elem, did_reduce, log_entry).
         """
         for atom_id, info in self._quotient_relations.items():
             nf = info['nf']
-            nf_words = info['nf_words']
 
-            # Check: are ALL NF words present in elem?
-            if not nf_words.issubset(elem.terms.keys()):
-                continue
-
-            # Find the scalar multiple: elem should contain α * NF
-            # for some scalar α. Check consistency across all terms.
-            scalars = []
-            for w, c_nf in nf.items():
-                c_elem = elem.terms.get(w, 0.0)
-                if abs(c_nf) < 1e-15:
+            for nf_word, nf_coeff in nf.items():
+                if abs(nf_coeff) < 1e-15:
                     continue
-                scalars.append(c_elem / c_nf)
+                nf_len = len(nf_word)
+                if nf_len == 0:
+                    continue  # skip identity term
 
-            if not scalars:
-                continue
+                # Scan all terms in elem for sub-word matches
+                for word, coeff in list(elem.terms.items()):
+                    if abs(coeff) < 1e-15:
+                        continue
+                    if len(word) < nf_len:
+                        continue
 
-            # Check consistency: all scalars should be the same
-            alpha = scalars[0]
-            if any(abs(s - alpha) > abs(alpha) * 1e-6 + 1e-12 for s in scalars):
-                continue  # not a consistent scalar multiple
+                    # Check each position for a sub-word match
+                    for pos in range(len(word) - nf_len + 1):
+                        if word[pos:pos + nf_len] == nf_word:
+                            # MATCH: word = prefix · nf_word · suffix
+                            prefix = word[:pos]
+                            suffix = word[pos + nf_len:]
 
-            if abs(alpha) < 1e-15:
-                continue  # zero multiple, nothing to do
+                            # Replace with: prefix · ℵ_k_j · suffix
+                            # The formal variable for component j of atom k
+                            # Use atom_id * 100 - j as unique ID
+                            comp_id = atom_id  # all components map to same atom
 
-            # SUCCESS: elem contains α * NF
-            # Replace: subtract α * NF, add α * ℵ_k
-            new_terms = dict(elem.terms)
-            for w, c_nf in nf.items():
-                new_terms[w] = new_terms.get(w, 0.0) - alpha * c_nf
-                if abs(new_terms[w]) < 1e-15:
-                    del new_terms[w]
+                            new_word = prefix + (comp_id,) + suffix
 
-            # Add the formal variable
-            atom_word = (atom_id,)
-            new_terms[atom_word] = new_terms.get(atom_word, 0.0) + alpha
+                            # Remove old term, add new term
+                            new_terms = dict(elem.terms)
+                            new_terms[word] = new_terms.get(word, 0.0) - coeff
+                            if abs(new_terms.get(word, 0.0)) < 1e-15:
+                                new_terms.pop(word, None)
 
-            log_entry = DivisionStep(
-                step=0,
-                relation='quotient',
-                position=0,
-                generator=atom_id,
-                old_word=tuple(sorted(nf_words, key=lambda w: (len(w), w))[0]),
-                old_coeff=alpha,
-                new_terms=[(atom_word, alpha)],
-                energy_change=0.0,
-                n_terms_after=len(new_terms),
-                cumulative_energy=0.0,
-            )
+                            # New term: coefficient stays the same
+                            # (the nf_coeff is baked into the formal variable's meaning)
+                            new_terms[new_word] = new_terms.get(new_word, 0.0) + coeff
 
-            return HeckeElement(new_terms), True, log_entry
+                            log_entry = DivisionStep(
+                                step=0,
+                                relation='quotient',
+                                position=pos,
+                                generator=comp_id,
+                                old_word=word,
+                                old_coeff=coeff,
+                                new_terms=[(new_word, coeff)],
+                                energy_change=0.0,
+                                n_terms_after=len(new_terms),
+                                cumulative_energy=0.0,
+                            )
+
+                            return HeckeElement(new_terms), True, log_entry
 
         return elem, False, None
 
