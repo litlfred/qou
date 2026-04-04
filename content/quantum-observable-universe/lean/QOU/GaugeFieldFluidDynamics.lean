@@ -34,17 +34,13 @@ theorem qInteger_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
 theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
     q ^ k > q⁻¹ ^ k := by
   have hqpos : q > 0 := by linarith
-  have hinv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hqpos]
+  have hinv : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hqpos
-  have hq_ge : q ^ k ≥ q ^ 1 := by
-    apply pow_le_pow_right (le_of_lt hq) hk
   have hinv_le : q⁻¹ ^ k ≤ q⁻¹ ^ 1 := by
-    apply pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv_lt) hk
-  simp [pow_one] at hq_ge hinv_le
-  calc q ^ k ≥ q := hq_ge
-    _ > 1 := hq
-    _ > q⁻¹ := hinv_lt
-    _ ≥ q⁻¹ ^ k := by linarith
+    apply pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv) hk
+  simp [pow_one] at hinv_le
+  have hq_ge : q ≤ q ^ k := le_self_pow₀ (by linarith : 1 ≤ q) (by omega : k ≠ 0)
+  linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
 theorem qInteger_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
@@ -52,7 +48,7 @@ theorem qInteger_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
   unfold qInteger
   apply div_pos
   · linarith [pow_gt_inv_pow q k hq hk]
-  · have : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos (by linarith : q > 0)]
+  · have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
     linarith
 
 /-- [k]_q² > 0 for k ≥ 1 and q > 1. -/
@@ -78,7 +74,7 @@ theorem quantumPlanckConstant_pos {M : Type*} (sp : SubstrateParameter M)
     quantumPlanckConstant sp p > 0 := by
   unfold quantumPlanckConstant
   have hpos := sp.field_pos p
-  have hinv : (sp.field p)⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hpos]
+  have hinv : (sp.field p)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
 -- ════════════════════════════════════════════════════════════════
@@ -173,9 +169,9 @@ theorem small_data_decay (eb : EnstrophyBound)
     calc eb.Cq_sq * eb.E₀
         ≤ eb.Cq_sq * (eb.νq ^ 2 / eb.Cq_sq) :=
           mul_le_mul_of_nonneg_left h_small (le_of_lt eb.Cq_sq_pos)
-      _ = eb.νq ^ 2 := by field_simp
+      _ = eb.νq ^ 2 := by field_simp [ne_of_gt eb.Cq_sq_pos]
   have h2 : eb.Cq_sq * eb.E₀ / eb.νq ≤ eb.νq := by
-    rw [div_le_iff eb.νq_pos]; linarith [sq_nonneg eb.νq]
+    rw [div_le_iff₀ eb.νq_pos]; linarith [sq_nonneg eb.νq]
   linarith
 
 /-- Large data: the Gronwall bound Ω₀ · exp(Λ_q · t) is non-negative
@@ -212,7 +208,7 @@ theorem solution_viscosity_pos (sol : CategoricalQNSSolution) :
   unfold CategoricalQNSSolution.viscosity
   have hq := sol.q_gt_one
   have hqpos : sol.q > 0 := by linarith
-  have hinv : sol.q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hqpos]
+  have hinv : sol.q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
 /-- Energy at any time is bounded by initial energy. -/
@@ -240,7 +236,7 @@ noncomputable def AntiParallelDynamics.blowupTime
 theorem blowup_time_pos (dyn : AntiParallelDynamics) :
     dyn.blowupTime > 0 := by
   unfold AntiParallelDynamics.blowupTime
-  exact div_pos (mul_pos Real.pi_pos (by positivity)) dyn.circ_pos
+  exact div_pos (mul_pos Real.pi_pos (pow_pos dyn.d₀_pos 2)) dyn.circ_pos
 
 /-- Separation at time t: d(t)² = d₀² - Γt/π.
     Valid for 0 ≤ t < T*. -/
@@ -254,16 +250,19 @@ theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
     dyn.separation_sq t > 0 := by
   unfold AntiParallelDynamics.separation_sq AntiParallelDynamics.blowupTime at *
   have hπ := Real.pi_pos
-  rw [div_lt_iff dyn.circ_pos] at ht  -- t < π d₀²/Γ  ⟹  Γt < π d₀²
+  rw [div_lt_iff₀ dyn.circ_pos] at ht  -- t < π d₀²/Γ  ⟹  Γt < π d₀²
   -- Need: d₀² - Γt/π > 0  ⟺  Γt/π < d₀²  ⟺  Γt < π d₀²
-  rw [sub_pos, div_lt_iff hπ]
+  rw [sub_pos, div_lt_iff₀ hπ]
   linarith
 
 /-- d(t)² = 0 at t = T* (collision). -/
 theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
     dyn.separation_sq dyn.blowupTime = 0 := by
   unfold AntiParallelDynamics.separation_sq AntiParallelDynamics.blowupTime
-  field_simp
+  have hcirc : dyn.circulation ≠ 0 := ne_of_gt dyn.circ_pos
+  have hpi : Real.pi ≠ 0 := ne_of_gt Real.pi_pos
+  field_simp [hcirc, hpi]
+  ring
 
 -- ════════════════════════════════════════════════════════════════
 -- §9  Levi form on the normal plane
@@ -271,41 +270,41 @@ theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
 
 /-- Levi form eigenvalues on the normal plane of a vortex filament. -/
 structure LeviFormNormalPlane where
-  λ_parallel : ℝ
-  λ_perp : ℝ
-  λ_parallel_pos : λ_parallel > 0
-  λ_perp_pos : λ_perp > 0
+  lam_parallel : ℝ
+  lam_perp : ℝ
+  lam_parallel_pos : λ_parallel > 0
+  lam_perp_pos : λ_perp > 0
 
 /-- Condition number: max(λ_∥/λ_⊥, λ_⊥/λ_∥). -/
 noncomputable def LeviFormNormalPlane.cond (L : LeviFormNormalPlane) : ℝ :=
-  max (L.λ_parallel / L.λ_perp) (L.λ_perp / L.λ_parallel)
+  max (L.lam_parallel / L.λ_perp) (L.λ_perp / L.lam_parallel)
 
 /-- cond ≥ 1 (equality iff isotropic). -/
 theorem levi_cond_ge_one (L : LeviFormNormalPlane) : L.cond ≥ 1 := by
   unfold LeviFormNormalPlane.cond
   apply le_max_iff.mpr
-  by_cases h : L.λ_parallel ≤ L.λ_perp
-  · right; rw [le_div_iff L.λ_parallel_pos]; linarith
+  by_cases h : L.lam_parallel ≤ L.λ_perp
+  · right; rw [le_div_iff L.lam_parallel_pos]; linarith
   · left; push_neg at h; rw [le_div_iff L.λ_perp_pos]; linarith
 
 /-- cond = 1 iff λ_∥ = λ_⊥ (isotropic core). -/
 theorem levi_cond_eq_one_iff (L : LeviFormNormalPlane) :
-    L.cond = 1 ↔ L.λ_parallel = L.λ_perp := by
+    L.cond = 1 ↔ L.lam_parallel = L.λ_perp := by
   unfold LeviFormNormalPlane.cond
   constructor
   · intro h
-    have h1 : L.λ_parallel / L.λ_perp ≤ 1 := by
+    have h1 : L.lam_parallel / L.λ_perp ≤ 1 := by
       by_contra hc; push_neg at hc
-      have : max (L.λ_parallel / L.λ_perp) (L.λ_perp / L.λ_parallel) ≥
-             L.λ_parallel / L.λ_perp := le_max_left _ _
+      have : max (L.lam_parallel / L.λ_perp) (L.λ_perp / L.lam_parallel) ≥
+             L.lam_parallel / L.λ_perp := le_max_left _ _
       linarith
-    have h2 : L.λ_perp / L.λ_parallel ≤ 1 := by
+    have h2 : L.λ_perp / L.lam_parallel ≤ 1 := by
       by_contra hc; push_neg at hc
-      have : max (L.λ_parallel / L.λ_perp) (L.λ_perp / L.λ_parallel) ≥
-             L.λ_perp / L.λ_parallel := le_max_right _ _
+      have : max (L.lam_parallel / L.λ_perp) (L.λ_perp / L.lam_parallel) ≥
+             L.λ_perp / L.lam_parallel := le_max_right _ _
       linarith
     rw [div_le_one L.λ_perp_pos] at h1
-    rw [div_le_one L.λ_parallel_pos] at h2
+    rw [div_le_one L.lam_parallel_pos] at h2
     linarith
   · intro h; simp [h, div_self (ne_of_gt L.λ_perp_pos)]
 
