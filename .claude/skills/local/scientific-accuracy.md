@@ -98,6 +98,23 @@ peer-review practices and the methodology of
   structure (particle emission, crossing budget, Borromean
   un-ring/re-ring). For precision work, always verify against
   the full Gröbner computation.
+- **QUOTIENT IDEAL APPROACH FOR INDUCTIVE ATOM CONSTRUCTION.**
+  When building atoms inductively (protium → deuterium → ...),
+  factor out STRUCTURAL operations at the START using quotient
+  ideals I₁-I₇:
+    I₁: σ₀-extension (leading quark link, ratio +0.315)
+    I₂: YB reordering (energy-preserving)
+    I₃: B₃ Borromean prefix (proton core)
+    I₄: 𝔫₁ neutron tail (electron-Borromean-linked neutron)
+    I₅: Protium completeness (whole atom = 1 object, not 4 terms)
+    I₆: Structural defects (missing bond → known energy cost)
+    I₇: Electron bridge (σ₂·σ₃·σ₂ Borromean bridge)
+  Each completed atom's NF is registered as a formal variable
+  (ℵ₁, ℵ₂, ...) in the quotient ideal for the NEXT step.
+  Track energy at every quotient substitution.
+  The GOAL is n_terms ≈ n_strands (optimal Gröbner basis).
+  At magic numbers, add torus knot shell operators I₈+.
+  See: `QOU.QuotientIdeal` in Lean for formal definitions.
 - **EVERY observed value MUST carry ± uncertainty.** No CODATA,
   NNDC, PDG, or any experimental constant without an error bound.
   Use `experimental_constants.py` as the single source of truth.
