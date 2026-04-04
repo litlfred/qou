@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * and alternative Euler-characteristic scenarios.
  */
 export default chapter({
-  number: 9,
+  number: 8,
   title: "Information-Theoretic Perspectives",
   label: "chap:info-theory",
   sections: [
@@ -67,6 +67,18 @@ section({
         "substrate-computation",
         "quantum-computational-universality",
         "skein-turing-machine",
+      ],
+    }),
+    section({
+      title: "P versus NP as a Boundary Condition",
+      label: "sec:p-vs-np-boundary",
+      blocks: [
+        "computational-horizon",
+        "skein-resolution-obstruction",
+        "p-bandwidth-bound",
+        "p-vs-np-boundary",
+        "p-vs-np-event-horizon",
+        "qou-p-neq-np",
       ],
     }),
     section({

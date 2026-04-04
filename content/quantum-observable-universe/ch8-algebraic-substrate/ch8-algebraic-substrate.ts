@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * (5) classical limit and the macroscopic continuum.
  */
 export default chapter({
-  number: 8,
+  number: 6,
   title: "The Algebraic Substrate",
   label: "chap:algebraic-substrate",
   sections: [
@@ -80,9 +80,12 @@ export default chapter({
         "classical-limit-intro",
         "classical-limit-functor",
         "quantum-gap-collapse",
+        "classical-limit-obstruction",
+        "qou-obstruction-reduction",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
         "macroscopic-stability-equivalence",
+        "q-birch-swinnerton-dyer",
       ],
     }),
   ],

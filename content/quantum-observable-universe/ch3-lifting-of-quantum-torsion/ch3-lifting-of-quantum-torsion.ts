@@ -65,6 +65,7 @@ export default chapter({
         "yekutieli-lifting-proof",
         "qu-to-qou",
         "fermionic-twisted-sectors",
+        "kummer-filtration-obstruction",
       ],
     }),
 

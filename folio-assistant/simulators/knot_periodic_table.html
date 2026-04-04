@@ -2,127 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Knot-Centric Periodic Table</title>
+<title>Knot Periodic Table — Interactive Simulator</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Helvetica Neue',sans-serif;font-size:13px;color:#1a1a2e;background:#fafbff;overflow-x:hidden}
-#app{display:flex;flex-direction:column;height:100vh;padding:8px}
-h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
-.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid #dde}
-.controls label{font-size:11px;color:#556}
-.controls select,.controls input[type=range]{font-size:11px}
-.controls .q-val{font-weight:600;min-width:50px;display:inline-block}
-#table-wrap{flex:1;overflow:auto;position:relative;margin-top:6px}
-.tile-grid{display:grid;gap:2px;padding:4px}
-/* Standard layout: 18 cols, 7+2 rows */
-.tile-grid.standard{grid-template-columns:repeat(18,1fr)}
-/* Knot-centric layout: variable */
-.tile-grid.knot-centric{grid-template-columns:repeat(18,1fr)}
-.tile{border:1px solid #ccd;border-radius:4px;padding:3px;cursor:pointer;text-align:center;
-  min-height:48px;display:flex;flex-direction:column;justify-content:center;align-items:center;
-  transition:all .15s;position:relative;font-size:11px;background:#fff}
-.tile:hover{border-color:#47a;box-shadow:0 1px 6px rgba(40,80,160,.2);z-index:2}
-.tile.selected{border-color:#25a;box-shadow:0 0 0 2px rgba(40,80,200,.3)}
-.tile .sym{font-size:15px;font-weight:700;line-height:1.1}
-.tile .z-num{font-size:9px;color:#778}
-.tile .mini-knot{height:16px;margin-top:1px}
-.tile.magic-z{border-left:2px solid #c44}
-.tile.magic-n{border-right:2px solid #44c}
-.tile.magic-both{border-left:2px solid #c44;border-right:2px solid #44c}
-.tile.magic-receptive{background:#fff8f0}
-/* Block colors */
-.tile.block-s{background:linear-gradient(135deg,#f0f4ff,#fff)}
-.tile.block-p{background:linear-gradient(135deg,#f0fff4,#fff)}
-.tile.block-d{background:linear-gradient(135deg,#fff8f0,#fff)}
-.tile.block-f{background:linear-gradient(135deg,#fff0f8,#fff)}
-.tile.empty{border:none;background:none;cursor:default;min-height:0}
-.spacer{grid-column:span 1}
-/* Detail panel */
-#detail{border-top:2px solid #dde;padding:10px;display:none;background:#f8f9ff;min-height:180px}
-#detail.show{display:flex;gap:20px;flex-wrap:wrap}
-#detail .info{flex:1;min-width:200px}
-#detail .info h3{font-size:16px;color:#2a3a6a;margin-bottom:6px}
-#detail .info table{font-size:12px;border-collapse:collapse}
-#detail .info td{padding:2px 8px 2px 0}
-#detail .info td:first-child{color:#778;font-weight:500}
-#detail .knot-diagram{flex:2;min-width:300px;min-height:140px;display:flex;align-items:center;justify-content:center}
-#detail .knot-diagram svg{max-width:100%;height:auto}
-/* Legend */
-.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:#556;padding:4px 0}
-.legend-item{display:flex;align-items:center;gap:4px}
-.legend-item svg{flex-shrink:0}
-/* Tooltip */
-.tooltip{position:absolute;background:#222;color:#fff;padding:4px 8px;border-radius:4px;
-  font-size:11px;pointer-events:none;white-space:nowrap;z-index:100;display:none}
-/* Knot diagram styles */
-.knot-container{display:flex;flex-direction:column;align-items:center;gap:8px}
-.knot-formula{font-size:13px;color:#2a3a6a;font-weight:600}
-.knot-braid{font-size:11px;color:#556;margin:4px 0;font-family:monospace;letter-spacing:1px;line-height:1.4;word-break:break-all}
-.knot-braid-meta{font-size:9px;color:#889;margin-left:6px;font-family:sans-serif}
-.knot-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
-.nuclear-box{border:2px solid #a53;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(170,85,51,0.06)}
-.electron-box{border:2px solid #37a;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(51,119,170,0.06)}
-.knot-plus{color:#888;font-size:10px}
-.knot-proton-lbl{font-size:10px;color:#225}
-.knot-neutron-lbl{font-size:10px;color:#a53}
-.knot-more{font-size:9px;color:#778}
-.knot-electron-more{font-size:9px;color:#556}
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap');
+:root {
+  --bg:#020710; --panel:rgba(3,10,30,0.93); --border:rgba(60,120,255,0.20);
+  --accent:#3a90ff; --accent2:#ff5533; --accent3:#33ffaa; --accent4:#ffaa33;
+  --text:#b8ccff; --dim:#3a4a78; --tile-bg:rgba(10,20,50,0.7);
+  --proton-color:#4488ee; --neutron-color:#ee4444; --electron-color:#33bbff;
+  --gap-color:#020710;
+}
+body.light {
+  --bg:#f0f4ff; --panel:rgba(235,240,255,0.96); --border:rgba(60,80,180,0.25);
+  --accent:#1a5fcc; --accent2:#cc3300; --accent3:#006633; --accent4:#885500;
+  --text:#1a2855; --dim:#6070a0; --tile-bg:rgba(240,244,255,0.9);
+  --proton-color:#2255aa; --neutron-color:#cc2222; --electron-color:#1188cc;
+  --gap-color:#f0f4ff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monospace;font-size:11px;overflow-x:hidden;user-select:none;}
+#title{text-align:center;padding:10px 0 2px;font-family:'Rajdhani',sans-serif;font-weight:300;font-size:20px;letter-spacing:.25em;color:var(--accent);text-transform:uppercase;text-shadow:0 0 18px rgba(58,144,255,.5);}
+#subtitle{text-align:center;font-size:9px;letter-spacing:.20em;color:var(--dim);text-transform:uppercase;margin-bottom:6px;}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:3px;padding:10px;backdrop-filter:blur(18px);margin:4px;}
+.panel-title{font-family:'Rajdhani',sans-serif;font-weight:300;font-size:12px;letter-spacing:.20em;color:var(--accent);text-transform:uppercase;margin-bottom:6px;padding-bottom:3px;border-bottom:1px solid var(--border);}
+#theme-btn{position:fixed;top:8px;right:10px;z-index:20;background:var(--panel);border:1px solid var(--border);border-radius:3px;padding:3px 7px;cursor:pointer;color:var(--accent);font-family:'Share Tech Mono',monospace;font-size:10px;}
+#layout{display:flex;flex-direction:column;min-height:100vh;}
+#top-bar{display:flex;align-items:center;gap:10px;padding:2px 10px;flex-wrap:wrap;}
+#top-bar label{font-size:10px;color:var(--dim);}
+#top-bar select,#top-bar input[type=range]{font-size:10px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:1px 4px;font-family:inherit;}
+.val{color:var(--accent);font-size:10px;min-width:35px;}
+#periodic-panel{padding:6px;}
+#pt-grid{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;max-width:860px;margin:0 auto;}
+.tile{width:100%;aspect-ratio:1;border:1px solid var(--border);border-radius:3px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--tile-bg);transition:all .15s;position:relative;font-size:9px;min-width:0;overflow:hidden;}
+.tile:hover{border-color:var(--accent);box-shadow:0 0 6px rgba(58,144,255,.3);z-index:2;transform:scale(1.08);}
+.tile.selected{border-color:var(--accent3);box-shadow:0 0 8px rgba(51,255,170,.4);z-index:3;}
+.tile .sym{font-size:13px;font-weight:700;line-height:1;}
+.tile .zn{font-size:7px;color:var(--dim);line-height:1;}
+.tile canvas{width:16px;height:16px;margin-top:1px;}
+.tile.empty{border:none;background:none;cursor:default;pointer-events:none;}
+.tile.block-s{border-left:2px solid var(--accent);}
+.tile.block-p{border-left:2px solid var(--accent3);}
+.tile.block-d{border-left:2px solid var(--accent4);}
+.tile.block-f{border-left:2px solid var(--accent2);}
+.tile.magic{box-shadow:inset 0 0 4px rgba(255,85,51,.3);}
+#bottom{display:flex;gap:0;flex:1;min-height:380px;}
+#knot-panel{flex:6;min-width:0;}
+#decay-panel{flex:4;min-width:0;}
+#knot-canvas-wrap{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start;justify-content:center;}
+.knot-info{font-size:10px;margin:6px 0;line-height:1.6;}
+.knot-formula{font-size:12px;color:var(--accent);font-family:'Rajdhani',sans-serif;letter-spacing:.1em;}
+.legend-box{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0;font-size:9px;color:var(--dim);}
+.legend-item{display:flex;align-items:center;gap:3px;}
+.legend-line{width:16px;height:3px;border-radius:2px;}
+.row{display:flex;align-items:center;gap:6px;margin:3px 0;}
+.lbl{color:var(--dim);font-size:10px;min-width:45px;}
+input[type=range]{-webkit-appearance:none;flex:1;height:3px;background:rgba(58,144,255,0.15);border-radius:2px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:8px;height:8px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow:0 0 5px rgba(58,144,255,.7);}
+button.toggle{background:var(--panel);color:var(--accent);border:1px solid var(--border);border-radius:3px;padding:2px 8px;cursor:pointer;font-family:inherit;font-size:10px;transition:all .15s;}
+button.toggle:hover{border-color:var(--accent);}
+button.toggle.active{background:var(--accent);color:#fff;}
+.matrix-table{border-collapse:collapse;font-size:9px;margin:4px auto;}
+.matrix-table td{padding:1px 4px;text-align:center;border:1px solid var(--border);}
+.matrix-table .hdr{color:var(--accent);font-weight:600;border:none;}
+svg text{font-family:'Share Tech Mono',monospace;}
+.strand-over{stroke:var(--accent);fill:none;stroke-width:3;stroke-linecap:round;}
+.strand-under{stroke:var(--accent2);fill:none;stroke-width:3;stroke-linecap:round;}
+.gap-bg{stroke:var(--gap-color);fill:none;stroke-width:7;stroke-linecap:round;}
+.budget-bar{display:flex;height:12px;border-radius:2px;overflow:hidden;margin:3px 0;}
+.budget-seg{display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;font-weight:600;}
+#decay-eq{font-size:11px;color:var(--accent);margin:4px 0;font-family:'Rajdhani',sans-serif;letter-spacing:.05em;}
+#hecke-rel{font-size:10px;color:var(--dim);margin:4px 0;}
+@media(max-width:800px){
+  #bottom{flex-direction:column;}
+  #pt-grid{grid-template-columns:repeat(18,1fr);font-size:7px;}
+  .tile .sym{font-size:10px;}
+}
 </style>
 </head>
 <body>
-<div id="app">
-<h2>Knot-Centric Periodic Table of the Elements</h2>
-<div class="legend" id="legend"></div>
-<div class="controls">
-  <label>Layout:
-    <select id="layout-sel">
-      <option value="standard">Standard (electron periods)</option>
-      <option value="knot-centric" selected>Knot-centric (nuclear shells)</option>
-    </select>
-  </label>
-  <label>Color:
-    <select id="color-sel">
-      <option value="block">Electron block</option>
-      <option value="kalpha">Alpha sub-links</option>
-      <option value="ba">Binding energy</option>
-      <option value="shell">Nuclear shell</option>
-      <option value="skein-deg">Skein polynomial degree</option>
-      <option value="lambda">Shell eigenvalue &lambda;&#8330;</option>
-    </select>
-  </label>
-  <label>Filter:
-    <select id="filter-sel">
-      <option value="all">All elements</option>
-      <option value="magic">Magic numbers only</option>
-      <option value="intruder">Magic-receptive</option>
-      <option value="stable">Stability pairs</option>
-    </select>
-  </label>
-  <label>Columns:
-    <select id="col-sel">
-      <option value="nuclear" selected>Nuclear sub-shell</option>
-      <option value="hopf">Electron block</option>
-      <option value="fill">Fill order (by Z)</option>
-    </select>
-  </label>
-  <label>q = <span class="q-val" id="q-val">1.110</span>
-    <input type="range" id="q-slider" min="1.000" max="1.200" step="0.001" value="1.110" style="width:120px">
-  </label>
+<div id="layout">
+<div id="title">Knot Periodic Table</div>
+<div id="subtitle">QOU particle-knot correspondence &middot; nuclear topology &middot; beta decay braids</div>
+<button id="theme-btn" onclick="document.body.classList.toggle('light')">&#9685;</button>
+<div id="top-bar">
+  <label>Color: <select id="color-mode" onchange="buildTable()">
+    <option value="block">Electron block</option>
+    <option value="binding">Binding energy</option>
+    <option value="alpha">Alpha clusters</option>
+  </select></label>
+  <label>q <input type="range" id="sl-q" min="1.001" max="2.0" step="0.001" value="1.110"> <span class="val" id="v-q">1.110</span></label>
 </div>
-<div id="table-wrap"></div>
-<div id="detail">
-  <div class="info"><h3 id="d-title"></h3><table id="d-table"></table></div>
-  <div class="knot-diagram" id="d-knot"></div>
+<div class="panel" id="periodic-panel">
+  <div class="panel-title">Periodic Table &mdash; click an element</div>
+  <div id="pt-grid"></div>
+</div>
+<div id="bottom">
+  <div class="panel" id="knot-panel">
+    <div class="panel-title">Knot Diagram: <span id="knot-el-name">select an element</span></div>
+    <div class="legend-box">
+      <div class="legend-item"><div class="legend-line" style="background:var(--proton-color);"></div>proton T&#8322;&#8323;</div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--neutron-color);"></div>neutron unknot</div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--electron-color);"></div>electron &#963;(T&#8322;&#8323;)</div>
+    </div>
+    <div id="knot-formula" class="knot-formula"></div>
+    <div id="knot-canvas-wrap"></div>
+    <div id="knot-info" class="knot-info"></div>
+  </div>
+  <div class="panel" id="decay-panel">
+    <div class="panel-title">Beta Decay: <span id="decay-el-name">--</span></div>
+    <div class="row">
+      <span class="lbl">Mode</span>
+      <button class="toggle active" id="btn-bminus" onclick="setDecay('-')">&#946;&#8315;</button>
+      <button class="toggle" id="btn-bplus" onclick="setDecay('+')">&#946;&#8314;</button>
+    </div>
+    <div id="decay-eq"></div>
+    <div id="hecke-rel"></div>
+    <div style="margin:4px 0;">
+      <div style="font-size:9px;color:var(--dim);margin-bottom:2px;">T&#8323;&#8325; 10-crossing budget</div>
+      <div class="budget-bar" id="budget-bar">
+        <div class="budget-seg" style="flex:3;background:var(--proton-color);">3 e&#8315;</div>
+        <div class="budget-seg" style="flex:7;background:var(--accent2);">7 R2</div>
+      </div>
+    </div>
+    <svg id="braid-svg" width="100%" height="180" viewBox="0 0 400 170"></svg>
+    <div style="margin-top:4px;">
+      <div style="font-size:9px;color:var(--dim);margin-bottom:2px;">Transfer matrix at q</div>
+      <div id="matrix-display"></div>
+    </div>
+  </div>
 </div>
 </div>
-<div class="tooltip" id="tooltip"></div>
 <script>
-// === ELEMENT DATA ===
-// [Z, A, sym, name, B/A, k_alpha, period, group, block, magicZ, magicN, shellRow, intruder]
-// shellRow: 1-7 for knot-centric rows; block: 0=s,1=p,2=d,3=f
-// [Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]
-// block: 0=s 1=p 2=d 3=f; shellRow: knot-centric row 1-7
-// Electron config determines period/group/block; nuclear shell determines shellRow
+// ── Element Data ────────────────────────────────────────────────────
 const EL=[
 [1,1,"H","Hydrogen",0,0,1,1,0,0,0,1,0],
 [2,4,"He","Helium",7.0739,1,1,18,0,1,1,1,0],
@@ -218,840 +229,903 @@ const EL=[
 [92,238,"U","Uranium",7.5701,46,7,6,3,0,0,7,0]
 ];
 
-// === BRAID REGISTRY (from braid-registry.py, 268 stable nuclides) ===
-// Key: Z → [sign, log_trace, n_negative_generators, ordering_visual]
-// sign: ±1 (Markov trace sign), log_trace: ln|tr_M|, n_neg: crossings with negative generator
-// visual: ●=proton, ○=neutron in ground-state braid word ordering
-const BRAID={
-1:[1,0.0,0,"●"],
-2:[1,-2.1,0,"○●●○"],
-3:[1,-5.05,0,"●○●○●○○"],
-4:[-1,-10.91,1,"●○●○●○●○○"],
-5:[1,-12.94,2,"●○●○●○●○●○○"],
-6:[1,-13.54,2,"○●○●○●○●○●●○"],
-7:[-1,-14.72,3,"○●○●○●○●○●○●●○"],
-8:[1,-15.39,4,"○●○●○●○●○●○●○●●○"],
-9:[1,-15.37,6,"●○●○●○●○●○●○●○●○●○○"],
-10:[1,-15.61,6,"○●○●○●○●○●○●○●○●○●●○"],
-11:[1,-14.56,8,"●○●○●○●○●○●○●○●○●○●○●○○"],
-12:[1,-14.6,8,"○●○●○●○●○●○●○●○●○●○●○●●○"],
-13:[1,-12.68,10,"●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-14:[1,-12.51,10,"○●○●○●○●○●○●○●○●○●○●○●○●○●●○"],
-15:[1,-9.81,12,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-16:[1,-9.44,12,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-17:[1,-6.0,14,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-18:[1,0.72,18,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○○○"],
-19:[1,-1.27,16,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-20:[1,-0.46,16,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●●○"],
-21:[1,8.46,20,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-22:[1,13.37,22,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●●○"],
-23:[-1,24.81,23,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-24:[1,21.02,24,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●●○"],
-25:[-1,33.12,25,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-26:[1,29.56,26,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●●○"],
-27:[-1,42.32,27,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-28:[1,33.1,26,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●●○"],
-29:[-1,52.4,29,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-30:[1,49.27,30,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●●○"],
-31:[1,70.44,2,"●●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○○"],
-32:[-1,85.21,3,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-33:[1,89.14,2,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-34:[1,105.38,4,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-35:[1,102.73,2,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-36:[1,120.07,4,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-37:[-1,124.2,3,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-38:[1,135.64,4,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-39:[-1,139.99,3,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-40:[-1,143.97,3,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-41:[-1,156.65,3,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-42:[-1,178.55,5,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-44:[-1,197.2,5,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-45:[1,202.05,4,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-46:[-1,216.72,5,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-47:[1,221.79,4,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-48:[-1,259.57,7,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-50:[1,294.1,8,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-51:[-1,299.42,7,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-53:[1,336.35,8,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-54:[1,369.75,10,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-55:[-1,375.49,9,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-56:[-1,410.86,11,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-57:[1,416.82,10,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-58:[1,422.85,10,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-59:[-1,429.02,9,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-60:[-1,435.26,9,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-62:[1,512.52,12,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-63:[-1,519.14,11,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-64:[-1,560.63,13,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-65:[1,567.47,12,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-66:[1,610.92,14,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-67:[-1,617.98,13,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-68:[-1,625.15,13,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-69:[-1,651.34,13,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-70:[-1,697.84,15,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-71:[1,705.35,14,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-72:[1,753.79,16,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-73:[-1,761.53,15,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-74:[1,790.44,16,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-76:[1,872.23,18,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-77:[-1,880.43,17,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-78:[-1,900.08,17,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-79:[-1,919.94,17,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-80:[-1,975.32,19,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-81:[-1,1008.03,19,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-82:[1,1041.29,20,"●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○"],
-83:[-1,1050.17,19,"○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●"],
-};
+// ── State ───────────────────────────────────────────────────────────
+let selectedZ = null;
+let decayType = '-';
+function getQ() { return parseFloat(document.getElementById('sl-q').value); }
 
-// === CONSTANTS ===
-const q0=1.10997, mu_u=311.10, mu_d=312.39, m_e=0.51099895;
-const MAGIC_Z=new Set([2,8,20,28,50,82]);
-const MAGIC_N=new Set([2,8,20,28,50,82,126]);
-const BLOCK_NAMES=["s","p","d","f"];
-const BLOCK_COLORS=["#d0d8f8","#d0f0d8","#f8e8d0","#f0d0e8"];
-// Shell data: pair = stability pair (magic number where shell closes)
-// prevPair = previous closure; capacity = nucleon slots in this shell
-// intruder = spin-orbit magic shell (highest-j sub-level drops into previous HO shell)
-const MAGIC=[0,2,8,20,28,50,82,126];
-const SHELL_ROWS=[
-  {row:1,pair:2,  prevPair:0,  capacity:2,  range:"H–He"},
-  {row:2,pair:8,  prevPair:2,  capacity:6,  range:"Li–Ne"},
-  {row:3,pair:20, prevPair:8,  capacity:12, range:"Na–Ca"},
-  {row:4,pair:28, prevPair:20, capacity:8,  range:"Sc–Ni",  intruder:true},
-  {row:5,pair:50, prevPair:28, capacity:22, range:"Cu–Sn",  intruder:true},
-  {row:6,pair:82, prevPair:50, capacity:32, range:"Sb–Pb",  intruder:true},
-  {row:7,pair:126,prevPair:82, capacity:44, range:"Bi–U+",  intruder:true}
-];
+// Block names
+const BLOCK_NAMES = ['s','p','d','f'];
+const BLOCK_COLORS_DARK = ['#1a3a6a','#1a4a3a','#4a3a1a','#4a1a3a'];
+const BLOCK_COLORS_LIGHT = ['#c0d0ff','#c0ffd8','#ffecc0','#ffc0e0'];
 
-// === NUCLEAR SUB-SHELLS (Mayer-Jensen proton filling order) ===
-// Each row: array of [label, capacity] pairs
-// Capacities sum to element count in that shell row
-const NUC_SUBS=[null,
-  [["1s₁/₂",2]],                                                                  // Row1: 2
-  [["1p₃/₂",4],["1p₁/₂",2],["1d₅/₂",2]],                                        // Row2: 8
-  [["1d₅/₂",4],["2s₁/₂",2],["1d₃/₂",4]],                                        // Row3: 10
-  [["1f₇/₂",8]],                                                                  // Row4: 8
-  [["2p₃/₂",4],["1f₅/₂",6],["2p₁/₂",2],["1g₉/₂",10]],                          // Row5: 22
-  [["1g₇/₂",8],["2d₅/₂",6],["2d₃/₂",4],["3s₁/₂",2],["1h₁₁/₂",12]],            // Row6: 32
-  [["2f₇/₂",8],["1h₉/₂",2]]                                                      // Row7: 10
-];
-// Max columns needed across all rows (row 6: 32 elements + 4 gaps = 36)
-function nucTotalCols(){
-  let mx=0;
-  for(let r=1;r<=7;r++){const subs=NUC_SUBS[r];let w=0;for(const s of subs)w+=s[1];w+=subs.length-1;mx=Math.max(mx,w)}
-  return mx;
-}
-// Column position for element Z in nuclear sub-shell mode
-function nucCol(Z,shellRow){
-  const subs=NUC_SUBS[shellRow];
-  const rowEls=EL.filter(e=>e[11]===shellRow).sort((a,b)=>a[0]-b[0]);
-  const idx=rowEls.findIndex(e=>e[0]===Z);
-  if(idx<0)return 2;
-  let cum=0,col=2;
-  for(let s=0;s<subs.length;s++){
-    if(idx<cum+subs[s][1])return col+(idx-cum);
-    cum+=subs[s][1];col+=subs[s][1]+1;
+// ── Knot Drawing Engine (Canvas) ────────────────────────────────────
+function torusKnot3D(p, n, numPoints, R, r) {
+  const pts = [];
+  for (let i = 0; i <= numPoints; i++) {
+    const t = (i / numPoints) * 2 * Math.PI;
+    const x = (R + r * Math.cos(n * t)) * Math.cos(p * t);
+    const y = (R + r * Math.cos(n * t)) * Math.sin(p * t);
+    const z = r * Math.sin(n * t);
+    pts.push([x, y, z]);
   }
-  return col+(idx-cum);
+  return pts;
 }
 
-// Which nuclear sub-shell is element Z in?
-function nucSubshellLabel(Z,shellRow){
-  const subs=NUC_SUBS[shellRow];
-  const rowEls=EL.filter(e=>e[11]===shellRow).sort((a,b)=>a[0]-b[0]);
-  const idx=rowEls.findIndex(e=>e[0]===Z);
-  if(idx<0)return"?";
-  let cum=0;
-  for(let s=0;s<subs.length;s++){
-    if(idx<cum+subs[s][1])return subs[s][0]+` (${idx-cum+1}/${subs[s][1]})`;
-    cum+=subs[s][1];
+function figureEight3D(numPoints, R, r) {
+  const pts = [];
+  for (let i = 0; i <= numPoints; i++) {
+    const t = (i / numPoints) * 2 * Math.PI;
+    const x = (R + r * Math.cos(2 * t)) * Math.cos(3 * t);
+    const y = (R + r * Math.cos(2 * t)) * Math.sin(3 * t);
+    const z = r * Math.sin(4 * t);
+    pts.push([x, y, z]);
   }
-  return subs[subs.length-1][0];
+  return pts;
 }
 
-// === SVG DRAWING FUNCTIONS ===
-const SVG_NS="http://www.w3.org/2000/svg";
-function svgEl(tag,attrs){
-  const e=document.createElementNS(SVG_NS,tag);
-  for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);
-  return e;
+function projectPt(x, y, z, ax) {
+  const ca = Math.cos(ax), sa = Math.sin(ax);
+  return [x, y * ca - z * sa];
 }
 
-// Trefoil path (simplified, fits in a size x size box centered at 0,0)
-function trefoilPath(s){
-  const r=s*0.42;
-  return `M${-r*0.5},${-r} C${-r*1.1},${-r*0.5} ${-r*1.1},${r*0.5} ${-r*0.5},${r} `+
-    `C0,${r*0.5} 0,${-r*0.5} ${r*0.5},${-r} `+
-    `C${r*1.1},${-r*0.5} ${r*1.1},${r*0.5} ${r*0.5},${r} `+
-    `C0,${r*0.5} 0,${-r*0.5} ${-r*0.5},${-r}Z`;
-}
-
-// Draw a single trefoil (proton=solid blue, electron=outline blue, antiquark=outline)
-function drawTrefoil(size,type){
-  const svg=svgEl("svg",{width:size,height:size,viewBox:`${-size/2} ${-size/2} ${size} ${size}`,class:"knot"});
-  const p=svgEl("path",{d:trefoilPath(size)});
-  if(type==="proton"){p.setAttribute("fill","#2255aa");p.setAttribute("stroke","#112244");p.setAttribute("stroke-width","1.2")}
-  else if(type==="electron"){p.setAttribute("fill","none");p.setAttribute("stroke","#2255aa");p.setAttribute("stroke-width","1.5")}
-  else{p.setAttribute("fill","none");p.setAttribute("stroke","#aa5533");p.setAttribute("stroke-width","1.5")}
-  svg.appendChild(p);
-  return svg;
-}
-
-// Draw unknot (neutron circle)
-function drawUnknot(size){
-  const svg=svgEl("svg",{width:size,height:size,viewBox:`${-size/2} ${-size/2} ${size} ${size}`,class:"knot"});
-  svg.appendChild(svgEl("circle",{r:size*0.35,fill:"none",stroke:"#aa5533","stroke-width":"1.5"}));
-  return svg;
-}
-
-// Draw Hopf link symbol
-function drawHopf(size){
-  const svg=svgEl("svg",{width:size*1.4,height:size,viewBox:`${-size*0.7} ${-size/2} ${size*1.4} ${size}`,class:"knot"});
-  svg.appendChild(svgEl("circle",{cx:-size*0.15,r:size*0.28,fill:"none",stroke:"#c44","stroke-width":"1.3"}));
-  svg.appendChild(svgEl("circle",{cx:size*0.15,r:size*0.28,fill:"none",stroke:"#44c","stroke-width":"1.3"}));
-  return svg;
-}
-
-// Draw bowtie connector
-function drawBowtie(){
-  const sp=document.createElement("span");
-  sp.textContent="⋈";sp.style.cssText="color:#888;font-size:14px;margin:0 2px";
-  return sp;
-}
-
-// Draw alpha cluster (compact: "kα×α")
-function drawAlphaLabel(k){
-  const sp=document.createElement("span");
-  sp.textContent=k>1?`${k}×α`:"α";
-  sp.style.cssText="font-size:9px;color:#a53;font-weight:600";
-  return sp;
-}
-
-// --- Shell fill: compact progress bar for tiles, detailed Hopf icons for detail panel ---
-
-// Compact bar for tiles: thin filled bar + fraction text
-function shellBarSvg(filled,total,w,h){
-  w=w||30;h=h||10;
-  const svg=svgEl("svg",{width:w,height:h,viewBox:`0 0 ${w} ${h}`,class:"mini-knot"});
-  const barH=4, barY=(h-barH)/2, barW=w-2, barX=1;
-  // Background
-  svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW,height:barH,rx:2,fill:"#e8e8f0",stroke:"none"}));
-  // Fill
-  const frac=total>0?Math.max(0,Math.min(filled/total,1)):0;
-  if(frac>0){
-    svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW*frac,height:barH,rx:2,fill:frac>=1?"#4a8":"#5577cc",stroke:"none"}));
+function findCrossings(pts, ax) {
+  const proj = pts.map(p => projectPt(p[0], p[1], p[2], ax));
+  const crossings = [];
+  const n = pts.length - 1;
+  // Derive threshold from bounding box for robustness to scale changes
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (const p of proj) {
+    minX = Math.min(minX, p[0]); maxX = Math.max(maxX, p[0]);
+    minY = Math.min(minY, p[1]); maxY = Math.max(maxY, p[1]);
   }
-  return svg;
-}
-
-// Detailed Hopf-link icons for detail panel and row labels (max 8 icons, then count)
-function shellFillSvg(filled,total,h){
-  h=h||16;
-  const maxShow=Math.min(total,8);
-  const step=h*1.1;
-  const w=maxShow*step+(total>maxShow?28:0)+4;
-  const svg=svgEl("svg",{width:w,height:h,viewBox:`0 0 ${w} ${h}`,class:"mini-knot"});
-  const cy=h/2, r=h*0.22, gap=r*0.5;
-
-  for(let i=0;i<maxShow;i++){
-    const cx=step/2+i*step;
-    const filledI=i<Math.min(filled,maxShow);
-    svg.appendChild(svgEl("circle",{cx:cx-gap,cy:cy,r:r,
-      fill:filledI?"rgba(200,60,60,0.3)":"none",
-      stroke:filledI?"#c44":"#ccc","stroke-width":"0.8"}));
-    svg.appendChild(svgEl("circle",{cx:cx+gap,cy:cy,r:r,
-      fill:filledI?"rgba(60,60,200,0.3)":"none",
-      stroke:filledI?"#44c":"#ccc","stroke-width":"0.8"}));
-  }
-  if(total>maxShow){
-    const t=svgEl("text",{x:maxShow*step+4,y:cy+4,"font-size":"9",fill:"#556"});
-    t.textContent=`${filled}/${total}`;
-    svg.appendChild(t);
-  }
-  return svg;
-}
-
-// Mini knot icon for tile: compact progress bar
-function miniKnotSvg(Z,N,kalpha,shellRow){
-  const sr=SHELL_ROWS[shellRow-1];
-  if(!sr)return document.createElement("span");
-  const A=Z+N;
-  const filled=Math.min(A-sr.prevPair, sr.capacity);
-  return shellBarSvg(Math.max(0,filled), sr.capacity, 30, 10);
-}
-
-// Alpha sub-link mini icon (alternative mode)
-function miniAlphaSvg(kalpha){
-  // Use same bar style but with red fill
-  const svg=svgEl("svg",{width:30,height:10,viewBox:"0 0 30 10",class:"mini-knot"});
-  const barH=4,barY=3,barW=28,barX=1;
-  svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW,height:barH,rx:2,fill:"#e8e8f0",stroke:"none"}));
-  const frac=Math.min(kalpha/46,1);
-  if(frac>0){
-    svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW*frac,height:barH,rx:2,fill:"#c55",stroke:"none"}));
-  }
-  return svg;
-}
-
-// Full knot diagram for detail panel
-function fullKnotDiagram(el){
-  const[Z,A,sym,name,BA,kalpha]=el;
-  const N=A-Z;
-  const container=document.createElement("div");
-  container.className="knot-container";
-
-  // Formula text
-  const formula=document.createElement("div");
-  formula.className="knot-formula";
-  formula.textContent=`${Z}𝔭 ⋈ ${N}𝔫 ⋈ ${Z}·T₂,₃`;
-  container.appendChild(formula);
-
-  // Braid word visual from registry
-  const bd=BRAID[Z];
-  if(bd&&bd[3]){
-    const braidDiv=document.createElement("div");
-    braidDiv.className="knot-braid";
-    const vis=bd[3];
-    // Color ● (proton) and ○ (neutron) differently
-    for(let i=0;i<vis.length;i++){
-      const sp=document.createElement("span");
-      if(vis[i]==="●"){sp.textContent="●";sp.style.color="#2255aa"}
-      else if(vis[i]==="○"){sp.textContent="○";sp.style.color="#aa5533"}
-      else{sp.textContent=vis[i]}
-      braidDiv.appendChild(sp);
-    }
-    const lbl=document.createElement("span");
-    lbl.className="knot-braid-meta";
-    lbl.textContent=`(${A} nucleons, sign=${bd[0]>0?"+":"−"}1, ln|tr|=${bd[1].toFixed(1)})`;
-    braidDiv.appendChild(lbl);
-    container.appendChild(braidDiv);
-  }
-
-  // Visual diagram row
-  const row=document.createElement("div");
-  row.className="knot-row";
-
-  // Nuclear sub-link
-  const nucBox=document.createElement("span");
-  nucBox.className="nuclear-box";
-
-  if(kalpha>0){
-    nucBox.appendChild(drawAlphaLabel(kalpha));
-    // Show a couple of representative alpha sub-links
-    const showAlpha=Math.min(kalpha,3);
-    for(let i=0;i<showAlpha;i++){
-      nucBox.appendChild(drawTrefoil(18,"proton"));
-      nucBox.appendChild(drawTrefoil(18,"proton"));
-      nucBox.appendChild(drawUnknot(16));
-      nucBox.appendChild(drawUnknot(16));
-      if(i<showAlpha-1){
-        const plus=document.createElement("span");
-        plus.textContent="+";plus.className="knot-plus";
-        nucBox.appendChild(plus);
+  const bbox = Math.max(maxX - minX, maxY - minY) || 1;
+  const threshold = bbox * 0.04;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 3; j < n; j++) {
+      if (Math.abs(i - j) < 3 || Math.abs(i - j) > n - 3) continue;
+      const dx = proj[i][0] - proj[j][0];
+      const dy = proj[i][1] - proj[j][1];
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < threshold) {
+        const zi = pts[i][2], zj = pts[j][2];
+        crossings.push({
+          overIdx: zi > zj ? i : j,
+          underIdx: zi > zj ? j : i,
+          x: (proj[i][0] + proj[j][0]) / 2,
+          y: (proj[i][1] + proj[j][1]) / 2
+        });
       }
     }
-    if(kalpha>3){
-      const more=document.createElement("span");
-      more.textContent=`… (${kalpha} total)`;more.className="knot-more";
-      nucBox.appendChild(more);
+  }
+  // Deduplicate nearby crossings
+  const deduped = [];
+  const dedupDist = bbox * 0.08;
+  for (const c of crossings) {
+    let isDup = false;
+    for (const d of deduped) {
+      if (Math.abs(c.x - d.x) < dedupDist && Math.abs(c.y - d.y) < dedupDist) { isDup = true; break; }
+    }
+    if (!isDup) deduped.push(c);
+  }
+  return deduped;
+}
+
+function drawKnotOnCanvas(ctx, pts3d, color, lineWidth, size, ax) {
+  const proj = pts3d.map(p => projectPt(p[0], p[1], p[2], ax));
+  const crossings = findCrossings(pts3d, ax);
+
+  // Scale to canvas
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (const p of proj) {
+    minX = Math.min(minX, p[0]); maxX = Math.max(maxX, p[0]);
+    minY = Math.min(minY, p[1]); maxY = Math.max(maxY, p[1]);
+  }
+  const range = Math.max(maxX - minX, maxY - minY) || 1;
+  const margin = size * 0.12;
+  const scale = (size - 2 * margin) / range;
+  const cx = size / 2, cy = size / 2;
+  const midX = (minX + maxX) / 2, midY = (minY + maxY) / 2;
+
+  function tx(p) { return cx + (p[0] - midX) * scale; }
+  function ty(p) { return cy + (p[1] - midY) * scale; }
+
+  // Build set of under-strand indices near crossings
+  const gapRadius = lineWidth * 2.5;
+  const underSet = new Set();
+  for (const c of crossings) {
+    const sx = cx + (c.x - midX) * scale;
+    const sy = cy + (c.y - midY) * scale;
+    for (let k = 0; k < proj.length; k++) {
+      const px = tx(proj[k]), py = ty(proj[k]);
+      const dist = Math.sqrt((px - sx) ** 2 + (py - sy) ** 2);
+      if (dist < gapRadius) {
+        // Check if this point is on the under strand
+        if (Math.abs(k - c.underIdx) < 4 || Math.abs(k - c.underIdx) > proj.length - 4) {
+          underSet.add(k);
+        }
+      }
     }
   }
-  // Remaining nucleons outside alpha clusters
-  const remP=Z-2*kalpha, remN=N-2*kalpha;
-  if(Z===1&&N===0){
-    // Just one proton — special case to show trefoil icon
-    nucBox.appendChild(drawTrefoil(20,"proton"));
-    const lbl=document.createElement("span");
-    lbl.textContent="𝔭";lbl.className="knot-neutron-lbl";
-    nucBox.appendChild(lbl);
-  }else if(remP>0||remN>0){
-    if(kalpha>0){
-      const plus=document.createElement("span");
-      plus.textContent=" + ";plus.className="knot-plus";
-      nucBox.appendChild(plus);
+
+  // Draw under-strand segments (with gaps)
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+
+  // First pass: draw everything except gap regions
+  ctx.beginPath();
+  let penDown = false;
+  for (let i = 0; i < proj.length; i++) {
+    if (underSet.has(i)) {
+      penDown = false;
+      continue;
     }
-    if(remP>0){
-      const lbl=document.createElement("span");
-      lbl.textContent=remP+"𝔭";lbl.className="knot-proton-lbl";
-      nucBox.appendChild(lbl);
-    }
-    if(remN>0){
-      const lbl=document.createElement("span");
-      lbl.textContent=(remN>0&&remP>0?"+":"")+remN+"𝔫";lbl.className="knot-neutron-lbl";
-      nucBox.appendChild(lbl);
+    if (!penDown) {
+      ctx.moveTo(tx(proj[i]), ty(proj[i]));
+      penDown = true;
+    } else {
+      ctx.lineTo(tx(proj[i]), ty(proj[i]));
     }
   }
-  row.appendChild(nucBox);
-  row.appendChild(drawBowtie());
+  ctx.stroke();
 
-  // Electron sub-link
-  const elBox=document.createElement("span");
-  elBox.className="electron-box";
-  const showE=Math.min(Z,4);
-  for(let i=0;i<showE;i++){
-    elBox.appendChild(drawTrefoil(18,"electron"));
+  // Second pass: draw over-strand segments at crossing locations
+  // (already drawn in first pass since over-strands are not in underSet)
+}
+
+function drawUnknot(ctx, size, color, lineWidth) {
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth;
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, size * 0.35, 0, Math.PI * 2);
+  ctx.stroke();
+}
+
+function drawTrefoil(ctx, size, color, lineWidth, mirror) {
+  const pts = torusKnot3D(2, 3, 300, 10, 5);
+  if (mirror) for (const p of pts) p[0] = -p[0];
+  drawKnotOnCanvas(ctx, pts, color, lineWidth, size, 0.4);
+}
+
+function drawFigureEight(ctx, size, color, lineWidth) {
+  const pts = figureEight3D(400, 10, 4);
+  drawKnotOnCanvas(ctx, pts, color, lineWidth, size, 0.3);
+}
+
+function drawCinquefoil(ctx, size, color, lineWidth) {
+  const pts = torusKnot3D(2, 5, 400, 10, 5);
+  drawKnotOnCanvas(ctx, pts, color, lineWidth, size, 0.4);
+}
+
+function drawTorusKnot(ctx, size, color, lineWidth, p, n) {
+  const pts = torusKnot3D(p, n, 500, 10, 5);
+  drawKnotOnCanvas(ctx, pts, color, lineWidth, size, 0.4);
+}
+
+function drawHopfLink(ctx, size, color1, color2, lineWidth) {
+  const r = size * 0.22;
+  const offset = size * 0.14;
+  ctx.lineWidth = lineWidth;
+  // Ring 1
+  ctx.strokeStyle = color1;
+  ctx.beginPath();
+  ctx.ellipse(size / 2 - offset, size / 2, r, r * 0.6, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  // Gap for crossing
+  const gapX = size / 2 - offset + r * 0.3;
+  const gapY = size / 2;
+  ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--gap-color').trim() || '#020710';
+  ctx.lineWidth = lineWidth + 4;
+  ctx.beginPath();
+  ctx.arc(gapX, gapY - r * 0.15, lineWidth * 1.5, 0, Math.PI * 2);
+  ctx.stroke();
+  // Ring 2
+  ctx.lineWidth = lineWidth;
+  ctx.strokeStyle = color2;
+  ctx.beginPath();
+  ctx.ellipse(size / 2 + offset, size / 2, r, r * 0.6, Math.PI * 0.3, 0, Math.PI * 2);
+  ctx.stroke();
+}
+
+function drawBorromean(ctx, size, color1, color2, color3, lineWidth) {
+  const r = size * 0.22;
+  const cx = size / 2, cy = size / 2;
+  const off = size * 0.1;
+  ctx.lineWidth = lineWidth;
+  // Three interlocked rings
+  const rings = [
+    { x: cx, y: cy - off, c: color1, angle: 0 },
+    { x: cx - off * 0.87, y: cy + off * 0.5, c: color2, angle: Math.PI * 2 / 3 },
+    { x: cx + off * 0.87, y: cy + off * 0.5, c: color3, angle: Math.PI * 4 / 3 }
+  ];
+  // Draw in specific order for crossings
+  for (let pass = 0; pass < 2; pass++) {
+    for (let i = 0; i < 3; i++) {
+      const ring = rings[i];
+      ctx.strokeStyle = ring.c;
+      ctx.lineWidth = lineWidth;
+      ctx.beginPath();
+      if (pass === 0) {
+        // Draw bottom half
+        ctx.ellipse(ring.x, ring.y, r, r * 0.6, ring.angle, Math.PI * 0.1, Math.PI * 0.9);
+      } else {
+        // Draw top half
+        ctx.ellipse(ring.x, ring.y, r, r * 0.6, ring.angle, Math.PI * 0.9, Math.PI * 2.1);
+      }
+      ctx.stroke();
+    }
   }
-  if(Z>4){
-    const more=document.createElement("span");
-    more.textContent=`… (${Z} e⁻)`;more.className="knot-electron-more";
-    elBox.appendChild(more);
+}
+
+// Mini knot for tiles (tiny canvas)
+function drawMiniKnot(canvas, Z) {
+  const ctx = canvas.getContext('2d');
+  const s = canvas.width;
+  ctx.clearRect(0, 0, s, s);
+  const accent = getComputedStyle(document.body).getPropertyValue('--accent').trim();
+  if (Z <= 2) {
+    // H, He: simple circles (hydrogen = 1 proton trefoil)
+    drawTrefoil(ctx, s, accent, 1.2, false);
+  } else if (Z <= 10) {
+    drawTrefoil(ctx, s, accent, 1, false);
+  } else if (Z <= 18) {
+    drawTrefoil(ctx, s, accent, 0.8, false);
+  } else {
+    drawTrefoil(ctx, s, accent, 0.7, false);
   }
-  const eLbl=document.createElement("span");
-  eLbl.textContent=`${Z}×T₂,₃`;eLbl.style.cssText="font-size:9px;color:#37a";
-  elBox.appendChild(eLbl);
-  row.appendChild(elBox);
-
-  container.appendChild(row);
-
-  // Shell fill bar
-  const shellRow=el[11];
-  const sr=SHELL_ROWS[shellRow-1];
-  if(sr){
-    const shellDiv=document.createElement("div");
-    shellDiv.style.cssText="display:flex;align-items:center;gap:6px;margin-top:6px";
-    const shellLabel=document.createElement("span");
-    shellLabel.style.cssText="font-size:11px;color:#556;font-weight:600";
-    const filled=Math.min(A-sr.prevPair,sr.capacity);
-    const empty=sr.capacity-filled;
-    shellLabel.textContent=`Shell ${shellRow}: ${filled}/${sr.capacity} Hopf slots filled`;
-    if(empty>0)shellLabel.textContent+=` · ${empty} empty`;
-    shellDiv.appendChild(shellFillSvg(Math.max(0,filled),sr.capacity,18));
-    shellDiv.appendChild(shellLabel);
-    container.appendChild(shellDiv);
-  }
-
-  // Sub-link info
-  const info=document.createElement("div");
-  info.style.cssText="font-size:11px;color:#556;margin-top:4px";
-  const parts=[];
-  if(kalpha>0)parts.push(`${kalpha} alpha sub-links (⋈ pairs)`);
-  if(remP>0)parts.push(`${remP} free proton${remP>1?"s":""}`);
-  if(remN>0)parts.push(`${remN} free neutron${remN>1?"s":""}`);
-  if(MAGIC_Z.has(Z))parts.push("◇ proton stability pair");
-  if(MAGIC_N.has(N))parts.push("◇ neutron stability pair");
-  if(el[12])parts.push("magic shell (spin-orbit closure)");
-  info.textContent=parts.join(" · ");
-  container.appendChild(info);
-
-  return container;
 }
 
-// === TRANSFER MATRIX DATA ===
-// Skein polynomial degree bound: A^2 - 1; transfer matrix steps: C(A,2)
-function skeinDeg(A){return A*A-1}
-function tmSteps(A){return A*(A-1)/2}
-// Shell eigenvalue lambda_+ at given q
-function lambdaPlus(qVal){
-  const s=qVal-1/qVal;
-  return(s+Math.sqrt(s*s+4))/2;
-}
-// Outermost electron shell index for Z
-function outerShell(Z){
-  const el=EL.find(e=>e[0]===Z);
-  return el?el[6]:1; // period is at index 6
-}
-function electronPeriod(Z){
-  const el=EL.find(e=>e[0]===Z);
-  return el?el[6]:1;
-}
-
-// === MASS COMPUTATION ===
-function computeMass(Z,A,BA,qVal){
-  const qh=Math.sqrt(qVal);
-  function S(a,b){return(qVal*a+(1/qVal)*b)/(qh+1/qh)}
-  const mp=S(mu_u,mu_u)+2*S(mu_u,mu_d);
-  const mn=2*S(mu_u,mu_d)+S(mu_d,mu_d);
-  const N=A-Z;
-  return Z*mp+N*mn-(A*BA)+Z*m_e;
-}
-
-// === LAYOUT ENGINE ===
-
-// --- Standard layout: 18 columns, electron-period rows ---
-function stdPos(Z,period,group,block){
-  if(Z>=57&&Z<=71)return{row:9,col:Z-57+4};
-  if(Z>=89&&Z<=103)return{row:10,col:Z-89+4};
-  if(Z>=72&&Z<=80)return{row:6,col:Z-72+4};
-  return{row:period,col:group};
-}
-
-// --- Knot-centric layout: 7 nuclear-shell rows ---
-// Elements are placed left-to-right within each shell row, grouped by
-// electron block (s, d, f, p) with visual gaps between blocks.
-// Each shell row gets its own grid-row. f-block goes in a sub-row below.
-//
-// Column assignment: within each (shellRow, block), elements are sorted by Z
-// and placed in sequential columns. Blocks are ordered s(left), d(middle), p(right)
-// with gaps. f-block in a sub-row.
-//
-// baseRow mapping: shellRow → CSS grid row (with gaps for f-block sub-rows)
-// shellRow 1-7 → grid rows (nuclear mode: no f-block sub-rows, all compact)
-const KNOT_BASE_ROW=[0,1,2,3,4,5,6,7]; // shellRow 1-7 → grid rows
-const KNOT_BASE_ROW_EBLOCK=[0,1,2,3,4,5,7,9]; // old layout with f-block sub-rows
-// Max columns needed: shell 6 has s(2)+d(10)+p(2)+f(14)=28 elements on main row+sub
-// We use 20 cols for main row: s(1-2) gap(3) d(4-13) gap(14) p(15-20)
-// f-block sub-row: cols 3-16
-
-// Block widths: theoretical Hopf-link slots per block
-const BLOCK_SLOTS={0:2, 1:6, 2:10, 3:14}; // s,p,d,f
-
-// Actual max element count per block across all shell rows
-const BLOCK_MAX={0:0, 1:0, 2:0, 3:0};
-(function(){
-  const counts={};
-  for(const el of EL){
-    const key=el[11]+","+el[8];
-    counts[key]=(counts[key]||0)+1;
-  }
-  for(const[k,v]of Object.entries(counts)){
-    const blk=parseInt(k.split(",")[1]);
-    BLOCK_MAX[blk]=Math.max(BLOCK_MAX[blk],v);
+// ── Periodic Table Builder ──────────────────────────────────────────
+// Standard periodic table layout: [row, col] for Z=1..92
+// Rows 1-7, cols 1-18; lanthanides in row 8, actinides in row 9
+const PT_LAYOUT = {};
+(function() {
+  // Map each element to grid position
+  for (const el of EL) {
+    const Z = el[0], period = el[6], group = el[7], block = el[8];
+    let row, col;
+    // Lanthanides (57-71) go in row 9, Actinides (89-92) in row 10
+    // Fix period data: 83-86 are period 6, not 7 as in some datasets
+    if (Z >= 57 && Z <= 71) {
+      row = 9; col = Z - 57 + 3;
+    } else if (Z >= 89 && Z <= 92) {
+      row = 10; col = Z - 89 + 3;
+    } else if (Z >= 83 && Z <= 86) {
+      row = 6; col = group; // Bi-Rn are period 6
+    } else {
+      row = period;
+      col = group;
+    }
+    PT_LAYOUT[Z] = [row, col];
   }
 })();
-// BLOCK_MAX: s=4, p=8, d=12, f=14
 
-// Compute column starts dynamically so no block overflows
-function blockLayout(colMode){
-  const w={};
-  for(const b of [0,1,2,3]){
-    w[b]=(colMode==="fill")?BLOCK_MAX[b]:Math.max(BLOCK_SLOTS[b],BLOCK_MAX[b]);
+function elByZ(z) { return EL.find(e => e[0] === z); }
+
+function getTileColor(el, mode) {
+  const block = el[8];
+  const ba = el[4];
+  const kalpha = el[5];
+  const isLight = document.body.classList.contains('light');
+
+  if (mode === 'block') {
+    const colors = isLight ? BLOCK_COLORS_LIGHT : BLOCK_COLORS_DARK;
+    return colors[block] || colors[0];
+  } else if (mode === 'binding') {
+    // Color by binding energy per nucleon (0-9 MeV range)
+    const t = Math.min(1, Math.max(0, ba / 9));
+    const r = Math.round(40 + t * 180);
+    const g = Math.round(40 + (1 - Math.abs(t - 0.5) * 2) * 120);
+    const b = Math.round(40 + (1 - t) * 180);
+    return `rgb(${r},${g},${b})`;
+  } else if (mode === 'alpha') {
+    // Color by alpha cluster count
+    const t = Math.min(1, kalpha / 46);
+    const r = Math.round(20 + t * 200);
+    const g = Math.round(60 + (1 - t) * 80);
+    const b = Math.round(120 - t * 80);
+    return `rgb(${r},${g},${b})`;
   }
-  // Layout: col1=label | s | gap | d | gap | p
-  // f in sub-row aligned with d
-  const s0=2;
-  const s2=s0+w[0]+1;   // d after s + gap
-  const s1=s2+w[2]+1;   // p after d + gap
-  const s3=s2;           // f aligned with d (sub-row)
-  return{start:{0:s0,2:s2,1:s1,3:s3}, widths:w, totalCols:s1+w[1]};
+  return isLight ? '#dde' : '#1a2a4a';
 }
 
-function valenceIdx(Z,block,shellRow){
-  const siblings=EL.filter(e=>e[11]===shellRow&&e[8]===block).sort((a,b)=>a[0]-b[0]);
-  return siblings.findIndex(e=>e[0]===Z);
-}
+function buildTable() {
+  const grid = document.getElementById('pt-grid');
+  grid.innerHTML = '';
+  const mode = document.getElementById('color-mode').value;
 
-function knotPos(Z,block,shellRow,colMode){
-  const mainRow=KNOT_BASE_ROW_EBLOCK[shellRow];
-  const idx=valenceIdx(Z,block,shellRow);
-  if(idx<0)return{row:mainRow,col:2};
-
-  const isF=block===3;
-  const row=isF?mainRow+1:mainRow;
-  const lay=blockLayout(colMode);
-  return{row:row,col:lay.start[block]+idx};
-}
-
-let selectedEl=null;
-let tileEls=new Map();
-
-function makeTile(el,colorMode){
-  const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
-  const N=A-Z;
-  const tile=document.createElement("div");
-  tile.className="tile";
-
-  // Color mode
-  if(colorMode==="block"){
-    tile.classList.add("block-"+BLOCK_NAMES[block]);
-  }else if(colorMode==="kalpha"){
-    const intensity=Math.min(kalpha/46,1);
-    tile.style.background=`rgba(200,60,60,${0.05+intensity*0.3})`;
-  }else if(colorMode==="ba"){
-    const norm=(BA-5)/(8.8-5);
-    tile.style.background=`rgba(40,80,200,${0.05+Math.max(0,norm)*0.35})`;
-  }else if(colorMode==="shell"){
-    const hue=(shellRow-1)*50;
-    tile.style.background=`hsla(${hue},60%,92%,0.8)`;
-  }else if(colorMode==="skein-deg"){
-    const deg=skeinDeg(A);
-    const norm=Math.min(Math.log(deg+1)/Math.log(56644),1);
-    tile.style.background=`rgba(120,40,160,${0.05+norm*0.4})`;
-  }else if(colorMode==="lambda"){
-    const qVal=parseFloat(document.getElementById("q-slider").value);
-    const lp=lambdaPlus(qVal);
-    const n=electronPeriod(Z);
-    const lpn=Math.pow(lp,n);
-    const norm=Math.min((lpn-1)/1.0,1);
-    tile.style.background=`rgba(180,100,20,${0.05+norm*0.4})`;
-  }
-
-  // Magic number borders
-  if(magZ&&magN)tile.classList.add("magic-both");
-  else if(magZ)tile.classList.add("magic-z");
-  else if(magN)tile.classList.add("magic-n");
-  if(intruder)tile.classList.add("magic-receptive");
-
-  // Tile content
-  const zSpan=document.createElement("div");
-  zSpan.className="z-num";zSpan.textContent=Z;
-  const symSpan=document.createElement("div");
-  symSpan.className="sym";symSpan.textContent=sym;
-  tile.appendChild(zSpan);
-  tile.appendChild(symSpan);
-  // Mini icon: shell fill (Hopf links) or alpha count depending on color mode
-  if(colorMode==="kalpha"){
-    tile.appendChild(miniAlphaSvg(kalpha));
-  }else{
-    tile.appendChild(miniKnotSvg(Z,N,kalpha,shellRow));
-  }
-
-  return tile;
-}
-
-function addRowLabel(grid,row,col,text){
-  const lbl=document.createElement("div");
-  lbl.style.cssText=`grid-row:${row};grid-column:${col};font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
-  lbl.textContent=text;
-  grid.appendChild(lbl);
-}
-
-function buildGrid(){
-  const wrap=document.getElementById("table-wrap");
-  wrap.innerHTML="";
-  tileEls=new Map();
-
-  const layout=document.getElementById("layout-sel").value;
-  const colorMode=document.getElementById("color-sel").value;
-  const filter=document.getElementById("filter-sel").value;
-  const colMode=document.getElementById("col-sel").value;
-  const qVal=parseFloat(document.getElementById("q-slider").value);
-
-  const grid=document.createElement("div");
-  grid.className="tile-grid";
-
-  if(layout==="standard"){
-    grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
-    grid.style.gridTemplateRows="repeat(10,auto)";
-  }else if(colMode==="nuclear"){
-    // Nuclear sub-shell: all rows on same grid, left-aligned
-    const nc=nucTotalCols();
-    grid.style.gridTemplateColumns=`auto ${"minmax(30px,1fr) ".repeat(nc)}`;
-    grid.style.gridTemplateRows="repeat(9,auto)";
-  }else{
-    // Electron block (hopf/fill): old layout
-    const lay=blockLayout(colMode);
-    grid.style.gridTemplateColumns=`auto ${"minmax(36px,1fr) ".repeat(lay.totalCols)}`;
-    grid.style.gridTemplateRows="repeat(11,auto)";
-  }
-
-  // Row 1 offset: leave room for sub-shell headers in nuclear mode
-  const rowOffset=(layout!=="standard"&&colMode!=="fill")?1:0;
-
-  for(const el of EL){
-    const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
-
-    // Filter
-    if(filter==="magic"&&!magZ&&!magN)continue;
-    if(filter==="intruder"&&!intruder)continue;
-    if(filter==="stable"&&!(Z%2===0&&(A-Z)%2===0))continue;
-
-    const tile=makeTile(el,colorMode);
-
-    // Position depends on layout
-    let pos;
-    if(layout==="standard"){
-      pos=stdPos(Z,period,group,block);
-    }else if(colMode==="nuclear"){
-      pos={row:KNOT_BASE_ROW[shellRow],col:nucCol(Z,shellRow)};
-    }else{
-      pos=knotPos(Z,block,shellRow,colMode);
-    }
-    tile.style.gridRow=pos.row+rowOffset;
-    tile.style.gridColumn=pos.col;
-
-    // Events
-    tile.addEventListener("click",()=>selectElement(el));
-    tile.addEventListener("mouseenter",(e)=>showTooltip(e,el,qVal));
-    tile.addEventListener("mouseleave",hideTooltip);
-
-    grid.appendChild(tile);
-    tileEls.set(Z,tile);
-  }
-
-  // Row labels
-  if(layout==="standard"){
-    addRowLabel(grid,9,1,"Lanthanides");
-    addRowLabel(grid,10,1,"Actinides");
-  }else if(colMode==="nuclear"){
-    // Nuclear mode: row labels with shell info, sub-shell header labels
-    for(let i=0;i<SHELL_ROWS.length;i++){
-      const sr=SHELL_ROWS[i];
-      const gr=KNOT_BASE_ROW[i+1]+rowOffset;
-      const lbl=document.createElement("div");
-      lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
-      lbl.textContent=sr.intruder?`★${sr.pair}`:`◇${sr.pair}`;
-      lbl.title=`Shell ${i+1}: ${sr.capacity} nucleon slots. Closes at ◇${sr.pair}.${sr.intruder?" Magic shell (spin-orbit closure).":""}`;
-      grid.appendChild(lbl);
-      // Sub-shell boundary labels within this row
-      const subs=NUC_SUBS[i+1];
-      let col=2;
-      for(let s=0;s<subs.length;s++){
-        const h=document.createElement("div");
-        h.style.cssText=`grid-row:1;grid-column:${col}/span ${subs[s][1]};font-size:7px;color:#99a;text-align:center;padding:0;pointer-events:none;white-space:nowrap;overflow:hidden`;
-        // Only show label for widest row (row 6) to avoid clutter, or for all rows in header
-        if(i===5){
-          h.textContent=subs[s][0];
-          h.style.borderBottom="1px solid #dde";
-          h.style.fontWeight="600";
+  // Build 10 rows x 18 cols grid
+  for (let row = 1; row <= 10; row++) {
+    for (let col = 1; col <= 18; col++) {
+      // Find element at this position
+      let found = null;
+      for (const Z in PT_LAYOUT) {
+        if (PT_LAYOUT[Z][0] === row && PT_LAYOUT[Z][1] === col) {
+          found = parseInt(Z);
+          break;
         }
-        grid.appendChild(h);
-        col+=subs[s][1]+1;
+      }
+
+      // Row 8 is a blank gap between main table and f-block rows
+      if (row === 8) {
+        const spacer = document.createElement('div');
+        spacer.className = 'tile empty';
+        grid.appendChild(spacer);
+        continue;
+      }
+      if (row === 9 && col === 1) {
+        const spacer = document.createElement('div');
+        spacer.className = 'tile empty';
+        spacer.style.gridColumn = '1 / 3';
+        spacer.innerHTML = '<span style="font-size:8px;color:var(--dim);">La-Lu</span>';
+        grid.appendChild(spacer);
+        col++; // skip col 2
+        continue;
+      }
+      if (row === 10 && col === 1) {
+        const spacer = document.createElement('div');
+        spacer.className = 'tile empty';
+        spacer.style.gridColumn = '1 / 3';
+        spacer.innerHTML = '<span style="font-size:8px;color:var(--dim);">Ac-U</span>';
+        grid.appendChild(spacer);
+        col++;
+        continue;
+      }
+
+      if (!found) {
+        const empty = document.createElement('div');
+        empty.className = 'tile empty';
+        grid.appendChild(empty);
+        continue;
+      }
+
+      const el = elByZ(found);
+      const tile = document.createElement('div');
+      tile.className = 'tile';
+      const blockClass = ['block-s','block-p','block-d','block-f'][el[8]];
+      tile.classList.add(blockClass);
+      if (el[9] || el[10]) tile.classList.add('magic');
+      if (selectedZ === found) tile.classList.add('selected');
+
+      tile.style.backgroundColor = getTileColor(el, mode);
+      tile.innerHTML = `<span class="zn">${el[0]}</span><span class="sym">${el[2]}</span><canvas width="32" height="32"></canvas>`;
+      tile.addEventListener('click', () => selectElement(found));
+
+      grid.appendChild(tile);
+
+      // Draw mini knot
+      requestAnimationFrame(() => {
+        const c = tile.querySelector('canvas');
+        if (c) drawMiniKnot(c, found);
+      });
+    }
+  }
+}
+
+// ── Element Selection ───────────────────────────────────────────────
+function selectElement(Z) {
+  selectedZ = Z;
+  buildTable();
+  updateKnotPanel();
+  updateDecayPanel();
+}
+
+// ── Knot Panel ──────────────────────────────────────────────────────
+function updateKnotPanel() {
+  if (!selectedZ) return;
+  const el = elByZ(selectedZ);
+  const Z = el[0], A = el[1], N = A - Z;
+  const sym = el[2], name = el[3];
+
+  document.getElementById('knot-el-name').textContent = `${sym} (${name}) Z=${Z}, A=${A}`;
+  document.getElementById('knot-formula').innerHTML =
+    `${Z}\uD835\uDD2D \u22C8 ${N}\uD835\uDD2B \u22C8 ${Z}\u00B7\u03C3(T<sub>2,3</sub>)`;
+
+  const wrap = document.getElementById('knot-canvas-wrap');
+  wrap.innerHTML = '';
+
+  const info = document.getElementById('knot-info');
+
+  if (Z <= 4) {
+    // Full knot link diagram for light elements
+    drawFullKnotDiagram(wrap, Z, N);
+    info.innerHTML = `<b>${name}</b>: ${Z} proton trefoil(s) T<sub>2,3</sub> + ${N} neutron unknot(s) + ${Z} electron mirror trefoil(s) \u03C3(T<sub>2,3</sub>)<br>` +
+      `Nuclear sub-link: Borromean B<sub>3</sub>(\uD835\uDD2D) for Z\u22653, single T<sub>2,3</sub> for Z=1<br>` +
+      `Atom = nuclear sub-link \u22C8 electron sub-link (Hopf-linked)`;
+  } else {
+    // Schematic for heavier elements
+    drawSchematicKnot(wrap, Z, N);
+    info.innerHTML = `<b>${name}</b>: ${Z} proton(s) + ${N} neutron(s) + ${Z} electron(s)<br>` +
+      `Nuclear sub-link: ${Z}\u00B7T<sub>2,3</sub>(\uD835\uDD2D) \u22C8 ${N}\u00B7O<sub>1</sub>(\uD835\uDD2B)<br>` +
+      `Electron sub-link: ${Z}\u00B7\u03C3(T<sub>2,3</sub>)<br>` +
+      `B/A = ${el[4].toFixed(3)} MeV, \u03B1-clusters = ${el[5]}`;
+  }
+}
+
+function drawFullKnotDiagram(wrap, Z, N) {
+  // Nuclear sub-link
+  const nucLabel = document.createElement('div');
+  nucLabel.style.cssText = 'font-size:9px;color:var(--dim);text-align:center;width:100%;';
+  nucLabel.textContent = 'Nuclear sub-link';
+  wrap.appendChild(nucLabel);
+
+  const nucRow = document.createElement('div');
+  nucRow.style.cssText = 'display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap;';
+
+  // Draw protons as trefoils
+  for (let i = 0; i < Z; i++) {
+    const c = makeKnotCanvas(60);
+    const ctx = c.getContext('2d');
+    drawTrefoil(ctx, 60, getComputedStyle(document.body).getPropertyValue('--proton-color').trim(), 2, false);
+    const lbl = document.createElement('div');
+    lbl.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
+    lbl.appendChild(c);
+    const t = document.createElement('span');
+    t.style.cssText = 'font-size:8px;color:var(--proton-color);';
+    t.textContent = '\uD835\uDD2D';
+    lbl.appendChild(t);
+    nucRow.appendChild(lbl);
+
+    if (i < Z - 1 || N > 0) {
+      const plus = document.createElement('span');
+      plus.style.cssText = 'color:var(--dim);font-size:14px;';
+      plus.textContent = '\u22C8';
+      nucRow.appendChild(plus);
+    }
+  }
+
+  // Draw neutrons as unknots
+  for (let i = 0; i < N; i++) {
+    const c = makeKnotCanvas(60);
+    const ctx = c.getContext('2d');
+    drawUnknot(ctx, 60, getComputedStyle(document.body).getPropertyValue('--neutron-color').trim(), 2);
+    const lbl = document.createElement('div');
+    lbl.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
+    lbl.appendChild(c);
+    const t = document.createElement('span');
+    t.style.cssText = 'font-size:8px;color:var(--neutron-color);';
+    t.textContent = '\uD835\uDD2B';
+    lbl.appendChild(t);
+    nucRow.appendChild(lbl);
+
+    if (i < N - 1) {
+      const plus = document.createElement('span');
+      plus.style.cssText = 'color:var(--dim);font-size:14px;';
+      plus.textContent = '\u22C8';
+      nucRow.appendChild(plus);
+    }
+  }
+
+  wrap.appendChild(nucRow);
+
+  // Hopf link separator
+  const hopfLabel = document.createElement('div');
+  hopfLabel.style.cssText = 'font-size:10px;color:var(--accent);text-align:center;width:100%;margin:4px 0;';
+  hopfLabel.innerHTML = '\u22C8 Hopf-linked to electron sub-link \u22C8';
+  wrap.appendChild(hopfLabel);
+
+  // Electron sub-link
+  const elLabel = document.createElement('div');
+  elLabel.style.cssText = 'font-size:9px;color:var(--dim);text-align:center;width:100%;';
+  elLabel.textContent = 'Electron sub-link';
+  wrap.appendChild(elLabel);
+
+  const elRow = document.createElement('div');
+  elRow.style.cssText = 'display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap;';
+
+  for (let i = 0; i < Z; i++) {
+    const c = makeKnotCanvas(60);
+    const ctx = c.getContext('2d');
+    drawTrefoil(ctx, 60, getComputedStyle(document.body).getPropertyValue('--electron-color').trim(), 2, true);
+    const lbl = document.createElement('div');
+    lbl.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
+    lbl.appendChild(c);
+    const t = document.createElement('span');
+    t.style.cssText = 'font-size:8px;color:var(--electron-color);';
+    t.textContent = 'e\u207B';
+    lbl.appendChild(t);
+    elRow.appendChild(lbl);
+
+    if (i < Z - 1) {
+      const plus = document.createElement('span');
+      plus.style.cssText = 'color:var(--dim);font-size:14px;';
+      plus.textContent = '\u22C8';
+      elRow.appendChild(plus);
+    }
+  }
+
+  wrap.appendChild(elRow);
+
+  // For Z >= 3, also show Borromean structure
+  if (Z >= 3) {
+    const bLabel = document.createElement('div');
+    bLabel.style.cssText = 'font-size:9px;color:var(--dim);text-align:center;width:100%;margin-top:6px;';
+    bLabel.textContent = 'Borromean proton structure (3 colored unknots)';
+    wrap.appendChild(bLabel);
+    const bc = makeKnotCanvas(100);
+    const bctx = bc.getContext('2d');
+    drawBorromean(bctx, 100, '#ee4444', '#44cc44', '#4444ee', 2);
+    wrap.appendChild(bc);
+  }
+}
+
+function drawSchematicKnot(wrap, Z, N) {
+  // Summary row with representative knots
+  const row1 = document.createElement('div');
+  row1.style.cssText = 'display:flex;gap:10px;align-items:flex-start;justify-content:center;flex-wrap:wrap;';
+
+  // Proton trefoil (representative)
+  const pBox = document.createElement('div');
+  pBox.style.cssText = 'display:flex;flex-direction:column;align-items:center;border:1px solid var(--border);border-radius:4px;padding:4px;';
+  const pc = makeKnotCanvas(80);
+  drawTrefoil(pc.getContext('2d'), 80, getComputedStyle(document.body).getPropertyValue('--proton-color').trim(), 2.5, false);
+  pBox.appendChild(pc);
+  const pLbl = document.createElement('div');
+  pLbl.style.cssText = 'font-size:9px;color:var(--proton-color);text-align:center;';
+  pLbl.innerHTML = `\u00D7${Z} protons<br>T<sub>2,3</sub>`;
+  pBox.appendChild(pLbl);
+  row1.appendChild(pBox);
+
+  // Hopf symbol
+  const hopf = document.createElement('div');
+  hopf.style.cssText = 'font-size:18px;color:var(--accent);align-self:center;';
+  hopf.textContent = '\u22C8';
+  row1.appendChild(hopf);
+
+  // Neutron unknot (representative)
+  const nBox = document.createElement('div');
+  nBox.style.cssText = 'display:flex;flex-direction:column;align-items:center;border:1px solid var(--border);border-radius:4px;padding:4px;';
+  const nc = makeKnotCanvas(80);
+  drawUnknot(nc.getContext('2d'), 80, getComputedStyle(document.body).getPropertyValue('--neutron-color').trim(), 2.5);
+  nBox.appendChild(nc);
+  const nLbl = document.createElement('div');
+  nLbl.style.cssText = 'font-size:9px;color:var(--neutron-color);text-align:center;';
+  nLbl.innerHTML = `\u00D7${N} neutrons<br>O<sub>1</sub>`;
+  nBox.appendChild(nLbl);
+  row1.appendChild(nBox);
+
+  // Hopf symbol
+  const hopf2 = document.createElement('div');
+  hopf2.style.cssText = 'font-size:18px;color:var(--accent);align-self:center;';
+  hopf2.textContent = '\u22C8';
+  row1.appendChild(hopf2);
+
+  // Electron mirror trefoil
+  const eBox = document.createElement('div');
+  eBox.style.cssText = 'display:flex;flex-direction:column;align-items:center;border:1px solid var(--border);border-radius:4px;padding:4px;';
+  const ec = makeKnotCanvas(80);
+  drawTrefoil(ec.getContext('2d'), 80, getComputedStyle(document.body).getPropertyValue('--electron-color').trim(), 2.5, true);
+  eBox.appendChild(ec);
+  const eLbl = document.createElement('div');
+  eLbl.style.cssText = 'font-size:9px;color:var(--electron-color);text-align:center;';
+  eLbl.innerHTML = `\u00D7${Z} electrons<br>\u03C3(T<sub>2,3</sub>)`;
+  eBox.appendChild(eLbl);
+  row1.appendChild(eBox);
+
+  wrap.appendChild(row1);
+
+  // Show a few particle knot types
+  const row2 = document.createElement('div');
+  row2.style.cssText = 'display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:8px;';
+
+  const knotTypes = [
+    { label: 'Photon (empty)', draw: (ctx, s) => { ctx.fillStyle = 'var(--dim)'; ctx.beginPath(); ctx.arc(s/2, s/2, 3, 0, Math.PI*2); ctx.fill(); } },
+    { label: 'Neutrino (unknot)', draw: (ctx, s) => drawUnknot(ctx, s, '#888888', 1.5) },
+    { label: 'Electron (3_1)', draw: (ctx, s) => drawTrefoil(ctx, s, '#33bbff', 1.5, false) },
+    { label: 'Muon (4_1)', draw: (ctx, s) => drawFigureEight(ctx, s, '#aa44cc', 1.5) },
+    { label: 'Tau (5_1)', draw: (ctx, s) => drawCinquefoil(ctx, s, '#ffaa33', 1.5) },
+  ];
+
+  for (const kt of knotTypes) {
+    const box = document.createElement('div');
+    box.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
+    const c = makeKnotCanvas(50);
+    kt.draw(c.getContext('2d'), 50);
+    box.appendChild(c);
+    const l = document.createElement('span');
+    l.style.cssText = 'font-size:7px;color:var(--dim);text-align:center;';
+    l.textContent = kt.label;
+    box.appendChild(l);
+    row2.appendChild(box);
+  }
+
+  wrap.appendChild(row2);
+}
+
+function makeKnotCanvas(size) {
+  const c = document.createElement('canvas');
+  c.width = size * 2; c.height = size * 2;
+  c.style.width = size + 'px';
+  c.style.height = size + 'px';
+  c.getContext('2d').scale(2, 2);
+  return c;
+}
+
+// ── Beta Decay Panel ────────────────────────────────────────────────
+function setDecay(type) {
+  decayType = type;
+  document.getElementById('btn-bminus').classList.toggle('active', type === '-');
+  document.getElementById('btn-bplus').classList.toggle('active', type === '+');
+  updateDecayPanel();
+}
+
+function updateDecayPanel() {
+  if (!selectedZ) {
+    document.getElementById('decay-el-name').textContent = '--';
+    document.getElementById('decay-eq').innerHTML = 'Select an element';
+    return;
+  }
+
+  const el = elByZ(selectedZ);
+  const Z = el[0], A = el[1], N = A - Z;
+  const sym = el[2];
+
+  document.getElementById('decay-el-name').textContent = `${sym} (Z=${Z}, A=${A})`;
+
+  const q = getQ();
+  const qInv = 1 / q;
+
+  if (decayType === '-') {
+    // Beta minus: n -> p + e- + nu_bar
+    const daughter = elByZ(Z + 1);
+    const dSym = daughter ? daughter[2] : '?';
+    document.getElementById('decay-eq').innerHTML =
+      `\u03B2\u207B: <sup>${A}</sup>${sym} \u2192 <sup>${A}</sup>${dSym} + e\u207B + \u0305\u03BD<sub>e</sub>`;
+  } else {
+    // Beta plus: p -> n + e+ + nu
+    const daughter = elByZ(Z - 1);
+    const dSym = daughter ? daughter[2] : '?';
+    document.getElementById('decay-eq').innerHTML =
+      `\u03B2\u207A: <sup>${A}</sup>${sym} \u2192 <sup>${A}</sup>${dSym} + e\u207A + \u03BD<sub>e</sub>`;
+  }
+
+  // Hecke relation
+  document.getElementById('hecke-rel').innerHTML =
+    `Hecke: (T \u2212 ${q.toFixed(3)})(T + ${qInv.toFixed(3)}) = 0<br>` +
+    `Skein: T \u2212 T\u207B\u00B9 = ${(q - qInv).toFixed(4)}`;
+
+  // Transfer matrix display
+  updateMatrixDisplay(q);
+
+  // Draw braid
+  drawDecayBraid(q);
+}
+
+function updateMatrixDisplay(q) {
+  const qInv = 1 / q;
+  const s = Math.sqrt(q) - 1 / Math.sqrt(q);
+  const display = document.getElementById('matrix-display');
+  display.innerHTML = `<table class="matrix-table">
+    <tr><td class="hdr">T<sub>++</sub></td><td>${(q - qInv).toFixed(4)}</td><td>1</td></tr>
+    <tr><td class="hdr"></td><td>1</td><td>0</td></tr>
+  </table>
+  <div style="font-size:8px;color:var(--dim);text-align:center;">
+    eigenvalues: q=${q.toFixed(3)}, -q\u207B\u00B9=${(-qInv).toFixed(3)}
+  </div>`;
+}
+
+function drawDecayBraid(q) {
+  const svg = document.getElementById('braid-svg');
+  svg.innerHTML = '';
+  const ns = 'http://www.w3.org/2000/svg';
+  const isMinus = decayType === '-';
+
+  // Resolve CSS variables for theme-aware colors
+  const bodyStyles = getComputedStyle(document.body);
+  const protonColor = bodyStyles.getPropertyValue('--proton-color').trim();
+  const neutronColor = bodyStyles.getPropertyValue('--neutron-color').trim();
+  const gapColor = bodyStyles.getPropertyValue('--gap-color').trim();
+  const dimColor = bodyStyles.getPropertyValue('--dim').trim();
+  const accent2Color = bodyStyles.getPropertyValue('--accent2').trim();
+
+  // T_{3,5} braid: (sigma1 sigma2)^5 = 10 crossings
+  const word = [];
+  for (let i = 0; i < 5; i++) { word.push(1); word.push(2); }
+  const nCross = word.length;
+
+  const margin = 30;
+  const totalW = 400 - 2 * margin;
+  const spacing = totalW / (nCross + 2);
+  const yPos = [45, 85, 125];
+  const crossW = spacing * 0.8;
+
+  // Strand types
+  const strandTypes = isMinus ? ['u', 'd', 'd'] : ['u', 'u', 'd'];
+  const strandColors = strandTypes.map(t => t === 'u' ? protonColor : neutronColor);
+
+  // Input labels
+  const labels = strandTypes.map(t => t === 'u' ? '\uD835\uDD32' : '\uD835\uDD21');
+  for (let i = 0; i < 3; i++) {
+    const txt = document.createElementNS(ns, 'text');
+    txt.setAttribute('x', margin - 8);
+    txt.setAttribute('y', yPos[i] + 4);
+    txt.setAttribute('text-anchor', 'end');
+    txt.setAttribute('font-size', '10');
+    txt.setAttribute('fill', strandColors[i]);
+    txt.textContent = labels[i];
+    svg.appendChild(txt);
+  }
+
+  // Track strand positions
+  let positions = [...yPos];
+  let strandOrder = [0, 1, 2]; // which original strand is at each position
+
+  // Highlight the crossing that flips (crossing index 7 = the 8th crossing for beta decay)
+  const flipCrossing = 7;
+
+  for (let ci = 0; ci < nCross; ci++) {
+    const gen = word[ci];
+    const si = gen - 1;
+    const x = margin + spacing * (ci + 1);
+
+    // Draw straight segments for non-crossing strand
+    const prevX = ci === 0 ? margin : margin + spacing * ci;
+    for (let s = 0; s < 3; s++) {
+      if (s !== si && s !== si + 1) {
+        const line = document.createElementNS(ns, 'line');
+        line.setAttribute('x1', prevX + (ci === 0 ? 0 : crossW / 2));
+        line.setAttribute('y1', positions[s]);
+        line.setAttribute('x2', x - crossW / 2);
+        line.setAttribute('y2', positions[s]);
+        const origStrand = strandOrder[s];
+        line.setAttribute('stroke', strandColors[origStrand]);
+        line.setAttribute('stroke-width', '2.5');
+        line.setAttribute('stroke-linecap', 'round');
+        if (strandTypes[origStrand] === 'd') line.setAttribute('stroke-dasharray', '6,3');
+        svg.appendChild(line);
       }
     }
-  }else{
-    // Electron block: old labels
-    for(let i=0;i<SHELL_ROWS.length;i++){
-      const sr=SHELL_ROWS[i];
-      const gr=KNOT_BASE_ROW_EBLOCK[i+1]+rowOffset;
-      const lbl=document.createElement("div");
-      lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
-      lbl.textContent=sr.intruder?`★${sr.pair}`:`◇${sr.pair}`;
-      lbl.title=`Shell capacity: ${sr.capacity} nucleon slots. Stability pair at ${sr.pair}.${sr.intruder?" Magic shell (spin-orbit closure).":""}`;
-      grid.appendChild(lbl);
+
+    // Straight lead-in for crossing strands
+    for (const idx of [si, si + 1]) {
+      const line = document.createElementNS(ns, 'line');
+      line.setAttribute('x1', prevX + (ci === 0 ? 0 : crossW / 2));
+      line.setAttribute('y1', positions[idx]);
+      line.setAttribute('x2', x - crossW / 2);
+      line.setAttribute('y2', positions[idx]);
+      const origStrand = strandOrder[idx];
+      line.setAttribute('stroke', strandColors[origStrand]);
+      line.setAttribute('stroke-width', '2.5');
+      line.setAttribute('stroke-linecap', 'round');
+      if (strandTypes[origStrand] === 'd') line.setAttribute('stroke-dasharray', '6,3');
+      svg.appendChild(line);
     }
-  }
 
-  // Column headers for electron-block modes (knot-centric only)
-  if(layout!=="standard"&&(colMode==="hopf"||colMode==="writhe")){
-    const lay=blockLayout(colMode);
-    const blocks=[
-      {label:"s",blk:0,ell:0},
-      {label:"d",blk:2,ell:2},
-      {label:"p",blk:1,ell:1},
-    ];
-    for(const b of blocks){
-      const h=document.createElement("div");
-      const start=lay.start[b.blk], width=lay.widths[b.blk];
-      h.style.cssText=`grid-row:1;grid-column:${start}/span ${width};font-size:8px;color:#889;text-align:center;border-bottom:1px solid #dde;padding:1px 0;font-weight:600;pointer-events:none`;
-      h.textContent=`${BLOCK_SLOTS[b.blk]} Hopf slots (${b.label}) [max ${width}]`;
-      grid.appendChild(h);
+    // Draw crossing
+    const y1 = positions[si], y2 = positions[si + 1];
+    const hw = crossW / 2;
+    const isFlip = ci === flipCrossing;
+
+    // Highlight flip crossing
+    if (isFlip) {
+      const rect = document.createElementNS(ns, 'rect');
+      rect.setAttribute('x', x - hw - 2);
+      rect.setAttribute('y', Math.min(y1, y2) - 6);
+      rect.setAttribute('width', crossW + 4);
+      rect.setAttribute('height', Math.abs(y2 - y1) + 12);
+      rect.setAttribute('rx', '3');
+      rect.setAttribute('fill', 'rgba(255,85,51,0.15)');
+      rect.setAttribute('stroke', accent2Color);
+      rect.setAttribute('stroke-width', '1');
+      svg.appendChild(rect);
     }
+
+    const overOrig = strandOrder[si];
+    const underOrig = strandOrder[si + 1];
+    const overColor = strandColors[overOrig];
+    const underColor = strandColors[underOrig];
+
+    // Under strand (drawn first)
+    const underPath = document.createElementNS(ns, 'path');
+    underPath.setAttribute('d', `M${x - hw},${y2} Q${x},${y1} ${x + hw},${y2}`);
+    underPath.setAttribute('stroke', underColor);
+    underPath.setAttribute('stroke-width', '2.5');
+    underPath.setAttribute('fill', 'none');
+    underPath.setAttribute('stroke-linecap', 'round');
+    if (strandTypes[underOrig] === 'd') underPath.setAttribute('stroke-dasharray', '6,3');
+    svg.appendChild(underPath);
+
+    // Gap
+    const gapPath = document.createElementNS(ns, 'path');
+    gapPath.setAttribute('d', `M${x - hw * 0.35},${y2 + (y1 - y2) * 0.35} Q${x},${y1} ${x + hw * 0.35},${y2 + (y1 - y2) * 0.35}`);
+    gapPath.setAttribute('stroke', gapColor);
+    gapPath.setAttribute('stroke-width', '7');
+    gapPath.setAttribute('fill', 'none');
+    gapPath.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(gapPath);
+
+    // Over strand
+    const overPath = document.createElementNS(ns, 'path');
+    overPath.setAttribute('d', `M${x - hw},${y1} Q${x},${y2} ${x + hw},${y1}`);
+    overPath.setAttribute('stroke', overColor);
+    overPath.setAttribute('stroke-width', '2.5');
+    overPath.setAttribute('fill', 'none');
+    overPath.setAttribute('stroke-linecap', 'round');
+    if (strandTypes[overOrig] === 'u') {} else overPath.setAttribute('stroke-dasharray', '6,3');
+    svg.appendChild(overPath);
+
+    // Crossing label
+    const lbl = document.createElementNS(ns, 'text');
+    lbl.setAttribute('x', x);
+    lbl.setAttribute('y', Math.min(y1, y2) - 8);
+    lbl.setAttribute('text-anchor', 'middle');
+    lbl.setAttribute('font-size', '7');
+    lbl.setAttribute('fill', isFlip ? accent2Color : dimColor);
+    lbl.textContent = isFlip ? '\u03C3' + (si + 1) + '*' : '\u03C3' + (si + 1);
+    svg.appendChild(lbl);
+
+    // Swap strand order
+    [strandOrder[si], strandOrder[si + 1]] = [strandOrder[si + 1], strandOrder[si]];
+    [positions[si], positions[si + 1]] = [positions[si + 1], positions[si]];
+    // Swap back positions for display (strands stay at their y-level)
+    positions[si] = yPos[si]; // Reset to fixed levels
+    positions[si + 1] = yPos[si + 1];
   }
 
-  wrap.appendChild(grid);
-}
-
-function selectElement(el){
-  const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
-  const N=A-Z;
-  const qVal=parseFloat(document.getElementById("q-slider").value);
-  const mass=computeMass(Z,A,BA,qVal);
-
-  // Highlight tile
-  tileEls.forEach(t=>t.classList.remove("selected"));
-  if(tileEls.has(Z))tileEls.get(Z).classList.add("selected");
-  selectedEl=el;
-
-  // Detail panel
-  const detail=document.getElementById("detail");
-  detail.classList.add("show");
-  document.getElementById("d-title").textContent=`${Z}. ${name} (${sym})`;
-
-  const tbl=document.getElementById("d-table");
-  tbl.innerHTML="";
-  const rows=[
-    ["Atomic number (Z)",Z],
-    ["Mass number (A)",A],
-    ["Protons / Neutrons",`${Z} / ${N}`],
-    ["Knot formula",`${Z}𝔭 ⋈ ${N}𝔫 ⋈ ${Z}·T₂,₃`],
-    ["Alpha sub-links (k_α)",kalpha],
-    ["Electron block",BLOCK_NAMES[block]],
-    ["Period / Group",`${period} / ${group}`],
-    ["Nuclear shell",`${shellRow} of 7 (closes at ◇${SHELL_ROWS[shellRow-1].pair})`],
-    ["Proton sub-shell",nucSubshellLabel(Z,shellRow)],
-    ["B/A (MeV)",BA.toFixed(4)],
-    ["QOU mass (MeV)",mass.toFixed(1)],
-    ["N/Z ratio",(N/Z).toFixed(3)],
-    ["Transfer matrix steps",tmSteps(A).toLocaleString()],
-    ["Skein poly. deg ≤",skeinDeg(A).toLocaleString()],
-    ["λ₊ at shell "+period,Math.pow(lambdaPlus(qVal),period).toFixed(4)],
-    ["E_bind ∝ λ₊⁻ⁿ",Math.pow(lambdaPlus(qVal),-period).toFixed(4)],
-  ];
-  // Pair type counts
-  const nPP=Z*(Z-1)/2, nNN=N*(N-1)/2, nMix=Z*N;
-  rows.push(["Crossing pairs",`${nPP} pp + ${nNN} nn + ${nMix} mix = ${tmSteps(A)}`]);
-  // Braid registry data
-  const bd=BRAID[Z];
-  if(bd){
-    rows.push(["Markov trace sign",bd[0]>0?"+1":"−1"]);
-    rows.push(["ln|tr_M|",bd[1].toFixed(2)]);
-    rows.push(["Negative generators",bd[2]+" of "+(A-1)]);
-  }
-  if(magZ)rows.push(["","◇ Proton stability pair"]);
-  if(magN)rows.push(["","◇ Neutron stability pair"]);
-  if(intruder)rows.push(["Magic shell","★ spin-orbit closure (highest-j sub-level)"]);
-
-  for(const[k,v]of rows){
-    const tr=document.createElement("tr");
-    const td1=document.createElement("td");td1.textContent=k;
-    const td2=document.createElement("td");td2.textContent=v;
-    tr.appendChild(td1);tr.appendChild(td2);
-    tbl.appendChild(tr);
+  // Output labels
+  const endX = margin + spacing * (nCross + 1);
+  // Draw final straight segments
+  const lastCrossX = margin + spacing * nCross;
+  for (let s = 0; s < 3; s++) {
+    const line = document.createElementNS(ns, 'line');
+    line.setAttribute('x1', lastCrossX + crossW / 2);
+    line.setAttribute('y1', yPos[s]);
+    line.setAttribute('x2', endX);
+    line.setAttribute('y2', yPos[s]);
+    const origStrand = strandOrder[s];
+    line.setAttribute('stroke', strandColors[origStrand]);
+    line.setAttribute('stroke-width', '2.5');
+    line.setAttribute('stroke-linecap', 'round');
+    if (strandTypes[origStrand] === 'd') line.setAttribute('stroke-dasharray', '6,3');
+    svg.appendChild(line);
   }
 
-  // Knot diagram
-  const knotDiv=document.getElementById("d-knot");
-  knotDiv.innerHTML="";
-  knotDiv.appendChild(fullKnotDiagram(el));
-}
-
-function showTooltip(e,el,qVal){
-  const[Z,A,sym,name,BA,kalpha]=el;
-  const N=A-Z;
-  const tip=document.getElementById("tooltip");
-  tip.textContent=`${name} (${sym}) — Z=${Z}, N=${N}, k_α=${kalpha}, B/A=${BA.toFixed(4)}, C(A,2)=${tmSteps(A)}, deg≤${skeinDeg(A)}`;
-  tip.style.display="block";
-  tip.style.left=(e.pageX+12)+"px";
-  tip.style.top=(e.pageY-20)+"px";
-}
-function hideTooltip(){document.getElementById("tooltip").style.display="none"}
-
-// === LEGEND ===
-function buildLegend(){
-  const lg=document.getElementById("legend");
-  lg.innerHTML="";
-  function addItem(iconEl,text){
-    const d=document.createElement("div");d.className="legend-item";
-    d.appendChild(iconEl);
-    const sp=document.createElement("span");sp.textContent=text;
-    d.appendChild(sp);
-    lg.appendChild(d);
+  // Output type labels
+  const outTypes = isMinus ? ['\uD835\uDD32', '\uD835\uDD32', '\uD835\uDD21'] : ['\uD835\uDD32', '\uD835\uDD21', '\uD835\uDD21'];
+  for (let i = 0; i < 3; i++) {
+    const txt = document.createElementNS(ns, 'text');
+    txt.setAttribute('x', endX + 8);
+    txt.setAttribute('y', yPos[i] + 4);
+    txt.setAttribute('text-anchor', 'start');
+    txt.setAttribute('font-size', '10');
+    txt.setAttribute('fill', outTypes[i] === '\uD835\uDD32' ? protonColor : neutronColor);
+    txt.textContent = outTypes[i];
+    svg.appendChild(txt);
   }
-  addItem(drawTrefoil(18,"proton"),"Proton (T₂,₃)");
-  addItem(drawTrefoil(18,"electron"),"Electron (σT₂,₃)");
-  addItem(drawUnknot(16),"Neutron (unknot)");
-  const mz=document.createElement("span");
-  mz.style.cssText="border-left:2px solid #c44;padding-left:3px;font-size:10px";
-  mz.textContent="◆Z";
-  addItem(mz,"Proton magic #");
-  const mn=document.createElement("span");
-  mn.style.cssText="border-right:2px solid #44c;padding-right:3px;font-size:10px";
-  mn.textContent="◆N";
-  addItem(mn,"Neutron magic #");
-  const intr=document.createElement("span");
-  intr.style.cssText="background:#fff8f0;border:1px solid #dca;padding:1px 4px;font-size:10px";
-  intr.textContent="★";
-  addItem(intr,"Magic-receptive");
+
+  // Title
+  const title = document.createElementNS(ns, 'text');
+  title.setAttribute('x', 200);
+  title.setAttribute('y', 16);
+  title.setAttribute('text-anchor', 'middle');
+  title.setAttribute('font-size', '9');
+  title.setAttribute('fill', dimColor);
+  title.textContent = `T\u2083\u2085 braid: (\u03C3\u2081\u03C3\u2082)\u2075 = 10 crossings`;
+  svg.appendChild(title);
+
+  // Flip annotation
+  const flipNote = document.createElementNS(ns, 'text');
+  flipNote.setAttribute('x', margin + spacing * (flipCrossing + 1));
+  flipNote.setAttribute('y', 160);
+  flipNote.setAttribute('text-anchor', 'middle');
+  flipNote.setAttribute('font-size', '8');
+  flipNote.setAttribute('fill', accent2Color);
+  flipNote.textContent = isMinus ? 'd\u2192u flip' : 'u\u2192d flip';
+  svg.appendChild(flipNote);
 }
 
-// === CONTROLS ===
-document.getElementById("layout-sel").addEventListener("change",buildGrid);
-document.getElementById("color-sel").addEventListener("change",buildGrid);
-document.getElementById("filter-sel").addEventListener("change",buildGrid);
-document.getElementById("col-sel").addEventListener("change",buildGrid);
-document.getElementById("q-slider").addEventListener("input",function(){
-  document.getElementById("q-val").textContent=parseFloat(this.value).toFixed(3);
-  const colorMode=document.getElementById("color-sel").value;
-  if(colorMode==="lambda")buildGrid(); // lambda depends on q
-  if(selectedEl)selectElement(selectedEl); // refresh mass
+// ── q slider update ─────────────────────────────────────────────────
+document.getElementById('sl-q').addEventListener('input', function() {
+  document.getElementById('v-q').textContent = this.value;
+  updateDecayPanel();
 });
 
-// === INIT ===
-buildLegend();
-buildGrid();
-// Select iron by default (interesting middle element)
-const fe=EL.find(e=>e[2]==="Fe");
-if(fe)selectElement(fe);
+// ── Initialize ──────────────────────────────────────────────────────
+buildTable();
+// Select Iron by default
+selectElement(26);
 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-03T20:59:21.693074+00:00",
+    "generated_at": "2026-04-04T20:11:04.717499+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -4453,20 +4453,6 @@
       "uses": [
         "def:witt-vector-lift"
       ]
-    },
-    {
-      "label": "prop:discrete-vortex-spectrum",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/descartes-universe.tex",
-        "line": 707,
-        "chapter": 6
-      },
-      "title": "{Discrete vortex mode spectrum}",
-      "formalization_status": "not_started",
-      "uses": [
-        "rem:vortex-intensity-modes"
-      ]
     }
   ],
   "dependencies": [
@@ -6528,11 +6514,6 @@
     {
       "from": "prop:skew-poisson-integration",
       "to": "def:witt-vector-lift",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:discrete-vortex-spectrum",
-      "to": "rem:vortex-intensity-modes",
       "relation": "uses"
     }
   ]

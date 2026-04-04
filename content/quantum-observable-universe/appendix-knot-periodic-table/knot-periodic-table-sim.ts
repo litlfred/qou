@@ -2,11 +2,13 @@ import { simulator } from "../../../folio-assistant/schemas/builders";
 
 export default simulator({
   label: "sim:knot-periodic-table",
-  title: "Knot-Centric Periodic Table",
+  title: "Knot-Centric Periodic Table with Beta Decay",
   html: "folio-assistant/simulators/knot_periodic_table.html",
   uses: [
     "prop:nuclear-shell-intruder",
     "prop:shell-structure-eigenvalues",
+    "prop:knot-particle-correspondence",
+    "def:borromean-baryon",
   ],
   tags: [
     "periodic-table",
@@ -16,6 +18,8 @@ export default simulator({
     "borromean",
     "transfer-matrix",
     "skein-polynomial",
+    "beta-decay",
+    "knot-diagram",
     "interactive",
   ],
   defaultView: {

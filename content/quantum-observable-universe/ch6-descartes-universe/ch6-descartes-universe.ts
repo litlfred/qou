@@ -110,20 +110,9 @@ export default chapter({
       blocks: ["jones-polynomials"],
     }),
 
-    // ── Fluid dynamics ──────────────────────────────────────────────
-    section({
-      title: "Fluid Dynamics of the Brane",
-      label: "sec:brane-fluid",
-      blocks: [
-        "brane-fluid",
-        "madelung-fluid",
-        "geodesic-vortices",
-        "braid-fluid",
-        "planck-reynolds",
-        "vortex-intensity-modes",
-        "discrete-vortex-spectrum",
-      ],
-    }),
+    // ── Fluid dynamics moved to Chapter 10 ──────────────────────────
+    // The full development of brane fluid dynamics, q-NS regularity,
+    // and the NS obstruction lives in ch10-fluid-dynamics/.
 
     // ═══════════════════════════════════════════════════════════════════
     // PART B lives in ch5-brings-surface/ (same chapter number 5).

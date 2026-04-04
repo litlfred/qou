@@ -153,6 +153,40 @@ upstream results (e.g. `def:maximal-torus` requires `thm:su2-emergence`).
 These remain definitions but MUST list the immediate upstream theorem in
 `uses[]` if it is a direct prerequisite.
 
+## Proposition/theorem purity rule
+
+**Propositions and theorems contain ONLY the mathematical statement.**
+The `.md` file of a `proposition`, `theorem`, `lemma`, or `corollary`
+block must contain only:
+
+- Hypotheses (the "let" / "given" clauses)
+- The conclusion (the "then" statement)
+- Classical limit statements (if part of the formal result)
+
+The following belong in **companion remark** blocks, not in the
+statement block:
+
+| Content type | Where it goes | Naming convention |
+|---|---|---|
+| Physical interpretation | `rem:<label>-physical` | `interprets: "prop:original"` |
+| Proof sketch / strategy | `rem:<label>-proof-strategy` | `interprets: "thm:original"` |
+| Testable predictions | `rem:<label>-prediction` | `interprets: "prop:original"` |
+| Classical-limit discussion | `rem:<label>-classical-limit` | `interprets: "prop:original"` |
+| Comparison tables | `rem:<label>-comparison` | `interprets: "prop:original"` |
+| Connection to other topics | `rem:<label>-connection` | `interprets: "prop:original"` |
+
+**Rationale**: Theorems are cited, cross-referenced, and formalised
+in Lean.  Explication clutters the formal statement and makes it
+harder to extract the precise mathematical content.  Companion
+remarks provide the interpretive layer without contaminating the
+statement.
+
+**Remark length rule**: A remark block should cover **one topical
+group**.  If a remark exceeds ~60 lines and covers multiple
+distinct topics (each with its own header), split it into
+separate remarks with focused titles.  Each sub-remark should
+`interprets:` the same parent block.
+
 ## Dependency completeness checks
 
 **Immediate neighbors only.** The `uses[]` array lists only direct

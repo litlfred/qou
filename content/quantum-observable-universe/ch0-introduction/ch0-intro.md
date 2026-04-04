@@ -28,7 +28,8 @@ than bolted on.
 An important assumption this paper does *not* make is that the
 constants of our universe are indeed constant.  If we allow them
 to vary — in a controlled, algebraic way — how does that change
-the mechanics?  This is the question this paper asks.
+the mechanics — or more precisely, the mechanics of how we observe
+the quantum universe?  This is the question this paper asks.
 
 Einstein showed that geometry and mass are intimately connected:
 space-time is not a passive stage on which matter performs but a
@@ -156,7 +157,12 @@ vanishes.  The descent involution $\hat{\tau}$ then decomposes the
 algebra at each level into descended (observable) and transient
 (pre-observable) modes.  A key result is the Descartes condition
 $\chi(A) = -6$, forced by the lifting obstructions and the
-Archimedean constraint.
+Archimedean constraint.  The Kummer exact sequence
+$1 \to \mu_n \to \mathbb{G}_m \to \mathbb{G}_m \to 1$
+filtrates the obstruction space by divisibility: the class
+$\kappa_0$ persists at all Kummer levels $n \nmid \chi(A)$,
+a perpetual obstruction that no amount of jet refinement
+can remove.
 
 [Chapter 4](#chap:path-integrals-braiding) develops a purely
 mathematical model, built entirely from the categorical data, for
@@ -208,6 +214,26 @@ hadrons, which agree to good precision with observed values.  The
 transfer matrices then describe hadron half-lives that align with
 observation.  The same mathematical infrastructure computes the
 energetics of hydrocarbons.
+
+[The Algebraic Substrate](#chap:algebraic-substrate) develops
+the spectral theory of the Frobenius--Hopf algebra.  The local
+$q$-zeta function of Bring's curve encodes the Frobenius eigenvalues;
+the Hasse--Weil bound confines them to the critical line
+$|\alpha_i| = q^{1/2}$ --- the Riemann hypothesis, proved
+unconditionally at the $q$-scale.  The classical limit functor
+$\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$ is exact but not
+full: quantum information is lost as $q \to 1$.  The obstruction
+to properties persisting through this limit is a single cohomology
+class in $HH^2(\mathcal{U}_q, \mathrm{Ad})$, whose dimension
+the QOU axioms collapse from arbitrary to one --- controlled by
+the Euler characteristic $\chi(A) = -6$ and its Kummer
+divisibility.  The chapter formulates a $q$-deformed Birch and
+Swinnerton-Dyer conjecture: the categorical Mordell--Weil group
+$\mathrm{Hom}(\mathbf{1}, E_q)$ is trivial (forced by the
+observability axiom and Tannaka--Krein), so
+$L(\mathcal{E}_q, 1) \neq 0$ at the $q$-scale.  Whether this
+non-vanishing survives the classical limit is obstructed by the
+same Kummer tower that controls the Riemann hypothesis.
 
 [Chapter 8](#chap:info-theory) addresses Wigner's mystery
 directly.  The mechanics of the quantum observable universe turn
