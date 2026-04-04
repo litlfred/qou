@@ -211,6 +211,15 @@ impl HeckeEngine {
     }
 
     fn build_nucleus(&self, z: usize, n: usize) -> HeckeElement {
+        self.build_nucleus_inner(z, n, false)
+    }
+
+    /// Build with quotient ideals applied at each step (keeps terms bounded)
+    fn build_nucleus_quotient(&self, z: usize, n: usize) -> HeckeElement {
+        self.build_nucleus_inner(z, n, true)
+    }
+
+    fn build_nucleus_inner(&self, z: usize, n: usize, use_quotient: bool) -> HeckeElement {
         let a = z + n;
         let mut types = vec![b'p'; z];
         types.extend(vec![b'n'; n]);
@@ -220,6 +229,12 @@ impl HeckeEngine {
             for i in 0..k {
                 let (c, d) = self.crossing_coeffs(types[i], types[k]);
                 self.multiply_and_reduce(&mut elem, i as u8, c, d);
+            }
+            if use_quotient {
+                // Apply quotient after completing all crossings for strand k
+                let mut terms = std::mem::take(&mut elem.reduced);
+                Self::apply_quotient_ideals(&mut terms);
+                elem.reduced = terms;
             }
         }
         elem
@@ -300,13 +315,26 @@ fn nucleus_name(z: usize, n: usize) -> String {
 fn compute(engine: &HeckeEngine, z: usize, n: usize) -> NucleusResult {
     let a = z+n;
     let t0 = Instant::now();
-    let elem = engine.build_nucleus(z, n);
-    let raw = elem.n_terms();
-    let hist = elem.histogram();
-    let pal = is_palindromic(&hist);
-    let mut terms = elem.into_map();
-    HeckeEngine::apply_quotient_ideals(&mut terms);
-    let opt = terms.len();
+
+    // Build with quotient ideals at each step for large nuclei
+    let (raw, hist, pal, opt) = if a <= 8 {
+        // Small: compute full NF first, then apply quotient (to get raw count)
+        let elem = engine.build_nucleus(z, n);
+        let raw = elem.n_terms();
+        let hist = elem.histogram();
+        let pal = is_palindromic(&hist);
+        let mut terms = elem.into_map();
+        HeckeEngine::apply_quotient_ideals(&mut terms);
+        (raw, hist, pal, terms.len())
+    } else {
+        // Large: apply quotient at each step to keep terms bounded
+        let elem = engine.build_nucleus_quotient(z, n);
+        let opt = elem.n_terms();
+        let hist = elem.histogram();
+        let pal = is_palindromic(&hist);
+        // raw is unknown (we didn't compute the full expansion)
+        (0, hist, pal, opt)
+    };
     let skein: f64 = engine.generator_volumes(z, n).iter().product();
     NucleusResult {
         name: nucleus_name(z,n), z, n, a, raw_terms: raw,
