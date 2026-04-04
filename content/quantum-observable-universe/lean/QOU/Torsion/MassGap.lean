@@ -48,12 +48,9 @@ noncomputable def minCrossingEnergy (q : ℝ) : ℝ :=
 /-- The minimum crossing energy is strictly positive for `q > 1`. -/
 theorem minCrossingEnergy_pos {q : ℝ} (hq : 1 < q) :
     0 < minCrossingEnergy q := by
-  unfold minCrossingEnergy
-  have hq_pos : 0 < q := by linarith
-  have hq_inv_lt : q⁻¹ < q := by
-    rw [inv_lt_comm₀ hq_pos (by linarith)]
-    exact one_lt_pow₀ hq (by norm_num : 1 ≠ 0)
-  linarith
+  have hq_ne : q ≠ 0 := by linarith
+  rw [minCrossingEnergy_eq hq_ne]
+  exact div_pos (by nlinarith) (by positivity)
 
 /-- The minimum crossing energy equals `(q² − 1) / (2q)`. -/
 theorem minCrossingEnergy_eq {q : ℝ} (hq : q ≠ 0) :
