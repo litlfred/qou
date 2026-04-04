@@ -117,6 +117,8 @@ export default chapter({
       blocks: [
         "brane-fluid",
         "madelung-fluid",
+        "hamilton-jacobi-phase",
+        "q-navier-stokes",
         "geodesic-vortices",
         "braid-fluid",
         "planck-reynolds",
@@ -125,6 +127,7 @@ export default chapter({
         "helicity-conservation",
         "q-turbulence-spectrum",
         "vortex-reconnection",
+        "berry-vortex-moduli",
       ],
     }),
 
