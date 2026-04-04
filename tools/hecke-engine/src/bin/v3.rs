@@ -329,7 +329,9 @@ impl Engine {
         if pass > 50 { eprintln!("      → {} passes total", pass); }
     }
 
-    fn multiply_and_reduce(&self, elem: &mut HeckeElem, gen: u8, c: f64, d: f64) {
+    /// Multiply and reduce, with mid-step quotient if terms exceed threshold.
+    fn multiply_reduce_bounded(&self, elem: &mut HeckeElem, gen: u8, c: f64, d: f64,
+                                accum: &mut PauliAcc, max_terms: usize) {
         let old: Vec<(TreeWord, f64)> = elem.terms.drain().collect();
         for (w, coeff) in old {
             if d.abs() > 1e-15 {
@@ -341,6 +343,12 @@ impl Engine {
             }
         }
         self.reduce_all(elem);
+
+        // If too many terms, strip and accumulate
+        if elem.n_terms() > max_terms {
+            let removed = self.apply_quotient_with_pauli(&mut elem.terms);
+            accum.merge(&removed);
+        }
     }
 
     fn apply_quotient_with_pauli(&self, terms: &mut FxHashMap<TreeWord, f64>) -> PauliAcc {
@@ -421,16 +429,20 @@ impl Engine {
 
         for k in 1..a {
             let t_strand = Instant::now();
+            // Max terms per crossing: for A > quotient_after, bound at 50K
+            // to prevent exponential blowup from adjacent cascading.
+            let max_terms = if a > quotient_after { 50_000 } else { usize::MAX };
             for i in 0..k {
                 let t_cross = Instant::now();
                 let n_before = elem.n_terms();
                 let (c, d) = self.crossing_coeffs(types[i], types[k]);
-                self.multiply_and_reduce(&mut elem, i as u8, c, d);
+                self.multiply_reduce_bounded(&mut elem, i as u8, c, d, &mut accum, max_terms);
                 let cross_ms = t_cross.elapsed().as_millis();
-                if cross_ms > 500 || elem.n_terms() > 50000 {
-                    eprintln!("    crossing ({},{}) {}-{}: {} → {} terms, {}ms",
+                if cross_ms > 200 || elem.n_terms() > 10000 {
+                    eprintln!("    crossing ({},{}) {}-{}: {} → {} terms, {}ms{}",
                         i, k, types[i] as char, types[k] as char,
-                        n_before, elem.n_terms(), cross_ms);
+                        n_before, elem.n_terms(), cross_ms,
+                        if n_before > max_terms / 2 { " [stripped mid-crossing]" } else { "" });
                 }
             }
 
