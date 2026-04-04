@@ -9,7 +9,7 @@ $$
 
 *Planck steps, where $\mathcal{B}(q) = q\,\eta_q / (q-1)^2$ is
 the information bandwidth per Planck time
-([information bandwidth](#prop:information-speed-of-light)).*
+([information bandwidth](#def:information-speed-of-light)).*
 
 **Interpretation.**  The class $\mathrm{P}$ consists of those
 computations whose resolution trees admit sufficient destructive

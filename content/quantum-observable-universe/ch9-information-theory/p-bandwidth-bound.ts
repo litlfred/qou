@@ -13,7 +13,7 @@ export default proposition({
   ],
   uses: [
     "def:computational-horizon",
-    "prop:information-speed-of-light",
+    "def:information-speed-of-light",
     "def:operational-entropy",
     "rem:skein-turing-machine",
     "prop:reeb-operations-per-planck",

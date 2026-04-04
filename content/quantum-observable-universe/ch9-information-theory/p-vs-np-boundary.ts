@@ -19,7 +19,7 @@ export default conjecture({
     "def:jet-horizon",
     "rem:skein-turing-machine",
     "conj:quantum-computational-universality",
-    "prop:information-speed-of-light",
+    "def:information-speed-of-light",
   ],
   cites: ["cook1971", "freedman2003"],
 });

@@ -22,7 +22,7 @@ export default remark({
     "rem:hawking-radiation",
     "rem:skein-turing-machine",
     "def:operational-entropy",
-    "prop:information-speed-of-light",
+    "def:information-speed-of-light",
     "rem:jet-planck-steps",
     "def:big-bang-state",
   ],

@@ -24,6 +24,6 @@ export default definition({
     "rem:skein-turing-machine",
     "def:descent-involution",
     "prop:descent-eigenspaces",
-    "prop:information-speed-of-light",
+    "def:information-speed-of-light",
   ],
 });

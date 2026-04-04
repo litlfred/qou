@@ -21,6 +21,6 @@ export default definition({
     "rem:skein-turing-machine",
     "def:operational-entropy",
     "conj:quantum-computational-universality",
-    "prop:information-speed-of-light",
+    "def:information-speed-of-light",
   ],
 });
