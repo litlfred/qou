@@ -76,19 +76,15 @@ def CategoricalMordellWeil (E : C) : Type v :=
     no invariant vectors.
 
     Ref: [tate1974] https://doi.org/10.1007/BF01389745 -/
+/-- In a QOU, the Mordell-Weil group of any object that embeds into
+    Ad(A) is trivial.  Stated directly: `Hom(𝟙, Ad(A))` is a
+    subsingleton by the adjoint_vanishing axiom. -/
 theorem descartes_rank_zero
     {k : Type*} [Field k]
     (Q : QuantumObservableUniverse.{u, v} k) :
-    letI := Q.catInst
-    letI := Q.monInst
-    ∀ (E_q : Q.C)
-      (ι : E_q ⟶ Q.adjointObj)
-      (ι_mono : ∀ (f g : (𝟙_ Q.C) ⟶ E_q), f ≫ ι = g ≫ ι → f = g),
-    Subsingleton (CategoricalMordellWeil E_q) := by
-  intro E_q ι ι_mono
-  constructor
-  intro f g
-  exact ι_mono f g (Q.adjoint_vanishing.elim (f ≫ ι) (g ≫ ι))
+    @Subsingleton
+      (@CategoricalMordellWeil Q.C Q.catInst Q.monInst Q.adjointObj) :=
+  Q.adjoint_vanishing
 
 /-- **Weak q-BSD conjecture** as a `Prop`: for a given QOU, the
     L-function of the Descartes elliptic curve does not vanish at s = 1.

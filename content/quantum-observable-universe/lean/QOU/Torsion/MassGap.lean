@@ -50,7 +50,6 @@ theorem minCrossingEnergy_eq {q : ℝ} (hq : q ≠ 0) :
     minCrossingEnergy q = (q ^ 2 - 1) / (2 * q) := by
   unfold minCrossingEnergy
   field_simp
-  ring
 
 /-- The minimum crossing energy is strictly positive for `q > 1`. -/
 theorem minCrossingEnergy_pos {q : ℝ} (hq : 1 < q) :
