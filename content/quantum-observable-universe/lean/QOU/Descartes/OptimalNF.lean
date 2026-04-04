@@ -62,9 +62,9 @@ theorem i8_absorb (support : List HeckeWord) (i : ℕ)
 theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
     (g : ℕ) (h_prefix : a :: rest ∈ support) :
     IsI9Absorbable support (a :: rest ++ [g]) := by
-  constructor
-  · simp [List.length_append]; omega
-  · sorry -- List.dropLast_append needs careful handling
+  refine ⟨?_, ?_⟩
+  · simp; omega
+  · sorry
 
 -- ════════════════════════════════════════════════════════════════
 -- §3  The standard basis is non-absorbable
@@ -158,8 +158,7 @@ theorem optimal_from_prefix_closed (n : ℕ) (support : List HeckeWord)
   match w, h_short with
   | [], _ => exact nil_mem_standardBasis n
   | [i], _ =>
-    have : i ∈ ([i] : List ℕ) := List.mem_cons_self i []
-    exact singleton_mem_standardBasis n i (h_bounded [i] hw i this)
+    exact singleton_mem_standardBasis n i (h_bounded [i] hw i (by simp))
   | _ :: _ :: _, h => simp at h
 
 -- ════════════════════════════════════════════════════════════════
@@ -182,7 +181,7 @@ theorem multiply_standard_basis_absorbed (n k : ℕ) (hk : k < n) :
   · -- v = [i], w = [i, k]
     by_cases heq : i = k
     · -- i = k: [i, i] is Hecke-reducible (σ²), both outputs in basis
-      subst heq; left; exact singleton_mem_standardBasis n i hi
+      subst heq; sorry -- [i,i] after Hecke reduction → basis elements
     · right; exact cross_term_absorbable n i k hi hk heq
 
 -- ════════════════════════════════════════════════════════════════
