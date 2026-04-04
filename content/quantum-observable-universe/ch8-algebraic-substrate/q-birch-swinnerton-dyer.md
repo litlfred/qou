@@ -149,7 +149,7 @@ At the boundary of $\mathbb{P}^1$:
 The Frobenius eigenvalues $\alpha_1, \ldots, \alpha_8$ of the local
 $q$-zeta function
 ([local $q$-zeta](#def:local-q-zeta-function)) act on $H^1(\mathcal{B})$,
-the first etale cohomology of Bring's curve.  The elliptic fiber
+the first étale cohomology of Bring's curve.  The elliptic fiber
 $\mathcal{E}_q \hookrightarrow \mathcal{B}$ is a genus-$1$ sub-curve,
 so the restriction of Frobenius to
 $H^1(\mathcal{E}_q) \subset H^1(\mathcal{B})$ yields a conjugate
