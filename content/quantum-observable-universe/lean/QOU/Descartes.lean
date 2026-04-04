@@ -28,3 +28,4 @@ import QOU.Descartes.BetaDecay
 import QOU.Descartes.AxialCoupling
 import QOU.Descartes.OrderingIndependence
 import QOU.Descartes.OptimalNF
+import QOU.Descartes.TMCorrespondence
