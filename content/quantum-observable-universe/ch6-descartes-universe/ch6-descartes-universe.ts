@@ -138,6 +138,8 @@ export default chapter({
         "p3-blowup-yekutieli",
         "p4-universality",
         "p5-counterexample",
+        "quantum-peter-weyl",
+        "q-aubin-lions",
         "q-ns-research-programme",
       ],
     }),

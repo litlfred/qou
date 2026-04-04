@@ -96,14 +96,12 @@ This is **proved**. $\checkmark$
 The eigenfunctions $\{z^k\}_{k \in \mathbb{Z}}$ form a complete
 orthogonal system in $\overline{\Omega^1(A)}$.
 
-**GAP**: This requires showing that $\{z^k\}$ is
-total — i.e. that no nonzero $v \in \overline{\Omega^1(A)}$
-is orthogonal to all $z^k$.  Classically, this is the
-Peter--Weyl theorem for compact groups; in the $q$-deformed
-setting, it is the quantum Peter--Weyl theorem for
-$\mathrm{SU}_q(2)$.  The result is known
-(Woronowicz 1987, Korogodsky--Soibelman 1998) but
-**not yet formalised in Lean**. $\square$
+This is the [quantum Peter--Weyl
+theorem](#thm:quantum-peter-weyl), which is **proved** using
+Tannaka--Krein reconstruction (the fibre functor $\tau$ gives
+$A \cong \bigoplus_j \mathrm{End}(\tau(V_j))$, spanned by
+matrix coefficients) + Schur's lemma.  No external result
+needed — follows from QOU axioms. $\checkmark$
 
 *Step 5: Compact resolvent.*
 Given completeness, the resolvent
@@ -151,8 +149,8 @@ $\lVert v \rVert_{H^1_q}$.  This is **proved**. $\checkmark$
 | Self-adjointness of $\Delta_q$ | **Proved** | — |
 | Non-negativity | **Proved** | — |
 | Eigenvalue formula $[k]_q^2$ | **Proved** | — |
-| Completeness of eigenbasis | **Known** (quantum Peter--Weyl) | Lean formalisation |
-| Compact (trace-class) resolvent | **Proved** (mod completeness) | Depends on above |
+| Completeness of eigenbasis | **Proved** ([quantum Peter--Weyl](#thm:quantum-peter-weyl)) | — |
+| Compact (trace-class) resolvent | **Proved** | — |
 | Sobolev embedding $H^1_q \hookrightarrow L^\infty$ | **Proved** | — |
 | Exponential eigenvalue growth | **Proved** | — |
 

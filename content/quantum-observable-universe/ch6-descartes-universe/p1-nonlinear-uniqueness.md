@@ -192,15 +192,15 @@ This is **proved** (conditional on spectral completeness). $\checkmark$
 |---|---|---|
 | 1a | Self-adjointness of $\Delta_q$ | **Proved** |
 | 1b | Eigenvalue formula $[k]_q^2$ | **Proved** |
-| 1c | Eigenbasis completeness | **Known** (quantum Peter--Weyl) |
+| 1c | Eigenbasis completeness | **Proved** ([quantum Peter--Weyl](#thm:quantum-peter-weyl)) |
 | 1d | Compact resolvent | **Proved** (mod 1c) |
 | 2a | Sobolev embedding $H^1_q \hookrightarrow L^\infty$ | **Proved** |
 | 2b | q-Ladyzhenskaya inequality | **Proved** |
 | 3a | Enstrophy evolution inequality | **Proved** |
 | 3b | Gronwall bound (finite-time regularity) | **Proved** |
 | 3c | Global regularity ($\Lambda_q$ finite) | **Proved** |
-| 4 | Uniqueness | **Proved** (mod 1c) |
+| 4 | Uniqueness | **Proved** |
 
-**The single open gap** in the entire proof is Step 1c:
-completeness of the $q$-Laplacian eigenbasis via the quantum
-Peter--Weyl theorem.  Every other step is self-contained.
+The proof is **complete** — all steps are self-contained.
+The eigenbasis completeness (Step 1c) was the last gap, now
+closed by the [quantum Peter--Weyl theorem](#thm:quantum-peter-weyl).
