@@ -15,8 +15,8 @@ export default proposition({
     "groebner-basis",
   ],
   lean: {
-    decl: "QOU.Descartes.shell_closure_normal_form",
-    validation: "not_checked",
+    decl: "QOU.OptimalNF.optimal_nf_is_standard_basis",
+    validation: "has_sorry",
   },
   uses: [
     "prop:nuclear-groebner-reduction",
