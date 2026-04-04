@@ -329,7 +329,7 @@ impl Engine {
 
             // Progress
             if elem.n_terms() > 10000 {
-                eprint!("\r  strand {}/{}: {} terms, {:.0}MB, {:.1}s",
+                eprintln!("  strand {}/{}: {} terms, {:.0}MB, {:.1}s",
                     k, a-1, elem.n_terms(),
                     elem.memory_bytes() as f64 / 1e6,
                     t0.elapsed().as_secs_f64());
@@ -341,7 +341,7 @@ impl Engine {
                 accum.merge(&removed);
             }
         }
-        if elem.n_terms() > 10000 { eprintln!(); }
+        // no extra newline needed since we use eprintln now
 
         (elem, accum)
     }
