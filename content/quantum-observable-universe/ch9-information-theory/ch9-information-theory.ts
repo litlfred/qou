@@ -74,10 +74,10 @@ section({
       label: "sec:p-vs-np-boundary",
       blocks: [
         "computational-horizon",
+        "skein-resolution-obstruction",
         "p-bandwidth-bound",
         "p-vs-np-boundary",
         "p-vs-np-event-horizon",
-        "skein-resolution-obstruction",
         "field-dependent-complexity",
         "computational-kummer-specialisation",
         "computational-perpetual-obstruction",

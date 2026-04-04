@@ -20,6 +20,9 @@ export default conjecture({
     "rem:skein-turing-machine",
     "conj:quantum-computational-universality",
     "def:information-speed-of-light",
+    "def:observable-subcategory",
+    "def:skein-resolution-obstruction",
+    "rem:substrate-gm-torsion",
   ],
   cites: ["cook1971", "freedman2003"],
 });

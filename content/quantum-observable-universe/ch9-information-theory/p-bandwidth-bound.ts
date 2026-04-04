@@ -17,5 +17,6 @@ export default proposition({
     "def:operational-entropy",
     "rem:skein-turing-machine",
     "prop:reeb-operations-per-planck",
+    "prop:skein-polynomial-transfer-matrix",
   ],
 });

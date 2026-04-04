@@ -25,5 +25,6 @@ export default remark({
     "def:information-speed-of-light",
     "rem:jet-planck-steps",
     "def:big-bang-state",
+    "def:observable-subcategory",
   ],
 });

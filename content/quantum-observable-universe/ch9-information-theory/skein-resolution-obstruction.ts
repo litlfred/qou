@@ -25,5 +25,6 @@ export default definition({
     "def:descent-involution",
     "prop:descent-eigenspaces",
     "def:information-speed-of-light",
+    "prop:ns-obstruction-tower",
   ],
 });

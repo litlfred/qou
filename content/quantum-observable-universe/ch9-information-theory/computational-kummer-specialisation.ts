@@ -21,5 +21,6 @@ export default proposition({
     "conj:quantum-computational-universality",
     "prop:field-dependent-complexity",
     "def:quantum-characteristic-classes",
+    "prop:ns-obstruction-tower",
   ],
 });

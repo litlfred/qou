@@ -25,5 +25,6 @@ export default conjecture({
     "rem:complex-substrate-interpretation",
     "rem:base-field-independence",
     "def:substrate-parameter",
+    "prop:ns-obstruction-tower",
   ],
 });
