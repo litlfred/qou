@@ -212,10 +212,28 @@ fn crossing_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
 // Engine with junction-only reduction + stable/pending separation
 // ════════════════════════════════════════════════════════════════
 
+/// Symbolic accumulator for Pauli data (exact in q).
+struct SymPauliAcc { tr_alt: LPoly, net: LPoly }
+impl SymPauliAcc {
+    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero() } }
+    fn add_term(&mut self, coeff: &LPoly, word_len: usize) {
+        self.net = self.net.add(coeff);
+        let l = word_len as i32;
+        let sign = if l%2==0 { 1i128 } else { -1i128 };
+        self.tr_alt = self.tr_alt.add(&coeff.scale(sign).shift(-2*l));
+    }
+    fn add_from_elem(&mut self, elem: &Elem) {
+        for (w, c) in &elem.terms { self.add_term(c, w.len()); }
+    }
+    fn merge(&mut self, other: &SymPauliAcc) {
+        self.tr_alt = self.tr_alt.add(&other.tr_alt);
+        self.net = self.net.add(&other.net);
+    }
+}
+
 struct Eng;
 
 impl Eng {
-    /// Multiply by (c·σ_gen + d), reduce at junction, then sweep pending→stable.
     fn multiply_and_reduce(elem: &mut Elem, gen: u8, c: &LPoly, d: &LPoly, is_dbl: bool, ha: &LPoly) {
         if is_dbl { elem.pn_count += 1; }
         let old: Vec<(W, LPoly)> = elem.terms.drain().collect();
@@ -308,11 +326,49 @@ impl Eng {
         elem.terms = stable;
     }
 
-    fn build(z: usize, n: usize, max_terms: usize) -> (Elem, Vec<String>) {
+    /// Strip terms and return their symbolic Pauli contribution.
+    fn strip_with_pauli(terms: &mut FxHashMap<W, LPoly>) -> SymPauliAcc {
+        let mut removed = SymPauliAcc::zero();
+        let max_len = terms.keys().map(|w| w.len()).max().unwrap_or(0);
+        for tl in (2..=max_len).rev() {
+            let to_rm: Vec<W> = terms.keys()
+                .filter(|w| w.len()==tl && !terms[*w].is_zero())
+                .filter(|w| terms.get(&w.drop_last()).map_or(false, |c| !c.is_zero()))
+                .cloned().collect();
+            for w in &to_rm {
+                if let Some(c) = terms.remove(w) {
+                    removed.add_term(&c, w.len());
+                }
+            }
+        }
+        let adj: Vec<W> = terms.keys()
+            .filter(|w| w.len()==2 && !terms[*w].is_zero() && w.get(1)==w.get(0)+1)
+            .filter(|w| terms.get(&W::E.push(w.get(1))).map_or(false, |c| !c.is_zero()))
+            .cloned().collect();
+        for w in &adj {
+            if let Some(c) = terms.remove(w) {
+                removed.add_term(&c, w.len());
+            }
+        }
+        terms.retain(|_, c| !c.is_zero());
+        removed
+    }
+
+    /// Inductive build with symbolic Pauli accumulation.
+    ///
+    /// At each strand boundary:
+    /// 1. Accumulate ALL terms' tr_alt(q) and net(q) into sym_accum
+    /// 2. Strip with I₈+I₉ (keeping only optimal basis)
+    /// 3. Next strand starts from optimal basis (A terms, not A! terms)
+    ///
+    /// The final F_Pauli = |tr_alt_accum + tr_alt_kept| / |net_accum + net_kept|
+    /// is EXACT IN q — a rational function of q^{1/2}.
+    fn build_inductive(z: usize, n: usize, strip_after: usize) -> (Elem, SymPauliAcc, Vec<String>) {
         let a = z + n;
         let ha = ha_poly();
         let mut types = vec![b'p'; z]; types.extend(vec![b'n'; n]);
         let mut elem = Elem::identity();
+        let mut accum = SymPauliAcc::zero();
         let t0 = Instant::now();
         let mut log: Vec<String> = Vec::new();
 
@@ -324,29 +380,18 @@ impl Eng {
                 let (c, d, dbl) = crossing_sym(types[i], types[k]);
                 Self::multiply_and_reduce(&mut elem, i as u8, &c, &d, dbl, &ha);
 
-                // Mid-crossing strip for large elements
-                if elem.n_terms() > max_terms && max_terms < usize::MAX {
-                    let n_pre = elem.n_terms();
-                    Self::strip_quotient(&mut elem.terms);
-                    if elem.n_terms() < n_pre {
-                        let msg = format!("    crossing ({},{}) stripped {} → {}", i, k, n_pre, elem.n_terms());
-                        eprintln!("{}", msg);
-                        log.push(msg);
-                    }
-                }
-
                 if elem.has_overflow() {
                     let msg = format!("OVERFLOW at crossing ({},{}) A={}", i, k, a);
                     eprintln!("  {}", msg);
                     log.push(msg);
-                    return (elem, log);
+                    return (elem, accum, log);
                 }
 
                 let ms = tc.elapsed().as_millis();
-                if ms > 200 || elem.n_terms() > 50000 {
-                    eprintln!("    ({},{}) {}-{}: {} → {} words, {}ms",
+                if ms > 200 || elem.n_terms() > 10000 {
+                    eprintln!("    ({},{}) {}-{}: {} → {} words, {} poly, {}ms",
                         i, k, types[i] as char, types[k] as char,
-                        n_before, elem.n_terms(), ms);
+                        n_before, elem.n_terms(), elem.total_poly_terms(), ms);
                 }
             }
 
@@ -354,17 +399,34 @@ impl Eng {
             let mc = elem.max_coeff();
             let mb = elem.mem_bytes() as f64 / 1_048_576.0;
             let elapsed = t0.elapsed().as_secs_f64();
-            let strand_ms = ts.elapsed().as_millis();
 
-            let info = format!("  strand {}/{}: {} words, {} poly (avg {}), coeff~10^{:.0}, {:.0}MB, {:.1}s",
-                k, a-1, elem.n_terms(), pt,
-                if elem.n_terms()>0 { pt/elem.n_terms() } else { 0 },
-                if mc > 0 { (mc as f64).log10() } else { 0.0 },
-                mb, elapsed);
-            eprintln!("{}", info);
-            log.push(info);
+            // Inductive stripping: accumulate ALL, then strip
+            if (k + 1) as usize > strip_after && k < a - 1 {
+                // Accumulate Pauli data of ALL current terms (exact in q)
+                let mut strand_pauli = SymPauliAcc::zero();
+                strand_pauli.add_from_elem(&elem);
+                accum.merge(&strand_pauli);
+
+                // Strip to optimal basis
+                let n_pre = elem.n_terms();
+                Self::strip_quotient(&mut elem.terms);
+                let info = format!("  strand {}/{}: {} → {} words (stripped), poly ~10^{:.0}, {:.0}MB, {:.1}s",
+                    k, a-1, n_pre, elem.n_terms(),
+                    if mc > 0 { (mc as f64).log10() } else { 0.0 },
+                    mb, elapsed);
+                eprintln!("{}", info);
+                log.push(info);
+            } else {
+                let info = format!("  strand {}/{}: {} words, {} poly (avg {}), coeff~10^{:.0}, {:.0}MB, {:.1}s",
+                    k, a-1, elem.n_terms(), pt,
+                    if elem.n_terms()>0 { pt/elem.n_terms() } else { 0 },
+                    if mc > 0 { (mc as f64).log10() } else { 0.0 },
+                    mb, elapsed);
+                eprintln!("{}", info);
+                log.push(info);
+            }
         }
-        (elem, log)
+        (elem, accum, log)
     }
 
     /// I₉ + I₈ strip (no accumulation — for symbolic, accumulate separately)
@@ -424,18 +486,33 @@ fn main() {
     if max_terms < usize::MAX {
         println!("  Strip threshold: {} terms", max_terms);
     }
+    let strip_after = if max_terms < usize::MAX {
+        // User specified threshold: strip after strand where terms > max_terms
+        // Estimate: strip after strand A/2 for balanced nuclei
+        std::cmp::min(a / 2, 8)
+    } else if a > 9 {
+        // Auto: for A > 9, strip at strand boundaries to stay tractable
+        8
+    } else {
+        999 // No stripping for A ≤ 9
+    };
+
+    println!("  Strip after strand: {} (strands >{} use inductive quotient)", strip_after, strip_after);
     println!("════════════════════════════════════════════════════════");
 
-    let t0 = Instant::now();
-    let (elem, log) = Eng::build(z, n, max_terms);
+    let t_start = Instant::now();
+    let (elem, accum, log) = Eng::build_inductive(z, n, strip_after);
 
     if elem.has_overflow() {
         println!("\n  OVERFLOW — symbolic result unreliable. Use float engine.");
         std::process::exit(1);
     }
 
-    let (tr_alt, net_poly) = compute_pauli(&elem);
-    let ms = t0.elapsed().as_millis();
+    // Compute Pauli from kept terms + accumulated stripped terms
+    let (kept_alt, kept_net) = compute_pauli(&elem);
+    let tr_alt = kept_alt.add(&accum.tr_alt);
+    let net_poly = kept_net.add(&accum.net);
+    let ms = t_start.elapsed().as_millis();
 
     // Evaluate at q₀
     const Q0: f64 = 1.10998;
