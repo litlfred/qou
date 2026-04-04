@@ -150,6 +150,7 @@ export default chapter({
         "vorticity-lower-bound",
         "root-of-unity-truncation",
         "core-levi-form",
+        "core-levi-interpretation",
         "q-ns-research-programme",
       ],
     }),

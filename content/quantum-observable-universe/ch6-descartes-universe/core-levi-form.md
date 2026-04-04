@@ -1,90 +1,83 @@
-The [vorticity lower bound](#prop:vorticity-lower-bound) reduces
-to a geometric statement about vortex core shape.  This remark
-identifies it with the condition number of the
-[Levi form](#rem:levi-form-defect).
+Let $\gamma$ be a [geodesic vortex](#rem:geodesic-vortices) in
+the [state bundle](#def:state-bundle) $(\mathcal{S}, \theta)$
+with contact form $\theta$ and
+[Levi form](#rem:levi-form-defect)
+$\mathcal{L}_\theta(V, W) = -i\,d\theta(V, \bar{W})$.  At each
+point $p \in \gamma$, let $N_p\gamma \subset \ker(\theta_p)$ be
+the horizontal normal plane.  Define:
 
-**Core cross-section geometry.**
-At each point $p$ on a vortex filament $\gamma$, the normal
-plane $N_p\gamma$ contains the core cross-section.  Define:
+- $\lambda_\parallel(p)$, $\lambda_\perp(p)$: eigenvalues of
+  $\mathcal{L}_\theta|_{N_p\gamma}$ (the Levi form restricted to
+  the normal plane), with $\lambda_\parallel$ in the direction
+  toward a second filament and $\lambda_\perp$ perpendicular to it.
 
-- $a_\parallel$: core radius toward the other filament
-- $a_\perp$: core radius perpendicular to the approach
-- $\kappa = a_\perp / a_\parallel$: aspect ratio
+- $a_\parallel(p)$, $a_\perp(p)$: core radii of the vortex
+  cross-section in the corresponding directions, defined as the
+  widths at half-maximum of $|\psi|^2$ in $N_p\gamma$.
 
-The Levi form $\mathcal{L}_\theta$ restricted to $N_p\gamma$
-has eigenvalues $\lambda_\parallel, \lambda_\perp$.  The
-[substrate parameter](#def:substrate-parameter) at $p$ is
-$q(p) = 1 + |\langle\mathcal{L}_\theta, F_A^+\rangle|$,
-and the core shape is controlled by the eigenvalue ratio:
+Then:
 
-$$
-  \kappa = \frac{a_\perp}{a_\parallel}
-  \sim \sqrt{\frac{\lambda_\parallel}{\lambda_\perp}}.
-$$
-
-**The equivalences.**
-
-| Core geometry | Levi form | Contact structure | Fluid |
-|---|---|---|---|
-| $\kappa = 1$ (circular) | $\lambda_\parallel = \lambda_\perp$ | Isotropic contact | Tubular vortex |
-| $\kappa \to 0$ (flattened) | $\lambda_\parallel \to 0$ | Partially integrable | Vortex sheet |
-| $\kappa \to \infty$ (elongated) | $\lambda_\perp \to 0$ | Partially integrable | Vortex needle |
-| $\kappa = O(1)$ (bounded) | Condition number bounded | Non-degenerate contact | Blowup occurs |
-
-The Frobenius integrability theorem says: the horizontal
-distribution $\ker(\theta)$ is integrable iff
-$d\theta|_H = 0$, i.e. the Levi form vanishes.
-Core flattening ($\kappa \to 0$ or $\infty$) is precisely
-the Levi form degenerating in one direction — the contact
-structure **becomes partially integrable** along the
-flattened axis.
-
-When this happens:
-
-1. A 2-dimensional integral submanifold forms (the vortex
-   sheet).
-2. The [observability condition](#def:quantum-observable-universe)
-   $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ fails locally
-   — a gauge mode acts trivially in the integrable direction.
-3. The vortex ceases to be a well-defined topological defect
-   at that point.
-
-**Why $q > 1$ prevents flattening.**
-The [quantum pressure](#rem:madelung-fluid)
-$Q_q = -(\hbar_q^2/2)\,\Delta_q\sqrt{\rho}/\sqrt{\rho}$
-is isotropic in the $q$-deformed metric because $\Delta_q$
-respects the contact structure.  If the core tries to flatten
-($a_\parallel \to 0$), the quantum pressure diverges as
-$\hbar_q^2/a_\parallel^2$ in that direction, preventing it.
-The equilibrium shape minimises the
-[q-energy functional](#rem:geodesic-vortices), which has
-the same $Q_q$ in both directions:
+**(a)** The core aspect ratio is controlled by the Levi
+eigenvalue ratio:
 
 $$
-  \kappa_{\mathrm{eq}} = 1 + O(\hbar_q^2) < \infty
-  \qquad\text{for } q > 1.
+  \frac{a_\perp(p)}{a_\parallel(p)}
+  \;=\;
+  \sqrt{\frac{\lambda_\parallel(p)}{\lambda_\perp(p)}}
+  \;\cdot\;
+  \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
-At $q = 1$: $Q_q = 0$ and there is no isotropic resistance.
-
-**The millennium problem in contact-geometric form.**
+**(b)** The Levi form condition number on $N_p\gamma$ is
 
 $$
-  \boxed{
-    \text{NS blows up}
-    \;\Longleftrightarrow\;
-    \text{Levi form non-degenerate at collision}
-    \;\Longleftrightarrow\;
-    \kappa(t) = O(1).
-  }
+  \mathrm{cond}(\mathcal{L}_\theta|_{N_p})
+  \;\equiv\;
+  \frac{\max(\lambda_\parallel, \lambda_\perp)}
+       {\min(\lambda_\parallel, \lambda_\perp)}
+  \;=\;
+  \max\!\left(
+    \frac{a_\perp}{a_\parallel},\;
+    \frac{a_\parallel}{a_\perp}
+  \right)^2
+  \cdot\;
+  \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
-Does the contact structure of the brane remain non-degenerate
-at the collision point of two vortex filaments when $q = 1$?
+**(c)** The following are equivalent:
 
-If yes: the vorticity concentrates (cores stay tubular), the
-lower bound $\|\omega\|_\infty \geq c/(T^*-t)$ holds, and
-the [counter-example](#conj:ns-counterexample) is established.
+1. The core aspect ratio is bounded:
+   $\sup_{t < T^*} a_\perp(t) / a_\parallel(t) \leq C$.
 
-If no: the vorticity spreads into a sheet (cores flatten),
-the lower bound fails, and classical NS may be regular.
+2. The Levi form condition number is bounded:
+   $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\theta|_{N_p}) \leq C^2$.
+
+3. The contact structure $\ker(\theta)$ remains
+   **non-degenerate** at the collision locus $\Sigma$: both
+   eigenvalues $\lambda_\parallel, \lambda_\perp > 0$ on $\Sigma$.
+
+4. The [observability axiom](#def:quantum-observable-universe)
+   $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+   holds locally at every $p \in \Sigma$.
+
+5. No 2-dimensional integral submanifold of $\ker(\theta)$
+   forms at $\Sigma$ (Frobenius integrability does not hold).
+
+**(d)** For $q > 1$, the [quantum pressure](#rem:madelung-fluid)
+enforces
+
+$$
+  \mathrm{cond}(\mathcal{L}_\theta|_{N_p})
+  \;\leq\;
+  1 + C_0\,\hbar_q^2
+  \;<\; \infty,
+$$
+
+so conditions (1)--(5) hold.  The
+[well-posedness theorem](#thm:q-ns-wellposedness) is consistent.
+
+**(e)** At $q = 1$: $\hbar_q = 0$ and there is no isotropic
+resistance.  The [vorticity lower
+bound](#prop:vorticity-lower-bound) and the
+[counter-example](#conj:ns-counterexample) hold if and only
+if condition (3) holds at $q = 1$.
