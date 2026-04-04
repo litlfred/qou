@@ -296,8 +296,10 @@ impl Engine {
                                    accum: &mut PauliAcc, max_terms: usize) {
         self.multiply_canonical(elem, gen, c, d);
         if elem.n_terms() > max_terms {
-            let removed = self.apply_quotient_with_pauli(&mut elem.terms);
-            accum.merge(&removed);
+            // Accumulate ALL per-length data before stripping
+            let all_data = PauliAcc::from_elem(elem, self.q, self.qi);
+            accum.merge(&all_data);
+            self.apply_quotient_strip_only(&mut elem.terms);
         }
     }
 
@@ -336,6 +338,30 @@ impl Engine {
         }
         terms.retain(|_, c| c.abs() > 1e-15);
         removed
+    }
+
+    /// Strip only — no accumulation (data already captured).
+    fn apply_quotient_strip_only(&self, terms: &mut FxHashMap<TreeWord, f64>) {
+        let max_len = terms.keys().map(|w| w.len()).max().unwrap_or(0);
+        for target_len in (2..=max_len).rev() {
+            let to_remove: Vec<TreeWord> = terms.keys()
+                .filter(|w| w.len() == target_len && terms[*w].abs() > 1e-15)
+                .filter(|w| {
+                    let prefix = w.drop_last();
+                    terms.get(&prefix).map_or(false, |c| c.abs() > 1e-15)
+                })
+                .cloned().collect();
+            for word in to_remove { terms.remove(&word); }
+        }
+        let adj_remove: Vec<TreeWord> = terms.keys()
+            .filter(|w| w.len() == 2 && terms[*w].abs() > 1e-15 && w.get(1) == w.get(0) + 1)
+            .filter(|w| {
+                let sigma_j = TreeWord::EMPTY.push(w.get(1));
+                terms.get(&sigma_j).map_or(false, |c| c.abs() > 1e-15)
+            })
+            .cloned().collect();
+        for word in adj_remove { terms.remove(&word); }
+        terms.retain(|_, c| c.abs() > 1e-15);
     }
 
     fn analyze_patterns(terms: &FxHashMap<TreeWord, f64>, top_n: usize) -> Vec<(Vec<u8>, usize, f64)> {
@@ -385,6 +411,12 @@ impl Engine {
 
             let n_before = elem.n_terms();
             if a > quotient_after && k < a - 1 {
+                // Accumulate ALL terms' per-length data BEFORE stripping.
+                // This ensures short-length terms (lengths 0, 1) that survive
+                // stripping are still captured in the per-length distribution.
+                let all_terms_acc = PauliAcc::from_elem(&elem, self.q, self.qi);
+                accum.merge(&all_terms_acc);
+
                 if n_before > 1000 {
                     let patterns = Self::analyze_patterns(&elem.terms, 5);
                     eprintln!("    top suffixes: {}",
@@ -394,15 +426,22 @@ impl Engine {
                         }).collect::<Vec<_>>().join("  "));
                 }
                 let mut terms = std::mem::take(&mut elem.terms);
-                let removed = self.apply_quotient_with_pauli(&mut terms);
-                accum.merge(&removed);
+                // Strip but DON'T accumulate again (already accumulated above)
+                self.apply_quotient_strip_only(&mut terms);
                 elem.terms = terms;
             }
 
             let mem_mb = elem.memory_bytes() as f64 / 1_048_576.0;
             let elapsed = t_start.elapsed().as_secs_f64();
+            // For running estimate: accum has data from all STRIPPED strands.
+            // Add current elem (not yet stripped) for the running total.
+            // Don't double-count: if this strand was just accumulated+stripped,
+            // accum already has it, and elem has only the kept terms.
             let mut running = accum.clone();
-            for (w, &c) in &elem.terms { running.add(c, w.len(), self.q, self.qi); }
+            // Only add elem terms if they weren't just accumulated
+            if !(a > quotient_after && k < a - 1) {
+                for (w, &c) in &elem.terms { running.add(c, w.len(), self.q, self.qi); }
+            }
             let f_running = if running.net.abs() > 1e-30 { running.tr_alt.abs() / running.net.abs() } else { 0.0 };
 
             if n_before != elem.n_terms() {
@@ -500,6 +539,43 @@ fn main() {
                 println!("  Shell factor = {:.6}", total_acc.shell_factor());
                 println!("  Palindromic defect = {:.6}", total_acc.palindromic_defect());
                 println!("════════════════════════════════════════════════════════");
+
+                // Lean witness output
+                let lean_sym = sym.to_lowercase();
+                println!();
+                println!("-- LEAN WITNESS (QOU/Descartes/PauliWitness.lean)");
+                println!("-- NUMERICAL witness at q₀ = {:.5} (f64, not symbolic in q).", engine.q);
+                println!("-- For symbolic (exact in q): use pauli-witness.py (A ≤ 7).");
+                println!("-- {} terms, {:.1}MB, {:.1}s", elem.n_terms(), mem, ms as f64 / 1000.0);
+                println!();
+                println!("/-- F_Pauli for {}{} (Z={}, N={}) evaluated at q₀ = {:.5}.", a, sym, z, n, engine.q);
+                if doubly_magic { println!("    Doubly magic nucleus (Z and N both magic)."); }
+                println!("    This is a NUMERICAL witness. The exact value is a");
+                println!("    rational function of q, computable symbolically for A ≤ 7.");
+                println!("    tr_alt(q₀) = {:+.10e}", tr_alt);
+                println!("    net(q₀)    = {:+.10e}", net);
+                println!("    F_Pauli(q₀) = |tr_alt/net| = {:.10} -/", f);
+                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("noncomputable def F_Pauli_{}{}_at_q0 : Float := {:.10}", a, lean_sym, f);
+                println!();
+                println!("/-- Shell factor for {}{}: W(ℓ≤1)/W(total). -/", a, sym);
+                println!("noncomputable def shell_factor_{}{} : Float := {:.10}", a, lean_sym, total_acc.shell_factor());
+                println!();
+                println!("/-- Palindromic defect for {}{}: δ = Σ|W(ℓ)−W(L−ℓ)|/ΣW(ℓ). -/", a, sym);
+                println!("noncomputable def pal_defect_{}{} : Float := {:.10}", a, lean_sym, total_acc.palindromic_defect());
+                println!();
+                // Per-length weight as a list
+                let max_disp = total_acc.per_length_abs.len();
+                if max_disp > 0 && max_disp <= 200 {
+                    println!("/-- Per-length weight distribution W(ℓ) for {}{}.", a, sym);
+                    println!("    W(ℓ) = Σ_{{|w|=ℓ}} |c_w| at q₀. -/");
+                    print!("noncomputable def weight_dist_{}{} : List Float := [", a, lean_sym);
+                    for (i, w) in total_acc.per_length_abs.iter().enumerate() {
+                        if i > 0 { print!(", "); }
+                        print!("{:.6e}", w);
+                    }
+                    println!("]");
+                }
             } else {
                 let a_max: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(8);
                 println!("F_PAULI TABLE (A ≤ {}, v5 canonical)", a_max);
