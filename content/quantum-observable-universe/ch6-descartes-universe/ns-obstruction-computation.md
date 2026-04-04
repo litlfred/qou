@@ -122,27 +122,3 @@ terms cannot cancel.
 Therefore $\mathrm{Obs}_\partial(A) = 0$ and the Descartes
 universe is **NS-singular**.
 
-**(e) What this proves and what it assumes.**
-
-| Step | Status |
-|---|---|
-| $e(\xi) = -6$ (Euler class of Bring's surface) | **Proved** |
-| $\chi(E_n) = -6$ for all $n$ (Euler stability) | **Proved** |
-| Perpetual obstruction (complementary subgroups) | **Proved** |
-| Jets of Biot--Savart diverge at collision | **Proved** (separation $d \sim \sqrt{T^*-t}$) |
-| $\delta_n|_\Sigma \neq 0$ from divergent jets | **Requires**: that divergent jets produce nonzero cohomology classes |
-| Topological and analytic terms don't cancel | **Proved** (complementary subgroups) |
-
-The single remaining step is showing that divergent jets
-of the velocity field produce **nonzero** analytic obstruction
-classes $\delta_n|_\Sigma \neq 0$.  This is the analytic
-content of the [Levi degeneracy conjecture](#conj:levi-degeneracy):
-if the Levi form stays non-degenerate (cores don't flatten),
-then the jets diverge in all directions simultaneously, and
-$\delta_n|_\Sigma \neq 0$ follows from the non-degeneracy of
-the Webster inner product.
-
-If the Levi form degenerates (cores flatten), the jets diverge
-only in the non-degenerate direction, and $\delta_n|_\Sigma$
-could vanish in the degenerate direction — the obstruction
-might collapse.

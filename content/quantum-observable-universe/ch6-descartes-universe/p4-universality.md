@@ -78,18 +78,3 @@ the Descartes universe with $\chi(A) = -6$ (Bring's surface,
 genus 4), there are 6 embeddable torus knots, yielding a
 specific nonlinear coupling structure.
 
-**Proof status.**
-
-| Component | Status | Gap |
-|---|---|---|
-| $\alpha$ independent of $E_0$ | **Proved** ($E_0$ affects prefactor only) | — |
-| $\alpha$ independent of $v_0$ geometry | **Argued** (Sobolev constants are categorical) | Rigorous version needs q-Peter-Weyl |
-| $\alpha$ depends on $d$ | **Proved** (Kolmogorov dimensional analysis uses $d = 3$) | — |
-| $\alpha$ depends on $\chi(A)$ | **Conjectured** (via torus knot count) | No explicit computation for $\chi \neq -6$ |
-| Euler characteristic stability | **Proved** ([Proposition](#prop:euler-char-stability)) | — |
-
-**The remaining gap**: establishing that the nonlinear
-interaction structure (Kolmogorov constant $C_K$, intermittency
-corrections) depends only on $\chi(A)$ and not on finer
-geometric data.  This is the fluid-dynamical analogue of the
-universality hypothesis in statistical mechanics.

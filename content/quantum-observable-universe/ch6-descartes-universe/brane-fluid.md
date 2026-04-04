@@ -24,16 +24,3 @@ Navier--Stokes theory:
    $[j]_q[j+1]_q$, producing the
    [discrete vortex spectrum](#prop:discrete-vortex-spectrum).
 
-These three features are developed in the subsections that follow.
-The [Madelung transformation](#rem:madelung-fluid) decomposes the
-$q$-deformed Schrödinger equation into a continuity equation and a
-quantum Euler equation, establishing the fluid picture.
-[Geodesic vortices](#rem:geodesic-vortices) identifies stable
-vortex filaments with geodesics of the acoustic metric.  The
-[braid--fluid correspondence](#rem:braid-fluid) connects the
-categorical braid-group action of
-[Chapter](#chap:path-integrals-braiding) to the topological
-dynamics of vortex tubes.  Finally, the
-[Planck--Reynolds number](#rem:planck-reynolds) shows that $q$
-governs the transition from laminar to turbulent brane flow at
-the Planck scale.

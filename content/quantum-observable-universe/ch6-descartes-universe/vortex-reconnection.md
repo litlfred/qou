@@ -1,23 +1,6 @@
-The [Madelung fluid](#rem:madelung-fluid) picture identifies
-vortex filaments with zeros of $\psi$, and the
-[divisor structure](#rem:madelung-fluid) of $\{\psi = 0\}$
-tracks their topology.  When two filaments approach each other,
-the divisor undergoes surgery — a topological transition that
-is the fluid-dynamical counterpart of particle creation and
-annihilation.
-
-**Classical reconnection.**
-In classical and superfluid vortex dynamics, reconnection occurs
-when two anti-parallel vortex segments approach within a critical
-distance $\delta$.  The filaments break and rejoin in a new
-topology, releasing energy as Kelvin-wave radiation.  Reconnection
-is a singular event from the perspective of the Euler equation —
-the velocity field diverges at the reconnection point.
-
-**Divisor surgery in the brane fluid.**
-In the $q$-deformed brane fluid, reconnection is regularised by
-the quantum pressure $Q_q$ and acquires a precise algebraic
-description.  Let $D = \sum_i n_i\,\varrho_i$ be the effective
+When two vortex filaments approach, the divisor
+$\{\psi = 0\}$ undergoes surgery.  The quantum pressure $Q_q$
+regularises the classical reconnection singularity.  Let $D = \sum_i n_i\,\varrho_i$ be the effective
 divisor encoding the vortex configuration, where $\varrho_i$ are
 the filament components and $n_i \in \frac{1}{2}\mathbb{Z}$ are
 their intensity levels.  Reconnection is a **birational

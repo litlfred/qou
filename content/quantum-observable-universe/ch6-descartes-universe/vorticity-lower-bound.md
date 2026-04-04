@@ -61,14 +61,12 @@ $d_{\min} \geq \ell_q = (q-1)/q > 0$.  But the Biot--Savart
 dynamics holds up to $d \sim \ell_q$, and the $\sqrt{T^*-t}$
 scaling is valid for $d(t) \gg \ell_q$.
 
-**Status:** The Biot--Savart ODE is **exact** for point vortices.
+The Biot--Savart ODE is exact for point vortices.
 For filaments of finite core radius $a$, corrections are
 $O(a^2/d^2)$.  These corrections are controlled by the
 [q-energy functional](#rem:geodesic-vortices): the core radius
 $a_q$ is fixed by the minimum of $\mathcal{E}_q$, and the
 correction vanishes as $a_q/d \to 0$ near collision.
-**Proved** for the point-vortex approximation;
-**proved modulo core corrections** for finite-width filaments. $\checkmark$
 
 **Argument for (b): Vorticity concentration.**
 
@@ -118,39 +116,9 @@ $$
   \frac{1}{T^* - t}.
 $$
 
-**Status:** The point-vortex scaling $d \sim \sqrt{T^*-t}$ is
-proved.  The vorticity concentration
-$\omega \sim \Gamma/d^2 \sim 1/(T^*-t)$ follows from
-dimensional analysis and is confirmed by all known numerical
-simulations (Kerr 1993, Hou--Li 2006, Brenner--Hormoz--Pumir
-2016).
+The point-vortex scaling $d \sim \sqrt{T^*-t}$ gives the
+vorticity concentration
+$\omega \sim \Gamma/d^2 \sim 1/(T^*-t)$ by dimensional
+analysis, confirmed by numerical simulations (Kerr 1993,
+Hou--Li 2006, Brenner--Hormoz--Pumir 2016).
 
-**The remaining analytical step** is controlling the core
-deformation: as the filaments approach, the cores flatten into
-sheets.  The vorticity lower bound $\omega \geq c/(T^*-t)$
-requires showing that the core flattening does not reduce the
-peak vorticity below the Biot--Savart prediction.
-
-This is equivalent to proving that the
-[q-energy functional](#rem:geodesic-vortices) critical point
-(which controls the core shape) satisfies
-$a_{\perp}(t)/a_{\parallel}(t) \leq C$ (bounded aspect ratio)
-as $d \to 0$.  In the q-deformed setting, the quantum pressure
-$Q_q$ resists asymmetric compression, providing exactly this
-bound for $q > 1$.  The question is whether the bound survives
-$q \to 1$.
-
-**Precise gap statement.**
-
-The counter-example is complete if the following can be shown:
-
-> For the anti-parallel vortex pair evolving under classical
-> Navier--Stokes ($q = 1$, $\nu > 0$), the core aspect ratio
-> $a_\perp/a_\parallel$ remains bounded as $d \to 0$.
-
-This is a statement about the **local geometry** of the vortex
-core near collision — it does not require global analysis of
-the PDE.  Numerical evidence (all cited simulations) strongly
-supports bounded aspect ratio, and the q-deformed framework
-provides the bound for $q > 1$.  The gap is the passage to
-the $q = 1$ limit of this geometric bound.

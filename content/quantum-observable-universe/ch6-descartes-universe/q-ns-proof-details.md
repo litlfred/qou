@@ -42,14 +42,3 @@ $\frac{d}{dt}\lVert w \rVert_A^2
 + \lVert v_2 \rVert_{H^1_q}) \lVert w \rVert_A^2$.
 Gronwall with $w(0) = 0$ gives $w(t) = 0$.
 
-**Proof status.**
-
-| Step | Status |
-|---|---|
-| Self-adjointness, eigenvalues, completeness | **Proved** ([spectral-Sobolev](#prop:q-spectral-sobolev), [Peter--Weyl](#thm:quantum-peter-weyl)) |
-| Sobolev embedding, q-Ladyzhenskaya | **Proved** |
-| Enstrophy bound, Gronwall, global regularity | **Proved** |
-| Uniqueness | **Proved** |
-
-The [q-NS well-posedness theorem](#thm:q-ns-wellposedness) is
-**fully proved** with no remaining gaps.

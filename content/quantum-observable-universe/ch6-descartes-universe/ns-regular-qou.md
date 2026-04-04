@@ -1,49 +1,49 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-[quantum observable universe](#def:quantum-observable-universe)
-with [substrate parameter](#def:substrate-parameter) $q > 1$,
-[brane tower](#def:recursive-brane-tower) $\{A_n\}_{n \geq 0}$,
+[quantum universe](#def:quantum-universe) with
+[brane tower](#def:recursive-brane-tower) $\{A_n\}_{n \geq 0}$
 and [quantum characteristic classes](#def:quantum-characteristic-classes)
 $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$.
 
-We say that $(\mathbf{C}, A, \tau)$ **satisfies Navier--Stokes
-regularity** if the following condition holds:
-
-For every divergence-free $v_0 \in \ker(\delta_q|_{\Omega^1(A)})$
-with finite Frobenius norm, and for every sequence
-$q_j \to 1^+$ with $q_j > 1$, the family of
-[q-NS solutions](#def:q-navier-stokes) $\{v_{q_j}\}$ converges
-(in the sense of [q-Aubin--Lions](#thm:q-aubin-lions)) to a
-limit $v^*$ that extends smoothly to all $t \geq 0$.
-
-Equivalently, defining the **boundary observability** at $q = 1$:
+The **NS obstruction** of $(\mathbf{C}, A, \tau)$ is the class
 
 $$
-  \mathrm{Obs}_{\partial}(A)
-  \;\equiv\;
-  \lim_{q \to 1^+}
-  \mathrm{Hom}_{\mathbf{C}_q}\!
-  \bigl(\mathbf{1},\, \mathrm{Ad}(A_q)\bigr),
+  \mathrm{NS}(A)
+  \;=\;
+  \kappa_0\big|_\Sigma
+  \;\in\;
+  H^2(\Sigma, \mathcal{B}),
 $$
 
-the QOU satisfies NS regularity if and only if
+where $\Sigma$ is the collision locus of a generic vortex pair
+and $\kappa_0 = e(\xi)$ is the Euler class of the Reeb bundle
+with $\mathrm{tr}(\kappa_0) = \chi(A)$.
 
-$$
-  \mathrm{Obs}_{\partial}(A) \;\neq\; 0.
-$$
+We say that $(\mathbf{C}, A, \tau)$ is:
 
-That is: NS regularity holds precisely when the
-[observability axiom](#def:quantum-observable-universe) **fails**
-in the boundary limit $q \to 1$.
+- **NS-regular** if $\mathrm{NS}(A) = 0$: the obstruction
+  vanishes and the classical Navier--Stokes equation (the
+  $q = 1$ specialisation of the
+  [q-NS system](#def:q-navier-stokes)) admits smooth global
+  solutions for all smooth initial data.
 
-The four cases:
+- **NS-singular** if $\mathrm{NS}(A) \neq 0$: the obstruction
+  persists and the classical Navier--Stokes equation admits
+  smooth initial data for which the solution develops a
+  singularity in finite time.
 
-| $\mathrm{Obs}_\partial(A)$ | Observability at boundary | Contact structure | NS regularity |
-|---|---|---|---|
-| $= 0$ | Survives (no new gauge modes) | Non-degenerate | **Fails** (blowup) |
-| $\neq 0$ | Fails (gauge mode appears) | Degenerates | **Holds** (regular) |
+The NS obstruction depends only on the categorical data
+$(\mathbf{C}, A, \tau)$ — specifically on $\chi(A)$ — and not
+on the substrate section $q$ or on any particular initial data.
+Different quantum universes may have different NS status:
 
-**Notation.** We write **NS-regular** for a QOU satisfying the
-above condition, and **NS-singular** for a QOU where the
-boundary observability vanishes
-($\mathrm{Obs}_\partial(A) = 0$), implying finite-time blowup
-of the classical NS equation.
+| $\chi(A)$ | $\mathrm{NS}(A)$ | Status |
+|---|---|---|
+| $\neq 0$ | $\neq 0$ (Kummer non-divisibility) | **NS-singular** |
+| $= 0$ | $= 0$ | **NS-regular** |
+
+The observability axiom
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is a
+**sufficient condition** for $\chi(A) \neq 0$ (it forces
+irreducibility of the adjoint representation, which gives
+nonzero Euler class).  It is not assumed in this definition;
+it is a diagnostic.

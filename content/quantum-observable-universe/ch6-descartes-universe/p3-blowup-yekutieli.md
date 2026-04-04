@@ -1,8 +1,6 @@
 The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$
-is not merely an analytic accident but a **cohomological
-obstruction** in the [Yekutieli lifting](#prop:yekutieli-lifting)
-framework.  This block identifies the precise homological
-stratum where a counter-example must live.
+is a **cohomological obstruction** in the
+[Yekutieli lifting](#prop:yekutieli-lifting) framework.
 
 **The Yekutieli tower and regularity.**
 The [recursive brane tower](#def:recursive-brane-tower)
@@ -166,15 +164,3 @@ the blowup: not all vorticity concentrations are allowed, only
 those whose cohomological charge is compatible with the
 categorical structure.
 
-**Proof status.**
-
-| Component | Status | Gap |
-|---|---|---|
-| Regularity $\iff$ lifting through tower | **Proved** (standard jet characterisation) | — |
-| Exponential decay $\Rightarrow \kappa_n = 0$ for $q > 1$ | **Proved** | — |
-| $\kappa_n \neq 0$ at level $n^*$ if $s < n^*$ | **Proved** (Sobolev characterisation of jets) | — |
-| $H^1_{\mathfrak{m}_1}(A) \neq 0$ at $q = 1$ | **Proved** (local cohomology computation) | — |
-| $H^1_{\mathfrak{m}_1}(A) = 0$ for $q > 1$ | **Proved** (defect separated from unit) | — |
-| Descent failure at reconnection | **Identified** | Quantitative bound on $\kappa_{n^*}$ |
-| Character map constraint | **Identified** | Explicit computation of image of $\chi$ |
-| Hausdorff dimension of $\Sigma$ | **Constrained** by Sobolev | Exact value unknown |

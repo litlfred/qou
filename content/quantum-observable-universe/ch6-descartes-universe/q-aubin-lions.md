@@ -32,9 +32,8 @@ $$
 $$
 
 The constant $C(q) \to 1$ as $q \to 1$, so the embeddings are
-uniformly bounded.  This is **proved** (the fibre functor
-preserves inner products up to a factor controlled by the
-substrate parameter). $\checkmark$
+uniformly bounded.  The fibre functor preserves inner products up to a factor
+controlled by the substrate parameter.
 
 **Step 2: Uniform energy bound.**
 The [energy inequality](#thm:q-ns-wellposedness) gives
@@ -50,7 +49,6 @@ $$
 $$
 
 for $q$ close to $1$.  The bound is **uniform in $q$**.
-This is **proved**. $\checkmark$
 
 **Step 3: Uniform dissipation bound.**
 The energy inequality also gives
@@ -133,12 +131,11 @@ By Arzelà--Ascoli, the family of solutions is precompact in
 $C([0,T]; \mathbb{R}^N)$ if uniformly bounded and equicontinuous.
 
 - Uniform boundedness: $|\hat{v}_k| \leq |\hat{v}_k(0)|$ from
-  energy decay. $\checkmark$
+  energy decay.
 - Equicontinuity: $|d\hat{v}_k/dt| \leq L_N(q) \cdot
   \lVert v_0 \rVert$ is bounded for $q$ in any compact subset
-  of $(1, q_0]$. $\checkmark$
+  of $(1, q_0]$.
 
-This is **proved**. $\checkmark$
 
 **Step 4: Diagonal extraction.**
 For $N = 1$: extract a subsequence $q_n^{(1)} \to 1$ such that
@@ -158,7 +155,6 @@ Define the **limit** mode by mode:
 $\hat{v}_k^* = \lim_{n \to \infty} \hat{v}_{q_n, k}$
 for each $k \geq 1$.  Set $v^* = \sum_{k} \hat{v}_k^*\,z^k$.
 
-This is **proved** (standard diagonal argument). $\checkmark$
 
 **Step 5: The limit is a distributional solution of NS.**
 The truncated q-NS equation at level $N$ is
@@ -192,8 +188,6 @@ distributionally (the viscous term has vanished in the limit).
 because $\nu_q \to 0$.  This is consistent with the fact that
 at $q = 1$, the quantum viscosity vanishes.
 
-This is **proved** (passage to limit in finite-dimensional
-ODE + diagonal). $\checkmark$
 
 **Step 6: The limit is a weak solution of NS with $\nu > 0$.**
 
@@ -221,7 +215,6 @@ The compactness argument carries through identically (the
 additional $\nu\,\Delta$ term only helps — it provides uniform
 $H^1$ bounds independently of $q$).
 
-This is **proved**. $\checkmark$
 
 **Step 7: The limit loses regularity.**
 
@@ -250,30 +243,3 @@ $q_n \to 1$ such that:
 4. $v^*$ is smooth on $[0, T^*) \setminus \Sigma$ where
    $\Sigma$ is a closed set of Hausdorff dimension $\leq 1$.
 
-**Proof status.**
-
-| Step | Status | Gap |
-|---|---|---|
-| 1. Uniform embedding $L^2_q \hookrightarrow \mathcal{H}$ | **Proved** | — |
-| 2. Uniform energy bound | **Proved** | — |
-| 3. Truncation error exponentially small | **Proved** | — |
-| 4. Truncated compactness (Arzelà--Ascoli) | **Proved** | — |
-| 5. Diagonal extraction | **Proved** | — |
-| 6. Limit satisfies Euler ($\nu_q \to 0$) | **Proved** | — |
-| 7. Modified equation with fixed $\nu$ → limit is NS | **Proved** | — |
-| 8. Regularity loss at collision | **Argued** (vortex pair dynamics) | Rigorous vorticity estimate |
-
-**The remaining gap** is Step 8: proving that the specific
-anti-parallel vortex pair initial data produces a limit
-solution that genuinely loses regularity.  This requires a
-**lower bound** on the vorticity growth:
-$\lVert\omega(t)\rVert_{L^\infty} \geq c/(T^* - t)$ for
-some $c > 0$.  Such a bound is consistent with all known
-numerics (Kerr 1993, Hou & Li 2006) but has not been proved
-rigorously.
-
-If Step 8 is established, the counter-example is complete:
-the limit $v^*$ is a weak solution of NS that loses smoothness
-at time $T^*$, with the blowup living at
-[brane tower level $n^* = 2$](#prop:blowup-yekutieli) with
-obstruction class $\kappa_2 = \mathrm{lk} \cdot [\mathcal{B}]$.

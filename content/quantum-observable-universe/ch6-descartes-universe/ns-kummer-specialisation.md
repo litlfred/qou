@@ -95,32 +95,7 @@ For any QOU with $\chi(A) \neq 0$:
    many roots of unity where the representation category
    truncates in a way compatible with the Euler class.
 
-**(e) What this proves.**
-
-The topological part of the NS obstruction ($\kappa_0 = e(\xi)$
-with $\chi(A) = -6$) survives specialisation to $q = 1$.  This
-is **unconditional** — it does not depend on the Levi degeneracy
-conjecture or the core aspect ratio.
-
-The analytic part ($\delta_n|_\Sigma$, the jet corrections)
-remains the open question: it requires the Levi form to stay
-non-degenerate.  But the topological part alone already
-establishes:
-
-$$
-  \kappa_n\big|_\Sigma
-  \;=\;
-  \underbrace{\mathrm{lk} \cdot e(\xi)|_\Sigma}_{\neq 0\text{ (proved)}}
-  \;+\; \delta_n|_\Sigma.
-$$
-
-Since the topological and analytic terms live in complementary
-subgroups (perpetual obstruction,
-[QU-to-QOU](#thm:qu-to-qou) item 3), and the topological term
-is nonzero, the **total obstruction is nonzero regardless of
-$\delta_n$**.
-
-**(f) Consequence for NS regularity.**
+**(e) Consequence for NS regularity.**
 
 The QOU with $\chi(A) = -6$ is **NS-singular**:
 $\mathrm{Obs}_\partial(A) = 0$, the boundary observability

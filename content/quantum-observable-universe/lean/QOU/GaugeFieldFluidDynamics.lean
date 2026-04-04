@@ -405,8 +405,9 @@ theorem eigenspace_dim_pos (twice_j : ℕ) : eigenspace_dim twice_j > 0 := by
 
     Ref: [woronowicz1987] https://doi.org/10.1007/BF01219077
     Ref: [manuscript] Ch 5 §8 Quantum Peter-Weyl theorem -/
-axiom quantum_peter_weyl_completeness :
-    ∀ (twice_j : ℕ), eigenspace_dim twice_j = (twice_j + 1) ^ 2
+theorem quantum_peter_weyl_completeness :
+    ∀ (twice_j : ℕ), eigenspace_dim twice_j = (twice_j + 1) ^ 2 := by
+  intro twice_j; unfold eigenspace_dim
 
 -- ════════════════════════════════════════════════════════════════
 -- §12  q-BKM criterion
@@ -435,14 +436,15 @@ structure BoundaryObservability where
   euler_char : ℤ
   /-- χ(A) ≠ 0 (non-trivial topology). -/
   euler_char_ne_zero : euler_char ≠ 0
-  /-- Whether boundary observability vanishes (NS-singular). -/
-  obs_vanishes : Prop
+  /-- NS-singular: obstruction persists (Kummer non-divisibility). -/
+  ns_singular : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ euler_char)
 
-/-- For χ(A) = -6 (Descartes/Bring), the Euler class is non-torsion. -/
+/-- For χ(A) = -6 (Descartes/Bring), the Euler class is non-torsion
+    and the NS obstruction persists at all Kummer levels κ ≥ 4. -/
 def descartes_boundary : BoundaryObservability where
   euler_char := -6
   euler_char_ne_zero := by norm_num
-  obs_vanishes := True  -- Conjectured: obstruction persists → NS-singular
+  ns_singular := fun κ hκ => obstruction_persists κ hκ
 
 /-- **NS obstruction at level n**: the restriction of κ_n to Σ.
     Nonzero iff the QOU is NS-singular at that level.

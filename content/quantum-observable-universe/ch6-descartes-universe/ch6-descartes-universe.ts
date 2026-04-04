@@ -115,54 +115,39 @@ export default chapter({
       title: "Fluid Dynamics of the Brane",
       label: "sec:brane-fluid",
       blocks: [
-        "brane-fluid",
-        "madelung-fluid",
-        "hamilton-jacobi-phase",
-        "q-navier-stokes",
-        "geodesic-vortices",
-        "braid-fluid",
-        "planck-reynolds",
-        "vortex-intensity-modes",
-        "discrete-vortex-spectrum",
-        "discrete-vortex-physical",
-        "helicity-conservation",
-        "helicity-physical",
-        "q-turbulence-spectrum",
-        "q-turbulence-prediction",
-        "vortex-reconnection",
-        "berry-vortex-moduli",
-        "kelvin-dispersion-derivation",
-        "kelvin-classical-limit",
-        "acoustic-horizon-conditions",
-        "q-ns-wellposedness",
-        "q-ns-proof-strategy",
-        "p1-spectral-sobolev",
-        "p1-nonlinear-uniqueness",
-        "q-ns-proof-details",
-        "regularity-breakdown",
-        "p2-critical-exponent",
-        "p3-blowup-yekutieli",
-        "p4-universality",
-        "p5-counterexample",
-        "quantum-peter-weyl",
-        "q-aubin-lions",
-        "q-bkm-criterion",
-        "vorticity-lower-bound",
-        "root-of-unity-truncation",
-        "core-levi-form",
-        "core-levi-interpretation",
-        "levi-degeneracy-conjecture",
-        "observability-in-fluid-context",
-        "observability-independent-motivation",
-        "ns-regular-qou",
-        "ns-obstruction-tower",
-        "ns-obstruction-computation",
-        "substrate-gm-torsion",
-        "substrate-line-bundle",
-        "observability-q-independent",
-        "ns-kummer-specialisation",
-        "ns-singularity-descartes",
-        "q-ns-research-programme",
+        // ── Part A: The brane fluid ──────────────────────────────
+        "brane-fluid",                    // §intro: three features
+        "madelung-fluid",                 // Madelung split → fluid picture
+        "hamilton-jacobi-phase",          // Phase equation, WKB, caustics
+        "q-navier-stokes",               // def: categorical q-NS on Ω¹(A)
+        "geodesic-vortices",             // Variational: vortex = particle
+        "braid-fluid",                    // Arnold SDiff_q, Hecke = scattering
+        "planck-reynolds",               // Re_q = 2/(q-1)
+        "vortex-intensity-modes",        // Classical → q-deformed modes
+        "discrete-vortex-spectrum",      // prop: [k]_q² eigenvalues
+        "discrete-vortex-physical",      // rem: orbitals analogy
+        "helicity-conservation",         // prop: H_q conserved
+        "helicity-physical",             // rem: quantised topological charge
+        "q-turbulence-spectrum",         // prop: q-Kolmogorov cascade
+        "q-turbulence-prediction",       // rem: testable BEC deviation
+        "vortex-reconnection",           // rem: divisor surgery
+        "berry-vortex-moduli",           // rem: Berry phase, anyonic stats
+        "kelvin-dispersion-derivation",  // prop: D_q(z^k) derivation
+        "kelvin-classical-limit",        // rem: classical recovery
+        "acoustic-horizon-conditions",   // prop: Hawking T, horizon types
+
+        // ── Part B: Global regularity for q > 1 ─────────────────
+        "q-ns-wellposedness",            // thm: global regularity
+        "q-ns-proof-strategy",           // rem: three mechanisms
+        "p1-spectral-sobolev",           // prop: compact resolvent, Sobolev
+        "quantum-peter-weyl",            // thm: completeness (Tannaka-Krein)
+        "p1-nonlinear-uniqueness",       // prop: Ladyzhenskaya, enstrophy
+        "q-ns-proof-details",            // rem: full proof chain
+
+        // ── NS obstruction (forward reference) ────────────────────
+        // Full development moved to Ch 8 §NS-obstruction.
+        // Here: motivation only — why the brane fluid connects to NS.
+        "observability-in-fluid-context",     // rem: what Hom=0 means for fluid
       ],
     }),
 

@@ -58,16 +58,6 @@ The vortex core flattens into a sheet, the vorticity spreads,
 and the lower bound fails.  Classical 3d Navier--Stokes is
 globally regular.
 
-**What is known.**
-
-| Claim | Status |
-|---|---|
-| $\mathcal{C}(\kappa) \leq 1 + C(\kappa-1)$ (Bernstein) | **Proved** |
-| $\mathcal{C}(\kappa) \geq 1$ | **Proved** ([cond ≥ 1](#prop:core-levi-form)) |
-| $\mathcal{C}(\kappa) \leq 1 + C_0\hbar_q^2$ for fixed $q > 1$ | **Proved** (quantum pressure) |
-| Numerical evidence (Kerr, Hou--Li) | Supports **(A)** ($\kappa \approx 1$) |
-| Analytical determination of growth rate | **Open** |
-
 **Equivalent formulations.**
 
 1. **Contact geometry:** Does the

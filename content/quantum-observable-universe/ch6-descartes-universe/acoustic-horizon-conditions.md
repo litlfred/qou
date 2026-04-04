@@ -1,9 +1,7 @@
 The [acoustic metric](#rem:madelung-fluid) $g_{\mathrm{ac}}$ admits
-horizons wherever the flow speed $|v|$ equals the sound speed
-$c_s$.  This subsection works out the precise conditions for
-horizon formation and their physical consequences.
+horizons wherever $|v| = c_s$.
 
-**Acoustic metric (recall).**
+**Acoustic metric.**
 Perturbations $\delta\psi$ of the brane fluid propagate on the
 acoustic geometry
 

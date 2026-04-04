@@ -1,8 +1,7 @@
-We conjecture a specific counter-example to Navier--Stokes
-regularity, constructed as the $q \to 1$ limit of solutions to the
-[q-NS equation](#def:q-navier-stokes).  The construction uses the
+Consider the $q \to 1$ limit of solutions to the
+[q-NS equation](#def:q-navier-stokes), using the
 [Yekutieli tower](#def:recursive-brane-tower) to identify the
-exact homological stratum where blowup occurs.
+homological stratum where blowup occurs.
 
 **The initial data.**
 Consider two anti-parallel vortex filaments of equal circulation
@@ -168,36 +167,3 @@ This lives at:
   \cdot (a_{jk}^{(2)})^{-1}$
   fails on any triple intersection meeting $\Sigma$
 
-**What remains to prove.**
-
-| Component | Status | Gap |
-|---|---|---|
-| Initial data smooth, finite energy | **Proved** (mollified vortex pair) | — |
-| q-NS solution exists for $q > 1$ | **Proved** ([Theorem](#thm:q-ns-wellposedness)) | — |
-| Filaments approach as $q \to 1$ | **Proved** (Biot-Savart law) | — |
-| $d_{\min} \to 0$ as $q \to 1$ | **Proved** ($\ell_q \to 0$) | — |
-| Collision in finite time | **Standard** (classical ODE for point vortices) | Rigorous control of filament cores |
-| Vorticity blows up at collision | **Argued** ($\omega \sim 1/d^2 \to \infty$) | Bootstrap to $L^\infty$ blowup |
-| Obstruction level $n^* = 2$ | **Argued** (Sobolev regularity) | Precise Sobolev exponent at blowup |
-| $\kappa_2 = \mathrm{lk} \cdot [\mathcal{B}]$ | **Conjectured** | Explicit cocycle computation |
-| Local cohomology $\cong V_{1/2}^{\oplus 2}$ | **Conjectured** | Derived functor computation at $q = 1$ |
-| Convergence $v_q \to v_1$ as $q \to 1$ | **Key gap** | Compactness argument for PDE solutions |
-
-**The critical gap** is the last item: proving that the
-q-NS solutions $v_q$ converge (in an appropriate topology) to
-a distributional solution of classical NS as $q \to 1$.  This
-requires:
-
-1. Uniform-in-$q$ bounds on the $v_q$ family (which exist:
-   the energy inequality gives $\lVert v_q \rVert_{L^2} \leq
-   \lVert v_0 \rVert_{L^2}$ independently of $q$).
-2. Compactness of the family $\{v_q\}_{q > 1}$ in a weak
-   topology (Aubin--Lions lemma adapted to the q-deformed
-   setting).
-3. Identification of the limit as a weak solution of
-   classical NS (passage to the limit in the nonlinear term).
-
-If these three steps can be completed, the counter-example is
-established: the limit solution exists as a weak (distributional)
-solution but fails to be strong (smooth) — the obstruction class
-$\kappa_2 \neq 0$ certifies the loss of regularity.

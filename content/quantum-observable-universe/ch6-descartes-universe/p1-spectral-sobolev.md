@@ -78,30 +78,27 @@ $\langle \Delta_q\alpha, \beta\rangle_\theta
 = \langle d_q\alpha, d_q\beta\rangle_\theta
 + \langle \delta_q\alpha, \delta_q\beta\rangle_\theta
 = \langle \alpha, \Delta_q\beta\rangle_\theta$.
-This is **proved** ([hodge-laplacian-relation](#rem:hodge-laplacian-relation)).
+This follows from the [Hodge--Laplacian relation](#rem:hodge-laplacian-relation).
 
 *Step 2: Non-negativity.*
 $\langle \Delta_q\alpha, \alpha\rangle_\theta
 = \lVert d_q\alpha\rVert^2 + \lVert\delta_q\alpha\rVert^2
 \geq 0$.
-This is **proved** (immediate from Step 1). $\checkmark$
+This is immediate from Step 1.
 
 *Step 3: Eigenvalue computation.*
 The [Kelvin dispersion derivation](#prop:kelvin-dispersion-derivation)
 shows $\Delta_q(z^k) = -[k]_q^2\,z^k$ by direct computation of
 the $q$-derivative $D_q(z^k) = [k]_q\,z^{k-1}$.
-This is **proved**. $\checkmark$
-
 *Step 4: Completeness of eigenbasis.*
 The eigenfunctions $\{z^k\}_{k \in \mathbb{Z}}$ form a complete
 orthogonal system in $\overline{\Omega^1(A)}$.
 
 This is the [quantum Peter--Weyl
-theorem](#thm:quantum-peter-weyl), which is **proved** using
+theorem](#thm:quantum-peter-weyl), using
 Tannaka--Krein reconstruction (the fibre functor $\tau$ gives
 $A \cong \bigoplus_j \mathrm{End}(\tau(V_j))$, spanned by
-matrix coefficients) + Schur's lemma.  No external result
-needed — follows from QOU axioms. $\checkmark$
+matrix coefficients) and Schur's lemma.
 
 *Step 5: Compact resolvent.*
 Given completeness, the resolvent
@@ -120,7 +117,7 @@ $$
   \;<\; \infty.
 $$
 
-This is **proved** (conditional on Step 4). $\checkmark$
+The trace-class property follows from Step 4.
 
 **Proof of (c): Sobolev embedding.**
 
@@ -140,24 +137,4 @@ $$
 
 by Cauchy--Schwarz.  The first factor is $C_q$ (finite for
 $q > 1$ since $[k]_q^{-2} = O(q^{-2k})$); the second is
-$\lVert v \rVert_{H^1_q}$.  This is **proved**. $\checkmark$
-
-**Proof status summary.**
-
-| Component | Status | Gap |
-|---|---|---|
-| Self-adjointness of $\Delta_q$ | **Proved** | — |
-| Non-negativity | **Proved** | — |
-| Eigenvalue formula $[k]_q^2$ | **Proved** | — |
-| Completeness of eigenbasis | **Proved** ([quantum Peter--Weyl](#thm:quantum-peter-weyl)) | — |
-| Compact (trace-class) resolvent | **Proved** | — |
-| Sobolev embedding $H^1_q \hookrightarrow L^\infty$ | **Proved** | — |
-| Exponential eigenvalue growth | **Proved** | — |
-
-**The single remaining gap** for part (a) is the quantum
-Peter--Weyl theorem.  This is a theorem of Woronowicz (1987)
-for general compact quantum groups and is standard in the
-$\mathrm{SU}_q(2)$ literature.  A Lean formalisation would
-require either importing the result from Mathlib's quantum
-group library (not yet available) or proving it directly for
-$\mathrm{SU}_q(2)$ using the Casimir eigenvalue structure.
+$\lVert v \rVert_{H^1_q}$.

@@ -101,9 +101,7 @@ $$
 with the continuity equation
 $\partial_t\rho + \nabla_A \cdot (\rho v) = 0$.
 
-**Distinguishing features.**
-Three properties separate this from the classical Navier--Stokes
-equation:
+**Properties.**
 
 1. **Algebraic dissipation spectrum.**  The viscous term
    $\nu_q\,\Delta_q v$ damps mode $k$ at rate

@@ -1,12 +1,3 @@
-When the parameters of a vortex configuration change slowly
-compared to the internal oscillation timescale, the system
-acquires a **Berry phase** — a geometric phase determined by the
-path traced in the space of vortex configurations.  In the brane
-fluid, this phase has a precise categorical interpretation and
-connects the topological invariants of Chapter 4 to measurable
-interference effects.
-
-**The vortex moduli space.**
 Fix an intensity level $j$ and a topological type (knot type
 $K$).  The **moduli space** $\mathcal{M}_{j,K}$ is the space of
 [geodesic vortex](#rem:geodesic-vortices) configurations of type

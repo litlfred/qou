@@ -88,8 +88,8 @@ and $\mathrm{tr}_A(\mathrm{id}_{V_j}) = [2j+1]_q$ (quantum
 dimension from the [Pawlowski--Leitner
 norm](#rem:pawlowski-leitner-inner-product)).
 
-This is **proved** — it uses only Schur's lemma (which holds in
-any semisimple abelian category) and the Frobenius trace. $\checkmark$
+The result uses only Schur's lemma (which holds in
+any semisimple abelian category) and the Frobenius trace.
 
 *Step 2: Completeness (b).*
 This is the key step.  We use the **Tannaka--Krein
@@ -112,9 +112,9 @@ definition of the Hilbert completion), the matrix coefficients
 are total in $L^2(A)$.  Combined with orthogonality (a), they
 form a complete orthonormal system.
 
-This is **proved** — it uses the Tannaka--Krein theorem, which
+The argument uses the Tannaka--Krein theorem, which
 is part of the [QOU axioms](#def:quantum-observable-universe)
-(the existence of $\tau$). $\checkmark$
+(the existence of $\tau$).
 
 *Step 3: Eigendecomposition (c).*
 The $q$-Laplacian $\Delta_q = d_q\delta_q + \delta_q d_q$
@@ -131,8 +131,8 @@ $$
   C_q(j) = [j]_q[j+1]_q.
 $$
 
-This is **proved** — it uses equivariance of $d_q$ + Schur's
-lemma + the Casimir computation. $\checkmark$
+The eigenvalue identity follows from equivariance of $d_q$, Schur's
+lemma, and the Casimir computation.
 
 **Connection to the Kelvin dispersion.**
 The [Kelvin dispersion derivation](#prop:kelvin-dispersion-derivation)
@@ -142,23 +142,7 @@ a matrix coefficient $D^{k/2}_{k/2, k/2}$ of the spin-$k/2$
 representation, and its eigenvalue $[k/2]_q[k/2+1]_q$ reduces to
 $[k]_q^2$ for the appropriate normalisation on the circle.
 
-**Status: Gap 1 is closed.**
-
-| Step | Uses | Status |
-|---|---|---|
-| Orthogonality | Schur's lemma + Frobenius trace | **Proved** |
-| Completeness | Tannaka--Krein reconstruction | **Proved** |
-| Eigendecomposition | Equivariance + Casimir | **Proved** |
-
 The quantum Peter--Weyl theorem is a consequence of the QOU
 axioms (specifically the existence of the faithful exact monoidal
 fibre functor $\tau$).  No external result (Woronowicz 1987) is
 needed — the categorical infrastructure is self-sufficient.
-
-**Consequence for the q-NS well-posedness.**
-With this theorem, the
-[spectral-Sobolev proposition](#prop:q-spectral-sobolev) Step 4
-(completeness of eigenbasis) is proved.  The entire chain
-P1(a)→P1(b)→P1(c) is now complete, and
-[Theorem q-NS well-posedness](#thm:q-ns-wellposedness) is
-**fully proved** (no remaining gaps).

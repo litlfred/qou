@@ -1,10 +1,8 @@
-Classical fluid dynamics contains several mechanisms by which
-vortices exhibit discrete modal structure, falling short of full
-quantisation but pointing toward it.  The $q$-deformed brane
-fluid of [§Fluid Dynamics of the Brane](#sec:brane-fluid) fills
-this gap: the [substrate parameter](#def:substrate-parameter)
-$q$ imposes algebraic discreteness on vortex circulation that
-Navier--Stokes alone cannot provide.
+The [substrate parameter](#def:substrate-parameter) $q$ imposes
+algebraic discreteness on vortex circulation that classical
+Navier--Stokes cannot provide.  Four classical mechanisms exhibit
+discrete modes but continuous intensity; the $q$-deformation
+closes this gap.
 
 **1. Kelvin waves on vortex filaments.**
 A classical vortex filament supports standing-wave perturbations
@@ -84,12 +82,3 @@ The following table summarises the correspondence:
 | Superfluid $\Gamma_n = nh/m$ | Holonomy quantisation by $j$ | Topological charge of $\mathrm{SU}(2)$ |
 | Reynolds number $\mathrm{Re}$ | [Planck--Reynolds](#rem:planck-reynolds) $\mathrm{Re}_q$ | $q$-deformation parameter |
 
-The essential point is that classical fluid dynamics already
-has discrete **modes** (Kelvin waves) and discrete **states**
-(breakdown configurations), but lacks discrete **intensity
-levels** — the circulation $\Gamma$ is free.  The
-$q$-deformation closes this gap by replacing $\Gamma$ with
-a quantised Casimir, producing a vortex that can resonate at
-discrete energy levels indexed by the half-integer $j$,
-exactly as an electron occupies discrete orbitals indexed by
-$n$ ([hydrogen orbitals](#ex:hydrogen-orbitals)).

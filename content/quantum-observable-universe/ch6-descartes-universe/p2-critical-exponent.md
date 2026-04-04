@@ -1,9 +1,7 @@
 The [regularity breakdown conjecture](#conj:regularity-breakdown)
 predicts that the maximum enstrophy diverges as
 $\Omega_{\max}(q) \sim (q-1)^{-\alpha}$ for some $\alpha > 0$.
-This block computes $\alpha$ from the $q$-integer asymptotics.
 
-**Setup.**
 From the [enstrophy evolution](#prop:q-ns-nonlinear-uniqueness),
 the enstrophy satisfies
 
@@ -85,17 +83,3 @@ $$
   }
 $$
 
-**Proof status.**
-
-| Step | Status |
-|---|---|
-| Gronwall bound $\Lambda_q \sim (q-1)^{-1}$ | **Proved** (crude bound) |
-| Cascade depth $N_{\mathrm{eff}} \sim \ln(1/\varepsilon)/\varepsilon$ | **Proved** |
-| Enstrophy scaling $\Omega_{\max} \sim N^{5/3}$ | **Conjectured** (uses Kolmogorov dimensional analysis) |
-| Combined scaling $\alpha = 5/3$ | **Derived** (conditional on Kolmogorov) |
-
-**GAP**: The Kolmogorov scaling $\Omega \sim N^{5/3}$ is a
-dimensional-analysis prediction, not a theorem.  Proving it
-rigorously requires establishing that the nonlinear energy
-transfer in the truncated q-NS system reproduces the Kolmogorov
-4/5 law.  This is open even in the classical setting.
