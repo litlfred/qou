@@ -21,6 +21,7 @@ export default conjecture({
     "def:skein-resolution-obstruction",
     "rem:substrate-gm-torsion",
     "thm:qou-obstruction-reduction",
+    "rem:skein-turing-machine",
   ],
   cites: ["cook1971", "freedman2003"],
 });
