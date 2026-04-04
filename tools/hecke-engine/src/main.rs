@@ -392,6 +392,105 @@ fn main() {
             println!("\nAll optimal: {}  Total: {}ms", if all_opt {"YES"} else {"NO"}, t.elapsed().as_millis());
         }
 
+        "shellfactor" => {
+            // Compute the NF shell factor F = W(≤1)/W(total) for each nucleus.
+            // F is the fraction of |NF weight| in the optimal basis (length ≤ 1).
+            // This is the natural shell correction — derived from the NF, no fitting.
+            let a_max: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(8);
+
+            println!("NF SHELL FACTOR: F = W(length≤1) / W(total)");
+            println!("  Derived from Gröbner NF, no fitting.");
+            println!("  A_max = {} (full NF for A ≤ {})", a_max, a_max);
+            println!();
+            println!("{:>12} {:>3} {:>3} {:>3} {:>8} {:>10} {:>10} {:>10} {:>3}",
+                "Nucleus","Z","N","A","Terms","W(opt)","W(total)","F","Pal");
+            println!("{}", "-".repeat(80));
+
+            for z in 1..=a_max {
+                let n_min = if z <= 1 { 1 } else { z.saturating_sub(1) };
+                let n_max = z + 2;
+                for n in n_min..=n_max {
+                    let a = z + n;
+                    if a < 2 || a > a_max { continue; }
+
+                    let t0 = Instant::now();
+                    let elem = engine.build_nucleus(z, n);
+                    let raw = elem.n_terms();
+                    let hist = elem.histogram();
+                    let pal = is_palindromic(&hist);
+
+                    // Weight by length
+                    let mut w_opt = 0.0_f64;  // length 0 + 1
+                    let mut w_total = 0.0_f64;
+                    for (word, &coeff) in &elem.reduced {
+                        let abs_c = coeff.abs();
+                        w_total += abs_c;
+                        if word.len() <= 1 {
+                            w_opt += abs_c;
+                        }
+                    }
+                    let f = if w_total > 0.0 { w_opt / w_total } else { 0.0 };
+
+                    let name = nucleus_name(z, n);
+                    println!("{:>12} {:>3} {:>3} {:>3} {:>8} {:>10.6} {:>10.4} {:>10.6} {:>3} {:>6}ms",
+                        name, z, n, a, raw, w_opt, w_total, f,
+                        if pal {"Y"} else {" "}, t0.elapsed().as_millis());
+                }
+            }
+        }
+
+        "qvalues_nf" => {
+            // Q-values using NF-derived shell factor instead of precomputed F_deg2.
+            // For each nucleus, compute F = W(≤1)/W(total) from the PARENT NF,
+            // then Q = |Σ ln(V̂_dau/V̂_par)| × κ × F.
+            // This only works for A ≤ a_max (where full NF is tractable).
+            let a_max: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(8);
+            let kappa = 0.510999 / 3.0;
+
+            struct Benchmark { z: usize, n: usize, name: &'static str, q_exp: f64 }
+            let benchmarks = [
+                Benchmark { z: 1, n: 2, name: "³H→³He", q_exp: 0.01861 },
+                Benchmark { z: 6, n: 8, name: "¹⁴C→¹⁴N", q_exp: 0.15648 },
+            ];
+
+            println!("Q-VALUES WITH NF-DERIVED SHELL FACTOR (A ≤ {})", a_max);
+            println!("  F = W(length≤1)/W(total) from parent Gröbner NF");
+            println!("  No fitting, no precomputed constants.");
+            println!();
+
+            for b in &benchmarks {
+                let a = b.z + b.n;
+                if a > a_max { continue; }
+
+                // Compute parent NF and extract F
+                let elem = engine.build_nucleus(b.z, b.n);
+                let mut w_opt = 0.0_f64;
+                let mut w_total = 0.0_f64;
+                for (word, &coeff) in &elem.reduced {
+                    let abs_c = coeff.abs();
+                    w_total += abs_c;
+                    if word.len() <= 1 { w_opt += abs_c; }
+                }
+                let f_nf = if w_total > 0.0 { w_opt / w_total } else { 1.0 };
+
+                // Compute raw Q from transfer matrix
+                let vols_par = engine.generator_volumes(b.z, b.n);
+                let vols_dau = engine.generator_volumes(b.z + 1, b.n - 1);
+                let mut ln_ratio = 0.0_f64;
+                for i in 0..a-1 {
+                    if vols_par[i].abs() > 1e-30 && vols_dau[i].abs() > 1e-30 {
+                        ln_ratio += vols_dau[i].abs().ln() - vols_par[i].abs().ln();
+                    }
+                }
+                let q_bare = ln_ratio.abs() * kappa;
+                let q_nf = q_bare * f_nf;
+                let err = (q_nf - b.q_exp) / b.q_exp * 100.0;
+
+                println!("  {}: F_nf={:.6}, Q_bare={:.5}, Q_nf={:.5}, Q_exp={:.5}, err={:+.1}%",
+                    b.name, f_nf, q_bare, q_nf, b.q_exp, err);
+            }
+        }
+
         "qvalues" => {
             // Beta decay Q-values via transfer matrix (O(A²), no Gröbner expansion)
             let kappa = 0.510999 / 3.0; // m_e / 3 in MeV
