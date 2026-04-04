@@ -47,6 +47,14 @@ peer-review practices and the methodology of
   base-$q$.  Never use `math.cos`; use $\cos_q$ (the $q$-deformed
   cosine) or `cosh` with $q$-arguments.  The `math.exp` function
   should be `q**x` (the $q$-exponential $\exp_q(x) = q^x$).
+  **ENFORCEMENT**: Every new computation script MUST define
+  `LN_Q = math.log(q)` at the top and use `math.log(x)/LN_Q`
+  for all log-ratios. The Q-value formula is:
+    `Q = |Σ_i log_q(V̂_dau_i / V̂_par_i)| × κ_q`
+  where `κ_q = LN_Q × m_e / 3`. The q-weighted decomposition:
+    `Q_qwt = |q · log_q(u) + q⁻¹ · log_q(r) + log_q(unc)| × κ_q`
+  F_conv uses log_q but cancels (ratio). Bare `math.log()` without
+  `/LN_Q` is a review failure except inside log-sum overflow guards.
 - **$q$-integer identities simplify transfer matrix chains.**
   The ratio $[n+1]_q / [n]_q = q + q^{-n}/[n]_q$ is exact.
   For large $n$: $[n+1]_q / [n]_q \to q$ (exponentially fast).
