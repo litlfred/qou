@@ -110,46 +110,9 @@ export default chapter({
       blocks: ["jones-polynomials"],
     }),
 
-    // ── Fluid dynamics ──────────────────────────────────────────────
-    section({
-      title: "Fluid Dynamics of the Brane",
-      label: "sec:brane-fluid",
-      blocks: [
-        // ── Part A: The brane fluid ──────────────────────────────
-        "brane-fluid",                    // §intro: three features
-        "madelung-fluid",                 // Madelung split → fluid picture
-        "hamilton-jacobi-phase",          // Phase equation, WKB, caustics
-        "q-navier-stokes",               // def: categorical q-NS on Ω¹(A)
-        "geodesic-vortices",             // Variational: vortex = particle
-        "braid-fluid",                    // Arnold SDiff_q, Hecke = scattering
-        "planck-reynolds",               // Re_q = 2/(q-1)
-        "vortex-intensity-modes",        // Classical → q-deformed modes
-        "discrete-vortex-spectrum",      // prop: [k]_q² eigenvalues
-        "discrete-vortex-physical",      // rem: orbitals analogy
-        "helicity-conservation",         // prop: H_q conserved
-        "helicity-physical",             // rem: quantised topological charge
-        "q-turbulence-spectrum",         // prop: q-Kolmogorov cascade
-        "q-turbulence-prediction",       // rem: testable BEC deviation
-        "vortex-reconnection",           // rem: divisor surgery
-        "berry-vortex-moduli",           // rem: Berry phase, anyonic stats
-        "kelvin-dispersion-derivation",  // prop: D_q(z^k) derivation
-        "kelvin-classical-limit",        // rem: classical recovery
-        "acoustic-horizon-conditions",   // prop: Hawking T, horizon types
-
-        // ── Part B: Global regularity for q > 1 ─────────────────
-        "q-ns-wellposedness",            // thm: global regularity
-        "q-ns-proof-strategy",           // rem: three mechanisms
-        "p1-spectral-sobolev",           // prop: compact resolvent, Sobolev
-        "quantum-peter-weyl",            // thm: completeness (Tannaka-Krein)
-        "p1-nonlinear-uniqueness",       // prop: Ladyzhenskaya, enstrophy
-        "q-ns-proof-details",            // rem: full proof chain
-
-        // ── NS obstruction (forward reference) ────────────────────
-        // Full development moved to Ch 8 §NS-obstruction.
-        // Here: motivation only — why the brane fluid connects to NS.
-        "observability-in-fluid-context",     // rem: what Hom=0 means for fluid
-      ],
-    }),
+    // ── Fluid dynamics moved to Chapter 10 ──────────────────────────
+    // The full development of brane fluid dynamics, q-NS regularity,
+    // and the NS obstruction lives in ch10-fluid-dynamics/.
 
     // ═══════════════════════════════════════════════════════════════════
     // PART B lives in ch5-brings-surface/ (same chapter number 5).
