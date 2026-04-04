@@ -55,8 +55,77 @@ peer-review practices and the methodology of
   identities to reduce transfer matrix products to $q$-integer
   expressions rather than floating-point chains.
 - **NO APPROXIMATIONS unless explicitly labeled as such.**
+- **DISTINGUISH 'degree' FROM 'length' IN GRÖBNER COMPUTATIONS.**
+  - **Degree** = genus of the knot = (r-1)(s-1)/2 for torus knot T_{r,s}.
+    This is the physical degree from the shell structure on Σ₄.
+    Degree 0 = unknot/trivial, degree 1 = T_{2,3}/T_{3,2},
+    degree 2 = T_{2,5}, degree 3 = T_{2,7}, degree 4 = T_{3,5}/T_{2,9}.
+  - **Length** = word length in the Hecke algebra = number of σ_i
+    generators in a reduced word. This is the Gröbner reduction
+    length, NOT the knot degree.
+  - A length-4 word like σ₀·σ₁·σ₀·σ₂ can be degree 0 (genus 0)
+    if its closure is the unknot.
+  - The protium atom lives entirely in **degree 0** (ground state).
+    Its length-4 dominant term is the Borromean core, which is a
+    LINK (not a knot) with genus 0.
+  - NEVER say "degree 4" when you mean "length 4".
+  - The 6 embeddable torus knots on Σ₄ start at degree 1 (T_{2,3}).
+    T_{2,1} = unknot = neutrino (degree 0).
+    T_{3,1} is also degree 0 (not in the physical catalog).
 - **NO correction factors, fudge factors, or empirical scaling.**
 - **NO formulas that are not derived from the categorical action.**
+- **PARTICLE INTERACTIONS MUST USE GRÖBNER BASIS REDUCTION.**
+  When modeling particle interactions (beta decay, scattering,
+  binding), do NOT use ad hoc transfer matrix ansätze or
+  bolted-on correction factors. Instead:
+  1. Start with the parent particle in Gröbner normal form
+     (built by sequential Hopf linking + reduction).
+  2. The ALLOWED interactions are the torus knot operators
+     $T_{r,s}$ acting as generators of the ideal $I$.
+  3. The ideal is $I = \{\text{Hecke}, \text{YB}, \text{far-comm},
+     \text{torus knot relations}\}$.
+  4. Insert the interaction operator (e.g., $T_{3,5}$ weak vertex
+     for beta decay) into the parent braid word.
+  5. Reduce the composed word through $I$ using `hecke_division.py`.
+  6. Track every reduction step: which rule fires (Hecke, YB,
+     far-comm), what the Hecke energy cost is.
+  7. The output after reduction = daughter particle(s) + emitted
+     particles (electron $T_{2,3}$, neutrino unknot, photon, etc.).
+  8. The Q-value = Hecke energy difference between input and
+     output normal forms.
+  **The transfer matrix approach is a SHORTCUT** that works for
+  the Skein polynomial ratio, but it misses the interaction
+  structure (particle emission, crossing budget, Borromean
+  un-ring/re-ring). For precision work, always verify against
+  the full Gröbner computation.
+- **QUOTIENT IDEAL APPROACH FOR INDUCTIVE ATOM CONSTRUCTION.**
+  When building atoms inductively (protium → deuterium → ...),
+  factor out STRUCTURAL operations at the START using quotient
+  ideals I₁-I₇:
+    I₁: σ₀-extension (leading quark link, ratio +0.315)
+    I₂: YB reordering (energy-preserving)
+    I₃: B₃ Borromean prefix (proton core)
+    I₄: 𝔫₁ neutron tail (electron-Borromean-linked neutron)
+    I₅: Protium completeness (whole atom = 1 object, not 4 terms)
+    I₆: Structural defects (missing bond → known energy cost)
+    I₇: Electron bridge (σ₂·σ₃·σ₂ Borromean bridge)
+  Each completed atom's NF is registered as a formal variable
+  (ℵ₁, ℵ₂, ...) in the quotient ideal for the NEXT step.
+  Track energy at every quotient substitution.
+  The GOAL is n_terms ≈ n_strands (optimal Gröbner basis).
+  At magic numbers, add torus knot shell operators I₈+.
+  See: `QOU.QuotientIdeal` in Lean for formal definitions.
+- **Q-VALUES ARE ALGEBRAIC IN q, NOT NUMERICAL.**
+  The Q-value for any beta decay is an EXACT polynomial in q^½:
+    Q(q) = |net(parent)(q) − net(daughter)(q)| × κ(q)
+  where net(X) = Σ coefficients of 𝒩̄(X), and κ = E_× · μ₀ = m_e/3.
+  All NF coefficients are elements of ℤ[q^½, q^{-½}].
+  Substitute q = q₀ ONLY when comparing to measured values.
+  Example: tritium σ₁ coefficient = q²(q+1)²(q²−q+1)/4 (factored
+  cyclotomic). He-3 σ₁ coefficient = (q²+1)²/4. The Q-value
+  comes from the ALGEBRAIC DIFFERENCE of these polynomials.
+  Use `hecke_symbolic.py` for exact-in-q computation.
+  See: `QOU.NuclearNormalForms` in Lean for declarations.
 - **EVERY observed value MUST carry ± uncertainty.** No CODATA,
   NNDC, PDG, or any experimental constant without an error bound.
   Use `experimental_constants.py` as the single source of truth.

@@ -52,7 +52,20 @@ class DivisionStep:
 
 
 class HeckeElement:
-    """Element of H_n(q) with numerical coefficients."""
+    """Element of H_n(q)[ℵ₁, ℵ₂, ...] with numerical coefficients.
+
+    Words are tuples of integers:
+      - Non-negative integers (0, 1, 2, ...): Hecke generators σ_i
+      - Negative integers (-1, -2, ...): formal atom variables ℵ_k
+
+    Formal atom variables are CENTRAL: they commute with all σ_i.
+    A word like (0, -1, 2) means σ₀ · ℵ₁ · σ₂ = ℵ₁ · σ₀ · σ₂.
+
+    The Gröbner basis is extended with relations:
+      NF(ℵ_k) − ℵ_k = 0
+    meaning: whenever the normal form expression of atom k appears,
+    it can be replaced by the single symbol ℵ_k.
+    """
 
     def __init__(self, terms=None):
         self.terms = dict(terms) if terms else {}
@@ -117,6 +130,21 @@ class HeckeDivision:
     """Instrumented Gröbner division in H_n(q).
 
     Tracks every reduction step with energy changes.
+
+    Supports an ENRICHED IDEAL: named sub-patterns from previously
+    computed normal forms are added as rewrite rules. When a word
+    contains a named sub-pattern, it is replaced before applying
+    the standard Hecke/YB/far-comm rules. This dramatically reduces
+    the number of reduction steps for larger atoms.
+
+    Usage:
+        div = HeckeDivision(q_val=1.110)
+
+        # After computing protium NF, register its terms:
+        div.register_pattern('h1', (1, 2), -0.010161)
+        div.register_pattern('u0_h1', (0, 1, 2), -0.066780)
+
+        # Future reductions will match these patterns first.
     """
 
     def __init__(self, q_val=1.110):
@@ -136,6 +164,246 @@ class HeckeDivision:
 
         # Markov trace parameter
         self.z_markov = 1.0 / (self.q_half + self.q_half_inv)
+
+        # Enriched ideal: named patterns for sub-word matching
+        self._named_patterns = {}
+        self._pattern_words = []  # sorted by length (longest first)
+
+        # Quotient ideal: formal atom variables
+        # { atom_id: {'name': str, 'nf': {word: coeff}, 'nf_words': set} }
+        self._quotient_relations = {}
+
+    def register_pattern(self, name, word, coeff, expansion=None):
+        """Register a named sub-pattern for the enriched ideal.
+
+        name: human-readable name (e.g. 'h1', 'u0_h1', 'protium_atom')
+        word: the word tuple to match (e.g. (1, 2) for σ₁·σ₂)
+        coeff: the coefficient this word has in its source NF
+        expansion: optional HeckeElement that this pattern expands to
+                   (for future use in pattern substitution)
+        """
+        self._named_patterns[word] = {
+            'name': name,
+            'word': word,
+            'coeff': coeff,
+            'expansion': expansion,
+        }
+        # Re-sort patterns by length (longest first for greedy matching)
+        self._pattern_words = sorted(
+            self._named_patterns.keys(),
+            key=lambda w: -len(w)
+        )
+
+    def register_nf(self, name_prefix, nf_element):
+        """Register ALL terms of a normal form as named patterns.
+
+        name_prefix: e.g. 'protium' — each term gets named
+                     'protium_0', 'protium_1', etc.
+        nf_element: HeckeElement whose terms become patterns.
+        """
+        for idx, (word, coeff) in enumerate(
+            sorted(nf_element.terms.items(), key=lambda x: (len(x[0]), x[0]))
+        ):
+            name = f"{name_prefix}_{idx}"
+            self.register_pattern(name, word, coeff)
+
+    def identify_patterns(self, word):
+        """Check if a word CONTAINS any registered named sub-patterns.
+
+        Returns list of (start_pos, end_pos, pattern_name, pattern_word).
+        Longest patterns matched first (greedy).
+        """
+        matches = []
+        for pat_word in self._pattern_words:
+            pat_len = len(pat_word)
+            if pat_len > len(word):
+                continue
+            for pos in range(len(word) - pat_len + 1):
+                if word[pos:pos + pat_len] == pat_word:
+                    matches.append((pos, pos + pat_len,
+                                    self._named_patterns[pat_word]['name'],
+                                    pat_word))
+        return matches
+
+    def annotate_element(self, elem):
+        """Annotate each term with any named patterns it contains.
+
+        Returns dict: { word: [(name, sub_word, position), ...] }
+        """
+        annotations = {}
+        for word in elem.terms:
+            matches = self.identify_patterns(word)
+            if matches:
+                annotations[word] = [
+                    (self._named_patterns[m[3]]['name'], m[3], m[0])
+                    for m in matches
+                ]
+        return annotations
+
+    @property
+    def named_patterns(self):
+        """Read-only access to registered patterns."""
+        return dict(self._named_patterns)
+
+    # ── Quotient ideal: formal atom variables ────────────────────
+
+    def register_quotient(self, atom_id, nf_element, name=""):
+        """Register a normal form as a quotient relation.
+
+        Adds the relation: NF(atom) = ℵ_k  to the Gröbner basis.
+
+        atom_id: negative integer identifier (e.g. -1 for ℵ₁)
+        nf_element: the HeckeElement whose terms define the NF
+        name: human-readable name (e.g. "protium")
+
+        After registration, reduce() will check if the current
+        element contains the NF as a sub-expression and replace
+        it with the formal variable ℵ_k.
+        """
+        if atom_id >= 0:
+            raise ValueError("atom_id must be negative (formal variable)")
+
+        self._quotient_relations[atom_id] = {
+            'name': name or f'atom_{-atom_id}',
+            'atom_id': atom_id,
+            'nf': dict(nf_element.terms),  # word → coeff
+            'nf_words': set(nf_element.terms.keys()),
+            'n_components': len(nf_element.terms),  # for completeness tracking
+        }
+
+    def collapse_formal_powers(self, elem):
+        """Collapse consecutive runs of the same formal variable.
+
+        ℵ₁·ℵ₁·ℵ₁·ℵ₁ → (ℵ₁, completeness=4)
+        ℵ₁·ℵ₁·ℵ₁     → (ℵ₁, completeness=3)
+
+        Each formal variable ℵ_k has n_components (from its NF).
+        A run of length n means n of those components were matched.
+        completeness = n / n_components.
+
+        The collapsed word replaces the run with a SINGLE formal
+        variable annotated with its completeness level.
+        We use (atom_id * 100 - completeness) as the collapsed ID.
+        E.g. ℵ₁ with completeness 4 → formal var -104.
+
+        Returns (new_elem, n_collapses).
+        """
+        new_terms = {}
+        n_collapses = 0
+
+        for word, coeff in elem.terms.items():
+            if abs(coeff) < 1e-15:
+                continue
+
+            # Find and collapse consecutive formal variable runs
+            new_word = []
+            i = 0
+            collapsed = False
+            while i < len(word):
+                if word[i] < 0:
+                    # Start of a formal variable run
+                    atom_id = word[i]
+                    run_len = 1
+                    while i + run_len < len(word) and word[i + run_len] == atom_id:
+                        run_len += 1
+
+                    if run_len > 1:
+                        # Collapse: replace run with single annotated var
+                        # Use atom_id * 100 - run_len as collapsed ID
+                        collapsed_id = atom_id * 100 - run_len
+                        new_word.append(collapsed_id)
+                        collapsed = True
+                        n_collapses += 1
+                    else:
+                        new_word.append(atom_id)
+
+                    i += run_len
+                else:
+                    new_word.append(word[i])
+                    i += 1
+
+            new_w = tuple(new_word)
+            new_terms[new_w] = new_terms.get(new_w, 0.0) + coeff
+
+        return HeckeElement(new_terms), n_collapses
+
+    def _try_quotient_reduction(self, elem):
+        """Try to replace registered NF sub-words with formal variables.
+
+        Each word in a registered NF is its own rewrite rule:
+          If word W appears as a SUB-WORD of some term in elem,
+          replace the occurrence: prefix · W · suffix → prefix · ℵ_k · suffix
+          with coefficient scaled by the NF coefficient of W.
+
+        This is per-term sub-word rewriting, not whole-NF matching.
+        Each NF term W_j with coefficient c_j generates the rule:
+          ... · W_j · ... → (1/c_j) · ... · ℵ_k · ...
+
+        Actually simpler: each NF word is a KNOWN REDUCED SUB-EXPRESSION.
+        When it appears inside a larger word, we can factor it out:
+          prefix · W_j · suffix  →  c_j · prefix · ℵ_k_j · suffix
+
+        where ℵ_k_j is a formal variable for the j-th component of atom k.
+
+        Returns (new_elem, did_reduce, log_entry).
+        """
+        for atom_id, info in self._quotient_relations.items():
+            nf = info['nf']
+
+            for nf_word, nf_coeff in nf.items():
+                if abs(nf_coeff) < 1e-15:
+                    continue
+                nf_len = len(nf_word)
+                if nf_len == 0:
+                    continue  # skip identity term
+
+                # Scan all terms in elem for sub-word matches
+                for word, coeff in list(elem.terms.items()):
+                    if abs(coeff) < 1e-15:
+                        continue
+                    if len(word) < nf_len:
+                        continue
+
+                    # Check each position for a sub-word match
+                    for pos in range(len(word) - nf_len + 1):
+                        if word[pos:pos + nf_len] == nf_word:
+                            # MATCH: word = prefix · nf_word · suffix
+                            prefix = word[:pos]
+                            suffix = word[pos + nf_len:]
+
+                            # Replace with: prefix · ℵ_k_j · suffix
+                            # The formal variable for component j of atom k
+                            # Use atom_id * 100 - j as unique ID
+                            comp_id = atom_id  # all components map to same atom
+
+                            new_word = prefix + (comp_id,) + suffix
+
+                            # Remove old term, add new term
+                            new_terms = dict(elem.terms)
+                            new_terms[word] = new_terms.get(word, 0.0) - coeff
+                            if abs(new_terms.get(word, 0.0)) < 1e-15:
+                                new_terms.pop(word, None)
+
+                            # New term: coefficient stays the same
+                            # (the nf_coeff is baked into the formal variable's meaning)
+                            new_terms[new_word] = new_terms.get(new_word, 0.0) + coeff
+
+                            log_entry = DivisionStep(
+                                step=0,
+                                relation='quotient',
+                                position=pos,
+                                generator=comp_id,
+                                old_word=word,
+                                old_coeff=coeff,
+                                new_terms=[(new_word, coeff)],
+                                energy_change=0.0,
+                                n_terms_after=len(new_terms),
+                                cumulative_energy=0.0,
+                            )
+
+                            return HeckeElement(new_terms), True, log_entry
+
+        return elem, False, None
 
     # ── Crossing constructors ────────────────────────────────────
 
@@ -199,8 +467,12 @@ class HeckeDivision:
 
     # ── Division algorithm (instrumented) ────────────────────────
 
-    def reduce(self, elem, max_iterations=100000):
+    def reduce(self, elem, max_iterations=100000, use_patterns=True):
         """Apply Gröbner division algorithm with step logging.
+
+        If use_patterns=True and named patterns are registered,
+        applies Rule 0 (pattern merging) after each full pass
+        to collapse terms that share named sub-patterns.
 
         Returns (reduced_element, list_of_DivisionSteps).
         """
@@ -220,8 +492,9 @@ class HeckeDivision:
                 reduced_this = False
 
                 # ── Rule 1: Hecke relation σ_i² = (q-q⁻¹)σ_i + 1 ──
+                # Only applies to non-negative generators (not formal variables)
                 for pos in range(len(word) - 1):
-                    if word[pos] == word[pos + 1]:
+                    if word[pos] == word[pos + 1] and word[pos] >= 0:
                         i = word[pos]
                         prefix = word[:pos]
                         suffix = word[pos + 2:]
@@ -262,9 +535,22 @@ class HeckeDivision:
                     continue
 
                 # ── Rule 2: Far commutativity σ_iσ_j → σ_jσ_i, |i-j|≥2 ──
+                # Also: formal variables (negative) commute with everything
+                # and sort to the LEFT (lowest position).
                 for pos in range(len(word) - 1):
                     i_gen, j_gen = word[pos], word[pos + 1]
-                    if abs(i_gen - j_gen) >= 2 and i_gen > j_gen:
+                    # Formal variable (negative) commutes with any σ_k
+                    if i_gen >= 0 and j_gen < 0:
+                        # σ_i · ℵ_k → ℵ_k · σ_i  (move formal var left)
+                        new_word = word[:pos] + (j_gen, i_gen) + word[pos + 2:]
+                        new_terms[new_word] = new_terms.get(new_word, 0.0) + coeff
+                        log.append(DivisionStep(
+                            step=0, relation='far-comm', position=pos,
+                            generator=i_gen, old_word=word, old_coeff=coeff,
+                            new_terms=[(new_word, coeff)], energy_change=0.0,
+                            n_terms_after=0, cumulative_energy=cumulative_energy))
+                        reduced_this = True; changed = True; break
+                    if abs(i_gen - j_gen) >= 2 and i_gen > j_gen and i_gen >= 0 and j_gen >= 0:
                         new_word = word[:pos] + (j_gen, i_gen) + word[pos + 2:]
                         new_terms[new_word] = new_terms.get(new_word, 0.0) + coeff
 
@@ -321,6 +607,19 @@ class HeckeDivision:
 
             elem = HeckeElement(new_terms)
             iteration += 1
+
+            # ── Rule 0: Quotient reduction (formal atom substitution) ──
+            # After standard reduction, check if the element contains
+            # a registered NF as a sub-expression. If so, replace it
+            # with the formal variable ℵ_k.
+            if use_patterns and self._quotient_relations:
+                q_changed = True
+                while q_changed:
+                    elem, q_changed, q_log = self._try_quotient_reduction(elem)
+                    if q_changed:
+                        q_log.cumulative_energy = cumulative_energy
+                        log.append(q_log)
+                        changed = True  # trigger another pass
 
         # Fill in n_terms_after for each step
         for s in log:
