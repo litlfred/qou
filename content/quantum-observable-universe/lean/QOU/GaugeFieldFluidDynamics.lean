@@ -39,7 +39,7 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
   have hinv_le : q⁻¹ ^ k ≤ q⁻¹ ^ 1 := by
     apply pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv) hk
   simp [pow_one] at hinv_le
-  have hq_ge : q ≤ q ^ k := le_self_pow₀ (by linarith : 1 ≤ q) (by omega : k ≠ 0)
+  have hq_ge : q ≤ q ^ k := le_self_pow (by linarith : 1 ≤ q) (by omega : k ≠ 0)
   linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
@@ -444,7 +444,7 @@ structure BoundaryObservability where
 def descartes_boundary : BoundaryObservability where
   euler_char := -6
   euler_char_ne_zero := by norm_num
-  ns_singular := fun κ hκ => obstruction_persists κ hκ
+  ns_singular := fun κ hκ => by intro ⟨c, hc⟩; omega
 
 /-- **NS obstruction at level n**: the restriction of κ_n to Σ.
     Nonzero iff the QOU is NS-singular at that level.
@@ -466,7 +466,7 @@ structure NSObstructionLevel where
 
 /-- For the anti-parallel pair at level n ≥ 1, the jet
     divergence exponent is positive. -/
-def antiparallel_obstruction (n : ℕ) (hn : n ≥ 1) :
+noncomputable def antiparallel_obstruction (n : ℕ) (hn : n ≥ 1) :
     NSObstructionLevel where
   level := n
   euler_contribution := -6
@@ -498,20 +498,7 @@ theorem descartes_euler_ne_zero : descartes_euler ≠ 0 := by
     Ref: [manuscript] Ch 5 §8 Kummer specialisation -/
 theorem obstruction_persists (κ : ℕ) (hκ : κ ≥ 4) :
     ¬ ((2 * (κ : ℤ)) ∣ (-6 : ℤ)) := by
-  intro ⟨c, hc⟩
-  have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
-  have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
-  -- |2κ · c| = |2κ| · |c| ≥ 8 · 1 = 8 > 6 = |-6|
-  have : |2 * (κ : ℤ) * c| = |2 * (κ : ℤ)| * |c| := abs_mul _ _
-  rw [hc] at this
-  simp at this
-  have : |c| ≥ 1 := Int.one_le_abs hc_ne
-  have : |2 * (κ : ℤ)| * |c| ≥ 8 := by
-    calc |2 * (κ : ℤ)| * |c| ≥ |2 * (κ : ℤ)| * 1 := by
-          apply mul_le_mul_of_nonneg_left ‹|c| ≥ 1› (abs_nonneg _)
-      _ = |2 * (κ : ℤ)| := by ring
-      _ ≥ 8 := by rwa [abs_of_nonneg (by omega : (2 * (κ : ℤ)) ≥ 0)]
-  omega
+  intro ⟨c, hc⟩; omega
 
 /-- Corollary: for all κ ≥ 4, the topological obstruction
     κ₀ mod 2κ ≠ 0 in H²(S, G_m)/2κ.  The obstruction survives
@@ -567,7 +554,7 @@ theorem observability_q_independent (C : Type*)
 
     LaTeX: `\label{thm:ns-singularity-descartes}` -/
 -- Ref: [manuscript] Ch 5 §8 NS-singularity of the Descartes universe
-structure NSSingularityDescartes where
+structure NSSingularityDescartes (C : Type*) where
   /-- Euler characteristic. -/
   chi : ℤ := -6
   /-- χ ≠ 0. -/
@@ -580,12 +567,7 @@ structure NSSingularityDescartes where
   blowup_finite : vortex.blowupTime > 0 := blowup_time_pos vortex
   /-- Topological obstruction persists. -/
   kummer_persists : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ chi) :=
-    fun κ hκ => by
-      intro ⟨c, hc⟩
-      have : (2 * (κ : ℤ)) ≥ 8 := by omega
-      have : c ≠ 0 := by intro h; simp [h] at hc
-      have := Int.le_of_dvd (by norm_num : (0 : ℤ) < 6) ⟨-c, by linarith⟩
-      omega
+    fun κ hκ => by intro ⟨c, hc⟩; omega
 
 -- ════════════════════════════════════════════════════════════════
 -- §15  Leray self-similar profile
@@ -620,12 +602,12 @@ theorem fusion_half_half :
 /-- Regularity exponent at the origin: R_j(r) ~ r^{ℓ_j} where
     ℓ_j is the smallest integer with ℓ(ℓ+1) ≥ λ_j.
     For the fundamental mode j = 1/2: ℓ = 1 (linear vanishing). -/
-def regularity_exponent (λ : ℝ) : ℕ :=
-  -- Smallest ℓ with ℓ(ℓ+1) ≥ λ
-  if λ ≤ 0 then 0
-  else if λ ≤ 2 then 1
-  else if λ ≤ 6 then 2
-  else if λ ≤ 12 then 3
+def regularity_exponent (lam : ℝ) : ℕ :=
+  -- Smallest ℓ with ℓ(ℓ+1) ≥ lam
+  if lam ≤ 0 then 0
+  else if lam ≤ 2 then 1
+  else if lam ≤ 6 then 2
+  else if lam ≤ 12 then 3
   else 4  -- sufficient for j ≤ 2
 
 /-- For j = 1/2 with [1/2]_q[3/2]_q ≈ 0.83 (at q = 1.110),
