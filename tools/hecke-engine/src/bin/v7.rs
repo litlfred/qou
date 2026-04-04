@@ -363,22 +363,50 @@ impl SymEngine {
         types.extend(vec![b'n'; n]);
         let mut elem = SymElem::identity();
         let t_start = Instant::now();
+        let mut max_coeff: i128 = 0;
+        let mut max_poly_terms: usize = 0;
+        let mut crossings_total: usize = 0;
 
         for k in 1..a {
+            let t_strand = Instant::now();
             for i in 0..k {
+                let t_cross = Instant::now();
                 let (c, d, doubled) = crossing_coeffs_sym(types[i], types[k]);
                 Self::multiply_and_reduce(&mut elem, i as u8, &c, &d, doubled);
+                crossings_total += 1;
+
+                // Track bottleneck data
+                let poly_terms = elem.total_poly_terms();
+                if poly_terms > max_poly_terms { max_poly_terms = poly_terms; }
+                for (_, lp) in &elem.terms {
+                    for &v in lp.terms.values() {
+                        if v.abs() > max_coeff { max_coeff = v.abs(); }
+                    }
+                }
+
+                let cross_ms = t_cross.elapsed().as_millis();
+                if cross_ms > 500 {
+                    eprintln!("    crossing ({},{}) {}-{}: {} words, {} poly terms, {}ms",
+                        i, k, types[i] as char, types[k] as char,
+                        elem.n_terms(), elem.total_poly_terms(), cross_ms);
+                }
 
                 if elem.has_overflow() {
                     eprintln!("  OVERFLOW at crossing ({},{}) — falling back to float", i, k);
+                    eprintln!("  max_coeff = {}, max_poly_terms = {}, crossings = {}",
+                        max_coeff, max_poly_terms, crossings_total);
                     return elem;
                 }
             }
             let elapsed = t_start.elapsed().as_secs_f64();
+            let strand_ms = t_strand.elapsed().as_millis();
             let poly_terms = elem.total_poly_terms();
             let mem_mb = elem.mem_bytes() as f64 / 1_048_576.0;
-            eprintln!("  strand {}/{}: {} words, {} poly terms, {:.1}MB, {:.1}s",
-                k, a-1, elem.n_terms(), poly_terms, mem_mb, elapsed);
+            let avg_poly = if elem.n_terms() > 0 { poly_terms / elem.n_terms() } else { 0 };
+            eprintln!("  strand {}/{}: {} words, {} poly terms (avg {}/word), max_coeff ~10^{:.0}, {:.1}MB, {:.1}s (strand {}ms)",
+                k, a-1, elem.n_terms(), poly_terms, avg_poly,
+                if max_coeff > 0 { (max_coeff as f64).log10() } else { 0.0 },
+                mem_mb, elapsed, strand_ms);
         }
         elem
     }
