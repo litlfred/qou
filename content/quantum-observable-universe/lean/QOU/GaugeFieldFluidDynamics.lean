@@ -39,7 +39,7 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
   have hinv_le : q⁻¹ ^ k ≤ q⁻¹ ^ 1 := by
     apply pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv) hk
   simp [pow_one] at hinv_le
-  have hq_ge : q ≤ q ^ k := le_self_pow (by linarith : 1 ≤ q) (by omega : k ≠ 0)
+  have hq_ge : 1 ≤ q ^ k := one_le_pow_of_one_le (le_of_lt hq) k
   linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
@@ -249,11 +249,11 @@ theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
     (ht : t < dyn.blowupTime) (ht0 : 0 ≤ t) :
     dyn.separation_sq t > 0 := by
   unfold AntiParallelDynamics.separation_sq AntiParallelDynamics.blowupTime at *
-  have hπ := Real.pi_pos
-  rw [div_lt_iff₀ dyn.circ_pos] at ht  -- t < π d₀²/Γ  ⟹  Γt < π d₀²
-  -- Need: d₀² - Γt/π > 0  ⟺  Γt/π < d₀²  ⟺  Γt < π d₀²
-  rw [sub_pos, div_lt_iff₀ hπ]
-  linarith
+  have hπ : (0 : ℝ) < Real.pi := Real.pi_pos
+  have hΓ := dyn.circ_pos
+  -- After unfold: ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
+  -- goal: dyn.d₀ ^ 2 - dyn.circulation * t / Real.pi > 0
+  nlinarith [mul_pos hπ hΓ, sq_nonneg dyn.d₀]
 
 /-- d(t)² = 0 at t = T* (collision). -/
 theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
@@ -284,8 +284,8 @@ theorem levi_cond_ge_one (L : LeviFormNormalPlane) : L.cond ≥ 1 := by
   unfold LeviFormNormalPlane.cond
   apply le_max_iff.mpr
   by_cases h : L.lam_parallel ≤ L.lam_perp
-  · right; rw [le_div_iff L.lam_parallel_pos]; linarith
-  · left; push_neg at h; rw [le_div_iff L.lam_perp_pos]; linarith
+  · right; rw [le_div_iff₀ L.lam_parallel_pos]; linarith
+  · left; push_neg at h; rw [le_div_iff₀ L.lam_perp_pos]; linarith
 
 /-- cond = 1 iff λ_∥ = λ_⊥ (isotropic core). -/
 theorem levi_cond_eq_one_iff (L : LeviFormNormalPlane) :
@@ -444,7 +444,18 @@ structure BoundaryObservability where
 def descartes_boundary : BoundaryObservability where
   euler_char := -6
   euler_char_ne_zero := by norm_num
-  ns_singular := fun κ hκ => by intro ⟨c, hc⟩; omega
+  ns_singular := fun κ hκ => by
+    intro ⟨c, hc⟩
+    have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
+    have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
+    have hab : |(-6 : ℤ)| < |2 * (κ : ℤ) * c| := by
+      simp [abs_of_nonneg (by omega : (2 * (κ : ℤ)) ≥ 0)]
+      calc 6 < 8 := by norm_num
+        _ ≤ 2 * (κ : ℤ) := by omega
+        _ ≤ |2 * (κ : ℤ)| * |c| := by
+            nlinarith [Int.one_le_abs hc_ne, abs_nonneg (2 * (κ : ℤ))]
+        _ = |2 * ↑κ * c| := (abs_mul _ _).symm
+    linarith [hc]
 
 /-- **NS obstruction at level n**: the restriction of κ_n to Σ.
     Nonzero iff the QOU is NS-singular at that level.
@@ -498,7 +509,12 @@ theorem descartes_euler_ne_zero : descartes_euler ≠ 0 := by
     Ref: [manuscript] Ch 5 §8 Kummer specialisation -/
 theorem obstruction_persists (κ : ℕ) (hκ : κ ≥ 4) :
     ¬ ((2 * (κ : ℤ)) ∣ (-6 : ℤ)) := by
-  intro ⟨c, hc⟩; omega
+  intro ⟨c, hc⟩
+  have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
+  have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
+  have : |(-6 : ℤ)| = |2 * (κ : ℤ) * c| := by rw [hc]
+  simp at this
+  nlinarith [Int.one_le_abs hc_ne]
 
 /-- Corollary: for all κ ≥ 4, the topological obstruction
     κ₀ mod 2κ ≠ 0 in H²(S, G_m)/2κ.  The obstruction survives
@@ -567,7 +583,7 @@ structure NSSingularityDescartes (C : Type*) where
   blowup_finite : vortex.blowupTime > 0 := blowup_time_pos vortex
   /-- Topological obstruction persists. -/
   kummer_persists : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ chi) :=
-    fun κ hκ => by intro ⟨c, hc⟩; omega
+    fun κ hκ => obstruction_persists κ hκ
 
 -- ════════════════════════════════════════════════════════════════
 -- §15  Leray self-similar profile
@@ -602,7 +618,7 @@ theorem fusion_half_half :
 /-- Regularity exponent at the origin: R_j(r) ~ r^{ℓ_j} where
     ℓ_j is the smallest integer with ℓ(ℓ+1) ≥ λ_j.
     For the fundamental mode j = 1/2: ℓ = 1 (linear vanishing). -/
-def regularity_exponent (lam : ℝ) : ℕ :=
+noncomputable def regularity_exponent (lam : ℝ) : ℕ :=
   -- Smallest ℓ with ℓ(ℓ+1) ≥ lam
   if lam ≤ 0 then 0
   else if lam ≤ 2 then 1
@@ -613,6 +629,9 @@ def regularity_exponent (lam : ℝ) : ℕ :=
 /-- For j = 1/2 with [1/2]_q[3/2]_q ≈ 0.83 (at q = 1.110),
     the regularity exponent is 1. -/
 theorem fundamental_regularity : regularity_exponent 0.83 = 1 := by
-  unfold regularity_exponent; simp; norm_num
+  unfold regularity_exponent
+  simp only [show ¬((0.83 : ℝ) ≤ 0) from by norm_num,
+             show (0.83 : ℝ) ≤ 2 from by norm_num,
+             ite_true, ite_false]
 
 end QOU.GaugeFieldFluidDynamics

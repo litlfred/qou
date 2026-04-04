@@ -40,7 +40,8 @@ noncomputable def q_inv : R_q := LaurentPolynomial.T (-1)
 /-- `q · q⁻¹ = 1` in `ℤ[q, q⁻¹]`. -/
 theorem q_mul_q_inv : q * q_inv = 1 := by
   unfold q q_inv
-  simp [LaurentPolynomial.T_mul]
+  rw [← LaurentPolynomial.T_add]
+  simp
 
 /-! ## §2  Quantum integers -/
 
