@@ -16,12 +16,14 @@ export default paper({
     "This book develops the mathematical framework of the Quantum Observable " +
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
     "Frobenius--Hopf object whose differential geometry is controlled by a " +
-    "substrate parameter $q$.  We study quantum torsion, its lifting through " +
-    "the Yekutieli brane tower, the resulting knot-theoretic particle spectrum " +
-    "on the Descartes universe (Bring's surface, $\\chi = -6$), the fluid " +
-    "dynamics of the brane including a categorical Navier--Stokes obstruction, " +
-    "and physical predictions.  Experimental consequences are collected in the " +
-    "final chapter.",
+    "substrate parameter $q$.  Part I establishes the categorical foundations " +
+    "and the Yekutieli brane tower.  Part II develops the structural " +
+    "consequences: braiding and knot theory, models over various ground " +
+    "fields, the algebraic substrate, the fluid dynamics of the brane " +
+    "(including a categorical Navier--Stokes obstruction), and " +
+    "information-theoretic perspectives.  Part III specialises to the " +
+    "Descartes universe on Bring's surface ($\\chi = -6$).  Part IV " +
+    "collects physical predictions.",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
     nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
@@ -43,11 +45,11 @@ export default paper({
     chapterRef({ dir: "ch4-path-integrals-and-braiding" }),  // Braids, knots, Hecke
     chapterRef({ dir: "ch6-descartes-universe" }),           // Models of QOUs (general)
     chapterRef({ dir: "ch8-algebraic-substrate" }),          // Frobenius substrate, defects
-
-    // ── Part III: The Descartes Universe ──────────────────────────
-    chapterRef({ dir: "ch5-brings-surface" }),               // Bring's surface, χ = -6
     chapterRef({ dir: "ch10-fluid-dynamics" }),              // Brane fluid, q-NS, NS obstruction
     chapterRef({ dir: "ch9-information-theory" }),           // Information, computation
+
+    // ── Part III: The Descartes Universe ─────────────────────────
+    chapterRef({ dir: "ch5-brings-surface" }),               // Bring's surface, χ = -6
 
     // ── Part IV: Observations ────────────────────────────────────
     chapterRef({ dir: "ch7-observations" }),                 // Physical predictions (last)
