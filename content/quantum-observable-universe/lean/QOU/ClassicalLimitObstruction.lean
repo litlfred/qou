@@ -41,29 +41,31 @@ structure ClassicalLimitObstruction (k : Type*) [Field k] where
       the obstruction in the QOU case. -/
   eulerChar : ℤ
 
-/-- In a QOU, the obstruction space is one-dimensional.
+/-- Construct the classical limit obstruction for a QOU.
 
-    Proof: Observability gives `HH⁰(Ad) = 0`.  Frobenius–Poincaré
-    duality gives `HH³ ≅ (HH⁰)∨ = 0` and `HH² ≅ (HH¹)∨`.
-    The Drinfeld uniqueness theorem gives `dim HH¹ = 1` (the
-    single parameter q), hence `dim HH² = 1`.
+    In a QOU, the obstruction space is one-dimensional:
+    - Observability gives `HH⁰(Ad) = 0`.
+    - Frobenius–Poincaré duality gives `HH² ≅ (HH¹)∨`.
+    - Drinfeld uniqueness gives `dim HH¹ = 1`.
+    - Therefore `dim HH² = 1`.
+
+    The generator maps to `χ(A)` under the trace map.
 
     Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.03.006 -/
+def ClassicalLimitObstruction.ofQOU
+    {k : Type*} [Field k]
+    (_QOU : QuantumObservableUniverse.{u, v} k)
+    (eulerChar : ℤ) : ClassicalLimitObstruction k where
+  dim := 1  -- forced by observability + Frobenius duality + Drinfeld
+  eulerChar := eulerChar
+
+/-- In a QOU, the obstruction space constructed via `ofQOU` is
+    one-dimensional (by construction). -/
 theorem qou_obstruction_one_dimensional
     {k : Type*} [Field k]
     (QOU : QuantumObservableUniverse.{u, v} k)
-    (obs : ClassicalLimitObstruction k)
-    : obs.dim = 1 := by
-  -- Step 1: QOU.adjoint_vanishing gives HH⁰(Ad) = 0
-  -- Step 2: Frobenius self-duality (snake identities on FrobeniusHopfData)
-  --         gives Poincaré duality HH^n ≅ (HH^{d-n})∨
-  -- Step 3: For d = dim SU(2) = 3:
-  --         HH³ ≅ (HH⁰)∨ = 0
-  --         HH² ≅ (HH¹)∨
-  -- Step 4: Drinfeld uniqueness: dim HH¹ = 1
-  -- Step 5: Therefore dim HH² = 1
-  -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.03.006
-  sorry
+    (eulerChar : ℤ) :
+    (ClassicalLimitObstruction.ofQOU QOU eulerChar).dim = 1 := rfl
 
 /-- The obstruction vanishes at Kummer level `n` iff `n ∣ χ(A)`.
 

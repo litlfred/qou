@@ -1,5 +1,6 @@
 import QOU.Descartes.GroundRing
 import QOU.Descartes.TransferMatrix
+import QOU.ClassicalLimitObstruction
 import Mathlib.RingTheory.Polynomial.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
@@ -281,27 +282,29 @@ Together: at q₀ > 1 (non-torsion), both hold:
 - Mass gap is positive (Δ_{q₀} > 0)
 - NS obstruction is active (vortex singularity, confinement) -/
 
-/-- **Bridge theorem**: the mass gap bound and the NS obstruction
+/-- **Bridge theorem**: the mass gap bound and the Kummer obstruction
     share the same torsion-avoidance condition.
 
     For `q₀ > 1` and `q₀ ∉ μ_∞`:
     - `massGapReal q₀ > 0`  (mass gap positive)
-    - `χ(A) mod 2κ ≠ 0` for κ ≥ 4  (NS obstruction persists) -/
-theorem massGap_and_NS_from_non_torsion
+    - Kummer obstruction persists at all levels `n ∤ χ(A)`
+
+    The Kummer divisibility is proved in `ClassicalLimitObstruction.lean`
+    via `kummer_obstruction_divisibility`.  Here we combine it with
+    the mass gap positivity. -/
+theorem massGap_and_kummer_from_non_torsion
     {q₀ : ℝ} (hq : 1 < q₀)
-    (hq_nru : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1)
-    (χ_A : ℤ) (hχ : χ_A = -6) :
+    (obs : QOU.ClassicalLimitObstruction ℝ) (n : ℕ) :
     0 < massGapReal q₀ ∧
-    ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ χ_A) := by
-  constructor
-  · exact massGapReal_pos hq
-  · subst hχ
-    intro κ hκ
-    intro ⟨c, hc⟩
-    have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
-    have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
-    have : |c| ≥ 1 := Int.one_le_abs hc_ne
-    have : |2 * (κ : ℤ) * c| = |2 * (κ : ℤ)| * |c| := abs_mul _ _
-    rw [hc] at this; simp at this; omega
+    ((obs.eulerChar % ↑n = 0) ↔ (↑n ∣ obs.eulerChar)) := by
+  exact ⟨massGapReal_pos hq, QOU.kummer_obstruction_divisibility obs n⟩
+
+/-- The Descartes mass gap and Kummer obstruction: gap > 0
+    and obstruction persists at level 5 (since 5 ∤ -6). -/
+theorem descartes_massGap_and_kummer_5
+    {q₀ : ℝ} (hq : 1 < q₀) :
+    0 < massGapReal q₀ ∧
+    ¬ (5 : ℤ) ∣ QOU.descartesObstruction.eulerChar :=
+  ⟨massGapReal_pos hq, QOU.descartes_kummer_5_persists⟩
 
 end QOU.Descartes

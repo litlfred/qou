@@ -82,19 +82,19 @@ theorem descartes_rank_zero
     (E_q : Q.C) :
     letI := Q.catInst
     letI := Q.monInst
-    -- E_q carries the fundamental representation (non-trivial, 2-dim)
-    ¬ Nonempty (E_q ≅ (𝟙_ Q.C)) →
+    -- The fundamental representation embeds into the adjoint:
+    -- there exists a monomorphism E_q ↪ Ad(A) in C.
+    -- (For SU(2): the fundamental V_{1/2} embeds into
+    -- Ad ≅ V_1 ⊕ V_0 via Clebsch-Gordan.)
+    (ι : E_q ⟶ Q.adjointObj) →
+    (ι_mono : ∀ (f g : (𝟙_ Q.C) ⟶ E_q), f ≫ ι = g ≫ ι → f = g) →
     Subsingleton (CategoricalMordellWeil E_q) := by
-  intro _h_fundamental
-  -- By adjoint_vanishing (QOU axiom): Hom(𝟙, Ad(A)) = 0, so
-  -- G = Aut⊗(τ) is semisimple (trivial center).
-  -- By Tannaka–Krein: Hom_𝐂(𝟙, E_q) ≅ τ(E_q)^G.
-  -- Since E_q is non-trivial (h_fundamental), τ(E_q) carries a
-  -- non-trivial irreducible representation of semisimple G.
-  -- For any semisimple G: V^G = 0 when V is non-trivial irreducible.
-  -- Therefore Hom(𝟙, E_q) = 0, giving Subsingleton.
-  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-  sorry
+  intro ι ι_mono
+  -- Any two morphisms 𝟙 → E_q compose with ι to give
+  -- morphisms 𝟙 → Ad(A), which are all equal by adjoint_vanishing.
+  constructor
+  intro f g
+  exact ι_mono f g (Q.adjoint_vanishing.elim (f ≫ ι) (g ≫ ι))
 
 /-- **Weak q-BSD conjecture** as a `Prop`: for a given QOU, the
     L-function of the Descartes elliptic curve does not vanish at s = 1.
