@@ -138,6 +138,7 @@ export default chapter({
         "q-ns-proof-strategy",
         "p1-spectral-sobolev",
         "p1-nonlinear-uniqueness",
+        "q-ns-proof-details",
         "regularity-breakdown",
         "p2-critical-exponent",
         "p3-blowup-yekutieli",
