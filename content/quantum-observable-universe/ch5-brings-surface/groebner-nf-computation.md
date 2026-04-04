@@ -161,22 +161,68 @@ share these eigenvalues.  The irrep separation requires the
 **multi-generator interaction** — how $\sigma_0$ and $\sigma_1$ act
 together — which is exactly the content of the full Gröbner NF.
 
-The $6 \times 6$ transfer matrix on the full $H_3(q)$ basis also
-fails to separate the irreps: it has two eigenvalues each of
-multiplicity $3$, identical to the $2 \times 2$ (proved symbolically).
-$F_{\mathrm{Pauli}}$ is fundamentally a **multi-generator phenomenon**.
+## The $6 \times 6$ transfer matrix: no shortcut
 
-Computed witnesses ($f_{64}$ at $q_0 = 1.10998$):
+One might hope that enlarging the transfer matrix from $2 \times 2$
+to $6 \times 6$ (acting on the full $H_3(q)$ basis
+$\{\mathbf{1}, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0,
+\sigma_0\sigma_1\sigma_0\}$) would separate the irreps.
+
+**Proved symbolically**: the $6 \times 6$ transfer matrix
+$T_6(c, d) = c \cdot R(\sigma_0) + d \cdot I_6$ has exactly
+**two distinct eigenvalues**, each of multiplicity $3$:
+
+$$
+  \lambda_+ = c \cdot q + d,
+  \qquad
+  \lambda_- = c \cdot (-q^{-1}) + d.
+$$
+
+These are **identical** to the $2 \times 2$ eigenvalues.  The
+multiplicity $3$ corresponds to:
+- $\lambda_+$: $1$ from sym + $2$ from std (the $q$-eigenvalue
+  subspace of the standard irrep)
+- $\lambda_-$: $1$ from alt + $2$ from std (the $-q^{-1}$-eigenvalue
+  subspace)
+
+The standard irrep has **both** eigenvalues ($q$ and $-q^{-1}$)
+because $\sigma_0$ in the $2$-dimensional standard representation
+has a $2 \times 2$ matrix with both eigenvalues.  The $6 \times 6$
+matrix does not separate sym from std or alt from std — it only
+sees the two eigenvalue sectors.
+
+**Conclusion**: the Pauli factor $F_{\mathrm{Pauli}}$ is
+irreducibly a **multi-generator phenomenon**.  No per-generator
+transfer matrix (of any size) can compute it.  The full Gröbner
+NF — the multi-generator Hecke algebra expansion — is required.
+
+This has a physical interpretation: the Pauli exclusion principle
+acts between **pairs** of fermions (quarks in a Borromean triplet),
+not on individual crossings.  The multi-generator structure IS the
+inter-quark correlation that the Pauli principle creates.
+
+Computed witnesses (exact in $\mathbb{Z}[t, t^{-1}]$ for $A \leq 12$,
+$f_{64}$ at $q_0$ for display):
 
 | Nucleus | $A$ | $F_{\mathrm{Pauli}}^{(A)}$ | Magic? |
 |:---:|:---:|:---:|:---:|
 | ${}^4\mathrm{He}$ | $4$ | $0.812$ | $\star\star$ doubly magic |
 | ${}^5\mathrm{He}$ | $5$ | $0.638$ | |
 | ${}^6\mathrm{Li}$ | $6$ | $0.472$ | |
+| ${}^7\mathrm{Li}$ | $7$ | $0.438$ | |
 | ${}^8\mathrm{Be}$ | $8$ | $0.368$ | |
-| ${}^{10}\mathrm{B}$ | $10$ | $0.508$ | |
-| ${}^{12}\mathrm{C}$ | $12$ | $0.099$ | |
-| ${}^{16}\mathrm{O}$ | $16$ | (computing) | $\star\star$ doubly magic |
+| ${}^{9}\mathrm{Be}$ | $9$ | $0.843$ | |
+| ${}^{10}\mathrm{B}$ | $10$ | $0.295$ | |
+| ${}^{11}\mathrm{B}$ | $11$ | $0.296$ | |
+| ${}^{12}\mathrm{C}$ | $12$ | $0.129$ | |
+| ${}^{16}\mathrm{O}$ | $16$ | $\approx 0.059$ | $\star\star$ doubly magic (float) |
+
+For each nucleus through $A = 12$, the symbolic witnesses are
+**exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(t)$,
+$\mathrm{net}(t)$, $\mathrm{observable}(t)$, and $\mathrm{coral}(t)$
+are elements of $\mathbb{Z}[t, t^{-1}]$ (Laurent polynomials over
+$\mathbb{Z}$ in $t = q^{1/2}$).  The denominator $2^{p_n}$ is
+tracked separately (from the doubled pn crossing convention).
 
 The $H_3(q)$ Pauli factor (from $3$-strand irrep decomposition)
 is $F_{\mathrm{Pauli}} = 0.6382$.  The $A$-strand values differ
