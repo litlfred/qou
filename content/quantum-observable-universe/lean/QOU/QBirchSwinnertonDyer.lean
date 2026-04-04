@@ -73,11 +73,14 @@ def CategoricalMordellWeil (E : C) : Type v :=
     Ref: [tate1974] https://doi.org/10.1007/BF01389745 -/
 theorem descartes_rank_zero
     {k : Type*} [Field k]
-    (QOU : QuantumObservableUniverse.{u, v} k)
-    (E_q : QOU.C)
+    (Q : QuantumObservableUniverse.{u, v} k)
+    (E_q : Q.C) :
+    letI := Q.catInst
+    letI := Q.monInst
     -- E_q carries the fundamental representation (non-trivial, 2-dim)
-    (h_fundamental : ¬ IsIsomorphic E_q (𝟙_ QOU.C))
-    : Subsingleton (CategoricalMordellWeil E_q) := by
+    ¬ Nonempty (E_q ≅ (𝟙_ Q.C)) →
+    Subsingleton (CategoricalMordellWeil E_q) := by
+  intro _h_fundamental
   -- By adjoint_vanishing (QOU axiom): Hom(𝟙, Ad(A)) = 0, so
   -- G = Aut⊗(τ) is semisimple (trivial center).
   -- By Tannaka–Krein: Hom_𝐂(𝟙, E_q) ≅ τ(E_q)^G.
