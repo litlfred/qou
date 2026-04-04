@@ -78,14 +78,3 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
    Navier--Stokes where $\mathrm{Re} \to \infty$ always produces
    instability.
 
-**Testable prediction.**  In the classical limit $q \to 1$, the
-$q$-Kolmogorov spectrum reduces to the standard $k^{-5/3}$ law, so
-no existing turbulence measurement is contradicted.  However, at
-the Planck scale, the discrete cascade predicts that turbulent
-energy spectra measured in [BEC vortex tangles](#rem:bec-vortex-data)
-should show deviations from $k^{-5/3}$ at high wavenumbers,
-consistent with the $q$-integer spacing.  Recent observations of
-quantum turbulence in ${}^{4}\mathrm{He}$ (Walmsley & Golov 2008)
-show precisely such deviations, which are conventionally attributed
-to vortex reconnection but may have a deeper algebraic origin in
-the $q$-deformation.

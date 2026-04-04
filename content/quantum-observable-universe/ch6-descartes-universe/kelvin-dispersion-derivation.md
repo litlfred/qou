@@ -124,9 +124,3 @@ Since $[k]_q \sim q^k$ for large $k$, high modes decay
 **doubly exponentially** in $k$ — the exponential UV cutoff
 noted in the [q-Navier--Stokes definition](#def:q-navier-stokes).
 
-**Classical limit.**
-As $q \to 1$: $[k]_q \to k$, $\Gamma_q \to j(j+1)$,
-$\nu_q \to 0$, and we recover the classical Kelvin dispersion
-$\omega_k = \Gamma k^2 / (4\pi a^2) \cdot (\ln(L/a) - c)$,
-where the logarithmic factor arises from the self-induction
-integral (which the $q$-deformation absorbs into $a_q$).

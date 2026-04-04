@@ -44,10 +44,3 @@ sections of the normal bundle $N_\varrho$.  Then:
      the rigid-rotor spectrum of angular momentum theory.
    - The selection rule $\Delta j = \pm 1$ reduces to the
      standard dipole selection rule.
-
-The vortex intensity levels $E_j^{(q)}$ are the fluid-dynamical
-analogue of atomic energy levels: a stable vortex in the brane
-fluid does not smoothly increase its circulation but **jumps**
-between discrete intensity states, with the transitions
-governed by the same $\mathrm{SU}_q(2)$ ladder operators that
-produce fermionic matter in the weight-space decomposition.
