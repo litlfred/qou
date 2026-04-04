@@ -13,11 +13,15 @@ export default paper({
   affiliations: [],
   date: "2026-03-21",
   abstract:
-    "This paper presents a mathematical framework for the Quantum Observable " +
-    "Universe (QOU).  We introduce the notion of quantum torsion in this setting, " +
-    "study its lifting to higher categorical structures, and examine the resulting " +
-    "interpretational and experimental consequences.  Speculative extensions are " +
-    "discussed in the final chapter.",
+    "This book develops the mathematical framework of the Quantum Observable " +
+    "Universe (QOU): a rigid braided monoidal category equipped with a " +
+    "Frobenius--Hopf object whose differential geometry is controlled by a " +
+    "substrate parameter $q$.  We study quantum torsion, its lifting through " +
+    "the Yekutieli brane tower, the resulting knot-theoretic particle spectrum " +
+    "on the Descartes universe (Bring's surface, $\\chi = -6$), the fluid " +
+    "dynamics of the brane including a categorical Navier--Stokes obstruction, " +
+    "and physical predictions.  Experimental consequences are collected in the " +
+    "final chapter.",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
     nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
@@ -29,17 +33,26 @@ export default paper({
     frakP: { tex: "\\mathfrak{P}",  unicode: "𝔓" },
   },
   chapters: [
+    // ── Part I: Foundations ─────────────────────────────────────────
     chapterRef({ dir: "ch0-introduction" }),
-    chapterRef({ dir: "ch1-quantum-observable-universe" }),
-    chapterRef({ dir: "ch2-quantum-geometry" }),
-    chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
-    chapterRef({ dir: "ch4-path-integrals-and-braiding" }),
-    chapterRef({ dir: "ch6-descartes-universe" }),
-    chapterRef({ dir: "ch5-brings-surface" }),
-    chapterRef({ dir: "ch7-observations" }),
-    chapterRef({ dir: "ch8-algebraic-substrate" }),
-    chapterRef({ dir: "ch10-fluid-dynamics" }),
-    chapterRef({ dir: "ch9-information-theory" }),
+    chapterRef({ dir: "ch1-quantum-observable-universe" }),  // QU axioms
+    chapterRef({ dir: "ch2-quantum-geometry" }),              // QOU axioms, q-operators
+    chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),   // Yekutieli tower, brane tower
+
+    // ── Part II: Structure ────────────────────────────────────────
+    chapterRef({ dir: "ch4-path-integrals-and-braiding" }),  // Braids, knots, Hecke
+    chapterRef({ dir: "ch6-descartes-universe" }),           // Models of QOUs (general)
+    chapterRef({ dir: "ch8-algebraic-substrate" }),          // Frobenius substrate, defects
+
+    // ── Part III: The Descartes Universe ──────────────────────────
+    chapterRef({ dir: "ch5-brings-surface" }),               // Bring's surface, χ = -6
+    chapterRef({ dir: "ch10-fluid-dynamics" }),              // Brane fluid, q-NS, NS obstruction
+    chapterRef({ dir: "ch9-information-theory" }),           // Information, computation
+
+    // ── Part IV: Observations ────────────────────────────────────
+    chapterRef({ dir: "ch7-observations" }),                 // Physical predictions (last)
+
+    // ── Back matter ──────────────────────────────────────────────
     chapterRef({ dir: "ch8-glossary" }),
     chapterRef({ dir: "appendix-knot-periodic-table" }),
     chapterRef({ dir: "appendix-transfer-matrices" }),
