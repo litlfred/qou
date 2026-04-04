@@ -63,7 +63,7 @@ theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
     (g : ℕ) (h_prefix : a :: rest ∈ support) :
     IsI9Absorbable support (a :: rest ++ [g]) := by
   refine ⟨?_, ?_⟩
-  · simp; omega
+  · simp
   · sorry
 
 -- ════════════════════════════════════════════════════════════════
