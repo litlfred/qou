@@ -187,6 +187,11 @@ impl HeckeElem {
 #[derive(Default, Clone)]
 struct PauliAcc {
     tr_alt: f64, tr_sym: f64, net: f64,
+    /// Per-length weight data: (sum_coeff, sum_abs_coeff) at each length.
+    /// Preserved even after stripping — gives full weight distribution.
+    per_length_net: Vec<f64>,   // Σ c_w for |w| = ℓ
+    per_length_abs: Vec<f64>,   // Σ |c_w| for |w| = ℓ
+    per_length_count: Vec<u64>, // number of terms at length ℓ
 }
 
 impl PauliAcc {
@@ -194,6 +199,15 @@ impl PauliAcc {
         self.tr_alt += coeff * (-qi).powi(word_len as i32);
         self.tr_sym += coeff * q.powi(word_len as i32);
         self.net += coeff;
+        // Extend per-length vectors if needed
+        while self.per_length_net.len() <= word_len {
+            self.per_length_net.push(0.0);
+            self.per_length_abs.push(0.0);
+            self.per_length_count.push(0);
+        }
+        self.per_length_net[word_len] += coeff;
+        self.per_length_abs[word_len] += coeff.abs();
+        self.per_length_count[word_len] += 1;
     }
     fn from_elem(elem: &HeckeElem, q: f64, qi: f64) -> Self {
         let mut acc = Self::default();
@@ -204,6 +218,34 @@ impl PauliAcc {
         self.tr_alt += other.tr_alt;
         self.tr_sym += other.tr_sym;
         self.net += other.net;
+        for (i, (&n, &a)) in other.per_length_net.iter().zip(other.per_length_abs.iter()).enumerate() {
+            while self.per_length_net.len() <= i {
+                self.per_length_net.push(0.0);
+                self.per_length_abs.push(0.0);
+                self.per_length_count.push(0);
+            }
+            self.per_length_net[i] += n;
+            self.per_length_abs[i] += a;
+            self.per_length_count[i] += other.per_length_count.get(i).copied().unwrap_or(0);
+        }
+    }
+    /// Weight at length ≤ 1 / total weight (shell factor)
+    fn shell_factor(&self) -> f64 {
+        let w_opt: f64 = self.per_length_abs.iter().take(2).sum();
+        let w_total: f64 = self.per_length_abs.iter().sum();
+        if w_total > 0.0 { w_opt / w_total } else { 0.0 }
+    }
+    /// Palindromic defect of the weight distribution
+    fn palindromic_defect(&self) -> f64 {
+        let n = self.per_length_abs.len();
+        if n == 0 { return 0.0; }
+        let total: f64 = self.per_length_abs.iter().sum();
+        if total < 1e-30 { return 0.0; }
+        let defect: f64 = (0..n).map(|i| {
+            let dual = n - 1 - i;
+            (self.per_length_abs[i] - self.per_length_abs.get(dual).copied().unwrap_or(0.0)).abs()
+        }).sum();
+        defect / total
     }
 }
 
@@ -526,7 +568,36 @@ fn main() {
                         println!("    Odd-odd nucleus: pairing deficit suppresses F.");
                     }
                 }
+                // Merge kept + accumulated for full per-length data
+                let mut total_acc = accum.clone();
+                total_acc.merge(&kept);
+
+                println!("  Shell factor F_shell = W(≤1)/W(total) = {:.6}", total_acc.shell_factor());
+                println!("  Palindromic defect δ = {:.6}", total_acc.palindromic_defect());
                 println!();
+
+                // Show per-length weight distribution (condensed)
+                let max_disp = total_acc.per_length_abs.len();
+                if max_disp > 0 {
+                    println!("  Weight distribution by word length:");
+                    println!("  {:>4} {:>10} {:>10} {:>8}", "ℓ", "|W|(ℓ)", "net(ℓ)", "terms");
+                    let total_w: f64 = total_acc.per_length_abs.iter().sum();
+                    let mut cumul = 0.0;
+                    for i in 0..max_disp {
+                        let w = total_acc.per_length_abs[i];
+                        if w < 1e-15 { continue; }
+                        cumul += w;
+                        let pct = w / total_w * 100.0;
+                        let n = total_acc.per_length_net[i];
+                        let cnt = total_acc.per_length_count.get(i).copied().unwrap_or(0);
+                        if pct > 0.1 || i <= 1 || i >= max_disp - 2 {
+                            println!("  {:>4} {:>10.4} {:>+10.4} {:>8}  ({:.1}%, cumul {:.1}%)",
+                                i, w, n, cnt, pct, cumul / total_w * 100.0);
+                        }
+                    }
+                    println!();
+                }
+
                 println!("  Reference: H₃(q) F_Pauli = 0.6382 (from 3-strand irrep theory).");
                 println!("  This A-strand F_Pauli is the multi-generator witness.");
                 println!("════════════════════════════════════════════════════════");
