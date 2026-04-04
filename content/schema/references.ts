@@ -1594,6 +1594,49 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2010]] },
     ISBN: "978-0-224-08036-1",
   }),
+
+  // ── Birch & Swinnerton-Dyer 1965 ─────────────────────────────
+  ref({
+    id: "birch1965",
+    type: "article-journal",
+    title: "Notes on Elliptic Curves. II",
+    author: [
+      { family: "Birch", given: "Bryan John" },
+      { family: "Swinnerton-Dyer", given: "Peter" },
+    ],
+    "container-title": "Journal f\u00fcr die reine und angewandte Mathematik",
+    issued: { "date-parts": [[1965]] },
+    volume: "218",
+    page: "79-108",
+    DOI: "10.1515/crll.1965.218.79",
+  }),
+
+  // ── Wiles 1995 ────────────────────────────────────────────────
+  ref({
+    id: "wiles1995",
+    type: "article-journal",
+    title: "Modular Elliptic Curves and Fermat's Last Theorem",
+    author: [{ family: "Wiles", given: "Andrew" }],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1995]] },
+    volume: "141",
+    issue: "3",
+    page: "443-551",
+    DOI: "10.2307/2118559",
+  }),
+
+  // ── Tate 1974 ─────────────────────────────────────────────────
+  ref({
+    id: "tate1974",
+    type: "article-journal",
+    title: "The Arithmetic of Elliptic Curves",
+    author: [{ family: "Tate", given: "John" }],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[1974]] },
+    volume: "23",
+    page: "179-206",
+    DOI: "10.1007/BF01389745",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

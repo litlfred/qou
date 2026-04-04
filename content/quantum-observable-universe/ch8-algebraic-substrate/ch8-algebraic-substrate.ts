@@ -82,6 +82,7 @@ export default chapter({
         "quantum-gap-collapse",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
+        "q-birch-swinnerton-dyer",
         "macroscopic-stability-equivalence",
       ],
     }),
