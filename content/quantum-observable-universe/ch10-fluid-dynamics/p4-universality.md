@@ -1,4 +1,4 @@
-The [critical exponent](#prop:critical-exponent) $\alpha = 5/3$
+The [critical exponent](#prop:critical-exponent) $\alpha = 4/3$
 governs the rate at which enstrophy diverges as $q \to 1$.
 The question is whether $\alpha$ depends on the initial data
 $v_0$ or only on the categorical invariants of
@@ -56,7 +56,7 @@ energy $E_0$ enters $\Lambda_q$ but affects only the
 **prefactor**, not the **exponent**: $\Lambda_q \sim
 (\pi^2/6)E_0 \cdot (q-1)^{-1}$, so $\Lambda_q$ scales as
 $(q-1)^{-1}$ regardless of $E_0$.  The critical exponent
-$\alpha = 5/3$ comes from the cascade depth scaling, not from
+$\alpha = 4/3$ comes from the cascade depth scaling, not from
 $\Lambda_q$.
 
 **Universality class.**
@@ -68,7 +68,7 @@ determined by:
 | Spatial dimension | $d = 3$ | Contact structure on $\mathcal{S}$ |
 | Internal symmetry | $\mathrm{SU}(2)$ | Gauge group from observability |
 | Euler characteristic | $\chi(A)$ | Frobenius--Hopf topology |
-| Critical exponent | $\alpha = 5/3$ | Kolmogorov + cascade depth |
+| Critical exponent | $\alpha = 4/3$ | Kolmogorov + cascade depth |
 
 Different QOU realisations (different $\chi(A)$) could in
 principle give different $\alpha$, because $\chi(A)$ affects the

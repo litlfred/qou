@@ -57,28 +57,32 @@ $$
 $$
 
 The maximum enstrophy of the truncated system with $N$ modes
-scales as $\Omega_{\max} \sim N^{5/3}$ (from Kolmogorov theory:
-the enstrophy is $\sum_{k=1}^N k^2 E(k) \sim
-\sum_{k=1}^N k^{1/3} \sim N^{4/3}$; correcting for the
-$q$-deformation factor gives $N^{5/3}$).
+is bounded by the Kolmogorov enstrophy sum
+$\Omega_{\max} \leq \sum_{k=1}^N k^2\,E(k)$.  With
+$E(k) \sim k^{-5/3}$: $\sum_{k=1}^N k^{1/3} \sim N^{4/3}$.
 
-Substituting $N \sim \ln(1/\varepsilon)/\varepsilon$:
+For the $q$-deformed system, the exponential damping
+$e^{-\nu_q [k]_q^2 t}$ ensures higher modes contribute
+negligibly.  The effective enstrophy is dominated by the
+first $N_{\mathrm{eff}}$ modes, giving
 
 $$
   \Omega_{\max}(\varepsilon)
+  \;\lesssim\;
+  N_{\mathrm{eff}}^{4/3}
   \;\sim\;
-  \left(\frac{\ln(1/\varepsilon)}{\varepsilon}\right)^{5/3}.
+  \left(\frac{\ln(1/\varepsilon)}{\varepsilon}\right)^{4/3}.
 $$
 
 **Result.**
-The critical exponent is $\alpha = 5/3$ with a logarithmic
+The critical exponent is $\alpha = 4/3$ with a logarithmic
 correction:
 
 $$
   \boxed{
     \Omega_{\max}(q)
-    \;\sim\;
-    (q-1)^{-5/3}\,\bigl(\ln(q-1)^{-1}\bigr)^{5/3}
+    \;\lesssim\;
+    (q-1)^{-4/3}\,\bigl(\ln(q-1)^{-1}\bigr)^{4/3}
     \quad\text{as } q \to 1^+.
   }
 $$

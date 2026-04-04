@@ -59,11 +59,11 @@ $$
 $$
 
 The constant $C_q$ is finite for all $q > 1$ (the series
-converges because $[k]_q^{-2} = O(q^{-2k})$) and diverges as
-$q \to 1$ (where the sum becomes the divergent harmonic series
-$\sum k^{-2} \cdot k^2/k^2$... becomes $\sum 1/k^2$ which
-converges — but the embedding constant blows up through the
-pre-factor).
+converges because $[k]_q^{-2} = O(q^{-2k})$).  As $q \to 1$,
+$[k]_q \to k$ and $C_q^2 \to \sum k^{-2} = \pi^2/6$ in the
+1-dimensional case.  On the 3-dimensional state bundle
+$\mathcal{S}$, eigenvalue multiplicities $(2j+1)^2$ cause
+$C_q$ to diverge — the embedding fails in the classical limit.
 
 **Proof of (a).**
 
@@ -111,13 +111,13 @@ resolvent is not merely compact but **trace-class**:
 $$
   \sum_{k=1}^\infty \frac{1}{|\lambda + [k]_q^2|}
   \;\leq\;
-  \sum_{k=1}^\infty \frac{(q-q^{-1})^2}{q^{2k}}
-  \;=\;
-  \frac{(q-q^{-1})^2}{q^2 - 1}
-  \;<\; \infty.
+  \sum_{k=1}^\infty \frac{1}{[k]_q^2}
+  \;\leq\;
+  \frac{(q - q^{-1})^2\,q^2}{q^2 - 1}
+  \;<\; \infty,
 $$
 
-The trace-class property follows from Step 4.
+using $[k]_q \geq q^{k-1}/(q - q^{-1})$ for $k \geq 1$.
 
 **Proof of (c): Sobolev embedding.**
 

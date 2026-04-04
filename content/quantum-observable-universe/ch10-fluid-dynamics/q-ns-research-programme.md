@@ -80,7 +80,7 @@ $$
 $$
 
 The [q-turbulence spectrum](#prop:q-turbulence-spectrum) suggests
-$\alpha = 3/2$ (matching the Kolmogorov 4/5 law), but this needs
+$\alpha = 4/3$ (matching the Kolmogorov 4/5 law), but this needs
 proof.
 
 **Problem 3. Identify the blowup mechanism.**

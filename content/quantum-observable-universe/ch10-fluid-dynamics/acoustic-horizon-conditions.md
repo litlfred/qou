@@ -118,10 +118,9 @@ $$
 $$
 
 At the fundamental level $j = 1/2$:
-$[1/2]_q[3/2]_q = q^{1/2}(q+q^{-1})/(q-q^{-1})^2$, so the
-horizon radius depends sensitively on $q$.  For $q \approx 1.110$,
-$r_H$ is of order the [Planck length](#def:planck-length)
-$\ell_q = (q-1)/q$.
+$[1/2]_q[3/2]_q = (q^2 + q^{-2} - q - q^{-1})/(q - q^{-1})^2
+\approx 0.75$ at $q \approx 1.110$.  The horizon radius $r_H$
+is of order $\ell_q = (q-1)/q$.
 
 **Connection to gravitational emergence.**
 The [GR substrate geometry](#rem:gr-substrate-geometry) identifies
