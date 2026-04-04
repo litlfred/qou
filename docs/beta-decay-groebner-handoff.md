@@ -276,7 +276,37 @@ fibre operations for beta decay.
 | 𝒩(Z,N) | Nucleus |
 | 𝒩̄(X) | Gröbner normal form of X |
 | ℵ₁, ℵ₂ | Formal atom variables in quotient algebra |
+| ℵ₁^∨ | **Dual atom** — the input slot (negative coefficient) |
+| ℵ₁^(n) | Completeness level n/N (n of N Schubert cells occupied) |
+| ℵ₁^(N) = ℵ₁ | Full completeness (self-dual occupancy) |
 | 𝔲₀ | T_{2,1}(u_r) — leading quark crossing |
 | 𝔥₁ | T_{3,1}(u_g, d_b, e⁻) — Hopf chain |
 | 𝔫₁ | σ₃·σ₄·σ₃·σ₅ — neutron tail |
 | I₁-I₇ | Quotient ideal generators (structural operations) |
+
+### Duality interpretation
+
+The NF three-part decomposition has a natural duality structure:
+
+```
+𝒩̄(atom) = Σ cᵢ · ℵ^∨ · wᵢ      (INPUTS: dual atom × words)
+         + Σ cⱼ · ℵ^(k<N) · wⱼ  (MEDIATORS: incomplete, degree ≥ 1)
+         + Σ cₖ · ℵ · wₖ         (OBSERVABLE: full atom × structure)
+```
+
+- **ℵ^∨** (dual/vee): negative coefficients = what the atom is receptive to
+- **ℵ^(k<N)**: incomplete occupancy = structural defect (I₆)
+- **ℵ**: full completeness = the observable atom
+
+### Shell closure as Bruhat self-duality
+
+**Magic number ↔ palindromic NF ↔ self-dual Schubert cell occupancy**
+
+- He-4: {1,3,4,3,1} = Poincaré(S₄) — every occupied cell has a dual
+  partner that is also occupied. This IS the definition of shell closure.
+- Tritium: {1,1,1,1} not palindromic — some occupied cells map to
+  unoccupied cells under Bruhat duality. That asymmetry IS the
+  1-term excess (4 terms vs 3 target) and physical instability.
+- For a NON-magic nucleus, occupied cells are NOT self-dual:
+  the duality pairing maps some occupied to unoccupied. Shell
+  incompleteness = duality defect.
