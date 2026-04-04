@@ -80,6 +80,8 @@ export default chapter({
         "classical-limit-intro",
         "classical-limit-functor",
         "quantum-gap-collapse",
+        "classical-limit-obstruction",
+        "qou-obstruction-reduction",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
         "q-birch-swinnerton-dyer",
