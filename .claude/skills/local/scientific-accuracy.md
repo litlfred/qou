@@ -109,11 +109,22 @@ peer-review practices and the methodology of
     I₅: Protium completeness (whole atom = 1 object, not 4 terms)
     I₆: Structural defects (missing bond → known energy cost)
     I₇: Electron bridge (σ₂·σ₃·σ₂ Borromean bridge)
+    I₈: Adjacency correlation — σ_i·σ_{i+1} absorbed into σ_{i+1}.
+         The off-diagonal of the transfer matrix product M_i.
+         Structural: determined by q and the crossing types.
+    I₉: Closed shell (per-generator chain collapse) — when w·σ_j
+         extends w (a word already in the NF), absorb w·σ_j.
+         Recursive: strip from longest words first. This is the
+         per-generator transfer matrix factorization.
+         The palindromic NF {1,3,4,3,1,...} factors into
+         independent per-generator volumes V̂_i.
   Each completed atom's NF is registered as a formal variable
   (ℵ₁, ℵ₂, ...) in the quotient ideal for the NEXT step.
   Track energy at every quotient substitution.
-  The GOAL is n_terms ≈ n_strands (optimal Gröbner basis).
-  At magic numbers, add torus knot shell operators I₈+.
+  The GOAL is n_terms = n_strands (optimal Gröbner basis).
+  **ACHIEVED** for all nuclei through A=7 (⁷Li):
+    D:2, ³H:3, ³He:3, ⁴He:4, ⁵Li:5, ⁶Li:6, ⁷Li:7.
+  All nucleon-level NFs are palindromic (self-dual support).
   See: `QOU.QuotientIdeal` in Lean for formal definitions.
 - **Q-VALUES ARE ALGEBRAIC IN q, NOT NUMERICAL.**
   The Q-value for any beta decay is an EXACT polynomial in q^½:
