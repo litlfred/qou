@@ -333,6 +333,33 @@ impl Engine {
         removed
     }
 
+    /// Analyze high-frequency suffix patterns in the current NF.
+    /// Returns top patterns that could become new structural ideals.
+    fn analyze_patterns(terms: &FxHashMap<TreeWord, f64>, top_n: usize) -> Vec<(Vec<u8>, usize, f64)> {
+        // Count suffix patterns of length 2, 3, 4
+        let mut suffix_counts: FxHashMap<Vec<u8>, (usize, f64)> = FxHashMap::default();
+
+        for (word, &coeff) in terms {
+            let l = word.len();
+            for pat_len in 2..=std::cmp::min(4, l) {
+                let mut suffix = Vec::with_capacity(pat_len);
+                for j in (l - pat_len)..l {
+                    suffix.push(word.get(j));
+                }
+                let entry = suffix_counts.entry(suffix).or_insert((0, 0.0));
+                entry.0 += 1;
+                entry.1 += coeff.abs();
+            }
+        }
+
+        let mut patterns: Vec<(Vec<u8>, usize, f64)> = suffix_counts.into_iter()
+            .map(|(pat, (count, weight))| (pat, count, weight))
+            .collect();
+        patterns.sort_by(|a, b| b.1.cmp(&a.1)); // sort by count
+        patterns.truncate(top_n);
+        patterns
+    }
+
     fn build_nucleus_pauli(&self, z: usize, n: usize, quotient_after: usize)
         -> (HeckeElem, PauliAcc)
     {
@@ -341,21 +368,53 @@ impl Engine {
         types.extend(vec![b'n'; n]);
         let mut elem = HeckeElem::identity();
         let mut accum = PauliAcc::default();
+        let t_start = Instant::now();
 
         for k in 1..a {
+            let t_strand = Instant::now();
             for i in 0..k {
                 let (c, d) = self.crossing_coeffs(types[i], types[k]);
                 self.multiply_and_reduce(&mut elem, i as u8, c, d);
             }
+
+            let n_before = elem.n_terms();
             if a > quotient_after && k < a - 1 {
+                // Pattern analysis BEFORE stripping
+                if n_before > 1000 {
+                    let patterns = Self::analyze_patterns(&elem.terms, 5);
+                    eprintln!("    top suffixes: {}",
+                        patterns.iter().map(|(pat, cnt, wt)| {
+                            let ps: String = pat.iter().map(|g| format!("σ{}", g)).collect::<Vec<_>>().join("·");
+                            format!("{}(×{}, w={:.2})", ps, cnt, wt)
+                        }).collect::<Vec<_>>().join("  "));
+                }
+
                 let mut terms = std::mem::take(&mut elem.terms);
                 let removed = self.apply_quotient_with_pauli(&mut terms);
                 accum.merge(&removed);
                 elem.terms = terms;
             }
+
             let mem_mb = elem.memory_bytes() as f64 / 1_048_576.0;
-            eprintln!("  strand {}/{}: {} terms, {:.0}MB",
-                k, a-1, elem.n_terms(), mem_mb);
+            let elapsed = t_start.elapsed().as_secs_f64();
+            let strand_ms = t_strand.elapsed().as_millis();
+
+            // Running Pauli accumulation
+            let mut running = accum.clone();
+            for (w, &c) in &elem.terms {
+                running.add(c, w.len(), self.q, self.qi);
+            }
+            let f_running = if running.net.abs() > 1e-30 {
+                running.tr_alt.abs() / running.net.abs()
+            } else { 0.0 };
+
+            if n_before != elem.n_terms() {
+                eprintln!("  strand {}/{}: {} → {} terms, {:.0}MB, {:.1}s total  F≈{:.4}",
+                    k, a-1, n_before, elem.n_terms(), mem_mb, elapsed, f_running);
+            } else {
+                eprintln!("  strand {}/{}: {} terms, {:.0}MB, {:.1}s total  F≈{:.4}",
+                    k, a-1, elem.n_terms(), mem_mb, elapsed, f_running);
+            }
         }
         (elem, accum)
     }
