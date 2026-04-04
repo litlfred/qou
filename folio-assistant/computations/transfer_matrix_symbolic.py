@@ -33,8 +33,16 @@ reduction but via matrix products instead of word reduction.
 Usage:
     cd folio-assistant/computations
     python3 transfer_matrix_symbolic.py
+
+    # As a library:
+    from transfer_matrix_symbolic import (
+        SymbolicTransferMatrix, NucleusTransferMatrix,
+        T_pp, T_nn, T_mix, Delta_beta,
+        beta_decay_qvalue,
+    )
 """
 
+import math
 import sympy as sp
 from sympy import sqrt, Rational, log, simplify, expand, Matrix
 from experimental_constants import (
@@ -43,7 +51,7 @@ from experimental_constants import (
     M_P_MEV,
 )
 
-# ── Symbolic ring: exact in q ──────────────────────────────────
+# -- Symbolic ring: exact in q ------------------------------------------
 
 q = sp.Symbol('q', positive=True)
 q_inv = 1 / q
@@ -58,10 +66,15 @@ z_markov = 1 / (q_half + q_half_inv)  # Markov parameter
 # Substrate parameter q0 (from q_parameter.py derivation)
 Q0 = 1.10998
 
+# Threshold: for A <= SYMBOLIC_THRESHOLD, keep the full Skein
+# polynomial symbolic. For larger nuclei, per-generator volumes
+# remain symbolic but P_N is evaluated numerically.
+SYMBOLIC_THRESHOLD = 6
 
-# ════════════════════════════════════════════════════════════════
-# 1. SymbolicTransferMatrix — wraps a 2x2 sympy Matrix
-# ════════════════════════════════════════════════════════════════
+
+# ========================================================================
+# 1. SymbolicTransferMatrix -- wraps a 2x2 sympy Matrix
+# ========================================================================
 
 class SymbolicTransferMatrix:
     """A 2x2 transfer matrix with symbolic entries in q.
@@ -165,9 +178,9 @@ class SymbolicTransferMatrix:
             print(f"  [{row[0]},  {row[1]}]")
 
 
-# ════════════════════════════════════════════════════════════════
+# ========================================================================
 # 2. Pre-built matrices
-# ════════════════════════════════════════════════════════════════
+# ========================================================================
 
 # Crossing coefficients (exact in q)
 C_PP, D_PP = sp.Integer(1), sp.Integer(0)
@@ -211,17 +224,22 @@ def crossing_matrix(ti, tj):
     return SymbolicTransferMatrix(c=c, d=d)
 
 
-# ════════════════════════════════════════════════════════════════
-# 3. NucleusTransferMatrix — builds the full transfer chain
-# ════════════════════════════════════════════════════════════════
+# ========================================================================
+# 3. NucleusTransferMatrix -- builds the full transfer chain
+# ========================================================================
 
 class NucleusTransferMatrix:
     """Transfer matrix chain for a nucleus N(Z, N).
 
     Builds an ordering of Z protons followed by N neutrons,
     computes per-generator transfer matrix products, extracts
-    Markov-traced volumes V_hat_i, and computes the Skein
+    Markov-traced volumes V_hat_i(q), and computes the Skein
     polynomial P_N(q) = prod_i V_hat_i(q).
+
+    Per-generator volumes are always symbolic (exact in q).
+    The full Skein polynomial is kept symbolic only for small
+    nuclei (A <= SYMBOLIC_THRESHOLD); for larger nuclei, only
+    numeric evaluation is available via skein_at().
     """
 
     def __init__(self, Z, N, ordering=None):
@@ -239,15 +257,16 @@ class NucleusTransferMatrix:
 
         if ordering is not None:
             if len(ordering) != self.A:
-                raise ValueError(f"Ordering length {len(ordering)} != A = {self.A}")
+                raise ValueError(
+                    f"Ordering length {len(ordering)} != A = {self.A}")
             self.ordering = list(ordering)
         else:
             self.ordering = ['p'] * Z + ['n'] * N
 
-        # Build per-generator chains
-        self._symbolic = (self.A <= 6)  # only compute symbolically for small nuclei
+        # Build per-generator chains. Each generator sigma_i corresponds
+        # to nucleon i crossing with all nucleons j > i.
         self._generator_matrices = []  # M_i = product of T matrices at gen i
-        self._volumes = []             # V_hat_i symbolic expressions
+        self._volumes = []             # V_hat_i: symbolic expressions in q
 
         for i in range(self.A - 1):
             M = SymbolicTransferMatrix.identity()
@@ -257,13 +276,12 @@ class NucleusTransferMatrix:
             self._generator_matrices.append(M)
             self._volumes.append(M.markov_trace())
 
-        # Skein polynomial (symbolic product of volumes)
-        if self._symbolic:
-            self._skein = sp.Integer(1)
+        # Full Skein polynomial: symbolic product only for small A
+        self._skein_symbolic = None
+        if self.A <= SYMBOLIC_THRESHOLD:
+            self._skein_symbolic = sp.Integer(1)
             for v in self._volumes:
-                self._skein = expand(self._skein * v)
-        else:
-            self._skein = None  # too large; use skein_at() for numeric
+                self._skein_symbolic = expand(self._skein_symbolic * v)
 
     @property
     def n_generators(self):
@@ -283,23 +301,47 @@ class NucleusTransferMatrix:
         return list(self._volumes)
 
     def skein_polynomial(self):
-        """Return P_N(q) = prod_i V_hat_i(q) (symbolic expression in q)."""
-        return self._skein
+        """Return P_N(q) = prod_i V_hat_i(q) as a symbolic expression.
+
+        Only available for small nuclei (A <= SYMBOLIC_THRESHOLD).
+        For larger nuclei, use skein_at(q_val) for numeric evaluation.
+        """
+        if self._skein_symbolic is None:
+            raise RuntimeError(
+                f"Full symbolic Skein polynomial not available for A={self.A} "
+                f"(exceeds threshold {SYMBOLIC_THRESHOLD}). "
+                f"Use skein_at(q_val) for numeric evaluation.")
+        return self._skein_symbolic
 
     def skein_at(self, q_val):
-        """Evaluate the Skein polynomial at q = q_val.
+        """Evaluate P_N(q) = prod_i V_hat_i(q) at q = q_val.
 
-        For large nuclei (A > 6), evaluates per-generator volumes numerically
-        and multiplies, avoiding symbolic polynomial explosion.
+        Works for any nucleus size. Evaluates each per-generator
+        volume numerically, then takes the product.
         """
-        if self.A <= 6:
-            return float(self._skein.subs(q, q_val))
-        else:
-            # Numeric: multiply per-generator volumes evaluated at q_val
-            result = 1.0
-            for v in self._volumes:
-                result *= float(v.subs(q, q_val))
-            return result
+        product = 1.0
+        for v in self._volumes:
+            product *= float(v.subs(q, q_val))
+        return product
+
+    def log_skein_at(self, q_val):
+        """Evaluate ln|P_N(q)| at q = q_val.
+
+        More numerically stable than log(skein_at) for large nuclei.
+        Also returns the sign.
+        """
+        log_sum = 0.0
+        sign = 1
+        for v in self._volumes:
+            vi = float(v.subs(q, q_val))
+            if vi < 0:
+                sign *= -1
+                log_sum += math.log(-vi)
+            elif vi > 0:
+                log_sum += math.log(vi)
+            else:
+                return float('-inf'), 0
+        return log_sum, sign
 
     def volume_at(self, i, q_val):
         """Evaluate V_hat_i at q = q_val."""
@@ -308,79 +350,43 @@ class NucleusTransferMatrix:
     def compare(self, daughter):
         """Compare this nucleus (parent) with a daughter nucleus.
 
-        Returns a dict with:
-          - ln_ratio: symbolic ln(P_dau / P_par)
-          - per_generator: list of (V_par_i, V_dau_i) pairs
+        Returns a dict with symbolic and numeric results.
+        For large nuclei, symbolic ratio is omitted.
         """
-        ratio = expand(daughter.skein_polynomial() / self.skein_polynomial())
-        # For the symbolic log, keep it as log(ratio)
-        ln_ratio = log(ratio)
+        result = {
+            'per_generator': [],
+        }
 
-        per_gen = []
         n = min(self.n_generators, daughter.n_generators)
         for i in range(n):
-            per_gen.append((self._volumes[i], daughter._volumes[i]))
+            result['per_generator'].append(
+                (self._volumes[i], daughter._volumes[i]))
 
-        return {
-            'ratio': ratio,
-            'ln_ratio': ln_ratio,
-            'per_generator': per_gen,
-        }
+        # Full symbolic ratio only for small nuclei
+        if (self._skein_symbolic is not None
+                and daughter._skein_symbolic is not None):
+            ratio = expand(
+                daughter.skein_polynomial() / self.skein_polynomial())
+            result['ratio_sym'] = ratio
+            result['ln_ratio_sym'] = log(ratio)
+
+        return result
 
     def __repr__(self):
         return (f"NucleusTransferMatrix(Z={self.Z}, N={self.N}, "
                 f"A={self.A}, ordering={''.join(self.ordering)})")
 
 
-# ════════════════════════════════════════════════════════════════
-# 4. beta_decay_qvalue — symbolic Q-value computation
-# ════════════════════════════════════════════════════════════════
-
-def skein_ln_numeric(Z, N, q_val):
-    """Fast numeric ln|P_N(q)| — no sympy overhead, no overflow.
-
-    Returns (ln_abs_P, sign) where P = sign * exp(ln_abs_P).
-    """
-    import math
-    A = Z + N
-    types = ['p'] * Z + ['n'] * N
-    q_v = q_val
-    qi_v = 1.0 / q_v
-    HA_v = q_v - qi_v
-    s_v = q_v**0.5 - qi_v**0.5
-    z_v = 1.0 / (q_v**0.5 + qi_v**0.5)
-
-    def crossing_cd(ti, tj):
-        if ti == 'p' and tj == 'p': return 1.0, 0.0
-        elif ti == 'n' and tj == 'n': return q_v**2, -q_v * s_v
-        else: return (1 + q_v**2) / 2, -q_v * s_v / 2
-
-    ln_P = 0.0
-    sign = 1
-    for i in range(A - 1):
-        M = [[1.0, 0.0], [0.0, 1.0]]
-        for j in range(i + 1, A):
-            c, d = crossing_cd(types[i], types[j])
-            T = [[c * HA_v + d, c], [c, d]]
-            M = [[M[0][0]*T[0][0]+M[0][1]*T[1][0], M[0][0]*T[0][1]+M[0][1]*T[1][1]],
-                 [M[1][0]*T[0][0]+M[1][1]*T[1][0], M[1][0]*T[0][1]+M[1][1]*T[1][1]]]
-        V = z_v * M[0][0] + M[1][0]
-        if V < 0:
-            sign *= -1
-            V = -V
-        if V > 0:
-            ln_P += math.log(V)
-        else:
-            return -float('inf'), 0
-
-    return ln_P, sign
-
+# ========================================================================
+# 4. beta_decay_qvalue -- Q-value computation
+# ========================================================================
 
 def beta_decay_qvalue(Z_par, N_par, q_val=Q0, label=""):
-    """Compute the symbolic Q-value for beta-minus decay N(Z,N) -> N(Z+1,N-1).
+    """Compute the Q-value for beta-minus decay N(Z,N) -> N(Z+1,N-1).
 
     Builds parent (Z, N) and daughter (Z+1, N-1) nuclei, computes
-    ln(P_dau / P_par) symbolically and numerically at q_val.
+    ln(P_dau / P_par) symbolically (for small A) and numerically
+    at q_val.
 
     Args:
         Z_par: proton number of parent
@@ -389,72 +395,61 @@ def beta_decay_qvalue(Z_par, N_par, q_val=Q0, label=""):
         label: human-readable label for the nucleus
 
     Returns:
-        dict with symbolic and numeric results
+        dict with symbolic (when available) and numeric results
     """
-    A = Z_par + N_par
-    # For small nuclei, compute symbolically; for large, go numeric directly
-    if A <= 6:
-        parent = NucleusTransferMatrix(Z_par, N_par)
-        daughter = NucleusTransferMatrix(Z_par + 1, N_par - 1)
-        P_par = parent.skein_polynomial()
-        P_dau = daughter.skein_polynomial()
-        ratio_sym = sp.cancel(P_dau / P_par)
-        P_par_num = float(P_par.subs(q, q_val))
-        P_dau_num = float(P_dau.subs(q, q_val))
-    else:
-        parent = None
-        daughter = None
-        P_par = None
-        P_dau = None
-        ratio_sym = None
-        ln_par, s_par = skein_ln_numeric(Z_par, N_par, q_val)
-        ln_dau, s_dau = skein_ln_numeric(Z_par + 1, N_par - 1, q_val)
-        # For Q-value we only need ln(P_dau/P_par) — no exponentiation needed
-        P_par_num = None  # too large to store as float
-        P_dau_num = None
-        ln_ratio_num = ln_dau - ln_par
-        ratio_num = None
+    parent = NucleusTransferMatrix(Z_par, N_par)
+    daughter = NucleusTransferMatrix(Z_par + 1, N_par - 1)
 
-        return {
-            'label': label or f"N({Z_par},{N_par})",
-            'Z_par': Z_par, 'N_par': N_par,
-            'P_par_sym': P_par, 'P_dau_sym': P_dau,
-            'ratio_sym': ratio_sym,
-            'P_par_num': P_par_num, 'P_dau_num': P_dau_num,
-            'ratio_num': ratio_num, 'ln_ratio_num': ln_ratio_num,
-        }
+    # Numeric evaluation via per-generator product (works for any A)
+    ln_par, sgn_par = parent.log_skein_at(q_val)
+    ln_dau, sgn_dau = daughter.log_skein_at(q_val)
+    ln_ratio_num = ln_dau - ln_par
 
-    import math
-    if P_par_num != 0 and P_dau_num != 0:
+    P_par_num = sgn_par * math.exp(ln_par) if ln_par != float('-inf') else 0.0
+    P_dau_num = sgn_dau * math.exp(ln_dau) if ln_dau != float('-inf') else 0.0
+
+    if P_par_num != 0:
         ratio_num = P_dau_num / P_par_num
-        ln_ratio_num = math.log(abs(ratio_num))
     else:
         ratio_num = float('inf')
-        ln_ratio_num = float('inf')
 
-    return {
+    result = {
         'label': label or f"N({Z_par},{N_par})",
-        'Z_par': Z_par, 'N_par': N_par,
-        'P_par_sym': P_par, 'P_dau_sym': P_dau,
-        'ratio_sym': ratio_sym,
-        'P_par_num': P_par_num, 'P_dau_num': P_dau_num,
-        'ratio_num': ratio_num, 'ln_ratio_num': ln_ratio_num,
+        'Z_par': Z_par,
+        'N_par': N_par,
+        'A': Z_par + N_par,
+        'P_par_num': P_par_num,
+        'P_dau_num': P_dau_num,
+        'ratio_num': ratio_num,
+        'ln_ratio_num': ln_ratio_num,
+        'parent': parent,
+        'daughter': daughter,
     }
 
+    # Add symbolic results for small nuclei
+    A = Z_par + N_par
+    if A <= SYMBOLIC_THRESHOLD:
+        result['P_par_sym'] = parent.skein_polynomial()
+        result['P_dau_sym'] = daughter.skein_polynomial()
+        ratio_sym = simplify(
+            daughter.skein_polynomial() / parent.skein_polynomial())
+        result['ratio_sym'] = ratio_sym
 
-# ════════════════════════════════════════════════════════════════
+    return result
+
+
+# ========================================================================
 # 5. Verification (__main__)
-# ════════════════════════════════════════════════════════════════
+# ========================================================================
 
 if __name__ == '__main__':
-    import math
 
     print("=" * 72)
-    print("SYMBOLIC TRANSFER MATRIX ENGINE — verification")
+    print("SYMBOLIC TRANSFER MATRIX ENGINE -- verification")
     print(f"All computations exact in q, evaluated at q0 = {Q0}")
     print("=" * 72)
 
-    # ── 5a. Verify Delta_beta universality ──────────────────────────
+    # -- 5a. Verify Delta_beta universality ------------------------------
     print()
     print("--- Universality of Delta_beta ---")
     print()
@@ -479,7 +474,8 @@ if __name__ == '__main__':
     # Verify the decomposition: Delta_beta = (1/2)(1-q^2) T_pp + (q*s/2) I
     half_1mq2 = Rational(1, 2) * (1 - q**2)
     half_qs = q * s_skein / 2
-    Delta_check = T_pp.scale(half_1mq2) + SymbolicTransferMatrix.identity().scale(half_qs)
+    Delta_check = (T_pp.scale(half_1mq2)
+                   + SymbolicTransferMatrix.identity().scale(half_qs))
 
     decomp_ok = True
     for i in range(2):
@@ -510,15 +506,15 @@ if __name__ == '__main__':
     print()
 
     # Determinants (symbolic)
-    print("--- Determinants (at q0) ---")
-    print(f"  det(T_pp)  = {float(T_pp.det().subs(q, Q0)):.10f}")
-    print(f"  det(T_nn)  = {float(T_nn.det().subs(q, Q0)):.10f}")
-    print(f"  det(T_mix) = {float(T_mix.det().subs(q, Q0)):.10f}")
-    print(f"  det(Delta) = {float(Delta_beta.det().subs(q, Q0)):.10f}")
+    print("--- Determinants (symbolic) ---")
+    print(f"  det(T_pp)  = {simplify(T_pp.det())}")
+    print(f"  det(T_nn)  = {simplify(T_nn.det())}")
+    print(f"  det(T_mix) = {simplify(T_mix.det())}")
+    print(f"  det(Delta) = {simplify(Delta_beta.det())}")
     print()
 
-    # ── 5b. Tritium worked example (symbolic) ──────────────────────
-    print("--- Tritium: 3H(1,2) -> 3He(2,1) ---")
+    # -- 5b. Tritium worked example (symbolic) ---------------------------
+    print("--- Tritium: 3H(1,2) -> 3He(2,1) [fully symbolic] ---")
     print()
 
     parent_H3 = NucleusTransferMatrix(1, 2)
@@ -529,21 +525,28 @@ if __name__ == '__main__':
     print()
 
     for i in range(parent_H3.n_generators):
+        v_par = parent_H3.volume(i)
+        v_dau = daughter_He3.volume(i)
         print(f"  sigma_{i}:")
+        print(f"    V_hat^par = {simplify(v_par)}")
+        print(f"    V_hat^dau = {simplify(v_dau)}")
         print(f"    at q0: V_par = {parent_H3.volume_at(i, Q0):.10f}, "
               f"V_dau = {daughter_He3.volume_at(i, Q0):.10f}")
+        print()
 
+    P_par = parent_H3.skein_polynomial()
+    P_dau = daughter_He3.skein_polynomial()
+    print(f"  P_3H(q)  = {simplify(P_par)}")
+    print(f"  P_3He(q) = {simplify(P_dau)}")
     print(f"  at q0: P_3H  = {parent_H3.skein_at(Q0):.10f}")
     print(f"  at q0: P_3He = {daughter_He3.skein_at(Q0):.10f}")
 
-    ratio = parent_H3.skein_at(Q0)
-    ratio_dau = daughter_He3.skein_at(Q0)
-    if ratio != 0:
-        ln_r = math.log(abs(ratio_dau / ratio))
-        print(f"  ln(P_dau/P_par) = {ln_r:.10f}")
+    ln_r = math.log(abs(daughter_He3.skein_at(Q0)
+                        / parent_H3.skein_at(Q0)))
+    print(f"  ln(P_dau/P_par) = {ln_r:.10f}")
     print()
 
-    # ── 5c. Q-values for all 6 benchmark nuclei ───────────────────
+    # -- 5c. Q-values for all 6 benchmark nuclei -------------------------
     print("=" * 72)
     print("Q-VALUE COMPARISON (transfer matrix vs experiment)")
     print("=" * 72)
@@ -559,19 +562,18 @@ if __name__ == '__main__':
     ]
 
     # Header
-    print(f"  {'Nucleus':>8s}  {'Z':>3s}  {'N':>3s}  "
-          f"{'ln(Pd/Pp)':>12s}  {'Q_exp (MeV)':>12s}")
-    print(f"  {'--------':>8s}  {'---':>3s}  {'---':>3s}  "
-          f"{'------------':>12s}  {'------------':>12s}")
+    print(f"  {'Nucleus':>8s}  {'Z':>3s}  {'N':>3s}  {'A':>4s}  "
+          f"{'ln(Pd/Pp)':>12s}  {'Q_exp (MeV)':>12s}  {'sym?':>4s}")
+    print(f"  {'--------':>8s}  {'---':>3s}  {'---':>3s}  {'----':>4s}  "
+          f"{'------------':>12s}  {'------------':>12s}  {'----':>4s}")
 
-    import time
     results = []
     for Z_par, N_par, label, Q_exp in nuclei:
-        t0 = time.time()
         res = beta_decay_qvalue(Z_par, N_par, q_val=Q0, label=label)
         ln_r = res['ln_ratio_num']
-        print(f"  {label:>8s}  {Z_par:3d}  {N_par:3d}  "
-              f"{ln_r:+12.6f}  {Q_exp:12.5f}")
+        sym = "yes" if 'P_par_sym' in res else "no"
+        print(f"  {label:>8s}  {Z_par:3d}  {N_par:3d}  {Z_par+N_par:4d}  "
+              f"{ln_r:+12.6f}  {Q_exp:12.5f}  {sym:>4s}")
         res['Q_exp_MeV'] = Q_exp
         results.append(res)
 
@@ -579,10 +581,12 @@ if __name__ == '__main__':
     print("  Notes:")
     print("  - ln(P_dau/P_par) is the raw Skein polynomial log-ratio")
     print("  - Conversion to MeV requires the energy scale E_cross * mu_0")
-    print("  - The SIGN of ln(ratio) encodes exothermicity (negative = energetically favored)")
+    print("  - The SIGN of ln(ratio) encodes exothermicity")
+    print(f"  - 'sym?' = yes means full symbolic polynomial available "
+          f"(A <= {SYMBOLIC_THRESHOLD})")
     print()
 
-    # ── 5d. Connection to Groebner NF ──────────────────────────────
+    # -- 5d. Connection to Groebner NF -----------------------------------
     print("=" * 72)
     print("GROEBNER NF <-> TRANSFER MATRIX CORRESPONDENCE")
     print("=" * 72)
@@ -591,23 +595,30 @@ if __name__ == '__main__':
     print("  generator sigma_i in the Hecke algebra NF.")
     print()
     print("  Transfer matrix: V_hat_i = z * M_i[0,0] + M_i[1,0]")
-    print("    where M_i = product of T(c_k, d_k) for all crossings at gen i")
+    print("    where M_i = product of T(c_k, d_k) for all crossings "
+          "at gen i")
     print()
     print("  Groebner NF: the reduced element in H_n has basis words.")
     print("    The Markov trace processes generators right-to-left,")
-    print("    extracting the SAME z * (coefficient of sigma_i) + (constant)")
+    print("    extracting the SAME z * (coeff of sigma_i) + (constant)")
     print("    at each step.")
     print()
-    print("  When generators COMMUTE (|i-j| >= 2), both methods agree exactly.")
-    print("  When generators are ADJACENT (|i-j| = 1), interleaved crossings")
-    print("  require the full Hecke reduction; the transfer matrix factored")
+    print("  When generators COMMUTE (|i-j| >= 2), both methods agree "
+          "exactly.")
+    print("  When generators are ADJACENT (|i-j| = 1), interleaved "
+          "crossings")
+    print("  require the full Hecke reduction; the transfer matrix "
+          "factored")
     print("  form is an approximation.")
     print()
 
     # Verify for tritium (small enough for symbolic Groebner)
-    print("  Tritium verification (A=3, generators sigma_0 and sigma_1):")
-    print(f"    Transfer matrix P_3H  = {parent_H3.skein_at(Q0):.10f}")
-    print(f"    Transfer matrix P_3He = {daughter_He3.skein_at(Q0):.10f}")
+    print("  Tritium verification "
+          "(A=3, generators sigma_0 and sigma_1):")
+    print(f"    Transfer matrix P_3H  = "
+          f"{parent_H3.skein_at(Q0):.10f}")
+    print(f"    Transfer matrix P_3He = "
+          f"{daughter_He3.skein_at(Q0):.10f}")
     print()
     print("  To verify against Groebner NF, run:")
     print("    python3 hecke_symbolic.py   (for protium NF)")
