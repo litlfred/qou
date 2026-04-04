@@ -268,7 +268,64 @@ class HeckeDivision:
             'atom_id': atom_id,
             'nf': dict(nf_element.terms),  # word → coeff
             'nf_words': set(nf_element.terms.keys()),
+            'n_components': len(nf_element.terms),  # for completeness tracking
         }
+
+    def collapse_formal_powers(self, elem):
+        """Collapse consecutive runs of the same formal variable.
+
+        ℵ₁·ℵ₁·ℵ₁·ℵ₁ → (ℵ₁, completeness=4)
+        ℵ₁·ℵ₁·ℵ₁     → (ℵ₁, completeness=3)
+
+        Each formal variable ℵ_k has n_components (from its NF).
+        A run of length n means n of those components were matched.
+        completeness = n / n_components.
+
+        The collapsed word replaces the run with a SINGLE formal
+        variable annotated with its completeness level.
+        We use (atom_id * 100 - completeness) as the collapsed ID.
+        E.g. ℵ₁ with completeness 4 → formal var -104.
+
+        Returns (new_elem, n_collapses).
+        """
+        new_terms = {}
+        n_collapses = 0
+
+        for word, coeff in elem.terms.items():
+            if abs(coeff) < 1e-15:
+                continue
+
+            # Find and collapse consecutive formal variable runs
+            new_word = []
+            i = 0
+            collapsed = False
+            while i < len(word):
+                if word[i] < 0:
+                    # Start of a formal variable run
+                    atom_id = word[i]
+                    run_len = 1
+                    while i + run_len < len(word) and word[i + run_len] == atom_id:
+                        run_len += 1
+
+                    if run_len > 1:
+                        # Collapse: replace run with single annotated var
+                        # Use atom_id * 100 - run_len as collapsed ID
+                        collapsed_id = atom_id * 100 - run_len
+                        new_word.append(collapsed_id)
+                        collapsed = True
+                        n_collapses += 1
+                    else:
+                        new_word.append(atom_id)
+
+                    i += run_len
+                else:
+                    new_word.append(word[i])
+                    i += 1
+
+            new_w = tuple(new_word)
+            new_terms[new_w] = new_terms.get(new_w, 0.0) + coeff
+
+        return HeckeElement(new_terms), n_collapses
 
     def _try_quotient_reduction(self, elem):
         """Try to replace registered NF sub-words with formal variables.
