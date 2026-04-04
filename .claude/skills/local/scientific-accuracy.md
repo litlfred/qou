@@ -115,6 +115,17 @@ peer-review practices and the methodology of
   The GOAL is n_terms ≈ n_strands (optimal Gröbner basis).
   At magic numbers, add torus knot shell operators I₈+.
   See: `QOU.QuotientIdeal` in Lean for formal definitions.
+- **Q-VALUES ARE ALGEBRAIC IN q, NOT NUMERICAL.**
+  The Q-value for any beta decay is an EXACT polynomial in q^½:
+    Q(q) = |net(parent)(q) − net(daughter)(q)| × κ(q)
+  where net(X) = Σ coefficients of 𝒩̄(X), and κ = E_× · μ₀ = m_e/3.
+  All NF coefficients are elements of ℤ[q^½, q^{-½}].
+  Substitute q = q₀ ONLY when comparing to measured values.
+  Example: tritium σ₁ coefficient = q²(q+1)²(q²−q+1)/4 (factored
+  cyclotomic). He-3 σ₁ coefficient = (q²+1)²/4. The Q-value
+  comes from the ALGEBRAIC DIFFERENCE of these polynomials.
+  Use `hecke_symbolic.py` for exact-in-q computation.
+  See: `QOU.NuclearNormalForms` in Lean for declarations.
 - **EVERY observed value MUST carry ± uncertainty.** No CODATA,
   NNDC, PDG, or any experimental constant without an error bound.
   Use `experimental_constants.py` as the single source of truth.
