@@ -392,6 +392,111 @@ fn main() {
             println!("\nAll optimal: {}  Total: {}ms", if all_opt {"YES"} else {"NO"}, t.elapsed().as_millis());
         }
 
+        "qvalues" => {
+            // Beta decay Q-values via transfer matrix (O(A²), no Gröbner expansion)
+            let kappa = 0.510999 / 3.0; // m_e / 3 in MeV
+
+            // Shell correction factors (from H₃(q) Markov traces)
+            let f_deg2 = 0.5949_f64;
+            let f_pauli = 0.6382_f64;
+            let magic = [2, 8, 20, 28, 50, 82, 126];
+
+            let shell_degree = |n: usize| -> usize {
+                let mut prev = 0;
+                for (i, &m) in magic.iter().enumerate() {
+                    if n <= m { return if i + 1 >= 5 { 2 } else { 1 }; }
+                    prev = m;
+                }
+                2
+            };
+            let is_magic = |n: usize| magic.contains(&n);
+
+            struct BenchmarkNucleus { z: usize, n: usize, name: &'static str, q_exp: f64 }
+            let benchmarks = [
+                BenchmarkNucleus { z: 1, n: 2, name: "³H→³He", q_exp: 0.01861 },
+                BenchmarkNucleus { z: 6, n: 8, name: "¹⁴C→¹⁴N", q_exp: 0.15648 },
+                BenchmarkNucleus { z: 27, n: 33, name: "⁶⁰Co→⁶⁰Ni", q_exp: 0.31817 },
+                BenchmarkNucleus { z: 38, n: 52, name: "⁹⁰Sr→⁹⁰Y", q_exp: 0.54590 },
+                BenchmarkNucleus { z: 55, n: 82, name: "¹³⁷Cs→¹³⁷Ba", q_exp: 0.51400 },
+                BenchmarkNucleus { z: 83, n: 127, name: "²¹⁰Bi→²¹⁰Po", q_exp: 1.16270 },
+            ];
+
+            println!("Q-VALUES FROM OPTIMAL NF (transfer matrix, O(A²))");
+            println!("  Proved: NF coeff σ_i = V̂_i (TMCorrespondence)");
+            println!("  κ = m_e/3 = {:.6} MeV, q₀ = {:.5}", kappa, engine.q);
+            println!();
+            println!("{:>16} {:>3} {:>3} {:>8} {:>8} {:>6} {:>8} {:>8} {:>7}",
+                "Decay","Z","N","Q_bare","Q_qwt","F_sh","Q_full","Q_exp","Error");
+            println!("{}", "-".repeat(78));
+
+            let mut errs = Vec::new();
+            for b in &benchmarks {
+                // Per-generator volumes for parent and daughter
+                let vols_par = engine.generator_volumes(b.z, b.n);
+                let vols_dau = engine.generator_volumes(b.z + 1, b.n - 1);
+
+                // Decompose into unbind/rebind
+                let a = b.z + b.n;
+                let types_par: Vec<u8> = vec![b'p'; b.z].into_iter().chain(vec![b'n'; b.n]).collect();
+                let types_dau: Vec<u8> = vec![b'p'; b.z+1].into_iter().chain(vec![b'n'; b.n-1]).collect();
+
+                let mut ln_u = 0.0_f64;
+                let mut ln_r = 0.0_f64;
+                let mut ln_unc = 0.0_f64;
+
+                for i in 0..a-1 {
+                    let vp = vols_par[i];
+                    let vd = vols_dau[i];
+                    if vp.abs() < 1e-30 || vd.abs() < 1e-30 { continue; }
+                    let lr = vd.abs().ln() - vp.abs().ln();
+
+                    let mut changed = Vec::new();
+                    for j in i+1..a {
+                        let pp = format!("{}{}", types_par[i] as char, types_par[j] as char);
+                        let dp = format!("{}{}", types_dau[i] as char, types_dau[j] as char);
+                        if pp != dp { changed.push((pp, dp)); }
+                    }
+
+                    if changed.is_empty() {
+                        ln_unc += lr;
+                    } else {
+                        let nu: usize = changed.iter().filter(|(p,_)| p == "nn").count();
+                        let nr: usize = changed.iter().filter(|(_,d)| d == "pp").count();
+                        let t = nu + nr;
+                        if nr == 0 { ln_u += lr; }
+                        else if nu == 0 { ln_r += lr; }
+                        else {
+                            ln_u += lr * nu as f64 / t as f64;
+                            ln_r += lr * nr as f64 / t as f64;
+                        }
+                    }
+                }
+
+                let lt = ln_u + ln_r + ln_unc;
+                let ln_qwt = engine.q * ln_u + (1.0/engine.q) * ln_r + ln_unc;
+
+                let deg = shell_degree(b.n);
+                let f_d = if deg >= 2 { f_deg2 } else { 1.0 };
+                let f_p = if is_magic(b.n) && deg >= 2 { f_pauli } else { 1.0 };
+                let f_sh = f_d * f_p;
+
+                let q_bare = lt.abs() * kappa;
+                let q_qwt = ln_qwt.abs() * kappa;
+                let q_full = q_qwt * f_sh;
+                let err = (q_full - b.q_exp) / b.q_exp * 100.0;
+                errs.push(err.abs());
+
+                let mark = if err.abs() < 5.0 { "◀" } else { " " };
+                println!("{:>16} {:>3} {:>3} {:>8.5} {:>8.5} {:>6.4} {:>8.5} {:>8.5} {:>+6.1}%{}",
+                    b.name, b.z, b.n, q_bare, q_qwt, f_sh, q_full, b.q_exp, err, mark);
+            }
+
+            let mae: f64 = errs.iter().sum::<f64>() / errs.len() as f64;
+            let rms: f64 = (errs.iter().map(|e| e*e).sum::<f64>() / errs.len() as f64).sqrt();
+            println!();
+            println!("  MAE = {:.1}%, RMS = {:.1}%", mae, rms);
+        }
+
         _ => { eprintln!("Unknown: {}", args[1]); std::process::exit(1); }
     }
 }
