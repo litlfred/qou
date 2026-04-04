@@ -138,8 +138,8 @@ SUMMARY=$(cat <<EOSUMMARY
 ║  $(ok $([ "$LEAN_BUILD_STATUS" = "ready" ] && echo true || echo false)) Lean build        ($LEAN_BUILD_STATUS)                  ║
 ║  $(ok $LEAN_REMOTE_OK) Lean remote MCP    ($REMOTE_URL)  ║
 ║  $(ok $ASSISTANT_OK) Paper assistant     (localhost:$ASSISTANT_PORT)           ║
-║  $(ok $CARGO_OK) Rust/Cargo        ($CARGO_VER)                  ║
-║  $(ok $HECKE_OK) Hecke engine      ($HECKE_VER)                  ║
+║  $(ok $CARGO_OK) $(printf '%-50s' "Rust/Cargo        ($CARGO_VER)")║
+║  $(ok $HECKE_OK) $(printf '%-50s' "Hecke engine      ($HECKE_VER)")║
 ║  $(ok $RG_OK) Symbol search      (ripgrep)                   ║
 ║                                                      ║
 ╠══════════════════════════════════════════════════════╣
