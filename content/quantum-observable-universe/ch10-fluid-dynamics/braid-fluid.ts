@@ -1,0 +1,18 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  interprets: "prop:braid-action-tensor",
+  label: "rem:braid-fluid",
+  title: "Braid--fluid correspondence: from categorical braiding to vortex dynamics",
+  uses: [
+    "prop:braid-action-tensor",
+    "prop:r-matrix-braiding-structure",
+    "thm:jones-markov-trace",
+    "rem:madelung-fluid",
+    "rem:webster-inner-product",
+    "rem:skein-crossing-asymmetry",
+    "def:crossing-energy",
+    "def:state-bundle",
+  ],
+  tags: ["braid-group", "fluid-dynamics", "arnold", "vortex", "correspondence"],
+});

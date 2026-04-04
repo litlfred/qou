@@ -1,0 +1,15 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  interprets: "rem:madelung-fluid",
+  label: "rem:vortex-reconnection",
+  title: "Vortex reconnection as divisor surgery",
+  uses: [
+    "rem:madelung-fluid",
+    "rem:braid-fluid",
+    "rem:geodesic-vortices",
+    "prop:helicity-conservation",
+    "rem:trefoil-vortex-chirality-flip",
+  ],
+  tags: ["vortex", "reconnection", "divisor", "topology-change", "pair-creation"],
+});

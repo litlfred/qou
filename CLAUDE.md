@@ -715,6 +715,7 @@ tool rather than silently failing.
 | `content/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
 | `content/pipeline/` | Validation, rendering, build pipelines |
 | `content/<paper>/` | Paper manifest + chapter directories |
+| `content/<paper>/ch10-fluid-dynamics/` | Ch 7: Fluid dynamics of the brane (q-NS, NS obstruction) |
 | `folio-assistant/` | **Platform package** — MCP server, auth, UI, blocks, viewer |
 | `folio-assistant/src/` | Generic core (server, types, routes, tools, blocks registry) |
 | `folio-assistant/adapters/paper/` | Paper content adapter (implements `ContentAdapter`) |

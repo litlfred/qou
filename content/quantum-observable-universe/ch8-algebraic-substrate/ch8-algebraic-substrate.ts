@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * (5) classical limit and the macroscopic continuum.
  */
 export default chapter({
-  number: 8,
+  number: 6,
   title: "The Algebraic Substrate",
   label: "chap:algebraic-substrate",
   sections: [
