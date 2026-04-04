@@ -324,10 +324,12 @@ $P, Q \in \mathcal{E}_q(\mathbf{1})$:
 $$
 \langle P, Q \rangle_q
 \;:=\; \lim_{n \to \infty}
-  \frac{\hat{h}_q([q^n]_q P,\, Q)}{[n]_q^2}
+  \frac{\hat{h}_q([n]_q P,\, Q)}{[n]_q^2}
 $$
 
-where $\hat{h}_q$ is the naive $q$-Weil height.  At $\mathbb{G}_m$
+where $\hat{h}_q$ is the naive $q$-Weil height and $[n]_q P$
+denotes scalar multiplication by the $q$-integer
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  At $\mathbb{G}_m$
 torsion points $q = \zeta_n$, the denominator
 $[n]_{\zeta_n}^2 = 0$ and the height pairing degenerates ---
 a reflection of the category truncation.  The regulator
