@@ -79,10 +79,14 @@ theorem descartes_rank_zero
     -- E_q carries the fundamental representation (non-trivial, 2-dim)
     (h_fundamental : ¬ IsIsomorphic E_q (𝟙_ QOU.C))
     : Subsingleton (CategoricalMordellWeil E_q) := by
-  -- By adjoint_vanishing (QOU axiom) and Tannaka–Krein,
-  -- G is semisimple.  The fibre functor image τ(E_q) = V_{1/2}
-  -- has V_{1/2}^G = 0 for semisimple G acting non-trivially.
-  -- Ref: [birch1965] https://doi.org/10.1515/crll.1965.218.79
+  -- By adjoint_vanishing (QOU axiom): Hom(𝟙, Ad(A)) = 0, so
+  -- G = Aut⊗(τ) is semisimple (trivial center).
+  -- By Tannaka–Krein: Hom_𝐂(𝟙, E_q) ≅ τ(E_q)^G.
+  -- Since E_q is non-trivial (h_fundamental), τ(E_q) carries a
+  -- non-trivial irreducible representation of semisimple G.
+  -- For any semisimple G: V^G = 0 when V is non-trivial irreducible.
+  -- Therefore Hom(𝟙, E_q) = 0, giving Subsingleton.
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
   sorry
 
 /-- **Weak q-BSD for the Descartes QOU**: since `r_q = 0`,

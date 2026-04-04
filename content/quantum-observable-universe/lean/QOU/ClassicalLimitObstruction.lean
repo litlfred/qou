@@ -44,7 +44,7 @@ structure ClassicalLimitObstruction (k : Type*) [Field k] where
 /-- In a QOU, the obstruction space is one-dimensional.
 
     Proof: Observability gives `HH⁰(Ad) = 0`.  Frobenius–Poincaré
-    duality gives `HH³ ≅ (HH⁰)∨ = 0` and `HH² ≅ (HH��)∨`.
+    duality gives `HH³ ≅ (HH⁰)∨ = 0` and `HH² ≅ (HH¹)∨`.
     The Drinfeld uniqueness theorem gives `dim HH¹ = 1` (the
     single parameter q), hence `dim HH² = 1`.
 
@@ -79,5 +79,24 @@ theorem kummer_obstruction_divisibility
   constructor
   · intro h; exact Int.dvd_of_emod_eq_zero h
   · intro h; exact Int.emod_eq_zero_of_dvd h
+
+/-- For the Descartes universe, `χ(A) = -6`.
+    The divisors of 6 are `{1, 2, 3, 6}`, so the obstruction
+    vanishes at exactly these four Kummer levels. -/
+def descartesObstruction : ClassicalLimitObstruction ℝ where
+  dim := 1
+  eulerChar := -6
+
+/-- 2 divides χ(A) = -6 in the Descartes universe. -/
+theorem descartes_kummer_2 : (2 : ℤ) ∣ descartesObstruction.eulerChar := by
+  decide
+
+/-- 3 divides χ(A) = -6 in the Descartes universe. -/
+theorem descartes_kummer_3 : (3 : ℤ) ∣ descartesObstruction.eulerChar := by
+  decide
+
+/-- 5 does not divide χ(A) = -6: the obstruction persists at level 5. -/
+theorem descartes_kummer_5_persists : ¬ (5 : ℤ) ∣ descartesObstruction.eulerChar := by
+  decide
 
 end QOU
