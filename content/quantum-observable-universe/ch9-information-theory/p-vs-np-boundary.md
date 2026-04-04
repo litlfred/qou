@@ -113,16 +113,16 @@ $$
   horizon — an **essential singularity**.
 
 **Parallel with the jet horizon and NS obstruction.**
-
-| Object | Jet horizon | NS boundary | Computational boundary |
-|--------|------------|-------------|----------------------|
-| Space | Brane tower $A_n$ | State bundle $\mathcal{S}$ | Resolution tree $\mathcal{R}$ |
-| Observable part | $\mathrm{Bun}^{\circ}$ ($A_0 \neq 0$) | $\mathcal{S} \setminus \Sigma$ (off collision) | $\mathcal{R}^{\circ}$ (poly-time computable) |
-| Boundary | $\mathcal{H} = V(\mathfrak{h})$ | $\Sigma$ (collision locus) | $\mathcal{H}_c = V(\mathfrak{h}_c)$ |
-| Ideal | $\mathfrak{h} \subset \Gamma(A_0)$ | $I_\Sigma \subset \mathcal{O}_M$ | $\mathfrak{h}_c \subset \Gamma(A_0^{\mathrm{comp}})$ |
-| $\partial = \varnothing$ | All configs observable | No collision (global smooth flow) | P = NP |
-| $\partial \neq \varnothing$ | Horizon exists (aeons) | NS-singular (blowup) | P $\neq$ NP |
-| Obstruction | $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ | $\mathrm{NS}(A) = \kappa_0|_\Sigma$ | $\kappa_c^{\mathrm{comp}} \in H^2(\mathcal{R}, \mathbb{G}_m)$ |
+The structure is identical: the jet horizon
+$\mathcal{H} = V(\mathfrak{h})$ blocks degree-$0$ sections on
+the brane tower; the NS collision locus $\Sigma$ blocks smooth
+extension of velocity fields; the computational horizon
+$\mathcal{H}_c = V(\mathfrak{h}_c)$ blocks polynomial-time
+extraction of answers from the resolution tree.  In each case,
+$\partial = \varnothing$ means the obstruction is removable
+(all configs observable / global smooth flow / P $=$ NP),
+while $\partial \neq \varnothing$ means it is genuine
+(aeons / blowup / P $\neq$ NP).
 
 **The three equivalent criteria for $\mathcal{H}_c
 \neq \varnothing$.**
@@ -192,10 +192,10 @@ $\mathcal{H}_c^{\mathrm{trans}} =
 giving $\mathcal{H}_c = \varnothing$ at the root of
 unity — the boundary dissolves under quantum interference.
 
-The standard complexity hierarchy translates to:
-
-| Class | Boundary at real $q$ | Boundary at $q_k$ |
-|-------|---------------------|-------------------|
-| P | $\varnothing$ | $\varnothing$ |
-| BQP $\setminus$ P | $\neq \varnothing$ | $\varnothing$ (quantum cancellation) |
-| NP $\setminus$ BQP | $\neq \varnothing$ | $\neq \varnothing$ (even quantum can't dissolve) |
+The standard complexity hierarchy translates directly:
+for P-class problems, $\mathcal{H}_c = \varnothing$ at both
+real $q$ and roots of unity.  For BQP $\setminus$ P, the
+boundary is non-empty at real $q$ but dissolves at $q_k$
+(quantum cancellation).  For NP $\setminus$ BQP, the boundary
+persists even at roots of unity — quantum interference cannot
+dissolve it.
