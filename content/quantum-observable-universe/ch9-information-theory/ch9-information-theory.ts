@@ -80,6 +80,7 @@ section({
         "skein-resolution-obstruction",
         "field-dependent-complexity",
         "computational-kummer-specialisation",
+        "computational-perpetual-obstruction",
         "qou-p-neq-np",
       ],
     }),
