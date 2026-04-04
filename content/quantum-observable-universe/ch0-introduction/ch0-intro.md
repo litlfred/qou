@@ -28,7 +28,8 @@ than bolted on.
 An important assumption this paper does *not* make is that the
 constants of our universe are indeed constant.  If we allow them
 to vary — in a controlled, algebraic way — how does that change
-the mechanics?  This is the question this paper asks.
+the mechanics — or more precisely, the mechanics of how we observe
+the quantum universe?  This is the question this paper asks.
 
 Einstein showed that geometry and mass are intimately connected:
 space-time is not a passive stage on which matter performs but a
