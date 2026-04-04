@@ -17,12 +17,10 @@ export default conjecture({
     "def:computational-horizon",
     "prop:p-bandwidth-bound",
     "def:jet-horizon",
-    "rem:skein-turing-machine",
-    "conj:quantum-computational-universality",
-    "def:information-speed-of-light",
     "def:observable-subcategory",
     "def:skein-resolution-obstruction",
     "rem:substrate-gm-torsion",
+    "thm:qou-obstruction-reduction",
   ],
   cites: ["cook1971", "freedman2003"],
 });

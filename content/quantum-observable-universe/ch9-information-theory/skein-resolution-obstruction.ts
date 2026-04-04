@@ -19,12 +19,9 @@ export default definition({
   },
   uses: [
     "def:computational-horizon",
-    "def:quantum-characteristic-classes",
-    "prop:jet-prolongation",
+    "thm:qou-obstruction-reduction",
+    "rem:kummer-filtration-obstruction",
     "rem:skein-turing-machine",
-    "def:descent-involution",
-    "prop:descent-eigenspaces",
-    "def:information-speed-of-light",
     "prop:ns-obstruction-tower",
   ],
 });
