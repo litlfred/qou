@@ -324,6 +324,93 @@ def main():
     for mname in ['born', 'pernuc', 'density']:
         print(f"  {mname:>12} correct: {model_correct[mname]}/{total_elements}")
 
+    # Model 5: Restrict competition to experimentally known isotopes only
+    print(f"\n{'=' * 100}")
+    print(f"Model 5: Born rule restricted to experimentally known isotopes only")
+    print(f"(Only stable isotopes compete; no exotic A values in normalization)")
+    print(f"{'=' * 100}")
+
+    model5_errors = []
+    model5_correct = 0
+
+    for Z in range(1, 9):
+        elem = ELEMENT_NAMES[Z]
+        exp_data = EXPERIMENTAL.get(Z, {})
+        if not exp_data:
+            continue
+
+        # Compute Skein only for experimentally known N values
+        ln_known = {}
+        for N in exp_data:
+            nuc = NucleusTransferMatrix(Z, N)
+            ln_abs, sgn = nuc.log_skein_at(q_val)
+            ln_known[N] = (ln_abs, sgn)
+
+        # Born-rule among known isotopes
+        born_known = normalize_born(ln_known, Z)
+
+        print(f"\n  {elem} (Z={Z}):")
+        exp_dominant_N = max(exp_data, key=lambda n: exp_data[n][1])
+        pred_dominant_N = max(born_known, key=born_known.get)
+
+        for N in sorted(exp_data):
+            A = Z + N
+            iso_name, exp_pct = exp_data[N]
+            pred_pct = born_known.get(N, 0.0) * 100
+            ln_abs, _ = ln_known[N]
+            err = pred_pct - exp_pct
+            model5_errors.append(err ** 2)
+            print(f"    {iso_name:>5}  A={A:2d}  ln|P|={ln_abs:10.4f}  pred={pred_pct:8.3f}%  expt={exp_pct:8.4f}%  err={err:+8.3f}")
+
+        ok = pred_dominant_N == exp_dominant_N
+        if ok:
+            model5_correct += 1
+        mark = "correct" if ok else f"WRONG (pred A={Z+pred_dominant_N})"
+        print(f"    Dominant: A={Z+exp_dominant_N} {mark}")
+
+    rmse5 = math.sqrt(sum(model5_errors) / len(model5_errors)) if model5_errors else 0
+    print(f"\n  RMSE: {rmse5:.2f} pp")
+    print(f"  Dominant correct: {model5_correct}/8")
+
+    # Model 6: Ratio of adjacent isotopes ln|P_{N+1}|/ln|P_N|
+    print(f"\n{'=' * 100}")
+    print(f"Model 6: Adjacent Skein ratio -- ln|P(Z,N)| - ln|P(Z,N-1)| (marginal stability)")
+    print(f"(Adding one neutron: how much does the Skein magnitude grow?)")
+    print(f"{'=' * 100}")
+
+    for Z in range(1, 9):
+        elem = ELEMENT_NAMES[Z]
+        exp_data = EXPERIMENTAL.get(Z, {})
+
+        N_min = max(0, Z - 2)
+        N_max = Z + Z + 2
+        ln_dict = compute_ln_skein(Z, N_min, N_max, q_val)
+
+        print(f"\n  {elem} (Z={Z}):")
+        prev_lp = None
+        for N in range(N_min, N_max + 1):
+            if N not in ln_dict:
+                prev_lp = None
+                continue
+            A = Z + N
+            lp, _ = ln_dict[N]
+            if prev_lp is not None and lp > float('-inf') and prev_lp > float('-inf'):
+                delta = lp - prev_lp
+            else:
+                delta = None
+
+            marker = ""
+            if N in exp_data:
+                marker = f" <-- {exp_data[N][0]}"
+
+            if delta is not None:
+                delta_str = f"delta={delta:+8.4f}"
+            else:
+                delta_str = "delta=     N/A"
+
+            print(f"    A={A:2d}  ln|P|={lp:10.4f}  {delta_str}{marker}")
+            prev_lp = lp
+
     # Additional analysis: Skein density (ln|P|/A) vs A plot data
     print(f"\n{'=' * 100}")
     print(f"Skein density profile: ln|P|/A vs A for each element")
