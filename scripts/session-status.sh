@@ -26,6 +26,28 @@ if has uv; then UV_OK=true; UV_VER=$(uv --version 2>/dev/null | head -1); fi
 if has rg; then RG_OK=true; RG_VER=$(rg --version 2>/dev/null | head -1); fi
 if has git; then GIT_OK=true; GIT_VER=$(git --version 2>/dev/null); fi
 
+# ── 1b. Rust / Hecke engine ──────────────────────────────────
+CARGO_OK=false;  CARGO_VER=""
+HECKE_OK=false;  HECKE_VER=""
+
+if has cargo; then
+  CARGO_OK=true; CARGO_VER=$(cargo --version 2>/dev/null)
+elif [ -f "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
+  if has cargo; then CARGO_OK=true; CARGO_VER=$(cargo --version 2>/dev/null); fi
+fi
+
+HECKE_DIR="$REPO_ROOT/tools/hecke-engine"
+HECKE_BIN="$HECKE_DIR/target/release/v2"
+if [ -f "$HECKE_BIN" ]; then
+  HECKE_OK=true; HECKE_VER="v2 (packed u128)"
+elif [ "$CARGO_OK" = true ] && [ -f "$HECKE_DIR/Cargo.toml" ]; then
+  # Auto-build if cargo available but binary missing
+  (cd "$HECKE_DIR" && cargo build --release --bin v2 2>/dev/null) && {
+    HECKE_OK=true; HECKE_VER="v2 (just built)"
+  }
+fi
+
 # ── 2. PDF generation ──────────────────────────────────────────
 PDFLATEX_OK=false
 LATEXMK_OK=false
@@ -116,6 +138,8 @@ SUMMARY=$(cat <<EOSUMMARY
 ║  $(ok $([ "$LEAN_BUILD_STATUS" = "ready" ] && echo true || echo false)) Lean build        ($LEAN_BUILD_STATUS)                  ║
 ║  $(ok $LEAN_REMOTE_OK) Lean remote MCP    ($REMOTE_URL)  ║
 ║  $(ok $ASSISTANT_OK) Paper assistant     (localhost:$ASSISTANT_PORT)           ║
+║  $(ok $CARGO_OK) Rust/Cargo        ($CARGO_VER)                  ║
+║  $(ok $HECKE_OK) Hecke engine      ($HECKE_VER)                  ║
 ║  $(ok $RG_OK) Symbol search      (ripgrep)                   ║
 ║                                                      ║
 ╠══════════════════════════════════════════════════════╣
@@ -133,6 +157,8 @@ FIXES=""
 [ "$LEAN_MODE" = "none" ] || [ "$LEAN_MODE" = "local-degraded" ] && [ -n "$LEAN_FIX" ] && FIXES="$FIXES\n  → Lean: $LEAN_FIX"
 [ "$DVISVGM_OK" = false ] && [ "$PDFLATEX_OK" = true ] && FIXES="$FIXES\n  → TeX preview: sudo apt install dvisvgm"
 [ "$ASSISTANT_OK" = false ] && FIXES="$FIXES\n  → Paper assistant: ./scripts/start-folio-assistant.sh --http"
+[ "$CARGO_OK" = false ] && FIXES="$FIXES\n  → Rust: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source ~/.cargo/env"
+[ "$HECKE_OK" = false ] && [ "$CARGO_OK" = true ] && FIXES="$FIXES\n  → Hecke engine: cd tools/hecke-engine && cargo build --release --bin v2"
 
 if [ -n "$FIXES" ]; then
     SUMMARY="$SUMMARY
