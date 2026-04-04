@@ -33,7 +33,7 @@ choice of algebra (`U_q`, `Dist(G)`, etc.).  Specialisations are in
 -/
 
 
-namespace QOU.GrobnerShirshov
+namespace UGB.GrobnerShirshov
 
 universe u v
 

@@ -1,4 +1,4 @@
-import QOU.GrobnerShirshov.NormalForms
+import UGB.GrobnerShirshov.NormalForms
 
 /-!
 # Flatness of the Gröbner–Shirshov Deformation
@@ -36,7 +36,7 @@ is unchanged under quantisation.
 -/
 
 
-namespace QOU.GrobnerShirshov
+namespace UGB.GrobnerShirshov
 
 universe u v
 

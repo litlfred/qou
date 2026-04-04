@@ -1,4 +1,4 @@
-import QOU.GrobnerShirshov.Flatness
+import UGB.GrobnerShirshov.Flatness
 
 /-!
 # Strong Multiplicativity from the GS Deformation
@@ -36,7 +36,7 @@ The proof has three steps:
 -/
 
 
-namespace QOU.GrobnerShirshov
+namespace UGB.GrobnerShirshov
 
 universe u v
 

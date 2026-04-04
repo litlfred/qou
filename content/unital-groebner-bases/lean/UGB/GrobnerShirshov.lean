@@ -1,8 +1,8 @@
-import QOU.GrobnerShirshov.Basic
-import QOU.GrobnerShirshov.CompositionLemma
-import QOU.GrobnerShirshov.NormalForms
-import QOU.GrobnerShirshov.Flatness
-import QOU.GrobnerShirshov.StrongMultiplicativity
+import UGB.GrobnerShirshov.Basic
+import UGB.GrobnerShirshov.CompositionLemma
+import UGB.GrobnerShirshov.NormalForms
+import UGB.GrobnerShirshov.Flatness
+import UGB.GrobnerShirshov.StrongMultiplicativity
 
 /-!
 # Gröbner–Shirshov Bases — Module Root

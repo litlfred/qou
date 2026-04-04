@@ -1,4 +1,4 @@
-import QOU.GrobnerShirshov.CompositionLemma
+import UGB.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Nat.Prime.Defs
 import Mathlib.Data.List.Lex
 import Mathlib.Tactic.Ring
@@ -36,7 +36,7 @@ appearing in the QOU manuscript:
 -/
 
 
-namespace QOU.GrobnerShirshov
+namespace UGB.GrobnerShirshov
 
 universe u v
 
