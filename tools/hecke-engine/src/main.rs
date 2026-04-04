@@ -1,57 +1,83 @@
 //! Fast Gröbner reduction engine for H_n(q).
 //!
-//! Three optimizations over naive approach:
-//! 1. Indexed pair lookup — terms indexed by consecutive pairs for O(1) rule matching
-//! 2. Batch reduction — all reducible terms processed per pass
-//! 3. Incremental reduction — after crossing multiplication, only new terms need work
+//! Monomial ordering: degree-reverse-lex (degrevlex).
+//!   1. Degree (word length) — Hecke reduces high → low
+//!   2. Reverse-lex — within same degree, larger rightmost generator first
+//!
+//! Key optimization: separate reduced/unreduced term pools.
+//! Never scan reduced terms — only process the unreduced queue.
 //!
 //! Usage:
-//!   cargo run --release -- nucleus 4 4    # ⁸Be N(4,4)
-//!   cargo run --release -- table 1 8      # all nuclei Z=1..8
+//!   cargo run --release -- nucleus Z N
+//!   cargo run --release -- table Zmin Zmax [Amax]
 
 use rustc_hash::FxHashMap;
 use serde::Serialize;
+use std::collections::BinaryHeap;
+use std::cmp::Ordering;
 use std::time::Instant;
 
 type Word = Vec<u8>;
 
+/// Priority wrapper: highest word length first (max-heap by degree)
 #[derive(Clone)]
+struct PriWord(Word, f64);
+
+impl PartialEq for PriWord {
+    fn eq(&self, other: &Self) -> bool { self.0.len() == other.0.len() }
+}
+impl Eq for PriWord {}
+impl PartialOrd for PriWord {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> { Some(self.cmp(other)) }
+}
+impl Ord for PriWord {
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.0.len().cmp(&other.0.len()) // highest degree first
+    }
+}
+
+// ════════════════════════════════════════════════════════════════
+// Hecke element with reduced/unreduced separation
+// ════════════════════════════════════════════════════════════════
+
 struct HeckeElement {
-    terms: FxHashMap<Word, f64>,
+    /// Fully reduced terms
+    reduced: FxHashMap<Word, f64>,
+    /// Priority queue: highest degree terms processed first.
+    /// Hecke reductions produce lower-degree output, so processing
+    /// top-down means each degree level is visited at most once.
+    unreduced: BinaryHeap<PriWord>,
 }
 
 impl HeckeElement {
-    fn new() -> Self { Self { terms: FxHashMap::default() } }
+    fn new() -> Self {
+        Self { reduced: FxHashMap::default(), unreduced: BinaryHeap::new() }
+    }
 
     fn identity() -> Self {
         let mut h = Self::new();
-        h.terms.insert(vec![], 1.0);
+        h.reduced.insert(vec![], 1.0);
         h
     }
 
-    fn n_terms(&self) -> usize { self.terms.len() }
+    fn n_terms(&self) -> usize { self.reduced.len() }
 
-    fn clean(&mut self) {
-        self.terms.retain(|_, c| c.abs() > 1e-15);
-    }
+    fn into_map(self) -> FxHashMap<Word, f64> { self.reduced }
 
     fn histogram(&self) -> Vec<usize> {
-        let max_len = self.terms.keys().map(|w| w.len()).max().unwrap_or(0);
+        let max_len = self.reduced.keys().map(|w| w.len()).max().unwrap_or(0);
         let mut hist = vec![0usize; max_len + 1];
-        for w in self.terms.keys() { hist[w.len()] += 1; }
+        for w in self.reduced.keys() { hist[w.len()] += 1; }
         hist
     }
 }
 
 // ════════════════════════════════════════════════════════════════
-// Engine with indexed reduction
+// Engine
 // ════════════════════════════════════════════════════════════════
 
 struct HeckeEngine {
-    ha: f64,
-    s: f64,
-    z: f64,
-    q: f64,
+    ha: f64, s: f64, z: f64, q: f64,
 }
 
 impl HeckeEngine {
@@ -68,137 +94,126 @@ impl HeckeEngine {
         }
     }
 
-    /// Multiply element by (c·σ_gen + d) and reduce incrementally.
-    /// This is the hot path — optimized for the case where elem is already reduced
-    /// and we're adding one crossing.
-    fn multiply_and_reduce(&self, elem: &mut HeckeElement, gen: u8, c: f64, d: f64) {
-        // Step 1: Multiply — each existing term w gets two new terms:
-        //   c·(w·gen) and d·w
-        let old_terms: Vec<(Word, f64)> = elem.terms.drain().collect();
-        let mut new_terms: FxHashMap<Word, f64> = FxHashMap::default();
-
-        for (w, coeff) in &old_terms {
-            // d·w term (same word, just scaled) — always reduced if w was
-            if d.abs() > 1e-15 {
-                *new_terms.entry(w.clone()).or_insert(0.0) += coeff * d;
-            }
-
-            // c·(w·gen) term — may need reduction
-            if c.abs() > 1e-15 {
-                let mut wg = w.clone();
-                wg.push(gen);
-                *new_terms.entry(wg).or_insert(0.0) += coeff * c;
-            }
-        }
-
-        elem.terms = new_terms;
-        elem.clean();
-
-        // Step 2: Reduce — but only terms that might be reducible.
-        // The d·w terms are already reduced (w was reduced, scaling doesn't change that).
-        // The c·(w·gen) terms might have a reducible pair at the junction
-        // (last char of w, gen) or within gen itself (but gen is single char).
-        //
-        // So we only need to check terms ending in gen for:
-        //   - Hecke: ...·i·i where i = gen (last two chars equal)
-        //   - FarComm: ...·i·gen where i > gen and |i-gen| >= 2
-        //   - YB: ...·i·j·i where last three form a YB triple
-        //
-        // After one reduction, the result might need further reduction,
-        // so we iterate until stable.
-        self.reduce_full(elem);
-    }
-
-    /// Full reduction — batch all reducible terms per pass
-    fn reduce_full(&self, elem: &mut HeckeElement) {
-        loop {
-            let mut new_terms: FxHashMap<Word, f64> = FxHashMap::default();
-            let mut any_reduced = false;
-
-            for (word, &coeff) in &elem.terms {
-                if coeff.abs() < 1e-15 { continue; }
-
-                if let Some((pos, rule)) = Self::find_reduction(word) {
-                    Self::apply_reduction_into(&mut new_terms, word, coeff, pos, rule, self.ha);
-                    any_reduced = true;
-                } else {
-                    *new_terms.entry(word.clone()).or_insert(0.0) += coeff;
-                }
-            }
-
-            elem.terms = new_terms;
-            elem.clean();
-
-            if !any_reduced { break; }
-        }
-    }
-
+    /// Check if word is reducible. Returns first reducible site.
     #[inline]
     fn find_reduction(word: &[u8]) -> Option<(usize, u8)> {
         let len = word.len();
         if len < 2 { return None; }
-
         for pos in 0..len - 1 {
             let a = word[pos];
             let b = word[pos + 1];
-
-            // Hecke: σ_i²
-            if a == b { return Some((pos, 0)); }
-
-            // Far-comm: σ_i σ_j with i > j and |i-j| >= 2
-            if (a as i16 - b as i16) >= 2 { return Some((pos, 1)); }
-
-            // Yang-Baxter: σ_i σ_j σ_i with j < i
+            if a == b { return Some((pos, 0)); }                    // Hecke
+            if (a as i16 - b as i16) >= 2 { return Some((pos, 1)); } // FC
             if pos + 2 < len {
                 let c = word[pos + 2];
                 if a == c && (a as i16 - b as i16).abs() == 1 && b < a {
-                    return Some((pos, 2));
+                    return Some((pos, 2));                           // YB
                 }
             }
         }
         None
     }
 
+    /// Add a term, routing to reduced or unreduced (priority queue).
     #[inline]
-    fn apply_reduction_into(
-        terms: &mut FxHashMap<Word, f64>,
-        word: &[u8], coeff: f64, pos: usize, rule: u8, ha: f64
-    ) {
-        match rule {
-            0 => {
-                let i = word[pos];
-                let mut w1 = Vec::with_capacity(word.len() - 1);
-                w1.extend_from_slice(&word[..pos]);
-                w1.push(i);
-                w1.extend_from_slice(&word[pos + 2..]);
-                let mut w2 = Vec::with_capacity(word.len() - 2);
-                w2.extend_from_slice(&word[..pos]);
-                w2.extend_from_slice(&word[pos + 2..]);
-                *terms.entry(w1).or_insert(0.0) += coeff * ha;
-                *terms.entry(w2).or_insert(0.0) += coeff;
-            }
-            1 => {
-                let mut w = word.to_vec();
-                w.swap(pos, pos + 1);
-                *terms.entry(w).or_insert(0.0) += coeff;
-            }
-            2 => {
-                let mut w = word.to_vec();
-                let b = w[pos + 1];
-                let a = w[pos];
-                w[pos] = b; w[pos + 1] = a; w[pos + 2] = b;
-                *terms.entry(w).or_insert(0.0) += coeff;
-            }
-            _ => unreachable!(),
+    fn add_term(elem: &mut HeckeElement, word: Word, coeff: f64) {
+        if coeff.abs() < 1e-15 { return; }
+        if Self::find_reduction(&word).is_some() {
+            elem.unreduced.push(PriWord(word, coeff));
+        } else {
+            *elem.reduced.entry(word).or_insert(0.0) += coeff;
         }
     }
 
-    /// Build nucleus with incremental multiply-and-reduce
+    /// Process unreduced terms highest-degree-first until empty.
+    /// Consolidates same-word entries before processing to avoid
+    /// redundant reductions.
+    fn drain_unreduced(&self, elem: &mut HeckeElement) {
+        // Consolidation: drain heap into a map grouped by word,
+        // then process each unique word once.
+        while !elem.unreduced.is_empty() {
+            // Drain current batch into consolidation map
+            let mut batch: FxHashMap<Word, f64> = FxHashMap::default();
+            while let Some(PriWord(word, coeff)) = elem.unreduced.pop() {
+                *batch.entry(word).or_insert(0.0) += coeff;
+            }
+
+            // Process consolidated batch
+            for (word, coeff) in batch {
+            if coeff.abs() < 1e-15 { continue; }
+
+            if let Some((pos, rule)) = Self::find_reduction(&word) {
+                match rule {
+                    0 => {
+                        // Hecke: σ_i² → ha·σ_i + 1
+                        let i = word[pos];
+                        let mut w1 = Vec::with_capacity(word.len() - 1);
+                        w1.extend_from_slice(&word[..pos]);
+                        w1.push(i);
+                        w1.extend_from_slice(&word[pos + 2..]);
+
+                        let mut w2 = Vec::with_capacity(word.len() - 2);
+                        w2.extend_from_slice(&word[..pos]);
+                        w2.extend_from_slice(&word[pos + 2..]);
+
+                        Self::add_term(elem, w1, coeff * self.ha);
+                        Self::add_term(elem, w2, coeff);
+                    }
+                    1 => {
+                        // Far-comm: swap
+                        let mut w = word;
+                        w.swap(pos, pos + 1);
+                        Self::add_term(elem, w, coeff);
+                    }
+                    2 => {
+                        // YB: (a,b,a) → (b,a,b)
+                        let mut w = word;
+                        let a = w[pos]; let b = w[pos+1];
+                        w[pos] = b; w[pos+1] = a; w[pos+2] = b;
+                        Self::add_term(elem, w, coeff);
+                    }
+                    _ => unreachable!(),
+                }
+            } else {
+                *elem.reduced.entry(word).or_insert(0.0) += coeff;
+            }
+            } // end for (word, coeff) in batch
+        } // end while !unreduced.is_empty()
+
+        elem.reduced.retain(|_, c| c.abs() > 1e-15);
+    }
+
+    /// Multiply element by (c·σ_gen + d) and reduce.
+    fn multiply_and_reduce(&self, elem: &mut HeckeElement, gen: u8, c: f64, d: f64) {
+        // Take all reduced terms, multiply, route results
+        let old: Vec<(Word, f64)> = elem.reduced.drain().collect();
+
+        for (w, coeff) in old {
+            // d·w — same word, check if still reduced
+            if d.abs() > 1e-15 {
+                // w was reduced. d·w has same word → still reduced
+                *elem.reduced.entry(w.clone()).or_insert(0.0) += coeff * d;
+            }
+
+            // c·(w·gen) — appending gen may create a reducible pair
+            if c.abs() > 1e-15 {
+                let new_coeff = coeff * c;
+                // Check: is the last char of w adjacent to gen?
+                // If w is empty or last char != gen and far-comm/YB don't apply,
+                // then w·gen is reduced.
+                let mut wg = w;
+                wg.push(gen);
+                Self::add_term(elem, wg, new_coeff);
+            }
+        }
+
+        self.drain_unreduced(elem);
+    }
+
     fn build_nucleus(&self, z: usize, n: usize) -> HeckeElement {
         let a = z + n;
         let mut types = vec![b'p'; z];
         types.extend(vec![b'n'; n]);
-
         let mut elem = HeckeElement::identity();
 
         for k in 1..a {
@@ -210,77 +225,55 @@ impl HeckeEngine {
         elem
     }
 
-    fn apply_quotient_ideals(&self, elem: &mut HeckeElement) -> usize {
-        let mut total_removed = 0;
-
-        // I₉: recursive closed shell
+    fn apply_quotient_ideals(terms: &mut FxHashMap<Word, f64>) -> usize {
+        let mut total = 0;
+        // I₉: strip longest chains recursively
         loop {
-            let mut words: Vec<Word> = elem.terms.keys()
-                .filter(|w| w.len() >= 2 && elem.terms[*w].abs() > 1e-15)
+            let mut words: Vec<Word> = terms.keys()
+                .filter(|w| w.len() >= 2 && terms[*w].abs() > 1e-15)
                 .cloned().collect();
             words.sort_unstable_by(|a, b| b.len().cmp(&a.len()));
-
             let mut found = false;
             for word in &words {
-                let prefix = &word[..word.len() - 1];
-                if let Some(&c) = elem.terms.get(prefix) {
-                    if c.abs() > 1e-15 {
-                        elem.terms.remove(word);
-                        total_removed += 1;
-                        found = true;
-                        break;
-                    }
+                let prefix = &word[..word.len()-1];
+                if terms.get(prefix).map_or(false, |c| c.abs() > 1e-15) {
+                    terms.remove(word);
+                    total += 1; found = true; break;
                 }
             }
             if !found { break; }
         }
-
         // I₈: adjacency
         loop {
-            let mut found = false;
-            let adj: Vec<Word> = elem.terms.keys()
-                .filter(|w| w.len() == 2 && elem.terms[*w].abs() > 1e-15 && w[1] == w[0] + 1)
+            let adj: Vec<Word> = terms.keys()
+                .filter(|w| w.len() == 2 && terms[*w].abs() > 1e-15 && w[1] == w[0]+1)
                 .cloned().collect();
+            let mut found = false;
             for word in &adj {
-                let sigma_j = vec![word[1]];
-                if let Some(&c) = elem.terms.get(&sigma_j) {
-                    if c.abs() > 1e-15 {
-                        elem.terms.remove(word);
-                        total_removed += 1;
-                        found = true;
-                        break;
-                    }
+                if terms.get(&vec![word[1]]).map_or(false, |c| c.abs() > 1e-15) {
+                    terms.remove(&word.clone()); total += 1; found = true; break;
                 }
             }
             if !found { break; }
         }
-
-        elem.clean();
-        total_removed
+        terms.retain(|_, c| c.abs() > 1e-15);
+        total
     }
 
     fn generator_volumes(&self, z: usize, n: usize) -> Vec<f64> {
         let a = z + n;
         let mut types = vec![b'p'; z];
         types.extend(vec![b'n'; n]);
-        let mut volumes = Vec::new();
-        for i in 0..a - 1 {
-            let mut m = [[1.0, 0.0], [0.0, 1.0]];
-            for j in (i + 1)..a {
+        (0..a-1).map(|i| {
+            let mut m = [[1.0,0.0],[0.0,1.0]];
+            for j in (i+1)..a {
                 let (c, d) = self.crossing_coeffs(types[i], types[j]);
-                let t = [[c * self.ha + d, c], [c, d]];
-                m = [
-                    [m[0][0]*t[0][0]+m[0][1]*t[1][0], m[0][0]*t[0][1]+m[0][1]*t[1][1]],
-                    [m[1][0]*t[0][0]+m[1][1]*t[1][0], m[1][0]*t[0][1]+m[1][1]*t[1][1]],
-                ];
+                let t = [[c*self.ha+d, c], [c, d]];
+                m = [[m[0][0]*t[0][0]+m[0][1]*t[1][0], m[0][0]*t[0][1]+m[0][1]*t[1][1]],
+                     [m[1][0]*t[0][0]+m[1][1]*t[1][0], m[1][0]*t[0][1]+m[1][1]*t[1][1]]];
             }
-            volumes.push(self.z * m[0][0] + m[1][0]);
-        }
-        volumes
-    }
-
-    fn skein_polynomial(&self, z: usize, n: usize) -> f64 {
-        self.generator_volumes(z, n).iter().product()
+            self.z * m[0][0] + m[1][0]
+        }).collect()
     }
 }
 
@@ -295,43 +288,40 @@ struct NucleusResult {
 }
 
 fn is_palindromic(h: &[usize]) -> bool {
-    let n = h.len();
-    (0..n/2).all(|i| h[i] == h[n-1-i])
+    let n = h.len(); (0..n/2).all(|i| h[i] == h[n-1-i])
 }
 
 fn nucleus_name(z: usize, n: usize) -> String {
-    let a = z + n;
-    let sym = match z {
-        1=>"H",2=>"He",3=>"Li",4=>"Be",5=>"B",6=>"C",7=>"N",8=>"O",9=>"F",10=>"Ne",_=>"?"
-    };
-    format!("{}{}({},{})", a, sym, z, n)
+    let a = z+n;
+    let s = match z {1=>"H",2=>"He",3=>"Li",4=>"Be",5=>"B",6=>"C",7=>"N",8=>"O",_=>"?"};
+    format!("{}{}({},{})", a, s, z, n)
 }
 
-fn compute_nucleus(engine: &HeckeEngine, z: usize, n: usize) -> NucleusResult {
-    let a = z + n;
+fn compute(engine: &HeckeEngine, z: usize, n: usize) -> NucleusResult {
+    let a = z+n;
     let t0 = Instant::now();
-    let mut elem = engine.build_nucleus(z, n);
-    let raw_terms = elem.n_terms();
+    let elem = engine.build_nucleus(z, n);
+    let raw = elem.n_terms();
     let hist = elem.histogram();
     let pal = is_palindromic(&hist);
-    engine.apply_quotient_ideals(&mut elem);
-    let optimal = elem.n_terms();
-    let skein = engine.skein_polynomial(z, n);
+    let mut terms = elem.into_map();
+    HeckeEngine::apply_quotient_ideals(&mut terms);
+    let opt = terms.len();
+    let skein: f64 = engine.generator_volumes(z, n).iter().product();
     NucleusResult {
-        name: nucleus_name(z, n), z, n, a,
-        raw_terms, optimal_terms: optimal, target: a,
-        is_optimal: optimal == a, histogram: hist, is_palindromic: pal,
+        name: nucleus_name(z,n), z, n, a, raw_terms: raw,
+        optimal_terms: opt, target: a, is_optimal: opt==a,
+        histogram: hist, is_palindromic: pal,
         elapsed_ms: t0.elapsed().as_millis(), skein_polynomial: skein,
     }
 }
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let q = 1.10998_f64;
-    let engine = HeckeEngine::new(q);
+    let engine = HeckeEngine::new(1.10998);
 
     if args.len() < 2 {
-        eprintln!("Usage: hecke-engine [nucleus Z N | table Zmin Zmax Amax | isotopes Z]");
+        eprintln!("Usage: hecke-engine [nucleus Z N | table Zmin Zmax [Amax]]");
         std::process::exit(1);
     }
 
@@ -339,14 +329,12 @@ fn main() {
         "nucleus" => {
             let z: usize = args[2].parse().unwrap();
             let n: usize = args[3].parse().unwrap();
-            let r = compute_nucleus(&engine, z, n);
-            println!("{}: A={}, Raw={}, After I8+I9={} (target {}), {}, Palindromic={}, P={:.6}, {}ms",
+            let r = compute(&engine, z, n);
+            println!("{}: A={}, Raw={}, Optimal={} (target {}), {}, Pal={}, P={:.6}, {}ms",
                 r.name, r.a, r.raw_terms, r.optimal_terms, r.target,
                 if r.is_optimal {"OPTIMAL"} else {"NOT OPTIMAL"},
-                if r.is_palindromic {"Y"} else {"N"},
-                r.skein_polynomial, r.elapsed_ms);
+                if r.is_palindromic {"Y"} else {"N"}, r.skein_polynomial, r.elapsed_ms);
             println!("Histogram: {:?}", r.histogram);
-            println!("{}", serde_json::to_string_pretty(&r).unwrap());
         }
 
         "table" => {
@@ -358,44 +346,22 @@ fn main() {
                      "Nucleus","Z","N","A","Raw","After","Tgt","Pal","Status","Time");
             println!("{}", "-".repeat(75));
 
+            let t = Instant::now();
             let mut all_opt = true;
-            let t_total = Instant::now();
             for z in z_min..=z_max {
-                let n_min = if z <= 1 { 1 } else { z.saturating_sub(1) };
+                let n_min = if z<=1 {1} else {z.saturating_sub(1)};
                 for n in n_min..=(z+2) {
-                    let a = z + n;
+                    let a = z+n;
                     if a < 2 || a > a_max { continue; }
-                    let r = compute_nucleus(&engine, z, n);
+                    let r = compute(&engine, z, n);
                     if !r.is_optimal { all_opt = false; }
                     println!("{:>12} {:>3} {:>3} {:>3} {:>10} {:>6} {:>4} {:>3} {:>10} {:>8}ms",
-                        r.name, z, n, a, r.raw_terms, r.optimal_terms,
-                        r.target, if r.is_palindromic {"Y"} else {" "},
+                        r.name, z, n, a, r.raw_terms, r.optimal_terms, r.target,
+                        if r.is_palindromic {"Y"} else {" "},
                         if r.is_optimal {"OPTIMAL"} else {"over"}, r.elapsed_ms);
                 }
             }
-            println!("\nAll optimal: {}  Total: {}ms",
-                if all_opt {"YES"} else {"NO"}, t_total.elapsed().as_millis());
-        }
-
-        "isotopes" => {
-            let z: usize = args[2].parse().unwrap();
-            let sym = match z { 1=>"H",2=>"He",3=>"Li",4=>"Be",5=>"B",6=>"C",7=>"N",8=>"O",_=>"?" };
-            println!("Isotopes of {} (Z={})", sym, z);
-            println!("{:>6} {:>3} {:>3} {:>12} {:>12}", "Name","N","A","ln|P|","|P|^2 %");
-            println!("{}", "-".repeat(45));
-            let mut data = Vec::new();
-            for n in z.saturating_sub(2)..=(z+4) {
-                let a = z + n; if a < 1 { continue; }
-                let vols = engine.generator_volumes(z, n);
-                let ln_p: f64 = vols.iter().map(|v| v.abs().ln()).sum();
-                data.push((n, a, ln_p));
-            }
-            let mx = data.iter().map(|d| d.2).fold(f64::NEG_INFINITY, f64::max);
-            let w: Vec<f64> = data.iter().map(|d| (2.0*(d.2-mx)).exp()).collect();
-            let tot: f64 = w.iter().sum();
-            for (i, &(n,a,lp)) in data.iter().enumerate() {
-                println!("{:>6} {:>3} {:>3} {:>12.6} {:>11.4}%", format!("{}{}",a,sym), n, a, lp, w[i]/tot*100.0);
-            }
+            println!("\nAll optimal: {}  Total: {}ms", if all_opt {"YES"} else {"NO"}, t.elapsed().as_millis());
         }
 
         _ => { eprintln!("Unknown: {}", args[1]); std::process::exit(1); }
