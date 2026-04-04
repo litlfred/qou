@@ -394,7 +394,7 @@ impl Engine {
         let max_terms = if a > quotient_after { 30_000 } else { usize::MAX };
 
         for k in 1..a {
-            let t_strand = Instant::now();
+            let _t_strand = Instant::now();
             for i in 0..k {
                 let t_cross = Instant::now();
                 let n_before = elem.n_terms();
@@ -528,7 +528,7 @@ fn main() {
                 let tr_alt = total_acc.tr_alt;
                 let net = total_acc.net;
                 let f = if net.abs() > 1e-30 { tr_alt.abs() / net.abs() } else { 0.0 };
-                let pal = is_palindromic(&elem.histogram());
+                let _pal = is_palindromic(&elem.histogram());
                 let ms = t0.elapsed().as_millis();
                 let mem = elem.memory_bytes() as f64 / 1_048_576.0;
 
@@ -593,10 +593,10 @@ fn main() {
                         let kept = PauliAcc::from_elem(&elem, engine.q, engine.qi);
                         let mut total = accum.clone(); total.merge(&kept);
                         let f = if total.net.abs()>1e-30 { total.tr_alt.abs()/total.net.abs() } else { 0.0 };
-                        let pal = is_palindromic(&elem.histogram());
+                        let _pal = is_palindromic(&elem.histogram());
                         println!("{:>12} {:>3} {:>10.6} {:>3} {:>8}ms",
                             nucleus_name(zz,nn), a, f,
-                            if pal {"Y"} else {" "}, t0.elapsed().as_millis());
+                            if _pal {"Y"} else {" "}, t0.elapsed().as_millis());
                     }
                 }
             }

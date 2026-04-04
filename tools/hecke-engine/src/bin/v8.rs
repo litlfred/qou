@@ -373,7 +373,7 @@ impl Eng {
         let mut log: Vec<String> = Vec::new();
 
         for k in 1..a {
-            let ts = Instant::now();
+            let _ts = Instant::now();
             for i in 0..k {
                 let tc = Instant::now();
                 let n_before = elem.n_terms();
@@ -566,7 +566,7 @@ fn main() {
     println!("════════════════════════════════════════════════════════");
 
     let t_start = Instant::now();
-    let (elem, accum, log) = Eng::build_inductive(z, n, strip_after);
+    let (elem, accum, _log) = Eng::build_inductive(z, n, strip_after);
 
     if elem.has_overflow() {
         println!("\n  OVERFLOW — symbolic result unreliable. Use float engine.");
