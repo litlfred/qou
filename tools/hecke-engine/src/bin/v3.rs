@@ -522,7 +522,7 @@ fn main() {
                 println!();
 
                 let t0 = Instant::now();
-                let use_q = if a <= 10 { 999 } else { 10 };
+                let use_q = if a <= 8 { 999 } else { 8 };
                 if a > 10 {
                     println!("  Using quotient-with-accumulation (A > 10).");
                     println!("  Terms stripped at strand boundaries; Pauli data preserved.");
@@ -652,7 +652,7 @@ fn main() {
                         let a = zz+nn;
                         if a < 2 || a > a_max || nn+1 < zz { continue; }
                         let t0 = Instant::now();
-                        let use_q = if a <= 10 { 999 } else { 10 };
+                        let use_q = if a <= 8 { 999 } else { 8 };
                         let (elem, accum) = engine.build_nucleus_pauli(zz, nn, use_q);
                         let kept = PauliAcc::from_elem(&elem, engine.q, engine.qi);
                         let tr_alt = kept.tr_alt + accum.tr_alt;
