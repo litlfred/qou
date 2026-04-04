@@ -16,10 +16,17 @@ $$
 The [QOU obstruction reduction](#thm:qou-obstruction-reduction)
 shows that all classical-limit obstructions in the QOU are
 images of the single scalar $\chi(A) \in HH^2 \cong k$.
-P vs NP joins RH (spectral), NS (collision locus), and BSD
-(elliptic curve) as a fourth restriction of the same class —
-this time via the resolution-tree map.  All four evaluations
-are proportional, controlled by $\chi(A) = -6$.
+P vs NP joins the table:
+
+| Problem | Evaluation | $q$-scale | Classical limit |
+|---------|-----------|-----------|----------------|
+| RH | Spectral | Proved (Hasse--Weil) | Phase coherence |
+| NS | Collision locus | Proved (exp. damping) | Levi non-degeneracy |
+| BSD | Elliptic curve | Proved (Tannaka--Krein) | $L$-value assembly |
+| **P vs NP** | **Resolution tree** | **BQP at torsion** | **Irreducible tree weight** |
+
+All four evaluations are proportional — controlled by
+$\chi(A) = -6$.
 
 **The $\mathbb{G}_m$-torsion dichotomy.**
 

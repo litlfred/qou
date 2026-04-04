@@ -23,13 +23,21 @@ where $\mathrm{res}_{\mathcal{R}} \colon HH^2(\mathrm{Ad})
 \to H^2(\mathcal{R}, \mathbb{G}_m)$ evaluates the unique
 obstruction scalar $\chi(A)$ on the resolution tree of $L$.
 
-This is the fourth evaluation of $\chi(A)$ alongside the
-spectral (RH), collision (NS), and elliptic (BSD) restrictions
-([QOU obstruction reduction](#thm:qou-obstruction-reduction)).
-All four are images of the same class in $HH^2 \cong k$,
-and the one-dimensionality of $HH^2$ means they are
-proportional: the single integer $\chi(A) = -6$ controls
-whether each problem persists through the classical limit.
+This fits into the same framework as the three millennium
+problem evaluations
+([QOU obstruction reduction](#thm:qou-obstruction-reduction)):
+
+| Evaluation | Restriction map | Target |
+|-----------|----------------|--------|
+| RH | Spectral localization | $H^2(\mathrm{Spec}(\xi_q))$ |
+| NS | Collision locus | $H^2(\Sigma, \mathcal{B}|_\Sigma)$ |
+| BSD | Elliptic restriction | $H^2(\mathcal{E}_q, \mathcal{B}|_{\mathcal{E}_q})$ |
+| **P vs NP** | **Resolution tree** | $H^2(\mathcal{R}, \mathbb{G}_m)$ |
+
+All four are **images of the same class** $\chi(A)$.  The
+one-dimensionality of $HH^2$ means they are proportional:
+the single integer $\chi(A) = -6$ controls whether each
+problem persists through the classical limit.
 
 **Kummer reduction.**
 The Kummer filtration
