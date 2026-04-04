@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:skein-resolution-obstruction",
   title:
-    "Skein resolution obstruction $\\kappa_c^{\\mathrm{comp}}(\\beta, q)$",
+    "Skein resolution obstruction $\\kappa_c^{\\mathrm{comp}}(L, q)$",
   tags: [
     "obstruction",
     "yekutieli",

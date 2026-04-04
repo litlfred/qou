@@ -1,5 +1,6 @@
-Let $\beta$ be a braid on $n$ strands with $c$ crossings, and
-let $\mathcal{R}(\beta)$ be its Skein resolution tree — a
+Let $\beta$ be a braid on $n$ strands with $c$ crossings,
+$L = \hat{\beta}$ its closure, and
+$\mathcal{R}(L)$ the Skein resolution tree — a
 binary-ternary tree of depth $c$ with $3^c$ leaves
 ([Skein Turing machine](#rem:skein-turing-machine)).  Stratify
 the tree by **resolution depth**:
@@ -11,7 +12,7 @@ $$
   \;\hookrightarrow\;
   \cdots
   \;\hookrightarrow\;
-  \mathcal{R}_c = \mathcal{R}(\beta).
+  \mathcal{R}_c = \mathcal{R}(L).
 $$
 
 At depth $k$, the partial resolution $\mathcal{R}_k$ consists
@@ -30,7 +31,7 @@ The Yekutieli obstruction class
 adapted to the resolution tower is
 
 $$
-  \kappa_k^{\mathrm{comp}}(\beta, q)
+  \kappa_k^{\mathrm{comp}}(L, q)
   \;\in\;
   H^2(\mathcal{R}_k,\, \mathcal{B}_q),
 $$
@@ -47,7 +48,7 @@ The obstruction $\kappa_k^{\mathrm{comp}}$ vanishes at depth $k$
 iff the **residual weight** of the unresolved subtree is zero:
 
 $$
-  \kappa_k^{\mathrm{comp}}(\beta, q) = 0
+  \kappa_k^{\mathrm{comp}}(L, q) = 0
   \quad\Longleftrightarrow\quad
   \sum_{\gamma \in \mathcal{R}_c \setminus \mathcal{R}_k}
   w(\gamma, q) = 0,
@@ -62,13 +63,13 @@ interference** — all remaining paths cancel exactly.
 **The computational obstruction at polynomial depth.**
 
 Fix $p(c) = c^d$ for some constant $d$ (a polynomial bound).
-The **Skein resolution obstruction** for $\beta$ at substrate
+The **Skein resolution obstruction** for $L$ at substrate
 parameter $q$ is
 
 $$
-  \kappa_c^{\mathrm{comp}}(\beta, q)
+  \kappa_c^{\mathrm{comp}}(L, q)
   \;:=\;
-  \kappa_{p(c)}^{\mathrm{comp}}(\beta, q)
+  \kappa_{p(c)}^{\mathrm{comp}}(L, q)
   \;\in\;
   H^2(\mathcal{R}_{p(c)},\, \mathcal{B}_q).
 $$

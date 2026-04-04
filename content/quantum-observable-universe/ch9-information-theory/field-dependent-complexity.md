@@ -1,6 +1,6 @@
 **Proposition.**
 *The Skein resolution obstruction
-$\kappa_c^{\mathrm{comp}}(\beta, q)$
+$\kappa_c^{\mathrm{comp}}(L, q)$
 ([Skein resolution obstruction](#def:skein-resolution-obstruction))
 depends on the base field $k$ and the substrate parameter
 $q \in k^\times$.  In particular:*
@@ -28,7 +28,7 @@ Over $\mathbb{F}_p$, the substrate parameter $q \in
 The $q$-integers $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ are
 elements of $\mathbb{F}_p$, and the Hecke algebra $H_n(q)$
 is a **finite-dimensional** algebra over a **finite field**.
-The resolution tree $\mathcal{R}(\beta)$ has $3^c$ leaves,
+The resolution tree $\mathcal{R}(L)$ has $3^c$ leaves,
 but each leaf carries a Skein weight in $\mathbb{F}_p$ — there
 are at most $p$ distinct values.
 
@@ -44,7 +44,7 @@ computation reduces to a finite lookup.
 The resolution obstruction vanishes because the residual
 weight sum is a sum of $3^c$ terms in $\mathbb{F}_p$, and
 the pigeonhole principle guarantees cancellation modulo $p$.
-Formally: $\kappa_c^{\mathrm{comp}}(\beta, q) \in
+Formally: $\kappa_c^{\mathrm{comp}}(L, q) \in
 H^2(\mathcal{R}_{p(c)}, \mathbb{F}_p^\times)$, and
 this cohomology group is $p$-torsion, so the obstruction
 class has finite order.  After at most $p$ resolution steps,
@@ -64,7 +64,7 @@ representation $\rho_{q_k} \colon B_n \to \mathrm{End}(V^{\otimes n})$ is dense 
 The descent involution decomposes the obstruction:
 
 $$
-  \kappa_c^{\mathrm{comp}}(\beta, q_k)
+  \kappa_c^{\mathrm{comp}}(L, q_k)
   \;=\;
   \kappa_c^{\mathrm{desc}}
   \;+\;
@@ -73,14 +73,14 @@ $$
 
 A problem is in $\mathrm{BQP}$ iff the **total obstruction
 vanishes at the root of unity**: $\kappa_c^{\mathrm{comp}}
-(\beta, q_k) = 0$, even though the descended component
+(L, q_k) = 0$, even though the descended component
 $\kappa_c^{\mathrm{desc}} \neq 0$ (classically hard).  The
 transient modes provide **quantum interference channels**
 that cancel the classical obstruction.
 
 The standard examples: integer factoring (Shor) and unstructured
 search (Grover) have $\kappa_c^{\mathrm{desc}} \neq 0$ but
-$\kappa_c^{\mathrm{comp}}(\beta, q_k) = 0$ — the quantum lift
+$\kappa_c^{\mathrm{comp}}(L, q_k) = 0$ — the quantum lift
 collapses the resolution tree.
 
 **(3) Real $q$: no transient cancellation.**
@@ -91,9 +91,9 @@ kills $\mathcal{A}^{\mathrm{trans}}$, leaving only the
 descended component.  The obstruction reduces to
 
 $$
-  \kappa_c^{\mathrm{comp}}(\beta, q)
+  \kappa_c^{\mathrm{comp}}(L, q)
   \;=\;
-  \kappa_c^{\mathrm{desc}}(\beta, q)
+  \kappa_c^{\mathrm{desc}}(L, q)
   \qquad
   \text{(real $q$, classical computation)}.
 $$

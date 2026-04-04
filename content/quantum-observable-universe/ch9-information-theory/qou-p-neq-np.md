@@ -2,16 +2,16 @@
 *Let $q \in \mathbb{G}_m(k) = k^\times$ be the substrate
 parameter
 ([substrate parameter](#def:substrate-parameter)) and let
-$\kappa_c^{\mathrm{comp}}(\beta, q)$ be the Skein resolution
+$\kappa_c^{\mathrm{comp}}(L, q)$ be the Skein resolution
 obstruction
 ([Skein resolution obstruction](#def:skein-resolution-obstruction))
 of a braid $\beta$ encoding an NP-complete problem.  Then:*
 
-1. *$\kappa_c^{\mathrm{comp}}(\beta, q) = 0$ for all $\beta$
+1. *$\kappa_c^{\mathrm{comp}}(L, q) = 0$ for all $\beta$
    if and only if $q$ is a $\mathbb{G}_m$-torsion point
    (root of unity) or $q$ lies in a finite field.*
 
-2. *$\kappa_c^{\mathrm{comp}}(\beta, q) \neq 0$ for
+2. *$\kappa_c^{\mathrm{comp}}(L, q) \neq 0$ for
    NP-complete $\beta$ whenever $q$ is non-torsion in
    $\mathbb{G}_m(\mathbb{R})$ — in particular at
    $q = q_0$.*
@@ -29,26 +29,26 @@ The Skein resolution obstruction defines a coherent sheaf
 $\mathcal{K}$ on $\mathbb{G}_m$:
 
 $$
-  \mathcal{K}(\beta)
+  \mathcal{K}(L)
   \;=\;
   \bigl\{
     q \in \mathbb{G}_m
     \;:\;
-    \kappa_c^{\mathrm{comp}}(\beta, q) \neq 0
+    \kappa_c^{\mathrm{comp}}(L, q) \neq 0
   \bigr\}
   \;\subset\;
   \mathbb{G}_m.
 $$
 
-For each braid $\beta$, the **support** $\mathcal{K}(\beta)$
+For each link $L$, the **support** $\mathcal{K}(L)$
 is the locus where the computation is super-polynomial.  The
 complement — where the obstruction vanishes — is the
 **efficient locus**.
 
-The conjecture asserts that for NP-complete $\beta$:
+The conjecture asserts that for NP-complete $L$:
 
 $$
-  \mathcal{K}(\beta)
+  \mathcal{K}(L)
   \;=\;
   \mathbb{G}_m \;\setminus\; \mu_\infty,
 $$
@@ -134,8 +134,8 @@ This dichotomy is intrinsic to the multiplicative group:
 Our universe has $q_0 \approx 1.1097$, which is non-torsion
 (it is transcendental over $\mathbb{Q}$ if the QOU
 predictions are exact).  The obstruction
-$\kappa_c^{\mathrm{comp}}(\beta, q_0) \neq 0$ for NP-complete
-braids, and $\mathrm{P} \neq \mathrm{NP}$ in the QOU.
+$\kappa_c^{\mathrm{comp}}(L, q_0) \neq 0$ for NP-complete
+links, and $\mathrm{P} \neq \mathrm{NP}$ in the QOU.
 
 **Connection to the Euler characteristic.**
 

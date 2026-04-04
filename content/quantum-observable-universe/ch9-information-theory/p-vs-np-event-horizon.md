@@ -1,61 +1,86 @@
-The reformulation of $\mathrm{P}$ vs $\mathrm{NP}$ as a
-boundary condition
-([P $\neq$ NP as jet horizon opacity](#conj:p-vs-np-boundary))
+The reformulation of $\mathrm{P}$ vs $\mathrm{NP}$ as
+$\mathcal{H}_c \stackrel{?}{=} \varnothing$
+([P vs NP as boundary](#conj:p-vs-np-boundary))
 reveals a structural identity between **computational
-complexity** and **gravitational information loss**.  The same
-jet horizon that blocks degree-$0$ photon data at a black hole
-boundary ([jet horizon](#def:jet-horizon)) blocks the degree-$0$
+complexity** and **jet horizon information loss**.  The same
+jet horizon $\mathcal{H} = V(\mathfrak{h})$ that blocks
+degree-$0$ photon data between aeons
+([jet horizon](#def:jet-horizon)) blocks the degree-$0$
 answer of an NP-complete problem at a computational boundary.
 
 **The dictionary.**
 
-| Black hole physics | Computational complexity |
-|--------------------|------------------------|
-| Infalling matter (full quantum state) | Input + witness (full resolution tree) |
-| Schwarzschild horizon $\mathcal{H}$ | Computational horizon $\mathcal{H}_c$ |
-| Exterior observer | Polynomial-time algorithm |
-| Degree-$0$ opacity: no photon identity crosses | Degree-$0$ opacity: no answer in poly time |
-| Hawking radiation (degree $\geq 1$ thermal data) | Partial computation (degree $\geq 1$ witness verification) |
-| Bekenstein bound: $S \leq 2\pi RE/\hbar c$ | Bandwidth bound: $I(t) \leq t \cdot \mathcal{B}(q)$ |
-| Information paradox: is infalling data recoverable? | P vs NP: is the answer efficiently recoverable? |
-| Planck-scale discreteness resolves the paradox | Planck-step discreteness defines the complexity |
+The QOU has its own observer concept: an element of the
+**observable subcategory**
+$\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
+([observable subcategory](#def:observable-subcategory)) — a
+configuration where the degree-$0$ algebra $A_0$ is
+non-trivial and the Frobenius pairing is non-degenerate.
+The complement ($A_0 = 0$) is the jet horizon.  The
+computational analog is:
 
-**Information flow at the computational horizon.**
+| QOU jet horizon | Computational boundary |
+|----------------|----------------------|
+| Observable subcategory $\mathrm{Bun}^{\circ}$ ($A_0 \neq 0$) | Polynomial observable subcategory $\mathcal{R}^{\circ}$ |
+| Jet horizon $\mathcal{H} = V(\mathfrak{h})$ ($A_0 = 0$) | Computational boundary $\mathcal{H}_c = V(\mathfrak{h}_c)$ |
+| Observer: object of $\mathrm{Bun}^{\circ}$ | Observer: poly-time algorithm (object of $\mathcal{R}^{\circ}$) |
+| Aeon: connected component of $\mathrm{Bun}^{\circ}$ | Complexity class: connected component of $\mathcal{R}^{\circ}$ |
+| Degree-$0$ opacity: no fibre value crosses $\mathcal{H}$ | Degree-$0$ opacity: no answer crosses $\mathcal{H}_c$ in poly time |
+| Degree $\geq 1$ leakage: winding, curvature cross | Degree $\geq 1$ leakage: witnesses verifiable in poly time |
+| Bekenstein bound: $\eta_q$ per operation | Bandwidth bound: $I(t) \leq t \cdot \mathcal{B}(q)$ |
+| Big Bang state: $A_0|_{\mathcal{S}_0} = 0$ | Unsolved NP instance: degree-$0$ answer not yet extracted |
 
-Consider an NP-complete problem encoded as a braid $\beta$ with
-$c$ crossings.  The resolution tree $\mathcal{R}(L)$ is the
-computational interior — the full space of $3^c$ histories
-([Skein Turing machine](#rem:skein-turing-machine)).  A
-polynomial-time algorithm is an exterior observer: it can
-access $\mathrm{poly}(c)$ resolution paths per Planck step,
-bounded by the information bandwidth $\mathcal{B}(q)$
-([information bandwidth](#prop:information-speed-of-light)).
+**The observer in $\mathrm{Bun}^{\circ}$ versus the
+observer in $\mathcal{R}^{\circ}$.**
 
-The information flow across the computational horizon mirrors
-the jet horizon precisely:
+In the physical QOU, an observer is any configuration in the
+observable subcategory — any state where $\Gamma(\mathcal{S},
+A_0) \neq 0$.  The observer can perform degree-$0$ measurements
+(identify particle types, read fibre values) because the
+Frobenius pairing is non-degenerate on $A_0$.  At the jet
+horizon, $A_0 = 0$ and the observer loses all degree-$0$
+capability: it can still detect degree $\geq 1$ data (thermal
+winding and curvature — the QOU realization of Hawking
+radiation, [Hawking radiation](#rem:hawking-radiation)), but
+cannot identify individual particles.
 
-1. **Degree-$0$ (the answer).**  The evaluation $P_L(q_0)$
-   is a global property of the resolution tree — it depends
-   on all $3^c$ paths, weighted by their Skein signs.  Just as
-   a photon's identity (degree-$0$ fibre value) cannot cross
-   the jet horizon, the answer cannot cross the computational
-   horizon in polynomial time.
+In the computational setting, the observer is a
+polynomial-time algorithm — an object of $\mathcal{R}^{\circ}$.
+It can access degree-$0$ sections (evaluate $P_L(q)$) only
+from nodes within $\mathcal{R}^{\circ}$.  At the computational
+boundary $\mathcal{H}_c$, the algorithm loses degree-$0$
+capability: it can still verify witnesses (degree-$1$ linear
+transport through the resolution tree) and detect structural
+correlations (degree-$2$ curvature data), but cannot extract
+the answer.
 
-2. **Degree $\geq 1$ (witness verification).**  A single
-   resolution path is degree-$1$ data: linear transport through
-   the tree.  It crosses the horizon freely — this is NP
-   verification.  Given a witness (a specific path through the
-   tree), one checks in $O(c)$ Planck steps that each crossing
-   is consistently resolved.  This is Hawking radiation: thermal
-   data with no particle identity.  The witness tells you
-   *something* about the interior, but not the answer.
+**Information flow across the boundary.**
 
-3. **Degree $\geq 2$ (structural correlations).**  Pairwise
-   correlations between resolution paths — curvature data —
-   also leak through.  This corresponds to heuristic algorithms
-   that exploit structural properties of the problem (e.g.,
-   clause-variable correlations in SAT).  They extract more
-   than a single witness but less than the full answer.
+The jet horizon leakage table
+([jet horizon](#def:jet-horizon)) transfers directly:
+
+| Jet degree | Physical (jet horizon) | Computational ($\mathcal{H}_c$) |
+|:---:|---|---|
+| $0$ | Fibre value — **blocked** | Answer $P_L(q_0)$ — **blocked** |
+| $1$ | Winding number — leaks | Single witness — verifiable in $O(c)$ |
+| $2$ | Curvature/linking — leaks | Pairwise path correlations — heuristically exploitable |
+| $\geq 3$ | Higher topology — leaks | Higher structural data — diminishing returns |
+
+The degree-$1$ leakage is **NP verification**: given a
+resolution path (a witness), one traverses it in $O(c)$
+Planck steps checking consistency at each crossing.  This is
+linear transport — the first jet beyond the constant term.
+It tells you *something* about the interior (that this
+particular path is valid), but nothing about the global sum
+$P_L(q_0)$ over all $3^c$ paths.
+
+The degree-$2$ leakage is **heuristic computation**: pairwise
+correlations between resolution paths reveal structural
+properties (clause-variable correlations in SAT,
+neighborhood structure in graph problems).  These are curvature
+data — the second jet.  Heuristic algorithms exploit this
+leakage, often successfully in practice, but without
+worst-case guarantees.
 
 **The Planck step as the tick of a Turing machine.**
 
@@ -82,65 +107,63 @@ but needs $c \cdot \log 3$ nats of aggregated information from
 the full tree.  The deficit is exponential: the bandwidth
 $\mathcal{B}(q)$ cannot bridge the gap in polynomial time.
 
-**Why this is a boundary condition, not just a resource bound.**
+**Why $\mathcal{H}_c$ is a boundary condition, not a
+resource bound.**
 
 The standard complexity-theoretic framing treats $\mathrm{P}$
 vs $\mathrm{NP}$ as a question about time resources: can
 polynomial time suffice?  The QOU reformulation reveals it as
-a **geometric** statement: the computational horizon is a
-codimension-$1$ surface in the resolution tree, and $\mathrm{P}
-\neq \mathrm{NP}$ asserts that this surface is a genuine
-boundary — not a removable singularity.
+a **geometric** statement about the observable subcategory:
+$\mathcal{R}^{\circ}$ is either closed (P $=$ NP) or has a
+non-trivial frontier $\mathcal{H}_c$ (P $\neq$ NP).
 
-The analogy is exact:
+This parallels the physical jet horizon exactly:
 
-- A **removable singularity** in complex analysis is a point
-  where a function appears undefined but can be continuously
-  extended.  If $\mathrm{P} = \mathrm{NP}$, every computational
-  horizon is removable: the degree-$0$ answer can be
-  continuously extended from the polynomial-depth slice.
+- $\mathrm{Bun}^{\circ}$ closed (no jet horizons) would mean
+  all configurations are observable — no aeon boundaries, no
+  Big Bang, no information loss.  The QOU is a single
+  transparent aeon.
 
-- A **genuine singularity** is a point where no continuous
-  extension exists.  If $\mathrm{P} \neq \mathrm{NP}$, some
-  computational horizons are genuine: the degree-$0$ answer
-  has an essential discontinuity at polynomial depth.
+- $\mathrm{Bun}^{\circ}$ not closed (jet horizons exist)
+  means the observable subcategory has a genuine frontier —
+  aeons separated by horizons, Big Bang states where $A_0 = 0$,
+  degree $\geq 1$ leakage as the only cross-horizon data.
 
-The jet horizon formalism makes this precise.  The vanishing
-ideal $\mathfrak{h} = \{s \in \Gamma(U, A_0) : s|_{\mathcal{H}} = 0\}$
-is the set of degree-$0$ sections that extend to the horizon
-and vanish.  For a computational horizon, this is the set of
-polynomial-time algorithms that *attempt* to compute $P_L(q_0)$
-but return $0$ — they reach the horizon and find no degree-$0$
-data.  The non-emptiness of $\mathfrak{h}$ (the existence of
-NP-complete problems) is the assertion that the horizon is real.
+The physical QOU has jet horizons ($A_0 = 0$ at Big Bang
+states).  The conjecture asserts the computational QOU also
+has horizons ($\mathcal{H}_c \neq \varnothing$ for
+NP-complete braids).  In both cases, the boundary is the
+**vanishing locus of degree-$0$ sections** — a geometric
+object, not a resource count.
 
 **The arrow of computational time.**
 
 The Big Bang state ([Big Bang](#def:big-bang-state)) has
 $A_0|_{\mathcal{S}_0} = 0$: no degree-$0$ data.  The universe
-begins behind its own jet horizon.  As Planck steps accumulate,
-the jet tower $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$
-builds degree-$0$ sections — the universe becomes observable.
+begins outside $\mathrm{Bun}^{\circ}$ — behind its own jet
+horizon.  As Planck steps accumulate, the jet tower
+$A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ builds
+degree-$0$ sections, and the universe enters
+$\mathrm{Bun}^{\circ}$ — it becomes observable.
 
 Computation follows the same arrow.  A Turing machine begins
 with input (degree $\geq 1$ data: the encoding of the problem)
 and terminates with output (degree-$0$ data: the answer).  The
-computation is the process of converting degree $\geq 1$
-information into degree-$0$ information — of crossing the
-computational horizon from inside to outside.
+computation is the process of crossing from $\mathcal{R}
+\setminus \mathcal{R}^{\circ}$ into $\mathcal{R}^{\circ}$ —
+of converting degree $\geq 1$ information into degree-$0$
+information, crossing the computational boundary from inside
+to outside.
 
-For P-class problems, this crossing takes polynomial time: the
-horizon is thin, and the information funnel (the Markov trace)
-is efficient.  For NP-complete problems, the crossing takes
-exponential time: the horizon is thick, and the information
-must traverse an exponentially deep interior before reaching
-the degree-$0$ exterior.
+For P-class problems, $\mathcal{H}_c = \varnothing$:
+there is no boundary to cross — the algorithm starts in
+$\mathcal{R}^{\circ}$ and stays there.  For NP-complete
+problems, $\mathcal{H}_c \neq \varnothing$: the
+algorithm must traverse the boundary, and the exponential
+depth of the resolution tree behind $\mathcal{H}_c$
+is the cost of crossing.
 
-The $\mathrm{P}$ vs $\mathrm{NP}$ question is: **does every
-computation eventually cross its horizon, or are some horizons
-so thick that no polynomial-time process can traverse them?**
-The jet horizon formalism answers: the thickness of the horizon
-is the effective depth of the resolution tree after
-interference, and $\mathrm{P} \neq \mathrm{NP}$ is the
-assertion that some resolution trees have irreducibly
-exponential depth.
+The $\mathrm{P}$ vs $\mathrm{NP}$ question is: **does
+$\mathcal{R}^{\circ}$ always equal $\mathcal{R}$, or can the
+computational observable subcategory be strictly smaller than
+the full resolution tree?**

@@ -1,5 +1,6 @@
-Let $\beta$ be a braid with $c$ crossings and let
-$\kappa_c^{\mathrm{comp}}(\beta, q) \in H^2(\mathcal{R}, \mathbb{G}_m)$
+Let $\beta$ be a braid with $c$ crossings, $L = \hat{\beta}$
+its closure, and
+$\kappa_c^{\mathrm{comp}}(L, q) \in H^2(\mathcal{R}, \mathbb{G}_m)$
 be the Skein resolution obstruction
 ([Skein resolution obstruction](#def:skein-resolution-obstruction)).
 The Kummer exact sequence
@@ -14,9 +15,9 @@ specialises the obstruction at each $\mathbb{G}_m$-torsion
 level $n$:
 
 $$
-  \kappa_c^{\mathrm{comp}}(\beta, q)
+  \kappa_c^{\mathrm{comp}}(L, q)
   \;\mapsto\;
-  \kappa_c^{\mathrm{comp}}(\beta, q) \bmod n
+  \kappa_c^{\mathrm{comp}}(L, q) \bmod n
   \;\in\;
   H^2(\mathcal{R}, \mathbb{G}_m) / n\,H^2(\mathcal{R}, \mathbb{G}_m).
 $$
@@ -43,7 +44,7 @@ $n = k + 2$:*
    NP-complete braids, this component is non-vanishing:*
 
    $$
-     \delta_c^{\mathrm{comp}}(\beta, q_k) \;\neq\; 0
+     \delta_c^{\mathrm{comp}}(L, q_k) \;\neq\; 0
      \qquad\text{(NP-complete $\beta$, any $k$).}
    $$
 
@@ -117,7 +118,7 @@ $q = 1$).  The tree reduces to $2^c$ paths with weights
 $\pm 1$ — a **classical Boolean computation**.
 
 The classical Boolean sum $\sum_\gamma (\pm 1)$ is the analytic
-component $\delta_c^{\mathrm{comp}}(\beta, 1)$.  For
+component $\delta_c^{\mathrm{comp}}(L, 1)$.  For
 NP-complete problems, this sum is irreducible: the $2^c$
 Boolean paths carry non-cancelling contributions, and no
 polynomial sample determines the total.  The analytic

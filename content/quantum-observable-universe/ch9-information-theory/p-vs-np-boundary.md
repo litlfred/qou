@@ -1,6 +1,7 @@
 **Setup.**
-Let $\beta$ be a braid on $n$ strands with $c$ crossings and
-$\mathcal{R}(\beta)$ its Skein resolution tree
+Let $\beta$ be a braid on $n$ strands with $c$ crossings,
+$L = \hat{\beta}$ its closure, and
+$\mathcal{R}(L)$ the Skein resolution tree
 ([Skein Turing machine](#rem:skein-turing-machine)).  Fix a
 polynomial bound $p(c) = c^d$.
 
@@ -9,10 +10,10 @@ The *polynomial observable subcategory* of the resolution
 tree is the full sub-poset
 
 $$
-  \mathcal{R}^{\circ}(\beta, q)
+  \mathcal{R}^{\circ}(L, q)
   \;=\;
   \bigl\{\,
-    x \in \mathcal{R}(\beta)
+    x \in \mathcal{R}(L)
     \;:\;
     \Gamma_{\mathrm{poly}}\!(x,\, A_0) \neq 0
   \,\bigr\},
@@ -32,7 +33,7 @@ $P_L(q)$ is polynomial-time accessible.
 The *computational boundary* is the frontier
 
 $$
-  \partial_{\mathrm{P}}(\beta, q)
+  \mathcal{H}_c(L, q)
   \;=\;
   \overline{\mathcal{R}^{\circ}}
   \;\setminus\;
@@ -43,16 +44,16 @@ equivalently the vanishing locus of the computational
 horizon ideal:
 
 $$
-  \partial_{\mathrm{P}}(\beta, q)
+  \mathcal{H}_c(L, q)
   \;=\;
-  V\!\bigl(\mathfrak{h}_{\mathrm{comp}}\bigr),
+  V\!\bigl(\mathfrak{h}_c\bigr),
   \qquad
-  \mathfrak{h}_{\mathrm{comp}}
+  \mathfrak{h}_c
   \;=\;
   \bigl\{\,
     s \in \Gamma\bigl(\mathcal{R},\, A_0^{\mathrm{comp}}\bigr)
     \;:\;
-    s\big|_{\partial_{\mathrm{P}}} = 0
+    s\big|_{\mathcal{H}_c} = 0
   \,\bigr\}.
 $$
 
@@ -71,42 +72,42 @@ $$
   \boxed{
     \mathrm{P} = \mathrm{NP}
     \;\;\Longleftrightarrow\;\;
-    \partial_{\mathrm{P}}(\beta, q) = \varnothing
-    \;\;\text{for every NP braid } \beta
+    \mathcal{H}_c(L, q) = \varnothing
+    \;\;\text{for every NP link } L
   }
 $$
 
 *$\mathrm{P} \neq \mathrm{NP}$ if and only if there exists
-an NP-complete braid $\beta$ for which the computational
-boundary is non-empty:*
+an NP-complete link $L$ for which the computational
+horizon is non-empty:*
 
 $$
   \mathrm{P} \neq \mathrm{NP}
   \;\;\Longleftrightarrow\;\;
-  \exists\; \beta \;\text{(NP-complete)}
+  \exists\; L \;\text{(NP-complete)}
   \;\;\text{with}\;\;
-  \partial_{\mathrm{P}}(\beta, q) \neq \varnothing.
+  \mathcal{H}_c(L, q) \neq \varnothing.
 $$
 
 **What each case means geometrically.**
 
-- **$\partial_{\mathrm{P}} = \varnothing$** (P = NP):
+- **$\mathcal{H}_c = \varnothing$** (P = NP):
   The polynomial observable subcategory $\mathcal{R}^{\circ}$
   is **closed** — it equals its own closure.  Every degree-$0$
   section that exists anywhere in $\mathcal{R}$ already extends
   to polynomial depth.  The computational horizon ideal is
-  trivial: $\mathfrak{h}_{\mathrm{comp}} = (0)$.  No
+  trivial: $\mathfrak{h}_c = (0)$.  No
   information barrier separates the polynomial slice from the
   full tree.  The resolution tree has no genuine boundary — it
   is a **removable singularity**.
 
-- **$\partial_{\mathrm{P}} \neq \varnothing$** (P $\neq$ NP):
+- **$\mathcal{H}_c \neq \varnothing$** (P $\neq$ NP):
   The polynomial observable subcategory $\mathcal{R}^{\circ}$
   is **not closed** — its closure includes points beyond
   polynomial depth.  There exists a non-trivial computational
   boundary: a codimension-$1$ locus where degree-$0$ sections
   vanish.  The horizon ideal
-  $\mathfrak{h}_{\mathrm{comp}} \neq (0)$ contains non-zero
+  $\mathfrak{h}_c \neq (0)$ contains non-zero
   sections — polynomial-time algorithms that reach the boundary
   and return $0$.  The resolution tree has a genuine event
   horizon — an **essential singularity**.
@@ -117,23 +118,23 @@ $$
 |--------|------------|-------------|----------------------|
 | Space | Brane tower $A_n$ | State bundle $\mathcal{S}$ | Resolution tree $\mathcal{R}$ |
 | Observable part | $\mathrm{Bun}^{\circ}$ ($A_0 \neq 0$) | $\mathcal{S} \setminus \Sigma$ (off collision) | $\mathcal{R}^{\circ}$ (poly-time computable) |
-| Boundary | $\mathcal{H} = V(\mathfrak{h})$ | $\Sigma$ (collision locus) | $\partial_{\mathrm{P}} = V(\mathfrak{h}_{\mathrm{comp}})$ |
-| Ideal | $\mathfrak{h} \subset \Gamma(A_0)$ | $I_\Sigma \subset \mathcal{O}_M$ | $\mathfrak{h}_{\mathrm{comp}} \subset \Gamma(A_0^{\mathrm{comp}})$ |
+| Boundary | $\mathcal{H} = V(\mathfrak{h})$ | $\Sigma$ (collision locus) | $\mathcal{H}_c = V(\mathfrak{h}_c)$ |
+| Ideal | $\mathfrak{h} \subset \Gamma(A_0)$ | $I_\Sigma \subset \mathcal{O}_M$ | $\mathfrak{h}_c \subset \Gamma(A_0^{\mathrm{comp}})$ |
 | $\partial = \varnothing$ | All configs observable | No collision (global smooth flow) | P = NP |
 | $\partial \neq \varnothing$ | Horizon exists (aeons) | NS-singular (blowup) | P $\neq$ NP |
 | Obstruction | $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ | $\mathrm{NS}(A) = \kappa_0|_\Sigma$ | $\kappa_c^{\mathrm{comp}} \in H^2(\mathcal{R}, \mathbb{G}_m)$ |
 
-**The three equivalent criteria for $\partial_{\mathrm{P}}
+**The three equivalent criteria for $\mathcal{H}_c
 \neq \varnothing$.**
 
 1. **Ideal-theoretic.**  The horizon ideal is non-trivial:
-   $\mathfrak{h}_{\mathrm{comp}} \neq (0)$.  There exist
+   $\mathfrak{h}_c \neq (0)$.  There exist
    polynomial-time algorithms that attempt to compute
    $P_L(q_0)$ and return $0$ — they reach the boundary
    and find no degree-$0$ data.
 
 2. **Cohomological.**  The Skein resolution obstruction
-   $\kappa_c^{\mathrm{comp}}(\beta, q) \neq 0$
+   $\kappa_c^{\mathrm{comp}}(L, q) \neq 0$
    ([Skein resolution obstruction](#def:skein-resolution-obstruction)).
    The Yekutieli class obstructs the lift from polynomial
    depth to full resolution.
@@ -154,12 +155,12 @@ saturated.
 (non-torsion, [substrate $\mathbb{G}_m$-torsion](#rem:substrate-gm-torsion)):*
 
 *There exists a family of braids
-$\{\beta_N\}_{N \geq 1}$ with $c_N = 3N$ crossings
+$\{L_N = \hat{\beta}_N\}_{N \geq 1}$ with $c_N = 3N$ crossings
 encoding an NP-complete problem \cite{cook1971} such
 that:*
 
 $$
-  \partial_{\mathrm{P}}(\beta_N, q_0) \;\neq\; \varnothing
+  \mathcal{H}_c(L_N, q_0) \;\neq\; \varnothing
   \qquad\text{for all } N \geq N_0.
 $$
 
@@ -175,20 +176,20 @@ The descent involution $\hat{\tau}$
 acts on the boundary.  At a root of unity $q_k$:
 
 $$
-  \partial_{\mathrm{P}}(\beta, q_k)
+  \mathcal{H}_c(L, q_k)
   \;=\;
-  \partial_{\mathrm{P}}^{\mathrm{desc}}
+  \mathcal{H}_c^{\mathrm{desc}}
   \;\cup\;
-  \partial_{\mathrm{P}}^{\mathrm{trans}}.
+  \mathcal{H}_c^{\mathrm{trans}}.
 $$
 
-The descended boundary $\partial_{\mathrm{P}}^{\mathrm{desc}}$
+The descended boundary $\mathcal{H}_c^{\mathrm{desc}}$
 is the classical horizon (opaque at real $q$).  The transient
-boundary $\partial_{\mathrm{P}}^{\mathrm{trans}}$ is the
+boundary $\mathcal{H}_c^{\mathrm{trans}}$ is the
 quantum correction.  For BQP problems:
-$\partial_{\mathrm{P}}^{\mathrm{trans}} =
--\partial_{\mathrm{P}}^{\mathrm{desc}}$ (exact cancellation),
-giving $\partial_{\mathrm{P}} = \varnothing$ at the root of
+$\mathcal{H}_c^{\mathrm{trans}} =
+-\mathcal{H}_c^{\mathrm{desc}}$ (exact cancellation),
+giving $\mathcal{H}_c = \varnothing$ at the root of
 unity — the boundary dissolves under quantum interference.
 
 The standard complexity hierarchy translates to:
