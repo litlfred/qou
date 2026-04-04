@@ -16,5 +16,6 @@ export default conjecture({
     "rem:kummer-filtration-obstruction",
     "def:classical-limit-obstruction",
     "thm:qou-obstruction-reduction",
+    "def:substrate-parameter",
   ],
 });

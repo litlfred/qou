@@ -83,7 +83,7 @@ theorem vacuum_state_exists (dla : DirectLimitAlgebra) :
     This is the categorical analogue of the Schur uniqueness in
     `QOU.Torsion.invariant_functional_unique` (vacuum-state.lean). -/
 -- Ref: [manuscript] §3, Proposition: Vacuum state (uniqueness)
-theorem vacuum_state_unique (dla : DirectLimitAlgebra)
+theorem vacuum_state_state_eq (dla : DirectLimitAlgebra)
     (v₁ v₂ : VacuumState dla)
     (n : ℕ) (a₀ : dla.sectionAlgebra n) :
     ∀ (a : dla.limitAlgebra), v₁.state a = v₂.state a := by

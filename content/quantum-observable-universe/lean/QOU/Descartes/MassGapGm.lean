@@ -262,7 +262,7 @@ theorem gs_nf_determines_spectrum
   subst h; rfl
 
 /-- The alternating eigenvalue of the pp crossing is `−1`. -/
-theorem pp_spectral_product_ne_zero :
+theorem pp_alternating_eigenvalue_neg_one :
     (FullRepTransferMatrix.fromCrossingMatrix T_pp).λ_alt = -1 := by
   unfold FullRepTransferMatrix.fromCrossingMatrix T_pp transferMatrix
   simp [Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
