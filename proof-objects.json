@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-04T20:11:04.717499+00:00",
+    "generated_at": "2026-04-04T23:52:37.698021+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -393,7 +393,7 @@
         "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/BringsSurface.lean",
         "last_edited_commit": "unknown",
         "sorry_free": true,
-        "lean_hash": "7074e5d169a2",
+        "lean_hash": "4074a44575cc",
         "witnessed": true
       },
       "formalization_status": "proved"
@@ -4133,11 +4133,43 @@
       ]
     },
     {
+      "label": "conj:yang-mills-mass-gap",
+      "object_type": "conjecture",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 26,
+        "chapter": 6
+      },
+      "title": "{Yang--Mills Existence and Mass Gap}",
+      "lean": {
+        "decl": "QOU.Torsion.YangMillsMassGap",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "unknown",
+        "sorry_free": true
+      },
+      "formalization_status": "proved",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:mass-identity",
+        "def:categorical-connection",
+        "def:q-yang-mills-levi",
+        "prop:vacuum-state",
+        "thm:topological-mass",
+        "rem:substrate-gm-torsion",
+        "rem:kummer-filtration-obstruction",
+        "def:classical-limit-obstruction",
+        "thm:qou-obstruction-reduction",
+        "def:substrate-parameter"
+      ]
+    },
+    {
       "label": "rem:gr-substrate-geometry",
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 26,
+        "line": 166,
         "chapter": 6
       },
       "title": "{General Relativity as the Substrate Geometry}",
@@ -4151,7 +4183,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 53,
+        "line": 193,
         "chapter": 6
       },
       "title": "{Main Commutative Diagram}",
@@ -4175,7 +4207,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 138,
+        "line": 278,
         "chapter": 6
       },
       "title": "{Real hypersurface in a Calabi--Yau $2$-fold}",
@@ -4191,7 +4223,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 173,
+        "line": 313,
         "chapter": 6
       },
       "title": "{ALE links}",
@@ -4206,7 +4238,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 205,
+        "line": 345,
         "chapter": 6
       },
       "title": "{Bring's surface unit circle bundle}",
@@ -4220,7 +4252,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 217,
+        "line": 357,
         "chapter": 6
       },
       "title": "{Cosmological limits of $q$}",
@@ -4235,7 +4267,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 265,
+        "line": 405,
         "chapter": 6
       },
       "title": "{Instanton connection}",
@@ -4258,7 +4290,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 279,
+        "line": 419,
         "chapter": 6
       },
       "title": "{Irreducibility of the connection}",
@@ -4283,7 +4315,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 295,
+        "line": 435,
         "chapter": 6
       },
       "title": "{Self-duality of the curvature}",
@@ -4308,7 +4340,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 313,
+        "line": 453,
         "chapter": 6
       },
       "title": "{Archimedean substrate via the Levi form}",
@@ -4323,7 +4355,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 366,
+        "line": 506,
         "chapter": 6
       },
       "title": "{$q$-deformed Heisenberg commutator from the Reeb fibre}",
@@ -4345,7 +4377,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 394,
+        "line": 534,
         "chapter": 6
       },
       "title": "{Reeb decomposition}",
@@ -4367,7 +4399,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 419,
+        "line": 559,
         "chapter": 6
       },
       "title": "{Spatial realization functor}",
@@ -4391,7 +4423,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 487,
+        "line": 627,
         "chapter": 6
       },
       "title": "{Categorical--geometric correspondence}",
@@ -4416,7 +4448,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 618,
+        "line": 758,
         "chapter": 6
       },
       "title": "{Witt vector lift of a formal group}",
@@ -4435,7 +4467,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 632,
+        "line": 772,
         "chapter": 6
       },
       "title": "{Integration of skewed-Poisson structures}",
@@ -6384,6 +6416,61 @@
     {
       "from": "def:q-yang-mills-levi",
       "to": "ex:instanton",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "def:mass-identity",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "def:categorical-connection",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "def:q-yang-mills-levi",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "prop:vacuum-state",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "thm:topological-mass",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "rem:substrate-gm-torsion",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "rem:kummer-filtration-obstruction",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "def:classical-limit-obstruction",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "thm:qou-obstruction-reduction",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:yang-mills-mass-gap",
+      "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
