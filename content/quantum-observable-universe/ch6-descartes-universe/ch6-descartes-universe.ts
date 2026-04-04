@@ -155,6 +155,8 @@ export default chapter({
         "ns-regular-qou",
         "ns-obstruction-tower",
         "ns-obstruction-computation",
+        "substrate-gm-torsion",
+        "ns-kummer-specialisation",
         "q-ns-research-programme",
       ],
     }),

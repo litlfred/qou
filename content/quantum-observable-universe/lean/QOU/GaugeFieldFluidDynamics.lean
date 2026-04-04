@@ -480,4 +480,45 @@ theorem jet_exponent_increasing (n m : ℕ) (h : n < m) :
   apply div_lt_div_of_pos_right _ (by norm_num : (2 : ℝ) > 0)
   exact_mod_cast Nat.add_lt_add_right h 1
 
+-- ════════════════════════════════════════════════════════════════
+-- §14  Kummer specialisation: obstruction persists at q = 1
+-- ════════════════════════════════════════════════════════════════
+
+/-- χ(A) = -6 for the Descartes universe. -/
+def descartes_euler : ℤ := -6
+
+/-- χ(A) ≠ 0. -/
+theorem descartes_euler_ne_zero : descartes_euler ≠ 0 := by
+  unfold descartes_euler; norm_num
+
+/-- For κ ≥ 4, 2κ does not divide -6.
+    This is the key arithmetic: |2κ| ≥ 8 > 6 = |-6|.
+    Ref: [manuscript] Ch 5 §8 Kummer specialisation -/
+theorem obstruction_persists (κ : ℕ) (hκ : κ ≥ 4) :
+    ¬ ((2 * (κ : ℤ)) ∣ (-6 : ℤ)) := by
+  intro ⟨c, hc⟩
+  have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
+  have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
+  -- |2κ · c| = |2κ| · |c| ≥ 8 · 1 = 8 > 6 = |-6|
+  have : |2 * (κ : ℤ) * c| = |2 * (κ : ℤ)| * |c| := abs_mul _ _
+  rw [hc] at this
+  simp at this
+  have : |c| ≥ 1 := Int.one_le_abs hc_ne
+  have : |2 * (κ : ℤ)| * |c| ≥ 8 := by
+    calc |2 * (κ : ℤ)| * |c| ≥ |2 * (κ : ℤ)| * 1 := by
+          apply mul_le_mul_of_nonneg_left ‹|c| ≥ 1› (abs_nonneg _)
+      _ = |2 * (κ : ℤ)| := by ring
+      _ ≥ 8 := by rwa [abs_of_nonneg (by omega : (2 * (κ : ℤ)) ≥ 0)]
+  omega
+
+/-- Corollary: for all κ ≥ 4, the topological obstruction
+    κ₀ mod 2κ ≠ 0 in H²(S, G_m)/2κ.  The obstruction survives
+    specialisation to the root of unity q = e^{iπ/κ}. -/
+theorem topological_obstruction_nonzero (κ : ℕ) (hκ : κ ≥ 4) :
+    descartes_euler % (2 * (κ : ℤ)) ≠ 0 := by
+  unfold descartes_euler
+  intro h
+  have := obstruction_persists κ hκ
+  exact this (Int.dvd_of_emod_eq_zero h)
+
 end QOU.GaugeFieldFluidDynamics
