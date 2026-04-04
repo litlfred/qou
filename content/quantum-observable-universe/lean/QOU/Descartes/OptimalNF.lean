@@ -43,7 +43,7 @@ theorem nil_mem_standardBasis (n : ℕ) :
 theorem singleton_mem_standardBasis (n i : ℕ) (h : i < n) :
     [i] ∈ standardBasis n := by
   simp [standardBasis]
-  exact ⟨i, h, rfl⟩
+  exact ⟨i, by omega, rfl⟩
 
 -- ════════════════════════════════════════════════════════════════
 -- §2  Quotient ideals I₈ and I₉
