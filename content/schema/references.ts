@@ -1096,6 +1096,20 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01857727",
   }),
 
+  // ── Cook 1971: NP-completeness ─────────────────────────────────
+  ref({
+    id: "cook1971",
+    type: "paper-conference",
+    title:
+      "The complexity of theorem-proving procedures",
+    author: [{ family: "Cook", given: "Stephen A." }],
+    "container-title":
+      "Proceedings of the Third Annual ACM Symposium on Theory of Computing",
+    page: "151-158",
+    issued: { "date-parts": [[1971]] },
+    DOI: "10.1145/800157.805047",
+  }),
+
   // ── Freedman-Kitaev-Larsen-Wang 2003: Topological QC ──────────
   ref({
     id: "freedman2003",
