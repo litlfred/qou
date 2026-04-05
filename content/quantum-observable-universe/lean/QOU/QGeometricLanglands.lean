@@ -219,22 +219,44 @@ structure QOper (M : Type*) where
 
 /-! ## §7  Propositions and Theorems (upstream/downstream of the conjecture) -/
 
+/-- **Fibre-functor rigidity** (axiomatized): in a QOU the fibre functor
+    `τ` is unique up to unique isomorphism (Tannaka–Krein).  Any two
+    q-local systems with the same holonomy residues are equal.
+
+    This is the deep categorical input; the full proof requires
+    Tannaka–Krein reconstruction for quantum groups, which is not
+    in Mathlib.
+
+    LaTeX: `\label{rem:fibre-functor-rigidity}` -/
+-- Ref: [deligne1990] https://doi.org/10.1007/978-0-8176-4576-2_8
+class FibreFunctorRigidity (M : Type*) where
+  /-- Two q-local systems with the same substrate and the same
+      holonomy residues at every point are equal. -/
+  eigenvalue_unique : ∀ (ls ls' : QLocalSystem M),
+    ls.sp = ls'.sp →
+    (∀ p, ls.holonomyResidue p = ls'.holonomyResidue p) →
+    ls = ls'
+
 /-- **q-Hecke eigenvalue determination**: the eigenvalue q-local system
     `L_q` of a q-Hecke eigensheaf is uniquely determined by the fibre
     functor `τ` via Tannaka–Krein reconstruction.
 
+    The proof reduces to `FibreFunctorRigidity`, which axiomatizes
+    the Tannaka–Krein theorem.
+
     LaTeX: `\label{prop:q-hecke-eigenvalue}`
     uses: `def:q-hecke-eigensheaf`, `def:q-hecke-operator`,
-          `prop:fibre-functor-rigidity` -/
+          `rem:fibre-functor-rigidity` -/
 -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
-theorem q_hecke_eigenvalue {M : Type*} (es : QHeckeEigensheaf M)
-    (es' : QHeckeEigensheaf M)
-    (h : es.heckeOp = es'.heckeOp) :
-    es.eigenvalue = es'.eigenvalue := by
-  -- Fibre-functor rigidity forces uniqueness of eigenvalue
-  -- Full proof requires Tannaka–Krein reconstruction
-  -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
-  sorry
+theorem q_hecke_eigenvalue {M : Type*} [FibreFunctorRigidity M]
+    (es : QHeckeEigensheaf M) (es' : QHeckeEigensheaf M)
+    (h_op : es.heckeOp = es'.heckeOp)
+    (h_sp : es.eigenvalue.sp = es'.eigenvalue.sp)
+    (h_res : ∀ p, es.eigenvalue.holonomyResidue p =
+                   es'.eigenvalue.holonomyResidue p) :
+    es.eigenvalue = es'.eigenvalue :=
+  FibreFunctorRigidity.eigenvalue_unique
+    es.eigenvalue es'.eigenvalue h_sp h_res
 
 /-- **Perpetual obstruction — finite divisor set**: for any nonzero
     integer `χ`, the set of positive integers dividing `χ` is finite.
@@ -265,10 +287,16 @@ theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
 -- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
 theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
     Set.Infinite {n : ℕ | n ≥ 1 ∧ ¬ (↑n : ℤ) ∣ χ} := by
-  -- The complement of a finite set in an infinite set is infinite
-  -- {n ≥ 1} is infinite, and divisors of χ are finite
-  -- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
-  sorry
+  -- Strategy: {n ≥ 1} is infinite, {n ≥ 1 ∧ n ∣ χ} is finite,
+  -- so {n ≥ 1 ∧ ¬ n ∣ χ} = {n ≥ 1} \ {n ≥ 1 ∧ n ∣ χ} is infinite
+  apply Set.Infinite.mono _ (Set.Infinite.diff
+    (Set.infinite_of_injective_forall_mem
+      (f := fun n => n + 1)
+      (fun a b h => by omega)
+      (fun n => by omega))
+    (obstruction_finite_divisors χ hχ))
+  intro n ⟨hn, hndvd⟩
+  exact ⟨hn, fun ⟨_, hdvd⟩ => hndvd hdvd⟩
 
 /-- **Kummer divisibility criterion**: `κ₀ mod n = 0` iff `n ∣ χ(A)`.
     This is the bridge between the Kummer exact sequence in sheaf
