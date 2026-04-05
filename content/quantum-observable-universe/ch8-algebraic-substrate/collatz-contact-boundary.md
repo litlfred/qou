@@ -229,21 +229,71 @@ odd $n$ is **exactly $2$** (a theorem: $\Pr(v_2(3n+1) = k)
 = 2^{-k}$ gives $\mathbb{E}[v_2] = 2$).  Two halvings per
 tripling, saturating the integer threshold.
 
-### The conjecture as contact condition
+### The conjecture — three equivalent forms
 
-The $q$-Collatz conjecture is equivalent to:
+**(a) Categorical (Hecke algebra).**
+For all $h \in H_n(q)$, the iterated Markov trace
+converges to the unknot:
+
+$$
+  \mathrm{tr}_M\bigl(\mathcal{C}_q^k(h)\bigr)
+  \;\xrightarrow{k \to \infty}\; 1.
+$$
+
+The identity braid is the unique attractor of the
+Hecke--Collatz dynamics under the Markov trace.
+
+**(b) Contact condition ($[2]_q$-adic).**
+For every $q$-odd $P$, define $v_{[2]}([3]_q P + 1)$
+as the $[2]_q$-adic valuation of the numerator
+**before** the built-in division.  The orbit contracts
+iff the time-averaged valuation satisfies:
 
 $$
   \boxed{
-  \langle v_{[2]} \rangle(P) \;\geq\; 2
+  \bigl\langle v_{[2]}([3]_q P + 1) \bigr\rangle
+  \;\geq\; 2
   \quad\text{for all } P \in \mathcal{S}(q)_{>0}.
   }
 $$
 
-Every orbit in the Skein module produces **at least two
-halvings per tripling** on average — each tripling is
-followed by a result divisible by $[2]_q^2$.
+Two halvings per tripling.  The accounting:
+each odd step produces $[3]_q P + 1$, which is
+divisible by $[2]_q$ (by Skein divisibility).  The
+valuation $v_{[2]}([3]_q P + 1)$ counts the
+**total** halvings from this step.  Of these, one
+is consumed by the accelerated map $\mathcal{C}_q$
+itself; the remaining $v_{[2]} - 1$ are subsequent
+even steps.  The condition $\langle v \rangle \geq 2$
+says: on average, each tripling yields at least
+one halving beyond the built-in one.
 
-This is sufficient because $[2]_q^2 > [3]_q$ (the gap is
-$q$, proved).  One halving per tripling is not enough
-($[2]_q < [3]_q$).  Two is the integer threshold.
+**(c) Gaussian-integer form ($\mathbb{Z}[i]$).**
+Evaluate at the $[2]_q$-divisor $q = i$.  Since
+$\mathcal{C}_q(P)\big|_{q=i} = Q(i) - i$ where
+$Q = (P+1)/[2]_q$, the condition
+$v_{[2]} \geq 2$ becomes:
+
+$$
+  (1+i)^2 \;\big|\; \bigl(Q(i) - i\bigr)
+  \quad\text{in } \mathbb{Z}[i],
+$$
+
+i.e., $Q(i) \equiv i \pmod{2i}$.  Here $(1+i)^2 = 2i$,
+so this is $2i$-divisibility of $Q(i) - i$ in the
+Gaussian integers.
+
+**Classical verification ($q = 1$).**  At $q = 1$:
+$Q = (n+1)/2$ for odd $n$, and $v_2(3n+1)$ has the
+distribution $\Pr(v_2 = k) = 2^{-k}$ for $k \geq 1$,
+giving $\mathbb{E}[v_2(3n+1)] = 2$ exactly.  The
+condition $\langle v \rangle \geq 2$ is saturated:
+the classical orbit produces exactly two halvings
+per tripling on average, with no room to spare.
+
+This saturation is the $q$-deformed explanation for
+why the classical Collatz conjecture is hard: the
+margin is zero at $q = 1$.  For $q > 1$, the gap
+$[2]_q^2 - [3]_q = q > 1$ provides a positive margin,
+but whether specific orbits (as opposed to random
+inputs) achieve the average remains open.
