@@ -234,6 +234,11 @@ observability axiom and Tannaka--Krein), so
 $L(\mathcal{E}_q, 1) \neq 0$ at the $q$-scale.  Whether this
 non-vanishing survives the classical limit is obstructed by the
 same Kummer tower that controls the Riemann hypothesis.
+A $q$-deformed Collatz conjecture completes the picture: the
+Skein divisibility identity $[3]_q = q[2]_q + 1$ and the
+contraction gap $[2]_q^2 - [3]_q = q$ place the $(2,3)$ Collatz
+map at a unique arithmetic point --- the only critical case
+where the $q$-gap is a monomial.
 
 [Chapter 8](#chap:info-theory) addresses Wigner's mystery
 directly.  The mechanics of the quantum observable universe turn
