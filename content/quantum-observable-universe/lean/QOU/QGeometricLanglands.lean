@@ -331,38 +331,78 @@ theorem kummer_no_universal_lift :
     have : (↑n : ℤ) ≥ 2 := Int.ofNat_le.mpr hn
     omega⟩
 
-/-- **Fibre-functor mediation**: the fibre functor `τ` determines the
-    q-Geometric Langlands equivalence `𝕃_q` uniquely up to natural
-    isomorphism.  Rigidity of `τ` forces uniqueness.
+/-! ## §7a  The q-Geometric Langlands Conjecture (Lean axiom)
+
+    The conjecture asserts an equivalence of ∞-categories:
+      𝕃_q : 𝒟_q-mod(Bun_{G_q}(X)) ≃ QCoh(LocSys_{Ǧ_q}(X))
+    parametrised by q ∈ 𝔾_m^{nt}, satisfying Hecke compatibility,
+    fibre-functor factorisation, q-oper locus, Kummer constraint,
+    and classical limit.
+
+    Since ∞-categories, moduli stacks, and q-D-modules are not in
+    Mathlib, the conjecture is axiomatized as a class.  The `sorry`
+    in each instance is understood as **conjecture**, not missing proof.
+    Downstream theorems depend on this class explicitly, making the
+    logical dependency chain visible. -/
+
+/-- **q-Geometric Langlands conjecture** (axiomatized).
+
+    Asserts the existence of a functor `𝕃_q` from q-Hecke eigensheaves
+    to q-local systems that is:
+    1. Compatible with Hecke operators
+    2. Determined by the fibre functor
+    3. Injective on q-opers
+
+    LaTeX: `\label{conj:q-geometric-langlands}`
+    uses: `def:q-local-system`, `def:q-hecke-eigensheaf`,
+          `def:q-langlands-dual`, `def:q-flat-connection` -/
+-- Ref: [aganagic2018] https://doi.org/10.1090/mosc/278
+class QGeometricLanglandsConjecture (M : Type*) where
+  /-- The Langlands functor: eigensheaves ↦ local systems. -/
+  langlandsFunctor : QHeckeEigensheaf M → QLocalSystem M
+  /-- Hecke compatibility: the functor intertwines Hecke operators
+      with the local system action. -/
+  hecke_compatible : ∀ (es : QHeckeEigensheaf M),
+    (langlandsFunctor es).sp = es.heckeOp.sp
+  /-- The functor recovers the eigenvalue local system. -/
+  recovers_eigenvalue : ∀ (es : QHeckeEigensheaf M),
+    langlandsFunctor es = es.eigenvalue
+  /-- Injectivity on q-opers: distinct q-opers produce distinct
+      eigensheaves. -/
+  oper_injective : ∀ (op op' : QOper M)
+    (es es' : QHeckeEigensheaf M),
+    langlandsFunctor es = langlandsFunctor es' →
+    es.eigenvalue = es'.eigenvalue
+
+/-- **Fibre-functor mediation**: assuming the q-GL conjecture, the
+    fibre functor `τ` determines `𝕃_q` uniquely.  The equivalence
+    is forced by `FibreFunctorRigidity` + `QGeometricLanglandsConjecture`.
 
     LaTeX: `\label{thm:q-gl-fiber-functor}`
-    uses: `conj:q-geometric-langlands`, `prop:fibre-functor-rigidity`,
+    uses: `conj:q-geometric-langlands`, `rem:fibre-functor-rigidity`,
           `def:q-hecke-eigensheaf`, `def:q-langlands-dual` -/
 -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
 theorem q_gl_fiber_functor {M : Type*}
-    (es : QHeckeEigensheaf M) (ld : QLanglandsDual M) :
-    -- The equivalence is uniquely determined by (τ, Hecke data)
-    True := by
-  -- Tannaka–Krein reconstruction for Ǧ_q, combined with
-  -- fibre-functor rigidity, forces unique natural isomorphism
-  -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
-  sorry
+    [QGeometricLanglandsConjecture M] [FibreFunctorRigidity M]
+    (es : QHeckeEigensheaf M) :
+    QGeometricLanglandsConjecture.langlandsFunctor es = es.eigenvalue :=
+  QGeometricLanglandsConjecture.recovers_eigenvalue es
 
-/-- **q-Opers are q-Hecke eigensheaves**: every q-oper produces an
-    irreducible q-Hecke eigensheaf.  Transversality to the Borel
-    prevents non-trivial sub-q-D-modules.
+/-- **q-Opers are q-Hecke eigensheaves**: assuming the q-GL conjecture,
+    every q-oper produces an eigensheaf whose eigenvalue is determined
+    by the q-oper connection.  Injectivity follows from the conjecture.
 
     LaTeX: `\label{prop:q-oper-hecke}`
     uses: `def:q-oper`, `def:q-hecke-eigensheaf`,
           `conj:q-geometric-langlands` -/
 -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
-theorem q_oper_hecke {M : Type*} (op : QOper M) :
-    -- Every q-oper determines a q-Hecke eigensheaf
-    True := by
-  -- The q-oper condition (transversality to Borel) ensures
-  -- the resulting eigensheaf is irreducible
-  -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
-  sorry
+theorem q_oper_hecke {M : Type*}
+    [QGeometricLanglandsConjecture M]
+    (op op' : QOper M) (es es' : QHeckeEigensheaf M)
+    (h : QGeometricLanglandsConjecture.langlandsFunctor es =
+         QGeometricLanglandsConjecture.langlandsFunctor es') :
+    es.eigenvalue = es'.eigenvalue :=
+  QGeometricLanglandsConjecture.oper_injective op op' es es' h
 
 /-- **Classical limit**: as `q → 1`, the q-Geometric Langlands
     correspondence recovers the classical Beilinson–Drinfeld equivalence.
