@@ -296,23 +296,26 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
     (hj : j + 1 < config.length) :
     matrixChain (chainCrossings config j) =
     (buildChains config).get! j := by
-  -- Both compute ∏_{k > j} T(config[j], config[k]) but via different
-  -- recursion patterns. matrixChain folds right over (drop (j+1));
-  -- buildChains extends chains as nucleons are added left-to-right.
-  -- The products are equal because matrix multiplication is associative
-  -- and both iterate over the same set of crossings.
-  -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-  -- Both definitions compute ∏_{k > j} T(config[j], config[k]).
+  -- PROOF STRATEGY (requires Lean compilation to complete):
+  --
+  -- Both sides compute ∏_{k > j} T(config[j], config[k]).
   -- matrixChain folds right: T_last * (... * (T_{j+2} * T_{j+1}))
-  -- buildChains uses foldl, extending chains as nucleons are added.
-  -- They produce the same matrix because:
-  --   1. The set of crossings is identical (all pairs (j, k) with k > j)
-  --   2. Matrix multiplication is associative
-  --   3. The ordering of factors is the same (both process k = j+1, j+2, ...)
-  -- The proof is by induction on config.length - j - 1, unfolding
-  -- both definitions and applying the inductive hypothesis.
-  -- This requires `buildChains` to be unfolded through its `foldl`,
-  -- which is technically involved but mathematically trivial.
+  -- buildChains uses foldl with state (chains : List TMatrix, k : ℕ).
+  --
+  -- Approach: introduce a helper lemma that characterises
+  -- buildChains after processing the first m nucleons:
+  --
+  --   buildChains_partial (config : NuclearConfig) (m : ℕ) :
+  --     (config.take m).foldl ... = chains where
+  --     chains[j] = ∏_{k=j+1}^{m-1} crossingMatrix config[j] config[k]
+  --
+  -- Then instantiate at m = config.length and extract entry j.
+  -- The product equality follows from List.foldl_map + mul_assoc.
+  --
+  -- Alternative: refactor buildChains to use List.foldr (matching
+  -- matrixChain's recursion), then the proof is by direct unfolding.
+  --
+  -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
   induction config with
   | nil => simp at hj
   | cons _ rest ih =>

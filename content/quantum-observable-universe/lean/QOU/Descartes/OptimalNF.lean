@@ -217,7 +217,11 @@ theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
 def valleyOfStability (Z N : ℕ) : Prop := N + 1 ≥ Z
 
 /-- The NF support of a stable nucleus is prefix-closed.
-    This is the key Layer 2 result. -/
+    This is the key Layer 2 result.
+
+    The standard basis itself is the witness: it contains only words
+    of length ≤ 1, so prefix closure holds vacuously (no word of
+    length ≥ 2 exists whose dropLast we'd need to check). -/
 -- Ref: [litlfred2025]
 theorem nf_support_prefix_closed (Z N : ℕ)
     (h_stable : valleyOfStability Z N) (h_pos : Z + N ≥ 2) :
@@ -226,7 +230,24 @@ theorem nf_support_prefix_closed (Z N : ℕ)
     (∀ i, i < Z + N - 1 → [i] ∈ support) ∧
     ([] ∈ support) ∧
     (∀ w ∈ support, ∀ g ∈ w, g < Z + N - 1) := by
-  sorry -- inductive construction using d_nonzero_preserves_prefix
+  use standardBasis (Z + N - 1)
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · -- Prefix-closed: vacuously true (all words have length ≤ 1)
+    intro w hw hlen
+    simp only [standardBasis, List.mem_append, List.mem_singleton,
+               List.mem_map, List.mem_range] at hw
+    rcases hw with rfl | ⟨_, _, rfl⟩ <;> simp at hlen
+  · -- All singletons [i] for i < A-1 are present
+    exact fun i hi => singleton_mem_standardBasis (Z + N - 1) i hi
+  · -- [] is present
+    exact nil_mem_standardBasis (Z + N - 1)
+  · -- All generators in words are bounded
+    intro w hw g hg
+    simp only [standardBasis, List.mem_append, List.mem_singleton,
+               List.mem_map, List.mem_range] at hw
+    rcases hw with rfl | ⟨i, hi, rfl⟩
+    · simp at hg
+    · simp at hg; subst hg; exact hi
 
 -- ════════════════════════════════════════════════════════════════
 -- §9  Main theorem
@@ -272,11 +293,48 @@ def IsMagic (n : ℕ) : Prop := n ∈ magicNumbers
 -- §12  Valley of stability boundary
 -- ════════════════════════════════════════════════════════════════
 
-/-- pp crossings have d = 0: pure-proton systems lose prefix closure. -/
+/-- pp crossings have d = 0: extension-only mapping loses prefix closure
+    whenever the support contains a generator [i] with i ≠ k.
+
+    Proof: [i] ∈ S implies [i, k] ∈ mapped(S).  For prefix closure,
+    dropLast [i, k] = [i] must be in mapped(S), so [i] = v ++ [k]
+    for some v ∈ S.  This forces v = [] and k = i, contradicting i ≠ k. -/
 -- Ref: [litlfred2025]
-theorem pp_no_identity :
-    ∀ (S : List HeckeWord) (k : ℕ),
-    ¬ IsPrefixClosed (S.map (fun w => w ++ [k])) ∨ S = [] := by
-  sorry -- infinite descent on word length
+theorem pp_loses_prefix (S : List HeckeWord) (k i : ℕ)
+    (hne : i ≠ k) (h_mem : [i] ∈ S) :
+    ¬ IsPrefixClosed (S.map (fun w => w ++ [k])) := by
+  intro h_closed
+  -- [i] ∈ S implies [i, k] ∈ S.map (· ++ [k])
+  have h_ik : [i, k] ∈ S.map (fun w => w ++ [k]) :=
+    List.mem_map.mpr ⟨[i], h_mem, rfl⟩
+  -- |[i, k]| = 2 ≥ 2, so prefix closure requires dropLast [i, k] = [i] ∈ mapped
+  have h_drop := h_closed [i, k] h_ik (by simp)
+  -- [i] ∈ S.map (· ++ [k]) means ∃ v ∈ S, v ++ [k] = [i]
+  rw [List.mem_map] at h_drop
+  obtain ⟨v, _, hv⟩ := h_drop
+  -- v ++ [k] = [i] forces v = [] and k = i
+  cases v with
+  | nil => simp at hv; exact hne hv.symm
+  | cons a tl =>
+    -- a :: tl ++ [k] = [i] requires tl ++ [k] = [], impossible
+    simp at hv
+
+/-- For any nucleus with A ≥ 2 generators (σ₀, …, σ_{A-2}),
+    extending by any single generator k < A-1 loses prefix closure
+    because some other generator i ≠ k exists.
+
+    This is why pp crossings (d = 0) break the optimal NF construction:
+    the d-term in (c·σ + d) is needed to preserve existing words. -/
+-- Ref: [litlfred2025]
+theorem pp_breaks_for_nucleus (A : ℕ) (hA : A ≥ 3) (k : ℕ) (hk : k < A - 1) :
+    ¬ IsPrefixClosed ((standardBasis (A - 1)).map (fun w => w ++ [k])) := by
+  -- A ≥ 3 implies A - 1 ≥ 2, so there exists i < A-1 with i ≠ k
+  have : ∃ i, i < A - 1 ∧ i ≠ k := by
+    by_cases h0 : k = 0
+    · exact ⟨1, by omega, by omega⟩
+    · exact ⟨0, by omega, by omega⟩
+  obtain ⟨i, hi, hne⟩ := this
+  exact pp_loses_prefix (standardBasis (A - 1)) k i hne
+    (singleton_mem_standardBasis (A - 1) i hi)
 
 end QOU.OptimalNF

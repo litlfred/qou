@@ -79,10 +79,18 @@ Engine: hecke-engine 0.8.0
 - Check: are M_P_MEV, M_E_MEV, mass ratios all consistent?
 
 ### 7. Lean audit: 100% no sorry
-- OptimalNF.lean: 2 sorrys (nf_support_prefix_closed, pp_no_identity)
+- OptimalNF.lean: ~~2 sorrys~~ → **0 sorrys** (session 5)
+  - `nf_support_prefix_closed`: proved via `standardBasis` witness
+    (prefix closure is vacuously true for length ≤ 1 words)
+  - `pp_no_identity`: reformulated as `pp_loses_prefix` + `pp_breaks_for_nucleus`
+    (original statement was false for S=[[]]); proved by contradiction on
+    `List.dropLast [i,k] = [i]` not in `S.map (·++[k])` when i ≠ k
 - TMCorrespondence.lean: 1 sorry (matrixChain_eq_buildChains)
+  - Needs: helper lemma characterising `buildChains` after m nucleons,
+    or refactor `buildChains` to use `foldr` matching `matrixChain`
+  - Requires Lean compilation to iterate (foldl unfolding is delicate)
 - GroundRing.lean: compiles, all proofs complete (no sorrys)
-- Need `lake build` iteration for each sorry
+- **Status**: 3 → 1 sorry remaining. Need `lake build` to verify OptimalNF compiles.
 - Target: all theorems compile with no sorry
 - Use `lean_check` MCP tool or local `lake build`
 
