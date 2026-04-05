@@ -470,12 +470,29 @@ fn main() {
         elem.n_terms(), mc, elem.mem_bytes() as f64 / 1e6, elapsed);
 
     // Evaluate at q₀
+    // For large pn_count, 2^pn_count overflows f64. Compute the RATIO
+    // F_Pauli = |tr_alt/net| directly (the 2^pn_count cancels).
     let q0: f64 = 1.10998;
     let t0_val = q0.sqrt();
-    let denom = 2.0_f64.powi(elem.pn_count as i32);
-    let tr_alt_val = total.tr_alt.eval_f64(t0_val) / denom;
-    let net_val = total.net.eval_f64(t0_val) / denom;
-    let f = if net_val.abs() > 1e-30 { tr_alt_val.abs() / net_val.abs() } else { 0.0 };
+
+    // For pn_count > 1000, f64 eval is unreliable.
+    // Use the ratio directly: both tr_alt and net have the same 2^pn_count factor.
+    let tr_alt_raw = total.tr_alt.eval_f64(t0_val);
+    let net_raw = total.net.eval_f64(t0_val);
+    let (tr_alt_val, net_val, f) = if tr_alt_raw.is_finite() && net_raw.is_finite() {
+        let denom = 2.0_f64.powi(elem.pn_count as i32);
+        let ta = tr_alt_raw / denom;
+        let nv = net_raw / denom;
+        let fp = if nv.abs() > 1e-30 { ta.abs() / nv.abs() } else { 0.0 };
+        (ta, nv, fp)
+    } else {
+        // f64 overflow: compute ratio directly (2^pn_count cancels)
+        // F = |tr_alt_raw / net_raw| — no denominator needed for the ratio
+        let fp = if net_raw.abs() > 1e-30 { (tr_alt_raw / net_raw).abs() }
+                 else if net_raw == 0.0 && tr_alt_raw == 0.0 { f64::NAN }
+                 else { f64::INFINITY };
+        (tr_alt_raw, net_raw, fp)
+    };
 
     println!("F_Pauli({}{}) = {:.10} (exact in q, evaluated at q₀ = {})",
         a, match z {
