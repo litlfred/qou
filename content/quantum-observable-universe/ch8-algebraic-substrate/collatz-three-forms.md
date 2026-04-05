@@ -78,45 +78,17 @@ The margin between "one is not enough" and "two is
 enough" is $[2]_q^2 - [3]_q = q$, the substrate
 parameter.
 
-### (c) The number-theoretic face: Gaussian-integer divisibility
+### (c) The residue face ($q = -1$)
 
-The $[2]_q$-divisor $D_{[2]} = \{q = \pm i\}$ on the
-$U(1)$ fiber of the Reeb bundle
-([Reeb bundle](#def:reeb-bundle)) is where
-$[2]_q = q + q^{-1} = 0$.  Setting $q = i$ gives
-$q^2 = -1$, and the residue ring becomes the Gaussian
-integers:
+The $[2]_q$-divisor is $q = -1$ (where $[2]_q = q + 1 = 0$).
+Evaluating the Collatz output at this divisor: since
+$[3]_q|_{q=-1} = (-1)^2 + (-1) + 1 = 1$ and $[2]_q|_{q=-1} = 0$,
+the condition $v_{[2]} \geq 2$ becomes $(q+1)^2$-divisibility
+of $[3]_q P + 1$ at $q = -1$.
 
-$$
-  \mathbb{Z}[q^{\pm 1}] / ([2]_q)
-  \;\cong\; \mathbb{Z}[i].
-$$
-
-Evaluating the Collatz output at $q = i$: since
-$\mathcal{C}_q(P) = qP + Q$ where $Q = (P+1)/[2]_q$,
-and $[3]_q\big|_{q=i} = i^2 + i + 1 = i$:
-
-$$
-  \mathcal{C}_q(P)\big|_{q=i} \;=\; Q(i) - i.
-$$
-
-The condition $v_{[2]} \geq 2$ translates to
-$(1+i)^2$-divisibility in $\mathbb{Z}[i]$.  Since
-$(1+i)^2 = 2i$:
-
-$$
-  Q(i) \;\equiv\; i \pmod{2i}.
-$$
-
-The Collatz conjecture, evaluated at the $[2]_q$-divisor,
-becomes a divisibility condition in the Gaussian integers:
-the image of $Q$ at $q = i$ must be congruent to $i$
-modulo $2i$.
-
-This is the most explicit form.  It says: the arithmetic
-of the Collatz orbit, when projected onto the four residue
-classes of $\mathbb{Z}[i] / (2i) \cong (\mathbb{Z}/4\mathbb{Z})$,
-must land in the class $\{i\}$ with sufficient frequency.
+At $q = 1$ (classical limit): $[2]_1 = 2$, and the
+$(q+1)$-adic valuation specializes to the $2$-adic
+valuation $v_2$ on $\mathbb{Z}$.
 
 ### Equivalence and the saturation phenomenon
 
@@ -127,14 +99,14 @@ same quantity from different vantage points:
 |------|-----------------|---------------|
 | (a) Categorical | Markov trace decay | $H_n(q)$ |
 | (b) Arithmetic | $[2]_q$-adic valuation | $\mathbb{Z}[q^{\pm 1}]$ |
-| (c) Number-theoretic | $(1+i)$-adic valuation | $\mathbb{Z}[i]$ |
+| (c) Residue | $(q+1)$-adic valuation | $\mathbb{Z}$ (at $q=-1$) |
 
 The passage (a) $\to$ (b) is the Markov trace: it sends
 Hecke algebra elements to Laurent polynomials, converting
 braid untangling to divisibility.  The passage (b) $\to$
-(c) is evaluation at the $[2]_q$-divisor: it specializes
-the polynomial to a Gaussian integer, converting
-$[2]_q$-adic valuation to $(1+i)$-adic valuation.
+(c) is evaluation at the $[2]_q$-divisor ($q = -1$): it
+specializes the Laurent polynomial to an integer, converting
+$[2]_q$-adic valuation to the ordinary $2$-adic valuation.
 
 **The saturation.**  At $q = 1$ (the classical limit), the
 expected $2$-adic valuation of $3n+1$ for uniformly

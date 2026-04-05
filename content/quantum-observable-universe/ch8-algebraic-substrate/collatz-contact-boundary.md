@@ -12,35 +12,30 @@ special: it is the smallest prime, the only even prime,
 and the denominator of the halving step $n/2$.
 
 In the QOU, the integer $2$ lifts to the quantum integer
-$[2]_q = q + q^{-1}$.  On the unit circle $q = e^{i\theta}$
-this becomes $[2]_q = 2\cos\theta$ — a real-valued function
-on the $U(1)$ fiber of the Reeb bundle $S^3 \to S^2$.
-
-This function **vanishes** at exactly two points:
-$\theta = \pi/2$ and $\theta = 3\pi/2$, corresponding to
-$q = i$ and $q = -i$ — the 4th roots of unity.  Define
-the **$[2]_q$-divisor**:
+$[2]_q = q + 1$ (combinatorial convention;
+see [q-Collatz conjecture](#conj:q-collatz)).
+The $[2]_q$-divisor is the locus where $[2]_q = 0$,
+i.e. $q = -1$:
 
 $$
-  D_{[2]} \;:=\; \{q \in U(1) : [2]_q = 0\}
-  \;=\; \{i,\, -i\} \;\subset\; U(1).
+  D_{[2]} \;:=\; \{q : [2]_q = 0\}
+  \;=\; \{-1\}.
 $$
 
-These two points are where the $q$-analog of "dividing by
-$2$" degenerates — where the halving step ceases to exist.
-They sit at the quarter-points of the fiber circle,
-splitting it into four arcs.
+This is where the $q$-analog of "dividing by $2$"
+degenerates — where the halving step ceases to exist.
 
 **Kummer obstruction at the divisor.**
-The points $q = \pm i$ belong to $\mu_4$ (the 4th roots
+The point $q = -1$ belongs to $\mu_2$ (the 2nd roots
 of unity).  The Kummer obstruction
 ([root-of-unity truncation](#prop:root-of-unity-truncation))
-at level $n = 4$ asks: does $4$ divide $\chi(A) = -6$?
-No — $6/4 = 1.5$.  The obstruction **persists**.  This
-means the $[2]_q$-divisor is a genuine singularity of the
-Skein-Collatz dynamics: the QOU axioms cannot remove it.
-The substrate must navigate around these points, not
-through them.
+at level $n = 2$ asks: does $2$ divide $\chi(A) = -6$?
+Yes — $6/2 = 3$.  The obstruction **vanishes**.  This
+means the $[2]_q$-divisor is removable: the QOU axioms
+can resolve the singularity.  At $q = -1$, the residue ring
+is $\mathbb{Z}[q^{\pm 1}]/(q+1) \cong \mathbb{Z}$
+(setting $q = -1$), and the $[2]_q$-adic valuation
+specializes to the ordinary $2$-adic valuation.
 
 ### The $[2]_q$-adic valuation as contact order
 
@@ -57,42 +52,17 @@ Laurent polynomial ring — the $q$-analog of the $2$-adic
 valuation $v_2(n)$ that counts trailing zeros in the
 binary expansion of an integer.
 
-**Geometric meaning.** View $P(q)$ as a function on
-$U(1)$.  The value $v_{[2]}(P)$ is the **contact order**
-of $P$ with the divisor $D_{[2]}$: the order to which
-$P(e^{i\theta})$ vanishes at $\theta = \pi/2$.  High
-contact order means the orbit "grazes" the divisor closely
-— it is very divisible by $[2]_q$, meaning many halvings
-can be extracted.
+**Geometric meaning.** The value $v_{[2]}(P)$ is the
+**contact order** of $P$ with the divisor $D_{[2]}$: the
+order to which $P(q)$ vanishes at $q = -1$.  High contact
+order means the orbit "grazes" the divisor closely — it
+is very divisible by $[2]_q$, meaning many halvings can be
+extracted.
 
 At $q = 1$: $[2]_1 = 2$, and $v_{[2]}(n) = v_2(n)$
 recovers ordinary $2$-adic valuation.  The number
 $n = 24 = 2^3 \cdot 3$ has $v_2(24) = 3$: three halvings
 before hitting an odd number.
-
-### The residue ring: Gaussian integers
-
-Setting $[2]_q = q + q^{-1} = 0$ forces $q = -q^{-1}$,
-hence $q^2 = -1$.  The residue ring is:
-
-$$
-  \mathbb{Z}[q^{\pm 1}] / ([2]_q)
-  \;\cong\;
-  \mathbb{Z}[i]
-  \qquad (q \mapsto i).
-$$
-
-The Gaussian integers $\mathbb{Z}[i] = \{a + bi : a, b \in \mathbb{Z}\}$
-carry a rich arithmetic.  The prime $2$ factors as
-$2 = -i(1+i)^2$ in $\mathbb{Z}[i]$ — it **ramifies**.
-The $[2]_q$-adic valuation in $\mathbb{Z}[q^{\pm 1}]$
-becomes the $(1+i)$-adic valuation in $\mathbb{Z}[i]$.
-
-This connects the Collatz problem to the arithmetic of
-$\mathbb{Z}[i]$: the "$q$-parity" of an element is its
-residue class in the Gaussian integers, and the
-"$q$-evenness" is its divisibility by the ramified prime
-$1 + i$.
 
 ### Why the orbit needs to touch the divisor
 
@@ -223,11 +193,6 @@ Two halvings overpower one tripling by a factor
 $[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$.  The margin
 $q/[3]_q \approx 1/3$ is the substrate parameter divided
 by the tripling factor — clean and algebraic.
-
-At $q = 1$: the average $2$-adic valuation of $3n+1$ for
-odd $n$ is **exactly $2$** (a theorem: $\Pr(v_2(3n+1) = k)
-= 2^{-k}$ gives $\mathbb{E}[v_2] = 2$).  Two halvings per
-tripling, saturating the integer threshold.
 
 ### The conjecture as contact condition
 

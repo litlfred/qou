@@ -25,7 +25,7 @@ $$
 $$
 
 The replacement $\ln 2 \to 1/(2q-1)$ reflects that the QOU
-operates in $q$-deformed information units, not classical bits:
+operates in $q$-deformed information units, not classical nats:
 the degree-$2$ map $f_q$ has effective multiplier
 $1/(2q-1)$ in the $q$-connection frame, not $\ln 2$.  At $q = 1$:
 $\chi_1 = 1$ (one nat per operation, matching the unit-circle

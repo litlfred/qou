@@ -63,7 +63,7 @@ $$
   \mathcal{B}(q)
   \;=\; c_q \cdot n_R(q) \cdot \eta_q
   \;=\; \frac{q\,\eta_q}{(q-1)^2}
-  \quad \text{(bits per Planck time)}.
+  \quad \text{($q$-bits per Planck time)}.
 $$
 
 At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.

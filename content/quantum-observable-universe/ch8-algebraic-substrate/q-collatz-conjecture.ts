@@ -4,10 +4,6 @@ export default conjecture({
   label: "conj:q-collatz",
   title:
     "The $q$-Collatz conjecture: Skein-module crossing resolution",
-  lean: {
-    decl: "QOU.Substrate.qInt_gap",
-    validation: "not_checked",
-  },
   uses: [
     "def:reeb-bundle",
     "prop:skein-generation",

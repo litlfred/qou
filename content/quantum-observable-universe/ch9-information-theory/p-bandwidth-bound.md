@@ -25,7 +25,7 @@ information budget after $t$ Planck steps is
 $$
   I(t) \;=\; t \cdot \mathcal{B}(q)
   \;=\; t \cdot \frac{q\,\eta_q}{(q-1)^2}
-  \;\text{ $q$-bits.}
+  \;q\text{-bits.}
 $$
 
 A P-class computation is one where $I(\mathrm{poly}(c))$
