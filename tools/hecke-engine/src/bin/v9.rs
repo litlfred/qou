@@ -651,14 +651,54 @@ fn main() {
         (f, f64::NAN, f64::NAN)
     };
 
-    println!("F_Pauli({}{}) = {:.10} (exact in q, evaluated at q₀ = {})",
-        a, match z {
-            1=>"H",2=>"He",3=>"Li",4=>"Be",5=>"B",6=>"C",7=>"N",8=>"O",
-            9=>"F",10=>"Ne",20=>"Ca",26=>"Fe",27=>"Co",28=>"Ni",_=>"?"
-        }, f, q0);
+    let sym = match z {
+        1=>"H",2=>"He",3=>"Li",4=>"Be",5=>"B",6=>"C",7=>"N",8=>"O",
+        9=>"F",10=>"Ne",11=>"Na",12=>"Mg",13=>"Al",14=>"Si",15=>"P",
+        16=>"S",17=>"Cl",18=>"Ar",19=>"K",20=>"Ca",26=>"Fe",27=>"Co",
+        28=>"Ni",38=>"Sr",55=>"Cs",82=>"Pb",83=>"Bi",_=>"?"
+    };
+    let par = match (z%2, n%2) { (0,0)=>"ee", (1,1)=>"oo", _=>"oA" };
+
+    println!("F_Pauli({}{}) = {:.10} (exact in q, evaluated at q₀ = {})", a, sym, f, q0);
     println!("  tr_alt(q₀) = {:.10e}", tr_alt_val);
     println!("  net(q₀)    = {:.10e}", net_val);
     println!("  pn_count = {} (denom = 2^{})", elem.pn_count, elem.pn_count);
     println!("  max coeff ~10^{:.0}", mc);
     println!("  time = {:.1}s", elapsed);
+
+    // Write certificate JSON
+    use hecke_engine::certificate::*;
+    let cert = WitnessCertificate {
+        isotope: IsotopeInfo {
+            z, n, a,
+            symbol: sym.to_string(),
+            name: format!("{}{}", a, sym),
+            parity: par.to_string(),
+        },
+        engine: EngineInfo {
+            name: "hecke-engine".to_string(),
+            version: env!("CARGO_PKG_VERSION").to_string(),
+            commit: option_env!("GIT_SHA").unwrap_or("unknown").to_string(),
+            binary: "hecke-bigint (v9)".to_string(),
+        },
+        tr_alt: SparsePoly::from_btree(&total.tr_alt.terms),
+        net: SparsePoly::from_btree(&total.net.terms),
+        observable: SparsePoly::new(), // TODO: compute
+        coral: SparsePoly::new(),      // TODO: compute
+        pn_count: elem.pn_count,
+        f_pauli_f64: if f.is_finite() { Some(f) } else { None },
+        tr_alt_f64: if tr_alt_val.is_finite() { Some(tr_alt_val) } else { None },
+        net_f64: if net_val.is_finite() { Some(net_val) } else { None },
+        strands: Vec::new(), // TODO: collect during build
+        total_words: elem.n_terms(),
+        max_coeff_log10: mc,
+        elapsed_seconds: elapsed,
+        computed_at: String::new(), // TODO: chrono
+    };
+
+    let cert_path = format!("certificate-{}{}.json", a, sym.to_lowercase());
+    match std::fs::write(&cert_path, serde_json::to_string_pretty(&cert).unwrap()) {
+        Ok(_) => eprintln!("\n  Certificate written to {}", cert_path),
+        Err(e) => eprintln!("\n  Failed to write certificate: {}", e),
+    }
 }
