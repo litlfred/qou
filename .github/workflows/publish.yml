@@ -83,11 +83,9 @@ jobs:
     defaults:
       run:
         shell: bash
-    container:
-      image: ghcr.io/${{ github.repository }}/latex-ci:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+    # No container — install tools inline on ubuntu-latest for reliability.
+    # The latex-ci image is an optional speedup (see build-latex-image.yml)
+    # but publish must work even when it is unavailable.
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -136,41 +134,38 @@ jobs:
           fi
 
       # ── 0b. Configure environment ──────────────────────────────────────
-      # All CI tools (TeX Live, pandoc, latexdiff, graphviz, Bun, Python)
-      # are pre-installed in the ghcr.io/.../latex-ci container image.
-      # See .github/docker/Dockerfile.latex for the full list.
-      #
-      # If the container image is missing or stale, install the required
-      # packages on the fly so the build still succeeds.
       - name: Configure environment
         run: |
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
-          # Trust the workspace directory for git operations inside container
           git config --global --add safe.directory "${{ github.workspace }}"
 
-      - name: Ensure LaTeX toolchain is available
+      - name: Install LaTeX toolchain
         run: |
-          if command -v latexmk >/dev/null 2>&1; then
-            echo "latexmk found: $(latexmk --version | head -1)"
-          else
-            echo "latexmk not found — installing TeX Live and related tools..."
-            apt-get update -qq && apt-get install -y --no-install-recommends \
-              texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-              texlive-science texlive-extra-utils latexmk biber \
-              pandoc latexdiff graphviz jq \
-            && rm -rf /var/lib/apt/lists/*
-            echo "latexmk installed: $(latexmk --version | head -1)"
-          fi
+          echo "Installing TeX Live, pandoc, latexdiff, graphviz..."
+          sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends \
+            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+            texlive-science texlive-extra-utils latexmk biber \
+            pandoc latexdiff graphviz jq \
+          && sudo rm -rf /var/lib/apt/lists/*
+          echo "latexmk installed: $(latexmk --version | head -1)"
           # Ensure ccicons font is available (may be missing from texlive-fonts-extra)
           if ! kpsewhich ccicons.sty >/dev/null 2>&1; then
             echo "ccicons not found — installing from CTAN..."
             mkdir -p /tmp/ccicons && cd /tmp/ccicons \
               && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
-              && unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
-              && texhash \
-              && updmap-sys --enable Map=ccicons.map \
+              && sudo unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
+              && sudo texhash \
+              && sudo updmap-sys --enable Map=ccicons.map \
               && rm -rf /tmp/ccicons
           fi
+
+      - name: Install Bun
+        run: |
+          if ! command -v bun >/dev/null 2>&1; then
+            curl -fsSL https://bun.sh/install | bash
+            echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
+          fi
+          bun --version
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
@@ -690,18 +685,18 @@ jobs:
             echo "gh already available: $(gh --version | head -1)"
             exit 0
           fi
-          apt-get update -qq
+          sudo apt-get update -qq
           if ! command -v wget >/dev/null 2>&1; then
-            apt-get install -y -qq wget >/dev/null
+            sudo apt-get install -y -qq wget >/dev/null
           fi
-          mkdir -p -m 755 /etc/apt/keyrings
+          sudo mkdir -p -m 755 /etc/apt/keyrings
           wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-            | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
+            | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
-            | tee /etc/apt/sources.list.d/github-cli.list >/dev/null
-          apt-get update -qq
-          apt-get install -y -qq gh >/dev/null
-          rm -rf /var/lib/apt/lists/*
+            | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq gh >/dev/null
+          sudo rm -rf /var/lib/apt/lists/*
           if command -v gh >/dev/null 2>&1; then
             echo "gh installed: $(gh --version | head -1)"
           else
