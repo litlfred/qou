@@ -1,0 +1,54 @@
+=== Build Diagnostics ===
+Date: Sun Apr  5 12:13:09 UTC 2026
+Commit: 2f268e50e55139c040bd0a5554b66088544c6453
+
+=== main.tex title ===
+\title{On the Mechanics of Quantum Observable Universes}
+
+=== main.tex \input lines ===
+\input{chapters/introduction}
+\input{chapters/quantum-observable-universe}
+\input{chapters/quantum-geometry}
+\input{chapters/lifting-of-quantum-torsion}
+\input{chapters/path-integrals-and-braiding}
+\input{chapters/descartes-universe}
+\input{chapters/algebraic-substrate}
+\input{chapters/fluid-dynamics}
+\input{chapters/information-theory}
+\input{chapters/brings-surface}
+\input{chapters/observations}
+\input{chapters/q-geometric-langlands}
+\input{chapters/glossary}
+\input{chapters/appendix-knot-periodic-table}
+\input{chapters/appendix-transfer-matrices}
+\input{chapters/appendix-atomic-mass-calculations}
+\input{chapters/index-of-definitions}
+
+=== chapters/ directory ===
+-rw-r--r-- 1 root root  62968 Apr  5 12:13 chapters/algebraic-substrate.tex
+-rw-r--r-- 1 root root 105898 Apr  5 12:13 chapters/appendix-atomic-mass-calculations.tex
+-rw-r--r-- 1 root root  15379 Apr  5 12:13 chapters/appendix-knot-periodic-table.tex
+-rw-r--r-- 1 root root  48377 Apr  5 12:13 chapters/appendix-transfer-matrices.tex
+-rw-r--r-- 1 root root 325928 Apr  5 12:13 chapters/brings-surface.tex
+-rw-r--r-- 1 root root  36276 Apr  5 12:13 chapters/descartes-universe.tex
+-rw-r--r-- 1 root root 119901 Apr  5 12:13 chapters/fluid-dynamics.tex
+-rw-r--r-- 1 root root    476 Apr  5 12:13 chapters/glossary.tex
+-rw-r--r-- 1 root root  45112 Apr  5 12:13 chapters/index-of-definitions.tex
+-rw-r--r-- 1 root root 111151 Apr  5 12:13 chapters/information-theory.tex
+-rw-r--r-- 1 root root  15688 Apr  5 12:13 chapters/introduction.tex
+-rw-r--r-- 1 root root  92570 Apr  5 12:13 chapters/lifting-of-quantum-torsion.tex
+-rw-r--r-- 1 root root 197313 Apr  5 12:13 chapters/observations.tex
+-rw-r--r-- 1 root root 164186 Apr  5 12:13 chapters/path-integrals-and-braiding.tex
+-rw-r--r-- 1 root root  27325 Apr  5 12:13 chapters/q-geometric-langlands.tex
+-rw-r--r-- 1 root root 166936 Apr  5 12:13 chapters/quantum-geometry.tex
+-rw-r--r-- 1 root root  35817 Apr  5 12:13 chapters/quantum-observable-universe.tex
+
+=== chapters/introduction.tex first 5 lines ===
+\chapter*{Introduction}
+\label{chap:introduction}
+
+\section{Overview}
+\label{sec:introduction-overview}
+
+=== main-flat.tex size ===
+(not yet created)

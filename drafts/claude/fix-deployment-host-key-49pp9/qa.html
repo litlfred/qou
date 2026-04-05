@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>QA Report — Quantum Observable Universe</title>
+  <style>
+:root {
+  --bg: #fff; --fg: #222; --hdr: #f0f0f0; --warn-bg: #fff8e1;
+  --err-bg: #ffeaea; --ok-bg: #e8f5e9; --border: #ddd; --link: #0055cc;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #181a1b; --fg: #d4d4d4; --hdr: #23272a; --warn-bg: #3e3520;
+    --err-bg: #3e2020; --ok-bg: #1e3e20; --border: #444; --link: #6cb4ff;
+  }
+}
+[data-theme="dark"] {
+  --bg: #181a1b; --fg: #d4d4d4; --hdr: #23272a; --warn-bg: #3e3520;
+  --err-bg: #3e2020; --ok-bg: #1e3e20; --border: #444; --link: #6cb4ff;
+}
+body {
+  max-width: 900px; margin: 0 auto; padding: 2rem 1.2rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--fg); background: var(--bg); line-height: 1.6;
+}
+h1 { font-size: 1.4rem; }
+a { color: var(--link); }
+.summary { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
+.card {
+  padding: 0.8rem 1.2rem; border-radius: 8px; min-width: 120px;
+  text-align: center; font-size: 1.1rem; font-weight: 700;
+}
+.card small { display: block; font-weight: 400; font-size: 0.8rem; color: var(--fg); }
+.card.warn { background: var(--warn-bg); }
+.card.err  { background: var(--err-bg); }
+.card.ok   { background: var(--ok-bg); }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+th { background: var(--hdr); position: sticky; top: 0; }
+tr:hover td { background: var(--warn-bg); }
+.badge {
+  display: inline-block; padding: 1px 7px; border-radius: 8px; font-size: 0.78rem;
+  font-weight: 600; background: var(--hdr); margin-right: 0.3rem;
+}
+.gh-badge {
+  display: inline-block; background: var(--hdr); color: var(--fg);
+  padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; text-decoration: none;
+  margin-right: 0.4rem;
+}
+</style>
+</head>
+<body>
+<h1>&#x1F50D; QA Report — Build Warnings</h1>
+<div style="margin:0.5rem 0">
+  <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/fix-deployment-host-key-49pp9">&#x1F33F; claude/fix-deployment-host-key-49pp9</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/2f268e50e55139c040bd0a5554b66088544c6453">&#x1F4DD; 2f268e5</a>
+</div>
+<div class="summary">
+  <div class="card warn">476<small>Total warnings</small></div>
+  <div class="card warn">298<small>Box</small></div>
+  <div class="card warn">89<small>LaTeX</small></div>
+  <div class="card warn">89<small>Reference</small></div>
+</div>
+<table>
+  <thead><tr><th>#</th><th>Category</th><th>Message</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:deligne1990&#x27; multiply defined.</td></tr>
+    <tr><td>2</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:leitnerpawloski2004&#x27; multiply defined.</td></tr>
+    <tr><td>3</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:tannaka1939&#x27; multiply defined.</td></tr>
+    <tr><td>4</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:woronowicz1988&#x27; multiply defined.</td></tr>
+    <tr><td>5</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:yekutieli2008&#x27; multiply defined.</td></tr>
+    <tr><td>6</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:yekutieli2009&#x27; multiply defined.</td></tr>
+    <tr><td>7</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:yekutieli2010&#x27; multiply defined.</td></tr>
+    <tr><td>8</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:yekutieli2015&#x27; multiply defined.</td></tr>
+    <tr><td>9</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:kassel1995&#x27; multiply defined.</td></tr>
+    <tr><td>10</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `sec:enveloping-algebras&#x27; multiply defined.</td></tr>
+    <tr><td>11</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:kock2004&#x27; multiply defined.</td></tr>
+    <tr><td>12</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:reshetikhin1991&#x27; multiply defined.</td></tr>
+    <tr><td>13</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Label `bib:feynman1963&#x27; multiply defined.</td></tr>
+    <tr><td>14</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-exact-pairing&#x27; on page 6 undefined</td></tr>
+    <tr><td>15</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:frobenius-integration&#x27; on page 8 undefined</td></tr>
+    <tr><td>16</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:yekutieli-stokes-remark&#x27; on page 14 undefin</td></tr>
+    <tr><td>17</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:fundamental-object-explication&#x27; on page 15</td></tr>
+    <tr><td>18</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:admissible-system&#x27; on page 15 undefined on</td></tr>
+    <tr><td>19</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:fundamental-object-explication&#x27; on page 18</td></tr>
+    <tr><td>20</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:simple-objects-V&#x27; on page 19 undefined on i</td></tr>
+    <tr><td>21</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `cor:pbw&#x27; on page 21 undefined on input line 756</td></tr>
+    <tr><td>22</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:scheme-notation&#x27; on page 24 undefined on in</td></tr>
+    <tr><td>23</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:tannaka-krein-overview&#x27; on page 25 undefine</td></tr>
+    <tr><td>24</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:recursive-brane-tower-su2&#x27; on page 31 undefi</td></tr>
+    <tr><td>25</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:levi-generalisation&#x27; on page 33 undefined o</td></tr>
+    <tr><td>26</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `lem:irreducible-connection&#x27; on page 33 undefine</td></tr>
+    <tr><td>27</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:categorical-action-notation&#x27; on page 35 und</td></tr>
+    <tr><td>28</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:wavefront-propagation&#x27; on page 37 undefined</td></tr>
+    <tr><td>29</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:categorical-q-reeb-flow&#x27; on page 44 undefine</td></tr>
+    <tr><td>30</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:self-dual-2group&#x27; on page 45 undefined on i</td></tr>
+    <tr><td>31</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:golden-ratio-transport&#x27; on page 52 undefine</td></tr>
+    <tr><td>32</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:admissible-system&#x27; on page 64 undefined on</td></tr>
+    <tr><td>33</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:betti-numbers-brane&#x27; on page 66 undefined o</td></tr>
+    <tr><td>34</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:j1e-local-states&#x27; on page 66 undefined on i</td></tr>
+    <tr><td>35</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Reference `rem:fermionic-twisted-sectors&#x27; on page 72 undefined o</td></tr>
+    <tr><td>36</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:quantum-flatness&#x27; on page 74 undefined on i</td></tr>
+    <tr><td>37</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:trefoil-knot-group&#x27; on page 80 undefined on</td></tr>
+    <tr><td>38</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:frobenius-simplification&#x27; on page 84 undefi</td></tr>
+    <tr><td>39</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:aggregate-color-quantities&#x27; on page 87 unde</td></tr>
+    <tr><td>40</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:observation-braid&#x27; on page 93 undefined on</td></tr>
+    <tr><td>41</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:jet-planck-steps&#x27; on page 93 undefined on i</td></tr>
+    <tr><td>42</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:instanton-on-shell&#x27; on page 101 undefined o</td></tr>
+    <tr><td>43</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:hodge-laplacian-relation&#x27; on page 102 undef</td></tr>
+    <tr><td>44</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:simple-objects-V&#x27; on page 110 undefined on</td></tr>
+    <tr><td>45</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:substrate-gm-torsion&#x27; on page 126 undefined</td></tr>
+    <tr><td>46</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:kummer-filtration-obstruction&#x27; on page 126</td></tr>
+    <tr><td>47</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:schrodinger-jet-coaction&#x27; on page 127 undef</td></tr>
+    <tr><td>48</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:hopf-non-cocommutativity&#x27; on page 129 undef</td></tr>
+    <tr><td>49</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:instanton&#x27; on page 129 undefined on input l</td></tr>
+    <tr><td>50</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `ex:p-adic-realisation&#x27; on page 133 undefined on</td></tr>
+    <tr><td>51</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:finite-field-realisation&#x27; on page 133 undefi</td></tr>
+    <tr><td>52</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:substrate-gm-torsion&#x27; on page 147 undefined</td></tr>
+    <tr><td>53</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:q-laplacian-interpretation&#x27; on page 150 und</td></tr>
+    <tr><td>54</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:madelung-fluid&#x27; on page 151 undefined on in</td></tr>
+    <tr><td>55</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:q-laplacian-interpretation&#x27; on page 151 und</td></tr>
+    <tr><td>56</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:state-bundle&#x27; on page 151 undefined on inpu</td></tr>
+    <tr><td>57</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:madelung-fluid&#x27; on page 153 undefined on in</td></tr>
+    <tr><td>58</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:planck-reynolds&#x27; on page 154 undefined on i</td></tr>
+    <tr><td>59</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:madelung-fluid&#x27; on page 156 undefined on in</td></tr>
+    <tr><td>60</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:schrodinger-jet-coaction&#x27; on page 156 undef</td></tr>
+    <tr><td>61</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:speed-of-light&#x27; on page 156 undefined on in</td></tr>
+    <tr><td>62</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:q-laplacian-interpretation&#x27; on page 157 und</td></tr>
+    <tr><td>63</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:state-bundle&#x27; on page 158 undefined on inpu</td></tr>
+    <tr><td>64</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:q-laplacian-interpretation&#x27; on page 158 und</td></tr>
+    <tr><td>65</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:hodge-laplacian-relation&#x27; on page 158 undef</td></tr>
+    <tr><td>66</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:hodge-laplacian-relation&#x27; on page 159 undef</td></tr>
+    <tr><td>67</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:pawlowski-leitner-inner-product&#x27; on page 16</td></tr>
+    <tr><td>68</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:geodesic-vortices&#x27; on page 163 undefined on</td></tr>
+    <tr><td>69</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:state-bundle&#x27; on page 163 undefined on inpu</td></tr>
+    <tr><td>70</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:levi-form-defect&#x27; on page 163 undefined on</td></tr>
+    <tr><td>71</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:madelung-fluid&#x27; on page 163 undefined on in</td></tr>
+    <tr><td>72</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:ns-regular-qou&#x27; on page 164 undefined on in</td></tr>
+    <tr><td>73</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:substrate-gm-torsion&#x27; on page 167 undefined</td></tr>
+    <tr><td>74</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:levi-form-defect&#x27; on page 170 undefined on</td></tr>
+    <tr><td>75</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:planck-reynolds&#x27; on page 171 undefined on i</td></tr>
+    <tr><td>76</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:hamilton-jacobi-phase&#x27; on page 171 undefine</td></tr>
+    <tr><td>77</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:vortex-reconnection&#x27; on page 174 undefined</td></tr>
+    <tr><td>78</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:braid-fluid&#x27; on page 176 undefined on input</td></tr>
+    <tr><td>79</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:geodesic-vortices&#x27; on page 181 undefined on</td></tr>
+    <tr><td>80</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:levi-form-defect&#x27; on page 182 undefined on</td></tr>
+    <tr><td>81</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:planck-reynolds&#x27; on page 183 undefined on i</td></tr>
+    <tr><td>82</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:julia-set-reeb&#x27; on page 185 undefined on in</td></tr>
+    <tr><td>83</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:julia-set-reeb&#x27; on page 186 undefined on in</td></tr>
+    <tr><td>84</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:jet-planck-steps&#x27; on page 188 undefined on</td></tr>
+    <tr><td>85</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:julia-set-reeb&#x27; on page 188 undefined on in</td></tr>
+    <tr><td>86</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:golden-ratio-degeneration&#x27; on page 190 unde</td></tr>
+    <tr><td>87</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `ex:mass-identity-C&#x27; on page 193 undefined on in</td></tr>
+    <tr><td>88</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `ex:mass-identity-C&#x27; on page 194 undefined on in</td></tr>
+    <tr><td>89</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:groebner-shirshov-energy&#x27; on page 194 undef</td></tr>
+    <tr><td>90</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:jet-planck-steps&#x27; on page 195 undefined on</td></tr>
+    <tr><td>91</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:golden-ratio-degeneration&#x27; on page 198 unde</td></tr>
+    <tr><td>92</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:jet-planck-steps&#x27; on page 200 undefined on</td></tr>
+    <tr><td>93</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:complex-substrate-interpretation&#x27; on page 2</td></tr>
+    <tr><td>94</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:skein-turing-machine&#x27; on page 200 undefined</td></tr>
+    <tr><td>95</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:skein-turing-machine&#x27; on page 201 undefined</td></tr>
+    <tr><td>96</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:kummer-filtration-obstruction&#x27; on page 201</td></tr>
+    <tr><td>97</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:skein-turing-machine&#x27; on page 203 undefined</td></tr>
+    <tr><td>98</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:substrate-gm-torsion&#x27; on page 204 undefined</td></tr>
+    <tr><td>99</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:kummer-filtration-obstruction&#x27; on page 205</td></tr>
+    <tr><td>100</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:bundle-category&#x27; on page 207 undefined on i</td></tr>
+    <tr><td>101</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:brings-curve&#x27; on page 214 undefined on inpu</td></tr>
+    <tr><td>102</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:brings-qou-4tuple&#x27; on page 215 undefined on</td></tr>
+    <tr><td>103</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:spectral-dynamics&#x27; on page 215 undefined on</td></tr>
+    <tr><td>104</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:t-duality-elliptic&#x27; on page 217 undefined o</td></tr>
+    <tr><td>105</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `ex:p-adic-realisation&#x27; on page 220 undefined on</td></tr>
+    <tr><td>106</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:trefoil-operator-algebra&#x27; on page 220 undefi</td></tr>
+    <tr><td>107</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:fermion&#x27; on page 222 undefined on input lin</td></tr>
+    <tr><td>108</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `def:boson&#x27; on page 222 undefined on input line</td></tr>
+    <tr><td>109</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:knot-formula-table&#x27; on page 229 undefined o</td></tr>
+    <tr><td>110</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:knot-formula-table&#x27; on page 239 undefined o</td></tr>
+    <tr><td>111</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:torus-knot-prime-powers&#x27; on page 242 undefi</td></tr>
+    <tr><td>112</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:building-block-knots&#x27; on page 254 undefined</td></tr>
+    <tr><td>113</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:building-block-knots&#x27; on page 255 undefined</td></tr>
+    <tr><td>114</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `unital-groebner-bases:def:admissible-system&#x27; on</td></tr>
+    <tr><td>115</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `unital-groebner-bases:def:division-algorithm&#x27; o</td></tr>
+    <tr><td>116</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `unital-groebner-bases:def:groebner-basis&#x27; on pa</td></tr>
+    <tr><td>117</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `unital-groebner-bases:thm:main-theorem&#x27; on page</td></tr>
+    <tr><td>118</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:photon-wavefront-example&#x27; on page 263 undefi</td></tr>
+    <tr><td>119</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:building-block-knots&#x27; on page 273 undefined</td></tr>
+    <tr><td>120</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:building-block-knots&#x27; on page 278 undefined</td></tr>
+    <tr><td>121</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:quantum-dilogarithm&#x27; on page 281 undefined</td></tr>
+    <tr><td>122</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `unital-groebner-bases:thm:ugb-main-theorem&#x27; on</td></tr>
+    <tr><td>123</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-young-symmetrizer&#x27; on page 296 und</td></tr>
+    <tr><td>124</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:wavefront-propagation&#x27; on page 302 undefine</td></tr>
+    <tr><td>125</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:mass-geometric-drag&#x27; on page 306 undefined</td></tr>
+    <tr><td>126</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:q-laplacian-expansion&#x27; on page 313 undefine</td></tr>
+    <tr><td>127</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:knot-formula-table&#x27; on page 315 undefined o</td></tr>
+    <tr><td>128</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:skein-mass-relation&#x27; on page 315 undefined</td></tr>
+    <tr><td>129</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:skein-mass-relation&#x27; on page 317 undefined</td></tr>
+    <tr><td>130</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:skein-mass-relation&#x27; on page 318 undefined</td></tr>
+    <tr><td>131</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:half-life-as-q-probe&#x27; on page 322 undefined</td></tr>
+    <tr><td>132</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:building-block-knots&#x27; on page 322 undefined</td></tr>
+    <tr><td>133</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `conj:skein-shell-correction&#x27; on page 326 undefi</td></tr>
+    <tr><td>134</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `conj:skein-shell-correction&#x27; on page 327 undefi</td></tr>
+    <tr><td>135</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `conj:skein-shell-correction&#x27; on page 329 undefi</td></tr>
+    <tr><td>136</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `conj:skein-shell-correction&#x27; on page 332 undefi</td></tr>
+    <tr><td>137</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:building-block-knots&#x27; on page 344 undefined</td></tr>
+    <tr><td>138</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:skein-mass-relation&#x27; on page 348 undefined</td></tr>
+    <tr><td>139</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:photonic-hall&#x27; on page 348 undefined on inp</td></tr>
+    <tr><td>140</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:complex-substrate-interpretation&#x27; on page 3</td></tr>
+    <tr><td>141</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:trefoil-vortex-chirality-flip&#x27; on page 351</td></tr>
+    <tr><td>142</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:heisenberg-commutator&#x27; on page 353 undefine</td></tr>
+    <tr><td>143</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:crossing-energy-decomposition&#x27; on page 354</td></tr>
+    <tr><td>144</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:time-reversal-energy-barrier&#x27; on page 355 u</td></tr>
+    <tr><td>145</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:cmb-q-torsion&#x27; on page 355 undefined on inp</td></tr>
+    <tr><td>146</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:cosmological-chirality-flip&#x27; on page 355 un</td></tr>
+    <tr><td>147</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:chain-ring-energy&#x27; on page 360 undefined on</td></tr>
+    <tr><td>148</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `def:shell-construction-rules&#x27; on page 363 undef</td></tr>
+    <tr><td>149</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:kummer-filtration-obstruction&#x27; on page 365</td></tr>
+    <tr><td>150</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:fibre-functor-rigidity&#x27; on page 365 undefin</td></tr>
+    <tr><td>151</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:kummer-filtration-obstruction&#x27; on page 366</td></tr>
+    <tr><td>152</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:fibre-functor-rigidity&#x27; on page 367 undefin</td></tr>
+    <tr><td>153</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:kummer-filtration-obstruction&#x27; on page 368</td></tr>
+    <tr><td>154</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:kummer-filtration-obstruction&#x27; on page 369</td></tr>
+    <tr><td>155</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:fibre-functor-rigidity&#x27; on page 370 undefin</td></tr>
+    <tr><td>156</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:knot-exhaustiveness&#x27; on page 375 undefined</td></tr>
+    <tr><td>157</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:electron-knot-concrete&#x27; on page 395 undefine</td></tr>
+    <tr><td>158</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-categorical-q-torsion-leaf&#x27; on pag</td></tr>
+    <tr><td>159</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-categorical-transport&#x27; on page 426</td></tr>
+    <tr><td>160</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-descent&#x27; on page 426 undefined on</td></tr>
+    <tr><td>161</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-observed-value&#x27; on page 426 undefi</td></tr>
+    <tr><td>162</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-quantum-flatness&#x27; on page 426 unde</td></tr>
+    <tr><td>163</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-s3-group&#x27; on page 426 undefined on</td></tr>
+    <tr><td>164</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-reeb-gauge-group&#x27; on page 426 unde</td></tr>
+    <tr><td>165</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `rem:glossary-weierstrass-projection&#x27; on page 42</td></tr>
+    <tr><td>166</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:finite-field-realisation&#x27; on page 430 undefi</td></tr>
+    <tr><td>167</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `ex:p-adic-realisation&#x27; on page 430 undefined on</td></tr>
+    <tr><td>168</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `ex:benzene-ring&#x27; on page 430 undefined on input</td></tr>
+    <tr><td>169</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:hydrogen-knot-structure&#x27; on page 430 undefin</td></tr>
+    <tr><td>170</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: Hyper reference `ex:carbon-chain-c6&#x27; on page 430 undefined on in</td></tr>
+    <tr><td>171</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: Hyper reference `ex:trefoil-operator-algebra&#x27; on page 430 undefi</td></tr>
+    <tr><td>172</td><td><span class="badge">Reference</span></td><td>LaTeX Warning: There were undefined references.</td></tr>
+    <tr><td>173</td><td><span class="badge">LaTeX</span></td><td>LaTeX Warning: There were multiply-defined labels.</td></tr>
+    <tr><td>174</td><td><span class="badge">LaTeX</span></td><td>Package newunicodechar Warning: Redefining Unicode character on input line 42.</td></tr>
+    <tr><td>175</td><td><span class="badge">LaTeX</span></td><td>Package newunicodechar Warning: Redefining Unicode character on input line 43.</td></tr>
+    <tr><td>176</td><td><span class="badge">LaTeX</span></td><td>Package newunicodechar Warning: Redefining Unicode character on input line 44.</td></tr>
+    <tr><td>177</td><td><span class="badge">LaTeX</span></td><td>Package newunicodechar Warning: Redefining Unicode character on input line 45.</td></tr>
+    <tr><td>178</td><td><span class="badge">LaTeX</span></td><td>Package newunicodechar Warning: Redefining Unicode character on input line 55.</td></tr>
+    <tr><td>179</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 407</td></tr>
+    <tr><td>180</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 408</td></tr>
+    <tr><td>181</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 409</td></tr>
+    <tr><td>182</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 410</td></tr>
+    <tr><td>183</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 411</td></tr>
+    <tr><td>184</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 412</td></tr>
+    <tr><td>185</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 413</td></tr>
+    <tr><td>186</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 414</td></tr>
+    <tr><td>187</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 415</td></tr>
+    <tr><td>188</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 416</td></tr>
+    <tr><td>189</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 417</td></tr>
+    <tr><td>190</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 418</td></tr>
+    <tr><td>191</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 419</td></tr>
+    <tr><td>192</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 420</td></tr>
+    <tr><td>193</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 421</td></tr>
+    <tr><td>194</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 422</td></tr>
+    <tr><td>195</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 423</td></tr>
+    <tr><td>196</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 424</td></tr>
+    <tr><td>197</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 425</td></tr>
+    <tr><td>198</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 426</td></tr>
+    <tr><td>199</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 427</td></tr>
+    <tr><td>200</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 428</td></tr>
+    <tr><td>201</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 429</td></tr>
+    <tr><td>202</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 430</td></tr>
+    <tr><td>203</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 431</td></tr>
+    <tr><td>204</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 432</td></tr>
+    <tr><td>205</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 433</td></tr>
+    <tr><td>206</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 434</td></tr>
+    <tr><td>207</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 435</td></tr>
+    <tr><td>208</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 436</td></tr>
+    <tr><td>209</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 437</td></tr>
+    <tr><td>210</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 438</td></tr>
+    <tr><td>211</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 439</td></tr>
+    <tr><td>212</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 440</td></tr>
+    <tr><td>213</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 441</td></tr>
+    <tr><td>214</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 442</td></tr>
+    <tr><td>215</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 443</td></tr>
+    <tr><td>216</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 444</td></tr>
+    <tr><td>217</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 445</td></tr>
+    <tr><td>218</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 446</td></tr>
+    <tr><td>219</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 447</td></tr>
+    <tr><td>220</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 448</td></tr>
+    <tr><td>221</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 449</td></tr>
+    <tr><td>222</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 450</td></tr>
+    <tr><td>223</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 451</td></tr>
+    <tr><td>224</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 452</td></tr>
+    <tr><td>225</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 453</td></tr>
+    <tr><td>226</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 454</td></tr>
+    <tr><td>227</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 455</td></tr>
+    <tr><td>228</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 456</td></tr>
+    <tr><td>229</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 457</td></tr>
+    <tr><td>230</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 458</td></tr>
+    <tr><td>231</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 459</td></tr>
+    <tr><td>232</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 460</td></tr>
+    <tr><td>233</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 461</td></tr>
+    <tr><td>234</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 462</td></tr>
+    <tr><td>235</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 463</td></tr>
+    <tr><td>236</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 464</td></tr>
+    <tr><td>237</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 465</td></tr>
+    <tr><td>238</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 466</td></tr>
+    <tr><td>239</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 467</td></tr>
+    <tr><td>240</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 468</td></tr>
+    <tr><td>241</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 469</td></tr>
+    <tr><td>242</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 470</td></tr>
+    <tr><td>243</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 471</td></tr>
+    <tr><td>244</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 472</td></tr>
+    <tr><td>245</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 473</td></tr>
+    <tr><td>246</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 474</td></tr>
+    <tr><td>247</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 475</td></tr>
+    <tr><td>248</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 476</td></tr>
+    <tr><td>249</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 477</td></tr>
+    <tr><td>250</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 478</td></tr>
+    <tr><td>251</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 479</td></tr>
+    <tr><td>252</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 480</td></tr>
+    <tr><td>253</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 481</td></tr>
+    <tr><td>254</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 482</td></tr>
+    <tr><td>255</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 483</td></tr>
+    <tr><td>256</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 484</td></tr>
+    <tr><td>257</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 485</td></tr>
+    <tr><td>258</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 486</td></tr>
+    <tr><td>259</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 487</td></tr>
+    <tr><td>260</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 488</td></tr>
+    <tr><td>261</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 489</td></tr>
+    <tr><td>262</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 500</td></tr>
+    <tr><td>263</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 501</td></tr>
+    <tr><td>264</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 502</td></tr>
+    <tr><td>265</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 503</td></tr>
+    <tr><td>266</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 504</td></tr>
+    <tr><td>267</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 505</td></tr>
+    <tr><td>268</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 506</td></tr>
+    <tr><td>269</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 507</td></tr>
+    <tr><td>270</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 508</td></tr>
+    <tr><td>271</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 509</td></tr>
+    <tr><td>272</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 510</td></tr>
+    <tr><td>273</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 511</td></tr>
+    <tr><td>274</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 512</td></tr>
+    <tr><td>275</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 513</td></tr>
+    <tr><td>276</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 514</td></tr>
+    <tr><td>277</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 515</td></tr>
+    <tr><td>278</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.17677pt too wide) detected at line 516</td></tr>
+    <tr><td>279</td><td><span class="badge">Box</span></td><td>Overfull \hbox (65.61513pt too wide) in paragraph at lines 68--75</td></tr>
+    <tr><td>280</td><td><span class="badge">Box</span></td><td>Overfull \hbox (11.68498pt too wide) in paragraph at lines 117--124</td></tr>
+    <tr><td>281</td><td><span class="badge">Box</span></td><td>Overfull \hbox (7.93797pt too wide) in paragraph at lines 370--374</td></tr>
+    <tr><td>282</td><td><span class="badge">Box</span></td><td>Overfull \hbox (5.69604pt too wide) in paragraph at lines 696--701</td></tr>
+    <tr><td>283</td><td><span class="badge">Box</span></td><td>Overfull \hbox (93.24037pt too wide) in paragraph at lines 871--872</td></tr>
+    <tr><td>284</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.12498pt too wide) in paragraph at lines 18--24</td></tr>
+    <tr><td>285</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.25648pt too wide) in paragraph at lines 621--623</td></tr>
+    <tr><td>286</td><td><span class="badge">Box</span></td><td>Overfull \hbox (23.3606pt too wide) in paragraph at lines 1362--1369</td></tr>
+    <tr><td>287</td><td><span class="badge">Box</span></td><td>Overfull \hbox (23.05817pt too wide) in paragraph at lines 1362--1369</td></tr>
+    <tr><td>288</td><td><span class="badge">Box</span></td><td>Overfull \hbox (11.42693pt too wide) in paragraph at lines 1537--1539</td></tr>
+    <tr><td>289</td><td><span class="badge">Box</span></td><td>Overfull \hbox (5.62909pt too wide) in paragraph at lines 1820--1832</td></tr>
+    <tr><td>290</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.90988pt too wide) in paragraph at lines 1820--1832</td></tr>
+    <tr><td>291</td><td><span class="badge">Box</span></td><td>Overfull \hbox (19.8494pt too wide) in paragraph at lines 1870--1876</td></tr>
+    <tr><td>292</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.3469pt too wide) in paragraph at lines 1870--1876</td></tr>
+    <tr><td>293</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.84637pt too wide) in paragraph at lines 2050--2054</td></tr>
+    <tr><td>294</td><td><span class="badge">Box</span></td><td>Overfull \hbox (9.13588pt too wide) in paragraph at lines 2253--2256</td></tr>
+    <tr><td>295</td><td><span class="badge">Box</span></td><td>Overfull \hbox (9.13596pt too wide) in paragraph at lines 3089--3090</td></tr>
+    <tr><td>296</td><td><span class="badge">Box</span></td><td>Overfull \hbox (25.01207pt too wide) in paragraph at lines 3240--3243</td></tr>
+    <tr><td>297</td><td><span class="badge">Box</span></td><td>Overfull \hbox (48.34355pt too wide) in paragraph at lines 3820--3833</td></tr>
+    <tr><td>298</td><td><span class="badge">Box</span></td><td>Overfull \hbox (29.91733pt too wide) in paragraph at lines 3949--3965</td></tr>
+    <tr><td>299</td><td><span class="badge">Box</span></td><td>Overfull \hbox (43.7528pt too wide) in paragraph at lines 4036--4060</td></tr>
+    <tr><td>300</td><td><span class="badge">Box</span></td><td>Overfull \hbox (45.18382pt too wide) in paragraph at lines 4073--4074</td></tr>
+    <tr><td>301</td><td><span class="badge">Box</span></td><td>Overfull \hbox (17.56514pt too wide) in paragraph at lines 4080--4081</td></tr>
+    <tr><td>302</td><td><span class="badge">Box</span></td><td>Overfull \hbox (93.24037pt too wide) in paragraph at lines 4085--4086</td></tr>
+    <tr><td>303</td><td><span class="badge">Box</span></td><td>Overfull \hbox (13.82054pt too wide) in paragraph at lines 147--155</td></tr>
+    <tr><td>304</td><td><span class="badge">Box</span></td><td>Overfull \hbox (11.39252pt too wide) in paragraph at lines 390--401</td></tr>
+    <tr><td>305</td><td><span class="badge">Box</span></td><td>Overfull \hbox (30.67502pt too wide) in paragraph at lines 453--464</td></tr>
+    <tr><td>306</td><td><span class="badge">Box</span></td><td>Overfull \hbox (5.31621pt too wide) in paragraph at lines 500--504</td></tr>
+    <tr><td>307</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.23898pt too wide) in paragraph at lines 787--789</td></tr>
+    <tr><td>308</td><td><span class="badge">Box</span></td><td>Overfull \hbox (13.99992pt too wide) in paragraph at lines 1241--1242</td></tr>
+    <tr><td>309</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.97116pt too wide) in paragraph at lines 1430--1439</td></tr>
+    <tr><td>310</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 1881) in paragraph at lines 1479--1481</td></tr>
+    <tr><td>311</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 1248) in paragraph at lines 1484--1486</td></tr>
+    <tr><td>312</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 6188) in paragraph at lines 1496--1498</td></tr>
+    <tr><td>313</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1500--1502</td></tr>
+    <tr><td>314</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1507--1509</td></tr>
+    <tr><td>315</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 3657) in paragraph at lines 1509--1510</td></tr>
+    <tr><td>316</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1509--1510</td></tr>
+    <tr><td>317</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1511--1513</td></tr>
+    <tr><td>318</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1515--1517</td></tr>
+    <tr><td>319</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 2556) in paragraph at lines 1517--1518</td></tr>
+    <tr><td>320</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1519--1521</td></tr>
+    <tr><td>321</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1521--1522</td></tr>
+    <tr><td>322</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 1523--1525</td></tr>
+    <tr><td>323</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 1881) in paragraph at lines 1523--1525</td></tr>
+    <tr><td>324</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 6775) in paragraph at lines 1525--1526</td></tr>
+    <tr><td>325</td><td><span class="badge">Box</span></td><td>Overfull \hbox (17.27654pt too wide) in paragraph at lines 1610--1621</td></tr>
+    <tr><td>326</td><td><span class="badge">Box</span></td><td>Overfull \hbox (8.76509pt too wide) in paragraph at lines 1626--1629</td></tr>
+    <tr><td>327</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.24661pt too wide) in paragraph at lines 1740--1753</td></tr>
+    <tr><td>328</td><td><span class="badge">Box</span></td><td>Overfull \hbox (25.70212pt too wide) in paragraph at lines 1803--1811</td></tr>
+    <tr><td>329</td><td><span class="badge">Box</span></td><td>Overfull \hbox (2.48418pt too wide) in paragraph at lines 1878--1885</td></tr>
+    <tr><td>330</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.57202pt too wide) in paragraph at lines 73--75</td></tr>
+    <tr><td>331</td><td><span class="badge">Box</span></td><td>Overfull \hbox (7.90605pt too wide) in paragraph at lines 576--584</td></tr>
+    <tr><td>332</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.46669pt too wide) detected at line 1198</td></tr>
+    <tr><td>333</td><td><span class="badge">Box</span></td><td>Overfull \hbox (7.147pt too wide) in paragraph at lines 1759--1761</td></tr>
+    <tr><td>334</td><td><span class="badge">Box</span></td><td>Overfull \hbox (24.76097pt too wide) in paragraph at lines 3112--3119</td></tr>
+    <tr><td>335</td><td><span class="badge">Box</span></td><td>Overfull \hbox (5.23167pt too wide) in paragraph at lines 3355--3360</td></tr>
+    <tr><td>336</td><td><span class="badge">Box</span></td><td>Overfull \hbox (19.58418pt too wide) in paragraph at lines 3448--3455</td></tr>
+    <tr><td>337</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.4338pt too wide) in paragraph at lines 3526--3537</td></tr>
+    <tr><td>338</td><td><span class="badge">Box</span></td><td>Overfull \hbox (43.11034pt too wide) in paragraph at lines 3570--3581</td></tr>
+    <tr><td>339</td><td><span class="badge">Box</span></td><td>Overfull \hbox (16.81554pt too wide) in paragraph at lines 3645--3647</td></tr>
+    <tr><td>340</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.5776pt too wide) in paragraph at lines 4080--4087</td></tr>
+    <tr><td>341</td><td><span class="badge">Box</span></td><td>Overfull \hbox (16.06679pt too wide) in paragraph at lines 4291--4295</td></tr>
+    <tr><td>342</td><td><span class="badge">Box</span></td><td>Overfull \hbox (53.43979pt too wide) in paragraph at lines 4510--4521</td></tr>
+    <tr><td>343</td><td><span class="badge">Box</span></td><td>Overfull \hbox (53.73726pt too wide) in paragraph at lines 93--108</td></tr>
+    <tr><td>344</td><td><span class="badge">Box</span></td><td>Overfull \hbox (39.32082pt too wide) in paragraph at lines 169--176</td></tr>
+    <tr><td>345</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.60046pt too wide) in paragraph at lines 300--306</td></tr>
+    <tr><td>346</td><td><span class="badge">Box</span></td><td>Overfull \hbox (2.27011pt too wide) in paragraph at lines 496--499</td></tr>
+    <tr><td>347</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.27446pt too wide) in paragraph at lines 493--499</td></tr>
+    <tr><td>348</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.579pt too wide) in paragraph at lines 510--515</td></tr>
+    <tr><td>349</td><td><span class="badge">Box</span></td><td>Overfull \hbox (42.27762pt too wide) in paragraph at lines 736--746</td></tr>
+    <tr><td>350</td><td><span class="badge">Box</span></td><td>Overfull \hbox (13.44649pt too wide) in paragraph at lines 848--860</td></tr>
+    <tr><td>351</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.90857pt too wide) in paragraph at lines 874--880</td></tr>
+    <tr><td>352</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.51286pt too wide) in paragraph at lines 906--914</td></tr>
+    <tr><td>353</td><td><span class="badge">Box</span></td><td>Overfull \hbox (78.01794pt too wide) in paragraph at lines 926--931</td></tr>
+    <tr><td>354</td><td><span class="badge">Box</span></td><td>Overfull \hbox (151.58pt too wide) in paragraph at lines 987--996</td></tr>
+    <tr><td>355</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.93156pt too wide) in paragraph at lines 1149--1158</td></tr>
+    <tr><td>356</td><td><span class="badge">Box</span></td><td>Overfull \hbox (25.7431pt too wide) in paragraph at lines 1222--1229</td></tr>
+    <tr><td>357</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.1127pt too wide) in paragraph at lines 1243--1251</td></tr>
+    <tr><td>358</td><td><span class="badge">Box</span></td><td>Overfull \hbox (159.72467pt too wide) in paragraph at lines 1397--1406</td></tr>
+    <tr><td>359</td><td><span class="badge">Box</span></td><td>Overfull \hbox (24.71927pt too wide) in paragraph at lines 1446--1451</td></tr>
+    <tr><td>360</td><td><span class="badge">Box</span></td><td>Overfull \hbox (44.93309pt too wide) in paragraph at lines 1472--1473</td></tr>
+    <tr><td>361</td><td><span class="badge">Box</span></td><td>Overfull \hbox (50.23819pt too wide) in paragraph at lines 1475--1476</td></tr>
+    <tr><td>362</td><td><span class="badge">Box</span></td><td>Overfull \hbox (38.27766pt too wide) in paragraph at lines 1476--1477</td></tr>
+    <tr><td>363</td><td><span class="badge">Box</span></td><td>Overfull \hbox (23.53761pt too wide) in paragraph at lines 86--89</td></tr>
+    <tr><td>364</td><td><span class="badge">Box</span></td><td>Overfull \hbox (25.34758pt too wide) in paragraph at lines 89--92</td></tr>
+    <tr><td>365</td><td><span class="badge">Box</span></td><td>Overfull \hbox (151.4184pt too wide) in paragraph at lines 188--197</td></tr>
+    <tr><td>366</td><td><span class="badge">Box</span></td><td>Overfull \hbox (2.63147pt too wide) in paragraph at lines 541--543</td></tr>
+    <tr><td>367</td><td><span class="badge">Box</span></td><td>Overfull \hbox (139.5629pt too wide) in paragraph at lines 640--650</td></tr>
+    <tr><td>368</td><td><span class="badge">Box</span></td><td>Overfull \hbox (12.24799pt too wide) in paragraph at lines 690--698</td></tr>
+    <tr><td>369</td><td><span class="badge">Box</span></td><td>Overfull \hbox (7.95273pt too wide) in paragraph at lines 997--1001</td></tr>
+    <tr><td>370</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.46213pt too wide) in paragraph at lines 1446--1449</td></tr>
+    <tr><td>371</td><td><span class="badge">Box</span></td><td>Overfull \hbox (10.33704pt too wide) in paragraph at lines 1860--1865</td></tr>
+    <tr><td>372</td><td><span class="badge">Box</span></td><td>Overfull \hbox (30.53389pt too wide) in paragraph at lines 1867--1869</td></tr>
+    <tr><td>373</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.29742pt too wide) in paragraph at lines 1898--1904</td></tr>
+    <tr><td>374</td><td><span class="badge">Box</span></td><td>Overfull \hbox (17.54652pt too wide) in paragraph at lines 2147--2160</td></tr>
+    <tr><td>375</td><td><span class="badge">Box</span></td><td>Overfull \hbox (174.6673pt too wide) in paragraph at lines 2201--2204</td></tr>
+    <tr><td>376</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.78699pt too wide) in paragraph at lines 2347--2349</td></tr>
+    <tr><td>377</td><td><span class="badge">Box</span></td><td>Overfull \hbox (17.98633pt too wide) in paragraph at lines 2838--2843</td></tr>
+    <tr><td>378</td><td><span class="badge">Box</span></td><td>Overfull \hbox (16.56686pt too wide) in paragraph at lines 3189--3193</td></tr>
+    <tr><td>379</td><td><span class="badge">Box</span></td><td>Overfull \hbox (124.44806pt too wide) in paragraph at lines 430--442</td></tr>
+    <tr><td>380</td><td><span class="badge">Box</span></td><td>Overfull \hbox (38.17796pt too wide) in paragraph at lines 486--496</td></tr>
+    <tr><td>381</td><td><span class="badge">Box</span></td><td>Overfull \hbox (128.64133pt too wide) in paragraph at lines 583--594</td></tr>
+    <tr><td>382</td><td><span class="badge">Box</span></td><td>Overfull \hbox (149.22577pt too wide) in paragraph at lines 660--670</td></tr>
+    <tr><td>383</td><td><span class="badge">Box</span></td><td>Overfull \hbox (34.08168pt too wide) in paragraph at lines 775--786</td></tr>
+    <tr><td>384</td><td><span class="badge">Box</span></td><td>Overfull \hbox (7.64874pt too wide) in paragraph at lines 837--839</td></tr>
+    <tr><td>385</td><td><span class="badge">Box</span></td><td>Overfull \hbox (186.07123pt too wide) in paragraph at lines 1133--1143</td></tr>
+    <tr><td>386</td><td><span class="badge">Box</span></td><td>Overfull \hbox (5.2286pt too wide) in paragraph at lines 1412--1417</td></tr>
+    <tr><td>387</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.57695pt too wide) in paragraph at lines 1490--1495</td></tr>
+    <tr><td>388</td><td><span class="badge">Box</span></td><td>Overfull \hbox (118.66084pt too wide) in paragraph at lines 1523--1533</td></tr>
+    <tr><td>389</td><td><span class="badge">Box</span></td><td>Overfull \hbox (118.72882pt too wide) in paragraph at lines 1665--1674</td></tr>
+    <tr><td>390</td><td><span class="badge">Box</span></td><td>Overfull \hbox (110.3536pt too wide) in paragraph at lines 1830--1843</td></tr>
+    <tr><td>391</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.22177pt too wide) in paragraph at lines 1848--1853</td></tr>
+    <tr><td>392</td><td><span class="badge">Box</span></td><td>Overfull \hbox (78.42029pt too wide) in paragraph at lines 2159--2167</td></tr>
+    <tr><td>393</td><td><span class="badge">Box</span></td><td>Overfull \hbox (16.32193pt too wide) in paragraph at lines 2436--2444</td></tr>
+    <tr><td>394</td><td><span class="badge">Box</span></td><td>Overfull \hbox (25.16138pt too wide) in paragraph at lines 2682--2683</td></tr>
+    <tr><td>395</td><td><span class="badge">Box</span></td><td>Overfull \hbox (50.23819pt too wide) in paragraph at lines 2695--2696</td></tr>
+    <tr><td>396</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.99577pt too wide) in paragraph at lines 2696--2697</td></tr>
+    <tr><td>397</td><td><span class="badge">Box</span></td><td>Overfull \hbox (29.72653pt too wide) in paragraph at lines 2697--2698</td></tr>
+    <tr><td>398</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.18018pt too wide) in paragraph at lines 786--794</td></tr>
+    <tr><td>399</td><td><span class="badge">Box</span></td><td>Overfull \hbox (51.73416pt too wide) in paragraph at lines 841--851</td></tr>
+    <tr><td>400</td><td><span class="badge">Box</span></td><td>Overfull \hbox (14.25444pt too wide) in paragraph at lines 885--896</td></tr>
+    <tr><td>401</td><td><span class="badge">Box</span></td><td>Overfull \hbox (26.4886pt too wide) in paragraph at lines 1882--1883</td></tr>
+    <tr><td>402</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.3672pt too wide) in paragraph at lines 2117--2123</td></tr>
+    <tr><td>403</td><td><span class="badge">Box</span></td><td>Overfull \hbox (285.1124pt too wide) in paragraph at lines 2586--2594</td></tr>
+    <tr><td>404</td><td><span class="badge">Box</span></td><td>Overfull \hbox (45.39294pt too wide) in paragraph at lines 2731--2742</td></tr>
+    <tr><td>405</td><td><span class="badge">Box</span></td><td>Overfull \hbox (200.76544pt too wide) in paragraph at lines 2769--2778</td></tr>
+    <tr><td>406</td><td><span class="badge">Box</span></td><td>Overfull \hbox (11.40073pt too wide) in paragraph at lines 2889--2891</td></tr>
+    <tr><td>407</td><td><span class="badge">Box</span></td><td>Overfull \hbox (24.95442pt too wide) in paragraph at lines 3200--3209</td></tr>
+    <tr><td>408</td><td><span class="badge">Box</span></td><td>Overfull \hbox (72.53279pt too wide) in paragraph at lines 4365--4367</td></tr>
+    <tr><td>409</td><td><span class="badge">Box</span></td><td>Overfull \hbox (30.90404pt too wide) in paragraph at lines 4554--4556</td></tr>
+    <tr><td>410</td><td><span class="badge">Box</span></td><td>Overfull \hbox (237.03908pt too wide) in paragraph at lines 4577--4582</td></tr>
+    <tr><td>411</td><td><span class="badge">Box</span></td><td>Overfull \hbox (22.88864pt too wide) detected at line 5268</td></tr>
+    <tr><td>412</td><td><span class="badge">Box</span></td><td>Overfull \hbox (18.97241pt too wide) in paragraph at lines 6276--6285</td></tr>
+    <tr><td>413</td><td><span class="badge">Box</span></td><td>Overfull \hbox (175.49702pt too wide) in paragraph at lines 6445--6520</td></tr>
+    <tr><td>414</td><td><span class="badge">Box</span></td><td>Overfull \hbox (153.47282pt too wide) in paragraph at lines 6557--6571</td></tr>
+    <tr><td>415</td><td><span class="badge">Box</span></td><td>Overfull \hbox (21.40617pt too wide) in paragraph at lines 7092--7102</td></tr>
+    <tr><td>416</td><td><span class="badge">Box</span></td><td>Overfull \hbox (65.24942pt too wide) detected at line 7689</td></tr>
+    <tr><td>417</td><td><span class="badge">Box</span></td><td>Overfull \hbox (58.02814pt too wide) in paragraph at lines 7777--7787</td></tr>
+    <tr><td>418</td><td><span class="badge">Box</span></td><td>Overfull \hbox (58.31725pt too wide) detected at line 7951</td></tr>
+    <tr><td>419</td><td><span class="badge">Box</span></td><td>Overfull \hbox (85.3141pt too wide) detected at line 8067</td></tr>
+    <tr><td>420</td><td><span class="badge">Box</span></td><td>Overfull \hbox (28.82726pt too wide) in paragraph at lines 8597--8607</td></tr>
+    <tr><td>421</td><td><span class="badge">Box</span></td><td>Overfull \hbox (28.02246pt too wide) in paragraph at lines 23--32</td></tr>
+    <tr><td>422</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.57558pt too wide) in paragraph at lines 332--337</td></tr>
+    <tr><td>423</td><td><span class="badge">Box</span></td><td>Overfull \hbox (43.61238pt too wide) in paragraph at lines 593--607</td></tr>
+    <tr><td>424</td><td><span class="badge">Box</span></td><td>Overfull \hbox (98.10762pt too wide) in paragraph at lines 649--661</td></tr>
+    <tr><td>425</td><td><span class="badge">Box</span></td><td>Overfull \hbox (8.85266pt too wide) in paragraph at lines 703--704</td></tr>
+    <tr><td>426</td><td><span class="badge">Box</span></td><td>Overfull \hbox (28.09256pt too wide) in paragraph at lines 744--753</td></tr>
+    <tr><td>427</td><td><span class="badge">Box</span></td><td>Overfull \hbox (43.73492pt too wide) in paragraph at lines 761--772</td></tr>
+    <tr><td>428</td><td><span class="badge">Box</span></td><td>Overfull \hbox (56.90135pt too wide) in paragraph at lines 775--785</td></tr>
+    <tr><td>429</td><td><span class="badge">Box</span></td><td>Overfull \hbox (19.79578pt too wide) in paragraph at lines 967--975</td></tr>
+    <tr><td>430</td><td><span class="badge">Box</span></td><td>Overfull \hbox (69.16052pt too wide) in paragraph at lines 1059--1068</td></tr>
+    <tr><td>431</td><td><span class="badge">Box</span></td><td>Overfull \hbox (31.6389pt too wide) in paragraph at lines 1130--1145</td></tr>
+    <tr><td>432</td><td><span class="badge">Box</span></td><td>Overfull \hbox (242.93335pt too wide) in paragraph at lines 1338--1348</td></tr>
+    <tr><td>433</td><td><span class="badge">Box</span></td><td>Overfull \hbox (235.31877pt too wide) in paragraph at lines 1348--1354</td></tr>
+    <tr><td>434</td><td><span class="badge">Box</span></td><td>Overfull \hbox (10.51424pt too wide) in paragraph at lines 1542--1546</td></tr>
+    <tr><td>435</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.99512pt too wide) in paragraph at lines 1569--1580</td></tr>
+    <tr><td>436</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.97122pt too wide) in paragraph at lines 1856--1868</td></tr>
+    <tr><td>437</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.78548pt too wide) in paragraph at lines 2392--2396</td></tr>
+    <tr><td>438</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.1168pt too wide) in paragraph at lines 2566--2572</td></tr>
+    <tr><td>439</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.4754pt too wide) in paragraph at lines 2849--2853</td></tr>
+    <tr><td>440</td><td><span class="badge">Box</span></td><td>Overfull \hbox (3.15973pt too wide) in paragraph at lines 2918--2922</td></tr>
+    <tr><td>441</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.55511pt too wide) in paragraph at lines 3436--3437</td></tr>
+    <tr><td>442</td><td><span class="badge">Box</span></td><td>Overfull \hbox (4.19817pt too wide) in paragraph at lines 3540--3541</td></tr>
+    <tr><td>443</td><td><span class="badge">Box</span></td><td>Overfull \hbox (0.5435pt too wide) in paragraph at lines 3642--3643</td></tr>
+    <tr><td>444</td><td><span class="badge">Box</span></td><td>Overfull \hbox (24.15152pt too wide) in paragraph at lines 3650--3651</td></tr>
+    <tr><td>445</td><td><span class="badge">Box</span></td><td>Overfull \hbox (18.17947pt too wide) in paragraph at lines 3663--3667</td></tr>
+    <tr><td>446</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.84935pt too wide) in paragraph at lines 3687--3693</td></tr>
+    <tr><td>447</td><td><span class="badge">Box</span></td><td>Overfull \hbox (332.11618pt too wide) in paragraph at lines 3791--3800</td></tr>
+    <tr><td>448</td><td><span class="badge">Box</span></td><td>Overfull \hbox (49.0168pt too wide) in paragraph at lines 3947--3957</td></tr>
+    <tr><td>449</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.52362pt too wide) in paragraph at lines 4034--4040</td></tr>
+    <tr><td>450</td><td><span class="badge">Box</span></td><td>Overfull \hbox (13.97998pt too wide) in paragraph at lines 4079--4089</td></tr>
+    <tr><td>451</td><td><span class="badge">Box</span></td><td>Overfull \hbox (16.30206pt too wide) in paragraph at lines 4111--4121</td></tr>
+    <tr><td>452</td><td><span class="badge">Box</span></td><td>Overfull \hbox (46.64465pt too wide) detected at line 4631</td></tr>
+    <tr><td>453</td><td><span class="badge">Box</span></td><td>Overfull \hbox (36.49792pt too wide) in paragraph at lines 4675--4685</td></tr>
+    <tr><td>454</td><td><span class="badge">Box</span></td><td>Overfull \hbox (29.84846pt too wide) in paragraph at lines 4688--4700</td></tr>
+    <tr><td>455</td><td><span class="badge">Box</span></td><td>Overfull \hbox (21.56755pt too wide) in paragraph at lines 4944--4946</td></tr>
+    <tr><td>456</td><td><span class="badge">Box</span></td><td>Overfull \hbox (1.55984pt too wide) in paragraph at lines 74--77</td></tr>
+    <tr><td>457</td><td><span class="badge">Box</span></td><td>Overfull \hbox (6.27063pt too wide) in paragraph at lines 412--419</td></tr>
+    <tr><td>458</td><td><span class="badge">Box</span></td><td>Overfull \hbox (34.723pt too wide) in paragraph at lines 669--670</td></tr>
+    <tr><td>459</td><td><span class="badge">Box</span></td><td>Overfull \vbox (655.30585pt too high) has occurred while \output is active []</td></tr>
+    <tr><td>460</td><td><span class="badge">Box</span></td><td>Overfull \hbox (46.0104pt too wide) in paragraph at lines 13--27</td></tr>
+    <tr><td>461</td><td><span class="badge">Box</span></td><td>Overfull \hbox (102.46152pt too wide) in paragraph at lines 33--47</td></tr>
+    <tr><td>462</td><td><span class="badge">Box</span></td><td>Overfull \hbox (49.63974pt too wide) in paragraph at lines 551--560</td></tr>
+    <tr><td>463</td><td><span class="badge">Box</span></td><td>Overfull \hbox (33.14984pt too wide) in paragraph at lines 1238--1249</td></tr>
+    <tr><td>464</td><td><span class="badge">Box</span></td><td>Overfull \hbox (20.70612pt too wide) in paragraph at lines 1331--1333</td></tr>
+    <tr><td>465</td><td><span class="badge">Box</span></td><td>Overfull \vbox (675.23859pt too high) has occurred while \output is active []</td></tr>
+    <tr><td>466</td><td><span class="badge">Box</span></td><td>Overfull \hbox (458.38191pt too wide) in paragraph at lines 11--124</td></tr>
+    <tr><td>467</td><td><span class="badge">Box</span></td><td>Overfull \vbox (892.91048pt too high) has occurred while \output is active []</td></tr>
+    <tr><td>468</td><td><span class="badge">Box</span></td><td>Overfull \hbox (395.98364pt too wide) in paragraph at lines 127--147</td></tr>
+    <tr><td>469</td><td><span class="badge">Box</span></td><td>Overfull \hbox (569.94382pt too wide) in paragraph at lines 150--259</td></tr>
+    <tr><td>470</td><td><span class="badge">Box</span></td><td>Overfull \vbox (836.3471pt too high) has occurred while \output is active []</td></tr>
+    <tr><td>471</td><td><span class="badge">Box</span></td><td>Overfull \hbox (214.1071pt too wide) in paragraph at lines 262--271</td></tr>
+    <tr><td>472</td><td><span class="badge">Box</span></td><td>Overfull \hbox (346.79413pt too wide) in paragraph at lines 274--286</td></tr>
+    <tr><td>473</td><td><span class="badge">Box</span></td><td>Overfull \hbox (255.01648pt too wide) in paragraph at lines 289--303</td></tr>
+    <tr><td>474</td><td><span class="badge">Box</span></td><td>Overfull \hbox (429.99892pt too wide) in paragraph at lines 306--280</td></tr>
+    <tr><td>475</td><td><span class="badge">Box</span></td><td>Underfull \hbox (badness 10000) in paragraph at lines 306--280</td></tr>
+    <tr><td>476</td><td><span class="badge">Box</span></td><td>Overfull \vbox (29.73927pt too high) has occurred while \output is active []</td></tr>
+  </tbody>
+</table>
+</body>
+</html>
