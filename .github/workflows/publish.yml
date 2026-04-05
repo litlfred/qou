@@ -159,13 +159,13 @@ jobs:
             echo "DRUN=" >> "$GITHUB_ENV"
           fi
 
-      # Always install lightweight host tools (pandoc for HTML, jq, graphviz).
-      # These are needed by steps that can't run inside Docker (Python scripts,
-      # HTML generation, etc.).
+      # Always install lightweight host tools needed by steps that can't
+      # run inside Docker (Python scripts, HTML generation, latexdiff).
       - name: Install host tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends pandoc graphviz jq
+          sudo apt-get install -y --no-install-recommends \
+            pandoc graphviz jq texlive-extra-utils latexdiff
           sudo rm -rf /var/lib/apt/lists/*
 
       # Full TeX Live — only needed when Docker image is not available.

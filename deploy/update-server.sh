@@ -30,7 +30,7 @@ IP=$(hcloud server ip "$SERVER_NAME")
 # On fresh CI runners ~/.ssh/known_hosts is empty, so hcloud server ssh
 # would fail with "Host key verification failed".
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
-ssh-keyscan -H "$IP" >> ~/.ssh/known_hosts 2>/dev/null
+ssh-keyscan -H "$IP" >> ~/.ssh/known_hosts
 
 # ── Preserve existing secrets ─────────────────────────────────────
 # Regenerating would invalidate all sessions and API tokens.
