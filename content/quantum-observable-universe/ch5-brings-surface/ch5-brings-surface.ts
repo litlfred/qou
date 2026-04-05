@@ -32,6 +32,7 @@ export default chapter({
         "brings-surface",
         "brings-surface-example",
         "brings-realisations",
+        "brings-physics-interpretations",
         "brings-is-qou",
         "brings-is-qou-proof",
         "brings-qou-4tuple",
@@ -53,6 +54,7 @@ export default chapter({
         "color-tube-fibers",
         "t-duality-color-tube",
         "color-tube-subloci",
+        "pure-colour-sublocus",
         // Bundle structures and smoothness
         "coral-bundles",
         "brings-smoothness-resolution",
@@ -76,6 +78,7 @@ export default chapter({
         "spectral-dynamics",
         // Seiberg--Witten on Bring's
         "generation-dependent-sw",
+        "lepton-mass-integrals",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
@@ -111,11 +114,14 @@ export default chapter({
         "torus-knot-generators",
         "embeddability-closure",
         "genus-filtration-ideal",
+        "genus-filtration-interpretation",
         "torus-embeddable-complete",
         "generation-completeness",
         // Fundamental fermions (Descartes-specific assignments)
         "up-quark",
+        "up-quark-properties",
         "down-quark",
+        "down-quark-properties",
         "electron-knot",
         "electron-knot-example",
         "positron-knot",
@@ -159,8 +165,10 @@ export default chapter({
         "skein-polynomial-transfer-matrix",
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
+        "beta-decay-interpretation",
         "beta-decay-braid-visualizer",
         "shell-structure-eigenvalues",
+        "shell-eigenvalue-properties",
         "quantum-dilogarithm-volume",
         "reidemeister-action-table",
         "topology-geometry-boundary",
@@ -178,6 +186,7 @@ export default chapter({
         "francium-extremal-metal",
         "hydrogen-shell-writhe",
         "hydrogen-orbitals",
+        "hydrogen-orbital-tables",
         // The Descartes theorem
         "descartes",
         "descartes-proof",

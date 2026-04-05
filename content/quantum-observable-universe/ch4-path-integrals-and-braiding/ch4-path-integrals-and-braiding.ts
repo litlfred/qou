@@ -35,6 +35,7 @@ export default chapter({
         "braid-action-tensor",
         "braid-action-tensor-proof",
         "why-b3",
+        "categorical-boson-fermion",
         "symmetric-quotient-colour",
         "braid-base-field",
         "braid-lifting-compatibility",
@@ -150,6 +151,7 @@ export default chapter({
         // q-deformed physical quantities (general QOU)
         "q-momentum",
         "q-angular-momentum",
+        "q-angular-momentum-interpretation",
         "q-energy",
         "noether-theorem-callout",
       ],
@@ -172,6 +174,7 @@ export default chapter({
         "vertex-is-exceptional-divisor-proof",
         // Product factorization of the Markov trace
         "markov-trace-product",
+        "markov-trace-product-interpretation",
         // Categorical transfer matrix and level independence
         "categorical-transfer-matrix",
         "transfer-matrix-level-independence",
@@ -179,6 +182,7 @@ export default chapter({
         // Topological mass (archimedean specialization)
         "topological-mass-formula",
         "skein-decomposition",
+        "topological-field-ansatz",
         // Categorical vs archimedean braiding
         "skein-archimedean-shadow",
         // QU/QUO axioms as relations on Hecke generators
@@ -196,6 +200,7 @@ export default chapter({
       label: "sec:hadrons-knot-composites",
       blocks: [
         "hadron",
+        "hadron-interpretation",
         "hadron-operations-closure",
         "hadron-operations",
         "knot-factorization",
@@ -204,8 +209,10 @@ export default chapter({
         "skein-generation",
         "skein-generation-proof",
         "knot-particle-generation",
+        "knot-particle-generation-interpretation",
         "knot-particle-correspondence",
         "knot-particle-dictionary",
+        "quarks-borromean-picture",
         "bundle-initial-conditions",
         "observation-braid",
         "sorting-color-energy",
@@ -221,10 +228,12 @@ export default chapter({
       label: "sec:borromean-reidemeister",
       blocks: [
         "borromean-baryon",
+        "borromean-baryon-interpretation",
         "hadron-proton-example",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",
         "nuclear-shell-intruder",
+        "nuclear-shell-intruder-interpretation",
       ],
     }),
 
@@ -238,6 +247,7 @@ export default chapter({
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",
+        "beta-stability-interpretation",
       ],
     }),
 

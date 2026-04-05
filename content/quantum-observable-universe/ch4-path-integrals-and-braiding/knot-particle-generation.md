@@ -41,7 +41,9 @@ $$
   \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}} \;=\; 0.
 $$
 
-Mass arises *entirely* through the linking operations below.
+Mass arises *entirely* through the linking operations: Hopf linking
+on the exceptional divisor, color-tube threading, and Skein crossing
+change.
 
 **Presentation of the particle Skein module.** The Skein module
 ([Skein generation](#prop:skein-generation)) admits a presentation
