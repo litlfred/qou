@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-04T23:52:37.698021+00:00",
+    "generated_at": "2026-04-05T00:14:11.816813+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -1854,14 +1854,12 @@
       },
       "title": "{Shell closure as symmetric Poincaré distribution in the Hecke normal form}",
       "lean": {
-        "decl": "QOU.Descartes.shell_closure_normal_form",
+        "decl": "QOU.OptimalNF.optimal_nf_is_standard_basis",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/BringsSurface.lean",
         "last_edited_commit": "unknown",
-        "sorry_free": true,
-        "lean_hash": "5e5b10944130",
-        "witnessed": true
+        "sorry_free": true
       },
       "formalization_status": "proved",
       "uses": [
@@ -1878,7 +1876,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 7269,
+        "line": 7348,
         "chapter": 3
       },
       "title": "{Shell binding from the torus knot hierarchy: $T_{2,3} \\to T_{2,5} \\to T_{2,7} \\to T_{2,9}$}",
@@ -1907,7 +1905,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 7492,
+        "line": 7571,
         "chapter": 3
       },
       "title": "{Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary}",
@@ -1935,7 +1933,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 7785,
+        "line": 7864,
         "chapter": 3
       },
       "title": "{Spectral decomposition of the $\\mathcal{Q}_q$-value over the torus knot basis of $\\Sigma_4$}",
@@ -1965,7 +1963,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8003,
+        "line": 8082,
         "chapter": 3
       },
       "title": "{Construction rules for nuclear shells from the torus knot hierarchy}",
@@ -1985,7 +1983,7 @@
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8271,
+        "line": 8350,
         "chapter": 3
       },
       "title": "{Electron shells as closed sub-Hopf links of the trefoil chain}",
@@ -1999,7 +1997,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8407,
+        "line": 8486,
         "chapter": 3
       },
       "title": "{Noble gas characterization: full shell as full curls}",
@@ -2014,7 +2012,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8512,
+        "line": 8591,
         "chapter": 3
       },
       "title": "{Metallic character from incomplete sub-Hopf links}",
@@ -2028,7 +2026,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8654,
+        "line": 8733,
         "chapter": 3
       },
       "title": "{Electron shell number equals writhe level of the trefoil embedding}",
@@ -2052,7 +2050,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8677,
+        "line": 8756,
         "chapter": 3
       },
       "title": "{Descartes theorem}",
@@ -2077,7 +2075,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8713,
+        "line": 8792,
         "chapter": 3
       },
       "title": "{Bring's surface and Yekutieli obstructions}",
@@ -2092,7 +2090,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8770,
+        "line": 8849,
         "chapter": 3
       },
       "title": "{Terminal Resolution of Hadronic Mass}",
