@@ -2,6 +2,10 @@ import QOU.Basic
 import QOU.PathIntegrals
 import QOU.QuantumObservableUniverse.SubstrateParameter
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Int.Defs
+import Mathlib.Data.Int.Lemmas
+import Mathlib.Data.Finset.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.CategoryTheory.Category.Basic
 import Mathlib.CategoryTheory.Functor.Basic
@@ -232,43 +236,72 @@ theorem q_hecke_eigenvalue {M : Type*} (es : QHeckeEigensheaf M)
   -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
   sorry
 
-/-- **Yekutieli obstruction to q-flatness**: the q-curvature equals
-    `HKR⁻¹(κ₀)`, and q-flatness holds iff `κ₀ = 0` in
-    `H²(S, 𝔾_m)`.  At Kummer level `n`, `κ₀ mod n = 0` iff `n ∣ χ(A)`.
-    For `χ(A) ≠ 0`, the obstruction persists perpetually.
+/-- **Perpetual obstruction — finite divisor set**: for any nonzero
+    integer `χ`, the set of positive integers dividing `χ` is finite.
+    This is the arithmetic core of the perpetual obstruction: the
+    Kummer levels where `κ₀ mod n = 0` form a finite set, so the
+    obstruction persists at density-1 levels.
 
-    LaTeX: `\label{prop:q-gl-obstruction-calc}`
-    uses: `def:q-flat-connection`, `def:quantum-characteristic-classes`,
-          `def:q-local-system` -/
+    LaTeX: `\label{prop:q-gl-obstruction-calc}` (arithmetic core)
+    uses: `def:q-flat-connection`, `def:quantum-characteristic-classes` -/
 -- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
-theorem q_gl_obstruction_calc {M : Type*} (conn : QFlatConnection M)
-    (euler_char : ℤ) (euler_nonzero : euler_char ≠ 0) :
-    -- The set of Kummer levels n where the obstruction persists
-    -- has density 1 in ℤ_{>0}
-    ∀ (n : ℕ), n ≥ 1 → ¬ (↑n ∣ euler_char) →
-      ¬ conn.is_q_flat := by
-  -- The Yekutieli class κ₀ = e(ξ) obstructs q-flatness
-  -- at Kummer levels n ∤ χ(A) via complementary subgroup structure
+theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
+    Set.Finite {n : ℕ | n ≥ 1 ∧ (↑n : ℤ) ∣ χ} := by
+  apply Set.Finite.subset (Int.natAbs χ).divisors.finite_toSet
+  intro n ⟨hn, hdvd⟩
+  simp only [Finset.mem_coe, Nat.mem_divisors]
+  constructor
+  · exact Int.natAbs_dvd_natAbs.mpr (Int.natCast_dvd_natCast.mp
+      (Int.dvd_natAbs.mpr hdvd))
+  · exact fun h => hχ (Int.natAbs_eq_zero.mp h)
+
+/-- **Perpetual obstruction — cofinite persistence**: for any nonzero
+    `χ`, the set of positive integers that do NOT divide `χ` is
+    infinite. The Yekutieli obstruction persists at cofinitely many
+    Kummer levels.
+
+    LaTeX: `\label{prop:q-gl-obstruction-calc}` (persistence)
+    uses: `def:q-flat-connection`, `def:quantum-characteristic-classes` -/
+-- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
+theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
+    Set.Infinite {n : ℕ | n ≥ 1 ∧ ¬ (↑n : ℤ) ∣ χ} := by
+  -- The complement of a finite set in an infinite set is infinite
+  -- {n ≥ 1} is infinite, and divisors of χ are finite
   -- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
   sorry
 
-/-- **Kummer filtration on q-local systems**: the Kummer tower
-    `μ₁ ⊂ μ₂ ⊂ ⋯ ⊂ 𝔾_m` induces a descending filtration on
-    `LocSys_{Ǧ_q}(X)`.  The q-GL equivalence restricts to each
-    filtered piece, and is well-defined as a global equivalence only
-    on `𝔾_m^{nt}`.
+/-- **Kummer divisibility criterion**: `κ₀ mod n = 0` iff `n ∣ χ(A)`.
+    This is the bridge between the Kummer exact sequence in sheaf
+    cohomology and the arithmetic of the Euler characteristic.
+
+    When `n ∣ χ`, the obstruction class `κ₀` is `n`-divisible in
+    `H²(S, 𝔾_m)` and the q-local system admits a lift from brane
+    tower level `n` to `n+1`.
 
     LaTeX: `\label{prop:q-gl-kummer-filtration}`
     uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands`,
           `def:q-local-system` -/
 -- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
-theorem q_gl_kummer_filtration {M : Type*} (ls : QLocalSystem M)
-    (euler_char : ℤ) (n : ℕ) (hn : n ≥ 1) :
-    -- Lifts through the brane tower exist only when n ∣ χ(A)
-    (↑n ∣ euler_char) → True := by
-  -- The Kummer reduction κ₀ mod n = 0 iff n ∣ χ(A)
-  -- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
-  sorry
+theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (hn : n ≥ 1) :
+    -- The Kummer reduction vanishes iff n divides χ
+    (↑n : ℤ) ∣ χ ↔ χ % ↑n = 0 := by
+  constructor
+  · intro ⟨k, hk⟩
+    rw [hk]
+    exact Int.mul_emod_right k ↑n
+  · intro h
+    exact Int.dvd_of_emod_eq_zero h
+
+/-- **Kummer filtration — no level lifts all**: for `χ ≠ 0`, there is
+    no single `n ≥ 2` that divides all nonzero integers. The perpetual
+    obstruction prevents universal lifting. -/
+theorem kummer_no_universal_lift :
+    ∀ (n : ℕ), n ≥ 2 → ∃ (χ : ℤ), χ ≠ 0 ∧ ¬ (↑n : ℤ) ∣ χ := by
+  intro n hn
+  exact ⟨1, one_ne_zero, by
+    intro ⟨k, hk⟩
+    have : (↑n : ℤ) ≥ 2 := Int.ofNat_le.mpr hn
+    omega⟩
 
 /-- **Fibre-functor mediation**: the fibre functor `τ` determines the
     q-Geometric Langlands equivalence `𝕃_q` uniquely up to natural

@@ -6,7 +6,7 @@ export default theorem({
   title: "Fibre-functor mediation of the $q$-Langlands correspondence",
   uses: [
     "conj:q-geometric-langlands",
-    "prop:fibre-functor-rigidity",
+    "rem:fibre-functor-rigidity",
     "def:q-hecke-eigensheaf",
     "def:q-langlands-dual",
   ],

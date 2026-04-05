@@ -7,7 +7,7 @@ export default remark({
   uses: [
     "thm:q-gl-fiber-functor",
     "def:quantum-observable-universe",
-    "prop:fibre-functor-rigidity",
+    "rem:fibre-functor-rigidity",
   ],
   tags: ["geometric-langlands", "observability", "duality"],
 });

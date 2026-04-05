@@ -8,7 +8,7 @@ export default prose({
     "def:substrate-parameter",
     "prop:categorical-dq-squared",
     "def:quantum-characteristic-classes",
-    "prop:kummer-filtration-obstruction",
-    "prop:fibre-functor-rigidity",
+    "rem:kummer-filtration-obstruction",
+    "rem:fibre-functor-rigidity",
   ],
 });

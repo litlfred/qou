@@ -31,7 +31,7 @@ export default chapter({
 
     // ── q-Local systems and q-connections ────────────────────────────
     section({
-      title: "$q$-Local systems and $q$-connections",
+      title: "$\\mathbb{G}_m$-torsors and $q$-local systems",
       label: "sec:q-local-systems",
       blocks: [
         "q-local-system",

@@ -9,7 +9,7 @@ export default definition({
     "def:substrate-parameter",
     "def:q-flat-connection",
     "prop:categorical-dq-squared",
-    "prop:kummer-filtration-obstruction",
+    "rem:kummer-filtration-obstruction",
   ],
   tags: ["geometric-langlands", "local-system", "q-deformation"],
 });

@@ -7,7 +7,7 @@ export default proposition({
   uses: [
     "def:q-hecke-eigensheaf",
     "def:q-hecke-operator",
-    "prop:fibre-functor-rigidity",
+    "rem:fibre-functor-rigidity",
   ],
   proofs: ["prf:q-hecke-eigenvalue"],
   tags: ["geometric-langlands", "hecke-algebra", "fiber-functor"],
