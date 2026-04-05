@@ -497,7 +497,6 @@ fn main() {
                 let mut lu=0.0f64; let mut lr=0.0f64; let mut luc=0.0f64;
                 for i in 0..a-1 {
                     if vp[i].abs()<1e-30||vd[i].abs()<1e-30 { continue; }
-                    // log_q(V_dau_i / V_par_i) = ln(V_dau_i / V_par_i) / ln(q)
                     let lratio = (vd[i].abs().ln()-vp[i].abs().ln()) / ln_q;
                     let changed: Vec<_> = (i+1..a).filter(|&j| {
                         let pp=format!("{}{}",types_p[i] as char,types_p[j] as char);
@@ -513,9 +512,6 @@ fn main() {
                         else{lu+=lratio*nu as f64/t as f64; lr+=lratio*nr as f64/t as f64;}
                     }
                 }
-                // q-weighting unchanged: q × log_q(u) + q⁻¹ × log_q(r) + log_q(uc)
-                // Then Q = |weighted sum| × κ_q.  Since lratio is now log_q and
-                // κ_q = κ × ln(q), the product log_q × κ_q = ln × κ is invariant.
                 let q_qwt = (engine.q*lu+engine.qi*lr+luc).abs()*kappa_q;
                 let log_q_total = lu + lr + luc;  // total log_q(P_dau/P_par) ≈ −(N−1)
                 let deg=shell_degree(b.n);
