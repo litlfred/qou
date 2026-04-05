@@ -90,17 +90,19 @@ exhaust $[2]_q$-divisibility):
 - The subsequent even steps divide by $[2]_q$ as many
   times as $[2]_q$ divides the result.
 
-The net contraction per full cycle (one odd + $k$ even
-steps) has geometric mean bounded by:
+If each tripling is followed by at least **two halvings**
+on average, the orbit contracts.  Two halvings multiply
+by $1/[2]_q^2$; one tripling multiplies by $[3]_q/[2]_q$.
+The net factor per cycle is $[3]_q / [2]_q^3 < 1$, with
+margin:
 
 $$
-  \lambda_q
-  \;=\;
-  \sqrt{[3]_q \,/\, [2]_q^2}
-  \;<\; 1
-  \qquad\bigl(\text{since } [3]_q < [2]_q^2
-  \text{ by gap } = q\bigr).
+  [2]_q^2 - [3]_q \;=\; q.
 $$
+
+The margin is the substrate parameter itself.  Two
+halvings beat one tripling by a factor
+$[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$.
 
 ### The conjecture
 

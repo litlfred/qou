@@ -138,45 +138,59 @@ $$
   v_{[2]}\bigl(\mathcal{C}_q^{k+1}(P)\bigr).
 $$
 
-The **critical contact order** is:
-
-$$
-  v^*(q) \;:=\; \frac{\log [3]_q}{\log [2]_q}.
-$$
-
-Then:
+The condition is simplest without logarithms.  Since
+$1 < v^*(q) < 2$ (proved: $[2]_q < [3]_q < [2]_q^2$),
+the orbit converges whenever each tripling is followed
+by **at least two halvings on average**:
 
 $$
   \text{orbit converges}
-  \quad\Longleftrightarrow\quad
-  \liminf_{N \to \infty}
-  \langle v_{[2]} \rangle_N(P)
-  \;>\; v^*(q).
+  \quad\Longleftarrow\quad
+  \langle v_{[2]} \rangle(P) \;\geq\; 2.
 $$
 
-*Proof.* Each odd step changes $\log\|P\|$ by
-$+\log([3]_q/[2]_q)$ (expansion by the tripling ratio,
-net of one halving).  Each subsequent even step changes it
-by $-\log[2]_q$ (one halving).  If the result of the odd
-step has $[2]_q$-adic valuation $v$, then $v$ halvings
-follow, giving total change per cycle:
+Two halvings multiply by $[2]_q^{-2}$; one tripling
+multiplies by $[3]_q / [2]_q$.  The net factor per cycle
+(one tripling + two halvings) is:
 
 $$
-  \Delta \log\|P\|
+  \frac{[3]_q}{[2]_q} \cdot \frac{1}{[2]_q^2}
   \;=\;
-  \log\frac{[3]_q}{[2]_q}
-  \;-\;
-  v \cdot \log [2]_q
-  \;=\;
-  \log [3]_q - (1 + v) \log [2]_q.
+  \frac{[3]_q}{[2]_q^3}.
 $$
 
-This is negative (contractive) iff
-$(1 + v) > \log[3]_q / \log[2]_q = v^*(q)$, i.e.,
-$v > v^*(q) - 1$.  Averaging over many cycles: the orbit
-converges iff $\langle v \rangle > v^*(q) - 1$, which
-(after accounting for the one halving in the accelerated
-step) is $\langle v \rangle > v^*(q)$.  $\square$
+This is contractive because $[3]_q < [2]_q^2 < [2]_q^3$.
+The contraction ratio is:
+
+$$
+  \frac{[3]_q}{[2]_q^3}
+  \;=\;
+  \frac{[2]_q^2 - q}{[2]_q^3}
+  \;=\;
+  \frac{1}{[2]_q} - \frac{q}{[2]_q^3},
+$$
+
+so the orbit shrinks by slightly more than $1/[2]_q$
+per cycle.  The **margin** — the gap between two halvings
+and the minimum needed — is:
+
+$$
+  [2]_q^2 - [3]_q \;=\; q.
+$$
+
+The margin is the substrate parameter itself.
+
+**The sharp threshold** (for the record) is
+$v^* = \log [3]_q / \log [2]_q$, but since
+$v^* < 2$ is proved algebraically, the integer
+condition $\langle v \rangle \geq 2$ is sufficient
+and avoids transcendental quantities.
+
+**Classical verification.**  At $q = 1$: the average
+$2$-adic valuation of $3n+1$ for odd $n$ is **exactly
+$2$** (a theorem: the probability $\Pr(v_2(3n+1) = k)
+= 2^{-k}$ gives $\mathbb{E}[v_2] = 2$).  Two halvings
+per tripling, exactly at the integer threshold.
 
 ### The boundary
 
@@ -196,29 +210,24 @@ halvings) converge.  Elements **below** (insufficient
 contact, too few halvings) diverge.  The conjecture says
 no element is below.
 
-### The $26\%$ margin at $q = 1$
+### The margin
 
 | Quantity | Formula | At $q = 1$ | At $q_0$ |
 |----------|---------|-----------|----------|
-| Threshold | $v^* = \log[3]_q / \log[2]_q$ | $1.585$ | $1.616$ |
-| Empirical average | $\langle v_{[2]} \rangle$ | $2.000$ | — |
-| Margin | $\langle v \rangle - v^*$ | $0.415$ | — |
+| Two halvings beat one tripling? | $[2]_q^2 > [3]_q$ | $4 > 3$ | $4.45 > 3.34$ |
+| Margin | $[2]_q^2 - [3]_q = q$ | $1$ | $1.110$ |
+| Relative margin | $q / [3]_q$ | $1/3$ | $0.332$ |
+| Empirical $\langle v \rangle$ at $q=1$ | — | $2$ (exact) | — |
 
-At $q = 1$ the average $2$-adic valuation of $3n+1$ for
-odd $n$ is known **exactly**: the probability that
-$v_2(3n+1) = k$ is $2^{-k}$, giving expected value
-$\sum_{k=1}^{\infty} k \cdot 2^{-k} = 2$.
+Two halvings overpower one tripling by a factor
+$[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$.  The margin
+$q/[3]_q \approx 1/3$ is the substrate parameter divided
+by the tripling factor — clean and algebraic.
 
-The threshold is $\log_2 3 \approx 1.585$.  The average
-$2.000$ exceeds it by $0.415$ — a **$26\%$ margin**.
-This is not a narrow escape: the orbit generates halvings
-substantially faster than the minimum needed to offset the
-triplings.
-
-Geometrically: the Collatz orbit on $\mathbb{Z}$ touches
-the "$[2]$-divisor" (even numbers) with contact order $2$
-on average, while it only needs contact order $1.585$.
-The orbit grazes the divisor **deeper than necessary**.
+At $q = 1$: the average $2$-adic valuation of $3n+1$ for
+odd $n$ is **exactly $2$** (a theorem: $\Pr(v_2(3n+1) = k)
+= 2^{-k}$ gives $\mathbb{E}[v_2] = 2$).  Two halvings per
+tripling, saturating the integer threshold.
 
 ### The conjecture as contact condition
 
@@ -226,17 +235,15 @@ The $q$-Collatz conjecture is equivalent to:
 
 $$
   \boxed{
-  \langle v_{[2]} \rangle(P) > v^*(q)
+  \langle v_{[2]} \rangle(P) \;\geq\; 2
   \quad\text{for all } P \in \mathcal{S}(q)_{>0}.
   }
 $$
 
-Every orbit in the Skein module makes **sufficient contact**
-with the $[2]_q$-divisor $D_{[2]} = \{i, -i\}$ on the
-$U(1)$ fiber of the Reeb bundle $S^3 \to S^2$.
+Every orbit in the Skein module produces **at least two
+halvings per tripling** on average — each tripling is
+followed by a result divisible by $[2]_q^2$.
 
-The contact order is bounded: $1 < v^*(q) < 2$ for all
-$q > 0$ (proved: $[2]_q < [3]_q < [2]_q^2$).  Two halvings
-always suffice.  The orbit need only produce, on average,
-between one and two halvings per tripling — and the classical
-evidence says it produces exactly two.
+This is sufficient because $[2]_q^2 > [3]_q$ (the gap is
+$q$, proved).  One halving per tripling is not enough
+($[2]_q < [3]_q$).  Two is the integer threshold.
