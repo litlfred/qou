@@ -99,7 +99,10 @@ jobs:
       # Priority: explicit input > PR base branch (if not main) > HEAD_REF.
       # This ensures diff is main↔feature-branch, not main↔assistant-branch.
       FEATURE_REF: ${{ inputs.feature_branch || '' }}
+      # Try custom image first (faster, has Bun + ccicons pre-warmed),
+      # then fall back to official texlive image, then apt-get.
       LATEX_IMAGE: ghcr.io/${{ github.repository }}/latex-ci:latest
+      LATEX_IMAGE_FALLBACK: texlive/texlive:latest
 
     steps:
       # ── 0. Checkout ────────────────────────────────────────────────────────
@@ -145,19 +148,24 @@ jobs:
       # Try pulling the pre-built latex-ci image.  If it exists, LaTeX
       # commands run inside Docker (~instant); otherwise we apt-get install
       # TeX Live on the runner (~2-3 min but always works).
-      - name: Try latex-ci Docker image
+      - name: Try Docker image for LaTeX
         id: docker-check
         continue-on-error: true
         run: |
+          # Try custom image first (faster, pre-warmed caches)
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin 2>/dev/null
           if docker pull "$LATEX_IMAGE" 2>/dev/null; then
-            echo "✓ latex-ci image available — using Docker for LaTeX"
-            # Set DRUN so subsequent steps can prefix commands with it
-            echo "DRUN=docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace $LATEX_IMAGE" >> "$GITHUB_ENV"
+            echo "✓ Using custom latex-ci image"
+            IMAGE="$LATEX_IMAGE"
+          elif docker pull "$LATEX_IMAGE_FALLBACK" 2>/dev/null; then
+            echo "✓ Using official texlive/texlive image"
+            IMAGE="$LATEX_IMAGE_FALLBACK"
           else
-            echo "latex-ci image not available — will install tools inline"
+            echo "No Docker image available — will install tools inline"
             echo "DRUN=" >> "$GITHUB_ENV"
+            exit 0
           fi
+          echo "DRUN=docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace $IMAGE" >> "$GITHUB_ENV"
 
       # Always install lightweight host tools needed by steps that can't
       # run inside Docker (Python scripts, HTML generation, latexdiff).
