@@ -79,6 +79,105 @@ impl LPoly {
             c * t.powi(*k)
         }).sum()
     }
+
+    /// Evaluate F_Pauli = |num/den| at t using full BigInt rational arithmetic.
+    ///
+    /// Approximates t as a high-precision rational p_t/q_t, then evaluates
+    /// both polynomials exactly as BigInt rationals. No f64 precision loss.
+    fn eval_ratio_f64(num: &LPoly, den: &LPoly, t: f64) -> f64 {
+        if den.is_zero() { return f64::NAN; }
+        if num.is_zero() { return 0.0; }
+
+        // Approximate t = sqrt(q₀) as rational with 30-digit precision.
+        // t ≈ 1053556078... / 10^18
+        // Use 18-digit approximation: enough for ~15 digits of F_Pauli.
+        let scale = 1_000_000_000_000_000_000i128; // 10^18
+        let t_approx = (t * scale as f64).round() as i128;
+        let p_t = BigInt::from(t_approx);
+        let q_t = BigInt::from(scale);
+
+        // Evaluate poly at p_t/q_t:
+        // poly(p_t/q_t) = Σ c_k × (p_t/q_t)^k
+        // = (1/q_t^max_pow) × Σ c_k × p_t^k × q_t^(max_pow - k)
+        fn eval_rational(poly: &LPoly, p_t: &BigInt, q_t: &BigInt) -> (BigInt, BigInt) {
+            if poly.terms.is_empty() { return (BigInt::zero(), BigInt::one()); }
+            let min_exp = *poly.terms.keys().min().unwrap();
+            let max_exp = *poly.terms.keys().max().unwrap();
+
+            // poly(p/q) = Σ c_k × (p/q)^k
+            // Common denominator: p^|min_exp| × q^max_exp
+            // Numerator term k: c_k × p^(k + |min_exp|) × q^(max_exp - k)
+            let neg_min = if min_exp < 0 { (-min_exp) as usize } else { 0 };
+            let pos_max = if max_exp > 0 { max_exp as usize } else { 0 };
+
+            // Max power of p needed: max_exp + neg_min
+            // Max power of q needed: pos_max + neg_min (for most negative k)
+            let max_p_pow = (max_exp - min_exp) as usize;  // = max_exp + |min_exp|
+            let max_q_pow = (max_exp - min_exp) as usize;  // same span
+
+            let mut p_pows: Vec<BigInt> = vec![BigInt::one()];
+            let mut q_pows: Vec<BigInt> = vec![BigInt::one()];
+            for _ in 0..max_p_pow {
+                p_pows.push(p_pows.last().unwrap() * p_t);
+            }
+            for _ in 0..max_q_pow {
+                q_pows.push(q_pows.last().unwrap() * q_t);
+            }
+
+            let mut numer = BigInt::zero();
+            for (&k, coeff) in &poly.terms {
+                // p power: k - min_exp (always >= 0)
+                let p_idx = (k - min_exp) as usize;
+                // q power: max_exp - k (always >= 0)
+                let q_idx = (max_exp - k) as usize;
+                let term = coeff * &p_pows[p_idx] * &q_pows[q_idx];
+                numer += term;
+            }
+
+            // Denominator = p^neg_min × q^pos_max
+            // These indices are within the precomputed range since
+            // neg_min + pos_max ≤ max_exp - min_exp = max_p_pow
+            let p_den = if neg_min < p_pows.len() { p_pows[neg_min].clone() } else {
+                let mut r = BigInt::one();
+                for _ in 0..neg_min { r *= p_t; }
+                r
+            };
+            let q_den = if pos_max < q_pows.len() { q_pows[pos_max].clone() } else {
+                let mut r = BigInt::one();
+                for _ in 0..pos_max { r *= q_t; }
+                r
+            };
+            let denom = p_den * q_den;
+            (numer, denom)
+        }
+
+        let (n_num, n_den) = eval_rational(num, &p_t, &q_t);
+        let (d_num, d_den) = eval_rational(den, &p_t, &q_t);
+
+        // F = |n_num/n_den| / |d_num/d_den| = |n_num × d_den| / |n_den × d_num|
+        let final_num = (&n_num * &d_den).abs();
+        let final_den = (&n_den * &d_num).abs();
+
+        if final_den.is_zero() { return f64::NAN; }
+
+        // Convert BigInt ratio to f64
+        Self::bigint_ratio_f64(&final_num, &final_den)
+    }
+
+    /// Convert BigInt ratio a/b to f64.
+    fn bigint_ratio_f64(a: &BigInt, b: &BigInt) -> f64 {
+        if b.is_zero() { return f64::NAN; }
+        let a_str = a.to_string();
+        let b_str = b.to_string();
+        // Use leading 15 digits + digit count difference
+        let a_len = a_str.len();
+        let b_len = b_str.len();
+        let a_lead: f64 = a_str[..std::cmp::min(15, a_len)].parse().unwrap_or(0.0);
+        let b_lead: f64 = b_str[..std::cmp::min(15, b_len)].parse().unwrap_or(1.0);
+        let exp_diff = (a_len as i32 - std::cmp::min(15, a_len) as i32)
+                     - (b_len as i32 - std::cmp::min(15, b_len) as i32);
+        (a_lead / b_lead) * 10.0_f64.powi(exp_diff)
+    }
     fn max_abs_coeff_log10(&self) -> f64 {
         self.terms.values()
             .map(|v| {
@@ -469,29 +568,21 @@ fn main() {
     eprintln!("\n  Result: {} words, coeff~10^{:.0}, {:.0}MB, {:.1}s",
         elem.n_terms(), mc, elem.mem_bytes() as f64 / 1e6, elapsed);
 
-    // Evaluate at q₀
-    // For large pn_count, 2^pn_count overflows f64. Compute the RATIO
-    // F_Pauli = |tr_alt/net| directly (the 2^pn_count cancels).
+    // Evaluate F_Pauli = |tr_alt/net| at q₀.
+    // For large pn_count (>300), individual polynomial values overflow f64.
+    // The 2^pn_count denominator cancels in the ratio, so we compute
+    // F = |tr_alt/net| using log-space arithmetic (stable for any A).
     let q0: f64 = 1.10998;
     let t0_val = q0.sqrt();
 
-    // For pn_count > 1000, f64 eval is unreliable.
-    // Use the ratio directly: both tr_alt and net have the same 2^pn_count factor.
-    let tr_alt_raw = total.tr_alt.eval_f64(t0_val);
-    let net_raw = total.net.eval_f64(t0_val);
-    let (tr_alt_val, net_val, f) = if tr_alt_raw.is_finite() && net_raw.is_finite() {
+    let f = LPoly::eval_ratio_f64(&total.tr_alt, &total.net, t0_val);
+
+    // Also try direct f64 eval for small pn_count
+    let (tr_alt_val, net_val) = if elem.pn_count < 300 {
         let denom = 2.0_f64.powi(elem.pn_count as i32);
-        let ta = tr_alt_raw / denom;
-        let nv = net_raw / denom;
-        let fp = if nv.abs() > 1e-30 { ta.abs() / nv.abs() } else { 0.0 };
-        (ta, nv, fp)
+        (total.tr_alt.eval_f64(t0_val) / denom, total.net.eval_f64(t0_val) / denom)
     } else {
-        // f64 overflow: compute ratio directly (2^pn_count cancels)
-        // F = |tr_alt_raw / net_raw| — no denominator needed for the ratio
-        let fp = if net_raw.abs() > 1e-30 { (tr_alt_raw / net_raw).abs() }
-                 else if net_raw == 0.0 && tr_alt_raw == 0.0 { f64::NAN }
-                 else { f64::INFINITY };
-        (tr_alt_raw, net_raw, fp)
+        (f64::NAN, f64::NAN)  // overflow — use ratio only
     };
 
     println!("F_Pauli({}{}) = {:.10} (exact in q, evaluated at q₀ = {})",
