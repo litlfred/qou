@@ -81,7 +81,7 @@ Engine: hecke-engine 0.8.0
 ### 7. Lean audit: 100% no sorry
 - OptimalNF.lean: 2 sorrys (nf_support_prefix_closed, pp_no_identity)
 - TMCorrespondence.lean: 1 sorry (matrixChain_eq_buildChains)
-- GroundRing.lean: compiles, q_mul_q_inv proof needs verification
+- GroundRing.lean: compiles, all proofs complete (no sorrys)
 - Need `lake build` iteration for each sorry
 - Target: all theorems compile with no sorry
 - Use `lean_check` MCP tool or local `lake build`
