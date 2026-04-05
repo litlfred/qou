@@ -78,7 +78,7 @@ digraph ProofDependencies {
     def_electron_knot [label="Def\nelectron-knot" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:electron-knot" tooltip="{Electron}" target="_blank"];
     def_positron_knot [label="Def\npositron-knot" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:positron-knot" tooltip="{Positron}" target="_blank"];
     def_neutrino_knot [label="Def\nneutrino-knot" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:neutrino-knot" tooltip="{Neutrino}" target="_blank"];
-    def_antineutrino_knot [label="Def\nantineutrino-knot" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:antineutrino-knot" tooltip="{Antineutrino as mirror unknot $\overline{T_{1,0}}$}" target="_blank"];
+    def_antineutrino_knot [label="Def\nantineutrino-knot" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:antineutrino-knot" tooltip="{Antineutrino as mirror unknot $T_{1,0}^{\sigma}$}" target="_blank"];
     rem_linking_relations_table [label="Rem\nlinking-relations..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:linking-relations-table" tooltip="{Linking relations between building block knots}" target="_blank"];
     def_q_value_transition [label="Def\nq-value-transition" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:q-value-transition" tooltip="{$\mathcal{Q}_q$-Value as Categorical Action Difference}" target="_blank"];
     def_categorical_proton [label="Def\ncategorical-proton" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-proton" tooltip="{Proton (categorical)}" target="_blank"];
@@ -102,20 +102,22 @@ digraph ProofDependencies {
     prop_skein_coulomb_enhancement [label="Prop\nskein-coulomb-enh..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:skein-coulomb-enhancement" tooltip="{Coulomb enhancement from electron-proton Skein crossings}" target="_blank"];
     prop_nuclear_groebner_reduction [label="Prop\nnuclear-groebner-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:nuclear-groebner-reduction" tooltip="{Unique nuclear normal form via Gröbner reduction in $H_n(q)$}" target="_blank"];
     thm_groebner_shirshov_energy [label="Thm\ngroebner-shirshov..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:groebner-shirshov-energy" tooltip="{Energy as a Gröbner--Shirshov invariant of the nuclear braid}" target="_blank"];
-    prop_box_braid_irreducibility [label="Prop\nbox-braid-irreduc..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:box-braid-irreducibility" tooltip="{The $\gamma\gamma \to \nu\bar{\nu}$ box braid is irreducible}" target="_blank"];
+    prop_box_braid_irreducibility [label="Prop\nbox-braid-irreduc..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:box-braid-irreducibility" tooltip="{The $\gamma\gamma \to \nu\nu^{\sigma}$ box braid is irreducible}" target="_blank"];
     prop_generator_volume_decomposition [label="Prop\ngenerator-volume-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:generator-volume-decomposition" tooltip="{Nuclear energy as a sum of generator volumes via Chebyshev recurrence}" target="_blank"];
     thm_markov_trace_factorization [label="Thm\nmarkov-trace-fact..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:markov-trace-factorization" tooltip="{Exact factorization of the nuclear Markov trace}" target="_blank"];
     prop_skein_polynomial_transfer_matrix [label="Prop\nskein-polynomial-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:skein-polynomial-transfer-matrix" tooltip="{The nuclear Skein polynomial as a transfer matrix product in $q$}" target="_blank"];
     def_transfer_matrix_operator [label="Def\ntransfer-matrix-o..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:transfer-matrix-operator" tooltip="{Transfer Matrix Operator for Nuclear Braid Interactions}" target="_blank"];
     prop_beta_decay_transfer_matrix [label="Prop\nbeta-decay-transf..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:beta-decay-transfer-matrix" tooltip="{Beta decay as a universal matrix-valued polynomial in $q$}" target="_blank"];
+    sim_beta_decay_braid [label="Rem\nbeta-decay-braid" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#sim:beta-decay-braid" tooltip="{Beta decay as $T_{3,5}$ braid insertion: crossing budget and transfer matrices}" target="_blank"];
     prop_shell_structure_eigenvalues [label="Prop\nshell-structure-e..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:shell-structure-eigenvalues" tooltip="{Orbital shells from eigenvalues of the photon-electron transfer matrix}" target="_blank"];
     prop_quantum_dilogarithm_volume [label="Prop\nquantum-dilogarit..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:quantum-dilogarithm-volume" tooltip="{Nuclear energy from the quantum dilogarithm of the Markov trace}" target="_blank"];
     prop_reidemeister_action_table [label="Prop\nreidemeister-acti..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:reidemeister-action-table" tooltip="{Reidemeister moves on the categorical action: complete accounting}" target="_blank"];
     conj_elliptic_stability_locus [label="Conj\nelliptic-stabilit..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:elliptic-stability-locus" tooltip="{The nuclear degeneracy locus is an elliptic curve over the Bring's surface}" target="_blank"];
-    conj_skein_shell_correction [label="Conj\nskein-shell-corre..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:skein-shell-correction" tooltip="{Shell corrections from Skein polynomial factorization of the multi-nucleon link}" target="_blank"];
     prop_shell_closure_normal_form [label="Prop\nshell-closure-nor..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:shell-closure-normal-form" tooltip="{Shell closure as symmetric Poincaré distribution in the Hecke normal form}" target="_blank"];
+    prop_torus_knot_shell_binding [label="Prop\ntorus-knot-shell-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:torus-knot-shell-binding" tooltip="{Shell binding from the torus knot hierarchy: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$}" target="_blank"];
     prop_skein_finiteness_bound [label="Prop\nskein-finiteness-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:skein-finiteness-bound" tooltip="{Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary}" target="_blank"];
     cor_spectral_decomposition_qvalue [label="Cor\nspectral-decompos..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:spectral-decomposition-qvalue" tooltip="{Spectral decomposition of the $\mathcal{Q}_q$-value over the torus knot basis of $\Sigma_4$}" target="_blank"];
+    rem_shell_construction_rules [label="Rem\nshell-constructio..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:shell-construction-rules" tooltip="{Construction rules for nuclear shells from the torus knot hierarchy}" target="_blank"];
     conj_electron_shells_hopf [label="Conj\nelectron-shells-hopf" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:electron-shells-hopf" tooltip="{Electron shells as closed sub-Hopf links of the trefoil chain}" target="_blank"];
     prop_noble_gas_characterization [label="Prop\nnoble-gas-charact..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:noble-gas-characterization" tooltip="{Noble gas characterization: full shell as full curls}" target="_blank"];
     prop_metallic_character_knot [label="Prop\nmetallic-characte..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:metallic-character-knot" tooltip="{Metallic character from incomplete sub-Hopf links}" target="_blank"];
@@ -123,7 +125,7 @@ digraph ProofDependencies {
     thm_descartes [label="Thm\ndescartes" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:descartes" tooltip="{Descartes theorem}" target="_blank"];
     ex_descartes_yekutieli [label="Ex\ndescartes-yekutieli" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:descartes-yekutieli" tooltip="{Bring's surface and Yekutieli obstructions}" target="_blank"];
     prop_terminal_resolution [label="Prop\nterminal-resolution" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:terminal-resolution" tooltip="{Terminal Resolution of Hadronic Mass}" target="_blank"];
-    { rank=same; def_brings_surface; prop_brings_is_qou; rem_braid_group_action; def_color_tube_coordinates; rem_color_tube_interpretation; prop_coral_elliptic; rem_color_tube_cubic; def_color_tube_fibers; rem_coral_bundles; prop_brings_smoothness_resolution; rem_brings_smoothness; def_briggs_klein_chart; def_quaternionic_spectral_resolvents; prop_mi_sw_abelianisation; def_coral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; prop_descartes_elliptic_curve; def_descartes_condition; prop_genus_maximal_descent; rem_descartes_chirality; rem_light_cone_affine; rem_chirality_trefoil; prop_torus_knot_generators; thm_embeddability_closure; prop_genus_filtration_ideal; prop_torus_embeddable_complete; thm_generation_completeness; def_up_quark; def_down_quark; def_electron_knot; def_positron_knot; def_neutrino_knot; def_antineutrino_knot; rem_linking_relations_table; def_q_value_transition; def_categorical_proton; def_categorical_neutron; prop_antiparticle_crossing_reversal; rem_chirality_trefoil_electron_positron; def_stable_nucleus; prop_torus_hopf_stability; rem_unmapped_torus_knots; rem_force_knot_identification; prop_em_coupling_projection; prop_integer_stability; rem_diophantine_valley; sim_valley_stability; def_beta_decay_skein; def_lepton_number_categorical; prop_parity_violation_skein; prop_nuclear_spin_parity; prop_hadron_half_life; prop_hadron_q_self_correction; prop_skein_coulomb_enhancement; prop_nuclear_groebner_reduction; thm_groebner_shirshov_energy; prop_box_braid_irreducibility; prop_generator_volume_decomposition; thm_markov_trace_factorization; prop_skein_polynomial_transfer_matrix; def_transfer_matrix_operator; prop_beta_decay_transfer_matrix; prop_shell_structure_eigenvalues; prop_quantum_dilogarithm_volume; prop_reidemeister_action_table; conj_elliptic_stability_locus; conj_skein_shell_correction; prop_shell_closure_normal_form; prop_skein_finiteness_bound; cor_spectral_decomposition_qvalue; conj_electron_shells_hopf; prop_noble_gas_characterization; prop_metallic_character_knot; prop_hydrogen_shell_writhe; thm_descartes; ex_descartes_yekutieli; prop_terminal_resolution; }
+    { rank=same; def_brings_surface; prop_brings_is_qou; rem_braid_group_action; def_color_tube_coordinates; rem_color_tube_interpretation; prop_coral_elliptic; rem_color_tube_cubic; def_color_tube_fibers; rem_coral_bundles; prop_brings_smoothness_resolution; rem_brings_smoothness; def_briggs_klein_chart; def_quaternionic_spectral_resolvents; prop_mi_sw_abelianisation; def_coral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; prop_descartes_elliptic_curve; def_descartes_condition; prop_genus_maximal_descent; rem_descartes_chirality; rem_light_cone_affine; rem_chirality_trefoil; prop_torus_knot_generators; thm_embeddability_closure; prop_genus_filtration_ideal; prop_torus_embeddable_complete; thm_generation_completeness; def_up_quark; def_down_quark; def_electron_knot; def_positron_knot; def_neutrino_knot; def_antineutrino_knot; rem_linking_relations_table; def_q_value_transition; def_categorical_proton; def_categorical_neutron; prop_antiparticle_crossing_reversal; rem_chirality_trefoil_electron_positron; def_stable_nucleus; prop_torus_hopf_stability; rem_unmapped_torus_knots; rem_force_knot_identification; prop_em_coupling_projection; prop_integer_stability; rem_diophantine_valley; sim_valley_stability; def_beta_decay_skein; def_lepton_number_categorical; prop_parity_violation_skein; prop_nuclear_spin_parity; prop_hadron_half_life; prop_hadron_q_self_correction; prop_skein_coulomb_enhancement; prop_nuclear_groebner_reduction; thm_groebner_shirshov_energy; prop_box_braid_irreducibility; prop_generator_volume_decomposition; thm_markov_trace_factorization; prop_skein_polynomial_transfer_matrix; def_transfer_matrix_operator; prop_beta_decay_transfer_matrix; sim_beta_decay_braid; prop_shell_structure_eigenvalues; prop_quantum_dilogarithm_volume; prop_reidemeister_action_table; conj_elliptic_stability_locus; prop_shell_closure_normal_form; prop_torus_knot_shell_binding; prop_skein_finiteness_bound; cor_spectral_decomposition_qvalue; rem_shell_construction_rules; conj_electron_shells_hopf; prop_noble_gas_characterization; prop_metallic_character_knot; prop_hydrogen_shell_writhe; thm_descartes; ex_descartes_yekutieli; prop_terminal_resolution; }
   }
 
   subgraph cluster_ch4 {
@@ -165,7 +167,8 @@ digraph ProofDependencies {
     cor_jet_prolongation_C [label="Cor\njet-prolongation-C" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:jet-prolongation-C" tooltip="{Archimedean realisation of jet prolongation}" target="_blank"];
     cor_mass_identity_C [label="Cor\nmass-identity-C" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:mass-identity-C" tooltip="{Archimedean realisation: nonabelian multiplicative integration}" target="_blank"];
     cor_quantum_dilogarithm [label="Cor\nquantum-dilogarithm" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:quantum-dilogarithm" tooltip="{Quantum Dilogarithm as Localized Torsion Volume}" target="_blank"];
-    { rank=same; prop_jet_prolongation; rem_prolongation_categorical; def_recursive_brane_tower; ex_brane_tower_levels; prop_categorical_jet_prolongation; def_categorical_q_reeb_flow; lem_descent; def_descent_involution; def_yekutieli_lifting_condition; def_quantum_characteristic_classes; prop_yekutieli_lifting; thm_qu_to_qou; def_direct_limit_algebra; rem_jet_shell; prop_vacuum_state; prop_global_gluing; prop_ordering_jet_compatibility; prop_euler_char_stability; def_mass_identity; rem_q_harmonic_basis_brane; rem_weight_space_decomposition; prop_algebraic_filter_classification; rem_algebraic_filter; rem_distributional_connection; prop_descent_eigenspaces; def_brane_boundary; prop_brane_boundary; def_yekutieli_triple; prop_cosimplicial_crossed_groupoid; prop_descent_condition; prop_weak_equiv_invariance; def_localized_knot; cor_jet_prolongation_C; cor_mass_identity_C; cor_quantum_dilogarithm; }
+    conj_topological_decomposition_mass [label="Conj\ntopological-decom..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:topological-decomposition-mass" tooltip="{Conjectural Topological Decomposition of Mass}" target="_blank"];
+    { rank=same; prop_jet_prolongation; rem_prolongation_categorical; def_recursive_brane_tower; ex_brane_tower_levels; prop_categorical_jet_prolongation; def_categorical_q_reeb_flow; lem_descent; def_descent_involution; def_yekutieli_lifting_condition; def_quantum_characteristic_classes; prop_yekutieli_lifting; thm_qu_to_qou; def_direct_limit_algebra; rem_jet_shell; prop_vacuum_state; prop_global_gluing; prop_ordering_jet_compatibility; prop_euler_char_stability; def_mass_identity; rem_q_harmonic_basis_brane; rem_weight_space_decomposition; prop_algebraic_filter_classification; rem_algebraic_filter; rem_distributional_connection; prop_descent_eigenspaces; def_brane_boundary; prop_brane_boundary; def_yekutieli_triple; prop_cosimplicial_crossed_groupoid; prop_descent_condition; prop_weak_equiv_invariance; def_localized_knot; cor_jet_prolongation_C; cor_mass_identity_C; cor_quantum_dilogarithm; conj_topological_decomposition_mass; }
   }
 
   subgraph cluster_ch5 {
@@ -216,7 +219,7 @@ digraph ProofDependencies {
     def_knot_particle_generation [label="Def\nknot-particle-gen..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:knot-particle-generation" tooltip="{Knot-particle generation from $T_{m,n}$ torus knot generators}" target="_blank"];
     prop_knot_particle_correspondence [label="Prop\nknot-particle-cor..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:knot-particle-correspondence" tooltip="{Knot--particle correspondence via $q$-Schur--Weyl duality}" target="_blank"];
     rem_knot_particle_dictionary [label="Rem\nknot-particle-dic..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:knot-particle-dictionary" tooltip="{Knot–particle dictionary}" target="_blank"];
-    def_bundle_initial_conditions [label="Def\nbundle-initial-co..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:bundle-initial-conditions" tooltip="{Bundle initial conditions (big bang state)}" target="_blank"];
+    def_bundle_initial_conditions [label="Def\nbundle-initial-co..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:bundle-initial-conditions" tooltip="{Bundle initial conditions}" target="_blank"];
     prop_sorting_color_energy [label="Prop\nsorting-color-energy" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:sorting-color-energy" tooltip="{Sorting deposits energy $q + q^{-1}$ per crossing in the colour fibre}" target="_blank"];
     def_bundle_isotopy_equivalence [label="Def\nbundle-isotopy-eq..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:bundle-isotopy-equivalence" tooltip="{Isotopy equivalence of bundle initial conditions}" target="_blank"];
     def_torsion_knot_flow [label="Def\ntorsion-knot-flow" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:torsion-knot-flow" tooltip="{Torsion-driven knot flow}" target="_blank"];
@@ -235,6 +238,7 @@ digraph ProofDependencies {
     style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
     fontsize=10;
     def_q_yang_mills_levi [label="Def\nq-yang-mills-levi" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:q-yang-mills-levi" tooltip="{$q$-Weighted Yang--Mills--Levi functional}" target="_blank"];
+    conj_yang_mills_mass_gap [label="Conj\nyang-mills-mass-gap" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:yang-mills-mass-gap" tooltip="{Yang--Mills Existence and Mass Gap}" target="_blank"];
     rem_gr_substrate_geometry [label="Rem\ngr-substrate-geom..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:gr-substrate-geometry" tooltip="{General Relativity as the Substrate Geometry}" target="_blank"];
     prop_main_commutative_diagram [label="Prop\nmain-commutative-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:main-commutative-diagram" tooltip="{Main Commutative Diagram}" target="_blank"];
     ex_calabi_yau [label="Ex\ncalabi-yau" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:calabi-yau" tooltip="{Real hypersurface in a Calabi--Yau $2$-fold}" target="_blank"];
@@ -251,8 +255,7 @@ digraph ProofDependencies {
     prop_categorical_archimedean_bridge [label="Prop\ncategorical-archi..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:categorical-archimedean-bridge" tooltip="{Categorical--geometric correspondence}" target="_blank"];
     def_witt_vector_lift [label="Def\nwitt-vector-lift" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:witt-vector-lift" tooltip="{Witt vector lift of a formal group}" target="_blank"];
     prop_skew_poisson_integration [label="Prop\nskew-poisson-inte..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:skew-poisson-integration" tooltip="{Integration of skewed-Poisson structures}" target="_blank"];
-    prop_discrete_vortex_spectrum [label="Prop\ndiscrete-vortex-s..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:discrete-vortex-spectrum" tooltip="{Discrete vortex mode spectrum}" target="_blank"];
-    { rank=same; def_q_yang_mills_levi; rem_gr_substrate_geometry; prop_main_commutative_diagram; ex_calabi_yau; ex_ale; ex_brings_surface; ex_cosmological_limits; ex_instanton; ex_irreducible_connection; ex_self_dual_curvature; rem_c_substrate_via_levi; prop_heisenberg_commutator; ex_reeb_decomposition; def_spatial_realization_functor; prop_categorical_archimedean_bridge; def_witt_vector_lift; prop_skew_poisson_integration; prop_discrete_vortex_spectrum; }
+    { rank=same; def_q_yang_mills_levi; conj_yang_mills_mass_gap; rem_gr_substrate_geometry; prop_main_commutative_diagram; ex_calabi_yau; ex_ale; ex_brings_surface; ex_cosmological_limits; ex_instanton; ex_irreducible_connection; ex_self_dual_curvature; rem_c_substrate_via_levi; prop_heisenberg_commutator; ex_reeb_decomposition; def_spatial_realization_functor; prop_categorical_archimedean_bridge; def_witt_vector_lift; prop_skew_poisson_integration; }
   }
 
   def_snake_identity -> def_rigid_monoidal_category [color="#555555" style="solid"];
@@ -373,19 +376,30 @@ digraph ProofDependencies {
   prop_beta_decay_transfer_matrix -> def_transfer_matrix_operator [color="#555555" style="solid"];
   prop_skein_polynomial_transfer_matrix -> prop_beta_decay_transfer_matrix [color="#555555" style="solid"];
   def_beta_decay_skein -> prop_beta_decay_transfer_matrix [color="#555555" style="solid"];
+  def_beta_decay_skein -> sim_beta_decay_braid [color="#555555" style="solid"];
+  prop_beta_decay_transfer_matrix -> sim_beta_decay_braid [color="#555555" style="solid"];
+  def_transfer_matrix_operator -> sim_beta_decay_braid [color="#555555" style="solid"];
+  def_categorical_proton -> sim_beta_decay_braid [color="#555555" style="solid"];
+  def_categorical_neutron -> sim_beta_decay_braid [color="#555555" style="solid"];
+  rem_force_knot_identification -> sim_beta_decay_braid [color="#555555" style="solid"];
   def_transfer_matrix_operator -> prop_shell_structure_eigenvalues [color="#555555" style="solid"];
   thm_markov_trace_factorization -> prop_quantum_dilogarithm_volume [color="#555555" style="solid"];
   cor_quantum_dilogarithm -> prop_quantum_dilogarithm_volume [color="#555555" style="solid"];
   thm_markov_trace_factorization -> prop_reidemeister_action_table [color="#555555" style="solid"];
   prop_integer_stability -> conj_elliptic_stability_locus [color="#555555" style="solid"];
   def_color_tube_fibers -> conj_elliptic_stability_locus [color="#555555" style="solid"];
-  conj_elliptic_stability_locus -> conj_skein_shell_correction [color="#555555" style="solid"];
   prop_nuclear_groebner_reduction -> prop_shell_closure_normal_form [color="#555555" style="solid"];
   thm_groebner_shirshov_energy -> prop_shell_closure_normal_form [color="#555555" style="solid"];
   prop_integer_stability -> prop_shell_closure_normal_form [color="#555555" style="solid"];
   def_stable_nucleus -> prop_shell_closure_normal_form [color="#555555" style="solid"];
   prop_beta_stability -> prop_shell_closure_normal_form [color="#555555" style="solid"];
   prop_skein_polynomial_transfer_matrix -> prop_shell_closure_normal_form [color="#555555" style="solid"];
+  prop_shell_closure_normal_form -> prop_torus_knot_shell_binding [color="#555555" style="solid"];
+  prop_torus_knot_generators -> prop_torus_knot_shell_binding [color="#555555" style="solid"];
+  def_transfer_matrix_operator -> prop_torus_knot_shell_binding [color="#555555" style="solid"];
+  prop_nuclear_groebner_reduction -> prop_torus_knot_shell_binding [color="#555555" style="solid"];
+  thm_groebner_shirshov_energy -> prop_torus_knot_shell_binding [color="#555555" style="solid"];
+  prop_skein_finiteness_bound -> prop_torus_knot_shell_binding [color="#555555" style="solid"];
   prop_shell_closure_normal_form -> prop_skein_finiteness_bound [color="#555555" style="solid"];
   prop_skein_polynomial_transfer_matrix -> prop_skein_finiteness_bound [color="#555555" style="solid"];
   prop_nuclear_groebner_reduction -> prop_skein_finiteness_bound [color="#555555" style="solid"];
@@ -395,7 +409,12 @@ digraph ProofDependencies {
   prop_skein_finiteness_bound -> cor_spectral_decomposition_qvalue [color="#555555" style="solid"];
   prop_nuclear_groebner_reduction -> cor_spectral_decomposition_qvalue [color="#555555" style="solid"];
   rem_force_knot_identification -> cor_spectral_decomposition_qvalue [color="#555555" style="solid"];
-  conj_skein_shell_correction -> conj_electron_shells_hopf [color="#555555" style="solid"];
+  cor_spectral_decomposition_qvalue -> rem_shell_construction_rules [color="#555555" style="solid"];
+  prop_shell_closure_normal_form -> rem_shell_construction_rules [color="#555555" style="solid"];
+  prop_skein_finiteness_bound -> rem_shell_construction_rules [color="#555555" style="solid"];
+  prop_nuclear_groebner_reduction -> rem_shell_construction_rules [color="#555555" style="solid"];
+  rem_force_knot_identification -> rem_shell_construction_rules [color="#555555" style="solid"];
+  def_beta_decay_skein -> rem_shell_construction_rules [color="#555555" style="solid"];
   prop_torus_hopf_stability -> conj_electron_shells_hopf [color="#555555" style="solid"];
   def_electron_knot -> prop_noble_gas_characterization [color="#555555" style="solid"];
   prop_noble_gas_characterization -> prop_metallic_character_knot [color="#555555" style="solid"];
@@ -486,6 +505,8 @@ digraph ProofDependencies {
   def_exceptional_divisor -> def_categorical_transfer_matrix [color="#555555" style="solid"];
   rem_knot_factorization -> def_categorical_transfer_matrix [color="#555555" style="solid"];
   def_localized_hadron -> def_categorical_transfer_matrix [color="#555555" style="solid"];
+  prop_jet_prolongation -> def_categorical_transfer_matrix [color="#555555" style="solid"];
+  def_bundle_initial_conditions -> def_categorical_transfer_matrix [color="#555555" style="solid"];
   def_categorical_transfer_matrix -> prop_transfer_matrix_level_independence [color="#555555" style="solid"];
   thm_markov_trace_product -> prop_transfer_matrix_level_independence [color="#555555" style="solid"];
   prop_vertex_is_exceptional_divisor -> prop_transfer_matrix_level_independence [color="#555555" style="solid"];
@@ -530,7 +551,8 @@ digraph ProofDependencies {
   def_localized_knot -> prop_knot_particle_correspondence [color="#555555" style="solid"];
   prop_knot_eigenbasis_complete -> prop_knot_particle_correspondence [color="#555555" style="solid"];
   def_hadron -> prop_knot_particle_correspondence [color="#555555" style="solid"];
-  prop_knot_particle_correspondence -> rem_knot_particle_dictionary [color="#555555" style="solid"];
+  def_localized_knot -> rem_knot_particle_dictionary [color="#555555" style="solid"];
+  def_hadron -> rem_knot_particle_dictionary [color="#555555" style="solid"];
   def_localized_knot -> def_bundle_initial_conditions [color="#555555" style="solid"];
   def_hadron -> def_bundle_initial_conditions [color="#555555" style="solid"];
   def_bundle_initial_conditions -> def_bundle_isotopy_equivalence [color="#555555" style="solid"];
@@ -546,6 +568,11 @@ digraph ProofDependencies {
   def_hadron -> def_skein_binding_lagrangian [color="#555555" style="solid"];
   def_skein_binding_lagrangian -> prop_beta_stability [color="#555555" style="solid"];
   ex_instanton -> def_q_yang_mills_levi [color="#555555" style="solid"];
+  def_mass_identity -> conj_yang_mills_mass_gap [color="#555555" style="solid"];
+  def_categorical_connection -> conj_yang_mills_mass_gap [color="#555555" style="solid"];
+  def_q_yang_mills_levi -> conj_yang_mills_mass_gap [color="#555555" style="solid"];
+  prop_vacuum_state -> conj_yang_mills_mass_gap [color="#555555" style="solid"];
+  thm_topological_mass -> conj_yang_mills_mass_gap [color="#555555" style="solid"];
   def_q_yang_mills_levi -> rem_gr_substrate_geometry [color="#555555" style="solid"];
   def_q_yang_mills_levi -> prop_main_commutative_diagram [color="#555555" style="solid"];
   ex_reeb_decomposition -> ex_calabi_yau [color="#555555" style="solid"];

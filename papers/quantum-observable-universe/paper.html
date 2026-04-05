@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="litlfred" />
-  <meta name="dcterms.date" content="2026-04-02" />
+  <meta name="dcterms.date" content="2026-04-05" />
   <title>Quantum Observable Universe</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     html {
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -62,6 +65,10 @@
     img {
       max-width: 100%;
     }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
     h1, h2, h3, h4, h5, h6 {
       margin-top: 1.4em;
     }
@@ -86,6 +93,7 @@
       color: #606060;
     }
     code {
+      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -105,8 +113,8 @@
      overflow: visible;
     }
     hr {
-      background-color: #1a1a1a;
       border: none;
+      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -149,7 +157,6 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
@@ -164,8 +171,7 @@
       vertical-align: middle;
     }
   </style>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="/usr/share/javascript/mathjax/MathJax.js"
+  <script defer="" src="/usr/share/javascript/mathjax/MathJax.js"
   type="text/javascript"></script>
 <style>
 /* ── Base (light) ───────────────────────────────────────────────── */
@@ -351,11 +357,11 @@ code { font-size: 90%; }
 <header id="title-block-header">
 <h1 class="title">Quantum Observable Universe</h1>
 <p class="author">litlfred</p>
-<p class="date">2026-04-02</p>
+<p class="date">2026-04-05</p>
 </header>
 <div class="center">
-
-<p>This work is licensed under a <a
+<p><br />
+This work is licensed under a <a
 href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
 Attribution 4.0 International License</a>.<br />
 You are free to share and adapt this material for any purpose,<br />
@@ -363,22 +369,21 @@ provided appropriate credit is given, a link to the license is
 provided,<br />
 and any changes made are indicated.</p>
 </div>
-
 <p><strong>Proof-status key</strong></p>
 <table>
 <tbody>
-<tr class="odd">
-<td
-style="text-align: center;"><span style="color: ForestGreen"></span></td>
+<tr>
+<td style="text-align: center;"><span
+style="color: ForestGreen"></span></td>
 <td style="text-align: left;">Fully proved (sorry-free)</td>
 <td style="text-align: center;"><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></td>
 <td style="text-align: left;">Stated in Lean (has
 <code>sorry</code>)</td>
 </tr>
-<tr class="even">
-<td
-style="text-align: center;"><span style="color: OliveGreen">-0.3em</span></td>
+<tr>
+<td style="text-align: center;"><span
+style="color: OliveGreen"></span></td>
 <td style="text-align: left;">Merged into Mathlib</td>
 <td style="text-align: center;"><span style="color: BrickRed"><span
 class="math inline">\(\times\)</span></span></td>
@@ -386,8 +391,8 @@ class="math inline">\(\times\)</span></span></td>
 </tr>
 </tbody>
 </table>
-<h1 id="<span id="chap:viz-overview"></span>overview">Overview</h1>
-<h2 id="<span id="sec:viz-intro"></span>introduction">Introduction</h2>
+<h1 id="chap:viz-overview">Overview</h1>
+<h2 id="sec:viz-intro">Introduction</h2>
 <p>The QOU Visualizer provides interactive views of the mathematical
 structures described in the Quantum Observable Universe paper. Rather
 than duplicating content, it references definitions and theorems from
@@ -398,7 +403,7 @@ visualization modes:</p>
 resolvents rendered as 3D surfaces, with controls for the torsion
 parameter <span class="math inline">\(q\)</span>, projection mode, and
 camera orbit.</p></li>
-<li><p><strong><span id="sec:viz-knots"></span>Knot complements</strong> — hyperbolic 3-manifold
+<li><p><strong>Knot complements</strong> — hyperbolic 3-manifold
 computations via the SnapPea kernel (compiled to WebAssembly), providing
 volumes, Dehn fillings, fundamental group presentations, and homology
 for knot complements in the particle registry.</p></li>
@@ -406,11 +411,12 @@ for knot complements in the particle registry.</p></li>
 showing how definitions, theorems, and conjectures depend on each other,
 with formalization status overlaid from the Lean build.</p></li>
 </ul>
-<h2 id="brings-surface">Bring’s Surface</h2>
+<h2 id="sec:viz-brings">Bring’s Surface</h2>
 <div id="def:viz-brings-surface" class="definition">
-
-<p><strong>Definition 1.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState" target="_blank" title="Lean: QOU.BringsSurface.ViewportState">&#x2200; stated</a></strong> (Bring’s surface viewport). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState"><sup><span style="color: BurntOrange"><span
+<p><strong>Definition 1.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState" target="_blank" title="Lean: QOU.BringsSurface.ViewportState">&#x2200; stated</a></strong> (<span>Bring’s surface
+viewport</span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.BringsSurface.ViewportState"><sup><span
+style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a> The Bring’s
 surface visualizer renders quaternionic spectral resolvents as
 interactive 3D surfaces. The viewport state is fully serialisable (see
@@ -435,12 +441,12 @@ look-at target.</em></p></li>
 \psi_i(s) = \frac{2\pi i}{3} + q \cdot 2\pi s \cdot Q \cdot
 \gamma\]</span></em></p>
 </div>
-
-<h2 id="knot-complements">Knot Complements</h2>
+<h2 id="sec:viz-knots">Knot Complements</h2>
 <div id="def:viz-knot-complement" class="definition">
-
-<p><strong>Definition 1.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.KnotComplement" target="_blank" title="Lean: QOU.KnotComplement">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:viz-knot-complement">Knot complement (SnapPea)</a>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.KnotComplement"><sup><span style="color: BurntOrange"><span
+<p><strong>Definition 1.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.KnotComplement" target="_blank" title="Lean: QOU.KnotComplement">&#x2200; stated</a></strong> (<span>Knot complement
+(SnapPea)</span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.KnotComplement"><sup><span
+style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a> A <strong>knot
 complement</strong> <span class="math inline">\(S^3 \setminus K\)</span>
 is the 3-manifold obtained by removing a tubular neighbourhood of a knot
