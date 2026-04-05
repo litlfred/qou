@@ -178,6 +178,39 @@ impl LPoly {
                      - (b_len as i32 - std::cmp::min(15, b_len) as i32);
         (a_lead / b_lead) * 10.0_f64.powi(exp_diff)
     }
+    /// 2-adic valuation of a BigInt: largest k such that 2^k | n.
+    fn v2(n: &BigInt) -> u32 {
+        if n.is_zero() { return u32::MAX; }
+        let (_, bytes) = n.to_bytes_le();
+        let mut v = 0u32;
+        for &b in &bytes {
+            if b == 0 { v += 8; }
+            else { v += b.trailing_zeros(); break; }
+        }
+        v
+    }
+
+    /// Minimum 2-adic valuation across all coefficients.
+    fn min_v2(&self) -> u32 {
+        self.terms.values()
+            .filter(|v| !v.is_zero())
+            .map(|v| Self::v2(v))
+            .min()
+            .unwrap_or(0)
+    }
+
+    /// Divide all coefficients by 2^k (exact division).
+    fn shift_v2(&self, k: u32) -> LPoly {
+        if k == 0 { return self.clone(); }
+        let divisor = BigInt::from(1) << k;
+        let mut r = BTreeMap::new();
+        for (exp, v) in &self.terms {
+            if v.is_zero() { continue; }
+            r.insert(*exp, v / &divisor);
+        }
+        LPoly { terms: r }
+    }
+
     fn max_abs_coeff_log10(&self) -> f64 {
         self.terms.values()
             .map(|v| {
@@ -569,20 +602,53 @@ fn main() {
         elem.n_terms(), mc, elem.mem_bytes() as f64 / 1e6, elapsed);
 
     // Evaluate F_Pauli = |tr_alt/net| at q₀.
-    // For large pn_count (>300), individual polynomial values overflow f64.
-    // The 2^pn_count denominator cancels in the ratio, so we compute
-    // F = |tr_alt/net| using log-space arithmetic (stable for any A).
+    //
+    // 2-adic normalization: the pn_count denominator is 2^891 for ⁶⁰Co.
+    // Many polynomial coefficients are divisible by large powers of 2.
+    // Factor these out to reduce effective coefficient size.
     let q0: f64 = 1.10998;
     let t0_val = q0.sqrt();
 
-    let f = LPoly::eval_ratio_f64(&total.tr_alt, &total.net, t0_val);
+    // 2-adic normalization: find common factors of 2
+    let v2_alt = total.tr_alt.min_v2();
+    let v2_net = total.net.min_v2();
+    let pn = elem.pn_count;
 
-    // Also try direct f64 eval for small pn_count
-    let (tr_alt_val, net_val) = if elem.pn_count < 300 {
-        let denom = 2.0_f64.powi(elem.pn_count as i32);
-        (total.tr_alt.eval_f64(t0_val) / denom, total.net.eval_f64(t0_val) / denom)
+    eprintln!("\n  2-adic analysis:");
+    eprintln!("    pn_count (denominator 2^{})", pn);
+    eprintln!("    v₂(tr_alt) = {} (all coeffs divisible by 2^{})", v2_alt, v2_alt);
+    eprintln!("    v₂(net)    = {} (all coeffs divisible by 2^{})", v2_net, v2_net);
+
+    // Normalize: divide out common 2-adic content
+    let alt_norm = total.tr_alt.shift_v2(v2_alt);
+    let net_norm = total.net.shift_v2(v2_net);
+    let alt_denom_pow = pn - v2_alt;  // remaining denominator for tr_alt
+    let net_denom_pow = pn - v2_net;  // remaining denominator for net
+
+    eprintln!("    After normalization:");
+    eprintln!("      tr_alt: coeff~10^{:.0}, denom 2^{}", alt_norm.max_abs_coeff_log10(), alt_denom_pow);
+    eprintln!("      net:    coeff~10^{:.0}, denom 2^{}", net_norm.max_abs_coeff_log10(), net_denom_pow);
+
+    // F_Pauli = |tr_alt/net| = |alt_norm / 2^alt_denom × 2^net_denom / net_norm|
+    //         = |alt_norm / net_norm| × 2^(net_denom - alt_denom)
+    let denom_diff = net_denom_pow as i64 - alt_denom_pow as i64;
+
+    // Try f64 eval on normalized polynomials (much smaller coefficients)
+    let alt_val = alt_norm.eval_f64(t0_val);
+    let net_val_raw = net_norm.eval_f64(t0_val);
+
+    let (f, tr_alt_val, net_val) = if alt_val.is_finite() && net_val_raw.is_finite() && net_val_raw.abs() > 1e-300 {
+        let raw_ratio = (alt_val / net_val_raw).abs();
+        let f = raw_ratio * 2.0_f64.powi(denom_diff as i32);
+        // Actual values (with full denominator)
+        let ta = alt_val / 2.0_f64.powi(alt_denom_pow as i32);
+        let nv = net_val_raw / 2.0_f64.powi(net_denom_pow as i32);
+        (f, ta, nv)
     } else {
-        (f64::NAN, f64::NAN)  // overflow — use ratio only
+        // Still overflows — fall back to BigInt rational eval
+        let f = LPoly::eval_ratio_f64(&alt_norm, &net_norm, t0_val)
+            * 2.0_f64.powi(denom_diff as i32);
+        (f, f64::NAN, f64::NAN)
     };
 
     println!("F_Pauli({}{}) = {:.10} (exact in q, evaluated at q₀ = {})",
