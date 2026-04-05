@@ -29,8 +29,37 @@
 \usepackage{booktabs}            % Professional table rules (\toprule, \midrule, \bottomrule)
 \usepackage{enumitem}            % Customised list labels (label=, leftmargin=)
 \usepackage{mathrsfs}            % \mathscr script letters
+\usepackage{textcomp}            % \textdegree, \textbullet, etc.
+\usepackage{newunicodechar}      % Map Unicode glyphs to LaTeX commands
+
+% ── Unicode character mappings ───────────────────────────────────────────────
+% Allow Unicode symbols in .md content to pass through pdflatex.
+\newunicodechar{✓}{$\checkmark$}
+\newunicodechar{✗}{$\times$}
+\newunicodechar{✔}{$\checkmark$}
+\newunicodechar{★}{$\bigstar$}
+\newunicodechar{°}{$^{\circ}$}
+\newunicodechar{×}{$\times$}
+\newunicodechar{←}{$\leftarrow$}
+\newunicodechar{→}{$\rightarrow$}
+\newunicodechar{≤}{$\leq$}
+\newunicodechar{≥}{$\geq$}
+\newunicodechar{≈}{$\approx$}
+\newunicodechar{∞}{$\infty$}
+\newunicodechar{Δ}{$\Delta$}
+\newunicodechar{β}{$\beta$}
+\newunicodechar{⊙}{$\odot$}
+\newunicodechar{●}{\textbullet}
+\newunicodechar{○}{$\circ$}
+\newunicodechar{…}{\ldots}
+\newunicodechar{⚠}{\textbf{!}}
 
 \geometry{margin=1in}
+
+% ── Suppress hyperref math-in-bookmark warnings ─────────────────────────────
+% Math in theorem titles generates "Token not allowed in PDF string" warnings.
+% These are harmless (hyperref strips the math for bookmarks) but noisy.
+\hypersetup{pdfencoding=auto, psdextra}
 
 % ── Compact chapter/section formatting (no page breaks, normal-size fonts) ────
 \titleclass{\chapter}{straight}
