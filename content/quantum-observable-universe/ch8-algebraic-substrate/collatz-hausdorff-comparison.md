@@ -37,7 +37,7 @@ $\Phi_0 / |\Delta\Phi|$ cycles.
 
 Each Collatz cycle with $v = 2$ halvings consists of $3$
 Reeb steps ($1$ odd $+ 2$ even), each consuming
-$\eta_q = (2q-1)/q^3$ nats of operational entropy
+$\eta_q = (2q-1)/q^3$ $q$-bits of operational entropy
 ([operational entropy](#def:operational-entropy)).  The
 total entropy budget to convergence is:
 
@@ -47,12 +47,12 @@ $$
   \frac{\Phi_0}{|\Delta\Phi|} \cdot 3\eta_q
   \;\approx\;
   \Phi_0 \cdot \eta_q
-  \quad\text{nats}.
+  \quad q\text{-bits}.
 $$
 
 At $q_0$, converging from $|P| = 1000$ costs about $65$
-nats — roughly $24$ Collatz cycles, each consuming
-$\sim 2.7$ nats.  The orbit is an information-bounded
+$q$-bits — roughly $24$ Collatz cycles, each consuming
+$\sim 2.7$ $q$-bits.  The orbit is an information-bounded
 computation: it processes a finite, predictable amount
 of entropy before terminating.
 
