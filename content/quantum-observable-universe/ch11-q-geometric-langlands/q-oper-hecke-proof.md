@@ -1,10 +1,12 @@
 The $q$-oper $\nabla_q$ defines a point of
 $\mathrm{LocSys}_{\check{G}_q}(X)$.  By the conjectured equivalence
-$\mathbb{L}_q$, its pre-image $\mathcal{M}_{\nabla_q} =
-\mathbb{L}_q^{-1}(\delta_{\nabla_q})$ is a $q$-$\mathcal{D}$-module
-on $\mathrm{Bun}_{G_q}$.  The Hecke compatibility (property (1) of
-Conjecture \ref{conj:q-geometric-langlands}) immediately gives the
-eigensheaf property with eigenvalue $\nabla_q$.
+$\mathbb{L}_q$
+([$q$-GL conjecture](#conj:q-geometric-langlands)), its
+pre-image $\mathcal{M}_{\nabla_q} =
+\mathbb{L}_q^{-1}(\delta_{\nabla_q})$ is a
+$q$-$\mathcal{D}$-module on $\mathrm{Bun}_{G_q}$.  The Hecke
+compatibility (property (1) of the conjecture) immediately gives
+the eigensheaf property with eigenvalue $\nabla_q$.
 
 For irreducibility, suppose $\mathcal{N} \subset \mathcal{M}_{\nabla_q}$
 is a non-zero sub-$q$-$\mathcal{D}$-module.  Then $\mathbb{L}_q
@@ -17,5 +19,5 @@ Alternatively, irreducibility follows from the $q$-oper transversality
 condition: a sub-$q$-$\mathcal{D}$-module would induce a
 $\nabla_q$-invariant sub-bundle compatible with the Borel reduction,
 contradicting the non-vanishing condition
-$\mathrm{pr}_{-\alpha_i}(\nabla_q \mod \check{\mathfrak{b}}_q)
+$\mathrm{pr}_{-\alpha_i}(\nabla_q \bmod \check{\mathfrak{b}}_q)
 \neq 0$.  $\square$

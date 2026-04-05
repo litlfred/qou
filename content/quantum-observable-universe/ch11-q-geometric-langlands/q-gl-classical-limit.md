@@ -1,5 +1,6 @@
-As $q \to 1$ the $q$-Geometric Langlands correspondence recovers
-the classical Geometric Langlands equivalence:
+As $q \to 1$ in the $\mathbb{G}_m$-family, the $q$-Geometric
+Langlands correspondence recovers the classical Geometric Langlands
+equivalence:
 
 $$
   \lim_{q \to 1} \mathbb{L}_q \;=\; \mathbb{L}_{\mathrm{BD}}
@@ -8,12 +9,12 @@ $$
   \mathrm{QCoh}(\mathrm{LocSys}_{\check{G}}(X)).
 $$
 
-More precisely, the degeneration proceeds through three compatible
-limits:
+The degeneration proceeds through three compatible limits:
 
-1. **Differential limit**: $d_q \to d$ and $d_q^2 \to 0$, so
-   $q$-flat connections become flat connections and $q$-local systems
-   become classical local systems.
+1. **Differential limit**: $d_q \to d$ and $d_q^2 \to 0$
+   ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)),
+   so $q$-flat connections become flat connections and $q$-local
+   systems become classical local systems.
 
 2. **Hecke limit**: the Hecke relation
    $(T-q)(T+q^{-1}) = 0$ degenerates to $(T-1)(T+1) = 0$, recovering

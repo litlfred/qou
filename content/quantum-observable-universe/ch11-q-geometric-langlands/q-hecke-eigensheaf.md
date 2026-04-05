@@ -13,7 +13,8 @@ $$
 where $V_\lambda^{(q)}$ is the irreducible representation of
 $\check{G}_q$ of highest weight $\lambda$ and
 $V_\lambda^{(q)}(\mathcal{L}_q)_x$ denotes its fibre at $x$ under
-the $q$-local system $\mathcal{L}_q$.
+the $q$-local system $\mathcal{L}_q$
+([q-local system](#def:q-local-system)).
 
 The isomorphisms are required to be compatible with:
 

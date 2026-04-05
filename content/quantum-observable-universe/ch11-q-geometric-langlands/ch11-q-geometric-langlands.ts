@@ -4,14 +4,16 @@ import { chapter, section } from "../../schema/builders";
  * Chapter: q-Geometric Langlands Correspondence.
  *
  * Develops the q-deformed Geometric Langlands correspondence within
- * the QOU framework.  The Hecke algebra H_n(q) from Ch 4 provides
- * q-Hecke operators; the fiber functor τ from Ch 1 mediates between
- * the automorphic and spectral sides; and the q-differential d_q
- * from Ch 2 defines q-local systems and q-D-modules.
+ * the QOU framework.  The substrate parameter q ∈ G_m^{nt} defines a
+ * G_m-family of deformations; the Yekutieli obstruction classes κ_n
+ * and their Kummer filtration control q-flatness; the Hecke algebra
+ * H_n(q) from Ch 4 provides q-Hecke operators; and the fibre functor
+ * τ from Ch 1 mediates the automorphic–spectral equivalence via
+ * Tannaka–Krein reconstruction.
  *
- * The main result (Conjecture 11.1) asserts an equivalence between
- * q-D-modules on the moduli of G_q-bundles and quasi-coherent sheaves
- * on q-local systems for the Langlands dual group.
+ * The main conjecture asserts an equivalence between q-D-modules on
+ * Bun_{G_q} and QCoh on LocSys_{Ǧ_q}, well-defined on the non-torsion
+ * locus of G_m.
  */
 export default chapter({
   number: 11,
@@ -58,6 +60,9 @@ export default chapter({
       blocks: [
         "q-langlands-dual",
         "q-geometric-langlands",
+        "q-gl-obstruction-calc",
+        "q-gl-obstruction-calc-proof",
+        "q-gl-kummer-filtration",
         "q-gl-fiber-functor",
         "q-gl-fiber-functor-proof",
       ],

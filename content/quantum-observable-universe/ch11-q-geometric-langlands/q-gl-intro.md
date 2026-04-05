@@ -1,39 +1,37 @@
-The classical Geometric Langlands correspondence, developed by
-Beilinson--Drinfeld and subsequently extended by Frenkel--Gaitsgory and
-Aganagic--Frenkel--Okounkov, establishes a deep duality between
-automorphic and spectral data on an algebraic curve.  In its simplest
-form it asserts an equivalence between $\mathcal{D}$-modules on the
-moduli stack $\mathrm{Bun}_G(X)$ of $G$-bundles on a smooth projective
-curve $X$ and quasi-coherent sheaves on the moduli stack
-$\mathrm{LocSys}_{\check{G}}(X)$ of $\check{G}$-local systems, where
-$\check{G}$ denotes the Langlands dual group.
+The substrate parameter
+$q \in \mathbb{G}_m^{\mathrm{nt}}(k) = k^\times \setminus \mu_\infty$
+([substrate parameter](#def:substrate-parameter)) endows the
+differential calculus of a quantum observable universe with a
+one-parameter deformation controlled by the fibre coordinate of
+a $\mathbb{G}_m$-family.  Two consequences of this deformation
+are central to the present chapter:
 
-In the QOU framework the substrate parameter $q$ deforms every
-differential-geometric structure: the exterior derivative $d_q$
-satisfies $d_q^2 \neq 0$ (Proposition \ref{prop:categorical-dq-squared}),
-connections acquire $q$-curvature, and the Hecke algebra $H_n(q)$
-replaces the group algebra of the symmetric group.  These deformations
-assemble into a coherent $q$-analogue of the Geometric Langlands
-programme.
+1. The $q$-deformed exterior derivative satisfies $d_q^2 \neq 0$
+   ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)),
+   producing a canonical obstruction to flatness of
+   $q$-connections.
 
-The key ingredients are:
+2. The Yekutieli obstruction classes
+   $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$
+   ([quantum characteristic classes](#def:quantum-characteristic-classes))
+   control the lifting of Frobenius--Hopf objects through the
+   brane tower, and their Kummer filtration
+   ([Kummer filtration](#prop:kummer-filtration-obstruction))
+   determines the arithmetic locus where $q$-flatness holds.
 
-1. **$q$-Local systems** (Definition \ref{def:q-local-system}):
-   representations of the fundamental groupoid twisted by the
-   $q$-monodromy arising from $d_q^2 \neq 0$.
+These structures assemble into a $q$-deformed Geometric Langlands
+correspondence.  The automorphic side consists of
+$q$-$\mathcal{D}$-modules on the moduli of $G_q$-bundles; the
+spectral side consists of quasi-coherent sheaves on the moduli
+of $q$-local systems for the Langlands dual $\check{G}_q$.  The
+fibre functor $\tau$, whose rigidity is guaranteed by the
+observability axiom
+([fibre-functor rigidity](#prop:fibre-functor-rigidity)),
+mediates the equivalence via Tannaka--Krein reconstruction.
 
-2. **$q$-Hecke operators** (Definition \ref{def:q-hecke-operator}):
-   categorical correspondences governed by the Hecke algebra $H_n(q)$
-   and its braiding eigenvalues $q$ and $-q^{-1}$.
-
-3. **The fibre functor $\tau$**: by Tannaka--Krein reconstruction the
-   fibre functor mediates between the automorphic side (representations
-   of $G_q$) and the spectral side ($q$-local systems for $\check{G}_q$).
-
-4. **$q$-Opers** (Definition \ref{def:q-oper}): canonical $q$-flat
-   connections that provide a concrete spectral parametrisation.
-
-The main result (Conjecture \ref{conj:q-geometric-langlands}) asserts
-that the classical Geometric Langlands equivalence deforms to a
-$q$-parametric family, recovering the classical correspondence in the
-limit $q \to 1$.
+The $q$-Geometric Langlands equivalence is a $\mathbb{G}_m$-family
+of functors, well-defined on the non-torsion locus
+$\mathbb{G}_m^{\mathrm{nt}}$ and degenerating at roots of unity
+where $[n]_q = 0$.  The perpetual obstruction phenomenon
+([Kummer filtration](#prop:kummer-filtration-obstruction))
+forces the correspondence to be intrinsically non-torsion.

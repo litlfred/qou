@@ -1,8 +1,9 @@
 Let $\check{G}_q$ be the $q$-Langlands dual group
-(Definition \ref{def:q-langlands-dual}) and $\check{\mathfrak{b}}_q
-\subset \check{\mathfrak{g}}_q$ a Borel subalgebra of its Lie
-algebra.  A **$q$-oper** on the brane curve $X$ is a $q$-flat
-connection (Definition \ref{def:q-flat-connection})
+([q-Langlands dual](#def:q-langlands-dual)) and
+$\check{\mathfrak{b}}_q \subset \check{\mathfrak{g}}_q$ a Borel
+subalgebra of its Lie algebra.  A **$q$-oper** on the brane curve
+$X$ is a $q$-flat connection
+([q-flat connection](#def:q-flat-connection))
 
 $$
   (\mathcal{P}_{\check{G}_q},\, \nabla_q)
@@ -17,7 +18,7 @@ the component of $\nabla_q$ along $\check{\mathfrak{g}}_{-\alpha_i}$
 is non-vanishing:
 
 $$
-  \mathrm{pr}_{-\alpha_i}(\nabla_q \mod \check{\mathfrak{b}}_q)
+  \mathrm{pr}_{-\alpha_i}(\nabla_q \bmod \check{\mathfrak{b}}_q)
   \neq 0
   \quad \text{for all simple roots } \alpha_i.
 $$
