@@ -7,11 +7,9 @@ categorical Reeb derivation $\xi_q \colon A \to A$
 and substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$
 ([torsion avoidance](#rem:substrate-gm-torsion)).
 
-### The $\mathbb{G}_m$-family of Collatz operators
-
 Over the multiplicative group scheme
 $\mathbb{G}_m = \mathrm{Spec}\,\mathbb{Z}[q, q^{-1}]$,
-define the **universal Hecke--Collatz endomorphism**
+define the **Hecke--Collatz endomorphism**
 $C_q \in \mathrm{End}_{\mathbf{C}}(A)[q^{\pm 1}]$ by:
 
 $$
@@ -21,122 +19,53 @@ $$
   e_-(\xi_q)\,\circ\,\bigl(\mu_{[3]_q} + \eta\bigr),
 $$
 
-where:
-
-- $\mu_{[k]_q} \colon A \to A$ denotes scalar multiplication by the
-  $q$-integer $[k]_q = (q^k - 1)/(q - 1)$ in the Frobenius algebra,
-  and $\mu^{-1}_{[2]_q}$ its inverse (well-defined since
-  $q \notin \mu_\infty$ ensures $[2]_q \neq 0$);
-- $\eta \colon \mathbf{1} \to A$ is the unit morphism of the
-  Frobenius--Hopf algebra;
-- $e_\pm(\xi_q)$ are the **Hecke idempotents** of the Reeb
-  derivation, defined below.
-
-### Hecke idempotents from the Reeb eigendecomposition
-
-The Hecke algebra $H_1(q)$ with generator $T$ and relation
-$(T - q)(T + q^{-1}) = 0$
-([skein generation](#prop:skein-generation)) provides two
-orthogonal idempotents:
-
-$$
-  e_+ = \frac{T + q^{-1}}{q + q^{-1}},
-  \qquad
-  e_- = \frac{q - T}{q + q^{-1}},
-$$
-
-satisfying $e_+ + e_- = \mathrm{id}$, $e_+^2 = e_+$,
-$e_-^2 = e_-$, $e_+ e_- = 0$.
-
-The Reeb derivation $\xi_q$ acts on $A$ with eigenvalues
-determined by the weight decomposition
-$A = A_H \oplus A_V$ (horizontal $\oplus$ vertical).
-The Hecke--Reeb projectors are obtained by evaluating $T$
-on the $\xi_q$-eigenspaces:
+where $\mu_{[k]_q} \colon A \to A$ is scalar multiplication
+by $[k]_q = (q^k - 1)/(q - 1)$ in the Frobenius algebra,
+$\eta \colon \mathbf{1} \to A$ is the unit, and the
+**Hecke--Reeb idempotents** are
 
 $$
   e_+(\xi_q) = \frac{\xi_q + q^{-1}\,\mathrm{id}_A}{[2]_q},
   \qquad
-  e_-(\xi_q) = \frac{q\,\mathrm{id}_A - \xi_q}{[2]_q}.
+  e_-(\xi_q) = \frac{q\,\mathrm{id}_A - \xi_q}{[2]_q},
 $$
 
-These project onto the **symmetric** (even, weight-$0$) and
-**antisymmetric** (odd, weight-$1$) eigenspaces of the Reeb
-action respectively.
+obtained by evaluating the Hecke algebra $H_1(q)$
+idempotents $e_\pm = (T + q^{-1})/(q + q^{-1})$,
+$(q - T)/(q + q^{-1})$ at $T = \xi_q$
+([skein generation](#prop:skein-generation)).
+These project onto the symmetric (weight-$0$, horizontal)
+and antisymmetric (weight-$1$, vertical) eigenspaces of
+the Reeb action.
 
-### Reeb-driven iteration
-
-Each application of $C_q$ is clocked by one period of the Reeb
-flow ([Reeb flow](#def:categorical-q-reeb-flow)).  The
-$q$-Collatz orbit of $a \in A$ is the sequence
-
-$$
-  a,\; C_q(a),\; C_q^2(a),\; \ldots
-$$
-
-where $C_q^k = \underbrace{C_q \circ \cdots \circ C_q}_{k}$,
-each step consuming one Reeb circuit of $n_R(q) = q/(q-1)$
-discrete substrate iterations
+Each application of $C_q$ is clocked by one period of
+the Reeb flow
+([categorical $q$-Reeb flow](#def:categorical-q-reeb-flow)),
+consuming $n_R(q) = q/(q-1)$ discrete substrate iterations
 ([operations per Planck](#prop:reeb-operations-per-planck)).
 
-### The obstruction in a quantum universe
-
-The $q$-Collatz convergence problem fits into the paper's
-universal obstruction framework
-([classical limit obstruction](#def:classical-limit-obstruction),
-[QOU obstruction reduction](#thm:qou-obstruction-reduction)).
-The universal obstruction class
-$\chi(A) \in HH^2(\mathcal{U}_q, \mathrm{Ad}) \cong k$ maps
-via the HKR comparison to
-$\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$.
-The Collatz obstruction is the **restriction** of this class
-to the Collatz iteration locus:
+**The obstruction.**
+The Collatz obstruction is the restriction of the Euler
+class $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
+([classical limit obstruction](#def:classical-limit-obstruction))
+to the sub-bundle $\mathcal{S}_{C_q} \subset \mathcal{S}$
+traced by $C_q$-orbits:
 
 $$
   \kappa_C
   \;:=\;
   \mathrm{res}_{C_q}\!\bigl(\kappa_0\bigr)
   \;\in\;
-  H^2(\mathcal{S}_{C_q},\, \mathbb{G}_m),
+  H^2(\mathcal{S}_{C_q},\, \mathbb{G}_m).
 $$
 
-where $\mathcal{S}_{C_q} \subset \mathcal{S}$ is the
-sub-bundle of state-bundle fibers traced by $C_q$-orbits
-under the Reeb flow.  The restriction map
-$\mathrm{res}_{C_q} \colon H^2(\mathcal{S}, \mathbb{G}_m)
-\to H^2(\mathcal{S}_{C_q}, \mathbb{G}_m)$ is the pullback
-along the inclusion $\mathcal{S}_{C_q} \hookrightarrow \mathcal{S}$.
+In a general QU, $\dim HH^2(\mathrm{Ad}) \geq 1$ and
+$\kappa_C$ can be non-trivial.  In a QOU, observability
+forces $HH^2(\mathrm{Ad}) \cong k$
+([QOU obstruction reduction](#thm:qou-obstruction-reduction)),
+so $\kappa_C = c_C \cdot \chi(A)$ for some $c_C \in k$.
 
-**In a QU (no observability):**
-The gauge group $G$ is unconstrained, so
-$\dim HH^2(\mathrm{Ad}) \geq 1$ — the obstruction space
-may be multi-dimensional.  Hidden symmetries
-($HH^0(\mathrm{Ad}) \neq 0$) can generate independent
-obstruction classes, and $\kappa_C$ may be non-trivial
-even when the other evaluations (spectral, collision,
-elliptic) vanish.  Different $C_q$-orbits may encounter
-independent obstructions:
-
-$$
-  \kappa_C \neq 0
-  \quad\Longleftrightarrow\quad
-  \exists\, a \in A \text{ whose } C_q\text{-orbit does not converge.}
-$$
-
-### Evaluation on a QOU: the conjecture
-
-**In a QOU** $(\mathbf{C}, \theta, G, \mathcal{S})$ — where
-observability forces $HH^2(\mathrm{Ad}) \cong k$
-(one-dimensional) — the Collatz obstruction is proportional
-to the unique scalar $\chi(A)$:
-
-$$
-  \kappa_C = c_C \cdot \chi(A)
-  \quad\text{for some}\quad
-  c_C \in k.
-$$
-
-The conjecture is that $c_C = 0$, equivalently:
+**The conjecture.** $c_C = 0$:
 
 $$
   \boxed{\kappa_C = 0
@@ -144,59 +73,14 @@ $$
   H^2(\mathcal{S}_{C_q},\, \mathbb{G}_m).}
 $$
 
-**Equivalently:** for every $q > 1$ in the substrate range and
-every $a \in A$ in the positive cone, the Reeb-clocked
-$q$-Collatz orbit $\{C_q^k(a)\}_{k \geq 0}$ converges to
-the unit $\eta(\mathbf{1})$.
+Equivalently: for every $q > 1$ and every
+$a \in A$ in the positive cone, the Reeb-clocked orbit
+$\{C_q^k(a)\}_{k \geq 0}$ converges to $\eta(\mathbf{1})$.
 
-**Mechanism.** The three QOU axioms conspire:
-
-1. **Torsion avoidance** ($q \notin \mu_\infty$): ensures
-   $[2]_q \neq 0$, so $\mu^{-1}_{[2]_q}$ exists and the
-   even branch is well-defined.
-   The mass gap $\Delta_q = (q - q^{-1})(1 - q^{-1})^2 > 0$
-   ([Gm torsion](#rem:substrate-gm-torsion)) guarantees
-   spectral separation between the two Hecke channels.
-
-2. **Reeb periodicity** ($\xi_q^{\Omega_q} = \mathrm{id}_A$):
-   the Reeb derivation has finite period, so the Hecke
-   eigendecomposition is a finite direct sum.  Each orbit
-   segment of length $\Omega_q$ experiences both the
-   contractive ($e_+$, division by $[2]_q$) and expansive
-   ($e_-$, multiplication by $[3]_q$) branches with
-   Reeb-weighted frequencies.
-
-3. **Observability** (semisimple $G$, faithful $\tau$):
-   the Tannaka--Krein equivalence
-   $\mathbf{C} \simeq \mathrm{Rep}(G)$ forces
-   $A$ to decompose into irreducible $G$-modules.  The
-   Hecke projectors $e_\pm(\xi_q)$ align with the
-   $G$-isotypic decomposition, and the contractive
-   rate $[2]_q^{-1} < 1/2$ (since $[2]_q = q + q^{-1} > 2$
-   for $q > 1$) dominates: averaged over a Reeb period,
-   the orbit contracts by a factor
-   $\lambda_q = [2]_q^{-1} \cdot [3]_q < 1$.
-
-**Contrast with the other four evaluations.**
-The RH, NS, BSD, and P $\neq$ NP obstructions are all
-**non-vanishing** ($c \neq 0$): the classical limit
-obstruction persists and the corresponding problem is
-genuinely hard at $q = 1$.  The Collatz evaluation is
-conjectured to have $c_C = 0$ — the iteration locus
-$\mathcal{S}_{C_q}$ is **contractible** in the state
-bundle, so the restriction map kills the obstruction.
-This would make Collatz the unique evaluation where
-the obstruction vanishes not by Kummer divisibility
-but by geometric triviality of the locus.
-
-### Classical limit
-
-At $q = 1$ the $\mathbb{G}_m$-family specializes:
-$[2]_1 = 2$, $[3]_1 = 3$, the Reeb derivation trivializes
-($\xi_1 = \mathrm{id}$), and the Hecke projectors become
-the classical parity projectors
-$e_\pm((-1)^n) = (1 \pm (-1)^n)/2$.  The categorical
-endomorphism $C_1$ recovers the classical Collatz map:
+**Classical limit.**
+At $q = 1$: $[2]_1 = 2$, $[3]_1 = 3$, $\xi_1 = \mathrm{id}$,
+and $e_\pm((-1)^n) = (1 \pm (-1)^n)/2$.
+The endomorphism $C_1$ recovers the classical Collatz map:
 
 $$
   C_1(n)
@@ -206,130 +90,6 @@ $$
     \end{cases}
 $$
 
-The obstruction $\kappa_C|_{q=1}$ specializes to the classical
-Collatz conjecture.  But $q = 1 \in \mu_1$ is a torsion point:
-the mass gap closes ($\Delta_1 = 0$), the Hecke channels
-degenerate, and the QOU axioms fail.  The classical Collatz
-conjecture is thus the **boundary case** — the $q \to 1$
-shadow of a $q$-deformed statement that admits a categorical
-proof for $q > 1$.
-
-### Information-theoretic content: the fifth evaluation of $\chi(A)$
-
-The Collatz obstruction $\kappa_C$ is a **fifth evaluation**
-of $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$,
-alongside the spectral (RH), collision (NS), elliptic (BSD),
-and computational (P $\neq$ NP) restrictions
-([skein resolution obstruction](#def:skein-resolution-obstruction)).
-All five are obtained by restricting the same class to
-different sub-loci of $\mathcal{S}$:
-
-$$
-  \kappa_0 \;\in\; H^2(\mathcal{S}, \mathbb{G}_m)
-  \;\xrightarrow{\;\mathrm{res}\;}
-  \;\kappa_\bullet \;\in\; H^2(\mathcal{S}_\bullet, \mathbb{G}_m),
-$$
-
-where $\mathcal{S}_\bullet$ is, respectively, the spectral
-locus, collision locus, elliptic fiber, resolution tree, or
-Collatz iteration locus.  The one-dimensionality of $HH^2$
-ensures all five obstructions are proportional to the single
-scalar $\chi(A) = -6$
-([QOU obstruction reduction](#thm:qou-obstruction-reduction)).
-
-**Kummer reduction.**
-The Kummer filtration applies
-([root-of-unity truncation](#prop:root-of-unity-truncation)):
-for the four non-vanishing evaluations ($c \neq 0$),
-
-$$
-  \kappa_\bullet \bmod n = 0
-  \quad\Longleftrightarrow\quad
-  n \mid \chi(A).
-$$
-
-The Collatz evaluation is conjecturally distinguished:
-$c_C = 0$, so $\kappa_C$ vanishes at **all** Kummer levels,
-not just the divisors of $6$.  This reflects the geometric
-contractibility of the iteration locus $\mathcal{S}_{C_q}$
-inside $\mathcal{S}$.
-
-**Entropy of the $q$-Collatz orbit.**
-Each Collatz step generates operational entropy
-$\eta_q = (2q-1)/q^3$
-([operational entropy](#def:operational-entropy)) per Reeb
-circuit.  The total information processed by a $q$-Collatz
-orbit of length $\sigma_q(a)$ is:
-
-$$
-  I_C(a, q)
-  \;=\;
-  \sigma_q(a) \cdot \eta_q
-  \;=\;
-  \sigma_q(a) \cdot \frac{2q-1}{q^3}
-  \quad\text{nats}.
-$$
-
-The convergence conjecture ($\kappa_C = 0$) is equivalent to
-the statement that $I_C(a, q) < \infty$ for all $a$ — every
-orbit processes only finitely many nats before reaching the
-fixed point.  The information rate per Planck time is bounded
-by the bandwidth
-([bandwidth bound](#prop:p-bandwidth-bound)):
-
-$$
-  \frac{I_C(a,q)}{t_P \cdot \sigma_q(a)}
-  \;=\;
-  \frac{\eta_q}{\hbar_q}
-  \;=\;
-  \frac{(2q-1)}{q^2(q-1)}
-  \;\leq\;
-  \mathcal{B}(q).
-$$
-
-The Collatz orbit is information-bounded: each step fits
-within the Planck-scale computation budget, and convergence
-means the total computation is finite.
-
-### Connection to the $q$-zeta function
-
-The stopping-time distribution of $C_q$-orbits is encoded by
-the Dirichlet series
-([local $q$-zeta](#def:local-q-zeta-function)):
-
-$$
-  Z_C(s, q)
-  \;=\;
-  \sum_{a \in A^+} \sigma_q(a)\,\|a\|^{-s},
-$$
-
-where $\sigma_q(a)$ is the number of Reeb circuits until
-convergence.  The Reeb flow bridge
-([bridge](#rem:reeb-flow-bridge)) identifies each
-$C_q$-periodic orbit with a closed Reeb trajectory — a prime
-ideal of the substrate.  If the
-[$q$-Riemann hypothesis](#conj:classical-riemann-hypothesis)
-holds, the stopping times are equidistributed modulo the
-$[2]_q$-adic valuation, and $Z_C(s, q)$ has analytic
-continuation to $\mathrm{Re}(s) > 1/2$ with no zeros on the
-critical line.
-
-### Summary: five evaluations of $\kappa_0$
-
-| Evaluation | Locus $\mathcal{S}_\bullet$ | Coefficient $c$ | Classical shadow |
-|------------|---------------------------|-----------------|-----------------|
-| Spectral | $\mathrm{Spec}(\xi_q) \subset \mathcal{S}$ | $\neq 0$ | Riemann Hypothesis |
-| Collision | $\Sigma \subset \mathcal{S}$ | $\neq 0$ | NS regularity |
-| Elliptic | $\mathcal{E}_q \subset \mathcal{S}$ | $\neq 0$ | Birch--Swinnerton-Dyer |
-| Computational | $\mathcal{R}(L) \subset \mathcal{S}$ | $\neq 0$ | P $\neq$ NP |
-| **Collatz** | $\mathcal{S}_{C_q} \subset \mathcal{S}$ | $= 0$ (conj.) | **Collatz conjecture** |
-
-All five are restrictions of the same Euler class
-$\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$,
-itself the HKR image of $\chi(A) \in HH^2(\mathrm{Ad}) \cong k$.
-The first four have $c \neq 0$: the obstruction persists
-through $q \to 1$ and the corresponding problem is hard.
-The Collatz evaluation is conjectured to have $c_C = 0$:
-the iteration locus is contractible, so the restriction
-kills $\kappa_0$ — convergence holds for all $q > 1$
-and passes to the classical limit.
+Since $q = 1 \in \mu_1$ is a torsion point, the mass gap
+closes ($\Delta_1 = 0$), the QOU axioms fail, and the
+classical Collatz conjecture is the $q \to 1$ boundary case.

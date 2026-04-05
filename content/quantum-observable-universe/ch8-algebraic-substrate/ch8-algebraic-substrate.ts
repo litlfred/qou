@@ -87,6 +87,7 @@ export default chapter({
         "macroscopic-stability-equivalence",
         "q-birch-swinnerton-dyer",
         "q-collatz-conjecture",
+        "q-collatz-interpretation",
       ],
     }),
   ],
