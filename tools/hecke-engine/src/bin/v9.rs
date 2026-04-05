@@ -427,8 +427,45 @@ impl SymPauliAcc {
         self.net_by_len[word_len] = self.net_by_len[word_len].add(coeff);
     }
 
+    fn compute_tr_markov_poly(&self) -> (LPoly, usize) {
+        // tr_M = Σ_ℓ net_by_len[ℓ] / (t + t⁻¹)^ℓ
+        // Cleared form: tr_M_cleared = Σ_ℓ net_by_len[ℓ] × (t + t⁻¹)^{L-ℓ}
+        // where L = max word length
+        // Then tr_M = tr_M_cleared / (t + t⁻¹)^L
+        //
+        // (t + t⁻¹) as Laurent poly: T^1 + T^{-1}
+        // (t + t⁻¹)^k computed by repeated multiplication
+
+        let max_len = self.net_by_len.len().saturating_sub(1);
+
+        // Precompute (t + t⁻¹)^k for k = 0..max_len
+        let t_plus_tinv = {
+            let mut p = LPoly::zero();
+            p.terms.insert(1, BigInt::one());   // t^1
+            p.terms.insert(-1, BigInt::one());  // t^{-1}
+            p
+        };
+
+        let mut powers = vec![LPoly::one()]; // (t+t⁻¹)^0 = 1
+        for _ in 1..=max_len {
+            let prev = powers.last().unwrap();
+            powers.push(prev.mul(&t_plus_tinv));
+        }
+
+        // tr_M_cleared = Σ_ℓ net_by_len[ℓ] × (t+t⁻¹)^{max_len - ℓ}
+        let mut cleared = LPoly::zero();
+        for (ell, poly) in self.net_by_len.iter().enumerate() {
+            if poly.is_zero() { continue; }
+            let power_idx = max_len - ell;
+            if power_idx < powers.len() {
+                cleared = cleared.add(&poly.mul(&powers[power_idx]));
+            }
+        }
+
+        (cleared, max_len)
+    }
+
     fn compute_tr_markov_f64(&self, t0: f64, pn_count: u32) -> f64 {
-        // tr_M = Σ_ℓ net_by_len[ℓ] × z^ℓ  where z = 1/(t0 + 1/t0)
         let z = 1.0 / (t0 + 1.0/t0);
         let denom = 2.0_f64.powi(pn_count as i32);
         let mut tr_m = 0.0;
@@ -789,6 +826,9 @@ fn main() {
         total.compute_tr_markov_mpfr(t0_val, elem.pn_count, prec).to_f64()
     };
     println!("  tr_M(q₀)   = {:.10e}  (Markov trace of full NF)", tr_m_val);
+    let (tr_m_cleared, tr_m_L) = total.compute_tr_markov_poly();
+    println!("  tr_M_cleared: {} terms, denom=(t+t⁻¹)^{}", tr_m_cleared.terms.len(), tr_m_L);
+    println!("  tr_M(t) = tr_M_cleared(t) / (t+t⁻¹)^{} / 2^{}", tr_m_L, elem.pn_count);
 
     // Print jet bundle decomposition
     eprintln!("\n  Jet bundle (net by word length):");
@@ -845,6 +885,14 @@ fn main() {
         tr_alt_f64: if tr_alt_val.is_finite() { Some(tr_alt_val) } else { None },
         net_f64: if net_val.is_finite() { Some(net_val) } else { None },
         tr_markov_f64: if tr_m_val.is_finite() { Some(tr_m_val) } else { None },
+        tr_markov_cleared: {
+            let (cleared, _) = total.compute_tr_markov_poly();
+            SparsePoly::from_btree(&cleared.terms)
+        },
+        tr_markov_denom_power: {
+            let (_, l) = total.compute_tr_markov_poly();
+            l
+        },
         strands: Vec::new(), // TODO: collect during build
         total_words: elem.n_terms(),
         max_coeff_log10: mc,

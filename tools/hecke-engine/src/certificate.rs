@@ -84,7 +84,9 @@ pub struct WitnessCertificate {
     pub f_pauli_f64: Option<f64>,
     pub tr_alt_f64: Option<f64>,
     pub net_f64: Option<f64>,
-    pub tr_markov_f64: Option<f64>,  // Markov trace of full NF at q₀
+    pub tr_markov_f64: Option<f64>,        // Markov trace of full NF at q₀
+    pub tr_markov_cleared: SparsePoly,     // tr_M × (t+t⁻¹)^L — symbolic in t
+    pub tr_markov_denom_power: usize,      // L: divide by (t+t⁻¹)^L to get tr_M
 
     // Per-strand build metadata
     pub strands: Vec<StrandInfo>,
