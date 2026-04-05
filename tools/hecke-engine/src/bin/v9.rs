@@ -552,10 +552,14 @@ impl Eng {
         let mut elem = Elem::identity();
         let mut accum = SymPauliAcc::zero();
         let t0 = Instant::now();
-        let strip_after = if a > 9 { 8 } else { 999 };
+        // For A ≤ 12: NO mid-construction stripping — build full raw NF,
+        // then strip once at the end. This gives the correct A-term basis.
+        // For A > 12: eager stripping keeps memory bounded, but the final
+        // strip may leave extra words (orphaned by early prefix removal).
+        let no_mid_strip = a <= 12;
+        let strip_after = if no_mid_strip { 999 } else if a > 9 { 8 } else { 999 };
         let mut total_mid_strips: u64 = 0;
-        // Eager mode: strip after EVERY crossing when threshold = 0
-        let eager = mid_threshold == 0;
+        let eager = !no_mid_strip && mid_threshold == 0;
         let effective_threshold = if eager { usize::MAX } else { mid_threshold };
 
         for k in 1..a {

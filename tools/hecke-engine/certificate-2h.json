@@ -1,0 +1,71 @@
+{
+  "isotope": {
+    "z": 1,
+    "n": 1,
+    "a": 2,
+    "symbol": "H",
+    "name": "2H",
+    "parity": "oo"
+  },
+  "engine": {
+    "name": "hecke-engine",
+    "version": "0.8.0",
+    "commit": "b3a93d5",
+    "binary": "hecke-bigint (v9)"
+  },
+  "tr_alt": {
+    "terms": [
+      [
+        -2,
+        "-1"
+      ],
+      [
+        1,
+        "1"
+      ],
+      [
+        2,
+        "-1"
+      ],
+      [
+        3,
+        "-1"
+      ]
+    ]
+  },
+  "net": {
+    "terms": [
+      [
+        0,
+        "1"
+      ],
+      [
+        1,
+        "1"
+      ],
+      [
+        3,
+        "-1"
+      ],
+      [
+        4,
+        "1"
+      ]
+    ]
+  },
+  "observable": {
+    "terms": []
+  },
+  "coral": {
+    "terms": []
+  },
+  "pn_count": 1,
+  "f_pauli_f64": 1.005000358092843,
+  "tr_alt_f64": -1.063383604863628,
+  "net_f64": 1.0580927621573957,
+  "strands": [],
+  "total_words": 2,
+  "max_coeff_log10": 0.0,
+  "elapsed_seconds": 0.000053183,
+  "computed_at": ""
+}
