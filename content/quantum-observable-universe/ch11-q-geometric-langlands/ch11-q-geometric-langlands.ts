@@ -86,6 +86,7 @@ export default chapter({
       blocks: [
         "q-gl-classical-limit",
         "q-gl-classical-limit-proof",
+        "q-gl-obstruction-classical-compatibility",
         "q-gl-physical-interpretation",
         "q-gl-automorphic-observability",
       ],
