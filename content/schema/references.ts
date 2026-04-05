@@ -1651,6 +1651,35 @@ export const references: CSLData[] = [
     page: "179-206",
     DOI: "10.1007/BF01389745",
   }),
+
+  // ── Frenkel 2007 ────────────────────────────────────────────────
+  ref({
+    id: "frenkel2007",
+    type: "article-journal",
+    title: "Lectures on the Langlands Program and Conformal Field Theory",
+    author: [{ family: "Frenkel", given: "Edward" }],
+    "container-title": "Frontiers in Number Theory, Physics, and Geometry II",
+    issued: { "date-parts": [[2007]] },
+    page: "387-533",
+    DOI: "10.1007/978-3-540-30308-4_11",
+  }),
+
+  // ── Aganagic–Frenkel–Okounkov 2017 ─────────────────────────────
+  ref({
+    id: "aganagic2018",
+    type: "article-journal",
+    title: "Quantum $q$-Langlands Correspondence",
+    author: [
+      { family: "Aganagic", given: "Mina" },
+      { family: "Frenkel", given: "Edward" },
+      { family: "Okounkov", given: "Andrei" },
+    ],
+    "container-title": "Transactions of the Moscow Mathematical Society",
+    issued: { "date-parts": [[2018]] },
+    volume: "79",
+    page: "1-83",
+    DOI: "10.1090/mosc/278",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

@@ -1,0 +1,13 @@
+/-!
+# QOU.QOper
+
+q-Oper: q-flat connection with transverse Borel reduction.
+For SU_{q⁻¹}(2), equivalent to q-Sturm–Liouville operator ∂_q² + t(z).
+
+Co-located sibling for content block `def:q-oper`.
+Full formalization: `QOU/QGeometricLanglands.lean`
+-/
+
+import QOU.QGeometricLanglands
+
+-- Re-export: QOU.QGeometricLanglands.QOper
