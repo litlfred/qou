@@ -198,4 +198,4 @@ The standard complexity hierarchy translates to:
 |-------|---------------------|-------------------|
 | P | $\varnothing$ | $\varnothing$ |
 | BQP $\setminus$ P | $\neq \varnothing$ | $\varnothing$ (quantum cancellation) |
-| NP $\setminus$ BQP | $\neq \varnothing$ | $\neq \varnothing$ (even quantum can't dissolve) |
+| NP $\setminus$ BQP | $\neq \varnothing$ | $\neq \varnothing$ (even quantum cannot dissolve) |

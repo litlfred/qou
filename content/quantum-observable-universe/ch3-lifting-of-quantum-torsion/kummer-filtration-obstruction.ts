@@ -11,12 +11,8 @@ export default remark({
     "obstruction",
     "yekutieli",
     "gm-torsion",
-    "euler-characteristic",
-    "complementary-subgroup",
   ],
   uses: [
     "def:quantum-characteristic-classes",
-    "thm:qu-to-qou",
   ],
-  cites: ["yekutieli2010"],
 });
