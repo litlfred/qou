@@ -24,8 +24,13 @@ export default simulator({
     "rem:building-block-knots",
     "rem:force-knot-identification",
   ],
-  simulator: {
-    type: "html",
-    source: "beta_decay_braid.html",
+  html: "folio-assistant/simulators/beta_decay_braid.html",
+  defaultView: {
+    name: "default",
+    title: "Neutron $\\beta^-$ decay braid insertion",
+    params: {
+      nucleus: "neutron",
+      mode: "braid",
+    },
   },
 });
