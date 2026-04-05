@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-05T00:12:22.394611+00:00",
+  "generated_at": "2026-04-05T02:37:56.355042+00:00",
   "commit_sha": "unknown",
   "entry_count": 67,
   "ambiguity_count": 6,
@@ -167,7 +167,7 @@
       "narrative_term": "{Up quark}",
       "lean_name": "QOU.BringsSurface.UpQuark",
       "kind": "def",
-      "narrative_definition": "The  is an unknot (neutrino) localized in a color tube of the Bring's surface with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [ u ;=; nu ,big|__3,, + qquad _3 ]  The up quark is not a distinct knot type — it is the unknot K_0_1 (hyperref[def:neutrino-knot]neutrino) distinguished by its : threaded through a coral tube (hyperref[def:color-tube-coordinates]color tube coordinates) and Borromean-linked with two other unknots.   Within _3, each component",
+      "narrative_definition": "The  is an unknot (neutrino) localized in a color tube of the Bring's surface with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [ u ;=; nu ,big|__3,, + qquad _3 ]  The up quark is not a distinct knot type — it is the unknot K_0_1 (hyperref[def:neutrino-knot]neutrino) distinguished by its : threaded through a coral tube (hyperref[def:color-tube-coordinates]color tube coordinates) and Borromean-linked with two other unknots.",
       "latex_label": "def:up-quark",
       "chapter": 3
     },
@@ -559,7 +559,7 @@
       "narrative_term": "{Borromean baryon}",
       "lean_name": "QOU.PathIntegrals.BorromeanBaryon",
       "kind": "def",
-      "narrative_definition": "A  is a hadron (hyperref[def:hadron]hadron) whose three constituents are unknots K_0_1 joined by the Borromean link _3, bound by the Hopf link _H.  [ B ;=; _3(K_0_1,, K_0_1,, K_0_1) ;bowtie; _H ]    The Borromean link _3 has three components with the defining property that : removing any one component frees the other two.   item : (S^3 setminus _3) = 7.32772ldots item : 3 (each an unknot) item : 0 (no two are linked) item  (123) = 1 (nontrivial triple linking)     Within _3, the three components",
+      "narrative_definition": "A  is a hadron (hyperref[def:hadron]hadron) whose three constituents are unknots K_0_1 joined by the Borromean link _3, bound by the Hopf link _H.  [ B ;=; _3(K_0_1,, K_0_1,, K_0_1) ;bowtie; _H ]",
       "latex_label": "def:borromean-baryon",
       "chapter": 5
     },
