@@ -1680,6 +1680,38 @@ export const references: CSLData[] = [
     page: "1-83",
     DOI: "10.1090/mosc/278",
   }),
+
+  // ── Denef & Loeser: Motivic Integration ───────────────────────
+  ref({
+    id: "denef2001",
+    type: "article-journal",
+    title: "Geometry on Arc Spaces of Algebraic Varieties",
+    author: [
+      { family: "Denef", given: "Jan" },
+      { family: "Loeser", given: "Fran\u00e7ois" },
+    ],
+    "container-title": "European Congress of Mathematics",
+    issued: { "date-parts": [[2001]] },
+    volume: "I",
+    page: "327-348",
+    DOI: "10.1007/978-3-0348-8268-2_19",
+  }),
+
+  ref({
+    id: "cluckers2008",
+    type: "article-journal",
+    title: "Constructible Motivic Functions and Motivic Integration",
+    author: [
+      { family: "Cluckers", given: "Raf" },
+      { family: "Loeser", given: "Fran\u00e7ois" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[2008]] },
+    volume: "173",
+    issue: "1",
+    page: "23-121",
+    DOI: "10.1007/s00222-008-0114-2",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

@@ -106,6 +106,24 @@ section({
         "penrose-ccc",
       ],
     }),
+    // ── Motivic integration logic ───────────────────────────────────
+    section({
+      title: "Motivic Integration Logic",
+      label: "sec:q-motivic-integration",
+      blocks: [
+        "q-categorical-language",
+        "qo-moduli",
+        "qou-locus",
+        "qou-motivic-measure",
+        "qou-motivic-euler",
+        "qou-existence-probability",
+        "qou-axiom-codimensions",
+        "q-motivic-zeta",
+        "q-motivic-transfer",
+        "logical-existence-categorical",
+      ],
+    }),
+
     section({
       title: "Quantum Geometry Variants",
       label: "sec:info-geometry-variants",
