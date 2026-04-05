@@ -235,6 +235,7 @@ jobs:
       - name: Fetch main and feature branches for diff
         if: env.HEAD_REF != 'main'
         run: |
+          git config --global --add safe.directory "${{ github.workspace }}"
           git fetch origin main
           # If FEATURE_REF differs from HEAD_REF, fetch the feature branch too
           if [ "${{ env.FEATURE_REF }}" != "${{ env.HEAD_REF }}" ]; then
