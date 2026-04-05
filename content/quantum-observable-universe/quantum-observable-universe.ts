@@ -52,6 +52,9 @@ export default paper({
     chapterRef({ dir: "ch5-brings-surface" }),               // Ch 9:  Bring's surface, χ = -6
     chapterRef({ dir: "ch7-observations" }),                 // Ch 10: Physical observations
 
+    // ── q-Geometric Langlands ─────────────────────────────────────
+    chapterRef({ dir: "ch11-q-geometric-langlands" }),  // Ch 11: q-GL
+
     // ── Back matter ──────────────────────────────────────────────
     chapterRef({ dir: "ch8-glossary" }),
     chapterRef({ dir: "appendix-knot-periodic-table" }),
