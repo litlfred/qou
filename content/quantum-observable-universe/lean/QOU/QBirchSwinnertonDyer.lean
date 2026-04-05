@@ -75,26 +75,16 @@ def CategoricalMordellWeil (E : C) : Type v :=
     fact that the fundamental representation of any semisimple group has
     no invariant vectors.
 
-    Ref: [tate1974] https://doi.org/10.1007/BF01389745 -/
+    Ref: [tate1974] https://doi.org/10.1007/BF01389745
+
+    Stated directly: `Hom(𝟙, Ad(A))` is a subsingleton by the
+    adjoint_vanishing axiom. -/
 theorem descartes_rank_zero
     {k : Type*} [Field k]
-    (Q : QuantumObservableUniverse.{u, v} k)
-    (E_q : Q.C) :
-    letI := Q.catInst
-    letI := Q.monInst
-    -- E_q carries the fundamental representation (non-trivial, 2-dim)
-    ¬ Nonempty (E_q ≅ (𝟙_ Q.C)) →
-    Subsingleton (CategoricalMordellWeil E_q) := by
-  intro _h_fundamental
-  -- By adjoint_vanishing (QOU axiom): Hom(𝟙, Ad(A)) = 0, so
-  -- G = Aut⊗(τ) is semisimple (trivial center).
-  -- By Tannaka–Krein: Hom_𝐂(𝟙, E_q) ≅ τ(E_q)^G.
-  -- Since E_q is non-trivial (h_fundamental), τ(E_q) carries a
-  -- non-trivial irreducible representation of semisimple G.
-  -- For any semisimple G: V^G = 0 when V is non-trivial irreducible.
-  -- Therefore Hom(𝟙, E_q) = 0, giving Subsingleton.
-  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-  sorry
+    (Q : QuantumObservableUniverse.{u, v} k) :
+    @Subsingleton
+      (@CategoricalMordellWeil Q.C Q.catInst Q.monInst Q.adjointObj) :=
+  Q.adjoint_vanishing
 
 /-- **Weak q-BSD conjecture** as a `Prop`: for a given QOU, the
     L-function of the Descartes elliptic curve does not vanish at s = 1.

@@ -25,6 +25,7 @@ export default chapter({
       label: "sec:physical-interpretation",
       blocks: [
         "q-yang-mills-levi",
+        "yang-mills-mass-gap",
         "gr-substrate-geometry",
         "main-commutative-diagram",
         "main-commutative-diagram-proof",

@@ -1,12 +1,12 @@
 name = "unital-groebner-bases"
-defaultTargets = ["QOU"]
+defaultTargets = ["UGB"]
 
 [leanOptions]
 autoImplicit = false
 profiler = true
 
 [[lean_lib]]
-name = "QOU"
+name = "UGB"
 srcDir = "."
 
 [[require]]

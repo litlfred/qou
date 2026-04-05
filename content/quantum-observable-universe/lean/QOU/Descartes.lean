@@ -18,6 +18,7 @@ GroundRing          ℤ[q,q⁻¹], [n]_q, ℏ_q
   → BetaDecay        T_{β-decay}, F(τ,N), spectral decomposition
   → AxialCoupling    g_A from 3-fold Borromean color average
   → OrderingIndep    Q_sym is ordering-independent (Young symmetrizer)
+  → MassGapGm        Mass gap over 𝔾_m, torsion obstruction, q-NS bridge
 ```
 -/
 
@@ -29,3 +30,4 @@ import QOU.Descartes.AxialCoupling
 import QOU.Descartes.OrderingIndependence
 import QOU.Descartes.OptimalNF
 import QOU.Descartes.TMCorrespondence
+import QOU.Descartes.MassGapGm

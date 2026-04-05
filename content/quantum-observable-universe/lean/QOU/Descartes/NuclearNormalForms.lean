@@ -14,7 +14,7 @@
     def:stable-nucleus, prop:shell-closure-normal-form
 -/
 
-import Mathlib.RingTheory.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 
 namespace QOU.NuclearNormalForms
 

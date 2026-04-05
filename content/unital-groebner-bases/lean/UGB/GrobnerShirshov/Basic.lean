@@ -33,7 +33,7 @@ choice of algebra (`U_q`, `Dist(G)`, etc.).  Specialisations are in
 -/
 
 
-namespace QOU.GrobnerShirshov
+namespace UGB.GrobnerShirshov
 
 universe u v
 
@@ -304,4 +304,4 @@ theorem reduce_reduces {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     MultiStepReduction ord sys f (reduce ord sys hgs f) :=
   (normal_form_exists ord sys hgs f).choose_spec.reduces
 
-end QOU.GrobnerShirshov
+end UGB.GrobnerShirshov
