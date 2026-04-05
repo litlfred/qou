@@ -110,4 +110,21 @@ theorem reeb_averaged_contraction (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
     have := qInt_two_pos q hq hq1; positivity
   · exact contraction_ratio_lt_one q hq hq1
 
+/-- The contact threshold: `v*(q) = log[3]_q / log[2]_q > 1` for `q > 0, q ≠ 1`.
+    The orbit converges iff the average [2]_q-adic valuation exceeds this. -/
+-- Ref: [collatz1937]
+theorem contact_threshold_gt_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+    Real.log (qInt q 3) / Real.log (qInt q 2) > 1 := by
+  -- [3]_q > [2]_q > 1 for q > 0, q ≠ 1, so log[3] > log[2] > 0
+  sorry
+
+/-- The contact threshold is below 2 for `q > 0, q ≠ 1`:
+    `v*(q) = log[3]_q / log[2]_q < 2`.
+    This is equivalent to `[3]_q < [2]_q²`, i.e., `qInt3_lt_qInt2_sq`. -/
+-- Ref: [lagarias2010] https://doi.org/10.1090/978-0-8218-4940-8
+theorem contact_threshold_lt_two (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+    Real.log (qInt q 3) / Real.log (qInt q 2) < 2 := by
+  -- Equivalent to log[3] < 2*log[2] = log([2]²), i.e., [3] < [2]²
+  sorry
+
 end QOU.Substrate
