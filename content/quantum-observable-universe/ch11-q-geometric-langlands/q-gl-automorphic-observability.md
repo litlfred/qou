@@ -1,4 +1,4 @@
-The [fibre-functor mediation theorem](#thm:q-gl-fiber-functor)
+The [fibre-functor mediation theorem](#conj:q-gl-fiber-functor)
 connects the $q$-Geometric Langlands correspondence to the
 observability axiom of the QOU
 ([quantum observable universe](#def:quantum-observable-universe)).

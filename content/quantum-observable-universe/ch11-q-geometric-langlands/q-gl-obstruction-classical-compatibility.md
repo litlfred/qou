@@ -1,7 +1,7 @@
 The perpetual obstruction
 ([Yekutieli obstruction](#prop:q-gl-obstruction-calc)) and the
 classical limit
-([classical recovery](#prop:q-gl-classical-limit)) are compatible,
+([classical recovery](#conj:q-gl-classical-limit)) are compatible,
 but their coexistence reveals that the $q$-Geometric Langlands
 correspondence is a **singular deformation** of the classical one.
 

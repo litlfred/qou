@@ -6,7 +6,7 @@ export default remark({
   title: "Perpetual obstruction and the classical limit",
   uses: [
     "prop:q-gl-obstruction-calc",
-    "prop:q-gl-classical-limit",
+    "conj:q-gl-classical-limit",
     "conj:q-geometric-langlands",
   ],
   tags: ["geometric-langlands", "classical-limit", "obstruction"],
