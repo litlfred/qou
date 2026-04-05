@@ -60,18 +60,27 @@ Engine: hecke-engine 0.8.0
 - **BigInt engine (v9): DONE** (session 5). `hecke-bigint` binary uses
   num-bigint for arbitrary precision. No i128 overflow. Verified: A=8
   matches v8 exactly (F_Pauli = 0.3677). ~2x slower due to allocation.
+- **Eager stripping: DONE** (session 5). Strip I₈+I₉ after EVERY crossing,
+  not just at strand boundaries. Word count stays bounded at ~2A.
+- **⁶⁰Co (A=60) COMPUTED** (session 5). 967 seconds, 144 surviving words,
+  coefficients ~10^596, 165MB memory. First-ever symbolic Gröbner NF for
+  a medium-heavy nucleus, exact in q.
 - **Performance data (session 5)**:
-  - A=8: 0.8s (v8), 2.3s (v9)
+  - A=8:  0.8s (v8), 2.3s (v9)
   - A=12: 45s (v8, 350MB peak)
-  - A=16: 317s (v8 with mid-strip, 110MB)
-  - A=20: testing (v8/v9 with mid-strip)
-- **Remaining optimizations (not yet implemented)**:
-  - F4-style batched reduction (matrix multiply instead of word-by-word)
-  - F5/signature-based criterion (Generalized Rewritten Criterion for
-    non-commutative quotients — major research area)
-  - Modular arithmetic (compute mod p₁..pₖ, CRT reconstruction)
-  - Iterative quotienting: reuse coral content from A=n for A=n+1
-  - Target: A=60 (⁶⁰Co) — needs F4 or modular arithmetic
+  - A=16: 317s (v8 mid-strip, 110MB), 751s (v9)
+  - A=20: 159s (v9 eager, 1MB, coeff~10^44)
+  - A=40: 94s  (v9 eager, 35MB, coeff~10^249)
+  - A=60: 967s (v9 eager, 165MB, coeff~10^596) ← **⁶⁰Co**
+- **F_Pauli evaluation**: works for A≤40 (f64). For A≥60, coefficients
+  ~10^596 overflow f64 even after 2-adic normalization (v₂=0 for all
+  tested nuclei — coefficients are odd). Needs mpfr (multi-precision
+  float) or Horner evaluation to handle the cancellation.
+- **Remaining optimizations**:
+  - mpfr evaluation for F_Pauli at large A
+  - Recursive/Δ-chain storage format (see docs/witness-architecture.md)
+  - F4/F5 batched reduction (for further speedup, not needed for A≤60)
+  - Modular CRT (alternative to BigInt for very large A)
 
 ### 4. Beta decay Q-value calculations
 - **I₁₀ pairing analysis: DONE** (session 5). Key discoveries:
