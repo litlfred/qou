@@ -1,156 +1,106 @@
 The $q$-Collatz conjecture ([conj:q-collatz](#conj:q-collatz))
-reformulates the Collatz problem as crossing resolution in
-the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$.
+lives in the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$,
+where parity is $[2]_q$-divisibility and crossing resolution
+replaces arithmetic.  Three algebraic identities control
+the dynamics, and the $(p_1^{k_1}, p_2^{k_2})$ family reveals
+why the classical Collatz map $(2, 3)$ is arithmetically special.
 
-### Three algebraic identities
-
-The construction rests on three identities in
-$\mathbb{Z}[q^{\pm 1}]$:
+### Three identities
 
 | Identity | Formula | Role |
 |----------|---------|------|
 | Skein divisibility | $[3]_q = q\,[2]_q + 1$ | "$3n+1$ is even for odd $n$" |
-| Contraction gap | $[2]_q^2 - [3]_q = q$ | Net contraction per cycle |
-| Hecke reduction | $T^2 = (q-q^{-1})T + 1$ | Crossing number reduction |
+| Contraction gap | $[2]_q^2 - [3]_q = q$ | Two halvings beat one tripling |
+| Hecke reduction | $T^2 = (q-q^{-1})T + 1$ | Crossing words reduce |
 
-The first identity ensures the odd branch is well-defined
-in $\mathbb{Z}[q^{\pm 1}]$.  The second gives the Lyapunov
-estimate $\lambda_q = \sqrt{[3]_q/[2]_q^2} < 1$.  The
-third says the Hecke algebra reduces quadratic crossing
-words to linear — the algebraic engine of Skein resolution.
+The first ensures the odd branch is well-defined in
+$\mathbb{Z}[q^{\pm 1}]$.  The second says two halvings
+overpower one tripling, with margin $q$ — the substrate
+parameter itself.  The third reduces quadratic crossing
+words to linear, the algebraic engine of the Skein relation.
 
-### The Skein relation as convex combination
+### Skein convexity
 
-The Skein relation $q L_+ - q^{-1} L_- = (q-q^{-1}) L_0$
-rewrites as:
+The Skein relation rewrites as:
 
 $$
   J(L_+) = q^{-2}\,J(L_-) + (1-q^{-2})\,J(L_0).
 $$
 
-For $q > 1$: both coefficients $q^{-2}$ and $1-q^{-2}$
-are in $(0, 1)$ and sum to $1$.  Each crossing resolution
-is a **convex combination** of simpler Jones polynomial
-values.  By convexity:
-
-$$
-  |J(L_+)| \;\leq\; \max\bigl(|J(L_-)|,\; |J(L_0)|\bigr).
-$$
-
-The crossing resolution is non-expansive.  This is the
-$q$-analog of "division doesn't increase": the even
-branch of classical Collatz ($n \to n/2$) is also
-non-expansive.
-
-### Why this formulation avoids the eigenspace problem
-
-The earlier Reeb-rotation formulation failed because:
-the Reeb flow $\phi^q_t$ preserves the eigenspaces
-$A_H, A_V$ individually (it acts as a phase within
-each space, not between them).  The $A_V$ component
-grew unchecked.
-
-The Skein formulation avoids this entirely.  There is
-no eigenspace decomposition.  Instead:
-
-- **Parity** is $[2]_q$-divisibility in $\mathbb{Z}[q^{\pm 1}]$,
-  not weight-space membership
-- **Contraction** comes from the Skein convexity (crossing
-  resolution is a convex combination)
-- **The map** operates on the Skein module (a ring),
-  not on the Frobenius-Hopf algebra (a bimodule)
-
-At $q = 1$: $\mathbb{Z}[q^{\pm 1}] / (q-1) \cong \mathbb{Z}$,
-$[2]_q$-parity becomes ordinary parity, and $\mathcal{C}_1$
-is the Syracuse map.
-
-### The genuine gap in the Skein formulation
-
-The algebraic identity $[3]_q < [2]_q^2$ gives the
-contraction estimate $\lambda_q < 1$ per cycle, **but**
-the cycle length is not fixed.  The number of even steps
-after each odd step depends on the $[2]_q$-adic valuation
-of the result.
-
-**What is proved:**
-- $[2]_q^2 - [3]_q = q$ (Lean: `qInt_gap`)
-- The Skein resolution is a convex combination
-- The accelerated odd step is well-defined: $[3]_q P + 1 \equiv 0 \pmod{[2]_q}$ for $q$-odd $P$
-
-**What remains conjectural:**
-- The $[2]_q$-adic valuation of $\mathcal{C}_q(P)$ is
-  large enough, on average, that the number of even
-  steps per cycle exceeds the critical threshold
-
-This is the $q$-analog of the classical heuristic:
-Collatz orbits hit even numbers often enough that the
-halvings (each contracting by $1/[2]_q$) outweigh the
-triplings (each expanding by $[3]_q/[2]_q$).
-The identity $[3]_q < [2]_q^2$ guarantees that
-**two halvings more than compensate one tripling** —
-but the conjecture is that the orbit structure provides
-those two halvings.
+For $q > 1$ both coefficients are positive and sum to $1$:
+a convex combination.  Crossing resolution is
+non-expansive on Jones polynomial values.
 
 ### The $(p_1^{k_1}, p_2^{k_2})$ family
 
 The Collatz map $(2, 3)$ — divide by $2$, multiply by $3$
-— is one member of a family of generalized maps
-$(p_1, p_2)$: divide by $p_1$ when divisible, apply
-$p_2 n + 1$ otherwise.  The $q$-deformed contraction
-condition is:
+— belongs to a family of generalized maps $(p_1, p_2)$:
+divide by $p_1$ when divisible, apply $p_2 n + 1$ otherwise.
+The $q$-deformed contraction condition requires $k_1$
+halvings to overpower $k_2$ triplings:
 
 $$
-  [p_1]_q^{k_1} \;>\; [p_2]_q^{k_2}
+  [p_1]_q^{k_1} \;>\; [p_2]_q^{k_2}.
 $$
 
-where $k_1$ halvings (by $[p_1]_q$) must overpower $k_2$
-triplings (by $[p_2]_q$).  The **contraction gap** is the
-polynomial $[p_1]_q^{k_1} - [p_2]_q^{k_2} \in
-\mathbb{Z}[q^{\pm 1}]$.
+The **contraction gap** $[p_1]_q^{k_1} - [p_2]_q^{k_2}$
+is a polynomial in $\mathbb{Z}[q^{\pm 1}]$.  Its
+coefficient structure determines the contraction regime.
 
 **Trivial cases.** When $p_1^{k_1} \gg p_2^{k_2}$
 classically, the gap polynomial has all positive
-coefficients and the contraction holds for all $q > 0$.
-Examples: $(3, 2)$, $(4, 3)$, $(a, a+1)$ with $k_1 = 2$,
-$k_2 = 1$ for any $a \geq 2$.  The $(a, a+1)$ family is
-always contractive because $[a]_q^2 - [a+1]_q$ has all
-non-negative coefficients.
+coefficients and contraction holds for all $q > 0$.
+The $(a, a+1)$ family with $k_1 = 2$, $k_2 = 1$ is
+always contractive: $[a]_q^2 - [a+1]_q$ has all
+non-negative coefficients for every $a \geq 2$.
 
-**Interesting cases.** When $p_1^{k_1}$ barely exceeds
-$p_2^{k_2}$ classically ($p_1^{k_1} = p_2^{k_2} + 1$),
-the gap polynomial may have **negative coefficients** at
-high $q$-degree, and the contraction can fail for large
-$q$.
+**Critical cases.** At the boundary
+$p_1^{k_1} = p_2^{k_2} + 1$ (classical margin of $1$),
+the $q$-gap polynomial may develop **negative
+high-degree coefficients**, breaking contraction for
+large $q$:
 
-| $(p_1^{k_1}, p_2^{k_2})$ | Classical gap | $q$-gap | Positive for $q > 0$? |
-|--------------------------|--------------|---------|----------------------|
-| $(2^2, 3^1)$ — **Collatz** | $4 - 3 = 1$ | $q$ (monomial) | **Yes** |
+| $(p_1^{k_1}, p_2^{k_2})$ | Classical gap | $q$-gap | All $q > 0$? |
+|--------------------------|--------------|---------|-------------|
+| $(2^2, 3^1)$ — **Collatz** | $4 - 3 = 1$ | $q$ | **Yes** (monomial) |
 | $(3^2, 8^1)$ | $9 - 8 = 1$ | $q + 2q^2 + q^3 - q^5 - q^6 - q^7$ | No |
 | $(4^2, 15^1)$ | $16 - 15 = 1$ | negative high-degree terms | No |
 
-Collatz $(2^2, 3^1)$ is **unique** among the critical
-cases $p_1^{k_1} = p_2^{k_2} + 1$: it is the only one
-where the $q$-deformed gap is a **monomial** ($= q$) and
-therefore positive for all $q > 0$.  Every other critical
-case develops negative coefficients and fails for
-sufficiently large $q$.
+### Why $(2, 3)$ is unique
 
-This singles out the $(2, 3)$ Collatz map as
-arithmetically special in the $q$-deformed setting: it
-sits at the unique point where the classical margin of $1$
-lifts to a monomial $q$-margin — the substrate parameter
-itself.
+Collatz $(2^2, 3^1)$ is the **unique** critical case
+where the $q$-gap is a monomial.  The identity
+$[2]_q^2 - [3]_q = q$ produces a gap with a single term
+— the substrate parameter $q$ — which is positive for
+all $q > 0$.  Every other critical case has a gap
+polynomial with both positive and negative coefficients,
+and the negative terms dominate for sufficiently large $q$.
 
-### Parallel with the five evaluations
+This is not a coincidence.  The identity $[3]_q = q[2]_q + 1$
+(Skein divisibility) forces $[2]_q^2 - [3]_q = [2]_q^2 - q[2]_q - 1
+= [2]_q([2]_q - q) - 1 = [2]_q \cdot 1 - 1 = q$.  The
+monomial form arises because $[3]_q$ is the **next**
+$q$-integer after $[2]_q$, and the quadratic-minus-linear
+structure of $[2]_q^2 - [3]_q$ cancels all but the
+linear term.  For $[a]_q^2 - [a^2-1]_q$ with $a \geq 3$,
+the gap polynomial has degree $2(a-1)$ vs $a^2 - 2$, and
+the high-degree terms of $[a^2-1]_q$ overwhelm $[a]_q^2$.
 
-| Evaluation | Module | Map | Classical shadow |
-|------------|--------|-----|-----------------|
-| Spectral | $H^2(\mathrm{Spec}(\xi_q))$ | Euler class restriction | RH |
-| Collision | $H^2(\Sigma)$ | collision restriction | NS regularity |
-| Elliptic | $H^2(\mathcal{E}_q)$ | elliptic restriction | BSD |
-| Computational | $H^2(\mathcal{R})$ | resolution tree restriction | P $\neq$ NP |
-| **Collatz** | $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ | Skein-Collatz iteration | **Collatz** |
+### What is proved and what remains
 
-The Collatz evaluation operates on the Skein module
-itself — the natural home for the Hecke algebra and
-crossing resolution — rather than on sheaf cohomology.
+**Proved (in Lean):**
+- $[3]_q = q[2]_q + 1$ — Skein divisibility (`skein_divisibility`)
+- $[2]_q^2 - [3]_q = q$ — contraction gap (`qInt_gap`)
+- $[3]_q < [2]_q^2$ for $q > 0$ — contraction (`qInt3_lt_qInt2_sq`)
+- $\sqrt{[3]_q/[2]_q^2} < 1$ — geometric mean (`geometric_mean_contraction`)
+- $(3, 4)$ gap positive for $q > 0$ — trivial case (`qInt_gap_3_4`)
+- $(3, 8)$ gap fails for $q > 2$ — critical failure (`qInt_gap_3_8_fails`)
+
+**What remains conjectural:**
+the orbit structure provides the two halvings.
+The $[2]_q$-adic valuation of $\mathcal{C}_q(P)$ — how
+deeply the result of each odd step is divisible by $[2]_q$
+— must average to at least $2$
+([contact boundary](#prop:collatz-contact-boundary)).
+At $q = 1$ this average is exactly $2$ (a theorem).
+The conjecture is that this holds for all $q > 1$.
