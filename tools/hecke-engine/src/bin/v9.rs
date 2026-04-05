@@ -401,21 +401,33 @@ fn crossing_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
 struct SymPauliAcc {
     tr_alt: LPoly,
     net: LPoly,
+    net_by_len: Vec<LPoly>,  // net_by_len[ℓ] = Σ c_w for all words w with |w| = ℓ
 }
 
 impl SymPauliAcc {
-    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero() } }
+    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero(), net_by_len: Vec::new() } }
 
     fn add_term(&mut self, coeff: &LPoly, word_len: usize) {
         self.net = self.net.add(coeff);
         let l = word_len as i64;
         let sign = if l % 2 == 0 { 1i64 } else { -1i64 };
         self.tr_alt = self.tr_alt.add(&coeff.scale_i64(sign).shift(-2 * word_len as i32));
+        // Per-length tracking
+        while self.net_by_len.len() <= word_len {
+            self.net_by_len.push(LPoly::zero());
+        }
+        self.net_by_len[word_len] = self.net_by_len[word_len].add(coeff);
     }
 
     fn merge(&mut self, other: &SymPauliAcc) {
         self.tr_alt = self.tr_alt.add(&other.tr_alt);
         self.net = self.net.add(&other.net);
+        for (i, p) in other.net_by_len.iter().enumerate() {
+            while self.net_by_len.len() <= i {
+                self.net_by_len.push(LPoly::zero());
+            }
+            self.net_by_len[i] = self.net_by_len[i].add(p);
+        }
     }
 
     fn add_from_elem(&mut self, elem: &Elem) {
@@ -735,6 +747,23 @@ fn main() {
     println!("  max coeff ~10^{:.0}", mc);
     println!("  time = {:.1}s", elapsed);
 
+    // Print jet bundle decomposition
+    eprintln!("\n  Jet bundle (net by word length):");
+    let q0_val: f64 = 1.10998;
+    let t0_f64 = q0_val.sqrt();
+    let denom_f64 = 2.0_f64.powi(elem.pn_count as i32);
+    for (k, jet) in total.net_by_len.iter().enumerate() {
+        if jet.is_zero() { continue; }
+        let val = jet.eval_f64(t0_f64);
+        let n_terms = jet.terms.len();
+        if denom_f64.is_finite() && denom_f64 > 0.0 {
+            eprintln!("    J^{}: {} terms, net^({})≈{:+.6e} (÷2^{}={:+.6e})",
+                k, n_terms, k, val, elem.pn_count, val / denom_f64);
+        } else {
+            eprintln!("    J^{}: {} terms, net^({})≈{:+.6e} (denom overflow)", k, n_terms, k, val);
+        }
+    }
+
     // Write certificate JSON
     use hecke_engine::certificate::*;
     let cert = WitnessCertificate {
@@ -752,8 +781,22 @@ fn main() {
         },
         tr_alt: SparsePoly::from_btree(&total.tr_alt.terms),
         net: SparsePoly::from_btree(&total.net.terms),
-        observable: SparsePoly::new(), // TODO: compute
-        coral: SparsePoly::new(),      // TODO: compute
+        observable: {
+            // J⁰ + J¹: identity + single generators
+            let mut obs = LPoly::zero();
+            if total.net_by_len.len() > 0 { obs = obs.add(&total.net_by_len[0]); }
+            if total.net_by_len.len() > 1 { obs = obs.add(&total.net_by_len[1]); }
+            SparsePoly::from_btree(&obs.terms)
+        },
+        coral: {
+            // J≥2: multi-body correlations
+            let mut cor = LPoly::zero();
+            for k in 2..total.net_by_len.len() {
+                cor = cor.add(&total.net_by_len[k]);
+            }
+            SparsePoly::from_btree(&cor.terms)
+        },
+        jets: total.net_by_len.iter().map(|p| SparsePoly::from_btree(&p.terms)).collect(),
         pn_count: elem.pn_count,
         f_pauli_f64: if f.is_finite() { Some(f) } else { None },
         tr_alt_f64: if tr_alt_val.is_finite() { Some(tr_alt_val) } else { None },

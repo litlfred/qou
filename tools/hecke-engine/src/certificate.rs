@@ -74,6 +74,9 @@ pub struct WitnessCertificate {
     pub observable: SparsePoly,
     pub coral: SparsePoly,
 
+    // Jet bundle: net_by_len[ℓ] = Σ c_w for words of length ℓ
+    pub jets: Vec<SparsePoly>,
+
     // Denominator: true value = poly(t) / 2^pn_count
     pub pn_count: u32,
 
