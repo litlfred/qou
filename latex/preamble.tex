@@ -66,12 +66,25 @@
 \newunicodechar{₈}{\textsubscript{8}}
 \newunicodechar{₉}{\textsubscript{9}}
 
+% ── Custom symbols ───────────────────────────────────────────────────────────
+\newcommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
+
 \geometry{margin=1in}
 
 % ── Suppress hyperref math-in-bookmark warnings ─────────────────────────────
 % Math in theorem titles generates "Token not allowed in PDF string" warnings.
 % These are harmless (hyperref strips the math for bookmarks) but noisy.
 \hypersetup{pdfencoding=auto, psdextra}
+\pdfstringdefDisableCommands{%
+  \let\mathbf\relax
+  \let\mathrm\relax
+  \let\mathcal\relax
+  \let\mathfrak\relax
+  \let\mathbb\relax
+  \let\Sigma\relax
+  \let\Delta\relax
+  \let\not\relax
+}
 
 % ── Compact chapter/section formatting (no page breaks, normal-size fonts) ────
 \titleclass{\chapter}{straight}
