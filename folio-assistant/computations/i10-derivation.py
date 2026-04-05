@@ -215,17 +215,17 @@ for z, n, nuc, q_exp in BENCHMARKS:
 
     q_base = q_raw * f
 
-    # I₁₀ correction
+    # I₁₀ correction — ONLY for shell 5+ (deg ≥ 2)
+    # For shells 1-4, the q-weighting already captures pairing correctly.
+    # The I₁₀ correction accounts for the odd-odd pairing deficit that
+    # the F_deg2 shell factor doesn't handle.
     par = parity(z, n)
     par_d = parity(z+1, n-1)
-    if par == "oo" and par_d == "ee":
-        # Odd-odd parent: one unpaired pp crossing out of Z(Z-1)/2,
-        # one unpaired nn crossing out of N(N-1)/2.
-        # The deficit per unpaired crossing is δ_pp and δ_nn.
-        # Fractional correction: (1 - δ_pp/Z) × (1 - δ_nn/N)
+    if deg >= 2 and par == "oo" and par_d == "ee":
+        # Odd-odd parent → even-even daughter at shell 5+
         f_i10 = (1 - delta_pp / z) * (1 - delta_nn / n)
-    elif par == "oA":
-        # One unpaired nucleon: half correction
+    elif deg >= 2 and par == "oA":
+        # Odd-A at shell 5+: one unpaired nucleon
         if z % 2 == 1:  # odd Z
             f_i10 = 1 - delta_pp / (2*z)
         else:  # odd N
