@@ -109,7 +109,11 @@ jobs:
         run: deploy/provision.sh
 
       # ── UPDATE ────────────────────────────────────────────────────
+      # continue-on-error: Hetzner deploy is best-effort.  The static
+      # gh-pages SPA (published by publish.yml) must never be blocked
+      # by a hosted-service failure.
       - name: Update server
+        continue-on-error: true
         if: steps.action.outputs.action == 'update'
         env:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}

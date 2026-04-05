@@ -23,8 +23,8 @@ neutrons ([categorical neutron](#def:categorical-neutron)).
   & \mathfrak{n} \ar[r, no head, "\bowtie"]
   & \mathfrak{n}
 \end{tikzcd}
-\qquad
-\ell_{\mathrm{net}} = \textstyle\binom{1}{2} - \binom{2}{2} = -1
+$\qquad
+\ell_{\mathrm{net}} = \textstyle\binom{1}{2} - \binom{2}{2} = -1$
 ```
 
 Crossing structure:

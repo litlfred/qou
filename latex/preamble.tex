@@ -27,8 +27,76 @@
 \usepackage{tikz-cd}          % Commutative diagrams (tikzcd environment)
 \usepackage[dvipsnames]{xcolor}  % Extended colour names (teal, etc.)
 \usepackage{booktabs}            % Professional table rules (\toprule, \midrule, \bottomrule)
+\usepackage{enumitem}            % Customised list labels (label=, leftmargin=)
+\usepackage{mathrsfs}            % \mathscr script letters
+\usepackage{textcomp}            % \textdegree, \textbullet, etc.
+\usepackage{newunicodechar}      % Map Unicode glyphs to LaTeX commands
+
+% ── Unicode character mappings ───────────────────────────────────────────────
+% Allow Unicode symbols in .md content to pass through pdflatex.
+\newcommand{\unimathsafe}[1]{\ifmmode #1\else $#1$\fi}
+\newunicodechar{✓}{\unimathsafe{\checkmark}}
+\newunicodechar{✗}{\unimathsafe{\times}}
+\newunicodechar{✔}{\unimathsafe{\checkmark}}
+\newunicodechar{★}{\unimathsafe{\bigstar}}
+\newunicodechar{°}{\ifmmode ^{\circ}\else $^{\circ}$\fi}
+\newunicodechar{×}{\unimathsafe{\times}}
+\newunicodechar{←}{\unimathsafe{\leftarrow}}
+\newunicodechar{→}{\unimathsafe{\rightarrow}}
+\newunicodechar{≤}{\unimathsafe{\leq}}
+\newunicodechar{≥}{\unimathsafe{\geq}}
+\newunicodechar{≈}{\unimathsafe{\approx}}
+\newunicodechar{∞}{\unimathsafe{\infty}}
+\newunicodechar{Δ}{\unimathsafe{\Delta}}
+\newunicodechar{β}{\unimathsafe{\beta}}
+\newunicodechar{⊙}{\unimathsafe{\odot}}
+\newunicodechar{●}{\textbullet}
+\newunicodechar{○}{$\circ$}
+\newunicodechar{…}{\ldots}
+\newunicodechar{⚠}{\textbf{!}}
+% Subscript digits (U+2080–U+2089)
+\newunicodechar{₀}{\textsubscript{0}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}
+\newunicodechar{₅}{\textsubscript{5}}
+\newunicodechar{₆}{\textsubscript{6}}
+\newunicodechar{₇}{\textsubscript{7}}
+\newunicodechar{₈}{\textsubscript{8}}
+\newunicodechar{₉}{\textsubscript{9}}
+
+% ── Custom symbols ───────────────────────────────────────────────────────────
+\newcommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
 
 \geometry{margin=1in}
+
+% ── Suppress hyperref math-in-bookmark warnings ─────────────────────────────
+% Math in theorem titles generates "Token not allowed in PDF string" warnings.
+% These are harmless (hyperref strips the math for bookmarks) but noisy.
+\hypersetup{pdfencoding=auto, psdextra}
+\pdfstringdefDisableCommands{%
+  \def\({}%
+  \def\){}%
+  \let\mathbf\relax
+  \let\mathrm\relax
+  \let\mathcal\relax
+  \let\mathfrak\relax
+  \let\mathbb\relax
+  \let\mathscr\relax
+  \let\boldsymbol\relax
+  \let\textstyle\relax
+  \let\Sigma\relax
+  \let\Delta\relax
+  \let\not\relax
+  \let\to\relax
+  \let\bigbowtie\relax
+}
+% Silence the "Token not allowed" warnings entirely — they are
+% informational and produce correct bookmarks regardless.
+\makeatletter
+\renewcommand{\HyPsd@Warning}[1]{}
+\makeatother
 
 % ── Compact chapter/section formatting (no page breaks, normal-size fonts) ────
 \titleclass{\chapter}{straight}
