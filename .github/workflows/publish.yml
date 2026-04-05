@@ -364,12 +364,10 @@ jobs:
           mkdir -p "${PAPER_OUTDIR}"
 
           cp main.pdf                  "${PAPER_OUTDIR}/${FNAME_BASE}.pdf"
-          cp "${FNAME_BASE}.md"        "${PAPER_OUTDIR}/${FNAME_BASE}.md"
 
           # Canonical name copies (so links from folio index work consistently)
           if [ "${FNAME_BASE}" != "${PAPER_DIR}" ]; then
             cp main.pdf "${PAPER_OUTDIR}/${PAPER_DIR}.pdf"
-            cp "${FNAME_BASE}.md" "${PAPER_OUTDIR}/${PAPER_DIR}.md"
           fi
 
           # Include diff PDF for feature-branch builds
@@ -415,7 +413,6 @@ jobs:
             <h1>Quantum Observable Universe</h1>
             <div class="downloads">
               <a href="${FNAME_BASE}.pdf">Download PDF</a>
-              <a href="${FNAME_BASE}.md">View Markdown</a>
             </div>
           </body>
           </html>
@@ -452,7 +449,6 @@ jobs:
             "${PAPER_OUTDIR}/index.html"
             paper.html
             --pdf "${FNAME_BASE}.pdf"
-            --md  "${FNAME_BASE}.md"
           )
           if [ -f "${PAPER_OUTDIR}/visualizer.html" ]; then
             INDEX_ARGS+=(--visualizer "visualizer.html")
@@ -495,7 +491,6 @@ jobs:
 
           # ── Backward compatibility: copy first paper PDF to root ────────────
           cp main.pdf "_site/${FNAME_BASE}.pdf"
-          cp "${FNAME_BASE}.md" "_site/${FNAME_BASE}.md"
 
           # ── Generate folio root index.html ──────────────────────────────────
           FOLIO_ARGS=(
