@@ -18,6 +18,8 @@ use num_bigint::BigInt;
 use num_traits::{Zero, One, Signed};
 use rustc_hash::FxHashMap;
 use std::collections::BTreeMap;
+use rug::Float as MpFloat;
+use rug::ops::Pow;
 use std::time::Instant;
 
 // ════════════════════════════════════════════════════════════════
@@ -209,6 +211,42 @@ impl LPoly {
             r.insert(*exp, v / &divisor);
         }
         LPoly { terms: r }
+    }
+
+    /// Evaluate polynomial at t using mpfr with `prec` bits of precision.
+    /// Returns the result as an MpFloat.
+    fn eval_mpfr(&self, t_f64: f64, prec: u32) -> MpFloat {
+        let t = MpFloat::with_val(prec, t_f64);
+        let mut sum = MpFloat::with_val(prec, 0.0);
+
+        // Precompute powers of t for positive and negative exponents
+        let min_exp = self.terms.keys().min().copied().unwrap_or(0);
+        let max_exp = self.terms.keys().max().copied().unwrap_or(0);
+
+        // t^k for each exponent
+        for (&k, v) in &self.terms {
+            if v.is_zero() { continue; }
+            // Convert BigInt coefficient to MpFloat
+            let c = MpFloat::with_val(prec, MpFloat::parse(v.to_string()).unwrap());
+            // Compute t^k
+            let tk = if k >= 0 {
+                MpFloat::with_val(prec, t.clone().pow(k as u32))
+            } else {
+                let inv_t = MpFloat::with_val(prec, 1.0) / &t;
+                MpFloat::with_val(prec, inv_t.pow((-k) as u32))
+            };
+            sum += c * tk;
+        }
+        sum
+    }
+
+    /// Evaluate |self/other| at t using mpfr. No f64 overflow.
+    fn eval_ratio_mpfr(num: &LPoly, den: &LPoly, t_f64: f64, prec: u32) -> f64 {
+        let n = num.eval_mpfr(t_f64, prec);
+        let d = den.eval_mpfr(t_f64, prec);
+        if d.is_zero() { return f64::NAN; }
+        let ratio = MpFloat::with_val(prec, &n / &d);
+        ratio.to_f64().abs()
     }
 
     fn max_abs_coeff_log10(&self) -> f64 {
@@ -640,15 +678,21 @@ fn main() {
     let (f, tr_alt_val, net_val) = if alt_val.is_finite() && net_val_raw.is_finite() && net_val_raw.abs() > 1e-300 {
         let raw_ratio = (alt_val / net_val_raw).abs();
         let f = raw_ratio * 2.0_f64.powi(denom_diff as i32);
-        // Actual values (with full denominator)
         let ta = alt_val / 2.0_f64.powi(alt_denom_pow as i32);
         let nv = net_val_raw / 2.0_f64.powi(net_denom_pow as i32);
         (f, ta, nv)
     } else {
-        // Still overflows — fall back to BigInt rational eval
-        let f = LPoly::eval_ratio_f64(&alt_norm, &net_norm, t0_val)
-            * 2.0_f64.powi(denom_diff as i32);
-        (f, f64::NAN, f64::NAN)
+        // f64 overflows — use mpfr with enough precision
+        let prec = (mc as u32 + 100) * 4;  // ~4 bits per decimal digit + margin
+        eprintln!("    Using mpfr with {} bits ({:.0} digits) precision", prec, prec as f64 * 0.301);
+        let f = LPoly::eval_ratio_mpfr(&total.tr_alt, &total.net, t0_val, prec);
+        // Also get actual values via mpfr
+        let denom_mp = MpFloat::with_val(prec, 2.0).pow(elem.pn_count as u32);
+        let ta_mp = total.tr_alt.eval_mpfr(t0_val, prec) / &denom_mp;
+        let nv_mp = total.net.eval_mpfr(t0_val, prec) / &denom_mp;
+        let ta = ta_mp.to_f64();
+        let nv = nv_mp.to_f64();
+        (f, ta, nv)
     };
 
     let sym = match z {
