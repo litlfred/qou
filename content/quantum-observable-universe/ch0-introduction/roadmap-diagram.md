@@ -5,28 +5,28 @@
   every label/.append style={font=\scriptsize}
 ]
 %% Main chapter flow (vertical)
-\txt{Ch\,1: QU axioms\\$(\mathbf{C},A,\tau)$}
+\text{Ch\,1: QU axioms\\$(\mathbf{C},A,\tau)$}
   \arrow[d]
 \\
-\txt{Ch\,2: QOU axioms\\observability, measurability,\\volume $\;\Rightarrow\;$ $\mathrm{SU}(2)$ emergence,\\Dirac operator}
+\text{Ch\,2: QOU axioms\\observability, measurability,\\volume $\;\Rightarrow\;$ $\mathrm{SU}(2)$ emergence,\\Dirac operator}
   \arrow[d]
 \\
-\txt{Ch\,3: Lifting obstructions\\Descartes condition $\chi=-6$\\brane tower, mass identity}
+\text{Ch\,3: Lifting obstructions\\Descartes condition $\chi=-6$\\brane tower, mass identity}
   \arrow[d]
 \\
-\txt{Ch\,4: Braids \& knots\\particles as knots,\\topological mass}
+\text{Ch\,4: Braids \& knots\\particles as knots,\\topological mass}
   \arrow[d]
 \\
-\txt{Ch\,5: Models\\Bring's surface $(g{=}4)$,\\Descartes theorem}
+\text{Ch\,5: Models\\Bring's surface $(g{=}4)$,\\Descartes theorem}
   \arrow[d]
 \\
-\txt{Ch\,6: The Descartes Universe\\particle spectrum,\\nuclear physics}
+\text{Ch\,6: The Descartes Universe\\particle spectrum,\\nuclear physics}
   \arrow[d]
 \\
-\txt{Ch\,7: Observations\\single parameter $q$,\\6-sig-fig predictions}
+\text{Ch\,7: Observations\\single parameter $q$,\\6-sig-fig predictions}
   \arrow[d]
 \\
-\txt{Ch\,8: Information theory\\Turing completeness, $E=mc^2$}
+\text{Ch\,8: Information theory\\Turing completeness, $E=mc^2$}
 %% SU(2) running-example thread (dashed)
 \arrow[
   from=1-1, to=2-1,
