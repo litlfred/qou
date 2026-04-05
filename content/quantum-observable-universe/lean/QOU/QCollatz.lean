@@ -208,8 +208,23 @@ theorem qInt_gap_3_4 (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
 -- Ref: [manuscript] Ch 8 §5
 theorem qInt_gap_3_8_fails (q : ℝ) (hq : q > 2) (hq1 : q ≠ 1) :
     qInt q 3 ^ 2 < qInt q 8 := by
-  -- For q > 2: [3]² = (q²+q+1)² < [8] = q⁷+...+1
-  sorry
+  rw [qInt_three q hq1]
+  unfold qInt
+  have hq1' : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
+  have hqp : q > 0 := by linarith
+  field_simp
+  -- Need: (q²+q+1)² · (q-1) < q⁸ - 1
+  -- i.e., (q²+q+1)² · (q-1) < (q-1)(q⁷+q⁶+q⁵+q⁴+q³+q²+q+1)
+  -- Since q > 2 > 1, q-1 > 0, divide both sides:
+  -- (q²+q+1)² < q⁷+q⁶+q⁵+q⁴+q³+q²+q+1
+  -- LHS = q⁴+2q³+3q²+2q+1
+  -- RHS - LHS = q⁷+q⁶+q⁵+q⁴+q³+q²+q+1 - q⁴-2q³-3q²-2q-1
+  --           = q⁷+q⁶+q⁵+q³-2q³-2q² = q⁷+q⁶+q⁵-q³-2q²-q
+  --           = q(q⁶+q⁵+q⁴-q²-2q-1)
+  -- For q > 2: q⁶ > 64 and q²+2q+1 < q⁴, so this is positive.
+  nlinarith [sq_nonneg q, sq_nonneg (q - 1), sq_nonneg (q^2 - 1),
+             sq_nonneg (q^3), sq_nonneg (q^2 - q),
+             mul_pos hqp hqp, mul_pos (mul_pos hqp hqp) hqp]
 
 -- ═══════════════════════════════════════════════════════════════
 -- §6. Contact threshold (supplementary — uses Real.log)
@@ -223,7 +238,13 @@ theorem qInt_gap_3_8_fails (q : ℝ) (hq : q > 2) (hq1 : q ≠ 1) :
 -- Ref: [collatz1937]
 theorem contact_threshold_lt_two (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
     Real.log (qInt q 3) / Real.log (qInt q 2) < 2 := by
-  -- Equivalent to [3] < [2]², which is qInt3_lt_qInt2_sq.
-  sorry
+  -- Strategy: [3] < [2]² and [2] > 1, so log[3] < log([2]²) = 2·log[2]
+  have h2pos : qInt q 2 > 0 := qInt_two_pos q hq hq1
+  have h3pos : qInt q 3 > 0 := qInt_three_pos q hq hq1
+  have h2gt1 : qInt q 2 > 1 := by rw [qInt_two q hq1]; linarith
+  have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1
+  rw [div_lt_iff hlog2pos]
+  rw [← Real.log_pow]
+  exact Real.log_lt_log (le_of_lt h3pos) (by rw [sq]; exact qInt3_lt_qInt2_sq q hq hq1)
 
 end QOU.Substrate
