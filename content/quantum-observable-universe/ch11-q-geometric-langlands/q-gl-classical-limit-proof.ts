@@ -1,7 +1,9 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:q-gl-classical-limit",
-  title: "Proof of classical recovery",
-  uses: ["prop:q-gl-classical-limit"],
+export default remark({
+  interprets: "conj:q-gl-classical-limit",
+  label: "rem:q-gl-classical-limit-sketch",
+  title: "Proof sketch for classical recovery",
+  uses: ["conj:q-gl-classical-limit"],
+  tags: ["geometric-langlands", "proof-sketch"],
 });

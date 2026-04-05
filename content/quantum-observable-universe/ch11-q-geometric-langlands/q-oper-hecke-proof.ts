@@ -1,7 +1,9 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:q-oper-hecke",
-  title: "Proof that $q$-opers are $q$-Hecke eigensheaves",
-  uses: ["prop:q-oper-hecke"],
+export default remark({
+  interprets: "conj:q-oper-hecke",
+  label: "rem:q-oper-hecke-sketch",
+  title: "Proof sketch: $q$-opers produce eigensheaves",
+  uses: ["conj:q-oper-hecke"],
+  tags: ["geometric-langlands", "proof-sketch"],
 });

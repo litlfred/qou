@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-gl-kummer-filtration",
+export default conjecture({
+  label: "conj:q-gl-kummer-filtration",
   lean: { decl: "QOU.q_gl_kummer_filtration", validation: "not_checked" },
   title: "Kummer filtration on $q$-local systems",
   uses: [

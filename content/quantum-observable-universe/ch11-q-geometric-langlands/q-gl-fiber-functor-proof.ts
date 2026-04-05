@@ -1,7 +1,9 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:q-gl-fiber-functor",
-  title: "Proof of fibre-functor mediation",
-  uses: ["thm:q-gl-fiber-functor"],
+export default remark({
+  interprets: "conj:q-gl-fiber-functor",
+  label: "rem:q-gl-fiber-functor-sketch",
+  title: "Proof sketch for fibre-functor mediation",
+  uses: ["conj:q-gl-fiber-functor"],
+  tags: ["geometric-langlands", "proof-sketch"],
 });
