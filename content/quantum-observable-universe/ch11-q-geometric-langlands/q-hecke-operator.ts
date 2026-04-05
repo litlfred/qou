@@ -5,7 +5,7 @@ export default definition({
   lean: { decl: "QOU.QHeckeOperator", validation: "not_checked" },
   title: "$q$-Hecke operator",
   uses: [
-    "def:braid-action-tensor",
+    "prop:braid-action-tensor",
     "def:q-local-system",
   ],
   tags: ["geometric-langlands", "hecke-algebra", "q-deformation"],

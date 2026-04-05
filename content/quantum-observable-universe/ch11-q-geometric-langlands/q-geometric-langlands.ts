@@ -9,6 +9,6 @@ export default conjecture({
     "def:q-langlands-dual",
     "def:q-flat-connection",
   ],
-  cites: ["frenkel2007", "aganagic2017"],
+  cites: ["frenkel2007", "aganagic2018"],
   tags: ["geometric-langlands", "q-deformation", "main-conjecture"],
 });

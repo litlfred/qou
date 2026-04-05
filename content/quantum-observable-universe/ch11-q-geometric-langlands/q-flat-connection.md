@@ -17,7 +17,7 @@ the $d_q^2$ obstruction
 explicitly,
 
 $$
-  \mathcal{F}_q(s) = \nabla_q(\nabla_q(s)) - (q-1)^{-1}\,d_q^2(s)
+  \mathcal{F}_q(s) = (q-1)^{-1}\,\nabla_q(\nabla_q(s))
   \quad \text{for local sections } s \in \Gamma(\mathcal{V}).
 $$
 

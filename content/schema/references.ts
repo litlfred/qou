@@ -1666,7 +1666,7 @@ export const references: CSLData[] = [
 
   // ── Aganagic–Frenkel–Okounkov 2017 ─────────────────────────────
   ref({
-    id: "aganagic2017",
+    id: "aganagic2018",
     type: "article-journal",
     title: "Quantum $q$-Langlands Correspondence",
     author: [

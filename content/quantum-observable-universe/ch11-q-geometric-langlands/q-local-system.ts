@@ -7,6 +7,9 @@ export default definition({
   uses: [
     "def:categorical-q-connection",
     "def:substrate-parameter",
+    "def:q-flat-connection",
+    "prop:categorical-dq-squared",
+    "prop:kummer-filtration-obstruction",
   ],
   tags: ["geometric-langlands", "local-system", "q-deformation"],
 });
