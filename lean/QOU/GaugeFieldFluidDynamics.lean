@@ -34,17 +34,15 @@ theorem qInteger_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
 theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
     q ^ k > q⁻¹ ^ k := by
   have hqpos : q > 0 := by linarith
-  have hinv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hqpos]
+  have hinv : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hqpos
-  have hq_ge : q ^ k ≥ q ^ 1 := by
-    apply pow_le_pow_right (le_of_lt hq) hk
-  have hinv_le : q⁻¹ ^ k ≤ q⁻¹ ^ 1 := by
-    apply pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv_lt) hk
-  simp [pow_one] at hq_ge hinv_le
-  calc q ^ k ≥ q := hq_ge
-    _ > 1 := hq
-    _ > q⁻¹ := hinv_lt
-    _ ≥ q⁻¹ ^ k := by linarith
+  have hinv_le : q⁻¹ ^ k ≤ q⁻¹ := by
+    calc q⁻¹ ^ k ≤ q⁻¹ ^ 1 := pow_le_pow_of_le_one (le_of_lt hinv_pos) (le_of_lt hinv) hk
+      _ = q⁻¹ := pow_one _
+  have hq_ge : q ≤ q ^ k := by
+    calc q = q ^ 1 := (pow_one q).symm
+      _ ≤ q ^ k := by apply pow_right_mono₀ (le_of_lt hq); exact hk
+  linarith
 
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
 theorem qInteger_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
@@ -52,7 +50,7 @@ theorem qInteger_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
   unfold qInteger
   apply div_pos
   · linarith [pow_gt_inv_pow q k hq hk]
-  · have : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos (by linarith : q > 0)]
+  · have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
     linarith
 
 /-- [k]_q² > 0 for k ≥ 1 and q > 1. -/
@@ -77,8 +75,7 @@ theorem quantumPlanckConstant_pos {M : Type*} (sp : SubstrateParameter M)
     (p : M) (hq : sp.field p > 1) :
     quantumPlanckConstant sp p > 0 := by
   unfold quantumPlanckConstant
-  have hpos := sp.field_pos p
-  have hinv : (sp.field p)⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hpos]
+  have hinv : (sp.field p)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
 -- ════════════════════════════════════════════════════════════════
@@ -173,9 +170,9 @@ theorem small_data_decay (eb : EnstrophyBound)
     calc eb.Cq_sq * eb.E₀
         ≤ eb.Cq_sq * (eb.νq ^ 2 / eb.Cq_sq) :=
           mul_le_mul_of_nonneg_left h_small (le_of_lt eb.Cq_sq_pos)
-      _ = eb.νq ^ 2 := by field_simp
+      _ = eb.νq ^ 2 := by field_simp [ne_of_gt eb.Cq_sq_pos]
   have h2 : eb.Cq_sq * eb.E₀ / eb.νq ≤ eb.νq := by
-    rw [div_le_iff eb.νq_pos]; linarith [sq_nonneg eb.νq]
+    rw [div_le_iff₀ eb.νq_pos]; linarith [sq_nonneg eb.νq]
   linarith
 
 /-- Large data: the Gronwall bound Ω₀ · exp(Λ_q · t) is non-negative
@@ -212,7 +209,7 @@ theorem solution_viscosity_pos (sol : CategoricalQNSSolution) :
   unfold CategoricalQNSSolution.viscosity
   have hq := sol.q_gt_one
   have hqpos : sol.q > 0 := by linarith
-  have hinv : sol.q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hqpos]
+  have hinv : sol.q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
 /-- Energy at any time is bounded by initial energy. -/
@@ -240,7 +237,7 @@ noncomputable def AntiParallelDynamics.blowupTime
 theorem blowup_time_pos (dyn : AntiParallelDynamics) :
     dyn.blowupTime > 0 := by
   unfold AntiParallelDynamics.blowupTime
-  exact div_pos (mul_pos Real.pi_pos (by positivity)) dyn.circ_pos
+  exact div_pos (mul_pos Real.pi_pos (pow_pos dyn.d₀_pos 2)) dyn.circ_pos
 
 /-- Separation at time t: d(t)² = d₀² - Γt/π.
     Valid for 0 ≤ t < T*. -/
@@ -252,18 +249,47 @@ noncomputable def AntiParallelDynamics.separation_sq
 theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
     (ht : t < dyn.blowupTime) (ht0 : 0 ≤ t) :
     dyn.separation_sq t > 0 := by
-  unfold AntiParallelDynamics.separation_sq AntiParallelDynamics.blowupTime at *
+  -- separation_sq t = d₀² - Γ*t/π, blowupTime = π*d₀²/Γ
+  -- t < blowupTime means d₀² - Γ*t/π > 0
+  have hd := dyn.d₀_pos
+  have hΓ := dyn.circ_pos
   have hπ := Real.pi_pos
-  rw [div_lt_iff dyn.circ_pos] at ht  -- t < π d₀²/Γ  ⟹  Γt < π d₀²
-  -- Need: d₀² - Γt/π > 0  ⟺  Γt/π < d₀²  ⟺  Γt < π d₀²
-  rw [sub_pos, div_lt_iff hπ]
-  linarith
+  -- separation_sq t is defined as d₀² - Γ*t/π
+  -- We need it > 0, i.e. d₀² > Γ*t/π, i.e. π*d₀² > Γ*t
+  -- From ht: t < π*d₀²/Γ, so Γ*t < π*d₀² (multiply by Γ > 0)
+  -- Therefore d₀² - Γ*t/π > 0.
+  -- Direct approach: use blowupTime - t > 0 and linearity.
+  have hbt := blowup_time_pos dyn
+  have hdiff : dyn.blowupTime - t > 0 := by linarith
+  -- separation_sq t = d₀² - Γ*t/π = (π*d₀² - Γ*t)/π
+  -- blowupTime = π*d₀²/Γ, so π*d₀² = Γ*blowupTime
+  -- separation_sq t = (Γ*blowupTime - Γ*t)/π = Γ*(blowupTime - t)/π
+  -- All factors positive.
+  -- Direct: separation_sq t = d₀² - Γ*t/π.
+  -- We show separation_sq t * π > 0, then conclude separation_sq t > 0.
+  have hd := dyn.d₀_pos
+  suffices hsuff : dyn.separation_sq t * Real.pi > 0 by
+    by_contra h; push_neg at h; nlinarith
+  -- separation_sq t * π = d₀²*π - Γ*t  (by definition + field_simp)
+  have hexpand : dyn.separation_sq t * Real.pi =
+      dyn.d₀ ^ 2 * Real.pi - dyn.circulation * t := by
+    unfold AntiParallelDynamics.separation_sq
+    field_simp
+  rw [hexpand]
+  -- Now show d₀²*π - Γ*t > 0, i.e. Γ*t < d₀²*π
+  unfold AntiParallelDynamics.blowupTime at ht
+  -- ht : t < Real.pi * dyn.d₀ ^ 2 / dyn.circulation
+  nlinarith [mul_lt_mul_of_pos_right ht hΓ,
+             div_mul_cancel₀ (Real.pi * dyn.d₀ ^ 2) (ne_of_gt hΓ)]
 
 /-- d(t)² = 0 at t = T* (collision). -/
 theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
     dyn.separation_sq dyn.blowupTime = 0 := by
   unfold AntiParallelDynamics.separation_sq AntiParallelDynamics.blowupTime
-  field_simp
+  have hcirc : dyn.circulation ≠ 0 := ne_of_gt dyn.circ_pos
+  have hpi : Real.pi ≠ 0 := ne_of_gt Real.pi_pos
+  field_simp [hcirc, hpi]
+  ring
 
 -- ════════════════════════════════════════════════════════════════
 -- §9  Levi form on the normal plane
@@ -271,43 +297,43 @@ theorem separation_zero_at_blowup (dyn : AntiParallelDynamics) :
 
 /-- Levi form eigenvalues on the normal plane of a vortex filament. -/
 structure LeviFormNormalPlane where
-  λ_parallel : ℝ
-  λ_perp : ℝ
-  λ_parallel_pos : λ_parallel > 0
-  λ_perp_pos : λ_perp > 0
+  lam_parallel : ℝ
+  lam_perp : ℝ
+  lam_parallel_pos : lam_parallel > 0
+  lam_perp_pos : lam_perp > 0
 
 /-- Condition number: max(λ_∥/λ_⊥, λ_⊥/λ_∥). -/
 noncomputable def LeviFormNormalPlane.cond (L : LeviFormNormalPlane) : ℝ :=
-  max (L.λ_parallel / L.λ_perp) (L.λ_perp / L.λ_parallel)
+  max (L.lam_parallel / L.lam_perp) (L.lam_perp / L.lam_parallel)
 
 /-- cond ≥ 1 (equality iff isotropic). -/
 theorem levi_cond_ge_one (L : LeviFormNormalPlane) : L.cond ≥ 1 := by
   unfold LeviFormNormalPlane.cond
   apply le_max_iff.mpr
-  by_cases h : L.λ_parallel ≤ L.λ_perp
-  · right; rw [le_div_iff L.λ_parallel_pos]; linarith
-  · left; push_neg at h; rw [le_div_iff L.λ_perp_pos]; linarith
+  by_cases h : L.lam_parallel ≤ L.lam_perp
+  · right; rw [le_div_iff₀ L.lam_parallel_pos]; linarith
+  · left; push_neg at h; rw [le_div_iff₀ L.lam_perp_pos]; linarith
 
 /-- cond = 1 iff λ_∥ = λ_⊥ (isotropic core). -/
 theorem levi_cond_eq_one_iff (L : LeviFormNormalPlane) :
-    L.cond = 1 ↔ L.λ_parallel = L.λ_perp := by
+    L.cond = 1 ↔ L.lam_parallel = L.lam_perp := by
   unfold LeviFormNormalPlane.cond
   constructor
   · intro h
-    have h1 : L.λ_parallel / L.λ_perp ≤ 1 := by
+    have h1 : L.lam_parallel / L.lam_perp ≤ 1 := by
       by_contra hc; push_neg at hc
-      have : max (L.λ_parallel / L.λ_perp) (L.λ_perp / L.λ_parallel) ≥
-             L.λ_parallel / L.λ_perp := le_max_left _ _
+      have : max (L.lam_parallel / L.lam_perp) (L.lam_perp / L.lam_parallel) ≥
+             L.lam_parallel / L.lam_perp := le_max_left _ _
       linarith
-    have h2 : L.λ_perp / L.λ_parallel ≤ 1 := by
+    have h2 : L.lam_perp / L.lam_parallel ≤ 1 := by
       by_contra hc; push_neg at hc
-      have : max (L.λ_parallel / L.λ_perp) (L.λ_perp / L.λ_parallel) ≥
-             L.λ_perp / L.λ_parallel := le_max_right _ _
+      have : max (L.lam_parallel / L.lam_perp) (L.lam_perp / L.lam_parallel) ≥
+             L.lam_perp / L.lam_parallel := le_max_right _ _
       linarith
-    rw [div_le_one L.λ_perp_pos] at h1
-    rw [div_le_one L.λ_parallel_pos] at h2
+    rw [div_le_one L.lam_perp_pos] at h1
+    rw [div_le_one L.lam_parallel_pos] at h2
     linarith
-  · intro h; simp [h, div_self (ne_of_gt L.λ_perp_pos)]
+  · intro h; simp [h, div_self (ne_of_gt L.lam_perp_pos)]
 
 /-- For q > 1, quantum pressure bounds cond by 1 + ℏ_q². -/
 structure QBoundedLeviForm extends LeviFormNormalPlane where
@@ -366,7 +392,7 @@ structure BlowupObstruction where
   dim_consistent : hausdorff_dim + 2 * level ≥ 3
 
 /-- The anti-parallel vortex pair candidate. -/
-def antiParallelVortexBlowup : BlowupObstruction where
+noncomputable def antiParallelVortexBlowup : BlowupObstruction where
   level := 2
   hausdorff_dim := 1
   linking_number := 1
@@ -408,7 +434,7 @@ theorem eigenspace_dim_pos (twice_j : ℕ) : eigenspace_dim twice_j > 0 := by
     Ref: [manuscript] Ch 5 §8 Quantum Peter-Weyl theorem -/
 theorem quantum_peter_weyl_completeness :
     ∀ (twice_j : ℕ), eigenspace_dim twice_j = (twice_j + 1) ^ 2 := by
-  intro twice_j; unfold eigenspace_dim
+  intro twice_j; rfl
 
 -- ════════════════════════════════════════════════════════════════
 -- §12  q-BKM criterion
@@ -440,12 +466,23 @@ structure BoundaryObservability where
   /-- NS-singular: obstruction persists (Kummer non-divisibility). -/
   ns_singular : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ euler_char)
 
+/-- For κ ≥ 4, 2κ does not divide -6.
+    This is the key arithmetic: |2κ| ≥ 8 > 6 = |-6|. -/
+private theorem obstruction_persists' (κ : ℕ) (hκ : κ ≥ 4) :
+    ¬ ((2 * (κ : ℤ)) ∣ (-6 : ℤ)) := by
+  intro ⟨c, hc⟩
+  have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
+  have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
+  have : |(-6 : ℤ)| = |2 * (κ : ℤ) * c| := by rw [hc]
+  simp at this
+  nlinarith [Int.one_le_abs hc_ne]
+
 /-- For χ(A) = -6 (Descartes/Bring), the Euler class is non-torsion
     and the NS obstruction persists at all Kummer levels κ ≥ 4. -/
 def descartes_boundary : BoundaryObservability where
   euler_char := -6
   euler_char_ne_zero := by norm_num
-  ns_singular := fun κ hκ => obstruction_persists κ hκ
+  ns_singular := fun κ hκ => obstruction_persists' κ hκ
 
 /-- **NS obstruction at level n**: the restriction of κ_n to Σ.
     Nonzero iff the QOU is NS-singular at that level.
@@ -467,7 +504,7 @@ structure NSObstructionLevel where
 
 /-- For the anti-parallel pair at level n ≥ 1, the jet
     divergence exponent is positive. -/
-def antiparallel_obstruction (n : ℕ) (hn : n ≥ 1) :
+noncomputable def antiparallel_obstruction (n : ℕ) (hn : n ≥ 1) :
     NSObstructionLevel where
   level := n
   euler_contribution := -6
@@ -502,17 +539,9 @@ theorem obstruction_persists (κ : ℕ) (hκ : κ ≥ 4) :
   intro ⟨c, hc⟩
   have h2κ : (2 * (κ : ℤ)) ≥ 8 := by omega
   have hc_ne : c ≠ 0 := by intro h; simp [h] at hc
-  -- |2κ · c| = |2κ| · |c| ≥ 8 · 1 = 8 > 6 = |-6|
-  have : |2 * (κ : ℤ) * c| = |2 * (κ : ℤ)| * |c| := abs_mul _ _
-  rw [hc] at this
+  have : |(-6 : ℤ)| = |2 * (κ : ℤ) * c| := by rw [hc]
   simp at this
-  have : |c| ≥ 1 := Int.one_le_abs hc_ne
-  have : |2 * (κ : ℤ)| * |c| ≥ 8 := by
-    calc |2 * (κ : ℤ)| * |c| ≥ |2 * (κ : ℤ)| * 1 := by
-          apply mul_le_mul_of_nonneg_left ‹|c| ≥ 1› (abs_nonneg _)
-      _ = |2 * (κ : ℤ)| := by ring
-      _ ≥ 8 := by rwa [abs_of_nonneg (by omega : (2 * (κ : ℤ)) ≥ 0)]
-  omega
+  nlinarith [Int.one_le_abs hc_ne]
 
 /-- Corollary: for all κ ≥ 4, the topological obstruction
     κ₀ mod 2κ ≠ 0 in H²(S, G_m)/2κ.  The obstruction survives
@@ -568,7 +597,7 @@ theorem observability_q_independent (C : Type*)
 
     LaTeX: `\label{thm:ns-singularity-descartes}` -/
 -- Ref: [manuscript] Ch 5 §8 NS-singularity of the Descartes universe
-structure NSSingularityDescartes where
+structure NSSingularityDescartes (C : Type*) where
   /-- Euler characteristic. -/
   chi : ℤ := -6
   /-- χ ≠ 0. -/
@@ -580,13 +609,7 @@ structure NSSingularityDescartes where
   /-- Blowup time is finite. -/
   blowup_finite : vortex.blowupTime > 0 := blowup_time_pos vortex
   /-- Topological obstruction persists. -/
-  kummer_persists : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ chi) :=
-    fun κ hκ => by
-      intro ⟨c, hc⟩
-      have : (2 * (κ : ℤ)) ≥ 8 := by omega
-      have : c ≠ 0 := by intro h; simp [h] at hc
-      have := Int.le_of_dvd (by norm_num : (0 : ℤ) < 6) ⟨-c, by linarith⟩
-      omega
+  kummer_persists : ∀ κ : ℕ, κ ≥ 4 → ¬ ((2 * (κ : ℤ)) ∣ chi)
 
 -- ════════════════════════════════════════════════════════════════
 -- §15  Leray self-similar profile
@@ -621,17 +644,20 @@ theorem fusion_half_half :
 /-- Regularity exponent at the origin: R_j(r) ~ r^{ℓ_j} where
     ℓ_j is the smallest integer with ℓ(ℓ+1) ≥ λ_j.
     For the fundamental mode j = 1/2: ℓ = 1 (linear vanishing). -/
-def regularity_exponent (λ : ℝ) : ℕ :=
-  -- Smallest ℓ with ℓ(ℓ+1) ≥ λ
-  if λ ≤ 0 then 0
-  else if λ ≤ 2 then 1
-  else if λ ≤ 6 then 2
-  else if λ ≤ 12 then 3
+noncomputable def regularity_exponent (lam : ℝ) : ℕ :=
+  -- Smallest ℓ with ℓ(ℓ+1) ≥ lam
+  if lam ≤ 0 then 0
+  else if lam ≤ 2 then 1
+  else if lam ≤ 6 then 2
+  else if lam ≤ 12 then 3
   else 4  -- sufficient for j ≤ 2
 
 /-- For j = 1/2 with [1/2]_q[3/2]_q ≈ 0.83 (at q = 1.110),
     the regularity exponent is 1. -/
 theorem fundamental_regularity : regularity_exponent 0.83 = 1 := by
-  unfold regularity_exponent; simp; norm_num
+  unfold regularity_exponent
+  simp only [show ¬((0.83 : ℝ) ≤ 0) from by norm_num,
+             show (0.83 : ℝ) ≤ 2 from by norm_num,
+             ite_true, ite_false]
 
 end QOU.GaugeFieldFluidDynamics

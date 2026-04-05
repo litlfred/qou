@@ -1,10 +1,6 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
--- NOTE: QOU.GrobnerShirshov has moved to content/unital-groebner-bases/lean/
--- The GS Hecke algebra types are now in the unital-groebner-bases paper.
--- To restore these imports, add unital-groebner-bases as a Lake dependency.
--- import QOU.GrobnerShirshov
--- import QOU.GrobnerShirshov.HeckeGS
+import UGB.GrobnerShirshov.HeckeGS
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
@@ -44,8 +40,7 @@ is defined by the GS normal form, not by the witness.
 namespace QOU.PhotonThreading
 
 open QOU
--- NOTE: QOU.GrobnerShirshov.Hecke namespace moved to unital-groebner-bases
--- open QOU.GrobnerShirshov.Hecke
+open UGB.GrobnerShirshov.Hecke
 
 /-! ## Braid word -/
 
@@ -64,12 +59,6 @@ def BraidWord.crossings (β : BraidWord) : ℕ := β.generators.length
 
 /-! ## Crossing energy defined via GS normal form -/
 
--- NOTE: The following definitions depend on HeckeParams, heckeCost, and
--- augmentedBraidElement from QOU.GrobnerShirshov.Hecke, which has moved
--- to content/unital-groebner-bases/lean/.  They are commented out until
--- the cross-paper Lean dependency is wired up.
-
-/-
 /-- **Crossing energy** of a hadron: the Hecke cost of the augmented
     braid element in the GS framework.
 
@@ -145,7 +134,51 @@ theorem photon_heckeCost_zero (hp : HeckeParams) :
     heckeCost (augmentedBraidElement hp ([] : List ℤ)) =
     heckeCost (augmentedBraidElement hp []) :=
   rfl
--/
+
+/-! ## Non-trivial braid has positive crossing energy -/
+
+/-- A non-trivial braid word has at least one generator. -/
+theorem BraidWord.nontrivial_has_generators (β : BraidWord)
+    (h : β.generators ≠ []) : 0 < β.crossings := by
+  unfold crossings
+  exact List.length_pos.mpr h
+
+/-- **Key lemma**: a non-trivial braid has strictly positive crossing
+    energy when `q > 1` and the Hecke cost of its augmented braid
+    is non-zero.
+
+    The Hecke cost being non-zero for a non-empty braid follows from
+    the GS basis property: the augmented braid element has a unique
+    normal form with at least one non-zero coefficient (since the
+    identity element has cost 0 and the augmented braid of a non-trivial
+    knot is not the identity in H_n(q)).
+
+    We state this as a hypothesis `hcost` — the GS engine (Bokut–Shiao
+    axiom) provides it for any specific braid word. -/
+theorem crossingEnergy_pos_of_nontrivial {M : Type*}
+    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
+    (β : BraidWord) (hq : sp.field p > 1)
+    (hcost : 0 < heckeCost (augmentedBraidElement hp β.generators)) :
+    0 < crossingEnergy sp p hp β := by
+  unfold crossingEnergy
+  apply mul_pos hcost
+  rw [abs_pos]
+  have hq_pos : 0 < sp.field p := by linarith
+  have hq_inv_lt : (sp.field p)⁻¹ < sp.field p := by
+    calc (sp.field p)⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+    _ < sp.field p := hq
+  linarith
+
+/-- Non-trivial braid has positive categorical mass when `q > 1`. -/
+theorem categoricalMass_pos_of_nontrivial {M : Type*}
+    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
+    (β : BraidWord) (hq : sp.field p > 1)
+    (hcost : 0 < heckeCost (augmentedBraidElement hp β.generators)) :
+    0 < categoricalMass sp p hp β := by
+  unfold categoricalMass
+  apply mul_pos
+  · positivity
+  · exact crossingEnergy_pos_of_nontrivial sp p hp β hq hcost
 
 /-! ## Threading witness (for display, not for energy definition) -/
 

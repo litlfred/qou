@@ -8,7 +8,6 @@ import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Combinatorics.Young.YoungDiagram
-import Mathlib.Tactic.Omega
 import Mathlib.Tactic.NormNum
 
 /-!

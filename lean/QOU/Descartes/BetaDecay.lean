@@ -1,7 +1,6 @@
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.TorusKnot
 import Mathlib.RingTheory.Localization.FractionRing
-import Mathlib.Tactic.Omega
 import Mathlib.Data.Nat.GCD.Basic
 
 /-!

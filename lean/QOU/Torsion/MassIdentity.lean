@@ -1,5 +1,4 @@
 import QOU.QuantumObservableUniverse
-import Mathlib.Tactic.Omega
 
 /-!
 # §7  Mass Identity

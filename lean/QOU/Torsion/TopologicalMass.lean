@@ -1,7 +1,6 @@
 import QOU.Torsion.MassIdentity
 import QOU.Torsion.Descent
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Omega
 import Mathlib.Tactic.Linarith
 
 /-!
@@ -99,6 +98,68 @@ theorem mass_single_blowup {M : Type*}
   have : Finset.univ (α := Fin tmd.numBlowups) = {⟨0, by omega⟩} := by
     ext x; simp [huniq x]
   rw [this, Finset.sum_singleton]
+
+/-! ## §11a  Categorical Mass Decomposition
+
+The categorical version of the topological mass decomposition:
+mass = descended trace + Σ transient traces, where the splitting
+comes from the idempotent decomposition of End_C(A_{n+1}) via the
+descent involution.
+
+LaTeX: `\label{thm:topological-mass}` (categorical proof) -/
+
+/-- **Categorical Mass Decomposition** (data).
+
+    The mass of a vortex `ϱ : 𝟙 → A` decomposes into descended
+    and transient contributions via the descent involution `τ̂ₙ`.
+    This is the categorical formulation — it works in any QOU,
+    not just the archimedean realisation. -/
+structure CategoricalMassDecomposition where
+  /-- The descent involution on the endomorphism algebra. -/
+  di : DescentInvolution (ℕ → ℝ)
+  /-- Number of blow-up centres (exceptional divisors). -/
+  numBlowups : ℕ
+  /-- The total categorical mass `𝔪(ϱ)`. -/
+  totalMass : ℝ
+  totalMass_nonneg : 0 ≤ totalMass
+  /-- Descended trace `‖tr_desc(ϱ)‖`: the mass of the base-level
+      cycle ϱ₀, capturing baseline Frobenius–Hopf drag. -/
+  descendedTrace : ℝ
+  descended_nonneg : 0 ≤ descendedTrace
+  /-- Transient trace `‖tr_trans(ϱ, pᵢ)‖` at each blow-up centre. -/
+  transientTrace : Fin numBlowups → ℝ
+  transient_nonneg : ∀ i, 0 ≤ transientTrace i
+  /-- The decomposition: mass = descended + Σ transient. -/
+  decomposition : totalMass = descendedTrace +
+    (Finset.univ.sum fun i => transientTrace i)
+
+/-- The categorical decomposition implies mass ≥ descended trace. -/
+theorem categorical_mass_ge_descended (cmd : CategoricalMassDecomposition) :
+    cmd.descendedTrace ≤ cmd.totalMass := by
+  rw [cmd.decomposition]
+  have h : 0 ≤ Finset.univ.sum cmd.transientTrace :=
+    Finset.sum_nonneg (fun i _ => cmd.transient_nonneg i)
+  linarith
+
+/-- Each transient contribution is bounded by total mass minus descended. -/
+theorem transient_le_mass_minus_descended (cmd : CategoricalMassDecomposition)
+    (i : Fin cmd.numBlowups) :
+    cmd.transientTrace i ≤ cmd.totalMass - cmd.descendedTrace := by
+  rw [cmd.decomposition]
+  have hsum : cmd.transientTrace i ≤ Finset.univ.sum cmd.transientTrace :=
+    Finset.single_le_sum (fun j _ => cmd.transient_nonneg j) (Finset.mem_univ i)
+  linarith
+
+/-- A categorical decomposition with at least one blow-up has
+    strictly positive mass if any transient contribution is positive. -/
+theorem categorical_mass_pos_of_transient (cmd : CategoricalMassDecomposition)
+    (i : Fin cmd.numBlowups) (hi : 0 < cmd.transientTrace i) :
+    0 < cmd.totalMass := by
+  have hd := cmd.descended_nonneg
+  have ht : 0 < Finset.univ.sum cmd.transientTrace :=
+    lt_of_lt_of_le hi
+      (Finset.single_le_sum (fun j _ => cmd.transient_nonneg j) (Finset.mem_univ i))
+  linarith [cmd.decomposition]
 
 /-! ## §12  Dimensional Reduction -/
 
