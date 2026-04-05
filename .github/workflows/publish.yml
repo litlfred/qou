@@ -83,9 +83,9 @@ jobs:
     defaults:
       run:
         shell: bash
-    # No container — install tools inline on ubuntu-latest for reliability.
-    # The latex-ci image is an optional speedup (see build-latex-image.yml)
-    # but publish must work even when it is unavailable.
+    # Runs on bare ubuntu-latest.  If the latex-ci Docker image is
+    # available on GHCR it is used for LaTeX commands (faster, pre-warmed
+    # caches); otherwise tools are installed inline via apt-get.
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -97,6 +97,7 @@ jobs:
       # Priority: explicit input > PR base branch (if not main) > HEAD_REF.
       # This ensures diff is main↔feature-branch, not main↔assistant-branch.
       FEATURE_REF: ${{ inputs.feature_branch || '' }}
+      LATEX_IMAGE: ghcr.io/${{ github.repository }}/latex-ci:latest
 
     steps:
       # ── 0. Checkout ────────────────────────────────────────────────────────
@@ -139,13 +140,41 @@ jobs:
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
           git config --global --add safe.directory "${{ github.workspace }}"
 
-      - name: Install LaTeX toolchain
+      # Try pulling the pre-built latex-ci image.  If it exists, LaTeX
+      # commands run inside Docker (~instant); otherwise we apt-get install
+      # TeX Live on the runner (~2-3 min but always works).
+      - name: Try latex-ci Docker image
+        id: docker-check
+        continue-on-error: true
         run: |
-          echo "Installing TeX Live, pandoc, latexdiff, graphviz..."
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin 2>/dev/null
+          if docker pull "$LATEX_IMAGE" 2>/dev/null; then
+            echo "✓ latex-ci image available — using Docker for LaTeX"
+            # Set DRUN so subsequent steps can prefix commands with it
+            echo "DRUN=docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace $LATEX_IMAGE" >> "$GITHUB_ENV"
+          else
+            echo "latex-ci image not available — will install tools inline"
+            echo "DRUN=" >> "$GITHUB_ENV"
+          fi
+
+      # Always install lightweight host tools (pandoc for HTML, jq, graphviz).
+      # These are needed by steps that can't run inside Docker (Python scripts,
+      # HTML generation, etc.).
+      - name: Install host tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pandoc graphviz jq
+          sudo rm -rf /var/lib/apt/lists/*
+
+      # Full TeX Live — only needed when Docker image is not available.
+      - name: Install LaTeX toolchain (no Docker)
+        if: env.DRUN == ''
+        run: |
+          echo "Installing TeX Live..."
           sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends \
             texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
             texlive-science texlive-extra-utils latexmk biber \
-            pandoc latexdiff graphviz jq \
+            latexdiff \
           && sudo rm -rf /var/lib/apt/lists/*
           echo "latexmk installed: $(latexmk --version | head -1)"
           # Ensure ccicons font is available (may be missing from texlive-fonts-extra)
@@ -315,9 +344,11 @@ jobs:
           cat build-diagnostics.txt
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
+      # $DRUN is set by the Docker check step: either "docker run ... image"
+      # or empty (run directly on host).
       - name: Compile LaTeX to PDF
         run: |
-          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
+          $DRUN latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
             | grep -v '^LaTeX Warning: .*undefined' \
             | grep -v '^pdfTeX warning (ext4): destination with the same identifier' \
             | grep -v '^<to be read again>' \
@@ -347,20 +378,20 @@ jobs:
       # pandoc, latexpand, latexdiff, and graphviz are pre-installed in the CI image.
 
       - name: Flatten \input includes into a single file
-        run: latexpand main.tex > main-flat.tex
+        run: $DRUN latexpand main.tex > main-flat.tex
 
       - name: Convert flattened LaTeX to GitHub-Flavoured Markdown
         env:
           FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
-          pandoc main-flat.tex \
+          $DRUN pandoc main-flat.tex \
             --from=latex \
             --to=gfm+tex_math_dollars \
             --standalone \
             --wrap=none \
             --output="${FNAME_BASE}.md" \
             || { echo "::warning::pandoc gfm+tex_math_dollars failed, retrying without math extension"; \
-                 pandoc main-flat.tex \
+                 $DRUN pandoc main-flat.tex \
                    --from=latex \
                    --to=gfm \
                    --standalone \
@@ -389,7 +420,7 @@ jobs:
         if: env.HEAD_REF != 'main' && steps.generate_diff.outcome == 'success'
         continue-on-error: true
         id: compile_diff
-        run: latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex
+        run: $DRUN latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex
 
       - name: Diff PDF status
         if: env.HEAD_REF != 'main'

@@ -9,6 +9,7 @@ on:
     paths:
       - 'snappea-wasm/**'
       - '.github/workflows/snappea_wasm.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read
