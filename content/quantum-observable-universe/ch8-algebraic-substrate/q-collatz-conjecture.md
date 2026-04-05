@@ -1,190 +1,130 @@
 **Conjecture ($q$-Collatz).**
-Let $(\mathbf{C}, A, \tau)$ be a quantum universe with
-Frobenius--Hopf substrate $A$
-([substrate](#def:frobenius-hopf-substrate)),
-categorical Reeb derivation $\xi_q \colon A \to A$
-([Reeb derivation](#def:categorical-reeb-derivation)),
-$q$-Reeb flow $\phi_t^q \in \mathrm{Aut}(A)$
-([categorical $q$-Reeb flow](#def:categorical-q-reeb-flow)),
-and substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$
-([torsion avoidance](#rem:substrate-gm-torsion)).
+Let $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ be a substrate parameter
+([torsion avoidance](#rem:substrate-gm-torsion)) and let
+$\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ be the Skein module
+of the Reeb bundle $\mathcal{R}_p = (S^3 \to S^2, \xi_q)$
+([Reeb bundle](#def:reeb-bundle)).
 
-### The Reeb-rotated Hecke--Collatz endomorphism
+### $q$-parity in the Skein module
 
-The Hecke--Reeb idempotents
-$e_+(\xi_q), e_-(\xi_q) \colon A \to A$
-project onto the symmetric (weight-$0$) and antisymmetric
-(weight-$1$) eigenspaces of $\xi_q$
-([skein generation](#prop:skein-generation)).
-Define the **single-step Collatz endomorphism**:
+An element $P \in \mathbb{Z}[q^{\pm 1}]$ is **$q$-even** if
+$[2]_q \mid P$ and **$q$-odd** if $[2]_q \mid (P + 1)$.
+At $q = 1$: $[2]_1 = 2$, and these recover integer parity.
+
+### The Skein-Collatz map
+
+Define $\mathcal{C}_q \colon \mathbb{Z}[q^{\pm 1}] \to
+\mathbb{Z}[q^{\pm 1}]$ by:
 
 $$
-  \widetilde{C}_q
+  \mathcal{C}_q(P)
   \;=\;
-  e_+(\xi_q)\,\circ\,\mu^{-1}_{[2]_q}
-  \;+\;
-  e_-(\xi_q)\,\circ\,\mu^{-1}_{[2]_q}
-  \,\circ\,\bigl(\mu_{[3]_q} + \eta\bigr),
+  \begin{cases}
+    P \,/\, [2]_q
+      & P \text{ is } q\text{-even},\\[4pt]
+    \bigl([3]_q\, P + 1\bigr) \,/\, [2]_q
+      & P \text{ is } q\text{-odd}.
+  \end{cases}
 $$
 
-where both branches include division by $[2]_q$ — the
-accelerated form encoding the classical identity that
-$3n+1$ is always even for odd $n$.
-
-The **Reeb-rotated Hecke--Collatz map** is the
-composition of $\widetilde{C}_q$ with one Reeb advance:
+The odd branch is well-defined by the **Skein divisibility
+identity**:
 
 $$
-  C_q \;:=\; \phi^q_{t_P}\,\circ\,\widetilde{C}_q,
+  [3]_q \;=\; q\,[2]_q + 1,
 $$
 
-where $\phi^q_{t_P}$ is the Reeb flow over one Planck
-time $t_P = \hbar_q = (q-1)/q$
-([operations per Planck](#prop:reeb-operations-per-planck)).
-The Reeb advance **rotates the eigendecomposition**:
-after each Collatz step, the element's projection onto
-$A_H \oplus A_V$ is re-evaluated in the rotated frame.
-This models the classical phenomenon that parity changes
-under arithmetic operations.
+which gives $[3]_q\, P + 1 = q\,[2]_q\, P + (P + 1)$.
+Since $P$ is $q$-odd ($[2]_q \mid P + 1$), the numerator
+is divisible by $[2]_q$.  Writing $P + 1 = [2]_q\, Q$:
+
+$$
+  \mathcal{C}_q(P)
+  \;=\; q\,P + Q
+  \;=\; (q^2 + 2)\,Q - q.
+$$
+
+**Classical limit.**  At $q = 1$: $\mathcal{C}_1(n) = n/2$
+(even) or $(3n+1)/2$ (odd) — the Syracuse map.
+
+### Skein-theoretic interpretation
+
+Each application of $\mathcal{C}_q$ corresponds to a
+**crossing resolution** in the Skein module
+([skein generation](#prop:skein-generation)):
+
+- **Even branch** ($P/[2]_q$): Markov destabilization —
+  remove one strand from the braid closure, dividing
+  the Jones polynomial by the Markov parameter.
+  This is the $q$-analog of "halving."
+
+- **Odd branch** ($([3]_q P + 1)/[2]_q$): apply the
+  Hecke relation $T^2 = (q - q^{-1})T + 1$ to reduce
+  a quadratic crossing word to linear, then destabilize.
+  The three generators in $T^3 = [3]_q \cdot T + \cdots$
+  reduce to one via the Hecke relation, then the Markov
+  move removes it.
+
+The Skein relation
+$q\,L_+ - q^{-1}\,L_- = (q - q^{-1})\,L_0$ ensures
+each resolution step is a **convex combination**:
+
+$$
+  J(L_+) = q^{-2}\,J(L_-) + (1 - q^{-2})\,J(L_0).
+$$
+
+For $q > 1$ both coefficients are positive and sum to $1$.
+The crossing resolution is **non-expansive** on the
+Jones polynomial.
 
 ### The contraction estimate
 
-**Algebraic identity.**
-For all $q > 0$:
+The algebraic identity $[2]_q^2 - [3]_q = q$
+gives the contraction.  Over one Collatz cycle
+(one odd step followed by enough even steps to
+exhaust $[2]_q$-divisibility):
+
+- The odd step maps $P \mapsto (q^2+2)Q - q$, where
+  $Q = (P+1)/[2]_q$.  The ratio $|P|/|Q| \approx [2]_q$.
+
+- The subsequent even steps divide by $[2]_q$ as many
+  times as $[2]_q$ divides the result.
+
+The net contraction per full cycle (one odd + $k$ even
+steps) has geometric mean bounded by:
 
 $$
-  [2]_q^2 - [3]_q \;=\; q.
-$$
-
-*Proof.* $[2]_q^2 = (q+1)^2 = q^2 + 2q + 1$ and
-$[3]_q = q^2 + q + 1$; the difference is $q$.  $\square$
-
-**Consequence:** $[3]_q / [2]_q^2 < 1$ for all $q > 0$.
-
-Over one Reeb period $\Omega_q$, an element $a \in A$
-spends a fraction $f_+$ of the time in the symmetric
-eigenspace $A_H$ (where $\widetilde{C}_q$ contracts by
-$1/[2]_q$) and $f_- = 1 - f_+$ in the antisymmetric
-eigenspace $A_V$ (where $\widetilde{C}_q$ has ratio
-$[3]_q/[2]_q$).  The **Reeb-averaged Lyapunov exponent**
-is
-
-$$
-  \log\lambda_q(f_+)
+  \lambda_q
   \;=\;
-  f_+ \log\frac{1}{[2]_q}
-  \;+\;
-  f_- \log\frac{[3]_q}{[2]_q}.
-$$
-
-The orbit contracts ($\lambda_q < 1$) iff
-
-$$
-  f_+ \;>\; f_+^*(q)
-  \;:=\;
-  \frac{\log\bigl([3]_q / [2]_q\bigr)}
-       {\log [3]_q}.
-$$
-
-At equal distribution $f_+ = 1/2$:
-
-$$
-  \lambda_q({\textstyle\frac{1}{2}})
-  \;=\;
-  \sqrt{\frac{[3]_q}{[2]_q^2}}
+  \sqrt{[3]_q \,/\, [2]_q^2}
   \;<\; 1
-  \qquad(\text{by } [3]_q < [2]_q^2).
+  \qquad\bigl(\text{since } [3]_q < [2]_q^2
+  \text{ by gap } = q\bigr).
 $$
-
-Since $f_+^*(q) < 1/2$ for all $q > 0$, equal
-distribution always lies in the contractive regime.
-
-### The Collatz horizon
-
-Define the **Collatz convergent subcategory**
-
-$$
-  A^{\mathrm{conv}}_q
-  \;:=\;
-  \bigl\{\,a \in A \;:\;
-  \langle f_+ \rangle_{\mathrm{Reeb}}(a) > f_+^*(q)
-  \,\bigr\},
-$$
-
-where $\langle f_+ \rangle_{\mathrm{Reeb}}(a)$ is the
-time-averaged fraction that the $C_q$-orbit of $a$
-spends in $A_H$ over a Reeb period.
-
-The **Collatz horizon** is
-
-$$
-  \mathcal{H}_{Col}(q)
-  \;:=\;
-  \overline{A^{\mathrm{conv}}_q}
-  \;\setminus\;
-  A^{\mathrm{conv}}_q
-  \;=\;
-  \bigl\{\,a \in A \;:\;
-  \langle f_+ \rangle_{\mathrm{Reeb}}(a) = f_+^*(q)
-  \,\bigr\}.
-$$
-
-This is the codimension-$1$ locus where the
-Reeb-averaged Lyapunov exponent changes sign — the
-exact analog of the computational boundary
-$\mathcal{H}_c$ in the P $\neq$ NP conjecture
-([P vs NP boundary](#conj:p-vs-np-boundary)).
 
 ### The conjecture
 
-**In a QOU** $(\mathbf{C}, \theta, G, \mathcal{S})$:
-the Collatz obstruction $\kappa_C :=
-\mathrm{res}_{C_q}(\kappa_0)$ satisfies
-
 $$
-  \boxed{\kappa_C = 0
-  \quad\Longleftrightarrow\quad
-  \mathcal{H}_{Col}(q) = \varnothing
-  \quad\text{for all } q > 1.}
-$$
-
-Equivalently: the Reeb flow distributes every element
-$a \in A$ with $\langle f_+ \rangle > f_+^*(q)$, and
-the entire positive cone converges to the fixed point
-$a^* = \eta(\mathbf{1}) / (1 - \lambda_q)$.
-
-### Size boundary
-
-The Collatz horizon (if non-empty) has explicit size:
-
-| Quantity | Formula | At $q = q_0$ |
-|----------|---------|--------------|
-| Critical fraction | $f_+^*(q) = \frac{\log([3]_q/[2]_q)}{\log [3]_q}$ | $0.381$ |
-| Contraction at $f_+ = 1/2$ | $\lambda_q = \sqrt{[3]_q/[2]_q^2}$ | $0.866$ |
-| Gap | $[2]_q^2 - [3]_q = q$ | $1.110$ |
-| Fixed point | $a^* \approx (1/[2]_q)/(1 - \lambda_q)$ | $\approx 3.5$ |
-
-At $q \to 1$: $f_+^* \to \log_3(3/2) \approx 0.369$ and
-$\lambda_q \to \sqrt{3/4} \approx 0.866$.  Since the Reeb
-flow gives $\langle f_+ \rangle = 1/2 > 0.369$, the
-contraction margin is $1/2 - f_+^* \approx 0.131$ — a
-$13\%$ excess beyond the critical threshold.
-
-### Classical limit
-
-At $q = 1$: $[2]_1 = 2$, $[3]_1 = 3$, the Reeb rotation
-degenerates to the parity alternation, and the accelerated
-$\widetilde{C}_1$ recovers the Syracuse map:
-
-$$
-  \widetilde{C}_1(n)
-  = \begin{cases}
-      n/2 & n \text{ even},\\
-      (3n + 1)/2 & n \text{ odd}.
-    \end{cases}
+  \boxed{
+  \text{For all } q > 1 \text{ and all }
+  P \in \mathbb{Z}[q^{\pm 1}]_{>0},\;
+  \text{the orbit }
+  \{\mathcal{C}_q^k(P)\}_{k \geq 0}
+  \text{ reaches } 1.
+  }
 $$
 
-The classical Collatz conjecture is: the horizon
-$\mathcal{H}_{Col}(1) = \varnothing$.  The classical
-heuristic (even steps occur with frequency $\approx 1/2$)
-matches the QOU prediction: $1/2 > f_+^*(1) \approx 0.369$.
+### Connection to the obstruction framework
+
+The Collatz obstruction
+$\kappa_C := \mathrm{res}_{C_q}(\kappa_0) \in
+H^2(\mathcal{S}_{C_q}, \mathbb{G}_m)$
+([classical limit obstruction](#def:classical-limit-obstruction),
+[QOU obstruction reduction](#thm:qou-obstruction-reduction))
+measures the failure of Skein-Collatz orbits to converge.
+
+The conjecture $\kappa_C = 0$ is equivalent to:
+every element of the Skein module
+$\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ reduces
+to the unknot polynomial $1$ under iterated crossing
+resolution via $\mathcal{C}_q$.
