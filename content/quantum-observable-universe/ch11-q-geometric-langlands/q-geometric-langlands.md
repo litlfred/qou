@@ -50,7 +50,7 @@ non-torsion locus of the substrate), satisfying:
    $q \in \mu_n$ the quantum dimension $[n]_q = 0$ vanishes,
    the Frobenius pairing degenerates, and $\mathbb{L}_q$
    degenerates.  The Yekutieli obstruction
-   ([Kummer filtration](#prop:kummer-filtration-obstruction))
+   ([Kummer filtration](#rem:kummer-filtration-obstruction))
    persists at all Kummer levels $n \nmid \chi(A)$.
 
 5. **Classical limit**: as $q \to 1$, $\mathbb{L}_q$ recovers the

@@ -8,7 +8,7 @@ the minimal curvature compatible with the $q$-deformation.
 
 **The HKR identification.**
 The Hochschild--Kostant--Rosenberg comparison
-([Kummer filtration](#prop:kummer-filtration-obstruction))
+([Kummer filtration](#rem:kummer-filtration-obstruction))
 identifies the $q$-curvature $\mathcal{F}_q$ with the Yekutieli
 class $\kappa_0 = e(\xi)$ in
 $H^2(\mathcal{S}, \mathbb{G}_m)$.  The deformation-theoretic
@@ -23,6 +23,6 @@ is the categorical shadow of the non-commutativity of Hecke
 operators at different places: classically Hecke operators at
 distinct points commute, but the $q$-deformation introduces
 $(q-1)$-proportional commutators.  The perpetual obstruction
-([Kummer filtration](#prop:kummer-filtration-obstruction))
+([Kummer filtration](#rem:kummer-filtration-obstruction))
 ensures this non-commutativity persists at cofinitely many
 Kummer levels.

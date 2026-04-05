@@ -16,6 +16,6 @@ The tensor compatibility of the Hecke isomorphisms ensures that the
 assignment $V_\lambda^{(q)} \mapsto V_\lambda^{(q)}(\mathcal{L}_q)_x$
 is a tensor functor, hence defines a point of
 $\mathrm{LocSys}_{\check{G}_q}(X)$.  Rigidity of $\tau$
-([fibre-functor rigidity](#prop:fibre-functor-rigidity)) guarantees
+([fibre-functor rigidity](#rem:fibre-functor-rigidity)) guarantees
 that any two tensor functors with isomorphic fibre data are uniquely
 isomorphic.  $\square$

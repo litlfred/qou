@@ -18,7 +18,7 @@ functor $V_\lambda^{(q)} \mapsto
 data simultaneously.
 
 The rigidity of $\tau$
-([fibre-functor rigidity](#prop:fibre-functor-rigidity)) forces
+([fibre-functor rigidity](#rem:fibre-functor-rigidity)) forces
 $\mathbb{L}_q$ to be unique: any two equivalences compatible with
 the Hecke eigensheaf structure and the fibre functor are connected
 by a unique natural isomorphism.

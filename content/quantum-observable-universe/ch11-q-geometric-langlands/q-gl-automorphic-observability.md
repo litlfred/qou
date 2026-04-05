@@ -12,7 +12,7 @@ automorphic--spectral duality is a consequence of observability.
 Relaxing observability reintroduces adjoint cohomology, and the
 Yekutieli obstruction classes $\kappa_n$ interact with this
 cohomology to produce additional obstructions to the equivalence
-([fibre-functor rigidity](#prop:fibre-functor-rigidity)).
+([fibre-functor rigidity](#rem:fibre-functor-rigidity)).
 
 **Rigidity as uniqueness of the equivalence.**
 The rigidity of $\tau$ ensures that the Langlands equivalence is
@@ -20,7 +20,7 @@ unique: there is exactly one way to match gauge configurations
 with matter content, just as there is exactly one fibre functor
 (up to unique isomorphism) on the representation category.  The
 Kummer filtration on $\kappa_0$
-([Kummer filtration](#prop:kummer-filtration-obstruction))
+([Kummer filtration](#rem:kummer-filtration-obstruction))
 determines the arithmetic locus where $\mathbb{L}_q$ is
 well-defined.
 

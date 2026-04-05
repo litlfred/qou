@@ -13,6 +13,6 @@ $$
 $$
 
 The rigidity of the fibre functor
-([fibre-functor rigidity](#prop:fibre-functor-rigidity)) implies
+([fibre-functor rigidity](#rem:fibre-functor-rigidity)) implies
 that $\mathcal{L}_q$ is determined up to unique isomorphism by the
 collection of Hecke eigenvalues.

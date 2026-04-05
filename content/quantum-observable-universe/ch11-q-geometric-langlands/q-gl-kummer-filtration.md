@@ -1,6 +1,6 @@
 The Kummer tower $\mu_1 \subset \mu_2 \subset \cdots \subset
 \mu_\infty \subset \mathbb{G}_m$
-([Kummer filtration](#prop:kummer-filtration-obstruction))
+([Kummer filtration](#rem:kummer-filtration-obstruction))
 induces a descending filtration on the moduli of $q$-local
 systems.  For each $n \geq 1$, define the **level-$n$
 sublocus**:

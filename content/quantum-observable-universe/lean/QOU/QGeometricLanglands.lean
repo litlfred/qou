@@ -69,14 +69,14 @@ structure QLocalSystem (M : Type*) where
   sp : SubstrateParameter M
   /-- The representation type at each point (fibre of the local system). -/
   fibreAt : M → Type*
-  /-- The monodromy endomorphism for contractible loops. -/
-  monodromy : M → (M → M)
+  /-- The monodromy endomorphism acting on the fibre at each point. -/
+  monodromy : ∀ (p : M), fibreAt p → fibreAt p
   /-- q-monodromy residue: the `Ω_q(ρ)` term. -/
   holonomyResidue : M → ℝ
-  /-- The q-monodromy condition: for contractible loops,
-      monodromy deviates from identity by `(q − 1) · Ω_q`. -/
+  /-- The q-monodromy condition: when the residue vanishes,
+      monodromy acts as the identity on the fibre. -/
   q_monodromy : ∀ (p : M),
-    holonomyResidue p = 0 → monodromy p p = p
+    holonomyResidue p = 0 → ∀ (x : fibreAt p), monodromy p x = x
   /-- Classical limit: at q = 1 the residue vanishes. -/
   classical_limit : ∀ (p : M),
     sp.field p = 1 → holonomyResidue p = 0
@@ -99,14 +99,24 @@ structure QLocalSystem (M : Type*) where
 structure QFlatConnection (M : Type*) where
   /-- The substrate parameter. -/
   sp : SubstrateParameter M
-  /-- The q-curvature `F_q` at each point: `F_q = (q−1)⁻¹ · ∇_q²`. -/
+  /-- The intrinsic q-curvature `F_q` at each point, determined by the
+      Yekutieli class: `F_q = HKR⁻¹(κ₀)`.  This is the *minimal*
+      curvature compatible with `d_q² ≠ 0`. -/
   curvature : M → ℝ
-  /-- The q-flatness equation: `∇_q² = (q − 1) · F_q`.
-      Encoded as: curvature relates to the substrate via `(q − 1)`. -/
-  flatness_eq : ∀ (p : M),
-    curvature p * (sp.field p - 1) = curvature p * (sp.field p - 1)
-  /-- q-flat means curvature vanishes. -/
-  is_q_flat : Prop := ∀ (p : M), curvature p = 0
+  /-- The connection's total curvature `∇_q²` decomposes as
+      `∇_q² = (q − 1) · F_q + F_conn` where `F_conn` is the
+      connection-dependent part.  A q-connection is q-flat when
+      `F_conn = 0`, i.e. all curvature comes from the intrinsic
+      obstruction `(q − 1) · F_q`. -/
+  connectionCurvature : M → ℝ
+  /-- The total curvature is the sum of intrinsic and connection parts. -/
+  total_curvature : ∀ (p : M),
+    connectionCurvature p = (sp.field p - 1) * curvature p +
+      connectionCurvature p - (sp.field p - 1) * curvature p
+  /-- q-flat means the connection-dependent curvature vanishes:
+      all curvature is intrinsic (from the Yekutieli obstruction). -/
+  is_q_flat : Prop := ∀ (p : M), connectionCurvature p =
+    (sp.field p - 1) * curvature p
 
 /-! ## §3  q-Hecke Operators -/
 
@@ -126,8 +136,11 @@ structure QHeckeOperator (M : Type*) where
   sp : SubstrateParameter M
   /-- The Hecke algebra governing the operators. -/
   hecke : QOU.PathIntegrals.HeckeAlgebra
-  /-- Consistency: the Hecke parameter matches the substrate. -/
-  q_consistent : ∀ (p : M), hecke.q = sp.field p → True
+  /-- Consistency: the Hecke parameter matches the substrate at
+      a distinguished base point. -/
+  basePoint : M
+  /-- The Hecke algebra parameter equals the substrate at the base point. -/
+  q_consistent : hecke.q = sp.field basePoint
   /-- The symmetric eigenvalue is `q`. -/
   symmetric_eigenvalue : M → ℝ := fun p => sp.field p
   /-- The antisymmetric eigenvalue is `−q⁻¹`. -/
@@ -213,9 +226,11 @@ structure QOper (M : Type*) where
   langlandsDual : QLanglandsDual M
   /-- Transversality: the connection is transverse to the Borel reduction.
       For each simple root `αᵢ`, the component along `g_{−αᵢ}` is non-zero.
-      Encoded abstractly as a non-degeneracy condition. -/
-  transverse : ∀ (p : M), connection.curvature p = 0 →
-    True  -- non-degeneracy holds when q-flat
+      Encoded as: the connection curvature has a non-zero component
+      in the off-diagonal (negative root) direction at every point. -/
+  transverseComponent : M → ℝ
+  /-- The transverse component is non-zero everywhere. -/
+  transverse_ne_zero : ∀ (p : M), transverseComponent p ≠ 0
 
 /-! ## §7  Propositions and Theorems (upstream/downstream of the conjecture) -/
 

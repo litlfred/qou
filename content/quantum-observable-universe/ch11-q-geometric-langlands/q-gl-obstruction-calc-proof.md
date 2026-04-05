@@ -7,7 +7,7 @@ Hochschild--Kostant--Rosenberg comparison identifies with
 $HH^2(\mathcal{U}_q, \mathrm{Ad})$.  The image under
 $\mathrm{HKR}$ is the gerbe-theoretic Yekutieli class
 $\kappa_0 = e(\xi)$
-([Kummer filtration](#prop:kummer-filtration-obstruction)).
+([Kummer filtration](#rem:kummer-filtration-obstruction)).
 
 **Item (2).**
 If $\kappa_0 = 0$ in $H^2(\mathcal{S}, \mathbb{G}_m)$, then
@@ -20,7 +20,7 @@ The Kummer exact sequence
 $1 \to \mu_n \to \mathbb{G}_m \xrightarrow{(\cdot)^n}
 \mathbb{G}_m \to 1$
 gives the reduction $\kappa_0 \bmod n$.  By
-[Kummer filtration](#prop:kummer-filtration-obstruction),
+[Kummer filtration](#rem:kummer-filtration-obstruction),
 $\kappa_0 \bmod n = 0$ iff $n \mid \chi(A)$, since
 $\mathrm{tr}(\kappa_0) = \chi(A)$.  The brane tower lift from
 level $n$ to $n+1$ requires

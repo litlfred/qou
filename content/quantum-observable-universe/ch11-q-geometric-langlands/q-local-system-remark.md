@@ -14,7 +14,7 @@ The Kummer filtration provides a finer invariant.  The Yekutieli
 class $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
 has Kummer reduction $\kappa_0 \bmod n = 0$ precisely when
 $n \mid \chi(A)$
-([Kummer filtration](#prop:kummer-filtration-obstruction)).
+([Kummer filtration](#rem:kummer-filtration-obstruction)).
 At such levels the $q$-monodromy becomes $n$-divisible,
 producing a sublocus of $\mathrm{LocSys}_{G_q}(X)$ with
 enhanced lifting properties.  At levels $n \nmid \chi(A)$ the

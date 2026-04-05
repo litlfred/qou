@@ -16,7 +16,7 @@ are central to the present chapter:
    ([quantum characteristic classes](#def:quantum-characteristic-classes))
    control the lifting of Frobenius--Hopf objects through the
    brane tower, and their Kummer filtration
-   ([Kummer filtration](#prop:kummer-filtration-obstruction))
+   ([Kummer filtration](#rem:kummer-filtration-obstruction))
    determines the arithmetic locus where $q$-flatness holds.
 
 These structures assemble into a $q$-deformed Geometric Langlands
@@ -26,12 +26,12 @@ spectral side consists of quasi-coherent sheaves on the moduli
 of $q$-local systems for the Langlands dual $\check{G}_q$.  The
 fibre functor $\tau$, whose rigidity is guaranteed by the
 observability axiom
-([fibre-functor rigidity](#prop:fibre-functor-rigidity)),
+([fibre-functor rigidity](#rem:fibre-functor-rigidity)),
 mediates the equivalence via Tannaka--Krein reconstruction.
 
 The $q$-Geometric Langlands equivalence is a $\mathbb{G}_m$-family
 of functors, well-defined on the non-torsion locus
 $\mathbb{G}_m^{\mathrm{nt}}$ and degenerating at roots of unity
 where $[n]_q = 0$.  The perpetual obstruction phenomenon
-([Kummer filtration](#prop:kummer-filtration-obstruction))
+([Kummer filtration](#rem:kummer-filtration-obstruction))
 forces the correspondence to be intrinsically non-torsion.

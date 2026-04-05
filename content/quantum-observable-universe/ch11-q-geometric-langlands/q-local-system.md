@@ -30,7 +30,7 @@ $q \neq 1$ the non-vanishing of $d_q^2$
 ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared))
 obstructs trivial monodromy.  The Kummer reduction of the Yekutieli
 class $\kappa_0$ at level $n$
-([Kummer filtration](#prop:kummer-filtration-obstruction))
+([Kummer filtration](#rem:kummer-filtration-obstruction))
 controls which $q$-local systems admit lifts through the brane tower:
 $\mathcal{L}_q$ lifts from level $n$ to $n+1$ iff
 $\kappa_0 \bmod n = 0$, equivalently $n \mid \chi(A)$.

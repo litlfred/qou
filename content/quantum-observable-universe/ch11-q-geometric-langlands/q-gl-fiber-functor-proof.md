@@ -1,7 +1,7 @@
 The proof proceeds in three steps.
 
 **Step 1: Tannakian reconstruction of $\check{G}_q$.**
-By [fibre-functor rigidity](#prop:fibre-functor-rigidity), the
+By [fibre-functor rigidity](#rem:fibre-functor-rigidity), the
 fibre functor
 $\tau \colon \mathbf{Rep}(G_q) \to \mathrm{Vect}$ is unique up to
 unique isomorphism.  Tannaka--Krein reconstruction gives
