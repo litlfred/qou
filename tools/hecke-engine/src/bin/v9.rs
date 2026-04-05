@@ -375,6 +375,9 @@ impl Eng {
         let t0 = Instant::now();
         let strip_after = if a > 9 { 8 } else { 999 };
         let mut total_mid_strips: u64 = 0;
+        // Eager mode: strip after EVERY crossing when threshold = 0
+        let eager = mid_threshold == 0;
+        let effective_threshold = if eager { usize::MAX } else { mid_threshold };
 
         for k in 1..a {
             for i in 0..k {
@@ -383,15 +386,21 @@ impl Eng {
                 let (c, d, dbl) = crossing_sym(types[i], types[k]);
                 Self::multiply_and_reduce(&mut elem, i as u8, &c, &d, dbl, &ha);
 
-                if mid_threshold > 0 && elem.n_terms() > mid_threshold {
+                // Strip condition: eager (always) or threshold exceeded
+                let should_strip = (eager && k >= strip_after)
+                    || elem.n_terms() > effective_threshold;
+
+                if should_strip {
                     let n_pre = elem.n_terms();
                     let removed = Self::strip_with_pauli(&mut elem.terms);
                     accum.merge(&removed);
                     total_mid_strips += 1;
                     let ms = tc.elapsed().as_millis();
-                    eprintln!("    ({},{}) {}-{}: {} → {} → {} words (mid-strip), {}ms",
-                        i, k, types[i] as char, types[k] as char,
-                        n_before, n_pre, elem.n_terms(), ms);
+                    if ms > 50 || n_pre > 1000 {
+                        eprintln!("    ({},{}) {}-{}: {} → {} → {} words (strip), {}ms",
+                            i, k, types[i] as char, types[k] as char,
+                            n_before, n_pre, elem.n_terms(), ms);
+                    }
                 } else {
                     let ms = tc.elapsed().as_millis();
                     if ms > 100 || elem.n_terms() > 5000 {
@@ -406,11 +415,12 @@ impl Eng {
             let mb = elem.mem_bytes() as f64 / 1_048_576.0;
             let elapsed = t0.elapsed().as_secs_f64();
 
+            // Always strip at strand boundary for A > 9
             if (k + 1) > strip_after {
                 let n_pre = elem.n_terms();
                 let removed = Self::strip_with_pauli(&mut elem.terms);
                 accum.merge(&removed);
-                eprintln!("  strand {}/{}: {} → {} words (stripped), coeff~10^{:.0}, {:.0}MB, {:.1}s [{}ms]",
+                eprintln!("  strand {}/{}: {} → {} words, coeff~10^{:.0}, {:.0}MB, {:.1}s [{}s]",
                     k, a - 1, n_pre, elem.n_terms(), mc, mb, elapsed, total_mid_strips);
             } else {
                 eprintln!("  strand {}/{}: {} words, coeff~10^{:.0}, {:.0}MB, {:.1}s",
@@ -426,17 +436,23 @@ fn main() {
     if args.len() < 3 {
         eprintln!("hecke-bigint (v9) — BigInt symbolic Pauli witness, exact in q");
         eprintln!("Usage: hecke-bigint Z N [mid_strip_threshold]");
-        eprintln!("  e.g. hecke-bigint 27 33 10000   (⁶⁰Co)");
+        eprintln!("  Z N: nucleus (e.g. 27 33 for ⁶⁰Co)");
+        eprintln!("  mid_strip_threshold: 0 = eager (strip after EVERY crossing)");
+        eprintln!("                       N = strip when words > N (default: 50000)");
+        eprintln!("  Eager mode recommended for A > 20.");
         std::process::exit(1);
     }
 
     let z: usize = args[1].parse().unwrap();
     let n: usize = args[2].parse().unwrap();
-    let mid_threshold: usize = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(50000);
+    let mid_threshold: usize = args.get(3).and_then(|s| s.parse().ok())
+        .unwrap_or(if z + n > 20 { 0 } else { 50000 });
     let a = z + n;
 
     eprintln!("hecke-bigint v9 — BigInt symbolic engine");
-    eprintln!("  A={} (Z={}, N={}), mid-strip threshold: {}", a, z, n, mid_threshold);
+    eprintln!("  A={} (Z={}, N={}), mid-strip: {}",
+        a, z, n, if mid_threshold == 0 { "EAGER (every crossing)".to_string() }
+                 else { format!("threshold {}", mid_threshold) });
     eprintln!("  No i128 overflow — arbitrary precision coefficients");
 
     let t0 = Instant::now();
