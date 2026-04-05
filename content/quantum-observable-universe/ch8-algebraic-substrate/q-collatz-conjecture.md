@@ -81,26 +81,41 @@ discrete substrate iterations
 
 ### The obstruction in a quantum universe
 
-In a general QU $(\mathbf{C}, A, \tau)$ without the
-observability axiom, define the **Collatz obstruction class**:
+The $q$-Collatz convergence problem fits into the paper's
+universal obstruction framework
+([classical limit obstruction](#def:classical-limit-obstruction),
+[QOU obstruction reduction](#thm:qou-obstruction-reduction)).
+The universal obstruction class
+$\chi(A) \in HH^2(\mathcal{U}_q, \mathrm{Ad}) \cong k$ maps
+via the HKR comparison to
+$\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$.
+The Collatz obstruction is the **restriction** of this class
+to the Collatz iteration locus:
 
 $$
-  \kappa_C \;\in\; H^1\bigl(\mathbb{G}_m^{\mathrm{nt}},\,
-  \mathcal{E}\!nd(A)^\times\bigr)
+  \kappa_C
+  \;:=\;
+  \mathrm{res}_{C_q}\!\bigl(\kappa_0\bigr)
+  \;\in\;
+  H^2(\mathcal{S}_{C_q},\, \mathbb{G}_m),
 $$
 
-as the cohomology class measuring the failure of $C_q$-orbits
-to converge uniformly over the base $\mathbb{G}_m^{\mathrm{nt}}$.
-Concretely, $\kappa_C$ is the obstruction to constructing a
-global section $\sigma \colon \mathbb{G}_m^{\mathrm{nt}} \to A$
-satisfying $C_q(\sigma(q)) = \sigma(q)$ for all $q$ — i.e.,
-a universal fixed point of the Collatz family.
+where $\mathcal{S}_{C_q} \subset \mathcal{S}$ is the
+sub-bundle of state-bundle fibers traced by $C_q$-orbits
+under the Reeb flow.  The restriction map
+$\mathrm{res}_{C_q} \colon H^2(\mathcal{S}, \mathbb{G}_m)
+\to H^2(\mathcal{S}_{C_q}, \mathbb{G}_m)$ is the pullback
+along the inclusion $\mathcal{S}_{C_q} \hookrightarrow \mathcal{S}$.
 
 **In a QU (no observability):**
-The gauge group $G$ is unconstrained, so the Hecke projectors
-$e_\pm(\xi_q)$ need not respect the Frobenius pairing.  The
-Reeb eigenspaces may overlap with kernel directions of $\mu$,
-and $\kappa_C$ can be non-trivial:
+The gauge group $G$ is unconstrained, so
+$\dim HH^2(\mathrm{Ad}) \geq 1$ — the obstruction space
+may be multi-dimensional.  Hidden symmetries
+($HH^0(\mathrm{Ad}) \neq 0$) can generate independent
+obstruction classes, and $\kappa_C$ may be non-trivial
+even when the other evaluations (spectral, collision,
+elliptic) vanish.  Different $C_q$-orbits may encounter
+independent obstructions:
 
 $$
   \kappa_C \neq 0
@@ -108,25 +123,25 @@ $$
   \exists\, a \in A \text{ whose } C_q\text{-orbit does not converge.}
 $$
 
-The obstruction is valued in the Kummer filtration
-([root-of-unity truncation](#prop:root-of-unity-truncation)):
-at each torsion level $\mu_n \subset \mathbb{G}_m$, the
-specialization $\kappa_C|_{\mu_n}$ measures the $n$-periodic
-obstructions to convergence.
-
 ### Evaluation on a QOU: the conjecture
 
 **In a QOU** $(\mathbf{C}, \theta, G, \mathcal{S})$ — where
-the observability axiom, the Tannaka--Krein reconstruction
-([TK isomorphism](#thm:tannaka-krein-isomorphism)), and
-torsion avoidance ($q \in \mathbb{G}_m^{\mathrm{nt}}$) all
-hold — the obstruction vanishes:
+observability forces $HH^2(\mathrm{Ad}) \cong k$
+(one-dimensional) — the Collatz obstruction is proportional
+to the unique scalar $\chi(A)$:
+
+$$
+  \kappa_C = c_C \cdot \chi(A)
+  \quad\text{for some}\quad
+  c_C \in k.
+$$
+
+The conjecture is that $c_C = 0$, equivalently:
 
 $$
   \boxed{\kappa_C = 0
   \quad\text{in}\quad
-  H^1\bigl(\mathbb{G}_m^{\mathrm{nt}},\,
-  \mathcal{E}\!nd(A)^\times\bigr).}
+  H^2(\mathcal{S}_{C_q},\, \mathbb{G}_m).}
 $$
 
 **Equivalently:** for every $q > 1$ in the substrate range and
@@ -162,6 +177,18 @@ the unit $\eta(\mathbf{1})$.
    the orbit contracts by a factor
    $\lambda_q = [2]_q^{-1} \cdot [3]_q < 1$.
 
+**Contrast with the other four evaluations.**
+The RH, NS, BSD, and P $\neq$ NP obstructions are all
+**non-vanishing** ($c \neq 0$): the classical limit
+obstruction persists and the corresponding problem is
+genuinely hard at $q = 1$.  The Collatz evaluation is
+conjectured to have $c_C = 0$ — the iteration locus
+$\mathcal{S}_{C_q}$ is **contractible** in the state
+bundle, so the restriction map kills the obstruction.
+This would make Collatz the unique evaluation where
+the obstruction vanishes not by Kummer divisibility
+but by geometric triviality of the locus.
+
 ### Classical limit
 
 At $q = 1$ the $\mathbb{G}_m$-family specializes:
@@ -190,42 +217,42 @@ proof for $q > 1$.
 ### Information-theoretic content: the fifth evaluation of $\chi(A)$
 
 The Collatz obstruction $\kappa_C$ is a **fifth evaluation**
-of the universal obstruction class $\chi(A) \in HH^2 \cong k$,
+of $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$,
 alongside the spectral (RH), collision (NS), elliptic (BSD),
 and computational (P $\neq$ NP) restrictions
 ([skein resolution obstruction](#def:skein-resolution-obstruction)).
-Define the **Collatz restriction map**:
+All five are obtained by restricting the same class to
+different sub-loci of $\mathcal{S}$:
 
 $$
-  \mathrm{res}_C \colon HH^2(\mathrm{Ad})
-  \;\longrightarrow\;
-  H^1\bigl(\mathbb{G}_m^{\mathrm{nt}},\,
-  \mathcal{E}\!nd(A)^\times\bigr),
-  \qquad
-  \chi(A) \;\longmapsto\; \kappa_C.
+  \kappa_0 \;\in\; H^2(\mathcal{S}, \mathbb{G}_m)
+  \;\xrightarrow{\;\mathrm{res}\;}
+  \;\kappa_\bullet \;\in\; H^2(\mathcal{S}_\bullet, \mathbb{G}_m),
 $$
 
-Since $HH^2(\mathrm{Ad})$ is one-dimensional, the Collatz
-obstruction is proportional to all four other evaluations:
-the single integer $\chi(A) = -6$ controls whether Collatz
-orbits converge, just as it controls whether the Riemann
-zeros align, the NS solutions remain regular, the BSD rank
-vanishes, and the skein tree resists polynomial pruning.
+where $\mathcal{S}_\bullet$ is, respectively, the spectral
+locus, collision locus, elliptic fiber, resolution tree, or
+Collatz iteration locus.  The one-dimensionality of $HH^2$
+ensures all five obstructions are proportional to the single
+scalar $\chi(A) = -6$
+([QOU obstruction reduction](#thm:qou-obstruction-reduction)).
 
 **Kummer reduction.**
 The Kummer filtration applies
 ([root-of-unity truncation](#prop:root-of-unity-truncation)):
+for the four non-vanishing evaluations ($c \neq 0$),
 
 $$
-  \kappa_C \bmod n = 0
+  \kappa_\bullet \bmod n = 0
   \quad\Longleftrightarrow\quad
   n \mid \chi(A).
 $$
 
-At torsion levels $n \mid 6$, the Collatz obstruction vanishes
-and orbits converge modulo $n$.  At levels $n \nmid 6$, the
-obstruction persists — there exist $n$-periodic Collatz cycles
-modulo these torsion points.
+The Collatz evaluation is conjecturally distinguished:
+$c_C = 0$, so $\kappa_C$ vanishes at **all** Kummer levels,
+not just the divisors of $6$.  This reflects the geometric
+contractibility of the iteration locus $\mathcal{S}_{C_q}$
+inside $\mathcal{S}$.
 
 **Entropy of the $q$-Collatz orbit.**
 Each Collatz step generates operational entropy
@@ -287,18 +314,22 @@ $[2]_q$-adic valuation, and $Z_C(s, q)$ has analytic
 continuation to $\mathrm{Re}(s) > 1/2$ with no zeros on the
 critical line.
 
-### Summary: five evaluations of $\chi(A)$
+### Summary: five evaluations of $\kappa_0$
 
-| Evaluation | Obstruction | Domain | Classical shadow |
-|------------|------------|--------|-----------------|
-| Spectral | $\kappa_\zeta$ | $H^1(\mathbb{G}_m, \mathcal{O}^\times)$ | Riemann Hypothesis |
-| Collision | $\kappa_{\mathrm{NS}}$ | $H^2(\mathcal{S}, \mathcal{B})$ | NS regularity |
-| Elliptic | $\kappa_{\mathrm{BSD}}$ | $H^1(\mathcal{E}_q, \mathbb{G}_m)$ | Birch--Swinnerton-Dyer |
-| Computational | $\kappa_c^{\mathrm{comp}}$ | $H^2(\mathcal{R}, \mathbb{G}_m)$ | P $\neq$ NP |
-| **Collatz** | $\kappa_C$ | $H^1(\mathbb{G}_m^{\mathrm{nt}}, \mathcal{E}\!nd(A)^\times)$ | **Collatz conjecture** |
+| Evaluation | Locus $\mathcal{S}_\bullet$ | Coefficient $c$ | Classical shadow |
+|------------|---------------------------|-----------------|-----------------|
+| Spectral | $\mathrm{Spec}(\xi_q) \subset \mathcal{S}$ | $\neq 0$ | Riemann Hypothesis |
+| Collision | $\Sigma \subset \mathcal{S}$ | $\neq 0$ | NS regularity |
+| Elliptic | $\mathcal{E}_q \subset \mathcal{S}$ | $\neq 0$ | Birch--Swinnerton-Dyer |
+| Computational | $\mathcal{R}(L) \subset \mathcal{S}$ | $\neq 0$ | P $\neq$ NP |
+| **Collatz** | $\mathcal{S}_{C_q} \subset \mathcal{S}$ | $= 0$ (conj.) | **Collatz conjecture** |
 
-All five are images of the single class
-$\chi(A) \in HH^2(\mathrm{Ad}) \cong k$ under restriction
-maps to different cohomological targets.  In a QOU with
-$\chi(A) = -6$, the Kummer filtration determines which
-torsion levels obstruct each problem.
+All five are restrictions of the same Euler class
+$\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$,
+itself the HKR image of $\chi(A) \in HH^2(\mathrm{Ad}) \cong k$.
+The first four have $c \neq 0$: the obstruction persists
+through $q \to 1$ and the corresponding problem is hard.
+The Collatz evaluation is conjectured to have $c_C = 0$:
+the iteration locus is contractible, so the restriction
+kills $\kappa_0$ — convergence holds for all $q > 1$
+and passes to the classical limit.
