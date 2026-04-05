@@ -34,21 +34,22 @@
 
 % ── Unicode character mappings ───────────────────────────────────────────────
 % Allow Unicode symbols in .md content to pass through pdflatex.
-\newunicodechar{✓}{$\checkmark$}
-\newunicodechar{✗}{$\times$}
-\newunicodechar{✔}{$\checkmark$}
-\newunicodechar{★}{$\bigstar$}
-\newunicodechar{°}{$^{\circ}$}
-\newunicodechar{×}{$\times$}
-\newunicodechar{←}{$\leftarrow$}
-\newunicodechar{→}{$\rightarrow$}
-\newunicodechar{≤}{$\leq$}
-\newunicodechar{≥}{$\geq$}
-\newunicodechar{≈}{$\approx$}
-\newunicodechar{∞}{$\infty$}
-\newunicodechar{Δ}{$\Delta$}
-\newunicodechar{β}{$\beta$}
-\newunicodechar{⊙}{$\odot$}
+\newcommand{\unimathsafe}[1]{\ifmmode #1\else $#1$\fi}
+\newunicodechar{✓}{\unimathsafe{\checkmark}}
+\newunicodechar{✗}{\unimathsafe{\times}}
+\newunicodechar{✔}{\unimathsafe{\checkmark}}
+\newunicodechar{★}{\unimathsafe{\bigstar}}
+\newunicodechar{°}{\ifmmode ^{\circ}\else $^{\circ}$\fi}
+\newunicodechar{×}{\unimathsafe{\times}}
+\newunicodechar{←}{\unimathsafe{\leftarrow}}
+\newunicodechar{→}{\unimathsafe{\rightarrow}}
+\newunicodechar{≤}{\unimathsafe{\leq}}
+\newunicodechar{≥}{\unimathsafe{\geq}}
+\newunicodechar{≈}{\unimathsafe{\approx}}
+\newunicodechar{∞}{\unimathsafe{\infty}}
+\newunicodechar{Δ}{\unimathsafe{\Delta}}
+\newunicodechar{β}{\unimathsafe{\beta}}
+\newunicodechar{⊙}{\unimathsafe{\odot}}
 \newunicodechar{●}{\textbullet}
 \newunicodechar{○}{$\circ$}
 \newunicodechar{…}{\ldots}
