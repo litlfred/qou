@@ -86,6 +86,7 @@ export default chapter({
         "classical-riemann-hypothesis",
         "macroscopic-stability-equivalence",
         "q-birch-swinnerton-dyer",
+        "q-collatz-conjecture",
       ],
     }),
   ],
