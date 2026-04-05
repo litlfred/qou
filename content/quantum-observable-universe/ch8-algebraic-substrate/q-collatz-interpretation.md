@@ -91,6 +91,56 @@ The identity $[3]_q < [2]_q^2$ guarantees that
 but the conjecture is that the orbit structure provides
 those two halvings.
 
+### The $(p_1^{k_1}, p_2^{k_2})$ family
+
+The Collatz map $(2, 3)$ — divide by $2$, multiply by $3$
+— is one member of a family of generalized maps
+$(p_1, p_2)$: divide by $p_1$ when divisible, apply
+$p_2 n + 1$ otherwise.  The $q$-deformed contraction
+condition is:
+
+$$
+  [p_1]_q^{k_1} \;>\; [p_2]_q^{k_2}
+$$
+
+where $k_1$ halvings (by $[p_1]_q$) must overpower $k_2$
+triplings (by $[p_2]_q$).  The **contraction gap** is the
+polynomial $[p_1]_q^{k_1} - [p_2]_q^{k_2} \in
+\mathbb{Z}[q^{\pm 1}]$.
+
+**Trivial cases.** When $p_1^{k_1} \gg p_2^{k_2}$
+classically, the gap polynomial has all positive
+coefficients and the contraction holds for all $q > 0$.
+Examples: $(3, 2)$, $(4, 3)$, $(a, a+1)$ with $k_1 = 2$,
+$k_2 = 1$ for any $a \geq 2$.  The $(a, a+1)$ family is
+always contractive because $[a]_q^2 - [a+1]_q$ has all
+non-negative coefficients.
+
+**Interesting cases.** When $p_1^{k_1}$ barely exceeds
+$p_2^{k_2}$ classically ($p_1^{k_1} = p_2^{k_2} + 1$),
+the gap polynomial may have **negative coefficients** at
+high $q$-degree, and the contraction can fail for large
+$q$.
+
+| $(p_1^{k_1}, p_2^{k_2})$ | Classical gap | $q$-gap | Positive for $q > 0$? |
+|--------------------------|--------------|---------|----------------------|
+| $(2^2, 3^1)$ — **Collatz** | $4 - 3 = 1$ | $q$ (monomial) | **Yes** |
+| $(3^2, 8^1)$ | $9 - 8 = 1$ | $q + 2q^2 + q^3 - q^5 - q^6 - q^7$ | No |
+| $(4^2, 15^1)$ | $16 - 15 = 1$ | negative high-degree terms | No |
+
+Collatz $(2^2, 3^1)$ is **unique** among the critical
+cases $p_1^{k_1} = p_2^{k_2} + 1$: it is the only one
+where the $q$-deformed gap is a **monomial** ($= q$) and
+therefore positive for all $q > 0$.  Every other critical
+case develops negative coefficients and fails for
+sufficiently large $q$.
+
+This singles out the $(2, 3)$ Collatz map as
+arithmetically special in the $q$-deformed setting: it
+sits at the unique point where the classical margin of $1$
+lifts to a monomial $q$-margin — the substrate parameter
+itself.
+
 ### Parallel with the five evaluations
 
 | Evaluation | Module | Map | Classical shadow |
