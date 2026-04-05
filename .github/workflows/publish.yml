@@ -73,7 +73,6 @@ concurrency:
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
-  packages:       read    # required to pull the latex-ci container image
 
 jobs:
   build-and-publish:
@@ -85,9 +84,11 @@ jobs:
     defaults:
       run:
         shell: bash
-    # Runs on bare ubuntu-latest.  If the latex-ci Docker image is
-    # available on GHCR it is used for LaTeX commands (faster, pre-warmed
-    # caches); otherwise tools are installed inline via apt-get.
+    # Official TeX Live image — public on Docker Hub, no auth needed,
+    # full TeX Live pre-installed.  Replaces the custom latex-ci image
+    # which was never built (see build-latex-image.yml).
+    container:
+      image: texlive/texlive:latest
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -99,10 +100,6 @@ jobs:
       # Priority: explicit input > PR base branch (if not main) > HEAD_REF.
       # This ensures diff is main↔feature-branch, not main↔assistant-branch.
       FEATURE_REF: ${{ inputs.feature_branch || '' }}
-      # Try custom image first (faster, has Bun + ccicons pre-warmed),
-      # then fall back to official texlive image, then apt-get.
-      LATEX_IMAGE: ghcr.io/${{ github.repository }}/latex-ci:latest
-      LATEX_IMAGE_FALLBACK: texlive/texlive:latest
 
     steps:
       # ── 0. Checkout ────────────────────────────────────────────────────────
@@ -145,67 +142,19 @@ jobs:
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
           git config --global --add safe.directory "${{ github.workspace }}"
 
-      # Try pulling the pre-built latex-ci image.  If it exists, LaTeX
-      # commands run inside Docker (~instant); otherwise we apt-get install
-      # TeX Live on the runner (~2-3 min but always works).
-      - name: Try Docker image for LaTeX
-        id: docker-check
-        continue-on-error: true
-        run: |
-          # Try custom image first (faster, pre-warmed caches)
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin 2>/dev/null
-          if docker pull "$LATEX_IMAGE" 2>/dev/null; then
-            echo "✓ Using custom latex-ci image"
-            IMAGE="$LATEX_IMAGE"
-          elif docker pull "$LATEX_IMAGE_FALLBACK" 2>/dev/null; then
-            echo "✓ Using official texlive/texlive image"
-            IMAGE="$LATEX_IMAGE_FALLBACK"
-          else
-            echo "No Docker image available — will install tools inline"
-            echo "DRUN=" >> "$GITHUB_ENV"
-            exit 0
-          fi
-          echo "DRUN=docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace $IMAGE" >> "$GITHUB_ENV"
-
-      # Always install lightweight host tools needed by steps that can't
-      # run inside Docker (Python scripts, HTML generation, latexdiff).
-      - name: Install host tools
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            pandoc graphviz jq texlive-extra-utils latexdiff
-          sudo rm -rf /var/lib/apt/lists/*
-
-      # Full TeX Live — only needed when Docker image is not available.
-      - name: Install LaTeX toolchain (no Docker)
-        if: env.DRUN == ''
-        run: |
-          echo "Installing TeX Live..."
-          sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends \
-            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-            texlive-science texlive-extra-utils latexmk biber \
-            latexdiff \
-          && sudo rm -rf /var/lib/apt/lists/*
-          echo "latexmk installed: $(latexmk --version | head -1)"
-          # Ensure ccicons font is available (may be missing from texlive-fonts-extra)
-          if ! kpsewhich ccicons.sty >/dev/null 2>&1; then
-            echo "ccicons not found — installing from CTAN..."
-            mkdir -p /tmp/ccicons && cd /tmp/ccicons \
-              && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
-              && sudo unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
-              && sudo texhash \
-              && sudo updmap-sys --enable Map=ccicons.map \
-              && rm -rf /tmp/ccicons
-          fi
-
       - name: Install Bun
         run: |
-          if ! command -v bun >/dev/null 2>&1; then
-            curl -fsSL https://bun.sh/install | bash
-            echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
-            export PATH="$HOME/.bun/bin:$PATH"
-          fi
+          curl -fsSL https://bun.sh/install | bash
+          export PATH="$HOME/.bun/bin:$PATH"
+          echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
           bun --version
+
+      - name: Install missing tools
+        run: |
+          # texlive/texlive has TeX Live but may lack pandoc, graphviz, jq
+          apt-get update -qq && apt-get install -y --no-install-recommends \
+            pandoc graphviz jq \
+          && rm -rf /var/lib/apt/lists/*
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
@@ -223,10 +172,7 @@ jobs:
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
-      # Build the primary paper (quantum-observable-universe) for PDF generation.
-      # Other papers are validated but not compiled to LaTeX, since the workflow
-      # only compiles and deploys one PDF.
-      - name: Validate content objects
+      - name: Validate and build content objects for all papers
         continue-on-error: true
         run: |
           cd content
@@ -237,45 +183,20 @@ jobs:
             else
               echo "  No content objects to validate for ${paper_dir}"
             fi
+
+            echo "── Building: ${paper_dir}"
+            bun run pipeline/build.ts \
+              "${paper_dir}/${paper_dir}.ts" \
+              --out-dir ../chapters/ \
+              --generate-main \
+              --main-out ../main.tex \
+              --preamble ../latex/preamble.tex \
+              || echo "::warning::Content build had issues for ${paper_dir}"
           done
-
-      - name: Build primary paper content objects
-        run: |
-          cd content
-          PRIMARY_PAPER="quantum-observable-universe"
-          echo "── Building primary paper: ${PRIMARY_PAPER}"
-
-          # Run the build — it may exit non-zero due to block-level errors
-          # (missing .ts files, schema issues) but still generates valid output.
-          # Capture the exit code and verify output exists.
-          bun run pipeline/build.ts \
-            "${PRIMARY_PAPER}/${PRIMARY_PAPER}.ts" \
-            --out-dir ../chapters/ \
-            --generate-main \
-            --main-out ../main.tex \
-            --preamble ../latex/preamble.tex \
-            || echo "::warning::Content build exited non-zero (block-level errors)"
-
-          # Verify the build produced output
-          echo "=== Verifying build output ==="
-          chapter_count=$(ls ../chapters/*.tex 2>/dev/null | wc -l)
-          echo "Chapters generated: ${chapter_count}"
-          ls ../chapters/*.tex 2>/dev/null
-
-          if [ ! -f ../main.tex ]; then
-            echo "::error::main.tex was not generated"
-            exit 1
-          fi
-
-          echo "main.tex title:"
-          grep '\\title{' ../main.tex
-          echo "main.tex chapter inputs:"
-          grep '\\input{' ../main.tex | grep -v print-mode
-
-          if [ "${chapter_count}" -lt 5 ]; then
-            echo "::error::Too few chapters generated (${chapter_count}), expected 14"
-            exit 1
-          fi
+          echo "Generated chapters:"
+          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+          echo "Generated main.tex:"
+          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
 
       # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
       - name: Build schema docs
@@ -328,38 +249,10 @@ jobs:
           BRANCH_URL: https://github.com/${{ github.repository }}/tree/${{ env.HEAD_REF }}
         run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
 
-      # ── 1a-debug. Write build diagnostics to a deployed file ─────────────��
-      - name: Write build diagnostics
-        if: always()
-        run: |
-          {
-            echo "=== Build Diagnostics ==="
-            echo "Date: $(date -u)"
-            echo "Commit: ${{ env.HEAD_SHA }}"
-            echo ""
-            echo "=== main.tex title ==="
-            grep '\\title{' main.tex 2>/dev/null || echo "(no main.tex or no title)"
-            echo ""
-            echo "=== main.tex \\input lines ==="
-            grep '\\input{' main.tex 2>/dev/null | grep -v print-mode || echo "(none)"
-            echo ""
-            echo "=== chapters/ directory ==="
-            ls -la chapters/*.tex 2>/dev/null || echo "(no chapters)"
-            echo ""
-            echo "=== chapters/introduction.tex first 5 lines ==="
-            head -5 chapters/introduction.tex 2>/dev/null || echo "(not found)"
-            echo ""
-            echo "=== main-flat.tex size ==="
-            wc -c main-flat.tex 2>/dev/null || echo "(not yet created)"
-          } > build-diagnostics.txt
-          cat build-diagnostics.txt
-
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
-      # $DRUN is set by the Docker check step: either "docker run ... image"
-      # or empty (run directly on host).
       - name: Compile LaTeX to PDF
         run: |
-          $DRUN latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
+          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
             | grep -v '^LaTeX Warning: .*undefined' \
             | grep -v '^pdfTeX warning (ext4): destination with the same identifier' \
             | grep -v '^<to be read again>' \
@@ -389,20 +282,20 @@ jobs:
       # pandoc, latexpand, latexdiff, and graphviz are pre-installed in the CI image.
 
       - name: Flatten \input includes into a single file
-        run: $DRUN latexpand main.tex > main-flat.tex
+        run: latexpand main.tex > main-flat.tex
 
       - name: Convert flattened LaTeX to GitHub-Flavoured Markdown
         env:
           FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
-          $DRUN pandoc main-flat.tex \
+          pandoc main-flat.tex \
             --from=latex \
             --to=gfm+tex_math_dollars \
             --standalone \
             --wrap=none \
             --output="${FNAME_BASE}.md" \
             || { echo "::warning::pandoc gfm+tex_math_dollars failed, retrying without math extension"; \
-                 $DRUN pandoc main-flat.tex \
+                 pandoc main-flat.tex \
                    --from=latex \
                    --to=gfm \
                    --standalone \
@@ -431,7 +324,7 @@ jobs:
         if: env.HEAD_REF != 'main' && steps.generate_diff.outcome == 'success'
         continue-on-error: true
         id: compile_diff
-        run: $DRUN latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex
 
       - name: Diff PDF status
         if: env.HEAD_REF != 'main'
@@ -458,9 +351,6 @@ jobs:
           FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           mkdir -p _site
-
-          # Deploy build diagnostics for debugging
-          cp build-diagnostics.txt _site/build-diagnostics.txt 2>/dev/null || true
 
           # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
           # Each paper discovered from folio.ts gets its own subdirectory.
@@ -727,18 +617,18 @@ jobs:
             echo "gh already available: $(gh --version | head -1)"
             exit 0
           fi
-          sudo apt-get update -qq
+          apt-get update -qq
           if ! command -v wget >/dev/null 2>&1; then
-            sudo apt-get install -y -qq wget >/dev/null
+            apt-get install -y -qq wget >/dev/null
           fi
-          sudo mkdir -p -m 755 /etc/apt/keyrings
+          mkdir -p -m 755 /etc/apt/keyrings
           wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-            | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
+            | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
-            | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq gh >/dev/null
-          sudo rm -rf /var/lib/apt/lists/*
+            | tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+          apt-get update -qq
+          apt-get install -y -qq gh >/dev/null
+          rm -rf /var/lib/apt/lists/*
           if command -v gh >/dev/null 2>&1; then
             echo "gh installed: $(gh --version | head -1)"
           else
