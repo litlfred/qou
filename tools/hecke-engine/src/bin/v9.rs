@@ -635,18 +635,30 @@ fn main() {
     eprintln!("  No i128 overflow — arbitrary precision coefficients");
 
     let t0 = Instant::now();
-    let (elem, accum) = Eng::build(z, n, mid_threshold);
+    let (mut elem, accum) = Eng::build(z, n, mid_threshold);
 
     let mut total = accum.clone();
     let mut kept = SymPauliAcc::zero();
     kept.add_from_elem(&elem);
     total.merge(&kept);
 
+    // Final full strip: the mid-construction strip can't remove all words
+    // because prefixes created by later crossings weren't present yet.
+    // Now that construction is complete, iterate I9+I8 to convergence.
+    let pre_final = elem.n_terms();
+    let final_removed = Eng::strip_with_pauli(&mut elem.terms);
+    total.merge(&final_removed);
+    let post_final = elem.n_terms();
+    if pre_final != post_final {
+        eprintln!("\n  Final strip: {} → {} words ({} absorbed)",
+            pre_final, post_final, pre_final - post_final);
+    }
+
     let elapsed = t0.elapsed().as_secs_f64();
     let mc = elem.max_coeff_log10();
 
-    eprintln!("\n  Result: {} words, coeff~10^{:.0}, {:.0}MB, {:.1}s",
-        elem.n_terms(), mc, elem.mem_bytes() as f64 / 1e6, elapsed);
+    eprintln!("\n  Result: {} words (expected {}), coeff~10^{:.0}, {:.0}MB, {:.1}s",
+        elem.n_terms(), z + n, mc, elem.mem_bytes() as f64 / 1e6, elapsed);
 
     // Evaluate F_Pauli = |tr_alt/net| at q₀.
     //
