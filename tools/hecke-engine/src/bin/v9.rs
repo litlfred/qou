@@ -510,26 +510,35 @@ impl Eng {
 
     fn strip_with_pauli(terms: &mut FxHashMap<W, LPoly>) -> SymPauliAcc {
         let mut removed = SymPauliAcc::zero();
-        let max_len = terms.keys().map(|w| w.len()).max().unwrap_or(0);
-        for tl in (2..=max_len).rev() {
-            let to_rm: Vec<W> = terms.keys()
-                .filter(|w| w.len() == tl && !terms[*w].is_zero())
-                .filter(|w| terms.get(&w.drop_last()).map_or(false, |c| !c.is_zero()))
-                .cloned().collect();
-            for w in &to_rm {
-                if let Some(c) = terms.remove(w) {
-                    removed.add_term(&c, w.len());
+        // Iterate I9+I8 until convergence (not just single pass)
+        loop {
+            let mut any_removed = false;
+            // I9: strip words whose prefix is present (longest first)
+            let max_len = terms.keys().map(|w| w.len()).max().unwrap_or(0);
+            for tl in (2..=max_len).rev() {
+                let to_rm: Vec<W> = terms.keys()
+                    .filter(|w| w.len() == tl && !terms[*w].is_zero())
+                    .filter(|w| terms.get(&w.drop_last()).map_or(false, |c| !c.is_zero()))
+                    .cloned().collect();
+                for w in &to_rm {
+                    if let Some(c) = terms.remove(w) {
+                        removed.add_term(&c, w.len());
+                        any_removed = true;
+                    }
                 }
             }
-        }
-        let adj: Vec<W> = terms.keys()
-            .filter(|w| w.len() == 2 && !terms[*w].is_zero() && w.get(1) == w.get(0) + 1)
-            .filter(|w| terms.get(&W::E.push(w.get(1))).map_or(false, |c| !c.is_zero()))
-            .cloned().collect();
-        for w in &adj {
-            if let Some(c) = terms.remove(w) {
-                removed.add_term(&c, w.len());
+            // I8: strip adjacent pairs [i, i+1] where [i+1] is present
+            let adj: Vec<W> = terms.keys()
+                .filter(|w| w.len() == 2 && !terms[*w].is_zero() && w.get(1) == w.get(0) + 1)
+                .filter(|w| terms.get(&W::E.push(w.get(1))).map_or(false, |c| !c.is_zero()))
+                .cloned().collect();
+            for w in &adj {
+                if let Some(c) = terms.remove(w) {
+                    removed.add_term(&c, w.len());
+                    any_removed = true;
+                }
             }
+            if !any_removed { break; }
         }
         terms.retain(|_, c| !c.is_zero());
         removed
