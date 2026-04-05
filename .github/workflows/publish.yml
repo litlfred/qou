@@ -36,9 +36,7 @@ name: Build & Publish
 
 on:
   push:
-    branches:
-      - main
-      - 'claude/fix-deployment-host-key-*'  # temporary: test publish from feature branch
+    branches: [main]
   pull_request_target:      # PRs – no approval needed (e.g. Copilot)
   workflow_dispatch:
     inputs:

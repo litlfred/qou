@@ -188,7 +188,7 @@ a:hover {{ text-decoration: underline; }}
 <!-- Download bar -->
 <div class="download-bar">
   <a href="{pdf_name}">&#x1F4C4; Download PDF</a>
-  <a href="{md_name}">&#x1F4DD; Markdown</a>
+  {md_link}
   {extra_downloads}
 </div>
 
@@ -377,7 +377,7 @@ def generate_index(
         header_badges=header_badges,
         source_bar=source_bar,
         pdf_name=html_mod.escape(pdf_name),
-        md_name=html_mod.escape(md_name),
+        md_link=f'<a href="{html_mod.escape(md_name)}">&#x1F4DD; Markdown</a>' if md_name else "",
         extra_downloads=extra_downloads,
         visualizer_tab=visualizer_tab,
         visualizer_panel=visualizer_panel,
@@ -392,7 +392,7 @@ def main() -> None:
     ap.add_argument("output_html", help="Output path for index.html")
     ap.add_argument("paper_html", help="Filename of the enhanced paper HTML (e.g. paper.html)")
     ap.add_argument("--pdf", required=True, help="PDF filename")
-    ap.add_argument("--md", required=True, help="Markdown filename")
+    ap.add_argument("--md", default=None, help="Markdown filename (optional)")
     ap.add_argument("--visualizer", default=None, help="Visualizer HTML filename")
     ap.add_argument("--builds-json", default=None, help="URL or path to builds.json")
     ap.add_argument("--branch", default=None, help="Git branch name")
