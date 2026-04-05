@@ -88,6 +88,7 @@ export default chapter({
         "q-birch-swinnerton-dyer",
         "q-collatz-conjecture",
         "collatz-contact-boundary",
+        "collatz-three-forms",
         "q-collatz-interpretation",
       ],
     }),
