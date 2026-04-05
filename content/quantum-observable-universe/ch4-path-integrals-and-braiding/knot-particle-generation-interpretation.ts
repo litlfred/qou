@@ -17,5 +17,6 @@ export default remark({
     "def:knot-particle-generation",
     "prop:skein-generation",
     "rem:color-tube-interpretation",
+    "def:color-tube-coordinates",
   ],
 });

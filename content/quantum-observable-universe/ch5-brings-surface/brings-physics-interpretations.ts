@@ -5,5 +5,5 @@ export default remark({
   label: "rem:brings-physics-interpretations",
   title: "Physics interpretations of the $S_5$-symmetric structure",
   tags: ["lepton", "chirality", "colour", "brings-surface", "S5"],
-  uses: ["def:brings-surface", "rem:brings-realisations"],
+  uses: ["def:brings-surface", "rem:brings-realisations", "rem:descartes-leptons"],
 });
