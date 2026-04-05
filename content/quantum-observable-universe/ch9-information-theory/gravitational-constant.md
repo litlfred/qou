@@ -140,10 +140,10 @@ identically for all $q > 1$.
 
 | Quantity | Formula | Value |
 |----------|---------|-------|
-| $\eta_q$ | $(2q-1)/q^3$ | $0.892$ nats |
+| $\eta_q$ | $(2q-1)/q^3$ | $0.892$ $q$-bits |
 | $d_H(q)$ | $(2q-1)^2/q^3$ | $1.088$ |
 | $\chi_q$ | $1/(2q-1)$ | $0.820$ |
-| $S_{\mathrm{cell}}$ | $(q-1)^2/q^3$ | $0.008\,81$ nats |
+| $S_{\mathrm{cell}}$ | $(q-1)^2/q^3$ | $0.008\,81$ $q$-bits |
 | $G_{\mathrm{Planck}}$ | $1$ | $1.000$ (exact) |
 
 **Why quadratic and not linear?**

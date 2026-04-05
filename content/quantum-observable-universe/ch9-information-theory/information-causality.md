@@ -66,7 +66,7 @@ $$
   \quad \text{(bits per Planck time)}.
 $$
 
-At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2 \approx 82$ nats per Planck time.
+At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
 
 **5. Pawlowski's information causality.**
 Information causality [pawlowski2009] states that if Alice sends
@@ -87,7 +87,7 @@ bounded by $\eta_q$ per operation:
 $$
   S_{\mathrm{fibre}} \;\leq\; \eta_q
   \;=\; \frac{2q - 1}{q^3}
-  \quad \text{(nats per operation)}.
+  \quad \text{($q$-bits per operation)}.
 $$
 
 **7. Summary: QOU position in the landscape.**

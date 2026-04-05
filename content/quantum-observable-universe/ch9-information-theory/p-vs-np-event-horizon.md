@@ -95,15 +95,15 @@ information generated per tick.
 
 A polynomial-time computation runs for $\mathrm{poly}(c)$ ticks.
 The total information processed is
-$I = \mathrm{poly}(c) \cdot \eta_q / \hbar_q$ nats.  For
+$I = \mathrm{poly}(c) \cdot \eta_q / \hbar_q$ $q$-bits.  For
 P-class problems, this suffices to determine $P_L(q_0)$ because
 the effective resolution tree has polynomial size — the $3^c$
 paths destructively interfere, leaving only polynomially many
 survivors.
 
 For NP-complete problems, the effective tree remains
-exponential.  The computation generates $\eta_q$ nats per tick
-but needs $c \cdot \log 3$ nats of aggregated information from
+exponential.  The computation generates $\eta_q$ $q$-bits per tick
+but needs $c \cdot \log 3$ $q$-bits of aggregated information from
 the full tree.  The deficit is exponential: the bandwidth
 $\mathcal{B}(q)$ cannot bridge the gap in polynomial time.
 

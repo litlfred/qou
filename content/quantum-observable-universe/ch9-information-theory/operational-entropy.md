@@ -10,7 +10,7 @@ $$
 $$
 
 measuring the information generated per $f_q$-iteration in
-natural units (nats).
+natural units ($q$-bits).
 
 **Derivation from the Manning--McCluskey formula.**
 The Hausdorff dimension of the Julia set and the operational
@@ -25,7 +25,7 @@ $$
 $$
 
 The replacement $\ln 2 \to 1/(2q-1)$ reflects that the QOU
-operates in $q$-deformed information units, not classical nats:
+operates in $q$-deformed information units, not classical bits:
 the degree-$2$ map $f_q$ has effective multiplier
 $1/(2q-1)$ in the $q$-connection frame, not $\ln 2$.  At $q = 1$:
 $\chi_1 = 1$ (one nat per operation, matching the unit-circle
@@ -83,7 +83,7 @@ Each iteration of $f_q$ is one application of the $q$-connection
 $\nabla_q$ across a fibre
 ([Reeb operations per Planck unit](#prop:reeb-operations-per-planck)).
 The operational entropy $\eta_q$ measures the **information
-generated per iteration** — the number of distinguishable nats
+generated per iteration** — the number of distinguishable $q$-bits
 produced by one $R$-matrix evaluation.  The total information
 processed per Planck time is
 
@@ -101,7 +101,7 @@ circuit ([Planck time](#def:planck-time)).
 | Regime | $q$ | $\eta_q$ | $d_{H,q}$ | Interpretation |
 |--------|-----|----------|-----------|----------------|
 | Classical limit | $q \to 1$ | $\to 1$ | $\to 1$ | One nat per step; Julia set = unit circle |
-| Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ nats |
+| Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ $q$-bits |
 | Deep quantum | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
 | Deep-quantum | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
 
