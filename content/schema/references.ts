@@ -1652,6 +1652,26 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01389745",
   }),
 
+  // ── Collatz ─────────────────────────────────────────────────────
+  ref({
+    id: "collatz1937",
+    type: "article-journal",
+    title: "On the motivation and origin of the $(3n+1)$-problem",
+    author: [{ family: "Collatz", given: "Lothar" }],
+    "container-title": "Journal f\u00fcr die reine und angewandte Mathematik",
+    issued: { "date-parts": [[1937]] },
+  }),
+
+  ref({
+    id: "lagarias2010",
+    type: "book",
+    title: "The Ultimate Challenge: The $3x+1$ Problem",
+    author: [{ family: "Lagarias", given: "Jeffrey C." }],
+    publisher: "American Mathematical Society",
+    issued: { "date-parts": [[2010]] },
+    ISBN: "978-0-8218-4940-8",
+  }),
+
   // ── Frenkel 2007 ────────────────────────────────────────────────
   ref({
     id: "frenkel2007",

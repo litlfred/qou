@@ -131,7 +131,7 @@ $$
 $$
 
 At $q = q_0$:
-$\mathcal{B} = q\,\eta_q/(q-1)^2 \approx 82$ nats per Planck time.
+$\mathcal{B} = q\,\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
 
 **Comparison with information-theoretic speed limits.**
 

@@ -80,6 +80,15 @@ export default chapter({
     }),
 
     section({
+      title: "Information theory",
+      label: "sec:glossary-information",
+      blocks: [
+        "glossary-q-bit",
+        "glossary-q-bit-skein",
+      ],
+    }),
+
+    section({
       title: "Elliptic and surface geometry",
       label: "sec:glossary-elliptic",
       blocks: [

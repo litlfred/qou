@@ -142,7 +142,7 @@ $$
 3. **Information-theoretic.**  The effective tree size after
    interference exceeds the polynomial bandwidth budget
    ([bandwidth bound](#prop:p-bandwidth-bound)):
-   $I(\mathrm{poly}(c)) < c \cdot \log 3$ nats.
+   $I(\mathrm{poly}(c)) < c \cdot \log 3$ $q$-bits.
 
 All three are equivalent: the ideal is non-trivial iff the
 obstruction class is non-vanishing iff the bandwidth is
