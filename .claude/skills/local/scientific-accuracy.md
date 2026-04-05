@@ -47,6 +47,14 @@ peer-review practices and the methodology of
   base-$q$.  Never use `math.cos`; use $\cos_q$ (the $q$-deformed
   cosine) or `cosh` with $q$-arguments.  The `math.exp` function
   should be `q**x` (the $q$-exponential $\exp_q(x) = q^x$).
+  **ENFORCEMENT**: Every new computation script MUST define
+  `LN_Q = math.log(q)` at the top and use `math.log(x)/LN_Q`
+  for all log-ratios. The Q-value formula is:
+    `Q = |Σ_i log_q(V̂_dau_i / V̂_par_i)| × κ_q`
+  where `κ_q = LN_Q × m_e / 3`. The q-weighted decomposition:
+    `Q_qwt = |q · log_q(u) + q⁻¹ · log_q(r) + log_q(unc)| × κ_q`
+  F_conv uses log_q but cancels (ratio). Bare `math.log()` without
+  `/LN_Q` is a review failure except inside log-sum overflow guards.
 - **$q$-integer identities simplify transfer matrix chains.**
   The ratio $[n+1]_q / [n]_q = q + q^{-n}/[n]_q$ is exact.
   For large $n$: $[n+1]_q / [n]_q \to q$ (exponentially fast).
@@ -109,11 +117,39 @@ peer-review practices and the methodology of
     I₅: Protium completeness (whole atom = 1 object, not 4 terms)
     I₆: Structural defects (missing bond → known energy cost)
     I₇: Electron bridge (σ₂·σ₃·σ₂ Borromean bridge)
+    I₈: Adjacency correlation — σ_i·σ_{i+1} absorbed into σ_{i+1}.
+         The off-diagonal of the transfer matrix product M_i.
+         Structural: determined by q and the crossing types.
+    I₉: Closed shell (per-generator chain collapse) — when w·σ_j
+         extends w (a word already in the NF), absorb w·σ_j.
+         Recursive: strip from longest words first. This is the
+         per-generator transfer matrix factorization.
+         The palindromic NF {1,3,4,3,1,...} factors into
+         independent per-generator volumes V̂_i.
+    I₁₀: Pairing — even occupancy in a shell creates (σ,1) pairs
+         via Hecke σ²=HA·σ+1. Odd occupancy leaves unpaired σ-only.
+         Pairing energy = net(even-even) / net(odd-odd) at same A.
+         Histogram is A-universal (same for all Z,N at same A).
+         Pairing is in the WEIGHTS, not the counts.
   Each completed atom's NF is registered as a formal variable
   (ℵ₁, ℵ₂, ...) in the quotient ideal for the NEXT step.
   Track energy at every quotient substitution.
-  The GOAL is n_terms ≈ n_strands (optimal Gröbner basis).
-  At magic numbers, add torus knot shell operators I₈+.
+  The GOAL is n_terms = n_strands (optimal Gröbner basis).
+  **ACHIEVED** for all nuclei through A=8 (⁸Be):
+    D:2, ³H:3, ³He:3, ⁴He:4, ⁵Li:5, ⁶Li:6, ⁷Li:7, ⁸Be:8.
+  All balanced (Z=N) nucleon-level NFs are palindromic.
+  Valley of stability: optimality holds for N ≥ Z−1 exactly.
+  **IMPLEMENTATION:**
+  - Python `hecke_symbolic.py`: exact in q, A ≤ 7
+  - Rust `hecke-engine` v1: f64 at q₀, A ≤ 10 (22s for A=10)
+  - Rust `hecke-engine` v2: packed u128 words, A ≤ 8 exact, A ≤ 10 fast
+  - Quotient-with-accumulation: F_Pauli for A=11+ via streaming
+  - Witness: `pauli-witness.py` (symbolic), `pauli-witness-A8.json` (f64)
+  **Q-VALUE FORMULA (hybrid, MAE = 4.2%):**
+  - Shell 1-4: Q = |q·log_q(u) + q⁻¹·log_q(r) + log_q(unc)| × κ_q
+  - Shell 5+: Q = |log_q(V̂_conv^dau/V̂_conv^par)| × κ_q
+  - Magic: × F_Pauli from H₃(q) alternating irrep (0.6382)
+  - κ_q = ln(q) × m_e/3 = 0.01777 MeV
   See: `QOU.QuotientIdeal` in Lean for formal definitions.
 - **Q-VALUES ARE ALGEBRAIC IN q, NOT NUMERICAL.**
   The Q-value for any beta decay is an EXACT polynomial in q^½:

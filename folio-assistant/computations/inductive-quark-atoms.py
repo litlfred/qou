@@ -48,7 +48,7 @@ div = HeckeDivision(q_val=q)
 HA = q - qi
 s_skein = q**0.5 - qi**0.5
 z_markov = 1.0 / (q**0.5 + qi**0.5)
-kappa = E_CROSS * M_E_MEV / (3 * E_CROSS)
+kappa = M_E_MEV / 3  # = E_CROSS * M_E_MEV / (3 * E_CROSS), simplified
 
 # Commit SHA for provenance
 try:

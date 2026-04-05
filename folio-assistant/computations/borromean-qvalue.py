@@ -81,6 +81,7 @@ H_INV = {k: [(g, -s) for g, s in reversed(v)] for k, v in H_OPS.items()}
 # ══════════════════════════════════════════════════════════════
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
+NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
 SHELL_KNOTS = {
     1: ('T23', 2, 3, 1),   # (name, r, s, degree)
     2: ('T25', 2, 5, 1),
@@ -98,7 +99,7 @@ def neutron_shell(N):
         if N <= m:
             return i + 1, N - prev, m - prev, (N == m)
         prev = m
-    return len(MAGIC) + 1, N - MAGIC[-1], 58, False
+    return len(MAGIC) + 1, N - MAGIC[-1], NEXT_SHELL_SIZE, False
 
 def proton_shell(Z):
     """Same shell structure for protons."""
@@ -116,9 +117,10 @@ def borromean_transition_trace(crossing_change, parent_deg, daughter_deg):
     """Compute the 3-color-averaged standard rep trace for a single
     crossing change, with Borromean un-ring and re-ring.
 
-    crossing_change: the bare Hecke word for the crossing change
-      e.g. nn→pn means removing σ⁻¹ and replacing with ½(σ+σ⁻¹)
-      The CHANGE operator is ½(σ - σ⁻¹) = ½HA at the relevant gen.
+    crossing_change: the explicit bare Hecke word for the crossing change,
+      evaluated exactly as passed by the caller, e.g. [(1, 1)] for σ₁.
+      Any scalar prefactor or linear-combination interpretation must be
+      applied by the caller before or after this trace computation.
 
     parent_deg: degree of the parent shell (1 or 2)
     daughter_deg: degree of the daughter shell (1 or 2)
@@ -192,10 +194,10 @@ def Q_borromean(Z, N):
     A = Z + N
 
     # Shell info
-    par_n_sh, _, _, par_n_magic = neutron_shell(N)
-    dau_n_sh, _, _, dau_n_magic = neutron_shell(N - 1)
-    par_p_sh, _, _, par_p_magic = proton_shell(Z)
-    dau_p_sh, _, _, dau_p_magic = proton_shell(Z + 1)
+    par_n_sh, _, _, _ = neutron_shell(N)
+    dau_n_sh, _, _, _ = neutron_shell(N - 1)
+    par_p_sh, _, _, _ = proton_shell(Z)
+    dau_p_sh, _, _, _ = proton_shell(Z + 1)
 
     par_n_deg = shell_degree(par_n_sh)
     dau_n_deg = shell_degree(dau_n_sh)
@@ -253,9 +255,7 @@ def Q_borromean(Z, N):
             nu = sum(1 for pp, _ in changed if pp == 'nn')
             nr = sum(1 for _, dp in changed if dp == 'pp')
             t = nu + nr
-            if t == 0:
-                ln_unchanged += lr
-            elif nr == 0:
+            if nr == 0:
                 ln_unbind += lr
             elif nu == 0:
                 ln_rebind += lr

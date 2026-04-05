@@ -40,7 +40,7 @@ from experimental_constants import *
 HA = q - qi
 S = q**0.5 - qi**0.5
 Z_m = 1.0 / (q**0.5 + qi**0.5)
-kappa = E_CROSS * M_E_MEV / (3 * E_CROSS)
+kappa = M_E_MEV / 3  # = E_CROSS * M_E_MEV / (3 * E_CROSS), simplified
 
 # ══════════════════════════════════════════════════════════════
 # §1  H₃(q) REPRESENTATIONS
@@ -91,6 +91,7 @@ def torus_word(r, s):
         for _ in range(s):
             w += [(0, 1), (1, 1)]
         return w
+    raise ValueError(f"Unsupported torus knot parameter r={r}; expected 2 or 3")
 
 def torus_inv(r, s):
     return [(g, -sgn) for g, sgn in reversed(torus_word(r, s))]
@@ -208,7 +209,7 @@ def full_transition_ratio(n_shell_knot, p_shell_knot, n_free):
 
     # Bare: no dressing, just T_{3,5}
     # In the mixed (standard) rep for undo, symmetric for redo:
-    bare = 2.0 * eval_triv(T35) * 1.0  # tr_std(I)=2, eval_triv(I)=1
+    bare = 2.0 * eval_triv(T35)  # tr_std(I)=2, eval_triv(I)=1
 
     return avg / bare if abs(bare) > 1e-10 else 1.0, traces
 
@@ -218,6 +219,7 @@ def full_transition_ratio(n_shell_knot, p_shell_knot, n_free):
 # ══════════════════════════════════════════════════════════════
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
+NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
 SHELL_KNOT_MAP = {1: "T23", 2: "T25", 3: "T27", 4: "T35", 5: "T29", 6: "T34", 7: "T29"}
 
 def get_shell(X):
@@ -226,7 +228,7 @@ def get_shell(X):
         if X <= m:
             return i + 1, X - prev, m - prev, (X == m)
         prev = m
-    return len(MAGIC) + 1, X - MAGIC[-1], 58, False
+    return len(MAGIC) + 1, X - MAGIC[-1], NEXT_SHELL_SIZE, False
 
 
 # ══════════════════════════════════════════════════════════════

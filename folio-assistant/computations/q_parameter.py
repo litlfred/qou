@@ -44,6 +44,12 @@ E_CROSS   = 0.5 * HA                         # crossing energy ½(q - q⁻¹)
 S_SKEIN   = math.sqrt(Q) - 1.0/math.sqrt(Q)  # Skein amplitude q^½ - q^{-½}
 TWO_Q     = Q + Q_INV                        # [2]_q = q + q⁻¹
 TANH_LN_Q = HA / TWO_Q                      # tanh(ln q)
+LN_Q      = math.log(Q)                      # ln(q) — for base-q conversions
+
+def log_q(x):
+    """Base-q logarithm: log_q(x) = ln(x) / ln(q).
+    Maps Skein polynomial ratios to q-integers: log_q(q^n) = n."""
+    return math.log(x) / LN_Q
 
 def q_int(n):
     """Quantum integer [n]_q = (q^n - q^{-n}) / (q - q^{-1})."""

@@ -19,6 +19,10 @@ Usage:
 M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV
 M_E_MEV_ERR = 0.00000000015
 
+# Energy scale for Q-values: κ = m_e / 3
+# This is E_× × μ₀ where E_× = ½(q−q⁻¹)×m_e c² and μ₀ = m_e/(3×E_×).
+KAPPA       = M_E_MEV / 3.0   # 0.170333 MeV
+
 M_P_MEV     = 938.27208816    # ± 0.00000029 MeV
 M_P_MEV_ERR = 0.00000029
 

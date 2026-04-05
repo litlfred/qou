@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic.Ring
+import Mathlib.Tactic
 
 /-!
 # Ground Ring: ℤ[q, q⁻¹]
@@ -38,6 +38,7 @@ noncomputable def q : R_q := LaurentPolynomial.T 1
 noncomputable def q_inv : R_q := LaurentPolynomial.T (-1)
 
 /-- `q · q⁻¹ = 1` in `ℤ[q, q⁻¹]`. -/
+-- Ref: [lusztig1993]
 theorem q_mul_q_inv : q * q_inv = 1 := by
   unfold q q_inv
   rw [← LaurentPolynomial.T_add]
