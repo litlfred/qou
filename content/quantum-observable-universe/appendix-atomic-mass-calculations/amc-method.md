@@ -72,17 +72,19 @@ triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d},
 \mathfrak{d}]_p \bowtie \mathcal{L}_H$ (neutron), $T_{2,3}$ is
 the trefoil (electron), and $\bowtie$ denotes Hopf linking.
 
-## Input parameters (single free parameter $q_0$)
+## Input parameters (single free parameter $q$)
 
-All masses derive from one parameter: the substrate parameter $q_0$.
+All masses derive from one parameter: the substrate parameter $q$
+(see Chapter 7 for the numerical determination $q \approx 1.1098$
+from the lepton mass ratio).
 
-| Constant | Formula | Value |
-|----------|---------|-------|
-| $q_0$ | $1/(1 - \sqrt{\mathrm{Vol}(4_1)/(m_\mu/m_e)})$ | $1.1099786\ldots$ |
-| $\hbar_q$ | $1 - q_0^{-1}$ | $0.09907\ldots$ |
-| $m_{\mathfrak{p}}$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | $938.272\,089\,43$ MeV |
-| $m_{\mathfrak{n}}$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | $939.565\,421\,94$ MeV |
-| $m_e$ | trefoil $\mathrm{Li}_2(q^{-2})/\hbar_q^2$ | $0.510\,998\,950\,69$ MeV |
+| Constant | Formula |
+|----------|---------|
+| $q$ | $1/(1 - \sqrt{\mathrm{Vol}(4_1)/(m_\mu/m_e)})$ |
+| $\hbar_q$ | $1 - q^{-1}$ |
+| $m_{\mathfrak{p}}(q)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ |
+| $m_{\mathfrak{n}}(q)$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ |
+| $m_e(q)$ | trefoil $\mathrm{Li}_2(q^{-2})/\hbar_q^2$ |
 
 ## Calculation procedure for each element
 

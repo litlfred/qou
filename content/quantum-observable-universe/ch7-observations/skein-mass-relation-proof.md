@@ -18,7 +18,7 @@ $$
 $$
 
 Substituting $\hbar_q = 1 - q^{-1}$ and the CODATA value
-$m_\mu / m_e = 206.768\,2827(46)$, one solves for $\hbar_q$:
+$m_\mu / m_e \approx 206.768\,2827(46)$, one solves for $\hbar_q$:
 
 $$
   \hbar_q^{\,2}
