@@ -76,15 +76,27 @@
 % These are harmless (hyperref strips the math for bookmarks) but noisy.
 \hypersetup{pdfencoding=auto, psdextra}
 \pdfstringdefDisableCommands{%
+  \def\({}%
+  \def\){}%
   \let\mathbf\relax
   \let\mathrm\relax
   \let\mathcal\relax
   \let\mathfrak\relax
   \let\mathbb\relax
+  \let\mathscr\relax
+  \let\boldsymbol\relax
+  \let\textstyle\relax
   \let\Sigma\relax
   \let\Delta\relax
   \let\not\relax
+  \let\to\relax
+  \let\bigbowtie\relax
 }
+% Silence the "Token not allowed" warnings entirely — they are
+% informational and produce correct bookmarks regardless.
+\makeatletter
+\renewcommand{\HyPsd@Warning}[1]{}
+\makeatother
 
 % ── Compact chapter/section formatting (no page breaks, normal-size fonts) ────
 \titleclass{\chapter}{straight}
