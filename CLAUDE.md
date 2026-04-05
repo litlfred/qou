@@ -180,9 +180,55 @@ All declarations live under the `QOU` root namespace.
 |---|---|
 | `definition` | **Yes** — enforced; will not build without it |
 | `theorem`, `lemma`, `proposition`, `corollary` | **Expected** — warning if missing |
-| `conjecture`, `example`, `remark` | Optional |
+| `conjecture` | **Optional but encouraged** — `sorry` = conjecture (see §3b) |
+| `example`, `remark` | Optional |
 | `simulator` | N/A |
 | `prose`, `equation`, `diagram` | N/A |
+
+### 3b. Conjectural propagation and Lean formalization of conjectures
+
+**Conjectural propagation rule (STRICT):** A statement that depends
+on (is downstream of) a conjecture **cannot** be a `theorem`,
+`proposition`, `lemma`, or `corollary`.  It must be `conjecture`.
+Only statements proved from established results (definitions,
+previously proved theorems, axioms) may use provable block kinds.
+
+- If `uses[]` contains a `conj:` label (directly or transitively),
+  the block **must** be kind `conjecture`.
+- "Proof" blocks downstream of conjectures become `remark` blocks
+  with `interprets: "conj:..."` (proof *sketches*, not proofs).
+- `remark` blocks may freely interpret conjectures (they make no
+  logical claims).
+
+**Lean formalization of conjectures:** Conjectures *can* (and should,
+when feasible) have `.lean` files.  The convention is:
+
+1. **The conjecture itself** is axiomatized as a Lean `class` with
+   fields encoding its content.  The `sorry` in any instance is
+   understood as **conjecture**, not missing proof.
+
+2. **Downstream conjectures** (conditional on the upstream conjecture)
+   take the upstream class as a `[instance]` hypothesis and prove
+   the conditional result: "if the conjecture holds, then..."
+   These downstream proofs are **fully verified** by Lean — the
+   only unproved input is the class instance itself.
+
+3. **The dependency chain** is visible in Lean: definitions →
+   conjecture (axiom class) → downstream conjectures (conditional
+   theorems).
+
+Example pattern:
+```lean
+-- The conjecture (sorry = conjecture)
+class MyConjecture (M : Type*) where
+  functor : FooData M → BarData M
+  compatibility : ∀ x, ...
+
+-- Downstream conjecture: proved conditional on MyConjecture
+theorem downstream_result {M : Type*} [MyConjecture M]
+    (x : FooData M) : ... :=
+  MyConjecture.compatibility x
+```
 
 ### 3a. Remark authoring convention — no dangling remarks
 
