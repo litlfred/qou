@@ -47,24 +47,44 @@ Engine: hecke-engine 0.8.0
 - Each nucleus: observable(q), coral(q), tr_alt(q), net(q)
 - The coral content IS the degree ≥ 1 interaction information
 - Per-length distribution net(ℓ)(q) for each word length
-- Generated from `witness-*.lean` files (engine output → Lean defs)
-- Move witnesses to `content/.../lean/QOU/Descartes/PauliWitness/`
+- **Witness files moved: DONE** (session 5). 21 witness Lean files
+  copied to `content/.../lean/QOU/Descartes/PauliWitness/` with
+  namespace and import. Originals preserved in `tools/hecke-engine/`.
+- **Remaining**: create content block .ts manifests for each witness;
+  add coral content to appendix layout
 
 ### 3. Algorithm optimizations
-- Current bottleneck: strand 8 builds to 174K-240K words (350-726MB)
-- Mid-crossing stripping for large strands (v6 approach in v8)
-- Gebauer-Möller criterion for redundant S-polynomial elimination
-- Weight ordering: prioritize generators by shell degree
-- Target: A=40 (⁴⁰Ca doubly magic) in minutes
-- i128 overflow boundary: ~A=20 (coefficients ~10³⁸)
-- For A>20: need big integer (num-bigint crate) or modular arithmetic
+- **Mid-crossing stripping: DONE** (session 5). v8 now strips after each
+  crossing when word count exceeds threshold. A=16 completes in 317s
+  (was intractable without). Memory bounded at ~110MB.
+- **BigInt engine (v9): DONE** (session 5). `hecke-bigint` binary uses
+  num-bigint for arbitrary precision. No i128 overflow. Verified: A=8
+  matches v8 exactly (F_Pauli = 0.3677). ~2x slower due to allocation.
+- **Performance data (session 5)**:
+  - A=8: 0.8s (v8), 2.3s (v9)
+  - A=12: 45s (v8, 350MB peak)
+  - A=16: 317s (v8 with mid-strip, 110MB)
+  - A=20: testing (v8/v9 with mid-strip)
+- **Remaining optimizations (not yet implemented)**:
+  - F4-style batched reduction (matrix multiply instead of word-by-word)
+  - F5/signature-based criterion (Generalized Rewritten Criterion for
+    non-commutative quotients — major research area)
+  - Modular arithmetic (compute mod p₁..pₖ, CRT reconstruction)
+  - Iterative quotienting: reuse coral content from A=n for A=n+1
+  - Target: A=60 (⁶⁰Co) — needs F4 or modular arithmetic
 
 ### 4. Beta decay Q-value calculations
-- Implement I₁₀ (odd-odd pairing correction) from μ₂ Kummer reduction
-- The pairing factor = net(even-even) / net(odd-odd) at same A
-- Computable from transfer matrix: different (c,d) for even-even vs odd-odd
-- Expected: reduces ⁶⁰Co error from −10.2% to ~−3%
-- Also: smooth shell boundary correction for ²¹⁰Bi
+- **I₁₀ pairing analysis: DONE** (session 5). Key discoveries:
+  - Spectator overcounting hypothesis DISPROVED (unchanged generators
+    already contribute zero — luc = 0).
+  - F_deg2 (0.5949) ≈ R_pp = V̂(T²_pp)/V̂(T_pp)² (0.5987) —
+    the shell factor IS the Hecke pairing ratio, derived from q.
+  - Odd-odd → even-even transitions systematically overpredicted
+    (+6.6% to +8.5% in Skein ratio formula).
+  - I₁₀ correction (1 - δ_pp/Z)(1 - δ_nn/N) reduces ⁶⁰Co from
+    +7.2% to +3.9%, but overcorrects light nuclei.
+  - **Remaining**: restrict I₁₀ to shell 5+ only; derive correction
+    for odd-A transitions; refine the pairing deficit formula.
 
 ### 5. Observed vs expected at q₀ with error bounds
 - q₀ = 1.109978... ± 1.3×10⁻⁸ (from q_parameter.py)
