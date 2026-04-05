@@ -84,6 +84,7 @@ pub struct WitnessCertificate {
     pub f_pauli_f64: Option<f64>,
     pub tr_alt_f64: Option<f64>,
     pub net_f64: Option<f64>,
+    pub tr_markov_f64: Option<f64>,  // Markov trace of full NF at q₀
 
     // Per-strand build metadata
     pub strands: Vec<StrandInfo>,

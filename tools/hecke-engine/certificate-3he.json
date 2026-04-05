@@ -10,7 +10,7 @@
   "engine": {
     "name": "hecke-engine",
     "version": "0.8.0",
-    "commit": "e474ae1",
+    "commit": "62d305e",
     "binary": "hecke-bigint (v9)"
   },
   "tr_alt": {
@@ -275,9 +275,10 @@
   "f_pauli_f64": 0.745548599806541,
   "tr_alt_f64": -1.0187433026656016,
   "net_f64": 1.3664344657477068,
+  "tr_markov_f64": 0.6009824637760368,
   "strands": [],
   "total_words": 3,
   "max_coeff_log10": 0.3010299956639812,
-  "elapsed_seconds": 0.000059155,
+  "elapsed_seconds": 0.000086252,
   "computed_at": ""
 }
