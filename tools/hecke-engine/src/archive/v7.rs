@@ -149,27 +149,29 @@ fn ha_poly() -> LPoly {
     p
 }
 
-/// Crossing coefficients (c, d) in ℤ[t, t⁻¹].
-/// For pn: returns DOUBLED values (2c, 2d) to stay integral.
-/// The caller must track the power of 2 in the denominator.
+/// Crossing coefficients (c, d) in ℤ[t, t⁻¹] where t = q^½.
+/// From σ⁻¹ = σ − (q − q⁻¹):
+///   pp → σ:   c = 1, d = 0
+///   nn → σ⁻¹: c = 1, d = −HA = −t² + t⁻²
+///   pn → ½(σ+σ⁻¹): doubled → 2c = 2, 2d = −t² + t⁻²
 fn crossing_coeffs_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
     match (ti, tj) {
         (b'p', b'p') => (LPoly::one(), LPoly::zero(), false), // c=1, d=0
         (b'n', b'n') => {
-            // c = q² = t⁴, d = -q·s = -(t²)(t - t⁻¹) = -(t³ - t)
-            let c = LPoly::t(4);
+            // c = 1, d = −HA = −t² + t⁻²
+            let c = LPoly::one();
             let mut d = LPoly::zero();
-            d.terms.insert(3, -1); // -t³
-            d.terms.insert(1, 1);  // +t
+            d.terms.insert(2, -1);   // −t²
+            d.terms.insert(-2, 1);   // +t⁻²
             (c, d, false)
         }
         _ => {
-            // pn: DOUBLED. 2c = 1 + q² = 1 + t⁴, 2d = -q·s = -(t³ - t)
-            let mut two_c = LPoly::one();
-            two_c.terms.insert(4, 1); // 1 + t⁴
+            // pn: DOUBLED. 2c = 2, 2d = −HA = −t² + t⁻²
+            let mut two_c = LPoly::zero();
+            two_c.terms.insert(0, 2); // 2
             let mut two_d = LPoly::zero();
-            two_d.terms.insert(3, -1); // -t³
-            two_d.terms.insert(1, 1);  // +t
+            two_d.terms.insert(2, -1);  // −t²
+            two_d.terms.insert(-2, 1);  // +t⁻²
             (two_c, two_d, true) // doubled = true
         }
     }

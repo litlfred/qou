@@ -76,11 +76,17 @@ impl HeckeEngine {
         Self { ha: q-qi, s: q.sqrt()-qi.sqrt(), z: 1.0/(q.sqrt()+qi.sqrt()), q, qi }
     }
 
+    /// Crossing coefficients (c, d) for T(c,d) = c·σ + d·𝟏.
+    ///
+    /// From the Hecke inverse relation σ⁻¹ = σ − (q − q⁻¹):
+    ///   pp → σ:          c = 1,   d = 0
+    ///   nn → σ⁻¹:        c = 1,   d = −HA
+    ///   pn → ½(σ+σ⁻¹): c = 1,   d = −HA/2
     fn crossing_coeffs(&self, ti: u8, tj: u8) -> (f64, f64) {
         match (ti, tj) {
             (b'p', b'p') => (1.0, 0.0),
-            (b'n', b'n') => (self.q*self.q, -self.q*self.s),
-            _ => ((1.0+self.q*self.q)/2.0, -self.q*self.s/2.0),
+            (b'n', b'n') => (1.0, -self.ha),
+            _ => (1.0, -self.ha / 2.0),
         }
     }
 

@@ -372,22 +372,32 @@ fn ha_poly() -> LPoly {
     p
 }
 
+/// Crossing coefficients (c, d) in ℤ[t, t⁻¹] where t = q^½ (BigInt).
+///
+/// From the Hecke inverse relation σ⁻¹ = σ − (q − q⁻¹):
+///   pp → σ:          c = 1,   d = 0
+///   nn → σ⁻¹:        c = 1,   d = −HA = −(t² − t⁻²) = −t² + t⁻²
+///   pn → ½(σ+σ⁻¹): c = 1,   d = −HA/2
+///        (doubled to stay integral: 2c = 2, 2d = −t² + t⁻²)
 fn crossing_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
     match (ti, tj) {
         (b'p', b'p') => (LPoly::one(), LPoly::zero(), false),
         (b'n', b'n') => {
-            let c = LPoly::t(4);
+            // c = 1, d = −HA = −t² + t⁻²
+            let c = LPoly::one();
             let mut d = LPoly::zero();
-            d.terms.insert(3, -BigInt::one());
-            d.terms.insert(1, BigInt::one());
+            d.terms.insert(2, -BigInt::one());   // −t²
+            d.terms.insert(-2, BigInt::one());   // +t⁻²
             (c, d, false)
         }
         _ => {
-            let mut c2 = LPoly::one();
-            c2.terms.insert(4, BigInt::one());
+            // pn: doubled to stay integral.
+            // 2c = 2, 2d = −HA = −t² + t⁻²
+            let mut c2 = LPoly::zero();
+            c2.terms.insert(0, BigInt::from(2));   // 2
             let mut d2 = LPoly::zero();
-            d2.terms.insert(3, -BigInt::one());
-            d2.terms.insert(1, BigInt::one());
+            d2.terms.insert(2, -BigInt::one());    // −t²
+            d2.terms.insert(-2, BigInt::one());    // +t⁻²
             (c2, d2, true)
         }
     }
