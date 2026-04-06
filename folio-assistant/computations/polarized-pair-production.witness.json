@@ -1,0 +1,154 @@
+{
+  "name": "polarized-pair-production",
+  "description": "Gröbner NF for γ(φ₁)·γ(φ₂) → e⁻ + e⁺ with distinct polarization modes. Each photon γ(φ) = φ·σ₀ + (1−φ)·σ₁.  NF is exact and closed-form: net(γγ) = 1 + S·HA where S = φ₁φ₂ + (1−φ₁)(1−φ₂).",
+  "timestamp": "2026-04-06T14:06:30.861218+00:00",
+  "git_sha": "8679f87de684d8f26ccaf0d145eb80e44c6a8719",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "net_eminus": 1.0,
+    "net_eplus": 0.4510942344351552,
+    "m_e_MeV": 0.51099895,
+    "threshold_2me_MeV": 1.0219979,
+    "E0_beta_MeV": 4.406162017384185
+  },
+  "symbolic_nf": {
+    "formula": "NF(γ(φ₁)·γ(φ₂)) = S·𝟏 + φ₁φ₂·HA·σ₀ + (1-φ₁)(1-φ₂)·HA·σ₁ + C₊·L₊ + C₋·L₋",
+    "net_formula": "net(γγ) = 1 + S·HA",
+    "delta_pair_formula": "Δ(pair) = net(e⁺) - S·HA",
+    "E0_formula": "E₀(φ₁,φ₂) = 2mₑ / (net(e⁺) - S·HA)",
+    "S_definition": "S = φ₁φ₂ + (1-φ₁)(1-φ₂)  [same-mode amplitude, S∈[0,1]]",
+    "amplitude_partition": "S + C₊ + C₋ = 1"
+  },
+  "E0_limits": {
+    "same_mode_S1": {
+      "S": 1.0,
+      "E0_MeV": 4.222540096446506,
+      "label": "same mode (σ₀² or σ₁²)"
+    },
+    "distinct_S0": {
+      "S": 0.0,
+      "E0_MeV": 2.265597345263592,
+      "label": "distinct modes (L₊ or L₋)"
+    },
+    "beta_decay_ref": {
+      "E0_MeV": 4.406162017384185,
+      "S_equivalent": 1.0482468173802844,
+      "label": "beta decay calibration"
+    }
+  },
+  "cases": [
+    {
+      "phi1": 1.0,
+      "phi2": 1.0,
+      "label": "same-mode A  (σ₀²):  current calculation",
+      "S": 1.0,
+      "net_gamma2": 1.2090603219898794,
+      "delta_pair": 0.24203391244527572,
+      "E0_pair_MeV": 4.222540096446506,
+      "nf_terms": {
+        "𝟏": 1.0,
+        "σ₀": 0.20906032198987945,
+        "σ₁": 0.0,
+        "L₊": 0.0,
+        "L₋": 0.0
+      }
+    },
+    {
+      "phi1": 0.0,
+      "phi2": 0.0,
+      "label": "same-mode B  (σ₁²):  by σ₀↔σ₁ symmetry",
+      "S": 1.0,
+      "net_gamma2": 1.2090603219898794,
+      "delta_pair": 0.24203391244527572,
+      "E0_pair_MeV": 4.222540096446506,
+      "nf_terms": {
+        "𝟏": 1.0,
+        "σ₀": 0.0,
+        "σ₁": 0.20906032198987945,
+        "L₊": 0.0,
+        "L₋": 0.0
+      }
+    },
+    {
+      "phi1": 1.0,
+      "phi2": 0.0,
+      "label": "distinct A→B (L₊=σ₀σ₁)",
+      "S": 0.0,
+      "net_gamma2": 1.0,
+      "delta_pair": 0.4510942344351552,
+      "E0_pair_MeV": 2.265597345263592,
+      "nf_terms": {
+        "𝟏": 0.0,
+        "σ₀": 0.0,
+        "σ₁": 0.0,
+        "L₊": 1.0,
+        "L₋": 0.0
+      }
+    },
+    {
+      "phi1": 0.0,
+      "phi2": 1.0,
+      "label": "distinct B→A (L₋=σ₁σ₀)",
+      "S": 0.0,
+      "net_gamma2": 1.0,
+      "delta_pair": 0.4510942344351552,
+      "E0_pair_MeV": 2.265597345263592,
+      "nf_terms": {
+        "𝟏": 0.0,
+        "σ₀": 0.0,
+        "σ₁": 0.0,
+        "L₊": 0.0,
+        "L₋": 1.0
+      }
+    },
+    {
+      "phi1": 0.5,
+      "phi2": 0.5,
+      "label": "equal mix    (φ₁=φ₂=½)",
+      "S": 0.5,
+      "net_gamma2": 1.1045301609949396,
+      "delta_pair": 0.34656407344021556,
+      "E0_pair_MeV": 2.94894358164422,
+      "nf_terms": {
+        "𝟏": 0.5,
+        "σ₀": 0.05226508049746986,
+        "σ₁": 0.05226508049746986,
+        "L₊": 0.25,
+        "L₋": 0.25
+      }
+    },
+    {
+      "phi1": 1.0,
+      "phi2": 0.5,
+      "label": "half-polarized (φ₁=1, φ₂=½)",
+      "S": 0.5,
+      "net_gamma2": 1.1045301609949396,
+      "delta_pair": 0.34656407344021556,
+      "E0_pair_MeV": 2.94894358164422,
+      "nf_terms": {
+        "𝟏": 0.5,
+        "σ₀": 0.10453016099493972,
+        "σ₁": 0.0,
+        "L₊": 0.5,
+        "L₋": 0.0
+      }
+    },
+    {
+      "phi1": 0.5,
+      "phi2": 0.0,
+      "label": "half-polarized (φ₁=½, φ₂=0)",
+      "S": 0.5,
+      "net_gamma2": 1.1045301609949396,
+      "delta_pair": 0.34656407344021556,
+      "E0_pair_MeV": 2.94894358164422,
+      "nf_terms": {
+        "𝟏": 0.5,
+        "σ₀": 0.0,
+        "σ₁": 0.10453016099493972,
+        "L₊": 0.5,
+        "L₋": 0.0
+      }
+    }
+  ]
+}
