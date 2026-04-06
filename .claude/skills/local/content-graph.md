@@ -92,7 +92,7 @@ boundaries.
 **Ratio metric**: cross_section_edges / total_edges_in_chapter.
 - Ratio < 0.20: well-structured
 - 0.20–0.40: moderate coupling
-- \> 0.40: high coupling — restructuring likely needed
+- > 0.40: high coupling — restructuring likely needed
 
 ### H4 — Section too sparse (severity: LOW)
 

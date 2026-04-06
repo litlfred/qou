@@ -23,6 +23,7 @@ import re
 import os
 import json
 import argparse
+import subprocess
 from collections import defaultdict
 from pathlib import Path
 from itertools import combinations
@@ -473,14 +474,6 @@ def h4_sparse_sections(
     findings = []
     for ch in chapters:
         for sec in ch.sections:
-            non_prose = [
-                root for root in sec.blocks
-                if label_to_block.get(
-                    next((b.label for b in [] if b.root_name == root), ""),
-                    BlockInfo()
-                ).kind not in NARRATIVE_KINDS
-            ]
-            # Re-check: look up by root_name
             non_prose_blocks = []
             for root in sec.blocks:
                 matched = [b for b in label_to_block.values()
@@ -755,7 +748,6 @@ def format_report(
 # ── Graphviz visualisation ───────────────────────────────────────────────────
 
 def try_install_graphviz():
-    import subprocess
     try:
         subprocess.run(["dot", "-V"], capture_output=True, check=True)
         return True
@@ -775,8 +767,6 @@ def render_chapter_graph(
     output_path: str = "/tmp/content_chapter_graph.svg",
 ) -> str:
     """Generate a chapter/section topology DOT and render to SVG."""
-    import subprocess
-
     ch_idx_to_ch = {ch.chapter_idx: ch for ch in chapters}
 
     dot = ["digraph content_chapters {"]
@@ -828,7 +818,6 @@ def render_chapter_graph(
     dot_path = output_path.replace(".svg", ".dot")
     Path(dot_path).write_text(dot_text)
 
-    import subprocess
     r = subprocess.run(
         ["dot", "-Tsvg", "-o", output_path, dot_path],
         capture_output=True,
@@ -919,7 +908,6 @@ def render_block_heatmap(
     dot_path = output_path.replace(".svg", ".dot")
     Path(dot_path).write_text(dot_text)
 
-    import subprocess
     r = subprocess.run(
         ["dot", "-Tsvg", "-o", output_path, dot_path],
         capture_output=True,
