@@ -34,6 +34,6 @@ export default paper({
     "a diffraction pattern was built up from individual events.",
   macros: {},
   chapters: [
-    chapterRef({ dir: "ch1-double-slit-experiment" }),
+    chapterRef({ dir: "double-slit-experiment" }),
   ],
 });

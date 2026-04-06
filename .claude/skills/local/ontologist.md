@@ -252,7 +252,7 @@ of `glossary.json` entries.
 
 ### Glossary block structure
 
-Each glossary block is a `.ts` + `.md` pair in `ch8-glossary/`:
+Each glossary block is a `.ts` + `.md` pair in `glossary/`:
 
 ```typescript
 // glossary-<term>.ts

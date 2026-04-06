@@ -221,7 +221,7 @@ test-engineer skill can consume in unit tests:
 import { validateObjects } from "../../content/pipeline/validate";
 
 test("all content objects valid", async () => {
-  const result = await validateObjects("content/quantum-observable-universe/ch1-...");
+  const result = await validateObjects("content/quantum-observable-universe/quantum-universes/");
   expect(result.valid).toBe(true);
 });
 ```

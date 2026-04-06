@@ -379,11 +379,14 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
   const paperMod = (await importTsBranch(br, paperRel)) as any;
   const chapters: ResolvedChapter[] = [];
 
+  // Auto-number chapters from manifest order
+  let autoNum = 1;
   for (const chRef of paperMod.chapters || []) {
     const chRel = `content/${id}/${chRef.dir}`;
     const chTsRel = `${chRel}/${chRef.dir}.ts`;
     if (!fileExistsBranch(br, chTsRel)) continue;
     const ch = (await importTsBranch(br, chTsRel)) as any;
+    const chapterNumber = ch.tabLabel != null ? undefined : autoNum++;
 
     const sections: ResolvedSection[] = [];
     for (const sec of ch.sections || []) {
@@ -482,7 +485,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
 
     const chTodos = readFeedback(id, `__chapter:${chRef.dir}`);
     chapters.push({
-      number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, sections,
+      number: chapterNumber, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, sections,
       todos: chTodos.length ? chTodos : undefined,
     });
   }
@@ -583,11 +586,14 @@ async function resolvePaperOutline(id: string, branch?: string): Promise<PaperOu
   const paperMod = (await importTsBranch(br, paperRel)) as any;
   const chapters: ChapterOutline[] = [];
 
+  // Auto-number chapters from manifest order
+  let autoNum = 1;
   for (const chRef of paperMod.chapters || []) {
     const chRel = `content/${id}/${chRef.dir}`;
     const chTsRel = `${chRel}/${chRef.dir}.ts`;
     if (!fileExistsBranch(br, chTsRel)) continue;
     const ch = (await importTsBranch(br, chTsRel)) as any;
+    const chapterNumber = ch.tabLabel != null ? undefined : autoNum++;
 
     const sections: ChapterOutline["sections"] = [];
     for (const sec of ch.sections || []) {
@@ -596,7 +602,7 @@ async function resolvePaperOutline(id: string, branch?: string): Promise<PaperOu
       sections.push({ title: section.title, label: section.label, blockCount: section.blocks.length });
     }
 
-    chapters.push({ number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, dir: chRef.dir, sections });
+    chapters.push({ number: chapterNumber, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, dir: chRef.dir, sections });
   }
 
   const result: PaperOutline = {
@@ -625,7 +631,7 @@ interface SectionStub {
 }
 
 interface ChapterDetail {
-  number: number;
+  number?: number;
   title: string;
   label?: string;
   dir: string;
@@ -680,9 +686,17 @@ async function resolveChapterDetail(
     });
   }
 
+  // Auto-derive chapter number from outline
+  let chapterNumber: number | undefined;
+  const outline = await resolveOutline(paperId, branch);
+  if (outline) {
+    const idx = outline.chapters.findIndex((c: ChapterOutline) => c.dir === chapterDir);
+    if (idx >= 0) chapterNumber = outline.chapters[idx].number;
+  }
+
   const chTodos = readFeedback(paperId, `__chapter:${chapterDir}`);
   const result: ChapterDetail = {
-    number: ch.number, title: ch.title, label: ch.label, dir: chapterDir,
+    number: chapterNumber, title: ch.title, label: ch.label, dir: chapterDir,
     sections,
     todos: chTodos.length ? chTodos : undefined,
   };
@@ -1253,7 +1267,7 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   }
 
   // ── API: Chapter detail (section stubs with block metadata, no md/lean) ──
-  // /api/paper/chapter?id=quantum-observable-universe&chapter=ch1-quantum-observable-universe&branch=feature-x
+  // /api/paper/chapter?id=quantum-observable-universe&chapter=quantum-universes&branch=feature-x
   if (path === "/api/paper/chapter") {
     const id = url.searchParams.get("id");
     const chapter = url.searchParams.get("chapter");
@@ -1271,7 +1285,7 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   }
 
   // ── API: Section (full blocks with md/lean source) ──
-  // /api/paper/section?id=quantum-observable-universe&chapter=ch1-quantum-observable-universe&section=0&branch=feature-x
+  // /api/paper/section?id=quantum-observable-universe&chapter=quantum-universes&section=0&branch=feature-x
   if (path === "/api/paper/section") {
     const id = url.searchParams.get("id");
     const chapter = url.searchParams.get("chapter");

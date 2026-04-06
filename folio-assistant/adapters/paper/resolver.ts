@@ -132,10 +132,13 @@ export class PaperResolver {
     const paperMod = (await this.gitHelper.importTsBranch(br, paperRel)) as any;
     const chapters: OutlineChapter[] = [];
 
+    // Auto-number chapters from manifest order: skip unnumbered ones (tabLabel set)
+    let autoNum = 1;
     for (const chRef of paperMod.chapters || []) {
       const chTsRel = `content/${id}/${chRef.dir}/${chRef.dir}.ts`;
       if (!this.gitHelper.fileExistsBranch(br, chTsRel)) continue;
       const ch = (await this.gitHelper.importTsBranch(br, chTsRel)) as any;
+      const chapterNumber = ch.tabLabel != null ? undefined : autoNum++;
 
       const sections: OutlineChapter["sections"] = [];
       for (const sec of ch.sections || []) {
@@ -144,7 +147,7 @@ export class PaperResolver {
         sections.push({ title: section.title, label: section.label, blockCount: section.blocks.length });
       }
 
-      chapters.push({ number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, dir: chRef.dir, sections });
+      chapters.push({ number: chapterNumber, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, dir: chRef.dir, sections });
     }
 
     const result: ContentOutline = {
@@ -203,9 +206,17 @@ export class PaperResolver {
       sections.push({ title: section.title, label: section.label, blockCount: section.blocks.length, blockStubs });
     }
 
+    // Auto-derive chapter number from its position in the paper manifest
+    let chapterNumber: number | undefined;
+    const outline = await this.resolveOutline(paperId, branch);
+    if (outline) {
+      const idx = outline.chapters.findIndex(c => c.dir === chapterDir);
+      if (idx >= 0) chapterNumber = outline.chapters[idx].number;
+    }
+
     const chTodos = this.feedbackStore.read(paperId, `__chapter:${chapterDir}`);
     const result: ChapterDetail = {
-      number: ch.number,
+      number: chapterNumber,
       tabLabel: ch.tabLabel,
       title: ch.title,
       label: ch.label,
@@ -256,11 +267,14 @@ export class PaperResolver {
     const paperMod = (await this.gitHelper.importTsBranch(br, paperRel)) as any;
     const chapters: ResolvedChapter[] = [];
 
+    // Auto-number chapters from manifest order
+    let autoNum = 1;
     for (const chRef of paperMod.chapters || []) {
       const chRel = `content/${id}/${chRef.dir}`;
       const chTsRel = `${chRel}/${chRef.dir}.ts`;
       if (!this.gitHelper.fileExistsBranch(br, chTsRel)) continue;
       const ch = (await this.gitHelper.importTsBranch(br, chTsRel)) as any;
+      const chapterNumber = ch.tabLabel != null ? undefined : autoNum++;
 
       const sections: ResolvedSection[] = [];
       for (const sec of ch.sections || []) {
@@ -272,7 +286,7 @@ export class PaperResolver {
 
       const chTodos = this.feedbackStore.read(id, `__chapter:${chRef.dir}`);
       chapters.push({
-        number: ch.number,
+        number: chapterNumber,
         tabLabel: ch.tabLabel,
         title: ch.title,
         label: ch.label,

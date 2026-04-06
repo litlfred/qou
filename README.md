@@ -42,17 +42,17 @@ The repository hosts multiple papers as a **folio**:
 
 | # | Directory | Title |
 |---|-----------|-------|
-| 0 | `ch0-introduction/` | Introduction |
-| 1 | `ch1-quantum-observable-universe/` | Quantum Universes |
-| 2 | `ch2-quantum-geometry/` | Quantum Observable Universes |
-| 3 | `ch3-lifting-of-quantum-torsion/` | Lifting and Descent |
-| 4 | `ch4-path-integrals-and-braiding/` | Braids and Knots |
-| 5 | `ch6-descartes-universe/` | Models of QOUs |
-| 6 | `ch5-brings-surface/` | The Descartes Universe |
-| 7 | `ch7-observations/` | Physical Observations |
-| 8 | `ch8-algebraic-substrate/` | The Algebraic Substrate |
-| 9 | `ch9-information-theory/` | Information-Theoretic Perspectives |
-| 10 | `ch8-glossary/` | Glossary |
+| 0 | `introduction/` | Introduction |
+| 1 | `quantum-universes/` | Quantum Universes |
+| 2 | `quantum-observable-universes/` | Quantum Observable Universes |
+| 3 | `lifting-and-descent/` | Lifting and Descent |
+| 4 | `braids-and-knots/` | Braids and Knots |
+| 5 | `models-of-qous/` | Models of QOUs |
+| 6 | `descartes-universe/` | The Descartes Universe |
+| 7 | `observations/` | Physical Observations |
+| 8 | `algebraic-substrate/` | The Algebraic Substrate |
+| 9 | `information-theory/` | Information-Theoretic Perspectives |
+| 10 | `glossary/` | Glossary |
 | App | `appendix-knot-periodic-table/` | Knot-Periodic Table of the Elements |
 | App | `appendix-transfer-matrices/` | Transfer Matrices |
 | — | `index-of-definitions/` | Index of Definitions |

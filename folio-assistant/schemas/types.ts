@@ -608,6 +608,30 @@ export interface DiagramBlock {
 
 }
 
+/**
+ * Table block — standalone data table extracted from a remark or
+ * proposition.  Tables with more than 5–6 rows MUST be their own block
+ * rather than inlined in a remark or proposition, so they can be
+ * labelled and cross-referenced independently.
+ */
+export interface TableBlock {
+  kind: "table";
+  /** Table label (e.g. "tbl:mass-predictions"). */
+  label?: string;
+  /** LaTeX tabular/longtable source (optional; can also live in .md). */
+  tex?: string;
+  /** Caption text (rendered above table in LaTeX). */
+  caption?: string;
+  /** Title for the table (rendered as bold header). */
+  title?: string;
+  tags?: string[];
+  /** Blocks that this table summarises data from. */
+  uses?: string[];
+  companions?: Companions;
+  rendered?: RenderedAsset[];
+  meta?: Record<string, unknown>;
+}
+
 // ── The discriminated union ──────────────────────────────────────
 
 export type Block =
@@ -623,7 +647,8 @@ export type Block =
   | SimulatorBlock
   | ProseBlock
   | EquationBlock
-  | DiagramBlock;
+  | DiagramBlock
+  | TableBlock;
 
 /** Blocks that represent theorem-like environments. */
 export type EnvironmentBlock =
@@ -680,7 +705,7 @@ export interface SectionRef {
 export interface ChapterRef {
   /** URI to the chapter .ts manifest (default: relative local). */
   uri?: string;
-  /** Directory name under the paper root (e.g. "ch1-quantum-observable-universe"). */
+  /** Directory name under the paper root (e.g. "quantum-universes"). */
   dir: string;
 }
 
