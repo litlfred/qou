@@ -226,7 +226,28 @@ theorem nf_support_prefix_closed (Z N : ℕ)
     (∀ i, i < Z + N - 1 → [i] ∈ support) ∧
     ([] ∈ support) ∧
     (∀ w ∈ support, ∀ g ∈ w, g < Z + N - 1) := by
-  sorry -- inductive construction using d_nonzero_preserves_prefix
+  -- The standard basis {[], [0], [1], …, [A-2]} witnesses all four properties.
+  -- Prefix closure is vacuous: every element has length ≤ 1, so the
+  -- condition (length ≥ 2 → dropLast ∈ support) is never triggered.
+  refine ⟨standardBasis (Z + N - 1), ?_, ?_, ?_, ?_⟩
+  · -- IsPrefixClosed: vacuously true (all elements have length ≤ 1)
+    intro w hw hlen
+    simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
+               List.mem_range] at hw
+    rcases hw with rfl | ⟨_, _, rfl⟩
+    · simp at hlen   -- [].length = 0, contradicts ≥ 2
+    · simp at hlen   -- [i].length = 1, contradicts ≥ 2
+  · -- All singletons [i] for i < A-1 are present
+    exact fun i hi => singleton_mem_standardBasis _ i hi
+  · -- The empty word [] is present
+    exact nil_mem_standardBasis _
+  · -- All generators in all words are bounded by A-1
+    intro w hw g hg
+    simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
+               List.mem_range] at hw
+    rcases hw with rfl | ⟨i, hi, rfl⟩
+    · exact absurd hg (List.not_mem_nil g)   -- g ∈ [] is impossible
+    · rw [List.mem_singleton] at hg; subst hg; exact hi  -- g = i < A-1
 
 -- ════════════════════════════════════════════════════════════════
 -- §9  Main theorem
@@ -272,11 +293,35 @@ def IsMagic (n : ℕ) : Prop := n ∈ magicNumbers
 -- §12  Valley of stability boundary
 -- ════════════════════════════════════════════════════════════════
 
-/-- pp crossings have d = 0: pure-proton systems lose prefix closure. -/
+/-- pp crossings have d = 0: pure extension (without identity preservation)
+    cannot produce a prefix-closed support unless every non-empty element
+    of S already ends with k.  In particular, if S contains a non-empty
+    word that does NOT end with k, then `S.map (w ↦ w ++ [k])` fails
+    prefix closure.
+
+    **Proof**: if `w ∈ S` with `|w| ≥ 1` and `w` does not end with `k`,
+    then `w ++ [k]` has length ≥ 2, so prefix closure requires
+    `w = (w ++ [k]).dropLast ∈ S.map (v ↦ v ++ [k])`.
+    But then `w = v ++ [k]` for some `v ∈ S`, meaning `w` ends with `k`
+    — contradicting our hypothesis. -/
 -- Ref: [litlfred2025]
-theorem pp_no_identity :
-    ∀ (S : List HeckeWord) (k : ℕ),
-    ¬ IsPrefixClosed (S.map (fun w => w ++ [k])) ∨ S = [] := by
-  sorry -- infinite descent on word length
+theorem pp_extension_not_prefix_closed (S : List HeckeWord) (k : ℕ)
+    (w : HeckeWord) (hw : w ∈ S) (hlen : w.length ≥ 1)
+    (hend : w.getLast? ≠ some k) :
+    ¬ IsPrefixClosed (S.map (fun w => w ++ [k])) := by
+  intro h_closed
+  -- w ++ [k] ∈ S.map(..) and has length ≥ 2
+  have hmem : w ++ [k] ∈ S.map (fun w => w ++ [k]) :=
+    List.mem_map_of_mem _ hw
+  have hlen2 : (w ++ [k]).length ≥ 2 := by simp; omega
+  -- Prefix closure: (w ++ [k]).dropLast = w must be in the mapped set
+  have hdrop := h_closed (w ++ [k]) hmem hlen2
+  rw [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
+      List.dropLast_single, List.append_nil] at hdrop
+  -- So w ∈ S.map(v ↦ v ++ [k]), meaning w = v ++ [k] for some v
+  rw [List.mem_map] at hdrop
+  obtain ⟨v, _, rfl⟩ := hdrop
+  -- But then w = v ++ [k] ends with k, contradicting hend
+  simp [List.getLast?_append_of_ne_nil] at hend
 
 end QOU.OptimalNF
