@@ -43,6 +43,12 @@ theorem gravitational_planck_eq_one {k : Type*} [Field k] (q : k)
     (hq0 : q ≠ 0) (hq1 : q ≠ 1) :
     gravitationalConstant q hq0 hq1 * ((q - 1) / q / (1 / (q - 1))) ^ 2 = 1 := by
   -- Ref: [manuscript] §9/gravitational-constant
-  sorry
+  -- G(q) = c³·ℏ/S_cell = q²/(q-1)⁴
+  -- (ℏ/c)² = ((q-1)/q / (1/(q-1)))² = ((q-1)²/q)²
+  -- G · (ℏ/c)² = q²/(q-1)⁴ · (q-1)⁴/q² = 1
+  unfold gravitationalConstant
+  simp only
+  field_simp [hq0, sub_ne_zero.mpr hq1]
+  ring
 
 end QOU.Information

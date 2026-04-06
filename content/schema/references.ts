@@ -1700,6 +1700,32 @@ export const references: CSLData[] = [
     page: "1-83",
     DOI: "10.1090/mosc/278",
   }),
+
+  // ── STAR 2021: Breit-Wheeler azimuthal asymmetry ────────────────
+  ref({
+    id: "star2021bw",
+    type: "article-journal",
+    title: "Observation of an Anomalous Azimuthal Modulation of the $e^+e^-$ Pair Distribution in Ultra-Peripheral Au+Au Collisions at RHIC",
+    author: [{ family: "STAR Collaboration" }],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[2021]] },
+    volume: "127",
+    page: "052302",
+    DOI: "10.1103/PhysRevLett.127.052302",
+  }),
+
+  // ── ATLAS 2021: Breit-Wheeler azimuthal anisotropy ──────────────
+  ref({
+    id: "atlas2021bw",
+    type: "article-journal",
+    title: "Measurement of the azimuthal anisotropy of $e^+e^-$ pairs produced in ultra-peripheral Pb+Pb collisions at $\\sqrt{s_{NN}}=5.02$ TeV with the ATLAS detector",
+    author: [{ family: "ATLAS Collaboration" }],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[2021]] },
+    volume: "128",
+    page: "122001",
+    DOI: "10.1103/PhysRevLett.128.122001",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

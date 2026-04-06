@@ -1,0 +1,114 @@
+{
+  "name": "pair-production-nf",
+  "description": "Gr\u00f6bner NF for \u03b3\u03b3 \u2192 e\u207b + e\u207a pair production in H\u2083(q). Photon \u03b3 = \u03c3\u2080, e\u207b = \u03c3\u2080\u03c3\u2081\u03c3\u2080 (trefoil), e\u207a = \u03c3\u2080\u207b\u00b9\u03c3\u2081\u207b\u00b9\u03c3\u2080\u207b\u00b9 (mirror trefoil). Threshold energy \u0394(pair) \u00d7 E\u2080 compared to 2m\u2091 = 1.022 MeV.",
+  "timestamp": "2026-04-06T16:02:45.234984+00:00",
+  "git_sha": "50d0abd5e72e9ecdd57c455a7df1a9eff8574ec8",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "E0_MeV": 4.406162017384185,
+    "m_e_MeV": 0.51099895,
+    "threshold_MeV": 1.0219979
+  },
+  "particle_braid_words": {
+    "gamma": "\u03c3\u2080",
+    "gamma2": "\u03c3\u2080\u00b2",
+    "e_minus": "\u03c3\u2080\u03c3\u2081\u03c3\u2080  (trefoil, Garside \u0394\u2083)",
+    "e_plus": "\u03c3\u2080\u207b\u00b9\u03c3\u2081\u207b\u00b9\u03c3\u2080\u207b\u00b9  (mirror trefoil, \u0394\u2083\u207b\u00b9)"
+  },
+  "nf_gamma": {
+    "s0": {
+      "word": "\u03c3_0",
+      "particle": "H\u2070",
+      "at_q0": 1.0
+    },
+    "_net": 1.0
+  },
+  "nf_gamma2": {
+    "identity": {
+      "word": "\ud835\udfcf",
+      "particle": "\u03bd",
+      "at_q0": 1.0
+    },
+    "s0": {
+      "word": "\u03c3_0",
+      "particle": "H\u2070",
+      "at_q0": 0.20906032198987945
+    },
+    "_net": 1.2090603219898794
+  },
+  "nf_eminus": {
+    "s0s1s0": {
+      "word": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
+      "particle": "e\u207b",
+      "at_q0": 1.0
+    },
+    "_net": 1.0
+  },
+  "nf_eplus": {
+    "identity": {
+      "word": "\ud835\udfcf",
+      "particle": "\u03bd",
+      "at_q0": -0.21819755804611018
+    },
+    "s0": {
+      "word": "\u03c3_0",
+      "particle": "H\u2070",
+      "at_q0": 0.04370621823051213
+    },
+    "s1": {
+      "word": "\u03c3_1",
+      "particle": "H\u00b9",
+      "at_q0": 0.04370621823051213
+    },
+    "s0s1": {
+      "word": "\u03c3_0\u00b7\u03c3_1",
+      "particle": "L\u208a",
+      "at_q0": -0.20906032198987945
+    },
+    "s1s0": {
+      "word": "\u03c3_1\u00b7\u03c3_0",
+      "particle": "L\u208b",
+      "at_q0": -0.20906032198987945
+    },
+    "s0s1s0": {
+      "word": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
+      "particle": "e\u207b",
+      "at_q0": 1.0
+    },
+    "_net": 0.4510942344351552
+  },
+  "energy_budget": {
+    "net_eminus": 1.0,
+    "net_eplus": 0.4510942344351552,
+    "net_gamma2": 1.2090603219898794,
+    "delta_pair": 0.24203391244527572,
+    "E_pair_predicted_MeV": 1.0664406319352633,
+    "E_threshold_2me_MeV": 1.0219979,
+    "ratio": 1.0434861284306587,
+    "residual_MeV": 0.04444273193526338,
+    "residual_percent": 4.34861284306586
+  },
+  "reduction_steps": {
+    "gamma": {
+      "hecke": 0,
+      "yb": 0,
+      "total": 0
+    },
+    "gamma2": {
+      "hecke": 1,
+      "yb": 0,
+      "total": 1
+    },
+    "eminus": {
+      "hecke": 0,
+      "yb": 0,
+      "total": 0
+    },
+    "eplus": {
+      "hecke": 1,
+      "yb": 0,
+      "total": 1
+    }
+  }
+}

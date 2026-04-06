@@ -60,7 +60,24 @@ theorem massEnergy_classical_limit :
     ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
     1 / ε < speedOfLightSq q := by
   -- Ref: [manuscript] Ch. 9, §mass-energy-equivalence
-  sorry
+  -- As q → 1, (q-1)² → 0, so 1/(q-1)² → ∞.
+  -- For any ε > 0, choose δ = √(ε). Then |q-1| < δ implies
+  -- (q-1)² < ε, so 1/(q-1)² > 1/ε.
+  intro ε hε
+  refine ⟨Real.sqrt ε, Real.sqrt_pos.mpr hε, ?_⟩
+  intro q hq_ne hq_lt
+  unfold speedOfLightSq
+  have h_sq_pos : (0 : ℝ) < (q - 1) ^ 2 := by positivity
+  rw [div_lt_div_iff hε h_sq_pos]
+  -- Need (q-1)² < ε, i.e., (q-1)² · 1 < 1 · ε
+  rw [one_mul, mul_one]
+  -- |q-1| < √ε implies (q-1)² < ε
+  calc (q - 1) ^ 2 = |q - 1| ^ 2 := by rw [sq_abs]
+    _ < (Real.sqrt ε) ^ 2 := by
+        apply sq_lt_sq'
+        · linarith [abs_nonneg (q - 1)]
+        · exact hq_lt
+    _ = ε := Real.sq_sqrt (le_of_lt hε)
 
 /-- Consistency check: the electron (left trefoil, 3 positive crossings)
     has crossing energy E = 3q and mass m = 3q(q-1)². -/

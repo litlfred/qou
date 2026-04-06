@@ -171,6 +171,8 @@ export default chapter({
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
         "beta-decay-interpretation",
+        "nucleon-nf-observability",
+        "beta-decay-energy-scale",
         "beta-decay-braid-visualizer",
         "shell-structure-eigenvalues",
         "shell-eigenvalue-properties",

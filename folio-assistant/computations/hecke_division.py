@@ -422,10 +422,41 @@ class HeckeDivision:
             (): 0.5 * self.inv_const,
         })
 
+    # ── Generator inverses and Borromean braid ───────────────────
+
+    def sigma(self, i):
+        """σ_i as a HeckeElement."""
+        return HeckeElement({(i,): 1.0})
+
+    def sigma_inv(self, i):
+        """σ_i⁻¹ = σ_i − (q − q⁻¹) in the Hecke algebra."""
+        HA = self.q - 1.0 / self.q
+        return HeckeElement({(i,): 1.0, (): -HA})
+
+    def borromean_B3(self):
+        """Build B₃ = (σ₀σ₁⁻¹)³ Borromean confinement braid and reduce.
+
+        B₃ is the fundamental confinement braid: three strands mutually
+        linked but individually free if any one is removed.
+
+        Returns: (reduced_element, division_log)
+        """
+        s0 = self.sigma(0)
+        s1_inv = self.sigma_inv(1)
+
+        unit = s0 * s1_inv
+        elem = unit * unit * unit
+
+        reduced, log = self.reduce(elem)
+        return reduced, log
+
     # ── Nuclear braid word ───────────────────────────────────────
 
     def nuclear_braid(self, p, n):
         """Build the nuclear braid word, reducing after each crossing.
+
+        The nucleus is constructed as B₃ · (pairwise crossings), where
+        B₃ = (σ₀σ₁⁻¹)³ is the Borromean confinement braid.
 
         Returns (reduced_element, division_log).
         """
@@ -433,7 +464,10 @@ class HeckeDivision:
         types = ['p'] * p + ['n'] * n
         full_log = []
 
-        elem = HeckeElement.identity()
+        # Start with Borromean confinement braid B₃ = (σ₀σ₁⁻¹)³
+        elem, b3_log = self.borromean_B3()
+        full_log.extend(b3_log)
+
         crossing_num = 0
         total_crossings = A * (A - 1) // 2
 
