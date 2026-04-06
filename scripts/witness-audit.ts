@@ -104,9 +104,13 @@ function auditLeanWitnesses(): WitnessStatus[] {
     const currentHash = fileContentHash(lf);
     const fileCommit = gitFileSha(lf);
 
-    for (const wf of witnessFiles) {
+    // Report exactly one status per .lean file (use the best-matching witness)
+    const currentWitnessPath = `${lf}.${currentHash}.witness`;
+    const hasCurrentWitness = witnessFiles.includes(currentWitnessPath);
+
+    if (hasCurrentWitness) {
       try {
-        const meta = JSON.parse(readFileSync(wf, "utf-8"));
+        const meta = JSON.parse(readFileSync(currentWitnessPath, "utf-8"));
         const status: WitnessStatus = {
           file: lf.replace(REPO_ROOT + "/", ""),
           type: "lean",
@@ -116,10 +120,7 @@ function auditLeanWitnesses(): WitnessStatus[] {
           hasAssertions: false,
         };
 
-        if (meta.hash !== currentHash) {
-          status.stale = true;
-          status.reason = `content hash mismatch (witness: ${meta.hash}, current: ${currentHash})`;
-        } else if (meta.fileCommitSha && meta.fileCommitSha !== fileCommit) {
+        if (meta.fileCommitSha && meta.fileCommitSha !== fileCommit) {
           status.stale = true;
           status.reason = `file commit SHA changed (witness: ${meta.fileCommitSha.slice(0, 8)}, current: ${fileCommit.slice(0, 8)})`;
         }
@@ -136,6 +137,17 @@ function auditLeanWitnesses(): WitnessStatus[] {
           hasAssertions: false,
         });
       }
+    } else {
+      // Witness exists but for a different (older) content hash
+      results.push({
+        file: lf.replace(REPO_ROOT + "/", ""),
+        type: "lean",
+        stale: true,
+        reason: `content hash mismatch (no witness for current hash ${currentHash})`,
+        hasStructuredFormat: false,
+        hasCommitSha: false,
+        hasAssertions: false,
+      });
     }
   }
   return results;

@@ -103,13 +103,18 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
 
     Formally: for any two Hecke elements `x, y ∈ H₃(q)` whose
     σ-exponent sums are equal, the symmetric projected trace is
-    equal: `tr(e_{(3)} · x · e_{(3)}) = tr(e_{(3)} · y · e_{(3)})`. -/
+    equal: `tr(e_{(3)} · x · e_{(3)}) = tr(e_{(3)} · y · e_{(3)})`.
+
+    **Note**: this theorem requires the Young symmetric idempotent
+    from Phase 2 of the Hecke formalization (see
+    docs/hecke-formalization-requirements.md §B2). -/
 theorem sym_trace_ordering_independent
     (x y : TMatrix)
-    (h_same_linking : tracedVolCleared x = tracedVolCleared y) :
+    (h_same_exponent_sum : x.trace = y.trace) :
     tracedVolCleared x = tracedVolCleared y := by
   -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-  exact h_same_linking
+  -- Blocked: requires Young idempotent + symmetric eigenvalue property
+  sorry
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)

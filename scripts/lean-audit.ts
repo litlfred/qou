@@ -21,7 +21,7 @@ import { readFileSync, existsSync } from "fs";
 import { resolve, basename, dirname, relative } from "path";
 import { globSync } from "glob";
 import { execSync } from "child_process";
-import { isWitnessed, leanFileHash } from "./lean-witness";
+import { isWitnessed, leanFileHash, isStale } from "./lean-witness";
 
 const REPO_ROOT = resolve(import.meta.dir, "..");
 const CONTENT_ROOT = resolve(REPO_ROOT, "content");
@@ -125,8 +125,7 @@ function countCodeLines(content: string): number {
         trimmed.length > 0 &&
         !trimmed.startsWith("--") &&
         !trimmed.startsWith("/-") &&
-        !trimmed.startsWith("-/") &&
-        !trimmed.startsWith("#")
+        !trimmed.startsWith("-/")
       );
     }).length;
 }
@@ -241,29 +240,11 @@ function extractAxioms(filePath: string, content: string): AxiomEntry[] {
 function auditLeanFile(filePath: string): LeanFileStatus {
   const content = readFileSync(filePath, "utf-8");
   const witnessResult = isWitnessed(filePath);
-  const fileCommitSha = getFileCommitSha(filePath);
 
-  // Check for staleness: witness exists but hash doesn't match
-  let stale = false;
-  let witnessCommitSha: string | undefined;
-
-  if (witnessResult.witnessed) {
-    // Read the witness file to get its commitSha
-    const witnessFiles = globSync(`${filePath}.*.witness`);
-    for (const wf of witnessFiles) {
-      try {
-        const meta = JSON.parse(readFileSync(wf, "utf-8"));
-        witnessCommitSha = meta.commitSha;
-        // If witness has a commitSha and it doesn't match current file's last commit
-        if (meta.commitSha && meta.commitSha !== fileCommitSha) {
-          stale = true;
-        }
-      } catch {
-        // Malformed witness file
-        stale = true;
-      }
-    }
-  }
+  // Use shared isStale() for consistent staleness detection
+  const staleResult = isStale(filePath);
+  const stale = staleResult.stale;
+  const witnessCommitSha = staleResult.witnessCommitSha;
 
   return {
     file: relative(REPO_ROOT, filePath),

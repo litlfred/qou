@@ -106,60 +106,59 @@ export function isStale(leanFile: string): {
   const currentHash = leanFileHash(leanFile);
   const fileCommitSha = getFileCommitSha(leanFile);
 
-  // Find any existing witness file
-  const witnessFiles = globSync(`${leanFile}.*.witness`);
-  if (witnessFiles.length === 0) {
-    return {
-      stale: false,
-      reason: "no witness exists",
-      currentHash,
-      fileCommitSha,
-    };
+  // Check for a witness matching the current content hash
+  const wp = witnessPath(leanFile, currentHash);
+  if (existsSync(wp)) {
+    try {
+      const meta = JSON.parse(readFileSync(wp, "utf-8"));
+      // Compare fileCommitSha (not commitSha which is HEAD at stamp time)
+      const witnessFileCommitSha = meta.fileCommitSha;
+
+      if (witnessFileCommitSha && witnessFileCommitSha !== fileCommitSha) {
+        return {
+          stale: true,
+          reason: "file commit SHA mismatch (file modified since witness)",
+          currentHash,
+          witnessHash: currentHash,
+          fileCommitSha,
+          witnessCommitSha: witnessFileCommitSha,
+        };
+      }
+
+      return {
+        stale: false,
+        currentHash,
+        witnessHash: currentHash,
+        fileCommitSha,
+        witnessCommitSha: witnessFileCommitSha,
+      };
+    } catch {
+      return {
+        stale: true,
+        reason: "malformed witness file",
+        currentHash,
+        fileCommitSha,
+      };
+    }
   }
 
-  // Check the first witness file
-  try {
-    const meta = JSON.parse(readFileSync(witnessFiles[0], "utf-8"));
-    const witnessHash = meta.hash;
-    const witnessCommitSha = meta.commitSha;
-
-    if (witnessHash !== currentHash) {
-      return {
-        stale: true,
-        reason: "content hash mismatch",
-        currentHash,
-        witnessHash,
-        fileCommitSha,
-        witnessCommitSha,
-      };
-    }
-
-    if (witnessCommitSha && witnessCommitSha !== fileCommitSha) {
-      return {
-        stale: true,
-        reason: "commit SHA mismatch (file modified since witness)",
-        currentHash,
-        witnessHash,
-        fileCommitSha,
-        witnessCommitSha,
-      };
-    }
-
-    return {
-      stale: false,
-      currentHash,
-      witnessHash,
-      fileCommitSha,
-      witnessCommitSha,
-    };
-  } catch {
+  // No witness for current hash — check if stale witnesses exist for older hashes
+  const otherWitnesses = globSync(`${leanFile}.*.witness`);
+  if (otherWitnesses.length > 0) {
     return {
       stale: true,
-      reason: "malformed witness file",
+      reason: "content hash mismatch (witness exists for older content)",
       currentHash,
       fileCommitSha,
     };
   }
+
+  return {
+    stale: false,
+    reason: "no witness exists",
+    currentHash,
+    fileCommitSha,
+  };
 }
 
 /** Create a witness file for the current content of a .lean file.

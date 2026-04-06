@@ -1,6 +1,7 @@
 # Hecke Algebra Formalization — Requirements for Next Session
 
 **Created:** 2026-04-06
+**Updated:** 2026-04-06 (incorporated Gemini code review from PR #307)
 **Status:** 8 sorries remain across 3 files (AxialCoupling, OrderingIndependence, TMCorrespondence)
 **Goal:** Eliminate all Descartes build sorries by building the missing Hecke algebra infrastructure
 
@@ -305,3 +306,72 @@ When this work is complete:
 6. `ordering_independence` has a complete proof (not sorry)
 7. `matrixChain_eq_buildChains` has a complete proof (not sorry)
 8. All existing proved theorems still compile (no regressions)
+
+---
+
+## Local Lake Build — Quick Start
+
+These are single-line copy-paste commands. Run them in your terminal.
+
+### First time setup (downloads Mathlib cache, ~5 min):
+```
+cd content/quantum-observable-universe/lean && lake exe cache get
+```
+
+### Full build (all QOU Lean, ~10-20 min first time):
+```
+cd content/quantum-observable-universe/lean && lake build
+```
+
+### Build one file at a time (faster iteration):
+```
+cd content/quantum-observable-universe/lean && lake build QOU.Descartes.TMCorrespondence
+```
+```
+cd content/quantum-observable-universe/lean && lake build QOU.Descartes.OrderingIndependence
+```
+```
+cd content/quantum-observable-universe/lean && lake build QOU.Descartes.AxialCoupling
+```
+
+### Check sorry count after changes:
+```
+cd content/quantum-observable-universe/lean && grep -rn 'sorry' QOU/ --include="*.lean" | grep -v '^\s*--'
+```
+
+### Build the UGB dependency (Gröbner–Shirshov, only if changed):
+```
+cd content/unital-groebner-bases/lean && lake exe cache get && lake build
+```
+
+### Run the audit scripts:
+```
+bun run scripts/lean-audit.ts
+```
+```
+bun run scripts/witness-audit.ts
+```
+
+---
+
+## Known Issues (from Gemini Review of PR #307)
+
+The following issues were identified by automated code review and have been
+addressed in the latest commits:
+
+1. **`sym_trace_ordering_independent` was a tautology** (P → P). Now uses
+   `x.trace = y.trace` as hypothesis and is honestly `sorry`-marked,
+   awaiting the Young idempotent infrastructure (Phase 2).
+
+2. **`lean-witness.ts isStale`** used non-deterministic globbing and compared
+   the wrong SHA field. Now looks up the specific witness for the current
+   content hash and compares `meta.fileCommitSha` (not `meta.commitSha`).
+
+3. **`lean-audit.ts auditLeanFile`** duplicated staleness logic. Now delegates
+   to the shared `isStale()` function from `lean-witness.ts`.
+
+4. **`lean-audit.ts countCodeLines`** incorrectly filtered `#check`/`#eval` lines.
+   The `#` filter has been removed; Lean `#` commands are counted as code.
+
+5. **`witness-audit.ts`** reported duplicate entries when multiple witness files
+   existed for one `.lean` file. Now reports exactly one status per file.
