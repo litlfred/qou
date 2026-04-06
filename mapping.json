@@ -1,341 +1,106 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-06T19:45:23.067600+00:00",
+  "generated_at": "2026-04-06T22:01:30.997575+00:00",
   "mappings": [
     {
-      "narrative": "{Algebra without quasi-zeros}",
-      "lean_id": "QOU.QuantumObservableUniverse.NoQuasiZeros",
-      "latex_label": "def:no-quasi-zeros"
-    },
-    {
-      "narrative": "{Snake identity}",
-      "lean_id": "QOU.QuantumObservableUniverse.SnakeIdentity",
-      "latex_label": "def:snake-identity"
-    },
-    {
-      "narrative": "{Rigid monoidal category}",
-      "lean_id": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
-      "latex_label": "def:rigid-monoidal-category"
-    },
-    {
-      "narrative": "{Quantum Universe}",
-      "lean_id": "QOU.QuantumObservableUniverse.QuantumUniverse",
-      "latex_label": "def:quantum-universe"
-    },
-    {
-      "narrative": "{Frobenius pairing}",
-      "lean_id": "QOU.QuantumObservableUniverse.FrobeniusPairing",
-      "latex_label": "def:frobenius-pairing"
-    },
-    {
-      "narrative": "{Higher differential forms}",
-      "lean_id": "QOU.QuantumObservableUniverse.HigherForms",
-      "latex_label": "def:higher-forms"
-    },
-    {
-      "narrative": "{Involutive structure ($\\ast$-structure)}",
-      "lean_id": "QOU.QuantumObservableUniverse.InvolutiveStructure",
-      "latex_label": "def:involutive-structure"
-    },
-    {
-      "narrative": "{Categorical connection and curvature}",
-      "lean_id": "QOU.QuantumObservableUniverse.CategoricalConnection",
-      "latex_label": "def:categorical-connection"
-    },
-    {
-      "narrative": "{Categorical jet object}",
-      "lean_id": "QOU.QuantumObservableUniverse.CategoricalJet",
-      "latex_label": "def:categorical-jet"
-    },
-    {
-      "narrative": "{Categorical Hodge star}",
-      "lean_id": "QOU.QuantumObservableUniverse.CategoricalHodgeStar",
-      "latex_label": "def:categorical-hodge-star"
-    },
-    {
       "narrative": "{Bring's surface}",
-      "lean_id": "QOU.BringsSurface.BringsSurface",
+      "lean_id": "QOU.DescartesUniverse.BringsSurface",
       "latex_label": "def:brings-surface"
     },
     {
       "narrative": "{Color tube coordinates}",
-      "lean_id": "QOU.BringsSurface.ColorTubeCoordinates",
+      "lean_id": "QOU.DescartesUniverse.ColorTubeCoordinates",
       "latex_label": "def:color-tube-coordinates"
     },
     {
       "narrative": "{Color tube fibers}",
-      "lean_id": "QOU.BringsSurface.ColorTubeFibers",
+      "lean_id": "QOU.DescartesUniverse.ColorTubeFibers",
       "latex_label": "def:color-tube-fibers"
     },
     {
       "narrative": "{Briggs--Klein affine chart}",
-      "lean_id": "QOU.BringsSurface.BriggsKleinChart",
+      "lean_id": "QOU.DescartesUniverse.BriggsKleinChart",
       "latex_label": "def:briggs-klein-chart"
     },
     {
       "narrative": "{Quaternionic spectral resolvents}",
-      "lean_id": "QOU.BringsSurface.QuaternionicSpectralResolvents",
+      "lean_id": "QOU.DescartesUniverse.QuaternionicSpectralResolvents",
       "latex_label": "def:quaternionic-spectral-resolvents"
     },
     {
       "narrative": "{Coral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
-      "lean_id": "QOU.BringsSurface.CoralSectorCoords",
+      "lean_id": "QOU.DescartesUniverse.CoralSectorCoords",
       "latex_label": "def:coral-sector-coords"
     },
     {
       "narrative": "{Descartes condition}",
-      "lean_id": "QOU.BringsSurface.DescartesCondition",
+      "lean_id": "QOU.DescartesUniverse.DescartesCondition",
       "latex_label": "def:descartes-condition"
     },
     {
       "narrative": "{Up quark}",
-      "lean_id": "QOU.BringsSurface.UpQuark",
+      "lean_id": "QOU.DescartesUniverse.UpQuark",
       "latex_label": "def:up-quark"
     },
     {
       "narrative": "{Down quark}",
-      "lean_id": "QOU.BringsSurface.DownQuark",
+      "lean_id": "QOU.DescartesUniverse.DownQuark",
       "latex_label": "def:down-quark"
     },
     {
       "narrative": "{Electron}",
-      "lean_id": "QOU.BringsSurface.ElectronKnot",
+      "lean_id": "QOU.DescartesUniverse.ElectronKnot",
       "latex_label": "def:electron-knot"
     },
     {
       "narrative": "{Positron}",
-      "lean_id": "QOU.BringsSurface.PositronKnot",
+      "lean_id": "QOU.DescartesUniverse.PositronKnot",
       "latex_label": "def:positron-knot"
     },
     {
       "narrative": "{Neutrino}",
-      "lean_id": "QOU.BringsSurface.NeutrinoKnot",
+      "lean_id": "QOU.DescartesUniverse.NeutrinoKnot",
       "latex_label": "def:neutrino-knot"
     },
     {
       "narrative": "{Antineutrino as mirror unknot $T_{1,0}^{\\sigma}$}",
-      "lean_id": "QOU.BringsSurface.AntineutrinoKnot",
+      "lean_id": "QOU.DescartesUniverse.AntineutrinoKnot",
       "latex_label": "def:antineutrino-knot"
     },
     {
       "narrative": "{$\\mathcal{Q}_q$-Value as Categorical Action Difference}",
-      "lean_id": "QOU.BringsSurface.QValueTransition",
+      "lean_id": "QOU.DescartesUniverse.QValueTransition",
       "latex_label": "def:q-value-transition"
     },
     {
       "narrative": "{Proton (categorical)}",
-      "lean_id": "QOU.BringsSurface.CategoricalProton",
+      "lean_id": "QOU.DescartesUniverse.CategoricalProton",
       "latex_label": "def:categorical-proton"
     },
     {
       "narrative": "{Neutron (categorical)}",
-      "lean_id": "QOU.BringsSurface.CategoricalNeutron",
+      "lean_id": "QOU.DescartesUniverse.CategoricalNeutron",
       "latex_label": "def:categorical-neutron"
     },
     {
       "narrative": "{Stable nucleus (Skein energy minimum)}",
-      "lean_id": "QOU.BringsSurface.StableNucleus",
+      "lean_id": "QOU.DescartesUniverse.StableNucleus",
       "latex_label": "def:stable-nucleus"
     },
     {
       "narrative": "{Beta decay as a Skein crossing change on the Gröbner normal form}",
-      "lean_id": "QOU.BringsSurface.BetaDecaySkein",
+      "lean_id": "QOU.DescartesUniverse.BetaDecaySkein",
       "latex_label": "def:beta-decay-skein"
     },
     {
       "narrative": "{Categorical Lepton Number}",
-      "lean_id": "QOU.BringsSurface.LeptonNumberCategorical",
+      "lean_id": "QOU.DescartesUniverse.LeptonNumberCategorical",
       "latex_label": "def:lepton-number-categorical"
     },
     {
       "narrative": "{Transfer Matrix Operator for Nuclear Braid Interactions}",
-      "lean_id": "QOU.BringsSurface.TransferMatrixOperator",
+      "lean_id": "QOU.DescartesUniverse.TransferMatrixOperator",
       "latex_label": "def:transfer-matrix-operator"
-    },
-    {
-      "narrative": "{Recursive Brane Tower}",
-      "lean_id": "QOU.Torsion.RecursiveBraneTower",
-      "latex_label": "def:recursive-brane-tower"
-    },
-    {
-      "narrative": "{Categorical q-Reeb flow}",
-      "lean_id": "QOU.Torsion.CategoricalQReebFlow",
-      "latex_label": "def:categorical-q-reeb-flow"
-    },
-    {
-      "narrative": "{Descent involution}",
-      "lean_id": "QOU.Torsion.DescentInvolution",
-      "latex_label": "def:descent-involution"
-    },
-    {
-      "narrative": "{Yekutieli Lifting Condition}",
-      "lean_id": "QOU.Torsion.YekutieliLiftingCondition",
-      "latex_label": "def:yekutieli-lifting-condition"
-    },
-    {
-      "narrative": "{Quantum Characteristic Classes (Yekutieli obstruction)}",
-      "lean_id": "QOU.Torsion.QuantumCharacteristicClasses",
-      "latex_label": "def:quantum-characteristic-classes"
-    },
-    {
-      "narrative": "{Quantum Observable Universe as Direct Limit}",
-      "lean_id": "QOU.Torsion.DirectLimitAlgebra",
-      "latex_label": "def:direct-limit-algebra"
-    },
-    {
-      "narrative": "{Mass (categorical trace)}",
-      "lean_id": "QOU.Torsion.MassIdentity",
-      "latex_label": "def:mass-identity"
-    },
-    {
-      "narrative": "{Defining boundary of the brane}",
-      "lean_id": "QOU.Torsion.BraneBoundary",
-      "latex_label": "def:brane-boundary"
-    },
-    {
-      "narrative": "{Yekutieli triple mapping}",
-      "lean_id": "QOU.Torsion.YekutieliTriple",
-      "latex_label": "def:yekutieli-triple"
-    },
-    {
-      "narrative": "{Localized knot (knot at a point)}",
-      "lean_id": "QOU.Torsion.LocalizedKnot",
-      "latex_label": "def:localized-knot"
-    },
-    {
-      "narrative": "{Braid group on three strands}",
-      "lean_id": "QOU.PathIntegrals.BraidGroup",
-      "latex_label": "def:braid-group"
-    },
-    {
-      "narrative": "{$\\mathfrak{su}(2)$ basis}",
-      "lean_id": "QOU.PathIntegrals.Su2Basis",
-      "latex_label": "def:su2-basis"
-    },
-    {
-      "narrative": "{$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$}",
-      "lean_id": "QOU.PathIntegrals.Su2Generators",
-      "latex_label": "def:su2-generators"
-    },
-    {
-      "narrative": "{$\\mathrm{SO}(3)$ generators}",
-      "lean_id": "QOU.PathIntegrals.So3Generators",
-      "latex_label": "def:so3-generators"
-    },
-    {
-      "narrative": "{Braid involutions: twist and flip}",
-      "lean_id": "QOU.PathIntegrals.BraidTwistFlip",
-      "latex_label": "def:braid-twist-flip"
-    },
-    {
-      "narrative": "{Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$}",
-      "lean_id": "QOU.PathIntegrals.QuantumSu2",
-      "latex_label": "def:quantum-su2"
-    },
-    {
-      "narrative": "{Crossing energy of a knot composite}",
-      "lean_id": "QOU.PathIntegrals.CrossingEnergy",
-      "latex_label": "def:crossing-energy"
-    },
-    {
-      "narrative": "{Coulomb charge of a knot composite}",
-      "lean_id": "QOU.PathIntegrals.CoulombCharge",
-      "latex_label": "def:coulomb-charge"
-    },
-    {
-      "narrative": "{$q$-Momentum from the braid writhe}",
-      "lean_id": "QOU.PathIntegrals.QMomentum",
-      "latex_label": "def:q-momentum"
-    },
-    {
-      "narrative": "{$q$-Angular momentum from the $\\mathrm{SU}_q(2)$ Casimir}",
-      "lean_id": "QOU.PathIntegrals.QAngularMomentum",
-      "latex_label": "def:q-angular-momentum"
-    },
-    {
-      "narrative": "{$q$-Deformed Energy}",
-      "lean_id": "QOU.PathIntegrals.QEnergy",
-      "latex_label": "def:q-energy"
-    },
-    {
-      "narrative": "{Exceptional divisor at $p$}",
-      "lean_id": "QOU.PathIntegrals.ExceptionalDivisor",
-      "latex_label": "def:exceptional-divisor"
-    },
-    {
-      "narrative": "{Reeb bundle over the exceptional divisor}",
-      "lean_id": "QOU.PathIntegrals.ReebBundle",
-      "latex_label": "def:reeb-bundle"
-    },
-    {
-      "narrative": "{Vertex operator on the exceptional divisor}",
-      "lean_id": "QOU.PathIntegrals.VertexOperator",
-      "latex_label": "def:vertex-operator"
-    },
-    {
-      "narrative": "{Categorical transfer matrix}",
-      "lean_id": "QOU.PathIntegrals.CategoricalTransferMatrix",
-      "latex_label": "def:categorical-transfer-matrix"
-    },
-    {
-      "narrative": "{Hadron (stable knot composite)}",
-      "lean_id": "QOU.PathIntegrals.Hadron",
-      "latex_label": "def:hadron"
-    },
-    {
-      "narrative": "{Localized hadron}",
-      "lean_id": "QOU.PathIntegrals.LocalizedHadron",
-      "latex_label": "def:localized-hadron"
-    },
-    {
-      "narrative": "{Fibre-compatible hadron embedding}",
-      "lean_id": "QOU.PathIntegrals.HadronFibreEmbedding",
-      "latex_label": "def:hadron-fibre-embedding"
-    },
-    {
-      "narrative": "{Knot-particle generation from $T_{m,n}$ torus knot generators}",
-      "lean_id": "QOU.PathIntegrals.KnotParticleGeneration",
-      "latex_label": "def:knot-particle-generation"
-    },
-    {
-      "narrative": "{Bundle initial conditions}",
-      "lean_id": "QOU.PathIntegrals.BundleInitialConditions",
-      "latex_label": "def:bundle-initial-conditions"
-    },
-    {
-      "narrative": "{Isotopy equivalence of bundle initial conditions}",
-      "lean_id": "QOU.PathIntegrals.BundleIsotopyEquivalence",
-      "latex_label": "def:bundle-isotopy-equivalence"
-    },
-    {
-      "narrative": "{Torsion-driven knot flow}",
-      "lean_id": "QOU.PathIntegrals.TorsionKnotFlow",
-      "latex_label": "def:torsion-knot-flow"
-    },
-    {
-      "narrative": "{Borromean baryon}",
-      "lean_id": "QOU.PathIntegrals.BorromeanBaryon",
-      "latex_label": "def:borromean-baryon"
-    },
-    {
-      "narrative": "{Skein binding Lagrangian for multi-nucleon links}",
-      "lean_id": "QOU.PathIntegrals.SkeinBindingLagrangian",
-      "latex_label": "def:skein-binding-lagrangian"
-    },
-    {
-      "narrative": "{$q$-Weighted Yang--Mills--Levi functional}",
-      "lean_id": "QOU.DescartesUniverse.QYangMillsLevi",
-      "latex_label": "def:q-yang-mills-levi"
-    },
-    {
-      "narrative": "{Spatial realization functor}",
-      "lean_id": "QOU.DescartesUniverse.SpatialRealizationFunctor",
-      "latex_label": "def:spatial-realization-functor"
-    },
-    {
-      "narrative": "{Witt vector lift of a formal group}",
-      "lean_id": "QOU.DescartesUniverse.WittVectorLift",
-      "latex_label": "def:witt-vector-lift"
     }
   ]
 }
