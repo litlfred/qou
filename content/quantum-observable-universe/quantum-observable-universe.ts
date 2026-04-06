@@ -13,17 +13,18 @@ export default paper({
   affiliations: [],
   date: "2026-03-21",
   abstract:
-    "This book develops the mathematical framework of the Quantum Observable " +
+    "This paper develops the mathematical framework of the Quantum Observable " +
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
     "Frobenius--Hopf object whose differential geometry is controlled by a " +
-    "substrate parameter $q$.  Part I (Chapters 0--3) establishes the " +
-    "categorical foundations and the Yekutieli brane tower.  Part II " +
+    "substrate parameter $q$.  Part~I (Chapters 1--3) establishes the " +
+    "categorical foundations and the Yekutieli brane tower.  Part~II " +
     "(Chapters 4--8) develops the structural consequences: braiding and " +
     "knot theory, models over various ground fields, the algebraic " +
-    "substrate, the fluid dynamics of the brane, and information-theoretic " +
-    "perspectives.  Part III (Chapters 9--10) specialises to the Descartes " +
+    "substrate, fluid dynamics, and information-theoretic " +
+    "perspectives.  Part~III (Chapters 9--10) specialises to the Descartes " +
     "universe on Bring's surface ($\\chi = -6$) and collects physical " +
-    "predictions.",
+    "predictions.  Chapter~11 develops the $q$-geometric Langlands " +
+    "correspondence.",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
     nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
