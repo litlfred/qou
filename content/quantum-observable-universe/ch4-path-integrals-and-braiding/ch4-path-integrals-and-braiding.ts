@@ -172,6 +172,8 @@ export default chapter({
         // Vertex operators factor through E_p
         "vertex-is-exceptional-divisor",
         "vertex-is-exceptional-divisor-proof",
+        // Photon polarisation states as Hecke generators on the exceptional divisor
+        "breit-wheeler-vertex",
         // Product factorization of the Markov trace
         "markov-trace-product",
         "markov-trace-product-interpretation",
