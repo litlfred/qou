@@ -285,7 +285,9 @@ theorem volume_eq_markov_trace (seq : CrossingSeq) :
     - pp: `crossingMatrix pp = 2 • T_pp` → coefficients `(2, 0)`
     - nn: `crossingMatrix nn = 2 • T_nn` → coefficients `(2q², −2q·s)`
     - pn: `crossingMatrix pn = two_T_pn`  → coefficients `(1+q², −q·s)`
-      (already doubled in the pn weight definition)
+      (the "undoubled" pn base would be `((1+q²)/2, −q·s/2)`, but
+      `w_plus_t .pn` and `w_zero_t .pn` are defined as the averaged
+      form `(1+q², −q·s)` which already matches `two_T_pn` directly)
 
     This ensures `transferMatrix c d = crossingMatrix(nj, nk)` for
     each pair, which is needed for `matrixChain_eq_buildChains`. -/
