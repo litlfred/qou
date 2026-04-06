@@ -161,6 +161,6 @@ theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
   -- the Hecke relation at each step where ℓ(s_i · w) < ℓ(w).
   -- This is a finite computation with 6 cases.
   -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
-  sorry
+  sorry -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
 
 end QOU.YoungIdempotent

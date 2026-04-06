@@ -336,7 +336,8 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
   | nil => simp at hj
   | cons _ rest ih =>
     simp [chainCrossings, matrixChain, buildChains]
-    sorry  -- foldl/structural recursion bridge (non-trivial but
+    sorry  -- Ref: [litlfred2025] §9/transfer-matrix-correspondence
+           -- foldl/structural recursion bridge (non-trivial but
            -- mathematically sound: same factors, commutative product)
 
 -- ════════════════════════════════════════════════════════════════

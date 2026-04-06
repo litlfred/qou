@@ -128,7 +128,7 @@ theorem ordering_independence
   --
   -- This requires a combinatorial argument about multisets of pairs.
   -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-  sorry
+  sorry -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
 
 /-! ## §3  The unique Q-value -/
 
