@@ -267,8 +267,15 @@ content/pipeline/content-graph-analysis.py
 
 **Usage:**
 ```bash
-# Full analysis of all chapters
+# Full heuristic report
 cd content && python3 pipeline/content-graph-analysis.py
+
+# Write report to /tmp/content-graph-report.md
+cd content && python3 pipeline/content-graph-analysis.py --md
+
+# Generate concrete, implementable reorganisation proposals
+cd content && python3 pipeline/content-graph-analysis.py --proposals
+# → output also written to /tmp/content-graph-proposals.md
 
 # Specific chapter only
 cd content && python3 pipeline/content-graph-analysis.py --chapter ch4-path-integrals-and-braiding
@@ -280,11 +287,38 @@ cd content && python3 pipeline/content-graph-analysis.py --visualise
 cd content && python3 pipeline/content-graph-analysis.py --json > /tmp/content-graph.json
 ```
 
+### Proposal kinds (--proposals output)
+
+| Kind | Description | Trigger |
+|------|-------------|---------|
+| `split` | Split a dense section (> 18 blocks) along natural comment boundaries | H5 |
+| `merge` | Merge two adjacent sparse sections (< 3 non-prose blocks each) | H4 |
+| `move` | Move a block that is forward-referenced by ≥ 3 earlier blocks | H1 |
+| `reverse` | Fix an `interprets`/`example` block that appears before its target | H1 |
+
+Each proposal includes:
+- A unique ID (`P1`, `P2`, …) for stable reference
+- Exact chapter manifest path and section labels to edit
+- Concrete `blocks[]` array changes to make
+- Expected forward-reference reduction
+
+### Implemented reorganisations (tracking)
+
+The following reorganisations have been applied to the paper manifests:
+
+| ID | Kind | Description | Status |
+|----|------|-------------|--------|
+| R1 | move | `sec:fivefold-symmetry` + `sec:orbital-space` from Ch2 → Ch5 | ✅ done |
+| R2 | merge | 4 single-block sparse sections → `sec:non-archimedean-models` in Ch6 | ✅ done |
+| R3 | merge | `sec:jones-polynomials` (1 block) merged into `sec:finite-fields` in Ch6 | ✅ done |
+| R4 | split | `sec:descartes-particles` (84 blocks) → 5 sections of 17–25 blocks in Ch5 | ✅ done |
+
 **Key functions:**
 - `parse_paper(root)` → `{chapters, sections, blocks, positions}`
 - `build_block_graph(blocks)` → `{nodes, edges}`
 - `build_section_graph(blocks, positions)` → `{chapter_edges, section_edges}`
 - `apply_heuristics(graph, positions)` → `[Finding]`
+- `generate_proposals(...)` → `[Proposal]` (split/merge/move/reverse)
 - `generate_dot_chapter(graph)` → SVG path
 - `generate_dot_blocks(graph)` → SVG path
 - `report(findings)` → formatted text
@@ -298,6 +332,7 @@ cd content && python3 pipeline/content-graph-analysis.py --json > /tmp/content-g
 | Cross-chapter coupling found | `critical-path-analysis` — trace logical dependency chain |
 | Sparse sections found | `editor` — add missing content blocks |
 | Dense sections found | `content-block-review` — audit individual blocks for splitting |
+| Proposals generated | Approve with user, then implement via manifest edits + re-run |
 
 ## Output artefacts
 
@@ -307,3 +342,4 @@ cd content && python3 pipeline/content-graph-analysis.py --json > /tmp/content-g
 | `/tmp/content_block_heatmap.svg` | Block-level dependency heat-map |
 | `/tmp/content-graph.json` | Machine-readable graph export |
 | `/tmp/content-graph-report.md` | Full analysis report |
+| `/tmp/content-graph-proposals.md` | Concrete reorganisation proposals |

@@ -59,28 +59,18 @@ export default chapter({
       ],
     }),
 
-    // ── Categorical reformulation ───────────────────────────────────
-    section({
-      title: "Key Results in Categorical Language",
-      label: "sec:categorical-reformulation",
-      blocks: ["categorical-reformulation"],
-    }),
-
     // ── Non-Archimedean models ──────────────────────────────────────
+    // R2: Merged four 1-block sections (categorical-reformulation,
+    // enveloping-algebras, p-adic-fields, p-adic-realisation) into one.
     section({
-      title: "Universal Enveloping Algebras and Quantum Groups",
-      label: "sec:enveloping-algebras",
-      blocks: ["enveloping-algebras"],
-    }),
-    section({
-      title: "$\\pp$-Adic Number Fields and Universality",
-      label: "sec:p-adic-fields",
-      blocks: ["p-adic-fields"],
-    }),
-    section({
-      title: "$\\mathbb{C}_\\pp$ Quantum Universe",
-      label: "sec:cp-que",
-      blocks: ["p-adic-realisation"],
+      title: "Non-Archimedean models",
+      label: "sec:non-archimedean-models",
+      blocks: [
+        "categorical-reformulation",
+        "enveloping-algebras",
+        "p-adic-fields",
+        "p-adic-realisation",
+      ],
     }),
     section({
       title: "Lifting via Formal Groups and Witt Vectors",
@@ -94,21 +84,16 @@ export default chapter({
       ],
     }),
 
-    // ── Finite-field models ─────────────────────────────────────────
+    // ── Finite-field models and Jones polynomials ───────────────────
+    // R3: Merged 1-block sec:jones-polynomials into sec:finite-fields.
     section({
-      title: "Quotient to Finite Fields",
+      title: "Finite fields and Jones polynomials",
       label: "sec:finite-fields",
       blocks: [
         "finite-field-realisation",
         "finite-fields-outlook",
+        "jones-polynomials",
       ],
-    }),
-
-    // ── Jones polynomials ───────────────────────────────────────────
-    section({
-      title: "Jones Polynomials",
-      label: "sec:jones-polynomials",
-      blocks: ["jones-polynomials"],
     }),
 
     // ── Fluid dynamics moved to Chapter 10 ──────────────────────────

@@ -989,7 +989,296 @@ def export_json(
     }
 
 
-# ── Main ─────────────────────────────────────────────────────────────────────
+# ── Concrete proposals ───────────────────────────────────────────────────────
+
+class Proposal:
+    def __init__(self, pid, kind, title, rationale, impact, blocks=None, details=None):
+        self.id        = pid      # "P1", "P2", …
+        self.kind      = kind     # "split" | "merge" | "move" | "reverse"
+        self.title     = title
+        self.rationale = rationale
+        self.impact    = impact   # expected forward-ref reduction
+        self.blocks    = blocks or []
+        self.details   = details or {}
+
+    def __repr__(self):
+        return f"Proposal({self.id}: {self.title})"
+
+
+def generate_proposals(
+    chapters: list[ChapterInfo],
+    blocks: list[BlockInfo],
+    label_to_block: dict[str, BlockInfo],
+    edges: list[tuple[str, str, str]],
+    chapter_edges: dict[tuple[int, int], int],
+) -> list[Proposal]:
+    """
+    Generate concrete, implementable reorganisation proposals from the findings.
+
+    Each proposal has:
+    - A unique ID (P1, P2, …)
+    - Kind: split | merge | move | reverse
+    - Affected blocks and sections
+    - Expected forward-reference reduction
+    - Concrete edit instructions
+    """
+    pos         = {b.label: b.position() for b in blocks}
+    section_map : dict[str, tuple[ChapterInfo, SectionInfo]] = {}
+    for ch in chapters:
+        for sec in ch.sections:
+            section_map[sec.label] = (ch, sec)
+
+    proposals: list[Proposal] = []
+    pid = [1]
+
+    def next_id() -> str:
+        s = f"P{pid[0]}"
+        pid[0] += 1
+        return s
+
+    # ── P-SPLIT: Dense sections (H5 findings → concrete splits) ──────
+    for ch in chapters:
+        for sec in ch.sections:
+            count = len(sec.blocks)
+            if count <= 18:
+                continue
+            proposals.append(Proposal(
+                pid=next_id(),
+                kind="split",
+                title=f"Split dense section '{sec.title[:45]}' ({count} blocks) in {ch.title}",
+                rationale=(
+                    f"Section '{sec.label}' has {count} blocks — far above the recommended "
+                    f"maximum of 18.  Large sections make navigation and cross-referencing "
+                    f"difficult.  Split along the natural comment boundaries already present "
+                    f"in the source."
+                ),
+                impact=f"Breaks {count}-block monolith into focused subsections of 5–20 blocks.",
+                blocks=sec.blocks[:5],
+                details={
+                    "chapter_manifest": str(PAPER_DIR / ch.dir / f"{ch.dir}.ts"),
+                    "section_label": sec.label,
+                    "current_block_count": count,
+                    "action": (
+                        f"Replace the single section({{{sec.label!r}}}) with multiple "
+                        f"section({{...}}) calls, each containing a logically coherent subset "
+                        f"of the {count} blocks."
+                    ),
+                },
+            ))
+
+    # ── P-MERGE: Sparse sections (H4 findings → concrete merges) ──────
+    # Find adjacent sparse sections within the same chapter
+    for ch in chapters:
+        secs = ch.sections
+        i = 0
+        while i < len(secs) - 1:
+            s1, s2 = secs[i], secs[i + 1]
+            b1 = [b for b in blocks if b.chapter_dir == ch.dir and b.section_label == s1.label]
+            b2 = [b for b in blocks if b.chapter_dir == ch.dir and b.section_label == s2.label]
+            np1 = sum(1 for b in b1 if b.kind not in NARRATIVE_KINDS)
+            np2 = sum(1 for b in b2 if b.kind not in NARRATIVE_KINDS)
+            # Skip intro sections
+            if s1.section_idx == 0 or s2.section_idx == 0:
+                i += 1
+                continue
+            if np1 < 3 and np2 < 3 and len(s1.blocks) + len(s2.blocks) <= 8:
+                proposals.append(Proposal(
+                    pid=next_id(),
+                    kind="merge",
+                    title=(
+                        f"Merge sparse sections '{s1.title[:30]}' + "
+                        f"'{s2.title[:30]}' in {ch.title}"
+                    ),
+                    rationale=(
+                        f"'{s1.label}' ({len(s1.blocks)} blocks) and "
+                        f"'{s2.label}' ({len(s2.blocks)} blocks) are both too sparse. "
+                        f"Combined they would form a {len(s1.blocks)+len(s2.blocks)}-block "
+                        f"section, which is a more appropriate size."
+                    ),
+                    impact=f"Reduces section count by 1; improves narrative flow.",
+                    blocks=s1.blocks + s2.blocks,
+                    details={
+                        "chapter_manifest": str(PAPER_DIR / ch.dir / f"{ch.dir}.ts"),
+                        "keep_label": s1.label,
+                        "remove_label": s2.label,
+                        "merged_blocks": s1.blocks + s2.blocks,
+                        "action": (
+                            f"Replace both section({{{s1.label!r}}}) and "
+                            f"section({{{s2.label!r}}}) with a single section whose "
+                            f"blocks[] array concatenates both block lists."
+                        ),
+                    },
+                ))
+                i += 2
+                continue
+            i += 1
+
+    # ── P-MOVE: Forward references pointing to isolated blocks ────────
+    # Find blocks that cause forward refs AND are only referenced by
+    # a small number of blocks — good candidates to move earlier.
+    forward_target_count: dict[str, int] = defaultdict(int)
+    forward_source_map: dict[str, list[str]] = defaultdict(list)
+    for from_l, to_l, etype in edges:
+        fb = label_to_block.get(from_l)
+        tb = label_to_block.get(to_l)
+        if fb is None or tb is None:
+            continue
+        if pos.get(from_l, (999,)) < pos.get(to_l, (0,)):
+            forward_target_count[to_l] += 1
+            forward_source_map[to_l].append(from_l)
+
+    # High-value candidates: blocks that fix many forward refs if moved earlier
+    move_candidates = sorted(
+        [(count, tl) for tl, count in forward_target_count.items() if count >= 3],
+        reverse=True,
+    )
+    for count, tl in move_candidates[:10]:
+        tb = label_to_block.get(tl)
+        if tb is None:
+            continue
+        sources = forward_source_map[tl]
+        # Find the earliest source position
+        src_positions = [pos.get(sl) for sl in sources if pos.get(sl) is not None]
+        if not src_positions:
+            continue
+        earliest_src = min(src_positions)
+        # Current position of the target
+        tl_pos = pos.get(tl)
+        if tl_pos is None or tl_pos <= earliest_src:
+            continue
+
+        # Which chapter/section does the earliest source live in?
+        earliest_src_blocks = [
+            label_to_block[sl] for sl in sources
+            if pos.get(sl) == earliest_src and sl in label_to_block
+        ]
+        if not earliest_src_blocks:
+            continue
+        target_ch = earliest_src_blocks[0]
+
+        proposals.append(Proposal(
+            pid=next_id(),
+            kind="move",
+            title=f"Move '{tl}' earlier (fixes {count} forward references)",
+            rationale=(
+                f"Block '{tl}' (currently in {tb.chapter_dir}/{tb.section_label}) "
+                f"is forward-referenced by {count} blocks that appear earlier in the document. "
+                f"Moving it to {target_ch.chapter_dir}/{target_ch.section_label} or "
+                f"earlier would eliminate all {count} forward refs at once."
+            ),
+            impact=f"Eliminates {count} forward reference(s).",
+            blocks=[tl] + sources[:5],
+            details={
+                "block_label": tl,
+                "block_kind": tb.kind,
+                "current_chapter": tb.chapter_dir,
+                "current_section": tb.section_label,
+                "suggested_chapter": target_ch.chapter_dir,
+                "suggested_section": target_ch.section_label,
+                "forward_ref_sources": sources[:10],
+                "action": (
+                    f"Remove '{tb.root_name}' from its current blocks[] array in "
+                    f"{tb.chapter_dir}.ts and add it to the blocks[] array of "
+                    f"section '{target_ch.section_label}' in {target_ch.chapter_dir}.ts, "
+                    f"placing it before the first block that references it."
+                ),
+            },
+        ))
+
+    # ── P-REVERSE: Edges that are backwards in document order ─────────
+    # Find remark/example blocks earlier than what they interpret/example
+    for from_l, to_l, etype in edges:
+        if etype not in ("interprets", "example"):
+            continue
+        fb = label_to_block.get(from_l)
+        tb = label_to_block.get(to_l)
+        if fb is None or tb is None:
+            continue
+        if pos.get(from_l, (999,)) < pos.get(to_l, (0,)):
+            # An interpretation/example appears before what it interprets
+            proposals.append(Proposal(
+                pid=next_id(),
+                kind="reverse",
+                title=(
+                    f"'{from_l}' ({fb.kind}) appears before its "
+                    f"{etype} target '{to_l}'"
+                ),
+                rationale=(
+                    f"A {fb.kind} block should come AFTER the block it interprets/exemplifies. "
+                    f"'{from_l}' is in {fb.chapter_dir}/{fb.section_label} but its "
+                    f"{etype} target '{to_l}' is in {tb.chapter_dir}/{tb.section_label} "
+                    f"which appears LATER in the document."
+                ),
+                impact="Fixes reader confusion: interpretation appears before the statement.",
+                blocks=[from_l, to_l],
+                details={
+                    "action": (
+                        f"Either move '{tb.root_name}' earlier (before "
+                        f"'{fb.root_name}'), or move '{fb.root_name}' later "
+                        f"(to the same section as '{to_l}')."
+                    ),
+                    "preferred": (
+                        f"Move '{tb.root_name}' from {tb.section_label} to "
+                        f"{fb.section_label} (place it just before '{from_l}')."
+                    ),
+                },
+            ))
+
+    return proposals
+
+
+def format_proposals(proposals: list[Proposal]) -> str:
+    lines = ["# Concrete Reorganisation Proposals", ""]
+    lines.append(
+        f"Total proposals: **{len(proposals)}**  "
+        f"({sum(1 for p in proposals if p.kind=='split')} split, "
+        f"{sum(1 for p in proposals if p.kind=='merge')} merge, "
+        f"{sum(1 for p in proposals if p.kind=='move')} move, "
+        f"{sum(1 for p in proposals if p.kind=='reverse')} reverse)"
+    )
+    lines.append("")
+
+    by_kind = {"split": [], "merge": [], "move": [], "reverse": []}
+    for p in proposals:
+        by_kind.get(p.kind, by_kind["split"]).append(p)
+
+    kind_labels = {
+        "split":   "✂️  Split dense sections",
+        "merge":   "🔗 Merge sparse sections",
+        "move":    "📦 Move blocks earlier",
+        "reverse": "🔄 Fix out-of-order interprets/examples",
+    }
+
+    for kind, label in kind_labels.items():
+        plist = by_kind[kind]
+        if not plist:
+            continue
+        lines.append(f"## {label}")
+        lines.append("")
+        for p in plist:
+            lines.append(f"### {p.id} — {p.title}")
+            lines.append("")
+            lines.append(f"**Rationale:** {p.rationale}")
+            lines.append("")
+            lines.append(f"**Impact:** {p.impact}")
+            if p.blocks:
+                lines.append(f"**Key blocks:** `{'`, `'.join(p.blocks[:5])}`")
+            if p.details.get("action"):
+                lines.append("")
+                lines.append(f"**Action:** {p.details['action']}")
+            if p.details.get("preferred"):
+                lines.append(f"**Preferred:** {p.details['preferred']}")
+            if p.details.get("merged_blocks"):
+                lines.append(
+                    f"**Merged block list:** `{'`, `'.join(p.details['merged_blocks'])}`"
+                )
+            lines.append("")
+
+    lines.append("---")
+    lines.append("_Generated by content/pipeline/content-graph-analysis.py --proposals_")
+    return "\n".join(lines)
+
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -997,6 +1286,8 @@ def main():
     parser.add_argument("--visualise", action="store_true", help="Render Graphviz SVG")
     parser.add_argument("--json", action="store_true", help="Emit JSON to stdout and exit")
     parser.add_argument("--md", action="store_true", help="Write report to /tmp/content-graph-report.md")
+    parser.add_argument("--proposals", action="store_true",
+                        help="Generate concrete reorganisation proposals (outputs /tmp/content-graph-proposals.md)")
     args = parser.parse_args()
 
     print("Parsing content tree…", file=sys.stderr)
@@ -1025,6 +1316,19 @@ def main():
     findings += h7_remark_ratio(chapters, label_to_block)
     findings.sort(key=lambda f: (f.severity_order(), f.heuristic))
     print(f"  {len(findings)} finding(s) generated", file=sys.stderr)
+
+    if args.proposals:
+        print("Generating concrete proposals…", file=sys.stderr)
+        proposals = generate_proposals(
+            chapters, blocks, label_to_block, edges, chapter_edges
+        )
+        print(f"  {len(proposals)} proposal(s) generated", file=sys.stderr)
+        proposal_text = format_proposals(proposals)
+        out = Path("/tmp/content-graph-proposals.md")
+        out.write_text(proposal_text)
+        print(f"Proposals written to {out}", file=sys.stderr)
+        print(proposal_text)
+        return
 
     if args.json:
         print(json.dumps(

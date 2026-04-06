@@ -29,6 +29,10 @@ export const contentGraph: SkillDefinition = {
     "section.*graph",
     "content.*connect",
     "what.*blocks.*move",
+    "proposals",
+    "split.*section",
+    "merge.*section",
+    "concrete.*reorg",
   ],
   schemas: [
     { module: "schemas/types", types: ["Block", "Chapter", "Section"], access: "read" },

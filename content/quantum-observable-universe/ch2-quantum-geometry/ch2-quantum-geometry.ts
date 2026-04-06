@@ -274,23 +274,9 @@ export default chapter({
     }),
 
     // ── Orbital space from normal bundle ──────────────────────────────
-    section({
-      title: "Orbital space and resonance modes",
-      label: "sec:orbital-space",
-      blocks: [
-        "orbital-space-normal-bundle",
-        "orbital-fourier-decomposition",
-      ],
-    }),
-
-    // ── Five-fold symmetry and the Bring surface ────────────────────
-    section({
-      title: "Five-fold symmetry",
-      label: "sec:fivefold-symmetry",
-      blocks: [
-        "fivefold-symmetry",
-        "cohomological-embedding",
-      ],
-    }),
+    // NOTE (R1): sec:orbital-space and sec:fivefold-symmetry moved to
+    // ch5-brings-surface (§3e/§3f) because their blocks forward-reference
+    // Reidemeister invariance (ch4) and shell/skein content (ch9).
+    // They belong in the Descartes chapter where that content lives.
   ],
 });
