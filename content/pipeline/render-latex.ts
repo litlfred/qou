@@ -491,21 +491,26 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
     }
 
     case "table": {
-      // Standalone table block.  Rendered as a LaTeX table/longtable
-      // environment inside a float.  The .md content may contain a
-      // markdown table (pipe-delimited) or raw TeX.
+      // Standalone table block.  Rendered as a LaTeX table float
+      // (unless content uses longtable, which cannot be nested in a float).
+      // The .md content may contain a markdown table (pipe-delimited) or raw TeX.
       if (block.label) lines.push(`% table: ${block.label}`);
       const caption = block.caption || ("title" in block && block.title) || "";
-      if (caption) {
+      // Use block.tex if provided, otherwise render from .md
+      const tex = block.tex || markdownToLatex(mdContent);
+      const isLongtable = tex.includes("\\begin{longtable");
+      if (caption && !isLongtable) {
         lines.push("\\begin{table}[htbp]");
         lines.push("  \\centering");
         lines.push(`  \\caption{${escapeLatex(String(caption))}}`);
         if (block.label) lines.push(`  \\label{${block.label}}`);
       }
-      // Use block.tex if provided, otherwise render from .md
-      const tex = block.tex || markdownToLatex(mdContent);
       lines.push(tex);
-      if (caption) {
+      if (caption && isLongtable) {
+        // For longtable, caption and label go outside the float
+        if (block.label) lines.push(`\\label{${block.label}}`);
+      }
+      if (caption && !isLongtable) {
         lines.push("\\end{table}");
       }
       break;

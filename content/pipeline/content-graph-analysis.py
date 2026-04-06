@@ -42,13 +42,13 @@ def extract_string_list(text: str, field: str) -> list[str]:
     m = re.search(pattern, text, re.DOTALL)
     if not m:
         return []
-    items = re.findall(r'"([^"]+)"', m.group(1))
+    items = re.findall(r'''["']([^"']+)["']''', m.group(1))
     return items
 
 
 def extract_string_value(text: str, field: str) -> str | None:
     """Extract a single string field like label: "def:foo"."""
-    m = re.search(rf'{field}\s*:\s*"([^"]+)"', text)
+    m = re.search(rf"""{field}\s*:\s*["']([^"']+)["']""", text)
     return m.group(1) if m else None
 
 
@@ -60,7 +60,7 @@ def extract_int_value(text: str, field: str) -> int | None:
 
 def extract_chapter_dirs(text: str) -> list[str]:
     """Extract all chapterRef({ dir: "..." }) entries from a paper manifest."""
-    return re.findall(r'chapterRef\(\s*\{[^}]*dir\s*:\s*"([^"]+)"', text)
+    return re.findall(r"""chapterRef\(\s*\{[^}]*dir\s*:\s*["']([^"']+)["']""", text)
 
 
 # ── Data structures ──────────────────────────────────────────────────────────
@@ -1011,6 +1011,7 @@ def generate_proposals(
     label_to_block: dict[str, BlockInfo],
     edges: list[tuple[str, str, str]],
     chapter_edges: dict[tuple[int, int], int],
+    paper_dir: Path = PAPER_DIR,
 ) -> list[Proposal]:
     """
     Generate concrete, implementable reorganisation proposals from the findings.
@@ -1288,10 +1289,14 @@ def main():
     parser.add_argument("--md", action="store_true", help="Write report to /tmp/content-graph-report.md")
     parser.add_argument("--proposals", action="store_true",
                         help="Generate concrete reorganisation proposals (outputs /tmp/content-graph-proposals.md)")
+    parser.add_argument("--paper", metavar="DIR",
+                        help="Paper directory name (default: quantum-observable-universe)",
+                        default="quantum-observable-universe")
     args = parser.parse_args()
 
+    paper_dir = CONTENT_ROOT / args.paper
     print("Parsing content tree…", file=sys.stderr)
-    chapters, blocks = parse_paper(PAPER_DIR, chapter_filter=args.chapter)
+    chapters, blocks = parse_paper(paper_dir, chapter_filter=args.chapter)
     print(
         f"  {len(chapters)} chapter(s), "
         f"{sum(len(c.sections) for c in chapters)} section(s), "
@@ -1320,7 +1325,8 @@ def main():
     if args.proposals:
         print("Generating concrete proposals…", file=sys.stderr)
         proposals = generate_proposals(
-            chapters, blocks, label_to_block, edges, chapter_edges
+            chapters, blocks, label_to_block, edges, chapter_edges,
+            paper_dir=paper_dir,
         )
         print(f"  {len(proposals)} proposal(s) generated", file=sys.stderr)
         proposal_text = format_proposals(proposals)

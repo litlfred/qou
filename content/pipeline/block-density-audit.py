@@ -141,10 +141,10 @@ def audit_block(md_path: Path, chapter_dir: str) -> list[Finding]:
     block_kind = "unknown"
     if ts_path.exists():
         ts_content = ts_path.read_text(encoding="utf-8", errors="replace")
-        if 'kind: "table"' in ts_content or "table(" in ts_content:
+        if 'kind: "table"' in ts_content or "kind: 'table'" in ts_content or "table(" in ts_content:
             is_table_kind = True
         # Extract block kind
-        kind_match = re.search(r'(?:kind:\s*"(\w+)"|^export default (\w+)\()', ts_content, re.M)
+        kind_match = re.search(r"""(?:kind:\s*["'](\w+)["']|^export default (\w+)\()""", ts_content, re.M)
         if kind_match:
             block_kind = kind_match.group(1) or kind_match.group(2) or "unknown"
 

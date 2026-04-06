@@ -48,7 +48,7 @@ $$
 
 which is manifestly non-negative. For reducible representations
 $V = V_1 \oplus V_2$, the argument applies block-diagonally:
-$f^\dagger f$ is non-negative on each irreducible summand.
+The morphism $f^\dagger f$ is non-negative on each irreducible summand.
 
 **Interpretation.** Positive-definiteness of the dagger means
 $\mathbf{Rep}(\mathrm{SU}(2))$ is a $C^*$-tensor category: every

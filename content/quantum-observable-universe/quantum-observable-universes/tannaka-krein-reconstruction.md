@@ -32,7 +32,7 @@ $(\mu, \eta, \Delta, \varepsilon, S)$ such that:
 
 In the classical case ($\mathbf{C}$ symmetric), this is Tannaka's
 theorem \cite{tannaka1939} as algebraised by Deligne \cite{deligne1990}:
-$H = \mathcal{O}(G)$ is the coordinate ring of a compact group $G$,
+The sheaf $H = \mathcal{O}(G)$ is the coordinate ring of a compact group $G$,
 and $\mathrm{Aut}^{\otimes}(\tau) \cong G$.
 
 In the quantum case ($\mathbf{C}$ braided but not symmetric), the

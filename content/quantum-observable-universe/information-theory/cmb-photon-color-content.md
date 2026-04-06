@@ -14,7 +14,7 @@ $\sigma_0, \sigma_1$ are the Hecke generators
 ([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)).  Each
 generator corresponds to a polarization mode on the
 exceptional divisor $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$:
-$\sigma_0$ is horizontal polarization, $\sigma_1$ is vertical.
+The generator $\sigma_0$ is horizontal polarization, $\sigma_1$ is vertical.
 
 ## Decomposition by jet degree
 

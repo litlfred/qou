@@ -7,7 +7,7 @@ endomorphism to its base-level shadow by averaging over the cotangent
 fibre directions.
 
 **Dimensions.** The domain is $6$-dimensional:
-$\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$ decomposes as
+The group $\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$ decomposes as
 $3$ dimensions for the $\mathrm{SU}(2)$ base directions (spanned by
 the left-invariant vector fields $L_{e_1}, L_{e_2}, L_{e_3}$) plus
 $3$ dimensions for the cotangent directions (the fibre of

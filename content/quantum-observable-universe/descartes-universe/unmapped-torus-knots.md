@@ -86,7 +86,7 @@ being massless force carriers.
 
 **The structure of $T_{3,5}$.**
 
-$T_{3,5}$ has $3$-strand meridional winding, placing it in the force
+The torus knot $T_{3,5}$ has $3$-strand meridional winding, placing it in the force
 carrier family alongside $T_{3,4}$ (Hopf${}^2$ color binding).  Its longitudinal winding
 $n = 5$ is the same as that of $T_{2,5}$ (muon, bottom), creating a
 cross-link between the two winding families:

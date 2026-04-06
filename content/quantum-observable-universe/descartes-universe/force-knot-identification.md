@@ -125,7 +125,7 @@ generator connecting $m = 2$ (leptons) and $m = 3$ (quarks)
 | Hyperbolic volume | $0$ | Zero bare mass from volume; mass from crossings |
 | Knot group | $\langle x, y \mid x^3 = y^5 \rangle$ | Intertwines 3-color and 5-fold winding |
 
-$T_{3,5}$ is the **only generator** whose winding numbers draw from
+The torus knot $T_{3,5}$ is the **only generator** whose winding numbers draw from
 both families: $m = 3$ from the quark sector, $n = 5$ from the
 $T_{2,5}$ (second-generation lepton/bottom) column.  This cross-link
 enables flavor-changing processes: the weak interaction transmutes

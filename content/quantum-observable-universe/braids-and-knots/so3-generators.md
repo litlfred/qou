@@ -18,5 +18,5 @@ $\mathrm{Dic}_3$ ([SU(2) generators](#def:su2-generators)) have images
 \end{equation}
 ```
 
-$R_\alpha$ is a rotation by $2\pi/3$ about the $e_3$-axis (3-cycle) and
+The rotation $R_\alpha$ is a rotation by $2\pi/3$ about the $e_3$-axis (3-cycle) and
 $R_\beta$ is a $\pi$-rotation about $e_1$ (2-cycle).

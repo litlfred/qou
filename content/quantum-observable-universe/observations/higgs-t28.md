@@ -25,7 +25,7 @@ to their genus:
 | $T(2,6)$ | 2 | 2 ($D_r \cup D_g$ etc.) | $Z$ boson |
 | $T(2,8)$ | 3 | **all 3** ($D_r \cup D_g \cup D_b$) | **Higgs** |
 
-$T(2,8)$ is the **first and only** link whose Seifert surface
+The torus link $T(2,8)$ is the **first and only** link whose Seifert surface
 has genus large enough to span all three exceptional divisors.
 Its genus $3$ exactly matches the number of coral tubes on the
 Bring's surface.
@@ -49,7 +49,7 @@ $$
   J \;=\; J_1 + J_2 \;=\; +4 + (-4) \;=\; 0.
 $$
 
-$T(2,8)$ is therefore a **scalar** (spin-$0$) boson — the only
+The torus link $T(2,8)$ is therefore a **scalar** (spin-$0$) boson — the only
 one in the $T(2,n)$ family where the Reeb windings cancel
 exactly due to the genus-$3$ symmetry.
 
@@ -75,7 +75,7 @@ $T(2,8)$ and remains massless.
 
 **Why the Higgs is massive.**
 
-$T(2,8)$ is itself a link with genus $3$ and Seifert surface
+The torus link $T(2,8)$ is itself a link with genus $3$ and Seifert surface
 area proportional to the product of the three exceptional
 divisor volumes.  The self-crossing energy of $T(2,8)$ gives
 it a mass of $\sim 125$ GeV — determined by the Skein

@@ -108,29 +108,29 @@ the QOU axioms: archimedean, $p$-adic, and finite-field models.
 
 [Chapter 6](#chap:algebraic-substrate) develops the spectral theory
 of the Frobenius–Hopf algebra.  The local $q$-zeta function of
-Bring's curve encodes the Frobenius eigenvalues; the Hasse–Weil
-bound confines them to the critical line $|\alpha_i| = q^{1/2}$ —
-the Riemann hypothesis, proved unconditionally at the $q$-scale.
-The classical Riemann hypothesis is the statement that this
-critical-line alignment survives the limit $q \to 1$, which
-guarantees geometric stability of the macroscopic continuum by
-preventing a catastrophic accumulation of defects.  The chapter
-formulates $q$-deformed Birch and Swinnerton-Dyer and Collatz
-conjectures within the same Kummer tower.
+Bring's curve encodes the Frobenius eigenvalues, and the
+Hasse–Weil bound confines them to the critical line
+$|\alpha_i| = q^{1/2}$.  The categorical machinery provides a
+natural framing for classical questions in analytic number theory —
+including the Riemann hypothesis, the Birch and Swinnerton-Dyer
+conjecture, and the Collatz problem — through the Kummer tower
+associated to the Frobenius–Hopf algebra.
 
-[Chapter 7](#chap:fluid-dynamics) establishes a correlation between
-knots and topological fluid dynamics, taking an obstruction-based
-approach to Navier–Stokes regularity.
+[Chapter 7](#chap:fluid-dynamics) explores the correlation between
+the knot structures developed in earlier chapters and topological
+fluid dynamics, offering an obstruction-based perspective on
+Navier–Stokes regularity.
 
-[Chapter 8](#chap:info-theory) reinterprets the P versus NP
-problem in terms of event horizons for information flow — whether
-specific categorical obstructions vanish depends on the category.
-The Gröbner basis makes computation *confluent*; the Reeb flow
-generates a dynamical system whose boundary is a Julia-set fractal.
+[Chapter 8](#chap:info-theory) examines the categorical framework
+through the lens of information theory and computational
+complexity.  The Gröbner basis makes computation *confluent*; the
+Reeb flow generates a dynamical system whose boundary is a
+Julia-set fractal.  The framework provides an interesting
+perspective on questions such as P versus NP in terms of
+categorical obstructions and event horizons for information flow.
 Crossing energy relates to categorical mass by
 $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{\,2}$
-where $c_q = 1/(q - 1)$ — mass–energy equivalence derived from
-the categorical structure.
+where $c_q = 1/(q - 1)$.
 
 **Part III: The Descartes Universe and Observations.**
 [Chapter 9](#chap:descartes-universe) maps the genus-$4$ constraint
@@ -141,8 +141,9 @@ the exceptional divisors — provide coordinate systems for spacetime
 and the electromagnetic field, mapping exactly where vertex
 operators interact.  Within this space, embeddable knots form a
 basis for homology and cohomology; specific knots and torus-knot
-words define the full particle spectrum.  The existence of a
-Yang–Mills mass gap emerges naturally from the geometric structure.
+words define the full particle spectrum.  The geometric structure
+also provides a natural setting in which to examine Yang–Mills
+theory and the question of a mass gap.
 
 [Chapter 10](#chap:observations) confronts theory with experiment.
 We use observed CODATA values for the muon and electron mass to

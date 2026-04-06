@@ -15,7 +15,7 @@ symmetry group.
 
 ## 1. Algebraic survival, physical death
 
-$T_{2,11}$ satisfies every structural relation — it is a
+The torus knot $T_{2,11}$ satisfies every structural relation — it is a
 valid element of the Hecke algebra:
 
 | Relation | Status | Detail |
@@ -54,7 +54,7 @@ $$
   \mathfrak{d}_{n+1}(\mathcal{I}_4^{(n+1)}) \subseteq \mathcal{I}_4^{(n)}.
 $$
 
-$T_{2,11}$ is **entirely descended** at every level:
+The torus knot $T_{2,11}$ is **entirely descended** at every level:
 
 $$
   \hat{\tau}_n(T_{(2,11)}^{(n+1)}) = T_{(2,11)}^{(n+1)},
@@ -73,7 +73,7 @@ at any level.
 The shell structure is governed by the transfer matrix
 eigenvalues $\lambda_\pm$ of $T_{\gamma e}(q)$
 ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)).
-$T_{2,11}$ has:
+The torus knot $T_{2,11}$ has:
 
 $$
   \mathcal{T}_{T_{2,11}}(q) = \mathbf{I}_{2 \times 2},

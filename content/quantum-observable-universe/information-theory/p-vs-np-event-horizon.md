@@ -114,7 +114,7 @@ The standard complexity-theoretic framing treats $\mathrm{P}$
 vs $\mathrm{NP}$ as a question about time resources: can
 polynomial time suffice?  The QOU reformulation reveals it as
 a **geometric** statement about the observable subcategory:
-$\mathcal{R}^{\circ}$ is either closed (P $=$ NP) or has a
+The interior $\mathcal{R}^{\circ}$ is either closed (P $=$ NP) or has a
 non-trivial frontier $\mathcal{H}_c$ (P $\neq$ NP).
 
 This parallels the physical jet horizon exactly:
