@@ -186,6 +186,11 @@ export default chapter({
         // Beta decay as categorical Skein operation
         "beta-decay-skein",
         "lepton-number-categorical",
+        // Lepton tower NF and tau decay universality
+        "lepton-continuant-recurrence",
+        "lepton-tower-witness",
+        "tau-leptonic-universality",
+        "tau-branching-ratio-witness",
         "parity-violation-skein",
         "nuclear-spin-parity",
         // Half-life calculations via Gröbner reductions
@@ -201,6 +206,8 @@ export default chapter({
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
         "beta-decay-interpretation",
+        "nucleon-nf-observability",
+        "beta-decay-energy-scale",
         "beta-decay-braid-visualizer",
       ],
     }),

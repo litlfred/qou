@@ -313,11 +313,27 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
   -- both definitions and applying the inductive hypothesis.
   -- This requires `buildChains` to be unfolded through its `foldl`,
   -- which is technically involved but mathematically trivial.
+  -- NOTE: there is a scaling discrepancy between the two sides.
+  -- `chainCrossings` uses raw weights `(w_plus_t v, w_zero_t v)` and
+  -- `matrixChain` wraps them with `transferMatrix c d`.
+  -- For pp: transferMatrix 1 0 = T_pp (undoubled).
+  -- For nn: transferMatrix q² (-q·s) = T_nn (undoubled).
+  -- For pn: transferMatrix (1+q²) (-q·s) = two_T_pn (doubled).
+  --
+  -- Meanwhile `buildChains` uses `crossingMatrix` which doubles ALL types:
+  -- pp: 2 • T_pp, nn: 2 • T_nn, pn: two_T_pn.
+  --
+  -- The factor of 2 per pp/nn crossing needs to be reconciled.
+  -- This theorem requires either:
+  -- (a) adjusting `chainCrossings` to use doubled weights, or
+  -- (b) adjusting the statement to include the scaling factor.
+  --
+  -- Additionally, the foldl/structural recursion bridge is non-trivial.
   induction config with
   | nil => simp at hj
   | cons _ rest ih =>
     simp [chainCrossings, matrixChain, buildChains]
-    sorry  -- foldl/structural recursion bridge; needs Lean compilation
+    sorry  -- scaling discrepancy + foldl/structural recursion bridge
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure

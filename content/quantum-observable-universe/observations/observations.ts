@@ -189,6 +189,16 @@ export default chapter({
       ],
     }),
 
+    // ── Breit–Wheeler pair creation ────────────────────────────────────
+    section({
+      title: "Breit--Wheeler Pair Creation",
+      label: "sec:breit-wheeler-pair-creation",
+      blocks: [
+        "breit-wheeler-observation",
+        "pair-creation-energy",
+      ],
+    }),
+
     // ── Complexity and interpretation ──────────────────────────────────
     section({
       title: "Complexity and Interpretation",
@@ -196,7 +206,6 @@ export default chapter({
       blocks: [
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
-        "pair-creation-energy",
         "crossing-energy-decomposition",
         "crossing-energy-interpretation",
         "time-reversal-energy-barrier",

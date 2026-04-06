@@ -39,6 +39,7 @@ export default chapter({
         "braid-base-field",
         "braid-lifting-compatibility",
         "jones-markov-trace",
+        "hecke-algebra-from-braiding",
         "markov-moves-brane-tower",
         "knot-eigenbasis-complete",
         "knot-eigenbasis-complete-proof",
@@ -177,6 +178,9 @@ export default chapter({
       blocks: [
         "vertex-is-exceptional-divisor",
         "vertex-is-exceptional-divisor-proof",
+        // Photon polarisation states as Hecke generators on the exceptional divisor
+        "breit-wheeler-vertex",
+        // Product factorization of the Markov trace
         "markov-trace-product",
         "markov-trace-product-interpretation",
       ],

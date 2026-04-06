@@ -8,5 +8,5 @@ export default theorem({
   },
   title: "Existence and non-degeneracy of the Markov trace (Jones, 1987)",
   tags: ["hecke-algebra", "markov-trace", "jones-polynomial", "external-proof"],
-  uses: ["prop:braid-action-tensor"],
+  uses: ["prop:braid-action-tensor", "prop:braiding-eigenvalue-extraction"],
 });

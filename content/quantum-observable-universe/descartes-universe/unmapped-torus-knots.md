@@ -18,9 +18,9 @@ The current mapping uses:
 
 - $T_{1,0}$: neutrino $\nu$ (genus $0$)
 - $T_{2,3}$: electron $e^-$, up quark $\mathfrak{u}$ (genus $1$)
-- $T_{2,5}$: bottom quark $b$, tau lepton (via $T_{2,5} \bowtie T_{1,0}$) (genus $2$)
-- $T_{2,7}$: charm quark $c$ (genus $3$)
-- $T_{3,4}$: top quark $t$ (genus $3$)
+- $T_{2,5}$: muon $\mu$, bottom quark $\mathfrak{b}$ (on divisor) (genus $2$)
+- $T_{2,7}$: tau lepton $\tau$, charm quark $\mathfrak{c}$ (on divisor) (genus $3$)
+- $T_{3,4}$: Hopf${}^2$ color binding (genus $3$, force carrier)
 
 The Standard Model fermion content is exhausted at genus $3$.  Yet
 the Bring's surface provides two additional generators at genus $4$
@@ -36,8 +36,8 @@ $9 = 3 \times 3$.  This is unique among the $T_{2,n}$ generators:
 | Generator | $n$ | $n/3$ | Role |
 |-----------|-----|-------|------|
 | $T_{2,3}$ | $3$ | $1$ | Matter (electron, up quark) |
-| $T_{2,5}$ | $5$ | — | Matter (bottom, tau) |
-| $T_{2,7}$ | $7$ | — | Matter (charm) |
+| $T_{2,5}$ | $5$ | — | Matter (muon, bottom) |
+| $T_{2,7}$ | $7$ | — | Matter (tau, charm) |
 | $T_{2,9}$ | $9$ | $\mathbf{3}$ | **Three-fold cover of $T_{2,3}$** |
 
 On the torus, $T_{2,9}$ traces the trefoil pattern **three times
@@ -56,11 +56,15 @@ coral tube per longitudinal period.
 The matter/force distinction in the Standard Model aligns with a
 winding number dichotomy:
 
-- **Matter generators** ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$)
+- **Matter generators** ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$)
   have winding numbers that are *prime* and do not factor through a
   lower generator.
-- **$T_{2,9}$** has winding $9 = 3 \times 3$ — it is a *composite*
-  winding that factors through $T_{2,3}$.
+- **Force generators** ($T_{3,4}$, $T_{3,5}$, $T_{2,9}$)
+  populate the $H^{0,1}$ antiholomorphic sector
+  ([cohomological embedding](#prop:cohomological-embedding)):
+  $T_{2,9}$ has composite winding $9 = 3 \times 3$ that factors
+  through $T_{2,3}$; $T_{3,4}$ provides Hopf-squared color
+  binding; $T_{3,5}$ mediates the weak interaction.
 
 A generator whose winding interpolates three matter copies is
 naturally a **binding agent** rather than a standalone particle.
@@ -82,15 +86,15 @@ being massless force carriers.
 
 **The structure of $T_{3,5}$.**
 
-$T_{3,5}$ has $3$-strand meridional winding, placing it in the quark
-family alongside $T_{3,4}$ (top quark).  Its longitudinal winding
-$n = 5$ is the same as that of $T_{2,5}$ (bottom/tau), creating a
+$T_{3,5}$ has $3$-strand meridional winding, placing it in the force
+carrier family alongside $T_{3,4}$ (Hopf${}^2$ color binding).  Its longitudinal winding
+$n = 5$ is the same as that of $T_{2,5}$ (muon, bottom), creating a
 cross-link between the two winding families:
 
 | $m \backslash n$ | $3$ | $4$ | $5$ | $7$ | $9$ |
 |------------------|-----|-----|-----|-----|-----|
-| $2$ | $e^-, u$ | — | $b, \tau$ | $c$ | **force?** |
-| $3$ | — | $t$ | **?** | — | — |
+| $2$ | $e^-, u$ | — | $\mu, b$ | $\tau, c$ | **force** |
+| $3$ | — | **force** | **force** | — | — |
 
 $T_{3,5}$ sits at the intersection of the $m = 3$ (quark) row and the
 $n = 5$ (second-generation) column.  Its knot group relation

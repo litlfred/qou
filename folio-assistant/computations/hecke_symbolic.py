@@ -595,6 +595,45 @@ class SymbolicHeckeDivision:
 
         return {k: SymbolicHeckeElement(v) for k, v in layers.items()}
 
+    # ── Generator constructors ───────────────────────────────────
+
+    @staticmethod
+    def sigma(gen):
+        """Build σ_gen as a SymbolicHeckeElement."""
+        return SymbolicHeckeElement({(gen,): sp.Integer(1)})
+
+    @staticmethod
+    def sigma_inv(gen):
+        """Build σ_gen⁻¹ in the Hecke algebra.
+
+        From the Hecke relation σ² = (q − q⁻¹)σ + 1, we get:
+          σ⁻¹ = σ − (q − q⁻¹)
+
+        This is exact in the Hecke algebra H_n(q).
+        """
+        return SymbolicHeckeElement({(gen,): sp.Integer(1), (): -HA})
+
+    def borromean_B3(self):
+        """Build the Borromean braid B₃ = (σ₀σ₁⁻¹)³ and Gröbner-reduce.
+
+        B₃ is the fundamental confinement braid: three strands mutually
+        linked but individually free if any one is removed.  This is the
+        algebraic encoding of quark confinement in a baryon.
+
+        In H₃(q), B₃ = (σ₀ · σ₁⁻¹)³ where σ₁⁻¹ = σ₁ − (q − q⁻¹).
+
+        Returns: (reduced_element, reduction_stats)
+        """
+        s0 = SymbolicHeckeDivision.sigma(0)
+        s1_inv = SymbolicHeckeDivision.sigma_inv(1)
+
+        # Build (σ₀σ₁⁻¹)³ unreduced
+        unit = s0 * s1_inv
+        elem = unit * unit * unit
+
+        reduced, steps = self.reduce(elem)
+        return reduced, steps
+
     # ── Crossing constructors ────────────────────────────────────
 
     def crossing(self, type_i, type_j, gen):

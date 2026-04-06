@@ -71,14 +71,14 @@ to the base manifold.
 | Photon | $\gamma$ | $\varnothing$ (point) | $0$ |
 | Neutrino | $\nu$ | $T_{1,0}$ | $0$ |
 | Electron | $e^-$ | $T_{2,3}$ | $1$ |
-| Muon | $\mu^-$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $1$ |
-| Tau | $\tau^-$ | $T_{2,5} \bowtie T_{1,0}$ | $2$ |
+| Muon | $\mu^-$ | $T_{2,5}$ | $2$ |
+| Tau | $\tau^-$ | $T_{2,7}$ | $3$ |
 | Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ |
 | Down quark | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $1$ |
 | Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $1$ |
 | Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ |
 | Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ |
-| Top quark | $\mathfrak{t}$ | $T_{3,4}$ | $3$ |
+| Hopf${}^2$ color binding | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* |
 
 *Hadrons.*
 
