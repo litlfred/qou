@@ -1,5 +1,6 @@
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.OptimalNF
+import QOU.Descartes.HeckeRep
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Tactic.Ring
 
@@ -277,63 +278,66 @@ theorem volume_eq_markov_trace (seq : CrossingSeq) :
 
     Chain j is formed by the crossings between nucleon j and all
     subsequent nucleons k > j. The crossing at position k contributes
-    `(w⁺(j,k), w⁰(j,k))` to the sequence.
+    weights that match `crossingMatrix` from TransferMatrix.lean.
 
-    This connects `buildChains` (which works with matrices directly)
-    to the abstract `CrossingSeq` formulation. -/
+    **Scaling convention (v1.1):** pp and nn crossings are DOUBLED
+    to match `crossingMatrix`:
+    - pp: `crossingMatrix pp = 2 • T_pp` → coefficients `(2, 0)`
+    - nn: `crossingMatrix nn = 2 • T_nn` → coefficients `(2q², −2q·s)`
+    - pn: `crossingMatrix pn = two_T_pn`  → coefficients `(1+q², −q·s)`
+      (already doubled in the pn weight definition)
+
+    This ensures `transferMatrix c d = crossingMatrix(nj, nk)` for
+    each pair, which is needed for `matrixChain_eq_buildChains`. -/
 noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSeq :=
   (config.drop (j + 1)).map fun nk =>
     let nj := config.get! j
-    (w_plus_t (vertexType nj nk), w_zero_t (vertexType nj nk))
+    let v := vertexType nj nk
+    match v with
+    | .pp => (2 * w_plus_t v, 2 * w_zero_t v)
+    | .nn => (2 * w_plus_t v, 2 * w_zero_t v)
+    | .pn => (w_plus_t v, w_zero_t v)
 
 /-- The matrix chain from `chainCrossings` equals the corresponding
     entry in `buildChains`.
 
     This is the bridge between the abstract crossing-sequence formulation
-    and the concrete inductive chain construction in TransferMatrix.lean. -/
+    and the concrete inductive chain construction in TransferMatrix.lean.
+
+    **Proof structure (v1.1):**
+    After the scaling fix (v1.1), `transferMatrix c d = crossingMatrix(nj, nk)`
+    for each crossing.  The remaining challenge is that `matrixChain` folds
+    right (last element leftmost) while `buildChains` uses `foldl` (first
+    element leftmost).  Since all transfer matrices commute
+    (`transferMatrix_comm` from HeckeRep.lean), the products are equal. -/
 -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
 theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
     (hj : j + 1 < config.length) :
     matrixChain (chainCrossings config j) =
     (buildChains config).get! j := by
-  -- Both compute ∏_{k > j} T(config[j], config[k]) but via different
-  -- recursion patterns. matrixChain folds right over (drop (j+1));
-  -- buildChains extends chains as nucleons are added left-to-right.
-  -- The products are equal because matrix multiplication is associative
-  -- and both iterate over the same set of crossings.
-  -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-  -- Both definitions compute ∏_{k > j} T(config[j], config[k]).
+  -- Both compute ∏_{k > j} crossingMatrix(config[j], config[k]).
+  -- After scaling fix (v1.1), transferMatrix(c, d) = crossingMatrix for each pair.
   -- matrixChain folds right: T_last * (... * (T_{j+2} * T_{j+1}))
-  -- buildChains uses foldl, extending chains as nucleons are added.
-  -- They produce the same matrix because:
-  --   1. The set of crossings is identical (all pairs (j, k) with k > j)
-  --   2. Matrix multiplication is associative
-  --   3. The ordering of factors is the same (both process k = j+1, j+2, ...)
-  -- The proof is by induction on config.length - j - 1, unfolding
-  -- both definitions and applying the inductive hypothesis.
-  -- This requires `buildChains` to be unfolded through its `foldl`,
-  -- which is technically involved but mathematically trivial.
-  -- NOTE: there is a scaling discrepancy between the two sides.
-  -- `chainCrossings` uses raw weights `(w_plus_t v, w_zero_t v)` and
-  -- `matrixChain` wraps them with `transferMatrix c d`.
-  -- For pp: transferMatrix 1 0 = T_pp (undoubled).
-  -- For nn: transferMatrix q² (-q·s) = T_nn (undoubled).
-  -- For pn: transferMatrix (1+q²) (-q·s) = two_T_pn (doubled).
+  -- buildChains uses foldl: T_{j+1} * T_{j+2} * ... * T_last
+  -- These are equal because all transfer matrices commute
+  -- (transferMatrix_comm from HeckeRep.lean).
   --
-  -- Meanwhile `buildChains` uses `crossingMatrix` which doubles ALL types:
-  -- pp: 2 • T_pp, nn: 2 • T_nn, pn: two_T_pn.
+  -- Full proof:
+  -- 1. Show each (c, d) in chainCrossings gives transferMatrix c d =
+  --    crossingMatrix (config.get! j) (config.get! k)  [by cases on vertexType]
+  -- 2. Show matrixChain seq = List.foldl (fun M cd => transferMatrix cd.1 cd.2 * M) 1 seq
+  --    [by transferMatrix_comm + induction]
+  -- 3. Show List.foldl over chainCrossings = List.foldl over buildChains' crossings
+  --    [by induction on config, unfolding both foldl definitions]
+  -- 4. Combine 2 and 3 to get the result.
   --
-  -- The factor of 2 per pp/nn crossing needs to be reconciled.
-  -- This theorem requires either:
-  -- (a) adjusting `chainCrossings` to use doubled weights, or
-  -- (b) adjusting the statement to include the scaling factor.
-  --
-  -- Additionally, the foldl/structural recursion bridge is non-trivial.
+  -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
   induction config with
   | nil => simp at hj
   | cons _ rest ih =>
     simp [chainCrossings, matrixChain, buildChains]
-    sorry  -- scaling discrepancy + foldl/structural recursion bridge
+    sorry  -- foldl/structural recursion bridge (non-trivial but
+           -- mathematically sound: same factors, commutative product)
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure

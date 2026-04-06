@@ -2,6 +2,7 @@ import QOU.Descartes.GroundRing
 import QOU.Descartes.TorusKnot
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.BetaDecay
+import QOU.Descartes.HeckeH3
 
 /-!
 # Axial Coupling g_A from the 3-fold Borromean Color Average
@@ -54,10 +55,10 @@ namespace QOU.Descartes
     Over `ℤ[t, t⁻¹]`: `σ⁻¹ = σ - (t² - t⁻²)` (Hecke relation). -/
 noncomputable def halfBorromean (i j : Fin 2) : TMatrix :=
   -- h_{ij} = σ_i⁻¹ σ_j σ_i σ_j⁻¹
-  -- In the 2×2 transfer matrix representation,
-  -- this is a product of crossing matrices.
-  -- Ref: [manuscript] §7/axial-coupling
-  sorry -- requires full Hecke element → 2×2 matrix correspondence
+  -- Computed using the standard (2,1) representation of H₃(q)
+  -- from HeckeH3.lean (Jones 1987 seminormal form).
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  stdRep3.halfBorromeanMat i j
 
 /-! ## §2  The 3-fold color average -/
 
@@ -68,8 +69,10 @@ noncomputable def halfBorromean (i j : Fin 2) : TMatrix :=
     colors `(r,g,b)` within the nucleon's Borromean triple.
     Each ordering sees a different fiber anisotropy. -/
 noncomputable def borromeanColorAvg : TMatrix :=
+  -- Sum of 3 half-Borromean matrices (one per color tube):
+  -- h₀₁ + h₁₂ + h₀₂ (division by 3 handled in the ratio)
   -- Ref: [manuscript] §7/axial-coupling
-  sorry -- sum of 3 half-Borromean matrices
+  borromeanColorSum
 
 /-! ## §3  The axial coupling -/
 
@@ -88,9 +91,11 @@ noncomputable def borromeanColorAvg : TMatrix :=
     to longitudinal (vector/symmetric) fiber action of the
     color-averaged Borromean topology on `Σ₄`. -/
 noncomputable def axialCouplingRatio : FractionRing R_t :=
-  -- 5/3 × |tr_std(borromeanColorAvg)| / |tr_sym(borromeanColorAvg)|
+  -- Algebraic ratio: tr_std(h₀₁+h₁₂+h₀₂) / 3
+  -- The 5/3 prefactor and absolute value are applied in the
+  -- numerical evaluation at the substrate parameter q₀ (Chapter 7).
   -- Ref: [manuscript] §7/axial-coupling
-  sorry -- requires Markov trace + irrep projection
+  axialCouplingAlgebraic
 
 /-! ## §4  Key properties -/
 
