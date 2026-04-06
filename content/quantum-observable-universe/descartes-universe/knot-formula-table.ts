@@ -12,6 +12,14 @@ export default remark({
     "hadron",
     "nucleus",
     "generation",
+    "fermion",
+    "boson",
+    "torus-link",
   ],
-  uses: ["thm:embeddability-closure"],
+  uses: [
+    "thm:embeddability-closure",
+    "prop:fermion-boson-knot-link",
+    "conj:higgs-t28",
+    "prop:terminal-resolution",
+  ],
 });

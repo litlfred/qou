@@ -71,5 +71,5 @@ Hydrogen has one electron-proton junction ($T_{\gamma e}^1$);
 helium has a closed $1s$ shell ($T_{\gamma e}^1 \otimes T_{\gamma e}^1$); lithium adds the first $2s$ electron
 ($T_{\gamma e}^2$ at the third junction).
 
-An interactive version with SVG knot diagrams is available at
-`folio-assistant/simulators/knot_atom_diagrams.html`.
+An interactive version with SVG knot diagrams is available as the
+[knot atom diagrams simulator](#sim:knot-atom-diagrams).

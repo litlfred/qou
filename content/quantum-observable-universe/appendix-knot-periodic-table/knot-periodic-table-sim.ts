@@ -9,6 +9,8 @@ export default simulator({
     "prop:shell-structure-eigenvalues",
     "prop:knot-particle-correspondence",
     "def:borromean-baryon",
+    "prop:fermion-boson-knot-link",
+    "rem:building-block-knots",
   ],
   tags: [
     "periodic-table",

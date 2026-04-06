@@ -105,10 +105,30 @@ with anomalously high $B/A$.
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (one free parameter):
-$q = q_0$, $\hbar_q \approx 0.09907$,
-$m_{\mathfrak{p}} \approx 938.269$ MeV,
+$q = q_0 \approx 1.1097$, $\hbar_q = 1 - q_0^{-1} \approx 0.09888$,
+$\mathbf{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10450$,
+$m_{\mathfrak{p}} \approx 938.272$ MeV,
 $m_{\mathfrak{n}} \approx 939.565$ MeV,
-$m_e \approx 0.511$ MeV.
+$m_e \approx 0.51100$ MeV.
+
+**Fundamental constants from $q_0$ (approximate).**
+
+| Symbol | Formula | Value |
+|--------|---------|:-----:|
+| $\hbar_q$ | $1 - q_0^{-1}$ | $\approx 0.09888$ |
+| $\mathbf{E}_{\times}$ | $\tfrac{1}{2}(q_0 - q_0^{-1})$ | $\approx 0.10450$ |
+| $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $\approx 0.05049$ |
+| $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $\approx 2.01099$ |
+
+**Knot-particle identification.** Each constituent knot is
+classified by the fermion--boson decomposition
+([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)):
+proton and neutron quarks are Borromean-linked trefoils
+([Borromean baryon](#def:borromean-baryon)), electrons are trefoil
+fermions ($T_{2,3}$), and nuclear binding comes from Hopf link
+crossings.  The full building-block catalogue with Jones polynomials
+and volumes is in
+([building-block knots](#rem:building-block-knots)).
 
 | $\#$ | Element | $Z$ | $N$ | $N_{\mathrm{pred}}$ | $\Delta$ | $k_\alpha$ | $M_q$ (MeV) | $M_o$ (MeV) | $B/A$ |
 |---:|------|---:|---:|---:|---:|---:|---:|---:|---:|

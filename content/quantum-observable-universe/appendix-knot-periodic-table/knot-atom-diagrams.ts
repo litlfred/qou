@@ -14,6 +14,12 @@ export default remark({
     "atom",
     "transfer-matrix",
     "antineutrino",
+    "borromean",
   ],
-  uses: ["prop:shell-structure-eigenvalues"],
+  uses: [
+    "prop:shell-structure-eigenvalues",
+    "def:borromean-baryon",
+    "def:antineutrino-knot",
+    "def:transfer-matrix-operator",
+  ],
 });
