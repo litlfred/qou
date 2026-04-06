@@ -19,5 +19,7 @@ export default remark({
   uses: [
     "prop:shell-structure-eigenvalues",
     "def:borromean-baryon",
+    "def:antineutrino-knot",
+    "def:transfer-matrix-operator",
   ],
 });

@@ -76,7 +76,7 @@ to the base manifold.
 | Tau | $\tau^-$ | $T_{2,7}$ | $3$ | $7$ |
 | Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ | $3$ |
 | Down quark | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $1$ | $3$ |
-| Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $1$ | $5$ |
+| Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $2$ | $5$ |
 | Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ | $7$ |
 | Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ | $5$ |
 | Hopf${}^2$ color binding | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | $8$ | *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* |

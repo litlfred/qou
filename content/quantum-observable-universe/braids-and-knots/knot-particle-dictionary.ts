@@ -18,6 +18,8 @@ export default remark({
   uses: [
     "def:localized-knot",
     "def:hadron",
+    "prop:braid-action-tensor",
+    "prop:knot-eigenbasis-complete",
     "prop:fermion-boson-knot-link",
     "rem:building-block-knots",
     "def:borromean-baryon",
