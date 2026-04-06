@@ -52,22 +52,22 @@ KNOT_REGISTRY = [
         "particle": "electron",
     },
     {
-        "name": "Vol(4_1) — figure-eight (muon)",
+        "name": "Vol(4_1) — figure-eight (Higgs field / mass mechanism)",
         "manifold": "4_1",
         "expected": 2.02988321281931,
         "tolerance": 1e-10,
         "source": "OEIS A091518, 3·Cl₂(π/3)",
         "unit": "volume",
-        "particle": "muon",
+        "particle": "higgs_field",
     },
     {
-        "name": "Vol(5_1) — cinquefoil (tau)",
+        "name": "Vol(5_1) — cinquefoil (muon T_{2,5})",
         "manifold": "5_1",
         "expected": 0.0,
         "tolerance": 1e-10,
         "source": "Torus knot (non-hyperbolic)",
         "unit": "volume",
-        "particle": "tau",
+        "particle": "muon",
     },
     {
         "name": "Vol(5_2) — three-twist (strange quark)",
@@ -79,13 +79,13 @@ KNOT_REGISTRY = [
         "particle": "strange",
     },
     {
-        "name": "Vol(7_1) — torus(7,2) (charm quark)",
+        "name": "Vol(7_1) — septafoil (tau T_{2,7})",
         "manifold": "7_1",
         "expected": 0.0,
         "tolerance": 1e-10,
         "source": "Torus knot (non-hyperbolic)",
         "unit": "volume",
-        "particle": "charm",
+        "particle": "tau_charm",
     },
 ]
 

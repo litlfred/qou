@@ -12,13 +12,14 @@ closure of a braid $\beta \in B_n$, so the Markov trace on the Hecke
 algebra $H_n(q)$ identifies each irreducible summand with a knot type.
 The resulting dictionary is:
 
-| Knot type | Symbol | Particle | Crossing number | Role in bundle |
-|-----------|--------|----------|-----------------|----------------|
+| Knot type | Symbol | Particle / field | Crossing number | Role in bundle |
+|-----------|--------|------------------|-----------------|----------------|
 | Point (empty) | $\varnothing$ | Photon | $0$ | Background flux on $\mathcal{S}_p$ |
 | Unknot | $\mathcal{O}$ ($0_1$) | Neutrino | $0$ | Trivial braiding; vacuum drag |
-| Trefoil | $3_1$ | Electron | $3$ | Simplest stable vortex (gen. 1) |
-| Figure-eight | $4_1$ | Muon | $4$ | Hyperbolic volume residue (gen. 2) |
-| Cinquefoil | $5_1$ | Tau | $5$ | Higher-genus lift (gen. 3) |
+| Trefoil | $T_{2,3}$ ($3_1$) | Electron | $3$ | Simplest stable vortex (gen. 1) |
+| Figure-eight | $4_1$ | Higgs field | $4$ | Mass mechanism; $\mathrm{Vol}(4_1)/\hbar_q^2$ couples universally |
+| Cinquefoil | $T_{2,5}$ ($5_1$) | Muon | $5$ | Gen. 2 lepton on Reeb divisor |
+| Septafoil | $T_{2,7}$ ($7_1$) | Tau | $7$ | Gen. 3 lepton on Reeb divisor |
 
 In a bundle initial condition $\mathcal{S}_0$, each entry $(p_i, K_i)$ is one row
 of this dictionary placed at a specific point on $\mathbb{P}(V)$.

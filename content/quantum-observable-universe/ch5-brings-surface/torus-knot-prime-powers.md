@@ -74,9 +74,9 @@ $$
   \{T_{3,2},\; T_{3,4},\; T_{3,5}\}.
 $$
 
-Three knots, no more.  The $p = 2$ tower contributes matter at two
-mass scales (trefoil and top quark); the $p = 5$ singleton sits at
-the genus boundary.
+Three knots, no more.  The $p = 2$ tower contributes the trefoil
+(matter) and $T_{3,4}$ (Hopf${}^2$ color binding — force carrier in
+$H^{0,1}$); the $p = 5$ singleton sits at the genus boundary.
 
 **Matter vs. force dichotomy from prime-power structure.**
 

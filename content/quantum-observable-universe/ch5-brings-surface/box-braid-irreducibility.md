@@ -110,8 +110,9 @@ The only torus knots embeddable on the genus-$4$ Bring
 surface with winding numbers from both the $m = 2$ (lepton)
 and $m = 3$ (quark) families are $T_{3,4}$ and $T_{3,5}$
 ([unmapped torus knots](#rem:unmapped-torus-knots)).
-Of these, $T_{3,4}$ connects $m = 3$ to $n = 4$ (muon
-sector), while $T_{3,5}$ connects $m = 3$ to $n = 5$
+Of these, $T_{3,4}$ connects $m = 3$ to $n = 4$ (force
+carrier: Hopf${}^2$ color binding in $H^{0,1}$), while
+$T_{3,5}$ connects $m = 3$ to $n = 5$
 (second generation).  Only $T_{3,5}$ mediates flavor-changing
 charged-to-neutral transitions.  No alternative mediator with
 fewer crossings exists on the Bring's surface.

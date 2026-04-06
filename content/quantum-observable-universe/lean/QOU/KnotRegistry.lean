@@ -39,8 +39,10 @@ inductive QOUIdentity where
   | neutrino
   /-- The electron — Generation 1, B₃ monodromy source for Bring's Surface. -/
   | electron
-  /-- The muon — Generation 2, cinquefoil T_{2,5} on divisor (Reeb bundle). -/
+  /-- The muon — Generation 2, cinquefoil T_{2,5} on Reeb divisor. -/
   | muon
+  /-- The tau lepton — Generation 3, septafoil T_{2,7} on Reeb divisor. -/
+  | tauLepton
   /-- The Higgs field / mass mechanism — figure-eight 4₁, amphichiral. -/
   | higgsField
   /-- The photon — background flux on the exceptional divisor. -/
