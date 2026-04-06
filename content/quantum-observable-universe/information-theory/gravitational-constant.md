@@ -1,5 +1,5 @@
 The gravitational constant $G$ is derived from the categorical
-structure of the $q$-Yang-Mills-Levi action, not from semiclassical
+structure of the $q$-Yang--Mills--Levi action, not from semiclassical
 entropy-area relations.  The key ingredient is the **in-progress
 braid content** of a Planck cell — the sections of the jet tower
 that are partially evaluated but not yet resolved to observable
@@ -8,7 +8,7 @@ knots.
 **The variational origin of $G$.**
 The field equation $\mathrm{Ric}_{g_\theta} = T^{(q)}$
 ([GR substrate geometry](#rem:gr-substrate-geometry)) arises from
-varying the $q$-Yang-Mills-Levi functional
+varying the $q$-Yang--Mills--Levi functional
 ([$q$-YM-Levi](#def:q-yang-mills-levi))
 
 $$
@@ -48,7 +48,7 @@ each contributing to the gravitational source term.
 **Counting in-progress braids.**
 At jet level $k$ over a point $p$, the number of distinct
 in-progress braids is the dimension of the section space
-$\Gamma(J^k\mathcal{S}|_p)$.  For the $\mathrm{SU}_q(2)$ Frobenius-Hopf
+$\Gamma(J^k\mathcal{S}|_p)$.  For the $\mathrm{SU}_q(2)$ Frobenius--Hopf
 object, this grows with $k$: each jet prolongation adds new
 polynomial coefficients (new Taylor data of the energy function $E$).
 
@@ -115,7 +115,7 @@ No numerical fitting, no measured $d_H$ input — the series closes
 algebraically from $q$ alone.
 
 **The gravitational constant.**
-The $q$-Yang-Mills-Levi variation gives
+The $q$-Yang--Mills--Levi variation gives
 
 $$
   G(q) \;=\; \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}

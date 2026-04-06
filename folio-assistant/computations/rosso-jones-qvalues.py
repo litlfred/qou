@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Rosso-Jones decomposition for beta decay Q-values.
+Rosso--Jones decomposition for beta decay Q-values.
 
-The Rosso-Jones formula decomposes torus knot invariants into
+The Rosso--Jones formula decomposes torus knot invariants into
 irreducible representations of H_r(q):
 
   J_{T_{r,s}}(q) = Σ_{λ ⊢ r} d_λ(q) · ω_λ^s
@@ -68,7 +68,7 @@ H3_IRREPS = {
 }
 
 def rosso_jones(r, s):
-    """Compute J_{T_{r,s}}(q) via Rosso-Jones decomposition.
+    """Compute J_{T_{r,s}}(q) via Rosso--Jones decomposition.
 
     Returns (total, decomposition_dict).
     """
@@ -312,7 +312,7 @@ print("ROSSO-JONES Q-VALUES")
 print()
 print("Formula: Q = Q_bare × ∏_{k≥1} F_k(shell)")
 print("  F_k = |tr( Σ_{T∈E_k} J(T) · T · Δ_mix )|")
-print("  J(T) = Rosso-Jones invariant = Σ_{λ⊢r} d_λ(q) · ω_λ^s")
+print("  J(T) = Rosso--Jones invariant = Σ_{λ⊢r} d_λ(q) · ω_λ^s")
 print()
 
 # Precompute F_k factors for each degree

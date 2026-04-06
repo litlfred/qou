@@ -1,9 +1,9 @@
-// v8: Optimized symbolic Gröbner--Shirshov engine with Gebauer-Möller filtering.
+// v8: Optimized symbolic Gröbner--Shirshov engine with Gebauer--Möller filtering.
 //
 // Key optimizations over v7:
 // 1. Junction-only reduction: after appending σ_k to reduced word w,
 //    only check the last 3 positions (the junction). No full scan.
-// 2. Gebauer-Möller filtering: skip S-polynomials that are "covered"
+// 2. Gebauer--Möller filtering: skip S-polynomials that are "covered"
 //    by simpler overlaps already processed.
 // 3. Inter-reduction with stable/pending separation.
 // 4. Quotient stripping with symbolic accumulation for large A.

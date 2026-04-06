@@ -50,7 +50,7 @@ Engine: hecke-engine 0.8.0
 ### 3. Algorithm optimizations
 - Current bottleneck: strand 8 builds to 174K-240K words (350-726MB)
 - Mid-crossing stripping for large strands (v6 approach in v8)
-- Gebauer-Möller criterion for redundant S-polynomial elimination
+- Gebauer--Möller criterion for redundant S-polynomial elimination
 - Weight ordering: prioritize generators by shell degree
 - Target: A=40 (⁴⁰Ca doubly magic) in minutes
 - i128 overflow boundary: ~A=20 (coefficients ~10³⁸)

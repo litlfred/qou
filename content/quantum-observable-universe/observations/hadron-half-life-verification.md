@@ -42,7 +42,7 @@ From $q$ and $\mu_0$ alone:
 6. **Deuteron binding** $B_d \approx 1.29$ MeV from
    Vol$(\mathcal{B}_3 \bowtie_{\mathrm{Hopf}} \mathcal{B}_3) / \hbar_q^2$.
 7. **Parity violation** — automatic from $q \neq 1$
-   ([Lee-Yang-Wu](#prop:parity-violation-skein)).
+   ([Lee--Yang--Wu](#prop:parity-violation-skein)).
 
 ## Open computations
 
@@ -312,7 +312,7 @@ from the Borromean Skein algebra (P3 in the computational roadmap).
 
 ## Forbidden transitions
 
-The table covers allowed Gamow-Teller and Fermi transitions.
+The table covers allowed Gamow--Teller and Fermi transitions.
 For first-forbidden transitions (spin change $\Delta J = 0, 1, 2$
 with parity flip), the matrix element acquires an additional
 suppression.  In the Skein polynomial language, the forbidden

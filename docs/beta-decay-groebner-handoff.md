@@ -22,7 +22,7 @@ terms in the raw Gröbner--Shirshov normal form.
 (same set of σ_i, different braid ordering). Each group has one
 DOMINANT word plus YB-reorderings. 276 content classes, each
 with 1-5 members. The dominant word IS the irreducible relation;
-the others are derived via Yang-Baxter.
+the others are derived via Yang--Baxter.
 
 **Step 2: 276 → 4 quotient ideals.** The 276 families share
 universal structural operations:
@@ -30,7 +30,7 @@ universal structural operations:
 | Ideal | Operation | What it does |
 |-------|-----------|-------------|
 | I₁ | σ₀-extension | Prepend u_r–u_g crossing. Universal ratio +0.315 |
-| I₂ | YB reordering | Yang-Baxter σ_iσ_{i+1}σ_i ↔ σ_{i+1}σ_iσ_{i+1}. Ratio +0.168 |
+| I₂ | YB reordering | Yang--Baxter σ_iσ_{i+1}σ_i ↔ σ_{i+1}σ_iσ_{i+1}. Ratio +0.168 |
 | I₃ | B₃ Borromean prefix | Prepend σ₀·σ₁·σ₀ (proton core). Ratio +0.166/+0.534 |
 | I₄ | 𝔫₁ neutron tail | Append σ₃·σ₄·σ₃·σ₅ (electron-Borromean-neutron). 66 families, 78% weight |
 

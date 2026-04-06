@@ -14,7 +14,7 @@ $$
 $$
 
 where $j$ is the spin quantum number determined by the
-Jones-Wenzl projector $p_n$ acting on the $n$-strand braid:
+Jones--Wenzl projector $p_n$ acting on the $n$-strand braid:
 $j = n/2$ for the highest-weight component.
 
 At $q = 1$: $J_q^2 \to j(j+1)$, the standard Casimir.

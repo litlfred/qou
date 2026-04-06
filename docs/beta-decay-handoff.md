@@ -38,7 +38,7 @@ Date: 2026-03-29
 - `hecke_division.py` — Instrumented Gröbner--Shirshov division in H_n(q)
 - `systematic-qvalues.py` — Prime-factored mixing operators (blows up for large n)
 - `shell-aware-halflife.py` — All 6 half-lives within 3% (uses Q_exp)
-- `rosso-jones-qvalues.py` — Rosso-Jones decomposition attempt (J != tr, wrong normalization)
+- `rosso-jones-qvalues.py` — Rosso--Jones decomposition attempt (J != tr, wrong normalization)
 - `weight-space-correct.py` — Young symmetrizer idempotents (CORRECT: e^2=e, orthogonal, complete)
 
 ---
@@ -103,8 +103,8 @@ Nucleon-level transfer matrices are the correct description for Q-values.
 T_{2,32} and T_{2,44} blow up exponentially for large n.
 The correct approach is shell KNOT decomposition using the 6 embeddable knots.
 
-### 6. Rosso-Jones J(T) as multiplicative weight in Q formula
-J(T) != tr(T). The Jones polynomial (Rosso-Jones) is a different normalization
+### 6. Rosso--Jones J(T) as multiplicative weight in Q formula
+J(T) != tr(T). The Jones polynomial (Rosso--Jones) is a different normalization
 than the Markov trace. Multiplying Q_bare by J(T) gives 2000%+ errors.
 Product of F_0 * F_1 * F_2 (all degree factors) overcounts by orders of magnitude.
 

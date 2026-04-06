@@ -92,7 +92,7 @@ gives the matrix element for beta decay.
 The nuclear braid word is a product of crossing factors, each
 acting at a single generator $\sigma_i$.  After Hecke reduction
 (the only energy-changing step,
-[Gröbner--Shirshov-Shirshov energy](#thm:groebner-shirshov-energy)),
+[Gröbner--Shirshov energy](#thm:groebner-shirshov-energy)),
 the crossings at generator $\sigma_i$ reduce to
 $a_i \sigma_i + b_i$.
 

@@ -22,7 +22,7 @@ export default remark({
     "experimental",
     "Skein-polynomial",
     "Markov-trace",
-    "Gauss-Bonnet",
+    "Gauss--Bonnet",
     "Euler-characteristic",
   ],
   uses: [
