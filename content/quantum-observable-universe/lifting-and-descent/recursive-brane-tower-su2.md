@@ -27,7 +27,7 @@ up another tensor with $V_1$, so the summands have the form
 $(V_j \otimes V_1 \otimes V_1) \otimes V_j^*$.  The Clebsch--Gordan
 decomposition $V_1 \otimes V_1 \cong V_0 \oplus V_1 \oplus V_2$ shows
 that the growth stabilizes: no irreducible of spin $> j + 2$ appears at
-level $2$ that was not already forced by the tensor product.
+level $2$ that is not already forced by the tensor product.
 
 **Stabilization.** Since $\dim \mathrm{SU}(2) = 3$, the jet bundle
 $J^k(\mathrm{SU}(2))$ has fibre dimension $\binom{k + 3}{3}$, which

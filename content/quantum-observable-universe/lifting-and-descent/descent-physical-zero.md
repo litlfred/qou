@@ -1,4 +1,4 @@
-At dimension 0 all spatial extent has been removed and the physical
+At dimension 0 all spatial extent is removed and the physical
 content is purely algebraic.
 
 1. *Primordial state.*  The vortex filaments, flows and spatial

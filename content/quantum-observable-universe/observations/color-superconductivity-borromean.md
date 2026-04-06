@@ -49,9 +49,9 @@ The transition is characterized by:
 | Stable diquarks | No | Yes (condensate) |
 | Mass source | Borromean volume | Crossing energy |
 
-The transition is **not** a smooth deformation: one cannot
-continuously interpolate between $\bar{\mu} = 1$ and
-$\bar{\mu} = 0$ — the Milnor invariant is a concordance
+The transition is **not** a smooth deformation: continuous
+interpolation between $\bar{\mu} = 1$ and
+$\bar{\mu} = 0$ is impossible — the Milnor invariant is a concordance
 invariant and jumps discontinuously.  This is a **first-order
 topological phase transition**.
 

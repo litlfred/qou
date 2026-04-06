@@ -1,4 +1,4 @@
-The $q$-Reeb flow $\phi_t^q$ changes how one should think about
+The $q$-Reeb flow $\phi_t^q$ transforms the classical picture of
 primes. In classical number theory, the natural logarithm $\ln x$
 serves as the clock for counting primes: the prime number theorem says
 roughly one prime per $\ln x$ integers near $x$, and the primes are

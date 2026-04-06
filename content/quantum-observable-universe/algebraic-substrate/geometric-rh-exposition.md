@@ -1,5 +1,5 @@
 The preceding results establish that the Frobenius eigenvalues satisfy
-$|\alpha_i| = q^{1/2}$ unconditionally, but the reader may wonder:
+$|\alpha_i| = q^{1/2}$ unconditionally.  The question is:
 *why* does the geometry force this? The answer traces back through the
 entire chain of categorical machinery to a single geometric constraint.
 
