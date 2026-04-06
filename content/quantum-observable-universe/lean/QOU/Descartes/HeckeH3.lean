@@ -167,20 +167,37 @@ noncomputable def borromeanColorSum : TMatrix :=
 
 /-! ## §6  Symmetric representation traces -/
 
-/-- Trace of a half-Borromean in the trivial (symmetric) representation.
+/-- Every half-Borromean evaluates to the identity in the trivial representation.
 
-    In the trivial rep, σ_i ↦ q, σ_i⁻¹ ↦ q⁻¹.
-    So h₀₁ = σ₀⁻¹σ₁σ₀σ₁⁻¹ ↦ q⁻¹ · q · q · q⁻¹ = 1.
+    In the trivial rep, σ_i ↦ q · I, σ_i⁻¹ ↦ q⁻¹ · I.
+    So h_{ij} = σ_i⁻¹ σ_j σ_i σ_j⁻¹ ↦ q⁻¹ · q · q · q⁻¹ · I = I.
 
-    Similarly for h₁₂ and h₀₂. All three evaluate to 1
-    in the trivial representation. -/
+    This holds because every half-Borromean is a commutator, and
+    any commutator is trivial in a 1-dimensional (abelian)
+    representation. -/
 -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
-theorem halfBorromean_trivial_trace (ct : ColorTube) :
-    -- The trivial rep trace of each half-Borromean is 1
-    -- (because the trivial rep is 1-dimensional and all
-    --  half-Borromeans are commutators, which are trivial
-    --  in any abelian representation)
-    True := by trivial
+theorem halfBorromean_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
+    (trivRep n).halfBorromeanMat i j = 1 := by
+  simp [HeckeRep.halfBorromeanMat, HeckeRep.genInv, trivRep]
+  -- After unfolding: (q•1 - HA•1) * (q•1) * (q•1) * (q•1 - HA•1) = 1
+  simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
+  rw [show (q_from_t - HA_t) * q_from_t * q_from_t * (q_from_t - HA_t) = (1 : R_t) from by
+    unfold HA_t q_from_t q_inv_from_t t t_inv
+    ring]
+  simp
+
+/-- Every conjugated half-Borromean also evaluates to the identity
+    in the trivial representation (same reasoning: commutator in
+    abelian rep). -/
+-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+theorem halfBorromeanConj_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
+    (trivRep n).halfBorromeanConjMat i j = 1 := by
+  simp [HeckeRep.halfBorromeanConjMat, HeckeRep.genInv, trivRep]
+  simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
+  rw [show (q_from_t - HA_t) * (q_from_t - HA_t) * q_from_t * q_from_t = (1 : R_t) from by
+    unfold HA_t q_from_t q_inv_from_t t t_inv
+    ring]
+  simp
 
 /-! ## §7  Axial coupling ratio (symbolic) -/
 

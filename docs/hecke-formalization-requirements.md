@@ -29,7 +29,8 @@ General Young idempotent construction:
 
 - `coxeterLength` (inversion count for general S_n)
 - `S3_reduced_words` (explicit enumeration of S₃)
-- `poincarePolynomial` (general n, recursive for n ≥ 4)
+- `qSqInt` (q²-integer `[n]_{q²} = 1 + q² + … + q^{2(n-1)}` — sum form, no division)
+- `poincarePolynomial` (general n, recursive: `P_n = P_{n-1} · [n]_{q²}`)
 - `youngSymIdempotent3` (concrete definition for H₃(q))
 - `youngSymIdempotent2` (concrete definition for H₂(q))
 - `youngSym3_eigenvalue` (**sorry** — needs 6-case Hecke expansion)
@@ -44,6 +45,8 @@ Explicit standard (2,1) representation with verified relations:
 - `stdRep3` (full `HeckeRep 3 2` instance)
 - `ColorTube` inductive type (rg, gb, rb)
 - `halfBorromeanStd` (3 concrete half-Borromean matrices)
+- `halfBorromean_trivial_eval` (proven: all half-Borromeans = I in trivial rep)
+- `halfBorromeanConj_trivial_eval` (proven: conjugated half-Borromeans = I in trivial rep)
 - `borromeanColorSum` (color-averaged Borromean element)
 - `axialCouplingAlgebraic` (symbolic ratio in FractionRing R_t)
 

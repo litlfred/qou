@@ -78,32 +78,33 @@ theorem S3_card : S3_reduced_words.length = 6 := by decide
 
 /-! ## §3  Poincaré polynomial -/
 
+/-- The q²-integer `[n]_{q²} = 1 + q² + q⁴ + … + q^{2(n−1)}`
+    as an element of `ℤ[t, t⁻¹]` where `q = t²`.
+
+    This is the sum form — no division required, so it lives in
+    the Laurent polynomial ring directly.
+
+    `[n]_{q²} = Σ_{k=0}^{n-1} q^{2k} = Σ_{k=0}^{n-1} t^{4k}` -/
+noncomputable def qSqInt (n : ℕ) : R_t :=
+  (Finset.range n).sum fun k =>
+    (q_from_t * q_from_t) ^ k   -- q^{2k} = (q²)^k = t^{4k}
+
 /-- The Poincaré polynomial `P_n(q²) = ∑_{w ∈ S_n} q^{2ℓ(w)}`.
 
     This is the sum of `q^{2ℓ(w)}` over all permutations in S_n.
-    It equals the q-factorial: `P_n(q²) = [n]_q!`.
+    It equals the q²-factorial: `P_n(q²) = [n]_{q²}!`.
+
+    Recursion: `P_n = P_{n-1} · [n]_{q²}` where
+    `[n]_{q²} = 1 + q² + q⁴ + … + q^{2(n-1)}`.
 
     For small n:
     - P₁ = 1
-    - P₂ = 1 + q²
-    - P₃ = 1 + 2q² + 2q⁴ + q⁶ = (1 + q²)(1 + q² + q⁴) -/
-noncomputable def poincarePolynomial (n : ℕ) : R_t :=
-  match n with
+    - P₂ = 1 + q² = [2]_{q²}
+    - P₃ = (1 + q²)(1 + q² + q⁴) = [2]_{q²} · [3]_{q²}
+         = 1 + 2q² + 2q⁴ + q⁶ -/
+noncomputable def poincarePolynomial : ℕ → R_t
   | 0 => 1
-  | 1 => 1
-  | 2 => 1 + q_from_t * q_from_t  -- 1 + q²
-  | 3 => 1 + 2 * (q_from_t * q_from_t) +
-          2 * (q_from_t * q_from_t * q_from_t * q_from_t) +
-          q_from_t * q_from_t * q_from_t * q_from_t * q_from_t * q_from_t
-          -- 1 + 2q² + 2q⁴ + q⁶
-  | n + 4 =>
-    -- General case: P_n = P_{n-1} · [n]_q
-    -- For n ≥ 4, we use the recursive formula.
-    -- [n]_q = (q^n - q^{-n}) / (q - q^{-1})
-    -- This is a Laurent polynomial in t (where q = t²).
-    poincarePolynomial (n + 3) *
-      ((q_from_t ^ (n + 4) - q_inv_from_t ^ (n + 4)) *
-       (q_from_t - q_inv_from_t)⁻¹)
+  | n + 1 => poincarePolynomial n * qSqInt (n + 1)
 
 /-! ## §4  Young symmetric idempotent (for representations) -/
 
