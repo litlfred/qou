@@ -137,7 +137,9 @@ surviving past the work that should have resolved them.
 | Diagram / naturality / monoidal | `category-theory` | Pure category theory |
 | Extract / stub / from LaTeX | `lean-generation` | LaTeX → Lean pipeline |
 | Review / check / audit Lean | `lean-proof-review` | sorry audit, coherency |
+| Audit Lean + witnesses | `lean-completeness-audit` | Deep audit: sorry, trivial, stale |
 | Status / tracking / manifest | `proof-status-tracking` | proof-objects.json |
+| Witness staleness / stale | `lean-completeness-audit` | Lean + Python witness audit |
 | What next / priority / triage | `proof-triage` | Decision support |
 | Validate LaTeX | `latex-validation` | Compilation, labels, refs |
 | Build / CI / publish / gh-pages | `docs-generation` | Workflow YAML, scripts |
@@ -552,6 +554,22 @@ See `ontologist` skill §Glossary Block Policy for the full decision tree.
 | Category theory content | category-theory | For adjunctions, functors, natural transformations |
 | Cross-reference validation | latex-validation | After all edits complete |
 | Todo processing | todo-review | Context-aware selection workflow |
+
+## Pre-merge checklist
+
+Before merging a branch to main, run these checks:
+
+1. **Content validation**: `cd content && bun run pipeline/validate.ts quantum-observable-universe/`
+2. **Deep Lean audit**: `bun run scripts/lean-audit.ts`
+   - Verify: 0 uncited sorries, 0 trivial truths
+   - Review any new sorry additions (must have `-- Ref:` citations)
+3. **Witness staleness**: `bun run scripts/witness-audit.ts`
+   - All Lean witnesses must be current (re-stamp after build if stale)
+   - All Python witnesses must be current (re-run scripts if stale)
+4. **Lean build** (if Lean available): `./scripts/lean-build-all.sh`
+   - After successful build, stamp witnesses: `bun run scripts/lean-witness.ts stamp <file>`
+5. **Python computations** (if modified): Re-run affected `.py` scripts
+   - New scripts should use `witness_base.py` for structured witnesses
 
 ## Current plan
 

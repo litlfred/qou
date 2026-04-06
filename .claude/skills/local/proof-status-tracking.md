@@ -172,5 +172,47 @@ dependency DAG. Use it to populate the dependency edges in
 - [ ] All theorem/lemma/proposition objects have at least one review
 - [ ] No critical issues in any review
 - [ ] Formalization status matches actual Lean build output
-- [ ] Sorry count matches current inventory (27 active)
+- [ ] Sorry count matches current inventory
 - [ ] Dependency edges are complete (all `\uses{}` captured)
+- [ ] All Lean witnesses include commitSha (from `lean-witness.ts stamp`)
+- [ ] No stale Lean witnesses (check with `witness-audit.ts`)
+- [ ] Python computation witnesses use structured format (`witness_base.py`)
+- [ ] No stale Python witnesses (check with `witness_base.py check-all`)
+
+## Witness Tracking
+
+### Lean witnesses
+
+Each `.lean` file can have a witness file recording a successful build:
+```
+<block>.lean.<hash>.witness
+```
+
+The witness includes:
+- `hash`: SHA-256 content hash of the `.lean` file
+- `commitSha`: Git HEAD at stamp time
+- `fileCommitSha`: Last commit that modified this specific file
+- `stampedAt`: ISO 8601 timestamp
+
+**Scripts:**
+- `bun run scripts/lean-witness.ts stamp <file>` — after successful build
+- `bun run scripts/lean-witness.ts status` — show all witness statuses
+- `bun run scripts/lean-audit.ts` — deep chapter-by-chapter audit
+
+### Python computation witnesses
+
+Each `.py` computation script produces a `.witness.json` sibling.
+Use `witness_base.py` for new computations:
+
+```python
+from witness_base import WitnessBuilder
+
+w = WitnessBuilder("computation-name", engine="sympy")
+w.set_content_block("prop:my-block")
+w.add_assertion("result", computed=val, expected=ref, tolerance=1e-6)
+w.save()
+```
+
+**Staleness detection:**
+- `python3 witness_base.py check-all` — check all Python witnesses
+- `bun run scripts/witness-audit.ts` — unified Lean + Python audit

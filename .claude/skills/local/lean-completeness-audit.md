@@ -4,7 +4,8 @@ roles: [collaborator, owner]
 description: >
   Audit Lean formalization completeness across all papers: verify Lake
   project setup, check import coverage, identify missing .lean files for
-  content blocks that require them, and report formalization gaps.
+  content blocks that require them, report formalization gaps, and
+  detect stale witnesses.
 allowed-tools: Read Bash Grep Glob Agent
 ---
 
@@ -13,8 +14,9 @@ allowed-tools: Read Bash Grep Glob Agent
 ## Role
 
 Verify that every paper's Lean formalization is structurally complete:
-correct Lake project setup, all required imports present, and content
-blocks that require `.lean` files have them.
+correct Lake project setup, all required imports present, content
+blocks that require `.lean` files have them, and all witnesses are
+current (not stale).
 
 ## When to Use This Skill
 
@@ -23,8 +25,52 @@ blocks that require `.lean` files have them.
 - "which blocks are missing lean files?"
 - "verify lean project setup"
 - "formalization gaps"
+- "stale witnesses" / "witness staleness"
 - After adding a new paper or chapter
 - Before tagging a release
+- After modifying any `.lean` or `.py` computation file
+
+## Automated Audit Scripts
+
+### Deep Lean audit (chapter-by-chapter)
+
+```bash
+bun run scripts/lean-audit.ts            # console report
+bun run scripts/lean-audit.ts --json     # JSON for programmatic use
+bun run scripts/lean-audit.ts --chapter ch5  # filter to one chapter
+```
+
+This script produces:
+- Sorry inventory with citation checking
+- Trivial truth detection (`True := by trivial` placeholders)
+- Axiom inventory
+- Witness staleness (commit SHA comparison)
+- Chapter-by-chapter breakdown
+
+### Unified witness staleness audit (Lean + Python)
+
+```bash
+bun run scripts/witness-audit.ts             # full audit
+bun run scripts/witness-audit.ts --lean-only # only Lean witnesses
+bun run scripts/witness-audit.ts --py-only   # only Python witnesses
+bun run scripts/witness-audit.ts --json      # JSON output
+```
+
+### Lean witness management
+
+```bash
+bun run scripts/lean-witness.ts status   # show all witness statuses
+bun run scripts/lean-witness.ts check <file>  # check single file
+bun run scripts/lean-witness.ts stamp <file>  # create witness after build
+```
+
+### Python witness staleness
+
+```bash
+cd folio-assistant/computations
+python3 witness_base.py check-all        # check all Python witnesses
+python3 witness_base.py check-stale <file>  # check single witness
+```
 
 ## Audit Steps
 
@@ -137,7 +183,21 @@ grep -rn 'sorry' content/*/lean/ --include='*.lean' | grep -v '.lake'
 
 Per CLAUDE.md: every `sorry` must have a `-- Ref: [key]` comment.
 
-### 6. Build Verification
+### 7. Trivial Truth Audit
+
+Detect placeholder proofs that prove `True` instead of the actual statement:
+
+```bash
+grep -rn 'True\s*:=\s*by\s*trivial' content/ --include='*.lean' | grep -v '.lake'
+```
+
+These are **not genuine proofs** — the theorem statement is `True` (always
+provable), not the actual mathematical claim. They must be either:
+- Replaced with the correct statement and proof
+- Converted to comments / documentation
+- Removed entirely
+
+### 8. Build Verification
 
 Run builds for all papers:
 
@@ -149,6 +209,42 @@ Report:
 - Papers that build cleanly (0 errors, 0 sorry)
 - Papers that build with sorry (warnings only)
 - Papers that fail to build (errors)
+
+### 9. Witness Staleness Audit
+
+After a successful build, stamp witnesses and check for staleness:
+
+```bash
+# Stamp a witness after successful Lean build
+bun run scripts/lean-witness.ts stamp <lean-file>
+
+# Check if witnesses are current
+bun run scripts/witness-audit.ts
+```
+
+**Staleness criteria for Lean witnesses:**
+- Content hash of `.lean` file has changed since witness was stamped
+- Git commit SHA of the file has changed since witness was stamped
+
+**Staleness criteria for Python computation witnesses:**
+- Script content hash has changed since witness was generated
+- Script's git commit SHA has changed since witness was generated
+
+**Witness infrastructure for Python scripts:**
+New computations should use `witness_base.py`:
+
+```python
+from witness_base import WitnessBuilder
+
+w = WitnessBuilder("my-computation", engine="sympy")
+w.set_description("Computes X from Y")
+w.set_content_block("prop:my-proposition")
+w.add_assertion("result", computed=1.234, expected=1.234, tolerance=1e-6)
+w.save()  # writes my-computation.witness.json with commitSha tracking
+```
+
+Legacy witnesses (without `engine`/`commitSha`/`assertions`) should be
+migrated to use `witness_base.py` when the computation is next modified.
 
 ## Output Format
 
@@ -175,6 +271,15 @@ Report:
 
 ### Sorry Without Citation
 (list any sorry missing -- Ref: comment)
+
+### Trivial Truths (Placeholders)
+(list any `True := by trivial` declarations)
+
+### Witness Staleness
+| Type | Total | Current | Stale | Pending |
+|------|-------|---------|-------|---------|
+| Lean | N | N | N | N |
+| Python | N | N (structured) | N | N (legacy) |
 ```
 
 ## Checklist
@@ -186,4 +291,8 @@ Report:
 - [ ] Definition blocks all have corresponding .lean files
 - [ ] No stale cross-paper imports
 - [ ] All sorry have bibliographic citations
+- [ ] No trivial truth placeholders (True := by trivial)
 - [ ] All papers build (at least with warnings)
+- [ ] All Lean witnesses are current (not stale)
+- [ ] All Python computation witnesses are current (not stale)
+- [ ] Legacy Python witnesses identified for migration to witness_base.py
