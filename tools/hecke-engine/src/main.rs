@@ -299,7 +299,7 @@ impl HeckeEngine {
     }
 
     /// Compute generator volumes for an explicit type array.
-    /// Each element is b'p' (u-quark / proton) or b'n' (d-quark / neutron).
+    /// Each element is b'p' (u-quark at L1 / proton at L0) or b'n' (d-quark at L1 / neutron at L0).
     fn generator_volumes_typed(&self, types: &[u8]) -> Vec<f64> {
         let a = types.len();
         (0..a-1).map(|i| {
@@ -552,16 +552,21 @@ fn main() {
             //   proton  → [u, u, d] = [p, p, n]
             //   neutron → [u, d, d] = [p, n, n]
             //
+            // At quark level, b'p' = u-quark and b'n' = d-quark.
+            // The same crossing_coeffs applies: uu→σ, dd→σ⁻¹, ud→½(σ+σ⁻¹).
+            //
             // β⁻ decay: one neutron → proton = one d→u flip in quark array.
             // At quark level: [p,n,n] → [p,p,n], the flip is at position 3k+1.
             //
             // Method: same log-ratio transfer-matrix approach as L0 `qvalues`,
             // but with 3A strands and quark-level type classification.
-            //
-            // Energy scale κ_q = ln(q) × m_e / 3 (same as L0).
+
+            let m_e_mev = 0.510999_f64;            // electron rest mass (CODATA 2022)
+            let q_neutron_mev = 0.78233341_f64;    // Q(n→p e⁻ ν̄) (CODATA 2022)
+            let min_q_threshold = 0.001_f64;        // MeV, filter near-zero noise
 
             let ln_q = engine.q.ln();
-            let kappa_q = 0.510999 / 3.0 * ln_q;  // κ_q = ln(q) × m_e/3
+            let kappa_q = m_e_mev / 3.0 * ln_q;   // κ_q = ln(q) × m_e/3
 
             fn expand_to_quarks(nucleons: &[u8]) -> Vec<u8> {
                 let mut quarks = Vec::with_capacity(nucleons.len() * 3);
@@ -624,7 +629,7 @@ fn main() {
                     }
                 }
                 let raw_q_free = (engine.q * lu_n + engine.qi * lr_n + luc_n).abs();
-                e_l1 = 0.78233341 / raw_q_free;  // calibrate: E_L1 × |weighted sum| = Q_NEUTRON
+                e_l1 = q_neutron_mev / raw_q_free;  // E_L1 × |weighted sum| = Q_NEUTRON
 
                 println!("Free neutron calibration (L1):");
                 println!("  V̂_par = {:?}", vp);
@@ -725,13 +730,8 @@ fn main() {
                     let q_kappa = (engine.q * lu + engine.qi * lr + luc).abs() * kappa_q;
                     let q_cal = (engine.q * lu + engine.qi * lr + luc).abs() * e_l1;
 
-                    // Also track site 0 and min-positive-Q
-                    if site_idx == 0 {
-                        // will print separately
-                    }
-
                     // Min-positive: select smallest positive Q (using κ_q scale)
-                    if q_kappa > 0.001 {  // threshold to avoid near-zero noise
+                    if q_kappa > min_q_threshold {
                         if best_q_pred == f64::MAX || q_kappa < best_q_pred {
                             best_q_pred = q_kappa;
                             best_site = site_idx;
