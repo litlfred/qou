@@ -280,6 +280,7 @@ export default chapter({
         "orbital-fourier-decomposition",
         "fivefold-symmetry",
         "cohomological-embedding",
+        "knot-basis-color-content",
       ],
     }),
   ],
