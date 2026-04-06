@@ -29,7 +29,7 @@ export default chapter({
       ],
     }),
 
-    // ── Categorical lifting (from ch2 elaboration) ─────────────────────
+    // ── Categorical lifting ─────────────────────────────────────────────
     section({
       title: "Categorical Lifting: Transport and Torsion",
       label: "sec:lifting",

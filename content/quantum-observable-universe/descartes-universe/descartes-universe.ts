@@ -36,7 +36,7 @@ export default chapter({
         "brings-is-qou-proof",
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
-        // Braid-group action (resolvents now in ch4 as categorical DFT)
+        // Braid-group action (resolvents in braids-and-knots as categorical DFT)
         "braid-group-action",
         // Color tube coordinates
         "color-tube-coordinates",
@@ -71,7 +71,7 @@ export default chapter({
       title: "Spectral resolvents and gauge structures",
       label: "sec:spectral-gauge",
       blocks: [
-        // Quaternionic spectral resolvents (minus SO(3) motivation → ch4)
+        // Quaternionic spectral resolvents (minus SO(3) motivation → braids-and-knots)
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",
@@ -137,7 +137,7 @@ export default chapter({
         "antineutrino-knot",
         // Building block reference table
         "linking-relations-table",
-        // q-deformed kinematics (definitions in ch4; applied here)
+        // q-deformed kinematics (definitions in braids-and-knots; applied here)
         "q-value-transition",
         // Proton, neutron, stable nucleus
         "categorical-proton",
@@ -242,8 +242,9 @@ export default chapter({
       ],
     }),
     // ── §5. Orbital space and resonance modes ────────────────────────
-    // Moved here from ch2 (R1): uses prop:reidemeister-mass-invariance
-    // (ch4) which would otherwise be a forward ref from ch2.
+    // Moved here from quantum-observable-universes (R1): uses
+    // prop:reidemeister-mass-invariance (braids-and-knots) which would
+    // otherwise be a forward ref from quantum-observable-universes.
     section({
       title: "Orbital space and resonance modes",
       label: "sec:orbital-space",
@@ -254,9 +255,10 @@ export default chapter({
     }),
 
     // ── §6. Five-fold symmetry and cohomological embedding ───────────
-    // Moved here from ch2 (R1): uses prop:skein-finiteness-bound,
-    // prop:shell-closure-normal-form, rem:force-knot-identification —
-    // all in this chapter — which would otherwise be span-7 forward refs.
+    // Moved here from quantum-observable-universes (R1): uses
+    // prop:skein-finiteness-bound, prop:shell-closure-normal-form,
+    // rem:force-knot-identification — all in this chapter — which would
+    // otherwise be span-7 forward refs.
     section({
       title: "Five-fold symmetry and cohomological embedding",
       label: "sec:fivefold-symmetry",

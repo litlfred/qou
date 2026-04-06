@@ -12,7 +12,7 @@ import { chapter, section } from "../../schema/builders";
  * chapter restructuring (2026-03).  Proton/neutron definitions moved
  * to the Descartes chapter (Option A: nuclear binding references the
  * abstract hadron, not specific particles).
- * Fluid dynamics and information theory moved to ch6 (Quantum Universes).
+ * Fluid dynamics and information theory moved to their own chapters.
  */
 export default chapter({
   title: "Braids and Knots",
@@ -236,7 +236,7 @@ export default chapter({
       ],
     }),
 
-    // ── Topological mass + nuclear binding (from ch3 §12 + ch4 §9) ───
+    // ── Topological mass + nuclear binding (from lifting-and-descent §12) ───
     section({
       title: "Topological Mass and Nuclear Binding",
       label: "sec:topological-mass-binding",

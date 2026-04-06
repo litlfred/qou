@@ -680,7 +680,7 @@ export interface SectionRef {
 export interface ChapterRef {
   /** URI to the chapter .ts manifest (default: relative local). */
   uri?: string;
-  /** Directory name under the paper root (e.g. "ch1-quantum-observable-universe"). */
+  /** Directory name under the paper root (e.g. "quantum-universes"). */
   dir: string;
 }
 

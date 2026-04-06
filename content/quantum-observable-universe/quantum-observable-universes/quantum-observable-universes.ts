@@ -274,8 +274,8 @@ export default chapter({
 
     // ── Orbital space from normal bundle ──────────────────────────────
     // NOTE (R1): sec:orbital-space and sec:fivefold-symmetry moved to
-    // descartes-universe (§3e/§3f) because their blocks forward-reference
-    // Reidemeister invariance (ch4) and shell/skein content (ch9).
-    // They belong in the Descartes chapter where that content lives.
+    // descartes-universe (§5/§6) because their blocks forward-reference
+    // Reidemeister invariance (braids-and-knots) and shell/skein content
+    // (descartes-universe). They belong in the Descartes chapter.
   ],
 });
