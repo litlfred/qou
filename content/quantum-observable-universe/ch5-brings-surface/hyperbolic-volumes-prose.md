@@ -7,7 +7,8 @@ framework is identified with a knot or link $K$ (see the table in
 hyperbolic metric on the complement $S^3 \setminus K$, computed via the
 Bloch--Wigner dilogarithm. For torus knots (e.g. the trefoil $3_1$) this
 volume vanishes; for hyperbolic knots it is a positive topological invariant.
-The figure-eight knot $4_1$, which the framework identifies with the muon,
+The figure-eight knot $4_1$, which the framework identifies with the Higgs
+boson ([cohomological embedding](#prop:cohomological-embedding)),
 has
 
 $$

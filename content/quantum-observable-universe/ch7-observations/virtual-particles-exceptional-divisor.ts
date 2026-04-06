@@ -5,8 +5,11 @@ export default remark({
   title: "Virtual particles as excitations of the exceptional divisor",
   interprets: "def:recursive-brane-tower",
   uses: [
-    "rem:time-reversal-energy-barrier",
-    "prop:reidemeister-mass-invariance",
+    "def:exceptional-divisor",
+    "def:recursive-brane-tower",
+    "prop:vertex-is-exceptional-divisor",
+    "prop:jet-prolongation",
+    "rem:heisenberg-commutator",
   ],
   tags: [
     "virtual-particles", "exceptional-divisor", "brane-tower",

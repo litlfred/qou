@@ -5,7 +5,7 @@
   the Gröbner normal form in H_A(q) after quotient ideals I₈+I₉
   has exactly A = Z + N terms: {𝟏, σ₀, σ₁, …, σ_{A-2}}.
 
-  -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+  -- Ref: [manuscript]
 -/
 
 import Mathlib.Data.List.Basic
@@ -22,17 +22,17 @@ abbrev HeckeWord := List ℕ
 def standardBasis (n : ℕ) : List HeckeWord :=
   [[]] ++ (List.range n).map (fun i => [i])
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem standardBasis_length (n : ℕ) :
     (standardBasis n).length = n + 1 := by
   simp [standardBasis]
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem nil_mem_standardBasis (n : ℕ) :
     ([] : HeckeWord) ∈ standardBasis n := by
   simp [standardBasis]
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem singleton_mem_standardBasis (n i : ℕ) (h : i < n) :
     [i] ∈ standardBasis n := by
   simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
@@ -52,13 +52,13 @@ def IsI9Absorbable (support : List HeckeWord) (w : HeckeWord) : Prop :=
 def IsAbsorbable (support : List HeckeWord) (w : HeckeWord) : Prop :=
   IsI8Absorbable support w ∨ IsI9Absorbable support w
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem i8_absorb (support : List HeckeWord) (i : ℕ)
     (h : [i + 1] ∈ support) :
     IsI8Absorbable support [i, i + 1] :=
   ⟨i, rfl, h⟩
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
     (g : ℕ) (h_prefix : a :: rest ∈ support) :
     IsI9Absorbable support (a :: rest ++ [g]) := by
@@ -72,27 +72,27 @@ theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
 -- §3  The standard basis is non-absorbable
 -- ════════════════════════════════════════════════════════════════
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem nil_not_i8 (support : List HeckeWord) :
     ¬ IsI8Absorbable support [] := by
   rintro ⟨i, h, -⟩; simp at h
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem nil_not_i9 (support : List HeckeWord) :
     ¬ IsI9Absorbable support [] := by
   rintro ⟨h, -⟩; simp at h
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem singleton_not_i8 (support : List HeckeWord) (i : ℕ) :
     ¬ IsI8Absorbable support [i] := by
   rintro ⟨j, h, -⟩; simp at h
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem singleton_not_i9 (support : List HeckeWord) (i : ℕ) :
     ¬ IsI9Absorbable support [i] := by
   rintro ⟨h, -⟩; simp at h
 
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem standardBasis_not_absorbable (n : ℕ) (w : HeckeWord)
     (hw : w ∈ standardBasis n) :
     ¬ IsAbsorbable (standardBasis n) w := by
@@ -112,7 +112,7 @@ theorem standardBasis_not_absorbable (n : ℕ) (w : HeckeWord)
 
 /-- Any pair [i, k] is absorbable when both [i] and [k] are in the basis.
     Adjacent: I₈. Non-adjacent: I₉ (prefix [i] present). -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem cross_term_absorbable (n : ℕ) (i k : ℕ)
     (hi : i < n) (hk : k < n) (hne : i ≠ k) :
     IsAbsorbable (standardBasis n) [i, k] := by
@@ -131,7 +131,7 @@ def IsPrefixClosed (support : List HeckeWord) : Prop :=
   ∀ w ∈ support, w.length ≥ 2 → w.dropLast ∈ support
 
 /-- In a prefix-closed support, every word of length ≥ 2 is I₉-absorbable. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem prefix_closed_absorbable (support : List HeckeWord)
     (h_closed : IsPrefixClosed support)
     (w : HeckeWord) (hw : w ∈ support) (h_len : w.length ≥ 2) :
@@ -139,7 +139,7 @@ theorem prefix_closed_absorbable (support : List HeckeWord)
   ⟨h_len, h_closed w hw h_len⟩
 
 /-- In a prefix-closed support, only length ≤ 1 words survive I₉. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem prefix_closed_collapse (support : List HeckeWord)
     (h_closed : IsPrefixClosed support) :
     ∀ w ∈ support, ¬ IsI9Absorbable support w → w.length ≤ 1 := by
@@ -149,7 +149,7 @@ theorem prefix_closed_collapse (support : List HeckeWord)
   exact h_not (prefix_closed_absorbable support h_closed w hw (by omega))
 
 /-- If prefix-closed + generators bounded: non-absorbable ⊆ standardBasis. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem optimal_from_prefix_closed (n : ℕ) (support : List HeckeWord)
     (h_closed : IsPrefixClosed support)
     (h_bounded : ∀ w ∈ support, ∀ g ∈ w, g < n) :
@@ -169,7 +169,7 @@ theorem optimal_from_prefix_closed (n : ℕ) (support : List HeckeWord)
 
 /-- After multiplying standardBasis n by σ_k (with k < n),
     all new words are either in the basis or absorbable. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem multiply_standard_basis_absorbed (n k : ℕ) (hk : k < n) :
     ∀ w ∈ (standardBasis n).map (fun w => w ++ [k]),
     w ∈ standardBasis n ∨ IsAbsorbable (standardBasis n) w := by
@@ -195,7 +195,7 @@ theorem multiply_standard_basis_absorbed (n k : ℕ) (hk : k < n) :
 /-- When d ≠ 0, multiplying by (c·σ_k + d) preserves prefix closure.
     The d-term preserves all existing words; the c-term extends them.
     Every extended word w++[k] has prefix w still in the support. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
     (h_closed : IsPrefixClosed S) :
     IsPrefixClosed (S ++ S.map (fun w => w ++ [k])) := by
@@ -217,12 +217,8 @@ theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
 def valleyOfStability (Z N : ℕ) : Prop := N + 1 ≥ Z
 
 /-- The NF support of a stable nucleus is prefix-closed.
-    This is the key Layer 2 result.
-
-    The standard basis itself is the witness: it contains only words
-    of length ≤ 1, so prefix closure holds vacuously (no word of
-    length ≥ 2 exists whose dropLast we'd need to check). -/
--- Ref: [litlfred2025]
+    This is the key Layer 2 result. -/
+-- Ref: [manuscript]
 theorem nf_support_prefix_closed (Z N : ℕ)
     (h_stable : valleyOfStability Z N) (h_pos : Z + N ≥ 2) :
     ∃ support : List HeckeWord,
@@ -230,31 +226,35 @@ theorem nf_support_prefix_closed (Z N : ℕ)
     (∀ i, i < Z + N - 1 → [i] ∈ support) ∧
     ([] ∈ support) ∧
     (∀ w ∈ support, ∀ g ∈ w, g < Z + N - 1) := by
-  use standardBasis (Z + N - 1)
-  refine ⟨?_, ?_, ?_, ?_⟩
-  · -- Prefix-closed: vacuously true (all words have length ≤ 1)
+  -- The standard basis {[], [0], [1], …, [A-2]} witnesses all four properties.
+  -- Prefix closure is vacuous: every element has length ≤ 1, so the
+  -- condition (length ≥ 2 → dropLast ∈ support) is never triggered.
+  refine ⟨standardBasis (Z + N - 1), ?_, ?_, ?_, ?_⟩
+  · -- IsPrefixClosed: vacuously true (all elements have length ≤ 1)
     intro w hw hlen
-    simp only [standardBasis, List.mem_append, List.mem_singleton,
-               List.mem_map, List.mem_range] at hw
-    rcases hw with rfl | ⟨_, _, rfl⟩ <;> simp at hlen
+    simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
+               List.mem_range] at hw
+    rcases hw with rfl | ⟨_, _, rfl⟩
+    · simp at hlen   -- [].length = 0, contradicts ≥ 2
+    · simp at hlen   -- [i].length = 1, contradicts ≥ 2
   · -- All singletons [i] for i < A-1 are present
-    exact fun i hi => singleton_mem_standardBasis (Z + N - 1) i hi
-  · -- [] is present
-    exact nil_mem_standardBasis (Z + N - 1)
-  · -- All generators in words are bounded
+    exact fun i hi => singleton_mem_standardBasis _ i hi
+  · -- The empty word [] is present
+    exact nil_mem_standardBasis _
+  · -- All generators in all words are bounded by A-1
     intro w hw g hg
-    simp only [standardBasis, List.mem_append, List.mem_singleton,
-               List.mem_map, List.mem_range] at hw
+    simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
+               List.mem_range] at hw
     rcases hw with rfl | ⟨i, hi, rfl⟩
-    · simp at hg
-    · simp at hg; subst hg; exact hi
+    · exact absurd hg (List.not_mem_nil g)   -- g ∈ [] is impossible
+    · rw [List.mem_singleton] at hg; subst hg; exact hi  -- g = i < A-1
 
 -- ════════════════════════════════════════════════════════════════
 -- §9  Main theorem
 -- ════════════════════════════════════════════════════════════════
 
 /-- **Main Theorem**: the optimal NF of a stable nucleus is the standard basis. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem optimal_nf_is_standard_basis (Z N : ℕ)
     (h_stable : valleyOfStability Z N) (h_pos : Z + N ≥ 2) :
     ∃ support : List HeckeWord,
@@ -266,7 +266,7 @@ theorem optimal_nf_is_standard_basis (Z N : ℕ)
     optimal_from_prefix_closed (Z + N - 1) support h_closed h_bounded⟩
 
 /-- The standard basis has exactly A terms and none are absorbable. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem optimal_nf_characterization (A : ℕ) :
     (standardBasis A).length = A + 1 ∧
     ∀ w ∈ standardBasis A, ¬ IsAbsorbable (standardBasis A) w :=
@@ -277,7 +277,7 @@ theorem optimal_nf_characterization (A : ℕ) :
 -- ════════════════════════════════════════════════════════════════
 
 /-- σ² = HA·σ + 1: both outputs are in the basis. -/
--- Ref: [litlfred2025]
+-- Ref: [manuscript]
 theorem hecke_stays_in_basis (n i : ℕ) (hi : i < n) :
     [i] ∈ standardBasis n ∧ ([] : HeckeWord) ∈ standardBasis n :=
   ⟨singleton_mem_standardBasis n i hi, nil_mem_standardBasis n⟩
@@ -293,48 +293,35 @@ def IsMagic (n : ℕ) : Prop := n ∈ magicNumbers
 -- §12  Valley of stability boundary
 -- ════════════════════════════════════════════════════════════════
 
-/-- pp crossings have d = 0: extension-only mapping loses prefix closure
-    whenever the support contains a generator [i] with i ≠ k.
+/-- pp crossings have d = 0: pure extension (without identity preservation)
+    cannot produce a prefix-closed support unless every non-empty element
+    of S already ends with k.  In particular, if S contains a non-empty
+    word that does NOT end with k, then `S.map (w ↦ w ++ [k])` fails
+    prefix closure.
 
-    Proof: [i] ∈ S implies [i, k] ∈ mapped(S).  For prefix closure,
-    dropLast [i, k] = [i] must be in mapped(S), so [i] = v ++ [k]
-    for some v ∈ S.  This forces v = [] and k = i, contradicting i ≠ k. -/
--- Ref: [litlfred2025]
-theorem pp_loses_prefix (S : List HeckeWord) (k i : ℕ)
-    (hne : i ≠ k) (h_mem : [i] ∈ S) :
+    **Proof**: if `w ∈ S` with `|w| ≥ 1` and `w` does not end with `k`,
+    then `w ++ [k]` has length ≥ 2, so prefix closure requires
+    `w = (w ++ [k]).dropLast ∈ S.map (v ↦ v ++ [k])`.
+    But then `w = v ++ [k]` for some `v ∈ S`, meaning `w` ends with `k`
+    — contradicting our hypothesis. -/
+-- Ref: [manuscript]
+theorem pp_extension_not_prefix_closed (S : List HeckeWord) (k : ℕ)
+    (w : HeckeWord) (hw : w ∈ S) (hlen : w.length ≥ 1)
+    (hend : w.getLast? ≠ some k) :
     ¬ IsPrefixClosed (S.map (fun w => w ++ [k])) := by
   intro h_closed
-  -- [i] ∈ S implies [i, k] ∈ S.map (· ++ [k])
-  have h_ik : [i, k] ∈ S.map (fun w => w ++ [k]) :=
-    List.mem_map.mpr ⟨[i], h_mem, rfl⟩
-  -- |[i, k]| = 2 ≥ 2, so prefix closure requires dropLast [i, k] = [i] ∈ mapped
-  have h_drop := h_closed [i, k] h_ik (by simp)
-  -- [i] ∈ S.map (· ++ [k]) means ∃ v ∈ S, v ++ [k] = [i]
-  rw [List.mem_map] at h_drop
-  obtain ⟨v, _, hv⟩ := h_drop
-  -- v ++ [k] = [i] forces v = [] and k = i
-  cases v with
-  | nil => simp at hv; exact hne hv.symm
-  | cons a tl =>
-    -- a :: tl ++ [k] = [i] requires tl ++ [k] = [], impossible
-    simp at hv
-
-/-- For any nucleus with A ≥ 2 generators (σ₀, …, σ_{A-2}),
-    extending by any single generator k < A-1 loses prefix closure
-    because some other generator i ≠ k exists.
-
-    This is why pp crossings (d = 0) break the optimal NF construction:
-    the d-term in (c·σ + d) is needed to preserve existing words. -/
--- Ref: [litlfred2025]
-theorem pp_breaks_for_nucleus (A : ℕ) (hA : A ≥ 3) (k : ℕ) (hk : k < A - 1) :
-    ¬ IsPrefixClosed ((standardBasis (A - 1)).map (fun w => w ++ [k])) := by
-  -- A ≥ 3 implies A - 1 ≥ 2, so there exists i < A-1 with i ≠ k
-  have : ∃ i, i < A - 1 ∧ i ≠ k := by
-    by_cases h0 : k = 0
-    · exact ⟨1, by omega, by omega⟩
-    · exact ⟨0, by omega, by omega⟩
-  obtain ⟨i, hi, hne⟩ := this
-  exact pp_loses_prefix (standardBasis (A - 1)) k i hne
-    (singleton_mem_standardBasis (A - 1) i hi)
+  -- w ++ [k] ∈ S.map(..) and has length ≥ 2
+  have hmem : w ++ [k] ∈ S.map (fun w => w ++ [k]) :=
+    List.mem_map_of_mem _ hw
+  have hlen2 : (w ++ [k]).length ≥ 2 := by simp; omega
+  -- Prefix closure: (w ++ [k]).dropLast = w must be in the mapped set
+  have hdrop := h_closed (w ++ [k]) hmem hlen2
+  rw [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
+      List.dropLast_single, List.append_nil] at hdrop
+  -- So w ∈ S.map(v ↦ v ++ [k]), meaning w = v ++ [k] for some v
+  rw [List.mem_map] at hdrop
+  obtain ⟨v, _, rfl⟩ := hdrop
+  -- But then w = v ++ [k] ends with k, contradicting hend
+  simp [List.getLast?_append_of_ne_nil] at hend
 
 end QOU.OptimalNF

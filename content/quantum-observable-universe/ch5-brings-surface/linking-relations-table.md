@@ -31,12 +31,12 @@ locally (at one crossing), it transmutes quark flavour.
 | Input | Operation | Output | Physical meaning |
 |-------|-----------|--------|-----------------|
 | $T_{2,3}$ ($e^-$, $u$) | Global mirror $\sigma$ | $T_{2,3}^{\sigma}$ ($e^+$, $d$) | Particle → antiparticle |
-| $T_{2,5}$ ($b$) | Global mirror $\sigma$ | $T_{2,5}^{\sigma}$ ($s$) | Bottom → strange |
-| $T_{2,7}$ ($c$) | Global mirror $\sigma$ | $T_{2,7}^{\sigma}$ ($c^{\sigma}$) | Charm → anticharm |
+| $T_{2,5}$ ($\mu$, $b$) | Global mirror $\sigma$ | $T_{2,5}^{\sigma}$ ($\mu^+$, $s$) | Muon/bottom → antimuon/strange |
+| $T_{2,7}$ ($\tau$, $c$) | Global mirror $\sigma$ | $T_{2,7}^{\sigma}$ ($\tau^+$, $c^{\sigma}$) | Tau/charm → antitau/anticharm |
 | $T_{1,0}$ ($\nu$) | Global mirror $\sigma$ | $T_{1,0}^{\sigma}$ ($\nu^{\sigma}$) | Neutrino → antineutrino |
-| $4_1$ ($\mu$) | Global mirror $\sigma$ | $4_1$ ($\mu$) | Self-mirror (amphichiral) |
+| $4_1$ ($H$) | Global mirror $\sigma$ | $4_1$ ($H$) | Self-mirror (amphichiral Higgs) |
 | $\mathfrak{n}$ = $[u,d,d]_p$ | Local $\sigma$ at one $d$ | $\mathfrak{p}$ = $[u,u,d]_p$ | Beta decay ($n \to p$) |
-| $T_{2,3} \bowtie T_{2,3}$ | Skein at crossing | $4_1$ | $\mathfrak{u}\mathfrak{u}$ Hopf → figure-eight (muon) |
+| $T_{2,3} \bowtie T_{2,3}$ | Skein at crossing | $4_1$ | $\mathfrak{u}\mathfrak{u}$ Hopf → figure-eight (Higgs) |
 
 ## Table 3: Color-tube linking $[K_1, K_2, K_3]_p$ — Borromean construction
 

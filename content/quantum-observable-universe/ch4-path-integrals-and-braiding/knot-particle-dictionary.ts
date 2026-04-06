@@ -8,7 +8,5 @@ export default remark({
   uses: [
     "def:localized-knot",
     "def:hadron",
-    "conj:borromean-quark",
-    "def:borromean-baryon",
   ],
 });

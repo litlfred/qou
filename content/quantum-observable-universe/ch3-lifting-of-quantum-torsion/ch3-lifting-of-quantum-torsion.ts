@@ -66,6 +66,8 @@ export default chapter({
         "qu-to-qou",
         "fermionic-twisted-sectors",
         "kummer-filtration-obstruction",
+        "kummer-tower",
+        "hochschild-kummer-connection",
       ],
     }),
 

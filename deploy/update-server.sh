@@ -26,6 +26,12 @@ fi
 
 IP=$(hcloud server ip "$SERVER_NAME")
 
+# ── Accept the server's SSH host key ─────────────────────────────
+# On fresh CI runners ~/.ssh/known_hosts is empty, so hcloud server ssh
+# would fail with "Host key verification failed".
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+ssh-keyscan -H "$IP" >> ~/.ssh/known_hosts
+
 # ── Preserve existing secrets ─────────────────────────────────────
 # Regenerating would invalidate all sessions and API tokens.
 if ! EXISTING_ENV=$(hcloud server ssh "$SERVER_NAME" -- cat /opt/qou/deploy/.env 2>/dev/null); then

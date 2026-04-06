@@ -31,6 +31,15 @@ theorem reeb_time_monotone {k : Type*} [LinearOrderedField k]
     informationTheoreticTime ⟨q, hq0, hq1, n⟩ <
     informationTheoreticTime ⟨q, hq0, hq1, m⟩ := by
   -- Ref: [manuscript] Ch 8, Definition: Information-Theoretic Time
-  sorry
+  -- Since q > 1, the coefficient (1 - q⁻¹) is positive,
+  -- so (1 - q⁻¹)·n < (1 - q⁻¹)·m when n < m.
+  simp only [informationTheoreticTime]
+  apply mul_lt_mul_of_pos_left (Nat.cast_lt.mpr hnm)
+  -- Show 0 < 1 - q⁻¹: since q > 1, we have q⁻¹ < 1
+  have hq_pos' : (0 : k) < q := by linarith
+  have hq_inv_lt : q⁻¹ < 1 := by
+    rw [inv_lt_one_iff_of_pos hq_pos']
+    exact hq_pos
+  linarith
 
 end QOU

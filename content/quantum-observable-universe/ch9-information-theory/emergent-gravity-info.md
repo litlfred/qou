@@ -10,7 +10,7 @@ evaluated but not yet resolved to observable knots
 The key formula is $G(q) = c_q^3 \hbar_q / S_{\mathrm{cell}}$,
 where $S_{\mathrm{cell}}$ is the total information content per
 fibre including all in-progress braids.  Self-consistency with
-Planck units requires $S_{\mathrm{cell}} = (q-1)^2/q^3 \approx 0.009$ nats — only $1.3\%$ of the single-operation entropy $\eta_q \approx 0.701$ — reflecting the sparsity of partially-evaluated
+Planck units requires $S_{\mathrm{cell}} = (q-1)^2/q^3 \approx 0.009$ $q$-bits — only $1.3\%$ of the single-operation entropy $\eta_q \approx 0.701$ — reflecting the sparsity of partially-evaluated
 braids in the near-classical regime.
 
 This connects the QOU to Verlinde's entropic gravity programme:

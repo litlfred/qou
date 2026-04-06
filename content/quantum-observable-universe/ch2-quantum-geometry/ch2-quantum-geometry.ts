@@ -161,7 +161,9 @@ export default chapter({
         "categorical-point",
         "categorical-point-explication",
         "observation",
+        "observation-physical-roles",
         "observation-energy",
+        "observation-energy-proof",
         "two-observer-parallelogram",
         "observation-fermion-action",
       ],
@@ -288,6 +290,7 @@ export default chapter({
       blocks: [
         "fivefold-symmetry",
         "cohomological-embedding",
+        "knot-basis-color-content",
       ],
     }),
   ],

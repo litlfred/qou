@@ -28,7 +28,7 @@ computational analog is:
 | Degree-$0$ opacity: no fibre value crosses $\mathcal{H}$ | Degree-$0$ opacity: no answer crosses $\mathcal{H}_c$ in poly time |
 | Degree $\geq 1$ leakage: winding, curvature cross | Degree $\geq 1$ leakage: witnesses verifiable in poly time |
 | Bekenstein bound: $\eta_q$ per operation | Bandwidth bound: $I(t) \leq t \cdot \mathcal{B}(q)$ |
-| Big Bang state: $A_0|_{\mathcal{S}_0} = 0$ | Unsolved NP instance: degree-$0$ answer not yet extracted |
+| Big Bang state: $A_0\rvert_{\mathcal{S}_0} = 0$ | Unsolved NP instance: degree-$0$ answer not yet extracted |
 
 **The observer in $\mathrm{Bun}^{\circ}$ versus the
 observer in $\mathcal{R}^{\circ}$.**
@@ -95,15 +95,15 @@ information generated per tick.
 
 A polynomial-time computation runs for $\mathrm{poly}(c)$ ticks.
 The total information processed is
-$I = \mathrm{poly}(c) \cdot \eta_q / \hbar_q$ nats.  For
+$I = \mathrm{poly}(c) \cdot \eta_q / \hbar_q$ $q$-bits.  For
 P-class problems, this suffices to determine $P_L(q_0)$ because
 the effective resolution tree has polynomial size — the $3^c$
 paths destructively interfere, leaving only polynomially many
 survivors.
 
 For NP-complete problems, the effective tree remains
-exponential.  The computation generates $\eta_q$ nats per tick
-but needs $c \cdot \log 3$ nats of aggregated information from
+exponential.  The computation generates $\eta_q$ $q$-bits per tick
+but needs $c \cdot \log 3$ $q$-bits of aggregated information from
 the full tree.  The deficit is exponential: the bandwidth
 $\mathcal{B}(q)$ cannot bridge the gap in polynomial time.
 

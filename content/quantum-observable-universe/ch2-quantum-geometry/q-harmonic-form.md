@@ -12,8 +12,7 @@ $q$-harmonic:
     \ar[r, "d_q"]
   & \Omega^k(A)
     \ar[r, "d_q"]
-    \ar[d, "\delta_q"']
-    \ar[dr, phantom, "\Delta_q \alpha = 0"]
+    \ar[d, "\delta_q"'{near start}, "{\scriptstyle \Delta_q \alpha = 0}"{description, near end}]
   & \Omega^{k+1}(A)
   \\
   & \Omega^{k-1}(A)

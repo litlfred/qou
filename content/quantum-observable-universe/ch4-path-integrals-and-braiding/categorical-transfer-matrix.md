@@ -76,7 +76,7 @@ degrees of freedom (higher-order Taylor coefficients, heavier knot
 types), while Hecke relations **close** them (correlating the
 insertion points that have interacted).  The information-theoretic
 content of a hadron is the balance between these two: $\eta_q$
-nats of information per step
+$q$-bits of information per step
 ([operational entropy](#def:operational-entropy)) measures the net
 rate at which the ascending tower outruns the descending constraints.
 

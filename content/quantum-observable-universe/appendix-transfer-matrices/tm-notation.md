@@ -42,7 +42,7 @@ meeting at a crossing.  The knots relevant to this paper are:
 | Bottom quark $\mathfrak{b}$ | $T_{2,5}$ | $\mathfrak{b}^{\sigma}$ | $T_{2,5}^{\sigma}$ |
 | Strange quark $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $\mathfrak{s}^{\sigma}$ | $T_{2,5}$ |
 | Charm quark $\mathfrak{c}$ | $T_{2,7}$ | $\mathfrak{c}^{\sigma}$ | $T_{2,7}^{\sigma}$ |
-| Top quark $\mathfrak{t}$ | $T_{3,4}$ | $\mathfrak{t}^{\sigma}$ | $T_{3,4}^{\sigma}$ |
+| $T_{3,4}$ (Hopf${}^2$ binding) | $T_{3,4}$ | (self-conjugate in $H^{0,1}$) | $T_{3,4}^{\sigma}$ |
 
 ## Nucleons
 

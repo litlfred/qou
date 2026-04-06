@@ -313,7 +313,7 @@ $$
   }
 $$
 
-### 4d. $T_{3,4}$--$T_{3,4}$ (top--top, $\mathfrak{t}$-$\mathfrak{t}$)
+### 4d. $T_{3,4}$--$T_{3,4}$ (Hopf${}^2$--Hopf${}^2$, color binding)
 
 Knots: $K_1 = T_{3,4}$, $K_2 = T_{3,4}$.
 

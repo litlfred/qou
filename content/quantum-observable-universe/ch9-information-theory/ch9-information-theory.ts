@@ -95,6 +95,7 @@ section({
         "jet-horizon",
         "big-bang-state",
         "cmb-boundary-datum",
+        "cmb-photon-color-content",
         "hawking-radiation",
         "observable-subcategory",
         "aeon",

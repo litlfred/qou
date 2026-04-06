@@ -69,4 +69,4 @@ In the deep-quantum regime ($q \to \infty$): $n_R \to 1$ and $\eta_q \to 0$
 (simplest dynamics), so $I_P \to 0$.
 At the classical limit ($q \to 1$): $\eta_q \to 1$ nat per step.
 At $q = q_0$: $I_P \approx 10.1 \times 0.892 \approx 9.0$
-nats per Planck time.
+$q$-bits per Planck time.

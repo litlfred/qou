@@ -1651,6 +1651,81 @@ export const references: CSLData[] = [
     page: "179-206",
     DOI: "10.1007/BF01389745",
   }),
+
+  // ── Collatz ─────────────────────────────────────────────────────
+  ref({
+    id: "collatz1937",
+    type: "article-journal",
+    title: "On the motivation and origin of the $(3n+1)$-problem",
+    author: [{ family: "Collatz", given: "Lothar" }],
+    "container-title": "Journal f\u00fcr die reine und angewandte Mathematik",
+    issued: { "date-parts": [[1937]] },
+  }),
+
+  ref({
+    id: "lagarias2010",
+    type: "book",
+    title: "The Ultimate Challenge: The $3x+1$ Problem",
+    author: [{ family: "Lagarias", given: "Jeffrey C." }],
+    publisher: "American Mathematical Society",
+    issued: { "date-parts": [[2010]] },
+    ISBN: "978-0-8218-4940-8",
+  }),
+
+  // ── Frenkel 2007 ────────────────────────────────────────────────
+  ref({
+    id: "frenkel2007",
+    type: "article-journal",
+    title: "Lectures on the Langlands Program and Conformal Field Theory",
+    author: [{ family: "Frenkel", given: "Edward" }],
+    "container-title": "Frontiers in Number Theory, Physics, and Geometry II",
+    issued: { "date-parts": [[2007]] },
+    page: "387-533",
+    DOI: "10.1007/978-3-540-30308-4_11",
+  }),
+
+  // ── Aganagic–Frenkel–Okounkov 2017 ─────────────────────────────
+  ref({
+    id: "aganagic2018",
+    type: "article-journal",
+    title: "Quantum $q$-Langlands Correspondence",
+    author: [
+      { family: "Aganagic", given: "Mina" },
+      { family: "Frenkel", given: "Edward" },
+      { family: "Okounkov", given: "Andrei" },
+    ],
+    "container-title": "Transactions of the Moscow Mathematical Society",
+    issued: { "date-parts": [[2018]] },
+    volume: "79",
+    page: "1-83",
+    DOI: "10.1090/mosc/278",
+  }),
+
+  // ── STAR 2021: Breit-Wheeler azimuthal asymmetry ────────────────
+  ref({
+    id: "star2021bw",
+    type: "article-journal",
+    title: "Observation of an Anomalous Azimuthal Modulation of the $e^+e^-$ Pair Distribution in Ultra-Peripheral Au+Au Collisions at RHIC",
+    author: [{ family: "STAR Collaboration" }],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[2021]] },
+    volume: "127",
+    page: "052302",
+    DOI: "10.1103/PhysRevLett.127.052302",
+  }),
+
+  // ── ATLAS 2021: Breit-Wheeler azimuthal anisotropy ──────────────
+  ref({
+    id: "atlas2021bw",
+    type: "article-journal",
+    title: "Measurement of the azimuthal anisotropy of $e^+e^-$ pairs produced in ultra-peripheral Pb+Pb collisions at $\\sqrt{s_{NN}}=5.02$ TeV with the ATLAS detector",
+    author: [{ family: "ATLAS Collaboration" }],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[2021]] },
+    volume: "128",
+    page: "122001",
+    DOI: "10.1103/PhysRevLett.128.122001",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

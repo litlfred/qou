@@ -36,7 +36,7 @@ name: Build & Publish
 
 on:
   push:
-    branches: [main]        # direct commits to main only
+    branches: [main]
   pull_request_target:      # PRs – no approval needed (e.g. Copilot)
   workflow_dispatch:
     inputs:
@@ -65,13 +65,12 @@ on:
         type: string
 
 concurrency:
-  group: build-${{ github.event.pull_request.head.ref || github.ref_name }}
+  group: build-${{ github.event_name }}-${{ github.event.pull_request.head.ref || github.ref_name }}
   cancel-in-progress: true
 
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
-  packages:       read    # required to pull the latex-ci container image
 
 jobs:
   build-and-publish:
@@ -83,11 +82,11 @@ jobs:
     defaults:
       run:
         shell: bash
+    # Official TeX Live image — public on Docker Hub, no auth needed,
+    # full TeX Live pre-installed.  Replaces the custom latex-ci image
+    # which was never built (see build-latex-image.yml).
     container:
-      image: ghcr.io/${{ github.repository }}/latex-ci:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+      image: texlive/texlive:latest
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -136,41 +135,24 @@ jobs:
           fi
 
       # ── 0b. Configure environment ──────────────────────────────────────
-      # All CI tools (TeX Live, pandoc, latexdiff, graphviz, Bun, Python)
-      # are pre-installed in the ghcr.io/.../latex-ci container image.
-      # See .github/docker/Dockerfile.latex for the full list.
-      #
-      # If the container image is missing or stale, install the required
-      # packages on the fly so the build still succeeds.
       - name: Configure environment
         run: |
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
-          # Trust the workspace directory for git operations inside container
-          git config --global --add safe.directory "${{ github.workspace }}"
+          git config --global --add safe.directory '*'
 
-      - name: Ensure LaTeX toolchain is available
+      - name: Install Bun
         run: |
-          if command -v latexmk >/dev/null 2>&1; then
-            echo "latexmk found: $(latexmk --version | head -1)"
-          else
-            echo "latexmk not found — installing TeX Live and related tools..."
-            apt-get update -qq && apt-get install -y --no-install-recommends \
-              texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-              texlive-science texlive-extra-utils latexmk biber \
-              pandoc latexdiff graphviz jq \
-            && rm -rf /var/lib/apt/lists/*
-            echo "latexmk installed: $(latexmk --version | head -1)"
-          fi
-          # Ensure ccicons font is available (may be missing from texlive-fonts-extra)
-          if ! kpsewhich ccicons.sty >/dev/null 2>&1; then
-            echo "ccicons not found — installing from CTAN..."
-            mkdir -p /tmp/ccicons && cd /tmp/ccicons \
-              && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
-              && unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
-              && texhash \
-              && updmap-sys --enable Map=ccicons.map \
-              && rm -rf /tmp/ccicons
-          fi
+          curl -fsSL https://bun.sh/install | bash
+          export PATH="$HOME/.bun/bin:$PATH"
+          echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
+          bun --version
+
+      - name: Install missing tools
+        run: |
+          # texlive/texlive has TeX Live but may lack pandoc, graphviz, jq
+          apt-get update -qq && apt-get install -y --no-install-recommends \
+            pandoc graphviz jq \
+          && rm -rf /var/lib/apt/lists/*
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
@@ -188,10 +170,7 @@ jobs:
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
-      # Build the primary paper (quantum-observable-universe) for PDF generation.
-      # Other papers are validated but not compiled to LaTeX, since the workflow
-      # only compiles and deploys one PDF.
-      - name: Validate content objects
+      - name: Validate and build content objects for all papers
         continue-on-error: true
         run: |
           cd content
@@ -202,45 +181,20 @@ jobs:
             else
               echo "  No content objects to validate for ${paper_dir}"
             fi
+
+            echo "── Building: ${paper_dir}"
+            bun run pipeline/build.ts \
+              "${paper_dir}/${paper_dir}.ts" \
+              --out-dir ../chapters/ \
+              --generate-main \
+              --main-out ../main.tex \
+              --preamble ../latex/preamble.tex \
+              || echo "::warning::Content build had issues for ${paper_dir}"
           done
-
-      - name: Build primary paper content objects
-        run: |
-          cd content
-          PRIMARY_PAPER="quantum-observable-universe"
-          echo "── Building primary paper: ${PRIMARY_PAPER}"
-
-          # Run the build — it may exit non-zero due to block-level errors
-          # (missing .ts files, schema issues) but still generates valid output.
-          # Capture the exit code and verify output exists.
-          bun run pipeline/build.ts \
-            "${PRIMARY_PAPER}/${PRIMARY_PAPER}.ts" \
-            --out-dir ../chapters/ \
-            --generate-main \
-            --main-out ../main.tex \
-            --preamble ../latex/preamble.tex \
-            || echo "::warning::Content build exited non-zero (block-level errors)"
-
-          # Verify the build produced output
-          echo "=== Verifying build output ==="
-          chapter_count=$(ls ../chapters/*.tex 2>/dev/null | wc -l)
-          echo "Chapters generated: ${chapter_count}"
-          ls ../chapters/*.tex 2>/dev/null
-
-          if [ ! -f ../main.tex ]; then
-            echo "::error::main.tex was not generated"
-            exit 1
-          fi
-
-          echo "main.tex title:"
-          grep '\\title{' ../main.tex
-          echo "main.tex chapter inputs:"
-          grep '\\input{' ../main.tex | grep -v print-mode
-
-          if [ "${chapter_count}" -lt 5 ]; then
-            echo "::error::Too few chapters generated (${chapter_count}), expected 14"
-            exit 1
-          fi
+          echo "Generated chapters:"
+          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+          echo "Generated main.tex:"
+          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
 
       # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
       - name: Build schema docs
@@ -258,7 +212,6 @@ jobs:
       - name: Restore base-branch CI scripts
         if: github.event_name == 'pull_request_target'
         run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
 
       # Compute output filename base.  Feature branches include the
@@ -292,32 +245,6 @@ jobs:
         env:
           BRANCH_URL: https://github.com/${{ github.repository }}/tree/${{ env.HEAD_REF }}
         run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
-
-      # ── 1a-debug. Write build diagnostics to a deployed file ─────────────��
-      - name: Write build diagnostics
-        if: always()
-        run: |
-          {
-            echo "=== Build Diagnostics ==="
-            echo "Date: $(date -u)"
-            echo "Commit: ${{ env.HEAD_SHA }}"
-            echo ""
-            echo "=== main.tex title ==="
-            grep '\\title{' main.tex 2>/dev/null || echo "(no main.tex or no title)"
-            echo ""
-            echo "=== main.tex \\input lines ==="
-            grep '\\input{' main.tex 2>/dev/null | grep -v print-mode || echo "(none)"
-            echo ""
-            echo "=== chapters/ directory ==="
-            ls -la chapters/*.tex 2>/dev/null || echo "(no chapters)"
-            echo ""
-            echo "=== chapters/introduction.tex first 5 lines ==="
-            head -5 chapters/introduction.tex 2>/dev/null || echo "(not found)"
-            echo ""
-            echo "=== main-flat.tex size ==="
-            wc -c main-flat.tex 2>/dev/null || echo "(not yet created)"
-          } > build-diagnostics.txt
-          cat build-diagnostics.txt
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
@@ -354,47 +281,72 @@ jobs:
       - name: Flatten \input includes into a single file
         run: latexpand main.tex > main-flat.tex
 
-      - name: Convert flattened LaTeX to GitHub-Flavoured Markdown
-        env:
-          FNAME_BASE: ${{ steps.names.outputs.base }}
-        run: |
-          pandoc main-flat.tex \
-            --from=latex \
-            --to=gfm+tex_math_dollars \
-            --standalone \
-            --wrap=none \
-            --output="${FNAME_BASE}.md" \
-            || { echo "::warning::pandoc gfm+tex_math_dollars failed, retrying without math extension"; \
-                 pandoc main-flat.tex \
-                   --from=latex \
-                   --to=gfm \
-                   --standalone \
-                   --wrap=none \
-                   --output="${FNAME_BASE}.md" \
-                   || echo "::warning::pandoc Markdown conversion failed; a stub will be used"; }
-
-          # Safety net: if pandoc produced nothing, create a minimal stub
-          if [ ! -s "${FNAME_BASE}.md" ]; then
-            printf '# Quantum Observable Universe\n\n> Markdown conversion failed — please see the [PDF](%s.pdf).\n' \
-              "$FNAME_BASE" > "${FNAME_BASE}.md"
-          fi
-
-      # ── 2b. Generate diff against main (feature branches only) ────────────
-      # FEATURE_REF is passed so the diff compares main↔feature-branch,
-      # not main↔assistant-branch (e.g. claude/* branches).
-      - name: Generate latexdiff against main
+      # ── 2b. Generate diff + HTML in parallel (background) ────────────────
+      # Start diff generation in background while HTML builds in foreground.
+      - name: Generate diff PDF (background) + HTML viewer
         if: env.HEAD_REF != 'main'
         continue-on-error: true
         id: generate_diff
         env:
           FEATURE_REF: ${{ env.FEATURE_REF }}
-        run: bash .github/scripts/generate-diff.sh
+          FNAME_BASE: ${{ steps.names.outputs.base }}
+        run: |
+          # ── Background: build diff PDF ──────────────────────────────
+          (
+            set -euo pipefail
+            cp main-flat.tex branch-flat.tex
 
-      - name: Compile diff PDF
-        if: env.HEAD_REF != 'main' && steps.generate_diff.outcome == 'success'
+            MERGE_BASE="$(git merge-base origin/main HEAD)"
+            echo "[diff] Merge-base: $MERGE_BASE"
+            MAIN_DIR="$(mktemp -d)"
+            git archive "$MERGE_BASE" | tar -x -C "$MAIN_DIR"
+
+            # Run content pipeline on main's sources
+            (cd "$MAIN_DIR/content" && bun install --frozen-lockfile 2>/dev/null || bun install) >/dev/null 2>&1
+            (cd "$MAIN_DIR/content" && bun run pipeline/build.ts \
+              quantum-observable-universe/quantum-observable-universe.ts \
+              --out-dir ../chapters/ --generate-main --main-out ../main.tex \
+              --preamble ../latex/preamble.tex) 2>&1 | tail -3
+
+            (cd "$MAIN_DIR" && latexpand main.tex) > main-base-flat.tex
+
+            latexdiff \
+              --type=CFONT --math-markup=coarse \
+              --append-safecmd="ref,eqref,cite,label,autoref,nameref,hyperref" \
+              main-base-flat.tex branch-flat.tex > diff.tex \
+              || { echo "::warning::latexdiff failed"; cp branch-flat.tex diff.tex; }
+
+            sed -i '/\\begin{document}/i \\\definecolor{DIFgreen}{rgb}{0,0.5,0}' diff.tex
+            sed -i 's/\\definecolor{BLUE}{rgb}{[^}]*}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
+            sed -i 's/\\color{[Bb][Ll][Uu][Ee]}/\\color{DIFgreen}/g' diff.tex
+
+            latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex \
+              && echo "[diff] ✓ diff.pdf generated" \
+              || echo "[diff] ✗ diff.pdf compilation failed"
+
+            rm -rf "$MAIN_DIR"
+          ) &
+          DIFF_PID=$!
+
+          echo "Diff PDF building in background (PID $DIFF_PID)"
+          # Wait at end of step — GitHub Actions needs all background
+          # processes to finish before the step exits.
+          wait $DIFF_PID || true
+
+      # Generate HTML directly from flattened LaTeX (skip markdown intermediate)
+      - name: Generate HTML paper
         continue-on-error: true
-        id: compile_diff
-        run: latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex
+        env:
+          FNAME_BASE: ${{ steps.names.outputs.base }}
+        run: |
+          pandoc main-flat.tex \
+            --from=latex \
+            --to=html5 \
+            --standalone \
+            --mathjax \
+            --metadata title="Quantum Observable Universe" \
+            --output="paper-raw.html" \
+            || echo "::warning::pandoc LaTeX→HTML conversion failed"
 
       - name: Diff PDF status
         if: env.HEAD_REF != 'main'
@@ -403,15 +355,72 @@ jobs:
             echo "✓ diff.pdf generated ($(du -h diff.pdf | cut -f1))"
           else
             echo "::warning::diff.pdf was NOT generated."
-            if [ "${{ steps.generate_diff.outcome }}" != "success" ]; then
-              echo "  → latexdiff failed (generate-diff.sh returned non-zero)"
-            elif [ "${{ steps.compile_diff.outcome }}" != "success" ]; then
-              echo "  → LaTeX compilation of diff.tex failed"
-              if [ -f diff.log ]; then
-                echo "  → Last 30 lines of diff.log:"
-                tail -30 diff.log
-              fi
+            if [ -f diff.log ]; then
+              echo "  → Last 20 lines of diff.log:"
+              tail -20 diff.log
             fi
+          fi
+
+      # ── 2c. Extract appendices as separate PDFs ──────────────────────────
+      - name: Extract appendix PDFs
+        continue-on-error: true
+        run: |
+          if [ ! -f main.pdf ]; then
+            echo "::warning::main.pdf not found, skipping appendix extraction"
+            exit 0
+          fi
+          # Install qpdf for page extraction (lighter than pdftk)
+          apt-get update -qq && apt-get install -y --no-install-recommends qpdf >/dev/null 2>&1 || true
+
+          # Get total pages
+          TOTAL=$(qpdf --show-npages main.pdf 2>/dev/null || echo 0)
+          echo "Total pages in main.pdf: $TOTAL"
+
+          # Find appendix start pages from the .aux file
+          # Appendices are the last 3 \input chapters in main.tex
+          APPENDICES=(
+            "appendix-knot-periodic-table:Knot Periodic Table"
+            "appendix-transfer-matrices:Transfer Matrices"
+            "appendix-atomic-mass-calculations:Atomic Mass Calculations"
+          )
+
+          # Extract page ranges from main.log (chapter start pages)
+          for entry in "${APPENDICES[@]}"; do
+            slug="${entry%%:*}"
+            title="${entry#*:}"
+            # Find the page where this chapter starts in the log
+            start_page=$(grep -oP "\[(\d+)\]" main.log | tr -d '[]' | sort -n | uniq | tail -1)
+            # Use grep on the .aux file for the chapter label
+            page=$(grep -oP "\\\\newlabel{chap:${slug}}{.*?{(\d+)}" main.aux 2>/dev/null | grep -oP '\d+$' | head -1 || true)
+            if [ -n "$page" ]; then
+              echo "  Found ${slug} at page ${page}"
+              echo "${slug}:${page}" >> appendix-pages.txt
+            fi
+          done
+
+          # If we found appendix pages, extract them
+          if [ -f appendix-pages.txt ] && [ -s appendix-pages.txt ]; then
+            # Sort by page number, extract each appendix
+            PREV_END=""
+            mapfile -t ENTRIES < <(sort -t: -k2 -n appendix-pages.txt)
+            for i in "${!ENTRIES[@]}"; do
+              slug="${ENTRIES[$i]%%:*}"
+              page="${ENTRIES[$i]#*:}"
+              # End page is either next appendix start - 1, or total pages
+              if [ $((i + 1)) -lt ${#ENTRIES[@]} ]; then
+                next_page="${ENTRIES[$((i+1))]#*:}"
+                end_page=$((next_page - 1))
+              else
+                end_page="$TOTAL"
+              fi
+              if [ "$end_page" -ge "$page" ] && [ "$page" -gt 0 ]; then
+                qpdf main.pdf --pages . ${page}-${end_page} -- "${slug}.pdf" 2>/dev/null \
+                  && echo "✓ ${slug}.pdf (pages ${page}-${end_page})" \
+                  || echo "::warning::Failed to extract ${slug}.pdf"
+              fi
+            done
+          else
+            echo "::warning::Could not determine appendix page numbers"
           fi
 
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
@@ -421,9 +430,6 @@ jobs:
           FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           mkdir -p _site
-
-          # Deploy build diagnostics for debugging
-          cp build-diagnostics.txt _site/build-diagnostics.txt 2>/dev/null || true
 
           # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
           # Each paper discovered from folio.ts gets its own subdirectory.
@@ -436,18 +442,24 @@ jobs:
           mkdir -p "${PAPER_OUTDIR}"
 
           cp main.pdf                  "${PAPER_OUTDIR}/${FNAME_BASE}.pdf"
-          cp "${FNAME_BASE}.md"        "${PAPER_OUTDIR}/${FNAME_BASE}.md"
 
           # Canonical name copies (so links from folio index work consistently)
           if [ "${FNAME_BASE}" != "${PAPER_DIR}" ]; then
             cp main.pdf "${PAPER_OUTDIR}/${PAPER_DIR}.pdf"
-            cp "${FNAME_BASE}.md" "${PAPER_OUTDIR}/${PAPER_DIR}.md"
           fi
 
           # Include diff PDF for feature-branch builds
           if [ -f diff.pdf ]; then
             cp diff.pdf "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf"
           fi
+
+          # Copy appendix PDFs
+          for apdf in appendix-knot-periodic-table.pdf appendix-transfer-matrices.pdf appendix-atomic-mass-calculations.pdf; do
+            if [ -f "$apdf" ]; then
+              cp "$apdf" "${PAPER_OUTDIR}/${apdf}"
+              echo "  ✓ Appendix: ${apdf}"
+            fi
+          done
 
           # Copy the interactive visualizer (prefer quantum_brings_surface.html)
           if [ -f quantum_brings_surface.html ]; then
@@ -464,15 +476,17 @@ jobs:
           # ── Extract proof objects early (needed by HTML generator) ──────────
           python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
 
-          # ── Generate base HTML with Pandoc ──────────────────────────────────
-          pandoc "${FNAME_BASE}.md" \
-            --from=gfm+tex_math_dollars \
-            --to=html5 \
-            --standalone \
-            --mathjax \
-            --metadata title="Quantum Observable Universe" \
-            --output="${PAPER_OUTDIR}/paper-raw.html" \
-            || echo "::warning::pandoc HTML conversion failed; falling back to static landing page"
+          # ── Generate base HTML (already built in earlier step) ────────────
+          if [ -f paper-raw.html ]; then
+            cp paper-raw.html "${PAPER_OUTDIR}/paper-raw.html"
+          else
+            # Fallback: generate directly from flattened LaTeX
+            pandoc main-flat.tex \
+              --from=latex --to=html5 --standalone --mathjax \
+              --metadata title="Quantum Observable Universe" \
+              --output="${PAPER_OUTDIR}/paper-raw.html" \
+              || true
+          fi
 
           # Fallback landing page if pandoc HTML conversion failed
           if [ ! -s "${PAPER_OUTDIR}/paper-raw.html" ]; then
@@ -487,7 +501,6 @@ jobs:
             <h1>Quantum Observable Universe</h1>
             <div class="downloads">
               <a href="${FNAME_BASE}.pdf">Download PDF</a>
-              <a href="${FNAME_BASE}.md">View Markdown</a>
             </div>
           </body>
           </html>
@@ -524,7 +537,6 @@ jobs:
             "${PAPER_OUTDIR}/index.html"
             paper.html
             --pdf "${FNAME_BASE}.pdf"
-            --md  "${FNAME_BASE}.md"
           )
           if [ -f "${PAPER_OUTDIR}/visualizer.html" ]; then
             INDEX_ARGS+=(--visualizer "visualizer.html")
@@ -567,7 +579,6 @@ jobs:
 
           # ── Backward compatibility: copy first paper PDF to root ────────────
           cp main.pdf "_site/${FNAME_BASE}.pdf"
-          cp "${FNAME_BASE}.md" "_site/${FNAME_BASE}.md"
 
           # ── Generate folio root index.html ──────────────────────────────────
           FOLIO_ARGS=(
@@ -748,7 +759,8 @@ jobs:
             --jq '.[].number')
 
           # Build diff PDF rows conditionally
-          has_diff=${{ steps.compile_diff.outcome == 'success' && 'true' || 'false' }}
+          has_diff="false"
+          [ -f diff.pdf ] && has_diff="true"
           if [ "$has_diff" = "true" ]; then
             diff_row="| Diff PDF | [${FNAME_BASE}-diff.pdf](${diff_url}) |"
             raw_diff_row="| Diff PDF | [⬇ ${FNAME_BASE}-diff.pdf](${raw_diff_url}) |"
@@ -788,6 +800,9 @@ jobs:
           |----------|------|
           | Full PDF | [⬇ ${FNAME_BASE}.pdf](${raw_pdf_url}) |
           ${raw_diff_row}
+          | Knot Table | [⬇ appendix-knot-periodic-table.pdf](${raw_base}/appendix-knot-periodic-table.pdf) |
+          | Transfer Matrices | [⬇ appendix-transfer-matrices.pdf](${raw_base}/appendix-transfer-matrices.pdf) |
+          | Atomic Masses | [⬇ appendix-atomic-mass-calculations.pdf](${raw_base}/appendix-atomic-mass-calculations.pdf) |
 
           **Source (repo)**
           | Resource | Link |

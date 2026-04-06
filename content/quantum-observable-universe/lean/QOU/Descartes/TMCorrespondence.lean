@@ -22,7 +22,7 @@ This file proves:
 
 ## References
 
-- [litlfred2025] Prop: transfer matrix correspondence (Layer 3).
+- [manuscript] Prop: transfer matrix correspondence (Layer 3).
 -/
 
 namespace QOU.TMCorrespondence
@@ -101,7 +101,7 @@ noncomputable def heckeMultiply (a b c d : R_t) : StateVec :=
 
     This is the **fundamental correspondence**: the transfer matrix
     encodes exactly the Hecke algebra multiplication with reduction. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem hecke_eq_transfer (a b c d : R_t) :
     heckeMultiply a b c d =
     (transferMatrix c d).mulVec (mkState a b) := by
@@ -141,7 +141,7 @@ noncomputable def matrixChain : CrossingSeq → TMatrix
 /-- The iterated correspondence: Hecke chain = matrix chain applied to
     initial state. By induction on the crossing sequence, using
     `hecke_eq_transfer` at each step. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
     heckeChain init seq =
     (matrixChain seq).mulVec init := by
@@ -185,7 +185,7 @@ theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
 
     This is exactly `tracedVolCleared` applied to the column vector
     `(a, b)ᵀ` viewed as the first column of a matrix. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem markov_trace_eq_traced_vol (a b : R_t) :
     a + markov_denom * b =
     tracedVolCleared (Matrix.of ![![a, 0], ![b, 0]]) := by
@@ -201,7 +201,7 @@ theorem markov_trace_eq_traced_vol (a b : R_t) :
     The state vector is `M · (1, 0)ᵀ = (M[0,0], M[1,0])ᵀ`.
     So `tracedVolCleared M` computes `a + (t+t⁻¹)·b` where
     `(a, b) = M · (1, 0)ᵀ` is the Hecke state. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem traced_vol_from_state (M : TMatrix) :
     tracedVolCleared M =
     sigmaCoeff (M.mulVec initialState) +
@@ -238,7 +238,7 @@ theorem traced_vol_from_state (M : TMatrix) :
     exactly the entries of the transfer matrix chain state vector,
     and the traced volume V̂_i is the Markov trace of the per-generator
     Hecke element. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem optimal_coeff_eq_transfer_state (seq : CrossingSeq) :
     let state := (matrixChain seq).mulVec initialState
     sigmaCoeff (heckeChain initialState seq) = sigmaCoeff state ∧
@@ -262,7 +262,7 @@ theorem optimal_coeff_eq_transfer_state (seq : CrossingSeq) :
     - Hecke chain → NF coefficients (a_i, b_i) [same by correspondence]
     - V̂_i = z·a_i + b_i extracts Markov trace information
     - The skein polynomial P(q) = ∏_i V̂_i is a product of Markov traces -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem volume_eq_markov_trace (seq : CrossingSeq) :
     tracedVolCleared (matrixChain seq) =
     sigmaCoeff ((matrixChain seq).mulVec initialState) +
@@ -291,36 +291,49 @@ noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSe
 
     This is the bridge between the abstract crossing-sequence formulation
     and the concrete inductive chain construction in TransferMatrix.lean. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
     (hj : j + 1 < config.length) :
     matrixChain (chainCrossings config j) =
     (buildChains config).get! j := by
-  -- PROOF STRATEGY (requires Lean compilation to complete):
-  --
-  -- Both sides compute ∏_{k > j} T(config[j], config[k]).
+  -- Both compute ∏_{k > j} T(config[j], config[k]) but via different
+  -- recursion patterns. matrixChain folds right over (drop (j+1));
+  -- buildChains extends chains as nucleons are added left-to-right.
+  -- The products are equal because matrix multiplication is associative
+  -- and both iterate over the same set of crossings.
+  -- Ref: [manuscript]
+  -- Both definitions compute ∏_{k > j} T(config[j], config[k]).
   -- matrixChain folds right: T_last * (... * (T_{j+2} * T_{j+1}))
-  -- buildChains uses foldl with state (chains : List TMatrix, k : ℕ).
+  -- buildChains uses foldl, extending chains as nucleons are added.
+  -- They produce the same matrix because:
+  --   1. The set of crossings is identical (all pairs (j, k) with k > j)
+  --   2. Matrix multiplication is associative
+  --   3. The ordering of factors is the same (both process k = j+1, j+2, ...)
+  -- The proof is by induction on config.length - j - 1, unfolding
+  -- both definitions and applying the inductive hypothesis.
+  -- This requires `buildChains` to be unfolded through its `foldl`,
+  -- which is technically involved but mathematically trivial.
+  -- NOTE: there is a scaling discrepancy between the two sides.
+  -- `chainCrossings` uses raw weights `(w_plus_t v, w_zero_t v)` and
+  -- `matrixChain` wraps them with `transferMatrix c d`.
+  -- For pp: transferMatrix 1 0 = T_pp (undoubled).
+  -- For nn: transferMatrix q² (-q·s) = T_nn (undoubled).
+  -- For pn: transferMatrix (1+q²) (-q·s) = two_T_pn (doubled).
   --
-  -- Approach: introduce a helper lemma that characterises
-  -- buildChains after processing the first m nucleons:
+  -- Meanwhile `buildChains` uses `crossingMatrix` which doubles ALL types:
+  -- pp: 2 • T_pp, nn: 2 • T_nn, pn: two_T_pn.
   --
-  --   buildChains_partial (config : NuclearConfig) (m : ℕ) :
-  --     (config.take m).foldl ... = chains where
-  --     chains[j] = ∏_{k=j+1}^{m-1} crossingMatrix config[j] config[k]
+  -- The factor of 2 per pp/nn crossing needs to be reconciled.
+  -- This theorem requires either:
+  -- (a) adjusting `chainCrossings` to use doubled weights, or
+  -- (b) adjusting the statement to include the scaling factor.
   --
-  -- Then instantiate at m = config.length and extract entry j.
-  -- The product equality follows from List.foldl_map + mul_assoc.
-  --
-  -- Alternative: refactor buildChains to use List.foldr (matching
-  -- matrixChain's recursion), then the proof is by direct unfolding.
-  --
-  -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+  -- Additionally, the foldl/structural recursion bridge is non-trivial.
   induction config with
   | nil => simp at hj
   | cons _ rest ih =>
     simp [chainCrossings, matrixChain, buildChains]
-    sorry  -- foldl/structural recursion bridge; needs Lean compilation
+    sorry  -- scaling discrepancy + foldl/structural recursion bridge
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure
@@ -339,7 +352,7 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
        coefficient is nonzero), so the support equals the standard basis
 
     The NF has `A` terms: one identity + one per generator. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem optimal_nf_from_transfer_matrix (Z N : ℕ)
     (h_stable : valleyOfStability Z N)
     (h_pos : Z + N ≥ 2) :
@@ -359,7 +372,7 @@ theorem optimal_nf_from_transfer_matrix (Z N : ℕ)
     `(t+t⁻¹)^{A-1} · P(q) = ∏_j [a_j + (t+t⁻¹) · b_j]`
 
     This follows from `volume_eq_markov_trace` applied to each chain. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem skein_from_markov_traces (config : NuclearConfig)
     (h_len : config.length ≥ 2) :
     skeinPolynomialCleared config =
@@ -374,7 +387,7 @@ theorem skein_from_markov_traces (config : NuclearConfig)
 /-- Sanity check: the transfer matrix for `(c, d) = (1, 0)` is `T_pp`.
     Multiplying a Hecke element by `(1·σ + 0)` just appends a generator,
     corresponding to a pure proton crossing. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem transfer_pp_correct :
     transferMatrix 1 0 = T_pp := by
   rfl
@@ -382,7 +395,7 @@ theorem transfer_pp_correct :
 /-- Sanity check: the initial state `(1, 0)ᵀ` after one pp crossing
     gives `(HA, 1)ᵀ`, meaning the Hecke element is `HA · σ + 1`.
     This is correct: `σ · σ = σ² = HA · σ + 1` by the Hecke relation. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem pp_one_step :
     heckeMultiply 1 0 1 0 = mkState HA_t 1 := by
   ext i

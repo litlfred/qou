@@ -122,7 +122,7 @@ $$
 | Ideal | $\mathfrak{h} \subset \Gamma(A_0)$ | $I_\Sigma \subset \mathcal{O}_M$ | $\mathfrak{h}_c \subset \Gamma(A_0^{\mathrm{comp}})$ |
 | $\partial = \varnothing$ | All configs observable | No collision (global smooth flow) | P = NP |
 | $\partial \neq \varnothing$ | Horizon exists (aeons) | NS-singular (blowup) | P $\neq$ NP |
-| Obstruction | $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ | $\mathrm{NS}(A) = \kappa_0|_\Sigma$ | $\kappa_c^{\mathrm{comp}} \in H^2(\mathcal{R}, \mathbb{G}_m)$ |
+| Obstruction | $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ | $\mathrm{NS}(A) = \kappa_0\rvert_\Sigma$ | $\kappa_c^{\mathrm{comp}} \in H^2(\mathcal{R}, \mathbb{G}_m)$ |
 
 **The three equivalent criteria for $\mathcal{H}_c
 \neq \varnothing$.**
@@ -142,7 +142,7 @@ $$
 3. **Information-theoretic.**  The effective tree size after
    interference exceeds the polynomial bandwidth budget
    ([bandwidth bound](#prop:p-bandwidth-bound)):
-   $I(\mathrm{poly}(c)) < c \cdot \log 3$ nats.
+   $I(\mathrm{poly}(c)) < c \cdot \log 3$ $q$-bits.
 
 All three are equivalent: the ideal is non-trivial iff the
 obstruction class is non-vanishing iff the bandwidth is
@@ -198,4 +198,4 @@ The standard complexity hierarchy translates to:
 |-------|---------------------|-------------------|
 | P | $\varnothing$ | $\varnothing$ |
 | BQP $\setminus$ P | $\neq \varnothing$ | $\varnothing$ (quantum cancellation) |
-| NP $\setminus$ BQP | $\neq \varnothing$ | $\neq \varnothing$ (even quantum can't dissolve) |
+| NP $\setminus$ BQP | $\neq \varnothing$ | $\neq \varnothing$ (even quantum cannot dissolve) |
