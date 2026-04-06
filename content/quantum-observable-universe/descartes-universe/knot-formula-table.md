@@ -6,6 +6,7 @@ introduce the following shorthand.
 | Symbol | Meaning |
 |--------|---------|
 | $T_{m,n}$ | Torus knot generator (winding numbers $m, n$) |
+| $T(2,n)$ | Torus link ($n$ even) or knot ($n$ odd) |
 | $\bowtie$ | Hopf linking on exceptional divisor $\mathcal{S}_c$ |
 | $[\cdot,\cdot,\cdot]_p$ | Color-tube linking through $(r,g,b)$ fibers |
 | $\sigma$ | Skein crossing change (transmutation) |
@@ -64,21 +65,40 @@ entries satisfy the embeddability closure
 ([embeddability closure](#thm:embeddability-closure)) and descend
 to the base manifold.
 
-*Fundamental particles.*
+*Fundamental fermions* (knots, 1 component).
 
-| Particle | Symbol | Knot formula | $g$ |
-|----------|--------|-------------|-----|
-| Photon | $\gamma$ | $\varnothing$ (point) | $0$ |
-| Neutrino | $\nu$ | $T_{1,0}$ | $0$ |
-| Electron | $e^-$ | $T_{2,3}$ | $1$ |
-| Muon | $\mu^-$ | $T_{2,5}$ | $2$ |
-| Tau | $\tau^-$ | $T_{2,7}$ | $3$ |
-| Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ |
-| Down quark | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $1$ |
-| Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $1$ |
-| Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ |
-| Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ |
-| Hopf${}^2$ color binding | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* |
+| Particle | Symbol | Knot formula | $g$ | Crossings |
+|----------|--------|-------------|:---:|:---------:|
+| Photon | $\gamma$ | $\varnothing$ (point) | $0$ | $0$ |
+| Neutrino | $\nu$ | $T_{1,0}$ | $0$ | $0$ |
+| Electron | $e^-$ | $T_{2,3}$ | $1$ | $3$ |
+| Muon | $\mu^-$ | $T_{2,5}$ | $2$ | $5$ |
+| Tau | $\tau^-$ | $T_{2,7}$ | $3$ | $7$ |
+| Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ | $3$ |
+| Down quark | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $1$ | $3$ |
+| Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $1$ | $5$ |
+| Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ | $7$ |
+| Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ | $5$ |
+| Hopf${}^2$ color binding | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | $8$ | *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* |
+
+*Fundamental bosons* (links, 2 components).
+The fermion--boson decomposition
+([fermions are knots, bosons are links](#prop:fermion-boson-knot-link))
+assigns bosons to the even-$n$ members of the $T(2,n)$ family:
+
+| Particle | Symbol | Link formula | Components | Crossings |
+|----------|--------|-------------|:----------:|:---------:|
+| Gluon | $g$ | $T(2,2)$ (Hopf link) | $2$ | $2$ |
+| $W$ boson | $W^{\pm}$ | $T(2,4)$ | $2$ | $4$ |
+| $Z$ boson | $Z^0$ | $T(2,6)$ | $2$ | $6$ |
+| Higgs boson | $H$ | $T(2,8)$ | $2$ | $8$ |
+
+The Higgs *field* (mass mechanism) is the figure-eight knot
+$4_1$ ($\mathrm{Vol} = 2.0299$, amphichiral: $H = H^{\sigma}$).
+The Higgs *boson* excitation ($\approx 125$ GeV) is the torus
+link $T(2,8)$, the unique genus-$3$ link spanning all three
+exceptional divisors on Bring's surface
+([Higgs as $T(2,8)$](#conj:higgs-t28)).
 
 *Hadrons.*
 

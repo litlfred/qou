@@ -17,6 +17,7 @@ export default chapter({
       label: "sec:knot-atom-diagrams",
       blocks: [
         "knot-atom-diagrams",
+        "knot-atom-diagrams-sim",
       ],
     }),
     section({

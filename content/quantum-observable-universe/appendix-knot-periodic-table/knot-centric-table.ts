@@ -21,5 +21,7 @@ export default remark({
     "prop:shell-structure-eigenvalues",
     "thm:generation-completeness",
     "rem:knot-exhaustiveness",
+    "prop:fermion-boson-knot-link",
+    "rem:building-block-knots",
   ],
 });

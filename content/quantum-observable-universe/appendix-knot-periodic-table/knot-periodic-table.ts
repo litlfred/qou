@@ -7,6 +7,9 @@ export default prose({
     "prop:shell-structure-eigenvalues",
     "thm:generation-completeness",
     "rem:knot-exhaustiveness",
+    "prop:fermion-boson-knot-link",
+    "rem:building-block-knots",
+    "def:borromean-baryon",
   ],
   tags: [
     "knot",
@@ -19,5 +22,7 @@ export default prose({
     "transfer-matrix",
     "skein-polynomial",
     "appendix",
+    "fermion",
+    "boson",
   ],
 });
