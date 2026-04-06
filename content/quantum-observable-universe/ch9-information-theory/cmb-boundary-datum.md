@@ -32,16 +32,17 @@ $$
 
 | Degree | Jet data | Physical content |
 |:---:|:---|:---|
-| $1$ | $A_1/A_0$: linear transport | Winding numbers, neutrino-type modes, first-order correlations |
-| $2$ | $A_2/A_0$: curvature | Linking numbers, gluon-type modes, power spectrum |
+| $1$ | $A_1/A_0$: linear transport | Photon polarization modes ($\sigma_0, \sigma_1$), winding numbers, first-order correlations |
+| $2$ | $A_2/A_0$: curvature | Hopf-link cross-terms ($L_{\pm}$), linking numbers, power spectrum |
 
 **What the CMB does not contain.**
 
-Degree-$0$ data ($A_0$) is absent: no photon identity, no
-particle labels, no knot types.  The CMB is **thermal** in the
-precise sense that it carries statistical correlations
-(degrees $1$ and $2$) without individual particle states
-(degree $0$).
+Degree-$0$ data ($A_0$) is absent: no photon identity
+$\mathbf{1}$, no particle labels, no knot types.  The CMB
+is **thermal** in the precise sense that it carries the
+**color content** $(\varphi_0, \varphi_1)$ of the boundary
+photons ([photon color content](#rem:cmb-photon-color-content))
+without their individual identities (degree $0$).
 
 **Role in aeon structure.**
 If $\mathcal{S}_0$ is the past boundary of an aeon $\mathcal{A}$
