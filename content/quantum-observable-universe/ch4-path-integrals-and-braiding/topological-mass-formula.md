@@ -39,6 +39,6 @@ each following from the archimedean bridge:
    $\mathfrak{m} = \mathrm{Vol}(K) + \mathrm{Vol}(K)(1/\hbar_q^{\,2} - 1) = \mathrm{Vol}(K)/\hbar_q^{\,2}$.
 
 Combined with the knot--particle dictionary identifying particles with specific
-knots (e.g.\ the figure-eight knot $4_1$ with the Higgs boson), this formula
+knots (e.g.\ the figure-eight knot $4_1$ with the Higgs field), this formula
 determines the substrate parameter $q$ from experimental mass
 ratios (see [§6.10](#sec:small-scale)).

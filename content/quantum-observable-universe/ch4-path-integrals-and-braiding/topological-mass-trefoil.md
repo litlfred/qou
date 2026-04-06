@@ -27,7 +27,7 @@ $$
   \hbar_q \;\approx\; \frac{0.110}{1.110} \;\approx\; 0.0990.
 $$
 
-**Figure-eight knot $4_1$ — the Higgs boson (mass mechanism).**
+**Figure-eight knot $4_1$ — the Higgs field (mass mechanism).**
 The figure-eight knot *is* hyperbolic, with complement volume
 
 $$
@@ -48,7 +48,7 @@ $$
 $$
 
 **Physical interpretation.**
-The figure-eight knot $4_1$ is the Higgs boson
+The figure-eight knot $4_1$ is the Higgs field
 ([cohomological embedding](#prop:cohomological-embedding)).
 It is the unique amphichiral knot in $H^{0,1}(\Sigma_4)$, and
 its hyperbolic volume drives the mass mechanism.  The muon
@@ -68,7 +68,7 @@ The correspondence
 $$
   \tau(2,3) \;\longleftrightarrow\; e^-
   \qquad\text{and}\qquad
-  4_1 \;\longleftrightarrow\; H \text{ (Higgs boson)}
+  4_1 \;\longleftrightarrow\; H \text{ (Higgs field)}
 $$
 
 is determined entirely by the knot topology — no free parameters

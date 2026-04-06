@@ -78,7 +78,7 @@ to the base manifold.
 | Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $1$ |
 | Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ |
 | Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ |
-| Top quark | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | *(force carrier sector $H^{0,1}$)* |
+| Hopf${}^2$ color binding | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* |
 
 *Hadrons.*
 

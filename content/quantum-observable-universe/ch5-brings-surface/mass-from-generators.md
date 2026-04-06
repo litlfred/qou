@@ -42,7 +42,7 @@ $$
 $$
 
 **Step 3: Skein transmutation generates generations.**
-The Higgs boson ($4_1$, figure-eight) is not a generator but a Skein
+The Higgs field ($4_1$, figure-eight) is not a generator but a Skein
 descendant of the trefoil:
 
 $$

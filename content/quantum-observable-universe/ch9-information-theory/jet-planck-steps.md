@@ -219,7 +219,7 @@ structure requires step 4).
 **Step 4: the Higgs mass mechanism and the first hadrons.**
 The figure-eight knot $4_1$ has crossing number $4$ and is the
 first **hyperbolic** knot: $\mathrm{Vol}(4_1) = 2.0299$.  It is
-amphichiral ($4_1 \cong 4_1^{\sigma}$), so the Higgs boson $H$
+amphichiral ($4_1 \cong 4_1^{\sigma}$), so the Higgs field $H$
 is its own antiparticle — like the neutrino but with non-trivial
 topology.  The Hodge decomposition
 ([cohomological embedding](#prop:cohomological-embedding)) places

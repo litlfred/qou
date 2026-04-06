@@ -43,7 +43,7 @@ mass arises entirely from **crossing energy** at $q \neq 1$.
 | Three-twist | $5_2$ | $T_{2,3}^{\sigma}$ variant | $1$ | $5$ | ● | — | $2.8281$ |
 
 The figure-eight knot $4_1$ is **amphichiral** (self-mirror),
-so the Higgs boson is its own antiparticle ($H = H^{\sigma}$).
+so the Higgs field is its own antiparticle ($H = H^{\sigma}$).
 Its hyperbolic volume $\mathrm{Vol}(4_1) = 2.0299$ drives the
 mass mechanism
 ([cohomological embedding](#prop:cohomological-embedding)):

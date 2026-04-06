@@ -189,7 +189,7 @@ $$
 $$
 
 where $H^1_{\otimes}$ denotes the first cohomology of the
-monoidal category (classifying torsors under $E_q$ in $\mathbf{C}$).
+monoidal category (classifying torsors under $\mathcal{E}_q$ in $\mathbf{C}$).
 This measures the failure of the local-global principle at the
 $q$-scale: torsors that are trivial at every spectral localization
 but globally non-trivial.

@@ -27,7 +27,7 @@ irreducible summand is reached by some knot type, and the density statement
 summands span the physical Hilbert space.  Each irreducible summand
 corresponds to a particle identity
 ([skein decomposition](#rem:skein-decomposition)): the unknot to the neutrino, the
-trefoil to the electron, the figure-eight knot to the Higgs boson, and so on.
+trefoil to the electron, the figure-eight knot to the Higgs field (mass mechanism), and so on.
 
 The "path integral" is then replaced by a finite algebraic operation:
 the *categorical trace*
