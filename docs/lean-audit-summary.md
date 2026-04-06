@@ -247,4 +247,8 @@ actual mathematical claims:
 | Ch 11 Langlands | 0 | 0 | 0 | — | — | 0 |
 | **TOTAL** | **48** | **6** | **54** | **46** | **8** | **75** |
 
-Plus: 3 trivial truths (AxialCoupling.lean), 1 sorry in UGB/NormalForms.lean
+Plus: 3 trivial truths (AxialCoupling.lean).
+
+**Note:** 1 additional sorry exists in `content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean:284`
+(List.Lex WF API name, not part of the QOU paper). This is excluded from the
+chapter-by-chapter breakdown above which covers only quantum-observable-universe.

@@ -121,7 +121,7 @@ function auditLeanWitnesses(): WitnessStatus[] {
           status.reason = `content hash mismatch (witness: ${meta.hash}, current: ${currentHash})`;
         } else if (meta.fileCommitSha && meta.fileCommitSha !== fileCommit) {
           status.stale = true;
-          status.reason = `file commit SHA changed (witness: ${meta.fileCommitSha?.slice(0, 8)}, current: ${fileCommit.slice(0, 8)})`;
+          status.reason = `file commit SHA changed (witness: ${meta.fileCommitSha.slice(0, 8)}, current: ${fileCommit.slice(0, 8)})`;
         }
 
         results.push(status);

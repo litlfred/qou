@@ -160,20 +160,17 @@ class WitnessBuilder:
         self.engine_version = engine_version or self._detect_version(engine)
         self._start_time = time.monotonic()
 
+        # Get caller frame once for both output dir and script path
+        import inspect
+        caller_frame = inspect.stack()[1]
+        caller_file = Path(caller_frame.filename).resolve()
+        self._script_path = caller_file
+
         # Determine output directory
         if output_dir:
             self._output_dir = Path(output_dir)
         else:
-            # Default to the directory of the calling script
-            import inspect
-            frame = inspect.stack()[1]
-            caller_file = frame.filename
-            self._output_dir = Path(caller_file).resolve().parent
-
-        # Determine the calling script path for hash computation
-        import inspect
-        frame = inspect.stack()[1]
-        self._script_path = Path(frame.filename).resolve()
+            self._output_dir = caller_file.parent
 
         self.description: Optional[str] = None
         self.content_block: Optional[str] = None
@@ -335,15 +332,18 @@ def check_witness_staleness(witness_path: str) -> dict:
                 result["reason"] = "script content changed since witness"
                 return result
 
-    # Check commit SHA
+    # Check commit SHA (informational, not staleness)
+    #
+    # The commit SHA records WHEN the witness was generated, but doesn't
+    # determine staleness. A new commit that doesn't touch the script
+    # doesn't invalidate the witness. The scriptHash check above is the
+    # authoritative staleness signal — if the script content is unchanged,
+    # the witness is still valid regardless of intervening commits.
     commit_sha = witness.get("commitSha")
     if commit_sha and commit_sha != "unknown":
         current_head = _git_head_sha()
         result["currentCommitSha"] = current_head
         result["recordedCommitSha"] = commit_sha
-        # Note: commit SHA changing doesn't necessarily mean stale,
-        # only if the script file itself was modified in the interim.
-        # The scriptHash check above is the authoritative staleness signal.
 
     return result
 

@@ -164,16 +164,25 @@ function extractSorries(filePath: string, content: string): SorryEntry[] {
         line,
       ];
       const context = contextLines.join("\n");
-      const citationMatch = context.match(
-        /Ref:\s*\[([^\]]+)\]|citation|requires|blocked|TODO|manuscript|jones|kassel|kazhdan|conjecture/i
+      // Primary: explicit Ref: [key] citation format
+      const explicitCitation = context.match(
+        /Ref:\s*\[([^\]]+)\]/i
       );
+      // Secondary: other citation signals (weaker confidence)
+      const implicitCitation = !explicitCitation
+        ? context.match(/requires|blocked|manuscript|conjecture/i)
+        : null;
 
       entries.push({
         file: relative(REPO_ROOT, filePath),
         line: i + 1,
         context: context.trim(),
-        hasCitation: !!citationMatch,
-        citation: citationMatch ? citationMatch[0] : undefined,
+        hasCitation: !!(explicitCitation || implicitCitation),
+        citation: explicitCitation
+          ? explicitCitation[0]
+          : implicitCitation
+            ? implicitCitation[0]
+            : undefined,
       });
     }
   }
