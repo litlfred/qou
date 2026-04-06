@@ -27,14 +27,14 @@ $$
   \hbar_q \;\approx\; \frac{0.110}{1.110} \;\approx\; 0.0990.
 $$
 
-**Figure-eight knot $4_1$ — the muon.**
+**Figure-eight knot $4_1$ — the Higgs boson (mass mechanism).**
 The figure-eight knot *is* hyperbolic, with complement volume
 
 $$
   \mathrm{Vol}(S^3 \setminus 4_1) \;\approx\; 2.0299.
 $$
 
-By the mass formula, the topological mass is
+By the mass formula, the topological mass associated with $4_1$ is
 
 $$
   \mathfrak{m}(4_1)
@@ -48,7 +48,14 @@ $$
 $$
 
 **Physical interpretation.**
-The ratio of topological masses is
+The figure-eight knot $4_1$ is the Higgs boson
+([cohomological embedding](#prop:cohomological-embedding)).
+It is the unique amphichiral knot in $H^{0,1}(\Sigma_4)$, and
+its hyperbolic volume drives the mass mechanism.  The muon
+($T_{2,5}$, cinquefoil) acquires its mass through the Higgs
+mechanism: the Skein resolution of the muon's linked configuration
+produces $4_1$ as the dominant hyperbolic piece.  The ratio of
+topological masses is
 
 $$
   \frac{\mathfrak{m}(4_1)}{\mathfrak{m}(\tau(2,3))}
@@ -57,14 +64,12 @@ $$
 
 which matches the muon-to-electron mass ratio
 $\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$.
-The figure-eight knot is the simplest hyperbolic knot (fewest
-crossings among hyperbolic knots), and the muon is the second-lightest
-charged lepton.  The correspondence
+The correspondence
 
 $$
   \tau(2,3) \;\longleftrightarrow\; e^-
   \qquad\text{and}\qquad
-  4_1 \;\longleftrightarrow\; \mu^-
+  4_1 \;\longleftrightarrow\; H \text{ (Higgs boson)}
 $$
 
 is determined entirely by the knot topology — no free parameters

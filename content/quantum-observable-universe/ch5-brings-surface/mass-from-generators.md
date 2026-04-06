@@ -42,7 +42,7 @@ $$
 $$
 
 **Step 3: Skein transmutation generates generations.**
-The muon ($4_1$, figure-eight) is not a generator but a Skein
+The Higgs boson ($4_1$, figure-eight) is not a generator but a Skein
 descendant of the trefoil:
 
 $$
@@ -53,7 +53,8 @@ $$
 
 The figure-eight has hyperbolic volume
 $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$,
-so the muon-to-electron mass ratio is governed by:
+so the muon-to-electron mass ratio is governed by the Higgs
+mechanism:
 
 $$
   \frac{m_\mu}{m_e}
@@ -63,8 +64,11 @@ $$
 $$
 
 matching CODATA to six significant figures
-([Skein mass relation](#rem:skein-mass-relation)).  Similarly,
-the tau arises from linking $T_{2,5}$ configurations at Reeb
+([Skein mass relation](#rem:skein-mass-relation)).  The muon
+($T_{2,5}$, cinquefoil) acquires its mass through the Higgs
+boson ($4_1$), whose hyperbolic volume dominates the Skein
+resolution.  Similarly,
+the tau arises from linking $T_{2,7}$ configurations at Reeb
 degree $3$.
 
 **Step 4: Color-tube linking generates hadronic mass.**

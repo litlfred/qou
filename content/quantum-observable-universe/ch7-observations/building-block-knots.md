@@ -23,13 +23,13 @@ produces a distinct knot type; for amphichiral knots
 | Mirror unknot | $T_{1,0}^{\sigma}$ | $0_1$ | $0$ | $0$ | ⊙ | $\nu^{\sigma}$ (antineutrino) | $1$ | $0$ |
 | Left trefoil | $T_{2,3}$ | $3_1$ | $1$ | $3$ | ● | $e^-$ (electron) / $u$ (up quark) | $-q^{-4} + q^{-3} + q^{-1}$ | $0$ |
 | Right trefoil | $T_{2,3}^{\sigma}$ | $3_1^{\sigma}$ | $1$ | $3$ | ○ | $e^+$ (positron) / $d$ (down quark) | $-q^{4} + q^{3} + q$ | $0$ |
-| Cinquefoil | $T_{2,5}$ | $5_1$ | $2$ | $5$ | ● | $b$ (bottom quark) | $-q^{-10} + q^{-9} - q^{-8} + q^{-7} + q^{-5}$ | $0$ |
-| Mirror cinquefoil | $T_{2,5}^{\sigma}$ | $5_1^{\sigma}$ | $2$ | $5$ | ○ | $s$ (strange quark) | $-q^{10} + q^{9} - q^{8} + q^{7} + q^{5}$ | $0$ |
-| Septafoil | $T_{2,7}$ | $7_1$ | $3$ | $7$ | ● | $c$ (charm quark) | $-q^{-18} + q^{-17} - q^{-16} + q^{-15} - q^{-14} + q^{-13} + q^{-11}$ | $0$ |
-| Mirror septafoil | $T_{2,7}^{\sigma}$ | $7_1^{\sigma}$ | $3$ | $7$ | ○ | $c^{\sigma}$ (anticharm) | mirror of above | $0$ |
-| $T_{2,9}$ | $T_{2,9}$ | $9_1$ | $4$ | $9$ | ● | (saturating) | $-q^{-28} + \cdots + q^{-19}$ | $0$ |
-| $T_{3,4}$ | $T_{3,4}$ | $8_{19}$ | $3$ | $8$ | ● | $t$ (top quark) | $q^{-7} - q^{-6} + q^{-5} - 2q^{-4} + q^{-3} + q^{-1}$ | $0$ |
-| $T_{3,5}$ | $T_{3,5}$ | $10_{124}$ | $4$ | $10$ | ● | (heavy sector) | (10-term polynomial) | $0$ |
+| Cinquefoil | $T_{2,5}$ | $5_1$ | $2$ | $5$ | ● | $\mu^-$ (muon); on divisor: $\mathfrak{b}$ / $\mathfrak{s}$ | $-q^{-10} + q^{-9} - q^{-8} + q^{-7} + q^{-5}$ | $0$ |
+| Mirror cinquefoil | $T_{2,5}^{\sigma}$ | $5_1^{\sigma}$ | $2$ | $5$ | ○ | $\mu^+$ (antimuon); on divisor: $\mathfrak{s}$ / $\mathfrak{b}^{\sigma}$ | $-q^{10} + q^{9} - q^{8} + q^{7} + q^{5}$ | $0$ |
+| Septafoil | $T_{2,7}$ | $7_1$ | $3$ | $7$ | ● | $\tau^-$ (tau); on divisor: $\mathfrak{c}$ | $-q^{-18} + q^{-17} - q^{-16} + q^{-15} - q^{-14} + q^{-13} + q^{-11}$ | $0$ |
+| Mirror septafoil | $T_{2,7}^{\sigma}$ | $7_1^{\sigma}$ | $3$ | $7$ | ○ | $\tau^+$ (antitau); on divisor: $\mathfrak{c}^{\sigma}$ | mirror of above | $0$ |
+| $T_{2,9}$ | $T_{2,9}$ | $9_1$ | $4$ | $9$ | ● | Strong binding (gluon) | $-q^{-28} + \cdots + q^{-19}$ | $0$ |
+| $T_{3,4}$ | $T_{3,4}$ | $8_{19}$ | $3$ | $8$ | ● | Hopf${}^2$ color binding | $q^{-7} - q^{-6} + q^{-5} - 2q^{-4} + q^{-3} + q^{-1}$ | $0$ |
+| $T_{3,5}$ | $T_{3,5}$ | $10_{124}$ | $4$ | $10$ | ● | Weak force ($\beta$-decay) | (10-term polynomial) | $0$ |
 
 **Key observation**: All torus knots have $\mathrm{Vol} = 0$.
 They contribute no bare mass from hyperbolic volume.  Their
@@ -39,12 +39,15 @@ mass arises entirely from **crossing energy** at $q \neq 1$.
 
 | Knot | AB index | Source | Genus | Crossings | Visual | Particle | Vol |
 |------|----------|--------|:-----:|:---------:|:------:|----------|:---:|
-| Figure-eight | $4_1$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $1$ | $4$ | ●=○ | $\mu^-$ (muon) | $2.0299$ |
+| Figure-eight | $4_1$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $1$ | $4$ | ●=○ | Higgs boson $H$ | $2.0299$ |
 | Three-twist | $5_2$ | $T_{2,3}^{\sigma}$ variant | $1$ | $5$ | ● | — | $2.8281$ |
 
 The figure-eight knot $4_1$ is **amphichiral** (self-mirror),
-so $\mu^- = (\mu^-)^{\sigma}$ as knot types.  The muon-antimuon
-distinction is carried by orientation, like the neutrino.
+so the Higgs boson is its own antiparticle ($H = H^{\sigma}$).
+Its hyperbolic volume $\mathrm{Vol}(4_1) = 2.0299$ drives the
+mass mechanism
+([cohomological embedding](#prop:cohomological-embedding)):
+it couples to every knot-particle with crossings $> 0$.
 
 ## Table 3: Links (multi-component, for force carriers and composites)
 
@@ -64,7 +67,9 @@ operation $\sigma$.  For completeness:
 |----------|------|-------------|------|:----------:|
 | $\nu$ | $T_{1,0}$ | $\nu^{\sigma}$ | $T_{1,0}^{\sigma}$ | Yes (amphichiral) |
 | $e^-$ | $T_{2,3}$ | $e^+$ | $T_{2,3}^{\sigma}$ | No (chiral) |
-| $\mu^-$ | $4_1$ | $\mu^+$ | $4_1^{\sigma}$ | Yes (amphichiral) |
+| $\mu^-$ | $T_{2,5}$ | $\mu^+$ | $T_{2,5}^{\sigma}$ | No (chiral) |
+| $\tau^-$ | $T_{2,7}$ | $\tau^+$ | $T_{2,7}^{\sigma}$ | No (chiral) |
+| $H$ | $4_1$ | $H^{\sigma}$ | $4_1^{\sigma}$ | Yes (amphichiral) |
 | $u$ | $T_{2,3}$ | $u^{\sigma}$ | $T_{2,3}^{\sigma}$ | No (chiral) |
 | $d$ | $T_{2,3}^{\sigma}$ | $d^{\sigma}$ | $T_{2,3}$ | No (chiral) |
 | $p$ | $\mathcal{B}_3(u,u,d)$ | $p^{\sigma}$ | $\mathcal{B}_3(u,u,d)^{\sigma}$ | No |
@@ -135,10 +140,12 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 | $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
 | $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
 | $e^+$ | $T_{2,3}^{\sigma}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
-| $\mu^-$ | $4_1$ | $4$ | $2.0299$ | $4\,\mathbf{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathbf{E}_{\times}$ | $207.1\,\mu_0$ |
+| $\mu^-$ | $T_{2,5}$ | $5$ | $0$ | $5\,\mathbf{E}_{\times}$ | $5\,\mathbf{E}_{\times} + \mathcal{M}_H$ | see below |
+| $\tau^-$ | $T_{2,7}$ | $7$ | $0$ | $7\,\mathbf{E}_{\times}$ | $7\,\mathbf{E}_{\times} + \mathcal{M}_H$ | see below |
 | $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,\mathbf{E}_{\times}$ | (bound; see below) |
 | $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,\mathbf{E}_{\times}$ | $5\,\mathbf{E}_{\times}\,\mu_0$ |
 | $t$ | $T_{3,4}$ | $8$ | $0$ | $8q = 8.880$ | $8\,\mathbf{E}_{\times}$ | $8\,\mathbf{E}_{\times}\,\mu_0$ |
+| $H$ (Higgs) | $4_1$ | $4$ | $2.0299$ | $4\,\mathbf{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathbf{E}_{\times}$ | $207.1\,\mu_0$ |
 | Proton $\mathfrak{p}$ | $\mathcal{B}_3(u,u,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | $746\,\mu_0$ |
 | Neutron $\mathfrak{n}$ | $\mathcal{B}_3(u,d,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 + \delta_{\mathrm{Skein}}$ | $747\,\mu_0$ |
 

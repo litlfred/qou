@@ -2,7 +2,8 @@
 The electron is identified with the trefoil $3_1$, a torus knot with
 $\mathrm{Vol}(3_1) = 0$. Its mass therefore sits at the base of the
 topological tower: it is the unit against which all other masses are measured.
-The muon is identified with the figure-eight knot $4_1$, whose complement
+The Higgs boson is identified with the figure-eight knot $4_1$
+([cohomological embedding](#prop:cohomological-embedding)), whose complement
 carries a complete hyperbolic structure of volume
 $\mathrm{Vol}(4_1) \approx 2.02988$.
 
