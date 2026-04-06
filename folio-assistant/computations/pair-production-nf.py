@@ -2,7 +2,7 @@
 """
 Pair production: γγ → e⁻ + e⁺
 
-Computes Gröbner normal forms in H₃(q) for:
+Computes Gröbner--Shirshov normal forms in H₃(q) for:
 
   γ   = σ₀           (photon  = single Hopf crossing)
   γγ  = σ₀²          → (q−q⁻¹)σ₀ + 𝟏  via Hecke relation
@@ -46,7 +46,7 @@ with _esc_path.open() as _f:
     _esc = json.load(_f)
 E0 = _esc["energy_scales"]["E0_from_net_MeV"]
 
-# ── Hecke algebra symbols ─────────────────────────────────────
+# ── Iwahori--Hecke algebra symbols ─────────────────────────────────────
 HA_sym  = q_sym - 1 / q_sym          # q − q⁻¹  (symbolic)
 HA_num  = HA0                         # numeric at q₀
 
@@ -85,7 +85,7 @@ def eval_q0(c):
 
 def reduce_verbose(terms_dict, label=""):
     """
-    Reduce a Hecke element using the three Gröbner relations.
+    Reduce a Hecke element using the three Gröbner--Shirshov relations.
     Negative generator index encodes σᵢ⁻¹ via pre-substitution
     (caller expands inverses first).
     Returns (reduced_terms, step_counts).
@@ -305,7 +305,7 @@ def nf_to_json(nf_dict, net):
 witness = {
     "name": "pair-production-nf",
     "description": (
-        "Gröbner NF for γγ → e⁻ + e⁺ pair production in H₃(q). "
+        "Gröbner--Shirshov NF for γγ → e⁻ + e⁺ pair production in H₃(q). "
         "Photon γ = σ₀, e⁻ = σ₀σ₁σ₀ (trefoil), "
         "e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ (mirror trefoil). "
         "Threshold energy Δ(pair) × E₀ compared to 2mₑ = 1.022 MeV."

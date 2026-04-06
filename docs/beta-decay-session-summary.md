@@ -4,14 +4,14 @@ Branch: `claude/review-beta-decay-error-kPCbe`
 
 ## Key Results
 
-### 1. Free neutron g_A from Gröbner decomposition
+### 1. Free neutron g_A from Gröbner--Shirshov decomposition
 
 The decay product N_n × T_{3,5} decomposes exactly over the particle
 basis in H₃(q). The ratio of proton to neutron amplitudes gives:
 
   **g_A = |α_proton / α_neutron| = 1.2545** (PDG: 1.2754, error: -1.6%)
 
-Derived purely from the Gröbner basis computation — no fitting.
+Derived purely from the Gröbner--Shirshov basis computation — no fitting.
 
 ### 2. Three-part NF structure
 
@@ -51,7 +51,7 @@ crossing each) — they're input slots for the neutron's individual bonds.
 ### 5. Notation fixes
 
 - **degree** = genus of knot = (r-1)(s-1)/2 for T_{r,s}
-- **length** = word length in Hecke algebra (Gröbner reduction)
+- **length** = word length in Iwahori--Hecke algebra (Gröbner--Shirshov reduction)
 - T_{2,1} = unknot = neutrino (degree 0, NOT the electron)
 - Protium lives entirely in degree 0 (ground state)
 
@@ -68,7 +68,7 @@ Two-stage correction (MAE 4.9%, down from 68.9%):
 | ¹³⁷Cs | 0.54163 | 0.51400 | +5.4% |
 | ²¹⁰Bi | 1.29175 | 1.16270 | +11.1% |
 
-These are ANSATZ results. The Gröbner computation supersedes them.
+These are ANSATZ results. The Gröbner--Shirshov computation supersedes them.
 
 ## Roadmap
 
@@ -77,7 +77,7 @@ These are ANSATZ results. The Gröbner computation supersedes them.
 3. ✅ Lean declarations for quotient ideals
 4. ⬜ Implement quotient computation with I₁-I₄
 5. ⬜ Build tritium in quotient algebra
-6. ⬜ Extract Q-values from Gröbner energy accounting
+6. ⬜ Extract Q-values from Gröbner--Shirshov energy accounting
 7. ⬜ At magic numbers: derive I₅+ (torus knot shell operators)
 8. ⬜ Beta decay: parent shell unbind/daughter shell rebind
 

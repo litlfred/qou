@@ -5,7 +5,7 @@ gives $H_n(q)$.  For $n = 2$: $2$ irreps.  For $n = 3$: $3$ irreps.
 For $n \geq 4$: the embeddability constraint $(m-1)(s-1) \leq 2g$
 with $m \geq 4$, $m < s$, $\gcd(m,s) = 1$ contributes no new
 torus knots at genus $g \leq 5$ beyond $T_{3,4}$ (which equals
-$T_{4,3}$).  So the relevant Hecke algebra is
+$T_{4,3}$).  So the relevant Iwahori--Hecke algebra is
 $H_2(q) \oplus H_3(q)$, with $5$ irreps total.
 
 At genus $g$, the number of embeddable torus knots with

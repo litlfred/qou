@@ -14,7 +14,7 @@ Theory:
         aₙ₊₁ = bₙ
         bₙ₊₁ = h·bₙ + aₙ      where h = q − q⁻¹.
 
-    The bₙ satisfy the continuant (Morgan-Voyce) recurrence
+    The bₙ satisfy the continuant (Morgan--Voyce) recurrence
     bₙ₊₁ = h·bₙ + bₙ₋₁ with b₀ = 0, b₁ = 1.
 
 Usage:
@@ -138,7 +138,7 @@ def main():
 
     # ── Continuant identity check ───────────────────────────────
     # bₙ satisfies the continuant recurrence bₙ₊₁ = h·bₙ + bₙ₋₁
-    # (Morgan-Voyce type, NOT standard Chebyshev-U which has −bₙ₋₁).
+    # (Morgan--Voyce type, NOT standard Chebyshev-U which has −bₙ₋₁).
     # Verify: bₙ₊₁ − h·bₙ − bₙ₋₁ = 0 for all n ≥ 1.
     continuant_check = []
     for n in range(1, 9):

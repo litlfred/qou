@@ -1,12 +1,12 @@
 Every nucleus $\mathcal{N}(Z, N)$ is a braid word in the braid group
 $B_A$ ([braid group](#def:braid-group)), where $A = Z + N$.  This
 braid word is not unique — different orderings of the Hopf crossings
-give different representatives of the same link.  The **Gröbner
-reduction** in the Hecke algebra $H_A(q)$ produces a unique
+give different representatives of the same link.  The **Gröbner--Shirshov
+reduction** in the Iwahori--Hecke algebra $H_A(q)$ produces a unique
 **normal form** — the lowest-energy representative.
 
 **Convention.** Throughout this paper, $\mathcal{N}(Z, N)$ always
-denotes the **reduced** (Gröbner normal form) nuclear braid word
+denotes the **reduced** (Gröbner--Shirshov normal form) nuclear braid word
 unless explicitly stated otherwise.
 
 **Proposition.**
@@ -24,7 +24,7 @@ $$
   \qquad (i = 1, \ldots, A-1).
 $$
 
-The Hecke algebra $H_A(q) = R[B_A] / I$ has an admissible system
+The Iwahori--Hecke algebra $H_A(q) = R[B_A] / I$ has an admissible system
 ([admissible system](#unital-groebner-bases:def:admissible-system))
 $(B, <)$ where:
 
@@ -32,7 +32,7 @@ $(B, <)$ where:
 - $<$ = length-lexicographic ordering (shorter words first, then
   lexicographic on generator indices).
 
-The Gröbner basis $G$ for $I$ with respect to $(B, <)$ consists of:
+The Gröbner--Shirshov basis $G$ for $I$ with respect to $(B, <)$ consists of:
 
 1. **Hecke relation**: $T_i^2 - (q - q^{-1})\,T_i - 1$
    (eliminates all squares).
@@ -55,10 +55,10 @@ $$
   \;\in\; H_A(q).
 $$
 
-Uniqueness follows from the main theorem of the Gröbner basis theory
-([Gröbner basis](#unital-groebner-bases:def:groebner-basis)): the
+Uniqueness follows from the main theorem of the Gröbner--Shirshov basis theory
+([Gröbner--Shirshov basis](#unital-groebner-bases:def:groebner-basis)): the
 remainder is independent of the reduction path when $G$ is a
-Gröbner basis.
+Gröbner--Shirshov basis.
 
 **The nuclear braid word.**
 The unreduced braid word for $\mathcal{N}(Z, N)$ in $B_A$ is:
@@ -91,7 +91,7 @@ becomes $\sigma_i - \tfrac{1}{2}(q - q^{-1})$.
 
 This gives $2^{|{\mathrm{mixed}}|}$ terms in $H_A(q)$ before
 reduction (one per mixed crossing), where
-$|{\mathrm{mixed}}| = p \cdot n$.  The Gröbner reduction
+$|{\mathrm{mixed}}| = p \cdot n$.  The Gröbner--Shirshov reduction
 collapses this exponential expansion into the normal form.
 
 **Computational results.**
@@ -162,7 +162,7 @@ smaller Markov trace and longer half-life.
 
 **Scaling.**
 The number of reduced terms grows polynomially in $A$ (not
-exponentially), because the Gröbner basis eliminates all squares
+exponentially), because the Gröbner--Shirshov basis eliminates all squares
 and sorts all commuting generators.  The maximum word length in
 the normal form is bounded by $A - 1$ (the longest reduced word
 in $H_A$ is $\sigma_1 \sigma_2 \cdots \sigma_{A-1}$).  For

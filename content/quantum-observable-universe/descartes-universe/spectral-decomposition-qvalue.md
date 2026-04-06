@@ -1,5 +1,5 @@
 The torus knots embeddable on $\Sigma_4$ form a **complete,
-self-dual basis** for the Hilbert space of the Hecke algebra
+self-dual basis** for the Hilbert space of the Iwahori--Hecke algebra
 $H_n(q)$.  The $\mathcal{Q}_q$-value of beta decay is the
 spectral decomposition of the decay operator in this basis.
 The decomposition is **exact and finite** — it terminates at
@@ -41,7 +41,7 @@ polynomial from the inductive chain construction
 chain $\hat{V}_j = z \cdot M_j[0][0] + M_j[1][0]$ (with
 $z = (q^{1/2} + q^{-1/2})^{-1}$ the Markov parameter) is
 pre-reduced via the $2\!\times\!2$ matrix recurrence (zero
-Hecke steps), ensuring $\mathcal{N}_{Z,N}$ is in Gröbner
+Hecke steps), ensuring $\mathcal{N}_{Z,N}$ is in Gröbner--Shirshov
 normal form at every inductive stage.*
 
 **(ii)** *$\log_q(x) = \ln x / \ln q$ is the $q$-natural
@@ -118,7 +118,7 @@ degree $\lfloor 2g/(g-1) \rfloor$.*
    $2\!\times\!2$ chain — zero Yang–Baxter steps, zero Hecke
    steps on the multi-generator element.  The nuclear word
    $\mathcal{N}_{Z,N} = \prod_j (\mathfrak{w}^+_j \sigma_j + \mathfrak{w}^0_j)$ uses
-   **distinct generators** and is always in Gröbner normal form.
+   **distinct generators** and is always in Gröbner--Shirshov normal form.
 
 3. **Shell cancellation.**  Since parent and daughter share
    all chains except those crossing the converting nucleon,
@@ -161,7 +161,7 @@ The active correction comes from degree-$2$ knots only.
 
 The knot operators form a **jet bundle over the exceptional
 divisor chain** of $\Sigma_g$, with jet index given by the
-Gröbner class (= degree in the degree tower) of each torus knot.
+Gröbner--Shirshov class (= degree in the degree tower) of each torus knot.
 
 | Jet order $k$ | Torus knot basis | Hilbert space content |
 |:---:|---|---|

@@ -272,7 +272,7 @@ print()
 output = {
     "name": "polarized-pair-production",
     "description": (
-        "Gröbner NF for γ(φ₁)·γ(φ₂) → e⁻ + e⁺ with distinct polarization modes. "
+        "Gröbner--Shirshov NF for γ(φ₁)·γ(φ₂) → e⁻ + e⁺ with distinct polarization modes. "
         "Each photon γ(φ) = φ·σ₀ + (1−φ)·σ₁.  NF is exact and closed-form: "
         "net(γγ) = 1 + S·HA where S = φ₁φ₂ + (1−φ₁)(1−φ₂)."
     ),

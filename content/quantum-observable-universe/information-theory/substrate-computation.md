@@ -26,7 +26,7 @@ multiply; the destructive interference that isolates the
 q-AND from all other pathways still holds.  A computation
 performed with pebbles in the Sahara and one performed with
 photons in a superconducting circuit inhabit the same
-Hecke algebra $H_n(q)$ at the same $q$.
+Iwahori--Hecke algebra $H_n(q)$ at the same $q$.
 
 **Consistency under descent.**
 The discrete combinatorics at the Planck scale must be

@@ -8,7 +8,7 @@ import { chapter, section } from "../../schema/builders";
  * and PBW as a corollary.
  */
 export default chapter({
-  title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+  title: "Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings",
   label: "chap:ugb",
   sections: [
     section({
@@ -31,7 +31,7 @@ export default chapter({
     }),
 
     section({
-      title: "Division algorithm and Gröbner bases",
+      title: "Division algorithm and Gröbner--Shirshov bases",
       label: "sec:ugb-division",
       blocks: [
         "division-algorithm",

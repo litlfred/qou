@@ -15,7 +15,7 @@ standard Young tableaux of shape $\lambda \vdash n$ with at most
 $2$ rows and with $\lambda_1 - \lambda_2 = 2j$.
 
 The construction rests on the
-[PBW theorem over commutative rings](#cor:pbw): the unital Gröbner
+[PBW theorem over commutative rings](#cor:pbw): the unital Gröbner--Shirshov
 basis for $U(\mathfrak{su}(2))$ provides a monomial basis for the
 enveloping algebra, from which the intertwiner basis is derived by
 contraction with the volume form.
@@ -54,4 +54,4 @@ $$
 when $n \equiv 2j \pmod{2}$, and zero otherwise.
 
 The PBW basis underlying this construction is established via unital
-Gröbner bases in \cite{leitnerpawloski2004}.
+Gröbner--Shirshov bases in \cite{leitnerpawloski2004}.

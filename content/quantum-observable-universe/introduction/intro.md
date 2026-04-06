@@ -89,7 +89,7 @@ integrals with discrete braid-group computations.  Fundamental
 particles — photons, electrons, protons — are defined purely
 mathematically as specific knots and words on the genus-$4$ state
 space.  Particle interactions are modelled through braid relations
-by computing the Gröbner basis normal form of knot words using
+by computing the Gröbner--Shirshov basis normal form of knot words using
 Hecke relations, where the parameter $q$ tracks the energy cost of
 each crossing.  The topological mass formula
 
@@ -123,7 +123,7 @@ Navier–Stokes regularity.
 
 [Chapter 8](#chap:info-theory) examines the categorical framework
 through the lens of information theory and computational
-complexity.  The Gröbner basis makes computation *confluent*; the
+complexity.  The Gröbner--Shirshov basis makes computation *confluent*; the
 Reeb flow generates a dynamical system whose boundary is a
 Julia-set fractal.  The framework provides an interesting
 perspective on questions such as P versus NP in terms of

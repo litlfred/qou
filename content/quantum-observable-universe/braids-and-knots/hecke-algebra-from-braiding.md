@@ -1,4 +1,4 @@
-The Hecke algebra in which all subsequent Gröbner normal-form
+The Iwahori--Hecke algebra in which all subsequent Gröbner--Shirshov normal-form
 computations take place is *not* an algebra with a free parameter.
 It is the quotient of the braid-group algebra by the minimal
 polynomial of the categorical braiding.
@@ -18,7 +18,7 @@ where $q \in \mathrm{End}(\mathbf{1}) \cong k^{\times}$ is the
 braiding eigenvalue — the same $q$ that parametrises the substrate
 family $d_q$ ([substrate parameter](#def:substrate-parameter)).
 
-The Hecke algebra on $n$ strands is therefore
+The Iwahori--Hecke algebra on $n$ strands is therefore
 
 $$
   H_n(q) \;=\; k[B_n] \,\big/\,
@@ -29,6 +29,6 @@ $$
 and the parameter $q$ is a **categorical datum** — determined by
 the braiding of $(\mathbf{C}, A, \tau)$, not chosen freely.
 Every Laurent polynomial $c_w \in \mathbb{Z}[q, q^{-1}]$ appearing
-in a Gröbner normal form
+in a Gröbner--Shirshov normal form
 ([nuclear normal form](#prop:nuclear-groebner-reduction)) inherits
 its $q$ from this categorical source.

@@ -1,6 +1,6 @@
 The **Breit--Wheeler process** $\gamma\gamma \to e^-e^+$ is the
 creation of an electron--positron pair from two real photons.
-In the QOU the entire vertex is encoded in the Hecke algebra
+In the QOU the entire vertex is encoded in the Iwahori--Hecke algebra
 $H_n(q)$ acting on the exceptional divisor
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([exceptional divisor](#def:exceptional-divisor)).

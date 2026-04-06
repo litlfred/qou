@@ -25,7 +25,7 @@ that yield the same result:
 |--------|--------|------------------------------|
 | Yekutieli MI | Analytic | $\lVert\mathrm{MI}\int_\Sigma(\nabla_A q, L \wedge F^+)\rVert$ |
 | Ribbon trace | Algebraic | $\lVert\mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta_{\mathfrak{H}}))\rVert \cdot (q-1)^2$ |
-| Gröbner reduction | Computational | $(q-1)^2 \sum \lvert c_w\rvert \cdot \lvert q - q^{-1}\rvert$ |
+| Gröbner--Shirshov reduction | Computational | $(q-1)^2 \sum \lvert c_w\rvert \cdot \lvert q - q^{-1}\rvert$ |
 
 The first is the definition ([mass over $\mathbb{C}$](#ex:mass-identity-C)).
 The second follows from the ribbon category structure
@@ -73,16 +73,16 @@ as it passes through the hadron: $\partial\Sigma = \varrho$ (the
 vortex boundary), and the interior of $\Sigma$ is the trajectory
 of $\gamma$ through $\beta_{\mathfrak{H}}$.  The multiplicative integral
 accumulates the connection along this trajectory — the analytic
-expression of the algebraic Gröbner reduction.
+expression of the algebraic Gröbner--Shirshov reduction.
 
-**The Gröbner energy is path-independent.**
-The confluence of the Gröbner--Shirshov basis (diamond lemma)
+**The Gröbner--Shirshov energy is path-independent.**
+The confluence of the Gröbner--Shirshov basis (Bergman diamond lemma)
 ensures that the total Hecke cost is the same regardless of the
 order in which reductions are applied.  This is the algebraic
 expression of the **gauge invariance** of the mass: the
 Yekutieli integral is independent of the choice of surface
 $\Sigma$ (provided $\partial\Sigma = \varrho$), and the
-Gröbner reduction is independent of the reduction path.
+Gröbner--Shirshov reduction is independent of the reduction path.
 
 **Connection to the speed of light.**
 The factor $(q-1)^2$ converting crossing energy to mass is

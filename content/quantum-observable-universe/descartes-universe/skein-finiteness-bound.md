@@ -113,7 +113,7 @@ build data:
 
 At $A = 6$, the product becomes negative ($P = -0.0053$) even
 though individual volumes are positive.  This occurs because the
-**cross-terms** between generators (from the Yang-Baxter
+**cross-terms** between generators (from the Yang--Baxter
 interaction) introduce destructive interference that flips the
 total sign.
 
@@ -203,7 +203,7 @@ $A = 4$).
 
 **At $q = 1$:** $[k]_1 = k$ and $[2]_1 = 2$, so $(A-1)! > 2^{A-1}$
 also crosses at $A = 5$.  The bound is **topological** (from
-the Hecke algebra dimension $A!$), not dependent on $q$.
+the Iwahori--Hecke algebra dimension $A!$), not dependent on $q$.
 
 **At $q \to \infty$:** $[k]_q \sim q^{k-1}$, so $[A\!-\!1]_q! \sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$.  The
 crossover shifts to $(A-1)(A-2)/2 > A-1$, i.e., $A > 4$,

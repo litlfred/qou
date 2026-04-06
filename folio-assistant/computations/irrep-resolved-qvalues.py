@@ -3,7 +3,7 @@
 Irrep-resolved Q-values from torus knot representation theory.
 
 The Q-value correction factor comes from the Schur-Weyl decomposition
-of the shell occupation state under the 3-strand Hecke algebra H₃(q).
+of the shell occupation state under the 3-strand Iwahori--Hecke algebra H₃(q).
 
 For a shell of size n with k occupied fermions, the weak vertex (a 3-strand
 braid) acts on 3 positions within the shell. The fermion antisymmetry

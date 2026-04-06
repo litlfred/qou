@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Suppose $q$ is not a root of unity.  Then:
 
-1. **(Semisimplicity.)**  The Hecke algebra
+1. **(Semisimplicity.)**  The Iwahori--Hecke algebra
    $H_n(q) = \mathrm{End}_{B_n}(V^{\otimes n})$ is semisimple, and
    $V^{\otimes n}$ admits a complete decomposition into irreducible
    $H_n(q)$-modules:

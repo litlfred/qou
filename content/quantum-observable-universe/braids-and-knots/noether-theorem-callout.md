@@ -36,7 +36,7 @@ acquires a correction term at each step.  Concretely:
    the shifted $q$.
 
 2. **Momentum** acquires an anomalous correction $\delta p_q \propto \hbar_q$
-   from the non-commutativity of the Hecke algebra.
+   from the non-commutativity of the Iwahori--Hecke algebra.
 
 3. **Angular momentum** remains exactly conserved (the $\mathrm{SU}_q(2)$
    Casimir commutes with the coproduct), but its eigenvalues are

@@ -1,4 +1,4 @@
-Set $h := h_i$, $f := f_i$. Since $G$ is a Gröbner basis, write
+Set $h := h_i$, $f := f_i$. Since $G$ is a Gröbner--Shirshov basis, write
 
 $$
   h = \sum_{k \in K} \lambda_k\, u_k \cdot g_{\gamma_k} \cdot v_k

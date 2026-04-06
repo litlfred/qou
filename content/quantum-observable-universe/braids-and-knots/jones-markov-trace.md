@@ -1,6 +1,6 @@
 **(Jones, 1987, Theorem 5.1 and Corollary 5.3.)**
 Let $q \in \mathbb{C}^{\times}$ be not a root of unity, and let
-$H_n(q) = \mathrm{End}_{B_n}(V^{\otimes n})$ be the Hecke algebra of
+$H_n(q) = \mathrm{End}_{B_n}(V^{\otimes n})$ be the Iwahori--Hecke algebra of
 type $A_{n-1}$.  Then:
 
 1. **(Existence.)** There exists a unique $\mathbb{C}$-linear functional

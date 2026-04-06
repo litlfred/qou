@@ -31,7 +31,7 @@ export default folio({
     }),
     paperRef({
       dir: "unital-groebner-bases",
-      title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+      title: "Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings",
       description:
         "Proves that quotients A/I are free R-modules when I has a unital " +
         "Gröbner basis; obtains PBW over commutative rings as a corollary.",

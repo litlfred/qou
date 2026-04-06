@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:unital-groebner-basis",
-  title: "Gröbner basis and unital Gröbner basis",
+  title: "Gröbner--Shirshov basis and unital Gröbner--Shirshov basis",
   tags: ["groebner-basis", "unital"],
   lean: {
     decl: "QOU.UnitalGroebner.UnitalGroebnerBasis",

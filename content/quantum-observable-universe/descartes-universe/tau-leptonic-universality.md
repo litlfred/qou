@@ -3,7 +3,7 @@ vertex ([beta decay](#def:beta-decay-skein)).  The **factorized
 model** — in which the squared matrix element is
 $|\mathcal{M}|^2 = |\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})|^2$,
 independent of the daughter lepton — **predicts lepton
-universality** directly from the Hecke algebra structure.
+universality** directly from the Iwahori--Hecke algebra structure.
 
 ## Statement
 
@@ -51,7 +51,7 @@ $$
 
 The $T_{3,5}$ weak vertex acts as a **mediator** between the
 parent tau $T_{2,7}$ and the daughter lepton $T_{2,n_\ell}$.
-In the Hecke algebra $H_3(q)$, one may form the product
+In the Iwahori--Hecke algebra $H_3(q)$, one may form the product
 $T_{2,n_\ell} \cdot T_{3,5} \cdot T_{2,7}$ and reduce to
 normal form.  However, the correct physical amplitude is **not**
 this product trace.

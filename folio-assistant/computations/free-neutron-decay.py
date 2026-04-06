@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Free neutron decay: n → p + e⁻ + ν̄ₑ
-VERBOSE MODE — shows every Gröbner relation application.
+VERBOSE MODE — shows every Gröbner--Shirshov relation application.
 
 Computes:
   1. NF(B₃)     = NF((σ₀σ₁⁻¹)³)             in H₃(q)
@@ -9,7 +9,7 @@ Computes:
   3. NF(neutron) = NF(B₃ · crossings(u,d,d))  in H₃(q)
   4. Transition:  NF(neutron) − NF(proton)
 
-Relations applied (Gröbner basis for H_n(q)):
+Relations applied (Gröbner--Shirshov basis for H_n(q)):
   R1 (Hecke):        σ_i² = (q − q⁻¹)·σ_i + 1
   R2 (Far-comm):     σ_i·σ_j = σ_j·σ_i   for |i − j| ≥ 2
   R3 (Yang-Baxter):  σ_i·σ_{i+1}·σ_i = σ_{i+1}·σ_i·σ_{i+1}
@@ -25,7 +25,7 @@ from pathlib import Path
 import sympy as sp
 q = sp.Symbol('q', positive=True)
 
-# ── Hecke algebra constants ───────────────────────────────────
+# ── Iwahori--Hecke algebra constants ───────────────────────────────────
 q_inv = 1 / q
 q_half = sp.sqrt(q)
 q_half_inv = 1 / sp.sqrt(q)
@@ -65,7 +65,7 @@ def pn(w):
 
 def reduce_verbose(terms_dict, label="", max_iterations=10000):
     """
-    Gröbner-reduce a symbolic Hecke element, printing every relation.
+    Gröbner--Shirshov-reduce a symbolic Hecke element, printing every relation.
     Input: dict { word_tuple: sympy_coefficient }
     Output: reduced dict, step_counts
     """
@@ -241,7 +241,7 @@ def crossing(type_i, type_j, gen):
 
 print("=" * 80)
 print("FREE NEUTRON DECAY  n → p + e⁻ + ν̄ₑ  — VERBOSE RELATION TRACE")
-print(f"All Gröbner relations shown for every reduction step.")
+print(f"All Gröbner--Shirshov relations shown for every reduction step.")
 print(f"Commit: {SHA[:8]}  |  q₀ = {q0:.10f}")
 print("=" * 80)
 
@@ -442,7 +442,7 @@ def terms_to_list(terms):
 witness = {
     "computation": "free-neutron-decay",
     "description": "Free neutron decay n → p + e⁻ + ν̄ₑ with B₃ Borromean binding. "
-                   "All Gröbner relations traced verbosely.",
+                   "All Gröbner--Shirshov relations traced verbosely.",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "commit_sha": SHA,
     "q0": q0,

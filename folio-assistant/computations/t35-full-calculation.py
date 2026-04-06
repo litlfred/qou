@@ -379,7 +379,7 @@ witness = {
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "description": (
         "Full T_{3,5} beta decay calculation at quark level (Level 1). "
-        "No approximations — complete Hecke algebra computation with "
+        "No approximations — complete Iwahori--Hecke algebra computation with "
         "T_{3,5} = (σ₁σ₂)⁵ insertion at the converting quark."
     ),
     "parameters": {

@@ -3,8 +3,8 @@ is free as an $R$-module and without quasi-zeros, $(B, <)$ an
 [admissible system](#def:admissible-system), and $I$ a two-sided
 ideal in $A$.
 
-**Gröbner basis.** A set of generators
-$G = \{g_\gamma \mid \gamma \in \Gamma\}$ for $I$ is a *Gröbner
+**Gröbner--Shirshov basis.** A set of generators
+$G = \{g_\gamma \mid \gamma \in \Gamma\}$ for $I$ is a *Gröbner--Shirshov
 basis* with respect to $(B, <)$ if for every $h \in I$ we have a
 representation
 
@@ -40,6 +40,6 @@ $$
     - \lambda'\, u' \cdot f' \cdot v'.
 $$
 
-If the ground ring is a field, every Gröbner basis is automatically
+If the ground ring is a field, every Gröbner--Shirshov basis is automatically
 unital. If $B$ is closed under multiplication, condition (b) follows
 from (a).

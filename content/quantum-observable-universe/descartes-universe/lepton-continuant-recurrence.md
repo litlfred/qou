@@ -6,7 +6,7 @@ H_3(q)$ given by a **Morgan–Voyce continuant recurrence**.
 
 Let $h = q - q^{-1}$ be the Hecke parameter and
 $T_{2,n} = \sigma_0^n$ the $(2, n)$-torus knot braid in $B_2$.
-The Gröbner normal form in $H_2(q)$ is
+The Gröbner--Shirshov normal form in $H_2(q)$ is
 
 $$
   \mathrm{NF}(\sigma_0^n)

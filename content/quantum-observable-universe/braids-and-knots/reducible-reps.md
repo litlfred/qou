@@ -5,7 +5,7 @@ they are simultaneously conjugate to upper-triangular matrices, hence
 all rotations around a common axis.  In the category-theoretic
 formulation this corresponds to the abelianisation of the knot group.
 Further generalisations via the Poincare--Birkhoff--Witt theorem and
-unital Groebner bases ([Section](#sec:enveloping-algebras)) describe
+unital Gröbner--Shirshov bases ([Section](#sec:enveloping-algebras)) describe
 the passage from the reducible to the irreducible sector.
 
 Concretely, the PBW filtration on

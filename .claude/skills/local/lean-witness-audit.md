@@ -12,6 +12,64 @@ for Lean formalization. Ensure the witness output is complete,
 self-documenting, uses paper notation, and maps directly to
 Lean declarations.
 
+## Unified Witness Infrastructure
+
+### Python witness base (`witness_base.py`)
+
+All new computation scripts should use the `WitnessBuilder` class:
+
+```python
+from witness_base import WitnessBuilder
+
+w = WitnessBuilder("my-computation", engine="sympy")
+w.set_description("Computes foo from bar")
+w.set_content_block("prop:my-proposition")  # links to content block
+w.add_assertion("Vol(4_1)", computed=2.0298, expected=2.0298,
+                tolerance=1e-10, source="SnapPy")
+w.add_parameter("q", q0)
+w.add_data("extra_result", {"key": "value"})
+w.save()  # → my-computation.witness.json
+```
+
+The builder automatically captures:
+- **commitSha**: Git HEAD at computation time
+- **scriptHash**: SHA-256 of the script file (for staleness detection)
+- **scriptCommitSha**: Last commit that touched the script
+- **computedAt**: ISO 8601 timestamp
+- **engine** / **engineVersion**: Computation engine info
+- **assertions**: Structured pass/fail checks with tolerances
+- **contentBlock**: Link to the content block this witnesses
+
+### Staleness detection
+
+A witness is **stale** when:
+1. The script's content hash has changed since the witness was generated
+2. The script's git commit SHA has changed since the witness was generated
+
+Check staleness:
+```bash
+# Single witness
+python3 witness_base.py check-stale my-computation.witness.json
+
+# All witnesses
+python3 witness_base.py check-all
+
+# Unified audit (Lean + Python)
+bun run scripts/witness-audit.ts
+```
+
+### Legacy witness migration
+
+52 existing witnesses use ad-hoc JSON schemas. Only 1 uses the
+structured `ComputationWitness` format. When modifying a legacy
+computation script, migrate it to `witness_base.py`:
+
+1. Replace manual `json.dump()` with `WitnessBuilder`
+2. Add `w.set_content_block("label")` to link to the content block
+3. Convert key results to `w.add_assertion()` calls
+4. Move supplementary data to `w.add_data()`
+5. Run the script to regenerate the witness with the new format
+
 ## When to invoke
 
 - After any computation script that outputs `.witness.json` or

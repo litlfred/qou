@@ -29,7 +29,7 @@ $$
 
 All single-component knots in $B_2$ carry spin $j = \tfrac{1}{2}$.
 The nuclear spin depends on coupling: $A$ nucleons
-(each $j = 1/2$) couple to total $J$ via $q$-Clebsch-Gordan
+(each $j = 1/2$) couple to total $J$ via $q$-Clebsch--Gordan
 coefficients, with $J$ parity determined by $A \bmod 2$
 ([nuclear spin parity](#prop:nuclear-spin-parity)).
 
@@ -42,5 +42,5 @@ $$
 $$
 
 where $J$ is the ground-state spin determined by the nuclear
-link's embedding in the Temperley-Lieb algebra $TL_A(\delta)$
+link's embedding in the Temperley--Lieb algebra $TL_A(\delta)$
 with $\delta = -(q^{1/2} + q^{-1/2})$.

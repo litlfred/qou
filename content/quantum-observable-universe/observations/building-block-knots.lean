@@ -188,14 +188,22 @@ noncomputable def muon_electron_ratio (q : ℝ) : ℝ :=
 -- Ref: [jones1987], CODATA 2018, [manuscript] Ch. 7
 theorem muon_electron_ratio_from_substrate :
     |muon_electron_ratio q₀ - 206.768| < 1 := by
-  -- Ref: [jones1987], CODATA 2018
-  sorry
+  -- muon_electron_ratio q₀ = vol_figure_eight / (hbar_q q₀)²
+  -- = 2.02988321281931 / (1 - 1/1.10998)²
+  -- Clearing denominators yields rational arithmetic that norm_num resolves.
+  simp only [muon_electron_ratio, vol_figure_eight, hbar_q, q₀, abs_lt]
+  constructor <;> { field_simp; norm_num }
 
 /-- The crossing energy at q₀: E_×(q₀) ≈ 0.1045. -/
 -- Ref: [manuscript] Ch. 7, §Building block knots
 theorem crossing_energy_at_substrate :
     |crossing_energy q₀ - 0.1045| < 0.001 := by
-  -- Ref: [manuscript] Ch. 7, §Building block knots
-  sorry
+  -- crossing_energy q₀ = (1/2) * (1.10998 - 1.10998⁻¹)
+  -- = (1/2) * (55499/50000 - 50000/55499)
+  -- = (55499² - 50000²) / (2 × 50000 × 55499)
+  -- = 580139001 / 5549900000 ≈ 0.10453
+  -- |0.10453 - 0.1045| = 0.00003 < 0.001  ✓
+  simp only [crossing_energy, q₀, abs_lt]
+  constructor <;> { field_simp; norm_num }
 
 end QOU.Descartes.BuildingBlockKnots

@@ -1,6 +1,6 @@
-The Gröbner normal form $\mathcal{N}(p, n)$ of a nucleus
+The Gröbner--Shirshov normal form $\mathcal{N}(p, n)$ of a nucleus
 built by sequential Hopf linking
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction))
+([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))
 exhibits a **shell closure signature** when $(p, n)$ is a
 doubly-magic configuration.
 
@@ -13,7 +13,7 @@ proton–neutron Hopf linking:
    in $H_1(q)$).
 2. **Hopf-link** the next nucleon: append crossings
    $\sigma_j^{\epsilon(j,k)}$ for all existing nucleons $j < k$.
-3. **Reduce** via the Gröbner basis $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \text{YB},\; \text{far-comm}\}$.
+3. **Reduce** via the Gröbner--Shirshov basis $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \text{YB},\; \text{far-comm}\}$.
 4. Record the **Hecke reduction energy** $\Delta E_k$
    ([Gröbner–Shirshov energy](#thm:groebner-shirshov-energy))
    and the **word-length histogram** $h_k(\ell) = \#\{w \in
@@ -23,13 +23,13 @@ Repeat until $A = p + n$ nucleons are linked.
 
 ## Proposition
 
-**Let $q > 1$ and let $\mathcal{N}(p, n)$ be the Gröbner
+**Let $q > 1$ and let $\mathcal{N}(p, n)$ be the Gröbner--Shirshov
 normal form of the nuclear braid in $H_A(q)$ constructed by
 sequential Hopf linking with alternating $\mathfrak{p}$-$\mathfrak{n}$
 filling.**
 
 **(i) Normal form (inductive, for all $A$).**
-$\mathcal{N}(p, n)$ is in Gröbner normal form for **every**
+$\mathcal{N}(p, n)$ is in Gröbner--Shirshov normal form for **every**
 $A \geq 1$, by induction on $A$:
 
 - **Base case.** $\mathcal{N}(1, 0) = \mathbf{1}$ is trivially
@@ -51,7 +51,7 @@ $A \geq 1$, by induction on $A$:
   for the new nucleon with nucleon $j$ (already in normal form:
   linear in $\sigma_j$, no squares).  The product $\xi_{A+1}$ may
   contain $\sigma_j^2$ terms from multiplying $\sigma_j$ factors.
-  Apply the Gröbner division algorithm
+  Apply the Gröbner--Shirshov division algorithm
   ([division algorithm](#unital-groebner-bases:def:division-algorithm))
   with the Hecke basis $G$:
 
@@ -61,7 +61,7 @@ $A \geq 1$, by induction on $A$:
     r(\xi_{A+1},\, G)
   $$
 
-  By the **main theorem** of Gröbner basis theory
+  By the **main theorem** of Gröbner--Shirshov basis theory
   ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)):
 
   1. The algorithm **terminates** (the length-lex ordering on positive
@@ -140,7 +140,7 @@ in Hecke energy units.
 ## Optimal normal form (quotient ideals I₈ + I₉)
 
 The raw normal form has up to $A!$ terms. Quotient ideals reduce
-this to exactly $A$ terms — the **optimal Gröbner basis** — for
+this to exactly $A$ terms — the **optimal Gröbner--Shirshov basis** — for
 nuclei in the valley of stability ($N \geq Z - 1$).
 
 **Definition (quotient ideals).**
@@ -158,7 +158,7 @@ nuclei in the valley of stability ($N \geq Z - 1$).
 
 **Theorem (Optimal Normal Form).**
 *For any nucleus $N(Z, N)$ with $N \geq Z - 1$ (valley of stability),
-the Gröbner normal form after quotient ideals I₈ + I₉ has exactly
+the Gröbner--Shirshov normal form after quotient ideals I₈ + I₉ has exactly
 $A = Z + N$ terms:*
 
 $$
@@ -209,7 +209,7 @@ $\mathbf{1}$ in the support, I₉ chain-stripping has no root.
 
 The boundary $N \geq Z - 1$ matches the nuclear valley of stability.
 
-The Poincaré palindrome at $(p, p)$ nuclei means the Gröbner
+The Poincaré palindrome at $(p, p)$ nuclei means the Gröbner--Shirshov
 normal form fills the **entire Bruhat lattice of $S_{2p}$
 symmetrically**.  Every reduced word of length $\ell$ is paired
 with a reduced word of length $L - \ell$ with matching

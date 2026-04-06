@@ -25,7 +25,7 @@ $(c, d)$ values listed in Section 3.2.
 
 ## Action on Hecke elements
 
-The transfer matrix acts on a Hecke algebra element
+The transfer matrix acts on a Iwahori--Hecke algebra element
 $a\sigma_i + b$ by left multiplication and Hecke reduction
 ($T^2 = (q - q^{-1})T + 1$):
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Symbolic Gröbner division in H_n(q) with exact coefficients.
+Symbolic Gröbner--Shirshov division in H_n(q) with exact coefficients.
 
 All coefficients are elements of ℤ[q^½, q^{-½}] — the Laurent
 polynomial ring in q^½. No floating point until final evaluation.
@@ -112,7 +112,7 @@ class SymbolicHeckeElement:
 
 
 class SymbolicHeckeDivision:
-    """Gröbner division in H_n(q) with symbolic coefficients.
+    """Gröbner--Shirshov division in H_n(q) with symbolic coefficients.
 
     All operations use exact sympy expressions in q.
 
@@ -604,17 +604,17 @@ class SymbolicHeckeDivision:
 
     @staticmethod
     def sigma_inv(gen):
-        """Build σ_gen⁻¹ in the Hecke algebra.
+        """Build σ_gen⁻¹ in the Iwahori--Hecke algebra.
 
         From the Hecke relation σ² = (q − q⁻¹)σ + 1, we get:
           σ⁻¹ = σ − (q − q⁻¹)
 
-        This is exact in the Hecke algebra H_n(q).
+        This is exact in the Iwahori--Hecke algebra H_n(q).
         """
         return SymbolicHeckeElement({(gen,): sp.Integer(1), (): -HA})
 
     def borromean_B3(self):
-        """Build the Borromean braid B₃ = (σ₀σ₁⁻¹)³ and Gröbner-reduce.
+        """Build the Borromean braid B₃ = (σ₀σ₁⁻¹)³ and Gröbner--Shirshov-reduce.
 
         B₃ is the fundamental confinement braid: three strands mutually
         linked but individually free if any one is removed.  This is the
@@ -648,7 +648,7 @@ class SymbolicHeckeDivision:
             return SymbolicHeckeElement({(gen,): C_HOPF})
 
     def reduce(self, elem, max_iterations=10000, use_quotient=True):
-        """Gröbner reduction with symbolic coefficients.
+        """Gröbner--Shirshov reduction with symbolic coefficients.
 
         Applies rules in order:
           R1: Hecke — σ_i² → (q−q⁻¹)σ_i + 1

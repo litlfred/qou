@@ -1,5 +1,5 @@
 
-*Part (1).*  When $q$ is not a root of unity, the Hecke algebra
+*Part (1).*  When $q$ is not a root of unity, the Iwahori--Hecke algebra
 $H_n(q)$ is isomorphic to $\mathbb{C}[S_n]$ as an abstract algebra
 (Jimbo's theorem), hence semisimple.  The $q$-Schur--Weyl
 decomposition of $V^{\otimes n}$ is the standard result for

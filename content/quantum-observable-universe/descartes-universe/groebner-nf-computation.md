@@ -1,4 +1,4 @@
-The Gröbner normal form $\mathcal{N}(Z, N)$ of a nucleus in
+The Gröbner--Shirshov normal form $\mathcal{N}(Z, N)$ of a nucleus in
 $H_A(q)$ is a formal sum over reduced braid words:
 
 $$
@@ -48,7 +48,7 @@ nuclei computed ($A \leq 12$):
 ## Quotient ideals: reducing $A!$ to $A$
 
 The raw NF has up to $|S_A| = A!$ terms.  Two quotient ideals
-reduce this to exactly $A$ terms — the **optimal Gröbner basis** —
+reduce this to exactly $A$ terms — the **optimal Gröbner--Shirshov basis** —
 for nuclei in the valley of stability ($N \geq Z - 1$):
 
 **$I_8$ (adjacency correlation).**  A reduced word $\sigma_i \sigma_{i+1}$
@@ -100,7 +100,7 @@ is **the same for all $(Z, N)$ at the same $A$**: verified
 computationally for $A \leq 8$ (e.g., ${}^8\mathrm{Be}(4,4)$ and
 ${}^8\mathrm{Li}(3,5)$ have identical histograms).
 
-The histogram depends only on the Hecke algebra $H_A(q)$, not on
+The histogram depends only on the Iwahori--Hecke algebra $H_A(q)$, not on
 the crossing coefficients.  It factors as a product of $q$-integers:
 
 | $A$ | Histogram polynomial $\sum_\ell h(\ell) \, t^\ell$ |
@@ -159,7 +159,7 @@ matrix.  The per-generator transfer matrix has only two eigenvalues
 ($q$ and $-q^{-1}$), and both the symmetric and alternating irreps
 share these eigenvalues.  The irrep separation requires the
 **multi-generator interaction** — how $\sigma_0$ and $\sigma_1$ act
-together — which is exactly the content of the full Gröbner NF.
+together — which is exactly the content of the full Gröbner--Shirshov NF.
 
 ## The $6 \times 6$ transfer matrix: no shortcut
 
@@ -193,8 +193,8 @@ sees the two eigenvalue sectors.
 
 **Conclusion**: the Pauli factor $F_{\mathrm{Pauli}}$ is
 irreducibly a **multi-generator phenomenon**.  No per-generator
-transfer matrix (of any size) can compute it.  The full Gröbner
-NF — the multi-generator Hecke algebra expansion — is required.
+transfer matrix (of any size) can compute it.  The full Gröbner--Shirshov
+NF — the multi-generator Iwahori--Hecke algebra expansion — is required.
 
 This has a physical interpretation: the Pauli exclusion principle
 acts between **pairs** of fermions (quarks in a Borromean triplet),

@@ -10,7 +10,7 @@ defined locally.  No prior reading is required.
 | $s$ | Skein amplitude | $s = q^{1/2} - q^{-1/2}$ |
 | $z$ | Markov parameter | $z(q) = \dfrac{1}{q^{1/2} + q^{-1/2}}$ |
 | $T$ | Hecke generator | Satisfies the Hecke relation $T^2 = (q - q^{-1})T + 1$ |
-| $\sigma_i$ | Braid generator | Generator of the braid group $B_n$; image in Hecke algebra is $T_i$ |
+| $\sigma_i$ | Braid generator | Generator of the braid group $B_n$; image in Iwahori--Hecke algebra is $T_i$ |
 | $J_K(q)$ | Jones polynomial | Knot invariant of knot $K$, polynomial in $q^{\pm 1}$ |
 | $\mathrm{M}_2(R)$ | $2 \times 2$ matrices | Over ring $R = \mathbb{Z}[q^{\pm 1/2}]$ |
 | $\mathbb{I}$ | Identity matrix | $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ |

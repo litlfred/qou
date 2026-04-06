@@ -114,7 +114,7 @@ $T_{2,3} \leftrightarrow T_{2,3}^{\sigma}$).
 - $\mathcal{C}$ alone: violated (electron $\neq$ positron in
   mass ordering)
 - $\mathcal{CP}$: the $q \leftrightarrow q^{-1}$ involution,
-  which IS a symmetry of the Hecke algebra
+  which IS a symmetry of the Iwahori--Hecke algebra
 
 This gives the standard result: $\mathcal{P}$ violated,
 $\mathcal{C}$ violated, $\mathcal{CP}$ conserved (to leading

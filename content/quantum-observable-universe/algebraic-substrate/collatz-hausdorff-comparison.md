@@ -56,7 +56,7 @@ $\sim 2.7$ $q$-bits.  The orbit is an information-bounded
 computation: it processes a finite, predictable amount
 of entropy before terminating.
 
-### The Hausdorff-Collatz comparison
+### The Hausdorff--Collatz comparison
 
 | | Hausdorff recurrence | Collatz dynamics |
 |---|---|---|

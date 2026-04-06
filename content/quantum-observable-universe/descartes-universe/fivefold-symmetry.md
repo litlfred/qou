@@ -144,8 +144,8 @@ This means:
    analogous to a Penrose tiling: local $5$-fold symmetry,
    no global period, but long-range order determined by the
    Bring surface monodromy.  The "inflation rules" of the
-   Penrose tiling correspond to the Hecke algebra relations
-   (the Gröbner basis) acting on the chart overlaps.
+   Penrose tiling correspond to the Iwahori--Hecke algebra relations
+   (the Gröbner--Shirshov basis) acting on the chart overlaps.
 
 ## Beyond shell dynamics
 

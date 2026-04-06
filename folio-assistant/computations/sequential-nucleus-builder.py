@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Build nuclei by sequential Hopf linking + Gröbner reduction.
+Build nuclei by sequential Hopf linking + Gröbner--Shirshov reduction.
 
 Instead of computing N(p,n) from a fixed ordering, BUILD it:
   1. Start with one nucleon (proton or neutron)
   2. Hopf-link the next nucleon → append crossings
-  3. Reduce via Gröbner basis → record Hecke energy (shell filling)
+  3. Reduce via Gröbner--Shirshov basis → record Hecke energy (shell filling)
   4. At shell closures (magic numbers 2, 8, 20, 28, 50, 82, 126):
      the Borromean closure operator creates an energy gap
   5. The SEQUENCE of energies gives the nuclear binding curve
@@ -124,7 +124,7 @@ def build_nucleus_sequential(p, n, verbose=True):
             # Append crossing (concatenate at end)
             elem = elem * cx
 
-        # Reduce via Gröbner basis
+        # Reduce via Gröbner--Shirshov basis
         elem_before_terms = elem.n_terms()
         elem, step_log = div.reduce(elem)
         summary = div.summarize_log(step_log)
@@ -295,7 +295,7 @@ if r_16O:
 witness = {
     "computation": "sequential-nucleus-builder",
     "timestamp": datetime.now(timezone.utc).isoformat(),
-    "description": "Build nuclei by sequential Hopf linking + Gröbner reduction",
+    "description": "Build nuclei by sequential Hopf linking + Gröbner--Shirshov reduction",
     "parameters": {"q": q, "E_cross": E_CROSS, "mu_0": mu_0},
     "results": [
         {k: v for k, v in r.items() if k != "build_log"}

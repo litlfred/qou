@@ -3,7 +3,7 @@ Every relation in the QU/QUO presentation
 the jet bundle $J^n(A) = A_n$ via the brane tower
 ([recursive brane tower](#def:recursive-brane-tower)).  The jet
 prolongation $L_{-1}\colon A_n \to A_{n+1}$ promotes each
-level-$n$ Hecke algebra $H^{(n)}(q)$ to a level-$(n{+}1)$ Hecke
+level-$n$ Iwahori--Hecke algebra $H^{(n)}(q)$ to a level-$(n{+}1)$ Hecke
 algebra $H^{(n+1)}(q)$, and the descent involution
 $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the
 level-$(n{+}1)$ relations into **descended** (inherited from
@@ -429,7 +429,7 @@ $$
 ### JC-9: Global gluing (direct limit)
 
 The direct limit $\mathcal{A}_\infty = \varinjlim\, H^{(n)}(q)$
-is the **infinite-level Hecke algebra**.  A braid word
+is the **infinite-level Iwahori--Hecke algebra**.  A braid word
 $w_\infty \in \mathcal{A}_\infty$ is a compatible sequence
 $(w^{(0)}, w^{(1)}, w^{(2)}, \ldots)$ with
 $\ell_n(w^{(n)}) = \hat{\tau}_n(w^{(n+1)})$ for all $n$.

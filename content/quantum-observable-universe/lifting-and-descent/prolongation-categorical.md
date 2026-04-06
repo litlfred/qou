@@ -1,5 +1,5 @@
 The proof above shows that jet prolongation is an *intrinsic*
-consequence of the Frobenius-Hopf structure in a rigid monoidal category:
+consequence of the Frobenius--Hopf structure in a rigid monoidal category:
 no additional geometric input beyond the categorical data
 $(\mathbf{C}, A, \tau)$ is required.  Concretely:
 

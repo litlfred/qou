@@ -6,7 +6,7 @@ with each jet order corresponding to a color degree.
 
 **Proposition.**
 Let $\mathcal{N}(Z, N)$ be the nuclear braid word in $H_A(q)$
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
+([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction)).
 At each generator $\sigma_i$ ($i = 0, \ldots, A-2$), nucleon
 $i$ has crossings with nucleons $j = i+1, \ldots, A-1$.  These
 $k_i = A - i - 1$ crossings all act on $\sigma_i$ and reduce
@@ -213,7 +213,7 @@ transfer matrix steps.
 
 ## The volume of the ideal
 
-The Gröbner ideal $I$ at generator $\sigma_i$ absorbs the
+The Gröbner--Shirshov ideal $I$ at generator $\sigma_i$ absorbs the
 difference between the unreduced weight and the reduced weight.
 The **ideal volume** at generator $i$ is:
 

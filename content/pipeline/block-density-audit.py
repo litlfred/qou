@@ -47,7 +47,7 @@ CHAPTER_KEYWORDS: dict[str, list[str]] = {
                             "periodic table", "torus knot T_{"],
     "algebraic-substrate": ["substrate", "Collatz", "algebraic", "classical limit",
                              "Hasse-Weil", "Birch", "rigid dualizing"],
-    "fluid-dynamics": ["fluid", "Navier-Stokes", "vortex", "turbulence",
+    "fluid-dynamics": ["fluid", "Navier--Stokes", "vortex", "turbulence",
                         "Reynolds", "helicity", "Madelung"],
     "information-theory": ["information", "entropy", "Planck", "speed of light",
                             "gravitational constant", "Bekenstein", "horizon",

@@ -16,7 +16,7 @@
 | [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-Weighted Yang--Mills--Levi functional | Ch 5 | `QOU.QYangMillsLevi` |
 | [def:no-quasi-zeros](#def:no-quasi-zeros) | Algebra without quasi-zeros | Ch 1 | `QOU.NoQuasiZeros` |
 | [def:antineutrino-knot](#def:antineutrino-knot) | Antineutrino as mirror unknot $T_{1,0}^{\sigma}$ | Ch 6 | `QOU.Descartes.Antineutrino` |
-| [def:beta-decay-skein](#def:beta-decay-skein) | Beta decay as a Skein crossing change on the Gröbner normal form | Ch 6 | `QOU.Descartes.BetaDecaySkein` |
+| [def:beta-decay-skein](#def:beta-decay-skein) | Beta decay as a Skein crossing change on the Gröbner--Shirshov normal form | Ch 6 | `QOU.Descartes.BetaDecaySkein` |
 | [def:borromean-baryon](#def:borromean-baryon) | Borromean baryon | Ch 4 | `QOU.Braiding.BorromeanBaryon` |
 | [def:braid-group](#def:braid-group) | Braid group on three strands | Ch 4 | `QOU.BraidGroup` |
 | [def:braid-twist-flip](#def:braid-twist-flip) | Braid involutions: twist and flip | Ch 4 | `QOU.BraidTwistFlip` |
@@ -103,7 +103,7 @@
 | [rem:glossary-reeb-gauge-group](#rem:glossary-reeb-gauge-group) | The Reeb gauge group $U_1(R)$ | Glossary | `QOU.ReebGaugeGroup` |
 | [def:threading-link](#def:threading-link) | Threading link $T(2,N)$ | Ch 7 | `QOU.Organic.ThreadingLink` |
 | [def:torsion-knot-flow](#def:torsion-knot-flow) | Torsion-driven knot flow | Ch 4 | `QOU.ParticleState` |
-| [def:transfer-matrix-operator](#def:transfer-matrix-operator) | Transfer matrix operator on hadrons and Gröbner ideals | Ch 6 | `QOU.Descartes.TransferMatrixOperator` |
+| [def:transfer-matrix-operator](#def:transfer-matrix-operator) | Transfer matrix operator on hadrons and Gröbner--Shirshov ideals | Ch 6 | `QOU.Descartes.TransferMatrixOperator` |
 | [def:up-quark](#def:up-quark) | Up quark | Ch 6 | `QOU.Descartes.UpQuark` |
 | [def:vertex-operator](#def:vertex-operator) | Vertex operator on the exceptional divisor | Ch 4 | `QOU.VertexOperator` |
 | [rem:glossary-weierstrass-projection](#rem:glossary-weierstrass-projection) | Weierstrass projection $\wp_q(z)$ | Glossary | `QOU.Descartes.weierstrassProjection` |
@@ -232,7 +232,7 @@
 | [prop:topological-mass-formula](#prop:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 4 | `QOU.Torsion.ArchimedeanMassFormula` |
 | [prop:torus-hopf-stability](#prop:torus-hopf-stability) | Torus knot composites on Bring's surface are stable hadrons | Ch 6 | `QOU.Descartes.torus_hopf_stability` |
 | [prop:transfer-matrix-level-independence](#prop:transfer-matrix-level-independence) | Transfer matrix level independence | Ch 4 | `QOU.transfer_matrix_level_independence` |
-| [prop:nuclear-groebner-reduction](#prop:nuclear-groebner-reduction) | Unique nuclear normal form via Gröbner reduction in $H_n(q)$ | Ch 6 | `QOU.Descartes.nuclear_groebner_reduction` |
+| [prop:nuclear-groebner-reduction](#prop:nuclear-groebner-reduction) | Unique nuclear normal form via Gröbner--Shirshov reduction in $H_n(q)$ | Ch 6 | `QOU.Descartes.nuclear_groebner_reduction` |
 | [prop:variational-equations](#prop:variational-equations) | Variational equations of the categorical action | Ch 2 | `QOU.variational_equations` |
 | [prop:vertex-is-exceptional-divisor](#prop:vertex-is-exceptional-divisor) | Vertex operators factor through the exceptional divisor | Ch 4 | `QOU.vertex_is_exceptional_divisor` |
 | [prop:weak-equiv-invariance](#prop:weak-equiv-invariance) | Weak equivalence invariance of physical states | Ch 3 | `QOU.Torsion.weak_equiv_invariance` |

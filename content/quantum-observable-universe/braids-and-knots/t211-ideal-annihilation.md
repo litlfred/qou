@@ -16,7 +16,7 @@ symmetry group.
 ## 1. Algebraic survival, physical death
 
 The torus knot $T_{2,11}$ satisfies every structural relation — it is a
-valid element of the Hecke algebra:
+valid element of the Iwahori--Hecke algebra:
 
 | Relation | Status | Detail |
 |----------|--------|--------|
@@ -34,7 +34,7 @@ But the cohomological constraints kill it:
 | Harmonic projection | **Killed** | $\Pi_{\mathrm{harm}} T_{(2,11)} = 0$ |
 | Hodge dual | **Killed** | $\star[T_{2,11}] = 0$ in $H^*(\Sigma_4)$ |
 
-The separation is clean: the Hecke algebra sees no genus
+The separation is clean: the Iwahori--Hecke algebra sees no genus
 bound; the Chebyshev degree
 ([genus-filtration ideal](#prop:genus-filtration-ideal)) is
 the polynomial certificate for membership in the spectral

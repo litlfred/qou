@@ -1,4 +1,4 @@
-The Gröbner normal form coefficients are dimensionless Laurent
+The Gröbner--Shirshov normal form coefficients are dimensionless Laurent
 polynomials in $q$.  To connect them to observed energies we need
 an **energy scale** $\mathbf{E}_0$ (in MeV) such that
 

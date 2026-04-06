@@ -4,7 +4,7 @@ link $\mathcal{N}(Z, N)$ produces observables at two levels.
 
 **What $q$ alone determines.**
 
-These are computed from the Hecke algebra $H_A(q)$ at the single
+These are computed from the Iwahori--Hecke algebra $H_A(q)$ at the single
 parameter the substrate $q$, the Descartes condition $\chi(A) = -6$,
 and the categorical definitions:
 
@@ -18,7 +18,7 @@ and the categorical definitions:
 | Hecke step count | $\Delta(\text{R2 steps}) = -1$ universally | Computed |
 | Writhe change | $\Delta w = A - 1$ | Computed |
 | Emission topology | $L_0^{-} = T_{2,3} \sqcup T_{1,0}^{\sigma}$ ($\beta^-$: $e^- + \nu_e^{\sigma}$) | Derived |
-| Shell blocking | $e_i p_n = 0$ in TL (Jones-Wenzl kills smoothing) | Algebraic |
+| Shell blocking | $e_i p_n = 0$ in TL (Jones--Wenzl kills smoothing) | Algebraic |
 | Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} \approx 938.272$ MeV | From $q$ (terminal resolution) |
 | Mass splitting | $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} \approx 1.290$ MeV | From $q$ |
 | Deuteron binding | $B_d \approx 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | From $q$ (SnapPy) |

@@ -13,9 +13,9 @@ plus the emitted lepton pair.
 **Setup.**
 A nucleus $\mathcal{N}(Z, N)$ is a satellite link of $A = Z + N$
 Borromean components ([stable nucleus](#def:stable-nucleus)).
-Its braid word in $B_{3A}$ reduces to a unique Gröbner normal form
-$\mathcal{N}(Z, N)$ in the Hecke algebra $H_{3A}(q)$
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
+Its braid word in $B_{3A}$ reduces to a unique Gröbner--Shirshov normal form
+$\mathcal{N}(Z, N)$ in the Iwahori--Hecke algebra $H_{3A}(q)$
+([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction)).
 
 Each nucleon is a Borromean link $\mathcal{B}_3(q_1, q_2, q_3)$
 with quark strands:
@@ -38,7 +38,7 @@ $$
   \beta_{T_{3,5}} \;=\; (\sigma_1 \sigma_2)^5
 $$
 
-This word has **$10$ crossings**.  In the Hecke algebra $H_3(q)$,
+This word has **$10$ crossings**.  In the Iwahori--Hecke algebra $H_3(q)$,
 the Hecke reduction of $(\sigma_1 \sigma_2)^5$ eliminates squares
 via $T^2 = (q - q^{-1})T + 1$, producing a polynomial in the
 reduced basis of $H_3(q)$.  The Markov trace of this polynomial
@@ -60,7 +60,7 @@ the Markov trace $\mathcal{W}(q)$ of all $10$ crossings.
 
 When the $T_{3,5}$ braid is inserted at the converting quark,
 it introduces $10$ crossings into the nuclear braid word.  These
-$10$ crossings are resolved by the Gröbner reduction into three
+$10$ crossings are resolved by the Gröbner--Shirshov reduction into three
 components:
 
 | Crossings | Destination | Structure |
@@ -78,7 +78,7 @@ approximation misses $6$ of these $7$ crossings.
 ## Definition ($\beta^-$ decay)
 
 *A $\beta^-$ transition inserts the $T_{3,5}$ braid at the
-converting $\mathfrak{d}$-quark crossing of the Gröbner normal form
+converting $\mathfrak{d}$-quark crossing of the Gröbner--Shirshov normal form
 $\mathcal{N}(Z, N)$, followed by re-reduction:*
 
 $$
@@ -92,7 +92,7 @@ $$
 $$
 
 The $10$ crossings of $T_{3,5}$ are partitioned by the
-Gröbner reduction: $3$ form the electron trefoil, $0$ form the
+Gröbner--Shirshov reduction: $3$ form the electron trefoil, $0$ form the
 neutrino unknot, and $7$ are absorbed as R2 moves into the
 daughter nuclear braid.
 
@@ -124,7 +124,7 @@ $$
 ## The $\mathbb{Z}/2$ symmetry
 
 $\beta^-$ and $\beta^+$ are related by the involution
-$q \mapsto q^{-1}$ on the Hecke algebra, which acts as:
+$q \mapsto q^{-1}$ on the Iwahori--Hecke algebra, which acts as:
 
 | $\beta^-$ | $\beta^+$ |
 |:---:|:---:|
@@ -151,7 +151,7 @@ are distinct: the asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba} = (q - q^{-1})(
 ## The lepton pair from $T_{3,5}$ decomposition
 
 The $T_{3,5}$ braid $(\sigma_1 \sigma_2)^5$ decomposes under
-Gröbner reduction into the lepton pair plus reduction residue.
+Gröbner--Shirshov reduction into the lepton pair plus reduction residue.
 The electron trefoil $T_{2,3} = (\sigma_1)^3$ accounts for $3$ of
 the $10$ crossings; the antineutrino unknot $K_{0_1}$ accounts
 for $0$.  The remaining $7$ crossings are the **weak vertex
@@ -193,7 +193,7 @@ changing $\binom{A-1}{1} \cdot 3$ inter-nucleon crossings
 
 **Re-reduction cost (10-crossing).**
 After the $T_{3,5}$ insertion at the converting quark, the braid
-word gains $10$ crossings.  The Gröbner reduction must:
+word gains $10$ crossings.  The Gröbner--Shirshov reduction must:
 
 1. Extract the $3$-crossing electron trefoil from the
    $T_{3,5}$ decomposition.
@@ -234,5 +234,5 @@ of the $10$ crossings in the weak vertex.  This explains:
 **Open computation:** The exact weak vertex form factor
 $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$
 and the crossing budget ($3 + 0 + 7$) must be
-verified by explicit Hecke algebra computation of the $T_{3,5}$
+verified by explicit Iwahori--Hecke algebra computation of the $T_{3,5}$
 braid word reduction.
