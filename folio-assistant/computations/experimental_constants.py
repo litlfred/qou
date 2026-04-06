@@ -29,6 +29,27 @@ M_P_MEV_ERR = 0.00000029
 M_N_MEV     = 939.56542052    # ± 0.00000054 MeV
 M_N_MEV_ERR = 0.00000054
 
+# ── Free neutron beta-decay Q-value (CODATA 2022) ────────────────
+# n → p + e⁻ + ν̄ₑ,  Q = m_n − m_p − m_e
+#
+# Derived from individual CODATA 2022 mass-energy equivalents above.
+# Cross-checked against the CODATA-listed neutron–proton mass difference:
+#   m_n − m_p = 1.2933321 ± 0.0000005 MeV/c²
+#   Source: https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm
+#   CODATA 2022, NIST Physics Laboratory, Gaithersburg MD 20899 USA
+#
+# Q_NEUTRON = m_n − m_p − m_e
+#           = 939.56542052 − 938.27208816 − 0.51099895000
+#           = 0.78233341 MeV
+# δQ = sqrt(δm_n² + δm_p² + δm_e²)
+#    = sqrt(5.4e-7² + 2.9e-7² + 1.5e-16²) ≈ 6.1e-7 MeV
+M_N_MINUS_P_MEV     = 1.2933321    # ± 0.0000005 MeV  (direct CODATA 2022 value)
+M_N_MINUS_P_MEV_ERR = 0.0000005    # https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm
+
+import math as _math
+Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
+Q_NEUTRON_MEV_ERR = _math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
+
 G_F_MEV     = 1.1663788e-11   # ± 0.0000006e-11 MeV⁻²
 G_F_MEV_ERR = 0.0000006e-11
 
