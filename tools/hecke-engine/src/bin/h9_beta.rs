@@ -8,17 +8,24 @@
 //! Nuclear braid for ³H:
 //!   β(³H) = B₃(0,1,2) · σ₂ · B₃(3,4,5) · σ₅ · B₃(6,7,8)
 //!
-//! where B₃(a,b) = (σ_a · σ_{a+1}⁻¹)³ is the Borromean confinement braid
-//! and σ⁻¹ = σ − (q−q⁻¹) in the Iwahori--Hecke algebra.
+//! where B₃ uses TYPE-DEPENDENT crossings:
+//!   σ⁻¹ = σ − (q−q⁻¹) in the Iwahori--Hecke algebra,
+//!   pp(uu) → σ, nn(dd) → σ⁻¹, pn(ud) → ½(σ+σ⁻¹).
 //!
 //! β-decay: convert neutron₁ → proton₂, so daughter ³He has:
 //!   Proton  (nucleon 0): strands 0,1,2 = [p,p,n]
 //!   Proton₂ (nucleon 1): strands 3,4,5 = [p,p,n]  ← was neutron
 //!   Neutron₂(nucleon 2): strands 6,7,8 = [p,n,n]
 //!
+//! Energy scale: E₀ calibration from free neutron decay.
+//!   Single nucleon (3 strands): NF(neutron) and NF(proton) via typed B₃.
+//!   E₀ = Q_neutron / |Δnet_free|, then Q = |Δnet| × E₀ for all predictions.
+//!   This is degree 1 in E₀ — one CODATA point suffices.
+//!
 //! The computation:
-//!   1. Build NF(β(³H)) and NF(β(³He)) in H₉(q)
-//!   2. Compare: Q = |NF(parent) − NF(daughter)| × energy_scale
+//!   0. Calibrate: E₀ from free neutron NF (3 strands, typed B₃)
+//!   1. Build NF(β(³H)) and NF(β(³He)) in H₉(q) (9 strands, typed B₃ + Hopf)
+//!   2. Compare: Q = |NF(parent) − NF(daughter)| × E₀
 //!   3. Also: insert T₃,₅ = (σ₃σ₄)⁵ weak vertex and reduce
 
 #![allow(dead_code)]
@@ -367,6 +374,8 @@ fn main() {
     let q: f64 = 1.10998;
     let engine = HeckeEngine::new(q);
 
+    let q_neutron_mev = 0.78233341_f64;  // Q(n→p e⁻ ν̄) CODATA 2022
+
     println!("╔══════════════════════════════════════════════════════════════╗");
     println!("║  H₉(q) BORROMEAN β-DECAY OF ³H AT QUARK LEVEL             ║");
     println!("╚══════════════════════════════════════════════════════════════╝");
@@ -375,6 +384,34 @@ fn main() {
     println!("  HA = q − q⁻¹ = {:.10}", engine.ha);
     println!("  z  = 1/(q^½ + q^−½) = {:.10}", engine.z);
     println!("  9 strands = 3 nucleons × 3 quarks");
+    println!();
+
+    // ── 0. Free neutron calibration: derive E₀ ─────────────────
+    //
+    // Single nucleon = 3 strands, Borromean braid B₃ only (no Hopf links).
+    // E₀ = Q_neutron / |Δnet|  where Δnet = net(neutron) − net(proton).
+    // This is degree 1 in E₀, so one CODATA point suffices.
+
+    println!("═══ FREE NEUTRON CALIBRATION ═══");
+    println!("  Single nucleon: 3 strands, B₃ = (T_σ₀ · T_σ₁)³");
+    println!("  Q(n → p e⁻ ν̄) = {:.5} MeV  (CODATA 2022)", q_neutron_mev);
+    println!();
+
+    let mut nf_free_n = HeckeElement::identity();
+    engine.borromean_braid_typed(&mut nf_free_n, 0, &[b'p', b'n', b'n']);
+    let (_, _, net_free_n) = engine.pauli_traces(&nf_free_n);
+
+    let mut nf_free_p = HeckeElement::identity();
+    engine.borromean_braid_typed(&mut nf_free_p, 0, &[b'p', b'p', b'n']);
+    let (_, _, net_free_p) = engine.pauli_traces(&nf_free_p);
+
+    let delta_net_free = net_free_n - net_free_p;
+    let e0 = q_neutron_mev / delta_net_free.abs();
+
+    println!("  NF(neutron): {} terms, net = {:.10}", nf_free_n.n_terms(), net_free_n);
+    println!("  NF(proton):  {} terms, net = {:.10}", nf_free_p.n_terms(), net_free_p);
+    println!("  Δnet(free)  = {:.10}", delta_net_free);
+    println!("  E₀ = Q_neutron / |Δnet| = {:.6} MeV", e0);
     println!();
 
     // ── 1. Build NF(parent ³H) ─────────────────────────────────
@@ -439,8 +476,6 @@ fn main() {
     let delta_net = net_p - net_d;
     let delta_tr_alt = tr_alt_p - tr_alt_d;
     let ln_q = q.ln();
-    let m_e_mev = 0.510999_f64;
-    let kappa_q = m_e_mev / 3.0 * ln_q;
 
     println!("  Δnet       = net(par) − net(dau) = {:.10}", delta_net);
     println!("  Δtr_alt    = tr_alt(par) − tr_alt(dau) = {:.10}", delta_tr_alt);
@@ -448,14 +483,14 @@ fn main() {
     println!("  |Δtr_alt|  = {:.10}", delta_tr_alt.abs());
     println!();
 
-    // Multiple energy scale estimates
-    println!("  Energy scales:");
-    println!("  κ_q = ln(q) × m_e/3          = {:.6} MeV", kappa_q);
-    let q_kappa = delta_net.abs() * kappa_q;
-    println!("  Q(κ_q)    = |Δnet| × κ_q     = {:.6} MeV", q_kappa);
-    let q_from_alt = delta_tr_alt.abs() * kappa_q;
-    println!("  Q(tr_alt) = |Δtr_alt| × κ_q  = {:.6} MeV", q_from_alt);
+    // E₀ calibrated Q-values
+    let q_e0 = delta_net.abs() * e0;
+    let q_alt_e0 = delta_tr_alt.abs() * e0;
+    println!("  E₀ (from free neutron)        = {:.6} MeV", e0);
+    println!("  Q(E₀)     = |Δnet| × E₀      = {:.6} MeV", q_e0);
+    println!("  Q(tr_alt) = |Δtr_alt| × E₀   = {:.6} MeV", q_alt_e0);
     println!("  Q_exp(³H) = 0.01861 MeV");
+    println!("  err(E₀)   = {:+.1}%", (q_e0 - 0.01861) / 0.01861 * 100.0);
     println!();
 
     // ── 4. Transfer-matrix comparison (flat L1 for reference) ──
@@ -492,7 +527,7 @@ fn main() {
     }
     println!();
     println!("  Σ log_q = {:.6}", log_q_sum);
-    println!("  Q(flat L1) = |Σ log_q| × κ_q = {:.6} MeV", log_q_sum.abs() * kappa_q);
+    println!("  Q(flat L1, E₀) = |Σ log_q| × E₀ = {:.6} MeV", log_q_sum.abs() * e0);
 
     // ── 5. Per-word comparison ──────────────────────────────────
 
@@ -578,12 +613,12 @@ fn main() {
     println!();
 
     let delta_t35 = net_pt - net_d;
-    let q_t35 = delta_t35.abs() * kappa_q;
+    let q_t35 = delta_t35.abs() * e0;
     println!(
         "  Δnet(T₃,₅) = net(par×T₃,₅) − net(dau) = {:.10}",
         delta_t35
     );
-    println!("  Q(T₃,₅) = |Δnet(T₃,₅)| × κ_q = {:.6} MeV", q_t35);
+    println!("  Q(T₃,₅) = |Δnet(T₃,₅)| × E₀ = {:.6} MeV", q_t35);
 
     // ── Summary ────────────────────────────────────────────────
 
@@ -593,9 +628,10 @@ fn main() {
     println!("╚══════════════════════════════════════════════════════════════╝");
     println!();
     println!("  Q_exp(³H → ³He) = 0.01861 MeV");
-    println!("  Q(Borromean net) = {:.6} MeV  (err {:+.1}%)", q_kappa, (q_kappa - 0.01861) / 0.01861 * 100.0);
-    println!("  Q(flat L1)       = {:.6} MeV  (for comparison)", log_q_sum.abs() * kappa_q);
-    println!("  Q(T₃,₅ net)     = {:.6} MeV", q_t35);
+    println!("  E₀ (free neutron) = {:.6} MeV", e0);
+    println!("  Q(Borromean, E₀) = {:.6} MeV  (err {:+.1}%)", q_e0, (q_e0 - 0.01861) / 0.01861 * 100.0);
+    println!("  Q(flat L1, E₀)   = {:.6} MeV  (for comparison)", log_q_sum.abs() * e0);
+    println!("  Q(T₃,₅, E₀)     = {:.6} MeV", q_t35);
     println!();
     println!(
         "  Borromean NF terms: parent={}, daughter={}",
@@ -628,10 +664,16 @@ fn main() {
     println!("    \"tr_alt\": {:.10}", tr_alt_d);
     println!("  }},");
     println!("  \"delta_net\": {:.10},", delta_net);
-    println!("  \"Q_borromean_net_MeV\": {:.10},", q_kappa);
-    println!("  \"Q_flat_L1_MeV\": {:.10},", log_q_sum.abs() * kappa_q);
-    println!("  \"Q_T35_net_MeV\": {:.10},", q_t35);
+    println!("  \"E0_MeV\": {:.10},", e0);
+    println!("  \"Q_borromean_E0_MeV\": {:.10},", q_e0);
+    println!("  \"Q_flat_L1_E0_MeV\": {:.10},", log_q_sum.abs() * e0);
+    println!("  \"Q_T35_E0_MeV\": {:.10},", q_t35);
     println!("  \"Q_exp_MeV\": 0.01861,");
-    println!("  \"kappa_q_MeV\": {:.10}", kappa_q);
+    println!("  \"free_neutron\": {{");
+    println!("    \"net_neutron\": {:.10},", net_free_n);
+    println!("    \"net_proton\": {:.10},", net_free_p);
+    println!("    \"delta_net\": {:.10},", delta_net_free);
+    println!("    \"Q_observed_MeV\": {:.10}", q_neutron_mev);
+    println!("  }}");
     println!("}}");
 }
