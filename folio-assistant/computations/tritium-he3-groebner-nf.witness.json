@@ -1,0 +1,553 @@
+{
+  "name": "tritium-he3-groebner-nf",
+  "description": "Gr\u00f6bner normal form computation for tritium beta decay \u00b3H \u2192 \u00b3He + e\u207b + \u03bd\u0304\u2091. All coefficients exact in \u2124[q^\u00bd, q^{-\u00bd}]. Nucleon-level computation in H\u2083(q). All words expressed in particle-knot notation.",
+  "timestamp": "2026-04-06T02:27:12.298664+00:00",
+  "particle_knot_dictionary": {
+    "1": {
+      "symbol": "\u03bd",
+      "knot": "K\u2080 (unknot)",
+      "crossings": 0,
+      "description": "neutrino sector"
+    },
+    "s0": {
+      "symbol": "H\u2070",
+      "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+      "crossings": 1,
+      "description": "Hopf crossing gen 0"
+    },
+    "s1": {
+      "symbol": "H\u00b9",
+      "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+      "crossings": 1,
+      "description": "Hopf crossing gen 1"
+    },
+    "s0.s1": {
+      "symbol": "L\u208a",
+      "knot": "L\u2082,\u2081 (Hopf link)",
+      "crossings": 2,
+      "description": "Hopf pair (positive)"
+    },
+    "s1.s0": {
+      "symbol": "L\u208b",
+      "knot": "L\u2082,\u2081' (Hopf rev)",
+      "crossings": 2,
+      "description": "Hopf pair (reversed)"
+    },
+    "s0.s1.s0": {
+      "symbol": "e\u207b",
+      "knot": "T\u2082,\u2083 (trefoil 3\u2081)",
+      "crossings": 3,
+      "description": "electron (Garside \u0394\u2083)"
+    }
+  },
+  "parameters": {
+    "q": "symbolic",
+    "q0": 1.1099785955541805,
+    "HA": "q - 1/q",
+    "E_cross": 0.10453016099493972,
+    "mu_0": 1.6295103892701275,
+    "kappa": 0.17033298333333333
+  },
+  "tritium_3H": {
+    "composition": "[p, n, n] = N(1,2)",
+    "strands": 3,
+    "n_terms": 4,
+    "reduction_steps": {
+      "hecke": 1,
+      "yb": 0,
+      "fc": 0,
+      "quotient": 0
+    },
+    "nf": {
+      "1": {
+        "symbolic": "sqrt(q)*(-q**5 + q**3 - q**2 + 1)/4",
+        "at_q0": -0.14470483253390137,
+        "particle": "\u03bd",
+        "knot": "K\u2080  (unknot)",
+        "crossings": 0,
+        "description": "neutrino sector"
+      },
+      "s0": {
+        "symbolic": "(2*q**(11/2) - 4*q**(9/2) + 4*q**(7/2) - 4*q**(5/2) + 2*q**(3/2) - q**7 + q**6 - q**5 + q**4 + q**3 - q**2 + q - 1)/(4*sqrt(q))",
+        "at_q0": -0.015187508956280682,
+        "particle": "H\u2070",
+        "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 0"
+      },
+      "s1": {
+        "symbolic": "q**2*(q**4 + q**3 + q + 1)/4",
+        "at_q0": 1.5386745542812141,
+        "particle": "H\u00b9",
+        "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 1"
+      },
+      "s0.s1": {
+        "symbolic": "-q**(11/2)/2 + q**(9/2)/2 - q**(7/2)/2 + q**(5/2)/2 + q**7/4 + q**5/4 - q**3/4 - q/4",
+        "at_q0": 0.16149172881612017,
+        "particle": "L\u208a",
+        "knot": "L\u2082,\u2081  (Hopf link)",
+        "crossings": 2,
+        "description": "Hopf pair (positive)"
+      }
+    },
+    "markov_trace": {
+      "symbolic": "(q**(11/2) + 3*q**(7/2) - q**(5/2) + 4*q**(3/2) + sqrt(q) + q**6 + q**4 - q**2 - 1)/(4*(q**2 + 2*q + 1))",
+      "at_q0": 0.6562664742061325,
+      "ln_abs": -0.42118836183919056
+    }
+  },
+  "helium3_3He": {
+    "composition": "[p, p, n] = N(2,1)",
+    "strands": 3,
+    "n_terms": 4,
+    "reduction_steps": {
+      "hecke": 1,
+      "yb": 0,
+      "fc": 0,
+      "quotient": 0
+    },
+    "nf": {
+      "1": {
+        "symbolic": "sqrt(q)*(-q**3 + q**2 - q + 1)/4",
+        "at_q0": -0.06465615617061737,
+        "particle": "\u03bd",
+        "knot": "K\u2080  (unknot)",
+        "crossings": 0,
+        "description": "neutrino sector"
+      },
+      "s0": {
+        "symbolic": "(q**(7/2) - 2*q**(5/2) + q**(3/2) - q**5 + q**4 + q - 1)/(4*sqrt(q))",
+        "at_q0": -0.010160658165190573,
+        "particle": "H\u2070",
+        "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 0"
+      },
+      "s1": {
+        "symbolic": "q**4/4 + q**2/2 + 1/4",
+        "at_q0": 1.2455145712572946,
+        "particle": "H\u00b9",
+        "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 1"
+      },
+      "s0.s1": {
+        "symbolic": "(q*(-q**(7/2) + q**(5/2) - q**(3/2) + sqrt(q) + q**5 + q**3 - q) - 1)/(4*q)",
+        "at_q0": 0.19573152113951925,
+        "particle": "L\u208a",
+        "knot": "L\u2082,\u2081  (Hopf link)",
+        "crossings": 2,
+        "description": "Hopf pair (positive)"
+      }
+    },
+    "markov_trace": {
+      "symbolic": "(q**(7/2) + 2*q**(3/2) + sqrt(q) + q**4 - 1)/(2*(q**2 + 2*q + 1))",
+      "at_q0": 0.6009811110130131,
+      "ln_abs": -0.5091917742037124
+    }
+  },
+  "T35_weak_vertex": {
+    "braid_word": "(\u03c3\u2080\u03c3\u2081)\u2075",
+    "crossings": 10,
+    "genus": 4,
+    "n_terms": 6,
+    "reduction_steps": {
+      "hecke": 38,
+      "yb": 18,
+      "fc": 0,
+      "quotient": 0
+    },
+    "nf": {
+      "1": {
+        "symbolic": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)",
+        "at_q0": 0.08932266997303717,
+        "particle": "\u03bd",
+        "knot": "K\u2080  (unknot)",
+        "crossings": 0,
+        "description": "neutrino sector"
+      },
+      "s0": {
+        "symbolic": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5",
+        "at_q0": 0.2368713841916692,
+        "particle": "H\u2070",
+        "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 0"
+      },
+      "s1": {
+        "symbolic": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5",
+        "at_q0": 0.2368713841916692,
+        "particle": "H\u00b9",
+        "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 1"
+      },
+      "s0.s1": {
+        "symbolic": "q**6 - 2*q**4 + 2*q**2 - 2 + 2/q**2 - 2/q**4 + q**(-6)",
+        "at_q0": 0.13884307782233618,
+        "particle": "L\u208a",
+        "knot": "L\u2082,\u2081  (Hopf link)",
+        "crossings": 2,
+        "description": "Hopf pair (positive)"
+      },
+      "s1.s0": {
+        "symbolic": "q**6 - 2*q**4 + 2*q**2 - 1 + 2/q**2 - 2/q**4 + q**(-6)",
+        "at_q0": 1.1388430778223366,
+        "particle": "L\u208b",
+        "knot": "L\u2082,\u2081' (Hopf rev)",
+        "crossings": 2,
+        "description": "Hopf pair (reversed)"
+      },
+      "s0.s1.s0": {
+        "symbolic": "q**7 - 2*q**5 + 2*q**3 - q + 1/q - 2/q**3 + 2/q**5 - 1/q**7",
+        "at_q0": 0.4749582847371516,
+        "particle": "e\u207b",
+        "knot": "T\u2082,\u2083  (trefoil 3\u2081)",
+        "crossings": 3,
+        "description": "electron (Garside \u0394\u2083)"
+      }
+    },
+    "markov_trace": {
+      "symbolic": "(q**(97/2) + 2*q**(95/2) + 2*q**(93/2) - 2*q**(91/2) - 6*q**(89/2) + 7*q**(85/2) - 7*q**(81/2) + 6*q**(77/2) + 2*q**(75/2) - 2*q**(73/2) - 2*q**(71/2) - q**(69/2) + 2*q**48 + 3*q**47 - q**46 - 3*q**45 - q**44 + q**42 + q**41 - q**39 - 3*q**38 - q**37 + 3*q**36 + 2*q**35)/(q**40*(q**3 + 3*q**2 + 3*q + 1))",
+      "at_q0": 0.7035538014797473
+    }
+  },
+  "electron": {
+    "braid_word": "\u03c3\u2080\u00b3 = T_{2,3}",
+    "crossings": 3,
+    "genus": 1,
+    "n_terms": 2,
+    "nf": {
+      "1": {
+        "symbolic": "q - 1/q",
+        "at_q0": 0.20906032198987945,
+        "particle": "\u03bd",
+        "knot": "K\u2080  (unknot)",
+        "crossings": 0,
+        "description": "neutrino sector"
+      },
+      "s0": {
+        "symbolic": "q**2 - 1 + q**(-2)",
+        "at_q0": 1.0437062182305121,
+        "particle": "H\u2070",
+        "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 0"
+      }
+    },
+    "markov_trace": {
+      "symbolic": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**5 - q**3 + q)/(q**(5/2)*(q + 1))",
+      "at_q0": 0.7302040595096819
+    }
+  },
+  "composition_3H_times_T35": {
+    "order": "NF(\u00b3H) \u00b7 NF(T_{3,5})",
+    "unreduced_terms": 17,
+    "reduced_terms": 6,
+    "reduction_steps": {
+      "hecke": 13,
+      "yb": 4,
+      "fc": 0,
+      "quotient": 0
+    },
+    "nf": {
+      "1": {
+        "symbolic": "(4*q**(65/2) - 6*q**(63/2) - q**(61/2) + 2*q**(59/2) - q**(57/2) + q**(55/2) + q**33*(-3*q**(23/2) + 3*q**(21/2) + 2*q**(19/2) - 3*q**(17/2) + 4*q**(15/2) - 2*q**(13/2) - 7*q**(11/2) + 6*q**(9/2) + 2*q**(7/2) - 2*q**(5/2) - 4*q**(3/2) + 5*sqrt(q) + q**13 + 3*q**10 - 7*q**9 - q**8 + 9*q**7 - 2*q**6 - 3*q**5 + 3*q**3 - 5*q + 3) - q**32 - q**31 + 4*q**30 - 2*q**29 - q**28)/(4*q**33)",
+        "at_q0": 0.5318588007120608,
+        "particle": "\u03bd",
+        "knot": "K\u2080  (unknot)",
+        "crossings": 0,
+        "description": "neutrino sector"
+      },
+      "s0": {
+        "symbolic": "(q**(119/2) + 3*q**(113/2) - 7*q**(111/2) - q**(109/2) + 9*q**(107/2) - 2*q**(105/2) - 3*q**(103/2) + q**(101/2) + 2*q**(99/2) + q**(97/2) - 3*q**(95/2) + 5*q**(91/2) - 3*q**(89/2) + q**(87/2) + q**(85/2) - 4*q**(83/2) + 2*q**(81/2) + q**(79/2) - 3*q**58 + 3*q**57 + 2*q**56 - 3*q**55 + 4*q**54 - 2*q**53 - 7*q**52 + 6*q**51 + 4*q**50 - 4*q**49 - 2*q**48 + 2*q**47 + 4*q**46 - 5*q**45 - 4*q**44 + 6*q**43 + q**42 - 2*q**41 + q**40 - q**39)/(4*q**(91/2))",
+        "at_q0": 1.7926255852127984,
+        "particle": "H\u2070",
+        "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 0"
+      },
+      "s1": {
+        "symbolic": "(q**(119/2) + 3*q**(113/2) - 7*q**(111/2) - q**(109/2) + 9*q**(107/2) - 2*q**(105/2) - 4*q**(103/2) + 2*q**(99/2) - 4*q**(95/2) + 5*q**(91/2) - 3*q**(89/2) + q**(87/2) + q**(85/2) - 4*q**(83/2) + 2*q**(81/2) + q**(79/2) - 3*q**58 + 3*q**57 + 2*q**56 - 3*q**55 + 4*q**54 - 2*q**53 - 7*q**52 + 6*q**51 + 4*q**50 - 4*q**49 - 2*q**48 + 2*q**47 + 4*q**46 - 5*q**45 - 4*q**44 + 6*q**43 + q**42 - 2*q**41 + q**40 - q**39)/(4*q**(91/2))",
+        "at_q0": 0.2539510309315851,
+        "particle": "H\u00b9",
+        "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 1"
+      },
+      "s0.s1": {
+        "symbolic": "(-3*q**(147/2) + 3*q**(145/2) + 2*q**(143/2) - 3*q**(141/2) + 4*q**(139/2) - 2*q**(137/2) - 7*q**(135/2) + 6*q**(133/2) + 6*q**(131/2) - 6*q**(129/2) - 2*q**(127/2) + 2*q**(125/2) + 2*q**(123/2) - 2*q**(121/2) - 4*q**(119/2) + 5*q**(117/2) + 4*q**(115/2) - 6*q**(113/2) - q**(111/2) + 2*q**(109/2) - q**(107/2) + q**(105/2) + q**75 + 3*q**72 - 7*q**71 - q**70 + 9*q**69 - 2*q**68 - 4*q**67 + q**66 + q**65 - q**63 - q**62 + 4*q**61 - 5*q**59 + 3*q**58 - q**57 - q**56 + 4*q**55 - 2*q**54 - q**53)/(4*q**60)",
+        "at_q0": 0.7451339539478239,
+        "particle": "L\u208a",
+        "knot": "L\u2082,\u2081  (Hopf link)",
+        "crossings": 2,
+        "description": "Hopf pair (positive)"
+      },
+      "s1.s0": {
+        "symbolic": "(-5*q**(119/2) + 6*q**(117/2) + 4*q**(115/2) - 6*q**(113/2) - q**(111/2) + 2*q**(109/2) - q**(107/2) + q**(105/2) + q**60*(-3*q**(27/2) + 3*q**(25/2) + 2*q**(23/2) - 3*q**(21/2) + 4*q**(19/2) - 2*q**(17/2) - 8*q**(15/2) + 7*q**(13/2) + 5*q**(11/2) - 6*q**(9/2) + q**(7/2) - q**(5/2) + 2*q**(3/2) - sqrt(q) + q**15 + 3*q**12 - 7*q**11 - q**10 + 9*q**9 - 2*q**8 - 4*q**7 + 3*q**6 - 3*q**5 + 2*q**4 - q**3 - 3*q**2 + 8*q - 2) - 5*q**59 + 3*q**58 - q**57 - q**56 + 4*q**55 - 2*q**54 - q**53)/(4*q**60)",
+        "at_q0": 0.5972540159013002,
+        "particle": "L\u208b",
+        "knot": "L\u2082,\u2081' (Hopf rev)",
+        "crossings": 2,
+        "description": "Hopf pair (reversed)"
+      },
+      "s0.s1.s0": {
+        "symbolic": "(q**(153/2)*(-3*q**(29/2) + 3*q**(27/2) + 2*q**(25/2) - 3*q**(23/2) + 4*q**(21/2) - 2*q**(19/2) - 8*q**(17/2) + 7*q**(15/2) + 5*q**(13/2) - 6*q**(11/2) - q**(9/2) + 2*q**(7/2) + q**(3/2) - 2*sqrt(q) + q**16 + 3*q**13 - 7*q**12 - q**11 + 9*q**10 - 2*q**9 - 4*q**8 + 3*q**7 - 3*q**6 + q**5 - q**3 + q**2 + 3*q - 8) + 2*q**(151/2) + 5*q**(149/2) - 3*q**(147/2) + q**(145/2) + q**(143/2) - 4*q**(141/2) + 2*q**(139/2) + q**(137/2) + q**76 + 5*q**75 - 6*q**74 - 4*q**73 + 6*q**72 + q**71 - 2*q**70 + q**69 - q**68)/(4*q**(153/2))",
+        "at_q0": 0.36362563884938304,
+        "particle": "e\u207b",
+        "knot": "T\u2082,\u2083  (trefoil 3\u2081)",
+        "crossings": 3,
+        "description": "electron (Garside \u0394\u2083)"
+      }
+    },
+    "markov_trace": {
+      "at_q0": 1.9337094561932116,
+      "ln_abs": 0.6594401562694189
+    }
+  },
+  "composition_T35_times_3H": {
+    "order": "NF(T_{3,5}) \u00b7 NF(\u00b3H)",
+    "unreduced_terms": 16,
+    "reduced_terms": 6,
+    "reduction_steps": {
+      "hecke": 12,
+      "yb": 4,
+      "fc": 0,
+      "quotient": 0
+    },
+    "nf": {
+      "1": {
+        "symbolic": "(4*q**(65/2) - 6*q**(63/2) - q**(61/2) + 2*q**(59/2) - q**(57/2) + q**(55/2) + q**33*(-3*q**(23/2) + 3*q**(21/2) + 2*q**(19/2) - 3*q**(17/2) + 4*q**(15/2) - 2*q**(13/2) - 7*q**(11/2) + 6*q**(9/2) + 2*q**(7/2) - 2*q**(5/2) - 4*q**(3/2) + 5*sqrt(q) + q**13 + 3*q**10 - 7*q**9 - q**8 + 9*q**7 - 2*q**6 - 3*q**5 + 3*q**3 - 5*q + 3) - q**32 - q**31 + 4*q**30 - 2*q**29 - q**28)/(4*q**33)",
+        "at_q0": 0.5318588007120608,
+        "particle": "\u03bd",
+        "knot": "K\u2080  (unknot)",
+        "crossings": 0,
+        "description": "neutrino sector"
+      },
+      "s0": {
+        "symbolic": "(q**(119/2) + 3*q**(113/2) - 7*q**(111/2) - q**(109/2) + 9*q**(107/2) - 2*q**(105/2) - 4*q**(103/2) + 2*q**(99/2) - 4*q**(95/2) + 5*q**(91/2) - 3*q**(89/2) + q**(87/2) + q**(85/2) - 4*q**(83/2) + 2*q**(81/2) + q**(79/2) - 3*q**58 + 3*q**57 + 2*q**56 - 3*q**55 + 4*q**54 - 2*q**53 - 7*q**52 + 6*q**51 + 4*q**50 - 4*q**49 - 2*q**48 + 2*q**47 + 4*q**46 - 5*q**45 - 4*q**44 + 6*q**43 + q**42 - 2*q**41 + q**40 - q**39)/(4*q**(91/2))",
+        "at_q0": 0.2539510309315851,
+        "particle": "H\u2070",
+        "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 0"
+      },
+      "s1": {
+        "symbolic": "(q**(91/2)*(-3*q**(25/2) + 3*q**(23/2) + 2*q**(21/2) - 3*q**(19/2) + 4*q**(17/2) - 2*q**(15/2) - 8*q**(13/2) + 7*q**(11/2) + 3*q**(9/2) - 3*q**(7/2) - q**(5/2) + q**(3/2) + 5*sqrt(q) + q**14 + 3*q**11 - 7*q**10 - q**9 + 9*q**8 - 2*q**7 - 4*q**6 + 2*q**5 - 2*q**4 + 4*q**3 - 8*q**2 + 2*q + 5) - 3*q**(89/2) + q**(87/2) + q**(85/2) - 4*q**(83/2) + 2*q**(81/2) + q**(79/2) - 6*q**45 - 4*q**44 + 6*q**43 + q**42 - 2*q**41 + q**40 - q**39)/(4*q**(91/2))",
+        "at_q0": 0.23876352197530526,
+        "particle": "H\u00b9",
+        "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+        "crossings": 1,
+        "description": "Hopf crossing gen 1"
+      },
+      "s0.s1": {
+        "symbolic": "(-5*q**(119/2) + 6*q**(117/2) + 4*q**(115/2) - 6*q**(113/2) - q**(111/2) + 2*q**(109/2) - q**(107/2) + q**(105/2) + q**60*(-3*q**(27/2) + 3*q**(25/2) + 2*q**(23/2) - 3*q**(21/2) + 4*q**(19/2) - 2*q**(17/2) - 8*q**(15/2) + 7*q**(13/2) + 6*q**(11/2) - 6*q**(9/2) + 2*q**(3/2) - 2*sqrt(q) + q**15 + 3*q**12 - 7*q**11 - q**10 + 9*q**9 - 2*q**8 - 5*q**7 + 2*q**6 - 2*q**5 + 2*q**4 - 2*q**3 - 2*q**2 + 9*q - 2) - 5*q**59 + 3*q**58 - q**57 - q**56 + 4*q**55 - 2*q**54 - q**53)/(4*q**60)",
+        "at_q0": 0.42028305067953386,
+        "particle": "L\u208a",
+        "knot": "L\u2082,\u2081  (Hopf link)",
+        "crossings": 2,
+        "description": "Hopf pair (positive)"
+      },
+      "s1.s0": {
+        "symbolic": "(-5*q**(119/2) + 6*q**(117/2) + 4*q**(115/2) - 6*q**(113/2) - q**(111/2) + 2*q**(109/2) - q**(107/2) + q**(105/2) + q**60*(-3*q**(27/2) + 3*q**(25/2) + 2*q**(23/2) - 3*q**(21/2) + 4*q**(19/2) - 2*q**(17/2) - 8*q**(15/2) + 7*q**(13/2) + 5*q**(11/2) - 6*q**(9/2) + q**(7/2) - q**(5/2) + 2*q**(3/2) - sqrt(q) + q**15 + 3*q**12 - 7*q**11 - q**10 + 9*q**9 - 2*q**8 - 4*q**7 + 3*q**6 - 3*q**5 + 2*q**4 - q**3 - 3*q**2 + 8*q - 2) - 5*q**59 + 3*q**58 - q**57 - q**56 + 4*q**55 - 2*q**54 - q**53)/(4*q**60)",
+        "at_q0": 0.5972540159013002,
+        "particle": "L\u208b",
+        "knot": "L\u2082,\u2081' (Hopf rev)",
+        "crossings": 2,
+        "description": "Hopf pair (reversed)"
+      },
+      "s0.s1.s0": {
+        "symbolic": "(q**(153/2)*(-3*q**(29/2) + 3*q**(27/2) + 2*q**(25/2) - 3*q**(23/2) + 4*q**(21/2) - 2*q**(19/2) - 8*q**(17/2) + 7*q**(15/2) + 6*q**(13/2) - 7*q**(11/2) + q**(7/2) - q**(5/2) + 2*q**(3/2) - 3*sqrt(q) + q**16 + 3*q**13 - 7*q**12 - q**11 + 9*q**10 - 2*q**9 - 4*q**8 + 3*q**7 - 2*q**6 + 4*q**4 - 4*q**3 + 6*q**2 + q - 8) + 2*q**(151/2) + 5*q**(149/2) - 3*q**(147/2) + q**(145/2) + q**(143/2) - 4*q**(141/2) + 2*q**(139/2) + q**(137/2) + 2*q**76 + 5*q**75 - 6*q**74 - 4*q**73 + 6*q**72 + q**71 - 2*q**70 + q**69 - q**68)/(4*q**(153/2))",
+        "at_q0": 1.9174877020868752,
+        "particle": "e\u207b",
+        "knot": "T\u2082,\u2083  (trefoil 3\u2081)",
+        "crossings": 3,
+        "description": "electron (Garside \u0394\u2083)"
+      }
+    },
+    "markov_trace": {
+      "at_q0": 1.2702841997041576,
+      "ln_abs": 0.23924065473026065
+    }
+  },
+  "crossing_budget": {
+    "T35_total": 10,
+    "electron_T23": 3,
+    "neutrino_unknot": 0,
+    "restructuring_R2": 7
+  },
+  "energy_budget": {
+    "E_cross": 0.10453016099493972,
+    "s_squared": 0.0108968691184817,
+    "trace_ratio_He3_over_3H": 0.9157577518187309,
+    "ln_trace_ratio": -0.08800341236452205,
+    "Q_skein_MeV": 0.014989883771562561,
+    "Q_exp_MeV": 0.01861,
+    "Q_exp_err_MeV": 1e-05,
+    "error_percent": -19.452532124865343
+  },
+  "free_neutron_decay": {
+    "neutron": {
+      "composition": "[u, d, d] (quark level)",
+      "strands": 3,
+      "n_terms": 4,
+      "nf": {
+        "1": {
+          "symbolic": "sqrt(q)*(-q**5 + q**3 - q**2 + 1)/4",
+          "at_q0": -0.14470483253390137,
+          "particle": "\u03bd",
+          "knot": "K\u2080  (unknot)",
+          "crossings": 0,
+          "description": "neutrino sector"
+        },
+        "s0": {
+          "symbolic": "(2*q**(11/2) - 4*q**(9/2) + 4*q**(7/2) - 4*q**(5/2) + 2*q**(3/2) - q**7 + q**6 - q**5 + q**4 + q**3 - q**2 + q - 1)/(4*sqrt(q))",
+          "at_q0": -0.015187508956280682,
+          "particle": "H\u2070",
+          "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+          "crossings": 1,
+          "description": "Hopf crossing gen 0"
+        },
+        "s1": {
+          "symbolic": "q**2*(q**4 + q**3 + q + 1)/4",
+          "at_q0": 1.5386745542812141,
+          "particle": "H\u00b9",
+          "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+          "crossings": 1,
+          "description": "Hopf crossing gen 1"
+        },
+        "s0.s1": {
+          "symbolic": "-q**(11/2)/2 + q**(9/2)/2 - q**(7/2)/2 + q**(5/2)/2 + q**7/4 + q**5/4 - q**3/4 - q/4",
+          "at_q0": 0.16149172881612017,
+          "particle": "L\u208a",
+          "knot": "L\u2082,\u2081  (Hopf link)",
+          "crossings": 2,
+          "description": "Hopf pair (positive)"
+        }
+      },
+      "markov_trace": {
+        "symbolic": "(q**(11/2) + 3*q**(7/2) - q**(5/2) + 4*q**(3/2) + sqrt(q) + q**6 + q**4 - q**2 - 1)/(4*(q**2 + 2*q + 1))",
+        "at_q0": 0.6562664742061325,
+        "ln_abs": -0.42118836183919056
+      }
+    },
+    "proton": {
+      "composition": "[u, u, d] (quark level)",
+      "strands": 3,
+      "n_terms": 4,
+      "nf": {
+        "1": {
+          "symbolic": "sqrt(q)*(-q**3 + q**2 - q + 1)/4",
+          "at_q0": -0.06465615617061737,
+          "particle": "\u03bd",
+          "knot": "K\u2080  (unknot)",
+          "crossings": 0,
+          "description": "neutrino sector"
+        },
+        "s0": {
+          "symbolic": "(q**(7/2) - 2*q**(5/2) + q**(3/2) - q**5 + q**4 + q - 1)/(4*sqrt(q))",
+          "at_q0": -0.010160658165190573,
+          "particle": "H\u2070",
+          "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+          "crossings": 1,
+          "description": "Hopf crossing gen 0"
+        },
+        "s1": {
+          "symbolic": "q**4/4 + q**2/2 + 1/4",
+          "at_q0": 1.2455145712572946,
+          "particle": "H\u00b9",
+          "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+          "crossings": 1,
+          "description": "Hopf crossing gen 1"
+        },
+        "s0.s1": {
+          "symbolic": "(q*(-q**(7/2) + q**(5/2) - q**(3/2) + sqrt(q) + q**5 + q**3 - q) - 1)/(4*q)",
+          "at_q0": 0.19573152113951925,
+          "particle": "L\u208a",
+          "knot": "L\u2082,\u2081  (Hopf link)",
+          "crossings": 2,
+          "description": "Hopf pair (positive)"
+        }
+      },
+      "markov_trace": {
+        "symbolic": "(q**(7/2) + 2*q**(3/2) + sqrt(q) + q**4 - 1)/(2*(q**2 + 2*q + 1))",
+        "at_q0": 0.6009811110130131,
+        "ln_abs": -0.5091917742037124
+      }
+    },
+    "composition_n_times_T35": {
+      "order": "NF(n) * NF(T_{3,5})",
+      "unreduced_terms": 17,
+      "reduced_terms": 6,
+      "reduction_steps": {
+        "hecke": 13,
+        "yb": 4,
+        "fc": 0,
+        "quotient": 0
+      },
+      "nf": {
+        "1": {
+          "symbolic": "(4*q**(65/2) - 6*q**(63/2) - q**(61/2) + 2*q**(59/2) - q**(57/2) + q**(55/2) + q**33*(-3*q**(23/2) + 3*q**(21/2) + 2*q**(19/2) - 3*q**(17/2) + 4*q**(15/2) - 2*q**(13/2) - 7*q**(11/2) + 6*q**(9/2) + 2*q**(7/2) - 2*q**(5/2) - 4*q**(3/2) + 5*sqrt(q) + q**13 + 3*q**10 - 7*q**9 - q**8 + 9*q**7 - 2*q**6 - 3*q**5 + 3*q**3 - 5*q + 3) - q**32 - q**31 + 4*q**30 - 2*q**29 - q**28)/(4*q**33)",
+          "at_q0": 0.5318588007120608,
+          "particle": "\u03bd",
+          "knot": "K\u2080  (unknot)",
+          "crossings": 0,
+          "description": "neutrino sector"
+        },
+        "s0": {
+          "symbolic": "(q**(119/2) + 3*q**(113/2) - 7*q**(111/2) - q**(109/2) + 9*q**(107/2) - 2*q**(105/2) - 3*q**(103/2) + q**(101/2) + 2*q**(99/2) + q**(97/2) - 3*q**(95/2) + 5*q**(91/2) - 3*q**(89/2) + q**(87/2) + q**(85/2) - 4*q**(83/2) + 2*q**(81/2) + q**(79/2) - 3*q**58 + 3*q**57 + 2*q**56 - 3*q**55 + 4*q**54 - 2*q**53 - 7*q**52 + 6*q**51 + 4*q**50 - 4*q**49 - 2*q**48 + 2*q**47 + 4*q**46 - 5*q**45 - 4*q**44 + 6*q**43 + q**42 - 2*q**41 + q**40 - q**39)/(4*q**(91/2))",
+          "at_q0": 1.7926255852127984,
+          "particle": "H\u2070",
+          "knot": "T\u2082,\u2081\u207d\u2070\u207e (Hopf gen)",
+          "crossings": 1,
+          "description": "Hopf crossing gen 0"
+        },
+        "s1": {
+          "symbolic": "(q**(119/2) + 3*q**(113/2) - 7*q**(111/2) - q**(109/2) + 9*q**(107/2) - 2*q**(105/2) - 4*q**(103/2) + 2*q**(99/2) - 4*q**(95/2) + 5*q**(91/2) - 3*q**(89/2) + q**(87/2) + q**(85/2) - 4*q**(83/2) + 2*q**(81/2) + q**(79/2) - 3*q**58 + 3*q**57 + 2*q**56 - 3*q**55 + 4*q**54 - 2*q**53 - 7*q**52 + 6*q**51 + 4*q**50 - 4*q**49 - 2*q**48 + 2*q**47 + 4*q**46 - 5*q**45 - 4*q**44 + 6*q**43 + q**42 - 2*q**41 + q**40 - q**39)/(4*q**(91/2))",
+          "at_q0": 0.2539510309315851,
+          "particle": "H\u00b9",
+          "knot": "T\u2082,\u2081\u207d\u00b9\u207e (Hopf gen)",
+          "crossings": 1,
+          "description": "Hopf crossing gen 1"
+        },
+        "s0.s1": {
+          "symbolic": "(-3*q**(147/2) + 3*q**(145/2) + 2*q**(143/2) - 3*q**(141/2) + 4*q**(139/2) - 2*q**(137/2) - 7*q**(135/2) + 6*q**(133/2) + 6*q**(131/2) - 6*q**(129/2) - 2*q**(127/2) + 2*q**(125/2) + 2*q**(123/2) - 2*q**(121/2) - 4*q**(119/2) + 5*q**(117/2) + 4*q**(115/2) - 6*q**(113/2) - q**(111/2) + 2*q**(109/2) - q**(107/2) + q**(105/2) + q**75 + 3*q**72 - 7*q**71 - q**70 + 9*q**69 - 2*q**68 - 4*q**67 + q**66 + q**65 - q**63 - q**62 + 4*q**61 - 5*q**59 + 3*q**58 - q**57 - q**56 + 4*q**55 - 2*q**54 - q**53)/(4*q**60)",
+          "at_q0": 0.7451339539478239,
+          "particle": "L\u208a",
+          "knot": "L\u2082,\u2081  (Hopf link)",
+          "crossings": 2,
+          "description": "Hopf pair (positive)"
+        },
+        "s1.s0": {
+          "symbolic": "(-5*q**(119/2) + 6*q**(117/2) + 4*q**(115/2) - 6*q**(113/2) - q**(111/2) + 2*q**(109/2) - q**(107/2) + q**(105/2) + q**60*(-3*q**(27/2) + 3*q**(25/2) + 2*q**(23/2) - 3*q**(21/2) + 4*q**(19/2) - 2*q**(17/2) - 8*q**(15/2) + 7*q**(13/2) + 5*q**(11/2) - 6*q**(9/2) + q**(7/2) - q**(5/2) + 2*q**(3/2) - sqrt(q) + q**15 + 3*q**12 - 7*q**11 - q**10 + 9*q**9 - 2*q**8 - 4*q**7 + 3*q**6 - 3*q**5 + 2*q**4 - q**3 - 3*q**2 + 8*q - 2) - 5*q**59 + 3*q**58 - q**57 - q**56 + 4*q**55 - 2*q**54 - q**53)/(4*q**60)",
+          "at_q0": 0.5972540159013002,
+          "particle": "L\u208b",
+          "knot": "L\u2082,\u2081' (Hopf rev)",
+          "crossings": 2,
+          "description": "Hopf pair (reversed)"
+        },
+        "s0.s1.s0": {
+          "symbolic": "(q**(153/2)*(-3*q**(29/2) + 3*q**(27/2) + 2*q**(25/2) - 3*q**(23/2) + 4*q**(21/2) - 2*q**(19/2) - 8*q**(17/2) + 7*q**(15/2) + 5*q**(13/2) - 6*q**(11/2) - q**(9/2) + 2*q**(7/2) + q**(3/2) - 2*sqrt(q) + q**16 + 3*q**13 - 7*q**12 - q**11 + 9*q**10 - 2*q**9 - 4*q**8 + 3*q**7 - 3*q**6 + q**5 - q**3 + q**2 + 3*q - 8) + 2*q**(151/2) + 5*q**(149/2) - 3*q**(147/2) + q**(145/2) + q**(143/2) - 4*q**(141/2) + 2*q**(139/2) + q**(137/2) + q**76 + 5*q**75 - 6*q**74 - 4*q**73 + 6*q**72 + q**71 - 2*q**70 + q**69 - q**68)/(4*q**(153/2))",
+          "at_q0": 0.36362563884938304,
+          "particle": "e\u207b",
+          "knot": "T\u2082,\u2083  (trefoil 3\u2081)",
+          "crossings": 3,
+          "description": "electron (Garside \u0394\u2083)"
+        }
+      },
+      "markov_trace": {
+        "at_q0": 1.9337094561932116,
+        "ln_abs": 0.6594401562694189
+      }
+    },
+    "Q_value": {
+      "ln_trace_ratio": -0.08800341236452186,
+      "Q_skein_MeV": 0.014989883771562561,
+      "Q_exp_MeV": 0.78233,
+      "error_percent": -98.08394363356096
+    },
+    "note": "NF(neutron) = NF(tritium) and NF(proton) = NF(He-3) because both use [u,d,d]/[u,u,d] in H_3(q) with 3 strands."
+  }
+}

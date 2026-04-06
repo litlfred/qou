@@ -37,9 +37,9 @@ Crossing budget of T_{3,5} (10 crossings total):
   0 crossings → neutrino (unknot K₀)
   7 crossings → nuclear braid restructuring (Reidemeister II moves)
 
-Key braids:
-  B₃ = (σ₁σ₂⁻¹)³ = Borromean braid of the nucleon
-  T_{3,5} = (σ₁σ₂)⁵ = weak vertex braid (10 crossings, genus 4)
+Key braids (using 0-indexed generators as in the code):
+  B₃ = (σ₀σ₁⁻¹)³ = Borromean braid of the nucleon
+  T_{3,5} = (σ₀σ₁)⁵ = weak vertex braid (10 crossings, genus 4)
 
 Usage:
     python3 tritium-he3-groebner-nf.py
@@ -147,6 +147,70 @@ def eval_element(elem, q_val):
     return sorted(result, key=lambda x: (len(x[0]), x[0]))
 
 
+def factor_coefficient(c):
+    """Factor a symbolic Hecke coefficient into readable Laurent form.
+
+    Tries to express c as a product of simple factors in q.
+    Returns a compact string representation.
+    """
+    c = sp.simplify(c)
+    # Try to factor
+    c_factored = sp.factor(c)
+    s = str(c_factored)
+    # Abbreviate sqrt(q) → q^½ for readability
+    s = s.replace("sqrt(q)", "q^½")
+    return s
+
+
+def show_nf_shape(name, elem, indent=4):
+    """Display the 'shape' of a normal form — compact visual representation.
+
+    Shows:
+      1. Occupancy: which particle sectors have nonzero coefficient
+      2. Sign pattern at q₀
+      3. Factored symbolic coefficient for each term
+      4. Degree profile (min/max power of q in each coefficient)
+    """
+    pad = " " * indent
+    print(f"{pad}┌─────────────────────────────────────────────────")
+    print(f"{pad}│ SHAPE OF {name}")
+    print(f"{pad}├─────────────────────────────────────────────────")
+
+    # All possible words in H₃(q)
+    all_words = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
+    occupied = []
+    signs = []
+
+    for w in all_words:
+        pn = particle_name(w)
+        c = elem.terms.get(w, sp.Integer(0))
+        c_simplified = sp.simplify(c)
+        v = float(c_simplified.subs(q, q0)) if c_simplified != 0 else 0.0
+
+        if abs(v) < 1e-15:
+            # Not occupied
+            print(f"{pad}│  {pn:<4}  ·····  (empty)")
+        else:
+            sign = "+" if v > 0 else "−"
+            signs.append(sign)
+            occupied.append(pn)
+            # Factor the coefficient
+            c_str = factor_coefficient(c_simplified)
+            # Truncate long expressions
+            if len(c_str) > 60:
+                c_str = c_str[:57] + "..."
+            print(f"{pad}│  {pn:<4}  {sign}{abs(v):.6f}  {c_str}")
+
+    print(f"{pad}├─────────────────────────────────────────────────")
+    occ_str = " ".join(occupied)
+    sign_str = " ".join(signs)
+    print(f"{pad}│  Occupied sectors: [{occ_str}]")
+    print(f"{pad}│  Sign pattern:     [{sign_str}]")
+    print(f"{pad}│  Term count: {len(occupied)} / 6")
+    print(f"{pad}└─────────────────────────────────────────────────")
+    print()
+
+
 def build_nucleus_nf(types_list, label="nucleus"):
     """Build the Gröbner normal form for a nucleus at nucleon level.
 
@@ -247,6 +311,7 @@ print()
 
 # Evaluate at q₀
 show_element_numeric("NF(³H)", tritium, q0)
+show_nf_shape("NF(³H)", tritium)
 
 tr_3H = markov_trace_symbolic(tritium, 3)
 tr_3H_num = float(tr_3H.subs(q, q0))
@@ -277,6 +342,7 @@ print(f"  Reduction steps: {steps_He3}")
 print()
 
 show_element_numeric("NF(³He)", helium3, q0)
+show_nf_shape("NF(³He)", helium3)
 
 tr_He3 = markov_trace_symbolic(helium3, 3)
 tr_He3_num = float(tr_He3.subs(q, q0))
@@ -309,6 +375,7 @@ print("  Evaluated at q₀:")
 print("  Note: ALL T_{3,5} coefficients are positive at q₀.")
 print("  In particle notation, T_{3,5} occupies ALL sectors of H₃(q):")
 show_element_numeric("NF(T_{3,5})", T35, q0)
+show_nf_shape("NF(T_{3,5})", T35)
 
 tr_T35 = markov_trace_symbolic(T35, 3)
 tr_T35_num = float(tr_T35.subs(q, q0))
@@ -367,6 +434,7 @@ show_element("NF(³H · T_{3,5})", reduced_a)
 print()
 
 show_element_numeric("NF(³H · T_{3,5})", reduced_a, q0)
+show_nf_shape("NF(³H · T_{3,5})", reduced_a)
 
 tr_a = markov_trace_symbolic(reduced_a, 3)
 tr_a_num = float(tr_a.subs(q, q0))
@@ -390,6 +458,7 @@ show_element("NF(T_{3,5} · ³H)", reduced_b)
 print()
 
 show_element_numeric("NF(T_{3,5} · ³H)", reduced_b, q0)
+show_nf_shape("NF(T_{3,5} · ³H)", reduced_b)
 
 tr_b = markov_trace_symbolic(reduced_b, 3)
 tr_b_num = float(tr_b.subs(q, q0))
@@ -686,16 +755,201 @@ for w, v in eval_element(reduced_a, q0):
 
 print()
 print("  Interpretation of output particle sectors:")
-print("    ν  (+0.532) → neutrino energy deposit (Q contribution)")
-print("    H⁰ (+1.793) → restructured 𝔭–daughter Hopf link")
-print("    H¹ (+0.254) → restructured 𝔫–daughter Hopf link")
-print("    L₊ (+0.745) → restructured Hopf pair (daughter binding)")
-print("    L₋ (+0.597) → NEW: reversed Hopf pair (not in parent ³H)")
-print("    e⁻ (+0.364) → NEW: electron (trefoil T_{2,3}, 3 crossings)")
+v_out = {w: float(reduced_a.terms.get(w, sp.Integer(0)).subs(q, q0))
+         for w in [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]}
+labels = {
+    (): "neutrino energy deposit (Q contribution)",
+    (0,): "restructured Hopf link gen 0",
+    (1,): "restructured Hopf link gen 1",
+    (0, 1): "restructured Hopf pair (daughter binding)",
+    (1, 0): "reversed Hopf pair",
+    (0, 1, 0): "electron (trefoil T_{2,3}, 3 crossings)",
+}
+for w in [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]:
+    v = v_out[w]
+    if abs(v) < 1e-12:
+        continue
+    pn = particle_name(w)
+    v_parent = float(tritium.terms.get(w, sp.Integer(0)).subs(q, q0))
+    new_flag = " NEW:" if abs(v_parent) < 1e-12 else ""
+    print(f"    {pn:<4} ({v:+.3f}) \u2192{new_flag} {labels[w]}")
+
 print()
 
+
 # ════════════════════════════════════════════════════════════════
-# STEP 10: Write witness JSON
+# STEP 10: FREE NEUTRON BETA DECAY  �� → 𝔭 + e⁻ + ν̄ₑ
+# ════════════════════════════════════════════════════════════════
+
+print()
+print("=" * 80)
+print("STEP 10: FREE NEUTRON BETA DECAY   \U0001d52b \u2192 \U0001d52d + e\u207b + \u03bd\u0304\u2091")
+print("  Same H\u2083(q) framework, at QUARK level: 3 quarks = 3 strands")
+print("=" * 80)
+print()
+
+# -- Neutron = [u, d, d] at quark level --
+print("\u2500" * 60)
+print("  NEUTRON \U0001d52b = [u, d, d] (quark level, 3 strands)")
+print("\u2500" * 60)
+print()
+print("  Quark assignment: [u=strand 0, d\u2081=strand 1, d\u2082=strand 2] in B\u2083")
+print("  Crossings (in particle knot notation):")
+print("    (u, d\u2081)  at gen 0 \u2192 mixed: ((1+q\u00b2)/2)\u00b7H\u2070 + (-q\u00b7s/2)\u00b7\u03bd")
+print("    (u, d\u2082)  at gen 0 \u2192 mixed: ((1+q\u00b2)/2)\u00b7H\u2070 + (-q\u00b7s/2)\u00b7\u03bd")
+print("    (d\u2081, d\u2082) at gen 1 \u2192 d-d:   q\u00b2\u00b7H\u00b9 + (-q\u00b7s)\u00b7\u03bd")
+print()
+
+neutron, steps_n = build_nucleus_nf(['u', 'd', 'd'], "\U0001d52b")
+show_element("NF(\U0001d52b)", neutron)
+print()
+print(f"  Reduction steps: {steps_n}")
+print()
+show_element_numeric("NF(\U0001d52b)", neutron, q0)
+show_nf_shape("NF(\U0001d52b)", neutron)
+
+tr_n = markov_trace_symbolic(neutron, 3)
+tr_n_num = float(tr_n.subs(q, q0))
+print(f"  Markov trace (symbolic): {sp.simplify(tr_n)}")
+print(f"  Markov trace at q\u2080:     {tr_n_num:.10f}")
+print(f"  ln|tr(\U0001d52b)|:              {math.log(abs(tr_n_num)):.10f}")
+
+# -- Proton = [u, u, d] at quark level --
+print()
+print("\u2500" * 60)
+print("  PROTON \U0001d52d = [u, u, d] (quark level, 3 strands)")
+print("\u2500" * 60)
+print()
+print("  Quark assignment: [u\u2081=strand 0, u\u2082=strand 1, d=strand 2] in B\u2083")
+print("  Crossings (in particle knot notation):")
+print("    (u\u2081, u\u2082) at gen 0 \u2192 u-u: H\u2070")
+print("    (u\u2081, d)  at gen 0 \u2192 mixed: ((1+q\u00b2)/2)\u00b7H\u2070 + (-q\u00b7s/2)\u00b7\u03bd")
+print("    (u\u2082, d)  at gen 1 \u2192 mixed: ((1+q\u00b2)/2)\u00b7H\u00b9 + (-q\u00b7s/2)\u00b7\u03bd")
+print()
+
+proton, steps_p = build_nucleus_nf(['u', 'u', 'd'], "\U0001d52d")
+show_element("NF(\U0001d52d)", proton)
+print()
+print(f"  Reduction steps: {steps_p}")
+print()
+show_element_numeric("NF(\U0001d52d)", proton, q0)
+show_nf_shape("NF(\U0001d52d)", proton)
+
+tr_p = markov_trace_symbolic(proton, 3)
+tr_p_num = float(tr_p.subs(q, q0))
+print(f"  Markov trace (symbolic): {sp.simplify(tr_p)}")
+print(f"  Markov trace at q\u2080:     {tr_p_num:.10f}")
+print(f"  ln|tr(\U0001d52d)|:              {math.log(abs(tr_p_num)):.10f}")
+
+# -- NOTE: neutron = tritium, proton = He-3 at this level --
+print()
+print("  \u2554" + "\u2550" * 58 + "\u2557")
+print("  \u2551  NOTE: NF(\U0001d52b) = NF(\u00b3H) and NF(\U0001d52d) = NF(\u00b3He)             \u2551")
+print("  \u2551  because both use [u,d,d] / [u,u,d] crossing types     \u2551")
+print("  \u2551  in the same H\u2083(q) Hecke algebra with 3 strands.       \u2551")
+print("  \u2551  The tritium/He-3 system IS the neutron/proton system   \u2551")
+print("  \u2551  at nucleon level \u2014 same algebra, same NF shapes.       \u2551")
+print("  \u255a" + "\u2550" * 58 + "\u255d")
+print()
+
+# -- Compose: n * T35 -> reduce --
+print("\u2500" * 60)
+print("  COMPOSITION: NF(\U0001d52b) \u00b7 NF(T_{3,5})")
+print("\u2500" * 60)
+print()
+
+product_n = neutron * T35
+print(f"  Unreduced product: {product_n.n_terms()} terms")
+
+reduced_n, steps_rn = div.reduce(product_n)
+print(f"  After Gr\u00f6bner reduction: {reduced_n.n_terms()} terms")
+print(f"  Reduction steps: {steps_rn}")
+print()
+
+show_element("NF(\U0001d52b \u00b7 T_{3,5})", reduced_n)
+print()
+show_element_numeric("NF(\U0001d52b \u00b7 T_{3,5})", reduced_n, q0)
+show_nf_shape("NF(\U0001d52b \u00b7 T_{3,5})", reduced_n)
+
+tr_rn = markov_trace_symbolic(reduced_n, 3)
+tr_rn_num = float(tr_rn.subs(q, q0))
+print(f"  Markov trace: {tr_rn_num:.10f}")
+print(f"  ln|tr|:       {math.log(abs(tr_rn_num)):.10f}")
+
+# -- Residual: (n*T35) - p --
+print()
+print("\u2500" * 60)
+print("  RESIDUAL: NF(\U0001d52b \u00b7 T_{3,5}) \u2212 NF(\U0001d52d)")
+print("\u2500" * 60)
+print()
+
+diff_n = reduced_n + proton.scale(sp.Integer(-1))
+show_element_numeric("Residual (\U0001d52b\u00b7T35 \u2212 \U0001d52d)", diff_n, q0)
+show_nf_shape("Residual (\U0001d52b\u00b7T35 \u2212 \U0001d52d)", diff_n)
+
+# -- Sign analysis --
+pos_n = sum(1 for w, c in reduced_n.terms.items()
+            if float(c.subs(q, q0)) > 0)
+neg_n = sum(1 for w, c in reduced_n.terms.items()
+            if float(c.subs(q, q0)) < 0)
+print(f"  \u2713 NF(\U0001d52b \u00b7 T_{{3,5}}) has {pos_n} positive + {neg_n} negative terms")
+
+# -- Q-value for free neutron decay --
+ln_ratio_n = math.log(abs(tr_p_num)) - math.log(abs(tr_n_num))
+Q_skein_n = abs(ln_ratio_n) * E_cross_num * mu_0
+Q_exp_neutron = 0.78233  # MeV (CODATA: m_n - m_p - m_e = 0.78233 MeV)
+err_n = (Q_skein_n - Q_exp_neutron) / Q_exp_neutron * 100
+
+print()
+print("  FREE NEUTRON Q-VALUE:")
+print(f"    ln|tr(\U0001d52d)| \u2212 ln|tr(\U0001d52b)| = {ln_ratio_n:+.10f}")
+print(f"    Q_skein = |ln ratio| \u00d7 E_\u00d7 \u00d7 \u03bc\u2080 = {Q_skein_n:.6f} MeV")
+print(f"    Q_exp   = {Q_exp_neutron:.5f} MeV  (m_n \u2212 m_p \u2212 m_e)")
+print(f"    Error   = {err_n:+.1f}%")
+
+# -- INPUT vs OUTPUT for free neutron --
+print()
+print("\u2500" * 60)
+print("  INPUT WORDS \u2014 free neutron decay (particle notation)")
+print("\u2500" * 60)
+print()
+print("  NF(\U0001d52b) = [u, d, d] neutron:")
+for w, v in eval_element(neutron, q0):
+    pn = particle_name(w)
+    _, knot, ncx, desc = particle_knot(w)
+    sign = "+" if v > 0 else "\u2212"
+    print(f"    {sign}{abs(v):.8f} \u00b7 {pn:<4} = {word_str(w):<13} "
+          f"({ncx} crossing{'s' if ncx != 1 else ''}, {desc})")
+print()
+print("  NF(T_{3,5}) = weak vertex (same as tritium case above)")
+print()
+print("\u2500" * 60)
+print("  OUTPUT WORDS \u2014 free neutron decay (particle notation)")
+print("\u2500" * 60)
+print()
+print("  NF(\U0001d52b \u00b7 T_{3,5}) = Gr\u00f6bner-reduced product:")
+for w, v in eval_element(reduced_n, q0):
+    pn = particle_name(w)
+    _, knot, ncx, desc = particle_knot(w)
+    sign = "+" if v > 0 else "\u2212"
+    print(f"    {sign}{abs(v):.8f} \u00b7 {pn:<4} = {word_str(w):<13} "
+          f"({ncx} crossing{'s' if ncx != 1 else ''}, {desc})")
+
+print()
+print("  Interpretation:")
+v_out_n = {w: float(reduced_n.terms.get(w, sp.Integer(0)).subs(q, q0))
+           for w in [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]}
+for w in [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]:
+    pn = particle_name(w)
+    v = v_out_n[w]
+    v_parent = float(neutron.terms.get(w, sp.Integer(0)).subs(q, q0))
+    new_flag = " NEW" if abs(v_parent) < 1e-12 and abs(v) > 1e-12 else ""
+    if abs(v) > 1e-12:
+        print(f"    {pn:<4} ({v:+.3f}){new_flag}")
+print()
+
+
+# STEP 11: Write witness JSON
 # ════════════════════════════════════════════════════════════════
 
 print("─" * 60)
@@ -836,6 +1090,49 @@ witness = {
         "Q_exp_err_MeV": Q_TRITIUM_MEV_ERR,
         "error_percent": (Q_skein - Q_TRITIUM_MEV) / Q_TRITIUM_MEV * 100
         if Q_TRITIUM_MEV > 0 else None,
+    },
+    "free_neutron_decay": {
+        "neutron": {
+            "composition": "[u, d, d] (quark level)",
+            "strands": 3,
+            "n_terms": neutron.n_terms(),
+            "nf": terms_to_dict(neutron, q0),
+            "markov_trace": {
+                "symbolic": str(sp.simplify(tr_n)),
+                "at_q0": tr_n_num,
+                "ln_abs": math.log(abs(tr_n_num)),
+            },
+        },
+        "proton": {
+            "composition": "[u, u, d] (quark level)",
+            "strands": 3,
+            "n_terms": proton.n_terms(),
+            "nf": terms_to_dict(proton, q0),
+            "markov_trace": {
+                "symbolic": str(sp.simplify(tr_p)),
+                "at_q0": tr_p_num,
+                "ln_abs": math.log(abs(tr_p_num)),
+            },
+        },
+        "composition_n_times_T35": {
+            "order": "NF(n) * NF(T_{3,5})",
+            "unreduced_terms": product_n.n_terms(),
+            "reduced_terms": reduced_n.n_terms(),
+            "reduction_steps": steps_rn,
+            "nf": terms_to_dict(reduced_n, q0),
+            "markov_trace": {
+                "at_q0": tr_rn_num,
+                "ln_abs": math.log(abs(tr_rn_num)),
+            },
+        },
+        "Q_value": {
+            "ln_trace_ratio": ln_ratio_n,
+            "Q_skein_MeV": Q_skein_n,
+            "Q_exp_MeV": Q_exp_neutron,
+            "error_percent": err_n,
+        },
+        "note": "NF(neutron) = NF(tritium) and NF(proton) = NF(He-3) "
+                "because both use [u,d,d]/[u,u,d] in H_3(q) with 3 strands.",
     },
 }
 
