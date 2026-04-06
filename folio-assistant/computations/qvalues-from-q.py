@@ -3,7 +3,7 @@ Q-value predictions from the substrate parameter q — end-to-end.
 
 Derivation chain:
   q₀ = 1/(1 − √(Vol(4₁)/μ_e))  ←  two measured inputs
-  HA = q − q⁻¹                   ←  Hecke amplitude
+  h = q − q⁻¹                    ←  Hecke amplitude (= HA)
   κ_q = ln(q) × m_e/3            ←  energy scale
   V̂_i(Z,N) = z·M_i[0,0] + M_i[1,0]  ← transfer matrix chain per generator
   Q_pred = |q·Σ_u + q⁻¹·Σ_r + Σ_uc| × κ_q × F_shell × F_magic
@@ -11,12 +11,18 @@ Derivation chain:
 where Σ_u, Σ_r, Σ_uc are q-weighted log_q volume ratios
 classifying unbinding (nn→pn), rebinding (pn→pp), and unchanged generators.
 
+Crossing weight convention (from the Hecke inverse relation σ⁻¹ = σ − h):
+  pp crossing → σᵢ:          c = 1,   d = 0
+  nn crossing → σᵢ⁻¹:        c = 1,   d = −h
+  pn crossing → ½(σᵢ+σᵢ⁻¹): c = 1,   d = −h/2
+
 Every predicted value uses ≈ (not =) per notation register.
 """
 
 import math
 import sys
-sys.path.insert(0, '.')
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import (Q, Q_INV, Q_ERR, HA, LN_Q, HBAR_Q,
                           VOL_FIGURE_EIGHT, MASS_RATIO_MU_E)
 from experimental_constants import M_E_MEV
@@ -24,7 +30,6 @@ from experimental_constants import M_E_MEV
 # ── Derived constants from q ─────────────────────────────────────
 KAPPA_Q = LN_Q * M_E_MEV / 3.0   # energy scale: ln(q) × m_e/3  [MeV]
 Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0/math.sqrt(Q))  # Markov parameter
-S_SKEIN = math.sqrt(Q) - 1.0/math.sqrt(Q)  # Skein amplitude
 
 # Shell degree correction factors (from H₃(q) irrep analysis)
 F_DEG2 = 0.5949   # degree-2 shell reduction = det(T_nn) / det(T_pp)
@@ -45,14 +50,20 @@ def is_magic(n):
 # ── Transfer matrix engine (pure Python, from q alone) ────────────
 
 def crossing_coeffs(type_i, type_j):
-    """Skein weights (c=w⁺, d=w⁰) for a crossing between nucleon types."""
+    """Hecke weights (c, d) for T(c,d) = c·σ + d·1 per crossing type.
+
+    From the Hecke inverse relation σ⁻¹ = σ − h  (h = q − q⁻¹):
+      pp → σ:          c = 1,   d = 0
+      nn → σ⁻¹:        c = 1,   d = −h
+      pn → ½(σ+σ⁻¹): c = 1,   d = −h/2
+    """
     pair = type_i + type_j
     if pair == 'pp':
         return (1.0, 0.0)
     elif pair == 'nn':
-        return (Q**2, -Q * S_SKEIN)
+        return (1.0, -HA)
     else:  # pn or np
-        return ((1.0 + Q**2) / 2.0, -Q * S_SKEIN / 2.0)
+        return (1.0, -HA / 2.0)
 
 def generator_volumes(z, n):
     """Traced volumes V̂_i for each generator chain in nucleus (Z, N)."""
@@ -151,21 +162,20 @@ def q_value_uncertainty(z_par, n_par, q_pred):
     dq = Q_ERR
     # Perturb q slightly
     import copy
-    global Q, Q_INV, HA, LN_Q, Z_MARKOV, S_SKEIN, KAPPA_Q
-    q_save = (Q, Q_INV, HA, LN_Q, Z_MARKOV, S_SKEIN, KAPPA_Q)
+    global Q, Q_INV, HA, LN_Q, Z_MARKOV, KAPPA_Q
+    q_save = (Q, Q_INV, HA, LN_Q, Z_MARKOV, KAPPA_Q)
 
     Q_plus = Q + dq
     Q_INV = 1.0 / Q_plus
     HA = Q_plus - Q_INV
     LN_Q = math.log(Q_plus)
     Z_MARKOV = 1.0 / (math.sqrt(Q_plus) + 1.0/math.sqrt(Q_plus))
-    S_SKEIN = math.sqrt(Q_plus) - 1.0/math.sqrt(Q_plus)
     KAPPA_Q = LN_Q * M_E_MEV / 3.0
     Q = Q_plus
 
     q_plus, _, _ = predict_q_value(z_par, n_par)
 
-    Q, Q_INV, HA, LN_Q, Z_MARKOV, S_SKEIN, KAPPA_Q = q_save
+    Q, Q_INV, HA, LN_Q, Z_MARKOV, KAPPA_Q = q_save
 
     sensitivity = abs(q_plus - q_pred) / dq  # dQ_pred/dq
     delta_q_pred = sensitivity * Q_ERR
@@ -195,13 +205,17 @@ if __name__ == "__main__":
     print(f"  q₀       ≈ {Q:.10f} ± {Q_ERR:.2e}")
     print()
     print("Derived:")
-    print(f"  HA = q−q⁻¹  ≈ {HA:.10f}")
+    print(f"  h = q−q⁻¹   ≈ {HA:.10f}  (Hecke amplitude)")
     print(f"  ln(q)        ≈ {LN_Q:.10f}")
     print(f"  κ_q          ≈ {KAPPA_Q:.6f} MeV")
     print(f"  z (Markov)   ≈ {Z_MARKOV:.10f}")
-    print(f"  s (Skein)    ≈ {S_SKEIN:.10f}")
     print(f"  F_deg2       = {F_DEG2}")
     print(f"  F_Pauli      = {F_PAULI}")
+    print()
+    print("Crossing weight convention (Hecke inverse σ⁻¹ = σ − h):")
+    print(f"  pp → σ:        c=1, d=0")
+    print(f"  nn → σ⁻¹:      c=1, d=−h ≈ {-HA:.6f}")
+    print(f"  pn → ½(σ+σ⁻¹): c=1, d=−h/2 ≈ {-HA/2:.6f}")
     print()
 
     header = f"{'Decay':>16} {'Q_pred±δ':>16} {'Q_exp±δ':>16} {'log_q':>8} {'F':>7} {'Error':>7} {'σ':>6}"

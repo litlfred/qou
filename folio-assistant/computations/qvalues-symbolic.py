@@ -6,21 +6,29 @@ We compute V̂_i(q) symbolically, form the log ratio, and only
 evaluate at q₀ for the final Q-value.
 
 Derivation chain (symbolic):
-  1. Crossing weights w⁺, w⁰ ∈ ℤ[q, q⁻¹]     — exact
-  2. Transfer matrix T(c,d) ∈ M₂(ℤ[q, q⁻¹])   — exact
-  3. Chain matrix M_i = ∏_j T(i,j) ∈ M₂(ℤ[q, q⁻¹])  — exact
+  1. Crossing weights (c, d) ∈ ℤ[q, q⁻¹]       — exact
+  2. Transfer matrix T(c,d) ∈ M₂(ℤ[q, q⁻¹])     — exact
+  3. Chain matrix M_i = ∏_j T(i,j) ∈ M₂(ℤ[q^½, q^{-½}])  — exact
   4. Traced volume V̂_i = z·M[0,0] + M[1,0] ∈ ℚ(q^½)  — exact
   5. Volume ratio V̂_i^dau / V̂_i^par ∈ ℚ(q^½)  — exact
   6. log_q(ratio) — transcendental: evaluate at q₀
 
 Each step is in ℤ[t, t⁻¹] where t = q^½, until step 6.
+Note: the Markov parameter z = 1/(√q + 1/√q) introduces q^½,
+so steps 3–5 live in ℤ[q^½, q^{-½}], not in ℤ[q, q⁻¹].
+
+Crossing weight convention (Hecke inverse σ⁻¹ = σ − h, h = q − q⁻¹):
+  pp → σ:          c = 1,   d = 0
+  nn → σ⁻¹:        c = 1,   d = −h
+  pn → ½(σ+σ⁻¹): c = 1,   d = −h/2
 """
 
 import sympy as sp
 from sympy import sqrt, Rational, log, symbols, simplify, factor
 import math
 import sys
-sys.path.insert(0, '.')
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import Q as Q_NUM, Q_ERR, HBAR_Q, VOL_FIGURE_EIGHT, MASS_RATIO_MU_E
 from experimental_constants import M_E_MEV
 
@@ -29,25 +37,30 @@ q = symbols('q', positive=True)
 
 # Derived quantities (exact in ℚ(q))
 q_inv = 1/q
-HA_sym = q - q_inv                    # Hecke amplitude
-s_sym = sqrt(q) - 1/sqrt(q)           # Skein amplitude
-z_sym = 1 / (sqrt(q) + 1/sqrt(q))     # Markov parameter
+HA_sym = q - q_inv                    # Hecke amplitude h = q − q⁻¹
+z_sym = 1 / (sqrt(q) + 1/sqrt(q))     # Markov parameter (introduces q^½)
 
 # Energy scale: κ_q = ln(q) × m_e/3  — transcendental in q
 # We keep it symbolic as log(q) * m_e/3 until final eval
 m_e = Rational(M_E_MEV).limit_denominator(10**10)
 
-# ── Crossing weights (exact in ℚ(q)) ────────────────────────────
+# ── Crossing weights (exact in ℤ[q, q⁻¹]) ──────────────────────
 
 def crossing_coeffs_sym(type_i, type_j):
-    """Symbolic Skein weights."""
+    """Hecke weights (c, d) where T(c,d) = c·σ + d·1.
+
+    From σ⁻¹ = σ − h  (h = q − q⁻¹):
+      pp → σ:          c = 1,   d = 0
+      nn → σ⁻¹:        c = 1,   d = −h
+      pn → ½(σ+σ⁻¹): c = 1,   d = −h/2
+    """
     pair = type_i + type_j
     if pair == 'pp':
         return (sp.Integer(1), sp.Integer(0))
     elif pair == 'nn':
-        return (q**2, -q * s_sym)
+        return (sp.Integer(1), -HA_sym)
     else:  # pn or np
-        return ((1 + q**2) / 2, -q * s_sym / 2)
+        return (sp.Integer(1), -HA_sym / 2)
 
 # ── Transfer matrix (exact in ℚ(q^½)) ───────────────────────────
 
@@ -111,10 +124,10 @@ if __name__ == "__main__":
     print()
 
     # Show the symbolic crossing weights
-    print("Step 1: Crossing weights (exact in ℚ(q))")
-    print(f"  pp: w⁺ = 1,  w⁰ = 0")
-    print(f"  nn: w⁺ = q², w⁰ = -q·(√q - 1/√q)")
-    print(f"  pn: w⁺ = (1+q²)/2, w⁰ = -q·(√q - 1/√q)/2")
+    print("Step 1: Crossing weights (exact in ℤ[q, q⁻¹], from σ⁻¹ = σ − h)")
+    print(f"  pp → σ:          c = 1,   d = 0")
+    print(f"  nn → σ⁻¹:        c = 1,   d = −h  (h = q−q⁻¹)")
+    print(f"  pn → ½(σ+σ⁻¹): c = 1,   d = −h/2")
     print()
 
     print("Step 2: Transfer matrix T(c,d) = [[c·(q-q⁻¹)+d, c], [c, d]]")
