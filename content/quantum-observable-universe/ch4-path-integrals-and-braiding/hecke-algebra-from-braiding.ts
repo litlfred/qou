@@ -14,5 +14,6 @@ export default remark({
   uses: [
     "prop:braiding-eigenvalue-extraction",
     "thm:jones-markov-trace",
+    "def:substrate-parameter",
   ],
 });
