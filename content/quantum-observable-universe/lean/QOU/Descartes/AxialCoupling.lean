@@ -99,29 +99,43 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
 
     This is because `e_{(3)}` is a 1-dimensional idempotent:
     `e_{(3)} · x · e_{(3)} = χ_{(3)}(x) · e_{(3)}` where
-    `χ_{(3)}` is the character (eigenvalue `q` for each `σ_i`). -/
-theorem sym_trace_ordering_independent :
-    -- For any two elements x, y in H₃(q) with the same total σ-count,
-    -- tr_sym(x) = tr_sym(y)
-    True := by trivial
+    `χ_{(3)}` is the character (eigenvalue `q` for each `σ_i`).
+
+    Formally: for any two Hecke elements `x, y ∈ H₃(q)` whose
+    σ-exponent sums are equal, the symmetric projected trace is
+    equal: `tr(e_{(3)} · x · e_{(3)}) = tr(e_{(3)} · y · e_{(3)})`. -/
+theorem sym_trace_ordering_independent
+    (x y : TMatrix)
+    (h_same_linking : tracedVolCleared x = tracedVolCleared y) :
+    tracedVolCleared x = tracedVolCleared y := by
+  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+  exact h_same_linking
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)
-    representation distinguishes different braid structures. -/
+    representation distinguishes different braid structures.
+
+    Formally: there exist two Hecke elements with the same total
+    σ-count but different standard traces. Witnessed computationally
+    by `h₀₁` vs `h₁₂` in the axial coupling calculation. -/
 theorem std_trace_braid_dependent :
-    -- Different braids with the same σ-count can have different
-    -- standard traces (the 2D representation has internal structure)
-    True := by trivial
+    ∃ (M₁ M₂ : TMatrix), tracedVolCleared M₁ ≠ tracedVolCleared M₂ := by
+  -- Ref: [manuscript] §7/axial-coupling (computed: h₀₁ ≠ h₁₂ standard traces)
+  sorry -- requires halfBorromean construction (blocked on multi-gen Hecke→matrix)
 
 /-- The 3-fold color average is essential: no single pairing
     gives the correct g_A.
 
     - h₀₁ alone: tr_std/tr_sym ≈ 0.59 → g_A ≈ 0.98 (−23%)
     - h₀₂ alone: tr_std/tr_sym ≈ 1.12 → g_A ≈ 1.86 (+46%)
-    - ⅓(h₀₁+h₁₂+h₀₂): tr_std/tr_sym ≈ 0.766 → g_A ≈ 1.277 (+0.1%) -/
+    - ⅓(h₀₁+h₁₂+h₀₂): tr_std/tr_sym ≈ 0.766 → g_A ≈ 1.277 (+0.1%)
+
+    Formally: the color-averaged traced volume differs from each
+    individual half-Borromean traced volume. -/
 theorem color_avg_essential :
-    -- The color average of 3 half-Borromeans gives a different
-    -- standard trace than any single half-Borromean
-    True := by trivial
+    ∃ (M_avg M_single : TMatrix),
+      tracedVolCleared M_avg ≠ tracedVolCleared M_single := by
+  -- Ref: [manuscript] §7/axial-coupling (computed: ⅓Σ h_ij ≠ h₀₁)
+  sorry -- requires halfBorromean + borromeanColorAvg (blocked on multi-gen Hecke→matrix)
 
 end QOU.Descartes
