@@ -214,14 +214,23 @@ def show_nf_shape(name, elem, indent=4):
 def build_nucleus_nf(types_list, label="nucleus"):
     """Build the Gröbner normal form for a nucleus at nucleon level.
 
+    The nucleus is constructed as B₃ · (pairwise crossings), where
+    B₃ = (σ₀σ₁⁻¹)³ is the Borromean confinement braid that mutually
+    links the three constituents.
+
     types_list: quark-mapped nucleon types, e.g. ['u','d','d'] for ³H
                 (p → 'u', n → 'd' for crossing coefficient mapping)
     Returns: (reduced_element, reduction_stats)
     """
     A = len(types_list)
-    elem = SymbolicHeckeElement.identity()
     total_steps = {'hecke': 0, 'yb': 0, 'fc': 0, 'quotient': 0}
 
+    # Start with Borromean confinement braid B₃ = (σ₀σ₁⁻¹)³
+    elem, b3_steps = div.borromean_B3()
+    for k in b3_steps:
+        total_steps[k] += b3_steps[k]
+
+    # Multiply pairwise crossing elements
     for i in range(A - 1):
         for j in range(i + 1, A):
             cx = div.crossing(types_list[i], types_list[j], i)
@@ -297,6 +306,8 @@ print("STEP 1: Normal form of ³H (tritium) = N(1,2) = [𝔭, 𝔫₁, 𝔫₂]"
 print("─" * 60)
 print()
 print("  Strand assignment: [𝔭=strand 0, 𝔫₁=strand 1, 𝔫₂=strand 2] in B₃")
+print("  Construction: B₃ · (pairwise crossings)")
+print("    B₃ = (σ₀σ₁⁻¹)³ — Borromean confinement braid")
 print("  Crossings (in particle knot notation):")
 print("    (𝔭, 𝔫₁)   at gen 0 → mixed: ((1+q²)/2)·H⁰ + (-q·s/2)·ν")
 print("    (𝔭, 𝔫₂)   at gen 0 → mixed: ((1+q²)/2)·H⁰ + (-q·s/2)·ν")
@@ -329,6 +340,8 @@ print("STEP 2: Normal form of ³He (helium-3) = N(2,1) = [𝔭₁, 𝔭₂, 𝔫
 print("─" * 60)
 print()
 print("  Strand assignment: [𝔭₁=strand 0, 𝔭₂=strand 1, 𝔫=strand 2] in B₃")
+print("  Construction: B₃ · (pairwise crossings)")
+print("    B₃ = (σ₀σ₁⁻¹)³ — Borromean confinement braid")
 print("  Crossings (in particle knot notation):")
 print("    (𝔭₁, 𝔭₂) at gen 0 → p-p: H⁰")
 print("    (𝔭₁, 𝔫)  at gen 0 → mixed: ((1+q²)/2)·H⁰ + (-q·s/2)·ν")
@@ -794,6 +807,8 @@ print("  NEUTRON \U0001d52b = [u, d, d] (quark level, 3 strands)")
 print("\u2500" * 60)
 print()
 print("  Quark assignment: [u=strand 0, d\u2081=strand 1, d\u2082=strand 2] in B\u2083")
+print("  Construction: B\u2083 \u00b7 (pairwise crossings)")
+print("    B\u2083 = (\u03c3\u2080\u03c3\u2081\u207b\u00b9)\u00b3 \u2014 Borromean confinement braid")
 print("  Crossings (in particle knot notation):")
 print("    (u, d\u2081)  at gen 0 \u2192 mixed: ((1+q\u00b2)/2)\u00b7H\u2070 + (-q\u00b7s/2)\u00b7\u03bd")
 print("    (u, d\u2082)  at gen 0 \u2192 mixed: ((1+q\u00b2)/2)\u00b7H\u2070 + (-q\u00b7s/2)\u00b7\u03bd")
@@ -821,6 +836,8 @@ print("  PROTON \U0001d52d = [u, u, d] (quark level, 3 strands)")
 print("\u2500" * 60)
 print()
 print("  Quark assignment: [u\u2081=strand 0, u\u2082=strand 1, d=strand 2] in B\u2083")
+print("  Construction: B\u2083 \u00b7 (pairwise crossings)")
+print("    B\u2083 = (\u03c3\u2080\u03c3\u2081\u207b\u00b9)\u00b3 \u2014 Borromean confinement braid")
 print("  Crossings (in particle knot notation):")
 print("    (u\u2081, u\u2082) at gen 0 \u2192 u-u: H\u2070")
 print("    (u\u2081, d)  at gen 0 \u2192 mixed: ((1+q\u00b2)/2)\u00b7H\u2070 + (-q\u00b7s/2)\u00b7\u03bd")

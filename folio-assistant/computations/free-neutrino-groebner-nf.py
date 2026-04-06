@@ -175,11 +175,20 @@ def markov_trace_symbolic(elem, n_strands):
 # ════════════════════════════════════════════════════════════════
 
 def build_nucleus_nf(types_list, label="nucleus"):
-    """Build the Gröbner normal form for a nucleus at quark level."""
+    """Build the Gröbner normal form for a nucleus at quark level.
+
+    The nucleus is constructed as B₃ · (pairwise crossings), where
+    B₃ = (σ₀σ₁⁻¹)³ is the Borromean confinement braid.
+    """
     A = len(types_list)
-    elem = SymbolicHeckeElement.identity()
     total_steps = {'hecke': 0, 'yb': 0, 'fc': 0, 'quotient': 0}
 
+    # Start with Borromean confinement braid B₃ = (σ₀σ₁⁻¹)³
+    elem, b3_steps = div.borromean_B3()
+    for k in b3_steps:
+        total_steps[k] += b3_steps[k]
+
+    # Multiply pairwise crossing elements
     for i in range(A - 1):
         for j in range(i + 1, A):
             cx = div.crossing(types_list[i], types_list[j], i)

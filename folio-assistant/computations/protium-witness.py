@@ -32,6 +32,9 @@ try:
 except: SHA = "unknown"
 
 def sig(i): return HeckeElement({(i,): 1.0})
+def sig_inv(i):
+    """σ_i⁻¹ = σ_i − (q − q⁻¹) in the Hecke algebra."""
+    return HeckeElement({(i,): 1.0, (): -HA})
 c_dd = q**2; d_dd = -q*s
 c_ud = (1+q**2)/2; d_ud = -q*s/2
 
@@ -41,6 +44,15 @@ def cx(ti, tj, gen):
     elif set([ti,tj]) == set(['u','d']): return HeckeElement({(gen,): c_ud, (): d_ud})
     else: return sig(gen)
 
+def build_borromean_B3():
+    """Build B₃ = (σ₀σ₁⁻¹)³ Borromean confinement braid (numeric)."""
+    s0 = sig(0)
+    s1_inv = sig_inv(1)
+    unit = s0 * s1_inv
+    elem = unit * unit * unit
+    elem, log = div.reduce(elem)
+    return elem, log
+
 def wp(w):
     if not w: return "𝟏"
     return " · ".join(f"σ_{i}" for i in w)
@@ -49,9 +61,18 @@ def wp(w):
 strands = ['u_r', 'u_g', 'd_b', 'e⁻']
 types = ['u', 'u', 'd', 'e']
 
-elem = HeckeElement.identity()
-E_total = 0.0; H_total = 0; YB_total = 0
-steps = []
+# Start with Borromean confinement braid B₃ = (σ₀σ₁⁻¹)³
+elem, b3_log = build_borromean_B3()
+b3_sm = div.summarize_log(b3_log)
+E_total = b3_sm.get('hecke_energy_change', 0)
+H_total = b3_sm['hecke_steps']
+YB_total = b3_sm['yang_baxter_steps']
+steps = [{
+    "crossing": "B₃", "pair": "Borromean (σ₀σ₁⁻¹)³",
+    "types": "confinement", "gen": "B₃",
+    "hecke_steps": b3_sm['hecke_steps'], "yb_steps": b3_sm['yang_baxter_steps'],
+    "hecke_energy": b3_sm.get('hecke_energy_change', 0),
+}]
 
 for k in range(1, 4):
     for i in range(k):
