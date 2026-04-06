@@ -1,0 +1,251 @@
+{
+  "name": "pair-production",
+  "description": "Polarized two-photon NF \u03b3(\u03c6\u2081)\u00b7\u03b3(\u03c6\u2082) in H\u2082(q) with color content. \u03b3(\u03c6) = \u03c6\u00b7\u03c3\u2080 + (1\u2212\u03c6)\u00b7\u03c3\u2081 where \u03c6 is the polarization/entanglement history parameter. Observable terms (\u2113\u22652) are L\u00b1 Hopf links with coefficients C\u00b1 = \u03c6\u2081(1\u2212\u03c6\u2082), (1\u2212\u03c6\u2081)\u03c6\u2082. Fibre/virtual terms are S\u00b7\ud835\udfcf, \u03c6\u2081\u03c6\u2082\u00b7HA\u00b7\u03c3\u2080, (1\u2212\u03c6\u2081)(1\u2212\u03c6\u2082)\u00b7HA\u00b7\u03c3\u2081. Pair-production threshold sweep over \u03c6 shows \u03c6=1 (existing pair-production-nf.py) gives ~4.35% residual; maximally mixed \u03c6=0.5 gives different residual.",
+  "timestamp": "2026-04-06T17:06:20.001147+00:00",
+  "git_sha": "8f2b8afbe7d2afc2587e0a8a53e087e5922ab251",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "E0_MeV": 4.406162017384185,
+    "m_e_MeV": 0.51099895,
+    "threshold_2me_MeV": 1.0219979
+  },
+  "photon_definition": {
+    "formula": "\u03b3(\u03c6) = \u03c6\u00b7\u03c3\u2080 + (1\u2212\u03c6)\u00b7\u03c3\u2081",
+    "phi_meaning": "fraction of \u03c3\u2080 polarization content",
+    "phi_equals_1": "pure \u03c3\u2080 (existing pair-production-nf.py)",
+    "phi_equals_0": "pure \u03c3\u2081 (color-tube fiber photon)",
+    "phi_half": "maximally mixed / equal polarization"
+  },
+  "nf_formula": {
+    "S": "phi1*phi2 + (1-phi1)*(1-phi2)",
+    "c_sigma0": "phi1*phi2 * HA",
+    "c_sigma1": "(1-phi1)*(1-phi2) * HA",
+    "C_plus": "phi1*(1-phi2)",
+    "C_minus": "(1-phi1)*phi2",
+    "observable_condition": {
+      "sigma0_active": "phi1 > 0 AND phi2 > 0",
+      "sigma1_active": "phi1 < 1 AND phi2 < 1",
+      "L_plus_active": "phi1 > 0 AND phi2 < 1",
+      "L_minus_active": "phi1 < 1 AND phi2 > 0"
+    }
+  },
+  "tensor_product_vs_concatenation": {
+    "concatenation": {
+      "algebra": "\u03c3\u2080\u00b7\u03c3\u2080 = \u03c3\u2080\u00b2 in H\u2082(q)",
+      "nf": "HA\u00b7\u03c3\u2080 + \ud835\udfcf",
+      "physics": "same-strand interaction, pair-production vertex"
+    },
+    "tensor_product": {
+      "algebra": "\u03c3\u2080\u2297\u03c3\u2080 = \u03c3\u2080\u00b7\u03c3\u2082 in H\u2084(q)",
+      "nf": "\u03c3\u2080\u00b7\u03c3\u2082  (already reduced, far-commuting)",
+      "physics": "different-strand non-interaction, free photon state"
+    }
+  },
+  "special_cases": {
+    "phi_1_1": {
+      "S": 1.0,
+      "c_sigma0": 0.20906032198987945,
+      "c_sigma1": 0.0,
+      "C_plus": 0.0,
+      "C_minus": 0.0,
+      "net": 1.2090603219898794
+    },
+    "phi_0_0": {
+      "S": 1.0,
+      "c_sigma0": 0.0,
+      "c_sigma1": 0.20906032198987945,
+      "C_plus": 0.0,
+      "C_minus": 0.0,
+      "net": 1.2090603219898794
+    },
+    "phi_1_0": {
+      "S": 0.0,
+      "c_sigma0": 0.0,
+      "c_sigma1": 0.0,
+      "C_plus": 1.0,
+      "C_minus": 0.0,
+      "net": 1.0
+    },
+    "phi_half_half": {
+      "S": 0.5,
+      "c_sigma0": 0.05226508049746986,
+      "c_sigma1": 0.05226508049746986,
+      "C_plus": 0.25,
+      "C_minus": 0.25,
+      "net": 1.1045301609949396
+    }
+  },
+  "threshold_sweep": [
+    {
+      "phi": 0.0,
+      "net_gg": 1.2090603219898794,
+      "delta": 0.24203391244527572,
+      "E_pair": 1.0664406319352633,
+      "ratio": 1.0434861284306587,
+      "residual_percent": 4.34861284306586
+    },
+    {
+      "phi": 0.05,
+      "net_gg": 1.189199591400841,
+      "delta": 0.2618946430343141,
+      "E_pair": 1.1539502286941843,
+      "ratio": 1.1291121329057372,
+      "residual_percent": 12.911213290573729
+    },
+    {
+      "phi": 0.1,
+      "net_gg": 1.1714294640317013,
+      "delta": 0.27966477040345383,
+      "E_pair": 1.232248288952167,
+      "ratio": 1.205724873751861,
+      "residual_percent": 20.572487375186114
+    },
+    {
+      "phi": 0.15,
+      "net_gg": 1.15574993988246,
+      "delta": 0.2953442945526952,
+      "E_pair": 1.3013348127092124,
+      "ratio": 1.2733243509690308,
+      "residual_percent": 27.332435096903083
+    },
+    {
+      "phi": 0.2,
+      "net_gg": 1.1421610189531184,
+      "delta": 0.3089332154820368,
+      "E_pair": 1.3612097999653143,
+      "ratio": 1.3319105645572407,
+      "residual_percent": 33.19105645572407
+    },
+    {
+      "phi": 0.25,
+      "net_gg": 1.1306627012436747,
+      "delta": 0.32043153319148043,
+      "E_pair": 1.4118732507204808,
+      "ratio": 1.3814835145164983,
+      "residual_percent": 38.148351451649845
+    },
+    {
+      "phi": 0.3,
+      "net_gg": 1.12125498675413,
+      "delta": 0.32983924768102524,
+      "E_pair": 1.453325164974708,
+      "ratio": 1.4220432008468005,
+      "residual_percent": 42.20432008468004
+    },
+    {
+      "phi": 0.35,
+      "net_gg": 1.1139378754844844,
+      "delta": 0.33715635895067075,
+      "E_pair": 1.485565542727994,
+      "ratio": 1.4535896235481442,
+      "residual_percent": 45.35896235481443
+    },
+    {
+      "phi": 0.4,
+      "net_gg": 1.1087113674347373,
+      "delta": 0.34238286700041787,
+      "E_pair": 1.5085943839803422,
+      "ratio": 1.476122782620534,
+      "residual_percent": 47.61227826205341
+    },
+    {
+      "phi": 0.45,
+      "net_gg": 1.1055754626048893,
+      "delta": 0.3455187718302659,
+      "E_pair": 1.5224116887317503,
+      "ratio": 1.489642678063967,
+      "residual_percent": 48.964267806396705
+    },
+    {
+      "phi": 0.5,
+      "net_gg": 1.1045301609949396,
+      "delta": 0.34656407344021556,
+      "E_pair": 1.527017456982221,
+      "ratio": 1.4941493098784462,
+      "residual_percent": 49.414930987844606
+    },
+    {
+      "phi": 0.55,
+      "net_gg": 1.1055754626048893,
+      "delta": 0.3455187718302659,
+      "E_pair": 1.5224116887317503,
+      "ratio": 1.489642678063967,
+      "residual_percent": 48.964267806396705
+    },
+    {
+      "phi": 0.6,
+      "net_gg": 1.1087113674347373,
+      "delta": 0.34238286700041787,
+      "E_pair": 1.5085943839803422,
+      "ratio": 1.476122782620534,
+      "residual_percent": 47.61227826205341
+    },
+    {
+      "phi": 0.65,
+      "net_gg": 1.1139378754844844,
+      "delta": 0.33715635895067075,
+      "E_pair": 1.485565542727994,
+      "ratio": 1.4535896235481442,
+      "residual_percent": 45.35896235481443
+    },
+    {
+      "phi": 0.7,
+      "net_gg": 1.12125498675413,
+      "delta": 0.32983924768102524,
+      "E_pair": 1.453325164974708,
+      "ratio": 1.4220432008468005,
+      "residual_percent": 42.20432008468004
+    },
+    {
+      "phi": 0.75,
+      "net_gg": 1.1306627012436747,
+      "delta": 0.32043153319148043,
+      "E_pair": 1.4118732507204808,
+      "ratio": 1.3814835145164983,
+      "residual_percent": 38.148351451649845
+    },
+    {
+      "phi": 0.8,
+      "net_gg": 1.1421610189531182,
+      "delta": 0.308933215482037,
+      "E_pair": 1.3612097999653152,
+      "ratio": 1.3319105645572415,
+      "residual_percent": 33.19105645572416
+    },
+    {
+      "phi": 0.85,
+      "net_gg": 1.15574993988246,
+      "delta": 0.2953442945526952,
+      "E_pair": 1.3013348127092124,
+      "ratio": 1.2733243509690308,
+      "residual_percent": 27.332435096903083
+    },
+    {
+      "phi": 0.9,
+      "net_gg": 1.1714294640317013,
+      "delta": 0.27966477040345383,
+      "E_pair": 1.232248288952167,
+      "ratio": 1.205724873751861,
+      "residual_percent": 20.572487375186114
+    },
+    {
+      "phi": 0.95,
+      "net_gg": 1.189199591400841,
+      "delta": 0.2618946430343141,
+      "E_pair": 1.1539502286941843,
+      "ratio": 1.1291121329057372,
+      "residual_percent": 12.911213290573729
+    },
+    {
+      "phi": 1.0,
+      "net_gg": 1.2090603219898794,
+      "delta": 0.24203391244527572,
+      "E_pair": 1.0664406319352633,
+      "ratio": 1.0434861284306587,
+      "residual_percent": 4.34861284306586
+    }
+  ],
+  "best_phi_for_threshold": 0.0,
+  "best_residual_percent": 4.34861284306586
+}
