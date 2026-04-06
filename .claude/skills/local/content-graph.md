@@ -314,6 +314,12 @@ The following reorganisations have been applied to the paper manifests:
 | R4 | split | `sec:descartes-particles` (84 blocks) → 5 sections of 17–25 blocks in Descartes | ✅ done |
 | R5 | rename | Remove `ch#-` prefix from all chapter directory names | ✅ done |
 | R6 | auto-number | Chapter numbers derived from manifest order, not stored in manifests | ✅ done |
+| P1 | split | `sec:vertex-operators-markov` (19 blocks) → 4 sections in Braids and Knots | ✅ done |
+| P2 | split | `sec:hadrons-knot-composites` (20 blocks) → 3 sections in Braids and Knots | ✅ done |
+| P4 | split | `sec:brane-fluid` (19 blocks) → 3 sections in Fluid Dynamics | ✅ done |
+| P5 | split | `sec:brings-geometry` (31 blocks) → 4 sections in Descartes Universe | ✅ done |
+| P8 | split | `sec:small-scale` (21 blocks) → 3 sections in Observations | ✅ done |
+| P9 | merge | `sec:orbital-space` + `sec:fivefold-symmetry` → `sec:orbital-symmetry-embedding` in Descartes | ✅ done |
 
 ### Chapter naming convention (R5/R6)
 

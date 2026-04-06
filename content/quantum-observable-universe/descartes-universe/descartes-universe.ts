@@ -22,12 +22,12 @@ export default chapter({
       ],
     }),
 
-    // ── §1. Bring's surface: geometry and coordinates ────────────────
+    // ── §1a. Bring's surface as a QOU ────────────────────────────────
+    // (P5 split: 31-block sec:brings-geometry → 4 focused sections)
     section({
-      title: "Bring's surface: geometry and coordinates",
-      label: "sec:brings-geometry",
+      title: "Bring's surface as a QOU",
+      label: "sec:brings-surface-qou",
       blocks: [
-        // Bring's surface as a QOU
         "brings-surface",
         "brings-surface-example",
         "brings-realisations",
@@ -36,16 +36,29 @@ export default chapter({
         "brings-is-qou-proof",
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
-        // Braid-group action (resolvents in braids-and-knots as categorical DFT)
         "braid-group-action",
-        // Color tube coordinates
+      ],
+    }),
+
+    // ── §1b. Color tube coordinates ───────────────────────────────────
+    section({
+      title: "Color tube coordinates",
+      label: "sec:color-tube-coords",
+      blocks: [
         "color-tube-coordinates",
         "aggregate-color-quantities",
         "color-tube-constraints",
         "color-tube-interpretation",
         "c5-color-tube",
         "intrinsic-color-cubic-pairing",
-        // Coral fibration and elliptic curves
+      ],
+    }),
+
+    // ── §1c. Coral fibration and elliptic curves ──────────────────────
+    section({
+      title: "Coral fibration and elliptic curves",
+      label: "sec:coral-fibration-elliptic",
+      blocks: [
         "coral-elliptic",
         "coral-elliptic-proof",
         "t-duality-elliptic",
@@ -54,7 +67,14 @@ export default chapter({
         "t-duality-color-tube",
         "color-tube-subloci",
         "pure-colour-sublocus",
-        // Bundle structures and smoothness
+      ],
+    }),
+
+    // ── §1d. Bundle structures and smoothness ─────────────────────────
+    section({
+      title: "Bundle structures and smoothness",
+      label: "sec:brings-smoothness",
+      blocks: [
         "coral-bundles",
         "brings-smoothness-resolution",
         "brings-smoothness",
@@ -241,28 +261,16 @@ export default chapter({
         "mass-from-generators",
       ],
     }),
-    // ── §5. Orbital space and resonance modes ────────────────────────
-    // Moved here from quantum-observable-universes (R1): uses
-    // prop:reidemeister-mass-invariance (braids-and-knots) which would
-    // otherwise be a forward ref from quantum-observable-universes.
+    // ── §5. Orbital symmetry and cohomological embedding ────────────
+    // Merged (P9): sec:orbital-space (2 blocks) + sec:fivefold-symmetry (2 blocks).
+    // Originally moved from quantum-observable-universes (R1) to avoid
+    // forward refs to braids-and-knots.
     section({
-      title: "Orbital space and resonance modes",
-      label: "sec:orbital-space",
+      title: "Orbital Symmetry and Cohomological Embedding",
+      label: "sec:orbital-symmetry-embedding",
       blocks: [
         "orbital-space-normal-bundle",
         "orbital-fourier-decomposition",
-      ],
-    }),
-
-    // ── §6. Five-fold symmetry and cohomological embedding ───────────
-    // Moved here from quantum-observable-universes (R1): uses
-    // prop:skein-finiteness-bound, prop:shell-closure-normal-form,
-    // rem:force-knot-identification — all in this chapter — which would
-    // otherwise be span-7 forward refs.
-    section({
-      title: "Five-fold symmetry and cohomological embedding",
-      label: "sec:fivefold-symmetry",
-      blocks: [
         "fivefold-symmetry",
         "cohomological-embedding",
       ],

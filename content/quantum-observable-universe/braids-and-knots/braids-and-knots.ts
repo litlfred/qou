@@ -156,47 +156,63 @@ export default chapter({
       ],
     }),
 
-    // ── Vertex operators and the Markov trace ────────────────────────
+    // ── Exceptional divisor, Reeb bundle, and vertex operators ────────
+    // (P1 split: 19-block sec:vertex-operators-markov → 4 focused sections)
     section({
-      title: "Vertex Operators and the Markov Trace",
-      label: "sec:vertex-operators-markov",
+      title: "Exceptional Divisor and Vertex Operators",
+      label: "sec:exceptional-divisor-reeb",
       blocks: [
-        // Exceptional divisor and Reeb bundle (general QOU)
         "exceptional-divisor",
         "reeb-bundle",
         "reeb-exceptional-divisor",
-        // Vertex operator algebra
         "vertex-operator",
         "vertex-operator-dictionary",
-        // Vertex operators factor through E_p
+      ],
+    }),
+
+    // ── Vertex factorisation through E_p ──────────────────────────────
+    section({
+      title: "Vertex Factorisation and the Markov Trace",
+      label: "sec:vertex-factorisation",
+      blocks: [
         "vertex-is-exceptional-divisor",
         "vertex-is-exceptional-divisor-proof",
-        // Product factorization of the Markov trace
         "markov-trace-product",
         "markov-trace-product-interpretation",
-        // Categorical transfer matrix and level independence
+      ],
+    }),
+
+    // ── Transfer matrix and topological mass ──────────────────────────
+    section({
+      title: "Transfer Matrix and Topological Mass",
+      label: "sec:transfer-matrix-mass",
+      blocks: [
         "categorical-transfer-matrix",
         "transfer-matrix-level-independence",
         "transfer-matrix-level-independence-proof",
-        // Topological mass (archimedean specialization)
         "topological-mass-formula",
         "skein-decomposition",
         "topological-field-ansatz",
-        // Categorical vs archimedean braiding
+      ],
+    }),
+
+    // ── Braiding relations and the spectral filter ────────────────────
+    section({
+      title: "Braiding Relations and the Spectral Filter",
+      label: "sec:braiding-relations",
+      blocks: [
         "skein-archimedean-shadow",
-        // QU/QUO axioms as relations on Hecke generators
         "vertex-algebra-relations",
-        // Relations lifted to the jet bundle
         "vertex-algebra-jet-relations",
-        // T_{2,11} annihilation by the spectral filter ideal
         "t211-ideal-annihilation",
       ],
     }),
 
-    // ── Hadrons and knot composites ──────────────────────────────────
+    // ── Hadron algebra and knot factorisation ────────────────────────
+    // (P2 split: 20-block sec:hadrons-knot-composites → 3 focused sections)
     section({
-      title: "Hadrons and Knot Composites",
-      label: "sec:hadrons-knot-composites",
+      title: "Hadron Algebra and Knot Factorisation",
+      label: "sec:hadron-algebra",
       blocks: [
         "hadron",
         "hadron-interpretation",
@@ -205,12 +221,28 @@ export default chapter({
         "knot-factorization",
         "localized-hadron",
         "hadron-fibre-embedding",
+      ],
+    }),
+
+    // ── Skein generation and particle correspondence ──────────────────
+    section({
+      title: "Skein Generation and Particle Correspondence",
+      label: "sec:skein-particle-generation",
+      blocks: [
         "skein-generation",
         "skein-generation-proof",
         "knot-particle-generation",
         "knot-particle-generation-interpretation",
         "knot-particle-correspondence",
         "knot-particle-dictionary",
+      ],
+    }),
+
+    // ── Bundle structure and observation ───────────────────────────────
+    section({
+      title: "Bundle Structure and Observation",
+      label: "sec:bundle-observation",
+      blocks: [
         "quarks-borromean-picture",
         "bundle-initial-conditions",
         "observation-braid",

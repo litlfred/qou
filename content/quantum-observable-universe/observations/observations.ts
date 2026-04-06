@@ -143,10 +143,11 @@ export default chapter({
       ],
     }),
 
-    // ── Small-scale observations ──────────────────────────────────────
+    // ── Precision tests ─────────────────────────────────────────────
+    // (P8 split: 21-block sec:small-scale → 3 focused sections)
     section({
-      title: "Small-Scale Observations",
-      label: "sec:small-scale",
+      title: "Precision Tests",
+      label: "sec:precision-tests",
       blocks: [
         "photonic-hall",
         "photonic-hall-data",
@@ -155,12 +156,28 @@ export default chapter({
         "color-confinement-observation",
         "lepton-discrepancies",
         "lepton-anomalies-data",
+      ],
+    }),
+
+    // ── Proton radius and gravity ─────────────────────────────────────
+    section({
+      title: "Proton Radius and Gravity Tests",
+      label: "sec:proton-gravity-tests",
+      blocks: [
         "proton-radius-puzzle",
         "proton-radius-data",
         "entropic-gravity",
         "entropic-gravity-data",
         "local-substrate-q",
         "local-substrate-q-proof",
+      ],
+    }),
+
+    // ── Crystal resonance experiments ─────────────────────────────────
+    section({
+      title: "Crystal Resonance Experiments",
+      label: "sec:crystal-resonance",
+      blocks: [
         "crystal-probe-q",
         "substrate-telescope",
         "magnetic-friction",

@@ -16,10 +16,11 @@ export default chapter({
   title: "Fluid Dynamics of the Brane",
   label: "chap:fluid-dynamics",
   sections: [
-    // ── §1. The brane fluid ──────���───────────────────────────────────
+    // ── §1a. q-deformed hydrodynamics ──────���───────────────────────────────────
+    // (P4 split: 19-block sec:brane-fluid → 3 focused sections)
     section({
-      title: "The brane fluid",
-      label: "sec:brane-fluid",
+      title: "$q$-deformed hydrodynamics",
+      label: "sec:q-hydrodynamics",
       blocks: [
         "brane-fluid",
         "madelung-fluid",
@@ -28,14 +29,30 @@ export default chapter({
         "geodesic-vortices",
         "braid-fluid",
         "planck-reynolds",
+      ],
+    }),
+
+    // ── §1b. Vortex spectrum and helicity ─────────────────────────────
+    section({
+      title: "Vortex spectrum and helicity",
+      label: "sec:vortex-spectrum",
+      blocks: [
         "vortex-intensity-modes",
         "discrete-vortex-spectrum",
         "discrete-vortex-physical",
         "helicity-conservation",
         "helicity-physical",
+        "vortex-reconnection",
+      ],
+    }),
+
+    // ── §1c. Turbulence and acoustics ─────────────────────────────────
+    section({
+      title: "Turbulence and acoustics",
+      label: "sec:turbulence-acoustics",
+      blocks: [
         "q-turbulence-spectrum",
         "q-turbulence-prediction",
-        "vortex-reconnection",
         "berry-vortex-moduli",
         "kelvin-dispersion-derivation",
         "kelvin-classical-limit",
