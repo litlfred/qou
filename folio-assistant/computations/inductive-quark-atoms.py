@@ -64,10 +64,15 @@ except Exception:
 # CROSSING COEFFICIENTS
 # ══════════════════════════════════════════════════════════════
 
-c_dd = q**2
-d_dd = -q * s_skein
-c_ud = (1 + q**2) / 2
-d_ud = -q * s_skein / 2
+# Crossing coefficients (c, d) for T(c,d) = c·σ + d·𝟙.
+# From the Hecke inverse relation σ⁻¹ = σ − (q − q⁻¹):
+#   uu (pp) → c = 1,  d = 0
+#   dd (nn) → c = 1,  d = −HA
+#   ud (pn) → c = 1,  d = −HA/2
+c_dd = 1.0
+d_dd = -HA
+c_ud = 1.0
+d_ud = -HA / 2.0
 
 def sigma(i):
     return HeckeElement({(i,): 1.0})
@@ -75,11 +80,11 @@ def sigma(i):
 def crossing_element(type_i, type_j, gen):
     """Crossing between quark/particle types at generator sigma_gen.
 
-    From prop:beta-decay-transfer-matrix:
-      u–u: sigma_gen (positive crossing)
-      d–d: q^2 sigma_gen - q*s (Skein inverse)
-      u–d: (1+q^2)/2 sigma_gen - q*s/2 (mixed)
-      any–electron: sigma_gen (Hopf link)
+    From the Hecke inverse relation σ⁻¹ = σ − (q − q⁻¹):
+      u–u: σ (positive crossing, c=1, d=0)
+      d–d: σ⁻¹ (negative crossing, c=1, d=−HA)
+      u–d: ½(σ+σ⁻¹) (mixed crossing, c=1, d=−HA/2)
+      any–electron: σ (Hopf link)
     """
     if type_i == type_j == 'u':
         return sigma(gen)
