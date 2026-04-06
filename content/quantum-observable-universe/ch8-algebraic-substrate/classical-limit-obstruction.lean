@@ -38,9 +38,14 @@ structure ClassicalLimitObstruction where
   carrier : Type*
   /-- The obstruction group has an additive group structure. -/
   [addGroupInst : AddCommGroup carrier]
-  /-- The zero element represents no obstruction (classical limit exists). -/
-  zero_is_unobstructed : ∀ (obs : carrier),
-    obs = (0 : carrier) → True  -- placeholder for "deformation extends"
+  /-- Predicate: a deformation with obstruction class `obs` extends
+      across the classical limit q → 1. -/
+  deformation_extends : carrier → Prop
+  /-- A deformation extends iff its obstruction class vanishes.
+      This is the content of the Hochschild deformation theorem. -/
+  -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
+  extends_iff_zero : ∀ (obs : carrier),
+    deformation_extends obs ↔ obs = (0 : carrier)
   /-- The obstruction class of the substrate parameter. -/
   substrate_class : carrier
   /-- The substrate class is non-trivial (q ≠ 1 is essential). -/

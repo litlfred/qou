@@ -127,12 +127,12 @@ degree to encode $c$ crossings of the braid closure.
 | 2 | quadratic | 0 | $L2a1$ | **Gluon** | (self) | Hopf link; linking number requires curvature |
 | 3 | cubic | 3 | $3_1$ | **Electron** $e^-$, **up** $u$ | **Positron** $e^+$, **down** $u^{\sigma}$ | Trefoil is *chiral*: $T_{2,3} \neq T_{2,3}^{\sigma}$; mirror = antiparticle |
 | 3 | cubic | 3 | $3_1^{\sigma}$ | **Positron** $e^+$, **down** $d$ | **Electron** $e^-$, $d^{\sigma}$ | Right trefoil; same crossing number, opposite chirality |
-| 4 | quartic | 4 | $4_1$ | **Muon** $\mu^{\pm}$ | (self) | Figure-eight is *amphichiral*: $\mu^- = (\mu^-)^{\sigma}$ as knots |
+| 4 | quartic | 4 | $4_1$ | **Higgs** $H$ (mass mechanism) | (self) | Figure-eight is *amphichiral*: $H = H^{\sigma}$; Higgs is its own antiparticle |
 | 4 | quartic | 0+0+0 | $\mathcal{B}_3$ | **Proton** $p$, **neutron** $n$ | $p^{\sigma}$, $n^{\sigma}$ | Borromean link of 3 quarks; linking structure needs quartic |
-| 5 | quintic | 5 | $5_1$ | **Tau** $\tau^-$, **bottom** $b$ | $\tau^+$, $b^{\sigma}$ | Cinquefoil; chiral; genus 2 |
-| 5 | quintic | 5 | $5_1^{\sigma}$ | **Anti-tau** $\tau^+$, **strange** $s$ | $\tau^-$, $s^{\sigma}$ | Mirror cinquefoil |
-| 7 | septic | 7 | $7_1$ | **Charm** $c$ | $c^{\sigma}$ | Heavy sector torus knot |
-| 8 | octic | 8 | $8_{19}$ | **Top** $t$ | $t^{\sigma}$ | $T_{3,4}$; first $(3,n)$ torus knot |
+| 5 | quintic | 5 | $5_1$ | **Muon** $\mu^-$, **bottom** $b$ | $\mu^+$, $b^{\sigma}$ | Cinquefoil; chiral; genus 2 |
+| 5 | quintic | 5 | $5_1^{\sigma}$ | **Antimuon** $\mu^+$, **strange** $s$ | $\mu^-$, $s^{\sigma}$ | Mirror cinquefoil |
+| 7 | septic | 7 | $7_1$ | **Tau** $\tau^-$, **charm** $c$ | $\tau^+$, $c^{\sigma}$ | Third-generation torus knot |
+| 8 | octic | 8 | $8_{19}$ | Hopf${}^2$ **color binding** | — | $T_{3,4}$; force carrier in $H^{0,1}$ |
 
 **Step 0: only the photon.**
 Before any transport, only the fiber value exists.  The photon is
@@ -216,12 +216,15 @@ in the color-tube sector.  With quarks available, the first
 composite hadrons become constructible (though their linking
 structure requires step 4).
 
-**Step 4: the muon and the first hadrons.**
+**Step 4: the Higgs mass mechanism and the first hadrons.**
 The figure-eight knot $4_1$ has crossing number $4$ and is the
 first **hyperbolic** knot: $\mathrm{Vol}(4_1) = 2.0299$.  It is
-amphichiral ($4_1 \cong 4_1^{\sigma}$), so the muon $\mu^-$ and
-antimuon $\mu^+$ are the same knot type, distinguished only by
-orientation — like the neutrino but with non-trivial topology.
+amphichiral ($4_1 \cong 4_1^{\sigma}$), so the Higgs field $H$
+is its own antiparticle — like the neutrino but with non-trivial
+topology.  The Hodge decomposition
+([cohomological embedding](#prop:cohomological-embedding)) places
+$4_1$ in $H^{0,1}$ as the **mass mechanism**: its hyperbolic
+volume drives the mass formula $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$.
 
 Also at step 4: the **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$.
 Although each constituent quark ($T_{2,3}$ or $T_{2,3}^{\sigma}$)
@@ -231,15 +234,19 @@ The proton $p$ and neutron $n$ first appear here, along with
 their antiparticles $p^{\sigma}$ and $n^{\sigma}$ (obtained by mirroring
 all constituent quarks).
 
-**Step 5: the tau and heavy quarks.**
+**Step 5: the muon and heavy quarks.**
 The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus
 $2$.  It is chiral: $5_1 \neq 5_1^{\sigma}$.  This produces:
 
-- **Tau** $\tau^- = T_{2,5}$ and **anti-tau** $\tau^+ = T_{2,5}^{\sigma}$
+- **Muon** $\mu^- = T_{2,5}$ and **antimuon** $\mu^+ = T_{2,5}^{\sigma}$
 - **Bottom quark** $b = T_{2,5}$ and **strange quark** $s = T_{2,5}^{\sigma}$
 
 (The strange and bottom quarks are the mirror pair at genus 2,
-as the up and down quarks are the mirror pair at genus 1.)
+as the up and down quarks are the mirror pair at genus 1.  The
+muon and antimuon share the same torus knot type, distinguished
+by chirality — unlike the old $4_1$ assignment, the muon and
+antimuon are now distinct knot types, consistent with their
+distinct charges.)
 
 **Summary: the unfolding.**
 
@@ -249,10 +256,10 @@ as the up and down quarks are the mirror pair at genus 1.)
 | 1 | linear | $\nu$ | $\nu^{\sigma}$ (orientation only) | no | transport, winding |
 | 2 | quadratic | gluon $g$ | (self) | no | curvature, linking |
 | 3 | **cubic** | $e^-$, $u$, $d$ | $e^+$, $u^{\sigma}$, $d^{\sigma}$ | **yes** | chirality, $\varphi$, $B_3$ |
-| 4 | quartic | $\mu^\pm$, $p$, $n$ | (amphi), $p^{\sigma}$, $n^{\sigma}$ | mixed | hyperbolic volume, baryons |
-| 5 | quintic | $\tau^-$, $b$, $s$ | $\tau^+$, $b^{\sigma}$, $s^{\sigma}$ | yes | genus 2 |
-| 7 | septic | $c$ | $c^{\sigma}$ | yes | heavy torus knots |
-| 8 | octic | $t$ | $t^{\sigma}$ | yes | $T_{3,4}$ sector |
+| 4 | quartic | $H$ (Higgs), $p$, $n$ | (amphi), $p^{\sigma}$, $n^{\sigma}$ | mixed | hyperbolic volume, mass mechanism, baryons |
+| 5 | quintic | $\mu^-$, $b$, $s$ | $\mu^+$, $b^{\sigma}$, $s^{\sigma}$ | yes | genus 2 |
+| 7 | septic | $\tau^-$, $c$ | $\tau^+$, $c^{\sigma}$ | yes | genus 3 |
+| 8 | octic | color binding | — | — | $T_{3,4}$ force carrier in $H^{0,1}$ |
 
 Each row is one Planck step, one tick of discrete time at the
 Big Bang.  The universe does not spring into existence fully
