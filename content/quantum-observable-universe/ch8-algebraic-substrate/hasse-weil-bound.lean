@@ -34,6 +34,7 @@ namespace QOU.AlgebraicSubstrate
 theorem eigenvalue_functional_equation
     (Z : LocalQZetaFunction) (i : Fin 8) :
     ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i := by
+  -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
   sorry
 
 /-- The Castelnuovo–Severi inequality on B × B bounds the
@@ -48,6 +49,8 @@ theorem eigenvalue_functional_equation
 theorem castelnuovo_severi_bound
     (Z : LocalQZetaFunction) (i : Fin 8) :
     Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q := by
+  -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+  -- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
   sorry
 
 /-- The functional equation + Castelnuovo–Severi together force
@@ -62,6 +65,7 @@ theorem eigenvalue_norm_sq
     (h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)
     (h_fe : ∃ j, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i) :
     Complex.abs (Z.eigenvalues i) ^ 2 = Z.q := by
+  -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
   sorry
 
 /-- **Hasse–Weil bound**: every fundamental Frobenius eigenvalue αᵢ
