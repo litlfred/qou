@@ -2,7 +2,7 @@ The Kummer tower filtration
 ([Kummer filtration](#rem:kummer-filtration-obstruction))
 provides the algebraic framework for understanding shell
 closure, the Pauli factor, and the odd-odd pairing deficit
-in the Gröbner normal form.
+in the Gröbner--Shirshov normal form.
 
 ## The $\mu_2$ torsion as Pauli evaluation
 

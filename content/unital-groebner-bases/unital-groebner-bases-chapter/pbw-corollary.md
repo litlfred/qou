@@ -11,7 +11,7 @@ $$
 is isomorphic as an $R$-module to $S\mathfrak{g}$, the symmetric
 algebra on $\mathfrak{g}$.
 
-In particular, if $R$ is a $\mathbb{Q}$-algebra, we obtain a Gröbner
+In particular, if $R$ is a $\mathbb{Q}$-algebra, we obtain a Gröbner--Shirshov
 basis proof of the equivalence of the category of (finite-dimensional)
 Lie algebras over $R$ and (finite-dimensional) smooth formal groups
 over $R$.

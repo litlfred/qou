@@ -65,6 +65,6 @@ in time and space.  Combined with a single-qubit gate
 outside the Clifford group (e.g.\ the Hadamard gate), the
 Toffoli gate becomes universal for quantum computation
 \cite{fredkin1982}.  The existence of a non-zero
-$P_{7,6}(q)$ in the Hecke algebra means that the substrate's
+$P_{7,6}(q)$ in the Iwahori--Hecke algebra means that the substrate's
 braiding dynamics, evaluated at discrete Planck steps, is
 computationally universal in this sense.

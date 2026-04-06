@@ -3,14 +3,14 @@ Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Then the knot-type eigenbasis is complete:
 
-1. **(Hecke algebra instantiation.)**  The Descartes condition forces
+1. **(Iwahori--Hecke algebra instantiation.)**  The Descartes condition forces
    $\chi(A) = -6$, giving genus $g = 4$ and gauge group
    $\mathrm{SU}_q(2)$ of rank $2$.  The $R$-matrix of
    $\mathcal{U}_q(\mathfrak{su}(2))$
    ([$R$-matrix braiding](#rem:r-matrix-braiding)) furnishes a braiding
    $c_{V,V}$ on $\mathbf{C}$ whose eigenvalues are $q$ and $-q^{-1}$.
    The quotient by the quadratic relation
-   $(c_{V,V} - q)(c_{V,V} + q^{-1}) = 0$ yields the Hecke algebra
+   $(c_{V,V} - q)(c_{V,V} + q^{-1}) = 0$ yields the Iwahori--Hecke algebra
    $H_n(q)$ acting on $V^{\otimes n}$.
 
 2. **(Schur--Weyl decomposition.)**  Since the Descartes condition
@@ -27,7 +27,7 @@ representation.  Then the knot-type eigenbasis is complete:
    extends to $\rho_n \colon B_n \to \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})$
    for all $n$ via
    [braid action on tensor products](#prop:braid-action-tensor).
-   The Markov trace on the Hecke algebra tower detects every irreducible
+   The Markov trace on the Iwahori--Hecke algebra tower detects every irreducible
    summand (Jones, 1987).
 
 4. **(Completeness.)**  By the combining theorem

@@ -23,13 +23,13 @@ $\chi(A) = -6$.
 
 **The $\mathbb{G}_m$-torsion dichotomy.**
 
-At torsion $q$ (root of unity): the Hecke algebra $H_n(q)$
+At torsion $q$ (root of unity): the Iwahori--Hecke algebra $H_n(q)$
 has a non-trivial radical.  The radical annihilates
 exponentially many resolution paths, pruning the tree to
 polynomial effective size.  This is BQP — some computational
 horizons become transparent.
 
-At non-torsion $q$ (including $q_0$): the Hecke algebra is
+At non-torsion $q$ (including $q_0$): the Iwahori--Hecke algebra is
 semisimple ($\mathrm{Rad} = 0$), no paths are pruned, and
 the full $3^c$ resolution tree survives.  The computational
 horizon $\mathcal{H}_c(L, q_0) \neq \varnothing$ for

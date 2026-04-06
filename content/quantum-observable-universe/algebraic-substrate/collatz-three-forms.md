@@ -9,7 +9,7 @@ sits at a critical threshold.
 
 ### (a) The categorical face: Markov trace convergence
 
-In the Hecke algebra $H_n(q)$, the Collatz step composes
+In the Iwahori--Hecke algebra $H_n(q)$, the Collatz step composes
 two operations: Hecke reduction ($T^2 = (q-q^{-1})T + 1$,
 which simplifies crossing words) and Markov destabilization
 ($\mathrm{tr}_M(xT_n) = z \cdot \mathrm{tr}_M(x)$, which
@@ -33,7 +33,7 @@ $J_L(q)$ of the link $L$ decays to $J_{\bigcirc}(q) = 1$
 step by step.
 
 This is the most intrinsic formulation: it lives
-entirely inside the Hecke algebra and the Markov trace,
+entirely inside the Iwahori--Hecke algebra and the Markov trace,
 with no reference to integers, parity, or divisibility.
 The "convergence to $1$" is convergence to the unknot
 polynomial — the categorical unit.
@@ -102,7 +102,7 @@ same quantity from different vantage points:
 | (c) Residue | $(q+1)$-adic valuation | $\mathbb{Z}$ (at $q=-1$) |
 
 The passage (a) $\to$ (b) is the Markov trace: it sends
-Hecke algebra elements to Laurent polynomials, converting
+Iwahori--Hecke algebra elements to Laurent polynomials, converting
 braid untangling to divisibility.  The passage (b) $\to$
 (c) is evaluation at the $[2]_q$-divisor ($q = -1$): it
 specializes the Laurent polynomial to an integer, converting

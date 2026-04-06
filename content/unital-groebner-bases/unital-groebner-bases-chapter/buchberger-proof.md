@@ -1,5 +1,5 @@
 We show that if all $S$-polynomials reduce to zero and $f \in I$,
-then $f$ has a Gröbner basis representation. Since $G$ generates $I$,
+then $f$ has a Gröbner--Shirshov basis representation. Since $G$ generates $I$,
 choose a representation
 
 $$

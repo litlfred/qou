@@ -120,7 +120,7 @@ $\Phi_{\mathrm{Berry}}(\sigma_i)$ is an irrational multiple of
 $\pi$, and the vortex filaments are **anyons** — neither bosons
 nor fermions.  At a root of unity $q = e^{i\pi/\kappa}$ with
 $\kappa \in \mathbb{Z}$, the representations of $B_n$ factor
-through the Hecke algebra $H_n(q)$ and the statistics become
+through the Iwahori--Hecke algebra $H_n(q)$ and the statistics become
 rational.  The physical value $q \approx 1.110$ is not a root of
 unity, but the deformation from $q = 1$ (bosonic) is small:
 $\Phi_+ \approx 0.03\pi$, which is the origin of the spin-statistics

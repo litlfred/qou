@@ -4,7 +4,7 @@ link $\mathcal{N}(Z, N)$ produces observables at two levels.
 
 **What $q$ alone determines.**
 
-These are computed from the Hecke algebra $H_A(q)$ at the single
+These are computed from the Iwahori--Hecke algebra $H_A(q)$ at the single
 parameter the substrate $q$, the Descartes condition $\chi(A) = -6$,
 and the categorical definitions:
 

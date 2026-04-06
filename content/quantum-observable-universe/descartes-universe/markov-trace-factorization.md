@@ -5,9 +5,9 @@ identity in $H_A(q)$, and the result is a **polynomial in $q$**:
 the Skein polynomial of the nuclear link.
 
 **Theorem.**
-Let $\mathcal{N}(Z, N)$ be the Gröbner-reduced
+Let $\mathcal{N}(Z, N)$ be the Gröbner--Shirshov-reduced
 nuclear braid word in $H_A(q)$
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
+([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction)).
 At each generator $\sigma_i$, let $(a_i, b_i)$ be the
 transfer-matrix-reduced chain coefficients
 ([generator volume decomposition](#prop:generator-volume-decomposition)).
@@ -73,7 +73,7 @@ the substrate $q$ gives the physical categorical action.
 
 The substrate parameter $q$ is simultaneously:
 
-1. **The deformation parameter** of the Hecke algebra $H_A(q)$,
+1. **The deformation parameter** of the Iwahori--Hecke algebra $H_A(q)$,
    controlling the deviation from the symmetric group.
 2. **The variable** of the Skein polynomial, in which each
    transfer matrix entry is polynomial.
@@ -92,7 +92,7 @@ gives the matrix element for beta decay.
 The nuclear braid word is a product of crossing factors, each
 acting at a single generator $\sigma_i$.  After Hecke reduction
 (the only energy-changing step,
-[Gröbner-Shirshov energy](#thm:groebner-shirshov-energy)),
+[Gröbner--Shirshov-Shirshov energy](#thm:groebner-shirshov-energy)),
 the crossings at generator $\sigma_i$ reduce to
 $a_i \sigma_i + b_i$.
 

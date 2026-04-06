@@ -63,7 +63,7 @@ analog of the jet horizon
 $\mathcal{H} = V(\mathfrak{h})$
 ([jet horizon](#def:jet-horizon)), with the brane tower
 replaced by the resolution tower and the Frobenius algebra
-replaced by the Hecke algebra.
+replaced by the Iwahori--Hecke algebra.
 
 **Conjecture ($\mathrm{P}$ vs $\mathrm{NP}$ as emptiness
 of the boundary).**

@@ -4,7 +4,7 @@
 $c_{V,V} \colon V \otimes V \to V \otimes V$ is non-symmetric
 ($c_{V,V}^2 \neq \mathrm{id}$).  Then $c_{V,V}$ determines
 a canonical admissible well-ordering $\prec_c$ on the monomial
-basis $B$ of the Hecke algebra $H_n(q)$ of $A$.*
+basis $B$ of the Iwahori--Hecke algebra $H_n(q)$ of $A$.*
 
 **Construction.**  The monomial basis $B$ of $H_n(q)$ consists
 of reduced positive braid monomials
@@ -72,7 +72,7 @@ arrow of time from two complementary viewpoints:
   *over*.  A positive crossing $\sigma_i$ applies $c_{V,V}$;
   a negative crossing $\sigma_i^{-1}$ applies
   $\bar{c}_{V,V} := c_{V,V}^{-1}$.  The ordering $\prec_c$
-  is the algebraic encoding: forward time = Gröbner reduction
+  is the algebraic encoding: forward time = Gröbner--Shirshov reduction
   under $\prec_c$.
 
 - **Geometric arrow** ($\xi$): which direction the Reeb flow

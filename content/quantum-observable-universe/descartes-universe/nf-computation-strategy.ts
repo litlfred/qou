@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:nf-computation-strategy",
-  title: "Computational strategy for the Gröbner normal form",
+  title: "Computational strategy for the Gröbner--Shirshov normal form",
   tags: [
     "groebner-basis",
     "normal-form",

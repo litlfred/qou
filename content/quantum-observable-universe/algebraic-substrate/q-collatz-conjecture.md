@@ -7,7 +7,7 @@ of the Reeb bundle $\mathcal{R}_p = (S^3 \to S^2, \xi_q)$
 
 **Convention.** This section uses the combinatorial $q$-integer
 $[n]_q = (q^n - 1)/(q - 1)$, giving $[2]_q = q + 1$ and
-$[3]_q = q^2 + q + 1$.  The paper's Hecke algebra convention
+$[3]_q = q^2 + q + 1$.  The paper's Iwahori--Hecke algebra convention
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ (symmetric, giving
 $[2]_q = q + q^{-1}$) differs by a factor of $q^{(n-1)/2}$.
 The combinatorial convention is used here because the Skein

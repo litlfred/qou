@@ -1,5 +1,5 @@
-The Gröbner normal form of each nucleon in $H_3(q)$ has exactly
-**six terms**, one for each basis element of the Hecke algebra.
+The Gröbner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly
+**six terms**, one for each basis element of the Iwahori--Hecke algebra.
 The sign pattern is $[-, +, +, +, +, -]$ for both neutron and
 proton.  We classify each term by **word length** $\ell$ and
 **observability** — whether the corresponding knot/link is

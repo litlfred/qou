@@ -22,7 +22,7 @@ $$
 $$
 
 where $S_q(K) = \mathrm{tr}_\tau(\rho(\beta_K))$ is the
-categorical action evaluated on the Gröbner normal form of
+categorical action evaluated on the Gröbner--Shirshov normal form of
 each knot/link.
 
 This is the **primary definition**.  No conservation law is
@@ -111,9 +111,9 @@ artefact.
 ## Structure of the $q$-anomaly
 
 The $q$-anomaly arises from the non-commutativity of the
-Hecke algebra.  When the Skein crossing change converts one
-quark, the re-reduction to Gröbner normal form
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction))
+Iwahori--Hecke algebra.  When the Skein crossing change converts one
+quark, the re-reduction to Gröbner--Shirshov normal form
+([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))
 introduces R2 moves $T^2 = (q - q^{-1})T + 1$.
 Each R2 move shifts the local $q$-environment by:
 
@@ -198,7 +198,7 @@ $$
   \vec{p}_{\mathrm{par}} = \vec{p}_{\mathrm{dau}} + \vec{p}_e + \vec{p}_{\nu^{\sigma}}
 $$
 
-In the $q$-deformed case, the Hecke algebra non-commutativity
+In the $q$-deformed case, the Iwahori--Hecke algebra non-commutativity
 means:
 
 $$

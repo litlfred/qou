@@ -3,7 +3,7 @@ The hadron $\mathfrak{H} \hookrightarrow V^{\otimes 2(j_1 + \cdots + j_n)}$
 embeds into a tensor power of $V$ via the PawLei basis
 ([knot factorization](#rem:knot-factorization)).  The braid word
 $\beta_{\mathfrak{H}} \in B_N$ (where $N = 2(j_1 + \cdots + j_n)$) acts on
-$V^{\otimes N}$ through the Hecke algebra $H_N(q)$.
+$V^{\otimes N}$ through the Iwahori--Hecke algebra $H_N(q)$.
 
 At the **constituent level**, the crossings between $K_i$ and
 $K_j$ are grouped by generator index, and the Markov trace factors
@@ -43,7 +43,7 @@ Independence from the braid representative is the link invariance
 of the Markov trace (part 2).  Independence from the PawLei
 embedding follows from the $q$-Schur--Weyl duality: any two
 embeddings $\iota, \iota'$ of $V_{j_i}$ into $V^{\otimes 2j_i}$
-differ by an element of the Hecke algebra centralizer, which
+differ by an element of the Iwahori--Hecke algebra centralizer, which
 commutes with the Markov trace.  Independence from the order of
 crossing evaluation follows from the right-to-left peeling argument
 in the Markov trace product

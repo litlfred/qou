@@ -10,7 +10,7 @@ numbers from the torus knot hierarchy.
 ## Intra-shell vs. inter-shell crossings
 
 The inductive construction
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction))
+([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))
 builds the nucleus one nucleon at a time.  Within a shell, each
 new nucleon crosses existing nucleons via **bare transfer
 matrices** $T(c, d)$ with crossing coefficients pp, nn, or mix
@@ -44,7 +44,7 @@ $$
 
 where $(c_{n_s}, d_{n_s})$ are the **Chebyshev crossing
 coefficients** of $T_{2, n_s}$ (see below), and $r(\cdot, G)$
-is the Gröbner division algorithm.
+is the Gröbner--Shirshov division algorithm.
 
 ## Chebyshev recurrence for torus knot coefficients
 
@@ -89,7 +89,7 @@ The first few values at $q \approx 1.110$:
 ## Proposition: magic numbers from torus knot shell sizes
 
 **Let $q > 1$ and let the nucleus be built by the inductive
-construction with Gröbner reduction at each step.**
+construction with Gröbner--Shirshov reduction at each step.**
 
 **(i) Shell closure triggers inter-shell operator.**
 When the word-length histogram of $\bar{\mathcal{N}}(p, n)$ is
@@ -101,7 +101,7 @@ is the size of the closing shell.
 
 **(ii) Normalization is preserved across shell boundaries.**
 The inter-shell operator $\Phi_{\mathrm{shell}}^{(\ell)}$
-produces a Gröbner normal form, by the same argument as the
+produces a Gröbner--Shirshov normal form, by the same argument as the
 intra-shell step: the Chebyshev crossing element
 $(c_{n_s}\,\sigma + d_{n_s})$ is linear in $\sigma$ (no
 squares), and the division algorithm produces a unique normal
@@ -173,7 +173,7 @@ the transition from intra-shell (bare crossings) to inter-shell
 the torus knot eigenvalue ratio $|\lambda_+/\lambda_-| = q^{2n_s}$
 increases exponentially.
 
-## Gröbner preservation across all shells (inductive summary)
+## Gröbner--Shirshov preservation across all shells (inductive summary)
 
 The full inductive argument for the construction of any nucleus
 $\mathcal{A}(Z, N)$ proceeds:
@@ -183,7 +183,7 @@ $\mathcal{A}(Z, N)$ proceeds:
 
 2. **Intra-shell step.** Given $\bar{\mathcal{N}}_A$ in normal
    form within shell $\ell$, the next nucleon crosses via bare
-   transfer matrix $(c_j\,\sigma_j + d_j)$.  Apply Gröbner
+   transfer matrix $(c_j\,\sigma_j + d_j)$.  Apply Gröbner--Shirshov
    division: the result is in normal form
    ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)).
 
@@ -194,12 +194,12 @@ $\mathcal{A}(Z, N)$ proceeds:
    crosses the closed shell via the Chebyshev crossing element
    $(c_{n_s}\,\sigma + d_{n_s})$ of $T_{2, n_s}$.  This element
    is linear in $\sigma$ — no $\sigma^2$ terms — so it enters
-   the Gröbner division on the same footing as any intra-shell
+   the Gröbner--Shirshov division on the same footing as any intra-shell
    crossing.  The division algorithm produces a normal form.
 
 5. **Repeat** until $A = Z + N$ nucleons are linked.
 
-At every step — intra-shell or inter-shell — the Gröbner
+At every step — intra-shell or inter-shell — the Gröbner--Shirshov
 division algorithm produces a unique normal form.  The
 inter-shell step differs only in the **magnitude** of the
 crossing coefficients (Chebyshev-enhanced), not in the

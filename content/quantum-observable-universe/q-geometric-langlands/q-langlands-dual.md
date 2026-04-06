@@ -26,7 +26,7 @@ parameter.
 
 The inversion $q \mapsto q^{-1}$ interchanges the two eigenvalues of
 the braiding: $q \leftrightarrow -q^{-1}$.  This exchanges the
-symmetric and antisymmetric channels of the Hecke algebra, which is
+symmetric and antisymmetric channels of the Iwahori--Hecke algebra, which is
 the categorical manifestation of the exchange of roots and coroots.
 In the $\mathbb{G}_m$-family picture, the Langlands involution is
 the inversion automorphism $\iota \colon \mathbb{G}_m \to \mathbb{G}_m$,

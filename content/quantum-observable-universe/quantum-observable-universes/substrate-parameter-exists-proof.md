@@ -29,7 +29,7 @@ from transcendence over $\mathbb{Q}$ in the archimedean realisation.
 the braiding coincides with the interpolation parameter in
 $d_q = q^{-1}\,d + (1 - q^{-1})\,\pi_V \circ d$: both are
 characterised as the unique $q \in \mathrm{End}(\mathbf{1})$ for
-which the Hecke algebra $H_n(q)$ acts faithfully on
+which the Iwahori--Hecke algebra $H_n(q)$ acts faithfully on
 $V^{\otimes n}$.
 
 In the archimedean realisation, the constant substrate field

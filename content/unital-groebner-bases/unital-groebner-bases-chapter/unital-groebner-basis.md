@@ -5,7 +5,7 @@ on $A$.
 Let $I$ be a two-sided ideal in $A$ with a set of generators
 $G = \{g_\gamma \mid \gamma \in \Gamma\}$.
 
-We say that $G$ is a **Gröbner basis** with respect to $(B, <)$ if for every
+We say that $G$ is a **Gröbner--Shirshov basis** with respect to $(B, <)$ if for every
 $h \in I$ we have a representation:
 
 $$h = \sum_{k \in K} \lambda_k u_k \cdot g_{\gamma_k} \cdot v_k$$
@@ -28,6 +28,6 @@ in which case:
 
 $$S(f, f') := \lambda u \cdot f \cdot v - \lambda' u' \cdot f' \cdot v'$$
 
-The extra conditions of a Gröbner basis being unital are not that strong: if the
-ground ring is a field, then a Gröbner basis is automatically a unital Gröbner
+The extra conditions of a Gröbner--Shirshov basis being unital are not that strong: if the
+ground ring is a field, then a Gröbner--Shirshov basis is automatically a unital Gröbner--Shirshov
 basis.

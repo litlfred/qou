@@ -1,4 +1,4 @@
-The Gröbner normal form computation has three distinct
+The Gröbner--Shirshov normal form computation has three distinct
 complexity regimes, requiring different algorithmic strategies.
 
 ## The three regimes
@@ -9,10 +9,10 @@ has coefficients equal to the Markov-traced volumes $\hat{V}_i(q)$.
 Each $\hat{V}_i$ is computed by a product of $A - i - 1$ transfer
 matrices $T(c_j, d_j)$ — a total of $\binom{A}{2}$ matrix
 multiplications.  This gives the $Q$-value, the Skein polynomial,
-and the full optimal NF coefficients.  No Hecke algebra expansion
+and the full optimal NF coefficients.  No Iwahori--Hecke algebra expansion
 needed.
 
-**Regime 2: Symbolic Gröbner with stripping ($O(A^3)$).**
+**Regime 2: Symbolic Gröbner--Shirshov with stripping ($O(A^3)$).**
 The full NF is needed for the Pauli factor $F_{\mathrm{Pauli}}$,
 the coral content, and the per-length weight distribution.  With
 inductive quotient stripping at strand boundaries (I₈ + I₉
@@ -76,7 +76,7 @@ before stripping.
 The engine uses length-lexicographic ordering: shorter words
 reduce first (Hecke lowers degree), then lex order within the
 same degree (far-comm and YB sort generators).  This is optimal
-for the Hecke algebra because the Hecke relation
+for the Iwahori--Hecke algebra because the Hecke relation
 $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ is the only
 degree-changing rule.
 

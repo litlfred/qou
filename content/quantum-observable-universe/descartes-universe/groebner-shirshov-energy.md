@@ -1,13 +1,13 @@
-The Gröbner--Shirshov basis theory for the Hecke algebra
+The Gröbner--Shirshov basis theory for the Iwahori--Hecke algebra
 $H_A(q)$ gives a stronger result than uniqueness of normal
 forms: the **energy** of the nuclear braid word is a topological
 invariant, computed by the division algorithm with no path
 dependence.
 
 **Theorem.**
-Let $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \sigma_i \sigma_{i+1} \sigma_i - \sigma_{i+1} \sigma_i \sigma_{i+1},\; \sigma_i \sigma_j - \sigma_j \sigma_i\}$ be the Gröbner basis
+Let $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \sigma_i \sigma_{i+1} \sigma_i - \sigma_{i+1} \sigma_i \sigma_{i+1},\; \sigma_i \sigma_j - \sigma_j \sigma_i\}$ be the Gröbner--Shirshov basis
 for $H_A(q)$
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
+([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction)).
 Define the **energy functional** on $H_A(q)$ by
 
 $$
@@ -29,7 +29,7 @@ Then:
    The total energy change from the unreduced braid word
    $\mathcal{N}_{\mathrm{raw}}(Z, N)$ to the normal form
    $\mathcal{N}(Z, N)$ is independent of the order
-   in which the Gröbner basis elements are applied.  This
+   in which the Gröbner--Shirshov basis elements are applied.  This
    follows from the confluence (diamond lemma) of the
    Gröbner--Shirshov basis: all reduction paths lead to the
    same normal form, and the energy is a function of the
@@ -63,8 +63,8 @@ changes the word length (from $\ell$ to $\ell - 1$) and splits
 one coefficient into two.
 
 *Part 2.*
-The Gröbner basis $G$ satisfies the diamond lemma
-(the main theorem of the Gröbner basis theory,
+The Gröbner--Shirshov basis $G$ satisfies the diamond lemma
+(the main theorem of the Gröbner--Shirshov basis theory,
 [main theorem](#unital-groebner-bases:thm:main-theorem)):
 for any two overlapping reductions, the results can be further
 reduced to the same normal form.  Since the energy is computed

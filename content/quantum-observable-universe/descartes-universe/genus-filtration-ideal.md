@@ -1,5 +1,5 @@
 The genus of the moduli surface is not assumed --- it is
-**determined by the Hecke algebra**.  The QOU axioms force
+**determined by the Iwahori--Hecke algebra**.  The QOU axioms force
 $g = 4$ through a completeness condition on the irreducible
 representations of $H_2(q) \oplus H_3(q)$, and the
 genus-filtration ideal $\mathfrak{I}_4 = (u^5)$ is the
@@ -11,7 +11,7 @@ $p \geq 11$.
 **Proposition (Genus from Hecke completeness).**
 *Let $(\mathbf{C}, A, \tau)$ be a QOU with
 $G = \mathrm{SU}_q(2)$.  The braiding on $V_1^{\otimes n}$
-gives the Hecke algebra $H_n(q)$.  The relevant strand
+gives the Iwahori--Hecke algebra $H_n(q)$.  The relevant strand
 counts are $n = 2$ and $n = 3$:*
 
 - *$H_2(q)$ has $2$ irreducible representations
@@ -68,7 +68,7 @@ Hecke completeness condition holds.*
 ## Part I: Chebyshev degree = Seifert genus
 
 **Why Chebyshev.**
-The Hecke algebra $H_2(q)$ is $2$-dimensional with basis
+The Iwahori--Hecke algebra $H_2(q)$ is $2$-dimensional with basis
 $\{1, T\}$ and the single relation $T^2 = sT + 1$ where
 $s = q - q^{-1}$.  The generator $T$ has two eigenvalues:
 $q$ (symmetric channel) and $-q^{-1}$ (antisymmetric channel).
@@ -115,7 +115,7 @@ as a localized knot on $\Sigma_g$, each cycle needs a target
 class in $H^1(\Sigma_g)$.  When $\deg_u a_p > g$, the
 polynomial encodes more topology than the surface can hold ---
 the surplus monomials have no geometric home.  This is the
-**Chebyshev overflow**: the Hecke algebra knows the knot
+**Chebyshev overflow**: the Iwahori--Hecke algebra knows the knot
 doesn't fit, before any surface is chosen.
 
 ## The Chebyshev table

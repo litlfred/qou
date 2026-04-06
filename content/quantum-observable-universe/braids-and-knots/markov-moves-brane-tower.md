@@ -28,7 +28,7 @@ cosimplicial structure
    $\mathrm{tr}_M(x\, T_n^{\pm 1}) = z^{\pm 1}\,\mathrm{tr}_M(x)$
    ensures the trace scales predictably under these vertical inclusions.
 
-The Hecke algebra tower $H_1(q) \hookrightarrow H_2(q) \hookrightarrow \cdots$ thus shadows the brane tower
+The Iwahori--Hecke algebra tower $H_1(q) \hookrightarrow H_2(q) \hookrightarrow \cdots$ thus shadows the brane tower
 $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$, and the Jones
 polynomial is the observable invariant under *both* directions of this
 decomposition.  Markov's theorem --- that conjugation and stabilisation

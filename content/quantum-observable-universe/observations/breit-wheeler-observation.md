@@ -20,7 +20,7 @@ $$
 $$
 
 where $H_A = q - q^{-1} \approx 0.209$ at $q_0$ and
-$\mathrm{net}(e^+) \approx 0.451$ (Gröbner NF coefficient at $q_0$).
+$\mathrm{net}(e^+) \approx 0.451$ (Gröbner--Shirshov NF coefficient at $q_0$).
 
 Two limiting cases:
 
