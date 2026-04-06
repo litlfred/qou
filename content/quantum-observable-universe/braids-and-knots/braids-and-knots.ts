@@ -8,7 +8,7 @@ import { chapter, section } from "../../schema/builders";
  * composites and topological mass, Möbius energy, and varying Euler
  * characteristic.
  *
- * Hadron/knot/bundle blocks absorbed from ch3-lifting §11-12 during
+ * Hadron/knot/bundle blocks absorbed from lifting-and-descent §11-12 during
  * chapter restructuring (2026-03).  Proton/neutron definitions moved
  * to the Descartes chapter (Option A: nuclear binding references the
  * abstract hadron, not specific particles).
