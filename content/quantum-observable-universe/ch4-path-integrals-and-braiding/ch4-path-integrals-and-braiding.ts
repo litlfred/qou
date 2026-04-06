@@ -40,6 +40,7 @@ export default chapter({
         "braid-base-field",
         "braid-lifting-compatibility",
         "jones-markov-trace",
+        "hecke-algebra-from-braiding",
         "markov-moves-brane-tower",
         "knot-eigenbasis-complete",
         "knot-eigenbasis-complete-proof",

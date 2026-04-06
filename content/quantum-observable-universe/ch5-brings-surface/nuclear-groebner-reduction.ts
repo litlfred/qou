@@ -19,6 +19,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "prop:braiding-eigenvalue-extraction",
     "conj:shell-threading-energy",
     "unital-groebner-bases:def:groebner-basis",
     "unital-groebner-bases:def:division-algorithm",
