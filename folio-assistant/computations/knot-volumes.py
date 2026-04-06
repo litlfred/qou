@@ -58,7 +58,7 @@ KNOT_REGISTRY = [
         "tolerance": 1e-10,
         "source": "OEIS A091518, 3·Cl₂(π/3)",
         "unit": "volume",
-        "particle": "higgs_field",
+        "particle": "higgs",
     },
     {
         "name": "Vol(5_1) — cinquefoil (muon T_{2,5})",
@@ -85,7 +85,7 @@ KNOT_REGISTRY = [
         "tolerance": 1e-10,
         "source": "Torus knot (non-hyperbolic)",
         "unit": "volume",
-        "particle": "tau_charm",
+        "particle": "tau",
     },
 ]
 
