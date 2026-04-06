@@ -195,7 +195,12 @@ theorem muon_electron_ratio_from_substrate :
 -- Ref: [manuscript] Ch. 7, §Building block knots
 theorem crossing_energy_at_substrate :
     |crossing_energy q₀ - 0.1045| < 0.001 := by
-  -- Ref: [manuscript] Ch. 7, §Building block knots
-  sorry
+  -- crossing_energy q₀ = (1/2) * (1.10998 - 1.10998⁻¹)
+  -- = (1/2) * (55499/50000 - 50000/55499)
+  -- = (55499² - 50000²) / (2 × 50000 × 55499)
+  -- = 580139001 / 5549900000 ≈ 0.10453
+  -- |0.10453 - 0.1045| = 0.00003 < 0.001  ✓
+  simp only [crossing_energy, q₀, abs_lt]
+  constructor <;> { field_simp; norm_num }
 
 end QOU.Descartes.BuildingBlockKnots
