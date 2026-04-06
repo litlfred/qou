@@ -490,6 +490,27 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       break;
     }
 
+    case "table": {
+      // Standalone table block.  Rendered as a LaTeX table/longtable
+      // environment inside a float.  The .md content may contain a
+      // markdown table (pipe-delimited) or raw TeX.
+      if (block.label) lines.push(`% table: ${block.label}`);
+      const caption = block.caption || ("title" in block && block.title) || "";
+      if (caption) {
+        lines.push("\\begin{table}[htbp]");
+        lines.push("  \\centering");
+        lines.push(`  \\caption{${escapeLatex(String(caption))}}`);
+        if (block.label) lines.push(`  \\label{${block.label}}`);
+      }
+      // Use block.tex if provided, otherwise render from .md
+      const tex = block.tex || markdownToLatex(mdContent);
+      lines.push(tex);
+      if (caption) {
+        lines.push("\\end{table}");
+      }
+      break;
+    }
+
     default: {
       // Environment blocks (definition, theorem, etc.)
       const envName = ENV_NAMES[block.kind];

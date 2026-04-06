@@ -30,6 +30,7 @@ import type {
   ProseBlock,
   EquationBlock,
   DiagramBlock,
+  TableBlock,
   Chapter,
   ChapterRef,
   Section,
@@ -55,6 +56,7 @@ import {
   ProseSchema,
   EquationSchema,
   DiagramSchema,
+  TableSchema,
   ChapterSchema,
   ChapterRefSchema,
   SectionRefSchema,
@@ -129,6 +131,10 @@ export function equation(data: Omit<EquationBlock, "kind">): EquationBlock {
 
 export function diagram(data: Omit<DiagramBlock, "kind">): DiagramBlock {
   return validated(DiagramSchema, { kind: "diagram" as const, ...data });
+}
+
+export function table(data: Omit<TableBlock, "kind">): TableBlock {
+  return validated(TableSchema, { kind: "table" as const, ...data });
 }
 
 // ── Structure builders ───────────────────────────────────────────
