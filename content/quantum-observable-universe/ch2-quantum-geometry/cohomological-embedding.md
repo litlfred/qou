@@ -102,19 +102,19 @@ $$
 | $H^{1,0}$ | $1$ | $1$ | $\tau(3,5)$ | Weak force ($\beta$-decay vertex) |
 | $H^{0,1}$ | $1$ | $2$ | $\tau(2,9) = \tau(2,3^2)$ | Strong binding (gluon) |
 | $H^{0,1}$ | $1$ | $2$ | $\tau(3,4) = \tau(3,2^2)$ | Hopf${}^2$ binding (color) |
-| $H^{0,1}$ | $1$ | $2$ | $4_1$ (figure-eight) | Higgs boson (mass mechanism) |
-| $H^{0,1}$ | $1$ | $2$ | $4_1^{-1} = 4_1$ (amphichiral) | Higgs $=$ own antiparticle |
+| $H^{0,1}$ | $1$ | $2$ | $4_1$ (figure-eight) | Higgs field (mass mechanism) |
+| $H^{0,1}$ | $1$ | $2$ | $4_1^{-1} = 4_1$ (amphichiral) | Higgs field $=$ own antiparticle |
 
 **Dimension count**: $\dim H^0 + \dim H^1 + \dim H^2 = 1 + 8 + 1 = 10$.  Euler characteristic: $\chi = 1 - 8 + 1 = -6$.  The $8$
 generators of $H^1$ comprise $4$ holomorphic ($H^{1,0}$, degree-$1$
 torus knots) and $4$ antiholomorphic ($H^{0,1}$, degree-$2$ knots
-$+$ the amphichiral Higgs).
+$+$ the amphichiral Higgs mass mechanism).
 
 **Gravity** is not a knot — it is the categorical trace
 $\int_A$ (the Frobenius pairing), operating at degree $0$.
 It acts universally on all knot-particles.
 
-**The Higgs boson** $4_1$ is the figure-eight knot:
+**The Higgs mass mechanism** $4_1$ is the figure-eight knot:
 the closure of the Borromean braid
 $(\Delta_{\mathrm{mix}})^2 = (\sigma_0\sigma_1^{-1})^2$.
 It is amphichiral ($4_1 = 4_1^{-1}$, its own antiparticle),
@@ -124,7 +124,17 @@ couples to every knot-particle with crossings $> 0$
 Massless knot-particles (photon: $0$ crossings, neutrino:
 $0$ crossings) do not couple.  The open braid
 $(\Delta_{\mathrm{mix}})^2$ gives the axial coupling
-$g_A \approx 1.277$; the closed knot gives the mass boson.
+$g_A \approx 1.277$; the closed knot gives the mass mechanism.
+
+The **Higgs boson** — the excitable scalar particle at
+$\sim 125\;\mathrm{GeV}$ — is separately identified with
+the torus link $T(2,8)$
+([Higgs as $T(2,8)$](#conj:higgs-t28)), a spin-$0$ boson
+consistent with the fermion--boson decomposition
+([fermion--boson knot--link](#prop:fermion-boson-knot-link)).
+The two objects play complementary roles: $4_1$ is the
+**mass mechanism** (the Higgs field condensate), while
+$T(2,8)$ is the **mass boson** (the excitation of the field).
 
 ## Completeness via Jones polynomials
 

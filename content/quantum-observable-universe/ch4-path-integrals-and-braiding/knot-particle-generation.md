@@ -26,10 +26,10 @@ $\chi(A) = -6$, the bound is $N(-6) = 9$, admitting:
 |-----------|------|-----------------|-----------------|
 | $T_{1,0}$ | Unknot $0_1$ | $0$ | Neutrino (trivial braiding) |
 | $T_{2,3}$ | Trefoil $3_1$ | $3$ | Electron / Up quark (gen.\ 1) |
-| $T_{2,5}$ | Cinquefoil $5_1$ | $5$ | Tau / Bottom quark (gen.\ 3) |
-| $T_{2,7}$ | $7_1$ | $7$ | Charm quark (heavy sector) |
-| $T_{3,4}$ | $8_{19}$ | $8$ | Top-quark candidate |
-| $T_{3,5}$ | $10_{124}$ | $10$ | Beyond-Standard-Model sector |
+| $T_{2,5}$ | Cinquefoil $5_1$ | $5$ | Muon / gen-$2$ quarks (gen.\ 2) |
+| $T_{2,7}$ | $7_1$ | $7$ | Tau / gen-$3$ quarks (gen.\ 3) |
+| $T_{3,4}$ | $8_{19}$ | $8$ | Force carrier (Hopf${}^2$ color binding) |
+| $T_{3,5}$ | $10_{124}$ | $10$ | Weak force ($\beta$-decay) |
 
 All torus knots have *zero hyperbolic volume*: they are not
 hyperbolic but satellite/torus type.  Consequently their bare mass

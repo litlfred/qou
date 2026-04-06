@@ -53,9 +53,8 @@ The figure-eight knot $4_1$ is the Higgs boson
 It is the unique amphichiral knot in $H^{0,1}(\Sigma_4)$, and
 its hyperbolic volume drives the mass mechanism.  The muon
 ($T_{2,5}$, cinquefoil) acquires its mass through the Higgs
-mechanism: the Skein resolution of the muon's linked configuration
-produces $4_1$ as the dominant hyperbolic piece.  The ratio of
-topological masses is
+field ($4_1$), which universally couples to all knot-particles
+with crossings $> 0$.  The ratio of topological masses is
 
 $$
   \frac{\mathfrak{m}(4_1)}{\mathfrak{m}(\tau(2,3))}

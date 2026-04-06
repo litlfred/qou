@@ -16,13 +16,14 @@ Embeddability requires $p^k - 1 \leq 4$, i.e., $p^k \leq 5$.
 | $k$ | Knot | Genus $= 2^k - 1$ | Crossings | Embeddable? | Assignment |
 |-----|------|--------------------|-----------|-------------|------------|
 | $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$, up quark $\mathfrak{u}$ |
-| $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Top quark $\mathfrak{t}$ |
+| $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Hopf${}^2$ color binding |
 | $3$ | $T_{3,8}$ | $7$ | $21$ | **No** | Excluded |
 | $4$ | $T_{3,16}$ | $15$ | $45$ | **No** | Excluded |
 
 The genus sequence $1, 3, 7, 15, \ldots$ follows $g = 2^k - 1$
 (Mersenne numbers).  The Bring's surface admits exactly two levels
-of this tower: the trefoil ($k = 1$) and the top quark ($k = 2$).
+of this tower: the trefoil ($k = 1$) and $T_{3,4}$ ($k = 2$, a
+force carrier in the Hodge decomposition).
 No third generation of $p = 2$ knots is possible.
 
 **The trefoil as self-intersection of two families.**
@@ -44,8 +45,8 @@ which both families grow.
 
 | Family | Generators from trefoil seed |
 |--------|----------------------------|
-| $m = 2$: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$ | $e^-, \tau, c,$ **strong force?** |
-| $m = 3$: $T_{3,2}, T_{3,4}, T_{3,5}$ | $u, t,$ **weak force?** |
+| $m = 2$: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$ | $e^-, \mu, \tau,$ **strong force** |
+| $m = 3$: $T_{3,2}, T_{3,4}, T_{3,5}$ | $u,$ **color binding,** **weak force** |
 
 The trefoil is the root node of both generation chains.
 
@@ -82,14 +83,16 @@ the genus boundary.
 The power tower $T_{3,2^k}$ has a clear physical pattern:
 
 - $k = 1$: $T_{3,2}$ = trefoil — lightest matter (electron, up quark)
-- $k = 2$: $T_{3,4}$ — heaviest matter (top quark, mass $\approx 173$ GeV)
-- $k = 3$: excluded — the Bring's surface forbids a third matter generation in this tower
+- $k = 2$: $T_{3,4}$ — Hopf${}^2$ color binding (force carrier in $H^{0,1}$)
+- $k = 3$: excluded — the Bring's surface forbids a third level in this tower
 
 The mass ratio $m_t / m_u \approx 7.5 \times 10^4$ spans four orders
 of magnitude across a single step $k = 1 \to k = 2$ in the tower.
-The exponential genus growth ($2^k - 1$) provides a natural mechanism
-for such hierarchies: each tower level triples the genus, and the
-topological mass formula amplifies genus differences exponentially.
+The exponential genus growth ($2^k - 1$) separates the two levels,
+and the Hodge decomposition
+([cohomological embedding](#prop:cohomological-embedding)) places
+$T_{3,4}$ in the $H^{0,1}$ force carrier sector rather than the
+$H^{1,0}$ matter sector.
 
 Meanwhile $T_{3,5}$, isolated outside any power tower, is
 structurally distinguished from both matter generations.  Its prime

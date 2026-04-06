@@ -39,7 +39,7 @@ mass arises entirely from **crossing energy** at $q \neq 1$.
 
 | Knot | AB index | Source | Genus | Crossings | Visual | Particle | Vol |
 |------|----------|--------|:-----:|:---------:|:------:|----------|:---:|
-| Figure-eight | $4_1$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $1$ | $4$ | ●=○ | Higgs boson $H$ | $2.0299$ |
+| Figure-eight | $4_1$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $1$ | $4$ | ●=○ | Higgs field (mass mechanism) | $2.0299$ |
 | Three-twist | $5_2$ | $T_{2,3}^{\sigma}$ variant | $1$ | $5$ | ● | — | $2.8281$ |
 
 The figure-eight knot $4_1$ is **amphichiral** (self-mirror),
@@ -93,9 +93,10 @@ energy at each self-crossing.
   $m_{e} = 3 \cdot \mathbf{E}_{\times}(q) \cdot \mu_0$ where $\mu_0$ is
   the mass scale.
 - **Hyperbolic knots** ($\mathrm{Vol} > 0$): mass has both
-  a volume term and a crossing term.  The figure-eight has
-  $\mathrm{Vol} = 2.0299$ and 4 crossings; its mass ratio
-  $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$ fixes $q = q_0$.
+  a volume term and a crossing term.  The figure-eight (Higgs
+  boson) has $\mathrm{Vol} = 2.0299$ and 4 crossings; the Higgs
+  mass mechanism determines the muon--electron mass ratio
+  $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$, which fixes $q = q_0$.
 - **Links** ($> 1$ component): the linking number contributes
   additional inter-component crossing energy (binding).
 
@@ -140,12 +141,11 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 | $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
 | $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
 | $e^+$ | $T_{2,3}^{\sigma}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
-| $\mu^-$ | $T_{2,5}$ | $5$ | $0$ | $5\,\mathbf{E}_{\times}$ | $5\,\mathbf{E}_{\times} + \mathcal{M}_H$ | see below |
-| $\tau^-$ | $T_{2,7}$ | $7$ | $0$ | $7\,\mathbf{E}_{\times}$ | $7\,\mathbf{E}_{\times} + \mathcal{M}_H$ | see below |
+| $\mu^-$ | $T_{2,5}$ | $5$ | $0$ | $5\,\mathbf{E}_{\times}$ | via Higgs mechanism | $207.1\,\mu_0$ |
+| $\tau^-$ | $T_{2,7}$ | $7$ | $0$ | $7\,\mathbf{E}_{\times}$ | via Higgs mechanism | (gen-$3$ mass) |
 | $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,\mathbf{E}_{\times}$ | (bound; see below) |
 | $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,\mathbf{E}_{\times}$ | $5\,\mathbf{E}_{\times}\,\mu_0$ |
-| $t$ | $T_{3,4}$ | $8$ | $0$ | $8q = 8.880$ | $8\,\mathbf{E}_{\times}$ | $8\,\mathbf{E}_{\times}\,\mu_0$ |
-| $H$ (Higgs) | $4_1$ | $4$ | $2.0299$ | $4\,\mathbf{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathbf{E}_{\times}$ | $207.1\,\mu_0$ |
+| $H$ (Higgs) | $4_1$ | $4$ | $2.0299$ | $4\,\mathbf{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathbf{E}_{\times}$ | mass mechanism |
 | Proton $\mathfrak{p}$ | $\mathcal{B}_3(u,u,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | $746\,\mu_0$ |
 | Neutron $\mathfrak{n}$ | $\mathcal{B}_3(u,d,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 + \delta_{\mathrm{Skein}}$ | $747\,\mu_0$ |
 

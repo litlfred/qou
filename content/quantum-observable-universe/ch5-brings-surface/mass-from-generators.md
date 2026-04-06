@@ -64,12 +64,19 @@ $$
 $$
 
 matching CODATA to six significant figures
-([Skein mass relation](#rem:skein-mass-relation)).  The muon
-($T_{2,5}$, cinquefoil) acquires its mass through the Higgs
-boson ($4_1$), whose hyperbolic volume dominates the Skein
-resolution.  Similarly,
-the tau arises from linking $T_{2,7}$ configurations at Reeb
-degree $3$.
+([Skein mass relation](#rem:skein-mass-relation)).
+
+The muon ($T_{2,5}$, cinquefoil) lives **on the exceptional
+divisor** — its braid word carries a Hecke dressing
+$\sigma_i \cdot T_{2,5}$ that embeds it in the Reeb bundle
+(color tube).  The bare torus knot $T_{2,5}$ has zero
+hyperbolic volume; the muon's mass arises from the Higgs
+mass mechanism ($4_1$), which universally couples to every
+knot-particle with crossings $> 0$.  The ratio
+$m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$ is the Higgs
+coupling constant for the muon--electron channel.  Similarly,
+the tau ($T_{2,7}$) acquires mass through the same Higgs
+mechanism at Reeb degree $3$.
 
 **Step 4: Color-tube linking generates hadronic mass.**
 Baryons require three generators threaded through the coral tubes

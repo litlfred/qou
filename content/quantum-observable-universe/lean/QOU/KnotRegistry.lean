@@ -39,8 +39,10 @@ inductive QOUIdentity where
   | neutrino
   /-- The electron — Generation 1, B₃ monodromy source for Bring's Surface. -/
   | electron
-  /-- The muon — Generation 2, hyperbolic volume residue for mass derivation. -/
+  /-- The muon — Generation 2, cinquefoil T_{2,5} on divisor (Reeb bundle). -/
   | muon
+  /-- The Higgs field / mass mechanism — figure-eight 4₁, amphichiral. -/
+  | higgsField
   /-- The photon — background flux on the exceptional divisor. -/
   | photon
   /-- The strong force — Hopf link, internal binding energy. -/
@@ -102,9 +104,10 @@ noncomputable def trefoilEntry : KnotEntry where
   atlas_url := "http://katlas.org/wiki/3_1"
 
 /-- **Figure-Eight Knot (4₁)** — the simplest hyperbolic knot.
-    QOU identity: **Muon** (Generation 2).  Its hyperbolic volume
+    QOU identity: **Higgs field (mass mechanism)**.  Its hyperbolic volume
     Vol(4₁) ≈ 2.02988321281931 is the numerator in the mass-ratio derivation
-    `m_μ/m_e = Vol(4₁) / ℏ_q²`.
+    `m_μ/m_e = Vol(4₁) / ℏ_q²`.  The figure-eight is amphichiral
+    (4₁ = 4₁⁻¹), so the Higgs field is its own antiparticle.
     Exact: 3 · Cl₂(π/3) (OEIS A091518).
 
     Knot Atlas: <http://katlas.org/wiki/4_1>
@@ -114,7 +117,7 @@ noncomputable def figureEightEntry : KnotEntry where
   ab_index := "4_1"
   diagram := figureEight
   volume := vol_figure_eight
-  identity := .muon
+  identity := .higgsField
   atlas_url := "http://katlas.org/wiki/4_1"
 
 /-- **Trivial Knot (unknot alias)** — the photon background.
