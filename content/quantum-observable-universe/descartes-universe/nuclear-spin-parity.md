@@ -73,7 +73,7 @@ without reference to writhe.
 
 **The Jones-Wenzl projector.**
 
-In the Temperley-Lieb algebra $TL_A(\delta)$ with
+In the Temperley--Lieb algebra $TL_A(\delta)$ with
 $\delta = -(q^{1/2} + q^{-1/2})$, the Jones-Wenzl projector
 $p_A$ projects onto the highest-weight irreducible representation
 $V_{A/2}$.  The spin of the ground state is determined by

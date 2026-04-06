@@ -30,7 +30,7 @@ Then:
    $\mathcal{N}_{\mathrm{raw}}(Z, N)$ to the normal form
    $\mathcal{N}(Z, N)$ is independent of the order
    in which the Gröbner--Shirshov basis elements are applied.  This
-   follows from the confluence (diamond lemma) of the
+   follows from the confluence (Bergman diamond lemma) of the
    Gröbner--Shirshov basis: all reduction paths lead to the
    same normal form, and the energy is a function of the
    normal form alone.
@@ -63,7 +63,7 @@ changes the word length (from $\ell$ to $\ell - 1$) and splits
 one coefficient into two.
 
 *Part 2.*
-The Gröbner--Shirshov basis $G$ satisfies the diamond lemma
+The Gröbner--Shirshov basis $G$ satisfies the Bergman diamond lemma
 (the main theorem of the Gröbner--Shirshov basis theory,
 [main theorem](#unital-groebner-bases:thm:main-theorem)):
 for any two overlapping reductions, the results can be further

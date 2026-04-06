@@ -76,7 +76,7 @@ accumulates the connection along this trajectory — the analytic
 expression of the algebraic Gröbner--Shirshov reduction.
 
 **The Gröbner--Shirshov energy is path-independent.**
-The confluence of the Gröbner--Shirshov basis (diamond lemma)
+The confluence of the Gröbner--Shirshov basis (Bergman diamond lemma)
 ensures that the total Hecke cost is the same regardless of the
 order in which reductions are applied.  This is the algebraic
 expression of the **gauge invariance** of the mass: the

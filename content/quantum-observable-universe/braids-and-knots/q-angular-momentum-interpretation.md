@@ -42,5 +42,5 @@ $$
 $$
 
 where $J$ is the ground-state spin determined by the nuclear
-link's embedding in the Temperley-Lieb algebra $TL_A(\delta)$
+link's embedding in the Temperley--Lieb algebra $TL_A(\delta)$
 with $\delta = -(q^{1/2} + q^{-1/2})$.

@@ -113,7 +113,7 @@ build data:
 
 At $A = 6$, the product becomes negative ($P = -0.0053$) even
 though individual volumes are positive.  This occurs because the
-**cross-terms** between generators (from the Yang-Baxter
+**cross-terms** between generators (from the Yang--Baxter
 interaction) introduce destructive interference that flips the
 total sign.
 
