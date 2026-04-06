@@ -80,7 +80,8 @@ interface ExportedSection {
 }
 
 interface ExportedChapter {
-  number: number;
+  number?: number;
+  tabLabel?: string;
   title: string;
   label?: string;
   sections: ExportedSection[];

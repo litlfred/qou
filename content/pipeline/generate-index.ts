@@ -41,10 +41,14 @@ async function main() {
 
   const entries: IndexEntry[] = [];
 
+  // Auto-number chapters from manifest order: skip unnumbered ones (tabLabel set)
+  let autoNum = 1;
   for (const chRef of paper.chapters) {
     const chDir = join(PAPER_DIR, chRef.dir);
     const chMod = await import(join(chDir, `${chRef.dir}.ts`));
     const ch = chMod.default;
+    // Chapters with tabLabel are unnumbered (Introduction, Glossary, etc.)
+    const chapterNumber = ch.tabLabel != null ? undefined : autoNum++;
 
     for (const section of ch.sections) {
       for (const rootName of section.blocks) {
@@ -58,7 +62,7 @@ async function main() {
             label: block.label,
             title: block.title || rootName,
             chapter: ch.title,
-            chapterNumber: ch.number,
+            chapterNumber: chapterNumber,
             section: section.title,
             lean: block.lean?.decl,
           });

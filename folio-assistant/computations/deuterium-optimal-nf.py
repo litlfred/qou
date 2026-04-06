@@ -5,7 +5,7 @@ Deuterium optimal normal form: extract the aleph-1^4 layer.
 The quark-level deuterium computation (7 strands, types u,u,d,u,d,d,e)
 produces 102 terms total.  The aleph-1^4 layer — terms with exactly 4
 occurrences of the protium formal variable — has exactly 7 terms,
-matching the 7-strand target.  These 7 terms ARE the optimal Groebner
+matching the 7-strand target.  These 7 terms ARE the optimal Gröbner--Shirshov
 basis for deuterium.
 
 This script:
@@ -384,7 +384,7 @@ def main():
     print(f"  contains exactly {optimal_layer.n_terms()} terms — matching "
           f"the {len(deuterium_types)}-strand target.")
     print(f"\n  These {optimal_layer.n_terms()} terms are the OPTIMAL "
-          f"Groebner basis for deuterium.")
+          f"Gröbner--Shirshov basis for deuterium.")
 
     print(f"\n  Terms (stripped of 4 x aleph_1):")
     for idx, (w, c) in enumerate(sorted(
@@ -414,7 +414,7 @@ def main():
         'timestamp': datetime.now(timezone.utc).isoformat(),
         'q0': Q0,
         'description': (
-            'Optimal Groebner basis for deuterium: the aleph_1^4 layer '
+            'Optimal Gröbner--Shirshov basis for deuterium: the aleph_1^4 layer '
             'of the quark-level computation (7 strands, types u,u,d,u,d,d,e). '
             'These 7 terms have 100% protium completeness and match the '
             '7-strand target.'

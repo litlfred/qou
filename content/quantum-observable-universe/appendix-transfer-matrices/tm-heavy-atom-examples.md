@@ -14,7 +14,7 @@ $E_{\times} = \frac{1}{2}(q - q^{-1})$.
 ## The magic number table
 
 Shell closures occur at specific nucleon counts where the
-Gröbner normal form word-length histogram is palindromic:
+Gröbner--Shirshov normal form word-length histogram is palindromic:
 
 $$
   \mathcal{M} = \{0, 2, 8, 20, 28, 50, 82, 126\}

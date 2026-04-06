@@ -36,7 +36,7 @@ def prune(elem, threshold=PRUNE_THRESHOLD, max_terms=MAX_TERMS):
     return HeckeElement(kept)
 
 def is_reduced_word(word):
-    """Check if a word is in Gröbner normal form.
+    """Check if a word is in Gröbner--Shirshov normal form.
 
     Returns (True, None) if reduced, (False, reason) if not.
     """

@@ -287,10 +287,10 @@ SPECIAL_BLOCKS = {
     'rigid-monoidal-category': 'QOU.RigidMonoidalCategory',
 }
 
-CH1_DIR = REPO / 'content' / 'quantum-observable-universe' / 'ch1-quantum-observable-universe'
-CH2_DIR = REPO / 'content' / 'quantum-observable-universe' / 'ch2-qou-elaboration'
-CH4_DIR = REPO / 'content' / 'quantum-observable-universe' / 'ch4-path-integrals-and-braiding'
-CH11_DIR = REPO / 'content' / 'quantum-observable-universe' / 'ch11-experimental-evidence'
+CH1_DIR = REPO / 'content' / 'quantum-observable-universe' / 'quantum-universes'
+CH2_DIR = REPO / 'content' / 'quantum-observable-universe' / 'quantum-observable-universes'
+CH4_DIR = REPO / 'content' / 'quantum-observable-universe' / 'braids-and-knots'
+CH11_DIR = REPO / 'content' / 'quantum-observable-universe' / 'q-geometric-langlands'
 
 
 def write_lean_file(output_path, decl_name, body_text, imports=CH1_IMPORTS, namespace='QOU'):

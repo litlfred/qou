@@ -24,19 +24,19 @@
     {
       "number": 0,
       "title": "Introduction",
-      "dir": "ch0-introduction",
+      "dir": "introduction",
       "blocks": ["ugb-intro", "ugb-example-polynomial", "ugb-example-pbw", "ugb-main-theorem-statement"]
     },
     {
       "number": 1,
       "title": "Unital Gröbner Bases",
-      "dir": "ch1-unital-groebner-bases",
+      "dir": "unital-groebner-bases-chapter",
       "blocks": ["monomial-basis", "leading-terms", "admissible-system", "remainder-modules", "division-algorithm", "unital-groebner-basis", "lemma-generator-choice", "ugb-main-theorem-proof"]
     },
     {
       "number": 2,
       "title": "Buchberger's Theorem and the PBW Corollary",
-      "dir": "ch2-buchberger-and-pbw",
+      "dir": "buchberger-and-pbw",
       "blocks": ["s-polynomial-decomposition", "buchberger-theorem", "pbw-corollary"]
     }
   ],

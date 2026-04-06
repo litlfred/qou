@@ -474,7 +474,7 @@ export interface TestDefinition {
   latex_label?: string;
   /** Lean declaration name (for compile/sorry tests). */
   lean_decl?: string;
-  /** Tags for filtering (e.g., ["ch4", "torsion", "blocking"]). */
+  /** Tags for filtering (e.g., ["braids-and-knots", "torsion", "blocking"]). */
   tags?: string[];
 }
 

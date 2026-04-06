@@ -3,7 +3,7 @@
 Neutron from photons: γγ → νν̄ → quarks → B₃ → neutron
 
 Builds a free neutron from scratch in 5 phases, computing
-Gröbner normal form at each step.
+Gröbner--Shirshov normal form at each step.
 
 Phase 1: γγ → νν̄ pair creation vertex (the Hecke relation)
          σ_i² = (q − q⁻¹)·σ_i + 𝟏
@@ -19,9 +19,9 @@ Phase 3: ν → quark flavor dressing
 
 Phase 4: B₃ = (σ₀σ₁⁻¹)³ Borromean confinement
 
-Phase 5: Pairwise crossings + full Gröbner reduction → neutron NF
+Phase 5: Pairwise crossings + full Gröbner--Shirshov reduction → neutron NF
 
-Relations (Gröbner basis for H_n(q)):
+Relations (Gröbner--Shirshov basis for H_n(q)):
   R1 (Hecke):       σ_i² = (q − q⁻¹)·σ_i + 1
   R2 (Far-comm):    σ_i·σ_j = σ_j·σ_i  for |i − j| ≥ 2
   R3 (Yang-Baxter): σ_i·σ_{i+1}·σ_i = σ_{i+1}·σ_i·σ_{i+1}
@@ -37,7 +37,7 @@ from pathlib import Path
 import sympy as sp
 q = sp.Symbol('q', positive=True)
 
-# ── Hecke algebra constants ───────────────────────────────────
+# ── Iwahori--Hecke algebra constants ───────────────────────────────────
 q_inv = 1 / q
 q_half = sp.sqrt(q)
 q_half_inv = 1 / sp.sqrt(q)
@@ -89,7 +89,7 @@ def eval_at_q0(c):
 
 def reduce_verbose(terms_dict, label="", max_iterations=10000):
     """
-    Gröbner-reduce a symbolic Hecke element, printing every relation.
+    Gröbner--Shirshov-reduce a symbolic Hecke element, printing every relation.
     Input: dict { word_tuple: sympy_coefficient }
     Output: reduced dict, step_counts
     """
@@ -290,7 +290,7 @@ mu_0 = M_E_MEV / (3 * E_CROSS)
 
 print("=" * 80)
 print("NEUTRON FROM PHOTONS: γγ → νν̄ → quarks → B₃ → neutron (𝔫)")
-print(f"Computing Gröbner NF at each step in H₃(q)")
+print(f"Computing Gröbner--Shirshov NF at each step in H₃(q)")
 print(f"Commit: {SHA[:8]}  |  q₀ = {q0:.10f}")
 print("=" * 80)
 
@@ -513,7 +513,7 @@ print("  This is the topological confinement mechanism: three")
 print("  strands mutually linked such that cutting any one frees")
 print("  the other two — but no strand can be isolated.")
 print()
-print("  σ₁⁻¹ = σ₁ − (q − q⁻¹)  in the Hecke algebra.")
+print("  σ₁⁻¹ = σ₁ − (q − q⁻¹)  in the Iwahori--Hecke algebra.")
 print(f"       = σ₁ − {HA_val:.10f}")
 
 # Build σ₁⁻¹
@@ -676,7 +676,7 @@ d_dd = eval_at_q0(-q * s_skein)
 c_ud = eval_at_q0((1 + q**2) / 2)
 d_ud = eval_at_q0(-q * s_skein / 2)
 
-print(f"  METHOD 1: Gröbner Normal Form (from this computation)")
+print(f"  METHOD 1: Gröbner--Shirshov Normal Form (from this computation)")
 print(f"    NF terms:          {len(elem_n)}")
 print(f"    Net coefficient:   {net_n:+.10f}")
 print(f"    Hecke steps:       {total_steps_n.get('hecke', 0)}")
@@ -771,7 +771,7 @@ witness = {
     "description": (
         "Free neutron built from 3 × γγ → νν̄ pair creations, "
         "neutrino → quark flavor dressing, and B₃ Borromean confinement. "
-        "All Gröbner relations traced verbosely."
+        "All Gröbner--Shirshov relations traced verbosely."
     ),
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "commit_sha": SHA,

@@ -27,6 +27,7 @@ const LABEL_PREFIXES: Record<string, string> = {
   simulator: "sim:",
   equation: "eq:",
   diagram: "fig:",
+  table: "tbl:",
 };
 
 function labelForKind(kind: string) {
@@ -232,6 +233,19 @@ export const DiagramSchema = z.object({
 
 });
 
+export const TableSchema = z.object({
+  kind: z.literal("table"),
+  label: labelForKind("table").optional(),
+  tex: z.string().optional(),
+  caption: z.string().optional(),
+  title: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+  uses: z.array(z.string()).optional(),
+  companions: CompanionsSchema.optional(),
+  rendered: z.array(RenderedAssetSchema).optional(),
+  meta: z.record(z.string(), z.unknown()).optional(),
+});
+
 /** Discriminated union — validates any Block. */
 export const BlockSchema = z.discriminatedUnion("kind", [
   DefinitionSchema,
@@ -247,6 +261,7 @@ export const BlockSchema = z.discriminatedUnion("kind", [
   ProseSchema,
   EquationSchema,
   DiagramSchema,
+  TableSchema,
 ]);
 
 // ── Chapter / Document schemas ───────────────────────────────────

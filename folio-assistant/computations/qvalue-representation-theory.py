@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Q-value from Gröbner-weighted transfer matrix.
+Q-value from Gröbner--Shirshov-weighted transfer matrix.
 
 TWO-STAGE CORRECTION (algebraic, no fitting):
 
-  Stage 1: Gröbner direction weighting (q/q⁻¹ asymmetry)
+  Stage 1: Gröbner--Shirshov direction weighting (q/q⁻¹ asymmetry)
     The transition decomposes into UNBIND (nn→pn, removing σ⁻¹)
     and REBIND (pn→pp, completing σ).  Unbinding is a forward
-    Gröbner reduction (weight q), rebinding is partial inverse
+    Gröbner--Shirshov reduction (weight q), rebinding is partial inverse
     (weight q⁻¹):
 
       Q_qwt = |q·ln(unbind) + q⁻¹·ln(rebind) + ln(unchanged)| × κ
@@ -55,7 +55,7 @@ def neutron_shell(N):
 
 
 # ══════════════════════════════════════════════════════════════
-# §1  TRANSFER MATRIX (Skein-weighted Gröbner crossing coefficients)
+# §1  TRANSFER MATRIX (Skein-weighted Gröbner--Shirshov crossing coefficients)
 # ══════════════════════════════════════════════════════════════
 
 def crossing_coeffs(ti, tj):

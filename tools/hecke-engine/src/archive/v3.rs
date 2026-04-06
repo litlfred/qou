@@ -537,8 +537,8 @@ fn main() {
                     else { "" },
                     if n + 1 >= z { "" } else { " ⚠ PROTON-HEAVY (N < Z−1)" });
                 println!();
-                println!("  Computing the Gröbner normal form in H_{}(q).", a);
-                println!("  This is the FULL Hecke algebra expansion — every");
+                println!("  Computing the Gröbner--Shirshov normal form in H_{}(q).", a);
+                println!("  This is the FULL Iwahori--Hecke algebra expansion — every");
                 println!("  reduced word with its exact coefficient at q₀.");
                 println!();
                 println!("  The Pauli factor F = |tr_alt(NF)| / |net(NF)|");
@@ -640,7 +640,7 @@ fn main() {
                 println!("-- Computed by hecke-engine v3 at q₀ = {:.5}", engine.q);
                 println!();
                 println!("/-- F_Pauli for {}{} (Z={}, N={}).", a, sym, z, n);
-                println!("    Computed from the full Gröbner NF in H_{}(q).", a);
+                println!("    Computed from the full Gröbner--Shirshov NF in H_{}(q).", a);
                 println!("    tr_alt = Σ c_w × (−q⁻¹)^ℓ(w) = {:+.10}", tr_alt);
                 println!("    net    = Σ c_w = {:+.10}", net);
                 println!("    F_Pauli = |tr_alt| / |net| = {:.10} -/", f);
