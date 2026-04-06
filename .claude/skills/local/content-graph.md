@@ -308,10 +308,21 @@ The following reorganisations have been applied to the paper manifests:
 
 | ID | Kind | Description | Status |
 |----|------|-------------|--------|
-| R1 | move | `sec:fivefold-symmetry` + `sec:orbital-space` from Ch2 → Ch5 | ✅ done |
-| R2 | merge | 4 single-block sparse sections → `sec:non-archimedean-models` in Ch6 | ✅ done |
-| R3 | merge | `sec:jones-polynomials` (1 block) merged into `sec:finite-fields` in Ch6 | ✅ done |
-| R4 | split | `sec:descartes-particles` (84 blocks) → 5 sections of 17–25 blocks in Ch5 | ✅ done |
+| R1 | move | `sec:fivefold-symmetry` + `sec:orbital-space` from Ch2 → Ch9 (Descartes) | ✅ done |
+| R2 | merge | 4 single-block sparse sections → `sec:non-archimedean-models` in Models | ✅ done |
+| R3 | merge | `sec:jones-polynomials` (1 block) merged into `sec:finite-fields` in Models | ✅ done |
+| R4 | split | `sec:descartes-particles` (84 blocks) → 5 sections of 17–25 blocks in Descartes | ✅ done |
+| R5 | rename | Remove `ch#-` prefix from all chapter directory names | ✅ done |
+| R6 | auto-number | Chapter numbers derived from manifest order, not stored in manifests | ✅ done |
+
+### Chapter naming convention (R5/R6)
+
+Directory names are **descriptive slugs** with NO chapter numbers:
+- `introduction/`, `quantum-universes/`, `braids-and-knots/`, etc.
+- The paper manifest `chapters[]` array defines the chapter order
+- Chapter numbers are auto-derived: numbered chapters get sequential 1, 2, 3…
+- Chapters with `tabLabel` set (e.g. `"I"`, `"G"`) are unnumbered (`\chapter*{}`)
+- To reorder chapters: just reorder lines in the paper manifest — no renames needed
 
 **Key functions:**
 - `parse_paper(root)` → `{chapters, sections, blocks, positions}`
