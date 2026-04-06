@@ -670,7 +670,8 @@ export function renderChapter(
 ): string {
   const lines: string[] = [];
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
-  const star = chapter.number == null ? "*" : "";
+  // Chapters with tabLabel are unnumbered (\chapter*); all others are auto-numbered by LaTeX.
+  const star = chapter.tabLabel != null ? "*" : "";
   lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${label}`);
 
   // Collect all citation keys used in this chapter

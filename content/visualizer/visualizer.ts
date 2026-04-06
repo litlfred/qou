@@ -17,6 +17,6 @@ export default paper({
   title: "QOU Visualizer",
   authors: ["litlfred"],
   chapters: [
-    chapterRef({ dir: "ch1-overview" }),
+    chapterRef({ dir: "overview" }),
   ],
 });

@@ -25,6 +25,6 @@ export default paper({
     "shown to be equivalent to integrability of the skewed-Poisson structure.",
   macros: {},
   chapters: [
-    chapterRef({ dir: "ch1-formal-groups" }),
+    chapterRef({ dir: "formal-groups-chapter" }),
   ],
 });

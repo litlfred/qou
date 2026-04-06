@@ -278,7 +278,7 @@ cd content && python3 pipeline/content-graph-analysis.py --proposals
 # → output also written to /tmp/content-graph-proposals.md
 
 # Specific chapter only
-cd content && python3 pipeline/content-graph-analysis.py --chapter ch4-path-integrals-and-braiding
+cd content && python3 pipeline/content-graph-analysis.py --chapter braids-and-knots
 
 # Generate visualisations
 cd content && python3 pipeline/content-graph-analysis.py --visualise

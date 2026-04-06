@@ -22,6 +22,6 @@ export default paper({
     "Poincaré--Birkhoff--Witt Theorem over a commutative ground ring.",
   macros: {},
   chapters: [
-    chapterRef({ dir: "ch1-unital-groebner-bases" }),
+    chapterRef({ dir: "unital-groebner-bases-chapter" }),
   ],
 });

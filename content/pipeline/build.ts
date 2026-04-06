@@ -71,8 +71,8 @@ export async function buildPaper(
       const chapter: Chapter = chMod.default;
       resolvedChapters.push({ chapter, manifestIdx: chIdx });
 
-      // Extract slug from dir name: "ch1-quantum-observable-universe" → "quantum-observable-universe"
-      const slug = chRef.dir.replace(/^ch\d+-/, "");
+      // Chapter slug is now simply the directory name (no ch#- prefix to strip).
+      const slug = chRef.dir;
       // Use manifest index as key to preserve author-defined chapter order
       chapterSlugs.set(chIdx, slug);
 
