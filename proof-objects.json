@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-06T19:08:01.760514+00:00",
-    "commit_sha": "5ace643ccec739d77fef8ed785d4ce22fde48de9"
+    "generated_at": "2026-04-06T19:23:07.537159+00:00",
+    "commit_sha": "34c45b4f2077550c9470f90db94e91594efafa02"
   },
   "objects": [
     {
@@ -21,11 +21,10 @@
         "decl": "QOU.NoQuasiZeros",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:snake-identity",
@@ -40,11 +39,10 @@
         "decl": "QOU.snake_identity_left",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:rigid-monoidal-category",
@@ -59,11 +57,10 @@
         "decl": "QOU.RigidMonoidalCategory",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:snake-identity",
         "def:no-quasi-zeros"
@@ -82,11 +79,10 @@
         "decl": "QOU.Examples.su2RigidData",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:rigid-monoidal-category"
       ]
@@ -104,11 +100,10 @@
         "decl": "QOU.QuantumUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:rigid-monoidal-category"
       ]
@@ -126,11 +121,10 @@
         "decl": "QOU.FrobeniusHopfData.frobeniusForm",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-universe"
       ]
@@ -163,11 +157,10 @@
         "decl": "QOU.Examples.su2QuantumUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:frobenius-pairing",
         "ex:rigid-monoidal-vect"
@@ -186,11 +179,10 @@
         "decl": "QOU.HigherForms",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-universe"
       ]
@@ -208,11 +200,10 @@
         "decl": "QOU.Examples.su2FormDims",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:higher-forms",
         "ex:quantum-universe-su2"
@@ -231,13 +222,10 @@
         "decl": "QOU.frobenius_relation",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "2cf7568a6707",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:frobenius-pairing"
       ]
@@ -255,11 +243,10 @@
         "decl": "QOU.InvolutiveStructure",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:rigid-monoidal-category"
       ]
@@ -277,11 +264,10 @@
         "decl": "QOU.frobenius_dagger_positive_definite",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:involutive-structure",
         "def:frobenius-pairing",
@@ -301,11 +287,10 @@
         "decl": "QOU.CategoricalConnection",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:higher-forms"
       ]
@@ -323,11 +308,10 @@
         "decl": "QOU.CategoricalJet",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-connection"
       ]
@@ -345,11 +329,10 @@
         "decl": "QOU.CatHodgeInvolution",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:higher-forms"
       ]
@@ -367,11 +350,10 @@
         "decl": "QOU.Examples.su2Hodge",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-hodge-star",
         "ex:higher-forms-su2"
@@ -390,13 +372,10 @@
         "decl": "QOU.BringsSurface",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "4074a44575cc",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "prop:brings-is-qou",
@@ -411,13 +390,10 @@
         "decl": "QOU.Brings.brings_is_qou",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "7f42be0b84f3",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface",
         "thm:qu-to-qou"
@@ -454,11 +430,10 @@
         "decl": "QOU.ColorTubeCoordinates",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:braid-group-action"
       ]
@@ -492,13 +467,10 @@
         "decl": "QOU.Brings.coral_elliptic",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "5e5e7fed747f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:braid-group-action",
         "rem:holonomy-trefoil"
@@ -532,11 +504,10 @@
         "decl": "QOU.ColorTubeFibers",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:color-tube-cubic"
       ]
@@ -568,13 +539,10 @@
         "decl": "QOU.BringsSurface.brings_smoothness_resolution",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "6f7eb0a205d2",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:coral-bundles",
         "def:briggs-klein-chart"
@@ -607,11 +575,10 @@
         "decl": "QOU.BriggsKleinChart",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface"
       ]
@@ -629,11 +596,10 @@
         "decl": "QOU.QuaternionicSpectralResolvents",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface",
         "rem:jet-shell"
@@ -652,13 +618,10 @@
         "decl": "QOU.Brings.mi_sw_abelianisation",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "c7e304208946",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:brings-smoothness",
         "def:mass-identity",
@@ -679,11 +642,10 @@
         "decl": "QOU.CoralSectorCoords",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:exceptional-divisor",
         "def:substrate-parameter",
@@ -703,13 +665,10 @@
         "decl": "QOU.Descartes.descartes_braid_structure",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "88dbac07ad9c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:braid-action-tensor",
         "def:coral-sector-coords",
@@ -732,13 +691,10 @@
         "decl": "QOU.Descartes.descartes_knot_eigenbasis",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "b00fc314d97f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "cor:descartes-braid-structure",
         "thm:jones-markov-trace",
@@ -758,13 +714,10 @@
         "decl": "QOU.Descartes.descartes_elliptic_curve",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "134e0c4522ec",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:color-tube-cubic",
         "prop:local-substrate-q"
@@ -783,11 +736,10 @@
         "decl": "QOU.DescartesCondition",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:qu-to-qou"
       ]
@@ -805,13 +757,10 @@
         "decl": "QOU.Descartes.genus_maximal_descent",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "47587d1e44e7",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:descartes-condition"
       ]
@@ -868,11 +817,10 @@
         "decl": "QOU.Torsion.torus_knot_generators_finite",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:knot-particle-generation",
         "prop:euler-char-stability"
@@ -891,13 +839,10 @@
         "decl": "QOU.Torsion.embeddability_closure",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "5c9078687d64",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-knot-generators"
       ]
@@ -915,13 +860,10 @@
         "decl": "QOU.Descartes.genus_filtration_ideal",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "ed0d0eb490eb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:embeddability-closure",
         "prop:cohomological-embedding",
@@ -941,13 +883,10 @@
         "decl": "QOU.Descartes.torus_embeddable_complete",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "85bed8246852",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:embeddability-closure"
       ]
@@ -965,13 +904,10 @@
         "decl": "QOU.Descartes.generation_completeness",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "3b99b7eed30d",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-embeddable-complete",
         "rem:knot-formula-table"
@@ -990,11 +926,10 @@
         "decl": "QOU.Descartes.UpQuark",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "conj:borromean-quark"
       ]
@@ -1012,11 +947,10 @@
         "decl": "QOU.Descartes.DownQuark",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:up-quark"
       ]
@@ -1034,11 +968,10 @@
         "decl": "QOU.Descartes.Electron",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:up-quark"
       ]
@@ -1056,11 +989,10 @@
         "decl": "QOU.Descartes.Positron",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:electron-knot",
         "rem:chirality-trefoil-electron-positron"
@@ -1079,11 +1011,10 @@
         "decl": "QOU.Descartes.Neutrino",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-knot-generators",
         "sec:knot-notation-convention"
@@ -1102,11 +1033,10 @@
         "decl": "QOU.Descartes.Antineutrino",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:parity-violation-skein"
       ]
@@ -1139,11 +1069,10 @@
         "decl": "QOU.Descartes.QValueTransition",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:q-energy"
       ]
@@ -1161,11 +1090,10 @@
         "decl": "QOU.Torsion.CategoricalProton",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:down-quark"
       ]
@@ -1183,11 +1111,10 @@
         "decl": "QOU.Torsion.CategoricalNeutron",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-proton"
       ]
@@ -1234,11 +1161,10 @@
         "decl": "QOU.Torsion.StableNucleus",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-neutron",
         "prop:beta-stability"
@@ -1257,13 +1183,10 @@
         "decl": "QOU.Descartes.torus_hopf_stability",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "c13c3c208bc4",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:skein-crossing-asymmetry",
         "def:categorical-neutron"
@@ -1313,13 +1236,10 @@
         "decl": "QOU.Descartes.em_coupling_projection",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "477e17c9fdfd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:force-knot-identification"
       ]
@@ -1337,13 +1257,10 @@
         "decl": "QOU.Descartes.integer_stability",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "b5c2eea042cb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:stable-nucleus"
       ]
@@ -1395,11 +1312,10 @@
         "decl": "QOU.Descartes.BetaDecaySkein",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:positron-knot",
         "prop:nuclear-groebner-reduction"
@@ -1418,11 +1334,10 @@
         "decl": "QOU.Descartes.LeptonNumber",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein"
       ]
@@ -1440,13 +1355,10 @@
         "decl": "QOU.Descartes.parity_violation_skein",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "4a964ca40c19",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein",
         "prop:reidemeister-action-table"
@@ -1465,13 +1377,10 @@
         "decl": "QOU.Descartes.nuclear_spin_parity",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "2b2ad8014294",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:stable-nucleus",
         "prop:fermion-boson-knot-link"
@@ -1490,13 +1399,10 @@
         "decl": "QOU.Descartes.hadron_half_life",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "54d5e4a138e8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:integer-stability"
       ]
@@ -1514,13 +1420,10 @@
         "decl": "QOU.Descartes.hadron_q_self_correction",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "16a2798df918",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:hadron-half-life"
       ]
@@ -1538,13 +1441,10 @@
         "decl": "QOU.Descartes.skein_coulomb_enhancement",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "bf52342e7dd8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:hadron-half-life",
         "def:electron-knot"
@@ -1563,17 +1463,17 @@
         "decl": "QOU.Descartes.nuclear_groebner_reduction",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "68f2bba53a6c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
+        "prop:braiding-eigenvalue-extraction",
+        "rem:hecke-algebra-from-braiding",
         "conj:shell-threading-energy",
         "unital-groebner-bases:def:groebner-basis",
-        "unital-groebner-bases:def:division-algorithm"
+        "unital-groebner-bases:def:division-algorithm",
+        "unital-groebner-bases:def:admissible-system"
       ]
     },
     {
@@ -1581,7 +1481,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 4446,
+        "line": 4449,
         "chapter": 3
       },
       "title": "{Energy as a Gröbner--Shirshov invariant of the nuclear braid}",
@@ -1589,13 +1489,10 @@
         "decl": "QOU.Descartes.groebner_shirshov_energy",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "cfe37c3c8cf7",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:nuclear-groebner-reduction",
         "unital-groebner-bases:thm:main-theorem"
@@ -1606,7 +1503,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 4598,
+        "line": 4601,
         "chapter": 3
       },
       "title": "{The $\\gamma\\gamma \\to \\nu\\nu^{\\sigma}$ box braid is irreducible}",
@@ -1614,11 +1511,10 @@
         "decl": "QOU.Descartes.BoxBraidIrreducibility",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:neutrino-knot",
         "def:antineutrino-knot",
@@ -1639,7 +1535,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 4779,
+        "line": 4782,
         "chapter": 3
       },
       "title": "{Nuclear energy as a sum of generator volumes via Chebyshev recurrence}",
@@ -1647,13 +1543,10 @@
         "decl": "QOU.Descartes.generator_volume_decomposition",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "0472651ce120",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:groebner-shirshov-energy"
       ]
@@ -1663,7 +1556,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 5095,
+        "line": 5098,
         "chapter": 3
       },
       "title": "{Exact factorization of the nuclear Markov trace}",
@@ -1671,13 +1564,10 @@
         "decl": "QOU.Descartes.markov_trace_factorization",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "cd054995e8c8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:generator-volume-decomposition",
         "thm:markov-trace-product"
@@ -1688,7 +1578,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 5317,
+        "line": 5320,
         "chapter": 3
       },
       "title": "{The nuclear Skein polynomial as a transfer matrix product in $q$}",
@@ -1696,13 +1586,10 @@
         "decl": "QOU.Descartes.skein_polynomial_transfer_matrix",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "bedb74336d24",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization"
       ]
@@ -1712,7 +1599,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 5499,
+        "line": 5502,
         "chapter": 3
       },
       "title": "{Transfer Matrix Operator for Nuclear Braid Interactions}",
@@ -1720,11 +1607,10 @@
         "decl": "QOU.Descartes.TransferMatrixOperator",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:beta-decay-transfer-matrix",
         "rem:building-block-knots"
@@ -1735,7 +1621,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 5794,
+        "line": 5797,
         "chapter": 3
       },
       "title": "{Beta decay as a universal matrix-valued polynomial in $q$}",
@@ -1743,13 +1629,10 @@
         "decl": "QOU.Descartes.beta_decay_transfer_matrix",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "bf3b980af3cd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:skein-polynomial-transfer-matrix",
         "def:beta-decay-skein"
@@ -1760,7 +1643,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 5949,
+        "line": 5952,
         "chapter": 3
       },
       "title": "{Beta decay as $T_{3,5}$ braid insertion: crossing budget and transfer matrices}",
@@ -1780,7 +1663,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 6021,
+        "line": 6024,
         "chapter": 3
       },
       "title": "{Orbital shells from eigenvalues of the photon-electron transfer matrix}",
@@ -1788,13 +1671,10 @@
         "decl": "QOU.Descartes.shell_structure_eigenvalues",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "f2ac02a684f4",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:transfer-matrix-operator",
         "rem:hydrogen-orbitals"
@@ -1805,7 +1685,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 6264,
+        "line": 6267,
         "chapter": 3
       },
       "title": "{Nuclear energy from the quantum dilogarithm of the Markov trace}",
@@ -1813,13 +1693,10 @@
         "decl": "QOU.Descartes.quantum_dilogarithm_volume",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "baeb362715bd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization",
         "cor:quantum-dilogarithm"
@@ -1830,7 +1707,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 6413,
+        "line": 6416,
         "chapter": 3
       },
       "title": "{Reidemeister moves on the categorical action: complete accounting}",
@@ -1838,13 +1715,10 @@
         "decl": "QOU.Descartes.reidemeister_action_table",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "65c763e226fc",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization"
       ]
@@ -1854,7 +1728,7 @@
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 6591,
+        "line": 6594,
         "chapter": 3
       },
       "title": "{The nuclear degeneracy locus is an elliptic curve over the Bring's surface}",
@@ -1869,7 +1743,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 6821,
+        "line": 6824,
         "chapter": 3
       },
       "title": "{Shell closure as symmetric Poincaré distribution in the Hecke normal form}",
@@ -1877,11 +1751,10 @@
         "decl": "QOU.OptimalNF.optimal_nf_is_standard_basis",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:nuclear-groebner-reduction",
         "thm:groebner-shirshov-energy",
@@ -1896,7 +1769,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 7090,
+        "line": 7093,
         "chapter": 3
       },
       "title": "{Shell binding from the torus knot hierarchy: $T_{2,3} \\to T_{2,5} \\to T_{2,7} \\to T_{2,9}$}",
@@ -1904,13 +1777,10 @@
         "decl": "QOU.Descartes.torus_knot_shell_binding",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "87ddac30c406",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:shell-closure-normal-form",
         "prop:torus-knot-generators",
@@ -1925,7 +1795,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 7313,
+        "line": 7316,
         "chapter": 3
       },
       "title": "{Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary}",
@@ -1933,13 +1803,10 @@
         "decl": "QOU.Descartes.skein_finiteness_bound",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "1e079e666915",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:shell-closure-normal-form",
         "prop:skein-polynomial-transfer-matrix",
@@ -1953,7 +1820,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 7606,
+        "line": 7609,
         "chapter": 3
       },
       "title": "{Spectral decomposition of the $\\mathcal{Q}_q$-value over the torus knot basis of $\\Sigma_4$}",
@@ -1961,13 +1828,10 @@
         "decl": "QOU.Descartes.spectral_decomposition_qvalue",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "3e028c4e71d9",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:cohomological-embedding",
         "prop:beta-decay-transfer-matrix",
@@ -1983,7 +1847,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 7824,
+        "line": 7827,
         "chapter": 3
       },
       "title": "{Construction rules for nuclear shells from the torus knot hierarchy}",
@@ -2003,7 +1867,7 @@
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8092,
+        "line": 8095,
         "chapter": 3
       },
       "title": "{Electron shells as closed sub-Hopf links of the trefoil chain}",
@@ -2017,7 +1881,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8228,
+        "line": 8231,
         "chapter": 3
       },
       "title": "{Noble gas characterization: full shell as full curls}",
@@ -2032,7 +1896,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8333,
+        "line": 8336,
         "chapter": 3
       },
       "title": "{Metallic character from incomplete sub-Hopf links}",
@@ -2046,7 +1910,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8475,
+        "line": 8478,
         "chapter": 3
       },
       "title": "{Electron shell number equals writhe level of the trefoil embedding}",
@@ -2054,13 +1918,10 @@
         "decl": "QOU.BringsSurface.hydrogen_shell_writhe",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "fa1748e092bb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:electron-knot"
       ]
@@ -2070,7 +1931,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8498,
+        "line": 8501,
         "chapter": 3
       },
       "title": "{Descartes theorem}",
@@ -2078,13 +1939,10 @@
         "decl": "QOU.Descartes.descartes",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "488e57f2bf5c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:brings-is-qou",
         "prop:genus-maximal-descent"
@@ -2095,7 +1953,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8534,
+        "line": 8537,
         "chapter": 3
       },
       "title": "{Bring's surface and Yekutieli obstructions}",
@@ -2110,7 +1968,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 8591,
+        "line": 8594,
         "chapter": 3
       },
       "title": "{Terminal Resolution of Hadronic Mass}",
@@ -2118,13 +1976,10 @@
         "decl": "QOU.Experimental.terminal_resolution",
         "file": "QOU/BringsSurface.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/BringsSurface.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/BringsSurface.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "204e39feda69",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/BringsSurface.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:skein-mass-relation",
         "cor:mass-identity-C"
@@ -2143,13 +1998,10 @@
         "decl": "QOU.JetProlongation",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "a344b0db0438",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-observable-universe"
       ]
@@ -2181,11 +2033,10 @@
         "decl": "QOU.RecursiveBraneTower",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:jet-prolongation"
       ]
@@ -2218,13 +2069,10 @@
         "decl": "QOU.categorical_jet_prolongation",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "ddddf6698be6",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-jet"
       ]
@@ -2242,11 +2090,10 @@
         "decl": "QOU.CategoricalQReebFlow",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-q-lie-bracket"
       ]
@@ -2264,11 +2111,10 @@
         "decl": "QOU.DescentLemma",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:recursive-brane-tower"
       ]
@@ -2286,11 +2132,10 @@
         "decl": "QOU.DescentInvolution",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "lem:descent"
       ]
@@ -2308,11 +2153,10 @@
         "decl": "QOU.YekutieliLiftingCondition",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:quantum-characteristic-classes",
@@ -2327,11 +2171,10 @@
         "decl": "QOU.QuantumCharacteristicClass",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:recursive-brane-tower",
         "def:yekutieli-lifting-condition"
@@ -2350,11 +2193,10 @@
         "decl": "QOU.YekutieliLifting",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-characteristic-classes",
         "def:yekutieli-lifting-condition"
@@ -2373,11 +2215,10 @@
         "decl": "QOU.QuToQou",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:yekutieli-lifting",
         "prop:fiber-adjoint-involution"
@@ -2396,11 +2237,10 @@
         "decl": "QOU.DirectLimitAlgebra",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:recursive-brane-tower",
         "ex:c-quantum-observable-universe"
@@ -2433,11 +2273,10 @@
         "decl": "QOU.Torsion.invariant_functional_unique",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:direct-limit-algebra",
         "def:quantum-gauge-group",
@@ -2457,13 +2296,10 @@
         "decl": "QOU.Torsion.global_gluing",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "86b8f2407b2c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-planck-constant",
         "def:quantum-characteristic-classes",
@@ -2497,11 +2333,10 @@
         "decl": "QOU.Torsion.euler_char_constant",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-characteristic-classes"
       ]
@@ -2519,11 +2354,10 @@
         "decl": "QOU.categoricalMass",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:frobenius-pairing",
         "def:recursive-brane-tower"
@@ -2572,13 +2406,10 @@
         "decl": "QOU.Torsion.algebraic_filter_classification",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "13aa0f15cd01",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:q-harmonic-basis-brane"
       ]
@@ -2626,11 +2457,10 @@
         "decl": "QOU.Torsion.idempotent_direct_sum_decomposition",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:descent-involution",
         "rem:algebraic-filter"
@@ -2649,11 +2479,10 @@
         "decl": "QOU.braneBoundary",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "lem:descent"
       ]
@@ -2671,13 +2500,10 @@
         "decl": "QOU.Torsion.brane_boundary_structure",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "f61d78628287",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brane-boundary",
         "def:descent-involution",
@@ -2697,11 +2523,10 @@
         "decl": "QOU.YekutieliTripleMapping",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "lem:descent"
       ]
@@ -2719,11 +2544,10 @@
         "decl": "QOU.cosimplicial_crossed_groupoid_exists",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:yekutieli-triple"
       ]
@@ -2741,13 +2565,10 @@
         "decl": "QOU.Torsion.descent_condition",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "a4153035cae3",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:yekutieli-triple",
         "rem:distributional-connection",
@@ -2767,13 +2588,10 @@
         "decl": "QOU.Torsion.weak_equiv_invariance",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "812079e3628b",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:cosimplicial-crossed-groupoid",
         "prop:vacuum-state",
@@ -2793,11 +2611,10 @@
         "decl": "QOU.LocalizedKnot",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-point",
         "def:projective-line-object"
@@ -2816,13 +2633,10 @@
         "decl": "QOU.Torsion.jet_prolongation_C",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "231088683cfa",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:jet-prolongation",
         "ex:c-quantum-observable-universe"
@@ -2841,11 +2655,10 @@
         "decl": "QOU.MassIdentityC",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "ex:c-quantum-observable-universe",
         "def:mass-identity"
@@ -2864,13 +2677,10 @@
         "decl": "QOU.Torsion.quantum_dilogarithm",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/Torsion.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "3dba23dd8eb8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/Torsion.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:topological-mass",
         "def:briggs-klein-chart"
@@ -2900,13 +2710,10 @@
         "decl": "QOU.Braiding.braid_action_tensor",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "3d6766718c3c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-observable-universe"
       ]
@@ -2924,13 +2731,13 @@
         "decl": "QOU.Braiding.JonesMarkovTrace",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
-        "prop:braid-action-tensor"
+        "prop:braid-action-tensor",
+        "prop:braiding-eigenvalue-extraction"
       ]
     },
     {
@@ -2946,13 +2753,10 @@
         "decl": "QOU.Braiding.knot_eigenbasis_complete",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "2aa6192d2efb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:braid-action-tensor"
       ]
@@ -2970,11 +2774,10 @@
         "decl": "QOU.BraidGroup",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:su2-basis",
@@ -2989,11 +2792,10 @@
         "decl": "QOU.Su2Basis",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:su2-generators",
@@ -3008,11 +2810,10 @@
         "decl": "QOU.Su2Generators",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:su2-basis"
       ]
@@ -3030,11 +2831,10 @@
         "decl": "QOU.So3Generators",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:su2-generators"
       ]
@@ -3052,11 +2852,10 @@
         "decl": "QOU.BraidTwistFlip",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "rem:holonomy-trefoil",
@@ -3086,11 +2885,10 @@
         "decl": "QOU.QuantumSu2",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "prop:r-matrix-braiding-structure",
@@ -3105,13 +2903,10 @@
         "decl": "QOU.Braiding.r_matrix_braiding_structure",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "932bd81aa1de",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-su2",
         "def:braid-twist-flip"
@@ -3144,11 +2939,10 @@
         "decl": "QOU.Braiding.skein_crossing_asymmetry",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:coulomb-charge"
       ]
@@ -3180,13 +2974,10 @@
         "decl": "QOU.Braiding.mobius_energy",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "4205bf731e2f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-action",
         "thm:topological-mass",
@@ -3206,13 +2997,10 @@
         "decl": "QOU.Braiding.non_self_intersection",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "b11adac42ae2",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:mobius-energy",
         "rem:r-matrix-braiding"
@@ -3231,11 +3019,10 @@
         "decl": "QOU.Braiding.CrossingEnergy",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:r-matrix-braiding",
         "def:substrate-parameter"
@@ -3254,11 +3041,10 @@
         "decl": "QOU.Braiding.CoulombCharge",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:crossing-energy",
         "prop:local-substrate-q"
@@ -3277,13 +3063,10 @@
         "decl": "QOU.BringsSurface.lagrange_resolvent_transform",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "8ac424ff98a1",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface"
       ]
@@ -3315,11 +3098,10 @@
         "decl": "QOU.Descartes.QMomentum",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:building-block-knots"
       ]
@@ -3337,11 +3119,10 @@
         "decl": "QOU.Descartes.QAngularMomentum",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:q-momentum",
         "prop:nuclear-spin-parity"
@@ -3360,11 +3141,10 @@
         "decl": "QOU.Descartes.QEnergy",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:q-angular-momentum"
       ]
@@ -3382,11 +3162,10 @@
         "decl": "QOU.ExceptionalDivisor",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:reeb-bundle",
@@ -3401,11 +3180,10 @@
         "decl": "QOU.ReebBundle",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:exceptional-divisor",
         "ex:q-reeb-vector-field"
@@ -3424,13 +3202,10 @@
         "decl": "QOU.VertexOperator",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "73ab988cf10e",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:reeb-bundle",
         "def:exceptional-divisor",
@@ -3453,13 +3228,10 @@
         "decl": "QOU.vertex_is_exceptional_divisor",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "653f067a49b9",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:exceptional-divisor",
         "def:reeb-bundle",
@@ -3479,13 +3251,10 @@
         "decl": "QOU.markov_trace_product",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "ae96993123f1",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:jones-markov-trace",
         "def:vertex-operator"
@@ -3504,11 +3273,10 @@
         "decl": "QOU.CategoricalTransferMatrix",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:hadron",
         "def:vertex-operator",
@@ -3535,13 +3303,10 @@
         "decl": "QOU.transfer_matrix_level_independence",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "74f514380c59",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-transfer-matrix",
         "thm:markov-trace-product",
@@ -3562,13 +3327,10 @@
         "decl": "QOU.Torsion.ArchimedeanMassFormula",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "f2861c40584b",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:topological-mass",
         "def:quantum-planck-constant"
@@ -3601,11 +3363,10 @@
         "decl": "QOU.VertexAlgebra.descartes_genus",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-universe",
         "def:quantum-observable-universe",
@@ -3641,11 +3402,10 @@
         "decl": "QOU.VertexAlgebra.JetRelations.euler_level_stable",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:vertex-algebra-relations",
         "prop:jet-prolongation",
@@ -3674,13 +3434,10 @@
         "decl": "QOU.Hadron",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "6ff4ad316294",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:coulomb-charge",
         "def:exceptional-divisor"
@@ -3699,13 +3456,10 @@
         "decl": "QOU.Hadron.hadron_operations_closure",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "dfceaf052a5f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:hadron"
       ]
@@ -3752,11 +3506,10 @@
         "decl": "QOU.LocalizedHadron",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:hadron",
         "def:categorical-point",
@@ -3776,11 +3529,10 @@
         "decl": "QOU.HadronFibreEmbedding",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:localized-hadron"
       ]
@@ -3798,13 +3550,10 @@
         "decl": "QOU.Torsion.skein_generation",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "3973a8a00335",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:hadron-operations",
         "def:hadron-fibre-embedding"
@@ -3823,11 +3572,10 @@
         "decl": "QOU.Torsion.KnotParticleGeneration",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:skein-generation",
         "rem:knot-particle-dictionary",
@@ -3847,13 +3595,10 @@
         "decl": "QOU.Braiding.knot_particle_correspondence",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "a5d0ae6ac936",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:localized-knot",
         "prop:knot-eigenbasis-complete",
@@ -3888,11 +3633,10 @@
         "decl": "QOU.BundleInitialConditions",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:localized-knot",
         "def:hadron"
@@ -3925,11 +3669,10 @@
         "decl": "QOU.BundleIsotopyEquiv",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:bundle-initial-conditions",
         "def:localized-hadron"
@@ -3948,11 +3691,10 @@
         "decl": "QOU.ParticleState",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:bundle-initial-conditions",
         "def:categorical-q-reeb-flow"
@@ -3971,11 +3713,10 @@
         "decl": "QOU.Braiding.BorromeanBaryon",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:hadron",
         "sec:knot-notation-convention"
@@ -3994,13 +3735,10 @@
         "decl": "QOU.Braiding.fermion_boson_knot_link",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "d5bf216192af",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:borromean-baryon"
       ]
@@ -4018,13 +3756,10 @@
         "decl": "QOU.Braiding.reidemeister_mass_invariance",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "cde29eda6244",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:hydrogen-orbitals"
       ]
@@ -4042,13 +3777,10 @@
         "decl": "QOU.Braiding.nuclear_shell_intruder",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "205f402204f6",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:orbital-fourier-decomposition"
       ]
@@ -4066,11 +3798,10 @@
         "decl": "QOU.Torsion.mass_decomposition_categorical",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:mass-identity",
         "def:brane-boundary",
@@ -4090,11 +3821,10 @@
         "decl": "QOU.Braiding.SkeinBindingLagrangian",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:skein-crossing-asymmetry",
         "def:hadron",
@@ -4114,13 +3844,10 @@
         "decl": "QOU.Braiding.beta_stability",
         "file": "QOU/PathIntegrals.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/PathIntegrals.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "2b97f22bf2a3",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:skein-binding-lagrangian"
       ]
@@ -4138,11 +3865,10 @@
         "decl": "QOU.QYangMillsLevi",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "ex:c-quantum-observable-universe",
         "ex:instanton"
@@ -4161,11 +3887,10 @@
         "decl": "QOU.Torsion.YangMillsMassGap",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-observable-universe",
         "def:mass-identity",
@@ -4207,13 +3932,10 @@
         "decl": "QOU.main_commutative_diagram",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "7cbd57a19969",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:q-yang-mills-levi"
       ]
@@ -4291,11 +4013,10 @@
         "decl": "QOU.InstantonConnection",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "ex:c-quantum-universe",
         "def:categorical-instanton"
@@ -4314,13 +4035,10 @@
         "decl": "QOU.irreducible_connection",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "22e9ca186207",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "lem:categorical-irreducible",
         "ex:c-quantum-observable-universe"
@@ -4339,13 +4057,10 @@
         "decl": "QOU.self_dual_curvature",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "9a01d520dc35",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:categorical-self-duality",
         "ex:c-quantum-observable-universe"
@@ -4379,11 +4094,10 @@
         "decl": "QOU.DescartesUniverse.heisenberg_commutator",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-planck-constant"
       ]
@@ -4401,11 +4115,10 @@
         "decl": "QOU.ReebDecomposition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "ex:c-quantum-universe"
       ]
@@ -4423,11 +4136,10 @@
         "decl": "QOU.SpatialRealizationFunctor",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-point",
         "def:frobenius-pairing",
@@ -4447,13 +4159,10 @@
         "decl": "QOU.categorical_archimedean_bridge",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "31e6cb90340d",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:spatial-realization-functor",
         "def:categorical-q-ext-deriv"
@@ -4472,11 +4181,10 @@
         "decl": "QOU.WittVectorLift",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "prop:skew-poisson-integration",
@@ -4491,13 +4199,10 @@
         "decl": "QOU.Descartes.skew_poisson_integration",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/5ace643ccec739d77fef8ed785d4ce22fde48de9/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "5ace643ccec739d77fef8ed785d4ce22fde48de9",
-        "sorry_free": true,
-        "lean_hash": "285d37a1a95f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/34c45b4f2077550c9470f90db94e91594efafa02/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "34c45b4f2077550c9470f90db94e91594efafa02"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:witt-vector-lift"
       ]
@@ -5116,6 +4821,16 @@
     },
     {
       "from": "prop:nuclear-groebner-reduction",
+      "to": "prop:braiding-eigenvalue-extraction",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-groebner-reduction",
+      "to": "rem:hecke-algebra-from-braiding",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-groebner-reduction",
       "to": "conj:shell-threading-energy",
       "relation": "uses"
     },
@@ -5127,6 +4842,11 @@
     {
       "from": "prop:nuclear-groebner-reduction",
       "to": "unital-groebner-bases:def:division-algorithm",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-groebner-reduction",
+      "to": "unital-groebner-bases:def:admissible-system",
       "relation": "uses"
     },
     {
@@ -5822,6 +5542,11 @@
     {
       "from": "thm:jones-markov-trace",
       "to": "prop:braid-action-tensor",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:jones-markov-trace",
+      "to": "prop:braiding-eigenvalue-extraction",
       "relation": "uses"
     },
     {
