@@ -111,14 +111,14 @@ $m_{\mathfrak{p}} \approx 938.272$ MeV,
 $m_{\mathfrak{n}} \approx 939.565$ MeV,
 $m_e \approx 0.51100$ MeV.
 
-**Fundamental constants from $q_0$.**
+**Fundamental constants from $q_0$ (approximate).**
 
 | Symbol | Formula | Value |
 |--------|---------|:-----:|
-| $\hbar_q$ | $1 - q_0^{-1}$ | $0.09888$ |
-| $\mathbf{E}_{\times}$ | $\tfrac{1}{2}(q_0 - q_0^{-1})$ | $0.10450$ |
-| $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $0.05049$ |
-| $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $2.01099$ |
+| $\hbar_q$ | $1 - q_0^{-1}$ | $\approx 0.09888$ |
+| $\mathbf{E}_{\times}$ | $\tfrac{1}{2}(q_0 - q_0^{-1})$ | $\approx 0.10450$ |
+| $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $\approx 0.05049$ |
+| $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $\approx 2.01099$ |
 
 **Knot-particle identification.** Each constituent knot is
 classified by the fermion--boson decomposition
