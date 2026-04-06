@@ -108,6 +108,8 @@ cd content && bun run pipeline/validate-tex.ts --json
 3. **After adding new blocks**: Check constraints (lean file exists, labels resolve)
 4. **After modifying schema**: Run validation across all content
 5. **After creating .md content**: Any skill that creates or edits `.md` files
+6. **After Lean changes**: Run `bun run scripts/lean-audit.ts` for sorry/trivial/witness audit
+7. **After computation changes**: Run `bun run scripts/witness-audit.ts` for staleness check
    MUST run `validate-tex.ts --file <path>` before considering the task complete
 
 ## Adding custom constraints

@@ -50,6 +50,7 @@ def SpectralPersistence (spectral_limit : ℕ → Fin 8 → ℝ) : Prop :=
 -- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
 theorem macroscopic_iff_rh (ψ : ℝ → ℝ) (ζ : ℂ → ℂ) :
     MacroscopicStability ψ ↔ RiemannHypothesis ζ := by
+  -- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
   sorry
 
 /-- The equivalence (2) ↔ (3) follows from the spectral coordinate
@@ -61,6 +62,7 @@ theorem macroscopic_iff_rh (ψ : ℝ → ℝ) (ζ : ℂ → ℂ) :
 theorem rh_iff_persistence (ζ : ℂ → ℂ)
     (spectral_limit : ℕ → Fin 8 → ℝ) :
     RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit := by
+  -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
   sorry
 
 /-- **Macroscopic stability equivalence**: The following are equivalent:

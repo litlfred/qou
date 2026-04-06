@@ -64,6 +64,7 @@ theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
   -- By L'Hôpital: ln(x)/ln(q) → ln(x)/0⁺... this actually diverges.
   -- The correct classical limit sends q-log to ordinary log in a
   -- renormalized sense. This is a formal statement.
+  -- Ref: [manuscript] Ch. 8 §explicit-formula (q-logarithm classical limit)
   sorry
 
 /-- **Explicit formula as a spectral–geometric trace identity.**
@@ -93,6 +94,8 @@ theorem explicit_formula
     (X : ℝ) (hX : 1 < X) :
     QChebyshevFunction hbar_q hbar_pos ideals X =
       spectralSide q hq spectrum Omega_q X := by
+  -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
+  -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
   sorry
 
 end QOU.AlgebraicSubstrate

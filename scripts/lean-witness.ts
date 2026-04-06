@@ -23,6 +23,7 @@ import { createHash } from "crypto";
 import { readFileSync, writeFileSync, unlinkSync, existsSync } from "fs";
 import { resolve, basename } from "path";
 import { globSync } from "glob";
+import { execSync } from "child_process";
 
 const REPO_ROOT = resolve(import.meta.dir, "..");
 const HASH_LENGTH = 12;
@@ -48,17 +49,138 @@ export function isWitnessed(leanFile: string): { witnessed: boolean; hash: strin
   return { witnessed: existsSync(wp), hash };
 }
 
-/** Create a witness file for the current content of a .lean file. */
-export function stampWitness(leanFile: string): { hash: string; witnessFile: string } {
+/** Get the current git HEAD commit SHA. */
+function getCurrentCommitSha(): string {
+  try {
+    return execSync("git rev-parse HEAD", { cwd: REPO_ROOT })
+      .toString()
+      .trim();
+  } catch {
+    return "unknown";
+  }
+}
+
+/** Get the last commit SHA that touched a specific file. */
+export function getFileCommitSha(filePath: string): string {
+  try {
+    return execSync(`git log -1 --format=%H -- "${filePath}"`, {
+      cwd: REPO_ROOT,
+    })
+      .toString()
+      .trim();
+  } catch {
+    return "unknown";
+  }
+}
+
+/** Read witness metadata from an existing witness file. */
+export function readWitnessMeta(
+  leanFile: string
+): {
+  hash: string;
+  commitSha?: string;
+  stampedAt?: string;
+} | null {
+  const result = isWitnessed(leanFile);
+  if (!result.witnessed) return null;
+  const wp = witnessPath(leanFile, result.hash);
+  try {
+    return JSON.parse(readFileSync(wp, "utf-8"));
+  } catch {
+    return null;
+  }
+}
+
+/** Check whether a witness is stale (file changed since witnessing). */
+export function isStale(leanFile: string): {
+  stale: boolean;
+  reason?: string;
+  currentHash: string;
+  witnessHash?: string;
+  fileCommitSha: string;
+  witnessCommitSha?: string;
+} {
+  if (!existsSync(leanFile)) {
+    return { stale: false, currentHash: "", fileCommitSha: "unknown" };
+  }
+  const currentHash = leanFileHash(leanFile);
+  const fileCommitSha = getFileCommitSha(leanFile);
+
+  // Check for a witness matching the current content hash
+  const wp = witnessPath(leanFile, currentHash);
+  if (existsSync(wp)) {
+    try {
+      const meta = JSON.parse(readFileSync(wp, "utf-8"));
+      // Compare fileCommitSha (not commitSha which is HEAD at stamp time)
+      const witnessFileCommitSha = meta.fileCommitSha;
+
+      if (witnessFileCommitSha && witnessFileCommitSha !== fileCommitSha) {
+        return {
+          stale: true,
+          reason: "file commit SHA mismatch (file modified since witness)",
+          currentHash,
+          witnessHash: currentHash,
+          fileCommitSha,
+          witnessCommitSha: witnessFileCommitSha,
+        };
+      }
+
+      return {
+        stale: false,
+        currentHash,
+        witnessHash: currentHash,
+        fileCommitSha,
+        witnessCommitSha: witnessFileCommitSha,
+      };
+    } catch {
+      return {
+        stale: true,
+        reason: "malformed witness file",
+        currentHash,
+        fileCommitSha,
+      };
+    }
+  }
+
+  // No witness for current hash — check if stale witnesses exist for older hashes
+  const otherWitnesses = globSync(`${leanFile}.*.witness`);
+  if (otherWitnesses.length > 0) {
+    return {
+      stale: true,
+      reason: "content hash mismatch (witness exists for older content)",
+      currentHash,
+      fileCommitSha,
+    };
+  }
+
+  return {
+    stale: false,
+    reason: "no witness exists",
+    currentHash,
+    fileCommitSha,
+  };
+}
+
+/** Create a witness file for the current content of a .lean file.
+ *  Now includes commitSha for staleness tracking. */
+export function stampWitness(leanFile: string): {
+  hash: string;
+  witnessFile: string;
+  commitSha: string;
+} {
   const hash = leanFileHash(leanFile);
   const wp = witnessPath(leanFile, hash);
+  const commitSha = getCurrentCommitSha();
+  const fileCommitSha = getFileCommitSha(leanFile);
   const meta = JSON.stringify({
     leanFile: basename(leanFile),
     hash,
+    commitSha,
+    fileCommitSha,
     stampedAt: new Date().toISOString(),
   });
   writeFileSync(wp, meta + "\n");
-  return { hash, witnessFile: wp };
+  return { hash, witnessFile: wp, commitSha };
 }
 
 /** Remove all witness files for a given .lean file (any hash). */
@@ -116,16 +238,28 @@ if (import.meta.main) {
     case "status": {
       const leanFiles = findContentLeanFiles();
       let witnessed = 0;
-      let stale = 0;
+      let staleFiles = 0;
+      let pending = 0;
       for (const f of leanFiles) {
         const result = isWitnessed(f);
+        const staleResult = isStale(f);
         const rel = f.replace(REPO_ROOT + "/", "");
-        const tag = result.witnessed ? "✓ witnessed" : "· not witnessed";
-        if (result.witnessed) witnessed++;
-        else stale++;
+        let tag: string;
+        if (result.witnessed && !staleResult.stale) {
+          tag = "✓ witnessed";
+          witnessed++;
+        } else if (result.witnessed && staleResult.stale) {
+          tag = `🔄 stale (${staleResult.reason})`;
+          staleFiles++;
+        } else {
+          tag = "· not witnessed";
+          pending++;
+        }
         console.log(`  ${tag}  ${rel}  (${result.hash})`);
       }
-      console.log(`\n${witnessed} witnessed, ${stale} pending — ${leanFiles.length} total`);
+      console.log(
+        `\n${witnessed} witnessed, ${staleFiles} stale, ${pending} pending — ${leanFiles.length} total`
+      );
       break;
     }
     default:

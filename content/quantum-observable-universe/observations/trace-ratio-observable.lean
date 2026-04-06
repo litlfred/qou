@@ -53,12 +53,24 @@ theorem generator_cancellation (V_par V_dau : ℕ → ℝ) (i p : ℕ)
 -- Ref: [manuscript] Ch. 7, §trace-ratio-observable
 theorem trace_ratio_observable (q : ℝ) (hq : 1 < q)
     (V_par V_dau : ℕ → ℝ) (p : ℕ)
-    (hcancel : ∀ i, p < i → V_par i = V_dau i) :
-    ∃ (C : ℝ), 0 < C ∧
+    (hcancel : ∀ i, p < i → V_par i = V_dau i)
+    (hne : ∀ i, p < i → V_dau i ≠ 0) :
     ∀ (A : ℕ), p ≤ A →
       ∏ i ∈ Finset.range (A + 1), (V_par i / V_dau i) ^ 2
       = trace_ratio_product V_par V_dau p := by
-  -- Ref: [manuscript] Ch. 7, §trace-ratio-observable
-  sorry
+  intro A hA
+  unfold trace_ratio_product
+  -- Split range(A+1) = range(p+1) ∪ {p+1, ..., A} and show extra terms are 1
+  have : ∀ i, p < i → (V_par i / V_dau i) ^ 2 = 1 := by
+    intro i hi
+    rw [hcancel i hi, div_self (hne i hi), one_pow]
+  -- The product over {p+1, ..., A} is 1, so the full product = truncated product
+  rw [← Finset.prod_range_add_prod_Ico _ (by omega : p + 1 ≤ A + 1)]
+  suffices h : ∏ i ∈ Finset.Ico (p + 1) (A + 1), (V_par i / V_dau i) ^ 2 = 1 by
+    rw [h, mul_one]
+  apply Finset.prod_eq_one
+  intro i hi
+  apply this
+  exact Nat.lt_of_lt_of_le (by omega : p < p + 1) (Finset.mem_Ico.mp hi).1
 
 end QOU.Descartes
