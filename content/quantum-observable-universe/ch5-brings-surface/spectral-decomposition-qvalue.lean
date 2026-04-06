@@ -91,13 +91,14 @@ theorem spectral_decomposition_qvalue
 /-- The jet bundle over Σ₄ has exactly three non-zero levels (k = 0, 1, 2).
     Degree 3 requires genus ≥ 13, exceeding the genus-4 bound. -/
 -- Ref: [manuscript] §5/spectral-decomposition-qvalue
-theorem tower_terminates_at_degree_2 :
-    ∀ r s : ℕ, r ≥ 2 → s ≥ 2 →
-    (r - 1) * (s ^ 3 - 1) / 2 ≥ 13 →
-    ¬ embeddableOnSurface 4 ⟨r, s ^ 3, sorry, (r - 1) * (s ^ 3 - 1) / 2⟩ := by
-  -- For degree-3 tower knots τ(r, s³), the genus is (r-1)(s³-1)/2 ≥ 13 > 4.
-  -- Ref: [manuscript] §5/spectral-decomposition-qvalue
-  sorry
+theorem tower_terminates_at_degree_2 (r s : ℕ)
+    (hr : r ≥ 2) (hs : s ≥ 2) (hcop : Nat.Coprime r (s ^ 3))
+    (hgen : (r - 1) * (s ^ 3 - 1) / 2 ≥ 13) :
+    ¬ embeddableOnSurface 4 ⟨r, s ^ 3, hcop, (r - 1) * (s ^ 3 - 1) / 2⟩ := by
+  -- Genus ≥ 13 > 4 = genus of Σ₄, so not embeddable.
+  intro hemb
+  unfold embeddableOnSurface at hemb
+  omega
 
 /-- Self-duality: τ(r,s) ↔ τ(s,r) provides the inner product for
     completeness of the torus knot basis. -/
