@@ -290,6 +290,7 @@ export default chapter({
       blocks: [
         "fivefold-symmetry",
         "cohomological-embedding",
+        "knot-basis-color-content",
       ],
     }),
   ],
