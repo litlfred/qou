@@ -34,7 +34,7 @@ where $\rho: B_n \to H_n(q)$ is the Hecke representation.
 
 1. **Additivity under concatenation**:
    $p_q(\beta_1 \beta_2) = p_q(\beta_1) + p_q(\beta_2)$
-   (from the trace being linear on the Hecke algebra).
+   (from the trace being linear on the Iwahori--Hecke algebra).
 
 2. **Invariance under Markov I**: $p_q$ is conjugation-invariant
    (cyclic property of the trace).

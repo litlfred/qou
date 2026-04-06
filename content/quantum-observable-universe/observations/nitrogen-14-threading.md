@@ -27,7 +27,7 @@ This is the **maximal braid shortcut**: all 26 crossings
 contribute identically, the Hecke reduction encounters no
 $\sigma_i^2$ terms (because the alternation prevents any
 generator from appearing twice consecutively), and the
-Gröbner normal form is maximally efficient.
+Gröbner--Shirshov normal form is maximally efficient.
 
 **Why $\mathcal{N}(6,8)$ is unstable.**
 With $p = 6, n = 8$, the 8 neutrons include 4
@@ -65,7 +65,7 @@ goes from $(\sigma_1 \cdots \sigma_{13})^2$ with 4 broken
 alternations to $(\sigma_1 \cdots \sigma_{13})^2$ with perfect
 alternation — the maximal shortcut.
 
-In the Hecke algebra, this transition:
+In the Iwahori--Hecke algebra, this transition:
 - Eliminates 4 Hecke reduction steps ($T_i^2$ resolutions)
 - Reduces the total energy by $\Delta E = -3.361$ Skein weight
   units

@@ -9,7 +9,7 @@ $A$.  The **physical energy** is not the product itself but its
 | Volume | Formula | Scaling | Used for |
 |--------|---------|---------|----------|
 | Hyperbolic | $\text{Vol}(S^3 \setminus K)$ | $O(1)$ per knot | Single-particle mass |
-| Hecke weight | $\sum \lVert c_w\rVert \cdot \ell(w)$ | $O(e^A)$ | Gröbner energy (algebraic) |
+| Hecke weight | $\sum \lVert c_w\rVert \cdot \ell(w)$ | $O(e^A)$ | Gröbner--Shirshov energy (algebraic) |
 | Quantum dilogarithm | $\Phi_q(z) = \sum_i \log \hat{V}_i$ | $O(A)$ | **Nuclear binding energy** |
 
 The hyperbolic volume is the classical ($q \to 1$) limit of
@@ -59,7 +59,7 @@ the total quantum dilogarithm volume $\Phi_q$.
 
 The identification $\Phi_q = \sum \log |\hat{V}_i|$ connects the
 cosimplicial structure of Ch3 (the Yekutieli triples and crossed
-groupoid) to the Hecke algebra computation of Ch5 (the generator
+groupoid) to the Iwahori--Hecke algebra computation of Ch5 (the generator
 volumes).
 
 **The beta-decay $Q$-value.**
@@ -106,7 +106,7 @@ dimensional scale, and $N_v$ is the effective crossing count
 of the weak scale ($v = N_v\,\mathbf{E}_{\times}\,\mu_0$).
 The prefactor replaces $G_F^2\,m_e^5/(2\pi^3)$
 ([hadron half-life](#prop:hadron-half-life)).
-Every quantity is determined by the Hecke algebra computation
+Every quantity is determined by the Iwahori--Hecke algebra computation
 at $q$, plus $\mu_0$ (unit choice) and $N_v$ (topological
 invariant of the weak scale — open computation).
 

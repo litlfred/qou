@@ -2,13 +2,13 @@
 """
 Exact nuclear braid computation in H_n(q) over Z[q, q⁻¹].
 
-Implements the Hecke algebra H_n(q) symbolically using SymPy for the
+Implements the Iwahori--Hecke algebra H_n(q) symbolically using SymPy for the
 coefficient ring R = Q(q) (rational functions in q). Braid words are
-Gröbner-reduced using the division algorithm from the unital Gröbner
+Gröbner--Shirshov-reduced using the division algorithm from the unital Gröbner--Shirshov
 bases paper. The Markov trace is computed as an R-valued functional.
 
 For A=14 (¹⁴C), the exact computation produces:
-  - The Gröbner-reduced normal form N̄(6,8) in H_14(q)
+  - The Gröbner--Shirshov-reduced normal form N̄(6,8) in H_14(q)
   - The Markov trace tr(N̄) ∈ Q(q)
   - The L_0 smoothing trace tr(e_i · context) ∈ Q(q)
   - The transition amplitude |M_q|² as a function of q
@@ -67,7 +67,7 @@ SINV_CONST = -q * (q_half - q_half_inv)    # constant
 Z_MARKOV = 1 / (q_half + q_half_inv)
 
 
-# ── Hecke algebra element ────────────────────────────────────────
+# ── Iwahori--Hecke algebra element ────────────────────────────────────────
 #
 # An element of H_n(q) is a Q(q)-linear combination of reduced
 # positive braid words. We represent it as:
@@ -379,7 +379,7 @@ def main():
     # Write witness
     witness = {
         'computation': 'nuclear-braid-exact',
-        'description': f'Exact Hecke algebra reduction of nuclear braid words over Q(q)',
+        'description': f'Exact Iwahori--Hecke algebra reduction of nuclear braid words over Q(q)',
         'timestamp': datetime.now(timezone.utc).isoformat(),
         'engine': 'sympy',
         'parameters': {

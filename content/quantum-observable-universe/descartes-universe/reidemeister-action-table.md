@@ -18,7 +18,7 @@ $$
   \underbrace{\mathcal{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
 $$
 
-The gauge sector decomposes via the Hecke algebra:
+The gauge sector decomposes via the Iwahori--Hecke algebra:
 each crossing $\sigma_i$ contributes weight $q$ (positive),
 $q^{-1}$ (negative), or $(q + q^{-1})/2$ (mixed).
 
@@ -113,8 +113,8 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
    - R3, far-comm, Markov I preserve Vol → preserve mass.
 
 2. **Binding energy** $= \mathcal{S}_q^{\mathrm{gauge}}$ evaluated
-   on the Gröbner normal form.
-   - R2 ($q$-deformed) is the ONLY Gröbner relation that changes
+   on the Gröbner--Shirshov normal form.
+   - R2 ($q$-deformed) is the ONLY Gröbner--Shirshov relation that changes
      the gauge sector.  Each application splits
      $T^2 \to (q - q^{-1})T + 1$, releasing
      $(q - q^{-1})$ of Coulomb energy and $1$ of volume binding.

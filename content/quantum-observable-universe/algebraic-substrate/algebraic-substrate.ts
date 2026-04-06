@@ -3,9 +3,9 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 8: The Algebraic Substrate.
  *
- * Five-step development: (1) Frobenius-Hopf substrate and Reeb derivation,
+ * Five-step development: (1) Frobenius--Hopf substrate and Reeb derivation,
  * (2) unit particle as a cohomological defect, (3) spectral trace and
- * Tannaka-Krein duality, (4) geometric stability via the Weil bound,
+ * Tannaka--Krein duality, (4) geometric stability via the Weil bound,
  * (5) classical limit and the macroscopic continuum.
  */
 export default chapter({
@@ -43,7 +43,7 @@ export default chapter({
       ],
     }),
 
-    // ── §3. The Spectral Trace and Tannaka-Krein Duality ────────────
+    // ── §3. The Spectral Trace and Tannaka--Krein Duality ────────────
     section({
       title: "The spectral trace and Tannaka--Krein duality",
       label: "sec:spectral-trace-tannaka",

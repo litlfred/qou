@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tau leptonic decay via Hecke algebra Gröbner reduction.
+Tau leptonic decay via Iwahori--Hecke algebra Gröbner--Shirshov reduction.
 
 Computes the full weak-vertex mediated decays:
   τ⁻ → e⁻ + ν̄ₑ + ν_τ    (electronic mode, BR ≈ 17.82%)
@@ -13,7 +13,7 @@ Method:
   3. For each decay channel:
      a. Compose: decay_op = T_{2,n_daughter} · T_{3,5} · T_{2,7}
         (the full transition amplitude chain in H₃(q))
-     b. Reduce to Gröbner normal form.
+     b. Reduce to Gröbner--Shirshov normal form.
      c. Compute the Markov trace (= Jones-polynomial invariant).
   4. The squared ratio |M(τ→e)|²/|M(τ→μ)|² should approximate
      BR(τ→e)/BR(τ→μ) ≈ 1.025 (lepton universality + phase space).
@@ -154,7 +154,7 @@ def build_T35():
 
 def main():
     print("=" * 72)
-    print("  TAU LEPTONIC DECAY — Hecke algebra Gröbner computation")
+    print("  TAU LEPTONIC DECAY — Iwahori--Hecke algebra Gröbner--Shirshov computation")
     print("=" * 72)
     print(f"  commit {SHA}, q = {Q:.10f}, h = q−q⁻¹ = {h:.10f}")
     print()
@@ -352,7 +352,7 @@ def main():
     # (topological quantum number conservation), not multiplied.
     # The neutrinos are 𝟙 (identity). Only phase space differs.
     #
-    # This is the Hecke algebra derivation of lepton universality:
+    # This is the Iwahori--Hecke algebra derivation of lepton universality:
     # |M|² = |tr(T_{3,5})|² is channel-independent.
 
     M_sq_universal = abs(tr_T35)**2
@@ -363,7 +363,7 @@ def main():
     print(f"  BR(τ→e)/BR(τ→μ) = f_e/f_μ = {BR_ratio_factorized:.6f}")
     print(f"  PDG experimental:            {BR_ratio_PDG:.6f}")
     print(f"  Deviation from PDG:          {abs(BR_ratio_factorized - BR_ratio_PDG)/BR_ratio_PDG*100:.2f}%")
-    print(f"  ✓ Hecke algebra PREDICTS lepton universality via T_{{3,5}}")
+    print(f"  ✓ Iwahori--Hecke algebra PREDICTS lepton universality via T_{{3,5}}")
     print()
 
     # ── Also check net amplitude ratios ──────────────────────────

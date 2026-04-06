@@ -230,9 +230,9 @@ for w in sorted(product.terms, key=lambda w: (len(w), w)):
     c = sp.expand(product.terms[w])
     print(f"    {c}  ·  {ws(w)}")
 
-# Gröbner-reduce
+# Gröbner--Shirshov-reduce
 reduced, stats = div.reduce(product)
-print(f"\n  After Gröbner reduction ({stats}):")
+print(f"\n  After Gröbner--Shirshov reduction ({stats}):")
 print(f"  NF(γ₁·γ₂)  ({len(reduced.terms)} terms):")
 for w in sorted(reduced.terms, key=lambda w: (len(w), w)):
     c = sp.expand(reduced.terms[w])

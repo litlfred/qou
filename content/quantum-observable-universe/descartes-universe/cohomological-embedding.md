@@ -138,7 +138,7 @@ $T(2,8)$ is the **mass boson** (the excitation of the field).
 
 ## Completeness via Jones polynomials
 
-The Hecke algebras on the embeddable strand counts are:
+The Iwahori--Hecke algebras on the embeddable strand counts are:
 - $H_2(q)$: $2$ irreducible representations (partitions of $2$:
   $(2)$ trivial, $(1,1)$ sign).  Dimension $2! = 2$.
 - $H_3(q)$: $3$ irreducible representations (partitions of $3$:

@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:groebner-nf-computation",
-  title: "Gröbner normal form computation with quotient ideals",
+  title: "Gröbner--Shirshov normal form computation with quotient ideals",
   tags: [
     "groebner-basis",
     "normal-form",

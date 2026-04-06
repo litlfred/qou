@@ -26,7 +26,7 @@ $(\mathcal{P}, \mathcal{P}')$ of $G_q$-bundles on $X$ together with
 an isomorphism $\mathcal{P}|_{X \setminus x} \xrightarrow{\sim}
 \mathcal{P}'|_{X \setminus x}$ of relative position $\lambda$.
 
-The $q$-Hecke operators satisfy the Hecke algebra relation
+The $q$-Hecke operators satisfy the Iwahori--Hecke algebra relation
 ([braiding eigenvalues](#prop:braid-action-tensor)):
 
 $$

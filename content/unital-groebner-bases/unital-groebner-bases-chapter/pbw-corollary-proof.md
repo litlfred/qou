@@ -11,10 +11,10 @@ $$
     \mid x_i > x_j\}.
 $$
 
-The argument that $G$ is a Gröbner basis is exactly as in the
+The argument that $G$ is a Gröbner--Shirshov basis is exactly as in the
 classical setting, using
 [Buchberger's theorem](#thm:buchberger). As the leading terms
 $\mathrm{LT}(g_{i,j}) = x_i x_j$ are monic and the basis is
-multiplicative, $G$ is a *unital* Gröbner basis. The corollary then
+multiplicative, $G$ is a *unital* Gröbner--Shirshov basis. The corollary then
 follows from the
 [main decomposition theorem](#thm:unital-groebner-decomposition).

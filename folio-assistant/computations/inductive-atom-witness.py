@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Inductive atom construction with full Gröbner witness.
+Inductive atom construction with full Gröbner--Shirshov witness.
 
 For each atom built inductively, produce a complete witness:
   - All inputs (particles, crossing types, generators)
-  - The Gröbner basis (ideal) used for reduction
+  - The Gröbner--Shirshov basis (ideal) used for reduction
   - Every reduction step (Hecke, YB, far-comm) with energy
   - The normal form and its decomposition over the particle catalog
   - Markov trace and Hecke energy
@@ -15,7 +15,7 @@ then electrons by shell).
 
 Synthetic atoms: could have different q-torsion due to
 different formation history (e.g. created in accelerators).
-The Gröbner basis is the same, but the initial braid word
+The Gröbner--Shirshov basis is the same, but the initial braid word
 may differ.
 
 Usage:
@@ -41,7 +41,7 @@ def sigma(i):
 
 
 # ══════════════════════════════════════════════════════════════
-# §1  THE IDEAL (Gröbner basis for reduction)
+# §1  THE IDEAL (Gröbner--Shirshov basis for reduction)
 # ══════════════════════════════════════════════════════════════
 
 IDEAL = {
@@ -245,7 +245,7 @@ def build_atom_witnessed(particles, label, formation="natural"):
 # §4  BUILD ATOMS
 # ══════════════════════════════════════════════════════════════
 
-print("Building atoms with full Gröbner witness...")
+print("Building atoms with full Gröbner--Shirshov witness...")
 print()
 
 atoms_to_build = [
@@ -307,7 +307,7 @@ full_witness = {
     "computation": "inductive-atom-witness",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "description": (
-        "Complete Gröbner basis witness for inductive atom construction. "
+        "Complete Gröbner--Shirshov basis witness for inductive atom construction. "
         "Every crossing, every reduction step, every Hecke energy cost "
         "is recorded. Includes natural and synthetic formation paths."
     ),
@@ -340,7 +340,7 @@ with open(lean_out, "w") as f:
         f.write(f"-- Markov trace = {nf['markov_trace']:.10f}\n")
         f.write(f"-- Hecke energy = {nf['total_hecke_energy']:.10f}\n")
         f.write(f"-- Hecke steps = {nf['total_hecke_steps']}, YB = {nf['total_yb_steps']}\n")
-        f.write(f"-- In Gröbner NF: {nf['in_groebner_nf']}\n\n")
+        f.write(f"-- In Gröbner--Shirshov NF: {nf['in_groebner_nf']}\n\n")
 
 print(f"Lean witness: {lean_out}")
 

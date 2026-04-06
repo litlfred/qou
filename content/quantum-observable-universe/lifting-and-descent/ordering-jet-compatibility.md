@@ -31,7 +31,7 @@ $A_{n+1} = J^1(A_n)$
    $\prec_\infty = \bigcup_n \prec_n$: an element
    $a \in \mathcal{A}_\infty$ has a well-defined leading
    monomial $\mathrm{LM}(a)$ with respect to $\prec_\infty$,
-   and the Gröbner reduction algorithm terminates on every
+   and the Gröbner--Shirshov reduction algorithm terminates on every
    element of $\mathcal{A}_\infty$ that belongs to some
    finite level $A_n$.*
 
@@ -72,13 +72,13 @@ leading monomial $\mathrm{LM}(a)$ is computed in $B_n$ with
 respect to $\prec_n$.  By (1), $\mathrm{LM}(a)$ is the same
 whether computed in $B_n$ or in $B_m$ for any $m \geq n$ —
 the embedding $\ell_n$ preserves leading monomials.  The
-Gröbner reduction algorithm applied to $a$ in $A_n$
+Gröbner--Shirshov reduction algorithm applied to $a$ in $A_n$
 terminates by (3); the same reduction is valid in
 $\mathcal{A}_\infty$.  $\square$
 
 **Consequence for time.**  The braiding-induced ordering $\prec_c$ on
 $A_0$ propagates through the entire jet tower.  At every
-brane level, "forward time" (Gröbner reduction, braiding)
+brane level, "forward time" (Gröbner--Shirshov reduction, braiding)
 and "backward time" (anti-involution, unbraiding) are
 well-defined and compatible with the algebraic structure.
 The arrow of time is inherited from the initial ordering

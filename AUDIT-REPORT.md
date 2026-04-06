@@ -149,7 +149,7 @@ Key axiom-heavy files:
 11. `reduction-mod-p.ts` — theorem
 12. `strong-multiplicativity.ts` — theorem
 
-#### Unital Groebner Bases — 9 missing
+#### Unital Gröbner--Shirshov Bases — 9 missing
 1. `ch0/ugb-main-theorem-statement.ts` — theorem
 2. `ch1/main-theorem.ts` — theorem
 3. `ch1/buchberger.ts` — theorem

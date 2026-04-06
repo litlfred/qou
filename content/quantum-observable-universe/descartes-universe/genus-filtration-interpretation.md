@@ -65,7 +65,7 @@ The full argument is **non-circular**:
 2. **Strand count closure**: for any genus $g$, the constraint
    $(m-1)(s-1) \leq 2g$ with $m \geq 4$ contributes no new
    torus knots beyond those from $m \in \{2, 3\}$.  The
-   relevant Hecke algebra is $H_2(q) \oplus H_3(q)$, with
+   relevant Iwahori--Hecke algebra is $H_2(q) \oplus H_3(q)$, with
    $5$ irreps.
 
 3. **Hecke completeness**: the evaluation matrix of embeddable
@@ -90,7 +90,7 @@ The full argument is **non-circular**:
    with maximal symmetry ($S_5$), determined by the Descartes
    condition $\chi = 2 - 2g = -6$.
 
-The Bring surface is a **consequence** of the Hecke algebra,
+The Bring surface is a **consequence** of the Iwahori--Hecke algebra,
 not an input.  The genus $g = 4$ emerges from representation
 completeness; the surface $\Sigma_4$ is then identified by its
 symmetry.

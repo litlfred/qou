@@ -57,7 +57,7 @@ for i in range(5):
 print(f"Unreduced: {braid_word_unreduced.n_terms()} terms, "
       f"max length {braid_word_unreduced.max_word_length()}")
 
-# Reduce via Gröbner basis
+# Reduce via Gröbner--Shirshov basis
 reduced, log = div.reduce(braid_word_unreduced)
 summary = div.summarize_log(log)
 

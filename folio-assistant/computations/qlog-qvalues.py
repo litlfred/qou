@@ -15,7 +15,7 @@ Shell correction:
   Δ(log_q) = log_q(tr(n·T35·B3⁻¹) / tr(n)) per boundary triple
 
 No Mayer-Jensen, no external shell model. Shell structure from
-the Hecke algebra palindromic normal form.
+the Iwahori--Hecke algebra palindromic normal form.
 """
 
 import math
@@ -137,7 +137,7 @@ print()
 
 # ── Number of boundary triples ──────────────────────────────────
 #
-# From the Hecke algebra: the finiteness bound [A-1]_q! > [2]_q^{A-1}
+# From the Iwahori--Hecke algebra: the finiteness bound [A-1]_q! > [2]_q^{A-1}
 # crosses at A=5. The shell closures at (p,p) have palindromic
 # histograms. The NUMBER of boundary triples is:
 #
@@ -175,7 +175,7 @@ def n_boundary_triples(n_neutrons):
     # These are NOT Mayer-Jensen — they're from [A-1]_q! > [2]_q^{A-1}
     # The first closure is at A=4 (i.e., N=2 for balanced nuclei).
     # Subsequent closures: N = 2, 8, 20, 28, 50, 82, 126
-    # These EMERGE from the Hecke algebra at q = 1.110.
+    # These EMERGE from the Iwahori--Hecke algebra at q = 1.110.
     magic = [2, 8, 20, 28, 50, 82, 126]
 
     # Find the last magic number ≤ n

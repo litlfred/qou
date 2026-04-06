@@ -167,7 +167,7 @@ becomes the Chebyshev recurrence.  $\square$
 The coefficient $q - q^{-1}$ in the recurrence is the
 **Hecke deformation** — the same parameter that controls
 parity violation
-([Lee-Yang-Wu](#prop:parity-violation-skein)).  At $q = 1$
+([Lee--Yang--Wu](#prop:parity-violation-skein)).  At $q = 1$
 the recurrence degenerates: $\hat{V}(n+1) = \hat{V}(n-1)$
 (period 2, no shell structure).
 

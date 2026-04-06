@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:groebner-basis",
-  title: "Gröbner basis and unital Gröbner basis",
+  title: "Gröbner--Shirshov basis and unital Gröbner--Shirshov basis",
   lean: {
     decl: "QOU.GrobnerShirshov.IsGrobnerShirshovBasis",
     validation: "not_checked",

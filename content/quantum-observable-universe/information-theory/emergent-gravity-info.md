@@ -1,5 +1,5 @@
 The gravitational constant $G(q)$ is derived from the
-$q$-Yang-Mills-Levi action
+$q$-Yang--Mills--Levi action
 ([$q$-YM-Levi](#def:q-yang-mills-levi)), not from semiclassical
 entropy-area relations.  The coupling is set by the **in-progress
 braid content** of a Planck cell — sections of the jet tower

@@ -119,7 +119,7 @@ print()
 # However, in the transfer matrix approach, each generator's chain is
 # processed independently (σ₀ first, then σ₁). The T_{3,5} interleaving
 # CANNOT be captured by independent chains — it requires the full
-# Hecke algebra computation.
+# Iwahori--Hecke algebra computation.
 #
 # CORRECT APPROACH: Use the Hecke division engine to reduce the
 # concatenated braid, then extract the per-generator volumes from

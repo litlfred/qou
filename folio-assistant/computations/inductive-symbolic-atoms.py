@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Inductive atom construction with SYMBOLIC Gröbner basis.
+Inductive atom construction with SYMBOLIC Gröbner--Shirshov basis.
 
 All coefficients are exact in ℤ[q^½, q^{-½}]. No floating point
 until final evaluation at q₀.

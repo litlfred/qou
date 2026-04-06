@@ -62,7 +62,7 @@ where every factor is determined by $q$:
    vertex.
 
 3. **$q$-deformed matrix element**: The squared matrix element
-   is the Markov trace ratio between parent and daughter Gröbner
+   is the Markov trace ratio between parent and daughter Gröbner--Shirshov
    normal forms
    ([trace ratio observable](#prop:trace-ratio-observable)):
 

@@ -8,7 +8,7 @@ exactly one lepton--antilepton pair.  Lepton number counts these
 smoothings.
 
 **Definition.**
-Let $\mathcal{N}$ be a nuclear link in Gröbner normal
+Let $\mathcal{N}$ be a nuclear link in Gröbner--Shirshov normal
 form and let $\mathcal{N}'$ be obtained from
 $\mathcal{N}$ by a sequence of $k$ Skein crossing changes.
 The **lepton number** of the transition is $L = k$.
@@ -28,8 +28,8 @@ Lepton number is conserved by construction:
    number $0$.  The nuclear sector loses one crossing (lepton
    number $0$ for hadrons).  Total: $\Delta L = 0$.
 
-2. **Gröbner re-reduction** (R2, R3, far-commutativity) acts
-   within the Hecke algebra and does not produce smoothings.
+2. **Gröbner--Shirshov re-reduction** (R2, R3, far-commutativity) acts
+   within the Iwahori--Hecke algebra and does not produce smoothings.
    $\Delta L = 0$.
 
 3. **Markov moves** (conjugation, stabilisation) change the
@@ -76,11 +76,11 @@ In the Standard Model, lepton number conservation is an accidental
 symmetry.  In QOU, it is a **structural invariant**: the Skein
 relation is the unique operation that changes crossing type, and
 it always produces exactly one lepton pair.  There is no
-mechanism in the Hecke algebra to produce an odd number of
+mechanism in the Iwahori--Hecke algebra to produce an odd number of
 leptons — the smoothing is a topological operation on a single
 crossing, and each smoothing is binary (two arcs).
 
 Lepton number violation would require a process that changes
 crossing type without going through the Skein relation — i.e.,
-a process outside the Hecke algebra.  In the $\chi = -6$ universe,
+a process outside the Iwahori--Hecke algebra.  In the $\chi = -6$ universe,
 no such process exists.

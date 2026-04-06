@@ -15,7 +15,7 @@ traditional nuclear physics and compare with observation.
 
 The $q$-factorial $[A\!-\!1]_q! = \prod_{k=1}^{A-1} [k]_q$
 counts the **number of reduced words in $H_A(q)$** — the
-dimension of the Hecke algebra.  At $q = 1$, this is $(A-1)!$,
+dimension of the Iwahori--Hecke algebra.  At $q = 1$, this is $(A-1)!$,
 the number of permutations of $A - 1$ objects.
 
 In traditional nuclear physics, this corresponds to the
@@ -55,9 +55,9 @@ nucleus is unbound.
 This is the $q$-deformed analogue of the standard nuclear
 physics statement: *a nucleus is unbound when the kinetic
 energy of the Fermi gas exceeds the nuclear binding energy*.
-In the Hecke algebra:
+In the Iwahori--Hecke algebra:
 
-| Traditional (shell model) | QOU (Hecke algebra) |
+| Traditional (shell model) | QOU (Iwahori--Hecke algebra) |
 |:---:|:---:|
 | Fermi energy $\propto A^{2/3}$ | $\ln [A\!-\!1]_q! \propto A \ln A$ |
 | Binding energy $\propto A$ | $\ln [2]_q^{A-1} \propto A$ |

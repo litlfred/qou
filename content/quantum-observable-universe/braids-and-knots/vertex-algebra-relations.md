@@ -611,7 +611,7 @@ $$
   \sum_k f^k_{ij}\, T_k,
 $$
 
-where $f^k_{ij}$ are the structure constants of the Hecke algebra.
+where $f^k_{ij}$ are the structure constants of the Iwahori--Hecke algebra.
 The self-duality equation is:
 
 $$

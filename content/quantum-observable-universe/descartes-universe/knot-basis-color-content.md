@@ -11,7 +11,7 @@ $$
 $$
 
 where $R$ is the ground ring $\mathbb{Z}[q^{\pm 1}]$ (or any
-commutative ring over which the Hecke algebra is defined),
+commutative ring over which the Iwahori--Hecke algebra is defined),
 is called a **photon with color content** $(\varphi_0, \varphi_1)$.
 The identity $\mathbf{1}$ is the photon proper; the generators
 $\sigma_0, \sigma_1$ contribute additive color dressing.
@@ -25,7 +25,7 @@ $$
 $$
 
 with $\varphi_0, \varphi_1, \psi_0, \psi_1 \in R$ all
-**independent formal variables**, the Gröbner normal form of
+**independent formal variables**, the Gröbner--Shirshov normal form of
 their product in $H_3(q)$ is computed by expanding all nine
 terms and applying the Hecke relation
 $\sigma_i^2 = (q - q^{-1})\,\sigma_i + \mathbf{1}$.

@@ -9,7 +9,7 @@ Chain:
   → Skein polynomial P = ∏ V̂_i per generator
   → Q_pred = |ln(P_dau/P_par)| × E_× × μ₀
   → f(Z, Q_pred) (exact phase space + Coulomb)
-  → g_A from Hecke algebra H₃(q)
+  → g_A from Iwahori--Hecke algebra H₃(q)
   → |M|² = |M_F|² + [3]_q × g_A²  (for mirror/allowed GT)
   → Γ = (G_F² m_e⁵ / 2π³) × |M|² × f(Z, Q)
   → t_{1/2} = ln(2) / Γ
@@ -103,7 +103,7 @@ def phase_space(Z_d, Q_MeV, n_steps=50000):
         total += F * p_e * W * (W0 - W)**2 * dW
     return total
 
-# ── g_A from Hecke algebra ───────────────────────────────────────
+# ── g_A from Iwahori--Hecke algebra ───────────────────────────────────────
 # The Borromean computation gave g_A = 5/3 (no suppression).
 # Let's also compute what g_A the data REQUIRES for each nucleus.
 # For mirror transitions (³H): |M|² = 1 + [3]_q × g_A²

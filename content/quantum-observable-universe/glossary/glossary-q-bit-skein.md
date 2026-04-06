@@ -63,7 +63,7 @@ $T_{3,5} = (\sigma_1 \sigma_2)^5$ has $10$ crossings, and
 each crossing resolution is one $q$-bit.  The partition
 of these $10$ $q$-bits into daughter products ($3$ for the
 electron trefoil, $0$ for the antineutrino unknot, $7$
-absorbed as R2 moves) is the Gröbner reduction — a
+absorbed as R2 moves) is the Gröbner--Shirshov reduction — a
 $q$-bit accounting ledger.
 
 ### Why this justifies $Q_{\mathrm{cat}}$

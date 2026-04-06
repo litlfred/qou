@@ -48,7 +48,7 @@ For the computational setting, the Kummer level $n$
 corresponds to the root-of-unity $q_n = e^{2\pi i/n}$:
 
 - At $n \mid 6$ (torsion where obstruction vanishes): the
-  Hecke algebra at $q_n$ has a radical that prunes the
+  Iwahori--Hecke algebra at $q_n$ has a radical that prunes the
   resolution tree — the BQP mechanism.
 - At $n \nmid 6$ (torsion where obstruction persists): even
   quantum interference at this root of unity cannot collapse
@@ -75,6 +75,6 @@ not because the obstruction vanishes, but because the field
 itself is finite.
 
 Over $\mathbb{R}$ at non-torsion $q_0 \approx 1.1097$, no
-Kummer level applies.  The Hecke algebra $H_n(q_0)$ is
+Kummer level applies.  The Iwahori--Hecke algebra $H_n(q_0)$ is
 semisimple ($\mathrm{Rad} = 0$), the full $3^c$ tree
 survives, and the obstruction is non-vanishing.

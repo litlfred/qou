@@ -9,7 +9,7 @@ We say $A$ is an **algebra without quasi-zeros** if no such element
 exists. Throughout this paper, whenever $\mathbf{C}$ is $R$-linear
 we assume that $R$ has no quasi-zeros.
 
-This condition appears naturally in the theory of unital Gröbner
+This condition appears naturally in the theory of unital Gröbner--Shirshov
 bases \cite{leitnerpawloski2004}, where it ensures that leading-term
 decompositions are well-defined and the division algorithm terminates
 correctly. In the categorical setting it guarantees that $R$-linear

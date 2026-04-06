@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-g_A from the Hecke algebra of the nucleon braid — witness computation.
+g_A from the Iwahori--Hecke algebra of the nucleon braid — witness computation.
 
 The axial coupling g_A measures the ratio of axial to vector weak
 matrix elements of the nucleon.  In the QOU, the proton is a
@@ -13,7 +13,7 @@ Physics:
         converting generator
 
 The computation evaluates the beta-decay matrix element in the
-Hecke algebra H_3(q) using the standard (2-dimensional) and
+Iwahori--Hecke algebra H_3(q) using the standard (2-dimensional) and
 trivial (1-dimensional) irreducible representations.
 
   - Trivial rep: σ_i → q  (symmetric/vector channel)
@@ -41,10 +41,10 @@ from pathlib import Path
 from q_parameter import Q as q
 
 # ══════════════════════════════════════════════════════════════════
-# Hecke algebra H_3(q) — irreducible representations
+# Iwahori--Hecke algebra H_3(q) — irreducible representations
 # ══════════════════════════════════════════════════════════════════
 #
-# The Hecke algebra H_3(q) has 3 irreducible representations
+# The Iwahori--Hecke algebra H_3(q) has 3 irreducible representations
 # corresponding to partitions of 3:
 #
 #   (3)     → trivial (symmetric), dim 1: σ_i ↦ q
@@ -105,7 +105,7 @@ def mat_id():
 # crossing structure from the Borromean linking.
 #
 # The Borromean link introduces correlations between the 3 strands.
-# In the Hecke algebra, the Borromean structure is encoded in the
+# In the Iwahori--Hecke algebra, the Borromean structure is encoded in the
 # element:
 #
 #   β_Borr = σ₁ σ₂⁻¹ σ₁ σ₂⁻¹  (simplest Borromean-type braid)
@@ -162,7 +162,7 @@ def evaluate_braid_sign(braid_word):
 # ══════════════════════════════════════════════════════════════════
 #
 # The beta-decay operator changes one quark (d→u) at a specific
-# strand.  In the Hecke algebra, this is a crossing change at
+# strand.  In the Iwahori--Hecke algebra, this is a crossing change at
 # the converting generator.
 #
 # The VECTOR matrix element uses the trivial representation:
@@ -267,7 +267,7 @@ witness = {
     "computation": "borromean-axial-coupling",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "description": (
-        "Computation of g_A from the Hecke algebra H_3(q). "
+        "Computation of g_A from the Iwahori--Hecke algebra H_3(q). "
         "The Borromean braid topology of the nucleon modifies the "
         "naive quark model prediction g_A = 5/3 by a suppression "
         "factor from the standard representation trace."
@@ -315,7 +315,7 @@ with open(out_path, "w") as f:
     json.dump(witness, f, indent=2)
 
 print(f"Witness written to {out_path}")
-print(f"\nHecke algebra H_3(q) at q = {q}:")
+print(f"\nIwahori--Hecke algebra H_3(q) at q = {q}:")
 print(f"  [2]_q = {q + qi:.6f}")
 print(f"  [3]_q = {three_q:.6f}")
 print(f"  [4]_q = {four_q:.6f}")

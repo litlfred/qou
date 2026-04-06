@@ -70,7 +70,7 @@ On each summand the braiding $\sigma$ acts as a scalar:
 - **Symmetric part** ($\mathrm{Sym}^2_q$): $\sigma = q \cdot \mathrm{id}$,
 - **Antisymmetric part** ($\Lambda^2_q$): $\sigma = -q^{-1} \cdot \mathrm{id}$.
 
-These are exactly the two eigenvalues of the Hecke algebra generator
+These are exactly the two eigenvalues of the Iwahori--Hecke algebra generator
 $T = \sigma$, consistent with the Hecke relation
 $(T - q)(T + q^{-1}) = 0$.  The symmetric channel corresponds to
 the positive eigenvalue $q$ (attractive/binding) and the antisymmetric

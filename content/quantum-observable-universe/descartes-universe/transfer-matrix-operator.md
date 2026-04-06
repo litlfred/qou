@@ -2,7 +2,7 @@ Every particle interaction in the Descartes universe is encoded by
 a **transfer matrix** $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$
 determined by the knot types $K_1, K_2$ of the two interacting
 strands.  The transfer matrix acts as an **operator** on the
-Gröbner ideal of the Hecke algebra, and its entries are
+Gröbner--Shirshov ideal of the Iwahori--Hecke algebra, and its entries are
 polynomials in $q$.
 
 ## Definition
@@ -47,10 +47,10 @@ unknot components), this specializes to:
 | $\mathfrak{n}$-$\mathfrak{n}$ | $d$ | $d$ | $q^2$ | $-qs$ |
 | mixed | $u$ | $d$ | $\frac{1+q^2}{2}$ | $-\frac{qs}{2}$ |
 
-## Action on the Gröbner ideal
+## Action on the Gröbner--Shirshov ideal
 
-The transfer matrix acts on the Hecke algebra element
-$a\sigma_i + b$ (the Gröbner-reduced chain at generator
+The transfer matrix acts on the Iwahori--Hecke algebra element
+$a\sigma_i + b$ (the Gröbner--Shirshov-reduced chain at generator
 $\sigma_i$) by left multiplication followed by Hecke reduction:
 
 $$
@@ -98,7 +98,7 @@ $$
 (matrix multiplication).  This is **non-commutative** — the
 order of crossings matters.
 
-**The Gröbner ideal is the kernel:**
+**The Gröbner--Shirshov ideal is the kernel:**
 
 $$
   I_i \;=\; \ker\!\left(

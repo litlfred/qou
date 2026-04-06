@@ -91,8 +91,8 @@ torus knots, this minimum is known exactly.  No isotopy,
 Reidemeister move, or change of braid representation can
 reduce $c(T_{3,5})$ below $10$.
 
-**(ii) Distinction from the Hecke algebra normal form.**
-In the Hecke algebra $H_3(q)$, which has dimension
+**(ii) Distinction from the Iwahori--Hecke algebra normal form.**
+In the Iwahori--Hecke algebra $H_3(q)$, which has dimension
 $|S_3| = 6$, the word $(\sigma_1\sigma_2)^5$ reduces to a
 polynomial in the standard basis $\{T_w : w \in S_3\}$ —
 with maximum word length $3$ per basis element (since the
@@ -101,7 +101,7 @@ reduction computes the **amplitude** of the process (the
 Markov trace gives the Jones polynomial $J_{T_{3,5}}(q)$),
 not the physical crossing count.  Each $\sigma_i$ in the
 original braid word is one physical $R$-matrix application
-— one Planck step.  The Hecke algebra computes **what
+— one Planck step.  The Iwahori--Hecke algebra computes **what
 amplitude** results from $10$ $R$-matrix applications; it
 does not reduce the **number** of applications.
 

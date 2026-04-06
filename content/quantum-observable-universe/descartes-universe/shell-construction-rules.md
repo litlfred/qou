@@ -6,10 +6,10 @@ No external nuclear physics data is used.
 
 ## Proven facts used by the algorithm
 
-**(P1)** The Gröbner reduction of the nuclear braid has **zero
+**(P1)** The Gröbner--Shirshov reduction of the nuclear braid has **zero
 Yang–Baxter steps** and **zero far-commutativity steps**
 (verified $A \leq 6$, inductive proof for all $A$).  Therefore
-the per-generator transfer matrix chain IS the exact Gröbner
+the per-generator transfer matrix chain IS the exact Gröbner--Shirshov
 normal form.
 
 **(P2)** The transfer matrix at each generator $\sigma_i$ is

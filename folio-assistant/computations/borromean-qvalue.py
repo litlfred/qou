@@ -186,7 +186,7 @@ def Q_borromean(Z, N):
     1. Classify crossings as unbind (nn→pn) or rebind (pn→pp)
     2. For unbind: undo parent Borromean, apply change, redo daughter Borromean
     3. For rebind: undo parent Borromean, apply change, redo daughter Borromean
-    4. Weight unbind by q, rebind by q⁻¹ (Gröbner direction)
+    4. Weight unbind by q, rebind by q⁻¹ (Gröbner--Shirshov direction)
     5. Apply shell knot correction for degree-2 shells
     """
     par_types = ['p'] * Z + ['n'] * N
@@ -307,7 +307,7 @@ print("Q-VALUE: BORROMEAN UNBIND-INTERTWINE-REBIND")
 print("  1. Undo parent Borromean ring (h⁻ⁿ, n=degree)")
 print("  2. Apply crossing change (intertwine)")
 print("  3. Redo daughter Borromean ring (hⁿ, n=degree)")
-print("  + q·unbind + q⁻¹·rebind Gröbner weighting")
+print("  + q·unbind + q⁻¹·rebind Gröbner--Shirshov weighting")
 print("═" * 100)
 print()
 print(f"  q = {q:.10f}")
