@@ -181,6 +181,7 @@ export default chapter({
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
         "pair-creation-energy",
+        "breit-wheeler-observation",
         "crossing-energy-decomposition",
         "crossing-energy-interpretation",
         "time-reversal-energy-barrier",
