@@ -151,6 +151,11 @@ export default chapter({
         // Beta decay as categorical Skein operation
         "beta-decay-skein",
         "lepton-number-categorical",
+        // Lepton tower NF and tau decay universality
+        "lepton-continuant-recurrence",
+        "lepton-tower-witness",
+        "tau-leptonic-universality",
+        "tau-branching-ratio-witness",
         "parity-violation-skein",
         "nuclear-spin-parity",
         // Half-life calculations
