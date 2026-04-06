@@ -124,6 +124,88 @@ Sections where `remark + example` blocks outnumber provable blocks
 by more than 2:1 may have too much interpretation and too little formal
 content — or vice versa.
 
+## Placement Principles for New/Changed Content
+
+The heuristics above detect problems **post-hoc**.  The placement
+principles below are **proactive**: agents must follow them when
+creating new blocks or significantly changing existing ones.
+
+### PR1 — Topical home chapter
+
+Every block belongs in the chapter whose topic it primarily addresses.
+Use this map to decide:
+
+| Chapter directory | Primary topic scope |
+|-------------------|---------------------|
+| `quantum-universes` | Abstract QU axioms, fibre functors, monoidal dagger categories |
+| `quantum-observable-universes` | QOU axioms, state bundles, jet bundles, q-codifferentials |
+| `lifting-and-descent` | Torsion lifting, descent, brane tower, prolongation |
+| `braids-and-knots` | Braid groups, Hecke algebra, skein relations, knot invariants, vertex operators |
+| `models-of-qous` | Archimedean/non-archimedean models, Calabi-Yau, ALE, Reeb |
+| `algebraic-substrate` | Algebraic number theory, substrates, Collatz, classical limits |
+| `fluid-dynamics` | q-NS equation, vortices, turbulence, regularity |
+| `information-theory` | Entropy, Planck scale, gravitational constant, horizons, CMB |
+| `descartes-universe` | Bring's surface, colour tubes, particles, nuclear physics, shells |
+| `observations` | CODATA comparison, predictions, experimental proposals |
+| `organic-chemistry` | Molecular knots, benzene, covalent bonds |
+
+If a block spans two chapters' topics, split it (see PR5).
+
+### PR2 — Forward-reference avoidance
+
+A new block should appear **after** all blocks it `uses[]`.  Run
+`content-graph-analysis.py` after placement and verify zero new forward
+references.
+
+### PR3 — Section density bounds
+
+When adding blocks to a section, check the count stays within
+**3–18 blocks**.  If adding would exceed 18, split the section first
+(H5).  If a removal would drop a section below 3, consider merging
+(H4).
+
+### PR4 — Cross-chapter dependency direction
+
+New blocks should depend **backward** (on earlier chapters), not
+forward.  If a new block in Ch 3 needs to use something from Ch 7,
+either:
+- Move the dependency to Ch 3 first, or
+- Place the new block in Ch 7 instead.
+
+### PR5 — Topic-coherent blocks
+
+Before accepting a new block, verify it addresses a **single topic**.
+If the `.md` content contains material belonging to multiple chapters,
+split it into separate blocks placed in their respective chapters.
+Defer to `block-density` R1 for the full audit.
+
+### PR6 — Table extraction on creation
+
+If a new block's `.md` contains a table with **> 5 data rows**, extract
+it immediately to a `table` block (`kind: "table"`, label:
+`tbl:<name>-data`).  Reference it from the parent block via `uses[]`.
+Do not wait for a later audit.  See `block-density` R3 for details.
+
+### PR7 — Reorganisation map update
+
+After any block move, section split/merge, or directory rename, update
+`docs/reorganization-map.md` with the change.  This is mandatory — it
+is the downstream debugging reference for tracing broken labels and
+imports.
+
+## Placement Checklist (for agents)
+
+When adding a new block or significantly changing an existing block:
+
+1. □ Identify the primary topic → select home chapter (PR1)
+2. □ Check `uses[]` deps appear earlier in document order (PR2)
+3. □ Check target section has 3–18 blocks after insertion (PR3)
+4. □ Verify no new forward cross-chapter edges (PR4)
+5. □ Verify block is single-topic; split if not (PR5)
+6. □ Extract tables > 5 rows to `table` blocks (PR6)
+7. □ Update `docs/reorganization-map.md` if anything moved (PR7)
+8. □ Run `python3 pipeline/content-graph-analysis.py` to confirm
+
 ## Workflow
 
 ### Step 1 — Parse the content tree
@@ -350,6 +432,9 @@ Directory names are **descriptive slugs** with NO chapter numbers:
 | Sparse sections found | `editor` — add missing content blocks |
 | Dense sections found | `content-block-review` — audit individual blocks for splitting |
 | Proposals generated | Approve with user, then implement via manifest edits + re-run |
+| New content proposed | Run placement checklist (PR1–PR7) before accepting |
+| Block too long / multi-topic | `block-density` — single-topic coherence audit |
+| Large table found in block | `block-density` R3 — extract to `table` block |
 
 ## Output artefacts
 

@@ -107,6 +107,7 @@ The script reports three categories:
 
 | After this skill | Use next |
 |-----------------|----------|
+| Before creating a block | `content-graph` PR1–PR7 — placement checklist |
 | Split a block | `content-validation` (check new blocks validate) |
 | Move a child block | `content-graph` (check forward refs improved) |
 | Extract a table | `content-validation` + `rendering-auditor` |
