@@ -1,5 +1,5 @@
 The tau lepton decays leptonically via the $T_{3,5}$ weak
-vertex ([beta decay](#def:beta-decay-skein)).  The **factorised
+vertex ([beta decay](#def:beta-decay-skein)).  The **factorized
 model** — in which the squared matrix element is
 $|\mathcal{M}|^2 = |\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})|^2$,
 independent of the daughter lepton — **predicts lepton
@@ -27,7 +27,7 @@ $$
        {|\mathcal{M}_\mu|^2 \cdot f(m_\mu^2/m_\tau^2)}.
 $$
 
-In the **factorised model**, the Markov trace of the weak vertex
+In the **factorized model**, the Markov trace of the weak vertex
 is the universal matrix element:
 
 $$

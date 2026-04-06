@@ -4,7 +4,7 @@ H_3(q)$ given by a **Morgan–Voyce continuant recurrence**.
 
 ## Statement
 
-Let $\mathfrak{h} = q - q^{-1}$ be the Hecke parameter and
+Let $h = q - q^{-1}$ be the Hecke parameter and
 $T_{2,n} = \sigma_0^n$ the $(2, n)$-torus knot braid in $B_2$.
 The Gröbner normal form in $H_2(q)$ is
 
@@ -21,7 +21,7 @@ where the sequences $\{a_n\}$, $\{b_n\}$ satisfy:
 $$
   a_{n+1} = b_n,
   \qquad
-  b_{n+1} = \mathfrak{h} \, b_n + b_{n-1},
+  b_{n+1} = h \, b_n + b_{n-1},
   \qquad
   b_0 = 0, \;\; b_1 = 1.
 $$
@@ -37,7 +37,7 @@ $\mathrm{net}(T_{2,n}) = a_n + b_n$.
 
 ## Proof
 
-The Hecke relation $\sigma_0^2 = \mathfrak{h} \, \sigma_0
+The Hecke relation $\sigma_0^2 = (q - q^{-1}) \sigma_0
 + \mathbf{1}$ gives:
 
 $$
@@ -45,12 +45,12 @@ $$
   = \sigma_0 \cdot \sigma_0^n
   = \sigma_0 (a_n \cdot \mathbf{1} + b_n \cdot \sigma_0)
   = a_n \, \sigma_0 + b_n \, \sigma_0^2
-  = a_n \, \sigma_0 + b_n (\mathfrak{h} \, \sigma_0 + \mathbf{1})
-  = b_n \cdot \mathbf{1} + (a_n + \mathfrak{h} \, b_n) \cdot \sigma_0.
+  = a_n \, \sigma_0 + b_n ((q - q^{-1}) \sigma_0 + \mathbf{1})
+  = b_n \cdot \mathbf{1} + (a_n + h \, b_n) \cdot \sigma_0.
 $$
 
-Reading off: $a_{n+1} = b_n$ and $b_{n+1} = a_n + \mathfrak{h}\,
-b_n = b_{n-1} + \mathfrak{h}\, b_n$. The initial conditions
+Reading off: $a_{n+1} = b_n$ and $b_{n+1} = a_n + h\,
+b_n = b_{n-1} + h\, b_n$. The initial conditions
 $a_0 = 1, b_0 = 0$ (identity) and $a_1 = 0, b_1 = 1$
 (single generator) complete the induction. $\square$
 
@@ -72,8 +72,8 @@ decimal values are evaluations at $q = q_0$.
 ## Structural content
 
 Each additional factor of $\sigma_0^2$ in $T_{2,n+2}$ applies
-the Hecke relation once, adding exactly $\mathfrak{h} \, b_n$
+the Hecke relation once, adding exactly $(q - q^{-1}) b_n$
 to the $\sigma_0$ coefficient and shifting the identity
 coefficient by $b_n$.  The lepton generations are thus a
 **discrete tower indexed by odd $n$**, with inter-generation
-spacing controlled by $\mathfrak{h} = q - q^{-1}$.
+spacing controlled by $h = q - q^{-1}$.

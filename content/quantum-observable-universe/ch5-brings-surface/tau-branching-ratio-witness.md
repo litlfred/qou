@@ -1,5 +1,5 @@
 The computation `tau-leptonic-decay.py` evaluates both the
-factorised and the product models at $q_0 \approx 1.1100$ and
+factorized and the product models at $q_0 \approx 1.1100$ and
 compares with the PDG experimental branching ratio.
 
 ## Weak vertex data
@@ -27,7 +27,7 @@ $$
 
 ## Branching ratio comparison
 
-**Factorised model** (lepton universality):
+**Factorized model** (lepton universality):
 
 $$
   \frac{\mathrm{BR}(\tau \to e)}{\mathrm{BR}(\tau \to \mu)}
@@ -70,11 +70,11 @@ $$
 
 | Model | $\mathrm{BR}(\tau \to e) / \mathrm{BR}(\tau \to \mu)$ | Deviation from PDG |
 |:---:|:---:|:---:|
-| **Factorised** ($|\mathcal{W}|^2$ universal) | $1.028$ | $0.34\%$ |
+| **Factorized** ($|\mathcal{W}|^2$ universal) | $1.028$ | $0.34\%$ |
 | Product ($T_{2,n} \cdot T_{3,5} \cdot T_{2,7}$) | $0.709$ | $31\%$ |
 | PDG experiment | $1.025$ | — |
 
-The factorised model, in which the Markov trace of $T_{3,5}$
+The factorized model, in which the Markov trace of $T_{3,5}$
 is the universal matrix element, reproduces the PDG ratio to
 $0.34\%$.  The product model is excluded by data.
 
