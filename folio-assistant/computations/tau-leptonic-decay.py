@@ -299,9 +299,12 @@ def main():
     # Phase space correction: Γ ∝ |M|² × (phase space)
     # For τ→ℓν̄ν, phase space ∝ f(m_ℓ²/m_τ²) where
     # f(x) = 1 - 8x + 8x³ - x⁴ - 12x²·ln(x)
-    m_e_MeV = 0.51099895
-    m_mu_MeV = 105.6583755
-    m_tau_MeV = 1776.86
+    #
+    # Masses from CODATA 2022 / PDG 2024:
+    from experimental_constants import M_E_MEV
+    m_e_MeV = M_E_MEV                                    # 0.51099895 MeV
+    m_mu_MeV = M_E_MEV * MASS_RATIO_MU_E                 # 105.6584 MeV
+    m_tau_MeV = 1776.86                                   # PDG 2024 (±0.12)
 
     def phase_space_factor(m_l, m_tau):
         """Phase space factor f(x) for τ→ℓν̄ν, x = (m_ℓ/m_τ)²."""
