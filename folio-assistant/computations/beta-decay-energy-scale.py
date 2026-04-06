@@ -1,7 +1,7 @@
 """
 Beta-decay energy scale: normalizing Hecke NF debts to physical MeV.
 
-The Gröbner normal form of each nucleon in H₃(q) has six terms with
+The Gröbner--Shirshov normal form of each nucleon in H₃(q) has six terms with
 dimensionless coefficients.  The two negative terms (ν and e⁻) represent
 "leptonic debt" — the vacuum input required to build the nucleon.
 

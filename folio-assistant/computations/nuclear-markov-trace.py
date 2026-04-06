@@ -7,13 +7,13 @@ The Markov trace tr: H_n(q) → R is the unique linear functional satisfying:
   2. tr(ab) = tr(ba)             (trace property)
   3. tr(x σ_n) = z tr(x)        (Markov property, z = 1/[2]_q)
 
-For a Gröbner-reduced element Σ c_w · w, the trace is:
+For a Gröbner--Shirshov-reduced element Σ c_w · w, the trace is:
   tr(Σ c_w · w) = Σ c_w · tr(w)
 
 where tr(w) for a positive braid monomial w = σ_{i_1}...σ_{i_k}
 is computed recursively using the Markov property and the TL relations.
 
-The KEY advantage over full Gröbner reduction: the trace is a LINEAR
+The KEY advantage over full Gröbner--Shirshov reduction: the trace is a LINEAR
 FUNCTIONAL, so it distributes over the exponentially many terms of the
 unreduced braid WITHOUT enumerating them. This makes it tractable for
 A = 14 (¹⁴C).
@@ -118,7 +118,7 @@ def markov_trace_word(word, n_strands):
 
 
 def markov_trace_hecke_element(terms, n_strands):
-    """Compute the Markov trace of a Hecke algebra element.
+    """Compute the Markov trace of a Iwahori--Hecke algebra element.
 
     terms: dict {word_tuple: coefficient}
     Returns: tr(element) = Σ c_w tr(w)
@@ -216,7 +216,7 @@ def nuclear_trace_direct(p, n, q=Q):
             result_terms = {k: v for k, v in new_result.items() if abs(v) > 1e-15}
 
             # For tractability: if terms exceed 100000, we need the
-            # Gröbner reduction to compress. For now, cap and warn.
+            # Gröbner--Shirshov reduction to compress. For now, cap and warn.
             if len(result_terms) > 100000:
                 return None, len(result_terms), "too many terms"
 
@@ -276,7 +276,7 @@ def nuclear_trace_factored(p, n, q=Q, skip_nucleon=None):
     # Let n_neg(i) = number of negative crossings (n-n) from nucleon i
     # Let n_mix(i) = number of mixed crossings from nucleon i
 
-    # In the Hecke algebra, each crossing contributes:
+    # In the Iwahori--Hecke algebra, each crossing contributes:
     #   positive: σ_i
     #   negative: q² σ_i - q·skein_amp
     #   mixed: ½(1+q²) σ_i - ½q·skein_amp
@@ -502,7 +502,7 @@ def compute_all():
 
                 # Alternative: direct computation using the converting crossing
                 # The converting neutron's crossing changes from σ_i^{-1} to σ_i.
-                # In the Hecke algebra:
+                # In the Iwahori--Hecke algebra:
                 #   σ_i^{-1} = q² σ_i - q·skein_amp
                 # The DIFFERENCE: σ_i - σ_i^{-1} = (1-q²) σ_i + q·skein_amp
                 # The L_0 term from Skein: proportional to skein_amp

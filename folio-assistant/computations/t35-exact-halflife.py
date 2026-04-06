@@ -107,7 +107,7 @@ print(f"  V(K_{{0,1}}) = {V_unknot:.15f} (unknot = neutrino)")
 # The transition amplitude for W → e + ν is the projection of T_{3,5}
 # onto the T_{2,3} ⊗ K_{0,1} channel.
 #
-# In the Hecke algebra, the Markov trace defines an inner product:
+# In the Iwahori--Hecke algebra, the Markov trace defines an inner product:
 #   ⟨A, B⟩ = tr(A · B)  (bilinear form)
 #
 # The T_{3,5} element in H₃ projects onto the {1, σ₁, σ₂, σ₁σ₂, σ₂σ₁, σ₁σ₂σ₁}
@@ -138,11 +138,11 @@ print(f"\n  T_{{2,3}} = σ₁³ = {t23_coeff_sigma:.10f}·σ₁ + {t23_coeff_1:.
 print(f"  Verify: tr = {t23_coeff_sigma * z + t23_coeff_1:.10f} vs W(T23) = {W_t23:.10f}")
 
 # ═══════════════════════════════════════════════════════════════════
-# 3. EXACT TRANSITION RATE from Hecke algebra inner products
+# 3. EXACT TRANSITION RATE from Iwahori--Hecke algebra inner products
 # ═══════════════════════════════════════════════════════════════════
 #
 # The decay rate involves the square of the transition amplitude.
-# In the Hecke algebra:
+# In the Iwahori--Hecke algebra:
 #
 #   Γ ∝ |⟨daughter · lepton_pair | parent⟩_T35|²
 #

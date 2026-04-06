@@ -25,9 +25,9 @@ Universal beta decay matrix:
   Delta_beta(q) = T_mix - T_nn = T_pp - T_mix
                 = (1/2)(1 - q^2) T_pp + (q*s/2) I
 
-Connection to Groebner NF: each V_hat_i in the transfer matrix
-corresponds to one generator sigma_i in the Hecke algebra NF.
-The transfer matrix computes the SAME quantity as the Groebner
+Connection to Gröbner--Shirshov NF: each V_hat_i in the transfer matrix
+corresponds to one generator sigma_i in the Iwahori--Hecke algebra NF.
+The transfer matrix computes the SAME quantity as the Gröbner--Shirshov
 reduction but via matrix products instead of word reduction.
 
 Usage:
@@ -763,19 +763,19 @@ if __name__ == '__main__':
           f"(A <= {SYMBOLIC_THRESHOLD})")
     print()
 
-    # -- 5d. Connection to Groebner NF -----------------------------------
+    # -- 5d. Connection to Gröbner--Shirshov NF -----------------------------------
     print("=" * 72)
     print("GROEBNER NF <-> TRANSFER MATRIX CORRESPONDENCE")
     print("=" * 72)
     print()
     print("  Each V_hat_i(q) in the transfer matrix corresponds to one")
-    print("  generator sigma_i in the Hecke algebra NF.")
+    print("  generator sigma_i in the Iwahori--Hecke algebra NF.")
     print()
     print("  Transfer matrix: V_hat_i = z * M_i[0,0] + M_i[1,0]")
     print("    where M_i = product of T(c_k, d_k) for all crossings "
           "at gen i")
     print()
-    print("  Groebner NF: the reduced element in H_n has basis words.")
+    print("  Gröbner--Shirshov NF: the reduced element in H_n has basis words.")
     print("    The Markov trace processes generators right-to-left,")
     print("    extracting the SAME z * (coeff of sigma_i) + (constant)")
     print("    at each step.")
@@ -789,7 +789,7 @@ if __name__ == '__main__':
     print("  form is an approximation.")
     print()
 
-    # Verify for tritium (small enough for symbolic Groebner)
+    # Verify for tritium (small enough for symbolic Gröbner--Shirshov)
     print("  Tritium verification "
           "(A=3, generators sigma_0 and sigma_1):")
     print(f"    Transfer matrix P_3H  = "
@@ -797,6 +797,6 @@ if __name__ == '__main__':
     print(f"    Transfer matrix P_3He = "
           f"{daughter_He3.skein_at(Q0):.10f}")
     print()
-    print("  To verify against Groebner NF, run:")
+    print("  To verify against Gröbner--Shirshov NF, run:")
     print("    python3 hecke_symbolic.py   (for protium NF)")
     print("    python3 groebner-beta-decay.py   (for tritium NF)")

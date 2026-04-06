@@ -3,7 +3,7 @@
 Toffoli (CCNOT) braid — P_{7,6}(q) as the q-AND amplitude.
 
 The massive Toffoli transfer matrix M(q) is an 8×8 matrix of Laurent
-polynomials P_{m,k}(q), built from the Hecke algebra H_3(q) crossing
+polynomials P_{m,k}(q), built from the Iwahori--Hecke algebra H_3(q) crossing
 coefficients in the QOU nuclear braid formalism.
 
 Each entry P_{m,k}(q) is the topological amplitude from input state
@@ -173,7 +173,7 @@ def main():
     print("  MASSIVE TOFFOLI TRANSFER MATRIX  M(q)")
     print("═" * 70)
     print()
-    print("Hecke algebra H₃(q),  σ² = (q − q⁻¹)σ + 1")
+    print("Iwahori--Hecke algebra H₃(q),  σ² = (q − q⁻¹)σ + 1")
     print("Crossing coefficients C_{ij} = c_j σ_i + d_j :")
     print("  pp:  c = 1,         d = 0")
     print("  nn:  c = q²,        d = −q·s")
@@ -313,7 +313,7 @@ def main():
         "computation": "toffoli-braid",
         "description": (
             "P_{7,6}(q) as q-AND amplitude in the massive Toffoli transfer "
-            "matrix M(q). Built from Hecke algebra H_3(q) with paper crossing "
+            "matrix M(q). Built from Iwahori--Hecke algebra H_3(q) with paper crossing "
             "conventions: pp=(1,0), nn=(q²,−qs), mix=((1+q²)/2,−qs/2)."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),

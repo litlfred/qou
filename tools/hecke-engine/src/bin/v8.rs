@@ -1,4 +1,4 @@
-// v8: Optimized symbolic Gröbner engine with Gebauer-Möller filtering.
+// v8: Optimized symbolic Gröbner--Shirshov engine with Gebauer-Möller filtering.
 //
 // Key optimizations over v7:
 // 1. Junction-only reduction: after appending σ_k to reduced word w,
@@ -718,7 +718,7 @@ fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
     writeln!(file).ok();
 
     writeln!(file, "/-- Observable amplitude: net(0) + net(1) — the optimal basis.").ok();
-    writeln!(file, "    Degree 0 + 1 content of the Gröbner NF. -/").ok();
+    writeln!(file, "    Degree 0 + 1 content of the Gröbner--Shirshov NF. -/").ok();
     write!(file, "noncomputable def observable_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();
     write_lpoly(&mut file, observable);
     writeln!(file).ok();

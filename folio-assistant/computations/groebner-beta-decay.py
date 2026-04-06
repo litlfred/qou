@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Actual Gröbner basis computation for beta decay.
+Actual Gröbner--Shirshov basis computation for beta decay.
 
 Start with parent normal form, insert T_{3,5} weak vertex,
 reduce through ideal I = {Hecke, YB, far-comm}, track energy.

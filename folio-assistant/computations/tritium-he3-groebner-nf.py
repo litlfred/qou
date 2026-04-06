@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Gröbner normal form computation for tritium beta decay: ³H → ³He + e⁻ + ν̄ₑ.
+Gröbner--Shirshov normal form computation for tritium beta decay: ³H → ³He + e⁻ + ν̄ₑ.
 
-Uses the symbolic Hecke algebra H₃(q) with exact coefficients in ℤ[q^½, q^{-½}].
+Uses the symbolic Iwahori--Hecke algebra H₃(q) with exact coefficients in ℤ[q^½, q^{-½}].
 All computations are symbolic in q; numerical evaluation at q₀ is done only
 for comparison with experimental Q-values.
 
@@ -10,7 +10,7 @@ Procedure (from the issue specification):
   1. Build ³H normal form at nucleon level [p, n, n] and reduce
   2. Build T_{3,5} = (σ₀σ₁)⁵ weak vertex braid and reduce
   3. Compose: NF(³H) · NF(T_{3,5}) and NF(T_{3,5}) · NF(³H)
-  4. Gröbner-reduce the composed element
+  4. Gröbner--Shirshov-reduce the composed element
   5. Decompose output: identify daughter ³He, electron, neutrino terms
   6. Verify positive coefficients on observable outputs
   7. Compute energy budget symbolically
@@ -73,7 +73,7 @@ mu_0 = M_E_MEV / (3 * E_CROSS)
 
 # ── Particle–knot dictionary ────────────────────────────────────
 #
-# Maps H₃(q) Gröbner normal-form words to particle knot names.
+# Maps H₃(q) Gröbner--Shirshov normal-form words to particle knot names.
 # Convention: Markov closure of σ₀σ₁σ₀ in B₃ → trefoil 3₁ (electron).
 # Single generators σᵢ close to the unknot but carry one Hopf crossing.
 # Identity 𝟏 = zero crossings = unknot = neutrino sector.
@@ -212,7 +212,7 @@ def show_nf_shape(name, elem, indent=4):
 
 
 def build_nucleus_nf(types_list, label="nucleus"):
-    """Build the Gröbner normal form for a nucleus at nucleon level.
+    """Build the Gröbner--Shirshov normal form for a nucleus at nucleon level.
 
     The nucleus is constructed as B₃ · (pairwise crossings), where
     B₃ = (σ₀σ₁⁻¹)³ is the Borromean confinement braid that mutually
@@ -289,7 +289,7 @@ print("=" * 80)
 print()
 
 # ── Particle–knot legend ──
-print("  PARTICLE–KNOT DICTIONARY  (H₃(q) Gröbner basis ↔ particle sector)")
+print("  PARTICLE–KNOT DICTIONARY  (H₃(q) Gröbner--Shirshov basis ↔ particle sector)")
 print("  ┌────────────┬────────┬────────────────────┬──────────────────────────┐")
 print("  │ Braid word │ Cross. │ Closure knot       │ Particle name            │")
 print("  ├────────────┼────────┼────────────────────┼──────────────────────────┤")
@@ -428,7 +428,7 @@ print("  The T_{3,5} weak vertex braid enters the nucleon.")
 print("  We compose the reduced ³H word with the reduced T_{3,5}:")
 print("    (a) NF(³H) · NF(T_{3,5})   — T_{3,5} acts on the right")
 print("    (b) NF(T_{3,5}) · NF(³H)   — T_{3,5} acts on the left")
-print("  Then Gröbner-reduce the product.")
+print("  Then Gröbner--Shirshov-reduce the product.")
 print()
 
 # ── (a) ³H × T_{3,5} ──
@@ -440,7 +440,7 @@ product_a = tritium * T35
 print(f"  Unreduced product: {product_a.n_terms()} terms")
 
 reduced_a, steps_a = div.reduce(product_a)
-print(f"  After Gröbner reduction: {reduced_a.n_terms()} terms")
+print(f"  After Gröbner--Shirshov reduction: {reduced_a.n_terms()} terms")
 print(f"  Reduction steps: {steps_a}")
 print()
 show_element("NF(³H · T_{3,5})", reduced_a)
@@ -464,7 +464,7 @@ product_b = T35 * tritium
 print(f"  Unreduced product: {product_b.n_terms()} terms")
 
 reduced_b, steps_b = div.reduce(product_b)
-print(f"  After Gröbner reduction: {reduced_b.n_terms()} terms")
+print(f"  After Gröbner--Shirshov reduction: {reduced_b.n_terms()} terms")
 print(f"  Reduction steps: {steps_b}")
 print()
 show_element("NF(T_{3,5} · ³H)", reduced_b)
@@ -632,7 +632,7 @@ ln_He3 = math.log(abs(tr_He3_num))
 print("  TRACE RELATIONSHIPS:")
 print(f"    ln|tr(³H · T_{{3,5}})| = {ln_composed:.10f}")
 print(f"    ln|tr(³H)| + ln|tr(T_{{3,5}})| = {ln_3H + math.log(abs(tr_T35_num)):.10f}")
-print(f"    (Difference shows interaction energy from Gröbner reduction)")
+print(f"    (Difference shows interaction energy from Gröbner--Shirshov reduction)")
 delta_ln = ln_composed - (ln_3H + math.log(abs(tr_T35_num)))
 print(f"    Δ = {delta_ln:.10f}")
 print()
@@ -758,7 +758,7 @@ print("─" * 60)
 print("  OUTPUT WORDS (particle notation)")
 print("─" * 60)
 print()
-print("  NF(³H · T_{3,5}) = Gröbner-reduced product:")
+print("  NF(³H · T_{3,5}) = Gröbner--Shirshov-reduced product:")
 for w, v in eval_element(reduced_a, q0):
     pn = particle_name(w)
     _, knot, ncx, desc = particle_knot(w)
@@ -863,7 +863,7 @@ print()
 print("  \u2554" + "\u2550" * 58 + "\u2557")
 print("  \u2551  NOTE: NF(\U0001d52b) = NF(\u00b3H) and NF(\U0001d52d) = NF(\u00b3He)             \u2551")
 print("  \u2551  because both use [u,d,d] / [u,u,d] crossing types     \u2551")
-print("  \u2551  in the same H\u2083(q) Hecke algebra with 3 strands.       \u2551")
+print("  \u2551  in the same H\u2083(q) Iwahori--Hecke algebra with 3 strands.       \u2551")
 print("  \u2551  The tritium/He-3 system IS the neutron/proton system   \u2551")
 print("  \u2551  at nucleon level \u2014 same algebra, same NF shapes.       \u2551")
 print("  \u255a" + "\u2550" * 58 + "\u255d")
@@ -994,7 +994,7 @@ def terms_to_dict(elem, q_val):
 witness = {
     "name": "tritium-he3-groebner-nf",
     "description": (
-        "Gröbner normal form computation for tritium beta decay "
+        "Gröbner--Shirshov normal form computation for tritium beta decay "
         "³H → ³He + e⁻ + ν̄ₑ. All coefficients exact in ℤ[q^½, q^{-½}]. "
         "Nucleon-level computation in H₃(q). "
         "All words expressed in particle-knot notation."

@@ -437,7 +437,7 @@ for r, s, deg, srank in EMBEDDABLE_KNOTS:
     J, decomp = rosso_jones(r, s)
     print(f"T_{{{r},{s}}} (degree {deg}):")
 
-    # Also compute via Hecke algebra directly and compare
+    # Also compute via Iwahori--Hecke algebra directly and compare
     op = TK_OPS[(r,s)]
     tr_hecke = div.markov_trace(op, 3)
 

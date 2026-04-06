@@ -28,14 +28,14 @@ Date: 2026-03-29
 3. **Degree tower**: T_{p1,p2^k} representable implies T_{p1,p2^{k+1}} representable (monoidal closure, one line proof)
 4. **Finiteness bound**: [A-1]_q! > [2]_q^{A-1} crosses at A=5 (topological invariant)
 5. **Shell closures** = palindromic word-length histograms = Poincare polynomials of S_n
-6. **Zero YB steps**: transfer matrix IS the exact Grobner reduction (verified A <= 6, inductive for all A)
+6. **Zero YB steps**: transfer matrix IS the exact Gröbner--Shirshov reduction (verified A <= 6, inductive for all A)
 7. **alpha_EM** = q^{-1}/([9]_q * [10]_q) gives 1/alpha = 136.82 (0.16% from CODATA)
 
 ### Computation Scripts (committed)
 
 - `experimental_constants.py` — Single source of truth for ALL observed values with +/- uncertainties
 - `q_parameter.py` — Canonical q = 1.10998 from Vol(4_1)/mu_e with error propagation
-- `hecke_division.py` — Instrumented Grobner division in H_n(q)
+- `hecke_division.py` — Instrumented Gröbner--Shirshov division in H_n(q)
 - `systematic-qvalues.py` — Prime-factored mixing operators (blows up for large n)
 - `shell-aware-halflife.py` — All 6 half-lives within 3% (uses Q_exp)
 - `rosso-jones-qvalues.py` — Rosso-Jones decomposition attempt (J != tr, wrong normalization)
@@ -68,7 +68,7 @@ All 6 within 3% — this part WORKS.
 
 ## What WORKED
 
-1. **Transfer matrix = exact Grobner normal form** (zero YB steps)
+1. **Transfer matrix = exact Gröbner--Shirshov normal form** (zero YB steps)
 2. **6 torus knots on Sigma_4** determine everything (magic numbers, shell sizes, subshells)
 3. **chi = -6 forced** by embeddability constraints
 4. **Degree tower** from monoidal closure
@@ -110,7 +110,7 @@ Product of F_0 * F_1 * F_2 (all degree factors) overcounts by orders of magnitud
 
 ### 7. Inserting T_{3,5} in the middle of the braid
 The weak vertex must be APPENDED (concatenated) at the end and then reduced
-via Grobner basis. Inserting in the middle gives wrong sign/magnitude.
+via Gröbner--Shirshov basis. Inserting in the middle gives wrong sign/magnitude.
 
 ### 8. Arbitrary numerical thresholds ("shell >= 9")
 Rules must be stated in terms of EMBEDDABILITY and PRIME DECOMPOSITION,
@@ -330,7 +330,7 @@ Cumulative: 2, 8, 20, 28, 50, 82, 126
 6. NO classical ln/exp — use log_q = ln/ln(q), exp_q = q^x
 7. Keep formulas parametric in q, evaluate at q=1.110 only at the end
 8. Embeddability determines which knots apply, not arbitrary thresholds
-9. T_{3,5} is appended (not inserted) then Grobner-reduced
+9. T_{3,5} is appended (not inserted) then Gröbner--Shirshov-reduced
 10. Rules stated in terms of embeddability and prime decomposition
 
 ---

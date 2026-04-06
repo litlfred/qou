@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-T_{3,5} beta decay — correct braid concatenation + Gröbner reduction.
+T_{3,5} beta decay — correct braid concatenation + Gröbner--Shirshov reduction.
 
 The T_{3,5} braid is APPENDED to the end of the parent nuclear braid,
-then the full word is reduced via Gröbner basis. The ENERGY of the
+then the full word is reduced via Gröbner--Shirshov basis. The ENERGY of the
 reduction (Hecke steps only) gives the transition physics.
 
 Correct procedure:
   1. Build parent braid word (concatenation of all crossings)
   2. Append T_{3,5} = (σ₃σ₄)⁵ at the END
-  3. Reduce via Gröbner basis, logging every step
+  3. Reduce via Gröbner--Shirshov basis, logging every step
   4. Energy of Hecke steps = transition energy
 
 The Gröbner-Shirshov energy theorem:
@@ -33,7 +33,7 @@ from hecke_division import HeckeDivision, HeckeElement
 
 div = HeckeDivision(q_val=q)
 
-print(f"T_{{3,5}} beta decay — braid concatenation + Gröbner reduction")
+print(f"T_{{3,5}} beta decay — braid concatenation + Gröbner--Shirshov reduction")
 print(f"q = {q:.10f}")
 print()
 
@@ -251,7 +251,7 @@ witness = {
     "computation": "t35-braid-concatenation",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "description": (
-        "T_{3,5} beta decay via correct braid concatenation + Gröbner reduction. "
+        "T_{3,5} beta decay via correct braid concatenation + Gröbner--Shirshov reduction. "
         "T_{3,5} appended to END of parent braid, then reduced. Energy of Hecke "
         "steps gives transition physics (Gröbner-Shirshov energy theorem)."
     ),

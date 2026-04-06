@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Gröbner finish: take the transfer-matrix approximation and reduce
+Gröbner--Shirshov finish: take the transfer-matrix approximation and reduce
 to exact normal form, logging every division step.
 
 Strategy:
 1. Build the nuclear braid word from the transfer matrix ordering
 2. This is CLOSE to normal form but may have residual σ² and YB
-3. Run the full Gröbner division algorithm
+3. Run the full Gröbner--Shirshov division algorithm
 4. Log every Hecke step (energy cost) and YB/far-comm step
 5. The total Hecke energy from the FINISHING steps is the
    correction to the transfer-matrix Q-value
@@ -60,7 +60,7 @@ def build_nuclear_braid(p, n):
 
     return elem
 
-# ── For small nuclei: full Gröbner reduction with logging ───────
+# ── For small nuclei: full Gröbner--Shirshov reduction with logging ───────
 
 nuclei = [
     (1,   2,   "³H",    Q_TRITIUM_MEV, Q_TRITIUM_MEV_ERR),
@@ -90,7 +90,7 @@ for p, n, name, Q_exp, Q_err in nuclei:
     print(f"  Parent: {elem_par.n_terms()} terms")
     print(f"  Daughter: {elem_dau.n_terms()} terms")
 
-    # Full Gröbner reduction
+    # Full Gröbner--Shirshov reduction
     print(f"  Reducing parent...")
     par_red, par_log = div.reduce(elem_par)
     par_summary = div.summarize_log(par_log)
@@ -116,7 +116,7 @@ for p, n, name, Q_exp, Q_err in nuclei:
     print(f"    Hecke energy: {dau_summary['hecke_energy_change']:.6f}")
     print(f"    Trace: {dau_trace:.10f}")
 
-    # Q-value from Gröbner energy difference
+    # Q-value from Gröbner--Shirshov energy difference
     delta_E_grob = par_summary['hecke_energy_change'] - dau_summary['hecke_energy_change']
 
     # Q-value from Skein polynomial ratio
@@ -145,7 +145,7 @@ for p, n, name, Q_exp, Q_err in nuclei:
 # ── For larger nuclei: use sequential builder ───────────────────
 
 print(f"{'='*60}")
-print(f"SEQUENTIAL BUILDER (incremental Gröbner reduction)")
+print(f"SEQUENTIAL BUILDER (incremental Gröbner--Shirshov reduction)")
 print(f"{'='*60}")
 print()
 
@@ -157,8 +157,8 @@ larger_nuclei = [
 ]
 
 print("  For A > 14: the raw braid has too many terms for full")
-print("  Gröbner reduction. The SEQUENTIAL builder (Hopf link +")
-print("  reduce at each step) IS the incremental Gröbner algorithm.")
+print("  Gröbner--Shirshov reduction. The SEQUENTIAL builder (Hopf link +")
+print("  reduce at each step) IS the incremental Gröbner--Shirshov algorithm.")
 print("  The per-step energy is logged; the total = mass.")
 print()
 print("  The Q-value from the sequential builder's energy was:")
@@ -167,5 +167,5 @@ print("    ¹⁴C: needs A=14 sequential build (compute time ~minutes)")
 print("    Heavy nuclei: need pruned builder (A > 6 OOM)")
 print()
 print("  → The TRANSFER MATRIX Skein polynomial ratio remains")
-print("    the practical method for Q-values. The Gröbner energy")
+print("    the practical method for Q-values. The Gröbner--Shirshov energy")
 print("    confirms it's the right observable (in log-space).")
