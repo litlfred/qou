@@ -17,6 +17,7 @@ export default example({
   ],
   uses: [
     "rem:qvalue-derivation-chain",
+    "prop:rj-canonical-inner-product",
     "prop:beta-decay-transfer-matrix",
     "cor:spectral-decomposition-qvalue",
   ],

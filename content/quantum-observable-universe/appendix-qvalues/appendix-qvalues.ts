@@ -8,7 +8,6 @@ export default chapter({
       heading: "Transfer matrix Q-values",
       blocks: [
         "rem:qvalue-derivation-chain",
-        "rem:qvalue-method-distinction",
         "ex:qvalue-benchmark-table",
       ],
     },

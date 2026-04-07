@@ -48,7 +48,12 @@ $$
     \times F_{I_{10}}(Z, N; q)
 $$
 
-- $F_{\mathrm{shell}} = \hat{V}(T_{\mathrm{pp}}^2) / \hat{V}(T_{\mathrm{pp}})^2
-  \approx 0.5904$ for shell $\geq 5$
+- $F_{\mathrm{shell}} \approx 0.5904$ for shell $\geq 5$: the
+  Rosso--Jones weighted average over the two degree-$2$ torus knots
+  $\tau(2,9)$ and $\tau(3,4)$, using the canonical inner product on
+  $R(H_r(q))$
+  ([canonical inner product](#prop:rj-canonical-inner-product)).
+  The weights are the quantum dimensions $d_\lambda(q)$, forced by
+  Schur orthogonality — no fitting freedom.
 - $F_{I_{10}} = (1 - \delta_{\mathrm{pp}}/Z)(1 - \delta_{\mathrm{nn}}/N)$
   for odd-odd $\to$ even-even at shell $\geq 5$
