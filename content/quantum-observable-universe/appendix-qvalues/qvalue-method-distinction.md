@@ -18,7 +18,7 @@ Iwahori--Hecke algebra structure, with zero fitting parameters.
 5. The energy scale $\kappa_q = \ln(q) \times m_e / 3$ follows from
    the Skein mass relation.
 
-**Result**: MAE $\approx 4.9\%$ across six benchmark nuclei
+**Result**: MAE $\approx 4.4\%$ across six benchmark nuclei
 spanning $A = 3$ to $A = 210$, with zero free parameters.
 
 **Phenomenological (fitted) methods for comparison.**

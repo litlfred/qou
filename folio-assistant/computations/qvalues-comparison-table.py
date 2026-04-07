@@ -11,7 +11,7 @@ Shows:
 
 Two conventions shown:
   A. Representation-theory formula (q²,-qS crossings + shell corrections)
-     → MAE ≈ 4.9%, the handoff baseline
+     → MAE ≈ 4.4%, the handoff baseline
   B. Hecke-inverse formula (1,-HA crossings + shell corrections)
      → MAE ≈ 70%, correct Hecke algebra but needs further physics
 
