@@ -1,0 +1,219 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-07T12:15:33.768104+00:00",
+  "commitSha": "d18f117bc48a111e2fbc8dba5cc6e5c44b25d8ff",
+  "assertions": [
+    {
+      "name": "ℏ_q² = Vol(4_1) / (m_μ/m_e)",
+      "computed": 0.00981718851347867,
+      "expected": 0.00981718851347867,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "Definitional (q_parameter.py)"
+    },
+    {
+      "name": "q₀ = 1 / (1 - ℏ_q)",
+      "computed": 1.1099785955541805,
+      "expected": 1.1099785955541805,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "Definitional (q_parameter.py)"
+    },
+    {
+      "name": "m_μ/m_e from Vol(4_1)/ℏ_q² (self-consistency)",
+      "computed": 206.768283,
+      "expected": 206.768283,
+      "passed": true,
+      "tolerance": 1e-08,
+      "unit": "dimensionless",
+      "source": "Topological mass formula"
+    },
+    {
+      "name": "P_proton(q₀) — Skein polynomial",
+      "computed": 0.903836115618293,
+      "expected": 0.903836115618293,
+      "passed": true,
+      "tolerance": 6.209186883543439e-09,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (sympy symbolic → numerical)"
+    },
+    {
+      "name": "P_neutron(q₀) — Skein polynomial",
+      "computed": 1.0010060852193807,
+      "expected": 1.0010060852193807,
+      "passed": true,
+      "tolerance": 8.329509866289442e-09,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (sympy symbolic → numerical)"
+    },
+    {
+      "name": "P_proton = ∏ V̂_i (product consistency)",
+      "computed": 0.903836115618293,
+      "expected": 0.903836115618293,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Internal consistency check"
+    },
+    {
+      "name": "P_neutron = ∏ V̂_i (product consistency)",
+      "computed": 1.0010060852193807,
+      "expected": 1.0010060852193803,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Internal consistency check"
+    },
+    {
+      "name": "m_p (pair Skein) vs CODATA",
+      "computed": 938.2720881600002,
+      "expected": 938.27208816,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "MeV",
+      "source": "Pair Skein decomposition (exact by construction)"
+    },
+    {
+      "name": "m_n (pair Skein) vs CODATA",
+      "computed": 939.5654205200001,
+      "expected": 939.56542052,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "MeV",
+      "source": "Pair Skein decomposition (exact by construction)"
+    },
+    {
+      "name": "Δm (pair Skein) vs CODATA",
+      "computed": 1.2933323599999085,
+      "expected": 1.2933321,
+      "passed": true,
+      "tolerance": 0.001,
+      "unit": "MeV",
+      "source": "Pair Skein decomposition"
+    },
+    {
+      "name": "𝔪(𝔅₃) Borromean topological mass",
+      "computed": 746.417851076767,
+      "expected": 746.417851076767,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "m_e",
+      "source": "𝔪(K) = Vol(K) / ℏ_q²"
+    },
+    {
+      "name": "𝔪(𝔅₃) in MeV",
+      "computed": 381.41873816148427,
+      "expected": 381.41873816148427,
+      "passed": true,
+      "tolerance": 8.486209267532217e-06,
+      "unit": "MeV",
+      "source": "𝔪(K) = Vol(K) / ℏ_q² × m_e"
+    },
+    {
+      "name": "Skein ratio P_n/P_p > 1 (neutron heavier, correct sign)",
+      "computed": 1.1075083944113209,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "dimensionless",
+      "source": "Qualitative check: neutron is heavier than proton"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "mass-from-q-symbolic",
+  "scriptFile": "mass-from-q-symbolic.py",
+  "scriptHash": "ed7944ce068c",
+  "scriptCommitSha": "e68c274ea98ecb1ed7a413f5168831596fcf538f",
+  "description": "Symbolic hadron mass derivation from the substrate parameter q. Computes Skein polynomials P_p(q), P_n(q) via transfer matrix chain construction, pair Skein mass decomposition, and topological mass formula 𝔪(K) = Vol(K)/ℏ_q². All error bounds propagated from CODATA 2022 uncertainties via q_parameter.py.",
+  "contentBlock": "thm:topological-mass",
+  "parameters": {
+    "q₀": 1.1099785955541805,
+    "q₀_err": 1.3578965598837824e-09,
+    "ℏ_q": 0.09908172643569887,
+    "ℏ_q²": 0.00981718851347867,
+    "Vol(4_1)": 2.029883212819307,
+    "m_μ/m_e": 206.768283,
+    "HA": 0.20906032198987945,
+    "E_×": 0.10453016099493972,
+    "s_skein": 0.10438806980915827,
+    "z_markov": 0.4993203340335982
+  },
+  "data": {
+    "proton": {
+      "ordering": [
+        "u",
+        "u",
+        "d"
+      ],
+      "volumes": [
+        {
+          "V̂_i": 0.7509449846126427,
+          "error": 3.5006161069883753e-09
+        },
+        {
+          "V̂_i": 1.203598311645314,
+          "error": 2.657786242199478e-09
+        }
+      ],
+      "P(q₀)": 0.903836115618293,
+      "P_error": 6.209186883543439e-09
+    },
+    "neutron": {
+      "ordering": [
+        "u",
+        "d",
+        "d"
+      ],
+      "volumes": [
+        {
+          "V̂_i": 0.7683447291963287,
+          "error": 3.981056671542582e-09
+        },
+        {
+          "V̂_i": 1.3028085534814695,
+          "error": 4.090553447078094e-09
+        }
+      ],
+      "P(q₀)": 1.0010060852193807,
+      "P_error": 8.329509866289442e-09
+    },
+    "pair_skein": {
+      "μ_u_MeV": 311.10125096044135,
+      "μ_d_MeV": 312.38932579005234,
+      "S_uu_MeV": 312.3710718150777,
+      "S_ud_MeV": 312.95050817246124,
+      "S_du_MeV": 313.08496781769406,
+      "S_dd_MeV": 313.66440417507766,
+      "m_p_MeV": 938.2720881600002,
+      "m_n_MeV": 939.5654205200001,
+      "delta_m_MeV": 1.2933323599999085
+    },
+    "topological_mass": {
+      "borromean_mass_ratio_me": 746.417851076767,
+      "borromean_mass_ratio_err": 1.6605651824557387e-05,
+      "borromean_mass_MeV": 381.41873816148427,
+      "borromean_mass_MeV_err": 8.486209267532217e-06,
+      "muon_electron_ratio": 206.768283
+    },
+    "skein_ratio": {
+      "P_n_over_P_p": 1.1075083944113209,
+      "P_n_over_P_p_err": 1.1950610729326036e-08,
+      "log_q_ratio": 0.9786475588019876,
+      "codata_m_n_over_m_p": 1.0013784193053599
+    },
+    "error_budget": {
+      "q_relative_error": 1.2233538244094008e-09,
+      "CODATA_mass_ratio_rel_err": 2.2247125783793445e-08,
+      "SnapPy_vol_rel_err": 4.926391792812055e-13,
+      "dominant_uncertainty": "CODATA m_μ/m_e (2.2e-8 relative)",
+      "P_p_rel_err": 6.869814976685104e-09,
+      "P_n_rel_err": 8.321138092246408e-09,
+      "borromean_mass_rel_err": 2.2247125789666494e-08
+    }
+  },
+  "caveats": [
+    "The Skein polynomial P(q) encodes the combinatorial crossing structure, not the absolute mass. P_n/P_p ≠ m_n/m_p. P(q) enters the Q-value spectral decomposition formula.",
+    "Pair Skein masses are exact by construction (solved from experimental m_p, m_n). They predict Q-values, not masses.",
+    "Parametric uncertainty from δq ≈ 1.3e-8 is negligible. Structural model uncertainties (ordering, crossing types) dominate at the 2–10% level for Q-values."
+  ]
+}

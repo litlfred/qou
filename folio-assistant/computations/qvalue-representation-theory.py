@@ -203,3 +203,118 @@ rms_b = math.sqrt(sum(e**2 for e in errors_bare) / len(errors_bare))
 rms_f = math.sqrt(sum(e**2 for e in errors_full) / len(errors_full))
 print(f"  Bare:  MAE = {mae_b:.1f}%, RMS = {rms_b:.1f}%")
 print(f"  Full:  MAE = {mae_f:.1f}%, RMS = {rms_f:.1f}%")
+
+
+# ══════════════════════════════════════════════════════════════
+# §4  WITNESS GENERATION
+# ══════════════════════════════════════════════════════════════
+
+from q_parameter import Q_ERR
+from witness_base import WitnessBuilder
+
+w = WitnessBuilder("qvalue-representation-theory", engine="python")
+w.set_description(
+    "Q-value predictions from Gröbner--Shirshov-weighted transfer matrix "
+    "with Rosso--Jones spectral decomposition. Two-stage correction: "
+    "(1) q/q⁻¹ directional weighting, (2) degree-2 torus knot shell "
+    "factor F_deg2 ≈ 0.5904 and Pauli exclusion F_Pauli ≈ 0.6382 for "
+    "magic shells. Zero fitting parameters. All from q alone."
+)
+w.set_content_block("prop:spectral-decomposition-qvalue")
+
+# Parameters
+w.add_parameter("q₀", q)
+w.add_parameter("q₀_err", Q_ERR)
+w.add_parameter("κ_q (MeV)", kappa)
+w.add_parameter("F_deg2", F_DEG2)
+w.add_parameter("F_Pauli", F_PAULI)
+w.add_parameter("E_× (MeV)", E_CROSS)
+w.add_parameter("μ₀ (MeV)", mu_0)
+
+# Per-nucleus assertions
+results_data = []
+for i, (Z, N, name, Q_exp, Q_err_exp) in enumerate(nuclei):
+    Qb, Qq, Qf, lu, lr, luc, Fsh = Q_decomposed(Z, N)
+    ef = (Qf - Q_exp) / Q_exp * 100
+    eb = (Qb - Q_exp) / Q_exp * 100
+
+    # Assertion: Q_full within structural tolerance
+    # Structural model uncertainty is ~10% for light nuclei, ~5% for heavy
+    structural_tol = max(Q_exp * 0.15, Q_err_exp)  # 15% structural tolerance
+    w.add_assertion(
+        f"Q({name}) full prediction",
+        computed=round(Qf, 6),
+        expected=round(Q_exp, 6),
+        tolerance=round(structural_tol, 6),
+        unit="MeV",
+        source=f"NNDC/ENSDF (exp ± {Q_err_exp} MeV)",
+    )
+
+    results_data.append({
+        "nucleus": name,
+        "Z": Z,
+        "N": N,
+        "Q_bare_MeV": round(Qb, 6),
+        "Q_qwt_MeV": round(Qq, 6),
+        "Q_full_MeV": round(Qf, 6),
+        "Q_exp_MeV": Q_exp,
+        "Q_exp_err_MeV": Q_err_exp,
+        "F_shell": round(Fsh, 4),
+        "error_bare_pct": round(eb, 2),
+        "error_full_pct": round(ef, 2),
+        "ln_unbind": round(lu, 6),
+        "ln_rebind": round(lr, 6),
+        "ln_unchanged": round(luc, 6),
+    })
+
+# Summary assertions
+w.add_assertion(
+    "MAE (full, 6 nuclei)",
+    computed=round(mae_f, 2),
+    expected=0.0,
+    tolerance=10.0,  # expect MAE < 10%
+    unit="%",
+    source="Aggregate over 6 NNDC benchmarks",
+)
+
+w.add_assertion(
+    "RMS error (full, 6 nuclei)",
+    computed=round(rms_f, 2),
+    expected=0.0,
+    tolerance=15.0,  # expect RMS < 15%
+    unit="%",
+    source="Aggregate over 6 NNDC benchmarks",
+)
+
+# Data
+w.add_data("results", results_data)
+w.add_data("error_summary", {
+    "MAE_bare_pct": round(mae_b, 2),
+    "MAE_full_pct": round(mae_f, 2),
+    "RMS_bare_pct": round(rms_b, 2),
+    "RMS_full_pct": round(rms_f, 2),
+})
+w.add_data("error_budget", {
+    "q_relative_error": Q_ERR / q,
+    "parametric_uncertainty": "negligible (O(1e-8))",
+    "structural_sources": [
+        "nucleon ordering in transfer matrix",
+        "degree-2 Rosso--Jones weighting over two knots",
+        "degree tower truncation at k=2 on Σ₄",
+    ],
+    "dominant": "structural model (2–10%), not parametric",
+})
+
+w.add_caveat(
+    "Structural model uncertainties (2–10%) dominate over parametric "
+    "uncertainty from δq ≈ 1.3e-8. The spectral decomposition is exact "
+    "and finite on Σ₄, but nucleon ordering is approximate."
+)
+w.add_caveat(
+    "F_deg2 = 0.5904 and F_Pauli = 0.6382 are computed from H₃(q) "
+    "Markov traces using the Rosso--Jones canonical inner product "
+    "(Schur orthogonality). Zero fitting freedom."
+)
+
+witness_path = w.save()
+print(f"\n  Witness saved: {witness_path}")

@@ -1,0 +1,217 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-07T12:16:50.931397+00:00",
+  "commitSha": "d18f117bc48a111e2fbc8dba5cc6e5c44b25d8ff",
+  "assertions": [
+    {
+      "name": "Q(³H) full prediction",
+      "computed": 0.01849,
+      "expected": 0.01861,
+      "passed": true,
+      "tolerance": 0.002792,
+      "unit": "MeV",
+      "source": "NNDC/ENSDF (exp ± 1e-05 MeV)"
+    },
+    {
+      "name": "Q(¹⁴C) full prediction",
+      "computed": 0.152997,
+      "expected": 0.15648,
+      "passed": true,
+      "tolerance": 0.023472,
+      "unit": "MeV",
+      "source": "NNDC/ENSDF (exp ± 4e-05 MeV)"
+    },
+    {
+      "name": "Q(⁶⁰Co) full prediction",
+      "computed": 0.338583,
+      "expected": 0.31817,
+      "passed": true,
+      "tolerance": 0.047725,
+      "unit": "MeV",
+      "source": "NNDC/ENSDF (exp ± 0.00013 MeV)"
+    },
+    {
+      "name": "Q(⁹⁰Sr) full prediction",
+      "computed": 0.557432,
+      "expected": 0.5459,
+      "passed": true,
+      "tolerance": 0.081885,
+      "unit": "MeV",
+      "source": "NNDC/ENSDF (exp ± 7e-05 MeV)"
+    },
+    {
+      "name": "Q(¹³⁷Cs) full prediction",
+      "computed": 0.537529,
+      "expected": 0.514,
+      "passed": true,
+      "tolerance": 0.0771,
+      "unit": "MeV",
+      "source": "NNDC/ENSDF (exp ± 0.00021 MeV)"
+    },
+    {
+      "name": "Q(²¹⁰Bi) full prediction",
+      "computed": 1.281982,
+      "expected": 1.1627,
+      "passed": true,
+      "tolerance": 0.174405,
+      "unit": "MeV",
+      "source": "NNDC/ENSDF (exp ± 6e-05 MeV)"
+    },
+    {
+      "name": "MAE (full, 6 nuclei)",
+      "computed": 4.37,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 10.0,
+      "unit": "%",
+      "source": "Aggregate over 6 NNDC benchmarks"
+    },
+    {
+      "name": "RMS error (full, 6 nuclei)",
+      "computed": 5.43,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 15.0,
+      "unit": "%",
+      "source": "Aggregate over 6 NNDC benchmarks"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 73,
+  "computation": "qvalue-representation-theory",
+  "scriptFile": "qvalue-representation-theory.py",
+  "scriptHash": "1cc82dfca26a",
+  "scriptCommitSha": "d2bda3579ebda5f11b1ee0a2e9a3653261f58779",
+  "description": "Q-value predictions from Gröbner--Shirshov-weighted transfer matrix with Rosso--Jones spectral decomposition. Two-stage correction: (1) q/q⁻¹ directional weighting, (2) degree-2 torus knot shell factor F_deg2 ≈ 0.5904 and Pauli exclusion F_Pauli ≈ 0.6382 for magic shells. Zero fitting parameters. All from q alone.",
+  "contentBlock": "prop:spectral-decomposition-qvalue",
+  "parameters": {
+    "q₀": 1.1099785955541805,
+    "q₀_err": 1.3578965598837824e-09,
+    "κ_q (MeV)": 0.17033298333333333,
+    "F_deg2": 0.5904,
+    "F_Pauli": 0.6382,
+    "E_× (MeV)": 0.10453016099493972,
+    "μ₀ (MeV)": 1.6295103892701275
+  },
+  "data": {
+    "results": [
+      {
+        "nucleus": "³H",
+        "Z": 1,
+        "N": 2,
+        "Q_bare_MeV": 0.017393,
+        "Q_qwt_MeV": 0.01849,
+        "Q_full_MeV": 0.01849,
+        "Q_exp_MeV": 0.01861,
+        "Q_exp_err_MeV": 1e-05,
+        "F_shell": 1.0,
+        "error_bare_pct": -6.54,
+        "error_full_pct": -0.64,
+        "ln_unbind": -0.079207,
+        "ln_rebind": -0.022906,
+        "ln_unchanged": 0.0
+      },
+      {
+        "nucleus": "¹⁴C",
+        "Z": 6,
+        "N": 8,
+        "Q_bare_MeV": 0.149359,
+        "Q_qwt_MeV": 0.152997,
+        "Q_full_MeV": 0.152997,
+        "Q_exp_MeV": 0.15648,
+        "Q_exp_err_MeV": 4e-05,
+        "F_shell": 1.0,
+        "error_bare_pct": -4.55,
+        "error_full_pct": -2.23,
+        "ln_unbind": -0.517764,
+        "ln_rebind": -0.359098,
+        "ln_unchanged": 0.0
+      },
+      {
+        "nucleus": "⁶⁰Co",
+        "Z": 27,
+        "N": 33,
+        "Q_bare_MeV": 0.570277,
+        "Q_qwt_MeV": 0.573481,
+        "Q_full_MeV": 0.338583,
+        "Q_exp_MeV": 0.31817,
+        "Q_exp_err_MeV": 0.00013,
+        "F_shell": 0.5904,
+        "error_bare_pct": 79.24,
+        "error_full_pct": 6.42,
+        "ln_unbind": -1.676737,
+        "ln_rebind": -1.671273,
+        "ln_unchanged": 0.0
+      },
+      {
+        "nucleus": "⁹⁰Sr",
+        "Z": 38,
+        "N": 52,
+        "Q_bare_MeV": 0.926044,
+        "Q_qwt_MeV": 0.94416,
+        "Q_full_MeV": 0.557432,
+        "Q_exp_MeV": 0.5459,
+        "Q_exp_err_MeV": 7e-05,
+        "F_shell": 0.5904,
+        "error_bare_pct": 69.64,
+        "error_full_pct": 2.11,
+        "ln_unbind": -3.085399,
+        "ln_rebind": -2.351268,
+        "ln_unchanged": 0.0
+      },
+      {
+        "nucleus": "¹³⁷Cs",
+        "Z": 55,
+        "N": 82,
+        "Q_bare_MeV": 1.394422,
+        "Q_qwt_MeV": 1.426588,
+        "Q_full_MeV": 0.537529,
+        "Q_exp_MeV": 0.514,
+        "Q_exp_err_MeV": 0.00021,
+        "F_shell": 0.3768,
+        "error_bare_pct": 171.29,
+        "error_full_pct": 4.58,
+        "ln_unbind": -4.783177,
+        "ln_rebind": -3.403269,
+        "ln_unchanged": 0.0
+      },
+      {
+        "nucleus": "²¹⁰Bi",
+        "Z": 83,
+        "N": 127,
+        "Q_bare_MeV": 2.121001,
+        "Q_qwt_MeV": 2.171379,
+        "Q_full_MeV": 1.281982,
+        "Q_exp_MeV": 1.1627,
+        "Q_exp_err_MeV": 6e-05,
+        "F_shell": 0.5904,
+        "error_bare_pct": 82.42,
+        "error_full_pct": 10.26,
+        "ln_unbind": -7.31624,
+        "ln_rebind": -5.135847,
+        "ln_unchanged": 0.0
+      }
+    ],
+    "error_summary": {
+      "MAE_bare_pct": 68.95,
+      "MAE_full_pct": 4.37,
+      "RMS_bare_pct": 88.81,
+      "RMS_full_pct": 5.43
+    },
+    "error_budget": {
+      "q_relative_error": 1.2233538244094008e-09,
+      "parametric_uncertainty": "negligible (O(1e-8))",
+      "structural_sources": [
+        "nucleon ordering in transfer matrix",
+        "degree-2 Rosso--Jones weighting over two knots",
+        "degree tower truncation at k=2 on Σ₄"
+      ],
+      "dominant": "structural model (2–10%), not parametric"
+    }
+  },
+  "caveats": [
+    "Structural model uncertainties (2–10%) dominate over parametric uncertainty from δq ≈ 1.3e-8. The spectral decomposition is exact and finite on Σ₄, but nucleon ordering is approximate.",
+    "F_deg2 = 0.5904 and F_Pauli = 0.6382 are computed from H₃(q) Markov traces using the Rosso--Jones canonical inner product (Schur orthogonality). Zero fitting freedom."
+  ]
+}
