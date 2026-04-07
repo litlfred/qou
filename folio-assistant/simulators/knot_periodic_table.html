@@ -31,8 +31,11 @@ body{background:var(--bg);color:var(--text);font-family:'SF Mono','Cascadia Code
 #top-bar label{font-size:10px;color:var(--dim);}
 #top-bar select,#top-bar input[type=range]{font-size:10px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:1px 4px;font-family:inherit;}
 .val{color:var(--accent);font-size:10px;min-width:35px;}
+#main-row{display:flex;gap:0;flex:1;align-items:flex-start;}
+#left-col{flex:1;min-width:0;overflow-x:auto;}
+#right-col{width:360px;flex-shrink:0;display:flex;flex-direction:column;gap:0;overflow-y:auto;max-height:calc(100vh - 60px);position:sticky;top:0;}
 #periodic-panel{padding:6px;}
-#pt-grid{display:flex;flex-direction:column;gap:0;max-width:780px;margin:0 auto;}
+#pt-grid{display:flex;flex-direction:column;gap:0;margin:0 auto;}
 .period-group{margin-bottom:5px;}
 .subshell-row{display:flex;align-items:center;margin-bottom:1px;}
 .subshell-label{width:26px;font-size:8px;text-align:right;padding-right:4px;flex-shrink:0;opacity:.7;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;}
@@ -55,9 +58,9 @@ body{background:var(--bg);color:var(--text);font-family:'SF Mono','Cascadia Code
 .tile.block-f{border-left:2px solid var(--accent2);}
 .tile.block-g{border-left:2px solid var(--accent5);}
 .tile.magic{box-shadow:inset 0 0 4px rgba(255,85,51,.3);}
-#bottom{display:flex;gap:0;flex:1;min-height:380px;}
-#knot-panel{flex:6;min-width:0;}
-#decay-panel{flex:4;min-width:0;}
+#bottom{display:flex;flex-direction:column;gap:0;flex:1;min-height:0;}
+#knot-panel{flex:none;}
+#decay-panel{flex:none;}
 #knot-canvas-wrap{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start;justify-content:center;}
 .knot-info{font-size:10px;margin:6px 0;line-height:1.6;}
 .knot-formula{font-size:12px;color:var(--accent);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.1em;}
@@ -90,7 +93,9 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
 .budget-seg{display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;font-weight:600;}
 #decay-eq{font-size:11px;color:var(--accent);margin:4px 0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.05em;}
 #hecke-rel{font-size:10px;color:var(--dim);margin:4px 0;}
-@media(max-width:700px){
+@media(max-width:900px){
+  #main-row{flex-direction:column;}
+  #right-col{width:100%;position:static;max-height:none;}
   #bottom{flex-direction:column;}
   .tile{width:30px;height:30px;}
   .tile .sym{font-size:9px;}
@@ -113,6 +118,8 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
   </select></label>
   <label>q <input type="range" id="sl-q" min="1.001" max="2.0" step="0.001" value="1.110"> <span class="val" id="v-q">1.110</span></label>
 </div>
+<div id="main-row">
+<div id="left-col">
 <div class="panel" id="periodic-panel">
   <div class="panel-title">Periodic Table &mdash; click an element</div>
   <div id="pt-grid"></div>
@@ -124,6 +131,8 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
   </div>
   <div id="spin-table-wrap"></div>
 </div>
+</div>
+<div id="right-col">
 <div id="bottom">
   <div class="panel" id="knot-panel">
     <div class="panel-title">Knot Diagram: <span id="knot-el-name">select an element</span></div>
@@ -152,12 +161,14 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
         <div class="budget-seg" style="flex:7;background:var(--accent2);">7 R2</div>
       </div>
     </div>
-    <svg id="braid-svg" width="100%" height="180" viewBox="0 0 400 170"></svg>
+    <svg id="braid-svg" width="100%" height="150" viewBox="0 0 400 170" preserveAspectRatio="xMidYMid meet"></svg>
     <div style="margin-top:4px;">
       <div style="font-size:9px;color:var(--dim);margin-bottom:2px;">Transfer matrix at q</div>
       <div id="matrix-display"></div>
     </div>
   </div>
+</div>
+</div>
 </div>
 </div>
 <script>
