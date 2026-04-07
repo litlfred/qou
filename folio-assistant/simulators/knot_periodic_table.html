@@ -629,9 +629,10 @@ function textColorForBg(bgColor) {
     if (m) { r = +m[0]; g = +m[1]; b = +m[2]; }
   } else if (bgColor.startsWith('#')) {
     const hex = bgColor.replace('#', '');
-    if (hex.length >= 6) { r = parseInt(hex.substr(0,2),16); g = parseInt(hex.substr(2,2),16); b = parseInt(hex.substr(4,2),16); }
-    else if (hex.length === 3) { r = parseInt(hex[0]+hex[0],16); g = parseInt(hex[1]+hex[1],16); b = parseInt(hex[2]+hex[2],16); }
+    if (hex.length >= 6) { r = parseInt(hex.slice(0,2),16); g = parseInt(hex.slice(2,4),16); b = parseInt(hex.slice(4,6),16); }
+    else if (hex.length === 3) { r = parseInt(hex[0].repeat(2),16); g = parseInt(hex[1].repeat(2),16); b = parseInt(hex[2].repeat(2),16); }
   }
+  // ITU-R BT.601 luma; threshold 140 chosen for readable contrast on both themes
   return (0.299*r + 0.587*g + 0.114*b) > 140 ? '#111' : '#fff';
 }
 
@@ -644,7 +645,7 @@ function buildTable() {
   const periodMap = new Map();
   for (const el of EL) {
     const P = correctedPeriod(el);
-    const B = el[8]; // block: 0=s, 1=p, 2=d, 3=f
+    const B = el[8]; // block: 0=s, 1=p, 2=d, 3=f, 4=g
     if (!periodMap.has(P)) periodMap.set(P, new Map());
     const subs = periodMap.get(P);
     const sortKey = SUBSHELL_ORDER[B];
