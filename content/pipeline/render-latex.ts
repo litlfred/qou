@@ -223,8 +223,16 @@ function renderMdastNode(node: any): string {
     case "paragraph":
       return renderChildren(node).join("");
 
-    case "text":
-      return escapeLatex(node.value);
+    case "text": {
+      // Preserve \cite{...} commands (LaTeX citations) while escaping other text.
+      // \cite may have an optional [...] argument: \cite[Thm.~1.7]{key}
+      const textVal: string = node.value;
+      const citePat = /(\\cite(?:\[[^\]]*\])?\{[^}]+\})/g;
+      const textParts = textVal.split(citePat);
+      return textParts
+        .map((part: string) => (/^\\cite/.test(part) ? part : escapeLatex(part)))
+        .join("");
+    }
 
     case "strong":
       return `\\textbf{${renderChildren(node).join("")}}`;
@@ -695,6 +703,8 @@ export function renderChapter(
   opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];
+  // Each chapter starts on a new page
+  lines.push("\\clearpage");
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
   // Chapters with tabLabel are unnumbered (\chapter*); all others are auto-numbered by LaTeX.
   const star = chapter.tabLabel != null ? "*" : "";
@@ -732,11 +742,8 @@ export function renderChapter(
     lines.push(renderSection(sec, blocks, opts, chapterReferencedLabels));
   }
 
-  // Emit chapter-end bibliography if any citations were found
-  if (chapterCites.size > 0) {
-    lines.push("");
-    lines.push(renderChapterBibliography([...chapterCites].sort()));
-  }
+  // Per-chapter bibliography removed — all references are collected in
+  // Appendix B at the end of the paper (see generate-main-tex.ts).
 
   return lines.join("\n");
 }
