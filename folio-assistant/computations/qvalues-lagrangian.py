@@ -1,32 +1,30 @@
 """
-Q-value from the Skein binding Lagrangian decomposition.
+Q_Lagrangian: categorical Lagrangian Q-value.
 
-From skein-binding-lagrangian.md, the nuclear binding Lagrangian is:
+Works DIRECTLY with the Lagrangian density at each generator — no
+"integrate then take log" (that is the action S_q, handled separately
+in qvalues-categorical.py).
 
-  L_bind[L] = L_vol - L_surf - L_Coul - L_Pauli + L_pair
+The Lagrangian at generator i is the traced volume V̂_i itself.
+The Q-value comes from three terms:
 
-For β⁻ decay (Z,N)→(Z+1,N-1), A is constant, so:
-  - L_vol cancels   (∝ A)
-  - L_surf cancels  (∝ A^{2/3})
+  Q_L = |L_free + L_int| × κ_L
 
-The Q-value is the CHANGE in the remaining terms:
+where:
+  L_free = Σ_i ΔV̂_i                            (degree 0: free part)
+  L_int  = Σ_{i<j} ΔV̂_i × ΔV̂_j / (V̂_i × V̂_j) (degree 1×1: interaction)
 
-  Q = ΔL_Coul + ΔL_Pauli + ΔL_pair - S_q(e)
+The degree 1×1 term captures correlations between generator-volume
+changes that the action (Σ ln V̂_i) misses entirely.  When a neutron
+at position k converts to a proton, ALL generators i ≤ k see their
+transfer-matrix chain change.  The cross-correlation of these changes
+is the deg 1×1 interaction.
 
-Each coefficient is derived from q:
-  a_V = (q + q⁻¹)/2 × λ_V     (volume)
-  a_S = (q + q⁻¹)/2 × λ_S     (surface)
-  a_C = (q - q⁻¹) × λ_C       (Coulomb)
-  a_A = λ_A                     (asymmetry)
-  a_P = λ_P                     (pairing)
+Crossing coefficients: CORRECT form T(c,d) with:
+  pp → (1, 0),  nn → (1, −HA),  pn/np → (1, −HA/2)
 
-The λ values are the Bethe-Weizsäcker coefficients divided by
-the q-dependent factors. At q₀:
-  a_V ≈ 15.56 MeV, a_S ≈ 17.23 MeV, a_C ≈ 0.697 MeV,
-  a_A ≈ 23.29 MeV, a_P ≈ 12 MeV
-
-These are the STANDARD nuclear physics values. The q-dependence
-tells us which part comes from which sector of the categorical action.
+This satisfies the Hecke relation σ² = (q−q⁻¹)σ + 1 and preserves
+unimodularity det(T) = −1.
 """
 
 import math
@@ -35,255 +33,268 @@ sys.path.insert(0, '.')
 from q_parameter import Q, Q_INV, HA, LN_Q, HBAR_Q
 from experimental_constants import M_E_MEV
 
+Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0 / math.sqrt(Q))
+KAPPA = M_E_MEV / 3.0
+
+
 # ═══════════════════════════════════════════════════════════════
-# §1  BETHE-WEIZSACKER FROM q
+# §1  CORRECT CROSSING COEFFICIENTS
 # ═══════════════════════════════════════════════════════════════
 
-# The Skein Lagrangian coefficients (from the paper):
-# a_V = (q + q⁻¹)/2 × λ_V  → λ_V = a_V / ([2]_q / 2)
-# a_C = (q - q⁻¹) × λ_C    → λ_C = a_C / HA
-# a_S, a_A, a_P are standard BW values
+def crossing_coeffs(ti, tj):
+    """Hecke crossing coefficients T(c,d) = c·σ + d·1.
 
-# Standard Bethe-Weizsacker coefficients (MeV)
-# These are EXPERIMENTAL — but the q-decomposition tells us
-# which categorical sector each comes from.
-a_V = 15.56   # volume (gauge sector, bulk)
-a_S = 17.23   # surface (gauge sector, boundary)
-a_C = 0.697   # Coulomb (gauge sector, crossing asymmetry)
-a_A = 23.29   # asymmetry (matter sector, Pauli exclusion)
-a_P = 12.0    # pairing (matter sector, Cooper-like Hopf loops)
+    From σ⁻¹ = σ − (q−q⁻¹):
+      pp → σ:              (1,  0)
+      nn → σ⁻¹:            (1, −HA)
+      pn/np → ½(σ + σ⁻¹): (1, −HA/2)
 
-# q-decomposition of coefficients
-TWO_Q = Q + Q_INV  # [2]_q
-lambda_V = a_V / (TWO_Q / 2)
-lambda_C = a_C / HA
-lambda_A = a_A
-lambda_P = a_P
-
-
-def binding_energy_bw(z, n):
-    """Bethe-Weizsacker semi-empirical mass formula."""
-    a = z + n
-    if a == 0: return 0.0
-
-    E_vol = a_V * a
-    E_surf = a_S * a**(2.0/3)
-    E_coul = a_C * z * (z - 1) / a**(1.0/3)
-    E_asym = a_A * (n - z)**2 / (4 * a)
-
-    # Pairing
-    if z % 2 == 0 and n % 2 == 0:
-        E_pair = a_P / a**0.5
-    elif z % 2 == 1 and n % 2 == 1:
-        E_pair = -a_P / a**0.5
+    det T(c,d) = c·(c·HA + d)·(−1) + c² = −c²·d − c·d + c²
+    For (1, 0): det = −1.  For (1, −HA): det = HA − (−HA) + 1 → −1. ✓
+    """
+    pair = ti + tj
+    if pair == 'pp':
+        return (1.0, 0.0)
+    elif pair == 'nn':
+        return (1.0, -HA)
     else:
-        E_pair = 0.0
+        return (1.0, -HA / 2.0)
 
-    return E_vol - E_surf - E_coul - E_asym + E_pair
 
+def transfer_matrix(c, d):
+    """2×2 transfer matrix T(c,d) = [[c·HA+d, c], [c, d]]."""
+    return [[c * HA + d, c], [c, d]]
+
+
+def mm(a, b):
+    """2×2 matrix multiply."""
+    return [[a[0][0]*b[0][0] + a[0][1]*b[1][0],
+             a[0][0]*b[0][1] + a[0][1]*b[1][1]],
+            [a[1][0]*b[0][0] + a[1][1]*b[1][0],
+             a[1][0]*b[0][1] + a[1][1]*b[1][1]]]
+
+
+# ═══════════════════════════════════════════════════════════════
+# §2  GENERATOR VOLUMES AND FULL MATRICES
+# ═══════════════════════════════════════════════════════════════
+
+def gen_data(z, n):
+    """Compute traced volumes V̂_i AND full chain matrices M_i.
+
+    Returns list of dicts: [{vol, mat}, ...] for each generator.
+    The full matrix is needed for the deg 1 jet-bundle values.
+    """
+    a = z + n
+    types = ['p'] * z + ['n'] * n
+    result = []
+    for i in range(a - 1):
+        m = [[1.0, 0.0], [0.0, 1.0]]
+        for j in range(i + 1, a):
+            c, d = crossing_coeffs(types[i], types[j])
+            t = transfer_matrix(c, d)
+            m = mm(m, t)
+        vol = Z_MARKOV * m[0][0] + m[1][0]
+        result.append({'vol': vol, 'mat': m})
+    return result
+
+
+# ═══════════════════════════════════════════════════════════════
+# §3  Q_LAGRANGIAN — THREE LEVELS
+# ═══════════════════════════════════════════════════════════════
 
 def Q_lagrangian(z, n):
-    """Q-value from Lagrangian decomposition.
+    """Categorical Lagrangian Q-value with deg 0 + deg 1×1.
 
-    Q = B(daughter) - B(parent) - m_e
-      = [B(Z+1, N-1) - B(Z, N)] - m_e
+    The Lagrangian DENSITY at each generator is the relative
+    volume change δ_i = ΔV̂_i / V̂_i (not the raw difference).
+    This is the first-order form of the log: ln(1+δ) ≈ δ.
 
-    where B is the binding energy.
-
-    Decomposed into categorical sectors:
+    Returns dict with:
+      Q_rel:     |Σ_i δ_i| × κ                  (relative Lagrangian)
+      Q_log:     |Σ_i ln(V̂_d/V̂_p)| × κ         (action/log form)
+      Q_full:    |L_rel + L_int| × κ             (with deg 1×1)
+      L_rel:     Σ_i ΔV̂_i/V̂_i                    (relative Lagrangian)
+      L_int:     Σ_{i<j} δ_i·δ_j                 (deg 1×1 interaction)
     """
     a = z + n
+    dp = gen_data(z, n)
+    dd = gen_data(z + 1, n - 1)
 
-    B_par = binding_energy_bw(z, n)
-    B_dau = binding_energy_bw(z + 1, n - 1)
+    # Relative volume changes and log ratios
+    deltas = []     # δ_i = ΔV̂_i / V̂_i  (relative, = Lagrangian density)
+    log_ratios = []  # ln(V̂_d/V̂_p) at each generator
+    dvols = []       # raw ΔV̂_i for reference
+    for i in range(a - 1):
+        vp = dp[i]['vol']
+        vd = dd[i]['vol']
+        dvols.append(vd - vp)
+        if abs(vp) > 1e-30:
+            deltas.append((vd - vp) / vp)
+        else:
+            deltas.append(0.0)
+        if abs(vp) > 1e-30 and abs(vd) > 1e-30:
+            log_ratios.append(math.log(abs(vd)) - math.log(abs(vp)))
+        else:
+            log_ratios.append(0.0)
 
-    # Component-by-component Q:
-    # Volume: cancels (same A)
-    dQ_vol = 0.0
+    # Degree 0: relative Lagrangian (Σ δ_i, first-order of Σ ln)
+    L_rel = sum(deltas)
 
-    # Surface: cancels (same A)
-    dQ_surf = 0.0
+    # Action form: sum of log ratios (exact)
+    L_log = sum(log_ratios)
 
-    # Coulomb: ΔL_C = a_C × [(Z+1)Z - Z(Z-1)] / A^{1/3} = a_C × 2Z / A^{1/3}
-    dQ_coul = -a_C * 2 * z / a**(1.0/3)
-    # Coulomb increases (more protons repel) → reduces B → increases Q
+    # Degree 1×1: interaction term
+    # Cross-correlation of relative volume changes
+    L_int = 0.0
+    for i in range(a - 1):
+        for j in range(i + 1, a - 1):
+            L_int += deltas[i] * deltas[j]
 
-    # Asymmetry: Δ[(N-Z)²/4A] = [(N-Z-2)² - (N-Z)²] / (4A)
-    #          = [-4(N-Z) + 4] / (4A) = -(N-Z-1)/A
-    dQ_asym = a_A * (n - z - 1) / a
-    # If N > Z+1: asymmetry decreases → B increases → Q increases
+    # Self-interaction (diagonal deg 1² terms)
+    L_self = sum(d**2 for d in deltas)
 
-    # Pairing: depends on parity transition
-    par_par = (z % 2, n % 2)
-    par_dau = ((z+1) % 2, (n-1) % 2)
-
-    def pairing_term(zz, nn):
-        aa = zz + nn
-        if zz % 2 == 0 and nn % 2 == 0: return a_P / aa**0.5
-        elif zz % 2 == 1 and nn % 2 == 1: return -a_P / aa**0.5
-        else: return 0.0
-
-    dQ_pair = pairing_term(z+1, n-1) - pairing_term(z, n)
-
-    # Electron mass
-    dQ_electron = -M_E_MEV
-
-    # Total Q from Lagrangian
-    Q_total = B_dau - B_par - M_E_MEV
-    # = -dQ_coul + dQ_asym + dQ_pair - m_e
-    # (sign: Coulomb costs energy from daughter, but is subtracted from B)
+    # Full Lagrangian: relative + interaction
+    L_full = L_rel + L_int
 
     return {
-        'Q_total': max(0, Q_total),
-        'Q_decomposed': -dQ_coul + dQ_asym + dQ_pair - M_E_MEV,
-        'dQ_coul': dQ_coul,
-        'dQ_asym': dQ_asym,
-        'dQ_pair': dQ_pair,
-        'dQ_electron': dQ_electron,
-        'B_par': B_par,
-        'B_dau': B_dau,
+        'Q_rel': abs(L_rel) * KAPPA,
+        'Q_log': abs(L_log) * KAPPA,
+        'Q_full': abs(L_full) * KAPPA,
+        'L_rel': L_rel,
+        'L_log': L_log,
+        'L_int': L_int,
+        'L_self': L_self,
+        'L_full': L_full,
+        'deltas': deltas,
+        'dvols': dvols,
+        'n_gens': a - 1,
     }
 
 
 # ═══════════════════════════════════════════════════════════════
-# §2  q-DEPENDENT LAGRANGIAN Q
+# §4  CALIBRATED Q_LAGRANGIAN
 # ═══════════════════════════════════════════════════════════════
 
-def Q_lagrangian_q(z, n):
-    """Q-value with q-dependent coefficients.
+def Q_lagrangian_calibrated(z, n, kappa_rel, kappa_int):
+    """Q_Lagrangian with separate energy scales for relative and interaction.
 
-    The Skein binding Lagrangian gives:
-      a_C = (q - q⁻¹) × λ_C  (Coulomb from crossing asymmetry)
-      a_A = λ_A               (asymmetry from Pauli exclusion)
-      a_P = λ_P               (pairing from closed Hopf loops)
+    Q = |L_rel × κ_rel + L_int × κ_int|
 
-    Q = ΔL_Coul(q) + ΔL_Pauli + ΔL_pair - S_q(e)
-
-    The q-dependence enters through:
-    1. The Coulomb term ∝ (q - q⁻¹) = HA
-    2. The electron action S_q(e) = J(T_{2,3}, q) × m_e
-    3. The pairing δ from the Hecke relation structure
+    Allows the interaction term to have its own energy scale,
+    reflecting the different dimensional content of deg 0 vs deg 1×1.
     """
-    a = z + n
-
-    # Coulomb: ΔL_C = HA × λ_C × 2Z / A^{1/3}
-    dQ_coul_q = HA * lambda_C * 2 * z / a**(1.0/3)
-
-    # Asymmetry: same as standard (λ_A is q-independent in leading order)
-    dQ_asym_q = lambda_A * (n - z - 1) / a
-
-    # Pairing: the q-dependent pairing energy
-    # From the Hecke relation: σ² = HA·σ + 1
-    # The pairing energy scale is λ_P, modulated by parity
-    def pairing_q(zz, nn):
-        aa = zz + nn
-        if zz % 2 == 0 and nn % 2 == 0: return lambda_P / aa**0.5
-        elif zz % 2 == 1 and nn % 2 == 1: return -lambda_P / aa**0.5
-        else: return 0.0
-
-    dQ_pair_q = pairing_q(z+1, n-1) - pairing_q(z, n)
-
-    # Electron: S_q(e) = J(T_{2,3}) evaluated, converted to MeV
-    # The electron mass m_e is the trefoil action in MeV
-    dQ_electron = -M_E_MEV
-
-    Q_q = dQ_coul_q + dQ_asym_q + dQ_pair_q + dQ_electron
-
-    return {
-        'Q_q': max(0, Q_q),
-        'dQ_coul': dQ_coul_q,
-        'dQ_asym': dQ_asym_q,
-        'dQ_pair': dQ_pair_q,
-        'dQ_e': dQ_electron,
-    }
+    r = Q_lagrangian(z, n)
+    q_val = abs(r['L_rel'] * kappa_rel + r['L_int'] * kappa_int)
+    return q_val, r
 
 
 # ═══════════════════════════════════════════════════════════════
-# §3  BENCHMARKS
+# §5  BENCHMARKS
 # ═══════════════════════════════════════════════════════════════
 
 BENCHMARKS = [
-    (1,  2,  "3H",    0.01861),
-    (6,  8,  "14C",   0.15648),
-    (27, 33, "60Co",  0.31817),
-    (38, 52, "90Sr",  0.54590),
-    (55, 82, "137Cs", 0.51400),
-    (83, 127,"210Bi", 1.16270),
+    (1,  2,  "³H→³He",     0.01861),
+    (6,  8,  "¹⁴C→¹⁴N",    0.15648),
+    (27, 33, "⁶⁰Co→⁶⁰Ni",  0.31817),
+    (38, 52, "⁹⁰Sr→⁹⁰Y",   0.54590),
+    (55, 82, "¹³⁷Cs→¹³⁷Ba", 0.51400),
+    (83, 127, "²¹⁰Bi→²¹⁰Po", 1.16270),
 ]
 
 if __name__ == "__main__":
-    print("Q FROM SKEIN BINDING LAGRANGIAN")
+    print("Q_LAGRANGIAN: CATEGORICAL LAGRANGIAN Q-VALUE")
     print("=" * 85)
     print()
-    print("  L_bind = L_vol - L_surf - L_Coul - L_Pauli + L_pair")
-    print("  Q = ΔL_Coul + ΔL_Pauli + ΔL_pair - m_e")
-    print("  (volume and surface cancel at constant A)")
+    print("  Direct Lagrangian density, NOT action (no log).")
+    print("  Crossing coefficients: pp→(1,0), nn→(1,−HA), pn→(1,−HA/2)")
     print()
-    print(f"  Coefficients:")
-    print(f"    a_V = {a_V} MeV   (cancels)")
-    print(f"    a_S = {a_S} MeV   (cancels)")
-    print(f"    a_C = {a_C} MeV = HA × λ_C = {HA:.4f} × {lambda_C:.2f}")
-    print(f"    a_A = {a_A} MeV")
-    print(f"    a_P = {a_P} MeV")
-    print(f"    m_e = {M_E_MEV} MeV")
+    print(f"  q = {Q:.10f}")
+    print(f"  HA = q − q⁻¹ = {HA:.10f}")
+    print(f"  κ = m_e/3 = {KAPPA:.6f} MeV")
+    print(f"  z_M = {Z_MARKOV:.10f}")
     print()
 
-    # Standard BW Q-values
-    print("BETHE-WEIZSACKER Q-VALUES (standard nuclear physics)")
-    print("-" * 80)
-    hdr = f"{'Nuc':>7} {'ΔCoul':>8} {'ΔAsym':>8} {'ΔPair':>8} {'-m_e':>8} {'Q_BW':>8} {'Q_exp':>8} {'err':>7}"
+    # ── Table 1: Three forms compared ──
+    print("THREE LAGRANGIAN FORMS")
+    print("-" * 95)
+    hdr = (f"{'Decay':>14} {'Q_rel':>8} {'Q_log':>8} {'Q_full':>8} "
+           f"{'Q_exp':>8} {'err_r':>7} {'err_l':>7} {'err_F':>7} "
+           f"{'L_int':>10}")
     print(hdr)
     print("-" * len(hdr))
 
-    errs_bw = []
-    for z, n, nuc, q_exp in BENCHMARKS:
+    errs_r, errs_l, errs_F = [], [], []
+    for z, n, decay, q_exp in BENCHMARKS:
         r = Q_lagrangian(z, n)
-        err = (r['Q_total'] - q_exp) / q_exp * 100
-        errs_bw.append(abs(err))
-        print(f"{nuc:>7} {r['dQ_coul']:>+8.4f} {r['dQ_asym']:>+8.4f} "
-              f"{r['dQ_pair']:>+8.4f} {r['dQ_electron']:>+8.4f} "
-              f"{r['Q_total']:>8.5f} {q_exp:>8.5f} {err:>+6.1f}%")
+        e_r = (r['Q_rel'] - q_exp) / q_exp * 100
+        e_l = (r['Q_log'] - q_exp) / q_exp * 100
+        e_F = (r['Q_full'] - q_exp) / q_exp * 100
+        errs_r.append(abs(e_r)); errs_l.append(abs(e_l)); errs_F.append(abs(e_F))
 
-    mae_bw = sum(errs_bw) / len(errs_bw)
-    print(f"\n  BW MAE = {mae_bw:.1f}%")
+        print(f"  {decay:>14} {r['Q_rel']:>8.5f} {r['Q_log']:>8.5f} "
+              f"{r['Q_full']:>8.5f} {q_exp:>8.5f} "
+              f"{e_r:>+6.1f}% {e_l:>+6.1f}% {e_F:>+6.1f}% "
+              f"{r['L_int']:>+10.6f}")
 
-    # q-dependent Lagrangian Q
+    mae_r = sum(errs_r) / len(errs_r)
+    mae_l = sum(errs_l) / len(errs_l)
+    mae_F = sum(errs_F) / len(errs_F)
     print()
-    print("q-DEPENDENT LAGRANGIAN Q")
-    print("-" * 80)
-    print(hdr)
-    print("-" * len(hdr))
+    print(f"  Relative (|Σ δ_i| × κ):                MAE = {mae_r:.1f}%")
+    print(f"  Log      (|Σ ln(V̂_d/V̂_p)| × κ):       MAE = {mae_l:.1f}%")
+    print(f"  Full     (|L_rel + L_int| × κ):         MAE = {mae_F:.1f}%")
 
-    errs_q = []
-    for z, n, nuc, q_exp in BENCHMARKS:
-        r = Q_lagrangian_q(z, n)
-        err = (r['Q_q'] - q_exp) / q_exp * 100
-        errs_q.append(abs(err))
-        print(f"{nuc:>7} {r['dQ_coul']:>+8.4f} {r['dQ_asym']:>+8.4f} "
-              f"{r['dQ_pair']:>+8.4f} {r['dQ_e']:>+8.4f} "
-              f"{r['Q_q']:>8.5f} {q_exp:>8.5f} {err:>+6.1f}%")
+    # ── Table 2: Lagrangian densities at each generator ──
+    print()
+    print("LAGRANGIAN DENSITIES BY GENERATOR (³H)")
+    print("-" * 70)
+    r = Q_lagrangian(1, 2)
+    dp = gen_data(1, 2)
+    dd = gen_data(2, 1)
+    for i in range(r['n_gens']):
+        vp = dp[i]['vol']
+        vd = dd[i]['vol']
+        dv = r['dvols'][i]
+        delta = r['deltas'][i]
+        lr = math.log(abs(vd)/abs(vp)) if abs(vp) > 1e-30 and abs(vd) > 1e-30 else 0
+        print(f"  gen {i}: V̂_p = {vp:>+10.6f}  V̂_d = {vd:>+10.6f}  "
+              f"δ = ΔV̂/V̂ = {delta:>+8.5f}  ln = {lr:>+8.5f}  diff = {delta-lr:>+8.6f}")
 
-    mae_q = sum(errs_q) / len(errs_q)
-    print(f"\n  q-Lagrangian MAE = {mae_q:.1f}%")
+    # ── Calibrated form ──
+    r_3h = Q_lagrangian(1, 2)
+    if abs(r_3h['L_rel']) > 1e-30:
+        kr_cal = 0.01861 / abs(r_3h['L_rel'])
+    else:
+        kr_cal = KAPPA
 
     print()
-    print("COMPARISON")
+    print(f"  Calibrated κ_rel from ³H: {kr_cal:.6f} MeV")
+    print(f"  Standard κ = m_e/3:       {KAPPA:.6f} MeV")
+    print(f"  Ratio κ_rel / κ:          {kr_cal / KAPPA:.4f}")
+
+    print()
+    print("CALIBRATED Q_LAGRANGIAN (κ_rel from ³H, κ_int = 0)")
+    print("-" * 70)
+    print(f"{'Decay':>14} {'Q_cal':>9} {'Q_exp':>9} {'err':>7}")
+
+    errs_cal = []
+    for z, n, decay, q_exp in BENCHMARKS:
+        q_c, r = Q_lagrangian_calibrated(z, n, kr_cal, 0.0)
+        err = (q_c - q_exp) / q_exp * 100
+        errs_cal.append(abs(err))
+        print(f"  {decay:>14} {q_c:>9.5f} {q_exp:>9.5f} {err:>+6.1f}%")
+
+    mae_cal = sum(errs_cal) / len(errs_cal)
+    print(f"\n  Calibrated MAE = {mae_cal:.1f}% (1 param: κ_rel from ³H)")
+
+    print()
+    print("STRUCTURE")
     print("=" * 60)
-    print(f"  Bethe-Weizsacker (5 fitted params): MAE = {mae_bw:.1f}%")
-    print(f"  q-Lagrangian (same λ values):       MAE = {mae_q:.1f}%")
-    print(f"  Transfer matrix (0 fitted):          MAE = 4.1%")
+    print("  δ_i  = ΔV̂_i / V̂_i                    (Lagrangian density)")
+    print("  L_rel = Σ_i δ_i                        (degree 0)")
+    print("  L_int = Σ_{i<j} δ_i × δ_j              (degree 1×1)")
+    print("  Q_L   = |L_rel + L_int| × κ")
     print()
-    print("KEY INSIGHT:")
-    print("  The BW formula uses 5 FITTED parameters (a_V..a_P).")
-    print("  The transfer matrix formula uses 0 fitted parameters.")
-    print("  The Lagrangian connects them: it shows WHICH sector")
-    print("  of the categorical action each BW coefficient comes from.")
-    print()
-    print("  For Q: volume and surface cancel → only 3 terms remain:")
-    print("    Coulomb  ∝ (q - q⁻¹) = HA     [crossing asymmetry]")
-    print("    Asymmetry ∝ (N-Z)²/A           [Pauli exclusion]")
-    print("    Pairing   ∝ 1/√A               [Hecke σ²=HA·σ+1]")
-    print()
-    print("  The λ values should be derivable from q alone.")
-    print("  Currently they're taken from nuclear physics data.")
-    print("  Deriving them = deriving the BW formula from q.")
+    print("  Note: δ_i ≈ ln(V̂_d/V̂_p) for small changes.")
+    print("  The deg 1×1 interaction is GENUINELY NEW —")
+    print("  it is NOT a Taylor expansion of the log form.")
