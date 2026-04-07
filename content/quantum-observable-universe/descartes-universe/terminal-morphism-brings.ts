@@ -16,5 +16,7 @@ export default example({
     "prop:brings-is-qou",
     "ex:brings-surface-concrete",
     "ex:substrate-parameter-brings",
+    "ex:tannaka-krein-su2",
+    "prop:vacuum-state",
   ],
 });

@@ -11,5 +11,6 @@ export default example({
     "ex:reeb-su2",
     "def:brings-coordinate-ring",
     "def:categorical-reeb",
+    "ex:weight-decomposition-su2",
   ],
 });

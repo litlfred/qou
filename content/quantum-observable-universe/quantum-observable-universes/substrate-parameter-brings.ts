@@ -10,5 +10,6 @@ export default example({
     "thm:substrate-parameter-exists",
     "ex:brings-surface-concrete",
     "def:substrate-parameter",
+    "rem:skein-mass-relation",
   ],
 });

@@ -55,8 +55,12 @@ $$
 $$
 
 The counit is $\varepsilon(t^j_{m,m'}) = \delta_{mm'}$ and the
-antipode is $S(\alpha) = \bar\beta$, $S(\beta) = -q^{-1}\bar\alpha$,
-$S(\bar\alpha) = -q\beta$, $S(\bar\beta) = \alpha$.
+antipode is $S(\alpha) = \bar\beta$, $S(\beta) = -q^{-1}\beta$,
+$S(\bar\alpha) = -q\bar\alpha$, $S(\bar\beta) = \alpha$.
+(Equivalently, $S(u) = u^{-1}$ where
+$u = \bigl(\begin{smallmatrix} \alpha & \beta \\
+\bar\alpha & \bar\beta \end{smallmatrix}\bigr)$
+and the inverse uses the quantum determinant.)
 
 **Result.** The output of the algorithm is
 $H \cong \mathcal{O}_q(\mathrm{SU}(2))$ — the quantum coordinate

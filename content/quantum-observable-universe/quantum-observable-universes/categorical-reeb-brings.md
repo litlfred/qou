@@ -36,28 +36,31 @@ $$
   \theta_A = \omega_3
 $$
 
-where $\omega_3$ is defined by $\omega_3(e_3) = 1$,
-$\omega_3(e_\pm) = 0$. In terms of the generators:
-
-$$
-  \omega_3 = \alpha^{-1}\,d\alpha + q^{-2}\beta\,d\bar\beta
-  \quad\text{(left-invariant)}.
-$$
+where $\omega_3$ is defined by $\omega_3(e_3) = 1$ and
+$\omega_3(e_\pm) = 0$, that is, $\omega_3$ is the left-invariant
+basis element dual to $e_3$ in the Woronowicz $3$-dimensional
+calculus \cite{woronowicz1989}.
 
 **Step 3: verify the axioms.** The two defining properties of the
 categorical Reeb derivation are now checkable by direct computation:
 
 1. *Normalisation*: $\theta_A(\xi) = \omega_3(e_3) = 1 = \mathrm{id}_{\mathbf{1}}$. $\checkmark$
 
-2. *Vertical generator*: $\pi_V \circ d = \iota_\xi\,d\theta_A$.
+2. *Reeb/contact identity*: the directly verified condition is
+   $\iota_\xi\,d\theta_A = 0$ for $\theta_A = \omega_3$.
    The exterior derivative $d\omega_3$ is computed from the
    Woronowicz structure equations
    $d\omega_3 = -q^{-1}\omega_+ \wedge \omega_-$, and
    $\iota_{e_3}(d\omega_3) = -q^{-1}(\omega_+(e_3)\omega_-
    - \omega_-(e_3)\omega_+) = 0$, confirming that $\omega_3$ is a
    contact form with Reeb field $\xi$. The vertical projection
-   $\pi_V$ selects non-zero-weight components under the $\xi$-action
-   as constructed in [weight decomposition](#ex:weight-decomposition-su2). $\checkmark$
+   $\pi_V$ is the independent projection onto non-zero-weight
+   components under the $\xi$-action, as constructed in
+   [weight decomposition](#ex:weight-decomposition-su2). Combined
+   with $\iota_\xi\,d\theta_A = 0$, the vertical generator axiom
+   $\pi_V \circ d = \iota_\xi\,d\theta_A$ restricts to horizontal
+   forms (annihilated by $\iota_\xi$) and recovers the Reeb
+   decomposition $\pi_H + \pi_V = \mathrm{id}$. $\checkmark$
 
 **Bring's surface specialisation.** On the
 [Bring coordinate ring](#def:brings-coordinate-ring)

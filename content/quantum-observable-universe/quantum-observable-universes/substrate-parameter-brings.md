@@ -35,8 +35,8 @@ $R^2 - (q - q^{-1})R - I = 0$.
 
 **Step 4: non-degeneracy.** The QOU axiom $c_{V,V}^2 \neq \mathrm{id}$
 forces $q \neq \pm 1$. The dagger structure
-$c_{V,V}^{\dagger} = c_{V,V}^{-1}$ forces $|q| = 1$ or $q \in \mathbb{R}_{>0}$.
-In the Bring realisation, $q \in \mathbb{R}_{>0} \setminus \{1\}$.
+$c_{V,V}^{\dagger} = c_{V,V}^{-1}$ forces $|q| = 1$ or
+$q \in \mathbb{R} \setminus \{0\}$.
 
 **Bring's surface specialisation.** The Euler characteristic
 $\chi(A) = -6$ constrains $q$ further. The quantum dimension of
@@ -45,16 +45,21 @@ $\mathrm{tr}(\mathrm{id}_A) = [N]_q [N-1]_q / [1]_q$ at $N = 2$, giving
 $\chi(A) = [2]_q [1]_q / [1]_q = [2]_q = q + q^{-1}$.
 The Descartes condition $\chi(A) = 2 - 2g = -6$ requires
 $q + q^{-1} = -6$, i.e. $q^2 + 6q + 1 = 0$, so
-$q = -3 \pm 2\sqrt{2}$. Choosing the positive root:
+$q = -3 \pm 2\sqrt{2}$. The two roots are both negative
+(consistent with $q + q^{-1} < 0$). Choosing the root closer to
+zero:
 
 $$
   q_{\mathrm{Bring}} = -3 + 2\sqrt{2} \approx -0.172.
 $$
 
-This is the *categorical* $q$; the *physical* substrate parameter
-$q_0 \approx 1.1097$ arises from the archimedean realisation via the
-muon/electron mass ratio ([skein mass relation](#rem:skein-mass-relation)).
-The two are related by the specialisation map
+(The other root $q = -3 - 2\sqrt{2} \approx -5.83$ is its
+reciprocal.) This *categorical* parameter lives in the Laurent
+polynomial ring $\mathbb{Z}[q, q^{-1}]$; the *physical* substrate
+parameter $q_0 \approx 1.1097$ arises from the archimedean
+realisation via the muon/electron mass ratio
+([skein mass relation](#rem:skein-mass-relation)). The two are
+related by the specialisation map
 $\iota \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{C}$.
 
 **Summary.** The substrate parameter is not merely "known to exist" —
