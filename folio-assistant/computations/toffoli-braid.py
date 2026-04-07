@@ -321,8 +321,8 @@ def main():
             "hecke_relation": "σ² = (q − q⁻¹)σ + 1",
             "crossings": {
                 "pp": {"c": "1", "d": "0"},
-                "nn": {"c": "q²", "d": "−q·s"},
-                "mixed": {"c": "(1+q²)/2", "d": "−q·s/2"},
+                "nn": {"c": "1", "d": "−(q − q⁻¹)"},
+                "mixed": {"c": "1", "d": "−(q − q⁻¹)/2"},
             },
             "skein_amplitude": "s = q^{1/2} − q^{-1/2}",
             "markov_parameter": "z = 1/(q^{1/2} + q^{-1/2})",
