@@ -85,6 +85,10 @@ button.toggle.active{background:var(--accent);color:#fff;}
 .spin-tbl td.jint{color:var(--accent4);}
 .spin-tbl tr:hover td{background:rgba(58,144,255,0.06);}
 .spin-tbl .row-label{text-align:left;font-weight:600;color:var(--accent);white-space:nowrap;}
+.spin-legend{font-size:9px;line-height:1.6;color:var(--dim);margin:2px 0 6px;padding:4px 6px;border:1px solid var(--border);border-radius:3px;background:rgba(58,144,255,0.03);}
+.spin-legend b{color:var(--text);}
+.spin-legend .rule{margin:2px 0;display:flex;align-items:center;gap:6px;}
+.spin-legend .swatch{display:inline-block;width:10px;height:10px;border-radius:2px;flex-shrink:0;}
 svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',monospace;}
 .strand-over{stroke:var(--accent);fill:none;stroke-width:3;stroke-linecap:round;}
 .strand-under{stroke:var(--accent2);fill:none;stroke-width:3;stroke-linecap:round;}
@@ -117,6 +121,11 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
     <option value="spin">Nuclear spin J</option>
   </select></label>
   <label>q <input type="range" id="sl-q" min="1.001" max="2.0" step="0.001" value="1.110"> <span class="val" id="v-q">1.110</span></label>
+  <span id="spin-key" style="display:none;font-size:9px;color:var(--dim);margin-left:6px;">
+    <span style="color:var(--dim);">&#9632; J=0 (ee)</span>
+    &nbsp;<span style="color:var(--accent3);">&#9632; half-int (odd A)</span>
+    &nbsp;<span style="color:var(--accent4);">&#9632; integer (oo)</span>
+  </span>
 </div>
 <div id="main-row">
 <div id="left-col">
@@ -128,6 +137,19 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
   <div class="panel-title" style="cursor:pointer;" onclick="toggleSpinTable()">
     Nuclear Spin Table &mdash; J by subshell rows
     <span id="spin-toggle-arrow" style="float:right;">&#9660;</span>
+  </div>
+  <div id="spin-legend" class="spin-legend">
+    <b>Why these spin numbers?</b> &mdash; Three rules determine J:
+    <div class="rule"><span class="swatch" style="background:var(--dim);"></span>
+      <b>Even-even</b> (Z even, N even) &rarr; <b>J&thinsp;=&thinsp;0</b> always &mdash; all nucleon spins pair off.</div>
+    <div class="rule"><span class="swatch" style="background:var(--accent3);"></span>
+      <b>Odd-A</b> &rarr; J is <b>half-integer</b> (1/2, 3/2, 5/2, &hellip;) &mdash; set by the unpaired nucleon&rsquo;s subshell j.</div>
+    <div class="rule"><span class="swatch" style="background:var(--accent4);"></span>
+      <b>Odd-odd</b> (Z odd, N odd) &rarr; J is a <b>nonzero integer</b> &mdash; two unpaired nucleons couple.</div>
+    <div style="margin-top:2px;">
+      <b>QOU basis:</b> each nucleon is a spin-&frac12; knot; the tensor product (&frac12;)<sup>&otimes;A</sup> decomposes into
+      V<sub>J</sub> via q-Clebsch&ndash;Gordan. J<sub>q</sub>&sup2; = [j]<sub>q</sub>&middot;[j+1]<sub>q</sub> is the 𝔾<sub>m</sub> Casimir.
+    </div>
   </div>
   <div id="spin-table-wrap"></div>
 </div>
@@ -715,6 +737,7 @@ function buildTable() {
   const grid = document.getElementById('pt-grid');
   grid.innerHTML = '';
   const mode = document.getElementById('color-mode').value;
+  document.getElementById('spin-key').style.display = mode === 'spin' ? 'inline' : 'none';
 
   // Group elements by period → subshell
   const periodMap = new Map();
