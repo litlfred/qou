@@ -33,7 +33,7 @@ sys.path.insert(0, '.')
 from q_parameter import Q, Q_INV, HA, LN_Q, HBAR_Q
 from experimental_constants import M_E_MEV
 
-Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0 / math.sqrt(Q))
+Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0 / math.sqrt(Q))  # Markov trace normalization: z_M = 1/(q^½ + q^{-½})
 KAPPA = M_E_MEV / 3.0
 
 
@@ -49,8 +49,7 @@ def crossing_coeffs(ti, tj):
       nn → σ⁻¹:            (1, −HA)
       pn/np → ½(σ + σ⁻¹): (1, −HA/2)
 
-    det T(c,d) = c·(c·HA + d)·(−1) + c² = −c²·d − c·d + c²
-    For (1, 0): det = −1.  For (1, −HA): det = HA − (−HA) + 1 → −1. ✓
+    det T(c,d) = (c·HA+d)·d − c² = −1 for all three cases. ✓
     """
     pair = ti + tj
     if pair == 'pp':

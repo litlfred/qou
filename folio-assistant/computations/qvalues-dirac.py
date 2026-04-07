@@ -33,7 +33,7 @@ sys.path.insert(0, '.')
 from q_parameter import Q, Q_INV, HA, LN_Q, HBAR_Q
 from experimental_constants import M_E_MEV
 
-Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0 / math.sqrt(Q))
+Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0 / math.sqrt(Q))  # Markov trace normalization: z_M = 1/(q^½ + q^{-½})
 KAPPA = M_E_MEV / 3.0
 
 
@@ -208,13 +208,12 @@ def Q_dirac(z, n):
         for j in range(i + 1, a - 1):
             int_alt_alt += rel_spreads[i] * rel_spreads[j]
 
-    # Symmetric × antisymmetric cross-term
+    # Symmetric × antisymmetric cross-term (both orderings i<j and j<i)
     int_sym_alt = 0.0
     for i in range(a - 1):
-        for j in range(a - 1):
-            if i == j:
-                continue
-            int_sym_alt += rel_traces[i] * rel_spreads[j]
+        for j in range(i + 1, a - 1):
+            int_sym_alt += (rel_traces[i] * rel_spreads[j]
+                            + rel_traces[j] * rel_spreads[i])
 
     return {
         # Q-values with different energy scales
