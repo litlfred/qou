@@ -227,6 +227,8 @@ export default chapter({
         "shell-closure-normal-form",
         "torus-knot-shell-binding",
         "skein-finiteness-bound",
+        "rj-canonical-inner-product",
+        "rj-inner-product-interpretation",
         "spectral-decomposition-qvalue",
         "shell-construction-rules",
         "electron-shells-hopf",

@@ -57,16 +57,16 @@ crossing each) — they're input slots for the neutron's individual bonds.
 
 ### 6. Transfer matrix Q-values (earlier in session)
 
-Two-stage correction (MAE 4.9%, down from 68.9%):
+Two-stage correction (MAE 4.4%, down from 68.9%):
 
 | Nucleus | Q_pred | Q_exp | Error |
 |---------|--------|-------|-------|
 | ³H | 0.01849 | 0.01861 | -0.6% |
 | ¹⁴C | 0.15300 | 0.15648 | -2.2% |
-| ⁶⁰Co | 0.34116 | 0.31817 | +7.2% |
-| ⁹⁰Sr | 0.56168 | 0.54590 | +2.9% |
-| ¹³⁷Cs | 0.54163 | 0.51400 | +5.4% |
-| ²¹⁰Bi | 1.29175 | 1.16270 | +11.1% |
+| ⁶⁰Co | 0.33856 | 0.31817 | +6.4% |
+| ⁹⁰Sr | 0.55740 | 0.54590 | +2.1% |
+| ¹³⁷Cs | 0.53750 | 0.51400 | +4.6% |
+| ²¹⁰Bi | 1.28191 | 1.16270 | +10.3% |
 
 These are ANSATZ results. The Gröbner--Shirshov computation supersedes them.
 

@@ -1,7 +1,7 @@
 """
 Improved Q-value predictions: systematic exploration of correction strategies.
 
-The base formula (MAE 4.9%) has two known issues:
+The base formula (MAE 4.4%) has two known issues:
 1. Odd-odd pairing deficit (⁶⁰Co, ²¹⁰Bi)
 2. Spectator overcounting for heavy nuclei (A > 28)
 
@@ -18,7 +18,7 @@ KAPPA = M_E_MEV / 3.0   # bare kappa (without ln(q))
 KAPPA_Q = LN_Q * KAPPA   # kappa_q = ln(q) × m_e/3
 Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0/math.sqrt(Q))
 S_SKEIN = math.sqrt(Q) - 1.0/math.sqrt(Q)
-F_DEG2 = 0.5949
+F_DEG2 = 0.5904
 F_PAULI = 0.6382
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
 
@@ -64,7 +64,7 @@ BENCHMARKS = [
 
 
 def base_qvalue(z, n):
-    """Current formula (MAE 4.9%)."""
+    """Current formula (MAE 4.4%)."""
     a = z + n
     types_p = ['p']*z + ['n']*n
     types_d = ['p']*(z+1) + ['n']*(n-1)
@@ -300,7 +300,7 @@ def approach_changed_qweighted(z, n):
 # ══════════════════════════════════════════════════════════════════
 
 APPROACHES = [
-    ("Base (MAE 4.9%)", base_qvalue),
+    ("Base (MAE 4.4%)", base_qvalue),
     ("Skein ratio",     approach_skein_ratio),
     ("Conv chain",      approach_converting_chain),
     ("Changed only",    approach_changed_generators_only),

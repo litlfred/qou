@@ -32,7 +32,7 @@ KAPPA_Q = LN_Q * M_E_MEV / 3.0   # energy scale: ln(q) × m_e/3  [MeV]
 Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0/math.sqrt(Q))  # Markov parameter
 
 # Shell degree correction factors (from H₃(q) irrep analysis)
-F_DEG2 = 0.5949   # degree-2 shell reduction = det(T_nn) / det(T_pp)
+F_DEG2 = 0.5904   # Rosso--Jones weighted: (J₂₉·tr₂₉ + J₃₄·tr₃₄)/(J₂₉+J₃₄)
 F_PAULI = 0.6382   # Pauli factor from 3-strand alternating irrep
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]

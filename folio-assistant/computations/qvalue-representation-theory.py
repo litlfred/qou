@@ -18,7 +18,7 @@ TWO-STAGE CORRECTION (algebraic, no fitting):
 
       Q = Q_qwt × F_deg × F_Pauli
 
-    F_deg = ½(tr(T_{2,9}·Δ) + tr(T_{3,4}·Δ)) ≈ 0.5949
+    F_deg = (J₂₉·tr(T_{2,9}·Δ) + J₃₄·tr(T_{3,4}·Δ))/(J₂₉+J₃₄) ≈ 0.5904
     F_Pauli = |tr_alt(Δ)|/|tr(Δ)| ≈ 0.6382 (magic shells only)
 
 All quantities derived from q alone.
@@ -42,7 +42,7 @@ MAGIC = [2, 8, 20, 28, 50, 82, 126]
 NEXT_SHELL_SIZE = 58  # 184 - 126, predicted next magic number gap
 SHELL_DEGREE = {1: 1, 2: 1, 3: 1, 4: 1, 5: 2, 6: 2, 7: 2}
 # Precomputed from H₃(q) Markov traces (see weight-space-correct.py):
-F_DEG2 = 0.5949    # ½(tr(T_{2,9}·Δ) + tr(T_{3,4}·Δ))
+F_DEG2 = 0.5904    # Rosso--Jones weighted: (J₂₉·tr₂₉ + J₃₄·tr₃₄)/(J₂₉+J₃₄)
 F_PAULI = 0.6382   # |tr_alt(Δ)|/|tr(Δ)|
 
 def neutron_shell(N):

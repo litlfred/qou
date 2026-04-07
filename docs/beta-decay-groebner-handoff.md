@@ -113,7 +113,7 @@ where:
 2. **Quark-level scaling** — tritium (10 strands) reaches 4.6M
    terms without quotient, ~19K even with quotient. Need I₁-I₇
    to reduce BEFORE multiplication, not after.
-3. **Transfer matrix ansatz** — gave MAE 4.9% with ad hoc
+3. **Transfer matrix ansatz** — gave MAE 4.4% with Rosso--Jones weighted
    corrections, but is superseded by Gröbner--Shirshov computation.
 4. **Floating point** — all computations should use exact q.
 

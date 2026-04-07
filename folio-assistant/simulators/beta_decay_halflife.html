@@ -177,8 +177,8 @@ function skeinPoly(Z, N, q) {
 // ── Knot operator correction (spectral-decomposition-qvalue) ────
 // Shell table: [start, end, size, degree]
 // degree 1 → F = 1 (bare coefficients already capture it)
-// degree 2, partial → F = 0.5949 (Schur-Weyl irrep average)
-// degree 2, full (N at magic) → F = 0.5949 × 0.6382 = 0.3797
+// degree 2, partial → F = 0.5904 (Rosso--Jones weighted average)
+// degree 2, full (N at magic) → F = 0.5904 × 0.6382 = 0.3768
 const SHELLS = [
   [0,   2,  2,  1],  // Shell 1: T₂,₃
   [2,   8,  6,  1],  // Shell 2: T₂,₅
@@ -188,8 +188,8 @@ const SHELLS = [
   [50, 82, 32,  2],  // Shell 6: T₃,₄
   [82,126, 44,  2],  // Shell 7: T₂,₉
 ];
-const F_DEG2_PARTIAL = 0.5949;
-const F_DEG2_FULL = 0.3797;
+const F_DEG2_PARTIAL = 0.5904;
+const F_DEG2_FULL = 0.3768;
 
 function getShellDegree(X) {
   for (const [start, end, , deg] of SHELLS) {
@@ -203,8 +203,8 @@ function isMagic(X) { return MAGIC.indexOf(X) >= 0; }
 function knotOperatorF(N_converting) {
   // The converting neutron's shell determines the correction.
   // degree-1 shells: F = 1 (already in bare Q)
-  // degree-2 shells, partial occupancy: F = 0.5949
-  // degree-2 shells, fully occupied (N at magic): F = 0.3797
+  // degree-2 shells, partial occupancy: F = 0.5904
+  // degree-2 shells, fully occupied (N at magic): F = 0.3768
   const deg = getShellDegree(N_converting);
   if (deg === 1) return {F: 1, label: 'deg-1', deg: 1};
   if (isMagic(N_converting))

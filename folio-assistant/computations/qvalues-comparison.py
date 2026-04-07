@@ -120,7 +120,7 @@ def compute_dirac(z, n):
 # ── Q_from_q (q-weighted log_q, from qvalues-from-q.py) ─────────
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
-F_DEG2 = 0.5949
+F_DEG2 = 0.5904
 
 def shell_degree(n_neutrons):
     for i, m in enumerate(MAGIC):

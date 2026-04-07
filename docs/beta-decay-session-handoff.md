@@ -6,15 +6,16 @@ Engine: hecke-engine 0.8.0
 
 ## What was accomplished
 
-### Q-values: MAE 4.9% (zero fitting, reproducible)
-- ³H −0.6%, ¹⁴C −2.2%, ⁹⁰Sr +2.9% (all < 5%)
-- ⁶⁰Co +7.2% (odd-odd pairing deficit)
-- ¹³⁷Cs +5.4%, ²¹⁰Bi +11.1% (spectator overcounting in heavy nuclei)
+### Q-values: MAE 4.4% (zero fitting, reproducible)
+- ³H −0.6%, ¹⁴C −2.2%, ⁹⁰Sr +2.1% (all < 5%)
+- ⁶⁰Co +6.4% (odd-odd pairing deficit)
+- ¹³⁷Cs +4.6%, ²¹⁰Bi +10.3% (spectator overcounting in heavy nuclei)
 - Formula: q-weighted log_q sum × κ_q × F_shell(deg) × F_Pauli(magic)
 - Shell traces verified: float = symbolic exactly
+- F_deg2 = 0.5904 (Rosso--Jones weighted, fully categorical)
 - **Note (session 5)**: previous handoff claimed MAE 4.2% via hybrid
   converting-generator formula, but this cannot be reproduced from the
-  committed code. The reproducible baseline is MAE 4.9%.
+  committed code. The reproducible baseline is MAE 4.4%.
 
 ### Optimal NF theorem: PROVED
 - All A≤8: n_terms = n_strands after I₈+I₉
@@ -86,7 +87,7 @@ Engine: hecke-engine 0.8.0
 - **I₁₀ pairing analysis: DONE** (session 5). Key discoveries:
   - Spectator overcounting hypothesis DISPROVED (unchanged generators
     already contribute zero — luc = 0).
-  - F_deg2 (0.5949) ≈ R_pp = V̂(T²_pp)/V̂(T_pp)² (0.5987) —
+  - F_deg2 (0.5904, Rosso--Jones weighted) ≈ R_pp = V̂(T²_pp)/V̂(T_pp)² (0.5987) —
     the shell factor IS the Hecke pairing ratio, derived from q.
   - Odd-odd → even-even transitions systematically overpredicted
     (+6.6% to +8.5% in Skein ratio formula).

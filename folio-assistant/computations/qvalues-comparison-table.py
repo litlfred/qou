@@ -11,7 +11,7 @@ Shows:
 
 Two conventions shown:
   A. Representation-theory formula (q²,-qS crossings + shell corrections)
-     → MAE ≈ 4.9%, the handoff baseline
+     → MAE ≈ 4.4%, the handoff baseline
   B. Hecke-inverse formula (1,-HA crossings + shell corrections)
      → MAE ≈ 70%, correct Hecke algebra but needs further physics
 
@@ -50,7 +50,7 @@ KAPPA_Q = LN_Q * KAPPA              # κ_q = ln(q) × m_e / 3
 Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0 / math.sqrt(Q))
 
 # Shell correction factors from H₃(q) representation theory
-F_DEG2  = 0.5949   # degree-2 shell reduction = det ratio from (2,9)+(3,4) torus knots
+F_DEG2  = 0.5904   # Rosso--Jones weighted: (J₂₉·tr₂₉ + J₃₄·tr₃₄)/(J₂₉+J₃₄)
 F_PAULI = 0.6382   # alternating irrep suppression for magic-number shells
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
@@ -347,9 +347,9 @@ if __name__ == "__main__":
     print("  not from input parameter uncertainty. δq₀/q₀ ≈ 10⁻⁹ is negligible.")
     print()
     print("  F_shell derivation:")
-    print("    F_deg2  = 0.5949 = ½(tr(T_{2,9}·Δ) + tr(T_{3,4}·Δ)) / tr(Δ)")
-    print("      → degree-2 torus knot suppression for shells 5+ (N > 28)")
-    print("      → from the H₃(q) Markov trace of the beta-decay operator")
+    print("    F_deg2  = 0.5904 = (J₂₉·tr(T_{2,9}·Δ) + J₃₄·tr(T_{3,4}·Δ)) / ((J₂₉+J₃₄)·tr(Δ))")
+    print("      → Rosso--Jones weighted degree-2 torus knot suppression for shells 5+ (N > 28)")
+    print("      → quantum-dimension weighted average over μ₂ (T_{3,4}) and μ₃ (T_{2,9}) branches")
     print()
     print("    F_Pauli = 0.6382 = |tr_alt(Δ)| / |tr(Δ)|")
     print("      → alternating-irrep projection for filled shells (magic N)")

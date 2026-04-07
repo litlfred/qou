@@ -24,6 +24,7 @@ export default corollary({
     validation: "not_checked",
   },
   uses: [
+    "prop:rj-canonical-inner-product",
     "prop:cohomological-embedding",
     "prop:beta-decay-transfer-matrix",
     "prop:shell-closure-normal-form",
