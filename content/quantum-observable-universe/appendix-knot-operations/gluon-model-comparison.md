@@ -3,6 +3,13 @@ beyond the Borromean braid $B_3 = (\sigma_0\sigma_1^{-1})^3$?
 Five models were tested
 (witness: `nucleon-with-gluons-nf.witness.json`).
 
+**Definition recall** ([Borromean baryon](#def:borromean-baryon)).
+$B = \mathcal{B}_3(K_{0_1}, K_{0_1}, K_{0_1}) \bowtie \mathcal{L}_H$.
+The three constituents are **unknots** (not trefoils); the Hopf
+link $\mathcal{L}_H$ binds them.  Up/down flavour is the
+**crossing orientation** of each unknot within $\mathcal{B}_3$:
+$\mathfrak{u} = \sigma$ (positive), $\mathfrak{d} = \sigma^{-1}$ (negative).
+
 **Model definitions.**
 
 | Model | Formula | Description |
@@ -14,7 +21,9 @@ Five models were tested
 | E | $B_3 \cdot L_+ L_- \cdot \mathrm{cx}$ | Hopf pair (both orientations) |
 
 where $\mathrm{cx} = \mathrm{cx}(q_0,q_1) \cdot \mathrm{cx}(q_0,q_2) \cdot \mathrm{cx}(q_1,q_2)$
-are the pairwise typed crossings.
+are the pairwise typed crossings ($\sigma$ for $\mathfrak{u}\mathfrak{u}$,
+$\sigma^{-1}$ for $\mathfrak{d}\mathfrak{d}$,
+$\tfrac{1}{2}(\sigma + \sigma^{-1})$ for $\mathfrak{u}\mathfrak{d}$).
 
 **Table K.3: Nucleon NF comparison across gluon models.**
 
@@ -32,9 +41,18 @@ are the pairwise typed crossings.
 (residual $< 10^{-6}$ MeV).  All other models overshoot
 $|\Delta|$, giving $|Q| > 0.87$ MeV.
 
-**Interpretation.**
-The Borromean braid $B_3$ already contains Hopf link content
-in its normal form:
+**Trefoil vs unknot test** (witness:
+`trefoil-quark-nucleon-nf.witness.json`).  Using full trefoil
+braid words ($\sigma_0\sigma_1\sigma_0$ for $\mathfrak{u}$,
+$\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ for $\mathfrak{d}$)
+gives $\Delta \times E_0 = -2.51$ MeV — overshooting by
+$3\times$.  This confirms that quarks interact as single-crossing
+unknots, not as full trefoils, consistent with Definition 4.27.1.
+
+**Interpretation: $\mathcal{B}_3 \bowtie \mathcal{L}_H$ is
+already encoded in $B_3$.**
+
+The Borromean braid $B_3$ has NF:
 
 $$
   B_3 = +0.998\,\nu - 0.010\,H^0 + 0.009\,H^1
@@ -42,21 +60,33 @@ $$
 $$
 
 The $L_+ \approx +0.046$ and $L_- \approx -0.044$ terms ARE
-the gluon field.  They arise automatically from the Borromean
-topology — no separate gluon factor is needed.
+the Hopf link $\mathcal{L}_H$ from Definition 4.27.1.  The
+$\bowtie$ in $B = \mathcal{B}_3 \bowtie \mathcal{L}_H$ is not
+an additional multiplicative factor — it describes the Hopf-link
+content that the Borromean braid algebra automatically generates.
 
 Adding explicit Hopf links (Models B--E) **double-counts** the
 gluon contribution, producing $\Delta$ values that are too large.
 The Borromean confinement braid $B_3 = (\sigma_0\sigma_1^{-1})^3$
-is the **complete and sufficient** encoding of the gluon field
-for nucleon NF computations.
+is the **complete and sufficient** encoding of the baryon:
+confinement ($\mathcal{B}_3$) and gluon binding ($\mathcal{L}_H$)
+in a single algebraic object.
+
+Their near-cancellation ($+0.046 - 0.044 = +0.002$) reflects
+the color neutrality of the baryon: the net gluon content is
+close to zero, consistent with a color singlet.
+
+The $\nu$ term $\approx +0.998$ shows that $B_3$ is
+perturbatively close to the identity — the Borromean
+confinement is a small correction to free quarks, with
+net$(B_3) \approx 1$.
 
 **Proton and neutron NF** (Model A, confirmed):
 
 $$
-  \mathfrak{p} = B_3 \cdot \mathrm{cx}(\mathfrak{u},\mathfrak{u})
-  \cdot \mathrm{cx}(\mathfrak{u},\mathfrak{d})
-  \cdot \mathrm{cx}(\mathfrak{u},\mathfrak{d})
+  \mathfrak{p} = B_3 \cdot \sigma(\mathfrak{u},\mathfrak{u})
+  \cdot \tfrac{1}{2}(\sigma + \sigma^{-1})(\mathfrak{u},\mathfrak{d})
+  \cdot \tfrac{1}{2}(\sigma + \sigma^{-1})(\mathfrak{u},\mathfrak{d})
 $$
 
 $$
