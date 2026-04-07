@@ -113,7 +113,7 @@ Hasse–Weil bound confines them to the critical line
 $|\alpha_i| = q^{1/2}$.  The categorical machinery provides a
 natural framing for classical questions in analytic number theory —
 including the Riemann hypothesis, the Birch and Swinnerton-Dyer
-conjecture, and the Collatz problem — through the Kummer tower
+conjecture \cite{birch1965}, and the Collatz problem — through the Kummer tower
 associated to the Frobenius–Hopf algebra.
 
 [Chapter 7](#chap:fluid-dynamics) explores the correlation between

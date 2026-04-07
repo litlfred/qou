@@ -72,7 +72,7 @@ For parameters $c(\theta)$ on the main cardioid of the Mandelbrot
 set (rotation number $\theta$, multiplier $\lambda = e^{2\pi i \theta}$), the Julia set is a quasicircle and the classical
 Hausdorff dimension $d_H$ satisfies:
 
-1. **Ruelle perturbative** (valid near $|c| \ll 1$):
+1. **Ruelle perturbative** [ruelle1982] (valid near $|c| \ll 1$):
 
    $$
      d_H \;=\; 1 + \frac{|c(\theta)|^2}{4 \ln 2} + O(|c|^4).
@@ -104,15 +104,15 @@ self-consistency).
 **There is no known closed form** for the classical $d_H(J_c)$ as
 a function of the main-cardioid parameter $c$.  The Hausdorff
 dimension is defined implicitly as the unique zero of the
-Bowen–Ruelle pressure function $P(-t\,\log|f_c'|) = 0$
-(Bowen 1979), which involves an infinite-dimensional transfer
+Bowen--Ruelle pressure function $P(-t\,\log|f_c'|) = 0$
+[bowen1979], which involves an infinite-dimensional transfer
 operator.  The function $c \mapsto d_H(J_c)$ is:
 
-- **Real-analytic** on the main cardioid interior (McMullen 1998).
+- **Real-analytic** on the main cardioid interior [mcmullen1998].
 - **Strictly $> 1$** for all $c \neq 0$ (the Julia set is a
   quasicircle but not a smooth curve).
 - **Approaching $2$** at the cardioid boundary for certain sequences
-  of parameters (Shishikura 1998).
+  of parameters [shishikura1998].
 
 **Convergence from local $q$.**
 The downward iteration $q_{n+1} = q_n - \hbar_{q_n} = (q_n^2 - q_n + 1)/q_n$ flows $q$ toward the classical limit

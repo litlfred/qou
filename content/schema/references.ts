@@ -318,6 +318,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2002]] },
     "collection-title": "Ast\u00e9risque",
     "collection-number": 278,
+    URL: "https://www.numdam.org/item/AST_2002__278__R1_0/",
   }),
 
   // ── Lusztig 1993 ──────────────────────────────────────────────
@@ -457,6 +458,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2008]] },
     note: "arXiv:0801.3233",
+    URL: "https://arxiv.org/abs/0801.3233",
   }),
 
   // ── Yekutieli 2015 ────────────────────────────────────────────
@@ -506,6 +508,7 @@ export const references: CSLData[] = [
     volume: "50",
     page: "367-403",
     publisher: "American Mathematical Society",
+    URL: "https://arxiv.org/abs/0905.0731",
   }),
 
   // ── Chari and Pressley 1994 ───────────────────────────────────
@@ -520,6 +523,7 @@ export const references: CSLData[] = [
     publisher: "Cambridge University Press",
     issued: { "date-parts": [[1994]] },
     ISBN: "978-0-521-55884-6",
+    URL: "https://doi.org/10.1017/CBO9780511622670",
   }),
 
   // ── Chari and Pressley 1994 (alias) ────────────────────────────
@@ -534,6 +538,7 @@ export const references: CSLData[] = [
     publisher: "Cambridge University Press",
     issued: { "date-parts": [[1994]] },
     ISBN: "978-0-521-55884-6",
+    URL: "https://doi.org/10.1017/CBO9780511622670",
   }),
 
   // ── Tannaka 1939 ──────────────────────────────────────────────
@@ -548,6 +553,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1939]] },
     volume: "45",
     page: "1-12",
+    DOI: "10.2748/tmj/1178225951",
   }),
 
   // ── Deligne 1990 ──────────────────────────────────────────────
@@ -835,6 +841,7 @@ export const references: CSLData[] = [
     volume: "12",
     page: "423-491",
     note: "arXiv:math/0307200",
+    URL: "https://arxiv.org/abs/math/0307200",
   }),
 
   // ── Heisenberg 1958 ───────────────────────────────────────────
@@ -847,6 +854,7 @@ export const references: CSLData[] = [
     ],
     publisher: "Harper & Row",
     issued: { "date-parts": [[1958]] },
+    URL: "https://archive.org/details/physicsphilosoph00heis",
   }),
 
   // ── BEC vortex experiments ──────────────────────────────────────
@@ -1351,6 +1359,7 @@ export const references: CSLData[] = [
     publisher: "Princeton University",
     note: "Lecture notes",
     issued: { "date-parts": [[1978]] },
+    URL: "https://www.msri.org/publications/books/gt3m/",
   }),
 
   // ── Bring 1786 ────────────────────────────────────────────────
@@ -1361,6 +1370,7 @@ export const references: CSLData[] = [
     author: [{ family: "Bring", given: "Erland Samuel" }],
     "container-title": "Promotionschrift, Lund",
     issued: { "date-parts": [[1786]] },
+    URL: "https://en.wikipedia.org/wiki/Bring_radical",
   }),
 
   // ── Deligne 2007 ──────────────────────────────────────────────
@@ -1387,6 +1397,7 @@ export const references: CSLData[] = [
     "publisher-place": "Singapore",
     ISBN: "978-981-02-0344-3",
     issued: { "date-parts": [[1991]] },
+    DOI: "10.1142/1116",
   }),
 
   // ── Kawauchi 1996 ─────────────────────────────────────────────
@@ -1475,6 +1486,7 @@ export const references: CSLData[] = [
     publisher: "Hermann",
     "publisher-place": "Paris",
     issued: { "date-parts": [[1948]] },
+    URL: "https://archive.org/details/surlescourbesa00weil",
   }),
 
   // ── von Koch 1901 (RH ↔ PNT error) ─────────────────────────
@@ -1591,6 +1603,7 @@ export const references: CSLData[] = [
     "publisher-place": "London",
     issued: { "date-parts": [[2010]] },
     ISBN: "978-0-224-08036-1",
+    URL: "https://en.wikipedia.org/wiki/Cycles_of_Time",
   }),
 
   // ── Birch & Swinnerton-Dyer 1965 ─────────────────────────────
@@ -1607,6 +1620,7 @@ export const references: CSLData[] = [
     volume: "218",
     page: "79-108",
     DOI: "10.1515/crll.1965.218.79",
+    URL: "https://doi.org/10.1515/crll.1965.218.79",
   }),
 
   // ── Wiles 1995 ────────────────────────────────────────────────
@@ -1621,6 +1635,7 @@ export const references: CSLData[] = [
     issue: "3",
     page: "443-551",
     DOI: "10.2307/2118559",
+    URL: "https://doi.org/10.2307/2118559",
   }),
 
   // ── Tate 1974 ─────────────────────────────────────────────────
@@ -1634,6 +1649,7 @@ export const references: CSLData[] = [
     volume: "23",
     page: "179-206",
     DOI: "10.1007/BF01389745",
+    URL: "https://doi.org/10.1007/BF01389745",
   }),
 
   // ── Collatz ─────────────────────────────────────────────────────
@@ -1644,6 +1660,7 @@ export const references: CSLData[] = [
     author: [{ family: "Collatz", given: "Lothar" }],
     "container-title": "Journal f\u00fcr die reine und angewandte Mathematik",
     issued: { "date-parts": [[1937]] },
+    URL: "https://en.wikipedia.org/wiki/Collatz_conjecture",
   }),
 
   ref({
@@ -1654,6 +1671,7 @@ export const references: CSLData[] = [
     publisher: "American Mathematical Society",
     issued: { "date-parts": [[2010]] },
     ISBN: "978-0-8218-4940-8",
+    DOI: "10.1090/mbk/078",
   }),
 
   // ── Frenkel 2007 ────────────────────────────────────────────────
@@ -1748,18 +1766,6 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1088/1674-1137/abddb0",
   }),
 
-  // ── Fred 2025 (Quantum Observable Universe) ───────────────────
-  ref({
-    id: "litlfred2025",
-    type: "manuscript",
-    title: "Quantum Observable Universe",
-    author: [
-      { family: "Fred", given: "Litl" },
-    ],
-    issued: { "date-parts": [[2025]] },
-    note: "Manuscript in preparation",
-  }),
-
   // ── Iwahori 1964 (Hecke ring structure) ───────────────────────
   ref({
     id: "iwahori1964",
@@ -1843,6 +1849,76 @@ export const references: CSLData[] = [
     page: "1951-1953",
     DOI: "10.1103/PhysRevLett.53.1951",
     URL: "https://doi.org/10.1103/PhysRevLett.53.1951",
+  }),
+
+  // ── Moffatt 1969 (helicity in fluid dynamics) ─────────────────
+  ref({
+    id: "moffatt1969",
+    type: "article-journal",
+    title: "The degree of knottedness of tangled vortex lines",
+    author: [
+      { family: "Moffatt", given: "H. Keith" },
+    ],
+    "container-title": "Journal of Fluid Mechanics",
+    issued: { "date-parts": [[1969]] },
+    volume: "35",
+    issue: "1",
+    page: "117-129",
+    DOI: "10.1017/S0022112069000991",
+    URL: "https://doi.org/10.1017/S0022112069000991",
+  }),
+
+  // ── Woronowicz 1987 (compact matrix pseudogroups) ────────────
+  ref({
+    id: "woronowicz1987",
+    type: "article-journal",
+    title: "Compact matrix pseudogroups",
+    author: [
+      { family: "Woronowicz", given: "Stanis\u0142aw Lech" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1987]] },
+    volume: "111",
+    issue: "4",
+    page: "613-665",
+    DOI: "10.1007/BF01219077",
+    URL: "https://doi.org/10.1007/BF01219077",
+  }),
+
+  // ── Beale–Kato–Majda 1984 (vorticity blow-up criterion) ──────
+  ref({
+    id: "beale-kato-majda1984",
+    type: "article-journal",
+    title: "Remarks on the breakdown of smooth solutions for the 3-D Euler equations",
+    author: [
+      { family: "Beale", given: "J. Thomas" },
+      { family: "Kato", given: "Tosio" },
+      { family: "Majda", given: "Andrew" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1984]] },
+    volume: "94",
+    issue: "1",
+    page: "61-66",
+    DOI: "10.1007/BF01212349",
+    URL: "https://doi.org/10.1007/BF01212349",
+  }),
+
+  // ── O'Hara 1991 (energy of knots) ────────────────────────────
+  ref({
+    id: "ohara1991",
+    type: "article-journal",
+    title: "Energy of a knot",
+    author: [
+      { family: "O'Hara", given: "Jun" },
+    ],
+    "container-title": "Topology",
+    issued: { "date-parts": [[1991]] },
+    volume: "30",
+    issue: "2",
+    page: "241-247",
+    DOI: "10.1016/0040-9383(91)90010-2",
+    URL: "https://doi.org/10.1016/0040-9383(91)90010-2",
   }),
 ];
 

@@ -20,20 +20,41 @@
  * - \cite{key1, key2, key3}
  * - \cite[Thm.~1.7]{key}
  * - \cite[\S3]{key}
+ * - [key] bare bracket notation (common in .md prose)
+ *
+ * The bracket notation is validated against a known set of reference IDs
+ * (if provided) to avoid false positives from markdown links, anchors, etc.
  *
  * Returns deduplicated, sorted array of citation keys.
  */
-export function extractCitations(md: string): string[] {
+export function extractCitations(md: string, knownRefIds?: Set<string>): string[] {
   const keys = new Set<string>();
-  // Match \cite with optional [...] argument, then {keys}
-  const pattern = /\\cite(?:\[[^\]]*\])?\{([^}]+)\}/g;
+
+  // 1. Match \cite with optional [...] argument, then {keys}
+  const citePattern = /\\cite(?:\[[^\]]*\])?\{([^}]+)\}/g;
   let match;
-  while ((match = pattern.exec(md)) !== null) {
+  while ((match = citePattern.exec(md)) !== null) {
     for (const key of match[1].split(",")) {
       const trimmed = key.trim();
       if (trimmed) keys.add(trimmed);
     }
   }
+
+  // 2. Match bare bracket citations [refkey] — authorYYYY pattern
+  //    Only match if not part of a markdown link [text](url) or
+  //    an anchor [text](#id) or image ![alt](src).
+  //    Pattern: [lowercase-letters + digits ending in 4-digit year]
+  const bracketPattern = /(?<![!\w])\[([a-z][a-z0-9-]*\d{4}[a-z]*)\](?!\()/g;
+  while ((match = bracketPattern.exec(md)) !== null) {
+    const key = match[1];
+    // If we have a known ref list, only accept keys that exist in it
+    if (knownRefIds) {
+      if (knownRefIds.has(key)) keys.add(key);
+    } else {
+      keys.add(key);
+    }
+  }
+
   return [...keys].sort();
 }
 

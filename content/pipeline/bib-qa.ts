@@ -131,7 +131,7 @@ function collectCitations(): Map<string, string[]> {
     ...scanFilesRecursive(join(REPO_ROOT, "lean"), ".lean"),
     ...scanFilesRecursive(join(REPO_ROOT, "content"), ".lean"),
   ];
-  const REF_PAT = /--\s*Ref:\s*\[([^\]]+)\]/g;
+  const REF_PAT = /(?:--\s*)?Ref:\s*\[([^\]]+)\]/g;
   for (const file of leanFiles) {
     const content = readFileSync(file, "utf-8");
     let m;
@@ -150,9 +150,15 @@ function collectCitations(): Map<string, string[]> {
     ...[join(REPO_ROOT, "main.tex"), join(REPO_ROOT, "blueprint/src/content.tex")].filter(existsSync),
   ];
   const CITE_PAT = /\\cite(?:\[[^\]]*\])?\{([^}]+)\}/g;
+  // Bare bracket citation [authorYYYY] in .md prose
+  const BRACKET_CITE_PAT = /(?<![!\w])\[([a-z][a-z0-9-]*\d{4}[a-z]*)\](?!\()/g;
+  const allRefIds = new Set(references.map((r) => r.id));
+
   for (const file of texFiles) {
     const content = readFileSync(file, "utf-8");
     let m;
+
+    // \cite{key} patterns
     const pat = new RegExp(CITE_PAT.source, CITE_PAT.flags);
     while ((m = pat.exec(content)) !== null) {
       for (const key of m[1].split(",").map((k: string) => k.trim())) {
@@ -161,6 +167,21 @@ function collectCitations(): Map<string, string[]> {
         const rel = file.replace(REPO_ROOT + "/", "");
         if (!citedIn.get(key)!.includes(rel)) {
           citedIn.get(key)!.push(rel);
+        }
+      }
+    }
+
+    // [refkey] bare bracket patterns (only in .md, validated against known refs)
+    if (file.endsWith(".md")) {
+      const bracketPat = new RegExp(BRACKET_CITE_PAT.source, BRACKET_CITE_PAT.flags);
+      while ((m = bracketPat.exec(content)) !== null) {
+        const key = m[1];
+        if (allRefIds.has(key)) {
+          if (!citedIn.has(key)) citedIn.set(key, []);
+          const rel = file.replace(REPO_ROOT + "/", "");
+          if (!citedIn.get(key)!.includes(rel)) {
+            citedIn.get(key)!.push(rel);
+          }
         }
       }
     }
