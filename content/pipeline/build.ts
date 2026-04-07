@@ -131,13 +131,15 @@ export async function buildPaper(
   for (const [idx, meta] of chapterMeta) {
     if (!meta.tabLabel) lastNumberedIdx = idx;
   }
-  for (const [idx, meta] of chapterMeta) {
-    if (meta.tabLabel && idx > lastNumberedIdx) {
-      appendixChapters.set(idx, {
-        slug: meta.slug,
-        title: meta.title,
-        tabLabel: meta.tabLabel,
-      });
+  if (lastNumberedIdx > -1) {
+    for (const [idx, meta] of chapterMeta) {
+      if (meta.tabLabel && idx > lastNumberedIdx) {
+        appendixChapters.set(idx, {
+          slug: meta.slug,
+          title: meta.title,
+          tabLabel: meta.tabLabel,
+        });
+      }
     }
   }
 
