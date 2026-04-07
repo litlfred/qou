@@ -7,7 +7,8 @@ export default remark({
   uses: [
     "prop:double-slit-massive-pattern",
     "def:observation",
+    "rem:knot-basis-color-content",
   ],
-  tags: ["double-slit", "scattering", "band-width", "observation", "anomaly"],
+  tags: ["double-slit", "scattering", "band-width", "observation", "anomaly", "color-content"],
   simulator: { ref: "sim:double-slit-analytical" },
 });

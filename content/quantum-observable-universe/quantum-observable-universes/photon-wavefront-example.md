@@ -1,8 +1,16 @@
 We trace the wavefront propagation equation
 $\mathcal{D}_\nabla\psi = 0$
 ([wavefront propagation](#rem:wavefront-propagation)) through the
-concrete geometry of a double-slit experiment, with the photon
-($K = \varnothing$, the empty knot) as the test particle.
+concrete geometry of a double-slit experiment, with the photon as the
+test particle.  In the QOU, a photon is not the bare identity
+$\mathbf{1}$ but a **photon with color content**
+$\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+([color content](#rem:knot-basis-color-content)), where the Hecke
+generators encode polarisation on the exceptional divisor
+$\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$.  The identity
+component ($K = \varnothing$, the empty knot) is purely horizontal
+([boson](#def:fermion-boson-decomposition): vertical component $\alpha_V = 0$); the color
+dressing $\varphi_i\,\sigma_i$ adds polarisation-dependent Reeb phase.
 
 **Setup.**  A photon source emits a state
 $\psi \colon \mathbf{1} \to A$ with $\psi \in \mathcal{H}_{q,H}^k$
@@ -84,3 +92,22 @@ carbon) have different dominant knot types and hence different
 $\mathrm{Vol}(K_{\mathrm{mat}})$, producing *material-dependent
 fringe shifts* --- a signature absent in standard quantum mechanics,
 testable with current technology.
+
+**Color-content correction.**  When the photon carries non-trivial
+color content $(\varphi_0, \varphi_1)$, each polarisation mode
+$\sigma_i$ acquires its own Hecke eigenvalue ($+q$ or $-q^{-1}$)
+weighting the torsion phase $\tau(y)$.  The corrected torsion becomes
+
+$$
+  \tau^{(\mathrm{color})}(y)
+  \;=\;
+  \tau(y)
+  \;+\;
+  (\varphi_0\,q - \varphi_1\,q^{-1})\,
+  \hbar_q \cdot \mathrm{Vol}(K_{\mathrm{mat}}) \cdot \eta(y)^2 \cdot k w,
+$$
+
+which reduces to $\tau(y)$ for bare photons ($\varphi_0 = \varphi_1 = 0$).
+For linearly polarised light the correction is first order in $\hbar_q$
+and depends on the polarisation angle, providing a measurable signature
+distinct from classical birefringence.

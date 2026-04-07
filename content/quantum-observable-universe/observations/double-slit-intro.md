@@ -11,9 +11,15 @@ $\Delta_q\,\alpha = 0$
 $q$-Laplacian, whose cross-coupling terms mix spatial and Reeb degrees
 of freedom and produce interference.  A photon --- background flux on
 the exceptional divisor
-([exceptional divisor](#def:exceptional-divisor)) --- propagates via
-the chiral sector coordinates, with phase governed by the twist
-$q\phi$ rather than by the $q$-Laplacian.
+([exceptional divisor](#def:exceptional-divisor)) --- is not a bare
+identity $\mathbf{1}$ but a **photon with color content**
+$\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+([color content](#rem:knot-basis-color-content)), where the Hecke
+generators $\sigma_0, \sigma_1$ encode horizontal and vertical
+polarisation.  Its phase is governed by the color twist
+$q\phi$ rather than by the $q$-Laplacian, and the color weights
+$(\varphi_0, \varphi_1)$ introduce a polarisation-dependent correction
+to the interference envelope that is absent in the standard treatment.
 
 The two modes predict *different envelope shapes* at the detector
 screen: a $q$-corrected sinc${}^2$ for massive particles, and a
