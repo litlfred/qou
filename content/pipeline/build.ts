@@ -24,6 +24,14 @@ export interface BuildResult {
   chapters: Map<number, string>;
   /** Chapter slug names derived from directory names (e.g. "quantum-observable-universe"). */
   chapterSlugs: Map<number, string>;
+  /**
+   * Standalone appendix chapters — excluded from the main paper PDF and
+   * compiled as separate PDFs. Detected as back-matter chapters: those
+   * with a `tabLabel` that appear after all numbered (non-tabLabel) chapters
+   * in the manifest. The Introduction (tabLabel "I", typically first) is
+   * never treated as an appendix.
+   */
+  appendixChapters: Map<number, { slug: string; title: string; tabLabel: string }>;
   /** Validation issues encountered. */
   issues: { level: string; message: string }[];
   /** Whether all rendered LaTeX passes AST validation. */
@@ -54,6 +62,7 @@ export async function buildPaper(
   // 2. Resolve chapters and load all blocks
   const resolvedChapters: { chapter: Chapter; manifestIdx: number }[] = [];
   const chapterSlugs = new Map<number, string>();
+  const chapterMeta = new Map<number, { slug: string; title: string; tabLabel?: string }>();
   const blocks = new Map<string, { block: Block; mdContent: string; sourceDir?: string }>();
 
   for (let chIdx = 0; chIdx < paper.chapters.length; chIdx++) {
@@ -75,6 +84,7 @@ export async function buildPaper(
       const slug = chRef.dir;
       // Use manifest index as key to preserve author-defined chapter order
       chapterSlugs.set(chIdx, slug);
+      chapterMeta.set(chIdx, { slug, title: chapter.title, tabLabel: chapter.tabLabel });
 
       // Load blocks from the chapter directory
       for (const sec of chapter.sections) {
@@ -110,6 +120,29 @@ export async function buildPaper(
     }
   }
 
+  // 2b. Detect standalone appendix chapters.
+  // Back-matter chapters are tabLabel'd chapters that appear AFTER all
+  // numbered (non-tabLabel) chapters in the manifest. The Introduction
+  // (first chapter, tabLabel "I") is never an appendix. Chapters like
+  // Preface or Acknowledgments that precede numbered content would also
+  // be kept in the main paper by this logic.
+  const appendixChapters = new Map<number, { slug: string; title: string; tabLabel: string }>();
+  let lastNumberedIdx = -1;
+  for (const [idx, meta] of chapterMeta) {
+    if (!meta.tabLabel) lastNumberedIdx = idx;
+  }
+  if (lastNumberedIdx > -1) {
+    for (const [idx, meta] of chapterMeta) {
+      if (meta.tabLabel && idx > lastNumberedIdx) {
+        appendixChapters.set(idx, {
+          slug: meta.slug,
+          title: meta.title,
+          tabLabel: meta.tabLabel,
+        });
+      }
+    }
+  }
+
   // 3. Render chapters
   const chapters = new Map<number, string>();
   let astValid = true;
@@ -128,7 +161,7 @@ export async function buildPaper(
     }
   }
 
-  return { chapters, chapterSlugs, issues, astValid };
+  return { chapters, chapterSlugs, appendixChapters, issues, astValid };
 }
 
 // ── CLI entry point ──────────────────────────────────────────────
@@ -187,13 +220,30 @@ if (import.meta.main) {
     const paperMod = await import(paperPath);
     const paperData: Paper = paperMod.default;
 
+    // Exclude standalone appendix chapters from the main paper PDF
+    const excludeChapterIndices = new Set(result.appendixChapters.keys());
+
     const mainTex = generateMainTex(paperData, {
       preamblePath,
       chaptersDir,
       chapterSlugs: result.chapterSlugs,
+      excludeChapterIndices,
     });
     writeFileSync(mainOutPath, mainTex);
     console.log(`\n  → main.tex: ${mainOutPath}`);
+
+    // Generate standalone .tex files for each appendix chapter
+    const { generateStandaloneAppendixTex } = await import("./generate-main-tex");
+    const mainOutDir = dirname(mainOutPath);
+    for (const [_idx, info] of result.appendixChapters) {
+      const appendixTex = generateStandaloneAppendixTex(paperData, info.slug, info.title, {
+        preamblePath,
+        chaptersDir,
+      });
+      const appendixPath = join(mainOutDir, `standalone-${info.slug}.tex`);
+      writeFileSync(appendixPath, appendixTex);
+      console.log(`  → standalone: ${appendixPath}`);
+    }
   }
 
   console.log(`\nAST validation: ${result.astValid ? "✓ pass" : "✗ fail"}`);
