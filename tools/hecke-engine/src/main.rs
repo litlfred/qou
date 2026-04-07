@@ -1,4 +1,4 @@
-//! Fast Gröbner reduction engine for H_n(q) with Pauli witness.
+//! Fast Gröbner--Shirshov reduction engine for H_n(q) with Pauli witness.
 //!
 //! Optimizations:
 //! 1. Reduced/unreduced separation with priority queue

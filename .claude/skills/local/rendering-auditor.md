@@ -336,7 +336,7 @@ that pass compilation but produce wrong visual output.
 ### Per-block report
 
 ```
-## Block: def:quantum-universe (ch1-quantum-observable-universe)
+## Block: def:quantum-universe (quantum-universes)
 
 ### Pass 1: Syntax ✓
 No issues.

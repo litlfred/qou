@@ -1,171 +1,167 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TransferMatrix
-import Mathlib.Tactic.Ring
+import QOU.Descartes.HeckeRep
+import Mathlib.GroupTheory.Perm.Basic
+import Mathlib.GroupTheory.Perm.Fin
+import Mathlib.Tactic
 
 /-!
 # Young Symmetric Idempotent for H_n(q)
 
-The Young symmetric idempotent `e_{(n)}` projects onto the 1-dimensional
-symmetric representation of the Iwahori--Hecke algebra `H_n(q)`.
+The Young symmetric idempotent `e_{(n)}` is the element of the
+Iwahori–Hecke algebra H_n(q) that projects onto the symmetric
+(trivial) representation.
+
+## Main definitions
+
+- `CoxeterLength` — the Coxeter length ℓ(w) of a permutation w ∈ S_n
+- `S3Perms` — explicit enumeration of S₃ (6 elements)
+- `permToHeckeWord` — embed a permutation into H_n(q) via a reduced word
+- `poincarePolynomial` — the Poincaré polynomial P_n(q²)
+- `youngSymIdempotent` — the Young symmetric idempotent `e_{(n)}`
 
 ## Key properties
 
-1. **Idempotent**: `e_{(n)} · e_{(n)} = e_{(n)}`
-2. **Symmetric eigenvalue**: `e_{(n)} · T_w = q^{ℓ(w)} · e_{(n)}` for all `w ∈ S_n`
-3. **1-dimensional image**: the image of `e_{(n)}` is the symmetric representation
-4. **Character extraction**: `e_{(n)} · B · e_{(n)} = χ_{(n)}(B) · e_{(n)}`
-   where `χ_{(n)}` is the symmetric character
-
-The symmetric character evaluates each generator at `q`:
-`χ_{(n)}(σ_i) = q` for all `i`.
-
-## Construction
-
-```
-e_{(n)} = (1/P_n(q⁻²)) · Σ_{w ∈ S_n} q^{ℓ(w)} · T_w
-```
-
-where `P_n(q⁻²) = Σ_{w ∈ S_n} q^{2ℓ(w)} = [n]_q! · (q²)^{n(n-1)/2}...`
-is the Poincaré polynomial of `S_n`.
+The Young symmetric idempotent satisfies:
+1. `e_{(n)}² = P_n(q²) · e_{(n)}` (quasi-idempotent)
+2. `σ_i · e_{(n)} = q · e_{(n)}` (eigenvalue property for symmetric rep)
+3. `e_{(n)} · σ_i = q · e_{(n)}` (right eigenvalue property)
 
 ## References
 
-- [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-- [mathas1999] A. Mathas, *Iwahori–Hecke Algebras and Schur Algebras*, AMS 1999.
+- [murphy1992] G. Murphy, On the representation theory of the symmetric
+  groups and associated Hecke algebras.
+- [mathas1999] A. Mathas, Iwahori-Hecke Algebras and Schur Algebras
+  of the Symmetric Group.
 -/
 
-namespace QOU.Descartes
+namespace QOU.YoungIdempotent
 
-/-! ## §1  Poincaré polynomial of S_n -/
+open QOU.Descartes Matrix
 
-/-- The Poincaré polynomial of `S_n` evaluated at `q²`:
-    `P_n(q²) = Σ_{w ∈ S_n} q^{2ℓ(w)} = ∏_{k=1}^{n} [k]_{q²}`
-    where `[k]_{q²} = 1 + q² + q⁴ + ⋯ + q^{2(k-1)}`.
+/-! ## §1  Coxeter length (inversion count) -/
 
-    For `n = 1`: `P₁ = 1`
-    For `n = 2`: `P₂ = 1 + q²`
-    For `n = 3`: `P₃ = (1 + q²)(1 + q² + q⁴) = 1 + 2q² + 2q⁴ + q⁶` -/
+/-- The Coxeter length of a permutation: the number of inversions.
+    `ℓ(w) = #{(i, j) : i < j ∧ w(i) > w(j)}`. -/
+def coxeterLength {n : ℕ} (w : Equiv.Perm (Fin n)) : ℕ :=
+  ((Finset.univ.product Finset.univ).filter fun ij =>
+    ij.1 < ij.2 ∧ w ij.1 > w ij.2).card
+
+/-- The identity permutation has length 0. -/
+theorem coxeterLength_one {n : ℕ} : coxeterLength (1 : Equiv.Perm (Fin n)) = 0 := by
+  simp [coxeterLength, Finset.filter_eq_empty]
+  intro a b _ hab
+  exact not_lt.mpr (le_of_lt hab)
+
+/-! ## §2  S₃ explicit enumeration -/
+
+/-- The 6 elements of S₃ as permutations of Fin 3, with their
+    Coxeter lengths and reduced words.
+
+    | Element | Cycle notation | Length | Reduced word |
+    |---------|---------------|--------|--------------|
+    | e       | ()            | 0      | []           |
+    | s₀      | (0 1)         | 1      | [0]          |
+    | s₁      | (1 2)         | 1      | [1]          |
+    | s₀s₁    | (0 1 2)       | 2      | [0, 1]       |
+    | s₁s₀    | (0 2 1)       | 2      | [1, 0]       |
+    | s₀s₁s₀  | (0 2)         | 3      | [0, 1, 0]    |
+-/
+def S3_reduced_words : List (List (Fin 2) × ℕ) :=
+  [([],                 0),
+   ([0],                1),
+   ([1],                1),
+   ([0, 1],             2),
+   ([1, 0],             2),
+   ([0, 1, 0],          3)]
+
+/-- The number of elements in S₃. -/
+theorem S3_card : S3_reduced_words.length = 6 := by decide
+
+/-! ## §3  Poincaré polynomial -/
+
+/-- The q²-integer `[n]_{q²} = 1 + q² + q⁴ + … + q^{2(n−1)}`
+    as an element of `ℤ[t, t⁻¹]` where `q = t²`.
+
+    This is the sum form — no division required, so it lives in
+    the Laurent polynomial ring directly.
+
+    `[n]_{q²} = Σ_{k=0}^{n-1} q^{2k} = Σ_{k=0}^{n-1} t^{4k}` -/
+noncomputable def qSqInt (n : ℕ) : R_t :=
+  (Finset.range n).sum fun k =>
+    (q_from_t * q_from_t) ^ k   -- q^{2k} = (q²)^k = t^{4k}
+
+/-- The Poincaré polynomial `P_n(q²) = ∑_{w ∈ S_n} q^{2ℓ(w)}`.
+
+    This is the sum of `q^{2ℓ(w)}` over all permutations in S_n.
+    It equals the q²-factorial: `P_n(q²) = [n]_{q²}!`.
+
+    Recursion: `P_n = P_{n-1} · [n]_{q²}` where
+    `[n]_{q²} = 1 + q² + q⁴ + … + q^{2(n-1)}`.
+
+    For small n:
+    - P₁ = 1
+    - P₂ = 1 + q² = [2]_{q²}
+    - P₃ = (1 + q²)(1 + q² + q⁴) = [2]_{q²} · [3]_{q²}
+         = 1 + 2q² + 2q⁴ + q⁶ -/
 noncomputable def poincarePolynomial : ℕ → R_t
   | 0 => 1
-  | n + 1 =>
-    poincarePolynomial n *
-    ((Finset.range (n + 1)).sum fun k =>
-      (q_from_t * q_from_t) ^ k)  -- Σ_{k=0}^{n} (q²)^k = [n+1]_{q²}
+  | n + 1 => poincarePolynomial n * qSqInt (n + 1)
 
-/-- `P₁ = 1`. -/
-theorem poincare_one : poincarePolynomial 1 = 1 := by
-  unfold poincarePolynomial
-  simp
+/-! ## §4  Young symmetric idempotent (for representations) -/
 
-/-- `P₂ = 1 + q²`. -/
-theorem poincare_two :
-    poincarePolynomial 2 = 1 + q_from_t * q_from_t := by
-  unfold poincarePolynomial
-  simp [Finset.sum_range_succ, Finset.sum_range_succ]
-  ring
+/-- The Young symmetric idempotent evaluated in a representation.
 
-/-! ## §2  The Young symmetric idempotent -/
+    For a representation ρ : H_n(q) → End(V), the image of the
+    Young symmetric idempotent is:
 
-/-- The **Young symmetric idempotent** `e_{(n)}` for `H_n(q)`.
+    `ρ(e_{(n)}) = ∑_{w ∈ S_n} q^{ℓ(w)} · ρ(T_w)`
 
-    This is the central idempotent projecting onto the 1-dimensional
-    symmetric representation.  In the symmetric representation, every
-    generator `σ_i` acts as multiplication by `q`.
+    where `T_w` is the Hecke algebra element for permutation w
+    (using any reduced word).
 
-    **Key property**: for any element `B ∈ H_n(q)`,
-    `e_{(n)} · B · e_{(n)} = χ_{(n)}(B) · e_{(n)}`
-    where `χ_{(n)}(B)` is the character of `B` in the symmetric
-    representation.
+    For H₃(q), this is explicitly:
+    `e_{(3)} = 1 + q·T₁ + q·T₂ + q²·T₁T₂ + q²·T₂T₁ + q³·T₁T₂T₁` -/
+noncomputable def youngSymIdempotent3 (ρ : HeckeRep 3 d) :
+    Matrix (Fin d) (Fin d) R_t :=
+  let q := q_from_t
+  let T₀ := ρ.gen 0
+  let T₁ := ρ.gen 1
+  -- e_{(3)} = I + q·T₀ + q·T₁ + q²·T₀T₁ + q²·T₁T₀ + q³·T₀T₁T₀
+  1 + q • T₀ + q • T₁ +
+  (q * q) • (T₀ * T₁) + (q * q) • (T₁ * T₀) +
+  (q * q * q) • (T₀ * T₁ * T₀)
 
-    Construction: `e_{(n)} = (1/P_n(q⁻²)) · Σ_{w ∈ S_n} q^{ℓ(w)} · T_w`
+/-- General Young symmetric idempotent for H₂(q):
+    `e_{(2)} = I + q · T₀`. -/
+noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
+    Matrix (Fin d) (Fin d) R_t :=
+  1 + q_from_t • ρ.gen 0
 
-    We represent this abstractly as a structure carrying the key
-    properties, since the full construction requires explicit
-    permutation group machinery. -/
--- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-structure YoungSymmetricIdempotent (n : ℕ) where
-  /-- The idempotent as a 2×2 matrix (in the standard representation).
-      In the symmetric rep, this is the rank-1 projector onto the
-      symmetric eigenspace. -/
-  matrix : TMatrix
-  /-- **Idempotent property**: `e² = e`. -/
-  idempotent : matrix * matrix = matrix
-  /-- **Symmetric eigenvalue**: the symmetric trace of `e` equals 1.
-      (The symmetric character maps `e_{(n)} ↦ 1`.) -/
-  sym_trace_one : tracedVolCleared matrix = poincarePolynomial n
+/-- The Young symmetric idempotent satisfies the eigenvalue property:
+    `σ_i · e_{(n)} = q · e_{(n)}` in the Hecke algebra.
 
-/-- The **symmetric eigenvalue property**: for any crossing matrix `M`,
-    `e · M · e = λ_sym(M) · e` where `λ_sym(M) = tracedVolCleared M`
-    is the symmetric eigenvalue.
+    In a representation:
+    `ρ(σ₀) · ρ(e_{(3)}) = q · ρ(e_{(3)})`
 
-    This is the core property used in ordering independence:
-    the symmetric idempotent collapses any element to a scalar
-    multiple of itself (since the symmetric rep is 1-dimensional). -/
--- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-theorem young_idempotent_character_extraction
-    {n : ℕ} (e : YoungSymmetricIdempotent n)
-    (M : TMatrix) :
-    -- In the 1D symmetric representation:
-    -- e · M · e = χ_{(n)}(M) · e
-    -- The trace of the result is χ_{(n)}(M) · tr(e)
-    tracedVolCleared (e.matrix * M * e.matrix) =
-    tracedVolCleared M * tracedVolCleared (e.matrix * e.matrix) := by
-  -- The traced volume is multiplicative on the symmetric eigenspace.
-  -- This follows from e being a rank-1 projector:
-  -- e · M · e = (some scalar) · e, so tr(e·M·e) = scalar · tr(e)
-  -- and scalar = tr_sym(M) / tr_sym(e) up to normalisation.
-  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-  sorry -- requires explicit matrix computation for rank-1 projectors
+    This is the key property used for ordering independence:
+    the Skein polynomial symmetrized by e_{(n)} depends only on
+    the multiset of crossing weights, not their ordering.
 
-/-- The symmetric eigenvalue of a crossing matrix `T(c, d)`.
+    Proof strategy: expand σ₀ · e_{(3)} using the Hecke and braid
+    relations to show each term contributes correctly.
 
-    In the symmetric representation, each generator `σ_i` acts as
-    multiplication by `q`.  So the crossing `(c · σ + d)` acts as
-    `c · q + d` in the symmetric channel.
+    For each w ∈ S₃, σ₀ · T_w is either:
+    - T_{s₀w} with ℓ(s₀w) = ℓ(w) + 1 (length increases), or
+    - q · T_w + (q−q⁻¹) · T_{s₀w} with ℓ(s₀w) = ℓ(w) − 1 (Hecke reduction)
 
-    Over `ℤ[t, t⁻¹]` (where `q = t²`):
-    `λ_sym(T(c,d)) = c · t² + d` -/
-noncomputable def symEigenvalue (c d : R_t) : R_t :=
-  c * q_from_t + d
+    Summing over S₃ with q^{ℓ(w)} weights produces q · e_{(3)}. -/
+-- Ref: [mathas1999] Theorem 3.2
+-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
+    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ := by
+  -- The proof requires expanding all 6 terms and applying
+  -- the Hecke relation at each step where ℓ(s_i · w) < ℓ(w).
+  -- This is a finite computation with 6 cases.
+  -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
+  sorry -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
 
-/-- The alternating eigenvalue of a crossing matrix `T(c, d)`.
-
-    In the alternating representation, each generator `σ_i` acts as
-    multiplication by `−q⁻¹`.  So the crossing `(c · σ + d)` acts as
-    `c · (−q⁻¹) + d = d − c · q⁻¹`.
-
-    Over `ℤ[t, t⁻¹]` (where `q = t²`):
-    `λ_alt(T(c,d)) = d − c · t⁻²` -/
-noncomputable def altEigenvalue (c d : R_t) : R_t :=
-  d - c * q_inv_from_t
-
-/-- The symmetric eigenvalue of the pp crossing `T(1, 0)` is `q = t²`. -/
-theorem symEigenvalue_pp : symEigenvalue 1 0 = q_from_t := by
-  unfold symEigenvalue; ring
-
-/-- The alternating eigenvalue of the pp crossing `T(1, 0)` is `−q⁻¹ = −t⁻²`. -/
-theorem altEigenvalue_pp : altEigenvalue 1 0 = -q_inv_from_t := by
-  unfold altEigenvalue; ring
-
-/-- **Key lemma**: the symmetric eigenvalue of a product of crossings
-    is the product of symmetric eigenvalues.
-
-    This is because the symmetric representation is 1-dimensional,
-    so it is a ring homomorphism: `χ_{(n)}(AB) = χ_{(n)}(A) · χ_{(n)}(B)`. -/
--- Ref: [mathas1999]
-theorem symEigenvalue_mul (c₁ d₁ c₂ d₂ : R_t) :
-    symEigenvalue (c₁ * c₂ * HA_t + c₁ * d₂ + d₁ * c₂) (c₁ * c₂ + d₁ * d₂) =
-    symEigenvalue c₁ d₁ * symEigenvalue c₂ d₂ := by
-  unfold symEigenvalue HA_t q_from_t q_inv_from_t
-  ring
-
-/-- **Key lemma**: the alternating eigenvalue of a product is the
-    product of alternating eigenvalues (1D representation = homomorphism). -/
--- Ref: [mathas1999]
-theorem altEigenvalue_mul (c₁ d₁ c₂ d₂ : R_t) :
-    altEigenvalue (c₁ * c₂ * HA_t + c₁ * d₂ + d₁ * c₂) (c₁ * c₂ + d₁ * d₂) =
-    altEigenvalue c₁ d₁ * altEigenvalue c₂ d₂ := by
-  unfold altEigenvalue HA_t q_from_t q_inv_from_t
-  ring
-
-end QOU.Descartes
+end QOU.YoungIdempotent

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 Inductive atom construction at the quark level with full
-Gröbner witness — knot particle tables with signed coefficients.
+Gröbner--Shirshov witness — knot particle tables with signed coefficients.
 
 Builds atoms one particle at a time from vacuum:
   1. Start with identity (vacuum)
   2. Add quarks/electrons one at a time
-  3. Gröbner-reduce at each step
+  3. Gröbner--Shirshov-reduce at each step
   4. Track all inputs/outputs with knot identification
   5. Write witness JSON with commit SHA
 

@@ -490,6 +490,32 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       break;
     }
 
+    case "table": {
+      // Standalone table block.  Rendered as a LaTeX table float
+      // (unless content uses longtable, which cannot be nested in a float).
+      // The .md content may contain a markdown table (pipe-delimited) or raw TeX.
+      if (block.label) lines.push(`% table: ${block.label}`);
+      const caption = block.caption || ("title" in block && block.title) || "";
+      // Use block.tex if provided, otherwise render from .md
+      const tex = block.tex || markdownToLatex(mdContent);
+      const isLongtable = tex.includes("\\begin{longtable");
+      if (caption && !isLongtable) {
+        lines.push("\\begin{table}[htbp]");
+        lines.push("  \\centering");
+        lines.push(`  \\caption{${escapeLatex(String(caption))}}`);
+        if (block.label) lines.push(`  \\label{${block.label}}`);
+      }
+      lines.push(tex);
+      if (caption && isLongtable) {
+        // For longtable, caption and label go outside the float
+        if (block.label) lines.push(`\\label{${block.label}}`);
+      }
+      if (caption && !isLongtable) {
+        lines.push("\\end{table}");
+      }
+      break;
+    }
+
     default: {
       // Environment blocks (definition, theorem, etc.)
       const envName = ENV_NAMES[block.kind];
@@ -670,7 +696,8 @@ export function renderChapter(
 ): string {
   const lines: string[] = [];
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
-  const star = chapter.number == null ? "*" : "";
+  // Chapters with tabLabel are unnumbered (\chapter*); all others are auto-numbered by LaTeX.
+  const star = chapter.tabLabel != null ? "*" : "";
   lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${label}`);
 
   // Collect all citation keys used in this chapter

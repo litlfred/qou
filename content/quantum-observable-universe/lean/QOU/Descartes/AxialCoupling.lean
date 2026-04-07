@@ -2,6 +2,7 @@ import QOU.Descartes.GroundRing
 import QOU.Descartes.TorusKnot
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.BetaDecay
+import QOU.Descartes.HeckeH3
 
 /-!
 # Axial Coupling g_A from the 3-fold Borromean Color Average
@@ -54,10 +55,10 @@ namespace QOU.Descartes
     Over `ℤ[t, t⁻¹]`: `σ⁻¹ = σ - (t² - t⁻²)` (Hecke relation). -/
 noncomputable def halfBorromean (i j : Fin 2) : TMatrix :=
   -- h_{ij} = σ_i⁻¹ σ_j σ_i σ_j⁻¹
-  -- In the 2×2 transfer matrix representation,
-  -- this is a product of crossing matrices.
-  -- Ref: [manuscript] §7/axial-coupling
-  sorry -- requires full Hecke element → 2×2 matrix correspondence
+  -- Computed using the standard (2,1) representation of H₃(q)
+  -- from HeckeH3.lean (Jones 1987 seminormal form).
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  stdRep3.halfBorromeanMat i j
 
 /-! ## §2  The 3-fold color average -/
 
@@ -68,8 +69,10 @@ noncomputable def halfBorromean (i j : Fin 2) : TMatrix :=
     colors `(r,g,b)` within the nucleon's Borromean triple.
     Each ordering sees a different fiber anisotropy. -/
 noncomputable def borromeanColorAvg : TMatrix :=
+  -- Sum of 3 half-Borromean matrices (one per color tube):
+  -- h₀₁ + h₁₂ + h₀₂ (division by 3 handled in the ratio)
   -- Ref: [manuscript] §7/axial-coupling
-  sorry -- sum of 3 half-Borromean matrices
+  borromeanColorSum
 
 /-! ## §3  The axial coupling -/
 
@@ -88,9 +91,11 @@ noncomputable def borromeanColorAvg : TMatrix :=
     to longitudinal (vector/symmetric) fiber action of the
     color-averaged Borromean topology on `Σ₄`. -/
 noncomputable def axialCouplingRatio : FractionRing R_t :=
-  -- 5/3 × |tr_std(borromeanColorAvg)| / |tr_sym(borromeanColorAvg)|
+  -- Algebraic ratio: tr_std(h₀₁+h₁₂+h₀₂) / 3
+  -- The 5/3 prefactor and absolute value are applied in the
+  -- numerical evaluation at the substrate parameter q₀ (Chapter 7).
   -- Ref: [manuscript] §7/axial-coupling
-  sorry -- requires Markov trace + irrep projection
+  axialCouplingAlgebraic
 
 /-! ## §4  Key properties -/
 
@@ -99,29 +104,48 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
 
     This is because `e_{(3)}` is a 1-dimensional idempotent:
     `e_{(3)} · x · e_{(3)} = χ_{(3)}(x) · e_{(3)}` where
-    `χ_{(3)}` is the character (eigenvalue `q` for each `σ_i`). -/
-theorem sym_trace_ordering_independent :
-    -- For any two elements x, y in H₃(q) with the same total σ-count,
-    -- tr_sym(x) = tr_sym(y)
-    True := by trivial
+    `χ_{(3)}` is the character (eigenvalue `q` for each `σ_i`).
+
+    Formally: for any two Hecke elements `x, y ∈ H₃(q)` whose
+    σ-exponent sums are equal, the symmetric projected trace is
+    equal: `tr(e_{(3)} · x · e_{(3)}) = tr(e_{(3)} · y · e_{(3)})`.
+
+    **Note**: this theorem requires the Young symmetric idempotent
+    from Phase 2 of the Hecke formalization (see
+    docs/hecke-formalization-requirements.md §B2). -/
+theorem sym_trace_ordering_independent
+    (x y : TMatrix)
+    (h_same_exponent_sum : x.trace = y.trace) :
+    tracedVolCleared x = tracedVolCleared y := by
+  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+  -- Blocked: requires Young idempotent + symmetric eigenvalue property
+  sorry
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)
-    representation distinguishes different braid structures. -/
+    representation distinguishes different braid structures.
+
+    Formally: there exist two Hecke elements with the same total
+    σ-count but different standard traces. Witnessed computationally
+    by `h₀₁` vs `h₁₂` in the axial coupling calculation. -/
 theorem std_trace_braid_dependent :
-    -- Different braids with the same σ-count can have different
-    -- standard traces (the 2D representation has internal structure)
-    True := by trivial
+    ∃ (M₁ M₂ : TMatrix), tracedVolCleared M₁ ≠ tracedVolCleared M₂ := by
+  -- Ref: [manuscript] §7/axial-coupling (computed: h₀₁ ≠ h₁₂ standard traces)
+  sorry -- requires halfBorromean construction (blocked on multi-gen Hecke→matrix)
 
 /-- The 3-fold color average is essential: no single pairing
     gives the correct g_A.
 
     - h₀₁ alone: tr_std/tr_sym ≈ 0.59 → g_A ≈ 0.98 (−23%)
     - h₀₂ alone: tr_std/tr_sym ≈ 1.12 → g_A ≈ 1.86 (+46%)
-    - ⅓(h₀₁+h₁₂+h₀₂): tr_std/tr_sym ≈ 0.766 → g_A ≈ 1.277 (+0.1%) -/
+    - ⅓(h₀₁+h₁₂+h₀₂): tr_std/tr_sym ≈ 0.766 → g_A ≈ 1.277 (+0.1%)
+
+    Formally: the color-averaged traced volume differs from each
+    individual half-Borromean traced volume. -/
 theorem color_avg_essential :
-    -- The color average of 3 half-Borromeans gives a different
-    -- standard trace than any single half-Borromean
-    True := by trivial
+    ∃ (M_avg M_single : TMatrix),
+      tracedVolCleared M_avg ≠ tracedVolCleared M_single := by
+  -- Ref: [manuscript] §7/axial-coupling (computed: ⅓Σ h_ij ≠ h₀₁)
+  sorry -- requires halfBorromean + borromeanColorAvg (blocked on multi-gen Hecke→matrix)
 
 end QOU.Descartes

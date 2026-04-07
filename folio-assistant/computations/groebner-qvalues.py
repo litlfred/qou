@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Q-values directly from Gröbner basis reduction energy.
+Q-values directly from Gröbner--Shirshov basis reduction energy.
 
 The mass of a hadron IS the Gröbner-Shirshov energy:
   E_h = (total Hecke reduction cost to reach normal form)
@@ -118,7 +118,7 @@ for _ in range(3):
     new_a = a_e * 1.0 * HA + a_e * 0.0 + b_e * 1.0
     new_b = a_e * 1.0 + b_e * 0.0
     a_e, b_e = new_a, new_b
-print(f"Electron (trefoil) Gröbner energy: {E_e:.10f}")
+print(f"Electron (trefoil) Gröbner--Shirshov energy: {E_e:.10f}")
 print(f"  = {E_e:.6f} Hecke units = {E_e * mu_0:.6f} MeV")
 print()
 
@@ -132,7 +132,7 @@ for p, n, name, Q_exp, Q_err in nuclei:
 
     delta_E = E_par - E_dau
 
-    # Q from Gröbner energy: Q = ΔE × μ₀
+    # Q from Gröbner--Shirshov energy: Q = ΔE × μ₀
     # (The energy is already in units of Skein crossings × ha)
     # Converting: E_hecke is in units of Σ|ac|×ha.
     # To MeV: multiply by μ₀ (MeV per Skein unit)

@@ -1,4 +1,4 @@
-# Beta Decay Gröbner Computation: Session Handoff
+# Beta Decay Gröbner--Shirshov Computation: Session Handoff
 
 Branch: `claude/resolve-beta-decay-error-XOfPK`
 (continued from `claude/review-beta-decay-error-kPCbe`)
@@ -6,7 +6,7 @@ Date: 2026-04-04 (session 2 + 3)
 
 ## Goals
 
-1. **Optimal Gröbner basis**: achieve n_terms ≈ n_strands for each
+1. **Optimal Gröbner--Shirshov basis**: achieve n_terms ≈ n_strands for each
    atom's NF, prove minimality via Hilbert basis theorem
 2. **Beta decay at degree ≥ 1**: show the interaction operates in
    the coral fibre (degree ≥ 1, not visible at degree 0)
@@ -16,13 +16,13 @@ Date: 2026-04-04 (session 2 + 3)
 ### Deuterium 828 → 276 → I₁-I₄ → I₅-I₇ explained
 
 Starting point: deuterium at quark level (7 strands) has 828 NF
-terms in the raw Gröbner normal form.
+terms in the raw Gröbner--Shirshov normal form.
 
 **Step 1: 828 → 276 families.** Group terms by generator content
 (same set of σ_i, different braid ordering). Each group has one
 DOMINANT word plus YB-reorderings. 276 content classes, each
 with 1-5 members. The dominant word IS the irreducible relation;
-the others are derived via Yang-Baxter.
+the others are derived via Yang--Baxter.
 
 **Step 2: 276 → 4 quotient ideals.** The 276 families share
 universal structural operations:
@@ -30,7 +30,7 @@ universal structural operations:
 | Ideal | Operation | What it does |
 |-------|-----------|-------------|
 | I₁ | σ₀-extension | Prepend u_r–u_g crossing. Universal ratio +0.315 |
-| I₂ | YB reordering | Yang-Baxter σ_iσ_{i+1}σ_i ↔ σ_{i+1}σ_iσ_{i+1}. Ratio +0.168 |
+| I₂ | YB reordering | Yang--Baxter σ_iσ_{i+1}σ_i ↔ σ_{i+1}σ_iσ_{i+1}. Ratio +0.168 |
 | I₃ | B₃ Borromean prefix | Prepend σ₀·σ₁·σ₀ (proton core). Ratio +0.166/+0.534 |
 | I₄ | 𝔫₁ neutron tail | Append σ₃·σ₄·σ₃·σ₅ (electron-Borromean-neutron). 66 families, 78% weight |
 
@@ -77,7 +77,7 @@ Beta decay Q-value = exact polynomial difference in q.
 ### Key Results
 
 - **g_A = |α_proton/α_neutron| = 1.255** (PDG: 1.275, −1.6%)
-  from quark-level Gröbner decomposition
+  from quark-level Gröbner--Shirshov decomposition
 - **Three-part NF structure**: every atom = inputs(−) + mediator(+, degree≥1) + observable(+, degree 0)
 - **He-4 palindromic**: {1, 3, 4, 3, 1} = Poincaré polynomial of S₄
 - **Protium = T_{2,1}** (single Hopf crossing, degree 0, the simplest atom)
@@ -98,12 +98,12 @@ where:
 
 ## What WORKED
 
-1. **Symbolic Gröbner engine** (`hecke_symbolic.py`) — exact in q
+1. **Symbolic Gröbner--Shirshov engine** (`hecke_symbolic.py`) — exact in q
 2. **Quotient ideals** I₁-I₇ — group structural operations
 3. **Three-part NF** — inputs/mediator/observable decomposition
 4. **ℵ₁ⁿ completeness** — protium component counting
 5. **Palindromic detection** — He-4 shell closure verified
-6. **g_A from amplitude ratio** — 1.255 from Gröbner, no fitting
+6. **g_A from amplitude ratio** — 1.255 from Gröbner--Shirshov, no fitting
 
 ## What DID NOT Work
 
@@ -114,7 +114,7 @@ where:
    terms without quotient, ~19K even with quotient. Need I₁-I₇
    to reduce BEFORE multiplication, not after.
 3. **Transfer matrix ansatz** — gave MAE 4.9% with ad hoc
-   corrections, but is superseded by Gröbner computation.
+   corrections, but is superseded by Gröbner--Shirshov computation.
 4. **Floating point** — all computations should use exact q.
 
 ## Session 2 Results (2026-04-04)
@@ -182,7 +182,7 @@ The 102 remaining terms need I₁-I₇ applied AS GROUP OPERATIONS:
 
 ## Next Steps
 
-### GOAL 1: Optimal Gröbner basis — ACHIEVED ★
+### GOAL 1: Optimal Gröbner--Shirshov basis — ACHIEVED ★
 
 n_terms = n_strands for ALL nuclei through A=8 (verified computationally)
 and conjectured for all A with N ≥ Z−1 (valley of stability).
@@ -199,7 +199,7 @@ and conjectured for all A with N ≥ Z−1 (valley of stability).
 
 **Formal proof (Lean OptimalNF.lean):**
   Layer 1 (combinatorics): PROVED — prefix-closed → collapse
-  Layer 2 (Hecke algebra): d≠0 → prefix-closed (in progress)
+  Layer 2 (Iwahori--Hecke algebra): d≠0 → prefix-closed (in progress)
   Layer 3 (TM correspondence): NF coeff = V̂_i (in progress)
 
 **Valley of stability boundary:**
@@ -246,8 +246,8 @@ fibre operations for beta decay.
 
 | File | Purpose |
 |------|---------|
-| `hecke_symbolic.py` | Symbolic Gröbner engine (exact in q) |
-| `hecke_division.py` | Float Gröbner engine (with quotient support) |
+| `hecke_symbolic.py` | Symbolic Gröbner--Shirshov engine (exact in q) |
+| `hecke_division.py` | Float Gröbner--Shirshov engine (with quotient support) |
 | `protium-witness.py` | Protium NF with named notation |
 | `protium-deep-trace.py` | Deep trace of coefficient origins |
 | `groebner-beta-decay.py` | Free neutron decay + particle decomposition |
@@ -266,7 +266,7 @@ fibre operations for beta decay.
 
 | Skill | Update |
 |-------|--------|
-| `scientific-accuracy` | Gröbner basis requirement, quotient ideals, Q algebraic in q, degree vs length |
+| `scientific-accuracy` | Gröbner--Shirshov basis requirement, quotient ideals, Q algebraic in q, degree vs length |
 | `editor` | Commit early commit often |
 | `lean-witness-audit` | Witness quality checklist (notation, completeness, Lean compat) |
 
@@ -277,10 +277,10 @@ fibre operations for beta decay.
 | q | Substrate parameter (symbolic, NOT q₀) |
 | q₀ | Numerical value 1.10998 (ONLY for comparison to observation) |
 | degree | Genus of knot = (r−1)(s−1)/2 for T_{r,s} |
-| length | Word length in Hecke algebra (NOT degree) |
+| length | Word length in Iwahori--Hecke algebra (NOT degree) |
 | ℵ(Z,N) | Atom with Z protons, N neutrons |
 | 𝒩(Z,N) | Nucleus |
-| 𝒩̄(X) | Gröbner normal form of X |
+| 𝒩̄(X) | Gröbner--Shirshov normal form of X |
 | ℵ₁, ℵ₂ | Formal atom variables in quotient algebra |
 | ℵ₁^∨ | **Dual atom** — the input slot (negative coefficient) |
 | ℵ₁^(n) | Completeness level n/N (n of N Schubert cells occupied) |

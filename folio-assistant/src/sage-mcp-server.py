@@ -3,7 +3,7 @@
 SageMath MCP server for algebraic computations.
 
 Provides tools for:
-- Hecke algebra computations (IwahoriHeckeAlgebra)
+- Iwahori--Hecke algebra computations (IwahoriHeckeAlgebra)
 - Braid group operations
 - Jones polynomial evaluation
 - Markov trace (exact, symbolic over Q(q))
@@ -49,7 +49,7 @@ def sage_eval(code: str, timeout: int = 300) -> dict:
 TOOLS = [
     {
         'name': 'sage_hecke_trace',
-        'description': 'Compute the Markov trace of a nuclear braid word in the Hecke algebra H_A(q). Returns exact symbolic result over Q(q).',
+        'description': 'Compute the Markov trace of a nuclear braid word in the Iwahori--Hecke algebra H_A(q). Returns exact symbolic result over Q(q).',
         'inputSchema': {
             'type': 'object',
             'properties': {
@@ -108,7 +108,7 @@ A = {A}
 p = {p}
 n = {n}
 
-# Build the Hecke algebra H_A(q)
+# Build the Iwahori--Hecke algebra H_A(q)
 # Using the T-basis (braid generators)
 H = IwahoriHeckeAlgebra(['A', A-1], q)
 T = H.T()
@@ -185,13 +185,13 @@ def handle_tool_call(tool_name: str, arguments: dict) -> str:
         # Compose the full computation
         code = f"""
 # Full Q computation for N({p},{n}) → N({p+1},{n-1})
-# Uses Hecke algebra + Faddeev dilogarithm
+# Uses Iwahori--Hecke algebra + Faddeev dilogarithm
 print("Computing Q for N({p},{n})...")
 print("Requires IwahoriHeckeAlgebra — checking...")
 try:
     q = var('q')
     H = IwahoriHeckeAlgebra(['A', {p+n-1}], q)
-    print(f"Hecke algebra H_{{p+n}}(q) created successfully")
+    print(f"Iwahori--Hecke algebra H_{{p+n}}(q) created successfully")
 except Exception as e:
     print(f"Error: {{e}}")
 """

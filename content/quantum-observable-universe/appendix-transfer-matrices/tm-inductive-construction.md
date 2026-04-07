@@ -153,7 +153,7 @@ summing only over generators $\sigma_i$ with $i \leq p$
 (the converting nucleon's position).  Generators $\sigma_i$
 with $i > p$ are unaffected and cancel exactly.
 
-## Gröbner normal form (inductive proof)
+## Gröbner--Shirshov normal form (inductive proof)
 
 The inductive construction produces a well-defined normal
 form at every step:
@@ -172,7 +172,7 @@ $$
   \prod_{j=0}^{A-1}(c_j \sigma_j + d_j)
 $$
 
-  Apply the Gröbner division algorithm with basis
+  Apply the Gröbner--Shirshov division algorithm with basis
   $G = \{T^2 - (q-q^{-1})T - 1,\; \text{YB},\; \text{far-comm}\}$:
 
 $$
@@ -181,21 +181,21 @@ $$
   r(\xi_{A+1},\, G)
 $$
 
-  By the main theorem of Gröbner basis theory: the algorithm
+  By the main theorem of Gröbner--Shirshov basis theory: the algorithm
   **terminates** (length-lex ordering is well-founded), the
   remainder is **unique** (independent of reduction path), and
   the remainder is in **normal form**.
 
 **Key fact (verified $A \leq 6$, inductive proof for all $A$):**
-The Gröbner reduction has **zero Yang--Baxter steps** and
+The Gröbner--Shirshov reduction has **zero Yang--Baxter steps** and
 **zero far-commutativity steps**.  Only Hecke reductions
 ($T^2 \to (q-q^{-1})T + 1$) are needed.  Therefore the
-per-generator transfer matrix chain is the exact Gröbner
+per-generator transfer matrix chain is the exact Gröbner--Shirshov
 normal form — no reordering of generators occurs.
 
 ## Shell closure signatures
 
-At doubly-magic configurations $(p, p)$, the Gröbner normal
+At doubly-magic configurations $(p, p)$, the Gröbner--Shirshov normal
 form exhibits special structure:
 
 **(i) Palindromic histogram.**  The word-length histogram

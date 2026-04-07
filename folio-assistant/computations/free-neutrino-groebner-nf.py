@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 """
-Gröbner normal form witness for the free neutrino.
+Gröbner--Shirshov normal form witness for the free neutrino.
 
 Physics: In beta decay  n → p + e⁻ + ν̄ₑ, the neutrino is the residual
 after the proton and electron have been accounted for.  Algebraically in
 H₃(q), the neutrino sector is what remains when we compose the proton
-and electron braids, apply the weak vertex T₃,₅, and Gröbner-reduce.
+and electron braids, apply the weak vertex T₃,₅, and Gröbner--Shirshov-reduce.
 
 Procedure:
   1. Build NF(proton)   = NF([u,u,d]) at quark level in H₃(q)
   2. Build NF(electron)  = NF(σ₀³) = trefoil T_{2,3}
   3. Compose:  word = NF(proton) · NF(electron)
   4. Compose:  word = word · NF(T₃,₅)
-  5. Gröbner-reduce, showing each intermediate step
+  5. Gröbner--Shirshov-reduce, showing each intermediate step
   6. Identify each resulting NF term as a particle
   7. Extract the ν-sector coefficient as the free neutrino witness
   8. Verify via Markov trace and crossing budget
 
 The key result: NF(proton · electron · T₃,₅) decomposes over the
-H₃(q) Gröbner basis, and the coefficient on 𝟏 (the identity / unknot)
+H₃(q) Gröbner--Shirshov basis, and the coefficient on 𝟏 (the identity / unknot)
 is the neutrino sector — confirming that the free neutrino is the
 identity braid with a specific, non-trivial coefficient from the
-Gröbner reduction.
+Gröbner--Shirshov reduction.
 
 Depends on: hecke_symbolic.py, q_parameter.py, experimental_constants.py
 """
@@ -175,7 +175,7 @@ def markov_trace_symbolic(elem, n_strands):
 # ════════════════════════════════════════════════════════════════
 
 def build_nucleus_nf(types_list, label="nucleus"):
-    """Build the Gröbner normal form for a nucleus at quark level.
+    """Build the Gröbner--Shirshov normal form for a nucleus at quark level.
 
     The nucleus is constructed as B₃ · (pairwise crossings), where
     B₃ = (σ₀σ₁⁻¹)³ is the Borromean confinement braid.
@@ -359,13 +359,13 @@ def reduce_stepwise(div_inst, elem, label="reduction"):
 
 print("=" * 80)
 print("FREE NEUTRINO WITNESS: NF(proton · electron · T₃,₅)")
-print("Gröbner normal form computation in H₃(q)")
+print("Gröbner--Shirshov normal form computation in H₃(q)")
 print("All coefficients exact in ℤ[q^½, q^{-½}]")
 print("=" * 80)
 print()
 
 # ── Particle–knot legend ──
-print("  PARTICLE–KNOT DICTIONARY  (H₃(q) Gröbner basis ↔ particle sector)")
+print("  PARTICLE–KNOT DICTIONARY  (H₃(q) Gröbner--Shirshov basis ↔ particle sector)")
 print("  ┌────────────┬────────┬────────────────────┬──────────────────────────┐")
 print("  │ Braid word │ Cross. │ Closure knot       │ Particle name            │")
 print("  ├────────────┼────────┼────────────────────┼──────────────────────────┤")
@@ -418,7 +418,7 @@ print("  (trefoil T₂,₃ as a 3-braid, 3 crossings)")
 print("─" * 60)
 print()
 print("  Unreduced word: σ₀ · σ₁ · σ₀ (3 crossings)")
-print("  Gröbner reduction:")
+print("  Gröbner--Shirshov reduction:")
 print("    σ₀σ₁σ₀: check R1 (Hecke) — no adjacent equal generators")
 print("    σ₀σ₁σ₀: check R3 (YB) — σ₀σ₁σ₀ → σ₁σ₀σ₁  (since (0,1,0) > (1,0,1) lexically? No: (0,1,0) < (1,0,1))")
 print("    σ₀σ₁σ₀ is already in NF!  (no rule applies)")
@@ -488,7 +488,7 @@ for w, c in sorted(product_pe.terms.items(), key=lambda x: (len(x[0]), x[0])):
 print()
 
 # Now reduce step by step
-print("  Gröbner-reducing NF(proton) · NF(electron)...")
+print("  Gröbner--Shirshov-reducing NF(proton) · NF(electron)...")
 print()
 reduced_pe, steps_pe, log_pe = reduce_stepwise(div, product_pe,
                                                "proton · electron")
@@ -544,7 +544,7 @@ for w, c in sorted(product_peT.terms.items(), key=lambda x: (len(x[0]), x[0])):
 print()
 
 # Step-by-step reduction
-print("  Gröbner-reducing NF(proton · electron) · NF(T₃,₅)...")
+print("  Gröbner--Shirshov-reducing NF(proton · electron) · NF(T₃,₅)...")
 print()
 reduced_peT, steps_peT, log_peT = reduce_stepwise(div, product_peT,
                                                    "p·e⁻·T₃,₅")
@@ -641,7 +641,7 @@ c_nu_factored = factor_coefficient(c_nu_simplified)
 v_nu = float(c_nu_simplified.subs(q, q0)) if c_nu_simplified != 0 else 0.0
 
 print("  ╔══════════════════════════════════════════════════════════════╗")
-print("  ║  FREE NEUTRINO SECTOR  (identity term 𝟏 in the Gröbner NF)║")
+print("  ║  FREE NEUTRINO SECTOR  (identity term 𝟏 in the Gröbner--Shirshov NF)║")
 print("  ╠══════════════════════════════════════════════════════════════╣")
 print(f"  ║  Symbolic coefficient:  {c_nu_factored:<35} ║")
 print(f"  ║  At q₀ = {q0}:       {v_nu:+.10f}                   ║")
@@ -653,7 +653,7 @@ print()
 
 # Also try the inverse: proton · electron · T₃,₅⁻¹
 # T₃,₅⁻¹ in H₃(q) is the word (σ₁⁻¹σ₀⁻¹)⁵ — but inverses are
-# non-trivial in the Hecke algebra.  Instead we use the Hecke relation:
+# non-trivial in the Iwahori--Hecke algebra.  Instead we use the Hecke relation:
 # σᵢ⁻¹ = σᵢ − (q − q⁻¹) · 𝟏  (from σᵢ² = (q−q⁻¹)σᵢ + 1)
 # → σᵢ⁻¹ = σᵢ + (q⁻¹ − q) · 𝟏
 
@@ -744,11 +744,11 @@ print("=" * 80)
 print("SUMMARY")
 print("=" * 80)
 print()
-print("  The free neutrino witness is the Gröbner normal form of")
+print("  The free neutrino witness is the Gröbner--Shirshov normal form of")
 print("  NF(proton · electron · T₃,₅) in H₃(q).")
 print()
 print("  This is NOT trivial: the composition produces an unreduced")
-print(f"  product with {product_peT.n_terms()} terms, which Gröbner-reduces to")
+print(f"  product with {product_peT.n_terms()} terms, which Gröbner--Shirshov-reduces to")
 print(f"  {reduced_peT.n_terms()} NF terms via {sum(steps_peT.values())} rule applications.")
 print()
 print("  The neutrino is identified as the coefficient on the")
@@ -783,7 +783,7 @@ print("─" * 60)
 witness = {
     "name": "free-neutrino-groebner-nf",
     "description": (
-        "Gröbner normal form witness for the free neutrino. "
+        "Gröbner--Shirshov normal form witness for the free neutrino. "
         "Computes NF(proton · electron · T₃,₅) in H₃(q) and identifies "
         "the neutrino as the coefficient on the identity word 𝟏 (unknot K₀). "
         "All coefficients exact in ℤ[q^½, q^{-½}]."
@@ -890,7 +890,7 @@ witness = {
         "description": (
             "The free neutrino is the coefficient on the identity word 𝟏 "
             "(unknot K₀, 0 crossings) in NF(proton · electron · T₃,₅). "
-            "This is the result of a non-trivial Gröbner reduction, NOT "
+            "This is the result of a non-trivial Gröbner--Shirshov reduction, NOT "
             "a trivial assertion."
         ),
         "composition": "NF(proton · electron · T₃,₅)",
@@ -921,7 +921,7 @@ witness = {
             "value": v_nu,
         },
         {
-            "name": "Gröbner reduction is non-trivial",
+            "name": "Gröbner--Shirshov reduction is non-trivial",
             "result": len(log_peT) > 0,
             "total_steps": len(log_peT),
         },

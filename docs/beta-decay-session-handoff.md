@@ -1,4 +1,4 @@
-# Session Handoff: Beta Decay Gröbner Computation
+# Session Handoff: Beta Decay Gröbner--Shirshov Computation
 
 Branch: `claude/resolve-beta-decay-error-XOfPK`
 Date: 2026-04-04 (sessions 2-4)

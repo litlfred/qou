@@ -5,7 +5,7 @@ End-to-end: q → half-life. No approximations, no tuning parameters.
 Pipeline:
   q (CODATA) → μ_u, μ_d (pair Skein) → S_ab(q) (crossing masses)
   → transfer matrix → Markov trace ratio → eIeR (matrix element)
-  → T_{3,5} vertex (Gröbner energy) → Γ_β → t_{1/2}
+  → T_{3,5} vertex (Gröbner--Shirshov energy) → Γ_β → t_{1/2}
 
 Inputs: q = 1/(1 - √(Vol(4₁)/m_μ/m_e)), μ₀ = m_e/(3 E_×)
 Outputs: half-life predictions for all 6 verification nuclei
@@ -69,7 +69,7 @@ print(f"  S_uu = {S_uu:.4f}, S_ud = {S_ud:.4f}, S_dd = {S_dd:.4f}")
 print(f"  α_EM = {alpha_em:.6f} (1/α = {1/alpha_em:.2f}, CODATA: 137.036)")
 
 # ═══════════════════════════════════════════════════════════════════
-# STEP 2: T_{3,5} vertex — Gröbner reduction energy
+# STEP 2: T_{3,5} vertex — Gröbner--Shirshov reduction energy
 # ═══════════════════════════════════════════════════════════════════
 
 print(f"\nStep 2: T_{{3,5}} vertex")
@@ -163,7 +163,7 @@ print(f"\nStep 4: Decay rates and half-lives")
 # f(Q_q) = Q_q⁵  (Sargent rule, allowed transitions)
 # × [2]_q (q-integer modulation)
 #
-# The T_{3,5} enters through the Gröbner reduction energy:
+# The T_{3,5} enters through the Gröbner--Shirshov reduction energy:
 #   The braid n·T_{3,5} reduces with 129 Hecke steps for free neutron
 #   vs 2 Hecke steps for bare neutron. The extra Hecke steps give the
 #   vertex form factor.

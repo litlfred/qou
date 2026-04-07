@@ -228,11 +228,11 @@ analysis: how much do predictions change if $q$ is varied within the
 consistency window?
 
 **M6. Computational universality claim (Ch 8/9).**
-The claim that the QOU is Turing complete, based on Gröbner basis
+The claim that the QOU is Turing complete, based on Gröbner--Shirshov basis
 confluence, is plausible but not fully proven for the specific algebra $A$
 in the Descartes universe. The paper should either provide a construction
 of a universal Turing machine within the framework or cite specific
-conditions under which Gröbner basis systems are known to be Turing
+conditions under which Gröbner--Shirshov basis systems are known to be Turing
 complete and verify they hold here.
 
 ### Minor Comments

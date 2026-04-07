@@ -1,4 +1,4 @@
-//! Optimized Gröbner engine for H_n(q) — memory-efficient with indexed reduction.
+//! Optimized Gröbner--Shirshov engine for H_n(q) — memory-efficient with indexed reduction.
 //!
 //! Key optimizations over v1:
 //! 1. Compact word representation: u64 packed (up to 16 generators, 4 bits each)

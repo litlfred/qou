@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Instrumented Gröbner division algorithm for the Hecke algebra H_n(q).
+Instrumented Gröbner--Shirshov division algorithm for the Iwahori--Hecke algebra H_n(q).
 
 Each division step is logged with:
   - Which relation was applied (Hecke / Yang-Baxter / far commutativity)
@@ -8,9 +8,9 @@ Each division step is logged with:
   - The coefficient change (energy change)
   - The resulting terms
 
-This implements the division algorithm from the unital Gröbner bases
+This implements the division algorithm from the unital Gröbner--Shirshov bases
 paper (def:division-algorithm) specialized to the admissible system
-(positive braid monomials, length-lex ordering) with Gröbner basis:
+(positive braid monomials, length-lex ordering) with Gröbner--Shirshov basis:
   G = {σ_i² - (q-q⁻¹)σ_i - 1, σ_iσ_{i+1}σ_i - σ_{i+1}σ_iσ_{i+1},
        σ_iσ_j - σ_jσ_i (|i-j|≥2)}
 
@@ -38,7 +38,7 @@ q_sym = sp.Symbol('q', positive=True)
 
 @dataclass
 class DivisionStep:
-    """One step of the Gröbner division algorithm."""
+    """One step of the Gröbner--Shirshov division algorithm."""
     step: int
     relation: str          # 'hecke' | 'yang-baxter' | 'far-comm'
     position: int          # position in the braid word where applied
@@ -61,7 +61,7 @@ class HeckeElement:
     Formal atom variables are CENTRAL: they commute with all σ_i.
     A word like (0, -1, 2) means σ₀ · ℵ₁ · σ₂ = ℵ₁ · σ₀ · σ₂.
 
-    The Gröbner basis is extended with relations:
+    The Gröbner--Shirshov basis is extended with relations:
       NF(ℵ_k) − ℵ_k = 0
     meaning: whenever the normal form expression of atom k appears,
     it can be replaced by the single symbol ℵ_k.
@@ -127,7 +127,7 @@ class HeckeElement:
 
 
 class HeckeDivision:
-    """Instrumented Gröbner division in H_n(q).
+    """Instrumented Gröbner--Shirshov division in H_n(q).
 
     Tracks every reduction step with energy changes.
 
@@ -250,7 +250,7 @@ class HeckeDivision:
     def register_quotient(self, atom_id, nf_element, name=""):
         """Register a normal form as a quotient relation.
 
-        Adds the relation: NF(atom) = ℵ_k  to the Gröbner basis.
+        Adds the relation: NF(atom) = ℵ_k  to the Gröbner--Shirshov basis.
 
         atom_id: negative integer identifier (e.g. -1 for ℵ₁)
         nf_element: the HeckeElement whose terms define the NF
@@ -429,7 +429,7 @@ class HeckeDivision:
         return HeckeElement({(i,): 1.0})
 
     def sigma_inv(self, i):
-        """σ_i⁻¹ = σ_i − (q − q⁻¹) in the Hecke algebra."""
+        """σ_i⁻¹ = σ_i − (q − q⁻¹) in the Iwahori--Hecke algebra."""
         HA = self.q - 1.0 / self.q
         return HeckeElement({(i,): 1.0, (): -HA})
 
@@ -502,7 +502,7 @@ class HeckeDivision:
     # ── Division algorithm (instrumented) ────────────────────────
 
     def reduce(self, elem, max_iterations=100000, use_patterns=True):
-        """Apply Gröbner division algorithm with step logging.
+        """Apply Gröbner--Shirshov division algorithm with step logging.
 
         If use_patterns=True and named patterns are registered,
         applies Rule 0 (pattern merging) after each full pass
@@ -861,7 +861,7 @@ if __name__ == '__main__':
     # Witness
     witness = {
         'computation': 'hecke-division-instrumented',
-        'description': 'Instrumented Gröbner division in H_n(q) with step-by-step energy logging',
+        'description': 'Instrumented Gröbner--Shirshov division in H_n(q) with step-by-step energy logging',
         'timestamp': datetime.now(timezone.utc).isoformat(),
         'engine': 'custom (hecke_division.py)',
         'parameters': {'q': q_val},

@@ -2,7 +2,7 @@
 """
 Hecke trace engine — general-purpose computation for any N(p,n).
 
-Computes the Gröbner-reduced Hecke representation of any nucleus:
+Computes the Gröbner--Shirshov-reduced Hecke representation of any nucleus:
   - Factored Markov trace (exact, O(A²))
   - Generator volumes V̂_i = z·a_i + b_i
   - Fractional ideal volume e(I)/e(R) at converting generator

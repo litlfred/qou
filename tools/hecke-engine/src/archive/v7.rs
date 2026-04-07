@@ -1,4 +1,4 @@
-// v7: Symbolic Gröbner engine — exact in q.
+// v7: Symbolic Gröbner--Shirshov engine — exact in q.
 //
 // All coefficients are Laurent polynomials in t = q^{1/2} over ℤ.
 // No floating point until final evaluation.

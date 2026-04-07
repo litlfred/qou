@@ -106,14 +106,14 @@ import { validateObjects } from "../../content/pipeline/validate";
 
 describe("Content objects", () => {
   test("all objects pass schema validation", async () => {
-    const result = await validateObjects("content/quantum-observable-universe/ch1-...");
+    const result = await validateObjects("content/quantum-observable-universe/quantum-universes/");
     const errors = result.issues.filter(i => i.level === "error");
     expect(errors).toHaveLength(0);
   });
 
   test("rendered LaTeX passes AST validation", async () => {
     // The validation pipeline includes AST checks automatically
-    const result = await validateObjects("content/quantum-observable-universe/ch1-...");
+    const result = await validateObjects("content/quantum-observable-universe/quantum-universes/");
     expect(result.valid).toBe(true);
   });
 });

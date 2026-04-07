@@ -33,7 +33,7 @@ except: SHA = "unknown"
 
 def sig(i): return HeckeElement({(i,): 1.0})
 def sig_inv(i):
-    """σ_i⁻¹ = σ_i − (q − q⁻¹) in the Hecke algebra."""
+    """σ_i⁻¹ = σ_i − (q − q⁻¹) in the Iwahori--Hecke algebra."""
     return HeckeElement({(i,): 1.0, (): -HA})
 c_dd = q**2; d_dd = -q*s
 c_ud = (1+q**2)/2; d_ud = -q*s/2
@@ -186,7 +186,7 @@ print()
 # The Markov trace: 0.0935
 # The Hecke energy: 0.276
 
-print(f"  From Gröbner NF:")
+print(f"  From Gröbner--Shirshov NF:")
 print(f"    Dominant term (B₃ ⋈ T_{{2,1}}): coeff = +{nf_terms[3]['coefficient']:.6f}")
 print(f"    Net coefficient: {net:+.6f}")
 print(f"    Markov trace: {tr:.10f}")

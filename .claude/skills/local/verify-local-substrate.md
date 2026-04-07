@@ -43,7 +43,7 @@ for blocks matching either criterion:
 
 - **Provable blocks in Chapter 7**: any block with kind `proposition`,
   `theorem`, `lemma`, `corollary`, or `conjecture` located in
-  `ch7-observations/`
+  `observations/`
 - **Tagged observational blocks** (any chapter): any block whose `tags`
   array includes `"observation"`, `"prediction"`, or `"codata"`
 
