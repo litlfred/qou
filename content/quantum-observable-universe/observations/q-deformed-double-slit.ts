@@ -8,6 +8,7 @@ export default remark({
     "prop:local-substrate-q",
     "ex:photon-wavefront",
     "rem:knot-basis-color-content",
+    "rem:breit-wheeler-vertex",
   ],
   tags: ["double-slit", "q-deformation", "scattering", "reeb", "torsion", "dirac", "wavefront", "color-content"],
   simulator: { ref: "sim:q-double-slit" },

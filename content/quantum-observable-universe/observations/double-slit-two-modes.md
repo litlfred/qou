@@ -81,19 +81,19 @@ providing a sharp test of the two-mode prediction.
 
 **Color-content discriminant.**
 A more refined test exploits the photon color content.  Using linearly
-polarised light with controlled polarisation angle $\psi$
+polarised light with controlled polarisation angle $\alpha$
 (corresponding to color weights
-$\varphi_0 = \cos\psi$, $\varphi_1 = \sin\psi$), the
-fringe shift acquires a $\psi$-dependent term:
+$\varphi_0 = \cos\alpha$, $\varphi_1 = \sin\alpha$), the
+fringe shift acquires an $\alpha$-dependent term:
 
 $$
-  \delta\Delta\Phi(\psi)
+  \delta\Delta\Phi(\alpha)
   \;=\;
-  (\cos\psi\,q - \sin\psi\,q^{-1})\,
+  (\cos\alpha\,q - \sin\alpha\,q^{-1})\,
   \hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})\,\Delta\phi_\xi.
 $$
 
-Sweeping $\psi$ from $0$ to $\pi/2$ traces a sinusoidal modulation of
+Sweeping $\alpha$ from $0$ to $\pi/2$ traces a sinusoidal modulation of
 the fringe positions.  The amplitude of this modulation scales with
 $(q + q^{-1})\,\hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})$ and is
 material-dependent (different slit materials give different

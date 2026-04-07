@@ -118,11 +118,13 @@ $$
   1 - |\varphi_0\psi_1 - \varphi_1\psi_0|^2.
 $$
 
-When the slit material imparts symmetric color dressing
-($\psi_0 = \psi_1$), the Hopf-link terms cancel and visibility is
-maximal.  Asymmetric dressing ($\psi_0 \neq \psi_1$) partially
-suppresses fringes --- a **material-dependent decoherence** arising
-from the Hecke algebra structure rather than from environmental noise.
+When the slit material's color axis is aligned with the
+photon's polarisation ($\varphi_0\psi_1 = \varphi_1\psi_0$), the
+Hopf-link terms cancel and visibility is maximal ($V_{\mathrm{color}} = 1$).
+Misalignment between the photon's color content and the slit-wall
+dressing partially suppresses fringes --- a **material-dependent
+decoherence** arising from the Hecke algebra structure rather than
+from environmental noise.
 
 **Observable signature.**
 The color-content correction is second order in $\hbar_q$ for
