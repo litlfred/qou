@@ -9,7 +9,7 @@ $\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
 generators encode polarisation on the exceptional divisor
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$.  The identity
 component ($K = \varnothing$, the empty knot) is purely horizontal
-([boson](#def:fermion-boson-decomposition): $\alpha_V = 0$); the color
+([boson](#def:fermion-boson-decomposition): vertical component $\alpha_V = 0$); the color
 dressing $\varphi_i\,\sigma_i$ adds polarisation-dependent Reeb phase.
 
 **Setup.**  A photon source emits a state

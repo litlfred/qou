@@ -107,7 +107,9 @@ $\sigma_0\sigma_1$ and $\sigma_1\sigma_0$ --- the Hopf-link basis
 elements $L_{\pm}$
 ([color content](#rem:knot-basis-color-content)).  Their coefficients
 $\varphi_0\psi_1$ and $\varphi_1\psi_0$ (where $\psi_i$ are the
-color weights picked up from the slit-wall interaction) contribute a
+color weights imparted by the slit-wall Reeb interaction --- the
+same torsion mechanism that produces $\tau(y)$ in the
+[photon wavefront example](#ex:photon-wavefront)) contribute a
 **linking amplitude** that modulates the fringe visibility:
 
 $$
