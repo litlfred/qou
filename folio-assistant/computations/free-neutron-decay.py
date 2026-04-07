@@ -220,14 +220,14 @@ def crossing(type_i, type_j, gen):
               f"σ_{gen}  [u-u positive]")
         return {(gen,): sp.Integer(1)}
     elif type_i == type_j == 'd':
-        C = q**2; D = -q * s_skein
+        C = sp.Integer(1); D = -(q - 1/q)
         print(f"  ── crossing({type_i},{type_j}) at σ_{gen}: "
-              f"q²·σ_{gen} − q·s·𝟏  [d-d negative]")
+              f"σ_{gen} − (q−q⁻¹)·𝟏  [d-d negative]")
         return {(gen,): C, (): D}
     elif pair == set(['u', 'd']):
-        C = (1 + q**2) / 2; D = -q * s_skein / 2
+        C = sp.Integer(1); D = -(q - 1/q) / 2
         print(f"  ── crossing({type_i},{type_j}) at σ_{gen}: "
-              f"½(1+q²)·σ_{gen} − ½q·s·𝟏  [u-d mixed]")
+              f"σ_{gen} − ½(q−q⁻¹)·𝟏  [u-d mixed]")
         return {(gen,): C, (): D}
     else:
         print(f"  ── crossing({type_i},{type_j}) at σ_{gen}: "

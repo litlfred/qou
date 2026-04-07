@@ -253,14 +253,14 @@ def crossing(type_i, type_j, gen):
               f"σ_{gen}  [u-u positive]")
         return {(gen,): sp.Integer(1)}
     elif type_i == type_j == 'd':
-        C = q**2; D = -q * s_skein
+        C = sp.Integer(1); D = -(q - 1/q)
         print(f"  ── crossing({type_i},{type_j}) at σ_{gen}: "
-              f"q²·σ_{gen} − q·s·𝟏  [d-d negative]")
+              f"σ_{gen} − (q−q⁻¹)·𝟏  [d-d negative]")
         return {(gen,): C, (): D}
     elif pair == set(['u', 'd']):
-        C = (1 + q**2) / 2; D = -q * s_skein / 2
+        C = sp.Integer(1); D = -(q - 1/q) / 2
         print(f"  ── crossing({type_i},{type_j}) at σ_{gen}: "
-              f"½(1+q²)·σ_{gen} − ½q·s·𝟏  [u-d mixed]")
+              f"σ_{gen} − ½(q−q⁻¹)·𝟏  [u-d mixed]")
         return {(gen,): C, (): D}
     else:
         print(f"  ── crossing({type_i},{type_j}) at σ_{gen}: "
@@ -312,8 +312,8 @@ PARTICLE-KNOT DICTIONARY:
 
 CROSSING TYPES (quark-quark):
   u-u:  σ_i                    [same-flavor up: pure positive]
-  d-d:  q²·σ_i − q·s·𝟏       [same-flavor down: Skein mixing]
-  u-d:  ½(1+q²)·σ_i − ½q·s·𝟏 [mixed: averaged]
+  d-d:  σ_i − (q−q⁻¹)·𝟏       [same-flavor down: Hecke inverse]
+  u-d:  σ_i − ½(q−q⁻¹)·𝟏      [mixed: averaged]
 """)
 
 # Track all phase results for the witness
@@ -480,11 +480,11 @@ print("    strand 1: ν → 𝔡 (down quark, Skein-mixed crossing)")
 print("    strand 2: ν → 𝔡 (down quark, Skein-mixed crossing)")
 print()
 print("  Crossing types after dressing:")
-print(f"    u-d at σ₀: ½(1+q²)·σ₀ − ½q·s·𝟏 = "
-      f"{eval_at_q0((1+q**2)/2):+.6f}·σ₀ + {eval_at_q0(-q*s_skein/2):+.6f}·𝟏")
-print(f"    u-d at σ₀: ½(1+q²)·σ₀ − ½q·s·𝟏  (same: strand 0-2)")
-print(f"    d-d at σ₁: q²·σ₁ − q·s·𝟏 = "
-      f"{eval_at_q0(q**2):+.6f}·σ₁ + {eval_at_q0(-q*s_skein):+.6f}·𝟏")
+print(f"    u-d at σ₀: σ₀ − ½(q−q⁻¹)·𝟏 = "
+      f"{1.0:+.6f}·σ₀ + {eval_at_q0(-(q-q_inv)/2):+.6f}·𝟏")
+print(f"    u-d at σ₀: σ₀ − ½(q−q⁻¹)·𝟏  (same: strand 0-2)")
+print(f"    d-d at σ₁: σ₁ − (q−q⁻¹)·𝟏 = "
+      f"{1.0:+.6f}·σ₁ + {eval_at_q0(-(q-q_inv)):+.6f}·𝟏")
 print()
 print("  The flavor assignment [u, d, d] determines all 3 pairwise")
 print("  crossing coefficients.  These will be applied in Phase 5")
@@ -493,9 +493,9 @@ print("  after Borromean confinement.")
 phase_results['phase3'] = {
     'quark_assignment': ['u', 'd', 'd'],
     'crossing_types': {
-        '(0,1) u-d': f'{eval_at_q0((1+q**2)/2):.6f}·σ₀ + {eval_at_q0(-q*s_skein/2):.6f}·𝟏',
-        '(0,2) u-d': f'{eval_at_q0((1+q**2)/2):.6f}·σ₀ + {eval_at_q0(-q*s_skein/2):.6f}·𝟏',
-        '(1,2) d-d': f'{eval_at_q0(q**2):.6f}·σ₁ + {eval_at_q0(-q*s_skein):.6f}·𝟏',
+        '(0,1) u-d': f'{1.0:.6f}·σ₀ + {eval_at_q0(-(q-q_inv)/2):.6f}·𝟏',
+        '(0,2) u-d': f'{1.0:.6f}·σ₀ + {eval_at_q0(-(q-q_inv)/2):.6f}·𝟏',
+        '(1,2) d-d': f'{1.0:.6f}·σ₁ + {eval_at_q0(-(q-q_inv)):.6f}·𝟏',
     }
 }
 

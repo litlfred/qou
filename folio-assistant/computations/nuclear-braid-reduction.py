@@ -73,8 +73,8 @@ SKEIN_AMP = Q_HALF - 1.0 / Q_HALF  # q^{1/2} - q^{-1/2}
 #   (i, +1) = σ_i  (positive crossing)
 #   (i, -1) = σ_i^{-1}  (negative crossing)
 #
-# In the Iwahori--Hecke algebra, σ_i^{-1} is eliminated via the Skein relation:
-#   σ_i^{-1} = q^{-2} σ_i - q^{-1}(q^{1/2} - q^{-1/2})
+# In the Iwahori--Hecke algebra, σ_i^{-1} is eliminated via the Hecke relation:
+#   σ_i^{-1} = σ_i - (q - q^{-1})
 # So every element of H_n(q) is a linear combination of POSITIVE
 # braid monomials.
 
@@ -105,17 +105,14 @@ class HeckeElement:
 
     @staticmethod
     def generator_inv(i, q=Q):
-        """σ_i^{-1} = q^{-2} σ_i - q^{-1}(q^{1/2} - q^{-1/2}).
+        """σ_i^{-1} = σ_i - (q - q^{-1}).
 
-        From the Skein relation: q σ_i - q^{-1} σ_i^{-1} = (q^{1/2} - q^{-1/2})
-        => σ_i^{-1} = q^2 σ_i - q(q^{1/2} - q^{-1/2})
-        Wait, let me redo:
-        q σ_i - q^{-1} σ_i^{-1} = (q^{1/2} - q^{-1/2})
-        => q^{-1} σ_i^{-1} = q σ_i - (q^{1/2} - q^{-1/2})
-        => σ_i^{-1} = q^2 σ_i - q(q^{1/2} - q^{-1/2})
+        From the Hecke relation: σ_i² = (q - q⁻¹)σ_i + 1
+        => σ_i(σ_i - (q - q⁻¹)) = 1
+        => σ_i⁻¹ = σ_i - (q - q⁻¹)
         """
-        coeff_sigma = q**2
-        coeff_id = -q * (q**0.5 - q**(-0.5))
+        coeff_sigma = 1.0
+        coeff_id = -(q - 1.0/q)
         return HeckeElement({(i,): coeff_sigma, (): coeff_id})
 
     def __mul__(self, other):
@@ -242,7 +239,7 @@ def build_nucleon_braid(nucleon_type, base_strand, q=Q):
     The Borromean braid on 3 strands is:
       σ_1 σ_2^{-1} σ_1 σ_2^{-1} σ_1 σ_2^{-1}
 
-    In the Iwahori--Hecke algebra, σ_2^{-1} = q^2 σ_2 - q(q^{1/2} - q^{-1/2}).
+    In the Iwahori--Hecke algebra, σ_2^{-1} = σ_2 - (q - q^{-1}).
     """
     s1 = HeckeElement.generator(base_strand)
     s2_inv = HeckeElement.generator_inv(base_strand + 1, q)
@@ -262,7 +259,7 @@ def build_nuclear_braid(p, n, q=Q):
 
     The inter-nucleon Hopf crossings:
       p-p pair: σ (positive) → Hecke generator σ_i
-      n-n pair: σ^{-1} (negative) → q^2 σ_i - q(q^{1/2} - q^{-1/2})
+      n-n pair: σ^{-1} (negative) → σ_i - (q - q^{-1})
       p-n pair: (σ + σ^{-1})/2 → average of positive and negative
     """
     A = p + n
