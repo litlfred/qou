@@ -208,6 +208,7 @@ export default chapter({
         "beta-decay-interpretation",
         "nucleon-nf-observability",
         "beta-decay-energy-scale",
+        "negative-debt-confinement",
         "beta-decay-braid-visualizer",
       ],
     }),
