@@ -45,6 +45,8 @@ export interface GenerateMainTexOptions {
   chapterSlugs: Map<number, string>;
   /** Chapter indices to exclude from the main paper (standalone appendices). */
   excludeChapterIndices?: Set<number>;
+  /** Labels from excluded appendix chapters to declare as phantom anchors. */
+  phantomLabels?: string[];
 }
 
 /**
@@ -175,6 +177,22 @@ export function generateMainTex(
   lines.push("\\bibliographystyle{plain}");
   lines.push("\\bibliography{references}");
   lines.push("");
+
+  // 6. Phantom labels for excluded appendix chapters.
+  // Blocks in standalone appendices (glossary, knot table, etc.) are not
+  // compiled into the main PDF, but may be referenced via \hyperref from
+  // the main body. Declaring phantom labels prevents "Hyper reference
+  // undefined" warnings without including the full appendix content.
+  if (opts.phantomLabels?.length) {
+    lines.push("% ── Phantom labels (excluded appendix blocks) ─────────────────────────────");
+    lines.push("% These labels are defined in standalone appendix PDFs but referenced from");
+    lines.push("% the main paper body. Phantom declarations prevent hyperref warnings.");
+    for (const label of opts.phantomLabels) {
+      lines.push(`\\phantomsection\\label{${label}}`);
+    }
+    lines.push("");
+  }
+
   lines.push("\\end{document}");
 
   return lines.join("\n") + "\n";
