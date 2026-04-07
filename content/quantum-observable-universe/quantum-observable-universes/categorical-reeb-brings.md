@@ -1,0 +1,76 @@
+Continuing the [Reeb derivation for SU(2)](#ex:reeb-su2) and the
+[Bring coordinate ring](#def:brings-coordinate-ring), we construct
+the [categorical Reeb derivation](#def:categorical-reeb)
+$(\xi, \theta_A)$ on Bring's surface explicitly.
+
+**Step 1: identify the generator $\xi$.** The maximal torus of
+$\mathrm{SU}_q(2)$ is $T = \mathrm{U}(1)$, embedded as diagonal
+matrices. Its Lie algebra generator in $\mathfrak{su}(2)$ is
+
+$$
+  \xi = e_3
+  = \frac{1}{2}\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
+$$
+
+On the quantum coordinate ring
+$A = \mathcal{O}_q(\mathrm{SU}(2))$, $\xi$ acts as the infinitesimal
+adjoint coaction. In terms of the standard generators
+$\alpha, \beta, \bar\alpha, \bar\beta$
+($\alpha\bar\alpha + q^{-2}\beta\bar\beta = 1$), the action is:
+
+$$
+  \xi \cdot \alpha = \tfrac{1}{2}\alpha, \quad
+  \xi \cdot \beta  = -\tfrac{1}{2}\beta, \quad
+  \xi \cdot \bar\alpha = -\tfrac{1}{2}\bar\alpha, \quad
+  \xi \cdot \bar\beta  = \tfrac{1}{2}\bar\beta.
+$$
+
+This is a *derivation*: $\xi \cdot (fg) = (\xi \cdot f)g + f(\xi \cdot g)$.
+
+**Step 2: construct the dual $1$-form $\theta_A$.** The Woronowicz
+$3$-dimensional calculus on $\mathcal{O}_q(\mathrm{SU}(2))$ has basis
+$\{\omega_+, \omega_-, \omega_3\}$ of left-invariant $1$-forms. The
+form dual to $\xi = e_3$ is
+
+$$
+  \theta_A = \omega_3
+$$
+
+where $\omega_3$ is defined by $\omega_3(e_3) = 1$,
+$\omega_3(e_\pm) = 0$. In terms of the generators:
+
+$$
+  \omega_3 = \alpha^{-1}\,d\alpha + q^{-2}\beta\,d\bar\beta
+  \quad\text{(left-invariant)}.
+$$
+
+**Step 3: verify the axioms.** The two defining properties of the
+categorical Reeb derivation are now checkable by direct computation:
+
+1. *Normalisation*: $\theta_A(\xi) = \omega_3(e_3) = 1 = \mathrm{id}_{\mathbf{1}}$. $\checkmark$
+
+2. *Vertical generator*: $\pi_V \circ d = \iota_\xi\,d\theta_A$.
+   The exterior derivative $d\omega_3$ is computed from the
+   Woronowicz structure equations
+   $d\omega_3 = -q^{-1}\omega_+ \wedge \omega_-$, and
+   $\iota_{e_3}(d\omega_3) = -q^{-1}(\omega_+(e_3)\omega_-
+   - \omega_-(e_3)\omega_+) = 0$, confirming that $\omega_3$ is a
+   contact form with Reeb field $\xi$. The vertical projection
+   $\pi_V$ selects non-zero-weight components under the $\xi$-action
+   as constructed in [weight decomposition](#ex:weight-decomposition-su2). $\checkmark$
+
+**Bring's surface specialisation.** On the
+[Bring coordinate ring](#def:brings-coordinate-ring)
+$\mathcal{O}_q(\mathcal{B})$, the $\xi$-action extends to the
+five coordinates $x_1, \ldots, x_5$ via the $S_5$-equivariant
+embedding. The $8 = 2g$ independent cycles of the genus-$4$ curve
+decompose into $\xi$-eigenspaces:
+
+- $4$ cycles of weight $+1$ (holomorphic differentials),
+- $4$ cycles of weight $-1$ (anti-holomorphic differentials).
+
+The Reeb spectrum is $\mathrm{Spec}(\xi) = \{-1, +1\}$ with
+multiplicity $4$ each, matching the $8$ fundamental modes of
+Bring's curve. The contact form $\theta_A$ restricts to the
+canonical $1$-form on $\Sigma_4$ whose kernel defines the horizontal
+distribution.
