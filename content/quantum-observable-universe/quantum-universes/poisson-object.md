@@ -50,18 +50,19 @@ $f, g \colon \mathbf{1} \to A$.
 
 **Axioms.** The morphism $\pi$ must satisfy:
 
-1. **Anti-symmetry.** The bracket is graded anti-symmetric:
-   $\{f, g\} = -\{g, f\}$, i.e.\ $\pi$ factors through
-   $\Lambda^2(\Omega^1(A)^{\vee})$ rather than the full tensor square.
-
-2. **Jacobi identity.** The Jacobiator
+1. **Jacobi identity.** The Jacobiator
    $\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{h, \{f, g\}\} = 0$
    vanishes, equivalently the Schouten--Nijenhuis condition
    $[\pi, \pi]_{\mathrm{SN}} = 0$ on the bivector.
 
-3. **Leibniz rule.** $\{f, gh\} = \{f, g\}\,h + g\,\{f, h\}$,
+2. **Leibniz rule.** $\{f, gh\} = \{f, g\}\,h + g\,\{f, h\}$,
    ensuring the bracket is a biderivation with respect to the
    multiplication $\mu$ on $A$.
+
+Anti-symmetry $\{f, g\} = -\{g, f\}$ is automatic: since $\pi$
+factors through $\Lambda^2(\Omega^1(A)^{\vee})$ (the exterior
+square, not the full tensor square), the bracket inherits the
+anti-symmetry of the wedge product.
 
 The triple $(A, \mu, \pi)$ is then a *Poisson algebra object* in
 $\mathbf{C}$.
