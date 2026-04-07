@@ -30,8 +30,7 @@ from q_parameter import (Q as q, Q_INV as qi, S_SKEIN as s_amp,
                          E_CROSS, TWO_Q, HBAR_Q_SQ, HBAR_Q)
 
 # ── Derived constants from q ─────────────────────────────────────
-HA = q - qi
-S = q**0.5 - q**(-0.5)
+HA = q - qi                        # Hecke amplitude q - q⁻¹
 Z_markov = 1.0 / (q**0.5 + q**(-0.5))
 m_e = 0.51099895000       # ± 0.00000000015 MeV (CODATA 2022)
 m_e_err = 0.00000000015
@@ -70,8 +69,8 @@ def traced_vol(M):
 
 def crossing_coeffs(ti, tj):
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return q**2, -q*S
-    else: return 0.5*(1+q**2), -0.5*q*S
+    elif ti == 'n' and tj == 'n': return 1.0, -HA
+    else: return 1.0, -HA/2
 
 def skein_poly(p, n):
     """Skein polynomial from transfer matrix chain. Returns log(|P|)."""
