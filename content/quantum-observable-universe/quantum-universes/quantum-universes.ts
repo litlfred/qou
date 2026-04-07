@@ -81,6 +81,8 @@ export default chapter({
         "categorical-jet",
         "categorical-hodge-star",
         "hodge-su2",
+        "poisson-object",
+        "poisson-hkr-connection",
       ],
     }),
   ],
