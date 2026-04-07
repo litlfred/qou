@@ -183,13 +183,22 @@ jobs:
             fi
 
             echo "── Building: ${paper_dir}"
-            bun run pipeline/build.ts \
-              "${paper_dir}/${paper_dir}.ts" \
-              --out-dir ../chapters/ \
-              --generate-main \
-              --main-out ../main.tex \
-              --preamble ../latex/preamble.tex \
-              || echo "::warning::Content build had issues for ${paper_dir}"
+            if [ "${paper_dir}" = "quantum-observable-universe" ]; then
+              # Primary paper: generate main.tex for PDF compilation
+              bun run pipeline/build.ts \
+                "${paper_dir}/${paper_dir}.ts" \
+                --out-dir ../chapters/ \
+                --generate-main \
+                --main-out ../main.tex \
+                --preamble ../latex/preamble.tex \
+                || echo "::warning::Content build had issues for ${paper_dir}"
+            else
+              # Secondary papers: build chapter .tex only (don't overwrite main.tex)
+              bun run pipeline/build.ts \
+                "${paper_dir}/${paper_dir}.ts" \
+                --out-dir ../chapters/ \
+                || echo "::warning::Content build had issues for ${paper_dir}"
+            fi
           done
 
           echo "── Bibliography QA"
