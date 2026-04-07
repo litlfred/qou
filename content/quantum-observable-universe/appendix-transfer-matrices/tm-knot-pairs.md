@@ -2,7 +2,7 @@ This section lists **every** transfer matrix for each knot pair,
 including trivial and degenerate cases.  All matrices are
 $2 \times 2$ over $\mathbb{Z}[q^{\pm 1/2}]$.
 
-Recall $s = q^{1/2} - q^{-1/2}$.
+Write $H_A = q - q^{-1}$ for the Hecke amplitude.
 
 ---
 
@@ -96,48 +96,14 @@ Note: $\lambda_+ \cdot \lambda_- = -1$ (determinant), $\lambda_+ + \lambda_- = q
 
 Knots: $K_1 = T_{2,3}^{\sigma}$ (down quark), $K_2 = T_{2,3}^{\sigma}$ (down quark).
 
-Crossing coefficients: $c = q^2$, $d = -qs$.
+Crossing coefficients: $c = 1$, $d = -(q - q^{-1})$.
 
 $$
   \boxed{
     T_{nn}(q) \;=\;
     \begin{pmatrix}
-      q^2(q - q^{-1}) - qs & q^2 \\
-      q^2 & -qs
-    \end{pmatrix}
-  }
-$$
-
-**Explicit entries:**
-
-| Entry | Formula | Simplified |
-|:-----:|---------|-----------|
-| $(1,1)$ | $q^2(q - q^{-1}) - q(q^{1/2} - q^{-1/2})$ | $q^3 - q - q^{3/2} + q^{1/2}$ |
-| $(1,2)$ | $q^2$ | $q^2$ |
-| $(2,1)$ | $q^2$ | $q^2$ |
-| $(2,2)$ | $-q(q^{1/2} - q^{-1/2})$ | $-q^{3/2} + q^{1/2}$ |
-| $\det$ | $-q^3 s(q-q^{-1}) + q^2 s^2 - q^4$ | |
-| $\mathrm{tr}$ | $q^3 - q - 2q^{3/2} + 2q^{1/2}$ | |
-
-**Relation to $T_{pp}$:**
-
-$$
-  T_{nn}(q) \;=\; q^2 \cdot T_{pp}(q) \;-\; qs \cdot \mathbb{I}
-$$
-
-### 2c. Mixed ($\mathfrak{p}$-$\mathfrak{n}$, proton--neutron)
-
-Knots: $K_1 = T_{2,3}$ (up quark), $K_2 = T_{2,3}^{\sigma}$ (down quark).
-
-Crossing coefficients: $c = \dfrac{1 + q^2}{2}$, $d = -\dfrac{qs}{2}$.
-
-$$
-  \boxed{
-    T_{\mathrm{mix}}(q) \;=\;
-    \begin{pmatrix}
-      \dfrac{1+q^2}{2}(q - q^{-1}) - \dfrac{qs}{2}
-        & \dfrac{1+q^2}{2} \\[6pt]
-      \dfrac{1+q^2}{2} & -\dfrac{qs}{2}
+      0 & 1 \\
+      1 & -(q - q^{-1})
     \end{pmatrix}
   }
 $$
@@ -146,11 +112,45 @@ $$
 
 | Entry | Formula |
 |:-----:|---------|
-| $(1,1)$ | $\dfrac{(1+q^2)(q - q^{-1})}{2} - \dfrac{q(q^{1/2} - q^{-1/2})}{2}$ |
-| $(1,2)$ | $\dfrac{1 + q^2}{2}$ |
-| $(2,1)$ | $\dfrac{1 + q^2}{2}$ |
-| $(2,2)$ | $-\dfrac{q(q^{1/2} - q^{-1/2})}{2}$ |
-| $\det$ | $\dfrac{(1+q^2)}{2}\!\cdot\!\bigl(-\dfrac{qs}{2}\bigr)(q-q^{-1}) + \dfrac{q^2 s^2}{4} - \dfrac{(1+q^2)^2}{4}$ |
+| $(1,1)$ | $0$ |
+| $(1,2)$ | $1$ |
+| $(2,1)$ | $1$ |
+| $(2,2)$ | $-(q - q^{-1})$ |
+| $\det$ | $-1$ |
+| $\mathrm{tr}$ | $-(q - q^{-1})$ |
+
+**Relation to $T_{pp}$:**
+
+$$
+  T_{nn}(q) \;=\; T_{pp}(q) \;-\; (q - q^{-1}) \cdot \mathbb{I}
+$$
+
+### 2c. Mixed ($\mathfrak{p}$-$\mathfrak{n}$, proton--neutron)
+
+Knots: $K_1 = T_{2,3}$ (up quark), $K_2 = T_{2,3}^{\sigma}$ (down quark).
+
+Crossing coefficients: $c = 1$, $d = -\dfrac{q - q^{-1}}{2}$.
+
+$$
+  \boxed{
+    T_{\mathrm{mix}}(q) \;=\;
+    \begin{pmatrix}
+      \dfrac{q - q^{-1}}{2}
+        & 1 \\[6pt]
+      1 & -\dfrac{q - q^{-1}}{2}
+    \end{pmatrix}
+  }
+$$
+
+**Explicit entries:**
+
+| Entry | Formula |
+|:-----:|---------|
+| $(1,1)$ | $\dfrac{q - q^{-1}}{2}$ |
+| $(1,2)$ | $1$ |
+| $(2,1)$ | $1$ |
+| $(2,2)$ | $-\dfrac{q - q^{-1}}{2}$ |
+| $\mathrm{tr}$ | $0$ |
 
 **Midpoint property:**
 
@@ -246,9 +246,9 @@ $$
   \boxed{
     T_{e^-e^+}(q) \;=\; T_{\mathrm{mix}}(q) \;=\;
     \begin{pmatrix}
-      \dfrac{1+q^2}{2}(q - q^{-1}) - \dfrac{qs}{2}
-        & \dfrac{1+q^2}{2} \\[6pt]
-      \dfrac{1+q^2}{2} & -\dfrac{qs}{2}
+      \dfrac{q - q^{-1}}{2}
+        & 1 \\[6pt]
+      1 & -\dfrac{q - q^{-1}}{2}
     \end{pmatrix}
   }
 $$
@@ -352,8 +352,8 @@ classes:
 | Class | $c$ | $d$ | Matrix | Occurs when |
 |-------|-----|-----|--------|-------------|
 | **Type I** (fundamental) | $1$ | $0$ | $T_{pp}$ | Same-chirality pair, or unknot with anything |
-| **Type II** (heavy) | $q^2$ | $-qs$ | $T_{nn}$ | Mirror-chirality pair (down--down type) |
-| **Type III** (mixed) | $\frac{1+q^2}{2}$ | $-\frac{qs}{2}$ | $T_{\mathrm{mix}}$ | Cross-chirality pair (up--down type) |
+| **Type II** (heavy) | $1$ | $-(q - q^{-1})$ | $T_{nn}$ | Mirror-chirality pair (down--down type) |
+| **Type III** (mixed) | $1$ | $-\frac{q - q^{-1}}{2}$ | $T_{\mathrm{mix}}$ | Cross-chirality pair (up--down type) |
 
 The identity matrix $\mathbb{I}$ (no crossing) is the
 degenerate $c = 0$, $d = 1$ case.
@@ -365,7 +365,7 @@ $$
 $$
 
 $$
-  T_{nn} = q^2 \, T_{pp} - qs \, \mathbb{I}
+  T_{nn} = T_{pp} - (q - q^{-1}) \, \mathbb{I}
 $$
 
 $$

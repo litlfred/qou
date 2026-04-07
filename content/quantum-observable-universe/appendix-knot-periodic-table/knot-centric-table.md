@@ -85,8 +85,8 @@ with three crossing types:
 | Crossing | $c$ | $d$ | Physical |
 |----------|-----|-----|----------|
 | $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ | repulsive (EM) |
-| $\mathfrak{n}$-$\mathfrak{n}$ | $q^2$ | $-qs$ | attractive (strong) |
-| mixed | $\frac{1+q^2}{2}$ | $-\frac{qs}{2}$ | intermediate |
+| $\mathfrak{n}$-$\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ | attractive (strong) |
+| mixed | $1$ | $-\frac{q - q^{-1}}{2}$ | intermediate |
 
 The nuclear Skein polynomial
 $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$

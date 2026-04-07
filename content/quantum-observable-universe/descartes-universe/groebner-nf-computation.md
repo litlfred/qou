@@ -88,7 +88,7 @@ can absorb it.  This requires $d \neq 0$.
 For proton–proton crossings: $d = 0$ (no constant term).  The
 prefix is **not** preserved.  Without the prefix, $I_9$ has no
 anchor for the chain stripping.  The condition $d \neq 0$ holds for
-neutron–neutron ($d = -q s$) and proton–neutron ($d = -q s/2$)
+neutron–neutron ($d = -(q - q^{-1})$) and proton–neutron ($d = -(q - q^{-1})/2$)
 crossings.  The valley of stability condition $N \geq Z - 1$ ensures
 at least one $d \neq 0$ crossing at every generator.
 

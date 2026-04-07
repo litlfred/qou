@@ -1,8 +1,7 @@
 These examples show the complete transfer matrix computation
 for small nuclei from scratch.  Every step is shown.
 
-Recall: $s = q^{1/2} - q^{-1/2}$,
-$z = 1/(q^{1/2} + q^{-1/2})$.
+Recall: $z = 1/(q^{1/2} + q^{-1/2})$.
 
 ---
 
@@ -38,9 +37,9 @@ $$
   M_0(q) \;=\; T_{\mathrm{mix}}(q)
   \;=\;
   \begin{pmatrix}
-    \frac{1+q^2}{2}(q - q^{-1}) - \frac{qs}{2}
-      & \frac{1+q^2}{2} \\[4pt]
-    \frac{1+q^2}{2} & -\frac{qs}{2}
+    \frac{q - q^{-1}}{2}
+      & 1 \\[4pt]
+    1 & -\frac{q - q^{-1}}{2}
   \end{pmatrix}
 $$
 
@@ -51,9 +50,9 @@ $$
   \;=\;
   z \cdot (M_0)_{11} + (M_0)_{21}
   \;=\;
-  z \cdot \left[\frac{1+q^2}{2}(q - q^{-1}) - \frac{qs}{2}\right]
+  z \cdot \frac{q - q^{-1}}{2}
   \;+\;
-  \frac{1+q^2}{2}
+  1
 $$
 
 **Nuclear Skein polynomial:**
@@ -107,31 +106,30 @@ $$
   \end{pmatrix}
   \cdot
   \begin{pmatrix}
-    \frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2} & \frac{1+q^2}{2} \\
-    \frac{1+q^2}{2} & -\frac{qs}{2}
+    \frac{q-q^{-1}}{2} & 1 \\
+    1 & -\frac{q-q^{-1}}{2}
   \end{pmatrix}
 $$
 
 $$
   (M_0)_{11} \;=\;
-    (q-q^{-1})\left[\frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2}\right]
-    \;+\; \frac{1+q^2}{2}
+    (q-q^{-1})\!\cdot\!\frac{q-q^{-1}}{2}
+    \;+\; 1
 $$
 
 $$
   (M_0)_{21} \;=\;
-    \frac{1+q^2}{2}(q-q^{-1})
-    \;-\; \frac{qs}{2}
+    \frac{q-q^{-1}}{2}
 $$
 
 $$
   (M_0)_{12} \;=\;
-    (q-q^{-1})\!\cdot\!\frac{1+q^2}{2}
-    \;-\; \frac{qs}{2}
+    (q-q^{-1})
+    \;-\; \frac{q-q^{-1}}{2}
 $$
 
 $$
-  (M_0)_{22} \;=\; \frac{1+q^2}{2}
+  (M_0)_{22} \;=\; 1
 $$
 
 **Traced volume:**

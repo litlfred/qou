@@ -27,9 +27,7 @@ $$
   \boxed{
     \Delta_\beta(q)
     \;=\;
-    \tfrac{1}{2}(1 - q^2) \, T_{pp}(q)
-    \;+\;
-    \tfrac{1}{2}\,q\,s\;\mathbb{I}
+    \tfrac{1}{2}(q - q^{-1}) \;\mathbb{I}
   }
 $$
 
@@ -38,23 +36,22 @@ $$
 $$
   \Delta_\beta(q) \;=\;
   \begin{pmatrix}
-    \dfrac{1 - q^2}{2}(q - q^{-1}) + \dfrac{qs}{2}
-      & \dfrac{1 - q^2}{2} \\[6pt]
-    \dfrac{1 - q^2}{2} & \dfrac{qs}{2}
+    \dfrac{q - q^{-1}}{2} & 0 \\[6pt]
+    0 & \dfrac{q - q^{-1}}{2}
   \end{pmatrix}
 $$
 
-| Entry | Expanded formula |
-|:-----:|-----------------|
-| $(1,1)$ | $\frac{(1-q^2)(q-q^{-1}) + q(q^{1/2} - q^{-1/2})}{2}$ |
-| $(1,2)$ | $\frac{1-q^2}{2}$ |
-| $(2,1)$ | $\frac{1-q^2}{2}$ |
-| $(2,2)$ | $\frac{q(q^{1/2} - q^{-1/2})}{2}$ |
+| Entry | Formula |
+|:-----:|---------|
+| $(1,1)$ | $\frac{q - q^{-1}}{2}$ |
+| $(1,2)$ | $0$ |
+| $(2,1)$ | $0$ |
+| $(2,2)$ | $\frac{q - q^{-1}}{2}$ |
 
 **Properties:**
 
-- $\Delta_\beta$ is **symmetric** (off-diagonals equal).
-- At $q = 1$: $s = 0$ and $\Delta_\beta = 0$ (no parity violation classically).
+- $\Delta_\beta$ is **scalar** (proportional to $\mathbb{I}$): it commutes with every transfer matrix.
+- At $q = 1$: $q - q^{-1} = 0$ and $\Delta_\beta = 0$ (no parity violation classically).
 - **Universality**: the same $\Delta_\beta$ applies to every nucleus, for
   every converting nucleon, regardless of the partner.
 
@@ -179,8 +176,8 @@ type.  A single crossing carries no type information.
 
 | Process | $\Delta$ operator | Explicit matrix |
 |---------|-------------------|-----------------|
-| $\beta^-$ decay ($\mathfrak{d} \to \mathfrak{u}$) | $\Delta_\beta$ | $\frac{1-q^2}{2} T_{pp} + \frac{qs}{2}\mathbb{I}$ |
-| $\beta^+$ decay ($\mathfrak{u} \to \mathfrak{d}$) | $-\Delta_\beta$ | $\frac{q^2-1}{2} T_{pp} - \frac{qs}{2}\mathbb{I}$ |
+| $\beta^-$ decay ($\mathfrak{d} \to \mathfrak{u}$) | $\Delta_\beta$ | $\frac{q - q^{-1}}{2}\mathbb{I}$ |
+| $\beta^+$ decay ($\mathfrak{u} \to \mathfrak{d}$) | $-\Delta_\beta$ | $-\frac{q - q^{-1}}{2}\mathbb{I}$ |
 | Photon absorption | $T_{pp}$ (appended) | $\begin{pmatrix} q-q^{-1} & 1 \\ 1 & 0 \end{pmatrix}$ (new factor) |
 | Photon emission | $T_{pp}^{-1}$ (removed) | Remove one factor from chain |
 | Pair creation $\gamma\gamma \to e^- e^+$ | $-\Delta_\beta$ | Same as $\beta^+$ |
