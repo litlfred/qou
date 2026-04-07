@@ -272,6 +272,14 @@ their own line, indented to match the surrounding content.
   external result must carry a citation.
 - BibTeX keys follow the pattern `<firstauthorlastname><year>` (all
   lower-case), e.g., `herrlich2006`, `einstein1905`.
+- **Bibliography QA**: Run `cd content && bun run pipeline/bib-qa.ts` to
+  generate `bib-qa.json` with per-reference quality tags.  View results
+  at `/folio/bib-qa.html`.  Every reference is scored 0–5 on: URL
+  presence, URL resolution + content match, metadata completeness,
+  citation coverage, and screenshot evidence.
+- **Screenshots**: For references whose cited result (theorem, figure,
+  table) is critical to the paper, save a screenshot to
+  `content/bib-qa-images/<refid>.png`.
 
 ---
 
@@ -356,7 +364,8 @@ When **writing or editing manuscript content**, apply the following skills:
 |------|---------------------|
 | Writing new sections or chapters | `local/scientific-accuracy`, `local/readability-editing`, `claude-scientific-skills/scientific-writing` |
 | Reviewing or revising text | `local/readability-editing`, `claude-scientific-skills/peer-review`, `claude-scientific-skills/scientific-critical-thinking` |
-| Adding or verifying references | `local/scientific-accuracy`, `claude-scientific-skills/citation-management`, `claude-scientific-skills/arxiv-database` |
+| Adding or verifying references | `local/bib-qa`, `local/scientific-accuracy`, `claude-scientific-skills/citation-management`, `claude-scientific-skills/arxiv-database` |
+| Bibliography QA dashboard | `local/bib-qa` |
 | Generating figures or plots | `claude-scientific-skills/scientific-visualization`, `claude-scientific-skills/matplotlib` |
 | Verifying equations or proofs | `local/scientific-accuracy`, `claude-scientific-skills/sympy` |
 | Validating LaTeX syntax | `local/latex-validation` |
