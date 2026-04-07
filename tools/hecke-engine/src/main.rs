@@ -364,7 +364,7 @@ fn main() {
     let engine = HeckeEngine::new(1.10998);
 
     if args.len() < 2 {
-        eprintln!("Usage: hecke-engine [nucleus|table|pauli|shellfactor|qvalues|qvalues-l1] ...");
+        eprintln!("Usage: hecke-engine [nucleus|table|pauli|shellfactor|qvalues|qvalues-cat|qvalues-l1] ...");
         std::process::exit(1);
     }
 
@@ -543,6 +543,199 @@ fn main() {
             }
             let mae: f64 = errs.iter().sum::<f64>()/errs.len() as f64;
             println!("\nMAE = {:.1}%  (log_q(P_dau/P_par) should be ≈ −(N−1), a q-integer)", mae);
+        }
+
+        "qvalues-cat" => {
+            // ── Full categorical Q-value ───────────────────────────────
+            //
+            // Q_q = |S_q(par) − S_q(dau) − S_q(e)| × κ + δ_q × κ
+            //
+            // where:
+            //   S_q(N) = ln|∏ V̂_i|      (Skein polynomial = Markov trace of nuclear braid)
+            //   S_q(e) = ln|J(T_{2,3})| (Jones polynomial of right-hand trefoil)
+            //   δ_q    = (∂(S_q(par)−S_q(dau))/∂q) × Δq_eff
+            //   Δq_eff = (A−1)/A² × ℏ_q²
+            //   κ      = m_e / 3         (electron mass / crossing number of T_{2,3})
+            //
+            // The neutrino term vanishes: S_q(unknot) = 1, ln(1) = 0.
+
+            let m_e_mev = 0.510999_f64;
+            let kappa = m_e_mev / 3.0;                     // κ = m_e / 3
+            let hbar_q = 1.0 - engine.qi;                  // ℏ_q = 1 − q⁻¹
+
+            // S_q(e) = ln|J(T_{2,3}, q₀)|
+            let j_trefoil = -engine.q.powi(-4) + engine.q.powi(-3) + engine.qi;
+            let s_q_electron = j_trefoil.abs().ln();
+
+            // S_q(N) = ln|∏ V̂_i| from transfer-matrix generator volumes
+            let s_q_nucleus = |z: usize, n: usize| -> f64 {
+                engine.generator_volumes(z, n).iter()
+                    .map(|v| v.abs().ln())
+                    .sum::<f64>()
+            };
+
+            // δ_q: q-anomaly from self-deformation
+            // ∂(S_q(par)−S_q(dau))/∂q computed by central finite difference
+            let delta_q_correction = |z: usize, n: usize| -> (f64, f64, f64) {
+                let a = (z + n) as f64;
+                let dq_eff = (a - 1.0) / (a * a) * hbar_q * hbar_q;
+                let h = 1.4e-7_f64;  // finite-difference step (~100 × Q_ERR)
+
+                let delta_s_at = |q_val: f64| -> f64 {
+                    let eng = HeckeEngine::new(q_val);
+                    let vp: f64 = eng.generator_volumes(z, n).iter()
+                        .map(|v| v.abs().ln()).sum();
+                    let vd: f64 = eng.generator_volumes(z + 1, n - 1).iter()
+                        .map(|v| v.abs().ln()).sum();
+                    vp - vd
+                };
+
+                let ds_dq = (delta_s_at(engine.q + h) - delta_s_at(engine.q - h)) / (2.0 * h);
+                (dq_eff * ds_dq, dq_eff, ds_dq)
+            };
+
+            println!("FULL CATEGORICAL Q-VALUE");
+            println!("Q_q = |S_q(par) - S_q(dau) - S_q(e)| x kappa + delta_q x kappa");
+            println!("{}", "=".repeat(100));
+            println!();
+            println!("  S_q(e)   = ln|J(T_{{2,3}}, q₀)| = {:.6}", s_q_electron);
+            println!("  J(T_{{2,3}}, q₀) = {:.6}", j_trefoil);
+            println!("  κ        = m_e / 3 = {:.6} MeV", kappa);
+            println!("  ℏ_q      = 1 − q⁻¹ = {:.6}", hbar_q);
+            println!("  q₀       = {:.10}", engine.q);
+            println!();
+
+            struct B { z: usize, n: usize, name: &'static str, q_exp: f64 }
+            let benchmarks = [
+                B{z:1,n:2,name:"³H→³He",q_exp:0.01861},
+                B{z:6,n:8,name:"¹⁴C→¹⁴N",q_exp:0.15648},
+                B{z:27,n:33,name:"⁶⁰Co→⁶⁰Ni",q_exp:0.31817},
+                B{z:38,n:52,name:"⁹⁰Sr→⁹⁰Y",q_exp:0.54590},
+                B{z:55,n:82,name:"¹³⁷Cs→¹³⁷Ba",q_exp:0.51400},
+                B{z:83,n:127,name:"²¹⁰Bi→²¹⁰Po",q_exp:1.16270},
+            ];
+
+            println!("{:>16} {:>8} {:>8} {:>8} {:>8} {:>7} {:>7} {:>7} {:>10} {:>8}",
+                "Decay","Q_bare","Q_+e","Q_cat","Q_exp","err_b","err_e","err_c","dq_eff","dS/dq");
+            println!("{}", "-".repeat(100));
+
+            let mut errs_b = Vec::new();
+            let mut errs_e = Vec::new();
+            let mut errs_c = Vec::new();
+
+            for b in &benchmarks {
+                let ln_p_par = s_q_nucleus(b.z, b.n);
+                let ln_p_dau = s_q_nucleus(b.z + 1, b.n - 1);
+                let delta_s = ln_p_par - ln_p_dau;
+
+                let (dq_corr, dq_eff, ds_dq) = delta_q_correction(b.z, b.n);
+
+                let q_bare   = delta_s.abs() * kappa;
+                let q_with_e = (delta_s - s_q_electron).abs() * kappa;
+                let q_cat    = (delta_s - s_q_electron).abs() * kappa + dq_corr * kappa;
+
+                let err_b = (q_bare - b.q_exp) / b.q_exp * 100.0;
+                let err_e = (q_with_e - b.q_exp) / b.q_exp * 100.0;
+                let err_c = (q_cat - b.q_exp) / b.q_exp * 100.0;
+                errs_b.push(err_b.abs());
+                errs_e.push(err_e.abs());
+                errs_c.push(err_c.abs());
+
+                println!("{:>16} {:>8.5} {:>8.5} {:>8.5} {:>8.5} {:>+6.1}% {:>+6.1}% {:>+6.1}% {:>10.6} {:>+8.2}",
+                    b.name, q_bare, q_with_e, q_cat, b.q_exp, err_b, err_e, err_c, dq_eff, ds_dq);
+            }
+
+            let mae_b: f64 = errs_b.iter().sum::<f64>() / errs_b.len() as f64;
+            let mae_e: f64 = errs_e.iter().sum::<f64>() / errs_e.len() as f64;
+            let mae_c: f64 = errs_c.iter().sum::<f64>() / errs_c.len() as f64;
+            println!();
+            println!("  Bare (|ln P ratio| × κ):              MAE = {:.1}%", mae_b);
+            println!("  + electron (−ln J(T_{{2,3}})):          MAE = {:.1}%", mae_e);
+            println!("  + q-anomaly (full categorical):        MAE = {:.1}%", mae_c);
+            println!();
+            println!("  No F_shell, no F_I10, no q-weighting.");
+            println!("  Pure categorical action difference.");
+
+            // ── Protium recursion ────────────────────────────────────
+            // Build protium at quark level: 4 strands (u, u, d, e)
+            // Using the same crossing convention as nucleon level
+            // but with quark-type crossings:
+            //   uu → (1, 0)      same as pp
+            //   dd → (1, −HA)    same as nn
+            //   ud → (1, −HA/2)  same as pn
+            //   ue, de → (1, 0)  electron = pure Hopf link (σ crossing)
+
+            println!();
+            println!("{}", "=".repeat(100));
+            println!("PROTIUM RECURSION: quark-level S_q for ℵ(1,0) and ℵ(1,1)");
+            println!("{}", "=".repeat(100));
+            println!();
+
+            // Protium: u, u, d, e  (4 strands)
+            let protium_types: Vec<u8> = vec![b'p', b'p', b'n', b'p'];  // u=p, d=n, e=p(Hopf)
+            let protium_vols = engine.generator_volumes_typed(&protium_types);
+            let s_q_protium: f64 = protium_vols.iter().map(|v| v.abs().ln()).sum();
+
+            println!("  Protium ℵ(1,0): 4 strands [u, u, d, e]");
+            println!("    V̂ = {:?}", protium_vols);
+            println!("    S_q(protium) = ln|∏V̂| = {:.10}", s_q_protium);
+            println!();
+
+            // Deuterium: u, u, d, u, d, d, e  (7 strands)
+            let deuterium_types: Vec<u8> = vec![b'p', b'p', b'n', b'p', b'n', b'n', b'p'];
+            let deuterium_vols = engine.generator_volumes_typed(&deuterium_types);
+            let s_q_deuterium: f64 = deuterium_vols.iter().map(|v| v.abs().ln()).sum();
+
+            println!("  Deuterium ℵ(1,1): 7 strands [u, u, d, u, d, d, e]");
+            println!("    V̂ = {:?}", deuterium_vols);
+            println!("    S_q(deuterium) = ln|∏V̂| = {:.10}", s_q_deuterium);
+            println!();
+
+            // Recursive structure: deuterium = protium + neutron
+            // S_q(deuterium) vs S_q(protium) + S_q(neutron_quarks)
+            let neutron_q_types: Vec<u8> = vec![b'p', b'n', b'n'];  // u, d, d
+            let s_q_neutron_q: f64 = engine.generator_volumes_typed(&neutron_q_types)
+                .iter().map(|v| v.abs().ln()).sum();
+
+            let proton_q_types: Vec<u8> = vec![b'p', b'p', b'n'];   // u, u, d
+            let s_q_proton_q: f64 = engine.generator_volumes_typed(&proton_q_types)
+                .iter().map(|v| v.abs().ln()).sum();
+
+            println!("  Quark-level constituents:");
+            println!("    S_q(proton quarks) = {:.10}", s_q_proton_q);
+            println!("    S_q(neutron quarks) = {:.10}", s_q_neutron_q);
+            println!("    S_q(proton) + S_q(neutron) = {:.10}", s_q_proton_q + s_q_neutron_q);
+            println!("    S_q(protium) = {:.10}", s_q_protium);
+            println!("    S_q(deuterium) = {:.10}", s_q_deuterium);
+            println!();
+
+            // Binding energy from recursion:
+            // ΔS = S_q(composite) − Σ S_q(constituents) − S_q(e)
+            let delta_binding_H = s_q_protium - s_q_proton_q - s_q_electron;
+            let delta_binding_D = s_q_deuterium - (s_q_proton_q + s_q_neutron_q) - s_q_electron;
+
+            println!("  Recursive binding:");
+            println!("    ΔS(protium)   = S_q(H) − S_q(p_quarks) − S_q(e) = {:.10}", delta_binding_H);
+            println!("    ΔS(deuterium) = S_q(D) − S_q(p+n quarks) − S_q(e) = {:.10}", delta_binding_D);
+            println!("    |ΔS(H)| × κ = {:.6} MeV", delta_binding_H.abs() * kappa);
+            println!("    |ΔS(D)| × κ = {:.6} MeV", delta_binding_D.abs() * kappa);
+            println!();
+
+            // Deuterium binding energy: B = m_p + m_n − m_D = 2.22457 MeV
+            let b_deuterium_exp = 2.22457_f64;
+            let b_deuterium_pred = delta_binding_D.abs() * kappa;
+            let err_d = (b_deuterium_pred - b_deuterium_exp) / b_deuterium_exp * 100.0;
+            println!("  Deuterium binding energy:");
+            println!("    B(D)_pred = |ΔS(D)| × κ = {:.6} MeV", b_deuterium_pred);
+            println!("    B(D)_exp  = 2.22457 MeV");
+            println!("    Error: {:+.1}%", err_d);
+            println!();
+
+            // Also try: protium-to-deuterium by adding neutron
+            let delta_H_to_D = s_q_deuterium - s_q_protium - s_q_neutron_q;
+            println!("  Protium → Deuterium (adding neutron):");
+            println!("    ΔS(H→D) = S_q(D) − S_q(H) − S_q(n_quarks) = {:.10}", delta_H_to_D);
+            println!("    |ΔS(H→D)| × κ = {:.6} MeV", delta_H_to_D.abs() * kappa);
         }
 
         "qvalues-l1" => {
