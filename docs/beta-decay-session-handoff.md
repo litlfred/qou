@@ -86,7 +86,7 @@ Engine: hecke-engine 0.8.0
 - **I₁₀ pairing analysis: DONE** (session 5). Key discoveries:
   - Spectator overcounting hypothesis DISPROVED (unchanged generators
     already contribute zero — luc = 0).
-  - F_deg2 (0.5949) ≈ R_pp = V̂(T²_pp)/V̂(T_pp)² (0.5987) —
+  - F_deg2 (0.5904, Rosso--Jones weighted) ≈ R_pp = V̂(T²_pp)/V̂(T_pp)² (0.5987) —
     the shell factor IS the Hecke pairing ratio, derived from q.
   - Odd-odd → even-even transitions systematically overpredicted
     (+6.6% to +8.5% in Skein ratio formula).

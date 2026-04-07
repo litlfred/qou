@@ -3,7 +3,7 @@ predicted from the substrate parameter $q$ alone, with zero fitting
 parameters.  The formula uses the $2 \times 2$ standard representation
 of $H_3(q)$, which generates the full $6 \times 6$ regular
 representation via the tensor identity $2 \times 2 = 6 \times 6$.
-**MAE $\approx 4.9\%$ across six NNDC benchmarks, zero fitting.**
+**MAE $\approx 4.4\%$ across six NNDC benchmarks, zero fitting.**
 
 The derivation chain is:
 
@@ -49,6 +49,6 @@ $$
 $$
 
 - $F_{\mathrm{shell}} = \hat{V}(T_{\mathrm{pp}}^2) / \hat{V}(T_{\mathrm{pp}})^2
-  \approx 0.5949$ for shell $\geq 5$
+  \approx 0.5904$ for shell $\geq 5$
 - $F_{I_{10}} = (1 - \delta_{\mathrm{pp}}/Z)(1 - \delta_{\mathrm{nn}}/N)$
   for odd-odd $\to$ even-even at shell $\geq 5$

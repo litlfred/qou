@@ -198,20 +198,53 @@ proportions for shells $\geq 5$ ($N > 28$):
 
 **Degree-2 shell factor** ($F_{\mathrm{deg2}}$).
 For shells at degree $2$ in the torus knot tower, the two embeddable
-degree-$2$ knots $\tau(2,9)$ and $\tau(3,4)$ contribute:
+degree-$2$ knots $\tau(2,9)$ and $\tau(3,4)$ contribute a
+**Rosso--Jones weighted average**:
 
 $$
   F_{\mathrm{deg2}}
-  = \frac{\tfrac{1}{2}\bigl(
-      \mathrm{tr}_M(\tau(2,9) \cdot \Delta_\beta)
-    + \mathrm{tr}_M(\tau(3,4) \cdot \Delta_\beta)
-    \bigr)}{\mathrm{tr}_M(\Delta_\beta)}
-  \approx 0.5949
+  = \frac{
+      J(\tau(2,9)) \cdot \mathrm{tr}_M(\tau(2,9) \cdot \Delta_\beta)
+    + J(\tau(3,4)) \cdot \mathrm{tr}_M(\tau(3,4) \cdot \Delta_\beta)
+    }{
+      \bigl(J(\tau(2,9)) + J(\tau(3,4))\bigr)
+      \cdot \mathrm{tr}_M(\Delta_\beta)
+    }
+  \approx 0.5904
 $$
 
-where $\Delta_\beta = T_{\mathrm{mix}} - T_{nn}$ is the beta-decay
-difference operator and the average is over the two degree-$2$ basis
-knots (which have equal multiplicity in the regular representation).
+where $J(\tau(r,s)) = \sum_{\lambda \vdash r} d_\lambda(q) \cdot \omega_\lambda^s$
+is the Rosso--Jones invariant (quantum-dimension weighted trace of
+the full twist on each irrep of $H_r(q)$), and $\Delta_\beta = T_{\mathrm{mix}} - T_{nn}$ is the beta-decay
+difference operator.  The Rosso--Jones weights are the canonical
+inner product on the representation ring — they assign each
+degree-$2$ knot its quantum dimension rather than an ad hoc
+equal weight.
+
+At $q = q_0$:
+$J(\tau(2,9)) \approx 2.167$ and $J(\tau(3,4)) \approx 5.794$,
+so $\tau(3,4)$ receives approximately $2.67\times$ the weight
+of $\tau(2,9)$.
+
+**Kummer tower decomposition.**
+The two degree-$2$ knots correspond to the prime factorisation
+of the Euler characteristic $|\chi(A)| = 6 = 2 \times 3$ through
+the Kummer tower filtration
+([Kummer filtration](#rem:kummer-filtration-obstruction)):
+
+- $\tau(3,4)$ has $s = 4 = 2^2$ — the **$\mu_2$ branch** of the
+  Kummer tower (even/odd parity);
+- $\tau(2,9)$ has $s = 9 = 3^2$ — the **$\mu_3$ branch**
+  (threefold symmetry).
+
+The Chinese Remainder Theorem decomposition
+$\mathbb{Z}/6\mathbb{Z} \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}$
+produces exactly these two independent components.
+The Rosso--Jones weights are the quantum dimensions of the
+corresponding Kummer components: $J(\tau(3,4)) > J(\tau(2,9))$
+because the $\mu_2$ component (parity) has a larger quantum
+dimension in the degree-$2$ representation ring than the
+$\mu_3$ component (threefold symmetry).
 
 **Pauli exclusion factor** ($F_{\mathrm{Pauli}}$).
 For magic-number neutron shells ($N \in \{2, 8, 20, 28, 50, 82, 126\}$),
@@ -243,7 +276,7 @@ $$
 $$
 
 where $[\cdot]$ is the Iverson bracket.  The proportion
-$F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5949 \times 0.6382 \approx 0.380$
+$F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5904 \times 0.6382 \approx 0.377$
 applies to magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$
 with $N = 82$).
 
@@ -251,8 +284,8 @@ with $N = 82$).
 
 Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$
 (CODATA).  The parametric error is $O(\varepsilon)$ (negligible).
-The structural errors ($5$–$11\%$) are $O(1)$ relative to
+The structural errors ($2$–$10\%$) are $O(1)$ relative to
 $\varepsilon$: nucleon ordering in $\mathcal{Q}_{\mathrm{bare}}$,
-degree-$2$ averaging over two knots, and the degree tower
+degree-$2$ Rosso--Jones weighting over two knots, and the degree tower
 truncation.  These do not arise from missing spectral
 components — the decomposition is complete.

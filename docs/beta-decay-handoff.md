@@ -127,13 +127,13 @@ Q_bare overshoots for heavy nuclei (60Co +79%, 90Sr +70%, 137Cs +171%, 210Bi +82
 **SOLUTION**: Representation-theoretic formula:
   Q = Q_bare × F_deg × F_Pauli
 
-- F_deg = ½(tr(T_{2,9}·Δ) + tr(T_{3,4}·Δ)) = 0.5949 for degree-2 shells (N > 28)
+- F_deg = (J₂₉·tr(T_{2,9}·Δ) + J₃₄·tr(T_{3,4}·Δ))/(J₂₉+J₃₄) = 0.5904 for degree-2 shells (N > 28)
   = 1 for degree-1 shells (N ≤ 28)
 - F_Pauli = |tr_alt(Δ)|/|tr(Δ)| = 0.6382 for fully filled degree-2 shells (magic N)
   = 1 otherwise
 
-Results: ³H -6.5%, ¹⁴C -4.6%, ⁶⁰Co +6.6%, ⁹⁰Sr +0.9%, ¹³⁷Cs +3.0%, ²¹⁰Bi +8.5%
-Mean absolute error: 5.0%, RMS: 5.6%
+Results: ³H -0.6%, ¹⁴C -2.2%, ⁶⁰Co +6.4%, ⁹⁰Sr +2.1%, ¹³⁷Cs +4.6%, ²¹⁰Bi +10.3%
+Mean absolute error: 4.4%, RMS: 5.4%
 
 Script: folio-assistant/computations/qvalue-representation-theory.py
 

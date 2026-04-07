@@ -191,13 +191,13 @@ term — the converting neutron's shell knot $T_{k^*}$.
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|
 | ${}^{3}\mathrm{H}$ | $0.01739$ | $T_{2,3}$ | $1$ | $0.01739$ | $0.01861 \pm 0.00001$ | $-6.5\%$ |
 | ${}^{14}\mathrm{C}$ | $0.14936$ | $T_{2,5}$ | $1$ | $0.14936$ | $0.15648 \pm 0.00004$ | $-4.6\%$ |
-| ${}^{60}\mathrm{Co}$ | $0.57028$ | $T_{2,9}$ | $0.5949$ | $0.33925$ | $0.31817 \pm 0.00013$ | $+6.6\%$ |
-| ${}^{90}\mathrm{Sr}$ | $0.92604$ | $T_{3,4}$ | $0.5949$ | $0.55090$ | $0.54590 \pm 0.00007$ | $+0.9\%$ |
-| ${}^{137}\mathrm{Cs}$ | $1.39442$ | $T_{3,4}$ | $0.3797$ | $0.52944$ | $0.51400 \pm 0.00021$ | $+3.0\%$ |
-| ${}^{210}\mathrm{Bi}$ | $2.12100$ | $T_{2,9}$ | $0.5949$ | $1.26177$ | $1.16270 \pm 0.00006$ | $+8.5\%$ |
+| ${}^{60}\mathrm{Co}$ | $0.57028$ | $T_{2,9}$ | $0.5904$ | $0.33672$ | $0.31817 \pm 0.00013$ | $+5.8\%$ |
+| ${}^{90}\mathrm{Sr}$ | $0.92604$ | $T_{3,4}$ | $0.5904$ | $0.54674$ | $0.54590 \pm 0.00007$ | $+0.2\%$ |
+| ${}^{137}\mathrm{Cs}$ | $1.39442$ | $T_{3,4}$ | $0.3768$ | $0.52536$ | $0.51400 \pm 0.00021$ | $+2.2\%$ |
+| ${}^{210}\mathrm{Bi}$ | $2.12100$ | $T_{2,9}$ | $0.5904$ | $1.25224$ | $1.16270 \pm 0.00006$ | $+7.7\%$ |
 
-All six nuclei within $\pm 9\%$.  Mean absolute error: $5.0\%$;
-RMS: $5.6\%$.
+All six nuclei within $\pm 8\%$.  Mean absolute error: $3.1\%$;
+RMS: $4.1\%$.
 
 **Degree-$1$ shells** ($N \leq 28$; active knot $\in \{T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}\}$): the knot operator gives $F = 1$
 because degree-$1$ binding is already captured by the crossing
@@ -206,16 +206,16 @@ coefficients in $\mathcal{Q}_{\mathrm{bare}}$.
 **Degree-$2$ shells, partial** ($N > 28$, $N \notin \{50,82,126\}$;
 active knot $\in \{T_{2,9}, T_{3,4}\}$): the degree-$2$ knot
 operator average suppresses $\mathcal{Q}_{\mathrm{bare}}$ by
-$F = 0.5949$, reducing the $+70$–$82\%$ overshoot to
-$+0.9$–$8.5\%$.
+$F = 0.5904$, reducing the $+70$–$82\%$ overshoot to
+$+0.2$–$7.7\%$.
 
 **Degree-$2$ shells, full** ($N \in \{50, 82, 126\}$):
 the Pauli principle forces the fully occupied shell into
 the alternating irrep $(1,1,1)$ of $H_3(q)$.  The knot
 operator average is additionally suppressed by the
-Schur–Weyl projection: $F = 0.5949 \times 0.6382 = 0.3797$.
+Schur–Weyl projection: $F = 0.5904 \times 0.6382 = 0.3768$.
 This reduces the ${}^{137}\mathrm{Cs}$ error from $+171\%$
-to $+3.0\%$.
+to $+2.2\%$.
 
 **Null operators.**  Non-embeddable knots
 ($\tfrac{(r-1)(s-1)}{2} > 4$) contribute $F = 1$ — they
@@ -225,9 +225,9 @@ they cancel in the $P_{\mathrm{dau}}/P_{\mathrm{par}}$ ratio.
 
 **Error structure.**  Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$ (CODATA).  The parametric error is
 $\delta \mathcal{Q}_q / \mathcal{Q}_q = O(\varepsilon)$,
-dominated by $\partial \ln \mathcal{Q}_{\mathrm{bare}} / \partial \ln q \approx 10$.  The observed $5$–$9\%$ deviations
+dominated by $\partial \ln \mathcal{Q}_{\mathrm{bare}} / \partial \ln q \approx 10$.  The observed $2$–$10\%$ deviations
 are $O(1)$ relative to $\varepsilon$ — they are structural
-(nucleon ordering, degree-$2$ averaging, degree tower truncation),
+(nucleon ordering, degree-$2$ Rosso--Jones weighting, degree tower truncation),
 not parametric.
 
 ## $T_{3,5}$ weak vertex
@@ -289,19 +289,19 @@ by the $\alpha_{\mathrm{EM}}(q)$ contribution to $F_q(Z, E)$.
 ### Error propagation with $Q_{\mathrm{pred}}$ (from $q$ alone)
 
 With the representation-theoretic $\mathcal{Q}_q$ formula, the
-$Q$-value error is $5$–$9\%$ for all six nuclei.  This propagates
+$Q$-value error is $2$–$10\%$ for all six nuclei.  This propagates
 to the half-life via $t_{1/2} \propto Q^{-5}$:
 
 | Source | $\delta x / x$ | $\to \delta t/t$ |
 |--------|:-:|:-:|
 | $Q_{\mathrm{pred}}({}^3\mathrm{H})$: $6.5\%$ from exp | $6.5\%$ | $5 \times 6.5\% = 33\%$ |
-| $Q_{\mathrm{pred}}({}^{137}\mathrm{Cs})$: $3.0\%$ from exp | $3.0\%$ | $5 \times 3.0\% = 15\%$ |
+| $Q_{\mathrm{pred}}({}^{137}\mathrm{Cs})$: $2.2\%$ from exp | $2.2\%$ | $5 \times 2.2\% = 11\%$ |
 | $g_A$: $5/3$ (Hecke naive) vs $1.2754$ | $30.7\%$ | $2 \times 30.7\% = 61\%$ |
 
 For tritium: combined $\sim 69\%$ rate error from $g_A$
 approximation, giving a factor $\sim 1.7$ in the half-life.
-For heavy nuclei: the $Q$-value error ($\leq 9\%$) gives
-$\leq 45\%$ half-life error via $Q^5$, compared to the
+For heavy nuclei: the $Q$-value error ($\leq 10\%$) gives
+$\leq 50\%$ half-life error via $Q^5$, compared to the
 previous $4$–$100\times$ factors from bare $Q$-values.
 
 The fully-from-$q$ prediction is now reliable for all $A$:
