@@ -315,8 +315,8 @@ print()
 
 def crossing_coeffs(ti, tj):
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return q**2, -q*(q**0.5 - qi**0.5)
-    else: return (1+q**2)/2, -q*(q**0.5 - qi**0.5)/2
+    elif ti == 'n' and tj == 'n': return 1.0, -(q - qi)
+    else: return 1.0, -(q - qi)/2
 
 def T_mat(c, d):
     return [[c*HA+d, c], [c, d]]
