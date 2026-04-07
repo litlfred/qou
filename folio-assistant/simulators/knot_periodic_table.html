@@ -40,6 +40,8 @@ body{background:var(--bg);color:var(--text);font-family:'SF Mono','Cascadia Code
 .tile .zn{font-size:7px;color:var(--dim);line-height:1;}
 .tile canvas{width:16px;height:16px;margin-top:1px;}
 .tile.empty{border:none;background:none;cursor:default;pointer-events:none;}
+.tile.gap-spacer{aspect-ratio:unset;height:6px;}
+.tile.fblock-label{aspect-ratio:unset;}
 .tile.block-s{border-left:2px solid var(--accent);}
 .tile.block-p{border-left:2px solid var(--accent3);}
 .tile.block-d{border-left:2px solid var(--accent4);}
@@ -548,16 +550,16 @@ function buildTable() {
         }
       }
 
-      // Row 8 is a blank gap between main table and f-block rows
+      // Row 8 is a thin gap between main table and f-block rows
       if (row === 8) {
         const spacer = document.createElement('div');
-        spacer.className = 'tile empty';
+        spacer.className = 'tile empty gap-spacer';
         grid.appendChild(spacer);
         continue;
       }
       if (row === 9 && col === 1) {
         const spacer = document.createElement('div');
-        spacer.className = 'tile empty';
+        spacer.className = 'tile empty fblock-label';
         spacer.style.gridColumn = '1 / 3';
         spacer.innerHTML = '<span style="font-size:8px;color:var(--dim);">La-Lu</span>';
         grid.appendChild(spacer);
@@ -566,11 +568,16 @@ function buildTable() {
       }
       if (row === 10 && col === 1) {
         const spacer = document.createElement('div');
-        spacer.className = 'tile empty';
+        spacer.className = 'tile empty fblock-label';
         spacer.style.gridColumn = '1 / 3';
         spacer.innerHTML = '<span style="font-size:8px;color:var(--dim);">Ac-U</span>';
         grid.appendChild(spacer);
         col++;
+        continue;
+      }
+
+      // Skip trailing empty cells in f-block rows to avoid inflating row height
+      if (!found && (row === 9 || row === 10)) {
         continue;
       }
 
