@@ -32,16 +32,21 @@ body{background:var(--bg);color:var(--text);font-family:'SF Mono','Cascadia Code
 #top-bar select,#top-bar input[type=range]{font-size:10px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:1px 4px;font-family:inherit;}
 .val{color:var(--accent);font-size:10px;min-width:35px;}
 #periodic-panel{padding:6px;}
-#pt-grid{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;max-width:860px;margin:0 auto;}
-.tile{width:100%;aspect-ratio:1;border:1px solid var(--border);border-radius:3px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--tile-bg);transition:all .15s;position:relative;font-size:9px;min-width:0;overflow:hidden;}
+#pt-grid{display:flex;flex-direction:column;gap:0;max-width:640px;margin:0 auto;}
+.period-group{margin-bottom:5px;}
+.subshell-row{display:flex;align-items:center;margin-bottom:1px;}
+.subshell-label{width:26px;font-size:8px;text-align:right;padding-right:4px;flex-shrink:0;opacity:.7;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;}
+.subshell-label.block-s{color:var(--accent);}
+.subshell-label.block-p{color:var(--accent3);}
+.subshell-label.block-d{color:var(--accent4);}
+.subshell-label.block-f{color:var(--accent2);}
+.subshell-tiles{display:flex;gap:2px;justify-content:center;flex:1;}
+.tile{width:38px;height:38px;flex-shrink:0;border:1px solid var(--border);border-radius:3px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--tile-bg);transition:all .15s;position:relative;font-size:9px;overflow:hidden;}
 .tile:hover{border-color:var(--accent);box-shadow:0 0 6px rgba(58,144,255,.3);z-index:2;transform:scale(1.08);}
 .tile.selected{border-color:var(--accent3);box-shadow:0 0 8px rgba(51,255,170,.4);z-index:3;}
-.tile .sym{font-size:13px;font-weight:700;line-height:1;}
-.tile .zn{font-size:7px;color:var(--dim);line-height:1;}
-.tile canvas{width:16px;height:16px;margin-top:1px;}
-.tile.empty{border:none;background:none;cursor:default;pointer-events:none;}
-.tile.gap-spacer{aspect-ratio:unset;height:6px;}
-.tile.fblock-label{aspect-ratio:unset;}
+.tile .sym{font-size:12px;font-weight:700;line-height:1;text-shadow:0 0 3px rgba(0,0,0,.5);}
+.tile .zn{font-size:7px;line-height:1;text-shadow:0 0 2px rgba(0,0,0,.4);}
+.tile canvas{width:14px;height:14px;margin-top:1px;}
 .tile.block-s{border-left:2px solid var(--accent);}
 .tile.block-p{border-left:2px solid var(--accent3);}
 .tile.block-d{border-left:2px solid var(--accent4);}
@@ -74,10 +79,12 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
 .budget-seg{display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;font-weight:600;}
 #decay-eq{font-size:11px;color:var(--accent);margin:4px 0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.05em;}
 #hecke-rel{font-size:10px;color:var(--dim);margin:4px 0;}
-@media(max-width:800px){
+@media(max-width:700px){
   #bottom{flex-direction:column;}
-  #pt-grid{grid-template-columns:repeat(18,1fr);font-size:7px;}
-  .tile .sym{font-size:10px;}
+  .tile{width:30px;height:30px;}
+  .tile .sym{font-size:9px;}
+  .tile canvas{width:10px;height:10px;}
+  .subshell-label{width:20px;font-size:7px;}
 }
 </style>
 </head>
@@ -479,30 +486,23 @@ function drawMiniKnot(canvas, Z) {
   }
 }
 
-// ── Periodic Table Builder ──────────────────────────────────────────
-// Standard periodic table layout: [row, col] for Z=1..92
-// Rows 1-7, cols 1-18; lanthanides in row 8, actinides in row 9
-const PT_LAYOUT = {};
-(function() {
-  // Map each element to grid position
-  for (const el of EL) {
-    const Z = el[0], period = el[6], group = el[7], block = el[8];
-    let row, col;
-    // Lanthanides (57-71) go in row 9, Actinides (89-92) in row 10
-    // Fix period data: 83-86 are period 6, not 7 as in some datasets
-    if (Z >= 57 && Z <= 71) {
-      row = 9; col = Z - 57 + 3;
-    } else if (Z >= 89 && Z <= 92) {
-      row = 10; col = Z - 89 + 3;
-    } else if (Z >= 83 && Z <= 86) {
-      row = 6; col = group; // Bi-Rn are period 6
-    } else {
-      row = period;
-      col = group;
-    }
-    PT_LAYOUT[Z] = [row, col];
-  }
-})();
+// ── Subshell-Row Layout ─────────────────────────────────────────────
+// Aufbau filling order: within each period, rows go s → f → d → p
+// Shorter rows (s=2, p=6) are centered above wider rows (d=10, f=14)
+const SUBSHELL_ORDER = {0:0, 3:1, 2:2, 1:3}; // block index → sort key
+const SUBSHELL_NAMES = ['s','p','d','f'];
+
+function subshellLabel(period, block) {
+  // s/p use period directly; d uses period-1; f uses period-2
+  const n = block === 2 ? period - 1 : block === 3 ? period - 2 : period;
+  return n + SUBSHELL_NAMES[block];
+}
+
+function correctedPeriod(el) {
+  const Z = el[0];
+  if (Z >= 83 && Z <= 86) return 6; // Bi–Rn are period 6 (6p), not 7
+  return el[6];
+}
 
 function elByZ(z) { return EL.find(e => e[0] === z); }
 
@@ -533,82 +533,98 @@ function getTileColor(el, mode) {
   return isLight ? '#dde' : '#1a2a4a';
 }
 
+function textColorForBg(bgColor) {
+  let r = 10, g = 20, b = 50;
+  if (bgColor.startsWith('rgb')) {
+    const m = bgColor.match(/(\d+)/g);
+    if (m) { r = +m[0]; g = +m[1]; b = +m[2]; }
+  } else if (bgColor.startsWith('#')) {
+    const hex = bgColor.replace('#', '');
+    if (hex.length >= 6) { r = parseInt(hex.substr(0,2),16); g = parseInt(hex.substr(2,2),16); b = parseInt(hex.substr(4,2),16); }
+    else if (hex.length === 3) { r = parseInt(hex[0]+hex[0],16); g = parseInt(hex[1]+hex[1],16); b = parseInt(hex[2]+hex[2],16); }
+  }
+  return (0.299*r + 0.587*g + 0.114*b) > 140 ? '#111' : '#fff';
+}
+
 function buildTable() {
   const grid = document.getElementById('pt-grid');
   grid.innerHTML = '';
   const mode = document.getElementById('color-mode').value;
 
-  // Build 10 rows x 18 cols grid
-  for (let row = 1; row <= 10; row++) {
-    for (let col = 1; col <= 18; col++) {
-      // Find element at this position
-      let found = null;
-      for (const Z in PT_LAYOUT) {
-        if (PT_LAYOUT[Z][0] === row && PT_LAYOUT[Z][1] === col) {
-          found = parseInt(Z);
-          break;
-        }
-      }
-
-      // Row 8 is a thin gap between main table and f-block rows
-      if (row === 8) {
-        const spacer = document.createElement('div');
-        spacer.className = 'tile empty gap-spacer';
-        grid.appendChild(spacer);
-        continue;
-      }
-      if (row === 9 && col === 1) {
-        const spacer = document.createElement('div');
-        spacer.className = 'tile empty fblock-label';
-        spacer.style.gridColumn = '1 / 3';
-        spacer.innerHTML = '<span style="font-size:8px;color:var(--dim);">La-Lu</span>';
-        grid.appendChild(spacer);
-        col++; // skip col 2
-        continue;
-      }
-      if (row === 10 && col === 1) {
-        const spacer = document.createElement('div');
-        spacer.className = 'tile empty fblock-label';
-        spacer.style.gridColumn = '1 / 3';
-        spacer.innerHTML = '<span style="font-size:8px;color:var(--dim);">Ac-U</span>';
-        grid.appendChild(spacer);
-        col++;
-        continue;
-      }
-
-      // Skip trailing empty cells in f-block rows to avoid inflating row height
-      if (!found && (row === 9 || row === 10)) {
-        continue;
-      }
-
-      if (!found) {
-        const empty = document.createElement('div');
-        empty.className = 'tile empty';
-        grid.appendChild(empty);
-        continue;
-      }
-
-      const el = elByZ(found);
-      const tile = document.createElement('div');
-      tile.className = 'tile';
-      const blockClass = ['block-s','block-p','block-d','block-f'][el[8]];
-      tile.classList.add(blockClass);
-      if (el[9] || el[10]) tile.classList.add('magic');
-      if (selectedZ === found) tile.classList.add('selected');
-
-      tile.style.backgroundColor = getTileColor(el, mode);
-      tile.innerHTML = `<span class="zn">${el[0]}</span><span class="sym">${el[2]}</span><canvas width="32" height="32"></canvas>`;
-      tile.addEventListener('click', () => selectElement(found));
-
-      grid.appendChild(tile);
-
-      // Draw mini knot
-      requestAnimationFrame(() => {
-        const c = tile.querySelector('canvas');
-        if (c) drawMiniKnot(c, found);
-      });
-    }
+  // Group elements by period → subshell
+  const periodMap = new Map();
+  for (const el of EL) {
+    const P = correctedPeriod(el);
+    const B = el[8]; // block: 0=s, 1=p, 2=d, 3=f
+    if (!periodMap.has(P)) periodMap.set(P, new Map());
+    const subs = periodMap.get(P);
+    const sortKey = SUBSHELL_ORDER[B];
+    const label = subshellLabel(P, B);
+    const key = sortKey + '_' + label;
+    if (!subs.has(key)) subs.set(key, { label, sortKey, block: B, elements: [] });
+    subs.get(key).elements.push(el);
   }
+
+  const sortedPeriods = [...periodMap.keys()].sort((a, b) => a - b);
+
+  for (const P of sortedPeriods) {
+    const periodGroup = document.createElement('div');
+    periodGroup.className = 'period-group';
+
+    const subshells = [...periodMap.get(P).values()].sort((a, b) => a.sortKey - b.sortKey);
+
+    for (const sub of subshells) {
+      const row = document.createElement('div');
+      row.className = 'subshell-row';
+
+      // Subshell label (e.g. 1s, 2p, 3d, 4f) colored by block
+      const lbl = document.createElement('div');
+      lbl.className = 'subshell-label block-' + SUBSHELL_NAMES[sub.block];
+      lbl.textContent = sub.label;
+      row.appendChild(lbl);
+
+      // Centered tile container
+      const tilesWrap = document.createElement('div');
+      tilesWrap.className = 'subshell-tiles';
+
+      sub.elements.sort((a, b) => a[0] - b[0]);
+
+      for (const el of sub.elements) {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        const blockClass = ['block-s','block-p','block-d','block-f'][el[8]];
+        tile.classList.add(blockClass);
+        if (el[9] || el[10]) tile.classList.add('magic');
+        if (selectedZ === el[0]) tile.classList.add('selected');
+
+        const bgColor = getTileColor(el, mode);
+        tile.style.backgroundColor = bgColor;
+
+        // Dynamic text contrast based on background luminance
+        const txtColor = textColorForBg(bgColor);
+        const dimColor = txtColor === '#111' ? '#555' : '#99aabb';
+
+        tile.innerHTML = `<span class="zn" style="color:${dimColor}">${el[0]}</span><span class="sym" style="color:${txtColor}">${el[2]}</span><canvas width="28" height="28"></canvas>`;
+        tile.dataset.z = el[0];
+        tile.addEventListener('click', () => selectElement(el[0]));
+
+        tilesWrap.appendChild(tile);
+      }
+
+      row.appendChild(tilesWrap);
+      periodGroup.appendChild(row);
+    }
+
+    grid.appendChild(periodGroup);
+  }
+
+  // Draw mini knots (batched)
+  requestAnimationFrame(() => {
+    grid.querySelectorAll('.tile[data-z]').forEach(tile => {
+      const c = tile.querySelector('canvas');
+      if (c) drawMiniKnot(c, parseInt(tile.dataset.z));
+    });
+  });
 }
 
 // ── Element Selection ───────────────────────────────────────────────
