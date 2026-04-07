@@ -29,10 +29,12 @@ The skill operates at two levels:
 | # | Tag              | Auto? | Description |
 |---|------------------|-------|-------------|
 | 1 | `has_url`        | ✓     | Entry has a URL or DOI-derived URL |
-| 2 | `url_resolves`   | ✓*    | URL responds with HTTP 2xx (`--check-urls` flag) |
+| 2 | `url_resolves`   | ✓*    | URL responds with HTTP 2xx AND page contains expected title/author (`--check-urls` flag) |
 | 3 | `metadata_ok`    | ✓     | Title, author(s), year present; type-specific fields complete |
 | 4 | `cited_in_paper` | ✓     | Referenced by `\cite{}` in .md/.tex or `-- Ref:` in .lean |
 | 5 | `has_screenshot`  | ✓     | Screenshot exists in `content/bib-qa-images/<id>.*` |
+
+\* ✓* = automated but requires `--check-urls` flag (makes network requests).
 
 Each tag resolves to `pass`, `fail`, `warn`, or `unchecked`.
 The **score** (0–5) is the count of passing tags.

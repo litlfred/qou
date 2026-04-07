@@ -1464,22 +1464,6 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1979]] },
   }),
 
-  // ── Kronheimer–Mrowka 2004 ────────────────────────────────────
-  ref({
-    id: "kronheimer2004",
-    type: "article-journal",
-    title: "Witten's conjecture and Property P",
-    author: [
-      { family: "Kronheimer", given: "Peter B." },
-      { family: "Mrowka", given: "Tomasz S." },
-    ],
-    "container-title": "Geometry & Topology",
-    volume: "8",
-    page: "295-310",
-    DOI: "10.2140/gt.2004.8.295",
-    issued: { "date-parts": [[2004]] },
-  }),
-
   // ── Weil 1948 (Courbes algébriques) ─────────────────────────
   ref({
     id: "weil1948",
@@ -1725,6 +1709,140 @@ export const references: CSLData[] = [
     volume: "128",
     page: "122001",
     DOI: "10.1103/PhysRevLett.128.122001",
+  }),
+
+  // ── Jaffe–Witten 2006 (Yang–Mills Millennium Problem) ────────
+  ref({
+    id: "jaffe2006",
+    type: "chapter",
+    title: "Quantum Yang\u2013Mills Theory",
+    author: [
+      { family: "Jaffe", given: "Arthur" },
+      { family: "Witten", given: "Edward" },
+    ],
+    "container-title": "The Millennium Prize Problems",
+    publisher: "Clay Mathematics Institute / American Mathematical Society",
+    issued: { "date-parts": [[2006]] },
+    page: "129-152",
+    URL: "https://www.claymath.org/millennium/yang-mills-the-maths-gap/",
+  }),
+
+  // ── AME2020 (Atomic Mass Evaluation 2020) ─────────────────────
+  ref({
+    id: "ame2020",
+    type: "article-journal",
+    title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
+    author: [
+      { family: "Wang", given: "Meng" },
+      { family: "Huang", given: "W. J." },
+      { family: "Kondev", given: "F. G." },
+      { family: "Audi", given: "Georges" },
+      { family: "Naimi", given: "Sarah" },
+    ],
+    "container-title": "Chinese Physics C",
+    issued: { "date-parts": [[2021]] },
+    volume: "45",
+    issue: "3",
+    page: "030002",
+    DOI: "10.1088/1674-1137/abddb0",
+    URL: "https://doi.org/10.1088/1674-1137/abddb0",
+  }),
+
+  // ── Fred 2025 (Quantum Observable Universe) ───────────────────
+  ref({
+    id: "litlfred2025",
+    type: "manuscript",
+    title: "Quantum Observable Universe",
+    author: [
+      { family: "Fred", given: "Litl" },
+    ],
+    issued: { "date-parts": [[2025]] },
+    note: "Manuscript in preparation",
+  }),
+
+  // ── Iwahori 1964 (Hecke ring structure) ───────────────────────
+  ref({
+    id: "iwahori1964",
+    type: "article-journal",
+    title: "On the structure of a Hecke ring of a Chevalley group over a finite field",
+    author: [
+      { family: "Iwahori", given: "Nagayoshi" },
+    ],
+    "container-title": "Journal of the Faculty of Science, University of Tokyo, Section IA",
+    issued: { "date-parts": [[1964]] },
+    volume: "10",
+    page: "215-236",
+  }),
+
+  // ── Mathas 1999 (Iwahori–Hecke Algebras and Schur Algebras) ──
+  ref({
+    id: "mathas1999",
+    type: "book",
+    title: "Iwahori\u2013Hecke Algebras and Schur Algebras of the Symmetric Group",
+    author: [
+      { family: "Mathas", given: "Andrew" },
+    ],
+    publisher: "American Mathematical Society",
+    issued: { "date-parts": [[1999]] },
+    "collection-title": "University Lecture Series",
+    "collection-number": 15,
+    DOI: "10.1090/ulect/015",
+    URL: "https://doi.org/10.1090/ulect/015",
+  }),
+
+  // ── Bach et al. 2013 (controlled double-slit diffraction) ────
+  ref({
+    id: "bach2013",
+    type: "article-journal",
+    title: "Controlled double-slit electron diffraction",
+    author: [
+      { family: "Bach", given: "Roger" },
+      { family: "Pope", given: "Damian" },
+      { family: "Liou", given: "Sy-Hwang" },
+      { family: "Batelaan", given: "Herman" },
+    ],
+    "container-title": "New Journal of Physics",
+    issued: { "date-parts": [[2013]] },
+    volume: "15",
+    issue: "3",
+    page: "033018",
+    DOI: "10.1088/1367-2630/15/3/033018",
+    URL: "https://doi.org/10.1088/1367-2630/15/3/033018",
+  }),
+
+  // ── Feynman 1965 (Lectures on Physics, Vol. III) ──────────────
+  ref({
+    id: "feynman1965",
+    type: "book",
+    title: "The Feynman Lectures on Physics, Vol. III: Quantum Mechanics",
+    author: [
+      { family: "Feynman", given: "Richard P." },
+      { family: "Leighton", given: "Robert B." },
+      { family: "Sands", given: "Matthew" },
+    ],
+    publisher: "Addison-Wesley",
+    issued: { "date-parts": [[1965]] },
+    URL: "https://www.feynmanlectures.caltech.edu/III_toc.html",
+  }),
+
+  // ── Shechtman et al. 1984 (quasicrystals discovery) ───────────
+  ref({
+    id: "shechtman1984",
+    type: "article-journal",
+    title: "Metallic Phase with Long-Range Orientational Order and No Translational Symmetry",
+    author: [
+      { family: "Shechtman", given: "D." },
+      { family: "Blech", given: "I." },
+      { family: "Gratias", given: "D." },
+      { family: "Cahn", given: "J. W." },
+    ],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[1984]] },
+    volume: "53",
+    issue: "20",
+    page: "1951-1953",
+    DOI: "10.1103/PhysRevLett.53.1951",
+    URL: "https://doi.org/10.1103/PhysRevLett.53.1951",
   }),
 ];
 

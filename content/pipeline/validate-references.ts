@@ -155,7 +155,8 @@ for (const file of leanFiles) {
   while ((match = pattern.exec(content)) !== null) {
     const key = match[1];
     leanCitations.add(key);
-    if (!referenceMap.has(key) && key !== "manuscript") {
+    // Skip cross-paper refs (paper-dir:label format) and manuscript self-refs
+    if (!referenceMap.has(key) && key !== "manuscript" && !key.includes(":")) {
       if (!unresolvedLeanRefs.has(key)) unresolvedLeanRefs.set(key, []);
       unresolvedLeanRefs.get(key)!.push(file.replace(REPO_ROOT + "/", ""));
     }

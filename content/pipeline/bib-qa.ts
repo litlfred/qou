@@ -190,6 +190,15 @@ function collectImages(): Map<string, string[]> {
 
 // ── URL resolution + content verification ───────────────────────
 
+// ── Content-match tuning constants ──────────────────────────────
+
+/** Skip title words shorter than this (common words like "the", "and"). */
+const MIN_TITLE_WORD_LENGTH = 5;
+/** Max title words to sample for content matching. */
+const MAX_TITLE_WORDS = 6;
+/** Fraction of search terms that must appear on the page (0.4 = 40%). */
+const CONTENT_MATCH_THRESHOLD = 0.4;
+
 /**
  * Check that a URL resolves (HTTP 2xx) and that the page contains
  * the intended content (title and/or author name appear on the page).
@@ -203,7 +212,7 @@ async function checkUrl(
       method: "GET",
       redirect: "follow",
       signal: AbortSignal.timeout(15_000),
-      headers: { "User-Agent": "BibQA/1.0 (academic reference checker)" },
+      headers: { "User-Agent": "QOU-BibQA/1.0 (academic reference checker)" },
     });
     if (!resp.ok) {
       return { ok: false, status: resp.status, detail: `HTTP ${resp.status}`, contentMatch: null };
@@ -221,13 +230,13 @@ async function checkUrl(
         // Build search terms from entry metadata
         const searchTerms: string[] = [];
 
-        // Title words (skip very short words)
+        // Title words (skip very short/common words)
         if (entry.title) {
           const titleWords = entry.title
             .replace(/[^\w\s]/g, " ")
             .split(/\s+/)
-            .filter((w: string) => w.length >= 5)
-            .slice(0, 6);
+            .filter((w: string) => w.length >= MIN_TITLE_WORD_LENGTH)
+            .slice(0, MAX_TITLE_WORDS);
           searchTerms.push(...titleWords);
         }
 
@@ -240,10 +249,9 @@ async function checkUrl(
         if (searchTerms.length === 0) {
           contentMatch = null; // can't verify without terms
         } else {
-          // Require at least half of the terms to appear on the page
           const matches = searchTerms.filter((t) => bodyLower.includes(t.toLowerCase()));
           const ratio = matches.length / searchTerms.length;
-          contentMatch = ratio >= 0.4;
+          contentMatch = ratio >= CONTENT_MATCH_THRESHOLD;
         }
       } catch {
         // Body read failed — still count the HTTP 200 as OK
