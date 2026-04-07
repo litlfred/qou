@@ -10,6 +10,7 @@
  */
 
 import { z } from "zod";
+import { isCrossPaperRef } from "./types";
 
 // ── Label patterns ───────────────────────────────────────────────
 
@@ -493,6 +494,30 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
       if (target.startsWith("https://") || target.startsWith("http://")) return null;
       return ctx.allLabels.has(target) ? null
         : `interprets label "${target}" not found in document`;
+    },
+  },
+  {
+    id: "md-crossref-resolve",
+    description: "All [text](#label) cross-references in .md content must resolve to existing labels",
+    appliesTo: [
+      "definition", "theorem", "lemma", "proposition", "corollary",
+      "conjecture", "example", "remark", "simulator", "prose",
+    ],
+    check: (_block, ctx) => {
+      if (!ctx.mdContent) return null;
+      const matches = ctx.mdContent.matchAll(/\[([^\]]*)\]\(#([^)]+)\)/g);
+      const missing: string[] = [];
+      for (const match of matches) {
+        const label = match[2];
+        // Skip cross-paper references and URLs
+        if (isCrossPaperRef(label)) continue;
+        if (label.startsWith("https://") || label.startsWith("http://")) continue;
+        if (!ctx.allLabels.has(label)) {
+          missing.push(label);
+        }
+      }
+      return missing.length === 0 ? null
+        : `[warning] Undefined cross-reference(s) in .md: ${missing.join(", ")}`;
     },
   },
 ];
