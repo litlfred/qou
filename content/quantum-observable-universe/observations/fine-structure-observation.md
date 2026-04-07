@@ -30,7 +30,7 @@ with the experimental value to $0.14\%$ — within the uncertainty
 of the substrate parameter itself.
 
 **Inversion: $q$ from $\alpha_{\mathrm{EM}}$.**
-Conversely, fixing $\alpha^{-1} = 137.036$ and solving for $q$
+Conversely, fixing $\alpha^{-1} \approx 137.036$ and solving for $q$
 gives
 
 $$

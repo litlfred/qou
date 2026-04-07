@@ -75,18 +75,19 @@ def strand_type(nucleon_idx, strand_offset, nucleon_type):
 
 
 def crossing_weight(type_i, type_j):
-    """Crossing weight between two quark strands.
+    """Crossing weight (c, d) for T(c,d) = c·σ + d·𝟙.
 
-    u-u: positive crossing → (1, 0) i.e. just σ
-    d-d: negative crossing → (q², -q·skein_amp)
-    u-d or d-u: mixed → ((1+q²)/2, -q·skein_amp/2)
+    From the Hecke inverse relation σ⁻¹ = σ − (q − q⁻¹):
+      u-u (pp): positive crossing → c = 1, d = 0
+      d-d (nn): negative crossing → c = 1, d = −HA
+      u-d (pn): mixed crossing    → c = 1, d = −HA/2
     """
     if type_i == 'u' and type_j == 'u':
         return 1.0, 0.0
     elif type_i == 'd' and type_j == 'd':
-        return Q_VAL**2, -Q_VAL * SKEIN_AMP
+        return 1.0, -HA
     else:
-        return 0.5 * (1 + Q_VAL**2), -0.5 * Q_VAL * SKEIN_AMP
+        return 1.0, -HA / 2.0
 
 
 # ── Factored trace at Level 1 ───────────────────────────────────

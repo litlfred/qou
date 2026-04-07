@@ -192,17 +192,32 @@ impl Elem {
 fn ha_poly() -> LPoly {
     let mut p = LPoly::zero(); p.terms.insert(2, 1); p.terms.insert(-2, -1); p
 }
+/// Crossing coefficients (c, d) in ℤ[t, t⁻¹] where t = q^½.
+///
+/// From the Hecke inverse relation σ⁻¹ = σ − (q − q⁻¹):
+///   pp → σ:          c = 1,   d = 0
+///   nn → σ⁻¹:        c = 1,   d = −HA = −(t² − t⁻²) = −t² + t⁻²
+///   pn → ½(σ+σ⁻¹): c = 1,   d = −HA/2
+///        (doubled to stay integral: 2c = 2, 2d = −t² + t⁻²)
 fn crossing_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
     match (ti, tj) {
         (b'p', b'p') => (LPoly::one(), LPoly::zero(), false),
         (b'n', b'n') => {
-            let c = LPoly::t(4);
-            let mut d = LPoly::zero(); d.terms.insert(3, -1); d.terms.insert(1, 1);
+            // c = 1, d = −HA = −t² + t⁻²
+            let c = LPoly::one();
+            let mut d = LPoly::zero();
+            d.terms.insert(2, -1);   // −t²
+            d.terms.insert(-2, 1);   // +t⁻²
             (c, d, false)
         }
         _ => {
-            let mut c2 = LPoly::one(); c2.terms.insert(4, 1);
-            let mut d2 = LPoly::zero(); d2.terms.insert(3, -1); d2.terms.insert(1, 1);
+            // pn: doubled to stay integral.
+            // 2c = 2, 2d = −HA = −t² + t⁻²
+            let mut c2 = LPoly::zero();
+            c2.terms.insert(0, 2);   // 2
+            let mut d2 = LPoly::zero();
+            d2.terms.insert(2, -1);  // −t²
+            d2.terms.insert(-2, 1);  // +t⁻²
             (c2, d2, true)
         }
     }
@@ -400,14 +415,25 @@ impl Eng {
 
     /// Inductive build with symbolic Pauli accumulation.
     ///
-    /// At each strand boundary:
-    /// 1. Accumulate ALL terms' tr_alt(q) and net(q) into sym_accum
-    /// 2. Strip with I₈+I₉ (keeping only optimal basis)
-    /// 3. Next strand starts from optimal basis (A terms, not A! terms)
+    /// Two stripping modes:
+    /// 1. **Strand stripping** (original): strip at strand boundaries only.
+    ///    Exact for A ≤ ~12. Blows up for larger A.
+    /// 2. **Mid-crossing stripping** (new): strip after EACH crossing when
+    ///    word count exceeds `mid_strip_threshold`. This keeps memory bounded
+    ///    at O(threshold) per crossing instead of O(2^A).
+    ///
+    /// Mid-crossing stripping is safe because:
+    /// - The Pauli accumulator captures tr_alt and net of stripped terms
+    /// - I₈ and I₉ are valid at any point (not just strand boundaries)
+    /// - The stripped terms' contribution is exact in q
     ///
     /// The final F_Pauli = |tr_alt_accum + tr_alt_kept| / |net_accum + net_kept|
     /// is EXACT IN q — a rational function of q^{1/2}.
     fn build_inductive(z: usize, n: usize, strip_after: usize) -> (Elem, SymPauliAcc, Vec<String>) {
+        Self::build_inductive_ex(z, n, strip_after, 0)
+    }
+
+    fn build_inductive_ex(z: usize, n: usize, strip_after: usize, mid_strip_threshold: usize) -> (Elem, SymPauliAcc, Vec<String>) {
         let a = z + n;
         let ha = ha_poly();
         let mut types = vec![b'p'; z]; types.extend(vec![b'n'; n]);
@@ -415,6 +441,7 @@ impl Eng {
         let mut accum = SymPauliAcc::zero();
         let t0 = Instant::now();
         let mut log: Vec<String> = Vec::new();
+        let mut total_mid_strips: u64 = 0;
 
         for k in 1..a {
             let _ts = Instant::now();
@@ -431,11 +458,24 @@ impl Eng {
                     return (elem, accum, log);
                 }
 
-                let ms = tc.elapsed().as_millis();
-                if ms > 200 || elem.n_terms() > 10000 {
-                    eprintln!("    ({},{}) {}-{}: {} → {} words, {} poly, {}ms",
+                // Mid-crossing stripping: if word count exceeds threshold,
+                // strip immediately to keep memory bounded.
+                if mid_strip_threshold > 0 && elem.n_terms() > mid_strip_threshold {
+                    let n_pre = elem.n_terms();
+                    let removed = Self::strip_with_pauli(&mut elem.terms);
+                    accum.merge(&removed);
+                    total_mid_strips += 1;
+                    let ms = tc.elapsed().as_millis();
+                    eprintln!("    ({},{}) {}-{}: {} → {} → {} words (mid-strip), {}ms",
                         i, k, types[i] as char, types[k] as char,
-                        n_before, elem.n_terms(), elem.total_poly_terms(), ms);
+                        n_before, n_pre, elem.n_terms(), ms);
+                } else {
+                    let ms = tc.elapsed().as_millis();
+                    if ms > 200 || elem.n_terms() > 10000 {
+                        eprintln!("    ({},{}) {}-{}: {} → {} words, {} poly, {}ms",
+                            i, k, types[i] as char, types[k] as char,
+                            n_before, elem.n_terms(), elem.total_poly_terms(), ms);
+                    }
                 }
             }
 
@@ -444,18 +484,16 @@ impl Eng {
             let mb = elem.mem_bytes() as f64 / 1_048_576.0;
             let elapsed = t0.elapsed().as_secs_f64();
 
-            // Inductive stripping: strip and accumulate ONLY the removed terms.
-            // Survivors carry their coefficients into subsequent strands —
-            // their Pauli contribution is captured when they're eventually
-            // stripped or at the final computation.
+            // Strand boundary stripping (always active after strip_after)
             if (k + 1) as usize > strip_after {
                 let n_pre = elem.n_terms();
                 let removed = Self::strip_with_pauli(&mut elem.terms);
                 accum.merge(&removed);
-                let info = format!("  strand {}/{}: {} → {} words (stripped), poly ~10^{:.0}, {:.0}MB, {:.1}s",
+                let info = format!("  strand {}/{}: {} → {} words (stripped), poly ~10^{:.0}, {:.0}MB, {:.1}s{}",
                     k, a-1, n_pre, elem.n_terms(),
                     if mc > 0 { (mc as f64).log10() } else { 0.0 },
-                    mb, elapsed);
+                    mb, elapsed,
+                    if total_mid_strips > 0 { format!(" [{} mid-strips]", total_mid_strips) } else { String::new() });
                 eprintln!("{}", info);
                 log.push(info);
             } else {
@@ -560,7 +598,11 @@ fn main() {
         eprintln!("hecke-engine {} — symbolic Pauli witness, exact in q", env!("CARGO_PKG_VERSION"));
         eprintln!();
         eprintln!("Usage:");
-        eprintln!("  hecke-engine Z N           Single nucleus (e.g. 4 4 for ⁸Be)");
+        eprintln!("  hecke-engine Z N [max_terms] [mid_strip]");
+        eprintln!("    Z N:         Nucleus (e.g. 4 4 for ⁸Be, 27 33 for ⁶⁰Co)");
+        eprintln!("    max_terms:   Strip threshold (default: auto)");
+        eprintln!("    mid_strip:   Mid-crossing strip threshold (default: auto for A>16)");
+        eprintln!("                 Set to 50000 for A~20, 10000 for A~60");
         eprintln!("  hecke-engine witness A_min A_max   Batch: all balanced nuclei A_min..A_max");
         eprintln!("                                      Writes witness-*.lean + checkpoint-*.json");
         eprintln!("                                      Skips nuclei with existing checkpoints.");
@@ -578,6 +620,7 @@ fn main() {
     let z: usize = args[1].parse().unwrap();
     let n: usize = args[2].parse().unwrap();
     let max_terms: usize = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(usize::MAX);
+    let mid_strip: usize = args.get(4).and_then(|s| s.parse().ok()).unwrap_or(0);
     let a = z + n;
     let sym = element_symbol(z);
     let magic = [2,8,20,28,50,82,126];
@@ -590,25 +633,33 @@ fn main() {
     println!("  {}{} (Z={}, N={}, A={})", a, sym, z, n, a);
     println!("  Exact in t = q^{{1/2}} over ℤ. {}",
         if dm { "★★ DOUBLY MAGIC" } else { "" });
-    if max_terms < usize::MAX {
-        println!("  Strip threshold: {} terms", max_terms);
+
+    // Mid-crossing stripping: strip after each crossing when word count > threshold
+    // For A > 16: auto-enable with threshold 50000 (keeps memory < 200MB)
+    let mid_strip_threshold = if mid_strip > 0 {
+        mid_strip
+    } else if a > 16 {
+        50000  // auto for large A
+    } else {
+        0  // disabled for small A
+    };
+    if mid_strip_threshold > 0 {
+        println!("  Mid-crossing strip threshold: {} words", mid_strip_threshold);
     }
+
     let strip_after = if max_terms < usize::MAX {
-        // User specified threshold: strip after strand where terms > max_terms
-        // Estimate: strip after strand A/2 for balanced nuclei
         std::cmp::min(a / 2, 8)
     } else if a > 9 {
-        // Auto: for A > 9, strip at strand boundaries to stay tractable
         8
     } else {
-        999 // No stripping for A ≤ 9
+        999
     };
 
     println!("  Strip after strand: {} (strands >{} use inductive quotient)", strip_after, strip_after);
     println!("════════════════════════════════════════════════════════");
 
     let t_start = Instant::now();
-    let (elem, accum, _log) = Eng::build_inductive(z, n, strip_after);
+    let (elem, accum, _log) = Eng::build_inductive_ex(z, n, strip_after, mid_strip_threshold);
 
     if elem.has_overflow() {
         println!("\n  OVERFLOW — symbolic result unreliable. Use float engine.");

@@ -263,11 +263,13 @@ struct Engine { ha: f64, q: f64, qi: f64 }
 impl Engine {
     fn new(q: f64) -> Self { let qi = 1.0/q; Self { ha: q-qi, q, qi } }
 
+    /// Crossing coefficients (c, d) for T(c,d) = c·σ + d·𝟏.
+    /// From σ⁻¹ = σ − (q − q⁻¹): pp→(1,0), nn→(1,−HA), pn→(1,−HA/2).
     fn crossing_coeffs(&self, ti: u8, tj: u8) -> (f64, f64) {
         match (ti, tj) {
             (b'p', b'p') => (1.0, 0.0),
-            (b'n', b'n') => (self.q*self.q, -self.q*(self.q.sqrt()-self.qi.sqrt())),
-            _ => ((1.0+self.q*self.q)/2.0, -self.q*(self.q.sqrt()-self.qi.sqrt())/2.0),
+            (b'n', b'n') => (1.0, -self.ha),
+            _ => (1.0, -self.ha / 2.0),
         }
     }
 

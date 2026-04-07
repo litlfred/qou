@@ -23,7 +23,7 @@ This file proves:
 
 ## References
 
-- [litlfred2025] Prop: transfer matrix correspondence (Layer 3).
+- [manuscript] Prop: transfer matrix correspondence (Layer 3).
 -/
 
 namespace QOU.TMCorrespondence
@@ -102,7 +102,7 @@ noncomputable def heckeMultiply (a b c d : R_t) : StateVec :=
 
     This is the **fundamental correspondence**: the transfer matrix
     encodes exactly the Hecke algebra multiplication with reduction. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem hecke_eq_transfer (a b c d : R_t) :
     heckeMultiply a b c d =
     (transferMatrix c d).mulVec (mkState a b) := by
@@ -142,7 +142,7 @@ noncomputable def matrixChain : CrossingSeq → TMatrix
 /-- The iterated correspondence: Hecke chain = matrix chain applied to
     initial state. By induction on the crossing sequence, using
     `hecke_eq_transfer` at each step. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
     heckeChain init seq =
     (matrixChain seq).mulVec init := by
@@ -186,7 +186,7 @@ theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
 
     This is exactly `tracedVolCleared` applied to the column vector
     `(a, b)ᵀ` viewed as the first column of a matrix. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem markov_trace_eq_traced_vol (a b : R_t) :
     a + markov_denom * b =
     tracedVolCleared (Matrix.of ![![a, 0], ![b, 0]]) := by
@@ -202,7 +202,7 @@ theorem markov_trace_eq_traced_vol (a b : R_t) :
     The state vector is `M · (1, 0)ᵀ = (M[0,0], M[1,0])ᵀ`.
     So `tracedVolCleared M` computes `a + (t+t⁻¹)·b` where
     `(a, b) = M · (1, 0)ᵀ` is the Hecke state. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem traced_vol_from_state (M : TMatrix) :
     tracedVolCleared M =
     sigmaCoeff (M.mulVec initialState) +
@@ -239,7 +239,7 @@ theorem traced_vol_from_state (M : TMatrix) :
     exactly the entries of the transfer matrix chain state vector,
     and the traced volume V̂_i is the Markov trace of the per-generator
     Hecke element. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem optimal_coeff_eq_transfer_state (seq : CrossingSeq) :
     let state := (matrixChain seq).mulVec initialState
     sigmaCoeff (heckeChain initialState seq) = sigmaCoeff state ∧
@@ -263,7 +263,7 @@ theorem optimal_coeff_eq_transfer_state (seq : CrossingSeq) :
     - Hecke chain → NF coefficients (a_i, b_i) [same by correspondence]
     - V̂_i = z·a_i + b_i extracts Markov trace information
     - The skein polynomial P(q) = ∏_i V̂_i is a product of Markov traces -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem volume_eq_markov_trace (seq : CrossingSeq) :
     tracedVolCleared (matrixChain seq) =
     sigmaCoeff ((matrixChain seq).mulVec initialState) +
@@ -359,7 +359,7 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
        coefficient is nonzero), so the support equals the standard basis
 
     The NF has `A` terms: one identity + one per generator. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem optimal_nf_from_transfer_matrix (Z N : ℕ)
     (h_stable : valleyOfStability Z N)
     (h_pos : Z + N ≥ 2) :
@@ -379,7 +379,7 @@ theorem optimal_nf_from_transfer_matrix (Z N : ℕ)
     `(t+t⁻¹)^{A-1} · P(q) = ∏_j [a_j + (t+t⁻¹) · b_j]`
 
     This follows from `volume_eq_markov_trace` applied to each chain. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem skein_from_markov_traces (config : NuclearConfig)
     (h_len : config.length ≥ 2) :
     skeinPolynomialCleared config =
@@ -394,7 +394,7 @@ theorem skein_from_markov_traces (config : NuclearConfig)
 /-- Sanity check: the transfer matrix for `(c, d) = (1, 0)` is `T_pp`.
     Multiplying a Hecke element by `(1·σ + 0)` just appends a generator,
     corresponding to a pure proton crossing. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem transfer_pp_correct :
     transferMatrix 1 0 = T_pp := by
   rfl
@@ -402,7 +402,7 @@ theorem transfer_pp_correct :
 /-- Sanity check: the initial state `(1, 0)ᵀ` after one pp crossing
     gives `(HA, 1)ᵀ`, meaning the Hecke element is `HA · σ + 1`.
     This is correct: `σ · σ = σ² = HA · σ + 1` by the Hecke relation. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript]
 theorem pp_one_step :
     heckeMultiply 1 0 1 0 = mkState HA_t 1 := by
   ext i

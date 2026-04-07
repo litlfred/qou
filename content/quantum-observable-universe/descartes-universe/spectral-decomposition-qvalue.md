@@ -191,11 +191,67 @@ The ratio $\hbar_q / \ln q = 0.9496$ is the **discretisation
 correction**: the exceptional divisors are $q$-spaced (discrete),
 not $e$-spaced (continuous).
 
+### Shell correction proportions
+
+The product $\prod F(\tau, N)$ reduces to two categorically defined
+proportions for shells $\geq 5$ ($N > 28$):
+
+**Degree-2 shell factor** ($F_{\mathrm{deg2}}$).
+For shells at degree $2$ in the torus knot tower, the two embeddable
+degree-$2$ knots $\tau(2,9)$ and $\tau(3,4)$ contribute:
+
+$$
+  F_{\mathrm{deg2}}
+  = \frac{\tfrac{1}{2}\bigl(
+      \mathrm{tr}_M(\tau(2,9) \cdot \Delta_\beta)
+    + \mathrm{tr}_M(\tau(3,4) \cdot \Delta_\beta)
+    \bigr)}{\mathrm{tr}_M(\Delta_\beta)}
+  \approx 0.5949
+$$
+
+where $\Delta_\beta = T_{\mathrm{mix}} - T_{nn}$ is the beta-decay
+difference operator and the average is over the two degree-$2$ basis
+knots (which have equal multiplicity in the regular representation).
+
+**Pauli exclusion factor** ($F_{\mathrm{Pauli}}$).
+For magic-number neutron shells ($N \in \{2, 8, 20, 28, 50, 82, 126\}$),
+the filled shell projects onto the alternating irrep $(1^3)$ via the
+Young symmetrizer $e_{(1^3)}$:
+
+$$
+  F_{\mathrm{Pauli}}
+  = \frac{|\mathrm{tr}_{\mathrm{alt}}(\Delta_\beta)|}
+         {|\mathrm{tr}(\Delta_\beta)|}
+  = \frac{|\lambda_{\mathrm{alt}}|}{|\lambda_{\mathrm{sym}}|}
+  \approx 0.6382
+$$
+
+where $\mathrm{tr}_{\mathrm{alt}}$ evaluates each Hecke word $w$ with
+eigenvalue $(-q^{-1})^{\ell(w)}$ (alternating channel) and $\mathrm{tr}$
+with $q^{\ell(w)}$ (symmetric channel).  This is the ratio of
+alternating to symmetric eigenvalues of $\Delta_\beta$ in the
+$6 \times 6$ regular representation of $H_3(q)$.
+
+**Combined formula.**  For a $\beta^-$ decay with the converting
+neutron in shell degree $d$ and neutron occupation parity $p$:
+
+$$
+  \mathcal{Q}_q
+  = \mathcal{Q}_{\mathrm{bare}}
+    \times F_{\mathrm{deg2}}^{[d \geq 2]}
+    \times F_{\mathrm{Pauli}}^{[N \in \mathrm{magic}]}
+$$
+
+where $[\cdot]$ is the Iverson bracket.  The proportion
+$F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5949 \times 0.6382 \approx 0.380$
+applies to magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$
+with $N = 82$).
+
 ### Error structure
 
 Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$
 (CODATA).  The parametric error is $O(\varepsilon)$ (negligible).
-The structural errors ($5$–$9\%$) are $O(1)$ relative to
+The structural errors ($5$–$11\%$) are $O(1)$ relative to
 $\varepsilon$: nucleon ordering in $\mathcal{Q}_{\mathrm{bare}}$,
 degree-$2$ averaging over two knots, and the degree tower
 truncation.  These do not arise from missing spectral

@@ -184,7 +184,7 @@ comparing the *pattern* against the forward prediction.
 | CMS Run~2 | $4\ell$ | $-0.12$ | $-1.1 \times 10^{-4}$ |
 
 **Table 5: $W$ $\delta q$ by experiment**
-**(ref: SM $= 80\,357$ MeV).**
+**(ref: SM $\approx 80\,357$ MeV).**
 
 | Experiment | $\delta m$ (MeV) | $\delta q$ (inferred) | Collision |
 |---|:-:|:-:|:-:|
