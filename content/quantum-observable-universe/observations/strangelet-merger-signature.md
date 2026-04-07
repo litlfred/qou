@@ -24,7 +24,7 @@ $$
   \;\approx\; 168 \;\text{Skein units per strange quark}.
 $$
 
-In physical units (scaling by $m_p c^2 = 938$ MeV and
+In physical units (scaling by $m_p c^2 \approx 938$ MeV and
 $V_B/\hbar_q^2 = 749$):
 
 $$

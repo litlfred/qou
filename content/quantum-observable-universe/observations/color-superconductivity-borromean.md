@@ -123,7 +123,7 @@ $$
 
 This is the strong-channel energy of a single Hopf-link crossing
 pair.  In physical units, converting via the proton mass scale
-$m_p = 938$ MeV and the Borromean volume ratio:
+$m_p \approx 938$ MeV and the Borromean volume ratio:
 
 $$
   \Delta_{\mathrm{CFL}}^{\mathrm{phys}}

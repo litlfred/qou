@@ -17,8 +17,10 @@ GroundRing          ℤ[q,q⁻¹], [n]_q, ℏ_q
   → TransferMatrix   T(𝔴⁺,𝔴⁰), inductive chain, P(q)
   → BetaDecay        T_{β-decay}, F(τ,N), spectral decomposition
   → AxialCoupling    g_A from 3-fold Borromean color average
+  → YoungIdempotent  e_{(n)}, Poincaré polynomial, sym/alt eigenvalues
   → OrderingIndep    Q_sym is ordering-independent (Young symmetrizer)
   → MassGapGm        Mass gap over 𝔾_m, torsion obstruction, q-NS bridge
+  → MultiGenSpectrum 6×6 product, independent channel evolution
 ```
 -/
 
@@ -31,3 +33,5 @@ import QOU.Descartes.OrderingIndependence
 import QOU.Descartes.OptimalNF
 import QOU.Descartes.TMCorrespondence
 import QOU.Descartes.MassGapGm
+import QOU.Descartes.YoungIdempotent
+import QOU.Descartes.MultiGeneratorSpectrum

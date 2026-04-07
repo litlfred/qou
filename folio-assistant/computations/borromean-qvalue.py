@@ -159,9 +159,16 @@ def borromean_transition_trace(crossing_change, parent_deg, daughter_deg):
 # ══════════════════════════════════════════════════════════════
 
 def crossing_coeffs(ti, tj):
+    """Crossing coefficients (c, d) for T(c,d) = c·σ + d·𝟙.
+
+    From the Hecke inverse relation σ⁻¹ = σ − (q − q⁻¹):
+      pp → σ:          c = 1,   d = 0
+      nn → σ⁻¹:        c = 1,   d = −HA
+      pn → ½(σ+σ⁻¹): c = 1,   d = −HA/2
+    """
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return q**2, -q * S
-    else: return (1 + q**2) / 2, -q * S / 2
+    elif ti == 'n' and tj == 'n': return 1.0, -HA
+    else: return 1.0, -HA / 2.0
 
 def T_mat(c, d):
     return [[c * HA + d, c], [c, d]]

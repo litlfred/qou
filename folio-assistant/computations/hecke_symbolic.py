@@ -32,15 +32,18 @@ HA = q - q_inv                          # q − q⁻¹
 s_skein = q_half - q_half_inv            # q^½ − q^{-½}
 z_markov = 1 / (q_half + q_half_inv)     # 1/(q^½ + q^{-½})
 
-# Crossing coefficients (exact in q)
-C_PP = sp.Integer(1)                     # proton-proton: σ
+# Crossing coefficients — from Hecke inverse σ⁻¹ = σ − (q − q⁻¹)
+# pp → σ:          c = 1,   d = 0
+# nn → σ⁻¹:        c = 1,   d = −(q − q⁻¹)
+# pn → ½(σ+σ⁻¹): c = 1,   d = −½(q − q⁻¹)
+C_PP = sp.Integer(1)
 D_PP = sp.Integer(0)
 
-C_NN = q**2                              # neutron-neutron: q²σ − q·s
-D_NN = -q * s_skein
+C_NN = sp.Integer(1)                     # neutron-neutron: σ⁻¹
+D_NN = -(q - 1/q)                        # = −HA = −(q − q⁻¹)
 
-C_MIX = (1 + q**2) / 2                  # mixed: ½(1+q²)σ − ½q·s
-D_MIX = -q * s_skein / 2
+C_MIX = sp.Integer(1)                    # mixed: ½(σ + σ⁻¹)
+D_MIX = -(q - 1/q) / 2                  # = −HA/2
 
 C_HOPF = sp.Integer(1)                   # Hopf link: σ
 D_HOPF = sp.Integer(0)

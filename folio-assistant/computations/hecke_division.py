@@ -158,9 +158,9 @@ class HeckeDivision:
         self.hecke_a = q_val - self.q_inv       # coeff of σ
         self.hecke_b = 1.0                       # constant
 
-        # Inverse: σ⁻¹ = q²σ - q(q½ - q⁻½)
-        self.inv_sigma = q_val**2
-        self.inv_const = -q_val * self.skein_amp
+        # Inverse: σ⁻¹ = σ − (q − q⁻¹)  [correct Hecke relation]
+        self.inv_sigma = 1.0
+        self.inv_const = -(q_val - self.q_inv)   # = −HA
 
         # Markov trace parameter
         self.z_markov = 1.0 / (self.q_half + self.q_half_inv)
@@ -412,13 +412,13 @@ class HeckeDivision:
         return HeckeElement({(i,): 1.0})
 
     def crossing_negative(self, i):
-        """σ_i⁻¹ = q²σ_i - q(q½-q⁻½) (neutron-neutron crossing)."""
+        """σ_i⁻¹ = σ_i − (q − q⁻¹)·𝟏  (neutron-neutron crossing)."""
         return HeckeElement({(i,): self.inv_sigma, (): self.inv_const})
 
     def crossing_mixed(self, i):
-        """½(σ_i + σ_i⁻¹) (proton-neutron crossing)."""
+        """½(σ_i + σ_i⁻¹) = σ_i − ½(q − q⁻¹)·𝟏  (proton-neutron crossing)."""
         return HeckeElement({
-            (i,): 0.5 * (1 + self.q**2),
+            (i,): 1.0,
             (): 0.5 * self.inv_const,
         })
 
