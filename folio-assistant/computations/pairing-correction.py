@@ -26,7 +26,7 @@ KAPPA_Q = LN_Q * M_E_MEV / 3.0
 Z_MARKOV = 1.0 / (math.sqrt(Q) + 1.0/math.sqrt(Q))
 S_SKEIN = math.sqrt(Q) - 1.0/math.sqrt(Q)
 
-F_DEG2 = 0.5949
+F_DEG2 = 0.5904
 F_PAULI = 0.6382
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]

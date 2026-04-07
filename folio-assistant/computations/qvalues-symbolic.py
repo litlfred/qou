@@ -106,7 +106,7 @@ BENCHMARKS = [
 ]
 
 # Shell factors
-F_DEG2_sym = sp.Rational(5949, 10000)
+F_DEG2_sym = sp.Rational(739, 1250)  # 0.5904 ≈ 5904/10000 = 739/1250
 F_PAULI_sym = sp.Rational(6382, 10000)
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
 

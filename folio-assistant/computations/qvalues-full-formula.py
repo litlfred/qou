@@ -196,7 +196,7 @@ def Q_full(z, n):
 
     # I₁₀ pairing
     deg = shell_degree(n)
-    f_deg = 0.5949 if deg >= 2 else 1.0
+    f_deg = 0.5904 if deg >= 2 else 1.0
     if n in MAGIC and deg >= 2: f_deg *= 0.6382
     par = parity(z, n); par_d = parity(z+1, n-1)
     f_i10 = 1.0

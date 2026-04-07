@@ -488,7 +488,7 @@ fn main() {
             // final Q-value prediction is unchanged from the bare-ln formulation.
             let ln_q = engine.q.ln();
             let kappa_q = 0.510999 / 3.0 * ln_q;  // κ_q = ln(q) × m_e/3
-            let f_deg2 = 0.5949_f64; let f_pauli = 0.6382_f64;
+            let f_deg2 = 0.5904_f64; let f_pauli = 0.6382_f64;
             let magic = [2,8,20,28,50,82,126];
             let shell_degree = |n: usize| -> usize {
                 let mut prev=0;
