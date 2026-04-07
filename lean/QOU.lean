@@ -31,3 +31,5 @@ import QOU.GaugeFieldFluidDynamics
 import QOU.InformationTheory
 import QOU.LightningPath
 import QOU.RepresentationTheory
+import QOU.GradedFrobeniusHopf
+import QOU.ChannelSeparation
