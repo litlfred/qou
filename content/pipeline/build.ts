@@ -32,6 +32,12 @@ export interface BuildResult {
    * never treated as an appendix.
    */
   appendixChapters: Map<number, { slug: string; title: string; tabLabel: string }>;
+  /**
+   * Labels from blocks in excluded appendix chapters. These are emitted
+   * as phantom labels in main.tex so that \hyperref references from the
+   * main body resolve without "undefined" warnings.
+   */
+  appendixPhantomLabels: string[];
   /** Validation issues encountered. */
   issues: { level: string; message: string }[];
   /** Whether all rendered LaTeX passes AST validation. */
@@ -143,6 +149,33 @@ export async function buildPaper(
     }
   }
 
+  // 2c. Collect phantom labels from excluded appendix chapters.
+  // When appendix chapters are excluded from main.tex (compiled standalone),
+  // their block labels are undefined in the main paper. We collect these
+  // labels so main.tex can declare phantom anchors, preventing hyperref
+  // "undefined" warnings.
+  const appendixPhantomLabels: string[] = [];
+  for (const [idx] of appendixChapters) {
+    const resolved = resolvedChapters.find(r => r.manifestIdx === idx);
+    if (!resolved) continue;
+    const ch = resolved.chapter;
+    // Collect chapter label
+    if (ch.label) appendixPhantomLabels.push(ch.label);
+    for (const sec of ch.sections) {
+      if (!("blocks" in sec)) continue;
+      const s = sec as Section;
+      // Collect section label
+      if (s.label) appendixPhantomLabels.push(s.label);
+      // Collect block labels
+      for (const rootName of s.blocks) {
+        const entry = blocks.get(rootName);
+        if (!entry) continue;
+        const label = "label" in entry.block ? (entry.block as any).label : undefined;
+        if (label) appendixPhantomLabels.push(label);
+      }
+    }
+  }
+
   // 3. Render chapters
   const chapters = new Map<number, string>();
   let astValid = true;
@@ -161,7 +194,48 @@ export async function buildPaper(
     }
   }
 
-  return { chapters, chapterSlugs, appendixChapters, issues, astValid };
+  // 4. Cross-reference validation: detect \hyperref targets that have
+  //    no corresponding \label in the rendered output.
+  //    Collect all defined labels (from blocks, sections, chapters).
+  const LABEL_PREFIXES = ["def:", "thm:", "lem:", "prop:", "cor:", "rem:", "ex:", "conj:", "eq:", "sec:", "chap:", "sim:", "tab:", "fig:", "app:", "bib:"];
+  const definedLabels = new Set<string>();
+  for (const [, entry] of blocks) {
+    const label = "label" in entry.block ? (entry.block as any).label : undefined;
+    if (label) definedLabels.add(label);
+  }
+  for (const { chapter } of resolvedChapters) {
+    if (chapter.label) definedLabels.add(chapter.label);
+    for (const sec of chapter.sections) {
+      if (!("blocks" in sec)) continue;
+      if ((sec as Section).label) definedLabels.add((sec as Section).label!);
+    }
+  }
+
+  // Scan all markdown content for [text](#label) cross-references
+  const referencedLabels = new Set<string>();
+  for (const [, entry] of blocks) {
+    const matches = entry.mdContent.matchAll(/\[([^\]]*)\]\(#([^)]+)\)/g);
+    for (const match of matches) {
+      const label = match[2];
+      // Skip cross-paper references (handled separately in render)
+      const isCrossPaper = label.includes(":") && !LABEL_PREFIXES.some(p => label.startsWith(p));
+      if (!isCrossPaper) {
+        referencedLabels.add(label);
+      }
+    }
+  }
+
+  // Report undefined references as warnings
+  for (const label of referencedLabels) {
+    if (!definedLabels.has(label)) {
+      issues.push({
+        level: "warning",
+        message: `Undefined cross-reference: "${label}" — referenced but no content block defines this label`,
+      });
+    }
+  }
+
+  return { chapters, chapterSlugs, appendixChapters, appendixPhantomLabels, issues, astValid };
 }
 
 // ── CLI entry point ──────────────────────────────────────────────
@@ -228,6 +302,7 @@ if (import.meta.main) {
       chaptersDir,
       chapterSlugs: result.chapterSlugs,
       excludeChapterIndices,
+      phantomLabels: result.appendixPhantomLabels,
     });
     writeFileSync(mainOutPath, mainTex);
     console.log(`\n  → main.tex: ${mainOutPath}`);
