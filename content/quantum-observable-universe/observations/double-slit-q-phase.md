@@ -20,7 +20,7 @@ where:
   length through slit $i$ to screen point $y$;
 - $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\,\theta$
   is the *Reeb phase* --- the rotation accumulated by the internal
-  chiral fibre along $\gamma_i$
+  color fibre along $\gamma_i$
   ([Reeb derivation](#def:categorical-reeb));
 - $\hbar_q = 1 - q^{-1}$
   ([quantum Planck constant](#def:quantum-planck-constant)).

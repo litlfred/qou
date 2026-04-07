@@ -8,10 +8,19 @@ $$\mathcal{D}_\nabla\,\psi \;=\; 0,$$
 
 where $\mathcal{D}_\nabla = q^{-1}\nabla + (1-q^{-1})\iota_\xi\nabla$
 ([variational equations](#prop:variational-equations), equation 3).
-The test particle $\psi$ is a photon --- a purely horizontal
-$q$-harmonic form ([boson](#def:fermion-boson-decomposition), knot type
-$K = \varnothing$) --- propagating on an instanton background
-([categorical instanton](#def:categorical-instanton)).
+The test particle $\psi$ is a photon --- not a bare identity
+$\mathbf{1}$ but a **photon with color content**
+$\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+([color content](#rem:knot-basis-color-content)), where $\sigma_0$
+and $\sigma_1$ are the horizontal and vertical polarisation generators
+on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
+([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)) --- propagating
+on an instanton background
+([categorical instanton](#def:categorical-instanton)).  The identity
+component $\mathbf{1}$ (degree $0$) propagates as pure horizontal
+flux; the generators $\varphi_i\,\sigma_i$ (degree $1$) carry
+additional polarisation-dependent phase from the Hecke eigenvalues
+$+q$ and $-q^{-1}$.
 
 Recall the $q$-deformed differential from [the local substrate proposition](#prop:local-substrate-q):
 
@@ -50,3 +59,76 @@ An interactive simulation of this effect is available in the
 [q-deformed double-slit simulator](q-double-slit.html), which
 allows real-time sweeps of $q$, slit geometry, and torsion parameters
 against the classical baseline.
+
+## Color content and polarisation-dependent interference
+
+The photon color content $(\varphi_0, \varphi_1)$ modifies the
+double-slit analysis in two ways.
+
+**1. Polarisation-weighted phase.**
+Each polarisation mode $\sigma_i$ acquires its own Reeb phase along
+path $\gamma_j$ through slit $j$.  The total phase for a color-dressed
+photon is
+
+$$
+  \Phi_q^{(\mathrm{color})}(\gamma_j)
+  \;=\;
+  \Phi_q^{(j)}
+  \;+\;
+  \varphi_0\,q\,\Phi_{\mathrm{Reeb}}^{(j)}
+  \;+\;
+  \varphi_1\,(-q^{-1})\,\Phi_{\mathrm{Reeb}}^{(j)},
+$$
+
+where $+q$ and $-q^{-1}$ are the Hecke eigenvalues of $\sigma_0$ and
+$\sigma_1$ respectively
+([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)).  The bare-photon
+phase difference $\Delta\Phi_q$ of the
+[$q$-deformed path phase](#def:double-slit-q-phase) acquires a
+polarisation correction
+
+$$
+  \Delta\Phi_q^{(\mathrm{color})}
+  \;=\;
+  \Delta\Phi_q
+  \;+\;
+  (\varphi_0\,q - \varphi_1\,q^{-1})\,\Delta\phi_\xi,
+$$
+
+where $\Delta\phi_\xi$ is the Reeb phase mismatch between the two
+paths.  For unpolarised light ($\varphi_0 = \varphi_1$) the correction
+reduces to $(\varphi_0)(q - q^{-1})\Delta\phi_\xi$, proportional to
+the Hecke parameter $h = q - q^{-1}$.
+
+**2. Cross-color interference (Hopf-link terms).**
+When a photon's path amplitudes interfere at the detector, the product
+of the two path states in $H_3(q)$ generates cross-color terms
+$\sigma_0\sigma_1$ and $\sigma_1\sigma_0$ --- the Hopf-link basis
+elements $L_{\pm}$
+([color content](#rem:knot-basis-color-content)).  Their coefficients
+$\varphi_0\psi_1$ and $\varphi_1\psi_0$ (where $\psi_i$ are the
+color weights picked up from the slit-wall interaction) contribute a
+**linking amplitude** that modulates the fringe visibility:
+
+$$
+  V_{\mathrm{color}}
+  \;=\;
+  1 - |\varphi_0\psi_1 - \varphi_1\psi_0|^2.
+$$
+
+When the slit material imparts symmetric color dressing
+($\psi_0 = \psi_1$), the Hopf-link terms cancel and visibility is
+maximal.  Asymmetric dressing ($\psi_0 \neq \psi_1$) partially
+suppresses fringes --- a **material-dependent decoherence** arising
+from the Hecke algebra structure rather than from environmental noise.
+
+**Observable signature.**
+The color-content correction is second order in $\hbar_q$ for
+unpolarised light but first order for linearly polarised light.
+A double-slit experiment with controlled linear polarisation
+(e.g.\ a Wollaston prism before the slits) would exhibit a
+polarisation-dependent fringe shift proportional to
+$(\varphi_0 q - \varphi_1 q^{-1})\,\hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})$,
+distinguishable from any classical birefringence effect because
+it depends on the slit material's knot volume, not on its
+refractive index.

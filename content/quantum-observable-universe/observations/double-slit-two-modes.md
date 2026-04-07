@@ -1,13 +1,13 @@
 The QOU double-slit model predicts two structurally distinct scattering
 modes, summarised in the following table:
 
-| | **Mode 1: Massive particle** | **Mode 2: Photon** |
+| | **Mode 1: Massive particle** | **Mode 2: Photon (with color content)** |
 |---|---|---|
-| **Geometric identity** | $q$-harmonic form ($\Delta_q\alpha = 0$) | Exceptional-divisor flux |
-| **Phase mechanism** | $q$-Laplacian cross-coupling | Chiral twist $q\phi$ |
-| **Interference formula** | $\cos^2(\Delta\Phi_q / 2)$ | $\cos^2(q\,d\sin\theta / 2R)$ |
-| **Envelope** | $q$-corrected sinc${}^2$ | Julia-set measure $\mu_J$ |
-| **Band-width shift** | Wider by $(1 - q^{-1})^2$ | Power-law tails ($\sim\lvert\theta\rvert^{-d_H}$) |
+| **Geometric identity** | $q$-harmonic form ($\Delta_q\alpha = 0$) | Color-dressed identity $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ |
+| **Phase mechanism** | $q$-Laplacian cross-coupling | Color twist $q\phi$ + polarisation eigenvalues $(\varphi_0 q, -\varphi_1 q^{-1})$ |
+| **Interference formula** | $\cos^2(\Delta\Phi_q / 2)$ | $\cos^2(\Delta\Phi_q^{(\mathrm{color})} / 2)$ |
+| **Envelope** | $q$-corrected sinc${}^2$ | Julia-set measure $\mu_J$ modulated by color visibility $V_{\mathrm{color}}$ |
+| **Band-width shift** | Wider by $(1 - q^{-1})^2$ | Power-law tails ($\sim\lvert\theta\rvert^{-d_H}$) + polarisation asymmetry |
 | **Classical limit** ($q \to 1$) | Fraunhofer | Airy |
 
 **Band-width predictions versus observation.**
@@ -39,7 +39,14 @@ experiments report systematic deviations:
    produces both effects: the fractal boundary concentrates measure
    near the central peak (suppressing subsidiaries) while the
    power-law decay $|\theta|^{-d_H}$ with $d_H > 1$ gives broader
-   tails.
+   tails.  When the photon carries non-trivial color content
+   $(\varphi_0, \varphi_1)$
+   ([color content](#rem:knot-basis-color-content)), the
+   polarisation-dependent Reeb phases introduce an additional
+   fringe-visibility modulation $V_{\mathrm{color}}$ that depends
+   on the slit material's Hecke dressing --- a signature absent
+   both in standard quantum optics and in the bare-photon
+   ($\varphi_0 = \varphi_1 = 0$) QOU prediction.
 
 **Observation and coherence loss.**
 When a detector is placed at one slit, the
@@ -71,3 +78,26 @@ This ratio is independent of slit width and wavelength, depending only
 on $q$.  A simultaneous electron--photon double-slit measurement at
 the same apparatus would determine $q$ and $d_H$ independently,
 providing a sharp test of the two-mode prediction.
+
+**Color-content discriminant.**
+A more refined test exploits the photon color content.  Using linearly
+polarised light with controlled polarisation angle $\psi$
+(corresponding to color weights
+$\varphi_0 = \cos\psi$, $\varphi_1 = \sin\psi$), the
+fringe shift acquires a $\psi$-dependent term:
+
+$$
+  \delta\Delta\Phi(\psi)
+  \;=\;
+  (\cos\psi \cdot q - \sin\psi \cdot q^{-1})\,
+  \hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})\,\Delta\phi_\xi.
+$$
+
+Sweeping $\psi$ from $0$ to $\pi/2$ traces a sinusoidal modulation of
+the fringe positions.  The amplitude of this modulation scales with
+$(q + q^{-1})\,\hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})$ and is
+material-dependent (different slit materials give different
+$\mathrm{Vol}(K_{\mathrm{mat}})$), while the classical birefringence
+prediction depends on refractive index.  A single apparatus with
+rotatable polariser and interchangeable slit materials would separate
+the two effects.
