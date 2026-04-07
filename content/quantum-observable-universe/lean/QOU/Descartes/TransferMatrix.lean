@@ -45,26 +45,26 @@ def vertexType : NucleonType → NucleonType → VertexType
   | _, _ => .pn
 
 /-- The crossing amplitude `𝔴⁺(q)` at a vertex (coefficient on σ).
-    Defined over `ℤ[t, t⁻¹]` where `t = q^{1/2}`, `q = t²`:
-    - pp: 1
-    - nn: t⁴ (= q²)
-    - pn: (1 + t⁴)/2  — requires ℤ[½], so we use doubled form below -/
+    From the Hecke relation σ⁻¹ = σ - (q - q⁻¹):
+    - pp: 1  (positive crossing = σ)
+    - nn: 1  (negative crossing = σ⁻¹ = σ - HA)
+    - pn: 1  (mixed = ½(σ + σ⁻¹), DOUBLED below to avoid ½) -/
 noncomputable def w_plus_t (v : VertexType) : R_t :=
   match v with
   | .pp => 1
-  | .nn => q_from_t * q_from_t    -- t⁴ = q²
-  | .pn => 1 + q_from_t * q_from_t  -- 1 + q² (DOUBLED: actual is ½ of this)
+  | .nn => 1                                -- σ⁻¹ has coeff 1 on σ
+  | .pn => 2                                -- DOUBLED: actual is ½ of this
 
 /-- The smoothing amplitude `𝔴⁰(q)` at a vertex (coefficient on 𝟏).
-    Over `ℤ[t, t⁻¹]`:
+    From the Hecke relation σ⁻¹ = σ - (q - q⁻¹):
     - pp: 0
-    - nn: −t² · (t − t⁻¹)  (= −q · s)
-    - pn: −t² · (t − t⁻¹)  (DOUBLED: actual is ½ of this) -/
+    - nn: −(q − q⁻¹) = −HA
+    - pn: −(q − q⁻¹)  (DOUBLED: actual is −HA/2) -/
 noncomputable def w_zero_t (v : VertexType) : R_t :=
   match v with
   | .pp => 0
-  | .nn => -(q_from_t * s_skein)           -- −q · s in ℤ[t, t⁻¹]
-  | .pn => -(q_from_t * s_skein)           -- −q · s (DOUBLED)
+  | .nn => -HA_t                             -- −(q − q⁻¹)
+  | .pn => -HA_t                             -- −(q − q⁻¹) (DOUBLED)
 
 /-- **Convention**: for `pn` vertices, `w_plus_t` and `w_zero_t`
     return the DOUBLED values `2𝔴⁺` and `2𝔴⁰`.  The factor of 2
@@ -122,19 +122,19 @@ noncomputable def transferMatrix (c d : R_t) : TMatrix :=
 /-- Transfer matrix for a proton–proton crossing: `T(1, 0)`. -/
 noncomputable def T_pp : TMatrix := transferMatrix 1 0
 
-/-- Transfer matrix for a neutron–neutron crossing: `T(q², −q·s)`.
-    In terms of `t`: `T(t⁴, −t² · (t − t⁻¹))`. -/
+/-- Transfer matrix for a neutron–neutron crossing: `T(1, −HA)`.
+    From the Hecke relation: σ⁻¹ = σ − (q − q⁻¹). -/
 noncomputable def T_nn : TMatrix :=
-  transferMatrix (q_from_t * q_from_t) (-(q_from_t * s_skein))
+  transferMatrix 1 (-HA_t)
 
 /-- Transfer matrix for a proton–neutron crossing.
-    `𝔴⁺ = (1 + q²)/2`, `𝔴⁰ = −q·s/2`.
+    `𝔴⁺ = 1`, `𝔴⁰ = −HA/2`.
 
     **Note**: the factor ½ takes us to `ℤ[½][t, t⁻¹]`.
     For formal proofs, we work with `2·T_pn` to stay integral. -/
 noncomputable def two_T_pn : TMatrix :=
-  -- 2·T_pn has integer coefficients: 𝔴⁺ = 1 + q², 𝔴⁰ = −q·s
-  transferMatrix (1 + q_from_t * q_from_t) (-(q_from_t * s_skein))
+  -- 2·T_pn has integer coefficients: 𝔴⁺ = 2, 𝔴⁰ = −HA
+  transferMatrix 2 (-HA_t)
 
 /-! ## §3  Markov parameter and traced volume -/
 
