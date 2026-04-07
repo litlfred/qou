@@ -15,7 +15,7 @@ in $\mathbf{C}$ (a *bivector*), subject to the conditions below.
 **Construction via pullback.**
 The Frobenius self-duality $A \xrightarrow{\;\sim\;} A^{\vee}$
 induces an identification $\Omega^1(A)^{\vee} \cong \Omega^1(A)$
-(dualising the bimodule of K\"ahler differentials through the
+(dualising the bimodule of Kähler differentials through the
 non-degenerate pairing).  Composing with the exterior square gives
 the *Poisson bivector object*
 
