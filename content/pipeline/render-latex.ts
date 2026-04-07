@@ -18,6 +18,7 @@ import { remark } from "remark";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
+import { isCrossPaperRef } from "../schema/types";
 import { extractCitations } from "./citations";
 
 // ── LaTeX character escaping ─────────────────────────────────────
@@ -263,15 +264,9 @@ function renderMdastNode(node: any): string {
       const url: string = node.url ?? "";
       if (url.startsWith("#")) {
         const label = url.slice(1);
-        // Cross-paper references use "paper-dir:label" syntax (e.g.
-        // "unital-groebner-bases:def:foo"). These cannot resolve within
-        // a single-paper PDF. Detect by checking if the label starts with
-        // a paper directory prefix (contains a colon but doesn't start
-        // with a known label prefix like "def:", "thm:", etc.).
-        const LABEL_PREFIXES = ["def:", "thm:", "lem:", "prop:", "cor:", "rem:", "ex:", "conj:", "eq:", "sec:", "chap:", "sim:", "tab:", "fig:", "app:", "bib:"];
-        const isCrossPaper = label.includes(":") && !LABEL_PREFIXES.some(p => label.startsWith(p));
-        if (isCrossPaper) {
-          // Cross-paper ref: render as styled text (no \hyperref)
+        // Cross-paper references (e.g. "unital-groebner-bases:def:foo")
+        // cannot resolve in a single-paper PDF — render as plain text.
+        if (isCrossPaperRef(label)) {
           return `${text}`;
         }
         // Internal cross-ref: [text](#label) → \hyperref[label]{text}

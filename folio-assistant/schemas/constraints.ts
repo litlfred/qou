@@ -356,6 +356,8 @@ export interface ConstraintContext {
   allRefIds?: Set<string>;
   /** File existence checker. */
   fileExists: (path: string) => boolean;
+  /** Markdown content of the companion .md file (for cross-ref scanning). */
+  mdContent?: string;
 }
 
 /**

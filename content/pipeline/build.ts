@@ -14,6 +14,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { join, dirname, resolve, relative } from "path";
 import type { Paper, Chapter, Section, Block, RenderOptions } from "../schema/types";
+import { extractBlockLabel, isCrossPaperRef } from "../schema/types";
 import { renderChapter, validateLatexAst } from "./render-latex";
 import { generateMainTex } from "./generate-main-tex";
 
@@ -170,7 +171,7 @@ export async function buildPaper(
       for (const rootName of s.blocks) {
         const entry = blocks.get(rootName);
         if (!entry) continue;
-        const label = "label" in entry.block ? (entry.block as any).label : undefined;
+        const label = extractBlockLabel(entry.block);
         if (label) appendixPhantomLabels.push(label);
       }
     }
@@ -197,10 +198,9 @@ export async function buildPaper(
   // 4. Cross-reference validation: detect \hyperref targets that have
   //    no corresponding \label in the rendered output.
   //    Collect all defined labels (from blocks, sections, chapters).
-  const LABEL_PREFIXES = ["def:", "thm:", "lem:", "prop:", "cor:", "rem:", "ex:", "conj:", "eq:", "sec:", "chap:", "sim:", "tab:", "fig:", "app:", "bib:"];
   const definedLabels = new Set<string>();
   for (const [, entry] of blocks) {
-    const label = "label" in entry.block ? (entry.block as any).label : undefined;
+    const label = extractBlockLabel(entry.block);
     if (label) definedLabels.add(label);
   }
   for (const { chapter } of resolvedChapters) {
@@ -218,8 +218,7 @@ export async function buildPaper(
     for (const match of matches) {
       const label = match[2];
       // Skip cross-paper references (handled separately in render)
-      const isCrossPaper = label.includes(":") && !LABEL_PREFIXES.some(p => label.startsWith(p));
-      if (!isCrossPaper) {
+      if (!isCrossPaperRef(label)) {
         referencedLabels.add(label);
       }
     }
