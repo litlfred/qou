@@ -759,8 +759,9 @@ function getTileColor(el, mode) {
     const Jq2 = qCasimir(twoJ, q);
     const classical = j * (j + 1);
     const delta = (Jq2 - classical) / classical;
-    // δ range: typically [−0.3, +0.5] for q ∈ [1.001, 2.0]
-    const t = Math.min(1, Math.max(-1, delta * 3)); // scale for visibility
+    // δ range: typically [−0.3, +0.5] for q ∈ [1.001, 2.0]; scale ×3 maps ±0.33 → ±1
+    const GM_DELTA_SCALE = 3;
+    const t = Math.min(1, Math.max(-1, delta * GM_DELTA_SCALE));
     if (t < 0) {
       // Blue channel (δ < 0 = q-suppression)
       const a = Math.abs(t);
@@ -1499,8 +1500,8 @@ function buildSpinTable() {
         const sym = el[2];
         const dPct = twoJ === 0 ? '0' : (d * 100).toFixed(1);
         const magicTag = isMagic ? ' ★' : '';
-        const kummerTag = `μ${Math.max(kZ, kN)}`;
-        const title = `${el[3]} (Z=${el[0]}, N=${N}, A=${el[1]})\nJ=${spinLabel(twoJ)}  J_q²=${Jq2.toFixed(3)}\nδ=${dPct}%  ${kummerTag}${magicTag ? '  MAGIC' : ''}`;
+        const kummerTag = `μ${kZ}(Z)×μ${kN}(N)`;
+        const title = `${el[3]} (Z=${el[0]}, N=${N}, A=${el[1]})\nJ=${spinLabel(twoJ)}  J_q²=${Jq2.toFixed(3)}\nδ=${dPct}%  Kummer: ${kummerTag}${magicTag ? '  MAGIC' : ''}`;
         const highlight = selectedZ === el[0] ? 'font-weight:700;text-decoration:underline;' : '';
         const magicBorder = isMagic ? 'border:1px solid var(--accent2);' : '';
         html += `<td class="${cls}" title="${title}" style="cursor:pointer;${highlight}${magicBorder}" onclick="selectElement(${el[0]})">${sym}<br><b>${spinLabel(twoJ)}</b></td>`;
