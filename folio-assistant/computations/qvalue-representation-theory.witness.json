@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-07T13:15:51.219084+00:00",
-  "commitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
+  "computedAt": "2026-04-07T14:54:05.415527+00:00",
+  "commitSha": "bd08a93bb7c082ce14d3d206e76b94b37c6c6093",
   "assertions": [
     {
       "name": "Q(³H) full prediction",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 68,
+  "durationMs": 117,
   "computation": "qvalue-representation-theory",
   "scriptFile": "qvalue-representation-theory.py",
   "scriptHash": "b23e89d60d4b",
-  "scriptCommitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
+  "scriptCommitSha": "dc129b1c6ad8ff703d3fd2e93e44eafd4f7216e3",
   "description": "Q-value predictions from Gröbner--Shirshov-weighted transfer matrix with Rosso--Jones spectral decomposition. Crossing convention: σ⁻¹ = σ − (q−q⁻¹), matching hecke_division.py and HeckeH3.lean (unimodular: det T = −1). Two-stage correction: (1) q/q⁻¹ directional weighting, (2) degree-2 torus knot shell factor F_deg2 ≈ 0.5904 and Pauli exclusion F_Pauli ≈ 0.6382 for magic shells. Zero fitting parameters. All from q alone.",
   "contentBlock": "prop:spectral-decomposition-qvalue",
   "parameters": {

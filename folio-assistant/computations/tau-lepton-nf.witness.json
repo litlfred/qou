@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-07T13:11:06.883683+00:00",
-  "commitSha": "b827531281ff794128c640f17cc96aaf753068da",
+  "computedAt": "2026-04-07T14:54:11.900326+00:00",
+  "commitSha": "bd08a93bb7c082ce14d3d206e76b94b37c6c6093",
   "assertions": [
     {
       "name": "Continuant recurrence bₙ₊₁ = h·bₙ + bₙ₋₁ (all n)",
@@ -55,7 +55,7 @@
   "computation": "tau-lepton-nf",
   "scriptFile": "tau-lepton-nf.py",
   "scriptHash": "5a1c2a6ff89b",
-  "scriptCommitSha": "b827531281ff794128c640f17cc96aaf753068da",
+  "scriptCommitSha": "dc129b1c6ad8ff703d3fd2e93e44eafd4f7216e3",
   "description": "Chebyshev tower NF(T_{2,n}) in H₂(q) for the charged lepton tower n = 3, 5, 7 (electron, muon, tau). Verifies the continuant (Morgan--Voyce) recurrence and the algebraic structure of leptonic tau decays.",
   "contentBlock": "rem:lepton-mass-integrals",
   "parameters": {

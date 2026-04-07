@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-04-07T13:15:52.786860+00:00",
-  "commitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
+  "computedAt": "2026-04-07T14:53:49.401844+00:00",
+  "commitSha": "bd08a93bb7c082ce14d3d206e76b94b37c6c6093",
   "assertions": [
     {
       "name": "ℏ_q² = Vol(4_1) / (m_μ/m_e)",
@@ -96,7 +96,7 @@
   "computation": "mass-from-q-symbolic",
   "scriptFile": "mass-from-q-symbolic.py",
   "scriptHash": "43e02aded403",
-  "scriptCommitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
+  "scriptCommitSha": "dc129b1c6ad8ff703d3fd2e93e44eafd4f7216e3",
   "description": "Symbolic hadron mass derivation from the substrate parameter q. Computes Skein polynomials P_p(q), P_n(q) via transfer matrix chain construction and topological mass formula 𝔪(K) = Vol(K)/ℏ_q². Crossing convention: σ⁻¹ = σ − (q−q⁻¹), matching hecke_division.py and HeckeH3.lean. All error bounds propagated from CODATA 2022 uncertainties via q_parameter.py.",
   "contentBlock": "thm:topological-mass",
   "parameters": {

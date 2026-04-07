@@ -1,8 +1,8 @@
 {
   "engine": "hecke-division",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-07T13:15:51.912839+00:00",
-  "commitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
+  "computedAt": "2026-04-07T14:54:05.776255+00:00",
+  "commitSha": "bd08a93bb7c082ce14d3d206e76b94b37c6c6093",
   "assertions": [
     {
       "name": "J(T_{2,3}) RJ invariant > 0",
@@ -90,8 +90,8 @@
   "durationMs": 24,
   "computation": "rosso-jones-qvalues",
   "scriptFile": "rosso-jones-qvalues.py",
-  "scriptHash": "8e2f4f130ad2",
-  "scriptCommitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
+  "scriptHash": "33ddf8c4e032",
+  "scriptCommitSha": "dc129b1c6ad8ff703d3fd2e93e44eafd4f7216e3",
   "description": "Rosso--Jones decomposition of embeddable torus knots on Σ₄ for beta decay Q-values. The 6 embeddable torus knots {T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}, T_{2,9}, T_{3,4}} form a complete, self-dual basis for the Hilbert space of H_n(q). Degree factors F_k are computed via Markov traces of J(T)·T·Δ_mix products.",
   "contentBlock": "prop:spectral-decomposition-qvalue",
   "parameters": {
