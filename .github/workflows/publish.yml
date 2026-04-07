@@ -434,8 +434,12 @@ jobs:
           fi
 
           # Copy appendix PDFs (standalone compiled from individual .tex files)
-          for apdf in glossary.pdf appendix-knot-periodic-table.pdf appendix-transfer-matrices.pdf appendix-atomic-mass-calculations.pdf index-of-definitions.pdf; do
-            if [ -f "$apdf" ]; then
+          for apdf in *.pdf; do
+            case "$apdf" in
+              main.pdf|diff.pdf|standalone-*) continue ;;
+            esac
+            # Only copy appendix-related PDFs (those generated from standalone-*.tex)
+            if [ -f "standalone-${apdf%.pdf}.tex" ] || echo "$apdf" | grep -qE '^(glossary|appendix-|index-of-)'; then
               cp "$apdf" "${PAPER_OUTDIR}/${apdf}"
               echo "  ✓ Appendix: ${apdf}"
             fi

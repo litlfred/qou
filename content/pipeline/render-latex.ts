@@ -226,6 +226,8 @@ function renderMdastNode(node: any): string {
     case "text": {
       // Preserve \cite{...} commands (LaTeX citations) while escaping other text.
       // \cite may have an optional [...] argument: \cite[Thm.~1.7]{key}
+      // Limitation: nested brackets in the optional argument are not supported
+      // (e.g. \cite[Thm.~1.7 [p.~5]]{key}).
       const textVal: string = node.value;
       const citePat = /(\\cite(?:\[[^\]]*\])?\{[^}]+\})/g;
       const textParts = textVal.split(citePat);

@@ -24,7 +24,13 @@ export interface BuildResult {
   chapters: Map<number, string>;
   /** Chapter slug names derived from directory names (e.g. "quantum-observable-universe"). */
   chapterSlugs: Map<number, string>;
-  /** Appendix chapters (tabLabel other than "I") — excluded from main PDF. */
+  /**
+   * Standalone appendix chapters — excluded from the main paper PDF and
+   * compiled as separate PDFs. Detected as back-matter chapters: those
+   * with a `tabLabel` that appear after all numbered (non-tabLabel) chapters
+   * in the manifest. The Introduction (tabLabel "I", typically first) is
+   * never treated as an appendix.
+   */
   appendixChapters: Map<number, { slug: string; title: string; tabLabel: string }>;
   /** Validation issues encountered. */
   issues: { level: string; message: string }[];
@@ -56,7 +62,7 @@ export async function buildPaper(
   // 2. Resolve chapters and load all blocks
   const resolvedChapters: { chapter: Chapter; manifestIdx: number }[] = [];
   const chapterSlugs = new Map<number, string>();
-  const appendixChapters = new Map<number, { slug: string; title: string; tabLabel: string }>();
+  const chapterMeta = new Map<number, { slug: string; title: string; tabLabel?: string }>();
   const blocks = new Map<string, { block: Block; mdContent: string; sourceDir?: string }>();
 
   for (let chIdx = 0; chIdx < paper.chapters.length; chIdx++) {
@@ -78,16 +84,7 @@ export async function buildPaper(
       const slug = chRef.dir;
       // Use manifest index as key to preserve author-defined chapter order
       chapterSlugs.set(chIdx, slug);
-
-      // Detect appendix chapters: chapters with tabLabel (unnumbered) other
-      // than "I" (Introduction) are standalone appendices.
-      if (chapter.tabLabel && chapter.tabLabel !== "I") {
-        appendixChapters.set(chIdx, {
-          slug,
-          title: chapter.title,
-          tabLabel: chapter.tabLabel,
-        });
-      }
+      chapterMeta.set(chIdx, { slug, title: chapter.title, tabLabel: chapter.tabLabel });
 
       // Load blocks from the chapter directory
       for (const sec of chapter.sections) {
@@ -119,6 +116,27 @@ export async function buildPaper(
       issues.push({
         level: "error",
         message: `Failed to load chapter "${chRef.dir}": ${e instanceof Error ? e.message : String(e)}`,
+      });
+    }
+  }
+
+  // 2b. Detect standalone appendix chapters.
+  // Back-matter chapters are tabLabel'd chapters that appear AFTER all
+  // numbered (non-tabLabel) chapters in the manifest. The Introduction
+  // (first chapter, tabLabel "I") is never an appendix. Chapters like
+  // Preface or Acknowledgments that precede numbered content would also
+  // be kept in the main paper by this logic.
+  const appendixChapters = new Map<number, { slug: string; title: string; tabLabel: string }>();
+  let lastNumberedIdx = -1;
+  for (const [idx, meta] of chapterMeta) {
+    if (!meta.tabLabel) lastNumberedIdx = idx;
+  }
+  for (const [idx, meta] of chapterMeta) {
+    if (meta.tabLabel && idx > lastNumberedIdx) {
+      appendixChapters.set(idx, {
+        slug: meta.slug,
+        title: meta.title,
+        tabLabel: meta.tabLabel,
       });
     }
   }
