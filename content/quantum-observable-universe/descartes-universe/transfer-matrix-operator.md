@@ -41,11 +41,11 @@ $s = q^{1/2} - q^{-1/2}$ is the Skein amplitude.
 For the three nuclear crossing types (quarks as Borromean
 unknot components), this specializes to:
 
-| Crossing | $K_1$ | $K_2$ | $c$ | $d$ |
-|----------|-------|-------|-----|-----|
-| $\mathfrak{p}$-$\mathfrak{p}$ | $u$ | $u$ | $1$ | $0$ |
-| $\mathfrak{n}$-$\mathfrak{n}$ | $d$ | $d$ | $q^2$ | $-qs$ |
-| mixed | $u$ | $d$ | $\frac{1+q^2}{2}$ | $-\frac{qs}{2}$ |
+| Crossing | $K_1$ | $K_2$ | $c$ | $d$ | Hecke element |
+|----------|-------|-------|-----|-----|---------------|
+| $\mathfrak{p}$-$\mathfrak{p}$ | $u$ | $u$ | $1$ | $0$ | $\sigma$ |
+| $\mathfrak{n}$-$\mathfrak{n}$ | $d$ | $d$ | $1$ | $-(q - q^{-1})$ | $\sigma^{-1}$ |
+| mixed | $u$ | $d$ | $1$ | $-\frac{1}{2}(q - q^{-1})$ | $\frac{1}{2}(\sigma + \sigma^{-1})$ |
 
 ## Action on the Gröbner--Shirshov ideal
 

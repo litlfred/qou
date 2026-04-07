@@ -117,8 +117,8 @@ naive ordering $[\underbrace{p \cdots p}_{Z}\, \underbrace{n \cdots n}_{N}]$ wit
 
 $$
   \text{pp}: (c, d) = (1, 0), \qquad
-  \text{nn}: (c, d) = (q^2, -q(q^{1/2} - q^{-1/2})), \qquad
-  \text{mix}: (c, d) = \tfrac{1}{2}(1+q^2,\, -q(q^{1/2} - q^{-1/2}))
+  \text{nn}: (c, d) = (1, -(q - q^{-1})), \qquad
+  \text{mix}: (c, d) = (1, -\tfrac{1}{2}(q - q^{-1}))
 $$
 
 The bare ratio in $\log_q$:

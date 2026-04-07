@@ -23,10 +23,10 @@ where each crossing factor is $C_{ij}(\sigma_i) = c_j \sigma_i + d_j$ with coeff
 $$
   (c_j, d_j) \;=\;
   \begin{cases}
-    (1, 0) & \text{if } i, j \text{ both protons} \\[3pt]
-    (q^2, -q(q^{1/2} - q^{-1/2})) & \text{if } i, j \text{ both neutrons} \\[3pt]
-    (\tfrac{1+q^2}{2}, -\tfrac{q}{2}(q^{1/2} - q^{-1/2}))
-      & \text{if mixed}
+    (1, 0) & \text{if } i, j \text{ both protons (}\sigma\text{)} \\[3pt]
+    (1, -(q - q^{-1})) & \text{if } i, j \text{ both neutrons (}\sigma^{-1}\text{)} \\[3pt]
+    (1, -\tfrac{1}{2}(q - q^{-1}))
+      & \text{if mixed (}\tfrac{1}{2}(\sigma + \sigma^{-1})\text{)}
   \end{cases}
 $$
 
