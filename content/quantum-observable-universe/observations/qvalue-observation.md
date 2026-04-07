@@ -32,15 +32,12 @@ correction: $\mathcal{Q}_q \approx 0.557\;\mathrm{MeV}$
 ($+2.1\%$).  No fitting, no magic-number complication, no parity
 issues — the $73\% \to 2\%$ reduction is purely categorical.
 
-**Method distinction.** The $q$-weighted method is *categorically
+**Method.** The $q$-weighted method is *categorically
 defined* — it uses the eigenvalue asymmetry $q$ vs $-q^{-1}$ of the
 Iwahori--Hecke algebra to separate unbinding, rebinding, and spectator
 channels.  The shell correction factors $F_{\mathrm{deg2}}$ and
 $F_{\mathrm{Pauli}}$ are derived from the $6 \times 6$ regular
-representation of $H_3(q)$, not fitted.  The naive Lagrangian and
-Dirac methods (MAE $\approx 45\%$ and $\approx 71\%$ respectively)
-lack this channel separation and dilute the signal by summing $A - 1$
-generator contributions equally.
+representation of $H_3(q)$, not fitted.
 
 **Error structure.** The parametric uncertainty
 $\delta\mathcal{Q}_q / \delta q_0 \sim 10^{-9}\;\text{MeV}$ is

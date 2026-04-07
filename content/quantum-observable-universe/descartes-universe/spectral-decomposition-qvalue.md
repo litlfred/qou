@@ -219,7 +219,7 @@ the full twist on each irrep of $H_r(q)$), and $\Delta_\beta = T_{\mathrm{mix}} 
 difference operator.  The Rosso--Jones weights are the
 [canonical inner product on $R(H_r(q))$](#prop:rj-canonical-inner-product),
 forced by Schur orthogonality — they assign each degree-$2$ knot its
-quantum dimension $d_\lambda(q)$ with zero fitting freedom.
+Rosso--Jones invariant $J(\tau)$ with zero fitting freedom.
 
 At $q = q_0$:
 $J(\tau(2,9)) \approx 2.167$ and $J(\tau(3,4)) \approx 5.794$

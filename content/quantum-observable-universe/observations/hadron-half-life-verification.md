@@ -60,7 +60,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
    The representation-theoretic formula
    $\mathcal{Q}_q = \mathcal{Q}_{\mathrm{bare}} \times F_{\mathrm{deg}} \times F_{\mathrm{Pauli}}$
    ([torus knot shell binding](#cor:spectral-decomposition-qvalue))
-   gives all six test nuclei within $\pm 9\%$ using Level 0
+   gives all six test nuclei within $\pm 8\%$ using Level 0
    (nucleon) transfer matrices — no Level 1 (quark) braid needed.
    The degree-$2$ operator average and Pauli projection are
    derived from the $H_3(q)$ representation theory of the
@@ -196,8 +196,8 @@ term — the converting neutron's shell knot $T_{k^*}$.
 | ${}^{137}\mathrm{Cs}$ | $1.39442$ | $T_{3,4}$ | $0.3768$ | $0.52536$ | $0.51400 \pm 0.00021$ | $+2.2\%$ |
 | ${}^{210}\mathrm{Bi}$ | $2.12100$ | $T_{2,9}$ | $0.5904$ | $1.25224$ | $1.16270 \pm 0.00006$ | $+7.7\%$ |
 
-All six nuclei within $\pm 8\%$.  Mean absolute error: $3.1\%$;
-RMS: $4.1\%$.
+All six nuclei within $\pm 8\%$.  Mean absolute error: $4.5\%$;
+RMS: $5.2\%$.
 
 **Degree-$1$ shells** ($N \leq 28$; active knot $\in \{T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}\}$): the knot operator gives $F = 1$
 because degree-$1$ binding is already captured by the crossing

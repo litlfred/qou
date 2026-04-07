@@ -19,6 +19,5 @@ export default proposition({
   },
   uses: [
     "prop:cohomological-embedding",
-    "prop:beta-decay-transfer-matrix",
   ],
 });
