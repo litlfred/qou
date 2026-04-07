@@ -1,7 +1,7 @@
 All predictions use $\approx$ (derived from $q$, zero fitting parameters).
 Experimental values from NNDC/ENSDF with stated uncertainties.
 Three categorical methods compared: Lagrangian ($\mathcal{Q}_{\mathrm{lag}}$),
-Dirac ($\mathcal{Q}_{\mathrm{dir}}$), and $q$-weighted ($\mathcal{Q}_{q\text{-wt}}$),
+Dirac ($\mathcal{Q}_{\mathrm{dir}}$), and $q$-weighted ($\mathcal{Q}_q$),
 each calibrated from ${}^3\mathrm{H}$ via $E_0 = \mathcal{Q}_{\mathrm{exp}}({}^3\mathrm{H}) / |\mathcal{O}({}^3\mathrm{H})|$.
 Crossing convention: $(1, -\mathrm{HA})$ throughout (unimodular, $\det T = -1$).
 
@@ -24,7 +24,7 @@ Energy scales (calibrated from $\mathcal{Q}_{\mathrm{exp}}({}^3\mathrm{H}) = 0.0
 - $E_{0,\mathrm{dir}} = 0.0207\;\text{MeV}$
   (cf. $\kappa_q = \ln(q) \cdot m_e/3 = 0.01777\;\text{MeV}$)
 - $E_0 = \mathcal{Q}_n / |\Delta\mathrm{net}_{\mathrm{free}}| = 4.406\;\text{MeV}$
-  (free neutron calibration, reproduces $\mathcal{Q}_n = 0.782\;\text{MeV}$ exactly)
+  (free neutron calibration, reproduces $\mathcal{Q}_n \approx 0.782\;\text{MeV}$)
 
 **Diagnostic --- why both methods undershoot:**
 
