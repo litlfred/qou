@@ -8,14 +8,14 @@ corresponding knot/link is topologically non-trivial.
 
 ## The six NF terms
 
-| Basis | Word | $\ell$ | Neutron $\mathfrak{n}$ | Proton $\mathfrak{p}$ | Observable? |
-|:---:|:---:|:---:|---:|---:|:---:|
-| $\nu$ | $\mathbf{1}$ | $0$ | $-0.2017$ | $-0.0997$ | No (unknot) |
-| $H^0$ | $\sigma_0$ | $1$ | $+0.0481$ | $+0.0357$ | No (virtual) |
-| $H^1$ | $\sigma_1$ | $1$ | $+1.0090$ | $+0.9976$ | No (virtual) |
-| $L_+$ | $\sigma_0\sigma_1$ | $2$ | $-0.0096$ | $+0.0994$ | Yes (Hopf link) |
-| $L_-$ | $\sigma_1\sigma_0$ | $2$ | $+0.0092$ | $+0.0093$ | Yes (Hopf link) |
-| $e^-$ | $\sigma_0\sigma_1\sigma_0$ | $3$ | $-0.0442$ | $-0.0432$ | Yes (trefoil) |
+| Particle | Word | Knot/Link | $\ell$ | Neutron $\mathfrak{n}$ | Proton $\mathfrak{p}$ | Observable? |
+|:---:|:---:|:---:|:---:|---:|---:|:---:|
+| $\nu$ | $\mathbf{1}$ | unknot ($0_1$) | $0$ | $-0.201704$ | $-0.099658$ | No (unknot) |
+| $H^0$ | $\sigma_0$ | virtual | $1$ | $+0.048130$ | $+0.035729$ | No (virtual) |
+| $H^1$ | $\sigma_1$ | virtual | $1$ | $+1.008995$ | $+0.997570$ | No (virtual) |
+| $L_+$ | $\sigma_0\sigma_1$ | Hopf link | $2$ | $-0.009641$ | $+0.099354$ | Yes (Hopf link) |
+| $L_-$ | $\sigma_1\sigma_0$ | Hopf link | $2$ | $+0.009237$ | $+0.009337$ | Yes (Hopf link) |
+| $e^-$ | $\sigma_0\sigma_1\sigma_0$ | trefoil ($3_1$) | $3$ | $-0.044184$ | $-0.043208$ | Yes (trefoil) |
 
 Numerical values at $q_0 \approx 1.1100$ (typed crossings).
 
@@ -37,9 +37,9 @@ shifts the $\sigma_0\sigma_1$ coefficient below zero.
 A braid word of length $\ell$ is **observable** when the
 corresponding knot or link is topologically non-trivial:
 
-- **$\ell = 0$**: the identity $\mathbf{1}$ is the unknot.
+- **$\ell = 0$**: the identity $\mathbf{1}$ maps to the unknot ($0_1$).
   Topologically trivial — passes through everything undetected.
-  This is the neutrino channel $\nu$.
+  This is the neutrino channel $\nu$ ([neutrino knot](#def:neutrino-knot)).
 
 - **$\ell = 1$**: a single crossing $\sigma_i$ can be undone by
   a single Reidemeister-I move.  It is a **virtual crossing** —
@@ -122,15 +122,15 @@ vacuum.  In the typed-crossing NF:
 
 |  | $\nu$ debt | $L_+$ debt | $e^-$ debt |
 |:---:|---:|---:|---:|
-| **Neutron** | $-0.2017$ | $-0.0096$ | $-0.0442$ |
-| **Proton** | $-0.0997$ | — | $-0.0432$ |
+| **Neutron** | $-0.201704$ | $-0.009641$ | $-0.044184$ |
+| **Proton** | $-0.099658$ | — | $-0.043208$ |
 
 The neutron carries three debts ($\nu, L_+, e^-$) while the
 proton carries only two ($\nu, e^-$).  The excess:
 
 $$
-  \Delta_\nu = -0.102, \qquad \Delta_{L_+} = -0.109,
-  \qquad \Delta_{e^-} = -0.001
+  \Delta_\nu = -0.10205, \qquad \Delta_{L_+} = -0.10899,
+  \qquad \Delta_{e^-} = -0.00098
 $$
 
 drives beta decay

@@ -44,6 +44,9 @@ proton_nf  = {t["particle"]: t["coefficient_numeric"] for t in witness["proton"]
 
 # Word length for each basis element (observability classification)
 WORD_LENGTH = {"ν": 0, "H⁰": 1, "H¹": 1, "L₊": 2, "L₋": 2, "e⁻": 3}
+# Knot/link produced by Markov trace of braid closure
+KNOT_NAME = {"ν": "unknot (0₁)", "H⁰": "virtual", "H¹": "virtual",
+             "L₊": "Hopf link", "L₋": "Hopf link", "e⁻": "trefoil (3₁)"}
 PARTICLES = ["ν", "H⁰", "H¹", "L₊", "L₋", "e⁻"]
 
 neutron_net = witness["neutron"]["net_coefficient"]
@@ -102,14 +105,14 @@ print(f"  The transition element 𝔫 − 𝔭 ∈ H₃(q) has Δ as its NF. ✓
 
 # ── Individual NF terms ──────────────────────────────────────────
 print("\n── Nucleon NF coefficients (typed crossings) ──")
-print(f"  {'Term':>4s}  {'ℓ':>1s}  {'Neutron':>11s}  {'Proton':>11s}  {'Δ':>12s}  {'Sign(n)':>7s}")
-print(f"  {'─'*4}  {'─'}  {'─'*11}  {'─'*11}  {'─'*12}  {'─'*7}")
+print(f"  {'Term':>4s}  {'ℓ':>1s}  {'Knot/Link':<14s}  {'Neutron':>11s}  {'Proton':>11s}  {'Δ':>12s}  {'Sign(n)':>7s}")
+print(f"  {'─'*4}  {'─'}  {'─'*14}  {'─'*11}  {'─'*11}  {'─'*12}  {'─'*7}")
 for p in PARTICLES:
     n_val = neutron_nf[p]
     p_val = proton_nf[p]
     d_val = deltas[p]
     sign = "+" if n_val >= 0 else "−"
-    print(f"  {p:>4s}  {WORD_LENGTH[p]}  {n_val:+11.7f}  {p_val:+11.7f}  {d_val:+12.10f}  {sign:>7s}")
+    print(f"  {p:>4s}  {WORD_LENGTH[p]}  {KNOT_NAME[p]:<14s}  {n_val:+11.7f}  {p_val:+11.7f}  {d_val:+12.10f}  {sign:>7s}")
 print(f"\n  net(n) = {neutron_net:+.10f}")
 print(f"  net(p) = {proton_net:+.10f}")
 print(f"  Δ(net) = {delta_net:+.10f}")
@@ -204,8 +207,8 @@ for p in PARTICLES:
     total_check += energy
     ell = WORD_LENGTH[p]
     obs_tag = "obs" if ell >= 2 else "vrt"
-    print(f"  Δ({p:3s}) × E₀ = {energy:+.6f} MeV  (ℓ={ell}, {obs_tag})")
-print(f"  {'─' * 45}")
+    print(f"  Δ({p:3s}) × E₀ = {energy:+.6f} MeV  (ℓ={ell}, {obs_tag}, {KNOT_NAME[p]})")
+print(f"  {'─' * 55}")
 print(f"  Sum          = {total_check:+.6f} MeV")
 print(f"  Q (observed) = {Q_decay:+.6f} MeV")
 
@@ -216,8 +219,8 @@ for p in PARTICLES:
     if WORD_LENGTH[p] >= 2:
         energy = deltas[p] * E0_net * (-1 if delta_net < 0 else 1)
         obs_total += energy
-        print(f"  Δ({p:3s}) × E₀ = {energy:+.6f} MeV")
-print(f"  {'─' * 45}")
+        print(f"  Δ({p:3s}) × E₀ = {energy:+.6f} MeV  ({KNOT_NAME[p]})")
+print(f"  {'─' * 55}")
 print(f"  Q_≥2         = {obs_total:+.6f} MeV")
 print(f"  Q (observed) = {Q_decay:+.6f} MeV")
 print(f"  Ratio Q_≥2/Q = {obs_total/Q_decay:.4f}")

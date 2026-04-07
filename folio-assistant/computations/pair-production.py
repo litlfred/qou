@@ -78,12 +78,12 @@ E0 = _esc["energy_scales"]["E0_from_net_MeV"]
 HA_sym = q_sym - 1 / q_sym
 
 PARTICLE_KNOT = {
-    ():        ("ν",  "𝟏"),
-    (0,):      ("H⁰", "σ₀"),
-    (1,):      ("H¹", "σ₁"),
-    (0, 1):    ("L₊", "σ₀σ₁"),
-    (1, 0):    ("L₋", "σ₁σ₀"),
-    (0, 1, 0): ("e⁻", "σ₀σ₁σ₀"),
+    ():        ("ν",  "𝟏",      "unknot (0₁)"),
+    (0,):      ("H⁰", "σ₀",     "virtual (ℓ=1)"),
+    (1,):      ("H¹", "σ₁",     "virtual (ℓ=1)"),
+    (0, 1):    ("L₊", "σ₀σ₁",   "Hopf link"),
+    (1, 0):    ("L₋", "σ₁σ₀",   "Hopf link"),
+    (0, 1, 0): ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),
 }
 OBSERVABLE_WORDS = {w for w in PARTICLE_KNOT if len(w) >= 2}
 
@@ -93,7 +93,7 @@ def ws(w):
     return "·".join(f"σ_{i}" for i in w)
 
 def pn(w):
-    return PARTICLE_KNOT.get(w, ("?", "?"))[0]
+    return PARTICLE_KNOT.get(w, ("?", "?", "?"))[0]
 
 def eval_q0(c):
     if isinstance(c, (int, float)):

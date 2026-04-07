@@ -23,8 +23,8 @@ vector space $H_3(q)$.
 
 From the witness (`free-neutron-decay.witness.json`, typed crossings):
 
-- $\mathrm{net}(\mathfrak{n}) = +0.8108$, $\mathrm{net}(\mathfrak{p}) = +0.9991$
-- $\Delta(\mathrm{net}) = -0.1883$
+- $\mathrm{net}(\mathfrak{n}) = +0.810835$, $\mathrm{net}(\mathfrak{p}) = +0.999125$
+- $\Delta(\mathrm{net}) = -0.188291$
 
 From CODATA 2022:
 
@@ -55,9 +55,9 @@ sums:
 
 | | NF$_+$ | NF$_-$ | Net |
 |:---:|---:|---:|---:|
-| **Neutron** | $+1.066$ ($H^0, H^1, L_-$) | $-0.256$ ($\nu, L_+, e^-$) | $+0.811$ |
-| **Proton** | $+1.142$ ($H^0, H^1, L_+, L_-$) | $-0.143$ ($\nu, e^-$) | $+0.999$ |
-| **$\Delta$** | $-0.076$ | $-0.113$ | $-0.188$ |
+| **Neutron** | $+1.0664$ ($H^0, H^1, L_-$) | $-0.2555$ ($\nu, L_+, e^-$) | $+0.8108$ |
+| **Proton** | $+1.1420$ ($H^0, H^1, L_+, L_-$) | $-0.1429$ ($\nu, e^-$) | $+0.9991$ |
+| **$\Delta$** | $-0.0756$ | $-0.1127$ | $-0.1883$ |
 
 The neutron has **three** negative terms ($\nu, L_+, e^-$) while
 the proton has only **two** ($\nu, e^-$).  The $L_+$ sign flip is
@@ -73,16 +73,16 @@ Terms $\ell < 2$ ($\nu, H^0, H^1$) are virtual.
 
 | | Observable ($\ell \geq 2$) | Virtual ($\ell < 2$) |
 |:---:|---:|---:|
-| **Neutron** | $-0.045$ | $+0.855$ |
-| **Proton** | $+0.065$ | $+0.934$ |
-| **$\Delta$** | $-0.110$ | $-0.078$ |
+| **Neutron** | $-0.0446$ | $+0.8554$ |
+| **Proton** | $+0.0655$ | $+0.9336$ |
+| **$\Delta$** | $-0.1101$ | $-0.0782$ |
 
 The observable-only $Q$-value, using $\mathbf{E}_0(\mathrm{net})$:
 
 $$
   Q_{\geq 2} = |\Delta(\ell \geq 2)| \times \mathbf{E}_0
-  = 0.1101 \times 4.155
-  \approx 0.457\;\text{MeV}
+  = 0.11007 \times 4.155
+  \approx 0.4573\;\text{MeV}
   \;=\; 58.5\%\;\text{of}\;Q_\beta.
 $$
 
@@ -90,10 +90,10 @@ $$
 
 | Scenario | $|\Delta|$ | $\mathbf{E}_0$ (MeV) | $\mathbf{E}_0 / \mathfrak{m}_e$ |
 |:---|---:|---:|---:|
-| All terms $|\Delta\mathrm{net}|$ | $0.1883$ | $4.155$ | $8.131$ |
-| Observable $|\Delta(\ell \geq 2)|$ | $0.1101$ | $7.108$ | $13.909$ |
-| Positive $|\Delta\mathrm{NF}_+|$ | $0.0756$ | $10.345$ | $20.244$ |
-| Leptonic $|\Delta\nu| + |\Delta e^-|$ | $0.1030$ | $7.594$ | $14.861$ |
+| All terms $|\Delta\mathrm{net}|$ | $0.18829$ | $4.155$ | $8.131$ |
+| Observable $|\Delta(\ell \geq 2)|$ | $0.11007$ | $7.108$ | $13.909$ |
+| Positive $|\Delta\mathrm{NF}_+|$ | $0.07563$ | $10.345$ | $20.244$ |
+| Leptonic $|\Delta\nu| + |\Delta e^-|$ | $0.10302$ | $7.594$ | $14.861$ |
 
 ## Full energy budget
 
@@ -101,15 +101,15 @@ Each of the six NF terms contributes
 $\Delta_i \times \mathbf{E}_0$ to the total decay energy.
 The budget is:
 
-| Term | Basis | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathbf{E}_0$ (MeV) |
-|:---:|:---:|:---:|---:|---:|
-| $\nu$ | $\mathbf{1}$ | $0$ | $-0.1020$ | $+0.424$ |
-| $H^0$ | $\sigma_0$ | $1$ | $+0.0124$ | $-0.052$ |
-| $H^1$ | $\sigma_1$ | $1$ | $+0.0114$ | $-0.047$ |
-| $L_+$ | $\sigma_0\sigma_1$ | $2$ | $-0.1090$ | $+0.453$ |
-| $L_-$ | $\sigma_1\sigma_0$ | $2$ | $-0.0001$ | $+0.000$ |
-| $e^-$ | $\sigma_0\sigma_1\sigma_0$ | $3$ | $-0.0010$ | $+0.004$ |
-|  |  |  | **Sum** | **$+0.782$ MeV** |
+| Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathbf{E}_0$ (MeV) |
+|:---:|:---:|:---:|:---:|---:|---:|
+| $\nu$ | $\mathbf{1}$ | unknot ($0_1$) | $0$ | $-0.10205$ | $+0.4240$ |
+| $H^0$ | $\sigma_0$ | virtual | $1$ | $+0.01240$ | $-0.0515$ |
+| $H^1$ | $\sigma_1$ | virtual | $1$ | $+0.01143$ | $-0.0475$ |
+| $L_+$ | $\sigma_0\sigma_1$ | Hopf link | $2$ | $-0.10899$ | $+0.4529$ |
+| $L_-$ | $\sigma_1\sigma_0$ | Hopf link | $2$ | $-0.00010$ | $+0.0004$ |
+| $e^-$ | $\sigma_0\sigma_1\sigma_0$ | trefoil ($3_1$) | $3$ | $-0.00098$ | $+0.0041$ |
+|  |  |  |  | **Sum** | **$+0.782$ MeV** |
 
 (Signs: $\Delta(\mathrm{net}) < 0$ with typed crossings, so the
 $\mathbf{E}_0$ budget uses the sign convention

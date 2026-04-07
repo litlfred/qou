@@ -42,13 +42,15 @@ try:
 except: SHA = "unknown"
 
 # ── Word helpers ──────────────────────────────────────────────
+# Each entry: (particle_name, word_string, knot_or_link_name)
+# The knot/link is what the Markov trace of the braid closure produces.
 PARTICLE_KNOT = {
-    ():         ("ν",  "𝟏"),
-    (0,):       ("H⁰", "σ₀"),
-    (1,):       ("H¹", "σ₁"),
-    (0, 1):     ("L₊", "σ₀σ₁"),
-    (1, 0):     ("L₋", "σ₁σ₀"),
-    (0, 1, 0):  ("e⁻", "σ₀σ₁σ₀"),
+    ():         ("ν",  "𝟏",      "unknot (0₁)"),
+    (0,):       ("H⁰", "σ₀",     "virtual (ℓ=1)"),
+    (1,):       ("H¹", "σ₁",     "virtual (ℓ=1)"),
+    (0, 1):     ("L₊", "σ₀σ₁",   "Hopf link"),
+    (1, 0):     ("L₋", "σ₁σ₀",   "Hopf link"),
+    (0, 1, 0):  ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),
 }
 
 def ws(w):
@@ -56,7 +58,10 @@ def ws(w):
     return "·".join(f"σ_{i}" for i in w)
 
 def pn(w):
-    return PARTICLE_KNOT.get(w, ("", ""))[0]
+    return PARTICLE_KNOT.get(w, ("", "", ""))[0]
+
+def knot_name(w):
+    return PARTICLE_KNOT.get(w, ("", "", ""))[2]
 
 
 # ══════════════════════════════════════════════════════════════
@@ -434,6 +439,7 @@ def terms_to_list(terms):
         v = float(c.subs(q, q0))
         result.append({
             "word": list(w), "word_str": ws(w), "particle": pn(w),
+            "knot": knot_name(w),
             "coefficient_symbolic": str(c),
             "coefficient_numeric": v,
         })
