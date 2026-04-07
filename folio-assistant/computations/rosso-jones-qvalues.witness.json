@@ -1,8 +1,8 @@
 {
   "engine": "hecke-division",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-07T12:20:00.982073+00:00",
-  "commitSha": "d18f117bc48a111e2fbc8dba5cc6e5c44b25d8ff",
+  "computedAt": "2026-04-07T13:10:58.536021+00:00",
+  "commitSha": "b827531281ff794128c640f17cc96aaf753068da",
   "assertions": [
     {
       "name": "J(T_{2,3}) RJ invariant > 0",
@@ -84,77 +84,14 @@
       "tolerance": 5.749665693751788e-07,
       "unit": "dimensionless",
       "source": "F_2 = |Σ J(T) · tr(T · Δ_mix)| over degree-2 knots"
-    },
-    {
-      "name": "Q(³H) RJ method 2 (bare × F₂, no direction weighting)",
-      "computed": 0.081747,
-      "expected": 0.01861,
-      "passed": true,
-      "tolerance": 0.27915,
-      "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 1e-05 MeV). Method 2 lacks q/q⁻¹ weighting."
-    },
-    {
-      "name": "Q(¹⁴C) RJ method 2 (bare × F₂, no direction weighting)",
-      "computed": 0.701974,
-      "expected": 0.15648,
-      "passed": true,
-      "tolerance": 2.3472,
-      "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 4e-05 MeV). Method 2 lacks q/q⁻¹ weighting."
-    },
-    {
-      "name": "Q(⁶⁰Co) RJ method 2 (bare × F₂, no direction weighting)",
-      "computed": 2.680254,
-      "expected": 0.31817,
-      "passed": true,
-      "tolerance": 4.77255,
-      "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 0.00013 MeV). Method 2 lacks q/q⁻¹ weighting."
-    },
-    {
-      "name": "Q(⁹⁰Sr) RJ method 2 (bare × F₂, no direction weighting)",
-      "computed": 4.352332,
-      "expected": 0.5459,
-      "passed": true,
-      "tolerance": 8.1885,
-      "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 7e-05 MeV). Method 2 lacks q/q⁻¹ weighting."
-    },
-    {
-      "name": "Q(¹³⁷Cs) RJ method 2 (bare × F₂, no direction weighting)",
-      "computed": 6.553671,
-      "expected": 0.514,
-      "passed": true,
-      "tolerance": 7.71,
-      "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 0.00021 MeV). Method 2 lacks q/q⁻¹ weighting."
-    },
-    {
-      "name": "Q(²¹⁰Bi) RJ method 2 (bare × F₂, no direction weighting)",
-      "computed": 9.968537,
-      "expected": 1.1627,
-      "passed": true,
-      "tolerance": 17.4405,
-      "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 6e-05 MeV). Method 2 lacks q/q⁻¹ weighting."
-    },
-    {
-      "name": "MAE (RJ method 2, 6 nuclei) — exploratory, not canonical",
-      "computed": 676.66,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 1000.0,
-      "unit": "%",
-      "source": "Aggregate over 6 NNDC benchmarks. Not the canonical method."
     }
   ],
   "allPassed": true,
-  "durationMs": 88,
+  "durationMs": 24,
   "computation": "rosso-jones-qvalues",
   "scriptFile": "rosso-jones-qvalues.py",
-  "scriptHash": "b9b640a98e92",
-  "scriptCommitSha": "e68c274ea98ecb1ed7a413f5168831596fcf538f",
+  "scriptHash": "8e2f4f130ad2",
+  "scriptCommitSha": "437e00e7e3836f31a047541bd297afa32be73a3d",
   "description": "Rosso--Jones decomposition of embeddable torus knots on Σ₄ for beta decay Q-values. The 6 embeddable torus knots {T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}, T_{2,9}, T_{3,4}} form a complete, self-dual basis for the Hilbert space of H_n(q). Degree factors F_k are computed via Markov traces of J(T)·T·Δ_mix products.",
   "contentBlock": "prop:spectral-decomposition-qvalue",
   "parameters": {
@@ -233,6 +170,6 @@
   },
   "caveats": [
     "Degree factors F_k are universal (same for all nuclei). The product ∏ F_k collapses the full spectral decomposition.",
-    "Method 2 (bare × F₂) is the standard approach. F₁ is degree-1 and already encoded in Q_bare via crossing weights. Method 2 applies the degree-2 correction only."
+    "The canonical Q-value prediction (with q/q⁻¹ direction weighting and shell correction) is in qvalue-representation-theory.py. This script provides the RJ decomposition data consumed by that method."
   ]
 }

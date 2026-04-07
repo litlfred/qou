@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-07T12:30:38.477045+00:00",
-  "commitSha": "437e00e7e3836f31a047541bd297afa32be73a3d",
+  "computedAt": "2026-04-07T13:07:15.942088+00:00",
+  "commitSha": "b827531281ff794128c640f17cc96aaf753068da",
   "assertions": [
     {
       "name": "m_μ/m_e = Vol(4₁)/ℏ_q² (self-consistency)",
@@ -23,31 +23,40 @@
       "source": "Definition of ℏ_q = 1 − q⁻¹"
     },
     {
-      "name": "m_p (pair Skein) vs CODATA",
-      "computed": 938.27208816,
-      "expected": 938.27208816,
+      "name": "det(T_pp) = −1 (unimodularity)",
+      "computed": -1.0,
+      "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-06,
-      "unit": "MeV",
-      "source": "Pair Skein m_p = S_uu + 2·S_ud (exact by construction)"
+      "tolerance": 1e-10,
+      "unit": "dimensionless",
+      "source": "Transfer matrix T(1.0, 0.0) from Hecke relation"
     },
     {
-      "name": "m_n (pair Skein) vs CODATA",
-      "computed": 939.56542052,
-      "expected": 939.56542052,
+      "name": "det(T_nn) = −1 (unimodularity)",
+      "computed": -1.0,
+      "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-06,
-      "unit": "MeV",
-      "source": "Pair Skein m_n = 2·S_ud + S_dd (exact by construction)"
+      "tolerance": 1e-10,
+      "unit": "dimensionless",
+      "source": "Transfer matrix T(1.0, -0.20906032198987945) from Hecke relation"
     },
     {
-      "name": "Δm = m_n − m_p",
-      "computed": 1.293332,
-      "expected": 1.293332,
+      "name": "P_proton(q₀) = ∏ V̂_i (product consistency)",
+      "computed": 0.6468491163,
+      "expected": 0.6468491163,
       "passed": true,
-      "tolerance": 0.001,
-      "unit": "MeV",
-      "source": "Pair Skein mass splitting"
+      "tolerance": 1e-12,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (proton, uud)"
+    },
+    {
+      "name": "P_neutron(q₀) = ∏ V̂_i (product consistency)",
+      "computed": 0.5047761849,
+      "expected": 0.5047761849,
+      "passed": true,
+      "tolerance": 1e-12,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (neutron, udd)"
     },
     {
       "name": "𝔪(𝔅₃) = Vol(𝔅₃)/ℏ_q²",
@@ -59,85 +68,67 @@
       "source": "Topological mass from Borromean volume"
     },
     {
-      "name": "Max |Δ| across all 118 elements < 0.15 MeV",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "M(Hydrogen-1) computed",
+      "computed": 938.78,
+      "expected": 938.78,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": 0.0,
       "unit": "MeV",
-      "source": "Rounding artifact from pair Skein vs full-precision CODATA"
+      "source": "CODATA m_p, m_n + AME2020 B/A for Z=1"
     },
     {
-      "name": "Mean |Δ| across all 118 elements",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "M(Carbon-12) computed",
+      "computed": 11177.93,
+      "expected": 11177.93,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": 4e-06,
       "unit": "MeV",
-      "source": "Average deviation over 118 elements"
+      "source": "CODATA m_p, m_n + AME2020 B/A for Z=6"
     },
     {
-      "name": "M(Hydrogen-1) |Δ| < 0.15 MeV",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "M(Iron-56) computed",
+      "computed": 52103.06,
+      "expected": 52103.06,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": 1.8e-05,
       "unit": "MeV",
-      "source": "AME2020 vs pair Skein for Z=1"
+      "source": "CODATA m_p, m_n + AME2020 B/A for Z=26"
     },
     {
-      "name": "M(Carbon-12) |Δ| < 0.15 MeV",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "M(Gold-197) computed",
+      "computed": 183486.45,
+      "expected": 183486.45,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": 6.8e-05,
       "unit": "MeV",
-      "source": "AME2020 vs pair Skein for Z=6"
+      "source": "CODATA m_p, m_n + AME2020 B/A for Z=79"
     },
     {
-      "name": "M(Iron-56) |Δ| < 0.15 MeV",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "M(Uranium-238) computed",
+      "computed": 221742.89,
+      "expected": 221742.89,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": 8.3e-05,
       "unit": "MeV",
-      "source": "AME2020 vs pair Skein for Z=26"
+      "source": "CODATA m_p, m_n + AME2020 B/A for Z=92"
     },
     {
-      "name": "M(Gold-197) |Δ| < 0.15 MeV",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "M(Oganesson-294) computed",
+      "computed": 274015.18,
+      "expected": 274015.18,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": 0.000101,
       "unit": "MeV",
-      "source": "AME2020 vs pair Skein for Z=79"
-    },
-    {
-      "name": "M(Uranium-238) |Δ| < 0.15 MeV",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 0.15,
-      "unit": "MeV",
-      "source": "AME2020 vs pair Skein for Z=92"
-    },
-    {
-      "name": "M(Oganesson-294) |Δ| < 0.15 MeV",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 0.15,
-      "unit": "MeV",
-      "source": "AME2020 vs pair Skein for Z=118"
+      "source": "CODATA m_p, m_n + AME2020 B/A for Z=118"
     }
   ],
   "allPassed": true,
   "durationMs": 9,
   "computation": "topological-mass-table",
   "scriptFile": "topological-mass-table.py",
-  "scriptHash": "6a21f6374424",
-  "scriptCommitSha": "",
-  "description": "Complete atomic mass table for all 118 elements built from the muon/electron mass ratio. Derivation chain: m_μ/m_e → Vol(4₁) → ℏ_q² → q₀ → pair Skein → μ_u, μ_d → m_p, m_n → M(Z,N). Binding energies B/A from AME2020. Zero fitted parameters beyond the single substrate parameter q₀.",
+  "scriptHash": "f661c2886581",
+  "scriptCommitSha": "b827531281ff794128c640f17cc96aaf753068da",
+  "description": "Complete atomic mass table for all 118 elements built from the muon/electron mass ratio. Derivation chain: m_μ/m_e → Vol(4₁) → ℏ_q² → q₀ → transfer matrix T(c,d) → Skein polynomials P_p, P_n → M(Z,N) using CODATA m_p, m_n. Crossing convention matches hecke_division.py and HeckeH3.lean (σ⁻¹ = σ − HA). Binding energies B/A from AME2020.",
   "contentBlock": "rem:amc-calculations",
   "parameters": {
     "m_μ/m_e": 206.768283,
@@ -146,10 +137,10 @@
     "ℏ_q": 0.09908172643569887,
     "q₀": 1.1099785955541805,
     "q₀_err": 1.3578965598837824e-09,
-    "μ_u (MeV)": 311.10125096044135,
-    "μ_d (MeV)": 312.38932579005234,
-    "m_p (MeV)": 938.2720881600002,
-    "m_n (MeV)": 939.5654205200001,
+    "HA": 0.20906032198987945,
+    "z_markov": 0.4993203340335982,
+    "m_p (MeV, CODATA)": 938.27208816,
+    "m_n (MeV, CODATA)": 939.56542052,
     "m_e (MeV)": 0.51099895,
     "𝔪(𝔅₃) (m_e)": 746.4178510331171,
     "𝔪(𝔅₃) (MeV)": 381.41873813917925
@@ -159,14 +150,22 @@
       "input": "m_μ/m_e (CODATA 2022)",
       "step_1": "ℏ_q² = Vol(4₁) / (m_μ/m_e)",
       "step_2": "q₀ = 1 / (1 − ℏ_q)",
-      "step_3": "pair Skein → μ_u, μ_d from m_p, m_n",
-      "step_4": "M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N)"
+      "step_3": "transfer matrix T(c,d) with Hecke σ⁻¹ = σ − HA",
+      "step_4": "Skein polynomials P_p(q), P_n(q) via ∏ V̂_i",
+      "step_5": "M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N) (CODATA m_p, m_n)"
     },
-    "pair_skein_masses": {
-      "S_uu_MeV": 312.371072,
-      "S_ud_MeV": 312.950508,
-      "S_du_MeV": 313.084968,
-      "S_dd_MeV": 313.664404
+    "skein_polynomials": {
+      "P_proton": 0.6468491163,
+      "P_neutron": 0.5047761849,
+      "P_n_over_P_p": 0.7803615591,
+      "proton_vols": [
+        0.6147621968,
+        1.0521940349
+      ],
+      "neutron_vols": [
+        0.5047761849,
+        1.0
+      ]
     },
     "topological_masses": {
       "borromean_me": 746.4179,
@@ -176,8 +175,6 @@
     },
     "summary_statistics": {
       "n_elements": 118,
-      "max_delta_MeV": 0.0,
-      "mean_delta_MeV": 0.0,
       "natural_count": 92,
       "synthetic_count": 26
     },
@@ -186,7 +183,7 @@
       "m_p_CODATA_err_MeV": 2.9e-07,
       "m_n_CODATA_err_MeV": 5.4e-07,
       "m_e_CODATA_err_MeV": 1.5e-10,
-      "dominant_source": "pair Skein rounding (O(0.1 MeV) for heavy elements)",
+      "dominant_source": "CODATA nucleon mass uncertainties + AME2020 B/A",
       "parametric_uncertainty": "negligible (δq/q ~ 1e-8)"
     },
     "atom_masses": [
@@ -197,10 +194,7 @@
         "element": "Hydrogen",
         "B_per_A_MeV": 0.0,
         "B_total_MeV": 0.0,
-        "M_q_MeV": 938.7831,
-        "M_o_MeV": 938.7831,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 938.7831,
         "M_err_MeV": 0.0
       },
       {
@@ -210,10 +204,7 @@
         "element": "Helium",
         "B_per_A_MeV": 7.0739,
         "B_total_MeV": 28.2956,
-        "M_q_MeV": 3728.4014,
-        "M_o_MeV": 3728.4014,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 3728.4014,
         "M_err_MeV": 1e-06
       },
       {
@@ -223,10 +214,7 @@
         "element": "Lithium",
         "B_per_A_MeV": 5.6063,
         "B_total_MeV": 39.2441,
-        "M_q_MeV": 6535.3668,
-        "M_o_MeV": 6535.3668,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 6535.3668,
         "M_err_MeV": 2e-06
       },
       {
@@ -236,10 +224,7 @@
         "element": "Beryllium",
         "B_per_A_MeV": 6.4628,
         "B_total_MeV": 58.1652,
-        "M_q_MeV": 8394.7943,
-        "M_o_MeV": 8394.7943,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 8394.7943,
         "M_err_MeV": 3e-06
       },
       {
@@ -249,10 +234,7 @@
         "element": "Boron",
         "B_per_A_MeV": 6.9277,
         "B_total_MeV": 76.2047,
-        "M_q_MeV": 10255.1033,
-        "M_o_MeV": 10255.1033,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 10255.1033,
         "M_err_MeV": 4e-06
       },
       {
@@ -262,10 +244,7 @@
         "element": "Carbon",
         "B_per_A_MeV": 7.6801,
         "B_total_MeV": 92.1612,
-        "M_q_MeV": 11177.9298,
-        "M_o_MeV": 11177.9298,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 11177.9298,
         "M_err_MeV": 4e-06
       },
       {
@@ -275,10 +254,7 @@
         "element": "Nitrogen",
         "B_per_A_MeV": 7.4756,
         "B_total_MeV": 104.6584,
-        "M_q_MeV": 13043.7812,
-        "M_o_MeV": 13043.7812,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 13043.7812,
         "M_err_MeV": 4e-06
       },
       {
@@ -288,10 +264,7 @@
         "element": "Oxygen",
         "B_per_A_MeV": 7.9762,
         "B_total_MeV": 127.6192,
-        "M_q_MeV": 14899.1689,
-        "M_o_MeV": 14899.1689,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 14899.1689,
         "M_err_MeV": 5e-06
       },
       {
@@ -301,10 +274,7 @@
         "element": "Fluorine",
         "B_per_A_MeV": 7.779,
         "B_total_MeV": 147.801,
-        "M_q_MeV": 17696.901,
-        "M_o_MeV": 17696.901,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 17696.901,
         "M_err_MeV": 6e-06
       },
       {
@@ -314,10 +284,7 @@
         "element": "Neon",
         "B_per_A_MeV": 8.0325,
         "B_total_MeV": 160.65,
-        "M_q_MeV": 18622.8351,
-        "M_o_MeV": 18622.8351,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 18622.8351,
         "M_err_MeV": 6e-06
       },
       {
@@ -327,10 +294,7 @@
         "element": "Sodium",
         "B_per_A_MeV": 8.1115,
         "B_total_MeV": 186.5645,
-        "M_q_MeV": 21414.8345,
-        "M_o_MeV": 21414.8345,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 21414.8345,
         "M_err_MeV": 7e-06
       },
       {
@@ -340,10 +304,7 @@
         "element": "Magnesium",
         "B_per_A_MeV": 8.2607,
         "B_total_MeV": 198.2568,
-        "M_q_MeV": 22341.9253,
-        "M_o_MeV": 22341.9253,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 22341.9253,
         "M_err_MeV": 7e-06
       },
       {
@@ -353,10 +314,7 @@
         "element": "Aluminium",
         "B_per_A_MeV": 8.3316,
         "B_total_MeV": 224.9532,
-        "M_q_MeV": 25133.1428,
-        "M_o_MeV": 25133.1428,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 25133.1428,
         "M_err_MeV": 8e-06
       },
       {
@@ -366,10 +324,7 @@
         "element": "Silicon",
         "B_per_A_MeV": 8.4477,
         "B_total_MeV": 236.5356,
-        "M_q_MeV": 26060.3435,
-        "M_o_MeV": 26060.3435,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 26060.3435,
         "M_err_MeV": 9e-06
       },
       {
@@ -379,10 +334,7 @@
         "element": "Phosphorus",
         "B_per_A_MeV": 8.4812,
         "B_total_MeV": 262.9172,
-        "M_q_MeV": 28851.8758,
-        "M_o_MeV": 28851.8758,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 28851.8758,
         "M_err_MeV": 1e-05
       },
       {
@@ -392,10 +344,7 @@
         "element": "Sulfur",
         "B_per_A_MeV": 8.4932,
         "B_total_MeV": 271.7824,
-        "M_q_MeV": 29781.7937,
-        "M_o_MeV": 29781.7937,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 29781.7937,
         "M_err_MeV": 1e-05
       },
       {
@@ -405,10 +354,7 @@
         "element": "Chlorine",
         "B_per_A_MeV": 8.5204,
         "B_total_MeV": 298.214,
-        "M_q_MeV": 32573.2761,
-        "M_o_MeV": 32573.2761,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 32573.2761,
         "M_err_MeV": 1.1e-05
       },
       {
@@ -418,10 +364,7 @@
         "element": "Argon",
         "B_per_A_MeV": 8.5954,
         "B_total_MeV": 343.816,
-        "M_q_MeV": 37224.7188,
-        "M_o_MeV": 37224.7188,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 37224.7188,
         "M_err_MeV": 1.3e-05
       },
       {
@@ -431,10 +374,7 @@
         "element": "Potassium",
         "B_per_A_MeV": 8.557,
         "B_total_MeV": 333.723,
-        "M_q_MeV": 36294.4641,
-        "M_o_MeV": 36294.4641,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 36294.4641,
         "M_err_MeV": 1.2e-05
       },
       {
@@ -444,10 +384,7 @@
         "element": "Calcium",
         "B_per_A_MeV": 8.5513,
         "B_total_MeV": 342.052,
-        "M_q_MeV": 37224.9182,
-        "M_o_MeV": 37224.9182,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 37224.9182,
         "M_err_MeV": 1.2e-05
       },
       {
@@ -457,10 +394,7 @@
         "element": "Scandium",
         "B_per_A_MeV": 8.619,
         "B_total_MeV": 387.855,
-        "M_q_MeV": 41876.1599,
-        "M_o_MeV": 41876.1599,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 41876.1599,
         "M_err_MeV": 1.4e-05
       },
       {
@@ -470,10 +404,7 @@
         "element": "Titanium",
         "B_per_A_MeV": 8.7229,
         "B_total_MeV": 418.6992,
-        "M_q_MeV": 44663.2296,
-        "M_o_MeV": 44663.2296,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 44663.2296,
         "M_err_MeV": 1.5e-05
       },
       {
@@ -483,10 +414,7 @@
         "element": "Vanadium",
         "B_per_A_MeV": 8.742,
         "B_total_MeV": 445.842,
-        "M_q_MeV": 47454.0008,
-        "M_o_MeV": 47454.0008,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 47454.0008,
         "M_err_MeV": 1.7e-05
       },
       {
@@ -496,10 +424,7 @@
         "element": "Chromium",
         "B_per_A_MeV": 8.776,
         "B_total_MeV": 456.352,
-        "M_q_MeV": 48382.2739,
-        "M_o_MeV": 48382.2739,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 48382.2739,
         "M_err_MeV": 1.7e-05
       },
       {
@@ -509,10 +434,7 @@
         "element": "Manganese",
         "B_per_A_MeV": 8.7649,
         "B_total_MeV": 482.0695,
-        "M_q_MeV": 51174.4703,
-        "M_o_MeV": 51174.4703,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 51174.4703,
         "M_err_MeV": 1.8e-05
       },
       {
@@ -522,10 +444,7 @@
         "element": "Iron",
         "B_per_A_MeV": 8.7904,
         "B_total_MeV": 492.2624,
-        "M_q_MeV": 52103.0605,
-        "M_o_MeV": 52103.0605,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 52103.0605,
         "M_err_MeV": 1.8e-05
       },
       {
@@ -535,10 +454,7 @@
         "element": "Cobalt",
         "B_per_A_MeV": 8.768,
         "B_total_MeV": 517.312,
-        "M_q_MeV": 54895.9248,
-        "M_o_MeV": 54895.9248,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 54895.9248,
         "M_err_MeV": 1.9e-05
       },
       {
@@ -548,10 +464,7 @@
         "element": "Nickel",
         "B_per_A_MeV": 8.7322,
         "B_total_MeV": 506.4676,
-        "M_q_MeV": 53966.4215,
-        "M_o_MeV": 53966.4215,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 53966.4215,
         "M_err_MeV": 1.8e-05
       },
       {
@@ -561,10 +474,7 @@
         "element": "Copper",
         "B_per_A_MeV": 8.7522,
         "B_total_MeV": 551.3886,
-        "M_q_MeV": 58618.5452,
-        "M_o_MeV": 58618.5452,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 58618.5452,
         "M_err_MeV": 2e-05
       },
       {
@@ -574,10 +484,7 @@
         "element": "Zinc",
         "B_per_A_MeV": 8.7356,
         "B_total_MeV": 559.0784,
-        "M_q_MeV": 59549.6385,
-        "M_o_MeV": 59549.6385,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 59549.6385,
         "M_err_MeV": 2e-05
       },
       {
@@ -587,10 +494,7 @@
         "element": "Gallium",
         "B_per_A_MeV": 8.7238,
         "B_total_MeV": 601.9422,
-        "M_q_MeV": 64203.8195,
-        "M_o_MeV": 64203.8195,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 64203.8195,
         "M_err_MeV": 2.2e-05
       },
       {
@@ -600,10 +504,7 @@
         "element": "Germanium",
         "B_per_A_MeV": 8.7269,
         "B_total_MeV": 645.7906,
-        "M_q_MeV": 68857.0158,
-        "M_o_MeV": 68857.0158,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 68857.0158,
         "M_err_MeV": 2.5e-05
       },
       {
@@ -613,10 +514,7 @@
         "element": "Arsenic",
         "B_per_A_MeV": 8.7009,
         "B_total_MeV": 652.5675,
-        "M_q_MeV": 69789.022,
-        "M_o_MeV": 69789.022,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 69789.022,
         "M_err_MeV": 2.5e-05
       },
       {
@@ -626,10 +524,7 @@
         "element": "Selenium",
         "B_per_A_MeV": 8.7106,
         "B_total_MeV": 696.848,
-        "M_q_MeV": 74441.7863,
-        "M_o_MeV": 74441.7863,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 74441.7863,
         "M_err_MeV": 2.7e-05
       },
       {
@@ -639,10 +534,7 @@
         "element": "Bromine",
         "B_per_A_MeV": 8.6939,
         "B_total_MeV": 686.8181,
-        "M_q_MeV": 73511.4685,
-        "M_o_MeV": 73511.4685,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 73511.4685,
         "M_err_MeV": 2.6e-05
       },
       {
@@ -652,10 +544,7 @@
         "element": "Krypton",
         "B_per_A_MeV": 8.7175,
         "B_total_MeV": 732.27,
-        "M_q_MeV": 78163.0613,
-        "M_o_MeV": 78163.0613,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 78163.0613,
         "M_err_MeV": 2.8e-05
       },
       {
@@ -665,10 +554,7 @@
         "element": "Rubidium",
         "B_per_A_MeV": 8.6974,
         "B_total_MeV": 739.279,
-        "M_q_MeV": 79094.8354,
-        "M_o_MeV": 79094.8354,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 79094.8354,
         "M_err_MeV": 2.8e-05
       },
       {
@@ -678,10 +564,7 @@
         "element": "Strontium",
         "B_per_A_MeV": 8.7327,
         "B_total_MeV": 768.4776,
-        "M_q_MeV": 81883.5507,
-        "M_o_MeV": 81883.5507,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 81883.5507,
         "M_err_MeV": 2.9e-05
       },
       {
@@ -691,10 +574,7 @@
         "element": "Yttrium",
         "B_per_A_MeV": 8.714,
         "B_total_MeV": 775.546,
-        "M_q_MeV": 82815.2654,
-        "M_o_MeV": 82815.2654,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 82815.2654,
         "M_err_MeV": 2.9e-05
       },
       {
@@ -704,10 +584,7 @@
         "element": "Zirconium",
         "B_per_A_MeV": 8.7098,
         "B_total_MeV": 783.882,
-        "M_q_MeV": 83745.7125,
-        "M_o_MeV": 83745.7125,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 83745.7125,
         "M_err_MeV": 2.9e-05
       },
       {
@@ -717,10 +594,7 @@
         "element": "Niobium",
         "B_per_A_MeV": 8.6641,
         "B_total_MeV": 805.7613,
-        "M_q_MeV": 86541.7471,
-        "M_o_MeV": 86541.7471,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 86541.7471,
         "M_err_MeV": 3e-05
       },
       {
@@ -730,10 +604,7 @@
         "element": "Molybdenum",
         "B_per_A_MeV": 8.6349,
         "B_total_MeV": 846.2202,
-        "M_q_MeV": 91198.333,
-        "M_o_MeV": 91198.333,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 91198.333,
         "M_err_MeV": 3.3e-05
       },
       {
@@ -743,10 +614,7 @@
         "element": "Technetium",
         "B_per_A_MeV": 8.5928,
         "B_total_MeV": 842.0944,
-        "M_q_MeV": 91201.6765,
-        "M_o_MeV": 91201.6765,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 91201.6765,
         "M_err_MeV": 3.2e-05
       },
       {
@@ -756,10 +624,7 @@
         "element": "Ruthenium",
         "B_per_A_MeV": 8.6069,
         "B_total_MeV": 877.9038,
-        "M_q_MeV": 94923.3464,
-        "M_o_MeV": 94923.3464,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 94923.3464,
         "M_err_MeV": 3.4e-05
       },
       {
@@ -769,10 +634,7 @@
         "element": "Rhodium",
         "B_per_A_MeV": 8.5842,
         "B_total_MeV": 884.1726,
-        "M_q_MeV": 95855.8607,
-        "M_o_MeV": 95855.8607,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 95855.8607,
         "M_err_MeV": 3.4e-05
       },
       {
@@ -782,10 +644,7 @@
         "element": "Palladium",
         "B_per_A_MeV": 8.567,
         "B_total_MeV": 908.102,
-        "M_q_MeV": 98649.8452,
-        "M_o_MeV": 98649.8452,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 98649.8452,
         "M_err_MeV": 3.5e-05
       },
       {
@@ -795,10 +654,7 @@
         "element": "Silver",
         "B_per_A_MeV": 8.5536,
         "B_total_MeV": 915.2352,
-        "M_q_MeV": 99581.4951,
-        "M_o_MeV": 99581.4951,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 99581.4951,
         "M_err_MeV": 3.5e-05
       },
       {
@@ -808,10 +664,7 @@
         "element": "Cadmium",
         "B_per_A_MeV": 8.5395,
         "B_total_MeV": 973.503,
-        "M_q_MeV": 106099.4029,
-        "M_o_MeV": 106099.4029,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 106099.4029,
         "M_err_MeV": 3.8e-05
       },
       {
@@ -821,10 +674,7 @@
         "element": "Indium",
         "B_per_A_MeV": 8.516,
         "B_total_MeV": 979.34,
-        "M_q_MeV": 107032.349,
-        "M_o_MeV": 107032.349,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 107032.349,
         "M_err_MeV": 3.8e-05
       },
       {
@@ -834,10 +684,7 @@
         "element": "Tin",
         "B_per_A_MeV": 8.505,
         "B_total_MeV": 1020.6,
-        "M_q_MeV": 111688.1338,
-        "M_o_MeV": 111688.1338,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 111688.1338,
         "M_err_MeV": 4e-05
       },
       {
@@ -847,10 +694,7 @@
         "element": "Antimony",
         "B_per_A_MeV": 8.482,
         "B_total_MeV": 1026.322,
-        "M_q_MeV": 112621.1949,
-        "M_o_MeV": 112621.1949,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 112621.1949,
         "M_err_MeV": 4.1e-05
       },
       {
@@ -860,10 +704,7 @@
         "element": "Tellurium",
         "B_per_A_MeV": 8.4397,
         "B_total_MeV": 1097.161,
-        "M_q_MeV": 121005.6623,
-        "M_o_MeV": 121005.6623,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 121005.6623,
         "M_err_MeV": 4.5e-05
       },
       {
@@ -873,10 +714,7 @@
         "element": "Iodine",
         "B_per_A_MeV": 8.4451,
         "B_total_MeV": 1072.5277,
-        "M_q_MeV": 118210.817,
-        "M_o_MeV": 118210.817,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 118210.817,
         "M_err_MeV": 4.3e-05
       },
       {
@@ -886,10 +724,7 @@
         "element": "Xenon",
         "B_per_A_MeV": 8.4158,
         "B_total_MeV": 1110.8856,
-        "M_q_MeV": 122869.5039,
-        "M_o_MeV": 122869.5039,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 122869.5039,
         "M_err_MeV": 4.5e-05
       },
       {
@@ -899,10 +734,7 @@
         "element": "Caesium",
         "B_per_A_MeV": 8.4099,
         "B_total_MeV": 1118.5167,
-        "M_q_MeV": 123800.6559,
-        "M_o_MeV": 123800.6559,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 123800.6559,
         "M_err_MeV": 4.5e-05
       },
       {
@@ -912,10 +744,7 @@
         "element": "Barium",
         "B_per_A_MeV": 8.3937,
         "B_total_MeV": 1158.3306,
-        "M_q_MeV": 128457.8868,
-        "M_o_MeV": 128457.8868,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 128457.8868,
         "M_err_MeV": 4.7e-05
       },
       {
@@ -925,10 +754,7 @@
         "element": "Lanthanum",
         "B_per_A_MeV": 8.3781,
         "B_total_MeV": 1164.5559,
-        "M_q_MeV": 129390.4445,
-        "M_o_MeV": 129390.4445,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 129390.4445,
         "M_err_MeV": 4.7e-05
       },
       {
@@ -938,10 +764,7 @@
         "element": "Cerium",
         "B_per_A_MeV": 8.3763,
         "B_total_MeV": 1172.682,
-        "M_q_MeV": 130321.1015,
-        "M_o_MeV": 130321.1015,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 130321.1015,
         "M_err_MeV": 4.7e-05
       },
       {
@@ -951,10 +774,7 @@
         "element": "Praseodymium",
         "B_per_A_MeV": 8.354,
         "B_total_MeV": 1177.914,
-        "M_q_MeV": 131254.6526,
-        "M_o_MeV": 131254.6526,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 131254.6526,
         "M_err_MeV": 4.7e-05
       },
       {
@@ -964,10 +784,7 @@
         "element": "Neodymium",
         "B_per_A_MeV": 8.3461,
         "B_total_MeV": 1185.1462,
-        "M_q_MeV": 132186.2035,
-        "M_o_MeV": 132186.2035,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 132186.2035,
         "M_err_MeV": 4.8e-05
       },
       {
@@ -977,10 +794,7 @@
         "element": "Promethium",
         "B_per_A_MeV": 8.3342,
         "B_total_MeV": 1208.459,
-        "M_q_MeV": 134980.8046,
-        "M_o_MeV": 134980.8046,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 134980.8046,
         "M_err_MeV": 4.9e-05
       },
       {
@@ -990,10 +804,7 @@
         "element": "Samarium",
         "B_per_A_MeV": 8.2441,
         "B_total_MeV": 1253.1032,
-        "M_q_MeV": 141512.336,
-        "M_o_MeV": 141512.336,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 141512.336,
         "M_err_MeV": 5.2e-05
       },
       {
@@ -1003,10 +814,7 @@
         "element": "Europium",
         "B_per_A_MeV": 8.2251,
         "B_total_MeV": 1258.4403,
-        "M_q_MeV": 142445.782,
-        "M_o_MeV": 142445.782,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 142445.782,
         "M_err_MeV": 5.2e-05
       },
       {
@@ -1016,10 +824,7 @@
         "element": "Gadolinium",
         "B_per_A_MeV": 8.1869,
         "B_total_MeV": 1293.5302,
-        "M_q_MeV": 147107.7369,
-        "M_o_MeV": 147107.7369,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 147107.7369,
         "M_err_MeV": 5.4e-05
       },
       {
@@ -1029,10 +834,7 @@
         "element": "Terbium",
         "B_per_A_MeV": 8.1687,
         "B_total_MeV": 1298.8233,
-        "M_q_MeV": 148041.2269,
-        "M_o_MeV": 148041.2269,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 148041.2269,
         "M_err_MeV": 5.4e-05
       },
       {
@@ -1042,10 +844,7 @@
         "element": "Dysprosium",
         "B_per_A_MeV": 8.1384,
         "B_total_MeV": 1334.6976,
-        "M_q_MeV": 152702.3974,
-        "M_o_MeV": 152702.3974,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 152702.3974,
         "M_err_MeV": 5.6e-05
       },
       {
@@ -1055,10 +854,7 @@
         "element": "Holmium",
         "B_per_A_MeV": 8.1211,
         "B_total_MeV": 1339.9815,
-        "M_q_MeV": 153635.8965,
-        "M_o_MeV": 153635.8965,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 153635.8965,
         "M_err_MeV": 5.6e-05
       },
       {
@@ -1068,10 +864,7 @@
         "element": "Erbium",
         "B_per_A_MeV": 8.1149,
         "B_total_MeV": 1347.0734,
-        "M_q_MeV": 154567.5877,
-        "M_o_MeV": 154567.5877,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 154567.5877,
         "M_err_MeV": 5.6e-05
       },
       {
@@ -1081,10 +874,7 @@
         "element": "Thulium",
         "B_per_A_MeV": 8.0937,
         "B_total_MeV": 1367.8353,
-        "M_q_MeV": 157364.7398,
-        "M_o_MeV": 157364.7398,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 157364.7398,
         "M_err_MeV": 5.8e-05
       },
       {
@@ -1094,10 +884,7 @@
         "element": "Ytterbium",
         "B_per_A_MeV": 8.0426,
         "B_total_MeV": 1399.4124,
-        "M_q_MeV": 162030.2074,
-        "M_o_MeV": 162030.2074,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 162030.2074,
         "M_err_MeV": 6e-05
       },
       {
@@ -1107,10 +894,7 @@
         "element": "Lutetium",
         "B_per_A_MeV": 8.0313,
         "B_total_MeV": 1405.4775,
-        "M_q_MeV": 162962.9254,
-        "M_o_MeV": 162962.9254,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 162962.9254,
         "M_err_MeV": 6e-05
       },
       {
@@ -1120,10 +904,7 @@
         "element": "Hafnium",
         "B_per_A_MeV": 7.9922,
         "B_total_MeV": 1438.596,
-        "M_q_MeV": 167626.8517,
-        "M_o_MeV": 167626.8517,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 167626.8517,
         "M_err_MeV": 6.2e-05
       },
       {
@@ -1133,10 +914,7 @@
         "element": "Tantalum",
         "B_per_A_MeV": 7.9782,
         "B_total_MeV": 1444.0542,
-        "M_q_MeV": 168560.1766,
-        "M_o_MeV": 168560.1766,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 168560.1766,
         "M_err_MeV": 6.2e-05
       },
       {
@@ -1146,10 +924,7 @@
         "element": "Tungsten",
         "B_per_A_MeV": 7.963,
         "B_total_MeV": 1465.192,
-        "M_q_MeV": 171356.9527,
-        "M_o_MeV": 171356.9527,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 171356.9527,
         "M_err_MeV": 6.3e-05
       },
       {
@@ -1159,10 +934,7 @@
         "element": "Rhenium",
         "B_per_A_MeV": 7.9337,
         "B_total_MeV": 1483.6019,
-        "M_q_MeV": 174156.4567,
-        "M_o_MeV": 174156.4567,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 174156.4567,
         "M_err_MeV": 6.4e-05
       },
       {
@@ -1172,10 +944,7 @@
         "element": "Osmium",
         "B_per_A_MeV": 7.8952,
         "B_total_MeV": 1515.8784,
-        "M_q_MeV": 178821.225,
-        "M_o_MeV": 178821.225,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 178821.225,
         "M_err_MeV": 6.6e-05
       },
       {
@@ -1185,10 +954,7 @@
         "element": "Iridium",
         "B_per_A_MeV": 7.8806,
         "B_total_MeV": 1520.9558,
-        "M_q_MeV": 179754.9307,
-        "M_o_MeV": 179754.9307,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 179754.9307,
         "M_err_MeV": 6.7e-05
       },
       {
@@ -1198,10 +964,7 @@
         "element": "Platinum",
         "B_per_A_MeV": 7.8643,
         "B_total_MeV": 1533.5385,
-        "M_q_MeV": 181620.6965,
-        "M_o_MeV": 181620.6965,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 181620.6965,
         "M_err_MeV": 6.7e-05
       },
       {
@@ -1211,10 +974,7 @@
         "element": "Gold",
         "B_per_A_MeV": 7.8484,
         "B_total_MeV": 1546.1348,
-        "M_q_MeV": 183486.4487,
-        "M_o_MeV": 183486.4487,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 183486.4487,
         "M_err_MeV": 6.8e-05
       },
       {
@@ -1224,10 +984,7 @@
         "element": "Mercury",
         "B_per_A_MeV": 7.7964,
         "B_total_MeV": 1574.8728,
-        "M_q_MeV": 188154.7555,
-        "M_o_MeV": 188154.7555,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 188154.7555,
         "M_err_MeV": 7e-05
       },
       {
@@ -1237,10 +994,7 @@
         "element": "Thallium",
         "B_per_A_MeV": 7.7683,
         "B_total_MeV": 1592.5015,
-        "M_q_MeV": 190955.0407,
-        "M_o_MeV": 190955.0407,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 190955.0407,
         "M_err_MeV": 7.1e-05
       },
       {
@@ -1250,10 +1004,7 @@
         "element": "Lead",
         "B_per_A_MeV": 7.8675,
         "B_total_MeV": 1636.44,
-        "M_q_MeV": 193729.0161,
-        "M_o_MeV": 193729.0161,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 193729.0161,
         "M_err_MeV": 7.2e-05
       },
       {
@@ -1263,10 +1014,7 @@
         "element": "Bismuth",
         "B_per_A_MeV": 7.848,
         "B_total_MeV": 1640.232,
-        "M_q_MeV": 194664.0072,
-        "M_o_MeV": 194664.0072,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 194664.0072,
         "M_err_MeV": 7.2e-05
       },
       {
@@ -1276,10 +1024,7 @@
         "element": "Polonium",
         "B_per_A_MeV": 7.8352,
         "B_total_MeV": 1637.5568,
-        "M_q_MeV": 194665.9001,
-        "M_o_MeV": 194665.9001,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 194665.9001,
         "M_err_MeV": 7.2e-05
       },
       {
@@ -1289,10 +1034,7 @@
         "element": "Astatine",
         "B_per_A_MeV": 7.8177,
         "B_total_MeV": 1641.717,
-        "M_q_MeV": 195600.523,
-        "M_o_MeV": 195600.523,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 195600.523,
         "M_err_MeV": 7.2e-05
       },
       {
@@ -1302,10 +1044,7 @@
         "element": "Radon",
         "B_per_A_MeV": 7.7194,
         "B_total_MeV": 1713.7068,
-        "M_q_MeV": 206802.5359,
-        "M_o_MeV": 206802.5359,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 206802.5359,
         "M_err_MeV": 7.8e-05
       },
       {
@@ -1315,10 +1054,7 @@
         "element": "Francium",
         "B_per_A_MeV": 7.7069,
         "B_total_MeV": 1718.6387,
-        "M_q_MeV": 207736.3871,
-        "M_o_MeV": 207736.3871,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 207736.3871,
         "M_err_MeV": 7.8e-05
       },
       {
@@ -1328,10 +1064,7 @@
         "element": "Radium",
         "B_per_A_MeV": 7.662,
         "B_total_MeV": 1731.612,
-        "M_q_MeV": 210541.3277,
-        "M_o_MeV": 210541.3277,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 210541.3277,
         "M_err_MeV": 7.9e-05
       },
       {
@@ -1341,10 +1074,7 @@
         "element": "Actinium",
         "B_per_A_MeV": 7.6508,
         "B_total_MeV": 1736.7316,
-        "M_q_MeV": 211474.9912,
-        "M_o_MeV": 211474.9912,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 211474.9912,
         "M_err_MeV": 7.9e-05
       },
       {
@@ -1354,10 +1084,7 @@
         "element": "Thorium",
         "B_per_A_MeV": 7.615,
         "B_total_MeV": 1766.68,
-        "M_q_MeV": 216142.0876,
-        "M_o_MeV": 216142.0876,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 216142.0876,
         "M_err_MeV": 8.1e-05
       },
       {
@@ -1367,10 +1094,7 @@
         "element": "Protactinium",
         "B_per_A_MeV": 7.6062,
         "B_total_MeV": 1757.0322,
-        "M_q_MeV": 215211.3876,
-        "M_o_MeV": 215211.3876,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 215211.3876,
         "M_err_MeV": 8e-05
       },
       {
@@ -1380,10 +1104,7 @@
         "element": "Uranium",
         "B_per_A_MeV": 7.5702,
         "B_total_MeV": 1801.7076,
-        "M_q_MeV": 221742.8878,
-        "M_o_MeV": 221742.8878,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 221742.8878,
         "M_err_MeV": 8.3e-05
       },
       {
@@ -1393,10 +1114,7 @@
         "element": "Neptunium",
         "B_per_A_MeV": 7.5749,
         "B_total_MeV": 1795.2513,
-        "M_q_MeV": 220808.9964,
-        "M_o_MeV": 220808.9964,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 220808.9964,
         "M_err_MeV": 8.2e-05
       },
       {
@@ -1406,10 +1124,7 @@
         "element": "Plutonium",
         "B_per_A_MeV": 7.5386,
         "B_total_MeV": 1839.4184,
-        "M_q_MeV": 227341.0049,
-        "M_o_MeV": 227341.0049,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 227341.0049,
         "M_err_MeV": 8.5e-05
       },
       {
@@ -1419,10 +1134,7 @@
         "element": "Americium",
         "B_per_A_MeV": 7.5282,
         "B_total_MeV": 1829.3526,
-        "M_q_MeV": 226410.7229,
-        "M_o_MeV": 226410.7229,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 226410.7229,
         "M_err_MeV": 8.5e-05
       },
       {
@@ -1432,10 +1144,7 @@
         "element": "Curium",
         "B_per_A_MeV": 7.5009,
         "B_total_MeV": 1852.7223,
-        "M_q_MeV": 230144.8326,
-        "M_o_MeV": 230144.8326,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 230144.8326,
         "M_err_MeV": 8.6e-05
       },
       {
@@ -1445,10 +1154,7 @@
         "element": "Berkelium",
         "B_per_A_MeV": 7.4996,
         "B_total_MeV": 1852.4012,
-        "M_q_MeV": 230144.3713,
-        "M_o_MeV": 230144.3713,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 230144.3713,
         "M_err_MeV": 8.6e-05
       },
       {
@@ -1458,10 +1164,7 @@
         "element": "Californium",
         "B_per_A_MeV": 7.4666,
         "B_total_MeV": 1874.1166,
-        "M_q_MeV": 233880.1353,
-        "M_o_MeV": 233880.1353,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 233880.1353,
         "M_err_MeV": 8.7e-05
       },
       {
@@ -1471,10 +1174,7 @@
         "element": "Einsteinium",
         "B_per_A_MeV": 7.471,
         "B_total_MeV": 1882.692,
-        "M_q_MeV": 234810.343,
-        "M_o_MeV": 234810.343,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 234810.343,
         "M_err_MeV": 8.7e-05
       },
       {
@@ -1484,10 +1184,7 @@
         "element": "Fermium",
         "B_per_A_MeV": 7.4403,
         "B_total_MeV": 1912.1571,
-        "M_q_MeV": 239477.9226,
-        "M_o_MeV": 239477.9226,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 239477.9226,
         "M_err_MeV": 9e-05
       },
       {
@@ -1497,10 +1194,7 @@
         "element": "Mendelevium",
         "B_per_A_MeV": 7.4374,
         "B_total_MeV": 1918.8492,
-        "M_q_MeV": 240410.0136,
-        "M_o_MeV": 240410.0136,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 240410.0136,
         "M_err_MeV": 9e-05
       },
       {
@@ -1510,10 +1204,7 @@
         "element": "Nobelium",
         "B_per_A_MeV": 7.431,
         "B_total_MeV": 1924.629,
-        "M_q_MeV": 241343.0169,
-        "M_o_MeV": 241343.0169,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 241343.0169,
         "M_err_MeV": 9e-05
       },
       {
@@ -1523,10 +1214,7 @@
         "element": "Lawrencium",
         "B_per_A_MeV": 7.3803,
         "B_total_MeV": 1963.1598,
-        "M_q_MeV": 247880.6617,
-        "M_o_MeV": 247880.6617,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 247880.6617,
         "M_err_MeV": 9.3e-05
       },
       {
@@ -1536,10 +1224,7 @@
         "element": "Rutherfordium",
         "B_per_A_MeV": 7.3771,
         "B_total_MeV": 1969.6857,
-        "M_q_MeV": 248812.9189,
-        "M_o_MeV": 248812.9189,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 248812.9189,
         "M_err_MeV": 9.3e-05
       },
       {
@@ -1549,10 +1234,7 @@
         "element": "Dubnium",
         "B_per_A_MeV": 7.374,
         "B_total_MeV": 1976.232,
-        "M_q_MeV": 249745.1557,
-        "M_o_MeV": 249745.1557,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 249745.1557,
         "M_err_MeV": 9.3e-05
       },
       {
@@ -1562,10 +1244,7 @@
         "element": "Seaborgium",
         "B_per_A_MeV": 7.3709,
         "B_total_MeV": 1982.7721,
-        "M_q_MeV": 250677.3987,
-        "M_o_MeV": 250677.3987,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 250677.3987,
         "M_err_MeV": 9.3e-05
       },
       {
@@ -1575,10 +1254,7 @@
         "element": "Bohrium",
         "B_per_A_MeV": 7.3679,
         "B_total_MeV": 1989.333,
-        "M_q_MeV": 251609.6209,
-        "M_o_MeV": 251609.6209,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 251609.6209,
         "M_err_MeV": 9.3e-05
       },
       {
@@ -1588,10 +1264,7 @@
         "element": "Hassium",
         "B_per_A_MeV": 7.3327,
         "B_total_MeV": 2031.1579,
-        "M_q_MeV": 258143.9716,
-        "M_o_MeV": 258143.9716,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 258143.9716,
         "M_err_MeV": 9.6e-05
       },
       {
@@ -1601,10 +1274,7 @@
         "element": "Meitnerium",
         "B_per_A_MeV": 7.3298,
         "B_total_MeV": 2037.6844,
-        "M_q_MeV": 259076.2282,
-        "M_o_MeV": 259076.2282,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 259076.2282,
         "M_err_MeV": 9.7e-05
       },
       {
@@ -1614,10 +1284,7 @@
         "element": "Darmstadtium",
         "B_per_A_MeV": 7.3127,
         "B_total_MeV": 2054.8687,
-        "M_q_MeV": 261876.9578,
-        "M_o_MeV": 261876.9578,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 261876.9578,
         "M_err_MeV": 9.8e-05
       },
       {
@@ -1627,10 +1294,7 @@
         "element": "Roentgenium",
         "B_per_A_MeV": 7.3099,
         "B_total_MeV": 2061.3918,
-        "M_q_MeV": 262809.2178,
-        "M_o_MeV": 262809.2178,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 262809.2178,
         "M_err_MeV": 9.8e-05
       },
       {
@@ -1640,10 +1304,7 @@
         "element": "Copernicium",
         "B_per_A_MeV": 7.2932,
         "B_total_MeV": 2078.562,
-        "M_q_MeV": 265609.9615,
-        "M_o_MeV": 265609.9615,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 265609.9615,
         "M_err_MeV": 9.9e-05
       },
       {
@@ -1653,10 +1314,7 @@
         "element": "Nihonium",
         "B_per_A_MeV": 7.2905,
         "B_total_MeV": 2085.083,
-        "M_q_MeV": 266542.2236,
-        "M_o_MeV": 266542.2236,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 266542.2236,
         "M_err_MeV": 9.9e-05
       },
       {
@@ -1666,10 +1324,7 @@
         "element": "Flerovium",
         "B_per_A_MeV": 7.2741,
         "B_total_MeV": 2102.2149,
-        "M_q_MeV": 269343.0056,
-        "M_o_MeV": 269343.0056,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 269343.0056,
         "M_err_MeV": 0.0001
       },
       {
@@ -1679,10 +1334,7 @@
         "element": "Moscovium",
         "B_per_A_MeV": 7.2715,
         "B_total_MeV": 2108.735,
-        "M_q_MeV": 270275.2686,
-        "M_o_MeV": 270275.2686,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 270275.2686,
         "M_err_MeV": 0.0001
       },
       {
@@ -1692,10 +1344,7 @@
         "element": "Livermorium",
         "B_per_A_MeV": 7.2555,
         "B_total_MeV": 2125.8615,
-        "M_q_MeV": 273076.056,
-        "M_o_MeV": 273076.056,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 273076.056,
         "M_err_MeV": 0.000101
       },
       {
@@ -1705,10 +1354,7 @@
         "element": "Tennessine",
         "B_per_A_MeV": 7.253,
         "B_total_MeV": 2132.382,
-        "M_q_MeV": 274008.3186,
-        "M_o_MeV": 274008.3186,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 274008.3186,
         "M_err_MeV": 0.000101
       },
       {
@@ -1718,17 +1364,15 @@
         "element": "Oganesson",
         "B_per_A_MeV": 7.227,
         "B_total_MeV": 2124.738,
-        "M_q_MeV": 274015.1803,
-        "M_o_MeV": 274015.1803,
-        "delta_MeV": 0.0,
-        "delta_pct": 0.0,
+        "M_MeV": 274015.1803,
         "M_err_MeV": 0.000101
       }
     ]
   },
   "caveats": [
-    "Nucleon masses m_p, m_n are exact by construction: dressed quark masses μ_u, μ_d are solved from experimental CODATA values via the pair Skein formula. The deviations Δ arise solely from the limited precision of the constituent mass constants.",
+    "Nucleon masses m_p, m_n are CODATA inputs, not derived from q alone. The Skein polynomial ratio P_n/P_p encodes the combinatorial crossing structure but does not directly equal m_n/m_p. Deriving absolute nucleon masses from q requires the colored Borromean volume, which is an open problem.",
     "Binding energies B/A from AME2020 are used as input. The deeper test is whether the nuclear Skein polynomial at q₀ reproduces these B/A values (confirmed for Z ≤ 92 via transfer matrix).",
-    "For synthetic elements (Z ≥ 93), the q-torsion hypothesis predicts that Skein-derived B/A at q₀ may differ from AME2020 if nuclei were assembled at an effective q_eff > q₀."
+    "For synthetic elements (Z ≥ 93), the q-torsion hypothesis predicts that Skein-derived B/A at q₀ may differ from AME2020 if nuclei were assembled at an effective q_eff > q₀.",
+    "The transfer matrix crossing convention σ⁻¹ = σ − (q−q⁻¹) matches hecke_division.py and the Lean formalization HeckeH3.lean. All crossing matrices are unimodular (det = −1)."
   ]
 }

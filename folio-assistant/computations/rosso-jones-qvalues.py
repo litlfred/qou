@@ -340,20 +340,6 @@ for Z, N, name, Q_exp, Q_err in nuclei:
 
 print()
 
-# Method 2: Q_bare × F_2 only (degree 2 correction, as before)
-print("-" * 70)
-print("Method 2: Q = Q_bare × F_2 (degree-2 only, as before)")
-print()
-
-for Z, N, name, Q_exp, Q_err in nuclei:
-    Qb = bare_Q(Z, N)
-    Q_pred = Qb * FACTORS.get(2, 1.0)
-    err = (Q_pred - Q_exp) / Q_exp * 100
-    print(f"  {name:>5}: Q_bare={Qb:.5f}, Q_pred={Q_pred:.5f}, "
-          f"Q_exp={Q_exp:.5f}, err={err:+.1f}%")
-
-print()
-
 # Method 3: Unified product from k=0
 # Q = ∏_{k=0}^{k_max} F_k × (E_× · μ₀ · skein_ratio)
 # where F_0 = |tr(Δ_mix)| absorbs the bare crossing
@@ -456,21 +442,19 @@ for r, s, deg, srank in EMBEDDABLE_KNOTS:
 # ── SUMMARY ───────────────────────────────────────────────────
 
 print("=" * 70)
-print("SUMMARY: BEST METHOD COMPARISON")
+print("SUMMARY: RJ DECOMPOSITION")
 print("=" * 70)
 print()
-print(f"  {'Nuc':>5} {'Q_bare':>8} {'M1(all)':>8} {'M2(d2)':>8} {'Q_exp':>8} {'err_M1':>7} {'err_M2':>7}")
-print("  " + "-" * 56)
+print(f"  {'Nuc':>5} {'Q_bare':>8} {'M1(all)':>8} {'Q_exp':>8} {'err_M1':>7}")
+print("  " + "-" * 42)
 
 for Z, N, name, Q_exp, Q_err in nuclei:
     Qb = bare_Q(Z, N)
     Q_m1 = Qb * FACTORS.get(1, 1.0) * FACTORS.get(2, 1.0)
-    Q_m2 = Qb * FACTORS.get(2, 1.0)
     err_m1 = (Q_m1 - Q_exp) / Q_exp * 100
-    err_m2 = (Q_m2 - Q_exp) / Q_exp * 100
 
-    print(f"  {name:>5} {Qb:>8.5f} {Q_m1:>8.5f} {Q_m2:>8.5f} "
-          f"{Q_exp:>8.5f} {err_m1:>+6.1f}% {err_m2:>+6.1f}%")
+    print(f"  {name:>5} {Qb:>8.5f} {Q_m1:>8.5f} "
+          f"{Q_exp:>8.5f} {err_m1:>+6.1f}%")
 
 
 # ══════════════════════════════════════════════════════════════
@@ -524,39 +508,6 @@ for deg, fk in sorted(FACTORS.items()):
         source=f"F_{deg} = |Σ J(T) · tr(T · Δ_mix)| over degree-{deg} knots",
     )
 
-# Assertions: Q-value predictions (Method 2 = bare × F₂)
-# Note: Method 2 does NOT include q/q⁻¹ direction weighting.
-# The canonical Q-value calculation (with direction weighting) is in
-# qvalue-representation-theory.py. This method overpredicts for heavy nuclei.
-errors_m2 = []
-for Z, N, name, Q_exp, Q_err_exp in nuclei:
-    Qb = bare_Q(Z, N)
-    Q_m2 = Qb * FACTORS.get(2, 1.0)
-    err_m2 = (Q_m2 - Q_exp) / Q_exp * 100
-    errors_m2.append(err_m2)
-
-    # Use generous tolerance: method 2 is exploratory, not canonical
-    structural_tol = max(Q_exp * 15.0, Q_err_exp)  # 1500% — known to overshoot
-    w.add_assertion(
-        f"Q({name}) RJ method 2 (bare × F₂, no direction weighting)",
-        computed=round(Q_m2, 6),
-        expected=round(Q_exp, 6),
-        tolerance=round(structural_tol, 6),
-        unit="MeV",
-        source=f"NNDC/ENSDF (exp ± {Q_err_exp} MeV). Method 2 lacks q/q⁻¹ weighting.",
-    )
-
-mae_m2 = sum(abs(e) for e in errors_m2) / len(errors_m2)
-
-w.add_assertion(
-    "MAE (RJ method 2, 6 nuclei) — exploratory, not canonical",
-    computed=round(mae_m2, 2),
-    expected=0.0,
-    tolerance=1000.0,  # method 2 known to overshoot heavily
-    unit="%",
-    source="Aggregate over 6 NNDC benchmarks. Not the canonical method.",
-)
-
 # Data: Rosso--Jones decomposition
 rj_data = []
 for r, s, deg, srank in EMBEDDABLE_KNOTS:
@@ -586,9 +537,9 @@ w.add_caveat(
     "The product ∏ F_k collapses the full spectral decomposition."
 )
 w.add_caveat(
-    "Method 2 (bare × F₂) is the standard approach. F₁ is degree-1 "
-    "and already encoded in Q_bare via crossing weights. Method 2 "
-    "applies the degree-2 correction only."
+    "The canonical Q-value prediction (with q/q⁻¹ direction weighting "
+    "and shell correction) is in qvalue-representation-theory.py. "
+    "This script provides the RJ decomposition data consumed by that method."
 )
 
 witness_path = w.save()
