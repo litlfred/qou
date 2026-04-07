@@ -104,7 +104,7 @@ $$
   \tau(y)
   \;+\;
   (\varphi_0\,q - \varphi_1\,q^{-1})\,
-  \hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})\,\eta(y)^2\,kw,
+  \hbar_q \cdot \mathrm{Vol}(K_{\mathrm{mat}}) \cdot \eta(y)^2 \cdot k w,
 $$
 
 which reduces to $\tau(y)$ for bare photons ($\varphi_0 = \varphi_1 = 0$).

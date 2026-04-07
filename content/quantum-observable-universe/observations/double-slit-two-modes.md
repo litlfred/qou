@@ -89,7 +89,7 @@ fringe shift acquires a $\psi$-dependent term:
 $$
   \delta\Delta\Phi(\psi)
   \;=\;
-  (\cos\psi \cdot q - \sin\psi \cdot q^{-1})\,
+  (\cos\psi\,q - \sin\psi\,q^{-1})\,
   \hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})\,\Delta\phi_\xi.
 $$
 
