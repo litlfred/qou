@@ -1,6 +1,7 @@
 import QOU.Descartes.GroundRing
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.BetaDecay
+import QOU.Descartes.YoungIdempotent
 import Mathlib.Tactic.Ring
 
 /-!
