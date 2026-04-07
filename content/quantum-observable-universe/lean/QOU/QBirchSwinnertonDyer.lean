@@ -93,7 +93,8 @@ theorem descartes_rank_zero
     The conjecture is that it persists through q → 1, predicting
     L(E₁, 1) ≠ 0 for E₁ : y² = x³ + ⅔x + 20/27.
 
-    Ref: [birch1965] https://doi.org/10.1515/crll.1965.218.79 -/
+    Ref: [birch1965] https://doi.org/10.1515/crll.1965.218.79
+    Ref: [wiles1995] https://doi.org/10.2307/2118559 -/
 def WeakQBSD (L_value_at_one : ℝ) : Prop :=
   L_value_at_one ≠ 0
 

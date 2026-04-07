@@ -2,6 +2,6 @@ The substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) en
 the coupling between the Levi form and the gauge curvature. In the
 near-classical regime $q \to 1$, gravity emerges as a geometric back-reaction
 ([GR substrate geometry](#rem:gr-substrate-geometry)). Recent work on the quantum mechanics
-of entropic forces provides a complementary perspective: the
+of entropic forces \cite{carney2025} provides a complementary perspective: the
 entropic interpretation may correspond to the thermodynamic limit of the
 $q$-deformed partition function on the brane tower.

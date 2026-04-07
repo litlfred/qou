@@ -216,7 +216,7 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
     crossing matrix.  Since `A` and `I` generate a commutative
     subalgebra (polynomials in a single matrix), any two transfer
     matrices commute. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
     transferMatrix c d * transferMatrix a b := by
@@ -227,7 +227,7 @@ theorem transferMatrix_comm (a b c d : R_t) :
 
 /-- Corollary: the product of any finite list of transfer matrices
     is independent of the order (for the same multiset of factors). -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem transferMatrix_swap (a₁ b₁ a₂ b₂ : R_t) (M : TMatrix) :
     M * transferMatrix a₁ b₁ * transferMatrix a₂ b₂ =
     M * transferMatrix a₂ b₂ * transferMatrix a₁ b₁ := by

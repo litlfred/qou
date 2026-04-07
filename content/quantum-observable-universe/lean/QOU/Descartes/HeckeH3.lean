@@ -175,7 +175,7 @@ noncomputable def borromeanColorSum : TMatrix :=
     This holds because every half-Borromean is a commutator, and
     any commutator is trivial in a 1-dimensional (abelian)
     representation. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem halfBorromean_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
     (trivRep n).halfBorromeanMat i j = 1 := by
   simp [HeckeRep.halfBorromeanMat, HeckeRep.genInv, trivRep]
@@ -189,7 +189,7 @@ theorem halfBorromean_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
 /-- Every conjugated half-Borromean also evaluates to the identity
     in the trivial representation (same reasoning: commutator in
     abelian rep). -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem halfBorromeanConj_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
     (trivRep n).halfBorromeanConjMat i j = 1 := by
   simp [HeckeRep.halfBorromeanConjMat, HeckeRep.genInv, trivRep]

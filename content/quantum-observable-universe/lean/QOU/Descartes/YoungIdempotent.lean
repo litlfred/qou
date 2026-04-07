@@ -155,7 +155,7 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
 
     Summing over S₃ with q^{ℓ(w)} weights produces q · e_{(3)}. -/
 -- Ref: [mathas1999] Theorem 3.2
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
     ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ := by
   -- The proof requires expanding all 6 terms and applying

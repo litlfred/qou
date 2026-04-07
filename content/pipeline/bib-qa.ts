@@ -1,0 +1,461 @@
+#!/usr/bin/env bun
+/**
+ * Bibliography QA — generate per-reference quality-assurance metadata.
+ *
+ * For each entry in `schema/references.ts`, this script evaluates:
+ *   1. has_url         — entry has a URL or DOI-derived URL
+ *   2. url_resolves    — URL responds with HTTP 2xx (optional, with --check-urls)
+ *   3. metadata_ok     — title, author, year all present and well-formed
+ *   4. cited_in_paper  — referenced by at least one \cite{} or -- Ref: in the repo
+ *   5. has_screenshot   — a screenshot/image exists in bib-qa-images/<id>.*
+ *
+ * Output: writes `bib-qa.json` (consumed by bib-qa.html)
+ *
+ * Usage:
+ *   bun run pipeline/bib-qa.ts                   # fast, no network
+ *   bun run pipeline/bib-qa.ts --check-urls      # also verify URLs resolve
+ *   bun run pipeline/bib-qa.ts --ci              # exit non-zero on metadata failures
+ *   bun run pipeline/bib-qa.ts --out /tmp/x.json # custom output path
+ *
+ * @module content/pipeline/bib-qa
+ */
+
+import { readFileSync, existsSync, readdirSync, writeFileSync } from "fs";
+import { resolve, join, extname } from "path";
+import { references, referenceMap } from "../schema/references";
+import type { Data as CSLData, Person as CSLPerson } from "csl-json";
+
+const REPO_ROOT = resolve(import.meta.dir, "../..");
+const CONTENT_DIR = resolve(import.meta.dir, "..");
+const IMAGES_DIR = join(CONTENT_DIR, "bib-qa-images");
+
+const args = process.argv.slice(2);
+const checkUrls = args.includes("--check-urls");
+const ciMode = args.includes("--ci");
+const outIdx = args.indexOf("--out");
+const outPath = outIdx >= 0 && args[outIdx + 1]
+  ? resolve(args[outIdx + 1])
+  : join(CONTENT_DIR, "bib-qa.json");
+
+// ── Types ───────────────────────────────────────────────────────
+
+export interface BibQATag {
+  key: string;
+  label: string;
+  status: "pass" | "fail" | "warn" | "unchecked";
+  detail?: string;
+}
+
+export interface BibQAEntry {
+  id: string;
+  type: string;
+  title: string;
+  authors: string;
+  year: string;
+  url: string | null;
+  doi: string | null;
+  journal: string | null;
+  tags: BibQATag[];
+  citedIn: string[];      // file paths where this ref is cited
+  images: string[];        // relative paths to screenshots in bib-qa-images/
+  score: number;           // 0-5, count of passing tags
+}
+
+export interface BibQAReport {
+  generated: string;
+  totalRefs: number;
+  summary: { pass: number; warn: number; fail: number; unchecked: number };
+  entries: BibQAEntry[];
+}
+
+// ── Helpers ─────────────────────────────────────────────────────
+
+function formatPerson(p: CSLPerson): string {
+  if (p.literal) return p.literal;
+  const parts: string[] = [];
+  if (p.given) parts.push(p.given);
+  if (p.family) parts.push(p.family);
+  return parts.join(" ");
+}
+
+function formatAuthors(entry: CSLData): string {
+  if (!entry.author?.length) return "—";
+  const names = entry.author.map(formatPerson);
+  if (names.length <= 3) return names.join(", ");
+  return `${names[0]} et al.`;
+}
+
+function formatYear(entry: CSLData): string {
+  if (entry.issued) {
+    const dp = entry.issued["date-parts"];
+    if (dp?.[0]?.[0]) return String(dp[0][0]);
+    if (entry.issued.raw) {
+      const m = entry.issued.raw.match(/\d{4}/);
+      if (m) return m[0];
+    }
+    if (entry.issued.literal) return entry.issued.literal;
+  }
+  return "—";
+}
+
+function entryUrl(entry: CSLData): string | null {
+  if (entry.URL) return entry.URL;
+  if (entry.DOI) return `https://doi.org/${entry.DOI}`;
+  return null;
+}
+
+// ── Scan for citations in repository ────────────────────────────
+
+function scanFilesRecursive(dir: string, ext: string): string[] {
+  if (!existsSync(dir)) return [];
+  const results: string[] = [];
+  function walk(d: string) {
+    for (const ent of readdirSync(d, { withFileTypes: true })) {
+      const full = join(d, ent.name);
+      if (ent.isDirectory()) {
+        if (["node_modules", ".lake", "build", ".git"].includes(ent.name)) continue;
+        walk(full);
+      } else if (ent.name.endsWith(ext)) {
+        results.push(full);
+      }
+    }
+  }
+  walk(dir);
+  return results;
+}
+
+/** Collect per-reference citation locations. */
+function collectCitations(): Map<string, string[]> {
+  const citedIn = new Map<string, string[]>();
+
+  // Lean: -- Ref: [key]
+  const leanFiles = [
+    ...scanFilesRecursive(join(REPO_ROOT, "lean"), ".lean"),
+    ...scanFilesRecursive(join(REPO_ROOT, "content"), ".lean"),
+  ];
+  const REF_PAT = /(?:--\s*)?Ref:\s*\[([^\]]+)\]/g;
+  for (const file of leanFiles) {
+    const content = readFileSync(file, "utf-8");
+    let m;
+    const pat = new RegExp(REF_PAT.source, REF_PAT.flags);
+    while ((m = pat.exec(content)) !== null) {
+      const key = m[1].trim();
+      if (!citedIn.has(key)) citedIn.set(key, []);
+      citedIn.get(key)!.push(file.replace(REPO_ROOT + "/", ""));
+    }
+  }
+
+  // LaTeX/Markdown: \cite{key1, key2}
+  const texFiles = [
+    ...scanFilesRecursive(join(REPO_ROOT, "chapters"), ".tex"),
+    ...scanFilesRecursive(join(REPO_ROOT, "content"), ".md"),
+    ...[join(REPO_ROOT, "main.tex"), join(REPO_ROOT, "blueprint/src/content.tex")].filter(existsSync),
+  ];
+  const CITE_PAT = /\\cite(?:\[[^\]]*\])?\{([^}]+)\}/g;
+  // Bare bracket citation [authorYYYY] in .md prose
+  const BRACKET_CITE_PAT = /(?<![!\w])\[([a-z][a-z0-9-]*\d{4}[a-z]*)\](?!\()/g;
+  const allRefIds = new Set(references.map((r) => r.id));
+
+  for (const file of texFiles) {
+    const content = readFileSync(file, "utf-8");
+    let m;
+
+    // \cite{key} patterns
+    const pat = new RegExp(CITE_PAT.source, CITE_PAT.flags);
+    while ((m = pat.exec(content)) !== null) {
+      for (const key of m[1].split(",").map((k: string) => k.trim())) {
+        if (!key) continue;
+        if (!citedIn.has(key)) citedIn.set(key, []);
+        const rel = file.replace(REPO_ROOT + "/", "");
+        if (!citedIn.get(key)!.includes(rel)) {
+          citedIn.get(key)!.push(rel);
+        }
+      }
+    }
+
+    // [refkey] bare bracket patterns (only in .md, validated against known refs)
+    if (file.endsWith(".md")) {
+      const bracketPat = new RegExp(BRACKET_CITE_PAT.source, BRACKET_CITE_PAT.flags);
+      while ((m = bracketPat.exec(content)) !== null) {
+        const key = m[1];
+        if (allRefIds.has(key)) {
+          if (!citedIn.has(key)) citedIn.set(key, []);
+          const rel = file.replace(REPO_ROOT + "/", "");
+          if (!citedIn.get(key)!.includes(rel)) {
+            citedIn.get(key)!.push(rel);
+          }
+        }
+      }
+    }
+  }
+
+  return citedIn;
+}
+
+// ── Scan for screenshots ────────────────────────────────────────
+
+const IMAGE_EXTS = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".pdf"]);
+
+function collectImages(): Map<string, string[]> {
+  const images = new Map<string, string[]>();
+  if (!existsSync(IMAGES_DIR)) return images;
+
+  for (const file of readdirSync(IMAGES_DIR)) {
+    const ext = extname(file).toLowerCase();
+    if (!IMAGE_EXTS.has(ext)) continue;
+    // Image files are named <refid>.png or <refid>-<n>.png
+    const base = file.replace(/(-\d+)?\.[^.]+$/, "");
+    if (!images.has(base)) images.set(base, []);
+    images.get(base)!.push(`bib-qa-images/${file}`);
+  }
+  return images;
+}
+
+// ── URL resolution + content verification ───────────────────────
+
+// ── Content-match tuning constants ──────────────────────────────
+
+/** Skip title words shorter than this (common words like "the", "and"). */
+const MIN_TITLE_WORD_LENGTH = 5;
+/** Max title words to sample for content matching. */
+const MAX_TITLE_WORDS = 6;
+/** Fraction of search terms that must appear on the page (0.4 = 40%). */
+const CONTENT_MATCH_THRESHOLD = 0.4;
+
+/**
+ * Check that a URL resolves (HTTP 2xx) and that the page contains
+ * the intended content (title and/or author name appear on the page).
+ */
+async function checkUrl(
+  url: string,
+  entry: CSLData,
+): Promise<{ ok: boolean; status: number; detail: string; contentMatch: boolean | null }> {
+  try {
+    const resp = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+      signal: AbortSignal.timeout(15_000),
+      headers: { "User-Agent": "QOU-BibQA/1.0 (academic reference checker)" },
+    });
+    if (!resp.ok) {
+      return { ok: false, status: resp.status, detail: `HTTP ${resp.status}`, contentMatch: null };
+    }
+
+    // Read page text for content verification
+    const contentType = resp.headers.get("content-type") || "";
+    let contentMatch: boolean | null = null;
+
+    if (contentType.includes("text/html") || contentType.includes("application/xhtml")) {
+      try {
+        const body = await resp.text();
+        const bodyLower = body.toLowerCase();
+
+        // Build search terms from entry metadata
+        const searchTerms: string[] = [];
+
+        // Title words (skip very short/common words)
+        if (entry.title) {
+          const titleWords = entry.title
+            .replace(/[^\w\s]/g, " ")
+            .split(/\s+/)
+            .filter((w: string) => w.length >= MIN_TITLE_WORD_LENGTH)
+            .slice(0, MAX_TITLE_WORDS);
+          searchTerms.push(...titleWords);
+        }
+
+        // First author family name
+        if (entry.author?.[0]) {
+          const name = entry.author[0].family || entry.author[0].literal;
+          if (name && name.length >= 3) searchTerms.push(name);
+        }
+
+        if (searchTerms.length === 0) {
+          contentMatch = null; // can't verify without terms
+        } else {
+          const matches = searchTerms.filter((t) => bodyLower.includes(t.toLowerCase()));
+          const ratio = matches.length / searchTerms.length;
+          contentMatch = ratio >= CONTENT_MATCH_THRESHOLD;
+        }
+      } catch {
+        // Body read failed — still count the HTTP 200 as OK
+        contentMatch = null;
+      }
+    }
+
+    const matchStr = contentMatch === true ? "content matches"
+      : contentMatch === false ? "content MISMATCH"
+      : "content not verified (non-HTML)";
+    return {
+      ok: true,
+      status: resp.status,
+      detail: `HTTP ${resp.status}, ${matchStr}`,
+      contentMatch,
+    };
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : String(e);
+    return { ok: false, status: 0, detail: msg, contentMatch: null };
+  }
+}
+
+// ── Build QA entries ────────────────────────────────────────────
+
+async function buildReport(): Promise<BibQAReport> {
+  console.log(`Bibliography QA: ${references.length} references`);
+
+  const citationMap = collectCitations();
+  const imageMap = collectImages();
+
+  const entries: BibQAEntry[] = [];
+  const summary = { pass: 0, warn: 0, fail: 0, unchecked: 0 };
+
+  for (const entry of references) {
+    const tags: BibQATag[] = [];
+    const url = entryUrl(entry);
+    const cited = citationMap.get(entry.id) || [];
+    const imgs = imageMap.get(entry.id) || [];
+
+    // ── Tag 1: has_url ──────────────────────────────────────
+    if (url) {
+      tags.push({ key: "has_url", label: "Has URL", status: "pass", detail: url });
+    } else {
+      tags.push({ key: "has_url", label: "Has URL", status: "fail", detail: "No URL or DOI" });
+    }
+
+    // ── Tag 2: url_resolves + content match ────────────────
+    if (checkUrls && url) {
+      const result = await checkUrl(url, entry);
+      // URL must resolve AND content should match (if verifiable)
+      const resolveOk = result.ok;
+      const contentOk = result.contentMatch !== false; // null = not checked = OK
+      tags.push({
+        key: "url_resolves",
+        label: "URL Resolves + Content",
+        status: resolveOk && contentOk ? "pass"
+          : resolveOk && !contentOk ? "warn"
+          : "fail",
+        detail: result.detail,
+      });
+    } else {
+      tags.push({
+        key: "url_resolves",
+        label: "URL Resolves + Content",
+        status: "unchecked",
+        detail: url ? "Run with --check-urls" : "No URL to check",
+      });
+    }
+
+    // ── Tag 3: metadata_ok ──────────────────────────────────
+    const issues: string[] = [];
+    if (!entry.title) issues.push("missing title");
+    if (!entry.author?.length && entry.type !== "dataset") issues.push("missing authors");
+    if (!entry.issued) issues.push("missing year");
+    if (entry.type === "article-journal" && !entry["container-title"]) issues.push("missing journal");
+    if (entry.type === "book" && !entry.publisher) issues.push("missing publisher");
+
+    if (issues.length === 0) {
+      tags.push({ key: "metadata_ok", label: "Metadata Complete", status: "pass" });
+    } else if (issues.length === 1) {
+      tags.push({ key: "metadata_ok", label: "Metadata Complete", status: "warn", detail: issues[0] });
+    } else {
+      tags.push({ key: "metadata_ok", label: "Metadata Complete", status: "fail", detail: issues.join("; ") });
+    }
+
+    // ── Tag 4: cited_in_paper ───────────────────────────────
+    if (cited.length > 0) {
+      tags.push({
+        key: "cited_in_paper",
+        label: "Cited in Paper",
+        status: "pass",
+        detail: `${cited.length} citation(s)`,
+      });
+    } else {
+      tags.push({
+        key: "cited_in_paper",
+        label: "Cited in Paper",
+        status: "warn",
+        detail: "Uncited — orphan reference",
+      });
+    }
+
+    // ── Tag 5: has_screenshot ───────────────────────────────
+    if (imgs.length > 0) {
+      tags.push({
+        key: "has_screenshot",
+        label: "Screenshot",
+        status: "pass",
+        detail: `${imgs.length} image(s)`,
+      });
+    } else {
+      tags.push({
+        key: "has_screenshot",
+        label: "Screenshot",
+        status: "unchecked",
+        detail: "No screenshot in bib-qa-images/",
+      });
+    }
+
+    // Count summary
+    for (const t of tags) summary[t.status]++;
+
+    entries.push({
+      id: entry.id,
+      type: entry.type,
+      title: entry.title,
+      authors: formatAuthors(entry),
+      year: formatYear(entry),
+      url,
+      doi: entry.DOI || null,
+      journal: entry["container-title"] || null,
+      tags,
+      citedIn: cited,
+      images: imgs,
+      score: tags.filter((t) => t.status === "pass").length,
+    });
+  }
+
+  // Sort: lowest score first (most issues at top)
+  entries.sort((a, b) => a.score - b.score || a.id.localeCompare(b.id));
+
+  return {
+    generated: new Date().toISOString(),
+    totalRefs: references.length,
+    summary,
+    entries,
+  };
+}
+
+// ── Main ────────────────────────────────────────────────────────
+
+const report = await buildReport();
+writeFileSync(outPath, JSON.stringify(report, null, 2));
+
+console.log(`\nBib-QA report written to ${outPath}`);
+console.log(`  ${report.totalRefs} references`);
+console.log(`  ${report.summary.pass} pass, ${report.summary.warn} warn, ${report.summary.fail} fail, ${report.summary.unchecked} unchecked`);
+
+const lowScore = report.entries.filter((e) => e.score <= 2);
+if (lowScore.length > 0) {
+  console.log(`\n  ⚠ ${lowScore.length} references with score ≤ 2/5:`);
+  for (const e of lowScore.slice(0, 10)) {
+    console.log(`    [${e.score}/5] ${e.id}: ${e.tags.filter((t) => t.status !== "pass").map((t) => t.label).join(", ")}`);
+  }
+}
+
+// ── CI mode: fail on metadata errors ────────────────────────────
+// In CI mode, exit non-zero if any reference has metadata_ok = "fail"
+// (missing title + authors + year, or multiple metadata issues).
+// This catches broken references without requiring network access.
+if (ciMode) {
+  const metadataFails = report.entries.filter((e) =>
+    e.tags.some((t) => t.key === "metadata_ok" && t.status === "fail"),
+  );
+  if (metadataFails.length > 0) {
+    console.log(`\n✗ CI: ${metadataFails.length} reference(s) with metadata failures:`);
+    for (const e of metadataFails) {
+      const tag = e.tags.find((t) => t.key === "metadata_ok")!;
+      console.log(`    ${e.id}: ${tag.detail}`);
+    }
+    process.exit(1);
+  }
+  console.log("\n✓ CI: all references pass metadata checks");
+}

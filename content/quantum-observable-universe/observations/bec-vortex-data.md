@@ -1,5 +1,5 @@
 Bose--Einstein condensates (BECs) provide the cleanest
-experimental realisation of quantised vortex dynamics.  The
+experimental realisation of quantised vortex dynamics \cite{fetter2009}.  The
 results below demonstrate that the $q \to 1$ limit of the
 $\mathrm{SU}_q(2)$ vortex spectrum
 ([Proposition](#prop:discrete-vortex-spectrum)) correctly

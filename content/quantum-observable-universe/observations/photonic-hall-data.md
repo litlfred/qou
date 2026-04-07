@@ -1,8 +1,8 @@
 **Existing data sets.**
 
-- Frequency-encoded photonic Chern insulator measurements of Chenier et al.
-- Many-body interference data in kagome lattices.
-- Chiral phonon experiments in rare-earth halides.
+- Frequency-encoded photonic Chern insulator measurements of Chenier et al. \cite{chenier2026}.
+- Many-body interference data in kagome lattices \cite{guo2025}.
+- Chiral phonon experiments in rare-earth halides \cite{luo2023}.
 
 **Planned observations.**
 

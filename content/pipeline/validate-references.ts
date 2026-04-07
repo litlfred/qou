@@ -115,7 +115,7 @@ for (const entry of references) {
 // ── 5. Lean cross-reference check ───────────────────────────────
 
 console.log("Cross-checking Lean -- Ref: citations...");
-const REF_PATTERN = /--\s*Ref:\s*\[([^\]]+)\]/g;
+const REF_PATTERN = /(?:--\s*)?Ref:\s*\[([^\]]+)\]/g;
 const leanCitations = new Set<string>();
 
 // Scan .lean files for -- Ref: [key] patterns
@@ -155,7 +155,8 @@ for (const file of leanFiles) {
   while ((match = pattern.exec(content)) !== null) {
     const key = match[1];
     leanCitations.add(key);
-    if (!referenceMap.has(key) && key !== "manuscript") {
+    // Skip cross-paper refs (paper-dir:label format) and manuscript self-refs
+    if (!referenceMap.has(key) && key !== "manuscript" && !key.includes(":")) {
       if (!unresolvedLeanRefs.has(key)) unresolvedLeanRefs.set(key, []);
       unresolvedLeanRefs.get(key)!.push(file.replace(REPO_ROOT + "/", ""));
     }
@@ -168,8 +169,10 @@ for (const [key, files] of unresolvedLeanRefs) {
 
 // ── 6. LaTeX / Markdown citation check ──────────────────────────
 
-console.log("Cross-checking LaTeX \\cite{} citations...");
+console.log("Cross-checking LaTeX \\cite{} and [refkey] citations...");
 const CITE_PATTERN = /\\cite(?:\[[^\]]*\])?\{([^}]+)\}/g;
+// Bare bracket citation [authorYYYY] in .md prose — validated against known ref IDs
+const BRACKET_CITE_PATTERN = /(?<![!\w])\[([a-z][a-z0-9-]*\d{4}[a-z]*)\](?!\()/g;
 const texFiles = [
   ...scanFilesRecursive(join(REPO_ROOT, "chapters"), ".tex"),
   ...scanFilesRecursive(contentDir, ".md"),
@@ -181,13 +184,26 @@ const texCitations = new Set<string>();
 for (const file of texFiles) {
   const content = readFileSync(file, "utf-8");
   let match;
-  const pattern = new RegExp(CITE_PATTERN.source, CITE_PATTERN.flags);
-  while ((match = pattern.exec(content)) !== null) {
+
+  // \cite{key} patterns
+  const citeP = new RegExp(CITE_PATTERN.source, CITE_PATTERN.flags);
+  while ((match = citeP.exec(content)) !== null) {
     // \cite{a,b,c} → split on commas
     for (const key of match[1].split(",").map((k: string) => k.trim())) {
       texCitations.add(key);
       if (!referenceMap.has(key)) {
         warn(key, `\\cite{${key}} in ${file.replace(REPO_ROOT + "/", "")} not found in references`);
+      }
+    }
+  }
+
+  // [refkey] bare bracket patterns (only in .md files, validated against known refs)
+  if (file.endsWith(".md")) {
+    const bracketP = new RegExp(BRACKET_CITE_PATTERN.source, BRACKET_CITE_PATTERN.flags);
+    while ((match = bracketP.exec(content)) !== null) {
+      const key = match[1];
+      if (referenceMap.has(key)) {
+        texCitations.add(key);
       }
     }
   }
