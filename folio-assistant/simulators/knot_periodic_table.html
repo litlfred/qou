@@ -47,6 +47,7 @@ body{background:var(--bg);color:var(--text);font-family:'SF Mono','Cascadia Code
 .tile.selected{border-color:var(--accent3);box-shadow:0 0 8px rgba(51,255,170,.4);z-index:3;}
 .tile .sym{font-size:12px;font-weight:700;line-height:1;text-shadow:0 0 3px rgba(0,0,0,.5);}
 .tile .zn{font-size:7px;line-height:1;text-shadow:0 0 2px rgba(0,0,0,.4);}
+.tile .shell{font-size:7px;line-height:1;opacity:.85;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;text-shadow:0 0 2px rgba(0,0,0,.4);}
 .tile canvas{width:14px;height:14px;margin-top:1px;}
 .tile.block-s{border-left:2px solid var(--accent);}
 .tile.block-p{border-left:2px solid var(--accent3);}
@@ -336,6 +337,10 @@ function getQ() { return parseFloat(document.getElementById('sl-q').value); }
 const BLOCK_NAMES = ['s','p','d','f','g'];
 const BLOCK_COLORS_DARK = ['#1a3a6a','#1a4a3a','#4a3a1a','#4a1a3a','#2a1a5a'];
 const BLOCK_COLORS_LIGHT = ['#c0d0ff','#c0ffd8','#ffecc0','#ffc0e0','#d8c0ff'];
+
+// Unicode superscript digits for shell filling labels
+const SUPER = '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079';
+function sup(n) { return String(n).split('').map(d => SUPER[+d]).join(''); }
 
 // ── Knot Drawing Engine (Canvas) ────────────────────────────────────
 function torusKnot3D(p, n, numPoints, R, r) {
@@ -677,9 +682,15 @@ function buildTable() {
       const tilesWrap = document.createElement('div');
       tilesWrap.className = 'subshell-tiles';
 
+      // Spread s-block tiles to extreme left/right when period has wider subshells
+      if (sub.block === 0 && subshells.length > 1) {
+        tilesWrap.style.justifyContent = 'space-between';
+      }
+
       sub.elements.sort((a, b) => a[0] - b[0]);
 
-      for (const el of sub.elements) {
+      for (let i = 0; i < sub.elements.length; i++) {
+        const el = sub.elements[i];
         const tile = document.createElement('div');
         tile.className = 'tile';
         const blockClass = ['block-s','block-p','block-d','block-f','block-g'][el[8]];
@@ -694,7 +705,8 @@ function buildTable() {
         const txtColor = textColorForBg(bgColor);
         const dimColor = txtColor === '#111' ? '#555' : '#99aabb';
 
-        tile.innerHTML = `<span class="zn" style="color:${dimColor}">${el[0]}</span><span class="sym" style="color:${txtColor}">${el[2]}</span><canvas width="28" height="28"></canvas>`;
+        const shell = sub.label + sup(i + 1);
+        tile.innerHTML = `<span class="zn" style="color:${dimColor}">${el[0]}</span><span class="sym" style="color:${txtColor}">${el[2]}</span><span class="shell" style="color:${dimColor}">${shell}</span>`;
         tile.dataset.z = el[0];
         tile.addEventListener('click', () => selectElement(el[0]));
 
@@ -708,13 +720,7 @@ function buildTable() {
     grid.appendChild(periodGroup);
   }
 
-  // Draw mini knots (batched)
-  requestAnimationFrame(() => {
-    grid.querySelectorAll('.tile[data-z]').forEach(tile => {
-      const c = tile.querySelector('canvas');
-      if (c) drawMiniKnot(c, parseInt(tile.dataset.z));
-    });
-  });
+  // (Mini knot canvases replaced by shell filling labels)
 }
 
 // ── Element Selection ───────────────────────────────────────────────
