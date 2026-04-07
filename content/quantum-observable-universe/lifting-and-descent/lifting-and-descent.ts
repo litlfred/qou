@@ -81,6 +81,7 @@ export default chapter({
         "stack-like-structure",
         "vacuum-state",
         "vacuum-state-proof",
+        "vacuum-state-su2",
         "global-gluing",
         "global-gluing-proof",
         "ordering-jet-compatibility",
