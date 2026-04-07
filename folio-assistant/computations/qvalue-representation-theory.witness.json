@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-07T14:54:05.415527+00:00",
-  "commitSha": "bd08a93bb7c082ce14d3d206e76b94b37c6c6093",
+  "computedAt": "2026-04-07T14:56:43.736030+00:00",
+  "commitSha": "01db6d7d920ddde128c0aeddda8e6be4ebaa4661",
   "assertions": [
     {
       "name": "Q(³H) full prediction",
@@ -78,7 +78,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 117,
+  "durationMs": 107,
   "computation": "qvalue-representation-theory",
   "scriptFile": "qvalue-representation-theory.py",
   "scriptHash": "b23e89d60d4b",
