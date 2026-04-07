@@ -119,12 +119,21 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
     <option value="binding">Binding energy</option>
     <option value="alpha">Alpha clusters</option>
     <option value="spin">Nuclear spin J</option>
+    <option value="gm">𝔾ₘ breaking</option>
   </select></label>
   <label>q <input type="range" id="sl-q" min="1.001" max="2.0" step="0.001" value="1.110"> <span class="val" id="v-q">1.110</span></label>
-  <span id="spin-key" style="display:none;font-size:9px;color:var(--dim);margin-left:6px;">
+   <span id="spin-key" style="display:none;font-size:9px;color:var(--dim);margin-left:6px;">
     <span style="color:var(--dim);">&#9632; J=0 (ee)</span>
     &nbsp;<span style="color:var(--accent3);">&#9632; half-int (odd A)</span>
     &nbsp;<span style="color:var(--accent4);">&#9632; integer (oo)</span>
+  </span>
+  <span id="gm-key" style="display:none;font-size:9px;color:var(--dim);margin-left:6px;">
+    &delta; = (J<sub>q</sub>&sup2;&minus;j(j+1))/j(j+1) &mdash;
+    <span style="color:#33aaff;">&#9632; &delta;&lt;0</span>
+    &nbsp;<span style="color:var(--dim);">&#9632; &delta;=0</span>
+    &nbsp;<span style="color:#ff5533;">&#9632; &delta;&gt;0</span>
+    &nbsp;|&nbsp; <span style="border:1px solid var(--accent2);padding:0 2px;border-radius:2px;">magic</span>
+    &nbsp;| divisors of |&chi;|=6: 1,2,3,6
   </span>
 </div>
 <div id="main-row">
@@ -149,6 +158,12 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
     <div style="margin-top:2px;">
       <b>QOU basis:</b> each nucleon is a spin-&frac12; knot; the tensor product (&frac12;)<sup>&otimes;A</sup> decomposes into
       V<sub>J</sub> via q-Clebsch&ndash;Gordan. J<sub>q</sub>&sup2; = [j]<sub>q</sub>&middot;[j+1]<sub>q</sub> is the 𝔾<sub>m</sub> Casimir.
+    </div>
+    <div style="margin-top:2px;">
+      <b>𝔾<sub>m</sub> breaking:</b> &delta; = (J<sub>q</sub>&sup2; &minus; j(j+1)) / j(j+1) measures the fractional
+      q-deformation of spin. The &Sigma;&delta;% column gives the mean breaking per subshell row.
+      At magic shells (★), the Kummer filtration obstruction vanishes: n | &chi;(A)
+      where the divisors of |&chi;| = 6 are {1, 2, 3, 6} (&rarr; &mu;<sub>2</sub>, &mu;<sub>3</sub>, &mu;<sub>6</sub> torsion levels).
     </div>
   </div>
   <div id="spin-table-wrap"></div>
@@ -413,6 +428,25 @@ function qNum(x, q) {
 function qCasimir(twoJ, q) {
   const j = twoJ / 2;
   return qNum(j, q) * qNum(j + 1, q);
+}
+
+// G_m breaking: fractional deviation of q-Casimir from classical Casimir
+function gmDelta(twoJ, q) {
+  if (twoJ === 0) return 0;
+  const j = twoJ / 2;
+  const Jq2 = qCasimir(twoJ, q);
+  const cl = j * (j + 1);
+  return (Jq2 - cl) / cl;
+}
+
+// Kummer divisibility: which divisors of |χ|=6 divide the nucleon count
+// Divisors of 6: {1, 2, 3, 6}
+// Returns the highest divisor of 6 that divides x
+function kummerLevel(x) {
+  if (x % 6 === 0) return 6;
+  if (x % 3 === 0) return 3;
+  if (x % 2 === 0) return 2;
+  return 1;
 }
 
 // ── Knot Drawing Engine (Canvas) ────────────────────────────────────
@@ -715,6 +749,32 @@ function getTileColor(el, mode) {
       const b = Math.round(30);
       return `rgb(${r},${g},${b})`;
     }
+  } else if (mode === 'gm') {
+    // G_m breaking: δ = (J_q² − j(j+1)) / j(j+1)
+    // Blue for δ<0, red for δ>0, dark/grey for J=0
+    const twoJ = el[13] || 0;
+    if (twoJ === 0) return isLight ? '#e0e0e0' : '#1a1a2a';
+    const j = twoJ / 2;
+    const q = getQ();
+    const Jq2 = qCasimir(twoJ, q);
+    const classical = j * (j + 1);
+    const delta = (Jq2 - classical) / classical;
+    // δ range: typically [−0.3, +0.5] for q ∈ [1.001, 2.0]
+    const t = Math.min(1, Math.max(-1, delta * 3)); // scale for visibility
+    if (t < 0) {
+      // Blue channel (δ < 0 = q-suppression)
+      const a = Math.abs(t);
+      const r = Math.round(20 + (1 - a) * 20);
+      const g = Math.round(40 + (1 - a) * 60);
+      const b = Math.round(120 + a * 135);
+      return `rgb(${r},${g},${b})`;
+    } else {
+      // Red channel (δ > 0 = q-enhancement)
+      const r = Math.round(120 + t * 135);
+      const g = Math.round(40 + (1 - t) * 30);
+      const b = Math.round(20 + (1 - t) * 20);
+      return `rgb(${r},${g},${b})`;
+    }
   }
   return isLight ? '#dde' : '#1a2a4a';
 }
@@ -738,6 +798,7 @@ function buildTable() {
   grid.innerHTML = '';
   const mode = document.getElementById('color-mode').value;
   document.getElementById('spin-key').style.display = mode === 'spin' ? 'inline' : 'none';
+  document.getElementById('gm-key').style.display = mode === 'gm' ? 'inline' : 'none';
 
   // Group elements by period → subshell
   const periodMap = new Map();
@@ -801,8 +862,23 @@ function buildTable() {
         const shell = sub.label + sup(i + 1);
         const twoJ = el[13] || 0;
         const spinStr = spinLabel(twoJ);
-        const showSpin = mode === 'spin';
-        const bottomLabel = showSpin ? spinStr : shell;
+        let bottomLabel;
+        if (mode === 'spin') {
+          bottomLabel = spinStr;
+        } else if (mode === 'gm') {
+          if (twoJ === 0) {
+            bottomLabel = '0';
+          } else {
+            const j = twoJ / 2;
+            const qq = getQ();
+            const Jq2 = qCasimir(twoJ, qq);
+            const cl = j * (j + 1);
+            const delta = ((Jq2 - cl) / cl * 100).toFixed(0);
+            bottomLabel = (delta >= 0 ? '+' : '') + delta + '%';
+          }
+        } else {
+          bottomLabel = shell;
+        }
         tile.innerHTML = `<span class="zn" style="color:${dimColor}">${el[0]}</span><span class="sym" style="color:${txtColor}">${el[2]}</span><span class="shell" style="color:${dimColor}">${bottomLabel}</span>`;
         tile.dataset.z = el[0];
         tile.addEventListener('click', () => selectElement(el[0]));
@@ -851,19 +927,30 @@ function updateKnotPanel() {
     const twoJ = el[13] || 0;
     const q = getQ();
     const Jq2 = qCasimir(twoJ, q);
+    const delta = gmDelta(twoJ, q);
+    const dPct = twoJ === 0 ? '0.0' : (delta * 100).toFixed(1);
+    const kZ = kummerLevel(Z), kN = kummerLevel(N);
+    const isMagic = el[9] || el[10];
     info.innerHTML = `<b>${name}</b>: ${Z} proton trefoil(s) T<sub>2,3</sub> + ${N} neutron unknot(s) + ${Z} electron mirror trefoil(s) \u03C3(T<sub>2,3</sub>)<br>` +
       `Nuclear sub-link: Borromean B<sub>3</sub>(\uD835\uDD2D) for Z\u22653, single T<sub>2,3</sub> for Z=1<br>` +
       `Atom = nuclear sub-link \u22C8 electron sub-link (Hopf-linked)<br>` +
       `<span style="color:var(--accent3)">J = ${spinLabel(twoJ)}</span>` +
       ` &nbsp; J<sub>q</sub>\u00B2 = [${spinLabel(twoJ)}]<sub>q</sub>\u00B7[${spinLabel(twoJ)}+1]<sub>q</sub>` +
       ` = <b>${Jq2.toFixed(4)}</b>` +
-      ` <span style="color:var(--dim)">(𝔾<sub>m</sub> action at q=${q.toFixed(3)})</span>`;
+      ` &nbsp; <b>\u03B4 = ${dPct}%</b>` +
+      ` <span style="color:var(--dim)">(𝔾<sub>m</sub> at q=${q.toFixed(3)})</span>` +
+      `<br><span style="color:var(--dim)">Kummer: \u03BC<sub>${kZ}</sub>(Z) \u00D7 \u03BC<sub>${kN}</sub>(N)</span>` +
+      (isMagic ? ` <span style="color:var(--accent2)">★ magic shell</span>` : '');
   } else {
     // Schematic for heavier elements
     drawSchematicKnot(wrap, Z, N);
     const twoJ = el[13] || 0;
     const q = getQ();
     const Jq2 = qCasimir(twoJ, q);
+    const delta = gmDelta(twoJ, q);
+    const dPct = twoJ === 0 ? '0.0' : (delta * 100).toFixed(1);
+    const kZ = kummerLevel(Z), kN = kummerLevel(N);
+    const isMagic = el[9] || el[10];
     info.innerHTML = `<b>${name}</b>: ${Z} proton(s) + ${N} neutron(s) + ${Z} electron(s)<br>` +
       `Nuclear sub-link: ${Z}\u00B7T<sub>2,3</sub>(\uD835\uDD2D) \u22C8 ${N}\u00B7O<sub>1</sub>(\uD835\uDD2B)<br>` +
       `Electron sub-link: ${Z}\u00B7\u03C3(T<sub>2,3</sub>)<br>` +
@@ -871,7 +958,10 @@ function updateKnotPanel() {
       `<span style="color:var(--accent3)">J = ${spinLabel(twoJ)}</span>` +
       ` &nbsp; J<sub>q</sub>\u00B2 = [${spinLabel(twoJ)}]<sub>q</sub>\u00B7[${spinLabel(twoJ)}+1]<sub>q</sub>` +
       ` = <b>${Jq2.toFixed(4)}</b>` +
-      ` <span style="color:var(--dim)">(𝔾<sub>m</sub> action at q=${q.toFixed(3)})</span>`;
+      ` &nbsp; <b>\u03B4 = ${dPct}%</b>` +
+      ` <span style="color:var(--dim)">(𝔾<sub>m</sub> at q=${q.toFixed(3)})</span>` +
+      `<br><span style="color:var(--dim)">Kummer: \u03BC<sub>${kZ}</sub>(Z) \u00D7 \u03BC<sub>${kN}</sub>(N)</span>` +
+      (isMagic ? ` <span style="color:var(--accent2)">★ magic shell</span>` : '');
   }
 }
 
@@ -1379,7 +1469,7 @@ function buildSpinTable() {
 
   let html = '<table class="spin-tbl"><thead><tr><th>Shell</th>';
   for (let i = 1; i <= maxCols; i++) html += `<th>${i}</th>`;
-  html += '<th>J<sub>q</sub>\u00B2</th></tr></thead><tbody>';
+  html += '<th>&Sigma;J<sub>q</sub>\u00B2</th><th>&Sigma;&delta;%</th></tr></thead><tbody>';
 
   for (const row of rows) {
     row.elements.sort((a, b) => a[0] - b[0]);
@@ -1388,6 +1478,8 @@ function buildSpinTable() {
 
     // Compute sum J_q² for the row
     let rowJq2Sum = 0;
+    let rowDeltaSum = 0;
+    let rowCount = 0;
 
     for (let i = 0; i < maxCols; i++) {
       if (i < row.elements.length) {
@@ -1396,18 +1488,30 @@ function buildSpinTable() {
         const j = twoJ / 2;
         const Jq2 = qCasimir(twoJ, q);
         rowJq2Sum += Jq2;
+        const d = gmDelta(twoJ, q);
+        if (twoJ !== 0) { rowDeltaSum += d; rowCount++; }
+
+        const isMagic = el[9] || el[10];
+        const Z = el[0], N = el[1] - el[0];
+        const kZ = kummerLevel(Z), kN = kummerLevel(N);
 
         const cls = twoJ === 0 ? 'j0' : (twoJ % 2 === 1 ? 'jhalf' : 'jint');
         const sym = el[2];
-        const title = `${el[3]} (Z=${el[0]}, A=${el[1]})\nJ=${spinLabel(twoJ)}\nJ_q²=${Jq2.toFixed(3)}`;
+        const dPct = twoJ === 0 ? '0' : (d * 100).toFixed(1);
+        const magicTag = isMagic ? ' ★' : '';
+        const kummerTag = `μ${Math.max(kZ, kN)}`;
+        const title = `${el[3]} (Z=${el[0]}, N=${N}, A=${el[1]})\nJ=${spinLabel(twoJ)}  J_q²=${Jq2.toFixed(3)}\nδ=${dPct}%  ${kummerTag}${magicTag ? '  MAGIC' : ''}`;
         const highlight = selectedZ === el[0] ? 'font-weight:700;text-decoration:underline;' : '';
-        html += `<td class="${cls}" title="${title}" style="cursor:pointer;${highlight}" onclick="selectElement(${el[0]})">${sym}<br><b>${spinLabel(twoJ)}</b></td>`;
+        const magicBorder = isMagic ? 'border:1px solid var(--accent2);' : '';
+        html += `<td class="${cls}" title="${title}" style="cursor:pointer;${highlight}${magicBorder}" onclick="selectElement(${el[0]})">${sym}<br><b>${spinLabel(twoJ)}</b></td>`;
       } else {
         html += '<td></td>';
       }
     }
 
+    const avgDelta = rowCount > 0 ? (rowDeltaSum / rowCount * 100).toFixed(1) : '—';
     html += `<td style="color:var(--dim);font-size:8px;">${rowJq2Sum.toFixed(2)}</td>`;
+    html += `<td style="color:${rowDeltaSum > 0 ? 'var(--accent2)' : 'var(--accent)'};font-size:8px;">${avgDelta}</td>`;
     html += '</tr>';
   }
 
@@ -1418,6 +1522,8 @@ function buildSpinTable() {
 // ── q slider update ─────────────────────────────────────────────────
 document.getElementById('sl-q').addEventListener('input', function() {
   document.getElementById('v-q').textContent = this.value;
+  const mode = document.getElementById('color-mode').value;
+  if (mode === 'gm') buildTable(); // gm mode is q-dependent
   updateDecayPanel();
   buildSpinTable();
   if (selectedZ) updateKnotPanel();
