@@ -1,0 +1,25 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:qvalue-observation",
+  title:
+    "Q-value predictions vs experiment: $q$-weighted channel separation",
+  interprets: "cor:spectral-decomposition-qvalue",
+  tags: [
+    "q-value",
+    "beta-decay",
+    "observation",
+    "channel-separation",
+    "q-weighted",
+    "nndc",
+    "error-propagation",
+  ],
+  uses: [
+    "cor:spectral-decomposition-qvalue",
+    "rem:qvalue-derivation-chain",
+    "ex:qvalue-benchmark-table",
+    "prop:beta-decay-transfer-matrix",
+    "rem:mass-comparison-table",
+    "rem:half-life-as-q-probe",
+  ],
+});

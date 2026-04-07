@@ -79,6 +79,7 @@ export default chapter({
       title: "Beta Decay",
       label: "sec:beta-decay-observations",
       blocks: [
+        "qvalue-observation",
         "hadron-half-life-verification",
         "hadron-half-life-regimes",
         "half-life-shell-worked",
