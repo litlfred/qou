@@ -671,10 +671,10 @@ mass_nf = net_n * mu_0  # net coefficient scaled by μ₀
 mass_borromean = VOL_BORROMEAN / HBAR_Q_SQ
 
 # Skein pair formula for neutron: S_dd(q) + 2·S_ud(q)
-c_dd = eval_at_q0(q**2)
-d_dd = eval_at_q0(-q * s_skein)
-c_ud = eval_at_q0((1 + q**2) / 2)
-d_ud = eval_at_q0(-q * s_skein / 2)
+c_dd = eval_at_q0(1)
+d_dd = eval_at_q0(-(q - 1/q))
+c_ud = eval_at_q0(1)
+d_ud = eval_at_q0(-(q - 1/q) / 2)
 
 print(f"  METHOD 1: Gröbner--Shirshov Normal Form (from this computation)")
 print(f"    NF terms:          {len(elem_n)}")
