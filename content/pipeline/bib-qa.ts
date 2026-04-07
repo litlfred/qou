@@ -14,6 +14,7 @@
  * Usage:
  *   bun run pipeline/bib-qa.ts                   # fast, no network
  *   bun run pipeline/bib-qa.ts --check-urls      # also verify URLs resolve
+ *   bun run pipeline/bib-qa.ts --ci              # exit non-zero on metadata failures
  *   bun run pipeline/bib-qa.ts --out /tmp/x.json # custom output path
  *
  * @module content/pipeline/bib-qa
@@ -30,6 +31,7 @@ const IMAGES_DIR = join(CONTENT_DIR, "bib-qa-images");
 
 const args = process.argv.slice(2);
 const checkUrls = args.includes("--check-urls");
+const ciMode = args.includes("--ci");
 const outIdx = args.indexOf("--out");
 const outPath = outIdx >= 0 && args[outIdx + 1]
   ? resolve(args[outIdx + 1])
@@ -437,4 +439,23 @@ if (lowScore.length > 0) {
   for (const e of lowScore.slice(0, 10)) {
     console.log(`    [${e.score}/5] ${e.id}: ${e.tags.filter((t) => t.status !== "pass").map((t) => t.label).join(", ")}`);
   }
+}
+
+// ── CI mode: fail on metadata errors ────────────────────────────
+// In CI mode, exit non-zero if any reference has metadata_ok = "fail"
+// (missing title + authors + year, or multiple metadata issues).
+// This catches broken references without requiring network access.
+if (ciMode) {
+  const metadataFails = report.entries.filter((e) =>
+    e.tags.some((t) => t.key === "metadata_ok" && t.status === "fail"),
+  );
+  if (metadataFails.length > 0) {
+    console.log(`\n✗ CI: ${metadataFails.length} reference(s) with metadata failures:`);
+    for (const e of metadataFails) {
+      const tag = e.tags.find((t) => t.key === "metadata_ok")!;
+      console.log(`    ${e.id}: ${tag.detail}`);
+    }
+    process.exit(1);
+  }
+  console.log("\n✓ CI: all references pass metadata checks");
 }

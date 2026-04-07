@@ -10,6 +10,8 @@
     "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts",
     "export-bibtex": "bun run pipeline/export-bibtex.ts",
     "validate-refs": "bun run pipeline/validate-references.ts",
+    "bib-qa": "bun run pipeline/bib-qa.ts",
+    "bib-qa:ci": "bun run pipeline/bib-qa.ts --ci",
     "generate-index": "bun run pipeline/generate-index.ts"
   },
   "dependencies": {
