@@ -159,7 +159,8 @@ export default chapter({
         "linking-relations-table",
         // q-deformed kinematics (definitions in braids-and-knots; applied here)
         "q-value-transition",
-        // Proton, neutron, stable nucleus
+        // Meson, proton, neutron, stable nucleus
+        "categorical-meson",
         "categorical-proton",
         "categorical-neutron",
         "antiparticle-crossing-reversal",
