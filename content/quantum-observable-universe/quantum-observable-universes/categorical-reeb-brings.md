@@ -64,10 +64,12 @@ categorical Reeb derivation are now checkable by direct computation:
 $\mathcal{O}_q(\mathcal{B})$, the $\xi$-action extends to the
 five coordinates $x_1, \ldots, x_5$ via the $S_5$-equivariant
 embedding. The $8 = 2g$ independent cycles of the genus-$4$ curve
-decompose into $\xi$-eigenspaces:
+decompose into $\xi$-eigenspaces (by Hodge decomposition,
+$H^1(\Sigma_4, \mathbb{C}) = H^{1,0} \oplus H^{0,1}$ with
+$\dim H^{1,0} = g = 4$):
 
-- $4$ cycles of weight $+1$ (holomorphic differentials),
-- $4$ cycles of weight $-1$ (anti-holomorphic differentials).
+- $4$ cycles of weight $+1$ (holomorphic differentials $H^{1,0}$),
+- $4$ cycles of weight $-1$ (anti-holomorphic differentials $H^{0,1}$).
 
 The Reeb spectrum is $\mathrm{Spec}(\xi) = \{-1, +1\}$ with
 multiplicity $4$ each, matching the $8$ fundamental modes of

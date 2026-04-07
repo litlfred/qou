@@ -23,7 +23,8 @@ shift by $d = 3$.
 
 **Step 3: compute the Nakayama automorphism.** For
 $\mathcal{O}_q(\mathrm{SU}(2))$, the Nakayama automorphism is
-determined by the modular element of the Haar state. On the
+determined by the modular element of the Haar state
+\cite{woronowicz1988}. On the
 generators:
 
 $$
