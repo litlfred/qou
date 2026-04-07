@@ -1,7 +1,7 @@
 {
   "computation": "beta-decay-energy-scale",
   "description": "Derives the energy scale E\u2080 (MeV) converting dimensionless Hecke NF coefficient differences to physical decay energy. E\u2080 = Q_decay / \u0394(net) where Q = m_n \u2212 m_p \u2212 m_e.",
-  "timestamp": "2026-04-06T13:09:33.056966+00:00",
+  "timestamp": "2026-04-07T15:34:52.769106+00:00",
   "q0": 1.1099785955541805,
   "observed": {
     "m_n_MeV": 939.56542052,
@@ -12,31 +12,31 @@
     "Q_decay_MeV_err": 6.129437351829285e-07
   },
   "hecke_nf_differences": {
-    "delta_nu": -0.07567266188108146,
-    "delta_e": -0.01336875215515887,
-    "delta_net": 0.1775543901729859,
-    "debt_total": 0.08904141403624033
+    "delta_nu": -0.10204617496433355,
+    "delta_e": -0.0009759890266926585,
+    "delta_net": -0.1882906200111205,
+    "debt_total": 0.1030221639910262
   },
   "energy_scales": {
-    "E0_from_net_MeV": 4.406162017384185,
-    "E0_from_debt_MeV": 8.786174596032453,
-    "E0_from_mass_diff_MeV": 7.2841474589277535
+    "E0_from_net_MeV": -4.15492503000849,
+    "E0_from_debt_MeV": 7.5938359251332335,
+    "E0_from_mass_diff_MeV": -6.868809290253744
   },
   "per_channel_MeV": {
-    "nu_bar": 0.3334260085347772,
-    "electron": 0.05890488796588397,
-    "sum": 0.3923308965006612
+    "nu_bar": -0.42399420657593523,
+    "electron": -0.004055161236018952,
+    "sum": -0.4280493678119542
   },
   "full_budget_MeV": {
-    "\u03bd": -0.3334260085347772,
-    "H\u2070": 0.040224220732736536,
-    "H\u00b9": 1.292272912140496,
-    "L\u208a": -0.16636635968812608,
-    "L\u208b": 0.00853353331557691,
-    "e\u207b": -0.05890488796588397
+    "\u03bd": 0.42399420657593523,
+    "H\u2070": -0.05152511823723424,
+    "H\u00b9": -0.047469957001207215,
+    "L\u208a": 0.45286429590952054,
+    "L\u208b": 0.0004148215169886472,
+    "e\u207b": 0.004055161236018952
   },
   "verification": {
-    "delta_net_times_E0": 0.7823334100000223,
+    "delta_net_times_E0": 0.7823334100000221,
     "Q_observed": 0.7823334100000222,
     "match": true
   }
