@@ -15,9 +15,9 @@ Single-parameter derivation chain:
 
 The transfer matrix crossing convention matches hecke_division.py
 and the Lean formalization in HeckeH3.lean:
-    pp: σ   → T(1, 0)      det = −1  ✓
-    nn: σ⁻¹ → T(1, −HA)    det = −1  ✓
-    pn: mix → T(1, −HA/2)   det = −1  ✓
+    pp: σ   → T(1, 0)      det = −1  ✓  (group element)
+    nn: σ⁻¹ → T(1, −HA)    det = −1  ✓  (group element)
+    pn: mix → T(1, −HA/2)   (algebraic average ½(σ+σ⁻¹), not group element)
 
 Nucleon masses m_p, m_n are taken from CODATA 2022. The Borromean
 mass scale and Skein polynomial ratios provide the topological
@@ -521,8 +521,9 @@ w.add_caveat(
 )
 w.add_caveat(
     "The transfer matrix crossing convention σ⁻¹ = σ − (q−q⁻¹) matches "
-    "hecke_division.py and the Lean formalization HeckeH3.lean. All "
-    "crossing matrices are unimodular (det = −1)."
+    "hecke_division.py and the Lean formalization HeckeH3.lean. The pp "
+    "and nn crossing matrices are unimodular (det = −1); the pn mixed "
+    "crossing ½(σ+σ⁻¹) is an algebraic average, not a group element."
 )
 
 witness_path = w.save()

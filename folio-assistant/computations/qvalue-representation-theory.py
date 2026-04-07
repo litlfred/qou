@@ -60,9 +60,9 @@ def neutron_shell(N):
 
 def crossing_coeffs(ti, tj):
     """Crossing coefficients from the Hecke relation σ⁻¹ = σ − (q−q⁻¹).
-    pp: σ           → T(1,  0   )   det = −1  ✓
-    nn: σ⁻¹         → T(1, −HA  )   det = −1  ✓
-    pn: ½(σ + σ⁻¹) → T(1, −HA/2)   det = −1  ✓
+    pp: σ           → T(1,  0   )   det = −1  ✓  (group element)
+    nn: σ⁻¹         → T(1, −HA  )   det = −1  ✓  (group element)
+    pn: ½(σ + σ⁻¹) → T(1, −HA/2)   (algebraic average, not a group element)
 
     This matches hecke_division.py and the Lean formalization in HeckeH3.lean.
     The old form (q², −q·s) broke unimodularity (det = −1.53).

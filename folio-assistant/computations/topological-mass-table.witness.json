@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-07T13:07:15.942088+00:00",
-  "commitSha": "b827531281ff794128c640f17cc96aaf753068da",
+  "computedAt": "2026-04-07T13:15:51.038849+00:00",
+  "commitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
   "assertions": [
     {
       "name": "m_μ/m_e = Vol(4₁)/ℏ_q² (self-consistency)",
@@ -123,11 +123,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "topological-mass-table",
   "scriptFile": "topological-mass-table.py",
-  "scriptHash": "f661c2886581",
-  "scriptCommitSha": "b827531281ff794128c640f17cc96aaf753068da",
+  "scriptHash": "15c4f70a42fc",
+  "scriptCommitSha": "45a126848c9807633dd7b9b7f456190cce3f578a",
   "description": "Complete atomic mass table for all 118 elements built from the muon/electron mass ratio. Derivation chain: m_μ/m_e → Vol(4₁) → ℏ_q² → q₀ → transfer matrix T(c,d) → Skein polynomials P_p, P_n → M(Z,N) using CODATA m_p, m_n. Crossing convention matches hecke_division.py and HeckeH3.lean (σ⁻¹ = σ − HA). Binding energies B/A from AME2020.",
   "contentBlock": "rem:amc-calculations",
   "parameters": {
@@ -1373,6 +1373,6 @@
     "Nucleon masses m_p, m_n are CODATA inputs, not derived from q alone. The Skein polynomial ratio P_n/P_p encodes the combinatorial crossing structure but does not directly equal m_n/m_p. Deriving absolute nucleon masses from q requires the colored Borromean volume, which is an open problem.",
     "Binding energies B/A from AME2020 are used as input. The deeper test is whether the nuclear Skein polynomial at q₀ reproduces these B/A values (confirmed for Z ≤ 92 via transfer matrix).",
     "For synthetic elements (Z ≥ 93), the q-torsion hypothesis predicts that Skein-derived B/A at q₀ may differ from AME2020 if nuclei were assembled at an effective q_eff > q₀.",
-    "The transfer matrix crossing convention σ⁻¹ = σ − (q−q⁻¹) matches hecke_division.py and the Lean formalization HeckeH3.lean. All crossing matrices are unimodular (det = −1)."
+    "The transfer matrix crossing convention σ⁻¹ = σ − (q−q⁻¹) matches hecke_division.py and the Lean formalization HeckeH3.lean. The pp and nn crossing matrices are unimodular (det = −1); the pn mixed crossing ½(σ+σ⁻¹) is an algebraic average, not a group element."
   ]
 }

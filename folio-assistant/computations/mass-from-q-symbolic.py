@@ -1,30 +1,27 @@
 #!/usr/bin/env python3
 """
-Symbolic hadron mass derivation from the substrate parameter q.
+Symbolic Skein polynomial derivation from the substrate parameter q.
 
 Keeps q symbolic as long as possible using sympy, then evaluates
 at q₀ derived from CODATA.  The full chain:
 
     Vol(4_1), m_μ/m_e  →  ℏ_q  →  q  →  HA, E_×  →  transfer matrices
-    →  V̂_i(q)  →  P_p(q), P_n(q)  →  𝔪_p(q), 𝔪_n(q)
+    →  V̂_i(q)  →  P_p(q), P_n(q)  →  Borromean mass scale 𝔪(𝔅₃)
 
-Two mass computations:
+Two computations:
 
   (A) Direct topological mass (per-knot formula):
         𝔪(K) = Vol(K) / ℏ_q²
       Applied to the Borromean link for the nucleon mass scale.
 
-  (B) Pair Skein mass (additive crossing decomposition):
-        𝔪(N) = Σ_crossings S_ab(q)
-      where S_ab = (q μ_a + q⁻¹ μ_b) / (q^½ + q⁻½)
-
-  The Skein polynomial P_N(q) = ∏_i V̂_i(q) encodes the ratio
-  structure used in Q-value predictions (spectral decomposition).
+  (B) Transfer matrix Skein polynomials P_p(q), P_n(q):
+      Encode the combinatorial crossing structure of proton/neutron.
+      Used in Q-value spectral decomposition (log ratio of P).
 
 Crossing coefficients for A=3 (proton/neutron):
-    uu → (c=1, d=0)          σ         det(T) = −1  ✓
-    dd → (c=1, d=-HA)        σ⁻¹       det(T) = −1  ✓
-    ud → (c=1, d=-HA/2)      ½(σ+σ⁻¹)  det(T) = −1  ✓
+    uu → (c=1, d=0)          σ          det(T) = −1  ✓  (group element)
+    dd → (c=1, d=-HA)        σ⁻¹        det(T) = −1  ✓  (group element)
+    ud → (c=1, d=-HA/2)      ½(σ+σ⁻¹)   (algebraic average, not group element)
 
     where HA = q − q⁻¹.  This matches hecke_division.py and
     the Lean formalization HeckeH3.lean.
