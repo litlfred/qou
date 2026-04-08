@@ -41,6 +41,26 @@ $$
 *where the spectral coordinates $z_i$ of the blow-up centres
 are determined by the braid word and the Briggs--Klein chart.*
 
+## Tower convergence
+
+The electron mass $\mathrm{Li}_2(q^{-2})/\hbar_q^2$ can be
+decomposed as a sum over brane levels
+$n = 1, 2, \ldots$, with level $n$ contributing
+$q^{-2n}/n^2$ to $\mathrm{Li}_2$:
+
+| Levels | Fraction of $\mathrm{Li}_2(q^{-2})$ |
+|:---:|:---:|
+| $N = 1$ | $73.9\%$ |
+| $N = 3$ | $94.3\%$ |
+| $N = 10$ | $99.75\%$ |
+| $N = 20$ | $99.99\%$ |
+
+The tower effectively converges in $\sim 20$ terms,
+consistent with $t_P = 1/\hbar_q \approx 10$ Reeb
+operations per Planck time.  The first brane level alone
+provides $74\%$ of the electron mass; the remaining
+$26\%$ comes from higher jet prolongations.
+
 ## What is known
 
 **Step 1 (Categorical → Markov, proved).**
