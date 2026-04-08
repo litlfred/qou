@@ -62,7 +62,9 @@ $$
 $$
 
 which matches the muon-to-electron mass ratio
-$\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$.
+$\mathfrak{m}_\mu / \mathfrak{m}_e = 206.7682830 \pm 0.0000045$
+(CODATA 2022).  This match is **exact by construction**: the
+formula $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ defines $q_0$.
 The correspondence
 
 $$

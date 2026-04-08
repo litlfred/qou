@@ -241,7 +241,11 @@ for i in range(6):
             print(f"    G[{names[i]},{names[j]}] = {expr}")
 
 # ── Numeric check at q₀ ──────────────────────────────────────
-q0 = 1.1097395948079298
+try:
+    import sys as _sys; _sys.path.insert(0, str(__import__('pathlib').Path(__file__).parent))
+    from q_parameter import Q as q0
+except ImportError:
+    q0 = 1.109978595554181  # canonical from CODATA 2022
 print(f"\n  Numeric check at q₀ = {q0}:")
 for i in range(6):
     row = []

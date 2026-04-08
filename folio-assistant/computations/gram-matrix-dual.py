@@ -17,10 +17,14 @@ import numpy as np
 from datetime import datetime, timezone
 from pathlib import Path
 
-# ── q parameter ──────────────────────────────────────────────
-q0 = 1.1097395948079298
-qi0 = 1.0 / q0
-HA = q0 - qi0
+# ── q parameter (canonical source) ───────────────────────────
+try:
+    from q_parameter import Q as q0, Q_INV as qi0, HA
+except ImportError:
+    import math
+    _V = 2.029883212819307; _R = 206.768283
+    _h = math.sqrt(_V / _R); q0 = 1.0 / (1.0 - _h)
+    qi0 = 1.0 / q0; HA = q0 - qi0
 z = 1.0 / (q0**0.5 + q0**(-0.5))  # Markov parameter
 
 print(f"q₀  = {q0:.10f}")

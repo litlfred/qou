@@ -21,10 +21,15 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-# ── q parameter ──────────────────────────────────────────────
-q0 = 1.1097395948079298
-qi0 = 1.0 / q0
-HA = q0 - qi0  # ≈ 0.2091
+# ── q parameter (canonical source) ───────────────────────────
+try:
+    from q_parameter import Q as q0, Q_INV as qi0, HA
+except ImportError:
+    # Fallback: derive from CODATA (Vol(4₁)/m_μ/m_e)
+    import math
+    _V = 2.029883212819307; _R = 206.768283
+    _h = math.sqrt(_V / _R); q0 = 1.0 / (1.0 - _h)
+    qi0 = 1.0 / q0; HA = q0 - qi0
 
 # ── Hecke algebra H₃(q) engine ──────────────────────────────
 # Elements are dicts: {word_tuple: float_coefficient}

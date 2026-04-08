@@ -1,4 +1,12 @@
-The mass $\mathfrak{m}(\varrho)$ of a vortex in any quantum observable universe
+This is the archimedean specialisation of the topological
+decomposition of mass
+([topological mass](#thm:topological-mass)).  In the
+archimedean realisation, the descended trace evaluates to the
+holonomy and each transient trace evaluates to the quantum
+dilogarithm
+([quantum dilogarithm](#cor:quantum-dilogarithm)).
+
+The mass $\mathfrak{m}(\varrho)$ of a vortex
 ([mass identity](#def:mass-identity)) decomposes as a sum of a descended
 holonomy contribution and finitely many transient contributions localised
 at the exceptional divisors of the brane boundary

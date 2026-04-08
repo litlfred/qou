@@ -58,8 +58,12 @@ action is nonzero but the hyperbolic volume vanishes; the mass
 arises from the quantum dilogarithm contributions across the tower
 ([mass endomorphism conjecture](#conj:mass-endomorphism)).
 
-The action term dominates: for hadrons, $S_q \sim 10^3$ MeV
-while the rotational and translational terms are $O(\hbar_q) \sim 0.1$.
+The action term dominates: the full tower-summed action
+gives $\mathrm{Vol}(K)/\hbar_q^2 \sim O(10^2)$ in natural units
+for hadrons, while the rotational and translational terms are
+$O(\hbar_q) \sim 0.1$.  At a single brane level, the action
+$|\mathrm{tr}_M(\rho(\beta))|$ is $O(1)$; the $O(10^2)$
+amplification comes from the brane tower accumulation.
 
 **At rest** ($p_q = 0$, $J_q = 0$):
 
