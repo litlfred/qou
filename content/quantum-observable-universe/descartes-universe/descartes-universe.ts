@@ -164,7 +164,9 @@ export default chapter({
         "quark-antiquark-production",
         // Meson, proton, neutron, stable nucleus
         "categorical-meson",
+        "meson-formation-chain",
         "categorical-proton",
+        "meson-to-proton-via-borromean",
         "categorical-neutron",
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",

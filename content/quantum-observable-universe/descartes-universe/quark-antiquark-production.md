@@ -5,9 +5,20 @@ the colored photon's Hopf link content $L_+$ acts as the
 channel into a hadronic channel.
 
 **Mechanism.**
-In the normal form of a colored photon pair $\gamma_\phi^2$,
-the Hopf link terms $L_+ = \sigma_0\sigma_1$ and
-$L_- = \sigma_1\sigma_0$ appear with coefficient $\phi^2$.
+The colored photon ([pair production](#def:breit-wheeler-pair-production))
+is the Hecke algebra element
+
+$$
+  \gamma_\phi
+  \;=\;
+  \mathbf{1} + \phi\,\sigma_0 + \phi\,\sigma_1
+$$
+
+where $\phi = 0.0487$ is the color weight and $\sigma_0, \sigma_1$
+are the two generators of $H_3(q)$.  In the normal form of the
+colored photon pair $\gamma_\phi^2$, the Hopf link terms
+$L_+ = \sigma_0\sigma_1$ and $L_- = \sigma_1\sigma_0$ appear with
+coefficient $\phi^2$.
 The positive Hopf link $L_+$ applied to the trefoil channel
 $e^- = \sigma_0\sigma_1\sigma_0$ yields:
 
