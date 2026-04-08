@@ -48,6 +48,7 @@ $$
 The Hopf link terms $L_\pm$ are the gluon field:
 $\mathcal{B}_3$ produces binding without any external
 Hopf link factor.
+Witness: `breit-wheeler-nucleon-nf.witness.json`.
 
 **Step 2: typed crossings.**
 The quark flavor determines the crossing eigenvalue in $H_3(q)$.
