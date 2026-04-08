@@ -19,7 +19,7 @@ $$
 $$
 
 **Bare photon pair.**
-Two identical photons give $\gamma\gamma = \sigma_0^2$.
+Two bare photons (single crossing $\sigma_0$) give $\gamma_{\mathrm{bare}}\gamma_{\mathrm{bare}} = \sigma_0^2$.
 Applying the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$:
 
 $$

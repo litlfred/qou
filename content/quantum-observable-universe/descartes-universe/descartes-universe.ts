@@ -161,6 +161,7 @@ export default chapter({
         "q-value-transition",
         // Pair production and quark-antiquark creation
         "breit-wheeler-pair-production",
+        "photon-knot-operations",
         "quark-antiquark-production",
         // Meson, proton, neutron, stable nucleus
         "categorical-meson",

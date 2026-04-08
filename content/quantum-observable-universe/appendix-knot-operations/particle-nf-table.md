@@ -24,6 +24,18 @@ $\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$.
 | $\mathfrak{u}$ | unknot $(+)$ | $\sigma_0$ | — | $+1$ | — | — | — | — | $+1.000$ |
 | $\mathfrak{d}$ | unknot $(-)$ | $\sigma_0^{-1}$ | $-0.209$ | $+1$ | — | — | — | — | $+0.791$ |
 
+**$H_3(q)$ vs $H_2(q)$ representation.**
+The $e^-$ entry above is the $H_3(q)$ basis element
+$\sigma_0\sigma_1\sigma_0$, which is irreducible in the 3-strand
+algebra (net $= +1.000$ by definition).  In the 2-strand algebra
+$H_2(q)$, the trefoil braid word $\sigma_0^3$ reduces to
+$(1 + h^2)\sigma_0 + h\mathbf{1}$ via iterated Hecke relations,
+giving net $= 1.253$ at $q_0$
+([lepton tower witness](#rem:lepton-tower-witness), $n = 3$).
+The two values are not contradictory: they reflect different
+embedding dimensions.  The $H_3(q)$ value (this table) is the
+one used in nucleon NF computations and pair production algebra.
+
 **Quark knot type** ([Borromean baryon](#def:borromean-baryon)).
 Quarks are **unknots** $K_{0_1}$ Borromean-linked in the
 exceptional divisor.  The up/down flavour arises from the

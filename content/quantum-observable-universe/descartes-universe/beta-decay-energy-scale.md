@@ -44,6 +44,12 @@ $$
    \approx  8.131 \times \mathfrak{m}_{e}.
 $$
 
+$\mathbf{E}_0$ is the **time scale** (clock) of the theory: it converts
+dimensionless crossing-number differences $\Delta\mathrm{net}$ to
+physical energy differences (MeV). This complements $\mathfrak{m}_e$
+(ruler), which converts dimensionless mass ratios to MeV
+([mass formula validation](#rem:mass-formula-validation)).
+
 Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
 net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to
 keep $\mathbf{E}_0 > 0$.

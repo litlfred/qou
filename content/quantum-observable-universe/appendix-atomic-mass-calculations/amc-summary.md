@@ -28,7 +28,7 @@ $q$-predictions from external inputs:
 | | transfer matrix $T(c,d)$ | Hecke algebra crossing convention |
 | | Skein polynomials $P_p(q)$, $P_n(q)$ | transfer matrix chain |
 | | certificate evaluations (tr\_alt, net, $F_{\mathrm{Pauli}}$) | hecke-engine |
-| | mass ratio $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | definitional |
+| | mass ratio $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | definitional (see note) |
 | **From CODATA/AME2020** | $m_e = 0.511$ MeV | absolute MeV scale |
 | | $\mathfrak{m}_\mathfrak{p}$, $\mathfrak{m}_\mathfrak{n}$ | nucleon masses (used directly) |
 | | $B/A$ | binding energy per nucleon |
@@ -37,7 +37,21 @@ $q$-predictions from external inputs:
 | | half-life ratios | $\log_q(ft)$ spectroscopy |
 
 The critical open problem is computing $B/A$ purely from $q$ without
-importing AME2020 values. The hecke-engine certificate polynomial
+importing AME2020 values.
+
+**Note on the mass ratio formula.** The identity
+$m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ equates the physical
+mass ratio (left) with the dimensionless figure-eight knot mass
+(right). This is self-consistent: it defines the electron mass as
+the dimensionless unit ($m_e = 1$), so
+$m_\mu = \mathrm{Vol}(4_1)/\hbar_q^2 \approx 206.8$.
+The trefoil mass $\mathfrak{m}(\tau(2,3)) = \mathrm{Li}_2(q^{-2})/\hbar_q^2$
+([topological mass examples](#ex:topological-mass-trefoil)) is a
+separate topological quantity; the ratio
+$\mathrm{Vol}(4_1)/\mathrm{Li}_2(q^{-2}) \approx 1.85$ is the
+volume ratio, not the mass ratio.
+
+The hecke-engine certificate polynomial
 evaluations (net, tr\_alt, $F_{\mathrm{Pauli}}$) encode crossing
 structure but do not directly map to $B/A$: net values span $\sim$50
 orders of magnitude across the 47 existing certificates while $B/A$
