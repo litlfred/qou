@@ -264,6 +264,8 @@ export default chapter({
       blocks: [
         "borromean-baryon",
         "borromean-baryon-interpretation",
+        "typed-crossing-operator",
+        "nucleon-hecke-element",
         "hadron-proton-example",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",
