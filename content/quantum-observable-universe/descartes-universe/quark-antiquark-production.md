@@ -1,14 +1,14 @@
-A **quark--antiquark production** is a Breit--Wheeler pair creation
-([pair production](#def:breit-wheeler-pair-production)) in which
-the colored photon's Hopf link content acts as the
-**quark creation operator**, transmuting the leptonic trefoil
-channel into a hadronic channel.
+A **quark--antiquark production** is the full chain
+$\gamma\gamma \to q\bar{q}$.  Here is the mechanism, step by step,
+with no gap between photon pair and quark output.
 
-**Colored photon pair.**
+**Step 0: two colored photons collide.**
 Each photon is the Hecke algebra element
 $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 with independent color weights $\varphi_0, \varphi_1$
 ([pair production](#def:breit-wheeler-pair-production)).
+
+**Step 1: expand the product $\gamma_1 \cdot \gamma_2$.**
 Given two colored photons
 $\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 and

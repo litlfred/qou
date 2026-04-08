@@ -1,42 +1,45 @@
-A [meson](#def:categorical-meson) contains two quarks ($q\bar{q}$).
-Adding a third quark and confining all three via the Borromean
-braid $\mathcal{B}_3$ produces a [proton](#def:categorical-proton).
+A [proton](#def:categorical-proton) is **not** formed by adding a
+quark to a [meson](#def:categorical-meson).  A meson is a
+quark--antiquark pair ($q\bar{q}$, baryon number $B = 0$); a single
+quark has $B = 1/3$.  Their sum $q\bar{q} + q$ has $B = 1/3$, not
+$B = 1$ as required for a baryon.  The antiquark inside the meson
+cannot spontaneously convert into a quark — baryon number is
+conserved.
 
-## Meson + quark $\to$ proton
+## Three pair productions $\to$ proton
 
-Take the meson $\mathfrak{M}_+ = T_{01} \cdot \mathcal{L}_H \cdot T_{10}$
-(a $\mathfrak{u}\bar{\mathfrak{d}}$ pair) and a third up quark
-$\mathfrak{u} = T_{01}$ from an independent
-[quark--antiquark production](#def:quark-antiquark-production).
-The [Borromean braid](#conj:borromean-quark)
-$\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ confines the three
-color lines:
+The proton requires three quarks ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$)
+with no antiquarks.  These come from three independent
+[quark--antiquark productions](#def:quark-antiquark-production),
+each of which creates a $q\bar{q}$ pair from colliding colored
+photons:
+
+$$
+  \gamma\gamma \xrightarrow{L_+}
+  \mathfrak{u}_1 + \bar{\mathfrak{u}}_1
+  \qquad
+  \gamma\gamma \xrightarrow{L_+}
+  \mathfrak{u}_2 + \bar{\mathfrak{u}}_2
+  \qquad
+  \gamma\gamma \xrightarrow{L_-}
+  \mathfrak{d}_3 + \bar{\mathfrak{d}}_3
+$$
+
+From these six particles, take three quarks
+($\mathfrak{u}_1$, $\mathfrak{u}_2$, $\mathfrak{d}_3$)
+and confine them via the [Borromean braid](#conj:borromean-quark)
+$\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$:
 
 $$
   \mathfrak{p}
   = 
   \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})
-  = 
-  \mathfrak{M}_+  \cdot  \mathcal{B}_3
 $$
 
-In untyped crossings, $\mathfrak{M}_+ \cdot \mathcal{B}_3$ yields:
-
-$$
-  \mathrm{NF}(\mathfrak{M}_+ \cdot \mathcal{B}_3)
-  = 
-  -0.042\nu
-  +  0.001 H^0
-  +  0.200 H^1
-  +  1.040 L_+
-  +  0.089 L_-
-  +  0.218 e^-
-$$
-
-with $\mathrm{net} = +1.506$.  The Borromean factor
-$\mathcal{B}_3$ contributes only $\sim 1\%$ to the net
-(B₃ alone has $\mathrm{net} = +1.000$) but is essential for
-three-strand confinement.
+The three antiquarks ($\bar{\mathfrak{u}}_1$, $\bar{\mathfrak{u}}_2$,
+$\bar{\mathfrak{d}}_3$) either annihilate back to photons or form
+an antiproton $\bar{\mathfrak{p}}$.  Total baryon number is conserved:
+$3 \times (1/3 - 1/3) = 0$ in, $1 + (-1) = 0$ out.
 
 ## Typed crossings: the physical proton and neutron
 

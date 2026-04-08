@@ -4,10 +4,10 @@ export default remark({
   interprets: "def:categorical-proton",
   label: "rem:meson-to-proton-via-borromean",
   title:
-    "From meson to proton: Borromean composition and the energy scale $\\mathbf{E}_0$",
+    "Proton formation: three pair productions and the energy scale $\\mathbf{E}_0$",
   tags: [
     "proton",
-    "meson",
+    "baryon-number",
     "borromean",
     "energy-scale",
     "typed-crossings",
@@ -15,10 +15,11 @@ export default remark({
     "formation-chain",
     "hecke-algebra",
     "computational-witness",
+    "pair-production",
   ],
   uses: [
     "def:categorical-proton",
-    "def:categorical-meson",
+    "def:quark-antiquark-production",
     "conj:borromean-quark",
     "rem:beta-decay-energy-scale",
   ],
