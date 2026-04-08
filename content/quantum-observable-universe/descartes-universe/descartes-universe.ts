@@ -214,6 +214,7 @@ export default chapter({
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
         "ground-state-ordering",
+        "transfer-matrix-identities",
         "neutron-qvalue-symbolic",
         "beta-decay-interpretation",
         "nucleon-nf-observability",
