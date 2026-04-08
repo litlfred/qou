@@ -67,18 +67,18 @@ and far-commutativity relations), each nucleon reduces to exactly
 $$
   \mathfrak{N}
   = 
-  c_\nu\mathbf{1}
-  + c_{H^0}\sigma_0
-  + c_{H^1}\sigma_1
+  c_\gamma\mathbf{1}
+  + c_{\sigma_0}\sigma_0
+  + c_{\sigma_1}\sigma_1
   + c_{L_+}\sigma_0\sigma_1
   + c_{L_-}\sigma_1\sigma_0
   + c_{e^-}\sigma_0\sigma_1\sigma_0
 $$
 
 where the coefficients $c_\bullet \in \mathbb{Z}[q, q^{-1}]$
-encode the particle content of the nucleon: the neutrino channel
-$\nu$ ($\mathbf{1}$), virtual Hopf crossings $H^0, H^1$
-($\sigma_0, \sigma_1$), Hopf links $L_+, L_-$
+encode the particle content of the nucleon: the photon channel
+$\gamma$ ($\mathbf{1}$), virtual crossings $\sigma_0, \sigma_1$,
+Hopf links $L_+, L_-$
 ($\sigma_0\sigma_1, \sigma_1\sigma_0$), and trefoil/electron
 $e^-$ ($\sigma_0\sigma_1\sigma_0$).
 

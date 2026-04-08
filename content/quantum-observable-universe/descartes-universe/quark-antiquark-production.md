@@ -21,9 +21,9 @@ $$
   = 
   (1 + \varphi_0\psi_0 + \varphi_1\psi_1)\gamma
   + 
-  (\varphi_0 + \psi_0 + \varphi_0\psi_0h)H^0
+  (\varphi_0 + \psi_0 + \varphi_0\psi_0h)\sigma_0
   + 
-  (\varphi_1 + \psi_1 + \varphi_1\psi_1h)H^1
+  (\varphi_1 + \psi_1 + \varphi_1\psi_1h)\sigma_1
   + 
   \varphi_0\psi_1L_+
   + 
@@ -113,7 +113,7 @@ $$
 
 $$
   = 
-  H^1
+  \sigma_1
   + 
   hL_+
   + 
@@ -126,16 +126,16 @@ At $q_0 \approx 1.110$ ($h \approx 0.209$):
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
-| $\sigma_1$ | $H^1$ | $1.000$ |
+| $\sigma_1$ | $\sigma_1$ | $1.000$ |
 | $\sigma_0\sigma_1$ | $L_+$ | $h \approx 0.209$ |
 | $\sigma_1\sigma_0$ | $L_-$ | $h \approx 0.209$ |
 | $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $h^2 \approx 0.044$ |
 
 The Hopf link operator $L_+$ transmutes the trefoil electron into
-a virtual crossing $H^1$ plus residual Hopf and trefoil content.
+a virtual crossing $\sigma_1$ plus residual Hopf and trefoil content.
 The $e^-$ coefficient $h^2$ is the **residual electron** —
 physically, the fraction of the original lepton that survives the
-quark creation. The dominant output $H^1 = \sigma_1$ is the
+quark creation. The dominant output $\sigma_1$ is the
 hadronic crossing that becomes the quark
 ([up quark](#def:up-quark)).  The mirror operator $L_-$ creates
 an antiquark ($\bar{\mathfrak{d}}$) from the positron channel.

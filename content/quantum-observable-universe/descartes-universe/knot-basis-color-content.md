@@ -1,5 +1,5 @@
 The knot basis for $H^*(\Sigma_4)$ identifies the identity
-$\mathbf{1} \in H_3(q)$ with the generator of $H^0$. An
+$\mathbf{1} \in H_3(q)$ with the generator of $H^0(\Sigma_4)$. An
 element of $H_3(q)$ of the form
 
 $$

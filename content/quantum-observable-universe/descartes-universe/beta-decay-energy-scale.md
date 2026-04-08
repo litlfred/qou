@@ -55,12 +55,12 @@ sums:
 
 | | NF$_+$ | NF$_-$ | Net |
 |:---:|---:|---:|---:|
-| **Neutron** | $+1.0664$ ($H^0, H^1, L_-$) | $-0.2555$ ($\nu, L_+, e^-$) | $+0.8108$ |
-| **Proton** | $+1.1420$ ($H^0, H^1, L_+, L_-$) | $-0.1429$ ($\nu, e^-$) | $+0.9991$ |
+| **Neutron** | $+1.0664$ ($\sigma_0, \sigma_1, L_-$) | $-0.2555$ ($\gamma, L_+, e^-$) | $+0.8108$ |
+| **Proton** | $+1.1420$ ($\sigma_0, \sigma_1, L_+, L_-$) | $-0.1429$ ($\gamma, e^-$) | $+0.9991$ |
 | **$\Delta$** | $-0.0756$ | $-0.1127$ | $-0.1883$ |
 
-The neutron has **three** negative terms ($\nu, L_+, e^-$) while
-the proton has only **two** ($\nu, e^-$).  The $L_+$ sign flip is
+The neutron has **three** negative terms ($\gamma, L_+, e^-$) while
+the proton has only **two** ($\gamma, e^-$).  The $L_+$ sign flip is
 the typed-crossing effect: the $d$-$d$ crossing in neutron
 $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ shifts the Hopf link
 coefficient below zero.
@@ -69,7 +69,7 @@ coefficient below zero.
 
 Terms of word length $\ell \geq 2$ (Hopf links $L_\pm$ and trefoil
 $e^-$) are topologically non-trivial and therefore **observable**.
-Terms $\ell < 2$ ($\nu, H^0, H^1$) are virtual.
+Terms $\ell < 2$ ($\gamma, \sigma_0, \sigma_1$) are virtual.
 
 | | Observable ($\ell \geq 2$) | Virtual ($\ell < 2$) |
 |:---:|---:|---:|
@@ -103,9 +103,9 @@ The budget is:
 
 | Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathbf{E}_0$ (MeV) |
 |:---:|:---:|:---:|:---:|---:|---:|
-| $\nu$ | $\mathbf{1}$ | unknot ($0_1$) | $0$ | $-0.10205$ | $+0.4240$ |
-| $H^0$ | $\sigma_0$ | virtual | $1$ | $+0.01240$ | $-0.0515$ |
-| $H^1$ | $\sigma_1$ | virtual | $1$ | $+0.01143$ | $-0.0475$ |
+| $\gamma$ | $\mathbf{1}$ | photon | $0$ | $-0.10205$ | $+0.4240$ |
+| $\sigma_0$ | $\sigma_0$ | virtual | $1$ | $+0.01240$ | $-0.0515$ |
+| $\sigma_1$ | $\sigma_1$ | virtual | $1$ | $+0.01143$ | $-0.0475$ |
 | $L_+$ | $\sigma_0\sigma_1$ | Hopf link | $2$ | $-0.10899$ | $+0.4529$ |
 | $L_-$ | $\sigma_1\sigma_0$ | Hopf link | $2$ | $-0.00010$ | $+0.0004$ |
 | $e^-$ | $\sigma_0\sigma_1\sigma_0$ | trefoil ($3_1$) | $3$ | $-0.00098$ | $+0.0041$ |
@@ -123,16 +123,16 @@ $\Delta(L_+) = -0.1090$, giving $+0.453 \text{MeV}$ — larger
 than the $\nu$ debt ($+0.424 \text{MeV}$).  This replaces the
 $\sigma_1$ dominance of the untyped computation.
 
-The $\nu$ debt ($+0.424 \text{MeV}$) and $L_+$ shift
+The $\gamma$ debt ($+0.424 \text{MeV}$) and $L_+$ shift
 ($+0.453 \text{MeV}$) together account for
 $0.877 \text{MeV}$ — more than $Q_\beta$.  The small
-virtual terms ($H^0, H^1$) absorb the excess:
+virtual terms ($\sigma_0, \sigma_1$) absorb the excess:
 
 $$
   \underbrace{+0.453}_{L_+}
-  \underbrace{+0.424}_{\nu\text{ debt}}
-  \underbrace{-0.052}_{H^0}
-  \underbrace{-0.047}_{H^1}
+  \underbrace{+0.424}_{\gamma\text{ debt}}
+  \underbrace{-0.052}_{\sigma_0}
+  \underbrace{-0.047}_{\sigma_1}
   \underbrace{+0.004}_{\text{other}}
   = 
   +0.782 \text{MeV}.
@@ -149,10 +149,10 @@ releases $Q_\beta = 0.782 \text{MeV}$ because:
    ($-0.010$) while the proton's is positive ($+0.099$).  This
    $\Delta L_+ = -0.109$ is the dominant energy source.
 
-2. The neutron carries a larger $\nu$ debt than the proton
-   ($\Delta\nu = -0.102$), contributing $+0.424 \text{MeV}$.
+2. The neutron carries a larger $\gamma$ debt than the proton
+   ($\Delta\gamma = -0.102$), contributing $+0.424 \text{MeV}$.
 
-3. The virtual terms ($H^0, H^1$) contribute small negative
+3. The virtual terms ($\sigma_0, \sigma_1$) contribute small negative
    corrections ($-0.099 \text{MeV}$ total).
 
 4. The $e^-$ channel contributes only $+0.004 \text{MeV}$ —

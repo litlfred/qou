@@ -24,7 +24,7 @@ Applying the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$:
 
 $$
   \mathrm{NF}(\gamma\gamma)
-  =  (q - q^{-1})H^0 + \gamma
+  =  (q - q^{-1})\sigma_0 + \gamma
 $$
 
 with $\mathrm{net}(\gamma\gamma) = 1 + (q - q^{-1}) \approx 1.209$.
@@ -78,10 +78,10 @@ $$
   \underbrace{(1 + \varphi_0\psi_0 + \varphi_1\psi_1)}_{\gamma}
   \mathbf{1}
   + 
-  \underbrace{(\varphi_0 + \psi_0 + \varphi_0\psi_0h)}_{H^0}
+  \underbrace{(\varphi_0 + \psi_0 + \varphi_0\psi_0h)}_{\sigma_0}
   \sigma_0
   + 
-  \underbrace{(\varphi_1 + \psi_1 + \varphi_1\psi_1h)}_{H^1}
+  \underbrace{(\varphi_1 + \psi_1 + \varphi_1\psi_1h)}_{\sigma_1}
   \sigma_1
   + 
   \underbrace{\varphi_0\psi_1}_{L_+}
@@ -114,8 +114,8 @@ Set $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$
 (both photons carry equal color in both generators):
 
 - $\gamma$: $1 + \phi^2 + \phi^2 = 1 + 2\phi^2$
-- $H^0$: $\phi + \phi + \phi^2 h = 2\phi + \phi^2 h$
-- $H^1$: $\phi + \phi + \phi^2 h = 2\phi + \phi^2 h$
+- $\sigma_0$: $\phi + \phi + \phi^2 h = 2\phi + \phi^2 h$
+- $\sigma_1$: $\phi + \phi + \phi^2 h = 2\phi + \phi^2 h$
 - $L_+$: $\phi \cdot \phi = \phi^2$
 - $L_-$: $\phi \cdot \phi = \phi^2$
 
@@ -129,8 +129,8 @@ Set $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$
 (each photon polarized along one generator only):
 
 - $\gamma$: $1 + 0 + 0 = 1$
-- $H^0$: $s + 0 + 0 = s$
-- $H^1$: $0 + s + 0 = s$
+- $\sigma_0$: $s + 0 + 0 = s$
+- $\sigma_1$: $0 + s + 0 = s$
 - $L_+$: $s \cdot s = s^2$
 - $L_-$: $0 \cdot 0 = 0$
 

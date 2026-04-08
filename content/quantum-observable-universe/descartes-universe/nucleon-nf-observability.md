@@ -10,9 +10,9 @@ corresponding knot/link is topologically non-trivial.
 
 | Particle | Word | Knot/Link | $\ell$ | Neutron $\mathfrak{n}$ | Proton $\mathfrak{p}$ | Observable? |
 |:---:|:---:|:---:|:---:|---:|---:|:---:|
-| $\nu$ | $\mathbf{1}$ | unknot ($0_1$) | $0$ | $-0.201704$ | $-0.099658$ | No (unknot) |
-| $H^0$ | $\sigma_0$ | virtual | $1$ | $+0.048130$ | $+0.035729$ | No (virtual) |
-| $H^1$ | $\sigma_1$ | virtual | $1$ | $+1.008995$ | $+0.997570$ | No (virtual) |
+| $\gamma$ | $\mathbf{1}$ | photon | $0$ | $-0.201704$ | $-0.099658$ | No (identity) |
+| $\sigma_0$ | $\sigma_0$ | virtual | $1$ | $+0.048130$ | $+0.035729$ | No (virtual) |
+| $\sigma_1$ | $\sigma_1$ | virtual | $1$ | $+1.008995$ | $+0.997570$ | No (virtual) |
 | $L_+$ | $\sigma_0\sigma_1$ | Hopf link | $2$ | $-0.009641$ | $+0.099354$ | Yes (Hopf link) |
 | $L_-$ | $\sigma_1\sigma_0$ | Hopf link | $2$ | $+0.009237$ | $+0.009337$ | Yes (Hopf link) |
 | $e^-$ | $\sigma_0\sigma_1\sigma_0$ | trefoil ($3_1$) | $3$ | $-0.044184$ | $-0.043208$ | Yes (trefoil) |
@@ -23,9 +23,9 @@ Numerical values at $q_0 \approx 1.1100$ (typed crossings).
 
 With typed crossings, the sign patterns are:
 
-- **Neutron**: $[-, +, +, -, +, -]$ — four terms negative ($\nu, L_+, e^-$)
+- **Neutron**: $[-, +, +, -, +, -]$ — four terms negative ($\gamma, L_+, e^-$)
   and **$L_+$ flips** from positive (untyped) to negative.
-- **Proton**: $[-, +, +, +, +, -]$ — two terms negative ($\nu, e^-$),
+- **Proton**: $[-, +, +, +, +, -]$ — two terms negative ($\gamma, e^-$),
   unchanged from untyped.
 
 The neutron's $L_+$ sign flip is the key effect of typed crossings:
@@ -37,14 +37,14 @@ shifts the $\sigma_0\sigma_1$ coefficient below zero.
 A braid word of length $\ell$ is **observable** when the
 corresponding knot or link is topologically non-trivial:
 
-- **$\ell = 0$**: the identity $\mathbf{1}$ maps to the unknot ($0_1$).
-  Topologically trivial — passes through everything undetected.
-  This is the neutrino channel $\nu$ ([neutrino knot](#def:neutrino-knot)).
+- **$\ell = 0$**: the identity $\mathbf{1}$ maps to the photon $\gamma$.
+  Topologically trivial — carries no knot content.
+  This is the photon channel $\gamma$.
 
 - **$\ell = 1$**: a single crossing $\sigma_i$ can be undone by
   a single Reidemeister-I move.  It is a **virtual crossing** —
-  topologically removable.  The terms $H^0 = \sigma_0$ and
-  $H^1 = \sigma_1$ are virtual.
+  topologically removable.  The terms $\sigma_0$ and
+  $\sigma_1$ are virtual.
 
 - **$\ell = 2$**: the products $\sigma_0\sigma_1$ and
   $\sigma_1\sigma_0$ are Hopf links — two linked rings that
@@ -61,11 +61,11 @@ The positive terms split into two classes:
 
 |  | Observable ($\ell \geq 2$) | Virtual ($\ell < 2$) |
 |:---:|---:|---:|
-| **Neutron** | $+0.009$ ($L_-$ only) | $+1.057$ ($H^0, H^1$) |
-| **Proton** | $+0.109$ ($L_+, L_-$) | $+1.033$ ($H^0, H^1$) |
+| **Neutron** | $+0.009$ ($L_-$ only) | $+1.057$ ($\sigma_0, \sigma_1$) |
+| **Proton** | $+0.109$ ($L_+, L_-$) | $+1.033$ ($\sigma_0, \sigma_1$) |
 
 Both nucleons are **dominated by virtual content**: the $\sigma_1$
-term ($H^1$) carries $\sim 94\%$ of the total positive amplitude.
+term carries $\sim 94\%$ of the total positive amplitude.
 This term has word length $\ell = 1$ — a single crossing that is
 topologically trivial.  It cannot be observed as a free particle.
 
