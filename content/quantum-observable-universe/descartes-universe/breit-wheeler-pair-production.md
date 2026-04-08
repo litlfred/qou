@@ -41,15 +41,20 @@ $$
   \gamma
   = 
   \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
+  + \varphi_{01}\sigma_0\sigma_1
 $$
 
-where $\varphi_0, \varphi_1 \in \mathbb{R}$ are independent
+where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$ are independent
 **color weights**.  The generator $\sigma_0$ acts on the
-$(\sigma, r)$ crossing plane and $\sigma_1$ on the $(r, g)$
-crossing plane — two orthogonal polarization modes.
+$(\sigma, r)$ crossing plane, $\sigma_1$ on the $(r, g)$
+crossing plane, and $\sigma_0\sigma_1 = L_+$ is the Hopf link
+dressing.  The derivation below uses the 3-term specialization
+$\varphi_{01} = 0$; see
+[photon knot operations](#rem:photon-knot-operations)
+for the general 4-term formula.
 
 **Step-by-step derivation of the pair NF.**
-Given two colored photons
+Given two colored photons (3-term specialization)
 $\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 and
 $\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1$,

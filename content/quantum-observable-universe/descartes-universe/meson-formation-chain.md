@@ -3,7 +3,8 @@ formation chain, each step formally defined:
 
 **Step 1: Pair production** ([Breit--Wheeler](#def:breit-wheeler-pair-production)).
 Two colored photons
-$\gamma_i = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
+$\gamma_i = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
++ \varphi_{01}\sigma_0\sigma_1$
 fuse into an electron--positron pair:
 
 $$

@@ -5,18 +5,24 @@ element of $H_3(q)$ of the form
 $$
   \gamma
   = 
-  \mathbf{1} + \varphi_0 \sigma_0 + \varphi_1 \sigma_1,
+  \mathbf{1} + \varphi_0 \sigma_0 + \varphi_1 \sigma_1
+  + \varphi_{01} \sigma_0\sigma_1,
   \qquad
-  \varphi_0, \varphi_1 \in R,
+  \varphi_0, \varphi_1, \varphi_{01} \in R,
 $$
 
 where $R$ is the ground ring $\mathbb{Z}[q^{\pm 1}]$ (or any
 commutative ring over which the Iwahori--Hecke algebra is defined),
-is called a **photon with color content** $(\varphi_0, \varphi_1)$.
+is called a **photon with color content**
+$(\varphi_0, \varphi_1, \varphi_{01})$.
 The identity $\mathbf{1}$ is the photon proper; the generators
-$\sigma_0, \sigma_1$ contribute additive color dressing.
+$\sigma_0, \sigma_1$ contribute additive color dressing; the Hopf link
+term $\varphi_{01}\sigma_0\sigma_1$ contributes Hopf link dressing.
+Setting $\varphi_{01} = 0$ recovers the 3-term specialization used in
+the derivations below.
 
-Given two such elements
+Given two such elements (in the 3-term specialization
+$\varphi_{01} = \psi_{01} = 0$)
 
 $$
   \gamma_1 = \mathbf{1} + \varphi_0 \sigma_0 + \varphi_1 \sigma_1,
