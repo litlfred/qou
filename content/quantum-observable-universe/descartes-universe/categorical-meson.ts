@@ -10,8 +10,7 @@ export default definition({
   },
   uses: [
     "def:hadron",
-    "def:up-quark",
-    "def:down-quark",
+    "def:quark-antiquark-production",
     "sec:knot-notation-convention",
   ],
 });

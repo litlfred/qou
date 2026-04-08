@@ -159,6 +159,9 @@ export default chapter({
         "linking-relations-table",
         // q-deformed kinematics (definitions in braids-and-knots; applied here)
         "q-value-transition",
+        // Pair production and quark-antiquark creation
+        "breit-wheeler-pair-production",
+        "quark-antiquark-production",
         // Meson, proton, neutron, stable nucleus
         "categorical-meson",
         "categorical-proton",

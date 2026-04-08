@@ -1,5 +1,9 @@
 A **meson** is a hadron ([hadron](#def:hadron)) of valence $2$:
 a quark–antiquark pair bound by the Hopf link $\mathcal{L}_H$.
+The meson arises when two independent
+[quark–antiquark productions](#def:quark-antiquark-production)
+each create a $q\bar{q}$ pair, and a quark from one production
+binds with an antiquark from the other:
 
 $$
   \mathfrak{M}
