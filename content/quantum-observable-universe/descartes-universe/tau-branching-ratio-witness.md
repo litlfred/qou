@@ -6,11 +6,11 @@ compares with the PDG experimental branching ratio.
 
 The $T_{3,5} = (\sigma_0 \sigma_1)^5$ weak vertex in $H_3(q)$
 reduces (38 Hecke + 18 Yang–Baxter steps) to **6 NF terms**
-in the standard basis $\{\nu, H^0, H^1, L_+, L_-, e^-\}$:
+in the standard basis $\{\gamma, H^0, H^1, L_+, L_-, e^-\}$:
 
 | Basis element | Word | Coefficient | Fraction |
 |:---:|:---:|:---:|:---:|
-| $\nu$ ($\mathbf{1}$) | $()$ | $+0.0893$ | $3.9\%$ |
+| $\gamma$ ($\mathbf{1}$) | $()$ | $+0.0893$ | $3.9\%$ |
 | $H^0$ ($\sigma_0$) | $(0)$ | $+0.2369$ | $10.2\%$ |
 | $H^1$ ($\sigma_1$) | $(1)$ | $+0.2369$ | $10.2\%$ |
 | $L_+$ ($\sigma_0\sigma_1$) | $(0,1)$ | $+0.1388$ | $6.0\%$ |

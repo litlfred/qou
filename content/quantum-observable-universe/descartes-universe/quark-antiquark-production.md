@@ -19,7 +19,7 @@ their product NF in $H_3(q)$ is
 $$
   \mathrm{NF}(\gamma_1 \cdot \gamma_2)
   = 
-  (1 + \varphi_0\psi_0 + \varphi_1\psi_1)\nu
+  (1 + \varphi_0\psi_0 + \varphi_1\psi_1)\gamma
   + 
   (\varphi_0 + \psi_0 + \varphi_0\psi_0h)H^0
   + 

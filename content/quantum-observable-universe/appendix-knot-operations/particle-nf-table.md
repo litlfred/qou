@@ -7,11 +7,11 @@ The **basis** of $H_3(q)$ in normal form is
 $\{\ \mathbf{1},\ \sigma_0,\ \sigma_1,\ \sigma_0\sigma_1,\
 \sigma_1\sigma_0,\ \sigma_0\sigma_1\sigma_0\ \}$,
 which correspond to the particle content
-$\{\ \nu,\ H^0,\ H^1,\ L_+,\ L_-,\ e^-\ \}$.
+$\{\ \gamma,\ H^0,\ H^1,\ L_+,\ L_-,\ e^-\ \}$.
 
 **Table K.1: Fundamental particle NF decomposition.**
 
-| Particle | Knot | Hecke word | $\nu$ | $H^0$ | $H^1$ | $L_+$ | $L_-$ | $e^-$ | net |
+| Particle | Knot | Hecke word | $\gamma$ | $H^0$ | $H^1$ | $L_+$ | $L_-$ | $e^-$ | net |
 |----------|------|-----------|------:|------:|------:|------:|------:|------:|----:|
 | $\nu$ | unknot $0_1$ | $\mathbf{1}$ | $+1$ | — | — | — | — | — | $+1.000$ |
 | $\gamma$ | point $\varnothing$ | $\mathbf{1}$ | $+1$ | — | — | — | — | — | $+1.000$ |
@@ -45,7 +45,7 @@ own knot type.
 
 2. **Down quark** $\mathfrak{d} = \sigma_0^{-1} = \sigma_0 -
    (q - q^{-1})\mathbf{1}$.  The negative crossing orientation
-   bleeds $-\mathrm{HA} \approx -0.209$ into the $\nu$ (identity)
+   bleeds $-\mathrm{HA} \approx -0.209$ into the $\gamma$ (identity)
    channel.  This leakage is the origin of the $\mathfrak{d}$--$\mathfrak{u}$
    mass splitting.
 
@@ -62,7 +62,7 @@ own knot type.
 
 5. **Hopf self-link** $\sigma_i^2 = \mathrm{HA}\cdot\sigma_i +
    \mathbf{1}$.  This is the Hecke relation itself — squaring
-   any crossing yields the identity (neutrino) plus a
+   any crossing yields the identity (photon) plus a
    HA-weighted crossing.
 
 6. **Trefoil vs unknot test.**  Using full trefoil words
