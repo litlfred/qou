@@ -9,6 +9,33 @@ where $\mathfrak{m}_{\mathfrak{p}} \approx 938.272$ MeV, $\mathfrak{m}_{\mathfra
 $\mathfrak{m}_e \approx 0.511$ MeV (rounded CODATA 2022). The observed mass $M_o$ uses
 full-precision constants. Both use identical $B/A$ from AME2020.
 
+## Source classification
+
+The mass computation $M_q$ recombines *observed constants* --- it does not
+predict mass from $q$ alone. The following table distinguishes genuine
+$q$-predictions from external inputs:
+
+| Category | Quantity | Source |
+|:---------|:---------|:-------|
+| **From $q$ alone** | $\hbar_q$, $q_0$, $\mathrm{HA}$ | substrate parameter chain |
+| | transfer matrix $T(c,d)$ | Hecke algebra crossing convention |
+| | Skein polynomials $P_p(q)$, $P_n(q)$ | transfer matrix chain |
+| | certificate evaluations (tr\_alt, net, $F_{\mathrm{Pauli}}$) | hecke-engine |
+| | mass ratio $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | definitional |
+| **From CODATA/AME2020** | $m_e = 0.511$ MeV | absolute MeV scale |
+| | $\mathfrak{m}_\mathfrak{p}$, $\mathfrak{m}_\mathfrak{n}$ | nucleon masses (used directly) |
+| | $B/A$ | binding energy per nucleon |
+| **Genuine predictions** | mass *ratios* | e.g. $m_\mu/m_e$ from Vol$(4_1)/\hbar_q^2$ |
+| | $Q$-values (mass *differences*) | $\Delta\mathrm{net} \times E_0$ |
+| | half-life ratios | $\log_q(ft)$ spectroscopy |
+
+The critical open problem is computing $B/A$ purely from $q$ without
+importing AME2020 values. The hecke-engine certificate polynomial
+evaluations (net, tr\_alt, $F_{\mathrm{Pauli}}$) encode crossing
+structure but do not directly map to $B/A$: net values span $\sim$50
+orders of magnitude across the 47 existing certificates while $B/A$
+varies only between 0 and 9 MeV.
+
 ## Natural Elements ($Z = 1$--$92$)
 
 | $Z$ | Element | $A$ | $M_q$ (MeV) | $M_o$ (MeV) | $\lvert\Delta\rvert$ (MeV) | $\delta$ (\%) |

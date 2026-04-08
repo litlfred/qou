@@ -525,6 +525,14 @@ w.add_caveat(
     "and nn crossing matrices are unimodular (det = −1); the pn mixed "
     "crossing ½(σ+σ⁻¹) is an algebraic average, not a group element."
 )
+w.add_caveat(
+    "SOURCE CLASSIFICATION: The mass M(Z,N) = Z·m_p + N·m_n + Z·m_e − B "
+    "uses CODATA m_p, m_n and AME2020 B/A as direct inputs. This is NOT "
+    "a prediction from q alone. Genuine q-predictions are: (i) mass ratios "
+    "(m_μ/m_e), (ii) Q-values (mass differences from Δnet × E₀), "
+    "(iii) half-life ratios via log_q(ft). See certificate-to-mass.py "
+    "and isotope-mass-table.py for detailed validation."
+)
 
 witness_path = w.save()
 print(f"✓ Witness: {witness_path}")
