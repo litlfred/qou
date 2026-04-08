@@ -25,6 +25,37 @@ where:
 - the $S_3$ permutation symmetry of the coral tubes ensures
   the definition is independent of the color assignment.
 
+**Normal form (typed crossings).**
+The quark flavor determines the crossing eigenvalue in $H_3(q)$:
+$\mathfrak{u}$-type crossings carry eigenvalue $+q$ (positive
+orientation), while $\mathfrak{d}$-type crossings carry a
+$-H_A \cdot \mathbf{1}$ shift (where $H_A = q - q^{-1}$) that
+reduces the net.  With typed crossings at $q_0 \approx 1.1100$,
+the proton NF in the Gröbner–Shirshov basis
+$\{\mathbf{1},\, \sigma_0,\, \sigma_1,\,
+\sigma_0\sigma_1,\, \sigma_1\sigma_0,\,
+\sigma_0\sigma_1\sigma_0\}$ is:
+
+| Basis | Particle | Coefficient |
+|:---:|:---:|---:|
+| $\mathbf{1}$ | $\nu$ | $-0.0997$ |
+| $\sigma_0$ | $H^0$ | $+0.0357$ |
+| $\sigma_1$ | $H^1$ | $+0.9976$ |
+| $\sigma_0\sigma_1$ | $L_+$ | $+0.0994$ |
+| $\sigma_1\sigma_0$ | $L_-$ | $+0.0093$ |
+| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $-0.0432$ |
+
+$$
+  \mathrm{net}(\mathfrak{p}) \;=\; +0.9991
+$$
+
+The dominant term is $H^1 \approx +0.998$, reflecting
+the single up-quark crossing on strand 1.  The small but
+nonzero $L_+$ and $L_-$ encode residual Hopf link content
+from $\mathcal{B}_3$.  The negative $\nu$ and $e^-$
+coefficients arise from the $-H_A$ shifts on the down-quark
+crossings.
+
 **Mass.**
 The proton mass comes from the hyperbolic volume of the
 Borromean link:

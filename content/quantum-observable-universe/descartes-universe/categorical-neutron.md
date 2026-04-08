@@ -9,6 +9,48 @@ $$
   \;\bowtie\; \mathcal{L}_H
 $$
 
+**Normal form (typed crossings).**
+The two down quarks introduce two $-H_A \cdot \mathbf{1}$ shifts
+(where $H_A = q - q^{-1}$), pulling the net below the proton's.
+At $q_0 \approx 1.1100$, the neutron NF is:
+
+| Basis | Particle | Coefficient |
+|:---:|:---:|---:|
+| $\mathbf{1}$ | $\nu$ | $-0.2017$ |
+| $\sigma_0$ | $H^0$ | $+0.0481$ |
+| $\sigma_1$ | $H^1$ | $+1.0090$ |
+| $\sigma_0\sigma_1$ | $L_+$ | $-0.0096$ |
+| $\sigma_1\sigma_0$ | $L_-$ | $+0.0092$ |
+| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $-0.0442$ |
+
+$$
+  \mathrm{net}(\mathfrak{n}) \;=\; +0.8108
+$$
+
+Compared to the proton ($\mathrm{net} = +0.9991$):
+the extra down quark drives $\nu$ more negative
+($-0.0997 \to -0.2017$) and flips $L_+$ from positive
+($+0.0994$) to negative ($-0.0096$).  The $H^1$ term
+stays near $+1$ in both, since both contain one up quark
+on strand 1.
+
+**Transition: proton $\to$ neutron.**
+The NF difference (coefficient by coefficient) gives the
+dimensionless beta decay transition
+([energy scale](#rem:beta-decay-energy-scale)):
+
+$$
+  \Delta\mathrm{net}(\mathfrak{n} - \mathfrak{p})
+  \;=\;
+  0.8108 - 0.9991
+  \;=\;
+  -0.1883
+$$
+
+The energy scale $\mathbf{E}_0 = Q_\beta / |\Delta\mathrm{net}|
+\approx 4.155$ MeV converts each coefficient difference to MeV
+([formation chain](#rem:meson-to-proton-via-borromean)).
+
 **Mass.**
 
 $$
