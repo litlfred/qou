@@ -7,16 +7,16 @@ The **basis** of $H_3(q)$ in normal form is
 $\{\ \mathbf{1},\ \sigma_0,\ \sigma_1,\ \sigma_0\sigma_1,\
 \sigma_1\sigma_0,\ \sigma_0\sigma_1\sigma_0\ \}$,
 which correspond to the particle content
-$\{\ \gamma,\ H^0,\ H^1,\ L_+,\ L_-,\ e^-\ \}$.
+$\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$.
 
 **Table K.1: Fundamental particle NF decomposition.**
 
-| Particle | Knot | Hecke word | $\gamma$ | $H^0$ | $H^1$ | $L_+$ | $L_-$ | $e^-$ | net |
+| Particle | Knot | Hecke word | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ | net |
 |----------|------|-----------|------:|------:|------:|------:|------:|------:|----:|
 | $\nu$ | unknot $0_1$ | $\mathbf{1}$ | $+1$ | — | — | — | — | — | $+1.000$ |
 | $\gamma$ | point $\varnothing$ | $\mathbf{1}$ | $+1$ | — | — | — | — | — | $+1.000$ |
-| $H^0$ | virtual | $\sigma_0$ | — | $+1$ | — | — | — | — | $+1.000$ |
-| $H^1$ | virtual | $\sigma_1$ | — | — | $+1$ | — | — | — | $+1.000$ |
+| $\sigma_0$ | virtual | $\sigma_0$ | — | $+1$ | — | — | — | — | $+1.000$ |
+| $\sigma_1$ | virtual | $\sigma_1$ | — | — | $+1$ | — | — | — | $+1.000$ |
 | $L_+$ (gluon) | Hopf $T(2,2)$ | $\sigma_0\sigma_1$ | — | — | — | $+1$ | — | — | $+1.000$ |
 | $L_-$ (gluon) | Hopf $T(2,2)$ | $\sigma_1\sigma_0$ | — | — | — | — | $+1$ | — | $+1.000$ |
 | $e^-$ | trefoil $3_1$ | $\sigma_0\sigma_1\sigma_0$ | — | — | — | — | — | $+1$ | $+1.000$ |
@@ -40,7 +40,7 @@ own knot type.
 
 1. **Up quark** $\mathfrak{u} = \sigma_0$ (positive crossing
    orientation within $\mathcal{B}_3$).  Same Hecke word as
-   $H^0$; the quark is distinguished by its Borromean
+   $\sigma_0$; the quark is distinguished by its Borromean
    environment, not its Hecke algebra element.
 
 2. **Down quark** $\mathfrak{d} = \sigma_0^{-1} = \sigma_0 -

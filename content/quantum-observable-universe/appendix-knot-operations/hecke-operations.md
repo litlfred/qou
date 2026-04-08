@@ -5,7 +5,7 @@ reduces to the six-element normal form basis via these rules.
 **Relation 1 (Hecke).**
 $\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$
 for each generator $\sigma_i$.  Squaring a crossing yields
-the identity (neutrino) plus a HA-weighted crossing.
+the identity (photon) plus a HA-weighted crossing.
 
 **Relation 2 (Yang--Baxter).**
 $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$.
@@ -22,15 +22,15 @@ Inverting a crossing subtracts HA from the identity channel.
 |-----------|------------|:----------:|------------------------|
 | $\sigma_0^2$ | $\mathbf{1} + \mathrm{HA}\cdot\sigma_0$ | $+1.209$ | Hopf self-link (Hecke relation) |
 | $\sigma_1^2$ | $\mathbf{1} + \mathrm{HA}\cdot\sigma_1$ | $+1.209$ | Hopf self-link (Hecke relation) |
-| $\sigma_0\sigma_1^2$ | $H^0 + \mathrm{HA}\cdot L_+$ | $+1.209$ | Crossing then self-link |
-| $\sigma_1\sigma_0^2$ | $H^1 + \mathrm{HA}\cdot L_-$ | $+1.209$ | Crossing then self-link |
-| $\sigma_0^2\sigma_1$ | $H^1 + \mathrm{HA}\cdot L_+$ | $+1.209$ | Self-link then crossing |
+| $\sigma_0\sigma_1^2$ | $\sigma_0 + \mathrm{HA}\cdot L_+$ | $+1.209$ | Crossing then self-link |
+| $\sigma_1\sigma_0^2$ | $\sigma_1 + \mathrm{HA}\cdot L_-$ | $+1.209$ | Crossing then self-link |
+| $\sigma_0^2\sigma_1$ | $\sigma_1 + \mathrm{HA}\cdot L_+$ | $+1.209$ | Self-link then crossing |
 | $\sigma_0\sigma_1\sigma_0\sigma_1$ | $L_- + \mathrm{HA}\cdot e^-$ | $+1.209$ | Hopf chain (4 crossings) |
 | $\sigma_1\sigma_0\sigma_1\sigma_0$ | $L_+ + \mathrm{HA}\cdot e^-$ | $+1.209$ | Hopf chain (4 crossings) |
-| $\sigma_0^{-1}$ | $-\mathrm{HA}\cdot\nu + H^0$ | $+0.791$ | Negative crossing (down quark) |
-| $\sigma_1^{-1}$ | $-\mathrm{HA}\cdot\nu + H^1$ | $+0.791$ | Negative crossing |
-| $\sigma_0^{-1}\sigma_1^{-1}$ | $+0.044\nu - 0.209H^0 - 0.209H^1 + L_+$ | $+0.626$ | Inverse Hopf link |
-| $\sigma_1^{-1}\sigma_0^{-1}$ | $+0.044\nu - 0.209H^0 - 0.209H^1 + L_-$ | $+0.626$ | Inverse Hopf link |
+| $\sigma_0^{-1}$ | $-\mathrm{HA}\cdot\gamma + \sigma_0$ | $+0.791$ | Negative crossing (down quark) |
+| $\sigma_1^{-1}$ | $-\mathrm{HA}\cdot\gamma + \sigma_1$ | $+0.791$ | Negative crossing |
+| $\sigma_0^{-1}\sigma_1^{-1}$ | $+0.044\gamma - 0.209\sigma_0 - 0.209\sigma_1 + L_+$ | $+0.626$ | Inverse Hopf link |
+| $\sigma_1^{-1}\sigma_0^{-1}$ | $+0.044\gamma - 0.209\sigma_0 - 0.209\sigma_1 + L_-$ | $+0.626$ | Inverse Hopf link |
 | $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ | (see $e^+$ in Table K.1) | $+0.451$ | Positron (mirror trefoil) |
 
 **Borromean operations** (confinement/gluon field):
@@ -44,7 +44,7 @@ Inverting a crossing subtracts HA from the identity channel.
 The Borromean braid $B_3$ has NF:
 
 $$
-  B_3 = +0.998\nu - 0.010H^0 + 0.009H^1
+  B_3 = +0.998\gamma - 0.010\sigma_0 + 0.009\sigma_1
         + 0.046L_+ - 0.044L_-
 $$
 
@@ -53,7 +53,7 @@ Their near-cancellation ($+0.046 - 0.044 = +0.002$) reflects
 the color neutrality of the baryon: the net gluon content is
 close to zero, consistent with a color singlet.
 
-The $\nu$ term $\approx +0.998$ shows that $B_3$ is
+The $\gamma$ term $\approx +0.998$ shows that $B_3$ is
 perturbatively close to the identity — the Borromean
 confinement is a small correction to free quarks, with
 net$(B_3) \approx 1$.

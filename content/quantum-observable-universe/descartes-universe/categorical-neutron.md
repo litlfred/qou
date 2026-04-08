@@ -30,9 +30,9 @@ At $q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
-| $\mathbf{1}$ | $\nu$ | $-0.2017$ |
-| $\sigma_0$ | $H^0$ | $+0.0481$ |
-| $\sigma_1$ | $H^1$ | $+1.0090$ |
+| $\mathbf{1}$ | $\gamma$ | $-0.2017$ |
+| $\sigma_0$ | $\sigma_0$ | $+0.0481$ |
+| $\sigma_1$ | $\sigma_1$ | $+1.0090$ |
 | $\sigma_0\sigma_1$ | $L_+$ | $-0.0096$ |
 | $\sigma_1\sigma_0$ | $L_-$ | $+0.0092$ |
 | $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $-0.0442$ |
@@ -42,9 +42,9 @@ $$
 $$
 
 Compared to the proton ($\mathrm{net} = +0.9991$):
-the extra down quark drives $\nu$ more negative
+the extra down quark drives $\gamma$ more negative
 ($-0.0997 \to -0.2017$) and flips $L_+$ from positive
-($+0.0994$) to negative ($-0.0096$).  The $H^1$ term
+($+0.0994$) to negative ($-0.0096$).  The $\sigma_1$ term
 stays near $+1$ in both, since both contain one up quark
 on strand 1.
 

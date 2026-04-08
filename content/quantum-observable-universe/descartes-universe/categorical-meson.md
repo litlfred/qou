@@ -46,13 +46,13 @@ $$
 | Factor | Product | Hecke reduction |
 |:---|:---|:---|
 | $L_- \cdot L_-$ | $\sigma_1\sigma_0\sigma_1\sigma_0$ | braid + Hecke: $h \cdot e^- + L_+$ |
-| $e^- \cdot L_-$ | $\sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0$ | two braid + Hecke steps: $h^2 e^- + hL_+ + hL_- + H^1$ |
+| $e^- \cdot L_-$ | $\sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0$ | two braid + Hecke steps: $h^2 e^- + hL_+ + hL_- + \sigma_1$ |
 
 Collecting:
 
 $$
   \mathfrak{M}_+ =
-  \underbrace{h}_{H^1}\sigma_1
+  \underbrace{h}_{\sigma_1}\sigma_1
   + \underbrace{(h^2 + 1)}_{L_+}\sigma_0\sigma_1
   + \underbrace{h^2}_{L_-}\sigma_1\sigma_0
   + \underbrace{(h^3 + h)}_{e^-}\sigma_0\sigma_1\sigma_0
@@ -61,21 +61,21 @@ $$
 At $q_0 \approx 1.1100$ ($h \approx 0.2091$):
 
 $$
-  \mathrm{NF}(\mathfrak{M}_+) = 0.209 H^1 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
+  \mathrm{NF}(\mathfrak{M}_+) = 0.209\sigma_1 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
 $$
 
 with $\mathrm{net}(\mathfrak{M}_+) = +1.515$.
 
 The mirror meson $\mathfrak{M}_- = T_{10} \cdot \mathcal{L}_H \cdot T_{01}$
-has the same net but with $H^0$ replacing $H^1$:
+has the same net but with $\sigma_0$ replacing $\sigma_1$:
 
 $$
-  \mathrm{NF}(\mathfrak{M}_-) = 0.209 H^0 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
+  \mathrm{NF}(\mathfrak{M}_-) = 0.209\sigma_0 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
 $$
 
 Both mesons carry the same Hopf link content ($L_+ + L_-$)
 and trefoil content ($e^-$), differing only in which
-Hopf crossing ($H^0$ vs $H^1$) is excited.
+generator ($\sigma_0$ vs $\sigma_1$) is excited.
 
 **Particle content.**
 The dominant term is $L_+$ (coefficient $\approx 1.044$),

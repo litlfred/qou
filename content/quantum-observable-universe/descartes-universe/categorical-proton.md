@@ -33,9 +33,9 @@ Expanding and reducing in $H_3(q)$ at $q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
-| $\mathbf{1}$ | $\nu$ | $+0.9981$ |
-| $\sigma_0$ | $H^0$ | $-0.0095$ |
-| $\sigma_1$ | $H^1$ | $+0.0091$ |
+| $\mathbf{1}$ | $\gamma$ | $+0.9981$ |
+| $\sigma_0$ | $\sigma_0$ | $-0.0095$ |
+| $\sigma_1$ | $\sigma_1$ | $+0.0091$ |
 | $\sigma_0\sigma_1$ | $L_+$ | $+0.0456$ |
 | $\sigma_1\sigma_0$ | $L_-$ | $-0.0437$ |
 
@@ -75,9 +75,9 @@ After all three typed crossings at $q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
-| $\mathbf{1}$ | $\nu$ | $-0.0997$ |
-| $\sigma_0$ | $H^0$ | $+0.0357$ |
-| $\sigma_1$ | $H^1$ | $+0.9976$ |
+| $\mathbf{1}$ | $\gamma$ | $-0.0997$ |
+| $\sigma_0$ | $\sigma_0$ | $+0.0357$ |
+| $\sigma_1$ | $\sigma_1$ | $+0.9976$ |
 | $\sigma_0\sigma_1$ | $L_+$ | $+0.0994$ |
 | $\sigma_1\sigma_0$ | $L_-$ | $+0.0093$ |
 | $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $-0.0432$ |
@@ -86,9 +86,9 @@ $$
   \mathrm{net}(\mathfrak{p}) = +0.9991
 $$
 
-The dominant term is $H^1 \approx +0.998$, reflecting
+The dominant term is $\sigma_1 \approx +0.998$, reflecting
 the up-quark crossing on strand 1.  The two mixed
-$\mathfrak{u}$-$\mathfrak{d}$ half-shifts drive $\nu$ negative
+$\mathfrak{u}$-$\mathfrak{d}$ half-shifts drive $\gamma$ negative
 ($+0.998 \to -0.100$) and produce a trefoil component
 $e^- \approx -0.043$.  The $L_+$ and $L_-$ coefficients
 change sign pattern relative to B₃, encoding the interplay

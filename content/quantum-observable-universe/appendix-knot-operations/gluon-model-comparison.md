@@ -55,7 +55,7 @@ already encoded in $B_3$.**
 The Borromean braid $B_3$ has NF:
 
 $$
-  B_3 = +0.998\nu - 0.010H^0 + 0.009H^1
+  B_3 = +0.998\gamma - 0.010\sigma_0 + 0.009\sigma_1
         + 0.046L_+ - 0.044L_-
 $$
 
@@ -91,13 +91,13 @@ $$
 
 $$
   \mathrm{NF}(\mathfrak{p})
-  = -0.100\nu + 0.036H^0 + 0.998H^1
+  = -0.100\gamma + 0.036\sigma_0 + 0.998\sigma_1
     + 0.099L_+ + 0.009L_- - 0.043e^-
 $$
 
 $$
   \mathrm{NF}(\mathfrak{n})
-  = -0.202\nu + 0.048H^0 + 1.009H^1
+  = -0.202\gamma + 0.048\sigma_0 + 1.009\sigma_1
     - 0.010L_+ + 0.009L_- - 0.044e^-
 $$
 
