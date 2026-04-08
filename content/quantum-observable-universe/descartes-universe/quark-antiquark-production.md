@@ -1,37 +1,142 @@
 A **quark--antiquark production** is a Breit--Wheeler pair creation
 ([pair production](#def:breit-wheeler-pair-production)) in which
-the colored photon's Hopf link content $L_+$ acts as the
+the colored photon's Hopf link content acts as the
 **quark creation operator**, transmuting the leptonic trefoil
 channel into a hadronic channel.
 
-**Mechanism.**
-The colored photon ([pair production](#def:breit-wheeler-pair-production))
-is the Hecke algebra element
+**Colored photon pair.**
+Each photon is the Hecke algebra element
+$\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+with independent color weights $\varphi_0, \varphi_1$
+([pair production](#def:breit-wheeler-pair-production)).
+Given two colored photons
+$\gamma_1 = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+and
+$\gamma_2 = \mathbf{1} + \psi_0\,\sigma_0 + \psi_1\,\sigma_1$,
+their product NF in $H_3(q)$ is
+([color content](#rem:knot-basis-color-content)):
 
 $$
-  \gamma_\phi
+  \mathrm{NF}(\gamma_1 \cdot \gamma_2)
   \;=\;
-  \mathbf{1} + \phi\,\sigma_0 + \phi\,\sigma_1
+  (1 + \varphi_0\psi_0 + \varphi_1\psi_1)\,\nu
+  \;+\;
+  (\varphi_0 + \psi_0 + \varphi_0\psi_0\,h)\,H^0
+  \;+\;
+  (\varphi_1 + \psi_1 + \varphi_1\psi_1\,h)\,H^1
+  \;+\;
+  \varphi_0\psi_1\,L_+
+  \;+\;
+  \varphi_1\psi_0\,L_-
 $$
 
-where $\phi = 0.0487$ is the color weight and $\sigma_0, \sigma_1$
-are the two generators of $H_3(q)$.  In the normal form of the
-colored photon pair $\gamma_\phi^2$, the Hopf link terms
-$L_+ = \sigma_0\sigma_1$ and $L_- = \sigma_1\sigma_0$ appear with
-coefficient $\phi^2$.
-The positive Hopf link $L_+$ applied to the trefoil channel
-$e^- = \sigma_0\sigma_1\sigma_0$ yields:
+where $h = q - q^{-1}$.  The Hopf link terms
+$L_+ = \sigma_0\sigma_1$ and $L_- = \sigma_1\sigma_0$ arise
+exclusively from **cross-color** products: $\varphi_0\psi_1$
+and $\varphi_1\psi_0$.
+
+**Quark creation: step-by-step reduction of $L_+ \cdot e^-$.**
+The positive Hopf link $L_+ = \sigma_0\sigma_1$ applied to the
+trefoil $e^- = \sigma_0\sigma_1\sigma_0$ gives the five-letter
+word $\sigma_0\sigma_1\sigma_0\sigma_1\sigma_0$.  Reduce using
+the braid relation $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$
+and the Hecke relation $\sigma_i^2 = h\,\sigma_i + \mathbf{1}$
+(where $h = q - q^{-1}$):
 
 $$
-  L_+ \cdot e^-
+  \sigma_0\sigma_1 \cdot \sigma_0\sigma_1\sigma_0
   \;=\;
-  (\sigma_0\sigma_1)(\sigma_0\sigma_1\sigma_0)
-  \;\xrightarrow{\mathrm{NF}}\;
-  \text{quark content} + \phi\cdot e^-
+  \sigma_0 \cdot (\sigma_1 \cdot \sigma_0\sigma_1\sigma_0)
 $$
 
-The Hopf link operator creates a quark ($\mathfrak{u}$) from an
-electron ($e^-$) by wrapping it in the Borromean color tube
+**Inner product** $\sigma_1 \cdot \sigma_0\sigma_1\sigma_0$:
+apply the braid relation $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$:
+
+$$
+  \sigma_1 \cdot \sigma_1\sigma_0\sigma_1
+  \;=\;
+  \sigma_1^2 \cdot \sigma_0\sigma_1
+  \;=\;
+  (h\,\sigma_1 + \mathbf{1}) \cdot \sigma_0\sigma_1
+  \;=\;
+  h\,\sigma_1\sigma_0\sigma_1 + \sigma_0\sigma_1
+$$
+
+Apply the braid relation again ($\sigma_1\sigma_0\sigma_1 = \sigma_0\sigma_1\sigma_0$):
+
+$$
+  \;=\;
+  h\,\sigma_0\sigma_1\sigma_0 + \sigma_0\sigma_1
+$$
+
+**Outer product** $\sigma_0 \cdot (h\,\sigma_0\sigma_1\sigma_0 + \sigma_0\sigma_1)$:
+
+$$
+  h\,\sigma_0^2\,\sigma_1\sigma_0
+  \;+\;
+  \sigma_0^2\,\sigma_1
+$$
+
+Apply $\sigma_0^2 = h\,\sigma_0 + \mathbf{1}$ to each:
+
+$$
+  h\,(h\,\sigma_0 + \mathbf{1})\,\sigma_1\sigma_0
+  \;+\;
+  (h\,\sigma_0 + \mathbf{1})\,\sigma_1
+$$
+
+Distribute:
+
+$$
+  h^2\,\sigma_0\sigma_1\sigma_0
+  \;+\;
+  h\,\sigma_1\sigma_0
+  \;+\;
+  h\,\sigma_0\sigma_1
+  \;+\;
+  \sigma_1
+$$
+
+**Result in the NF basis** $\{\mathbf{1},\, \sigma_0,\, \sigma_1,\, L_+,\, L_-,\, e^-\}$:
+
+$$
+  \mathrm{NF}(L_+ \cdot e^-)
+  \;=\;
+  \sigma_1
+  \;+\;
+  h\,\sigma_0\sigma_1
+  \;+\;
+  h\,\sigma_1\sigma_0
+  \;+\;
+  h^2\,\sigma_0\sigma_1\sigma_0
+$$
+
+$$
+  \;=\;
+  H^1
+  \;+\;
+  h\,L_+
+  \;+\;
+  h\,L_-
+  \;+\;
+  h^2\,e^-
+$$
+
+At $q_0 \approx 1.110$ ($h \approx 0.209$):
+
+| Basis | Particle | Coefficient |
+|:---:|:---:|---:|
+| $\sigma_1$ | $H^1$ | $1.000$ |
+| $\sigma_0\sigma_1$ | $L_+$ | $h \approx 0.209$ |
+| $\sigma_1\sigma_0$ | $L_-$ | $h \approx 0.209$ |
+| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $h^2 \approx 0.044$ |
+
+The Hopf link operator $L_+$ transmutes the trefoil electron into
+a virtual crossing $H^1$ plus residual Hopf and trefoil content.
+The $e^-$ coefficient $h^2$ is the **residual electron** —
+physically, the fraction of the original lepton that survives the
+quark creation. The dominant output $H^1 = \sigma_1$ is the
+hadronic crossing that becomes the quark
 ([up quark](#def:up-quark)).  The mirror operator $L_-$ creates
 an antiquark ($\bar{\mathfrak{d}}$) from the positron channel.
 
@@ -40,13 +145,13 @@ When two independent colored photon pairs undergo pair creation
 simultaneously, each produces a quark--antiquark channel:
 
 $$
-  \gamma_\phi^2 \;\to\;
+  \gamma_1 \cdot \gamma_2 \;\to\;
   \mathfrak{u} + \bar{\mathfrak{u}}
   \qquad\text{(production 1: up-type)}
 $$
 
 $$
-  \gamma_\phi^2 \;\to\;
+  \gamma_3 \cdot \gamma_4 \;\to\;
   \mathfrak{d} + \bar{\mathfrak{d}}
   \qquad\text{(production 2: down-type)}
 $$

@@ -2,16 +2,18 @@ The [meson](#def:categorical-meson) arises through a three-step
 formation chain, each step formally defined:
 
 **Step 1: Pair production** ([Breit--Wheeler](#def:breit-wheeler-pair-production)).
-Two colored photons fuse into an electron--positron pair:
+Two colored photons
+$\gamma_i = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+fuse into an electron--positron pair:
 
 $$
-  \gamma_\phi \cdot \gamma_\phi
+  \gamma_1 \cdot \gamma_2
   \;\longrightarrow\;
   e^- + e^+
-  \;+\; \text{Hopf link content}\;(L_+, L_-)
+  \;+\; \text{Hopf link content}\;(L_+ = \varphi_0\psi_1,\; L_- = \varphi_1\psi_0)
 $$
 
-The color dressing $\phi = 0.0487$ supplies the Hopf link terms
+The color weights $\varphi_0, \varphi_1$ supply the Hopf link terms
 that close the $1.6\%$ energy gap between the bare photon pair
 and the threshold $2\mathfrak{m}_e$.
 
@@ -24,7 +26,7 @@ $$
   \;=\;
   (\sigma_0\sigma_1)(\sigma_0\sigma_1\sigma_0)
   \;\xrightarrow{\mathrm{NF}}\;
-  \mathfrak{u} + \phi\cdot e^-
+  \mathfrak{u} + \varphi_0\psi_1\cdot e^-
 $$
 
 Two independent pair productions create two quark--antiquark

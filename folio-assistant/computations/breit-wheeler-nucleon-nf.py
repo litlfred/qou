@@ -256,19 +256,27 @@ print("\n─── 1c: e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ (mirror trefoil) �
 eplus_expanded = expand_inverse_word((-1, -2, -1))
 nf_eplus, net_eplus, _ = reduce_nf(eplus_expanded, "e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹")
 
-# 1d: Colored photon pair γ₁·γ₂ — ANALYTIC NF
-# γᵢ = 𝟙 + φ·σ₀ + φ·σ₁  (symmetric color, same for both photons)
-print("\n─── 1d: Colored photon pair γ₁·γ₂ (analytic) ───")
-print("  Photon with color: γ = 𝟙 + φ·σ₀ + φ·σ₁")
-print("  where φ = color weight (same for both generators, both photons)")
+# 1d: Colored photon pair γ₁·γ₂ — GENERAL FORM + POLARIZATION MODELS
+# γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁  (independent color weights per generator)
+print("\n─── 1d: Colored photon pair γ₁·γ₂ (general form) ───")
+print("  Photon with color: γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁")
+print("  where φ₀, φ₁ ∈ ℝ are independent color weights for each generator")
 print()
-print("  NF(γ₁·γ₂) derives from colored-pair-energy-alignment.py:")
-print("    𝟏  coeff = 1 + 2φ²")
-print("    σ₀ coeff = 2φ + φ²·HA")
-print("    σ₁ coeff = 2φ + φ²·HA")
-print("    L₊ coeff = φ²")
-print("    L₋ coeff = φ²")
-print("  net = (1+2φ)² + 2φ²·HA")
+print("  General NF(γ₁·γ₂) from colored-pair-energy-alignment.py:")
+print("    𝟏  coeff = 1 + φ₀ψ₀ + φ₁ψ₁")
+print("    σ₀ coeff = φ₀ + ψ₀ + φ₀ψ₀·HA")
+print("    σ₁ coeff = φ₁ + ψ₁ + φ₁ψ₁·HA")
+print("    L₊ coeff = φ₀ψ₁  (cross-color: σ₀ from γ₁ × σ₁ from γ₂)")
+print("    L₋ coeff = φ₁ψ₀  (cross-color: σ₁ from γ₁ × σ₀ from γ₂)")
+print("  net = (1+φ₀+φ₁)(1+ψ₀+ψ₁) + (φ₀ψ₀+φ₁ψ₁)·HA")
+print()
+print("  LINEAR (symmetric) polarization: φ₀=φ₁=ψ₀=ψ₁=φ")
+print("    L₊ = L₋ = φ²  (equal Hopf chirality)")
+print("    net = (1+2φ)² + 2φ²·HA")
+print()
+print("  CIRCULAR (orthogonal) polarization: γ₁=𝟙+s·σ₀, γ₂=𝟙+s·σ₁")
+print("    L₊ = s², L₋ = 0  (maximally chiral Hopf content)")
+print("    net = (1+s)²  (no Hecke self-energy)")
 
 # Solve for φ that gives E_pair = 2mₑ
 target_net_gg = net_eminus + net_eplus - 2 * M_E_MEV / E0
@@ -277,7 +285,7 @@ print(f"    net(e⁻) + net(e⁺) = {net_eminus + net_eplus:.10f}")
 print(f"    2mₑ/E₀ = {2*M_E_MEV/E0:.10f}")
 print(f"    Required net(γγ) = {target_net_gg:.10f}")
 
-# net_gg_color = (1+2φ)² + 2φ²·HA at q₀
+# net_gg_color = (1+2φ)² + 2φ²·HA at q₀  (linear/symmetric polarization)
 phi = sp.Symbol('phi', positive=True)
 net_formula = (1 + 2 * phi)**2 + 2 * phi**2 * HA_num
 phi_solutions = sp.solve(sp.Eq(net_formula, target_net_gg), phi)
@@ -287,8 +295,9 @@ if phi_real_pos:
     phi_val = float(phi_real_pos[0])
     net_check = (1 + 2 * phi_val)**2 + 2 * phi_val**2 * HA_num
     E_pair = (net_eminus + net_eplus - net_check) * E0
-    print(f"\n  ── Symmetric color solution: φ = {phi_val:.10f} ──")
-    print(f"  net(γγ,colored) = {net_check:.10f}")
+    print(f"\n  ── Linear (symmetric) polarization: φ₀=φ₁=φ = {phi_val:.10f} ──")
+    print(f"  L₊ = L₋ = φ² = {phi_val**2:.10f}  (equal Hopf chirality)")
+    print(f"  net(γγ,linear) = {net_check:.10f}")
     print(f"  E_pair = {E_pair:.6f} MeV")
     print(f"  2mₑ    = {2*M_E_MEV:.6f} MeV")
     print(f"  Residual: {abs(E_pair - 2*M_E_MEV):.8f} MeV")
@@ -296,8 +305,8 @@ else:
     phi_val = None
     print("  No positive real solution for symmetric color weight.")
 
-# Orthogonal polarization: γ₁ = 𝟙 + s·σ₀, γ₂ = 𝟙 + s·σ₁
-print("\n─── 1e: Orthogonal polarization γ₁ = 𝟙+s·σ₀, γ₂ = 𝟙+s·σ₁ ───")
+# Circular (orthogonal) polarization: γ₁ = 𝟙 + s·σ₀, γ₂ = 𝟙 + s·σ₁
+print("\n─── 1e: Circular (orthogonal) polarization γ₁ = 𝟙+s·σ₀, γ₂ = 𝟙+s·σ₁ ───")
 s_var = sp.Symbol('s', positive=True)
 net_ortho = (1 + s_var)**2  # no Hecke self-energy for orthogonal
 s_solutions = sp.solve(sp.Eq(net_ortho, target_net_gg), s_var)
@@ -308,9 +317,9 @@ if s_real_pos:
     net_ortho_check = (1 + s_val)**2
     E_pair_ortho = (net_eminus + net_eplus - net_ortho_check) * E0
     print(f"  s = {s_val:.10f}")
-    print(f"  net(γγ,ortho) = {net_ortho_check:.10f}")
+    print(f"  L₊ = s² = {s_val**2:.10f}, L₋ = 0  (maximally chiral Hopf content)")
+    print(f"  net(γγ,circular) = {net_ortho_check:.10f}")
     print(f"  E_pair = {E_pair_ortho:.6f} MeV")
-    print(f"  L₊ = s² = {s_val**2:.10f}  (Hopf link content)")
 else:
     s_val = None
 
@@ -323,14 +332,17 @@ results["step1"] = {
         "E_pair_bare_MeV": (net_eminus + net_eplus - net_gamma2_bare) * E0,
     },
     "colored_symmetric": {
+        "description": "Linear (symmetric) polarization: φ₀=φ₁=ψ₀=ψ₁=φ",
         "phi": phi_val,
         "net_gamma2_colored": (1 + 2 * phi_val)**2 + 2 * phi_val**2 * HA_num if phi_val else None,
         "E_pair_MeV": E_pair if phi_val else None,
     },
     "orthogonal": {
+        "description": "Circular (orthogonal) polarization: γ₁=𝟙+s·σ₀, γ₂=𝟙+s·σ₁",
         "s": s_val,
         "net_gamma2_ortho": (1 + s_val)**2 if s_val else None,
-        "hopf_content": s_val**2 if s_val else None,
+        "hopf_content_L_plus": s_val**2 if s_val else None,
+        "hopf_content_L_minus": 0,
     },
     "target_2me_MeV": 2 * M_E_MEV,
 }
@@ -472,7 +484,7 @@ print("  Each gluon adds color to the photon-like basis:")
 print("  γ(dressed) = 𝟙 + φ₀σ₀ + φ₁σ₁ + g₀σ₀ + g₁σ₁")
 print("             = 𝟙 + (φ₀+g₀)σ₀ + (φ₁+g₁)σ₁")
 print("  → This just shifts the color weights. Not fundamentally new.")
-print("  → Gluon contribution is ABSORBED into color weight φ.")
+print("  → Gluon contribution is ABSORBED into color weights φ₀, φ₁.")
 
 # ── Hypothesis B: Gluon as multiplicative factor ──
 print("\n─── Hypothesis B: Gluon as multiplicative Hecke element ───")
