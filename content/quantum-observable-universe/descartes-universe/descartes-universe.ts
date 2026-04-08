@@ -162,6 +162,7 @@ export default chapter({
         // Pair production and quark-antiquark creation
         "breit-wheeler-pair-production",
         "knot-operator-selection",
+        "frobenius-gram-matrix",
         "quark-antiquark-production",
         // Meson, proton, neutron, stable nucleus
         "categorical-meson",

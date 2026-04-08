@@ -33,5 +33,12 @@ export default chapter({
         "gluon-model-comparison",
       ],
     }),
+    section({
+      title: "Knot operator action on basis pairs",
+      label: "sec:knot-operator-basis-table",
+      blocks: [
+        "knot-operator-basis-table",
+      ],
+    }),
   ],
 });
