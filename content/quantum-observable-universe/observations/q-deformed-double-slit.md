@@ -10,9 +10,11 @@ where $\mathcal{D}_\nabla = q^{-1}\nabla + (1-q^{-1})\iota_\xi\nabla$
 ([variational equations](#prop:variational-equations), equation 3).
 The test particle $\psi$ is a photon --- not a bare identity
 $\mathbf{1}$ but a **photon with color content**
-$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
++ \varphi_{01}\sigma_0\sigma_1$
 ([color content](#rem:knot-basis-color-content)), where $\sigma_0$
 and $\sigma_1$ are the horizontal and vertical polarisation generators
+and $\sigma_0\sigma_1$ is the Hopf link dressing
 on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)) --- propagating
 on an instanton background
