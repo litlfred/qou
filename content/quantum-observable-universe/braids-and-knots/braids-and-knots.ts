@@ -288,6 +288,7 @@ export default chapter({
         "mass-endomorphism-conjecture",
         "mass-element-nf",
         "calibration-inputs",
+        "three-parameters-wedderburn",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
