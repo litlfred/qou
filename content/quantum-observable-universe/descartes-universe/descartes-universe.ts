@@ -213,6 +213,7 @@ export default chapter({
         "skein-polynomial-transfer-matrix",
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
+        "neutron-qvalue-symbolic",
         "beta-decay-interpretation",
         "nucleon-nf-observability",
         "beta-decay-energy-scale",
