@@ -281,6 +281,8 @@ export default chapter({
       blocks: [
         "topological-mass",
         "topological-mass-categorical-proof",
+        "categorical-mass-markov",
+        "mass-endomorphism-conjecture",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",
