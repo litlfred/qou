@@ -120,13 +120,13 @@ The negative terms in each nucleon represent **leptonic debt** —
 topological content that must be supplied by (or released to) the
 vacuum.  In the typed-crossing NF:
 
-|  | $\nu$ debt | $L_+$ debt | $e^-$ debt |
+|  | $\gamma$ debt | $L_+$ debt | $e^-$ debt |
 |:---:|---:|---:|---:|
 | **Neutron** | $-0.201704$ | $-0.009641$ | $-0.044184$ |
 | **Proton** | $-0.099658$ | — | $-0.043208$ |
 
-The neutron carries three debts ($\nu, L_+, e^-$) while the
-proton carries only two ($\nu, e^-$).  The excess:
+The neutron carries three debts ($\gamma, L_+, e^-$) while the
+proton carries only two ($\gamma, e^-$).  The excess:
 
 $$
   \Delta_\nu = -0.10205, \qquad \Delta_{L_+} = -0.10899,

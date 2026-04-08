@@ -39,7 +39,7 @@ The neutron's larger cancellation reflects its $[\mathfrak{u},
 \mathfrak{d}, \mathfrak{d}]$ composition: the $d$--$d$ crossing
 generates a $-\mathrm{HA} \cdot \mathbf{1}$ correction that
 propagates through the Gröbner--Shirshov reduction, flipping the
-$L_+$ coefficient and amplifying the $\nu$ debt.  This is a
+$L_+$ coefficient and amplifying the $\gamma$ debt.  This is a
 computable, algebraic manifestation of color confinement --- the
 energy cost of holding three quarks in a color-singlet braid is
 larger for the neutron because the $d$--$d$ interaction is more

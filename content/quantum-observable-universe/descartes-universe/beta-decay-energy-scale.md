@@ -120,7 +120,7 @@ to give $Q > 0$.)
 
 With typed crossings, the single largest contributor is
 $\Delta(L_+) = -0.1090$, giving $+0.453 \text{MeV}$ — larger
-than the $\nu$ debt ($+0.424 \text{MeV}$).  This replaces the
+than the $\gamma$ debt ($+0.424 \text{MeV}$).  This replaces the
 $\sigma_1$ dominance of the untyped computation.
 
 The $\gamma$ debt ($+0.424 \text{MeV}$) and $L_+$ shift
