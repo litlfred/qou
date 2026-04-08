@@ -88,6 +88,30 @@ finite $N$ (determined by the knot crossing number), so the
 relevant sum is finite.  The question is whether this finite
 sum has a closed-form expression in $H_n(q)$.
 
+## Computational verification
+
+Three single-level approaches were tested for the proton
+($uud$) and neutron ($udd$) Borromean braids:
+
+| Method | Proton | Neutron | Ratio $n/p$ | CODATA |
+|:---|:---:|:---:|:---:|:---:|
+| $\lvert\mathrm{tr}_M(\beta)\rvert$ | $1.165$ | $0.911$ | $0.782$ | $1.001$ |
+| $\Phi_q/\hbar_q^2$ | $-89.8$ | $-125.2$ | $1.395$ | $1.001$ |
+| GS energy | $0.852$ | $1.184$ | $1.390$ | $1.001$ |
+
+**None of these single-level computations reproduce the
+neutron-to-proton mass ratio.**  The quantum dilogarithm
+$\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ gives the correct
+**binding energy differences** between nuclei (Q-values at
+Level 0), but not single-nucleon absolute masses.
+
+The proton mass 938.272 MeV in the paper comes from the
+pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$,
+which requires the **dressed quark mass** $\mu_\mathfrak{u} \approx 311$ MeV
+as input — calibrated from CODATA $m_p$.  The structural
+content (pair formula, splitting isolation, binding energy)
+is categorically derived; the absolute scale is calibrated.
+
 ## Candidate structures
 
 **(a) Figure-eight $4_1$ as Higgs coupling.**
