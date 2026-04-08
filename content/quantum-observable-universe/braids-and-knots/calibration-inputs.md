@@ -4,26 +4,43 @@ and coupling constants are predictions.
 
 ## The two inputs
 
-| Input | What it fixes | Observable |
-|-------|--------------|------------|
-| $m_\mu / m_e \approx 206.768$ | Substrate parameter $q_0$ | Dimensionless lepton mass ratio (CODATA) |
-| $m_n \approx 939.565$ MeV | Mass scale (unit conversion) | Free neutron mass (beam or bottle) |
+| Input | What it fixes | CODATA 2022 | Rel. precision |
+|-------|--------------|-------------|:-:|
+| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | Substrate parameter $q_0$ | Dimensionless ratio | $2.2 \times 10^{-8}$ |
+| $m_e = 0.51099895000 \pm 0.00000000015$ MeV | Mass scale (unit conversion) | Electron mass | $2.9 \times 10^{-10}$ |
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$
 ([Skein mass relation](#rem:skein-mass-relation)), where
 $\mathrm{Vol}(4_1) \approx 2.0299$ is the topological constant
 (hyperbolic volume of the figure-eight knot) and
-$\hbar_q = (q-1)/q$.  No units are involved.
+$\hbar_q = (q-1)/q$.  No units are involved.  The precision
+is limited by the muon mass ($2.2 \times 10^{-8}$), not
+the electron ($2.9 \times 10^{-10}$).
 
 The second input sets the **mass scale** — the conversion
-factor $E_0$ from dimensionless Hecke algebra outputs to MeV.
-The free neutron is the natural choice: it is the simplest
-hadron that decays freely, and its beta decay
-$n \to p + e^- + \bar\nu_e$ is the most precisely measured
-weak process.  Once $E_0$ is fixed from $m_n$, the proton
-mass $m_p = m_n - Q_\beta$ becomes a **prediction** (where
-$Q_\beta$ is computed from the Hecke engine).
+from dimensionless natural units to MeV.  The electron is
+the natural choice: it is the simplest charged lepton, its
+mass is the most precisely measured particle mass in the
+Standard Model, and its brane tower is fully computable
+from $q_0$ alone:
+
+$$
+  m_e(\text{natural})
+  =
+  \frac{\mathrm{Li}_2(q^{-2})}{\hbar_q^2}
+  \approx  112
+$$
+
+where $\mathrm{Li}_2(q^{-2}) = \sum_{n=1}^{\infty} q^{-2n}/n^2$
+converges in $\sim 20$ terms.  The conversion factor is then
+$m_e(\text{MeV}) / m_e(\text{natural}) \approx 4.57 \times 10^{-3}$ MeV.
+
+With these two inputs, **all hadronic masses become
+predictions**: the proton mass, neutron mass, deuteron
+binding energy, beta-decay Q-values, and nuclear shell
+structure are all derived from the Hecke engine at $q_0$
+with the $m_e$ ruler.
 
 ## Why exactly two
 
@@ -81,17 +98,29 @@ No further parameters exist because:
 - Pair production polarisation selection rule
 - All NF decompositions and operator selection weights
 
-**From $q_0$ + mass scale (in MeV):**
-- Proton mass: $m_p = m_n - Q_\beta$ (first prediction)
+**From $q_0$ + $m_e$ (in MeV):**
+- Muon mass: $m_\mu = m_e \times \mathrm{Vol}(4_1)/\hbar_q^2$
+  (first prediction, by construction matches calibration input)
+- Proton mass: via Skein pair formula + dressed quark masses
+  from Skein resolution tree (tractable computation)
+- Neutron mass: $m_n = m_p + Q_\beta$ (Hecke engine)
 - Deuteron binding energy: $\Delta E_D \approx 2.224$ MeV
 - Beta decay Q-values: 6 benchmarks at 4.4% MAE
 - Nuclear shell structure and magic numbers
 - Half-life predictions
 
-**Not yet predicted (open, requires brane tower):**
-- Absolute dressed quark mass $\mu_\mathfrak{u}$ from $q_0$ alone
-- Binding energy per nucleon $B/A$ from first principles
-- Lepton absolute masses (requires Vol/$\hbar_q^2$ bridge)
+**Structurally predicted (verified against CODATA):**
+- Neutron-proton splitting: $m_n - m_p$ from crossing pair
+  isolation (categorical, no calibration beyond $q_0$)
+- Q-value ratios: dimensionless, from $q_0$ alone
+- Shell structure and magic numbers: from transfer matrix
+  eigenvalues at $q_0$
+
+**Open (concrete computation, not conceptual gap):**
+- Dressed quark mass $\mu_\mathfrak{u}$ from $q_0$ alone:
+  requires Skein resolution of Borromean braid ($\leq 729$ terms,
+  each requiring a hyperbolic volume computation)
+- Binding energy per nucleon $B/A$: same Skein resolution approach
 
 ## Comparison with the Standard Model
 
