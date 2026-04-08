@@ -283,6 +283,7 @@ export default chapter({
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
         "mass-endomorphism-conjecture",
+        "calibration-inputs",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",
