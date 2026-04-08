@@ -3,7 +3,7 @@ modes, summarised in the following table:
 
 | | **Mode 1: Massive particle** | **Mode 2: Photon (with color content)** |
 |---|---|---|
-| **Geometric identity** | $q$-harmonic form ($\Delta_q\alpha = 0$) | Color-dressed identity $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ |
+| **Geometric identity** | $q$-harmonic form ($\Delta_q\alpha = 0$) | Color-dressed identity $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ |
 | **Phase mechanism** | $q$-Laplacian cross-coupling | Color twist $q\phi$ + polarisation eigenvalues $(\varphi_0 q, -\varphi_1 q^{-1})$ |
 | **Interference formula** | $\cos^2(\Delta\Phi_q / 2)$ | $\cos^2(\Delta\Phi_q^{(\mathrm{color})} / 2)$ |
 | **Envelope** | $q$-corrected sinc${}^2$ | Julia-set measure $\mu_J$ modulated by color visibility $V_{\mathrm{color}}$ |
