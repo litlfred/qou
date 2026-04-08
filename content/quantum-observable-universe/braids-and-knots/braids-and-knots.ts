@@ -286,6 +286,7 @@ export default chapter({
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
         "mass-endomorphism-conjecture",
+        "mass-element-nf",
         "calibration-inputs",
         "energy-scale-planck",
         "topological-mass-trefoil",
