@@ -9,6 +9,13 @@ where $\mathfrak{m}_{\mathfrak{p}} \approx 938.272$ MeV, $\mathfrak{m}_{\mathfra
 $\mathfrak{m}_e \approx 0.511$ MeV (rounded CODATA 2022). The observed mass $M_o$ uses
 full-precision constants. Both use identical $B/A$ from AME2020.
 
+**Important**: This formula recombines CODATA/AME2020 inputs ---
+it is **not** a prediction from $q$. The 0.0000% deviations below
+confirm arithmetic consistency, nothing more. The only external scaling
+parameter needed is $m_e = 0.51099895$ MeV (CODATA 2022), which
+serves as the **ruler** converting dimensionless $q$-derived ratios
+to physical MeV.
+
 ## Source classification
 
 The mass computation $M_q$ recombines *observed constants* --- it does not
@@ -176,8 +183,8 @@ $^\dagger$ Synthetic element (reactor or accelerator produced).
 
 All deviations arise solely from rounding the CODATA constituent-mass constants
 to three decimal places in the QOU formula. No element exceeds $0.1 \text{MeV}$
-deviation, confirming that the Skein-lattice mass formula faithfully reproduces
-AME2020 atomic masses to sub-MeV precision.
+deviation. These are **not** predictions --- the table confirms that
+$M_q$ and $M_o$ use the same inputs at different precisions.
 
 ## Data Source Audit: CODATA 2022 vs AME2020
 

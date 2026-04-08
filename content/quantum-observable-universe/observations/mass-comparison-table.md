@@ -77,17 +77,22 @@ to six significant figures with $q = q_0$.
 5. *Source classification.* Proton and neutron masses in this table
    use CODATA 2022 values directly. Nuclear masses use AME2020
    binding energies $B/A$ as input. These are NOT predictions from
-   $q$. The genuine $q$-predictions are mass *ratios*
-   ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), $Q$-values
-   (mass differences from $\Delta\mathrm{net} \times E_0$), and
-   half-life ratios via $\log_q(ft)$ spectroscopy.
+   $q$ --- the table recombines observed constants and the
+   agreement is trivially guaranteed. The genuine $q$-predictions
+   are mass *ratios* ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$),
+   $Q$-values (mass differences from $\Delta\mathrm{net} \times E_0$),
+   and half-life ratios via $\log_q(ft)$ spectroscopy. The one
+   external scaling parameter is $m_e = 0.51099895$ MeV (CODATA),
+   which converts dimensionless $q$-ratios to physical MeV.
 
 *Isotope-level data (hecke-engine certificates, $A \leq 14$).*
 
 47 isotopes from ${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$
 have hecke-engine certificates providing exact Skein polynomial
-evaluations at $q_0$. The certificate fields encode crossing
-structure (combinatorial data), not mass directly:
+evaluations at $q_0$. All 47 have AME2020 binding-energy data
+available ("matched" = lookup succeeded, NOT a prediction test).
+The certificate fields encode crossing structure (combinatorial
+data), not mass directly:
 
 | Isotope | $Z$ | $N$ | $A$ | $B/A$ (AME2020) | $F_{\mathrm{Pauli}}$ | $\ln\lvert P\rvert$ |
 |:--------|----:|----:|----:|----------------:|---------------------:|--------------------:|

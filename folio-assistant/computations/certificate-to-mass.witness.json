@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-08T09:16:55.864999+00:00",
-  "commitSha": "4c4d0dba9b000d194362bfd3e8a274927bc5b729",
+  "computedAt": "2026-04-08T10:06:51.469610+00:00",
+  "commitSha": "ed07738267cd4ddece2d359e322a66330f9288b4",
   "assertions": [
     {
       "name": "All 47 certificates loaded",
@@ -13,7 +13,7 @@
       "source": "tools/hecke-engine/certificate-*.json"
     },
     {
-      "name": "AME2020 coverage of certificates",
+      "name": "AME2020 lookup exists for all 47 certificates (NOT a prediction test)",
       "computed": 47,
       "expected": 47,
       "passed": true,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "certificate-to-mass",
   "scriptFile": "certificate-to-mass.py",
-  "scriptHash": "d58d1cfe26e3",
-  "scriptCommitSha": "",
+  "scriptHash": "cb9b58ac0869",
+  "scriptCommitSha": "d3c7c979dccd265671b6d5d669c6223fc01918da",
   "description": "Validation of 47 hecke-engine certificates against AME2020 atomic masses. Evaluates certificate polynomial fields (tr_alt, net, f_pauli) at q₀ and compares to observed masses. Documents which computations are genuine predictions from q vs recombinations of CODATA/AME2020 inputs.",
   "parameters": {
     "q₀": 1.1099785955541805,
@@ -709,7 +709,7 @@
         "Mass ratio m_μ/m_e (definitional)"
       ],
       "from_codata_ame2020": [
-        "m_e (absolute MeV scale)",
+        "m_e (absolute MeV scale — the RULER)",
         "m_p, m_n (nucleon masses)",
         "B/A (binding energy per nucleon)"
       ],
@@ -723,6 +723,26 @@
         "Half-life ratios via log_q(ft)",
         "B/A from transfer matrix (NOT YET IMPLEMENTED)"
       ]
+    },
+    "scaling_parameters": {
+      "parameter_1_required": {
+        "name": "m_e",
+        "value_MeV": 0.51099895,
+        "source": "CODATA 2022",
+        "role": "Absolute MeV scale (ruler). Converts dimensionless q-derived quantities to physical units. Without m_e, only dimensionless ratios (m_μ/m_e, etc.) can be predicted."
+      },
+      "parameter_2_potential_TODO": {
+        "name": "E₀",
+        "value_MeV": 4.1549,
+        "source": "Calibrated from neutron β-decay: E₀ = Q/|Δnet|",
+        "role": "Energy scale for Q-value predictions from net differences. Currently derived from observed Q and q-computed Δnet. TODO: determine if E₀ is independently derivable from q or if it reduces to m_e × f(q)."
+      }
+    },
+    "open_problem_B_over_A": {
+      "statement": "Compute B/A purely from q without importing AME2020 values",
+      "physics": "B/A measures how tightly nucleons bind. For stable nuclei, B/A ≈ 7-9 MeV. In QOU, each nucleus has a topological structure (nucleon braids + inter-nucleon crossings) whose transfer matrix product gives the Skein polynomial P(q). The question is: can B/A be extracted from P(q₀)?",
+      "current_status": "No formula maps certificate fields (net, tr_alt, f_pauli) to B/A. The net values span ~50 orders of magnitude while B/A varies 0-9 MeV.",
+      "if_solved": "M(Z,N) = Z·m_p(q) + N·m_n(q) + Z·m_e − A·(B/A)(q) would be genuine predictions from q + m_e alone."
     }
   }
 }

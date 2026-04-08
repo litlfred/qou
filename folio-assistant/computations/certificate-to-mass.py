@@ -299,31 +299,59 @@ def evaluate_all():
     print()
     print(f"Matched to AME2020: {matched}/{len(certs)}")
     print(f"Without AME2020 data: {unmatched}/{len(certs)}")
+    print()
+    print("NOTE: 'Matched' means AME2020 has binding-energy data for this isotope.")
+    print("It does NOT mean the certificate predicts the mass. There is currently")
+    print("no formula mapping certificate polynomial fields → B/A in MeV.")
     
-    # ── Analysis: Can certificate fields predict mass? ───────
+    # ── Per-isotope observed vs certificate detail ───────────
     print()
     print("=" * 120)
-    print("ANALYSIS: Certificate Field → Mass Correlation")
+    print("PER-ISOTOPE DETAIL: AME2020 observed B/A vs certificate polynomial fields")
     print("=" * 120)
     print()
+    print("For each isotope we show the AME2020 observed binding energy per nucleon")
+    print("alongside the certificate's three polynomial evaluations at q₀.")
+    print("NONE of these fields maps to B/A via a known formula — they encode")
+    print("combinatorial crossing structure, not mass directly.")
+    print()
     
-    # For matched isotopes, check if any polynomial evaluation correlates with mass
     matched_data = [r for r in results if r["M_CODATA_MeV"] is not None and r["net_f64"] is not None]
     
     if matched_data:
-        print(f"{'Isotope':<8} {'A':>3} {'M(MeV)':>12} {'net':>14} {'|net|':>14} {'M/|net|':>14} {'f_pauli':>12} {'M×f_pauli':>14}")
-        print("-" * 100)
+        header2 = (
+            f"{'Isotope':<8} {'A':>3} {'B/A(AME)':>10} {'M(AME,MeV)':>12} "
+            f"{'f_pauli':>12} {'|net|':>14} {'M/|net|':>14} "
+            f"{'Category':>12}"
+        )
+        print(header2)
+        print("-" * len(header2))
         
         for r in matched_data:
             M = r["M_CODATA_MeV"]
+            BperA = r["B_per_A_AME2020"]
             net = r["net_f64"]
             fp = r["f_pauli_f64"]
             abs_net = abs(net) if net else 0
             ratio = M / abs_net if abs_net > 1e-30 else float('inf')
-            mfp = M * fp if fp else 0
             
-            print(f"{r['isotope']:<8} {r['A']:>3} {M:>12.2f} {net:>14.6e} {abs_net:>14.6e} {ratio:>14.4e} {fp:>12.6e} {mfp:>14.4f}")
+            # Classify: what kind of isotope is this?
+            A = r["A"]
+            cat = "light" if A <= 14 else "medium" if A <= 40 else "heavy"
+            
+            BperA_s = f"{BperA:.4f}" if BperA is not None else "N/A"
+            
+            print(
+                f"{r['isotope']:<8} {r['A']:>3} {BperA_s:>10} {M:>12.2f} "
+                f"{fp:>12.6e} {abs_net:>14.6e} {ratio:>14.4e} "
+                f"{cat:>12}"
+            )
     
+    # ── Analysis summary ─────────────────────────────────────
+    print()
+    print("=" * 80)
+    print("ANALYSIS: Certificate Field → Mass Correlation")
+    print("=" * 80)
     print()
     print("KEY FINDINGS:")
     print()
@@ -337,19 +365,59 @@ def evaluate_all():
     print("3. The tr_alt_f64 and net_f64 encode the Skein polynomial P(q₀),")
     print("   which gives COMBINATORIAL structure (crossing patterns), not mass.")
     print()
-    print("4. CURRENT MASS COMPUTATION: M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N)")
-    print("   uses CODATA m_p, m_n and AME2020 B/A. This is trivially correct")
-    print("   because it recombines observed values — it is NOT a prediction.")
+    print("=" * 80)
+    print("SCALING PARAMETERS")
+    print("=" * 80)
     print()
-    print("5. GENUINE q-PREDICTIONS possible:")
-    print("   a) Mass RATIOS between particles (e.g., m_μ/m_e = Vol(4₁)/ℏ_q²)")
-    print("   b) Q-values = mass DIFFERENCES (e.g., neutron β-decay Q)")
-    print("   c) Half-life RATIOS via log_q(ft) spectroscopy")
-    print("   d) Binding energy per nucleon B/A from transfer matrix (NOT YET DONE)")
+    print("PARAMETER 1 (required): m_e = 0.51099895 MeV (CODATA 2022)")
+    print("  This is our RULER — it converts dimensionless q-derived quantities")
+    print("  to physical MeV. Without m_e, we can only predict dimensionless ratios.")
+    print("  The substrate parameter q fixes mass RATIOS (m_μ/m_e = Vol(4₁)/ℏ_q²)")
+    print("  but the absolute MeV scale requires one external input.")
     print()
-    print("6. THE MISSING LINK: Computing B/A purely from q requires deriving")
-    print("   the nuclear binding energy from the transfer matrix chain,")
-    print("   without importing AME2020 values. This is the critical open problem.")
+    print("PARAMETER 2 (potential, TODO): E₀ ≈ 4.155 MeV")
+    print("  Calibrated from neutron β-decay: E₀ = Q_neutron / |Δnet|.")
+    print("  Currently derived FROM observed Q-value and q-computed Δnet.")
+    print("  May be derivable from q alone if B/A computation is achieved.")
+    print("  TODO: Determine if E₀ is independent of m_e or follows from it.")
+    print()
+    print("=" * 80)
+    print("SOURCE CLASSIFICATION")
+    print("=" * 80)
+    print()
+    print("CURRENT MASS COMPUTATION: M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N)")
+    print("  uses CODATA m_p, m_n and AME2020 B/A. This is trivially correct")
+    print("  because it recombines observed values — it is NOT a prediction.")
+    print("  The 0.0000% deviations in the mass tables just confirm arithmetic.")
+    print()
+    print("GENUINE q-PREDICTIONS possible:")
+    print("  a) Mass RATIOS between particles (e.g., m_μ/m_e = Vol(4₁)/ℏ_q²)")
+    print("  b) Q-values = mass DIFFERENCES (e.g., neutron β-decay Q)")
+    print("  c) Half-life RATIOS via log_q(ft) spectroscopy")
+    print("  d) Binding energy per nucleon B/A from transfer matrix (NOT YET DONE)")
+    print()
+    print("=" * 80)
+    print("THE OPEN PROBLEM: B/A from q")
+    print("=" * 80)
+    print()
+    print("PHYSICS: The binding energy per nucleon B/A measures how tightly")
+    print("nucleons are bound inside a nucleus. For stable nuclei, B/A ≈ 7-9 MeV.")
+    print("This is the difference between the mass of free nucleons and the")
+    print("actual nuclear mass: B = Z·m_p + N·m_n − M_nucleus.")
+    print()
+    print("In QOU, each nucleus has a topological structure: nucleon braids")
+    print("joined by inter-nucleon crossings. The transfer matrix product")
+    print("∏ᵢ V̂ᵢ(q) gives the Skein polynomial P(q), whose evaluation at q₀")
+    print("encodes the crossing pattern. The OPEN QUESTION is:")
+    print()
+    print("  Can B/A be extracted from the certificate polynomial P(q₀)?")
+    print()
+    print("If yes, then M(Z,N) = Z·m_p(q) + N·m_n(q) + Z·m_e − A·(B/A)(q)")
+    print("would be a GENUINE prediction from q + m_e alone.")
+    print("If no, B/A remains an external input and mass tables are tautological.")
+    print()
+    print("The certificate fields (net, tr_alt, f_pauli) currently show no")
+    print("simple mapping to B/A. This is the critical open problem.")
     
     # ── Build witness ────────────────────────────────────────
     w = WitnessBuilder("certificate-to-mass", engine="python")
@@ -380,12 +448,17 @@ def evaluate_all():
     )
     
     w.add_assertion(
-        "AME2020 coverage of certificates",
+        "AME2020 lookup exists for all 47 certificates (NOT a prediction test)",
         computed=matched,
-        expected=matched,  # self-referential, just records the count
+        expected=47,
         tolerance=0,
         source="AME2020 binding energy database",
     )
+    
+    # Note: no certificate→mass formula exists yet, so no prediction
+    # assertions can be made. The "matched" count means AME2020 has
+    # B/A data for these isotopes, not that any certificate field
+    # reproduces the observed mass.
     
     # Record individual certificate results
     w.add_data("certificate_results", results)
@@ -400,7 +473,7 @@ def evaluate_all():
             "Mass ratio m_μ/m_e (definitional)",
         ],
         "from_codata_ame2020": [
-            "m_e (absolute MeV scale)",
+            "m_e (absolute MeV scale — the RULER)",
             "m_p, m_n (nucleon masses)",
             "B/A (binding energy per nucleon)",
         ],
@@ -414,6 +487,40 @@ def evaluate_all():
             "Half-life ratios via log_q(ft)",
             "B/A from transfer matrix (NOT YET IMPLEMENTED)",
         ],
+    })
+    
+    w.add_data("scaling_parameters", {
+        "parameter_1_required": {
+            "name": "m_e",
+            "value_MeV": M_E_MEV,
+            "source": "CODATA 2022",
+            "role": "Absolute MeV scale (ruler). Converts dimensionless q-derived "
+                    "quantities to physical units. Without m_e, only dimensionless "
+                    "ratios (m_μ/m_e, etc.) can be predicted.",
+        },
+        "parameter_2_potential_TODO": {
+            "name": "E₀",
+            "value_MeV": E0_beta,
+            "source": "Calibrated from neutron β-decay: E₀ = Q/|Δnet|",
+            "role": "Energy scale for Q-value predictions from net differences. "
+                    "Currently derived from observed Q and q-computed Δnet. "
+                    "TODO: determine if E₀ is independently derivable from q "
+                    "or if it reduces to m_e × f(q).",
+        },
+    })
+    
+    w.add_data("open_problem_B_over_A", {
+        "statement": "Compute B/A purely from q without importing AME2020 values",
+        "physics": "B/A measures how tightly nucleons bind. For stable nuclei, "
+                   "B/A ≈ 7-9 MeV. In QOU, each nucleus has a topological "
+                   "structure (nucleon braids + inter-nucleon crossings) whose "
+                   "transfer matrix product gives the Skein polynomial P(q). "
+                   "The question is: can B/A be extracted from P(q₀)?",
+        "current_status": "No formula maps certificate fields (net, tr_alt, "
+                          "f_pauli) to B/A. The net values span ~50 orders "
+                          "of magnitude while B/A varies 0-9 MeV.",
+        "if_solved": "M(Z,N) = Z·m_p(q) + N·m_n(q) + Z·m_e − A·(B/A)(q) "
+                     "would be genuine predictions from q + m_e alone.",
     })
     
     w.save()
