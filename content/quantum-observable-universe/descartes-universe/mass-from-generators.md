@@ -5,19 +5,24 @@ generators ([finiteness of generators](#prop:torus-knot-generators))
 and the two linking operations.  This remark traces the pipeline
 from generators through linking to CODATA-comparable masses.
 
-**Step 1: Bare generators have zero mass.**
+**Step 1: Bare generators have zero hyperbolic volume.**
 Every torus knot $T_{m,n}$ has zero hyperbolic volume (torus knots
-are non-hyperbolic), so the topological mass formula
-([topological mass formula](#prop:topological-mass-formula)) gives
+are non-hyperbolic):
 
 $$
-  \mathcal{M}_{\mathrm{bare}}(T_{m,n})
-  =  \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{2}}
-  =  0.
+  \mathrm{Vol}(T_{m,n}) = 0.
 $$
 
+At a single brane level, the categorical mass $|\mathrm{tr}_M(\rho(\beta))|$
+is nonzero (e.g.\ $|\mathrm{tr}_M(e^-)| = hz^2 + z \approx 0.551$),
+but the full tower-summed mass
+([topological mass formula](#prop:topological-mass-formula))
+gives $\mathrm{Vol}/\hbar_q^2 = 0$ for bare torus knots.  The
+physical mass of torus knot particles (leptons) arises from the
+quantum dilogarithm contributions across the brane tower and from
+coupling to the Higgs mechanism ($4_1$, figure-eight).
 Mass is not an intrinsic property of the generator — it is
-*created by linking*.
+*created by linking and tower accumulation*.
 
 **Step 2: Hopf linking generates leptonic mass.**
 A single Hopf linking of two generators on the exceptional divisor

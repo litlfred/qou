@@ -1,4 +1,11 @@
-Using the derived $q_0$, the hadronic mass collapses into a linear combination of the neutrino vacuum drag and the pure strong-force binding energy. All four rows match CODATA to sub-keV precision:
+Using the derived $q_0$ and the pair Skein mass formula
+([terminal resolution proof](#prf:terminal-resolution)),
+the hadronic mass structure is determined by the typed crossing
+operators.  The dressed quark masses $\mu_\mathfrak{u}, \mu_\mathfrak{d}$
+are **calibrated** from $m_p$ and $m_n - m_p$ (CODATA); the
+structural content (pair formula, splitting isolation, binding
+energy) is categorically derived.  All four rows reproduce
+CODATA to sub-keV precision:
 
 | **Structure** | **Topological Formula** | **QOU Result (MeV)** | **CODATA (MeV)** |
 |---|---|---|---|

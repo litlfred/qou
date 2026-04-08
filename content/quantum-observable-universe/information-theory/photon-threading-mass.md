@@ -18,8 +18,13 @@ augmented braid $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$, and
 $c_w$ are the coefficients at each step.*
 
 **Three computations of the same quantity.**
-The mass $\mathfrak{m}_{\mathfrak{H}}$ is computed by three independent methods
-that yield the same result:
+For hyperbolic knot composites (hadrons), the mass $\mathfrak{m}_{\mathfrak{H}}$
+is computed by three independent methods that yield the same result.
+For torus knots (leptons), the Gröbner--Shirshov energy is zero
+(the braid word is already in normal form), mirroring the vanishing
+hyperbolic volume; the physical lepton mass arises from brane-tower
+contributions not captured by the single-level computation
+([mass endomorphism conjecture](#conj:mass-endomorphism)).
 
 | Method | Domain | Computes $\mathfrak{m}_{\mathfrak{H}}$ as |
 |--------|--------|------------------------------|
