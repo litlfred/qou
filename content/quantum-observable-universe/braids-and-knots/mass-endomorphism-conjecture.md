@@ -101,7 +101,24 @@ finite $N$ (determined by the knot crossing number), so the
 relevant sum is finite.  The question is whether this finite
 sum has a closed-form expression in $H_n(q)$.
 
-## Computational verification
+## Descended vs transient mass (computed)
+
+The Hecke mass element splits as
+$\Phi_{\mathrm{mass}} = \Phi^{\mathrm{desc}} + \Phi^{\mathrm{trans}}$
+([Hecke mass element](#def:hecke-mass-element)).  At our $q_0$,
+the transient (tower) component dominates overwhelmingly:
+
+| Particle | $\mathrm{tr}_M(\Phi^{\mathrm{desc}})$ | $\mathrm{tr}_M(\Phi^{\mathrm{trans}})$ | Ratio trans/desc |
+|:---:|:---:|:---:|:---:|
+| $e^-$ (trefoil) | $0.551$ | $111.86$ | $203\times$ |
+| $4_1$ (figure-eight) | $0.182$ | $207.40$ | $1137\times$ |
+
+The single-level (descended) Markov trace contributes **less
+than $0.5\%$** of the total mass.  The mass is almost entirely
+a brane tower effect — the accumulated quantum dilogarithm
+across exceptional divisors.
+
+## Computational verification (single-level)
 
 Three single-level approaches were tested for the proton
 ($uud$) and neutron ($udd$) Borromean braids:
