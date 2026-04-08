@@ -3,6 +3,15 @@ $\alpha_\varrho = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
 splits along two orthogonal directions in the Hecke algebra, corresponding
 to the two Markov moves of the braid group.
 
+| Restriction | Markov move | $H_n(q)$ element | Physical invariant |
+|---|---|---|---|
+| Horizontal | Conjugation (within a fibre) | $\rho(\beta)$ | Charge $Q$, crossing energy $\mathbf{E}_{\mathrm{cross}}$ |
+| Vertical | Stabilisation (along the tower) | $\Phi_{\mathrm{mass}}(\beta)$ | Mass $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2$ |
+| Mixed | Both simultaneously | $Y(a, z)$ (vertex operator) | Full particle data |
+
+The Frobenius pairing $\langle a, b \rangle_F = \int_A \mu(a \otimes b)$
+mediates the duality: it pairs $\mu$ (horizontal) with $\int_A$ (vertical).
+
 **Horizontal restriction (conjugation, within a fibre).**
 Restricting to a single level of the brane tower — crossings within
 $V^{\otimes n}$ with no tower propagation — the Hecke element
