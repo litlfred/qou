@@ -34,6 +34,23 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 - **Half-life ratios**: the $\log_q(ft)$ values from the transfer
   matrix encode relative decay rates.
 
+**Genuine predictions summary** (observed vs predicted with %):
+
+| Quantity | Predicted | Observed | $\delta$ | Method |
+|:---------|----------:|---------:|---------:|:-------|
+| $m_\mu/m_e$ | $206.768$ | $206.768$ | $<0.001\%$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ (by construction) |
+| $Q({}^3\mathrm{H})$ | $0.01849$ MeV | $0.01861$ MeV | $-0.6\%$ | $\Delta\mathrm{net} \times E_0$ |
+| $Q({}^{14}\mathrm{C})$ | $0.15300$ MeV | $0.15648$ MeV | $-2.2\%$ | $\Delta\mathrm{net} \times E_0$ |
+| $Q({}^{90}\mathrm{Sr})$ | $0.55740$ MeV | $0.54590$ MeV | $+2.1\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
+| $Q({}^{60}\mathrm{Co})$ | $0.33856$ MeV | $0.31817$ MeV | $+6.4\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
+| $Q({}^{137}\mathrm{Cs})$ | $0.53750$ MeV | $0.51400$ MeV | $+4.6\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{Pauli}$ |
+| $Q({}^{210}\mathrm{Bi})$ | $1.28191$ MeV | $1.16270$ MeV | $+10.3\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
+
+MAE $\approx 4.4\%$ across all six $\beta^-$ benchmarks. Light
+nuclei ($A \leq 14$) achieve $\leq 2.2\%$ with no shell corrections.
+These are the real predictions --- not the trivially correct 0.0000%
+mass table entries.
+
 ## Hecke-engine certificate validation
 
 47 isotopes (${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$) have
@@ -55,6 +72,90 @@ ${}^{60}\mathrm{Co}$) while $B/A$ varies only between 0 and 9 MeV.
 No simple linear mapping $\mathrm{net} \times E_0 = M$ exists across
 all isotopes. The certificate fields encode *combinatorial crossing
 structure*, not mass directly.
+
+## Certificate fields and the $6 \times 6$ transfer matrix
+
+The three certificate fields are evaluations of polynomials derived
+from the $6 \times 6$ transfer matrix of $H_3(q)$. The transfer
+matrix acts on the full NF basis
+$\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ (the 6 reduced
+words of $S_3$, i.e. $\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1,
+\sigma_1\sigma_0, \sigma_0\sigma_1\sigma_0\}$).
+
+**Certificate field origins.** For a nuclear braid word $w$ with
+$A$ nucleons:
+
+- $\mathrm{net}(q_0)$: the sum of all 6 NF coefficients after
+  reducing $w$ to the Gröbner--Shirshov normal form. This is the
+  Markov trace of the braid.
+- $\mathrm{tr\_alt}(q_0)$: the alternating trace --- the projection
+  of the NF onto the alternating (sign) irrep of $S_3$. This picks
+  out the antisymmetric channel.
+- $F_\mathrm{Pauli}(q_0)$: the ratio
+  $\mathrm{tr\_alt}/\mathrm{tr\_sym}$, measuring the Pauli exclusion
+  statistical weight. For identical fermions, $F_\mathrm{Pauli}$
+  suppresses symmetric configurations.
+
+**Irrep decomposition.** The regular representation of $H_3(q)$
+decomposes into three irreps:
+
+$$
+H_3(q) \cong V_\mathrm{sym}(1) \oplus V_\mathrm{std}(2) \oplus V_\mathrm{alt}(1)
+$$
+
+where dimensions are $1 + 2^2 + 1 = 6$ (the standard irrep
+appears with multiplicity 2 in the regular representation). The
+$6 \times 6$ transfer matrix captures all three irreps simultaneously.
+The $2 \times 2$ transfer matrix (used in earlier computations) only
+captures the symmetric and one copy of the standard irrep, missing
+the alternating channel entirely.
+
+**Why the full $6 \times 6$ matters.** The adjoint representation
+of the strong force requires all three channels. The $L_+$ and $L_-$
+terms (Hopf links) carry the gluon field content. The $e^-$ term
+(trefoil = $\sigma_0\sigma_1\sigma_0$, the longest element $w_0$)
+carries the alternating irrep. Without the full $6 \times 6$, the
+Pauli exclusion factor $F_\mathrm{Pauli}$ cannot be computed and
+nuclear shell effects are invisible.
+
+## Nucleon NF structure and binding receptivity
+
+Each nucleon's NF in $H_3(q)$ has 6 coefficients with a characteristic
+sign pattern. Negative coefficients indicate channels where the
+nucleon has a *deficit* --- these are the channels it is receptive to
+(can absorb from a binding partner).
+
+**Proton** (uud, typed crossings):
+
+| Term | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
+|:-----|-------:|--------:|--------:|------:|------:|------:|
+| Coeff | $-0.100$ | $+0.036$ | $+0.998$ | $+0.099$ | $+0.009$ | $-0.043$ |
+| Sign | $-$ | $+$ | $+$ | $+$ | $+$ | $-$ |
+
+**Neutron** (udd, typed crossings):
+
+| Term | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
+|:-----|-------:|--------:|--------:|------:|------:|------:|
+| Coeff | $-0.202$ | $+0.048$ | $+1.009$ | $-0.010$ | $+0.009$ | $-0.044$ |
+| Sign | $-$ | $+$ | $+$ | $-$ | $+$ | $-$ |
+
+**Key observations:**
+
+- Both nucleons have negative $\gamma$ (identity) and $e^-$ (trefoil)
+  coefficients. These channels carry mass-energy deficit.
+- The neutron additionally has a negative $L_+$ (Hopf link)
+  coefficient --- it is receptive to the $L_+$ gluon channel.
+  The proton's $L_+$ is positive ($+0.099$).
+- $\mathrm{net}(p) = +0.999$, $\mathrm{net}(n) = +0.811$.
+  The $\Delta\mathrm{net} = -0.188$ drives the neutron $\beta$-decay
+  $Q$-value.
+
+**Beta decay: why free neutron is the simplest.** Free neutron decay
+$n \to p + e^- + \bar{\nu}$ is the simplest possible $\beta^-$ decay:
+a single nucleon, no nuclear environment, no Coulomb corrections.
+This is why it calibrates $E_0$ directly. The next simplest is tritium
+${}^3\mathrm{H} \to {}^3\mathrm{He} + e^- + \bar{\nu}$, where the
+spectator deuteron core adds only a small nuclear correction.
 
 ## The open problem: $B/A$ from $q$
 
@@ -83,16 +184,60 @@ $\prod_i \hat{V}_i(q)$ gives the Skein polynomial $P(q)$ whose
 logarithm $\ln|P(q_0)|$ grows monotonically with $A$, but the
 mapping $\ln|P| \to B/A$ is not yet established.
 
-Potential approaches:
-1. Volume integral: $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$
-   works for individual knots (electron, muon). Extending to nuclear
-   multi-body Skein polynomials requires integrating the
-   $A$-nucleon crossing polynomial.
-2. Spectral decomposition: the eigenvalues of the transfer matrix
-   encode crossing energies. The binding energy may emerge as the
-   difference between the interacting and free Skein polynomials.
-3. Certificate polynomial roots: the tr\_alt polynomial's root
-   structure at $q = q_0$ may encode binding through level repulsion.
+**Approach 1: Volume integral (non-abelian Stokes).** For a single
+knot $K$, mass is $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$.
+For a multi-nucleon system with $A$ nucleons, the non-abelian Stokes
+theorem expands the volume integral over the composite braid as a sum
+of crossing contributions:
+
+$$
+\mathrm{Vol}(K_A) = \sum_{i < j}^A V_{ij}(q)
+$$
+
+where $V_{ij}$ is the crossing volume between nucleon strands $i$ and
+$j$. Each $V_{ij}$ is computed from the $6 \times 6$ transfer matrix
+at the $(i,j)$ crossing site. The binding energy is the difference
+between the interacting and free volumes:
+
+$$
+B(Z,N) = \sum_\mathrm{free} \mathrm{Vol}(K_i) - \mathrm{Vol}(K_A)
+$$
+
+This is a simple sum (not a path-ordered integral) because each
+crossing site contributes independently to the total volume after
+Gröbner reduction.
+
+**Approach 2: Spectral decomposition (eigenvalues of $6 \times 6$).**
+The eigenvalues of the transfer matrix encode crossing energies in
+each irrep channel. The binding energy may emerge as the difference
+between eigenvalues of the interacting vs free Skein polynomials.
+This is the same as tracking cross-channel traffic on the jet bundle
+--- the $6 \times 6$ is the spectral decomposition, and each eigenvalue
+corresponds to a definite irrep of $S_3$.
+
+**Approach 3: Binding operator from NF receptivity.** The negative NF
+coefficients of proton and neutron indicate which channels they are
+receptive to. A binding operator $\hat{B}$ must supply what the
+negative channels demand. Concretely:
+
+- Both p and n have negative $\gamma$ and $e^-$ --- the binding
+  operator must supply identity and trefoil content.
+- The neutron has negative $L_+$ --- the binding operator must supply
+  Hopf link content to the neutron.
+
+**TODO**: Find a torus knot $T(2,k)$ whose NF, when applied to
+both proton and neutron simultaneously, fills their negative
+channels and yields $B/A$ matching the AME2020 curve. The candidate
+must have positive $\gamma$, positive $e^-$, and positive $L_+$
+coefficients. The Borromean link $B_3 = (\sigma_0\sigma_1^{-1})^3$
+already provides exactly this pattern with
+$\mathrm{net}(B_3) = +1.000$, $L_+ = +0.046$, $L_- = -0.044$,
+but operates at the single-nucleon (gluon) level, not the
+inter-nucleon binding level.
+
+**Approach 4:** Certificate polynomial roots --- the tr\_alt
+polynomial's root structure at $q = q_0$ may encode binding through
+level repulsion.
 
 ## Isotope coverage
 
