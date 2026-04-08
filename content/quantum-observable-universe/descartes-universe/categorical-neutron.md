@@ -1,18 +1,34 @@
 The **neutron** is the baryon with $1 + 2$ crossing partition:
-one up quark and two down quarks in the Borromean link
+one up quark and two down quarks in the Borromean braid
 $\mathcal{B}_3$ ([Borromean quark](#conj:borromean-quark)).
 
 $$
   \mathfrak{n}
   \;=\;
   \mathcal{B}_3(\mathfrak{u},\, \mathfrak{d},\, \mathfrak{d})
-  \;\bowtie\; \mathcal{L}_H
 $$
 
-**Normal form (typed crossings).**
-The two down quarks introduce two $-H_A \cdot \mathbf{1}$ shifts
-(where $H_A = q - q^{-1}$), pulling the net below the proton's.
-At $q_0 \approx 1.1100$, the neutron NF is:
+**Step 1: Borromean braid NF.**
+Same as [proton](#def:categorical-proton) Step 1:
+$\mathrm{net}(\mathcal{B}_3) = +1.000$, with intrinsic Hopf link
+content (no separate $\mathcal{L}_H$ factor).
+
+**Step 2: typed crossings.**
+The two down quarks introduce stronger $-H_A$ shifts than
+the proton's single down quark:
+
+| Pair | Type | Crossing element |
+|:---|:---|:---|
+| $(0,1)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A\cdot\mathbf{1}$ |
+| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A\cdot\mathbf{1}$ |
+| $(1,2)$ | $\mathfrak{d}$-$\mathfrak{d}$ | $\sigma_1 - H_A\cdot\mathbf{1}$ |
+
+The $\mathfrak{d}$-$\mathfrak{d}$ crossing on pair $(1,2)$
+carries the full $-H_A$ shift (eigenvalue $-q^{-1}$), pulling
+the net further below the proton's.
+
+**Step 3: neutron NF.**
+At $q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
