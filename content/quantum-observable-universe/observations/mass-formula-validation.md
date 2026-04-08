@@ -13,12 +13,23 @@ $m_e = 0.51099895$ MeV (CODATA 2022). This is our **ruler** ---
 it fixes the absolute energy scale. Without $m_e$, QOU predicts
 ratios only.
 
-**TODO**: $E_0 \approx 4.155$ MeV (calibrated from neutron
-$\beta$-decay as $E_0 = Q/|\Delta\mathrm{net}|$) may be a second
-parameter needed for $Q$-value predictions. It is currently derived
-from observed $Q$ and $q$-computed $\Delta\mathrm{net}$. Determine
-whether $E_0$ is independently derivable from $q$ or reduces to
-$m_e \times f(q)$.
+## The second scalar: $E_0$ as time scale
+
+$E_0 \approx 4.155$ MeV (calibrated from free neutron $\beta$-decay
+as $E_0 = Q/|\Delta\mathrm{net}|$) is the **time scale** of the
+theory. Where $m_e$ converts spatial/mass ratios to physical MeV
+(the ruler), $E_0$ converts crossing-number differences
+$\Delta\mathrm{net}$ to physical energy differences (the clock).
+Together, $m_e$ and $E_0$ are the two external scalars needed:
+one for mass (spatial extent), one for energy release (temporal
+dynamics).
+
+**TODO**: $E_0$ is currently derived from observed $Q_\mathrm{neutron}$
+and $q$-computed $\Delta\mathrm{net}$. Determine whether $E_0$ is
+independently derivable from $q$ (e.g. $E_0 = m_e \times f(q)$
+for some $q$-rational function $f$), which would reduce the theory
+to a single external parameter. Re-evaluate the derivation when
+the volume integral expansion is complete.
 
 ## What the substrate parameter $q$ genuinely predicts
 
