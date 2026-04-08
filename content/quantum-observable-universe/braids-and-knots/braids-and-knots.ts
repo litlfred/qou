@@ -284,6 +284,7 @@ export default chapter({
         "categorical-mass-markov",
         "mass-endomorphism-conjecture",
         "calibration-inputs",
+        "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",
