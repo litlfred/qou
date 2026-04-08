@@ -1,13 +1,16 @@
-The QOU framework requires exactly **two** calibration inputs
-from experiment.  All other masses, binding energies, Q-values,
-and coupling constants are predictions.
+The QOU framework requires exactly **three** calibration inputs
+from experiment: two leptonic (fixing the shape and size of the
+universe) and one hadronic (fixing the interaction energy scale).
+All other masses, binding energies, Q-values, and coupling
+constants are predictions.
 
-## The two inputs
+## The three inputs
 
 | Input | What it fixes | CODATA 2022 | Rel. precision |
 |-------|--------------|-------------|:-:|
 | $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | Substrate parameter $q_0$ | Dimensionless ratio | $2.2 \times 10^{-8}$ |
-| $m_e = 0.51099895000 \pm 0.00000000015$ MeV | Mass scale (unit conversion) | Electron mass | $2.9 \times 10^{-10}$ |
+| $m_e = 0.51099895000 \pm 0.00000000015$ MeV | Leptonic mass scale | Electron mass | $2.9 \times 10^{-10}$ |
+| $Q_\beta(n) = 0.78233341 \pm 0.00000061$ MeV | Hadronic energy scale $E_0$ | Free neutron decay | $7.8 \times 10^{-7}$ |
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$
@@ -18,11 +21,11 @@ $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
 
-The second input sets the **mass scale** — the conversion
-from dimensionless natural units to MeV.  The electron is
-the natural choice: it is the simplest charged lepton, its
-mass is the most precisely measured particle mass in the
-Standard Model, and its brane tower is fully computable
+The second input sets the **leptonic mass scale** — the
+conversion from dimensionless natural units to MeV.  The
+electron is the natural choice: it is the simplest charged
+lepton, its mass is the most precisely measured particle mass
+in the Standard Model, and its brane tower is fully computable
 from $q_0$ alone:
 
 $$
@@ -36,13 +39,32 @@ where $\mathrm{Li}_2(q^{-2}) = \sum_{n=1}^{\infty} q^{-2n}/n^2$
 converges in $\sim 20$ terms.  The conversion factor is then
 $m_e(\text{MeV}) / m_e(\text{natural}) \approx 4.57 \times 10^{-3}$ MeV.
 
-With these two inputs, **all hadronic masses become
-predictions**: the proton mass, neutron mass, deuteron
-binding energy, beta-decay Q-values, and nuclear shell
-structure are all derived from the Hecke engine at $q_0$
-with the $m_e$ ruler.
+The third input sets the **hadronic energy scale**.
+The leptonic inputs ($m_e$, $q_0$) give an approximate
+hadronic scale $E_0 \approx m_e/(q(q-1))$
+([energy scale](#rem:energy-scale-planck)), but this
+single-level expression misses the brane tower correction
+($0.17\%$, or $1.3$ keV on $Q_\beta$).  The free neutron
+$\beta$-decay Q-value calibrates $E_0$ exactly:
 
-## Why exactly two
+$$
+  E_0
+  =
+  \frac{Q_\beta(n)}{|\Delta(\mathrm{net})|}
+  =
+  \frac{0.78233}{|h(h-2)/2|}
+  \approx  4.179 \text{ MeV}
+$$
+
+where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
+difference between neutron and proton
+([symbolic Q-value](#prop:neutron-qvalue-symbolic)).
+The free neutron is the simplest hadronic decay — one
+crossing change ($\mathfrak{d} \to \mathfrak{u}$) inside
+one nucleon, no nuclear environment.  Once $E_0$ is fixed,
+**all other Q-values are predictions**.
+
+## Why exactly three
 
 The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
 ([categorical action](#def:categorical-action)) lives in a
@@ -52,7 +74,7 @@ constraint $\star_q F_\nabla = F_\nabla$
 ([instanton on-shell](#rem:instanton-on-shell)) and gauge
 invariance $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
 ([observability](#def:quantum-observable-universe)) eliminate
-all but two real parameters:
+all but three real parameters:
 
 1. **The deformation parameter $q$.**  This is the single
    continuous parameter of the Iwahori--Hecke algebra $H_n(q)$.
@@ -64,14 +86,23 @@ all but two real parameters:
    The value $q_0 \approx 1.110$ is fixed by one dimensionless
    measurement.
 
-2. **The overall normalisation.**  The categorical mass
+2. **The leptonic mass scale.**  The categorical mass
    $\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$
    ([categorical mass as Markov trace](#prop:categorical-mass-markov))
    is dimensionless.  Converting to physical units (MeV)
-   requires one mass measurement.  This is the same
-   situation as any physical theory: the speed of light $c$,
-   Planck's constant $\hbar$, and Newton's constant $G$ are
-   unit-setting inputs, not predictions.
+   requires one mass measurement.  The electron mass sets this
+   scale, analogous to the speed of light $c$ and Planck's
+   constant $\hbar$ in the Standard Model.
+
+3. **The hadronic energy scale.**  The brane tower converts
+   the single-level Hecke algebra to full particle masses.  The
+   leptonic sector is fully computable ($\mathrm{Li}_2/\hbar_q^2$),
+   but the hadronic sector's tower correction introduces a
+   $0.17\%$ shift in the energy scale $E_0$ that is not captured
+   by the algebraic expression $m_e/(q(q-1))$.  The free neutron
+   $Q_\beta$ calibrates this exactly.  The three inputs correspond
+   to the three physical sectors: shape ($q$), leptonic size
+   ($m_e$), hadronic interaction strength ($Q_\beta$).
 
 No further parameters exist because:
 - The knot-particle dictionary is **determined by $\chi = -6$**:
@@ -127,9 +158,10 @@ No further parameters exist because:
 The Standard Model has **19 free parameters** (6 quark masses,
 3 lepton masses, 3 CKM angles + 1 phase, 3 gauge couplings,
 Higgs mass, Higgs VEV, QCD theta angle).  The QOU framework
-replaces all 19 with **2** (one dimensionless ratio + one mass
-scale), deriving the rest from the topology of the Bring surface
-$\Sigma_4$ and the Iwahori--Hecke algebra $H_n(q)$.
+replaces all 19 with **3** (one dimensionless ratio + two
+mass/energy scales), deriving the rest from the topology of
+the Bring surface $\Sigma_4$ and the Iwahori--Hecke algebra
+$H_n(q)$.
 
 The reduction from 19 to 2 is possible because:
 - **Particle content** is topological (from $\chi = -6$), not a
