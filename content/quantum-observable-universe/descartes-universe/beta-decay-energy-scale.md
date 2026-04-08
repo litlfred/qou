@@ -32,17 +32,43 @@ From CODATA 2022:
 - $\mathfrak{m}_{e} = 0.51100 \text{MeV}$
 - $Q_{\beta} = 0.78233 \text{MeV}$
 
-Therefore:
+**Derived energy scale.**
+The energy scale is derivable from the two calibration
+inputs ($m_e$ and $q_0$) alone
+([calibration inputs](#rem:calibration-inputs)):
 
 $$
   \mathbf{E}_0
-  = 
+  :=
+  \frac{m_e}{q_0(q_0 - 1)}
+  =
+  m_e \cdot c_q^2 \cdot \hbar_q
+  \approx  4.186 \text{MeV}.
+$$
+
+This is the electron rest energy per Planck time
+([energy scale and Planck time](#rem:energy-scale-planck)).
+
+**Calibration cross-check.**
+The same scale can be extracted from CODATA by dividing the
+free neutron $Q$-value by the Hecke NF difference:
+
+$$
+  \mathbf{E}_0^{(\text{cal})}
+  =
   \frac{Q_{\beta}}{|\Delta(\mathrm{net})|}
-  = 
+  =
   \frac{0.78233}{0.18829}
    \approx  4.155 \text{MeV}
    \approx  8.131 \times \mathfrak{m}_{e}.
 $$
+
+The derived and calibrated values agree to $0.75\%$
+($4.186$ vs $4.155$ MeV).  The residual reflects the
+brane tower correction: the derived expression uses
+the single-level conversion $c_q^2 \hbar_q$, while the
+calibrated value implicitly includes the full tower
+mass of the neutron and proton.
 
 Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
 net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to

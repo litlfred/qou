@@ -13,12 +13,17 @@ $m_e = 0.51099895$ MeV (CODATA 2022). This is our **ruler** ---
 it fixes the absolute energy scale. Without $m_e$, QOU predicts
 ratios only.
 
-**TODO**: $E_0 \approx 4.155$ MeV (calibrated from neutron
-$\beta$-decay as $E_0 = Q/|\Delta\mathrm{net}|$) may be a second
-parameter needed for $Q$-value predictions. It is currently derived
-from observed $Q$ and $q$-computed $\Delta\mathrm{net}$. Determine
-whether $E_0$ is independently derivable from $q$ or reduces to
-$m_e \times f(q)$.
+**Resolved**: $E_0$ is derivable from $q_0$ and $m_e$ alone
+([energy scale and Planck time](#rem:energy-scale-planck)):
+$E_0 = m_e/(q_0(q_0 - 1)) = m_e \cdot c_q^2 \cdot \hbar_q \approx 4.186$ MeV.
+This agrees with the calibrated value
+$E_0^{(\mathrm{cal})} = Q_\beta/|\Delta\mathrm{net}| \approx 4.155$ MeV
+to $0.75\%$.  The residual is the brane-tower correction
+(single-level vs full-tower).  Using the derived $E_0$, the
+neutron $Q$-value becomes a prediction:
+$Q_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
+(CODATA: $0.782$ MeV, $0.75\%$ error).  No third calibration
+input is needed.
 
 ## What the substrate parameter $q$ genuinely predicts
 

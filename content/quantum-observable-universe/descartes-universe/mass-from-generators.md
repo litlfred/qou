@@ -130,7 +130,8 @@ participates.
 
 The entire chart is determined by three inputs:
 
-1. The substrate parameter $q_0$ (from CODATA),
+1. The substrate parameter $q_0$ (determined by the CODATA input
+   $m_\mu/m_e$, [calibration inputs](#rem:calibration-inputs)),
 2. The seven $T_{m,n}$ generators (from $\chi = -6$), and
 3. The two linking operations $\ell_H$, $\ell_c$ (from the
    exceptional divisor and Bring's surface geometry).
