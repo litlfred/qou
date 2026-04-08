@@ -12,15 +12,15 @@ nuclear mean field — the collective potential created by all
 other nucleons.  The 3D harmonic oscillator has shell sizes
 
 $$
-  s_N \;=\; (N + 1)(N + 2),
+  s_N =  (N + 1)(N + 2),
   \qquad N = 0, 1, 2, \ldots
 $$
 
 and cumulative closures
 
 $$
-  C_N \;=\; \sum_{k=0}^{N} (k+1)(k+2)
-  \;=\; \frac{(N+1)(N+2)(N+3)}{3}.
+  C_N =  \sum_{k=0}^{N} (k+1)(k+2)
+  =  \frac{(N+1)(N+2)(N+3)}{3}.
 $$
 
 | $N$ | Size $s_N$ | Cumulative $C_N$ |
@@ -56,7 +56,7 @@ is proportional to the $q$-Laplacian eigenvalue
 
 $$
   E_{\mathrm{SO}}(\ell, j)
-  \;\propto\;
+   \propto 
   [\ell]_q [\ell + 1]_q
   \cdot (j - \ell)
 $$
@@ -76,7 +76,7 @@ eigenvalue.
 The coupling exceeds the HO level spacing when
 
 $$
-  3 \cdot [\ell]_q [\ell + 1]_q \;>\; 2(N + 1)
+  3 \cdot [\ell]_q [\ell + 1]_q  >  2(N + 1)
   \qquad\text{(level spacing)}
 $$
 

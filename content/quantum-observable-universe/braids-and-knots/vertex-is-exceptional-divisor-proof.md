@@ -15,7 +15,7 @@ without involving sections of the base algebra $A_0$.  Hence $T_i$
 is supported on $\mathcal{S}_p$.
 
 **(2) Confinement.**
-The Skein relation $L_+ - L_- = (q - q^{-1})\,L_0$ is the image
+The Skein relation $L_+ - L_- = (q - q^{-1})L_0$ is the image
 of the Hecke relation $(T_i - q)(T_i + q^{-1}) = 0$ under the
 Markov trace.  Since $T_i$ acts within $\mathcal{S}_p$ (part 1), and the
 Markov trace is computed over the Reeb bundle $\mathcal{R}_p$

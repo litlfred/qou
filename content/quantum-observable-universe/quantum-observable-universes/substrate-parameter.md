@@ -14,7 +14,7 @@ These span a one-parameter family of first-order operators
 parametrised by $q \in \mathrm{End}(\mathbf{1}) \cong k^{\times}$:
 
 $$
-  d_q \;=\; q^{-1}\,d \;+\; (1 - q^{-1})\,\pi_V \circ d.
+  d_q =  q^{-1}d +  (1 - q^{-1})\pi_V \circ d.
 $$
 
 ```tex
@@ -32,7 +32,7 @@ $$
 
 The *substrate parameter* is the unique element
 $q \in \mathrm{End}(\mathbf{1}) \cong k$ such that $d_q$
-acts as $q^{-1}\,d$ on horizontal forms and as $d$ on vertical forms.
+acts as $q^{-1}d$ on horizontal forms and as $d$ on vertical forms.
 Geometrically, $q$ is the fibre coordinate on the
 $\mathbb{G}_m$-family of interpolations.
 

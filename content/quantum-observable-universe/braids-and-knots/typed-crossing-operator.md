@@ -10,16 +10,16 @@ for a pair of quarks with flavors $f_i, f_j \in \{\mathfrak{u}, \mathfrak{d}\}$
 at generator $\sigma_k$ is:
 
 $$
-  C(f_i, f_j;\, \sigma_k)
-  \;=\;
+  C(f_i, f_j; \sigma_k)
+  = 
   \begin{cases}
     \sigma_k
       & \text{if } f_i = f_j = \mathfrak{u}
         \quad\text{(both up)}, \\[6pt]
-    \sigma_k - (q - q^{-1})\,\mathbf{1}
+    \sigma_k - (q - q^{-1})\mathbf{1}
       & \text{if } f_i = f_j = \mathfrak{d}
         \quad\text{(both down)}, \\[6pt]
-    \sigma_k - \tfrac{1}{2}(q - q^{-1})\,\mathbf{1}
+    \sigma_k - \tfrac{1}{2}(q - q^{-1})\mathbf{1}
       & \text{if } f_i \neq f_j
         \quad\text{(mixed)}.
   \end{cases}

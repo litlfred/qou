@@ -3,7 +3,7 @@ compute the [mass identity](#def:mass-identity) for
 $G = \mathrm{SU}(2)$.
 
 **Setup.** Take $A = \mathcal{O}(\mathrm{SU}(2))$ with Frobenius form
-$\int_A = \int_{\mathrm{SU}(2)} (-)\, d\mu$, where $\mu$ is the
+$\int_A = \int_{\mathrm{SU}(2)} (-) d\mu$, where $\mu$ is the
 normalised Haar measure. The comultiplication is
 $\Delta(f)(x, y) = f(xy)$, and the categorical trace is
 $\mathrm{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
@@ -13,12 +13,12 @@ $\mathrm{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
 
 $$
   \mathfrak{m}(\varrho)
-  \;=\; \bigl\lVert \mathrm{tr}\bigl((\int_A \otimes \mathrm{id})
+  =  \bigl\lVert \mathrm{tr}\bigl((\int_A \otimes \mathrm{id})
   \circ \Delta \circ \varrho\bigr) \bigr\rVert.
 $$
 
 Since $\Delta(f)(x, y) = f(xy)$, the inner composition evaluates to
-$(\int_A \otimes \mathrm{id})(\Delta(\varrho)) = \int_{\mathrm{SU}(2)} \varrho(xy)\, d\mu(x)$,
+$(\int_A \otimes \mathrm{id})(\Delta(\varrho)) = \int_{\mathrm{SU}(2)} \varrho(xy) d\mu(x)$,
 which is the convolution of $\varrho$ with the Haar measure.
 
 **Fundamental representation.** For the spin-$\tfrac{1}{2}$
@@ -27,8 +27,8 @@ $\mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ has mass
 
 $$
   \mathfrak{m}(\varrho)
-  \;=\; \biggl\lVert \int_{\mathrm{SU}(2)}
-  \mathrm{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr)\, d\mu
+  =  \biggl\lVert \int_{\mathrm{SU}(2)}
+  \mathrm{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr) d\mu
   \biggr\rVert.
 $$
 

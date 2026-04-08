@@ -5,9 +5,9 @@ $\mathbb{L}_q$ uniquely up to natural isomorphism:
 
 $$
   \mathbb{L}_q(\mathcal{M})(\mathcal{L}_q)
-  \;\simeq\;
+  \simeq
   \mathrm{Hom}_{\mathbf{Rep}(\check{G}_q)}
-  \big(\tau(-),\;
+  \big(\tau(-),
   \mathrm{Hecke}_q(\mathcal{M}, \mathcal{L}_q)\big),
 $$
 

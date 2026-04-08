@@ -4,13 +4,13 @@ $\mathcal{D}_\nabla\psi = 0$
 concrete geometry of a double-slit experiment, with the photon as the
 test particle.  In the QOU, a photon is not the bare identity
 $\mathbf{1}$ but a **photon with color content**
-$\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 ([color content](#rem:knot-basis-color-content)), where the Hecke
 generators encode polarisation on the exceptional divisor
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$.  The identity
 component ($K = \varnothing$, the empty knot) is purely horizontal
 ([boson](#def:fermion-boson-decomposition): vertical component $\alpha_V = 0$); the color
-dressing $\varphi_i\,\sigma_i$ adds polarisation-dependent Reeb phase.
+dressing $\varphi_i\sigma_i$ adds polarisation-dependent Reeb phase.
 
 **Setup.**  A photon source emits a state
 $\psi \colon \mathbf{1} \to A$ with $\psi \in \mathcal{H}_{q,H}^k$
@@ -23,9 +23,9 @@ The photon travels through three regions:
 
    $$
      \mathcal{D}_\nabla\psi
-     \;=\;
-     q^{-1}\,\nabla\psi + (1-q^{-1})\,\iota_\xi\,\nabla\psi
-     \;=\; 0.
+     = 
+     q^{-1}\nabla\psi + (1-q^{-1})\iota_\xi\nabla\psi
+     =  0.
    $$
 
    Since $\psi$ is horizontal ($\pi_V\psi = 0$), the Reeb contraction
@@ -50,7 +50,7 @@ The photon travels through three regions:
 
    $$
      \tau(y)
-     \;=\;
+     = 
      \hbar_q \cdot \mathrm{Vol}(K_{\mathrm{mat}}) \cdot \eta(y)^2 \cdot k w,
    $$
 
@@ -68,13 +68,13 @@ The photon travels through three regions:
 
    $$
      I(x)
-     \;=\;
+     = 
      \left|
-       \sum_{s=1}^{2}\;
+       \sum_{s=1}^{2}
        \int_{-d/2}^{d/2}
-       e^{ik(r_1+r_2)}\;
-       e^{i\,\tau(y)}\;
-       e^{-y_s^2/w_0^2}\;
+       e^{ik(r_1+r_2)}
+       e^{i\tau(y)}
+       e^{-y_s^2/w_0^2}
        dy
      \right|^2,
    $$
@@ -100,10 +100,10 @@ weighting the torsion phase $\tau(y)$.  The corrected torsion becomes
 
 $$
   \tau^{(\mathrm{color})}(y)
-  \;=\;
+  = 
   \tau(y)
-  \;+\;
-  (\varphi_0\,q - \varphi_1\,q^{-1})\,
+  + 
+  (\varphi_0q - \varphi_1q^{-1})
   \hbar_q \cdot \mathrm{Vol}(K_{\mathrm{mat}}) \cdot \eta(y)^2 \cdot k w,
 $$
 

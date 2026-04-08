@@ -9,9 +9,9 @@ that survives the horizon is invariant under rescaling of $A_0$:
 for any $\lambda \in \mathcal{O}(U)^{\times}$,*
 
 $$
-  (A_1 / \lambda A_0,\; A_2 / \lambda A_0)\big|_{\mathcal{H}}
-  \;=\;
-  (A_1 / A_0,\; A_2 / A_0)\big|_{\mathcal{H}}.
+  (A_1 / \lambda A_0, A_2 / \lambda A_0)\big|_{\mathcal{H}}
+  = 
+  (A_1 / A_0, A_2 / A_0)\big|_{\mathcal{H}}.
 $$
 
 *In particular, the boundary datum depends only on the

@@ -20,7 +20,7 @@ experiments report systematic deviations:
    attributed to Coulomb interaction with slit edges, but the
    correction is *ad hoc* and not derived from the wave equation.
    In the QOU model, the excess width arises from the spin-core term
-   $(1 - q^{-1})^2\,\Delta_\xi$ of the $q$-Laplacian, which adds
+   $(1 - q^{-1})^2\Delta_\xi$ of the $q$-Laplacian, which adds
    Reeb-direction broadening to the envelope *without free parameters*
    once $q$ is fixed by the
    [local substrate value](#prop:local-substrate-q).
@@ -67,9 +67,9 @@ widths at the same slit geometry:
 
 $$
   \frac{w_{\mathrm{photon}}}{w_{\mathrm{electron}}}
-  \;=\;
-  \frac{d_H}{2}\,
-  \frac{1 + (1 - q^{-1})^2\,\langle\Delta_\xi\rangle_e /
+  = 
+  \frac{d_H}{2}
+  \frac{1 + (1 - q^{-1})^2\langle\Delta_\xi\rangle_e /
             \langle\Delta\rangle_e}{1},
 $$
 
@@ -88,14 +88,14 @@ fringe shift acquires an $\alpha$-dependent term:
 
 $$
   \delta\Delta\Phi(\alpha)
-  \;=\;
-  (\cos\alpha\,q - \sin\alpha\,q^{-1})\,
-  \hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})\,\Delta\phi_\xi.
+  = 
+  (\cos\alphaq - \sin\alphaq^{-1})
+  \hbar_q\mathrm{Vol}(K_{\mathrm{mat}})\Delta\phi_\xi.
 $$
 
 Sweeping $\alpha$ from $0$ to $\pi/2$ traces a sinusoidal modulation of
 the fringe positions.  The amplitude of this modulation scales with
-$(q + q^{-1})\,\hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})$ and is
+$(q + q^{-1})\hbar_q\mathrm{Vol}(K_{\mathrm{mat}})$ and is
 material-dependent (different slit materials give different
 $\mathrm{Vol}(K_{\mathrm{mat}})$), while the classical birefringence
 prediction depends on refractive index.  A single apparatus with

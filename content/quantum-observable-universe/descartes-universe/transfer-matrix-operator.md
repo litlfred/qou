@@ -15,7 +15,7 @@ matrix** of the crossing is:
 
 $$
   T_{K_1, K_2}(q)
-  \;=\;
+  = 
   \begin{pmatrix}
     c(q - q^{-1}) + d & c \\
     c & d
@@ -27,12 +27,12 @@ are determined by the knot types:
 
 $$
   c_{K_1, K_2}
-  \;=\;
+  = 
   \frac{J_{K_1}(q) \cdot J_{K_2}(q)}{J_{K_1 \# K_2}(q)},
   \qquad
   d_{K_1, K_2}
-  \;=\;
-  -c \cdot \frac{q \, s}{1 + J_{K_1}(q) \cdot J_{K_2}(q)}
+  = 
+  -c \cdot \frac{q  s}{1 + J_{K_1}(q) \cdot J_{K_2}(q)}
 $$
 
 where $J_K(q)$ is the Jones polynomial of knot $K$ and
@@ -54,10 +54,10 @@ $a\sigma_i + b$ (the Gröbner--Shirshov-reduced chain at generator
 $\sigma_i$) by left multiplication followed by Hecke reduction:
 
 $$
-  T_{K_1, K_2} \;\cdot\; (a\sigma + b)
-  \;:=\;
+  T_{K_1, K_2}  \cdot  (a\sigma + b)
+   := 
   (c\sigma + d)(a\sigma + b)
-  \;\stackrel{T^2 = (q-q^{-1})T + 1}{\longrightarrow}\;
+  \stackrel{T^2 = (q-q^{-1})T + 1}{\longrightarrow}
   a'\sigma + b'
 $$
 
@@ -73,9 +73,9 @@ In matrix form:
 
 $$
   \begin{pmatrix} a' \\ b' \end{pmatrix}
-  \;=\;
+  = 
   T_{K_1, K_2}(q)
-  \;\cdot\;
+   \cdot 
   \begin{pmatrix} a \\ b \end{pmatrix}
 $$
 
@@ -91,7 +91,7 @@ operator is:
 
 $$
   T_{K_1 K_3} \circ T_{K_1 K_2}
-  \;=\;
+  = 
   T_{K_1, K_3}(q) \cdot T_{K_1, K_2}(q)
 $$
 
@@ -101,7 +101,7 @@ order of crossings matters.
 **The Gröbner--Shirshov ideal is the kernel:**
 
 $$
-  I_i \;=\; \ker\!\left(
+  I_i =  \ker\!\left(
     \prod_{j} T_j(q) - M_i(q)
   \right)
 $$
@@ -140,7 +140,7 @@ The photon ($T_{1,0}$, unknot) crossing with the electron
 
 $$
   T_{\gamma e}(q)
-  \;=\;
+  = 
   T_{T_{1,0}, T_{2,3}}(q)
 $$
 
@@ -149,8 +149,8 @@ $c_{\gamma e} = J_{T_{2,3}}(q) / J_{T_{2,3}}(q) = 1$ and
 $d_{\gamma e} = 0$.  Therefore:
 
 $$
-  T_{\gamma e}(q) \;=\; T_{pp}(q)
-  \;=\;
+  T_{\gamma e}(q) =  T_{pp}(q)
+  = 
   \begin{pmatrix}
     q - q^{-1} & 1 \\
     1 & 0
@@ -174,7 +174,7 @@ by $\pm 1$ but preserving its knot type.
 The R-I move at the electron-nucleus junction:
 
 $$
-  \sigma_i \;\mapsto\; \sigma_i \cdot \sigma_n
+  \sigma_i \mapsto \sigma_i \cdot \sigma_n
 $$
 
 adds one transfer matrix factor $T_{\gamma e}$ to the chain
@@ -182,9 +182,9 @@ at generator $\sigma_i$.  The energy change is:
 
 $$
   \Delta E_n
-  \;=\;
+  = 
   \hat{V}_i^{(n+1)} - \hat{V}_i^{(n)}
-  \;=\;
+  = 
   z \cdot (T_{\gamma e} \cdot M_i^{(n)})_{11}
   + (T_{\gamma e} \cdot M_i^{(n)})_{21}
   - \hat{V}_i^{(n)}
@@ -195,8 +195,8 @@ the transfer matrix at shell $n$ is $T_{\gamma e}^n$ (the
 $n$-th power).  The energy:
 
 $$
-  E_n \;\propto\; \hat{V}(T_{\gamma e}^n)
-  \;=\;
+  E_n  \propto  \hat{V}(T_{\gamma e}^n)
+  = 
   z \cdot (T_{\gamma e}^n)_{11} + (T_{\gamma e}^n)_{21}
 $$
 
@@ -205,16 +205,16 @@ $\lambda_{\pm} = \frac{1}{2}\bigl[(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}\big
 $\lambda_+^n$, and the energy scales as:
 
 $$
-  E_n \;\propto\; \lambda_+^n
+  E_n  \propto  \lambda_+^n
 $$
 
 The **energy difference** between shells:
 
 $$
   \Delta E_{n \to n+1}
-  \;=\;
+  = 
   \hat{V}(T_{\gamma e}^{n+1}) - \hat{V}(T_{\gamma e}^n)
-  \;=\;
+  = 
   \hat{V}(T_{\gamma e}^n) \cdot (\lambda_+ - 1)
 $$
 
@@ -230,7 +230,7 @@ $(K_1, K_2) \to (K_1', K_2')$ is encoded by the
 
 $$
   \Delta_{K_1 K_2 \to K_1' K_2'}(q)
-  \;=\;
+  = 
   T_{K_1', K_2'}(q) - T_{K_1, K_2}(q)
 $$
 
@@ -265,7 +265,7 @@ $$
 
 $$
   \frac{P_{\mathrm{final}}}{P_{\mathrm{initial}}}
-  \;=\;
+  = 
   \prod_{i \in \mathrm{affected}} \frac{\hat{V}_i^{\mathrm{final}}}{\hat{V}_i^{\mathrm{initial}}}
 $$
 

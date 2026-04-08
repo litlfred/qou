@@ -113,7 +113,7 @@ no numerical reduction needed.
 
 Compute the Level 0 transfer matrix Skein polynomials
 $P_{\mathrm{par}}(q)$ and $P_{\mathrm{dau}}(q)$ using the
-naive ordering $[\underbrace{p \cdots p}_{Z}\, \underbrace{n \cdots n}_{N}]$ with bare crossing coefficients:
+naive ordering $[\underbrace{p \cdots p}_{Z} \underbrace{n \cdots n}_{N}]$ with bare crossing coefficients:
 
 $$
   \text{pp}: (c, d) = (1, 0), \qquad
@@ -134,12 +134,12 @@ binding within shells.  The correction:
 
 $$
   \Delta_{\mathrm{shell}}
-  \;=\;
+  = 
   \underbrace{
     \log_q \tau(n_p^{\mathrm{dau}})
     - \log_q \tau(n_p^{\mathrm{par}})
   }_{\text{proton shell change}}
-  \;+\;
+  + 
   \underbrace{
     \log_q \tau(n_n^{\mathrm{dau}})
     - \log_q \tau(n_n^{\mathrm{par}})
@@ -178,13 +178,13 @@ $$
 $$
   \boxed{
     \mathcal{Q}_q(Z, N)
-    \;=\;
+    = 
     \bigl|
       R_{\mathrm{bare}}
       + \Delta_{\mathrm{shell}}
       + \Delta_{T_{3,5}}
     \bigr|
-    \;\times\;
+     \times 
     \hbar_q \cdot E_{\times}(q) \cdot \mu_0
   }
 $$
@@ -234,7 +234,7 @@ $$
   \mathcal{Q}_q = |{-32.09 + 5.04 + (-3.37)}|
   \times 0.0991 \times 0.1045 \times 1.630
   \approx 30.42 \times 0.01688
-  \approx 0.513 \;\text{MeV}
+  \approx 0.513  \text{MeV}
 $$
 
 $\mathcal{Q}_{\mathrm{exp}} \approx 0.318 \pm 0.0001$ MeV.

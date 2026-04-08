@@ -4,8 +4,8 @@ element of $H_3(q)$ of the form
 
 $$
   \gamma
-  \;=\;
-  \mathbf{1} + \varphi_0 \,\sigma_0 + \varphi_1 \,\sigma_1,
+  = 
+  \mathbf{1} + \varphi_0 \sigma_0 + \varphi_1 \sigma_1,
   \qquad
   \varphi_0, \varphi_1 \in R,
 $$
@@ -19,34 +19,34 @@ $\sigma_0, \sigma_1$ contribute additive color dressing.
 Given two such elements
 
 $$
-  \gamma_1 = \mathbf{1} + \varphi_0 \,\sigma_0 + \varphi_1 \,\sigma_1,
+  \gamma_1 = \mathbf{1} + \varphi_0 \sigma_0 + \varphi_1 \sigma_1,
   \qquad
-  \gamma_2 = \mathbf{1} + \psi_0 \,\sigma_0 + \psi_1 \,\sigma_1,
+  \gamma_2 = \mathbf{1} + \psi_0 \sigma_0 + \psi_1 \sigma_1,
 $$
 
 with $\varphi_0, \varphi_1, \psi_0, \psi_1 \in R$ all
 **independent formal variables**, the Gröbner--Shirshov normal form of
 their product in $H_3(q)$ is computed by expanding all nine
 terms and applying the Hecke relation
-$\sigma_i^2 = (q - q^{-1})\,\sigma_i + \mathbf{1}$.
+$\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$.
 
 **Result.** Writing $h = q - q^{-1}$ for the Hecke
 parameter,
 
 $$
   \mathrm{NF}(\gamma_1 \cdot \gamma_2)
-  \;=\;
+  = 
   \underbrace{(1 + \varphi_0\psi_0 + \varphi_1\psi_1)}_{\text{identity coeff.}}
   \cdot \mathbf{1}
-  \;+\;
-  (\varphi_0 + \psi_0 + \varphi_0\psi_0\,h)
+  + 
+  (\varphi_0 + \psi_0 + \varphi_0\psi_0h)
   \cdot \sigma_0
-  \;+\;
-  (\varphi_1 + \psi_1 + \varphi_1\psi_1\,h)
+  + 
+  (\varphi_1 + \psi_1 + \varphi_1\psi_1h)
   \cdot \sigma_1
-  \;+\;
+  + 
   \varphi_0\psi_1 \cdot \sigma_0\sigma_1
-  \;+\;
+  + 
   \varphi_1\psi_0 \cdot \sigma_1\sigma_0.
 $$
 
@@ -56,8 +56,8 @@ of the knot basis (word length $\ell \leq 2$):
 | Basis | Word | $\ell$ | NF coefficient |
 |:---:|:---:|:---:|:---|
 | $\mathbf{1}$ | $\mathbf{1}$ | $0$ | $1 + \varphi_0\psi_0 + \varphi_1\psi_1$ |
-| $\sigma_0$ | $\sigma_0$ | $1$ | $\varphi_0 + \psi_0 + \varphi_0\psi_0\,h$ |
-| $\sigma_1$ | $\sigma_1$ | $1$ | $\varphi_1 + \psi_1 + \varphi_1\psi_1\,h$ |
+| $\sigma_0$ | $\sigma_0$ | $1$ | $\varphi_0 + \psi_0 + \varphi_0\psi_0h$ |
+| $\sigma_1$ | $\sigma_1$ | $1$ | $\varphi_1 + \psi_1 + \varphi_1\psi_1h$ |
 | $L_+$ | $\sigma_0\sigma_1$ | $2$ | $\varphi_0\psi_1$ |
 | $L_-$ | $\sigma_1\sigma_0$ | $2$ | $\varphi_1\psi_0$ |
 
@@ -65,15 +65,15 @@ The net (sum of all NF coefficients) factors as:
 
 $$
   \mathrm{net}(\gamma_1 \cdot \gamma_2)
-  \;=\;
+  = 
   (1 + \varphi_0 + \varphi_1)(1 + \psi_0 + \psi_1)
-  \;+\;
-  (\varphi_0\psi_0 + \varphi_1\psi_1)\,h.
+  + 
+  (\varphi_0\psi_0 + \varphi_1\psi_1)h.
 $$
 
 The first factor $(1 + \varphi_0 + \varphi_1)(1 + \psi_0 + \psi_1)$
 is the product of the total weights of the two elements.  The
-correction term $(\varphi_0\psi_0 + \varphi_1\psi_1)\,h$
+correction term $(\varphi_0\psi_0 + \varphi_1\psi_1)h$
 arises from the Hecke self-energy $\sigma_i^2 \neq \mathbf{1}$.
 
 **Observability by word length.**  The Hopf-link terms
@@ -84,7 +84,7 @@ vanish whenever both elements share the same color axis
 ($\varphi_1 = \psi_1 = 0$ or $\varphi_0 = \psi_0 = 0$).
 The word-length $\ell = 1$ terms $\sigma_0, \sigma_1$ include
 both additive contributions $(\varphi_i + \psi_i)$ and
-Hecke self-energy corrections $(\varphi_i\psi_i\,h)$.
+Hecke self-energy corrections $(\varphi_i\psi_ih)$.
 
 **Independence of color weights.** Each $\varphi_i$ and
 $\psi_j$ is independent in $R$: the NF formula is a polynomial

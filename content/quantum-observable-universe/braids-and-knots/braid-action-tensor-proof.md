@@ -6,7 +6,7 @@ $$
   (c \otimes \mathrm{id})
   \circ (\mathrm{id} \otimes c)
   \circ (c \otimes \mathrm{id})
-  \;=\;
+  = 
   (\mathrm{id} \otimes c)
   \circ (c \otimes \mathrm{id})
   \circ (\mathrm{id} \otimes c)

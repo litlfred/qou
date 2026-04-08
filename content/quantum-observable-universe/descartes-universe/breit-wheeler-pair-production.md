@@ -5,17 +5,17 @@ the process is the identity
 
 $$
   \gamma_1 \cdot \gamma_2
-  \;=\;
+  = 
   \mathrm{NF}(e^-) + \mathrm{NF}(e^+)
-  \;+\; \text{binding energy}
+  +  \text{binding energy}
 $$
 
 where the photon, electron, and positron are the braid words
 
 $$
   \gamma = \sigma_0, \qquad
-  e^- = \sigma_0\sigma_1\sigma_0 \;\text{(trefoil)}, \qquad
-  e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1} \;\text{(mirror trefoil)}.
+  e^- = \sigma_0\sigma_1\sigma_0  \text{(trefoil)}, \qquad
+  e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}  \text{(mirror trefoil)}.
 $$
 
 **Bare photon pair.**
@@ -24,7 +24,7 @@ Applying the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$:
 
 $$
   \mathrm{NF}(\gamma\gamma)
-  \;=\; (q - q^{-1})\,H^0 + \nu
+  =  (q - q^{-1})H^0 + \nu
 $$
 
 with $\mathrm{net}(\gamma\gamma) = 1 + (q - q^{-1}) \approx 1.209$.
@@ -39,8 +39,8 @@ $\sigma_0, \sigma_1$, each with its own color weight
 
 $$
   \gamma
-  \;=\;
-  \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1
+  = 
+  \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
 $$
 
 where $\varphi_0, \varphi_1 \in \mathbb{R}$ are independent
@@ -50,45 +50,45 @@ crossing plane — two orthogonal polarization modes.
 
 **Step-by-step derivation of the pair NF.**
 Given two colored photons
-$\gamma_1 = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+$\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 and
-$\gamma_2 = \mathbf{1} + \psi_0\,\sigma_0 + \psi_1\,\sigma_1$,
+$\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1$,
 expand $\gamma_1 \cdot \gamma_2$ into nine terms and reduce
 each using the Hecke relation
-$\sigma_i^2 = h\,\sigma_i + \mathbf{1}$
+$\sigma_i^2 = h\sigma_i + \mathbf{1}$
 where $h = q - q^{-1}$:
 
 | Term | Product | Hecke reduction |
 |:---|:---|:---|
 | $\mathbf{1} \cdot \mathbf{1}$ | $\mathbf{1}$ | $\mathbf{1}$ |
-| $\mathbf{1} \cdot \psi_0\sigma_0$ | $\psi_0\,\sigma_0$ | $\psi_0\,\sigma_0$ |
-| $\mathbf{1} \cdot \psi_1\sigma_1$ | $\psi_1\,\sigma_1$ | $\psi_1\,\sigma_1$ |
-| $\varphi_0\sigma_0 \cdot \mathbf{1}$ | $\varphi_0\,\sigma_0$ | $\varphi_0\,\sigma_0$ |
-| $\varphi_0\sigma_0 \cdot \psi_0\sigma_0$ | $\varphi_0\psi_0\,\sigma_0^2$ | $\varphi_0\psi_0\,h\,\sigma_0 + \varphi_0\psi_0\,\mathbf{1}$ |
-| $\varphi_0\sigma_0 \cdot \psi_1\sigma_1$ | $\varphi_0\psi_1\,\sigma_0\sigma_1$ | $\varphi_0\psi_1\,L_+$ |
-| $\varphi_1\sigma_1 \cdot \mathbf{1}$ | $\varphi_1\,\sigma_1$ | $\varphi_1\,\sigma_1$ |
-| $\varphi_1\sigma_1 \cdot \psi_0\sigma_0$ | $\varphi_1\psi_0\,\sigma_1\sigma_0$ | $\varphi_1\psi_0\,L_-$ |
-| $\varphi_1\sigma_1 \cdot \psi_1\sigma_1$ | $\varphi_1\psi_1\,\sigma_1^2$ | $\varphi_1\psi_1\,h\,\sigma_1 + \varphi_1\psi_1\,\mathbf{1}$ |
+| $\mathbf{1} \cdot \psi_0\sigma_0$ | $\psi_0\sigma_0$ | $\psi_0\sigma_0$ |
+| $\mathbf{1} \cdot \psi_1\sigma_1$ | $\psi_1\sigma_1$ | $\psi_1\sigma_1$ |
+| $\varphi_0\sigma_0 \cdot \mathbf{1}$ | $\varphi_0\sigma_0$ | $\varphi_0\sigma_0$ |
+| $\varphi_0\sigma_0 \cdot \psi_0\sigma_0$ | $\varphi_0\psi_0\sigma_0^2$ | $\varphi_0\psi_0h\sigma_0 + \varphi_0\psi_0\mathbf{1}$ |
+| $\varphi_0\sigma_0 \cdot \psi_1\sigma_1$ | $\varphi_0\psi_1\sigma_0\sigma_1$ | $\varphi_0\psi_1L_+$ |
+| $\varphi_1\sigma_1 \cdot \mathbf{1}$ | $\varphi_1\sigma_1$ | $\varphi_1\sigma_1$ |
+| $\varphi_1\sigma_1 \cdot \psi_0\sigma_0$ | $\varphi_1\psi_0\sigma_1\sigma_0$ | $\varphi_1\psi_0L_-$ |
+| $\varphi_1\sigma_1 \cdot \psi_1\sigma_1$ | $\varphi_1\psi_1\sigma_1^2$ | $\varphi_1\psi_1h\sigma_1 + \varphi_1\psi_1\mathbf{1}$ |
 
 Collecting by basis element:
 
 $$
   \mathrm{NF}(\gamma_1 \cdot \gamma_2)
-  \;=\;
+  = 
   \underbrace{(1 + \varphi_0\psi_0 + \varphi_1\psi_1)}_{\nu}
-  \,\mathbf{1}
-  \;+\;
-  \underbrace{(\varphi_0 + \psi_0 + \varphi_0\psi_0\,h)}_{H^0}
-  \,\sigma_0
-  \;+\;
-  \underbrace{(\varphi_1 + \psi_1 + \varphi_1\psi_1\,h)}_{H^1}
-  \,\sigma_1
-  \;+\;
+  \mathbf{1}
+  + 
+  \underbrace{(\varphi_0 + \psi_0 + \varphi_0\psi_0h)}_{H^0}
+  \sigma_0
+  + 
+  \underbrace{(\varphi_1 + \psi_1 + \varphi_1\psi_1h)}_{H^1}
+  \sigma_1
+  + 
   \underbrace{\varphi_0\psi_1}_{L_+}
-  \,\sigma_0\sigma_1
-  \;+\;
+  \sigma_0\sigma_1
+  + 
   \underbrace{\varphi_1\psi_0}_{L_-}
-  \,\sigma_1\sigma_0
+  \sigma_1\sigma_0
 $$
 
 The $\mathbf{1}$ coefficient absorbs the Hecke self-energy
@@ -101,10 +101,10 @@ Net (sum of all coefficients):
 
 $$
   \mathrm{net}
-  \;=\;
+  = 
   (1 + \varphi_0 + \varphi_1)(1 + \psi_0 + \psi_1)
-  \;+\;
-  (\varphi_0\psi_0 + \varphi_1\psi_1)\,h
+  + 
+  (\varphi_0\psi_0 + \varphi_1\psi_1)h
 $$
 
 **Polarization models.**

@@ -148,7 +148,7 @@ $^\dagger$ Synthetic element (reactor or accelerator produced).
 | Count | 92 | 26 | 118 |
 
 All deviations arise solely from rounding the CODATA constituent-mass constants
-to three decimal places in the QOU formula. No element exceeds $0.1\;\text{MeV}$
+to three decimal places in the QOU formula. No element exceeds $0.1 \text{MeV}$
 deviation, confirming that the Skein-lattice mass formula faithfully reproduces
 AME2020 atomic masses to sub-MeV precision.
 
@@ -169,7 +169,7 @@ mass-derivation paths:
 Both use the same $B/A$ from AME2020. The systematic difference is:
 
 $$
-  M_{\mathrm{CODATA}} - M_{\mathrm{AME}} = Z \times 0.015\;\text{keV}
+  M_{\mathrm{CODATA}} - M_{\mathrm{AME}} = Z \times 0.015 \text{keV}
 $$
 
 This arises because CODATA treats proton and electron as free

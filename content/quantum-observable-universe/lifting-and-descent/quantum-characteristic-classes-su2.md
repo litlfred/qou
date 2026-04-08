@@ -16,8 +16,8 @@ $\pi \colon \mathrm{SU}(2) \to \mathbb{CP}^1$ is a principal
 $\mathrm{U}(1)$-bundle with first Chern class
 
 $$
-  \kappa_0 \;=\; c_1(\text{Hopf}) \;=\; 1
-  \;\in\; H^2(\mathbb{CP}^1, \mathbb{Z}) \;\cong\; \mathbb{Z}.
+  \kappa_0 =  c_1(\text{Hopf}) =  1
+   \in  H^2(\mathbb{CP}^1, \mathbb{Z})  \cong  \mathbb{Z}.
 $$
 
 Under the trace map $H^2(\mathcal{S}, \mathcal{B}) \to R$, the
@@ -32,8 +32,8 @@ and $\kappa_0 = 1 \neq 0$, the class $\kappa_0$ is non-torsion.
 $A_n \hookrightarrow A_{n+1} = J^1(A_n)$ produces an obstruction
 
 $$
-  \kappa_n \;=\; \kappa_0 + \delta_n
-  \;\in\; H^2(\mathbb{CP}^1, \mathbb{Z}),
+  \kappa_n =  \kappa_0 + \delta_n
+   \in  H^2(\mathbb{CP}^1, \mathbb{Z}),
 $$
 
 where $\delta_n \in H^2(\mathbb{CP}^1, \mathbb{Z})$ is the correction

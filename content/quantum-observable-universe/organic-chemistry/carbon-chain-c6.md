@@ -12,13 +12,13 @@ leaving 3 free.
 
 $$
   \mathrm{C}_6^{\mathrm{chain}}
-  \;=\;
+  = 
   \mathcal{A}(6,6)_1
-  \;\underset{B_1}{\bowtie}\;
+   \underset{B_1}{\bowtie}
   \mathcal{A}(6,6)_2
-  \;\underset{B_1}{\bowtie}\;
+   \underset{B_1}{\bowtie}
   \cdots
-  \;\underset{B_1}{\bowtie}\;
+   \underset{B_1}{\bowtie}
   \mathcal{A}(6,6)_6
 $$
 
@@ -26,7 +26,7 @@ The linking matrix is the $6 \times 6$ tridiagonal matrix:
 
 $$
   L^{\mathrm{chain}}
-  \;=\;
+  = 
   \begin{pmatrix}
     0 & 1 & 0 & 0 & 0 & 0 \\
     1 & 0 & 1 & 0 & 0 & 0 \\
@@ -42,7 +42,7 @@ The chain has 5 bonds, giving
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathrm{C}_6^{\mathrm{chain}})
-  \;=\;
+  = 
   5 \cdot E_{\mathrm{bond}}(1).
 $$
 

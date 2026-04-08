@@ -21,7 +21,7 @@ enhancement factor**
 
 $$
   F_q(Z, E)
-  \;=\;
+  = 
   \frac{2\pi\eta_q}{1 - e^{-2\pi\eta_q}}
 $$
 
@@ -29,7 +29,7 @@ where the $q$-deformed Sommerfeld parameter is
 
 $$
   \eta_q
-  \;=\;
+  = 
   \alpha_{\mathrm{EM}}(q)
   \cdot \frac{Z}{\beta_e}
 $$
@@ -46,11 +46,11 @@ decomposes as
 
 $$
   \mathcal{S}_q\big|_\psi
-  \;=\;
+  = 
   \mathcal{S}_q\big|_{\mathcal{N}}
-  \;+\;
+  + 
   \sum_{j=1}^{Z} \mathcal{S}_{e\text{-}p_j}
-  \;+\;
+  + 
   \mathcal{S}_q\big|_{T_{2,3}}
 $$
 
@@ -62,7 +62,7 @@ $e^{i\delta_\ell}$ at each proton, where the phase shift is
 
 $$
   \delta_\ell
-  \;=\;
+  = 
   \arg \Gamma(\ell + 1 + i\eta_q).
 $$
 
@@ -72,9 +72,9 @@ electron energy spectrum, gives
 
 $$
   |\psi_e(0)|^2_{\text{Coulomb}}
-  \;=\;
+  = 
   |\psi_e(0)|^2_{\text{free}}
-  \;\times\;
+   \times 
   F_q(Z, E).
 $$
 

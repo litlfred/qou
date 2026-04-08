@@ -11,7 +11,7 @@ The photon-electron transfer matrix
 is $T_{\gamma e} = T_{pp}$:
 
 $$
-  T_{\gamma e}(q) \;=\;
+  T_{\gamma e}(q) = 
   \begin{pmatrix}
     q - q^{-1} & 1 \\
     1 & 0
@@ -22,16 +22,16 @@ Its **characteristic polynomial** is:
 
 $$
   \det(T_{\gamma e} - \lambda \mathbb{I})
-  \;=\;
+  = 
   \lambda^2 - (q - q^{-1})\lambda - 1
-  \;=\; 0
+  =  0
 $$
 
 with eigenvalues:
 
 $$
   \lambda_{\pm}(q)
-  \;=\;
+  = 
   \frac{(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}}{2}
 $$
 
@@ -59,7 +59,7 @@ Diagonalizing $T_{\gamma e} = S \Lambda S^{-1}$:
 
 $$
   T_{\gamma e}^n
-  \;=\;
+  = 
   S
   \begin{pmatrix}
     \lambda_+^n & 0 \\
@@ -71,7 +71,7 @@ $$
 where the eigenvector matrix is:
 
 $$
-  S \;=\;
+  S = 
   \begin{pmatrix}
     \lambda_+ & \lambda_- \\
     1 & 1
@@ -82,11 +82,11 @@ The entries of $T_{\gamma e}^n$:
 
 $$
   (T^n)_{11}
-  \;=\;
+  = 
   \frac{\lambda_+^{n+1} - \lambda_-^{n+1}}{\lambda_+ - \lambda_-},
   \qquad
   (T^n)_{21}
-  \;=\;
+  = 
   \frac{\lambda_+^n - \lambda_-^n}{\lambda_+ - \lambda_-}
 $$
 
@@ -94,7 +94,7 @@ These are **Chebyshev polynomials of the second kind** in the
 variable $\frac{1}{2}(q - q^{-1})$:
 
 $$
-  (T^n)_{21} \;=\; U_{n-1}\!\left(\tfrac{q - q^{-1}}{2}\right)
+  (T^n)_{21} =  U_{n-1}\!\left(\tfrac{q - q^{-1}}{2}\right)
 $$
 
 ## The traced volume at shell $n$
@@ -103,9 +103,9 @@ The Markov-traced volume at shell $n$:
 
 $$
   \hat{V}(n, q)
-  \;=\;
+  = 
   z \cdot (T^n)_{11} + (T^n)_{21}
-  \;=\;
+  = 
   \frac{(z\lambda_+ + 1)\lambda_+^n - (z\lambda_- + 1)\lambda_-^n}
        {\lambda_+ - \lambda_-}
 $$
@@ -115,14 +115,14 @@ where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
 Define:
 
 $$
-  \alpha \;=\; z\lambda_+ + 1, \qquad
-  \beta \;=\; z\lambda_- + 1
+  \alpha =  z\lambda_+ + 1, \qquad
+  \beta =  z\lambda_- + 1
 $$
 
 Then:
 
 $$
-  \hat{V}(n, q) \;=\;
+  \hat{V}(n, q) = 
   \frac{\alpha \cdot \lambda_+^n - \beta \cdot \lambda_-^n}
        {\lambda_+ - \lambda_-}
 $$
@@ -131,7 +131,7 @@ Since $|\lambda_+| > 1 > |\lambda_-|$, the dominant term for
 large $n$ is:
 
 $$
-  \hat{V}(n, q) \;\sim\;
+  \hat{V}(n, q)  \sim 
   \frac{\alpha}{\lambda_+ - \lambda_-} \cdot \lambda_+^n
   \qquad (n \gg 1)
 $$
@@ -146,9 +146,9 @@ The traced volumes satisfy the three-term recurrence:
 $$
   \boxed{
     \hat{V}(n+1, q)
-    \;=\;
+    = 
     (q - q^{-1}) \cdot \hat{V}(n, q)
-    \;+\;
+    + 
     \hat{V}(n-1, q)
   }
 $$
@@ -177,7 +177,7 @@ The energy of shell $n$ in hydrogen is:
 
 $$
   E_n(q)
-  \;=\;
+  = 
   E_0 \cdot \hat{V}(n, q)
 $$
 
@@ -188,9 +188,9 @@ The transition energy (photon energy for $n \to n+1$):
 
 $$
   \Delta E_{n \to n+1}
-  \;=\;
+  = 
   E_0 \bigl[\hat{V}(n+1, q) - \hat{V}(n, q)\bigr]
-  \;=\;
+  = 
   E_0 \bigl[(q - q^{-1} - 1) \hat{V}(n, q)
   + \hat{V}(n-1, q)\bigr]
 $$
@@ -199,7 +199,7 @@ For the dominant term ($n \gg 1$):
 
 $$
   \Delta E_{n \to n+1}
-  \;\sim\;
+   \sim 
   E_0 \cdot \frac{\alpha}{\lambda_+ - \lambda_-}
   \cdot \lambda_+^n \cdot (\lambda_+ - 1)
 $$
@@ -218,11 +218,11 @@ The binding energy at shell $n$ (relative to ionization):
 
 $$
   \mathbf{E}_{\mathrm{bind}}(n)
-  \;=\;
+  = 
   E_{\infty} - E_n
-  \;\propto\;
+   \propto 
   \frac{1}{\lambda_+^n}
-  \;\approx\;
+   \approx 
   e^{-n\epsilon}
 $$
 

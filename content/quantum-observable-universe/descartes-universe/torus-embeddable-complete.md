@@ -9,7 +9,7 @@ Then $T_{m,n}$ embeds in the Seifert genus-$4$ surface $\Sigma_4$ of
 the Bring's surface if and only if $(m,n)$ belongs to the set
 
 $$
-  \{(2,3),\;(2,5),\;(2,7),\;(2,9),\;(3,4),\;(3,5)\}.
+  \{(2,3),(2,5),(2,7),(2,9),(3,4),(3,5)\}.
 $$
 
 Together with the unknot $T_{1,0}$, these are the only torus knots

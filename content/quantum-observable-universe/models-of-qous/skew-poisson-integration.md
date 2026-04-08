@@ -2,7 +2,7 @@ Let $H/\mathbb{F}_\pp$ be a smooth commutative formal group and
 $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
 (generally non-commutative) formal group $G/\mathbb{Z}_\pp$ such that:
 
-1. $G \otimes_{\mathbb{Z}_\pp} \mathbb{F}_\pp \;\cong\; H$
+1. $G \otimes_{\mathbb{Z}_\pp} \mathbb{F}_\pp  \cong  H$
    (reduction modulo $\pp$ recovers $H$);
 
 2. $\mathrm{Dist}(G)$ is a deformation of

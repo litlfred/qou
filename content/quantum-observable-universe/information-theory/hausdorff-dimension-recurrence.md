@@ -7,7 +7,7 @@ $\chi_q = 1/(2q-1)$
 $q$:
 
 $$
-  d_{H,q} \;=\; \frac{(2q - 1)^2}{q^3}.
+  d_{H,q} =  \frac{(2q - 1)^2}{q^3}.
 $$
 
 This is **exact** within the $q$-deformed framework — a rational
@@ -26,7 +26,7 @@ threshold $q = (3+\sqrt{5})/2 = \varphi^2 \approx 2.618$.
 The continuous derivative is
 
 $$
-  d_{H,q}'(q) \;=\; \frac{(2q-1)(3 - 4q)}{q^4},
+  d_{H,q}'(q) =  \frac{(2q-1)(3 - 4q)}{q^4},
 $$
 
 which is negative for $q > 3/4$: the $q$-deformed fractal dimension
@@ -40,8 +40,8 @@ Planck step is
 
 $$
   d_{H,q}^{(n+1)}
-  \;=\; d_{H,q}^{(n)}
-  \;+\; \frac{(2q_n - 1)(3 - 4q_n)(q_n - 1)}{q_n^5}.
+  =  d_{H,q}^{(n)}
+  +  \frac{(2q_n - 1)(3 - 4q_n)(q_n - 1)}{q_n^5}.
 $$
 
 This is a **contraction mapping** for $q > 3/4$: the iteration
@@ -75,7 +75,7 @@ Hausdorff dimension $d_H$ satisfies:
 1. **Ruelle perturbative** [ruelle1982] (valid near $|c| \ll 1$):
 
    $$
-     d_H \;=\; 1 + \frac{|c(\theta)|^2}{4 \ln 2} + O(|c|^4).
+     d_H =  1 + \frac{|c(\theta)|^2}{4 \ln 2} + O(|c|^4).
    $$
 
    At $\theta = 0.1097$: $|c| = 0.346$, giving $d_H \approx 1.043$.
@@ -104,7 +104,7 @@ self-consistency).
 **There is no known closed form** for the classical $d_H(J_c)$ as
 a function of the main-cardioid parameter $c$.  The Hausdorff
 dimension is defined implicitly as the unique zero of the
-Bowen--Ruelle pressure function $P(-t\,\log|f_c'|) = 0$
+Bowen--Ruelle pressure function $P(-t\log|f_c'|) = 0$
 [bowen1979], which involves an infinite-dimensional transfer
 operator.  The function $c \mapsto d_H(J_c)$ is:
 

@@ -10,7 +10,7 @@ $\lambda \in R^{\times}$,
 
 $$
   \mathcal{S}_q
-  \;=\;
+  = 
   \mathrm{tr}(\mathcal{L}_q),
 $$
 
@@ -23,9 +23,9 @@ The square of the Dirac operator
 decomposes via the Frobenius--Hopf structure as
 
 $$
-  \mathcal{D}_\nabla^{\,2}
-  \;=\;
-  q \cdot R_{\int} \;+\; \mathrm{tr}_A\!\bigl(
+  \mathcal{D}_\nabla^{2}
+  = 
+  q \cdot R_{\int} +  \mathrm{tr}_A\!\bigl(
     F_\nabla \wedge_q \star_q F_\nabla
   \bigr),
 $$
@@ -34,20 +34,20 @@ so the categorical action expands to three terms:
 
 ```tex
 \begin{equation}\label{eq:canonical-action-decomposition}
-  \mathcal{S}_q[\nabla,\, \textstyle\int_A,\, \psi]
-  \;=\;
+  \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
+  = 
   \underbrace{%
     \mathrm{tr}\bigl(q \cdot R_{\int}\bigr)
   }_{\text{gravity}}
-  \;+\;
+  + 
   \underbrace{%
-    \int_A \!\circ\, \mathrm{tr}_A\bigl(
+    \int_A \!\circ \mathrm{tr}_A\bigl(
       F_\nabla \wedge_q \star_q F_\nabla
     \bigr)
   }_{\text{gauge}}
-  \;+\;
+  + 
   \underbrace{%
-    \int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\,\psi\bigr)
+    \int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\psi\bigr)
   }_{\text{matter}},
 \end{equation}
 ```
@@ -63,7 +63,7 @@ Frobenius--Hopf axioms fix the decomposition of $\mathcal{D}_\nabla^2$
 into curvature terms.  The residual ambiguity is a single scalar
 $\lambda \in R^{\times}$: the normalization of the Frobenius form
 $\int_A$.  Replacing $\int_A$ by $\lambda\!\int_A$ sends
-$\mathcal{S}_q \mapsto \lambda\,\mathcal{S}_q$.  This is the
+$\mathcal{S}_q \mapsto \lambda\mathcal{S}_q$.  This is the
 categorical analog of the choice of physical units --- it corresponds
 to the freedom in choosing $G$, $g^2$, and $\hbar$ in the archimedean
 realization ([Remark](#rem:physicist-translation)).

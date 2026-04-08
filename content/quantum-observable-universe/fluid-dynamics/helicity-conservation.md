@@ -1,19 +1,19 @@
 Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a
 [QOU](#def:quantum-observable-universe) with brane fluid velocity
 $v = \nabla_A S$ and vorticity
-$\omega = \mathrm{curl}_A\,v = \nabla_A \times v$.  Define the
+$\omega = \mathrm{curl}_Av = \nabla_A \times v$.  Define the
 **categorical helicity** of a vortex configuration
 $\{\varrho_1, \ldots, \varrho_n\}$ as
 
 $$
   \mathcal{H}_q
-  \;=\;
+  = 
   \sum_{i} \oint_{\varrho_i}
-  v \cdot \omega\,ds
-  \;+\;
+  v \cdot \omegads
+  + 
   2\sum_{i < j}
-  \mathrm{lk}_q(\varrho_i, \varrho_j)\,
-  \Gamma_i^{(q)}\,\Gamma_j^{(q)},
+  \mathrm{lk}_q(\varrho_i, \varrho_j)
+  \Gamma_i^{(q)}\Gamma_j^{(q)},
 $$
 
 where $\mathrm{lk}_q(\varrho_i, \varrho_j)$ is the $q$-deformed
@@ -32,16 +32,16 @@ Then:
 
    $$
      \mathcal{H}_q
-     \;=\;
-     \underbrace{\sum_i \mathrm{Wr}_q(\varrho_i)\,
+     = 
+     \underbrace{\sum_i \mathrm{Wr}_q(\varrho_i)
        (\Gamma_i^{(q)})^2}_{\text{writhe}}
-     \;+\;
-     \underbrace{\sum_i \mathrm{Tw}_q(\varrho_i)\,
+     + 
+     \underbrace{\sum_i \mathrm{Tw}_q(\varrho_i)
        (\Gamma_i^{(q)})^2}_{\text{twist}}
-     \;+\;
+     + 
      \underbrace{2\sum_{i<j}
-       \mathrm{lk}_q(\varrho_i,\varrho_j)\,
-       \Gamma_i^{(q)}\,\Gamma_j^{(q)}}_{\text{linking}},
+       \mathrm{lk}_q(\varrho_i,\varrho_j)
+       \Gamma_i^{(q)}\Gamma_j^{(q)}}_{\text{linking}},
    $$
 
    where $\mathrm{Wr}_q$ and $\mathrm{Tw}_q$ are the $q$-deformed
@@ -58,9 +58,9 @@ Then:
    brane fluid,
 
    $$
-     J_L(q) \;=\; \exp\!\Bigl(
+     J_L(q) =  \exp\!\Bigl(
        \sum_{n=1}^{\infty}
-       \frac{1}{n}\,
+       \frac{1}{n}
        \mathrm{tr}\bigl((\check{R})^n\bigr)
        \cdot (q - q^{-1})^n
      \Bigr),
@@ -73,5 +73,5 @@ Then:
    $[j]_q[j+1]_q \to j(j+1)$,
    $\mathrm{lk}_q \to \mathrm{lk}$ (Gauss linking number), and
    $\mathcal{H}_q$ reduces to the classical Moffatt helicity
-   $H = \int v \cdot \omega\,dV$.
+   $H = \int v \cdot \omegadV$.
 

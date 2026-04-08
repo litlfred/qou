@@ -10,9 +10,9 @@ Then:*
    factors as*
 
 $$
-  P_{\mathrm{flip}}(q;\, k_1, k_2)
-  \;=\;
-  c_{k_1 k_2}(q) \;\cdot\; \Phi(q)
+  P_{\mathrm{flip}}(q; k_1, k_2)
+  = 
+  c_{k_1 k_2}(q)  \cdot  \Phi(q)
 $$
 
 *where $c_{k_1 k_2}$ is the crossing coefficient of the
@@ -22,11 +22,11 @@ of the control types:*
 
 $$
   \Phi(q)
-  \;=\;
+  = 
   \frac{
-    (q - 1)\,(q^{3/2} + q^{1/2} - 1)\,(q^{3/2} + q + 1)
+    (q - 1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1)
   }{
-    2\,(q + 1)^2
+    2(q + 1)^2
   }
 $$
 

@@ -110,7 +110,7 @@ for $H_3(q)$, $\dim = 3! = 6$):
 
 $$
   \mathrm{NF}(\mathfrak{n} - \mathfrak{p})
-  \;=\;
+  = 
   \mathrm{NF}(\mathfrak{n}) - \mathrm{NF}(\mathfrak{p}).
 $$
 

@@ -4,7 +4,7 @@ $\Delta$ operator:
 
 $$
   \Delta_{K_1 K_2 \to K_1' K_2'}(q)
-  \;=\;
+  = 
   T_{K_1', K_2'}(q) - T_{K_1, K_2}(q)
 $$
 
@@ -15,9 +15,9 @@ The step from any nuclear crossing type to the next is
 
 $$
   \Delta_\beta(q)
-  \;=\;
+  = 
   T_{\mathrm{mix}}(q) - T_{nn}(q)
-  \;=\;
+  = 
   T_{pp}(q) - T_{\mathrm{mix}}(q)
 $$
 
@@ -26,15 +26,15 @@ In closed form:
 $$
   \boxed{
     \Delta_\beta(q)
-    \;=\;
-    \tfrac{1}{2}(q - q^{-1}) \;\mathbb{I}
+    = 
+    \tfrac{1}{2}(q - q^{-1}) \mathbb{I}
   }
 $$
 
 **Explicit entries:**
 
 $$
-  \Delta_\beta(q) \;=\;
+  \Delta_\beta(q) = 
   \begin{pmatrix}
     \dfrac{q - q^{-1}}{2} & 0 \\[6pt]
     0 & \dfrac{q - q^{-1}}{2}
@@ -59,7 +59,7 @@ $$
 
 $$
   \boxed{
-    \Delta_{\beta^+}(q) \;=\; -\Delta_\beta(q)
+    \Delta_{\beta^+}(q) =  -\Delta_\beta(q)
   }
 $$
 
@@ -75,8 +75,8 @@ the chain at the absorbing generator:
 
 $$
   \boxed{
-    M_i^{(n+1)}(q) \;=\; T_{\gamma e}(q) \cdot M_i^{(n)}(q)
-    \;=\; T_{pp}(q) \cdot M_i^{(n)}(q)
+    M_i^{(n+1)}(q) =  T_{\gamma e}(q) \cdot M_i^{(n)}(q)
+    =  T_{pp}(q) \cdot M_i^{(n)}(q)
   }
 $$
 
@@ -84,7 +84,7 @@ The energy change for shell $n \to n+1$:
 
 $$
   \Delta E_{n \to n+1}
-  \;=\;
+  = 
   \hat{V}(M_i^{(n+1)}) - \hat{V}(M_i^{(n)})
 $$
 
@@ -98,11 +98,11 @@ the larger eigenvalue of $T_{pp}$.
 $$
   \boxed{
     \Delta_{\mathrm{pair}}(q)
-    \;=\;
+    = 
     T_{e^- e^+}(q) - T_{\gamma\gamma}(q)
-    \;=\;
+    = 
     T_{\mathrm{mix}}(q) - T_{pp}(q)
-    \;=\;
+    = 
     -\Delta_\beta(q)
   }
 $$
@@ -122,11 +122,11 @@ nucleons at positions $p_1$ and $p_2$:
 
 $$
   \Delta M_i^{(2\beta)}
-  \;=\;
+  = 
   L_i \cdot \Delta_\beta \cdot C_i \cdot \Delta_\beta \cdot R_i
-  \;+\;
+  + 
   L_i \cdot \Delta_\beta \cdot R_i'
-  \;+\;
+  + 
   L_i' \cdot \Delta_\beta \cdot R_i
 $$
 
@@ -146,7 +146,7 @@ has unit crossing coefficient ($c = 1$).
 The target-flip amplitude factors as:
 
 $$
-  P_{\mathrm{flip}}(q;\, k_1, k_2) \;=\; c_{k_1 k_2}(q) \cdot \Phi(q)
+  P_{\mathrm{flip}}(q; k_1, k_2) =  c_{k_1 k_2}(q) \cdot \Phi(q)
 $$
 
 where $c_{k_1 k_2}$ is the control--control crossing
@@ -154,7 +154,7 @@ coefficient and:
 
 $$
   \boxed{
-    \Phi(q) \;=\;
+    \Phi(q) = 
     \frac{(q-1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1)}{2(q+1)^2}
   }
 $$

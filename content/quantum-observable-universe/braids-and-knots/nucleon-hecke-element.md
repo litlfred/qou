@@ -5,14 +5,14 @@ flavors $f_1, f_2, f_3 \in \{\mathfrak{u}, \mathfrak{d}\}$.  The
 
 $$
   \mathfrak{N}(f_1, f_2, f_3)
-  \;=\;
+  = 
   \mathcal{B}_3
-  \;\cdot\;
-  C(f_1, f_2;\, \sigma_0)
-  \;\cdot\;
-  C(f_1, f_3;\, \sigma_0)
-  \;\cdot\;
-  C(f_2, f_3;\, \sigma_1)
+   \cdot 
+  C(f_1, f_2; \sigma_0)
+   \cdot 
+  C(f_1, f_3; \sigma_0)
+   \cdot 
+  C(f_2, f_3; \sigma_1)
 $$
 
 where:
@@ -21,7 +21,7 @@ where:
   Borromean link element
   ([Borromean baryon](#def:borromean-baryon)),
 
-- $C(f_i, f_j;\, \sigma_k)$ is the typed crossing operator
+- $C(f_i, f_j; \sigma_k)$ is the typed crossing operator
   ([typed crossing](#def:typed-crossing-operator)) for the
   quark pair at positions $i, j$,
 
@@ -33,14 +33,14 @@ where:
 
 $$
   \mathfrak{p}
-  \;=\;
+  = 
   \mathcal{B}_3
-  \;\cdot\;
-  \underbrace{C(\mathfrak{u}, \mathfrak{u};\, \sigma_0)}_{\sigma_0}
-  \;\cdot\;
-  \underbrace{C(\mathfrak{u}, \mathfrak{d};\, \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
-  \;\cdot\;
-  \underbrace{C(\mathfrak{u}, \mathfrak{d};\, \sigma_1)}_{\sigma_1 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+   \cdot 
+  \underbrace{C(\mathfrak{u}, \mathfrak{u}; \sigma_0)}_{\sigma_0}
+   \cdot 
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+   \cdot 
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_1)}_{\sigma_1 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
 $$
 
 where $\mathrm{HA} = q - q^{-1}$.
@@ -49,14 +49,14 @@ where $\mathrm{HA} = q - q^{-1}$.
 
 $$
   \mathfrak{n}
-  \;=\;
+  = 
   \mathcal{B}_3
-  \;\cdot\;
-  \underbrace{C(\mathfrak{u}, \mathfrak{d};\, \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
-  \;\cdot\;
-  \underbrace{C(\mathfrak{u}, \mathfrak{d};\, \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
-  \;\cdot\;
-  \underbrace{C(\mathfrak{d}, \mathfrak{d};\, \sigma_1)}_{\sigma_1 - \mathrm{HA}\cdot\mathbf{1}}
+   \cdot 
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+   \cdot 
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+   \cdot 
+  \underbrace{C(\mathfrak{d}, \mathfrak{d}; \sigma_1)}_{\sigma_1 - \mathrm{HA}\cdot\mathbf{1}}
 $$
 
 **Normal form.**  After Gröbner--Shirshov reduction (Hecke, Yang--Baxter,
@@ -66,13 +66,13 @@ and far-commutativity relations), each nucleon reduces to exactly
 
 $$
   \mathfrak{N}
-  \;=\;
-  c_\nu\,\mathbf{1}
-  + c_{H^0}\,\sigma_0
-  + c_{H^1}\,\sigma_1
-  + c_{L_+}\,\sigma_0\sigma_1
-  + c_{L_-}\,\sigma_1\sigma_0
-  + c_{e^-}\,\sigma_0\sigma_1\sigma_0
+  = 
+  c_\nu\mathbf{1}
+  + c_{H^0}\sigma_0
+  + c_{H^1}\sigma_1
+  + c_{L_+}\sigma_0\sigma_1
+  + c_{L_-}\sigma_1\sigma_0
+  + c_{e^-}\sigma_0\sigma_1\sigma_0
 $$
 
 where the coefficients $c_\bullet \in \mathbb{Z}[q, q^{-1}]$
@@ -86,7 +86,7 @@ The **net** of the nucleon is:
 
 $$
   \mathrm{net}(\mathfrak{N})
-  \;=\;
+  = 
   \sum_{\text{basis } w} c_w(q_0)
 $$
 

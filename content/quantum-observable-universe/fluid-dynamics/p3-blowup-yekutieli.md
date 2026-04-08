@@ -26,7 +26,7 @@ representative at every level $A_n$:
 $$
   v \text{ smooth}
   \quad\Longleftrightarrow\quad
-  \kappa_n(v) = 0 \;\;\forall\, n \geq 0.
+  \kappa_n(v) = 0  \forall n \geq 0.
 $$
 
 **Regularity as lifting.**
@@ -36,12 +36,12 @@ $v_q$ has exponentially decaying Fourier coefficients, which
 guarantees all Yekutieli obstruction classes vanish:
 
 $$
-  |\hat{v}_k(t)| \leq |\hat{v}_k(0)|\,e^{-\nu_q[k]_q^2 t}
+  |\hat{v}_k(t)| \leq |\hat{v}_k(0)|e^{-\nu_q[k]_q^2 t}
   \quad\Longrightarrow\quad
-  \kappa_n(v_q(t)) = 0 \;\;\forall\,n.
+  \kappa_n(v_q(t)) = 0  \foralln.
 $$
 
-The decay rate $\nu_q [k]_q^2 \sim \varepsilon\,q^{2k}$ exceeds
+The decay rate $\nu_q [k]_q^2 \sim \varepsilonq^{2k}$ exceeds
 any polynomial, so $v_q$ lifts through the tower to all levels.
 
 **Blowup as obstruction.**
@@ -82,7 +82,7 @@ ceases to lift.  The blowup is localised at this level:
 A counter-example to NS regularity is a quintuple
 
 $$
-  (v_0,\; T^*,\; \Sigma,\; n^*,\; \kappa_{n^*})
+  (v_0, T^*, \Sigma, n^*, \kappa_{n^*})
 $$
 
 consisting of:
@@ -116,9 +116,9 @@ $1$), so:
 
 $$
   H^1_{\mathfrak{m}_1}(A)\big|_{q=1}
-  \;=\;
+  = 
   R^1\Gamma_{\mathfrak{m}_1}(A)
-  \;\neq\; 0.
+   \neq  0.
 $$
 
 This nonvanishing is the algebraic origin of the blowup: the
@@ -154,7 +154,7 @@ $\kappa_{n^*}$ must lie in the image of the character map
 $$
   \chi \colon
   \mathrm{Rep}(\mathrm{SU}_q(2))
-  \;\to\;
+   \to 
   H^2(\Sigma, \mathcal{B}),
 $$
 

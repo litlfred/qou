@@ -11,12 +11,12 @@ tree is the full sub-poset
 
 $$
   \mathcal{R}^{\circ}(L, q)
-  \;=\;
-  \bigl\{\,
+  = 
+  \bigl\{
     x \in \mathcal{R}(L)
-    \;:\;
-    \Gamma_{\mathrm{poly}}\!(x,\, A_0) \neq 0
-  \,\bigr\},
+     : 
+    \Gamma_{\mathrm{poly}}\!(x, A_0) \neq 0
+  \bigr\},
 $$
 
 where $\Gamma_{\mathrm{poly}}(x, A_0)$ consists of those
@@ -34,9 +34,9 @@ The *computational boundary* is the frontier
 
 $$
   \mathcal{H}_c(L, q)
-  \;=\;
+  = 
   \overline{\mathcal{R}^{\circ}}
-  \;\setminus\;
+  \setminus
   \mathcal{R}^{\circ},
 $$
 
@@ -45,16 +45,16 @@ horizon ideal:
 
 $$
   \mathcal{H}_c(L, q)
-  \;=\;
+  = 
   V\!\bigl(\mathfrak{h}_c\bigr),
   \qquad
   \mathfrak{h}_c
-  \;=\;
-  \bigl\{\,
-    s \in \Gamma\bigl(\mathcal{R},\, A_0^{\mathrm{comp}}\bigr)
-    \;:\;
+  = 
+  \bigl\{
+    s \in \Gamma\bigl(\mathcal{R}, A_0^{\mathrm{comp}}\bigr)
+     : 
     s\big|_{\mathcal{H}_c} = 0
-  \,\bigr\}.
+  \bigr\}.
 $$
 
 This is the locus in the resolution tree where every
@@ -71,9 +71,9 @@ of the boundary).**
 $$
   \boxed{
     \mathrm{P} = \mathrm{NP}
-    \;\;\Longleftrightarrow\;\;
+     \Longleftrightarrow 
     \mathcal{H}_c(L, q) = \varnothing
-    \;\;\text{for every NP link } L
+     \text{for every NP link } L
   }
 $$
 
@@ -83,9 +83,9 @@ horizon is non-empty:*
 
 $$
   \mathrm{P} \neq \mathrm{NP}
-  \;\;\Longleftrightarrow\;\;
-  \exists\; L \;\text{(NP-complete)}
-  \;\;\text{with}\;\;
+   \Longleftrightarrow 
+  \exists L  \text{(NP-complete)}
+   \text{with} 
   \mathcal{H}_c(L, q) \neq \varnothing.
 $$
 
@@ -160,7 +160,7 @@ encoding an NP-complete problem \cite{cook1971} such
 that:*
 
 $$
-  \mathcal{H}_c(L_N, q_0) \;\neq\; \varnothing
+  \mathcal{H}_c(L_N, q_0)  \neq  \varnothing
   \qquad\text{for all } N \geq N_0.
 $$
 
@@ -177,9 +177,9 @@ acts on the boundary.  At a root of unity $q_k$:
 
 $$
   \mathcal{H}_c(L, q_k)
-  \;=\;
+  = 
   \mathcal{H}_c^{\mathrm{desc}}
-  \;\cup\;
+  \cup
   \mathcal{H}_c^{\mathrm{trans}}.
 $$
 

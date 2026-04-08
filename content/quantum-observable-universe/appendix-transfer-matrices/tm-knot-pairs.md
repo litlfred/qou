@@ -18,7 +18,7 @@ Crossing coefficients: $c = 1$, $d = 0$.
 
 $$
   \boxed{
-    T_{\nu\nu}(q) \;=\;
+    T_{\nu\nu}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -37,12 +37,12 @@ the transfer matrix is the $2 \times 2$ identity:
 
 $$
   \boxed{
-    T_{\varnothing}(q) \;=\;
+    T_{\varnothing}(q) = 
     \begin{pmatrix}
       1 & 0 \\
       0 & 1
     \end{pmatrix}
-    \;=\; \mathbb{I}
+    =  \mathbb{I}
   }
 $$
 
@@ -65,7 +65,7 @@ Crossing coefficients: $c = 1$, $d = 0$.
 
 $$
   \boxed{
-    T_{pp}(q) \;=\;
+    T_{pp}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -87,7 +87,7 @@ $$
 **Eigenvalues:**
 
 $$
-  \lambda_{\pm} \;=\; \frac{(q - q^{-1}) \pm \sqrt{(q-q^{-1})^2 + 4}}{2}
+  \lambda_{\pm} =  \frac{(q - q^{-1}) \pm \sqrt{(q-q^{-1})^2 + 4}}{2}
 $$
 
 Note: $\lambda_+ \cdot \lambda_- = -1$ (determinant), $\lambda_+ + \lambda_- = q - q^{-1}$ (trace).
@@ -100,7 +100,7 @@ Crossing coefficients: $c = 1$, $d = -(q - q^{-1})$.
 
 $$
   \boxed{
-    T_{nn}(q) \;=\;
+    T_{nn}(q) = 
     \begin{pmatrix}
       0 & 1 \\
       1 & -(q - q^{-1})
@@ -122,7 +122,7 @@ $$
 **Relation to $T_{pp}$:**
 
 $$
-  T_{nn}(q) \;=\; T_{pp}(q) \;-\; (q - q^{-1}) \cdot \mathbb{I}
+  T_{nn}(q) =  T_{pp}(q) -  (q - q^{-1}) \cdot \mathbb{I}
 $$
 
 ### 2c. Mixed ($\mathfrak{p}$-$\mathfrak{n}$, proton--neutron)
@@ -133,7 +133,7 @@ Crossing coefficients: $c = 1$, $d = -\dfrac{q - q^{-1}}{2}$.
 
 $$
   \boxed{
-    T_{\mathrm{mix}}(q) \;=\;
+    T_{\mathrm{mix}}(q) = 
     \begin{pmatrix}
       \dfrac{q - q^{-1}}{2}
         & 1 \\[6pt]
@@ -155,7 +155,7 @@ $$
 **Midpoint property:**
 
 $$
-  T_{\mathrm{mix}}(q) \;=\; \tfrac{1}{2}\bigl(T_{pp}(q) + T_{nn}(q)\bigr)
+  T_{\mathrm{mix}}(q) =  \tfrac{1}{2}\bigl(T_{pp}(q) + T_{nn}(q)\bigr)
 $$
 
 This midpoint property is the reason beta decay has a
@@ -174,7 +174,7 @@ Since $J_{T_{1,0}}(q) = 1$: $c = 1$, $d = 0$.
 
 $$
   \boxed{
-    T_{\gamma e}(q) \;=\; T_{pp}(q) \;=\;
+    T_{\gamma e}(q) =  T_{pp}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -193,7 +193,7 @@ Same as proton--proton (both are trefoils):
 
 $$
   \boxed{
-    T_{ee}(q) \;=\; T_{pp}(q) \;=\;
+    T_{ee}(q) =  T_{pp}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -209,7 +209,7 @@ Same as unknot--unknot:
 
 $$
   \boxed{
-    T_{\gamma\gamma}(q) \;=\; T_{\nu\nu}(q) \;=\;
+    T_{\gamma\gamma}(q) =  T_{\nu\nu}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -225,7 +225,7 @@ Since $J_{T_{1,0}}(q) = 1$: $c = 1$, $d = 0$.
 
 $$
   \boxed{
-    T_{\gamma e^+}(q) \;=\; T_{pp}(q) \;=\;
+    T_{\gamma e^+}(q) =  T_{pp}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -244,7 +244,7 @@ Same as mixed nuclear crossing (trefoil meets mirror trefoil):
 
 $$
   \boxed{
-    T_{e^-e^+}(q) \;=\; T_{\mathrm{mix}}(q) \;=\;
+    T_{e^-e^+}(q) =  T_{\mathrm{mix}}(q) = 
     \begin{pmatrix}
       \dfrac{q - q^{-1}}{2}
         & 1 \\[6pt]
@@ -270,7 +270,7 @@ act as the identity on the Hecke chain.  Therefore:
 
 $$
   \boxed{
-    T_{T_{1,0}, K}(q) \;=\; T_{pp}(q)
+    T_{T_{1,0}, K}(q) =  T_{pp}(q)
     \quad\text{for every knot } K
   }
 $$
@@ -285,7 +285,7 @@ Crossing coefficients: $c = 1$ (same chirality), $d = 0$.
 
 $$
   \boxed{
-    T_{\mathfrak{b}\mathfrak{b}}(q) \;=\; T_{pp}(q) \;=\;
+    T_{\mathfrak{b}\mathfrak{b}}(q) =  T_{pp}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -305,7 +305,7 @@ so $c = 1$, $d = 0$.
 
 $$
   \boxed{
-    T_{\mathfrak{u}\mathfrak{b}}(q) \;=\; T_{pp}(q) \;=\;
+    T_{\mathfrak{u}\mathfrak{b}}(q) =  T_{pp}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -321,7 +321,7 @@ Same chirality, same knot: $c = 1$, $d = 0$.
 
 $$
   \boxed{
-    T_{\mathfrak{t}\mathfrak{t}}(q) \;=\; T_{pp}(q) \;=\;
+    T_{\mathfrak{t}\mathfrak{t}}(q) =  T_{pp}(q) = 
     \begin{pmatrix}
       q - q^{-1} & 1 \\
       1 & 0
@@ -365,7 +365,7 @@ $$
 $$
 
 $$
-  T_{nn} = T_{pp} - (q - q^{-1}) \, \mathbb{I}
+  T_{nn} = T_{pp} - (q - q^{-1})  \mathbb{I}
 $$
 
 $$

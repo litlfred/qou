@@ -14,6 +14,6 @@ ${}^{12}\mathrm{C}$ is the largest nucleus for which the full symbolic
 witness has been computed.  The Pauli factor $0.129$ is the lowest in
 the light-nuclei table, consistent with the rapid dilution of the
 antisymmetric channel as $A$ grows.  The Hoyle state
-($0_2^+$ at $7.65\;\text{MeV}$) is not captured by the ground-state
+($0_2^+$ at $7.65 \text{MeV}$) is not captured by the ground-state
 normal form; it would require a separate witness at an excited
 braid configuration.

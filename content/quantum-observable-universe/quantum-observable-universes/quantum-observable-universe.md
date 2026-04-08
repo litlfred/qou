@@ -9,10 +9,10 @@ conditions hold:
    non-degenerate pairing
    $(a, b) \mapsto \int_A ab$
    ([Frobenius pairing](#def:frobenius-pairing)), giving an
-   isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
+   isomorphism $A \xrightarrow{ \sim } A^{\vee}$;
 
 2. *(observability)* there are no hidden global symmetries:
-   $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
+   $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
    ($A$ acted on by conjugation). Physically, this means every
    internal degree of freedom is accessible to measurement — no
    gauge transformation acts trivially on all observables. The
@@ -33,8 +33,8 @@ conditions hold:
    categorical object* $X$ by pulling back through the fibre functor:
 
    $$
-   c_i(X) \;:=\; c_i\!\bigl(\tau(X)\bigr)
-     \;\in\; H^{2i}_{\mathrm{dR}}\!\bigl(\mathrm{Spec}\,R\bigr),
+   c_i(X)  :=  c_i\!\bigl(\tau(X)\bigr)
+      \in  H^{2i}_{\mathrm{dR}}\!\bigl(\mathrm{Spec}R\bigr),
    $$
 
    where the right-hand side is the classical Chern class of the

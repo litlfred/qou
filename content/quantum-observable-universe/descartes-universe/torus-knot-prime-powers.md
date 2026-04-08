@@ -6,7 +6,7 @@ surface genus bound selects a small number of these.
 For $T_{3,p^k}$ with $\gcd(3, p^k) = 1$:
 
 $$
-  g(T_{3,p^k}) \;=\; \frac{(3-1)(p^k - 1)}{2} \;=\; p^k - 1.
+  g(T_{3,p^k}) =  \frac{(3-1)(p^k - 1)}{2} =  p^k - 1.
 $$
 
 Embeddability requires $p^k - 1 \leq 4$, i.e., $p^k \leq 5$.
@@ -69,9 +69,9 @@ $T_{3,p^k}$ with $p \geq 7$ is embeddable.
 **Complete classification of embeddable $T_{3,p^k}$.**
 
 $$
-  \{T_{3,p^k} : \gcd(3,p^k) = 1,\; p^k - 1 \leq 4\}
-  \;=\;
-  \{T_{3,2},\; T_{3,4},\; T_{3,5}\}.
+  \{T_{3,p^k} : \gcd(3,p^k) = 1, p^k - 1 \leq 4\}
+  = 
+  \{T_{3,2}, T_{3,4}, T_{3,5}\}.
 $$
 
 Three knots, no more.  The $p = 2$ tower contributes the trefoil

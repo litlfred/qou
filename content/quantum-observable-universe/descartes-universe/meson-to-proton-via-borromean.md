@@ -14,23 +14,23 @@ color lines:
 
 $$
   \mathfrak{p}
-  \;=\;
-  \mathcal{B}_3(\mathfrak{u},\, \mathfrak{u},\, \mathfrak{d})
-  \;=\;
-  \mathfrak{M}_+ \;\cdot\; \mathcal{B}_3
+  = 
+  \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})
+  = 
+  \mathfrak{M}_+  \cdot  \mathcal{B}_3
 $$
 
 In untyped crossings, $\mathfrak{M}_+ \cdot \mathcal{B}_3$ yields:
 
 $$
   \mathrm{NF}(\mathfrak{M}_+ \cdot \mathcal{B}_3)
-  \;=\;
-  -0.042\,\nu
-  \;+\; 0.001\, H^0
-  \;+\; 0.200\, H^1
-  \;+\; 1.040\, L_+
-  \;+\; 0.089\, L_-
-  \;+\; 0.218\, e^-
+  = 
+  -0.042\nu
+  +  0.001 H^0
+  +  0.200 H^1
+  +  1.040 L_+
+  +  0.089 L_-
+  +  0.218 e^-
 $$
 
 with $\mathrm{net} = +1.506$.  The Borromean factor
@@ -77,27 +77,27 @@ observable**: the beta decay $Q$-value.
 
    $$
      \Delta\mathrm{net}
-     \;=\;
+     = 
      \mathrm{net}(\mathfrak{n}) - \mathrm{net}(\mathfrak{p})
-     \;=\;
+     = 
      0.8108 - 0.9991
-     \;=\;
+     = 
      -0.1883.
    $$
 
 2. **Calibration.**  Beta decay
    $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$ releases
    $Q_\beta = \mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}}
-   - \mathfrak{m}_e \approx 0.782\;\text{MeV}$.  This is the energy
+   - \mathfrak{m}_e \approx 0.782 \text{MeV}$.  This is the energy
    equivalent of the dimensionless transition $\Delta\mathrm{net}$:
 
    $$
      \mathbf{E}_0
-     \;=\;
+     = 
      \frac{Q_\beta}{|\Delta\mathrm{net}|}
-     \;=\;
+     = 
      \frac{0.782}{0.1883}
-     \;\approx\; 4.155\;\text{MeV}.
+      \approx  4.155 \text{MeV}.
    $$
 
 3. **Why this works.**  The ratio is well-defined because:

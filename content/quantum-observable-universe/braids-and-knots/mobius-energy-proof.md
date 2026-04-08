@@ -19,7 +19,7 @@ $$
   \mathrm{tr}\bigl(
     \Delta(\gamma(s)) \otimes \Delta(\gamma(t))
   \bigr)
-  \;\xrightarrow{q \to 1}\;
+  \xrightarrow{q \to 1}
   \frac{1}{\lvert \gamma(s) - \gamma(t) \rvert^2}.
 $$
 

@@ -6,28 +6,28 @@ channel into a hadronic channel.
 
 **Colored photon pair.**
 Each photon is the Hecke algebra element
-$\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 with independent color weights $\varphi_0, \varphi_1$
 ([pair production](#def:breit-wheeler-pair-production)).
 Given two colored photons
-$\gamma_1 = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+$\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 and
-$\gamma_2 = \mathbf{1} + \psi_0\,\sigma_0 + \psi_1\,\sigma_1$,
+$\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1$,
 their product NF in $H_3(q)$ is
 ([color content](#rem:knot-basis-color-content)):
 
 $$
   \mathrm{NF}(\gamma_1 \cdot \gamma_2)
-  \;=\;
-  (1 + \varphi_0\psi_0 + \varphi_1\psi_1)\,\nu
-  \;+\;
-  (\varphi_0 + \psi_0 + \varphi_0\psi_0\,h)\,H^0
-  \;+\;
-  (\varphi_1 + \psi_1 + \varphi_1\psi_1\,h)\,H^1
-  \;+\;
-  \varphi_0\psi_1\,L_+
-  \;+\;
-  \varphi_1\psi_0\,L_-
+  = 
+  (1 + \varphi_0\psi_0 + \varphi_1\psi_1)\nu
+  + 
+  (\varphi_0 + \psi_0 + \varphi_0\psi_0h)H^0
+  + 
+  (\varphi_1 + \psi_1 + \varphi_1\psi_1h)H^1
+  + 
+  \varphi_0\psi_1L_+
+  + 
+  \varphi_1\psi_0L_-
 $$
 
 where $h = q - q^{-1}$.  The Hopf link terms
@@ -40,12 +40,12 @@ The positive Hopf link $L_+ = \sigma_0\sigma_1$ applied to the
 trefoil $e^- = \sigma_0\sigma_1\sigma_0$ gives the five-letter
 word $\sigma_0\sigma_1\sigma_0\sigma_1\sigma_0$.  Reduce using
 the braid relation $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$
-and the Hecke relation $\sigma_i^2 = h\,\sigma_i + \mathbf{1}$
+and the Hecke relation $\sigma_i^2 = h\sigma_i + \mathbf{1}$
 (where $h = q - q^{-1}$):
 
 $$
   \sigma_0\sigma_1 \cdot \sigma_0\sigma_1\sigma_0
-  \;=\;
+  = 
   \sigma_0 \cdot (\sigma_1 \cdot \sigma_0\sigma_1\sigma_0)
 $$
 
@@ -54,72 +54,72 @@ apply the braid relation $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$:
 
 $$
   \sigma_1 \cdot \sigma_1\sigma_0\sigma_1
-  \;=\;
+  = 
   \sigma_1^2 \cdot \sigma_0\sigma_1
-  \;=\;
-  (h\,\sigma_1 + \mathbf{1}) \cdot \sigma_0\sigma_1
-  \;=\;
-  h\,\sigma_1\sigma_0\sigma_1 + \sigma_0\sigma_1
+  = 
+  (h\sigma_1 + \mathbf{1}) \cdot \sigma_0\sigma_1
+  = 
+  h\sigma_1\sigma_0\sigma_1 + \sigma_0\sigma_1
 $$
 
 Apply the braid relation again ($\sigma_1\sigma_0\sigma_1 = \sigma_0\sigma_1\sigma_0$):
 
 $$
-  \;=\;
-  h\,\sigma_0\sigma_1\sigma_0 + \sigma_0\sigma_1
+  = 
+  h\sigma_0\sigma_1\sigma_0 + \sigma_0\sigma_1
 $$
 
-**Outer product** $\sigma_0 \cdot (h\,\sigma_0\sigma_1\sigma_0 + \sigma_0\sigma_1)$:
+**Outer product** $\sigma_0 \cdot (h\sigma_0\sigma_1\sigma_0 + \sigma_0\sigma_1)$:
 
 $$
-  h\,\sigma_0^2\,\sigma_1\sigma_0
-  \;+\;
-  \sigma_0^2\,\sigma_1
+  h\sigma_0^2\sigma_1\sigma_0
+  + 
+  \sigma_0^2\sigma_1
 $$
 
-Apply $\sigma_0^2 = h\,\sigma_0 + \mathbf{1}$ to each:
+Apply $\sigma_0^2 = h\sigma_0 + \mathbf{1}$ to each:
 
 $$
-  h\,(h\,\sigma_0 + \mathbf{1})\,\sigma_1\sigma_0
-  \;+\;
-  (h\,\sigma_0 + \mathbf{1})\,\sigma_1
+  h(h\sigma_0 + \mathbf{1})\sigma_1\sigma_0
+  + 
+  (h\sigma_0 + \mathbf{1})\sigma_1
 $$
 
 Distribute:
 
 $$
-  h^2\,\sigma_0\sigma_1\sigma_0
-  \;+\;
-  h\,\sigma_1\sigma_0
-  \;+\;
-  h\,\sigma_0\sigma_1
-  \;+\;
+  h^2\sigma_0\sigma_1\sigma_0
+  + 
+  h\sigma_1\sigma_0
+  + 
+  h\sigma_0\sigma_1
+  + 
   \sigma_1
 $$
 
-**Result in the NF basis** $\{\mathbf{1},\, \sigma_0,\, \sigma_1,\, L_+,\, L_-,\, e^-\}$:
+**Result in the NF basis** $\{\mathbf{1}, \sigma_0, \sigma_1, L_+, L_-, e^-\}$:
 
 $$
   \mathrm{NF}(L_+ \cdot e^-)
-  \;=\;
+  = 
   \sigma_1
-  \;+\;
-  h\,\sigma_0\sigma_1
-  \;+\;
-  h\,\sigma_1\sigma_0
-  \;+\;
-  h^2\,\sigma_0\sigma_1\sigma_0
+  + 
+  h\sigma_0\sigma_1
+  + 
+  h\sigma_1\sigma_0
+  + 
+  h^2\sigma_0\sigma_1\sigma_0
 $$
 
 $$
-  \;=\;
+  = 
   H^1
-  \;+\;
-  h\,L_+
-  \;+\;
-  h\,L_-
-  \;+\;
-  h^2\,e^-
+  + 
+  hL_+
+  + 
+  hL_-
+  + 
+  h^2e^-
 $$
 
 At $q_0 \approx 1.110$ ($h \approx 0.209$):
@@ -145,13 +145,13 @@ When two independent colored photon pairs undergo pair creation
 simultaneously, each produces a quark--antiquark channel:
 
 $$
-  \gamma_1 \cdot \gamma_2 \;\to\;
+  \gamma_1 \cdot \gamma_2  \to 
   \mathfrak{u} + \bar{\mathfrak{u}}
   \qquad\text{(production 1: up-type)}
 $$
 
 $$
-  \gamma_3 \cdot \gamma_4 \;\to\;
+  \gamma_3 \cdot \gamma_4  \to 
   \mathfrak{d} + \bar{\mathfrak{d}}
   \qquad\text{(production 2: down-type)}
 $$
@@ -169,9 +169,9 @@ distance, they bind via $\mathcal{L}_H$ to form a meson
 
 $$
   \mathfrak{u} + \bar{\mathfrak{d}}
-  \;\xrightarrow{\mathcal{L}_H}\;
+  \xrightarrow{\mathcal{L}_H}
   \mathfrak{M}_+
-  \;=\; T_{01} \cdot \mathcal{L}_H \cdot T_{10}
+  =  T_{01} \cdot \mathcal{L}_H \cdot T_{10}
 $$
 
 The remaining $\bar{\mathfrak{u}}$ and $\mathfrak{d}$ either

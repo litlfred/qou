@@ -11,9 +11,9 @@ The proton $\mathfrak{p}$ consists of two up quarks and one down quark:
 
 $$
   \mathfrak{p}
-  \;=\;
-  [\mathfrak{u},\, \mathfrak{u},\, \mathfrak{d}]_p
-  \;\bowtie\; \mathcal{L}_{\mathrm{Bor}},
+  = 
+  [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p
+   \bowtie  \mathcal{L}_{\mathrm{Bor}},
 $$
 
 where $\mathcal{L}_{\mathrm{Bor}}$ is the Borromean link.
@@ -42,8 +42,8 @@ The proton mass decomposes as
 
 $$
   \mathfrak{m}_{\mathfrak{p}}
-  \;=\;
-  2\,\mathfrak{m}(\mathfrak{u})
+  = 
+  2\mathfrak{m}(\mathfrak{u})
   + \mathfrak{m}(\mathfrak{d})
   + \mathbf{E}_{\mathrm{bind}},
 $$
@@ -64,7 +64,7 @@ $\mathbf{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.  At the substrate
 parameter $q \approx 1.110$, the full computation yields
 
 $$
-  \mathfrak{m}_{\mathfrak{p}}(q) \;\approx\; 938.272 \;\text{MeV},
+  \mathfrak{m}_{\mathfrak{p}}(q)  \approx  938.272  \text{MeV},
 $$
 
 matching the experimental proton mass to high precision.

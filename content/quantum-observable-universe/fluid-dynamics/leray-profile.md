@@ -6,15 +6,15 @@ this profile to a finite-dimensional ansatz.
 **The Leray rescaling.**
 Set $\tau = -\ln(T^* - t)$ and
 $\xi = (x - x_0)/\sqrt{T^* - t}$.  The velocity field
-$v(x, t) = (T^* - t)^{-1/2}\,V(\xi)$ satisfies the
+$v(x, t) = (T^* - t)^{-1/2}V(\xi)$ satisfies the
 **Leray equations**:
 
 $$
-  -\frac{1}{2}\,V
-  - \frac{1}{2}\,(\xi \cdot \nabla)V
+  -\frac{1}{2}V
+  - \frac{1}{2}(\xi \cdot \nabla)V
   + (V \cdot \nabla)V
-  \;=\;
-  -\nabla P + \nu\,\Delta V,
+  = 
+  -\nabla P + \nu\Delta V,
   \qquad
   \nabla \cdot V = 0.
 $$
@@ -29,10 +29,10 @@ profile decomposes into matrix coefficients:
 
 $$
   V(\xi)
-  \;=\;
-  \sum_{j \geq 0}\;
+  = 
+  \sum_{j \geq 0}
   \sum_{m,n=-j}^{j}
-  c^j_{mn}\,D^j_{mn}(\hat\xi)\,R_j(|\xi|),
+  c^j_{mn}D^j_{mn}(\hat\xi)R_j(|\xi|),
 $$
 
 where $\hat\xi = \xi/|\xi|$, $D^j_{mn}$ are the spin-$j$
@@ -42,13 +42,13 @@ radial profile at spin $j$.
 The Leray equations decompose by spin:
 
 $$
-  -\frac{1}{2}\,R_j
-  - \frac{1}{2}\,r\,R_j'
+  -\frac{1}{2}R_j
+  - \frac{1}{2}rR_j'
   + \sum_{j_1, j_2}
-    N^j_{j_1 j_2}\,R_{j_1}\,R_{j_2}'
-  \;=\;
-  \nu\!\left(R_j'' + \frac{2}{r}\,R_j'
-    - \frac{[j]_q[j+1]_q}{r^2}\,R_j\right),
+    N^j_{j_1 j_2}R_{j_1}R_{j_2}'
+  = 
+  \nu\!\left(R_j'' + \frac{2}{r}R_j'
+    - \frac{[j]_q[j+1]_q}{r^2}R_j\right),
 $$
 
 where $N^j_{j_1 j_2}$ are the nonlinear coupling coefficients,
@@ -70,10 +70,10 @@ is effectively a **finite sum**:
 
 $$
   V(\xi)
-  \;\approx\;
+   \approx 
   \sum_{j=0}^{2}
   \sum_{m,n}
-  c^j_{mn}\,D^j_{mn}(\hat\xi)\,R_j(|\xi|),
+  c^j_{mn}D^j_{mn}(\hat\xi)R_j(|\xi|),
 $$
 
 with spins $j = 0, 1/2, 1, 3/2, 2$.  This is a
@@ -89,13 +89,13 @@ $(R_0, R_{1/2}, R_1, R_{3/2}, R_2)$ in the radial variable $r$:
 For each $j \in \{0, 1/2, 1, 3/2, 2\}$:
 
 $$
-  \nu\!\left(R_j'' + \frac{2}{r}\,R_j'
-    - \frac{\lambda_j}{r^2}\,R_j\right)
-  + \frac{1}{2}\,R_j
-  + \frac{1}{2}\,r\,R_j'
-  \;=\;
+  \nu\!\left(R_j'' + \frac{2}{r}R_j'
+    - \frac{\lambda_j}{r^2}R_j\right)
+  + \frac{1}{2}R_j
+  + \frac{1}{2}rR_j'
+  = 
   \sum_{\substack{j_1, j_2 \\ j \in j_1 \otimes j_2}}
-  N^j_{j_1 j_2}\,R_{j_1}\,R_{j_2}',
+  N^j_{j_1 j_2}R_{j_1}R_{j_2}',
 $$
 
 where $\lambda_j = [j]_q[j+1]_q$ and
@@ -137,17 +137,17 @@ compression.
 The simplest nontrivial ansatz retains only $j = 1/2$:
 
 $$
-  V(\xi) = c\,D^{1/2}_{mn}(\hat\xi)\,R(|\xi|),
+  V(\xi) = cD^{1/2}_{mn}(\hat\xi)R(|\xi|),
 $$
 
 with a single radial ODE:
 
 $$
-  \nu\!\left(R'' + \frac{2}{r}\,R'
-    - \frac{[1/2]_q[3/2]_q}{r^2}\,R\right)
-  + \frac{1}{2}\,R + \frac{1}{2}\,r\,R'
-  \;=\;
-  N^{1/2}_{1/2,\,1/2}\,R\,R'.
+  \nu\!\left(R'' + \frac{2}{r}R'
+    - \frac{[1/2]_q[3/2]_q}{r^2}R\right)
+  + \frac{1}{2}R + \frac{1}{2}rR'
+  = 
+  N^{1/2}_{1/2,1/2}RR'.
 $$
 
 This is a second-order nonlinear ODE with two boundary

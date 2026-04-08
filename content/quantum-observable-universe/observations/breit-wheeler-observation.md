@@ -14,9 +14,9 @@ scale is:
 
 $$
   E_0(\phi_1,\phi_2)
-  \;=\;
+  = 
   \frac{2m_e}{\mathrm{net}(e^+) - S \cdot H_A}
-  \;\in\;[2.27,\;4.22]\;\text{MeV},
+   \in [2.27,4.22] \text{MeV},
 $$
 
 where $H_A = q - q^{-1} \approx 0.209$ at $q_0$ and
@@ -26,8 +26,8 @@ Two limiting cases:
 
 | Configuration | $S$ | $E_0$ | Character |
 |---|---|---|---|
-| Same mode ($\phi_1 = \phi_2$) | $1$ | $\approx 4.22\;\mathrm{MeV}$ | Hecke-reduced; no pair |
-| Distinct modes ($\phi_1 \neq \phi_2$) | $0$ | $\approx 2.27\;\mathrm{MeV}$ | Hopf link $L_\pm$; pair |
+| Same mode ($\phi_1 = \phi_2$) | $1$ | $\approx 4.22 \mathrm{MeV}$ | Hecke-reduced; no pair |
+| Distinct modes ($\phi_1 \neq \phi_2$) | $0$ | $\approx 2.27 \mathrm{MeV}$ | Hopf link $L_\pm$; pair |
 
 For unpolarised beams the cross-section averages over $\phi_1,\phi_2$
 and develops a $\cos(2\phi)$ azimuthal modulation in the $e^-e^+$
@@ -45,11 +45,11 @@ anisotropy consistent with the QOU polarisation selection rule:
 
 - **STAR \cite{star2021bw}**: observed $\cos(2\phi)$ azimuthal
   asymmetry in $e^-e^+$ pairs from coherent $\gamma\gamma$ interactions
-  in Au+Au UPCs at $\sqrt{s_{NN}} = 200\;\text{GeV}$.  The measured
+  in Au+Au UPCs at $\sqrt{s_{NN}} = 200 \text{GeV}$.  The measured
   asymmetry amplitude is $\approx 10$--$15\%$.
 - **ATLAS \cite{atlas2021bw}**: confirmed the azimuthal anisotropy
   in $e^-e^+$ pairs from $\gamma\gamma$ in Pb+Pb UPCs at
-  $\sqrt{s_{NN}} = 5.02\;\text{TeV}$.
+  $\sqrt{s_{NN}} = 5.02 \text{TeV}$.
 
 In both experiments the photons are quasi-real and linearly polarised
 transverse to the beam axis.  The observed $\cos(2\phi)$ pattern
@@ -61,8 +61,8 @@ contributions; the QOU identifies the geometric origin as the
 Hecke-algebra structure on the exceptional divisor $\mathcal{S}_p$.
 
 The QOU pair-production energy scale
-$E_0 \approx 2.27\;\text{MeV}$ (distinct modes) is consistent with the
-threshold $2m_e \approx 1.022\;\text{MeV}$ plus the crossing energy
+$E_0 \approx 2.27 \text{MeV}$ (distinct modes) is consistent with the
+threshold $2m_e \approx 1.022 \text{MeV}$ plus the crossing energy
 contributed by one unit of Reeb charge $\hbar_q = (q-1)/q
-\approx 1.25\;\text{MeV}$ at $q_0$; this sums to
-$\approx 2.27\;\text{MeV}$, in agreement with the symbolic formula above.
+\approx 1.25 \text{MeV}$ at $q_0$; this sums to
+$\approx 2.27 \text{MeV}$, in agreement with the symbolic formula above.

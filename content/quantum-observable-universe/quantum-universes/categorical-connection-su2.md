@@ -4,7 +4,7 @@ concretely on $\mathrm{SU}(2)$, continuing the running example from
 
 **Classical setup.** A connection on a Lie group $G$ is a
 $\mathfrak{g}$-valued 1-form on $G$. The canonical choice is the
-**Maurer--Cartan form** $\theta = g^{-1} \, dg$, a left-invariant
+**Maurer--Cartan form** $\theta = g^{-1}  dg$, a left-invariant
 $\mathfrak{su}(2)$-valued 1-form.
 
 **Explicit matrix form.** For $g \in \mathrm{SU}(2)$ written as
@@ -20,14 +20,14 @@ so the Maurer--Cartan form evaluates to:
 $$
 \theta = g^{-1} dg
 = \begin{pmatrix}
-\bar{\alpha} \, d\alpha + \bar{\beta} \, d\beta &
-\bar{\alpha} \, d(-\bar{\beta}) + \bar{\beta} \, d\bar{\alpha} \\
--\beta \, d\alpha + \alpha \, d\beta &
--\beta \, d(-\bar{\beta}) + \alpha \, d\bar{\alpha}
+\bar{\alpha}  d\alpha + \bar{\beta}  d\beta &
+\bar{\alpha}  d(-\bar{\beta}) + \bar{\beta}  d\bar{\alpha} \\
+-\beta  d\alpha + \alpha  d\beta &
+-\beta  d(-\bar{\beta}) + \alpha  d\bar{\alpha}
 \end{pmatrix}.
 $$
 
-Using the constraint $\alpha \, d\bar{\alpha} + \bar{\alpha} \, d\alpha + \beta \, d\bar{\beta} + \bar{\beta} \, d\beta = 0$ (differentiation of
+Using the constraint $\alpha  d\bar{\alpha} + \bar{\alpha}  d\alpha + \beta  d\bar{\beta} + \bar{\beta}  d\beta = 0$ (differentiation of
 $|\alpha|^2 + |\beta|^2 = 1$), one verifies that $\theta$ is
 traceless and skew-Hermitian: $\theta \in \Omega^1(G; \mathfrak{su}(2))$.
 
@@ -38,7 +38,7 @@ F = d\theta + \theta \wedge \theta.
 $$
 
 The **Maurer--Cartan equation** states that $F = 0$ identically.
-This follows from $d(g^{-1}) = -g^{-1} (dg) \, g^{-1}$:
+This follows from $d(g^{-1}) = -g^{-1} (dg)  g^{-1}$:
 
 $$
 d\theta = d(g^{-1} dg) = d(g^{-1}) \wedge dg

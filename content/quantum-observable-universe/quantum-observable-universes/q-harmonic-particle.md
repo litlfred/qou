@@ -8,11 +8,11 @@ $\alpha$ is $q$-harmonic ($\Delta_q \alpha = 0$) if and only if it
 is simultaneously $q$-closed and $q$-coclosed:
 
 $$
-  \Delta_q\,\alpha = 0
+  \Delta_q\alpha = 0
   \quad\Longleftrightarrow\quad
-  d_q\,\alpha = 0
-  \;\;\text{and}\;\;
-  \delta_q\,\alpha = 0.
+  d_q\alpha = 0
+   \text{and} 
+  \delta_q\alpha = 0.
 $$
 
 This equivalence follows from $\langle \Delta_q \alpha, \alpha \rangle_\theta = \|d_q \alpha\|^2 + \|\delta_q \alpha\|^2$, which
@@ -34,14 +34,14 @@ horizontal ($\alpha_V = 0$), fermions have non-trivial vertical part.
 The complete logical chain is:
 
 $$
-  \text{QOU} \;\xrightarrow{d_q}\;
+  \text{QOU} \xrightarrow{d_q}
   \text{$q$-exterior derivative}
-  \;\xrightarrow{\delta_q}\;
+  \xrightarrow{\delta_q}
   \text{$q$-codifferential}
-  \;\xrightarrow{\Delta_q}\;
+  \xrightarrow{\Delta_q}
   \text{$q$-Laplacian}
-  \;\xrightarrow{\ker}\;
+  \xrightarrow{\ker}
   \text{particle}
-  \;\xrightarrow{\pi_H \oplus \pi_V}\;
+  \xrightarrow{\pi_H \oplus \pi_V}
   \text{boson $\oplus$ fermion.}
 $$

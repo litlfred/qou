@@ -20,7 +20,7 @@ displacement along this fibre.  The $q$-deformed commutator at
 $p \in M$ is
 
 $$
-  [\hat{X},\, \hat{P}]_q := J\,\hbar_q(p),
+  [\hat{X}, \hat{P}]_q := J\hbar_q(p),
   \qquad \hbar_q(p) = 1 - q(p)^{-1}.
 $$
 

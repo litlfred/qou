@@ -4,8 +4,8 @@ asymmetry between positive and negative crossings: the Skein
 relation
 
 $$
-  q \, L_+ \;-\; q^{-1} L_-
-  \;=\; (q^{1/2} - q^{-1/2})\, L_0
+  q  L_+ -  q^{-1} L_-
+  =  (q^{1/2} - q^{-1/2}) L_0
 $$
 
 weights positive crossings by $q$ and negative crossings by
@@ -24,9 +24,9 @@ baseline is
 
 $$
   \delta_{\mathrm{Coulomb}}
-  \;=\; q \;-\; \tfrac{1}{2}(q + q^{-1})
-  \;=\; \tfrac{1}{2}(q - q^{-1})
-  \;> 0.
+  =  q -  \tfrac{1}{2}(q + q^{-1})
+  =  \tfrac{1}{2}(q - q^{-1})
+  > 0.
 $$
 
 **Unification of strong and electromagnetic interactions.**
@@ -46,8 +46,8 @@ Their ratio is
 
 $$
   \frac{\text{Coulomb}}{\text{Strong}}
-  \;=\; \frac{q - q^{-1}}{q + q^{-1}}
-  \;=\; \tanh\!\left(\ln q\right).
+  =  \frac{q - q^{-1}}{q + q^{-1}}
+  =  \tanh\!\left(\ln q\right).
 $$
 
 At $q = 1$ (classical limit), the asymmetry vanishes and the

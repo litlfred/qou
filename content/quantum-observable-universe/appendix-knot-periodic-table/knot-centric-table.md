@@ -112,7 +112,7 @@ Markov non-degeneracy
 Each element displays:
 
 - **Symbol** and atomic number
-- **Nuclear knot**: $Z\,\mathcal{B}_3 \bowtie N\,\mathcal{B}_3$
+- **Nuclear knot**: $Z\mathcal{B}_3 \bowtie N\mathcal{B}_3$
   with $k_\alpha$ sub-links highlighted
 - **Electron knot**: trefoil writhe diagram showing occupied
   shells and the current Fourier mode

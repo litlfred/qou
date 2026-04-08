@@ -11,7 +11,7 @@ Each nucleon pair $(i, j)$ contributes a transfer matrix
 $T(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])$:
 
 $$
-  T(c, d) \;=\;
+  T(c, d) = 
   \begin{pmatrix}
     c(q - q^{-1}) + d & c \\
     c & d
@@ -24,13 +24,13 @@ convention consistent with the Hecke inverse relation
 $\sigma^{-1} = \sigma - (q - q^{-1})$:
 
 $$
-  T_{pp}(q) \;=\; T(1, 0) \;=\;
+  T_{pp}(q) =  T(1, 0) = 
   \begin{pmatrix}
     q - q^{-1} & 1 \\
     1 & 0
   \end{pmatrix},
   \quad
-  T_{nn}(q) \;=\; T(1, -(q - q^{-1})) \;=\;
+  T_{nn}(q) =  T(1, -(q - q^{-1})) = 
   \begin{pmatrix}
     0 & 1 \\
     1 & -(q - q^{-1})
@@ -38,7 +38,7 @@ $$
 $$
 
 $$
-  T_{\mathrm{mix}}(q) \;=\; T\!\left(1,\, -\tfrac{1}{2}(q - q^{-1})\right) \;=\;
+  T_{\mathrm{mix}}(q) =  T\!\left(1, -\tfrac{1}{2}(q - q^{-1})\right) = 
   \begin{pmatrix}
     \frac{1}{2}(q - q^{-1}) & 1 \\[4pt]
     1 & -\frac{1}{2}(q - q^{-1})
@@ -60,9 +60,9 @@ and $\Delta_\beta^{\mathrm{mix} \to pp}$ are identical:*
 
 $$
   \Delta_\beta^{nn \to \mathrm{mix}}(q)
-  \;=\; T_{\mathrm{mix}}(q) - T_{nn}(q)
-  \;=\; T_{pp}(q) - T_{\mathrm{mix}}(q)
-  \;=\; \Delta_\beta^{\mathrm{mix} \to pp}(q)
+  =  T_{\mathrm{mix}}(q) - T_{nn}(q)
+  =  T_{pp}(q) - T_{\mathrm{mix}}(q)
+  =  \Delta_\beta^{\mathrm{mix} \to pp}(q)
 $$
 
 *There is a single universal beta decay matrix:*
@@ -70,8 +70,8 @@ $$
 $$
   \boxed{
     \Delta_\beta(q)
-    \;=\;
-    \tfrac{1}{2}(q - q^{-1}) \;\mathbb{I}
+    = 
+    \tfrac{1}{2}(q - q^{-1}) \mathbb{I}
   }
 $$
 
@@ -95,9 +95,9 @@ $[[h/2, 0], [0, h/2]] = \frac{h}{2} \mathbb{I}$.  $\square$
 **Explicit entries at the substrate parameter $q$:**
 
 $$
-  \Delta_\beta(q_0) \;=\;
-  \tfrac{1}{2}(q_0 - q_0^{-1}) \;\mathbb{I}
-  \;\approx\;
+  \Delta_\beta(q_0) = 
+  \tfrac{1}{2}(q_0 - q_0^{-1}) \mathbb{I}
+   \approx 
   \begin{pmatrix}
     +0.1045 & 0 \\
     0 & +0.1045
@@ -131,7 +131,7 @@ The change in the Markov-traced volume:
 
 $$
   \Delta \hat{V}_i(q)
-  \;=\;
+  = 
   z \cdot (\Delta M_i)_{11} + (\Delta M_i)_{21}
 $$
 
@@ -140,7 +140,7 @@ The $\mathcal{Q}_q$-value
 
 $$
   \ln \frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}
-  \;=\;
+  = 
   \sum_{i=0}^{p} \ln \frac{\hat{V}_i^{\mathrm{dau}}(q)}{\hat{V}_i^{\mathrm{par}}(q)}
 $$
 

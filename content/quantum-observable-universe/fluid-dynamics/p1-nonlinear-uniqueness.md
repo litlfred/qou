@@ -12,8 +12,8 @@ satisfies
 
 $$
   \lVert B(v) \rVert_A
-  \;\leq\;
-  C_q\,\lVert v \rVert_A\,\lVert d_q v \rVert_A.
+   \leq 
+  C_q\lVert v \rVert_A\lVert d_q v \rVert_A.
 $$
 
 **(b) Enstrophy bound.**
@@ -21,13 +21,13 @@ The enstrophy $\Omega(t) = \lVert d_q v(t) \rVert_A^2$ satisfies
 
 $$
   \frac{d\Omega}{dt}
-  \;\leq\;
-  \Lambda_q\,\Omega,
+   \leq 
+  \Lambda_q\Omega,
   \qquad
-  \Lambda_q = \frac{C_q^2\,E_0}{\nu_q} - \nu_q \;<\; \infty.
+  \Lambda_q = \frac{C_q^2E_0}{\nu_q} - \nu_q  <  \infty.
 $$
 
-In particular, $\Omega(t) \leq \Omega(0)\,e^{\Lambda_q t}$ for
+In particular, $\Omega(t) \leq \Omega(0)e^{\Lambda_q t}$ for
 all $t \geq 0$: the enstrophy never blows up in finite time.
 
 **(c) Uniqueness.**

@@ -3,9 +3,9 @@ The intrinsic color cubic $h_3(c)$ admits a natural decomposition into space-lik
 ```tex
 \begin{equation}\label{eq:color-cubic-decomp}
   h_3(c)
-  \;=\;
+  = 
   \underbrace{\sigma(\sigma g + r^2)}_{\text{space--colour coupling}}
-  \;+\;
+  + 
   \underbrace{b(br + g^2)}_{\text{pure colour}}.
 \end{equation}
 ```

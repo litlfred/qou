@@ -8,7 +8,7 @@ $\mathrm{P} \neq \mathrm{NP}$.*
 obstruction class $\chi(A)$ is non-vanishing:*
 
 $$
-  \mathrm{res}_{\mathcal{R}}\!\bigl(\chi(A)\bigr) \;\neq\; 0
+  \mathrm{res}_{\mathcal{R}}\!\bigl(\chi(A)\bigr)  \neq  0
   \qquad\text{at } q = q_0.
 $$
 

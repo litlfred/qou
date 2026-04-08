@@ -7,13 +7,13 @@ For $\gamma \colon S^1 \to \mathcal{S}$:
 
 $$
   \mathcal{E}_q[\gamma]
-  \;=\;
+  = 
   \oint_\gamma
   \bigl(
     \tfrac{1}{2}\lVert\dot\gamma^H\rVert^2
     + Q_q(\gamma)
     + \lVert F_A(\dot\gamma)\rVert^2
-  \bigr)\,ds,
+  \bigr)ds,
 $$
 
 where $\dot\gamma^H$ is the horizontal velocity, $Q_q$ the

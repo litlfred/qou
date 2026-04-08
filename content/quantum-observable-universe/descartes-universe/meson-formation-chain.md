@@ -3,14 +3,14 @@ formation chain, each step formally defined:
 
 **Step 1: Pair production** ([Breit--Wheeler](#def:breit-wheeler-pair-production)).
 Two colored photons
-$\gamma_i = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+$\gamma_i = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
 fuse into an electron--positron pair:
 
 $$
   \gamma_1 \cdot \gamma_2
-  \;\longrightarrow\;
+   \longrightarrow 
   e^- + e^+
-  \;+\; \text{Hopf link content}\;(L_+ = \varphi_0\psi_1,\; L_- = \varphi_1\psi_0)
+  +  \text{Hopf link content}(L_+ = \varphi_0\psi_1, L_- = \varphi_1\psi_0)
 $$
 
 The color weights $\varphi_0, \varphi_1$ supply the Hopf link terms
@@ -23,9 +23,9 @@ acts as the **quark creation operator** on the trefoil channel:
 
 $$
   L_+ \cdot e^-
-  \;=\;
+  = 
   (\sigma_0\sigma_1)(\sigma_0\sigma_1\sigma_0)
-  \;\xrightarrow{\mathrm{NF}}\;
+  \xrightarrow{\mathrm{NF}}
   \mathfrak{u} + \varphi_0\psi_1\cdot e^-
 $$
 
@@ -39,9 +39,9 @@ via the Hopf link $\mathcal{L}_H$:
 
 $$
   \mathfrak{u} + \bar{\mathfrak{d}}
-  \;\xrightarrow{\mathcal{L}_H}\;
+  \xrightarrow{\mathcal{L}_H}
   \mathfrak{M}_+
-  \;=\;
+  = 
   T_{01} \cdot \mathcal{L}_H \cdot T_{10}
 $$
 
@@ -49,11 +49,11 @@ $$
 
 $$
   \gamma\gamma
-  \;\xrightarrow{\text{Breit--Wheeler}}\;
+  \xrightarrow{\text{Breit--Wheeler}}
   e^- e^+
-  \;\xrightarrow{L_+}\;
+  \xrightarrow{L_+}
   q\bar{q}
-  \;\xrightarrow{\mathcal{L}_H}\;
+  \xrightarrow{\mathcal{L}_H}
   \mathfrak{M}
 $$
 
@@ -66,11 +66,11 @@ $q = q_0$ is:
 
 $$
   \mathrm{NF}(\mathfrak{M}_+)
-  \;=\;
-  +0.209\, H^1
-  \;+\; 1.044\, L_+
-  \;+\; 0.044\, L_-
-  \;+\; 0.218\, e^-
+  = 
+  +0.209 H^1
+  +  1.044 L_+
+  +  0.044 L_-
+  +  0.218 e^-
 $$
 
 with $\mathrm{net}(\mathfrak{M}_+) = +1.515$.

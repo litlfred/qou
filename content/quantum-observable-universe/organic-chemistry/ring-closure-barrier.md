@@ -15,17 +15,17 @@ substrate parameter $q$, are:
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N)
-  \;\propto\;
+   \propto 
   (N-1) \cdot \Delta_{T(2,2)}(q)
-  \;=\;
+  = 
   N - 1,
 $$
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_N)
-  \;\propto\;
+   \propto 
   \Delta_{T(2,N)}(q)
-  \;=\;
+  = 
   \frac{q^{N/2} - q^{-N/2}}{q - q^{-1}}
   \quad (\text{for even } N).
 $$
@@ -34,12 +34,12 @@ For $N = 6$:
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_6)
-  \;\propto\; 5,
+   \propto  5,
   \qquad
   \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_6)
-  \;\propto\;
+   \propto 
   q^2 + 1 + q^{-2}
-  \;\approx\; 3
+   \approx  3
   \quad (|q| \approx 1).
 $$
 
@@ -64,9 +64,9 @@ at a **maximum**:
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\text{transition})
-  \;>\;
+   > 
   \max\bigl(
-    \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N),\;
+    \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N),
     \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_N)
   \bigr).
 $$
@@ -83,9 +83,9 @@ Hopf links.  The energy cost of ring-opening is:
 
 $$
   \Delta E_{\mathrm{open}}
-  \;=\;
+  = 
   (N - 1) - \Delta_{T(2,N)}(q)
-  \;+\;
+  + 
   E_{\mathrm{activation}}.
 $$
 

@@ -7,7 +7,7 @@ binds with an antiquark from the other:
 
 $$
   \mathfrak{M}
-  \;=\;
+  = 
   T_{01} \cdot \mathcal{L}_H \cdot T_{10}
 $$
 
@@ -27,7 +27,7 @@ The full braid word is $(\sigma_0\sigma_1)^2 \cdot \sigma_1\sigma_0$
 
 **Normal form (step-by-step Hecke reduction).**
 Write $h = H_A = q - q^{-1}$ and use the Hecke relation
-$\sigma_i^2 = h\,\sigma_i + \mathbf{1}$ and the braid relation
+$\sigma_i^2 = h\sigma_i + \mathbf{1}$ and the braid relation
 $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$.
 
 *Step 1.* $T_{01} \cdot \mathcal{L}_H = (\sigma_0\sigma_1)^2
@@ -38,9 +38,7 @@ $\sigma_0 \cdot \sigma_0\sigma_1\sigma_0 = \sigma_0^2 \cdot L_-$.
 Then Hecke: $\sigma_0^2 = h\sigma_0 + \mathbf{1}$, so
 
 $$
-  (\sigma_0\sigma_1)^2
-  \;=\;
-  h \cdot e^- \;+\; L_-
+  (\sigma_0\sigma_1)^2 = h \cdot e^- + L_-
 $$
 
 *Step 2.* Multiply by $T_{10} = \sigma_1\sigma_0$:
@@ -48,31 +46,22 @@ $$
 | Factor | Product | Hecke reduction |
 |:---|:---|:---|
 | $L_- \cdot L_-$ | $\sigma_1\sigma_0\sigma_1\sigma_0$ | braid + Hecke: $h \cdot e^- + L_+$ |
-| $e^- \cdot L_-$ | $\sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0$ | two braid + Hecke steps: $h^2 \cdot e^- + h \cdot L_+ + h \cdot L_- + H^1$ |
+| $e^- \cdot L_-$ | $\sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0$ | two braid + Hecke steps: $h^2 e^- + hL_+ + hL_- + H^1$ |
 
 Collecting:
 
 $$
-  \mathfrak{M}_+
-  \;=\;
-  \underbrace{h}_{H^1}\,\sigma_1
-  \;+\;
-  \underbrace{(h^2 + 1)}_{L_+}\,\sigma_0\sigma_1
-  \;+\;
-  \underbrace{h^2}_{L_-}\,\sigma_1\sigma_0
-  \;+\;
-  \underbrace{(h^3 + h)}_{e^-}\,\sigma_0\sigma_1\sigma_0
+  \mathfrak{M}_+ =
+  \underbrace{h}_{H^1}\sigma_1
+  + \underbrace{(h^2 + 1)}_{L_+}\sigma_0\sigma_1
+  + \underbrace{h^2}_{L_-}\sigma_1\sigma_0
+  + \underbrace{(h^3 + h)}_{e^-}\sigma_0\sigma_1\sigma_0
 $$
 
 At $q_0 \approx 1.1100$ ($h \approx 0.2091$):
 
 $$
-  \mathrm{NF}(\mathfrak{M}_+)
-  \;=\;
-  +0.209\, H^1
-  \;+\; 1.044\, L_+
-  \;+\; 0.044\, L_-
-  \;+\; 0.218\, e^-
+  \mathrm{NF}(\mathfrak{M}_+) = 0.209 H^1 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
 $$
 
 with $\mathrm{net}(\mathfrak{M}_+) = +1.515$.
@@ -81,12 +70,7 @@ The mirror meson $\mathfrak{M}_- = T_{10} \cdot \mathcal{L}_H \cdot T_{01}$
 has the same net but with $H^0$ replacing $H^1$:
 
 $$
-  \mathrm{NF}(\mathfrak{M}_-)
-  \;=\;
-  +0.209\, H^0
-  \;+\; 1.044\, L_+
-  \;+\; 0.044\, L_-
-  \;+\; 0.218\, e^-
+  \mathrm{NF}(\mathfrak{M}_-) = 0.209 H^0 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
 $$
 
 Both mesons carry the same Hopf link content ($L_+ + L_-$)

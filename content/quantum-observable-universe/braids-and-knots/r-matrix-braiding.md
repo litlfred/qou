@@ -2,8 +2,8 @@ The $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$
 ([quantum SU(2)](#def:quantum-su2)) is the universal element
 
 $$
-  \mathcal{R}\;\in\;
-  \mathcal{U}_q(\mathfrak{su}(2))\;\hat{\otimes}\;
+  \mathcal{R} \in 
+  \mathcal{U}_q(\mathfrak{su}(2))\hat{\otimes}
   \mathcal{U}_q(\mathfrak{su}(2))
 $$
 

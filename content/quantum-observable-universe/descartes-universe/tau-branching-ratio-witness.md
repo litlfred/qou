@@ -56,9 +56,9 @@ with experiment.
 **PDG 2024 experimental values:**
 
 $$
-  \mathrm{BR}(\tau \to e\,\bar\nu_e\,\nu_\tau) = 17.82\%,
+  \mathrm{BR}(\tau \to e\bar\nu_e\nu_\tau) = 17.82\%,
   \qquad
-  \mathrm{BR}(\tau \to \mu\,\bar\nu_\mu\,\nu_\tau) = 17.39\%,
+  \mathrm{BR}(\tau \to \mu\bar\nu_\mu\nu_\tau) = 17.39\%,
 $$
 
 $$

@@ -18,11 +18,11 @@ a point $z_i \in \mathcal{S}_p$.  The $n$-tuple of insertion points
 is a point of the **ordered configuration space**
 
 $$
-  (z_1, \ldots, z_n) \;\in\;
+  (z_1, \ldots, z_n)  \in 
   \mathrm{Conf}_n(\mathcal{S}_p)
-  \;=\;
-  \bigl\{\,(z_1, \ldots, z_n) \in \mathcal{S}_p^{\,n}
-  : z_i \neq z_j \text{ for } i \neq j\,\bigr\}.
+  = 
+  \bigl\{(z_1, \ldots, z_n) \in \mathcal{S}_p^{n}
+  : z_i \neq z_j \text{ for } i \neq j\bigr\}.
 $$
 
 The ordering matches the constituent list of
@@ -105,10 +105,10 @@ class
 
 $$
   \mathcal{T}(\mathfrak{H})
-  \;=\;
-  \bigl[\, T \,\bigr]_{\sim}
-  \;\in\;
-  \mathrm{End}\bigl(H_n(q)\bigr) \,\big/\, \sim
+  = 
+  \bigl[ T \bigr]_{\sim}
+   \in 
+  \mathrm{End}\bigl(H_n(q)\bigr) \big/ \sim
 $$
 
 where $T$ is any braiding operation on $\mathfrak{H}$ (at either level)

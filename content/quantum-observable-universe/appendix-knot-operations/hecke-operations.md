@@ -3,7 +3,7 @@ governing all knot operations.  Every composite operation
 reduces to the six-element normal form basis via these rules.
 
 **Relation 1 (Hecke).**
-$\sigma_i^2 = (q - q^{-1})\,\sigma_i + \mathbf{1}$
+$\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$
 for each generator $\sigma_i$.  Squaring a crossing yields
 the identity (neutrino) plus a HA-weighted crossing.
 
@@ -13,7 +13,7 @@ Adjacent braids satisfy the braid relation; this equates
 the trefoil representations on both generator orderings.
 
 **Relation 3 (Hecke inverse).**
-$\sigma_i^{-1} = \sigma_i - (q - q^{-1})\,\mathbf{1}$.
+$\sigma_i^{-1} = \sigma_i - (q - q^{-1})\mathbf{1}$.
 Inverting a crossing subtracts HA from the identity channel.
 
 **Table K.2: Composite operations and their normal forms.**
@@ -29,8 +29,8 @@ Inverting a crossing subtracts HA from the identity channel.
 | $\sigma_1\sigma_0\sigma_1\sigma_0$ | $L_+ + \mathrm{HA}\cdot e^-$ | $+1.209$ | Hopf chain (4 crossings) |
 | $\sigma_0^{-1}$ | $-\mathrm{HA}\cdot\nu + H^0$ | $+0.791$ | Negative crossing (down quark) |
 | $\sigma_1^{-1}$ | $-\mathrm{HA}\cdot\nu + H^1$ | $+0.791$ | Negative crossing |
-| $\sigma_0^{-1}\sigma_1^{-1}$ | $+0.044\,\nu - 0.209\,H^0 - 0.209\,H^1 + L_+$ | $+0.626$ | Inverse Hopf link |
-| $\sigma_1^{-1}\sigma_0^{-1}$ | $+0.044\,\nu - 0.209\,H^0 - 0.209\,H^1 + L_-$ | $+0.626$ | Inverse Hopf link |
+| $\sigma_0^{-1}\sigma_1^{-1}$ | $+0.044\nu - 0.209H^0 - 0.209H^1 + L_+$ | $+0.626$ | Inverse Hopf link |
+| $\sigma_1^{-1}\sigma_0^{-1}$ | $+0.044\nu - 0.209H^0 - 0.209H^1 + L_-$ | $+0.626$ | Inverse Hopf link |
 | $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ | (see $e^+$ in Table K.1) | $+0.451$ | Positron (mirror trefoil) |
 
 **Borromean operations** (confinement/gluon field):
@@ -44,8 +44,8 @@ Inverting a crossing subtracts HA from the identity channel.
 The Borromean braid $B_3$ has NF:
 
 $$
-  B_3 = +0.998\,\nu - 0.010\,H^0 + 0.009\,H^1
-        + 0.046\,L_+ - 0.044\,L_-
+  B_3 = +0.998\nu - 0.010H^0 + 0.009H^1
+        + 0.046L_+ - 0.044L_-
 $$
 
 The $L_+$ and $L_-$ terms are the **gluon content** of $B_3$.

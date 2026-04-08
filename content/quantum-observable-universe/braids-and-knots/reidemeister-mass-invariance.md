@@ -22,7 +22,7 @@ The bare mass of a particle is determined by the hyperbolic
 volume of its knot complement:
 
 $$
-  m_{\mathrm{bare}} \;=\;
+  m_{\mathrm{bare}} = 
   \frac{\mathrm{Vol}(S^3 \setminus K)}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}.
 $$
@@ -35,7 +35,7 @@ of R-I, R-II, R-III moves:
 
 $$
   m_{\mathrm{bare}}
-  \;\text{is invariant under R-I, R-II, R-III.}
+   \text{is invariant under R-I, R-II, R-III.}
 $$
 
 The electron mass $\mathfrak{m}_e \approx 0.511$ MeV (from vacuum drag, since
@@ -53,7 +53,7 @@ connecting them:
 
 $$
   \mathbf{E}_{\mathrm{bind}}
-  \;=\;
+  = 
   \sum_{\text{crossings of link}}
   \epsilon_i \cdot q^{\pm 1}
 $$
@@ -81,7 +81,7 @@ one particle's knot inside the other's Seifert surface.
 
 $$
   \mathbf{E}_{\mathrm{bind}}
-  \;\text{is invariant under R-II, R-III but \textbf{not} R-I.}
+   \text{is invariant under R-II, R-III but \textbf{not} R-I.}
 $$
 
 **Shell transitions are R-I moves.**

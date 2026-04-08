@@ -5,7 +5,7 @@ $p \colon \mathbf{1} \to A$ be a
 $\alpha$ be a ([fermion](#def:fermion)) with germ
 $\alpha_p \in A / \mathfrak{m}_p^2$.
 Consider two independent observations at $p$,
-$\mathfrak{I}_{1,p},\, \mathfrak{I}_{2,p} \colon A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$
+$\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p} \colon A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$
 ([observation](#def:observation)).  These data
 assemble into a *parallelogram of observations at $p$*:
 
@@ -24,8 +24,8 @@ assemble into a *parallelogram of observations at $p$*:
 The discrepancy is the *commutator of observations at $p$*:
 
 $$
-  [\mathfrak{I}_{1,p},\, \mathfrak{I}_{2,p}](\alpha_p)
-  \;=\;
+  [\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p}](\alpha_p)
+  = 
   \mathfrak{I}_{1,p}(\mathfrak{I}_{2,p}(\alpha_p))
   - \mathfrak{I}_{2,p}(\mathfrak{I}_{1,p}(\alpha_p)).
 $$
@@ -34,12 +34,12 @@ Each observation perturbs the substrate parameter at $p$ by
 $\delta q_i(p)$ ([observation](#def:observation), condition (2)),
 inducing shifted parameters $q_1'(p) = q(p) + \delta q_1(p)$
 and $q_2'(p) = q(p) + \delta q_2(p)$.  The commutator
-$[q_1'(p),\, q_2'(p)]$ measures the obstruction:
+$[q_1'(p), q_2'(p)]$ measures the obstruction:
 
 $$
-  [\mathfrak{I}_{1,p},\, \mathfrak{I}_{2,p}](\alpha_p)
-  \;=\;
-  [q_1'(p),\, q_2'(p)] \cdot (\alpha_V)_p.
+  [\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p}](\alpha_p)
+  = 
+  [q_1'(p), q_2'(p)] \cdot (\alpha_V)_p.
 $$
 
 This vanishes if and only if $[q_1'(p), q_2'(p)] = 0$ (the shifted

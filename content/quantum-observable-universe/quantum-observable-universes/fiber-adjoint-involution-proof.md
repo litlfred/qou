@@ -9,8 +9,8 @@ via evaluation and coevaluation). Since $V$ has categorical
 dimension $2$, define the traceless component
 
 $$
-  \sigma(\rho) = \rho - \tfrac{1}{2}\,\mathrm{id}_V
-  \;\in\; \mathrm{Ad}(A).
+  \sigma(\rho) = \rho - \tfrac{1}{2}\mathrm{id}_V
+   \in  \mathrm{Ad}(A).
 $$
 
 This is well-defined because
@@ -26,9 +26,9 @@ Computing the square of the traceless component:
 
 $$
   \sigma(\rho)^2
-  = \bigl(\rho - \tfrac{1}{2}\,\mathrm{id}_V\bigr)^2
-  = \rho^2 - \rho + \tfrac{1}{4}\,\mathrm{id}_V
-  = \tfrac{1}{4}\,\mathrm{id}_V.
+  = \bigl(\rho - \tfrac{1}{2}\mathrm{id}_V\bigr)^2
+  = \rho^2 - \rho + \tfrac{1}{4}\mathrm{id}_V
+  = \tfrac{1}{4}\mathrm{id}_V.
 $$
 
 Thus $2\sigma(\rho)$ is an involution in $\mathrm{End}(V)$: it
@@ -52,6 +52,6 @@ from the trivial representation $\mathbf{1}$ to an irreducible
 non-trivial representation is the zero morphism.  Therefore
 $f = 0$, contradicting our assumption.
 
-Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The
+Hence $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$. The
 non-degeneracy of $\int_A$ excludes any hidden global symmetry:
 there is no non-trivial invariant section of the adjoint bundle.

@@ -13,10 +13,10 @@ the smooth formula does not capture.
 The chain from R-matrix to nuclear binding is:
 
 $$
-  \mathcal{R} \;\xrightarrow{\text{Yang--Baxter}}\;
-  \check{R} \;\xrightarrow{\text{crossing asymmetry}}\;
-  \mathbf{E}_{\mathrm{cross}} \;\xrightarrow{\text{Skein binding}}\;
-  \mathcal{L}_{\mathrm{bind}} \;\xrightarrow{\partial/\partial p}\;
+  \mathcal{R} \xrightarrow{\text{Yang--Baxter}}
+  \check{R} \xrightarrow{\text{crossing asymmetry}}
+  \mathbf{E}_{\mathrm{cross}} \xrightarrow{\text{Skein binding}}
+  \mathcal{L}_{\mathrm{bind}} \xrightarrow{\partial/\partial p}
   p^*(A)
 $$
 
@@ -30,14 +30,14 @@ structure.
 **Conjecture: shell correction from closed sub-links.**
 
 *For the multi-nucleon link
-$\mathcal{N}(Z, N) = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$,
+$\mathcal{N}(Z, N) = Z\mathfrak{p} \bowtie N\mathfrak{n}$,
 the Skein polynomial $J_{\mathcal{N}}(q)$ factors into a
 product of Skein polynomials of closed sub-links at specific
 values of $(p, n)$.  The shell correction is:*
 
 $$
   \delta E_{\mathrm{shell}}(p, n)
-  \;=\;
+  = 
   -\lambda_{\mathrm{shell}} \cdot
   \sum_{\text{closed sub-links } L_i \subset \mathcal{N}}
   \frac{|J_{L_i}(q)|}{|J_{\mathcal{N}}(q)|}
@@ -91,10 +91,10 @@ The closed sub-link structure predicts that the shell correction
 is largest when $(p, n)$ admits the factorization
 
 $$
-  \mathcal{N}(Z, N) \;=\;
-  k \times \mathcal{N}(2, 2) \;\bowtie\;
-  (p - 2k)\,\mathfrak{p} \;\bowtie\;
-  (n - 2k)\,\mathfrak{n}
+  \mathcal{N}(Z, N) = 
+  k \times \mathcal{N}(2, 2)  \bowtie 
+  (p - 2k)\mathfrak{p}  \bowtie 
+  (n - 2k)\mathfrak{n}
 $$
 
 for $k = \min(\lfloor p/2 \rfloor, \lfloor n/2 \rfloor)$.
@@ -102,9 +102,9 @@ The shell energy is then
 
 $$
   \delta E_{\mathrm{shell}}
-  \;=\;
+  = 
   -\lambda_{\mathrm{shell}} \cdot k
-  \;=\;
+  = 
   -\lambda_{\mathrm{shell}} \cdot
   \min\!\left(\left\lfloor \frac{p}{2} \right\rfloor,
   \left\lfloor \frac{n}{2} \right\rfloor\right).

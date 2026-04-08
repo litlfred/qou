@@ -5,13 +5,13 @@ invariant, computed by the division algorithm with no path
 dependence.
 
 **Theorem.**
-Let $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \sigma_i \sigma_{i+1} \sigma_i - \sigma_{i+1} \sigma_i \sigma_{i+1},\; \sigma_i \sigma_j - \sigma_j \sigma_i\}$ be the Gröbner--Shirshov basis
+Let $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1, \sigma_i \sigma_{i+1} \sigma_i - \sigma_{i+1} \sigma_i \sigma_{i+1}, \sigma_i \sigma_j - \sigma_j \sigma_i\}$ be the Gröbner--Shirshov basis
 for $H_A(q)$
 ([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction)).
 Define the **energy functional** on $H_A(q)$ by
 
 $$
-  E(\xi) \;=\; \sum_{w \in B} |c_w(q)| \cdot \ell(w)
+  E(\xi) =  \sum_{w \in B} |c_w(q)| \cdot \ell(w)
 $$
 
 where $\xi = \sum_w c_w(q) \cdot w$ is the normal form
@@ -41,9 +41,9 @@ Then:
 
    $$
      \Delta E_{\mathrm{step}}
-     \;=\;
+     = 
      |c| \cdot \bigl(|q - q^{-1}| + 1 - 1\bigr)
-     \;=\;
+     = 
      |c| \cdot |q - q^{-1}|
    $$
 
@@ -89,9 +89,9 @@ a weighted single crossing plus a resolved (identity) term:
 
 $$
   \underset{\text{double crossing}}{\sigma_i^2}
-  \;\longrightarrow\;
-  \underset{\text{weighted single}}{(q - q^{-1})\,\sigma_i}
-  \;+\;
+   \longrightarrow 
+  \underset{\text{weighted single}}{(q - q^{-1})\sigma_i}
+  + 
   \underset{\text{resolved}}{1}
 $$
 
@@ -107,9 +107,9 @@ The instrumented division algorithm (`hecke_division.py`) confirms:
 | Nucleus | Hecke steps | YB steps | Far-comm | Total $\Delta E$ |
 |---------|:---:|:---:|:---:|---:|
 | Deuteron $\mathcal{N}(1,1)$ | 0 | 0 | 0 | 0 |
-| ${}^{3}\mathrm{H}\; \mathcal{N}(1,2)$ | 1 | 0 | 0 | $+0.260$ |
-| ${}^{4}\mathrm{He}\; \mathcal{N}(2,2)$ | 4 | 0 | 0 | $+0.641$ |
-| ${}^{6}\mathrm{Li}\; \mathcal{N}(3,3)$ | 26 | 0 | 0 | $+4.233$ |
+| ${}^{3}\mathrm{H} \mathcal{N}(1,2)$ | 1 | 0 | 0 | $+0.260$ |
+| ${}^{4}\mathrm{He} \mathcal{N}(2,2)$ | 4 | 0 | 0 | $+0.641$ |
+| ${}^{6}\mathrm{Li} \mathcal{N}(3,3)$ | 26 | 0 | 0 | $+4.233$ |
 
 All energy changes come from Hecke steps.  Yang--Baxter and
 far-commutativity steps contribute zero energy change, confirming

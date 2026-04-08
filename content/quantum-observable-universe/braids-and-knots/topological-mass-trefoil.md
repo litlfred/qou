@@ -11,8 +11,8 @@ quantum dilogarithm provides the analytic continuation:
 
 $$
   \mathfrak{m}(\tau(2,3))
-  \;=\;
-  \frac{\mathrm{Li}_2(q^{-2})}{\hbar_q^{\,2}},
+  = 
+  \frac{\mathrm{Li}_2(q^{-2})}{\hbar_q^{2}},
 $$
 
 where $\mathrm{Li}_2$ is the quantum dilogarithm and
@@ -24,27 +24,27 @@ torus knots).  Evaluating at the substrate parameter
 $q \approx 1.110$:
 
 $$
-  \hbar_q \;\approx\; \frac{0.110}{1.110} \;\approx\; 0.0990.
+  \hbar_q  \approx  \frac{0.110}{1.110}  \approx  0.0990.
 $$
 
 **Figure-eight knot $4_1$ — the Higgs field (mass mechanism).**
 The figure-eight knot *is* hyperbolic, with complement volume
 
 $$
-  \mathrm{Vol}(S^3 \setminus 4_1) \;\approx\; 2.0299.
+  \mathrm{Vol}(S^3 \setminus 4_1)  \approx  2.0299.
 $$
 
 By the mass formula, the topological mass associated with $4_1$ is
 
 $$
   \mathfrak{m}(4_1)
-  \;=\;
-  \frac{\mathrm{Vol}(S^3 \setminus 4_1)}{\hbar_q^{\,2}}
-  \;\approx\;
+  = 
+  \frac{\mathrm{Vol}(S^3 \setminus 4_1)}{\hbar_q^{2}}
+   \approx 
   \frac{2.0299}{(0.0990)^2}
-  \;\approx\;
+   \approx 
   \frac{2.0299}{0.00980}
-  \;\approx\; 207.1.
+   \approx  207.1.
 $$
 
 **Physical interpretation.**
@@ -58,7 +58,7 @@ with crossings $> 0$.  The ratio of topological masses is
 
 $$
   \frac{\mathfrak{m}(4_1)}{\mathfrak{m}(\tau(2,3))}
-  \;\approx\; 207.1,
+   \approx  207.1,
 $$
 
 which matches the muon-to-electron mass ratio
@@ -66,9 +66,9 @@ $\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$.
 The correspondence
 
 $$
-  \tau(2,3) \;\longleftrightarrow\; e^-
+  \tau(2,3) \longleftrightarrow e^-
   \qquad\text{and}\qquad
-  4_1 \;\longleftrightarrow\; H \text{ (Higgs field)}
+  4_1 \longleftrightarrow H \text{ (Higgs field)}
 $$
 
 is determined entirely by the knot topology — no free parameters

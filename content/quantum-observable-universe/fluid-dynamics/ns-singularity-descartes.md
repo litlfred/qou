@@ -6,9 +6,9 @@ Then $(\mathbf{C}, A, \tau)$ is
 
 $$
   \mathrm{NS}(A)
-  \;=\;
+  = 
   e(\xi)\big|_\Sigma
-  \;\neq\; 0.
+   \neq  0.
 $$
 
 The classical 3-dimensional Navier--Stokes equation admits
@@ -48,5 +48,5 @@ Non-degenerate Levi form implies bounded core aspect ratio,
 which gives the [vorticity lower
 bound](#prop:vorticity-lower-bound)
 $\|\omega\|_\infty \geq c/(T^*-t)$, which gives
-[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\infty\,dt = \infty$.
+[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\inftydt = \infty$.
 

@@ -2,7 +2,7 @@ The finiteness bound
 ([Skein finiteness](#prop:skein-finiteness-bound))
 
 $$
-  [A\!-\!1]_q! \;>\; [2]_q^{\,A-1}
+  [A\!-\!1]_q!  >  [2]_q^{A-1}
 $$
 
 is a **$q$-deformed Pauli exclusion principle** for nuclear
@@ -42,9 +42,9 @@ to the denominator of the Markov trace.
 ### The bound: when configurations overwhelm coherence
 
 $$
-  [A\!-\!1]_q! \;>\; [2]_q^{A-1}
+  [A\!-\!1]_q!  >  [2]_q^{A-1}
   \quad\Longleftrightarrow\quad
-  \text{many-body complexity} \;>\; \text{binding coherence}
+  \text{many-body complexity}  >  \text{binding coherence}
 $$
 
 When the number of independent configurations exceeds the

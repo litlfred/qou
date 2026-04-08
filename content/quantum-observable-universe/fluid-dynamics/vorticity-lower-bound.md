@@ -11,18 +11,18 @@ such that for all $t < T^*$:
 **(a) Separation decay.**
 
 $$
-  c_1\,\sqrt{T^* - t}
-  \;\leq\;
+  c_1\sqrt{T^* - t}
+   \leq 
   d(t)
-  \;\leq\;
-  c_2\,\sqrt{T^* - t}.
+   \leq 
+  c_2\sqrt{T^* - t}.
 $$
 
 **(b) Vorticity lower bound.**
 
 $$
   \lVert \omega^*(t) \rVert_{L^\infty}
-  \;\geq\;
+   \geq 
   \frac{c_1}{T^* - t}.
 $$
 
@@ -30,8 +30,8 @@ $$
 
 $$
   \int_0^{T^*}
-  \lVert \omega^*(t) \rVert_{L^\infty}\,dt
-  \;=\; +\infty.
+  \lVert \omega^*(t) \rVert_{L^\infty}dt
+  =  +\infty.
 $$
 
 In particular, by the [q-BKM criterion](#thm:q-bkm), the limit
@@ -47,7 +47,7 @@ law).  They approach at rate
 $$
   \frac{dd}{dt} = -\frac{\Gamma}{2\pi d}
   \quad\Longrightarrow\quad
-  d(t)^2 = d_0^2 - \frac{\Gamma}{\pi}\,t
+  d(t)^2 = d_0^2 - \frac{\Gamma}{\pi}t
   \quad\Longrightarrow\quad
   T^* = \frac{\pi d_0^2}{\Gamma}.
 $$
@@ -87,18 +87,18 @@ stretching events, with the rate diverging as $d \to 0$:
 
 $$
   \frac{d\omega_{\max}}{dt}
-  \;\gtrsim\;
-  \frac{\Gamma}{2\pi d(t)^2}\,\omega_{\max}
-  \;=\;
-  \frac{1}{2(T^* - t)}\,\omega_{\max},
+  \gtrsim
+  \frac{\Gamma}{2\pi d(t)^2}\omega_{\max}
+  = 
+  \frac{1}{2(T^* - t)}\omega_{\max},
 $$
 
 which integrates to
 
 $$
   \omega_{\max}(t)
-  \;\gtrsim\;
-  \omega_{\max}(0)\,(T^* - t)^{-1/2}.
+  \gtrsim
+  \omega_{\max}(0)(T^* - t)^{-1/2}.
 $$
 
 The sharper bound $\omega_{\max} \gtrsim c/(T^* - t)$ follows
@@ -110,9 +110,9 @@ giving
 
 $$
   \omega_{\mathrm{sym}}(t)
-  \;\sim\;
-  \frac{\Gamma}{\pi\,d(t)^2}
-  \;=\;
+   \sim 
+  \frac{\Gamma}{\pid(t)^2}
+  = 
   \frac{1}{T^* - t}.
 $$
 

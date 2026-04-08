@@ -7,11 +7,11 @@ jet-level endomorphism algebras
 
 $$
   \mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))
-  \;\hookrightarrow\;
+   \hookrightarrow 
   \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))
-  \;\hookrightarrow\;
+   \hookrightarrow 
   \mathrm{End}(J^2\mathcal{O}(\mathrm{SU}(2)))
-  \;\hookrightarrow\; \cdots
+   \hookrightarrow  \cdots
 $$
 
 connected by the jet prolongation maps
@@ -24,7 +24,7 @@ directions.
 
 $$
   A_\infty
-  \;=\; \varinjlim_n \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2)))),
+  =  \varinjlim_n \mathrm{End}(J^n\mathcal{O}(\mathrm{SU}(2)))),
 $$
 
 the union of all finite-order jet endomorphisms. An element of
@@ -39,9 +39,9 @@ differential operators, which is isomorphic to the universal enveloping
 algebra $U(\mathfrak{su}(2))$ by the Poincar\'e--Birkhoff--Witt theorem:
 
 $$
-  A_\infty \;\cong\; U(\mathfrak{su}(2))
-  \;\cong\; \mathbb{C}\langle e_1, e_2, e_3 \rangle
-  \big/ \bigl(e_a e_b - e_b e_a - \epsilon_{abc}\, e_c\bigr).
+  A_\infty  \cong  U(\mathfrak{su}(2))
+   \cong  \mathbb{C}\langle e_1, e_2, e_3 \rangle
+  \big/ \bigl(e_a e_b - e_b e_a - \epsilon_{abc} e_c\bigr).
 $$
 
 **Filtration.** The jet order induces a filtration
