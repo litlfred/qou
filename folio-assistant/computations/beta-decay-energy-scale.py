@@ -43,11 +43,11 @@ neutron_nf = {t["particle"]: t["coefficient_numeric"] for t in witness["neutron"
 proton_nf  = {t["particle"]: t["coefficient_numeric"] for t in witness["proton"]["nf_terms"]}
 
 # Word length for each basis element (observability classification)
-WORD_LENGTH = {"ν": 0, "H⁰": 1, "H¹": 1, "L₊": 2, "L₋": 2, "e⁻": 3}
+WORD_LENGTH = {"ν": 0, "σ₀": 1, "σ₁": 1, "L₊": 2, "L₋": 2, "e⁻": 3}
 # Knot/link produced by Markov trace of braid closure
-KNOT_NAME = {"ν": "unknot (0₁)", "H⁰": "virtual", "H¹": "virtual",
+KNOT_NAME = {"ν": "unknot (0₁)", "σ₀": "virtual", "σ₁": "virtual",
              "L₊": "Hopf link", "L₋": "Hopf link", "e⁻": "trefoil (3₁)"}
-PARTICLES = ["ν", "H⁰", "H¹", "L₊", "L₋", "e⁻"]
+PARTICLES = ["ν", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
 neutron_net = witness["neutron"]["net_coefficient"]
 proton_net  = witness["proton"]["net_coefficient"]
@@ -120,8 +120,8 @@ print(f"  Δ(net) = {delta_net:+.10f}")
 # ── Sign patterns ────────────────────────────────────────────────
 sign_n = "".join("+" if neutron_nf[p] >= 0 else "−" for p in PARTICLES)
 sign_p = "".join("+" if proton_nf[p] >= 0 else "−" for p in PARTICLES)
-print(f"\n  Sign pattern (n): [{', '.join(sign_n)}]  ν,H⁰,H¹,L₊,L₋,e⁻")
-print(f"  Sign pattern (p): [{', '.join(sign_p)}]  ν,H⁰,H¹,L₊,L₋,e⁻")
+print(f"\n  Sign pattern (n): [{', '.join(sign_n)}]  ν,σ₀,σ₁,L₊,L₋,e⁻")
+print(f"  Sign pattern (p): [{', '.join(sign_p)}]  ν,σ₀,σ₁,L₊,L₋,e⁻")
 
 # ── NF₊/NF₋ decomposition ───────────────────────────────────────
 print(f"\n── NF₊ / NF₋ decomposition ──")
@@ -148,7 +148,7 @@ print(f"\n── Observable (ℓ ≥ 2) vs Virtual (ℓ < 2) ──")
 print(f"  obs(n)  = {obs_n:+.10f}   (L₊ + L₋ + e⁻)")
 print(f"  obs(p)  = {obs_p:+.10f}")
 print(f"  Δ(obs)  = {delta_obs:+.10f}")
-print(f"  virt(n) = {virt_n:+.10f}   (ν + H⁰ + H¹)")
+print(f"  virt(n) = {virt_n:+.10f}   (ν + σ₀ + σ₁)")
 print(f"  virt(p) = {virt_p:+.10f}")
 print(f"  Δ(virt) = {delta_virt:+.10f}")
 print(f"  Δ(obs) + Δ(virt) = {delta_obs + delta_virt:+.10f}  (= Δnet ✓)")

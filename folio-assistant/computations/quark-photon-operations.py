@@ -58,8 +58,8 @@ HA_num = HA0
 
 PARTICLE_KNOT = {
     ():        ("ν",  "𝟏",      "unknot (0₁)"),
-    (0,):      ("H⁰", "σ₀",     "virtual (ℓ=1)"),
-    (1,):      ("H¹", "σ₁",     "virtual (ℓ=1)"),
+    (0,):      ("σ₀", "σ₀",     "virtual (ℓ=1)"),
+    (1,):      ("σ₁", "σ₁",     "virtual (ℓ=1)"),
     (0, 1):    ("L₊", "σ₀σ₁",   "Hopf link"),
     (1, 0):    ("L₋", "σ₁σ₀",   "Hopf link"),
     (0, 1, 0): ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),
@@ -250,10 +250,10 @@ print("=" * 72)
 # The basis of H₃(q) in normal form (Gröbner-reduced) is:
 #   {𝟙, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}
 # These correspond to:
-#   {ν, H⁰, H¹, L₊, L₋, e⁻}
+#   {ν, σ₀, σ₁, L₊, L₋, e⁻}
 
 basis_words = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
-basis_names = ["𝟙 (ν)", "σ₀ (H⁰)", "σ₁ (H¹)", "σ₀σ₁ (L₊)", "σ₁σ₀ (L₋)", "σ₀σ₁σ₀ (e⁻)"]
+basis_names = ["𝟙 (ν)", "σ₀ (σ₀)", "σ₁ (σ₁)", "σ₀σ₁ (L₊)", "σ₁σ₀ (L₋)", "σ₀σ₁σ₀ (e⁻)"]
 
 print("\n─── Left-multiplication table: X · Y ───")
 print("  Each entry shows NF(X · Y) as a vector in the basis {𝟙, σ₀, σ₁, L₊, L₋, e⁻}")

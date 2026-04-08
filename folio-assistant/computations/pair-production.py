@@ -79,8 +79,8 @@ HA_sym = q_sym - 1 / q_sym
 
 PARTICLE_KNOT = {
     ():        ("ν",  "𝟏",      "unknot (0₁)"),
-    (0,):      ("H⁰", "σ₀",     "virtual (ℓ=1)"),
-    (1,):      ("H¹", "σ₁",     "virtual (ℓ=1)"),
+    (0,):      ("σ₀", "σ₀",     "virtual (ℓ=1)"),
+    (1,):      ("σ₁", "σ₁",     "virtual (ℓ=1)"),
     (0, 1):    ("L₊", "σ₀σ₁",   "Hopf link"),
     (1, 0):    ("L₋", "σ₁σ₀",   "Hopf link"),
     (0, 1, 0): ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),
@@ -293,8 +293,8 @@ def print_pair_table(phi0_val, phi1_val, psi0_val, psi1_val, label):
     print(f"  {'Term':6s}  {'Coefficient':>14s}  {'Observable?':12s}  {'Physical':}")
     print(f"  {'─'*64}")
     print(f"  {'𝟏':6s}  {nf['c_identity']:+14.8f}  {'No (ℓ=0)':12s}  vacuum/neutrino")
-    print(f"  {'σ₀':6s}  {nf['c_sigma0']:+14.8f}  {'No (ℓ=1)':12s}  H⁰ virtual dressing")
-    print(f"  {'σ₁':6s}  {nf['c_sigma1']:+14.8f}  {'No (ℓ=1)':12s}  H¹ color-tube fiber")
+    print(f"  {'σ₀':6s}  {nf['c_sigma0']:+14.8f}  {'No (ℓ=1)':12s}  σ₀ virtual dressing")
+    print(f"  {'σ₁':6s}  {nf['c_sigma1']:+14.8f}  {'No (ℓ=1)':12s}  σ₁ color-tube fiber")
     print(f"  {'L₊':6s}  {nf['C_plus']:+14.8f}  {'YES (ℓ=2)':12s}  Hopf link (cross-color)")
     print(f"  {'L₋':6s}  {nf['C_minus']:+14.8f}  {'YES (ℓ=2)':12s}  Hopf link (cross-color)")
     print(f"  {'─'*64}")

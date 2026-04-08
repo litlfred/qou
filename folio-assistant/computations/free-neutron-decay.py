@@ -46,8 +46,8 @@ except: SHA = "unknown"
 # The knot/link is what the Markov trace of the braid closure produces.
 PARTICLE_KNOT = {
     ():         ("ν",  "𝟏",      "unknot (0₁)"),
-    (0,):       ("H⁰", "σ₀",     "virtual (ℓ=1)"),
-    (1,):       ("H¹", "σ₁",     "virtual (ℓ=1)"),
+    (0,):       ("σ₀", "σ₀",     "virtual (ℓ=1)"),
+    (1,):       ("σ₁", "σ₁",     "virtual (ℓ=1)"),
     (0, 1):     ("L₊", "σ₀σ₁",   "Hopf link"),
     (1, 0):     ("L₋", "σ₁σ₀",   "Hopf link"),
     (0, 1, 0):  ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),

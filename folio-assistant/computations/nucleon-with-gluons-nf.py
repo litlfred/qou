@@ -62,8 +62,8 @@ HA_num = HA0
 
 PARTICLE_KNOT = {
     ():        ("ν",  "𝟏",      "unknot (0₁)"),
-    (0,):      ("H⁰", "σ₀",     "virtual (ℓ=1)"),
-    (1,):      ("H¹", "σ₁",     "virtual (ℓ=1)"),
+    (0,):      ("σ₀", "σ₀",     "virtual (ℓ=1)"),
+    (1,):      ("σ₁", "σ₁",     "virtual (ℓ=1)"),
     (0, 1):    ("L₊", "σ₀σ₁",   "Hopf link"),
     (1, 0):    ("L₋", "σ₁σ₀",   "Hopf link"),
     (0, 1, 0): ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),
@@ -301,18 +301,18 @@ basic_particles["photon"] = {
     "note": "Same as ν in H₃(q); distinguished by bundle context",
 }
 
-# ── Hopf crossings H⁰ = σ₀, H¹ = σ₁ ──
-print("\n─── Hopf crossing H⁰ = σ₀ ───")
-nf_h0, net_h0, _ = reduce_nf({(0,): sp.Integer(1)}, "H⁰ = σ₀")
+# ── Hopf crossings σ₀ = σ₀, σ₁ = σ₁ ──
+print("\n─── Hopf crossing σ₀ = σ₀ ───")
+nf_h0, net_h0, _ = reduce_nf({(0,): sp.Integer(1)}, "σ₀ = σ₀")
 basic_particles["hopf0"] = {
-    "symbol": "H⁰", "knot": "virtual (ℓ=1)",
+    "symbol": "σ₀", "knot": "virtual (ℓ=1)",
     "hecke_word": "σ₀", "nf": nf_to_dict(nf_h0), "net": net_h0,
 }
 
-print("\n─── Hopf crossing H¹ = σ₁ ───")
-nf_h1, net_h1, _ = reduce_nf({(1,): sp.Integer(1)}, "H¹ = σ₁")
+print("\n─── Hopf crossing σ₁ = σ₁ ───")
+nf_h1, net_h1, _ = reduce_nf({(1,): sp.Integer(1)}, "σ₁ = σ₁")
 basic_particles["hopf1"] = {
-    "symbol": "H¹", "knot": "virtual (ℓ=1)",
+    "symbol": "σ₁", "knot": "virtual (ℓ=1)",
     "hecke_word": "σ₁", "nf": nf_to_dict(nf_h1), "net": net_h1,
 }
 
@@ -667,8 +667,8 @@ print("  ├──────────┼───────────�
 particle_rows = [
     ("ν", "unknot 0₁", "𝟙", 1.0, "Neutrino"),
     ("γ", "point ∅", "𝟙", 1.0, "Photon (= ν in H₃)"),
-    ("H⁰", "virtual", "σ₀", net_h0, "Hopf crossing"),
-    ("H¹", "virtual", "σ₁", net_h1, "Hopf crossing"),
+    ("σ₀", "virtual", "σ₀", net_h0, "Hopf crossing"),
+    ("σ₁", "virtual", "σ₁", net_h1, "Hopf crossing"),
     ("L₊", "Hopf T(2,2)", "σ₀σ₁", net_lp, "Gluon (+)"),
     ("L₋", "Hopf T(2,2)", "σ₁σ₀", net_lm, "Gluon (−)"),
     ("e⁻", "trefoil 3₁", "σ₀σ₁σ₀", net_em, "Electron"),
@@ -767,7 +767,7 @@ witness = {
     "name": "nucleon-with-gluons-nf",
     "description": (
         "Nucleon NF with explicit Hopf-link gluons. "
-        "Part 1: Basic particle NF table (ν, γ, H⁰, H¹, L₊, L₋, e⁻, e⁺, 𝔲, 𝔡, B₃). "
+        "Part 1: Basic particle NF table (ν, γ, σ₀, σ₁, L₊, L₋, e⁻, e⁺, 𝔲, 𝔡, B₃). "
         "Part 2: Five gluon models compared (A: B₃ only, B: Hopf/pair, "
         "C: global σ², D: single L₊, E: L₊·L₋). "
         "Part 3: Quark ordering effects. "
