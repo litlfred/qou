@@ -4,29 +4,42 @@ The full topological mass includes a tower sum over all brane
 levels
 ([topological decomposition](#thm:topological-mass)), which
 evaluates to $\mathrm{Vol}(K)/\hbar_q^2$ in the archimedean
-realisation.  This conjecture addresses the gap between these
-two levels: **can the tower sum be expressed as a single
-operator in $\mathrm{End}(A)$?**
+realisation.
+
+The **Hecke mass element**
+$\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+([Hecke mass element](#def:hecke-mass-element)) is categorically
+defined: it is the fibre functor image of the mass integrand
+$(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$, and
+its Markov trace gives the full categorical mass
+([mass via Markov trace](#prop:hecke-mass-trace)).  The **open
+problem** is computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly
+— expressing its NF decomposition in the basis
+$\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific
+braid words.
 
 ## Statement
 
-**Conjecture (mass endomorphism).**
-*There exists a distinguished endomorphism
-$\Phi_{\mathrm{mass}} \in \mathrm{End}_{\mathbf{C}}(A)$ such
-that for every closed cycle $\varrho \colon \mathbf{1} \to A$
-with braid representative $\beta$:*
+**Conjecture (explicit mass endomorphism).**
+*The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$
+([Hecke mass element](#def:hecke-mass-element)) admits a
+closed-form NF decomposition in $H_n(q)$ expressible in terms
+of the braid word $\beta$, the substrate parameter $q$, and
+the quantum dilogarithm $\Phi_q$.  Specifically, the
+transient component satisfies:*
 
 $$
-  \mathfrak{m}(\varrho)
+  \mathrm{tr}_M\!\bigl(\Phi^{\mathrm{trans}}(\beta)\bigr)
   =
-  \bigl|\mathrm{tr}_M\bigl(\Phi_{\mathrm{mass}} \cdot \rho(\beta)\bigr)\bigr|,
+  \sum_{i=1}^{N} \Phi_q(z_i)
+  =
+  \frac{\mathrm{Vol}(K_\beta)}{\hbar_q^2}
+  -
+  \bigl|\mathrm{tr}_M\!\bigl(\rho(\beta)\bigr)\bigr|,
 $$
 
-*where $\Phi_{\mathrm{mass}}$ encodes the tower sum
-$\sum_{i=1}^N \Phi_q(z_i)$ as a single element of the Hecke
-algebra $H_n(q)$, and the mass ratios
-$\mathfrak{m}(K_1)/\mathfrak{m}(K_2) = \mathrm{Vol}(K_1)/\mathrm{Vol}(K_2)$
-for hyperbolic knots.*
+*where the spectral coordinates $z_i$ of the blow-up centres
+are determined by the braid word and the Briggs--Klein chart.*
 
 ## What is known
 
