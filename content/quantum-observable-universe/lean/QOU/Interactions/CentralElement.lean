@@ -183,7 +183,27 @@ theorem borromean3_trefoil_coeff_zero :
     minimal braid word length 6. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- (Wedderburn decomposition of H₃(q); center of B₃.)
-sorry
+
+/-- The full twist Δ² = (σ₀σ₁σ₀)² in the standard representation. -/
+noncomputable def fullTwistSq : TMatrix :=
+  let trefoil := stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0
+  trefoil * trefoil
+
+/-- B₃ = Δ² in the standard representation.
+
+    (σ₀σ₁⁻¹)³ = (σ₀σ₁σ₀)² as matrices.
+
+    This is the key identity: the Borromean braid IS the full twist
+    squared. The full twist is the unique generator of the center
+    of B₃ (the 3-strand braid group). -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem borromean3_eq_fullTwist :
+    borromean3 = fullTwistSq := by
+  simp [borromean3, borromeanUnit, fullTwistSq,
+        stdRep3_gen0, stdRep3_gen1, stdRep3_genInv1,
+        HeckeRep.genInv, HA_t, q_from_t, q_inv_from_t]
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [mul_apply, Fin.sum_univ_two, of] <;> ring
 
 end QOU.Interactions
 
