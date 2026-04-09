@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-09T16:35:03.273398+00:00",
-  "commitSha": "84f41d7fd0f4ce4ead54029953e325070ee2bab5",
+  "computedAt": "2026-04-09T18:43:28.000434+00:00",
+  "commitSha": "2071ee5ffcc0bc20e0e69ad779f4fde6e062e467",
   "assertions": [
     {
       "name": "M(Hydrogen)",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "atom-mass-full-hecke",
   "scriptFile": "atom_mass_full_hecke.py",
   "scriptHash": "1095252c1196",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "a28b6b88127d9765740fe9b5bb051557d5ca1769",
   "description": "Atomic mass Z=1-10 via full three-channel Hecke algebra (sym + std + alt), with Skein binding Lagrangian.",
   "contentBlock": "rem:atom-mass-full-hecke",
   "parameters": {
@@ -143,7 +143,7 @@
         "M_ame2020": 938.78308711,
         "delta_skein_MeV": 0.0,
         "sym_alt_correction": 0.0,
-        "elapsed_s": 0.00010347366333007812
+        "elapsed_s": 7.510185241699219e-05
       },
       {
         "element": "Helium",
@@ -177,7 +177,7 @@
         "M_ame2020": 3728.40141526,
         "delta_skein_MeV": 4.3506443511541875,
         "sym_alt_correction": 2.4622970188190703,
-        "elapsed_s": 0.0012607574462890625
+        "elapsed_s": 0.0008916854858398438
       },
       {
         "element": "Lithium",
@@ -214,7 +214,7 @@
         "M_ame2020": 6535.36684341,
         "delta_skein_MeV": -3.6081031192588853,
         "sym_alt_correction": 17.991838801038114,
-        "elapsed_s": 0.008834362030029297
+        "elapsed_s": 0.008761167526245117
       },
       {
         "element": "Beryllium",
@@ -253,7 +253,7 @@
         "M_ame2020": 8394.79425104,
         "delta_skein_MeV": -2.656983464348741,
         "sym_alt_correction": 21865.759391160504,
-        "elapsed_s": 0.04915213584899902
+        "elapsed_s": 0.05072140693664551
       },
       {
         "element": "Boron",
@@ -294,7 +294,7 @@
         "M_ame2020": 10255.10325867,
         "delta_skein_MeV": -2.9368534474706394,
         "sym_alt_correction": 88535.01614695672,
-        "elapsed_s": 0.28134679794311523
+        "elapsed_s": 0.2813601493835449
       },
       {
         "element": "Carbon",
@@ -336,7 +336,7 @@
         "M_ame2020": 11177.92984578,
         "delta_skein_MeV": 1.4211305881199223,
         "sym_alt_correction": 305240.8975427207,
-        "elapsed_s": 0.6618392467498779
+        "elapsed_s": 0.6677684783935547
       },
       {
         "element": "Nitrogen",
@@ -380,7 +380,7 @@
         "M_ame2020": 13043.78115341,
         "delta_skein_MeV": 2.257084061133355,
         "sym_alt_correction": 0.3333333333333333,
-        "elapsed_s": 3.3423314094543457
+        "elapsed_s": 3.3379368782043457
       },
       {
         "element": "Oxygen",
@@ -426,7 +426,7 @@
         "M_ame2020": 14899.16886104,
         "delta_skein_MeV": 0.5527399667535065,
         "sym_alt_correction": 4.335411538507269,
-        "elapsed_s": 0.005259275436401367
+        "elapsed_s": 0.005079984664916992
       },
       {
         "element": "Fluorine",
@@ -475,7 +475,7 @@
         "M_ame2020": 17696.900989190002,
         "delta_skein_MeV": -6.04185906195562,
         "sym_alt_correction": 2765494.0780868432,
-        "elapsed_s": 0.007315874099731445
+        "elapsed_s": 0.007276773452758789
       },
       {
         "element": "Neon",
@@ -525,7 +525,7 @@
         "M_ame2020": 18622.835076299998,
         "delta_skein_MeV": -3.171626538878627,
         "sym_alt_correction": 1.4805268337146915,
-        "elapsed_s": 0.008130550384521484
+        "elapsed_s": 0.008042573928833008
       }
     ]
   }
