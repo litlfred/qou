@@ -1,0 +1,20 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-04-09T19:52:16.168981+00:00",
+  "commitSha": "d3ccaf3ffe4947924ef6747f74b89d65acc22a22",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "atom-colored-jones-volume",
+  "scriptFile": "atom_colored_jones_volume.py",
+  "scriptHash": "b77cc8c1b6a9",
+  "scriptCommitSha": "",
+  "description": "Colored Jones volume Vol_cJ = lim ln_q|J_N|/N from Hecke algebra. No 2π, Laurent polynomial in q, q-logarithm.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "ln_q0": "0.10434073185379582",
+    "vol_cJ_proton": "0.901487177582344",
+    "vol_cJ_neutron": "0.8213896697014166"
+  }
+}
