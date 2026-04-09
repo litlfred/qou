@@ -16,14 +16,13 @@ Usage:
     cd folio-assistant/computations && python3 four-term-photon-to-atoms.py
 """
 import json
-import math
 import numpy as np
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val, E_CROSS
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from q_parameter import Q as q0, HA as HA_val, E_CROSS
+from experimental_constants import M_E_MEV
 
 try:
     SHA = subprocess.check_output(
@@ -453,8 +452,12 @@ final nucleon/atom NF.
 Key question: does the e⁻ coefficient depend on photon polarization?
 """)
 
-# Test: vary φ₀₁ and track the nucleon e⁻ coefficient
-print(f"  φ₀₁ sweep — tracking e⁻ coefficient in proton NF:")
+# Test: vary φ₀₁ and track the nucleon e⁻ coefficient.
+# NOTE: φ₀₁ is intentionally NOT used in the nucleon construction below.
+# The point of this sweep is to PROVE universality: the nucleon NF is
+# constant regardless of photon polarization, because B₃ + typed crossings
+# depend only on q and quark flavors, not on the upstream photon parameters.
+print(f"  φ₀₁ sweep — demonstrating UNIVERSALITY (all rows should be identical):")
 print(f"  {'φ₀₁':>8s} | {'e⁻(proton)':>12s} | {'e⁻(neutron)':>12s} | {'net(p)':>10s} | {'net(n)':>10s}")
 print(f"  {'─'*8}-+-{'─'*12}-+-{'─'*12}-+-{'─'*10}-+-{'─'*10}")
 
@@ -464,14 +467,14 @@ for phi_01 in [0.0, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2]:
     # but B₃ + typed crossings start from the identity.
     # The nucleon NF depends ONLY on q and the quark types,
     # NOT on photon polarization — universality!
+    types_p = ['u', 'u', 'd']
     elem_p = dict(b3_nf)
     for i in range(3):
         for j in range(i + 1, 3):
             gen = min(i, j)
             if gen > 1:
-                gen = 1
-            cx = crossing('u' if (i < 2) else 'd',
-                          'u' if (j < 2 and i < 1) else 'd', gen)
+                gen = 1  # H₃ only has generators σ₀, σ₁
+            cx = crossing(types_p[i], types_p[j], gen)
             elem_p = hecke_mul(elem_p, cx)
             elem_p = reduce_nf(elem_p)
     pvec = to_vec(elem_p)

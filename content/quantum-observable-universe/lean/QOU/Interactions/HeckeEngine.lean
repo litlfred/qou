@@ -48,24 +48,12 @@ noncomputable def hecke_add (a b : HeckeNF) : HeckeNF :=
       γ·σ₀ = σ₀,  σ₀·σ₀ = γ + HA·σ₀,  σ₁·σ₀ = L₋,
       L₊·σ₀ = e⁻, L₋·σ₀ = σ₁ + HA·L₋, e⁻·σ₀ = L₊ + HA·e⁻ -/
 noncomputable def mul_right_s0 (a : HeckeNF) : HeckeNF := fun i =>
-  match i with
-  | 0 => a 1                                    -- γ: σ₀² → 1·γ
-  | 1 => a 0 + HA * a 1                         -- σ₀: γ·σ₀ + HA from σ₀²
-  | 2 => a 4                                    -- σ₁: L₋·σ₀ → σ₁
-  | 3 => HA * a 2 + HA * a 5                    -- L₊: wait...
-
-  -- Let me just re-derive carefully:
   -- a·σ₀ = (a₀γ + a₁σ₀ + a₂σ₁ + a₃L₊ + a₄L₋ + a₅e⁻)·σ₀
   -- = a₀·σ₀ + a₁·(γ+HA·σ₀) + a₂·L₋ + a₃·e⁻ + a₄·(σ₁+HA·L₋) + a₅·(L₊+HA·e⁻)
-  -- Collecting by basis element:
-  -- γ:  a₁
-  -- σ₀: a₀ + HA·a₁
-  -- σ₁: a₄
-  -- L₊: a₅
-  -- L₋: a₂ + HA·a₄
-  -- e⁻: a₃ + HA·a₅
-
-  -- Redo with correct match:
+  match i with
+  | 0 => a 1                                    -- γ: from σ₀² → γ
+  | 1 => a 0 + HA * a 1                         -- σ₀: γ·σ₀ + HA from σ₀²
+  | 2 => a 4                                    -- σ₁: L₋·σ₀ → σ₁
   | 3 => a 5                                    -- L₊: e⁻·σ₀ → L₊
   | 4 => a 2 + HA * a 4                         -- L₋: σ₁·σ₀ + HA from L₋·σ₀
   | 5 => a 3 + HA * a 5                         -- e⁻: L₊·σ₀ + HA from e⁻·σ₀
@@ -165,16 +153,13 @@ noncomputable def nf_neutron4 : HeckeNF :=
     (mul_right_s1 step2) (hecke_smul (-HA) step2)
 
 /-- The 4×neutron e⁻ coefficient computed by the Hecke engine.
-    Should equal −(q−1)²(q+1)²(q²+1)²/q⁴
-    = −HA² · (q²+1)² / q⁴  (times 4 for the 2× crossing factors).
 
-    Actually: with our 4× convention (two 2× crossings and one 1× crossing),
-    the scale factor is 4, so:
-    4·c_e(neutron) = −(q−1)²(q+1)²(q²+1)² / q⁴ -/
+    4·c_e(𝔫) = −HA² · (q² + q⁻² + 2) = −q⁴ + 2 − q⁻⁴
+
+    No division needed — the result is in ℤ[q, q⁻¹]. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem nf_neutron4_trefoil :
-    nf_neutron4 5 = -((q - q_inv) * (q - q_inv) * (q * q + q_inv * q_inv + 2)
-      * (q * q + q_inv * q_inv + 2)) / 4 := by
+    nf_neutron4 5 = -((q - q_inv) * (q - q_inv) * (q * q + q_inv * q_inv + 2)) := by
   simp [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
         mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA, q, q_inv]
   ring

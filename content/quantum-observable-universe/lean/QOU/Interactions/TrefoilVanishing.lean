@@ -47,10 +47,7 @@ open QOU.Descartes
     Proof: σ₀(σ₁ − HA) = σ₀σ₁ − HA·σ₀ = L₊ − HA·σ₀.
     Both L₊ and σ₀ are NF basis elements, so no further reduction. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem unit_nf_no_trefoil :
-    -- The e⁻ coefficient of σ₀σ₁⁻¹ is 0.
-    -- (Structural: σ₀σ₁⁻¹ = L₊ − HA·σ₀, neither term is e⁻.)
-    True := by trivial  -- placeholder for structural argument
+theorem unit_nf_no_trefoil : unit_nf 5 = 0 := by rfl
 
 /-- The standard character of the NF matches the matrix trace.
 
@@ -115,9 +112,9 @@ noncomputable def unit_nf : Fin 6 → R_q
     Coefficients in ℤ[q,q⁻¹]. -/
 noncomputable def unit2_nf : Fin 6 → R_q
   | 0 => HA * HA             -- γ = HA² = q²−2+q⁻²
-  | 1 => -(HA * HA * HA) + 3 * HA  -- σ₀ = −HA³+3HA
+  | 1 => HA * HA * HA        -- σ₀ = HA³ = q³−3q+3q⁻¹−q⁻³
   | 2 => -HA                 -- σ₁ = −HA
-  | 3 => -(HA * HA) + 2      -- L₊ = 2−HA²
+  | 3 => -(HA * HA)          -- L₊ = −HA²
   | 4 => 1                   -- L₋ = 1
   | 5 => 0                   -- e⁻ = 0
 

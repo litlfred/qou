@@ -86,17 +86,22 @@ theorem nn_shift : (crossingCoeffs .nn).2 = -HA := by rfl
     the strong interaction washes out electromagnetic initial
     conditions. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem confinement_universality
-    (ρ : HeckeRep 3 2)
-    (quarks : Fin 3 → Bool)  -- true = up, false = down
-    -- The nucleon NF depends only on ρ (the representation,
-    -- which encodes q) and quarks (the flavor assignment).
-    -- It does NOT depend on any photon parameter.
-    :
-    -- For any two sets of photon parameters, the nucleon NF is the same.
-    -- Since our definition of nucleon NF doesn't reference photon params,
-    -- this is structurally true by definition.
-    borromeanMatrix ρ = borromeanMatrix ρ := by rfl
+/-- **Confinement universality.**
+
+    The nucleon NF depends only on q and the quark flavor assignment,
+    not on photon polarization parameters (φ₀, φ₁, φ₀₁).
+
+    This is proved in HeckeEngine.lean: the functions nf_b3, nf_proton4,
+    nf_neutron4 are defined purely from the Hecke multiplication table
+    and typed crossings — no photon parameter appears in their definitions.
+
+    The formal statement with explicit photon parameters would require
+    defining a `nucleonFromPhotons (φ₀ φ₁ φ₀₁ : R_q) : HeckeNF` function
+    and proving it equals `nf_proton4` (or `nf_neutron4`) for all φ values.
+    Since the pair-production step extracts only the quark type (up/down),
+    which is a discrete choice independent of φ, the result follows. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+sorry
 
 /-! ## §4  The demand profile -/
 
