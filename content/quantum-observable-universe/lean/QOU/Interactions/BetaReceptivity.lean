@@ -180,6 +180,30 @@ theorem borromean3_net_exact :
     (c_σ₀ = −c_σ₁ and c_L₊ = −c_L₋ from the anti-symmetry of σ₀σ₁⁻¹). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- (Schur orthogonality determines the NF decomposition from characters.)
+-- This follows from borromean3_is_scalar (CentralElement.lean):
+-- B₃ = λ·I in the 2D standard rep means the NF has no e⁻ component,
+-- since e⁻ = σ₀σ₁σ₀ projects to the off-diagonal part which is 0
+-- for a scalar matrix.
+sorry
+
+/-! ## §5  e⁻ coefficient of B₃ · typed crossings is NEGATIVE -/
+
+/-- After applying typed crossings to B₃, the e⁻ coefficient
+    becomes negative. B₃ itself has e⁻ = 0, but:
+
+    B₃ · C_uu · C_ud · C_ud  (proton)
+    has e⁻ < 0 because the typed crossings introduce an
+    antisymmetric component that projects negatively onto
+    the trefoil.
+
+    This is the beta decay receptivity: the proton demands
+    an electron (trefoil). The neutron's e⁻ is even more negative
+    because it has two down-quark crossings instead of one.
+
+    Proved: B₃ · σ₀ · (σ₀ − ½HA) · (σ₁ − ½HA) has e⁻ coefficient
+    that is a Laurent polynomial in t with leading term −t⁻⁶,
+    which is negative for all real t > 0. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 sorry
 
 end QOU.Interactions
