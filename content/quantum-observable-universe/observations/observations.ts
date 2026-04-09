@@ -68,6 +68,7 @@ export default chapter({
         "mass-predictions-data",
         "mass-comparison-table",
         "mass-formula-validation",
+        "atom-mass-full-hecke",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
