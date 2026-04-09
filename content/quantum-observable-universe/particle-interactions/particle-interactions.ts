@@ -21,6 +21,7 @@ export default chapter({
       blocks: [
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
+        "inductive-gb-reduction",
         "box-braid-irreducibility",
         "generator-volume-decomposition",
         "markov-trace-factorization",
@@ -34,6 +35,7 @@ export default chapter({
       blocks: [
         "confinement-operator-selection",
         "confinement-lp",
+        "confinement-topological",
       ],
     }),
 
@@ -43,6 +45,7 @@ export default chapter({
       label: "sec:nucleon-derivation",
       blocks: [
         "four-term-pair-nucleon",
+        "confinement-universality",
         "derived-atom",
         "nucleon-from-photons-summary",
       ],
@@ -53,6 +56,7 @@ export default chapter({
       title: "Nuclear binding and magic numbers",
       label: "sec:nuclear-binding",
       blocks: [
+        "nuclear-operator-regimes",
         "demand-stability",
         "periodic-table-demand-conjecture",
       ],
