@@ -161,25 +161,49 @@ theorem signPoly_deriv_neg (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
   have hr : derivFactor q < 0 := derivFactor_neg_on_interval q hq1 hq2
   nlinarith
 
-/-- THE KEY RESULT: p(q) < 0 for all q ∈ [1, 3/2].
+/-- **THE KEY RESULT: p(q) < 0 for all q ∈ [1, 3/2].**
 
-    Proof by monotonicity: p'(q) < 0 on [1, 3/2] (proved above),
-    so p is decreasing. Since p(3/2) < 0 (proved by norm_num),
-    p(q) ≤ p(1) < 0... no, decreasing means p(q) ≥ p(3/2) = −3659/256.
+    Direct algebraic proof — no monotonicity or IVT needed!
 
-    Actually we just need: p(1) = −4 < 0 and p(3/2) < 0.
-    Since p is continuous (polynomial) and p' < 0 on [1, 3/2],
-    p is monotone decreasing, so p(q) ≤ p(1) = −4 < 0 for q ≥ 1.
-    Wait: decreasing means p(q) ≤ p(1) for q ≥ 1. Yes!
-    p(q) ≤ p(1) = −4 < 0. ∎
+    Write −p(q) = 3q⁶ − q⁸ + 3q² − 1 = q⁶(3 − q²) + (3q² − 1).
 
-    The formal proof needs Mathlib's MonotonOn / HasDerivAt chain.
-    We have all the ingredients:
-    - signPoly_deriv_neg: p' < 0 on [1, 3/2]
-    - signPoly_at_one: p(1) = −4
-    This sorry bridges MonotonOn to pointwise bound. -/
+    For q ∈ [1, 3/2]:
+      • 3 − q² ≥ 3 − 9/4 = 3/4 > 0   (since q ≤ 3/2)
+      • q⁶ ≥ 1                          (since q ≥ 1)
+      • 3q² − 1 ≥ 2 > 0                (since q ≥ 1)
+
+    Therefore −p(q) ≥ 1 · 3/4 + 2 = 11/4 > 0, so p(q) < 0. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-sorry
+theorem signPoly_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
+    signPoly q < 0 := by
+  unfold signPoly
+  -- Goal: q⁸ − 3q⁶ − 3q² + 1 < 0
+  -- Equivalently: q⁶(q² − 3) + (1 − 3q²) < 0
+  -- Equivalently: q⁶(3 − q²) + (3q² − 1) > 0  (negated)
+  nlinarith [sq_nonneg q, sq_nonneg (q * q * q),
+             sq_nonneg (q - 1), sq_nonneg (3/2 - q),
+             mul_self_nonneg (q ^ 2 - 1)]
+
+/-- The proton e⁻ coefficient is negative for all q ∈ (1, 3/2].
+
+    Since q₀ ≈ 1.110 ∈ (1, 3/2], this proves the proton has
+    negative trefoil demand at the physical substrate parameter.
+
+    Combined with neutron_trefoil_neg (which holds for ALL q > 1),
+    both nucleons have e⁻ < 0 — the beta decay channel is open. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem proton_trefoil_neg_on_interval (q : ℝ) (hq1 : 1 < q) (hq2 : q ≤ 3/2) :
+    protonTrefoilCoeff q < 0 := by
+  unfold protonTrefoilCoeff
+  have hp : signPoly q < 0 := signPoly_neg_on_interval q (le_of_lt hq1) hq2
+  have hq_pos : 0 < q := by linarith
+  -- Numerator: (q−1)²(q+1)² > 0 (since q > 1) and signPoly q < 0
+  -- So numerator = positive · negative < 0
+  -- Denominator: 4q⁶ > 0
+  -- Result: negative / positive < 0
+  apply div_neg_of_neg_of_pos
+  · nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1)]
+  · positivity
 
 /-! ## §5  The neutron e⁻ coefficient -/
 
