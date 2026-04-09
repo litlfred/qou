@@ -105,8 +105,9 @@ $$
   Gx \geq 0
 $$
 
-This is a convex QP (since $G$ has indefinite signature but the
-feasible set is bounded), solvable by standard interior-point
-methods.  The nuclear assembly step (iv) of the derived atom
-([derived atom](#def:derived-atom)) is an instance of this QP
-with $y = \mathrm{NF}(\mathfrak{N}_{k+1})$ fixed.
+When $y$ is fixed (as in the nuclear assembly step), $x^T G y$
+is linear in $x$, reducing to a standard LP.  When both $x$ and
+$y$ vary, the objective is bilinear with indefinite $G$ — a
+non-convex bilinear program.  The nuclear assembly step (iv) of
+the derived atom ([derived atom](#def:derived-atom)) fixes
+$y = \mathrm{NF}(\mathfrak{N}_{k+1})$ and solves the resulting LP.

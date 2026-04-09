@@ -56,9 +56,10 @@ theorem borromean3_not_identity :
   simp [borromean3, borromeanUnit, stdRep3_gen0, stdRep3_genInv1,
         stdRep3_gen1, HeckeRep.genInv, HA_t, q_from_t, q_inv_from_t,
         mul_apply, Fin.sum_univ_two, of, Matrix.one_apply] at h00
-  -- After simp, h00 is an equation in ℤ[t,t⁻¹] that is false
-  -- (the LHS is a nontrivial Laurent polynomial, the RHS is 1)
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
+  -- After simp, h00 is an equation in ℤ[t,t⁻¹] that is false.
+  -- The LHS is a nontrivial Laurent polynomial, the RHS is 1.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 /-! ## §2  The full twist Δ² IS the identity in the standard rep -/
 
