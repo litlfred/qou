@@ -17,10 +17,11 @@ export default remark({
   ],
   uses: [
     "rem:mass-comparison-table",
+    "rem:hecke-charge-mass-duality",
     "def:hecke-mass-element",
     "prop:hecke-mass-trace",
     "def:transfer-matrix-operator",
-    "rem:skein-binding-lagrangian",
+    "def:skein-binding-lagrangian",
   ],
   cites: [
     "jones1985",

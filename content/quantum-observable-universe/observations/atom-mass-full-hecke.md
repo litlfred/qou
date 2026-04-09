@@ -1,5 +1,5 @@
 The existing atomic mass appendix
-([atomic mass calculations](#rem:amc-calculations)) uses the 2×2
+([atomic mass calculations](#sec:amc-calculations)) uses the 2×2
 **standard** irrep of $H_3(q)$ for the transfer matrix chain.
 This projects the Hecke element onto the $(2,1)$-seminormal representation
 and discards the symmetric (trivial) and alternating (sign)
@@ -67,7 +67,7 @@ the charge--mass duality
 
 All traces computed at $q = 111/100$ (exact rational arithmetic).
 Binding energy from the Skein binding Lagrangian
-([Skein binding Lagrangian](#rem:skein-binding-lagrangian))
+([Skein binding Lagrangian](#def:skein-binding-lagrangian))
 with $q$-derived Bethe--Weizsäcker coefficients.
 
 | Atom | $A$ | $\mathrm{tr}_{\mathrm{sym}}$ | $\mathrm{tr}_{\mathrm{std}}$ | $\mathrm{tr}_{\mathrm{alt}}$ | $\mathrm{tr}_{\mathrm{full}}$ | $B/A_{\mathrm{Skein}}$ | $B/A_{\mathrm{AME}}$ | $\Delta$ (MeV) |
@@ -85,17 +85,22 @@ with $q$-derived Bethe--Weizsäcker coefficients.
 
 ## Key observations
 
-1. **Standard channel exponential suppression.**  The standard
-   (2×2) trace shrinks exponentially with $A$: from $1.0$ at
-   $A = 1$ to $\sim 10^{-7}$ at $A = 19$.  The symmetric and
-   alternating channels remain $O(1)$.  The full Wedderburn
-   trace recovers the physically correct mass scale.
+1. **Standard channel suppression.**  The standard (2×2) trace
+   shrinks rapidly with $A$ for odd-$A$ and neutron-excess
+   nuclei: from $1.0$ at $A = 1$ to $\sim 10^{-7}$ at $A = 19$
+   (${}^{19}\mathrm{F}$).  For even-even nuclei (${}^{16}\mathrm{O}$,
+   ${}^{20}\mathrm{Ne}$) the standard trace remains $O(10^{-1})$
+   due to the symmetric ground-state ordering.  In all cases the
+   symmetric and alternating channels remain $O(1)$, and the full
+   Wedderburn trace recovers the physically correct mass scale.
 
 2. **Alternating channel sign flips.**  The alternating trace
-   flips sign between even-$A$ and odd-$A$ nuclei (eigenvalue
-   $-q^{-1}$ raised to crossing count).  This produces the
-   alternating sign pattern in $\mathrm{tr}_{\mathrm{full}}$
-   visible for Li, B, N, F (odd-$A$).
+   changes sign according to the parity of the total crossing
+   count (the exponent of $(-q^{-1})$ in the alternating
+   eigenvalue product), which depends on the ground-state
+   ordering rather than directly on even/odd $A$.  This
+   produces the sign variation in $\mathrm{tr}_{\mathrm{full}}$
+   visible across the table.
 
 3. **${}^{14}\mathrm{N}$ cancellation.**  For the symmetric
    nucleus $Z = N = 7$, the symmetric and alternating traces
