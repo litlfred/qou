@@ -33,6 +33,14 @@ except Exception:
     SHA = "unknown"
 
 # ── Hecke algebra engine ─────────────────────────────────────
+# NOTE: We model all nucleons as elements of H₃(q) (the 3-strand
+# Iwahori-Hecke algebra with 6-element NF basis). For multi-nucleon
+# systems (A > 1), the full algebra is H_A(q) with A!-element basis.
+# The H₃ model treats each nucleon as an independent 3-strand object
+# (from B₃ quark confinement) and uses inter-nucleon Hopf crossings
+# on shared generators. This is the "nucleon-level" approximation —
+# valid because each nucleon's internal structure is already resolved
+# by B₃, and inter-nucleon interactions are pairwise.
 HA = HA_val
 z = 1.0 / (q0**0.5 + q0**(-0.5))
 NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
