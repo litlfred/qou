@@ -15,6 +15,7 @@ LaTeX label: `prop:skein-polynomial-transfer-matrix`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import Mathlib.Data.Nat.Choose.Basic
 
 namespace QOU.Descartes
@@ -64,7 +65,7 @@ noncomputable def crossingMatrix (q c d : ℝ) : TransferMatrix where
     for link invariants by Jones's theorem). -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 noncomputable def tracedVolumeFromMatrix (q : ℝ) (M : TransferMatrix) : ℝ :=
-  let z := 1 / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
+  let z := 1 / (q_half + 1 / q_half)
   z * M.a₁₁ + M.a₂₁
 
 /-- The nuclear Skein polynomial: product of traced volumes.

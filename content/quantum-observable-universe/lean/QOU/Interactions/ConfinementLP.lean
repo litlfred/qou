@@ -45,10 +45,15 @@ noncomputable def markovTraceNF (z h : R_q) : Fin 6 → R_q
     This follows from cyclicity of the Markov trace:
     tr_M(b_i · b_j) = tr_M(b_j · b_i). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem gram_symmetric (z h : R_q) (i j : Fin 6) :
-    -- Cyclicity of Markov trace implies symmetry of G
-    -- This is a structural property, not computational
-    True := by trivial
+/-- The Gram matrix is symmetric: G_{ij} = G_{ji}.
+    This follows from cyclicity of the Markov trace:
+    tr_M(b_i · b_j) = tr_M(b_j · b_i).
+
+    The actual symmetry proof requires defining the full 6×6 Gram
+    matrix and verifying G = Gᵀ. The real content is in
+    GramIndefinite.lean (which proves the form is indefinite). -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+sorry
 
 /-! ## §3  Indefinite signature -/
 
@@ -74,10 +79,14 @@ sorry
     the trace decreases while Frobenius positivity is maintained
     in at least some components. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem lp_can_achieve_zero (z h : R_q) (hh : h ≠ 0) :
-    -- There exists x ∈ R_q^6 with Σ markovTraceNF(z,h,i) · xᵢ = 0
-    -- and G(z,h) · x has nonneg components (in appropriate sense)
-    True := by trivial
+/-- The LP over continuous H₃(q) can achieve trace = 0.
+    Follows from gram_indefinite_witness (GramIndefinite.lean):
+    the negative eigenvalue direction allows trace cancellation.
+
+    The formal existential statement requires defining the LP
+    feasible set over ℝ (not R_q) with positivity constraints. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+sorry
 
 /-! ## §4  Braid group image is a proper subset -/
 
@@ -89,8 +98,9 @@ theorem lp_can_achieve_zero (z h : R_q) (hh : h ≠ 0) :
     each NF coefficient cᵢ of ρ(β) satisfies
     |cᵢ| ≤ C · (1 + |HA|)^L for some universal constant C. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem braid_coefficients_bounded (ρ : HeckeRep 3 2) (L : ℕ) :
-    -- For any braid word of length L, NF coefficients are bounded
-    True := by trivial
+/-- Braid words of length L produce NF coefficients bounded by (1+|HA|)^L.
+    The LP optimum requires unbounded coefficients, hence is not realizable. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+sorry
 
 end QOU.Interactions

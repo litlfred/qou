@@ -311,9 +311,9 @@ for nucleon_name, quark_types, target_net in [
         print(f"  The LP is infeasible or unbounded.")
 
     # ══════════════════════════════════════════════════════════
-    #  REFINED LP: Constrain the OPERATOR, minimize CONFINED trace
+    #  REFINED LP: Constrain the OPERATOR, minimize OPERATOR trace
     # ══════════════════════════════════════════════════════════
-    print(f"\n  ── REFINED LP: operator net ≈ 1 + minimize confined trace ──")
+    print(f"\n  ── REFINED LP: operator net = 1 + minimize OPERATOR trace ──")
     print(f"  The basic LP finds a degenerate solution (e⁻ → +10)")
     print(f"  because it only constrains the confined-state net.")
     print(f"  ")
@@ -425,33 +425,18 @@ for nucleon_name, quark_types, target_net in [
     print(f"\n  ── B₃ AMONG BRAID GROUP ELEMENTS ──")
     print(f"  Among all braid group elements of length ≤ 6:")
 
-    # Generate all braid words of length ≤ 6 using generators {σ₀, σ₁, σ₀⁻¹, σ₁⁻¹}
-    # and check which ones:
-    # (a) have net ≈ 1
-    # (b) produce a confined NF matching the physical nucleon
-    generators = [(0,), (1,), (-1,), (-2,)]  # σ₀, σ₁, σ₀⁻¹, σ₁⁻¹
+    # EXHAUSTIVE enumeration of all braid words of length ≤ 6 using
+    # generators {σ₀, σ₁, σ₀⁻¹, σ₁⁻¹}. This checks ALL 4^k words
+    # for k = 2, 4, 6 (4^2 + 4^4 + 4^6 = 16 + 256 + 4096 = 4368 words).
+    import itertools
+    gen_list = [0, 1, -1, -2]  # σ₀, σ₁, σ₀⁻¹, σ₁⁻¹
 
     best_match = None
     best_delta = float('inf')
     group_results = []
 
-    # Length 2, 4, 6 (odd lengths can't give net ≈ 1 for 3-component links)
     for length in [2, 4, 6]:
-        # Sample representative words (exhaustive for small lengths)
-        if length == 2:
-            words = [(0, -2), (-1, 1), (0, 1), (1, 0), (-1, -2), (-2, -1)]
-        elif length == 4:
-            words = [(0, -2, 0, -2), (-1, 1, -1, 1), (0, 1, 0, 1),
-                     (0, -2, -1, 1), (1, -1, 0, -2), (0, 1, -1, -2)]
-        else:  # length 6
-            words = [(0, -2, 0, -2, 0, -2),    # B₃!
-                     (-1, 1, -1, 1, -1, 1),     # mirror B₃
-                     (0, 1, 0, 1, 0, 1),        # (σ₀σ₁)³
-                     (0, -2, 0, 1, 0, -2),      # mixed
-                     (0, 1, -1, -2, 0, 1),      # mixed
-                     (1, 0, 1, 0, 1, 0)]        # (σ₁σ₀)³
-
-        for word in words:
+        for word in itertools.product(gen_list, repeat=length):
             raw = expand_inverse(word)
             nf = reduce_nf(raw)
             vec = to_vec(nf)

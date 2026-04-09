@@ -94,10 +94,13 @@ theorem borromean3_alt_char :
     matrix B₃ has a specific structure.
 
     Note: B₃ is NOT scalar and NOT central in H₃(q). The e⁻ = 0
-    result follows from a subtler algebraic identity, likely the
-    anti-palindromic symmetry of the Borromean braid word. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
-sorry
+    result is PROVED in HeckeEngine.lean by the verified NF engine:
+      nf_b3_trefoil_zero : nf_b3 5 = 0
+    and independently by the matrix witness:
+      b3_nf_correct : borromean3 = nfToMatrix b3_nf_t
+    combined with b3_trefoil_zero : b3_nf_coefficients 5 = 0. -/
+-- See: QOU.Interactions.nf_b3_trefoil_zero (HeckeEngine.lean)
+-- See: QOU.Interactions.b3_trefoil_zero (TrefoilVanishing.lean)
 
 /-! ## §5  After typed crossings: e⁻ becomes nonzero -/
 

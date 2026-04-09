@@ -14,11 +14,11 @@ export default proposition({
     "derivation",
   ],
   uses: [
-    "descartes-universe:def:breit-wheeler-pair-production",
-    "descartes-universe:def:quark-antiquark-production",
+    "def:breit-wheeler-pair-production",
+    "def:quark-antiquark-production",
     "prop:confinement-operator-selection",
-    "descartes-universe:prop:frobenius-gram-matrix",
-    "descartes-universe:def:categorical-proton",
-    "descartes-universe:def:categorical-neutron",
+    "prop:frobenius-gram-matrix",
+    "def:categorical-proton",
+    "def:categorical-neutron",
   ],
 });

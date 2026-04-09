@@ -25,8 +25,13 @@ open QOU.Descartes
 
     For formal proofs we work with the negative part directly
     since absolute value requires an ordering on R_q. -/
-noncomputable def negativePart (x : R_q) : R_q :=
-  if x = 0 then 0 else x  -- placeholder; needs ordering
+/-- The negative part of a coefficient requires an ordering on R_q.
+    Since R_q = ℤ[q,q⁻¹] has no canonical total order, the demand
+    profile is defined over ℝ-valued evaluations (at specific q₀),
+    not over R_q directly.
+
+    For formal proofs, we use the sign of specific Laurent polynomials
+    evaluated at q > 1 (see ProtonTrefoilSign.lean). -/
 
 /-! ## §2  Beta stability criterion -/
 

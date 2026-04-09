@@ -15,7 +15,7 @@ export default definition({
   uses: [
     "prop:four-term-pair-nucleon",
     "prop:confinement-operator-selection",
-    "descartes-universe:def:stable-nucleus",
-    "descartes-universe:conj:electron-shells-hopf",
+    "def:stable-nucleus",
+    "conj:electron-shells-hopf",
   ],
 });

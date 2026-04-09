@@ -17,6 +17,7 @@ LaTeX label: `thm:markov-trace-factorization`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 
 namespace QOU.Descartes
@@ -24,7 +25,7 @@ namespace QOU.Descartes
 /-- The Markov trace parameter z = 1/(q^{1/2} + q^{-1/2}). -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def markovZ (q : ℝ) (hq : 0 < q) : ℝ :=
-  1 / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
+  1 / (q_half + 1 / q_half)
 
 /-- The Chebyshev transfer matrix at one crossing.
 
@@ -107,12 +108,12 @@ def crossingPositive : ℝ × ℝ := (1, 0)
 /-- Negative crossing (neutron-neutron): c = q², d = -q·skein_amp. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def crossingNegative (q : ℝ) : ℝ × ℝ :=
-  (q^2, -q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))))
+  (q^2, -q * (q_half - 1 / q_half))
 
 /-- Mixed crossing (proton-neutron): average of positive and negative. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def crossingMixed (q : ℝ) : ℝ × ℝ :=
-  ((1 + q^2) / 2, -q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))) / 2)
+  ((1 + q^2) / 2, -q * (q_half - 1 / q_half) / 2)
 
 -- ═══════════════════════════════════════════════════════════════════
 -- The factorization chain: R[B_A] → H_A(q) → Π(a_i σ_i + b_i) → R

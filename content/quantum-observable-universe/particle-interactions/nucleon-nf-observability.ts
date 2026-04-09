@@ -20,8 +20,8 @@ export default remark({
   ],
   uses: [
     "prop:nuclear-groebner-reduction",
-    "descartes-universe:def:categorical-neutron",
-    "descartes-universe:def:categorical-proton",
+    "def:categorical-neutron",
+    "def:categorical-proton",
     "def:color-tube-fibers",
   ],
 });
