@@ -1,0 +1,112 @@
+The confinement operator selection
+([confinement selection](#prop:confinement-operator-selection))
+can be recast as a **linear program** over the NF basis of $H_3(q)$.
+This connects the categorical minimum-action principle to the
+standard LP duality theory, providing a rigorous proof of
+uniqueness.
+
+## Primal program (operator selection)
+
+**Proposition.**
+*The confinement operator $\Phi = \sum_{i=1}^{6} x_i b_i \in H_3(q)$
+for quark types $(f_1, f_2, f_3)$ is the solution of:*
+
+$$
+  \min_x \quad \sum_{i=1}^{6} t_i \cdot x_i
+  \qquad (\text{minimize Markov trace})
+$$
+
+*subject to:*
+
+$$
+  \sum_{i=1}^{6} x_i = n_{\mathrm{target}}
+  \qquad (\text{net constraint})
+$$
+
+$$
+  \sum_{j=1}^{6} G_{ij} x_j \geq 0
+  \quad \forall\, i
+  \qquad (\text{Frobenius positivity})
+$$
+
+$$
+  x_i \geq -M \quad \forall\, i
+  \qquad (\text{boundedness})
+$$
+
+*where $t_i = \mathrm{tr}_M(b_i)$ are the Markov traces of the
+basis elements, $G_{ij}$ is the Gram matrix
+([Frobenius Gram matrix](#prop:frobenius-gram-matrix)),
+$n_{\mathrm{target}} \approx 1.000$ for the proton and
+$\approx 0.811$ for the neutron, and $M$ is a large constant.*
+
+The objective $\sum t_i x_i = \mathrm{tr}_M(\Phi)$ is the
+categorical action.  The Frobenius positivity constraint
+$Gx \geq 0$ ensures that $\Phi$ pairs non-negatively with all
+basis elements — physically, the confined state does not create
+unbounded demand in any channel.
+
+## Dual program (demand satisfaction)
+
+By LP duality, the dual of the primal is:
+
+$$
+  \max_y \quad n_{\mathrm{target}} \cdot y_0
+$$
+
+*subject to:*
+
+$$
+  y_0 + \sum_{i=1}^{6} G_{ij} y_i \leq t_j
+  \quad \forall\, j
+$$
+
+$$
+  y_i \geq 0 \quad \forall\, i \geq 1
+$$
+
+The dual variable $y_0$ is the **shadow price of the net
+constraint** — the marginal cost of increasing the target mass.
+The dual variables $y_i$ are the **shadow prices of the
+Frobenius positivity constraints** — the demand prices.
+
+**Strong duality** (the primal and dual have equal optimal
+values) holds because the feasible set is non-empty
+($\mathcal{B}_3$ is feasible) and bounded.
+
+## $\mathcal{B}_3$ as the LP solution
+
+At $q_0 \approx 1.1100$, the LP has a unique optimal vertex
+at $x^* = \mathrm{NF}(\mathcal{B}_3)$:
+
+$$
+  x^*
+  =
+  (+0.998, -0.010, +0.009, +0.046, -0.044, 0)
+$$
+
+with $\mathrm{tr}_M(x^*) \approx 0.999$ and
+$\mathrm{net}(x^*) \approx 1.000$.  The Frobenius positivity
+constraints are **tight** at two indices ($\sigma_0$ and $L_-$),
+giving the two active demand channels that correspond to the
+proton's residual demand.
+
+## Quadratic extension
+
+When the interaction involves a bilinear Frobenius pairing
+$\langle \Phi, K \rangle_F = x^T G y$ (e.g., inter-nucleon
+binding), the optimization becomes a **quadratic program**:
+
+$$
+  \min_{x} \quad x^T G y
+  \qquad \text{s.t.} \quad
+  \mathbf{1}^T x = n_1, \quad
+  \mathbf{1}^T y = n_2, \quad
+  Gx \geq 0
+$$
+
+This is a convex QP (since $G$ has indefinite signature but the
+feasible set is bounded), solvable by standard interior-point
+methods.  The nuclear assembly step (iv) of the derived atom
+([derived atom](#def:derived-atom)) is an instance of this QP
+with $y = \mathrm{NF}(\mathfrak{N}_{k+1})$ fixed.

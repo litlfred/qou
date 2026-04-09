@@ -170,6 +170,7 @@ export default chapter({
         "categorical-proton",
         "meson-to-proton-via-borromean",
         "categorical-neutron",
+        // Derived confinement → Ch 11 (Particle Interactions)
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
         "stable-nucleus",
@@ -187,6 +188,7 @@ export default chapter({
     }),
 
     // ── §3c. Nuclear stability and decay ─────────────────────────────
+    // GB reductions + transfer matrices → Ch 11 (Particle Interactions)
     section({
       title: "Nuclear stability and decay",
       label: "sec:nuclear-stability-decay",
@@ -201,30 +203,15 @@ export default chapter({
         "tau-branching-ratio-witness",
         "parity-violation-skein",
         "nuclear-spin-parity",
-        // Half-life calculations via Gröbner reductions
+        // Half-life calculations
         "hadron-half-life",
         "hadron-q-self-correction",
         "skein-coulomb-enhancement",
-        "nuclear-groebner-reduction",
-        "groebner-shirshov-energy",
-        "box-braid-irreducibility",
-        "generator-volume-decomposition",
-        "markov-trace-factorization",
-        "skein-polynomial-transfer-matrix",
-        "transfer-matrix-operator",
-        "beta-decay-transfer-matrix",
-        "ground-state-ordering",
-        "transfer-matrix-identities",
-        "neutron-qvalue-symbolic",
-        "beta-decay-interpretation",
-        "nucleon-nf-observability",
-        "beta-decay-energy-scale",
         // Typed Garside element and Gram-weighted Q-value
+        // (GB reductions + transfer matrices moved to Ch 11)
         "typed-garside-element",
         "gram-weighted-qvalue",
         "gram-weight-eigenstructure",
-        "negative-debt-confinement",
-        "beta-decay-braid-visualizer",
       ],
     }),
 
@@ -248,6 +235,7 @@ export default chapter({
         "spectral-decomposition-qvalue",
         "shell-construction-rules",
         "electron-shells-hopf",
+        // Derived atoms + demand stability → Ch 11 (Particle Interactions)
         "helium-hopf-diagram",
         "noble-gas-characterization",
         "metallic-character-knot",
