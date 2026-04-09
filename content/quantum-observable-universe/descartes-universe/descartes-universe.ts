@@ -170,6 +170,10 @@ export default chapter({
         "categorical-proton",
         "meson-to-proton-via-borromean",
         "categorical-neutron",
+        // Derived confinement and nucleon construction
+        "confinement-operator-selection",
+        "four-term-pair-nucleon",
+        "nucleon-from-photons-summary",
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
         "stable-nucleus",
@@ -244,7 +248,11 @@ export default chapter({
         "spectral-decomposition-qvalue",
         "shell-construction-rules",
         "electron-shells-hopf",
+        // Derived atom NFs from pair production
+        "hydrogen-derived-nf",
+        "deuterium-derived-nf",
         "helium-hopf-diagram",
+        "helium4-derived-nf",
         "noble-gas-characterization",
         "metallic-character-knot",
         "francium-extremal-metal",
