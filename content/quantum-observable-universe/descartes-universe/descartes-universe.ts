@@ -172,7 +172,9 @@ export default chapter({
         "categorical-neutron",
         // Derived confinement and nucleon construction
         "confinement-operator-selection",
+        "confinement-lp",
         "four-term-pair-nucleon",
+        "derived-atom",
         "nucleon-from-photons-summary",
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
@@ -253,6 +255,9 @@ export default chapter({
         "deuterium-derived-nf",
         "helium-hopf-diagram",
         "helium4-derived-nf",
+        // Stability theory via demand profiles
+        "demand-stability",
+        "periodic-table-demand-conjecture",
         "noble-gas-characterization",
         "metallic-character-knot",
         "francium-extremal-metal",
