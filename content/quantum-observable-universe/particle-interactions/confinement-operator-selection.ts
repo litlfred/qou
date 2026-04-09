@@ -13,9 +13,9 @@ export default proposition({
     "beta-decay",
   ],
   uses: [
-    "descartes-universe:prop:knot-operator-selection",
-    "descartes-universe:prop:frobenius-gram-matrix",
-    "descartes-universe:def:categorical-proton",
-    "descartes-universe:def:categorical-neutron",
+    "prop:knot-operator-selection",
+    "prop:frobenius-gram-matrix",
+    "def:categorical-proton",
+    "def:categorical-neutron",
   ],
 });

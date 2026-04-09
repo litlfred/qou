@@ -18,6 +18,6 @@ export default proposition({
   uses: [
     "prop:four-term-pair-nucleon",
     "prop:confinement-operator-selection",
-    "descartes-universe:def:breit-wheeler-pair-production",
+    "def:breit-wheeler-pair-production",
   ],
 });

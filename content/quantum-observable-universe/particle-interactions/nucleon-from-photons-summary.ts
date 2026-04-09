@@ -13,8 +13,8 @@ export default remark({
     "conservation",
   ],
   uses: [
-    "descartes-universe:def:breit-wheeler-pair-production",
-    "descartes-universe:def:quark-antiquark-production",
+    "def:breit-wheeler-pair-production",
+    "def:quark-antiquark-production",
     "prop:confinement-operator-selection",
     "prop:four-term-pair-nucleon",
   ],

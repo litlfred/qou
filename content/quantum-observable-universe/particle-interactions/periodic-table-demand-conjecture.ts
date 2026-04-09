@@ -15,7 +15,7 @@ export default conjecture({
   uses: [
     "def:derived-atom",
     "prop:demand-stability",
-    "descartes-universe:prop:beta-stability",
-    "descartes-universe:def:stable-nucleus",
+    "prop:beta-stability",
+    "def:stable-nucleus",
   ],
 });
