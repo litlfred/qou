@@ -151,4 +151,32 @@ theorem nf_proton4_trefoil :
         mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA, q, q_inv]
   ring
 
+/-! ## §6  Neutron NF via Hecke engine -/
+
+/-- The neutron NF: B₃ · (σ₀−½HA) · (σ₀−½HA) · (σ₁−HA).
+
+    4×neutron = B₃ · (2σ₀−HA) · (2σ₀−HA) · (σ₁−HA). -/
+noncomputable def nf_neutron4 : HeckeNF :=
+  let step1 := hecke_add                                        -- B₃·(2σ₀−HA)
+    (hecke_smul 2 (mul_right_s0 nf_b3)) (hecke_smul (-HA) nf_b3)
+  let step2 := hecke_add                                        -- step1·(2σ₀−HA)
+    (hecke_smul 2 (mul_right_s0 step1)) (hecke_smul (-HA) step1)
+  hecke_add                                                     -- step2·(σ₁−HA)
+    (mul_right_s1 step2) (hecke_smul (-HA) step2)
+
+/-- The 4×neutron e⁻ coefficient computed by the Hecke engine.
+    Should equal −(q−1)²(q+1)²(q²+1)²/q⁴
+    = −HA² · (q²+1)² / q⁴  (times 4 for the 2× crossing factors).
+
+    Actually: with our 4× convention (two 2× crossings and one 1× crossing),
+    the scale factor is 4, so:
+    4·c_e(neutron) = −(q−1)²(q+1)²(q²+1)² / q⁴ -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem nf_neutron4_trefoil :
+    nf_neutron4 5 = -((q - q_inv) * (q - q_inv) * (q * q + q_inv * q_inv + 2)
+      * (q * q + q_inv * q_inv + 2)) / 4 := by
+  simp [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
+        mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA, q, q_inv]
+  ring
+
 end QOU.Interactions
