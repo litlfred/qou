@@ -181,5 +181,16 @@ annihilate back to photons or form the antimeson $\mathfrak{M}_-$.
 This is the categorical expression of $\gamma\gamma \to
 q\bar{q} + q\bar{q} \to \mathfrak{M} + \mathfrak{M}$.
 
+**Three independent productions $\to$ nucleon.**
+For baryon production, three independent pair creations produce
+three quark--antiquark pairs.  Selecting one quark from each pair
+gives a quark triple ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$ for
+proton, $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ for neutron)
+which is confined by the Borromean braid $\mathcal{B}_3$
+([4-term pair nucleon](#prop:four-term-pair-nucleon)).
+The confinement operator is derived, not asserted — see
+[confinement selection](#prop:confinement-operator-selection).
+
 **Witness**: `breit-wheeler-nucleon-nf.witness.json`,
-`meson-nucleon-nf.witness.json`.
+`meson-nucleon-nf.witness.json`,
+`four-term-photon-to-atoms.witness.json`.

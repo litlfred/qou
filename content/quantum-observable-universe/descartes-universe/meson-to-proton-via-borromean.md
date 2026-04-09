@@ -119,5 +119,17 @@ $\Delta_i$ contributes $\Delta_i \times \mathbf{E}_0$ MeV to the
 decay energy budget — and the six terms sum exactly to $Q_\beta$
 ([energy scale](#rem:beta-decay-energy-scale)).
 
+**Full derivation.**
+The chain described above is now formalized with full rigor in
+[4-term pair nucleon](#prop:four-term-pair-nucleon): the
+confinement operator $\mathcal{B}_3$ is derived from
+minimum-action ([confinement selection](#prop:confinement-operator-selection)),
+nucleon NFs are proved independent of photon polarization
+([confinement universality](#prop:confinement-universality)),
+and the beta decay channel emerges as the $e^- < 0$ coefficient
+in the confined NF
+([demand stability](#prop:demand-stability)).
+
 Witness: `meson-nucleon-nf.witness.json`,
-`beta-decay-energy-scale.witness.json`.
+`beta-decay-energy-scale.witness.json`,
+`confinement-operator-selection.witness.json`.

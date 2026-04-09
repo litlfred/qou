@@ -152,4 +152,16 @@ production energy.  The Hopf link asymmetry
 $L_+ \neq L_-$ in the circular model is the categorical
 expression of photon helicity.
 
+**4-term extension.**
+The 3-term derivation above ($\varphi_{01} = 0$) is a specialization
+of the general 4-term photon
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
++ \varphi_{01}\sigma_0\sigma_1$.  With $\varphi_{01} \neq 0$,
+the $e^-$ (trefoil) channel opens directly in the $\gamma\gamma$
+product — see
+[photon knot operations](#rem:photon-knot-operations) for the
+full 6-term NF formula.  The 4-term form is used in the complete
+derivation of nucleons from pair production
+([4-term pair nucleon](#prop:four-term-pair-nucleon)).
+
 **Witness**: `breit-wheeler-nucleon-nf.witness.json`.
