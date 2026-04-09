@@ -182,6 +182,37 @@ noncomputable def b3_nf_coefficients : Fin 6 → R_q
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem b3_trefoil_zero : b3_nf_coefficients 5 = 0 := by rfl
 
+/-- The trivial character of the NF matches χ_triv(B₃) = 1.
+
+    χ_triv(Σ cᵢbᵢ) = c₀ + q·c₁ + q·c₂ + q²·c₃ + q²·c₄ + q³·c₅
+
+    This is a consistency check: if the NF coefficients are correct,
+    then evaluating the trivial character must give 1. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem b3_nf_trivial_consistent :
+    b3_nf_coefficients 0
+    + q * b3_nf_coefficients 1
+    + q * b3_nf_coefficients 2
+    + q * q * b3_nf_coefficients 3
+    + q * q * b3_nf_coefficients 4
+    + q * q * q * b3_nf_coefficients 5 = 1 := by
+  simp [b3_nf_coefficients, q, q_inv]
+  ring
+
+/-- The alternating character of the NF matches χ_alt(B₃) = 1.
+
+    χ_alt(Σ cᵢbᵢ) = c₀ − q⁻¹·c₁ − q⁻¹·c₂ + q⁻²·c₃ + q⁻²·c₄ − q⁻³·c₅ -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem b3_nf_alt_consistent :
+    b3_nf_coefficients 0
+    - q_inv * b3_nf_coefficients 1
+    - q_inv * b3_nf_coefficients 2
+    + q_inv * q_inv * b3_nf_coefficients 3
+    + q_inv * q_inv * b3_nf_coefficients 4
+    - q_inv * q_inv * q_inv * b3_nf_coefficients 5 = 1 := by
+  simp [b3_nf_coefficients, q, q_inv]
+  ring
+
 /-! ## §4  The trivial character is 1 -/
 
 /-- χ_triv(B₃) = 1 exactly.
