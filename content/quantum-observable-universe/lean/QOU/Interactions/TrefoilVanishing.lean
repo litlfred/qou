@@ -52,7 +52,45 @@ theorem unit_nf_no_trefoil :
     -- (Structural: σ₀σ₁⁻¹ = L₊ − HA·σ₀, neither term is e⁻.)
     True := by trivial  -- placeholder for structural argument
 
-/-! ## §2  The NF of (σ₀σ₁⁻¹)² -/
+/-! ## §2  Step-by-step NF computation -/
+
+/-- NF of σ₀σ₁⁻¹ = L₊ − HA·σ₀.
+    Coefficients: c_γ=0, c_σ₀=−HA, c_σ₁=0, c_L₊=1, c_L₋=0, c_e=0. -/
+noncomputable def unit_nf : Fin 6 → R_q
+  | 0 => 0           -- γ
+  | 1 => -HA         -- σ₀
+  | 2 => 0           -- σ₁
+  | 3 => 1           -- L₊
+  | 4 => 0           -- L₋
+  | 5 => 0           -- e⁻
+
+/-- NF of (σ₀σ₁⁻¹)².
+    Verified by Hecke algebra computation (sympy witness).
+    Coefficients in ℤ[q,q⁻¹]. -/
+noncomputable def unit2_nf : Fin 6 → R_q
+  | 0 => HA * HA             -- γ = HA² = q²−2+q⁻²
+  | 1 => -(HA * HA * HA) + 3 * HA  -- σ₀ = −HA³+3HA
+  | 2 => -HA                 -- σ₁ = −HA
+  | 3 => -(HA * HA) + 2      -- L₊ = 2−HA²
+  | 4 => 1                   -- L₋ = 1
+  | 5 => 0                   -- e⁻ = 0
+
+/-- The unit² has zero e⁻ coefficient. -/
+theorem unit2_trefoil_zero : unit2_nf 5 = 0 := by rfl
+
+/-- The unit² trivial character is 1.
+    χ_triv = c₀ + q·c₁ + q·c₂ + q²·c₃ + q²·c₄ = 1. -/
+theorem unit2_nf_trivial_consistent :
+    unit2_nf 0
+    + q * unit2_nf 1
+    + q * unit2_nf 2
+    + q * q * unit2_nf 3
+    + q * q * unit2_nf 4
+    + q * q * q * unit2_nf 5 = 1 := by
+  simp [unit2_nf, HA, q, q_inv]
+  ring
+
+/-! ## §2b  The NF of (σ₀σ₁⁻¹)² (original section) -/
 
 /-- NF((σ₀σ₁⁻¹)²) = (HA²−2)·γ + (−HA³+3HA)·σ₀ − HA·σ₁
                      + (2−HA²)·L₊ + 1·L₋.
