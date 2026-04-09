@@ -135,25 +135,50 @@ theorem derivFactor_at_one_neg : derivFactor 1 < 0 := by
 theorem derivFactor_at_3_2_neg : derivFactor (3/2 : ℝ) < 0 := by
   rw [derivFactor_at_3_2]; norm_num
 
-/-- Since r(q) = 4q⁶ − 9q⁴ − 3 is negative at q = 1 and q = 3/2,
-    and p'(q) = 2q · r(q), we have p'(q) < 0 for q ∈ [1, 3/2]
-    (assuming r has no roots there — verified: r is decreasing on
-    [1, √(3/2)] since r' = 24q⁵ − 36q³ = 12q³(2q² − 3) < 0 for q < √(3/2)).
+/-- r(q) = 4q⁶ − 9q⁴ − 3 < 0 for all q ∈ [1, 3/2].
 
-    Therefore p is strictly DECREASING on [1, 3/2].
-    Since p(1) = −4 < 0, we get p(q) ≤ −4 < 0 for ALL q ∈ [1, 3/2].
-
-    Since q₀ ≈ 1.110 ∈ [1, 3/2], the proton e⁻ coefficient is
-    negative at the physical substrate parameter.
-
-    This is a RIGOROUS argument — no IVT needed. Just:
-    1. p(1) = −4 (proved by ring)
-    2. p is decreasing on [1, 3/2] (from derivative sign)
-    3. q₀ ∈ [1, 3/2] (from substrate parameter value)
-    ∴ p(q₀) ≤ p(1) = −4 < 0. -/
+    Proof: write r(q) = q⁴(4q² − 9) − 3.
+    For q ≤ 3/2: 4q² ≤ 4·(9/4) = 9, so 4q² − 9 ≤ 0.
+    Since q⁴ ≥ 0, we get q⁴(4q² − 9) ≤ 0.
+    Therefore r(q) ≤ 0 − 3 = −3 < 0. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- (Monotonicity + boundary value. Formal version needs Mathlib's
--- MonotonOn + HasDerivAt machinery.)
+theorem derivFactor_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
+    derivFactor q < 0 := by
+  unfold derivFactor
+  -- Goal: 4q⁶ − 9q⁴ − 3 < 0, i.e., 4q⁶ − 9q⁴ < 3
+  -- Write as q⁴(4q² − 9) < 3
+  -- For q ≤ 3/2: 4q² ≤ 9, so 4q² − 9 ≤ 0, so q⁴(4q²−9) ≤ 0 < 3.
+  nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q * (2 * q - 3)),
+             mul_self_nonneg (q ^ 2)]
+
+/-- p'(q) = 2q · r(q) < 0 for q ∈ (1, 3/2].
+    Since r(q) < 0 (proved above) and q > 0, the product is negative.
+    Therefore p is strictly decreasing on [1, 3/2]. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem signPoly_deriv_neg (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
+    2 * q * derivFactor q < 0 := by
+  have hq_pos : 0 < q := by linarith
+  have hr : derivFactor q < 0 := derivFactor_neg_on_interval q hq1 hq2
+  nlinarith
+
+/-- THE KEY RESULT: p(q) < 0 for all q ∈ [1, 3/2].
+
+    Proof by monotonicity: p'(q) < 0 on [1, 3/2] (proved above),
+    so p is decreasing. Since p(3/2) < 0 (proved by norm_num),
+    p(q) ≤ p(1) < 0... no, decreasing means p(q) ≥ p(3/2) = −3659/256.
+
+    Actually we just need: p(1) = −4 < 0 and p(3/2) < 0.
+    Since p is continuous (polynomial) and p' < 0 on [1, 3/2],
+    p is monotone decreasing, so p(q) ≤ p(1) = −4 < 0 for q ≥ 1.
+    Wait: decreasing means p(q) ≤ p(1) for q ≥ 1. Yes!
+    p(q) ≤ p(1) = −4 < 0. ∎
+
+    The formal proof needs Mathlib's MonotonOn / HasDerivAt chain.
+    We have all the ingredients:
+    - signPoly_deriv_neg: p' < 0 on [1, 3/2]
+    - signPoly_at_one: p(1) = −4
+    This sorry bridges MonotonOn to pointwise bound. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 sorry
 
 /-! ## §5  The neutron e⁻ coefficient -/
