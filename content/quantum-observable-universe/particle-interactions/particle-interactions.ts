@@ -70,6 +70,8 @@ export default chapter({
         "hydrogen-derived-nf",
         "deuterium-derived-nf",
         "helium4-derived-nf",
+        "li6-derived-nf",
+        "o16-derived-nf",
       ],
     }),
 
