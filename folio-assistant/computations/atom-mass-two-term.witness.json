@@ -1,0 +1,18 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-09T20:42:12.327145+00:00",
+  "commitSha": "4f0aecd15d37f4d4e2a77e82bf2fcbc9b9d4e2c3",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "atom-mass-two-term",
+  "scriptFile": "atom_mass_two_term.py",
+  "scriptHash": "44616386e0fd",
+  "scriptCommitSha": "",
+  "description": "Two-term mass: topological constituent + algebraic binding.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "vol_neutron": "13.9484177283"
+  }
+}
