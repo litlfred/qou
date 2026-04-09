@@ -6,9 +6,9 @@ export default example({
   interprets: "prop:four-term-pair-nucleon",
   tags: ["hydrogen", "atom", "normal-form", "derived", "hopf-link"],
   uses: [
-    "def:categorical-proton",
-    "prop:frobenius-gram-matrix",
-    "def:electron-knot",
-    "ex:hydrogen-knot-structure",
+    "descartes-universe:def:categorical-proton",
+    "descartes-universe:prop:frobenius-gram-matrix",
+    "descartes-universe:def:electron-knot",
+    "descartes-universe:ex:hydrogen-knot-structure",
   ],
 });

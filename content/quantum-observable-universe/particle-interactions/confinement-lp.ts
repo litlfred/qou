@@ -15,7 +15,7 @@ export default proposition({
   ],
   uses: [
     "prop:confinement-operator-selection",
-    "prop:frobenius-gram-matrix",
-    "prop:knot-operator-selection",
+    "descartes-universe:prop:frobenius-gram-matrix",
+    "descartes-universe:prop:knot-operator-selection",
   ],
 });

@@ -21,6 +21,6 @@ export default proposition({
     "prop:confinement-operator-selection",
     "prop:demand-stability",
     "def:derived-atom",
-    "def:torus-knot-shell-binding",
+    "descartes-universe:def:torus-knot-shell-binding",
   ],
 });

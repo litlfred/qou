@@ -15,7 +15,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:nuclear-groebner-reduction",
+    "prop:nuclear-groebner-reduction",
     "def:derived-atom",
   ],
 });

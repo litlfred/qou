@@ -14,7 +14,7 @@ export default proposition({
   uses: [
     "def:derived-atom",
     "prop:confinement-operator-selection",
-    "def:stable-nucleus",
-    "prop:beta-stability",
+    "descartes-universe:def:stable-nucleus",
+    "descartes-universe:prop:beta-stability",
   ],
 });

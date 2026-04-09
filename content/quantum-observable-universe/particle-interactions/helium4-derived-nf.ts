@@ -13,9 +13,9 @@ export default example({
     "shell-closure",
   ],
   uses: [
-    "def:categorical-proton",
-    "def:categorical-neutron",
+    "descartes-universe:def:categorical-proton",
+    "descartes-universe:def:categorical-neutron",
     "prop:confinement-operator-selection",
-    "ex:helium-hopf-diagram",
+    "descartes-universe:ex:helium-hopf-diagram",
   ],
 });

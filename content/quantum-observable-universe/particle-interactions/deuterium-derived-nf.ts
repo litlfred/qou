@@ -6,8 +6,8 @@ export default example({
   interprets: "prop:four-term-pair-nucleon",
   tags: ["deuterium", "nucleus", "normal-form", "derived", "binding"],
   uses: [
-    "def:categorical-proton",
-    "def:categorical-neutron",
+    "descartes-universe:def:categorical-proton",
+    "descartes-universe:def:categorical-neutron",
     "prop:confinement-operator-selection",
   ],
 });
