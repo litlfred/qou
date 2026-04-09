@@ -16,6 +16,7 @@ LaTeX label: `def:transfer-matrix-operator`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 namespace QOU.Descartes
 
@@ -46,10 +47,10 @@ structure TransferMatrixOp where
 noncomputable def ppCoeffs : CrossingCoeffs := ⟨1, 0⟩
 
 noncomputable def nnCoeffs (q : ℝ) : CrossingCoeffs :=
-  ⟨q^2, -q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ)))⟩
+  ⟨q^2, -q * (q_half - 1 / q_half)⟩
 
 noncomputable def mixCoeffs (q : ℝ) : CrossingCoeffs :=
-  ⟨(1 + q^2) / 2, -q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))) / 2⟩
+  ⟨(1 + q^2) / 2, -q * (q_half - 1 / q_half) / 2⟩
 
 /-- The photon-electron crossing has the same coefficients as pp.
     This is because the unknot (photon/neutrino) has J(q) = 1,
@@ -100,10 +101,10 @@ noncomputable def photonAbsorptionOp (q : ℝ) : InteractionOp where
     λ± = ½[(q-q⁻¹) ± √((q-q⁻¹)² + 4)] -/
 -- Ref: [manuscript] §6/transfer-matrix-operator
 noncomputable def T_pp_eigenvalue_plus (q : ℝ) : ℝ :=
-  ((q - 1/q) + Real.sqrt ((q - 1/q)^2 + 4)) / 2
+  ((q - 1/q) + disc_sqrt) / 2
 
 noncomputable def T_pp_eigenvalue_minus (q : ℝ) : ℝ :=
-  ((q - 1/q) - Real.sqrt ((q - 1/q)^2 + 4)) / 2
+  ((q - 1/q) - disc_sqrt) / 2
 
 /-- The eigenvalues of T_pp are real and distinct for q > 0. -/
 -- Ref: [manuscript] §6/transfer-matrix-operator

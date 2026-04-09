@@ -12,6 +12,7 @@ LaTeX label: `thm:groebner-shirshov-energy`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 namespace QOU.Descartes
 

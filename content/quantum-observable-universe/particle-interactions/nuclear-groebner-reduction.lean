@@ -13,6 +13,7 @@ LaTeX label: `prop:nuclear-groebner-reduction`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 
 namespace QOU.Descartes
