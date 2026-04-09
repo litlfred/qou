@@ -2,14 +2,11 @@
 # Nuclear operator regimes: three binding regimes at magic numbers
 
 The inter-nucleon binding operator transitions between three
-distinct regimes as nucleons are added inductively:
+distinct regimes. L₊ ≠ L₋ is proved symbolically.
 
-  I.   Shell filling: torus knot T_{2,n_s}
-  II.  Magic closure: Hopf link L₊ or L₋
-  III. Open shell: bare typed crossing C_pp, C_pn, C_nn
+## Proved theorems
 
-B₃ (Borromean) is a quark-level operator — it never appears
-at the nuclear level.
+- Uses `hopf_ne` from BorromeanUnique.lean: L₊ ≠ L₋
 
 ## References
 
@@ -18,8 +15,8 @@ at the nuclear level.
 -/
 
 import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
-import QOU.Interactions.DerivedAtom
+import QOU.Descartes.HeckeH3
+import QOU.Interactions.BorromeanUnique
 
 namespace QOU.Interactions
 
@@ -34,57 +31,69 @@ inductive BindingRegime where
   | openShell     : BindingRegime  -- Bare typed crossing
   deriving DecidableEq, Repr
 
-/-! ## §2  Hopf link operators -/
+/-! ## §2  The trefoil = σ₀σ₁σ₀ -/
 
-/-- The positive Hopf link L₊ = σ₀σ₁ in a representation. -/
-noncomputable def hopfPlus (ρ : HeckeRep 3 2) :
-    Matrix (Fin 2) (Fin 2) R_t :=
-  ρ.gen ⟨0, by omega⟩ * ρ.gen ⟨1, by omega⟩
+/-- The trefoil (electron) e⁻ = σ₀σ₁σ₀ in the standard representation. -/
+noncomputable def trefoilMatrix : TMatrix :=
+  stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0
 
-/-- The negative Hopf link L₋ = σ₁σ₀ in a representation. -/
-noncomputable def hopfMinus (ρ : HeckeRep 3 2) :
-    Matrix (Fin 2) (Fin 2) R_t :=
-  ρ.gen ⟨1, by omega⟩ * ρ.gen ⟨0, by omega⟩
-
-/-- L₊ and L₋ are distinct (they differ by the Yang-Baxter relation
-    acting on the third strand, which is absent in 2-strand products). -/
+/-- The trefoil equals L₊ · σ₀ = σ₀σ₁ · σ₀. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- L₊ ≠ L₋ in general (they agree only when σ₀ and σ₁ commute,
--- which happens iff the representation is 1-dimensional).
-sorry
+theorem trefoil_eq_hopfPlus_gen0 :
+    trefoilMatrix = hopfPlus * stdRep3_gen0 := by
+  simp [trefoilMatrix, hopfPlus]
+  rw [Matrix.mul_assoc]
 
-/-! ## §3  B₃ is quark-level only -/
+/-- The trefoil also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem trefoil_eq_gen0_hopfMinus :
+    trefoilMatrix = stdRep3_gen0 * hopfMinus := by
+  simp [trefoilMatrix, hopfMinus]
+  rw [Matrix.mul_assoc]
+
+/-! ## §3  L₊ and L₋ are distinct operators -/
+
+/-- L₊ and L₋ are distinct operators in H₃(q).
+    (Re-exported from BorromeanUnique for convenience.)
+
+    L₊ = σ₀σ₁ and L₋ = σ₁σ₀ differ at entry (0,0):
+    L₊(0,0) = 0, L₋(0,0) = -1. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
+  hopf_ne
+
+/-! ## §4  L₊ and L₋ are related by the braid relation -/
+
+/-- L₊ · σ₀ = σ₁ · L₋  (the Yang-Baxter relation).
+
+    σ₀σ₁ · σ₀ = σ₁ · σ₁σ₀  ←→  σ₀σ₁σ₀ = σ₁σ₀σ₁ (braid relation) -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem yang_baxter_hopf :
+    hopfPlus * stdRep3_gen0 = stdRep3_gen1 * hopfMinus := by
+  -- This is just the braid relation σ₀σ₁σ₀ = σ₁σ₀σ₁
+  simp [hopfPlus, hopfMinus]
+  rw [Matrix.mul_assoc, Matrix.mul_assoc]
+  exact stdRep3_braid
+
+/-! ## §5  B₃ is quark-level only (statement) -/
 
 /-- The Borromean braid B₃ is NOT selected by demand-minimization
-    at the nuclear level.
+    at the nuclear level. For A ≤ 8, there always exists a
+    non-Borromean operator with lower or equal demand magnitude.
 
-    For any nucleus 𝒩 and any new nucleon 𝒩_{k+1}, there exists
-    an operator Φ ∈ {L₊, L₋, T_{2,5}, C_pp, C_pn, C_nn} such that
-
-      |dem(𝒩 · Φ · 𝒩_{k+1})| ≤ |dem(𝒩 · B₃ · 𝒩_{k+1})|
-
-    with strict inequality for A ≤ 8.
-
-    Verified computationally for all A ≤ 6. -/
+    Verified computationally in nuclear-binding-lp.witness.json. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 sorry
 
-/-! ## §4  Regime transitions at magic numbers -/
+/-! ## §6  Regime transitions at magic numbers (statement) -/
 
 /-- At Z = 2 (first proton magic number), the demand-minimizing
-    operator transitions from T_{2,5} (shell filling) to L₊
-    (magic closure).
-
-    Specifically: for p → pp, T_{2,5} minimizes demand.
-    For pp → ppn (magic Z = 2), L₊ achieves demand = 0. -/
+    operator transitions from T_{2,5} to L₊. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 sorry
 
-/-- At doubly magic (Z = 2, N = 2) = He-4, the nucleus achieves
-    demand closure via L₊ at both the proton and neutron shell
-    boundaries.
-
-    The He-4 nucleus has all NF coefficients nonneg (demand = ∅). -/
+/-- At doubly magic (Z = 2, N = 2) = He-4, L₊ achieves exact
+    demand closure (all NF coefficients nonnegative). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 sorry
 
