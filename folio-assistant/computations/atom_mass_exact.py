@@ -135,7 +135,7 @@ def compute_Phi_numeric(ordering):
     return Phi
 
 
-def find_ground_state_exact(Z, N, timeout_s=30):
+def find_ground_state_exact(Z, N, timeout_s=None):
     """Find exact ground state: exhaustive for small A, steepest descent for large."""
     A = Z + N
     if A <= 1:
@@ -143,7 +143,7 @@ def find_ground_state_exact(Z, N, timeout_s=30):
 
     # Exhaustive for small A
     total = math.comb(A, Z)
-    if total <= 10000:
+    if total <= 50000:
         best_Phi = float('inf')
         best_ordering = None
         for positions in combinations(range(A), Z):
@@ -182,14 +182,13 @@ def find_ground_state_exact(Z, N, timeout_s=30):
     starts.append([0]*N + [1]*Z)
 
     for start_ord in starts:
-        if time.time() - t0 > timeout_s:
-            break
+        pass  # no timeout — run to convergence
         ordering = list(start_ord)
         if sum(ordering) != Z:
             continue
         Phi = compute_Phi_numeric(ordering)
         improved = True
-        while improved and time.time() - t0 < timeout_s:
+        while improved:
             improved = False
             best_swap = None
             best_delta = 0.0
@@ -213,7 +212,7 @@ def find_ground_state_exact(Z, N, timeout_s=30):
             best_global_Phi = Phi
             best_global_ord = list(ordering)
 
-    method = "steepest_descent" if total > 10000 else "exact"
+    method = "steepest_descent_converged"
     return best_global_ord, method
 
 
@@ -379,7 +378,7 @@ ELEMENTS = [
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--timeout", type=int, default=30, help="GS search timeout per atom (s)")
+    # No timeout — steepest descent runs to convergence
     parser.add_argument("--symbolic", action="store_true", help="Compute symbolic Φ_q (slow)")
     args = parser.parse_args()
 
@@ -387,7 +386,7 @@ def main():
 
     print("=" * 110)
     print("EXACT MASS FORMULA — Full Garside staircase, all sub-shells, exact GS")
-    print(f"q₀ = {q0:.10f}   GS timeout = {args.timeout}s")
+    print(f"q₀ = {q0:.10f}   GS: exact or steepest-descent to convergence")
     print("=" * 110)
     print()
 
@@ -409,23 +408,54 @@ def main():
     for name, label, Z, N, M_obs in ELEMENTS:
         A = Z + N
         t0 = time.time()
-        ordering, method = find_ground_state_exact(Z, N, timeout_s=args.timeout)
+        ordering, method = find_ground_state_exact(Z, N)
         gs_time = time.time() - t0
 
-        # Compute all Φ variants
-        phi_bare = compute_Phi_numeric(ordering)
-        phi_garside = garside_phi_numeric(ordering, Z, N)
+        # Compute Φ_q SYMBOLIC in q for the bare formula
+        phi_bare_numeric = compute_Phi_numeric(ordering)
+        phi_garside_numeric = garside_phi_numeric(ordering, Z, N)
         pair_corr = pairing_correction(Z, N)
+
+        # Symbolic: compute V̂_i(q) for each generator
+        phi_sym_terms = []
+        if A > 1:
+            for gen in range(A - 1):
+                a_s = sp.Integer(0)
+                b_s = sp.Integer(1)
+                for j in range(gen + 1, A):
+                    ti, tj = ordering[gen], ordering[j]
+                    if ti == 1 and tj == 1:
+                        d_s = sp.Integer(0)
+                    elif ti == 0 and tj == 0:
+                        d_s = -HA
+                    else:
+                        d_s = -HA / 2
+                    c_s = sp.Integer(1)
+                    new_a = sp.expand(a_s * c_s * HA + a_s * d_s + b_s * c_s)
+                    new_b = sp.expand(a_s * c_s + b_s * d_s)
+                    a_s, b_s = new_a, new_b
+                V_i_sym = z_sym * a_s + b_s
+                phi_sym_terms.append(V_i_sym)
+
+        # Store the symbolic product ∏V̂_i (the Markov trace)
+        # and the symbolic Φ_q = Σ ln|V̂_i| (evaluated at q₀)
+        phi_sym_str = " × ".join(str(t)[:60] for t in phi_sym_terms[:3])
+        if len(phi_sym_terms) > 3:
+            phi_sym_str += f" × ... ({len(phi_sym_terms)} terms)"
 
         atoms.append({
             'label': label, 'name': name, 'Z': Z, 'N': N, 'A': A,
             'M_obs': M_obs, 'ordering': ordering, 'method': method,
-            'phi_bare': phi_bare, 'phi_garside': phi_garside,
+            'phi_bare': phi_bare_numeric,
+            'phi_garside': phi_garside_numeric,
             'pair_corr': pair_corr, 'gs_time': gs_time,
+            'phi_sym_terms': phi_sym_terms,
+            'phi_sym_str': phi_sym_str,
         })
 
-        print(f"  {label:>5} (A={A:2d}): Φ_bare={phi_bare:+.4f}  Φ_gar={phi_garside:+.4f}  "
-              f"pair={pair_corr:+.3f}  [{method}, {gs_time:.1f}s]")
+        print(f"  {label:>5} (A={A:2d}): Φ_bare={phi_bare_numeric:+.6f}  "
+              f"pair={pair_corr:+.4f}  [{method}, {gs_time:.1f}s]"
+              f"  sym: {phi_sym_str[:70]}")
 
     # Phase 2: Calibrate from H, He, C
     print()
