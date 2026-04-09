@@ -170,12 +170,7 @@ export default chapter({
         "categorical-proton",
         "meson-to-proton-via-borromean",
         "categorical-neutron",
-        // Derived confinement and nucleon construction
-        "confinement-operator-selection",
-        "confinement-lp",
-        "four-term-pair-nucleon",
-        "derived-atom",
-        "nucleon-from-photons-summary",
+        // Derived confinement → Ch 11 (Particle Interactions)
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
         "stable-nucleus",
@@ -193,6 +188,7 @@ export default chapter({
     }),
 
     // ── §3c. Nuclear stability and decay ─────────────────────────────
+    // GB reductions + transfer matrices → Ch 11 (Particle Interactions)
     section({
       title: "Nuclear stability and decay",
       label: "sec:nuclear-stability-decay",
@@ -207,26 +203,10 @@ export default chapter({
         "tau-branching-ratio-witness",
         "parity-violation-skein",
         "nuclear-spin-parity",
-        // Half-life calculations via Gröbner reductions
+        // Half-life calculations
         "hadron-half-life",
         "hadron-q-self-correction",
         "skein-coulomb-enhancement",
-        "nuclear-groebner-reduction",
-        "groebner-shirshov-energy",
-        "box-braid-irreducibility",
-        "generator-volume-decomposition",
-        "markov-trace-factorization",
-        "skein-polynomial-transfer-matrix",
-        "transfer-matrix-operator",
-        "beta-decay-transfer-matrix",
-        "ground-state-ordering",
-        "transfer-matrix-identities",
-        "neutron-qvalue-symbolic",
-        "beta-decay-interpretation",
-        "nucleon-nf-observability",
-        "beta-decay-energy-scale",
-        "negative-debt-confinement",
-        "beta-decay-braid-visualizer",
       ],
     }),
 
@@ -250,14 +230,8 @@ export default chapter({
         "spectral-decomposition-qvalue",
         "shell-construction-rules",
         "electron-shells-hopf",
-        // Derived atom NFs from pair production
-        "hydrogen-derived-nf",
-        "deuterium-derived-nf",
+        // Derived atoms + demand stability → Ch 11 (Particle Interactions)
         "helium-hopf-diagram",
-        "helium4-derived-nf",
-        // Stability theory via demand profiles
-        "demand-stability",
-        "periodic-table-demand-conjecture",
         "noble-gas-characterization",
         "metallic-character-knot",
         "francium-extremal-metal",
