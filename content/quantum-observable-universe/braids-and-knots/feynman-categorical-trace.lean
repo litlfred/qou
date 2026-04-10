@@ -1,0 +1,24 @@
+-- Feynman transition amplitude as categorical trace
+-- See QOU/FeynmanPathIntegrals.lean §2 for the full formalization
+--
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+
+import QOU.FeynmanPathIntegrals
+
+/-!
+The central proposition: the Feynman transition amplitude, evaluated on
+the knot-type eigenbasis V^{⊗n} ≅ ⊕_λ V_λ ⊗ S_λ, equals the
+Jones–Markov trace on the Hecke algebra H_n(q).
+
+  ⟨ψ_f|ψ_i⟩_{eigenbasis} = Σ_λ dim_q(V_λ) · tr_{S_λ}(ρ(β)) = tr_M(ρ(β))
+
+The absolute value gives the categorical mass at a single brane level:
+
+  𝔪(ϱ)|_{single level} = |tr_M(ρ(β))| = |⟨ψ_f|ψ_i⟩_{eigenbasis}|
+
+Lean declarations:
+  - `QOU.FeynmanPathIntegrals.FeynmanCategoricalTrace`
+  - `QOU.FeynmanPathIntegrals.amplitude_finite_sum`
+  - `QOU.FeynmanPathIntegrals.mass_eq_abs_amplitude`
+-/
