@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-07T19:56:11.747241+00:00",
-    "commit_sha": "44498483b30ec220be87fbf06109ad1130ee841e"
+    "generated_at": "2026-04-10T19:50:07.020556+00:00",
+    "commit_sha": "f8235f46acc411621b27c20325196380ff4ef942"
   },
   "objects": [
     {
@@ -21,13 +21,10 @@
         "decl": "QOU.BringsSurface",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "4074a44575cc",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "prop:brings-is-qou",
@@ -42,13 +39,10 @@
         "decl": "QOU.Brings.brings_is_qou",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "7f42be0b84f3",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface",
         "thm:qu-to-qou"
@@ -85,11 +79,10 @@
         "decl": "QOU.ColorTubeCoordinates",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:braid-group-action"
       ]
@@ -123,13 +116,10 @@
         "decl": "QOU.Brings.coral_elliptic",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "5e5e7fed747f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:braid-group-action",
         "rem:holonomy-trefoil"
@@ -163,11 +153,10 @@
         "decl": "QOU.ColorTubeFibers",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:color-tube-cubic"
       ]
@@ -199,13 +188,10 @@
         "decl": "QOU.BringsSurface.brings_smoothness_resolution",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "6f7eb0a205d2",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:coral-bundles",
         "def:briggs-klein-chart"
@@ -238,11 +224,10 @@
         "decl": "QOU.BriggsKleinChart",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface"
       ]
@@ -260,11 +245,10 @@
         "decl": "QOU.QuaternionicSpectralResolvents",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface",
         "rem:jet-shell"
@@ -283,13 +267,10 @@
         "decl": "QOU.Brings.mi_sw_abelianisation",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "c7e304208946",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:brings-smoothness",
         "def:mass-identity",
@@ -310,11 +291,10 @@
         "decl": "QOU.CoralSectorCoords",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:exceptional-divisor",
         "def:substrate-parameter",
@@ -334,13 +314,10 @@
         "decl": "QOU.Descartes.descartes_braid_structure",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "88dbac07ad9c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:braid-action-tensor",
         "def:coral-sector-coords",
@@ -363,13 +340,10 @@
         "decl": "QOU.Descartes.descartes_knot_eigenbasis",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "b00fc314d97f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "cor:descartes-braid-structure",
         "thm:jones-markov-trace",
@@ -389,13 +363,10 @@
         "decl": "QOU.Descartes.descartes_elliptic_curve",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "134e0c4522ec",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:color-tube-cubic",
         "prop:local-substrate-q"
@@ -414,11 +385,10 @@
         "decl": "QOU.DescartesCondition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:qu-to-qou"
       ]
@@ -436,13 +406,10 @@
         "decl": "QOU.Descartes.genus_maximal_descent",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "47587d1e44e7",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:descartes-condition"
       ]
@@ -499,11 +466,10 @@
         "decl": "QOU.Torsion.torus_knot_generators_finite",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:knot-particle-generation",
         "prop:euler-char-stability"
@@ -522,13 +488,10 @@
         "decl": "QOU.Torsion.embeddability_closure",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "5c9078687d64",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-knot-generators"
       ]
@@ -546,13 +509,10 @@
         "decl": "QOU.Descartes.genus_filtration_ideal",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "ed0d0eb490eb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:embeddability-closure",
         "prop:cohomological-embedding",
@@ -572,13 +532,10 @@
         "decl": "QOU.Descartes.torus_embeddable_complete",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "85bed8246852",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:embeddability-closure"
       ]
@@ -596,13 +553,10 @@
         "decl": "QOU.Descartes.generation_completeness",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "3b99b7eed30d",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-embeddable-complete",
         "rem:knot-formula-table"
@@ -621,11 +575,10 @@
         "decl": "QOU.Descartes.UpQuark",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "conj:borromean-quark"
       ]
@@ -643,11 +596,10 @@
         "decl": "QOU.Descartes.DownQuark",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:up-quark"
       ]
@@ -665,11 +617,10 @@
         "decl": "QOU.Descartes.Electron",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:up-quark"
       ]
@@ -687,11 +638,10 @@
         "decl": "QOU.Descartes.Positron",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:electron-knot",
         "rem:chirality-trefoil-electron-positron"
@@ -710,11 +660,10 @@
         "decl": "QOU.Descartes.Neutrino",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-knot-generators",
         "sec:knot-notation-convention"
@@ -733,11 +682,10 @@
         "decl": "QOU.Descartes.Antineutrino",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:parity-violation-skein"
       ]
@@ -770,11 +718,10 @@
         "decl": "QOU.Descartes.QValueTransition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:q-energy"
       ]
@@ -792,11 +739,10 @@
         "decl": "QOU.Torsion.CategoricalProton",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:down-quark"
       ]
@@ -814,11 +760,10 @@
         "decl": "QOU.Torsion.CategoricalNeutron",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-proton"
       ]
@@ -865,11 +810,10 @@
         "decl": "QOU.Torsion.StableNucleus",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-neutron",
         "prop:beta-stability"
@@ -888,13 +832,10 @@
         "decl": "QOU.Descartes.torus_hopf_stability",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "e20398f2b5bd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:skein-crossing-asymmetry",
         "def:categorical-neutron"
@@ -944,13 +885,10 @@
         "decl": "QOU.Descartes.em_coupling_projection",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "477e17c9fdfd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:force-knot-identification"
       ]
@@ -968,13 +906,10 @@
         "decl": "QOU.Descartes.integer_stability",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "b5c2eea042cb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:stable-nucleus"
       ]
@@ -1026,11 +961,10 @@
         "decl": "QOU.Descartes.BetaDecaySkein",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:positron-knot",
         "prop:nuclear-groebner-reduction"
@@ -1049,11 +983,10 @@
         "decl": "QOU.Descartes.LeptonNumber",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein"
       ]
@@ -1071,11 +1004,10 @@
         "decl": "QOU.Descartes.lepton_continuant_recurrence",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein",
         "rem:descartes-leptons"
@@ -1094,11 +1026,10 @@
         "decl": "QOU.Descartes.tau_leptonic_universality",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein",
         "prop:lepton-continuant-recurrence",
@@ -1118,13 +1049,10 @@
         "decl": "QOU.Descartes.parity_violation_skein",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "4a964ca40c19",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein",
         "prop:reidemeister-action-table"
@@ -1143,13 +1071,10 @@
         "decl": "QOU.Descartes.nuclear_spin_parity",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "2b2ad8014294",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:stable-nucleus",
         "prop:fermion-boson-knot-link"
@@ -1168,13 +1093,10 @@
         "decl": "QOU.Descartes.hadron_half_life",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "54d5e4a138e8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:integer-stability"
       ]
@@ -1192,13 +1114,10 @@
         "decl": "QOU.Descartes.hadron_q_self_correction",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "16a2798df918",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:hadron-half-life"
       ]
@@ -1216,13 +1135,10 @@
         "decl": "QOU.Descartes.skein_coulomb_enhancement",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "bf52342e7dd8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:hadron-half-life",
         "def:electron-knot"
@@ -1241,13 +1157,10 @@
         "decl": "QOU.Descartes.nuclear_groebner_reduction",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "68f2bba53a6c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:braiding-eigenvalue-extraction",
         "rem:hecke-algebra-from-braiding",
@@ -1270,13 +1183,10 @@
         "decl": "QOU.Descartes.groebner_shirshov_energy",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "cfe37c3c8cf7",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:nuclear-groebner-reduction",
         "unital-groebner-bases:thm:main-theorem"
@@ -1295,11 +1205,10 @@
         "decl": "QOU.Descartes.BoxBraidIrreducibility",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:neutrino-knot",
         "def:antineutrino-knot",
@@ -1328,13 +1237,10 @@
         "decl": "QOU.Descartes.generator_volume_decomposition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "0472651ce120",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:groebner-shirshov-energy"
       ]
@@ -1352,13 +1258,10 @@
         "decl": "QOU.Descartes.markov_trace_factorization",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "cd054995e8c8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:generator-volume-decomposition",
         "thm:markov-trace-product"
@@ -1377,13 +1280,10 @@
         "decl": "QOU.Descartes.skein_polynomial_transfer_matrix",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "bedb74336d24",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization"
       ]
@@ -1401,11 +1301,10 @@
         "decl": "QOU.Descartes.TransferMatrixOperator",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:beta-decay-transfer-matrix",
         "rem:building-block-knots"
@@ -1424,13 +1323,10 @@
         "decl": "QOU.Descartes.beta_decay_transfer_matrix",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "bf3b980af3cd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:skein-polynomial-transfer-matrix",
         "def:beta-decay-skein"
@@ -1469,13 +1365,10 @@
         "decl": "QOU.Descartes.shell_structure_eigenvalues",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "f2ac02a684f4",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:transfer-matrix-operator",
         "rem:hydrogen-orbitals"
@@ -1494,13 +1387,10 @@
         "decl": "QOU.Descartes.quantum_dilogarithm_volume",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "baeb362715bd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization",
         "cor:quantum-dilogarithm"
@@ -1519,13 +1409,10 @@
         "decl": "QOU.Descartes.reidemeister_action_table",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "65c763e226fc",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization"
       ]
@@ -1558,11 +1445,10 @@
         "decl": "QOU.OptimalNF.optimal_nf_is_standard_basis",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:nuclear-groebner-reduction",
         "thm:groebner-shirshov-energy",
@@ -1585,13 +1471,10 @@
         "decl": "QOU.Descartes.torus_knot_shell_binding",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "87ddac30c406",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:shell-closure-normal-form",
         "prop:torus-knot-generators",
@@ -1614,13 +1497,10 @@
         "decl": "QOU.Descartes.skein_finiteness_bound",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "1e079e666915",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:shell-closure-normal-form",
         "prop:skein-polynomial-transfer-matrix",
@@ -1642,11 +1522,10 @@
         "decl": "QOU.Descartes.rj_canonical_inner_product",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:cohomological-embedding"
       ]
@@ -1664,13 +1543,10 @@
         "decl": "QOU.Descartes.spectral_decomposition_qvalue",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "6d3def125cb5",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:rj-canonical-inner-product",
         "prop:cohomological-embedding",
@@ -1758,13 +1634,10 @@
         "decl": "QOU.BringsSurface.hydrogen_shell_writhe",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "fa1748e092bb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:electron-knot"
       ]
@@ -1782,13 +1655,10 @@
         "decl": "QOU.Descartes.descartes",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "488e57f2bf5c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:brings-is-qou",
         "prop:genus-maximal-descent"
@@ -1822,13 +1692,10 @@
         "decl": "QOU.Experimental.terminal_resolution",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "204e39feda69",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:skein-mass-relation",
         "cor:mass-identity-C"
@@ -1847,13 +1714,10 @@
         "decl": "QOU.orbital_space_normal_bundle",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "0c6743170cbd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:reidemeister-mass-invariance"
       ]
@@ -1871,13 +1735,10 @@
         "decl": "QOU.orbital_fourier_decomposition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "e502d5c91220",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:orbital-space-normal-bundle"
       ]
@@ -1913,13 +1774,10 @@
         "decl": "QOU.Descartes.cohomological_embedding",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/44498483b30ec220be87fbf06109ad1130ee841e/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "44498483b30ec220be87fbf06109ad1130ee841e",
-        "sorry_free": true,
-        "lean_hash": "ecfe7da79871",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/f8235f46acc411621b27c20325196380ff4ef942/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "f8235f46acc411621b27c20325196380ff4ef942"
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-universe",
         "prop:skein-finiteness-bound",
