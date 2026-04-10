@@ -1,0 +1,25 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:quantum-ideal-gas-law",
+  title: "Quantum ideal gas law",
+  tags: [
+    "ideal-gas",
+    "statistical-mechanics",
+    "equation-of-state",
+    "q-anomaly",
+    "noether",
+    "hydrogen",
+  ],
+  lean: {
+    decl: "QOU.Information.quantumIdealGasLaw",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:quantum-temperature",
+    "def:quantum-pressure",
+    "def:quantum-volume",
+    "def:categorical-action",
+    "rem:noether-theorem-callout",
+  ],
+});

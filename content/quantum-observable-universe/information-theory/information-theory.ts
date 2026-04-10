@@ -85,6 +85,12 @@ section({
       label: "sec:stat-mech",
       blocks: [
         "stat-mech-intro",
+        "quantum-temperature",
+        "quantum-pressure",
+        "quantum-volume",
+        "quantum-ideal-gas-law",
+        "hydrogen-partition-function",
+        "phase-transition-boundary",
       ],
     }),
     section({
