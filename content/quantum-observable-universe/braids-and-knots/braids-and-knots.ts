@@ -289,6 +289,7 @@ export default chapter({
         "mass-element-nf",
         "calibration-inputs",
         "three-parameters-wedderburn",
+        "binding-scale-catalan",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
