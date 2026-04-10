@@ -112,7 +112,7 @@ Two points remain open:
 
 - Why the product $\prod_k dc_k/dz$ rather than the sum
   $\sum_k dc_k/dz$ serves as the baryon integrand.  (The product
-  gives $0.0006\%$ accuracy; the sum gives $0.99\%$.)
+  gives $0.0006\%$ accuracy; the sum gives a ratio of $\approx 0.99$.)
 - Why the Möbius limit $(4-q)/(4q+3)$ rather than the exact
   degeneration locus $1/\varphi^2$ defines the integration domain.
   The Möbius form is rational in $q$ and comes from the cubic's

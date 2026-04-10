@@ -99,9 +99,9 @@ export default chapter({
         "generation-dependent-sw",
         "lepton-mass-integrals",
         "picard-lefschetz-thimble",
+        "mobius-golden-fixed-points",
         "baryon-period-conjecture",
         "baryon-integration-limit",
-        "mobius-golden-fixed-points",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors

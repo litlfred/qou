@@ -19,6 +19,7 @@ LaTeX label: `def:picard-lefschetz-thimble`
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Data.Finset.Basic
 
 namespace QOU.Descartes
 
@@ -82,7 +83,8 @@ axiom discriminant_degree_six :
 -- Ref: [manuscript] §5/picard-lefschetz-thimble
 axiom thimble_decomposition :
   ∃ (thimbles : Fin 6 → ThimbleData),
-    -- The intersection numbers are integers (by topology)
-    ∀ i, thimbles i |>.intersection_number ∈ Set.univ
+    -- The real-axis contour decomposes as γ = Σ n_σ 𝒥_σ :
+    -- the sum of intersection numbers is nonzero (γ is non-trivial in homology)
+    (Finset.univ.sum (fun i => (thimbles i).intersection_number)) ≠ 0
 
 end QOU.Descartes

@@ -47,10 +47,11 @@ theorem mobius_trace : (-1 : ℤ) + 3 = 2 := by norm_num
 
     This is the positive fixed point of the Möbius transformation. -/
 -- Ref: [manuscript] §5/baryon-integration-limit
-theorem golden_reciprocal_satisfies (h5 : Real.sqrt 5 ^ 2 = 5) :
+theorem golden_reciprocal_satisfies :
     let q := (Real.sqrt 5 - 1) / 2
     q ^ 2 + q - 1 = 0 := by
   simp only
+  have h5 : Real.sqrt 5 ^ 2 = 5 := Real.sq_sqrt (by norm_num : (5 : ℝ) ≥ 0)
   field_simp
   nlinarith
 
@@ -58,10 +59,11 @@ theorem golden_reciprocal_satisfies (h5 : Real.sqrt 5 ^ 2 = 5) :
 
     This is the negative fixed point of the Möbius transformation. -/
 -- Ref: [manuscript] §5/baryon-integration-limit
-theorem neg_golden_satisfies (h5 : Real.sqrt 5 ^ 2 = 5) :
+theorem neg_golden_satisfies :
     let q := (-1 - Real.sqrt 5) / 2
     q ^ 2 + q - 1 = 0 := by
   simp only
+  have h5 : Real.sqrt 5 ^ 2 = 5 := Real.sq_sqrt (by norm_num : (5 : ℝ) ≥ 0)
   field_simp
   nlinarith
 
