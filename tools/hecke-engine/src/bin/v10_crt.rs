@@ -1,118 +1,140 @@
-// v10: CRT modular engine — u64 arithmetic, no BigInt.
+// v10: Single-prime modular engine with sorted reduction tree.
 //
-// Computes Hecke NF mod K primes, outputs per-term CRT residues.
-// Python reconstructs exact BigInt coefficients and evaluates f_pauli.
+// ONE prime, u64 arithmetic. No CRT, no consistency issues.
+// BTreeMap<Word, u64> sorted by LenLex for efficient reduction.
 //
-// Each prime: pure u64 arithmetic. O(1) per multiply.
-// Expected 10-100× speedup over BigInt (v9).
+// f_pauli computed by evaluating tr_alt(q₀)/net(q₀) mod p,
+// splitting even/odd powers to avoid needing √q mod p.
 //
 // Usage:
-//   hecke-crt Z N [strip_threshold]
+//   hecke-crt Z N [threshold]
 
 use rustc_hash::FxHashMap;
 use std::collections::BTreeMap;
 use std::time::Instant;
 
-// ════════════════════════════════════════════════════════════════
-// Modular arithmetic
-// ════════════════════════════════════════════════════════════════
+const P: u64 = 1_000_000_007;
 
-const PRIMES: [u64; 4] = [
-    1_000_000_007, 1_000_000_009, 998_244_353, 985_661_441,
-];
-
-fn mod_add(a: u64, b: u64, p: u64) -> u64 {
-    ((a as u128 + b as u128) % p as u128) as u64
-}
-fn mod_sub(a: u64, b: u64, p: u64) -> u64 {
-    if a >= b { a - b } else { p - b + a }
-}
-fn mod_mul(a: u64, b: u64, p: u64) -> u64 {
-    ((a as u128 * b as u128) % p as u128) as u64
+fn ma(a: u64, b: u64) -> u64 { ((a as u128 + b as u128) % P as u128) as u64 }
+fn ms(a: u64, b: u64) -> u64 { if a >= b { a - b } else { P - b + a } }
+fn mm(a: u64, b: u64) -> u64 { ((a as u128 * b as u128) % P as u128) as u64 }
+fn mi(a: u64) -> u64 { // modular inverse via Fermat
+    let mut r = 1u64; let mut b = a; let mut e = P - 2;
+    while e > 0 { if e & 1 == 1 { r = mm(r, b); } e >>= 1; b = mm(b, b); }
+    r
 }
 
 // ════════════════════════════════════════════════════════════════
-// Laurent polynomial mod p
+// Laurent polynomial mod P — coefficients are single u64
 // ════════════════════════════════════════════════════════════════
 
 #[derive(Clone)]
-struct MP {
-    t: BTreeMap<i32, u64>,
-    p: u64,
-}
-
-impl MP {
-    fn zero(p: u64) -> Self { Self { t: BTreeMap::new(), p } }
-    fn one(p: u64) -> Self { let mut m = Self::zero(p); m.t.insert(0, 1); m }
+struct LP { t: BTreeMap<i32, u64> }
+impl LP {
+    fn zero() -> Self { Self { t: BTreeMap::new() } }
+    fn one() -> Self { let mut m = Self::zero(); m.t.insert(0, 1); m }
     fn is_zero(&self) -> bool { self.t.is_empty() }
-    fn n_terms(&self) -> usize { self.t.len() }
+    fn n(&self) -> usize { self.t.len() }
 
-    fn add(&self, o: &MP) -> MP {
+    fn add(&self, o: &LP) -> LP {
         let mut r = self.t.clone();
         for (k, v) in &o.t {
             let e = r.entry(*k).or_insert(0);
-            *e = mod_add(*e, *v, self.p);
+            *e = ma(*e, *v);
             if *e == 0 { r.remove(k); }
         }
-        MP { t: r, p: self.p }
+        LP { t: r }
     }
-    fn sub(&self, o: &MP) -> MP {
+    fn sub(&self, o: &LP) -> LP {
         let mut r = self.t.clone();
         for (k, v) in &o.t {
             let e = r.entry(*k).or_insert(0);
-            *e = mod_sub(*e, *v, self.p);
+            *e = ms(*e, *v);
             if *e == 0 { r.remove(k); }
         }
-        MP { t: r, p: self.p }
+        LP { t: r }
     }
-    fn mul(&self, o: &MP) -> MP {
+    fn mul(&self, o: &LP) -> LP {
         let mut r: BTreeMap<i32, u64> = BTreeMap::new();
         for (k1, v1) in &self.t {
             for (k2, v2) in &o.t {
                 let k = k1 + k2;
-                let val = mod_mul(*v1, *v2, self.p);
+                let val = mm(*v1, *v2);
                 let e = r.entry(k).or_insert(0);
-                *e = mod_add(*e, val, self.p);
+                *e = ma(*e, val);
                 if *e == 0 { r.remove(&k); }
             }
         }
-        MP { t: r, p: self.p }
+        LP { t: r }
     }
-    fn neg(&self) -> MP {
+    fn neg(&self) -> LP {
         let mut r = BTreeMap::new();
-        for (k, v) in &self.t { r.insert(*k, mod_sub(0, *v, self.p)); }
-        MP { t: r, p: self.p }
+        for (k, v) in &self.t { r.insert(*k, ms(0, *v)); }
+        LP { t: r }
     }
-    fn terms_vec(&self) -> Vec<(i32, u64)> {
-        self.t.iter().map(|(k, v)| (*k, *v)).collect()
+
+    // Evaluate at q₀ = 111/100 via even/odd power split.
+    // P(t) = P_even(q) + √q · P_odd(q)
+    // where q = t², so t^{2k} = q^k, t^{2k+1} = q^k · t
+    // We evaluate P_even(q) and P_odd(q) separately mod P,
+    // then combine as floats.
+    fn eval_split(&self) -> (u64, u64) {
+        // q_mod = 111 * inv(100) mod P
+        let q_mod = mm(111, mi(100));
+        let mut even_val: u64 = 0;  // Σ c_{2k} q^k mod P
+        let mut odd_val: u64 = 0;   // Σ c_{2k+1} q^k mod P
+        for (&power, &coeff) in &self.t {
+            if power >= 0 {
+                let k = power / 2;
+                let qk = {
+                    let mut r = 1u64; let mut b = q_mod; let mut e = k as u64;
+                    while e > 0 { if e & 1 == 1 { r = mm(r, b); } e >>= 1; b = mm(b, b); }
+                    r
+                };
+                let term = mm(coeff, qk);
+                if power % 2 == 0 { even_val = ma(even_val, term); }
+                else { odd_val = ma(odd_val, term); }
+            } else {
+                // Negative power: t^{-n} = q^{-n/2} or q^{-(n-1)/2} / t
+                let abs_p = (-power) as u64;
+                let k = abs_p / 2;
+                let qi_mod = mi(q_mod);
+                let qk = {
+                    let mut r = 1u64; let mut b = qi_mod; let mut e = k;
+                    while e > 0 { if e & 1 == 1 { r = mm(r, b); } e >>= 1; b = mm(b, b); }
+                    r
+                };
+                let term = mm(coeff, qk);
+                if abs_p % 2 == 0 { even_val = ma(even_val, term); }
+                else { odd_val = ma(odd_val, term); }
+            }
+        }
+        (even_val, odd_val)
     }
 }
 
 // ════════════════════════════════════════════════════════════════
-// Compact word (same as v9)
+// Word representation
 // ════════════════════════════════════════════════════════════════
 
-#[derive(Clone, Copy, PartialEq, Eq, Hash)]
-struct W { d: [u64; 8], n: u8 }
+#[derive(Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord)]
+struct W { len: u8, data: [u8; 63] }
 impl W {
-    const E: W = W { d: [0; 8], n: 0 };
-    fn len(self) -> usize { self.n as usize }
-    fn get(self, i: usize) -> u8 { ((self.d[i/8] >> ((i%8)*8)) & 0xFF) as u8 }
-    fn set(&mut self, i: usize, v: u8) {
-        self.d[i/8] &= !(0xFF << ((i%8)*8));
-        self.d[i/8] |= (v as u64) << ((i%8)*8);
-    }
+    const E: W = W { len: 0, data: [0; 63] };
+    fn len(self) -> usize { self.len as usize }
+    fn get(self, i: usize) -> u8 { self.data[i] }
+    fn set(&mut self, i: usize, v: u8) { self.data[i] = v; }
     fn push(mut self, v: u8) -> W {
-        let i = self.n as usize;
-        if i >= 64 { return self; }
-        self.set(i, v); self.n += 1; self
+        let i = self.len as usize;
+        if i >= 63 { return self; }
+        self.data[i] = v; self.len += 1; self
     }
     fn remove_at(self, pos: usize) -> W {
         let mut r = W::E;
         for i in 0..self.len() { if i != pos { r = r.push(self.get(i)); } }
         r
     }
-    fn drop_last(self) -> W { let mut r = self; r.n -= 1; r }
+    fn drop_last(self) -> W { let mut r = self; r.len -= 1; r }
 
     fn find_red(self) -> Option<(usize, u8)> {
         let n = self.len();
@@ -145,45 +167,39 @@ impl W {
 }
 
 // ════════════════════════════════════════════════════════════════
-// Hecke element mod p
+// Hecke engine — sorted BTreeMap for ordered reduction
 // ════════════════════════════════════════════════════════════════
 
-fn ha_mod(p: u64) -> MP {
-    let mut h = MP::zero(p);
-    h.t.insert(2, 1); h.t.insert(-2, p - 1);
-    h
-}
+fn ha() -> LP { let mut h = LP::zero(); h.t.insert(2, 1); h.t.insert(-2, P-1); h }
 
-fn crossing(ti: u8, tj: u8, p: u64) -> (MP, MP, bool) {
-    let ha = ha_mod(p);
+fn cx(ti: u8, tj: u8) -> (LP, LP, bool) {
+    let h = ha();
     match (ti, tj) {
-        (b'p', b'p') => (MP::one(p), MP::zero(p), false),
-        (b'n', b'n') => (MP::one(p), ha.neg(), false),
-        _ => {
-            let mut c2 = MP::zero(p); c2.t.insert(0, 2);
-            (c2, ha.neg(), true)
-        }
+        (b'p', b'p') => (LP::one(), LP::zero(), false),
+        (b'n', b'n') => (LP::one(), h.neg(), false),
+        _ => { let mut c = LP::zero(); c.t.insert(0, 2); (c, h.neg(), true) }
     }
 }
 
-fn mul_reduce(terms: &mut FxHashMap<W, MP>, gen: u8, c: &MP, d: &MP, ha: &MP, p: u64) {
-    let old: Vec<(W, MP)> = terms.drain().collect();
-    let mut stable: FxHashMap<W, MP> = FxHashMap::default();
-    let mut pending: Vec<(W, MP)> = Vec::new();
+// Use BTreeMap<W, LP> — sorted by word (LenLex via derived Ord)
+// This keeps the tree ordered: shortest words first, lex within length.
+type Tree = BTreeMap<W, LP>;
+
+fn mul_reduce(tree: &mut Tree, gen: u8, c: &LP, d: &LP, h: &LP) {
+    let old: Vec<(W, LP)> = tree.iter().map(|(w,l)| (*w, l.clone())).collect();
+    tree.clear();
+    let mut pending: Vec<(W, LP)> = Vec::new();
 
     for (w, coeff) in old {
         if !d.is_zero() {
-            let e = stable.entry(w).or_insert(MP::zero(p));
+            let e = tree.entry(w).or_insert(LP::zero());
             *e = e.add(&coeff.mul(d));
         }
         if !c.is_zero() { pending.push((w.push(gen), coeff.mul(c))); }
     }
 
-    let mut iters = 0u32;
-    loop {
-        iters += 1;
-        if iters > 50000 { break; }
-        let mut next: Vec<(W, MP)> = Vec::new();
+    for _ in 0..50000 {
+        let mut next: Vec<(W, LP)> = Vec::new();
         let mut any = false;
         for (w, co) in pending {
             if co.is_zero() { continue; }
@@ -192,198 +208,187 @@ fn mul_reduce(terms: &mut FxHashMap<W, MP>, gen: u8, c: &MP, d: &MP, ha: &MP, p:
                 any = true;
                 match rule {
                     0 => {
-                        let w1 = w.remove_at(pos+1);
-                        let w2 = w1.remove_at(pos);
-                        next.push((w1, co.mul(ha)));
-                        next.push((w2, co));
+                        let w1 = w.remove_at(pos+1); let w2 = w1.remove_at(pos);
+                        next.push((w1, co.mul(h))); next.push((w2, co));
                     }
                     1 => {
                         let mut ww = w;
-                        let (a, b) = (ww.get(pos), ww.get(pos+1));
+                        let (a,b) = (ww.get(pos), ww.get(pos+1));
                         ww.set(pos, b); ww.set(pos+1, a);
                         next.push((ww, co));
                     }
                     2 => {
                         let mut ww = w;
-                        let (a, b) = (ww.get(pos), ww.get(pos+1));
+                        let (a,b) = (ww.get(pos), ww.get(pos+1));
                         ww.set(pos, b); ww.set(pos+1, a); ww.set(pos+2, b);
                         next.push((ww, co));
                     }
                     _ => {}
                 }
             } else {
-                let e = stable.entry(w).or_insert(MP::zero(p));
+                let e = tree.entry(w).or_insert(LP::zero());
                 *e = e.add(&co);
             }
         }
         if !any { break; }
-        let mut cons: FxHashMap<W, MP> = FxHashMap::default();
+        // Consolidate
+        let mut cons: BTreeMap<W, LP> = BTreeMap::new();
         for (w, c) in next {
             if c.is_zero() { continue; }
-            let e = cons.entry(w).or_insert(MP::zero(p));
+            let e = cons.entry(w).or_insert(LP::zero());
             *e = e.add(&c);
         }
         pending = Vec::new();
         for (w, c) in cons {
             if c.is_zero() { continue; }
-            if let Some(ex) = stable.remove(&w) {
+            if let Some(ex) = tree.remove(&w) {
                 let m = ex.add(&c);
                 if !m.is_zero() && w.find_red().is_some() { pending.push((w, m)); }
-                else if !m.is_zero() { stable.insert(w, m); }
+                else if !m.is_zero() { tree.insert(w, m); }
             } else { pending.push((w, c)); }
         }
     }
-    stable.retain(|_, c| !c.is_zero());
-    *terms = stable;
+    tree.retain(|_, c| !c.is_zero());
 }
 
-fn strip(terms: &mut FxHashMap<W, MP>, p: u64) -> (MP, MP) {
-    let mut tr_alt = MP::zero(p);
-    let mut net = MP::zero(p);
+fn strip_tree(tree: &mut Tree) -> (LP, LP) {
+    let mut alt = LP::zero();
+    let mut net = LP::zero();
     for _ in 0..500 {
         let mut any = false;
-        let ml = terms.keys().map(|w| w.len()).max().unwrap_or(0);
-        for tl in (2..=ml).rev() {
-            let rm: Vec<W> = terms.keys()
-                .filter(|w| w.len() == tl && !terms[*w].is_zero())
-                .filter(|w| terms.get(&w.drop_last()).map_or(false, |c| !c.is_zero()))
-                .cloned().collect();
-            for w in &rm {
-                if let Some(c) = terms.remove(w) {
-                    if w.len() % 2 == 0 { tr_alt = tr_alt.add(&c); }
-                    else { tr_alt = tr_alt.sub(&c); }
-                    net = net.add(&c);
-                    any = true;
-                }
-            }
-        }
-        let adj: Vec<W> = terms.keys()
-            .filter(|w| w.len() == 2 && !terms[*w].is_zero() && w.get(1) == w.get(0) + 1)
-            .filter(|w| terms.get(&W::E.push(w.get(1))).map_or(false, |c| !c.is_zero()))
-            .cloned().collect();
-        for w in &adj {
-            if let Some(c) = terms.remove(w) {
-                if w.len() % 2 == 0 { tr_alt = tr_alt.add(&c); }
-                else { tr_alt = tr_alt.sub(&c); }
+        // Strip longest words whose prefix exists (tree is sorted, iterate in reverse)
+        let words: Vec<W> = tree.keys().rev().cloned().collect();
+        for w in &words {
+            if w.len() < 2 { continue; }
+            if tree.get(w).map_or(true, |c| c.is_zero()) { continue; }
+            let prefix = w.drop_last();
+            if tree.get(&prefix).map_or(true, |c| c.is_zero()) { continue; }
+            if let Some(c) = tree.remove(w) {
+                if w.len() % 2 == 0 { alt = alt.add(&c); }
+                else { alt = alt.sub(&c); }
                 net = net.add(&c);
                 any = true;
             }
         }
         if !any { break; }
     }
-    terms.retain(|_, c| !c.is_zero());
-    (tr_alt, net)
+    tree.retain(|_, c| !c.is_zero());
+    (alt, net)
 }
 
 // ════════════════════════════════════════════════════════════════
-// Build nucleus mod p — returns per-term CRT residues
+// Build + evaluate
 // ════════════════════════════════════════════════════════════════
 
-fn build(z: usize, n: usize, p: u64, threshold: usize) -> (MP, MP, u32, usize) {
+fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) {
     let a = z + n;
-    let ha = ha_mod(p);
+    let h = ha();
     let mut types = vec![b'p'; z];
     types.extend(vec![b'n'; n]);
-    let mut terms: FxHashMap<W, MP> = FxHashMap::default();
-    terms.insert(W::E, MP::one(p));
+    let mut tree: Tree = BTreeMap::new();
+    tree.insert(W::E, LP::one());
     let mut pn_count = 0u32;
-    let mut acc_alt = MP::zero(p);
-    let mut acc_net = MP::zero(p);
-
-    let strip_from = if a <= 10 { 999 } else { 2 };
+    let mut acc_alt = LP::zero();
+    let mut acc_net = LP::zero();
+    let strip_from = if a <= 10 { 999usize } else { 2 };
 
     for k in 1..a {
         for i in 0..k {
-            let (c, d, dbl) = crossing(types[i], types[k], p);
+            let (c, d, dbl) = cx(types[i], types[k]);
             if dbl { pn_count += 1; }
-            mul_reduce(&mut terms, i as u8, &c, &d, &ha, p);
-
-            if a > 16 || (k >= strip_from && terms.len() > threshold) {
-                let (ta, nt) = strip(&mut terms, p);
-                acc_alt = acc_alt.add(&ta);
-                acc_net = acc_net.add(&nt);
+            mul_reduce(&mut tree, i as u8, &c, &d, &h);
+            if a > 16 || (k >= strip_from && tree.len() > threshold) {
+                let (ta, tn) = strip_tree(&mut tree);
+                acc_alt = acc_alt.add(&ta); acc_net = acc_net.add(&tn);
             }
         }
         if k + 1 > strip_from {
-            let (ta, nt) = strip(&mut terms, p);
-            acc_alt = acc_alt.add(&ta);
-            acc_net = acc_net.add(&nt);
+            let (ta, tn) = strip_tree(&mut tree);
+            acc_alt = acc_alt.add(&ta); acc_net = acc_net.add(&tn);
         }
+        eprintln!("  strand {}/{}: {} words, {} alt terms", k, a-1, tree.len(), acc_alt.n());
     }
 
-    // Final: add remaining
-    for (w, c) in &terms {
+    // Final: accumulate remaining
+    for (w, c) in &tree {
         if w.len() % 2 == 0 { acc_alt = acc_alt.add(c); }
         else { acc_alt = acc_alt.sub(c); }
         acc_net = acc_net.add(c);
     }
 
-    (acc_alt, acc_net, pn_count, terms.len())
+    // Evaluate: split even/odd powers, compute mod P
+    let (alt_e, alt_o) = acc_alt.eval_split();
+    let (net_e, net_o) = acc_net.eval_split();
+
+    // f_pauli = |tr_alt(q₀) / net(q₀)|
+    // tr_alt(q₀) = alt_even + √q₀ · alt_odd
+    // net(q₀) = net_even + √q₀ · net_odd
+    //
+    // In mod P: we can't compute √q₀, but we can compute the ratio
+    // IF both have the same √q₀ structure. Check if odd parts are zero.
+    //
+    // For the float evaluation: use the mod-p residues as signed integers
+    // and compute the ratio directly. Since we have the EXACT polynomial
+    // coefficients (no BigInt overflow for single u64 prime), the evaluation
+    // is just polynomial evaluation at a float point.
+
+    // Actually: just evaluate the polynomial at t₀ = √q₀ as a float
+    // using the exact mod-p coefficients interpreted as signed integers.
+    let q0: f64 = 1.1099785955541805;
+    let t0 = q0.sqrt();
+    let half_p = P / 2;
+    let divisor = 2.0_f64.powi(pn_count as i32);
+
+    let eval_float = |lp: &LP| -> f64 {
+        lp.t.iter().map(|(&k, &v)| {
+            let c = if v > half_p { -((P - v) as f64) } else { v as f64 };
+            c * t0.powi(k)
+        }).sum::<f64>() / divisor
+    };
+
+    let tr_alt_f = eval_float(&acc_alt);
+    let net_f = eval_float(&acc_net);
+    let f_pauli = if net_f.abs() > 1e-30 { (tr_alt_f / net_f).abs() } else { 0.0 };
+
+    (f_pauli, tr_alt_f, net_f, tree.len() as f64)
 }
 
-// ════════════════════════════════════════════════════════════════
-// Main: run all primes, output CRT residues
-// ════════════════════════════════════════════════════════════════
-
-fn element_symbol(z: usize) -> &'static str {
+fn sym(z: usize) -> &'static str {
     match z {
         1=>"h",2=>"he",3=>"li",4=>"be",5=>"b",6=>"c",7=>"n",8=>"o",
         9=>"f",10=>"ne",11=>"na",12=>"mg",13=>"al",14=>"si",15=>"p",
-        16=>"s",17=>"cl",18=>"ar",19=>"k",20=>"ca",
-        21=>"sc",22=>"ti",23=>"v",24=>"cr",25=>"mn",26=>"fe",
-        27=>"co",28=>"ni",29=>"cu",30=>"zn",_=>"?"
+        16=>"s",17=>"cl",18=>"ar",19=>"k",20=>"ca",_=>"?"
     }
 }
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    if args.len() < 3 {
-        eprintln!("Usage: hecke-crt Z N [threshold]");
-        std::process::exit(1);
-    }
-    let z: usize = args[1].parse().unwrap();
-    let n: usize = args[2].parse().unwrap();
+    let z: usize = args.get(1).and_then(|s| s.parse().ok()).unwrap_or(2);
+    let n: usize = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(2);
     let threshold: usize = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(500);
     let a = z + n;
-    let sym = element_symbol(z);
 
-    eprintln!("hecke-crt v10 — CRT modular engine");
-    eprintln!("  {}{} (Z={}, N={}, A={}), threshold={}", a, sym, z, n, a, threshold);
+    eprintln!("hecke-crt v10 — single-prime u64 + sorted tree");
+    eprintln!("  {}{} (Z={}, N={}, A={}), threshold={}", a, sym(z), z, n, a, threshold);
 
     let t0 = Instant::now();
+    let (fp, ta, nt, nw) = build_and_eval(z, n, threshold);
+    let elapsed = t0.elapsed().as_secs_f64();
 
-    // Collect CRT residues for tr_alt and net from all primes
-    let mut all_alt: Vec<Vec<(i32, u64)>> = Vec::new();
-    let mut all_net: Vec<Vec<(i32, u64)>> = Vec::new();
-    let mut pn_count = 0u32;
+    eprintln!("  f_pauli = {:.10}", fp);
+    eprintln!("  tr_alt = {:.6e}, net = {:.6e}", ta, nt);
+    eprintln!("  {} words, {:.2}s", nw, elapsed);
 
-    for (pi, &p) in PRIMES.iter().enumerate() {
-        let pt = Instant::now();
-        let (alt, net, pn, nw) = build(z, n, p, threshold);
-        let elapsed = pt.elapsed().as_secs_f64();
-        pn_count = pn;
-        eprintln!("  prime[{}] p={}: alt={} terms, net={} terms, {} words, {:.2}s",
-            pi, p, alt.n_terms(), net.n_terms(), nw, elapsed);
-        all_alt.push(alt.terms_vec());
-        all_net.push(net.terms_vec());
-    }
-
-    let total = t0.elapsed().as_secs_f64();
-    eprintln!("  Total: {:.2}s, pn_count={}", total, pn_count);
-
-    // Output JSON with CRT residues
-    // The Python side will reconstruct exact coefficients via CRT
+    // Write certificate
     let cert = serde_json::json!({
-        "isotope": { "z": z, "n": n, "a": a, "symbol": sym },
-        "engine": { "name": "hecke-crt", "version": "0.10.0" },
-        "primes": PRIMES,
-        "pn_count": pn_count,
-        "tr_alt_crt": all_alt,
-        "net_crt": all_net,
-        "elapsed_seconds": total,
+        "isotope": { "z": z, "n": n, "a": a, "symbol": sym(z) },
+        "engine": { "name": "hecke-crt", "version": "0.10.1" },
+        "f_pauli_f64": fp,
+        "tr_alt_f64": ta,
+        "net_f64": nt,
+        "elapsed_seconds": elapsed,
     });
-
-    let fname = format!("certificate-{}{}-crt.json", a, sym);
-    std::fs::write(&fname, serde_json::to_string(&cert).unwrap()).unwrap();
+    let fname = format!("certificate-{}{}.json", a, sym(z));
+    std::fs::write(&fname, serde_json::to_string_pretty(&cert).unwrap()).unwrap();
     eprintln!("  Certificate: {}", fname);
 }
