@@ -1,8 +1,20 @@
 **Proposition.**
-*The binding energy scale in the atomic mass formula is*
+*The binding energy scale in the atomic mass formula is
+the archimedean evaluation of the algebraic binding scale:*
 
 $$
-  \alpha = m_e \times \mathrm{Vol}(\mathcal{B}_3)
+  \alpha_q = m_e \times \mathrm{Vol}_q(\mathcal{B}_3)
+  \;\in\; \mathbb{Z}[q^{1/2}, q^{-1/2}]
+$$
+
+*where $\mathrm{Vol}_q(\mathcal{B}_3) = \prod \hat{V}_i^{\mathcal{B}_3}(q)$
+is the algebraic quantum volume
+([algebraic quantum volume](#def:algebraic-quantum-volume))
+of the Borromean braid.  At $q = q_0$:*
+
+$$
+  \alpha = \lvert\alpha_{q_0}\rvert
+         = m_e \times \mathrm{Vol}(\mathcal{B}_3)
          = m_e \times 8G
          \approx 3.7445 \;\mathrm{MeV}
 $$

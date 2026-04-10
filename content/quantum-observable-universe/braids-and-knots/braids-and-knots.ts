@@ -292,6 +292,8 @@ export default chapter({
         "binding-scale-catalan",
         "wedderburn-mass-formula",
         "algebraic-quantum-volume",
+        "habiro-ring",
+        "quantum-bloch-group",
         "degree-two-baryon-weight",
         "energy-scale-planck",
         "topological-mass-trefoil",
