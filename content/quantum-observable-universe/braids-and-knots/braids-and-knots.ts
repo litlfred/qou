@@ -293,6 +293,7 @@ export default chapter({
         "wedderburn-mass-formula",
         "algebraic-quantum-volume",
         "habiro-ring",
+        "algebraic-quantum-volume-specialization",
         "quantum-bloch-group",
         "degree-two-baryon-weight",
         "energy-scale-planck",
