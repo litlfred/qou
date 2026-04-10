@@ -4,7 +4,7 @@ export default remark({
   interprets: "prop:feynman-classical-limit",
   label: "rem:feynman-classical-limit-interpretation",
   lean: {
-    decl: "QOU.FeynmanPathIntegrals.jones_polynomial_at_one",
+    decl: "QOU.FeynmanPathIntegrals.jones_trace_generator_at_one",
     validation: "not_checked",
   },
   title: "Classical limit and the symmetric degeneration",

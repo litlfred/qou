@@ -54,9 +54,9 @@ export default chapter({
       blocks: [
         "feynman-categorical-trace",
         "feynman-categorical-trace-proof",
-        "feynman-qou-dictionary",
         "feynman-classical-limit",
         "feynman-classical-limit-interpretation",
+        "feynman-qou-dictionary",
       ],
     }),
 

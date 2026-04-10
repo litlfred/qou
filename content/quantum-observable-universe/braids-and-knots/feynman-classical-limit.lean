@@ -20,7 +20,7 @@ Lean declarations:
   - `QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration`
   - `QOU.FeynmanPathIntegrals.hecke_degeneration_symmetric`
   - `QOU.FeynmanPathIntegrals.planck_at_one`
-  - `QOU.FeynmanPathIntegrals.jones_polynomial_at_one`
+  - `QOU.FeynmanPathIntegrals.jones_trace_generator_at_one`
   - `QOU.FeynmanPathIntegrals.q_energy_classical_limit`
   - `QOU.FeynmanPathIntegrals.quantumDim_at_one`
 -/
