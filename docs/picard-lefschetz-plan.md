@@ -113,9 +113,14 @@ Nine simultaneous prescriptions were tested:
 
 ## Open questions
 
-1. **Integration limit**: Why a = (4-q)/(4q+3)? This is a q-rational
-   expression but its geometric meaning is not yet clear. Other limits
-   also give good results (z₀: 0.84% error, 1/(2q): 0.24% error).
+1. ~~**Integration limit**: Why a = (4-q)/(4q+3)?~~ **RESOLVED**: see
+   `baryon-integration-limit.md`. The Möbius matrix
+   M = [[-1,4],[4,3]] has det = -19, char poly λ²-2λ-19, eigenvalues
+   1 ± 2√5 = 4φ-1 and 3-4φ.  **Fixed points are q = 1/φ and q = -φ**
+   (golden ratio!).  The fixed-point equation q²+q-1 = 0 is the minimal
+   polynomial of 1/φ.  The coefficients {4, 3} come from the binomial
+   structure C(4,1) = 4 of the color-tube cubic and its degree 3.
+   At q₀, a ≈ 0.388 ≈ 1/φ² ≈ q_gold (golden degeneration threshold).
 
 2. **Thimble vs real-axis**: The result above uses real-axis integration,
    not Picard-Lefschetz thimbles. The intersection numbers are all zero
