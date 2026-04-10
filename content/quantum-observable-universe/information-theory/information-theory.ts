@@ -91,7 +91,14 @@ section({
         "quantum-ideal-gas-law",
         "boltzmann-constant",
         "hydrogen-partition-function",
+      ],
+    }),
+    section({
+      title: "Phase Transitions and Sublimation",
+      label: "sec:phase-transitions",
+      blocks: [
         "phase-transition-boundary",
+        "composite-crossing-parity",
       ],
     }),
     section({
