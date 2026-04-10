@@ -115,6 +115,7 @@ section({
         "incompleteness-implies-horizon",
         "incompleteness-horizon",
         "stat-mech-computational-horizon",
+        "equation-of-state-uniqueness",
         "information-paradox-incompleteness",
       ],
     }),
