@@ -13,7 +13,7 @@ partition function has a non-analyticity.
 
 2. **Liquid (mixed channel).**
    At intermediate $T_q$, knots begin to Hopf-link across
-   fibres through $\partial(S^3_q) \cong S^2$.  The
+   fibres through the Hopf base $S^2$.  The
    inter-fibre linking creates correlations.
 
 3. **Solid (antisymmetric channel, eigenvalue $-q^{-1}$).**
@@ -36,7 +36,7 @@ In the classical theory, phase transitions arise from
 inter-particle potentials (van der Waals, Lennard-Jones)
 added *ad hoc* to the ideal gas.  In the QOU, inter-particle
 interactions are **already present** as inter-fibre braid
-linking through $\partial(S^3_q)$.  The $S^3$ topology
+linking through the Hopf base of $S^3_q$.  The $S^3$ topology
 provides the "potential" (through its boundary action), and
 the Hecke representation theory provides the discrete
 phase structure.

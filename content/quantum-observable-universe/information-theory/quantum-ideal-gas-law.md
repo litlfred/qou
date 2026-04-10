@@ -43,7 +43,7 @@ $$
 where $1/N!$ arises from the braid group action on
 $\mathrm{Conf}(U)$ (isotopy-indistinguishability).
 The free energy $F_q = -T_q \ln Z_q$ gives, via Stirling
-and $V_q = |U| \cdot 2\pi^2 [2]_q$:
+and $V_q = |U| \cdot \pi^2 [2]_q$:
 
 $$
   P_q \, V_q

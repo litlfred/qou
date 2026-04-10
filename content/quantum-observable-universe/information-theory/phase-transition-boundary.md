@@ -7,7 +7,8 @@ sectors of $\mathrm{Conf}(U)$.
 
 The critical temperatures are determined by the **$S^3$
 boundary action**: the restriction of the categorical
-action $S_q$ to $\partial(S^3_q) \cong S^2$,
+action $S_q$ to the Hopf base $S^2$ of the fibration
+$S^1 \hookrightarrow S^3_q \to S^2$,
 
 $$
   S_q^{(\partial)}

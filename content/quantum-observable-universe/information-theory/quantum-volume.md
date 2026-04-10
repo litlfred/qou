@@ -27,10 +27,10 @@ where $|U|$ is the number of brane points in $U$ and
 
 $$
   \mathrm{Vol}(S^3_q)
-  \;=\; 2\pi^2 \cdot [2]_q
-  \;=\; 2\pi^2(q + q^{-1})
+  \;=\; \pi^2 \cdot [2]_q
+  \;=\; \pi^2(q + q^{-1})
 $$
 
 is the volume of $S^3$ in the $q$-deformed metric.
 At $q = 1$ this recovers
-$\mathrm{Vol}(S^3) = 2\pi^2 \cdot 2 = 4\pi^2$.
+$\mathrm{Vol}(S^3) = 2\pi^2$.

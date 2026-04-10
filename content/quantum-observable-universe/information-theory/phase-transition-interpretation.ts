@@ -16,5 +16,6 @@ export default remark({
   uses: [
     "prop:phase-transition-boundary",
     "prop:quantum-ideal-gas-law",
+    "prop:composite-crossing-parity",
   ],
 });

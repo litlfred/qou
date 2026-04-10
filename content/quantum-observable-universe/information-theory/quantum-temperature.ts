@@ -20,5 +20,7 @@ export default definition({
     "def:quantum-planck-constant",
     "def:operational-entropy",
     "def:frobenius-pairing",
+    "def:quantum-observable-universe",
+    "def:yekutieli-triple",
   ],
 });

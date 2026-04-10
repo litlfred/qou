@@ -4,7 +4,7 @@ $\mathcal{A}(1,0)$
 ([hydrogen knot structure](#ex:hydrogen-knot-structure))
 at quantum temperature $T_q = \hbar_q$ in a region $U$
 with quantum volume $V_q$
-([quantum temperature](#def:quantum-temperature)).
+([quantum volume](#def:quantum-volume)).
 Each hydrogen atom consists of a proton (Borromean link
 $\mathcal{B}_3$ with Hopf binding $\mathcal{L}_H$) and
 an electron (trefoil $T_{2,3}$).  We treat the atom as
@@ -90,8 +90,8 @@ we recover the exact leading-order law $P_q V_q = N \hbar_q$.
 Among all atoms $\mathcal{A}(Z, N)$:
 
 - Hydrogen has the **simplest knot**: one Borromean link
-  plus one trefoil, with total crossing number $n = 6$
-  (three Borromean crossings + three trefoil crossings).
+  plus one trefoil, with composite crossing number $n_K = 13$
+  ([crossing parity](#prop:composite-crossing-parity)).
 - The Borromean link is **amphichiral** ($w = 0$), so the
   momentum contribution vanishes at leading order.
 - The proton mass dominates:

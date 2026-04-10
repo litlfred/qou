@@ -15,6 +15,5 @@ export default proposition({
   uses: [
     "def:quantum-temperature",
     "def:quantum-planck-constant",
-    "prop:quantum-ideal-gas-law",
   ],
 });

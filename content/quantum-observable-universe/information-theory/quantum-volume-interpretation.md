@@ -24,7 +24,7 @@ according to the substrate parameter.
 
 **Classical limit.**
 As $q \to 1$: $[2]_q \to 2$, the fibre volume approaches
-$4\pi^2$, and $V_q(U)$ reduces to the Riemannian volume
+$2\pi^2$, and $V_q(U)$ reduces to the Riemannian volume
 of $U$ times the standard $S^3$ volume.  The categorical
 volume form $\epsilon_q$ degenerates to the classical
 Riemannian volume element.
