@@ -109,6 +109,16 @@ section({
       ],
     }),
     section({
+      title: "Incompleteness and the Horizon",
+      label: "sec:incompleteness-horizon",
+      blocks: [
+        "incompleteness-implies-horizon",
+        "incompleteness-horizon",
+        "stat-mech-computational-horizon",
+        "information-paradox-incompleteness",
+      ],
+    }),
+    section({
       title: "Horizons and Aeons",
       label: "sec:horizons-aeons",
       blocks: [
