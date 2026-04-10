@@ -134,7 +134,12 @@ impl W {
         for i in 0..self.len() { if i != pos { r = r.push(self.get(i)); } }
         r
     }
-    fn drop_last(self) -> W { let mut r = self; r.len -= 1; r }
+    fn drop_last(self) -> W {
+        let mut r = self;
+        r.data[(r.len - 1) as usize] = 0;
+        r.len -= 1;
+        r
+    }
 
     fn find_red(self) -> Option<(usize, u8)> {
         let n = self.len();
@@ -198,7 +203,7 @@ fn mul_reduce(tree: &mut Tree, gen: u8, c: &LP, d: &LP, h: &LP) {
         if !c.is_zero() { pending.push((w.push(gen), coeff.mul(c))); }
     }
 
-    for _ in 0..50000 {
+    for _ in 0..500000 {
         let mut next: Vec<(W, LP)> = Vec::new();
         let mut any = false;
         for (w, co) in pending {
@@ -312,7 +317,19 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
         eprintln!("  strand {}/{}: {} words, {} alt terms", k, a-1, tree.len(), acc_alt.n());
     }
 
-    // Final: accumulate remaining with correct alternating character
+    // Final strip: same as v9 — strip to convergence, accumulate
+    let (final_alt, final_net) = strip_tree(&mut tree);
+    acc_alt = acc_alt.add(&final_alt);
+    acc_net = acc_net.add(&final_net);
+
+    eprintln!("  After final strip: {} words", tree.len());
+    for (w, c) in &tree {
+        let ws: String = (0..w.len()).map(|i| format!("σ{}", w.get(i))).collect::<Vec<_>>().join("·");
+        let ws = if ws.is_empty() { "𝟙".to_string() } else { ws };
+        eprintln!("    {} : {} terms", ws, c.n());
+    }
+
+    // Accumulate remaining (unstrippable) words
     for (w, c) in &tree {
         let wl = w.len() as i32;
         let shifted = LP { t: c.t.iter().map(|(k,v)| (k - 2*wl, *v)).collect() };
