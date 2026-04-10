@@ -2,22 +2,24 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:composite-crossing-parity",
-  title: "Crossing parity of composite nuclear knots",
+  title: "Sublimation from shell-filling representation theory",
   tags: [
-    "crossing-number",
-    "parity",
-    "nuclear-knot",
-    "transfer-matrix",
-    "phase-transition",
     "sublimation",
+    "shell-structure",
+    "young-diagram",
+    "hecke-representation",
+    "phase-transition",
+    "magic-numbers",
   ],
   lean: {
     decl: "QOU.Information.compositeCrossingParity",
     validation: "not_checked",
   },
   uses: [
-    "prop:skein-polynomial-transfer-matrix",
-    "def:stable-nucleus",
     "prop:phase-transition-boundary",
+    "prop:knot-eigenbasis-complete",
+    "prop:shell-structure-eigenvalues",
+    "prop:noble-gas-characterization",
+    "def:stable-nucleus",
   ],
 });
