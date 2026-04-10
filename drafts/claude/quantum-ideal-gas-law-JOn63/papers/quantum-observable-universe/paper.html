@@ -687,7 +687,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/quantum-ideal-gas-law-JOn63">&#x1F33F; claude/quantum-ideal-gas-law-JOn63</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/0cbd569665727b1908acc66ae2bdcb1933d3dfe6">&#x1F4DD; 0cbd569</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/bbe4a3d90952e8d8358376569ccd11bd3cc099da">&#x1F4DD; bbe4a3d</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/329">PR #329</a>
 </div>
 <div class="proof-legend"><strong>Proof status:</strong> <span class="proof-status proved">&#x2713; proved</span> <span class="proof-status mathlib-ok">&#x2713;&#x2713; mathlib</span> <span class="proof-status stated">&#x2200; stated</span> <span class="proof-status has-sorry">&#x26A0; sorry</span> <span class="proof-status not-started">&#x2717; no Lean</span> </div>
@@ -25141,9 +25141,9 @@ href="#def:yekutieli-triple">Yekutieli triple</a>).</em></p>
 <p><span id="rem:quantum-temperature-interpretation"
 data-label="rem:quantum-temperature-interpretation"></span></p>
 <div id="def:quantum-pressure" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2065" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Definition 8.17 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.quantumPressure" target="_blank" title="Lean: QOU.Information.quantumPressure">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-pressure">Quantum pressure</a></span>).
+<p><strong>Definition 8.17 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.boundaryPressure" target="_blank" title="Lean: QOU.Information.boundaryPressure">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-pressure">Quantum pressure</a></span>).
 <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.quantumPressure"><sup><span
+href="https://litlfred.github.io/qou/lean/QOU.Information.boundaryPressure"><sup><span
 style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
@@ -25231,9 +25231,9 @@ class="math inline">\(\mathrm{Vol}(S^3) = 2\pi^2\)</span>.</em></p>
 <p><span id="rem:quantum-volume-interpretation"
 data-label="rem:quantum-volume-interpretation"></span></p>
 <div id="prop:quantum-ideal-gas-law" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2164" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.19 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.quantumIdealGasLaw" target="_blank" title="Lean: QOU.Information.quantumIdealGasLaw">&#x2200; stated</a></strong> (<span>Quantum ideal gas
+<p><strong>Proposition 8.19 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.IdealKnotGas" target="_blank" title="Lean: QOU.Information.IdealKnotGas">&#x2200; stated</a></strong> (<span>Quantum ideal gas
 law</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.quantumIdealGasLaw"><sup><span
+href="https://litlfred.github.io/qou/lean/QOU.Information.IdealKnotGas"><sup><span
 style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
@@ -25290,48 +25290,50 @@ equation of state. <span class="math inline">\(\square\)</span></em></p>
 <p><span id="rem:quantum-ideal-gas-law-interpretation"
 data-label="rem:quantum-ideal-gas-law-interpretation"></span></p>
 <div id="prop:boltzmann-constant" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2228" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.20 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.boltzmannConstant" target="_blank" title="Lean: QOU.Information.boltzmannConstant">&#x2200; stated</a></strong> (<span>Boltzmann constant as
-<a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a></span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.boltzmannConstant"><sup><span
+<p><strong>Proposition 8.20 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.thermalEnergy" target="_blank" title="Lean: QOU.Information.thermalEnergy">&#x2200; stated</a></strong> (<span>Boltzmann constant is unity
+in QOU natural units</span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.thermalEnergy"><sup><span
 style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>The Boltzmann constant is the <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>:</em></p>
-<p><em><span class="math display">\[k_B \;=\; \hbar_q \;=\; \frac{q -
-1}{q}.\]</span></em></p>
+<p><em>In QOU natural units, the Boltzmann constant is unity:</em></p>
+<p><em><span class="math display">\[k_B \;=\; 1.\]</span></em></p>
+<p><em>The <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a> <span
+class="math inline">\(\hbar_q\)</span> plays the role of the classical
+product <span class="math inline">\(k_B T\)</span>:</em></p>
+<p><em><span class="math display">\[k_B \, T_{\mathrm{phys}} \;=\;
+\hbar_q \;=\; \frac{q-1}{q}.\]</span></em></p>
 <p><em><em>Proof.</em> The <a class="defn-link" href="#prop:quantum-ideal-gas-law">quantum ideal gas law</a> (<a
 href="#prop:quantum-ideal-gas-law">quantum ideal gas law</a>) gives
 <span class="math inline">\(P_q V_q = N T_q = N \hbar_q\)</span> at
-leading order. Comparing with the classical form <span
-class="math inline">\(PV = N k_B T\)</span>, and using <span
+leading order. The classical form is <span class="math inline">\(PV = N
+k_B T\)</span>. In the QOU, the temperature <span
 class="math inline">\(T_q = \hbar_q\)</span> (<a
-href="#def:quantum-temperature">quantum temperature</a>):</em></p>
+href="#def:quantum-temperature">quantum temperature</a>) already carries
+units of energy (it is the Reeb tick rate, not a statistical parameter).
+Comparing:</em></p>
 <p><em><span class="math display">\[N \, k_B \, T_q \;=\; N \, \hbar_q
   \quad\Longrightarrow\quad
-  k_B \, \hbar_q \;=\; \hbar_q
-  \quad\Longrightarrow\quad
   k_B \;=\; 1.\]</span></em></p>
-<p><em>But the QOU temperature <span class="math inline">\(T_q =
-\hbar_q\)</span> already absorbs what is classically the factor <span
-class="math inline">\(k_B T\)</span>. The structural identification is:
-in the QOU, the role of <span class="math inline">\(k_B T\)</span> in
-classical physics is played by <span
-class="math inline">\(\hbar_q\)</span> alone. The "Boltzmann constant"
-is not a separate quantity — it is <span
-class="math inline">\(\hbar_q\)</span> itself, in the sense that <span
-class="math inline">\(k_B T_{\mathrm{phys}}
-= \hbar_q\)</span> where <span
-class="math inline">\(T_{\mathrm{phys}}\)</span> is physical temperature
-in SI units. <span class="math inline">\(\qquad\square\)</span></em></p>
+<p><em>The Boltzmann constant is unity because the QOU temperature is
+defined in energy units. There is no separate "degrees of freedom"
+temperature scale requiring a conversion factor.</em></p>
+<p><em>In SI, the physical temperature <span
+class="math inline">\(T_{\mathrm{phys}}\)</span> is measured in kelvin,
+and <span class="math inline">\(k_B = 1.381 \times 10^{-23}\)</span> J/K
+converts to energy. The QOU predicts <span class="math inline">\(k_B
+T_{\mathrm{phys}} = \hbar_q\)</span>: the thermal energy per degree of
+freedom equals the <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>. <span
+class="math inline">\(\qquad\square\)</span></em></p>
 </div>
 <p><span id="rem:gas-constant-derivation"
 data-label="rem:gas-constant-derivation"></span><span
 id="ex:hydrogen-partition-function"
 data-label="ex:hydrogen-partition-function"></span></p>
 <h2 id="sec:phase-transitions">Phase Transitions and Sublimation</h2>
-<div id="prop:phase-transition-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2269" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.21 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.phaseTransitionBoundary" target="_blank" title="Lean: QOU.Information.phaseTransitionBoundary">&#x2200; stated</a></strong> (<span>Phase transitions as <span
+<div id="prop:phase-transition-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2278" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Proposition 8.21 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.gasLiquidCriticalTemp" target="_blank" title="Lean: QOU.Information.gasLiquidCriticalTemp">&#x2200; stated</a></strong> (<span>Phase transitions as <span
 class="math inline">\(S^3\)</span> boundary actions</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.phaseTransitionBoundary"><sup><span
+href="https://litlfred.github.io/qou/lean/QOU.Information.gasLiquidCriticalTemp"><sup><span
 style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
@@ -25383,10 +25385,10 @@ invariant of <span class="math inline">\(\pi_3(S^2) =
 </div>
 <p><span id="rem:phase-transition-interpretation"
 data-label="rem:phase-transition-interpretation"></span></p>
-<div id="prop:composite-crossing-parity" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2332" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.22 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.compositeCrossingParity" target="_blank" title="Lean: QOU.Information.compositeCrossingParity">&#x2200; stated</a></strong> (<span>Sublimation from
+<div id="prop:composite-crossing-parity" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2341" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Proposition 8.22 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.crossing_parity_eq_Z" target="_blank" title="Lean: QOU.Information.crossing_parity_eq_Z">&#x2200; stated</a></strong> (<span>Sublimation from
 shell-filling representation theory</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.compositeCrossingParity"><sup><span
+href="https://litlfred.github.io/qou/lean/QOU.Information.crossing_parity_eq_Z"><sup><span
 style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\(\mathcal{A}(Z, N)\)</span> be a
@@ -25466,7 +25468,7 @@ majority (split) wins. <strong>Stable liquid.</strong></em></p></li>
 <p><span id="rem:crossing-parity-test"
 data-label="rem:crossing-parity-test"></span></p>
 <h2 id="sec:horizons-aeons">Horizons and Aeons</h2>
-<div id="def:jet-horizon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2418" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:jet-horizon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2427" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.23 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.JetHorizon" target="_blank" title="Lean: QOU.JetHorizon">&#x2200; stated</a></strong> (<span>Jet horizon (degree-<span
 class="math inline">\(0\)</span> vanishing locus)</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.JetHorizon"><sup><span
@@ -25557,7 +25559,7 @@ class="math inline">\(0\)</span>), only statistical correlations
 (degrees <span class="math inline">\(1\)</span> and <span
 class="math inline">\(2\)</span>).</em></p>
 </div>
-<div id="def:big-bang-state" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2477" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:big-bang-state" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2486" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.24 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BigBangState" target="_blank" title="Lean: QOU.BigBangState">&#x2200; stated</a></strong> (<span>Big bang state (degree-<span
 class="math inline">\(0\)</span> trivial configuration)</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.BigBangState"><sup><span
@@ -25632,7 +25634,7 @@ singularity),</em></p></li>
 indefinitely).</em></p></li>
 </ul>
 </div>
-<div id="def:cmb-boundary-datum" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2533" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:cmb-boundary-datum" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2542" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.25 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBBoundaryDatum" target="_blank" title="Lean: QOU.CMBBoundaryDatum">&#x2200; stated</a></strong> (<span>CMB as boundary datum of a
 big bang state</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CMBBoundaryDatum"><sup><span
@@ -25729,7 +25731,7 @@ aeon’s final state.</em></p>
 data-label="rem:cmb-photon-color-content"></span><span
 id="rem:hawking-radiation"
 data-label="rem:hawking-radiation"></span></p>
-<div id="def:observable-subcategory" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2606" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:observable-subcategory" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2615" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.26 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ObservableSubcategory" target="_blank" title="Lean: QOU.ObservableSubcategory">&#x2200; stated</a></strong> (<span>Observable subcategory <span
 class="math inline">\(\mathrm{Bun}^{\circ}(\mathbb{P}(V))\)</span></span>).
 <em><a
@@ -25778,7 +25780,7 @@ class="math inline">\(\mathrm{Bun}^{\circ}\)</span>, encompassing all
 light cones that can be reached from one another without crossing a jet
 horizon.</em></p>
 </div>
-<div id="def:aeon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2656" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:aeon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2665" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.27 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Aeon" target="_blank" title="Lean: QOU.Aeon">&#x2200; stated</a></strong> (<span>Aeon</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Aeon"><sup><span
 style="color: BurntOrange"><span
@@ -25868,7 +25870,7 @@ need for an explicit interval <span class="math inline">\((a, b) \subset
 \mathbb{Z}\)</span> — the <a class="defn-link" href="#def:aeon">aeon</a> is defined over the full structure of the
 category, encompassing all intersecting light cones.</em></p>
 </div>
-<div id="def:horizon-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2747" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:horizon-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2756" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.28 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.HorizonFunctor" target="_blank" title="Lean: QOU.HorizonFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:horizon-functor">Horizon functor</a></span>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.HorizonFunctor"><sup><span
@@ -25935,7 +25937,7 @@ the set of fixed points of the limiting behaviour <span
 class="math inline">\(\Phi_t^q \to \partial\)</span> as <span
 class="math inline">\(t\)</span> approaches the aeon boundary.</em></p>
 </div>
-<div id="def:cmb-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2811" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:cmb-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2820" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.29 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBFunctor" target="_blank" title="Lean: QOU.CMBFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:cmb-functor">CMB functor</a></span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CMBFunctor"><sup><span
 style="color: BurntOrange"><span
@@ -26017,7 +26019,7 @@ generator of the horizon ideal <span class="math inline">\(\mathfrak{h}
 \subset A_0\)</span>. It depends only on the vanishing locus — the
 conformal class of <span class="math inline">\(A_0\)</span>.</em></p>
 </div>
-<div id="conj:aeon-boundary-generates-chart" class="conjecture"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2879" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="conj:aeon-boundary-generates-chart" class="conjecture"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2888" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Conjecture 8.30 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.aeon_boundary_generates_chart" target="_blank" title="Lean: QOU.aeon_boundary_generates_chart">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:aeon">Aeon</a> recycling: <span
 class="math inline">\(\Phi_1^q \circ \mathrm{CMB}\)</span> lands in
 <span class="math inline">\(\mathrm{Bun}^{\circ}\)</span></span>).
@@ -26094,7 +26096,7 @@ to its successor. A fixed point of <span
 class="math inline">\(\mathcal{R}\)</span> would be a self-recycling
 aeon: one whose CMB regenerates itself.</em></p>
 </div>
-<div id="prop:horizon-conformal-invariance" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2950" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:horizon-conformal-invariance" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L2959" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Proposition 8.31 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.horizon_conformal_invariance" target="_blank" title="Lean: QOU.horizon_conformal_invariance">&#x2200; stated</a></strong> (<span>Conformal invariance at the
 jet horizon</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.horizon_conformal_invariance"><sup><span
@@ -26157,7 +26159,7 @@ conformal data. <strong>Conformal invariance at the horizon is a
 consequence of the observability axioms</strong>, not an additional
 assumption.</em></p>
 </div>
-<div id="prop:qou-is-ccc" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L3002" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:qou-is-ccc" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/quantum-ideal-gas-law-JOn63/chapters/information-theory.tex#L3011" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Proposition 8.32 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qou_is_ccc" target="_blank" title="Lean: QOU.qou_is_ccc">&#x2200; stated</a></strong> (<span>A QOU with aeons is a
 conformal cyclic cosmology</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.qou_is_ccc"><sup><span
