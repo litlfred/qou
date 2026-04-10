@@ -1,23 +1,17 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
-with $N$ particle knots in a region $U$, and let
-$\partial_f\!: S^3_q \to \mathcal{S}_p$ denote the Reeb
-bundle embedding at a brane point $p$
-([Reeb bundle](#def:reeb-bundle)).  A **phase transition**
-occurs at a critical temperature $T_q^{(c)}$ where the
-dominant saddle point of the partition function $Z_q$
-jumps discontinuously between topologically distinct
+with $N$ particle knots in a region $U$.  A **phase
+transition** occurs at a critical temperature $T_q^{(c)}$
+where the dominant saddle point of the partition function
+$Z_q$ jumps discontinuously between topologically distinct
 sectors of $\mathrm{Conf}(U)$.
 
-The critical temperatures are determined by the
-**$S^3$ boundary action**: the restriction of the
-categorical action $S_q$ to the boundary
-$\partial(S^3_q) \cong S^2$ of the fibre,
+The critical temperatures are determined by the **$S^3$
+boundary action**: the restriction of the categorical
+action $S_q$ to $\partial(S^3_q) \cong S^2$,
 
 $$
   S_q^{(\partial)}
   \;:=\;
-  S_q\big|_{\partial(S^3_q)}
-  \;=\;
   \mathrm{tr}_{\mathrm{Ad}}
   \!\oint_{S^2}
   \omega_{\mathcal{F}} \,\wedge\, *\eta_q,
@@ -27,74 +21,13 @@ where the integral is the non-abelian Stokes surface
 integral of the adjoint connection
 ([Yekutieli triple](#def:yekutieli-triple)).
 
-**Mechanism.**
-The $S^3$ fibre at each brane point supports the full
-Reeb dynamics — knot configurations live inside $S^3_q$.
-The boundary $\partial(S^3_q) \cong S^2$ separates
-"inside the fibre" from "between fibres".  At a phase
-transition, the energetically dominant configurations
-shift from being **fibre-localised** (knots contained
-within individual $S^3$ fibres) to **fibre-delocalised**
-(knots linking across multiple fibres via the Hopf
-structure of $S^3$).
-
-This is controlled by the Hecke algebra representation.
-The Hecke algebra $H_n(q)$ has different irreducible
-representations corresponding to different Young diagrams.
-At generic $T_q$, the partition function is dominated by
-one representation (one phase).  At $T_q^{(c)}$, two
-representations contribute equally — the partition
-function has a non-analyticity.
-
-**The three phases.**
-
-1. **Gas (fibre-localised, free braids).**
-   At high $T_q$ (large $\hbar_q$, deep quantum regime),
-   each knot $K$ is confined to a single $S^3_q$ fibre.
-   The Hecke generators $T_i$ act within the fibre,
-   and the dominant representation is the
-   **symmetric channel**: the eigenvalue $q$ of
-   $(T - q)(T + q^{-1}) = 0$.  The knots are
-   maximally free to braid within their fibres.
-   The equation of state is the quantum ideal gas law
-   ([quantum ideal gas law](#prop:quantum-ideal-gas-law)).
-
-2. **Liquid (fibre-linked, correlated braids).**
-   At intermediate $T_q$, the $S^3$ boundary action
-   $S_q^{(\partial)}$ becomes comparable to $T_q$.
-   Knots begin to link across neighbouring fibres via
-   Hopf links through $\partial(S^3_q)$.  The dominant
-   Hecke representation transitions to a
-   **mixed channel**: neither purely symmetric nor
-   antisymmetric.  The inter-fibre linking creates
-   correlations — the gas becomes a liquid.  The
-   correction term in $P_q V_q$ grows as the
-   inter-fibre contributions to $\langle S_q \rangle$
-   become significant.
-
-3. **Solid (fibre-locked, rigid braid lattice).**
-   At low $T_q$ (small $\hbar_q$, near-classical regime),
-   the inter-fibre links dominate.  Knots form a
-   rigid lattice of braids connecting adjacent $S^3$
-   fibres, locked by the **antisymmetric channel**:
-   the eigenvalue $-q^{-1}$ of the Hecke relation.
-   The braid group representation on $\mathrm{Conf}(U)$
-   becomes effectively one-dimensional (the sign
-   representation).  This is the solid phase.
-
-**Critical temperatures.**
-
 The gas--liquid critical temperature is
 
 $$
   T_q^{(g \to l)}
   \;=\;
-  \frac{S_q^{(\partial)}}{[2]_q},
+  \frac{S_q^{(\partial)}}{[2]_q}.
 $$
-
-where $S_q^{(\partial)}$ is the $S^3$ boundary action.
-This is the temperature at which the thermal energy equals
-the cost of threading a Hopf link through the $S^2$ boundary.
 
 The liquid--solid critical temperature is
 
@@ -105,24 +38,11 @@ $$
 $$
 
 where $n_K$ is the crossing number of the particle knot.
-The additional factor $[n_K]_q$ reflects that locking $n_K$
-crossings into a rigid lattice requires $[n_K]_q$ times
-more boundary action than a single Hopf link.
 
-**Sublimation.**
 The direct solid--gas transition (sublimation) occurs when
-the intermediate liquid phase is **topologically
-obstructed**.  This happens when the Hecke representation
-at intermediate temperatures is reducible but
-**indecomposable** — it cannot split into symmetric and
-antisymmetric summands because the $S^3$ boundary has
-non-trivial $\pi_3(S^2) = \mathbb{Z}$ (the Hopf
-invariant).
-
-Concretely: for a composite knot $K$ whose minimal
-crossing number $n_K$ is odd, the Hecke algebra
-$H_{n_K}(q)$ at the mixed-channel temperature has a
-**non-split extension**
+the intermediate liquid phase is topologically obstructed:
+the Hecke representation at the mixed-channel temperature
+admits a non-split extension
 
 $$
   0 \;\to\; V_{\mathrm{sym}} \;\to\;
@@ -130,43 +50,6 @@ $$
   V_{\mathrm{asym}} \;\to\; 0
 $$
 
-that does not split because the extension class lives
-in $\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}},
+classified by $\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}},
 V_{\mathrm{sym}}) \cong \mathbb{Z}$, generated by the
-Hopf invariant.  When this extension is non-trivial,
-the liquid phase is unstable — the system jumps directly
-from solid to gas.
-
-**Conjecture (sublimation parity).**
-For hydrogen ($K_H = \mathcal{A}(1,0)$), the composite
-knot crossing number $n_K = 6$ is even and the extension
-splits: hydrogen has a stable liquid phase (confirmed:
-liquid H exists at $\sim 20\,\mathrm{K}$).  The
-conjecture is that atoms whose composite nuclear knot has
-odd minimal crossing number prefer sublimation.  Testing
-this requires computing the minimal crossing number of the
-composite nuclear knot ${}^A_Z\!\mathcal{K}$, which involves
-$\binom{A}{2}$ inter-nucleon crossings plus internal
-structure — a non-trivial knot-theoretic calculation for
-$A > 4$.  A rough proxy ($\binom{A}{2} \bmod 2$, which is
-odd when $A \equiv 2, 3 \pmod{4}$) gives suggestive
-correlations (arsenic $A = 75$, iodine $A = 127$ both
-sublime) but also counterexamples (copper $A = 63$ melts
-normally), indicating that the full composite crossing
-number is needed, not just the inter-nucleon count.
-
-**Connection to classical phase diagrams.**
-In the classical theory, phase transitions arise from
-inter-particle potentials (van der Waals, Lennard-Jones)
-added *ad hoc* to the ideal gas.  In the QOU, inter-particle
-interactions are not added — they are **already present**
-as inter-fibre braid linking through $\partial(S^3_q)$.
-The $S^3$ topology of the fibre provides the "potential"
-(through its boundary action), and the Hecke representation
-theory provides the discrete phase structure.
-
-The triple point, where all three phases coexist, occurs
-at the temperature where the partition function has
-**three** equally dominant Hecke representations.  This is
-a codimension-2 condition in the $(T_q, P_q)$ plane,
-consistent with the Gibbs phase rule.
+Hopf invariant of $\pi_3(S^2) = \mathbb{Z}$.

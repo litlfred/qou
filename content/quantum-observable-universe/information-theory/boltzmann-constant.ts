@@ -1,14 +1,12 @@
-import { definition } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default definition({
-  label: "def:boltzmann-constant",
-  title: "Boltzmann constant and gas constant from $q$",
+export default proposition({
+  label: "prop:boltzmann-constant",
+  title: "Boltzmann constant as quantum Planck constant",
   tags: [
     "boltzmann-constant",
-    "gas-constant",
     "statistical-mechanics",
     "planck-constant",
-    "avogadro",
   ],
   lean: {
     decl: "QOU.Information.boltzmannConstant",
