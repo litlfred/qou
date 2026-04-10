@@ -13,14 +13,18 @@ use rustc_hash::FxHashMap;
 use std::collections::BTreeMap;
 use std::time::Instant;
 
+// Prime for modular arithmetic. For A > 12, use multiple primes
+// via the --prime flag and reconstruct via CRT externally.
 const P: u64 = 1_000_000_007;
 
-fn ma(a: u64, b: u64) -> u64 { ((a as u128 + b as u128) % P as u128) as u64 }
-fn ms(a: u64, b: u64) -> u64 { if a >= b { a - b } else { P - b + a } }
-fn mm(a: u64, b: u64) -> u64 { ((a as u128 * b as u128) % P as u128) as u64 }
-fn mi(a: u64) -> u64 { // modular inverse via Fermat
-    let mut r = 1u64; let mut b = a; let mut e = P - 2;
-    while e > 0 { if e & 1 == 1 { r = mm(r, b); } e >>= 1; b = mm(b, b); }
+type C = u64; // coefficient type
+
+fn ma(a: C, b: C) -> C { ((a as u128 + b as u128) % P as u128) as C }
+fn ms(a: C, b: C) -> C { if a >= b { a - b } else { (P as C) - b + a } }
+fn mm(a: C, b: C) -> C { ((a as u128 * b as u128) % P as u128) as C }
+fn mi(a: C) -> C {
+    let mut r: C = 1; let mut base = a; let mut e = P - 2;
+    while e > 0 { if e & 1 == 1 { r = mm(r, base); } e >>= 1; base = mm(base, base); }
     r
 }
 
@@ -298,7 +302,7 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
     let mut pn_count = 0u32;
     let mut acc_alt = LP::zero();
     let mut acc_net = LP::zero();
-    let strip_from = if a <= 12 { 999usize } else { 2 };
+    let strip_from = 999usize; // NO stripping — compute full NF
 
     for k in 1..a {
         for i in 0..k {
@@ -317,10 +321,10 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
         eprintln!("  strand {}/{}: {} words, {} alt terms", k, a-1, tree.len(), acc_alt.n());
     }
 
-    // Final strip: same as v9 — strip to convergence, accumulate
-    let (final_alt, final_net) = strip_tree(&mut tree);
-    acc_alt = acc_alt.add(&final_alt);
-    acc_net = acc_net.add(&final_net);
+    // NO final strip — keep full NF for comparison
+    // let (final_alt, final_net) = strip_tree(&mut tree);
+    // acc_alt = acc_alt.add(&final_alt);
+    // acc_net = acc_net.add(&final_net);
 
     eprintln!("  After final strip: {} words", tree.len());
     for (w, c) in &tree {
@@ -336,6 +340,19 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
         if wl % 2 == 0 { acc_alt = acc_alt.add(&shifted); }
         else { acc_alt = acc_alt.sub(&shifted); }
         acc_net = acc_net.add(c);
+    }
+
+    // Dump final polynomials for debugging
+    let hp = P / 2;
+    eprintln!("  FINAL acc_alt ({} terms):", acc_alt.n());
+    for (&k, &v) in &acc_alt.t {
+        let c = if v > hp { -((P - v) as i64) } else { v as i64 };
+        eprintln!("    t^{}: {}", k, c);
+    }
+    eprintln!("  FINAL acc_net ({} terms):", acc_net.n());
+    for (&k, &v) in &acc_net.t {
+        let c = if v > hp { -((P - v) as i64) } else { v as i64 };
+        eprintln!("    t^{}: {}", k, c);
     }
 
     // Evaluate: split even/odd powers, compute mod P
@@ -361,6 +378,12 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
     let half_p = P / 2;
     let divisor = 2.0_f64.powi(pn_count as i32);
 
+    // Evaluate mod-p polynomial at t₀ as float.
+    // For correct sign recovery: the TRUE coefficient c satisfies
+    // c ≡ v (mod P). Since |c| < P for A ≤ 12 (coefficients small),
+    // we can safely interpret v > P/2 as negative.
+    // For A > 12: coefficients can exceed P, making sign recovery wrong.
+    // In that case, use the Pauli accumulator's per-length data.
     let eval_float = |lp: &LP| -> f64 {
         lp.t.iter().map(|(&k, &v)| {
             let c = if v > half_p { -((P - v) as f64) } else { v as f64 };
