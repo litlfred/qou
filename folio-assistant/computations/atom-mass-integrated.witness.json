@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-10T11:48:38.304870+00:00",
-  "commitSha": "2de7d2b6b96917de9a131a3877fa44b8bd58ec0c",
+  "computedAt": "2026-04-10T12:02:57.920887+00:00",
+  "commitSha": "a681e14fe742717ce4f481d634300b5482a98921",
   "assertions": [],
   "allPassed": true,
   "durationMs": 4,
@@ -84,7 +84,7 @@
         "Z": 8,
         "N": 8,
         "phi": -15.435659743886026,
-        "f_pauli": 2.6393505627454155,
+        "f_pauli": 0.011708474005197436,
         "fp_source": "certificate",
         "cert": true
       },
@@ -93,7 +93,7 @@
         "Z": 9,
         "N": 10,
         "phi": -15.617388571827101,
-        "f_pauli": 1.1978666890541274,
+        "f_pauli": 0.13348103197706362,
         "fp_source": "certificate",
         "cert": true
       },
@@ -102,7 +102,7 @@
         "Z": 10,
         "N": 10,
         "phi": -15.653506360034102,
-        "f_pauli": 0.867949072053096,
+        "f_pauli": 1.1338339951516179,
         "fp_source": "certificate",
         "cert": true
       },
@@ -111,7 +111,7 @@
         "Z": 11,
         "N": 12,
         "phi": -15.072758810958813,
-        "f_pauli": 4.110698374384874,
+        "f_pauli": 1.807566401015614,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -120,7 +120,7 @@
         "Z": 12,
         "N": 12,
         "phi": -14.796046312779522,
-        "f_pauli": 1.7152717692394603,
+        "f_pauli": 0.5334822080945103,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -129,7 +129,7 @@
         "Z": 13,
         "N": 14,
         "phi": -13.620253009430485,
-        "f_pauli": 3.611446132624076,
+        "f_pauli": 1.50861890605571,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -138,7 +138,7 @@
         "Z": 14,
         "N": 14,
         "phi": -12.91880224882311,
-        "f_pauli": 1.7152717692394603,
+        "f_pauli": 0.5334822080945103,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -147,7 +147,7 @@
         "Z": 15,
         "N": 16,
         "phi": -11.029158682218503,
-        "f_pauli": 3.2806416392122797,
+        "f_pauli": 1.3192487569056448,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -156,7 +156,7 @@
         "Z": 16,
         "N": 16,
         "phi": -10.070695492816004,
-        "f_pauli": 1.7152717692394603,
+        "f_pauli": 0.5334822080945103,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -165,7 +165,7 @@
         "Z": 17,
         "N": 18,
         "phi": -7.557224608535614,
-        "f_pauli": 3.0463021785412914,
+        "f_pauli": 1.18956664691809,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -183,7 +183,7 @@
         "Z": 19,
         "N": 20,
         "phi": -3.049651325011658,
-        "f_pauli": 2.8720327447225946,
+        "f_pauli": 1.0956425701817119,
         "fp_source": "interpolated",
         "cert": false
       },
