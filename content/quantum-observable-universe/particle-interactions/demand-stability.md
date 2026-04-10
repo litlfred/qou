@@ -86,7 +86,7 @@ nucleon pairs:
 $$
   C_{pp} \cdot C_{pp} = H_A \cdot C_{pp} + \mathbf{1},
   \qquad
-  C_{nn} \cdot C_{nn} = H_A \cdot C_{nn} + \mathbf{1}.
+  C_{nn} \cdot C_{nn} = \mathbf{1} - H_A \cdot C_{nn}.
 $$
 
 These are instances of the Hecke relation $\sigma_i^2 = H_A \sigma_i + \mathbf{1}$

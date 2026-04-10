@@ -102,12 +102,7 @@ def r_matrix_N(N):
                 # q-weight factor for the diagonal contribution
                 qfactor = q0 - 1.0 / q0  # HA
                 # Only adjacent weights get the (q-q⁻¹) term
-                R[idx(j, k), idx(j, k)] = qfactor * math.sqrt(
-                    q_int(k - j) * q_int(N - k + j)
-                    / (q_int(k - j) * q_int(1))
-                ) if k == j + 1 else 0.0
-                if k == j + 1:
-                    R[idx(j, k), idx(j, k)] = HA
+                R[idx(j, k), idx(j, k)] = HA if k == j + 1 else 0.0
             else:  # j > k
                 R[idx(j, k), idx(k, j)] = 1.0
 
