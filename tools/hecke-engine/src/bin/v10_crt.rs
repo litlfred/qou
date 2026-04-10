@@ -264,8 +264,11 @@ fn strip_tree(tree: &mut Tree) -> (LP, LP) {
             let prefix = w.drop_last();
             if tree.get(&prefix).map_or(true, |c| c.is_zero()) { continue; }
             if let Some(c) = tree.remove(w) {
-                if w.len() % 2 == 0 { alt = alt.add(&c); }
-                else { alt = alt.sub(&c); }
+                // Alternating character: (-1)^ℓ × t^{-2ℓ} × coeff
+                let wl = w.len() as i32;
+                let shifted = LP { t: c.t.iter().map(|(k,v)| (k - 2*wl, *v)).collect() };
+                if wl % 2 == 0 { alt = alt.add(&shifted); }
+                else { alt = alt.sub(&shifted); }
                 net = net.add(&c);
                 any = true;
             }
@@ -290,7 +293,7 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
     let mut pn_count = 0u32;
     let mut acc_alt = LP::zero();
     let mut acc_net = LP::zero();
-    let strip_from = if a <= 10 { 999usize } else { 2 };
+    let strip_from = if a <= 12 { 999usize } else { 2 };
 
     for k in 1..a {
         for i in 0..k {
@@ -309,10 +312,12 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
         eprintln!("  strand {}/{}: {} words, {} alt terms", k, a-1, tree.len(), acc_alt.n());
     }
 
-    // Final: accumulate remaining
+    // Final: accumulate remaining with correct alternating character
     for (w, c) in &tree {
-        if w.len() % 2 == 0 { acc_alt = acc_alt.add(c); }
-        else { acc_alt = acc_alt.sub(c); }
+        let wl = w.len() as i32;
+        let shifted = LP { t: c.t.iter().map(|(k,v)| (k - 2*wl, *v)).collect() };
+        if wl % 2 == 0 { acc_alt = acc_alt.add(&shifted); }
+        else { acc_alt = acc_alt.sub(&shifted); }
         acc_net = acc_net.add(c);
     }
 
