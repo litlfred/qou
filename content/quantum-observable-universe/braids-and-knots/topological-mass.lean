@@ -16,6 +16,11 @@ idempotent splitting of End_𝒞(A_{n+1}) and the linearity of the trace.
 ## References
 
 - [manuscript] §3 Lifting and Descent
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Algebra.Module.Basic

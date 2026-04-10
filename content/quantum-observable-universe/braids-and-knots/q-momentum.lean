@@ -9,9 +9,15 @@ LaTeX label: `def:q-momentum`
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
 - [manuscript] §6/q-momentum
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Tactic.Ring
@@ -22,16 +28,23 @@ import Mathlib.Analysis.SpecificLimits.Basic
 
 namespace QOU.Descartes
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- The q-momentum of a braid, computed from its crossing signs.
     Each positive crossing contributes +1, each negative contributes -1,
     weighted by q-deformation. -/
 -- Ref: [manuscript] §6/q-momentum
-noncomputable def qMomentum (q : ℝ) (crossingSigns : List ℤ) : ℝ :=
+noncomputable def qMomentum (q : R_q) (crossingSigns : List ℤ) : R_q :=
   crossingSigns.foldl (fun acc ε =>
     acc + (q ^ (2 * ε) - 1) / (q ^ 2 - 1)) 0
 
 /-- Helper: foldl with additive function decomposes over cons. -/
-private lemma foldl_qMomentum_acc (q : ℝ) (acc : ℝ) (signs : List ℤ) :
+private lemma foldl_qMomentum_acc (q : R_q) (acc : R_q) (signs : List ℤ) :
     List.foldl (fun a ε => a + (q ^ (2 * ε) - 1) / (q ^ 2 - 1)) acc signs =
     acc + List.foldl (fun a ε => a + (q ^ (2 * ε) - 1) / (q ^ 2 - 1)) 0 signs := by
   induction signs generalizing acc with
@@ -42,9 +55,9 @@ private lemma foldl_qMomentum_acc (q : ℝ) (acc : ℝ) (signs : List ℤ) :
     ring
 
 /-- Helper: the integer sum foldl decomposes over cons similarly. -/
-private lemma foldl_intSum_acc (acc : ℝ) (signs : List ℤ) :
+private lemma foldl_intSum_acc (acc : R_q) (signs : List ℤ) :
     List.foldl (fun a (s : ℤ) => a + ↑s) acc signs =
-    acc + List.foldl (fun a (s : ℤ) => a + ↑s) (0 : ℝ) signs := by
+    acc + List.foldl (fun a (s : ℤ) => a + ↑s) (0 : R_q) signs := by
   induction signs generalizing acc with
   | nil => simp [List.foldl]
   | cons s ss ih =>
@@ -66,7 +79,7 @@ private lemma foldl_intSum_acc (acc : ℝ) (signs : List ℤ) :
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] Ch. 6, §q-momentum
 private lemma single_term_limit_pos_one :
-    ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
+    ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, 0 < |q - 1| → |q - 1| < δ →
       |(q ^ (2 * (1 : ℤ)) - 1) / (q ^ 2 - 1) - ↑(1 : ℤ)| < ε := by
   intro ε hε
   refine ⟨1, one_pos, fun q hq _ => ?_⟩
@@ -101,7 +114,7 @@ private lemma single_term_limit_pos_one :
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] Ch. 6, §q-momentum
 private lemma single_term_limit (s : ℤ) :
-    ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
+    ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, 0 < |q - 1| → |q - 1| < δ →
       |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - ↑s| < ε := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   sorry
@@ -113,8 +126,8 @@ private lemma single_term_limit (s : ℤ) :
 theorem qMomentum_classical_limit (signs : List ℤ) :
     -- In the q → 1 limit, each term (q^{2ε} - 1)/(q² - 1) → ε
     -- So q-momentum → writhe = Σε
-    ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
-      |qMomentum q signs - (signs.foldl (fun acc s => acc + ↑s) (0 : ℝ))| < ε := by
+    ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, 0 < |q - 1| → |q - 1| < δ →
+      |qMomentum q signs - (signs.foldl (fun acc s => acc + ↑s) (0 : R_q))| < ε := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Each term (q^{2ε} - 1)/(q² - 1) → ε by L'Hôpital as q → 1
   -- Ref: [manuscript] Ch. 6, §q-momentum
@@ -128,7 +141,7 @@ theorem qMomentum_classical_limit (signs : List ℤ) :
     -- Inductive step: decompose foldl over (s :: ss)
     intro ε hε
     -- Get δ₁ from the inductive hypothesis for the tail with ε/2
-    have hε2 : (0 : ℝ) < ε / 2 := by linarith
+    have hε2 : (0 : R_q) < ε / 2 := by linarith
     obtain ⟨δ₁, hδ₁_pos, hδ₁⟩ := ih (ε / 2) hε2
     -- Get δ₂ from single_term_limit for the head with ε/2
     obtain ⟨δ₂, hδ₂_pos, hδ₂⟩ := single_term_limit s (ε / 2) hε2
@@ -141,15 +154,15 @@ theorem qMomentum_classical_limit (signs : List ℤ) :
     have h_head := hδ₂ q hq_pos hq_lt₂
     -- Reduce to foldl form
     show |qMomentum q (s :: ss) -
-          List.foldl (fun acc s => acc + ↑s) (0 : ℝ) (s :: ss)| < ε
+          List.foldl (fun acc s => acc + ↑s) (0 : R_q) (s :: ss)| < ε
     -- Key decomposition lemmas for qMomentum and the integer sum
     have hq_decomp : qMomentum q (s :: ss) =
         (q ^ (2 * s) - 1) / (q ^ 2 - 1) + qMomentum q ss := by
       simp only [qMomentum, List.foldl]
       rw [foldl_qMomentum_acc]
       ring
-    have hint_decomp : List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : ℝ) (s :: ss) =
-        (s : ℝ) + List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : ℝ) ss := by
+    have hint_decomp : List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : R_q) (s :: ss) =
+        (s : R_q) + List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : R_q) ss := by
       simp only [List.foldl]
       rw [foldl_intSum_acc]
       ring
@@ -158,15 +171,15 @@ theorem qMomentum_classical_limit (signs : List ℤ) :
     -- = |(term_s - ↑s) + (qMom_tail - int_tail)| < ε
     have hrearrange :
         (q ^ (2 * s) - 1) / (q ^ 2 - 1) + qMomentum q ss -
-        ((s : ℝ) + List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : ℝ) ss) =
-        ((q ^ (2 * s) - 1) / (q ^ 2 - 1) - (s : ℝ)) +
-        (qMomentum q ss - List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : ℝ) ss) := by
+        ((s : R_q) + List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : R_q) ss) =
+        ((q ^ (2 * s) - 1) / (q ^ 2 - 1) - (s : R_q)) +
+        (qMomentum q ss - List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : R_q) ss) := by
       ring
     rw [hrearrange]
-    calc |((q ^ (2 * s) - 1) / (q ^ 2 - 1) - (s : ℝ)) +
-          (qMomentum q ss - List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : ℝ) ss)|
-        ≤ |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - (s : ℝ)| +
-          |qMomentum q ss - List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : ℝ) ss| :=
+    calc |((q ^ (2 * s) - 1) / (q ^ 2 - 1) - (s : R_q)) +
+          (qMomentum q ss - List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : R_q) ss)|
+        ≤ |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - (s : R_q)| +
+          |qMomentum q ss - List.foldl (fun acc (s : ℤ) => acc + ↑s) (0 : R_q) ss| :=
         abs_add _ _
       _ < ε / 2 + ε / 2 := add_lt_add h_head h_tail
       _ = ε := by ring

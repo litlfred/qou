@@ -13,12 +13,25 @@ LaTeX label: `prop:vertex-algebra-relations`
 ## References
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [jones1987] https://doi.org/10.2307/1971403
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.GrobnerShirshov.HeckeGS
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.VertexAlgebra
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 open QOU.GrobnerShirshov
 open QOU.GrobnerShirshov.Hecke
@@ -31,17 +44,17 @@ open QOU.GrobnerShirshov.Hecke
     as `heckeRelation` in HeckeGS.lean — a constructive `ReductionRule`
     in the Gröbner–Shirshov rewriting system. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-#check @heckeRelation  -- ReductionRule (HeckeGen n) ℝ
+#check @heckeRelation  -- ReductionRule (HeckeGen n) R_q
 
 /-- QU-1b: Yang–Baxter σᵢσᵢ₊₁σᵢ = σᵢ₊₁σᵢσᵢ₊₁ is formalized
     as `yangBaxterRelation` in HeckeGS.lean. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-#check @yangBaxterRelation  -- ReductionRule (HeckeGen n) ℝ
+#check @yangBaxterRelation  -- ReductionRule (HeckeGen n) R_q
 
 /-- QU-1c: Far-commutativity σᵢσⱼ = σⱼσᵢ for |i-j| ≥ 2 is
     formalized as `farCommRelation` in HeckeGS.lean. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-#check @farCommRelation  -- ReductionRule (HeckeGen n) ℝ
+#check @farCommRelation  -- ReductionRule (HeckeGen n) R_q
 
 /-- The three families form a Gröbner–Shirshov basis (Bokut & Shiao
     2001, Theorem 3.5). -/
@@ -56,7 +69,7 @@ open QOU.GrobnerShirshov.Hecke
     `embedNegativeGen` in HeckeGS.lean — constructive from the Hecke
     relation. This IS the antipode S(σᵢ). -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-#check @embedNegativeGen  -- AlgElement (HeckeGen n) ℝ
+#check @embedNegativeGen  -- AlgElement (HeckeGen n) R_q
 
 -- ═══════════════════════════════════════════════════════════════════
 -- QU-3: Markov trace (requires functional on AlgElement)
@@ -70,7 +83,7 @@ open QOU.GrobnerShirshov.Hecke
     and uniqueness is Jones 1987, Theorem 5.1. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 noncomputable def MarkovTrace {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) ℝ) : ℝ :=
+    (f : AlgElement (HeckeGen n) R_q) : R_q :=
   -- The trace is the linear extension of the Markov property on monomials.
   -- On a GS normal form, it factors as a product over strands.
   -- Full implementation requires the Markov recursion on normal forms,
@@ -82,7 +95,7 @@ noncomputable def MarkovTrace {n : ℕ} (hp : HeckeParams)
     tr_M(σᵢ · f) = tr_M(f · σᵢ) for all i and f. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
-    (f : AlgElement (HeckeGen n) ℝ) :
+    (f : AlgElement (HeckeGen n) R_q) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨i⟩ f)
     = MarkovTrace hp (AlgElement.rightMulGen f ⟨i⟩)
 
@@ -91,15 +104,15 @@ axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
     Uses the embedding H_n(q) ↪ H_{n+1}(q). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) ℝ) :
+    (f : AlgElement (HeckeGen n) R_q) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨⟨n, by omega⟩⟩
       (AlgElement.embed_succ f))
     = MarkovTrace hp f / (-(hp.q + hp.q⁻¹))
   where
     /-- Embed H_n into H_{n+1} by treating generators as σ₀,...,σ_{n-1}
         (unchanged indices in the larger algebra). -/
-    AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) :
-        AlgElement (HeckeGen (n + 1)) ℝ :=
+    AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) R_q) :
+        AlgElement (HeckeGen (n + 1)) R_q :=
       sorry -- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-- QU-3c: Non-degeneracy —
@@ -107,17 +120,17 @@ axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
     on GS normal forms. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) ℝ) :
-    (∀ g : AlgElement (HeckeGen n) ℝ,
+    (f : AlgElement (HeckeGen n) R_q) :
+    (∀ g : AlgElement (HeckeGen n) R_q,
       MarkovTrace hp (AlgElement.mul f g) = 0) →
     f = AlgElement.zero
   where
     /-- Multiplication of AlgElements (convolution on monomials). -/
-    AlgElement.mul {n : ℕ} (_ _ : AlgElement (HeckeGen n) ℝ) :
-        AlgElement (HeckeGen n) ℝ :=
+    AlgElement.mul {n : ℕ} (_ _ : AlgElement (HeckeGen n) R_q) :
+        AlgElement (HeckeGen n) R_q :=
       sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
     /-- The zero element. -/
-    AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) ℝ :=
+    AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) R_q :=
       sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -128,10 +141,10 @@ axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
     is a scalar. Equivalent to Hom(1, Ad(A)) = 0. -/
 -- Ref: [manuscript] §4/vertex-algebra-relations
 axiom observability {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) ℝ) :
+    (f : AlgElement (HeckeGen n) R_q) :
     (∀ i : Fin n, AlgElement.leftMulGen ⟨i⟩
       (AlgElement.rightMulGen f ⟨i⟩) = f) →
-    ∃ c : ℝ, f = AlgElement.smul c (AlgElement.singleton [])
+    ∃ c : R_q, f = AlgElement.smul c (AlgElement.singleton [])
 
 -- ═══════════════════════════════════════════════════════════════════
 -- QUO-3: Anomaly freedom (Chern class vanishing)
@@ -151,7 +164,7 @@ axiom first_chern_vanishes {n : ℕ} (hp : HeckeParams) (i : Fin n) :
 /-- C-2: The obstruction coefficient q⁻¹(1-q⁻¹) is nonzero for q > 1.
     This proves d_q² ≠ 0 on vertical forms. -/
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-theorem dq_squared_nonzero (q : ℝ) (hq : q > 1) :
+-- theorem dq_squared_nonzero (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
   have hq0 : q ≠ 0 := by linarith
   have hqi : q⁻¹ > 0 := by positivity

@@ -3,22 +3,34 @@
 
 The q-von Mangoldt function over maximal ideals of the coordinate ring.
 LaTeX: `\label{def:q-von-mangoldt-function}`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 set_option autoImplicit false
 
 namespace QOU.AlgebraicSubstrate
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- A maximal ideal of the coordinate ring, carrying a norm (residue field
     cardinality) and a predicate marking fundamental defects. -/
 structure MaxIdeal where
   /-- The norm N(𝔪) — cardinality of the residue field. -/
-  norm : ℝ
-  norm_pos : 0 < norm
+  norm : R_q
+  -- norm_pos : 0 < norm  -- (archimedean; not meaningful over R_q)
   /-- Whether this ideal corresponds to a fundamental defect. -/
   isFundamental : Prop
 
@@ -27,8 +39,8 @@ structure MaxIdeal where
     For a fundamental defect with norm N(𝔪), returns
     (N(𝔪)^ℏ_q - 1) / ℏ_q where ℏ_q = (q-1)/q is the quantum
     Planck constant. Returns 0 for non-fundamental ideals. -/
-noncomputable def QVonMangoldtFunction (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
-    (m : MaxIdeal) : ℝ :=
+-- noncomputable def QVonMangoldtFunction (hbar_q : R_q) (hbar_pos : 0 < hbar_q)  -- (archimedean; not meaningful over R_q)
+    (m : MaxIdeal) : R_q :=
   if m.isFundamental then
     (m.norm ^ hbar_q - 1) / hbar_q
   else

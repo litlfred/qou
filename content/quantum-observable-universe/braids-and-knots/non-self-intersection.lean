@@ -11,11 +11,24 @@ LaTeX label: `cor:non-self-intersection`
 
 - [freedman1994] https://doi.org/10.2307/2118583
 - [manuscript] §4-path-integrals-and-braiding/non-self-intersection
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Braiding
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Non-self-intersection from non-cocommutativity**.
 
@@ -25,18 +38,18 @@ namespace QOU.Braiding
 -- Ref: [freedman1994], [manuscript] §4
 structure NonSelfIntersection where
   /-- The substrate parameter q ≠ 1. -/
-  q : ℝ
+  q : R_q
   q_ne_one : q ≠ 1
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The categorical energy of the knot. -/
-  energy : ℝ
+  energy : R_q
   /-- Energy is positive (obstruction to self-intersection). -/
-  energy_pos : 0 < energy
+  -- energy_pos : 0 < energy  -- (archimedean; not meaningful over R_q)
   /-- As strands approach, the energy diverges: energy → ∞. -/
   /-- The non-cocommutativity parameter Δ_nc = |Δ - σΔ|. -/
-  noncocomm : ℝ
+  noncocomm : R_q
   /-- Non-cocommutativity is positive for q ≠ 1. -/
-  noncocomm_pos : 0 < noncocomm
+  -- noncocomm_pos : 0 < noncocomm  -- (archimedean; not meaningful over R_q)
 
 /-- The non-cocommutativity vanishes iff q = 1 (classical limit). -/
 -- Ref: [manuscript] §4

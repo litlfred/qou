@@ -7,6 +7,11 @@ part weighted by q⁻¹ and a Reeb (vertical) part weighted by (1 − q⁻¹),
 following directly from d_q = q⁻¹d + (1 − q⁻¹)π_V ∘ d.
 
 LaTeX label: `def:double-slit-q-phase`
+
+**Ground ring**: `ℝ` (archimedean realisation).
+Evaluates formal results at q₀ ≈ 1.1098 for comparison with
+experimental data. NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

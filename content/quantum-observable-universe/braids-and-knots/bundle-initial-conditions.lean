@@ -12,12 +12,25 @@ extends infinitely in either direction is not assumed.
 ## References
 
 - [manuscript] §3 Lifting of Quantum Torsion
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import QOU.KnotTheory
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A bundle initial condition: a finite set of localized knots on CP¹.
     Equivalently, a section of the free commutative monoid on the knot
@@ -41,7 +54,7 @@ def BundleInitialConditions.totalCrossings (b : BundleInitialConditions) : ℕ :
 
 /-- The set of distinct base points in the bundle. -/
 def BundleInitialConditions.basePoints (b : BundleInitialConditions) :
-    List (ℝ × ℝ) :=
+    List (R_q × R_q) :=
   (b.particles.map LocalizedKnot.basePoint).dedup
 
 /-- Size is always positive. -/
@@ -56,7 +69,7 @@ hadrons distributed across P(V). -/
 
 /-- Particles at a given base point. -/
 def BundleInitialConditions.particlesAt (b : BundleInitialConditions)
-    (p : ℝ × ℝ) : List LocalizedKnot :=
+    (p : R_q × R_q) : List LocalizedKnot :=
   b.particles.filter (fun k => k.basePoint = p)
 
 /-- Every particle is in the cluster at its own base point. -/
@@ -69,7 +82,7 @@ theorem BundleInitialConditions.particle_in_own_cluster
 
 /-- The cluster at a point p contains only particles with base point p. -/
 theorem BundleInitialConditions.cluster_basePoint_eq
-    (b : BundleInitialConditions) (p : ℝ × ℝ) (k : LocalizedKnot)
+    (b : BundleInitialConditions) (p : R_q × R_q) (k : LocalizedKnot)
     (hk : k ∈ b.particlesAt p) : k.basePoint = p := by
   unfold particlesAt at hk
   simp [List.mem_filter] at hk

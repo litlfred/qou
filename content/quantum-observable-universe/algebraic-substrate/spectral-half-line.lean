@@ -18,6 +18,11 @@ For real q > 0 and complex ρ:
                    = q^{Re(ρ)}           [rpow_def_of_pos]
 
 LaTeX label: `cor:spectral-half-line`
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 set_option autoImplicit false

@@ -3,6 +3,11 @@
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/QYangMillsLevi.lean (monolithic)
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import QOU.Basic

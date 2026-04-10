@@ -13,6 +13,11 @@ LaTeX label: `ex:fiber-adjoint-su2`
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 - [manuscript] §1 Example: Fiber–adjoint involution
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Nat.Basic

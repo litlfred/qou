@@ -10,16 +10,21 @@
 
 noncomputable section
 
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 /-- The Coulomb coefficient a_C = (q - q⁻¹) · λ_C -/
-def coulomb_coeff (q λ_C : ℝ) : ℝ := (q - q⁻¹) * λ_C
+def coulomb_coeff (q λ_C : R_q) : R_q := (q - q⁻¹) * λ_C
 
 /-- The curvature parameter c = a_C / (2 · a_A) -/
-def curvature_param (q λ_C a_A : ℝ) : ℝ :=
+def curvature_param (q λ_C a_A : R_q) : R_q :=
   coulomb_coeff q λ_C / (2 * a_A)
 
 /-- The continuous beta-stability optimum: p*(A) = A / (2 + c · A^{2/3}) -/
-def beta_stability_continuous (c : ℝ) (A : ℝ) : ℝ :=
-  A / (2 + c * A ^ (2/3 : ℝ))
+def beta_stability_continuous (c : R_q) (A : R_q) : R_q :=
+  A / (2 + c * A ^ (2/3 : R_q))
 
 /-- The stable neutron number: solve p = A/(2 + c·A^{2/3}) for A,
     then n = round(A) - p.  Implemented as a lookup from the witness table
@@ -27,7 +32,7 @@ def beta_stability_continuous (c : ℝ) (A : ℝ) : ℝ :=
     The witness values are computed from the cubic t³ = 2p(1 + ct²)
     at q = 1.10997, λ_C = 3.334, a_A = 23.29. -/
 -- Ref: [manuscript] Ch. 6, §3
-def stable_neutron_number (_q _λ_C _a_A : ℝ) (p : ℕ) : ℕ :=
+def stable_neutron_number (_q _λ_C _a_A : R_q) (p : ℕ) : ℕ :=
   match stable_neutron_witness.find? (fun pair => pair.1 == p) with
   | some (_, n) => n
   | none => 0

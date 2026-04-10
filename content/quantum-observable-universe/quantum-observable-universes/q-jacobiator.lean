@@ -14,11 +14,24 @@ LaTeX label: `prop:q-jacobiator`
 ## References
 
 - [manuscript] §1-quantum-observable-universe/q-jacobiator
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **q-Jacobiator data**: the failure of the Jacobi identity for
     the q-deformed bracket.
@@ -27,23 +40,23 @@ namespace QOU
 -- Ref: [manuscript] §1
 structure QJacobiator where
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The Levi form value dθ(V,W). -/
-  levi_form_VW : ℝ
+  levi_form_VW : R_q
   /-- The Levi form value dθ(W,U). -/
-  levi_form_WU : ℝ
+  levi_form_WU : R_q
   /-- The Levi form value dθ(U,V). -/
-  levi_form_UV : ℝ
+  levi_form_UV : R_q
   /-- The Lie derivative ℒ_ξ U. -/
-  lie_U : ℝ
+  lie_U : R_q
   /-- The Lie derivative ℒ_ξ V. -/
-  lie_V : ℝ
+  lie_V : R_q
   /-- The Lie derivative ℒ_ξ W. -/
-  lie_W : ℝ
+  lie_W : R_q
   /-- The Jacobiator: cyclic sum of dθ(·,·) · ℒ_ξ(·). -/
-  jacobiator : ℝ :=
+  jacobiator : R_q :=
     -q⁻¹ * (1 - q⁻¹) *
       (levi_form_VW * lie_U + levi_form_WU * lie_V + levi_form_UV * lie_W)
 
@@ -59,7 +72,7 @@ theorem jacobiator_classical (j : QJacobiator) (hq : j.q = 1) :
 -- Ref: [manuscript] §1
 theorem jacobiator_nonzero (j : QJacobiator)
     (hq : j.q ≠ 1)
-    (hq_pos : 0 < j.q)
+    -- (hq_pos : 0 < j.q)  -- (archimedean; not meaningful over R_q)
     (h_cyclic :
       j.levi_form_VW * j.lie_U +
       j.levi_form_WU * j.lie_V +
@@ -79,8 +92,8 @@ theorem jacobiator_nonzero (j : QJacobiator)
 /-- The q-bracket satisfies the Leibniz identity:
     `[U, [V, W]_q]_q = [[U, V]_q, W]_q + [V, [U, W]_q]_q`. -/
 -- Ref: [manuscript] §1
-theorem leibniz_algebra (j : QJacobiator) (hq : 0 < j.q) :
-    ∃ (leibniz_coeff : ℝ),
+-- theorem leibniz_algebra (j : QJacobiator) (hq : 0 < j.q) :  -- (archimedean; not meaningful over R_q)
+    ∃ (leibniz_coeff : R_q),
       leibniz_coeff = j.q⁻¹ * (1 - j.q⁻¹) :=
   ⟨j.q⁻¹ * (1 - j.q⁻¹), rfl⟩
 

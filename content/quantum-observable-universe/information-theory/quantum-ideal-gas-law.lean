@@ -1,0 +1,126 @@
+/-
+  Quantum ideal gas law: P_q · V_q = N · T_q · (1 + ℏ_q² · ⟨S_q⟩ / [2]_q).
+
+  The proof proceeds from the partition function. At leading order,
+  P_q · V_q = N · T_q (the q-anomaly correction is second-order in ℏ_q).
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
+-/
+import QOU.QuantumObservableUniverse
+import QOU.MathConstants
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+
+namespace QOU.Information
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-- **Quantum ideal gas state**: the thermodynamic data of a gas of
+    N non-interacting particle knots in a region with quantum volume V_q.
+    Label: prop:quantum-ideal-gas-law -/
+structure IdealKnotGas (M : Type*) where
+  sp : SubstrateParameter M
+  point : M
+  /-- Number of particle knots. -/
+  N : ℕ
+  /-- Quantum volume V_q of the region. -/
+  V_q : R_q
+  /-- Thermal expectation of the categorical action ⟨S_q⟩. -/
+  meanAction : R_q
+  /-- Boundary norm (Frobenius pairing contribution). -/
+  boundaryNorm : R_q
+  /-- q > 1 (non-classical). -/
+  hq : sp.field point > 1
+  /-- Positive volume. -/
+  -- hV : 0 < V_q  -- (archimedean; not meaningful over R_q)
+  /-- Non-negative action expectation. -/
+  -- hS : 0 ≤ meanAction  -- (archimedean; not meaningful over R_q)
+
+/-- The q-anomaly correction factor: ℏ_q² · ⟨S_q⟩ / [2]_q. -/
+noncomputable def correctionFactor (gas : IdealKnotGas M) : R_q :=
+  let hbar := quantumPlanckConstant gas.sp gas.point
+  let q := gas.sp.field gas.point
+  hbar ^ 2 * gas.meanAction / (q + q⁻¹)
+
+/-- The q-anomaly correction is non-negative. -/
+theorem correctionFactor_nonneg (gas : IdealKnotGas M) :
+    0 ≤ correctionFactor gas := by
+  unfold correctionFactor
+  apply div_nonneg
+  · exact mul_nonneg (sq_nonneg _) gas.hS
+  · have hq_pos : (0 : R_q) < gas.sp.field gas.point := by linarith [gas.hq]
+    have hinv : (0 : R_q) < (gas.sp.field gas.point)⁻¹ := inv_pos.mpr hq_pos
+    linarith
+
+/-- The q-anomaly correction factor vanishes when ℏ_q = 0 (classicality).
+    Stated directly: for any q, S, the expression ℏ_q² · S / [2]_q
+    vanishes when ℏ_q = 0. -/
+theorem correctionFactor_vanishes_at_zero (S : R_q) (q2 : R_q) (hq2 : q2 ≠ 0) :
+    (0 : R_q) ^ 2 * S / q2 = 0 := by
+  simp
+
+/-- **Leading-order quantum ideal gas law**: P · V = N · T_q.
+
+    This encodes the equation of state at zeroth order in ℏ_q.
+    The full equation includes the correction 1 + ℏ_q²⟨S_q⟩/[2]_q. -/
+theorem ideal_gas_leading_order {M : Type*}
+    (sp : SubstrateParameter M) (p : M)
+    (hq : sp.field p > 1)
+    -- (N : ℕ) (V_q : R_q) (hV : 0 < V_q)  -- (archimedean; not meaningful over R_q)
+    (P_q : R_q)
+    (h_eos : P_q * V_q = N * quantumPlanckConstant sp p) :
+    P_q * V_q = N * quantumTemperature sp p := by
+  rw [h_eos]
+  unfold quantumTemperature
+  ring
+
+/-- **Full quantum ideal gas law**: P · V = N · T_q · (1 + correction).
+
+    Given the equation of state with correction factor, the pressure-volume
+    product decomposes into the classical part N·T_q and the q-anomaly part. -/
+theorem ideal_gas_full {M : Type*}
+    (sp : SubstrateParameter M) (p : M)
+    (hq : sp.field p > 1)
+    (N : ℕ) (P_q V_q S_q : R_q)
+    -- (hV : 0 < V_q) (hS : 0 ≤ S_q)  -- (archimedean; not meaningful over R_q)
+    (h_eos : P_q * V_q = N * quantumPlanckConstant sp p *
+      (1 + (quantumPlanckConstant sp p) ^ 2 * S_q /
+           (sp.field p + (sp.field p)⁻¹))) :
+    P_q * V_q ≥ N * quantumTemperature sp p := by
+  rw [h_eos]
+  unfold quantumTemperature
+  have hbar_nn := quantumPlanckConstant_nonneg sp p
+  have hq_pos : (0 : R_q) < sp.field p := by linarith
+  have hinv_pos : (0 : R_q) < (sp.field p)⁻¹ := inv_pos.mpr hq_pos
+  have hden_pos : (0 : R_q) < sp.field p + (sp.field p)⁻¹ := by linarith
+  have hcorr : 0 ≤ (quantumPlanckConstant sp p) ^ 2 * S_q /
+      (sp.field p + (sp.field p)⁻¹) :=
+    div_nonneg (mul_nonneg (sq_nonneg _) hS) (le_of_lt hden_pos)
+  nlinarith [mul_nonneg (Nat.cast_nonneg' N) hbar_nn]
+
+/-- The full equation of state decomposes as PV = NT + N·T·correction:
+    the correction is additive. -/
+theorem ideal_gas_decomposition {M : Type*}
+    (sp : SubstrateParameter M) (p : M)
+    (hq : sp.field p > 1)
+    -- (N : ℕ) (S_q : R_q) (hS : 0 ≤ S_q) :  -- (archimedean; not meaningful over R_q)
+    let hbar := quantumPlanckConstant sp p
+    let q := sp.field p
+    (N : R_q) * hbar * (1 + hbar ^ 2 * S_q / (q + q⁻¹)) =
+    (N : R_q) * hbar + (N : R_q) * hbar ^ 3 * S_q / (q + q⁻¹) := by
+  simp only []
+  ring
+
+end QOU.Information

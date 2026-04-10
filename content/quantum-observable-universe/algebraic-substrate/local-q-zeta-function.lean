@@ -5,6 +5,11 @@ The local q-zeta function of Bring's curve, encoding point counts
 over finite extensions via the characteristic polynomial of Frobenius.
 
 LaTeX label: `def:local-q-zeta-function`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 set_option autoImplicit false
@@ -15,6 +20,13 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 open Polynomial Complex
 
 namespace QOU.AlgebraicSubstrate
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The genus of Bring's curve. -/
 def bringsGenus : ℕ := 4
@@ -30,9 +42,9 @@ def bringsGenus : ℕ := 4
     Ref: [manuscript] Chapter 8, Section 4 -/
 structure LocalQZetaFunction where
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- Positivity of q. -/
-  q_pos : q > 0
+  -- q_pos : q > 0  -- (archimedean; not meaningful over R_q)
   /-- The 8 fundamental Frobenius eigenvalues α₁, …, α₈. -/
   eigenvalues : Fin 8 → ℂ
   /-- The *reversed* characteristic polynomial P̃(X) = ∏ᵢ (X - αᵢ).

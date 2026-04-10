@@ -256,6 +256,7 @@ export default chapter({
       blocks: [
         "descartes",
         "descartes-proof",
+        "terminal-morphism-brings",
         "universality-general",
         "descartes-yekutieli",
         "observation-brings",

@@ -17,7 +17,6 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
-\usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{cite}
@@ -31,6 +30,7 @@
 \usepackage{mathrsfs}            % \mathscr script letters
 \usepackage{textcomp}            % \textdegree, \textbullet, etc.
 \usepackage{newunicodechar}      % Map Unicode glyphs to LaTeX commands
+\usepackage{hyperref}            % Loaded last (after cite, xcolor, etc.)
 
 % ── Unicode character mappings ───────────────────────────────────────────────
 % Allow Unicode symbols in .md content to pass through pdflatex.
@@ -98,7 +98,8 @@
 \renewcommand{\HyPsd@Warning}[1]{}
 \makeatother
 
-% ── Compact chapter/section formatting (no page breaks, normal-size fonts) ────
+% ── Compact chapter/section formatting (normal-size fonts, hang style) ─────
+% Page breaks between chapters are handled by \clearpage in rendered .tex files.
 \titleclass{\chapter}{straight}
 \titleformat{\chapter}[hang]{\normalsize\bfseries}{%
   \thechapter.}{0.5em}{}

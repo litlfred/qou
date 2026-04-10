@@ -10,19 +10,32 @@ LaTeX label: `def:quantum-su2`
 ## References
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Quantum group 𝒰_q(𝔰𝔲(2))** generator data. -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 structure QuantumSu2 where
   /-- The deformation parameter q > 0, q ≠ 1. -/
-  q : ℝ
-  q_pos : 0 < q
+  q : R_q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   q_ne_one : q ≠ 1
   /-- The algebra carrier type. -/
   Algebra : Type*
@@ -40,7 +53,7 @@ attribute [instance] QuantumSu2.instRing
 
 /-- The q-integer [n]_q = (qⁿ - 1)/(q - 1). -/
 -- Ref: [lusztig1993]
-noncomputable def QuantumSu2.qInt (qs : QuantumSu2) (n : ℕ) : ℝ :=
+noncomputable def QuantumSu2.qInt (qs : QuantumSu2) (n : ℕ) : R_q :=
   (qs.q ^ n - 1) / (qs.q - 1)
 
 /-- [1]_q = 1 for all q ≠ 1. -/

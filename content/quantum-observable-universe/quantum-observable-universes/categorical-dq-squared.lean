@@ -13,11 +13,24 @@ LaTeX label: `prop:categorical-dq-squared`
 ## References
 
 - [manuscript] §1-quantum-observable-universe/categorical-dq-squared
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **dq² obstruction data**: the non-vanishing of dq² for generic q ≠ 1.
 
@@ -26,13 +39,13 @@ namespace QOU
 -- Ref: [manuscript] §1
 structure DqSquaredObstruction where
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0 (invertibility). -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The Reeb-bracket value [ξ, α] (scalar representative). -/
-  reeb_bracket : ℝ
+  reeb_bracket : R_q
   /-- The obstruction: dq²(α) = q⁻¹(1 - q⁻¹) · [ξ, α]. -/
-  obstruction : ℝ := q⁻¹ * (1 - q⁻¹) * reeb_bracket
+  obstruction : R_q := q⁻¹ * (1 - q⁻¹) * reeb_bracket
 
 /-- dq² vanishes iff q = 1 or the form is Reeb-invariant. -/
 -- Ref: [manuscript] §1
