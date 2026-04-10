@@ -22,15 +22,28 @@ LaTeX labels: `conj:p-vs-np-boundary`, `conj:qou-p-neq-np`,
 - [cook1971] https://doi.org/10.1145/800157.805047
 - [freedman2003] https://doi.org/10.1090/S0273-0979-02-00964-3
 - [manuscript] §9/p-vs-np-boundary
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Defs
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Omega
 
 namespace QOU.PvsNPBoundary
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## The P vs NP conjecture as a boundary condition -/
 
@@ -108,7 +121,7 @@ def idealNontrivial (c : ℕ) (d : ℕ) (hd : d > 0)
 
 /-- **Cohomological criterion**: the Skein resolution obstruction
     κ_c^comp is nonzero. -/
-def obstructionNonzero (topological : ℝ) (analytic : ℝ) : Prop :=
+def obstructionNonzero (topological : R_q) (analytic : R_q) : Prop :=
   topological ≠ 0 ∨ analytic ≠ 0
 
 /-- **Information-theoretic criterion**: the effective tree size
@@ -119,8 +132,8 @@ def bandwidthSaturated (effective_tree_size : ℕ) (poly_budget : ℕ) : Prop :=
 /-- The three criteria are related: if the obstruction is nonzero
     (either component), then the boundary is non-empty. -/
 theorem obstruction_implies_boundary
-    (top : ℝ) (an : ℝ) (h : obstructionNonzero top an) :
-    (top, an) ≠ (0 : ℝ × ℝ) := by
+    (top : R_q) (an : R_q) (h : obstructionNonzero top an) :
+    (top, an) ≠ (0 : R_q × R_q) := by
   intro h_eq
   cases h with
   | inl h_top =>
@@ -177,9 +190,9 @@ theorem torsion_effective_tree_bounded (t : TorsionPoint) (n : ℕ) :
 /-- A non-torsion real number: q > 1 and q^k ≠ 1 for all k ≥ 1. -/
 structure NonTorsionReal where
   /-- The substrate parameter value. -/
-  q : ℝ
+  q : R_q
   /-- q > 1 (strict). -/
-  q_gt_one : q > 1
+  -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
   /-- Not a root of unity. -/
   not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1
 

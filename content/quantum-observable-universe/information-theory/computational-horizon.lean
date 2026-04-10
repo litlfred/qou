@@ -23,9 +23,15 @@ LaTeX labels: `def:computational-horizon`, `prop:p-bandwidth-bound`,
 - [cook1971] https://doi.org/10.1145/800157.805047
 - [freedman2003] https://doi.org/10.1090/S0273-0979-02-00964-3
 - [manuscript] §9/computational-horizon
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Defs
 import Mathlib.Data.List.Basic
 import Mathlib.Tactic.Linarith
@@ -34,6 +40,13 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 
 namespace QOU.ComputationalHorizon
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Resolution tree
 
@@ -85,7 +98,7 @@ theorem ResolutionTree.leafCount_exponential (T : ResolutionTree) :
     depending on the substrate parameter q. -/
 structure SkeinWeight where
   /-- The weight function: given q > 1, produces a real weight. -/
-  weight : (q : ℝ) → q > 1 → ℝ
+  weight : (q : R_q) → q > 1 → R_q
 
 /-- The Skein polynomial P_L(q): sum of all leaf weights. -/
 structure SkeinPolynomial where
@@ -110,11 +123,11 @@ structure DegreeZeroSection (T : ResolutionTree) where
   /-- The extraction depth. -/
   depth : Fin (T.crossings + 1)
   /-- The extraction function: given q, returns the extracted value. -/
-  extract : (q : ℝ) → q > 1 → ℝ
+  extract : (q : R_q) → q > 1 → R_q
 
 /-- A degree-0 section vanishes if it returns 0 for all q. -/
 def DegreeZeroSection.vanishes (s : DegreeZeroSection T) : Prop :=
-  ∀ (q : ℝ) (hq : q > 1), s.extract q hq = 0
+  ∀ (q : R_q) (hq : q > 1), s.extract q hq = 0
 
 /-- A degree-≥1 section: a witness (resolution path) verifiable in
     poly(c) steps.  Linear transport through the tree. -/

@@ -13,6 +13,11 @@ LaTeX label: `prop:orbital-space-normal-bundle`
 
 - [manuscript] Ch. 6, §3
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
@@ -20,13 +25,21 @@ LaTeX label: `prop:orbital-space-normal-bundle`
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Dimension
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 open Finset
 
 noncomputable section
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §1. Orbital decomposition data
@@ -106,9 +119,9 @@ theorem orbital_dim_eq_square (n : ℕ) :
 -- Ref: [manuscript] Ch. 6, §3 — "The critical step"
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 axiom mode_is_so3_irrep :
-  ∀ (ℓ : ℕ), ∃ (V : Type) [inst_acg : AddCommGroup V] [inst_mod : Module ℝ V]
-    [inst_fd : FiniteDimensional ℝ V],
-    Module.finrank ℝ V = 2 * ℓ + 1
+  ∀ (ℓ : ℕ), ∃ (V : Type) [inst_acg : AddCommGroup V] [inst_mod : Module R_q V]
+    [inst_fd : FiniteDimensional R_q V],
+    Module.finrank R_q V = 2 * ℓ + 1
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §4. Mode cutoff

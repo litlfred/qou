@@ -19,12 +19,25 @@ LaTeX label: `thm:jones-markov-trace`
 
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Ch. XII
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 
 namespace QOU.Braiding
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Hecke Algebra (minimal, for self-containment) -/
 
@@ -37,9 +50,9 @@ structure HeckeAlgebraData where
   /-- Carrier type of H_n(q). -/
   carrier : Type*
   /-- Deformation parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- q ≠ 1. -/
   q_ne_one : q ≠ 1
   /-- q is not a root of unity. -/
@@ -74,7 +87,7 @@ structure HeckeAlgebraData where
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- The trace functional tr_M : H_n(q) → ℝ. -/
-  tr : H.carrier → ℝ
+  tr : H.carrier → R_q
 
   /-! ### Property 1: Normalisation and trace axioms -/
 
@@ -86,7 +99,7 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
 
   /-- Markov parameter z, determined by q:
       z = (q - 1) / (q^{1/2} + q^{-1/2})². -/
-  z : ℝ
+  z : R_q
 
   /-- The Markov parameter is nonzero. -/
   z_ne_zero : z ≠ 0

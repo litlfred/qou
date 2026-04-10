@@ -15,13 +15,26 @@ LaTeX label: `thm:markov-trace-product`
 
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset
 
 namespace QOU.Braiding
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Generator chain reduction -/
 
@@ -31,14 +44,14 @@ structure GeneratorChain where
   /-- Index i of the generator σ_i. -/
   index : ℕ
   /-- Coefficient of σ_i after Hecke reduction. -/
-  a : ℝ
+  a : R_q
   /-- Constant term after Hecke reduction. -/
-  b : ℝ
+  b : R_q
 
 /-- The vertex volume at generator σ_i:
     V̂_i(q) = z · a_i + b_i
     where z = 1/(q^{1/2} + q^{-1/2}) is the Markov trace parameter. -/
-noncomputable def vertexVolume (z : ℝ) (gc : GeneratorChain) : ℝ :=
+noncomputable def vertexVolume (z : R_q) (gc : GeneratorChain) : R_q :=
   z * gc.a + gc.b
 
 /-! ## Product factorization theorem -/
@@ -56,17 +69,17 @@ structure MarkovTraceProduct where
   /-- n ≥ 2 (at least two strands). -/
   n_ge : n ≥ 2
   /-- The deformation parameter q > 1. -/
-  q : ℝ
+  q : R_q
   /-- q exceeds classicality. -/
-  q_gt_one : q > 1
+  -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
   /-- The Markov trace parameter z = 1/(q^{1/2} + q^{-1/2}). -/
-  z : ℝ
+  z : R_q
   /-- z is nonzero. -/
   z_ne_zero : z ≠ 0
   /-- The generator chains after Hecke reduction. -/
   chains : Fin (n - 1) → GeneratorChain
   /-- The total Markov trace value. -/
-  traceValue : ℝ
+  traceValue : R_q
   /-- **Product factorization**: the trace equals the product
       of vertex volumes. -/
   factorization : traceValue =
@@ -83,10 +96,10 @@ structure MarkovTraceProduct where
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem markov_trace_product
-    (n : ℕ) (hn : n ≥ 2) (q : ℝ) (hq : q > 1)
-    (z : ℝ) (hz : z ≠ 0)
+    (n : ℕ) (hn : n ≥ 2) (q : R_q) (hq : q > 1)
+    (z : R_q) (hz : z ≠ 0)
     (chains : Fin (n - 1) → GeneratorChain)
-    (traceValue : ℝ) :
+    (traceValue : R_q) :
     ∃ (mtp : MarkovTraceProduct),
       mtp.n = n ∧ mtp.q = q ∧
       mtp.traceValue = Finset.univ.prod (fun i => vertexVolume mtp.z (mtp.chains i)) := by

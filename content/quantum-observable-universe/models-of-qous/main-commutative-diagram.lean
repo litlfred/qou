@@ -15,11 +15,24 @@ LaTeX label: `prop:main-commutative-diagram`
 ## References
 
 - [manuscript] §1-quantum-observable-universe/main-commutative-diagram
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Main commutative diagram data**.
 
@@ -34,17 +47,17 @@ namespace QOU
 -- Ref: [manuscript] §1
 structure MainCommutativeDiagram where
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 1 (quantum regime). -/
-  q_gt_one : 1 < q
+  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
   /-- Top-left corner: jet data (connection strength). -/
-  jetValue : ℝ
+  jetValue : R_q
   /-- Top-right corner: Einstein tensor value. -/
-  einsteinValue : ℝ
+  einsteinValue : R_q
   /-- Bottom-left corner: linearized section value. -/
-  sectionValue : ℝ
+  sectionValue : R_q
   /-- Bottom-right corner: Schrödinger evolution value. -/
-  schrodingerValue : ℝ
+  schrodingerValue : R_q
   /-- Top arrow: Euler–Lagrange operator maps jets to field equations. -/
   euler_lagrange : jetValue = einsteinValue
   /-- Bottom arrow: parallel transport maps sections to Schrödinger. -/

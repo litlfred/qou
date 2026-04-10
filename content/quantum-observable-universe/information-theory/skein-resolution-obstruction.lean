@@ -22,9 +22,15 @@ LaTeX labels: `def:skein-resolution-obstruction`,
 
 - [manuscript] §9/skein-resolution-obstruction
 - [manuscript] §3/qu-to-qou (item 3: perpetual obstruction)
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Order.Ring.Lemmas
 import Mathlib.Tactic.Linarith
@@ -33,6 +39,13 @@ import Mathlib.Tactic.Ring
 import Mathlib.LinearAlgebra.Prod
 
 namespace QOU.SkeinResolutionObstruction
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Obstruction decomposition
 
@@ -156,15 +169,15 @@ theorem perpetual_obstruction_both {α : Type*} [AddCommGroup α]
     is the residual tree weight at parameter q. -/
 structure ObstructionData where
   /-- The topological component: Skein polynomial degree. -/
-  topological : ℝ
+  topological : R_q
   /-- The analytic component: residual tree weight at q. -/
-  analytic : ℝ
+  analytic : R_q
   /-- The total obstruction: their sum. -/
-  total : ℝ := topological + analytic
+  total : R_q := topological + analytic
 
 /-- The standard complementary decomposition on ℝ × ℝ
     (product of two copies, intersection is the origin). -/
-def realProductDecomposition : ComplementaryDecomposition (ℝ × ℝ) where
+def realProductDecomposition : ComplementaryDecomposition (R_q × R_q) where
   topological := fun p => p.2 = 0
   analytic := fun p => p.1 = 0
   top_zero := rfl
@@ -187,9 +200,9 @@ def realProductDecomposition : ComplementaryDecomposition (ℝ × ℝ) where
     If the topological component (Skein degree) is nonzero,
     the total obstruction is nonzero in the product decomposition. -/
 theorem skein_perpetual_top
-    (top : ℝ) (an : ℝ)
+    (top : R_q) (an : R_q)
     (h_top : top ≠ 0) :
-    (top, an) ≠ (0 : ℝ × ℝ) := by
+    (top, an) ≠ (0 : R_q × R_q) := by
   intro h
   have := congr_arg Prod.fst h
   simp at this
@@ -198,9 +211,9 @@ theorem skein_perpetual_top
 /-- If the analytic component (residual weight) is nonzero,
     the total obstruction is nonzero. -/
 theorem skein_perpetual_an
-    (top : ℝ) (an : ℝ)
+    (top : R_q) (an : R_q)
     (h_an : an ≠ 0) :
-    (top, an) ≠ (0 : ℝ × ℝ) := by
+    (top, an) ≠ (0 : R_q × R_q) := by
   intro h
   have := congr_arg Prod.snd h
   simp at this
@@ -243,11 +256,11 @@ theorem finite_field_bounded_weights
     prunes the tree: this is the BQP mechanism. -/
 
 /-- The q-integer [k]_q = (q^k - q^(-k)) / (q - q^(-1)). -/
-noncomputable def qInteger (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) (k : ℕ) : ℝ :=
+noncomputable def qInteger (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) (k : ℕ) : R_q :=
   (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
 
 /-- The q-integer [1]_q = 1 for all q ≠ 0. -/
-theorem qInteger_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+theorem qInteger_one (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) :
     qInteger q hq hq1 1 = 1 := by
   unfold qInteger
   simp [pow_one]
@@ -256,7 +269,7 @@ theorem qInteger_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
 /-- At non-torsion q, the q-integer [k]_q is nonzero for all k ≥ 1.
     This is the key condition for semisimplicity of the Hecke algebra. -/
 theorem qInteger_nonzero_of_not_root_of_unity
-    (q : ℝ) (hq : q > 1) (h_not_rou : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1)
+    (q : R_q) (hq : q > 1) (h_not_rou : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1)
     (k : ℕ) (hk : k ≥ 1) :
     q ^ k - q⁻¹ ^ k ≠ 0 := by
   intro h_eq

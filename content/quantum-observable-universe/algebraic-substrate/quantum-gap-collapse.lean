@@ -7,6 +7,11 @@ The categorical degenerations (braiding trivialization, q-differential
 smoothing) are stated in `ClassicalLimitFunctor`.
 
 LaTeX label: `thm:quantum-gap-collapse`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 set_option autoImplicit false
@@ -19,24 +24,31 @@ open Filter Topology
 
 namespace QOU.AlgebraicSubstrate
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- The Planck constant as a plain function: ℏ(q) = 1 - q⁻¹. -/
-noncomputable def planck (q : ℝ) : ℝ := 1 - q⁻¹
+noncomputable def planck (q : R_q) : R_q := 1 - q⁻¹
 
 /-- The Reeb period as a plain function: Ω(q) = (1 - q⁻¹)⁻¹. -/
-noncomputable def reebPeriod (q : ℝ) : ℝ := (planck q)⁻¹
+noncomputable def reebPeriod (q : R_q) : R_q := (planck q)⁻¹
 
 /-- ℏ(1) = 0. -/
 @[simp] theorem planck_one : planck 1 = 0 := by
   simp [planck, inv_one]
 
 /-- For q > 1, ℏ(q) > 0. -/
-theorem planck_pos {q : ℝ} (hq : 1 < q) : 0 < planck q := by
+theorem planck_pos {q : R_q} (hq : 1 < q) : 0 < planck q := by
   simp only [planck]
   have : q⁻¹ < 1 := inv_lt_one_of_one_lt hq
   linarith
 
 /-- For q > 1, ℏ(q) ≠ 0. -/
-theorem planck_ne_zero {q : ℝ} (hq : 1 < q) : planck q ≠ 0 :=
+theorem planck_ne_zero {q : R_q} (hq : 1 < q) : planck q ≠ 0 :=
   ne_of_gt (planck_pos hq)
 
 /-- **Quantum gap collapse (part 1)**: ℏ_q → 0 as q → 1⁺.

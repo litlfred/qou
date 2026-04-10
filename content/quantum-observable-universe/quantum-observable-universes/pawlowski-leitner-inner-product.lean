@@ -10,11 +10,24 @@ Authoritative source: `content/quantum-observable-universe/lean/QOU/Representati
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 - [manuscript] §1, Proposition: Inner product on intertwiner spaces
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The Pawlowski–Leitner inner product on intertwiner spaces.
     Each basis vector has a positive norm-squared computed from
@@ -23,7 +36,7 @@ structure PawLeiInnerProduct where
   /-- Number of basis vectors. -/
   num_basis : ℕ
   /-- The norm-squared of each basis vector. -/
-  normSq : Fin num_basis → ℝ
+  normSq : Fin num_basis → R_q
   /-- All norms are positive. -/
   -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
   normSq_pos : ∀ i, normSq i > 0

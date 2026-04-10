@@ -11,11 +11,24 @@ LaTeX label: `prop:mobius-energy`
 
 - [freedman1994] https://doi.org/10.2307/2118583
 - [manuscript] §4-path-integrals-and-braiding/mobius-energy
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Braiding
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Categorical Möbius energy data**.
 
@@ -24,22 +37,22 @@ namespace QOU.Braiding
 -- Ref: [freedman1994], [manuscript] §4
 structure CategoricalMobiusEnergy where
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The categorical Möbius energy. -/
-  energy_cat : ℝ
+  energy_cat : R_q
   /-- The classical Möbius energy E(γ). -/
-  energy_classical : ℝ
+  energy_classical : R_q
   /-- The topological normalisation constant. -/
-  normConst : ℝ
+  normConst : R_q
 
 /-- In the classical limit q → 1, the categorical Möbius energy
     reduces to ¼ E(γ) + const. -/
 -- Ref: [freedman1994], [manuscript] §4
 structure ClassicalLimit extends CategoricalMobiusEnergy where
   /-- Classical limit relation. -/
-  classical_limit : energy_cat = (1/4 : ℝ) * energy_classical + normConst
+  classical_limit : energy_cat = (1/4 : R_q) * energy_classical + normConst
 
 /-- Möbius energy is non-negative for embedded curves. -/
 -- Ref: [freedman1994]

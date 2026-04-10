@@ -5,11 +5,24 @@ Torus knot composites linked by Hopf links on Bring's surface
 have negative crossing energy, establishing hadron stability.
 
 LaTeX label: `prop:torus-hopf-stability`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- Torus knot composites on Bring's surface (χ = -6) linked by
     the Hopf link satisfy E_cross(𝔥) < 0 and are therefore
@@ -30,9 +43,9 @@ namespace QOU.Descartes
 -- Ref: [manuscript] Ch. 5, §torus-hopf-stability
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem torus_hopf_stability
-    (q : ℝ) (hq : q > 1)
-    (vol_binding : ℝ) (hvol : 0 < vol_binding)
-    (crossing_sum : ℝ) (hcs : crossing_sum ≥ 0)
+    (q : R_q) (hq : q > 1)
+    (vol_binding : R_q) (hvol : 0 < vol_binding)
+    (crossing_sum : R_q) (hcs : crossing_sum ≥ 0)
     (h_bound : crossing_sum < vol_binding * q⁻¹ ^ 2) :
     -vol_binding * q⁻¹ ^ 2 + crossing_sum < 0 := by
   linarith

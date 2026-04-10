@@ -13,17 +13,22 @@ open Finset Real
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- The q-integer [ℓ]_q = (q^ℓ - q^{-ℓ}) / (q - q^{-1}).
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
     At q = 1 this is ℓ. -/
-def qInt (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : ℝ :=
-  (q ^ (ℓ : ℝ) - q ^ (-(ℓ : ℝ))) / (q - q⁻¹)
+def qInt (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : R_q :=
+  (q ^ (ℓ : R_q) - q ^ (-(ℓ : R_q))) / (q - q⁻¹)
 
 /-- [0]_q = 0 for all q. -/
-theorem qInt_zero (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+theorem qInt_zero (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) :
     qInt q hq hq1 0 = 0 := by
   simp [qInt]
 
 /-- [1]_q = 1 for all q. -/
-theorem qInt_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+theorem qInt_one (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) :
     qInt q hq hq1 1 = 1 := by
   simp [qInt]
   field_simp
@@ -32,15 +37,15 @@ theorem qInt_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
 /-- [ℓ]_q > 0 for ℓ ≥ 1 and q > 1.
     Proof: q > 1 ⟹ q^ℓ > q^{-ℓ} and q - q⁻¹ > 0,
     so (q^ℓ - q^{-ℓ})/(q - q⁻¹) > 0. -/
-theorem qInt_pos {q : ℝ} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :
+theorem qInt_pos {q : R_q} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :
     qInt q (by linarith) (by linarith) ℓ > 0 := by
   unfold qInt
   apply div_pos
   · -- q^ℓ - q^{-ℓ} > 0
     have hq0 : q > 0 := by linarith
-    have : q ^ (ℓ : ℝ) > q ^ (-(ℓ : ℝ)) := by
+    have : q ^ (ℓ : R_q) > q ^ (-(ℓ : R_q)) := by
       apply rpow_lt_rpow_of_exponent_lt hq
-      linarith [show (ℓ : ℝ) ≥ 1 from Nat.one_le_cast.mpr hℓ]
+      linarith [show (ℓ : R_q) ≥ 1 from Nat.one_le_cast.mpr hℓ]
     linarith
   · -- q - q⁻¹ > 0
     have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; exact hq
@@ -50,7 +55,7 @@ theorem qInt_pos {q : ℝ} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :
     Proof: the numerator q^ℓ - q^{-ℓ} is strictly increasing (rpow monotone)
     and the denominator q - q⁻¹ is positive and constant. -/
 -- Ref: [manuscript] Ch. 2, §orbital-fourier-decomposition
-theorem qInt_strictMono {q : ℝ} (hq : q > 1) :
+theorem qInt_strictMono {q : R_q} (hq : q > 1) :
     StrictMono (fun ℓ => qInt q (by linarith) (by linarith) ℓ) := by
   intro a b hab
   unfold qInt
@@ -59,20 +64,20 @@ theorem qInt_strictMono {q : ℝ} (hq : q > 1) :
     have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos hq0]; exact hq
     linarith
   apply div_lt_div_of_pos_right _ hdenom
-  have ha : (a : ℝ) < (b : ℝ) := Nat.cast_lt.mpr hab
-  have h1 : q ^ (a : ℝ) < q ^ (b : ℝ) := rpow_lt_rpow_of_exponent_lt hq ha
-  have h2 : q ^ (-(b : ℝ)) < q ^ (-(a : ℝ)) := rpow_lt_rpow_of_exponent_lt hq (by linarith)
+  have ha : (a : R_q) < (b : R_q) := Nat.cast_lt.mpr hab
+  have h1 : q ^ (a : R_q) < q ^ (b : R_q) := rpow_lt_rpow_of_exponent_lt hq ha
+  have h2 : q ^ (-(b : R_q)) < q ^ (-(a : R_q)) := rpow_lt_rpow_of_exponent_lt hq (by linarith)
   linarith
 
 /-- The q-Laplacian eigenvalue: [ℓ]_q · [ℓ+1]_q.
     At q = 1: ℓ(ℓ+1). -/
-def qLapEigenval (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : ℝ :=
+def qLapEigenval (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : R_q :=
   qInt q hq hq1 ℓ * qInt q hq hq1 (ℓ + 1)
 
 /-- q-Laplacian eigenvalues are strictly increasing for q > 1.
     Proof: [ℓ]_q[ℓ+1]_q < [ℓ+1]_q[ℓ+2]_q because both factors increase. -/
 -- Ref: [manuscript] Ch. 2, §orbital-fourier-decomposition
-theorem qLapEigenval_strictMono {q : ℝ} (hq : q > 1) :
+theorem qLapEigenval_strictMono {q : R_q} (hq : q > 1) :
     StrictMono (fun ℓ => qLapEigenval q (by linarith) (by linarith) ℓ) := by
   intro a b hab
   unfold qLapEigenval
@@ -188,39 +193,39 @@ theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Energy of shell n: E_n = -E_ion / n². -/
-def shellEnergy (E_ion : ℝ) (n : ℕ) (hn : n ≥ 1) : ℝ :=
-  -E_ion / (n : ℝ) ^ 2
+def shellEnergy (E_ion : R_q) (n : ℕ) (hn : n ≥ 1) : R_q :=
+  -E_ion / (n : R_q) ^ 2
 
 /-- Shell energies are strictly increasing (less negative) in n.
     -E/n₁² < -E/n₂² when n₁ < n₂ and E > 0. -/
-theorem shellEnergy_strictMono {E_ion : ℝ} (hE : E_ion > 0)
+theorem shellEnergy_strictMono {E_ion : R_q} (hE : E_ion > 0)
     {n₁ n₂ : ℕ} (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) (h : n₁ < n₂) :
     shellEnergy E_ion n₁ h1 < shellEnergy E_ion n₂ h2 := by
   simp only [shellEnergy]
-  have hn1 : (n₁ : ℝ) > 0 := by positivity
-  have hn2 : (n₂ : ℝ) > 0 := by positivity
-  have hlt : (n₁ : ℝ) < n₂ := Nat.cast_lt.mpr h
+  have hn1 : (n₁ : R_q) > 0 := by positivity
+  have hn2 : (n₂ : R_q) > 0 := by positivity
+  have hlt : (n₁ : R_q) < n₂ := Nat.cast_lt.mpr h
   rw [neg_div, neg_div, neg_lt_neg_iff]
   apply div_lt_div_of_pos_left hE (by positivity) (by positivity)
   exact pow_lt_pow_left hlt (by positivity) (by norm_num)
 
 /-- Transition energy between shells. -/
-def transitionEnergy (E_ion : ℝ) (n₁ n₂ : ℕ)
-    (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) : ℝ :=
+def transitionEnergy (E_ion : R_q) (n₁ n₂ : ℕ)
+    (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) : R_q :=
   shellEnergy E_ion n₂ h2 - shellEnergy E_ion n₁ h1
 
 /-- Transition energy is positive for n₂ > n₁ (absorption). -/
-theorem transitionEnergy_pos {E_ion : ℝ} (hE : E_ion > 0)
+theorem transitionEnergy_pos {E_ion : R_q} (hE : E_ion > 0)
     {n₁ n₂ : ℕ} (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) (h : n₁ < n₂) :
     transitionEnergy E_ion n₁ n₂ h1 h2 > 0 := by
   simp only [transitionEnergy]
   linarith [shellEnergy_strictMono hE h1 h2 h]
 
 /-- Rydberg formula: ΔE = E_ion · (1/n₁² - 1/n₂²). -/
-theorem rydberg_formula (E_ion : ℝ) (n₁ n₂ : ℕ)
+theorem rydberg_formula (E_ion : R_q) (n₁ n₂ : ℕ)
     (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) :
     transitionEnergy E_ion n₁ n₂ h1 h2 =
-    E_ion * (1 / (n₁ : ℝ) ^ 2 - 1 / (n₂ : ℝ) ^ 2) := by
+    E_ion * (1 / (n₁ : R_q) ^ 2 - 1 / (n₂ : R_q) ^ 2) := by
   simp [transitionEnergy, shellEnergy]
   ring
 

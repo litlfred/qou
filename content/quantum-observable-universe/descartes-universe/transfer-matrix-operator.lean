@@ -13,6 +13,11 @@ LaTeX label: `def:transfer-matrix-operator`
 ## References
 - [manuscript] §6/transfer-matrix-operator
 - [jones1987] https://doi.org/10.2307/1971403
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

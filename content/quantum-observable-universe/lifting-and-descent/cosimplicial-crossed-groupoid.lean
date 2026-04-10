@@ -11,12 +11,25 @@ maps from descent, and the crossed structure from conjugation of
 - [yekutieli2010] Central Extensions of Gerbes, §3–4
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
 - [manuscript] §3 Lifting and Descent
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Yekutieli triple
 
@@ -34,9 +47,9 @@ structure YekutielijTriple (M : Type*) where
   /-- Objects: local trivialisations of the Frobenius–Hopf object Aₙ. -/
   objects : M → M
   /-- 1-morphisms: transition automorphisms g_{ij} in Aut_C(Aₙ). -/
-  oneMorphisms : M → ℝ
+  oneMorphisms : M → R_q
   /-- 2-morphisms: deformation parameters a_{ij} in the band 𝒪_M×. -/
-  twoMorphisms : M → ℝ
+  twoMorphisms : M → R_q
   /-- The 2-morphisms are invertible (they live in 𝒪_M×). -/
   twoMorphisms_ne_zero : ∀ (p : M), twoMorphisms p ≠ 0
 
@@ -53,12 +66,12 @@ central elements, and the action is conjugation. -/
 structure CrossedModule where
   /-- The boundary map ∂ : 𝒪_M× → SU_{qₙ}(2), sending a unit to
       its central embedding. -/
-  boundary : ℝ → ℝ
+  boundary : R_q → R_q
   /-- Conjugation action of 1-morphisms on 2-morphisms. -/
-  conjugation : ℝ → ℝ → ℝ
+  conjugation : R_q → R_q → R_q
   /-- Peiffer identity: ∂(a) · b = a · b · a⁻¹.
       Automatic for central extensions. -/
-  peiffer : ∀ (a b : ℝ) (ha : a ≠ 0),
+  peiffer : ∀ (a b : R_q) (ha : a ≠ 0),
     boundary a * b = a * b * a⁻¹
 
 /-! ## Cosimplicial crossed groupoid
@@ -120,7 +133,7 @@ theorem cosimplicial_crossed_groupoid_exists (M : Type*)
 /-- The Peiffer identity for central extensions. -/
 -- Ref: [yekutieli2010] §2, Remark 2.3
 theorem peiffer_central_automatic (cm : CrossedModule)
-    (a b : ℝ) (ha : a ≠ 0) :
+    (a b : R_q) (ha : a ≠ 0) :
     cm.boundary a * b = a * b * a⁻¹ :=
   cm.peiffer a b ha
 

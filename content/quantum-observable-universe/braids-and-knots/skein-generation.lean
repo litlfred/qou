@@ -14,14 +14,27 @@ LaTeX label: `prop:skein-generation`
 
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 - [manuscript] §3-lifting-of-quantum-torsion/skein-generation
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.RingTheory.Polynomial.Basic
 import Mathlib.Data.Polynomial.Basic
 
 namespace QOU.Torsion
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Skein relation data**: the three resolutions of a crossing
     `L₊`, `L₋`, `L₀` related by the Skein relation
@@ -29,17 +42,17 @@ namespace QOU.Torsion
 -- Ref: [jones1985]
 structure SkeinRelation where
   /-- The substrate parameter q > 1. -/
-  q : ℝ
+  q : R_q
   /-- q is positive. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- q is greater than 1 (quantum regime). -/
-  q_gt_one : 1 < q
+  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
   /-- Mass of the positive crossing resolution. -/
-  mass_plus : ℝ
+  mass_plus : R_q
   /-- Mass of the negative crossing resolution. -/
-  mass_minus : ℝ
+  mass_minus : R_q
   /-- Mass of the smoothed resolution. -/
-  mass_zero : ℝ
+  mass_zero : R_q
   /-- The Skein relation: q · M(L₊) - q⁻¹ · M(L₋) = (q - q⁻¹) · M(L₀). -/
   skein : q * mass_plus - q⁻¹ * mass_minus = (q - q⁻¹) * mass_zero
 
@@ -52,7 +65,7 @@ structure FundamentalKnot where
   /-- Torus knot parameters (p, 2). -/
   torus_p : ℕ
   /-- Hyperbolic volume is zero for torus knots. -/
-  volume_zero : (0 : ℝ) = 0  -- Vol(K) = 0
+  volume_zero : (0 : R_q) = 0  -- Vol(K) = 0
 
 /-- **Skein resolution**: decomposition of a hadron into fundamental
     knots via iterated Skein relations.
@@ -63,21 +76,21 @@ structure FundamentalKnot where
 -- Ref: [jones1985], [manuscript] §3
 structure SkeinResolution where
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 1. -/
-  q_gt_one : 1 < q
+  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
   /-- Number of fundamental constituents. -/
   numConstituents : ℕ
   /-- The Skein polynomial Q(q) ∈ ℤ[q±¹] (evaluated at q). -/
-  skeinPolynomial : ℝ
+  skeinPolynomial : R_q
   /-- Mass of the Hopf link (binding energy unit). -/
-  hopfLinkMass : ℝ
+  hopfLinkMass : R_q
   /-- Individual constituent volumes. -/
-  constituentVolumes : Fin numConstituents → ℝ
+  constituentVolumes : Fin numConstituents → R_q
   /-- The quantum Planck constant ℏ_q = 1 - q⁻¹. -/
-  hbar_q : ℝ := 1 - q⁻¹
+  hbar_q : R_q := 1 - q⁻¹
   /-- **Mass formula**: M(H) = Q(q) · M(ℒ_Hopf) + Σᵢ Vol(Kᵢ)/ℏ_q². -/
-  mass_formula : ℝ :=
+  mass_formula : R_q :=
     skeinPolynomial * hopfLinkMass +
     ∑ i : Fin numConstituents, constituentVolumes i / hbar_q ^ 2
 
@@ -94,7 +107,7 @@ theorem mass_from_linking_only
 
 /-- The quantum Planck constant is positive when q > 1. -/
 -- Ref: [manuscript] §1
-theorem hbar_q_pos {q : ℝ} (hq : 1 < q) : 0 < 1 - q⁻¹ := by
+theorem hbar_q_pos {q : R_q} (hq : 1 < q) : 0 < 1 - q⁻¹ := by
   have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 

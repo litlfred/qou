@@ -15,12 +15,25 @@ LaTeX label: `prop:vertex-algebra-jet-relations`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [jones1987] https://doi.org/10.2307/1971403
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.GrobnerShirshov.HeckeGS
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.VertexAlgebra.JetRelations
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 open QOU.GrobnerShirshov
 open QOU.GrobnerShirshov.Hecke
@@ -34,7 +47,7 @@ open QOU.GrobnerShirshov.Hecke
     (Euler characteristic stability). -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
-    RewritingSystem (HeckeGen strands) ℝ :=
+    RewritingSystem (HeckeGen strands) R_q :=
   heckeRewritingSystem strands hp
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -59,7 +72,7 @@ theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
     the Jones polynomial of a knot does not depend on brane level. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
-    (w : AlgElement (HeckeGen n) ℝ) :
+    (w : AlgElement (HeckeGen n) R_q) :
     -- tr_M at level n+1 of the jet-embedded element equals
     -- tr_M at level n of the original element.
     -- Requires the Markov trace and jet embedding formalizations.
@@ -94,7 +107,7 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
 
 /-- The obstruction coefficient is nonzero (proved). -/
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-theorem yekutieli_coeff_nonzero (q : ℝ) (hq : q > 1) :
+theorem yekutieli_coeff_nonzero (q : R_q) (hq : q > 1) :
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
   have hqi : q⁻¹ > 0 := by positivity
   have hqi1 : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; linarith
@@ -111,9 +124,9 @@ theorem yekutieli_coeff_nonzero (q : ℝ) (hq : q > 1) :
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
 structure DescentOperator (n : ℕ) (hp : HeckeParams) where
   /-- The jet prolongation ℓ_n : H^{(n)} → H^{(n+1)}. -/
-  jet_embed : RewritingSystem (HeckeGen n) ℝ → RewritingSystem (HeckeGen n) ℝ
+  jet_embed : RewritingSystem (HeckeGen n) R_q → RewritingSystem (HeckeGen n) R_q
   /-- The descent homomorphism 𝔡_{n+1} : H^{(n+1)} → H^{(n)}. -/
-  descent : RewritingSystem (HeckeGen n) ℝ → RewritingSystem (HeckeGen n) ℝ
+  descent : RewritingSystem (HeckeGen n) R_q → RewritingSystem (HeckeGen n) R_q
   /-- The key identity: 𝔡 ∘ ℓ = id. -/
   descent_left_inv : ∀ w, descent (jet_embed w) = w
 
@@ -126,7 +139,7 @@ structure DescentOperator (n : ℕ) (hp : HeckeParams) where
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
 theorem descent_idempotent {n : ℕ} {hp : HeckeParams}
     (op : DescentOperator n hp)
-    (w : RewritingSystem (HeckeGen n) ℝ) :
+    (w : RewritingSystem (HeckeGen n) R_q) :
     let τ := fun x => op.jet_embed (op.descent x)
     τ (τ w) = τ w := by
   simp only

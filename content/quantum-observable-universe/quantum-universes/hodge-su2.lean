@@ -18,11 +18,23 @@ LaTeX label: `ex:hodge-su2`
 ## References
 
 - [manuscript] §1 Example: Hodge star on O(SU(2))
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **SU(2) Hodge star data**: the involutive Hodge operator on the
     3-dimensional de Rham complex.

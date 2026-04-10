@@ -5,6 +5,11 @@
   - Borromean proton (amphichiral, writhe = 0)
   - Trefoil electron (Vol = 0, mass from vacuum drag)
   - Rotational modes from SU_q(2): J² = [j]_q · [j+1]_q
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 import QOU.QuantumObservableUniverse
 import QOU.MathConstants

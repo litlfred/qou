@@ -10,11 +10,23 @@
   ## References
   - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
   - [frenkel2004] https://doi.org/10.1090/surv/088
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.Topology.FiberBundle.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The ordered configuration space Conf_n(𝒮_p): n-tuples of distinct
     insertion points on the exceptional divisor.  The index i labels
@@ -24,7 +36,7 @@ structure InsertionConfig where
   /-- Number of constituent slots. -/
   n : ℕ
   /-- The insertion points z_1, …, z_n as affine coordinates on 𝒮_p. -/
-  points : Fin n → ℝ  -- In full formalization: Fin n → 𝒮_p
+  points : Fin n → R_q  -- In full formalization: Fin n → 𝒮_p
   /-- Distinct insertion points: z_i ≠ z_j for i ≠ j.
       This is the configuration space constraint; collisions
       produce OPE singularities (z_i − z_j)^{−k}. -/
@@ -59,14 +71,14 @@ structure InteractionBiFiltration where
 /-- The categorical transfer matrix: equivalence class of braiding
     operations on a hadron that produce the same vertex volume. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-structure CategoricalTransferMatrix (q : ℝ) where
+structure CategoricalTransferMatrix (q : R_q) where
   /-- The exceptional divisor where braiding takes place. -/
   base : ExceptionalDivisor
   /-- The bi-filtration: jet level (ascending) and accumulated
       Hecke relations (descending) at the current Planck step. -/
   filtration : InteractionBiFiltration
   /-- The vertex volume polynomial (the invariant). -/
-  vertex_volume : ℝ  -- In full formalization: polynomial in q
+  vertex_volume : R_q  -- In full formalization: polynomial in q
 
 /-- Adding a crossing while advancing the jet level preserves the
     bi-filtration invariant. -/
@@ -86,7 +98,7 @@ theorem InteractionBiFiltration.step_preserves_bound
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom transfer_matrix_level_independence
-    {q : ℝ} (hq : q > 1)
+    {q : R_q} (hq : q > 1)
     (T₁ T₂ : CategoricalTransferMatrix q)
     (h_same_hadron : T₁.base = T₂.base)
     : T₁.vertex_volume = T₂.vertex_volume

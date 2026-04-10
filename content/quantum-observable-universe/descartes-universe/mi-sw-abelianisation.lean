@@ -13,6 +13,11 @@ LaTeX label: `prop:mi-sw-abelianisation`
 
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 - [manuscript] §5-brings-surface/mi-sw-abelianisation
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

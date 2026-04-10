@@ -10,12 +10,25 @@ LaTeX label: `prop:box-braid-irreducibility`
 
 ## References
 - [manuscript] §6/box-braid-irreducibility
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A torus knot T(m,n) with coprime winding numbers. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
@@ -100,14 +113,14 @@ theorem box_braid_min_crossings :
     far below the T(3,5) crossing energy barrier.
     The ratio E_box / m_ν ≥ 10(q+q⁻¹)/q ≈ 19 at q = 1.1097. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
-theorem neutrino_energy_barrier (q : ℝ) (hq : 1 < q)
-    (μ₀ : ℝ) (hμ : 0 < μ₀) :
+theorem neutrino_energy_barrier (q : R_q) (hq : 1 < q)
+    (μ₀ : R_q) (hμ : 0 < μ₀) :
     10 * (q - 1/q) * μ₀ > μ₀ * (q - 1) := by
   -- Suffices: 10(q - 1/q) > (q - 1) for q > 1.
   -- Multiply through by q > 0: 10(q² - 1) > q(q - 1) = q² - q
   -- i.e. 10q² - 10 > q² - q, i.e. 9q² + q - 10 > 0.
   -- Factor: 9q² + q - 10 = (q - 1)(9q + 10) > 0 for q > 1.
-  have hq_pos : (0 : ℝ) < q := by linarith
+  have hq_pos : (0 : R_q) < q := by linarith
   have hq_ne : q ≠ 0 := ne_of_gt hq_pos
   rw [gt_iff_lt, div_eq_mul_inv, ← sub_mul, ← sub_mul]
   apply mul_lt_mul_of_pos_right _ hμ

@@ -21,22 +21,35 @@ LaTeX label: `cor:descartes-knot-eigenbasis`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [turaev2010] https://doi.org/10.1515/9783110218145
 - [manuscript] §6/§4
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Descartes Universe Data (from descartes-condition.lean) -/
 
 /-- Descartes condition: χ(A) = -6 with 6 invertible. -/
 structure DescartesData where
   /-- Deformation parameter q from U_q(su(2)). -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- q ≠ 1 (non-classical deformation). -/
   q_ne_one : q ≠ 1
   /-- q is not a root of unity. -/
@@ -79,8 +92,8 @@ structure DescartesHeckeAlgebra (D : DescartesData) where
   /-- Unit. -/
   one : carrier
   /-- The braiding eigenvalues are q and -q⁻¹. -/
-  eigenvalue_pos : ℝ := D.q
-  eigenvalue_neg : ℝ := -(D.q⁻¹)
+  eigenvalue_pos : R_q := D.q
+  eigenvalue_neg : R_q := -(D.q⁻¹)
   /-- Eigenvalues are distinct (q ≠ -q⁻¹ when q > 0, q ≠ 1). -/
   eigenvalues_distinct : eigenvalue_pos ≠ eigenvalue_neg
 
@@ -112,11 +125,11 @@ structure DescartesSchurWeyl (D : DescartesData) where
   numSummands : ℕ
   summands_count : numSummands = n / 2 + 1
   /-- Spin labels for each summand. -/
-  spinLabel : Fin numSummands → ℝ
+  spinLabel : Fin numSummands → R_q
   /-- Spins are non-negative. -/
   spin_nonneg : ∀ i, 0 ≤ spinLabel i
   /-- Maximum spin is n/2. -/
-  max_spin : ∀ i, spinLabel i ≤ (n : ℝ) / 2
+  max_spin : ∀ i, spinLabel i ≤ (n : R_q) / 2
   /-- Projection: every vector projects to a unique summand index. -/
   -- Ref: [chari1994guide] Ch. 10 (Jimbo's theorem gives semisimplicity)
   summandOf : tensorPower → Fin numSummands
@@ -153,7 +166,7 @@ structure DescartesBraidRep (D : DescartesData) where
   /-- The representation ρ_n assigns each braid to an automorphism
       of V^⊗n, encoded here as a real number (trace in the
       fundamental representation). -/
-  trace_of : BraidType → ℝ
+  trace_of : BraidType → R_q
   /-- Faithfulness: distinct braids give distinct traces. -/
   faithful : ∀ β₁ β₂ : BraidType,
     trace_of β₁ = trace_of β₂ → β₁ = β₂
@@ -176,10 +189,10 @@ structure DescartesBraidRep (D : DescartesData) where
 -- Ref: [jones1987] Annals of Mathematics 126 (1987)
 structure DescartesMarkovTrace (D : DescartesData) where
   /-- The Markov parameter z = -(q - q⁻¹)⁻¹ · q^(1/2). -/
-  z : ℝ
+  z : R_q
   z_ne_zero : z ≠ 0
   /-- The trace functional on H_n(q) elements. -/
-  tr : ℕ → ℝ → ℝ  -- tr n x: trace of element x at level n
+  tr : ℕ → R_q → R_q  -- tr n x: trace of element x at level n
   /-- The trace of the identity is nonzero. -/
   tr_one_ne_zero : ∀ n, n ≥ 2 → tr n 1 ≠ 0
   /-- Every irreducible summand is detected: for each level n and
@@ -188,7 +201,7 @@ structure DescartesMarkovTrace (D : DescartesData) where
   -- Ref: [jones1987] §3, character non-vanishing
   summand_detection : ∀ (n : ℕ) (numSummands : ℕ),
     numSummands = n / 2 + 1 →
-    ∀ (i : Fin numSummands), ∃ (val : ℝ), val ≠ 0
+    ∀ (i : Fin numSummands), ∃ (val : R_q), val ≠ 0
 
 /-! ## Main Instantiation Theorem -/
 
@@ -214,7 +227,7 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
   all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1),
     let sw := schurWeyl n hn
     ∀ (i : Fin sw.numSummands),
-    ∃ (jonesVal : ℝ), jonesVal ≠ 0
+    ∃ (jonesVal : R_q), jonesVal ≠ 0
 
 /-- The Descartes condition (q > 0, q ≠ 1, q not a root of unity)
     is sufficient to construct the full knot eigenbasis data.
@@ -233,7 +246,7 @@ theorem descartes_knot_eigenbasis (D : DescartesData) :
         ∀ (numSummands : ℕ),
           numSummands = n / 2 + 1 →
           ∀ (i : Fin numSummands),
-            ∃ (jonesVal : ℝ), jonesVal ≠ 0 := by
+            ∃ (jonesVal : R_q), jonesVal ≠ 0 := by
   -- The Markov trace exists by the Jones axiom (thm:jones-markov-trace),
   -- which is treated as an external proof (like Yekutieli lifting).
   -- See: jones-markov-trace.lean (JonesMarkovTrace structure)
@@ -253,7 +266,7 @@ theorem descartes_knot_eigenbasis (D : DescartesData) :
     trefoil detects the mixed-symmetry sector. -/
 -- Ref: [manuscript] §4, [jones1987] §3
 theorem descartes_n3_both_detected (D : DescartesData) :
-    ∃ (j_sym j_mix : ℝ), j_sym ≠ 0 ∧ j_mix ≠ 0 := by
+    ∃ (j_sym j_mix : R_q), j_sym ≠ 0 ∧ j_mix ≠ 0 := by
   -- The symmetric (spin-3/2) sector has Jones value J(unknot) = -(q + q⁻¹)
   -- The mixed (spin-1/2) sector has Jones value J(trefoil) = -q⁻⁴(1 - q² + q⁴)
   -- Both are nonzero for q > 0, q ≠ 1.

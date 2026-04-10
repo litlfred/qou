@@ -6,12 +6,25 @@ restricted to 0 < |w₁|² < ∞, with inherited Fubini–Study metric and
 C₅-action by phase rotation w_k ↦ ζᵏ w_k.
 
 LaTeX label: `def:briggs-klein-chart`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Complex.Basic
 
 namespace QOU.Brings
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Briggs–Klein affine chart**: coordinate system on Bring's surface
     using resolvent coordinates (w₁, w₂) ∈ ℂ², restricted to the open
@@ -28,7 +41,7 @@ structure BriggsKleinChart where
   /-- Second resolvent coordinate w₂ ∈ ℂ. -/
   w₂ : ℂ
   /-- Radial coordinate r = |w₁|². -/
-  r : ℝ
+  r : R_q
   /-- r is the squared modulus of w₁. -/
   r_eq : r = Complex.normSq w₁
   /-- The chart is restricted to 0 < r. -/
@@ -40,7 +53,7 @@ def c5_order : ℕ := 5
 
 /-- Primitive 5th root of unity phase angle. -/
 -- Ref: [manuscript] Chapter 5, §Bundle structures
-noncomputable def zeta_angle : ℝ := 2 * Real.pi / 5
+noncomputable def zeta_angle : R_q := 2 * Real.pi / 5
 
 /-- The C₅ phase rotation on the k-th coordinate: ζᵏ · w.
     Since ζ⁵ = 1, the action is periodic with period 5. -/

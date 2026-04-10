@@ -12,6 +12,11 @@ LaTeX label: `thm:mass-energy-equivalence`
 - [reshetikhin1991] https://doi.org/10.1007/BF01239527
 - [yekutieli2015] https://doi.org/10.1016/j.aim.2015.06.003
 - [manuscript] Ch. 9, §mass-energy-equivalence
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

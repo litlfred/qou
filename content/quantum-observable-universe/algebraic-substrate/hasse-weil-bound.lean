@@ -10,6 +10,11 @@ The proof decomposes into three steps:
 3. Combined, these force |αᵢ| = q^{1/2} exactly
 
 LaTeX label: `thm:hasse-weil-bound`
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 set_option autoImplicit false

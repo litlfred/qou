@@ -12,15 +12,28 @@ LaTeX label: `rem:t211-ideal-annihilation`
 ## References
 - [manuscript] §4/t211-ideal-annihilation
 - [jones1987] https://doi.org/10.2307/1971403
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.GroupTheory.OrderOfElement
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Section 1: T_{2,11} genus exceeds 4
@@ -133,7 +146,7 @@ theorem t2_11_not_embeddable' : notEmbeddable 2 11 4 := by
     This is the Chebyshev recurrence at eigenvalues (1,1):
     V̂(n) = 1 for all n — no shell structure. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
-theorem trivial_eigenvalue_flat (k : ℕ) : (1 : ℝ) ^ k = 1 := one_pow k
+theorem trivial_eigenvalue_flat (k : ℕ) : (1 : R_q) ^ k = 1 := one_pow k
 
 /-- The knot operator F(T_{m,n}, N) = 1 for non-embeddable torus knots.
     The transfer matrix has eigenvalues (1, 1), giving degenerate
@@ -141,14 +154,14 @@ theorem trivial_eigenvalue_flat (k : ℕ) : (1 : ℝ) ^ k = 1 := one_pow k
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4)
-    (q : ℝ) (hq : q > 1) :
+    (q : R_q) (hq : q > 1) :
     -- The transfer matrix eigenvalues for a non-embeddable knot are both 1.
     -- Formally: λ₊(T_{m,n}) = 1 ∧ λ₋(T_{m,n}) = 1.
     -- The consequence V̂(k) = 1^k = 1 is proved above (trivial_eigenvalue_flat).
     -- Full statement requires the transfer matrix type from
     -- spectral-decomposition-qvalue; the eigenvalue = 1 claim is the
     -- content of embeddability-closure Theorem 2 (spectral filter).
-    ∀ (k : ℕ), (1 : ℝ) ^ k = 1
+    ∀ (k : ℕ), (1 : R_q) ^ k = 1
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Section 5: Genus stable across brane levels

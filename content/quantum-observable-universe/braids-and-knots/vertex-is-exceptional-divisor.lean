@@ -8,16 +8,28 @@
 
   ## References
   - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.Topology.FiberBundle.Basic
 
 namespace QOU
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- Every vertex operator (Hecke generator) factors through the
     exceptional divisor: it is supported on 𝒮_p and trivial on A₀. -/
 theorem vertex_is_exceptional_divisor
-    {q : ℝ} (hq : q > 1)
+    {q : R_q} (hq : q > 1)
     (E : QOU.ExceptionalDivisor)
     (R : QOU.ReebBundle q) :
     -- The Hecke action on V^{⊗n} factors through 𝒮_p:
@@ -30,7 +42,7 @@ theorem vertex_is_exceptional_divisor
 /-- Every Skein resolution L₊ - L₋ = (q - q⁻¹)L₀ is
     evaluated within the Reeb bundle ℛ_p over 𝒮_p. -/
 theorem skein_confined_to_reeb_bundle
-    {q : ℝ} (hq : q > 1)
+    {q : R_q} (hq : q > 1)
     (E : QOU.ExceptionalDivisor)
     (R : QOU.ReebBundle q) :
     True := by
@@ -40,7 +52,7 @@ theorem skein_confined_to_reeb_bundle
 /-- Every interaction changing quantum numbers at p is realised
     by a finite braid word whose Hecke image acts within ℛ_p. -/
 theorem vertex_completeness
-    {q : ℝ} (hq : q > 1)
+    {q : R_q} (hq : q > 1)
     (E : QOU.ExceptionalDivisor)
     (R : QOU.ReebBundle q) :
     True := by

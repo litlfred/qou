@@ -24,15 +24,28 @@ Given these, the closed-form formula is a one-line algebraic consequence.
 
 - [turaev2010] https://doi.org/10.1515/9783110221831
 - [yekutieli2015] Nonabelian multiplicative integration on surfaces
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.QuantumObservableUniverse
 import QOU.Torsion
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 open QOU QOU.Torsion
 
 namespace QOU.Torsion
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## The Archimedean Mass Formula -/
 
@@ -51,17 +64,17 @@ namespace QOU.Torsion
     LaTeX: `\label{prop:topological-mass-formula}` -/
 structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecomposition M where
   /-- The substrate parameter `q > 1` at the evaluation point. -/
-  q : ℝ
+  q : R_q
   /-- The substrate parameter exceeds classicality. -/
-  q_gt_one : q > 1
+  -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
   /-- The quantum Planck constant `ℏ_q = 1 − 1/q`. -/
-  h_q : ℝ := 1 - 1 / q
+  h_q : R_q := 1 - 1 / q
   /-- The quantum Planck constant satisfies its defining equation.
       This constraint ensures `h_q` cannot be overridden to an
       inconsistent value. -/
   h_q_def : h_q = 1 - 1 / q := by rfl
   /-- The hyperbolic volume of the knot `K`. -/
-  knotVolume : ℝ
+  knotVolume : R_q
   /-- The knot volume is positive. -/
   knotVolume_pos : 0 < knotVolume
   /-- **Hypothesis 1 (Chern–Simons/Volume correspondence).**

@@ -3,10 +3,16 @@
 
   Temperature is the quantum Planck constant — the tick rate
   of the Reeb dynamics.  Inverse temperature β_q = 1/ℏ_q = t_P.
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 import QOU.QuantumObservableUniverse
 import QOU.MathConstants
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
@@ -15,18 +21,25 @@ import Mathlib.Tactic.Positivity
 
 namespace QOU.Information
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- **Quantum temperature** at a point p ∈ M.
     T_q(p) = ℏ_q(p) = (q(p) - 1) / q(p).
     Label: def:quantum-temperature -/
 noncomputable def quantumTemperature {M : Type*} (sp : SubstrateParameter M)
-    (p : M) : ℝ :=
+    (p : M) : R_q :=
   quantumPlanckConstant sp p
 
 /-- **Inverse temperature** (Planck time).
     β_q(p) = 1 / T_q(p) = q(p) / (q(p) - 1).
     Label: def:quantum-temperature -/
 noncomputable def inverseTemperature {M : Type*} (sp : SubstrateParameter M)
-    (p : M) : ℝ :=
+    (p : M) : R_q :=
   sp.field p / (sp.field p - 1)
 
 /-- The quantum temperature is non-negative. -/
@@ -38,8 +51,8 @@ theorem quantumTemperature_nonneg {M : Type*} (sp : SubstrateParameter M)
 theorem quantumTemperature_pos {M : Type*} (sp : SubstrateParameter M)
     (p : M) (hq : sp.field p > 1) : 0 < quantumTemperature sp p := by
   unfold quantumTemperature quantumPlanckConstant
-  have hq_pos : (0 : ℝ) < sp.field p := by linarith
-  have hinv_pos : (0 : ℝ) < (sp.field p)⁻¹ := inv_pos.mpr hq_pos
+  have hq_pos : (0 : R_q) < sp.field p := by linarith
+  have hinv_pos : (0 : R_q) < (sp.field p)⁻¹ := inv_pos.mpr hq_pos
   have hinv_lt : (sp.field p)⁻¹ < 1 := by
     rw [inv_lt_one_iff_of_pos hq_pos]
     linarith

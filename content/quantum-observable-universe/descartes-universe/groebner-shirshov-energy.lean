@@ -9,11 +9,24 @@ LaTeX label: `thm:groebner-shirshov-energy`
 
 ## References
 - [manuscript] §6/groebner-shirshov-energy
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A single division step in the Gröbner reduction. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
@@ -24,49 +37,49 @@ inductive DivisionStepType
 
 /-- The energy change per Hecke step: |c| × (q - q⁻¹). -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-noncomputable def heckeEnergyChange (q : ℝ) (coeff : ℝ) : ℝ :=
+noncomputable def heckeEnergyChange (q : R_q) (coeff : R_q) : R_q :=
   |coeff| * (q - 1/q)
 
 /-- The energy change is positive for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-theorem heckeEnergyChange_pos (q : ℝ) (hq : 1 < q) (c : ℝ) (hc : c ≠ 0) :
+theorem heckeEnergyChange_pos (q : R_q) (hq : 1 < q) (c : R_q) (hc : c ≠ 0) :
     0 < heckeEnergyChange q c := by
   unfold heckeEnergyChange
   apply mul_pos
   · exact abs_pos.mpr hc
-  · rw [sub_pos, div_lt_one (by linarith : (0 : ℝ) < q)]
+  · rw [sub_pos, div_lt_one (by linarith : (0 : R_q) < q)]
     nlinarith
 
 /-- Yang-Baxter steps have zero energy change. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 theorem yangBaxter_energy_zero (step : DivisionStepType) (h : step = .yangBaxter) :
-    (0 : ℝ) = 0 := rfl
+    (0 : R_q) = 0 := rfl
 
 /-- Far commutativity steps have zero energy change. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 theorem farComm_energy_zero (step : DivisionStepType) (h : step = .farComm) :
-    (0 : ℝ) = 0 := rfl
+    (0 : R_q) = 0 := rfl
 
 /-- The total energy change is the sum of Hecke step energies.
     Yang-Baxter and far commutativity contribute zero. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-noncomputable def totalEnergyChange (q : ℝ) (hecke_coeffs : List ℝ) : ℝ :=
+noncomputable def totalEnergyChange (q : R_q) (hecke_coeffs : List R_q) : R_q :=
   (hecke_coeffs.map (heckeEnergyChange q)).sum
 
 /-- Each Hecke energy change is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-private theorem heckeEnergyChange_nonneg (q : ℝ) (hq : 1 < q) (c : ℝ) :
+private theorem heckeEnergyChange_nonneg (q : R_q) (hq : 1 < q) (c : R_q) :
     0 ≤ heckeEnergyChange q c := by
   unfold heckeEnergyChange
   apply mul_nonneg (abs_nonneg _)
-  have hq_pos : (0 : ℝ) < q := by linarith
+  have hq_pos : (0 : R_q) < q := by linarith
   rw [sub_nonneg, div_le_iff hq_pos]
   nlinarith
 
 /-- The total energy is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
-    (coeffs : List ℝ) :
+theorem totalEnergyChange_nonneg (q : R_q) (hq : 1 < q)
+    (coeffs : List R_q) :
     0 ≤ totalEnergyChange q coeffs := by
   unfold totalEnergyChange
   apply List.sum_nonneg
@@ -84,8 +97,8 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     normal form alone. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
-axiom energy_path_independent (q : ℝ) (hq : 1 < q)
-    (initial : List (List ℕ × ℝ))  -- initial Hecke element
+axiom energy_path_independent (q : R_q) (hq : 1 < q)
+    (initial : List (List ℕ × R_q))  -- initial Hecke element
     (path1 path2 : List DivisionStepType)  -- two reduction paths
     : totalEnergyChange q (path1.filterMap fun s =>
         match s with | .hecke => some 1 | _ => none) =
@@ -96,13 +109,13 @@ axiom energy_path_independent (q : ℝ) (hq : 1 < q)
     the daughter has lower energy than the parent.
     (Computationally verified for all A ≤ 6.) -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-axiom beta_decay_energy_negative (q : ℝ) (hq : 1 < q)
+axiom beta_decay_energy_negative (q : R_q) (hq : 1 < q)
     (p n : ℕ) (hn : 0 < n) :
-    ∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par
+    ∃ (𝒮_par E_dau : R_q), E_dau < 𝒮_par
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-noncomputable def groebner_shirshov_energy (q : ℝ) (coeffs : List ℝ) : ℝ :=
+noncomputable def groebner_shirshov_energy (q : R_q) (coeffs : List R_q) : R_q :=
   totalEnergyChange q coeffs
 
 end QOU.Descartes

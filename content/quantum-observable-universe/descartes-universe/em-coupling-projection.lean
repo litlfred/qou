@@ -14,19 +14,32 @@ LaTeX label: `prop:em-coupling-projection`
 
 - [manuscript] §5/em-coupling-projection
 - [jones1987] https://doi.org/10.2307/1971403
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- The q-integer [n]_q = (q^n - q^{-n}) / (q - q^{-1}). -/
-noncomputable def qInteger (q : ℝ) (n : ℕ) : ℝ :=
+noncomputable def qInteger (q : R_q) (n : ℕ) : R_q :=
   (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
 
 /-- The antisymmetric eigenvalue of the R-matrix for SU_q(2):
     |tr_τ(σ_anti)|² = q⁻¹. -/
-noncomputable def antisymmetricEigenvalue (q : ℝ) : ℝ := q⁻¹
+noncomputable def antisymmetricEigenvalue (q : R_q) : R_q := q⁻¹
 
 /-- Crossing number of the strong force carrier T_{2,9}. -/
 def strongCrossingNumber : ℕ := 9
@@ -48,12 +61,12 @@ def weakCrossingNumber : ℕ := 10
     3. Normalisation by force-carrier complexity: [9]_q · [10]_q -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] §5/em-coupling-projection
-noncomputable def emCoupling (q : ℝ) : ℝ :=
+noncomputable def emCoupling (q : R_q) : R_q :=
   antisymmetricEigenvalue q / (qInteger q strongCrossingNumber * qInteger q weakCrossingNumber)
 
 /-- The electromagnetic coupling equals q⁻¹ / ([9]_q · [10]_q). -/
 -- Ref: [manuscript] §5/em-coupling-projection
-theorem em_coupling_projection (q : ℝ) (hq : 1 < q) :
+theorem em_coupling_projection (q : R_q) (hq : 1 < q) :
     emCoupling q = q⁻¹ / (qInteger q 9 * qInteger q 10) := by
   unfold emCoupling antisymmetricEigenvalue strongCrossingNumber weakCrossingNumber
   ring
@@ -61,7 +74,7 @@ theorem em_coupling_projection (q : ℝ) (hq : 1 < q) :
 /-- Classical limit: as q → 1, [n]_q → n, so α_EM → 1/90. -/
 -- Ref: [manuscript] §5/em-coupling-projection
 theorem em_coupling_classical_limit :
-    ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, |q - 1| < δ → q > 0 →
+    ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, |q - 1| < δ → q > 0 →
     |emCoupling q - 1 / 90| < ε := by
   -- In the limit q → 1, [n]_q → n for all n, giving 1/(9 × 10) = 1/90.
   -- Ref: [manuscript] §5/em-coupling-projection
