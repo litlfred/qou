@@ -54,3 +54,8 @@ path = "src/bin/v11_modular.rs"
 [[bin]]
 name = "hecke-atomic"
 path = "src/bin/v12_atomic.rs"
+
+# Streaming reduction: reduce during multiplication (lower peak memory)
+[[bin]]
+name = "hecke-stream"
+path = "src/bin/v13_stream.rs"
