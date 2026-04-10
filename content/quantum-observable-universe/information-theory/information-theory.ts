@@ -94,6 +94,27 @@ section({
       label: "sec:stat-mech",
       blocks: [
         "stat-mech-intro",
+        "quantum-temperature",
+        "quantum-temperature-interpretation",
+        "quantum-pressure",
+        "quantum-pressure-interpretation",
+        "quantum-volume",
+        "quantum-volume-interpretation",
+        "quantum-ideal-gas-law",
+        "quantum-ideal-gas-law-interpretation",
+        "boltzmann-constant",
+        "gas-constant-derivation",
+        "hydrogen-partition-function",
+      ],
+    }),
+    section({
+      title: "Phase Transitions and Sublimation",
+      label: "sec:phase-transitions",
+      blocks: [
+        "phase-transition-boundary",
+        "phase-transition-interpretation",
+        "composite-crossing-parity",
+        "crossing-parity-test",
       ],
     }),
     section({
