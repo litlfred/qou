@@ -321,10 +321,45 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
         eprintln!("  strand {}/{}: {} words, {} alt terms", k, a-1, tree.len(), acc_alt.n());
     }
 
-    // NO final strip — keep full NF for comparison
-    // let (final_alt, final_net) = strip_tree(&mut tree);
-    // acc_alt = acc_alt.add(&final_alt);
-    // acc_net = acc_net.add(&final_net);
+    // Dump PRE-strip NF
+    {
+        let hp = P / 2;
+        eprintln!("  PRE-STRIP NF ({} words):", tree.len());
+        for (w, c) in &tree {
+            let ws: String = (0..w.len()).map(|i| format!("σ{}", w.get(i))).collect::<Vec<_>>().join("·");
+            let ws = if ws.is_empty() { "𝟙".to_string() } else { ws };
+            let terms: Vec<String> = c.t.iter().map(|(&k, &v)| {
+                let cv = if v > hp { -((P-v) as i64) } else { v as i64 };
+                format!("{}·t^{}", cv, k)
+            }).collect();
+            eprintln!("    {} = {}", ws, terms.join(" + "));
+        }
+    }
+    // Final strip with logging
+    {
+        let hp = P / 2;
+        for _ in 0..500 {
+            let mut any = false;
+            let words: Vec<W> = tree.keys().rev().cloned().collect();
+            for w in &words {
+                if w.len() < 2 { continue; }
+                if tree.get(w).map_or(true, |c| c.is_zero()) { continue; }
+                let prefix = w.drop_last();
+                if tree.get(&prefix).map_or(true, |c| c.is_zero()) { continue; }
+                if let Some(c) = tree.remove(w) {
+                    let wl = w.len() as i32;
+                    let ws: String = (0..w.len()).map(|i| format!("σ{}", w.get(i))).collect::<Vec<_>>().join("·");
+                    let shifted = LP { t: c.t.iter().map(|(k,v)| (k - 2*wl, *v)).collect() };
+                    if wl % 2 == 0 { acc_alt = acc_alt.add(&shifted); }
+                    else { acc_alt = acc_alt.sub(&shifted); }
+                    acc_net = acc_net.add(&c);
+                    eprintln!("    STRIP {} (len={}): {} coeff terms, shift={}", ws, wl, c.n(), -2*wl);
+                    any = true;
+                }
+            }
+            if !any { break; }
+        }
+    }
 
     eprintln!("  After final strip: {} words", tree.len());
     for (w, c) in &tree {
