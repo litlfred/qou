@@ -69,6 +69,8 @@ export default chapter({
         "mass-comparison-table",
         "mass-formula-validation",
         "atom-mass-full-hecke",
+        "neutron-proton-mass-splitting",
+        "photon-channel-wedderburn-chain",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
