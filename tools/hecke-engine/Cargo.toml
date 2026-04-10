@@ -49,3 +49,8 @@ lto = true
 [[bin]]
 name = "hecke-modular"
 path = "src/bin/v11_modular.rs"
+
+# Atomic braid: protons + neutrons + electrons in H_{A+Z}(q)
+[[bin]]
+name = "hecke-atomic"
+path = "src/bin/v12_atomic.rs"
