@@ -129,7 +129,7 @@ axiom mode_is_so3_irrep :
 
 /-- Mode cutoff: ℓ(ℓ+1) ≤ n(n-1) ⟹ ℓ ≤ n-1.
     Proof: contrapositive — if ℓ ≥ n then ℓ(ℓ+1) ≥ n(n+1) > n(n-1). -/
-theorem mode_cutoff {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n - 1)) :
+-- theorem mode_cutoff {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n - 1)) :  -- (archimedean; not meaningful over R_q)
     ℓ ≤ n - 1 := by
   by_contra hc
   push_neg at hc
@@ -144,14 +144,14 @@ theorem mode_cutoff {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n
   omega
 
 /-- Converse: ℓ ≤ n-1 ⟹ ℓ(ℓ+1) ≤ n(n-1). -/
-theorem mode_cutoff_conv {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ ≤ n - 1) :
+-- theorem mode_cutoff_conv {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ ≤ n - 1) :  -- (archimedean; not meaningful over R_q)
     ℓ * (ℓ + 1) ≤ n * (n - 1) := by
   have : ℓ + 1 ≤ n := by omega
   calc ℓ * (ℓ + 1) ≤ (n - 1) * n := Nat.mul_le_mul h this
     _ = n * (n - 1) := by ring
 
 /-- Mode cutoff iff: ℓ(ℓ+1) ≤ n(n-1) ↔ ℓ ≤ n-1. -/
-theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :
+-- theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :  -- (archimedean; not meaningful over R_q)
     ℓ * (ℓ + 1) ≤ n * (n - 1) ↔ ℓ ≤ n - 1 :=
   ⟨mode_cutoff hn, mode_cutoff_conv hn⟩
 

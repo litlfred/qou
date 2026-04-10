@@ -38,7 +38,7 @@ structure KnotComposite where
   /-- Substrate parameter q > 1. -/
   q : R_q
   -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
-  q_ge_one : 1 ≤ q
+  -- q_ge_one : 1 ≤ q  -- (archimedean; not meaningful over R_q)
 
 /-- Crossing energy: sum of +q (positive) and -q⁻¹ (negative) crossings. -/
 noncomputable def KnotComposite.crossingEnergy (H : KnotComposite) : R_q :=
@@ -50,7 +50,7 @@ def KnotComposite.mirror (H : KnotComposite) : KnotComposite where
   neg_crossings := H.pos_crossings
   q := H.q
   -- q_pos := H.q_pos  -- (archimedean; not meaningful over R_q)
-  q_ge_one := H.q_ge_one
+  -- q_ge_one := H.q_ge_one  -- (archimedean; not meaningful over R_q)
 
 /-- Coulomb charge: antisymmetric component of crossing energy. -/
 noncomputable def KnotComposite.coulombCharge (H : KnotComposite) : R_q :=

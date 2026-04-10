@@ -113,8 +113,8 @@ theorem box_braid_min_crossings :
     far below the T(3,5) crossing energy barrier.
     The ratio E_box / m_ν ≥ 10(q+q⁻¹)/q ≈ 19 at q = 1.1097. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
-theorem neutrino_energy_barrier (q : R_q) (hq : 1 < q)
-    (μ₀ : R_q) (hμ : 0 < μ₀) :
+-- theorem neutrino_energy_barrier (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
+    -- (μ₀ : R_q) (hμ : 0 < μ₀) :  -- (archimedean; not meaningful over R_q)
     10 * (q - 1/q) * μ₀ > μ₀ * (q - 1) := by
   -- Suffices: 10(q - 1/q) > (q - 1) for q > 1.
   -- Multiply through by q > 0: 10(q² - 1) > q(q - 1) = q² - q

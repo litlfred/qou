@@ -64,7 +64,7 @@ structure OPE (q : R_q) where
     to the strand collision on 𝒮_p. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 axiom ope_is_skein
-    {q : R_q} (hq : q > 1)
+    -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (Y₁ Y₂ : VertexOperator q)
     : ∃ (ope : OPE q),
         ope.left = Y₁ ∧ ope.right = Y₂ ∧

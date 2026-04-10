@@ -39,7 +39,7 @@ structure PawLeiInnerProduct where
   normSq : Fin num_basis → R_q
   /-- All norms are positive. -/
   -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-  normSq_pos : ∀ i, normSq i > 0
+  -- normSq_pos : ∀ i, normSq i > 0  -- (archimedean; not meaningful over R_q)
 
 /-- Positive-definiteness: the PL inner product ⟨φ, φ⟩ > 0
     for any nonzero intertwiner φ (follows from normSq_pos). -/

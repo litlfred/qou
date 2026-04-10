@@ -43,13 +43,13 @@ universe u
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 noncomputable def SubstrateParameter.ofConstant
-    (M : Type*) (q₀ : R_q) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)
+    -- (M : Type*) (q₀ : R_q) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)  -- (archimedean; not meaningful over R_q)
     (hq_root : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1) :
     SubstrateParameter M :=
   { field := fun _ => q₀
     -- field_pos := fun _ => hq_pos  -- (archimedean; not meaningful over R_q)
     -- field_ge_one := fun _ => hq_ge  -- (archimedean; not meaningful over R_q)
-    not_root_of_unity := fun _ k hk => hq_root k hk }
+    -- not_root_of_unity := fun _ k hk => hq_root k hk }  -- (archimedean; not meaningful over R_q)
 
 /-- The interpolated differential operator `d_q` at parameter `q₀`.
 
@@ -78,7 +78,7 @@ structure InterpolatedDifferential (q₀ : R_q) where
   coeff_full_eq : coeff_full = q₀⁻¹
 
 /-- Construct the interpolated differential from q₀ > 0. -/
-noncomputable def InterpolatedDifferential.mk' (q₀ : R_q) (hq_pos : 0 < q₀) :
+-- noncomputable def InterpolatedDifferential.mk' (q₀ : R_q) (hq_pos : 0 < q₀) :  -- (archimedean; not meaningful over R_q)
     InterpolatedDifferential q₀ where
   coeff_full := q₀⁻¹
   coeff_vert := 1 - q₀⁻¹
@@ -91,7 +91,7 @@ theorem InterpolatedDifferential.classical_limit :
   simp [InterpolatedDifferential.mk', inv_one]
 
 /-- For q > 1, the vertical weight is positive (quantum regime). -/
-theorem InterpolatedDifferential.quantum_regime (q₀ : R_q) (hq : 1 < q₀) :
+-- theorem InterpolatedDifferential.quantum_regime (q₀ : R_q) (hq : 1 < q₀) :  -- (archimedean; not meaningful over R_q)
     0 < (InterpolatedDifferential.mk' q₀ (by linarith)).coeff_vert := by
   simp [InterpolatedDifferential.mk']
   have : q₀⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
@@ -121,7 +121,7 @@ noncomputable def SubstrateParameter.ofReebDecomposition
     [CategoryTheory.MonoidalCategory C] [Preadditive C]
     (M : Type*) (wd : WeightDecomposition C)
     (reeb : CategoricalReeb C)
-    (q₀ : R_q) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)
+    -- (q₀ : R_q) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)  -- (archimedean; not meaningful over R_q)
     (hq_root : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1)
     /-- The weight decomposition is compatible with the Reeb object:
         the forms on which π_V acts are the same object as the Reeb
@@ -142,6 +142,6 @@ noncomputable def SubstrateParameter.ofReebDecomposition
   { field := fun _ => q₀
     -- field_pos := fun _ => hq_pos  -- (archimedean; not meaningful over R_q)
     -- field_ge_one := fun _ => hq_ge  -- (archimedean; not meaningful over R_q)
-    not_root_of_unity := fun _ k hk => hq_root k hk }
+    -- not_root_of_unity := fun _ k hk => hq_root k hk }  -- (archimedean; not meaningful over R_q)
 
 end QOU

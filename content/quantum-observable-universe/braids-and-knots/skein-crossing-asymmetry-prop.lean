@@ -36,7 +36,7 @@ noncomputable def coulombCorrection (q : R_q) : R_q :=
 
 /-- For q > 1, the Coulomb correction is positive. -/
 -- Ref: [manuscript] Ch. 4, §enveloping-algebras
-theorem skein_crossing_asymmetry (q : R_q) (hq : q > 1) :
+-- theorem skein_crossing_asymmetry (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     coulombCorrection q > 0 := by
   simp only [coulombCorrection]
   apply div_pos

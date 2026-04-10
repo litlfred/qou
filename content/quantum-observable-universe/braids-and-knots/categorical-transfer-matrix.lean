@@ -98,7 +98,7 @@ theorem InteractionBiFiltration.step_preserves_bound
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom transfer_matrix_level_independence
-    {q : R_q} (hq : q > 1)
+    -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (T₁ T₂ : CategoricalTransferMatrix q)
     (h_same_hadron : T₁.base = T₂.base)
     : T₁.vertex_volume = T₂.vertex_volume

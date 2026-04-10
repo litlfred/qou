@@ -42,13 +42,13 @@ noncomputable def reebPeriod (q : R_q) : R_q := (planck q)⁻¹
   simp [planck, inv_one]
 
 /-- For q > 1, ℏ(q) > 0. -/
-theorem planck_pos {q : R_q} (hq : 1 < q) : 0 < planck q := by
+-- theorem planck_pos {q : R_q} (hq : 1 < q) : 0 < planck q := by  -- (archimedean; not meaningful over R_q)
   simp only [planck]
   have : q⁻¹ < 1 := inv_lt_one_of_one_lt hq
   linarith
 
 /-- For q > 1, ℏ(q) ≠ 0. -/
-theorem planck_ne_zero {q : R_q} (hq : 1 < q) : planck q ≠ 0 :=
+-- theorem planck_ne_zero {q : R_q} (hq : 1 < q) : planck q ≠ 0 :=  -- (archimedean; not meaningful over R_q)
   ne_of_gt (planck_pos hq)
 
 /-- **Quantum gap collapse (part 1)**: ℏ_q → 0 as q → 1⁺.

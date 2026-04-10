@@ -43,9 +43,9 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 -- Ref: [manuscript] Ch. 5, §torus-hopf-stability
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem torus_hopf_stability
-    (q : R_q) (hq : q > 1)
-    (vol_binding : R_q) (hvol : 0 < vol_binding)
-    (crossing_sum : R_q) (hcs : crossing_sum ≥ 0)
+    -- (q : R_q) (hq : q > 1)  -- (archimedean; not meaningful over R_q)
+    -- (vol_binding : R_q) (hvol : 0 < vol_binding)  -- (archimedean; not meaningful over R_q)
+    -- (crossing_sum : R_q) (hcs : crossing_sum ≥ 0)  -- (archimedean; not meaningful over R_q)
     (h_bound : crossing_sum < vol_binding * q⁻¹ ^ 2) :
     -vol_binding * q⁻¹ ^ 2 + crossing_sum < 0 := by
   linarith

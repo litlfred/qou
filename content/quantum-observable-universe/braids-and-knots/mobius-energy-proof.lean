@@ -39,7 +39,7 @@ structure KnotEmbedding (M : Type*) where
   /-- Arc-length distance is symmetric. -/
   arcLength_symm : ∀ s t, arcLengthDist s t = arcLengthDist t s
   /-- Arc-length distance is non-negative. -/
-  arcLength_nonneg : ∀ s t, 0 ≤ arcLengthDist s t
+  -- arcLength_nonneg : ∀ s t, 0 ≤ arcLengthDist s t  -- (archimedean; not meaningful over R_q)
 
 /-- The **classical Möbius energy** of a knot embedding.
     Ref: [freedman1994] https://doi.org/10.2307/2946567
@@ -48,7 +48,7 @@ structure ClassicalMobiusEnergy where
   /-- The energy value `E(γ)`. -/
   value : R_q
   /-- The energy is non-negative (Freedman–He–Wang). -/
-  nonneg : 0 ≤ value
+  -- nonneg : 0 ≤ value  -- (archimedean; not meaningful over R_q)
 
 /-! ## Substrate Parameter (local copy for self-containedness) -/
 
@@ -98,7 +98,7 @@ theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :
 
 /-- The categorical Möbius energy is non-negative. -/
 theorem MobiusEnergy_nonneg {M : Type*} (cme : CategoricalMobiusEnergy M)
-    (h_const_nonneg : 0 ≤ cme.classicalLimitConst) :
+    -- (h_const_nonneg : 0 ≤ cme.classicalLimitConst) :  -- (archimedean; not meaningful over R_q)
     0 ≤ cme.energy := by
   rw [cme.classicalLimit]; linarith [cme.classicalEnergy.nonneg]
 

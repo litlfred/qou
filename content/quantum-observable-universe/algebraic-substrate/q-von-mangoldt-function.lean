@@ -30,7 +30,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 structure MaxIdeal where
   /-- The norm N(𝔪) — cardinality of the residue field. -/
   norm : R_q
-  norm_pos : 0 < norm
+  -- norm_pos : 0 < norm  -- (archimedean; not meaningful over R_q)
   /-- Whether this ideal corresponds to a fundamental defect. -/
   isFundamental : Prop
 
@@ -39,7 +39,7 @@ structure MaxIdeal where
     For a fundamental defect with norm N(𝔪), returns
     (N(𝔪)^ℏ_q - 1) / ℏ_q where ℏ_q = (q-1)/q is the quantum
     Planck constant. Returns 0 for non-fundamental ideals. -/
-noncomputable def QVonMangoldtFunction (hbar_q : R_q) (hbar_pos : 0 < hbar_q)
+-- noncomputable def QVonMangoldtFunction (hbar_q : R_q) (hbar_pos : 0 < hbar_q)  -- (archimedean; not meaningful over R_q)
     (m : MaxIdeal) : R_q :=
   if m.isFundamental then
     (m.norm ^ hbar_q - 1) / hbar_q

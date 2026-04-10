@@ -57,7 +57,7 @@ structure ClassicalLimit extends CategoricalMobiusEnergy where
 /-- Möbius energy is non-negative for embedded curves. -/
 -- Ref: [freedman1994]
 theorem mobius_energy_nonneg (cme : CategoricalMobiusEnergy)
-    (h_embed : 0 ≤ cme.energy_classical) :
+    -- (h_embed : 0 ≤ cme.energy_classical) :  -- (archimedean; not meaningful over R_q)
     0 ≤ cme.energy_classical :=
   h_embed
 

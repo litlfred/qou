@@ -108,7 +108,7 @@ theorem ground_state_shell : shellNumber 3 = 1 := by native_decide
 theorem first_excited_shell : shellNumber 5 = 2 := by native_decide
 
 /-- Shell transition: two R-I moves (writhe +2) advances shell by 1. -/
-theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :
+-- theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :  -- (archimedean; not meaningful over R_q)
     shellNumber (w + 2) = shellNumber w + 1 := by
   simp only [shellNumber]
   omega

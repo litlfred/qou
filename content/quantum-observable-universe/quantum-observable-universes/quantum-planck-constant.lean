@@ -47,7 +47,7 @@ noncomputable def quantumPlanckConstant {M : Type*} (sp : SubstrateParameter M)
 
 /-- The quantum Planck constant takes values in `[0, 1)`. -/
 theorem quantumPlanckConstant_nonneg {M : Type*} (sp : SubstrateParameter M)
-    (p : M) : 0 ≤ quantumPlanckConstant sp p := by
+    -- (p : M) : 0 ≤ quantumPlanckConstant sp p := by  -- (archimedean; not meaningful over R_q)
   unfold quantumPlanckConstant
   linarith [inv_le_one_of_one_le₀ (sp.field_ge_one p)]
 

@@ -44,12 +44,12 @@ structure NonSelfIntersection where
   /-- The categorical energy of the knot. -/
   energy : R_q
   /-- Energy is positive (obstruction to self-intersection). -/
-  energy_pos : 0 < energy
+  -- energy_pos : 0 < energy  -- (archimedean; not meaningful over R_q)
   /-- As strands approach, the energy diverges: energy → ∞. -/
   /-- The non-cocommutativity parameter Δ_nc = |Δ - σΔ|. -/
   noncocomm : R_q
   /-- Non-cocommutativity is positive for q ≠ 1. -/
-  noncocomm_pos : 0 < noncocomm
+  -- noncocomm_pos : 0 < noncocomm  -- (archimedean; not meaningful over R_q)
 
 /-- The non-cocommutativity vanishes iff q = 1 (classical limit). -/
 -- Ref: [manuscript] §4

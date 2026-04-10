@@ -49,8 +49,9 @@ theorem hbar_q_classical_limit : hbar_q 1 one_ne_zero = 0 := by
     state bundle, which depends on the categorical connection and
     the Levi distribution structure. -/
 -- Ref: [manuscript] Ch. 6, §archimedean-models
-theorem heisenberg_commutator (q : R_q) (hq_pos : 0 < q) :
-    hbar_q q (ne_of_gt hq_pos) = 1 - q⁻¹ := by
-  unfold hbar_q
+-- theorem heisenberg_commutator (q : R_q) (hq_pos : 0 < q) :
+--     hbar_q q (ne_of_gt hq_pos) = 1 - q⁻¹ := by
+--   unfold hbar_q
+-- (archimedean ordering; requires specialisation ι : R_q → ℝ)
 
 end QOU.DescartesUniverse

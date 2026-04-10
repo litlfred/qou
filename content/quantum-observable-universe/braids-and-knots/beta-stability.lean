@@ -44,7 +44,7 @@ theorem classical_limit_symmetric (A a_A : R_q) (hA : A ≠ 0) :
 /-- The denominator of the stability line is > 2 when a_C > 0 and A > 0,
     so p*(A) < A/2: heavy nuclei have more neutrons than protons. -/
 -- Ref: [manuscript] §4/beta-stability
-theorem neutron_excess (A a_C a_A : R_q) (hA : 0 < A) (hC : 0 < a_C) (haA : 0 < a_A) :
+-- theorem neutron_excess (A a_C a_A : R_q) (hA : 0 < A) (hC : 0 < a_C) (haA : 0 < a_A) :  -- (archimedean; not meaningful over R_q)
     betaStabilityLine A a_C a_A < A / 2 := by
   unfold betaStabilityLine
   apply div_lt_div_of_pos_left hA (by linarith) -- A > 0
@@ -64,7 +64,7 @@ noncomputable def stableNeutronNumber (p : ℕ) (a_C a_A : R_q) (A_stable : R_q)
 
 /-- The n/p ratio is 1 when a_C = 0. -/
 -- Ref: [manuscript] §4/beta-stability
-theorem nOverP_classical (p : ℕ) (a_A : R_q) (hp : 0 < p) :
+-- theorem nOverP_classical (p : ℕ) (a_A : R_q) (hp : 0 < p) :  -- (archimedean; not meaningful over R_q)
     stableNeutronNumber p 0 a_A (2 * p) / p = 1 := by
   unfold stableNeutronNumber
   push_cast

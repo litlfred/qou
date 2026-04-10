@@ -87,7 +87,7 @@ structure HadronBinding where
   bindingMass : R_q
   /-- Binding mass is non-negative. -/
   -- Ref: [manuscript] §3
-  bindingMass_nonneg : 0 ≤ bindingMass
+  -- bindingMass_nonneg : 0 ≤ bindingMass  -- (archimedean; not meaningful over R_q)
 
 /-- Mass of a single constituent knot, given by its hyperbolic volume
     in the QOU framework.  Returns the volume value. -/

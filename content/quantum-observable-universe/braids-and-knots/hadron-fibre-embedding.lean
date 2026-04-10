@@ -40,7 +40,7 @@ structure HadronFibreEmbedding where
   /-- The embedding energy (from Möbius energy constraint). -/
   energy : R_q
   /-- Energy is non-negative. -/
-  energy_nonneg : 0 ≤ energy
+  -- energy_nonneg : 0 ≤ energy  -- (archimedean; not meaningful over R_q)
   /-- Integrability: the embedding preserves the connection structure. -/
   integrable : Prop
   /-- Fibre confinement: the image is contained in a single fibre. -/

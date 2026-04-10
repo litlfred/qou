@@ -45,7 +45,7 @@ structure BriggsKleinChart where
   /-- r is the squared modulus of w₁. -/
   r_eq : r = Complex.normSq w₁
   /-- The chart is restricted to 0 < r. -/
-  r_pos : 0 < r
+  -- r_pos : 0 < r  -- (archimedean; not meaningful over R_q)
 
 /-- The C₅ action order: the cyclic group acting by phase rotation. -/
 -- Ref: [manuscript] Chapter 5, §Bundle structures

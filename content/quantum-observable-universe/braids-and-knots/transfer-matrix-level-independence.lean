@@ -57,7 +57,7 @@ structure HadronConfig where
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
 theorem transfer_matrix_level_independence
-    (q : R_q) (hq : 1 < q)
+    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (H : HadronConfig)
     (constituentProduct : R_q)
     (h_prod : constituentProduct = H.constituentPolynomials.foldl (· * ·) 1)
@@ -71,7 +71,7 @@ theorem transfer_matrix_level_independence
     isotopy-equivalent configurations have the same transfer matrix. -/
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
 theorem transfer_matrix_path_independence
-    (q : R_q) (hq : 1 < q)
+    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (transferMatrix1 transferMatrix2 : R_q)
     (h_isotopy : True)  -- isotopy equivalence (abstract)
     : transferMatrix1 = transferMatrix2 := by

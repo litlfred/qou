@@ -39,7 +39,7 @@ structure StableNucleus where
   /-- Pauli asymmetry coefficient. -/
   a_A : R_q
   /-- a_A is positive. -/
-  a_A_pos : 0 < a_A
+  -- a_A_pos : 0 < a_A  -- (archimedean; not meaningful over R_q)
   /-- Mass number. -/
   A : ℕ := p + n
   /-- Beta-stability condition: p ≈ A / (2 + a_C·A^{2/3}/(2·a_A)). -/

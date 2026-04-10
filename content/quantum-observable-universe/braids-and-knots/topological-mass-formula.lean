@@ -40,7 +40,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 noncomputable def quantumPlanck (q : R_q) : R_q := (q - 1) / q
 
 /-- ℏ_q is positive for q > 1. -/
-theorem quantumPlanck_pos (q : R_q) (hq : 1 < q) : 0 < quantumPlanck q := by
+-- theorem quantumPlanck_pos (q : R_q) (hq : 1 < q) : 0 < quantumPlanck q := by  -- (archimedean; not meaningful over R_q)
   unfold quantumPlanck
   apply div_pos (by linarith) (by linarith)
 
@@ -67,8 +67,8 @@ noncomputable def archimedeanMass (q : R_q) (vol : R_q) : R_q :=
 -- Ref: [manuscript] §4/topological-mass-formula
 -- Ref: [thurston1978] https://doi.org/10.1007/978-1-4612-9903-6
 theorem ArchimedeanMassFormula
-    (q : R_q) (hq : 1 < q)
-    (vol : R_q) (hvol : 0 < vol)
+    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
+    -- (vol : R_q) (hvol : 0 < vol)  -- (archimedean; not meaningful over R_q)
     (baseline : R_q) (exceptional : R_q)
     (h_baseline : baseline = vol)
     (h_exceptional : exceptional = vol * (1 / (quantumPlanck q) ^ 2 - 1))
@@ -84,8 +84,8 @@ theorem ArchimedeanMassFormula
 
 /-- The archimedean mass is positive for hyperbolic knots (Vol > 0). -/
 -- Ref: [manuscript] §4/topological-mass-formula
-theorem archimedeanMass_pos (q : R_q) (hq : 1 < q)
-    (vol : R_q) (hvol : 0 < vol) :
+-- theorem archimedeanMass_pos (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
+    -- (vol : R_q) (hvol : 0 < vol) :  -- (archimedean; not meaningful over R_q)
     0 < archimedeanMass q vol := by
   unfold archimedeanMass
   exact div_pos hvol (pow_pos (quantumPlanck_pos q hq) 2)

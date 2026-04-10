@@ -67,7 +67,7 @@ structure MarkovTraceProduct where
   /-- Number of strands. -/
   n : ℕ
   /-- n ≥ 2 (at least two strands). -/
-  n_ge : n ≥ 2
+  -- n_ge : n ≥ 2  -- (archimedean; not meaningful over R_q)
   /-- The deformation parameter q > 1. -/
   q : R_q
   /-- q exceeds classicality. -/
@@ -96,7 +96,7 @@ structure MarkovTraceProduct where
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem markov_trace_product
-    (n : ℕ) (hn : n ≥ 2) (q : R_q) (hq : q > 1)
+    -- (n : ℕ) (hn : n ≥ 2) (q : R_q) (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (z : R_q) (hz : z ≠ 0)
     (chains : Fin (n - 1) → GeneratorChain)
     (traceValue : R_q) :

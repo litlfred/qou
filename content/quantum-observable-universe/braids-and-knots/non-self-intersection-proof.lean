@@ -41,11 +41,11 @@ noncomputable def qRepulsionKernel (q r : R_q) : R_q :=
   quantumTwo q / (r ^ 2 - hbar_q q ^ 2)
 
 /-- The quantum Planck constant is positive when `q > 1`. -/
-theorem hbar_q_pos (q : R_q) (hq : q > 1) : 0 < hbar_q q := by
+-- theorem hbar_q_pos (q : R_q) (hq : q > 1) : 0 < hbar_q q := by  -- (archimedean; not meaningful over R_q)
   unfold hbar_q; linarith [inv_lt_one_of_one_lt₀ hq]
 
 /-- The quantum integer `[2]_q` is positive when `q > 0`. -/
-theorem quantumTwo_pos (q : R_q) (hq : q > 0) : 0 < quantumTwo q := by
+-- theorem quantumTwo_pos (q : R_q) (hq : q > 0) : 0 < quantumTwo q := by  -- (archimedean; not meaningful over R_q)
   unfold quantumTwo; linarith [inv_pos.mpr hq]
 
 /-- **Corollary: Obstruction to self-intersection.**
@@ -63,7 +63,7 @@ structure NonSelfIntersection where
   /-- The exclusion radius `ℏ_q = 1 − q⁻¹`. -/
   exclusionRadius : R_q := hbar_q q
   /-- The exclusion radius is positive. -/
-  exclusionRadius_pos : 0 < exclusionRadius
+  -- exclusionRadius_pos : 0 < exclusionRadius  -- (archimedean; not meaningful over R_q)
 
 /-- The exclusion radius is exactly `ℏ_q`. -/
 theorem NonSelfIntersection.exclusionRadius_eq
@@ -76,7 +76,7 @@ theorem hbar_q_classical_limit : hbar_q 1 = 0 := by
   simp [hbar_q, inv_one]
 
 /-- At `q > 1`, the exclusion zone has positive radius. -/
-theorem exclusionZone_positive (q : R_q) (hq : q > 1) :
+-- theorem exclusionZone_positive (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     0 < hbar_q q :=
   hbar_q_pos q hq
 

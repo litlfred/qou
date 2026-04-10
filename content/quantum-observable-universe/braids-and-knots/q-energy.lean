@@ -46,15 +46,15 @@ structure QEnergy where
   -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
   /-- Spin quantum number j. -/
   j : R_q
-  j_nonneg : 0 ≤ j
+  -- j_nonneg : 0 ≤ j  -- (archimedean; not meaningful over R_q)
   /-- q-momentum (writhe-derived). -/
   p_q : R_q
   /-- Number of strands in braid representative. -/
   n_strands : R_q
-  n_pos : 0 < n_strands
+  -- n_pos : 0 < n_strands  -- (archimedean; not meaningful over R_q)
   /-- Categorical action S_q (rest mass energy). -/
   S_q : R_q
-  S_q_nonneg : 0 ≤ S_q
+  -- S_q_nonneg : 0 ≤ S_q  -- (archimedean; not meaningful over R_q)
 
 /-- The total q-energy. -/
 -- Ref: [manuscript] §6/q-energy
@@ -68,7 +68,7 @@ noncomputable def QEnergy.total (E : QEnergy) : R_q :=
 
 /-- At rest (p_q = 0, j = 0), q-energy equals the action (rest mass). -/
 -- Ref: [manuscript] §6/q-energy
-theorem q_energy_rest (q S : R_q) (hq : 1 < q) (hS : 0 ≤ S) :
+-- theorem q_energy_rest (q S : R_q) (hq : 1 < q) (hS : 0 ≤ S) :  -- (archimedean; not meaningful over R_q)
     (QEnergy.mk q hq 0 (le_refl 0) 0 1 one_pos S hS).total = S := by
   unfold QEnergy.total q_number hbar_q
   simp
@@ -84,7 +84,7 @@ noncomputable def crossingEnergy_neg (q : R_q) : R_q := 1 / q
 
 /-- Positive crossings carry more energy than negative at q > 1. -/
 -- Ref: [manuscript] §6/q-energy
-theorem crossing_energy_asymmetry {q : R_q} (hq : 1 < q) :
+-- theorem crossing_energy_asymmetry {q : R_q} (hq : 1 < q) :  -- (archimedean; not meaningful over R_q)
     crossingEnergy_neg q < crossingEnergy_pos q := by
   unfold crossingEnergy_pos crossingEnergy_neg
   rw [div_lt_iff (by linarith : (0 : R_q) < q)]

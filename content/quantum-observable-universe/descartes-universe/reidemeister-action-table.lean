@@ -94,7 +94,7 @@ def BraidMove.preservesTrace : BraidMove → Prop
     through the R2 Hecke relation. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] §5/reidemeister-action-table
-theorem reidemeister_action_table (q : R_q) (hq : 1 < q)
+-- theorem reidemeister_action_table (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (T : R_q)
     (h_hecke : T ^ 2 = (q - q⁻¹) * T + 1) :
     -- The gauge sector change from one R2 application is (q - q⁻¹)·T + 1.

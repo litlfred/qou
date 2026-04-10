@@ -39,10 +39,10 @@ structure LocalizedKnot where
   /-- The knot type at this point (given by its planar diagram). -/
   knot : KnotTheory.PlanarDiagram
   /-- θ is in valid range. -/
-  theta_range : 0 ≤ theta ∧ theta ≤ Real.pi
+  -- theta_range : 0 ≤ theta ∧ theta ≤ Real.pi  -- (archimedean; not meaningful over R_q)
   /-- φ is in valid range. -/
   -- Ref: [manuscript] §3, Definition: Localized knot
-  phi_range : 0 ≤ phi ∧ phi < 2 * Real.pi
+  -- phi_range : 0 ≤ phi ∧ phi < 2 * Real.pi  -- (archimedean; not meaningful over R_q)
 
 /-! ## Base point and crossing number -/
 

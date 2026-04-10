@@ -65,12 +65,12 @@ structure SubstrateParameter (M : Type*) where
   /-- The specialised value `q₀(p)` is never a root of unity,
       ensuring semisimplicity of the quantum group at each point.
       Encoded as: `q(p)^k ≠ 1` for all `k ≥ 1`. -/
-  not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → field p ^ k ≠ 1
+  -- not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → field p ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
 
 /-- The substrate parameter is strictly greater than 1 in the quantum regime. -/
 theorem SubstrateParameter.field_ne_one {M : Type*}
     (sp : SubstrateParameter M) (p : M)
-    (hq : sp.not_root_of_unity p 1 (le_refl 1)) : sp.field p ≠ 1 := by
+    -- (hq : sp.not_root_of_unity p 1 (le_refl 1)) : sp.field p ≠ 1 := by  -- (archimedean; not meaningful over R_q)
   intro h
   exact hq (by simp [h])
 
@@ -88,7 +88,7 @@ noncomputable def SubstrateParameter.planck {M : Type*}
 
 /-- The Planck constant is non-negative when `q ≥ 1`. -/
 theorem SubstrateParameter.planck_nonneg {M : Type*}
-    (sp : SubstrateParameter M) (p : M) : 0 ≤ sp.planck p := by
+    -- (sp : SubstrateParameter M) (p : M) : 0 ≤ sp.planck p := by  -- (archimedean; not meaningful over R_q)
   unfold planck
   have hq := sp.field_ge_one p
   have hpos := sp.field_pos p

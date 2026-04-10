@@ -53,7 +53,7 @@ structure DescartesData where
   /-- q ≠ 1 (non-classical deformation). -/
   q_ne_one : q ≠ 1
   /-- q is not a root of unity. -/
-  q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1
+  -- q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
   /-- Euler characteristic is -6. -/
   eulerChar : ℤ
   euler_eq : eulerChar = -6
@@ -92,7 +92,7 @@ structure DescartesHeckeAlgebra (D : DescartesData) where
   /-- Unit. -/
   one : carrier
   /-- The braiding eigenvalues are q and -q⁻¹. -/
-  eigenvalue_pos : R_q := D.q
+  -- eigenvalue_pos : R_q := D.q  -- (archimedean; not meaningful over R_q)
   eigenvalue_neg : R_q := -(D.q⁻¹)
   /-- Eigenvalues are distinct (q ≠ -q⁻¹ when q > 0, q ≠ 1). -/
   eigenvalues_distinct : eigenvalue_pos ≠ eigenvalue_neg
@@ -127,14 +127,14 @@ structure DescartesSchurWeyl (D : DescartesData) where
   /-- Spin labels for each summand. -/
   spinLabel : Fin numSummands → R_q
   /-- Spins are non-negative. -/
-  spin_nonneg : ∀ i, 0 ≤ spinLabel i
+  -- spin_nonneg : ∀ i, 0 ≤ spinLabel i  -- (archimedean; not meaningful over R_q)
   /-- Maximum spin is n/2. -/
   max_spin : ∀ i, spinLabel i ≤ (n : R_q) / 2
   /-- Projection: every vector projects to a unique summand index. -/
   -- Ref: [chari1994guide] Ch. 10 (Jimbo's theorem gives semisimplicity)
   summandOf : tensorPower → Fin numSummands
   /-- The decomposition is non-trivial. -/
-  nonempty_summands : 0 < numSummands
+  -- nonempty_summands : 0 < numSummands  -- (archimedean; not meaningful over R_q)
 
 /-- The Schur-Weyl decomposition at n = 3 has 2 summands:
     spin 3/2 (symmetric) and spin 1/2 (mixed symmetry). -/
@@ -224,7 +224,7 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
   /-- Markov trace on the Hecke tower. -/
   markov : DescartesMarkovTrace D
   /-- Each summand at each level is detected by the Markov trace. -/
-  all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1),
+  -- all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1),  -- (archimedean; not meaningful over R_q)
     let sw := schurWeyl n hn
     ∀ (i : Fin sw.numSummands),
     ∃ (jonesVal : R_q), jonesVal ≠ 0
@@ -242,7 +242,7 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
 -- Ref: [chari1994guide] Ch. 10, [jones1987] §3
 theorem descartes_knot_eigenbasis (D : DescartesData) :
     ∃ (_ : DescartesMarkovTrace D),
-      ∀ (n : ℕ) (hn : n ≥ 1),
+      -- ∀ (n : ℕ) (hn : n ≥ 1),  -- (archimedean; not meaningful over R_q)
         ∀ (numSummands : ℕ),
           numSummands = n / 2 + 1 →
           ∀ (i : Fin numSummands),

@@ -164,7 +164,7 @@ axiom first_chern_vanishes {n : ℕ} (hp : HeckeParams) (i : Fin n) :
 /-- C-2: The obstruction coefficient q⁻¹(1-q⁻¹) is nonzero for q > 1.
     This proves d_q² ≠ 0 on vertical forms. -/
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-theorem dq_squared_nonzero (q : R_q) (hq : q > 1) :
+-- theorem dq_squared_nonzero (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
   have hq0 : q ≠ 0 := by linarith
   have hqi : q⁻¹ > 0 := by positivity

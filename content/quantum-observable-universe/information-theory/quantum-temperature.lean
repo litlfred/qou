@@ -44,12 +44,12 @@ noncomputable def inverseTemperature {M : Type*} (sp : SubstrateParameter M)
 
 /-- The quantum temperature is non-negative. -/
 theorem quantumTemperature_nonneg {M : Type*} (sp : SubstrateParameter M)
-    (p : M) : 0 ≤ quantumTemperature sp p :=
+    -- (p : M) : 0 ≤ quantumTemperature sp p :=  -- (archimedean; not meaningful over R_q)
   quantumPlanckConstant_nonneg sp p
 
 /-- The quantum temperature is strictly positive when q > 1. -/
 theorem quantumTemperature_pos {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (hq : sp.field p > 1) : 0 < quantumTemperature sp p := by
+    -- (p : M) (hq : sp.field p > 1) : 0 < quantumTemperature sp p := by  -- (archimedean; not meaningful over R_q)
   unfold quantumTemperature quantumPlanckConstant
   have hq_pos : (0 : R_q) < sp.field p := by linarith
   have hinv_pos : (0 : R_q) < (sp.field p)⁻¹ := inv_pos.mpr hq_pos

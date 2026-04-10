@@ -49,7 +49,7 @@ def SkeinCoefficients.parityInvariant (s : SkeinCoefficients) : Prop :=
 
 /-- The Skein relation is parity-invariant if and only if q = 1. -/
 -- Ref: [manuscript] §6/parity-violation-skein
-theorem parity_violation_skein (q : R_q) (hq : 0 < q) :
+-- theorem parity_violation_skein (q : R_q) (hq : 0 < q) :  -- (archimedean; not meaningful over R_q)
     (SkeinCoefficients.mk q hq).parityInvariant ↔ q = 1 := by
   unfold SkeinCoefficients.parityInvariant SkeinCoefficients.coeff_plus SkeinCoefficients.coeff_minus
   simp
@@ -69,7 +69,7 @@ noncomputable def parityViolationStrength (q : R_q) : R_q := q - 1 / q
 
 /-- The parity violation strength is positive for q > 1. -/
 -- Ref: [manuscript] §6/parity-violation-skein
-theorem parityViolationStrength_pos {q : R_q} (hq : 1 < q) :
+-- theorem parityViolationStrength_pos {q : R_q} (hq : 1 < q) :  -- (archimedean; not meaningful over R_q)
     0 < parityViolationStrength q := by
   unfold parityViolationStrength
   rw [sub_pos, div_lt_iff (by linarith : (0 : R_q) < q)]
@@ -86,7 +86,7 @@ theorem parityViolationStrength_classical :
     Under CP: coeff_plus ↔ coeff_minus AND L₊ ↔ L₋,
     so the Skein relation maps to itself. -/
 -- Ref: [manuscript] §6/parity-violation-skein
-theorem cp_conservation (q : R_q) (hq : 0 < q) :
+-- theorem cp_conservation (q : R_q) (hq : 0 < q) :  -- (archimedean; not meaningful over R_q)
     let s := SkeinCoefficients.mk q hq
     let s_cp := SkeinCoefficients.mk (1/q) (by positivity)
     s.coeff_plus = s_cp.coeff_minus ∧ s.coeff_minus = s_cp.coeff_plus := by

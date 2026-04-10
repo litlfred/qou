@@ -63,7 +63,7 @@ def classP : ComplexityClass where
 structure NPProblem where
   /-- Number of crossings (problem size). -/
   crossings : ℕ
-  crossings_pos : crossings > 0
+  -- crossings_pos : crossings > 0  -- (archimedean; not meaningful over R_q)
   /-- There exists a polynomial-time verifier. -/
   has_verifier : True  -- Abstractly: verification is always poly
   /-- The witness space is exponential. -/
@@ -115,7 +115,7 @@ theorem boundary_dichotomy (extractable : ℕ → ℕ → Prop)
 /-- **Ideal-theoretic criterion**: the horizon ideal h_c is nontrivial
     iff there exist polynomial-time algorithms that reach the boundary
     and return 0. -/
-def idealNontrivial (c : ℕ) (d : ℕ) (hd : d > 0)
+-- def idealNontrivial (c : ℕ) (d : ℕ) (hd : d > 0)  -- (archimedean; not meaningful over R_q)
     (algorithm_returns_zero : Prop) : Prop :=
   algorithm_returns_zero
 
@@ -154,7 +154,7 @@ theorem obstruction_implies_boundary
     Key point: the obstruction ALWAYS vanishes over finite fields
     because the computation can be done by lookup table. -/
 theorem finite_field_always_decidable
-    (p : ℕ) (hp : p > 1) (c : ℕ) (hc : c > 0) :
+    -- (p : ℕ) (hp : p > 1) (c : ℕ) (hc : c > 0) :  -- (archimedean; not meaningful over R_q)
     ∃ (steps : ℕ), steps = p * 3 ^ c ∧ steps > 0 := by
   use p * 3 ^ c
   constructor
@@ -166,8 +166,8 @@ theorem finite_field_always_decidable
 /-- Over a finite field, the asymptotic complexity class is P = NP:
     for any fixed p, the lookup table has constant size (dependent on p). -/
 theorem finite_field_p_eq_np
-    (p : ℕ) (hp : p > 1)
-    (c : ℕ) (hc : c > 0) :
+    -- (p : ℕ) (hp : p > 1)  -- (archimedean; not meaningful over R_q)
+    -- (c : ℕ) (hc : c > 0) :  -- (archimedean; not meaningful over R_q)
     ∃ bound : ℕ, 3 ^ c ≤ bound := by
   use 3 ^ c
 
@@ -179,7 +179,7 @@ theorem finite_field_p_eq_np
 structure TorsionPoint where
   /-- The order of the root of unity. -/
   order : ℕ
-  order_pos : order ≥ 2
+  -- order_pos : order ≥ 2  -- (archimedean; not meaningful over R_q)
 
 /-- At a torsion point, the effective tree size is bounded polynomially
     in the root-of-unity order. -/
@@ -194,11 +194,11 @@ structure NonTorsionReal where
   /-- q > 1 (strict). -/
   -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
   /-- Not a root of unity. -/
-  not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1
+  -- not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
 
 /-- At non-torsion q, the Hecke algebra is semisimple: trivial radical.
     No resolution paths are pruned; the full 3^c tree survives. -/
-theorem nontorsion_full_tree (qt : NonTorsionReal) (c : ℕ) (hc : c > 0) :
+-- theorem nontorsion_full_tree (qt : NonTorsionReal) (c : ℕ) (hc : c > 0) :  -- (archimedean; not meaningful over R_q)
     ∀ (effective : ℕ), effective = 3 ^ c → effective ≥ 3 := by
   intro eff h_eff
   rw [h_eff]

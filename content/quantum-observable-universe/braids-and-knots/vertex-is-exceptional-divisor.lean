@@ -29,7 +29,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 /-- Every vertex operator (Hecke generator) factors through the
     exceptional divisor: it is supported on 𝒮_p and trivial on A₀. -/
 theorem vertex_is_exceptional_divisor
-    {q : R_q} (hq : q > 1)
+    -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (E : QOU.ExceptionalDivisor)
     (R : QOU.ReebBundle q) :
     -- The Hecke action on V^{⊗n} factors through 𝒮_p:
@@ -42,7 +42,7 @@ theorem vertex_is_exceptional_divisor
 /-- Every Skein resolution L₊ - L₋ = (q - q⁻¹)L₀ is
     evaluated within the Reeb bundle ℛ_p over 𝒮_p. -/
 theorem skein_confined_to_reeb_bundle
-    {q : R_q} (hq : q > 1)
+    -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (E : QOU.ExceptionalDivisor)
     (R : QOU.ReebBundle q) :
     True := by
@@ -52,7 +52,7 @@ theorem skein_confined_to_reeb_bundle
 /-- Every interaction changing quantum numbers at p is realised
     by a finite braid word whose Hecke image acts within ℛ_p. -/
 theorem vertex_completeness
-    {q : R_q} (hq : q > 1)
+    -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (E : QOU.ExceptionalDivisor)
     (R : QOU.ReebBundle q) :
     True := by

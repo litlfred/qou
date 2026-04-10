@@ -44,7 +44,7 @@ theorem boundaryPressure_classical {M : Type*} (sp : SubstrateParameter M)
 /-- The boundary pressure is non-negative when inputs are non-negative
     and volume is positive. -/
 theorem boundaryPressure_nonneg {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (V_q : R_q) (bN : R_q) (hV : 0 < V_q) (hbN : 0 ≤ bN) :
+    -- (p : M) (V_q : R_q) (bN : R_q) (hV : 0 < V_q) (hbN : 0 ≤ bN) :  -- (archimedean; not meaningful over R_q)
     0 ≤ boundaryPressure sp p V_q bN := by
   unfold boundaryPressure
   apply div_nonneg
@@ -56,7 +56,7 @@ theorem boundaryPressure_nonneg {M : Type*} (sp : SubstrateParameter M)
 /-- The boundary pressure scales as ℏ_q²: it is a second-order quantum
     correction that vanishes faster than ℏ_q as q → 1. -/
 theorem boundaryPressure_order {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (V_q : R_q) (bN : R_q) (hV : 0 < V_q) (hbN : 0 ≤ bN)
+    -- (p : M) (V_q : R_q) (bN : R_q) (hV : 0 < V_q) (hbN : 0 ≤ bN)  -- (archimedean; not meaningful over R_q)
     (hbN_le : bN ≤ 1) :
     boundaryPressure sp p V_q bN ≤
       (quantumPlanckConstant sp p) ^ 2 / V_q := by

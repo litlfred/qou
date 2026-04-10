@@ -56,7 +56,7 @@ structure HeckeAlgebraData where
   /-- q ≠ 1. -/
   q_ne_one : q ≠ 1
   /-- q is not a root of unity. -/
-  q_not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1
+  -- q_not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
   /-- Multiplication. -/
   mul : carrier → carrier → carrier
   /-- Unit element. -/
@@ -107,7 +107,7 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- **Markov property** (positive stabilisation):
       tr(x · T_{n-1}) = z · tr(x) for x ∈ H_n(q).
       This encodes vertical stabilisation in the Hecke tower. -/
-  markov_pos : H.n ≥ 2 →
+  -- markov_pos : H.n ≥ 2 →  -- (archimedean; not meaningful over R_q)
     ∀ (x : H.carrier),
       let last : Fin (H.n - 1) := ⟨H.n - 2, by omega⟩
       tr (H.mul x (H.T last)) = z * tr x

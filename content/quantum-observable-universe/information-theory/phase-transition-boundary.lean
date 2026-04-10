@@ -81,7 +81,7 @@ theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : SubstrateParameter M)
     critical temperature when [n_K]_q > 1. -/
 theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
     (p : M) (qIntNK : R_q) (hq : sp.field p > 1)
-    (hnk : 1 < qIntNK) :
+    -- (hnk : 1 < qIntNK) :  -- (archimedean; not meaningful over R_q)
     liquidSolidCriticalTemp sp p qIntNK <
     gasLiquidCriticalTemp sp p := by
   unfold liquidSolidCriticalTemp gasLiquidCriticalTemp

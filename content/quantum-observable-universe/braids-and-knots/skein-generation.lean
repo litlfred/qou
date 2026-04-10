@@ -107,7 +107,7 @@ theorem mass_from_linking_only
 
 /-- The quantum Planck constant is positive when q > 1. -/
 -- Ref: [manuscript] §1
-theorem hbar_q_pos {q : R_q} (hq : 1 < q) : 0 < 1 - q⁻¹ := by
+-- theorem hbar_q_pos {q : R_q} (hq : 1 < q) : 0 < 1 - q⁻¹ := by  -- (archimedean; not meaningful over R_q)
   have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 

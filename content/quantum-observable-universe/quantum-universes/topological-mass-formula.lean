@@ -68,15 +68,15 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
   /-- The substrate parameter exceeds classicality. -/
   -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
   /-- The quantum Planck constant `ℏ_q = 1 − 1/q`. -/
-  h_q : R_q := 1 - 1 / q
+  h_q : R_q := 1 - q_inv_param  -- ℏ_q = 1 − q⁻¹ in R_q
   /-- The quantum Planck constant satisfies its defining equation.
       This constraint ensures `h_q` cannot be overridden to an
       inconsistent value. -/
-  h_q_def : h_q = 1 - 1 / q := by rfl
+  h_q_def : h_q = 1 - q_inv_param := by rfl
   /-- The hyperbolic volume of the knot `K`. -/
   knotVolume : R_q
   /-- The knot volume is positive. -/
-  knotVolume_pos : 0 < knotVolume
+  -- knotVolume_pos : 0 < knotVolume  -- (archimedean; not meaningful over R_q)
   /-- **Hypothesis 1 (Chern–Simons/Volume correspondence).**
       The baseline holonomy of the QOU connection evaluates to the
       hyperbolic volume of the knot complement. -/

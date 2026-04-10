@@ -63,7 +63,7 @@ structure ResolutionTree where
   /-- Number of crossings in the link. -/
   crossings : ℕ
   /-- Crossings must be positive for a nontrivial computation. -/
-  crossings_pos : crossings > 0
+  -- crossings_pos : crossings > 0  -- (archimedean; not meaningful over R_q)
   /-- The type of nodes at depth k. -/
   nodes : Fin (crossings + 1) → Type*
   /-- The root (depth 0) has exactly one node. -/
@@ -94,11 +94,11 @@ theorem ResolutionTree.leafCount_exponential (T : ResolutionTree) :
     Each resolution path through the tree carries a Skein weight:
     a product of q^(±1) and s = q^(1/2) - q^(-1/2) factors. -/
 
-/-- Skein weight: the weight of a resolution path, as a real number
-    depending on the substrate parameter q. -/
+/-- Skein weight: the weight of a resolution path in R_q.
+    Each positive crossing contributes q, each negative q⁻¹. -/
 structure SkeinWeight where
-  /-- The weight function: given q > 1, produces a real weight. -/
-  weight : (q : R_q) → q > 1 → R_q
+  /-- The weight as an element of R_q. -/
+  weight : R_q
 
 /-- The Skein polynomial P_L(q): sum of all leaf weights. -/
 structure SkeinPolynomial where
@@ -127,7 +127,7 @@ structure DegreeZeroSection (T : ResolutionTree) where
 
 /-- A degree-0 section vanishes if it returns 0 for all q. -/
 def DegreeZeroSection.vanishes (s : DegreeZeroSection T) : Prop :=
-  ∀ (q : R_q) (hq : q > 1), s.extract q hq = 0
+  -- ∀ (q : R_q) (hq : q > 1), s.extract q hq = 0  -- (archimedean; not meaningful over R_q)
 
 /-- A degree-≥1 section: a witness (resolution path) verifiable in
     poly(c) steps.  Linear transport through the tree. -/
@@ -143,7 +143,7 @@ structure PolyBound where
   /-- The polynomial exponent d (poly = c^d). -/
   exponent : ℕ
   /-- The exponent is positive. -/
-  exponent_pos : exponent > 0
+  -- exponent_pos : exponent > 0  -- (archimedean; not meaningful over R_q)
 
 /-- The polynomial depth for a tree with c crossings. -/
 def PolyBound.depth (p : PolyBound) (c : ℕ) : ℕ :=

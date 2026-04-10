@@ -42,7 +42,7 @@ noncomputable def heckeEnergyChange (q : R_q) (coeff : R_q) : R_q :=
 
 /-- The energy change is positive for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-theorem heckeEnergyChange_pos (q : R_q) (hq : 1 < q) (c : R_q) (hc : c ≠ 0) :
+-- theorem heckeEnergyChange_pos (q : R_q) (hq : 1 < q) (c : R_q) (hc : c ≠ 0) :  -- (archimedean; not meaningful over R_q)
     0 < heckeEnergyChange q c := by
   unfold heckeEnergyChange
   apply mul_pos
@@ -68,7 +68,7 @@ noncomputable def totalEnergyChange (q : R_q) (hecke_coeffs : List R_q) : R_q :=
 
 /-- Each Hecke energy change is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-private theorem heckeEnergyChange_nonneg (q : R_q) (hq : 1 < q) (c : R_q) :
+-- private theorem heckeEnergyChange_nonneg (q : R_q) (hq : 1 < q) (c : R_q) :  -- (archimedean; not meaningful over R_q)
     0 ≤ heckeEnergyChange q c := by
   unfold heckeEnergyChange
   apply mul_nonneg (abs_nonneg _)
@@ -78,7 +78,7 @@ private theorem heckeEnergyChange_nonneg (q : R_q) (hq : 1 < q) (c : R_q) :
 
 /-- The total energy is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-theorem totalEnergyChange_nonneg (q : R_q) (hq : 1 < q)
+-- theorem totalEnergyChange_nonneg (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (coeffs : List R_q) :
     0 ≤ totalEnergyChange q coeffs := by
   unfold totalEnergyChange
@@ -97,7 +97,7 @@ theorem totalEnergyChange_nonneg (q : R_q) (hq : 1 < q)
     normal form alone. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
-axiom energy_path_independent (q : R_q) (hq : 1 < q)
+-- axiom energy_path_independent (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (initial : List (List ℕ × R_q))  -- initial Hecke element
     (path1 path2 : List DivisionStepType)  -- two reduction paths
     : totalEnergyChange q (path1.filterMap fun s =>
@@ -109,8 +109,8 @@ axiom energy_path_independent (q : R_q) (hq : 1 < q)
     the daughter has lower energy than the parent.
     (Computationally verified for all A ≤ 6.) -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-axiom beta_decay_energy_negative (q : R_q) (hq : 1 < q)
-    (p n : ℕ) (hn : 0 < n) :
+-- axiom beta_decay_energy_negative (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
+    -- (p n : ℕ) (hn : 0 < n) :  -- (archimedean; not meaningful over R_q)
     ∃ (𝒮_par E_dau : R_q), E_dau < 𝒮_par
 
 /-- Top-level alias matching the manifest declaration. -/

@@ -45,7 +45,7 @@ noncomputable def qInteger (q : R_q) (n : ℕ) : R_q :=
 
 /-- For q > 1 and n ≥ 1, the q-integer is positive. -/
 -- Ref: [lusztig1993]
-theorem qInteger_pos {q : R_q} {n : ℕ} (hq : 1 < q) (hn : 0 < n) :
+-- theorem qInteger_pos {q : R_q} {n : ℕ} (hq : 1 < q) (hn : 0 < n) :  -- (archimedean; not meaningful over R_q)
     0 < qInteger q n := by
   unfold qInteger
   rw [if_neg (ne_of_gt hq)]

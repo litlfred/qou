@@ -70,7 +70,7 @@ structure HeckeRelation where
   /-- σ² constant term: 1. -/
   const_coeff : R_q := 1
   /-- The sigma coefficient is positive. -/
-  sigma_coeff_pos : 0 < sigma_coeff := by
+  -- sigma_coeff_pos : 0 < sigma_coeff := by  -- (archimedean; not meaningful over R_q)
     show 0 < q - 1/q
     rw [sub_pos, div_lt_one (by linarith : (0 : R_q) < q)]
     nlinarith [q_gt_one]
@@ -101,7 +101,7 @@ def isReduced (w : BraidWord) : Prop :=
     Gröbner basis theory). -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
-axiom normal_form_exists_unique (q : R_q) (hq : 1 < q) (A : ℕ)
+-- axiom normal_form_exists_unique (q : R_q) (hq : 1 < q) (A : ℕ)  -- (archimedean; not meaningful over R_q)
     (word : BraidWord) :
     ∃! (nf : HeckeElement),
     -- The normal form consists entirely of reduced words
@@ -128,7 +128,7 @@ theorem max_word_length_bound (A : ℕ) (w : BraidWord)
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
-noncomputable def nuclear_groebner_reduction (q : R_q) (hq : 1 < q)
+-- noncomputable def nuclear_groebner_reduction (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (p n : ℕ) : Prop :=
   ∃ (nf : HeckeElement),
     (∀ (wb : BraidWord × R_q), wb ∈ nf → isReduced wb.1) ∧

@@ -154,7 +154,7 @@ theorem trivial_eigenvalue_flat (k : ℕ) : (1 : R_q) ^ k = 1 := one_pow k
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4)
-    (q : R_q) (hq : q > 1) :
+    -- (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     -- The transfer matrix eigenvalues for a non-embeddable knot are both 1.
     -- Formally: λ₊(T_{m,n}) = 1 ∧ λ₋(T_{m,n}) = 1.
     -- The consequence V̂(k) = 1^k = 1 is proved above (trivial_eigenvalue_flat).

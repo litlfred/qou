@@ -57,7 +57,7 @@ noncomputable def qEff (q₀ : R_q) (p n : ℕ) : R_q :=
 /-- For neutron-rich nuclei (n > p), the self-deformation is negative:
     the excess of negative crossings slightly reduces q. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-theorem deltaQ_neg_neutron_rich (q₀ : R_q) (hq : 0 < q₀) (p n : ℕ) (hn : p < n) :
+-- theorem deltaQ_neg_neutron_rich (q₀ : R_q) (hq : 0 < q₀) (p n : ℕ) (hn : p < n) :  -- (archimedean; not meaningful over R_q)
     deltaQ q₀ p n ≤ 0 := by
   unfold deltaQ netSignedCrossing
   simp only
@@ -86,7 +86,7 @@ noncomputable def differentialShift (q₀ : R_q) (A : ℕ) : R_q :=
 
 /-- The differential shift is non-negative when A ≥ 1 and q₀ > 0. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-theorem differentialShift_nonneg (q₀ : R_q) (hq : 0 < q₀) (A : ℕ) (hA : 1 ≤ A) :
+-- theorem differentialShift_nonneg (q₀ : R_q) (hq : 0 < q₀) (A : ℕ) (hA : 1 ≤ A) :  -- (archimedean; not meaningful over R_q)
     0 ≤ differentialShift q₀ A := by
   unfold differentialShift
   apply mul_nonneg
@@ -118,7 +118,7 @@ theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
 /-- q_eff > 1 when q₀ > 1: the effective parameter stays in the
     non-classical regime (self-deformation is too small to change this). -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-theorem qEff_gt_one (q₀ : R_q) (hq : 1 < q₀) (p n : ℕ)
+-- theorem qEff_gt_one (q₀ : R_q) (hq : 1 < q₀) (p n : ℕ)  -- (archimedean; not meaningful over R_q)
     (hsmall : |deltaQ q₀ p n| < q₀ - 1) :
     1 < qEff q₀ p n := by
   unfold qEff

@@ -107,7 +107,7 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
 
 /-- The obstruction coefficient is nonzero (proved). -/
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-theorem yekutieli_coeff_nonzero (q : R_q) (hq : q > 1) :
+-- theorem yekutieli_coeff_nonzero (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
   have hqi : q⁻¹ > 0 := by positivity
   have hqi1 : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; linarith

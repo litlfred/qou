@@ -72,7 +72,7 @@ theorem jacobiator_classical (j : QJacobiator) (hq : j.q = 1) :
 -- Ref: [manuscript] §1
 theorem jacobiator_nonzero (j : QJacobiator)
     (hq : j.q ≠ 1)
-    (hq_pos : 0 < j.q)
+    -- (hq_pos : 0 < j.q)  -- (archimedean; not meaningful over R_q)
     (h_cyclic :
       j.levi_form_VW * j.lie_U +
       j.levi_form_WU * j.lie_V +
@@ -92,7 +92,7 @@ theorem jacobiator_nonzero (j : QJacobiator)
 /-- The q-bracket satisfies the Leibniz identity:
     `[U, [V, W]_q]_q = [[U, V]_q, W]_q + [V, [U, W]_q]_q`. -/
 -- Ref: [manuscript] §1
-theorem leibniz_algebra (j : QJacobiator) (hq : 0 < j.q) :
+-- theorem leibniz_algebra (j : QJacobiator) (hq : 0 < j.q) :  -- (archimedean; not meaningful over R_q)
     ∃ (leibniz_coeff : R_q),
       leibniz_coeff = j.q⁻¹ * (1 - j.q⁻¹) :=
   ⟨j.q⁻¹ * (1 - j.q⁻¹), rfl⟩

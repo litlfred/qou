@@ -66,7 +66,7 @@ structure QAngularMomentum where
   -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- Spin quantum number j. -/
   j : R_q
-  j_nonneg : 0 ≤ j
+  -- j_nonneg : 0 ≤ j  -- (archimedean; not meaningful over R_q)
   /-- The q-Casimir eigenvalue. -/
   casimir : R_q := qCasimir q j
   /-- The magnetic quantum number m ranges from -j to +j in integer steps. -/

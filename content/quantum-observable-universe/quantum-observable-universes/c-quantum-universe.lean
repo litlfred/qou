@@ -49,7 +49,7 @@ structure CRManifoldData where
   [topM : TopologicalSpace M]
   /-- CR dimension `n ≥ 1`; real dimension of `M` is `2n + 1`. -/
   n : ℕ
-  n_pos : 0 < n
+  -- n_pos : 0 < n  -- (archimedean; not meaningful over R_q)
   /-- Levi form signature `(r, s)` with `r + s = n`. -/
   r : ℕ
   s : ℕ

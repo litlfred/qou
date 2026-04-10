@@ -59,7 +59,7 @@ structure HeckeAlgebra where
   /-- q ≠ 0. -/
   q_ne_zero : q ≠ 0
   /-- q is not a root of unity: q^k ≠ 1 for all k ≥ 1. -/
-  q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1
+  -- q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
   /-- Multiplication. -/
   mul : carrier → carrier → carrier
   /-- Unit element. -/

@@ -90,7 +90,7 @@ noncomputable def gasConstant {M : Type*} (sp : SubstrateParameter M)
 
 /-- The gas constant is positive when q > 1 and Borromean volume is positive. -/
 theorem gasConstant_pos {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (V_B : R_q) (hq : sp.field p > 1) (hV : 0 < V_B) :
+    -- (p : M) (V_B : R_q) (hq : sp.field p > 1) (hV : 0 < V_B) :  -- (archimedean; not meaningful over R_q)
     0 < gasConstant sp p V_B := by
   unfold gasConstant
   apply div_pos

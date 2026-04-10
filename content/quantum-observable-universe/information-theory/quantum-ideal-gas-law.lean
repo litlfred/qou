@@ -44,9 +44,9 @@ structure IdealKnotGas (M : Type*) where
   /-- q > 1 (non-classical). -/
   hq : sp.field point > 1
   /-- Positive volume. -/
-  hV : 0 < V_q
+  -- hV : 0 < V_q  -- (archimedean; not meaningful over R_q)
   /-- Non-negative action expectation. -/
-  hS : 0 ≤ meanAction
+  -- hS : 0 ≤ meanAction  -- (archimedean; not meaningful over R_q)
 
 /-- The q-anomaly correction factor: ℏ_q² · ⟨S_q⟩ / [2]_q. -/
 noncomputable def correctionFactor (gas : IdealKnotGas M) : R_q :=
@@ -78,7 +78,7 @@ theorem correctionFactor_vanishes_at_zero (S : R_q) (q2 : R_q) (hq2 : q2 ≠ 0) 
 theorem ideal_gas_leading_order {M : Type*}
     (sp : SubstrateParameter M) (p : M)
     (hq : sp.field p > 1)
-    (N : ℕ) (V_q : R_q) (hV : 0 < V_q)
+    -- (N : ℕ) (V_q : R_q) (hV : 0 < V_q)  -- (archimedean; not meaningful over R_q)
     (P_q : R_q)
     (h_eos : P_q * V_q = N * quantumPlanckConstant sp p) :
     P_q * V_q = N * quantumTemperature sp p := by
@@ -94,7 +94,7 @@ theorem ideal_gas_full {M : Type*}
     (sp : SubstrateParameter M) (p : M)
     (hq : sp.field p > 1)
     (N : ℕ) (P_q V_q S_q : R_q)
-    (hV : 0 < V_q) (hS : 0 ≤ S_q)
+    -- (hV : 0 < V_q) (hS : 0 ≤ S_q)  -- (archimedean; not meaningful over R_q)
     (h_eos : P_q * V_q = N * quantumPlanckConstant sp p *
       (1 + (quantumPlanckConstant sp p) ^ 2 * S_q /
            (sp.field p + (sp.field p)⁻¹))) :
@@ -115,7 +115,7 @@ theorem ideal_gas_full {M : Type*}
 theorem ideal_gas_decomposition {M : Type*}
     (sp : SubstrateParameter M) (p : M)
     (hq : sp.field p > 1)
-    (N : ℕ) (S_q : R_q) (hS : 0 ≤ S_q) :
+    -- (N : ℕ) (S_q : R_q) (hS : 0 ≤ S_q) :  -- (archimedean; not meaningful over R_q)
     let hbar := quantumPlanckConstant sp p
     let q := sp.field p
     (N : R_q) * hbar * (1 + hbar ^ 2 * S_q / (q + q⁻¹)) =

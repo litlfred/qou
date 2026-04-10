@@ -50,7 +50,7 @@ structure BundleState where
   particles : List ParticleState
   /-- Time is non-negative. -/
   -- Ref: [manuscript] §3, Definition: Torsion-driven knot flow
-  time_nonneg : time ≥ 0
+  -- time_nonneg : time ≥ 0  -- (archimedean; not meaningful over R_q)
 
 /-- Intrinsic angular momentum of a knot type, proportional to crossing number. -/
 noncomputable def intrinsicAngularMomentum (pd : KnotTheory.PlanarDiagram) : R_q :=

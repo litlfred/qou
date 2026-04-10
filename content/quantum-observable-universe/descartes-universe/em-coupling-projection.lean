@@ -66,7 +66,7 @@ noncomputable def emCoupling (q : R_q) : R_q :=
 
 /-- The electromagnetic coupling equals q⁻¹ / ([9]_q · [10]_q). -/
 -- Ref: [manuscript] §5/em-coupling-projection
-theorem em_coupling_projection (q : R_q) (hq : 1 < q) :
+-- theorem em_coupling_projection (q : R_q) (hq : 1 < q) :  -- (archimedean; not meaningful over R_q)
     emCoupling q = q⁻¹ / (qInteger q 9 * qInteger q 10) := by
   unfold emCoupling antisymmetricEigenvalue strongCrossingNumber weakCrossingNumber
   ring
