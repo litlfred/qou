@@ -19,6 +19,11 @@ path = "src/bin/v6.rs"
 name = "hecke-bigint"
 path = "src/bin/v9.rs"
 
+# CRT modular engine — u64 arithmetic, no BigInt (v10)
+[[bin]]
+name = "hecke-crt"
+path = "src/bin/v10_crt.rs"
+
 # Original float engine with Q-value computation
 [[bin]]
 name = "hecke-qvalues"
