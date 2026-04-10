@@ -44,3 +44,8 @@ num-integer = "0.1"
 [profile.release]
 opt-level = 3
 lto = true
+
+# Modular port of v9 — u64 mod p, identical NF
+[[bin]]
+name = "hecke-modular"
+path = "src/bin/v11_modular.rs"
