@@ -290,6 +290,8 @@ export default chapter({
         "calibration-inputs",
         "three-parameters-wedderburn",
         "binding-scale-catalan",
+        "wedderburn-mass-formula",
+        "degree-two-baryon-weight",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
