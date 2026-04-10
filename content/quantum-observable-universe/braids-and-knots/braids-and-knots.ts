@@ -291,6 +291,7 @@ export default chapter({
         "three-parameters-wedderburn",
         "binding-scale-catalan",
         "wedderburn-mass-formula",
+        "algebraic-quantum-volume",
         "degree-two-baryon-weight",
         "energy-scale-planck",
         "topological-mass-trefoil",
