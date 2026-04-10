@@ -1,0 +1,201 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-10T12:02:57.920887+00:00",
+  "commitSha": "a681e14fe742717ce4f481d634300b5482a98921",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "atom-mass-integrated",
+  "scriptFile": "atom_mass_integrated.py",
+  "scriptHash": "265bb8bc51ae",
+  "scriptCommitSha": "638f079fdfd9c7673fbfcacf355830f64221cdba",
+  "description": "Integrated mass: three-channel + Gram character (F_Pauli) from Rust certificates + interpolation for missing atoms.",
+  "parameters": {
+    "q0": "1.1099785955541805"
+  },
+  "data": {
+    "atoms": [
+      {
+        "label": "¹H",
+        "Z": 1,
+        "N": 0,
+        "phi": 0.0,
+        "f_pauli": 1.0,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "⁴He",
+        "Z": 2,
+        "N": 2,
+        "phi": -2.104634194965585,
+        "f_pauli": 1.6381207486090072,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "⁷Li",
+        "Z": 3,
+        "N": 4,
+        "phi": -5.048028396544613,
+        "f_pauli": 8.630603311363078,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "⁹Be",
+        "Z": 4,
+        "N": 5,
+        "phi": -10.946342706049613,
+        "f_pauli": 40.30360658854755,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "¹¹B",
+        "Z": 5,
+        "N": 6,
+        "phi": -12.982110637457183,
+        "f_pauli": 56.419970892306566,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "¹²C",
+        "Z": 6,
+        "N": 6,
+        "phi": -13.581672226754074,
+        "f_pauli": 22.68085213568008,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "¹⁴N",
+        "Z": 7,
+        "N": 7,
+        "phi": -14.761084117929832,
+        "f_pauli": 0.1897518107661926,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "¹⁶O",
+        "Z": 8,
+        "N": 8,
+        "phi": -15.435659743886026,
+        "f_pauli": 0.011708474005197436,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "¹⁹F",
+        "Z": 9,
+        "N": 10,
+        "phi": -15.617388571827101,
+        "f_pauli": 0.13348103197706362,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "²⁰Ne",
+        "Z": 10,
+        "N": 10,
+        "phi": -15.653506360034102,
+        "f_pauli": 1.1338339951516179,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "²³Na",
+        "Z": 11,
+        "N": 12,
+        "phi": -15.072758810958813,
+        "f_pauli": 1.807566401015614,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "²⁴Mg",
+        "Z": 12,
+        "N": 12,
+        "phi": -14.796046312779522,
+        "f_pauli": 0.5334822080945103,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "²⁷Al",
+        "Z": 13,
+        "N": 14,
+        "phi": -13.620253009430485,
+        "f_pauli": 1.50861890605571,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "²⁸Si",
+        "Z": 14,
+        "N": 14,
+        "phi": -12.91880224882311,
+        "f_pauli": 0.5334822080945103,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "³¹P",
+        "Z": 15,
+        "N": 16,
+        "phi": -11.029158682218503,
+        "f_pauli": 1.3192487569056448,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "³²S",
+        "Z": 16,
+        "N": 16,
+        "phi": -10.070695492816004,
+        "f_pauli": 0.5334822080945103,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "³⁵Cl",
+        "Z": 17,
+        "N": 18,
+        "phi": -7.557224608535614,
+        "f_pauli": 1.18956664691809,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "⁴⁰Ar",
+        "Z": 18,
+        "N": 22,
+        "phi": -2.4878573428468367,
+        "f_pauli": 0.0005050086572870431,
+        "fp_source": "certificate",
+        "cert": true
+      },
+      {
+        "label": "³⁹K",
+        "Z": 19,
+        "N": 20,
+        "phi": -3.049651325011658,
+        "f_pauli": 1.0956425701817119,
+        "fp_source": "interpolated",
+        "cert": false
+      },
+      {
+        "label": "⁴⁰Ca",
+        "Z": 20,
+        "N": 20,
+        "phi": -1.5207008582882726,
+        "f_pauli": 0.0009386471175360249,
+        "fp_source": "certificate",
+        "cert": true
+      }
+    ]
+  }
+}

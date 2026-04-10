@@ -6,7 +6,7 @@ export default proposition({
   uses: [
     "prop:beta-decay-transfer-matrix",
     "def:typed-crossing-operator",
-    "descartes-universe:prop:frobenius-gram-matrix",
+    "prop:frobenius-gram-matrix",
   ],
   tags: [
     "ground-state",

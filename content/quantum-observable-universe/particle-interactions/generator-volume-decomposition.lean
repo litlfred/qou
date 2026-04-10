@@ -12,6 +12,7 @@ LaTeX label: `prop:generator-volume-decomposition`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 
@@ -55,12 +56,12 @@ def crossingPP : ℝ × ℝ := (1, 0)
 /-- Crossing coefficients for neutron-neutron pair. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def crossingNN (q : ℝ) : ℝ × ℝ :=
-  (q^2, -q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))))
+  (q^2, -q * (q_half - 1 / q_half))
 
 /-- Crossing coefficients for proton-neutron (mixed) pair. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def crossingMixed (q : ℝ) : ℝ × ℝ :=
-  ((1 + q^2) / 2, -q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))) / 2)
+  ((1 + q^2) / 2, -q * (q_half - 1 / q_half) / 2)
 
 /-- The chain reduction at one generator: start with (0, 1) (identity),
     multiply by each crossing's coefficients, reduce via transfer step. -/

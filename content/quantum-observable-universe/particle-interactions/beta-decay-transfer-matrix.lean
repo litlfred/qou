@@ -18,6 +18,7 @@ LaTeX label: `prop:beta-decay-transfer-matrix`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 namespace QOU.Descartes
 
@@ -41,12 +42,12 @@ noncomputable def T_pp (q : ℝ) : TM := tm q 1 0
 /-- T_nn: neutron-neutron crossing (c=q², d=-q·s). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 noncomputable def T_nn (q : ℝ) : TM :=
-  tm q (q^2) (-q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))))
+  tm q (q^2) (-q * (q_half - 1 / q_half))
 
 /-- T_mix: mixed crossing (c=½(1+q²), d=-½q·s). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 noncomputable def T_mix (q : ℝ) : TM :=
-  tm q ((1 + q^2) / 2) (-q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))) / 2)
+  tm q ((1 + q^2) / 2) (-q * (q_half - 1 / q_half) / 2)
 
 /-- Matrix subtraction. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix

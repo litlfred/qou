@@ -1,0 +1,17 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-09T21:22:23.608169+00:00",
+  "commitSha": "ae992a3c3704f3e70d562461050f93448d69ed28",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "sw-period-baryon",
+  "scriptFile": "sw_period_baryon.py",
+  "scriptHash": "1df1e010fb2a",
+  "scriptCommitSha": "",
+  "description": "SW period integrals on E_q for baryon mass derivation.",
+  "parameters": {
+    "q0": "1.1099785955541805"
+  }
+}

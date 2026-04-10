@@ -8,7 +8,8 @@ import { chapter, section } from "../../schema/builders";
  * Separates the HOW (interactions, binding, decay) from the WHAT
  * (particle definitions in Ch 10).
  *
- * All results are symbolic in q — no numerical approximations.
+ * Derivations are symbolic in q; witness evaluations at q₀ provide
+ * numerical verification.
  */
 export default chapter({
   title: "Particle Interactions and Nuclear Structure",
@@ -70,10 +71,23 @@ export default chapter({
         "hydrogen-derived-nf",
         "deuterium-derived-nf",
         "helium4-derived-nf",
+        "li6-derived-nf",
+        "o16-derived-nf",
       ],
     }),
 
-    // ── §6. Transfer matrices and beta decay ─────────────────────
+    // ── §6. Typed Garside element and Gram-weighted Q-value ───────
+    section({
+      title: "Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value",
+      label: "sec:garside-gram",
+      blocks: [
+        "typed-garside-element",
+        "gram-weighted-qvalue",
+        "gram-weight-eigenstructure",
+      ],
+    }),
+
+    // ── §7. Transfer matrices and beta decay ─────────────────────
     section({
       title: "Transfer matrices and beta decay",
       label: "sec:transfer-beta-decay",

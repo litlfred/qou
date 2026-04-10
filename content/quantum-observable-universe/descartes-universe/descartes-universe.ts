@@ -98,6 +98,10 @@ export default chapter({
         // Seiberg--Witten on Bring's
         "generation-dependent-sw",
         "lepton-mass-integrals",
+        "picard-lefschetz-thimble",
+        "mobius-golden-fixed-points",
+        "baryon-period-conjecture",
+        "baryon-integration-limit",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
@@ -134,6 +138,7 @@ export default chapter({
         "torus-knot-generators",
         "embeddability-closure",
         "genus-filtration-ideal",
+        "genus-filtration-ideal-proof",
         "genus-filtration-interpretation",
         "torus-embeddable-complete",
         "generation-completeness",
@@ -207,11 +212,7 @@ export default chapter({
         "hadron-half-life",
         "hadron-q-self-correction",
         "skein-coulomb-enhancement",
-        // Typed Garside element and Gram-weighted Q-value
-        // (GB reductions + transfer matrices moved to Ch 11)
-        "typed-garside-element",
-        "gram-weighted-qvalue",
-        "gram-weight-eigenstructure",
+        // GB reductions + transfer matrices + Garside elements → Ch 11 (Particle Interactions)
       ],
     }),
 
@@ -227,7 +228,11 @@ export default chapter({
         "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
+        "skein-shell-correction",
         "shell-closure-normal-form",
+        "groebner-nf-computation",
+        "kummer-shell-closure",
+        "nf-computation-strategy",
         "torus-knot-shell-binding",
         "skein-finiteness-bound",
         "rj-canonical-inner-product",

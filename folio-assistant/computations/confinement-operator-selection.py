@@ -15,22 +15,21 @@ Usage:
     cd folio-assistant/computations && python3 confinement-operator-selection.py
 """
 import json
-import math
 import numpy as np
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
 # ── q parameter (canonical source) ───────────────────────────
-from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val, E_CROSS
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from q_parameter import Q as q0, HA as HA_val, E_CROSS
 
 try:
     SHA = subprocess.check_output(
         ['git', 'rev-parse', 'HEAD'],
-        cwd=str(Path(__file__).resolve().parent.parent.parent)
+        cwd=str(Path(__file__).resolve().parent.parent.parent),
+        stderr=subprocess.DEVNULL
     ).decode().strip()
-except Exception:
+except (subprocess.CalledProcessError, FileNotFoundError):
     SHA = "unknown"
 
 # ── Hecke algebra engine (numerical, same as gram-matrix-dual.py) ──

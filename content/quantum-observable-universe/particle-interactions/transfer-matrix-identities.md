@@ -41,9 +41,8 @@ $$
   \begin{pmatrix} h^2/4 + 1 & 0 \\ 0 & 1 + h^2/4 \end{pmatrix}.
 $$
 
-The off-diagonals vanish: $(h/2)(-h/2) + 1 \cdot 1 = 1 - h^2/4$
-for the diagonal, and $(h/2)(1) + 1(-h/2) = 0$ for the
-off-diagonal.  Then
+The diagonal entries are $(h/2)(h/2) + 1 \cdot 1 = h^2/4 + 1$,
+and the off-diagonals vanish: $(h/2)(1) + 1(-h/2) = 0$.  Then
 
 $$
   1 + \frac{h^2}{4}
@@ -62,7 +61,7 @@ ground-state ordering, $pp$ crossings (from proton-proton
 pairs) and $nn$ crossings (from neutron-neutron pairs)
 contribute zero net effect.  All nuclear binding energy
 arises from the **mixed** ($pn$) crossings, whose transfer
-matrix $T_{pn}$ has nonzero trace $0$ and determinant
+matrix $T_{pn}$ has trace $0$ and determinant
 $-(1 + h^2/4)$.
 
 **Scalar pairing from mixed crossings.**
