@@ -8,23 +8,39 @@ use rustc_hash::FxHashMap;
 use std::collections::BTreeMap;
 use std::time::Instant;
 
-const P: u64 = 1_000_000_007;
-fn ma(a: u64, b: u64) -> u64 { ((a as u128 + b as u128) % P as u128) as u64 }
-fn ms(a: u64, b: u64) -> u64 { if a >= b { a - b } else { P - b + a } }
-fn mm(a: u64, b: u64) -> u64 { ((a as u128 * b as u128) % P as u128) as u64 }
+// Mersenne prime 2^127 - 1. a+b ≤ 2*(P-1) < 2^128, fits in u128.
+const P: u128 = 170_141_183_460_469_231_731_687_303_715_884_105_727;
 
-// Laurent polynomial mod P
+fn ma(a: u128, b: u128) -> u128 {
+    let s = a.wrapping_add(b);
+    if s >= P || s < a { s.wrapping_sub(P) } else { s }
+}
+fn ms(a: u128, b: u128) -> u128 { if a >= b { a - b } else { P - b + a } }
+fn mm(a: u128, b: u128) -> u128 {
+    // u128 × u128 mod P using repeated doubling (no u256 needed)
+    let mut result: u128 = 0;
+    let mut base = a % P;
+    let mut exp = b % P;
+    while exp > 0 {
+        if exp & 1 == 1 { result = ma(result, base); }
+        base = ma(base, base);
+        exp >>= 1;
+    }
+    result
+}
+
+// Laurent polynomial mod P (u128 coefficients)
 #[derive(Clone)]
-struct L { t: BTreeMap<i32, u64> }
+struct L { t: BTreeMap<i32, u128> }
 impl L {
     fn zero() -> Self { Self { t: BTreeMap::new() } }
-    fn one() -> Self { let mut m = Self::zero(); m.t.insert(0, 1); m }
+    fn one() -> Self { let mut m = Self::zero(); m.t.insert(0, 1u128); m }
     fn is_zero(&self) -> bool { self.t.is_empty() }
     fn n(&self) -> usize { self.t.len() }
     fn add(&self, o: &L) -> L {
         let mut r = self.t.clone();
         for (k, v) in &o.t {
-            let e = r.entry(*k).or_insert(0);
+            let e = r.entry(*k).or_insert(0u128);
             *e = ma(*e, *v);
             if *e == 0 { r.remove(k); }
         }
@@ -33,23 +49,30 @@ impl L {
     fn sub(&self, o: &L) -> L {
         let mut r = self.t.clone();
         for (k, v) in &o.t {
-            let e = r.entry(*k).or_insert(0);
+            let e = r.entry(*k).or_insert(0u128);
             *e = ms(*e, *v);
             if *e == 0 { r.remove(k); }
         }
         L { t: r }
     }
     fn mul(&self, o: &L) -> L {
-        let mut r: BTreeMap<i32, u64> = BTreeMap::new();
+        let mut r: BTreeMap<i32, u128> = BTreeMap::new();
         for (k1, v1) in &self.t {
             for (k2, v2) in &o.t {
                 let k = k1 + k2;
-                let e = r.entry(k).or_insert(0);
+                let e = r.entry(k).or_insert(0u128);
                 *e = ma(*e, mm(*v1, *v2));
                 if *e == 0 { r.remove(&k); }
             }
         }
         L { t: r }
+    }
+    fn eval_f64(&self, t: f64) -> f64 {
+        let hp = P / 2;
+        self.t.iter().map(|(&k, &v)| {
+            let c = if v > hp { -((P - v) as f64) } else { v as f64 };
+            c * t.powi(k)
+        }).sum()
     }
     fn scale_sign(&self, neg: bool) -> L {
         if !neg { return self.clone(); }
@@ -61,13 +84,6 @@ impl L {
         let mut r = BTreeMap::new();
         for (k, v) in &self.t { r.insert(k + s, *v); }
         L { t: r }
-    }
-    fn eval_f64(&self, t: f64) -> f64 {
-        let hp = P / 2;
-        self.t.iter().map(|(&k, &v)| {
-            let c = if v > hp { -((P - v) as f64) } else { v as f64 };
-            c * t.powi(k)
-        }).sum()
     }
 }
 
@@ -120,18 +136,18 @@ impl W {
     }
 }
 
-fn ha() -> L { let mut h = L::zero(); h.t.insert(2, 1); h.t.insert(-2, P-1); h }
+fn ha() -> L { let mut h = L::zero(); h.t.insert(2, 1u128); h.t.insert(-2, P-1); h }
 
 fn crossing(ti: u8, tj: u8) -> (L, L, bool) {
     let h = ha();
     match (ti, tj) {
         (b'p', b'p') => (L::one(), L::zero(), false),
         (b'n', b'n') => {
-            let mut d = L::zero(); d.t.insert(2, P-1); d.t.insert(-2, 1); // -HA
+            let mut d = L::zero(); d.t.insert(2, P-1); d.t.insert(-2, 1u128); // -HA
             (L::one(), d, false)
         }
-        _ => { let mut c = L::zero(); c.t.insert(0, 2);
-               let mut d = L::zero(); d.t.insert(2, P-1); d.t.insert(-2, 1);
+        _ => { let mut c = L::zero(); c.t.insert(0, 2u128);
+               let mut d = L::zero(); d.t.insert(2, P-1); d.t.insert(-2, 1u128);
                (c, d, true) }
     }
 }
