@@ -6,6 +6,10 @@ import { definition, proposition, remark } from "../../schema/builders";
 export const atomicBraid = definition({
   label: "def:atomic-braid",
   title: "Atomic braid $H_{A+Z}(q)$",
+  lean: {
+    decl: "QOU.AtomicBraid.NeutralAtom",
+    validation: "not_checked",
+  },
   uses: ["def:transfer-matrix-operator", "def:derived-atom"],
 });
 
