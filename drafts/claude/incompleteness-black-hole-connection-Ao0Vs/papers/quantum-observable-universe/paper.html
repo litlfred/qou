@@ -497,9 +497,9 @@ code { font-size: 90%; }
         <a class="toc-sec" href="#sec:speed-of-light">Speed of Light and Mass--Energy Equivalence</a>
         <a class="toc-sec" href="#sec:planck-scale-computation">Computation at Planck Time Lengths</a>
         <a class="toc-sec" href="#sec:p-vs-np-boundary">P versus NP as a Boundary Condition</a>
-        <a class="toc-sec" href="#sec:incompleteness-horizon">Incompleteness and the Horizon</a>
         <a class="toc-sec" href="#sec:stat-mech">Statistical Mechanics</a>
         <a class="toc-sec" href="#sec:phase-transitions">Phase Transitions and Sublimation</a>
+        <a class="toc-sec" href="#sec:incompleteness-horizon">Incompleteness and the Horizon</a>
         <a class="toc-sec" href="#sec:horizons-aeons">Horizons and Aeons</a>
         <a class="toc-sec" href="#sec:info-geometry-variants">Quantum Geometry Variants</a>
         <a class="toc-ch" href="#chap:descartes-universe">The Descartes Universe</a>
@@ -688,8 +688,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/incompleteness-black-hole-connection-Ao0Vs">&#x1F33F; claude/incompleteness-black-hole-connection-Ao0Vs</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/be903b4d63577676ce0d7614f558d7e3fb97fd14">&#x1F4DD; be903b4</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/pull/330">PR #330</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/6a936a172a8ba4acb726195f5638548cb3c880e2">&#x1F4DD; 6a936a1</a>
 </div>
 <div class="proof-legend"><strong>Proof status:</strong> <span class="proof-status proved">&#x2713; proved</span> <span class="proof-status mathlib-ok">&#x2713;&#x2713; mathlib</span> <span class="proof-status stated">&#x2200; stated</span> <span class="proof-status has-sorry">&#x26A0; sorry</span> <span class="proof-status not-started">&#x2717; no Lean</span> </div>
 
@@ -25075,9 +25074,402 @@ problems. Conversely, a resolution of RH, NS, or BSD constrains P vs NP
 — the evaluation maps differ, but the obstruction class is the
 same.</em></p>
 </div>
+<h2 id="sec:stat-mech">Statistical Mechanics</h2>
+<p>The statistical mechanical structure of the QOU is not an analogy —
+it is the mechanism by which continuous physics emerges from discrete
+Reeb dynamics. The <a class="defn-link" href="#def:planck-time">Planck time</a> <span class="math inline">\(t_P(q) =
+q/(q-1)\)</span> (<a href="#def:planck-time">Planck time</a>) plays the
+role of inverse temperature <span class="math inline">\(\beta\)</span>:
+it counts the number of microscopic operations (Julia set iterations on
+the exceptional divisor) that compose each macroscopic time unit.</p>
+<p>The thermodynamic limit <span class="math inline">\(\beta \to
+\infty\)</span> (<span class="math inline">\(q \to 1\)</span>) is the
+classical limit: infinitely many discrete operations average into smooth
+Reeb flow, just as infinitely many molecular collisions average into
+thermodynamic equilibrium. The corrections to the continuous
+approximation are <span class="math inline">\(O(1/\beta) =
+O(\hbar_q)\)</span> — quantum-gravitational effects are literally
+finite-size corrections to the thermodynamic limit of time.</p>
+<p>This section develops the partition function, entropy, and free
+energy of the Reeb dynamics, establishing the statistical mechanical
+framework for the <a class="defn-link" href="#def:information-theoretic-time">information-theoretic time</a> (<a
+href="#def:information-theoretic-time">information-theoretic
+time</a>).</p>
+<div id="def:quantum-temperature" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2018" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Definition 8.16 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.quantumTemperature" target="_blank" title="Lean: QOU.Information.quantumTemperature">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-temperature">Quantum temperature</a></span>).
+<em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.quantumTemperature"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
+class="math inline">\(q\)</span> and <a class="defn-link" href="#def:planck-time">Planck time</a> <span
+class="math inline">\(t_P(q) = q/(q-1) = 1/\hbar_q\)</span> (<a
+href="#def:planck-time">Planck time</a>). The <strong>quantum
+temperature</strong> of a region <span class="math inline">\(U \subset
+M\)</span> is</em></p>
+<p><em><span class="math display">\[T_q(U) \;:=\; \hbar_q \;=\; \frac{q
+- 1}{q},\]</span></em></p>
+<p><em>with inverse temperature <span class="math inline">\(\beta_q :=
+1/T_q = t_P(q)\)</span>.</em></p>
+<p><em>The quantum entropy of <span class="math inline">\(U\)</span> is
+the non-abelian surface integral</em></p>
+<p><em><span class="math display">\[S_q(U) \;:=\;
+-\,\mathrm{tr}_{\mathrm{Ad}}
+  \!\oint_{\partial U}
+  \omega_{\mathcal{F}} \,\wedge\, *\eta_q,\]</span></em></p>
+<p><em>where <span class="math inline">\(\mathcal{F} =
+\mathrm{Ad}(A)\)</span> is the adjoint bundle, <span
+class="math inline">\(\omega_{\mathcal{F}}\)</span> is the adjoint
+connection, <span class="math inline">\(\eta_q = (2q-1)/q^3\)</span> is
+the operational entropy density (<a
+href="#def:operational-entropy">operational entropy</a>), and <span
+class="math inline">\(*\)</span> is the Hodge star on <span
+class="math inline">\(\partial U\)</span>.</em></p>
+<p><em>The measurability conditions <span
+class="math inline">\(c_1(\mathcal{F}) = 0\)</span>, <span
+class="math inline">\(c_2(\mathcal{F}) = 0\)</span> (<a
+href="#def:quantum-observable-universe">quantum observable universe</a>)
+ensure that the surface integral is independent of the choice of
+bounding surface via the Yekutieli non-abelian Stokes theorem (<a
+href="#def:yekutieli-triple">Yekutieli triple</a>).</em></p>
+<p><em>The <a class="defn-link" href="#def:quantum-temperature">quantum temperature</a> is the thermodynamic conjugate:</em></p>
+<p><em><span class="math display">\[\frac{1}{T_q}
+  \;=\; \frac{\partial S_q}{\partial \mathbf{E}_q}\bigg|_V
+  \;=\; \frac{1}{\hbar_q}.\]</span></em></p>
+</div>
+<p><span id="rem:quantum-temperature-interpretation"
+data-label="rem:quantum-temperature-interpretation"></span></p>
+<div id="def:quantum-pressure" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2065" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Definition 8.17 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.boundaryPressure" target="_blank" title="Lean: QOU.Information.boundaryPressure">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-pressure">Quantum pressure</a></span>).
+<em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.boundaryPressure"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <a class="defn-link" href="#def:quantum-temperature">quantum temperature</a> <span
+class="math inline">\(T_q = \hbar_q\)</span> (<a
+href="#def:quantum-temperature">quantum temperature</a>). Let <span
+class="math inline">\(U \subset M\)</span> be a region of the brane with
+boundary <span class="math inline">\(\partial U\)</span>, and let <span
+class="math inline">\(S_q(K)\)</span> denote the <a class="defn-link" href="#def:categorical-action">categorical action</a> of a
+knot configuration <span class="math inline">\(K\)</span> in <span
+class="math inline">\(U\)</span> (<a
+href="#def:categorical-action">categorical action</a>). The
+<strong><a class="defn-link" href="#def:quantum-pressure">quantum pressure</a></strong> on <span
+class="math inline">\(\partial U\)</span> is</em></p>
+<p><em><span class="math display">\[P_q(U) \;:=\;
+  -\,\frac{\partial F_q}{\partial V_q}\bigg|_{T_q},\]</span></em></p>
+<p><em>where <span class="math inline">\(F_q = -T_q \ln Z_q\)</span> is
+the quantum free energy and</em></p>
+<p><em><span class="math display">\[Z_q(U) \;=\;
+  \mathrm{tr}_{\mathrm{Ad}}
+  \!\sum_{K \,\in\, \mathrm{Conf}(U)}
+  e^{-\beta_q \, S_q(K)}\]</span></em></p>
+<p><em>is the partition function over the configuration space <span
+class="math inline">\(\mathrm{Conf}(U)\)</span> of knot states in <span
+class="math inline">\(U\)</span>, with <span
+class="math inline">\(\beta_q = 1/\hbar_q = t_P(q)\)</span>.</em></p>
+<p><em>The pressure decomposes as</em></p>
+<p><em><span class="math display">\[P_q \;=\; P_q^{(\mathrm{bulk})}
+  \;+\; P_q^{(\mathrm{boundary})},\]</span></em></p>
+<p><em>where the bulk term is the volume derivative of <span
+class="math inline">\(\ln Z_q\)</span> at fixed boundary conditions, and
+the boundary term arises from the <span
+class="math inline">\(q\)</span>-anomaly (<span
+class="math inline">\(d_q^2 \neq 0\)</span>):</em></p>
+<p><em><span class="math display">\[P_q^{(\mathrm{boundary})}
+  \;=\; \frac{\hbar_q^2}{V_q}
+  \,\mathrm{tr}_{\mathrm{Ad}}
+  \!\oint_{\partial U}
+  \langle d_q K \,,\, d_q K \rangle_A,\]</span></em></p>
+<p><em>where <span
+class="math inline">\(\langle\,\cdot\,,\,\cdot\,\rangle_A\)</span> is
+the <a class="defn-link" href="#def:frobenius-pairing">Frobenius pairing</a> (<a href="#def:frobenius-pairing">Frobenius
+pairing</a>).</em></p>
+</div>
+<p><span id="rem:quantum-pressure-interpretation"
+data-label="rem:quantum-pressure-interpretation"></span></p>
+<div id="def:quantum-volume" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2121" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Definition 8.18 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.quantumVolume" target="_blank" title="Lean: QOU.Information.quantumVolume">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-volume">Quantum volume</a></span>).
+<em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.quantumVolume"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and <span
+class="math inline">\(\mathcal{S} \to M\)</span> the state bundle with
+Reeb bundle <span class="math inline">\(S^3 \to \mathcal{S}_p\)</span>
+at each brane point <span class="math inline">\(p\)</span> (<a
+href="#def:reeb-bundle">Reeb bundle</a>). The <strong>quantum
+volume</strong> of a region <span class="math inline">\(U \subset
+M\)</span> is</em></p>
+<p><em><span class="math display">\[V_q(U) \;:=\;
+  \int_U \mathrm{Vol}_{S^3}(\mathcal{S}_p)\;
+  \epsilon_q(p),\]</span></em></p>
+<p><em>where <span class="math inline">\(\epsilon_q\)</span> is the
+categorical volume form on <span class="math inline">\(\Lambda^2
+V\)</span> preserved by the rigid duality of <span
+class="math inline">\((\mathbf{C}, A, \tau)\)</span> (<a
+href="#def:quantum-observable-universe">quantum observable
+universe</a>).</em></p>
+<p><em>For a homogeneous gas (uniform <span
+class="math inline">\(q\)</span> throughout <span
+class="math inline">\(U\)</span>), all fibres are isometric and</em></p>
+<p><em><span class="math display">\[V_q(U) \;=\;
+  |U| \cdot \mathrm{Vol}(S^3_q),\]</span></em></p>
+<p><em>where <span class="math inline">\(|U|\)</span> is the number of
+brane points in <span class="math inline">\(U\)</span> and</em></p>
+<p><em><span class="math display">\[\mathrm{Vol}(S^3_q)
+  \;=\; \pi^2 \cdot [2]_q
+  \;=\; \pi^2(q + q^{-1})\]</span></em></p>
+<p><em>is the volume of <span class="math inline">\(S^3\)</span> in the
+<span class="math inline">\(q\)</span>-deformed metric. At <span
+class="math inline">\(q = 1\)</span> this recovers <span
+class="math inline">\(\mathrm{Vol}(S^3) = 2\pi^2\)</span>.</em></p>
+</div>
+<p><span id="rem:quantum-volume-interpretation"
+data-label="rem:quantum-volume-interpretation"></span></p>
+<div id="prop:quantum-ideal-gas-law" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2164" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Proposition 8.19 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.IdealKnotGas" target="_blank" title="Lean: QOU.Information.IdealKnotGas">&#x2200; stated</a></strong> (<span>Quantum ideal gas
+law</span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.IdealKnotGas"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <span
+class="math inline">\(N\)</span> non-interacting particle knots in a
+region <span class="math inline">\(U \subset M\)</span>. Let <span
+class="math inline">\(P_q\)</span>, <span
+class="math inline">\(V_q\)</span>, <span
+class="math inline">\(T_q\)</span> be the <a class="defn-link" href="#def:quantum-pressure">quantum pressure</a>, volume, and
+temperature of <span class="math inline">\(U\)</span> (<a
+href="#def:quantum-pressure">quantum pressure</a>, <a
+href="#def:quantum-volume">quantum volume</a>, <a
+href="#def:quantum-temperature">quantum temperature</a>). Then the
+equation of state is</em></p>
+<p><em><span class="math display">\[P_q \, V_q
+  \;=\; N \, T_q
+  \left(
+    1 \;+\; \frac{\hbar_q^2}{[2]_q}
+    \,\langle S_q \rangle
+  \right),\]</span></em></p>
+<p><em>where <span class="math inline">\(\langle S_q \rangle\)</span> is
+the thermal expectation of the <a class="defn-link" href="#def:categorical-action">categorical action</a> (<a
+href="#def:categorical-action">categorical action</a>) and <span
+class="math inline">\([2]_q = q + q^{-1}\)</span>.</em></p>
+<p><em><em>Proof.</em> The single-particle partition function in a
+single <span class="math inline">\(S^3\)</span> fibre is</em></p>
+<p><em><span class="math display">\[z_q
+  \;=\;
+  \sum_{K \,\in\, \mathrm{Conf}_p}
+  e^{-\beta_q \, S_q(K)}.\]</span></em></p>
+<p><em>For <span class="math inline">\(N\)</span> non-interacting knots
+across <span class="math inline">\(|U|\)</span> brane points:</em></p>
+<p><em><span class="math display">\[Z_q
+  \;=\; \frac{1}{N!}
+  \left( |U| \cdot z_q \right)^N,\]</span></em></p>
+<p><em>where <span class="math inline">\(1/N!\)</span> arises from the
+braid group action on <span
+class="math inline">\(\mathrm{Conf}(U)\)</span>
+(isotopy-indistinguishability). The free energy <span
+class="math inline">\(F_q = -T_q \ln Z_q\)</span> gives, via Stirling
+and <span class="math inline">\(V_q = |U| \cdot \pi^2
+[2]_q\)</span>:</em></p>
+<p><em><span class="math display">\[P_q \, V_q
+  \;=\; -V_q\,\frac{\partial F_q}{\partial V_q}\bigg|_{T_q}
+  \;=\; N \, T_q\]</span></em></p>
+<p><em>at leading order. The <span
+class="math inline">\(q\)</span>-anomaly correction from <span
+class="math inline">\(d_q^2 \neq 0\)</span> at <span
+class="math inline">\(\partial U\)</span> shifts the single-fibre
+partition function by <span class="math inline">\(\delta \ln z_q =
+\hbar_q^2 \langle S_q \rangle / [2]_q\)</span>, producing the full
+equation of state. <span class="math inline">\(\square\)</span></em></p>
+</div>
+<p><span id="rem:quantum-ideal-gas-law-interpretation"
+data-label="rem:quantum-ideal-gas-law-interpretation"></span></p>
+<div id="prop:boltzmann-constant" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2228" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Proposition 8.20 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.thermalEnergy" target="_blank" title="Lean: QOU.Information.thermalEnergy">&#x2200; stated</a></strong> (<span>Boltzmann constant is unity
+in QOU natural units</span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.thermalEnergy"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>In QOU natural units, the Boltzmann constant is unity:</em></p>
+<p><em><span class="math display">\[k_B \;=\; 1.\]</span></em></p>
+<p><em>The <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a> <span
+class="math inline">\(\hbar_q\)</span> plays the role of the classical
+product <span class="math inline">\(k_B T\)</span>:</em></p>
+<p><em><span class="math display">\[k_B \, T_{\mathrm{phys}} \;=\;
+\hbar_q \;=\; \frac{q-1}{q}.\]</span></em></p>
+<p><em><em>Proof.</em> The <a class="defn-link" href="#prop:quantum-ideal-gas-law">quantum ideal gas law</a> (<a
+href="#prop:quantum-ideal-gas-law">quantum ideal gas law</a>) gives
+<span class="math inline">\(P_q V_q = N T_q = N \hbar_q\)</span> at
+leading order. The classical form is <span class="math inline">\(PV = N
+k_B T\)</span>. In the QOU, the temperature <span
+class="math inline">\(T_q = \hbar_q\)</span> (<a
+href="#def:quantum-temperature">quantum temperature</a>) already carries
+units of energy (it is the Reeb tick rate, not a statistical parameter).
+Comparing:</em></p>
+<p><em><span class="math display">\[N \, k_B \, T_q \;=\; N \, \hbar_q
+  \quad\Longrightarrow\quad
+  k_B \;=\; 1.\]</span></em></p>
+<p><em>The Boltzmann constant is unity because the QOU temperature is
+defined in energy units. There is no separate "degrees of freedom"
+temperature scale requiring a conversion factor.</em></p>
+<p><em>In SI, the physical temperature <span
+class="math inline">\(T_{\mathrm{phys}}\)</span> is measured in kelvin,
+and <span class="math inline">\(k_B = 1.381 \times 10^{-23}\)</span> J/K
+converts to energy. The QOU predicts <span class="math inline">\(k_B
+T_{\mathrm{phys}} = \hbar_q\)</span>: the thermal energy per degree of
+freedom equals the <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>. <span
+class="math inline">\(\qquad\square\)</span></em></p>
+</div>
+<p><span id="rem:gas-constant-derivation"
+data-label="rem:gas-constant-derivation"></span><span
+id="ex:hydrogen-partition-function"
+data-label="ex:hydrogen-partition-function"></span></p>
+<h2 id="sec:phase-transitions">Phase Transitions and Sublimation</h2>
+<div id="prop:phase-transition-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2278" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Proposition 8.21 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.gasLiquidCriticalTemp" target="_blank" title="Lean: QOU.Information.gasLiquidCriticalTemp">&#x2200; stated</a></strong> (<span>Phase transitions as <span
+class="math inline">\(S^3\)</span> boundary actions</span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.gasLiquidCriticalTemp"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <span
+class="math inline">\(N\)</span> particle knots in a region <span
+class="math inline">\(U\)</span>. A <strong>phase transition</strong>
+occurs at a critical temperature <span
+class="math inline">\(T_q^{(c)}\)</span> where the dominant saddle point
+of the partition function <span class="math inline">\(Z_q\)</span> jumps
+discontinuously between topologically distinct sectors of <span
+class="math inline">\(\mathrm{Conf}(U)\)</span>.</em></p>
+<p><em>The critical temperatures are determined by the <strong><span
+class="math inline">\(S^3\)</span> boundary action</strong>: the
+restriction of the <a class="defn-link" href="#def:categorical-action">categorical action</a> <span
+class="math inline">\(S_q\)</span> to the Hopf base <span
+class="math inline">\(S^2\)</span> of the fibration <span
+class="math inline">\(S^1 \hookrightarrow S^3_q \to
+S^2\)</span>,</em></p>
+<p><em><span class="math display">\[S_q^{(\partial)}
+  \;:=\;
+  \mathrm{tr}_{\mathrm{Ad}}
+  \!\oint_{S^2}
+  \omega_{\mathcal{F}} \,\wedge\, *\eta_q,\]</span></em></p>
+<p><em>where the integral is the non-abelian Stokes surface integral of
+the adjoint connection (<a href="#def:yekutieli-triple">Yekutieli
+triple</a>).</em></p>
+<p><em>The gas–liquid critical temperature is</em></p>
+<p><em><span class="math display">\[T_q^{(g \to l)}
+  \;=\;
+  \frac{S_q^{(\partial)}}{[2]_q}.\]</span></em></p>
+<p><em>The liquid–solid critical temperature is</em></p>
+<p><em><span class="math display">\[T_q^{(l \to s)}
+  \;=\;
+  \frac{S_q^{(\partial)}}{[2]_q \cdot [n_K]_q},\]</span></em></p>
+<p><em>where <span class="math inline">\(n_K\)</span> is the crossing
+number of the particle knot.</em></p>
+<p><em>The direct solid–gas transition (sublimation) occurs when the
+intermediate liquid phase is topologically obstructed: the Hecke
+representation at the mixed-channel temperature admits a non-split
+extension</em></p>
+<p><em><span class="math display">\[0 \;\to\; V_{\mathrm{sym}} \;\to\;
+  V_{\mathrm{mixed}} \;\to\;
+  V_{\mathrm{asym}} \;\to\; 0\]</span></em></p>
+<p><em>classified by <span
+class="math inline">\(\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}},
+V_{\mathrm{sym}}) \cong \mathbb{Z}\)</span>, generated by the Hopf
+invariant of <span class="math inline">\(\pi_3(S^2) =
+\mathbb{Z}\)</span>.</em></p>
+</div>
+<p><span id="rem:phase-transition-interpretation"
+data-label="rem:phase-transition-interpretation"></span></p>
+<div id="prop:composite-crossing-parity" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2341" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Proposition 8.22 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.crossing_parity_eq_Z" target="_blank" title="Lean: QOU.Information.crossing_parity_eq_Z">&#x2200; stated</a></strong> (<span>Sublimation from
+shell-filling representation theory</span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Information.crossing_parity_eq_Z"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\(\mathcal{A}(Z, N)\)</span> be a
+stable atom with <a class="defn-link" href="#def:electron-knot">electron</a> configuration occupying shells <span
+class="math inline">\(S_1, \ldots, S_k\)</span>. The complete
+decomposition (<a href="#prop:knot-eigenbasis-complete">knot
+eigenbasis</a>)</em></p>
+<p><em><span class="math display">\[V^{\otimes n} \cong
+  \bigoplus_{\lambda \vdash n,\, \ell(\lambda) \leq 2}
+  V_\lambda \otimes S_\lambda\]</span></em></p>
+<p><em>determines both the nuclear shell structure (<a
+href="#prop:shell-structure-eigenvalues">shell eigenvalues</a>) and the
+thermodynamic phase behavior (<a
+href="#prop:phase-transition-boundary">phase transitions</a>) through
+the same Hecke algebra <span
+class="math inline">\(H_n(q)\)</span>.</em></p>
+<p><em><strong>Sublimation criterion.</strong> An atom sublimes
+(bypasses the liquid phase) when the Hecke module at the mixed-channel
+temperature admits a non-split extension (<a
+href="#prop:phase-transition-boundary">phase transitions</a>). This
+extension is classified by</em></p>
+<p><em><span
+class="math display">\[\mathrm{Ext}^1_{H_n(q)}(S_{\mathrm{asym}},
+  S_{\mathrm{sym}}) \;\cong\; \mathbb{Z},\]</span></em></p>
+<p><em>and it <strong>splits</strong> (liquid phase is stable) if and
+only if the outermost <a class="defn-link" href="#def:electron-knot">electron</a> shell is <strong>closed or nearly
+closed</strong> — i.e., the partition <span
+class="math inline">\(\lambda_{\mathrm{outer}}\)</span> labelling the
+dominant representation of the valence electrons satisfies <span
+class="math inline">\(\lambda_1 - \lambda_2 \leq 1\)</span>.</em></p>
+<p><em>Equivalently: the extension splits when the valence shell sits in
+the <strong>symmetric or near-symmetric</strong> sector of the
+Schur–Weyl decomposition. It is non-split when the valence shell is in a
+<strong>half-filled</strong> partition (<span
+class="math inline">\(\lambda_1 \approx \lambda_2 + n/2\)</span>), which
+corresponds to the mixed Hecke channel having maximal
+dimension.</em></p>
+<p><em><strong>Crossing parity (coarse form).</strong> The composite
+crossing number satisfies <span class="math inline">\(n_K(\mathcal{A})
+\equiv Z \pmod{2}\)</span> (from the crossing budget <span
+class="math inline">\(A^2 + 7A + 5Z\)</span> and the identity <span
+class="math inline">\(A(A+1) \equiv 0 \pmod{2}\)</span>). This parity is
+a <strong>necessary but not sufficient</strong> condition for
+sublimation: it detects the mod-2 shadow of the Young diagram structure
+but cannot distinguish closed shells from half-filled ones.</em></p>
+<p><em><strong>Full criterion.</strong> Let <span
+class="math inline">\(\ell_v\)</span> denote the number of valence
+electrons beyond the last closed shell (<a
+href="#prop:noble-gas-characterization">noble gas characterization</a>).
+Let <span class="math inline">\(\ell_{\max}\)</span> be the capacity of
+the valence shell (<span class="math inline">\(\ell_{\max} =
+2n^2\)</span> for principal quantum number <span
+class="math inline">\(n\)</span>). Then:</em></p>
+<ol>
+<li><p><em><strong>Closed shell</strong> (<span
+class="math inline">\(\ell_v = 0\)</span> or <span
+class="math inline">\(\ell_v = \ell_{\max}\)</span>): extension splits.
+<strong>Stable liquid.</strong></em></p></li>
+<li><p><em><strong>Near-closed shell</strong> (<span
+class="math inline">\(\ell_v = 1\)</span> or <span
+class="math inline">\(\ell_v = \ell_{\max} - 1\)</span>): extension
+splits via the closed-core trivializing section. <strong>Stable
+liquid.</strong></em></p></li>
+<li><p><em><strong>Half-filled shell</strong> (<span
+class="math inline">\(\ell_v \approx \ell_{\max}/2\)</span>) with odd
+<span class="math inline">\(Z\)</span>: extension is non-split.
+<strong>Sublimation-prone.</strong></em></p></li>
+<li><p><em><strong>Metallic band</strong> (delocalized electrons): the
+single-atom Hecke module <span class="math inline">\(S_\lambda\)</span>
+is replaced by the band-structure module <span
+class="math inline">\(\bigoplus_k S_{\lambda(k)}\)</span> over crystal
+momenta <span class="math inline">\(k\)</span>. The direct sum
+generically contains both split and non-split extensions, and the
+majority (split) wins. <strong>Stable liquid.</strong></em></p></li>
+</ol>
+</div>
+<p><span id="rem:crossing-parity-test"
+data-label="rem:crossing-parity-test"></span></p>
 <h2 id="sec:incompleteness-horizon">Incompleteness and the Horizon</h2>
-<div id="prop:incompleteness-implies-horizon" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L1996" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.16 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.IncompletenessHorizon.exists_noncomputable" target="_blank" title="Lean: QOU.IncompletenessHorizon.exists_noncomputable">&#x2200; stated</a></strong> (<span>Turing completeness with
+<div id="prop:incompleteness-implies-horizon" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2427" target="_blank" title="View source">&#x1F4C4;</a>
+<p><strong>Proposition 8.23 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.IncompletenessHorizon.exists_noncomputable" target="_blank" title="Lean: QOU.IncompletenessHorizon.exists_noncomputable">&#x2200; stated</a></strong> (<span>Turing completeness with
 <span class="math inline">\(\mathbb{N}\)</span>-embedding implies
 non-empty <a class="defn-link" href="#def:computational-horizon">computational horizon</a></span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.IncompletenessHorizon.exists_noncomputable"><sup><span
@@ -25190,403 +25582,12 @@ consequence of the system’s expressive power.</em></p>
 </div>
 <p><span id="rem:incompleteness-horizon"
 data-label="rem:incompleteness-horizon"></span><span
+id="rem:stat-mech-computational-horizon"
+data-label="rem:stat-mech-computational-horizon"></span><span
 id="rem:information-paradox-incompleteness"
 data-label="rem:information-paradox-incompleteness"></span></p>
-<h2 id="sec:stat-mech">Statistical Mechanics</h2>
-<p>The statistical mechanical structure of the QOU is not an analogy —
-it is the mechanism by which continuous physics emerges from discrete
-Reeb dynamics. The <a class="defn-link" href="#def:planck-time">Planck time</a> <span class="math inline">\(t_P(q) =
-q/(q-1)\)</span> (<a href="#def:planck-time">Planck time</a>) plays the
-role of inverse temperature <span class="math inline">\(\beta\)</span>:
-it counts the number of microscopic operations (Julia set iterations on
-the exceptional divisor) that compose each macroscopic time unit.</p>
-<p>The thermodynamic limit <span class="math inline">\(\beta \to
-\infty\)</span> (<span class="math inline">\(q \to 1\)</span>) is the
-classical limit: infinitely many discrete operations average into smooth
-Reeb flow, just as infinitely many molecular collisions average into
-thermodynamic equilibrium. The corrections to the continuous
-approximation are <span class="math inline">\(O(1/\beta) =
-O(\hbar_q)\)</span> — quantum-gravitational effects are literally
-finite-size corrections to the thermodynamic limit of time.</p>
-<p>This section develops the partition function, entropy, and free
-energy of the Reeb dynamics, establishing the statistical mechanical
-framework for the <a class="defn-link" href="#def:information-theoretic-time">information-theoretic time</a> (<a
-href="#def:information-theoretic-time">information-theoretic
-time</a>).</p>
-<div id="def:quantum-temperature" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2134" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Definition 8.17 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.quantumTemperature" target="_blank" title="Lean: QOU.Information.quantumTemperature">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-temperature">Quantum temperature</a></span>).
-<em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.quantumTemperature"><sup><span
-style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
-a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
-class="math inline">\(q\)</span> and <a class="defn-link" href="#def:planck-time">Planck time</a> <span
-class="math inline">\(t_P(q) = q/(q-1) = 1/\hbar_q\)</span> (<a
-href="#def:planck-time">Planck time</a>). The <strong>quantum
-temperature</strong> of a region <span class="math inline">\(U \subset
-M\)</span> is</em></p>
-<p><em><span class="math display">\[T_q(U) \;:=\; \hbar_q \;=\; \frac{q
-- 1}{q},\]</span></em></p>
-<p><em>with inverse temperature <span class="math inline">\(\beta_q :=
-1/T_q = t_P(q)\)</span>.</em></p>
-<p><em>The quantum entropy of <span class="math inline">\(U\)</span> is
-the non-abelian surface integral</em></p>
-<p><em><span class="math display">\[S_q(U) \;:=\;
--\,\mathrm{tr}_{\mathrm{Ad}}
-  \!\oint_{\partial U}
-  \omega_{\mathcal{F}} \,\wedge\, *\eta_q,\]</span></em></p>
-<p><em>where <span class="math inline">\(\mathcal{F} =
-\mathrm{Ad}(A)\)</span> is the adjoint bundle, <span
-class="math inline">\(\omega_{\mathcal{F}}\)</span> is the adjoint
-connection, <span class="math inline">\(\eta_q = (2q-1)/q^3\)</span> is
-the operational entropy density (<a
-href="#def:operational-entropy">operational entropy</a>), and <span
-class="math inline">\(*\)</span> is the Hodge star on <span
-class="math inline">\(\partial U\)</span>.</em></p>
-<p><em>The measurability conditions <span
-class="math inline">\(c_1(\mathcal{F}) = 0\)</span>, <span
-class="math inline">\(c_2(\mathcal{F}) = 0\)</span> (<a
-href="#def:quantum-observable-universe">quantum observable universe</a>)
-ensure that the surface integral is independent of the choice of
-bounding surface via the Yekutieli non-abelian Stokes theorem (<a
-href="#def:yekutieli-triple">Yekutieli triple</a>).</em></p>
-<p><em>The <a class="defn-link" href="#def:quantum-temperature">quantum temperature</a> is the thermodynamic conjugate:</em></p>
-<p><em><span class="math display">\[\frac{1}{T_q}
-  \;=\; \frac{\partial S_q}{\partial \mathbf{E}_q}\bigg|_V
-  \;=\; \frac{1}{\hbar_q}.\]</span></em></p>
-</div>
-<p><span id="rem:quantum-temperature-interpretation"
-data-label="rem:quantum-temperature-interpretation"></span></p>
-<div id="def:quantum-pressure" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2181" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Definition 8.18 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.boundaryPressure" target="_blank" title="Lean: QOU.Information.boundaryPressure">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-pressure">Quantum pressure</a></span>).
-<em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.boundaryPressure"><sup><span
-style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
-a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <a class="defn-link" href="#def:quantum-temperature">quantum temperature</a> <span
-class="math inline">\(T_q = \hbar_q\)</span> (<a
-href="#def:quantum-temperature">quantum temperature</a>). Let <span
-class="math inline">\(U \subset M\)</span> be a region of the brane with
-boundary <span class="math inline">\(\partial U\)</span>, and let <span
-class="math inline">\(S_q(K)\)</span> denote the <a class="defn-link" href="#def:categorical-action">categorical action</a> of a
-knot configuration <span class="math inline">\(K\)</span> in <span
-class="math inline">\(U\)</span> (<a
-href="#def:categorical-action">categorical action</a>). The
-<strong><a class="defn-link" href="#def:quantum-pressure">quantum pressure</a></strong> on <span
-class="math inline">\(\partial U\)</span> is</em></p>
-<p><em><span class="math display">\[P_q(U) \;:=\;
-  -\,\frac{\partial F_q}{\partial V_q}\bigg|_{T_q},\]</span></em></p>
-<p><em>where <span class="math inline">\(F_q = -T_q \ln Z_q\)</span> is
-the quantum free energy and</em></p>
-<p><em><span class="math display">\[Z_q(U) \;=\;
-  \mathrm{tr}_{\mathrm{Ad}}
-  \!\sum_{K \,\in\, \mathrm{Conf}(U)}
-  e^{-\beta_q \, S_q(K)}\]</span></em></p>
-<p><em>is the partition function over the configuration space <span
-class="math inline">\(\mathrm{Conf}(U)\)</span> of knot states in <span
-class="math inline">\(U\)</span>, with <span
-class="math inline">\(\beta_q = 1/\hbar_q = t_P(q)\)</span>.</em></p>
-<p><em>The pressure decomposes as</em></p>
-<p><em><span class="math display">\[P_q \;=\; P_q^{(\mathrm{bulk})}
-  \;+\; P_q^{(\mathrm{boundary})},\]</span></em></p>
-<p><em>where the bulk term is the volume derivative of <span
-class="math inline">\(\ln Z_q\)</span> at fixed boundary conditions, and
-the boundary term arises from the <span
-class="math inline">\(q\)</span>-anomaly (<span
-class="math inline">\(d_q^2 \neq 0\)</span>):</em></p>
-<p><em><span class="math display">\[P_q^{(\mathrm{boundary})}
-  \;=\; \frac{\hbar_q^2}{V_q}
-  \,\mathrm{tr}_{\mathrm{Ad}}
-  \!\oint_{\partial U}
-  \langle d_q K \,,\, d_q K \rangle_A,\]</span></em></p>
-<p><em>where <span
-class="math inline">\(\langle\,\cdot\,,\,\cdot\,\rangle_A\)</span> is
-the <a class="defn-link" href="#def:frobenius-pairing">Frobenius pairing</a> (<a href="#def:frobenius-pairing">Frobenius
-pairing</a>).</em></p>
-</div>
-<p><span id="rem:quantum-pressure-interpretation"
-data-label="rem:quantum-pressure-interpretation"></span></p>
-<div id="def:quantum-volume" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2237" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Definition 8.19 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.quantumVolume" target="_blank" title="Lean: QOU.Information.quantumVolume">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:quantum-volume">Quantum volume</a></span>).
-<em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.quantumVolume"><sup><span
-style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
-a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and <span
-class="math inline">\(\mathcal{S} \to M\)</span> the state bundle with
-Reeb bundle <span class="math inline">\(S^3 \to \mathcal{S}_p\)</span>
-at each brane point <span class="math inline">\(p\)</span> (<a
-href="#def:reeb-bundle">Reeb bundle</a>). The <strong>quantum
-volume</strong> of a region <span class="math inline">\(U \subset
-M\)</span> is</em></p>
-<p><em><span class="math display">\[V_q(U) \;:=\;
-  \int_U \mathrm{Vol}_{S^3}(\mathcal{S}_p)\;
-  \epsilon_q(p),\]</span></em></p>
-<p><em>where <span class="math inline">\(\epsilon_q\)</span> is the
-categorical volume form on <span class="math inline">\(\Lambda^2
-V\)</span> preserved by the rigid duality of <span
-class="math inline">\((\mathbf{C}, A, \tau)\)</span> (<a
-href="#def:quantum-observable-universe">quantum observable
-universe</a>).</em></p>
-<p><em>For a homogeneous gas (uniform <span
-class="math inline">\(q\)</span> throughout <span
-class="math inline">\(U\)</span>), all fibres are isometric and</em></p>
-<p><em><span class="math display">\[V_q(U) \;=\;
-  |U| \cdot \mathrm{Vol}(S^3_q),\]</span></em></p>
-<p><em>where <span class="math inline">\(|U|\)</span> is the number of
-brane points in <span class="math inline">\(U\)</span> and</em></p>
-<p><em><span class="math display">\[\mathrm{Vol}(S^3_q)
-  \;=\; \pi^2 \cdot [2]_q
-  \;=\; \pi^2(q + q^{-1})\]</span></em></p>
-<p><em>is the volume of <span class="math inline">\(S^3\)</span> in the
-<span class="math inline">\(q\)</span>-deformed metric. At <span
-class="math inline">\(q = 1\)</span> this recovers <span
-class="math inline">\(\mathrm{Vol}(S^3) = 2\pi^2\)</span>.</em></p>
-</div>
-<p><span id="rem:quantum-volume-interpretation"
-data-label="rem:quantum-volume-interpretation"></span></p>
-<div id="prop:quantum-ideal-gas-law" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2280" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.20 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.IdealKnotGas" target="_blank" title="Lean: QOU.Information.IdealKnotGas">&#x2200; stated</a></strong> (<span>Quantum ideal gas
-law</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.IdealKnotGas"><sup><span
-style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
-a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <span
-class="math inline">\(N\)</span> non-interacting particle knots in a
-region <span class="math inline">\(U \subset M\)</span>. Let <span
-class="math inline">\(P_q\)</span>, <span
-class="math inline">\(V_q\)</span>, <span
-class="math inline">\(T_q\)</span> be the <a class="defn-link" href="#def:quantum-pressure">quantum pressure</a>, volume, and
-temperature of <span class="math inline">\(U\)</span> (<a
-href="#def:quantum-pressure">quantum pressure</a>, <a
-href="#def:quantum-volume">quantum volume</a>, <a
-href="#def:quantum-temperature">quantum temperature</a>). Then the
-equation of state is</em></p>
-<p><em><span class="math display">\[P_q \, V_q
-  \;=\; N \, T_q
-  \left(
-    1 \;+\; \frac{\hbar_q^2}{[2]_q}
-    \,\langle S_q \rangle
-  \right),\]</span></em></p>
-<p><em>where <span class="math inline">\(\langle S_q \rangle\)</span> is
-the thermal expectation of the <a class="defn-link" href="#def:categorical-action">categorical action</a> (<a
-href="#def:categorical-action">categorical action</a>) and <span
-class="math inline">\([2]_q = q + q^{-1}\)</span>.</em></p>
-<p><em><em>Proof.</em> The single-particle partition function in a
-single <span class="math inline">\(S^3\)</span> fibre is</em></p>
-<p><em><span class="math display">\[z_q
-  \;=\;
-  \sum_{K \,\in\, \mathrm{Conf}_p}
-  e^{-\beta_q \, S_q(K)}.\]</span></em></p>
-<p><em>For <span class="math inline">\(N\)</span> non-interacting knots
-across <span class="math inline">\(|U|\)</span> brane points:</em></p>
-<p><em><span class="math display">\[Z_q
-  \;=\; \frac{1}{N!}
-  \left( |U| \cdot z_q \right)^N,\]</span></em></p>
-<p><em>where <span class="math inline">\(1/N!\)</span> arises from the
-braid group action on <span
-class="math inline">\(\mathrm{Conf}(U)\)</span>
-(isotopy-indistinguishability). The free energy <span
-class="math inline">\(F_q = -T_q \ln Z_q\)</span> gives, via Stirling
-and <span class="math inline">\(V_q = |U| \cdot \pi^2
-[2]_q\)</span>:</em></p>
-<p><em><span class="math display">\[P_q \, V_q
-  \;=\; -V_q\,\frac{\partial F_q}{\partial V_q}\bigg|_{T_q}
-  \;=\; N \, T_q\]</span></em></p>
-<p><em>at leading order. The <span
-class="math inline">\(q\)</span>-anomaly correction from <span
-class="math inline">\(d_q^2 \neq 0\)</span> at <span
-class="math inline">\(\partial U\)</span> shifts the single-fibre
-partition function by <span class="math inline">\(\delta \ln z_q =
-\hbar_q^2 \langle S_q \rangle / [2]_q\)</span>, producing the full
-equation of state. <span class="math inline">\(\square\)</span></em></p>
-</div>
-<p><span id="rem:quantum-ideal-gas-law-interpretation"
-data-label="rem:quantum-ideal-gas-law-interpretation"></span></p>
-<div id="prop:boltzmann-constant" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2344" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.21 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.thermalEnergy" target="_blank" title="Lean: QOU.Information.thermalEnergy">&#x2200; stated</a></strong> (<span>Boltzmann constant is unity
-in QOU natural units</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.thermalEnergy"><sup><span
-style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>In QOU natural units, the Boltzmann constant is unity:</em></p>
-<p><em><span class="math display">\[k_B \;=\; 1.\]</span></em></p>
-<p><em>The <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a> <span
-class="math inline">\(\hbar_q\)</span> plays the role of the classical
-product <span class="math inline">\(k_B T\)</span>:</em></p>
-<p><em><span class="math display">\[k_B \, T_{\mathrm{phys}} \;=\;
-\hbar_q \;=\; \frac{q-1}{q}.\]</span></em></p>
-<p><em><em>Proof.</em> The <a class="defn-link" href="#prop:quantum-ideal-gas-law">quantum ideal gas law</a> (<a
-href="#prop:quantum-ideal-gas-law">quantum ideal gas law</a>) gives
-<span class="math inline">\(P_q V_q = N T_q = N \hbar_q\)</span> at
-leading order. The classical form is <span class="math inline">\(PV = N
-k_B T\)</span>. In the QOU, the temperature <span
-class="math inline">\(T_q = \hbar_q\)</span> (<a
-href="#def:quantum-temperature">quantum temperature</a>) already carries
-units of energy (it is the Reeb tick rate, not a statistical parameter).
-Comparing:</em></p>
-<p><em><span class="math display">\[N \, k_B \, T_q \;=\; N \, \hbar_q
-  \quad\Longrightarrow\quad
-  k_B \;=\; 1.\]</span></em></p>
-<p><em>The Boltzmann constant is unity because the QOU temperature is
-defined in energy units. There is no separate "degrees of freedom"
-temperature scale requiring a conversion factor.</em></p>
-<p><em>In SI, the physical temperature <span
-class="math inline">\(T_{\mathrm{phys}}\)</span> is measured in kelvin,
-and <span class="math inline">\(k_B = 1.381 \times 10^{-23}\)</span> J/K
-converts to energy. The QOU predicts <span class="math inline">\(k_B
-T_{\mathrm{phys}} = \hbar_q\)</span>: the thermal energy per degree of
-freedom equals the <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>. <span
-class="math inline">\(\qquad\square\)</span></em></p>
-</div>
-<p><span id="rem:gas-constant-derivation"
-data-label="rem:gas-constant-derivation"></span><span
-id="ex:hydrogen-partition-function"
-data-label="ex:hydrogen-partition-function"></span></p>
-<h2 id="sec:phase-transitions">Phase Transitions and Sublimation</h2>
-<div id="prop:phase-transition-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2394" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.22 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.gasLiquidCriticalTemp" target="_blank" title="Lean: QOU.Information.gasLiquidCriticalTemp">&#x2200; stated</a></strong> (<span>Phase transitions as <span
-class="math inline">\(S^3\)</span> boundary actions</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.gasLiquidCriticalTemp"><sup><span
-style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\((\mathbf{C}, A, \tau)\)</span> be
-a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <span
-class="math inline">\(N\)</span> particle knots in a region <span
-class="math inline">\(U\)</span>. A <strong>phase transition</strong>
-occurs at a critical temperature <span
-class="math inline">\(T_q^{(c)}\)</span> where the dominant saddle point
-of the partition function <span class="math inline">\(Z_q\)</span> jumps
-discontinuously between topologically distinct sectors of <span
-class="math inline">\(\mathrm{Conf}(U)\)</span>.</em></p>
-<p><em>The critical temperatures are determined by the <strong><span
-class="math inline">\(S^3\)</span> boundary action</strong>: the
-restriction of the <a class="defn-link" href="#def:categorical-action">categorical action</a> <span
-class="math inline">\(S_q\)</span> to the Hopf base <span
-class="math inline">\(S^2\)</span> of the fibration <span
-class="math inline">\(S^1 \hookrightarrow S^3_q \to
-S^2\)</span>,</em></p>
-<p><em><span class="math display">\[S_q^{(\partial)}
-  \;:=\;
-  \mathrm{tr}_{\mathrm{Ad}}
-  \!\oint_{S^2}
-  \omega_{\mathcal{F}} \,\wedge\, *\eta_q,\]</span></em></p>
-<p><em>where the integral is the non-abelian Stokes surface integral of
-the adjoint connection (<a href="#def:yekutieli-triple">Yekutieli
-triple</a>).</em></p>
-<p><em>The gas–liquid critical temperature is</em></p>
-<p><em><span class="math display">\[T_q^{(g \to l)}
-  \;=\;
-  \frac{S_q^{(\partial)}}{[2]_q}.\]</span></em></p>
-<p><em>The liquid–solid critical temperature is</em></p>
-<p><em><span class="math display">\[T_q^{(l \to s)}
-  \;=\;
-  \frac{S_q^{(\partial)}}{[2]_q \cdot [n_K]_q},\]</span></em></p>
-<p><em>where <span class="math inline">\(n_K\)</span> is the crossing
-number of the particle knot.</em></p>
-<p><em>The direct solid–gas transition (sublimation) occurs when the
-intermediate liquid phase is topologically obstructed: the Hecke
-representation at the mixed-channel temperature admits a non-split
-extension</em></p>
-<p><em><span class="math display">\[0 \;\to\; V_{\mathrm{sym}} \;\to\;
-  V_{\mathrm{mixed}} \;\to\;
-  V_{\mathrm{asym}} \;\to\; 0\]</span></em></p>
-<p><em>classified by <span
-class="math inline">\(\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}},
-V_{\mathrm{sym}}) \cong \mathbb{Z}\)</span>, generated by the Hopf
-invariant of <span class="math inline">\(\pi_3(S^2) =
-\mathbb{Z}\)</span>.</em></p>
-</div>
-<p><span id="rem:phase-transition-interpretation"
-data-label="rem:phase-transition-interpretation"></span></p>
-<div id="prop:composite-crossing-parity" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2457" target="_blank" title="View source">&#x1F4C4;</a>
-<p><strong>Proposition 8.23 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Information.crossing_parity_eq_Z" target="_blank" title="Lean: QOU.Information.crossing_parity_eq_Z">&#x2200; stated</a></strong> (<span>Sublimation from
-shell-filling representation theory</span>). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Information.crossing_parity_eq_Z"><sup><span
-style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span class="math inline">\(\mathcal{A}(Z, N)\)</span> be a
-stable atom with <a class="defn-link" href="#def:electron-knot">electron</a> configuration occupying shells <span
-class="math inline">\(S_1, \ldots, S_k\)</span>. The complete
-decomposition (<a href="#prop:knot-eigenbasis-complete">knot
-eigenbasis</a>)</em></p>
-<p><em><span class="math display">\[V^{\otimes n} \cong
-  \bigoplus_{\lambda \vdash n,\, \ell(\lambda) \leq 2}
-  V_\lambda \otimes S_\lambda\]</span></em></p>
-<p><em>determines both the nuclear shell structure (<a
-href="#prop:shell-structure-eigenvalues">shell eigenvalues</a>) and the
-thermodynamic phase behavior (<a
-href="#prop:phase-transition-boundary">phase transitions</a>) through
-the same Hecke algebra <span
-class="math inline">\(H_n(q)\)</span>.</em></p>
-<p><em><strong>Sublimation criterion.</strong> An atom sublimes
-(bypasses the liquid phase) when the Hecke module at the mixed-channel
-temperature admits a non-split extension (<a
-href="#prop:phase-transition-boundary">phase transitions</a>). This
-extension is classified by</em></p>
-<p><em><span
-class="math display">\[\mathrm{Ext}^1_{H_n(q)}(S_{\mathrm{asym}},
-  S_{\mathrm{sym}}) \;\cong\; \mathbb{Z},\]</span></em></p>
-<p><em>and it <strong>splits</strong> (liquid phase is stable) if and
-only if the outermost <a class="defn-link" href="#def:electron-knot">electron</a> shell is <strong>closed or nearly
-closed</strong> — i.e., the partition <span
-class="math inline">\(\lambda_{\mathrm{outer}}\)</span> labelling the
-dominant representation of the valence electrons satisfies <span
-class="math inline">\(\lambda_1 - \lambda_2 \leq 1\)</span>.</em></p>
-<p><em>Equivalently: the extension splits when the valence shell sits in
-the <strong>symmetric or near-symmetric</strong> sector of the
-Schur–Weyl decomposition. It is non-split when the valence shell is in a
-<strong>half-filled</strong> partition (<span
-class="math inline">\(\lambda_1 \approx \lambda_2 + n/2\)</span>), which
-corresponds to the mixed Hecke channel having maximal
-dimension.</em></p>
-<p><em><strong>Crossing parity (coarse form).</strong> The composite
-crossing number satisfies <span class="math inline">\(n_K(\mathcal{A})
-\equiv Z \pmod{2}\)</span> (from the crossing budget <span
-class="math inline">\(A^2 + 7A + 5Z\)</span> and the identity <span
-class="math inline">\(A(A+1) \equiv 0 \pmod{2}\)</span>). This parity is
-a <strong>necessary but not sufficient</strong> condition for
-sublimation: it detects the mod-2 shadow of the Young diagram structure
-but cannot distinguish closed shells from half-filled ones.</em></p>
-<p><em><strong>Full criterion.</strong> Let <span
-class="math inline">\(\ell_v\)</span> denote the number of valence
-electrons beyond the last closed shell (<a
-href="#prop:noble-gas-characterization">noble gas characterization</a>).
-Let <span class="math inline">\(\ell_{\max}\)</span> be the capacity of
-the valence shell (<span class="math inline">\(\ell_{\max} =
-2n^2\)</span> for principal quantum number <span
-class="math inline">\(n\)</span>). Then:</em></p>
-<ol>
-<li><p><em><strong>Closed shell</strong> (<span
-class="math inline">\(\ell_v = 0\)</span> or <span
-class="math inline">\(\ell_v = \ell_{\max}\)</span>): extension splits.
-<strong>Stable liquid.</strong></em></p></li>
-<li><p><em><strong>Near-closed shell</strong> (<span
-class="math inline">\(\ell_v = 1\)</span> or <span
-class="math inline">\(\ell_v = \ell_{\max} - 1\)</span>): extension
-splits via the closed-core trivializing section. <strong>Stable
-liquid.</strong></em></p></li>
-<li><p><em><strong>Half-filled shell</strong> (<span
-class="math inline">\(\ell_v \approx \ell_{\max}/2\)</span>) with odd
-<span class="math inline">\(Z\)</span>: extension is non-split.
-<strong>Sublimation-prone.</strong></em></p></li>
-<li><p><em><strong>Metallic band</strong> (delocalized electrons): the
-single-atom Hecke module <span class="math inline">\(S_\lambda\)</span>
-is replaced by the band-structure module <span
-class="math inline">\(\bigoplus_k S_{\lambda(k)}\)</span> over crystal
-momenta <span class="math inline">\(k\)</span>. The direct sum
-generically contains both split and non-split extensions, and the
-majority (split) wins. <strong>Stable liquid.</strong></em></p></li>
-</ol>
-</div>
-<p><span id="rem:crossing-parity-test"
-data-label="rem:crossing-parity-test"></span></p>
 <h2 id="sec:horizons-aeons">Horizons and Aeons</h2>
-<div id="def:jet-horizon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2543" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:jet-horizon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2544" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.24 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.JetHorizon" target="_blank" title="Lean: QOU.JetHorizon">&#x2200; stated</a></strong> (<span>Jet horizon (degree-<span
 class="math inline">\(0\)</span> vanishing locus)</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.JetHorizon"><sup><span
@@ -25677,7 +25678,7 @@ class="math inline">\(0\)</span>), only statistical correlations
 (degrees <span class="math inline">\(1\)</span> and <span
 class="math inline">\(2\)</span>).</em></p>
 </div>
-<div id="def:big-bang-state" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2602" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:big-bang-state" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2603" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.25 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BigBangState" target="_blank" title="Lean: QOU.BigBangState">&#x2200; stated</a></strong> (<span>Big bang state (degree-<span
 class="math inline">\(0\)</span> trivial configuration)</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.BigBangState"><sup><span
@@ -25752,7 +25753,7 @@ singularity),</em></p></li>
 indefinitely).</em></p></li>
 </ul>
 </div>
-<div id="def:cmb-boundary-datum" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2658" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:cmb-boundary-datum" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2659" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.26 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBBoundaryDatum" target="_blank" title="Lean: QOU.CMBBoundaryDatum">&#x2200; stated</a></strong> (<span>CMB as boundary datum of a
 big bang state</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CMBBoundaryDatum"><sup><span
@@ -25849,7 +25850,7 @@ aeon’s final state.</em></p>
 data-label="rem:cmb-photon-color-content"></span><span
 id="rem:hawking-radiation"
 data-label="rem:hawking-radiation"></span></p>
-<div id="def:observable-subcategory" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2731" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:observable-subcategory" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2732" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.27 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ObservableSubcategory" target="_blank" title="Lean: QOU.ObservableSubcategory">&#x2200; stated</a></strong> (<span>Observable subcategory <span
 class="math inline">\(\mathrm{Bun}^{\circ}(\mathbb{P}(V))\)</span></span>).
 <em><a
@@ -25898,7 +25899,7 @@ class="math inline">\(\mathrm{Bun}^{\circ}\)</span>, encompassing all
 light cones that can be reached from one another without crossing a jet
 horizon.</em></p>
 </div>
-<div id="def:aeon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2781" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:aeon" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2782" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.28 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Aeon" target="_blank" title="Lean: QOU.Aeon">&#x2200; stated</a></strong> (<span>Aeon</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Aeon"><sup><span
 style="color: BurntOrange"><span
@@ -25988,7 +25989,7 @@ need for an explicit interval <span class="math inline">\((a, b) \subset
 \mathbb{Z}\)</span> — the <a class="defn-link" href="#def:aeon">aeon</a> is defined over the full structure of the
 category, encompassing all intersecting light cones.</em></p>
 </div>
-<div id="def:horizon-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2872" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:horizon-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2873" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.29 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.HorizonFunctor" target="_blank" title="Lean: QOU.HorizonFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:horizon-functor">Horizon functor</a></span>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.HorizonFunctor"><sup><span
@@ -26055,7 +26056,7 @@ the set of fixed points of the limiting behaviour <span
 class="math inline">\(\Phi_t^q \to \partial\)</span> as <span
 class="math inline">\(t\)</span> approaches the aeon boundary.</em></p>
 </div>
-<div id="def:cmb-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2936" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:cmb-functor" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L2937" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Definition 8.30 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBFunctor" target="_blank" title="Lean: QOU.CMBFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:cmb-functor">CMB functor</a></span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CMBFunctor"><sup><span
 style="color: BurntOrange"><span
@@ -26137,7 +26138,7 @@ generator of the horizon ideal <span class="math inline">\(\mathfrak{h}
 \subset A_0\)</span>. It depends only on the vanishing locus — the
 conformal class of <span class="math inline">\(A_0\)</span>.</em></p>
 </div>
-<div id="conj:aeon-boundary-generates-chart" class="conjecture"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L3004" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="conj:aeon-boundary-generates-chart" class="conjecture"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L3005" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Conjecture 8.31 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.aeon_boundary_generates_chart" target="_blank" title="Lean: QOU.aeon_boundary_generates_chart">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:aeon">Aeon</a> recycling: <span
 class="math inline">\(\Phi_1^q \circ \mathrm{CMB}\)</span> lands in
 <span class="math inline">\(\mathrm{Bun}^{\circ}\)</span></span>).
@@ -26214,7 +26215,7 @@ to its successor. A fixed point of <span
 class="math inline">\(\mathcal{R}\)</span> would be a self-recycling
 aeon: one whose CMB regenerates itself.</em></p>
 </div>
-<div id="prop:horizon-conformal-invariance" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L3075" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:horizon-conformal-invariance" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L3076" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Proposition 8.32 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.horizon_conformal_invariance" target="_blank" title="Lean: QOU.horizon_conformal_invariance">&#x2200; stated</a></strong> (<span>Conformal invariance at the
 jet horizon</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.horizon_conformal_invariance"><sup><span
@@ -26277,7 +26278,7 @@ conformal data. <strong>Conformal invariance at the horizon is a
 consequence of the observability axioms</strong>, not an additional
 assumption.</em></p>
 </div>
-<div id="prop:qou-is-ccc" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L3127" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:qou-is-ccc" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/incompleteness-black-hole-connection-Ao0Vs/chapters/information-theory.tex#L3128" target="_blank" title="View source">&#x1F4C4;</a>
 <p><strong>Proposition 8.33 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qou_is_ccc" target="_blank" title="Lean: QOU.qou_is_ccc">&#x2200; stated</a></strong> (<span>A QOU with aeons is a
 conformal cyclic cosmology</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.qou_is_ccc"><sup><span
