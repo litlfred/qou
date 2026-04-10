@@ -4,7 +4,7 @@ export default remark({
   label: "rem:incompleteness-horizon",
   title:
     "Incompleteness as degree-$0$ opacity: the Turing--G\u00f6del--horizon triangle",
-  interprets: "def:computational-horizon",
+  interprets: "prop:incompleteness-implies-horizon",
   tags: [
     "incompleteness",
     "goedel",
@@ -16,6 +16,7 @@ export default remark({
     "degree-0-opacity",
   ],
   uses: [
+    "prop:incompleteness-implies-horizon",
     "def:computational-horizon",
     "conj:p-vs-np-boundary",
     "rem:skein-turing-machine",

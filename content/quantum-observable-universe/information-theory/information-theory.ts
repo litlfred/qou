@@ -84,6 +84,7 @@ section({
       title: "Incompleteness and the Horizon",
       label: "sec:incompleteness-horizon",
       blocks: [
+        "incompleteness-implies-horizon",
         "incompleteness-horizon",
         "information-paradox-incompleteness",
       ],
