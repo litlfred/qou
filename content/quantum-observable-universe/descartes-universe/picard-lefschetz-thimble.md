@@ -6,7 +6,7 @@ $$
 S(z) = \int^z \lambda_{\mathrm{SW}}^{(1)}(z')\, dz'
 $$
 
-where $\lambda_{\mathrm{SW}}^{(1)} = \partial_z \mathbf{c}$ is the prolonged SW differential. The **critical points** of $S$ are the values $z_c \in \mathbb{C}$ where the color-tube discriminant vanishes:
+where $\lambda_{\mathrm{SW}}^{(1)} = dc/dz = -(\partial F/\partial z)/(\partial F/\partial c)$ is the prolonged SW differential obtained by implicit differentiation of the color-tube cubic. The **critical points** of $S$ are the values $z_c \in \mathbb{C}$ where the color-tube discriminant vanishes:
 
 $$
 \Delta(z_c) = 0, \qquad \Delta(z) = 18abcd - 4b^3d + b^2c^2 - 4ac^3 - 27a^2d^2

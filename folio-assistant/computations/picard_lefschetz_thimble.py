@@ -229,7 +229,7 @@ def trace_thimble(z_c, direction, n_steps=500, dt=0.005):
         if abs(grad_S) < 1e-30:
             break
 
-        dz = -np.conj(complex(grad_S)) * dt
+        dz = -np.conj(grad_S) * dt
 
         # Adaptive step size: reduce if gradient is large
         if abs(dz) > 0.1:
@@ -249,11 +249,38 @@ def trace_thimble(z_c, direction, n_steps=500, dt=0.005):
 
 def trace_anti_thimble(z_c, direction, n_steps=500, dt=0.005):
     """
-    Trace the anti-thimble (steepest ascent) from z_c.
-    Direction rotated by π/2 from thimble direction.
+    Trace the anti-thimble (steepest ascent of Re(S)) from z_c.
+
+    The anti-thimble uses the reversed gradient flow: dz/dt = +conj(dS/dz),
+    and emanates from z_c perpendicular to the thimble direction.
     """
-    anti_dir = direction * 1j
-    return trace_thimble(z_c, anti_dir, n_steps, dt)
+    anti_dir = direction * 1j  # perpendicular to thimble
+
+    # Start slightly displaced from z_c along the anti-thimble direction
+    z_start = z_c + 1e-4 * anti_dir
+
+    path = [z_c, z_start]
+    z = z_start
+
+    for _ in range(n_steps):
+        # Ascent flow: dz/dt = +conj(dS/dz)  (opposite of thimble descent)
+        grad_S = sw_integrand_degree1(z)
+        if abs(grad_S) < 1e-30:
+            break
+
+        dz = np.conj(complex(grad_S)) * dt  # note: +conj, not -conj
+
+        if abs(dz) > 0.1:
+            dz = dz * 0.1 / abs(dz)
+
+        z_new = z + dz
+        if abs(z_new) > 10:
+            break
+
+        path.append(z_new)
+        z = z_new
+
+    return np.array(path)
 
 
 # ══════════════════════════════════════════════════════════════
