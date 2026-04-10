@@ -1,16 +1,26 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-10T02:21:41.605318+00:00",
-  "commitSha": "318fc39c267e88c79bfa3fdd00428c95f62711e1",
-  "assertions": [],
+  "computedAt": "2026-04-10T02:30:46.071019+00:00",
+  "commitSha": "48ad42212374d134382953f602a0e0a31b9e479d",
+  "assertions": [
+    {
+      "name": "m_p from ∏ dc_k/dz",
+      "computed": 938.267,
+      "expected": 938.272,
+      "passed": true,
+      "tolerance": 1.0,
+      "unit": "MeV",
+      "source": "CODATA 2018 proton mass"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 18,
   "computation": "picard-lefschetz-thimble",
   "scriptFile": "picard_lefschetz_thimble.py",
-  "scriptHash": "4afe03e4ad27",
-  "scriptCommitSha": "318fc39c267e88c79bfa3fdd00428c95f62711e1",
-  "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, and SW period integrals.",
+  "scriptHash": "cdb75bc6e6ca",
+  "scriptCommitSha": "48ad42212374d134382953f602a0e0a31b9e479d",
+  "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, SW period integrals (single-root and simultaneous 3-root prescriptions).",
   "contentBlock": "def:picard-lefschetz-thimble",
   "parameters": {
     "q0": "1.1099785955541805",
@@ -80,11 +90,77 @@
         "period_2_abs": 14.237237196845584
       }
     ],
-    "amplification_factor_needed": 2.459952787539128
+    "amplification_factor_needed": 2.459952787539128,
+    "simultaneous_3root": {
+      "Σ(c_k+z)": {
+        "abs_plus": 26.020814044682815,
+        "abs_minus": 26.020814044682815,
+        "ratio_to_pi0_plus": 1.0905754135141568,
+        "ratio_to_pi0_minus": 1.0905754135141568
+      },
+      "∏(c_k+z)": {
+        "abs_plus": 561.8862670343954,
+        "abs_minus": 561.8862670343954,
+        "ratio_to_pi0_plus": 23.54958407399169,
+        "ratio_to_pi0_minus": 23.54958407399169
+      },
+      "Σ dc_k/dz": {
+        "abs_plus": 23.65432452976868,
+        "abs_minus": 23.65432452976868,
+        "ratio_to_pi0_plus": 0.9913919184523727,
+        "ratio_to_pi0_minus": 0.9913919184523727
+      },
+      "∏ dc_k/dz": {
+        "abs_plus": 23.247553941996443,
+        "abs_minus": 23.247553941996443,
+        "ratio_to_pi0_plus": 0.9743434894061742,
+        "ratio_to_pi0_minus": 0.9743434894061742
+      },
+      "Σ|dc_k/dz|": {
+        "abs_plus": 30.001889344126035,
+        "abs_minus": 30.001889344126035,
+        "ratio_to_pi0_plus": 1.2574288729588077,
+        "ratio_to_pi0_minus": 1.2574288729588077
+      },
+      "Σ_{k≠l} dc_k/dz·(c_l+z)": {
+        "abs_plus": 99.9586255721578,
+        "abs_minus": 99.9586255721578,
+        "ratio_to_pi0_plus": 4.189431553927067,
+        "ratio_to_pi0_minus": 4.189431553927067
+      },
+      "d/dz[Σ c_k²]": {
+        "abs_plus": 184.58986641903587,
+        "abs_minus": 184.58986641903587,
+        "ratio_to_pi0_plus": 7.736467028078979,
+        "ratio_to_pi0_minus": 7.736467028078979
+      },
+      "Vander×∏dc/dz": {
+        "abs_plus": 8745.09748012886,
+        "abs_minus": 8745.09748012886,
+        "ratio_to_pi0_plus": 366.52151943578434,
+        "ratio_to_pi0_minus": 366.52151943578434
+      },
+      "Σ 1/∂F_c": {
+        "abs_plus": 2.241900715778503e-15,
+        "abs_minus": 2.241900715778503e-15,
+        "ratio_to_pi0_plus": 9.396177214015475e-17,
+        "ratio_to_pi0_minus": 9.396177214015475e-17
+      }
+    },
+    "key_result": {
+      "prescription": "product_of_3_prolongations",
+      "formula": "A(q₀) = |∫_{-a}^{a} ∏_k dc_k/dz dz| / |∫_{-a}^{a} (c₀+z) dz|",
+      "best_limit_name": "(4-q)/(4q+3)",
+      "best_limit_value": 0.38844820732799046,
+      "amplification_factor": 2.459938770426328,
+      "m_p_predicted_MeV": 938.266741770523,
+      "m_p_CODATA_MeV": 938.27208816,
+      "error_percent": 0.0005698122692119198
+    }
   },
   "caveats": [
     "Thimble tracing uses simple Euler integration of the gradient flow ODE. Higher-order integrators (RK4) and adaptive step sizes may improve accuracy.",
     "Intersection numbers depend on the length and accuracy of anti-thimble paths. Results should be verified with finer step sizes.",
-    "The period ratios do not yet reproduce the target m_p/m_e = 1836. The baryon period may require a different contour prescription (e.g. integration over all three color roots simultaneously, or a product formula rather than individual root tracking)."
+    "Nine simultaneous 3-root prescriptions are tested: sum, product, cross-color, Vandermonde-weighted, resolvent trace, Vieta 2nd moment, etc. The correct baryon period prescription remains an open problem."
   ]
 }

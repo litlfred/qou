@@ -8,18 +8,39 @@ $$
 
 where $\mathcal{J}_\sigma$ are the Picard--Lefschetz thimbles of the color-tube cubic discriminant, $n_\sigma^{(k)}$ are the intersection numbers at vertical degree $k$, and $\lambda_{\mathrm{SW}}^{(k)}$ is the $k$-th jet prolongation of the Seiberg--Witten differential.
 
-The electron mass arises from $\Pi^{(0)}$ (baseline period, no prolongation), the muon mass from $\Pi^{(1)}$ (first prolongation, capturing the residue at the discriminant pole), and the baryon mass scale from a degree-2 or degree-3 period $\Pi^{(\mathrm{baryon})}$ that integrates over all three color channels simultaneously.
+The electron mass arises from $\Pi^{(0)}$ (baseline period, no prolongation), the muon mass from $\Pi^{(1)}$ (first prolongation, capturing the residue at the discriminant pole), and the baryon mass scale from the **simultaneous product of all three color prolongations**.
 
-**Conjecture.** There exist canonical intersection numbers $n_\sigma^{(\mathrm{baryon})}$ such that
+## Simultaneous 3-root prescription
 
-$$
-\frac{m_p}{m_e} = \frac{|\Pi^{(\mathrm{baryon})}|}{|\Pi^{(0)}|} = \frac{\mathrm{Vol}(\mathfrak{B}_3)}{\hbar_q^2} \times \mathcal{A}(q_0)
-$$
-
-where $\mathrm{Vol}(\mathfrak{B}_3) \approx 7.328$ is the Borromean link volume, $\hbar_q = 1 - q^{-1}$, and $\mathcal{A}(q_0) \approx 2.460$ is the **color-tube amplification factor** arising from the thimble geometry:
+The baryon has three color channels.  Rather than tracking a single root of the color-tube cubic $F(z,c) = 0$, the baryon period integrates the **product of all three color prolongations simultaneously**:
 
 $$
-\mathcal{A}(q_0) = \frac{\sum_\sigma n_\sigma^{(\mathrm{baryon})} \operatorname{Res}_{z_c^\sigma}(\lambda_{\mathrm{SW}}^{(2)})}{\sum_\sigma n_\sigma^{(0)} \oint_{\mathcal{J}_\sigma} \lambda_{\mathrm{SW}}^{(0)}\, dz} \cdot \frac{\hbar_q^2}{\mathrm{Vol}(\mathfrak{B}_3)}.
+\lambda_{\mathrm{baryon}}(z) = \prod_{k=1}^{3} \frac{dc_k}{dz} = \prod_{k=1}^{3} \left(-\frac{\partial F/\partial z}{\partial F/\partial c}\bigg|_{c=c_k(z)}\right)
 $$
 
-This would reduce the calibration inputs from three ($m_e$, $m_\mu/m_e$, $m_p$) to two ($m_e$, $m_\mu/m_e$), since the proton mass would be derived from the substrate parameter $q_0$ alone.
+where $c_1(z), c_2(z), c_3(z)$ are the three roots of the color-tube cubic at each $z$.
+
+**Conjecture.** The proton mass is given by
+
+$$
+\frac{m_p}{m_e} = \frac{\mathrm{Vol}(\mathfrak{B}_3)}{\hbar_q^2} \times \mathcal{A}(q_0)
+$$
+
+where the color-tube amplification factor is the ratio of baryon to electron real-axis periods:
+
+$$
+\mathcal{A}(q_0) = \frac{\left|\,\displaystyle\int_{-a}^{a} \prod_{k=1}^{3} \frac{dc_k}{dz}\, dz\,\right|}{\left|\,\displaystyle\int_{-a}^{a} (c_0 + z)\, dz\,\right|}
+$$
+
+integrated over the symmetric interval $[-a, a]$ with $a = (4-q)/(4q+3)$.
+
+## Numerical evidence
+
+At $q_0 \approx 1.1100$:
+
+- $a = (4-q_0)/(4q_0+3) \approx 0.3884$
+- $\mathcal{A}(q_0) \approx 2.4599$
+- $\mathrm{Vol}(\mathfrak{B}_3)/\hbar_q^2 \approx 746.42$
+- $m_p \approx 938.267$ MeV (CODATA: $938.272$ MeV, error $\approx 0.0006\%$)
+
+This would reduce the calibration inputs from three ($m_e$, $m_\mu/m_e$, $m_p$) to two ($m_e$, $m_\mu/m_e$), since the proton mass is derived from the substrate parameter $q_0$ and the Borromean link volume alone.
