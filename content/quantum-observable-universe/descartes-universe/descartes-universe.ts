@@ -98,6 +98,8 @@ export default chapter({
         // Seiberg--Witten on Bring's
         "generation-dependent-sw",
         "lepton-mass-integrals",
+        "picard-lefschetz-thimble",
+        "baryon-period-conjecture",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors

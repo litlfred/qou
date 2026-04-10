@@ -1,0 +1,90 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-10T02:15:59.665777+00:00",
+  "commitSha": "1b1b1d5a5daaac90cdcd85673cb668309c46bc56",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "picard-lefschetz-thimble",
+  "scriptFile": "picard_lefschetz_thimble.py",
+  "scriptHash": "43b2217f9a1d",
+  "scriptCommitSha": "",
+  "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, and SW period integrals.",
+  "contentBlock": "def:picard-lefschetz-thimble",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "z0": "0.10438806980915827",
+    "hbar_q_sq": "0.00981718851347867"
+  },
+  "data": {
+    "critical_points": [
+      {
+        "z_c_real": 0.1058295861882663,
+        "z_c_imag": 0.9371389378389038,
+        "hessian_abs": 3.2858982328915155e+17,
+        "hessian_arg_deg": 14.001958689163045,
+        "intersection_number": 0,
+        "period_0_abs": 11.14825581185299,
+        "period_1_abs": 5.768631578358104,
+        "period_2_abs": 102.17694388294683
+      },
+      {
+        "z_c_real": 0.1058295861882663,
+        "z_c_imag": -0.9371389378389038,
+        "hessian_abs": 3.2858982328915155e+17,
+        "hessian_arg_deg": -14.001958689163045,
+        "intersection_number": 0,
+        "period_0_abs": 11.14825581185299,
+        "period_1_abs": 5.768631578358104,
+        "period_2_abs": 102.17694388294683
+      },
+      {
+        "z_c_real": 0.11898594678977274,
+        "z_c_imag": 1.0536407427121088,
+        "hessian_abs": 99.41739860177732,
+        "hessian_arg_deg": -110.82587603040827,
+        "intersection_number": 0,
+        "period_0_abs": 11.125307081678223,
+        "period_1_abs": 5.481941217950447,
+        "period_2_abs": 0.9384355880540486
+      },
+      {
+        "z_c_real": 0.11898594678977274,
+        "z_c_imag": -1.0536407427121088,
+        "hessian_abs": 99.41739860177732,
+        "hessian_arg_deg": 110.82587603040827,
+        "intersection_number": 0,
+        "period_0_abs": 11.125307081678223,
+        "period_1_abs": 5.481941217950447,
+        "period_2_abs": 0.9384355880540486
+      },
+      {
+        "z_c_real": -0.9748155329780397,
+        "z_c_imag": -0.22301272758464225,
+        "hessian_abs": 2.884299332574446,
+        "hessian_arg_deg": -177.766374073126,
+        "intersection_number": 0,
+        "period_0_abs": 8.619257094339261,
+        "period_1_abs": 8.242690623876683,
+        "period_2_abs": 14.237237196845584
+      },
+      {
+        "z_c_real": -0.9748155329780397,
+        "z_c_imag": 0.22301272758464225,
+        "hessian_abs": 2.884299332574446,
+        "hessian_arg_deg": 177.766374073126,
+        "intersection_number": 0,
+        "period_0_abs": 8.619257094339261,
+        "period_1_abs": 8.242690623876683,
+        "period_2_abs": 14.237237196845584
+      }
+    ],
+    "amplification_factor_needed": 2.459952787539128
+  },
+  "caveats": [
+    "Thimble tracing uses simple Euler integration of the gradient flow ODE. Higher-order integrators (RK4) and adaptive step sizes may improve accuracy.",
+    "Intersection numbers depend on the length and accuracy of anti-thimble paths. Results should be verified with finer step sizes.",
+    "The period ratios do not yet reproduce the target m_p/m_e = 1836. The baryon period may require a different contour prescription (e.g. integration over all three color roots simultaneously, or a product formula rather than individual root tracking)."
+  ]
+}
