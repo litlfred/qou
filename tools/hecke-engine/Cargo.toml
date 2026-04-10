@@ -59,3 +59,8 @@ path = "src/bin/v12_atomic.rs"
 [[bin]]
 name = "hecke-stream"
 path = "src/bin/v13_stream.rs"
+
+# HA-power ring engine for pp...nn ordering
+[[bin]]
+name = "hecke-hapower"
+path = "src/bin/v14_hapower.rs"
