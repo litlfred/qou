@@ -1,0 +1,20 @@
+import { definition } from "../../schema/builders";
+
+export default definition({
+  label: "def:picard-lefschetz-thimble",
+  title: "Picard--Lefschetz thimble decomposition of the color-tube cubic",
+  tags: [
+    "picard-lefschetz",
+    "thimble",
+    "steepest-descent",
+    "color-tube",
+    "discriminant",
+    "seiberg-witten",
+    "baryon-mass",
+  ],
+  uses: [
+    "rem:color-tube-cubic",
+    "rem:lepton-mass-integrals",
+    "prop:descartes-elliptic-curve",
+  ],
+});
