@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-10T02:39:30.540229+00:00",
-  "commitSha": "638f079fdfd9c7673fbfcacf355830f64221cdba",
+  "computedAt": "2026-04-10T11:48:38.304870+00:00",
+  "commitSha": "2de7d2b6b96917de9a131a3877fa44b8bd58ec0c",
   "assertions": [],
   "allPassed": true,
   "durationMs": 4,
@@ -22,15 +22,15 @@
         "N": 0,
         "phi": 0.0,
         "f_pauli": 1.0,
-        "fp_source": "interpolated",
-        "cert": false
+        "fp_source": "certificate",
+        "cert": true
       },
       {
         "label": "⁴He",
         "Z": 2,
         "N": 2,
         "phi": -2.104634194965585,
-        "f_pauli": 1.114233286906482,
+        "f_pauli": 1.6381207486090072,
         "fp_source": "certificate",
         "cert": true
       },
@@ -39,7 +39,7 @@
         "Z": 3,
         "N": 4,
         "phi": -5.048028396544613,
-        "f_pauli": 0.8116516501446548,
+        "f_pauli": 8.630603311363078,
         "fp_source": "certificate",
         "cert": true
       },
@@ -48,7 +48,7 @@
         "Z": 4,
         "N": 5,
         "phi": -10.946342706049613,
-        "f_pauli": 0.8503292566649517,
+        "f_pauli": 40.30360658854755,
         "fp_source": "certificate",
         "cert": true
       },
@@ -57,7 +57,7 @@
         "Z": 5,
         "N": 6,
         "phi": -12.982110637457183,
-        "f_pauli": 1.0189911554569953,
+        "f_pauli": 56.419970892306566,
         "fp_source": "certificate",
         "cert": true
       },
@@ -66,7 +66,7 @@
         "Z": 6,
         "N": 6,
         "phi": -13.581672226754074,
-        "f_pauli": 1.4963450465785189,
+        "f_pauli": 22.68085213568008,
         "fp_source": "certificate",
         "cert": true
       },
@@ -75,7 +75,7 @@
         "Z": 7,
         "N": 7,
         "phi": -14.761084117929832,
-        "f_pauli": 0.8493220011577841,
+        "f_pauli": 0.1897518107661926,
         "fp_source": "certificate",
         "cert": true
       },
@@ -111,7 +111,7 @@
         "Z": 11,
         "N": 12,
         "phi": -15.072758810958813,
-        "f_pauli": 1.1205639269517604,
+        "f_pauli": 4.110698374384874,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -120,7 +120,7 @@
         "Z": 12,
         "N": 12,
         "phi": -14.796046312779522,
-        "f_pauli": 1.2816100232739354,
+        "f_pauli": 1.7152717692394603,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -129,7 +129,7 @@
         "Z": 13,
         "N": 14,
         "phi": -13.620253009430485,
-        "f_pauli": 1.143079740714627,
+        "f_pauli": 3.611446132624076,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -138,7 +138,7 @@
         "Z": 14,
         "N": 14,
         "phi": -12.91880224882311,
-        "f_pauli": 1.2816100232739354,
+        "f_pauli": 1.7152717692394603,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -147,7 +147,7 @@
         "Z": 15,
         "N": 16,
         "phi": -11.029158682218503,
-        "f_pauli": 1.1600768722794994,
+        "f_pauli": 3.2806416392122797,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -156,7 +156,7 @@
         "Z": 16,
         "N": 16,
         "phi": -10.070695492816004,
-        "f_pauli": 1.2816100232739354,
+        "f_pauli": 1.7152717692394603,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -165,7 +165,7 @@
         "Z": 17,
         "N": 18,
         "phi": -7.557224608535614,
-        "f_pauli": 1.1733614392227791,
+        "f_pauli": 3.0463021785412914,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -174,16 +174,16 @@
         "Z": 18,
         "N": 22,
         "phi": -2.4878573428468367,
-        "f_pauli": 0.9410692928602613,
-        "fp_source": "interpolated",
-        "cert": false
+        "f_pauli": 0.0005050086572870431,
+        "fp_source": "certificate",
+        "cert": true
       },
       {
         "label": "³⁹K",
         "Z": 19,
         "N": 20,
         "phi": -3.049651325011658,
-        "f_pauli": 1.1840294018068367,
+        "f_pauli": 2.8720327447225946,
         "fp_source": "interpolated",
         "cert": false
       },
