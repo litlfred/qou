@@ -5,7 +5,7 @@ The Yekutieli triple at level n consists of objects (local
 trivialisations), 1-morphisms (transition automorphisms), and
 2-morphisms (deformation parameters in the band).
 
-Note: The structure `YekutielijTriple` is already defined in
+Note: The structure `YekutieliTriple` is already defined in
 cosimplicial-crossed-groupoid.lean. This file provides the mapping
 version used in the definition block.
 

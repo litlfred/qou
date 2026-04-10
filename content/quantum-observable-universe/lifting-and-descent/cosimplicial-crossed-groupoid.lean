@@ -28,7 +28,7 @@ trivialisations), 1-morphisms (gauge transitions), and 2-morphisms
     the datum `(x, g, a)` of local trivialisations, transition
     automorphisms, and deformation parameters. -/
 -- Ref: [yekutieli2010] §3
-structure YekutielijTriple (M : Type*) where
+structure YekutieliTriple (M : Type*) where
   /-- Level in the brane tower. -/
   level : ℕ
   /-- Objects: local trivialisations of the Frobenius–Hopf object Aₙ. -/
@@ -78,22 +78,22 @@ in the category of crossed groupoids. -/
 -- Ref: [yekutieli2010] §4, [manuscript] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   /-- The Yekutieli triple at each level. -/
-  tripleAt : (n : ℕ) → YekutielijTriple M
+  tripleAt : (n : ℕ) → YekutieliTriple M
   /-- Coface map: jet prolongation sends level-n data to level-(n+1). -/
-  coface : (n : ℕ) → YekutielijTriple M → YekutielijTriple M
+  coface : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
   /-- Codegeneracy map: descent sends level-(n+1) data to level-n. -/
-  codegeneracy : (n : ℕ) → YekutielijTriple M → YekutielijTriple M
+  codegeneracy : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
   /-- Retraction: `σ ∘ δ = id` on levels (from 𝔡_{n+1} ∘ ℓ_n = id). -/
-  retraction : ∀ (n : ℕ) (t : YekutielijTriple M),
+  retraction : ∀ (n : ℕ) (t : YekutieliTriple M),
     (codegeneracy n (coface n t)).level = t.level
   /-- The crossed-module structure at each level. -/
   crossedMod : (n : ℕ) → CrossedModule
   /-- Cosimplicial identity: δʲ ∘ δⁱ = δⁱ ∘ δʲ⁻¹ for i < j. -/
-  coface_coface : ∀ (n : ℕ) (t : YekutielijTriple M),
+  coface_coface : ∀ (n : ℕ) (t : YekutieliTriple M),
     (coface (n + 1) (coface n t)).level =
     (coface n (coface n t)).level
   /-- Cosimplicial identity: σʲ ∘ σⁱ = σⁱ ∘ σʲ⁺¹ for i ≤ j. -/
-  codegen_codegen : ∀ (n : ℕ) (t : YekutielijTriple M),
+  codegen_codegen : ∀ (n : ℕ) (t : YekutieliTriple M),
     (codegeneracy n (codegeneracy (n + 1) t)).level =
     (codegeneracy n (codegeneracy n t)).level
 

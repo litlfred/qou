@@ -1,6 +1,6 @@
 import QOU.KnotTheory
 import QOU.KnotRegistry
-import QOU.Torsion.YekutielijTriple
+import QOU.Torsion.YekutieliTriple
 import QOU.ArchimedeanMassFormula
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
@@ -177,7 +177,7 @@ to analysis. -/
     LaTeX: `\label{prop:cs-evaluation-faithfulness}` -/
 structure CSEvaluationFaithful where
   /-- The lifting condition with obstruction classes. -/
-  ylc : QOU.Torsion.YekutielijLiftingCondition
+  ylc : QOU.Torsion.YekutieliLiftingCondition
   /-- A tower decomposition of some knot volume. -/
   vtd : VolumeTowerDecomposition
   /-- The towers agree. -/
@@ -318,7 +318,7 @@ gives the Yekutieli bridge theorem. -/
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
 -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
 theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutielijLiftingCondition) :
+    (ylc : QOU.Torsion.YekutieliLiftingCondition) :
     HyperbolicVolumeIndependence :=
   -- ylc.obstruction_exists already guarantees ∀ n, Nonempty (obstructionClass n)
   sorry
