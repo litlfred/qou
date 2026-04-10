@@ -119,9 +119,10 @@ antisymmetric summands because the $S^3$ boundary has
 non-trivial $\pi_3(S^2) = \mathbb{Z}$ (the Hopf
 invariant).
 
-Concretely: for a knot $K$ with odd crossing number $n_K$,
-the Hecke algebra $H_{n_K}(q)$ at the mixed-channel
-temperature has a **non-split extension**
+Concretely: for a composite knot $K$ whose minimal
+crossing number $n_K$ is odd, the Hecke algebra
+$H_{n_K}(q)$ at the mixed-channel temperature has a
+**non-split extension**
 
 $$
   0 \;\to\; V_{\mathrm{sym}} \;\to\;
@@ -136,11 +137,23 @@ Hopf invariant.  When this extension is non-trivial,
 the liquid phase is unstable — the system jumps directly
 from solid to gas.
 
-For hydrogen ($K_H = \mathcal{A}(1,0)$,
-$n_K = 6$ crossings), $n_K$ is even and the extension
-splits: hydrogen has a stable liquid phase.  But for
-atoms whose dominant knot has odd crossing number,
-sublimation becomes the preferred transition.
+**Conjecture (sublimation parity).**
+For hydrogen ($K_H = \mathcal{A}(1,0)$), the composite
+knot crossing number $n_K = 6$ is even and the extension
+splits: hydrogen has a stable liquid phase (confirmed:
+liquid H exists at $\sim 20\,\mathrm{K}$).  The
+conjecture is that atoms whose composite nuclear knot has
+odd minimal crossing number prefer sublimation.  Testing
+this requires computing the minimal crossing number of the
+composite nuclear knot ${}^A_Z\!\mathcal{K}$, which involves
+$\binom{A}{2}$ inter-nucleon crossings plus internal
+structure — a non-trivial knot-theoretic calculation for
+$A > 4$.  A rough proxy ($\binom{A}{2} \bmod 2$, which is
+odd when $A \equiv 2, 3 \pmod{4}$) gives suggestive
+correlations (arsenic $A = 75$, iodine $A = 127$ both
+sublime) but also counterexamples (copper $A = 63$ melts
+normally), indicating that the full composite crossing
+number is needed, not just the inter-nucleon count.
 
 **Connection to classical phase diagrams.**
 In the classical theory, phase transitions arise from

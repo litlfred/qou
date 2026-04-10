@@ -89,6 +89,7 @@ section({
         "quantum-pressure",
         "quantum-volume",
         "quantum-ideal-gas-law",
+        "boltzmann-constant",
         "hydrogen-partition-function",
         "phase-transition-boundary",
       ],
