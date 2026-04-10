@@ -12,7 +12,7 @@ export default proposition({
     "hydrogen",
   ],
   lean: {
-    decl: "QOU.Information.quantumIdealGasLaw",
+    decl: "QOU.Information.IdealKnotGas",
     validation: "not_checked",
   },
   uses: [

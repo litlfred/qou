@@ -11,7 +11,7 @@ export default definition({
     "q-anomaly",
   ],
   lean: {
-    decl: "QOU.Information.quantumPressure",
+    decl: "QOU.Information.boundaryPressure",
     validation: "not_checked",
   },
   uses: [

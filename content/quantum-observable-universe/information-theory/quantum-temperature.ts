@@ -22,5 +22,6 @@ export default definition({
     "def:frobenius-pairing",
     "def:quantum-observable-universe",
     "def:yekutieli-triple",
+    "def:q-energy",
   ],
 });

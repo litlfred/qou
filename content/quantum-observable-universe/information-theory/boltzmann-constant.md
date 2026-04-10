@@ -1,30 +1,39 @@
-The Boltzmann constant is the quantum Planck constant:
+In QOU natural units, the Boltzmann constant is unity:
 
 $$
-  k_B \;=\; \hbar_q \;=\; \frac{q - 1}{q}.
+  k_B \;=\; 1.
+$$
+
+The quantum Planck constant $\hbar_q$ plays the role of
+the classical product $k_B T$:
+
+$$
+  k_B \, T_{\mathrm{phys}} \;=\; \hbar_q \;=\; \frac{q-1}{q}.
 $$
 
 *Proof.*
 The quantum ideal gas law
 ([quantum ideal gas law](#prop:quantum-ideal-gas-law))
 gives $P_q V_q = N T_q = N \hbar_q$ at leading order.
-Comparing with the classical form $PV = N k_B T$, and
-using $T_q = \hbar_q$
-([quantum temperature](#def:quantum-temperature)):
+The classical form is $PV = N k_B T$.  In the QOU, the
+temperature $T_q = \hbar_q$
+([quantum temperature](#def:quantum-temperature)) already
+carries units of energy (it is the Reeb tick rate, not a
+statistical parameter).  Comparing:
 
 $$
   N \, k_B \, T_q \;=\; N \, \hbar_q
   \quad\Longrightarrow\quad
-  k_B \, \hbar_q \;=\; \hbar_q
-  \quad\Longrightarrow\quad
   k_B \;=\; 1.
 $$
 
-But the QOU temperature $T_q = \hbar_q$ already absorbs
-what is classically the factor $k_B T$.  The structural
-identification is: in the QOU, the role of $k_B T$ in
-classical physics is played by $\hbar_q$ alone.  The
-"Boltzmann constant" is not a separate quantity — it is
-$\hbar_q$ itself, in the sense that $k_B T_{\mathrm{phys}}
-= \hbar_q$ where $T_{\mathrm{phys}}$ is physical
-temperature in SI units.  $\qquad\square$
+The Boltzmann constant is unity because the QOU temperature
+is defined in energy units.  There is no separate "degrees
+of freedom" temperature scale requiring a conversion factor.
+
+In SI, the physical temperature $T_{\mathrm{phys}}$ is
+measured in kelvin, and $k_B = 1.381 \times 10^{-23}$
+J/K converts to energy.  The QOU predicts
+$k_B T_{\mathrm{phys}} = \hbar_q$: the thermal energy per
+degree of freedom equals the quantum Planck constant.
+$\qquad\square$

@@ -12,7 +12,7 @@ export default proposition({
     "braid-representation",
   ],
   lean: {
-    decl: "QOU.Information.phaseTransitionBoundary",
+    decl: "QOU.Information.gasLiquidCriticalTemp",
     validation: "not_checked",
   },
   uses: [

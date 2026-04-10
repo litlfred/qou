@@ -12,11 +12,10 @@ export default proposition({
     "magic-numbers",
   ],
   lean: {
-    decl: "QOU.Information.compositeCrossingParity",
+    decl: "QOU.Information.crossing_parity_eq_Z",
     validation: "not_checked",
   },
   uses: [
-    "prop:phase-transition-boundary",
     "prop:knot-eigenbasis-complete",
     "prop:shell-structure-eigenvalues",
     "prop:noble-gas-characterization",

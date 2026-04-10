@@ -110,14 +110,4 @@ theorem ideal_gas_decomposition {M : Type*}
   simp only []
   ring
 
-/-- **Thermodynamic Noether current**: the scale symmetry identity.
-    V · ∂/∂V(ln Z) + β · ∂/∂β(ln Z) = 0 at the equation-of-state surface.
-
-    In algebraic form: for the leading-order gas, the log-partition function
-    ln Z = N · ln(V/N) + N · ln(z_q) + N satisfies the scaling identity
-    V · (N/V) + β · (-N · T_q) = 0, i.e., N - N = 0. -/
-theorem noether_scaling_identity (N : ℕ) (hN : 0 < N) :
-    (N : ℝ) - (N : ℝ) = 0 := by
-  ring
-
 end QOU.Information

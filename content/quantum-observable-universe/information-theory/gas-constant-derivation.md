@@ -53,7 +53,7 @@ mass spectrum.
 | $c$ | $1/(q-1)$ | $q$ only |
 | $\hbar$ | $(q-1)/q$ | $q$ only |
 | $G$ | $c_q^3 \hbar_q / S_{\mathrm{cell}}$ | $q$ only |
-| $k_B$ | $(q-1)/q$ | $q$ only |
+| $k_B$ | $1$ (natural units) | — |
 | $R$ | $12\hbar_q^3 / (12\,\mathrm{Vol}(\mathcal{B}_3) + \cdots)$ | $q$, $\mathrm{Vol}(\mathcal{B}_3)$ |
 
 The first four constants depend on $q$ alone.  $R$

@@ -6,8 +6,8 @@ $\ell_v$ relative to the shell capacity $\ell_{\max}$.
 
 **Test against observed sublimation at 1 atm.**
 
-| Element | $Z$ | Config | $\ell_v$ | Shell | Criterion | Observed | |
-|---------|-----|--------|:---:|:---:|---|---|---|
+| Element | $Z$ | Config | $\ell_v$ | Shell | Criterion | Observed | Match |
+|---------|-----|--------|:---:|:---:|---|---|:---:|
 | H  | 1  | $1s^1$ | 1 | 2 | near-closed (1 of 2) | Liquid at 20 K | $\checkmark$ |
 | He | 2  | $1s^2$ | 0 | 2 | closed | Liquid at 4 K | $\checkmark$ |
 | N  | 7  | $2p^3$ | 3 | 6 | half-filled | Sublimes | $\checkmark$ |
