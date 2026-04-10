@@ -660,7 +660,7 @@ impl Eng {
         // then strip once at the end. This gives the correct A-term basis.
         // For A > 12: eager stripping keeps memory bounded, but the final
         // strip may leave extra words (orphaned by early prefix removal).
-        let no_mid_strip = a <= 10;
+        let no_mid_strip = a <= 12;
         let strip_after = if no_mid_strip { 999 } else { 2 };  // strip from strand 2 onwards for A > 10
         let mut total_mid_strips: u64 = 0;
         let eager = !no_mid_strip && mid_threshold == 0;
@@ -770,18 +770,19 @@ fn main() {
     let t0 = Instant::now();
     let (mut elem, accum) = Eng::build(z, n, mid_threshold);
 
-    let mut total = accum.clone();
-    let mut kept = SymPauliAcc::zero();
-    kept.add_from_elem(&elem);
-    total.merge(&kept);
-
     // Final full strip: the mid-construction strip can't remove all words
     // because prefixes created by later crossings weren't present yet.
     // Now that construction is complete, iterate I9+I8 to convergence.
     let pre_final = elem.n_terms();
     let final_removed = Eng::strip_with_pauli(&mut elem.terms);
-    total.merge(&final_removed);
     let post_final = elem.n_terms();
+
+    // Accumulate: mid-construction stripped + final stripped + remaining survivors
+    let mut total = accum.clone();
+    total.merge(&final_removed);
+    let mut kept = SymPauliAcc::zero();
+    kept.add_from_elem(&elem);  // only survivors after final strip
+    total.merge(&kept);
     if pre_final != post_final {
         eprintln!("\n  Final strip: {} → {} words ({} absorbed)",
             pre_final, post_final, pre_final - post_final);

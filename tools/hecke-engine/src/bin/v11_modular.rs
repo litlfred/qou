@@ -118,7 +118,7 @@ impl W {
         let p = n - 2; let (a, b) = (self.get(p), self.get(p+1));
         if a == b { return Some((p, 0)); }
         if n >= 3 { let c = self.get(p-1);
-            if c == b && (a as i8 - c as i8).unsigned_abs() == 1 { return Some((p-1, 2)); } }
+            if c == b && (a as i8 - c as i8).unsigned_abs() == 1 && a < c { return Some((p-1, 2)); } }
         if (a as i8 - b as i8).unsigned_abs() >= 2 && a > b { return Some((p, 1)); }
         None
     }
@@ -211,8 +211,9 @@ fn accumulate(terms: &FxHashMap<W, L>) -> (L, L) {
 
 fn strip(terms: &mut FxHashMap<W, L>) -> (L, L) {
     let mut alt = L::zero(); let mut net = L::zero();
-    for _ in 0..500 {
+    loop {
         let mut any = false;
+        // I9: strip words whose prefix (drop_last) is also present, longest first
         let ml = terms.keys().map(|w| w.len()).max().unwrap_or(0);
         for tl in (2..=ml).rev() {
             let rm: Vec<W> = terms.keys()
@@ -227,6 +228,20 @@ fn strip(terms: &mut FxHashMap<W, L>) -> (L, L) {
                     net = net.add(&c);
                     any = true;
                 }
+            }
+        }
+        // I8: strip 2-letter words [i, i+1] where single-letter [i+1] is present
+        let adj: Vec<W> = terms.keys()
+            .filter(|w| w.len() == 2 && !terms[*w].is_zero() && w.get(1) == w.get(0) + 1)
+            .filter(|w| terms.get(&W::E.push(w.get(1))).map_or(false, |c| !c.is_zero()))
+            .cloned().collect();
+        for w in &adj {
+            if let Some(c) = terms.remove(w) {
+                let wl = w.len() as i32;
+                let neg = wl % 2 != 0;
+                alt = alt.add(&c.scale_sign(neg).shift(-2 * wl));
+                net = net.add(&c);
+                any = true;
             }
         }
         if !any { break; }
@@ -248,26 +263,29 @@ fn main() {
     let mut acc_alt = L::zero(); let mut acc_net = L::zero();
     let t0 = Instant::now();
 
+    // Parse optional strip threshold (0 = no mid-stripping, default = 200000)
+    let strip_threshold: usize = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(200000);
+    let no_strip = strip_threshold == 0;
+    eprintln!("  A={} (Z={}, N={}), strip: {}",
+        a, z, n, if no_strip { "NONE (exact)".to_string() } else { format!("threshold {}", strip_threshold) });
+
     for k in 1..a {
         for i in 0..k {
             let (c, d, dbl) = crossing(types[i], types[k]);
             if dbl { pn += 1; }
             mul_reduce(&mut terms, i as u8, &c, &d, &h);
-            if a > 16 || terms.len() > 50000 {
+            if !no_strip && terms.len() > strip_threshold {
                 let (ta, tn) = strip(&mut terms);
                 acc_alt = acc_alt.add(&ta); acc_net = acc_net.add(&tn);
+                eprintln!("    ({},{}) stripped → {} words", i, k, terms.len());
             }
-        }
-        if a > 12 {
-            let (ta, tn) = strip(&mut terms);
-            acc_alt = acc_alt.add(&ta); acc_net = acc_net.add(&tn);
         }
         eprintln!("  strand {}/{}: {} words, {:.1}s", k, a-1, terms.len(), t0.elapsed().as_secs_f64());
     }
     // Final strip
     let (ta, tn) = strip(&mut terms);
     acc_alt = acc_alt.add(&ta); acc_net = acc_net.add(&tn);
-    // Add remaining
+    // Add remaining survivors
     let (ra, rn) = accumulate(&terms);
     acc_alt = acc_alt.add(&ra); acc_net = acc_net.add(&rn);
 
