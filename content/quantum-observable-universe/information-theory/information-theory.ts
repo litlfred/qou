@@ -81,15 +81,6 @@ section({
       ],
     }),
     section({
-      title: "Incompleteness and the Horizon",
-      label: "sec:incompleteness-horizon",
-      blocks: [
-        "incompleteness-implies-horizon",
-        "incompleteness-horizon",
-        "information-paradox-incompleteness",
-      ],
-    }),
-    section({
       title: "Statistical Mechanics",
       label: "sec:stat-mech",
       blocks: [
@@ -115,6 +106,16 @@ section({
         "phase-transition-interpretation",
         "composite-crossing-parity",
         "crossing-parity-test",
+      ],
+    }),
+    section({
+      title: "Incompleteness and the Horizon",
+      label: "sec:incompleteness-horizon",
+      blocks: [
+        "incompleteness-implies-horizon",
+        "incompleteness-horizon",
+        "stat-mech-computational-horizon",
+        "information-paradox-incompleteness",
       ],
     }),
     section({
