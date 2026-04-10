@@ -379,18 +379,26 @@ fn main() {
     let net_f = acc_net.eval_f64(t_val) / div;
     let fp = if net_f.abs() > 1e-30 { (alt_f / net_f).abs() } else { 0.0 };
 
+    // L¹ norm: Σ|c_w(q₀)| — evaluate each word's coefficient and take absolute value
+    let mut l1_norm: f64 = 0.0;
+    for (_w, c) in &terms {
+        l1_norm += c.eval_f64(t_val).abs();
+    }
+    l1_norm /= div;
+
     let sym = match z { 1=>"h",2=>"he",3=>"li",4=>"be",5=>"b",6=>"c",7=>"n",8=>"o",
         9=>"f",10=>"ne",11=>"na",12=>"mg",13=>"al",14=>"si",15=>"p",16=>"s",
         17=>"cl",18=>"ar",19=>"k",20=>"ca",_=>"?" };
     println!("f_pauli({}{}) = {:.10}", a, sym, fp);
     println!("  tr_alt = {:.10e}, net = {:.10e}", alt_f, net_f);
+    println!("  l1_norm = {:.10e}", l1_norm);
     println!("  {} words, pn={}, {:.2}s", terms.len(), pn, elapsed);
 
     // Write minimal cert
     let cert = serde_json::json!({
         "isotope": {"z": z, "n": n, "a": a, "symbol": sym},
         "engine": {"name": "hecke-modular", "version": "0.11.0"},
-        "f_pauli_f64": fp, "tr_alt_f64": alt_f, "net_f64": net_f,
+        "f_pauli_f64": fp, "tr_alt_f64": alt_f, "net_f64": net_f, "l1_norm_f64": l1_norm,
         "elapsed_seconds": elapsed,
     });
     let fname = format!("certificate-{}{}.json", a, sym);
