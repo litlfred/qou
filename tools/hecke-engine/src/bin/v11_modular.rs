@@ -5,7 +5,6 @@
 // For A > 12: use multiple primes + CRT.
 
 use rustc_hash::FxHashMap;
-use std::collections::BTreeMap;
 use std::time::Instant;
 
 // Mersenne prime 2^127 - 1. a+b ≤ 2*(P-1) < 2^128, fits in u128.
@@ -16,74 +15,144 @@ fn ma(a: u128, b: u128) -> u128 {
     if s >= P || s < a { s.wrapping_sub(P) } else { s }
 }
 fn ms(a: u128, b: u128) -> u128 { if a >= b { a - b } else { P - b + a } }
-fn mm(a: u128, b: u128) -> u128 {
-    // u128 × u128 mod P using repeated doubling (no u256 needed)
-    let mut result: u128 = 0;
-    let mut base = a % P;
-    let mut exp = b % P;
-    while exp > 0 {
-        if exp & 1 == 1 { result = ma(result, base); }
-        base = ma(base, base);
-        exp >>= 1;
-    }
-    result
+fn reduce(x: u128) -> u128 {
+    // Fast Mersenne reduction: x mod (2^127 - 1)
+    let r = (x >> 127) + (x & P);
+    if r >= P { r - P } else { r }
 }
 
-// Laurent polynomial mod P (u128 coefficients)
+fn mm(a: u128, b: u128) -> u128 {
+    // Fast u128 × u128 mod P for Mersenne prime P = 2^127 - 1.
+    // Uses 4 u64×u64→u128 multiplications instead of 128 doublings.
+    // Key: 2^128 ≡ 2 (mod P), 2^127 ≡ 1 (mod P).
+    let a = a % P;
+    let b = b % P;
+    let a0 = a & 0xFFFF_FFFF_FFFF_FFFF;   // lower 64 bits
+    let a1 = a >> 64;                        // upper 63 bits (< 2^63)
+    let b0 = b & 0xFFFF_FFFF_FFFF_FFFF;
+    let b1 = b >> 64;
+
+    // Four partial products (each u128)
+    let p00 = a0 * b0;          // < 2^128
+    let p01 = a0 * b1;          // < 2^127 (a0 < 2^64, b1 < 2^63)
+    let p10 = a1 * b0;          // < 2^127
+    let p11 = a1 * b1;          // < 2^126
+
+    // Product = p00 + (p01 + p10) × 2^64 + p11 × 2^128
+    // mod P: 2^128 ≡ 2, so p11 × 2^128 ≡ 2 × p11
+    // For (p01 + p10) × 2^64: split into high/low parts
+
+    // Step 1: p00 mod P
+    let mut r = reduce(p00);
+
+    // Step 2: (p01 + p10) × 2^64 mod P
+    let mid = ma(reduce(p01), reduce(p10)); // < P
+    // mid × 2^64 = mid_hi × 2^128 + mid_lo × 2^64
+    // ≡ 2 × mid_hi + mid_lo × 2^64 (mod P)
+    let mid_hi = mid >> 64;                 // < 2^63
+    let mid_lo = mid & 0xFFFF_FFFF_FFFF_FFFF; // < 2^64
+    r = ma(r, reduce(mid_hi << 1));         // + 2 × mid_hi
+    r = ma(r, reduce(mid_lo << 64));        // + mid_lo × 2^64
+
+    // Step 3: 2 × p11 mod P (p11 < 2^126, so 2×p11 < 2^127 < 2P)
+    r = ma(r, reduce(p11 << 1));
+
+    r
+}
+
+// Laurent polynomial mod P — dense array representation.
+// Stores coefficients for degrees [min_deg, min_deg + len).
+// ~16 bytes per term vs ~80 for BTreeMap, enabling 216k+ words in <1GB.
 #[derive(Clone)]
-struct L { t: BTreeMap<i32, u128> }
+struct L { min_deg: i32, c: Vec<u128> }
 impl L {
-    fn zero() -> Self { Self { t: BTreeMap::new() } }
-    fn one() -> Self { let mut m = Self::zero(); m.t.insert(0, 1u128); m }
-    fn is_zero(&self) -> bool { self.t.is_empty() }
-    fn n(&self) -> usize { self.t.len() }
-    fn add(&self, o: &L) -> L {
-        let mut r = self.t.clone();
-        for (k, v) in &o.t {
-            let e = r.entry(*k).or_insert(0u128);
-            *e = ma(*e, *v);
-            if *e == 0 { r.remove(k); }
+    fn zero() -> Self { Self { min_deg: 0, c: Vec::new() } }
+    fn one() -> Self { Self { min_deg: 0, c: vec![1u128] } }
+    fn is_zero(&self) -> bool { self.c.iter().all(|&v| v == 0) }
+    fn trim(&mut self) {
+        while self.c.last() == Some(&0) { self.c.pop(); }
+        while self.c.first() == Some(&0) && !self.c.is_empty() {
+            self.c.remove(0); self.min_deg += 1;
         }
-        L { t: r }
     }
-    fn sub(&self, o: &L) -> L {
-        let mut r = self.t.clone();
-        for (k, v) in &o.t {
-            let e = r.entry(*k).or_insert(0u128);
-            *e = ms(*e, *v);
-            if *e == 0 { r.remove(k); }
+    fn get(&self, deg: i32) -> u128 {
+        let idx = deg - self.min_deg;
+        if idx < 0 || idx as usize >= self.c.len() { 0 } else { self.c[idx as usize] }
+    }
+    fn set(&mut self, deg: i32, val: u128) {
+        if self.c.is_empty() {
+            if val == 0 { return; }
+            self.min_deg = deg; self.c.push(val); return;
         }
-        L { t: r }
+        let idx = deg - self.min_deg;
+        if idx < 0 {
+            let prepend = (-idx) as usize;
+            let mut new_c = vec![0u128; prepend];
+            new_c.extend_from_slice(&self.c);
+            self.c = new_c;
+            self.min_deg = deg;
+            self.c[0] = val;
+        } else if (idx as usize) >= self.c.len() {
+            self.c.resize(idx as usize + 1, 0);
+            self.c[idx as usize] = val;
+        } else {
+            self.c[idx as usize] = val;
+        }
+    }
+    fn add(&self, o: &L) -> L {
+        if self.c.is_empty() { return o.clone(); }
+        if o.c.is_empty() { return self.clone(); }
+        let lo = self.min_deg.min(o.min_deg);
+        let hi_s = self.min_deg + self.c.len() as i32;
+        let hi_o = o.min_deg + o.c.len() as i32;
+        let hi = hi_s.max(hi_o);
+        let len = (hi - lo) as usize;
+        let mut c = vec![0u128; len];
+        for i in 0..self.c.len() {
+            c[(self.min_deg - lo) as usize + i] = self.c[i];
+        }
+        for i in 0..o.c.len() {
+            let j = (o.min_deg - lo) as usize + i;
+            c[j] = ma(c[j], o.c[i]);
+        }
+        let mut r = L { min_deg: lo, c };
+        r.trim();
+        r
     }
     fn mul(&self, o: &L) -> L {
-        let mut r: BTreeMap<i32, u128> = BTreeMap::new();
-        for (k1, v1) in &self.t {
-            for (k2, v2) in &o.t {
-                let k = k1 + k2;
-                let e = r.entry(k).or_insert(0u128);
-                *e = ma(*e, mm(*v1, *v2));
-                if *e == 0 { r.remove(&k); }
+        if self.c.is_empty() || o.c.is_empty() { return L::zero(); }
+        let lo = self.min_deg + o.min_deg;
+        let len = self.c.len() + o.c.len() - 1;
+        let mut c = vec![0u128; len];
+        for (i, &a) in self.c.iter().enumerate() {
+            if a == 0 { continue; }
+            for (j, &b) in o.c.iter().enumerate() {
+                if b == 0 { continue; }
+                c[i + j] = ma(c[i + j], mm(a, b));
             }
         }
-        L { t: r }
+        let mut r = L { min_deg: lo, c };
+        r.trim();
+        r
     }
     fn eval_f64(&self, t: f64) -> f64 {
         let hp = P / 2;
-        self.t.iter().map(|(&k, &v)| {
-            let c = if v > hp { -((P - v) as f64) } else { v as f64 };
-            c * t.powi(k)
-        }).sum()
+        let mut sum = 0.0_f64;
+        for (i, &v) in self.c.iter().enumerate() {
+            if v == 0 { continue; }
+            let deg = self.min_deg + i as i32;
+            let coeff = if v > hp { -((P - v) as f64) } else { v as f64 };
+            sum += coeff * t.powi(deg);
+        }
+        sum
     }
     fn scale_sign(&self, neg: bool) -> L {
         if !neg { return self.clone(); }
-        let mut r = BTreeMap::new();
-        for (k, v) in &self.t { r.insert(*k, ms(0, *v)); }
-        L { t: r }
+        let c: Vec<u128> = self.c.iter().map(|&v| ms(0, v)).collect();
+        L { min_deg: self.min_deg, c }
     }
     fn shift(&self, s: i32) -> L {
-        let mut r = BTreeMap::new();
-        for (k, v) in &self.t { r.insert(k + s, *v); }
-        L { t: r }
+        L { min_deg: self.min_deg + s, c: self.c.clone() }
     }
 }
 
@@ -136,19 +205,33 @@ impl W {
     }
 }
 
-fn ha() -> L { let mut h = L::zero(); h.t.insert(2, 1u128); h.t.insert(-2, P-1); h }
+fn ha() -> L {
+    // HA = t² - t⁻²
+    let mut h = L::zero();
+    h.set(2, 1u128);
+    h.set(-2, P - 1);  // -1 mod P
+    h
+}
 
 fn crossing(ti: u8, tj: u8) -> (L, L, bool) {
-    let h = ha();
     match (ti, tj) {
         (b'p', b'p') => (L::one(), L::zero(), false),
         (b'n', b'n') => {
-            let mut d = L::zero(); d.t.insert(2, P-1); d.t.insert(-2, 1u128); // -HA
+            // c = 1, d = -HA = -t² + t⁻²
+            let mut d = L::zero();
+            d.set(2, P - 1);  // -1
+            d.set(-2, 1u128); // +1
             (L::one(), d, false)
         }
-        _ => { let mut c = L::zero(); c.t.insert(0, 2u128);
-               let mut d = L::zero(); d.t.insert(2, P-1); d.t.insert(-2, 1u128);
-               (c, d, true) }
+        _ => {
+            // pn: doubled to stay integral. 2c = 2, 2d = -HA
+            let mut c = L::zero();
+            c.set(0, 2u128);
+            let mut d = L::zero();
+            d.set(2, P - 1);
+            d.set(-2, 1u128);
+            (c, d, true)
+        }
     }
 }
 
