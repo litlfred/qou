@@ -1,0 +1,19 @@
+import { conjecture } from "../../schema/builders";
+
+export default conjecture({
+  label: "conj:borel-zagier-qou-volumes",
+  title:
+    "Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)",
+  tags: [
+    "borel-regulator",
+    "zagier-conjecture",
+    "linear-independence",
+    "hyperbolic-volume",
+    "K-theory",
+    "open-problem",
+  ],
+  uses: [
+    "conj:single-volume-irrationality",
+    "conj:hyperbolic-volume-transcendence",
+  ],
+});

@@ -17,7 +17,7 @@ universe u v
 
 /-- **Yekutieli triple** at level `n` over `Uᵢ ∩ Uⱼ`.
     LaTeX: `\label{def:yekutieli-triple}` -/
-structure YekutielijTriple (M : Type*) where
+structure YekutieliTriple (M : Type*) where
   level : ℕ
   objects : M → M
   oneMorphisms : M → ℝ
@@ -32,7 +32,7 @@ noncomputable def cechDeviation {M : Type*}
 /-- **Twisted 2-cocycle condition**.
     LaTeX: `\label{prop:descent-condition}` -/
 structure TwistedTwoCocycle (M : Type*) where
-  triple : YekutielijTriple M
+  triple : YekutieliTriple M
   cocycleDeviation : M → ℝ
   coboundary : M → ℝ
   twisted_condition : ∀ (p : M),
@@ -60,7 +60,7 @@ theorem twisted_cocycle_unobstructed {M : Type*}
 
 /-- **Yekutieli lifting condition**.
     LaTeX: `\label{prop:yekutieli-lifting}` -/
-structure YekutielijLiftingCondition where
+structure YekutieliLiftingCondition where
   tower : RecursiveBraneTower
   obstructionClass : ℕ → Type*
   obstruction_exists : ∀ n, Nonempty (obstructionClass n)
@@ -70,13 +70,13 @@ structure YekutielijLiftingCondition where
     b * (twistedCocycle n).triple.twoMorphisms p
 
 theorem yekutieli_obstruction_exists
-    (ylc : YekutielijLiftingCondition) (n : ℕ) :
+    (ylc : YekutieliLiftingCondition) (n : ℕ) :
     Nonempty (ylc.obstructionClass n) :=
   ylc.obstruction_exists n
 
 /-- **Global gluing proposition**.
     LaTeX: `\label{prop:global-gluing}` -/
-theorem global_gluing (ylc : YekutielijLiftingCondition) :
+theorem global_gluing (ylc : YekutieliLiftingCondition) :
     ∀ n, Nonempty (ylc.obstructionClass n) := by
   exact ylc.obstruction_exists
 
@@ -84,12 +84,12 @@ theorem global_gluing (ylc : YekutielijLiftingCondition) :
     LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
 structure CosimplicialCrossedGroupoid where
   tower : RecursiveBraneTower
-  tripleAt : (n : ℕ) → YekutielijTriple (tower.level n).M
-  coface : (n : ℕ) → YekutielijTriple (tower.level n).M →
-    YekutielijTriple (tower.level (n + 1)).M
-  codegeneracy : (n : ℕ) → YekutielijTriple (tower.level (n + 1)).M →
-    YekutielijTriple (tower.level n).M
-  retraction : ∀ (n : ℕ) (t : YekutielijTriple (tower.level n).M),
+  tripleAt : (n : ℕ) → YekutieliTriple (tower.level n).M
+  coface : (n : ℕ) → YekutieliTriple (tower.level n).M →
+    YekutieliTriple (tower.level (n + 1)).M
+  codegeneracy : (n : ℕ) → YekutieliTriple (tower.level (n + 1)).M →
+    YekutieliTriple (tower.level n).M
+  retraction : ∀ (n : ℕ) (t : YekutieliTriple (tower.level n).M),
     (codegeneracy n (coface n t)).level = t.level
   crossedBoundary : (n : ℕ) → (tower.level n).M → ℝ → ℝ
   peiffer : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ) (_ha : a ≠ 0),
@@ -120,7 +120,7 @@ theorem cosimplicial_retraction_level
 /-- **Main theorem of Chapter 4 (QU → QOU).**
     LaTeX: `\label{thm:qu-to-qou}` -/
 theorem qu_to_qou
-    (ylc : YekutielijLiftingCondition)
+    (ylc : YekutieliLiftingCondition)
     (ecs : EulerCharStability ylc.tower)
     (csg : CosimplicialCrossedGroupoid)
     (_h_tower : csg.tower = ylc.tower)
