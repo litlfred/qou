@@ -51,17 +51,12 @@ theorem correctionFactor_nonneg (gas : IdealKnotGas M) :
     have hinv : (0 : ℝ) < (gas.sp.field gas.point)⁻¹ := inv_pos.mpr hq_pos
     linarith
 
-/-- The q-anomaly correction vanishes at classicality (q = 1, so ℏ_q = 0). -/
-theorem correctionFactor_classical {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (N : ℕ) (V : ℝ) (S bN : ℝ)
-    (hq1 : sp.field p = 1) (hS : 0 ≤ S) :
-    let gas : IdealKnotGas M := {
-      sp := sp, point := p, N := N, V_q := V,
-      meanAction := S, boundaryNorm := bN,
-      hq := by rw [hq1]; norm_num,  -- can't satisfy hq since 1 > 1 is false
-      hV := by sorry, hS := hS }
-    True := by
-  trivial
+/-- The q-anomaly correction factor vanishes when ℏ_q = 0 (classicality).
+    Stated directly: for any q, S, the expression ℏ_q² · S / [2]_q
+    vanishes when ℏ_q = 0. -/
+theorem correctionFactor_vanishes_at_zero (S : ℝ) (q2 : ℝ) (hq2 : q2 ≠ 0) :
+    (0 : ℝ) ^ 2 * S / q2 = 0 := by
+  simp
 
 /-- **Leading-order quantum ideal gas law**: P · V = N · T_q.
 
@@ -101,6 +96,19 @@ theorem ideal_gas_full {M : Type*}
       (sp.field p + (sp.field p)⁻¹) :=
     div_nonneg (mul_nonneg (sq_nonneg _) hS) (le_of_lt hden_pos)
   nlinarith [mul_nonneg (Nat.cast_nonneg' N) hbar_nn]
+
+/-- The full equation of state decomposes as PV = NT + N·T·correction:
+    the correction is additive. -/
+theorem ideal_gas_decomposition {M : Type*}
+    (sp : SubstrateParameter M) (p : M)
+    (hq : sp.field p > 1)
+    (N : ℕ) (S_q : ℝ) (hS : 0 ≤ S_q) :
+    let hbar := quantumPlanckConstant sp p
+    let q := sp.field p
+    (N : ℝ) * hbar * (1 + hbar ^ 2 * S_q / (q + q⁻¹)) =
+    (N : ℝ) * hbar + (N : ℝ) * hbar ^ 3 * S_q / (q + q⁻¹) := by
+  simp only []
+  ring
 
 /-- **Thermodynamic Noether current**: the scale symmetry identity.
     V · ∂/∂V(ln Z) + β · ∂/∂β(ln Z) = 0 at the equation-of-state surface.
