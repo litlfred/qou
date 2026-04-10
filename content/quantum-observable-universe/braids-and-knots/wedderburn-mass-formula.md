@@ -45,10 +45,16 @@ $H_n(q)$:*
 | $\Phi_2$ | sym $\times$ alt | determinant (product of eigenvalues) |
 | $\Phi_3$ | sym $/$ alt | ratio of eigenvalues (chirality) |
 
-*These three are **complete**: $H_n(q)$ has exactly three extremal
-irreducible representations (symmetric, standard, alternating), and
-the transfer matrix chain produces exactly one scalar invariant per
-representation.  No fourth invariant exists.*
+*The three invariants correspond to the three **extremal** Wedderburn
+blocks of $H_n(q)$ (those associated with the symmetric, standard,
+and alternating representations).  For $n \geq 4$, the Hecke algebra
+has additional irreducible representations (one per partition of $n$),
+producing additional invariants not captured by the $2 \times 2$
+transfer matrix.  The partition-by-partition computation
+(`atom_mass_partition.py`) computes all partitions exactly via
+Young's seminormal form in polynomial time.  The mass functional
+uses the three extremal invariants as the leading-order formula;
+the full partition sum gives the exact Markov trace.*
 
 *The coefficients are:*
 - *$\alpha = m_e \times 8G$
