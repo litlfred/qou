@@ -81,6 +81,14 @@ section({
       ],
     }),
     section({
+      title: "Incompleteness and the Horizon",
+      label: "sec:incompleteness-horizon",
+      blocks: [
+        "incompleteness-horizon",
+        "information-paradox-incompleteness",
+      ],
+    }),
+    section({
       title: "Statistical Mechanics",
       label: "sec:stat-mech",
       blocks: [

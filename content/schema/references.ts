@@ -1904,6 +1904,36 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1007/BF01212349",
   }),
 
+  // ── Gödel 1931: incompleteness theorems ──────────────────────
+  ref({
+    id: "goedel1931",
+    type: "article-journal",
+    title:
+      "\u00DCber formal unentscheidbare S\u00e4tze der Principia Mathematica und verwandter Systeme I",
+    author: [{ family: "G\u00f6del", given: "Kurt" }],
+    "container-title": "Monatshefte f\u00fcr Mathematik und Physik",
+    issued: { "date-parts": [[1931]] },
+    volume: "38",
+    page: "173-198",
+    DOI: "10.1007/BF01700692",
+  }),
+
+  // ── Turing 1936: computable numbers ────────────────────────
+  ref({
+    id: "turing1936",
+    type: "article-journal",
+    title:
+      "On Computable Numbers, with an Application to the Entscheidungsproblem",
+    author: [{ family: "Turing", given: "Alan M." }],
+    "container-title":
+      "Proceedings of the London Mathematical Society",
+    issued: { "date-parts": [[1936]] },
+    volume: "s2-42",
+    issue: "1",
+    page: "230-265",
+    DOI: "10.1112/plms/s2-42.1.230",
+  }),
+
   // ── O'Hara 1991 (energy of knots) ────────────────────────────
   ref({
     id: "ohara1991",
