@@ -212,7 +212,7 @@ export default chapter({
         "hadron-half-life",
         "hadron-q-self-correction",
         "skein-coulomb-enhancement",
-        // GB reductions + transfer matrices → Ch 11 (Particle Interactions)
+        // GB reductions + transfer matrices + Garside elements → Ch 11 (Particle Interactions)
       ],
     }),
 
