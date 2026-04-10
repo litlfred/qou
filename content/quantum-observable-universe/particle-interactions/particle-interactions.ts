@@ -111,6 +111,7 @@ export default chapter({
       label: "sec:atomic-braid-mass",
       blocks: [
         "atomic-braid-mass",
+        "atomic-nf-witness",
         "groebner-reduction-methods",
       ],
     }),
