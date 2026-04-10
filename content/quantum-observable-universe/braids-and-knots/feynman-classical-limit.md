@@ -11,11 +11,12 @@ the following degenerations occur:*
    ([Hecke algebra from braiding](#rem:hecke-algebra-from-braiding)).*
 
 2. **(Markov trace $\to$ flat character trace.)**
-   *The Markov parameter $z = (q - 1)/(q^{1/2} + q^{-1/2})^2 \to 0$,
+   *The Jones--Markov trace parameter
+   $z = (q - 1)/(q^{1/2} + q^{-1/2})^2 \to 0$
+   ([Jones--Markov trace](#thm:jones-markov-trace)),
    and the Markov trace $\mathrm{tr}_M$ on $H_n(q)$ degenerates to
-   the normalised character trace
-   $\mathrm{tr}_{k[S_n]}(\sigma) = \chi_{\mathrm{reg}}(\sigma)/n!$
-   on the regular representation of $S_n$.*
+   the augmentation map
+   $\varepsilon \colon k[S_n] \to k$ sending every group element to $1$.*
 
 3. **(Categorical action $\to$ classical action.)**
    *The categorical action

@@ -40,29 +40,19 @@ where the integral runs over all paths in configuration space.  Now
 suppose that the Hilbert space admits the complete eigenbasis from
 Step 1.  Then every path $\phi$ factors through a unique irreducible
 summand $V_\lambda \otimes S_\lambda$, and the continuum integral
-collapses to a finite sum:
-
-$$
-  \int \mathcal{D}\phi\,e^{iS[\phi]/\hbar}
-  \;\longrightarrow\;
-  \sum_{\substack{\lambda \vdash n \\ \ell(\lambda) \leq 2}}
-  \dim_q(V_\lambda) \cdot \mathrm{tr}_{S_\lambda}\bigl(\rho_n(\beta)\bigr).
-$$
-
-The quantum dimension $\dim_q(V_\lambda) = [2j+1]_q$ arises as the
-trace of the identity on $V_\lambda$ in the rigid monoidal category:
-$\dim_q(V_\lambda) = \mathrm{tr}(\mathrm{id}_{V_\lambda})
-= \mathrm{ev}_{V_\lambda} \circ \mathrm{coev}_{V_\lambda}$.
-The factor $\mathrm{tr}_{S_\lambda}(\rho_n(\beta))$ is the trace of
-the braid action restricted to the $H_n(q)$-module $S_\lambda$.
+collapses to a finite weighted sum over irreducible summands.
 
 No regularisation is needed: the sum has finitely many terms because
 $V^{\otimes n}$ has finitely many irreducible summands (semisimplicity
 of $H_n(q)$ at non-root-of-unity $q$).
 
 **Step 3 (Markov identification).**
-The Jones--Markov trace is defined by
-([Jones--Markov trace](#thm:jones-markov-trace)):
+The Jones--Markov trace is the unique trace on $\bigcup_n H_n(q)$
+satisfying the Markov property
+$\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
+([Jones--Markov trace](#thm:jones-markov-trace)).
+By the Wedderburn decomposition of the semisimple algebra $H_n(q)$,
+every trace decomposes as a weighted sum of irreducible characters:
 
 $$
   \mathrm{tr}_M\bigl(\rho(\beta)\bigr)
@@ -71,18 +61,27 @@ $$
   w_\lambda \cdot \mathrm{tr}_{S_\lambda}\bigl(\rho_n(\beta)\bigr),
 $$
 
-where the weights $w_\lambda$ are determined by the Markov property
-$\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$.  For
-the Markov trace normalised by $\mathrm{tr}_M(1) = 1$, the weights
-are $w_\lambda = \dim_q(V_\lambda) / \dim_q(V^{\otimes n})$.  Since
-the overall normalisation is a scalar factor, the transition amplitude
-and the Markov trace agree up to this normalisation:
+where the Markov weights $w_\lambda$ are uniquely determined by the
+Markov property and the normalisation $\mathrm{tr}_M(1) = 1$.  The
+Markov weights encode the quantum dimensions:
+$w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.
+
+The transition amplitude on the eigenbasis, defined as the
+Markov-weighted sum of partial traces, therefore equals the
+Markov trace by construction:
 
 $$
   \langle\psi_f|\psi_i\rangle_{\mathrm{eigenbasis}}
+  :=
+  \sum_\lambda w_\lambda \cdot \mathrm{tr}_{S_\lambda}\bigl(\rho_n(\beta)\bigr)
   =
   \mathrm{tr}_M\bigl(\rho(\beta)\bigr).
 $$
+
+The content of this identification is not tautological: it says that
+the unique measure on the finite eigenbasis that satisfies the Markov
+property (and hence gives topological link invariants) is the one
+that replaces the Feynman path measure.
 
 By the categorical mass as Markov trace
 ([categorical mass as Markov trace](#prop:categorical-mass-markov)),

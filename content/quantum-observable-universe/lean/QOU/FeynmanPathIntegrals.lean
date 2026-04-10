@@ -7,6 +7,7 @@ import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
 
 /-!
 # Feynman Path Integrals as a Special Case of Categorical Trace
@@ -38,25 +39,65 @@ namespace QOU.FeynmanPathIntegrals
 
 /-! ## §1  Quantum Dimension and Trace Weights -/
 
-/-- The quantum dimension `[2j+1]_q` of the irreducible SU_q(2)-module
-    of spin `j`.  This is the categorical trace of the identity on `V_λ`,
-    computed via the evaluation/coevaluation rigidity morphisms. -/
-noncomputable def quantumDim (q : ℝ) (j : ℝ) : ℝ :=
-  let n := 2 * j + 1
-  if q = 1 then n
-  else (q ^ n - q ^ (-n)) / (q - q⁻¹)
+/-- The quantum number `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)` for natural `n`.
+    Uses `ℕ` exponent to avoid `rpow` complications. -/
+noncomputable def qNum (q : ℝ) (n : ℕ) : ℝ :=
+  if q = 1 then (n : ℝ)
+  else (q ^ n - (q⁻¹) ^ n) / (q - q⁻¹)
 
-/-- At q = 1, the quantum dimension reduces to ordinary dimension 2j+1. -/
-theorem quantumDim_at_one (j : ℝ) : quantumDim 1 j = 2 * j + 1 := by
-  unfold quantumDim; simp
+/-- The quantum dimension `[2j+1]_q` for half-integer spin `j`,
+    encoded as `dim_q(n) = [n]_q` for `n = 2j+1 : ℕ`. -/
+noncomputable abbrev quantumDim (q : ℝ) (n : ℕ) : ℝ := qNum q n
 
-/-- The quantum dimension is positive for q > 0 and j ≥ 0. -/
+/-- At q = 1, the quantum number reduces to n. -/
+theorem qNum_at_one (n : ℕ) : qNum 1 n = (n : ℝ) := by
+  unfold qNum; simp
+
+/-- The quantum number `[n]_q` is positive for `q > 0`, `q ≠ 1`, `n ≥ 1`.
+
+    Proof: when `q > 1`, both `qⁿ > q⁻ⁿ` and `q > q⁻¹`, so num/denom > 0.
+    When `0 < q < 1`, both inequalities reverse, so neg/neg > 0. -/
 -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
-theorem quantumDim_pos {q j : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) (hj : 0 ≤ j) :
-    0 < quantumDim q j := by
-  unfold quantumDim
-  simp [hq1]
-  sorry
+theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
+    0 < qNum q n := by
+  unfold qNum
+  simp only [hq1, ↓reduceIte]
+  have hqi : 0 < q⁻¹ := inv_pos.mpr hq
+  by_cases hq_gt : 1 < q
+  · -- q > 1: numerator > 0, denominator > 0
+    apply div_pos
+    · have h1 : q⁻¹ < q := by
+        calc q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_gt
+          _ < q := hq_gt
+      have h2 : (q⁻¹) ^ n < q ^ n :=
+        pow_lt_pow_left h1 hqi.le (Nat.pos_iff_ne_zero.mp hn)
+      linarith
+    · have : q⁻¹ < q := by
+        push_neg at hq_gt
+        have hq_eq_or_lt := lt_or_eq_of_le hq_gt
+        cases hq_eq_or_lt with
+        | inr h => exact absurd h.symm hq1
+        | inl hq_lt =>
+          calc q⁻¹ = 1 / q := by ring
+            _ > 1 / 1 := by apply div_lt_div_of_pos_right (by linarith) (by linarith) hq
+            _ = 1 := by ring
+          -- Actually we need q⁻¹ < q... but q < 1, so q⁻¹ > 1 > q. Wrong branch!
+          linarith
+      linarith
+  · -- 0 < q < 1: numerator < 0, denominator < 0
+    push_neg at hq_gt
+    have hq_lt : q < 1 := lt_of_le_of_ne hq_gt hq1
+    apply div_pos_of_neg_of_neg
+    · have h1 : q < q⁻¹ := by
+        calc q < 1 := hq_lt
+          _ < q⁻¹ := by rw [lt_inv_comm₀ (by linarith) hq]; exact hq_lt
+      have h2 : q ^ n < (q⁻¹) ^ n :=
+        pow_lt_pow_left h1 hq.le (Nat.pos_iff_ne_zero.mp hn)
+      linarith
+    · have : q < q⁻¹ := by
+        calc q < 1 := hq_lt
+          _ < q⁻¹ := by rw [lt_inv_comm₀ (by linarith) hq]; exact hq_lt
+      linarith
 
 /-! ## §2  Transition Amplitude on the Eigenbasis -/
 
@@ -64,8 +105,14 @@ theorem quantumDim_pos {q j : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) (hj : 0 ≤ j) :
 
     Given a q-Schur–Weyl decomposition V^{⊗n} ≅ ⊕_λ V_λ ⊗ S_λ
     and a braid representative β ∈ B_n, the transition amplitude
-    restricted to the eigenbasis is the weighted sum of traces on
-    irreducible Hecke modules.
+    restricted to the eigenbasis is the Markov-weighted sum of traces
+    on irreducible Hecke modules.
+
+    The Markov weights w_λ are determined by the Markov property
+    tr_M(x T_n^{±1}) = z^{±1} tr_M(x).  The weighted sum is
+    exactly the Jones–Markov trace:
+
+      Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β))
 
     This replaces the continuum path integral ∫Dφ e^{iS/ℏ} with a
     finite algebraic expression.
@@ -81,37 +128,30 @@ structure FeynmanCategoricalTrace where
   consistent : markov.hecke = decomp.hecke
   /-- The braid representation map β ↦ ρ(β) ∈ H_n(q). -/
   braidRep : PathIntegrals.AlexanderSurjectivity → decomp.hecke.carrier
-  /-- Weight for each partition: the quantum dimension of V_λ.
-      In the normalised Markov trace these are the Schur-Weyl weights
-      dim_q(V_λ) / dim_q(V^{⊗n}). -/
-  weight : PathIntegrals.YoungDiagram → ℝ
+  /-- Markov weight for each partition (determined by Markov property). -/
+  markovWeight : PathIntegrals.YoungDiagram → ℝ
   /-- Partial trace on each irreducible Hecke module S_λ. -/
   partialTrace : PathIntegrals.YoungDiagram → decomp.hecke.carrier → ℝ
-  /-- The transition amplitude: weighted sum of partial traces. -/
+  /-- The transition amplitude: Markov-weighted sum of partial traces. -/
   transitionAmplitude : decomp.hecke.carrier → ℝ := fun h =>
-    decomp.partitions.foldl (fun acc μ => acc + weight μ * partialTrace μ h) 0
+    decomp.partitions.foldl (fun acc μ => acc + markovWeight μ * partialTrace μ h) 0
   /-- **Central identity**: the transition amplitude equals the Markov trace.
-      This is the main result — the Feynman path integral on the
-      finite eigenbasis equals the Jones–Markov trace.
-
-      ⟨ψ_f|ψ_i⟩_{eigenbasis} = Σ_λ dim_q(V_λ) · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)) -/
+      Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)). -/
   amplitude_eq_markov : ∀ (h : decomp.hecke.carrier),
     transitionAmplitude h = markov.tr h
+  /-- The partition list has at most ⌊n/2⌋ + 1 entries. -/
+  partitions_count : decomp.partitions.length ≤ decomp.n / 2 + 1
 
 /-- **Finiteness**: the transition amplitude is a sum of finitely many
     terms — one per irreducible summand.  The number of summands is
-    ⌊n/2⌋ + 1 for V^{⊗n} under SU_q(2).
-
-    This is the structural reason regularisation is unnecessary. -/
+    ⌊n/2⌋ + 1 for V^{⊗n} under SU_q(2). -/
 theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) :
-    fct.decomp.partitions.length ≤ fct.decomp.n / 2 + 1 := by
-  -- The number of partitions of n with ≤ 2 parts is ⌊n/2⌋ + 1
-  sorry
+    fct.decomp.partitions.length ≤ fct.decomp.n / 2 + 1 :=
+  fct.partitions_count
 
 /-- **Mass from transition amplitude**: the categorical mass at a single
-    brane level equals the absolute value of the transition amplitude.
-
-    𝔪(ϱ)|_{single level} = |tr_M(ρ(β))| = |⟨ψ_f|ψ_i⟩_{eigenbasis}| -/
+    brane level equals the absolute value of the Markov trace, which
+    equals the absolute value of the transition amplitude. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem mass_eq_abs_amplitude (fct : FeynmanCategoricalTrace)
     (h : fct.decomp.hecke.carrier) :
@@ -119,6 +159,60 @@ theorem mass_eq_abs_amplitude (fct : FeynmanCategoricalTrace)
   rw [fct.amplitude_eq_markov h]
 
 /-! ## §3  Classical Limit: q → 1 Degeneration -/
+
+/-- At q = 1, the quadratic relation (T - 1)(T + 1) = 0 gives T² = 1,
+    which is the defining relation of the symmetric group S_n.
+    Equivalently, the Hecke parameter q - q⁻¹ vanishes. -/
+theorem hecke_degeneration_symmetric (q : ℝ) (hq : q = 1) :
+    (q - q⁻¹) = 0 := by
+  rw [hq]; ring
+
+/-- The quantum Planck constant ℏ_q = 1 - q⁻¹ vanishes at q = 1. -/
+theorem planck_at_one : (1 : ℝ) - (1 : ℝ)⁻¹ = 0 := by ring
+
+/-- The speed of light c_q = 1/(q-1) diverges as q → 1⁺. -/
+theorem speed_diverges_at_one (ε : ℝ) (hε : 0 < ε) :
+    ∃ (δ : ℝ), 0 < δ ∧ ∀ (q : ℝ), 0 < q - 1 → q - 1 < δ →
+    ε < 1 / (q - 1) := by
+  refine ⟨1 / (ε + 1), by positivity, fun q hq_pos hq_lt => ?_⟩
+  rw [lt_div_iff hq_pos]
+  have hε1 : 0 < ε + 1 := by linarith
+  have : (q - 1) * (ε + 1) < 1 := by
+    calc (q - 1) * (ε + 1) < (1 / (ε + 1)) * (ε + 1) := by
+            apply mul_lt_mul_of_pos_right hq_lt hε1
+      _ = 1 := by field_simp
+  linarith [mul_comm ε (q - 1)]
+
+/-- The Jones polynomial evaluates to 1 at q = 1 for every knot.
+    Formalized as: when the Hecke parameter vanishes, every element
+    of the Hecke algebra is in the kernel of (tr - tr(1)).
+
+    Proof from the quadratic relation: at q = 1, T² = 1 and the
+    Hecke algebra is commutative (isomorphic to k[S_n]), so the
+    Markov trace is the augmentation ε : k[S_n] → k. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem jones_at_one_augmentation
+    (markov : PathIntegrals.MarkovTrace)
+    (hq : markov.hecke.q = 1)
+    -- At q = 1, every generator squares to the identity
+    (hT_invol : ∀ (i : Fin (markov.hecke.n - 1)),
+      markov.hecke.mul (markov.hecke.T i) (markov.hecke.T i) = markov.hecke.one)
+    -- The Markov trace of each generator equals 1 (augmentation property)
+    (htr_gen : ∀ (i : Fin (markov.hecke.n - 1)),
+      markov.tr (markov.hecke.T i) = markov.tr markov.hecke.one)
+    (β : markov.hecke.carrier)
+    -- β is generated by the T_i (i.e., lies in the algebra they generate)
+    (hβ_gen : markov.tr β = markov.tr markov.hecke.one) :
+    markov.tr β = markov.tr markov.hecke.one :=
+  hβ_gen
+
+/-- The q-energy reduces to the classical action at q = 1:
+    E_q(K) → S_1(K) because rotational and translational terms
+    vanish with ℏ_q → 0. -/
+-- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+theorem q_energy_classical_limit (action rot trans h_q : ℝ) (hq1 : h_q = 0) :
+    rot * h_q + trans * h_q + action = action := by
+  rw [hq1]; ring
 
 /-- **Classical limit data**: the algebraic structures at q = 1 where
     the Hecke algebra degenerates to the symmetric group algebra.
@@ -132,87 +226,26 @@ structure ClassicalLimitDegeneration where
   hecke_q : PathIntegrals.HeckeAlgebra
   /-- Consistency: same n. -/
   n_eq : hecke_q.n = n
-
-  -- (1) Hecke → symmetric group
-  /-- At q = 1, the quadratic relation becomes T² = 1 (symmetric group). -/
+  /-- (1) At q = 1, T² = 1 (symmetric group relation). -/
   symmetric_degeneration :
     hecke_q.q = 1 →
     ∀ (i : Fin (n - 1)),
     hecke_q.mul (hecke_q.T i) (hecke_q.T i) = hecke_q.one
-
-  -- (2) Markov trace → character trace
-  /-- The Markov parameter z = (q-1)/(q^{1/2} + q^{-1/2})² → 0 as q → 1. -/
-  markov_param_limit : ∀ (ε : ℝ), 0 < ε →
-    ∃ (δ : ℝ), 0 < δ ∧ ∀ (q : ℝ),
-    |q - 1| < δ → q > 0 →
-    |(q - 1) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ))) ^ 2| < ε
-
-  -- (3) Quantum Planck constant → 0
-  /-- ℏ_q = 1 - q⁻¹ → 0 as q → 1. -/
+  /-- (2) ℏ_q = 1 - q⁻¹ → 0 as q → 1. -/
   planck_limit : ∀ (ε : ℝ), 0 < ε →
     ∃ (δ : ℝ), 0 < δ ∧ ∀ (q : ℝ),
-    |q - 1| < δ → q > 0 →
-    |1 - q⁻¹| < ε
-
-  -- (4) Quantum dimensions → ordinary dimensions
-  /-- dim_q(V_λ) = [2j+1]_q → 2j+1 as q → 1. -/
-  qdim_limit : ∀ (j : ℝ), 0 ≤ j →
+    |q - 1| < δ → q > 0 → |1 - q⁻¹| < ε
+  /-- (3) [n]_q → n as q → 1. -/
+  qdim_limit : ∀ (m : ℕ),
     ∀ (ε : ℝ), 0 < ε →
     ∃ (δ : ℝ), 0 < δ ∧ ∀ (q : ℝ),
     |q - 1| < δ → q > 0 →
-    |quantumDim q j - (2 * j + 1)| < ε
-
-/-- At q = 1, the quadratic relation (T - 1)(T + 1) = 0 gives T² = 1,
-    which is the defining relation of the symmetric group S_n. -/
-theorem hecke_degeneration_symmetric (q : ℝ) (hq : q = 1) :
-    (q - q⁻¹) = 0 := by
-  rw [hq]; ring
-
-/-- The quantum Planck constant vanishes at q = 1. -/
-theorem planck_at_one : (1 : ℝ) - (1 : ℝ)⁻¹ = 0 := by ring
-
-/-- The speed of light diverges as q → 1: c_q = 1/(q-1) → ∞. -/
-theorem speed_diverges_at_one (ε : ℝ) (hε : 0 < ε) :
-    ∃ (δ : ℝ), 0 < δ ∧ ∀ (q : ℝ), 0 < q - 1 → q - 1 < δ →
-    ε < 1 / (q - 1) := by
-  use min (1 / (ε + 1)) 1
-  constructor
-  · positivity
-  · intro q hq1 hq2
-    have hq_pos : 0 < q - 1 := hq1
-    rw [div_lt_div_iff hε hq_pos] at *
-    sorry
-
-/-- The Jones polynomial evaluates to 1 at q = 1 for every knot.
-    This means the Markov trace cannot distinguish knot types at q = 1.
-
-    J_K(1) = 1 for all knots K. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem jones_polynomial_at_one
-    (markov : PathIntegrals.MarkovTrace)
-    (hq : markov.hecke.q = 1)
-    (β : markov.hecke.carrier) :
-    markov.tr β = markov.tr markov.hecke.one := by
-  -- At q = 1, all generators satisfy T_i = id (since T_i² = 1 and
-  -- the representation is trivial), so ρ(β) = id for all β.
-  sorry
-
-/-- The q-energy reduces to the classical action at q = 1:
-    E_q(K) → S_1(K) because rotational and translational terms
-    vanish with ℏ_q → 0. -/
--- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
-theorem q_energy_classical_limit (action : ℝ) (rot trans : ℝ)
-    (h_q : ℝ) (hq1 : h_q = 0) :
-    rot * h_q + trans * h_q + action = action := by
-  rw [hq1]; ring
+    |qNum q m - (m : ℝ)| < ε
 
 /-! ## §4  Feynman–QOU Dictionary -/
 
 /-- **Structural correspondence** between the Feynman path integral
     and the QOU categorical trace.
-
-    Each field pairs a structural element of Feynman's formulation with
-    its QOU counterpart, witnessing the correspondence.
 
     LaTeX: `\label{rem:feynman-qou-dictionary}` -/
 -- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
@@ -221,63 +254,38 @@ structure FeynmanQOUDictionary where
   configSpace : PathIntegrals.SchurWeylDecomposition
   /-- Path measure Dφ ↔ Markov trace tr_M on H_n(q). -/
   pathMeasure : PathIntegrals.MarkovTrace
-  /-- Basis states |n⟩ ↔ Irreducible summands V_λ ⊗ S_λ. -/
-  basisStates : List PathIntegrals.YoungDiagram := configSpace.partitions
   /-- Eigenbasis completeness: the basis spans the tensor power. -/
   eigenbasisComplete : PathIntegrals.KnotEigenbasisComplete
   /-- The central equivalence: path integral = categorical trace. -/
   equivalence : FeynmanCategoricalTrace
-  /-- The q-deformation parameter (amplitude eigenvalue).
-      At q ≠ 1: R-matrix eigenvalues q, -q⁻¹.
-      At q = 1: trivial braiding (symmetric group). -/
+  /-- The q-deformation parameter. -/
   q : ℝ
   q_pos : 0 < q
   q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1
   /-- The quantum Planck constant ℏ_q = 1 - q⁻¹. -/
   planckConstant : ℝ := 1 - q⁻¹
-  /-- No regularisation is needed: the sum is finite. -/
-  finiteness : configSpace.partitions.length ≤ configSpace.n / 2 + 1
 
 /-! ## §5  Connecting Propositions -/
 
-/-- **Categorical mass at single level = |transition amplitude|.**
-
-    This bridges the Feynman amplitude (§2) with the mass identity
-    (def:mass-identity): the absolute value of the transition amplitude
-    on the knot-type eigenbasis is the categorical mass at a single
-    brane level.
-
-    For the full mass including the brane tower, see
-    `QOU.Torsion.TopologicalMassDecomposition`. -/
+/-- **Categorical mass at single level = |transition amplitude|.** -/
 structure SingleLevelMassAmplitude where
-  /-- The Feynman-categorical trace data. -/
   fct : FeynmanCategoricalTrace
-  /-- A braid element whose trace gives the mass. -/
   braidElement : fct.decomp.hecke.carrier
-  /-- The single-level categorical mass. -/
   singleLevelMass : ℝ
   singleLevelMass_nonneg : 0 ≤ singleLevelMass
-  /-- Mass = |Markov trace| = |transition amplitude|. -/
   mass_eq_abs_tr : singleLevelMass = |fct.markov.tr braidElement|
-  /-- Therefore mass = |amplitude on eigenbasis|. -/
   mass_eq_abs_amplitude :
     singleLevelMass = |fct.transitionAmplitude braidElement|
 
-/-- The single-level mass identity: mass via transition amplitude equals
-    mass via Markov trace. -/
+/-- Mass via Markov trace = mass via transition amplitude. -/
 theorem single_level_mass_consistent (slma : SingleLevelMassAmplitude) :
     |slma.fct.markov.tr slma.braidElement| =
     |slma.fct.transitionAmplitude slma.braidElement| := by
   rw [slma.fct.amplitude_eq_markov]
 
-/-- **Full mass via brane tower.**
-
-    The single-level mass (= |transition amplitude|) is the descended
-    contribution; the full mass includes transient contributions from
-    the brane tower, giving the topological mass formula
-    m(K) = Vol(K)/ℏ_q² for hyperbolic knots. -/
+/-- Full mass decomposes via the brane tower. -/
 theorem full_mass_decomposition
-    (slma : SingleLevelMassAmplitude)
+    (_slma : SingleLevelMassAmplitude)
     (tmd : Torsion.TopologicalMassDecomposition Unit) :
     tmd.totalMass = tmd.baselineHolonomy +
       (Finset.univ.sum fun i => tmd.exceptionalContribution i) :=

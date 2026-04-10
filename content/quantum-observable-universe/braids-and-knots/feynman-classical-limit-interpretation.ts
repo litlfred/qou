@@ -12,5 +12,7 @@ export default remark({
   uses: [
     "prop:feynman-classical-limit",
     "prop:topological-mass-formula",
+    "prop:knot-eigenbasis-complete",
+    "def:q-energy",
   ],
 });
