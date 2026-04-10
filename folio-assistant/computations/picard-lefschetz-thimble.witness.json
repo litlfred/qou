@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-10T02:30:46.071019+00:00",
-  "commitSha": "48ad42212374d134382953f602a0e0a31b9e479d",
+  "computedAt": "2026-04-10T02:56:59.702966+00:00",
+  "commitSha": "0d255fdf95c816d6365621654a335280d527b061",
   "assertions": [
     {
       "name": "m_p from ∏ dc_k/dz",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 27,
   "computation": "picard-lefschetz-thimble",
   "scriptFile": "picard_lefschetz_thimble.py",
-  "scriptHash": "cdb75bc6e6ca",
-  "scriptCommitSha": "48ad42212374d134382953f602a0e0a31b9e479d",
+  "scriptHash": "5d7d37540283",
+  "scriptCommitSha": "0d255fdf95c816d6365621654a335280d527b061",
   "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, SW period integrals (single-root and simultaneous 3-root prescriptions).",
   "contentBlock": "def:picard-lefschetz-thimble",
   "parameters": {
@@ -161,6 +161,6 @@
   "caveats": [
     "Thimble tracing uses simple Euler integration of the gradient flow ODE. Higher-order integrators (RK4) and adaptive step sizes may improve accuracy.",
     "Intersection numbers depend on the length and accuracy of anti-thimble paths. Results should be verified with finer step sizes.",
-    "Nine simultaneous 3-root prescriptions are tested: sum, product, cross-color, Vandermonde-weighted, resolvent trace, Vieta 2nd moment, etc. The correct baryon period prescription remains an open problem."
+    "Nine simultaneous 3-root prescriptions are tested. The product prescription ∏_k dc_k/dz yields 0.0006% agreement with CODATA m_p on the real axis. Theoretical justification for this prescription (why product, not sum) and for the integration limit a = (4-q)/(4q+3) remains to be established."
   ]
 }
