@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-10T02:12:35.776112+00:00",
-  "commitSha": "1b1b1d5a5daaac90cdcd85673cb668309c46bc56",
+  "computedAt": "2026-04-10T02:39:30.540229+00:00",
+  "commitSha": "638f079fdfd9c7673fbfcacf355830f64221cdba",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "atom-mass-integrated",
   "scriptFile": "atom_mass_integrated.py",
   "scriptHash": "265bb8bc51ae",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "638f079fdfd9c7673fbfcacf355830f64221cdba",
   "description": "Integrated mass: three-channel + Gram character (F_Pauli) from Rust certificates + interpolation for missing atoms.",
   "parameters": {
     "q0": "1.1099785955541805"
@@ -93,9 +93,9 @@
         "Z": 9,
         "N": 10,
         "phi": -15.617388571827101,
-        "f_pauli": 1.0761174773582896,
-        "fp_source": "interpolated",
-        "cert": false
+        "f_pauli": 1.1978666890541274,
+        "fp_source": "certificate",
+        "cert": true
       },
       {
         "label": "²⁰Ne",
@@ -111,7 +111,7 @@
         "Z": 11,
         "N": 12,
         "phi": -15.072758810958813,
-        "f_pauli": 1.107324484469729,
+        "f_pauli": 1.1205639269517604,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -120,7 +120,7 @@
         "Z": 12,
         "N": 12,
         "phi": -14.796046312779522,
-        "f_pauli": 1.2683735833222938,
+        "f_pauli": 1.2816100232739354,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -129,7 +129,7 @@
         "Z": 13,
         "N": 14,
         "phi": -13.620253009430485,
-        "f_pauli": 1.1298259299665647,
+        "f_pauli": 1.143079740714627,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -138,7 +138,7 @@
         "Z": 14,
         "N": 14,
         "phi": -12.91880224882311,
-        "f_pauli": 1.2683735833222938,
+        "f_pauli": 1.2816100232739354,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -147,7 +147,7 @@
         "Z": 15,
         "N": 16,
         "phi": -11.029158682218503,
-        "f_pauli": 1.1468155081190587,
+        "f_pauli": 1.1600768722794994,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -156,7 +156,7 @@
         "Z": 16,
         "N": 16,
         "phi": -10.070695492816004,
-        "f_pauli": 1.2683735833222938,
+        "f_pauli": 1.2816100232739354,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -165,7 +165,7 @@
         "Z": 17,
         "N": 18,
         "phi": -7.557224608535614,
-        "f_pauli": 1.1600961143594286,
+        "f_pauli": 1.1733614392227791,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -174,7 +174,7 @@
         "Z": 18,
         "N": 22,
         "phi": -2.4878573428468367,
-        "f_pauli": 0.9281345331745099,
+        "f_pauli": 0.9410692928602613,
         "fp_source": "interpolated",
         "cert": false
       },
@@ -183,7 +183,7 @@
         "Z": 19,
         "N": 20,
         "phi": -3.049651325011658,
-        "f_pauli": 1.1707621162391189,
+        "f_pauli": 1.1840294018068367,
         "fp_source": "interpolated",
         "cert": false
       },
