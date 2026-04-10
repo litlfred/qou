@@ -45,7 +45,8 @@ namespace QOU.Descartes
 noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (down quark).
-    Numerical: ≈ 2.82812208832975 (SnapPy). -/
+    Numerical: ≈ 2.82812208832975 (SnapPy).
+    TODO: add threeTwistEntry to KnotRegistry and extract from there. -/
 noncomputable def vol_5_2 : ℝ := 2.82812208832975
 
 /-- Hyperbolic volume of the Borromean rings 𝓑₃ (nucleon).
@@ -264,14 +265,18 @@ polynomial relation holds among the three volumes. -/
 /-- **Conjecture (Algebraic independence of QOU hyperbolic volumes).**
 
     The three hyperbolic volumes Vol(4₁), Vol(5₂), Vol(𝓑₃) are
-    algebraically independent over ℚ.  Equivalently, for any function
-    `f : ℤ × ℤ × ℤ → ℚ` with finite support, if the sum
+    algebraically independent over ℚ.  Equivalently, for any finitely
+    supported function `f : ℕ × ℕ × ℕ → ℚ`, if the sum
     `Σ f(i,j,k) · Vol(4₁)^i · Vol(5₂)^j · Vol(𝓑₃)^k = 0`
     then `f = 0`.
 
     Since the ground ring ℚ[q, q⁻¹] is a polynomial ring over ℚ,
     algebraic independence over ℚ implies algebraic independence
     over ℚ[q, q⁻¹] (the volumes are real constants, independent of q).
+
+    Note: we use non-negative exponents (ℕ) since the volumes are
+    non-zero reals — any Laurent-style relation `v^{-k}` can be
+    cleared by multiplying through by `v^k`.
 
     LaTeX: `\label{conj:hyperbolic-volume-transcendence}` -/
 class HyperbolicVolumeIndependence where
@@ -313,9 +318,9 @@ gives the Yekutieli bridge theorem. -/
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
 -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
 theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutielijLiftingCondition)
-    (h_nonvanish : ∀ n, Nonempty (ylc.obstructionClass n)) :
+    (ylc : QOU.Torsion.YekutielijLiftingCondition) :
     HyperbolicVolumeIndependence :=
+  -- ylc.obstruction_exists already guarantees ∀ n, Nonempty (obstructionClass n)
   sorry
 
 end QOU.Descartes
