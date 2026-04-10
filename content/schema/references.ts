@@ -1916,6 +1916,7 @@ export const references: CSLData[] = [
     volume: "38",
     page: "173-198",
     DOI: "10.1007/BF01700692",
+    URL: "https://doi.org/10.1007/BF01700692",
   }),
 
   // ── Turing 1936: computable numbers ────────────────────────
@@ -1932,6 +1933,7 @@ export const references: CSLData[] = [
     issue: "1",
     page: "230-265",
     DOI: "10.1112/plms/s2-42.1.230",
+    URL: "https://doi.org/10.1112/plms/s2-42.1.230",
   }),
 
   // ── O'Hara 1991 (energy of knots) ────────────────────────────

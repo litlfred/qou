@@ -22,6 +22,7 @@ export default remark({
     "def:aeon",
     "def:big-bang-state",
     "rem:skein-turing-machine",
+    "conj:aeon-boundary-generates-chart",
   ],
   cites: ["hawking1975", "bekenstein1973", "goedel1931"],
 });

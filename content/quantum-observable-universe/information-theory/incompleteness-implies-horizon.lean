@@ -72,7 +72,8 @@ theorem diagonal_not_in_range (enum : ℕ → (ℕ → ℕ)) :
     ∀ n, diagonal enum ≠ enum n := by
   intro n h
   have : diagonal enum n = enum n n := congr_fun h n
-  simp [diagonal] at this
+  unfold diagonal at this
+  omega
 
 /-- **Main theorem: incompleteness implies non-computable functions.**
 

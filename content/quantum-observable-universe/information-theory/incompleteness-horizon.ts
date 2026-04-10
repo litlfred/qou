@@ -18,12 +18,12 @@ export default remark({
   uses: [
     "prop:incompleteness-implies-horizon",
     "def:computational-horizon",
-    "conj:p-vs-np-boundary",
     "rem:skein-turing-machine",
     "def:jet-horizon",
     "rem:hawking-radiation",
     "def:observable-subcategory",
-    "def:big-bang-state",
+    "rem:substrate-computation",
+    "rem:p-vs-np-event-horizon",
   ],
   cites: ["goedel1931", "turing1936"],
 });
