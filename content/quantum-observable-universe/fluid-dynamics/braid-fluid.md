@@ -62,6 +62,6 @@ fluid-dynamical origin of the
 **Helicity as Markov trace.**
 The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ is
 the **topological helicity** of the vortex tangle — a refinement
-of classical helicity $H = \int v \cdot \omegadV$ that
+of classical helicity $H = \int v \cdot \omega\,dV$ that
 distinguishes configurations invisible to $H$ (e.g. trefoil
 from unknot).

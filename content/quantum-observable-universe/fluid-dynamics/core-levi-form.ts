@@ -7,7 +7,7 @@ export default proposition({
   uses: [
     "prop:vorticity-lower-bound",
     "rem:geodesic-vortices",
-    "def:levi-form-defect",
+    "rem:levi-form-defect",
     "rem:c-substrate-via-levi",
     "def:substrate-parameter",
     "def:quantum-observable-universe",

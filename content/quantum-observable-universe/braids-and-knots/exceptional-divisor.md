@@ -13,7 +13,7 @@ $$
   \mathcal{S}_p =  \pi^{-1}(p)
   = 
   \bigl\{
-    O(p) + R\bigl(\sin\phi(\cos\psiT_1 + \sin\psiT_2) - \cos\phiN\bigr)
+    O(p) + R\bigl(\sin\phi(\cos\psi\,T_1 + \sin\psi\,T_2) - \cos\phi\,N\bigr)
      : 
     \phi \in [0,\pi], \psi \in [0,2\pi)
   \bigr\},
