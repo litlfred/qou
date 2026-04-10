@@ -15,6 +15,6 @@ export default definition({
   uses: [
     "rem:color-tube-cubic",
     "rem:lepton-mass-integrals",
-    "def:descartes-elliptic-curve",
+    "prop:descartes-elliptic-curve",
   ],
 });

@@ -101,6 +101,7 @@ export default chapter({
         "picard-lefschetz-thimble",
         "baryon-period-conjecture",
         "baryon-integration-limit",
+        "mobius-golden-fixed-points",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors

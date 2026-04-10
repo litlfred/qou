@@ -19,6 +19,6 @@ export default proposition({
   uses: [
     "def:picard-lefschetz-thimble",
     "rem:color-tube-cubic",
-    "def:descartes-elliptic-curve",
+    "prop:descartes-elliptic-curve",
   ],
 });

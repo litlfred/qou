@@ -17,6 +17,6 @@ export default conjecture({
   uses: [
     "def:picard-lefschetz-thimble",
     "rem:lepton-mass-integrals",
-    "prop:topological-mass",
+    "thm:topological-mass",
   ],
 });

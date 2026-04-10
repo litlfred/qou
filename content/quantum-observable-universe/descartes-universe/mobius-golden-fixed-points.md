@@ -5,7 +5,7 @@ $q_+ = 1/\varphi$ and $q_- = -\varphi$, where $\varphi = (1+\sqrt{5})/2$
 is the golden ratio.
 
 *Proof.*
-Setting $f(q) = q$ gives $(4-q) = q(4q+3)$, hence $4q^2 + 4q - 4 = 0$,
+We set $f(q) = q$ to obtain $(4-q) = q(4q+3)$, hence $4q^2 + 4q - 4 = 0$,
 or equivalently
 
 $$
@@ -30,6 +30,6 @@ and eigenvalues $1 \pm 2\sqrt{5} = 4\varphi - 1$ and $3 - 4\varphi$. $\square$
 The matrix entries $\{-1, 4; 4, 3\}$ derive from the binomial
 structure of the color-tube cubic
 ([color-tube cubic](#rem:color-tube-cubic)):
-$4 = \binom{4}{1}$ is the leading $z$-coefficient of the $c^2$ term,
+$4 = \binom{4}{1}$ gives the leading $z$-coefficient of the $c^2$ term,
 $3$ is the degree of the cubic, and the sign comes from the numerator
 $4 - q = -(q - 4)$.
