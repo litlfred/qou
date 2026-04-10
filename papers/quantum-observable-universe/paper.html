@@ -498,6 +498,7 @@ code { font-size: 90%; }
         <a class="toc-sec" href="#sec:p-vs-np-boundary">P versus NP as a Boundary Condition</a>
         <a class="toc-sec" href="#sec:stat-mech">Statistical Mechanics</a>
         <a class="toc-sec" href="#sec:phase-transitions">Phase Transitions and Sublimation</a>
+        <a class="toc-sec" href="#sec:incompleteness-horizon">Incompleteness and the Horizon</a>
         <a class="toc-sec" href="#sec:horizons-aeons">Horizons and Aeons</a>
         <a class="toc-sec" href="#sec:info-geometry-variants">Quantum Geometry Variants</a>
         <a class="toc-ch" href="#chap:descartes-universe">The Descartes Universe</a>
@@ -25461,9 +25462,128 @@ majority (split) wins. <strong>Stable liquid.</strong></em></p></li>
 </div>
 <p><span id="rem:crossing-parity-test"
 data-label="rem:crossing-parity-test"></span></p>
+<h2 id="sec:incompleteness-horizon">Incompleteness and the Horizon</h2>
+<div id="prop:incompleteness-implies-horizon" class="proposition">
+<p><strong>Proposition 8.23 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.IncompletenessHorizon.exists_noncomputable" target="_blank" title="Lean: QOU.IncompletenessHorizon.exists_noncomputable">&#x2200; stated</a></strong> (<span>Turing completeness with
+<span class="math inline">\(\mathbb{N}\)</span>-embedding implies
+non-empty <a class="defn-link" href="#def:computational-horizon">computational horizon</a></span>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.IncompletenessHorizon.exists_noncomputable"><sup><span
+style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em><strong>Proposition (incompleteness implies non-empty
+horizon).</strong> <em>Let <span class="math inline">\((P, e,
+\mathrm{eval})\)</span> be a Turing-complete resolution
+system:</em></em></p>
+<ul>
+<li><p><em><em><span class="math inline">\(P\)</span> is a set of
+programs (finite braids),</em></em></p></li>
+<li><p><em><em><span class="math inline">\(e \colon \mathbb{N}
+\twoheadrightarrow P\)</span> is a surjective enumeration (the braid
+group on finitely many strands is countable),</em></em></p></li>
+<li><p><em><em><span class="math inline">\(\mathrm{eval} \colon P \to
+(\mathbb{N} \to \mathbb{N})\)</span> maps each program to the total
+function it computes.</em></em></p></li>
+</ul>
+<p><em><em>The surjectivity of <span class="math inline">\(e\)</span>
+and the domain <span class="math inline">\(\mathbb{N}\)</span> of <span
+class="math inline">\(\mathrm{eval}\)</span> constitute the
+<strong>arithmetic non-triviality condition</strong>: <span
+class="math inline">\(\mathbb{N}\)</span> is embeddable in the system.
+Without this, the diagonal argument is vacuous — a trivial category has
+no self-referential capacity and incompleteness does not
+apply.</em></em></p>
+<p><em><em>Then there exists <span class="math inline">\(f \colon
+\mathbb{N} \to \mathbb{N}\)</span> not in the image of <span
+class="math inline">\(\mathrm{eval}\)</span>:</em></em></p>
+<p><em><span class="math display">\[\exists\, f \colon \mathbb{N} \to
+\mathbb{N},\;
+  \forall\, p \in P,\;
+  \mathrm{eval}(p) \neq f.\]</span></em></p>
+<p><em><em>The computable fragment is strictly smaller than the full
+function space.</em></em></p>
+<p><em><em>Proof.</em> Define the <strong>diagonal
+function</strong></em></p>
+<p><em><span class="math display">\[d(n) \;=\; \mathrm{eval}(e(n))(n) +
+1.\]</span></em></p>
+<p><em>For any program <span class="math inline">\(p \in P\)</span>,
+surjectivity gives <span class="math inline">\(n\)</span> with <span
+class="math inline">\(e(n) = p\)</span>. Then</em></p>
+<p><em><span class="math display">\[d(n) = \mathrm{eval}(p)(n) + 1 \neq
+\mathrm{eval}(p)(n),\]</span></em></p>
+<p><em>so <span class="math inline">\(d \neq \mathrm{eval}(p)\)</span>.
+Since <span class="math inline">\(p\)</span> was arbitrary, <span
+class="math inline">\(d \notin \mathrm{im}(\mathrm{eval})\)</span>.
+<span class="math inline">\(\square\)</span></em></p>
+<p><em><strong>Why <span
+class="math inline">\(\mathbb{N}\)</span>-embedding is
+necessary.</strong></em></p>
+<p><em>The diagonal argument constructs <span
+class="math inline">\(d\)</span> by evaluating program <span
+class="math inline">\(e(n)\)</span> on input <span
+class="math inline">\(n\)</span> — self-application. This
+requires:</em></p>
+<ol>
+<li><p><em><strong>Countability of programs</strong>: <span
+class="math inline">\(e\)</span> surjects from <span
+class="math inline">\(\mathbb{N}\)</span> onto <span
+class="math inline">\(P\)</span>, so programs can be indexed by natural
+numbers. For the QOU, this holds because the braid group <span
+class="math inline">\(B_n\)</span> on <span
+class="math inline">\(n\)</span> strands is finitely generated, hence
+countable, and the set of all finite braids <span
+class="math inline">\(\bigsqcup_n B_n\)</span> is a countable union of
+countable sets.</em></p></li>
+<li><p><em><strong><span class="math inline">\(\mathbb{N}\)</span> as
+input domain</strong>: programs compute functions <span
+class="math inline">\(\mathbb{N} \to \mathbb{N}\)</span>, meaning the
+system can represent and operate on natural numbers. In the QOU, this is
+the content of Turing completeness (<a
+href="#rem:skein-turing-machine">Skein Turing machine</a>): each Toffoli
+gate acts on bit strings (elements of <span
+class="math inline">\(\{0,1\}^n \hookrightarrow \mathbb{N}\)</span>),
+and the Skein polynomial evaluates to a value distinguishing different
+inputs.</em></p></li>
+</ol>
+<p><em>If either condition fails — if programs are uncountable, or if
+the system cannot represent <span
+class="math inline">\(\mathbb{N}\)</span> — then the diagonal
+construction does not apply and the computable fragment may equal the
+full function space. A trivial category (one object, one morphism) is
+vacuously "Turing-complete" but has no non-computable sections because
+it cannot encode arithmetic.</em></p>
+<p><em><strong>Connection to the computational
+horizon.</strong></em></p>
+<p><em>Each non-computable function <span
+class="math inline">\(d\)</span> corresponds to a section <span
+class="math inline">\(E_d \in \Gamma(\mathcal{S}, A_0)\)</span> that
+does not factor through any finite braid (<a
+href="#rem:skein-turing-machine">non-computable bundles</a>). These
+sections populate the <a class="defn-link" href="#def:computational-horizon">computational horizon</a> <span
+class="math inline">\(\mathcal{H}_c = V(\mathfrak{h}_c)\)</span> (<a
+href="#def:computational-horizon">computational horizon</a>):</em></p>
+<p><em><span class="math display">\[E_d \in
+  \Gamma(\mathcal{S}, A_0)
+  \setminus
+  \Gamma_{\mathrm{fin}}(\mathcal{S}, A_0)
+  \quad\Longrightarrow\quad
+  \mathcal{H}_c \neq \varnothing.\]</span></em></p>
+<p><em>The proposition guarantees that such <span
+class="math inline">\(E_d\)</span> exist whenever the system satisfies
+arithmetic non-triviality. The <a class="defn-link" href="#def:computational-horizon">computational horizon</a> is therefore a
+<strong>necessary feature</strong> of any Turing-complete resolution
+system with <span class="math inline">\(\mathbb{N}\)</span>-embedding —
+not a contingent property of particular NP-complete links, but a
+consequence of the system’s expressive power.</em></p>
+</div>
+<p><span id="rem:incompleteness-horizon"
+data-label="rem:incompleteness-horizon"></span><span
+id="rem:stat-mech-computational-horizon"
+data-label="rem:stat-mech-computational-horizon"></span><span
+id="rem:information-paradox-incompleteness"
+data-label="rem:information-paradox-incompleteness"></span></p>
 <h2 id="sec:horizons-aeons">Horizons and Aeons</h2>
 <div id="def:jet-horizon" class="definition">
-<p><strong>Definition 8.23 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.JetHorizon" target="_blank" title="Lean: QOU.JetHorizon">&#x2200; stated</a></strong> (<span>Jet horizon (degree-<span
+<p><strong>Definition 8.24 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.JetHorizon" target="_blank" title="Lean: QOU.JetHorizon">&#x2200; stated</a></strong> (<span>Jet horizon (degree-<span
 class="math inline">\(0\)</span> vanishing locus)</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.JetHorizon"><sup><span
 style="color: BurntOrange"><span
@@ -25554,7 +25674,7 @@ class="math inline">\(0\)</span>), only statistical correlations
 class="math inline">\(2\)</span>).</em></p>
 </div>
 <div id="def:big-bang-state" class="definition">
-<p><strong>Definition 8.24 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BigBangState" target="_blank" title="Lean: QOU.BigBangState">&#x2200; stated</a></strong> (<span>Big bang state (degree-<span
+<p><strong>Definition 8.25 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BigBangState" target="_blank" title="Lean: QOU.BigBangState">&#x2200; stated</a></strong> (<span>Big bang state (degree-<span
 class="math inline">\(0\)</span> trivial configuration)</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.BigBangState"><sup><span
 style="color: BurntOrange"><span
@@ -25629,7 +25749,7 @@ indefinitely).</em></p></li>
 </ul>
 </div>
 <div id="def:cmb-boundary-datum" class="definition">
-<p><strong>Definition 8.25 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBBoundaryDatum" target="_blank" title="Lean: QOU.CMBBoundaryDatum">&#x2200; stated</a></strong> (<span>CMB as boundary datum of a
+<p><strong>Definition 8.26 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBBoundaryDatum" target="_blank" title="Lean: QOU.CMBBoundaryDatum">&#x2200; stated</a></strong> (<span>CMB as boundary datum of a
 big bang state</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CMBBoundaryDatum"><sup><span
 style="color: BurntOrange"><span
@@ -25726,7 +25846,7 @@ data-label="rem:cmb-photon-color-content"></span><span
 id="rem:hawking-radiation"
 data-label="rem:hawking-radiation"></span></p>
 <div id="def:observable-subcategory" class="definition">
-<p><strong>Definition 8.26 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ObservableSubcategory" target="_blank" title="Lean: QOU.ObservableSubcategory">&#x2200; stated</a></strong> (<span>Observable subcategory <span
+<p><strong>Definition 8.27 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ObservableSubcategory" target="_blank" title="Lean: QOU.ObservableSubcategory">&#x2200; stated</a></strong> (<span>Observable subcategory <span
 class="math inline">\(\mathrm{Bun}^{\circ}(\mathbb{P}(V))\)</span></span>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.ObservableSubcategory"><sup><span
@@ -25775,7 +25895,7 @@ light cones that can be reached from one another without crossing a jet
 horizon.</em></p>
 </div>
 <div id="def:aeon" class="definition">
-<p><strong>Definition 8.27 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Aeon" target="_blank" title="Lean: QOU.Aeon">&#x2200; stated</a></strong> (<span>Aeon</span>). <em><a
+<p><strong>Definition 8.28 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Aeon" target="_blank" title="Lean: QOU.Aeon">&#x2200; stated</a></strong> (<span>Aeon</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Aeon"><sup><span
 style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -25865,7 +25985,7 @@ need for an explicit interval <span class="math inline">\((a, b) \subset
 category, encompassing all intersecting light cones.</em></p>
 </div>
 <div id="def:horizon-functor" class="definition">
-<p><strong>Definition 8.28 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.HorizonFunctor" target="_blank" title="Lean: QOU.HorizonFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:horizon-functor">Horizon functor</a></span>).
+<p><strong>Definition 8.29 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.HorizonFunctor" target="_blank" title="Lean: QOU.HorizonFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:horizon-functor">Horizon functor</a></span>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.HorizonFunctor"><sup><span
 style="color: BurntOrange"><span
@@ -25932,7 +26052,7 @@ class="math inline">\(\Phi_t^q \to \partial\)</span> as <span
 class="math inline">\(t\)</span> approaches the aeon boundary.</em></p>
 </div>
 <div id="def:cmb-functor" class="definition">
-<p><strong>Definition 8.29 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBFunctor" target="_blank" title="Lean: QOU.CMBFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:cmb-functor">CMB functor</a></span>). <em><a
+<p><strong>Definition 8.30 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CMBFunctor" target="_blank" title="Lean: QOU.CMBFunctor">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:cmb-functor">CMB functor</a></span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CMBFunctor"><sup><span
 style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -26014,7 +26134,7 @@ generator of the horizon ideal <span class="math inline">\(\mathfrak{h}
 conformal class of <span class="math inline">\(A_0\)</span>.</em></p>
 </div>
 <div id="conj:aeon-boundary-generates-chart" class="conjecture">
-<p><strong>Conjecture 8.30 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.aeon_boundary_generates_chart" target="_blank" title="Lean: QOU.aeon_boundary_generates_chart">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:aeon">Aeon</a> recycling: <span
+<p><strong>Conjecture 8.31 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.aeon_boundary_generates_chart" target="_blank" title="Lean: QOU.aeon_boundary_generates_chart">&#x2200; stated</a></strong> (<span><a class="defn-link" href="#def:aeon">Aeon</a> recycling: <span
 class="math inline">\(\Phi_1^q \circ \mathrm{CMB}\)</span> lands in
 <span class="math inline">\(\mathrm{Bun}^{\circ}\)</span></span>).
 <em><a
@@ -26091,7 +26211,7 @@ class="math inline">\(\mathcal{R}\)</span> would be a self-recycling
 aeon: one whose CMB regenerates itself.</em></p>
 </div>
 <div id="prop:horizon-conformal-invariance" class="proposition">
-<p><strong>Proposition 8.31 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.horizon_conformal_invariance" target="_blank" title="Lean: QOU.horizon_conformal_invariance">&#x2200; stated</a></strong> (<span>Conformal invariance at the
+<p><strong>Proposition 8.32 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.horizon_conformal_invariance" target="_blank" title="Lean: QOU.horizon_conformal_invariance">&#x2200; stated</a></strong> (<span>Conformal invariance at the
 jet horizon</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.horizon_conformal_invariance"><sup><span
 style="color: BurntOrange"><span
@@ -26154,7 +26274,7 @@ consequence of the observability axioms</strong>, not an additional
 assumption.</em></p>
 </div>
 <div id="prop:qou-is-ccc" class="proposition">
-<p><strong>Proposition 8.32 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qou_is_ccc" target="_blank" title="Lean: QOU.qou_is_ccc">&#x2200; stated</a></strong> (<span>A QOU with aeons is a
+<p><strong>Proposition 8.33 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qou_is_ccc" target="_blank" title="Lean: QOU.qou_is_ccc">&#x2200; stated</a></strong> (<span>A QOU with aeons is a
 conformal cyclic cosmology</span>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.qou_is_ccc"><sup><span
 style="color: BurntOrange"><span
