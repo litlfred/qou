@@ -660,7 +660,7 @@ impl Eng {
         let effective_threshold = if eager { usize::MAX } else { mid_threshold };
 
         for k in 1..a {
-            for i in 0..k {
+            for i in (0..k).rev() {
                 let tc = Instant::now();
                 let n_before = elem.n_terms();
                 let (c, d, dbl) = crossing_sym(types[i], types[k]);
