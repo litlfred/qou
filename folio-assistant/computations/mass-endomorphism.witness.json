@@ -1,0 +1,49 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-11T13:26:36.122377+00:00",
+  "commitSha": "336f2c42d4ab7c7ccecb9cd58936d846042a492c",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "mass-endomorphism",
+  "scriptFile": "mass_endomorphism.py",
+  "scriptHash": "109d9b6f30af",
+  "scriptCommitSha": "",
+  "description": "Non-perturbative mass endomorphism via Φ_q tower. m_p/m_e = 681.2177 (CODATA: 1836.152). First computation giving correct order of magnitude from pure algebra.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "w_sym": "0.16546138476810043",
+    "w_std": "0.6690772304637992",
+    "w_alt": "0.16546138476810043"
+  },
+  "data": {
+    "electron": {
+      "vols": [
+        {
+          "std": 0.7302040595096824,
+          "full": 0.5938490006705097
+        }
+      ],
+      "descended": 0.5938490006705097,
+      "tower": 629.9354190959167,
+      "total": 630.5292680965872
+    },
+    "proton": {
+      "vols": [
+        {
+          "std": 0.8616031512365923,
+          "full": 0.719413309722418
+        },
+        {
+          "std": 0.929504244623423,
+          "full": 0.9710701586527439
+        }
+      ],
+      "descended": 0.6986007968090441,
+      "tower": 429527.01785856823,
+      "total": 429527.71645936504
+    },
+    "ratio": 681.2177296004095
+  }
+}
