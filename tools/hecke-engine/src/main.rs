@@ -976,6 +976,246 @@ fn main() {
             println!("No shell corrections, no fitting parameters.");
         }
 
+        "qvalues-garside" => {
+            // ── Nucleon-level Garside NF Q-values with Gram weights ────
+            //
+            // Q = (Σ_k w_k × ΔL1_k) × N × m_e
+            //
+            // 1. Find ground state ordering by exhaustive search (A ≤ 20)
+            // 2. Build full Garside NF for parent (all C(A,2) crossings)
+            // 3. For each neutron k, build daughter NF (swap n→p at k)
+            // 4. ΔL1_k = L1(parent) - L1(daughter_k)
+            // 5. Gram weight w_k from Frobenius norm of δ_k = parent - daughter_k
+            // 6. Q = (Σ w_k × ΔL1_k) × N × m_e
+
+            let m_e = 0.510999_f64;
+
+            struct Bench { z: usize, n: usize, name: &'static str, q_exp: f64 }
+            let benchmarks = [
+                Bench{z:1,n:2,name:"³H→³He",q_exp:0.01859},
+                Bench{z:2,n:4,name:"⁶He→⁶Li",q_exp:3.508},
+                Bench{z:6,n:8,name:"¹⁴C→¹⁴N",q_exp:0.15648},
+                Bench{z:8,n:10,name:"¹⁸O→¹⁸F",q_exp:1.732},
+                Bench{z:10,n:10,name:"²⁰Ne→²⁰Na",q_exp:11.88},
+            ];
+
+            // Override if args provided
+            let custom = if args.len() >= 4 {
+                let cz: usize = args[2].parse().unwrap();
+                let cn: usize = args[3].parse().unwrap();
+                let cq: f64 = args.get(4).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+                Some(Bench{z:cz, n:cn, name:"custom", q_exp:cq})
+            } else { None };
+
+            let run_list: Vec<&Bench> = if let Some(ref c) = custom {
+                vec![c]
+            } else {
+                benchmarks.iter().collect()
+            };
+
+            println!("NUCLEON-LEVEL GARSIDE NF Q-VALUES");
+            println!("Q = (Σ w_k × ΔL1_k) × N × m_e");
+            println!("q₀ = {:.10}, m_e = {:.6} MeV", engine.q, m_e);
+            println!("{}", "=".repeat(90));
+
+            println!("\n{:>14} {:>3} {:>6} {:>6} {:>8} {:>8} {:>8} {:>8} {:>7} {:>8}",
+                "Decay", "A", "GS", "terms", "L1_par", "Q_gram", "Q_unif", "Q_exp", "err_G", "time");
+            println!("{}", "-".repeat(90));
+
+            for b in &run_list {
+                let a = b.z + b.n;
+                let t0 = Instant::now();
+
+                // Step 1: Find ground state by exhaustive search
+                // Try all C(A, Z) orderings, pick the one with lowest Phi
+                let mut best_phi = f64::INFINITY;
+                let mut best_ordering: Vec<u8> = vec![b'p'; b.z];
+                best_ordering.extend(vec![b'n'; b.n]);
+
+                if a <= 20 {
+                    // Exhaustive search over all orderings
+                    fn combinations(positions: &mut Vec<usize>, n: usize, k: usize, start: usize, result: &mut Vec<Vec<usize>>) {
+                        if positions.len() == k { result.push(positions.clone()); return; }
+                        for i in start..n {
+                            positions.push(i);
+                            combinations(positions, n, k, i + 1, result);
+                            positions.pop();
+                        }
+                    }
+                    let mut all_combos = Vec::new();
+                    combinations(&mut Vec::new(), a, b.z, 0, &mut all_combos);
+
+                    for combo in &all_combos {
+                        let mut types = vec![b'n'; a];
+                        for &p in combo { types[p] = b'p'; }
+
+                        let vols = engine.generator_volumes_typed(&types);
+                        let phi: f64 = vols.iter()
+                            .filter(|v| v.abs() > 1e-300)
+                            .map(|v| v.abs().ln())
+                            .sum();
+
+                        if phi < best_phi {
+                            best_phi = phi;
+                            best_ordering = types;
+                        }
+                    }
+                }
+
+                // Step 2: Build parent Garside NF
+                // The build_nucleus_pauli already builds the Garside staircase
+                // (all C(A,2) crossings via the nested loop for k in 1..a, i in 0..k)
+                // We just need to use the GS ordering instead of naive.
+
+                // Convert ordering to (Z, N) with the engine's build function
+                // BUT the engine hardcodes naive ordering. We need a custom build.
+                // Use generator_volumes_typed for vertex volumes (L1 proxy)
+                // and multiply_and_reduce for the full NF.
+
+                // Build parent NF from GS ordering (with quotient for large A)
+                let mut par_elem = HeckeElement::identity();
+                let mut par_accum = PauliAccum::default();
+                let par_types = &best_ordering;
+                let use_quotient = a > 10;
+                for k in 1..a {
+                    for i in 0..k {
+                        let (c, d) = engine.crossing_coeffs(par_types[i], par_types[k]);
+                        engine.multiply_and_reduce(&mut par_elem, i as u8, c, d);
+                    }
+                    if use_quotient && k < a - 1 {
+                        let mut terms = std::mem::take(&mut par_elem.reduced);
+                        let removed = engine.apply_quotient_with_pauli(&mut terms);
+                        par_accum.tr_alt += removed.tr_alt;
+                        par_accum.net += removed.net;
+                        par_elem.reduced = terms;
+                    }
+                }
+                // L1 = kept + accumulated
+                let l1_par_kept: f64 = par_elem.reduced.values().map(|c| c.abs()).sum();
+                let l1_par = l1_par_kept + par_accum.net.abs();
+                let par_terms = par_elem.n_terms();
+
+                // Step 3: Find neutron positions
+                let neutron_positions: Vec<usize> = (0..a)
+                    .filter(|&i| best_ordering[i] == b'n')
+                    .collect();
+                let n_neutrons = neutron_positions.len();
+
+                // Step 4: For each neutron, build daughter NF
+                let mut dl1s = Vec::new();
+                let mut frob_norms = Vec::new();
+
+                for &pos in &neutron_positions {
+                    let mut dau_types = best_ordering.clone();
+                    dau_types[pos] = b'p';
+
+                    // Build daughter NF (with quotient for large A)
+                    let mut dau_elem = HeckeElement::identity();
+                    let mut dau_accum = PauliAccum::default();
+                    for k in 1..a {
+                        for i in 0..k {
+                            let (c, d) = engine.crossing_coeffs(dau_types[i], dau_types[k]);
+                            engine.multiply_and_reduce(&mut dau_elem, i as u8, c, d);
+                        }
+                        if use_quotient && k < a - 1 {
+                            let mut terms = std::mem::take(&mut dau_elem.reduced);
+                            let removed = engine.apply_quotient_with_pauli(&mut terms);
+                            dau_accum.tr_alt += removed.tr_alt;
+                            dau_accum.net += removed.net;
+                            dau_elem.reduced = terms;
+                        }
+                    }
+                    let l1_dau_kept: f64 = dau_elem.reduced.values().map(|c| c.abs()).sum();
+                    let l1_dau = l1_dau_kept + dau_accum.net.abs();
+                    let dl1 = l1_par - l1_dau;
+                    dl1s.push(dl1);
+
+                    // Step 5: Gram weight from Frobenius norm
+                    // δ_k = parent - daughter (in the NF coefficient space)
+                    // ||δ_k||²_F = Σ_{w} (c_par(w) - c_dau(w))² × tr_M(w·w)
+                    // For speed, approximate: ||δ_k||_F ≈ L2 norm of coefficient differences
+                    // weighted by z^{2*len(w)} (Markov trace of identity = z^len diagonal)
+                    let mut frob2 = 0.0_f64;
+                    let mut all_words: std::collections::HashSet<&Word> = std::collections::HashSet::new();
+                    for w in par_elem.reduced.keys() { all_words.insert(w); }
+                    for w in dau_elem.reduced.keys() { all_words.insert(w); }
+
+                    for w in &all_words {
+                        let cp = par_elem.reduced.get(*w).copied().unwrap_or(0.0);
+                        let cd = dau_elem.reduced.get(*w).copied().unwrap_or(0.0);
+                        let delta = cp - cd;
+                        if delta.abs() > 1e-15 {
+                            // Approximate Gram diagonal: tr_M(w·w) ≈ z^{2*len(w)}
+                            // (exact for the identity; approximation for longer words)
+                            let gram_diag = engine.z.powi(2 * w.len() as i32);
+                            frob2 += delta * delta * gram_diag;
+                        }
+                    }
+                    frob_norms.push(frob2.abs().sqrt());
+                }
+
+                // Normalize Gram weights
+                let total_frob: f64 = frob_norms.iter().sum();
+                let weights: Vec<f64> = if total_frob > 1e-15 {
+                    frob_norms.iter().map(|f| f / total_frob).collect()
+                } else {
+                    vec![1.0 / n_neutrons as f64; n_neutrons]
+                };
+
+                // Step 6: Q-values
+                let weighted_avg: f64 = weights.iter().zip(dl1s.iter()).map(|(w, d)| w * d).sum();
+                let q_gram = weighted_avg * n_neutrons as f64 * m_e;
+                let q_uniform: f64 = dl1s.iter().sum::<f64>() * m_e;
+
+                // Also: parabolic q^{-k(N-1-k)} weight
+                let q_parab: f64 = dl1s.iter().enumerate()
+                    .map(|(k, dl)| {
+                        let exp = (k * (n_neutrons - 1 - k)) as f64;
+                        engine.qi.powf(exp) * dl
+                    }).sum::<f64>() * m_e;
+
+                // Also: vertex volume formula for comparison
+                let vols_par = engine.generator_volumes_typed(par_types);
+                let mut best_dau_types = best_ordering.clone();
+                // Use the GS daughter
+                let mut best_dau_phi = f64::INFINITY;
+                for &pos in &neutron_positions {
+                    let mut dau_t = best_ordering.clone();
+                    dau_t[pos] = b'p';
+                    let dau_v = engine.generator_volumes_typed(&dau_t);
+                    let phi: f64 = dau_v.iter().filter(|v| v.abs()>1e-300).map(|v| v.abs().ln()).sum();
+                    if phi < best_dau_phi { best_dau_phi = phi; best_dau_types = dau_t; }
+                }
+                let vols_dau = engine.generator_volumes_typed(&best_dau_types);
+                let n_common = vols_par.len().min(vols_dau.len());
+                let sum_dv: f64 = (0..n_common).map(|i| vols_dau[i] - vols_par[i]).sum();
+                let q_vv = sum_dv.abs() * engine.z * engine.z * m_e;
+
+                let elapsed = t0.elapsed().as_millis();
+                let err_gram = if b.q_exp > 0.0 { (q_gram / b.q_exp - 1.0) * 100.0 } else { 0.0 };
+
+                // GS ordering as compact string
+                let gs_str: String = best_ordering.iter().map(|&t| if t == b'p' {'p'} else {'n'}).collect();
+                let gs_short = if gs_str.len() > 6 { format!("{}...", &gs_str[..6]) } else { gs_str.clone() };
+
+                println!("{:>14} {:>3} {:>6} {:>6} {:>8.4} {:>8.4} {:>8.4} {:>8.4} {:>+6.1}% {:>6}ms",
+                    b.name, a, gs_short, par_terms, l1_par, q_gram, q_uniform, b.q_exp, err_gram, elapsed);
+
+                // Detailed output
+                eprintln!("  {} (Z={}, N={}, A={})", b.name, b.z, b.n, a);
+                eprintln!("    GS: {}", gs_str);
+                eprintln!("    Parent: {} terms, L1 = {:.6}", par_terms, l1_par);
+                eprintln!("    Neutrons: {:?}", neutron_positions);
+                for (k, &pos) in neutron_positions.iter().enumerate() {
+                    eprintln!("      k={}: pos={}, ΔL1={:+.6}, w={:.4}, ||δ||={:.6}",
+                        k, pos, dl1s[k], weights[k], frob_norms[k]);
+                }
+                eprintln!("    Q_gram={:.4}, Q_uniform={:.4}, Q_parab={:.4}, Q_vv={:.4}",
+                    q_gram, q_uniform, q_parab, q_vv);
+                eprintln!("    Q_exp={:.4}, err_gram={:+.1}%", b.q_exp, err_gram);
+            }
+        }
+
         _ => { eprintln!("Unknown: {}", args[1]); std::process::exit(1); }
     }
 }

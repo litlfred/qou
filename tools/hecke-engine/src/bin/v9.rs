@@ -638,10 +638,14 @@ impl Eng {
     }
 
     fn build(z: usize, n: usize, mid_threshold: usize) -> (Elem, SymPauliAcc) {
-        let a = z + n;
-        let ha = ha_poly();
         let mut types = vec![b'p'; z];
         types.extend(vec![b'n'; n]);
+        Self::build_with_ordering(&types, mid_threshold)
+    }
+
+    fn build_with_ordering(types: &[u8], mid_threshold: usize) -> (Elem, SymPauliAcc) {
+        let a = types.len();
+        let ha = ha_poly();
         let mut elem = Elem::identity();
         let mut accum = SymPauliAcc::zero();
         let t0 = Instant::now();
@@ -719,6 +723,54 @@ fn main() {
         std::process::exit(1);
     }
 
+    // Check for qvalue mode: hecke-bigint qvalue ORDERING
+    // e.g.: hecke-bigint qvalue npnpnn
+    if args.len() >= 3 && args[1] == "qvalue" {
+        let ordering_str = &args[2];
+        let types: Vec<u8> = ordering_str.chars().map(|c| match c {
+            'p' | '1' => b'p',
+            'n' | '0' => b'n',
+            _ => panic!("Invalid ordering char: {}", c),
+        }).collect();
+        let a = types.len();
+        let z = types.iter().filter(|&&t| t == b'p').count();
+        let n = a - z;
+        let mid_threshold: usize = args.get(3).and_then(|s| s.parse().ok())
+            .unwrap_or(if a > 20 { 0 } else { 999999 });
+
+        eprintln!("hecke-bigint v9 — Q-value mode");
+        eprintln!("  ordering: {} (Z={}, N={}, A={})", ordering_str, z, n, a);
+
+        let t0 = Instant::now();
+        let (mut elem, accum) = Eng::build_with_ordering(&types, mid_threshold);
+
+        let mut total = accum.clone();
+        let mut kept = SymPauliAcc::zero();
+        kept.add_from_elem(&elem);
+        total.merge(&kept);
+
+        // Pre-strip L1
+        let q0_eval: f64 = 1.10998;
+        let t0_val = q0_eval.sqrt();
+        let pn_denom = 2.0_f64.powi(elem.pn_count as i32);
+        let l1_kept: f64 = elem.terms.values()
+            .map(|poly| poly.eval_f64(t0_val).abs())
+            .sum::<f64>() / pn_denom;
+        let l1_accum: f64 = accum.net_by_len.iter()
+            .map(|poly| poly.eval_f64(t0_val).abs())
+            .sum::<f64>() / pn_denom;
+        let l1_total = l1_kept + l1_accum;
+        let words = elem.n_terms();
+        let elapsed = t0.elapsed().as_secs_f64();
+
+        // JSON output for scripting
+        println!("{{\"ordering\":\"{}\",\"z\":{},\"n\":{},\"a\":{},\"words\":{},\"l1\":{:.10},\"l1_kept\":{:.10},\"l1_accum\":{:.10},\"elapsed_s\":{:.3}}}",
+            ordering_str, z, n, a, words, l1_total, l1_kept, l1_accum, elapsed);
+
+        eprintln!("  {} words, L1(q₀) = {:.10}, {:.1}s", words, l1_total, elapsed);
+        std::process::exit(0);
+    }
+
     let z: usize = args[1].parse().unwrap();
     let n: usize = args[2].parse().unwrap();
     let mid_threshold: usize = args.get(3).and_then(|s| s.parse().ok())
@@ -738,6 +790,24 @@ fn main() {
     let mut kept = SymPauliAcc::zero();
     kept.add_from_elem(&elem);
     total.merge(&kept);
+
+    // ── Pre-strip L1 norm: Σ|c_w(q₀)| before any stripping ──────
+    // This is the full NF complexity measure needed for Q-values.
+    let q0_eval: f64 = 1.10998;
+    let t0_eval = q0_eval.sqrt();
+    let pre_strip_l1: f64 = elem.terms.values()
+        .map(|poly| poly.eval_f64(t0_eval).abs())
+        .sum();
+    let pre_strip_l1_accum: f64 = accum.net_by_len.iter()
+        .map(|poly| poly.eval_f64(t0_eval).abs())
+        .sum::<f64>() / 2.0_f64.powi(elem.pn_count as i32);
+    let pre_strip_words = elem.n_terms();
+    let pn_denom = 2.0_f64.powi(elem.pn_count as i32);
+    eprintln!("\n  Pre-strip: {} words, L1(q₀) = {:.10} (kept {:.6} + accum {:.6})",
+        pre_strip_words,
+        pre_strip_l1 / pn_denom + pre_strip_l1_accum,
+        pre_strip_l1 / pn_denom,
+        pre_strip_l1_accum);
 
     // Final full strip: the mid-construction strip can't remove all words
     // because prefixes created by later crossings weren't present yet.
