@@ -69,6 +69,7 @@ export default chapter({
         "mass-comparison-table",
         "mass-formula-validation",
         "atom-mass-full-hecke",
+        "feynman-qou-comparison",
         "neutron-proton-mass-splitting",
         "photon-channel-wedderburn-chain",
         "terminal-resolution-proof",
