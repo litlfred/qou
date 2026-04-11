@@ -211,6 +211,7 @@ export default chapter({
         // Typed Garside element and Gram-weighted Q-value
         "typed-garside-element",
         "two-stage-garside",
+        "garside-emergent-structure",
         "gram-weighted-qvalue",
         "gram-weight-eigenstructure",
         "negative-debt-confinement",

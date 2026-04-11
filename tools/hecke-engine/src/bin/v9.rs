@@ -768,9 +768,15 @@ fn main() {
         let words = elem.n_terms();
         let elapsed = t0.elapsed().as_secs_f64();
 
+        // Compute f_pauli = |tr_alt / net| at q₀
+        let t0_val = q0_eval.sqrt();
+        let tr_alt_val = total.tr_alt.eval_f64(t0_val) / pn_denom;
+        let net_val = total.net.eval_f64(t0_val) / pn_denom;
+        let f_pauli = if net_val.abs() > 1e-30 { (tr_alt_val / net_val).abs() } else { 0.0 };
+
         // JSON output for scripting
-        println!("{{\"ordering\":\"{}\",\"z\":{},\"n\":{},\"a\":{},\"words\":{},\"l1\":{:.10},\"l1_kept\":{:.10},\"l1_accum\":{:.10},\"elapsed_s\":{:.3}}}",
-            ordering_str, z, n, a, words, l1_total, l1_kept, l1_accum, elapsed);
+        println!("{{\"ordering\":\"{}\",\"z\":{},\"n\":{},\"a\":{},\"words\":{},\"l1\":{:.10},\"l1_kept\":{:.10},\"l1_accum\":{:.10},\"f_pauli\":{:.10},\"tr_alt\":{:.10e},\"net\":{:.10e},\"elapsed_s\":{:.3}}}",
+            ordering_str, z, n, a, words, l1_total, l1_kept, l1_accum, f_pauli, tr_alt_val, net_val, elapsed);
 
         eprintln!("  {} words, L1(q₀) = {:.10}, {:.1}s", words, l1_total, elapsed);
         std::process::exit(0);
