@@ -308,6 +308,7 @@ export default chapter({
         "algebraic-quantum-volume-specialization",
         "quantum-bloch-group",
         "degree-two-baryon-weight",
+        "hook-weight-derivation",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
