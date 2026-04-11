@@ -110,6 +110,21 @@ pull $\hat{V}^{\mathrm{full}}$ away from zero, replacing the
 logarithmic singularity $\ln|0.002| \approx -6.1$ with
 $\ln|0.14| \approx -1.9$.*
 
+**Brane tower correction.**
+*The single-level formula above computes the traced volume at
+brane level $n = 0$.  The full tower
+([topological decomposition](#thm:topological-mass)) multiplies
+the product $\prod_i \hat{V}_i^{\mathrm{full}}$ by the
+constant factor $\mathrm{Li}_2(q^{-2}) \approx 1.098$, adding
+$\ln\mathrm{Li}_2(q^{-2}) \approx +0.094$ to
+$\sum_i \ln|\hat{V}_i^{\mathrm{full}}|$.  This correction is
+uniform across generators because each brane level $n$
+contributes $q^{-2n}/n^2$ to the dilogarithm series, independent
+of the crossing pattern.  Level~1 captures $73.9\%$ of the
+tower; levels $1$--$3$ capture $94.3\%$; levels $1$--$10$
+capture $99.75\%$.  The tower correction is $< 1\%$ of $\Phi$
+and does not materially change the accuracy.*
+
 **Log-separated approximation.**
 *The additive formula can be approximated by separating the
 logarithms:*
