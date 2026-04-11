@@ -3,6 +3,13 @@ known element ($Z = 1$ through $Z = 118$) from the QOU topological
 mass formula.  Every intermediate step is shown so that the reader
 can reproduce each result independently.
 
+For $Z = 1$--$20$, the complete Wedderburn mass formula
+([three-invariant mass formula](#prop:wedderburn-mass-formula))
+gives masses with $0.074\%$ mean error and **zero fitted
+parameters**.  For $Z > 20$, the same formula applies but the
+ground-state ordering search uses steepest descent rather than
+exact enumeration.
+
 The elements divide into two groups:
 
 - **Naturally occurring** ($Z = 1$--$92$, Hydrogen through
@@ -20,34 +27,48 @@ The elements divide into two groups:
 
 The mass of a neutral atom with $Z$ protons, $N$ neutrons, and
 $Z$ electrons is
+([three-invariant mass formula](#prop:wedderburn-mass-formula)):
 
 $$
   \mathcal{M}(Z, N)
-  = 
+  =
   Z \cdot m_{\mathfrak{p}}
-  + 
-  N \cdot m_{\mathfrak{n}}
-  + 
-  Z \cdot m_e
-  - 
-  B(Z, N)
+  + N \cdot m_{\mathfrak{n}}
+  + Z \cdot m_e
+  + \alpha\bigl(\Phi_1 - 2[3]_q \cdot \Phi_2 + H_A^2 \cdot \Phi_3\bigr)
 $$
 
-where:
+where $\Phi_1$, $\Phi_2$, $\Phi_3$ are the three Wedderburn
+invariants of the atomic braid $H_{A+Z}(q)$ and
+$\alpha = m_e \times 8G$ ($G$ = Catalan's constant).
 
-1. $m_{\mathfrak{p}}$ is the proton mass from the pair Skein
-   formula ([terminal resolution](#prop:terminal-resolution)):
+The constituent masses are derived from $q_0$ and $m_e$:
+
+1. $m_{\mathfrak{p}}$ is the proton mass from the Picard--Lefschetz
+   thimble:
 
    $$
      m_{\mathfrak{p}}
-     = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
+     = \frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2}
+       \cdot A(q_0) \cdot m_e
+     \approx 938.230 \;\mathrm{MeV}
    $$
 
-2. $m_{\mathfrak{n}}$ is the neutron mass:
+   where $\mathrm{Vol}(\mathcal{B}_3) = 8G$ is the hyperbolic
+   volume of the Borromean rings and $A(q_0) \approx 2.460$ is
+   the color amplification from the product of three prolongations
+   $\prod_k \mathrm{d}c_k/\mathrm{d}z$.
+
+2. $m_{\mathfrak{n}}$ is the neutron mass
+   ([neutron--proton splitting](#prop:neutron-proton-splitting)):
 
    $$
      m_{\mathfrak{n}}
-     = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
+     = m_{\mathfrak{p}}
+       + \alpha \cdot
+         \lvert\Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d})
+         - \Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d})\rvert
+     \approx 939.532 \;\mathrm{MeV}
    $$
 
 3. $m_e$ is the electron mass from the trefoil knot

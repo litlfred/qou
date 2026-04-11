@@ -105,5 +105,15 @@ export default chapter({
         "beta-decay-braid-visualizer",
       ],
     }),
+    // ── §8. Atomic braid and Wedderburn mass formula ───────────
+    section({
+      title: "Atomic braid and Wedderburn mass formula",
+      label: "sec:atomic-braid-mass",
+      blocks: [
+        "atomic-braid-mass",
+        "atomic-nf-witness",
+        "groebner-reduction-methods",
+      ],
+    }),
   ],
 });

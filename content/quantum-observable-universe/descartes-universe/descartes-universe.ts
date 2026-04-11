@@ -271,6 +271,14 @@ export default chapter({
       blocks: [
         // Topological mass (Descartes-specific applications)
         "hyperbolic-volumes-prose",
+        // Algebraic independence of hyperbolic volumes
+        "hyperbolic-volume-transcendence",
+        "volume-tower-decomposition",
+        "cs-evaluation-faithfulness",
+        "single-volume-irrationality",
+        "borel-zagier-qou-volumes",
+        "formal-chain-transcendence-remark",
+        "yekutieli-transcendence-shadow",
         // Skein decomposition and hadronic mass
         "intro",
         "terminal-resolution",

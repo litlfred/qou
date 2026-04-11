@@ -49,6 +49,18 @@ export default chapter({
     }),
 
     section({
+      title: "Feynman Path Integrals as a Special Case",
+      label: "sec:feynman-special-case",
+      blocks: [
+        "feynman-categorical-trace",
+        "feynman-categorical-trace-proof",
+        "feynman-classical-limit",
+        "feynman-classical-limit-interpretation",
+        "feynman-qou-dictionary",
+      ],
+    }),
+
+    section({
       title: "Braid group and symmetric group",
       label: "sec:braid-symmetric",
       blocks: [
@@ -289,6 +301,14 @@ export default chapter({
         "mass-element-nf",
         "calibration-inputs",
         "three-parameters-wedderburn",
+        "binding-scale-catalan",
+        "wedderburn-mass-formula",
+        "algebraic-quantum-volume",
+        "habiro-ring",
+        "algebraic-quantum-volume-specialization",
+        "quantum-bloch-group",
+        "degree-two-baryon-weight",
+        "hook-weight-derivation",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",

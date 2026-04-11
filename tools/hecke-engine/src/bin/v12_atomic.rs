@@ -226,6 +226,9 @@ fn crossing(ti: u8, tj: u8) -> (L, L, bool) {
 }
 
 fn mul_reduce(terms: &mut FxHashMap<W, L>, gen: u8, c: &L, d: &L, h: &L) {
+    // LP-dual optimized reduction: cancellation-first ordering.
+    // Process Rule 0 (σ²→HA·σ+1) BEFORE Rules 1,2 when the shortened
+    // word exists in stable → maximizes early cancellation.
     let old: Vec<(W, L)> = terms.drain().collect();
     let mut stable: FxHashMap<W, L> = FxHashMap::default();
     let mut pending: Vec<(W, L)> = Vec::new();
@@ -236,7 +239,35 @@ fn mul_reduce(terms: &mut FxHashMap<W, L>, gen: u8, c: &L, d: &L, h: &L) {
     for _ in 0..500000 {
         let mut next: Vec<(W, L)> = Vec::new();
         let mut any = false;
+
+        // LP DUAL: partition pending into cancellation-first (Rule 0 where
+        // shortened word exists in stable) and rest.
+        let mut cancel_first: Vec<(W, L)> = Vec::new();
+        let mut rest: Vec<(W, L)> = Vec::new();
         for (w, co) in pending {
+            if co.is_zero() { continue; }
+            if let Some((pos, 0)) = w.junction().or_else(|| {
+                // Only check for Rule 0 here
+                let n = w.len();
+                for p in 0..n.saturating_sub(1) {
+                    if w.get(p) == w.get(p+1) { return Some((p, 0)); }
+                }
+                None
+            }) {
+                // Rule 0: check if shortened word exists in stable
+                let w2 = w.remove_at(pos+1).remove_at(pos);
+                if stable.contains_key(&w2) {
+                    cancel_first.push((w, co));
+                } else {
+                    rest.push((w, co));
+                }
+            } else {
+                rest.push((w, co));
+            }
+        }
+
+        // Process cancellation candidates first
+        for (w, co) in cancel_first.into_iter().chain(rest.into_iter()) {
             if co.is_zero() { continue; }
             let red = w.junction().or_else(|| w.find_red());
             if let Some((pos, rule)) = red {
@@ -351,16 +382,13 @@ fn main() {
     let mut pn: u32 = 0;
     let t0 = Instant::now();
 
-    // Build the braid element: for each pair (i < k), apply crossing
+    // Build the braid element: crossings in BRAID ORDER (non-commutative!)
+    // Cannot reorder arbitrarily — only far-commuting (|i-j|≥2) can swap.
+    // LP optimization applies to REDUCTION order within mul_reduce, not crossing order.
     for k in 1..total {
         for i in 0..k {
             let (c, d, dbl) = crossing(types[i], types[k]);
             if dbl { pn += 1; }
-            // Skip identity crossings (c=0, d=1)
-            if c.is_zero() && !d.is_zero() {
-                // d=1 → identity, no change to terms
-                continue;
-            }
             mul_reduce(&mut terms, i as u8, &c, &d, &h);
         }
         let pair_name = |t: u8| match t { b'p'=>"p", b'n'=>"n", b'e'=>"e", _=>"?" };

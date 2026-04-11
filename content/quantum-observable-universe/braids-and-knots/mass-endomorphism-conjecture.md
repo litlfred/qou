@@ -106,6 +106,19 @@ involves:
 
 Each step moves away from the Hecke algebra at generic $q$.
 
+The **Habiro ring** ([Habiro ring](#def:habiro-ring)) partially
+closes this gap: the colored Jones polynomials for all $N$
+coexist as a single element of $\widehat{\mathbb{Z}[q]}$.
+The algebraic quantum volume
+([algebraic quantum volume](#def:algebraic-quantum-volume))
+$\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into
+$\widehat{\mathbb{Z}[q^{1/2}]}$, and its evaluations at
+roots of unity collectively encode the hyperbolic volume via
+the Volume Conjecture.  The mass at $q_0$ is a **different**
+specialisation of the same Habiro element — not through roots
+of unity, but through direct evaluation at the substrate
+parameter.
+
 ## What $\Phi_{\mathrm{mass}}$ would need to encode
 
 The brane tower $\{A_n\}$ provides the categorical version of
