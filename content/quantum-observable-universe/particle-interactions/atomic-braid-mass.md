@@ -66,42 +66,70 @@ $$
   Z \cdot m_{\mathfrak{p}}
   + N \cdot m_{\mathfrak{n}}
   + Z \cdot m_e
-  + \alpha \bigl(\Phi_1 - 2[3]_q \cdot \Phi_2 + H_A^2 \cdot \Phi_3\bigr)
+  + \alpha \sum_i \ln\lvert \hat{V}_i^{\mathrm{full}} \rvert
 $$
 
-*where the three Wedderburn invariants of the $2 \times 2$
-transfer matrix chain are:*
+*where the **full traced volume** per generator is the
+Wedderburn-weighted sum:*
 
 $$
-  \Phi_1 = \sum_i \ln\lvert \hat{V}_i \rvert, \qquad
-  \Phi_2 = \sum_i \ln\lvert \det M_i \rvert, \qquad
-  \Phi_3 = \sum_i \ln\left\lvert \frac{\lambda_i^{\mathrm{sym}}}
-    {\lambda_i^{\mathrm{alt}}}\right\rvert
+  \hat{V}_i^{\mathrm{full}}
+  =
+  w_{\mathrm{sym}} \cdot \lambda_i^{\mathrm{sym}}
+  + w_{\mathrm{std}} \cdot \hat{V}_i^{\mathrm{std}}
+  + w_{\mathrm{alt}} \cdot \lambda_i^{\mathrm{alt}}
+$$
+
+*with Wedderburn--Markov weights
+$w_\lambda = \dim_q(\lambda)^2 / [3]_q!$ evaluated at the
+baryon level $n = 3$:*
+
+$$
+  w_{\mathrm{sym}} = w_{\mathrm{alt}}
+  = \frac{1}{[3]_q!} \approx 0.165, \qquad
+  w_{\mathrm{std}} = \frac{[2]_q^2}{[3]_q!} \approx 0.669
 $$
 
 *and:*
 - *$\alpha = m_e \times 8G$ where $G \approx 0.9160$ is Catalan's
   constant and $\mathrm{Vol}(\mathcal{B}_3) = 8G$ (theorem, not
   numerical).*
-- *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$ is the quantum
-  3-integer (baryon degree).*
-- *$H_A = q - q^{-1}$ is the Hecke parameter.*
-- *$\hat{V}_i = z \cdot a_i + b_i$ is the traced volume of
-  generator $i$ (standard representation trace).*
-- *$\det M_i$ is the determinant of the $2 \times 2$ transfer
-  matrix for generator $i$ (equal to
-  $\lambda_i^{\mathrm{sym}} \cdot \lambda_i^{\mathrm{alt}}$).*
-- *$\lambda_i^{\mathrm{sym}} / \lambda_i^{\mathrm{alt}}$ is the
-  ratio of symmetric to alternating eigenvalues (chirality).*
+- *$\hat{V}_i^{\mathrm{std}} = z \cdot a_i + b_i$ is the traced
+  volume of generator $i$ (standard representation trace).*
+- *$\lambda_i^{\mathrm{sym}} = \prod_j (c_j q + d_j)$ and
+  $\lambda_i^{\mathrm{alt}} = \prod_j (-c_j q^{-1} + d_j)$ are
+  the symmetric and alternating eigenvalue products.*
 
-*These three invariants are **complete**: the Wedderburn
-decomposition of $H_n(q)$ has three blocks (symmetric, standard,
-alternating), and the transfer matrix chain produces exactly three
-independent scalar invariants per generator.  No higher-degree
-invariants exist.*
-
-*All quantities are derived from $q_0$ and $m_e$.  The formula has
+*All weights are derived from $q_0$.  The formula has
 **zero fitted parameters**.*
+
+*The additive formula regularises the near-zero generator
+($\hat{V}^{\mathrm{std}} \approx 0.002$ for $A \geq 4$): the
+symmetric and alternating channels contribute $O(1)$ terms that
+pull $\hat{V}^{\mathrm{full}}$ away from zero, replacing the
+logarithmic singularity $\ln|0.002| \approx -6.1$ with
+$\ln|0.14| \approx -1.9$.*
+
+**Log-separated approximation.**
+*The additive formula can be approximated by separating the
+logarithms:*
+
+$$
+  \sum_i \ln\lvert \hat{V}_i^{\mathrm{full}} \rvert
+  \approx
+  \Phi_1 + \beta_2 \Phi_2 + \beta_3 \Phi_3
+$$
+
+*where $\Phi_1 = \sum \ln|\hat{V}^{\mathrm{std}}|$,
+$\Phi_2 = \sum \ln|\det M_i|$,
+$\Phi_3 = \sum \ln|\lambda^{\mathrm{sym}}/\lambda^{\mathrm{alt}}|$,
+with $\beta_2 = -2[3]_q$ (motivated) and
+$\beta_3 \approx 0.050$ (fitted).  This effective formula
+achieves $0.074\%$ mean error with one fitted parameter,
+compared to $0.146\%$ for the exact additive formula with
+zero fitted parameters.  The fitted $\beta_3$ compensates
+for $\mathcal{B}_3$ dressing of hydrogen and ordering effects
+in heavy nuclei.*
 
 
 ## Neutron--proton mass splitting
