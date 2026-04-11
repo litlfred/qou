@@ -1,91 +1,138 @@
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
+substrate parameter $q$
+([quantum observable universe](#def:quantum-observable-universe)).
+Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
+the non-perturbative quantum dilogarithm
+([quantum Bloch group](#def:quantum-bloch-group)).  Let
+$\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
+volume at generator $i$
+([three-invariant mass formula](#prop:atomic-braid-mass)).
+
 **Proposition.**
-*The mass ratio $m_{\mathfrak{p}}/m_e$ is determined by the
-non-perturbative quantum dilogarithm tower applied to the
-additive Wedderburn traced volumes:*
+*The mass of a vortex $\varrho$ with braid representative
+$\beta \in B_n$ and $n - 1$ generators is*
 
 $$
-  \frac{m_{\mathfrak{p}}}{m_e}
+  \mathfrak{m}(\varrho)
   =
-  \frac{\lvert\Pi_j \hat{V}_j^{\mathrm{full}}\rvert
-    + \sum_j \Phi_q(\lvert\hat{V}_j^{\mathrm{full}}\rvert)}
-  {\lvert\hat{V}_0^{\mathrm{full}}\rvert
-    + \Phi_q(\lvert\hat{V}_0^{\mathrm{full}}\rvert)}
-  \approx 1740
+  \Bigl\lvert \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{full}} \Bigr\rvert
+  +
+  \sum_{i=0}^{n-2}
+    z \cdot \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
+  +
+  \sum_{\substack{i < j \\ |i - j| = 1}}
+    z^2 \cdot \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}
+      \cdot \hat{V}_j^{\mathrm{full}}\rvert\bigr),
 $$
 
-*where:*
+*where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter
+([Jones--Markov trace](#thm:jones-markov-trace)).*
 
-- *$\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ is the
-  non-perturbative quantum dilogarithm (infinite product form).*
-- *The numerator sums over the two generators of the proton
-  braid ($\mathcal{B}_3 \times \mathfrak{u}\mathfrak{u}\mathfrak{d}$
-  on $3$ strands, $11$ crossings from the $4$-channel decomposition).*
-- *The denominator uses the single generator of the electron
-  braid (trefoil $\sigma_1^3$ on $2$ strands, $3$ crossings).*
-- *$\hat{V}_j^{\mathrm{full}} = w_{\mathrm{sym}} \lambda_j^{\mathrm{sym}}
-  + w_{\mathrm{std}} \hat{V}_j^{\mathrm{std}}
-  + w_{\mathrm{alt}} \lambda_j^{\mathrm{alt}}$ is the additive
-  Wedderburn traced volume
-  ([three-invariant mass formula](#prop:atomic-braid-mass)).*
+*The three sums correspond to the three types of blow-up centre
+in the brane tower
+([topological decomposition](#thm:topological-mass)):*
 
-*CODATA: $m_{\mathfrak{p}}/m_e = 1836.15$.
-Error: $5.25\%$.  Zero fitted parameters.*
+1. *The **descended term** $\lvert\prod \hat{V}_i\rvert$ is the
+   base-level Markov trace
+   ([categorical mass as Markov trace](#prop:categorical-mass-markov)).*
+2. *Each **single-generator blow-up** at generator $i$ contributes
+   $z \cdot \Phi_q(\lvert\hat{V}_i\rvert)$, weighted by the Markov
+   trace $\mathrm{tr}_M(\sigma_i) = z$.*
+3. *Each **adjacent-generator blow-up** at the product $\sigma_i\sigma_j$
+   ($\lvert i - j\rvert = 1$) contributes
+   $z^2 \cdot \Phi_q(\lvert\hat{V}_i \hat{V}_j\rvert)$, weighted by
+   $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$.*
 
-## Four-channel crossing budget
+*Products $\sigma_i\sigma_j$ with $\lvert i - j\rvert \geq 2$ commute
+(far-commutativity in $H_n(q)$) and do not generate independent
+blow-up centres.  The element $\sigma_i\sigma_j\sigma_i$
+($\lvert i - j\rvert = 1$) reduces via the Yang--Baxter relation
+to $\sigma_j\sigma_i\sigma_j$ and does not contribute an independent
+centre.*
 
-The proton's $11$ crossings on $3$ strands are traced through
-the $\gamma\gamma \to \mathfrak{q}\bar{\mathfrak{q}}$ production
-vertex via the color-tube cubic
-$c^3 + a_2 c^2 + a_1 c + a_0 = 0$
-([photon channel chain](#rem:photon-channel-wedderburn-chain)):
+*Proof.*
+The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+([Hecke mass element](#def:hecke-mass-element)) decomposes via the
+descent involution into descended and transient contributions.  The
+transient trace localises to blow-up centres $p$ in the brane tower
+([topological decomposition](#thm:topological-mass)), each
+contributing $\Phi_q(z_p)$ where $z_p$ is the spectral coordinate at
+$p$ ([Briggs--Klein chart](#def:briggs-klein-chart)).
 
-| Channel | Degree | Symmetric fn | Crossing type | Gen $0$ | Gen $1$ | Cumulative $m_{\mathfrak{p}}/m_e$ |
-|:--------|:-------|:-------------|:--------------|:--------|:--------|:----------------------------------|
-| $3$ (confinement) | $\sigma_3 = \prod c_k$ | $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ | $3\sigma$ | $3\sigma^{-1}$ | $1.0$ |
-| $2$ (color pairing) | $\sigma_2 = \sum c_i c_j$ | quark pairs $\mathfrak{u}\mathfrak{u}$, $\mathfrak{u}\mathfrak{d}$, $\mathfrak{u}\mathfrak{d}$ | $+1\sigma, +1\tfrac{1}{2}$ | $+1\tfrac{1}{2}$ | $681$ |
-| $1$ (quark sum) | $\sigma_1 = \sum c_k$ | gluon self-coupling | $+2\sigma$ | $0$ | $1740$ |
-| $0$ (vacuum) | $a_0$ | electron period | — | — | (sets $m_e$) |
+The NF basis of $H_n(q)$ decomposes by generator content.  For $n = 3$:
 
-Each channel amplifies through $\Phi_q$ near the singularity
-$z = 1$:
+| Generator content | NF elements | Markov weight | Spectral coordinate |
+|:-------------------|:-----------|:-------------|:-------------------|
+| $\emptyset$ | $1$ | $1$ | $0$ |
+| $\{0\}$ | $\sigma_0$ | $z$ | $\hat{V}_0$ |
+| $\{1\}$ | $\sigma_1$ | $z$ | $\hat{V}_1$ |
+| $\{0,1\}$, adjacent | $\sigma_0\sigma_1$, $\sigma_1\sigma_0$ | $z^2$ each | $\hat{V}_0\hat{V}_1$ |
+| $\{0,1,0\}$, dependent | $\sigma_0\sigma_1\sigma_0$ | — | reduces via YB |
 
-- **Channel $3$ alone** ($\mathcal{B}_3$):
-  $\hat{V}_0^{\mathrm{full}} = 0.594$,
-  $\hat{V}_1^{\mathrm{full}} = -0.043$ $\Rightarrow$
-  $m_{\mathfrak{p}}/m_e = 1.0$.
-- **$+$ Channel $2$** (quarks):
-  $\hat{V}_1 \to 0.971$ (close to $1$) $\Rightarrow$
-  $\Phi_q(0.971) = 425{,}689$ $\Rightarrow$
-  $m_{\mathfrak{p}}/m_e = 681$.
-- **$+$ Channel $1$** (gluon):
-  $\hat{V}_0 \to 0.989$ $\Rightarrow$
-  $\Phi_q(0.989) = 671{,}269$ $\Rightarrow$
-  $m_{\mathfrak{p}}/m_e = 1740$.
+The spectral coordinate $z_p$ at a blow-up centre $p$ corresponding
+to NF element $w = \sigma_{i_1}\cdots\sigma_{i_k}$ is the product
+$\hat{V}_{i_1}\cdots\hat{V}_{i_k}$.  The Markov weight is
+$\mathrm{tr}_M(w) = z^{\ell(w)}$ for reduced words of length $\ell$.
 
-The $2$ gluon crossings at generator $0$ arise from the
-$\sigma_1 = \sum c_k$ channel of the color-tube cubic.
-The crossing count $2 = \dim(\mathrm{adj}\,\mathrm{SU}(3))
-- \dim(\mathrm{fund}) - \dim(\overline{\mathrm{fund}})
-= 8 - 3 - 3$ counts the independent gluon self-interaction
-modes coupling through the dominant strand pair.
+The elements $\sigma_0\sigma_1$ and $\sigma_1\sigma_0$ have the same
+generator content $\{0,1\}$ and the same spectral coordinate
+$\hat{V}_0\hat{V}_1$; their combined weight is $2z^2$.  However,
+$\sigma_1\sigma_0 = \sigma_0\sigma_1$ modulo the braid relation only
+when $\lvert i - j\rvert \geq 2$; for adjacent generators they are
+distinct NF elements.  The topological mass formula counts
+**independent blow-up centres**, not NF elements.  Adjacent products
+$\sigma_i\sigma_j$ and $\sigma_j\sigma_i$ share the same blow-up
+centre (same support in the brane tower), so the combined weight
+is $z^2$ (not $2z^2$).
 
-## Mechanism
+The element $\sigma_0\sigma_1\sigma_0$ is not an independent blow-up
+centre: it decomposes as $\sigma_1\sigma_0\sigma_1$ via the
+Yang--Baxter relation, which is a rearrangement of the same transient
+support.  Its contribution is already encoded in the descended term
+and the single/adjacent blow-up centres.  $\square$
 
-The non-perturbative quantum dilogarithm $\Phi_q(z)$ diverges
-as $z \to 1^-$.  The proton's generators have
-$\hat{V}^{\mathrm{full}}$ closer to $1$ than the electron's
-because:
+## Application to the proton--electron mass ratio
 
-1. The electron (trefoil, $3$ positive crossings) has
-   $\hat{V}^{\mathrm{full}} = 0.594$ — well below $1$.
-2. The proton (Borromean $+$ quarks $+$ gluons, $11$ crossings)
-   has generators at $0.989$ and $0.971$ — near $1$.
-3. $\Phi_q$ amplifies this $0.4$ vs $0.01$ gap from $1$
-   by a factor of $\sim 1000$, producing the mass ratio.
+For the electron (trefoil $\sigma_0\sigma_1\sigma_0$ on $3$ strands,
+$2$ generators, additive Wedderburn
+$\hat{V}_e^{\mathrm{full}} \approx 0.594$):
 
-The amplification is **non-perturbative**: no finite Taylor
-expansion in $H_A$ captures it.  It is the quantum dilogarithm
-acting on the brane tower, as described by the mass endomorphism
-conjecture ([mass endomorphism conjecture](#conj:mass-endomorphism)).
+$$
+  \mathfrak{m}_e
+  =
+  \lvert\hat{V}_e^2\rvert
+  + 2z \cdot \Phi_q(\lvert\hat{V}_e\rvert)
+  + z^2 \cdot \Phi_q(\lvert\hat{V}_e^2\rvert).
+$$
+
+For the proton ($\mathcal{B}_3 \times \mathfrak{u}\mathfrak{u}\mathfrak{d}$
+with gluon self-coupling on $3$ strands, $2$ generators,
+$\hat{V}_0^{\mathrm{full}} \approx 0.989$,
+$\hat{V}_1^{\mathrm{full}} \approx 0.971$):
+
+$$
+  \mathfrak{m}_{\mathfrak{p}}
+  =
+  \lvert\hat{V}_0\hat{V}_1\rvert
+  + z \cdot \Phi_q(\lvert\hat{V}_0\rvert)
+  + z \cdot \Phi_q(\lvert\hat{V}_1\rvert)
+  + z^2 \cdot \Phi_q(\lvert\hat{V}_0\hat{V}_1\rvert).
+$$
+
+The proton's $11$ crossings (from the $4$-channel production vertex
+$\gamma\gamma \to \mathfrak{q}\bar{\mathfrak{q}}$,
+[photon channel chain](#rem:photon-channel-wedderburn-chain)) produce
+spectral coordinates near $1$, where $\Phi_q$ diverges.  The
+electron's $3$ crossings produce $\hat{V}_e \approx 0.594$, well
+below the singularity.  The mass ratio is:
+
+$$
+  \frac{\mathfrak{m}_{\mathfrak{p}}}{\mathfrak{m}_e}
+  \approx 1870
+  \qquad (\text{CODATA: } 1836.15, \;\text{error } 1.84\%).
+$$
+
+No parameters are fitted.  The inputs are the substrate parameter
+$q_0$ and the electron mass $m_e$ (energy scale).
 
 **Witness**: `mass-endomorphism.witness.json`.

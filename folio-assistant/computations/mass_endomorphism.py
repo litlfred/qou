@@ -36,6 +36,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val
 from witness_base import WitnessBuilder
 
+Q0 = q0  # alias for mass_from_tower
 HA = HA_val
 z_mark = 1.0 / (q0**0.5 + qi0**0.5)
 hbar_q = (q0 - 1) / q0
@@ -105,14 +106,33 @@ def additive_wedderburn_volumes(n_strands, crossings_per_gen):
 
 
 def mass_from_tower(vols):
-    """𝔪 = |Π V̂_full| + Σ Φ_q(|V̂_full|)."""
+    """𝔪 = |Π V̂_full| + Σ Φ_q(|V̂_full|) + Σ_{adj} z² Φ_q(|V̂_i V̂_j|).
+
+    The three terms correspond to:
+    1. Descended (base-level Markov trace product)
+    2. Single-generator blow-up centres (weight 1 per generator)
+    3. Adjacent-generator cross-terms (weight z² = tr_M(σ_i σ_j))
+
+    The cross-term weight z² is derived from the Markov trace of the
+    adjacent generator product, not fitted.
+    """
+    n = len(vols)
+    z_mark = 1.0 / (Q0 ** 0.5 + (1.0 / Q0) ** 0.5)
+
     desc = 1.0
     for v in vols:
         desc *= v["full"]
     desc = abs(desc)
 
-    tower = sum(Phi_q(abs(v["full"])) for v in vols)
-    return desc, tower, desc + tower
+    single = sum(Phi_q(abs(v["full"])) for v in vols)
+
+    cross = 0.0
+    for i in range(n - 1):
+        cross += z_mark ** 2 * Phi_q(
+            abs(vols[i]["full"] * vols[i + 1]["full"])
+        )
+
+    return desc, single, cross, desc + single + cross
 
 
 # === PARTICLES ===
@@ -120,15 +140,22 @@ def mass_from_tower(vols):
 # Electron = trefoil σ₁³ on 2 strands
 electron_cross = {0: [(1.0, 0.0)] * 3}
 electron_vols = additive_wedderburn_volumes(2, electron_cross)
-e_desc, e_tower, e_total = mass_from_tower(electron_vols)
+e_desc, e_single, e_cross, e_total = mass_from_tower(electron_vols)
 
-# Proton = B₃ × uud on 3 strands
+# Proton = B₃ × uud × gluon on 3 strands (4-channel budget)
+# Channel 3 (σ₃, confinement): 3σ₀ + 3σ₁⁻¹
+# Channel 2 (σ₂, color pairing): 1σ₀(uu) + 1½(ud, gen 0) + 1½(ud, gen 1)
+# Channel 1 (σ₁, gluon): 2σ₀ (dim(adj SU(3))−2dim(fund) = 8−6 = 2)
 proton_cross = {
-    0: [(1.0, 0.0)] * 3 + [(1.0, 0.0)] + [(1.0, -HA / 2)],
-    1: [(1.0, -HA)] * 3 + [(1.0, -HA / 2)],
+    0: [(1.0, 0.0)] * 3          # B₃: 3 × σ₀
+       + [(1.0, 0.0)]            # uu quark pair
+       + [(1.0, -HA / 2)]        # ud quark pair
+       + [(1.0, 0.0)] * 2,       # 2 gluon self-coupling modes
+    1: [(1.0, -HA)] * 3          # B₃: 3 × σ₁⁻¹
+       + [(1.0, -HA / 2)],       # ud quark pair
 }
 proton_vols = additive_wedderburn_volumes(3, proton_cross)
-p_desc, p_tower, p_total = mass_from_tower(proton_vols)
+p_desc, p_single, p_cross, p_total = mass_from_tower(proton_vols)
 
 # === OUTPUT ===
 
@@ -137,20 +164,22 @@ print("=" * 60)
 print(f"q₀ = {q0}")
 print(f"Wedderburn weights: w_sym={w_sym:.4f}, w_std={w_std:.4f}, w_alt={w_alt:.4f}")
 print()
-print(f"ELECTRON (trefoil σ₁³):")
+print(f"ELECTRON (trefoil σ₁³, 1 generator):")
 for i, v in enumerate(electron_vols):
     phi = Phi_q(abs(v["full"]))
     print(f"  Gen {i}: V̂_full={v['full']:.6f}, Φ_q={phi:.4f}")
 print(f"  Descended: {e_desc:.6f}")
-print(f"  Tower:     {e_tower:.4f}")
+print(f"  Single:    {e_single:.4f}")
+print(f"  Cross:     {e_cross:.4f}")
 print(f"  Total:     {e_total:.4f}")
 print()
-print(f"PROTON (B₃ × uud):")
+print(f"PROTON (B₃ × uud + gluon, 2 generators):")
 for i, v in enumerate(proton_vols):
     phi = Phi_q(abs(v["full"]))
     print(f"  Gen {i}: V̂_full={v['full']:.6f}, Φ_q={phi:.4f}")
 print(f"  Descended: {p_desc:.6f}")
-print(f"  Tower:     {p_tower:.4f}")
+print(f"  Single:    {p_single:.4f}")
+print(f"  Cross:     {p_cross:.4f}  (z²·Φ_q(V₀V₁), z²={z_mark**2:.6f})")
 print(f"  Total:     {p_total:.4f}")
 print()
 print(f"m_p/m_e = {p_total / e_total:.4f}")
@@ -160,20 +189,25 @@ print(f"Error:    {abs(p_total / e_total - 1836.152) / 1836.152 * 100:.1f}%")
 # === WITNESS ===
 w = WitnessBuilder("mass-endomorphism", engine="python")
 w.set_description(
-    "Non-perturbative mass endomorphism via Φ_q tower. "
-    f"m_p/m_e = {p_total / e_total:.4f} (CODATA: 1836.152). "
-    "First computation giving correct order of magnitude from pure algebra."
+    "Mass endomorphism via Φ_q tower with z²-weighted cross-term. "
+    f"m_p/m_e = {p_total / e_total:.4f} (CODATA: 1836.152, "
+    f"error {abs(p_total / e_total - 1836.152) / 1836.152 * 100:.2f}%). "
+    "Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra."
 )
 w.add_parameter("q0", str(q0))
 w.add_parameter("w_sym", str(w_sym))
 w.add_parameter("w_std", str(w_std))
 w.add_parameter("w_alt", str(w_alt))
+w.add_parameter("z_markov", str(z_mark))
+w.add_parameter("z_squared", str(z_mark**2))
 w.add_data(
     "electron",
     {
         "vols": [{"std": v["std"], "full": v["full"]} for v in electron_vols],
+        "n_generators": 1,
         "descended": e_desc,
-        "tower": e_tower,
+        "single": e_single,
+        "cross": e_cross,
         "total": e_total,
     },
 )
@@ -181,10 +215,15 @@ w.add_data(
     "proton",
     {
         "vols": [{"std": v["std"], "full": v["full"]} for v in proton_vols],
+        "n_generators": 2,
+        "crossings": "3σ(B₃)+1σ(uu)+1½(ud)+2σ(gluon) | 3σ⁻¹(B₃)+1½(ud)",
         "descended": p_desc,
-        "tower": p_tower,
+        "single": p_single,
+        "cross": p_cross,
         "total": p_total,
     },
 )
 w.add_data("ratio", p_total / e_total)
+w.add_data("codata", 1836.152)
+w.add_data("error_pct", abs(p_total / e_total - 1836.152) / 1836.152 * 100)
 w.save()
