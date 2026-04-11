@@ -1,0 +1,25 @@
+import { definition } from "../../schema/builders";
+
+export default definition({
+  label: "def:typed-garside-element",
+  title:
+    "Typed Garside element of the nuclear braid",
+  tags: [
+    "garside-element",
+    "hecke-algebra",
+    "typed-crossing",
+    "nuclear",
+    "braid-word",
+    "normal-form",
+    "staircase",
+  ],
+  lean: {
+    decl: "QOU.Descartes.TypedGarsideElement",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:typed-crossing-operator",
+    "prop:braiding-induced-ordering",
+    "prop:nuclear-groebner-reduction",
+  ],
+});

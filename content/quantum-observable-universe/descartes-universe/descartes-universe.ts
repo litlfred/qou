@@ -208,6 +208,11 @@ export default chapter({
         "beta-decay-interpretation",
         "nucleon-nf-observability",
         "beta-decay-energy-scale",
+        // Typed Garside element and Gram-weighted Q-value
+        "typed-garside-element",
+        "gram-weighted-qvalue",
+        "gram-weight-eigenstructure",
+        "negative-debt-confinement",
         "beta-decay-braid-visualizer",
       ],
     }),
