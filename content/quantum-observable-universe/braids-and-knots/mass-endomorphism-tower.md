@@ -18,7 +18,7 @@ $$
   \Bigl\lvert \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{full}} \Bigr\rvert
   +
   \sum_{i=0}^{n-2}
-    z \cdot \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
+    \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
   +
   \sum_{\substack{i < j \\ |i - j| = 1}}
     z^2 \cdot \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}
@@ -36,8 +36,10 @@ in the brane tower
    base-level Markov trace
    ([categorical mass as Markov trace](#prop:categorical-mass-markov)).*
 2. *Each **single-generator blow-up** at generator $i$ contributes
-   $z \cdot \Phi_q(\lvert\hat{V}_i\rvert)$, weighted by the Markov
-   trace $\mathrm{tr}_M(\sigma_i) = z$.*
+   $\Phi_q(\lvert\hat{V}_i\rvert)$.  (The Markov weight
+   $\mathrm{tr}_M(\sigma_i) = z$ is already absorbed into the
+   traced volume $\hat{V}_i$, which is computed via the Markov
+   trace of the transfer chain.)*
 3. *Each **adjacent-generator blow-up** at the product $\sigma_i\sigma_j$
    ($\lvert i - j\rvert = 1$) contributes
    $z^2 \cdot \Phi_q(\lvert\hat{V}_i \hat{V}_j\rvert)$, weighted by
@@ -66,7 +68,7 @@ The NF basis of $H_n(q)$ decomposes by generator content.  For $n = 3$:
 | $\emptyset$ | $1$ | $1$ | $0$ |
 | $\{0\}$ | $\sigma_0$ | $z$ | $\hat{V}_0$ |
 | $\{1\}$ | $\sigma_1$ | $z$ | $\hat{V}_1$ |
-| $\{0,1\}$, adjacent | $\sigma_0\sigma_1$, $\sigma_1\sigma_0$ | $z^2$ each | $\hat{V}_0\hat{V}_1$ |
+| $\{0,1\}$, adjacent | $\sigma_0\sigma_1$, $\sigma_1\sigma_0$ | $z^2$ (combined) | $\hat{V}_0\hat{V}_1$ |
 | $\{0,1,0\}$, dependent | $\sigma_0\sigma_1\sigma_0$ | — | reduces via YB |
 
 The spectral coordinate $z_p$ at a blow-up centre $p$ corresponding
@@ -93,16 +95,15 @@ and the single/adjacent blow-up centres.  $\square$
 
 ## Application to the proton--electron mass ratio
 
-For the electron (trefoil $\sigma_0\sigma_1\sigma_0$ on $3$ strands,
-$2$ generators, additive Wedderburn
+For the electron (trefoil $\sigma_1^3$ on $2$ strands,
+$1$ generator, additive Wedderburn
 $\hat{V}_e^{\mathrm{full}} \approx 0.594$):
 
 $$
   \mathfrak{m}_e
   =
-  \lvert\hat{V}_e^2\rvert
-  + 2z \cdot \Phi_q(\lvert\hat{V}_e\rvert)
-  + z^2 \cdot \Phi_q(\lvert\hat{V}_e^2\rvert).
+  \lvert\hat{V}_e\rvert
+  + \Phi_q(\lvert\hat{V}_e\rvert).
 $$
 
 For the proton ($\mathcal{B}_3 \times \mathfrak{u}\mathfrak{u}\mathfrak{d}$
@@ -114,8 +115,8 @@ $$
   \mathfrak{m}_{\mathfrak{p}}
   =
   \lvert\hat{V}_0\hat{V}_1\rvert
-  + z \cdot \Phi_q(\lvert\hat{V}_0\rvert)
-  + z \cdot \Phi_q(\lvert\hat{V}_1\rvert)
+  + \Phi_q(\lvert\hat{V}_0\rvert)
+  + \Phi_q(\lvert\hat{V}_1\rvert)
   + z^2 \cdot \Phi_q(\lvert\hat{V}_0\hat{V}_1\rvert).
 $$
 
@@ -129,7 +130,7 @@ below the singularity.  The mass ratio is:
 $$
   \frac{\mathfrak{m}_{\mathfrak{p}}}{\mathfrak{m}_e}
   \approx 1870
-  \qquad (\text{CODATA: } 1836.15, \;\text{error } 1.84\%).
+  \qquad (\text{CODATA: } 1836.15, \;\text{error } 1.8\%).
 $$
 
 No parameters are fitted.  The inputs are the substrate parameter

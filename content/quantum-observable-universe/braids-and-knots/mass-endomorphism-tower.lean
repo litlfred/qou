@@ -1,5 +1,4 @@
 import QOU.Torsion.BraneTower
-import QOU.BraidHecke.MarkovTrace
 
 /-!
 # Mass Endomorphism: Proton–Electron Mass Ratio
@@ -34,14 +33,14 @@ noncomputable def markovParam (q : ℝ) : ℝ :=
       `𝔪 = |∏ V i| + Σᵢ Φ_q(|V i|) + Σ_{adj pairs} z² · Φ_q(|V i · V j|)`
     where the adjacent sum runs over `(i, i+1)` pairs. -/
 noncomputable def mass (q : ℝ) (n : ℕ) (V : Fin n → ℝ) : ℝ :=
-  -- Descended term
+  -- Descended term (base-level Markov trace product)
   |∏ i, V i|
-  -- Single-generator blow-up centres
+  -- Single-generator blow-up centres (no Markov weight: already in V̂)
   + ∑ i, quantumDilog q |V i|
-  -- Adjacent-generator cross-terms (weight z²)
+  -- Adjacent-generator cross-terms (weight z² = tr_M(σ_i σ_j))
   + (markovParam q) ^ 2 *
     ∑ i : Fin (n - 1),
-      quantumDilog q |V ⟨i, by omega⟩ * V ⟨i + 1, by omega⟩|
+      quantumDilog q |V ⟨i.val, by omega⟩ * V ⟨i.val + 1, by omega⟩|
 
 /-- The proton–electron mass ratio.
 
@@ -54,7 +53,7 @@ noncomputable def mass (q : ℝ) (n : ℕ) (V : Fin n → ℝ) : ℝ :=
     - Channel 1 (σ₁): 2 σ₀ (gluon self-coupling, dim(adj SU(3))−2·dim(fund) = 2)
     - Channel 0 (a₀): electron period (no nuclear crossings)
 
-    Result: `𝔪_p / 𝔪_e ≈ 1872` (CODATA: 1836.15, error 1.93%). -/
+    Result: `𝔪_p / 𝔪_e ≈ 1870` (CODATA: 1836.15, error 1.8%). -/
 -- Ref: [manuscript] Ch 5 §Topological Mass and Nuclear Binding
 theorem proton_electron_ratio :
     ∃ (V₀ V₁ Ve : ℝ),
