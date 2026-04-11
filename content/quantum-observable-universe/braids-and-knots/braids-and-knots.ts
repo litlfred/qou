@@ -309,6 +309,7 @@ export default chapter({
         "quantum-bloch-group",
         "degree-two-baryon-weight",
         "hook-weight-derivation",
+        "mass-endomorphism-tower",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
