@@ -413,13 +413,19 @@ struct SymPauliAcc {
     net: LPoly,
     tr_markov: LPoly,  // Markov trace: Σ c_w × z^ℓ(w) where z = 1/(√q + 1/√q)
     net_by_len: Vec<LPoly>,
+    l1_at_q0: f64,     // Σ |c_w(q₀)| for stripped terms (L1 norm at q₀)
+    pn_denom_pow: u32,  // 2-adic denominator power for this accumulator
 }
 
 impl SymPauliAcc {
-    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero(), tr_markov: LPoly::zero(), net_by_len: Vec::new() } }
+    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero(), tr_markov: LPoly::zero(), net_by_len: Vec::new(), l1_at_q0: 0.0, pn_denom_pow: 0 } }
 
     fn add_term(&mut self, coeff: &LPoly, word_len: usize) {
         self.net = self.net.add(coeff);
+        // Track L1 at q₀ using high-precision MPFR to avoid f64 cancellation
+        let val_mp = coeff.eval_mpfr(1.10998_f64.sqrt(), 128);
+        let abs_val: f64 = val_mp.to_f64();
+        self.l1_at_q0 += abs_val.abs();
         let l = word_len as i64;
         let sign = if l % 2 == 0 { 1i64 } else { -1i64 };
         self.tr_alt = self.tr_alt.add(&coeff.scale_i64(sign).shift(-2 * word_len as i32));
@@ -503,6 +509,7 @@ impl SymPauliAcc {
     fn merge(&mut self, other: &SymPauliAcc) {
         self.tr_alt = self.tr_alt.add(&other.tr_alt);
         self.net = self.net.add(&other.net);
+        self.l1_at_q0 += other.l1_at_q0;
         for (i, p) in other.net_by_len.iter().enumerate() {
             while self.net_by_len.len() <= i {
                 self.net_by_len.push(LPoly::zero());
@@ -756,9 +763,7 @@ fn main() {
         let l1_kept: f64 = elem.terms.values()
             .map(|poly| poly.eval_f64(t0_val).abs())
             .sum::<f64>() / pn_denom;
-        let l1_accum: f64 = accum.net_by_len.iter()
-            .map(|poly| poly.eval_f64(t0_val).abs())
-            .sum::<f64>() / pn_denom;
+        let l1_accum: f64 = accum.l1_at_q0 / pn_denom;
         let l1_total = l1_kept + l1_accum;
         let words = elem.n_terms();
         let elapsed = t0.elapsed().as_secs_f64();
