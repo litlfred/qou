@@ -210,6 +210,7 @@ export default chapter({
         "beta-decay-energy-scale",
         // Typed Garside element and Gram-weighted Q-value
         "typed-garside-element",
+        "two-stage-garside",
         "gram-weighted-qvalue",
         "gram-weight-eigenstructure",
         "negative-debt-confinement",
