@@ -42,11 +42,13 @@ noncomputable def T_pp (q : ℝ) : TM := tm q 1 0
 /-- T_nn: neutron-neutron crossing (c=q², d=-q·s). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 noncomputable def T_nn (q : ℝ) : TM :=
+  let q_half := q ^ (1/2 : ℝ)
   tm q (q^2) (-q * (q_half - 1 / q_half))
 
 /-- T_mix: mixed crossing (c=½(1+q²), d=-½q·s). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 noncomputable def T_mix (q : ℝ) : TM :=
+  let q_half := q ^ (1/2 : ℝ)
   tm q ((1 + q^2) / 2) (-q * (q_half - 1 / q_half) / 2)
 
 /-- Matrix subtraction. -/

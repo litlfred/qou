@@ -41,13 +41,22 @@ where:
 
 3. **Action term** $S_q(K)$: The categorical action
    $S_q = \mathrm{tr}(\mathscr{L}_q)$ evaluated on the knot.
-   This is the **rest mass energy** — the net sum of all
-   crossing energies in the braid word:
+   This is the **rest mass energy** — the categorical
+   action (Markov trace of the braid representation):
 
 $$
-  S_q(K) \;=\; \sum_{\text{crossings}} \mathbf{E}_\times(q)
-  \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
+  S_q(K) = \mathrm{tr}_M(\rho(\beta))
 $$
+
+At a single brane level this equals $|\mathrm{tr}_M(\rho(\beta))|$
+([categorical mass as Markov trace](#prop:categorical-mass-markov)).
+The full mass including the brane tower evaluates to
+$\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic knots
+([topological mass formula](#prop:topological-mass-formula)).
+For torus knots (including the trefoil / electron), the single-level
+action is nonzero but the hyperbolic volume vanishes; the mass
+arises from the quantum dilogarithm contributions across the tower
+([mass endomorphism conjecture](#conj:mass-endomorphism)).
 
 The action term dominates: for hadrons, $S_q \sim 10^3$ MeV
 while the rotational and translational terms are $O(\hbar_q) \sim 0.1$.
