@@ -24,6 +24,11 @@ path = "src/bin/v9.rs"
 name = "hecke-qvalues"
 path = "src/main.rs"
 
+# CRT multi-prime engine for large A
+[[bin]]
+name = "hecke-crt"
+path = "src/bin/v13_crt.rs"
+
 [dependencies]
 rustc-hash = "2"
 serde = { version = "1", features = ["derive"] }
