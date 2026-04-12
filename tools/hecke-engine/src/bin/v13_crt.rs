@@ -572,3 +572,31 @@ fn main() {
         _ => { eprintln!("Unknown mode: {}", mode); std::process::exit(1); }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_poly_add_cancel() {
+        let np = 4;
+        let a = CrtPoly { terms: vec![(2, ModCoeff::from_i64(5, np))], np };
+        let b = CrtPoly { terms: vec![(2, ModCoeff::from_i64(-5, np))], np };
+        let c = a.add(&b);
+        assert!(c.is_zero(), "5 + (-5) should be zero, got {} terms", c.n_terms());
+    }
+
+    #[test]
+    fn test_poly_mul_ha() {
+        let np = 4;
+        let ha = ha_crt(np); // t² - t⁻²
+        let one = CrtPoly::one(np);
+        let result = one.mul(&ha); // should be t² - t⁻²
+        assert_eq!(result.n_terms(), 2);
+        // Check signs via first prime
+        let t2_coeff = result.terms.iter().find(|(k,_)| *k == 2).unwrap().1.to_f64();
+        let tm2_coeff = result.terms.iter().find(|(k,_)| *k == -2).unwrap().1.to_f64();
+        assert!((t2_coeff - 1.0).abs() < 1e-10, "t² coeff should be 1, got {}", t2_coeff);
+        assert!((tm2_coeff - (-1.0)).abs() < 1e-10, "t⁻² coeff should be -1, got {}", tm2_coeff);
+    }
+}
