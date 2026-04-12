@@ -41,11 +41,11 @@ structure BriggsKleinChart where
   /-- Second resolvent coordinate w₂ ∈ ℂ. -/
   w₂ : ℂ
   /-- Radial coordinate r = |w₁|². -/
-  r : R_q
+  r : ℝ
   /-- r is the squared modulus of w₁. -/
   r_eq : r = Complex.normSq w₁
   /-- The chart is restricted to 0 < r. -/
-  -- r_pos : 0 < r  -- (archimedean; not meaningful over R_q)
+  r_pos : 0 < r
 
 /-- The C₅ action order: the cyclic group acting by phase rotation. -/
 -- Ref: [manuscript] Chapter 5, §Bundle structures
@@ -53,7 +53,7 @@ def c5_order : ℕ := 5
 
 /-- Primitive 5th root of unity phase angle. -/
 -- Ref: [manuscript] Chapter 5, §Bundle structures
-noncomputable def zeta_angle : R_q := 2 * Real.pi / 5
+noncomputable def zeta_angle : ℝ := 2 * Real.pi / 5
 
 /-- The C₅ phase rotation on the k-th coordinate: ζᵏ · w.
     Since ζ⁵ = 1, the action is periodic with period 5. -/

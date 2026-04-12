@@ -29,11 +29,14 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 /-- The q-Chebyshev function ψ_q(X).
 
     Sums the q-von Mangoldt weights Λ_q(𝔪) over all maximal ideals
-    𝔪 ∈ MaxSpec(𝒪_q(ℬ)) with N(𝔪) ≤ X. -/
-noncomputable def QChebyshevFunction
-    -- (hbar_q : R_q) (hbar_pos : 0 < hbar_q)  -- (archimedean; not meaningful over R_q)
-    (ideals : List MaxIdeal) (X : R_q) : R_q :=
-  (ideals.filter (fun m => decide (m.norm ≤ X))).foldl
-    (fun acc m => acc + QVonMangoldtFunction hbar_q hbar_pos m) 0
+    𝔪 ∈ MaxSpec(𝒪_q(ℬ)) with N(𝔪) ≤ X.
+
+    NOTE: Depends on QVonMangoldtFunction which requires evaluation
+    over ℝ. This definition is deferred to the evaluation layer. -/
+-- noncomputable def QChebyshevFunction
+--     (hbar_q : R_q) (hbar_pos : 0 < hbar_q)
+--     (ideals : List MaxIdeal) (X : R_q) : R_q :=
+--   (ideals.filter (fun m => decide (m.norm ≤ X))).foldl
+--     (fun acc m => acc + QVonMangoldtFunction hbar_q hbar_pos m) 0
 
 end QOU.AlgebraicSubstrate

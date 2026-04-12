@@ -19,8 +19,12 @@ structure ColoredPhoton (q : ℝ) where
   colorWeight_pos : colorWeight ≥ 0
 
 /-- The Breit–Wheeler pair production: two colored photons fuse
-    to produce an electron–positron pair. -/
+    to produce an electron–positron pair.
+    NOT part of the formal proof chain — stated for documentation. -/
 -- Ref: [manuscript] Chapter 6, §3b
-sorry
+theorem breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) :
+    True := by
+  -- Ref: [manuscript] Chapter 6, §3b
+  sorry
 
 end QOU.Descartes

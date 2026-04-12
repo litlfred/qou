@@ -4,7 +4,7 @@ computed by summing over *all* paths in configuration space:
 $$
   \langle\psi_f|\psi_i\rangle
   = 
-  \int \mathcal{D}\phie^{iS[\phi]/\hbar}.
+  \int \mathcal{D}\phi\ e^{iS[\phi]/\hbar}.
 $$
 
 This expression is basis-independent --- it does not privilege any

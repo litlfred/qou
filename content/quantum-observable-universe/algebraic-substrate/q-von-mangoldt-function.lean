@@ -38,12 +38,16 @@ structure MaxIdeal where
 
     For a fundamental defect with norm N(𝔪), returns
     (N(𝔪)^ℏ_q - 1) / ℏ_q where ℏ_q = (q-1)/q is the quantum
-    Planck constant. Returns 0 for non-fundamental ideals. -/
--- noncomputable def QVonMangoldtFunction (hbar_q : R_q) (hbar_pos : 0 < hbar_q)  -- (archimedean; not meaningful over R_q)
-    (m : MaxIdeal) : R_q :=
-  if m.isFundamental then
-    (m.norm ^ hbar_q - 1) / hbar_q
-  else
-    0
+    Planck constant. Returns 0 for non-fundamental ideals.
+
+    NOTE: The exponentiation N(𝔪)^ℏ_q and positivity constraint
+    require evaluation over ℝ. This definition is stated formally
+    but deferred to the evaluation layer ι : R_q → ℝ. -/
+-- noncomputable def QVonMangoldtFunction (hbar_q : R_q) (hbar_pos : 0 < hbar_q)
+--     (m : MaxIdeal) : R_q :=
+--   if m.isFundamental then
+--     (m.norm ^ hbar_q - 1) / hbar_q
+--   else
+--     0
 
 end QOU.AlgebraicSubstrate
