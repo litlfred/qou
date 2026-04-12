@@ -630,7 +630,18 @@ fn apply_knot_operator(
     }
 }
 
-/// Find the leading eigenvector of a knot operator via power iteration.
+/// Find the MINIMUM eigenvalue eigenvector via shift-and-invert power iteration.
+///
+/// The confinement LP MINIMIZES action. The ground state = minimum eigenvalue
+/// of the knot operator = tightest confinement = q⁻¹ channel (antisymmetric).
+///
+/// Method:
+///   1. Power iteration on K to find λ_max (a few iterations suffice)
+///   2. Shift: B = λ_max·I - K (flips spectrum: λ_min of K → λ_max of B)
+///   3. Power iteration on B to find eigenvector of λ_max(B) = λ_min(K)
+///
+/// The shift-and-invert is exact because applying B|v⟩ = λ_max|v⟩ - K|v⟩
+/// only requires K|v⟩ (which we already have).
 fn knot_eigenvector(
     a: usize, b: usize,
     knot: &KnotOperator,
@@ -651,26 +662,67 @@ fn knot_eigenvector(
 
     let cdata = precompute_crossing_data(&tabs, &tab_idx, n, q);
 
-    let inv_sqrt_dim = 1.0 / (dim as f64).sqrt();
-    let mut v = vec![inv_sqrt_dim; dim];
-    let mut eigenvalue = 0.0f64;
-
-    for iter in 0..max_iter {
-        apply_knot_operator(knot, n_nucleons, n, &mut v, &cdata, ha);
-
-        let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
-        if norm < 1e-300 { break; }
-        let new_eigenvalue = norm;
-        for x in v.iter_mut() { *x /= norm; }
-
-        if (new_eigenvalue - eigenvalue).abs() / (eigenvalue.abs() + 1e-15) < tol {
-            eigenvalue = new_eigenvalue;
-            break;
-        }
-        eigenvalue = new_eigenvalue;
+    if dim <= 1 {
+        // 1D: only one eigenvector
+        let mut v = vec![1.0; dim];
+        let mut w = v.clone();
+        apply_knot_operator(knot, n_nucleons, n, &mut w, &cdata, ha);
+        let eigenvalue = if dim == 1 { w[0] } else { 0.0 };
+        return (v, eigenvalue);
     }
 
-    (v, eigenvalue)
+    // Step 1: Find λ_max via standard power iteration (20 iterations suffice)
+    let inv_sqrt_dim = 1.0 / (dim as f64).sqrt();
+    let mut v = vec![inv_sqrt_dim; dim];
+    let mut lambda_max = 0.0f64;
+
+    for _ in 0..30 {
+        apply_knot_operator(knot, n_nucleons, n, &mut v, &cdata, ha);
+        let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
+        if norm < 1e-300 { break; }
+        lambda_max = norm;
+        for x in v.iter_mut() { *x /= norm; }
+    }
+
+    // Step 2: Power iteration on B = λ_shift·I - K to find λ_min(K).
+    // Use λ_shift slightly above λ_max to ensure B is positive definite.
+    let lambda_shift = lambda_max * 1.1 + 1.0;
+
+    let mut v = vec![inv_sqrt_dim; dim];
+    // Perturb to avoid landing on the same eigenvector as λ_max
+    v[0] += 0.1;
+    let norm0: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
+    for x in v.iter_mut() { *x /= norm0; }
+
+    let mut eigenvalue_b = 0.0f64;
+
+    for _iter in 0..max_iter {
+        // Compute K|v⟩
+        let mut kv = v.clone();
+        apply_knot_operator(knot, n_nucleons, n, &mut kv, &cdata, ha);
+
+        // B|v⟩ = λ_shift·|v⟩ - K|v⟩
+        for j in 0..dim {
+            kv[j] = lambda_shift * v[j] - kv[j];
+        }
+
+        let norm: f64 = kv.iter().map(|x| x * x).sum::<f64>().sqrt();
+        if norm < 1e-300 { break; }
+        let new_eigenvalue_b = norm;
+        for x in kv.iter_mut() { *x /= norm; }
+        v = kv;
+
+        if (new_eigenvalue_b - eigenvalue_b).abs() / (eigenvalue_b.abs() + 1e-15) < tol {
+            eigenvalue_b = new_eigenvalue_b;
+            break;
+        }
+        eigenvalue_b = new_eigenvalue_b;
+    }
+
+    // λ_min(K) = λ_shift - λ_max(B)
+    let lambda_min = lambda_shift - eigenvalue_b;
+
+    (v, lambda_min)
 }
 
 /// Compute matrix element ⟨v_K|Δ|v_K⟩ for a specific knot operator K.
