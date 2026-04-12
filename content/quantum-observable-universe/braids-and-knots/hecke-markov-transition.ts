@@ -10,6 +10,10 @@ export default proposition({
     "idempotent",
     "memoryless",
   ],
+  lean: {
+    decl: "QOU.Braiding.SpectralIdempotentData",
+    validation: "not_checked",
+  },
   cites: ["diaconis-ram2000", "bufetov2020"],
   uses: [
     "rem:hecke-algebra-from-braiding",
