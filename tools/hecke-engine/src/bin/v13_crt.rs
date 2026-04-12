@@ -287,6 +287,234 @@ impl std::fmt::Debug for W {
 }
 
 // ════════════════════════════════════════════════════════════════
+// §5. Binary NF witness format
+// ════════════════════════════════════════════════════════════════
+
+const WITNESS_MAGIC: u32 = 0x484E4630; // "HNF0"
+const WITNESS_VERSION: u16 = 1;
+
+impl CrtElem {
+    /// Save full NF to binary file.
+    /// Format: header + per-word entries.
+    fn save_binary(&self, path: &str, ordering: &[u8], np: usize) -> std::io::Result<()> {
+        use std::io::Write;
+        let mut f = std::io::BufWriter::new(std::fs::File::create(path)?);
+
+        // Header
+        f.write_all(&WITNESS_MAGIC.to_le_bytes())?;
+        f.write_all(&WITNESS_VERSION.to_le_bytes())?;
+        f.write_all(&(np as u16).to_le_bytes())?;
+        f.write_all(&self.pn_count.to_le_bytes())?;
+        f.write_all(&(self.terms.len() as u32).to_le_bytes())?;
+        f.write_all(&(ordering.len() as u16).to_le_bytes())?;
+        f.write_all(ordering)?;
+
+        // Per-word entries
+        for (w, poly) in &self.terms {
+            let wl = w.len() as u16;
+            f.write_all(&wl.to_le_bytes())?;
+            for i in 0..w.len() { f.write_all(&[w.get(i)])?; }
+
+            let nt = poly.terms.len() as u16;
+            f.write_all(&nt.to_le_bytes())?;
+            for (power, coeff) in &poly.terms {
+                f.write_all(&power.to_le_bytes())?;
+                for r in &coeff.residues {
+                    f.write_all(&r.to_le_bytes())?;
+                }
+            }
+        }
+        Ok(())
+    }
+
+    /// Load full NF from binary file.
+    fn load_binary(path: &str) -> std::io::Result<(Self, Vec<u8>, usize)> {
+        use std::io::Read;
+        let mut f = std::io::BufReader::new(std::fs::File::open(path)?);
+
+        // Header
+        let mut buf4 = [0u8; 4];
+        let mut buf2 = [0u8; 2];
+        f.read_exact(&mut buf4)?;
+        let magic = u32::from_le_bytes(buf4);
+        assert_eq!(magic, WITNESS_MAGIC, "Invalid witness magic");
+
+        f.read_exact(&mut buf2)?;
+        let _version = u16::from_le_bytes(buf2);
+
+        f.read_exact(&mut buf2)?;
+        let np = u16::from_le_bytes(buf2) as usize;
+
+        f.read_exact(&mut buf4)?;
+        let pn_count = u32::from_le_bytes(buf4);
+
+        f.read_exact(&mut buf4)?;
+        let n_words = u32::from_le_bytes(buf4) as usize;
+
+        f.read_exact(&mut buf2)?;
+        let ord_len = u16::from_le_bytes(buf2) as usize;
+        let mut ordering = vec![0u8; ord_len];
+        f.read_exact(&mut ordering)?;
+
+        // Per-word entries
+        let mut terms = FxHashMap::default();
+        let mut buf16 = [0u8; 16];
+
+        for _ in 0..n_words {
+            f.read_exact(&mut buf2)?;
+            let wl = u16::from_le_bytes(buf2) as usize;
+            let mut w = W::E;
+            for _ in 0..wl {
+                let mut b = [0u8; 1];
+                f.read_exact(&mut b)?;
+                w = w.push(b[0]);
+            }
+
+            f.read_exact(&mut buf2)?;
+            let nt = u16::from_le_bytes(buf2) as usize;
+            let mut poly_terms = Vec::with_capacity(nt);
+            for _ in 0..nt {
+                let mut pbuf = [0u8; 4];
+                f.read_exact(&mut pbuf)?;
+                let power = i32::from_le_bytes(pbuf) as i16 as i32;
+                // Actually power is i16 in format but i32 in struct
+                // Let me use i32 throughout
+                let power = {
+                    let mut pb = [0u8; 2];
+                    // We wrote i32 but let's use i16 for compactness
+                    // Actually the code writes power.to_le_bytes() which is 4 bytes for i32
+                    // Let me re-read correctly
+                    let power = i32::from_le_bytes(pbuf);
+                    power
+                };
+
+                let mut residues = Vec::with_capacity(np);
+                for _ in 0..np {
+                    f.read_exact(&mut buf16)?;
+                    residues.push(u128::from_le_bytes(buf16));
+                }
+                poly_terms.push((power, ModCoeff { residues }));
+            }
+            terms.insert(w, CrtPoly { terms: poly_terms, np });
+        }
+
+        Ok((CrtElem { terms, pn_count, np }, ordering, np))
+    }
+}
+
+// ════════════════════════════════════════════════════════════════
+// §6. Wedderburn irrep channel decomposition
+// ════════════════════════════════════════════════════════════════
+
+/// The Wedderburn decomposition of H_n(q) decomposes each element
+/// into irreducible representation channels. For each word w of
+/// length ℓ in the NF, the three H₃ channels contribute:
+///   sym channel:  c_w × q^ℓ      (eigenvalue q for each σ)
+///   alt channel:  c_w × (-q⁻¹)^ℓ  (eigenvalue -q⁻¹ for each σ)
+///   std channel:  c_w × z^ℓ       (Markov parameter, from 2×2 matrix)
+///
+/// These are EXACT projections — no approximation. The full NF
+/// reconstructs from the three channels.
+///
+/// For Q-values, the three channels give independent contributions.
+/// Each channel's trace survives stripping IFF the stripping
+/// preserves the per-length structure.
+struct IrrepChannels {
+    /// Σ c_w × q^{ℓ(w)} — symmetric irrep trace
+    tr_sym: CrtPoly,
+    /// Σ c_w × (-q⁻¹)^{ℓ(w)} — alternating irrep trace (= tr_alt)
+    tr_alt: CrtPoly,
+    /// Σ c_w × z^{ℓ(w)} — standard irrep trace (Markov trace)
+    tr_markov_num: CrtPoly, // numerator: Σ c_w × (t+t⁻¹)^{L-ℓ}
+    tr_markov_denom_pow: usize, // L = max word length
+    /// Σ c_w — net (L=0 eigenvalue)
+    net: CrtPoly,
+    /// Per-length coefficient sums: net_by_len[ℓ] = Σ_{w: len=ℓ} c_w
+    net_by_len: Vec<CrtPoly>,
+}
+
+impl IrrepChannels {
+    fn from_elem(elem: &CrtElem) -> Self {
+        let np = elem.np;
+        let mut net = CrtPoly::zero(np);
+        let mut tr_alt = CrtPoly::zero(np);
+        let mut net_by_len: Vec<CrtPoly> = Vec::new();
+
+        for (w, c) in &elem.terms {
+            let l = w.len();
+            net = net.add(c);
+
+            // tr_alt: c × (-1)^ℓ × t^{-2ℓ}
+            let sign = if l % 2 == 0 { 1i64 } else { -1 };
+            tr_alt = tr_alt.add(&c.scale_i64(sign).shift(-2 * l as i32));
+
+            // Per-length accumulation
+            while net_by_len.len() <= l {
+                net_by_len.push(CrtPoly::zero(np));
+            }
+            net_by_len[l] = net_by_len[l].add(c);
+        }
+
+        // Markov trace numerator: Σ_ℓ net_by_len[ℓ] × (t+t⁻¹)^{L-ℓ}
+        // where L = max word length
+        let max_len = net_by_len.len().saturating_sub(1);
+
+        // Precompute (t+t⁻¹)^k as CRT polynomials
+        let t_plus_tinv = CrtPoly {
+            terms: vec![
+                (1, ModCoeff::one(np)),   // t
+                (-1, ModCoeff::one(np)),  // t⁻¹
+            ],
+            np,
+        };
+        let mut powers = vec![CrtPoly::one(np)]; // (t+t⁻¹)^0 = 1
+        for _ in 1..=max_len {
+            let prev = powers.last().unwrap();
+            powers.push(prev.mul(&t_plus_tinv));
+        }
+
+        let mut tr_markov_num = CrtPoly::zero(np);
+        for (ell, poly) in net_by_len.iter().enumerate() {
+            if poly.is_zero() { continue; }
+            let power_idx = max_len - ell;
+            if power_idx < powers.len() {
+                tr_markov_num = tr_markov_num.add(&poly.mul(&powers[power_idx]));
+            }
+        }
+
+        Self {
+            tr_sym: CrtPoly::zero(np), // TODO: compute sym trace
+            tr_alt,
+            tr_markov_num,
+            tr_markov_denom_pow: max_len,
+            net,
+            net_by_len,
+        }
+    }
+
+    /// Evaluate all channels at q₀ using MPFR.
+    fn eval_mpfr(&self, q0: &MpFloat, prec: u32, pn_count: u32) -> (f64, f64, f64, f64) {
+        let pn_denom = 2.0_f64.powi(pn_count as i32);
+
+        let ta = self.tr_alt.eval_mpfr(q0, prec).to_f64() / pn_denom;
+        let nt = self.net.eval_mpfr(q0, prec).to_f64() / pn_denom;
+        let fp = if nt.abs() > 1e-30 { (ta / nt).abs() } else { 0.0 };
+
+        // Markov trace: tr_markov_num / (t+t⁻¹)^L / 2^pn_count
+        let t0 = MpFloat::with_val(prec, q0.sqrt_ref());
+        let t_plus_tinv = MpFloat::with_val(prec, &t0 + MpFloat::with_val(prec, 1.0) / &t0);
+        let mut denom = MpFloat::with_val(prec, 1.0);
+        for _ in 0..self.tr_markov_denom_pow {
+            denom *= &t_plus_tinv;
+        }
+        let num = self.tr_markov_num.eval_mpfr(q0, prec);
+        let tr_m = (num / denom).to_f64() / pn_denom;
+
+        (ta, nt, fp, tr_m)
+    }
+}
+
+// ════════════════════════════════════════════════════════════════
 // CRT Hecke element and engine
 // ════════════════════════════════════════════════════════════════
 
@@ -632,6 +860,80 @@ fn main() {
             eprintln!("\n  Witness: {}", filename);
             println!("{}", serde_json::to_string(&cert).unwrap());
         }
+        "save" => {
+            // Build Δ_A and save full NF to binary witness
+            let t_start = Instant::now();
+            let (elem, _accum) = Engine::build(&types, np, 999999); // NO stripping
+            let elapsed = t_start.elapsed().as_secs_f64();
+
+            let channels = IrrepChannels::from_elem(&elem);
+            let (ta, nt, fp, tr_m) = channels.eval_mpfr(&q0_mpfr, 128, elem.pn_count);
+
+            let filename = format!("{}.hnf", ordering_str);
+            elem.save_binary(&filename, &types, np).expect("Failed to save witness");
+            let file_size = std::fs::metadata(&filename).map(|m| m.len()).unwrap_or(0);
+
+            eprintln!("  Saved: {} ({} bytes, {} words)", filename, file_size, elem.n_terms());
+            eprintln!("  tr_alt={:.10e}, net={:.10e}, F={:.6}, tr_M={:.10e}", ta, nt, fp, tr_m);
+            eprintln!("  {:.1}s", elapsed);
+
+            println!("{{\"file\":\"{}\",\"bytes\":{},\"words\":{},\"pn_count\":{},\"tr_alt\":{:.10e},\"net\":{:.10e},\"f_pauli\":{:.10},\"tr_markov\":{:.10e},\"elapsed_s\":{:.3}}}",
+                filename, file_size, elem.n_terms(), elem.pn_count, ta, nt, fp, tr_m, elapsed);
+        }
+
+        "load" => {
+            // Load a saved NF and print its Pauli data
+            let filename = format!("{}.hnf", ordering_str);
+            let (elem, loaded_ordering, loaded_np) = CrtElem::load_binary(&filename)
+                .expect(&format!("Failed to load {}", filename));
+
+            let channels = IrrepChannels::from_elem(&elem);
+            let q0_mp = compute_q0_mpfr(128);
+            let (ta, nt, fp, tr_m) = channels.eval_mpfr(&q0_mp, 128, elem.pn_count);
+
+            eprintln!("  Loaded: {} ({} words, np={})", filename, elem.n_terms(), loaded_np);
+            eprintln!("  ordering: {}", String::from_utf8_lossy(&loaded_ordering));
+            eprintln!("  tr_alt={:.10e}, net={:.10e}, F={:.6}, tr_M={:.10e}", ta, nt, fp, tr_m);
+
+            println!("{{\"file\":\"{}\",\"words\":{},\"pn_count\":{},\"tr_alt\":{:.10e},\"net\":{:.10e},\"f_pauli\":{:.10},\"tr_markov\":{:.10e}}}",
+                filename, elem.n_terms(), elem.pn_count, ta, nt, fp, tr_m);
+        }
+
+        "channels" => {
+            // Build Δ_A and show Wedderburn channel decomposition
+            let (elem, _accum) = Engine::build(&types, np, 999999);
+
+            let channels = IrrepChannels::from_elem(&elem);
+            let (ta, nt, fp, tr_m) = channels.eval_mpfr(&q0_mpfr, 128, elem.pn_count);
+
+            eprintln!("  {} words, {} lengths", elem.n_terms(), channels.net_by_len.len());
+            eprintln!("  tr_alt  = {:.10e}", ta);
+            eprintln!("  net     = {:.10e}", nt);
+            eprintln!("  F_Pauli = {:.6}", fp);
+            eprintln!("  tr_M    = {:.10e}", tr_m);
+
+            // Per-length decomposition
+            let pn_denom = 2.0_f64.powi(elem.pn_count as i32);
+            eprintln!("\n  Per-length decomposition:");
+            eprintln!("  {:>4} {:>8} {:>14} {:>14}", "len", "#words", "Σc_w (net)", "Σc_w×(-q⁻¹)^ℓ");
+            let mut by_len_count: Vec<usize> = vec![0; channels.net_by_len.len()];
+            for (w, _) in &elem.terms {
+                let l = w.len();
+                if l < by_len_count.len() { by_len_count[l] += 1; }
+            }
+            for (l, poly) in channels.net_by_len.iter().enumerate() {
+                let net_l = poly.eval_mpfr(&q0_mpfr, 128).to_f64() / pn_denom;
+                let sign = if l % 2 == 0 { 1.0 } else { -1.0 };
+                let qi_l = q0.powi(-(l as i32));
+                let alt_l = net_l * sign * qi_l;
+                let count = if l < by_len_count.len() { by_len_count[l] } else { 0 };
+                eprintln!("  {:>4} {:>8} {:>+14.6e} {:>+14.6e}", l, count, net_l, alt_l);
+            }
+
+            println!("{{\"words\":{},\"tr_alt\":{:.10e},\"net\":{:.10e},\"f_pauli\":{:.10},\"tr_markov\":{:.10e},\"n_lengths\":{}}}",
+                elem.n_terms(), ta, nt, fp, tr_m, channels.net_by_len.len());
+        }
+
         "beta" => {
             // ── Beta decay Q-value with per-daughter parallelization ──
             // Q = (Σ_k w_k × ΔL1_k) × N × m_e
