@@ -101,7 +101,7 @@ points, allowing vortex cores to flatten.
 The logical relationship is:
 
 $$
-  \text{Observability} \;\Longrightarrow\; \text{NS singular}
+  \text{Observability} \Longrightarrow \text{NS singular}
 $$
 
 but **not** the converse.  NS blowup could occur even without

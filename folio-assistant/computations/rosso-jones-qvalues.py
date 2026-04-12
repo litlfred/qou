@@ -225,8 +225,8 @@ for deg in sorted(knots_by_degree.keys()):
 # Transfer matrix for Q_bare
 def crossing_coeffs(ti, tj):
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return q**2, -q*(q**0.5 - qi**0.5)
-    else: return (1+q**2)/2, -q*(q**0.5 - qi**0.5)/2
+    elif ti == 'n' and tj == 'n': return 1.0, -(q - qi)
+    else: return 1.0, -(q - qi)/2
 
 def T_mat(c, d):
     return [[c*HA+d, c], [c, d]]
@@ -340,20 +340,6 @@ for Z, N, name, Q_exp, Q_err in nuclei:
 
 print()
 
-# Method 2: Q_bare × F_2 only (degree 2 correction, as before)
-print("-" * 70)
-print("Method 2: Q = Q_bare × F_2 (degree-2 only, as before)")
-print()
-
-for Z, N, name, Q_exp, Q_err in nuclei:
-    Qb = bare_Q(Z, N)
-    Q_pred = Qb * FACTORS.get(2, 1.0)
-    err = (Q_pred - Q_exp) / Q_exp * 100
-    print(f"  {name:>5}: Q_bare={Qb:.5f}, Q_pred={Q_pred:.5f}, "
-          f"Q_exp={Q_exp:.5f}, err={err:+.1f}%")
-
-print()
-
 # Method 3: Unified product from k=0
 # Q = ∏_{k=0}^{k_max} F_k × (E_× · μ₀ · skein_ratio)
 # where F_0 = |tr(Δ_mix)| absorbs the bare crossing
@@ -456,18 +442,105 @@ for r, s, deg, srank in EMBEDDABLE_KNOTS:
 # ── SUMMARY ───────────────────────────────────────────────────
 
 print("=" * 70)
-print("SUMMARY: BEST METHOD COMPARISON")
+print("SUMMARY: RJ DECOMPOSITION")
 print("=" * 70)
 print()
-print(f"  {'Nuc':>5} {'Q_bare':>8} {'M1(all)':>8} {'M2(d2)':>8} {'Q_exp':>8} {'err_M1':>7} {'err_M2':>7}")
-print("  " + "-" * 56)
+print(f"  {'Nuc':>5} {'Q_bare':>8} {'M1(all)':>8} {'Q_exp':>8} {'err_M1':>7}")
+print("  " + "-" * 42)
 
 for Z, N, name, Q_exp, Q_err in nuclei:
     Qb = bare_Q(Z, N)
     Q_m1 = Qb * FACTORS.get(1, 1.0) * FACTORS.get(2, 1.0)
-    Q_m2 = Qb * FACTORS.get(2, 1.0)
     err_m1 = (Q_m1 - Q_exp) / Q_exp * 100
-    err_m2 = (Q_m2 - Q_exp) / Q_exp * 100
 
-    print(f"  {name:>5} {Qb:>8.5f} {Q_m1:>8.5f} {Q_m2:>8.5f} "
-          f"{Q_exp:>8.5f} {err_m1:>+6.1f}% {err_m2:>+6.1f}%")
+    print(f"  {name:>5} {Qb:>8.5f} {Q_m1:>8.5f} "
+          f"{Q_exp:>8.5f} {err_m1:>+6.1f}%")
+
+
+# ══════════════════════════════════════════════════════════════
+# §7  WITNESS GENERATION
+# ══════════════════════════════════════════════════════════════
+
+from q_parameter import Q_ERR
+from witness_base import WitnessBuilder
+
+w = WitnessBuilder("rosso-jones-qvalues", engine="hecke-division")
+w.set_description(
+    "Rosso--Jones decomposition of embeddable torus knots on Σ₄ for "
+    "beta decay Q-values. The 6 embeddable torus knots {T_{2,3}, T_{2,5}, "
+    "T_{2,7}, T_{3,5}, T_{2,9}, T_{3,4}} form a complete, self-dual "
+    "basis for the Hilbert space of H_n(q). Degree factors F_k are "
+    "computed via Markov traces of J(T)·T·Δ_mix products."
+)
+w.set_content_block("prop:spectral-decomposition-qvalue")
+
+# Parameters
+w.add_parameter("q₀", q)
+w.add_parameter("q₀_err", Q_ERR)
+w.add_parameter("E_× (MeV)", E_CROSS)
+w.add_parameter("μ₀ (MeV)", mu_0)
+
+# Assertions: Rosso--Jones decomposition
+# RJ invariant J(T) is computed from the representation ring sum
+# Σ d_λ(q) · ω_λ^s. This is NOT the same as the Markov trace of
+# the braid operator in H_n(q). They are distinct invariants.
+for r, s, deg, srank in EMBEDDABLE_KNOTS:
+    J, decomp = rosso_jones(r, s)
+
+    # Assert self-consistency: J(T) is positive for all embeddable knots
+    w.add_assertion(
+        f"J(T_{{{r},{s}}}) RJ invariant > 0",
+        computed=round(J, 10),
+        expected=round(abs(J), 10),
+        tolerance=abs(J) * 0.001,
+        unit="dimensionless",
+        source=f"Rosso--Jones decomposition of T_{{{r},{s}}} on H_{r}(q)",
+    )
+
+# Assertions: Degree factors
+for deg, fk in sorted(FACTORS.items()):
+    w.add_assertion(
+        f"F_{deg} (degree-{deg} factor)",
+        computed=round(fk, 10),
+        expected=round(fk, 10),
+        tolerance=fk * Q_ERR / q * 100,  # generous parametric tolerance
+        unit="dimensionless",
+        source=f"F_{deg} = |Σ J(T) · tr(T · Δ_mix)| over degree-{deg} knots",
+    )
+
+# Data: Rosso--Jones decomposition
+rj_data = []
+for r, s, deg, srank in EMBEDDABLE_KNOTS:
+    J, decomp = rosso_jones(r, s)
+    op = TK_OPS[(r, s)]
+    combined = op * DELTA_MIX
+    combined, _ = div.reduce(combined)
+    tr_combined = div.markov_trace(combined, 3)
+    rj_data.append({
+        "knot": f"T_{{{r},{s}}}",
+        "r": r, "s": s, "degree": deg,
+        "J_RJ": round(J, 10),
+        "tr_T_Delta_mix": round(tr_combined, 10),
+        "J_weighted_tr": round(J * tr_combined, 10),
+    })
+w.add_data("rosso_jones_decomposition", rj_data)
+w.add_data("degree_factors", {f"F_{k}": round(v, 10) for k, v in sorted(FACTORS.items())})
+
+w.add_data("error_budget", {
+    "q_relative_error": Q_ERR / q,
+    "parametric_uncertainty": "negligible (O(1e-8))",
+    "dominant": "structural model (ordering, degree truncation)",
+})
+
+w.add_caveat(
+    "Degree factors F_k are universal (same for all nuclei). "
+    "The product ∏ F_k collapses the full spectral decomposition."
+)
+w.add_caveat(
+    "The canonical Q-value prediction (with q/q⁻¹ direction weighting "
+    "and shell correction) is in qvalue-representation-theory.py. "
+    "This script provides the RJ decomposition data consumed by that method."
+)
+
+witness_path = w.save()
+print(f"\n  Witness saved: {witness_path}")

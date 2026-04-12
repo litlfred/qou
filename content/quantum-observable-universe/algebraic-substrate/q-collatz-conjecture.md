@@ -27,11 +27,11 @@ Define $\mathcal{C}_q \colon \mathbb{Z}[q^{\pm 1}] \to
 
 $$
   \mathcal{C}_q(P)
-  \;=\;
+  = 
   \begin{cases}
-    P \,/\, [2]_q
+    P / [2]_q
       & P \text{ is } q\text{-even},\\[4pt]
-    \bigl([3]_q\, P + 1\bigr) \,/\, [2]_q
+    \bigl([3]_q P + 1\bigr) / [2]_q
       & P \text{ is } q\text{-odd}.
   \end{cases}
 $$
@@ -40,17 +40,17 @@ The odd branch is well-defined by the **Skein divisibility
 identity**:
 
 $$
-  [3]_q \;=\; q\,[2]_q + 1,
+  [3]_q =  q[2]_q + 1,
 $$
 
-which gives $[3]_q\, P + 1 = q\,[2]_q\, P + (P + 1)$.
+which gives $[3]_q P + 1 = q[2]_q P + (P + 1)$.
 Since $P$ is $q$-odd ($[2]_q \mid P + 1$), the numerator
-is divisible by $[2]_q$.  Writing $P + 1 = [2]_q\, Q$:
+is divisible by $[2]_q$.  Writing $P + 1 = [2]_q Q$:
 
 $$
   \mathcal{C}_q(P)
-  \;=\; q\,P + Q
-  \;=\; [3]_q\,Q - q.
+  =  qP + Q
+  =  [3]_qQ - q.
 $$
 
 **Classical limit.**  At $q = 1$: $\mathcal{C}_1(n) = n/2$
@@ -75,11 +75,11 @@ Each application of $\mathcal{C}_q$ corresponds to a
   move removes it.
 
 The Skein relation
-$q\,L_+ - q^{-1}\,L_- = (q - q^{-1})\,L_0$ ensures
+$qL_+ - q^{-1}L_- = (q - q^{-1})L_0$ ensures
 each resolution step is a **convex combination**:
 
 $$
-  J(L_+) = q^{-2}\,J(L_-) + (1 - q^{-2})\,J(L_0).
+  J(L_+) = q^{-2}J(L_-) + (1 - q^{-2})J(L_0).
 $$
 
 For $q > 1$ both coefficients are positive and sum to $1$.
@@ -93,7 +93,7 @@ gives the contraction.  Over one Collatz cycle
 (one odd step followed by enough even steps to
 exhaust $[2]_q$-divisibility):
 
-- The odd step maps $P \mapsto [3]_q\,Q - q$, where
+- The odd step maps $P \mapsto [3]_qQ - q$, where
   $Q = (P+1)/[2]_q$.  The ratio $|P|/|Q| \approx [2]_q$.
 
 - The subsequent even steps divide by $[2]_q$ as many
@@ -106,7 +106,7 @@ The net factor per cycle is $[3]_q / [2]_q^3 < 1$, with
 margin:
 
 $$
-  [2]_q^2 - [3]_q \;=\; q.
+  [2]_q^2 - [3]_q =  q.
 $$
 
 The margin is the substrate parameter itself.  Two
@@ -118,7 +118,7 @@ $[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$.
 $$
   \boxed{
   \text{For all } q > 1 \text{ and all }
-  P \in \mathbb{Z}[q^{\pm 1}]_{>0},\;
+  P \in \mathbb{Z}[q^{\pm 1}]_{>0},
   \text{the orbit }
   \{\mathcal{C}_q^k(P)\}_{k \geq 0}
   \text{ reaches } 1.

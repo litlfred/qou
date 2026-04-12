@@ -8,7 +8,7 @@ conservation forbids it.  The minimum process is **pair production**:
 a photon near a nucleus creates an $e^- e^+$ pair, requiring
 
 $$
-  E_{\gamma} \;\geq\; 2\,m_e\,c^2 \;=\; 1.022 \;\text{MeV}.
+  E_{\gamma}  \geq  2m_ec^2 =  1.022  \text{MeV}.
 $$
 
 The original electron is unchanged; a new pair appears from the
@@ -20,9 +20,9 @@ crossings.  Its [crossing energy](#def:crossing-energy) is
 
 $$
   \mathbf{E}_{\mathrm{cross}}(e^-)
-  \;=\; 3q
-  \;\approx\; 3 \, q_0
-  \;=\; 3.330
+  =  3q
+   \approx  3  q_0
+  =  3.330
   \quad (\text{in Skein units}).
 $$
 
@@ -30,9 +30,9 @@ The positron is the mirror $T_{2,3}^{\sigma}$ with $3$ negative crossings:
 
 $$
   \mathbf{E}_{\mathrm{cross}}(e^+)
-  \;=\; -3q^{-1}
-  \;\approx\; -3 \times 0.9010
-  \;=\; -2.703
+  =  -3q^{-1}
+   \approx  -3 \times 0.9010
+  =  -2.703
   \quad (\text{in Skein units}).
 $$
 
@@ -40,9 +40,9 @@ The **crossing energy gap** between the two chiralities is
 
 $$
   \Delta \mathbf{E}_{\mathrm{cross}}
-  \;=\; \mathbf{E}_{\mathrm{cross}}(e^-) - \mathbf{E}_{\mathrm{cross}}(e^+)
-  \;=\; 3(q + q^{-1})
-  \;\approx\; 6.033
+  =  \mathbf{E}_{\mathrm{cross}}(e^-) - \mathbf{E}_{\mathrm{cross}}(e^+)
+  =  3(q + q^{-1})
+   \approx  6.033
   \quad (\text{in Skein units}).
 $$
 
@@ -50,11 +50,11 @@ This decomposes into symmetric and antisymmetric parts:
 
 $$
   3(q + q^{-1})
-  \;=\;
+  = 
   \underbrace{3 \cdot 2 \cosh(\ln q)}_{\text{strong baseline}}
-  \;=\;
+  = 
   6 \cosh(\ln q)
-  \;\approx\; 6.033.
+   \approx  6.033.
 $$
 
 **Three energy scales for "conversion".**
@@ -76,9 +76,9 @@ $$
 
    $$
      \mathbf{E}_{\mathrm{cross}}(e^-) + \mathbf{E}_{\mathrm{cross}}(e^+)
-     \;=\; 3q - 3q^{-1}
-     \;=\; 3(q - q^{-1})
-     \;\approx\; 0.630
+     =  3q - 3q^{-1}
+     =  3(q - q^{-1})
+      \approx  0.630
      \quad (\text{Skein units}).
    $$
 
@@ -88,8 +88,8 @@ $$
 
    $$
      \frac{q - q^{-1}}{q + q^{-1}}
-     \;=\; \tanh(\ln q)
-     \;\approx\; 0.104
+     =  \tanh(\ln q)
+      \approx  0.104
    $$
 
    measures the electromagnetic-to-strong ratio for the electron,

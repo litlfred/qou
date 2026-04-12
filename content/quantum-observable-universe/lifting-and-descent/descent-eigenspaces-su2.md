@@ -7,7 +7,7 @@ endomorphism algebra into two complementary subspaces:
 
 $$
   \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))
-  \;=\; \mathfrak{A}^{\mathrm{desc}} \;\oplus\; \mathfrak{A}^{\mathrm{trans}},
+  =  \mathfrak{A}^{\mathrm{desc}}  \oplus  \mathfrak{A}^{\mathrm{trans}},
 $$
 
 where $\mathfrak{A}^{\mathrm{desc}} = \mathrm{im}(\hat{\tau})$ is the

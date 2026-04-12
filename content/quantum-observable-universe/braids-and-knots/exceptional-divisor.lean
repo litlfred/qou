@@ -6,6 +6,11 @@ parametrized by spherical coordinates (φ, ψ) obtained by
 blowing up p in the Descartes universe.
 
 LaTeX label: `def:exceptional-divisor`
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

@@ -14,19 +14,19 @@ via the Hecke relation to a linear combination:
 
 $$
   \prod_{j=i+1}^{A-1} C_{ij}(\sigma_i)
-  \;=\;
-  a_i \, \sigma_i + b_i
+  = 
+  a_i  \sigma_i + b_i
 $$
 
 where each crossing factor is $C_{ij}(\sigma_i) = c_j \sigma_i + d_j$ with coefficients depending on the pair type:
 
 $$
-  (c_j, d_j) \;=\;
+  (c_j, d_j) = 
   \begin{cases}
-    (1, 0) & \text{if } i, j \text{ both protons} \\[3pt]
-    (q^2, -q(q^{1/2} - q^{-1/2})) & \text{if } i, j \text{ both neutrons} \\[3pt]
-    (\tfrac{1+q^2}{2}, -\tfrac{q}{2}(q^{1/2} - q^{-1/2}))
-      & \text{if mixed}
+    (1, 0) & \text{if } i, j \text{ both protons (}\sigma\text{)} \\[3pt]
+    (1, -(q - q^{-1})) & \text{if } i, j \text{ both neutrons (}\sigma^{-1}\text{)} \\[3pt]
+    (1, -\tfrac{1}{2}(q - q^{-1}))
+      & \text{if mixed (}\tfrac{1}{2}(\sigma + \sigma^{-1})\text{)}
   \end{cases}
 $$
 
@@ -48,7 +48,7 @@ This is a $2 \times 2$ **transfer matrix** $T_j$ at each crossing.
 The transfer matrix product at generator $\sigma_i$:
 
 $$
-  M_i \;=\; \prod_{j=i+1}^{A-1} T_j
+  M_i =  \prod_{j=i+1}^{A-1} T_j
 $$
 
 is a product of $k_i = A - i - 1$ matrices.  This product
@@ -56,11 +56,11 @@ admits a **jet expansion** — a Taylor series in the number of
 crossings, where each order corresponds to a color degree:
 
 $$
-  M_i \;=\; \mathbb{1}
-  \;+\; \underbrace{\sum_{j} T_j^{(1)}}_{\text{1-jet: pair interactions}}
-  \;+\; \underbrace{\sum_{j < k} T_j^{(1)} T_k^{(1)}}_{\text{2-jet: triple correlations}}
-  \;+\; \cdots
-  \;+\; \underbrace{\prod_{j} T_j^{(1)}}_{\text{$k_i$-jet: full product}}
+  M_i =  \mathbb{1}
+  +  \underbrace{\sum_{j} T_j^{(1)}}_{\text{1-jet: pair interactions}}
+  +  \underbrace{\sum_{j < k} T_j^{(1)} T_k^{(1)}}_{\text{2-jet: triple correlations}}
+  +  \cdots
+  +  \underbrace{\prod_{j} T_j^{(1)}}_{\text{$k_i$-jet: full product}}
 $$
 
 where $T_j = \mathbb{1} + T_j^{(1)}$ and $T_j^{(1)}$ is the
@@ -80,7 +80,7 @@ The total number of terms across all jets and all generators is:
 
 $$
   \sum_{i=0}^{A-2} \sum_{r=0}^{k_i} \binom{k_i}{r}
-  \;=\;
+  = 
   \sum_{i=0}^{A-2} 2^{k_i}
 $$
 
@@ -90,11 +90,11 @@ per crossing.  The total across all generators:
 
 $$
   \sum_{i=0}^{A-2} k_i
-  \;=\;
+  = 
   \sum_{i=0}^{A-2} (A - i - 1)
-  \;=\;
+  = 
   \frac{A(A-1)}{2}
-  \;=\;
+  = 
   \binom{A}{2}
 $$
 
@@ -111,7 +111,7 @@ variation) of the energy functional in the nucleon-type
 variable $\tau_p \in \{\mathfrak{p}, \mathfrak{n}\}$:
 
 $$
-  \delta E \;=\; \sum_{i=0}^{p} (V_i^{\mathrm{dau}} - V_i^{\mathrm{par}})
+  \delta E =  \sum_{i=0}^{p} (V_i^{\mathrm{dau}} - V_i^{\mathrm{par}})
 $$
 
 summing only over generators affected by the converting
@@ -130,9 +130,9 @@ the energy variation has a **cross-term**:
 
 $$
   \delta^2 E
-  \;=\;
+  = 
   \underbrace{\delta E_{p_1} + \delta E_{p_2}}_{\text{sum of single variations}}
-  \;+\;
+  + 
   \underbrace{\Delta_{p_1 p_2}}_{\text{2-jet cross-term}}
 $$
 
@@ -149,12 +149,12 @@ $j = p_2$.  Writing $T_j = T_j^{(\mathrm{par})} + \delta T_j$:
 
 $$
   M_i^{(2\beta)}
-  \;=\;
+  = 
   M_i^{(\mathrm{par})}
-  \;+\;
+  + 
   \underbrace{\delta T_{p_1} \cdot (\text{rest})
     + (\text{rest}) \cdot \delta T_{p_2}}_{\text{1-jet terms (linear)}}
-  \;+\;
+  + 
   \underbrace{\delta T_{p_1} \cdot (\text{between}) \cdot \delta T_{p_2}}_{\text{2-jet cross-term}}
 $$
 
@@ -197,14 +197,14 @@ generator.
 The Markov-traced volume at generator $\sigma_i$ is:
 
 $$
-  \hat{V}_i \;=\; z \cdot a_i + b_i
+  \hat{V}_i =  z \cdot a_i + b_i
 $$
 
 where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
 The nuclear energy decomposes as:
 
 $$
-  \ln|\mathrm{tr}(\mathcal{N})| \;=\;
+  \ln|\mathrm{tr}(\mathcal{N})| = 
   \sum_{i=0}^{A-2} \ln|\hat{V}_i|
 $$
 
@@ -218,7 +218,7 @@ difference between the unreduced weight and the reduced weight.
 The **ideal volume** at generator $i$ is:
 
 $$
-  V_i^I \;=\; k_i - V_i
+  V_i^I =  k_i - V_i
 $$
 
 where $k_i = A - i - 1$ is the number of crossings.  This is

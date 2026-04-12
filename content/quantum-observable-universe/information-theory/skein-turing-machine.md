@@ -12,7 +12,7 @@ At each crossing of $L$, the Skein relation resolves the
 link into three branches:
 
 $$
-  q \, L_+ \;-\; q^{-1}\, L_- \;=\; s \, L_0
+  q  L_+ -  q^{-1} L_- =  s  L_0
 $$
 
 where $s = q^{1/2} - q^{-1/2}$.  Each resolution replaces

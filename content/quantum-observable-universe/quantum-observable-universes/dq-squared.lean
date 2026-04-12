@@ -12,11 +12,24 @@ LaTeX label: `prop:dq-squared`
 ## References
 
 - [manuscript] §1-quantum-observable-universe/dq-squared
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Archimedean dq² formula**.
 
@@ -28,15 +41,15 @@ namespace QOU
 -- Ref: [manuscript] §1
 structure ArchimedeanDqSquared where
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The Lie derivative value ℒ_ξ α (scalar representative). -/
-  lie_deriv : ℝ
+  lie_deriv : R_q
   /-- The Levi form value dθ(·, ·) (scalar representative). -/
-  levi_form : ℝ
+  levi_form : R_q
   /-- dq²(α) = q⁻¹(1 - q⁻¹) · dθ · ℒ_ξ α. -/
-  dq_squared : ℝ := q⁻¹ * (1 - q⁻¹) * levi_form * lie_deriv
+  dq_squared : R_q := q⁻¹ * (1 - q⁻¹) * levi_form * lie_deriv
 
 /-- dq² vanishes on Reeb-invariant forms. -/
 -- Ref: [manuscript] §1

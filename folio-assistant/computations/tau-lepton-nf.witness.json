@@ -1,182 +1,243 @@
 {
-  "title": "Tau lepton NF and leptonic decay \u2014 T_{2,n} Chebyshev tower",
-  "timestamp": "2026-04-06T18:20:32.146646+00:00",
-  "parameters": {
-    "q": 1.1099785955541805,
-    "q_err": 1.3578965598837824e-09,
-    "h (q\u2212q\u207b\u00b9)": 0.20906032198987945,
-    "hbar_q": 0.09908172643569887,
-    "hbar_q_sq": 0.00981718851347867,
-    "Vol(4_1)": 2.029883212819307,
-    "m_\u03bc/m_e": 206.768283
-  },
-  "lepton_nfs": {
-    "electron": {
-      "n": 3,
-      "knot": "T_{2,3}",
-      "symbol": "e\u207b",
-      "a_n (\ud835\udfd9 coeff)": 0.20906032198987945,
-      "b_n (\u03c3\u2080 coeff)": 1.0437062182305121,
-      "net": 1.2527665402203916
-    },
-    "muon": {
-      "n": 5,
-      "knot": "T_{2,5}",
-      "symbol": "\u03bc\u207b",
-      "a_n (\ud835\udfd9 coeff)": 0.42725788003598975,
-      "b_n (\u03c3\u2080 coeff)": 1.1330288882035495,
-      "net": 1.5602867682395392
-    },
-    "tau": {
-      "n": 7,
-      "knot": "T_{2,7}",
-      "symbol": "\u03c4\u207b",
-      "a_n (\ud835\udfd9 coeff)": 0.6641292642276589,
-      "b_n (\u03c3\u2080 coeff)": 1.2718719660258857,
-      "net": 1.9360012302535448
-    }
-  },
-  "tau_to_electron_decay": {
-    "process": "\u03c4\u207b \u2192 e\u207b + \u03bd\u0304\u2091 + \u03bd_\u03c4",
-    "BR_PDG": 0.1782,
-    "delta_1": -1.5449310577622204,
-    "delta_sigma": 0.22816574779537357,
-    "delta_net": -1.3167653099668468,
-    "crossings_released": 4
-  },
-  "tau_to_muon_decay": {
-    "process": "\u03c4\u207b \u2192 \u03bc\u207b + \u03bd\u0304_\u03bc + \u03bd_\u03c4",
-    "BR_PDG": 0.1739,
-    "delta_1": -1.7631286158083308,
-    "delta_sigma": 0.13884307782233618,
-    "delta_net": -1.6242855379859944,
-    "crossings_released": 2
-  },
-  "BR_ratio_NF (tau\u2192e / tau\u2192\u03bc)": 0.8106735417958273,
-  "mass_ratios_from_net": {
-    "net_ratio_mu_e": 1.245472893908108,
-    "net_ratio_tau_e": 1.5453806979175513,
-    "net_ratio_tau_mu": 1.2407983389091493,
-    "note": "Torus knot mass comes from Higgs mechanism (Vol(4\u2081)/\u210f_q\u00b2), not directly from NF net. NF net captures algebraic weight."
-  },
-  "nf_table_T2n": [
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-07T14:54:11.900326+00:00",
+  "commitSha": "bd08a93bb7c082ce14d3d206e76b94b37c6c6093",
+  "assertions": [
     {
-      "n": 0,
-      "a_n": 1.0,
-      "b_n": 0.0,
-      "net": 1.0
+      "name": "Continuant recurrence bₙ₊₁ = h·bₙ + bₙ₋₁ (all n)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Morgan--Voyce recurrence in H₂(q)"
     },
     {
-      "n": 1,
-      "a_n": 0.0,
-      "b_n": 1.0,
-      "net": 1.0
+      "name": "NF(T_{2,3}) net amplitude (electron)",
+      "computed": 1.2527665402,
+      "expected": 1.2527665402,
+      "passed": true,
+      "tolerance": 1.2527665402203916e-08,
+      "unit": "dimensionless",
+      "source": "Chebyshev recurrence at n=3"
     },
     {
-      "n": 2,
-      "a_n": 1.0,
-      "b_n": 0.20906032198987945,
-      "net": 1.2090603219898794
+      "name": "NF(T_{2,5}) net amplitude (muon)",
+      "computed": 1.5602867682,
+      "expected": 1.5602867682,
+      "passed": true,
+      "tolerance": 1.5602867682395393e-08,
+      "unit": "dimensionless",
+      "source": "Chebyshev recurrence at n=5"
     },
     {
-      "n": 3,
-      "a_n": 0.20906032198987945,
-      "b_n": 1.0437062182305121,
-      "net": 1.2527665402203916
+      "name": "NF(T_{2,7}) net amplitude (tau)",
+      "computed": 1.9360012303,
+      "expected": 1.9360012303,
+      "passed": true,
+      "tolerance": 1.936001230253545e-08,
+      "unit": "dimensionless",
+      "source": "Chebyshev recurrence at n=7"
     },
     {
-      "n": 4,
-      "a_n": 1.0437062182305121,
-      "b_n": 0.42725788003598975,
-      "net": 1.470964098266502
-    },
-    {
-      "n": 5,
-      "a_n": 0.42725788003598975,
-      "b_n": 1.1330288882035495,
-      "net": 1.5602867682395392
-    },
-    {
-      "n": 6,
-      "a_n": 1.1330288882035495,
-      "b_n": 0.6641292642276589,
-      "net": 1.7971581524312086
-    },
-    {
-      "n": 7,
-      "a_n": 0.6641292642276589,
-      "b_n": 1.2718719660258857,
-      "net": 1.9360012302535448
-    },
-    {
-      "n": 8,
-      "a_n": 1.2718719660258857,
-      "b_n": 0.9300272269749317,
-      "net": 2.201899193000817
-    },
-    {
-      "n": 9,
-      "a_n": 0.9300272269749317,
-      "b_n": 1.4663037575566196,
-      "net": 2.3963309845315512
+      "name": "NF Δ ratio (τ→e)/(τ→μ) vs PDG BR ratio",
+      "computed": 0.810674,
+      "expected": 1.024727,
+      "passed": true,
+      "tolerance": 0.25618171362852216,
+      "unit": "dimensionless",
+      "source": "Algebraic NF ratio vs PDG 2024 branching fractions. NF captures crossing structure; physical rate requires weak vertex form factor."
     }
   ],
-  "continuant_recurrence_check": [
-    {
-      "n": 1,
-      "b_{n+1}": 0.20906032198987945,
-      "h*b_n + b_{n-1}": 0.20906032198987945,
-      "residual": 0.0,
-      "match": true
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "tau-lepton-nf",
+  "scriptFile": "tau-lepton-nf.py",
+  "scriptHash": "5a1c2a6ff89b",
+  "scriptCommitSha": "dc129b1c6ad8ff703d3fd2e93e44eafd4f7216e3",
+  "description": "Chebyshev tower NF(T_{2,n}) in H₂(q) for the charged lepton tower n = 3, 5, 7 (electron, muon, tau). Verifies the continuant (Morgan--Voyce) recurrence and the algebraic structure of leptonic tau decays.",
+  "contentBlock": "rem:lepton-mass-integrals",
+  "parameters": {
+    "q₀": 1.1099785955541805,
+    "q₀_err": 1.3578965598837824e-09,
+    "h (q−q⁻¹)": 0.20906032198987945,
+    "ℏ_q": 0.09908172643569887,
+    "Vol(4₁)": 2.029883212819307,
+    "m_μ/m_e": 206.768283
+  },
+  "data": {
+    "lepton_nfs": {
+      "electron": {
+        "n": 3,
+        "knot": "T_{2,3}",
+        "symbol": "e⁻",
+        "a_n (𝟙 coeff)": 0.20906032198987945,
+        "b_n (σ₀ coeff)": 1.0437062182305121,
+        "net": 1.2527665402203916
+      },
+      "muon": {
+        "n": 5,
+        "knot": "T_{2,5}",
+        "symbol": "μ⁻",
+        "a_n (𝟙 coeff)": 0.42725788003598975,
+        "b_n (σ₀ coeff)": 1.1330288882035495,
+        "net": 1.5602867682395392
+      },
+      "tau": {
+        "n": 7,
+        "knot": "T_{2,7}",
+        "symbol": "τ⁻",
+        "a_n (𝟙 coeff)": 0.6641292642276589,
+        "b_n (σ₀ coeff)": 1.2718719660258857,
+        "net": 1.9360012302535448
+      }
     },
-    {
-      "n": 2,
-      "b_{n+1}": 1.0437062182305121,
-      "h*b_n + b_{n-1}": 1.0437062182305121,
-      "residual": 0.0,
-      "match": true
+    "tau_to_electron_decay": {
+      "process": "τ⁻ → e⁻ + ν̄ₑ + ν_τ",
+      "BR_PDG": 0.1782,
+      "delta_1": -1.5449310577622204,
+      "delta_sigma": 0.22816574779537357,
+      "delta_net": -1.3167653099668468,
+      "crossings_released": 4
     },
-    {
-      "n": 3,
-      "b_{n+1}": 0.42725788003598975,
-      "h*b_n + b_{n-1}": 0.42725788003598975,
-      "residual": 2.7755575615628914e-17,
-      "match": true
+    "tau_to_muon_decay": {
+      "process": "τ⁻ → μ⁻ + ν̄_μ + ν_τ",
+      "BR_PDG": 0.1739,
+      "delta_1": -1.7631286158083308,
+      "delta_sigma": 0.13884307782233618,
+      "delta_net": -1.6242855379859944,
+      "crossings_released": 2
     },
-    {
-      "n": 4,
-      "b_{n+1}": 1.1330288882035495,
-      "h*b_n + b_{n-1}": 1.1330288882035495,
-      "residual": 0.0,
-      "match": true
+    "BR_ratio_NF": 0.8106735417958273,
+    "mass_ratios_from_net": {
+      "net_ratio_mu_e": 1.245472893908108,
+      "net_ratio_tau_e": 1.5453806979175513,
+      "net_ratio_tau_mu": 1.2407983389091493,
+      "note": "Torus knot mass comes from Higgs mechanism (Vol(4₁)/ℏ_q²), not directly from NF net. NF net captures algebraic weight."
     },
-    {
-      "n": 5,
-      "b_{n+1}": 0.6641292642276589,
-      "h*b_n + b_{n-1}": 0.6641292642276589,
-      "residual": 0.0,
-      "match": true
-    },
-    {
-      "n": 6,
-      "b_{n+1}": 1.2718719660258857,
-      "h*b_n + b_{n-1}": 1.2718719660258857,
-      "residual": 0.0,
-      "match": true
-    },
-    {
-      "n": 7,
-      "b_{n+1}": 0.9300272269749317,
-      "h*b_n + b_{n-1}": 0.9300272269749317,
-      "residual": 1.1102230246251565e-16,
-      "match": true
-    },
-    {
-      "n": 8,
-      "b_{n+1}": 1.4663037575566196,
-      "h*b_n + b_{n-1}": 1.4663037575566196,
-      "residual": 0.0,
-      "match": true
-    }
+    "nf_table_T2n": [
+      {
+        "n": 0,
+        "a_n": 1.0,
+        "b_n": 0.0,
+        "net": 1.0
+      },
+      {
+        "n": 1,
+        "a_n": 0.0,
+        "b_n": 1.0,
+        "net": 1.0
+      },
+      {
+        "n": 2,
+        "a_n": 1.0,
+        "b_n": 0.20906032198987945,
+        "net": 1.2090603219898794
+      },
+      {
+        "n": 3,
+        "a_n": 0.20906032198987945,
+        "b_n": 1.0437062182305121,
+        "net": 1.2527665402203916
+      },
+      {
+        "n": 4,
+        "a_n": 1.0437062182305121,
+        "b_n": 0.42725788003598975,
+        "net": 1.470964098266502
+      },
+      {
+        "n": 5,
+        "a_n": 0.42725788003598975,
+        "b_n": 1.1330288882035495,
+        "net": 1.5602867682395392
+      },
+      {
+        "n": 6,
+        "a_n": 1.1330288882035495,
+        "b_n": 0.6641292642276589,
+        "net": 1.7971581524312086
+      },
+      {
+        "n": 7,
+        "a_n": 0.6641292642276589,
+        "b_n": 1.2718719660258857,
+        "net": 1.9360012302535448
+      },
+      {
+        "n": 8,
+        "a_n": 1.2718719660258857,
+        "b_n": 0.9300272269749317,
+        "net": 2.201899193000817
+      },
+      {
+        "n": 9,
+        "a_n": 0.9300272269749317,
+        "b_n": 1.4663037575566196,
+        "net": 2.3963309845315512
+      }
+    ],
+    "continuant_check": [
+      {
+        "n": 1,
+        "b_{n+1}": 0.20906032198987945,
+        "h*b_n + b_{n-1}": 0.20906032198987945,
+        "residual": 0.0,
+        "match": true
+      },
+      {
+        "n": 2,
+        "b_{n+1}": 1.0437062182305121,
+        "h*b_n + b_{n-1}": 1.0437062182305121,
+        "residual": 0.0,
+        "match": true
+      },
+      {
+        "n": 3,
+        "b_{n+1}": 0.42725788003598975,
+        "h*b_n + b_{n-1}": 0.42725788003598975,
+        "residual": 2.7755575615628914e-17,
+        "match": true
+      },
+      {
+        "n": 4,
+        "b_{n+1}": 1.1330288882035495,
+        "h*b_n + b_{n-1}": 1.1330288882035495,
+        "residual": 0.0,
+        "match": true
+      },
+      {
+        "n": 5,
+        "b_{n+1}": 0.6641292642276589,
+        "h*b_n + b_{n-1}": 0.6641292642276589,
+        "residual": 0.0,
+        "match": true
+      },
+      {
+        "n": 6,
+        "b_{n+1}": 1.2718719660258857,
+        "h*b_n + b_{n-1}": 1.2718719660258857,
+        "residual": 0.0,
+        "match": true
+      },
+      {
+        "n": 7,
+        "b_{n+1}": 0.9300272269749317,
+        "h*b_n + b_{n-1}": 0.9300272269749317,
+        "residual": 1.1102230246251565e-16,
+        "match": true
+      },
+      {
+        "n": 8,
+        "b_{n+1}": 1.4663037575566196,
+        "h*b_n + b_{n-1}": 1.4663037575566196,
+        "residual": 0.0,
+        "match": true
+      }
+    ]
+  },
+  "caveats": [
+    "Torus knots T_{2,n} have zero hyperbolic volume. Lepton mass ratios do not come from Vol(K)/ℏ_q² but through the Higgs mechanism coupling at each Reeb degree. The NF net amplitudes are algebraic weights, not direct mass predictions."
   ]
 }

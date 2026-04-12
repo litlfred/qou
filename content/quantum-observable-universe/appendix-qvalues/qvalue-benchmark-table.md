@@ -51,7 +51,7 @@ representation of $H_3(q)$.
 
 **Error propagation note.** The prediction uncertainty $\delta\mathcal{Q}_q$
 from $\delta q_0 \approx 1.4 \times 10^{-9}$ is negligible
-($\sim 10^{-9}\;\text{MeV}$).  The dominant theoretical uncertainty is
+($\sim 10^{-9} \text{MeV}$).  The dominant theoretical uncertainty is
 *structural* (model approximations in $F_{\mathrm{shell}}$), not
 parametric.  All $\sigma$-separations are therefore
 $|\mathcal{Q}_q - \mathcal{Q}_{\mathrm{exp}}| / \delta\mathcal{Q}_{\mathrm{exp}}$.

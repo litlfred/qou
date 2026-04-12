@@ -23,13 +23,13 @@ $Z$ electrons is
 
 $$
   \mathcal{M}(Z, N)
-  \;=\;
+  = 
   Z \cdot m_{\mathfrak{p}}
-  \;+\;
+  + 
   N \cdot m_{\mathfrak{n}}
-  \;+\;
+  + 
   Z \cdot m_e
-  \;-\;
+  - 
   B(Z, N)
 $$
 
@@ -40,14 +40,14 @@ where:
 
    $$
      m_{\mathfrak{p}}
-     = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
+     = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
    $$
 
 2. $m_{\mathfrak{n}}$ is the neutron mass:
 
    $$
      m_{\mathfrak{n}}
-     = 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
+     = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
    $$
 
 3. $m_e$ is the electron mass from the trefoil knot
@@ -62,8 +62,8 @@ The knot formula for a neutral atom is
 ([knot-particle generation](#def:knot-particle-generation)):
 
 $$
-  Z\,\mathfrak{p} \;\bowtie\; N\,\mathfrak{n}
-  \;\bowtie\; Z \cdot T_{2,3}
+  Z\mathfrak{p}  \bowtie  N\mathfrak{n}
+   \bowtie  Z \cdot T_{2,3}
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p
@@ -91,7 +91,7 @@ from the lepton mass ratio).
 For each element $Z$ with most stable isotope mass number $A = Z + N$:
 
 **Step 1.** Write the knot formula:
-$Z\,\mathfrak{p} \bowtie N\,\mathfrak{n} \bowtie Z \cdot T_{2,3}$.
+$Z\mathfrak{p} \bowtie N\mathfrak{n} \bowtie Z \cdot T_{2,3}$.
 
 **Step 2.** Compute the unbound nucleon mass:
 $M_{\mathrm{free}}(Z, N) = Z \cdot m_{\mathfrak{p}} + N \cdot m_{\mathfrak{n}}$.

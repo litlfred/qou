@@ -10,11 +10,24 @@ LaTeX label: `def:positron-knot`
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
 - [manuscript] Ch. 5, §positron-knot
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The positron: mirror trefoil σ(T_{2,3}) with reversed crossings.
     Antiparticle of the electron; same knot as down quark but in
@@ -30,7 +43,7 @@ structure Positron where
   /-- Seifert genus (same as trefoil). -/
   genus : ℕ := 1
   /-- Hyperbolic volume (torus knot → non-hyperbolic). -/
-  volume : ℝ := 0
+  volume : R_q := 0
   /-- Coulomb charge: +1 (reversed crossing chirality). -/
   charge : ℤ := 1
   /-- Orientation: -1 for antiparticle (reversed time direction). -/

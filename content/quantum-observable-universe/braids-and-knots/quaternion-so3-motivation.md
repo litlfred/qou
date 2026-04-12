@@ -11,15 +11,15 @@ The key identifications are:
    is isomorphic to $\mathrm{SU}(2)$ via
 
    $$
-     a + b\,\mathbf{i} + c\,\mathbf{j} + d\,\mathbf{k}
-     \;\longmapsto\;
+     a + b\mathbf{i} + c\mathbf{j} + d\mathbf{k}
+      \longmapsto 
      \begin{pmatrix} a + bi & -c + di \\ c + di & a - bi \end{pmatrix}.
    $$
 
    Under this map the Pauli generators
    $e_a = -\frac{i}{2}\tau_a$
    ([SU(2) generators](#def:su2-generators)) correspond to the half-quaternion
-   basis $\frac{1}{2}\mathbf{i},\, \frac{1}{2}\mathbf{j},\, \frac{1}{2}\mathbf{k}$.
+   basis $\frac{1}{2}\mathbf{i}, \frac{1}{2}\mathbf{j}, \frac{1}{2}\mathbf{k}$.
 
 2. **$\mathrm{Im}\mathbb{H} \cong \mathfrak{su}(2)$ as Lie algebras.**
    The purely imaginary quaternions form a $3$-dimensional real Lie algebra under
@@ -27,8 +27,8 @@ The key identifications are:
    $[p, q] = pq - qp$.  In the half-quaternion basis
    $e_1 = \frac{1}{2}\mathbf{i}$, $e_2 = \frac{1}{2}\mathbf{j}$,
    $e_3 = \frac{1}{2}\mathbf{k}$, the structure constants are exactly
-   $[e_a, e_b] = \epsilon_{abc}\,e_c$
-   (e.g.\ $[\tfrac{1}{2}\mathbf{i},\, \tfrac{1}{2}\mathbf{j}] = \tfrac{1}{4}(\mathbf{ij} - \mathbf{ji}) = \tfrac{1}{2}\mathbf{k} = e_3$).
+   $[e_a, e_b] = \epsilon_{abc}e_c$
+   (e.g.\ $[\tfrac{1}{2}\mathbf{i}, \tfrac{1}{2}\mathbf{j}] = \tfrac{1}{4}(\mathbf{ij} - \mathbf{ji}) = \tfrac{1}{2}\mathbf{k} = e_3$).
 
 3. **Adjoint action $=$ double cover $\mathrm{SU}(2) \to \mathrm{SO}(3)$.**
    Conjugation by a unit quaternion $\mathbf{q}$ acts on
@@ -37,7 +37,7 @@ The key identifications are:
 
    $$
      \mathrm{Ad}_{\mathbf{q}}\colon
-     \mathbf{v} \;\longmapsto\; \mathbf{q}\,\mathbf{v}\,\mathbf{q}^{*},
+     \mathbf{v}  \longmapsto  \mathbf{q}\mathbf{v}\mathbf{q}^{*},
      \qquad
      \mathbf{v} \in \mathrm{Im}\mathbb{H}.
    $$

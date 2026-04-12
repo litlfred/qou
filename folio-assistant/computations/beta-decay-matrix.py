@@ -90,8 +90,8 @@ def traced_volume(M):
 # ── Crossing coefficients ────────────────────────────────────────
 
 c_pp, d_pp = 1.0, 0.0
-c_nn, d_nn = Q**2, -Q * S
-c_mix, d_mix = 0.5 * (1 + Q**2), -0.5 * Q * S
+c_nn, d_nn = 1.0, -HA
+c_mix, d_mix = 1.0, -0.5 * HA
 
 print("═══ Crossing coefficients (c, d) ═══")
 print(f"  pp:    c = {c_pp:.10f},  d = {d_pp:.10f}")
@@ -136,20 +136,20 @@ print()
 
 # Symbolic form
 print("Symbolic entries of Δ_β^{nn→mix}:")
-print(f"  (1,1): ½(1+q²)(q-q⁻¹) - ½q·s - [q²(q-q⁻¹) - q·s]")
-print(f"       = ½(1-q²)(q-q⁻¹) + ½q·s")
+print(f"  (1,1): (q-q⁻¹) - ½(q-q⁻¹) - [(q-q⁻¹) - (q-q⁻¹)]")
+print(f"       = 0")
 print(f"       = {Delta_nn_mix[0][0]:+.10f}")
-print(f"  (1,2): ½(1+q²) - q² = ½(1-q²) = {Delta_nn_mix[0][1]:+.10f}")
-print(f"  (2,1): ½(1+q²) - q² = ½(1-q²) = {Delta_nn_mix[1][0]:+.10f}")
-print(f"  (2,2): -½q·s - (-q·s) = ½q·s = {Delta_nn_mix[1][1]:+.10f}")
+print(f"  (1,2): 1 - 1 = 0 = {Delta_nn_mix[0][1]:+.10f}")
+print(f"  (2,1): 1 - 1 = 0 = {Delta_nn_mix[1][0]:+.10f}")
+print(f"  (2,2): -½(q-q⁻¹) - (-(q-q⁻¹)) = ½(q-q⁻¹) = {Delta_nn_mix[1][1]:+.10f}")
 print()
 print("Symbolic entries of Δ_β^{mix→pp}:")
-print(f"  (1,1): (q-q⁻¹) - [½(1+q²)(q-q⁻¹) - ½q·s]")
-print(f"       = ½(1-q²)(q-q⁻¹) + ½q·s")
+print(f"  (1,1): (q-q⁻¹) - [(q-q⁻¹) - ½(q-q⁻¹)]")
+print(f"       = ½(q-q⁻¹)")
 print(f"       = {Delta_mix_pp[0][0]:+.10f}")
-print(f"  (1,2): 1 - ½(1+q²) = ½(1-q²) = {Delta_mix_pp[0][1]:+.10f}")
-print(f"  (2,1): 1 - ½(1+q²) = ½(1-q²) = {Delta_mix_pp[1][0]:+.10f}")
-print(f"  (2,2): 0 - (-½q·s) = ½q·s = {Delta_mix_pp[1][1]:+.10f}")
+print(f"  (1,2): 1 - 1 = 0 = {Delta_mix_pp[0][1]:+.10f}")
+print(f"  (2,1): 1 - 1 = 0 = {Delta_mix_pp[1][0]:+.10f}")
+print(f"  (2,2): 0 - (-½(q-q⁻¹)) = ½(q-q⁻¹) = {Delta_mix_pp[1][1]:+.10f}")
 print()
 
 # KEY OBSERVATION
@@ -162,10 +162,9 @@ if same:
     print(f"  Both elementary decay matrices are IDENTICAL!")
     print(f"  There is only ONE β decay matrix:")
     print(f"")
-    print(f"  Δ_β(q) = ½(1-q²) · ( (q-q⁻¹),  1 )  +  ½q·s · ( 1, 0 )")
-    print(f"                       (    1,     0 )              ( 0, 1 )")
+    print(f"  Δ_β(q) = ½(q-q⁻¹) · I")
     print(f"")
-    print(f"         = ½(1-q²) · T_pp  +  ½q·s · I")
+    print(f"         = (HA/2) · I  where HA = q - q⁻¹")
     print(f"")
     print(f"  where s = q½ - q⁻½ and I is the 2×2 identity.")
 print()

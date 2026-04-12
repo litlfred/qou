@@ -5,10 +5,10 @@ $\mathbb{P}(V)$ ([Definition](#def:projective-line-object)).
 Formally, a **localized hadron** at $p$ is a morphism in $\mathbf{C}$:
 
 $$
-  H_p \;\colon\; \mathbf{1}
-  \;\longrightarrow\;
+  H_p  \colon  \mathbf{1}
+   \longrightarrow 
   \mathrm{Sym}^n\!\bigl(\mathcal{K}_p\bigr)
-  \;\otimes\;
+  \otimes
   \mathcal{L}_{p}^{\mathrm{bind}}
 $$
 

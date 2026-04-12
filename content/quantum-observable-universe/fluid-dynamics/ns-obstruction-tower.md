@@ -11,11 +11,11 @@ Yekutieli obstruction classes to the collision locus:
 
 $$
   \mathrm{Obs}_\partial(A)
-  \;=\;
+  = 
   \ker\!\left(
     \bigoplus_{n \geq 0}
     H^2(\mathcal{S}, \mathcal{B})
-    \;\xrightarrow{\;\mathrm{res}_\Sigma\;}
+    \xrightarrow{ \mathrm{res}_\Sigma}
     \bigoplus_{n \geq 0}
     H^2(\Sigma, \mathcal{B}|_\Sigma)
   \right).
@@ -34,9 +34,9 @@ is
 
 $$
   \kappa_n
-  \;=\;
+  = 
   \kappa_0
-  \;+\;
+  + 
   \delta_n,
   \qquad
   \delta_n \in \mathrm{im}\!\bigl(
@@ -60,11 +60,11 @@ $(\mathcal{S}, \mathcal{S} \setminus \Sigma)$:
 $$
   \cdots \to
   H^1(\mathcal{S} \setminus \Sigma, \mathcal{B})
-  \;\xrightarrow{\;\partial\;}
+  \xrightarrow{\partial}
   H^2_\Sigma(\mathcal{S}, \mathcal{B})
-  \;\to\;
+   \to 
   H^2(\mathcal{S}, \mathcal{B})
-  \;\xrightarrow{\;\mathrm{res}\;}
+  \xrightarrow{ \mathrm{res}}
   H^2(\mathcal{S} \setminus \Sigma, \mathcal{B})
   \to \cdots
 $$
@@ -83,7 +83,7 @@ $p \in \Sigma$ is
 
 $$
   H^1_{\mathfrak{m}_p}(A)
-  \;=\;
+  = 
   R^1\Gamma_{\mathfrak{m}_p}(A).
 $$
 
@@ -95,7 +95,7 @@ contributions from both:
 
 $$
   H^1_{\mathfrak{m}_p}(A)
-  \;=\;
+  = 
   V_{1/2}^{(1)} \oplus V_{1/2}^{(2)},
 $$
 
@@ -113,7 +113,7 @@ $$
   H^1_{\mathfrak{m}_p}(A) \neq 0
   \quad\Longleftrightarrow\quad
   \lambda_\parallel(p) > 0
-  \;\text{ and }\;
+   \text{ and }
   \lambda_\perp(p) > 0
   \quad\Longleftrightarrow\quad
   \kappa(p) = a_\perp/a_\parallel \in (0, \infty).
@@ -131,10 +131,10 @@ to the collision locus is
 
 $$
   \kappa_n\big|_\Sigma
-  \;=\;
+  = 
   \mathrm{lk}(\varrho_1, \varrho_2)
   \cdot e(\xi)\big|_\Sigma
-  \;+\; \delta_n\big|_\Sigma,
+  +  \delta_n\big|_\Sigma,
 $$
 
 where $\mathrm{lk}(\varrho_1, \varrho_2)$ is the linking number

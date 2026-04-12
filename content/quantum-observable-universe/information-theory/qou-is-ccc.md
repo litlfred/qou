@@ -23,7 +23,7 @@ terminal boundary datum of aeon $\mathcal{A}_k$:*
 
 $$
   \mathrm{CMB}(\mathcal{S}_0^{(k+1)})
-  \;=\;
+  = 
   \partial\mathcal{A}_k\big|_b.
 $$
 

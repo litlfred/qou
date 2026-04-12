@@ -8,5 +8,5 @@ export default definition({
     decl: "QOU.Torsion.CategoricalProton",
     validation: "not_checked",
   },
-  uses: ["def:down-quark"],
+  uses: ["def:down-quark", "conj:borromean-quark", "def:color-tube-coordinates"],
 });

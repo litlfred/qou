@@ -7,7 +7,7 @@ $\mathcal{L}_q \in \mathrm{LocSys}_{\check{G}_q}(X)$ is uniquely
 determined by the action of $\tau$ on the Hecke eigenvalue data:
 
 $$
-  \mathcal{L}_q \;\simeq\;
+  \mathcal{L}_q \simeq
   \mathrm{Aut}^\otimes(\tau)\text{-}\mathrm{equivariantisation of }
   \big\{ V_\lambda^{(q)}(\mathcal{L}_q)_x \big\}_{\lambda, x}.
 $$

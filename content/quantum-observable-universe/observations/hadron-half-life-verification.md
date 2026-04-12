@@ -13,12 +13,12 @@ standard Fermi theory is decomposed into its $q$-dependent parts
 
 | Standard constant | $q$-decomposition | Source |
 |-------------------|-------------------|--------|
-| $m_e$ (electron mass) | $3\,m_e/3$ | 3 crossings of trefoil $T_{2,3}$ |
+| $m_e$ (electron mass) | $3m_e/3$ | 3 crossings of trefoil $T_{2,3}$ |
 | $s$ (weak coupling) | $q^{1/2} - q^{-1/2}$ | Skein amplitude (no W boson) |
 | $[2]_q$ (vertex factor) | $q + q^{-1}$ | Categorical dim of $\mathrm{SU}_q(2)$ fund. rep. |
 | $v$ (weak scale) | $N_v \cdot m_e/3$ | Topological invariant $N_v$ (open) |
-| $G_F$ (Fermi constant) | $1/(\sqrt{2}\,v^2)$ | Derived from weak scale |
-| $G_F^2 m_e^5$ (rate scale) | $243\,m_e/3\,/\,(2\,N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
+| $G_F$ (Fermi constant) | $1/(\sqrt{2}v^2)$ | Derived from weak scale |
+| $G_F^2 m_e^5$ (rate scale) | $243m_e/3/(2N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
 
 From $q$ and $\mu_0$ alone:
 
@@ -30,7 +30,7 @@ From $q$ and $\mu_0$ alone:
    ([transition energy](#def:q-value-transition)) — the
    categorical action difference
    $\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
-   where $S_q(e) = 3\,m_e/3$
+   where $S_q(e) = 3m_e/3$
    ([building blocks](#rem:building-block-knots)).
    This is NOT defined by classical energy conservation
    ($E_{\mathrm{before}} = E_{\mathrm{after}}$ fails at $q \neq 1$).
@@ -52,7 +52,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 
 1. **$N_v$ (weak scale crossing count).**
    The weak scale $v = N_v \cdot m_e/3$ sets
-   the absolute rate via $G_F = 1/(\sqrt{2}\,v^2)$.  Deriving $N_v$
+   the absolute rate via $G_F = 1/(\sqrt{2}v^2)$.  Deriving $N_v$
    requires identifying the brane tower structure at the electroweak
    level.  Target: $N_v \cdot \kappa_{\mathrm{cross}} \cdot \mu_0 \approx 246$ GeV.
 
@@ -70,7 +70,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 3. **$g_A$ (axial coupling) from the Borromean color average.** RESOLVED.
    The $3$-fold color average of the half-Borromean braid
    $h_{ij} = \sigma_i^{-1}\sigma_j\sigma_i\sigma_j^{-1}$ gives:
-   $g_A(q) = (5/3) \times |\mathrm{tr}_{\mathrm{std}}(\tfrac{1}{3} \sum h_{ij})| \,/\, |\mathrm{tr}_{\mathrm{sym}}(\tfrac{1}{3} \sum h_{ij})| \approx 1.277$ ($+0.1\%$ from PDG $1.2754$).
+   $g_A(q) = (5/3) \times |\mathrm{tr}_{\mathrm{std}}(\tfrac{1}{3} \sum h_{ij})| / |\mathrm{tr}_{\mathrm{sym}}(\tfrac{1}{3} \sum h_{ij})| \approx 1.277$ ($+0.1\%$ from PDG $1.2754$).
    The sum is over $3$ cyclic orderings of quark colors $(r,g,b)$.
    Script: `folio-assistant/computations/borromean-axial-coupling.py`.
 
@@ -107,7 +107,7 @@ case.  At Level 0 ($B_3$, 3 transfer matrix steps):
 
 $$
   \mathcal{Q}_q({}^3\mathrm{H})
-  \;=\;
+  = 
   P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0) - P_e(q_0)
 $$
 
@@ -116,7 +116,7 @@ $q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2 \approx 0.00
 
 $$
   \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
-  \;=\;
+  = 
   P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0 + \Delta q) - P_e(q_0)
 $$
 
@@ -171,10 +171,10 @@ knot operator product
 
 $$
   \mathcal{Q}_q
-  \;=\;
+  = 
   \mathcal{Q}_{\mathrm{bare}}
-  \;\times\;
-  \prod_{\tau(r,s)} F(\tau(r,s),\, N)
+   \times 
+  \prod_{\tau(r,s)} F(\tau(r,s), N)
 $$
 
 where $\mathcal{Q}_{\mathrm{bare}} = |\log_q(P_{\mathrm{dau}}/ P_{\mathrm{par}})| \times \hbar_q \cdot m_e/3$
@@ -258,16 +258,16 @@ $\partial \ln \Gamma / \partial \ln q \approx 48$.
 
 $$
   \frac{\delta t_{1/2}}{t_{1/2}}
-  \;=\;
-  5 \,\frac{\delta Q}{Q}
-  \;\oplus\;
-  2 \,\frac{\delta g_A}{g_A}
-  \;\oplus\;
-  2 \,\frac{\delta G_F}{G_F}
-  \;\oplus\;
+  = 
+  5 \frac{\delta Q}{Q}
+   \oplus 
+  2 \frac{\delta g_A}{g_A}
+   \oplus 
+  2 \frac{\delta G_F}{G_F}
+   \oplus 
   \frac{\delta \alpha_{\mathrm{EM}}}{\alpha_{\mathrm{EM}}}
-  \;\oplus\;
-  48 \,\frac{\delta q}{q}
+   \oplus 
+  48 \frac{\delta q}{q}
 $$
 
 | Source | Value $\pm$ error | $\delta x / x$ | $\to \delta t/t$ |

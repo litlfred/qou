@@ -12,13 +12,13 @@ a few circulation timescales via a sequence of local **vortex
 reconnection** events: two anti-parallel filament segments approach,
 reconnect, and separate with exchanged topology.  Scheeler et al.
 \cite{scheeler2014} showed that helicity — the integral
-$\mathcal{H} = \int \mathbf{v} \cdot \boldsymbol{\omega}\, dV$ — is
+$\mathcal{H} = \int \mathbf{v} \cdot \boldsymbol{\omega} dV$ — is
 approximately conserved during reconnection but is redistributed from
 writhe (global coiling) to twist (local spinning):
 
 $$
-  \mathcal{H} \;=\; \underbrace{Wr}_{\text{writhe}}
-  \;+\; \underbrace{Tw}_{\text{twist}}, \qquad
+  \mathcal{H} =  \underbrace{Wr}_{\text{writhe}}
+  +  \underbrace{Tw}_{\text{twist}}, \qquad
   \Delta Wr = -\Delta Tw \quad (\text{during reconnection}).
 $$
 

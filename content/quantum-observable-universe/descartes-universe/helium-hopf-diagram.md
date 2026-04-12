@@ -19,9 +19,9 @@ surface of the other exactly once
 **Full atom structure.**
 
 $$
-  \mathcal{A}(2, 2) \;=\;
+  \mathcal{A}(2, 2) = 
   \underbrace{2\mathfrak{p} \bowtie 2\mathfrak{n}}_{\alpha\text{-particle}}
-  \;\bowtie\;
+   \bowtie 
   \underbrace{T_{2,3} \bowtie T_{2,3}}_{1s^2\text{ shell (closed)}}
 $$
 
@@ -29,7 +29,7 @@ $$
 two-electron Hopf link is
 
 $$
-  L \;=\; \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
+  L =  \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
 $$
 
 This matrix has rank $1$.  Adding a third component $e_3$
@@ -51,11 +51,11 @@ so the third electron is expelled to a higher shell.
 ```
 
 $$
-  \mathcal{A}(3, 4) \;=\;
+  \mathcal{A}(3, 4) = 
   3\mathfrak{p} \bowtie 4\mathfrak{n}
-  \;\bowtie\;
+   \bowtie 
   \underbrace{(T_{2,3} \bowtie T_{2,3})}_{1s^2}
-  \;\bowtie\;
+   \bowtie 
   \underbrace{T_{2,3}}_{2s^1}
 $$
 

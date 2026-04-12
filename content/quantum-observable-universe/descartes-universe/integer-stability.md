@@ -12,13 +12,13 @@ $p$:
 
 $$
   E(p, A)
-  \;=\;
+  = 
   \underbrace{\left(\frac{a_C}{A^{1/3}} + \frac{a_A}{A}\right)}_{\alpha(A)}
   p^2
-  \;-\;
+  - 
   \underbrace{a_A}_{\gamma}
   p
-  \;+\; \delta(A)
+  +  \delta(A)
 $$
 
 where $a_C = (q - q^{-1}) \cdot \lambda_C$ is the Coulomb
@@ -28,8 +28,8 @@ $\delta(A)$ collects terms independent of $p$.
 The continuous minimum is
 
 $$
-  p^*(A) \;=\; \frac{\gamma}{2\alpha(A)}
-  \;=\; \frac{a_A \cdot A}{2(a_A + a_C \cdot A^{2/3})}.
+  p^*(A) =  \frac{\gamma}{2\alpha(A)}
+  =  \frac{a_A \cdot A}{2(a_A + a_C \cdot A^{2/3})}.
 $$
 
 Since $E$ is strictly convex in $p$, the integer minimiser is
@@ -37,10 +37,10 @@ Since $E$ is strictly convex in $p$, the integer minimiser is
 
 $$
   p_{\mathrm{stab}}(A)
-  \;=\;
-  \mathrm*{arg\,min}_{p \in \{0, 1, \ldots, A\}} E(p, A)
-  \;\in\;
-  \bigl\{\lfloor p^*(A) \rfloor,\;
+  = 
+  \mathrm*{argmin}_{p \in \{0, 1, \ldots, A\}} E(p, A)
+   \in 
+  \bigl\{\lfloor p^*(A) \rfloor,
   \lceil p^*(A) \rceil\bigr\}.
 $$
 
@@ -63,7 +63,7 @@ where the stable proton count increases from $k$ to $k + 1$ are
 
 $$
   A_k
-  \;=\;
+  = 
   \left(
     \frac{a_C \cdot (2k + 1)}{2a_A}
   \right)^{3/2}

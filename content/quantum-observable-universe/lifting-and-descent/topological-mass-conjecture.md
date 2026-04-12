@@ -6,11 +6,11 @@ at the exceptional divisors of the brane boundary
 
 $$
   \mathfrak{m}(\varrho)
-  \;=\;
-  \bigl\lVert\,\mathrm{Hol}_{\nabla_A}(\varrho_0;\,\mathfrak{G})\,\bigr\rVert
-  \;+\;
+  = 
+  \bigl\lVert\mathrm{Hol}_{\nabla_A}(\varrho_0;\mathfrak{G})\bigr\rVert
+  + 
   \sum_{i=1}^{N}
-  \bigl\lVert\,\Phi_q(z_i)\,\bigr\rVert,
+  \bigl\lVert\Phi_q(z_i)\bigr\rVert,
 $$
 
 where $\Phi_q(z_i)$ is the quantum dilogarithm

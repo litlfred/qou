@@ -7,9 +7,9 @@ Given two generators $T_{m_1,n_1}$ and $T_{m_2,n_2}$, their
 **Hopf linking** is
 
 $$
-  \ell_H \;\colon\;
-  T_{m_1,n_1},\; T_{m_2,n_2}
-  \;\longmapsto\;
+  \ell_H  \colon 
+  T_{m_1,n_1}, T_{m_2,n_2}
+   \longmapsto 
   T_{m_1,n_1} \mathbin{\cup_{\mathrm{Hopf}}} T_{m_2,n_2}
 $$
 
@@ -29,7 +29,7 @@ This is the colorless ($U(1)$) binding operation:
 Iterating Hopf linking builds the leptonic and mesonic sectors.
 
 **Operation 2: Color-tube threading.**
-The three coral tubes $(r, g, b) = (w_2 - z,\, w_3 - z,\, w_4 - z)$
+The three coral tubes $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$
 from Bring's surface
 ([color tube coordinates](#def:color-tube-coordinates)) provide a
 second linking operation.  Given three generators
@@ -37,9 +37,9 @@ $T_{m_1,n_1}$, $T_{m_2,n_2}$, $T_{m_3,n_3}$, their **color-tube
 linking** threads each knot through one of the three chiral fibers:
 
 $$
-  \ell_c \;\colon\;
-  T_{m_1,n_1},\; T_{m_2,n_2},\; T_{m_3,n_3}
-  \;\longmapsto\;
+  \ell_c  \colon 
+  T_{m_1,n_1}, T_{m_2,n_2}, T_{m_3,n_3}
+   \longmapsto 
   T_{m_1,n_1} \mathbin{\cup_r} T_{m_2,n_2}
   \mathbin{\cup_g} T_{m_3,n_3}
 $$
@@ -54,8 +54,8 @@ combinations produce observable hadrons.
 The $q$-deformed Skein relation at a crossing
 
 $$
-  q \, L_+ \;-\; q^{-1} L_-
-  \;=\; (q^{1/2} - q^{-1/2})\, L_0
+  q  L_+ -  q^{-1} L_-
+  =  (q^{1/2} - q^{-1/2}) L_0
 $$
 
 acts as a *transmutation* operation: resolving or introducing
@@ -66,8 +66,8 @@ linked trefoil pair:
 
 $$
   T_{2,3} \mathbin{\cup_{\mathrm{Hopf}}} T_{2,3}
-  \;\xrightarrow{\;\sigma\;}
-  4_1 \;+\; \text{(Skein remainder)}.
+  \xrightarrow{\sigma}
+  4_1 +  \text{(Skein remainder)}.
 $$
 
 The muon is literally a Skein excitation of the electron.

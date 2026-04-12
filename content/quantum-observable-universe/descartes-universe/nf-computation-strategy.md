@@ -65,7 +65,7 @@ characteristic pattern:
    back to $\sim 10$–$600$ terms at the boundary.
 
 The bottleneck is always the **last crossing of a large strand**
-(typically the nn crossings at the end, which have $c = q^2$ and
+(typically the nn crossings at the end, which have $c = 1$, $d = -(q - q^{-1})$ and
 produce the most new terms).  Peak memory occurs at the moment
 before stripping.
 

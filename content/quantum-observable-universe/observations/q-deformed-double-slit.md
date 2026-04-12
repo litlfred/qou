@@ -4,21 +4,23 @@ At the categorical level, wave propagation is governed by the
 categorical Dirac equation
 ([categorical Dirac operator](#def:categorical-dirac-operator)):
 
-$$\mathcal{D}_\nabla\,\psi \;=\; 0,$$
+$$\mathcal{D}_\nabla\psi =  0,$$
 
 where $\mathcal{D}_\nabla = q^{-1}\nabla + (1-q^{-1})\iota_\xi\nabla$
 ([variational equations](#prop:variational-equations), equation 3).
 The test particle $\psi$ is a photon --- not a bare identity
 $\mathbf{1}$ but a **photon with color content**
-$\gamma = \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1$
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
++ \varphi_{01}\sigma_0\sigma_1$
 ([color content](#rem:knot-basis-color-content)), where $\sigma_0$
 and $\sigma_1$ are the horizontal and vertical polarisation generators
+and $\sigma_0\sigma_1$ is the Hopf link dressing
 on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)) --- propagating
 on an instanton background
 ([categorical instanton](#def:categorical-instanton)).  The identity
 component $\mathbf{1}$ (degree $0$) propagates as pure horizontal
-flux; the generators $\varphi_i\,\sigma_i$ (degree $1$) carry
+flux; the generators $\varphi_i\sigma_i$ (degree $1$) carry
 additional polarisation-dependent phase from the Hecke eigenvalues
 $+q$ and $-q^{-1}$.
 
@@ -39,7 +41,7 @@ Green's function of $\mathcal{D}_\nabla$ on the flat instanton background
 The accumulated phase difference for a path $\gamma$ grazing the fermionic slit boundary is
 
 ```tex
-\Delta\phi \;=\; \Delta\phi_{\mathrm{classical}} \;+\; \hbar_q \int_{\gamma} \pi_V \circ d,
+\Delta\phi =  \Delta\phi_{\mathrm{classical}} +  \hbar_q \int_{\gamma} \pi_V \circ d,
 ```
 
 where the second term integrates the vertical Reeb differential along $\gamma$. The magnitude of this correction depends on the torsion intensity of the slit material. A nucleon modeled as a [localized knot](#def:localized-knot) with the topology of the Borromean rings $6_2^3$ determines a specific value of $q$ via the local substrate map, and hence a definite $\hbar_q$. Consequently, heavier atoms with more complex knotted configurations produce correspondingly larger deformations, yielding a material-dependent signature in the fringe spacing that is absent in the standard double-slit analysis.
@@ -72,12 +74,12 @@ photon is
 
 $$
   \Phi_q^{(\mathrm{color})}(\gamma_j)
-  \;=\;
+  = 
   \Phi_q^{(j)}
-  \;+\;
-  \varphi_0\,q\,\Phi_{\mathrm{Reeb}}^{(j)}
-  \;+\;
-  \varphi_1\,(-q^{-1})\,\Phi_{\mathrm{Reeb}}^{(j)},
+  + 
+  \varphi_0q\Phi_{\mathrm{Reeb}}^{(j)}
+  + 
+  \varphi_1(-q^{-1})\Phi_{\mathrm{Reeb}}^{(j)},
 $$
 
 where $+q$ and $-q^{-1}$ are the Hecke eigenvalues of $\sigma_0$ and
@@ -89,10 +91,10 @@ polarisation correction
 
 $$
   \Delta\Phi_q^{(\mathrm{color})}
-  \;=\;
+  = 
   \Delta\Phi_q
-  \;+\;
-  (\varphi_0\,q - \varphi_1\,q^{-1})\,\Delta\phi_\xi,
+  + 
+  (\varphi_0q - \varphi_1q^{-1})\Delta\phi_\xi,
 $$
 
 where $\Delta\phi_\xi$ is the Reeb phase mismatch between the two
@@ -114,7 +116,7 @@ same torsion mechanism that produces $\tau(y)$ in the
 
 $$
   V_{\mathrm{color}}
-  \;=\;
+  = 
   1 - |\varphi_0\psi_1 - \varphi_1\psi_0|^2.
 $$
 
@@ -132,7 +134,7 @@ unpolarised light but first order for linearly polarised light.
 A double-slit experiment with controlled linear polarisation
 (e.g.\ a Wollaston prism before the slits) would exhibit a
 polarisation-dependent fringe shift proportional to
-$(\varphi_0 q - \varphi_1 q^{-1})\,\hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})$,
+$(\varphi_0 q - \varphi_1 q^{-1})\hbar_q\mathrm{Vol}(K_{\mathrm{mat}})$,
 distinguishable from any classical birefringence effect because
 it depends on the slit material's knot volume, not on its
 refractive index.

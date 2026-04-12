@@ -8,7 +8,7 @@ Each application of the Skein relation
 ([skein generation](#prop:skein-generation))
 
 $$
-  q\,L_+ - q^{-1}\,L_- = (q - q^{-1})\,L_0
+  qL_+ - q^{-1}L_- = (q - q^{-1})L_0
 $$
 
 resolves one crossing.  The resolution produces exactly
@@ -28,7 +28,7 @@ factorizes the Markov trace over generators:
 
 $$
   \mathrm{tr}_M(\rho(\beta))
-  \;=\;
+  = 
   \prod_{i=0}^{n-2} \hat{V}_i(q).
 $$
 
@@ -77,9 +77,9 @@ difference:
 
 $$
   Q_{\mathrm{cat}}
-  \;=\;
+  = 
   \bigl(c_{\mathrm{parent}} - c_{\mathrm{daughter}}\bigr)
-  \;\cdot\; \eta_q
+   \cdot  \eta_q
   \quad q\text{-bits}.
 $$
 

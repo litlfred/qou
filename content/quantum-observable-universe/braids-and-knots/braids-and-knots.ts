@@ -195,6 +195,9 @@ export default chapter({
         "transfer-matrix-level-independence",
         "transfer-matrix-level-independence-proof",
         "topological-mass-formula",
+        "hecke-mass-element",
+        "hecke-mass-trace",
+        "hecke-charge-mass-duality",
         "skein-decomposition",
         "topological-field-ansatz",
       ],
@@ -264,6 +267,8 @@ export default chapter({
       blocks: [
         "borromean-baryon",
         "borromean-baryon-interpretation",
+        "typed-crossing-operator",
+        "nucleon-hecke-element",
         "hadron-proton-example",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",

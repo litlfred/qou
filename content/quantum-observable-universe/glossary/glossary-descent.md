@@ -7,4 +7,4 @@ $r_n \colon A_n = J^1(A_{n-1}) \to A_{n-1}$ (the categorical retraction
 of the jet embedding).  In the archimedean realisation, this restricts
 the connection and bundle to the base manifold $M_{n-1}$.
 By [QU-to-QOU lifting](#thm:qu-to-qou)(1), the descent terminates in finitely many
-steps, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathbf{C}}(A))$.
+steps, bounded by $\mathrm{Krulldim} Z(\mathrm{End}_{\mathbf{C}}(A))$.

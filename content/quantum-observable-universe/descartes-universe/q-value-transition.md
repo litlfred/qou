@@ -11,13 +11,13 @@ in categorical action at the Skein crossing change:
 
 $$
   \mathcal{Q}_q
-  \;:=\;
+   := 
   S_q(\mathcal{N}_{\mathrm{par}})
-  \;-\;
+  - 
   S_q(\mathcal{N}_{\mathrm{dau}})
-  \;-\;
+  - 
   S_q(e)
-  \;-\;
+  - 
   S_q(\nu^{\sigma})
 $$
 
@@ -37,7 +37,7 @@ crossing:
 
 $$
   \Delta \mathbf{E}_\times
-  \;=\;
+  = 
   \mathbf{E}_\times^{(\epsilon_{\mathrm{par}})}(q)
   - \mathbf{E}_\times^{(\epsilon_{\mathrm{dau}})}(q)
 $$
@@ -47,9 +47,9 @@ $\Delta \mathbf{E}_\times = q - q^{-1}$.
 
 $$
   \mathcal{Q}_q
-  \;=\;
+  = 
   \sum_{\text{changed crossings}} \Delta \mathbf{E}_\times
-  \;-\; S_q(e)
+  -  S_q(e)
 $$
 
 (dropping $S_q(\nu^{\sigma}) = 0$ since the unknot has trivial
@@ -64,9 +64,9 @@ of energy:
 
 $$
   Q_{\mathrm{classical}}
-  \;=\;
+  = 
   T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}
-  \;\stackrel{?}{=}\;
+  \stackrel{?}{=}
   M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e
 $$
 
@@ -77,11 +77,11 @@ conservation law **may fail** because the $q$-differential
 does not satisfy $d_q^2 = 0$:
 
 $$
-  d_q f(x) \;=\; \frac{f(qx) - f(x)}{(q-1)x}
+  d_q f(x) =  \frac{f(qx) - f(x)}{(q-1)x}
 $$
 
 $$
-  d_q(f \cdot g) \;=\; (d_q f) \cdot g \;+\; f(qx) \cdot (d_q g)
+  d_q(f \cdot g) =  (d_q f) \cdot g +  f(qx) \cdot (d_q g)
 $$
 
 The $q$-Leibniz rule has a **shift** $f(qx)$ rather than $f(x)$.
@@ -89,7 +89,7 @@ This means the $q$-differential of a product is NOT simply the
 sum of differentials.  Squaring:
 
 $$
-  d_q^2 \;\neq\; 0 \quad \text{for } q \neq 1
+  d_q^2  \neq  0 \quad \text{for } q \neq 1
 $$
 
 **Consequence:** The total $q$-energy of the products need not
@@ -98,9 +98,9 @@ equal the total $q$-energy of the parent.  There is a
 
 $$
   \delta_q
-  \;:=\;
+   := 
   \mathcal{Q}_q
-  \;-\;
+  - 
   (T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}})
 $$
 
@@ -118,7 +118,7 @@ introduces R2 moves $T^2 = (q - q^{-1})T + 1$.
 Each R2 move shifts the local $q$-environment by:
 
 $$
-  q_{\mathrm{eff}} \;\mapsto\; q_{\mathrm{eff}} + \Delta q
+  q_{\mathrm{eff}} \mapsto q_{\mathrm{eff}} + \Delta q
 $$
 
 where $\Delta q \propto \hbar_q^2 = (1 - q^{-1})^2$.
@@ -129,7 +129,7 @@ produces a net shift:
 
 $$
   \Delta q_{\mathrm{eff}}
-  \;=\;
+  = 
   \frac{A - 1}{A^2} \cdot \hbar_q^2
 $$
 
@@ -137,9 +137,9 @@ This shift modifies $\mathcal{Q}_q$ at second order:
 
 $$
   \mathcal{Q}_q
-  \;=\;
+  = 
   \underbrace{\Delta S_q - S_q(e)}_{\text{leading (crossing change)}}
-  \;+\;
+  + 
   \underbrace{\frac{\partial S_q}{\partial q} \cdot \Delta q_{\mathrm{eff}}}_{\delta_q \text{ (q-anomaly)}}
 $$
 
@@ -168,13 +168,13 @@ the entire system (products + vacuum shift):
 
 $$
   S_q(\mathrm{par})
-  \;=\;
+  = 
   S_{q + \Delta q}(\mathrm{dau})
-  \;+\;
+  + 
   S_q(e)
-  \;+\;
+  + 
   S_q(\nu^{\sigma})
-  \;+\;
+  + 
   \text{kinetic terms}
 $$
 
@@ -203,9 +203,9 @@ means:
 
 $$
   p_q(\mathrm{par})
-  \;=\;
+  = 
   p_q(\mathrm{dau}) + p_q(e) + p_q(\nu^{\sigma})
-  \;+\;
+  + 
   \delta p_q
 $$
 

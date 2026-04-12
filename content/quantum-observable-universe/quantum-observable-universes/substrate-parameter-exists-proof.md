@@ -27,7 +27,7 @@ from transcendence over $\mathbb{Q}$ in the archimedean realisation.
 
 **Step 4 (agreement with $d_q$).** The categorical $q$ extracted from
 the braiding coincides with the interpolation parameter in
-$d_q = q^{-1}\,d + (1 - q^{-1})\,\pi_V \circ d$: both are
+$d_q = q^{-1}d + (1 - q^{-1})\pi_V \circ d$: both are
 characterised as the unique $q \in \mathrm{End}(\mathbf{1})$ for
 which the Iwahori--Hecke algebra $H_n(q)$ acts faithfully on
 $V^{\otimes n}$.

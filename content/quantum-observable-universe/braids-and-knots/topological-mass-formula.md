@@ -17,7 +17,7 @@ fibre functor, the descended trace evaluates to the holonomy
 $\mathrm{Hol}_{\nabla_A}$ and each transient trace to the quantum
 dilogarithm $\Phi_q(z_i)$, giving the mass formula
 
-$$\mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},$$
+$$\mathfrak{m}(K) =  \frac{\mathrm{Vol}(K)}{\hbar_q^{2}},$$
 
 where $\mathrm{Vol}(K)$ is the hyperbolic volume of $S^3 \setminus K$
 and $\hbar_q = 1 - 1/q$ is the quantum Planck constant
@@ -29,14 +29,14 @@ The derivation proceeds from the categorical decomposition
 each following from the archimedean bridge:
 
 1. The baseline holonomy term
-   $\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0;\, \mathfrak{G}) \rVert$
+   $\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert$
    evaluates to $\mathrm{Vol}(K)$ via the Chern--Simons/volume
    correspondence for the hyperbolic knot complement.
 2. The exceptional divisor contributions $\Phi_q(z_i)$ sum, after
    evaluation in the Briggs--Klein spectral coordinates, to
-   $\mathrm{Vol}(K) \cdot (1/\hbar_q^{\,2} - 1)$.
+   $\mathrm{Vol}(K) \cdot (1/\hbar_q^{2} - 1)$.
 3. Adding baseline and exceptional terms:
-   $\mathfrak{m} = \mathrm{Vol}(K) + \mathrm{Vol}(K)(1/\hbar_q^{\,2} - 1) = \mathrm{Vol}(K)/\hbar_q^{\,2}$.
+   $\mathfrak{m} = \mathrm{Vol}(K) + \mathrm{Vol}(K)(1/\hbar_q^{2} - 1) = \mathrm{Vol}(K)/\hbar_q^{2}$.
 
 Combined with the knot--particle dictionary identifying particles with specific
 knots (e.g.\ the figure-eight knot $4_1$ with the Higgs field), this formula

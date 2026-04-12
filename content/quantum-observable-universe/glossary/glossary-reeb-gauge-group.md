@@ -5,8 +5,8 @@ $\xi$ ([categorical Reeb](#def:categorical-reeb)).  The
 **Reeb gauge group** is the $R$-group scheme
 
 $$
-  U_1(R) \;:=\; T
-  \;=\; \mathrm{Aut}^{\otimes}(\tau|_{\langle V \rangle})
+  U_1(R)  :=  T
+  =  \mathrm{Aut}^{\otimes}(\tau|_{\langle V \rangle})
 $$
 
 — the maximal torus of the gauge group $G$, viewed as a
@@ -40,7 +40,7 @@ arising from the single datum $T \subset G$:
    ([contact affine chart](#def:contact-affine-chart)) is
    the complement of the $U_1(R)$-fixed locus.  The
    contact form $\theta_A$ satisfies $\theta_A(\xi) = 1$
-   and $\iota_\xi\,d\theta_A = 0$ — these are the defining
+   and $\iota_\xid\theta_A = 0$ — these are the defining
    equations of a connection on the $U_1(R)$-bundle.
 
 4. **Commutative observation direction.**
@@ -54,7 +54,7 @@ arising from the single datum $T \subset G$:
    lives.
 
 5. **Longitudinal backbone.**
-   In the harmonic decomposition of $H^1(\mathcal{S}_n, \mathrm{ad}\,\mathcal{S}_n)$, the $U_1(R)$-modes
+   In the harmonic decomposition of $H^1(\mathcal{S}_n, \mathrm{ad}\mathcal{S}_n)$, the $U_1(R)$-modes
    are the **longitudinal backbone**: steady-state flows
    aligned with the Reeb direction.  The off-diagonal
    modes ($E_{\pm}$) are the **ladder modes**: entangling

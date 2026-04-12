@@ -67,16 +67,16 @@ $$
 
 $$
   \frac{P_{{}^3\mathrm{He}}(q)}{P_{{}^3\mathrm{H}}(q)}
-  \;=\;
+  = 
   \frac{0.7510 \times 1.2036}{0.7684 \times 1.3029}
-  \;=\;
+  = 
   \frac{0.9039}{1.0011}
-  \;=\; 0.9029
+  =  0.9029
 $$
 
 $$
   \ln\!\left(\frac{P_{{}^3\mathrm{He}}}{P_{{}^3\mathrm{H}}}\right)
-  \;=\; -0.1021
+  =  -0.1021
 $$
 
 Per-generator contribution:
@@ -98,9 +98,9 @@ two $\Delta_\beta$ matrices (with intervening unchanged matrices):
 
 $$
   \Delta M_i^{(2\beta)}
-  \;=\;
+  = 
   L_i \cdot \Delta_\beta \cdot C_i \cdot \Delta_\beta \cdot R_i
-  \;+\;
+  + 
   (\text{linear terms})
 $$
 

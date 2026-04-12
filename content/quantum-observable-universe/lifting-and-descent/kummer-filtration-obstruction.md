@@ -15,11 +15,11 @@ $\mathbb{G}_m$ fits into a short exact sequence of sheaves
 on $\mathcal{S}$:
 
 $$
-  1 \;\longrightarrow\; \mu_n
-  \;\longrightarrow\; \mathbb{G}_m
-  \;\xrightarrow{\;(\cdot)^n\;}
-  \;\mathbb{G}_m
-  \;\longrightarrow\; 1,
+  1  \longrightarrow  \mu_n
+   \longrightarrow  \mathbb{G}_m
+  \xrightarrow{(\cdot)^n}
+  \mathbb{G}_m
+   \longrightarrow  1,
 $$
 
 where $\mu_n = \{\zeta \in \mathbb{G}_m : \zeta^n = 1\}$ is
@@ -28,15 +28,15 @@ long exact sequence in cohomology gives, at every level $n$,
 a connecting homomorphism and a reduction map:
 
 $$
-  \cdots \;\to\;
+  \cdots  \to 
   H^1(\mathcal{S}, \mathbb{G}_m)
-  \;\xrightarrow{\;\partial\;}
+  \xrightarrow{\partial}
   H^2(\mathcal{S}, \mu_n)
-  \;\to\;
+   \to 
   H^2(\mathcal{S}, \mathbb{G}_m)
-  \;\xrightarrow{\;(\cdot)^n\;}
+  \xrightarrow{(\cdot)^n}
   H^2(\mathcal{S}, \mathbb{G}_m)
-  \;\to\; \cdots
+   \to  \cdots
 $$
 
 The **Kummer reduction** of an obstruction class $\kappa$ at
@@ -44,10 +44,10 @@ level $n$ is its image under the quotient:
 
 $$
   \kappa \bmod n
-  \;\in\;
+   \in 
   H^2(\mathcal{S}, \mathbb{G}_m)
-  \;\big/\;
-  n\,H^2(\mathcal{S}, \mathbb{G}_m).
+  \big/
+  nH^2(\mathcal{S}, \mathbb{G}_m).
 $$
 
 This measures whether $\kappa$ is $n$-divisible in the

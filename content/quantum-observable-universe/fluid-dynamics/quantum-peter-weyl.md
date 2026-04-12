@@ -15,11 +15,11 @@ $-j \leq m, n \leq j$, define the **matrix coefficient**
 
 $$
   D^j_{mn}
-  \;=\;
+  = 
   (\mathrm{ev}_{V_j} \otimes \mathrm{id})
   \circ (\mathrm{id} \otimes e^j_m \otimes (e^j_n)^\vee)
   \circ \mathrm{coev}_{V_j}
-  \;\in\; A,
+   \in  A,
 $$
 
 where $\{e^j_m\}$ is an orthonormal basis of $\tau(V_j)$ and
@@ -33,21 +33,21 @@ Then:
 
 $$
   \int_A (D^j_{mn})^\dagger \cdot D^{j'}_{m'n'}
-  \;=\;
-  \frac{\delta_{jj'}\,\delta_{mm'}\,\delta_{nn'}}{[2j+1]_q},
+  = 
+  \frac{\delta_{jj'}\delta_{mm'}\delta_{nn'}}{[2j+1]_q},
 $$
 
 where $[2j+1]_q$ is the quantum dimension.
 
 **(b) Completeness.**  The matrix coefficients
-$\{[2j+1]_q^{1/2}\,D^j_{mn}\}$ form a complete orthonormal
+$\{[2j+1]_q^{1/2}D^j_{mn}\}$ form a complete orthonormal
 system in the Hilbert completion
 $L^2(A) = \overline{A}^{\int_A}$:
 
 $$
   \sum_{j \geq 0} [2j+1]_q
   \sum_{m,n=-j}^{j} D^j_{mn} \otimes (D^j_{mn})^\dagger
-  \;=\; \mathrm{id}_A.
+  =  \mathrm{id}_A.
 $$
 
 **(c) $\Delta_q$-eigendecomposition.**  Each matrix coefficient
@@ -55,7 +55,7 @@ $D^j_{mn}$ is an eigenfunction of $\Delta_q$ with eigenvalue
 $[j]_q[j+1]_q$ (the $q$-Casimir):
 
 $$
-  \Delta_q\,D^j_{mn} = [j]_q[j+1]_q\,D^j_{mn}.
+  \Delta_qD^j_{mn} = [j]_q[j+1]_qD^j_{mn}.
 $$
 
 The eigenspace of eigenvalue $[j]_q[j+1]_q$ has dimension
@@ -80,7 +80,7 @@ $$
   \int_A (D^j_{mn})^\dagger \cdot D^{j'}_{m'n'}
   = \mathrm{tr}_A(\rho_j(e^j_m, e^j_n)^\dagger \circ
     \rho_{j'}(e^{j'}_{m'}, e^{j'}_{n'}))
-  = \frac{\delta_{jj'}\,\delta_{mm'}\,\delta_{nn'}}
+  = \frac{\delta_{jj'}\delta_{mm'}\delta_{nn'}}
     {\mathrm{tr}_A(\mathrm{id}_{V_j})}
 $$
 
@@ -99,9 +99,9 @@ $\tau \colon \mathbf{C} \to R\text{-Mod}$ is faithful and exact
 recovered as the algebra of matrix coefficients:
 
 $$
-  A \;\cong\; \bigoplus_{j \geq 0}
+  A  \cong  \bigoplus_{j \geq 0}
   \mathrm{End}(\tau(V_j))
-  \;\cong\;
+   \cong 
   \bigoplus_{j \geq 0}
   \mathrm{span}\{D^j_{mn} : -j \leq m,n \leq j\}.
 $$
@@ -136,7 +136,7 @@ lemma, and the Casimir computation.
 
 **Connection to the Kelvin dispersion.**
 The [Kelvin dispersion derivation](#prop:kelvin-dispersion-derivation)
-proved $\Delta_q(z^k) = -[k]_q^2\,z^k$ by explicit computation.
+proved $\Delta_q(z^k) = -[k]_q^2z^k$ by explicit computation.
 The Peter--Weyl theorem provides the conceptual reason: $z^k$ is
 a matrix coefficient $D^{k/2}_{k/2, k/2}$ of the spin-$k/2$
 representation, and its eigenvalue $[k/2]_q[k/2+1]_q$ reduces to

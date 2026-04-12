@@ -10,10 +10,10 @@ Francium has 87 electrons partitioned as
 
 $$
   \mathcal{E}(87)
-  \;=\;
+  = 
   \underbrace{S_1 \sqcup S_2 \sqcup \cdots \sqcup S_6}_{86
   \text{ electrons in closed sub-links (radon core)}}
-  \;\sqcup\;
+  \sqcup
   \underbrace{R}_{|R| = 1}.
 $$
 
@@ -43,7 +43,7 @@ outermost crossing energy in two independent ways:
 Together these give francium:
 
 - The **lowest ionization energy** of any element
-  ($E_{\mathrm{ion}} \approx 4.07\;\mathrm{eV}$).
+  ($E_{\mathrm{ion}} \approx 4.07 \mathrm{eV}$).
 - The **highest electropositive character** — it donates its
   lone curl more readily than any other atom.
 - The **strongest metallic bonding tendency** — its single

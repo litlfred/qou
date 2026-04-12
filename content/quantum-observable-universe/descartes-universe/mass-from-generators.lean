@@ -14,6 +14,11 @@ LaTeX label: `rem:mass-from-generators`, `rem:mass-comparison-table`
 - CODATA 2022 recommended values of fundamental physical constants
 - AME2020 Atomic Mass Evaluation (Wang et al., CPC 45 030003, 2021)
 - [manuscript] §11-experimental-evidence/mass-from-generators
+
+**Ground ring**: `ℝ` (archimedean realisation).
+Evaluates formal results at q₀ ≈ 1.1098 for comparison with
+experimental data. NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

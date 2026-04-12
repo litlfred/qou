@@ -27,8 +27,8 @@ one new factor:
 
 $$
   M_i'(q)
-  \;=\;
-  T_{\tau_i, \tau_A}(q) \;\cdot\; M_i(q)
+  = 
+  T_{\tau_i, \tau_A}(q)  \cdot  M_i(q)
 $$
 
 where $T_{\tau_i, \tau_A}$ is determined by the pair type:
@@ -50,7 +50,7 @@ crossing between nucleon $A-1$ and nucleon $A$:
 
 $$
   M_{A-1}'(q)
-  \;=\;
+  = 
   T_{\tau_{A-1}, \tau_A}(q)
 $$
 
@@ -64,11 +64,11 @@ The nuclear Skein polynomial of the $(A+1)$-nucleus factors as:
 
 $$
   P_{\mathcal{N}'}(q)
-  \;=\;
+  = 
   \underbrace{
     \prod_{i=0}^{A-2} \hat{V}_i'(q)
   }_{\text{updated existing generators}}
-  \;\cdot\;
+   \cdot 
   \underbrace{
     \hat{V}_{A-1}'(q)
   }_{\text{new generator}}
@@ -78,7 +78,7 @@ where each updated volume is:
 
 $$
   \hat{V}_i'(q)
-  \;=\;
+  = 
   z \cdot (M_i')_{11} + (M_i')_{21}
 $$
 
@@ -106,18 +106,18 @@ $j$ updates:
 
 $$
   \begin{pmatrix} a' \\ b' \end{pmatrix}
-  \;=\;
+  = 
   T(c_j, d_j)
-  \;\cdot\;
+   \cdot 
   \begin{pmatrix} a \\ b \end{pmatrix}
 $$
 
 Explicitly:
 
 $$
-  a' = a \, c_j (q - q^{-1}) + a \, d_j + b \, c_j,
+  a' = a  c_j (q - q^{-1}) + a  d_j + b  c_j,
   \qquad
-  b' = a \, c_j + b \, d_j
+  b' = a  c_j + b  d_j
 $$
 
 When adding nucleon $A$, this recurrence is applied **once
@@ -146,7 +146,7 @@ many-body correlation.
 changes one nucleon type.  The $\mathcal{Q}_q$-value is:
 
 $$
-  \delta E \;=\; \sum_{i=0}^{p} (\hat{V}_i^{\mathrm{dau}} - \hat{V}_i^{\mathrm{par}})
+  \delta E =  \sum_{i=0}^{p} (\hat{V}_i^{\mathrm{dau}} - \hat{V}_i^{\mathrm{par}})
 $$
 
 summing only over generators $\sigma_i$ with $i \leq p$
@@ -166,19 +166,19 @@ form at every step:
 
 $$
   \xi_{A+1}
-  \;=\;
+  = 
   \bar{\mathcal{N}}(A)
-  \;\cdot\;
+   \cdot 
   \prod_{j=0}^{A-1}(c_j \sigma_j + d_j)
 $$
 
   Apply the Gröbner--Shirshov division algorithm with basis
-  $G = \{T^2 - (q-q^{-1})T - 1,\; \text{YB},\; \text{far-comm}\}$:
+  $G = \{T^2 - (q-q^{-1})T - 1, \text{YB}, \text{far-comm}\}$:
 
 $$
   \bar{\mathcal{N}}(A+1)
-  \;:=\;
-  r(\xi_{A+1},\, G)
+   := 
+  r(\xi_{A+1}, G)
 $$
 
   By the main theorem of Gröbner--Shirshov basis theory: the algorithm

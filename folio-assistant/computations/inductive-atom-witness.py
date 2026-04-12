@@ -31,8 +31,7 @@ from q_parameter import Q as q, Q_INV as qi, E_CROSS
 from experimental_constants import *
 
 div = HeckeDivision(q_val=q)
-HA = q - qi
-S = q**0.5 - qi**0.5
+HA = q - qi                        # Hecke amplitude q - q⁻¹
 Z_m = 1.0 / (q**0.5 + qi**0.5)
 kappa = E_CROSS * M_E_MEV / (3 * E_CROSS)
 
@@ -54,7 +53,7 @@ IDEAL = {
         "q": q,
         "q_inv": qi,
         "HA": HA,
-        "s": S,
+        "hecke_amplitude": HA,
         "z_markov": Z_m,
     },
     "ordering": "length-lexicographic on positive braid monomials",
@@ -68,15 +67,15 @@ IDEAL = {
 # At the nucleon+electron level:
 # - p-p: positive crossing sigma (proton-proton, same charge nucleon)
 # - n-n: Skein inverse q^2*sigma - q*s (neutron-neutron)
-# - p-n / n-p: mixed crossing (1+q^2)/2 * sigma - q*s/2
+# - p-n / n-p: mixed crossing σ - ½(q-q⁻¹)
 # - p-e / n-e / e-p / e-n: Hopf link = positive crossing sigma
 # - e-e: Hopf link between electrons = positive crossing sigma
 
 CROSSING_TYPES = {
     "pp": {"c": 1.0, "d": 0.0, "description": "proton-proton: positive crossing sigma"},
-    "nn": {"c": float(q**2), "d": float(-q*S), "description": "neutron-neutron: Skein inverse q^2*sigma - q*s"},
-    "pn": {"c": float((1+q**2)/2), "d": float(-q*S/2), "description": "proton-neutron: mixed (sigma + sigma^-1)/2"},
-    "np": {"c": float((1+q**2)/2), "d": float(-q*S/2), "description": "neutron-proton: mixed"},
+    "nn": {"c": 1.0, "d": float(-HA), "description": "neutron-neutron: σ⁻¹ = σ - (q-q⁻¹)"},
+    "pn": {"c": 1.0, "d": float(-HA/2), "description": "proton-neutron: ½(σ + σ⁻¹) = σ - ½(q-q⁻¹)"},
+    "np": {"c": 1.0, "d": float(-HA/2), "description": "neutron-proton: ½(σ + σ⁻¹) = σ - ½(q-q⁻¹)"},
     "pe": {"c": 1.0, "d": 0.0, "description": "proton-electron: Hopf link sigma"},
     "ep": {"c": 1.0, "d": 0.0, "description": "electron-proton: Hopf link sigma"},
     "ne": {"c": 1.0, "d": 0.0, "description": "neutron-electron: Hopf link sigma"},
@@ -84,8 +83,8 @@ CROSSING_TYPES = {
     "ee": {"c": 1.0, "d": 0.0, "description": "electron-electron: Hopf link sigma"},
 }
 
-c_nn = q**2; d_nn = -q*S
-c_mix = (1+q**2)/2; d_mix = -q*S/2
+c_nn = 1.0; d_nn = -HA
+c_mix = 1.0; d_mix = -HA/2
 
 def crossing_element(ti, tj, gen):
     """Build the Hecke element for a crossing between types ti, tj at generator gen."""

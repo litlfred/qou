@@ -19,12 +19,12 @@ Then:
 
 $$
   M_B
-  \;=\;
+  = 
   2 \cdot \frac{V_B}{\hbar_q^2}
-  \;=\;
+  = 
   \frac{2 \times 7.32772}{((q-1)/q)^2}
-  \;=\;
-  \frac{14.6554\, q^2}{(q-1)^2}.
+  = 
+  \frac{14.6554 q^2}{(q-1)^2}.
 $$
 
    The diquark phase has mass from crossing energy only
@@ -32,11 +32,11 @@ $$
 
 $$
   M_D
-  \;=\;
+  = 
   3 \cdot \tfrac{1}{3}(q + q^{-1})
-  \;=\;
+  = 
   q + q^{-1}
-  \;\approx\; 2.011 \;\text{Skein units}.
+   \approx  2.011  \text{Skein units}.
 $$
 
    Since $\mathrm{Vol}(\mathcal{L}_H) = 0$, the diquark
@@ -59,30 +59,30 @@ $$
 
 $$
   \frac{3}{2}(q + q^{-1})
-  \;>\;
+   > 
   \frac{V_B}{\hbar_q^2}
-  \;=\;
-  \frac{7.32772\, q^2}{(q-1)^2}.
+  = 
+  \frac{7.32772 q^2}{(q-1)^2}.
 $$
 
 3. **At $q = q_0$.**
 
 $$
   \frac{3}{2}(q + q^{-1})
-  \;=\;
+  = 
   \frac{3}{2}(q_0 + q_0^{-1})
-  \;=\;
+  = 
   \frac{3}{2} \times 2.0108
-  \;=\; 3.016.
+  =  3.016.
 $$
 
 $$
   \frac{V_B}{\hbar_q^2}
-  \;=\;
+  = 
   \frac{7.32772}{(0.0989)^2}
-  \;=\;
+  = 
   \frac{7.32772}{0.009781}
-  \;=\; 749.2.
+  =  749.2.
 $$
 
    At $q = q_0$: $3.016 \ll 749.2$.  The Borromean
@@ -95,7 +95,7 @@ $$
 
 $$
   \mathbf{E}_{\mathrm{comp}}(\rho)
-  \;\sim\;
+   \sim 
   \frac{\hbar_q^2}{2\mathfrak{m}} \cdot (3\pi^2 \rho)^{2/3},
 $$
 
@@ -108,9 +108,9 @@ $$
 
 $$
   \mathbf{E}_{\mathrm{comp}}(\rho_c)
-  \;=\;
+  = 
   \frac{V_B}{\hbar_q^2}
-  \;-\;
+  - 
   \frac{3}{2}(q + q^{-1}),
 $$
 
@@ -146,5 +146,5 @@ color superconductivity is inaccessible at nuclear densities.
 The compression energy must supply $\sim 750$ Skein units per
 baryon to close the gap — corresponding to densities many times
 $\rho_0$.  This is consistent with QCD estimates placing the
-CFL onset at $\rho \gtrsim 5\text{--}10\,\rho_0$, deep inside
+CFL onset at $\rho \gtrsim 5\text{--}10\rho_0$, deep inside
 neutron star cores.

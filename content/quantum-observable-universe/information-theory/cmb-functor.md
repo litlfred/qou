@@ -8,11 +8,11 @@ The **CMB functor** is the composition
 
 $$
   \mathrm{CMB}
-  \;\colon\;
+   \colon 
   \pi_0\!\bigl(\mathrm{Bun}^{\circ}\bigr)
-  \;\xrightarrow{\;\partial\;}
+  \xrightarrow{\partial}
   \mathcal{P}\!\bigl(\mathrm{Bun} \setminus \mathrm{Bun}^{\circ}\bigr)
-  \;\xrightarrow{\;\varinjlim (A_1/A_0 \oplus A_2/A_0)\;}
+  \xrightarrow{\varinjlim (A_1/A_0 \oplus A_2/A_0)}
   \mathbf{Mod}_R
 $$
 
@@ -21,7 +21,7 @@ degree $\geq 1$ jet quotients over its boundary:
 
 $$
   \mathrm{CMB}(\mathcal{A})
-  \;=\;
+  = 
   \varinjlim_{\mathcal{S} \in \partial(\mathcal{A})}
   \bigl(A_1/A_0 \oplus A_2/A_0\bigr)\big|_{\mathcal{S}}.
 $$
@@ -34,8 +34,8 @@ boundary).
 
 | Factor | Jet degree | Content |
 |:---|:---:|:---|
-| $\varinjlim\, (A_1/A_0)\vert_{\partial\mathcal{A}}$ | $1$ | Linear transport: winding modes, first-order correlations |
-| $\varinjlim\, (A_2/A_0)\vert_{\partial\mathcal{A}}$ | $2$ | Curvature: linking modes, power spectrum |
+| $\varinjlim (A_1/A_0)\vert_{\partial\mathcal{A}}$ | $1$ | Linear transport: winding modes, first-order correlations |
+| $\varinjlim (A_2/A_0)\vert_{\partial\mathcal{A}}$ | $2$ | Curvature: linking modes, power spectrum |
 
 The colimit is taken over the directed system of all diagrams
 in $\mathcal{A}$ that converge to boundary objects.  It

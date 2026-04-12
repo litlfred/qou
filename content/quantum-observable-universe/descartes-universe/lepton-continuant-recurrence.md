@@ -10,9 +10,9 @@ The Gröbner--Shirshov normal form in $H_2(q)$ is
 
 $$
   \mathrm{NF}(\sigma_0^n)
-  \;=\;
+  = 
   a_n \cdot \mathbf{1}
-  \;+\;
+  + 
   b_n \cdot \sigma_0
 $$
 
@@ -21,9 +21,9 @@ where the sequences $\{a_n\}$, $\{b_n\}$ satisfy:
 $$
   a_{n+1} = b_n,
   \qquad
-  b_{n+1} = h \, b_n + b_{n-1},
+  b_{n+1} = h  b_n + b_{n-1},
   \qquad
-  b_0 = 0, \;\; b_1 = 1.
+  b_0 = 0,   b_1 = 1.
 $$
 
 The second relation is the **Morgan–Voyce continuant** — a
@@ -44,13 +44,13 @@ $$
   \sigma_0^{n+1}
   = \sigma_0 \cdot \sigma_0^n
   = \sigma_0 (a_n \cdot \mathbf{1} + b_n \cdot \sigma_0)
-  = a_n \, \sigma_0 + b_n \, \sigma_0^2
-  = a_n \, \sigma_0 + b_n ((q - q^{-1}) \sigma_0 + \mathbf{1})
-  = b_n \cdot \mathbf{1} + (a_n + h \, b_n) \cdot \sigma_0.
+  = a_n  \sigma_0 + b_n  \sigma_0^2
+  = a_n  \sigma_0 + b_n ((q - q^{-1}) \sigma_0 + \mathbf{1})
+  = b_n \cdot \mathbf{1} + (a_n + h  b_n) \cdot \sigma_0.
 $$
 
-Reading off: $a_{n+1} = b_n$ and $b_{n+1} = a_n + h\,
-b_n = b_{n-1} + h\, b_n$. The initial conditions
+Reading off: $a_{n+1} = b_n$ and $b_{n+1} = a_n + h
+b_n = b_{n-1} + h b_n$. The initial conditions
 $a_0 = 1, b_0 = 0$ (identity) and $a_1 = 0, b_1 = 1$
 (single generator) complete the induction. $\square$
 

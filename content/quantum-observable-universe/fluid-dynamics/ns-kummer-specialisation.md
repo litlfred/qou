@@ -22,10 +22,10 @@ $$
 The [specialisation to $q = 1$](#rem:substrate-gm-torsion) maps
 
 $$
-  \kappa_0 \;\mapsto\;
+  \kappa_0 \mapsto
   \kappa_0 \bmod n
-  \;\in\;
-  H^2(\mathcal{S}, \mathbb{G}_m) / n\,H^2(\mathcal{S}, \mathbb{G}_m).
+   \in 
+  H^2(\mathcal{S}, \mathbb{G}_m) / nH^2(\mathcal{S}, \mathbb{G}_m).
 $$
 
 This class is nonzero iff $\kappa_0$ is **not** $n$-divisible.
@@ -71,7 +71,7 @@ As $\kappa \to \infty$ ($q \to 1$), $2\kappa \to \infty$ and
 $2\kappa \nmid 6$ for all $\kappa \geq 4$.  Therefore:
 
 $$
-  \kappa_0 \bmod 2\kappa \;\neq\; 0
+  \kappa_0 \bmod 2\kappa  \neq  0
   \qquad\text{for all } \kappa \geq 4.
 $$
 

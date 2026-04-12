@@ -43,7 +43,7 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    \begin{tikzcd}[column sep=3em]
      X \ar[r, "f"] & Y \ar[r, "g"] & Z
    \end{tikzcd}
-   \quad\xmapsto{\;\dagger\;}\quad
+   \quad\xmapsto{\dagger}\quad
    \begin{tikzcd}[column sep=3em]
      Z \ar[r, "g^{\dagger}"] & Y \ar[r, "f^{\dagger}"] & X
    \end{tikzcd}

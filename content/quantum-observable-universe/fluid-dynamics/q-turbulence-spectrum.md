@@ -10,8 +10,8 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
 
    $$
      E_q(k)
-     \;=\;
-     C_q\,\varepsilon^{2/3}\,
+     = 
+     C_q\varepsilon^{2/3}
      \frac{[k]_q^{-5/3}}{[k]_q / k},
    $$
 
@@ -19,7 +19,7 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
    $C_q$ is a $q$-dependent Kolmogorov constant, and the ratio
    $[k]_q / k$ accounts for the non-uniform spacing of
    $q$-integers.  As $q \to 1$, $[k]_q \to k$ and the classical
-   Kolmogorov spectrum $E(k) = C_K\,\varepsilon^{2/3}\,k^{-5/3}$
+   Kolmogorov spectrum $E(k) = C_K\varepsilon^{2/3}k^{-5/3}$
    is recovered.
 
 2. **Discrete cascade.**  Unlike classical turbulence, where energy
@@ -30,8 +30,8 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
 
    $$
      T_{k \to k+1}
-     \;=\;
-     \varepsilon\,
+     = 
+     \varepsilon
      \frac{[k+1]_q^{2/3} - [k]_q^{2/3}}
           {[k+1]_q - [k]_q}.
    $$
@@ -46,11 +46,11 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
 
    $$
      N_{\mathrm{modes}}
-     \;\leq\;
+      \leq 
      \bigl\lfloor \log_q(\mathrm{Re}_q^{3/4}) \bigr\rfloor
-     \;=\;
+     = 
      \biggl\lfloor
-       \frac{3}{4}\,
+       \frac{3}{4}
        \frac{\ln(2/(q-1))}{\ln q}
      \biggr\rfloor.
    $$
@@ -65,10 +65,10 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
 
    $$
      \Delta E_{\mathrm{gap}}
-     \;=\;
-     C_q\,\varepsilon^{2/3}\,
+     = 
+     C_q\varepsilon^{2/3}
      \bigl([1]_q^{-5/3} - [2]_q^{-5/3}\bigr)
-     \;>\; 0,
+      >  0,
    $$
 
    separating the ground state (laminar flow) from the first

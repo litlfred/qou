@@ -9,10 +9,9 @@ export default remark({
     "prop:r-matrix-braiding-structure",
     "thm:jones-markov-trace",
     "rem:madelung-fluid",
-    "rem:webster-inner-product",
+    "sec:webster-inner-product",
     "rem:skein-crossing-asymmetry",
     "def:crossing-energy",
-    "def:state-bundle",
   ],
   tags: ["braid-group", "fluid-dynamics", "arnold", "vortex", "correspondence"],
 });

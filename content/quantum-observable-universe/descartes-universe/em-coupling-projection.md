@@ -16,9 +16,9 @@ the force-carrier crossing complexities, is
 
 $$
   \alpha_{\mathrm{EM}}(q)
-  \;=\;
+  = 
   \frac{q^{-1}}{[c_s]_q \cdot [c_w]_q}
-  \;=\;
+  = 
   \frac{q^{-1}}{[9]_q \cdot [10]_q}
 $$
 
@@ -37,8 +37,8 @@ $\sigma$
 ([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
 
 $$
-  Q_q(K) \;=\; [w(K)]_q
-  \;=\; \frac{q^{w(K)} - q^{-w(K)}}{q - q^{-1}}
+  Q_q(K) =  [w(K)]_q
+  =  \frac{q^{w(K)} - q^{-w(K)}}{q - q^{-1}}
 $$
 
 where $w(K) = \sum_i \epsilon_i \in \mathbb{Z}$ is the writhe (signed
@@ -79,9 +79,9 @@ after this complexity is factored out:
 
 $$
   \alpha_{\mathrm{EM}}
-  \;=\;
+  = 
   \frac{|\mathrm{tr}_\tau(\sigma_{\mathrm{anti}})|^2}{[c_s]_q \cdot [c_w]_q}
-  \;=\;
+  = 
   \frac{q^{-1}}{[9]_q \cdot [10]_q}.
 $$
 

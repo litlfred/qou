@@ -6,11 +6,11 @@ relative to the Seifert framing), the space of orbital states is
 
 $$
   \mathcal{O}_n
-  \;=\;
+  = 
   \bigl\{
-    \sigma \in \Gamma(N) \;:\;
+    \sigma \in \Gamma(N)  : 
     \mathrm{tw}(\sigma) = k, \quad
-    \Delta_{T}\,\sigma = \lambda\,\sigma, \quad
+    \Delta_{T}\sigma = \lambda\sigma, \quad
     \lambda \leq \lambda_{n-1}
   \bigr\}
 $$
@@ -32,7 +32,7 @@ displacement of the trefoil — a vibration.
 
 The total twist $\mathrm{tw}(\sigma) = k$ constrains the
 winding of $\sigma$ around the trefoil: it is the self-linking
-number of the displaced curve $T_{2,3} + \epsilon\,\sigma$
+number of the displaced curve $T_{2,3} + \epsilon\sigma$
 relative to the Seifert surface.  This is the global R-I count
 ([Reidemeister invariance](#prop:reidemeister-mass-invariance)).
 
@@ -42,7 +42,7 @@ The $q$-Laplacian $\Delta_q$ on $T_{2,3} \cong S^1$ has
 eigenvalues
 
 $$
-  \lambda_\ell \;=\; [\ell]_q \, [\ell + 1]_q,
+  \lambda_\ell =  [\ell]_q  [\ell + 1]_q,
   \qquad \ell = 0, 1, 2, \ldots
 $$
 
@@ -63,8 +63,8 @@ in the normal plane gives a vibration pattern:
 
 $$
   \sigma(\theta)
-  \;=\;
-  A_\ell \, e^{i\ell\theta} \, \hat{n}(\theta)
+  = 
+  A_\ell  e^{i\ell\theta}  \hat{n}(\theta)
 $$
 
 The direction $\hat{n}(\theta)$ rotates as we go around the
@@ -104,11 +104,11 @@ The total orbital dimension is
 
 $$
   \dim \mathcal{O}_n
-  \;=\;
+  = 
   \sum_{\ell=0}^{n-1} \dim V_\ell
-  \;=\;
+  = 
   \sum_{\ell=0}^{n-1} (2\ell + 1)
-  \;=\; n^2.
+  =  n^2.
   \qquad\square
 $$
 
@@ -139,8 +139,8 @@ The energy of mode $\ell$ at shell $n$ is
 
 $$
   E_\ell
-  \;=\;
-  \frac{[\ell]_q \, [\ell + 1]_q}{[n]_q^2} \cdot E_{\mathrm{ion}}
+  = 
+  \frac{[\ell]_q  [\ell + 1]_q}{[n]_q^2} \cdot E_{\mathrm{ion}}
 $$
 
 where $E_{\mathrm{ion}} = 13.6$ eV and $[\ell]_q [\ell+1]_q$

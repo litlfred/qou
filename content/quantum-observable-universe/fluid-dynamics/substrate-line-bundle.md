@@ -9,15 +9,15 @@ $\mathbb{G}_m$-torsor
 
 $$
   \mathcal{Q}
-  \;=\;
+  = 
   \mathrm{End}(\mathbf{1}) \otimes_\mathbb{Z} \mathbb{G}_m
-  \;\to\;
-  \mathrm{Spec}\,R,
+   \to 
+  \mathrm{Spec}R,
 $$
 
 whose fibre at each $R$-point is $\mathbb{G}_m(R) = R^\times$.
 A **substrate section** is a global section
-$q \colon \mathrm{Spec}\,R \to \mathcal{Q}$, i.e. an element
+$q \colon \mathrm{Spec}R \to \mathcal{Q}$, i.e. an element
 $q \in R^\times$.
 
 When $(\mathbf{C}, A, \tau)$ is fibred over a space $M$
@@ -33,9 +33,9 @@ The compactified substrate bundle is
 
 $$
   \bar{\mathcal{Q}}_M
-  \;=\;
+  = 
   M \times \mathbb{P}^1
-  \;\to\; M.
+   \to  M.
 $$
 
 A substrate section extends to a $\mathbb{P}^1$-valued section
@@ -49,14 +49,14 @@ sections are:
 | $q = \infty$ | $[\infty] \in \mathbb{P}^1$ | $\pi_V \circ d$ (vertical) | Deep quantum |
 
 **The universal family.**
-Over $\mathbb{G}_m = \mathrm{Spec}\,\mathbb{Z}[q, q^{-1}]$,
+Over $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$,
 define the **universal substrate differential**
 
 $$
   \mathbf{d}
-  \;=\;
-  q^{-1}\,d + (1 - q^{-1})\,\pi_V \circ d
-  \;\in\;
+  = 
+  q^{-1}d + (1 - q^{-1})\pi_V \circ d
+   \in 
   \mathrm{Hom}_{\mathbb{Z}[q,q^{-1}]}\!
   \bigl(\Omega^k(A), \Omega^{k+1}(A)\bigr).
 $$

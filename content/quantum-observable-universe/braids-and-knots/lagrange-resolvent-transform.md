@@ -5,7 +5,7 @@ $\zeta = e^{2\pi i/n}$.  The **Lagrange resolvent transform**
 (discrete Fourier transform on $C_n$) is
 
 $$
-  w_k \;=\; \frac{1}{\sqrt{n}}\sum_{j=0}^{n-1}\zeta^{kj}\,x_j,
+  w_k =  \frac{1}{\sqrt{n}}\sum_{j=0}^{n-1}\zeta^{kj}x_j,
   \qquad k \in \{0, \ldots, n-1\}.
 $$
 

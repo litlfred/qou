@@ -39,9 +39,9 @@ crossing energy.  This is the knot-theoretic picture of
 
 $$
   R_a \bowtie R_b
-  \;\;\leadsto\;\;
+   \leadsto 
   \text{shared sub-link } R_{ab}
-  \;=\;
+  = 
   R_a \cup R_b \text{ with merged linking sites.}
 $$
 
@@ -117,9 +117,9 @@ extremes of a single topological invariant — the
 **residual linking number** $\lambda(R)$:
 
 $$
-  \lambda(R) = 0 \;\Longleftrightarrow\; \text{noble gas},
+  \lambda(R) = 0 \Longleftrightarrow \text{noble gas},
   \qquad
-  \lambda(R) > 0 \;\Longleftrightarrow\; \text{non-inert}.
+  \lambda(R) > 0 \Longleftrightarrow \text{non-inert}.
 $$
 
 Metallic character is strongest when $\lambda(R)$ is small

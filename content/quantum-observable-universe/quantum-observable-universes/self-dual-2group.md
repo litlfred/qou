@@ -10,32 +10,32 @@ associated exact sequence
   & \ker\partial \ar[r]
   & H \ar[r, "\partial"]
   & G \ar[r]
-  & \mathrm{coker}\,\partial \ar[r]
+  & \mathrm{coker}\partial \ar[r]
   & 1
 \end{tikzcd}
 \end{equation}
 ```
 
 encodes the $2$-group as a homotopy type with
-$\pi_0 = \mathrm{coker}\,\partial$ and
+$\pi_0 = \mathrm{coker}\partial$ and
 $\pi_1 = \ker\partial$.
 
 The *inner-automorphism $2$-group*
 $\mathrm{INN}(G) = (G \xrightarrow{\mathrm{id}} G)$
-has $\ker\partial = 1$ and $\mathrm{coker}\,\partial = 1$, so it is
+has $\ker\partial = 1$ and $\mathrm{coker}\partial = 1$, so it is
 connected and simply connected as a $2$-group. A $2$-connection for
 $\mathrm{INN}(G)$ on a principal $2$-bundle over $M$ consists of a
 $\mathfrak{g}$-valued $1$-form $A$ and a $\mathfrak{g}$-valued
 $2$-form $B$, subject to the *quantum flatness* condition
 
-$$F_A \;=\; B.$$
+$$F_A =  B.$$
 
 In the QOU setting, $G = \mathrm{SU}(2)$ and the Levi distribution
 $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$, so the Hodge
 decomposition $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$
 is available. Imposing the *simplicity constraint*
 
-$$B \;\in\; \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)$$
+$$B  \in  \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)$$
 
 --- that is, requiring the $2$-form datum to be self-dual ---
 and combining with quantum flatness gives
@@ -44,13 +44,13 @@ the commutative diagram
 ```tex
 \begin{equation}\label{eq:2group-instanton}
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
-  \Omega^1(M,\,\mathfrak{g})
+  \Omega^1(M,\mathfrak{g})
     \ar[r, "d_A"]
-  & \Omega^2(M,\,\mathfrak{g})
+  & \Omega^2(M,\mathfrak{g})
     \ar[r, "\pi^+"]
-  & \Omega^{2,+}(M,\,\mathfrak{g})
+  & \Omega^{2,+}(M,\mathfrak{g})
   \\
-  & F_A \ar[u, "=\;B"]
+  & F_A \ar[u, "=B"]
     \ar[r, equal]
   & F_A^+ \ar[u, "\text{simplicity}"']
 \end{tikzcd}
@@ -60,7 +60,7 @@ the commutative diagram
 The quantum flatness condition $F_A = B$ combined with the simplicity
 constraint $B = F_A^+$ forces $F_A = F_A^+$, hence $F_A^- = 0$.
 This is precisely the instanton equation
-$F_A|_H = {*_H}\,F_A|_H$
+$F_A|_H = {*_H}F_A|_H$
 of [instanton](#def:instanton). Thus, the self-dual formulation
 used throughout this paper is a special case of $2$-group gauge theory
 for $\mathrm{INN}(\mathrm{SU}(2))$ subject to a simplicity constraint

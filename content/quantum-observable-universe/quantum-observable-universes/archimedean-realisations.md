@@ -4,7 +4,7 @@ the categorical structures specialise to familiar geometric objects:
 
 - **Volume constraint**
   (\ref{eq:categorical-volume-constraint}).
-  The Levi form $L_\theta = -i\,d\theta|_{H \times H}$ is non-degenerate
+  The Levi form $L_\theta = -id\theta|_{H \times H}$ is non-degenerate
   on the rank-$4$ distribution $H = \ker\theta$, realising the
   categorical volume form
   $\epsilon \colon \Lambda^2 V \to \mathbf{1}$.  The induced Hodge star
@@ -16,7 +16,7 @@ the categorical structures specialise to familiar geometric objects:
   The categorical involution $\sigma$ becomes the identification
   $\mathbb{P}^1(\mathbb{C}) \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere
   under the Killing form): a line $\ell \subset R^2$ maps to the
-  projector $\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}$.
+  projector $\mathrm{proj}_\ell - \tfrac12\mathrm{id}$.
 
 - **Variational equations**
   ([variational equations](#prop:variational-equations)).
@@ -24,5 +24,5 @@ the categorical structures specialise to familiar geometric objects:
   $\mathrm{Ric}_{g_\theta} = T^{(q)}$
   ([GR substrate geometry](#rem:gr-substrate-geometry)); the transport equation
   reduces to the Schrodinger equation
-  $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$
+  $J\hbar_q\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$
   ([Schr\"{o}dinger jet coaction](#rem:schrodinger-jet-coaction)).

@@ -3,7 +3,7 @@ calculus $\Omega^1(A)$ ([quantum universe](#def:quantum-universe)). The
 *higher differential forms* are the graded $A$-bimodule
 
 $$
-  \Omega^k(A) \;=\; \bigwedge\nolimits_A^k \Omega^1(A),
+  \Omega^k(A) =  \bigwedge\nolimits_A^k \Omega^1(A),
   \qquad k = 0, 1, 2, \ldots
 $$
 

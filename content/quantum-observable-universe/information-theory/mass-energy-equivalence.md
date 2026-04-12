@@ -10,8 +10,8 @@ the crossing energy
 
 $$
   E_{\mathfrak{H}}
-  \;=\; \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2
-  \;=\; \frac{\mathfrak{m}_{\mathfrak{H}}}{(q - 1)^2}.
+  =  \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2
+  =  \frac{\mathfrak{m}_{\mathfrak{H}}}{(q - 1)^2}.
 $$
 
 **Content of the theorem.**
@@ -42,7 +42,7 @@ gives
 
 $$
   \mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta))
-  \;=\;
+  = 
   \sum_{\text{crossings in } \beta}
   \begin{cases}
     q   & \text{positive crossing}, \\
@@ -60,7 +60,7 @@ $\varrho \colon \mathbf{1} \to A$ is
 
 $$
   \mathfrak{m}_\varrho
-  \;=\;
+  = 
   \bigl\lVert
     \mathrm{tr}\bigl(
       (\textstyle\int_A \otimes \mathrm{id})
@@ -77,7 +77,7 @@ a *vertical* (Reeb) quantity, since $\Delta$ encodes the
 $q$-connection whose temporal component has weight $\hbar_q$.
 
 *Step 3: The speed-of-light conversion.*
-The $q$-connection $A_q = q^{-1}A + \hbar_q\,\iota_\xi A\;\theta$
+The $q$-connection $A_q = q^{-1}A + \hbar_q\iota_\xi A\theta$
 assigns weight $q^{-1}$ to each spatial crossing and weight $\hbar_q$
 to each temporal tick.  The ribbon trace sums spatial crossing
 weights ($q^{\pm 1}$), while the categorical mass sums temporal
@@ -88,10 +88,10 @@ mass.  The ratio is:
 
 $$
   \frac{E_{\mathfrak{H}}}{\mathfrak{m}_{\mathfrak{H}}}
-  \;=\; \frac{q^{-1}}{\hbar_q}
+  =  \frac{q^{-1}}{\hbar_q}
   \cdot \frac{q^{-1}}{\hbar_q}
-  \;=\; c_q^2
-  \;=\; \frac{1}{(q-1)^2}.
+  =  c_q^2
+  =  \frac{1}{(q-1)^2}.
   \qquad\square
 $$
 
@@ -101,13 +101,13 @@ $$
 |--------|-----|----------|---------|
 | Deep-quantum | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
 | Deep quantum | $\varphi^2$ | $\approx 0.382$ | Sub-relativistic: mass dominates energy |
-| Our universe | $q_0$ | $\approx 83.2$ | $E \approx 83\,\mathfrak{m}$: large amplification |
+| Our universe | $q_0$ | $\approx 83.2$ | $E \approx 83\mathfrak{m}$: large amplification |
 | Near-classical | $1.01$ | $10{,}000$ | Extreme amplification: tiny mass $\to$ large energy |
 | Classical limit | $q \to 1^+$ | $\to \infty$ | $E/\mathfrak{m} \to \infty$: classical $E = mc^2$ with $c$ large |
 
 At $q = q_0$, a vortex with categorical mass $\mathfrak{m}$
 carries crossing energy
-$E = \mathfrak{m}/(q-1)^2 \approx 83\,\mathfrak{m}$.
+$E = \mathfrak{m}/(q-1)^2 \approx 83\mathfrak{m}$.
 This large amplification factor is the QOU explanation for why
 nuclear energy ($E = mc^2$) releases vastly more energy than the
 rest mass would suggest in everyday units.
@@ -127,9 +127,9 @@ The pair production threshold
 ([pair creation energy](#rem:pair-creation-energy)) becomes:
 
 $$
-  E_{\gamma} \;\geq\;
+  E_{\gamma}  \geq 
   (\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}) \cdot c_q^2
-  \;=\; \frac{\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}}{(q-1)^2}.
+  =  \frac{\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}}{(q-1)^2}.
 $$
 
 The net crossing energy of the pair is
@@ -145,12 +145,12 @@ $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes
 
 $$
   \sum_{\text{crossings}} \epsilon_i
-  \;=\;
-  \frac{1}{(q-1)^2}\,
-  \bigl\lVert\,
+  = 
+  \frac{1}{(q-1)^2}
+  \bigl\lVert
   \mathrm{MI}\!\!\int_\Sigma
-  (\nabla_A q,\; L \wedge F^+)
-  \,\bigr\rVert,
+  (\nabla_A q, L \wedge F^+)
+  \bigr\rVert,
 $$
 
 identifying the discrete Skein weight (spatial) with the rescaled

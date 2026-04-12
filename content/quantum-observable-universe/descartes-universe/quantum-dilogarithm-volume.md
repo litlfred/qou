@@ -22,7 +22,7 @@ of the Markov trace, normalised by $\hbar_q^2$:
 
 $$
   \mathbf{E}_{\mathrm{bind}}(p, n)
-  \;=\;
+  = 
   \frac{\Phi_q(\mathcal{N}(Z, N))}{\hbar_q^2}
 $$
 
@@ -31,9 +31,9 @@ Markov trace product:
 
 $$
   \Phi_q(\mathcal{N}(Z, N))
-  \;:=\;
+   := 
   \sum_{i=0}^{A-2} \log |z \cdot a_i + b_i|
-  \;=\;
+  = 
   \log \prod_{i=0}^{A-2} |\hat{V}_i|.
 $$
 
@@ -67,9 +67,9 @@ The $Q$-value for the transition $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!
 
 $$
   Q_\beta
-  \;=\;
+  = 
   \frac{\Phi_q^{\mathrm{par}} - \Phi_q^{\mathrm{dau}}}{\hbar_q^2}
-  \;=\;
+  = 
   \frac{1}{\hbar_q^2}
   \sum_{i=0}^{p}
   \log \left|
@@ -88,12 +88,12 @@ golden rule:
 
 $$
   t_{1/2}
-  \;=\;
-  \frac{\ln 2 \cdot 2\,N_v^4}{243\,\mathbf{E}_{\times} \cdot \mu_0}
-  \;\cdot\;
-  \frac{1}{[2]_q \;\cdot\; s^2
-    \;\cdot\; f(Z_d, \mathcal{Q}_q)}
-  \;\cdot\;
+  = 
+  \frac{\ln 2 \cdot 2N_v^4}{243\mathbf{E}_{\times} \cdot \mu_0}
+   \cdot 
+  \frac{1}{[2]_q  \cdot  s^2
+     \cdot  f(Z_d, \mathcal{Q}_q)}
+   \cdot 
   \prod_{i=0}^{p}
   \left|
     \frac{\hat{V}_i^{\mathrm{dau}}}{\hat{V}_i^{\mathrm{par}}}
@@ -103,8 +103,8 @@ $$
 where $s = q^{1/2} - q^{-1/2}$,
 $\mathbf{E}_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
 dimensional scale, and $N_v$ is the effective crossing count
-of the weak scale ($v = N_v\,\mathbf{E}_{\times}\,\mu_0$).
-The prefactor replaces $G_F^2\,m_e^5/(2\pi^3)$
+of the weak scale ($v = N_v\mathbf{E}_{\times}\mu_0$).
+The prefactor replaces $G_F^2m_e^5/(2\pi^3)$
 ([hadron half-life](#prop:hadron-half-life)).
 Every quantity is determined by the Iwahori--Hecke algebra computation
 at $q$, plus $\mu_0$ (unit choice) and $N_v$ (topological

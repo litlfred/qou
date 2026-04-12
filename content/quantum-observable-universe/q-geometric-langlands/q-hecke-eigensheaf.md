@@ -6,7 +6,7 @@ exists a functorial isomorphism
 
 $$
   \mathbf{T}_{x,\lambda}^{(q)}(\mathcal{M})
-  \;\simeq\;
+  \simeq
   \mathcal{M} \otimes V_\lambda^{(q)}(\mathcal{L}_q)_x,
 $$
 

@@ -21,12 +21,25 @@ LaTeX label: `prop:knot-eigenbasis-complete`
 - [alexander1923] J.W. Alexander, Proc. Natl. Acad. Sci. USA 9 (1923)
 - [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987)
 - [manuscript] §4-path-integrals-and-braiding/knot-eigenbasis-complete
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 
 namespace QOU.Braiding
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Hecke Algebra H_n(q) -/
 
@@ -42,11 +55,11 @@ structure HeckeAlgebra where
   /-- Carrier type. -/
   carrier : Type*
   /-- Deformation parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q ≠ 0. -/
   q_ne_zero : q ≠ 0
   /-- q is not a root of unity: q^k ≠ 1 for all k ≥ 1. -/
-  q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1
+  -- q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
   /-- Multiplication. -/
   mul : carrier → carrier → carrier
   /-- Unit element. -/
@@ -56,7 +69,7 @@ structure HeckeAlgebra where
   /-- Subtraction. -/
   sub : carrier → carrier → carrier
   /-- Scalar multiplication by ℝ. -/
-  smul : ℝ → carrier → carrier
+  smul : R_q → carrier → carrier
   /-- Generators T₁, …, T_{n-1} (images of Artin generators). -/
   T : Fin (n - 1) → carrier
   /-- Braid relation: T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}. -/
@@ -89,19 +102,19 @@ structure BoundedPartition where
 
 /-- The spin label j = (λ₁ − λ₂)/2 for a two-part partition.
     This is the spin of the irreducible SU_q(2)-module V_λ. -/
-noncomputable def BoundedPartition.spin (bp : BoundedPartition) : ℝ :=
+noncomputable def BoundedPartition.spin (bp : BoundedPartition) : R_q :=
   match bp.rows with
   | [] => 0
-  | [a] => (a : ℝ) / 2
-  | a :: b :: _ => ((a : ℝ) - (b : ℝ)) / 2
+  | [a] => (a : R_q) / 2
+  | a :: b :: _ => ((a : R_q) - (b : R_q)) / 2
 
 /-- Spin labels are non-negative for single-part partitions. -/
 theorem spin_nonneg_single (a : ℕ) :
-    (0 : ℝ) ≤ (a : ℝ) / 2 := by positivity
+    (0 : R_q) ≤ (a : R_q) / 2 := by positivity
 
 /-- The maximum spin of a partition of n is n/2 (the fully symmetric case). -/
 theorem max_spin_bound (bp : BoundedPartition) (h : bp.maxParts = 2) :
-    bp.spin ≤ (bp.n : ℝ) / 2 := by
+    bp.spin ≤ (bp.n : R_q) / 2 := by
   unfold BoundedPartition.spin
   match hr : bp.rows with
   | [] =>
@@ -111,14 +124,14 @@ theorem max_spin_bound (bp : BoundedPartition) (h : bp.maxParts = 2) :
     simp [hr]
     have : a = bp.n := by
       have := bp.size_eq; simp [hr] at this; exact this
-    linarith [this ▸ (le_refl (a : ℝ))]
+    linarith [this ▸ (le_refl (a : R_q))]
   | a :: b :: rest =>
     simp [hr]
     -- (a - b)/2 ≤ n/2 since a + b + rest.sum = n and b, rest.sum ≥ 0
     have hsum : (a : ℕ) + b + rest.sum = bp.n := by
       have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith
     -- In ℝ: a - b ≤ a ≤ a + b + rest.sum = n
-    have hab : (a : ℝ) - (b : ℝ) ≤ (bp.n : ℝ) := by
+    have hab : (a : R_q) - (b : R_q) ≤ (bp.n : R_q) := by
       push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum]
     linarith
 
@@ -207,11 +220,11 @@ theorem alexander_has_braid (alex : AlexanderSurjectivity)
 -- Ref: [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987), 335–388
 structure MarkovTrace (H : HeckeAlgebra) where
   /-- The trace functional tr : H_n(q) → ℝ. -/
-  tr : H.carrier → ℝ
+  tr : H.carrier → R_q
   /-- Trace property (cyclicity / Markov I): tr(ab) = tr(ba). -/
   trace_comm : ∀ (a b : H.carrier), tr (H.mul a b) = tr (H.mul b a)
   /-- Markov parameter z determined by q. -/
-  z : ℝ
+  z : R_q
   /-- z ≠ 0. -/
   z_ne_zero : z ≠ 0
   /-- Non-degeneracy: the trace of the unit is non-zero. -/

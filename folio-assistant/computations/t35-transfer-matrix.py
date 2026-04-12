@@ -74,8 +74,8 @@ def hecke_reduce_chain(matrices):
 # ── Crossing types ──────────────────────────────────────────────
 
 T_pp = T(1.0, 0.0)
-T_nn = T(q**2, -q*S)
-T_mix = T(0.5*(1+q**2), -0.5*q*S)
+T_nn = T(1.0, -HA)
+T_mix = T(1.0, -HA/2)
 
 print(f"T_pp = [[{T_pp[0][0]:.6f}, {T_pp[0][1]:.6f}], [{T_pp[1][0]:.6f}, {T_pp[1][1]:.6f}]]")
 print(f"T_nn = [[{T_nn[0][0]:.6f}, {T_nn[0][1]:.6f}], [{T_nn[1][0]:.6f}, {T_nn[1][1]:.6f}]]")

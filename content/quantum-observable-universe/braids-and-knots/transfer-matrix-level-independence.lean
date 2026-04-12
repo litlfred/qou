@@ -12,21 +12,34 @@ LaTeX label: `prop:transfer-matrix-level-independence`
 
 - [manuscript] §4/transfer-matrix-level-independence
 - [jones1987] https://doi.org/10.2307/1971403
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A hadron configuration: constituent knots linked at a brane point. -/
 structure HadronConfig where
   /-- Number of constituent knots. -/
   numConstituents : ℕ
   /-- Constituent Skein polynomials (one per knot). -/
-  constituentPolynomials : List ℝ
+  constituentPolynomials : List R_q
   /-- The composite knot Skein polynomial. -/
-  compositePolynomial : ℝ
+  compositePolynomial : R_q
   /-- Correct number of constituents. -/
   constituents_length : constituentPolynomials.length = numConstituents
 
@@ -44,9 +57,9 @@ structure HadronConfig where
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
 theorem transfer_matrix_level_independence
-    (q : ℝ) (hq : 1 < q)
+    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (H : HadronConfig)
-    (constituentProduct : ℝ)
+    (constituentProduct : R_q)
     (h_prod : constituentProduct = H.constituentPolynomials.foldl (· * ·) 1)
     : constituentProduct = H.compositePolynomial := by
   -- The agreement follows from the Markov trace product theorem
@@ -58,8 +71,8 @@ theorem transfer_matrix_level_independence
     isotopy-equivalent configurations have the same transfer matrix. -/
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
 theorem transfer_matrix_path_independence
-    (q : ℝ) (hq : 1 < q)
-    (transferMatrix1 transferMatrix2 : ℝ)
+    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
+    (transferMatrix1 transferMatrix2 : R_q)
     (h_isotopy : True)  -- isotopy equivalence (abstract)
     : transferMatrix1 = transferMatrix2 := by
   -- Follows from bundle-isotopy-equivalence: isotopy-equivalent

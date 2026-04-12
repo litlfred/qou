@@ -5,7 +5,7 @@ with instanton connection $A$ and substrate parameter $q$
 
 $$
   S_q[A, \theta]
-  \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
+  =  \int_M q(p)\lVert F_A^+|_H \rVert^2
         \theta \wedge (d\theta)^n,
 $$
 

@@ -26,7 +26,7 @@ on $B$ is: $w \prec_c w'$ if and only if
 $$
   \ell(w) < \ell(w'),
   \quad\text{or}\quad
-  \ell(w) = \ell(w') \;\text{and}\;
+  \ell(w) = \ell(w')  \text{and}
   (i_1, \ldots, i_k) <_{\mathrm{lex}} (i_1', \ldots, i_k')
 $$
 

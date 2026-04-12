@@ -8,10 +8,10 @@ $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
 
    $$
      \mathcal{F}_q^{\mathrm{intr}}
-     \;=\;
+     = 
      \mathrm{HKR}^{-1}(\kappa_0)
-     \;\in\;
-     HH^2(\mathcal{U}_q,\, \mathrm{Ad}),
+      \in 
+     HH^2(\mathcal{U}_q, \mathrm{Ad}),
    $$
 
    where $\mathrm{HKR}$ is the Hochschild--Kostant--Rosenberg

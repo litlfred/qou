@@ -23,45 +23,50 @@ exceptional divisor
 
 **Table 1: Fermion sector** (knots, 1 component).
 
-| Knot type | Symbol | Particle / field | Genus | Crossings | $J(q_0)$ | Role in bundle |
-|-----------|--------|------------------|:-----:|:---------:|:---------:|----------------|
-| Unknot | $T_{1,0}$ ($0_1$) | Neutrino $\nu$ | $0$ | $0$ | $1$ | Trivial braiding; vacuum drag |
-| Trefoil | $T_{2,3}$ ($3_1$) | Electron $e^-$ | $1$ | $3$ | $\approx 0.817$ | Simplest stable vortex (gen. 1) |
-| Cinquefoil | $T_{2,5}$ ($5_1$) | Muon $\mu^-$ | $2$ | $5$ | $\approx 0.485$ | Gen. 2 lepton on Reeb divisor |
-| Septafoil | $T_{2,7}$ ($7_1$) | Tau $\tau^-$ | $3$ | $7$ | — | Gen. 3 lepton on Reeb divisor |
-| $T_{2,9}$ | $T_{2,9}$ ($9_1$) | Strong binding | $4$ | $9$ | — | Gluonic binding; saturating genus |
-| $T_{3,4}$ | $T_{3,4}$ ($8_{19}$) | Hopf${}^2$ color binding | $3$ | $8$ | — | Force carrier sector $H^{0,1}$ |
-| $T_{3,5}$ | $T_{3,5}$ ($10_{124}$) | Weak force ($\beta$-decay) | $4$ | $10$ | — | Mediates $\beta$-decay vertex |
+| Knot type | Symbol | Braid word | Particle / field | Genus | Crossings | Role in bundle |
+|-----------|--------|-----------|------------------|:-----:|:---------:|----------------|
+| Unknot | $T_{1,0}$ ($0_1$) | $\mathbf{1}$ | Neutrino $\nu$ | $0$ | $0$ | Trivial braiding; vacuum drag |
+| Trefoil | $T_{2,3}$ ($3_1$) | $\sigma_0\sigma_1\sigma_0$ | Electron $e^-$ | $1$ | $3$ | Simplest stable vortex (gen. 1) |
+| Cinquefoil | $T_{2,5}$ ($5_1$) | $(\sigma_0\sigma_1)^2\sigma_0$ | Muon $\mu^-$ | $2$ | $5$ | Gen. 2 lepton on Reeb divisor |
+| Septafoil | $T_{2,7}$ ($7_1$) | $(\sigma_0\sigma_1)^3\sigma_0$ | Tau $\tau^-$ | $3$ | $7$ | Gen. 3 lepton on Reeb divisor |
+| $T_{2,9}$ | $T_{2,9}$ ($9_1$) | $(\sigma_0\sigma_1)^4\sigma_0$ | Strong binding | $4$ | $9$ | Gluonic binding; saturating genus |
+| $T_{3,4}$ | $T_{3,4}$ ($8_{19}$) | $(\sigma_0\sigma_1\sigma_2)^4$ | Hopf${}^2$ color binding | $3$ | $8$ | Force carrier sector $H^{0,1}$ |
+| $T_{3,5}$ | $T_{3,5}$ ($10_{124}$) | $(\sigma_0\sigma_1\sigma_2)^5$ | Weak force ($\beta$-decay) | $4$ | $10$ | Mediates $\beta$-decay vertex |
 
 **Table 2: Boson sector** (links, 2 components).
 
-| Link | Symbol | Particle / field | Components | Crossings | Role |
-|------|--------|------------------|:----------:|:---------:|------|
-| Hopf link | $T(2,2)$ ($L2a1$) | Gluon | $2$ | $2$ | Strong force |
-| Torus link | $T(2,4)$ | $W$ boson | $2$ | $4$ | Charged weak force |
-| Torus link | $T(2,6)$ | $Z$ boson | $2$ | $6$ | Neutral weak force |
-| Torus link | $T(2,8)$ | Higgs boson ($\approx 125$ GeV) | $2$ | $8$ | Scalar boson; spans 3 exceptional divisors |
+| Link | Symbol | Braid word | Particle / field | Components | Crossings | Role |
+|------|--------|-----------|------------------|:----------:|:---------:|------|
+| Hopf link | $T(2,2)$ ($L2a1$) | $\sigma_0\sigma_1$ | Gluon | $2$ | $2$ | Strong force |
+| Torus link | $T(2,4)$ | $(\sigma_0\sigma_1)^2$ | $W$ boson | $2$ | $4$ | Charged weak force |
+| Torus link | $T(2,6)$ | $(\sigma_0\sigma_1)^3$ | $Z$ boson | $2$ | $6$ | Neutral weak force |
+| Torus link | $T(2,8)$ | $(\sigma_0\sigma_1)^4$ | Higgs boson ($\approx 125$ GeV) | $2$ | $8$ | Scalar boson; spans 3 exceptional divisors |
 
 **Table 3: Derived knots and mass mechanism.**
 
-| Knot type | Symbol | Particle / field | Genus | Crossings | Vol | Role |
-|-----------|--------|------------------|:-----:|:---------:|:---:|------|
-| Point (empty) | $\varnothing$ | Photon $\gamma$ | $0$ | $0$ | $0$ | Background flux on $\mathcal{S}_p$ |
-| Figure-eight | $4_1$ | Higgs field | $1$ | $4$ | $2.030$ | Mass mechanism; amphichiral ($H = H^{\sigma}$) |
+| Knot type | Symbol | Braid word | Particle / field | Genus | Crossings | Vol | Role |
+|-----------|--------|-----------|------------------|:-----:|:---------:|:---:|------|
+| Point (empty) | $\varnothing$ | $\mathbf{1}$ | Photon $\gamma$ | $0$ | $0$ | $0$ | Background flux on $\mathcal{S}_p$ |
+| Figure-eight | $4_1$ | $\sigma_0\sigma_1^{-1}\sigma_0\sigma_1^{-1}$ | Higgs field | $1$ | $4$ | $2.030$ | Mass mechanism; amphichiral ($H = H^{\sigma}$) |
 
 **Table 4: Quark sector** (on the exceptional divisor).
 
-Each lepton's torus knot descends to a quark flavour on the
-exceptional divisor:
+Each quark is an **unknot** ($0_1$) within the Borromean braid
+$\mathcal{B}_3$ ([Borromean baryon](#def:borromean-baryon)).
+Up vs down flavour is encoded by crossing orientation ($\sigma$
+vs $\sigma^{-1}$), not knot type. The table below shows which
+lepton's torus knot each quark **descends from** on the exceptional
+divisor — this is a descent relationship, not the quark's own
+knot type:
 
-| Quark | Symbol | Knot formula | Generation | Lepton partner |
-|-------|--------|-------------|:----------:|----------------|
-| Up | $\mathfrak{u}$ | $T_{2,3}$ | 1 | $e^-$ |
-| Down | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | 1 | $e^-$ (mirror) |
-| Strange | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | 2 | $\mu^-$ (mirror) |
-| Charm | $\mathfrak{c}$ | $T_{2,7}$ | 3 | $\tau^-$ |
-| Bottom | $\mathfrak{b}$ | $T_{2,5}$ | 2 | $\mu^-$ |
-| Hopf${}^2$ color | $\mathfrak{t}$ | $T_{3,4}$ | — | *(force carrier; "top quark" label deprecated)* |
+| Quark | Symbol | Braid element in $\mathcal{B}_3$ | Lepton descent | Generation | Lepton partner |
+|-------|--------|--------------------------------|---------------|:----------:|----------------|
+| Up | $\mathfrak{u}$ | $\sigma_i$ (positive crossing) | $\leftarrow T_{2,3}$ | 1 | $e^-$ |
+| Down | $\mathfrak{d}$ | $\sigma_i^{-1}$ (negative crossing) | $\leftarrow T_{2,3}^{\sigma}$ | 1 | $e^-$ (mirror) |
+| Strange | $\mathfrak{s}$ | $\sigma_i^{-1}$ (negative crossing) | $\leftarrow T_{2,5}^{\sigma}$ | 2 | $\mu^-$ (mirror) |
+| Charm | $\mathfrak{c}$ | $\sigma_i$ (positive crossing) | $\leftarrow T_{2,7}$ | 3 | $\tau^-$ |
+| Bottom | $\mathfrak{b}$ | $\sigma_i$ (positive crossing) | $\leftarrow T_{2,5}$ | 2 | $\mu^-$ |
+| Hopf${}^2$ color | $\mathfrak{t}$ | — | $\leftarrow T_{3,4}$ | — | *(force carrier; "top quark" label deprecated)* |
 
 **Precision data.** All torus knots have zero hyperbolic volume
 ($\mathrm{Vol} = 0$), so their bare mass vanishes.  Mass arises

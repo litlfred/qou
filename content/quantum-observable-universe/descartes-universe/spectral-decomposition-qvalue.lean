@@ -14,6 +14,11 @@ LaTeX label: `cor:spectral-decomposition-qvalue`
 - [manuscript] §5/spectral-decomposition-qvalue
 - [jones1987] https://doi.org/10.2307/1971403
 - [turaev2010] https://doi.org/10.1515/9783110221848
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

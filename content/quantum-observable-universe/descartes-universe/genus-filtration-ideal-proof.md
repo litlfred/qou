@@ -14,8 +14,8 @@ $r \in \{2, 3\}$ is:
 | $g$ | From $r = 2$ | From $r = 3$ | Total | $\geq 5$? |
 |:---:|:---:|:---:|:---:|:---:|
 | $2$ | $T_{2,3}, T_{2,5}$ | --- | $2$ | No |
-| $3$ | $+\, T_{2,7}$ | $T_{3,4}$ | $4$ | No |
-| $4$ | $+\, T_{2,9}$ | $+\, T_{3,5}$ | $6$ | **Yes** |
+| $3$ | $+ T_{2,7}$ | $T_{3,4}$ | $4$ | No |
+| $4$ | $+ T_{2,9}$ | $+ T_{3,5}$ | $6$ | **Yes** |
 
 At $g = 3$: $4$ evaluations cannot span a $5$-dimensional
 space (rank $\leq 4$).  At $g = 4$: $6$ evaluations span
@@ -45,7 +45,7 @@ term picks up no lower-order contamination from $a_{n-1}$).
 At genus $g = 4$ (from part (0)), the Seifert embedding
 $\iota \colon F_p \hookrightarrow \Sigma_4$ induces
 $\iota_* \colon H_1(F_p) \to H_1(\Sigma_4)$.  The
-Seifert surface $F_p$ has $\mathrm{rank}\, H_1(F_p) = (p-1)/2$.
+Seifert surface $F_p$ has $\mathrm{rank} H_1(F_p) = (p-1)/2$.
 For $\iota_*$ to be injective (necessary for a Seifert embedding),
 $(p-1)/2 \leq 4$.
 
@@ -67,8 +67,8 @@ at level $n = g + 1 = 5$ is nonzero if and only if the $5$th
 Seifert cycle has no lift.  Via the $d_q^2$ formula:
 
 $$
-  d_q^2(\gamma_5^*\, \omega_T)
-  \;=\;
+  d_q^2(\gamma_5^* \omega_T)
+  = 
   q^{-1}(1 - q^{-1}) \cdot 5 \cdot \omega_V \wedge_q \omega_T
 $$
 

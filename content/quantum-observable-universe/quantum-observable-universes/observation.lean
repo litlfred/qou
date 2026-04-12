@@ -3,6 +3,11 @@
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/Observation.lean (monolithic)
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.Basic
@@ -13,17 +18,20 @@ import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Topology.ContinuousFunction.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 
-open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u v
 
@@ -54,7 +62,7 @@ structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
   /-- The type of global sections `Γ(S)` of the state bundle. -/
   StateSections : Type*
   /-- The observation map `obs : Γ(S) → ℝ`. -/
-  obs : StateSections → ℝ
+  obs : StateSections → R_q
   /-- Gauge equivalence relation. -/
   gaugeEquiv : StateSections → StateSections → Prop
   /-- `obs` is constant on gauge-equivalence classes. -/

@@ -39,7 +39,7 @@ $H_n(q)$.  Three cases arise depending on the relative polarisation:
 **Same generator (parallel polarisation).**
 $$
   \sigma_i \cdot \sigma_i
-  \;=\; (q - q^{-1})\,\sigma_i + \mathbf{1}.
+  =  (q - q^{-1})\sigma_i + \mathbf{1}.
 $$
 The Hecke relation reduces the word to a dressed photon plus the
 vacuum $\mathbf{1}$ (neutrino).  No pair is created: the energy
@@ -50,7 +50,7 @@ a lower-energy residue.
 
 **Orthogonal generators (perpendicular polarisation).**
 $$
-  \sigma_0 \cdot \sigma_1 \;=\; L_+
+  \sigma_0 \cdot \sigma_1 =  L_+
   \qquad (\text{Hopf link intermediate state}).
 $$
 The product is already irreducible: it is the normal-form basis
@@ -59,8 +59,8 @@ one further $\sigma_0$ from the substrate (the Reeb direction) completes
 the trefoil:
 $$
   L_+ \cdot \sigma_0
-  \;=\; \sigma_0\sigma_1\sigma_0
-  \;=\; e^-.
+  =  \sigma_0\sigma_1\sigma_0
+  =  e^-.
 $$
 The positron $e^+$ is supplied by the mirror process
 $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ (all crossing signs
@@ -68,12 +68,12 @@ reversed, [antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)
 
 The complete vertex is therefore:
 $$
-  \underbrace{\sigma_0}_{\gamma_1,\;\mathrm{horiz.}}
-  \;\cdot\;
-  \underbrace{\sigma_1}_{\gamma_2,\;\mathrm{vert.}}
-  \;\xrightarrow{\;\xi_q\text{-insertion}\;}
+  \underbrace{\sigma_0}_{\gamma_1, \mathrm{horiz.}}
+   \cdot 
+  \underbrace{\sigma_1}_{\gamma_2, \mathrm{vert.}}
+  \xrightarrow{\xi_q\text{-insertion}}
   \underbrace{\sigma_0\sigma_1\sigma_0}_{e^-}
-  \;+\;
+  + 
   \underbrace{(\sigma_0\sigma_1\sigma_0)^\sigma}_{e^+}.
 $$
 
@@ -88,9 +88,9 @@ The vertex vanishes unless the two photons occupy **distinct**
 polarisation patches of $\mathbb{P}^1(\mathbb{C})$:
 
 $$
-  \langle e^-e^+ \,|\, \sigma_i\sigma_i \,|\, 0 \rangle \;=\; 0,
+  \langle e^-e^+ | \sigma_i\sigma_i | 0 \rangle =  0,
   \qquad
-  \langle e^-e^+ \,|\, \sigma_0\sigma_1 \,|\, 0 \rangle \;\neq\; 0.
+  \langle e^-e^+ | \sigma_0\sigma_1 | 0 \rangle  \neq  0.
 $$
 
 This is the topological origin of the Breit--Wheeler polarisation

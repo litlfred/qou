@@ -16,8 +16,8 @@ Markov parameter $z = (q^{1/2} + q^{-1/2})^{-1}$, descends to a
 bilinear form on $R(H_r(q))$:*
 
 $$
-  \langle [\lambda],\, [\mu] \rangle_{\mathrm{RJ}}
-  \;=\;
+  \langle [\lambda], [\mu] \rangle_{\mathrm{RJ}}
+  = 
   d_\lambda(q) \cdot \delta_{\lambda\mu},
 $$
 
@@ -34,14 +34,14 @@ $\chi_\lambda$ of $H_r(q)$ forces*
 
 $$
   \mathrm{tr}_M\!\bigl(\chi_\lambda \cdot \chi_\mu\bigr)
-  \;=\;
+  = 
   d_\lambda(q) \cdot \delta_{\lambda\mu}.
 $$
 
 *Any bilinear form on $R(H_r(q))$ that is diagonal in the irrep
 basis and compatible with the Markov trace normalization
 $\mathrm{tr}_M(1) = 1$ is a scalar multiple of
-$\langle -,\, - \rangle_{\mathrm{RJ}}$.*
+$\langle -, - \rangle_{\mathrm{RJ}}$.*
 
 **(iii)** *The Rosso--Jones invariant of a torus knot
 $\tau(r,s)$ is the evaluation of this inner product on the
@@ -49,10 +49,10 @@ full-twist element $\omega^s$:*
 
 $$
   J(\tau(r,s))
-  \;=\;
+  = 
   \sum_{\lambda \vdash r} d_\lambda(q) \cdot \omega_\lambda^s
-  \;=\;
-  \langle \omega^s,\, [\mathrm{triv}] \rangle_{\mathrm{RJ}},
+  = 
+  \langle \omega^s, [\mathrm{triv}] \rangle_{\mathrm{RJ}},
 $$
 
 *where $\omega_\lambda = q^{c_\lambda}$ is the eigenvalue of the

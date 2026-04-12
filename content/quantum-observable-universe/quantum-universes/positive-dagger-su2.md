@@ -7,12 +7,12 @@ sends a morphism $f \colon V \to W$ of representations to its conjugate
 transpose:
 
 $$
-f^\dagger = \bar{f}^{\,T} \colon W \to V.
+f^\dagger = \bar{f}^{T} \colon W \to V.
 $$
 
 This is well-defined because $\mathrm{SU}(2)$ acts by unitary matrices:
 if $f$ intertwines the $\mathrm{SU}(2)$-action, so does
-$\bar{f}^{\,T}$.
+$\bar{f}^{T}$.
 
 **Positive-definiteness on $V = \mathbb{C}^2$.** The fundamental
 representation $V = \mathbb{C}^2$ carries the standard Hermitian inner
@@ -20,7 +20,7 @@ product $\langle v, w \rangle = v^\dagger w$. The $\mathrm{SU}(2)$-action
 preserves this inner product by definition: for $g \in \mathrm{SU}(2)$,
 
 $$
-\langle gv, gw \rangle = (gv)^\dagger (gw) = v^\dagger g^\dagger g \, w
+\langle gv, gw \rangle = (gv)^\dagger (gw) = v^\dagger g^\dagger g  w
 = v^\dagger w = \langle v, w \rangle.
 $$
 
@@ -28,22 +28,22 @@ Now take any endomorphism $f \colon V \to V$ in
 $\mathbf{Rep}(\mathrm{SU}(2))$. The composite $f^\dagger f$ satisfies:
 
 $$
-\langle f^\dagger f \, v, v \rangle
-= \langle f \, v, f \, v \rangle
+\langle f^\dagger f  v, v \rangle
+= \langle f  v, f  v \rangle
 = \| f v \|^2 \geq 0
 $$
 
 for all $v \in V$. Hence $f^\dagger f$ has real non-negative eigenvalues,
-and $\langle f^\dagger f \, v, v \rangle = 0$ only when $f v = 0$.
+and $\langle f^\dagger f  v, v \rangle = 0$ only when $f v = 0$.
 
 **Explicit computation.** Write $f$ as a $2 \times 2$ matrix. By
-Schur's lemma, $f = \lambda \, \mathrm{id}$ for some
+Schur's lemma, $f = \lambda  \mathrm{id}$ for some
 $\lambda \in \mathbb{C}$ (since the fundamental representation is
 irreducible). Then:
 
 $$
-f^\dagger f = \bar{\lambda} \lambda \, \mathrm{id}
-= |\lambda|^2 \, \mathrm{id},
+f^\dagger f = \bar{\lambda} \lambda  \mathrm{id}
+= |\lambda|^2  \mathrm{id},
 $$
 
 which is manifestly non-negative. For reducible representations

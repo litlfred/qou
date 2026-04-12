@@ -3,12 +3,12 @@ complete intersection
 
 $$
 \mathcal{B}
-\;=\; V\!\bigl(
-  \textstyle\sum x_i,\;
-  \textstyle\sum x_i^2,\;
+=  V\!\bigl(
+  \textstyle\sum x_i,
+  \textstyle\sum x_i^2,
   \textstyle\sum x_i^3
 \bigr)
-\;\subset\; \mathbb{P}^4,
+\subset \mathbb{P}^4,
 $$
 
 where $[x_0 : x_1 : x_2 : x_3 : x_4]$ are homogeneous coordinates.
@@ -20,16 +20,16 @@ quotient
 
 $$
 \mathcal{O}_q(\mathcal{B})
-\;=\; \mathcal{O}_q(\mathbb{P}^4) \,\big/\,
+=  \mathcal{O}_q(\mathbb{P}^4) \big/
 \bigl(
-  \textstyle\sum x_i,\;
-  \textstyle\sum x_i^2,\;
+  \textstyle\sum x_i,
+  \textstyle\sum x_i^2,
   \textstyle\sum x_i^3
 \bigr),
 $$
 
 where $\mathcal{O}_q(\mathbb{P}^4)$ is the quantum polynomial ring with
-relations $x_i x_j = q\, x_j x_i$ for $i < j$.
+relations $x_i x_j = q x_j x_i$ for $i < j$.
 
 **Symmetry.** The symmetric group $S_5$ acts on $\mathcal{B}$ by
 permutation of the homogeneous coordinates. This action descends to an

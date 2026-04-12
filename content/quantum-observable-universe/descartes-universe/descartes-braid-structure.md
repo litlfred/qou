@@ -10,7 +10,7 @@ Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
    functor $\tau$) is the binary dihedral group
    $\mathrm{Dic}_3$ of order $12$
    ([SU(2) generators](#def:su2-generators)).
-3. The composite $B_3 \xrightarrow{\;\rho_3\;} \mathrm{Dic}_3 \twoheadrightarrow S_3$ recovers the three
+3. The composite $B_3 \xrightarrow{\rho_3} \mathrm{Dic}_3 \twoheadrightarrow S_3$ recovers the three
    copies of $S_3$ inside $S_5 = \mathrm{Aut}(\Sigma_4)$
    ([chirality and trefoil](#rem:chirality-trefoil)), one for each
    colour sector.

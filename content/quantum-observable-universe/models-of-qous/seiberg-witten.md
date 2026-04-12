@@ -10,7 +10,7 @@ an exceptional divisor parameterised by the local coordinate
 $\delta=x_2-x_3$.  The local geometry satisfies
 
 $$
-  z-z_c\;\sim\;\delta^2,
+  z-z_c \sim \delta^2,
 $$
 
 proving that the spacetime base "bounces" at the defect: the chiral
@@ -24,8 +24,8 @@ $\lvert\det(J)\rvert=1$, so the global volume form never collapses:
 
 ```tex
 \begin{equation}\label{eq:spectral-volume-form}
-  \Omega \;=\; dw_1\wedge dw_2\wedge dw_3\wedge dw_4
-  \;=\; \det(J)\;dx_0\wedge\cdots\wedge dx_4\Big|_{w_0=0}.
+  \Omega =  dw_1\wedge dw_2\wedge dw_3\wedge dw_4
+  =  \det(J)dx_0\wedge\cdots\wedge dx_4\Big|_{w_0=0}.
 \end{equation}
 ```
 
@@ -46,7 +46,7 @@ side, the alternating pairing on $V \cong \mathbb{C}^2$ is
 
 $$
   \epsilon(v \wedge w)
-  \;=\; v_1 w_2 - v_2 w_1,
+  =  v_1 w_2 - v_2 w_1,
   \qquad v, w \in V.
 $$
 
@@ -60,11 +60,11 @@ which is the Plucker relation $\Lambda^2 V \hookrightarrow V \otimes V$.  The in
 ```tex
 \begin{equation}\label{eq:chiral-symplectic-form}
   \omega_{\mathrm{ch}}
-  \;=\; dw_1 \wedge dw_4 + dw_2 \wedge dw_3,
+  =  dw_1 \wedge dw_4 + dw_2 \wedge dw_3,
 \end{equation}
 ```
 
-and $\Omega = \tfrac{1}{2}\,\omega_{\mathrm{ch}} \wedge \omega_{\mathrm{ch}}$, so the non-degeneracy of $\Omega$
+and $\Omega = \tfrac{1}{2}\omega_{\mathrm{ch}} \wedge \omega_{\mathrm{ch}}$, so the non-degeneracy of $\Omega$
 (i.e. $\det(J) \neq 0$) is equivalent to the non-degeneracy of
 $\omega_{\mathrm{ch}}$, which is exactly the fibre-functor image of the
 categorical volume form $\epsilon$.
@@ -81,7 +81,7 @@ differential*:
 
 ```tex
 \begin{equation}\label{eq:seiberg-witten-differential}
-  \lambda_{\mathrm{SW}} \;=\; X\,dz,
+  \lambda_{\mathrm{SW}} =  Xdz,
 \end{equation}
 ```
 
@@ -96,9 +96,9 @@ torus:
 
 ```tex
 \begin{equation}\label{eq:seiberg-witten-periods}
-  a \;=\; \oint_{A}\lambda_{\mathrm{SW}},
+  a =  \oint_{A}\lambda_{\mathrm{SW}},
   \qquad
-  a_D \;=\; \oint_{B}\lambda_{\mathrm{SW}}.
+  a_D =  \oint_{B}\lambda_{\mathrm{SW}}.
 \end{equation}
 ```
 

@@ -28,9 +28,9 @@ By excision:
 
 $$
   H^2_{\{p\}}(\Sigma_4, \mathbb{Z})
-  \;\cong\;
+   \cong 
   H^2(D^4, S^3; \mathbb{Z})
-  \;\cong\;
+   \cong 
   \mathbb{Z},
 $$
 
@@ -63,9 +63,9 @@ jets diverging as $d \to 0$:
 
 $$
   |j^n v|_\Sigma
-  \;\sim\;
+   \sim 
   \frac{\Gamma}{d^{n+1}}
-  \;\sim\;
+   \sim 
   \frac{1}{(T^* - t)^{(n+1)/2}}.
 $$
 
@@ -108,7 +108,7 @@ Therefore:
 For the Descartes universe with $\chi(A) = -6$:
 
 $$
-  \kappa_n\big|_\Sigma \;\neq\; 0
+  \kappa_n\big|_\Sigma  \neq  0
   \qquad\text{for all } n \geq 1.
 $$
 

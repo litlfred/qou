@@ -11,7 +11,7 @@ $k = 1, 2, 3, \ldots$, where $L$ is the filament length.  The
 dispersion relation is
 
 $$
-  \omega_k \;=\; \frac{\Gamma}{4\pi a^2}\,k^2
+  \omega_k =  \frac{\Gamma}{4\pi a^2}k^2
   \bigl(\ln(L/a) - \text{const}\bigr),
 $$
 
@@ -25,8 +25,8 @@ $[k]_q = (q^k - q^{-k})/(q - q^{-1})$, producing a spectrum
 that is discrete in **both** wave number and intensity:
 
 $$
-  \omega_k^{(q)} \;=\;
-  \frac{\Gamma_q}{4\pi a_q^2}\,[k]_q^2
+  \omega_k^{(q)} = 
+  \frac{\Gamma_q}{4\pi a_q^2}[k]_q^2
   \bigl(\ln_q(L/a_q) - c_q\bigr).
 $$
 

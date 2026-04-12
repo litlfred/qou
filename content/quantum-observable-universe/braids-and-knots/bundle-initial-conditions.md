@@ -3,7 +3,7 @@ at a reference point in an affine chart is a formal sum of localized
 hadrons and photons at base points:
 
 $$
-  \mathcal{S}_0 \;=\; \sum_{i \in I} (p_i,\, H_i)
+  \mathcal{S}_0 =  \sum_{i \in I} (p_i, H_i)
 $$
 
 where each $(p_i, H_i)$ is a localized hadron
@@ -16,8 +16,8 @@ Equivalently, $\mathcal{S}_0$ is a section of the free commutative monoid on the
 hadron sheaf $\mathcal{H}$:
 
 $$
-  \mathcal{S}_0 \;\in\;
-  \Gamma\!\bigl(\mathbb{P}(V),\;
+  \mathcal{S}_0  \in 
+  \Gamma\!\bigl(\mathbb{P}(V),
   \mathrm{Free}_{\mathrm{CMon}}(\mathcal{H})\bigr).
 $$
 
