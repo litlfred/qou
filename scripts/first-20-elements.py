@@ -2,8 +2,12 @@
 """First 20 elements: QOU knot-generation mass vs AME2020/CODATA."""
 
 import math
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+from computations.q_parameter import Q
 
-q = 1.10997
+q = Q
 hbar_q = 1.0 - 1.0 / q
 q_half = math.sqrt(q)
 
