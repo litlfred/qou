@@ -12,13 +12,15 @@ on:
 
 permissions:
   contents: write
-  packages: read          # required to pull the latex-ci container image
+  packages: read          # required to pull the paper-assistant container image
 
 jobs:
   extract-and-build:
     runs-on: ubuntu-latest
+    # Paper-assistant image — same image used by the folio MCP server.
+    # Pre-installs: TeX Live (full), Lean 4, Bun, pandoc, ripgrep, Python.
     container:
-      image: ghcr.io/${{ github.repository }}/latex-ci:latest
+      image: ghcr.io/${{ github.repository }}/paper-assistant:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
@@ -26,10 +28,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Lean via elan
+      # Lean is pre-installed in the paper-assistant image (via elan).
+      - name: Verify Lean installation
         run: |
-          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          echo "lean $(lean --version 2>&1 | head -1)"
+          echo "lake $(lake --version 2>&1 | head -1)"
 
       # ── Step 0: Set PYTHONPATH for qou_lib shared library ──────────
       - name: Configure Python path
@@ -38,7 +41,7 @@ jobs:
           git config --global --add safe.directory "${{ github.workspace }}"
 
       # ── Step 1: Build content objects → LaTeX chapters ─────────────
-      # Bun is pre-installed in the latex-ci container image.
+      # Bun + TeX + Lean are pre-installed in the paper-assistant image.
 
       - name: Build content objects to LaTeX chapters
         continue-on-error: true

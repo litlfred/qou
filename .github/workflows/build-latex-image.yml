@@ -1,24 +1,15 @@
-# Build and push the LaTeX CI Docker image to GHCR.
+# DEPRECATED — All CI workflows now use the unified paper-assistant image.
+# See build-lean-mcp.yml for the active build workflow.
 #
-# Triggers on:
-#   - Push to main touching the Dockerfile or main.tex preamble
-#   - Manual dispatch
-#   - Weekly (to pick up TeX Live security updates)
+# This workflow is disabled (no automatic triggers). Use manual dispatch
+# only if you need a standalone latex-ci image for some reason.
 #
-# The image is used by publish.yml as a container for the build job,
-# eliminating ~2-3 min of apt-get install on every run.
+# Original: Build and push the LaTeX CI Docker image to GHCR.
 
-name: Build LaTeX Image
+name: "[DEPRECATED] Build LaTeX Image"
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/docker/Dockerfile.latex'
-      - 'main.tex'
   workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * 0'  # Weekly Sunday 05:00 UTC
 
 env:
   REGISTRY: ghcr.io
