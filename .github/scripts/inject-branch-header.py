@@ -22,6 +22,10 @@ def main() -> None:
     tex_path = Path(sys.argv[1])
     branch_url = sys.argv[2]
 
+    if not tex_path.exists():
+        print(f"WARNING: {tex_path} not found — skipping header injection", file=sys.stderr)
+        sys.exit(0)
+
     tex = tex_path.read_text(encoding="utf-8")
 
     header_block = (
