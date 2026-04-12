@@ -1,7 +1,7 @@
 The algebraic machinery of the Hecke algebra $H_n(q)$ and the
 Jones--Markov trace
-([Jones--Markov trace](#thm:jones-markov-trace)) admits a natural
-probabilistic reading: **each Hecke generator $T_i$ is a
+([Jones--Markov trace](#thm:jones-markov-trace)) has a direct
+probabilistic interpretation: **each Hecke generator $T_i$ is a
 stochastic transition operator**, and the product factorization
 $\prod_i \hat{V}_i$
 ([product factorization](#thm:markov-trace-product)) is the
@@ -103,33 +103,25 @@ of Hecke algebra elements.
 
 **(iii)** The Markov property
 $\mathrm{tr}_M(x T_n) = z \cdot \mathrm{tr}_M(x)$ says that the
-trace factors as $\mathrm{tr}_M(x T_n) = \mathrm{tr}_M(T_n) \cdot \mathrm{tr}_M(x)$
-with $\mathrm{tr}_M(T_n) = z$.  The value at generator $n$ is
-independent of the element $x$ at generators $1, \ldots, n-1$.
+contribution of the rightmost generator $T_n$ separates as the
+scalar factor $z$, regardless of the element $x \in H_{n-1}(q)$.
 This is the **memorylessness** of a Markov chain: the transition
-at step $n$ depends only on the current state (the crossing type
-at $\sigma_n$), not on the history of previous crossings.
+at step $n$ depends only on the crossing type at $\sigma_n$,
+not on the history of previous crossings.
 
 **(iv)** Follows from (iii) by induction: peeling generators
 right to left, each factor $\hat{V}_i = z a_i + b_i$ is
 independent of the remaining product, giving
 $\mathrm{tr}_M(\rho(\beta)) = \prod_i \hat{V}_i$.  $\square$
 
-## Numerical values at $q_0$
+## Limiting behaviour
 
-At the substrate $q_0 \approx 1.110$:
-
-| Quantity | Value |
-|:---------|------:|
-| $p_+$ (symmetric) | $\approx 0.552$ |
-| $p_-$ (antisymmetric) | $\approx 0.448$ |
-| $p_+/p_-$ (Boltzmann ratio) | $q_0^2 \approx 1.232$ |
-| Per-step entropy $H = -p_+\ln p_+ - p_-\ln p_-$ | $\approx 0.690$ nats $\approx 0.995$ bits |
-
-The per-step entropy is $99.5\%$ of the maximum ($\ln 2$),
-reflecting a nearly fair coin with a $\sim 10\%$ bias toward
-the symmetric channel.  At $q = 1$ (classical limit), $p_+ = p_- = 1/2$
-and the chain is a fair random walk.  As $q \to \infty$
-(deep-quantum limit), $p_+ \to 1$ and the chain becomes
-deterministic (the totally asymmetric simple exclusion process,
-TASEP).
+At $q = 1$ (classical limit), $p_+ = p_- = 1/2$ and the chain is
+a fair random walk on $S_n$.  As $q \to \infty$ (deep-quantum
+limit), $p_+ \to 1$ and the chain becomes deterministic: only
+the symmetric channel survives, recovering the totally asymmetric
+simple exclusion process (TASEP).  For the substrate value
+$q = q_0$, the per-step Shannon entropy
+$H = -p_+\ln p_+ - p_-\ln p_-$ is close to the maximum $\ln 2$;
+the numerical evaluation is given in Chapter 7
+([physical observations](#chap:physical-observations)).
