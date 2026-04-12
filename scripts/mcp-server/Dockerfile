@@ -1,15 +1,20 @@
-# QOU Paper Writing Assistant — Docker Image
+# QOU Paper Writing Assistant — Unified Docker Image
 #
-# Includes: Bun, TeX Live, Pandoc, Lean 4, lean-lsp-mcp, ripgrep, poppler-utils
+# Single image for both the folio MCP server AND all CI/CD workflows.
+# Includes: Bun, TeX Live (full), Pandoc, Lean 4, lean-lsp-mcp,
+#           ripgrep, graphviz, latexdiff, gh CLI, Python + requests
 #
 # Build:
-#   docker build -t folio-assistant -f scripts/mcp-server/Dockerfile .
+#   docker build -t paper-assistant -f scripts/mcp-server/Dockerfile .
 #
-# Run (stdio mode — pipe MCP messages):
-#   docker run -i --rm folio-assistant --stdio
+# Run (MCP server — stdio mode):
+#   docker run -i --rm paper-assistant --stdio
 #
-# Run (HTTP mode — expose port 8080):
-#   docker run -d -p 8080:8080 folio-assistant --http
+# Run (MCP server — HTTP mode):
+#   docker run -d -p 8080:8080 paper-assistant --http
+#
+# Run (CI toolbox — override entrypoint):
+#   docker run --rm --entrypoint "" -v $(pwd):/work -w /work paper-assistant <command>
 #
 # The image expects the repo to be mounted at /workspace or baked in at build time.
 
@@ -20,24 +25,42 @@ ENV HOME=/root
 ENV PATH="/root/.bun/bin:/root/.elan/bin:/root/.local/bin:${PATH}"
 
 # ── System dependencies ──────────────────────────────────────────
+# Everything needed for: MCP server, PDF build, Lean build, CI scripts.
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    wget \
     git \
     unzip \
+    jq \
     # TeX Live (scheme-full for maximum compatibility)
     texlive-full \
     latexmk \
-    # Pandoc
+    # Document tools
     pandoc \
+    latexdiff \
+    graphviz \
     # PDF → PNG conversion
     poppler-utils \
     # ripgrep (for lean-lsp-mcp local search)
     ripgrep \
-    # Python (for uv/lean-lsp-mcp)
+    # Python (for uv/lean-lsp-mcp and CI scripts)
     python3 \
     python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# ── Python packages (for CI scripts) ────────────────────────────
+RUN pip3 install --break-system-packages --no-cache-dir \
+    requests>=2.32
+
+# ── GitHub CLI (for PR comments in CI) ──────────────────────────
+RUN mkdir -p -m 755 /etc/apt/keyrings \
+    && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+       | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+       | tee /etc/apt/sources.list.d/github-cli.list >/dev/null \
+    && apt-get update -qq && apt-get install -y -qq gh \
     && rm -rf /var/lib/apt/lists/*
 
 # ── Bun ──────────────────────────────────────────────────────────
@@ -47,6 +70,26 @@ RUN curl -fsSL https://bun.sh/install | bash
 # ── uv (Python package manager, for lean-lsp-mcp) ───────────────
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# ── Pre-warm TeX font/format caches ─────────────────────────────
+# Running a minimal compile ensures font maps, format files, and
+# kpathsea databases are fully built inside the image.
+RUN mkdir -p /tmp/texwarm && \
+    printf '\\documentclass{report}\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\usepackage{amsmath,amssymb,amsthm,mathtools}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage{cite}\n\\usepackage{titlesec}\n\\usepackage{tikz}\n\\usepackage{tikz-cd}\n\\usepackage[dvipsnames]{xcolor}\n\\begin{document}\nHello.\n\\end{document}\n' \
+      > /tmp/texwarm/warm.tex && \
+    cd /tmp/texwarm && \
+    pdflatex -interaction=nonstopmode warm.tex && \
+    rm -rf /tmp/texwarm
+
+# ── Verify base tools ───────────────────────────────────────────
+RUN echo "=== Base tools ===" && \
+    bun --version && \
+    pdflatex --version | head -1 && \
+    latexmk --version | head -1 && \
+    pandoc --version | head -1 && \
+    gh --version | head -1 && \
+    python3 --version && \
+    python3 -c "import requests; print(f'requests {requests.__version__}')"
 
 # ── Lean 4 (via elan) ───────────────────────────────────────────
 
@@ -71,11 +114,16 @@ WORKDIR /workspace
 COPY content/quantum-observable-universe/lean/lakefile.toml content/quantum-observable-universe/lean/lake-manifest.json lean/
 COPY scripts/mcp-server/package.json scripts/mcp-server/
 COPY content/package.json content/
+COPY .github/scripts/requirements.txt .github/scripts/requirements.txt
 
 # Install Lean deps and Bun deps
 RUN cd lean && lake update && lake exe cache get || true
 RUN cd scripts/mcp-server && bun install
 RUN cd content && bun install
+
+# Install CI Python deps (for offline use)
+RUN pip3 install --break-system-packages --no-cache-dir \
+    -r .github/scripts/requirements.txt || true
 
 # Copy full repo
 COPY . .

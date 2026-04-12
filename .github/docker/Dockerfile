@@ -1,8 +1,16 @@
+# DEPRECATED — Use scripts/mcp-server/Dockerfile (paper-assistant) instead.
+#
+# All CI workflows now use the unified paper-assistant image which includes
+# everything this image had plus Bun, full TeX Live, GitHub CLI, and more.
+# See build-lean-mcp.yml for the build workflow.
+#
+# This file is kept for reference only. The docker-ci-image.yml workflow
+# that builds this image has been disabled.
+#
+# Original description:
 # QOU CI Docker Image
 # Pre-installs Lean toolchain, TeX Live, Python, pandoc, graphviz, and latexdiff
 # so CI workflows skip expensive download/install steps.
-#
-# Rebuild triggers: lean-toolchain change, weekly schedule, manual dispatch.
 
 FROM ubuntu:24.04
 
