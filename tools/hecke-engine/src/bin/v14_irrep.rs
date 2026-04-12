@@ -559,22 +559,88 @@ fn precompute_crossing_data(
     }).collect()
 }
 
-/// Find the confinement eigenvector via power iteration.
-///
-/// The trefoil T_{2,3} at nucleon m (strands 3m, 3m+1, 3m+2) is:
-///   σ_{3m} · σ_{3m+1} · σ_{3m}
-///
-/// The combined confinement: K_conf = Π_m T_{2,3}^(m)
-///
-/// Power iteration: |v⟩ → K_conf|v⟩ / ||K_conf|v⟩||, repeat.
-fn confinement_eigenvector(
+// ════════════════════════════════════════════════════════════════
+// KNOT OPERATOR LIBRARY
+// ════════════════════════════════════════════════════════════════
+//
+// Each knot operator is a braid word acting on 3 strands (per nucleon).
+// The combined operator for A nucleons applies the knot to each B₃ triple.
+// Generator indices are offset by 3m for nucleon m.
+
+/// A knot operator defined by its braid word on B₃.
+/// Each entry is a generator index (0 or 1) and sign (+1 or -1).
+/// The braid word is applied left-to-right.
+struct KnotOperator {
+    name: &'static str,
+    /// Braid word: Vec of (generator_offset, sign).
+    /// generator_offset 0 = σ₀, 1 = σ₁ within each B₃.
+    /// sign: +1 for σ, -1 for σ⁻¹ = σ - h (Hecke inverse).
+    word: Vec<(usize, i8)>,
+}
+
+fn knot_operators() -> Vec<KnotOperator> {
+    vec![
+        KnotOperator {
+            name: "T_{2,3}",  // trefoil = electron
+            word: vec![(0, 1), (1, 1), (0, 1)],  // σ₀σ₁σ₀
+        },
+        KnotOperator {
+            name: "T_{2,5}",  // cinquefoil = muon
+            word: vec![(0, 1), (1, 1), (0, 1), (1, 1), (0, 1)],  // σ₀σ₁σ₀σ₁σ₀
+        },
+        KnotOperator {
+            name: "T_{3,4}",  // Hopf² color
+            word: vec![(0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (0, 1), (1, 1), (0, 1)],
+        },
+        KnotOperator {
+            name: "T_{3,5}",  // weak force
+            word: vec![(0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (1, 1)],
+        },
+        KnotOperator {
+            name: "Borromean",  // σ₀σ₁⁻¹σ₀σ₁⁻¹σ₀σ₁⁻¹
+            word: vec![(0, 1), (1, -1), (0, 1), (1, -1), (0, 1), (1, -1)],
+        },
+        KnotOperator {
+            name: "figure-8",  // σ₀σ₁⁻¹σ₀σ₁⁻¹
+            word: vec![(0, 1), (1, -1), (0, 1), (1, -1)],
+        },
+    ]
+}
+
+/// Apply a knot operator to a vector for ALL nucleons.
+/// For inverse generators (sign = -1): σ⁻¹ = σ - h (Hecke relation).
+/// So σ⁻¹|v⟩ = σ|v⟩ - h|v⟩ = (σ + (-h)·I)|v⟩.
+fn apply_knot_operator(
+    knot: &KnotOperator,
+    n_nucleons: usize,
+    n: usize,
+    vec: &mut [f64],
+    cdata: &[Vec<(f64, Option<(usize, f64)>)>],
+    ha: f64,
+) {
+    for m in 0..n_nucleons {
+        for &(gen_offset, sign) in &knot.word {
+            let gen = 3 * m + gen_offset;
+            if gen >= n - 1 { continue; }
+            // For positive sign: apply σ_gen with d_coeff = 0
+            // For negative sign (inverse): σ⁻¹ = σ - h, so d_coeff = -h
+            let d_coeff = if sign > 0 { 0.0 } else { -ha };
+            apply_generator_to_vector(gen, d_coeff, vec, &cdata[gen]);
+        }
+    }
+}
+
+/// Find the leading eigenvector of a knot operator via power iteration.
+fn knot_eigenvector(
     a: usize, b: usize,
+    knot: &KnotOperator,
     n_nucleons: usize,
     q: f64,
     max_iter: usize,
     tol: f64,
 ) -> (Vec<f64>, f64) {
     let n = a + b;
+    let ha = q - 1.0 / q;
     let tabs = generate_syt(a, b);
     let dim = tabs.len();
 
@@ -585,36 +651,20 @@ fn confinement_eigenvector(
 
     let cdata = precompute_crossing_data(&tabs, &tab_idx, n, q);
 
-    // Initialize with uniform vector
     let inv_sqrt_dim = 1.0 / (dim as f64).sqrt();
     let mut v = vec![inv_sqrt_dim; dim];
-
     let mut eigenvalue = 0.0f64;
 
     for iter in 0..max_iter {
-        // Apply K_conf = Π_m σ_{3m} · σ_{3m+1} · σ_{3m}
-        // Each trefoil is applied with d_coeff = 0 (untyped — pure confinement)
-        for m in 0..n_nucleons {
-            let g0 = 3 * m;      // σ_{3m}
-            let g1 = 3 * m + 1;  // σ_{3m+1}
-            if g0 >= n - 1 || g1 >= n - 1 { continue; }
+        apply_knot_operator(knot, n_nucleons, n, &mut v, &cdata, ha);
 
-            // T_{2,3} = σ_{g0} · σ_{g1} · σ_{g0}
-            apply_generator_to_vector(g0, 0.0, &mut v, &cdata[g0]);
-            apply_generator_to_vector(g1, 0.0, &mut v, &cdata[g1]);
-            apply_generator_to_vector(g0, 0.0, &mut v, &cdata[g0]);
-        }
-
-        // Normalize
         let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
         if norm < 1e-300 { break; }
         let new_eigenvalue = norm;
         for x in v.iter_mut() { *x /= norm; }
 
-        // Check convergence
         if (new_eigenvalue - eigenvalue).abs() / (eigenvalue.abs() + 1e-15) < tol {
             eigenvalue = new_eigenvalue;
-            eprintln!("    Confinement eigenvector converged at iter {}: λ = {:.10e}", iter, eigenvalue);
             break;
         }
         eigenvalue = new_eigenvalue;
@@ -623,16 +673,17 @@ fn confinement_eigenvector(
     (v, eigenvalue)
 }
 
-/// Compute ⟨v_conf|Δ|v_conf⟩ — the Garside matrix element on the q-torsion leaf.
-fn garside_confinement_element(
+/// Compute matrix element ⟨v_K|Δ|v_K⟩ for a specific knot operator K.
+fn garside_knot_element(
     a: usize, b: usize,
     quark_ordering: &[u8],
+    knot: &KnotOperator,
     n_nucleons: usize,
     q: f64,
-) -> (f64, f64, f64) {
-    let (v_conf, eigenvalue) = confinement_eigenvector(a, b, n_nucleons, q, 200, 1e-12);
-    let me = garside_matrix_element(a, b, quark_ordering, &v_conf, q);
-    (me, eigenvalue, v_conf.iter().map(|x| x * x).sum::<f64>())
+) -> (f64, f64) {
+    let (v_knot, eigenvalue) = knot_eigenvector(a, b, knot, n_nucleons, q, 200, 1e-12);
+    let me = garside_matrix_element(a, b, quark_ordering, &v_knot, q);
+    (me, eigenvalue)
 }
 
 // ════════════════════════════════════════════════════════════════
@@ -762,58 +813,91 @@ fn main() {
     }
 
     // ────────────────────────────────────────────────────────────
-    //  CONFINE MODE: q-torsion leaf matrix elements
+    //  CONFINE / KNOTS MODE: knot operator eigenvector channels
     // ────────────────────────────────────────────────────────────
     if use_confine {
         assert_eq!(n % 3, 0, "Quark ordering length must be 3×A for confinement mode");
         let n_nucleons = n / 3;
-        eprintln!("  Confine mode: T_{{2,3}} confinement eigenvector (q-torsion leaf)");
-        eprintln!("  {} nucleons, {} quarks", n_nucleons, n);
 
-        let results: Vec<(usize, usize, usize, f64, f64, f64, f64, f64)> = partitions.par_iter()
+        let knots = knot_operators();
+        eprintln!("  Knot operator mode: {} operators × {} irreps", knots.len(), partitions.len());
+        eprintln!("  {} nucleons, {} quarks", n_nucleons, n);
+        eprintln!("  Operators: {}", knots.iter().map(|k| k.name).collect::<Vec<_>>().join(", "));
+
+        // For each irrep, compute matrix elements for ALL knot operators
+        // Each knot gives a different q-torsion leaf → different channel
+        // The LP dual will select optimal weights
+
+        // Structure: per irrep, per knot → (me_par, me_dau, eigenvalue)
+        let results: Vec<(usize, usize, usize, Vec<(String, f64, f64, f64, f64)>, f64)> = partitions.par_iter()
             .filter_map(|&(a, b)| {
                 let dim = generate_syt(a, b).len();
                 if dim > max_dim || dim == 0 { return None; }
 
                 let t0 = Instant::now();
 
-                // Find confinement eigenvector (shared for parent and daughter —
-                // the confinement structure is the same, only flavor typing differs)
-                let (v_conf, lambda) = confinement_eigenvector(a, b, n_nucleons, q0, 200, 1e-12);
+                let mut knot_results: Vec<(String, f64, f64, f64, f64)> = Vec::new();
 
-                // Matrix elements in confinement eigenspace
-                let me_par = garside_matrix_element(a, b, &par_types, &v_conf, q0);
-                let me_dau = garside_matrix_element(a, b, &dau_types, &v_conf, q0);
-                let dme = me_dau - me_par;
+                for knot in &knots {
+                    let (v_knot, lambda) = knot_eigenvector(a, b, knot, n_nucleons, q0, 200, 1e-12);
+                    let me_par = garside_matrix_element(a, b, &par_types, &v_knot, q0);
+                    let me_dau = garside_matrix_element(a, b, &dau_types, &v_knot, q0);
+                    let dme = me_dau - me_par;
+                    knot_results.push((knot.name.to_string(), me_par, me_dau, dme, lambda));
+                }
 
                 let elapsed = t0.elapsed().as_secs_f64();
 
-                eprintln!("  λ=({},{}): dim={:>6}, conf_λ={:.4e}, ⟨v|Δ_par|v⟩={:>+12.6}, ⟨v|Δ_dau|v⟩={:>+12.6}, Δme={:>+12.6e}, {:.1}s",
-                    a, b, dim, lambda, me_par, me_dau, dme, elapsed);
+                // Print summary for this irrep
+                eprintln!("  λ=({},{}): dim={:>6}, {:.1}s", a, b, dim, elapsed);
+                for (kname, me_p, me_d, dme, lam) in &knot_results {
+                    eprintln!("    {:>12}: λ_K={:.4e}, ⟨v|Δ_p|v⟩={:>+10.4}, ⟨v|Δ_d|v⟩={:>+10.4}, Δme={:>+12.6e}",
+                        kname, lam, me_p, me_d, dme);
+                }
 
-                Some((a, b, dim, me_par, me_dau, dme, lambda, elapsed))
+                Some((a, b, dim, knot_results, elapsed))
             })
             .collect();
 
-        let total_dme: f64 = results.iter().map(|r| r.5).sum();
-        let q_pred = total_dme.abs() * M_E_MEV;
         let elapsed_total = t_total.elapsed().as_secs_f64();
 
-        eprintln!("\n  Σ Δ⟨v|Δ|v⟩ = {:+.10e}", total_dme);
-        eprintln!("  Q = |Σ Δme| × m_e = {:.6} MeV", q_pred);
+        // Per-knot-operator totals across all irreps
+        eprintln!("\n  PER-OPERATOR TOTALS (Σ_λ Δme):");
+        let knot_names: Vec<&str> = knots.iter().map(|k| k.name).collect();
+        let mut knot_totals: Vec<f64> = vec![0.0; knots.len()];
+        for (_, _, _, knot_results, _) in &results {
+            for (ki, (_, _, _, dme, _)) in knot_results.iter().enumerate() {
+                knot_totals[ki] += dme;
+            }
+        }
+
+        for (ki, name) in knot_names.iter().enumerate() {
+            let q_pred = knot_totals[ki].abs() * M_E_MEV;
+            eprintln!("    {:>12}: Σ Δme = {:>+12.6e}, Q = {:.6} MeV", name, knot_totals[ki], q_pred);
+        }
         eprintln!("  Total: {:.1}s", elapsed_total);
 
-        // JSON output
-        print!("{{\"mode\":\"confine\",\"parent\":\"{}\",\"daughter\":\"{}\",\"n\":{},\"n_nucleons\":{},\"n_irreps\":{}",
-            par_str, dau_str, n, n_nucleons, results.len());
+        // JSON output: full per-irrep, per-knot data for LP solver
+        print!("{{\"mode\":\"knots\",\"parent\":\"{}\",\"daughter\":\"{}\",\"n\":{},\"n_nucleons\":{},\"n_irreps\":{},\"n_knots\":{}",
+            par_str, dau_str, n, n_nucleons, results.len(), knots.len());
+        print!(",\"knot_names\":[{}]", knot_names.iter().map(|n| format!("\"{}\"", n)).collect::<Vec<_>>().join(","));
+
+        // Per-knot totals
+        print!(",\"knot_totals\":[{}]", knot_totals.iter().map(|t| format!("{:.10e}", t)).collect::<Vec<_>>().join(","));
+
+        // Per-irrep data
         print!(",\"irreps\":[");
-        for (i, (a, b, dim, me_p, me_d, dme, lam, t)) in results.iter().enumerate() {
-            if i > 0 { print!(","); }
-            print!("{{\"a\":{},\"b\":{},\"dim\":{},\"me_par\":{:.10e},\"me_dau\":{:.10e},\"dme\":{:.10e},\"conf_lambda\":{:.10e},\"time\":{:.3}}}",
-                a, b, dim, me_p, me_d, dme, lam, t);
+        for (ri, (a, b, dim, knot_results, t)) in results.iter().enumerate() {
+            if ri > 0 { print!(","); }
+            print!("{{\"a\":{},\"b\":{},\"dim\":{},\"time\":{:.3},\"channels\":[", a, b, dim, t);
+            for (ki, (kname, me_p, me_d, dme, lam)) in knot_results.iter().enumerate() {
+                if ki > 0 { print!(","); }
+                print!("{{\"knot\":\"{}\",\"me_par\":{:.10e},\"me_dau\":{:.10e},\"dme\":{:.10e},\"lambda\":{:.10e}}}",
+                    kname, me_p, me_d, dme, lam);
+            }
+            print!("]}}");
         }
-        println!("],\"total_dme\":{:.10e},\"q_mev\":{:.6},\"q0\":{:.15},\"m_e_mev\":{},\"elapsed_s\":{:.3}}}",
-            total_dme, q_pred, q0, M_E_MEV, elapsed_total);
+        println!("],\"q0\":{:.15},\"m_e_mev\":{},\"elapsed_s\":{:.3}}}", q0, M_E_MEV, elapsed_total);
 
         return;
     }
