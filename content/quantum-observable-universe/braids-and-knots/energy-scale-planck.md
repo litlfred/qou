@@ -1,4 +1,4 @@
-The calibrated energy scale $E_0 \approx 4.155$ MeV
+The calibrated energy scale $E_0 \approx 4.179$ MeV
 ([energy scale](#rem:beta-decay-energy-scale)) has a
 natural interpretation in terms of the $q$-deformed Planck
 scale: it is the energy of one Hecke reduction step — the
@@ -21,7 +21,7 @@ $$
 
 | Quantity | Value | Formula |
 |----------|-------|---------|
-| $E_0$ (calibrated) | $4.155$ MeV | from $Q_\beta / \lvert\Delta\mathrm{net}\rvert$ |
+| $E_0$ (calibrated) | $4.179$ MeV | from $Q_\beta / \lvert\Delta\mathrm{net}\rvert$ |
 | $m_e c_q^2 \hbar_q$ | $4.196$ MeV | $m_e / q(q-1)$ |
 | Ratio | $0.990$ | $1\%$ discrepancy |
 
@@ -65,7 +65,7 @@ inside one nucleon, with no nuclear environment corrections.
 The Q-value $Q_\beta = 0.782$ MeV is the energy released by
 this single crossing change.  Dividing by the dimensionless
 Hecke NF difference $\lvert\Delta\mathrm{net}\rvert \approx 0.188$
-gives $E_0 = Q_\beta / \lvert\Delta\mathrm{net}\rvert \approx 4.155$ MeV.
+gives $E_0 = Q_\beta / \lvert\Delta\mathrm{net}\rvert \approx 4.179$ MeV.
 
 This is analogous to measuring the speed of light by timing
 the simplest electromagnetic process: you need one clean

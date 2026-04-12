@@ -22,8 +22,11 @@ to $0.75\%$.  The residual is the brane-tower correction
 (single-level vs full-tower).  Using the derived $E_0$, the
 neutron $Q$-value becomes a prediction:
 $Q_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
-(CODATA: $0.782$ MeV, $0.75\%$ error).  No third calibration
-input is needed.
+(CODATA: $0.782$ MeV, $0.75\%$ error).  In this derivation
+the hadronic scale $E_0$ is itself derived from $Q_\beta(n)$;
+the complete framework uses three calibration inputs
+([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
+$m_\mu/m_e$, and $m_e$.
 
 ## What the substrate parameter $q$ genuinely predicts
 
