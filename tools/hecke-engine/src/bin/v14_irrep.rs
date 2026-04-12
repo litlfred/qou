@@ -132,7 +132,122 @@ fn seminormal_entry(tab: &[bool], gen_k: usize, q: f64) -> (f64, Option<f64>) {
     }
 }
 
-/// Compute tr(ρ_λ(Δ_n)) for a typed quark ordering.
+/// Build the crossing list for the Garside staircase.
+/// Returns Vec of (sweep, level+1) pairs.
+fn garside_crossings(n: usize) -> Vec<(usize, usize)> {
+    let mut crossings = Vec::new();
+    for level in 0..n-1 {
+        for sweep in (0..=level).rev() {
+            crossings.push((sweep, level + 1));
+        }
+    }
+    crossings
+}
+
+/// Compute tr(ρ_λ(Δ_n)) for BOTH parent and daughter orderings
+/// with common-prefix optimization.
+///
+/// Splits the Garside staircase into prefix / branch / suffix.
+/// Prefix and suffix are computed once (shared crossings).
+/// Branch is computed separately for parent and daughter.
+fn garside_trace_pair(
+    a: usize, b: usize,
+    par_ordering: &[u8], dau_ordering: &[u8],
+    q: f64,
+) -> (f64, f64) {
+    let n = a + b;
+    assert_eq!(n, par_ordering.len());
+    assert_eq!(n, dau_ordering.len());
+
+    let ha = q - 1.0 / q;
+    let tabs = generate_syt(a, b);
+    let dim = tabs.len();
+    if dim == 0 { return (0.0, 0.0); }
+
+    let mut tab_idx: std::collections::HashMap<Vec<bool>, usize> = std::collections::HashMap::new();
+    for (i, t) in tabs.iter().enumerate() {
+        tab_idx.insert(t.clone(), i);
+    }
+
+    let crossings = garside_crossings(n);
+
+    // Find which crossings differ
+    let differs: Vec<bool> = crossings.iter().map(|&(s, l)| {
+        par_ordering[s] != dau_ordering[s] || par_ordering[l] != dau_ordering[l]
+    }).collect();
+
+    let first_diff = differs.iter().position(|&d| d).unwrap_or(crossings.len());
+    let last_diff = differs.iter().rposition(|&d| d).unwrap_or(0);
+
+    // Helper: apply one crossing to matrix
+    let apply_crossing = |result: &mut Vec<f64>, sweep: usize, ordering: &[u8]| {
+        let ti = ordering[sweep];
+        let tj = ordering[crossings.iter().find(|&&(s,_)| s == sweep).map(|&(_,l)| l).unwrap_or(0)];
+        // Actually we need the specific (sweep, level) pair, not just sweep
+        // This closure needs the level too. Let me restructure.
+    };
+
+    // Simpler: just split into prefix, branch_par, branch_dau, suffix
+    // and use the existing garside_trace logic for each section.
+
+    let apply_section = |result: &mut Vec<f64>, crossings_slice: &[(usize, usize)], ordering: &[u8]| {
+        for &(sweep, level_plus_1) in crossings_slice {
+            let ti = ordering[sweep];
+            let tj = ordering[level_plus_1];
+            let d_coeff = match (ti, tj) {
+                (b'p', b'p') | (b'u', b'u') => 0.0,
+                (b'n', b'n') | (b'd', b'd') => -ha,
+                _ => -ha / 2.0,
+            };
+
+            let mut new_result = vec![0.0f64; dim * dim];
+            for j in 0..dim {
+                let (diag, off) = seminormal_entry(&tabs[j], sweep, q);
+                let diag_total = diag + d_coeff;
+                let swap_info = if let Some(off_val) = off {
+                    if let Some(swapped) = syt_swap(&tabs[j], sweep + 1) {
+                        tab_idx.get(&swapped).map(|&j2| (j2, off_val))
+                    } else { None }
+                } else { None };
+                for i in 0..dim {
+                    let r_ij = result[i * dim + j];
+                    if r_ij.abs() < 1e-300 { continue; }
+                    new_result[i * dim + j] += r_ij * diag_total;
+                    if let Some((j2, off_val)) = swap_info {
+                        new_result[i * dim + j2] += r_ij * off_val;
+                    }
+                }
+            }
+            *result = new_result;
+        }
+    };
+
+    // Prefix: identical for parent and daughter
+    let prefix = &crossings[..first_diff];
+    let mut prefix_result = vec![0.0f64; dim * dim];
+    for i in 0..dim { prefix_result[i * dim + i] = 1.0; }
+    apply_section(&mut prefix_result, prefix, par_ordering); // same for both
+
+    // Branch: different for parent and daughter
+    let branch = &crossings[first_diff..=last_diff.min(crossings.len()-1)];
+    let mut par_result = prefix_result.clone();
+    let mut dau_result = prefix_result;
+    apply_section(&mut par_result, branch, par_ordering);
+    apply_section(&mut dau_result, branch, dau_ordering);
+
+    // Suffix: identical again
+    let suffix = &crossings[last_diff+1..];
+    apply_section(&mut par_result, suffix, par_ordering);
+    apply_section(&mut dau_result, suffix, dau_ordering);
+
+    // Traces
+    let tr_par: f64 = (0..dim).map(|i| par_result[i * dim + i]).sum();
+    let tr_dau: f64 = (0..dim).map(|i| dau_result[i * dim + i]).sum();
+
+    (tr_par, tr_dau)
+}
+
+/// Compute tr(ρ_λ(Δ_n)) for a typed quark ordering (single).
 /// Only builds ONE matrix at a time (the accumulated result).
 /// The crossing matrix is applied row-by-row without materializing it.
 fn garside_trace(a: usize, b: usize, quark_ordering: &[u8], q: f64) -> f64 {
@@ -273,13 +388,12 @@ fn main() {
     eprintln!("  {} small irreps (parallel), {} large irreps (sequential)",
         small_parts.len(), large_parts.len());
 
-    // Small irreps in parallel
+    // Small irreps in parallel — use pair optimization
     let small_results: Vec<(usize, usize, usize, f64, f64, f64, f64)> = small_parts.par_iter()
         .map(|&(a, b)| {
             let dim = generate_syt(a, b).len();
             let t0 = Instant::now();
-            let tr_par = garside_trace(a, b, &par_types, q0);
-            let tr_dau = garside_trace(a, b, &dau_types, q0);
+            let (tr_par, tr_dau) = garside_trace_pair(a, b, &par_types, &dau_types, q0);
             let dtr = tr_par - tr_dau;
             let elapsed = t0.elapsed().as_secs_f64();
             eprintln!("  λ=({},{}): dim={:>6}, Δtr={:>+14.6e}, {:.1}s", a, b, dim, dtr, elapsed);
@@ -287,15 +401,14 @@ fn main() {
         })
         .collect();
 
-    // Large irreps sequentially (one at a time to bound memory)
+    // Large irreps sequentially — use pair optimization
     let mut large_results: Vec<(usize, usize, usize, f64, f64, f64, f64)> = Vec::new();
     for &(a, b) in &large_parts {
         let dim = generate_syt(a, b).len();
-        let mem_mb = 2 * dim * dim * 8 / (1024 * 1024);
-        eprintln!("  λ=({},{}): dim={:>6} ({} MB) ...", a, b, dim, mem_mb);
+        let mem_mb = 3 * dim * dim * 8 / (1024 * 1024); // prefix + par + dau
+        eprintln!("  λ=({},{}): dim={:>6} ({} MB, prefix/branch/suffix) ...", a, b, dim, mem_mb);
         let t0 = Instant::now();
-        let tr_par = garside_trace(a, b, &par_types, q0);
-        let tr_dau = garside_trace(a, b, &dau_types, q0);
+        let (tr_par, tr_dau) = garside_trace_pair(a, b, &par_types, &dau_types, q0);
         let dtr = tr_par - tr_dau;
         let elapsed = t0.elapsed().as_secs_f64();
         eprintln!("    Δtr={:>+14.6e}, {:.1}s", dtr, elapsed);
