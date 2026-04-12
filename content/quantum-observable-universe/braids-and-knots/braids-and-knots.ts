@@ -195,6 +195,9 @@ export default chapter({
         // Product factorization of the Markov trace
         "markov-trace-product",
         "markov-trace-product-interpretation",
+        // Markov chain interpretation of the algebraic framework
+        "hecke-markov-transition",
+        "hecke-markov-interpretation",
       ],
     }),
 
