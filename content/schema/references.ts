@@ -1946,8 +1946,10 @@ export const references: CSLData[] = [
     author: [
       { family: "Bufetov", given: "Alexey" },
     ],
+    "container-title": "arXiv preprint",
     issued: { "date-parts": [[2020]] },
     note: "arXiv:2003.02730",
+    URL: "https://arxiv.org/abs/2003.02730",
   }),
 ];
 

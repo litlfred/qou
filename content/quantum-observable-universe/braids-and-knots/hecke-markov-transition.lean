@@ -15,7 +15,7 @@ LaTeX label: `prop:hecke-markov-transition`
 
 ## References
 
-- [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+- [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
 - [jones1987] https://doi.org/10.2307/1971403
 - [bufetov2020] https://arxiv.org/abs/2003.02730
 -/
@@ -201,16 +201,16 @@ structure CrossingData where
   /-- Hecke reduction at this generator. -/
   step : MarkovTransitionStep
 
-/-- The probability-weighted expectation of the crossing eigenvalues
-    equals the Markov parameter z.
+/-- The probability-weighted expectation of the crossing eigenvalues:
 
-    E[eigenvalue] = p₊ · q + p₋ · (−q⁻¹) = (q² − 1)/(q² + 1)
+    E[eigenvalue] = p₊ · q + p₋ · (−q⁻¹) = q − q⁻¹
 
-    This is the spectral content of the Markov parameter. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+    This is the spectral content of the Markov parameter:
+    the expected eigenvalue under the stochastic transition operator. -/
+-- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
 theorem eigenvalue_expectation (d : SpectralIdempotentData) :
     d.p_plus * d.q + d.p_minus * (-d.q⁻¹) =
-    (d.q ^ 2 - 1) / (d.q ^ 2 + 1) := by
+    d.q - d.q⁻¹ := by
   unfold SpectralIdempotentData.p_plus SpectralIdempotentData.p_minus
     SpectralIdempotentData.gap
   have hq : d.q ≠ 0 := ne_of_gt d.q_pos
