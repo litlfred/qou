@@ -29,6 +29,11 @@ path = "src/main.rs"
 name = "hecke-crt"
 path = "src/bin/v13_crt.rs"
 
+# Per-irrep engine via Young's seminormal form
+[[bin]]
+name = "hecke-irrep"
+path = "src/bin/v14_irrep.rs"
+
 [dependencies]
 rustc-hash = "2"
 serde = { version = "1", features = ["derive"] }
