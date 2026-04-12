@@ -41,8 +41,7 @@ $$
 transition operator at generator $i$ is*
 
 $$
-  K_i = p_+ \cdot \mathrm{id} + p_- \cdot s_i
-  = e_+^{(i)},
+  K_i = p_+ \cdot \mathrm{id} + p_- \cdot s_i,
 $$
 
 *where $s_i$ is the adjacent transposition.  In the defining

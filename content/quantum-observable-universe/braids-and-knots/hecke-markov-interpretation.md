@@ -17,7 +17,7 @@ viewed through different lenses.
 | Vertex volume $\hat{V}_i = z a_i + b_i$ | One-step conditional expectation |
 | Product $\prod_i \hat{V}_i$ | Product of independent random variables |
 | Jones polynomial $J_L(q)$ | Partition function of the chain |
-| Quantum dilogarithm $\Phi_q = \sum_i \log\lvert\hat{V}_i\rvert$ | Log-likelihood (free energy) of the path |
+| Log-partition function $\log J_L = \sum_i \log\lvert\hat{V}_i\rvert$ | Free energy of the path |
 | Transfer matrix eigenvalues $q$, $-q^{-1}$ | Boltzmann weights at each lattice site |
 | Markov trace weights $w_\lambda$ | Probability measure on irreducible representations |
 
@@ -83,7 +83,7 @@ $$
 $$
 
 which is precisely the generator built from the transition
-operators $K_i = e_+^{(i)}$
+operators $K_i$
 ([Hecke transition operator](#prop:hecke-markov-transition)).
 The ASEP is integrable because it inherits the algebraic
 structure of $H_n(q)$ and its quotient, the Temperley--Lieb
