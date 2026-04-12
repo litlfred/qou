@@ -551,8 +551,10 @@ fn main() {
         eprintln!("hecke-crt v13 — CRT multi-prime Hecke engine");
         eprintln!("Usage: hecke-crt qvalue ORDERING [n_primes] [threshold]");
         eprintln!("       hecke-crt witness ORDERING [n_primes]");
+        eprintln!("       hecke-crt beta ORDERING [n_primes] [threshold]");
         eprintln!("  ORDERING: p/n string (nucleon level) or u/d (quark level)");
         eprintln!("  n_primes: 1-8 (default 4)");
+        eprintln!("  beta mode: parallel Q-value computation for all converting neutrons");
         std::process::exit(1);
     }
 
@@ -630,6 +632,125 @@ fn main() {
             eprintln!("\n  Witness: {}", filename);
             println!("{}", serde_json::to_string(&cert).unwrap());
         }
+        "beta" => {
+            // ── Beta decay Q-value with per-daughter parallelization ──
+            // Q = (Σ_k w_k × ΔL1_k) × N × m_e
+            //
+            // Uses rayon to compute N daughter NFs in parallel.
+            // Each daughter: flip one n→p in the ordering, build full NF.
+            use rayon::prelude::*;
+
+            let t_beta = Instant::now();
+
+            // Build parent NF
+            eprintln!("  Parent: {}", ordering_str);
+            let (par_elem, par_accum) = Engine::build(&types, np, threshold);
+            let par_pn = par_elem.pn_count;
+            let par_pn_denom = 2.0_f64.powi(par_pn as i32);
+
+            let mut par_kept = PauliAcc::zero(np);
+            for (w, c) in &par_elem.terms { par_kept.add_term(c, w.len(), t0); }
+            let par_l1 = (par_kept.l1_mpfr + par_accum.l1_mpfr) / par_pn_denom;
+            let par_words = par_elem.n_terms();
+
+            // MPFR for parent
+            let par_ta = par_kept.tr_alt.add(&par_accum.tr_alt);
+            let par_net = par_kept.net.add(&par_accum.net);
+            let par_ta_val = par_ta.eval_mpfr(&q0_mpfr, 128).to_f64() / par_pn_denom;
+            let par_net_val = par_net.eval_mpfr(&q0_mpfr, 128).to_f64() / par_pn_denom;
+            let par_fp = if par_net_val.abs() > 1e-30 { (par_ta_val / par_net_val).abs() } else { 0.0 };
+
+            eprintln!("  Parent: {} words, L1={:.6}, F={:.6}, {:.1}s",
+                par_words, par_l1, par_fp, t_beta.elapsed().as_secs_f64());
+
+            // Find neutron positions
+            let neutron_pos: Vec<usize> = (0..a).filter(|&i| types[i] == b'n').collect();
+            let n_neutrons = neutron_pos.len();
+            eprintln!("  {} neutrons at {:?}", n_neutrons, neutron_pos);
+
+            // Build ALL daughters in PARALLEL with rayon
+            let daughter_results: Vec<(usize, usize, f64, f64)> = neutron_pos.par_iter()
+                .enumerate()
+                .map(|(k, &pos)| {
+                    let mut dau_types = types.clone();
+                    dau_types[pos] = b'p';
+
+                    let (dau_elem, dau_accum) = Engine::build(&dau_types, np, threshold);
+                    let dau_pn_denom = 2.0_f64.powi(dau_elem.pn_count as i32);
+
+                    let mut dau_kept = PauliAcc::zero(np);
+                    for (w, c) in &dau_elem.terms { dau_kept.add_term(c, w.len(), t0); }
+                    let dau_l1 = (dau_kept.l1_mpfr + dau_accum.l1_mpfr) / dau_pn_denom;
+
+                    let dau_ta = dau_kept.tr_alt.add(&dau_accum.tr_alt);
+                    let dau_net_p = dau_kept.net.add(&dau_accum.net);
+                    let dau_ta_val = dau_ta.eval_mpfr(&q0_mpfr, 128).to_f64() / dau_pn_denom;
+                    let dau_net_val = dau_net_p.eval_mpfr(&q0_mpfr, 128).to_f64() / dau_pn_denom;
+                    let dau_fp = if dau_net_val.abs() > 1e-30 { (dau_ta_val / dau_net_val).abs() } else { 0.0 };
+
+                    let dau_words = dau_elem.n_terms();
+                    eprintln!("    k={} (pos {}): {} words, L1={:.6}, F={:.6}",
+                        k, pos, dau_words, dau_l1, dau_fp);
+
+                    (dau_words, k, dau_l1, dau_fp)
+                })
+                .collect();
+
+            // Compute ΔL1 and Q-value
+            let dl1s: Vec<f64> = daughter_results.iter().map(|(_, _, dau_l1, _)| par_l1 - dau_l1).collect();
+
+            // Parabolic weight q^{-k(N-1-k)}
+            let qi0 = 1.0 / q0;
+            let qweights: Vec<f64> = (0..n_neutrons).map(|k| qi0.powf((k * (n_neutrons - 1 - k)) as f64)).collect();
+
+            let q_parab: f64 = dl1s.iter().zip(qweights.iter()).map(|(d, w)| w * d).sum::<f64>() * M_E_MEV;
+            let q_uniform: f64 = dl1s.iter().sum::<f64>() * M_E_MEV;
+
+            let elapsed = t_beta.elapsed().as_secs_f64();
+
+            // Output
+            #[derive(Serialize)]
+            struct BetaResult {
+                parent: String,
+                z: usize, n: usize, a: usize,
+                par_words: usize, par_l1: f64, par_f_pauli: f64,
+                n_neutrons: usize,
+                daughters: Vec<DaughterResult>,
+                dl1s: Vec<f64>,
+                qweights: Vec<f64>,
+                q_parabolic_mev: f64,
+                q_uniform_mev: f64,
+                m_e_mev: f64,
+                q0: f64,
+                elapsed_s: f64,
+            }
+            #[derive(Serialize)]
+            struct DaughterResult {
+                k: usize, pos: usize, words: usize, l1: f64, f_pauli: f64,
+            }
+
+            let result = BetaResult {
+                parent: ordering_str.clone(),
+                z, n, a,
+                par_words, par_l1, par_f_pauli: par_fp,
+                n_neutrons,
+                daughters: daughter_results.iter().map(|(words, k, l1, fp)| DaughterResult {
+                    k: *k, pos: neutron_pos[*k], words: *words, l1: *l1, f_pauli: *fp,
+                }).collect(),
+                dl1s: dl1s.clone(),
+                qweights: qweights.clone(),
+                q_parabolic_mev: q_parab,
+                q_uniform_mev: q_uniform,
+                m_e_mev: M_E_MEV,
+                q0,
+                elapsed_s: elapsed,
+            };
+
+            println!("{}", serde_json::to_string(&result).unwrap());
+            eprintln!("\n  Q_parabolic = {:.4} MeV, Q_uniform = {:.4} MeV, {:.1}s (parallel)",
+                q_parab, q_uniform, elapsed);
+        }
+
         _ => { eprintln!("Unknown mode: {}", mode); std::process::exit(1); }
     }
 }
