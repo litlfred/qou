@@ -1,0 +1,47 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-12T23:00:31.358242+00:00",
+  "commitSha": "d224a315f884a59495e8fc88856cde128d0675dc",
+  "assertions": [
+    {
+      "name": "CO₂ binding within 10% of observed",
+      "computed": 0.08164251207729478,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.1,
+      "unit": "relative",
+      "source": "Comparison with total atomisation energy 16.56 eV"
+    },
+    {
+      "name": "CO₂ per-bond energy within 10% of observed",
+      "computed": 0.08164251207729478,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.1,
+      "unit": "relative",
+      "source": "Comparison with per-C=O bond energy 8.28 eV"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "co2-molecular-binding",
+  "scriptFile": "co2-molecular-binding.py",
+  "scriptHash": "fc9ea83aae14",
+  "scriptCommitSha": "",
+  "description": "CO₂ molecular braid binding via independent bond channel model. O=C=O with 2 double bonds (4 independent channels). Symmetric (2,2) selected over asymmetric (3,1) by VSEPR.",
+  "contentBlock": "prop:co2-lp-dual-binding",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "dress": 5,
+    "calib": 0.23879110765149733,
+    "E_per_bond_eV": 4.478
+  },
+  "data": {
+    "E_bind_total_eV": 17.912,
+    "E_bind_per_CO_eV": 8.956,
+    "observed_total_eV": 16.56,
+    "observed_per_CO_eV": 8.28,
+    "ratio_pred_obs": 1.0816425120772948
+  }
+}

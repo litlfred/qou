@@ -1,0 +1,124 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-12T22:50:15.660601+00:00",
+  "commitSha": "d224a315f884a59495e8fc88856cde128d0675dc",
+  "assertions": [
+    {
+      "name": "H₂ binding is positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP dual ground state"
+    },
+    {
+      "name": "Interleaved ordering is optimal",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP dual enumeration"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "h2-molecular-binding",
+  "scriptFile": "h2-molecular-binding.py",
+  "scriptHash": "ad8d7c171aeb",
+  "scriptCommitSha": "",
+  "description": "H₂ molecular braid binding energy from LP dual. Enumerates all 24 strand orderings of H₄(q), finds optimal binding by comparing molecular Φ₁ with 2 isolated H atoms.",
+  "contentBlock": "prop:h2-lp-dual-binding",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "z": 0.4993203340335982,
+    "alpha_EM": 0.007308700983098551,
+    "E_hartree_eV": 27.296143240836667,
+    "strand_labels": [
+      "p1",
+      "e1",
+      "p2",
+      "e2"
+    ]
+  },
+  "data": {
+    "Phi1_H_isolated": -0.959703349370123,
+    "Phi1_2H_separated": -1.919406698740246,
+    "V_H_isolated": -0.3830064882401706,
+    "Phi1_H2_optimal": -2.606419217198054,
+    "optimal_ordering": [
+      "p1",
+      "e2",
+      "e1",
+      "p2"
+    ],
+    "binding_Phi_diff": 0.687012518457808,
+    "E_bind_eV_predicted": 18.75279211207227,
+    "generator_volumes": [
+      -0.3830064882401706,
+      0.6638243461846167,
+      0.29026001204371876
+    ],
+    "all_orderings_ranked": [
+      {
+        "ordering": [
+          "p1",
+          "e2",
+          "e1",
+          "p2"
+        ],
+        "Phi1": -2.606419217198054,
+        "binding": 0.687012518457808
+      },
+      {
+        "ordering": [
+          "p1",
+          "e2",
+          "p2",
+          "e1"
+        ],
+        "Phi1": -2.606419217198054,
+        "binding": 0.687012518457808
+      },
+      {
+        "ordering": [
+          "e1",
+          "p2",
+          "p1",
+          "e2"
+        ],
+        "Phi1": -2.606419217198054,
+        "binding": 0.687012518457808
+      },
+      {
+        "ordering": [
+          "e1",
+          "p2",
+          "e2",
+          "p1"
+        ],
+        "Phi1": -2.606419217198054,
+        "binding": 0.687012518457808
+      },
+      {
+        "ordering": [
+          "p2",
+          "e1",
+          "p1",
+          "e2"
+        ],
+        "Phi1": -2.606419217198054,
+        "binding": 0.687012518457808
+      },
+      {
+        "ordering": [
+          "p2",
+          "e1",
+          "e2",
+          "p1"
+        ],
+        "Phi1": -2.606419217198054,
+        "binding": 0.687012518457808
+      }
+    ]
+  }
+}
