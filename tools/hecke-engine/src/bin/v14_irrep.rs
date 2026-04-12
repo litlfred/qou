@@ -281,41 +281,57 @@ fn garside_trace(a: usize, b: usize, quark_ordering: &[u8], q: f64) -> f64 {
                 _ => -ha / 2.0,
             };
 
-            // Apply: result = result × (ρ(σ_sweep) + d_coeff × I)
-            // Build crossing matrix row by row and multiply
-            // crossing_ij = σ_sweep[i,j] + d_coeff × δ_ij
-            //
-            // For efficiency: compute result' = result × crossing
-            // result'[i,k] = Σ_j result[i,j] × crossing[j,k]
-            // crossing is SPARSE: at most 2 nonzero entries per column
+            // SPARSE IN-PLACE: each crossing is a 2×2 block on column pairs.
+            // Precompute the crossing structure for this generator.
+            // Process swap pairs together, unpaired columns just scale.
+            // NO allocation — update result in place.
 
-            let mut new_result = vec![0.0f64; dim * dim];
-
+            let mut processed = vec![false; dim];
             for j in 0..dim {
-                let (diag, off) = seminormal_entry(&tabs[j], sweep, q);
-                let diag_total = diag + d_coeff;
+                if processed[j] { continue; }
+                let (diag_j, off_j) = seminormal_entry(&tabs[j], sweep, q);
+                let dj = diag_j + d_coeff;
 
-                // Column j of crossing: diagonal = diag_total at (j,j)
-                // Off-diagonal: if swap exists, off_val at (j', j) where j' = swapped
-                let swap_info = if let Some(off_val) = off {
+                if let Some(off_val_j) = off_j {
+                    // j has a swap partner — find it
                     if let Some(swapped) = syt_swap(&tabs[j], sweep + 1) {
-                        tab_idx.get(&swapped).map(|&j2| (j2, off_val))
-                    } else { None }
-                } else { None };
+                        if let Some(&j2) = tab_idx.get(&swapped) {
+                            if !processed[j2] {
+                                // Process pair (j, j2) as a 2×2 block
+                                let (diag_j2, _) = seminormal_entry(&tabs[j2], sweep, q);
+                                let dj2 = diag_j2 + d_coeff;
+                                // The off-diagonal from j2 to j
+                                let off_val_j2 = if let Some(sw2) = syt_swap(&tabs[j2], sweep + 1) {
+                                    if tab_idx.get(&sw2) == Some(&j) {
+                                        seminormal_entry(&tabs[j2], sweep, q).1.unwrap_or(0.0)
+                                    } else { 0.0 }
+                                } else { 0.0 };
 
-                // Multiply: for each row i, new_result[i,j] += result[i,j] * diag_total
-                //           and new_result[i,j'] += result[i,j] * off_val (if swap exists)
-                for i in 0..dim {
-                    let r_ij = result[i * dim + j];
-                    if r_ij.abs() < 1e-300 { continue; }
-                    new_result[i * dim + j] += r_ij * diag_total;
-                    if let Some((j2, off_val)) = swap_info {
-                        new_result[i * dim + j2] += r_ij * off_val;
+                                // In-place 2×2: for each row i:
+                                //   result[i,j]  = old[i,j]*dj + old[i,j2]*off_j2
+                                //   result[i,j2] = old[i,j]*off_j + old[i,j2]*dj2
+                                for i in 0..dim {
+                                    let rj = result[i * dim + j];
+                                    let rj2 = result[i * dim + j2];
+                                    result[i * dim + j]  = rj * dj  + rj2 * off_val_j2;
+                                    result[i * dim + j2] = rj * off_val_j + rj2 * dj2;
+                                }
+                                processed[j] = true;
+                                processed[j2] = true;
+                                continue;
+                            }
+                        }
                     }
                 }
-            }
 
-            result = new_result;
+                // Unpaired or partner already processed: just scale column j
+                if !processed[j] {
+                    for i in 0..dim {
+                        result[i * dim + j] *= dj;
+                    }
+                    processed[j] = true;
+                }
+            }
         }
     }
 
