@@ -38,6 +38,7 @@ num-bigint = "0.4"
 num-rational = "0.4"
 num-traits = "0.2"
 num-integer = "0.1"
+rayon = "1.10"  # parallel iteration for CRT prime computation
 
 [build-dependencies]
 
