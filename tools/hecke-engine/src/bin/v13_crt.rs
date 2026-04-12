@@ -225,20 +225,29 @@ impl CrtPoly {
 // Compact word representation (same as v9)
 // ════════════════════════════════════════════════════════════════
 
+/// Compact word representation.
+/// Generators stored as 1-INDEXED: σ₀ → 1, σ₁ → 2, etc.
+/// 5 bits per generator, max 12 generators in u64.
+/// W(0) = identity (empty word).
 #[derive(Clone, Copy, PartialEq, Eq, Hash)]
 struct W(u64);
 
 impl W {
     const E: W = W(0);
-    fn len(self) -> usize { if self.0 == 0 { 0 } else { ((64 - self.0.leading_zeros()) / 5) as usize } }
-    fn get(self, i: usize) -> u8 { ((self.0 >> (i * 5)) & 0x1F) as u8 }
+    fn len(self) -> usize { if self.0 == 0 { 0 } else { ((64 - self.0.leading_zeros() + 4) / 5) as usize } }
+    fn get(self, i: usize) -> u8 {
+        let raw = ((self.0 >> (i * 5)) & 0x1F) as u8;
+        raw - 1  // convert back to 0-indexed
+    }
     fn push(self, g: u8) -> W {
         let l = self.len();
-        W(self.0 | ((g as u64) << (l * 5)))
+        let stored = (g + 1) as u64;  // 1-indexed storage
+        W(self.0 | (stored << (l * 5)))
     }
     fn set(&mut self, i: usize, g: u8) {
+        let stored = (g + 1) as u64;
         let mask = !(0x1Fu64 << (i * 5));
-        self.0 = (self.0 & mask) | ((g as u64) << (i * 5));
+        self.0 = (self.0 & mask) | (stored << (i * 5));
     }
     fn remove_at(self, pos: usize) -> W {
         let l = self.len();
@@ -330,6 +339,8 @@ impl CrtEngine {
         let old: Vec<(W, CrtPoly)> = elem.terms.drain().collect();
         let n_primes = elem.n_primes;
 
+        let debug = old.len() < 20; // debug for small elements
+
         // All d-terms go directly to reduced (no new junction)
         // All c-terms (word·gen) go to pending for reduction
         let mut pending: Vec<(W, CrtPoly)> = Vec::new();
@@ -340,6 +351,7 @@ impl CrtEngine {
             if !d.is_zero() {
                 let new_coeff = coeff.mul(d);
                 if !new_coeff.is_zero() {
+                    if debug { eprintln!("    d-term: {:?} coeff {} poly terms", word, new_coeff.n_terms()); }
                     let e = elem.terms.entry(word).or_insert_with(|| CrtPoly::zero(n_primes));
                     *e = e.add(&new_coeff);
                 }
@@ -349,6 +361,7 @@ impl CrtEngine {
                 let wg = word.push(gen);
                 let new_coeff = coeff.mul(c);
                 if !new_coeff.is_zero() {
+                    if debug { eprintln!("    c-term: {:?} coeff {} poly terms", wg, new_coeff.n_terms()); }
                     pending.push((wg, new_coeff));
                 }
             }
@@ -391,11 +404,14 @@ impl CrtEngine {
 
                 if let Some((pos, rule)) = red {
                     any_reduced = true;
+                    if debug { eprintln!("    reduce {:?} rule {} at pos {}", word, rule, pos); }
                     match rule {
                         0 => {
                             let w1 = word.remove_at(pos + 1);
                             let w2 = w1.remove_at(pos);
-                            next.push((w1, coeff.mul(ha)));
+                            let c1 = coeff.mul(ha);
+                            if debug { eprintln!("      → {:?} ({} terms) + {:?} ({} terms)", w1, c1.n_terms(), w2, coeff.n_terms()); }
+                            next.push((w1, c1));
                             next.push((w2, coeff));
                         }
                         1 => {
@@ -414,8 +430,10 @@ impl CrtEngine {
                     }
                 } else {
                     // Stable — add to element
+                    if debug { eprintln!("    stable {:?} ({} terms)", word, coeff.n_terms()); }
                     let e = elem.terms.entry(word).or_insert_with(|| CrtPoly::zero(n_primes));
                     *e = e.add(&coeff);
+                    if debug { eprintln!("      merged → {} terms, zero={}", e.n_terms(), e.is_zero()); }
                 }
             }
 
