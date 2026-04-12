@@ -28,7 +28,8 @@ fi
 echo "[pre-commit] Re-rendering TeX blocks for staged .md files..."
 
 # Run the renderer (hash-based — only re-renders changed blocks)
-tex_exec bun run "$REPO_ROOT/scripts/render-tex/render-tex-blocks.ts" 2>&1 | sed 's/^/  /' || true
+# Use repo-relative path so it works both locally and inside Docker container
+(cd "$REPO_ROOT" && tex_exec bun run scripts/render-tex/render-tex-blocks.ts) 2>&1 | sed 's/^/  /' || true
 
 # Stage any updated SVGs, hashes, and .ts manifests
 git diff --name-only -- 'content/*/rendered/*.svg' 'content/*/rendered/*.svg.hash' 'content/*/*.ts' 2>/dev/null | while read -r f; do

@@ -71,6 +71,7 @@ concurrency:
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
+  packages:       read    # required to pull the paper-assistant container image
 
 jobs:
   build-and-publish:

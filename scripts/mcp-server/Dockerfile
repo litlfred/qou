@@ -14,7 +14,7 @@
 #   docker run -d -p 8080:8080 paper-assistant --http
 #
 # Run (CI toolbox — override entrypoint):
-#   docker run --rm --entrypoint "" -v $(pwd):/work -w /work paper-assistant <command>
+#   docker run --rm --entrypoint "" -v $(pwd):/workspace -w /workspace paper-assistant <command>
 #
 # The image expects the repo to be mounted at /workspace or baked in at build time.
 
@@ -86,6 +86,7 @@ RUN echo "=== Base tools ===" && \
     bun --version && \
     pdflatex --version | head -1 && \
     latexmk --version | head -1 && \
+    dvisvgm --version | head -1 && \
     pandoc --version | head -1 && \
     gh --version | head -1 && \
     python3 --version && \
@@ -123,7 +124,7 @@ RUN cd content && bun install
 
 # Install CI Python deps (for offline use)
 RUN pip3 install --break-system-packages --no-cache-dir \
-    -r .github/scripts/requirements.txt || true
+    -r .github/scripts/requirements.txt
 
 # Copy full repo
 COPY . .

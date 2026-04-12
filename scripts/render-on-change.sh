@@ -28,12 +28,8 @@ elif tex_docker_ready; then
   echo "[render-on-change] Using Docker paper-assistant image for TeX rendering..."
   docker_tex_run bun run scripts/render-tex/render-tex-blocks.ts 2>&1 | sed 's/^/  /' || true
 elif tex_docker_available; then
-  echo "[render-on-change] TeX not installed locally. Pulling paper-assistant image..."
-  if tex_docker_pull; then
-    docker_tex_run bun run scripts/render-tex/render-tex-blocks.ts 2>&1 | sed 's/^/  /' || true
-  else
-    echo "[render-on-change] WARNING: Docker pull failed, SVGs may be stale"
-  fi
+  echo "[render-on-change] WARNING: TeX not installed locally and Docker image not pulled."
+  echo "[render-on-change] Run: docker pull $PAPER_IMAGE"
 else
   echo "[render-on-change] WARNING: No TeX available (local or Docker), SVGs may be stale"
 fi

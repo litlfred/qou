@@ -116,7 +116,8 @@ describe("Unified paper-assistant image", () => {
 
   test("Dockerfile includes gh CLI", () => {
     const df = readFileSync(join(REPO_ROOT, "scripts/mcp-server/Dockerfile"), "utf-8");
-    expect(df).toContain("gh");
+    expect(df).toMatch(/apt-get\s+install\b[^\n]*\bgh\b/);
+    expect(df).toMatch(/\bgh\s+--version\b/);
   });
 
   test("Dockerfile includes Python requests", () => {

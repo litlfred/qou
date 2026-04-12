@@ -5,7 +5,7 @@
 # as a fallback when pdflatex/dvisvgm aren't installed locally.
 #
 # Source this file to get:
-#   - PAPER_IMAGE    — the Docker image name
+#   - PAPER_IMAGE    — the Docker image name (read from lean-mcp.config.json)
 #   - tex_available()— check if TeX is available (local or Docker)
 #   - tex_exec()     — run a command with TeX available (local or Docker)
 #   - docker_tex_run() — run a command inside the paper-assistant container
@@ -16,11 +16,29 @@
 #     tex_exec bun run scripts/render-tex/render-tex-blocks.ts
 #   fi
 
-# ── Image name (matches lean-mcp.config.json and build-lean-mcp.yml) ─
-PAPER_IMAGE="ghcr.io/litlfred/qou/paper-assistant:latest"
-
 # ── Repo root ──────────────────────────────────────────────────────
 REPO_ROOT="${REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+
+# ── Image name (derived from lean-mcp.config.json, single source of truth) ─
+_paper_image_from_config() {
+  local config="$REPO_ROOT/lean-mcp.config.json"
+  if [ -f "$config" ]; then
+    # Extract "image" field; sed is always available (unlike jq/python)
+    local img
+    img=$(sed -n 's/.*"image"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$config" | head -1)
+    if [ -n "$img" ]; then
+      # Append :latest if no tag/digest present
+      case "$img" in
+        *@*|*:*) printf '%s\n' "$img" ;;
+        *)       printf '%s:latest\n' "$img" ;;
+      esac
+      return 0
+    fi
+  fi
+  # Fallback if config is missing or unparseable
+  printf '%s\n' "ghcr.io/litlfred/qou/paper-assistant:latest"
+}
+PAPER_IMAGE="$(_paper_image_from_config)"
 
 # ── Helpers ────────────────────────────────────────────────────────
 _has() { command -v "$1" &>/dev/null; }
@@ -53,7 +71,13 @@ tex_docker_pull() {
     return 1
   fi
   echo "[docker-tex] Pulling $PAPER_IMAGE ..." >&2
-  docker pull "$PAPER_IMAGE" 2>&1 | tail -3 >&2
+  local pull_log pull_status
+  pull_log=$(mktemp) || return 1
+  docker pull "$PAPER_IMAGE" >"$pull_log" 2>&1
+  pull_status=$?
+  tail -5 "$pull_log" >&2
+  rm -f "$pull_log"
+  return "$pull_status"
 }
 
 # Run a command inside the paper-assistant container with the repo mounted.
@@ -71,10 +95,16 @@ docker_tex_run() {
   local rel_cwd
   rel_cwd=$(realpath --relative-to="$REPO_ROOT" "$(pwd)" 2>/dev/null || echo ".")
 
+  # Guard: reject paths outside the repo root
+  if [[ "$rel_cwd" == ..* ]]; then
+    echo "[docker-tex] Error: Current directory is outside the repository root" >&2
+    return 1
+  fi
+
   docker run --rm \
     --entrypoint "" \
-    -v "$REPO_ROOT:/work" \
-    -w "/work/$rel_cwd" \
+    -v "$REPO_ROOT:/workspace" \
+    -w "/workspace/$rel_cwd" \
     -e HOME=/root \
     "$PAPER_IMAGE" \
     "$@"
