@@ -684,45 +684,70 @@ fn knot_eigenvector(
         for x in v.iter_mut() { *x /= norm; }
     }
 
-    // Step 2: Power iteration on B = λ_shift·I - K to find λ_min(K).
-    // Use λ_shift slightly above λ_max to ensure B is positive definite.
-    let lambda_shift = lambda_max * 1.1 + 1.0;
+    // Step 2: Find the eigenvector with SMALLEST |λ| (closest to origin).
+    //
+    // The physical ground state is the q⁻¹ channel (antisymmetric, confined),
+    // NOT the -q channel (most negative). We want min |λ|.
+    //
+    // Method: power iteration on K⁻¹ via solving K|w⟩ = |v⟩ at each step.
+    // But K⁻¹ requires matrix inversion (O(dim³)).
+    //
+    // Practical alternative for our knot operators:
+    //   1. Power iteration on K gives |λ_max|
+    //   2. Power iteration on K² gives |λ_max|²
+    //   3. Deflation: subtract λ_max component, iterate again
+    //
+    // Simplest robust approach: compute K|v⟩ AND Rayleigh quotient
+    // for both the max eigenvector and its orthogonal complement.
 
+    // Step 2a: We already have v_max from step 1. Store it.
+    let v_max = v.clone();
+
+    // Step 2b: Power iteration with deflation — project out v_max at each step.
     let mut v = vec![inv_sqrt_dim; dim];
-    // Perturb to avoid landing on the same eigenvector as λ_max
-    v[0] += 0.1;
+    // Make orthogonal to v_max
+    let dot: f64 = v.iter().zip(v_max.iter()).map(|(a, b)| a * b).sum();
+    for j in 0..dim { v[j] -= dot * v_max[j]; }
     let norm0: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
+    if norm0 < 1e-300 {
+        // Only one eigenvector (1D or degenerate) — return lambda_max
+        return (v_max, lambda_max);
+    }
     for x in v.iter_mut() { *x /= norm0; }
 
-    let mut eigenvalue_b = 0.0f64;
+    let mut eigenvalue_2 = 0.0f64;
 
     for _iter in 0..max_iter {
-        // Compute K|v⟩
-        let mut kv = v.clone();
-        apply_knot_operator(knot, n_nucleons, n, &mut kv, &cdata, ha);
+        apply_knot_operator(knot, n_nucleons, n, &mut v, &cdata, ha);
 
-        // B|v⟩ = λ_shift·|v⟩ - K|v⟩
-        for j in 0..dim {
-            kv[j] = lambda_shift * v[j] - kv[j];
-        }
+        // Project out v_max component (deflation)
+        let dot: f64 = v.iter().zip(v_max.iter()).map(|(a, b)| a * b).sum();
+        for j in 0..dim { v[j] -= dot * v_max[j]; }
 
-        let norm: f64 = kv.iter().map(|x| x * x).sum::<f64>().sqrt();
+        let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
         if norm < 1e-300 { break; }
-        let new_eigenvalue_b = norm;
-        for x in kv.iter_mut() { *x /= norm; }
-        v = kv;
+        let new_eigenvalue_2 = norm;
+        for x in v.iter_mut() { *x /= norm; }
 
-        if (new_eigenvalue_b - eigenvalue_b).abs() / (eigenvalue_b.abs() + 1e-15) < tol {
-            eigenvalue_b = new_eigenvalue_b;
+        if (new_eigenvalue_2 - eigenvalue_2).abs() / (eigenvalue_2.abs() + 1e-15) < tol {
+            eigenvalue_2 = new_eigenvalue_2;
             break;
         }
-        eigenvalue_b = new_eigenvalue_b;
+        eigenvalue_2 = new_eigenvalue_2;
     }
 
-    // λ_min(K) = λ_shift - λ_max(B)
-    let lambda_min = lambda_shift - eigenvalue_b;
+    // Compute Rayleigh quotient for v to get the SIGNED eigenvalue
+    let mut kv = v.clone();
+    apply_knot_operator(knot, n_nucleons, n, &mut kv, &cdata, ha);
+    let rayleigh: f64 = v.iter().zip(kv.iter()).map(|(a, b)| a * b).sum();
+    let lambda_2 = rayleigh;  // signed eigenvalue
 
-    (v, lambda_min)
+    // Pick whichever has smaller |λ| — that's the confined (q⁻¹) channel
+    if eigenvalue_2.abs() < lambda_max.abs() {
+        (v, lambda_2)
+    } else {
+        (v_max, lambda_max)
+    }
 }
 
 /// Compute matrix element ⟨v_K|Δ|v_K⟩ for a specific knot operator K.
