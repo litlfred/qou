@@ -1,8 +1,7 @@
 These examples show the complete transfer matrix computation
 for small nuclei from scratch.  Every step is shown.
 
-Recall: $s = q^{1/2} - q^{-1/2}$,
-$z = 1/(q^{1/2} + q^{-1/2})$.
+Recall: $z = 1/(q^{1/2} + q^{-1/2})$.
 
 ---
 
@@ -12,7 +11,7 @@ One proton, no nucleon pairs.  There are **zero** generators
 and **zero** transfer matrix multiplications.
 
 $$
-  P_{{}^1\mathrm{H}}(q) \;=\; 1 \quad\text{(empty product)}
+  P_{{}^1\mathrm{H}}(q) =  1 \quad\text{(empty product)}
 $$
 
 Hydrogen has no nuclear Skein polynomial — its mass comes
@@ -25,7 +24,7 @@ rings) and the electron shell.
 
 One proton $\mathfrak{p}$, one neutron $\mathfrak{n}$.
 
-**Nucleon ordering:** $[\mathfrak{p},\, \mathfrak{n}]$.
+**Nucleon ordering:** $[\mathfrak{p}, \mathfrak{n}]$.
 
 **Generators:** one generator $\sigma_0$.
 
@@ -35,12 +34,12 @@ $\mathfrak{p}$-$\mathfrak{n}$ = mixed.
 **Transfer matrix product:**
 
 $$
-  M_0(q) \;=\; T_{\mathrm{mix}}(q)
-  \;=\;
+  M_0(q) =  T_{\mathrm{mix}}(q)
+  = 
   \begin{pmatrix}
-    \frac{1+q^2}{2}(q - q^{-1}) - \frac{qs}{2}
-      & \frac{1+q^2}{2} \\[4pt]
-    \frac{1+q^2}{2} & -\frac{qs}{2}
+    \frac{q - q^{-1}}{2}
+      & 1 \\[4pt]
+    1 & -\frac{q - q^{-1}}{2}
   \end{pmatrix}
 $$
 
@@ -48,18 +47,18 @@ $$
 
 $$
   \hat{V}_0(q)
-  \;=\;
+  = 
   z \cdot (M_0)_{11} + (M_0)_{21}
-  \;=\;
-  z \cdot \left[\frac{1+q^2}{2}(q - q^{-1}) - \frac{qs}{2}\right]
-  \;+\;
-  \frac{1+q^2}{2}
+  = 
+  z \cdot \frac{q - q^{-1}}{2}
+  + 
+  1
 $$
 
 **Nuclear Skein polynomial:**
 
 $$
-  P_{{}^2\mathrm{H}}(q) \;=\; \hat{V}_0(q)
+  P_{{}^2\mathrm{H}}(q) =  \hat{V}_0(q)
 $$
 
 This is a single factor — no product needed.  The polynomial
@@ -74,7 +73,7 @@ multiplication.
 
 Two protons, one neutron.
 
-**Nucleon ordering:** $[\mathfrak{p}_0,\, \mathfrak{p}_1,\, \mathfrak{n}_2]$.
+**Nucleon ordering:** $[\mathfrak{p}_0, \mathfrak{p}_1, \mathfrak{n}_2]$.
 
 **Generators:** $\sigma_0$ and $\sigma_1$.
 
@@ -90,7 +89,7 @@ Two crossings: $(0, 1)$ and $(0, 2)$.
 Product (decreasing $j$, per notation convention):
 
 $$
-  M_0(q) \;=\; T_{pp}(q) \cdot T_{\mathrm{mix}}(q)
+  M_0(q) =  T_{pp}(q) \cdot T_{\mathrm{mix}}(q)
 $$
 
 (Here $j = 2$ contributes $T_{\mathrm{mix}}$ and $j = 1$
@@ -100,44 +99,43 @@ the product equals $T_{\mathrm{mix}} \cdot T_{pp}$ as well.)
 **Step-by-step multiplication:**
 
 $$
-  M_0 \;=\;
+  M_0 = 
   \begin{pmatrix}
     q-q^{-1} & 1 \\
     1 & 0
   \end{pmatrix}
   \cdot
   \begin{pmatrix}
-    \frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2} & \frac{1+q^2}{2} \\
-    \frac{1+q^2}{2} & -\frac{qs}{2}
+    \frac{q-q^{-1}}{2} & 1 \\
+    1 & -\frac{q-q^{-1}}{2}
   \end{pmatrix}
 $$
 
 $$
-  (M_0)_{11} \;=\;
-    (q-q^{-1})\left[\frac{1+q^2}{2}(q-q^{-1}) - \frac{qs}{2}\right]
-    \;+\; \frac{1+q^2}{2}
+  (M_0)_{11} = 
+    (q-q^{-1})\!\cdot\!\frac{q-q^{-1}}{2}
+    +  1
 $$
 
 $$
-  (M_0)_{21} \;=\;
-    \frac{1+q^2}{2}(q-q^{-1})
-    \;-\; \frac{qs}{2}
+  (M_0)_{21} = 
+    \frac{q-q^{-1}}{2}
 $$
 
 $$
-  (M_0)_{12} \;=\;
-    (q-q^{-1})\!\cdot\!\frac{1+q^2}{2}
-    \;-\; \frac{qs}{2}
+  (M_0)_{12} = 
+    (q-q^{-1})
+    -  \frac{q-q^{-1}}{2}
 $$
 
 $$
-  (M_0)_{22} \;=\; \frac{1+q^2}{2}
+  (M_0)_{22} =  1
 $$
 
 **Traced volume:**
 
 $$
-  \hat{V}_0(q) \;=\; z \cdot (M_0)_{11} + (M_0)_{21}
+  \hat{V}_0(q) =  z \cdot (M_0)_{11} + (M_0)_{21}
 $$
 
 ### Generator $\sigma_1$
@@ -149,19 +147,19 @@ One crossing: $(1, 2)$.
 | $(1, 2)$ | $\mathfrak{p}_1$-$\mathfrak{n}_2$ | mix | $T_{\mathrm{mix}}$ |
 
 $$
-  M_1(q) \;=\; T_{\mathrm{mix}}(q)
+  M_1(q) =  T_{\mathrm{mix}}(q)
 $$
 
 **Traced volume:**
 
 $$
-  \hat{V}_1(q) \;=\; z \cdot (T_{\mathrm{mix}})_{11} + (T_{\mathrm{mix}})_{21}
+  \hat{V}_1(q) =  z \cdot (T_{\mathrm{mix}})_{11} + (T_{\mathrm{mix}})_{21}
 $$
 
 ### Nuclear Skein polynomial
 
 $$
-  P_{{}^3\mathrm{He}}(q) \;=\; \hat{V}_0(q) \cdot \hat{V}_1(q)
+  P_{{}^3\mathrm{He}}(q) =  \hat{V}_0(q) \cdot \hat{V}_1(q)
 $$
 
 **Computation count:** $\binom{3}{2} = 3$ transfer matrix
@@ -173,7 +171,7 @@ multiplications (2 at $\sigma_0$, 1 at $\sigma_1$).
 
 Two protons, two neutrons.
 
-**Nucleon ordering:** $[\mathfrak{p}_0,\, \mathfrak{p}_1,\, \mathfrak{n}_2,\, \mathfrak{n}_3]$.
+**Nucleon ordering:** $[\mathfrak{p}_0, \mathfrak{p}_1, \mathfrak{n}_2, \mathfrak{n}_3]$.
 
 **Generators:** $\sigma_0$, $\sigma_1$, $\sigma_2$.
 
@@ -186,7 +184,7 @@ Two protons, two neutrons.
 | $(0, 3)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |
 
 $$
-  M_0(q) \;=\; T_{pp} \cdot T_{\mathrm{mix}} \cdot T_{\mathrm{mix}}
+  M_0(q) =  T_{pp} \cdot T_{\mathrm{mix}} \cdot T_{\mathrm{mix}}
 $$
 
 ### Generator $\sigma_1$ (2 crossings)
@@ -197,7 +195,7 @@ $$
 | $(1, 3)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |
 
 $$
-  M_1(q) \;=\; T_{\mathrm{mix}} \cdot T_{\mathrm{mix}} \;=\; T_{\mathrm{mix}}^2
+  M_1(q) =  T_{\mathrm{mix}} \cdot T_{\mathrm{mix}} =  T_{\mathrm{mix}}^2
 $$
 
 ### Generator $\sigma_2$ (1 crossing)
@@ -207,13 +205,13 @@ $$
 | $(2, 3)$ | $\mathfrak{n}$-$\mathfrak{n}$ | nn | $T_{nn}$ |
 
 $$
-  M_2(q) \;=\; T_{nn}
+  M_2(q) =  T_{nn}
 $$
 
 ### Nuclear Skein polynomial
 
 $$
-  P_{{}^4\mathrm{He}}(q) \;=\; \hat{V}_0(q) \cdot \hat{V}_1(q) \cdot \hat{V}_2(q)
+  P_{{}^4\mathrm{He}}(q) =  \hat{V}_0(q) \cdot \hat{V}_1(q) \cdot \hat{V}_2(q)
 $$
 
 **Computation count:** $\binom{4}{2} = 6$ transfer matrix
@@ -285,9 +283,9 @@ $$
 
 $$
   \ln \frac{P_{{}^3\mathrm{He}}}{P_{{}^3\mathrm{H}}}
-  \;=\;
+  = 
   \ln \frac{\hat{V}_0^{\mathrm{dau}}}{\hat{V}_0^{\mathrm{par}}}
-  \;+\;
+  + 
   \ln \frac{\hat{V}_1^{\mathrm{dau}}}{\hat{V}_1^{\mathrm{par}}}
 $$
 

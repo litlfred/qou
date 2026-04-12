@@ -3,13 +3,13 @@ decomposes the level-$(n{+}1)$ endomorphism algebra into a direct sum
 
 $$
   \mathrm{End}_{\mathbf{C}}(A_{n+1})
-  \;=\;
-  \mathcal{A}_{n+1}^{\mathrm{desc}} \;\oplus\; \mathcal{A}_{n+1}^{\mathrm{trans}},
+  = 
+  \mathcal{A}_{n+1}^{\mathrm{desc}}  \oplus  \mathcal{A}_{n+1}^{\mathrm{trans}},
 $$
 
-where $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$ is the
+where $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\hat{\tau}_n$ is the
 descended subalgebra (endomorphisms that factor through level $n$) and
-$\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\hat{\tau}_n$ is the *transient
+$\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat{\tau}_n$ is the *transient
 complement* (genuinely new endomorphisms at level $n{+}1$).  The
 ([algebraic filter](#rem:algebraic-filter)) refines this decomposition:
 

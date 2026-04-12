@@ -4,9 +4,9 @@ contact geometry of the brane:
 
 $$
   \text{NS blows up}
-  \;\Longleftrightarrow\;
+  \Longleftrightarrow
   \text{Levi form non-degenerate at collision}
-  \;\Longleftrightarrow\;
+  \Longleftrightarrow
   \kappa(t) = O(1).
 $$
 

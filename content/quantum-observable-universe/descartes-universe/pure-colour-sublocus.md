@@ -3,7 +3,7 @@ The pure colour term $b(br + g^2)$
 vanishes on
 
 $$
-  \{b = 0\} \;\cup\; \{br + g^2 = 0\}.
+  \{b = 0\} \cup \{br + g^2 = 0\}.
 $$
 
 The condition $b = 0$ means $w_4 = z$: the fourth resolvent

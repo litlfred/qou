@@ -24,7 +24,7 @@ beta-decay rate by
 
 $$
   \frac{\Delta \Gamma_\beta}{\Gamma_\beta}
-  \;\approx\;
+   \approx 
   48 \cdot \frac{\Delta q}{q_0}.
 $$
 

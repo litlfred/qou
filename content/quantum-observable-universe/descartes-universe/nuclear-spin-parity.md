@@ -33,7 +33,7 @@ representations decomposes as:
 
 $$
   \left(\tfrac{1}{2}\right)^{\otimes A}
-  \;=\;
+  = 
   \bigoplus_{J = J_{\min}}^{A/2} V_J^{\oplus m_J}
 $$
 

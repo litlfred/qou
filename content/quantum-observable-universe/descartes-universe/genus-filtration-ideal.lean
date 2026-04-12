@@ -20,12 +20,25 @@ LaTeX label: `prop:genus-filtration-ideal`
 ## References
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
 - [manuscript] §6/genus-filtration-ideal
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Part 0: Genus from Hecke completeness
@@ -89,7 +102,7 @@ theorem minimal_complete_genus :
     Satisfies the recurrence a_{n+1} = s · a_n + a_{n-1}
     with a_0 = 0, a_1 = 1, where s = q - q⁻¹. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
-noncomputable def heckeCoeff (s : ℝ) : ℕ → ℝ
+noncomputable def heckeCoeff (s : R_q) : ℕ → R_q
   | 0 => 0
   | 1 => 1
   | n + 2 => s * heckeCoeff s (n + 1) + heckeCoeff s n
@@ -107,7 +120,7 @@ def seifertGenus_T2p (p : ℕ) : ℕ := (p - 1) / 2
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
 axiom chebyshev_degree_eq_genus :
     ∀ (p : ℕ), Odd p → 2 ≤ p →
-    ∀ (s : ℝ), s ≠ 0 →
+    ∀ (s : R_q), s ≠ 0 →
     -- The recurrence a_{n+1} = s·a_n + a_{n-1} produces a_p
     -- whose degree in u = s² is exactly (p-1)/2.
     -- Formalized: heckeCoeff s p viewed as polynomial in s²
@@ -144,7 +157,7 @@ theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
 axiom leading_chebyshev_coeff_is_one :
     ∀ (p : ℕ), Odd p → 3 ≤ p →
-    ∀ (s : ℝ), s ≠ 0 →
+    ∀ (s : R_q), s ≠ 0 →
     -- The coefficient of s^{p-1} (equivalently u^{(p-1)/2}) in
     -- heckeCoeff s p is 1.
     heckeCoeff s p - s ^ (p - 1) = heckeCoeff s (p - 2) +

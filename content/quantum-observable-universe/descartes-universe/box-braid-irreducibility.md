@@ -31,7 +31,7 @@ tower level $A_1$
   & e^-_{\mathrm{virt}} \ar[d, "\text{Skein}_{T_{3,5}}" {right}]
   \\
   \gamma_2 \ar[u, "\text{EM}" {left}, "\dagger\text{-coupling}" {right}]
-  & \nu\,\nu^{\sigma} \ar[l, phantom, "\text{output}" {below}]
+  & \nu\nu^{\sigma} \ar[l, phantom, "\text{output}" {below}]
 \end{tikzcd}
 \]
 ```
@@ -60,7 +60,7 @@ $(\sigma_1\sigma_2)^5 \in B_3$ with $(3-1) \cdot 5 = 10$
 crossings:
 
 $$
-  W_{3,5} \;=\;
+  W_{3,5} = 
   \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2
   \sigma_1\sigma_2\sigma_1\sigma_2
   \qquad\text{(10 crossings)}
@@ -72,10 +72,10 @@ The crossing number of a torus knot $T_{m,n}$ with
 $\gcd(m,n) = 1$ and $2 \leq m < n$ is
 
 $$
-  c(T_{m,n}) \;=\; \min\bigl((m-1)n,\; (n-1)m\bigr).
+  c(T_{m,n}) =  \min\bigl((m-1)n, (n-1)m\bigr).
 $$
 
-For $T_{3,5}$: $\min(2 \cdot 5,\; 4 \cdot 3) = \min(10, 12) = 10$.
+For $T_{3,5}$: $\min(2 \cdot 5, 4 \cdot 3) = \min(10, 12) = 10$.
 The minimum is achieved by the $B_3$ representation
 $(\sigma_1\sigma_2)^5$, and the braid index of $T_{3,5}$ is
 $\min(3, 5) = 3$ (Morton–Williams inequality), confirming that
@@ -150,12 +150,12 @@ via any process.
    The total energy barrier:
 
    $$
-     E_{\mathrm{box}} \;\geq\;
+     E_{\mathrm{box}}  \geq 
      c(T_{3,5}) \cdot (q - q^{-1}) \cdot \mu_0
-     \;=\;
+     = 
      10 \cdot (q - q^{-1}) \cdot \mu_0
-     \;\gg\;
-     m_\nu \;=\; \mu_0(q - 1).
+     \gg
+     m_\nu =  \mu_0(q - 1).
    $$
 
    The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot (q + 1) / q \approx 19$ at the substrate parameter $q$: the box

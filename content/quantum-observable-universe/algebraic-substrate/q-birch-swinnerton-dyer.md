@@ -7,14 +7,14 @@ $\mathbf{1}$-rational points:
 
 $$
 \mathcal{E}_q(\mathbf{1})
-\;:=\; \mathrm{Hom}_{\mathbf{C}}(\mathbf{1},\, E_q)
+ :=  \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, E_q)
 $$
 
 where $E_q \in \mathrm{Ob}(\mathbf{C})$ is the object whose fibre
 functor image $\tau(E_q) = H^1(\mathcal{E}_q, \mathbb{Z})$ is the
 first cohomology of the elliptic fiber, and the group law is induced
 by the chord-tangent addition on $\mathcal{E}_q$.  Set
-$r_q := \mathrm{rank}\,\mathcal{E}_q(\mathbf{1})$.
+$r_q := \mathrm{rank}\mathcal{E}_q(\mathbf{1})$.
 
 **Categorical determination of the rank.**
 The Tannaka--Krein equivalence
@@ -24,8 +24,8 @@ Mordell--Weil group is the $G$-invariant subspace:
 
 $$
 \mathcal{E}_q(\mathbf{1})
-\;\cong\; \tau(E_q)^G
-\;=\; H^1(\mathcal{E}_q)^G.
+ \cong  \tau(E_q)^G
+=  H^1(\mathcal{E}_q)^G.
 $$
 
 The rank $r_q$ is the multiplicity of the trivial representation
@@ -49,7 +49,7 @@ representation of $\mathrm{SU}(2)$ is the fundamental
 $V_{1/2}$.  Since
 
 $$
-V_{1/2}^{\,\mathrm{SU}(2)} = 0
+V_{1/2}^{\mathrm{SU}(2)} = 0
 $$
 
 (no nonzero vector in $\mathbb{C}^2$ is fixed by all of
@@ -159,8 +159,8 @@ Define:
 
 $$
 L(\mathcal{E}_q, s)
-\;:=\; \prod_{\mathfrak{m} \in \mathrm{Spec}(R_q)}
-  \frac{1}{1 - \alpha_{\mathcal{E}}(\mathfrak{m})\,
+ :=  \prod_{\mathfrak{m} \in \mathrm{Spec}(R_q)}
+  \frac{1}{1 - \alpha_{\mathcal{E}}(\mathfrak{m})
   N(\mathfrak{m})^{-s}
   + N(\mathfrak{m})^{1-2s}}
 $$
@@ -180,11 +180,11 @@ map:
 
 $$
 \mathrm{Sha}_q(\mathcal{E}_q)
-\;:=\; \ker\!\left(
-  H^1_{\otimes}(\mathbf{C},\, E_q)
-  \;\longrightarrow\;
-  \prod_{\rho \,\in\, \mathrm{Spec}(\xi_q)}
-  H^1_{\otimes}(\mathbf{C}_\rho,\, E_q)
+ :=  \ker\!\left(
+  H^1_{\otimes}(\mathbf{C}, E_q)
+   \longrightarrow 
+  \prod_{\rho \in \mathrm{Spec}(\xi_q)}
+  H^1_{\otimes}(\mathbf{C}_\rho, E_q)
 \right)
 $$
 
@@ -202,7 +202,7 @@ The order of vanishing of $L(\mathcal{E}_q, s)$ at $s = 1$ equals
 the categorical rank:
 
 $$
-\mathrm{ord}_{s=1}\, L(\mathcal{E}_q, s) \;=\; r_q
+\mathrm{ord}_{s=1} L(\mathcal{E}_q, s) =  r_q
 $$
 
 *For the Descartes QOU*: since $r_q = 0$, this reduces to
@@ -217,10 +217,10 @@ trivial, and the formula collapses to:
 
 $$
 L(\mathcal{E}_q, 1)
-\;=\;
+= 
 \Omega_q
-\;\cdot\; |\mathrm{Sha}_q(\mathcal{E}_q)|
-\;\cdot\; \prod_{\mathfrak{m}} c_{\mathfrak{m}}(q)
+ \cdot  |\mathrm{Sha}_q(\mathcal{E}_q)|
+ \cdot  \prod_{\mathfrak{m}} c_{\mathfrak{m}}(q)
 $$
 
 This is a **computable identity** at the $q$-scale: the left
@@ -233,10 +233,10 @@ the leading Taylor coefficient satisfies:
 
 $$
 \frac{L^{(r_q)}(\mathcal{E}_q, 1)}{[r_q]_q!}
-\;=\;
-\frac{\Omega_q \;\cdot\; \mathrm{Reg}_q(\mathcal{E}_q)
-  \;\cdot\; |\mathrm{Sha}_q(\mathcal{E}_q)|
-  \;\cdot\; \displaystyle\prod_{\mathfrak{m}} c_{\mathfrak{m}}(q)}
+= 
+\frac{\Omega_q  \cdot  \mathrm{Reg}_q(\mathcal{E}_q)
+   \cdot  |\mathrm{Sha}_q(\mathcal{E}_q)|
+   \cdot  \displaystyle\prod_{\mathfrak{m}} c_{\mathfrak{m}}(q)}
 {|\mathcal{E}_q(\mathbf{1})_{\mathrm{tors}}|^2_q}
 $$
 
@@ -292,7 +292,7 @@ by $(\mathbf{C}, A)$:
 | Classical BSD | $q$-BSD | Categorical source |
 |--------------|---------|-------------------|
 | $E(\mathbb{Q})$ | $\tau(E_q)^G = 0$ | $V_{1/2}^{\mathrm{SU}(2)} = 0$ |
-| $\mathrm{rank}\, E(\mathbb{Q})$ | $r_q = 0$ | No trivial summand in $H^1(\mathcal{E}_q)$ |
+| $\mathrm{rank} E(\mathbb{Q})$ | $r_q = 0$ | No trivial summand in $H^1(\mathcal{E}_q)$ |
 | $L(E, s)$ | $L(\mathcal{E}_q, s)$ | Frobenius on $H^1(\mathcal{E}_q) \subset H^1(\mathcal{B})$ |
 | $\mathrm{Sha}(E)$ | $\mathrm{Sha}_q(\mathcal{E}_q)$ | Monoidal $H^1$ localized at Reeb spectrum |
 | $\Omega_E$ | $\Omega_q$ | Reeb period of the contact structure |
@@ -323,8 +323,8 @@ $P, Q \in \mathcal{E}_q(\mathbf{1})$:
 
 $$
 \langle P, Q \rangle_q
-\;:=\; \lim_{n \to \infty}
-  \frac{\hat{h}_q([n]_q P,\, Q)}{[n]_q^2}
+ :=  \lim_{n \to \infty}
+  \frac{\hat{h}_q([n]_q P, Q)}{[n]_q^2}
 $$
 
 where $\hat{h}_q$ is the naive $q$-Weil height and $[n]_q P$

@@ -11,12 +11,12 @@ on objects where the degree-$0$ algebra is non-trivial:
 
 $$
   \mathrm{Bun}^{\circ}(\mathbb{P}(V))
-  \;=\;
-  \bigl\{\,
+  = 
+  \bigl\{
     \mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))
-    \;:\;
-    \Gamma(\mathcal{S},\, A_0) \neq 0
-  \,\bigr\}.
+     : 
+    \Gamma(\mathcal{S}, A_0) \neq 0
+  \bigr\}.
 $$
 
 **Why "observable".**

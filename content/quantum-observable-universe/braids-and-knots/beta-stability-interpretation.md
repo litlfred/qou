@@ -6,8 +6,8 @@ when $\partial M / \partial p \big|_A = 0$:
 
 $$
   (m_{\mathfrak{p}} - m_{\mathfrak{n}})
-  + \frac{a_C \, (2p - 1)}{A^{1/3}}
-  - \frac{a_A \, (A - 2p)}{A}
+  + \frac{a_C  (2p - 1)}{A^{1/3}}
+  - \frac{a_A  (A - 2p)}{A}
   = 0.
 $$
 
@@ -15,10 +15,10 @@ Solving for $p$ (dropping the $-1$ and mass-difference correction,
 which are small):
 
 $$
-  a_A \, \frac{A - 2p}{A}
-  = a_C \, \frac{2p}{A^{1/3}},
+  a_A  \frac{A - 2p}{A}
+  = a_C  \frac{2p}{A^{1/3}},
   \qquad
-  p = \frac{A}{2 + a_C \, A^{2/3} / (2\,a_A)}.
+  p = \frac{A}{2 + a_C  A^{2/3} / (2a_A)}.
 $$
 
 **Verification.**

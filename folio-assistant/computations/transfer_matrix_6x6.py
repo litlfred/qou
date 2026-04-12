@@ -114,10 +114,10 @@ print("R(σ₁) — right-multiplication by σ₁:")
 sp.pprint(R1)
 print()
 
-# Crossing coefficients
+# Crossing coefficients (Hecke convention: c=1 for all, d uses HA = q - q⁻¹)
 C_PP, D_PP = sp.Integer(1), sp.Integer(0)
-C_NN, D_NN = q**2, -q * (sp.sqrt(q) - 1/sp.sqrt(q))
-C_MIX, D_MIX = (1 + q**2) / 2, -q * (sp.sqrt(q) - 1/sp.sqrt(q)) / 2
+C_NN, D_NN = sp.Integer(1), -HA
+C_MIX, D_MIX = sp.Integer(1), -HA / 2
 
 # 6×6 transfer matrices (at σ₀)
 T6_pp = sp.expand(C_PP * R0 + D_PP * sp.eye(N_BASIS))

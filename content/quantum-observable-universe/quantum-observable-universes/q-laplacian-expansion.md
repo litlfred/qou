@@ -1,12 +1,12 @@
-Expanding $\Delta_q = d_q\,\delta_q + \delta_q\,d_q$ using
-$d_q = q^{-1}\,d + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi$
+Expanding $\Delta_q = d_q\delta_q + \delta_qd_q$ using
+$d_q = q^{-1}d + (1 - q^{-1})\theta \wedge \mathcal{L}_\xi$
 and
-$\delta_q = q^{-1}\,\delta + (1 - q^{-1})\,\mathcal{L}_\xi^* \circ \iota_\xi$
+$\delta_q = q^{-1}\delta + (1 - q^{-1})\mathcal{L}_\xi^* \circ \iota_\xi$
 ([expanded $\delta_q$](#rem:q-codifferential-formula)), the
 $q$-Laplacian separates into three distinct types of terms:
 
 1. **Classical core** ($\propto q^{-2}$): terms proportional to
-   $q^{-2}\,\Delta$, where $\Delta = d\delta + \delta d$ is the
+   $q^{-2}\Delta$, where $\Delta = d\delta + \delta d$ is the
    standard Hodge Laplacian. This is the ordinary spatial diffusion
    operator, measuring how the field value at a point compares to
    its spatial neighbours.
@@ -28,14 +28,14 @@ $q$-Laplacian separates into three distinct types of terms:
 In summary:
 
 $$
-  \Delta_q = q^{-2}\,\Delta
-  \;+\; q^{-1}(1 - q^{-1})\,\bigl[
+  \Delta_q = q^{-2}\Delta
+  +  q^{-1}(1 - q^{-1})\bigl[
     d(\mathcal{L}_\xi^* \iota_\xi)
     + (\theta \wedge \mathcal{L}_\xi)\delta
     + \delta(\theta \wedge \mathcal{L}_\xi)
     + (\mathcal{L}_\xi^* \iota_\xi)d
   \bigr]
-  \;+\; (1 - q^{-1})^2\,\Delta_{\xi},
+  +  (1 - q^{-1})^2\Delta_{\xi},
 $$
 
 where $\Delta_\xi = (\theta \wedge \mathcal{L}_\xi) (\mathcal{L}_\xi^* \iota_\xi) + (\mathcal{L}_\xi^* \iota_\xi) (\theta \wedge \mathcal{L}_\xi)$ is the pure spin Laplacian.

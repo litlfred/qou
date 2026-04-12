@@ -9,10 +9,10 @@ Then:
 
 $$
   \mathrm{Hom}_{\mathbf{C}_{q_1}}\!
-  \bigl(\mathbf{1},\, \mathrm{Ad}(A)\bigr)
-  \;=\;
+  \bigl(\mathbf{1}, \mathrm{Ad}(A)\bigr)
+  = 
   \mathrm{Hom}_{\mathbf{C}_{q_2}}\!
-  \bigl(\mathbf{1},\, \mathrm{Ad}(A)\bigr).
+  \bigl(\mathbf{1}, \mathrm{Ad}(A)\bigr).
 $$
 
 In particular, if $(\mathbf{C}, A, \tau)$ satisfies the
@@ -28,7 +28,7 @@ only the differential $d_q$ on $\Omega^\bullet(A)$; it does
 not modify the objects, morphisms, tensor product, or braiding
 of $\mathbf{C}$.  The adjoint object $\mathrm{Ad}(A)$ is
 defined via the conjugation action
-$a \mapsto S(a_{(1)})\,x\,a_{(2)}$, which involves only the
+$a \mapsto S(a_{(1)})xa_{(2)}$, which involves only the
 Hopf structure $(\mu, \Delta, S)$ — none of which depends on
 $q$.
 

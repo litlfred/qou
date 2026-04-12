@@ -8,9 +8,9 @@ $\sigma_{i_1}^{\epsilon_1} \cdots \sigma_{i_k}^{\epsilon_k}$
 where $\epsilon_j = \pm 1$.  The **$q$-momentum** is:
 
 $$
-  p_q(\beta) \;=\; \sum_{j=1}^{k} \epsilon_j \,
+  p_q(\beta) =  \sum_{j=1}^{k} \epsilon_j 
   \frac{q^{\epsilon_j} - q^{-\epsilon_j}}{q - q^{-1}}
-  \;=\; \sum_{j=1}^{k} \frac{q^{2\epsilon_j} - 1}{q^2 - 1}
+  =  \sum_{j=1}^{k} \frac{q^{2\epsilon_j} - 1}{q^2 - 1}
 $$
 
 At $q = 1$: $p_q(\beta) \to w(\beta)$, the classical writhe
@@ -25,7 +25,7 @@ the two.
 in the fundamental representation of $H_n(q)$:
 
 $$
-  p_q(\beta) \;=\; \mathrm{tr}_{\mathrm{fund}}(\rho(\beta))
+  p_q(\beta) =  \mathrm{tr}_{\mathrm{fund}}(\rho(\beta))
 $$
 
 where $\rho: B_n \to H_n(q)$ is the Hecke representation.

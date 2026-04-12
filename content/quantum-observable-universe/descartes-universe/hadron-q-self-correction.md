@@ -8,8 +8,8 @@ nucleus is therefore
 
 $$
   q_{\mathrm{eff}}(p, n)
-  \;=\;
-  q_0 \;+\; \delta q(p, n)
+  = 
+  q_0 +  \delta q(p, n)
 $$
 
 where the substrate $q_0$ is the background value
@@ -17,7 +17,7 @@ where the substrate $q_0$ is the background value
 $\delta q(p, n)$ is the hadron's self-deformation.
 
 **Proposition.**
-Let $\mathcal{N}(Z, N) = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$
+Let $\mathcal{N}(Z, N) = Z\mathfrak{p} \bowtie N\mathfrak{n}$
 be a nucleus ([stable nucleus](#def:stable-nucleus)).  The
 self-deformation of the substrate parameter is determined by the
 *signed* crossing excess — the imbalance between positive
@@ -26,7 +26,7 @@ self-deformation of the substrate parameter is determined by the
 
 $$
   \delta q(p, n)
-  \;=\;
+  = 
   \frac{\ell_{\mathrm{net}}(p, n)}{A^2}
   \cdot \hbar_q^2
 $$
@@ -36,9 +36,9 @@ the net signed crossing number is
 
 $$
   \ell_{\mathrm{net}}(p, n)
-  \;=\;
+  = 
   \binom{p}{2} - \binom{n}{2}
-  \;=\;
+  = 
   \frac{p(p-1) - n(n-1)}{2}.
 $$
 
@@ -88,9 +88,9 @@ parent.  The change in effective $q$ across the decay is
 
 $$
   \Delta q_{\mathrm{eff}}
-  \;=\;
+  = 
   \delta q(p+1, n-1) - \delta q(p, n)
-  \;=\;
+  = 
   \frac{A - 1}{A^2} \cdot \hbar_q^2.
 $$
 

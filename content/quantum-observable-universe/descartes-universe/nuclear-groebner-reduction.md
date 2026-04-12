@@ -20,7 +20,7 @@ the Skein relation
 $$
   \sigma_i - \sigma_i^{-1}
   - (q - q^{-1})
-  \;\in\; I
+   \in  I
   \qquad (i = 1, \ldots, A-1).
 $$
 
@@ -34,25 +34,25 @@ $(B, <)$ where:
 
 The Gröbner--Shirshov basis $G$ for $I$ with respect to $(B, <)$ consists of:
 
-1. **Hecke relation**: $T_i^2 - (q - q^{-1})\,T_i - 1$
+1. **Hecke relation**: $T_i^2 - (q - q^{-1})T_i - 1$
    (eliminates all squares).
 
-2. **Yang--Baxter relation**: $\sigma_i\,\sigma_{i+1}\,\sigma_i - \sigma_{i+1}\,\sigma_i\,\sigma_{i+1}$ (braid relation,
+2. **Yang--Baxter relation**: $\sigma_i\sigma_{i+1}\sigma_i - \sigma_{i+1}\sigma_i\sigma_{i+1}$ (braid relation,
    reduces to the length-lex-smaller form).
 
-3. **Far commutativity**: $\sigma_i\,\sigma_j - \sigma_j\,\sigma_i$
+3. **Far commutativity**: $\sigma_i\sigma_j - \sigma_j\sigma_i$
    for $|i - j| \geq 2$ (sorts distant generators).
 
-The remainder $r(\mathcal{N}_{\mathrm{raw}}(Z, N),\, G)$ under the division
+The remainder $r(\mathcal{N}_{\mathrm{raw}}(Z, N), G)$ under the division
 algorithm
 ([division algorithm](#unital-groebner-bases:def:division-algorithm))
 is the **unique normal form**:
 
 $$
   \mathcal{N}(Z, N)
-  \;:=\;
-  r\bigl(\mathcal{N}_{\mathrm{raw}}(Z, N),\, G\bigr)
-  \;\in\; H_A(q).
+   := 
+  r\bigl(\mathcal{N}_{\mathrm{raw}}(Z, N), G\bigr)
+   \in  H_A(q).
 $$
 
 Uniqueness follows from the main theorem of the Gröbner--Shirshov basis theory
@@ -65,7 +65,7 @@ The unreduced braid word for $\mathcal{N}(Z, N)$ in $B_A$ is:
 
 $$
   \mathcal{N}(Z, N)
-  \;=\;
+  = 
   \prod_{1 \leq i < j \leq A}
   \sigma_{i}^{\epsilon(i, j)}
 $$
@@ -74,7 +74,7 @@ where the crossing sign $\epsilon(i, j)$ depends on the nucleon
 types at positions $i$ and $j$:
 
 $$
-  \epsilon(i, j) \;=\;
+  \epsilon(i, j) = 
   \begin{cases}
     +1 & \text{if } i, j \text{ both protons} \\[3pt]
     -1 & \text{if } i, j \text{ both neutrons} \\[3pt]
@@ -116,14 +116,14 @@ The reduced braid word for tritium is:
 
 $$
   \mathcal{N}(1, 2)
-  \;=\;
+  = 
   -0.145
-  \;+\; (-0.015)\,\sigma_0
-  \;+\; 1.539\,\sigma_1
-  \;+\; 0.162\,\sigma_0\,\sigma_1.
+  +  (-0.015)\sigma_0
+  +  1.539\sigma_1
+  +  0.162\sigma_0\sigma_1.
 $$
 
-The dominant term is $+1.539\,\sigma_1$ — the strong-force Hopf
+The dominant term is $+1.539\sigma_1$ — the strong-force Hopf
 crossing between the two neutrons, amplified by repeated Hecke
 reduction of higher-order braid words.
 
@@ -134,7 +134,7 @@ parent and daughter normal forms:
 $$
   \mathcal{N}(Z, N)
   - \mathcal{N}(p\!+\!1, n\!-\!1)
-  \;=\;
+  = 
   \sum_{w \in B} \Delta c_w \cdot w
 $$
 
@@ -143,7 +143,7 @@ trace of this difference gives the transition amplitude:
 
 $$
   |\mathcal{M}_q|^2
-  \;\propto\;
+   \propto 
   \left|
     \mathrm{tr}_{\mathrm{Markov}}\!\left(
       \mathcal{N}(Z, N)

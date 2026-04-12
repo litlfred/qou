@@ -6,12 +6,12 @@ $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the
 ```tex
 \begin{align*}
   \mathfrak{r}(\phi,\psi)
-  &\;=\; O + R\bigl(\sin\phi\,\bigl(\cos(\psi + q\phi)\,T_1
-         + \sin(\psi + q\phi)\,T_2\bigr) - \cos\phi\,N\bigr),\\
+  &=  O + R\bigl(\sin\phi \bigl(\cos(\psi + q\phi) T_1
+         + \sin(\psi + q\phi) T_2\bigr) - \cos\phi N\bigr),\\
   \mathfrak{g}(\phi,\psi)
-  &\;=\; \mathfrak{r}\!\bigl(\phi,\,\psi + \tfrac{2\pi}{3}\bigr),\\
+  &=  \mathfrak{r}\!\bigl(\phi,\psi + \tfrac{2\pi}{3}\bigr),\\
   \mathfrak{b}(\phi,\psi)
-  &\;=\; \mathfrak{r}\!\bigl(\phi,\,\psi + \tfrac{4\pi}{3}\bigr).
+  &=  \mathfrak{r}\!\bigl(\phi,\psi + \tfrac{4\pi}{3}\bigr).
 \end{align*}
 ```
 
@@ -24,7 +24,7 @@ encoding the chirality of the substrate parameter.
 The three sectors tile the exceptional divisor exactly:
 
 $$
-  \mathcal{S}_p \;=\; \mathfrak{r}(p) \;\cup\; \mathfrak{g}(p) \;\cup\; \mathfrak{b}(p),
+  \mathcal{S}_p =  \mathfrak{r}(p) \cup \mathfrak{g}(p) \cup \mathfrak{b}(p),
 $$
 
 where adjacent sectors share only their boundary meridians

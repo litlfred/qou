@@ -35,8 +35,8 @@ def sig(i): return HeckeElement({(i,): 1.0})
 def sig_inv(i):
     """σ_i⁻¹ = σ_i − (q − q⁻¹) in the Iwahori--Hecke algebra."""
     return HeckeElement({(i,): 1.0, (): -HA})
-c_dd = q**2; d_dd = -q*s
-c_ud = (1+q**2)/2; d_ud = -q*s/2
+c_dd = 1.0; d_dd = -HA
+c_ud = 1.0; d_ud = -HA/2
 
 def cx(ti, tj, gen):
     if ti == tj == 'u': return sig(gen)

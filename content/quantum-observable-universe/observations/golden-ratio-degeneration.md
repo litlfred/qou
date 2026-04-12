@@ -6,16 +6,16 @@ With $s = \sqrt{q}$, the second Weierstrass coefficient factors as
 
 $$
   s^3 \cdot r(q)
-  \;=\;
-  \frac{5\,(s^2 + s - 1)\,(4s^4 - s^3 - 4s^2 + s + 4)}{27}.
+  = 
+  \frac{5(s^2 + s - 1)(4s^4 - s^3 - 4s^2 + s + 4)}{27}.
 $$
 
 The factor $(s^2 + s - 1)$ vanishes at
 
 $$
-  s \;=\; \frac{\sqrt{5} - 1}{2}
-  \;=\; \frac{1}{\varphi}
-  \;=\; \varphi - 1,
+  s =  \frac{\sqrt{5} - 1}{2}
+  =  \frac{1}{\varphi}
+  =  \varphi - 1,
 $$
 
 where $\varphi = (1 + \sqrt{5})/2$ is the golden ratio.
@@ -23,14 +23,14 @@ Since $q = s^2$, this gives the **golden ratio threshold**
 
 $$
   q_{\mathrm{gold}}
-  \;=\; \frac{1}{\varphi^2}
-  \;=\; \frac{3 - \sqrt{5}}{2}
-  \;\approx\; 0.382.
+  =  \frac{1}{\varphi^2}
+  =  \frac{3 - \sqrt{5}}{2}
+   \approx  0.382.
 $$
 
 At $q = q_{\mathrm{gold}}$, the constant term $r(q)$ vanishes
 and the Weierstrass equation reduces to
-$y^2 = x^3 + p(q_{\mathrm{gold}})\,x = x(x^2 + p)$.
+$y^2 = x^3 + p(q_{\mathrm{gold}})x = x(x^2 + p)$.
 The curve acquires a **node** at the origin: the smooth elliptic
 fiber pinches to a rational curve with a double point.  The
 chiral fibration of Bring's surface loses its elliptic structure
@@ -66,8 +66,8 @@ threshold.  The distance from the degeneration,
 
 $$
   q - q_{\mathrm{gold}}
-  \;=\; q_0 - 0.382
-  \;=\; 0.7277,
+  =  q_0 - 0.382
+  =  0.7277,
 $$
 
 measures the **stability margin** of the Descartes universe:

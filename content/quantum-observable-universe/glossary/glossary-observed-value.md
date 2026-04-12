@@ -7,7 +7,7 @@ identity:
 
 ```tex
 \begin{equation}\label{eq:observed-value}
-  \mathbf{r}_z + \mathbf{g}_z + \mathbf{b}_z + 4z + 1 \;=\; 0.
+  \mathbf{r}_z + \mathbf{g}_z + \mathbf{b}_z + 4z + 1 =  0.
 \end{equation}
 ```
 

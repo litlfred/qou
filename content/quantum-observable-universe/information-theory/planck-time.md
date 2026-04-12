@@ -6,8 +6,8 @@ $\hbar_q = 1 - q^{-1}$ the quantum Planck constant
 The **Planck time** is
 
 $$
-  t_P(q) \;:=\; \frac{1}{\hbar_q}
-  \;=\; \frac{q}{q - 1}.
+  t_P(q)  :=  \frac{1}{\hbar_q}
+  =  \frac{q}{q - 1}.
 $$
 
 This is a rational function of $q$ defined over any field $k$ in
@@ -47,7 +47,7 @@ full circuit completed per $f_q$-iteration.
 angular displacement is
 
 $$
-  \ell_P(q) \;=\; \hbar_q \cdot t_P \;=\; 1
+  \ell_P(q) =  \hbar_q \cdot t_P =  1
 $$
 
 identically over any field.  The Planck length is always $1$;

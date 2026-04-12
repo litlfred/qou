@@ -1,14 +1,14 @@
 
-Write $a = q^{-1}$ and $b = 1 - q^{-1}$, so $d_q = a\,d + b\,\pi_V d$.
+Write $a = q^{-1}$ and $b = 1 - q^{-1}$, so $d_q = ad + b\pi_V d$.
 Then
 
 ```tex
 \begin{align*}
   d_q^2
-  &= (a\,d + b\,\pi_V d)(a\,d + b\,\pi_V d) \\
-  &= a^2\,\underbrace{d^2}_{= 0}
-     + ab\,(d \circ \pi_V d + \pi_V d \circ d)
-     + b^2\,\underbrace{\pi_V d \circ \pi_V d}_{= 0}.
+  &= (ad + b\pi_V d)(ad + b\pi_V d) \\
+  &= a^2\underbrace{d^2}_{= 0}
+     + ab(d \circ \pi_V d + \pi_V d \circ d)
+     + b^2\underbrace{\pi_V d \circ \pi_V d}_{= 0}.
 \end{align*}
 ```
 
@@ -30,14 +30,14 @@ the weight-shift arises from the Lie derivative along $\xi$ (the
 generator of $T$), giving
 
 $$
-  [d, \pi_V]\,\alpha = \mathcal{L}_\xi(\alpha) - \pi_V(\mathcal{L}_\xi(\alpha))
-  = \pi_H(\mathcal{L}_\xi\,\alpha).
+  [d, \pi_V]\alpha = \mathcal{L}_\xi(\alpha) - \pi_V(\mathcal{L}_\xi(\alpha))
+  = \pi_H(\mathcal{L}_\xi\alpha).
 $$
 
 Since $\pi_H + \pi_V = \mathrm{id}$ and
 $\mathcal{L}_\xi = \iota_\xi \circ d + d \circ \iota_\xi$
 (Cartan's formula), the middle term simplifies:
-$d(\pi_V d\,\alpha) + \pi_V d(d\,\alpha) = \omega_V \wedge_q [\xi, \alpha]$
-where $\omega_V = d(\pi_V(d\,1_A)) \in \Omega^2(A)$ is the curvature
+$d(\pi_V d\alpha) + \pi_V d(d\alpha) = \omega_V \wedge_q [\xi, \alpha]$
+where $\omega_V = d(\pi_V(d1_A)) \in \Omega^2(A)$ is the curvature
 of the weight projection — a canonical $2$-form measuring the failure
 of the horizontal distribution to be integrable.

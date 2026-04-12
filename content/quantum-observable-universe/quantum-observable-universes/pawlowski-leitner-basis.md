@@ -6,7 +6,7 @@ For each simple object $V_j$ and tensor power
 $V_{1/2}^{\otimes n}$ with $n \geq 2j$, the intertwiner space
 
 $$
-  \mathrm{Hom}_{\mathrm{SU}(2)}\!\bigl(V_j,\;
+  \mathrm{Hom}_{\mathrm{SU}(2)}\!\bigl(V_j,
     V_{1/2}^{\otimes n}\bigr)
 $$
 
@@ -45,10 +45,10 @@ The dimension of the intertwiner space is given by the hook-length
 formula:
 
 $$
-  \dim\,\mathrm{Hom}_{\mathrm{SU}(2)}\!\bigl(V_j,\;
+  \dim\mathrm{Hom}_{\mathrm{SU}(2)}\!\bigl(V_j,
     V_{1/2}^{\otimes n}\bigr)
-  \;=\;
-  \frac{(2j+1)\, n!}{(\tfrac{n}{2}+j+1)!\;(\tfrac{n}{2}-j)!}
+  = 
+  \frac{(2j+1) n!}{(\tfrac{n}{2}+j+1)!(\tfrac{n}{2}-j)!}
 $$
 
 when $n \equiv 2j \pmod{2}$, and zero otherwise.

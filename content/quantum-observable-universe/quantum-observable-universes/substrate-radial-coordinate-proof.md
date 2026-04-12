@@ -10,7 +10,7 @@ affine coordinate of a state.
 
 2. **Classical boundary** ($Z \to \infty$): as $q \to 1$ (classical
    vacuum), the state becomes purely horizontal
-   ($\iota_\xi\,\alpha \to 0$, a boson). The affine coordinate
+   ($\iota_\xi\alpha \to 0$, a boson). The affine coordinate
    diverges, pushing the state to the point at infinity of the
    $\mathbb{CP}^1$ fibre.
 
@@ -19,7 +19,7 @@ Furthermore, the $q$-deformed Reeb flow
 proportional to the quantum Planck constant:
 
 $$
-  \mathcal{L}_\xi\,Z \;=\; J\,\hbar_q\,Z,
+  \mathcal{L}_\xiZ =  J\hbar_qZ,
 $$
 
 where $\hbar_q = 1 - q^{-1}$

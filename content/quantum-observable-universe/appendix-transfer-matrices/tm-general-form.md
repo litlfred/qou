@@ -5,7 +5,7 @@ parameterized by two **crossing coefficients** $(c, d)$.
 
 $$
   T(c, d)
-  \;=\;
+  = 
   \begin{pmatrix}
     c(q - q^{-1}) + d & c \\
     c & d
@@ -31,18 +31,18 @@ $a\sigma_i + b$ by left multiplication and Hecke reduction
 
 $$
   \begin{pmatrix} a' \\ b' \end{pmatrix}
-  \;=\;
+  = 
   T(c, d)
-  \;\cdot\;
+   \cdot 
   \begin{pmatrix} a \\ b \end{pmatrix}
 $$
 
 Explicitly:
 
 $$
-  a' \;=\; ac(q - q^{-1}) + ad + bc,
+  a' =  ac(q - q^{-1}) + ad + bc,
   \qquad
-  b' \;=\; ac + bd
+  b' =  ac + bd
 $$
 
 ## Properties of $T(c, d)$
@@ -50,18 +50,18 @@ $$
 **Determinant:**
 
 $$
-  \det T(c, d) \;=\; d\bigl[c(q - q^{-1}) + d\bigr] - c^2
-  \;=\; cd(q - q^{-1}) + d^2 - c^2
+  \det T(c, d) =  d\bigl[c(q - q^{-1}) + d\bigr] - c^2
+  =  cd(q - q^{-1}) + d^2 - c^2
 $$
 
 **Eigenvalues** (when $c \neq 0$):
 
 $$
   \lambda_{\pm}
-  \;=\;
+  = 
   \frac{1}{2}\Bigl[
     c(q - q^{-1}) + 2d
-    \;\pm\;
+    \pm
     \sqrt{\bigl[c(q - q^{-1})\bigr]^2 + 4c^2}
   \Bigr]
 $$

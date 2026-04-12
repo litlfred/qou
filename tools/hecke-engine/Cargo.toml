@@ -19,6 +19,11 @@ path = "src/bin/v6.rs"
 name = "hecke-bigint"
 path = "src/bin/v9.rs"
 
+# CRT modular engine — u64 arithmetic, no BigInt (v10)
+[[bin]]
+name = "hecke-crt"
+path = "src/bin/v10_crt.rs"
+
 # Original float engine with Q-value computation
 [[bin]]
 name = "hecke-qvalues"
@@ -33,9 +38,35 @@ num-bigint = "0.4"
 num-rational = "0.4"
 num-traits = "0.2"
 num-integer = "0.1"
+rayon = "1.10"
 
 [build-dependencies]
 
 [profile.release]
 opt-level = 3
 lto = true
+
+# Modular port of v9 — u64 mod p, identical NF
+[[bin]]
+name = "hecke-modular"
+path = "src/bin/v11_modular.rs"
+
+# Atomic braid: protons + neutrons + electrons in H_{A+Z}(q)
+[[bin]]
+name = "hecke-atomic"
+path = "src/bin/v12_atomic.rs"
+
+# Streaming reduction: reduce during multiplication (lower peak memory)
+[[bin]]
+name = "hecke-stream"
+path = "src/bin/v13_stream.rs"
+
+# HA-power ring engine for pp...nn ordering
+[[bin]]
+name = "hecke-hapower"
+path = "src/bin/v14_hapower.rs"
+
+# Per-irrep via Young seminormal form (vector action mode: O(dim) memory)
+[[bin]]
+name = "hecke-irrep"
+path = "src/bin/v14_irrep.rs"

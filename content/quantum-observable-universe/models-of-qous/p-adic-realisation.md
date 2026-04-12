@@ -9,7 +9,7 @@ Frobenius form $\int_A$ arises from the $\pp$-adic Haar measure.
 The Frobenius endomorphism $\varphi$ on $\mathbf{C}$ plays the
 role of the Levi-form contraction: the categorical substrate parameter
 ([substrate parameter](#def:substrate-parameter)) specialises to
-$q = \pp^{\,-v_\pp(\det\varphi)} \in \mathrm{End}(\mathbf{1}) \cong \mathbb{Q}_\pp$.  The fibre functor $\tau$
+$q = \pp^{-v_\pp(\det\varphi)} \in \mathrm{End}(\mathbf{1}) \cong \mathbb{Q}_\pp$.  The fibre functor $\tau$
 is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
 The observability condition
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the

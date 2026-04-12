@@ -22,7 +22,7 @@ the iterated Markov trace converges to the unknot:
 
 $$
   \mathrm{tr}_M\bigl(\mathcal{C}_q^k(h)\bigr)
-  \;\xrightarrow{k \to \infty}\; 1.
+  \xrightarrow{k \to \infty} 1.
 $$
 
 The identity braid is the unique attractor of the
@@ -70,7 +70,7 @@ the integer threshold is exactly $v = 2$:
 
 $$
   \bigl\langle v_{[2]}([3]_q P + 1) \bigr\rangle
-  \;\geq\; 2.
+   \geq  2.
 $$
 
 Two halvings per tripling.  Not one, not three — two.
@@ -114,8 +114,8 @@ distributed odd $n$ is:
 
 $$
   \mathbb{E}[v_2(3n+1)]
-  \;=\; \sum_{k=1}^{\infty} k \cdot 2^{-k}
-  \;=\; 2.
+  =  \sum_{k=1}^{\infty} k \cdot 2^{-k}
+  =  2.
 $$
 
 Exactly $2$ — the threshold itself.  The classical Collatz

@@ -18,7 +18,7 @@ $$
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
     \mathcal{N}(Z, N)
   \bigr)
-  \;=\;
+  = 
   \prod_{i=0}^{A-2}
   \bigl(z \cdot a_i + b_i\bigr).
 $$
@@ -35,7 +35,7 @@ At each crossing between nucleons $i$ and $j$, the transfer
 matrix
 
 $$
-  T_j \;=\;
+  T_j = 
   \begin{pmatrix}
     c_j(q - q^{-1}) + d_j & c_j \\
     c_j & d_j
@@ -48,21 +48,21 @@ determine the coefficients:
 | Pair type | $c_j$ | $d_j$ | $\det(T_j)$ |
 |-----------|-------|-------|:-----------:|
 | $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ | $-1$ |
-| $\mathfrak{n}$-$\mathfrak{n}$ | $q^2$ | $-q(q^{1/2} - q^{-1/2})$ | $q^2$ |
-| mixed | $\frac{1+q^2}{2}$ | $-\frac{q}{2}(q^{1/2} - q^{-1/2})$ | $\frac{q^2-1}{4}$ |
+| $\mathfrak{n}$-$\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ | $-1$ |
+| mixed | $1$ | $-\frac{1}{2}(q - q^{-1})$ | $-1 + \frac{1}{4}(q - q^{-1})^2$ |
 
 The product of $k_i$ transfer matrices at generator $\sigma_i$
 gives $M_i \in \mathrm{GL}_2(\mathbb{Q}(q))$, whose entries are
 polynomials in $q$ of degree $\leq 2k_i$.  Then:
 
 $$
-  \hat{V}_i(q) \;=\; z \cdot (M_i)_{11} + (M_i)_{21}
+  \hat{V}_i(q) =  z \cdot (M_i)_{11} + (M_i)_{21}
 $$
 
 is a polynomial in $q^{1/2}$.  The nuclear Skein polynomial is:
 
 $$
-  P_{\mathcal{N}}(q) \;=\; \prod_{i=0}^{A-2} \hat{V}_i(q)
+  P_{\mathcal{N}}(q) =  \prod_{i=0}^{A-2} \hat{V}_i(q)
 $$
 
 **This product IS the Skein polynomial of the nuclear link
@@ -107,7 +107,7 @@ generator in the remaining word, and the Markov property gives:
 
 $$
   \mathrm{tr}(\cdots (a_i \sigma_i + b_i))
-  \;=\;
+  = 
   (z \cdot a_i + b_i) \cdot \mathrm{tr}(\cdots).
 $$
 
@@ -116,7 +116,7 @@ This works because:
 1. The chain at $\sigma_i$ reduces to $a_i \sigma_i + b_i$
    (a linear combination of $\sigma_i$ and the identity).
 
-2. The Markov property $\mathrm{tr}(x \sigma_n) = z\,\mathrm{tr}(x)$
+2. The Markov property $\mathrm{tr}(x \sigma_n) = z\mathrm{tr}(x)$
    applies to the $\sigma_i$ term, and $\mathrm{tr}(x \cdot 1) = \mathrm{tr}(x)$ for the identity term.
 
 3. Generator $\sigma_i$ is the **rightmost** active generator
@@ -150,13 +150,13 @@ tractable — the direct computation exceeds $10^5$ terms.
 
 $$
   \mathbb{Z}[B_A]
-  \;\xrightarrow{\text{Hecke quotient}}\;
+  \xrightarrow{\text{Hecke quotient}}
   H_A(q)
-  \;\xrightarrow{\text{transfer matrices}}\;
+  \xrightarrow{\text{transfer matrices}}
   \prod_{i} (a_i(q) \sigma_i + b_i(q))
-  \;\xrightarrow{\text{Markov trace}}\;
+  \xrightarrow{\text{Markov trace}}
   \prod_{i} \hat{V}_i(q)
-  \;=\;
+  = 
   P_{\mathcal{N}}(q)
 $$
 
@@ -173,13 +173,13 @@ The degree of $P_{\mathcal{N}}(q)$ as a polynomial in $q^{1/2}$
 is bounded by:
 
 $$
-  \deg P_{\mathcal{N}} \;\leq\;
+  \deg P_{\mathcal{N}}  \leq 
   \sum_{i=0}^{A-2} (2k_i + 1)
-  \;=\;
+  = 
   A(A-1) + (A-1)
-  \;=\;
+  = 
   (A-1)(A+1)
-  \;=\;
+  = 
   A^2 - 1
 $$
 
@@ -195,11 +195,11 @@ traces converges:
 
 $$
   \frac{\mathrm{tr}(L_0^{-})}{\mathrm{tr}(\mathcal{N})}
-  \;\longrightarrow\;
+   \longrightarrow 
   \frac{1}{\hbar_q}
-  \;=\;
+  = 
   \frac{1}{1 - q^{-1}}
-  \;\approx\; 10.09
+   \approx  10.09
   \quad\text{as } A \to \infty.
 $$
 

@@ -18,20 +18,33 @@ LaTeX label: `prop:reidemeister-action-table`
 
 - [manuscript] §5/reidemeister-action-table
 - [jones1987] https://doi.org/10.2307/1971403
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- The three sectors of the categorical action on a nuclear link. -/
 structure CategoricalAction where
-  gravity : ℝ
-  gauge : ℝ
-  matter : ℝ
+  gravity : R_q
+  gauge : R_q
+  matter : R_q
 
 /-- Total action is the sum of sectors. -/
-noncomputable def CategoricalAction.total (S : CategoricalAction) : ℝ :=
+noncomputable def CategoricalAction.total (S : CategoricalAction) : R_q :=
   S.gravity + S.gauge + S.matter
 
 /-- Classification of braid moves by their effect on the action sectors. -/
@@ -81,8 +94,8 @@ def BraidMove.preservesTrace : BraidMove → Prop
     through the R2 Hecke relation. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] §5/reidemeister-action-table
-theorem reidemeister_action_table (q : ℝ) (hq : 1 < q)
-    (T : ℝ)
+-- theorem reidemeister_action_table (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
+    (T : R_q)
     (h_hecke : T ^ 2 = (q - q⁻¹) * T + 1) :
     -- The gauge sector change from one R2 application is (q - q⁻¹)·T + 1.
     -- The (q - q⁻¹)·T term is the electromagnetic (Coulomb) contribution
@@ -93,7 +106,7 @@ theorem reidemeister_action_table (q : ℝ) (hq : 1 < q)
 /-- At q = 1, the Hecke relation degenerates to T² = 1 (involution),
     and all nuclear configurations at fixed A are degenerate. -/
 -- Ref: [manuscript] §5/reidemeister-action-table
-theorem classical_hecke_involution (T : ℝ) (q : ℝ) (hq : q = 1)
+theorem classical_hecke_involution (T : R_q) (q : R_q) (hq : q = 1)
     (h_hecke : T ^ 2 = (q - q⁻¹) * T + 1) :
     T ^ 2 = 1 := by
   subst hq; simp at h_hecke ⊢; linarith

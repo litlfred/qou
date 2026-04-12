@@ -11,9 +11,9 @@ composition*
 
 $$
   \Phi_1^q \circ \mathrm{CMB}
-  \;\colon\;
+   \colon 
   \pi_0\!\bigl(\mathrm{Bun}^{\circ}\bigr)
-  \;\longrightarrow\;
+   \longrightarrow 
   \mathrm{Bun}^{\circ}(\mathbb{P}(V))
 $$
 
@@ -54,9 +54,9 @@ $\Phi_1^q \circ \mathrm{CMB}$ extends to a functor
 
 $$
   \mathcal{R}
-  \;\colon\;
+   \colon 
   \pi_0(\mathrm{Bun}^{\circ})
-  \;\longrightarrow\;
+   \longrightarrow 
   \pi_0(\mathrm{Bun}^{\circ})
 $$
 

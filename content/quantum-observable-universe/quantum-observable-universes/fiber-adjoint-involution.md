@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)). The Frobenius form
 $\int_A \colon A \to \mathbf{1}$ induces an isomorphism
-$A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under
+$A \xrightarrow{ \sim } A^{\vee}$ (the Frobenius self-duality), under
 which:
 
 1. the projective line object $\mathbb{P}(V)$
@@ -14,7 +14,7 @@ which:
    observability condition:
 
    $$
-     \mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0.
+     \mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0.
    $$
 
 ```tex

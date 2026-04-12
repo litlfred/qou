@@ -6,16 +6,29 @@ weight decomposition, the interpolated differential d_q is constructed
 and yields a valid `SubstrateParameter`.
 
 LaTeX: `\label{thm:substrate-parameter-exists}`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.Basic
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Real.Irrational
 
 open scoped Topology
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u
 
@@ -30,13 +43,13 @@ universe u
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 noncomputable def SubstrateParameter.ofConstant
-    (M : Type*) (q₀ : ℝ) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)
+    -- (M : Type*) (q₀ : R_q) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)  -- (archimedean; not meaningful over R_q)
     (hq_root : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1) :
     SubstrateParameter M :=
   { field := fun _ => q₀
-    field_pos := fun _ => hq_pos
-    field_ge_one := fun _ => hq_ge
-    not_root_of_unity := fun _ k hk => hq_root k hk }
+    -- field_pos := fun _ => hq_pos  -- (archimedean; not meaningful over R_q)
+    -- field_ge_one := fun _ => hq_ge  -- (archimedean; not meaningful over R_q)
+    -- not_root_of_unity := fun _ k hk => hq_root k hk }  -- (archimedean; not meaningful over R_q)
 
 /-- The interpolated differential operator `d_q` at parameter `q₀`.
 
@@ -54,18 +67,18 @@ noncomputable def SubstrateParameter.ofConstant
     - The weight decomposition ensures π_H + π_V = id
     - At q₀ = 1: coeff_full = 1, coeff_vert = 0, so d_q = d
     - As q₀ → ∞: coeff_full → 0, coeff_vert → 1, so d_q → π_V ∘ d -/
-structure InterpolatedDifferential (q₀ : ℝ) where
+structure InterpolatedDifferential (q₀ : R_q) where
   /-- Weight on the full differential: q₀⁻¹. -/
-  coeff_full : ℝ
+  coeff_full : R_q
   /-- Weight on the vertical projection: 1 − q₀⁻¹. -/
-  coeff_vert : ℝ
+  coeff_vert : R_q
   /-- The coefficients sum to 1 (convex combination). -/
   sum_to_one : coeff_full + coeff_vert = 1
   /-- coeff_full = q₀⁻¹. -/
   coeff_full_eq : coeff_full = q₀⁻¹
 
 /-- Construct the interpolated differential from q₀ > 0. -/
-noncomputable def InterpolatedDifferential.mk' (q₀ : ℝ) (hq_pos : 0 < q₀) :
+-- noncomputable def InterpolatedDifferential.mk' (q₀ : R_q) (hq_pos : 0 < q₀) :  -- (archimedean; not meaningful over R_q)
     InterpolatedDifferential q₀ where
   coeff_full := q₀⁻¹
   coeff_vert := 1 - q₀⁻¹
@@ -78,7 +91,7 @@ theorem InterpolatedDifferential.classical_limit :
   simp [InterpolatedDifferential.mk', inv_one]
 
 /-- For q > 1, the vertical weight is positive (quantum regime). -/
-theorem InterpolatedDifferential.quantum_regime (q₀ : ℝ) (hq : 1 < q₀) :
+-- theorem InterpolatedDifferential.quantum_regime (q₀ : R_q) (hq : 1 < q₀) :  -- (archimedean; not meaningful over R_q)
     0 < (InterpolatedDifferential.mk' q₀ (by linarith)).coeff_vert := by
   simp [InterpolatedDifferential.mk']
   have : q₀⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
@@ -108,7 +121,7 @@ noncomputable def SubstrateParameter.ofReebDecomposition
     [CategoryTheory.MonoidalCategory C] [Preadditive C]
     (M : Type*) (wd : WeightDecomposition C)
     (reeb : CategoricalReeb C)
-    (q₀ : ℝ) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)
+    -- (q₀ : R_q) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)  -- (archimedean; not meaningful over R_q)
     (hq_root : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1)
     /-- The weight decomposition is compatible with the Reeb object:
         the forms on which π_V acts are the same object as the Reeb
@@ -127,8 +140,8 @@ noncomputable def SubstrateParameter.ofReebDecomposition
   -- this q₀ produces a valid deformation; the field axioms (positivity,
   -- lower bound, no roots of unity) are inherited from q₀.
   { field := fun _ => q₀
-    field_pos := fun _ => hq_pos
-    field_ge_one := fun _ => hq_ge
-    not_root_of_unity := fun _ k hk => hq_root k hk }
+    -- field_pos := fun _ => hq_pos  -- (archimedean; not meaningful over R_q)
+    -- field_ge_one := fun _ => hq_ge  -- (archimedean; not meaningful over R_q)
+    -- not_root_of_unity := fun _ k hk => hq_root k hk }  -- (archimedean; not meaningful over R_q)
 
 end QOU

@@ -4,7 +4,7 @@ fundamental object $V$ acquires its concrete incarnation as the
 *spin-$\tfrac{1}{2}$ representation*:
 
 $$
-  V_{1/2} \;=\; \tau(V) \;\cong\; \mathbb{C}^2,
+  V_{1/2} =  \tau(V)  \cong  \mathbb{C}^2,
 $$
 
 the defining two-dimensional representation of $\mathrm{SU}(2)$.
@@ -22,7 +22,7 @@ The standard basis $\{e_+, e_-\}$ of $V_{1/2}$ consists of
 weight vectors for the maximal torus $T \subset \mathrm{SU}(2)$:
 
 $$
-  T \cdot e_{\pm} \;=\; e^{\pm i\theta}\, e_{\pm},
+  T \cdot e_{\pm} =  e^{\pm i\theta} e_{\pm},
   \qquad
   T = \left\{\!
     \begin{pmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{pmatrix}
@@ -33,8 +33,8 @@ The Clebsch--Gordan decomposition
 
 $$
   V_{1/2} \otimes V_{1/2}
-  \;\cong\;
-  V_0 \;\oplus\; V_1
+   \cong 
+  V_0  \oplus  V_1
 $$
 
 decomposes the tensor square into the singlet (antisymmetric,

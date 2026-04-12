@@ -5,7 +5,7 @@ Hochschild--Kostant--Rosenberg comparison:
 
 $$
   HH^2(\mathcal{U}_q, \mathrm{Ad})
-  \;\xrightarrow{\;\mathrm{HKR}\;}
+  \xrightarrow{ \mathrm{HKR}}
   H^2(\mathcal{S}, \mathbb{G}_m).
 $$
 

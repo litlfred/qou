@@ -11,11 +11,11 @@ Tritium $\mathcal{N}(1, 2)$ has $A = 3$ nucleons:
 
 $$
   {}^3\mathrm{H}
-  \;=\;
+  = 
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})}_{\mathfrak{p}}
-  \;\bowtie_{\mathrm{Hopf}}\;
+   \bowtie_{\mathrm{Hopf}}
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}_1}
-  \;\bowtie_{\mathrm{Hopf}}\;
+   \bowtie_{\mathrm{Hopf}}
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}_2}
 $$
 
@@ -23,11 +23,11 @@ Helium-3 $\mathcal{N}(2, 1)$ has the same $A = 3$:
 
 $$
   {}^3\mathrm{He}
-  \;=\;
+  = 
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})}_{\mathfrak{p}_1}
-  \;\bowtie_{\mathrm{Hopf}}\;
+   \bowtie_{\mathrm{Hopf}}
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})}_{\mathfrak{p}_2}
-  \;\bowtie_{\mathrm{Hopf}}\;
+   \bowtie_{\mathrm{Hopf}}
   \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}}
 $$
 
@@ -43,7 +43,7 @@ Tritium parent (proton on strands 0-2, neutrons on 3-5 and 6-8):
 
 $$
   \beta_{\mathrm{par}}
-  \;=\;
+  = 
   (\sigma_1 \sigma_2^{-1})^3
   \cdot (\sigma_4 \sigma_5^{-1})^3
   \cdot (\sigma_7 \sigma_8^{-1})^3
@@ -70,35 +70,35 @@ of $\mathfrak{n}_1$, at generator $\sigma_5$.  Before: $d$-$d$
 The **knot equation** for the decay:
 
 $$
-  q \, [\mathcal{N}(1, 2)]
-  \;-\;
+  q  [\mathcal{N}(1, 2)]
+  - 
   q^{-1} [\mathcal{N}(2, 1)]
-  \;=\;
+  = 
   (q^{1/2} - q^{-1/2})
-  \;\left[\;
-    T_{2,3} \;\sqcup\; K_{0_1}
-  \;\right]
+  \left[
+    T_{2,3} \sqcup K_{0_1}
+  \right]
 $$
 
 In expanded link notation:
 
 $$
-  q \;\Big[\;
+  q \Big[
     \mathcal{B}_3^{uud}
     \bowtie \mathcal{B}_3^{udd}
     \bowtie \mathcal{B}_3^{udd}
-  \;\Big]
-  \;-\;
-  q^{-1} \;\Big[\;
+  \Big]
+  - 
+  q^{-1} \Big[
     \mathcal{B}_3^{uud}
     \bowtie \mathcal{B}_3^{uud}
     \bowtie \mathcal{B}_3^{udd}
-  \;\Big]
-  \;=\;
+  \Big]
+  = 
   (q^{1/2} - q^{-1/2})
-  \;\Big[\;
+  \Big[
     T_{2,3} \sqcup K_{0_1}
-  \;\Big]
+  \Big]
 $$
 
 **Markov trace of the transition.**
@@ -120,8 +120,8 @@ $$
 The traces differ only at generators $\sigma_4$ and $\sigma_5$
 (the internal generators of the converting nucleon).  At $\sigma_5$:
 
-- Parent: $d$-$d$ crossing $\Rightarrow$ $(c, d) = (q^2,\; -q(q^{1/2} - q^{-1/2}))$
-- Daughter: $u$-$d$ crossing $\Rightarrow$ $(c, d) = ((1 + q^2)/2,\; -q(q^{1/2} - q^{-1/2})/2)$
+- Parent: $d$-$d$ crossing $\Rightarrow$ $(c, d) = (q^2, -q(q^{1/2} - q^{-1/2}))$
+- Daughter: $u$-$d$ crossing $\Rightarrow$ $(c, d) = ((1 + q^2)/2, -q(q^{1/2} - q^{-1/2})/2)$
 
 **The $Q$-value in pair Skein units.**
 
@@ -130,18 +130,18 @@ At the converting crossing:
 
 $$
   \Delta \mathcal{S}
-  \;=\;
+  = 
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
-  \;=\;
+  = 
   \frac{q \mu_{\mathfrak{d}} + q^{-1} \mu_{\mathfrak{d}}}{q^{1/2} + q^{-1/2}}
-  \;-\;
+  - 
   \frac{q \mu_{\mathfrak{u}} + q^{-1} \mu_{\mathfrak{d}}}{q^{1/2} + q^{-1/2}}
 $$
 
 $$
-  \;=\;
+  = 
   \frac{(q - 1)(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}) + q^{-1}(\mu_{\mathfrak{d}} - \mu_{\mathfrak{d}})}{q^{1/2} + q^{-1/2}}
-  \;=\;
+  = 
   \frac{q(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})}{q^{1/2} + q^{-1/2}}
 $$
 
@@ -167,12 +167,12 @@ The $Q$-value is the sum of pair Skein differences at all 7:
 
 $$
   Q_\beta
-  \;=\;
+  = 
   \sum_{k \in \text{modified}} \left(
     \mathcal{S}_{a_k b_k}^{\mathrm{par}}(q)
     - \mathcal{S}_{a_k b_k}^{\mathrm{dau}}(q)
   \right)
-  \;-\; m_e
+  -  m_e
 $$
 
 This is the exact knot equation for the tritium $Q$-value:

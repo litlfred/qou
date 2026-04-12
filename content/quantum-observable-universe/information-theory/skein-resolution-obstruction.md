@@ -13,10 +13,10 @@ class under the resolution-tree restriction map:
 
 $$
   \kappa_c^{\mathrm{comp}}(L, q)
-  \;=\;
+  = 
   \mathrm{res}_{\mathcal{R}}\!\bigl(\chi(A)\bigr)
-  \;\in\;
-  H^2(\mathcal{R},\, \mathbb{G}_m),
+   \in 
+  H^2(\mathcal{R}, \mathbb{G}_m),
 $$
 
 where $\mathrm{res}_{\mathcal{R}} \colon HH^2(\mathrm{Ad})

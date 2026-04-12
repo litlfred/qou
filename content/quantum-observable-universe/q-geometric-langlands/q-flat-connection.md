@@ -8,7 +8,7 @@ whose total curvature $\nabla_q^2$ equals the **intrinsic
 $q$-curvature** determined by $d_q^2$:
 
 $$
-  \nabla_q^2 = (q - 1)\,\mathcal{F}_q^{\mathrm{intr}},
+  \nabla_q^2 = (q - 1)\mathcal{F}_q^{\mathrm{intr}},
 $$
 
 where $\mathcal{F}_q^{\mathrm{intr}} \in
@@ -19,16 +19,16 @@ under the HKR map
 
 $$
   \mathcal{F}_q^{\mathrm{intr}}
-  \;=\;
+  = 
   \mathrm{HKR}^{-1}(\kappa_0)
-  \;\in\;
-  HH^2(\mathcal{U}_q,\, \mathrm{Ad}).
+   \in 
+  HH^2(\mathcal{U}_q, \mathrm{Ad}).
 $$
 
 In general, a $q$-connection has total curvature
 
 $$
-  \nabla_q^2 = (q - 1)\,\mathcal{F}_q^{\mathrm{intr}}
+  \nabla_q^2 = (q - 1)\mathcal{F}_q^{\mathrm{intr}}
   + \mathcal{F}_q^{\mathrm{conn}},
 $$
 
@@ -44,7 +44,7 @@ A $q$-flat connection is *not* flat in the classical sense
 possible curvature* compatible with the $q$-deformation.  When
 $\kappa_0 \neq 0$ (the perpetual obstruction), $q$-flat
 connections exist but have non-zero total curvature
-$(q-1)\,\mathcal{F}_q^{\mathrm{intr}}$.
+$(q-1)\mathcal{F}_q^{\mathrm{intr}}$.
 
 The category of $q$-flat connections on $X$ with structure group
 $G_q$ is equivalent to the category of $q$-local systems

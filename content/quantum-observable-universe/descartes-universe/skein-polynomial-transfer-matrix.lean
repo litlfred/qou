@@ -12,12 +12,25 @@ LaTeX label: `prop:skein-polynomial-transfer-matrix`
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
 - [manuscript] §6/skein-polynomial-transfer-matrix
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Choose.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Transfer matrix (entries are polynomials in q)
@@ -26,10 +39,10 @@ namespace QOU.Descartes
 /-- A 2×2 transfer matrix with entries in ℝ (specialized from ℤ[q^±½]). -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 structure TransferMatrix where
-  a₁₁ : ℝ
-  a₁₂ : ℝ
-  a₂₁ : ℝ
-  a₂₂ : ℝ
+  a₁₁ : R_q
+  a₁₂ : R_q
+  a₂₁ : R_q
+  a₂₂ : R_q
 
 /-- Transfer matrix multiplication. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
@@ -46,7 +59,7 @@ def TransferMatrix.id : TransferMatrix where
 
 /-- Transfer matrix for a single crossing with coefficients (c, d). -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
-noncomputable def crossingMatrix (q c d : ℝ) : TransferMatrix where
+noncomputable def crossingMatrix (q c d : R_q) : TransferMatrix where
   a₁₁ := c * (q - 1/q) + d
   a₁₂ := c
   a₂₁ := c
@@ -63,14 +76,14 @@ noncomputable def crossingMatrix (q c d : ℝ) : TransferMatrix where
     This is a polynomial in q^½ (rational function that simplifies
     for link invariants by Jones's theorem). -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
-noncomputable def tracedVolumeFromMatrix (q : ℝ) (M : TransferMatrix) : ℝ :=
-  let z := 1 / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
+noncomputable def tracedVolumeFromMatrix (q : R_q) (M : TransferMatrix) : R_q :=
+  let z := 1 / (q ^ (1/2 : R_q) + q ^ (-(1/2 : R_q)))
   z * M.a₁₁ + M.a₂₁
 
 /-- The nuclear Skein polynomial: product of traced volumes.
     P_N(q) = Π_i V̂_i(q). -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
-noncomputable def skeinPolynomial (q : ℝ) (tracedVolumes : List ℝ) : ℝ :=
+noncomputable def skeinPolynomial (q : R_q) (tracedVolumes : List R_q) : R_q :=
   tracedVolumes.foldl (· * ·) 1
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -133,15 +146,15 @@ theorem transfer_matrix_steps (A : ℕ) :
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 structure SubstrateTripleIdentity where
   /-- The single parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 1 (non-classical). -/
-  q_gt_one : 1 < q
+  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
   /-- Algebraic role: the Hecke deformation coefficient. -/
-  hecke_coeff : ℝ := q - 1/q
+  hecke_coeff : R_q := q - 1/q
   /-- Topological role: evaluated Skein polynomial. -/
-  skein_eval : List ℝ → ℝ := skeinPolynomial q
+  skein_eval : List R_q → R_q := skeinPolynomial q
   /-- Physical role: the Descartes substrate parameter. -/
-  descartes_q : ℝ := q
+  descartes_q : R_q := q
 
 /-- All three roles use the same numerical value. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
@@ -161,7 +174,7 @@ theorem triple_identity (s : SubstrateTripleIdentity) :
     This is a polynomial in q evaluated at the physical point. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 noncomputable def Q_q_from_polynomials
-    (P_par P_dau P_e : ℝ) : ℝ :=
+    (P_par P_dau P_e : R_q) : R_q :=
   P_par - P_dau - P_e
 
 /-- Double beta decay: the 2-jet cross-term is nonzero.
@@ -171,15 +184,15 @@ noncomputable def Q_q_from_polynomials
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 structure DoubleBetaCrossTerm where
   /-- Parent Skein polynomial value. -/
-  P_par : ℝ
+  P_par : R_q
   /-- Double-beta daughter value. -/
-  P_2beta : ℝ
+  P_2beta : R_q
   /-- Single-beta₁ daughter value. -/
-  P_beta1 : ℝ
+  P_beta1 : R_q
   /-- Single-beta₂ daughter value. -/
-  P_beta2 : ℝ
+  P_beta2 : R_q
   /-- The cross-term Δ_{p₁p₂}. -/
-  cross_term : ℝ :=
+  cross_term : R_q :=
     (P_2beta - P_par) - (P_beta1 - P_par) - (P_beta2 - P_par)
 
 end QOU.Descartes

@@ -1,7 +1,7 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-03-26T00:10:34.035074+00:00",
+  "computedAt": "2026-04-07T12:33:26.002226+00:00",
   "assertions": [
     {
       "name": "Vol(0_1) \u2014 unknot (neutrino)",
@@ -20,7 +20,7 @@
       "source": "Torus knot (non-hyperbolic)"
     },
     {
-      "name": "Vol(4_1) \u2014 figure-eight (muon)",
+      "name": "Vol(4_1) \u2014 figure-eight (Higgs field / mass mechanism)",
       "computed": 2.029883212819307,
       "expected": 2.02988321281931,
       "tolerance": 1e-10,
@@ -28,7 +28,7 @@
       "source": "OEIS A091518, 3\u00b7Cl\u2082(\u03c0/3)"
     },
     {
-      "name": "Vol(5_1) \u2014 cinquefoil (tau)",
+      "name": "Vol(5_1) \u2014 cinquefoil (muon T_{2,5})",
       "computed": 0.0,
       "expected": 0.0,
       "tolerance": 1e-10,
@@ -44,7 +44,7 @@
       "source": "SnapPy census"
     },
     {
-      "name": "Vol(7_1) \u2014 torus(7,2) (charm quark)",
+      "name": "Vol(7_1) \u2014 septafoil (tau T_{2,7})",
       "computed": 0.0,
       "expected": 0.0,
       "tolerance": 1e-10,
@@ -93,5 +93,5 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12
+  "durationMs": 8
 }

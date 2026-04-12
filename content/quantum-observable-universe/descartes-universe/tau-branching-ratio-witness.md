@@ -6,13 +6,13 @@ compares with the PDG experimental branching ratio.
 
 The $T_{3,5} = (\sigma_0 \sigma_1)^5$ weak vertex in $H_3(q)$
 reduces (38 Hecke + 18 Yang–Baxter steps) to **6 NF terms**
-in the standard basis $\{\nu, H^0, H^1, L_+, L_-, e^-\}$:
+in the standard basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$:
 
 | Basis element | Word | Coefficient | Fraction |
 |:---:|:---:|:---:|:---:|
-| $\nu$ ($\mathbf{1}$) | $()$ | $+0.0893$ | $3.9\%$ |
-| $H^0$ ($\sigma_0$) | $(0)$ | $+0.2369$ | $10.2\%$ |
-| $H^1$ ($\sigma_1$) | $(1)$ | $+0.2369$ | $10.2\%$ |
+| $\gamma$ ($\mathbf{1}$) | $()$ | $+0.0893$ | $3.9\%$ |
+| $\sigma_0$ | $(0)$ | $+0.2369$ | $10.2\%$ |
+| $\sigma_1$ | $(1)$ | $+0.2369$ | $10.2\%$ |
 | $L_+$ ($\sigma_0\sigma_1$) | $(0,1)$ | $+0.1388$ | $6.0\%$ |
 | $L_-$ ($\sigma_1\sigma_0$) | $(1,0)$ | $+1.1388$ | $49.2\%$ |
 | $e^-$ ($\sigma_0\sigma_1\sigma_0$) | $(0,1,0)$ | $+0.4750$ | $20.5\%$ |
@@ -56,9 +56,9 @@ with experiment.
 **PDG 2024 experimental values:**
 
 $$
-  \mathrm{BR}(\tau \to e\,\bar\nu_e\,\nu_\tau) = 17.82\%,
+  \mathrm{BR}(\tau \to e\bar\nu_e\nu_\tau) = 17.82\%,
   \qquad
-  \mathrm{BR}(\tau \to \mu\,\bar\nu_\mu\,\nu_\tau) = 17.39\%,
+  \mathrm{BR}(\tau \to \mu\bar\nu_\mu\nu_\tau) = 17.39\%,
 $$
 
 $$

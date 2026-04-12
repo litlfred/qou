@@ -6,10 +6,10 @@ bundle** at $p$ is the principal $U(1)$-bundle
 
 $$
   \mathcal{R}_p
-  \;=\;
-  \bigl(\,
-    S^3 \;\xrightarrow{\;\pi_H\;}\; \mathcal{S}_p \cong S^2,
-  \;\xi_q\,\bigr),
+  = 
+  \bigl(
+    S^3 \xrightarrow{\pi_H} \mathcal{S}_p \cong S^2,
+  \xi_q\bigr),
 $$
 
 where $\pi_H$ is the Hopf fibration and $\xi_q$ is the

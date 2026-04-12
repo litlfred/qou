@@ -1,7 +1,7 @@
 {
   "computation": "nuclear-braid-reduction",
-  "description": "Gr\u00f6bner reduction of nuclear braid words in H_n(q)",
-  "timestamp": "2026-03-26T23:17:49.079920+00:00",
+  "description": "Gr\u00f6bner--Shirshov reduction of nuclear braid words in H_n(q)",
+  "timestamp": "2026-04-07T14:55:20.675541+00:00",
   "parameters": {
     "q": 1.11
   },
@@ -23,19 +23,19 @@
       "reduced_terms": 2,
       "unreduced_max_len": 1,
       "reduced_max_len": 1,
-      "unreduced_weight": 1.17399609564069,
-      "reduced_weight": 1.17399609564069
+      "unreduced_weight": 1.1045495495495496,
+      "reduced_weight": 1.1045495495495496
     },
     {
       "nucleus": "3H",
       "p": 1,
       "n": 2,
       "unreduced_terms": 6,
-      "reduced_terms": 4,
+      "reduced_terms": 2,
       "unreduced_max_len": 3,
-      "reduced_max_len": 2,
-      "unreduced_weight": 1.8578929278194014,
-      "reduced_weight": 1.8602709254145515
+      "reduced_max_len": 1,
+      "unreduced_weight": 1.4751368201037054,
+      "reduced_weight": 1.222315287760551
     },
     {
       "nucleus": "3He",
@@ -45,19 +45,19 @@
       "reduced_terms": 4,
       "unreduced_max_len": 3,
       "reduced_max_len": 2,
-      "unreduced_weight": 1.3782668325795842,
-      "reduced_weight": 1.5161795095301673
+      "unreduced_weight": 1.220029707410113,
+      "reduced_weight": 1.220029707410113
     },
     {
       "nucleus": "4He",
       "p": 2,
       "n": 2,
       "unreduced_terms": 18,
-      "reduced_terms": 8,
+      "reduced_terms": 2,
       "unreduced_max_len": 6,
-      "reduced_max_len": 3,
-      "unreduced_weight": 2.560672200897657,
-      "reduced_weight": 2.6182290039896716
+      "reduced_max_len": 2,
+      "unreduced_weight": 1.7997107430210082,
+      "reduced_weight": 1.2356759374036257
     },
     {
       "nucleus": "6Li",
@@ -67,8 +67,8 @@
       "reduced_terms": 32,
       "unreduced_max_len": 15,
       "reduced_max_len": 5,
-      "unreduced_weight": 10.37676550052731,
-      "reduced_weight": 10.468104663841167
+      "unreduced_weight": 4.325661375242017,
+      "reduced_weight": 2.1507124208071176
     }
   ]
 }

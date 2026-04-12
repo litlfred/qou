@@ -6,15 +6,28 @@ The `q`-deformed Lie bracket on derivations of `A`:
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic
 import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 open CategoryTheory MonoidalCategory
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u v
 
@@ -29,7 +42,7 @@ universe u v
     LaTeX: `\label{def:categorical-q-lie-bracket}`
     Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 structure CategoricalQLieBracket (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] [Preadditive C] [Linear ℝ C] where
+    [MonoidalCategory C] [Preadditive C] [Linear R_q C] where
   /-- The Frobenius–Hopf object `A`. -/
   A : C
   /-- The classical Lie bracket `[−, −] : End(A) × End(A) → End(A)`. -/
@@ -39,7 +52,7 @@ structure CategoricalQLieBracket (C : Type u) [Category.{v} C]
   /-- The canonical 1-form `θ_A : A → 𝟙`, dual to `ξ`. -/
   theta : A ⟶ (𝟙_ C)
   /-- The deformation parameter `q`, non-zero. -/
-  q : ℝ
+  q : R_q
   q_ne_zero : q ≠ 0
 
 /-- The q-deformed bracket evaluated on two derivations.
@@ -48,7 +61,7 @@ structure CategoricalQLieBracket (C : Type u) [Category.{v} C]
 
     In a preadditive ℝ-linear category, this is a well-defined endomorphism. -/
 noncomputable def CategoricalQLieBracket.q_bracket {C : Type u}
-    [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear ℝ C]
+    [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear R_q C]
     (qlb : CategoricalQLieBracket C) (X Y : qlb.A ⟶ qlb.A) :
     qlb.A ⟶ qlb.A :=
   qlb.q⁻¹ • qlb.bracket X Y +
@@ -56,7 +69,7 @@ noncomputable def CategoricalQLieBracket.q_bracket {C : Type u}
 
 /-- At `q = 1`, the q-bracket reduces to the classical bracket. -/
 theorem CategoricalQLieBracket.q_bracket_classical {C : Type u}
-    [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear ℝ C]
+    [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear R_q C]
     (qlb : CategoricalQLieBracket C) (hq : qlb.q = 1) (X Y : qlb.A ⟶ qlb.A) :
     qlb.q_bracket X Y = qlb.bracket X Y := by
   simp [q_bracket, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]

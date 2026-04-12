@@ -25,7 +25,7 @@ from hecke_division import HeckeDivision, HeckeElement
 from experimental_constants import *
 
 div = HeckeDivision(q_val=q)
-HA = q - qi; S = q**0.5 - qi**0.5; Z_m = 1/(q**0.5 + qi**0.5)
+HA = q - qi; Z_m = 1/(q**0.5 + qi**0.5)
 LN_Q = math.log(q); mu_0 = M_E_MEV / (3 * E_CROSS)
 
 def log_q(x):
@@ -119,8 +119,8 @@ def mixing_op_inv(n):
 
 def crossing_coeffs(ti, tj):
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return q**2, -q*S
-    else: return (1+q**2)/2, -q*S/2
+    elif ti == 'n' and tj == 'n': return 1.0, -HA
+    else: return 1.0, -HA/2
 
 def T_mat(c, d):
     return [[c*HA+d, c], [c, d]]

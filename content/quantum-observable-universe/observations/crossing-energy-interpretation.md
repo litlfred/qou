@@ -19,8 +19,8 @@ cancellation result gives:
 
 $$
   \mathbf{E}_{\mathrm{cross}}(e^-) + \mathbf{E}_{\mathrm{cross}}(e^+)
-  \;=\; 6\sinh(\ln q)
-  \;\approx\; 0.630 \quad (\text{Skein units}).
+  =  6\sinh(\ln q)
+   \approx  0.630 \quad (\text{Skein units}).
 $$
 
 The symmetric (strong) contributions cancel.  The residual
@@ -32,7 +32,7 @@ apart.
 At $q = q_0$:
 
 $$
-  \tanh(\ln q_0) \;\approx\; 0.104.
+  \tanh(\ln q_0)  \approx  0.104.
 $$
 
 Electromagnetism is approximately **10\%** of the strong force at the
@@ -43,9 +43,9 @@ crossings:
 
 | Quantity | Formula | $T_{2,3}$ ($n_c = 3$) | Value |
 |----------|---------|----------------------|-------|
-| Total crossing energy | $n_c\,q$ | $3q$ | $3.330$ |
-| Strong component | $n_c\,\cosh(\ln q)$ | $3\cosh(\ln q)$ | $3.015$ |
-| Coulomb component | $n_c\,\sinh(\ln q)$ | $3\sinh(\ln q)$ | $0.315$ |
+| Total crossing energy | $n_cq$ | $3q$ | $3.330$ |
+| Strong component | $n_c\cosh(\ln q)$ | $3\cosh(\ln q)$ | $3.015$ |
+| Coulomb component | $n_c\sinh(\ln q)$ | $3\sinh(\ln q)$ | $0.315$ |
 | Pair net energy | $n_c(q - q^{-1})$ | $3(q - q^{-1})$ | $0.630$ |
 | EM/strong ratio | $\tanh(\ln q)$ | $\tanh(\ln q)$ | $0.104$ |
 

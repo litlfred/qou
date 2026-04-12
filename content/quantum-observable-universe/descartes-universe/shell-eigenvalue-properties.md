@@ -1,7 +1,7 @@
 **Eigenvalue properties:**
 - $\lambda_+ \cdot \lambda_- = \det T_{\gamma e} = -1$
   (so $\lambda_- = -1/\lambda_+$)
-- $\lambda_+ + \lambda_- = \mathrm{tr}\, T_{\gamma e} = q - q^{-1}$
+- $\lambda_+ + \lambda_- = \mathrm{tr} T_{\gamma e} = q - q^{-1}$
 - $\lambda_+ > 1 > |\lambda_-|$ for all $q > 1$
 - At $q = 1$: $\lambda_+ = 1$, $\lambda_- = -1$ (degenerate)
 
@@ -25,7 +25,7 @@ electron-nucleus generator is a **tensor product**:
 
 $$
   T_{\mathrm{total}}^{(i)}
-  \;=\;
+  = 
   \bigotimes_{e=1}^{Z} T_{\gamma e}^{(e, i)}
 $$
 

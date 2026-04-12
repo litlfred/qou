@@ -7,7 +7,7 @@ sublocus**:
 
 $$
   \mathrm{LocSys}_{\check{G}_q}^{(n)}(X)
-  \;\subset\;
+  \subset
   \mathrm{LocSys}_{\check{G}_q}(X)
 $$
 
@@ -26,7 +26,7 @@ $\varrho$.  Then:
    $$
      \mathbb{L}_q^{(n)} \colon
      \mathcal{D}_q^{(n)}\text{-}\mathrm{mod}(\mathrm{Bun}_{G_q})
-     \;\xrightarrow{\;\sim\;}
+     \xrightarrow{ \sim }
      \mathrm{QCoh}(\mathrm{LocSys}_{\check{G}_q}^{(n)}(X)),
    $$
    where $\mathcal{D}_q^{(n)}$ consists of

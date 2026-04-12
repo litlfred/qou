@@ -599,6 +599,17 @@ impl Eng {
         }
         stable.retain(|_, c| !c.is_zero());
         elem.terms = stable;
+
+        // Inline GCD reduction: keep BigInt sizes bounded
+        let gv = elem.terms.values()
+            .filter(|c| !c.is_zero())
+            .map(|c| c.min_v2())
+            .min().unwrap_or(0);
+        if gv > 0 {
+            for c in elem.terms.values_mut() {
+                *c = c.shift_v2(gv);
+            }
+        }
     }
 
     fn strip_with_pauli(terms: &mut FxHashMap<W, LPoly>) -> SymPauliAcc {
@@ -650,7 +661,7 @@ impl Eng {
         // For A > 12: eager stripping keeps memory bounded, but the final
         // strip may leave extra words (orphaned by early prefix removal).
         let no_mid_strip = a <= 12;
-        let strip_after = if no_mid_strip { 999 } else if a > 9 { 8 } else { 999 };
+        let strip_after = if no_mid_strip { 999 } else { 2 };  // strip from strand 2 onwards for A > 10
         let mut total_mid_strips: u64 = 0;
         let eager = !no_mid_strip && mid_threshold == 0;
         let effective_threshold = if eager { usize::MAX } else { mid_threshold };
@@ -663,7 +674,9 @@ impl Eng {
                 Self::multiply_and_reduce(&mut elem, i as u8, &c, &d, dbl, &ha);
 
                 // Strip condition: eager (always) or threshold exceeded
-                let should_strip = (eager && k >= strip_after)
+                // Strip aggressively for large A: after EVERY crossing when A > 16
+                let should_strip = (a > 16)
+                    || (eager && k >= strip_after)
                     || elem.n_terms() > effective_threshold;
 
                 if should_strip {
@@ -671,6 +684,18 @@ impl Eng {
                     let removed = Self::strip_with_pauli(&mut elem.terms);
                     accum.merge(&removed);
                     total_mid_strips += 1;
+                    // GCD reduction: divide out common power of 2 from ALL LPoly coefficients
+                    // Each elem.terms[w] is a LPoly. Find min v2 across all BigInt coeffs
+                    // in all LPolys, then shift all of them.
+                    let global_min_v2 = elem.terms.values()
+                        .filter(|lp| !lp.is_zero())
+                        .map(|lp| lp.min_v2())
+                        .min().unwrap_or(0);
+                    if global_min_v2 > 0 {
+                        for lp in elem.terms.values_mut() {
+                            *lp = lp.shift_v2(global_min_v2);
+                        }
+                    }
                     let ms = tc.elapsed().as_millis();
                     if ms > 50 || n_pre > 1000 {
                         eprintln!("    ({},{}) {}-{}: {} → {} → {} words (strip), {}ms",
@@ -696,8 +721,19 @@ impl Eng {
                 let n_pre = elem.n_terms();
                 let removed = Self::strip_with_pauli(&mut elem.terms);
                 accum.merge(&removed);
-                eprintln!("  strand {}/{}: {} → {} words, coeff~10^{:.0}, {:.0}MB, {:.1}s [{}s]",
-                    k, a - 1, n_pre, elem.n_terms(), mc, mb, elapsed, total_mid_strips);
+                // GCD reduction at strand boundary
+                let global_min_v2 = elem.terms.values()
+                    .filter(|lp| !lp.is_zero())
+                    .map(|lp| lp.min_v2())
+                    .min().unwrap_or(0);
+                if global_min_v2 > 0 {
+                    for lp in elem.terms.values_mut() {
+                        *lp = lp.shift_v2(global_min_v2);
+                    }
+                }
+                let mc2 = elem.max_coeff_log10();
+                eprintln!("  strand {}/{}: {} → {} words, coeff~10^{:.0}→{:.0}, {:.0}MB, {:.1}s [{}s]",
+                    k, a - 1, n_pre, elem.n_terms(), mc, mc2, mb, elapsed, total_mid_strips);
             } else {
                 eprintln!("  strand {}/{}: {} words, coeff~10^{:.0}, {:.0}MB, {:.1}s",
                     k, a - 1, elem.n_terms(), mc, mb, elapsed);
@@ -734,18 +770,19 @@ fn main() {
     let t0 = Instant::now();
     let (mut elem, accum) = Eng::build(z, n, mid_threshold);
 
-    let mut total = accum.clone();
-    let mut kept = SymPauliAcc::zero();
-    kept.add_from_elem(&elem);
-    total.merge(&kept);
-
     // Final full strip: the mid-construction strip can't remove all words
     // because prefixes created by later crossings weren't present yet.
     // Now that construction is complete, iterate I9+I8 to convergence.
     let pre_final = elem.n_terms();
     let final_removed = Eng::strip_with_pauli(&mut elem.terms);
-    total.merge(&final_removed);
     let post_final = elem.n_terms();
+
+    // Accumulate: mid-construction stripped + final stripped + remaining survivors
+    let mut total = accum.clone();
+    total.merge(&final_removed);
+    let mut kept = SymPauliAcc::zero();
+    kept.add_from_elem(&elem);  // only survivors after final strip
+    total.merge(&kept);
     if pre_final != post_final {
         eprintln!("\n  Final strip: {} → {} words ({} absorbed)",
             pre_final, post_final, pre_final - post_final);

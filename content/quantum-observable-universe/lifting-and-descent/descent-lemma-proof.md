@@ -30,7 +30,7 @@ unchanged since we recover the original object $A$.
 
 *Step 4: The descent homomorphism.*
 Applying the fibre functor $\tau$ to $r_n$ yields
-$\mathfrak{d}_n\colon \Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2)) \to \Gamma(J^1 \mathcal{S}_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
+$\mathfrak{d}_n\colon \Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2)) \to \Gamma(J^1 \mathcal{S}_{n-1}, \mathrm{SU}_{q_{n-1}}(2))$.
 This is a $*$-homomorphism because $r_n$ preserves multiplication and
 the antipode.  Surjectivity follows from the fact that the ascent map
 $\ell_n$ of [jet prolongation](#prop:jet-prolongation) is injective (it

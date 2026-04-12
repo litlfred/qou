@@ -55,13 +55,13 @@ per strange quark (replacing $\mathfrak{d} \to \mathfrak{s}$) is
 
 $$
   \delta M_{\mathrm{Skein}}
-  \;\approx\;
+   \approx 
   \frac{|J_{\mathfrak{s}}| - |J_{\mathfrak{d}}|}{|J_{\mathfrak{d}}|}
-  \;\times\;
+   \times 
   \frac{V_B}{\hbar_q^2}
-  \;\approx\;
+   \approx 
   0.225 \times 749
-  \;\approx\; 168 \;\text{Skein units}.
+   \approx  168  \text{Skein units}.
 $$
 
 The crossing-energy gain from the extra $2$ negative crossings is
@@ -88,12 +88,12 @@ In physical units, scaling by the proton mass:
 
 $$
   E_F^{(\mathrm{threshold})}
-  \;\approx\;
-  \frac{168}{749} \times 938 \;\mathrm{MeV}
-  \;\approx\; 210 \;\mathrm{MeV}.
+   \approx 
+  \frac{168}{749} \times 938  \mathrm{MeV}
+   \approx  210  \mathrm{MeV}.
 $$
 
-This corresponds to a density $\rho_{\mathrm{hyp}} \approx 2\text{--}3\,\rho_0$ (two to three times nuclear saturation
+This corresponds to a density $\rho_{\mathrm{hyp}} \approx 2\text{--}3\rho_0$ (two to three times nuclear saturation
 density), consistent with the onset of hyperonic matter in
 nuclear physics calculations.  Above this density:
 
@@ -102,13 +102,13 @@ nuclear physics calculations.  Above this density:
 2. The $4/3$ crossing-energy advantage of strange quarks creates
    a **positive feedback**: more strange quarks lower the Fermi
    energy, allowing even more strange quarks.
-3. At $\rho \gtrsim 5\,\rho_0$, the matter is approximately
+3. At $\rho \gtrsim 5\rho_0$, the matter is approximately
    equal in $(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ —
    this IS a strangelet.
 
 **The inner cores of massive neutron stars are strangelets.**
-A $2\,M_\odot$ neutron star has central density
-$\rho_c \approx 5\text{--}8\,\rho_0$, well above the hyperon
+A $2M_\odot$ neutron star has central density
+$\rho_c \approx 5\text{--}8\rho_0$, well above the hyperon
 threshold.  The core is a macroscopic strangelet: an
 electromagnetically neutral, color-confined lump of strange
 quark matter, stabilized by gravity and Fermi pressure.

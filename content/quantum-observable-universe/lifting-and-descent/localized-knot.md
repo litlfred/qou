@@ -3,13 +3,13 @@ projective line object $\mathbb{P}(V) = G/T$
 ([Definition](#def:projective-line-object)).  A *localized knot* is a pair
 
 $$
-  (p, K) \;\in\; \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A^{\mathrm{co}\,T})
-  \;\times\; \mathrm{Knot}
+  (p, K)  \in  \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A^{\mathrm{co}T})
+   \times  \mathrm{Knot}
 $$
 
 where:
 
-- $p \colon \mathbf{1} \to A^{\mathrm{co}\,T}$ is a categorical point of the
+- $p \colon \mathbf{1} \to A^{\mathrm{co}T}$ is a categorical point of the
   projective line ([Definition](#def:categorical-point)), and
 - $K$ is a knot type — an equivalence class of smooth embeddings
   $S^1 \hookrightarrow S^3$ under ambient isotopy.

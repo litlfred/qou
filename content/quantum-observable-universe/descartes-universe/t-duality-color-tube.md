@@ -6,7 +6,7 @@ giving dual color tube coordinate $c' = z - X = -c$.  Hence
 
 ```tex
 \begin{equation}\label{eq:t-duality-color-tube}
-  \iota \colon (c,\, z) \;\longmapsto\; (-c,\; c + z).
+  \iota \colon (c, z)  \longmapsto  (-c, c + z).
 \end{equation}
 ```
 
@@ -15,5 +15,5 @@ The symmetry $F(X,z) = F(z,X)$
 the color tube cubic: the cubic at
 parameter $z$ with root $c$ is carried by $\iota$ to the cubic at
 parameter $c + z$ with root $-c$.  One verifies this directly from
-$F(c+z,\, z) = F(z,\, c+z)$, since $F(z, c+z)$ is the color tube
+$F(c+z, z) = F(z, c+z)$, since $F(z, c+z)$ is the color tube
 cubic at parameter $c+z$ evaluated at $-c$.

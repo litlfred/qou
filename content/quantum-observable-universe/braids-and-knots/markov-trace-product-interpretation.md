@@ -3,19 +3,19 @@ each vertex volume $\hat{V}_i$ is the **correlation function** of a
 single vertex operator insertion:
 
 $$
-  \hat{V}_i(q) \;=\;
-  \bigl\langle\, Y(\sigma_i, z_i) \,\bigr\rangle_{\mathrm{Markov}}.
+  \hat{V}_i(q) = 
+  \bigl\langle Y(\sigma_i, z_i) \bigr\rangle_{\mathrm{Markov}}.
 $$
 
 The product formula is the **factorization of the $n$-point
 correlation function** into one-point functions:
 
 $$
-  \bigl\langle\, Y(\sigma_0, z_0) \cdots Y(\sigma_{n-2}, z_{n-2})
-  \,\bigr\rangle
-  \;=\;
+  \bigl\langle Y(\sigma_0, z_0) \cdots Y(\sigma_{n-2}, z_{n-2})
+  \bigr\rangle
+  = 
   \prod_{i=0}^{n-2}
-  \bigl\langle\, Y(\sigma_i, z_i) \,\bigr\rangle.
+  \bigl\langle Y(\sigma_i, z_i) \bigr\rangle.
 $$
 
 This factorization is **not** an approximation --- it is an exact
@@ -35,13 +35,13 @@ bounded by $\sum_i (2k_i + 1) \leq (n-1)(n+1) = n^2 - 1$.
 
 $$
   \mathbb{Z}[B_n]
-  \;\xrightarrow{\text{Hecke quotient}}\;
+  \xrightarrow{\text{Hecke quotient}}
   H_n(q)
-  \;\xrightarrow{\text{chain reduction}}\;
+  \xrightarrow{\text{chain reduction}}
   \prod_{i} (a_i \sigma_i + b_i)
-  \;\xrightarrow{\text{Markov trace}}\;
+  \xrightarrow{\text{Markov trace}}
   \prod_{i} \hat{V}_i(q)
-  \;=\;
+  = 
   P_\beta(q)
 $$
 

@@ -1,13 +1,13 @@
 The [adjoint trace](#rem:adjoint-trace) induces a canonical inner
 product on intertwiner spaces. For
-$\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\, V_{1/2}^{\otimes n})$, define
+$\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j, V_{1/2}^{\otimes n})$, define
 
 $$
   \langle \phi, \psi \rangle_{\mathrm{PL}}
-  \;=\;
+  = 
   \mathrm{tr}_{\mathrm{Ad}}\!\bigl(\phi^{\dagger} \circ \psi\bigr)
-  \;=\;
-  \int_A \!\circ\; \mu \circ
+  = 
+  \int_A \!\circ \mu \circ
     (\phi^{\dagger} \circ \psi \otimes \mathrm{id})
     \circ \mathrm{coev}_{V_j}.
 $$
@@ -17,7 +17,7 @@ $$
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
   \mathbf{1} \ar[r, "\mathrm{coev}_{V_j}"]
   & V_j \otimes V_j^{\vee}
-    \ar[r, "\phi^{\dagger} \circ \psi \,\otimes\, \mathrm{id}"]
+    \ar[r, "\phi^{\dagger} \circ \psi \otimes \mathrm{id}"]
   & A \otimes V_j^{\vee}
     \ar[r, "\int_A \circ \mu"]
   & \mathbf{1}
@@ -31,8 +31,8 @@ $\{T_{\lambda}\}$ is *orthogonal* with respect to this pairing:
 
 $$
   \langle T_{\lambda}, T_{\mu} \rangle_{\mathrm{PL}}
-  \;=\;
-  \delta_{\lambda\mu}\; \|T_{\lambda}\|^2,
+  = 
+  \delta_{\lambda\mu} \|T_{\lambda}\|^2,
 $$
 
 where the norm-squared $\|T_{\lambda}\|^2$ is a positive rational

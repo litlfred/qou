@@ -8,12 +8,25 @@ For generic z this is an elliptic curve whose j-invariant varies as a
 rational function of z.
 
 LaTeX label: `prop:coral-elliptic`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Tactic.Ring
 
 namespace QOU.Brings
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Coral elliptic fibre data** at spacetime ratio z.
 
@@ -42,21 +55,21 @@ def coralCubic (R : Type*) [CommRing R] (z X : R) : R :=
     which simplifies, showing the structure. Here we verify a key identity:
     the constant coefficient equals (z+1)(z²+1) − z. -/
 -- Ref: [manuscript] §5, Coral fibration
-theorem constant_coeff_identity (z : ℝ) :
+theorem constant_coeff_identity (z : R_q) :
     z ^ 3 + z ^ 2 + z + 1 = (z + 1) * (z ^ 2 + 1) := by ring
 
 /-- The sum of coefficients (evaluating at X = 1) equals 4(z+1)
     which vanishes at z = −1, confirming X = 1 is not generically a root. -/
 -- Ref: [manuscript] §5, Coral fibration
-theorem coral_cubic_at_one (z : ℝ) :
-    coralCubic ℝ z 1 = 4 * (z + 1) := by
+theorem coral_cubic_at_one (z : R_q) :
+    coralCubic R_q z 1 = 4 * (z + 1) := by
   unfold coralCubic
   ring
 
 /-- At z = 0, the cubic specialises to X³ + X² + X + 1 = (X+1)(X²+1). -/
 -- Ref: [manuscript] §5, Coral fibration
-theorem coral_cubic_at_z_zero (X : ℝ) :
-    coralCubic ℝ 0 X = X ^ 3 + X ^ 2 + X + 1 := by
+theorem coral_cubic_at_z_zero (X : R_q) :
+    coralCubic R_q 0 X = X ^ 3 + X ^ 2 + X + 1 := by
   unfold coralCubic
   ring
 

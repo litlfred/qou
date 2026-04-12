@@ -21,8 +21,8 @@ $Z \leq 4$, with closed sub-Hopf links indicated.
 |----:|------|----:|-----------|---:|--------|
 | 1 | H | 0 | $[\mathfrak{p}] \bowtie T_{2,3}$ | 0 | $1s^1$ |
 | 2 | He | 2 | $[\alpha] \bowtie [T_{2,3} \bowtie T_{2,3}]^*$ | 1 | $1s^2$ ${}^*$ |
-| 3 | Li | 4 | $[3\mathfrak{p}\,4\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie T$ | 1 | $1s^2 + 2s^1$ |
-| 4 | Be | 5 | $[4\mathfrak{p}\,5\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie [T \bowtie T]^*$ | 2 | $1s^2 + 2s^2$ |
+| 3 | Li | 4 | $[3\mathfrak{p}4\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie T$ | 1 | $1s^2 + 2s^1$ |
+| 4 | Be | 5 | $[4\mathfrak{p}5\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie [T \bowtie T]^*$ | 2 | $1s^2 + 2s^2$ |
 
 $T = T_{2,3}$ (trefoil). Brackets $[\cdots]^*$ denote a
 **closed sub-Hopf link** — a sub-link that splits from the

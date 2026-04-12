@@ -6,7 +6,7 @@ $G = \mathrm{SU}(2)$.
 cycle $\varrho$ decomposes according to the eigenspace splitting:
 
 $$
-  \mathfrak{m}(\varrho) \;=\; \mathfrak{m}_{\mathrm{desc}}(\varrho) + \mathfrak{m}_{\mathrm{trans}}(\varrho),
+  \mathfrak{m}(\varrho) =  \mathfrak{m}_{\mathrm{desc}}(\varrho) + \mathfrak{m}_{\mathrm{trans}}(\varrho),
 $$
 
 where $\mathfrak{m}_{\mathrm{desc}} = \lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \rVert$
@@ -21,7 +21,7 @@ fibration $\mathrm{SU}(2) \to \mathbb{CP}^1$, the descended mass of
 the fundamental cycle is
 
 $$
-  \mathfrak{m}_{\mathrm{desc}} \;=\; \chi(\mathbb{CP}^1) \;=\; 2,
+  \mathfrak{m}_{\mathrm{desc}} =  \chi(\mathbb{CP}^1) =  2,
 $$
 
 the Euler characteristic of $\mathbb{CP}^1 \cong S^2$. This is the

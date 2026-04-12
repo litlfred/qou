@@ -5,16 +5,16 @@ gives a direct sum decomposition
 
 $$
   \mathrm{End}_{\mathbf{C}}(A_{n+1})
-  \;=\;
-  \mathrm{im}\,\hat{\tau}_n \;\oplus\; \ker\,\hat{\tau}_n.
+  = 
+  \mathrm{im}\hat{\tau}_n  \oplus  \ker\hat{\tau}_n.
 $$
 
 Indeed, every $\alpha \in \mathrm{End}_{\mathbf{C}}(A_{n+1})$ decomposes
 uniquely as $\alpha = \hat{\tau}_n(\alpha) + (\alpha - \hat{\tau}_n(\alpha))$, where
-$\hat{\tau}_n(\hat{\tau}_n(\alpha)) = \hat{\tau}_n(\alpha)$ (so $\hat{\tau}_n(\alpha) \in \mathrm{im}\,\hat{\tau}_n$) and
+$\hat{\tau}_n(\hat{\tau}_n(\alpha)) = \hat{\tau}_n(\alpha)$ (so $\hat{\tau}_n(\alpha) \in \mathrm{im}\hat{\tau}_n$) and
 $\hat{\tau}_n(\alpha - \hat{\tau}_n(\alpha)) = \hat{\tau}_n(\alpha) - \hat{\tau}_n(\alpha) = 0$
-(so $\alpha - \hat{\tau}_n(\alpha) \in \ker\,\hat{\tau}_n$).  The two summands
-intersect trivially: if $\alpha \in \mathrm{im}\,\hat{\tau}_n \cap \ker\,\hat{\tau}_n$, then $\alpha = \hat{\tau}_n(\beta)$ for some $\beta$ and
+(so $\alpha - \hat{\tau}_n(\alpha) \in \ker\hat{\tau}_n$).  The two summands
+intersect trivially: if $\alpha \in \mathrm{im}\hat{\tau}_n \cap \ker\hat{\tau}_n$, then $\alpha = \hat{\tau}_n(\beta)$ for some $\beta$ and
 $0 = \hat{\tau}_n(\alpha) = \hat{\tau}_n^2(\beta) = \hat{\tau}_n(\beta) = \alpha$.
 
 When $\mathrm{End}_{\mathbf{C}}(A_{n+1})$ carries a $*$-involution

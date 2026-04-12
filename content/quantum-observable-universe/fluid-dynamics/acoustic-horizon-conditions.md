@@ -7,7 +7,7 @@ acoustic geometry
 
 $$
   g_{\mathrm{ac}}
-  \;=\;
+  = 
   \frac{\rho}{c_s}
   \begin{pmatrix}
     -(c_s^2 - |v|^2) & -v^T \\
@@ -25,8 +25,8 @@ the sound speed is
 
 $$
   c_s^2
-  \;=\;
-  c_q^2\,\Bigl(1 - \frac{\hbar_q^2}{4\rho}\,
+  = 
+  c_q^2\Bigl(1 - \frac{\hbar_q^2}{4\rho}
   \Delta_q\!\left(\frac{1}{\sqrt{\rho}}\right)
   \cdot \sqrt{\rho}\Bigr),
 $$
@@ -56,7 +56,7 @@ $|v| = c_s$.  Three conditions must hold simultaneously:
 3. **Energy condition.**  The effective energy density
    $T_{00} = \frac{1}{2}\rho(|v|^2 + c_s^2) + Q_q\rho$
    satisfies the null energy condition
-   $T_{\mu\nu}\,k^\mu k^\nu \geq 0$ for all null vectors $k^\mu$
+   $T_{\mu\nu}k^\mu k^\nu \geq 0$ for all null vectors $k^\mu$
    of $g_{\mathrm{ac}}$.  This is automatically satisfied when
    $\rho > 0$ and $Q_q \geq 0$.
 
@@ -65,8 +65,8 @@ At an acoustic horizon, the surface gravity is
 
 $$
   \kappa_H
-  \;=\;
-  \frac{1}{2}\,\frac{\partial(c_s^2 - |v|^2)}{\partial n}
+  = 
+  \frac{1}{2}\frac{\partial(c_s^2 - |v|^2)}{\partial n}
   \bigg|_\Sigma,
 $$
 
@@ -76,16 +76,16 @@ the Hawking temperature
 
 $$
   T_H
-  \;=\;
-  \frac{\hbar_q\,\kappa_H}{2\pi\,c_s}.
+  = 
+  \frac{\hbar_q\kappa_H}{2\pic_s}.
 $$
 
 In the brane fluid, $\hbar_q = (q-1)/q$, so:
 
 $$
   T_H
-  \;=\;
-  \frac{(q-1)}{2\pi q}\,
+  = 
+  \frac{(q-1)}{2\pi q}
   \frac{\kappa_H}{c_s}.
 $$
 
@@ -99,9 +99,9 @@ $\kappa_H / (2\pi c_s)$.
 
 | Configuration | Flow structure | Physical analogue |
 |---|---|---|
-| **Spherical inflow** | Radial $v = -v_r(r)\,\hat{r}$ with $v_r(r_H) = c_s$ | Schwarzschild black hole |
-| **Vortex drain** | Circular $v = v_\theta(r)\,\hat\theta + v_r(r)\,\hat{r}$ | Kerr (rotating) black hole |
-| **Expanding shell** | Outward $v = v_r(r)\,\hat{r}$ with $v_r(r_C) = c_s$ | Cosmological horizon (de Sitter) |
+| **Spherical inflow** | Radial $v = -v_r(r)\hat{r}$ with $v_r(r_H) = c_s$ | Schwarzschild black hole |
+| **Vortex drain** | Circular $v = v_\theta(r)\hat\theta + v_r(r)\hat{r}$ | Kerr (rotating) black hole |
+| **Expanding shell** | Outward $v = v_r(r)\hat{r}$ with $v_r(r_C) = c_s$ | Cosmological horizon (de Sitter) |
 | **Vortex core** | Concentrated circulation $\lvert v\rvert \to \infty$ at $r \to 0$ | Naked singularity (if $\lvert v\rvert > c_s$ for all $r < r_0$) |
 
 **$q$-dependent horizon radius.**
@@ -110,10 +110,10 @@ $v_r = -\Gamma_q / (4\pi r^2)$, the horizon forms at
 
 $$
   r_H
-  \;=\;
-  \left(\frac{\Gamma_q}{4\pi\,c_s}\right)^{1/2}
-  \;=\;
-  \left(\frac{[j]_q[j+1]_q}{4\pi\,c_q}\right)^{1/2}
+  = 
+  \left(\frac{\Gamma_q}{4\pic_s}\right)^{1/2}
+  = 
+  \left(\frac{[j]_q[j+1]_q}{4\pic_q}\right)^{1/2}
   \cdot (1 + O(\hbar_q)).
 $$
 

@@ -3,6 +3,11 @@
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/CategoricalQExtDeriv.lean (monolithic)
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.Basic
@@ -13,17 +18,20 @@ import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Topology.ContinuousFunction.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 
-open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u v
 
@@ -44,7 +52,7 @@ structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The vertical projection `π_V`. -/
   proj_V : frobHopf.obj ⟶ frobHopf.obj
   /-- The deformation parameter `q` (non-zero). -/
-  q : ℝ
+  q : R_q
   q_ne_zero : q ≠ 0
   /-- Idempotency of the vertical projection: `π_V ∘ π_V = π_V`. -/
   proj_V_idem : proj_V ≫ proj_V = proj_V
@@ -61,7 +69,7 @@ def CategoricalQExtDeriv.proj_H {C : Type u}
     This is the categorical analogue of `qExtDeriv`. -/
 noncomputable def CategoricalQExtDeriv.dq {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
   -- d_q = q⁻¹ · d + (1 − q⁻¹) · (π_V ≫ d)
   (cqd.q⁻¹) • cqd.d_classical + (1 - cqd.q⁻¹) • (cqd.proj_V ≫ cqd.d_classical)
@@ -69,7 +77,7 @@ noncomputable def CategoricalQExtDeriv.dq {C : Type u}
 /-- When `q = 1`, `d_q` reduces to `d`. -/
 theorem CategoricalQExtDeriv.dq_classical {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
     cqd.dq = cqd.d_classical := by
   simp [dq, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]

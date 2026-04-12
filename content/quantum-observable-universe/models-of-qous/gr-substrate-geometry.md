@@ -11,9 +11,9 @@ to the Levi form $L_\theta$ yields field equations of the schematic form
 
 $$
   \frac{\delta S_q}{\delta L_\theta}
-  \;=\; 0
+  =  0
   \qquad\Longrightarrow\qquad
-  \mathrm{Ric}_{g_\theta} \;=\; T^{(q)},
+  \mathrm{Ric}_{g_\theta} =  T^{(q)},
 $$
 
 where $\mathrm{Ric}_{g_\theta}$ is the Webster Ricci curvature and

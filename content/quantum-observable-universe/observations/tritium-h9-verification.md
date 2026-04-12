@@ -9,7 +9,7 @@ at each nucleon.
 $$
   q_0 = 1.10998, \quad
   \hbar_q = 1 - q^{-1} \approx 0.09908, \quad
-  \kappa_q = \tfrac{\ln q \cdot m_e}{3} \approx 0.01777\;\text{MeV}.
+  \kappa_q = \tfrac{\ln q \cdot m_e}{3} \approx 0.01777 \text{MeV}.
 $$
 
 **Nuclear braids** ($3A = 9$ strands):

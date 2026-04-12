@@ -1,0 +1,27 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-09T21:07:43.821133+00:00",
+  "commitSha": "9f44bf66c29c40e63c06cfe092f3172ecf1dbe0b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "atom-mass-qou-calibration",
+  "scriptFile": "atom_mass_qou_calibration.py",
+  "scriptHash": "1d614cc2d8e6",
+  "scriptCommitSha": "",
+  "description": "Atomic mass Z=1-20 from QOU-native calibration: m_e, m_μ/m_e, Q_β(³H). Proton mass DERIVED from nucleon NF.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "E0_MeV": "0.9266821404998199",
+    "m_p_hecke": "0.419562",
+    "m_n_hecke": "1420.8159198684318",
+    "alpha": "4083.5498644936883",
+    "calibration": [
+      "m_e",
+      "m_mu/m_e",
+      "Q_beta(3H)",
+      "tr_M(proton)"
+    ]
+  }
+}

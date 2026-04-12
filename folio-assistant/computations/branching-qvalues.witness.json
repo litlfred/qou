@@ -1,0 +1,85 @@
+{
+  "title": "Branching Q-values via S\u2083\u1d2c decomposition",
+  "status": "Work in progress \u2014 formula not yet unified across all A",
+  "inputs": {
+    "Vol_figure_eight": 2.029883212819307,
+    "mass_ratio_mu_e": 206.768283,
+    "m_e_MeV": 0.51099895,
+    "q0": 1.1099785955541805,
+    "q0_uncertainty": 1.3578965598837824e-09
+  },
+  "per_nucleon_channels": {
+    "proton": {
+      "triv": "(q\u00b2+1)\u00b2/(4q)",
+      "conf": "(3q\u00b2+1)/(4q\u00b3)",
+      "unconf": "-q(q\u00b2+3)/4",
+      "sign": "-(q\u00b2+1)\u00b2/(4q\u00b3)"
+    },
+    "neutron": {
+      "triv": "(q\u00b2+1)\u00b2/(4q\u00b3)",
+      "conf": "-(q\u2078-q\u2076-2q\u2074-5q\u00b2-1)/(4q\u00b3(q\u00b2+1))",
+      "unconf": "-(q\u2078+5q\u2076+2q\u2074+q\u00b2-1)/(4q\u00b3(q\u00b2+1))",
+      "sign": "-(q\u00b2+1)\u00b2/(4q)"
+    }
+  },
+  "decays": [
+    {
+      "name": "n\u2192p",
+      "A": 1,
+      "Z_par": 0,
+      "N_par": 1,
+      "method": "(\u03a3_all + 1) \u00d7 m_e",
+      "char_sum": 0.529503732,
+      "Q_calc_MeV": 0.7816,
+      "Q_exp_MeV": 0.782333,
+      "error_pct": -0.1,
+      "symbolic": "[(q-1)(q+1)(3q\u2074+4q\u00b2+3)/(4q\u00b3) + 1] \u00d7 m_e",
+      "note": "+1 = emitted electron categorical action"
+    },
+    {
+      "name": "\u00b3H\u2192\u00b3He",
+      "A": 3,
+      "Z_par": 1,
+      "N_par": 2,
+      "method": "|\u03a3_all| \u00d7 m_e (64 configs)",
+      "char_sum": 0.0350932119,
+      "Q_calc_MeV": 0.017933,
+      "Q_exp_MeV": 0.01861,
+      "error_pct": -3.6,
+      "symbolic": "3(q-1)\u00b3(q+1)\u00b3(q\u00b2+1)\u00b2(3q\u2074+4q\u00b2+3)/(32q\u2077) \u00d7 m_e"
+    },
+    {
+      "name": "\u2076He\u2192\u2076Li",
+      "A": 6,
+      "Z_par": 2,
+      "N_par": 4,
+      "method": "|\u03a3_FP| \u00d7 m_e (2048 of 4096 Frobenius-positive)",
+      "char_sum_all": -0.0014746525,
+      "char_sum_fp": 6.1173467706,
+      "Q_calc_MeV": 3.125958,
+      "Q_exp_MeV": 3.508,
+      "error_pct": -10.9,
+      "symbolic": "-27(q-1)\u2076(q+1)\u2076(q\u00b2+1)\u2076(3q\u2074+4q\u00b2+3)/(1024q\u00b9\u2074) \u00d7 m_e [all; FP sum not factored]",
+      "note": "Frobenius positivity filter: me_par\u22650 AND me_dau\u22650"
+    }
+  ],
+  "open_problems": [
+    "Formula not unified: A=1 needs +1, A=3 uses \u03a3_all, A=6 uses \u03a3_FP",
+    "The +1 (emitted electron) should emerge from the LP dual, not be added manually",
+    "Frobenius filter activation threshold between A=3 and A=6 needs derivation",
+    "\u00b9\u2074C (A=14, 4\u00b9\u2074\u2248268M configs) computed but result not yet validated",
+    "\u2076He error (-10.9%) may improve with refined LP dual eigenvalue threshold"
+  ],
+  "infrastructure": {
+    "rust_engine": "tools/hecke-engine/src/bin/v14_irrep.rs (--confine mode)",
+    "python_scripts": [
+      "full-derivation-verified.py",
+      "branching-lp.py",
+      "lp-constrained-6he.py",
+      "unified-lp.py",
+      "knot-operator-symbolic.py",
+      "symbolic-sparse.py"
+    ]
+  },
+  "timestamp": "2026-04-12T14:55:15.743594+00:00"
+}

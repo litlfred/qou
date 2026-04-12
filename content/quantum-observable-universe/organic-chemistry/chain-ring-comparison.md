@@ -7,20 +7,20 @@ Every quantity is determined by the Bring's surface geometry:
 
 $$
   \chi(A) = -6
-  \;\xrightarrow{\text{Bring's surface}}\;
+  \xrightarrow{\text{Bring's surface}}
   \mathcal{G}
-  \;\xrightarrow{\text{knot spectrum}}\;
-  q,\; \alpha,\; m_e/m_p
-  \;\xrightarrow{\text{scale separation}}\;
+  \xrightarrow{\text{knot spectrum}}
+  q, \alpha, m_e/m_p
+  \xrightarrow{\text{scale separation}}
   |q + q^{-1}|_{\mathrm{mol}}
-  \;\xrightarrow{\Delta_{T(2,6)}(q)}\;
+  \xrightarrow{\Delta_{T(2,6)}(q)}
   \mathbf{E}_{\mathrm{cross}}.
 $$
 
 1. The substrate parameter $q$ is fixed by $\chi(A) = -6$
    ([substrate parameter](#def:substrate-parameter)).
 
-2. The nuclear crossing energy quantum $|q + q^{-1}|_{\mathrm{nuc}} \sim 8\,\mathrm{MeV}$ is determined by the Skein binding
+2. The nuclear crossing energy quantum $|q + q^{-1}|_{\mathrm{nuc}} \sim 8\mathrm{MeV}$ is determined by the Skein binding
    Lagrangian volume term.
 
 3. $\alpha$ and $m_e/m_p$ are determined by the knot spectrum
@@ -38,7 +38,7 @@ proportional to the difference in Alexander weights:
 
 $$
   \Delta E
-  \;\propto\;
+   \propto 
   \bigl[(N-1) - \Delta_{T(2,N)}(q)\bigr]
   \cdot |q + q^{-1}|_{\mathrm{mol}}.
 $$
@@ -49,24 +49,24 @@ $5 - (q^2 + 1 + q^{-2}) \approx 5 - 3 = 2$:
 
 $$
   \Delta E(6)
-  \;\sim\;
-  2 \times (1\text{--}2\;\mathrm{eV})
-  \;\sim\;
-  2\text{--}4\;\mathrm{eV}
-  \;\approx\;
-  193\text{--}386\;\mathrm{kJ/mol}.
+   \sim 
+  2 \times (1\text{--}2 \mathrm{eV})
+   \sim 
+  2\text{--}4 \mathrm{eV}
+   \approx 
+  193\text{--}386 \mathrm{kJ/mol}.
 $$
 
-(Conversion: $1\;\mathrm{eV} = 96.485\;\mathrm{kJ/mol}$.)
+(Conversion: $1 \mathrm{eV} = 96.485 \mathrm{kJ/mol}$.)
 
 **Experimental data.**
 
 | Quantity | Experimental value | Source |
 |----------|-------------------:|--------|
-| C–C single bond energy | $346\;\mathrm{kJ/mol}$ | Standard thermochemistry |
-| Benzene resonance stabilisation | $150\;\mathrm{kJ/mol}$ | Hydrogenation calorimetry |
-| $\mathrm{C}_6$ chain → ring barrier (gas phase) | $\sim 200\text{--}400\;\mathrm{kJ/mol}$ | Ab initio (CCSD(T)) |
-| Bergman cyclisation (enediyne → ring) | $\sim 120\text{--}170\;\mathrm{kJ/mol}$ | Experimental kinetics |
+| C–C single bond energy | $346 \mathrm{kJ/mol}$ | Standard thermochemistry |
+| Benzene resonance stabilisation | $150 \mathrm{kJ/mol}$ | Hydrogenation calorimetry |
+| $\mathrm{C}_6$ chain → ring barrier (gas phase) | $\sim 200\text{--}400 \mathrm{kJ/mol}$ | Ab initio (CCSD(T)) |
+| Bergman cyclisation (enediyne → ring) | $\sim 120\text{--}170 \mathrm{kJ/mol}$ | Experimental kinetics |
 
 **Comparison.**
 
@@ -82,7 +82,7 @@ $$
 **The factor of $1/2$.**
 The pairwise Hopf link picture
 ([earlier estimate](#rem:chain-ring-energy)) predicted
-$\sim 400\text{--}800\;\mathrm{kJ/mol}$ — a factor of 2
+$\sim 400\text{--}800 \mathrm{kJ/mol}$ — a factor of 2
 overshoot.  The threading link resolves this exactly:
 $\Delta_{T(2,6)}(q) / 6 \approx 1/2$, halving the predicted
 barrier.  This is not a correction or a fit — it is a

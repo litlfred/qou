@@ -1,6 +1,6 @@
 The ([mass identity](#def:mass-identity)) expresses inertial mass
 as the norm of a nonabelian multiplicative integral of the connection--curvature
-pair $(\nabla_A q,\; L \wedge F^+)$ over a surface bounding the vortex
+pair $(\nabla_A q, L \wedge F^+)$ over a surface bounding the vortex
 filament. For the Descartes universe with $\chi(\mathcal{S}) = -6$, the
 topological data of the bundle constrain the allowed vortex configurations and
 hence the mass spectrum. The electron--muon mass ratio, for instance, is

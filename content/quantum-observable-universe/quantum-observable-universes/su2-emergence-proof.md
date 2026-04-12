@@ -50,7 +50,7 @@ Since $\tau(\epsilon)$ is non-degenerate (hence non-zero), this forces
 
 ```tex
 \begin{equation}\label{eq:det-one}
-  \det(g_V) \;=\; 1,
+  \det(g_V) =  1,
 \end{equation}
 ```
 
@@ -73,8 +73,8 @@ the unitary subgroup $\mathrm{U}(2)$.
 Combining both constraints:
 
 $$
-  G \;=\; \mathrm{SL}(2) \;\cap\; \mathrm{U}(2)
-  \;=\; \mathrm{SU}(2).
+  G =  \mathrm{SL}(2) \cap \mathrm{U}(2)
+  =  \mathrm{SU}(2).
 $$
 
 The volume constraint provides the special-linear condition

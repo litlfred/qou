@@ -9,13 +9,13 @@ defined by the composition
 
 $$
   \mathrm{tr}(f)
-  \;=\;
+  = 
   \bigl(\mathbf{1}
-  \xrightarrow{\;\mathrm{coev}\;}
+  \xrightarrow{ \mathrm{coev}}
   A \otimes A^{\vee}
-  \xrightarrow{\;f \otimes \mathrm{id}\;}
+  \xrightarrow{f \otimes \mathrm{id}}
   A \otimes A^{\vee}
-  \xrightarrow{\;\mathrm{ev}\;}
+  \xrightarrow{ \mathrm{ev}}
   \mathbf{1}\bigr),
 $$
 
@@ -29,14 +29,14 @@ The *inertial mass* of a morphism $\varrho \colon \mathbf{1} \to A$
 
 $$
   \mathfrak{m}(\varrho)
-  \;=\;
-  \bigl\lVert\,
+  = 
+  \bigl\lVert
   \mathrm{tr}\bigl(
     (\int_A \otimes \mathrm{id})
     \circ \Delta
     \circ \varrho
   \bigr)
-  \,\bigr\rVert,
+  \bigr\rVert,
 $$
 
 where $\lVert \cdot \rVert$ is the norm on $R$ induced by the

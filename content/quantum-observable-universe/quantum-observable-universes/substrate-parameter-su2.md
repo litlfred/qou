@@ -18,7 +18,7 @@ ring $\mathcal{O}(\mathrm{SU}(2))$ with its commutative multiplication:
 $$
   \iota_{q_0 = 1} \colon
   \mathcal{O}_q(\mathrm{SU}(2))
-  \;\longrightarrow\;
+   \longrightarrow 
   \mathcal{O}(\mathrm{SU}(2)),
   \qquad
   \begin{pmatrix} a & b \\ c & d \end{pmatrix}
@@ -34,8 +34,8 @@ produces $\mathcal{O}_{q_0}(\mathrm{SU}(2))$ with non-commutative
 relations:
 
 $$
-  ab = q_0\, ba, \quad ac = q_0\, ca, \quad
-  bc = cb, \quad ad - da = (q_0 - q_0^{-1})\, bc.
+  ab = q_0 ba, \quad ac = q_0 ca, \quad
+  bc = cb, \quad ad - da = (q_0 - q_0^{-1}) bc.
 $$
 
 The representation category

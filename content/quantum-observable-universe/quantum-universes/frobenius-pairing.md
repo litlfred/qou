@@ -15,7 +15,7 @@ composite
 ```
 
 We say the Frobenius pairing is *non-degenerate* when this composite
-induces an isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$ to the
+induces an isomorphism $A \xrightarrow{ \sim } A^{\vee}$ to the
 dual object. Equivalently, the snake identities hold: there exists a
 coevaluation $\tilde{\eta} \colon \mathbf{1} \to A \otimes A$ such
 that the two composites

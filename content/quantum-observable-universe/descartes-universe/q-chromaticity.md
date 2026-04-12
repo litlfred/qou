@@ -35,7 +35,7 @@ linear combination of knot types with $q$-polynomial coefficients.
 The Skein relation
 
 $$
-  q \, [L_+] - q^{-1} [L_-]
+  q  [L_+] - q^{-1} [L_-]
   = (q^{1/2} - q^{-1/2}) [L_0]
 $$
 
@@ -121,7 +121,7 @@ $\psi \in \mathcal{S}_q$:
 
 $$
   (\hat{c}_r, \hat{c}_g, \hat{c}_b)
-  \;=\;
+  = 
   \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}
 $$
 

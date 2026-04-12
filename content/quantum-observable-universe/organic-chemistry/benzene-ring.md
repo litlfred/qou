@@ -11,9 +11,9 @@ $\mathcal{R}_6$
 
 $$
   \mathrm{C}_6^{\mathrm{ring}}
-  \;=\;
+  = 
   [\mathcal{A}(6,6)_1, \ldots, \mathcal{A}(6,6)_6]
-  \;\bowtie\;
+   \bowtie 
   T(2,6).
 $$
 
@@ -39,9 +39,9 @@ ring.
 
 $$
   \Delta_{T(2,6)}(q)
-  \;=\;
+  = 
   q^2 + 1 + q^{-2}
-  \;=\;
+  = 
   (q + q^{-1})^2 - 1.
 $$
 

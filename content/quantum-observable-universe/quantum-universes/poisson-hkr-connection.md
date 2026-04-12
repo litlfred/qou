@@ -10,10 +10,10 @@ bivector field:
 
 $$
 \mathrm{HKR} \colon HH^2(A, A)
-\;\xrightarrow{\;\sim\;}
+\xrightarrow{ \sim }
 \Gamma\!\bigl(\Lambda^2 T_A\bigr)
-\;=\;
-\mathrm{Hom}_{\mathbf{C}}\!\bigl(\mathbf{1},\,
+= 
+\mathrm{Hom}_{\mathbf{C}}\!\bigl(\mathbf{1},
   \Lambda^2(\Omega^1(A)^{\vee})\bigr).
 $$
 

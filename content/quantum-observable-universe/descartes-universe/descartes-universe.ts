@@ -159,8 +159,14 @@ export default chapter({
         "linking-relations-table",
         // q-deformed kinematics (definitions in braids-and-knots; applied here)
         "q-value-transition",
-        // Proton, neutron, stable nucleus
+        // Pair production and quark-antiquark creation
+        "breit-wheeler-pair-production",
+        "quark-antiquark-production",
+        // Meson, proton, neutron, stable nucleus
+        "categorical-meson",
+        "meson-formation-chain",
         "categorical-proton",
+        "meson-to-proton-via-borromean",
         "categorical-neutron",
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
@@ -208,6 +214,7 @@ export default chapter({
         "beta-decay-interpretation",
         "nucleon-nf-observability",
         "beta-decay-energy-scale",
+        "negative-debt-confinement",
         "beta-decay-braid-visualizer",
       ],
     }),

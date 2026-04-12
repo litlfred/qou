@@ -4,15 +4,15 @@ is the rigidity trace of the identity, computed as the composition
 
 $$
   \chi(A_n)
-  \;=\;
+  = 
   \bigl(\mathbf{1}
-  \xrightarrow{\;\mathrm{coev}_n\;}
+  \xrightarrow{ \mathrm{coev}_n}
   A_n \otimes A_n^{\vee}
-  \xrightarrow{\;\mathrm{id} \otimes \mathrm{id}\;}
+  \xrightarrow{ \mathrm{id} \otimes \mathrm{id}}
   A_n \otimes A_n^{\vee}
-  \xrightarrow{\;\mathrm{ev}_n\;}
+  \xrightarrow{ \mathrm{ev}_n}
   \mathbf{1}\bigr)
-  \;=\;
+  = 
   \mathrm{ev}_n \circ \mathrm{coev}_n.
 $$
 
@@ -31,11 +31,11 @@ Therefore:
 
 $$
   \chi(A_{n+1})
-  \;=\;
+  = 
   \mathrm{ev}_{n+1} \circ \mathrm{coev}_{n+1}
-  \;=\;
+  = 
   \mathrm{ev}_n \circ \mathrm{coev}_n
-  \;=\;
+  = 
   \chi(A_n).
 $$
 

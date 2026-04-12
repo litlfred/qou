@@ -67,11 +67,11 @@ link $T(2,6)$ into 5 separate Hopf links, which costs
 
 $$
   \Delta E_{\mathrm{open}}
-  \;\propto\;
+   \propto 
   (N - 1) - \Delta_{T(2,N)}(q)
-  \;=\;
+  = 
   5 - (q^2 + 1 + q^{-2})
-  \;\approx\;
+   \approx 
   2
   \quad (|q| \approx 1)
 $$

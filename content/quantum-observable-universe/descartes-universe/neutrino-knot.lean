@@ -10,11 +10,24 @@ LaTeX label: `def:neutrino-knot`
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
 - [manuscript] Ch. 5, §neutrino-knot
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The neutrino: unknot K_{0₁} with trivial knot invariants.
     Zero crossings, genus 0, trivial Jones polynomial, zero volume.
@@ -26,9 +39,9 @@ structure Neutrino where
   /-- Seifert genus of the unknot. -/
   genus : ℕ := 0
   /-- Hyperbolic volume (unknot is non-hyperbolic). -/
-  volume : ℝ := 0
+  volume : R_q := 0
   /-- Jones polynomial J_ν(q) = 1 for all q. -/
-  jones_trivial : ∀ q : ℝ, (1 : ℝ) = 1 := fun _ => rfl
+  jones_trivial : ∀ q : R_q, (1 : R_q) = 1 := fun _ => rfl
   /-- Coulomb charge contribution: zero (no crossings). -/
   charge : ℤ := 0
   /-- Orientation: +1 for particle (vs. -1 for antiparticle). -/

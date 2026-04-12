@@ -11,10 +11,10 @@ $a_i, b_i \in \mathbb{Z}[q^{\pm 1}]$.
 
 $$
   \mathrm{tr}_M\!\bigl(\rho(\beta)\bigr)
-  \;=\;
+  = 
   \prod_{i=0}^{n-2} \hat{V}_i(q),
   \qquad
-  \hat{V}_i(q) \;=\; z \cdot a_i + b_i,
+  \hat{V}_i(q) =  z \cdot a_i + b_i,
 $$
 
 where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov trace parameter.
@@ -30,7 +30,7 @@ the Markov property gives:
 
 $$
   \mathrm{tr}_M(\cdots (a_i \sigma_i + b_i))
-  \;=\;
+  = 
   (z \cdot a_i + b_i) \cdot \mathrm{tr}_M(\cdots).
 $$
 
@@ -39,7 +39,7 @@ This works because:
 1. The chain at $\sigma_i$ reduces to $a_i \sigma_i + b_i$ (linear
    in $\sigma_i$ and the identity).
 2. The Markov property
-   $\mathrm{tr}_M(x \sigma_n) = z\,\mathrm{tr}_M(x)$ applies to
+   $\mathrm{tr}_M(x \sigma_n) = z\mathrm{tr}_M(x)$ applies to
    the $\sigma_i$ term.
 3. Generator $\sigma_i$ is the rightmost active generator, so the
    Markov property applies directly.

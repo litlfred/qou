@@ -17,8 +17,8 @@ introduce the following shorthand.
 independent generators but are expressed in terms of $T_{2,3}$:
 
 $$
-  \mathfrak{u} \;=\; T_{2,3}, \qquad
-  \mathfrak{d} \;=\; T_{2,3}^{\sigma}.
+  \mathfrak{u} =  T_{2,3}, \qquad
+  \mathfrak{d} =  T_{2,3}^{\sigma}.
 $$
 
 Here $\mathfrak{d}$ denotes the three-twist knot $5_2$, a Skein
@@ -30,9 +30,9 @@ $\mathfrak{b} = T_{2,5}$, $\mathfrak{t} = T_{3,4}$.
 triples bound by Hopf links:
 
 $$
-  \mathfrak{p} \;=\; [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H,
+  \mathfrak{p} =  [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H,
   \qquad
-  \mathfrak{n} \;=\; [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H.
+  \mathfrak{n} =  [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H.
 $$
 
 **Nuclear composites** are iterated Hopf linkings of nucleons.
@@ -40,9 +40,9 @@ For a nucleus with $Z$ protons and $N$ neutrons:
 
 $$
   {}^A_Z\!\mathcal{K}
-  \;=\;
+  = 
   \underbrace{\mathfrak{p} \bowtie \cdots \bowtie \mathfrak{p}}_{Z}
-  \;\bowtie\;
+   \bowtie 
   \underbrace{\mathfrak{n} \bowtie \cdots \bowtie \mathfrak{n}}_{N}
 $$
 
@@ -50,9 +50,9 @@ where $A = Z + N$.  A neutral atom appends $Z$ electrons:
 
 $$
   {}^A_Z\!\mathcal{K}^0
-  \;=\;
+  = 
   {}^A_Z\!\mathcal{K}
-  \;\bowtie\;
+   \bowtie 
   Z \cdot T_{2,3}.
 $$
 

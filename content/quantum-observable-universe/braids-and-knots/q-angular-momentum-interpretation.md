@@ -4,7 +4,7 @@ The Jones polynomial $J_K(q)$ of a knot $K$ is the quantum
 trace over the spin-$\tfrac{1}{2}$ representation:
 
 $$
-  J_K(q) \;=\; \mathrm{tr}_{V_{1/2}}(\rho(\beta))
+  J_K(q) =  \mathrm{tr}_{V_{1/2}}(\rho(\beta))
 $$
 
 The colored Jones polynomial $J_K^{(j)}(q)$ uses the
@@ -13,8 +13,8 @@ encoded in the **recursion** between colored Jones
 polynomials:
 
 $$
-  J_K^{(j+1/2)}(q) \;=\; [2j+1]_q \cdot J_K^{(j)}(q)
-  \;+\; \text{(lower-order terms)}
+  J_K^{(j+1/2)}(q) =  [2j+1]_q \cdot J_K^{(j)}(q)
+  +  \text{(lower-order terms)}
 $$
 
 **Building block values.**
@@ -38,7 +38,7 @@ coefficients, with $J$ parity determined by $A \bmod 2$
 For a nucleus $\mathcal{N}(Z, N)$ with $A = Z + N$:
 
 $$
-  J_q^2(\mathcal{N}) \;=\; [J]_q \, [J+1]_q
+  J_q^2(\mathcal{N}) =  [J]_q  [J+1]_q
 $$
 
 where $J$ is the ground-state spin determined by the nuclear

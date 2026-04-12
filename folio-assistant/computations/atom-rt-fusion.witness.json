@@ -1,0 +1,19 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-04-09T20:08:14.031569+00:00",
+  "commitSha": "c7bca7c73c80e6484087ec140ade07c6822a875f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "atom-rt-fusion",
+  "scriptFile": "atom_rt_fusion.py",
+  "scriptHash": "6a097ad118c3",
+  "scriptCommitSha": "",
+  "description": "Reshetikhin-Turaev fusion colored Jones. Exact J_N via quantum 6j symbols, no full tensor product. O(A²×N³).",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "vol_cJ_proton": "19.54325154200621",
+    "vol_cJ_neutron": "29.578114451902582"
+  }
+}

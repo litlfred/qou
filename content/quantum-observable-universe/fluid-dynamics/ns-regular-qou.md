@@ -8,9 +8,9 @@ The **NS obstruction** of $(\mathbf{C}, A, \tau)$ is the class
 
 $$
   \mathrm{NS}(A)
-  \;=\;
+  = 
   \kappa_0\big|_\Sigma
-  \;\in\;
+   \in 
   H^2(\Sigma, \mathcal{B}),
 $$
 

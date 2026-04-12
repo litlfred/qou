@@ -12,11 +12,24 @@ LaTeX label: `prop:variational-equations`
 ## References
 
 - [manuscript] §1-quantum-observable-universe/variational-equations
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Variational equations**: the three Euler–Lagrange equations
     from the unified categorical action S_q. -/
@@ -33,13 +46,13 @@ structure VariationalEquation where
   /-- The type of variational equation. -/
   eqType : VariationalEquationType
   /-- The substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The kinematic side (LHS). -/
-  kinematic : ℝ
+  kinematic : R_q
   /-- The source side (RHS). -/
-  source : ℝ
+  source : R_q
   /-- The equation holds: LHS = RHS. -/
   equation : kinematic = source
 
@@ -48,9 +61,9 @@ structure VariationalEquation where
 -- Ref: [manuscript] §1
 structure GravitationalEquation extends VariationalEquation where
   /-- The Ricci curvature scalar. -/
-  ricciScalar : ℝ
+  ricciScalar : R_q
   /-- The stress-energy trace. -/
-  stressEnergyTrace : ℝ
+  stressEnergyTrace : R_q
   /-- This is a gravity equation. -/
   is_gravity : eqType = .gravity
 
@@ -58,9 +71,9 @@ structure GravitationalEquation extends VariationalEquation where
 -- Ref: [manuscript] §1
 structure GaugeEquation extends VariationalEquation where
   /-- The covariant divergence of the curvature. -/
-  covDiv : ℝ
+  covDiv : R_q
   /-- The nonlinear q-correction: q · [F, ⋆F]. -/
-  qCorrection : ℝ
+  qCorrection : R_q
   /-- This is a gauge equation. -/
   is_gauge : eqType = .gauge
 
@@ -68,7 +81,7 @@ structure GaugeEquation extends VariationalEquation where
 -- Ref: [manuscript] §1
 structure MatterEquation extends VariationalEquation where
   /-- The matter field norm. -/
-  fieldNorm : ℝ
+  fieldNorm : R_q
   /-- Source vanishes: the matter equation is D_∇ ψ = 0. -/
   source_zero : source = 0
   /-- This is a matter equation. -/
@@ -84,9 +97,9 @@ theorem matter_eq_zero_source (m : MatterEquation) :
 -- Ref: [manuscript] §1
 structure UnifiedAction where
   /-- The substrate parameter. -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The three equations. -/
   gravity : GravitationalEquation
   gauge : GaugeEquation

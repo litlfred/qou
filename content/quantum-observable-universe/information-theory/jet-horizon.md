@@ -10,16 +10,16 @@ extends continuously across $\mathcal{H}$ vanishes on $\mathcal{H}$:
 
 $$
   \mathcal{H}
-  \;=\;
+  = 
   V\!\bigl(\mathfrak{h}\bigr),
   \qquad
   \mathfrak{h}
-  \;=\;
-  \bigl\{\,
+  = 
+  \bigl\{
     s \in \Gamma(U, A_0)
-    \;:\;
+     : 
     s|_{\mathcal{H}} = 0
-  \,\bigr\}.
+  \bigr\}.
 $$
 
 The ideal $\mathfrak{h} \subset \Gamma(U, A_0)$ is the

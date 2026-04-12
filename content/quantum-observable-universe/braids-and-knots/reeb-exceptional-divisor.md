@@ -10,7 +10,7 @@ that wind.
 If the substrate parameter $q\to 1$
 ([substrate parameter](#def:substrate-parameter)), the
 torsion coupling vanishes and the phase rotation
-$w_k\mapsto\zeta^k\,w_k$ loses its temporal component.  The fibre
+$w_k\mapsto\zeta^kw_k$ loses its temporal component.  The fibre
 over each base point ceases to twist as one moves along a path on
 $\mathbb{P}^1(\mathbb{C})$: the chiral tubes are frozen in the configuration
 determined by the power-sum equations.  Metrically this is a conical
@@ -45,7 +45,7 @@ parameter $q$ controls the pitch of the rotation.  The vector
 field $\xi_q$ thereby provides the "time-like" direction within the
 chiral space: it is the flow that allows the spectral modes $w_k$ to
 execute the spinning phase rotation
-$w_k\mapsto\zeta^k\,w_k$.  All braiding --- Hecke generators,
+$w_k\mapsto\zeta^kw_k$.  All braiding --- Hecke generators,
 Skein resolutions, crossing changes --- takes place within this
 Reeb bundle
 ([vertex is the exceptional divisor](#prop:vertex-is-exceptional-divisor)).

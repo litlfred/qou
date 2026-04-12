@@ -19,10 +19,10 @@ into $\mathrm{Sp}(1)$ via the unit quaternion
 ```tex
 \begin{equation}\label{eq:sp1-quaternion}
   \mathbf{q}(r)
-  \;=\;
-  \cos_q\!\theta(r)+\mathbf{u}\,\sin_q\!\theta(r),
+  = 
+  \cos_q\!\theta(r)+\mathbf{u}\sin_q\!\theta(r),
   \qquad
-  \theta(r)=\tfrac{\pi}{2}\,e^{-r},
+  \theta(r)=\tfrac{\pi}{2}e^{-r},
 \end{equation}
 ```
 
@@ -37,6 +37,6 @@ $$
 
 and $\mathbf{u}\in\mathrm{Im}\mathbb{H}$ is a fixed unit imaginary
 quaternion.  The conjugation
-$\boldsymbol{\omega}'=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}$
+$\boldsymbol{\omega}'=\mathbf{q}(r)\boldsymbol{\omega}\mathbf{q}(r)^{*}$
 gives maximum twist ($\theta=\pi/2$) in the deep-quantum regime $r\to 0$
 and classical freeze ($\theta\to 0$) as $r\to\infty$.

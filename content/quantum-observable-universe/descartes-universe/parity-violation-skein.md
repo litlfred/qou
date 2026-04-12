@@ -11,9 +11,9 @@ $\sigma_i \mapsto \sigma_i^{-1}$.
 The Skein relation at a single crossing:
 
 $$
-  q \, [L_+] \;-\; q^{-1} [L_-]
-  \;=\;
-  (q^{1/2} - q^{-1/2}) \, [L_0]
+  q  [L_+] -  q^{-1} [L_-]
+  = 
+  (q^{1/2} - q^{-1/2})  [L_0]
 $$
 
 Apply the mirror $\mathcal{P}$: $L_+ \mapsto L_-$,
@@ -21,25 +21,25 @@ $L_- \mapsto L_+$, $L_0 \mapsto \mathcal{P}(L_0)$.  The
 mirrored Skein relation reads:
 
 $$
-  q \, [L_-] \;-\; q^{-1} [L_+]
-  \;=\;
-  (q^{1/2} - q^{-1/2}) \, [\mathcal{P}(L_0)]
+  q  [L_-] -  q^{-1} [L_+]
+  = 
+  (q^{1/2} - q^{-1/2})  [\mathcal{P}(L_0)]
 $$
 
 Rearranging:
 
 $$
-  q^{-1} [L_+] \;-\; q \, [L_-]
-  \;=\;
-  -(q^{1/2} - q^{-1/2}) \, [\mathcal{P}(L_0)]
+  q^{-1} [L_+] -  q  [L_-]
+  = 
+  -(q^{1/2} - q^{-1/2})  [\mathcal{P}(L_0)]
 $$
 
 Compare with the original:
 
 $$
-  q \, [L_+] \;-\; q^{-1} [L_-]
-  \;=\;
-  (q^{1/2} - q^{-1/2}) \, [L_0]
+  q  [L_+] -  q^{-1} [L_-]
+  = 
+  (q^{1/2} - q^{-1/2})  [L_0]
 $$
 
 These are the **same** equation if and only if $q = q^{-1}$,
@@ -64,7 +64,7 @@ The Hecke relation $T^2 = (q - q^{-1})T + 1$ breaks
 the symmetry between positive and negative crossings.  At $q = 1$:
 $T^2 = 1$ (positive and negative crossings cancel — parity
 conserved).  At the substrate parameter $q$:
-$T^2 = 0.209\,T + 1$ (the $0.209\,T$ term
+$T^2 = 0.209T + 1$ (the $0.209T$ term
 distinguishes positive from negative — parity violated).
 
 The **degree of parity violation** is controlled by:

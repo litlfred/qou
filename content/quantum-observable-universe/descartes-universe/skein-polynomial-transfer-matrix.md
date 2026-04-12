@@ -9,11 +9,11 @@ The Markov trace
 
 $$
   P_{\mathcal{N}}(q)
-  \;:=\;
+   := 
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
     \mathcal{N}(Z, N)
   \bigr)
-  \;=\;
+  = 
   \prod_{i=0}^{A-2} \hat{V}_i(q)
 $$
 
@@ -21,7 +21,7 @@ $$
 factor*
 
 $$
-  \hat{V}_i(q) \;=\; z(q) \cdot a_i(q) + b_i(q)
+  \hat{V}_i(q) =  z(q) \cdot a_i(q) + b_i(q)
 $$
 
 *is a rational function in $q^{1/2}$, where $a_i(q), b_i(q) \in \mathbb{Z}[q^{\pm 1}]$ are the transfer matrix coefficients at
@@ -37,36 +37,45 @@ $\mathbb{Z}[q^{\pm 1}]$.  Each crossing factor
 $C_{ij} = c_j \sigma_i + d_j$ has coefficients $(c_j, d_j)$
 in $\mathbb{Z}[q^{\pm 1}]$:
 
-| Pair type | $c_j$ | $d_j$ |
-|-----------|-------|-------|
-| $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ |
-| $\mathfrak{n}$-$\mathfrak{n}$ | $q^2$ | $-q(q^{1/2} - q^{-1/2})$ |
-| mixed | $\frac{1+q^2}{2}$ | $-\frac{q}{2}(q^{1/2} - q^{-1/2})$ |
+| Pair type | $c_j$ | $d_j$ | Hecke element |
+|-----------|-------|-------|---------------|
+| $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ | $\sigma$ |
+| $\mathfrak{n}$-$\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ | $\sigma^{-1} = \sigma - (q - q^{-1})$ |
+| mixed | $1$ | $-\frac{1}{2}(q - q^{-1})$ | $\frac{1}{2}(\sigma + \sigma^{-1})$ |
+
+The $(1, -(q - q^{-1}))$ convention for nn crossings is the unique
+convention consistent with the Hecke inverse relation
+$\sigma^{-1} = \sigma - (q - q^{-1})$.  This is not a normalization
+choice — any other coefficients break $\sigma \cdot \sigma^{-1} = 1$
+in the standard $(2,1)$ representation.  The unimodularity
+$\det T = -1$ is a theorem (consequence of the Hecke relation
+$\sigma^2 = (q - q^{-1})\sigma + 1$, which forces eigenvalues
+$q, -q^{-1}$ with product $-1$), not an assumption.
 
 The transfer matrix at each crossing:
 
 $$
-  T_j(q) \;=\;
+  T_j(q) = 
   \begin{pmatrix}
     c_j(q - q^{-1}) + d_j & c_j \\
     c_j & d_j
   \end{pmatrix}
-  \;\in\; \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])
+   \in  \mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])
 $$
 
-has entries that are Laurent polynomials in $q^{1/2}$.  The
+has entries that are Laurent polynomials in $q$.  The
 product of $k_i = A - i - 1$ such matrices at generator $\sigma_i$:
 
 $$
-  M_i(q) \;=\; \prod_{j=i+1}^{A-1} T_j(q)
-  \;\in\; \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])
+  M_i(q) =  \prod_{j=i+1}^{A-1} T_j(q)
+   \in  \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])
 $$
 
 has entries that are polynomials in $q^{1/2}$ of degree $\leq 2k_i$.
 The traced volume:
 
 $$
-  \hat{V}_i(q) \;=\; z(q) \cdot (M_i)_{11}(q) + (M_i)_{21}(q)
+  \hat{V}_i(q) =  z(q) \cdot (M_i)_{11}(q) + (M_i)_{21}(q)
 $$
 
 is a rational function in $q^{1/2}$ (the $z$ denominator
@@ -79,11 +88,11 @@ cancellation with $z$), and its degree is bounded by:
 
 $$
   \deg P_{\mathcal{N}}
-  \;\leq\;
+   \leq 
   \sum_{i=0}^{A-2} (2k_i + 1)
-  \;=\;
+  = 
   2 \cdot \frac{A(A-1)}{2} + (A-1)
-  \;=\;
+  = 
   A^2 - 1.
 $$
 
@@ -128,11 +137,11 @@ of two Skein polynomials evaluated at the substrate parameter $q$:
 
 $$
   \mathcal{Q}_q
-  \;=\;
+  = 
   P_{\mathcal{N}_{\mathrm{par}}}(q)
-  \;-\;
+  - 
   P_{\mathcal{N}_{\mathrm{dau}}}(q)
-  \;-\;
+  - 
   P_{e}(q)
 $$
 
@@ -152,11 +161,11 @@ polynomial modifications.  In the polynomial language:
 
 $$
   P_{\mathcal{N}}^{(2\beta)}(q)
-  \;-\;
+  - 
   P_{\mathcal{N}}^{(\mathrm{par})}(q)
-  \;\neq\;
+   \neq 
   \bigl[P_{\mathcal{N}}^{(\beta_1)}(q) - P_{\mathcal{N}}^{(\mathrm{par})}(q)\bigr]
-  \;+\;
+  + 
   \bigl[P_{\mathcal{N}}^{(\beta_2)}(q) - P_{\mathcal{N}}^{(\mathrm{par})}(q)\bigr]
 $$
 

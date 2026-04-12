@@ -1,36 +1,50 @@
 The Gröbner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly
 **six terms**, one for each basis element of the Iwahori--Hecke algebra.
-The sign pattern is $[-, +, +, +, +, -]$ for both neutron and
-proton.  We classify each term by **word length** $\ell$ and
-**observability** — whether the corresponding knot/link is
-topologically non-trivial.
+With typed crossings ($u$-$u = \sigma$, $d$-$d = \sigma - (q - q^{-1})\mathbf{1}$,
+$u$-$d = \sigma - \tfrac{1}{2}(q - q^{-1})\mathbf{1}$), the sign pattern
+differs between neutron and proton.  We classify each term by
+**word length** $\ell$ and **observability** — whether the
+corresponding knot/link is topologically non-trivial.
 
 ## The six NF terms
 
-| Basis | Word | $\ell$ | Neutron $\mathfrak{n}$ | Proton $\mathfrak{p}$ | Observable? |
-|:---:|:---:|:---:|---:|---:|:---:|
-| $\nu$ | $\mathbf{1}$ | $0$ | $-0.1373$ | $-0.0616$ | No (unknot) |
-| $H^0$ | $\sigma_0$ | $1$ | $+0.0564$ | $+0.0473$ | No (virtual) |
-| $H^1$ | $\sigma_1$ | $1$ | $+1.5350$ | $+1.2417$ | No (virtual) |
-| $L_+$ | $\sigma_0\sigma_1$ | $2$ | $+0.1543$ | $+0.1920$ | Yes (Hopf link) |
-| $L_-$ | $\sigma_1\sigma_0$ | $2$ | $+0.0137$ | $+0.0118$ | Yes (Hopf link) |
-| $e^-$ | $\sigma_0\sigma_1\sigma_0$ | $3$ | $-0.0664$ | $-0.0530$ | Yes (trefoil) |
+| Particle | Word | Knot/Link | $\ell$ | Neutron $\mathfrak{n}$ | Proton $\mathfrak{p}$ | Observable? |
+|:---:|:---:|:---:|:---:|---:|---:|:---:|
+| $\gamma$ | $\mathbf{1}$ | photon | $0$ | $-0.201704$ | $-0.099658$ | No (identity) |
+| $\sigma_0$ | $\sigma_0$ | virtual | $1$ | $+0.048130$ | $+0.035729$ | No (virtual) |
+| $\sigma_1$ | $\sigma_1$ | virtual | $1$ | $+1.008995$ | $+0.997570$ | No (virtual) |
+| $L_+$ | $\sigma_0\sigma_1$ | Hopf link | $2$ | $-0.009641$ | $+0.099354$ | Yes (Hopf link) |
+| $L_-$ | $\sigma_1\sigma_0$ | Hopf link | $2$ | $+0.009237$ | $+0.009337$ | Yes (Hopf link) |
+| $e^-$ | $\sigma_0\sigma_1\sigma_0$ | trefoil ($3_1$) | $3$ | $-0.044184$ | $-0.043208$ | Yes (trefoil) |
 
-Numerical values at $q_0 \approx 1.1097$.
+Numerical values at $q_0 \approx 1.1100$ (typed crossings).
+
+## Sign patterns
+
+With typed crossings, the sign patterns are:
+
+- **Neutron**: $[-, +, +, -, +, -]$ — four terms negative ($\gamma, L_+, e^-$)
+  and **$L_+$ flips** from positive (untyped) to negative.
+- **Proton**: $[-, +, +, +, +, -]$ — two terms negative ($\gamma, e^-$),
+  unchanged from untyped.
+
+The neutron's $L_+$ sign flip is the key effect of typed crossings:
+the $d$-$d$ crossing in neutron $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$
+shifts the $\sigma_0\sigma_1$ coefficient below zero.
 
 ## Observability criterion
 
 A braid word of length $\ell$ is **observable** when the
 corresponding knot or link is topologically non-trivial:
 
-- **$\ell = 0$**: the identity $\mathbf{1}$ is the unknot.
-  Topologically trivial — passes through everything undetected.
-  This is the neutrino channel $\nu$.
+- **$\ell = 0$**: the identity $\mathbf{1}$ maps to the photon $\gamma$.
+  Topologically trivial — carries no knot content.
+  This is the photon channel $\gamma$.
 
 - **$\ell = 1$**: a single crossing $\sigma_i$ can be undone by
   a single Reidemeister-I move.  It is a **virtual crossing** —
-  topologically removable.  The terms $H^0 = \sigma_0$ and
-  $H^1 = \sigma_1$ are virtual.
+  topologically removable.  The terms $\sigma_0$ and
+  $\sigma_1$ are virtual.
 
 - **$\ell = 2$**: the products $\sigma_0\sigma_1$ and
   $\sigma_1\sigma_0$ are Hopf links — two linked rings that
@@ -43,21 +57,23 @@ corresponding knot or link is topologically non-trivial:
 
 ## Positive coefficients: observable vs virtual
 
-The four positive terms in each NF split into two classes:
+The positive terms split into two classes:
 
 |  | Observable ($\ell \geq 2$) | Virtual ($\ell < 2$) |
 |:---:|---:|---:|
-| **Neutron** | $+0.168$ (Hopf links) | $+1.591$ (crossings) |
-| **Proton** | $+0.204$ (Hopf links) | $+1.289$ (crossings) |
+| **Neutron** | $+0.009$ ($L_-$ only) | $+1.057$ ($\sigma_0, \sigma_1$) |
+| **Proton** | $+0.109$ ($L_+, L_-$) | $+1.033$ ($\sigma_0, \sigma_1$) |
 
 Both nucleons are **dominated by virtual content**: the $\sigma_1$
-term ($H^1$) carries $\sim 90\%$ of the total positive amplitude.
+term carries $\sim 94\%$ of the total positive amplitude.
 This term has word length $\ell = 1$ — a single crossing that is
 topologically trivial.  It cannot be observed as a free particle.
 
-The observable positive terms are exclusively the **Hopf links**
-$L_+ = \sigma_0\sigma_1$ and $L_- = \sigma_1\sigma_0$, which are
-bound states of two linked rings.
+The observable positive terms are the **Hopf links**
+$L_+ = \sigma_0\sigma_1$ (proton only) and
+$L_- = \sigma_1\sigma_0$ (both), which are bound states of
+two linked rings.  Note that $L_+$ is **negative** for the
+neutron — the typed $d$-$d$ crossing turns it into a debt.
 
 ## Where $\sigma_1$ lives: the color tube fiber
 
@@ -83,42 +99,60 @@ algebraic expression of **color confinement**: the dominant
 dynamics is internal to the color tube, invisible from the
 spacetime base.
 
+## Linearity of the normal form
+
+The transition $\Delta_i = \mathrm{coeff}_i(\mathfrak{n}) -
+\mathrm{coeff}_i(\mathfrak{p})$ is itself the normal form of the
+**transition element** $\mathfrak{n} - \mathfrak{p} \in H_3(q)$.
+This follows because $\mathrm{NF}$ is a linear map — coordinate
+extraction in the Gröbner--Shirshov basis (a vector space basis
+for $H_3(q)$, $\dim = 3! = 6$):
+
+$$
+  \mathrm{NF}(\mathfrak{n} - \mathfrak{p})
+  = 
+  \mathrm{NF}(\mathfrak{n}) - \mathrm{NF}(\mathfrak{p}).
+$$
+
 ## Sign pattern and beta decay
 
-The two negative terms are precisely the **observable
-endpoints** — the neutrino $\nu$ ($\ell = 0$) and the electron
-$e^-$ ($\ell = 3$).  Both nucleons carry this debt:
+The negative terms in each nucleon represent **leptonic debt** —
+topological content that must be supplied by (or released to) the
+vacuum.  In the typed-crossing NF:
 
-|  | $\nu$ debt | $e^-$ debt |
-|:---:|---:|---:|
-| **Neutron** | $-0.1373$ | $-0.0664$ |
-| **Proton** | $-0.0616$ | $-0.0530$ |
+|  | $\gamma$ debt | $L_+$ debt | $e^-$ debt |
+|:---:|---:|---:|---:|
+| **Neutron** | $-0.201704$ | $-0.009641$ | $-0.044184$ |
+| **Proton** | $-0.099658$ | — | $-0.043208$ |
 
-The neutron's debts are larger than the proton's.  The excess:
+The neutron carries three debts ($\gamma, L_+, e^-$) while the
+proton carries only two ($\gamma, e^-$).  The excess:
 
 $$
-  \Delta_\nu = -0.076, \qquad \Delta_{e^-} = -0.013
+  \Delta_\nu = -0.10205, \qquad \Delta_{L_+} = -0.10899,
+  \qquad \Delta_{e^-} = -0.00098
 $$
 
-is released in beta decay $\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}_e$:
-the neutron pays down its excess $\nu$ and $e^-$ debt by emitting
-the physical electron and antineutrino.
+drives beta decay
+$\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}_e$:
+the neutron pays down its excess debt by emitting the physical
+electron and antineutrino.
 
 ## Summary
 
 The nucleon NF has a clean tripartite structure:
 
-1. **Virtual bulk** ($\ell \leq 1$, positive): $\sim 90\%$ of the
+1. **Virtual bulk** ($\ell \leq 1$, positive): $\sim 94\%$ of the
    amplitude.  Confined inside the color tube fiber.  Unobservable.
 
-2. **Observable links** ($\ell = 2$, positive): $\sim 10\%$ of the
-   amplitude.  Hopf-linked bound states.  The nuclear binding
-   visible as stable structure.
+2. **Observable links** ($\ell = 2$, signed): Hopf-linked bound
+   states.  $L_-$ is positive for both nucleons; $L_+$ is positive
+   for proton but **negative for neutron** (typed-crossing effect).
 
 3. **Leptonic debt** ($\ell = 0$ and $\ell = 3$, negative): the
    neutrino and electron channels carry negative coefficients.
    These are the inputs required from the vacuum; beta decay is the
    process of settling this debt.
 
-Witness: `free-neutron-decay.witness.json` (19 Hecke + 5 YB
-reductions for $\mathfrak{n}$; 18 total for $\mathfrak{p}$).
+Witness: `free-neutron-decay.witness.json` (typed crossings;
+17 reductions for $\mathfrak{n}$; 18 for $\mathfrak{p}$).

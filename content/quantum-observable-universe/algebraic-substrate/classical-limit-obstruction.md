@@ -8,8 +8,8 @@ is the Hochschild cohomology group
 
 $$
 \mathrm{Obs}(\mathbf{C}, q \to 1)
-\;:=\;
-HH^2(\mathcal{U}_q(\mathfrak{g}),\, \mathrm{Ad})
+ := 
+HH^2(\mathcal{U}_q(\mathfrak{g}), \mathrm{Ad})
 $$
 
 where $\mathcal{U}_q(\mathfrak{g})$ is the Lusztig integral form
@@ -40,10 +40,10 @@ The classical limit $q \to 1$ is a deformation-theoretic
 specialisation: the family $\{A_q\}_{q \in \mathbb{G}_m}$ is a
 flat deformation of $A_1$ over the formal neighborhood of
 $q = 1$.  The base of the deformation is
-$\mathrm{Spf}\, R[[q-1]]$, and the obstructions to
+$\mathrm{Spf} R[[q-1]]$, and the obstructions to
 **flatness** at each order in $(q-1)$ live in $HH^2$.
 
-Concretely: expanding $A_q = A_1 + (q-1)\,\phi_1 + (q-1)^2\,\phi_2 + \cdots$
+Concretely: expanding $A_q = A_1 + (q-1)\phi_1 + (q-1)^2\phi_2 + \cdots$
 (the Drinfeld--Jimbo expansion), the first-order deformation
 $\phi_1$ is a Hochschild 2-cocycle (defines $[\phi_1] \in HH^2$).
 The second-order term $\phi_2$ exists iff $[\phi_1] \cup [\phi_1] = 0$
@@ -54,9 +54,9 @@ The **total** obstruction to the classical limit is the formal sum:
 
 $$
 \mathrm{obs}_\infty
-\;=\;
-\sum_{n \geq 1} (q-1)^n\, [\phi_n]
-\;\in\;
+= 
+\sum_{n \geq 1} (q-1)^n [\phi_n]
+ \in 
 HH^2(\mathrm{Ad})[[q-1]].
 $$
 
@@ -81,7 +81,7 @@ under the Hochschild-to-sheaf comparison map:
 
 $$
 HH^2(\mathcal{U}_q, \mathrm{Ad})
-\;\xrightarrow{\;\mathrm{HKR}\;}
+\xrightarrow{ \mathrm{HKR}}
 H^2(\mathcal{S}, \mathcal{B}).
 $$
 

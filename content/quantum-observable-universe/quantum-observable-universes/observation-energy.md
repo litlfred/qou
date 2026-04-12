@@ -10,8 +10,8 @@ substrate perturbation $\delta q$.  Then:*
 
    $$
      \hbar_{q + \delta q} - \hbar_q
-     \;=\; \frac{\delta q}{q(q + \delta q)}
-     \;>\; 0
+     =  \frac{\delta q}{q(q + \delta q)}
+      >  0
    $$
 
    *for $\delta q > 0$.  Every observation with positive
@@ -25,9 +25,9 @@ substrate perturbation $\delta q$.  Then:*
 
    $$
      S_{q'}
-     \;=\;
-     S_q \;+\; \delta q \cdot \frac{\partial S_q}{\partial q}
-     \;+\; O((\delta q)^2)
+     = 
+     S_q +  \delta q \cdot \frac{\partial S_q}{\partial q}
+     +  O((\delta q)^2)
    $$
 
    *The first-order shift $\partial S_q / \partial q$ is the

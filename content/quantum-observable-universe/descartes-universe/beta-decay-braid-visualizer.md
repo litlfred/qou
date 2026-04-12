@@ -55,9 +55,9 @@ $\mathfrak{d}\text{-}\mathfrak{d}$.
 ## The $10$-crossing budget
 
 $$
-  \underbrace{10}_{\text{total}} \;=\;
-  \underbrace{3}_{e^- \;(T_{2,3})} \;+\;
-  \underbrace{0}_{\bar{\nu}_e \;(K_{0_1})} \;+\;
+  \underbrace{10}_{\text{total}} = 
+  \underbrace{3}_{e^- (T_{2,3})} + 
+  \underbrace{0}_{\bar{\nu}_e (K_{0_1})} + 
   \underbrace{7}_{\text{R2 re-reduction}}
 $$
 

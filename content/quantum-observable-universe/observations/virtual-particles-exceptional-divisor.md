@@ -51,7 +51,7 @@ annihilates the $\Omega^1$ components:
 
 $$
   \pi_0(f \otimes \omega_1 \otimes \cdots \otimes \omega_n)
-  \;=\;
+  = 
   f \cdot \varepsilon(\omega_1) \cdots \varepsilon(\omega_n),
 $$
 
@@ -73,8 +73,8 @@ The [Heisenberg commutator](#rem:heisenberg-commutator) at level
 $n$ of the tower is
 
 $$
-  [\hat{X}, \hat{P}]_{q_n} \;=\; J\,\hbar_{q_n}, \qquad
-  \hbar_{q_n} \;=\; 1 - q_n^{-1},
+  [\hat{X}, \hat{P}]_{q_n} =  J\hbar_{q_n}, \qquad
+  \hbar_{q_n} =  1 - q_n^{-1},
 $$
 
 where $q_n$ is the substrate parameter at the $n$-th level.  The
@@ -83,8 +83,8 @@ limits the lifetime of a virtual excitation at level $n$:
 
 $$
   \Delta t_{\text{virtual}}
-  \;\leq\;
-  \frac{\hbar_{q_n}}{2\,\Delta E}.
+   \leq 
+  \frac{\hbar_{q_n}}{2\Delta E}.
 $$
 
 For an excitation that borrows energy $\Delta E$ from the vacuum

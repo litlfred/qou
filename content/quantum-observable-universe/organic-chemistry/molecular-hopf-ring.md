@@ -12,9 +12,9 @@ composite
 
 $$
   \mathcal{R}_N
-  \;=\;
+  = 
   [\mathcal{A}_1, \ldots, \mathcal{A}_N]
-  \;\bowtie\;
+   \bowtie 
   \mathcal{T}_N,
 $$
 
@@ -24,8 +24,8 @@ link's braid word in $B_N$ is
 
 $$
   \hat{\beta}_N
-  \;=\;
-  (\sigma_1 \, \sigma_2 \, \cdots \, \sigma_{N-1})^2,
+  = 
+  (\sigma_1  \sigma_2  \cdots  \sigma_{N-1})^2,
 $$
 
 with $2(N-1)$ crossings, all of the same sign.
@@ -36,7 +36,7 @@ Alexander polynomial evaluated at the substrate parameter:
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_N)
-  \;\propto\;
+   \propto 
   \Delta_{T(2,N)}(q).
 $$
 
@@ -44,7 +44,7 @@ For even $N = 2m$:
 
 $$
   \Delta_{T(2,2m)}(q)
-  \;=\;
+  = 
   \frac{q^m - q^{-m}}{q - q^{-1}}.
 $$
 
