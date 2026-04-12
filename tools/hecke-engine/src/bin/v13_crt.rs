@@ -327,8 +327,8 @@ impl Engine {
     fn multiply_and_reduce(elem: &mut CrtElem, gen: u8, c: &CrtPoly, d: &CrtPoly, doubled: bool, ha: &CrtPoly) {
         let old: Vec<(W, CrtPoly)> = elem.terms.drain().collect();
         let np = elem.np;
-        let mut pending: Vec<(W, CrtPoly)> = Vec::new();
 
+        // Add ALL new terms (both d and c) to elem.terms
         for (word, coeff) in old {
             if coeff.is_zero() { continue; }
             if !d.is_zero() {
@@ -340,53 +340,58 @@ impl Engine {
             }
             if !c.is_zero() {
                 let nc = coeff.mul(c);
-                if !nc.is_zero() { pending.push((word.push(gen), nc)); }
+                if !nc.is_zero() {
+                    let wg = word.push(gen);
+                    let e = elem.terms.entry(wg).or_insert_with(|| CrtPoly::zero(np));
+                    *e = e.add(&nc);
+                }
             }
         }
         if doubled { elem.pn_count += 1; }
 
-        // Reduce pending c-terms
+        // Full reduction: find ONE reducible term, apply rule, repeat
         loop {
-            if pending.is_empty() { break; }
-            let mut next: Vec<(W, CrtPoly)> = Vec::new();
-            let mut batch: FxHashMap<W, CrtPoly> = FxHashMap::default();
-            for (w, c) in pending.drain(..) {
-                let e = batch.entry(w).or_insert_with(|| CrtPoly::zero(np));
-                *e = e.add(&c);
-            }
-            let mut any = false;
-            for (word, coeff) in batch {
-                if coeff.is_zero() { continue; }
-                let l = word.len();
-                let mut red = None;
-                if l >= 2 {
+            let reducible = elem.terms.iter()
+                .filter(|(_, c)| !c.is_zero())
+                .find_map(|(word, _)| {
+                    let l = word.len();
+                    if l < 2 { return None; }
                     for p in 0..l-1 {
                         let a = word.get(p); let b = word.get(p+1);
-                        if a == b { red = Some((p, 0u8)); break; }
-                        if (a as i16 - b as i16) >= 2 { red = Some((p, 1)); break; }
+                        if a == b { return Some((*word, p, 0u8)); }
+                        if (a as i16 - b as i16) >= 2 { return Some((*word, p, 1)); }
                         if p+2 < l {
                             let c = word.get(p+2);
-                            if a == c && (a as i16 - b as i16).abs() == 1 && b < a { red = Some((p, 2)); break; }
+                            if a == c && (a as i16 - b as i16).abs() == 1 && b < a { return Some((*word, p, 2)); }
                         }
                     }
-                }
-                if let Some((pos, rule)) = red {
-                    any = true;
+                    None
+                });
+
+            match reducible {
+                None => break,
+                Some((word, pos, rule)) => {
+                    let coeff = elem.terms.remove(&word).unwrap();
                     match rule {
-                        0 => { let w1 = word.remove_at(pos+1); let w2 = w1.remove_at(pos); next.push((w1, coeff.mul(ha))); next.push((w2, coeff)); }
-                        1 => { let mut w = word; let (a,b) = (w.get(pos), w.get(pos+1)); w.set(pos, b); w.set(pos+1, a); next.push((w, coeff)); }
-                        2 => { let mut w = word; let (a,b) = (w.get(pos), w.get(pos+1)); w.set(pos, b); w.set(pos+1, a); w.set(pos+2, b); next.push((w, coeff)); }
+                        0 => {
+                            let w1 = word.remove_at(pos+1); let w2 = w1.remove_at(pos);
+                            let c1 = coeff.mul(ha);
+                            let e1 = elem.terms.entry(w1).or_insert_with(|| CrtPoly::zero(np)); *e1 = e1.add(&c1);
+                            let e2 = elem.terms.entry(w2).or_insert_with(|| CrtPoly::zero(np)); *e2 = e2.add(&coeff);
+                        }
+                        1 => { let mut w = word; let (a,b) = (w.get(pos), w.get(pos+1)); w.set(pos, b); w.set(pos+1, a);
+                            let e = elem.terms.entry(w).or_insert_with(|| CrtPoly::zero(np)); *e = e.add(&coeff);
+                        }
+                        2 => { let mut w = word; let (a,b) = (w.get(pos), w.get(pos+1)); w.set(pos, b); w.set(pos+1, a); w.set(pos+2, b);
+                            let e = elem.terms.entry(w).or_insert_with(|| CrtPoly::zero(np)); *e = e.add(&coeff);
+                        }
                         _ => {}
                     }
-                } else {
-                    let e = elem.terms.entry(word).or_insert_with(|| CrtPoly::zero(np));
-                    *e = e.add(&coeff);
+                    // Clean up zero terms that might have been created
+                    elem.terms.retain(|_, c| !c.is_zero());
                 }
             }
-            if !any && next.is_empty() { break; }
-            pending = next;
         }
-        elem.terms.retain(|_, c| !c.is_zero());
     }
 
     fn strip(terms: &mut FxHashMap<W, CrtPoly>, np: usize, t0: f64) -> PauliAcc {
