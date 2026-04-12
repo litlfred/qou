@@ -486,23 +486,176 @@ fn kostka_supported(a: usize, b: usize, n_u: usize, n_d: usize) -> bool {
 }
 
 // ════════════════════════════════════════════════════════════════
+// CONFINEMENT EIGENVECTOR: q-torsion leaf projection
+// ════════════════════════════════════════════════════════════════
+//
+// The T_{2,3} trefoil σ_k · σ_{k+1} · σ_k confines each nucleon triple.
+// For A nucleons, the combined confinement operator is:
+//   K_conf = Π_{nucleon m=0..A-1} T_{2,3}(strands 3m, 3m+1, 3m+2)
+//
+// The leading eigenvector of K_conf is the q-torsion leaf — the
+// invariant submanifold where the q-curvature is minimized.
+//
+// Power iteration finds it in O(iterations × 3A × dim) time.
+
+/// Apply a single generator σ_gen to a vector (sparse 2×2 blocks).
+/// This is the core building block for trefoil and Garside actions.
+fn apply_generator_to_vector(
+    gen: usize,
+    d_coeff: f64,
+    vec: &mut [f64],
+    gen_crossing_data: &[(f64, Option<(usize, f64)>)], // (diag, partner)
+) {
+    let dim = vec.len();
+    let mut processed = vec![false; dim];
+    for j in 0..dim {
+        if processed[j] { continue; }
+        let dj = gen_crossing_data[j].0 + d_coeff;
+
+        if let Some((j2, off_j)) = gen_crossing_data[j].1 {
+            if !processed[j2] {
+                let dj2 = gen_crossing_data[j2].0 + d_coeff;
+                let off_j2 = gen_crossing_data[j2].1
+                    .filter(|&(p, _)| p == j)
+                    .map(|(_, o)| o)
+                    .unwrap_or(0.0);
+
+                let vj = vec[j];
+                let vj2 = vec[j2];
+                vec[j]  = vj * dj  + vj2 * off_j2;
+                vec[j2] = vj * off_j + vj2 * dj2;
+                processed[j] = true;
+                processed[j2] = true;
+                continue;
+            }
+        }
+
+        if !processed[j] {
+            vec[j] *= dj;
+            processed[j] = true;
+        }
+    }
+}
+
+/// Precompute crossing data for all generators of an irrep.
+/// Returns: Vec<Vec<(diag, Option<(partner_idx, off_diag)>)>>
+fn precompute_crossing_data(
+    tabs: &[Vec<bool>],
+    tab_idx: &std::collections::HashMap<Vec<bool>, usize>,
+    n: usize,
+    q: f64,
+) -> Vec<Vec<(f64, Option<(usize, f64)>)>> {
+    let dim = tabs.len();
+    (0..n-1).map(|gen| {
+        (0..dim).map(|j| {
+            let (diag_j, off_j) = seminormal_entry(&tabs[j], gen, q);
+            let partner = if let Some(off_val) = off_j {
+                if let Some(swapped) = syt_swap(&tabs[j], gen + 1) {
+                    tab_idx.get(&swapped).map(|&j2| (j2, off_val))
+                } else { None }
+            } else { None };
+            (diag_j, partner)
+        }).collect()
+    }).collect()
+}
+
+/// Find the confinement eigenvector via power iteration.
+///
+/// The trefoil T_{2,3} at nucleon m (strands 3m, 3m+1, 3m+2) is:
+///   σ_{3m} · σ_{3m+1} · σ_{3m}
+///
+/// The combined confinement: K_conf = Π_m T_{2,3}^(m)
+///
+/// Power iteration: |v⟩ → K_conf|v⟩ / ||K_conf|v⟩||, repeat.
+fn confinement_eigenvector(
+    a: usize, b: usize,
+    n_nucleons: usize,
+    q: f64,
+    max_iter: usize,
+    tol: f64,
+) -> (Vec<f64>, f64) {
+    let n = a + b;
+    let tabs = generate_syt(a, b);
+    let dim = tabs.len();
+
+    let mut tab_idx: std::collections::HashMap<Vec<bool>, usize> = std::collections::HashMap::new();
+    for (i, t) in tabs.iter().enumerate() {
+        tab_idx.insert(t.clone(), i);
+    }
+
+    let cdata = precompute_crossing_data(&tabs, &tab_idx, n, q);
+
+    // Initialize with uniform vector
+    let inv_sqrt_dim = 1.0 / (dim as f64).sqrt();
+    let mut v = vec![inv_sqrt_dim; dim];
+
+    let mut eigenvalue = 0.0f64;
+
+    for iter in 0..max_iter {
+        // Apply K_conf = Π_m σ_{3m} · σ_{3m+1} · σ_{3m}
+        // Each trefoil is applied with d_coeff = 0 (untyped — pure confinement)
+        for m in 0..n_nucleons {
+            let g0 = 3 * m;      // σ_{3m}
+            let g1 = 3 * m + 1;  // σ_{3m+1}
+            if g0 >= n - 1 || g1 >= n - 1 { continue; }
+
+            // T_{2,3} = σ_{g0} · σ_{g1} · σ_{g0}
+            apply_generator_to_vector(g0, 0.0, &mut v, &cdata[g0]);
+            apply_generator_to_vector(g1, 0.0, &mut v, &cdata[g1]);
+            apply_generator_to_vector(g0, 0.0, &mut v, &cdata[g0]);
+        }
+
+        // Normalize
+        let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
+        if norm < 1e-300 { break; }
+        let new_eigenvalue = norm;
+        for x in v.iter_mut() { *x /= norm; }
+
+        // Check convergence
+        if (new_eigenvalue - eigenvalue).abs() / (eigenvalue.abs() + 1e-15) < tol {
+            eigenvalue = new_eigenvalue;
+            eprintln!("    Confinement eigenvector converged at iter {}: λ = {:.10e}", iter, eigenvalue);
+            break;
+        }
+        eigenvalue = new_eigenvalue;
+    }
+
+    (v, eigenvalue)
+}
+
+/// Compute ⟨v_conf|Δ|v_conf⟩ — the Garside matrix element on the q-torsion leaf.
+fn garside_confinement_element(
+    a: usize, b: usize,
+    quark_ordering: &[u8],
+    n_nucleons: usize,
+    q: f64,
+) -> (f64, f64, f64) {
+    let (v_conf, eigenvalue) = confinement_eigenvector(a, b, n_nucleons, q, 200, 1e-12);
+    let me = garside_matrix_element(a, b, quark_ordering, &v_conf, q);
+    (me, eigenvalue, v_conf.iter().map(|x| x * x).sum::<f64>())
+}
+
+// ════════════════════════════════════════════════════════════════
 // Main
 // ════════════════════════════════════════════════════════════════
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     let use_vector = args.iter().any(|a| a == "--vector" || a == "-v");
+    let use_confine = args.iter().any(|a| a == "--confine" || a == "-c");
     let positional: Vec<&String> = args[1..].iter().filter(|a| !a.starts_with('-')).collect();
 
     if positional.is_empty() {
         eprintln!("hecke-irrep v14 — Per-irrep Garside via Young's seminormal form");
         eprintln!();
-        eprintln!("Usage: hecke-irrep [--vector] PARENT DAUGHTER [max_dim]");
-        eprintln!("  Orderings: u/d or p/n strings (quark level)");
-        eprintln!("  --vector:  Use O(dim) vector action per matrix element");
-        eprintln!("             instead of O(dim²) full matrix product.");
-        eprintln!("             Computes diagonal elements ⟨e_i|Δ|e_i⟩");
-        eprintln!("             Uses O(dim) memory instead of O(dim²).");
+        eprintln!("Usage: hecke-irrep [--vector|--confine] PARENT DAUGHTER [max_dim]");
+        eprintln!("  Orderings: u/d strings (quark level, length must be 3×A)");
+        eprintln!("  --vector:  Compute diagonal ⟨e_i|Δ|e_i⟩ via O(dim) vector action");
+        eprintln!("  --confine: Compute ⟨v_conf|Δ|v_conf⟩ where v_conf is the");
+        eprintln!("             leading eigenvector of the T_{{2,3}} confinement operator.");
+        eprintln!("             This is the q-torsion leaf projection — the physical");
+        eprintln!("             state selected by Borromean B₃ confinement.");
+        eprintln!("             Cost: O(n_crossings × dim) per irrep (same as --vector)");
         eprintln!("  max_dim:   skip irreps with dim > this (default: unlimited)");
         std::process::exit(1);
     }
@@ -604,6 +757,63 @@ fn main() {
         }
         println!("],\"total_dtr\":{:.10e},\"q_mev\":{:.6},\"q0\":{:.15},\"m_e_mev\":{},\"elapsed_s\":{:.3}}}",
             total_dtr, q_pred, q0, M_E_MEV, elapsed_total);
+
+        return;
+    }
+
+    // ────────────────────────────────────────────────────────────
+    //  CONFINE MODE: q-torsion leaf matrix elements
+    // ────────────────────────────────────────────────────────────
+    if use_confine {
+        assert_eq!(n % 3, 0, "Quark ordering length must be 3×A for confinement mode");
+        let n_nucleons = n / 3;
+        eprintln!("  Confine mode: T_{{2,3}} confinement eigenvector (q-torsion leaf)");
+        eprintln!("  {} nucleons, {} quarks", n_nucleons, n);
+
+        let results: Vec<(usize, usize, usize, f64, f64, f64, f64, f64)> = partitions.par_iter()
+            .filter_map(|&(a, b)| {
+                let dim = generate_syt(a, b).len();
+                if dim > max_dim || dim == 0 { return None; }
+
+                let t0 = Instant::now();
+
+                // Find confinement eigenvector (shared for parent and daughter —
+                // the confinement structure is the same, only flavor typing differs)
+                let (v_conf, lambda) = confinement_eigenvector(a, b, n_nucleons, q0, 200, 1e-12);
+
+                // Matrix elements in confinement eigenspace
+                let me_par = garside_matrix_element(a, b, &par_types, &v_conf, q0);
+                let me_dau = garside_matrix_element(a, b, &dau_types, &v_conf, q0);
+                let dme = me_dau - me_par;
+
+                let elapsed = t0.elapsed().as_secs_f64();
+
+                eprintln!("  λ=({},{}): dim={:>6}, conf_λ={:.4e}, ⟨v|Δ_par|v⟩={:>+12.6}, ⟨v|Δ_dau|v⟩={:>+12.6}, Δme={:>+12.6e}, {:.1}s",
+                    a, b, dim, lambda, me_par, me_dau, dme, elapsed);
+
+                Some((a, b, dim, me_par, me_dau, dme, lambda, elapsed))
+            })
+            .collect();
+
+        let total_dme: f64 = results.iter().map(|r| r.5).sum();
+        let q_pred = total_dme.abs() * M_E_MEV;
+        let elapsed_total = t_total.elapsed().as_secs_f64();
+
+        eprintln!("\n  Σ Δ⟨v|Δ|v⟩ = {:+.10e}", total_dme);
+        eprintln!("  Q = |Σ Δme| × m_e = {:.6} MeV", q_pred);
+        eprintln!("  Total: {:.1}s", elapsed_total);
+
+        // JSON output
+        print!("{{\"mode\":\"confine\",\"parent\":\"{}\",\"daughter\":\"{}\",\"n\":{},\"n_nucleons\":{},\"n_irreps\":{}",
+            par_str, dau_str, n, n_nucleons, results.len());
+        print!(",\"irreps\":[");
+        for (i, (a, b, dim, me_p, me_d, dme, lam, t)) in results.iter().enumerate() {
+            if i > 0 { print!(","); }
+            print!("{{\"a\":{},\"b\":{},\"dim\":{},\"me_par\":{:.10e},\"me_dau\":{:.10e},\"dme\":{:.10e},\"conf_lambda\":{:.10e},\"time\":{:.3}}}",
+                a, b, dim, me_p, me_d, dme, lam, t);
+        }
+        println!("],\"total_dme\":{:.10e},\"q_mev\":{:.6},\"q0\":{:.15},\"m_e_mev\":{},\"elapsed_s\":{:.3}}}",
+            total_dme, q_pred, q0, M_E_MEV, elapsed_total);
 
         return;
     }
