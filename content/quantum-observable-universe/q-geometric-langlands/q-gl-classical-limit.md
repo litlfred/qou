@@ -3,9 +3,9 @@ Langlands correspondence recovers the classical Geometric Langlands
 equivalence:
 
 $$
-  \lim_{q \to 1} \mathbb{L}_q =  \mathbb{L}_{\mathrm{BD}}
+  \lim_{q \to 1} \mathbb{L}_q \;=\; \mathbb{L}_{\mathrm{BD}}
   \colon \mathcal{D}\text{-}\mathrm{mod}(\mathrm{Bun}_G(X))
-  \xrightarrow{ \sim }
+  \;\xrightarrow{\;\sim\;}
   \mathrm{QCoh}(\mathrm{LocSys}_{\check{G}}(X)).
 $$
 

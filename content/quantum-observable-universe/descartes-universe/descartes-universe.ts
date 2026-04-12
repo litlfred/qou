@@ -98,10 +98,6 @@ export default chapter({
         // Seiberg--Witten on Bring's
         "generation-dependent-sw",
         "lepton-mass-integrals",
-        "picard-lefschetz-thimble",
-        "mobius-golden-fixed-points",
-        "baryon-period-conjecture",
-        "baryon-integration-limit",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
@@ -138,7 +134,6 @@ export default chapter({
         "torus-knot-generators",
         "embeddability-closure",
         "genus-filtration-ideal",
-        "genus-filtration-ideal-proof",
         "genus-filtration-interpretation",
         "torus-embeddable-complete",
         "generation-completeness",
@@ -164,18 +159,9 @@ export default chapter({
         "linking-relations-table",
         // q-deformed kinematics (definitions in braids-and-knots; applied here)
         "q-value-transition",
-        // Pair production and quark-antiquark creation
-        "breit-wheeler-pair-production",
-        "knot-operator-selection",
-        "frobenius-gram-matrix",
-        "quark-antiquark-production",
-        // Meson, proton, neutron, stable nucleus
-        "categorical-meson",
-        "meson-formation-chain",
+        // Proton, neutron, stable nucleus
         "categorical-proton",
-        "meson-to-proton-via-borromean",
         "categorical-neutron",
-        // Derived confinement → Ch 11 (Particle Interactions)
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
         "stable-nucleus",
@@ -193,7 +179,6 @@ export default chapter({
     }),
 
     // ── §3c. Nuclear stability and decay ─────────────────────────────
-    // GB reductions + transfer matrices → Ch 11 (Particle Interactions)
     section({
       title: "Nuclear stability and decay",
       label: "sec:nuclear-stability-decay",
@@ -208,11 +193,22 @@ export default chapter({
         "tau-branching-ratio-witness",
         "parity-violation-skein",
         "nuclear-spin-parity",
-        // Half-life calculations
+        // Half-life calculations via Gröbner reductions
         "hadron-half-life",
         "hadron-q-self-correction",
         "skein-coulomb-enhancement",
-        // GB reductions + transfer matrices + Garside elements → Ch 11 (Particle Interactions)
+        "nuclear-groebner-reduction",
+        "groebner-shirshov-energy",
+        "box-braid-irreducibility",
+        "generator-volume-decomposition",
+        "markov-trace-factorization",
+        "skein-polynomial-transfer-matrix",
+        "transfer-matrix-operator",
+        "beta-decay-transfer-matrix",
+        "beta-decay-interpretation",
+        "nucleon-nf-observability",
+        "beta-decay-energy-scale",
+        "beta-decay-braid-visualizer",
       ],
     }),
 
@@ -228,11 +224,7 @@ export default chapter({
         "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
-        "skein-shell-correction",
         "shell-closure-normal-form",
-        "groebner-nf-computation",
-        "kummer-shell-closure",
-        "nf-computation-strategy",
         "torus-knot-shell-binding",
         "skein-finiteness-bound",
         "rj-canonical-inner-product",
@@ -240,7 +232,6 @@ export default chapter({
         "spectral-decomposition-qvalue",
         "shell-construction-rules",
         "electron-shells-hopf",
-        // Derived atoms + demand stability → Ch 11 (Particle Interactions)
         "helium-hopf-diagram",
         "noble-gas-characterization",
         "metallic-character-knot",
@@ -258,6 +249,7 @@ export default chapter({
       blocks: [
         "descartes",
         "descartes-proof",
+        "terminal-morphism-brings",
         "universality-general",
         "descartes-yekutieli",
         "observation-brings",
@@ -271,14 +263,6 @@ export default chapter({
       blocks: [
         // Topological mass (Descartes-specific applications)
         "hyperbolic-volumes-prose",
-        // Algebraic independence of hyperbolic volumes
-        "hyperbolic-volume-transcendence",
-        "volume-tower-decomposition",
-        "cs-evaluation-faithfulness",
-        "single-volume-irrationality",
-        "borel-zagier-qou-volumes",
-        "formal-chain-transcendence-remark",
-        "yekutieli-transcendence-shadow",
         // Skein decomposition and hadronic mass
         "intro",
         "terminal-resolution",

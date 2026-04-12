@@ -11,7 +11,7 @@ Applying the fibre functor $\tau$ gives the endomorphism
 $T = \tau(c_{V,V})$ satisfying the Hecke relation
 
 $$
-  (T - q)(T + q^{-1}) =  0,
+  (T - q)(T + q^{-1}) \;=\; 0,
 $$
 
 where $q \in \mathrm{End}(\mathbf{1}) \cong k^{\times}$ is the
@@ -21,8 +21,8 @@ family $d_q$ ([substrate parameter](#def:substrate-parameter)).
 The Iwahori--Hecke algebra on $n$ strands is therefore
 
 $$
-  H_n(q) =  k[B_n] \big/
-  \bigl\langle (T_i - q)(T_i + q^{-1})  \big| 
+  H_n(q) \;=\; k[B_n] \,\big/\,
+  \bigl\langle (T_i - q)(T_i + q^{-1}) \;\big|\;
   i = 1, \ldots, n{-}1 \bigr\rangle,
 $$
 

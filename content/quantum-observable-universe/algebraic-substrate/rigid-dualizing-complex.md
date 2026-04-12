@@ -11,8 +11,8 @@ right $A$-module.
 
 $$
 \omega_A^\bullet
-\simeq
-R\mathrm{Hom}_{A^e}(A, A^e)
+\;\simeq\;
+R\mathrm{Hom}_{A^e}(A,\, A^e)
 $$
 
 in $D(A^e)$, where $A^e = A \otimes A^{\mathrm{op}}$ is the enveloping
@@ -24,8 +24,8 @@ that afflicts ordinary dualizing complexes.
 the rigid dualizing complex induces a duality
 
 $$
-\mathrm{Ext}^i_A(M, \omega_A^\bullet)
- \cong 
+\mathrm{Ext}^i_A(M,\, \omega_A^\bullet)
+\;\cong\;
 H^{d-i}(M)^\vee,
 $$
 

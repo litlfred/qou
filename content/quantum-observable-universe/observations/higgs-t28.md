@@ -46,7 +46,7 @@ cancels: one winds $+4$ and the other $-4$ around the Reeb
 direction.  The total angular momentum is
 
 $$
-  J =  J_1 + J_2 =  +4 + (-4) =  0.
+  J \;=\; J_1 + J_2 \;=\; +4 + (-4) \;=\; 0.
 $$
 
 The torus link $T(2,8)$ is therefore a **scalar** (spin-$0$) boson — the only
@@ -62,9 +62,9 @@ proportional to the number of crossings between the particle
 and the Higgs link:
 
 $$
-  m_{\mathrm{Higgs}}  \propto 
-  \#\text{crossings with } T(2,8)
-   \times  \frac{q - q^{-1}}{q + q^{-1}}
+  m_{\mathrm{Higgs}} \;\propto\;
+  \#\,\text{crossings with } T(2,8)
+  \;\times\; \frac{q - q^{-1}}{q + q^{-1}}
 $$
 
 Particles that cross all three exceptional divisors (heavy
@@ -82,7 +82,7 @@ it a mass of $\sim 125$ GeV — determined by the Skein
 polynomial of $T(2,8)$ evaluated at $q = q_0$:
 
 $$
-  m_H =  \frac{\mathrm{Vol}(\text{Seifert}(T(2,8)))}{\hbar_q^2}
+  m_H \;=\; \frac{\mathrm{Vol}(\text{Seifert}(T(2,8)))}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}
 $$
 

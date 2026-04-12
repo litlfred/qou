@@ -16,7 +16,7 @@ map to the $\mathrm{SU}(2)$ elements $\alpha, \beta$
 verified in [trefoil operator algebra](#ex:trefoil-operator-algebra).
 
 *Item (3)*: the projection $\mathrm{Dic}_3 \to S_3$ sends
-$\alpha \mapsto (123)$ and $\beta \mapsto (12)$.  The three
+$\alpha \mapsto (1\,2\,3)$ and $\beta \mapsto (1\,2)$.  The three
 copies of $S_3$ inside $S_5$ are the stabilisers of the three pairs
 of color coordinates
 ([coral sector coords](#def:coral-sector-coords)), and conjugation by

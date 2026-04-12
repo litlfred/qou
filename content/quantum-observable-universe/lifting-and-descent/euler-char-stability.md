@@ -7,7 +7,7 @@ via the rigidity trace of the identity endomorphism in $\mathbf{C}$)
 is stable under jet prolongation: for each level $n$,
 
 $$
-  \chi(A_{n+1}) =  \chi(A_n).
+  \chi(A_{n+1}) \;=\; \chi(A_n).
 $$
 
 In particular, if the base level satisfies $\chi(A_0) = c \in k$, then

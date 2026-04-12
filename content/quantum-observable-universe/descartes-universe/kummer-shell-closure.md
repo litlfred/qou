@@ -11,7 +11,7 @@ alternating eigenvalue $(-q^{-1})^{\ell(w)}$:
 
 $$
   \mathrm{tr}_{\mathrm{alt}}(\mathcal{N})
-  = 
+  \;=\;
   \sum_{w \in \mathrm{supp}} c_w \cdot (-q^{-1})^{\ell(w)}
 $$
 
@@ -25,7 +25,7 @@ The Pauli factor
 
 $$
   F_{\mathrm{Pauli}}^{(A)}
-  = 
+  \;=\;
   \frac{|\mathrm{tr}_{\mathrm{alt}}(\mathcal{N})|}{|\mathrm{net}(\mathcal{N})|}
 $$
 
@@ -40,7 +40,7 @@ The Kummer reduction at level $n$
 $$
   \kappa_0 \bmod n = 0
   \quad\Longleftrightarrow\quad
-  n  \big|  \chi(A)
+  n \;\big|\; \chi(A)
 $$
 
 states that the obstruction vanishes when $n$ divides the Euler
@@ -95,10 +95,10 @@ Verified computationally:
 
 | $A$ | Terms | Time | Scaling |
 |:---:|------:|-----:|:-------:|
-| $8$ | $14256$ | $0.9$s | — |
-| $9$ | $234504$ | $29$s | — |
+| $8$ | $14\,256$ | $0.9$s | — |
+| $9$ | $234\,504$ | $29$s | — |
 | $10$ | $8.7$M | $4.3$s (v2) | — |
-| $12$ | $923319$ | $269$s (v3) / $\sim5$s (v6) | — |
+| $12$ | $923\,319$ | $269$s (v3) / $\sim5$s (v6) | — |
 | $16$ | $3.4$M | $38$s (v6) | $A^3 = 4096$ ✓ |
 
 With quotient-during-construction (v6), the effective complexity

@@ -8,10 +8,10 @@ representation via the tensor identity $2 \times 2 = 6 \times 6$.
 The derivation chain is:
 
 $$
-  q \xrightarrow{\text{Hecke}}
-  \hat{V}_i(q) \xrightarrow{\text{ratio}}
+  q \;\xrightarrow{\text{Hecke}}\;
+  \hat{V}_i(q) \;\xrightarrow{\text{ratio}}\;
   \log_q \frac{\hat{V}_i^{\mathrm{dau}}}{\hat{V}_i^{\mathrm{par}}}
-  \xrightarrow{\kappa_q}
+  \;\xrightarrow{\kappa_q}\;
   \mathcal{Q}(q)
 $$
 
@@ -21,7 +21,7 @@ $\sigma_i$ is exact in $\mathbb{Q}(q^{1/2})$:
 $$
   \hat{V}_i = z \cdot M_i[0,0] + M_i[1,0],
   \qquad
-  M_i = \prod_{j > i} T(\mathfrak{w}^+(i,j), \mathfrak{w}^0(i,j))
+  M_i = \prod_{j > i} T(\mathfrak{w}^+(i,j),\, \mathfrak{w}^0(i,j))
 $$
 
 where $z = 1/(\sqrt{q} + 1/\sqrt{q})$ is the Markov parameter

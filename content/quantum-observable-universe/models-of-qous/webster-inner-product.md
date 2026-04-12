@@ -17,7 +17,7 @@ This notation makes several dualities visually transparent:
 
 - **Adjoint definition.** The $q$-codifferential $\delta_q$ is
   uniquely characterised by
-  $\langle d_q\alpha, \beta \rangle_\theta = \langle \alpha, \delta_q\beta \rangle_\theta$.
+  $\langle d_q\,\alpha, \beta \rangle_\theta = \langle \alpha, \delta_q\,\beta \rangle_\theta$.
 
 - **Substrate contraction.** The natural contraction
   $\langle L_\theta, F_A^+ \rangle$ appearing in the substrate

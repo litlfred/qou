@@ -1,8 +1,8 @@
 {
   "computation": "neutron-from-photons",
-  "description": "Free neutron built from 3 \u00d7 \u03b3\u03b3 \u2192 \u03bd\u03bd\u0304 pair creations, neutrino \u2192 quark flavor dressing, and B\u2083 Borromean confinement. All Gr\u00f6bner--Shirshov relations traced verbosely.",
-  "timestamp": "2026-04-07T21:24:19.990996+00:00",
-  "commit_sha": "52fe18191b5d038a9c99dbcc1436107ed1f534c8",
+  "description": "Free neutron built from 3 \u00d7 \u03b3\u03b3 \u2192 \u03bd\u03bd\u0304 pair creations, neutrino \u2192 quark flavor dressing, and B\u2083 Borromean confinement. All Gr\u00f6bner relations traced verbosely.",
+  "timestamp": "2026-04-06T11:56:24.333590+00:00",
+  "commit_sha": "808bb0a7b928c7565817d2e7d9a21c4c37aeb709",
   "q0": 1.1099785955541805,
   "constants": {
     "HA": 0.20906032198987945,
@@ -62,10 +62,10 @@
         "\ud835\udfcf": 0.04370621823051213
       },
       "steps": {
+        "total": 10,
         "fc": 0,
         "yb": 2,
-        "hecke": 8,
-        "total": 10
+        "hecke": 8
       },
       "nu_component": 0.04370621823051213,
       "n_terms": 6
@@ -77,9 +77,9 @@
         "d"
       ],
       "crossing_types": {
-        "(0,1) u-d": "1.000000\u00b7\u03c3\u2080 + -0.104530\u00b7\ud835\udfcf",
-        "(0,2) u-d": "1.000000\u00b7\u03c3\u2080 + -0.104530\u00b7\ud835\udfcf",
-        "(1,2) d-d": "1.000000\u00b7\u03c3\u2081 + -0.209060\u00b7\ud835\udfcf"
+        "(0,1) u-d": "1.116026\u00b7\u03c3\u2080 + -0.057934\u00b7\ud835\udfcf",
+        "(0,2) u-d": "1.116026\u00b7\u03c3\u2080 + -0.057934\u00b7\ud835\udfcf",
+        "(1,2) d-d": "1.232052\u00b7\u03c3\u2081 + -0.115869\u00b7\ud835\udfcf"
       }
     },
     "phase4": {
@@ -91,10 +91,10 @@
         "\u03c3_0": -0.00953659008932739
       },
       "steps": {
+        "total": 13,
         "fc": 0,
         "yb": 4,
-        "hecke": 9,
-        "total": 13
+        "hecke": 9
       },
       "n_terms": 5
     }
@@ -106,8 +106,8 @@
         "word": [],
         "word_str": "\ud835\udfcf",
         "particle": "\u03bd",
-        "coefficient_numeric": -0.20170383884270415,
-        "coefficient_symbolic": "q**7/4 - q**5/2 - q**3/4 + q/2 - 1/(2*q) + 1/(4*q**3) + 1/(2*q**5) - 1/(4*q**7)",
+        "coefficient_numeric": -0.13728253559192538,
+        "coefficient_symbolic": "q**(23/2)/4 - q**(21/2)/4 - q**(19/2)/2 + 3*q**(17/2)/4 - q**(15/2)/4 - 3*q**(13/2)/4 + 5*q**(11/2)/2 - 3*q**(9/2)/2 - 17*q**(7/2)/4 + 17*q**(5/2)/4 + 5*q**(3/2)/2 - 7*sqrt(q)/2 - q**10/2 + q**9 + 5*q**8/4 - 7*q**7/2 - q**6/2 + 9*q**5/2 - 3*q**4/2 - 3*q**3/2 + 2*q**2 - 5*q/2 - 1/4 + 3/q - 1/q**2 - 1/q**3 + 1/(2*q**4) + 1/(4*sqrt(q)) + 3/(4*q**(3/2)) - 3/(4*q**(5/2)) + 1/(2*q**(7/2)) + 1/(4*q**(9/2)) - 1/(4*q**(11/2))",
         "length": 0
       },
       {
@@ -116,8 +116,8 @@
         ],
         "word_str": "\u03c3_0",
         "particle": "H\u2070",
-        "coefficient_numeric": 0.04813038950468018,
-        "coefficient_symbolic": "q**8/4 - q**6/2 + q**4/4 + q**2/2 - 1 + 1/(2*q**2) + 1/(4*q**4) - 1/(2*q**6) + 1/(4*q**8)",
+        "coefficient_numeric": 0.05644064663669557,
+        "coefficient_symbolic": "q**(25/2)/4 - q**(23/2)/4 - q**(21/2)/2 + 3*q**(19/2)/4 - 3*q**(17/2)/4 - q**(15/2)/4 + 3*q**(13/2) - 3*q**(11/2)/2 - 19*q**(9/2)/4 + 4*q**(7/2) + 4*q**(5/2) - 19*q**(3/2)/4 - 3*sqrt(q)/2 - q**11/2 + 5*q**10/4 + 5*q**9/4 - 15*q**8/4 - q**7/2 + 17*q**6/4 - q**5/4 - 7*q**4/2 + 9*q**3/4 - 3*q**2/4 - q + 9/4 + 1/(4*q) - 11/(4*q**2) + q**(-3) + q**(-4) - 1/(2*q**5) + 3/sqrt(q) - 1/(4*q**(3/2)) - 3/(4*q**(5/2)) + 3/(4*q**(7/2)) - 1/(2*q**(9/2)) - 1/(4*q**(11/2)) + 1/(4*q**(13/2))",
         "length": 1
       },
       {
@@ -126,8 +126,8 @@
         ],
         "word_str": "\u03c3_1",
         "particle": "H\u00b9",
-        "coefficient_numeric": 1.008995448774928,
-        "coefficient_symbolic": "-q**6/4 + q**4/2 + q**2/2 - 1/2 + 1/(2*q**2) + 1/(2*q**4) - 1/(4*q**6)",
+        "coefficient_numeric": 1.5350004721808348,
+        "coefficient_symbolic": "q**(21/2)/2 - q**(19/2)/2 - q**(17/2) + 3*q**(15/2)/4 + 5*q**(13/2)/4 - q**(11/2)/2 - 2*q**(9/2) + 3*q**(7/2)/2 + q**(5/2) - 3*q**(3/2)/2 + sqrt(q) - q**12/4 + q**10/2 - q**7/2 + 3*q**6/4 + q**5/4 - q**4/2 + 5*q**3/4 - 5*q**2/4 + 1 - 1/(2*q) + 1/(2*q**2) - 1/(4*q**4) - 1/(4*sqrt(q)) - 3/(4*q**(3/2)) + 1/(2*q**(5/2))",
         "length": 1
       },
       {
@@ -137,8 +137,8 @@
         ],
         "word_str": "\u03c3_0\u00b7\u03c3_1",
         "particle": "L\u208a",
-        "coefficient_numeric": -0.009640792161232925,
-        "coefficient_symbolic": "-q**7/4 + q**5/2 - 3*q/4 + 3/(4*q) - 1/(2*q**5) + 1/(4*q**7)",
+        "coefficient_numeric": 0.1542603511850209,
+        "coefficient_symbolic": "q**(23/2)/2 - q**(21/2)/2 - 7*q**(19/2)/4 + 3*q**(17/2)/2 + 5*q**(15/2)/2 - 7*q**(13/2)/4 - 11*q**(11/2)/4 + 2*q**(9/2) + 3*q**(7/2)/4 - 3*q**(5/2)/4 + q**(3/2)/2 + sqrt(q)/4 - q**13/4 + 3*q**11/4 - q**9/2 - q**7/4 + 5*q**5/4 - 5*q**3/4 + q/4 + 1/(2*q) - 3/(4*q**3) + 1/(4*q**5) - 5/(4*sqrt(q)) + 1/(2*q**(3/2)) + 1/(2*q**(5/2)) - 1/(4*q**(7/2))",
         "length": 2
       },
       {
@@ -148,8 +148,8 @@
         ],
         "word_str": "\u03c3_1\u00b7\u03c3_0",
         "particle": "L\u208b",
-        "coefficient_numeric": 0.009237074564505066,
-        "coefficient_symbolic": "q**5/4 - q**3/4 - q/2 + 1/(2*q) + 1/(4*q**3) - 1/(4*q**5)",
+        "coefficient_numeric": 0.013691180644095358,
+        "coefficient_symbolic": "-q**(19/2)/2 + q**(17/2)/2 + 5*q**(15/2)/4 - q**(13/2) - 5*q**(11/2)/4 + 3*q**(9/2)/4 + q**(7/2)/4 - q**(5/2)/4 + 3*q**(3/2)/4 - sqrt(q)/4 + q**11/4 - q**9/2 + 3*q**5/4 - 3*q**3/4 + 1/(2*q) - 1/(4*q**3) - 1/(2*sqrt(q)) + 1/(4*q**(3/2))",
         "length": 2
       },
       {
@@ -160,18 +160,18 @@
         ],
         "word_str": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
         "particle": "e\u207b",
-        "coefficient_numeric": -0.0441837766085153,
-        "coefficient_symbolic": "-q**4/4 + 1/2 - 1/(4*q**4)",
+        "coefficient_numeric": -0.06640236570401026,
+        "coefficient_symbolic": "-3*q**(21/2)/4 + 3*q**(19/2)/4 + 2*q**(17/2) - 2*q**(15/2) - 3*q**(13/2)/2 + 3*q**(11/2)/2 - 3*q**(9/2)/4 + 3*q**(7/2)/4 + 9*q**(5/2)/4 - 9*q**(3/2)/4 - 3*sqrt(q)/2 + q**12/4 - 3*q**10/4 + q**9/2 - 3*q**8/4 - 3*q**7/4 + 13*q**6/4 - q**5/4 - 3*q**4 + 5*q**3/4 + q**2/4 - 3*q/4 + 9/4 - 1/(2*q) - 7/(4*q**2) + 1/(2*q**3) + 1/(4*q**4) + 3/(2*sqrt(q)) + 1/(4*q**(7/2)) - 1/(4*q**(9/2))",
         "length": 3
       }
     ],
     "n_terms": 6,
-    "net_coefficient": 0.8108345052316608,
+    "net_coefficient": 1.555707749350711,
     "reduction_steps": {
+      "total": 23,
       "fc": 0,
-      "yb": 5,
-      "hecke": 16,
-      "total": 21
+      "yb": 6,
+      "hecke": 17
     },
     "crossing_log": [
       {
@@ -201,16 +201,16 @@
         "types": "d-d",
         "gen": "\u03c3_1",
         "steps": {
-          "hecke": 2,
-          "yb": 1,
+          "hecke": 3,
+          "yb": 2,
           "fc": 0,
-          "total": 3
+          "total": 5
         }
       }
     ]
   },
   "mass_comparison": {
-    "nf_net_coefficient": 0.8108345052316608,
+    "nf_net_coefficient": 1.555707749350711,
     "borromean_mass_ratio": 746.417851076767,
     "observed_m_n_MeV": 939.56542052,
     "observed_m_p_MeV": 938.27208816

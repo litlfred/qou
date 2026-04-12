@@ -4,11 +4,15 @@
  *
  * Paper-specific parts generated from manifest:
  *   - Custom macros (\newcommand)
- *   - Title, author, affiliations, date
+ *   - Title page with CC license
  *   - hypersetup (PDF metadata)
  *   - Abstract
- *   - Chapter \input lines
- *   - Bibliography
+ *   - Chapter \input lines (excluding standalone appendices)
+ *   - Appendix B: Bibliography (BibTeX)
+ *
+ * Standalone appendices (chapters with tabLabel other than "I") are
+ * excluded from the main paper and get their own .tex files via
+ * generateStandaloneAppendixTex().
  *
  * Usage:
  *   bun run pipeline/generate-main-tex.ts <paper.ts> [--preamble preamble.tex] [--out main.tex] [--chapters-dir chapters/]
@@ -39,20 +43,20 @@ export interface GenerateMainTexOptions {
   chaptersDir: string;
   /** Chapter slugs keyed by chapter number (from BuildResult). */
   chapterSlugs: Map<number, string>;
+  /** Chapter indices to exclude from the main paper (standalone appendices). */
+  excludeChapterIndices?: Set<number>;
+  /** Labels from excluded appendix chapters to declare as phantom anchors. */
+  phantomLabels?: string[];
 }
 
 /**
- * Generate a complete main.tex for a paper.
+ * Emit shared preamble + paper-specific macros (used by both main and standalone).
  */
-export function generateMainTex(
-  paper: Paper,
-  opts: GenerateMainTexOptions,
-): string {
-  const preamble = readFileSync(opts.preamblePath, "utf-8");
-
+function emitPreambleAndMacros(paper: Paper, preamblePath: string): string[] {
+  const preamble = readFileSync(preamblePath, "utf-8");
   const lines: string[] = [];
 
-  // 1. Shared preamble (everything up to and including \IfFileExists)
+  // 1. Shared preamble
   lines.push(preamble.trimEnd());
   lines.push("");
 
@@ -66,23 +70,29 @@ export function generateMainTex(
     lines.push("");
   }
 
-  // 3. Metadata
+  return lines;
+}
+
+/**
+ * Generate a complete main.tex for a paper.
+ *
+ * Chapters listed in `opts.excludeChapterIndices` are omitted from the
+ * main PDF (they become standalone appendix PDFs instead).
+ */
+export function generateMainTex(
+  paper: Paper,
+  opts: GenerateMainTexOptions,
+): string {
+  const lines: string[] = [];
+
+  // 1. Preamble + macros
+  lines.push(...emitPreambleAndMacros(paper, opts.preamblePath));
+
+  // 2. Metadata (for hypersetup PDF fields)
   lines.push("% ── Metadata (generated from manifest) ────────────────────────────────────");
-  lines.push(`\\title{${escapeLatexMeta(paper.title)}}`);
-
-  // Author with optional affiliations
   const authorName = escapeLatexMeta(paper.authors[0] || "");
-  if (paper.affiliations?.length) {
-    lines.push("\\ifshowaffiliations");
-    lines.push(`  \\author{${authorName}\\thanks{${escapeLatexMeta(paper.affiliations[0])}}}`);
-    lines.push("\\else");
-    lines.push(`  \\author{${authorName}}`);
-    lines.push("\\fi");
-  } else {
-    lines.push(`\\author{${authorName}}`);
-  }
-  // Multi-author support (if needed in the future, extend here)
-
+  lines.push(`\\title{${escapeLatexMeta(paper.title)}}`);
+  lines.push(`\\author{${authorName}}`);
   lines.push(`\\date{${paper.date ? escapeLatexMeta(paper.date) : "\\today"}}`);
   lines.push("");
 
@@ -97,18 +107,29 @@ export function generateMainTex(
   lines.push("}");
   lines.push("");
 
-  // 4. Begin document
+  // 3. Begin document
   lines.push("% ──────────────────────────────────────────────────────────────────────────────");
   lines.push("\\begin{document}");
   lines.push("");
-  lines.push("\\maketitle");
-  lines.push("");
 
-  // License notice
-  lines.push("% ── License notice ────────────────────────────────────────────────────────");
-  lines.push("\\thispagestyle{empty}");
-  lines.push("\\vspace*{\\fill}");
-  lines.push("\\begin{center}");
+  // Title page with CC license at bottom
+  lines.push("% ── Title page with CC license ─────────────────────────────────────────────");
+  lines.push("\\begin{titlepage}");
+  lines.push("\\centering");
+  lines.push("\\vspace*{3cm}");
+  lines.push(`{\\LARGE\\bfseries ${escapeLatexMeta(paper.title)}}\\\\[2em]`);
+  if (paper.affiliations?.length) {
+    lines.push("\\ifshowaffiliations");
+    lines.push(`  {\\large ${authorName}\\thanks{${escapeLatexMeta(paper.affiliations[0])}}}\\\\[1em]`);
+    lines.push("\\else");
+    lines.push(`  {\\large ${authorName}}\\\\[1em]`);
+    lines.push("\\fi");
+  } else {
+    lines.push(`{\\large ${authorName}}\\\\[1em]`);
+  }
+  lines.push(`{\\large ${paper.date ? escapeLatexMeta(paper.date) : "\\today"}}\\\\`);
+  lines.push("\\vfill");
+  lines.push("{\\small");
   lines.push("  \\ccby\\\\[0.5em]");
   lines.push("  This work is licensed under a");
   lines.push("  \\href{https://creativecommons.org/licenses/by/4.0/}{%");
@@ -116,8 +137,8 @@ export function generateMainTex(
   lines.push("  You are free to share and adapt this material for any purpose,\\\\");
   lines.push("  provided appropriate credit is given, a link to the license is provided,\\\\");
   lines.push("  and any changes made are indicated.");
-  lines.push("\\end{center}");
-  lines.push("\\vspace*{\\fill}");
+  lines.push("}");
+  lines.push("\\end{titlepage}");
   lines.push("");
 
   // Table of contents
@@ -137,19 +158,90 @@ export function generateMainTex(
   lines.push("\\proofstatuslegend");
   lines.push("");
 
-  // 5. Chapter includes
+  // 4. Chapter includes (excluding standalone appendices)
   lines.push("% ── Chapters (generated from manifest) ────────────────────────────────────");
-  // Sort by chapter number, then emit \input lines
   const sortedEntries = [...opts.chapterSlugs.entries()].sort(
     ([a], [b]) => a - b,
   );
   for (const [num, slug] of sortedEntries) {
+    if (opts.excludeChapterIndices?.has(num)) continue;
     lines.push(`\\input{${opts.chaptersDir}${slug}}`);
   }
   lines.push("");
 
-  // 6. Bibliography
-  lines.push("% ── Bibliography ──────────────────────────────────────────────────────────");
+  // 5. Appendix B: Bibliography (BibTeX)
+  lines.push("% ── Appendix B: References ─────────────────────────────────────────────────");
+  lines.push("\\clearpage");
+  lines.push("\\chapter*{Appendix B. References}");
+  lines.push("\\addcontentsline{toc}{chapter}{Appendix B. References}");
+  lines.push("\\bibliographystyle{plain}");
+  lines.push("\\bibliography{references}");
+  lines.push("");
+
+  // 6. Phantom labels for excluded appendix chapters.
+  // Blocks in standalone appendices (glossary, knot table, etc.) are not
+  // compiled into the main PDF, but may be referenced via \hyperref from
+  // the main body. Declaring phantom labels prevents "Hyper reference
+  // undefined" warnings without including the full appendix content.
+  if (opts.phantomLabels?.length) {
+    lines.push("% ── Phantom labels (excluded appendix blocks) ─────────────────────────────");
+    lines.push("% These labels are defined in standalone appendix PDFs but referenced from");
+    lines.push("% the main paper body. Phantom declarations prevent hyperref warnings.");
+    for (const label of opts.phantomLabels) {
+      lines.push(`\\phantomsection\\label{${label}}`);
+    }
+    lines.push("");
+  }
+
+  lines.push("\\end{document}");
+
+  return lines.join("\n") + "\n";
+}
+
+/**
+ * Generate a standalone .tex file for a single appendix chapter.
+ *
+ * Produces a self-contained document that can be compiled independently.
+ */
+export function generateStandaloneAppendixTex(
+  paper: Paper,
+  chapterSlug: string,
+  chapterTitle: string,
+  opts: { preamblePath: string; chaptersDir: string },
+): string {
+  const lines: string[] = [];
+
+  // 1. Preamble + macros (same as main paper)
+  lines.push(...emitPreambleAndMacros(paper, opts.preamblePath));
+
+  // 2. Metadata
+  const authorName = escapeLatexMeta(paper.authors[0] || "");
+  lines.push("% ── Metadata ──────────────────────────────────────────────────────────────");
+  lines.push(`\\title{${escapeLatexMeta(chapterTitle)}}`);
+  lines.push(`\\author{${authorName}}`);
+  lines.push(`\\date{${paper.date ? escapeLatexMeta(paper.date) : "\\today"}}`);
+  lines.push("");
+
+  lines.push("\\hypersetup{");
+  lines.push(`  pdftitle  = {${escapeLatexMeta(chapterTitle)}},`);
+  lines.push(`  pdfauthor = {${escapeLatexMeta(paper.authors.join(", "))}},`);
+  lines.push("  colorlinks = true,");
+  lines.push("  linkcolor  = blue,");
+  lines.push("  citecolor  = blue,");
+  lines.push("  urlcolor   = blue,");
+  lines.push("}");
+  lines.push("");
+
+  // 3. Begin document
+  lines.push("\\begin{document}");
+  lines.push("\\maketitle");
+  lines.push("");
+
+  // 4. Include the chapter
+  lines.push(`\\input{${opts.chaptersDir}${chapterSlug}}`);
+  lines.push("");
+
+  // 5. Bibliography (if the chapter has citations)
   lines.push("\\bibliographystyle{plain}");
   lines.push("\\bibliography{references}");
   lines.push("");

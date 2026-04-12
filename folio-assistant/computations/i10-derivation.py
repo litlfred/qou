@@ -59,8 +59,8 @@ def compute_pairing_ratios():
     v_pp2 = z * (HA**2 + 1) + HA
     R_pp = v_pp2 / v_pp**2
 
-    # nn: T(1, -(q-q⁻¹))  [σ⁻¹ = σ - (q-q⁻¹)]
-    c_nn, d_nn = 1.0, -HA
+    # nn: T(q², -q·s)
+    c_nn, d_nn = Q**2, -Q * S_SK
     t_nn = [[c_nn*HA + d_nn, c_nn], [c_nn, d_nn]]
     v_nn = z * t_nn[0][0] + t_nn[1][0]
     # T_nn²
@@ -69,8 +69,8 @@ def compute_pairing_ratios():
     v_nn2 = z * t2_00 + t2_10
     R_nn = v_nn2 / v_nn**2
 
-    # pn: T(1, -(q-q⁻¹)/2)  [½(σ + σ⁻¹)]
-    c_pn, d_pn = 1.0, -HA / 2
+    # pn: T((1+q²)/2, -q·s/2)
+    c_pn, d_pn = (1 + Q**2)/2, -Q * S_SK / 2
     v_pn = z * (c_pn * HA + d_pn) + c_pn
     # T_pn² (pn × pn = two adjacent mixed crossings)
     t_pn = [[c_pn*HA + d_pn, c_pn], [c_pn, d_pn]]
@@ -144,8 +144,8 @@ print()
 def crossing_coeffs_f(ti, tj):
     pair = ti + tj
     if pair == 'pp': return (1.0, 0.0)
-    elif pair == 'nn': return (1.0, -HA)
-    else: return (1.0, -HA / 2.0)
+    elif pair == 'nn': return (Q**2, -Q * S_SK)
+    else: return ((1.0 + Q**2)/2.0, -Q * S_SK / 2.0)
 
 def generator_volumes_f(z, n):
     a = z+n; types = ['p']*z + ['n']*n; vols = []

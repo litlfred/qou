@@ -5,10 +5,10 @@ $\mathfrak{d}_{n+1} \colon \mathrm{End}_{\mathbf{C}}(A_{n+1}) \to \mathrm{End}_{
 the endomorphism of the level-$(n{+}1)$ endomorphism algebra:
 
 $$
-  \hat{\tau}_n =  \ell_n \circ \mathfrak{d}_{n+1}
-   \colon 
+  \hat{\tau}_n \;=\; \ell_n \circ \mathfrak{d}_{n+1}
+  \;\colon\;
   \mathrm{End}_{\mathbf{C}}(A_{n+1})
-   \longrightarrow 
+  \;\longrightarrow\;
   \mathrm{End}_{\mathbf{C}}(A_{n+1}).
 $$
 
@@ -19,13 +19,13 @@ $A_{n+1}$ and $\mathfrak{d}_{n+1}$ is the retraction), we have
 
 $$
   \hat{\tau}_n^2
-  = 
+  \;=\;
   \ell_n \circ \mathfrak{d}_{n+1} \circ \ell_n \circ \mathfrak{d}_{n+1}
-  = 
+  \;=\;
   \ell_n \circ (\mathfrak{d}_{n+1} \circ \ell_n) \circ \mathfrak{d}_{n+1}
-  = 
+  \;=\;
   \ell_n \circ \mathrm{id} \circ \mathfrak{d}_{n+1}
-  = 
+  \;=\;
   \hat{\tau}_n,
 $$
 

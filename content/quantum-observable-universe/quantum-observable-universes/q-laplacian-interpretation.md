@@ -1,6 +1,6 @@
 The classical Laplacian $\Delta f = 0$ says: the value of $f$ at a
 point equals the average over any small neighbourhood. The
-$q$-Laplacian $\Delta_q = d_q\delta_q + \delta_qd_q$ replaces
+$q$-Laplacian $\Delta_q = d_q\,\delta_q + \delta_q\,d_q$ replaces
 "small neighbourhood" with a *quantum-twisted neighbourhood* that
 weights the horizontal (spatial) and vertical (Reeb/spin) directions
 differently.

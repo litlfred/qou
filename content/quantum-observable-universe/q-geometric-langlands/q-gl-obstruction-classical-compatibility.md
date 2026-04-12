@@ -38,7 +38,7 @@ There is no contradiction because:
    closure.
 
 2. As $q \to 1$, the $(q-1)$-factor in the $q$-flatness equation
-   $\nabla_q^2 = (q-1)\mathcal{F}_q$ forces $\nabla_q^2 \to 0$
+   $\nabla_q^2 = (q-1)\,\mathcal{F}_q$ forces $\nabla_q^2 \to 0$
    even though $\mathcal{F}_q$ remains non-zero: the curvature is
    *screened* by the vanishing prefactor.  The obstruction does not
    disappear; it becomes invisible.

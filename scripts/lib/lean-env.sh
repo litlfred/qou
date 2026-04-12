@@ -26,7 +26,7 @@ _lean_remote_url() {
   local config="$REPO_ROOT/lean-mcp.config.json"
   if [ -f "$config" ] && has python3; then
     local domain
-    domain=$(python3 -c "import json; print(json.load(open('$config')).get('domain',''))" 2>/dev/null || true)
+    domain=$(python3 -c "import json; print(json.load(open('$config')).get('folio',{}).get('domain',''))" 2>/dev/null || true)
     [ -n "$domain" ] && echo "https://$domain/mcp"
   fi
 }

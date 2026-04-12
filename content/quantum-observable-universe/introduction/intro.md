@@ -54,7 +54,7 @@ limitation of four on the state space.  The QOU is characterised
 by the archimedean tuple
 
 $$
-  (\mathbf{C}, \theta, G, \mathcal{S}).
+  (\mathbf{C},\; \theta,\; G,\; \mathcal{S}).
 $$
 
 A categorical Dirac operator $\mathcal{D}_\nabla$, forced by the
@@ -63,14 +63,14 @@ Frobenius–Hopf structure, decomposes into gravity (Ricci), gauge
 
 $$
   \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
-  = 
+  \;=\;
   \underbrace{\mathrm{tr}\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}}
-  + 
-  \underbrace{\textstyle\int_A \!\circ \mathrm{tr}_A\bigl(
+  \;+\;
+  \underbrace{\textstyle\int_A \!\circ\, \mathrm{tr}_A\bigl(
     F_\nabla \wedge_q \star_q F_\nabla
   \bigr)}_{\text{gauge}}
-  + 
-  \underbrace{\textstyle\int_A\!\bigl(\psi^{\ast} \cdot \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}},
+  \;+\;
+  \underbrace{\textstyle\int_A\!\bigl(\psi^{\ast} \cdot \mathcal{D}_\nabla\,\psi\bigr)}_{\text{matter}},
 $$
 
 from which quantum versions of the Einstein, Yang–Mills, and Dirac
@@ -94,7 +94,7 @@ Hecke relations, where the parameter $q$ tracks the energy cost of
 each crossing.  The topological mass formula
 
 $$
-  \mathfrak{m}(K) =  \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}
+  \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}}
 $$
 
 acts as a Feynman path integral via the non-abelian Stokes formula,
@@ -129,7 +129,7 @@ Julia-set fractal.  The framework provides an interesting
 perspective on questions such as P versus NP in terms of
 categorical obstructions and event horizons for information flow.
 Crossing energy relates to categorical mass by
-$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{2}$
+$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{\,2}$
 where $c_q = 1/(q - 1)$.
 
 **Part III: The Descartes Universe and Observations.**
@@ -150,9 +150,9 @@ We use observed CODATA values for the muon and electron mass to
 determine $q_0$ for our local patch of the universe:
 
 $$
-  (1 - q^{-1})^2 =  \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
+  (1 - q^{-1})^2 \;=\; \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
   \qquad\Longrightarrow\qquad
-  q =  q_0 +  O\!\bigl(2.2 \times 10^{-8}\bigr).
+  q \;=\; q_0 \;+\; O\!\bigl(2.2 \times 10^{-8}\bigr).
 $$
 
 From this single parameter we derive formulas for the masses of

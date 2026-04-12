@@ -14,9 +14,9 @@ normal perturbations of $\varrho$ is
 
 $$
   \partial_t^2 \eta
-  = 
-  \frac{\Gamma_q}{4\pi a_q^2}\Delta_q\eta
-  -  \nu_q\Delta_q\partial_t \eta,
+  \;=\;
+  \frac{\Gamma_q}{4\pi a_q^2}\,\Delta_q\,\eta
+  \;-\; \nu_q\,\Delta_q\,\partial_t \eta,
 $$
 
 where $\Gamma_q = [j]_q[j+1]_q$ is the quantised circulation at
@@ -28,8 +28,8 @@ The $q$-Laplacian on the circle of length $L$ acts on functions
 $f(s)$ with period $L$.  Its eigenvalue problem is
 
 $$
-  \Delta_qf_k
-  =  -\mu_kf_k,
+  \Delta_q\,f_k
+  \;=\; -\mu_k\,f_k,
   \qquad
   f_k(s + L) = f_k(s).
 $$
@@ -41,8 +41,8 @@ $[k]_q = (q^k - q^{-k})/(q - q^{-1})$:
 
 $$
   \mu_k^{(q)}
-  = 
-  \left(\frac{2\pi[k]_q}{L_q}\right)^2,
+  \;=\;
+  \left(\frac{2\pi\,[k]_q}{L_q}\right)^2,
 $$
 
 where $L_q = L \cdot [1]_q / 1 = L$ (since $[1]_q = 1$ for all
@@ -57,19 +57,19 @@ $$
   D_q f(z) = \frac{f(qz) - f(q^{-1}z)}{(q - q^{-1})z},
 $$
 
-and $\Delta_q = -zD_q \circ zD_q$ (the radial part of the
+and $\Delta_q = -z\,D_q \circ z\,D_q$ (the radial part of the
 $q$-Casimir).  On the monomial $z^k$ this gives
 
 $$
   D_q(z^k)
   = \frac{q^k z^k - q^{-k} z^k}{(q - q^{-1})z}
-  = [k]_qz^{k-1},
+  = [k]_q\,z^{k-1},
 $$
 
-so $zD_q(z^k) = [k]_qz^k$, and therefore
+so $z\,D_q(z^k) = [k]_q\,z^k$, and therefore
 
 $$
-  \Delta_q(z^k) = -[k]_q^2z^k.
+  \Delta_q(z^k) = -[k]_q^2\,z^k.
 $$
 
 The eigenvalue is $\mu_k^{(q)} = [k]_q^2$.  Restoring physical
@@ -78,7 +78,7 @@ is $\hbar_q$):
 
 $$
   \lambda_k^{(q)}
-  = 
+  \;=\;
   [k]_q^2 \cdot \frac{\hbar_q}{L_q^2}.
 $$
 
@@ -86,15 +86,15 @@ This is the formula stated in the
 [discrete vortex spectrum](#prop:discrete-vortex-spectrum).
 
 **Dispersion relation.**
-Substituting $\eta(s,t) = f_k(s)e^{-i\omega t}$ into the
+Substituting $\eta(s,t) = f_k(s)\,e^{-i\omega t}$ into the
 linearised equation and using
 $\Delta_q f_k = -[k]_q^2 f_k / L_q^2$ gives
 
 $$
   -\omega^2
-  = 
-  -\frac{\Gamma_q}{4\pi a_q^2}\frac{[k]_q^2}{L_q^2}
-  +  i\omega\nu_q\frac{[k]_q^2}{L_q^2}.
+  \;=\;
+  -\frac{\Gamma_q}{4\pi a_q^2}\,\frac{[k]_q^2}{L_q^2}
+  \;+\; i\omega\,\nu_q\,\frac{[k]_q^2}{L_q^2}.
 $$
 
 For the undamped case ($\nu_q = 0$, i.e. the Euler limit), the
@@ -102,8 +102,8 @@ dispersion relation is
 
 $$
   \omega_k^{(q)}
-  = 
-  \frac{\Gamma_q^{1/2}}{2\sqrt{\pi}a_q}
+  \;=\;
+  \frac{\Gamma_q^{1/2}}{2\sqrt{\pi}\,a_q}\,
   \frac{[k]_q}{L_q},
 $$
 
@@ -112,14 +112,14 @@ which is the $q$-deformed Kelvin dispersion.  For the damped case
 
 $$
   \gamma_k^{(q)}
-  = 
-  \frac{\nu_q}{2}\frac{[k]_q^2}{L_q^2}
-  = 
-  \frac{\hbar_q}{4}\frac{[k]_q^2}{L_q^2},
+  \;=\;
+  \frac{\nu_q}{2}\,\frac{[k]_q^2}{L_q^2}
+  \;=\;
+  \frac{\hbar_q}{4}\,\frac{[k]_q^2}{L_q^2},
 $$
 
 so mode $k$ decays on timescale
-$\tau_k = 1/\gamma_k^{(q)} = 4L_q^2 / (\hbar_q[k]_q^2)$.
+$\tau_k = 1/\gamma_k^{(q)} = 4L_q^2 / (\hbar_q\,[k]_q^2)$.
 Since $[k]_q \sim q^k$ for large $k$, high modes decay
 **doubly exponentially** in $k$ — the exponential UV cutoff
 noted in the [q-Navier--Stokes definition](#def:q-navier-stokes).

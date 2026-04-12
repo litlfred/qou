@@ -3,8 +3,8 @@ complement has fundamental group
 
 $$
   \pi_1(S^3\setminus K_{3,2})
-  = \langle x,y\mid xyx=yxy\rangle
-   \cong B_3,
+  \;=\;\langle x,y\mid xyx=yxy\rangle
+  \;\cong\;B_3,
 $$
 
 so the trefoil-knot group is isomorphic to the braid group on three

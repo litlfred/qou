@@ -8,15 +8,15 @@ Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms arranged in
 a cycle.  The **threading link** of the ring is the torus link
 
 $$
-  \mathcal{T}_N =  T(2, N),
+  \mathcal{T}_N \;=\; T(2, N),
 $$
 
 whose closure in the braid group $B_N$ is
 
 $$
   \hat{\beta}_N
-  = 
-  (\sigma_1  \sigma_2  \cdots  \sigma_{N-1})^2.
+  \;=\;
+  (\sigma_1 \, \sigma_2 \, \cdots \, \sigma_{N-1})^2.
 $$
 
 The threading link winds **twice** around the torus defined by
@@ -42,7 +42,7 @@ The Alexander polynomial of $T(2,N)$ for even $N = 2m$ is
 
 $$
   \Delta_{T(2,2m)}(t)
-  = 
+  \;=\;
   \frac{t^m - t^{-m}}{t - t^{-1}}.
 $$
 
@@ -60,9 +60,9 @@ For $T(2,6)$:
 
 $$
   \Delta_{T(2,6)}(q)
-  = 
+  \;=\;
   q^2 + 1 + q^{-2}
-  = 
+  \;=\;
   (q + q^{-1})^2 - 1.
 $$
 
@@ -79,9 +79,9 @@ invariant:
 
 $$
   \frac{\Delta_{T(2,2m)}(q)}{N}
-  = 
+  \;=\;
   \frac{q^2 + 1 + q^{-2}}{6}
-   \approx 
+  \;\approx\;
   \frac{1}{2}
   \qquad (|q| \approx 1).
 $$

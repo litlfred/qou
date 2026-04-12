@@ -8,7 +8,7 @@ one-parameter subgroup $T \cong \mathrm{U}(1) \subset G$, acting on
 the Frobenius--Hopf object $A$ via the adjoint coaction. It satisfies:
 
 1. **Vertical generator:**
-   $\pi_V \circ d = \iota_\xi d\theta_A$, where
+   $\pi_V \circ d = \iota_\xi\, d\theta_A$, where
    $\iota_\xi$ denotes the interior product (contraction with $\xi$)
    and $\theta_A \in \Omega^1(A)$ is the canonical $1$-form dual to
    $\xi$.

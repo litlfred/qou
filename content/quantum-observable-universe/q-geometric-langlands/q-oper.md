@@ -6,7 +6,7 @@ $X$ is a $q$-flat connection
 ([q-flat connection](#def:q-flat-connection))
 
 $$
-  (\mathcal{P}_{\check{G}_q}, \nabla_q)
+  (\mathcal{P}_{\check{G}_q},\, \nabla_q)
 $$
 
 on a $\check{G}_q$-bundle $\mathcal{P}_{\check{G}_q} \to X$, together

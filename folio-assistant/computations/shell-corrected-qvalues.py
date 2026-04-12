@@ -20,6 +20,7 @@ from hecke_division import HeckeDivision, HeckeElement
 
 div = HeckeDivision(q_val=q)
 HA = q - qi
+S = q**0.5 - q**(-0.5)
 Z_m = 1.0 / (q**0.5 + q**(-0.5))
 mu_0 = 0.51100 / (3 * E_CROSS)
 
@@ -156,8 +157,8 @@ def naive_log_skein(p, n):
         for j in range(i + 1, A):
             ti, tj = types[i], types[j]
             if ti == 'p' and tj == 'p': c, d = 1.0, 0.0
-            elif ti == 'n' and tj == 'n': c, d = 1.0, -HA
-            else: c, d = 1.0, -HA/2
+            elif ti == 'n' and tj == 'n': c, d = q**2, -q*S
+            else: c, d = (1+q**2)/2, -q*S/2
             M = mat_mul(M, T_mat(c, d))
         V = vol(M)
         if abs(V) > 0:

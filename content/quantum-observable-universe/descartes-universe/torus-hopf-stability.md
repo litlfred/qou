@@ -6,7 +6,7 @@ linked by the Hopf link $\mathcal{L}_H$ satisfies the stability
 condition
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(\mathfrak{H})  <  0
+  \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) \;<\; 0
 $$
 
 and is therefore a hadron in the sense of

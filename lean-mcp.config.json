@@ -22,6 +22,26 @@
     "owner": "litlfred",
     "session_max_age_hours": 24
   },
+  "llm": {
+    "provider": "anthropic",
+    "providers": {
+      "anthropic": {
+        "model": "claude-sonnet-4-6",
+        "api_base": "https://api.anthropic.com",
+        "env_key": "ANTHROPIC_API_KEY"
+      },
+      "openai": {
+        "model": "gpt-4o",
+        "api_base": "https://api.openai.com/v1",
+        "env_key": "OPENAI_API_KEY"
+      },
+      "local": {
+        "model": "llama3",
+        "api_base": "http://localhost:11434/v1",
+        "env_key": ""
+      }
+    }
+  },
   "lean": {
     "local_mathlib_path": "../mathlib4",
     "mathlib_git_url": "https://github.com/leanprover-community/mathlib4"

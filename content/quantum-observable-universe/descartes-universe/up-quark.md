@@ -4,7 +4,7 @@ within the Borromean link $\mathcal{B}_3$
 ([Borromean quark conjecture](#conj:borromean-quark)).
 
 $$
-  \mathfrak{u} =  \nu \big|_{\mathcal{B}_3, +}
+  u \;=\; \nu \,\big|_{\mathcal{B}_3,\, +}
   \qquad\text{(unknot, positive orientation in } \mathcal{B}_3\text{)}
 $$
 

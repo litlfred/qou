@@ -85,7 +85,7 @@ The cascade is:
 **The $\epsilon^{abc}$ from linking orientation.**
 
 In the CFL phase, the pairing pattern locks color and flavor:
-$\langle \mathfrak{q}_i^a \mathfrak{q}_j^b \rangle \propto \epsilon^{abc}\epsilon_{ijk}$ \cite{alford1999}.  In QOU,
+$\langle \mathfrak{q}_i^a\, \mathfrak{q}_j^b \rangle \propto \epsilon^{abc}\,\epsilon_{ijk}$ \cite{alford1999}.  In QOU,
 the antisymmetric tensor arises from the **Hopf linking number**:
 
 - The Hopf link $\mathcal{L}_H$ has linking number
@@ -98,8 +98,8 @@ the antisymmetric tensor arises from the **Hopf linking number**:
 
 $$
   \mathrm{lk}(a, b)
-  = 
-  \epsilon^{abc}\delta_{c, \text{spectator}},
+  \;=\;
+  \epsilon^{abc}\,\delta_{c, \text{spectator}},
 $$
 
   where the "spectator" color $c$ is the tube not participating
@@ -114,11 +114,11 @@ of the Hopf link binding the diquark:
 
 $$
   \Delta_{\mathrm{CFL}}
-  = 
+  \;=\;
   |\mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H)|
-  = 
+  \;=\;
   q + q^{-1}
-   \approx  2.011 \quad\text{Skein units}.
+  \;\approx\; 2.011 \quad\text{Skein units}.
 $$
 
 This is the strong-channel energy of a single Hopf-link crossing
@@ -127,13 +127,13 @@ $m_p \approx 938$ MeV and the Borromean volume ratio:
 
 $$
   \Delta_{\mathrm{CFL}}^{\mathrm{phys}}
-   \sim 
+  \;\sim\;
   \frac{q + q^{-1}}{V_B / \hbar_q^2}
-   \cdot  m_pc^2
-   \sim 
+  \;\cdot\; m_p\,c^2
+  \;\sim\;
   \frac{2.011}{749.2}
-   \times  938  \mathrm{MeV}
-   \approx  2.5  \mathrm{MeV}.
+  \;\times\; 938 \;\mathrm{MeV}
+  \;\approx\; 2.5 \;\mathrm{MeV}.
 $$
 
 This is close to perturbative QCD estimates of

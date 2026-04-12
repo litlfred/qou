@@ -13,12 +13,12 @@ which the degree-$0$ algebra is non-trivial:
 
 $$
   \mathrm{Ob}\bigl(\mathrm{Bun}^{\circ}\bigr)
-  = 
-  \bigl\{
+  \;=\;
+  \bigl\{\,
     \mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))
-     : 
-    \Gamma(\mathcal{S}, A_0) \neq 0
-  \bigr\}.
+    \;:\;
+    \Gamma(\mathcal{S},\, A_0) \neq 0
+  \,\bigr\}.
 $$
 
 This is the subcategory where degree-$0$ observations are
@@ -46,12 +46,12 @@ $\mathrm{Bun}^{\circ}$:
 
 $$
   \partial\mathcal{A}
-  = 
+  \;=\;
   \overline{\mathcal{A}} \setminus \mathcal{A}^{\circ}
-  \subset
-  \bigl\{
+  \;\subset\;
+  \bigl\{\,
     \mathcal{S} : \Gamma(\mathcal{S}, A_0) = 0
-  \bigr\}.
+  \,\bigr\}.
 $$
 
 Each boundary object is a jet horizon or a big bang state
@@ -62,7 +62,7 @@ approaching $\mathcal{S}$:
 
 $$
   \mathrm{CMB}(\partial\mathcal{A})
-  = 
+  \;=\;
   \varinjlim_{\mathcal{S}' \to \mathcal{S}}
   \bigl(A_1/A_0 \oplus A_2/A_0\bigr)\big|_{\mathcal{S}'}
 $$

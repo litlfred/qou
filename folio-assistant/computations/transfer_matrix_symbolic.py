@@ -9,10 +9,10 @@ The transfer matrix formalism:
   T(c, d) = [[c*(q - q^{-1}) + d,  c],
               [c,                   d]]
 
-Three nuclear crossing types (Hecke convention):
-  pp  (proton-proton):   c = 1,   d = 0
-  nn  (neutron-neutron): c = 1,   d = -(q - q^{-1})       = -HA
-  mix (proton-neutron):  c = 1,   d = -(q - q^{-1})/2     = -HA/2
+Three nuclear crossing types:
+  pp  (proton-proton):   c = 1,           d = 0
+  nn  (neutron-neutron): c = q^2,         d = -q*s  where s = q^{1/2} - q^{-1/2}
+  mix (proton-neutron):  c = (1+q^2)/2,   d = -q*s/2
 
 Markov-traced volume at generator sigma_i:
   V_hat_i(q) = z * M_i[0,0] + M_i[1,0]
@@ -22,8 +22,8 @@ Nuclear Skein polynomial:
   P_N(q) = prod_i V_hat_i(q)
 
 Universal beta decay matrix:
-  Delta_beta(q) = T_mix - T_nn
-                = T(0, HA/2)  (pure diagonal shift)
+  Delta_beta(q) = T_mix - T_nn = T_pp - T_mix
+                = (1/2)(1 - q^2) T_pp + (q*s/2) I
 
 Connection to Gröbner--Shirshov NF: each V_hat_i in the transfer matrix
 corresponds to one generator sigma_i in the Iwahori--Hecke algebra NF.
@@ -60,8 +60,7 @@ q_half_inv = 1 / sqrt(q)
 
 # Fundamental quantities
 ha = q - q_inv                        # q - q^{-1}  (Hecke coefficient)
-HA = ha                               # Hecke amplitude q - q⁻¹ (crossing convention)
-s_skein = q_half - q_half_inv         # q^{1/2} - q^{-1/2}  (Skein amplitude, used in Delta_beta verification)
+s_skein = q_half - q_half_inv         # q^{1/2} - q^{-1/2}  (Skein amplitude)
 z_markov = 1 / (q_half + q_half_inv)  # Markov parameter
 
 # Substrate parameter q0 (from q_parameter.py derivation)
@@ -89,13 +88,13 @@ def _numeric_z(q_val):
 
 def _numeric_crossing_coeffs(ti, tj, q_val):
     """Return numeric (c, d) for nucleon types at given q."""
-    ha_val = _numeric_ha(q_val)
+    s = _numeric_s(q_val)
     if ti == 'p' and tj == 'p':
         return 1.0, 0.0
     elif ti == 'n' and tj == 'n':
-        return 1.0, -ha_val
+        return q_val**2, -q_val * s
     else:
-        return 1.0, -ha_val / 2
+        return 0.5 * (1.0 + q_val**2), -0.5 * q_val * s
 
 def _numeric_T(c, d, ha_val):
     """Build numeric 2x2 transfer matrix."""
@@ -279,17 +278,18 @@ class SymbolicTransferMatrix:
 # 2. Pre-built matrices
 # ========================================================================
 
-# Crossing coefficients (Hecke convention: c=1 for all, d uses HA = q - q⁻¹)
+# Crossing coefficients (exact in q)
 C_PP, D_PP = sp.Integer(1), sp.Integer(0)
-C_NN, D_NN = sp.Integer(1), -HA
-C_MIX, D_MIX = sp.Integer(1), -HA / 2
+C_NN, D_NN = q**2, -q * s_skein
+C_MIX, D_MIX = (1 + q**2) / 2, -q * s_skein / 2
 
 # The three nuclear transfer matrices
 T_pp = SymbolicTransferMatrix(c=C_PP, d=D_PP)
 T_nn = SymbolicTransferMatrix(c=C_NN, d=D_NN)
 T_mix = SymbolicTransferMatrix(c=C_MIX, d=D_MIX)
 
-# Universal beta decay matrix: Delta_beta = T_mix - T_nn = T(0, HA/2)
+# Universal beta decay matrix: Delta_beta = T_mix - T_nn = T_pp - T_mix
+#   = (1/2)(1 - q^2) T_pp + (q*s/2) I
 Delta_beta = T_mix - T_nn
 
 # Electromagnetic vertex (electron capture / pair production)
@@ -648,8 +648,11 @@ if __name__ == '__main__':
     else:
         print("  UNIVERSALITY FAILED!")
 
-    # Verify the decomposition: Delta_beta = T(0, HA/2)
-    Delta_check = SymbolicTransferMatrix(c=sp.Integer(0), d=HA / 2)
+    # Verify the decomposition: Delta_beta = (1/2)(1-q^2) T_pp + (q*s/2) I
+    half_1mq2 = Rational(1, 2) * (1 - q**2)
+    half_qs = q * s_skein / 2
+    Delta_check = (T_pp.scale(half_1mq2)
+                   + SymbolicTransferMatrix.identity().scale(half_qs))
 
     decomp_ok = True
     for i in range(2):
@@ -660,7 +663,7 @@ if __name__ == '__main__':
                 print(f"  DECOMPOSITION MISMATCH at ({i},{j}): {diff}")
 
     if decomp_ok:
-        print("  Delta_beta = T(0, HA/2)   [VERIFIED]")
+        print("  Delta_beta = (1/2)(1-q^2) T_pp + (q*s/2) I   [VERIFIED]")
     print()
 
     # Show the matrices at q0

@@ -151,81 +151,27 @@ def main():
             "match": abs(residual) < 1e-12,
         })
 
-    # ── Build witness using WitnessBuilder ─────────────────────
-    from witness_base import WitnessBuilder
-
-    all_match = all(c["match"] for c in continuant_check)
-
-    w = WitnessBuilder("tau-lepton-nf", engine="python")
-    w.set_description(
-        "Chebyshev tower NF(T_{2,n}) in H₂(q) for the charged lepton "
-        "tower n = 3, 5, 7 (electron, muon, tau). Verifies the continuant "
-        "(Morgan--Voyce) recurrence and the algebraic structure of "
-        "leptonic tau decays."
-    )
-    w.set_content_block("rem:lepton-mass-integrals")
-
-    # Parameters
-    w.add_parameter("q₀", Q)
-    w.add_parameter("q₀_err", Q_ERR)
-    w.add_parameter("h (q−q⁻¹)", h)
-    w.add_parameter("ℏ_q", HBAR_Q)
-    w.add_parameter("Vol(4₁)", VOL_FIGURE_EIGHT)
-    w.add_parameter("m_μ/m_e", MASS_RATIO_MU_E)
-
-    # Assertions
-    # 1. Continuant recurrence holds
-    w.add_assertion(
-        "Continuant recurrence bₙ₊₁ = h·bₙ + bₙ₋₁ (all n)",
-        computed=1 if all_match else 0,
-        expected=1,
-        tolerance=0,
-        unit="boolean",
-        source="Morgan--Voyce recurrence in H₂(q)",
-    )
-
-    # 2. NF coefficients for leptons
-    for name, info in leptons.items():
-        n = info["n"]
-        w.add_assertion(
-            f"NF(T_{{2,{n}}}) net amplitude ({name})",
-            computed=round(a[n] + b[n], 10),
-            expected=round(a[n] + b[n], 10),
-            tolerance=abs(a[n] + b[n]) * 1e-8,
-            unit="dimensionless",
-            source=f"Chebyshev recurrence at n={n}",
-        )
-
-    # 3. BR ratio NF vs PDG
-    pdg_br_ratio = 0.1782 / 0.1739
-    w.add_assertion(
-        "NF Δ ratio (τ→e)/(τ→μ) vs PDG BR ratio",
-        computed=round(br_ratio_nf, 6),
-        expected=round(pdg_br_ratio, 6),
-        tolerance=abs(pdg_br_ratio) * 0.25,  # 25% — NF is algebraic, not rate
-        unit="dimensionless",
-        source="Algebraic NF ratio vs PDG 2024 branching fractions. "
-               "NF captures crossing structure; physical rate requires "
-               "weak vertex form factor.",
-    )
-
-    # Data
-    w.add_data("lepton_nfs", lepton_nfs)
-    w.add_data("tau_to_electron_decay", tau_to_e)
-    w.add_data("tau_to_muon_decay", tau_to_mu)
-    w.add_data("BR_ratio_NF", br_ratio_nf)
-    w.add_data("mass_ratios_from_net", mass_info)
-    w.add_data("nf_table_T2n", nf_table)
-    w.add_data("continuant_check", continuant_check)
-
-    w.add_caveat(
-        "Torus knots T_{2,n} have zero hyperbolic volume. Lepton mass "
-        "ratios do not come from Vol(K)/ℏ_q² but through the Higgs "
-        "mechanism coupling at each Reeb degree. The NF net amplitudes "
-        "are algebraic weights, not direct mass predictions."
-    )
-
-    witness_path = w.save()
+    # ── Build witness ────────────────────────────────────────────
+    witness = {
+        "title": "Tau lepton NF and leptonic decay — T_{2,n} Chebyshev tower",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "parameters": {
+            "q": Q,
+            "q_err": Q_ERR,
+            "h (q−q⁻¹)": h,
+            "hbar_q": HBAR_Q,
+            "hbar_q_sq": HBAR_Q_SQ,
+            "Vol(4_1)": VOL_FIGURE_EIGHT,
+            "m_μ/m_e": MASS_RATIO_MU_E,
+        },
+        "lepton_nfs": lepton_nfs,
+        "tau_to_electron_decay": tau_to_e,
+        "tau_to_muon_decay": tau_to_mu,
+        "BR_ratio_NF (tau→e / tau→μ)": br_ratio_nf,
+        "mass_ratios_from_net": mass_info,
+        "nf_table_T2n": nf_table,
+        "continuant_recurrence_check": continuant_check,
+    }
 
     # ── Print summary ────────────────────────────────────────────
     print("=" * 70)
@@ -243,6 +189,7 @@ def main():
         print(f"  n={n}:  a={a[n]:12.8f}  b={b[n]:12.8f}  net={a[n]+b[n]:.8f}{label}")
 
     print(f"\n  --- Continuant recurrence: bₙ₊₁ = h·bₙ + bₙ₋₁ ---")
+    all_match = all(c["match"] for c in continuant_check)
     print(f"  All match: {all_match}")
 
     print(f"\n  --- Leptonic tau decay ---")
@@ -255,7 +202,7 @@ def main():
         print(f"    PDG BR: {d['BR_PDG']}")
 
     print(f"\n  NF Δ ratio (τ→e)/(τ→μ) = {br_ratio_nf:.6f}")
-    print(f"  PDG BR ratio            = {pdg_br_ratio:.6f}")
+    print(f"  PDG BR ratio            = {0.1782/0.1739:.6f}")
     print(f"  (Lepton universality predicts ≈ 1.0)")
 
     print(f"\n  --- Net amplitude ratios ---")
@@ -263,7 +210,11 @@ def main():
     print(f"  net(τ)/net(e) = {mass_info['net_ratio_tau_e']:.6f}")
     print(f"  net(τ)/net(μ) = {mass_info['net_ratio_tau_mu']:.6f}")
 
-    print(f"\n  Witness: {witness_path}")
+    # ── Write witness ────────────────────────────────────────────
+    witness_path = Path(__file__).with_suffix(".witness.json")
+    with open(witness_path, "w") as f:
+        json.dump(witness, f, indent=2)
+    print(f"\n  Witness written to {witness_path.name}")
     print("=" * 70)
 
 

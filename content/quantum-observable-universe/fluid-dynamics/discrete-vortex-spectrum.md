@@ -7,7 +7,7 @@ sections of the normal bundle $N_\varrho$.  Then:
    discrete spectrum $\{\lambda_k^{(q)}\}_{k \geq 1}$ with
 
    $$
-     \lambda_k^{(q)} = 
+     \lambda_k^{(q)} \;=\;
      [k]_q^2 \cdot \frac{\hbar_q}{L_q^2},
    $$
 
@@ -20,8 +20,8 @@ sections of the normal bundle $N_\varrho$.  Then:
    around $\varrho$.  The vortex energy at level $j$ is
 
    $$
-     E_j^{(q)} = 
-     \frac{\hbar_q}{2I_q}[j]_q[j+1]_q,
+     E_j^{(q)} \;=\;
+     \frac{\hbar_q}{2I_q}\,[j]_q\,[j+1]_q,
    $$
 
    where $I_q$ is the $q$-deformed moment of inertia of the
@@ -33,7 +33,7 @@ sections of the normal bundle $N_\varrho$.  Then:
    energy released or absorbed is
 
    $$
-     \Delta E_{j \to j'} = 
+     \Delta E_{j \to j'} \;=\;
      \frac{\hbar_q}{2I_q}
      \bigl([j']_q[j'+1]_q - [j]_q[j+1]_q\bigr).
    $$

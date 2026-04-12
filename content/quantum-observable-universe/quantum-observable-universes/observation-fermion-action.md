@@ -5,9 +5,9 @@ of the Hecke generator $T$:
 
 $$
   V \otimes V
-  = 
+  \;=\;
   \underbrace{\mathrm{Sym}^2(V)}_{\text{bosonic, eigenvalue } q}
-   \oplus 
+  \;\oplus\;
   \underbrace{\textstyle\bigwedge^2(V)}_{\text{fermionic, eigenvalue } {-q^{-1}}}
 $$
 

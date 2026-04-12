@@ -6,7 +6,7 @@
 import QOU.Torsion.JetProlongation
 import QOU.Torsion.BraneTower
 import QOU.Torsion.MassIdentity
-import QOU.Torsion.YekutieliTriple
+import QOU.Torsion.YekutielijTriple
 import QOU.Torsion.Descent
 import QOU.Torsion.TopologicalMass
 import QOU.Torsion.MassGap

@@ -29,7 +29,8 @@ from experimental_constants import (Q_C14_MEV, Q_C14_MEV_ERR,
                                      M_E_MEV)
 
 # ── Parameters ──────────────────────────────────────────────────
-HA = q - qi                        # Hecke amplitude q - q⁻¹
+HA = q - qi
+S = q**0.5 - q**(-0.5)
 Z_m = 1.0 / (q**0.5 + q**(-0.5))
 mu_0 = M_E_MEV / (3 * E_CROSS)
 
@@ -91,9 +92,9 @@ def crossing_coeffs(qi_type, qj_type):
     if qi_type == 1 and qj_type == 1:  # u-u
         return 1.0, 0.0
     elif qi_type == 0 and qj_type == 0:  # d-d
-        return 1.0, -HA
+        return q**2, -q * S
     else:  # u-d or d-u (mixed)
-        return 1.0, -HA / 2
+        return 0.5 * (1 + q**2), -0.5 * q * S
 
 def skein_poly_level1(quarks):
     """Compute log Skein polynomial using 2×2 transfer matrix chain.
@@ -147,8 +148,8 @@ n14_nucleons = build_nucleon_types(7, 7)
 
 def crossing_coeffs_nucleon(ni, nj):
     if ni == 1 and nj == 1: return 1.0, 0.0
-    elif ni == 0 and nj == 0: return 1.0, -HA
-    else: return 1.0, -HA/2
+    elif ni == 0 and nj == 0: return q**2, -q*S
+    else: return 0.5*(1+q**2), -0.5*q*S
 
 def skein_poly_level0(nucleons):
     """Level 0 Skein polynomial using 2×2 transfer matrix chain."""

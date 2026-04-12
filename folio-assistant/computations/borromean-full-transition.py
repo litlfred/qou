@@ -37,7 +37,8 @@ import math
 from q_parameter import Q as q, Q_INV as qi, E_CROSS
 from experimental_constants import *
 
-HA = q - qi                        # Hecke amplitude q - q⁻¹
+HA = q - qi
+S = q**0.5 - qi**0.5
 Z_m = 1.0 / (q**0.5 + qi**0.5)
 kappa = M_E_MEV / 3  # = E_CROSS * M_E_MEV / (3 * E_CROSS), simplified
 
@@ -236,8 +237,8 @@ def get_shell(X):
 
 def crossing_coeffs(ti, tj):
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return 1.0, -HA
-    else: return 1.0, -HA / 2
+    elif ti == 'n' and tj == 'n': return q**2, -q * S
+    else: return (1 + q**2) / 2, -q * S / 2
 
 def T_mat(c, d):
     return [[c * HA + d, c], [c, d]]

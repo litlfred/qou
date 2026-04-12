@@ -3,9 +3,9 @@ but at a *distributional connection* represented by the series
 
 $$
   A_\infty
-  = 
-  \sum_{n=0}^{\infty}\sum_{i=1}^{b_1(\mathcal{S}_n)}
-  c_{n,i}\alpha_{n,i},
+  \;=\;
+  \sum_{n=0}^{\infty}\;\sum_{i=1}^{b_1(\mathcal{S}_n)}
+  c_{n,i}\,\alpha_{n,i}\,,
 $$
 
 where $c_{n,i} \in \mathbb{C}$ and $\{\alpha_{n,i}\}$ is the $q$-harmonic

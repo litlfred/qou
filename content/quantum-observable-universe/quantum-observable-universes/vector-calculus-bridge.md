@@ -11,10 +11,10 @@ an infinitesimal parallelogram (magnetic field strength, vorticity).
 
 **The exterior derivative $d$.**
 - On a $0$-form: $df$ is the *gradient*. In coordinates,
-  $df = \partial_i f dx^i$.
+  $df = \partial_i f\, dx^i$.
 - On a $1$-form: $d\alpha$ is the *curl*. If
-  $\alpha = Pdx + Qdy + Rdz$ in $\mathbb{R}^3$, then
-  $d\alpha = (\partial_y R - \partial_z Q)dy \wedge dz + \cdots$
+  $\alpha = P\,dx + Q\,dy + R\,dz$ in $\mathbb{R}^3$, then
+  $d\alpha = (\partial_y R - \partial_z Q)\,dy \wedge dz + \cdots$
 - The identity $d^2 = 0$ encodes both $\nabla \times (\nabla f) = 0$
   and $\nabla \cdot (\nabla \times \mathbf{F}) = 0$.
 
@@ -25,14 +25,14 @@ $\star(dx) = dy \wedge dz$ in $\mathbb{R}^3$. It converts between
 the two natural duals of a differential form.
 
 **The codifferential $\delta$ and divergence.**
-The codifferential $\delta = (-1)^{nk+n+1}\star d\star$ is the
+The codifferential $\delta = (-1)^{nk+n+1}\,\star d\,\star$ is the
 formal adjoint of $d$. On $1$-forms in $\mathbb{R}^3$,
 $\delta\alpha = -\mathrm{div}(\alpha^{\sharp})$, where
 $\alpha^{\sharp}$ is the vector field dual to $\alpha$.
 
 **The Laplacian.**
 The Hodge Laplacian is $\Delta = d\delta + \delta d$. On $0$-forms,
-$\Delta f = \delta df$, which equals $-\nabla^2 f$ (the negative
+$\Delta f = \delta\, df$, which equals $-\nabla^2 f$ (the negative
 of the analyst's Laplacian). A function $f$ is *harmonic*
 ($\Delta f = 0$) precisely when it has no sources or sinks: its
 value at each point equals the average over any small sphere

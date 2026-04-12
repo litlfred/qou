@@ -9,7 +9,7 @@ $\varphi \colon \mathcal{A}_\infty \to R$ that is $G_q$-invariant:
 
 $$
   \varphi(g \cdot a) = \varphi(a)
-  \quad\text{for all } g \in G_q,
+  \quad\text{for all } g \in G_q,\;
   a \in \mathcal{A}_\infty.
 $$
 

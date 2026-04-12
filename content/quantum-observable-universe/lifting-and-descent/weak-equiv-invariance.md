@@ -8,11 +8,11 @@ brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
 
 $$
   \mathfrak{G}_n
-  \xleftarrow{\sigma}
+  \xleftarrow{\;\sigma\;}
   \mathfrak{G}_{k_1}
-  \xrightarrow{\delta}
+  \xrightarrow{\;\delta\;}
   \cdots
-  \xrightarrow{\delta}
+  \xrightarrow{\;\delta\;}
   \mathfrak{G}_m
 $$
 
@@ -22,11 +22,11 @@ weak equivalence:
 
 $$
   \tau\!\bigl(\iota_n(a|_n)\bigr)
-  = 
+  \;=\;
   \tau\!\bigl(\iota_m(a|_m)\bigr),
 $$
 
-where $\iota_n \colon \Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2)) \hookrightarrow \mathcal{A}_\infty$ is the canonical embedding and
+where $\iota_n \colon \Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2)) \hookrightarrow \mathcal{A}_\infty$ is the canonical embedding and
 $a|_n$ denotes the restriction of $a$ to level $n$.  In particular,
 physical states (the GNS vectors of $\tau$) are invariant under
 fluctuations of the substrate parameter $q(p)$ across brane levels.

@@ -7,7 +7,7 @@ an equivalence of $\infty$-categories:
 $$
   \mathbb{L}_q \colon
   \mathcal{D}_q\text{-}\mathrm{mod}(\mathrm{Bun}_{G_q}(X))
-  \xrightarrow{ \sim }
+  \;\xrightarrow{\;\sim\;}
   \mathrm{QCoh}(\mathrm{LocSys}_{\check{G}_q}(X)),
 $$
 
@@ -21,7 +21,7 @@ non-torsion locus of the substrate), satisfying:
    of $V_\lambda^{(q)}$ on $\mathrm{LocSys}_{\check{G}_q}(X)$:
    $$
      \mathbb{L}_q \circ \mathbf{T}_{x,\lambda}^{(q)}
-     \simeq
+     \;\simeq\;
      V_\lambda^{(q)}(-)_x \otimes \mathbb{L}_q.
    $$
 
@@ -38,9 +38,9 @@ non-torsion locus of the substrate), satisfying:
    $q$-Hecke eigensheaves
    ([q-Hecke eigensheaf](#def:q-hecke-eigensheaf)):
    $$
-     \mathrm{Op}_{\check{G}_q}(X)  \hookrightarrow 
+     \mathrm{Op}_{\check{G}_q}(X) \;\hookrightarrow\;
      \mathrm{LocSys}_{\check{G}_q}(X)
-     \quad\xrightarrow{\mathbb{L}_q^{-1}}\quad
+     \quad\xrightarrow{\;\mathbb{L}_q^{-1}\;}\quad
      \{\text{$q$-Hecke eigensheaves}\}.
    $$
 

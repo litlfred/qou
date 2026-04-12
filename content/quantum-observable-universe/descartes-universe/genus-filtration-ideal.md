@@ -43,7 +43,7 @@ algebra of the QOU.*
 | $2$ | $T_{2,3}$, $T_{2,5}$ | $2$ | $\leq 2$ | No |
 | $3$ | $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$ | $4$ | $\leq 4$ | **No** |
 | $4$ | $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{2,9}$, $T_{3,4}$, $T_{3,5}$ | $6$ | $5$ | **Yes** |
-| $5$ | $+ T_{2,11}$ | $7$ | $5$ | Yes (redundant) |
+| $5$ | $+\; T_{2,11}$ | $7$ | $5$ | Yes (redundant) |
 
 *At $g = 3$: only $4$ knots are available, but $5$ irreps
 must be spanned.  Rank $\leq 4 < 5$ --- incomplete.
@@ -76,7 +76,7 @@ Computing $T^p$ --- the $p$-th power of the braid generator
 --- reduces it via the relation:
 
 $$
-  T^p =  a_p \cdot T +  a_{p-1} \cdot \mathbf{1}
+  T^p \;=\; a_p \cdot T \;+\; a_{p-1} \cdot \mathbf{1}
 $$
 
 The coefficients $a_n$ satisfy the recurrence
@@ -92,10 +92,10 @@ $u = s^2 = (q - q^{-1})^2$:
 
 $$
   a_p(u)
-  = 
+  \;=\;
   U_{p-1}\!\left(\tfrac{s}{2}\right)
-  = 
-  \sum_{j=0}^{(p-1)/2} c_j u^j
+  \;=\;
+  \sum_{j=0}^{(p-1)/2} c_j\, u^j
 $$
 
 with leading coefficient $c_{(p-1)/2} = 1$.
@@ -106,7 +106,7 @@ polynomial degree $\deg_u a_p$) equals the topological
 complexity of the knot (the Seifert genus $g(T_{2,p})$):
 
 $$
-  \deg_u a_p =  \frac{p-1}{2} =  g(T_{2,p}).
+  \deg_u a_p \;=\; \frac{p-1}{2} \;=\; g(T_{2,p}).
 $$
 
 Each monomial $u^k$ in $a_p$ represents the $k$-th independent
@@ -151,9 +151,9 @@ $\mathfrak{I}_g \subset \mathbb{Z}[u]$ by*
 
 $$
   \mathfrak{I}_g
-  = 
-  \bigl\{ f(u) \in \mathbb{Z}[u] : \deg f > g \bigr\}
-  = 
+  \;=\;
+  \bigl\{\, f(u) \in \mathbb{Z}[u] : \deg f > g \,\bigr\}
+  \;=\;
   (u^{g+1}).
 $$
 
@@ -175,7 +175,7 @@ projection $\pi_g \colon \mathbb{Z}[u] \to \mathbb{Z}[u]/(u^{g+1})$:*
 
 $$
   \kappa(T_{2,p})
-  = 
+  \;=\;
   \begin{cases}
     0 & \text{if } (p-1)/2 \leq g \quad
       (\text{lifts: } a_p \text{ fits in } H^1(\Sigma_g)), \\[6pt]

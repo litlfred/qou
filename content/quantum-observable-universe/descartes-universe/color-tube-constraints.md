@@ -7,7 +7,7 @@ which rearranges to
 
 ```tex
 \begin{equation}\label{eq:spacetime-recovery}
-  z^2 - (\chi_\zeta(c) - 4)z + p_1(c) =  0.
+  z^2 - (\chi_\zeta(c) - 4)\,z + p_1(c) \;=\; 0.
 \end{equation}
 ```
 
@@ -19,7 +19,7 @@ Substituting $w_k = c_k + z$ into the quadric gives
 
 ```tex
 \begin{equation}\label{eq:shifted-quadric}
-  h_2(c) + zp_1(c) + 2z^2 =  0,
+  h_2(c) + z\,p_1(c) + 2z^2 \;=\; 0,
 \end{equation}
 ```
 
@@ -31,7 +31,7 @@ Substituting $w_k = c_k + z$ into the cubic gives
 ```tex
 \begin{equation}\label{eq:shifted-cubic}
   h_3(c) + z(p_1(c)^2 - 2h_2(c))
-  + 3z^2p_1(c) + 4z^3 =  0.
+  + 3z^2\,p_1(c) + 4z^3 \;=\; 0.
 \end{equation}
 ```
 
@@ -40,7 +40,7 @@ Eliminating $h_2(c)$ via the shifted quadric yields the
 
 ```tex
 \begin{equation}\label{eq:reduced-cubic}
-  h_3(c) + zp_1(c)^2 + 5z^2p_1(c) + 8z^3 =  0.
+  h_3(c) + z\,p_1(c)^2 + 5z^2\,p_1(c) + 8z^3 \;=\; 0.
 \end{equation}
 ```
 

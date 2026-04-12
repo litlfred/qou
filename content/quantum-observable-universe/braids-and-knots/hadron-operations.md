@@ -13,9 +13,9 @@ produces $-1$.
 linking operation
 
 $$
-  \ell_{ij}  \colon 
+  \ell_{ij} \;\colon\;
   K_i \otimes K_j
-   \longrightarrow 
+  \;\longrightarrow\;
   K_i \mathbin{\#_{\mathrm{Hopf}}} K_j
 $$
 
@@ -29,8 +29,8 @@ crossings in the linked configuration. At each crossing, the Skein
 relation provides the decomposition:
 
 $$
-  q \cdot L_+ -  q^{-1} \cdot L_-
-  =  (q - q^{-1}) \cdot L_0
+  q \cdot L_+ \;-\; q^{-1} \cdot L_-
+  \;=\; (q - q^{-1}) \cdot L_0
 $$
 
 where $L_+$, $L_-$, $L_0$ are the positive-crossing, negative-crossing,

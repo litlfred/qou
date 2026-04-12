@@ -14,7 +14,7 @@ export default remark({
   uses: [
     "rem:virtual-particles-exceptional-divisor",
     "rem:pair-creation-energy",
-    "prop:reidemeister-mass-invariance",
+    "rem:reidemeister-mass-invariance",
     "rem:heisenberg-commutator",
   ],
 });

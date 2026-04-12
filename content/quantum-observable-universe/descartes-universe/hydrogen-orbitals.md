@@ -55,7 +55,7 @@ particle); it is in a different state (different writhe).
 The **shell number** $n$ is the writhe level:
 
 $$
-  n =  \frac{w - 1}{2} =  1, 2, 3, 4, \ldots
+  n \;=\; \frac{w - 1}{2} \;=\; 1, 2, 3, 4, \ldots
   \qquad\text{for}\quad w = 3, 5, 7, 9, \ldots
 $$
 
@@ -88,7 +88,7 @@ patterns on a circle embedded in $\mathbb{R}^3$, projected
 onto the sphere, are the spherical harmonics $Y_\ell^m$):
 
 $$
-  \sum_{\ell=0}^{n-1} (2\ell + 1) =  n^2
+  \sum_{\ell=0}^{n-1} (2\ell + 1) \;=\; n^2
   \quad\text{orbitals per shell.}
 $$
 

@@ -9,7 +9,7 @@ why the classical Collatz map $(2, 3)$ is arithmetically special.
 
 | Identity | Formula | Role |
 |----------|---------|------|
-| Skein divisibility | $[3]_q = q[2]_q + 1$ | "$3n+1$ is even for odd $n$" |
+| Skein divisibility | $[3]_q = q\,[2]_q + 1$ | "$3n+1$ is even for odd $n$" |
 | Contraction gap | $[2]_q^2 - [3]_q = q$ | Two halvings beat one tripling |
 | Hecke reduction | $T^2 = (q-q^{-1})T + 1$ | Crossing words reduce |
 
@@ -24,7 +24,7 @@ words to linear, the algebraic engine of the Skein relation.
 The Skein relation rewrites as:
 
 $$
-  J(L_+) = q^{-2}J(L_-) + (1-q^{-2})J(L_0).
+  J(L_+) = q^{-2}\,J(L_-) + (1-q^{-2})\,J(L_0).
 $$
 
 For $q > 1$ both coefficients are positive and sum to $1$:
@@ -40,7 +40,7 @@ The $q$-deformed contraction condition requires $k_1$
 halvings to overpower $k_2$ triplings:
 
 $$
-  [p_1]_q^{k_1}  >  [p_2]_q^{k_2}.
+  [p_1]_q^{k_1} \;>\; [p_2]_q^{k_2}.
 $$
 
 The **contraction gap** $[p_1]_q^{k_1} - [p_2]_q^{k_2}$

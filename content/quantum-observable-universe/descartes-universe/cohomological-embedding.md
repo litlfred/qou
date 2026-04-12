@@ -16,9 +16,9 @@ representation in $\mathbf{C}$ if and only if its Seifert
 rank embeds in the first cohomology of $\Sigma_g$:*
 
 $$
-  \mathrm{rank} H_1(\mathrm{Seifert}(T_{r,s}))
-  =  \frac{(r-1)(s-1)}{2}
-   \leq  g
+  \mathrm{rank}\, H_1(\mathrm{Seifert}(T_{r,s}))
+  \;=\; \frac{(r-1)(s-1)}{2}
+  \;\leq\; g
 $$
 
 **(ii) Fiber degree.**
@@ -27,7 +27,7 @@ is prime.  On $\Sigma_g$, the maximum fiber degree is:*
 
 $$
   k_{\max}(r, p, g)
-  = 
+  \;=\;
   \max\!\left\{k : \frac{(r-1)(p^k - 1)}{2} \leq g\right\}
 $$
 
@@ -84,11 +84,11 @@ separates holomorphic (degree-$1$) from antiholomorphic
 
 $$
   H^*(\Sigma_4)
-  = 
+  \;=\;
   \underbrace{H^0 \oplus H^2}_{\dim 2}
-   \oplus 
+  \;\oplus\;
   \underbrace{H^{1,0}}_{\dim 4}
-   \oplus 
+  \;\oplus\;
   \underbrace{H^{0,1}}_{\dim 4}
 $$
 
@@ -127,7 +127,7 @@ $(\Delta_{\mathrm{mix}})^2$ gives the axial coupling
 $g_A \approx 1.277$; the closed knot gives the mass mechanism.
 
 The **Higgs boson** — the excitable scalar particle at
-$\sim 125 \mathrm{GeV}$ — is separately identified with
+$\sim 125\;\mathrm{GeV}$ — is separately identified with
 the torus link $T(2,8)$
 ([Higgs as $T(2,8)$](#conj:higgs-t28)), a spin-$0$ boson
 consistent with the fermion--boson decomposition
@@ -152,9 +152,9 @@ the irreps of $H_r(q)$ via the Markov trace:
 
 $$
   V_{T_{r,s}}(q)
-  = 
-  \sum_{\lambda \vdash r}
-  d_\lambda(q) \chi_\lambda(T_{r,s})
+  \;=\;
+  \sum_{\lambda \,\vdash\, r}
+  d_\lambda(q) \;\chi_\lambda(T_{r,s})
 $$
 
 where $d_\lambda$ is the $q$-dimension and $\chi_\lambda$ is the

@@ -129,8 +129,8 @@ def weak_vertex_T35():
 def crossing_coeffs(ti, tj):
     pair = ti + tj
     if pair == 'pp': return (1.0, 0.0)
-    elif pair == 'nn': return (1.0, -HA)
-    else: return (1.0, -HA / 2.0)
+    elif pair == 'nn': return (Q**2, -Q * S_SKEIN)
+    else: return ((1.0 + Q**2)/2.0, -Q * S_SKEIN / 2.0)
 
 def skein_polynomial(z, n):
     """Product of traced volumes ∏ V̂_i."""

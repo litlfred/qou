@@ -7,22 +7,22 @@ The *categorical Lagrangian* is the endomorphism
 
 $$
   \mathcal{L}_q(\nabla, \psi)
-  = 
-  \mathcal{D}_\nabla^{2}
-  + 
-  \psi^* \otimes \mathcal{D}_\nabla\psi
-   \in  \mathrm{End}_{\mathbf{C}}(A),
+  \;=\;
+  \mathcal{D}_\nabla^{\,2}
+  \;+\;
+  \psi^* \otimes \mathcal{D}_\nabla\,\psi
+  \;\;\in\; \mathrm{End}_{\mathbf{C}}(A),
 $$
 
-where $\psi^* = \int_A \!\circ S(\psi) \colon A \to \mathbf{1}$ is the
+where $\psi^* = \int_A \!\circ\, S(\psi) \colon A \to \mathbf{1}$ is the
 adjoint section (antipode composed with the Frobenius form).
 
 ```tex
 \begin{equation}\label{eq:categorical-lagrangian-diagram}
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
   A \ar[r, "\mathcal{D}_\nabla"]
-    \ar[dr, "\mathcal{L}_q(\nabla{,}\psi)"']
-  & \Omega^1(A) \otimes A \ar[d, "\mathcal{D}_\nabla + \psi^* \otimes (-)"] \\
+    \ar[dr, "\mathcal{L}_q(\nabla{,}\,\psi)"']
+  & \Omega^1(A) \otimes A \ar[d, "\mathcal{D}_\nabla \,+\, \psi^* \otimes (-)"] \\
   & \mathrm{End}_{\mathbf{C}}(A)
 \end{tikzcd}
 \qquad\text{(Lagrangian)}

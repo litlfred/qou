@@ -25,8 +25,8 @@ $L^2_q(A) \hookrightarrow \mathcal{H}$ with
 
 $$
   \lVert \tau(v) \rVert_{\mathcal{H}}^2
-   \leq 
-  C(q)\lVert v \rVert_{L^2_q}^2,
+  \;\leq\;
+  C(q)\,\lVert v \rVert_{L^2_q}^2,
   \qquad
   C(q) = 1 + O(q-1).
 $$
@@ -40,12 +40,12 @@ The [energy inequality](#thm:q-ns-wellposedness) gives
 
 $$
   \sup_{t \geq 0} \lVert v_q(t) \rVert_{L^2_q}^2
-   \leq 
+  \;\leq\;
   \lVert v_0 \rVert_{L^2_q}^2
-   \leq 
-  C(q)\lVert v_0 \rVert_{\mathcal{H}}^2
-   \leq 
-  2\lVert v_0 \rVert_{\mathcal{H}}^2
+  \;\leq\;
+  C(q)\,\lVert v_0 \rVert_{\mathcal{H}}^2
+  \;\leq\;
+  2\,\lVert v_0 \rVert_{\mathcal{H}}^2
 $$
 
 for $q$ close to $1$.  The bound is **uniform in $q$**.
@@ -54,11 +54,11 @@ for $q$ close to $1$.  The bound is **uniform in $q$**.
 The energy inequality also gives
 
 $$
-  \int_0^T \lVert d_qv_q(t) \rVert_{L^2_q}^2dt
-   \leq 
+  \int_0^T \lVert d_q\,v_q(t) \rVert_{L^2_q}^2\,dt
+  \;\leq\;
   \frac{\lVert v_0 \rVert_{L^2_q}^2}{2\nu_q}
-  = 
-  \frac{q}{q-1}\lVert v_0 \rVert_{L^2_q}^2.
+  \;=\;
+  \frac{q}{q-1}\,\lVert v_0 \rVert_{L^2_q}^2.
 $$
 
 This diverges as $q \to 1$ (because $\nu_q \to 0$), so we
@@ -66,16 +66,16 @@ This diverges as $q \to 1$ (because $\nu_q \to 0$), so we
 **uniform $H^s$ bound** for any $s < 1$: by interpolation,
 
 $$
-  \int_0^T \lVert v_q(t) \rVert_{H^s_q}^2dt
-   \leq 
-  \left(\int_0^T \lVert v_q \rVert_{L^2_q}^2dt\right)^{1-s}
+  \int_0^T \lVert v_q(t) \rVert_{H^s_q}^2\,dt
+  \;\leq\;
+  \left(\int_0^T \lVert v_q \rVert_{L^2_q}^2\,dt\right)^{1-s}
   \!\cdot\!
-  \left(\int_0^T \lVert d_q v_q \rVert_{L^2_q}^2dt\right)^s
+  \left(\int_0^T \lVert d_q v_q \rVert_{L^2_q}^2\,dt\right)^s
 $$
 
 $$
-  \leq
-  (2T)^{1-s}\lVert v_0 \rVert_{\mathcal{H}}^{2(1-s)}
+  \leq\;
+  (2T)^{1-s}\,\lVert v_0 \rVert_{\mathcal{H}}^{2(1-s)}
   \cdot
   \left(\frac{q}{q-1}\right)^s
   \lVert v_0 \rVert_{\mathcal{H}}^{2s}.
@@ -88,9 +88,9 @@ bound after a change of variables.
 More precisely: fix $s = 1/2$.  Then
 
 $$
-  \int_0^T \lVert v_q(t) \rVert_{H^{1/2}_q}^2dt
-   \leq 
-  C_0\frac{q^{1/2}}{(q-1)^{1/2}},
+  \int_0^T \lVert v_q(t) \rVert_{H^{1/2}_q}^2\,dt
+  \;\leq\;
+  C_0\,\frac{q^{1/2}}{(q-1)^{1/2}},
 $$
 
 which diverges as $q \to 1$ at rate $(q-1)^{-1/2}$.  This is
@@ -100,7 +100,7 @@ which diverges as $q \to 1$ at rate $(q-1)^{-1/2}$.  This is
 The [finite cascade depth](#prop:q-turbulence-spectrum) shows that
 only $N_{\mathrm{eff}}(q) \sim \ln(1/(q-1))/(q-1)$ modes are
 active.  Define the **truncated solution**
-$v_q^N = \sum_{k=1}^{N} \hat{v}_{q,k}z^k$ where
+$v_q^N = \sum_{k=1}^{N} \hat{v}_{q,k}\,z^k$ where
 $N = N_{\mathrm{eff}}(q)$.  Then $v_q - v_q^N$ is
 exponentially small (the tail modes are damped by
 $e^{-\nu_q [k]_q^2 t}$ with $[k]_q^2 \geq q^{2N}$).
@@ -119,7 +119,7 @@ equation becomes an ODE:
 $$
   \frac{d\hat{v}_k}{dt}
   = -\nu_q [k]_q^2 \hat{v}_k
-  + \sum_{i+j=k} [i]_q\hat{v}_i\hat{v}_j
+  + \sum_{i+j=k} [i]_q\,\hat{v}_i\,\hat{v}_j
   - \hat{p}_k,
   \qquad k = 1, \ldots, N.
 $$
@@ -153,7 +153,7 @@ every fixed $N$, $v_{q_n}^N$ converges as $n \to \infty$.
 
 Define the **limit** mode by mode:
 $\hat{v}_k^* = \lim_{n \to \infty} \hat{v}_{q_n, k}$
-for each $k \geq 1$.  Set $v^* = \sum_{k} \hat{v}_k^*z^k$.
+for each $k \geq 1$.  Set $v^* = \sum_{k} \hat{v}_k^*\,z^k$.
 
 
 **Step 5: The limit is a distributional solution of NS.**
@@ -161,7 +161,7 @@ The truncated q-NS equation at level $N$ is
 
 $$
   \partial_t v_q^N + P_N B(v_q^N)
-  = \nu_qP_N \Delta_q v_q^N - P_N(\rho^{-1}\nabla_A p_q),
+  = \nu_q\,P_N \Delta_q v_q^N - P_N(\rho^{-1}\nabla_A p_q),
 $$
 
 where $P_N$ is projection onto the first $N$ modes.
@@ -197,7 +197,7 @@ Consider instead the equation
 
 $$
   \partial_t v + (v \cdot \nabla_A) v
-  = -\nabla p + (\nu + \nu_q)\Delta_q v - \nabla Q_q,
+  = -\nabla p + (\nu + \nu_q)\,\Delta_q v - \nabla Q_q,
 $$
 
 where $\nu > 0$ is a fixed classical viscosity.  As $q \to 1$:
@@ -206,13 +206,13 @@ the limit satisfies
 
 $$
   \partial_t v^* + (v^* \cdot \nabla) v^*
-  = -\nabla p^* + \nu\Delta v^*.
+  = -\nabla p^* + \nu\,\Delta v^*.
 $$
 
 This **is** the classical NS equation with viscosity $\nu$.
 
 The compactness argument carries through identically (the
-additional $\nu\Delta$ term only helps — it provides uniform
+additional $\nu\,\Delta$ term only helps — it provides uniform
 $H^1$ bounds independently of $q$).
 
 

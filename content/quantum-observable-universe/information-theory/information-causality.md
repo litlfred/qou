@@ -12,7 +12,7 @@ $|Z| = c_q$ in the contact affine coordinate
 horizontal spatial diffusion exactly matches vertical Reeb advance.
 This is not a geometric postulate (as in special relativity) but
 a *consequence* of the $q$-connection decomposition
-$A_q = q^{-1}A + \hbar_q\iota_\xi A\theta$ --- the spatial
+$A_q = q^{-1}A + \hbar_q\,\iota_\xi A\;\theta$ --- the spatial
 and temporal coupling weights determine the causal boundary.
 Outside the cone, the Lieb--Robinson bound
 ([speed of light](#def:information-speed-of-light)) gives
@@ -45,8 +45,8 @@ In the QOU, the crossing energy $E = mc_q^2 = m/(q-1)^2$ and the
 operation count is $n_R(q) = 1/\hbar_q$.  The bound becomes:
 
 $$
-  n_R(q)  \leq  \frac{2m \cdot c_q^2}{\pi\hbar_q}
-  =  \frac{2m}{\pi\hbar_q(q-1)^2}.
+  n_R(q) \;\leq\; \frac{2\,m \cdot c_q^2}{\pi\,\hbar_q}
+  \;=\; \frac{2\,m}{\pi\,\hbar_q\,(q-1)^2}.
 $$
 
 The Reeb dynamics saturates this bound (up to the factor $2/\pi$):
@@ -61,12 +61,12 @@ and the operational entropy $\eta_q$
 
 $$
   \mathcal{B}(q)
-  =  c_q \cdot n_R(q) \cdot \eta_q
-  =  \frac{q\eta_q}{(q-1)^2}
+  \;=\; c_q \cdot n_R(q) \cdot \eta_q
+  \;=\; \frac{q\,\eta_q}{(q-1)^2}
   \quad \text{($q$-bits per Planck time)}.
 $$
 
-At $q = q_0$: $\mathcal{B} \approx q\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
+At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
 
 **5. Pawlowski's information causality.**
 Information causality [pawlowski2009] states that if Alice sends
@@ -85,8 +85,8 @@ With $c = c_q$ and $E = mc_q^2$, the QOU fibre entropy is
 bounded by $\eta_q$ per operation:
 
 $$
-  S_{\mathrm{fibre}}  \leq  \eta_q
-  =  \frac{2q - 1}{q^3}
+  S_{\mathrm{fibre}} \;\leq\; \eta_q
+  \;=\; \frac{2q - 1}{q^3}
   \quad \text{($q$-bits per operation)}.
 $$
 

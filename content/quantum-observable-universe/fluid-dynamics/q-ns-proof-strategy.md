@@ -8,7 +8,7 @@ $q^{2k}/(q-q^{-1})^2$ for large $k$
 Mode $k$ dissipates at rate
 $\gamma_k = \nu_q [k]_q^2 / L_q^2$, growing exponentially in
 $k$.  The enstrophy $\Omega(t) = \sum_k [k]_q^2 |\hat{v}_k|^2$
-satisfies $d\Omega/dt \leq -\nu_q [1]_q^2\Omega + C\Omega^{3/2}$.
+satisfies $d\Omega/dt \leq -\nu_q [1]_q^2\,\Omega + C\,\Omega^{3/2}$.
 At $q = 1$ the damping coefficient vanishes; at $q > 1$ it
 provides a linear restoring term.
 

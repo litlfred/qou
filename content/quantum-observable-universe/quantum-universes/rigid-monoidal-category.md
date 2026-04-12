@@ -49,5 +49,5 @@ When $c_{Y,X} \circ c_{X,Y} = \mathrm{id}$ the braiding is
 *symmetric*; in general $c^2 \neq \mathrm{id}$.  Given a braiding,
 the *exterior power* $\Lambda^k V$ is defined as the image of the
 antisymmetriser
-$\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\pi$ acting
+$\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\,\pi$ acting
 on $V^{\otimes k}$, where permutations act via $c$.

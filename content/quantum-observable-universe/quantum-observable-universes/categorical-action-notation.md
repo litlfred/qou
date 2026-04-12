@@ -23,7 +23,7 @@ The following notation is used in
   *partial trace* over the $A$ factor.
 - $\psi^* = \int_A \circ S(\psi) \colon A \to \mathbf{1}$ is the
   *adjoint section* (antipode composed with the Frobenius form).
-- $D_\nabla = q^{-1}\nabla + (1 - q^{-1})\iota_\xi\nabla$ is
+- $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
   the *$q$-deformed covariant derivative*, where $\xi$ is the
   Reeb derivation of $A$
   ([Reeb decomposition](#ex:reeb-decomposition)).

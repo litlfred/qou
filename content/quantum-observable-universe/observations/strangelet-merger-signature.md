@@ -17,11 +17,11 @@ conversion energy:
 
 $$
   \delta E_{\mathrm{conv}}
-   \approx 
+  \;\approx\;
   \frac{|J_{\mathfrak{s}}| - |J_{\mathfrak{d}}|}{|J_{\mathfrak{d}}|}
-   \times 
+  \;\times\;
   \frac{V_B}{\hbar_q^2}
-   \approx  168  \text{Skein units per strange quark}.
+  \;\approx\; 168 \;\text{Skein units per strange quark}.
 $$
 
 In physical units (scaling by $m_p c^2 \approx 938$ MeV and
@@ -29,9 +29,9 @@ $V_B/\hbar_q^2 = 749$):
 
 $$
   \delta E_{\mathrm{conv}}^{\mathrm{phys}}
-   \approx 
+  \;\approx\;
   \frac{168}{749} \times 938
-   \approx  210  \mathrm{MeVperbaryon}.
+  \;\approx\; 210 \;\mathrm{MeV\;per\;baryon}.
 $$
 
 **The energy budget.**

@@ -11,7 +11,7 @@ The coral elliptic curve
 $z$ is
 
 $$
-  X^3 + (z + 1)X^2 + (z^2 + z + 1)X
+  X^3 + (z + 1)\,X^2 + (z^2 + z + 1)\,X
   + (z^3 + z^2 + z + 1) = 0.
   \tag{C}
 $$
@@ -21,9 +21,9 @@ The nuclear stability condition
 $t = A^{1/3}$, is
 
 $$
-  t^3 - 2cpt^2 - 2p = 0,
-  \qquad c = \frac{a_C}{2a_A}
-  = \frac{(q - q^{-1})\lambda_C}{2a_A}.
+  t^3 - 2c\,p\,t^2 - 2p = 0,
+  \qquad c = \frac{a_C}{2\,a_A}
+  = \frac{(q - q^{-1})\,\lambda_C}{2\,a_A}.
   \tag{S}
 $$
 
@@ -47,8 +47,8 @@ even-odd, odd-even, and odd-odd nuclei.  The **degeneracy locus**
 energies coincide — satisfies
 
 $$
-  t^3 - 2cpt^2 - 2p
-  =  \frac{2\lambda_P}{a_A} \cdot t^{3/2}.
+  t^3 - 2c\,p\,t^2 - 2p
+  \;=\; \frac{2\lambda_P}{a_A} \cdot t^{3/2}.
   \tag{D}
 $$
 
@@ -56,8 +56,8 @@ Squaring to clear the half-integer exponent and substituting
 $u = t^{1/2}$ (so $t = u^2$, $t^{3/2} = u^3$, $t^3 = u^6$):
 
 $$
-  \bigl(u^6 - 2cpu^4 - 2p\bigr)^2
-  =  \frac{4\lambda_P^2}{a_A^2} \cdot u^6.
+  \bigl(u^6 - 2c\,p\,u^4 - 2p\bigr)^2
+  \;=\; \frac{4\lambda_P^2}{a_A^2} \cdot u^6.
   \tag{D$'$}
 $$
 
@@ -80,7 +80,7 @@ of genus $1$.
    the stability cubic:*
 
 $$
-  z(p) =  -\frac{1}{2cp}
+  z(p) \;=\; -\frac{1}{2c\,p}
 $$
 
    *so that the coefficients of (C) at $z = z(p)$ match
@@ -165,7 +165,7 @@ The color elliptic curve
 at the substrate parameter $q$ is
 
 $$
-  \mathcal{E}_q  :  y^2 = x^3 + 0.7087x + 0.8056,
+  \mathcal{E}_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
   \qquad \Delta = -18.95, \quad j = 129.9.
 $$
 
@@ -179,7 +179,7 @@ $(Q, N)$ on the genus-$0$ **stability cubic**
 ([Diophantine valley](#rem:diophantine-valley)):
 
 $$
-  t^3 =  2p(1 + ct^2),
+  t^3 \;=\; 2p\,(1 + c\,t^2),
   \qquad A = Z + N = t^3.
 $$
 

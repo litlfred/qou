@@ -42,7 +42,7 @@ triple $(\mathbf{C}, A, \tau)$ where:
    **(F)** the [Frobenius pairing](#def:frobenius-pairing)
    $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ is
    non-degenerate, inducing an isomorphism
-   $A \xrightarrow{ \sim } A^{\vee}$;
+   $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
 3. $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ is a
    *fibre functor*: an exact, faithful, $R$-linear monoidal

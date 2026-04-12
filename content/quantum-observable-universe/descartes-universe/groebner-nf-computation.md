@@ -3,7 +3,7 @@ $H_A(q)$ is a formal sum over reduced braid words:
 
 $$
   \mathcal{N}(Z, N)
-  = 
+  \;=\;
   \sum_{w \in \mathrm{supp}} c_w \cdot w
 $$
 
@@ -88,7 +88,7 @@ can absorb it.  This requires $d \neq 0$.
 For proton–proton crossings: $d = 0$ (no constant term).  The
 prefix is **not** preserved.  Without the prefix, $I_9$ has no
 anchor for the chain stripping.  The condition $d \neq 0$ holds for
-neutron–neutron ($d = -(q - q^{-1})$) and proton–neutron ($d = -(q - q^{-1})/2$)
+neutron–neutron ($d = -q s$) and proton–neutron ($d = -q s/2$)
 crossings.  The valley of stability condition $N \geq Z - 1$ ensures
 at least one $d \neq 0$ crossing at every generator.
 
@@ -103,7 +103,7 @@ ${}^8\mathrm{Li}(3,5)$ have identical histograms).
 The histogram depends only on the Iwahori--Hecke algebra $H_A(q)$, not on
 the crossing coefficients.  It factors as a product of $q$-integers:
 
-| $A$ | Histogram polynomial $\sum_\ell h(\ell)  t^\ell$ |
+| $A$ | Histogram polynomial $\sum_\ell h(\ell) \, t^\ell$ |
 |:---:|---|
 | $2$ | $[2]_t = 1 + t$ |
 | $3$ | $[2]_t^2 = (1+t)^2$ |
@@ -146,7 +146,7 @@ eigenvalue $-q^{-1}$ of the Hecke relation.  The ratio
 
 $$
   F_{\mathrm{Pauli}}^{(A)}
-  = 
+  \;=\;
   \frac{|\mathrm{tr}_{\mathrm{alt}}(\mathcal{N})|}{|\mathrm{net}(\mathcal{N})|}
 $$
 

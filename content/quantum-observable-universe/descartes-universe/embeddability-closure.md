@@ -17,7 +17,7 @@ $\mathcal{G}$.  Then:
 
 1. The Seifert genus of $K$ satisfies $g(K) \leq 4$.
 2. $K$ admits a localized knot structure
-   $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}T}) \times \mathrm{Knot}$ at some point $c$ of the base
+   $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}\,T}) \times \mathrm{Knot}$ at some point $c$ of the base
    $\mathbb{P}(V)$.
 3. The localized knot $(c, K)$ descends under $\tau$ to an
    observable morphism in $\mathbf{C}$: every generated particle
@@ -66,7 +66,7 @@ evaluate it.
 The spectral filter acts at the level of the Skein resolution:
 
 $$
-  q  [L_+] - q^{-1} [L_-]
+  q \, [L_+] - q^{-1} [L_-]
   = (q^{1/2} - q^{-1/2}) [L_0]
 $$
 

@@ -4,7 +4,7 @@ if they are related by a permutation of indices and an ambient isotopy
 within each fibre:
 
 $$
-  \{(p_i, H_i)\}_{i \in I}  \sim 
+  \{(p_i, H_i)\}_{i \in I} \;\sim\;
   \{(p_{\sigma(i)}, H_{\sigma(i)}')\}_{i \in I}
 $$
 

@@ -17,9 +17,9 @@ specialization of the substrate parameter
 ([Levi-curvature coupling](#rem:c-substrate-via-levi)) gives
 
 $$
-  q(p) = 1 + \bigl\lvert\langle L_\theta,
+  q(p) = 1 + \bigl\lvert\langle L_\theta,\,
   F_A^+\rangle\bigr\rvert(p)
-   >  q_0.
+  \;>\; q_0.
 $$
 
 The perturbation $\delta q = q(p_{\mathrm{vertex}}) - q_0$
@@ -39,7 +39,7 @@ depends on two factors:
    the Gauss--Bonnet theorem fixes the total curvature budget:
 
    $$
-     \int_{\Sigma_4} K dA = 2\pi\chi(\Sigma_4) = -12\pi,
+     \int_{\Sigma_4} K\, dA = 2\pi\chi(\Sigma_4) = -12\pi,
      \qquad |\chi(\Sigma_4)| = 6.
    $$
 
@@ -50,15 +50,15 @@ depends on two factors:
 Combining these:
 
 $$
-  \boxed{
+  \boxed{\;
   \delta q(\text{vertex})
-  = 
+  \;=\;
   (q_0 - 1)
-   \cdot 
+  \;\cdot\;
   \frac{\alpha}{2\pi}
-   \cdot 
+  \;\cdot\;
   \frac{1}{|\chi(\Sigma_4)|}
-  }
+  \;}
 $$
 
 Every quantity on the right is determined:
@@ -77,7 +77,7 @@ Every quantity on the right is determined:
 | Production | $\alpha$ | $\delta q$ | $\delta m$ | Observed shift | Agreement |
 |------------|:--------:|:----------:|:----------:|:--------------:|:---------:|
 | $gg \to H$ (top loop) | $\alpha_s \approx 0.118$ | $3.4 \times 10^{-4}$ | $370$ MeV | $\sim 300$ MeV spread | $\sim 1.2\times$ |
-| $qq^{\sigma} \to W$ (CDF, $pp^{\sigma}$) | $\alpha_W \approx 0.034$ | $9.9 \times 10^{-5}$ | $69$ MeV | $77 \pm 9$ MeV | $\mathbf{0.9\sigma}$ |
+| $q\,q^{\sigma} \to W$ (CDF, $p\,p^{\sigma}$) | $\alpha_W \approx 0.034$ | $9.9 \times 10^{-5}$ | $69$ MeV | $77 \pm 9$ MeV | $\mathbf{0.9\sigma}$ |
 | $qq' \to W$ (LHC, $pp$ sea) | $\alpha_W x^2$ | $\lesssim 10^{-6}$ | $\lesssim 1$ MeV | $\sim 3$ MeV | Consistent |
 
 The mass shift is computed from the sensitivity
@@ -92,7 +92,7 @@ $$
 ## Why CDF differs from ATLAS and CMS
 
 The CDF~II experiment collided **protons with antiprotons**
-($pp^{\sigma}$) at $\sqrt{s} \approx 1.96$ TeV.  $W$ bosons were
+($p\,p^{\sigma}$) at $\sqrt{s} \approx 1.96$ TeV.  $W$ bosons were
 produced predominantly through **valence quark--antiquark
 annihilation**: a $u$ quark from the proton meets a $d^{\sigma}$
 from the antiproton and annihilates directly into a $W^+$.
@@ -108,9 +108,9 @@ suppressed by $x^2$:
 
 $$
   \mathcal{Q}_{\mathrm{top}}^{\mathrm{sea}}
-   \approx 
+  \;\approx\;
   \frac{\alpha_W}{2\pi} \cdot x^2
-   \sim  10^{-5}.
+  \;\sim\; 10^{-5}.
 $$
 
 This drives $\delta q$ below $10^{-6}$ at the LHC — explaining
@@ -131,9 +131,9 @@ $\alpha = \alpha_s$.  The vertex $\delta q$ formula predicts
 
 $$
   \delta q(gg \to H)
-  = 
+  \;=\;
   0.10998 \times \frac{0.118}{2\pi} \times \frac{1}{6}
-  =  3.4 \times 10^{-4}
+  \;=\; 3.4 \times 10^{-4}
 $$
 
 which is $3.5\times$ larger than the CDF $W$ shift, driven by
@@ -157,7 +157,7 @@ $\alpha_s / \alpha_W \approx 3.5$.
 
 | Experiment | $\sqrt{s}$ (TeV) | $m_W$ (GeV) | $\delta m$ (MeV) | $B$ (T) | Collision |
 |---|:-:|:-:|:-:|:-:|:-:|
-| **CDF~II** | $1.96$ | $80.434 \pm 0.009$ | $+77$ | $1.4$ | $pp^{\sigma}$ |
+| **CDF~II** | $1.96$ | $80.434 \pm 0.009$ | $+77$ | $1.4$ | $p\,p^{\sigma}$ |
 | ATLAS | $7$ | $80.360 \pm 0.016$ | $+3$ | $2.0$ | $pp$ |
 | CMS | $13$ | $80.360 \pm 0.010$ | $+3$ | $3.8$ | $pp$ |
 | LHCb | $13$ | $80.354 \pm 0.032$ | $-3$ | $\sim 0$ | $pp$ |
@@ -184,11 +184,11 @@ comparing the *pattern* against the forward prediction.
 | CMS Run~2 | $4\ell$ | $-0.12$ | $-1.1 \times 10^{-4}$ |
 
 **Table 5: $W$ $\delta q$ by experiment**
-**(ref: SM $\approx 80357$ MeV).**
+**(ref: SM $\approx 80\,357$ MeV).**
 
 | Experiment | $\delta m$ (MeV) | $\delta q$ (inferred) | Collision |
 |---|:-:|:-:|:-:|
-| CDF~II | $+77$ | $+1.1 \times 10^{-4}$ | $pp^{\sigma}$ |
+| CDF~II | $+77$ | $+1.1 \times 10^{-4}$ | $p\,p^{\sigma}$ |
 | ATLAS | $+3$ | $+4 \times 10^{-6}$ | $pp$ |
 | CMS | $+3$ | $+4 \times 10^{-6}$ | $pp$ |
 | LHCb | $-3$ | $-4 \times 10^{-6}$ | $pp$ |
@@ -198,9 +198,9 @@ comparing the *pattern* against the forward prediction.
 Four patterns are tested against the forward prediction:
 
 **1. Collision type (W boson): strongest signal.**
-$\delta q(pp^{\sigma}) = +1.1 \times 10^{-4}$ vs.\
+$\delta q(p\,p^{\sigma}) = +1.1 \times 10^{-4}$ vs.\
 $\delta q(pp) \lesssim 5 \times 10^{-6}$.  Forward prediction:
-$9.9 \times 10^{-5}$ ($pp^{\sigma}$) vs.\ $\lesssim 10^{-6}$ ($pp$).
+$9.9 \times 10^{-5}$ ($p\,p^{\sigma}$) vs.\ $\lesssim 10^{-6}$ ($pp$).
 **Match.**
 
 **2. Decay channel (Higgs): suggestive but noisy.**
@@ -242,8 +242,8 @@ being independent of beam energy.
 
 ## Experimental tests
 
-1. **CDF vs.\ LHC $W$ mass.**  The $pp^{\sigma}$-vs-$pp$ split is
-   the cleanest test: the formula predicts $\delta m_W(pp^{\sigma})
+1. **CDF vs.\ LHC $W$ mass.**  The $p\,p^{\sigma}$-vs-$pp$ split is
+   the cleanest test: the formula predicts $\delta m_W(p\,p^{\sigma})
    = 69$ MeV and $\delta m_W(pp) < 1$ MeV.  Improved LHC
    measurements tightening the $pp$ value will sharpen the test.
 

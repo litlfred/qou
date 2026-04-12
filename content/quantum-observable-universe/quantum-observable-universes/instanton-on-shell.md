@@ -5,9 +5,9 @@ gives
 
 $$
   \lVert F_\nabla \rVert^2
-  = 
+  \;=\;
   \lVert F_\nabla^+ \rVert^2 + \lVert F_\nabla^- \rVert^2
-  = 
+  \;=\;
   c_2(A) + 2\lVert F_\nabla^- \rVert^2,
 $$
 
@@ -16,7 +16,7 @@ The instanton condition forces $F_\nabla^- = 0$, so the gauge sector
 of the Lagrangian becomes purely topological:
 
 $$
-  \mathcal{D}_\nabla^{2} =  F_\nabla^+ =  c_2(A).
+  \mathcal{D}_\nabla^{\,2} \;=\; F_\nabla^+ \;=\; c_2(A).
 $$
 
 The full Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian))
@@ -24,10 +24,10 @@ therefore simplifies on-shell:
 
 $$
   \mathcal{L}_q\big|_{\text{instanton}}
-  = 
+  \;=\;
   c_2(A)
-  + 
-  \psi^* \otimes \mathcal{D}_\nabla\psi.
+  \;+\;
+  \psi^* \otimes \mathcal{D}_\nabla\,\psi.
 $$
 
 ```tex

@@ -26,7 +26,7 @@ The fundamental group of the trefoil-knot complement admits the
 presentation $\langle x,y\mid xyx=yxy\rangle$, which is exactly
 $B_3$.  The assignment
 $x\mapsto H_1$, $y\mapsto H_2$ is therefore an isomorphism
-$\pi_1(S^3\setminus K_{3,2})\xrightarrow{ \sim } \langle H_1,H_2\rangle$: the monodromy group of the branched cover
+$\pi_1(S^3\setminus K_{3,2})\;\xrightarrow{\;\sim\;}\; \langle H_1,H_2\rangle$: the monodromy group of the branched cover
 *is* the trefoil-knot group.
 
 The composite holonomy

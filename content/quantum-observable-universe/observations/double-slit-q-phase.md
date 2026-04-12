@@ -8,17 +8,17 @@ The *$q$-deformed path phase* accumulated along $\gamma_i$ is
 
 $$
   \Phi_q^{(i)}(y)
-  =  \frac{1}{\hbar_q}\!\int_{\gamma_i}\! d_q\psi
-  =  q^{-1}\Phi_{\mathrm{geom}}^{(i)}(y)
-        +  (1 - q^{-1})\Phi_{\mathrm{Reeb}}^{(i)}(y),
+  \;=\; \frac{1}{\hbar_q}\!\int_{\gamma_i}\! d_q\,\psi
+  \;=\; q^{-1}\,\Phi_{\mathrm{geom}}^{(i)}(y)
+        \;+\; (1 - q^{-1})\,\Phi_{\mathrm{Reeb}}^{(i)}(y),
 $$
 
 where:
 
-- $\Phi_{\mathrm{geom}}^{(i)} = (2\pi/\lambda)\ell_i(y)$ is the
+- $\Phi_{\mathrm{geom}}^{(i)} = (2\pi/\lambda)\,\ell_i(y)$ is the
   geometric (de Broglie) phase, with $\ell_i(y)$ the Euclidean path
   length through slit $i$ to screen point $y$;
-- $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\theta$
+- $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\,\theta$
   is the *Reeb phase* --- the rotation accumulated by the internal
   color fibre along $\gamma_i$
   ([Reeb derivation](#def:categorical-reeb));
@@ -35,9 +35,9 @@ The *$q$-deformed phase difference* between the two paths is
 
 $$
   \Delta\Phi_q(y)
-  =  \Phi_q^{(1)}(y) - \Phi_q^{(2)}(y)
-  =  q^{-1}\frac{2\pid\sin\theta}{\lambda}
-        +  (1 - q^{-1})\Delta\phi_\xi(y),
+  \;=\; \Phi_q^{(1)}(y) - \Phi_q^{(2)}(y)
+  \;=\; q^{-1}\,\frac{2\pi\,d\sin\theta}{\lambda}
+        \;+\; (1 - q^{-1})\,\Delta\phi_\xi(y),
 $$
 
 where $\theta$ is the scattering angle and

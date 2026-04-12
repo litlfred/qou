@@ -12,7 +12,7 @@ kernel of the restriction $r_0|_S \colon A_0 \to A_0|_S$:
 
 $$
   \partial A_0
-  =  \ker\bigl(\mathcal{O}(\mathrm{SU}(2))
+  \;=\; \ker\bigl(\mathcal{O}(\mathrm{SU}(2))
   \xrightarrow{r_0|_S} \mathcal{O}(\mathrm{U}(1)_N)
   \oplus \mathcal{O}(\mathrm{U}(1)_S)\bigr),
 $$

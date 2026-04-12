@@ -48,7 +48,7 @@ The enstrophy evolution
 
 $$
   \frac{d\Omega}{dt}
-  \leq \Lambda_q\Omega
+  \leq \Lambda_q\,\Omega
 $$
 
 has $\Lambda_q = (C_q')^2 E_0/\nu_q - \nu_q$.  The initial

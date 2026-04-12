@@ -3,7 +3,7 @@ Given a bundle initial condition $\mathcal{S}_0 = \{(p_i, K_i)\}_{i=1}^{N}$
 flow** is the one-parameter family of bundle states
 
 $$
-  E_t =  \bigl\{\bigl(\Phi_t^q(p_i), K_i\bigr)\bigr\}_{i=1}^{N}
+  E_t \;=\; \bigl\{\bigl(\Phi_t^q(p_i),\; K_i\bigr)\bigr\}_{i=1}^{N}
   \qquad t \geq 0,
 $$
 
@@ -17,7 +17,7 @@ The flow has two components:
    angular momentum proportional to its crossing number $c(K)$:
 
    $$
-     \omega_K =  c(K) \cdot \frac{2\pi}{[c(K)]_q!}
+     \omega_K \;=\; c(K) \cdot \frac{2\pi}{[c(K)]_q!}
    $$
 
    where $[n]_q! = [1]_q [2]_q \cdots [n]_q$ is the $q$-factorial.
@@ -31,7 +31,7 @@ The flow has two components:
    short-range repulsive force
 
    $$
-     F_{ij} = 
+     F_{ij} \;=\;
      \frac{\Delta_q(K_i) \cdot \Delta_q(K_j)}{d(p_i, p_j)^2 + \ell_P^2}
    $$
 
@@ -43,9 +43,9 @@ change under evolution) but redistributes positions on $\mathbb{P}(V)$.
 Categorically, the flow is a natural transformation
 
 $$
-  \Phi^q  \colon 
+  \Phi^q \;\colon\;
   \mathrm{id}_{\mathrm{Bun}(\mathbb{P}(V))}
-  \Longrightarrow
+  \;\Longrightarrow\;
   \mathrm{id}_{\mathrm{Bun}(\mathbb{P}(V))}
 $$
 

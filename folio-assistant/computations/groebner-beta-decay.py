@@ -19,6 +19,7 @@ from experimental_constants import *
 
 div = HeckeDivision(q_val=q)
 HA = q - qi
+S = q**0.5 - qi**0.5
 Z_m = 1.0 / (q**0.5 + qi**0.5)
 mu_0 = M_E_MEV / (3 * E_CROSS)
 kappa = E_CROSS * mu_0
@@ -28,8 +29,8 @@ def sigma_inv(i): return HeckeElement({(i,): 1.0, (): -HA})
 
 # Skein-weighted crossing elements
 c_pp, d_pp = 1.0, 0.0
-c_nn, d_nn = 1.0, -HA
-c_mix, d_mix = 1.0, -HA / 2
+c_nn, d_nn = q**2, -q * S
+c_mix, d_mix = (1 + q**2) / 2, -q * S / 2
 
 def crossing_element(ti, tj, gen):
     """Hecke element for crossing between types ti, tj at generator gen."""

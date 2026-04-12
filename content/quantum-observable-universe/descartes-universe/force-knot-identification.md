@@ -18,9 +18,9 @@ and antisymmetric channels
 ([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
 
 $$
-  \mathbf{E}_{\mathrm{cross}} = 
+  \mathbf{E}_{\mathrm{cross}} \;=\;
   \underbrace{E_{\mathrm{sym}}}_{\text{mass (strong)}}
-  + 
+  \;+\;
   \underbrace{E_{\mathrm{anti}}}_{\text{Coulomb (EM)}}.
 $$
 
@@ -32,7 +32,7 @@ categorical level.  Electromagnetic charge is therefore the
 energy:
 
 $$
-  Q(K) =  \frac{1}{2}\bigl(\mathbf{E}_{\mathrm{cross}}(K)
+  Q(K) \;=\; \frac{1}{2}\bigl(\mathbf{E}_{\mathrm{cross}}(K)
   - \mathbf{E}_{\mathrm{cross}}(K^{\sigma})\bigr).
 $$
 

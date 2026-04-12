@@ -76,7 +76,7 @@ the non-degeneracy of the Frobenius form $\int_A$ via the diagram
   & \mathcal{O}_M
     \ar[d, "\textstyle\int_M"]
   \\
-  H^0(M,\mathrm{Ad}(A)) \otimes H^0(M,\mathrm{Ad}(A))
+  H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
     \ar[rr, "\text{pairing}"']
   & & \mathbb{C}
 \end{tikzcd}

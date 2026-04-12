@@ -14,7 +14,7 @@ normal bundle $N$ is a rank-$2$ real vector bundle over
 $S^1$:
 
 $$
-  N_p =  T_p \Sigma_4 / T_p \varrho
+  N_p \;=\; T_p \Sigma_4 \,/\, T_p \varrho
   \qquad\text{for } p \in \varrho(S^1).
 $$
 
@@ -30,18 +30,18 @@ $\varrho(\theta)$.  A section decomposes as
 
 $$
   \sigma(\theta)
-  = 
+  \;=\;
   \sum_{\ell=0}^{\infty}
   \bigl(
     a_\ell \cos(\ell\theta) + b_\ell \sin(\ell\theta)
   \bigr)
-  \hat{n}_1(\theta)
-  + 
+  \,\hat{n}_1(\theta)
+  \;+\;
   \sum_{\ell=0}^{\infty}
   \bigl(
     c_\ell \cos(\ell\theta) + d_\ell \sin(\ell\theta)
   \bigr)
-  \hat{n}_2(\theta)
+  \,\hat{n}_2(\theta)
 $$
 
 where $\hat{n}_1(\theta), \hat{n}_2(\theta)$ are an
@@ -51,10 +51,10 @@ smoothly as $\theta$ varies.
 The **total framing twist** is
 
 $$
-  k =  \mathrm{tw}(\sigma)
-  = 
+  k \;=\; \mathrm{tw}(\sigma)
+  \;=\;
   \frac{1}{2\pi} \oint_{S^1}
-  \kappa(\sigma, \hat{n}_1)  d\theta
+  \kappa(\sigma, \hat{n}_1) \, d\theta
 $$
 
 where $\kappa$ is the rotation angle of $\sigma$ relative to
@@ -71,16 +71,16 @@ the self-linking number relative to the Seifert framing.  It
 constrains the total energy:
 
 $$
-  E_n =  -\frac{E_{\mathrm{ion}}}{n^2}.
+  E_n \;=\; -\frac{E_{\mathrm{ion}}}{n^2}.
 $$
 
 The twist $k$ is the norm-squared of $\sigma$ in the $L^2$
 sense:
 
 $$
-  k = 
+  k \;=\;
   \sum_{\ell=0}^{\infty}
-  \ell  (a_\ell^2 + b_\ell^2 + c_\ell^2 + d_\ell^2).
+  \ell \, (a_\ell^2 + b_\ell^2 + c_\ell^2 + d_\ell^2).
 $$
 
 At fixed $k = 2(n-1)$, only finitely many Fourier modes can
@@ -96,7 +96,7 @@ $\lambda_\ell = [\ell]_q [\ell + 1]_q$ under the
 **$q$-Laplacian** $\Delta_q$, where
 
 $$
-  [\ell]_q =  \frac{q^\ell - q^{-\ell}}{q - q^{-1}}
+  [\ell]_q \;=\; \frac{q^\ell - q^{-\ell}}{q - q^{-1}}
 $$
 
 is the $q$-integer.  At $q = 1$, this recovers the classical
@@ -137,7 +137,7 @@ $V_\ell$ relative to the Reeb axis
 ([categorical Reeb](#def:categorical-reeb)):
 
 $$
-  V_\ell = 
+  V_\ell \;=\;
   \bigoplus_{m=-\ell}^{+\ell} \mathbb{C} \cdot Y_\ell^m
 $$
 
@@ -168,10 +168,10 @@ involution:
 
 $$
   s = +\tfrac{1}{2}: \quad
-  \sigma  \text{in the } (+1)\text{-eigenspace},
+  \sigma \;\text{in the } (+1)\text{-eigenspace},
   \qquad
   s = -\tfrac{1}{2}: \quad
-  \sigma  \text{in the } (-1)\text{-eigenspace}.
+  \sigma \;\text{in the } (-1)\text{-eigenspace}.
 $$
 
 This doubles the orbital count: each of the $n^2$ orbitals
@@ -181,7 +181,7 @@ holds $2$ states, giving $2n^2$ states per shell.
 
 $$
   \Gamma(N)\big|_{k=2(n-1)}
-   \cong 
+  \;\cong\;
   \bigoplus_{\ell=0}^{n-1}
   \bigoplus_{m=-\ell}^{+\ell}
   \bigoplus_{s=\pm 1/2}

@@ -7,7 +7,7 @@ $\gamma$ through the hadron braid:*
 
 $$
   \mathfrak{m}_{\mathfrak{H}}
-  =  (q - 1)^2 \sum_{\text{Hecke steps}}
+  \;=\; (q - 1)^2 \sum_{\text{Hecke steps}}
   |c_w| \cdot |q - q^{-1}|,
 $$
 
@@ -18,13 +18,8 @@ augmented braid $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$, and
 $c_w$ are the coefficients at each step.*
 
 **Three computations of the same quantity.**
-For hyperbolic knot composites (hadrons), the mass $\mathfrak{m}_{\mathfrak{H}}$
-is computed by three independent methods that yield the same result.
-For torus knots (leptons), the Gröbner--Shirshov energy is zero
-(the braid word is already in normal form), mirroring the vanishing
-hyperbolic volume; the physical lepton mass arises from brane-tower
-contributions not captured by the single-level computation
-([mass endomorphism conjecture](#conj:mass-endomorphism)).
+The mass $\mathfrak{m}_{\mathfrak{H}}$ is computed by three independent methods
+that yield the same result:
 
 | Method | Domain | Computes $\mathfrak{m}_{\mathfrak{H}}$ as |
 |--------|--------|------------------------------|
@@ -94,8 +89,8 @@ The factor $(q-1)^2$ converting crossing energy to mass is
 $1/c_q^2$:
 
 $$
-  \mathfrak{m}_{\mathfrak{H}} =  \frac{E_{\mathfrak{H}}}{c_q^2}
-  =  (q-1)^2 \cdot E_{\mathfrak{H}}.
+  \mathfrak{m}_{\mathfrak{H}} \;=\; \frac{E_{\mathfrak{H}}}{c_q^2}
+  \;=\; (q-1)^2 \cdot E_{\mathfrak{H}}.
 $$
 
 Each Hecke step costs $|q - q^{-1}|$ in Skein units (spatial

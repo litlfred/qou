@@ -5,7 +5,7 @@ morphisms $\mathrm{Hom}(\Lambda^2 V, \mathbf{1})$ to be
 one-dimensional over $R$.
 
 Consequently, if $\epsilon' \colon \Lambda^2 V \twoheadrightarrow \mathbf{1}$ is any other non-degenerate epimorphism, then
-$\epsilon' = c\epsilon$ for some unit $c \in R^{\times}$.
+$\epsilon' = c\,\epsilon$ for some unit $c \in R^{\times}$.
 Physically, choosing a specific $\epsilon$ from this one-dimensional
 line amounts to fixing a fundamental unit of volume. Once this
 baseline scale is chosen, the gauge symmetries

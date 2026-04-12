@@ -7,11 +7,11 @@ $\mathfrak{su}(2)$ lives and is the classical limit ($q\to 1$) of the
 quantum group $\mathcal{U}_q(\mathfrak{su}(2))$.
 
 **PBW basis theorem.**
-The monomials $\{e_1^{a}e_2^{b}e_3^{c} : a,b,c \geq 0\}$ form a
+The monomials $\{e_1^{a}\,e_2^{b}\,e_3^{c} : a,b,c \geq 0\}$ form a
 $\mathbb{C}$-basis of
 $\mathcal{U}(\mathfrak{su}(2))$.
 In the $q$-deformed setting, the analogous basis is the set of ordered
-monomials $\{E^{(a)}K^{s}F^{(b)}\}$ in the Lusztig divided-power
+monomials $\{E^{(a)}\,K^{s}\,F^{(b)}\}$ in the Lusztig divided-power
 generators, with ordering enforced by the
 Groebner--Shirshov resolution of the $q$-Serre
 relations.
@@ -24,4 +24,4 @@ In the QOU framework this basis serves two purposes:
    [Chapter 2](#chap:torsion));
 2. it ensures flatness of the deformation $q \mapsto q_n$, so that
    the transition maps in the direct limit
-   $\mathcal{A}_\infty = \varinjlim\Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2))$ are well-defined algebra homomorphisms.
+   $\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2))$ are well-defined algebra homomorphisms.

@@ -11,7 +11,7 @@ $\psi \in A$ (a function on the group).
   $R_{\int} = 0$ in the classical limit $q = 1$.
 - *Adjoint section.*  For
   $\psi \colon \mathbb{C} \to A$, the adjoint is
-  $\psi^*(f) = \int_G \overline{\psi(g)}f(g)dg$, i.e. the
+  $\psi^*(f) = \int_G \overline{\psi(g)}\,f(g)\,dg$, i.e. the
   inner product with $\psi$ under the Haar integral.
 - *$q$-deformed derivative.*  At $q = 1$,
   $D_\nabla = \nabla$ (ordinary covariant derivative).  For

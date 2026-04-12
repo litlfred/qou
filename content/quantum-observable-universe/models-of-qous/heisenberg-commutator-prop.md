@@ -6,9 +6,9 @@ and let $q \in \mathrm{End}(\mathbf{1})$ be the substrate parameter
 $q$-deformed commutator is
 
 $$
-  [\hat{X}, \hat{P}]_q =  J\hbar_q(p),
+  [\hat{X},\, \hat{P}]_q \;=\; J\,\hbar_q(p),
   \qquad
-  \hbar_q(p) =  1 - q(p)^{-1},
+  \hbar_q(p) \;=\; 1 - q(p)^{-1},
 $$
 
 where $\hbar_q$ is the quantum Planck constant

@@ -3,9 +3,9 @@ Stacking the Kummer sequences for all $n$ gives the
 torsion subgroups:
 
 $$
-  \mu_1 \subset \mu_2 \subset \mu_3
-  \subset \cdots \subset
-  \mu_\infty \subset \mathbb{G}_m,
+  \mu_1 \;\subset\; \mu_2 \;\subset\; \mu_3
+  \;\subset\; \cdots \;\subset\;
+  \mu_\infty \;\subset\; \mathbb{G}_m,
 $$
 
 where $\mu_\infty = \bigcup_{n \geq 1} \mu_n$ is the
@@ -14,11 +14,11 @@ This filtration induces a descending filtration on the
 obstruction:
 
 $$
-  \kappa  \in 
-  F^1 H^2 \supset F^2 H^2 \supset F^3 H^2
-  \supset \cdots,
+  \kappa \;\in\;
+  F^1 H^2 \;\supset\; F^2 H^2 \;\supset\; F^3 H^2
+  \;\supset\; \cdots,
   \qquad
-  F^n H^2 = nH^2(\mathcal{S}, \mathbb{G}_m).
+  F^n H^2 = n\,H^2(\mathcal{S}, \mathbb{G}_m).
 $$
 
 The class $\kappa$ lies in $F^n$ iff it is $n$-divisible,
@@ -35,7 +35,7 @@ trace:
 $$
   \kappa_0 \bmod n = 0
   \quad\Longleftrightarrow\quad
-  n  \big|  \chi(A).
+  n \;\big|\; \chi(A).
 $$
 
 The obstruction $\kappa_0$ therefore vanishes at

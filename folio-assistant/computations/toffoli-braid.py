@@ -16,8 +16,8 @@ The key entry P_{7,6}(q) is the q-AND: the amplitude for
 
 Crossing coefficients (paper convention):
   pp: c = 1,           d = 0
-  nn: c = 1,           d = −HA       where HA = q − q⁻¹
-  mix: c = 1,          d = −HA/2
+  nn: c = q²,          d = −qs       where s = q^{1/2} − q^{−1/2}
+  mix: c = (1+q²)/2,   d = −qs/2
 
 Transfer matrix:  T(c,d) = | c(q−q⁻¹)+d   c |
                             |     c         d |
@@ -43,7 +43,8 @@ from sympy import Rational, sqrt, cancel, factor
 q = sp.Symbol('q', positive=True)
 
 # Derived quantities
-ha = q - 1/q                     # q − q⁻¹  (Hecke amplitude)
+s = sqrt(q) - 1/sqrt(q)          # skein amplitude
+ha = q - 1/q                     # q − q⁻¹ = s·(q^{1/2} + q^{-1/2})
 z = 1 / (sqrt(q) + 1/sqrt(q))   # Markov parameter
 
 
@@ -53,16 +54,16 @@ def crossing_coefficients(ti, tj):
     """Return (c, d) for the crossing of types ti, tj.
 
     Paper convention (skein-polynomial-transfer-matrix.md):
-      pp: c = 1,   d = 0
-      nn: c = 1,   d = −HA        where HA = q − q⁻¹
-      mix: c = 1,  d = −HA/2
+      pp: c = 1,          d = 0
+      nn: c = q²,         d = −q·s
+      mix: c = (1+q²)/2,  d = −q·s/2
     """
     if ti == 1 and tj == 1:
         return sp.Integer(1), sp.Integer(0)
     elif ti == 0 and tj == 0:
-        return sp.Integer(1), -ha
+        return q**2, -q * s
     else:
-        return sp.Integer(1), -ha / 2
+        return (1 + q**2) / 2, -q * s / 2
 
 
 # ── Transfer matrix chain reduction ─────────────────────────────
@@ -175,9 +176,9 @@ def main():
     print("Iwahori--Hecke algebra H₃(q),  σ² = (q − q⁻¹)σ + 1")
     print("Crossing coefficients C_{ij} = c_j σ_i + d_j :")
     print("  pp:  c = 1,         d = 0")
-    print("  nn:  c = 1,         d = −HA")
-    print("  mix: c = 1,         d = −HA/2")
-    print("where HA = q − q⁻¹")
+    print("  nn:  c = q²,        d = −q·s")
+    print("  mix: c = (1+q²)/2,  d = −q·s/2")
+    print("where s = q^{1/2} − q^{-1/2}")
     print()
     print("z(q) = 1/(q^{1/2} + q^{-1/2})")
     print()
@@ -313,7 +314,7 @@ def main():
         "description": (
             "P_{7,6}(q) as q-AND amplitude in the massive Toffoli transfer "
             "matrix M(q). Built from Iwahori--Hecke algebra H_3(q) with paper crossing "
-            "conventions: pp=(1,0), nn=(1,−HA), mix=(1,−HA/2) where HA=q−q⁻¹."
+            "conventions: pp=(1,0), nn=(q²,−qs), mix=((1+q²)/2,−qs/2)."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "framework": {
@@ -321,8 +322,8 @@ def main():
             "hecke_relation": "σ² = (q − q⁻¹)σ + 1",
             "crossings": {
                 "pp": {"c": "1", "d": "0"},
-                "nn": {"c": "1", "d": "−(q − q⁻¹)"},
-                "mixed": {"c": "1", "d": "−(q − q⁻¹)/2"},
+                "nn": {"c": "q²", "d": "−q·s"},
+                "mixed": {"c": "(1+q²)/2", "d": "−q·s/2"},
             },
             "skein_amplitude": "s = q^{1/2} − q^{-1/2}",
             "markov_parameter": "z = 1/(q^{1/2} + q^{-1/2})",

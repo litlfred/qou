@@ -1,6 +1,6 @@
-The adjoint bundle $\mathrm{ad} \mathcal{S}_n$ has fibre $\mathfrak{su}(2)$.  Via the
+The adjoint bundle $\mathrm{ad}\, \mathcal{S}_n$ has fibre $\mathfrak{su}(2)$.  Via the
 weight-space decomposition of $\mathrm{SU}(2)$, the harmonic basis of
-$\mathcal{H}^1(\mathcal{S}_n, \mathrm{ad} \mathcal{S}_n)$ splits into two families.
+$\mathcal{H}^1(\mathcal{S}_n,\, \mathrm{ad}\, \mathcal{S}_n)$ splits into two families.
 
 *Longitudinal modes.*
 These forms constitute the $\mathrm{U}(1)$ backbone of the decomposition.

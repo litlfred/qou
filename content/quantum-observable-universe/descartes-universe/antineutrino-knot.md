@@ -2,7 +2,7 @@ The **antineutrino** is the mirror unknot
 $T_{1,0}^{\sigma}$ — the antiparticle of the neutrino.
 
 $$
-  \nu^{\sigma} =  T_{1,0}^{\sigma} \qquad \text{(mirror unknot, dashed circle ⊙)}
+  \nu^{\sigma} \;=\; T_{1,0}^{\sigma} \qquad \text{(mirror unknot, dashed circle ⊙)}
 $$
 
 Since the unknot is amphichiral ($T_{1,0} \cong T_{1,0}^{\sigma}$
@@ -33,8 +33,8 @@ In $\beta^-$ decay, the $L_0^{-}$ smoothing of the $\mathfrak{d} \to \mathfrak{u
 crossing change produces:
 
 $$
-  L_0^{-} =  T_{2,3} \sqcup T_{1,0}^{\sigma}
-  \quad=\quad e^- +  \nu_e^{\sigma}
+  L_0^{-} \;=\; T_{2,3} \;\sqcup\; T_{1,0}^{\sigma}
+  \quad=\quad e^- \;+\; \nu_e^{\sigma}
 $$
 
 The electron $T_{2,3}$ carries the topological mass

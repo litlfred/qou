@@ -25,8 +25,8 @@ z = 1.0/(q**0.5 + qi**0.5)
 kappa = E_CROSS * M_E_MEV / (3 * E_CROSS)
 
 def sig(i): return HeckeElement({(i,): 1.0})
-c_dd = 1.0; d_dd = -HA
-c_ud = 1.0; d_ud = -HA/2
+c_dd = q**2; d_dd = -q*s
+c_ud = (1+q**2)/2; d_ud = -q*s/2
 
 def cx(ti, tj, gen):
     if ti == tj == 'u': return sig(gen)

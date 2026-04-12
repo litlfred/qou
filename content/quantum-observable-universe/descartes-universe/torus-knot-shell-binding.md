@@ -31,13 +31,13 @@ encoded by the torus knot transfer matrix:
 
 $$
   \Phi_{\mathrm{shell}}^{(\ell)}
-   : 
+  \;:\;
   H_A(q) \to H_{A+1}(q),
   \qquad
   \bar{\mathcal{N}}_A
-  \mapsto
+  \;\mapsto\;
   r\!\bigl(
-    \bar{\mathcal{N}}_A \cdot (c_{n_s}\sigma + d_{n_s}),
+    \bar{\mathcal{N}}_A \cdot (c_{n_s}\,\sigma + d_{n_s}),\;
     G
   \bigr)
 $$
@@ -56,7 +56,7 @@ $$
   \boxed{
     c_n = U_{n-1}(\tfrac{q - q^{-1}}{2}),
     \qquad
-    d_n = -\frac{c_n \cdot qs_q}{1 + c_n}
+    d_n = -\,\frac{c_n \cdot q\,s_q}{1 + c_n}
   }
 $$
 
@@ -103,7 +103,7 @@ is the size of the closing shell.
 The inter-shell operator $\Phi_{\mathrm{shell}}^{(\ell)}$
 produces a Gröbner--Shirshov normal form, by the same argument as the
 intra-shell step: the Chebyshev crossing element
-$(c_{n_s}\sigma + d_{n_s})$ is linear in $\sigma$ (no
+$(c_{n_s}\,\sigma + d_{n_s})$ is linear in $\sigma$ (no
 squares), and the division algorithm produces a unique normal
 form remainder.  The palindromic structure of the previous
 shell is **not destroyed** — the new nucleon's generators
@@ -162,9 +162,9 @@ Li-5):
 
 $$
   \frac{\Delta E_5}{\Delta E_4}
-   \approx 
+  \;\approx\;
   \frac{1.409}{0.095}
-  =  14.8
+  \;=\; 14.8
 $$
 
 This ratio is the **shell gap** — the algebraic signature of
@@ -183,7 +183,7 @@ $\mathcal{A}(Z, N)$ proceeds:
 
 2. **Intra-shell step.** Given $\bar{\mathcal{N}}_A$ in normal
    form within shell $\ell$, the next nucleon crosses via bare
-   transfer matrix $(c_j\sigma_j + d_j)$.  Apply Gröbner--Shirshov
+   transfer matrix $(c_j\,\sigma_j + d_j)$.  Apply Gröbner--Shirshov
    division: the result is in normal form
    ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)).
 
@@ -192,7 +192,7 @@ $\mathcal{A}(Z, N)$ proceeds:
 
 4. **Inter-shell step.** The next nucleon after a shell closure
    crosses the closed shell via the Chebyshev crossing element
-   $(c_{n_s}\sigma + d_{n_s})$ of $T_{2, n_s}$.  This element
+   $(c_{n_s}\,\sigma + d_{n_s})$ of $T_{2, n_s}$.  This element
    is linear in $\sigma$ — no $\sigma^2$ terms — so it enters
    the Gröbner--Shirshov division on the same footing as any intra-shell
    crossing.  The division algorithm produces a normal form.

@@ -55,9 +55,11 @@ q_half_inv = 1 / sp.sqrt(q)
 HECKE_A = q - q_inv          # coefficient of σ_i in σ_i²
 HECKE_B = sp.Integer(1)      # constant term in σ_i²
 
-# Hecke inverse: σ_i⁻¹ = σ_i - (q - q⁻¹)
-SINV_SIGMA = sp.Integer(1)                  # coeff of σ_i
-SINV_CONST = -(q - q_inv)                   # constant = -(q - q⁻¹)
+# Skein relation: σ_i⁻¹ = q² σ_i - q(q^{1/2} - q^{-1/2})
+# Actually: from q σ_i - q⁻¹ σ_i⁻¹ = (q^½ - q^{-½})
+#   σ_i⁻¹ = q² σ_i - q(q^½ - q^{-½})
+SINV_SIGMA = q**2                          # coeff of σ_i
+SINV_CONST = -q * (q_half - q_half_inv)    # constant
 
 # Markov trace parameter: z = 1/(q^½ + q^{-½})
 # (sign convention: the Ocneanu trace uses z = α where α(q+q⁻¹) = 1
@@ -97,7 +99,7 @@ class HeckeElement:
 
     @staticmethod
     def generator_inv(i):
-        """σ_i⁻¹ = σ_i - (q - q⁻¹)"""
+        """σ_i⁻¹ = q² σ_i - q(q^½ - q^{-½})"""
         return HeckeElement({
             (i,): SINV_SIGMA,
             (): SINV_CONST,
@@ -105,9 +107,9 @@ class HeckeElement:
 
     @staticmethod
     def mixed_crossing(i):
-        """½(σ_i + σ_i⁻¹) = σ_i + ½(-(q - q⁻¹))"""
+        """½(σ_i + σ_i⁻¹) = ½(1 + q²) σ_i + ½(-q(q^½ - q^{-½}))"""
         return HeckeElement({
-            (i,): sp.Integer(1),
+            (i,): (sp.Integer(1) + q**2) / 2,
             (): SINV_CONST / 2,
         })
 

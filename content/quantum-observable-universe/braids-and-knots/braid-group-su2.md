@@ -8,8 +8,8 @@ Choose the standard basis $\{e_1, e_2\}$ for $V$ (spin up, spin down).
 The ordered basis for $V \otimes V$ is
 
 $$
-  \{e_1 \otimes e_1, e_1 \otimes e_2,
-    e_2 \otimes e_1, e_2 \otimes e_2\}.
+  \{e_1 \otimes e_1,\; e_1 \otimes e_2,\;
+    e_2 \otimes e_1,\; e_2 \otimes e_2\}.
 $$
 
 The braiding $\sigma \colon V \otimes V \to V \otimes V$ is the
@@ -18,17 +18,17 @@ basis vectors is
 
 $$
   \sigma(e_i \otimes e_j)
-  = q^{\delta_{ij}} e_j \otimes e_i
-  + (q - q^{-1})\delta_{i < j} e_i \otimes e_j.
+  = q^{\delta_{ij}}\, e_j \otimes e_i
+  + (q - q^{-1})\,\delta_{i < j}\, e_i \otimes e_j.
 $$
 
 **Explicit matrix.**
 Evaluating on each basis element:
 
-- $\sigma(e_1 \otimes e_1) = q e_1 \otimes e_1$,
-- $\sigma(e_1 \otimes e_2) = e_2 \otimes e_1 + (q - q^{-1}) e_1 \otimes e_2$,
+- $\sigma(e_1 \otimes e_1) = q\, e_1 \otimes e_1$,
+- $\sigma(e_1 \otimes e_2) = e_2 \otimes e_1 + (q - q^{-1})\, e_1 \otimes e_2$,
 - $\sigma(e_2 \otimes e_1) = e_1 \otimes e_2$,
-- $\sigma(e_2 \otimes e_2) = q e_2 \otimes e_2$.
+- $\sigma(e_2 \otimes e_2) = q\, e_2 \otimes e_2$.
 
 In the ordered basis, the $4 \times 4$ matrix is
 
@@ -46,7 +46,7 @@ The tensor product $V \otimes V$ decomposes into irreducible
 $\mathcal{U}_q(\mathfrak{su}(2))$-modules:
 
 $$
-  V \otimes V =  \mathrm{Sym}^2_q(V)  \oplus  \Lambda^2_q(V),
+  V \otimes V \;=\; \mathrm{Sym}^2_q(V) \;\oplus\; \Lambda^2_q(V),
 $$
 
 where $\mathrm{Sym}^2_q(V)$ is the $q$-symmetric (spin-1) part of
@@ -54,7 +54,7 @@ dimension 3, spanned by
 
 $$
   e_1 \otimes e_1, \qquad
-  q^{1/2} e_1 \otimes e_2 + q^{-1/2} e_2 \otimes e_1, \qquad
+  q^{1/2}\, e_1 \otimes e_2 + q^{-1/2}\, e_2 \otimes e_1, \qquad
   e_2 \otimes e_2,
 $$
 
@@ -62,7 +62,7 @@ and $\Lambda^2_q(V)$ is the $q$-antisymmetric (spin-0) part of
 dimension 1, spanned by
 
 $$
-  q^{1/2} e_1 \otimes e_2 - q^{-1/2} e_2 \otimes e_1.
+  q^{1/2}\, e_1 \otimes e_2 - q^{-1/2}\, e_2 \otimes e_1.
 $$
 
 On each summand the braiding $\sigma$ acts as a scalar:

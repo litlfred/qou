@@ -13,7 +13,7 @@ varying the $q$-Yang--Mills--Levi functional
 
 $$
   S_q[A, \theta]
-  =  \int_M q(p)\lVert F_A^+|_H \rVert^2
+  \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
   \theta \wedge (d\theta)^n
 $$
 
@@ -58,7 +58,7 @@ entropy**:
 
 $$
   S_{\mathrm{cell}}(q)
-  =  \sum_{k=1}^{\infty}
+  \;=\; \sum_{k=1}^{\infty}
   \eta_q^{(k)},
 $$
 
@@ -83,7 +83,7 @@ Concretely, the entropy at jet level $k$ is suppressed by the
 
 $$
   \eta_q^{(k)}
-  =  \eta_q \cdot \hbar_q^{2k},
+  \;=\; \eta_q \cdot \hbar_q^{2k},
 $$
 
 where the exponent $2k$ reflects that the codimension-$2$
@@ -95,8 +95,8 @@ series:
 
 $$
   S_{\mathrm{cell}}(q)
-  =  \eta_q \sum_{k=1}^{\infty} \hbar_q^{2k}
-  =  \frac{\eta_q \cdot \hbar_q^2}{1 - \hbar_q^2}.
+  \;=\; \eta_q \sum_{k=1}^{\infty} \hbar_q^{2k}
+  \;=\; \frac{\eta_q \cdot \hbar_q^2}{1 - \hbar_q^2}.
 $$
 
 **Exact algebraic closure.**
@@ -106,8 +106,8 @@ $1 - \hbar_q^2 = (2q-1)/q^2$, the series evaluates to
 
 $$
   S_{\mathrm{cell}}
-  =  \frac{(2q-1)/q^3 \cdot (q-1)^2/q^2}{(2q-1)/q^2}
-  =  \frac{(q-1)^2}{q^3}.
+  \;=\; \frac{(2q-1)/q^3 \cdot (q-1)^2/q^2}{(2q-1)/q^2}
+  \;=\; \frac{(q-1)^2}{q^3}.
 $$
 
 This is **exactly** the value required for $G_{\mathrm{Planck}} = 1$.
@@ -118,10 +118,10 @@ algebraically from $q$ alone.
 The $q$-Yang--Mills--Levi variation gives
 
 $$
-  G(q) =  \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
-  =  \frac{c_q^3 \cdot \hbar_q \cdot (1 - \hbar_q^2)}
+  G(q) \;=\; \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
+  \;=\; \frac{c_q^3 \cdot \hbar_q \cdot (1 - \hbar_q^2)}
              {\eta_q \cdot \hbar_q^2}
-  =  \frac{c_q^3 \cdot (2q - 1)}{q^2 \cdot \eta_q \cdot \hbar_q},
+  \;=\; \frac{c_q^3 \cdot (2q - 1)}{q^2 \cdot \eta_q \cdot \hbar_q},
 $$
 
 where $c_q = 1/(q-1)$ is the speed of light
@@ -130,8 +130,8 @@ $\hbar_q = (q-1)/q$.  Converting to Planck units:
 
 $$
   G_{\mathrm{Planck}}
-  =  G(q) \cdot \left(\frac{\hbar_q}{c_q}\right)^2
-  =  1
+  \;=\; G(q) \cdot \left(\frac{\hbar_q}{c_q}\right)^2
+  \;=\; 1
 $$
 
 identically for all $q > 1$.
@@ -143,7 +143,7 @@ identically for all $q > 1$.
 | $\eta_q$ | $(2q-1)/q^3$ | $0.892$ $q$-bits |
 | $d_H(q)$ | $(2q-1)^2/q^3$ | $1.088$ |
 | $\chi_q$ | $1/(2q-1)$ | $0.820$ |
-| $S_{\mathrm{cell}}$ | $(q-1)^2/q^3$ | $0.00881$ $q$-bits |
+| $S_{\mathrm{cell}}$ | $(q-1)^2/q^3$ | $0.008\,81$ $q$-bits |
 | $G_{\mathrm{Planck}}$ | $1$ | $1.000$ (exact) |
 
 **Why quadratic and not linear?**
@@ -169,7 +169,7 @@ brane tower.
 The corrected formula predicts
 
 $$
-  d_H(q) =  \frac{(2q-1)^2}{q^3}.
+  d_H(q) \;=\; \frac{(2q-1)^2}{q^3}.
 $$
 
 | $q$ | $d_H$ predicted | $d_H$ box-counting | Known exact | Note |

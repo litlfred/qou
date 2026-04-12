@@ -28,7 +28,7 @@ The sequence splits via $\pi_H$:
 \begin{tikzcd}[column sep=2.5em]
   \mathcal{H}_q^k
     \ar[r, "\pi_H \oplus \pi_V", "\sim"']
-  & \mathcal{H}_{q,H}^k  \oplus  \mathcal{H}_{q,V}^k
+  & \mathcal{H}_{q,H}^k \;\oplus\; \mathcal{H}_{q,V}^k
 \end{tikzcd}
 \qquad
 \text{(bosons $\oplus$ fermion vertical parts).}

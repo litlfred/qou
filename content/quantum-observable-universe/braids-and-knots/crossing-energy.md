@@ -5,7 +5,7 @@ of $\mathfrak{H}$ is
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
-  = 
+  \;=\;
   \sum_{\text{crossings in } \beta}
   \begin{cases}
     q   & \text{positive crossing } (L_+), \\
@@ -18,8 +18,8 @@ where $q$ is the substrate parameter
 convention follows the Skein relation
 
 $$
-  q  L_+ -  q^{-1} L_-
-  =  (q^{1/2} - q^{-1/2}) L_0.
+  q \, L_+ \;-\; q^{-1} L_-
+  \;=\; (q^{1/2} - q^{-1/2})\, L_0.
 $$
 
 The crossing energy measures the net Skein weight of the composite:

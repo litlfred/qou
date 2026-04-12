@@ -16,20 +16,20 @@ of the torus knot basis on $\Sigma_g$) applied to the beta decay
 *Let $\Sigma_g$ be a genus-$g$ surface and
 $\mathcal{E}_g = \{\tau(r,s) : \tfrac{(r-1)(s-1)}{2} \leq g\}$
 the set of torus knot labels embeddable on $\Sigma_g$.  For
-$\beta^-$ decay $\mathcal{N}_{Z,N} \to \mathcal{N}_{Z+1,N-1}$,
+$\beta^-$ decay $\mathcal{N}_{Z,N} \to \mathcal{N}_{Z+1,\,N-1}$,
 the $\mathcal{Q}_q$-value admits the spectral decomposition:*
 
 $$
   \mathcal{Q}_q
-  = 
+  \;=\;
   \underbrace{
     \Bigl|\log_q\frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}\Bigr|
     \cdot \hbar_q \cdot \frac{m_e}{3}
   }_{\displaystyle\mathcal{Q}_{\mathrm{bare}}}
-   \times 
+  \;\times\;
   \underbrace{
     \prod_{\tau(r,s) \in \mathcal{E}_g}
-    F\!\bigl(\tau(r,s), N\bigr)
+    F\!\bigl(\tau(r,s),\, N\bigr)
   }_{\displaystyle\text{knot operator product}}
 $$
 
@@ -60,11 +60,11 @@ shell:*
 
 $$
   F(\tau(r,s), N)
-  = 
+  \;=\;
   \begin{cases}
     1
     & \tau(r,s) \notin \mathcal{E}_g
-     \text{(null: zero action on $\Sigma_g$)} \\[4pt]
+    \;\text{(null: zero action on $\Sigma_g$)} \\[4pt]
     1
     & \text{shell unchanged by decay (cancels in ratio)} \\[4pt]
     \mathrm{tr}_M\!\bigl(
@@ -166,8 +166,8 @@ Gröbner--Shirshov class (= degree in the degree tower) of each torus knot.
 | Jet order $k$ | Torus knot basis | Hilbert space content |
 |:---:|---|---|
 | $0$ | Identity | Ground state ($q = 1$: all crossings equal, $\mathcal{Q} = 0$) |
-| $1$ | $\tau(2,3), \tau(2,5), \tau(2,7), \tau(3,5)$ | Complete degree-$1$ irreps |
-| $2$ | $\tau(2,9), \tau(3,4)$ | Complete degree-$2$ irreps |
+| $1$ | $\tau(2,3),\, \tau(2,5),\, \tau(2,7),\, \tau(3,5)$ | Complete degree-$1$ irreps |
+| $2$ | $\tau(2,9),\, \tau(3,4)$ | Complete degree-$2$ irreps |
 | $\geq 3$ | $\emptyset$ on $\Sigma_4$ | Tower terminates (null jet) |
 
 The jet decomposition is **exact and finite** — not by truncation
@@ -224,7 +224,7 @@ Rosso--Jones invariant $J(\tau)$ with zero fitting freedom.
 At $q = q_0$:
 $J(\tau(2,9)) \approx 2.167$ and $J(\tau(3,4)) \approx 5.794$
 (computed from the Rosso--Jones expansion
-$J(\tau(r,s)) = \sum_\lambda d_\lambda(q_0)\omega_\lambda^s$;
+$J(\tau(r,s)) = \sum_\lambda d_\lambda(q_0)\,\omega_\lambda^s$;
 see `folio-assistant/computations/qvalue-representation-theory.py`),
 so $\tau(3,4)$ receives approximately $2.67\times$ the weight
 of $\tau(2,9)$.

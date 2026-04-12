@@ -30,10 +30,10 @@ $\mathrm{Vol}(\mathcal{L}_H) = 0$.  The entire baryon mass
 comes from the Borromean linking:
 
 $$
-  m(B) = 
+  m(B) \;=\;
   \frac{\mathrm{Vol}(S^3 \setminus \mathcal{B}_3)}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}
-  +  \text{Skein corrections from orientation partition}.
+  \;+\; \text{Skein corrections from orientation partition}.
 $$
 
 **Confinement.**

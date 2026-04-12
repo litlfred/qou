@@ -12,8 +12,8 @@ boson ([cohomological embedding](#prop:cohomological-embedding)),
 has
 
 $$
-  \mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3)
-    \approx 2.02988321281931,
+  \mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)
+    \approx 2.02988\,321\,281\,931,
 $$
 
 where $\mathrm{Cl}_2$ is the Clausen function (OEIS A091518; SnapPy-verified).
@@ -23,9 +23,9 @@ The **topological mass formula**
 mass $\mathfrak{m}(K)$ of a particle with knot type $K$ is
 
 $$
-  \mathfrak{m}(K) =  \frac{\mathrm{Vol}(K)}{\hbar_q^{2}},
+  \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},
   \qquad
-  \hbar_q  :=  1 - q^{-1},
+  \hbar_q \;:=\; 1 - q^{-1},
 $$
 
 where $q > 1$ is the

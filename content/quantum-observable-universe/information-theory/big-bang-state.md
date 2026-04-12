@@ -8,7 +8,7 @@ degree-$0$ algebra is trivial:
 $$
   \mathcal{S}_0 \text{ is a big bang state}
   \quad\Longleftrightarrow\quad
-  \Gamma\!\bigl(U, A_0|_{\mathcal{S}_0}\bigr) = 0.
+  \Gamma\!\bigl(U,\, A_0|_{\mathcal{S}_0}\bigr) = 0.
 $$
 
 Equivalently, every constituent satisfies $H_i = \varnothing$

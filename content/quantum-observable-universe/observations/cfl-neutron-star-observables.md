@@ -9,9 +9,9 @@ hyperbolic volume $V_B = 7.32772$:
 
 $$
   P_B(\rho)
-   \sim 
+  \;\sim\;
   \rho^{5/3} \cdot \frac{\hbar_q^2}{V_B / \hbar_q^2}
-   \propto 
+  \;\propto\;
   \rho^{5/3} \cdot \frac{(q-1)^4}{q^4 \cdot V_B}.
 $$
 
@@ -21,9 +21,9 @@ becomes
 
 $$
   P_D(\rho)
-   \sim 
+  \;\sim\;
   \rho^{5/3} \cdot \frac{\hbar_q^2}{(q + q^{-1})}
-   \propto 
+  \;\propto\;
   \rho^{5/3} \cdot \frac{(q-1)^2}{q^2 \cdot (q + q^{-1})}.
 $$
 
@@ -31,10 +31,10 @@ The ratio $P_D / P_B \sim V_B / [\hbar_q^2 \cdot (q + q^{-1})] \gg 1$: the CFL p
 This produces a **kink** in the mass-radius relation $M(R)$
 at the critical central density $\rho_c$.
 
-**Prediction**: neutron stars with $M \gtrsim 2M_\odot$ (those
+**Prediction**: neutron stars with $M \gtrsim 2\,M_\odot$ (those
 with CFL cores) should have systematically **larger radii** at a
 given mass than predicted by purely hadronic equations of state.
-The NICER X-ray timing mission has measured $R \approx 12\text{--}13$ km for $\sim 2M_\odot$ pulsars, consistent with
+The NICER X-ray timing mission has measured $R \approx 12\text{--}13$ km for $\sim 2\,M_\odot$ pulsars, consistent with
 stiffening but not yet discriminating the mechanism.
 
 **2. Cooling anomaly: the CFL gap suppresses neutrino emission.**
@@ -45,12 +45,12 @@ suppresses the modified Urca neutrino emission process below
 
 $$
   T_{\mathrm{gap}}
-  = 
+  \;=\;
   \frac{\Delta_{\mathrm{CFL}}}{k_B}
-   \approx 
-  \frac{2.5  \mathrm{MeV}}{8.617 \times 10^{-5}  \mathrm{eV/K}}
-   \approx 
-  2.9 \times 10^{10}  \mathrm{K}.
+  \;\approx\;
+  \frac{2.5 \;\mathrm{MeV}}{8.617 \times 10^{-5} \;\mathrm{eV/K}}
+  \;\approx\;
+  2.9 \times 10^{10} \;\mathrm{K}.
 $$
 
 **Prediction**: neutron stars with CFL cores should show a
@@ -70,12 +70,12 @@ oscillation frequency of the neutron star:
 
 $$
   \delta f
-   \sim 
+  \;\sim\;
   f_0 \cdot \frac{\Delta\rho}{\bar{\rho}}
-   \sim 
+  \;\sim\;
   f_0 \cdot \frac{V_B / \hbar_q^2}{V_B / \hbar_q^2 + (q + q^{-1})}
-   \approx 
-  0.996 f_0.
+  \;\approx\;
+  0.996\, f_0.
 $$
 
 The density jump is nearly total (the Borromean contribution
@@ -89,7 +89,7 @@ mergers, when the stars are tidally excited.
 
 | Observable | Borromean-only | With CFL core | Instrument |
 |-----------|---------------|---------------|------------|
-| $R$ at $2M_\odot$ | $\sim 11$ km | $\sim 13$ km | NICER |
+| $R$ at $2\,M_\odot$ | $\sim 11$ km | $\sim 13$ km | NICER |
 | Cooling at $10^3$ yr | $T_s \sim 10^5$ K | $T_s \sim 10^6$ K (plateau) | Chandra |
 | $f$-mode peak | Single | Split / broadened | ET / CE |
 | Tidal deformability $\Lambda$ | Lower | Higher (stiffer) | LIGO O5 |

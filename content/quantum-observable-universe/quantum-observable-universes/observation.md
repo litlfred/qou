@@ -10,8 +10,8 @@ An *intent on $U$* is a pair $(\mathfrak{I}, \epsilon)$
 where $\epsilon \in \{+1, -1\}$ is the **direction** and
 
 $$
-  \mathfrak{I}  \in 
-  \Gamma\bigl(U, \mathrm{Ad}(J^1 \mathcal{S})\bigr)
+  \mathfrak{I} \;\in\;
+  \Gamma\bigl(U,\; \mathrm{Ad}(J^1 \mathcal{S})\bigr)
 $$
 
 is a section of the adjoint bundle of the $1$-jet
@@ -59,7 +59,7 @@ The section $\mathfrak{I}$ satisfies:
    \end{equation}
    ```
 
-   with $\delta q(p) = \int_A(\mathfrak{I}_p(a_{(1)})S(a_{(2)}))$.
+   with $\delta q(p) = \int_A(\mathfrak{I}_p(a_{(1)})\,S(a_{(2)}))$.
    Observing the universe changes it: the act of reading the
    field feeds back through the colour fibre into the Reeb
    flow.

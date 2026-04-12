@@ -16,7 +16,7 @@ cocommutativity square
     \ar[r, equal]
   & A \otimes A
 \end{tikzcd}
-\quad\text{commutes}\Longleftrightarrowq = 1.
+\quad\text{commutes}\;\Longleftrightarrow\;q = 1.
 \end{equation}
 ```
 

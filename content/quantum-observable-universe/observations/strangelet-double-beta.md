@@ -20,7 +20,7 @@ requires **two crossing changes**: a double beta decay.
 Each crossing change in the Skein relation
 
 $$
-  qL_+ - q^{-1}L_- = sL_0,
+  q\,L_+ - q^{-1}\,L_- = s\,L_0,
   \qquad s = q^{1/2} - q^{-1/2},
 $$
 
@@ -32,9 +32,9 @@ changes give the double beta amplitude $s^2$ and rate $s^4$:
 
 $$
   \Gamma_{2\beta}
-   \propto 
+  \;\propto\;
   s^4
-  = 
+  \;=\;
   (q^{1/2} - q^{-1/2})^4.
 $$
 
@@ -62,9 +62,9 @@ decay rate is therefore
 
 $$
   \Gamma_{2\beta}
-   \sim 
+  \;\sim\;
   \left(\frac{\text{EM}}{\text{strong}}\right)^4
-   \approx  10^{-4}.
+  \;\approx\; 10^{-4}.
 $$
 
 This is a **parameter-free prediction**: the suppression factor
@@ -75,11 +75,11 @@ is determined entirely by $q_0$.
 The path through the Skein resolution tree is:
 
 $$
-  T_{2,5}^{\sigma}(5\text{ crossings})
-  \xrightarrow{L_0}
-  4_1(4\text{ crossings})
-  \xrightarrow{L_0}
-  T_{2,3}^{\sigma}(3\text{ crossings}).
+  T_{2,5}^{\sigma}\;(5\text{ crossings})
+  \;\xrightarrow{\;L_0\;}
+  \;4_1\;(4\text{ crossings})
+  \;\xrightarrow{\;L_0\;}
+  \;T_{2,3}^{\sigma}\;(3\text{ crossings}).
 $$
 
 The intermediate knot is the **figure-eight** $4_1$ — the
@@ -113,7 +113,7 @@ The double beta decay of a strangelet interaction produces:
 - **Two electrons** (or positrons), each from one $L_0$
   smoothing.
 - **Two neutrinos** (or antineutrinos), one per smoothing.
-- **Endpoint energy** $\sim 2q^{-1} \approx 1.80$ Skein
+- **Endpoint energy** $\sim 2\,q^{-1} \approx 1.80$ Skein
   units, or approximately $2.3$ MeV in physical units
   (scaling by $m_p c^2 / (V_B/\hbar_q^2)$).
 - **Angular correlation** between the two electrons set by the

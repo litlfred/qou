@@ -60,7 +60,7 @@ with eigenvalues growing as $[k]_q^2 \sim q^{2k}$.  This requires:
   (extending classical Hodge theory to the $q$-deformed setting).
 - (b) Nonlinear estimates: the advection term
   $\mu \circ (v \otimes \nabla_q v)$ in $\Omega^1(A)$ must be
-  controlled by the dissipation $\nu_q\Delta_q v$.  The
+  controlled by the dissipation $\nu_q\,\Delta_q v$.  The
   categorical Sobolev embedding (if $\lVert d_q v\rVert_A <
   \infty$ then $v$ is bounded) should follow from the Frobenius
   non-degeneracy.
@@ -73,8 +73,8 @@ conjecture](#conj:regularity-breakdown), determine the critical
 exponent $\alpha$ such that
 
 $$
-  \sup_{t \geq 0} \lVert d_qv_q(t)\rVert_A^2
-   \sim 
+  \sup_{t \geq 0} \lVert d_q\,v_q(t)\rVert_A^2
+  \;\sim\;
   (q - 1)^{-\alpha}
   \qquad\text{as } q \to 1^+.
 $$

@@ -3,8 +3,8 @@ At $q = q_0$, the beta-stability formula
 ([beta-stability](#prop:beta-stability))
 
 $$
-  p^*(A) =  \frac{A}{2 + c \cdot A^{2/3}},
-  \qquad c = \frac{a_C}{2a_A} = 0.01497,
+  p^*(A) \;=\; \frac{A}{2 + c \cdot A^{2/3}},
+  \qquad c = \frac{a_C}{2\,a_A} = 0.01497,
 $$
 
 predicts a stable neutron number $n_{\mathrm{pred}}(p)$ for

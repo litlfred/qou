@@ -27,9 +27,9 @@ at $z = q_0$:
 | **Particle** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
 |---|---|---|---|
 | Electron ($3_1$) | 0 (non-hyp.) | $m_e$ (baseline) | 0.511 MeV |
-| Muon ($T_{2,5}$, via Higgs $4_1$) | 2.0299 | $2.0299 \times 102.25 \approx 207.6 m_e$ | $206.768 m_e$ |
-| Proton | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |
-| Neutron | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |
+| Muon ($T_{2,5}$, via Higgs $4_1$) | 2.0299 | $2.0299 \times 102.25 \approx 207.6\, m_e$ | $206.768\, m_e$ |
+| Proton | $Q(q_0)\, \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |
+| Neutron | $Q(q_0)\, \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |
 
 The passage from the categorical formula to these numbers requires
 exactly the archimedean bridge: the fibre functor $\tau$ maps the

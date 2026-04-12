@@ -8,7 +8,7 @@ $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$, which for the
 left-invariant calculus on $\mathrm{SU}(2)$ gives
 
 $$
-  \Omega^1(A) =  \mathrm{span}_A\{\omega_1, \omega_2, \omega_3\},
+  \Omega^1(A) \;=\; \mathrm{span}_A\{\omega_1,\, \omega_2,\, \omega_3\},
 $$
 
 where $\omega_a$ are the left-invariant $1$-forms dual to the Lie
@@ -17,8 +17,8 @@ algebra basis $\{e_1, e_2, e_3\}$ of $\mathfrak{su}(2)$.
 **The jet object.** By [jet prolongation](#prop:jet-prolongation),
 
 $$
-  J^1(A)  :=  A \otimes \Omega^1(A)
-   \cong  \mathcal{O}(\mathrm{SU}(2)) \otimes
+  J^1(A) \;:=\; A \otimes \Omega^1(A)
+  \;\cong\; \mathcal{O}(\mathrm{SU}(2)) \otimes
   \mathrm{span}\{\omega_1, \omega_2, \omega_3\}.
 $$
 
@@ -31,15 +31,15 @@ is defined by
 
 $$
   \Delta'(f \otimes \theta)(x, y)
-  =  f(xy) \otimes \theta_y,
+  \;=\; f(xy) \otimes \theta_y,
 $$
 
 where $\theta_y$ denotes the left-translate of $\theta$ to $T_y G$.
 The counit and antipode extend similarly:
-$\varepsilon'(f \otimes \theta) = f(e)\theta_e$ and
+$\varepsilon'(f \otimes \theta) = f(e)\,\theta_e$ and
 $S'(f \otimes \theta)(x) = f(x^{-1}) \otimes (L_{x^{-1}})^*\theta$.
 The Frobenius form is
-$\int_{J^1 A}(f \otimes \theta) = \int_G f\theta$, integrating the
+$\int_{J^1 A}(f \otimes \theta) = \int_G f\,\theta$, integrating the
 $1$-form component over $G$ using the Haar measure.
 
 **QOU structure.** The induced fibre functor is
@@ -48,5 +48,5 @@ the $G$-action on sections while retaining the $1$-form structure.
 Since $\mathrm{SU}(2)$ is $3$-dimensional,
 $J^1(A)$ is a $3$-fold extension of $A$, so
 $\dim_{\tau'} J^1(A) = 3 \cdot \dim_\tau A$.
-The quadruple $(\mathrm{Rep}(\mathrm{SU}(2)), J^1(A), \tau', q)$
+The quadruple $(\mathrm{Rep}(\mathrm{SU}(2)),\, J^1(A),\, \tau',\, q)$
 is again a quantum observable universe.

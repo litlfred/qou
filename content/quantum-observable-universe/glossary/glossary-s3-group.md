@@ -6,6 +6,6 @@ group $B_3$ ([braid group](#def:braid-group)) yields the
 \begin{equation}\label{eq:s3-presentation}
   S_3
   =\bigl\langle s_1,s_2
-     \big| s_1^2=s_2^2=(s_1 s_2)^3=\mathrm{id}\bigr\rangle.
+    \;\big|\;s_1^2=s_2^2=(s_1 s_2)^3=\mathrm{id}\bigr\rangle.
 \end{equation}
 ```

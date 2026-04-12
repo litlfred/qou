@@ -5,7 +5,7 @@ triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
 [Yekutieli triple](#def:yekutieli-triple).  Then the assignment
 
 $$
-  [n]  \longmapsto  \mathfrak{G}_n
+  [n] \;\longmapsto\; \mathfrak{G}_n
 $$
 
 from the simplex category $\Delta$ to the $2$-category of gerbes on $M$

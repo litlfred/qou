@@ -2,18 +2,18 @@ The proton is a [hadron](#def:hadron) — a stable knot composite — whose
 three constituents are linked in a
 [Borromean configuration](#def:borromean-baryon).
 
-**Constituent quarks as unknots.**
-In the knot-particle correspondence, quarks are unknots $K_{0_1}$
-distinguished by crossing orientation within the Borromean link:
-the up quark $\mathfrak{u}$ has positive crossing orientation
-and the down quark $\mathfrak{d}$ has negative crossing orientation.
-The proton $\mathfrak{p}$ consists of two up quarks and one down quark:
+**Constituent quarks as torus knots.**
+In the knot-particle correspondence, the up quark $\mathfrak{u}$ is
+the torus knot $\tau(2,3)$ (the trefoil) and the down quark
+$\mathfrak{d}$ is the mirror (crossing-reversed) trefoil,
+$\tau(2,3)^{\sigma}$.  The proton $\mathfrak{p}$ consists of two
+up quarks and one down quark:
 
 $$
   \mathfrak{p}
-  = 
-  [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p
-   \bowtie  \mathcal{L}_{\mathrm{Bor}},
+  \;=\;
+  [\mathfrak{u},\, \mathfrak{u},\, \mathfrak{d}]_p
+  \;\bowtie\; \mathcal{L}_{\mathrm{Bor}},
 $$
 
 where $\mathcal{L}_{\mathrm{Bor}}$ is the Borromean link.
@@ -42,8 +42,8 @@ The proton mass decomposes as
 
 $$
   \mathfrak{m}_{\mathfrak{p}}
-  = 
-  2\mathfrak{m}(\mathfrak{u})
+  \;=\;
+  2\,\mathfrak{m}(\mathfrak{u})
   + \mathfrak{m}(\mathfrak{d})
   + \mathbf{E}_{\mathrm{bind}},
 $$
@@ -64,7 +64,7 @@ $\mathbf{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.  At the substrate
 parameter $q \approx 1.110$, the full computation yields
 
 $$
-  \mathfrak{m}_{\mathfrak{p}}(q)  \approx  938.272  \text{MeV},
+  \mathfrak{m}_{\mathfrak{p}}(q) \;\approx\; 938.272 \;\text{MeV},
 $$
 
 matching the experimental proton mass to high precision.
@@ -72,7 +72,7 @@ matching the experimental proton mass to high precision.
 **Why the proton is stable.**
 The proton is the lightest baryon and cannot decay into lighter
 baryons.  Topologically, this corresponds to the fact that the
-Borromean link of three unknots is the simplest non-trivial
+Borromean link of three trefoils is the simplest non-trivial
 three-component link with the correct charge and color quantum
 numbers.  No topological simplification (Reidemeister moves,
 Markov stabilization) can reduce it further while preserving

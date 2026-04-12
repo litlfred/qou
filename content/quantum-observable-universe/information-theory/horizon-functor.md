@@ -7,9 +7,9 @@ connected components (the aeons, [aeon](#def:aeon)).
 The **horizon functor** is the map
 
 $$
-  \partial  \colon 
+  \partial \;\colon\;
   \pi_0\!\bigl(\mathrm{Bun}^{\circ}(\mathbb{P}(V))\bigr)
-   \longrightarrow 
+  \;\longrightarrow\;
   \mathcal{P}\!\bigl(
     \mathrm{Bun}(\mathbb{P}(V))
     \setminus
@@ -23,15 +23,15 @@ in $\mathcal{A}$ but have $A_0|_{\mathcal{S}} = 0$:
 
 $$
   \partial(\mathcal{A})
-  = 
-  \bigl\{
+  \;=\;
+  \bigl\{\,
     \mathcal{S}
     \in \mathrm{Bun} \setminus \mathrm{Bun}^{\circ}
-     : 
-    \mathcal{S} = \varinjlim D
+    \;:\;
+    \mathcal{S} = \varinjlim\, D
     \text{ for some directed diagram }
     D \subset \mathcal{A}
-  \bigr\}.
+  \,\bigr\}.
 $$
 
 Each element of $\partial(\mathcal{A})$ is a jet horizon

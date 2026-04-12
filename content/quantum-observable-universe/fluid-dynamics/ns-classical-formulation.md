@@ -3,7 +3,7 @@ classical incompressible Navier--Stokes equation on
 $\mathbb{R}^3$:
 
 $$
-  \partial_t v + (v \cdot \nabla)v = -\nabla p + \nu\Delta v,
+  \partial_t v + (v \cdot \nabla)v = -\nabla p + \nu\,\Delta v,
   \qquad \nabla \cdot v = 0,
   \qquad v|_{t=0} = v_0.
 $$

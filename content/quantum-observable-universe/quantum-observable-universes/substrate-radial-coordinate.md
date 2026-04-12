@@ -8,7 +8,7 @@ affine coordinate of a state. Then $Z \to 0$ as $q \to \infty$
 boundary). The $q$-deformed Reeb flow rotates the phase of $Z$:
 
 $$
-  \mathcal{L}_\xiZ =  J\hbar_qZ,
+  \mathcal{L}_\xi\,Z \;=\; J\,\hbar_q\,Z,
 $$
 
 where $\hbar_q = 1 - q^{-1}$

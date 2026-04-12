@@ -18,9 +18,8 @@ import { remark } from "remark";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
+import { isCrossPaperRef } from "../schema/types";
 import { extractCitations } from "./citations";
-import { referenceMap } from "../schema/references";
-import type { Data as CSLData } from "csl-json";
 
 // ── LaTeX character escaping ─────────────────────────────────────
 
@@ -223,8 +222,18 @@ function renderMdastNode(node: any): string {
     case "paragraph":
       return renderChildren(node).join("");
 
-    case "text":
-      return escapeLatex(node.value);
+    case "text": {
+      // Preserve \cite{...} commands (LaTeX citations) while escaping other text.
+      // \cite may have an optional [...] argument: \cite[Thm.~1.7]{key}
+      // Limitation: nested brackets in the optional argument are not supported
+      // (e.g. \cite[Thm.~1.7 [p.~5]]{key}).
+      const textVal: string = node.value;
+      const citePat = /(\\cite(?:\[[^\]]*\])?\{[^}]+\})/g;
+      const textParts = textVal.split(citePat);
+      return textParts
+        .map((part: string) => (/^\\cite/.test(part) ? part : escapeLatex(part)))
+        .join("");
+    }
 
     case "strong":
       return `\\textbf{${renderChildren(node).join("")}}`;
@@ -254,8 +263,14 @@ function renderMdastNode(node: any): string {
       const text = renderChildren(node).join("");
       const url: string = node.url ?? "";
       if (url.startsWith("#")) {
+        const label = url.slice(1);
+        // Cross-paper references (e.g. "unital-groebner-bases:def:foo")
+        // cannot resolve in a single-paper PDF — render as plain text.
+        if (isCrossPaperRef(label)) {
+          return `${text}`;
+        }
         // Internal cross-ref: [text](#label) → \hyperref[label]{text}
-        return `\\hyperref[${url.slice(1)}]{${text}}`;
+        return `\\hyperref[${label}]{${text}}`;
       }
       // External URL
       return `\\href{${url}}{${text}}`;
@@ -673,6 +688,12 @@ export function renderSection(
       continue;
     }
     if (!shouldIncludeBlock(entry.block, referencedLabels, opts)) {
+      // Emit a phantom label so \hyperref[label]{...} references from
+      // other blocks resolve without "Hyper reference undefined" warnings.
+      const label = "label" in entry.block ? entry.block.label : undefined;
+      if (label) {
+        lines.push(`\\phantomsection\\label{${label}}% compact-mode: block excluded`);
+      }
       continue;
     }
     lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir));
@@ -695,6 +716,8 @@ export function renderChapter(
   opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];
+  // Each chapter starts on a new page
+  lines.push("\\clearpage");
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
   // Chapters with tabLabel are unnumbered (\chapter*); all others are auto-numbered by LaTeX.
   const star = chapter.tabLabel != null ? "*" : "";
@@ -732,93 +755,10 @@ export function renderChapter(
     lines.push(renderSection(sec, blocks, opts, chapterReferencedLabels));
   }
 
-  // Emit chapter-end bibliography if any citations were found
-  if (chapterCites.size > 0) {
-    lines.push("");
-    lines.push(renderChapterBibliography([...chapterCites].sort()));
-  }
+  // Per-chapter bibliography removed — all references are collected in
+  // Appendix B at the end of the paper (see generate-main-tex.ts).
 
   return lines.join("\n");
-}
-
-/**
- * Render a chapter-end bibliography listing all cited references.
- */
-function renderChapterBibliography(citeKeys: string[]): string {
-  const lines: string[] = [];
-  lines.push("\\subsection*{References}");
-  lines.push("\\begin{enumerate}[label={[\\arabic*]},leftmargin=2em]");
-
-  for (const key of citeKeys) {
-    const ref = referenceMap.get(key);
-    if (!ref) {
-      lines.push(`  \\item\\label{bib:${key}} {\\texttt{${key}}} — \\textit{(not found in references.ts)}`);
-      continue;
-    }
-    lines.push(`  \\item\\label{bib:${key}} ${formatBibEntry(ref)}`);
-  }
-
-  lines.push("\\end{enumerate}");
-  return lines.join("\n");
-}
-
-/** Format a CSL-JSON entry as a short bibliographic string for LaTeX. */
-function formatBibEntry(ref: CSLData): string {
-  const parts: string[] = [];
-
-  // Authors
-  if (ref.author?.length) {
-    const names = ref.author.map(a => {
-      if (a.literal) return texSafe(a.literal);
-      const parts: string[] = [];
-      if (a.given) parts.push(texSafe(a.given));
-      if (a.family) parts.push(texSafe(a.family));
-      return parts.join(" ");
-    });
-    if (names.length <= 3) {
-      parts.push(names.join(", "));
-    } else {
-      parts.push(`${names[0]} et al.`);
-    }
-  }
-
-  // Year
-  if (ref.issued && "date-parts" in ref.issued && ref.issued["date-parts"]?.[0]) {
-    parts.push(`(${ref.issued["date-parts"][0][0]})`);
-  }
-
-  // Title
-  if (ref.title) {
-    parts.push(`\\emph{${texSafe(ref.title)}}`);
-  }
-
-  // Journal/container
-  if (ref["container-title"]) {
-    parts.push(texSafe(ref["container-title"]));
-  } else if (ref.publisher) {
-    parts.push(texSafe(ref.publisher));
-  }
-
-  // Volume/pages
-  const vol = ref.volume ? `\\textbf{${ref.volume}}` : "";
-  const pages = ref.page ? `: ${texSafe(ref.page)}` : "";
-  if (vol || pages) parts.push(`${vol}${pages}`);
-
-  // DOI
-  if (ref.DOI) {
-    parts.push(`\\href{https://doi.org/${ref.DOI}}{doi:${texSafe(ref.DOI)}}`);
-  }
-
-  return parts.join(". ") + ".";
-}
-
-/** Minimal TeX escaping for bibliography strings. */
-function texSafe(s: string): string {
-  return s
-    .replace(/&/g, "\\&")
-    .replace(/%/g, "\\%")
-    .replace(/_/g, "\\_")
-    .replace(/#/g, "\\#");
 }
 
 // ── AST validation ───────────────────────────────────────────────

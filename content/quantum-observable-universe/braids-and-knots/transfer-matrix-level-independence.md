@@ -11,9 +11,9 @@ Then:
 
    $$
      \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{const}}(q)
-     = 
+     \;=\;
      \hat{V}^{\mathrm{comp}}(q)
-     = 
+     \;=\;
      P_{K_{\mathfrak{H}}}(q).
    $$
 

@@ -13,7 +13,7 @@ proton–neutron Hopf linking:
    in $H_1(q)$).
 2. **Hopf-link** the next nucleon: append crossings
    $\sigma_j^{\epsilon(j,k)}$ for all existing nucleons $j < k$.
-3. **Reduce** via the Gröbner--Shirshov basis $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1, \text{YB}, \text{far-comm}\}$.
+3. **Reduce** via the Gröbner--Shirshov basis $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1,\; \text{YB},\; \text{far-comm}\}$.
 4. Record the **Hecke reduction energy** $\Delta E_k$
    ([Gröbner–Shirshov energy](#thm:groebner-shirshov-energy))
    and the **word-length histogram** $h_k(\ell) = \#\{w \in
@@ -41,9 +41,9 @@ $A \geq 1$, by induction on $A$:
 
   $$
     \xi_{A+1}
-    = 
+    \;=\;
     \mathcal{N}(A)
-     \cdot 
+    \;\cdot\;
     \prod_{j=0}^{A-1}(c_j \sigma_j + d_j)
   $$
 
@@ -57,8 +57,8 @@ $A \geq 1$, by induction on $A$:
 
   $$
     \mathcal{N}(A+1)
-     := 
-    r(\xi_{A+1}, G)
+    \;:=\;
+    r(\xi_{A+1},\, G)
   $$
 
   By the **main theorem** of Gröbner--Shirshov basis theory
@@ -82,7 +82,7 @@ When $p = n$ (doubly-even nuclei), the word-length histogram
 $h(\ell)$ is a **palindrome**:
 
 $$
-  h(\ell) =  h(L - \ell)
+  h(\ell) \;=\; h(L - \ell)
   \qquad \text{for all } 0 \leq \ell \leq L
 $$
 
@@ -163,7 +163,7 @@ $A = Z + N$ terms:*
 
 $$
   \mathcal{N}_{\mathrm{opt}}(Z, N)
-  = 
+  \;=\;
   c_0 \cdot \mathbf{1}
   + c_1 \cdot \sigma_0
   + c_2 \cdot \sigma_1

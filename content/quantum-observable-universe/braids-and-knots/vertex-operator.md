@@ -12,7 +12,7 @@ has a geometric realisation: $z$ is the affine coordinate
 $z = v_1/v_2$ on the projective line
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([projective line](#ex:projective-line-su2)), which coincides with
-the contact affine coordinate $Z = \alpha_H / \iota_\xi\alpha$
+the contact affine coordinate $Z = \alpha_H / \iota_\xi\,\alpha$
 ([contact affine chart](#def:contact-affine-chart)) restricted to
 the fibre $\mathcal{S}_p$.  Algebraically, on the standard affine
 chart $v_2 \neq 0$, $z$ generates the coordinate ring
@@ -25,8 +25,8 @@ $(V, Y, |0\rangle)$ defined as follows.
 space is the brane tower:
 
 $$
-  V =  \bigoplus_{n \geq 0} V_n,
-  \qquad V_n =  A_n =  J^n(A_0),
+  V \;=\; \bigoplus_{n \geq 0} V_n,
+  \qquad V_n \;=\; A_n \;=\; J^n(A_0),
 $$
 
 where $A_0 = \mathcal{O}(\mathrm{SU}_q(2))$ is the coordinate ring
@@ -38,26 +38,26 @@ $L_0 = \xi_q^{(0)}$ (the zero-mode of the $q$-Reeb vector field).
 **State-operator correspondence.**  The map
 
 $$
-  Y \colon V  \longrightarrow  (\mathrm{End}V)[\![z, z^{-1}]\!]
+  Y \colon V \;\longrightarrow\; (\mathrm{End}\,V)[\![z, z^{-1}]\!]
 $$
 
 assigns to each state $a \in V_n$ a **vertex operator** (a formal
 Laurent series in $z$):
 
 $$
-  Y(a, z) =  \sum_{m \in \mathbb{Z}} a_m z^{-m-1},
+  Y(a, z) \;=\; \sum_{m \in \mathbb{Z}} a_m\, z^{-m-1},
 $$
 
-where the **modes** $a_m \in \mathrm{End}V$ are defined by the
+where the **modes** $a_m \in \mathrm{End}\,V$ are defined by the
 $R$-matrix insertion:
 
 $$
   a_m
-  = 
-  \oint_{|z| = 1} Y(a, z) z^m \frac{dz}{2\pi i}
-  = 
+  \;=\;
+  \oint_{|z| = 1} Y(a, z)\, z^m\, \frac{dz}{2\pi i}
+  \;=\;
   \mathrm{tr}_M\!\bigl(
-    \check{R}_{(a)} z^m
+    \check{R}_{(a)}\, z^m
   \bigr),
 $$
 
@@ -83,8 +83,8 @@ advances one level in the brane tower.
 on $\mathcal{S}_p$ collide, the operator product expansion
 
 $$
-  Y(a, z) Y(b, w)
-   \sim 
+  Y(a, z)\, Y(b, w)
+  \;\sim\;
   \sum_{n \geq 0}
   \frac{Y(c_n, w)}{(z - w)^{n+1}}
 $$
@@ -93,7 +93,7 @@ has its **leading singularity** governed by the Hecke relation
 $(T_i - q)(T_i + q^{-1}) = 0$, which is the Skein relation
 
 $$
-  L_+ - L_- =  (q - q^{-1}) L_0.
+  L_+ - L_- \;=\; (q - q^{-1})\, L_0.
 $$
 
 The collision $z \to w$ is two strands meeting on $\mathcal{S}_p$; the

@@ -3,7 +3,7 @@ $n_+(\beta)$ and $n_-(\beta)$ for the number of positive and
 negative crossings in $\beta$.  The *Coulomb charge* of $\mathfrak{H}$ is
 
 $$
-  Q(\mathfrak{H}) =  \tfrac{1}{2}\bigl(n_+(\beta) - n_-(\beta)\bigr).
+  Q(\mathfrak{H}) \;=\; \tfrac{1}{2}\bigl(n_+(\beta) - n_-(\beta)\bigr).
 $$
 
 The crossing energy ([crossing energy](#def:crossing-energy))
@@ -11,9 +11,9 @@ decomposes as
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
-  = 
+  \;=\;
   \underbrace{\tfrac{1}{2}(n_+ + n_-)(q + q^{-1})}_{\text{baseline (strong)}}
-  + 
+  \;+\;
   \underbrace{Q(\mathfrak{H}) \cdot (q - q^{-1})}_{\text{Coulomb correction}}.
 $$
 

@@ -7,7 +7,7 @@ export default theorem({
   uses: [
     "def:quantum-observable-universe",
     "def:frobenius-pairing",
-    "prop:pawlowski-leitner-inner-product",
+    "rem:pawlowski-leitner-inner-product",
     "prop:q-spectral-sobolev",
   ],
   tags: [

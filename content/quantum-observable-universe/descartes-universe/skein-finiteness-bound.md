@@ -11,14 +11,14 @@ $\hat{V}_i = z \cdot M_{11}^{(i)} + M_{21}^{(i)}$
 and the Skein polynomial is the product:
 
 $$
-  P_{\mathcal{N}(p,n)}(q) =  \prod_{i=0}^{A-2} \hat{V}_i(q).
+  P_{\mathcal{N}(p,n)}(q) \;=\; \prod_{i=0}^{A-2} \hat{V}_i(q).
 $$
 
 The transfer matrix $T(c, d)$ at each crossing has eigenvalues
 
 $$
-  \lambda_{\pm} = 
-  \frac{\mathrm{tr}T \pm \sqrt{(\mathrm{tr}T)^2 - 4\det T}}{2}
+  \lambda_{\pm} \;=\;
+  \frac{\mathrm{tr}\,T \;\pm\; \sqrt{(\mathrm{tr}\,T)^2 - 4\det T}}{2}
 $$
 
 which are **real and opposite in sign** (since $\det T < 0$ for
@@ -33,7 +33,7 @@ all three crossing types):
 The chain of $k$ crossings at generator $\sigma_i$ gives
 
 $$
-  \hat{V}_i =  c_+\lambda_+^k +  c_-\lambda_-^k
+  \hat{V}_i \;=\; c_+\,\lambda_+^k \;+\; c_-\,\lambda_-^k
 $$
 
 where $c_{\pm}$ depend on $z$ and the crossing coefficients.
@@ -47,7 +47,7 @@ in sign** with $k$.
 the Skein polynomial is positive:*
 
 $$
-  P_{\mathcal{N}(p,n)}(q)  >  0.
+  P_{\mathcal{N}(p,n)}(q) \;>\; 0.
 $$
 
 *This is equivalent to the **lattice inequality**: for each
@@ -55,11 +55,11 @@ generator $i = 0, \ldots, A-2$, the traced volume must be
 positive:*
 
 $$
-  \hat{V}_i(q) = 
-  c_+^{(i)}\lambda_+^{k_i}
-  + 
-  c_-^{(i)}\lambda_-^{k_i}
-   >  0
+  \hat{V}_i(q) \;=\;
+  c_+^{(i)}\,\lambda_+^{k_i}
+  \;+\;
+  c_-^{(i)}\,\lambda_-^{k_i}
+  \;>\; 0
   \qquad (i = 0, \ldots, A-2)
 $$
 
@@ -85,9 +85,9 @@ $$
   \hat{V}_0(q) > 0
   \quad\Longleftrightarrow\quad
   \frac{c_+^{(0)}}{|c_-^{(0)}|}
-   > 
+  \;>\;
   \left|\frac{\lambda_-}{\lambda_+}\right|^{A-1}
-  =  q^{-2(A-1)}
+  \;=\; q^{-2(A-1)}
   \qquad\text{(pp-type)}
 $$
 
@@ -134,8 +134,8 @@ weights each word by $z^{f(w)}$ where $z = 1/[2]_q$ and $f(w)$ is
 the Markov height.  The trace magnitude is:
 
 $$
-  |P(q)|  \leq  \sum_w |c_w| \cdot z^{f(w)}
-   \sim  (A-1)! \cdot q^{\binom{A}{2}} \cdot z^{A-1}
+  |P(q)| \;\leq\; \sum_w |c_w| \cdot z^{f(w)}
+  \;\sim\; (A-1)! \cdot q^{\binom{A}{2}} \cdot z^{A-1}
 $$
 
 while the dominant contribution (without cross-term cancellation)
@@ -154,29 +154,29 @@ The sign flips when $(A-1)!$ cross-terms overwhelm the dominant
 term.  The critical condition is:
 
 $$
-  (A-1)!  >  [2]_q^{A-1}
+  (A-1)! \;>\; [2]_q^{\,A-1}
 $$
 
 The $q$-deformed version uses $q$-factorials throughout (no
 classical Stirling, no Euler $e$):
 
 $$
-  [n]_q! =  \prod_{k=1}^{n} [k]_q
+  [n]_q! \;=\; \prod_{k=1}^{n} [k]_q
   \qquad\text{where}\quad
-  [k]_q =  \frac{q^k - q^{-k}}{q - q^{-1}}
+  [k]_q \;=\; \frac{q^k - q^{-k}}{q - q^{-1}}
 $$
 
 The critical condition is:
 
 $$
-  \boxed{[A-1]_q!  >  [2]_q^{A-1}}
+  \boxed{[A-1]_q! \;>\; [2]_q^{\,A-1}}
 $$
 
 Equivalently: the **average $q$-integer** exceeds $[2]_q$:
 
 $$
   \frac{1}{A-1}\sum_{k=1}^{A-1} \ln [k]_q
-   > 
+  \;>\;
   \ln [2]_q
 $$
 
@@ -224,7 +224,7 @@ in the $(p, n)$ plane:
 
 $$
   \mathcal{L}(q)
-  = 
+  \;=\;
   \bigl\{
     (p, n) \in \mathbb{N}^2 :
     P_{\mathcal{N}(p,n)}(q) > 0

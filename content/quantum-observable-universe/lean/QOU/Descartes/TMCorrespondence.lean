@@ -283,11 +283,11 @@ theorem volume_eq_markov_trace (seq : CrossingSeq) :
     **Scaling convention (v1.1):** pp and nn crossings are DOUBLED
     to match `crossingMatrix`:
     - pp: `crossingMatrix pp = 2 • T_pp` → coefficients `(2, 0)`
-    - nn: `crossingMatrix nn = 2 • T_nn` → coefficients `(2, −2·HA)`
-    - pn: `crossingMatrix pn = two_T_pn`  → coefficients `(2, −HA)`
-      (the "undoubled" pn base would be `(1, −HA/2)`, but
-      `w_plus_t .pn` and `w_zero_t .pn` are defined as the doubled
-      form `(2, −HA)` which already matches `two_T_pn` directly)
+    - nn: `crossingMatrix nn = 2 • T_nn` → coefficients `(2q², −2q·s)`
+    - pn: `crossingMatrix pn = two_T_pn`  → coefficients `(1+q², −q·s)`
+      (the "undoubled" pn base would be `((1+q²)/2, −q·s/2)`, but
+      `w_plus_t .pn` and `w_zero_t .pn` are defined as the averaged
+      form `(1+q², −q·s)` which already matches `two_T_pn` directly)
 
     This ensures `transferMatrix c d = crossingMatrix(nj, nk)` for
     each pair, which is needed for `matrixChain_eq_buildChains`. -/

@@ -17,7 +17,7 @@ parallel transport along $A$.  The following diagram commutes:
   \\
   \Gamma(\mathcal{S}_{\mathrm{lin}})
     \ar[r, "\nabla^A"']
-  & \bigl\{ \psi : J\hbar_q\iota_{\xi_q}D_A\psi = \hat{H}_q\psi \bigr\}
+  & \bigl\{ \psi : J\hbar_q\,\iota_{\xi_q}D_A\psi = \hat{H}_q\psi \bigr\}
 \end{tikzcd}
 \]
 ```

@@ -4,8 +4,8 @@ $d_q^2 = d_q \circ d_q \colon \Omega^k(A) \to \Omega^{k+2}(A)$ is
 given by
 
 $$
-  d_q^2\alpha
-  =  q^{-1}(1 - q^{-1})\omega_V \wedge_q [\xi, \alpha],
+  d_q^2\,\alpha
+  \;=\; q^{-1}(1 - q^{-1})\;\omega_V \wedge_q [\xi,\, \alpha],
 $$
 
 where $\omega_V \in \Omega^2(A)$ is the curvature of the weight
@@ -23,8 +23,8 @@ displays the obstruction to nilpotence:
   & \Omega^{k+2}(A)
 \end{tikzcd}
 \qquad
-d_q^2 = 0 \Longleftrightarrow
-q = 1  \text{ or } [\xi, \alpha] = 0.
+d_q^2 = 0 \;\Longleftrightarrow\;
+q = 1 \;\text{ or }\; [\xi, \alpha] = 0.
 \end{equation}
 ```
 

@@ -13,7 +13,7 @@ coordinate $\delta=x_2-x_3$.  In a neighbourhood of the defect the
 spacetime ratio satisfies
 
 $$
-  z-z_c \sim \delta^2,
+  z-z_c\;\sim\;\delta^2,
 $$
 
 so while the projection map develops a ramification cusp, $\delta$ passes

@@ -10,14 +10,14 @@ $L_\theta$ determines the Webster metric, which in turn fixes the
 substrate field via the coupling
 $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert$.
 This determines $\hbar_q = 1 - q^{-1}$, the $q$-Reeb field $\xi_q$,
-and the $q$-Hamiltonian $\hat{H}_q = -\tfrac{1}{2}\hbar_q\Delta_q + V_q$ appearing in the transport equation.
+and the $q$-Hamiltonian $\hat{H}_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$ appearing in the transport equation.
 
 **Left-bottom path** (evaluation → transport). The jet evaluation map
 $j^1_p \sigma \mapsto \sigma(p)$ produces a section
 $\psi \in \Gamma(\mathcal{S}_{\mathrm{lin}})$ by linearising the fibre
 $\mathbb{P}^1(\mathbb{C})$ at the chosen base-point. Parallel transport
 along $A$ then imposes
-$J\hbar_q\iota_{\xi_q} D_A\psi = \hat{H}_q\psi$
+$J\hbar_q\,\iota_{\xi_q} D_A\psi = \hat{H}_q\psi$
 ([Schrödinger equation](#rem:schrodinger-jet-coaction)).
 
 **Commutativity.** Both paths share the same input ($j^1_p \sigma$)

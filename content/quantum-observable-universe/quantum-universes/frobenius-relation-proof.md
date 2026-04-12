@@ -3,7 +3,7 @@ The Frobenius form $\int_A$ and the multiplication $\mu$ together
 define a pairing $\langle a, b \rangle = \int_A(\mu(a \otimes b))$
 on $A$. Non-degeneracy of this pairing
 ([Frobenius pairing](#def:frobenius-pairing)) gives an isomorphism
-$\phi \colon A \xrightarrow{ \sim } A^{\vee}$ defined by
+$\phi \colon A \xrightarrow{\;\sim\;} A^{\vee}$ defined by
 $\phi(a) = \langle a, - \rangle$. Define the *dual comultiplication*
 $\Delta_\mu$ as the transpose of $\mu$ under $\phi$:
 
@@ -26,7 +26,7 @@ the associativity of $\mu$:
 
 $$
   \bigl\langle (\mu \otimes \mathrm{id})
-  (\mathrm{id} \otimes \Delta_\mu)(a \otimes b), c \bigr\rangle
+  (\mathrm{id} \otimes \Delta_\mu)(a \otimes b),\; c \bigr\rangle
   = \int_A \mu\bigl(\mu(a \otimes b_1) \otimes b_2\bigr) \cdot c
   = \int_A \mu\bigl(a \otimes \mu(b_1 \otimes b_2)\bigr) \cdot c,
 $$
@@ -37,7 +37,7 @@ second equality is associativity of $\mu$.
 For the right-hand side:
 
 $$
-  \bigl\langle \Delta_\mu(\mu(a \otimes b)), c \bigr\rangle
+  \bigl\langle \Delta_\mu(\mu(a \otimes b)),\; c \bigr\rangle
   = \int_A \mu\bigl(a \otimes \mu(b_1 \otimes b_2)\bigr) \cdot c.
 $$
 

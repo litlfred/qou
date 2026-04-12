@@ -78,7 +78,7 @@ The torus knot $T_{2,11}$ has:
 $$
   \mathcal{T}_{T_{2,11}}(q) = \mathbf{I}_{2 \times 2},
   \qquad
-  F(T_{2,11}, N) = 1  \forall N.
+  F(T_{2,11}, N) = 1 \;\;\forall\, N.
 $$
 
 - **No shell structure**: eigenvalues $(1, 1)$ give the
@@ -149,7 +149,7 @@ resolution of physical knots, the spectral filter projects it
 away.  The physical Skein relation on $\Sigma_4$ becomes:
 
 $$
-  q\mathcal{M}[L_+] = q^{-1}\mathcal{M}[L_-]
+  q\,\mathcal{M}[L_+] = q^{-1}\mathcal{M}[L_-]
   \qquad\text{when } g(L_0) > 4,
 $$
 

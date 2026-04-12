@@ -8,9 +8,9 @@ interpolates between the parent and daughter nuclear configurations.
 The Skein relation at a single crossing change is
 
 $$
-  q  [L_+] -  q^{-1} [L_-]
-  = 
-  (q^{1/2} - q^{-1/2})  [L_0].
+  q \, [L_+] \;-\; q^{-1} [L_-]
+  \;=\;
+  (q^{1/2} - q^{-1/2}) \, [L_0].
 $$
 
 In beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$,
@@ -94,9 +94,9 @@ $e_i$ and its Markov trace involves the quantum integer ratio:
 
 $$
   \frac{\mathrm{tr}(L_0^{\mathrm{int}})}{\mathrm{tr}(e_i^{\mathrm{free}})}
-  = 
-  \frac{[1]_q  [2]_q}{[3]_q}
-   \approx  0.665
+  \;=\;
+  \frac{[1]_q \, [2]_q}{[3]_q}
+  \;\approx\; 0.665
   \quad\text{at } q = q_0.
 $$
 
@@ -129,9 +129,9 @@ suppression and the shell modulation:
 
 $$
   \text{shell factor}
-  = 
-  \underbrace{\frac{[1]_q  [2]_q}{[3]_q}}_{\text{Borromean factor}}
-   \times 
+  \;=\;
+  \underbrace{\frac{[1]_q \, [2]_q}{[3]_q}}_{\text{Borromean factor}}
+  \;\times\;
   \underbrace{f(m, k, q)}_{\text{shell modulation}}
 $$
 

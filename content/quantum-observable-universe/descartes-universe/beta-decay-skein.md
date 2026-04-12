@@ -35,7 +35,7 @@ The weak interaction is mediated by the torus knot $T_{3,5}$
 braid word in $B_3$ is:
 
 $$
-  \beta_{T_{3,5}} =  (\sigma_1 \sigma_2)^5
+  \beta_{T_{3,5}} \;=\; (\sigma_1 \sigma_2)^5
 $$
 
 This word has **$10$ crossings**.  In the Iwahori--Hecke algebra $H_3(q)$,
@@ -46,9 +46,9 @@ is the **weak vertex form factor**:
 
 $$
   \mathcal{W}(q)
-   := 
+  \;:=\;
   \mathrm{tr}_{\mathrm{Markov}}\bigl((\sigma_1 \sigma_2)^5\bigr)
-   \in  \mathbb{Z}[q^{\pm 1/2}]
+  \;\in\; \mathbb{Z}[q^{\pm 1/2}]
 $$
 
 The single-crossing Skein amplitude $s = q^{1/2} - q^{-1/2}$
@@ -83,11 +83,11 @@ $\mathcal{N}(Z, N)$, followed by re-reduction:*
 
 $$
   \mathcal{N}(Z, N) \cdot \beta_{T_{3,5}}
-  \xrightarrow{ \text{reduce}}
-  \mathcal{N}(Z + 1,  N - 1)
-  \sqcup
+  \;\xrightarrow{\;\text{reduce}\;}
+  \mathcal{N}(Z + 1, \, N - 1)
+  \;\sqcup\;
   T_{2,3}
-  \sqcup
+  \;\sqcup\;
   K_{0_1}
 $$
 
@@ -99,8 +99,8 @@ daughter nuclear braid.
 In the Skein relation at each of the $10$ crossings:
 
 $$
-  q  [L_+] -  q^{-1} [L_-]
-  =  (q^{1/2} - q^{-1/2})  [L_0]
+  q \, [L_+] \;-\; q^{-1} [L_-]
+  \;=\; (q^{1/2} - q^{-1/2}) \, [L_0]
 $$
 
 The accumulated effect of $10$ such relations (not $1$) determines
@@ -113,11 +113,11 @@ conjugate $T_{3,5}^{\sigma}$ braid (with $q \leftrightarrow q^{-1}$):*
 
 $$
   \mathcal{N}(Z, N) \cdot \beta_{T_{3,5}}^{\sigma}
-  \xrightarrow{ \text{reduce}}
-  \mathcal{N}(Z - 1,  N + 1)
-  \sqcup
+  \;\xrightarrow{\;\text{reduce}\;}
+  \mathcal{N}(Z - 1, \, N + 1)
+  \;\sqcup\;
   T_{2,3}^{\sigma}
-  \sqcup
+  \;\sqcup\;
   K_{0_1}
 $$
 
@@ -129,7 +129,7 @@ $q \mapsto q^{-1}$ on the Iwahori--Hecke algebra, which acts as:
 | $\beta^-$ | $\beta^+$ |
 |:---:|:---:|
 | $\mathfrak{d} \to \mathfrak{u}$ via $T_{3,5}$ | $\mathfrak{u} \to \mathfrak{d}$ via $T_{3,5}^{\sigma}$ |
-| $q  [L_+]$ | $q^{-1} [L_+]$ |
+| $q \, [L_+]$ | $q^{-1} [L_+]$ |
 | electron $T_{2,3}$ | positron $T_{2,3}^{\sigma}$ |
 | antineutrino $K_{0_1}^{\sigma}$ | neutrino $K_{0_1}$ |
 | $\mathcal{S}_{ab}(q)$ | $\mathcal{S}_{ba}(q) = \mathcal{S}_{ab}(q^{-1})$ |
@@ -139,7 +139,7 @@ This $\mathbb{Z}/2$ acts on the pair Skein mass formula:
 $$
   \mathcal{S}_{ab}(q)
   = \frac{q \mu_a + q^{-1} \mu_b}{q^{1/2} + q^{-1/2}}
-  \xrightarrow{q \leftrightarrow q^{-1}} 
+  \;\;\xrightarrow{\;q \leftrightarrow q^{-1}\;}\;\;
   \mathcal{S}_{ba}(q)
   = \frac{q \mu_b + q^{-1} \mu_a}{q^{1/2} + q^{-1/2}}
 $$
@@ -158,12 +158,12 @@ for $0$.  The remaining $7$ crossings are the **weak vertex
 residue** — absorbed into R2 moves during re-reduction.
 
 $$
-  L_0^{-} =  T_{2,3} \sqcup T_{1,0}^{\sigma}
+  L_0^{-} \;=\; T_{2,3} \;\sqcup\; T_{1,0}^{\sigma}
   \qquad (\beta^- \text{ decay: } e^- + \nu_e^{\sigma})
 $$
 
 $$
-  L_0^{+} =  T_{2,3}^{\sigma} \sqcup T_{1,0}
+  L_0^{+} \;=\; T_{2,3}^{\sigma} \;\sqcup\; T_{1,0}
   \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
 $$
 
@@ -175,11 +175,11 @@ crossings of the $T_{3,5}$ insertion:
 
 $$
   \mathcal{Q}_q
-  = 
+  \;=\;
   \mathcal{S}_q[\mathcal{N}(Z, N)]
-  - 
+  \;-\;
   \mathcal{S}_q[\mathcal{N}(Z \pm 1, N \mp 1)]
-  - 
+  \;-\;
   m_e
 $$
 
@@ -206,9 +206,9 @@ The net R2 step count from all $10$ crossings (not just $1$)
 determines the $\mathcal{Q}_q$-value:
 
 $$
-  \mathcal{Q}_q =  \Delta(\text{R2 steps from 10 crossings})
-   \times  (q - q^{-1})
-   \times  (\text{pair Skein scale})
+  \mathcal{Q}_q \;=\; \Delta(\text{R2 steps from 10 crossings})
+  \;\times\; (q - q^{-1})
+  \;\times\; (\text{pair Skein scale})
 $$
 
 ## Why single-crossing was insufficient

@@ -61,7 +61,7 @@ are composed as operators acting by left-multiplication,
 with crossings applied from right to left in the braid word:
 
 $$
-  M_i(q) =  \prod_{j=A-1}^{i+1} T_{K_j, K_i}(q)
+  M_i(q) \;=\; \prod_{j=A-1}^{i+1} T_{K_j, K_i}(q)
 $$
 
 where the product is taken in decreasing order of $j$.
@@ -69,13 +69,13 @@ where the product is taken in decreasing order of $j$.
 The **Markov-traced volume** at generator $\sigma_i$ is:
 
 $$
-  \hat{V}_i(q) =  z(q) \cdot (M_i)_{11} + (M_i)_{21}
+  \hat{V}_i(q) \;=\; z(q) \cdot (M_i)_{11} + (M_i)_{21}
 $$
 
 The **nuclear Skein polynomial** is:
 
 $$
-  P_{\mathcal{N}}(q) =  \prod_{i=0}^{A-2} \hat{V}_i(q)
+  P_{\mathcal{N}}(q) \;=\; \prod_{i=0}^{A-2} \hat{V}_i(q)
 $$
 
 This requires exactly $\binom{A}{2}$ transfer matrix

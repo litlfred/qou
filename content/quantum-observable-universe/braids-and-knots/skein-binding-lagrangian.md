@@ -1,7 +1,7 @@
 The **Skein binding Lagrangian** is not a new Lagrangian: it is
 the categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
 ([canonical action](#prop:qou-canonical-action)) evaluated on the
-field configuration $\psi = Z\mathfrak{p} \bowtie N\mathfrak{n}$.
+field configuration $\psi = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$.
 
 The categorical Lagrangian
 ([categorical Lagrangian](#def:categorical-lagrangian))
@@ -12,13 +12,13 @@ multi-nucleon Hopf link, the Skein crossing asymmetry
 splits the gauge sector by crossing chirality, producing the
 familiar nuclear binding terms.
 
-Let $L = Z\mathfrak{p} \bowtie N\mathfrak{n}$ be a multi-nucleon
+Let $L = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$ be a multi-nucleon
 Hopf link with $Z$ protons and $n$ neutrons, $A = Z + N$.  Evaluating
 $\mathcal{S}_q$ on $L$ gives the **Skein binding Lagrangian**
 
 $$
   \mathcal{L}_{\mathrm{bind}}[L]
-  = 
+  \;=\;
   \mathcal{L}_{\mathrm{vol}}
   - \mathcal{L}_{\mathrm{surf}}
   - \mathcal{L}_{\mathrm{Coul}}
@@ -36,7 +36,7 @@ with each term arising from the Skein polynomial structure of $L$:
 
    $$
      \mathcal{L}_{\mathrm{vol}}
-     =  \frac{q + q^{-1}}{2} \cdot \lambda_V \cdot A
+     \;=\; \frac{q + q^{-1}}{2} \cdot \lambda_V \cdot A
    $$
 
    where $\lambda_V$ is the per-junction energy scale.
@@ -47,7 +47,7 @@ with each term arising from the Skein polynomial structure of $L$:
 
    $$
      \mathcal{L}_{\mathrm{surf}}
-     =  \frac{q + q^{-1}}{2} \cdot \lambda_S \cdot A^{2/3}.
+     \;=\; \frac{q + q^{-1}}{2} \cdot \lambda_S \cdot A^{2/3}.
    $$
 
 3. **Coulomb repulsion** (crossing asymmetry on $\mathfrak{p}$--$\mathfrak{p}$
@@ -60,7 +60,7 @@ with each term arising from the Skein polynomial structure of $L$:
 
    $$
      \mathcal{L}_{\mathrm{Coul}}
-     =  (q - q^{-1}) \cdot \lambda_C
+     \;=\; (q - q^{-1}) \cdot \lambda_C
      \cdot \frac{p(p-1)}{A^{1/3}}.
    $$
 
@@ -72,7 +72,7 @@ with each term arising from the Skein polynomial structure of $L$:
 
    $$
      \mathcal{L}_{\mathrm{Pauli}}
-     =  \lambda_A \cdot \frac{(n - p)^2}{4A}.
+     \;=\; \lambda_A \cdot \frac{(n - p)^2}{4A}.
    $$
 
 5. **Pairing** (Cooper-like Hopf loops).  Two identical nucleons
@@ -103,9 +103,9 @@ The ratio
 
 $$
   \frac{a_C}{a_V}
-  =  \frac{q - q^{-1}}{q + q^{-1}}
+  \;=\; \frac{q - q^{-1}}{q + q^{-1}}
   \cdot \frac{\lambda_C}{\lambda_V}
-  =  \tanh(\ln q) \cdot \frac{\lambda_C}{\lambda_V}
+  \;=\; \tanh(\ln q) \cdot \frac{\lambda_C}{\lambda_V}
 $$
 
 controls the balance between the strong and electromagnetic

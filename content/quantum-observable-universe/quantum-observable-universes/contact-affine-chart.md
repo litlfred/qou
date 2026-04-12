@@ -9,15 +9,15 @@ The *contact affine chart* $U_\xi \subset \mathbb{P}(V)$ is the open
 dense subset of states with non-vanishing Reeb component:
 
 $$
-  U_\xi =  \bigl\{ [\alpha] \in \mathbb{P}(V)
-   \big|  \iota_\xi\alpha \neq 0 \bigr\}.
+  U_\xi \;=\; \bigl\{\, [\alpha] \in \mathbb{P}(V)
+  \;\big|\; \iota_\xi\,\alpha \neq 0 \,\bigr\}.
 $$
 
 On $U_\xi$, the explicit *affine coordinate* is defined by the ratio
 of horizontal spatial diffusion to vertical quantum spin:
 
 $$
-  Z([\alpha]) =  \frac{\alpha_H}{\iota_\xi\alpha}.
+  Z([\alpha]) \;=\; \frac{\alpha_H}{\iota_\xi\,\alpha}.
 $$
 
 ```tex

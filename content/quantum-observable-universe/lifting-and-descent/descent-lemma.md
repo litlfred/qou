@@ -6,14 +6,14 @@ object $A_{n-1}$ such that $(\mathbf{C}, A_{n-1}, \tau)$ is again a
 quantum observable universe.  Moreover, the induced descent homomorphism
 
 $$
-  \mathfrak{d}_n  \colon 
+  \mathfrak{d}_n \;\colon\;
   \mathrm{End}_{\mathbf{C}}(A_n)
-   \longrightarrow 
+  \;\longrightarrow\;
   \mathrm{End}_{\mathbf{C}}(A_{n-1})
 $$
 
 is a surjective algebra homomorphism that intertwines the $G_q$-actions at
 levels $n$ and $n{-}1$.  In the archimedean realisation, this recovers
 the surjective $*$-homomorphism
-$\Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2)) \to \Gamma(J^1 \mathcal{S}_{n-1}, \mathrm{SU}_{q_{n-1}}(2))$.
+$\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2)) \to \Gamma(J^1 \mathcal{S}_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
 

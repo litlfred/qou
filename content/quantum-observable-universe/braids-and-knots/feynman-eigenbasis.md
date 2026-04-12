@@ -3,8 +3,8 @@ computed by summing over *all* paths in configuration space:
 
 $$
   \langle\psi_f|\psi_i\rangle
-  = 
-  \int \mathcal{D}\phi\,e^{iS[\phi]/\hbar}.
+  \;=\;
+  \int \mathcal{D}\phi\;\,e^{iS[\phi]/\hbar}.
 $$
 
 This expression is basis-independent --- it does not privilege any
@@ -38,14 +38,14 @@ around a vortex filament, the mass is
 
 $$
   \mathfrak{m}(\varrho)
-  = 
-  \bigl\lVert
+  \;=\;
+  \bigl\lVert\,
   \mathrm{tr}\bigl(
     (\int_A \otimes \mathrm{id})
     \circ \Delta
     \circ \varrho
   \bigr)
-  \bigr\rVert,
+  \,\bigr\rVert,
 $$
 
 where $\int_A$ is the Frobenius form and $\Delta$ the comultiplication.
@@ -58,7 +58,7 @@ continuum of paths.
 
 The connection to the skein-based mass calculation of
 [Chapter 6](#chap:descartes-universe) is then as follows.  The skein relation
-$q\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\mathcal{M}(L_0)$
+$q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\,\mathcal{M}(L_0)$
 ([skein mass relation](#rem:skein-mass-relation)) is the
 *characteristic equation* of the braiding $c_{V,V}$ evaluated under
 the categorical trace: the three resolutions $L_+$, $L_-$, $L_0$ of a

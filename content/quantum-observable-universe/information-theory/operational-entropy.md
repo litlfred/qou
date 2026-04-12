@@ -6,7 +6,7 @@ $J(f_q)$.  The *operational entropy* of the Reeb dynamics at
 substrate parameter $q$ is
 
 $$
-  \eta_q  :=  \frac{2q - 1}{q^3},
+  \eta_q \;:=\; \frac{2q - 1}{q^3},
 $$
 
 measuring the information generated per $f_q$-iteration in
@@ -21,7 +21,7 @@ $\chi = \ln 2$ (valid at $c = 0$, where the Julia set is the unit
 circle) is replaced by the $q$-deformed exponent
 
 $$
-  \chi_q =  \frac{1}{2q - 1}.
+  \chi_q \;=\; \frac{1}{2q - 1}.
 $$
 
 The replacement $\ln 2 \to 1/(2q-1)$ reflects that the QOU
@@ -34,9 +34,9 @@ dynamics).
 The $q$-deformed Hausdorff dimension of the Julia set is then
 
 $$
-  d_{H,q}  :=  \frac{\eta_q}{\chi_q}
-  =  \eta_q \cdot (2q - 1)
-  =  \frac{(2q - 1)^2}{q^3}.
+  d_{H,q} \;:=\; \frac{\eta_q}{\chi_q}
+  \;=\; \eta_q \cdot (2q - 1)
+  \;=\; \frac{(2q - 1)^2}{q^3}.
 $$
 
 **$d_{H,q}$ vs. $d_H$: two different quantities.**
@@ -88,9 +88,9 @@ produced by one $R$-matrix evaluation.  The total information
 processed per Planck time is
 
 $$
-  I_P(q) =  n_R(q) \cdot \eta_q
-  =  \frac{\eta_q}{\hbar_q}
-  =  \frac{(2q-1)}{q^2(q-1)},
+  I_P(q) \;=\; n_R(q) \cdot \eta_q
+  \;=\; \frac{\eta_q}{\hbar_q}
+  \;=\; \frac{(2q-1)}{q^2(q-1)},
 $$
 
 where $n_R(q) = 1/\hbar_q$ is the iteration count per Planck
@@ -101,7 +101,7 @@ circuit ([Planck time](#def:planck-time)).
 | Regime | $q$ | $\eta_q$ | $d_{H,q}$ | Interpretation |
 |--------|-----|----------|-----------|----------------|
 | Classical limit | $q \to 1$ | $\to 1$ | $\to 1$ | One nat per step; Julia set = unit circle |
-| Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}10$ steps generates $0.89$ $q$-bits |
+| Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ $q$-bits |
 | Deep quantum | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
 | Deep-quantum | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
 

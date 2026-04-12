@@ -7,7 +7,7 @@ $\star_q \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
 
 $$
   \alpha \wedge_q \star_q \beta
-  =  q \cdot \int_A\!\bigl(\alpha^* \cdot \beta\bigr) \mathrm{vol}.
+  \;=\; q \cdot \int_A\!\bigl(\alpha^* \cdot \beta\bigr)\;\mathrm{vol}.
 $$
 
 ```tex

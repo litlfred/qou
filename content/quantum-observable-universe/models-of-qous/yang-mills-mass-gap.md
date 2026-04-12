@@ -29,7 +29,7 @@ $\mathcal{A}_\infty = \varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$.*
    satisfies*
 
 $$
-  \mathfrak{m}(\varrho)  \geq  \Delta_q  >  0,
+  \mathfrak{m}(\varrho) \;\geq\; \Delta_q \;>\; 0,
 $$
 
 *where $\mathfrak{m}(\varrho)$ is the categorical mass
@@ -39,13 +39,13 @@ Frobenius--Hopf structure of $A$.  Equivalently, the two-point
 function*
 
 $$
-  \bigl\langle
-  \tau(\varrho(t)),
+  \bigl\langle\,
+  \tau(\varrho(t))\,,\;
   \tau(\varrho(0))
-  \bigr\rangle_{\Omega_0}
-   \sim 
+  \,\bigr\rangle_{\Omega_0}
+  \;\sim\;
   \sum_{n \geq 0}
-  A_n \exp\!\bigl(-\Delta_n t\bigr)
+  A_n \exp\!\bigl(-\Delta_n\, t\bigr)
   \qquad (t \to \infty)
 $$
 
@@ -68,8 +68,8 @@ In the QOU framework, the translation is:
 | Vacuum state $\Omega$ | Frobenius trace $\Omega_0$ ([vacuum state](#prop:vacuum-state)) |
 | Wightman axioms | QOU axioms (QOU1)--(QOU5) |
 | Hamiltonian $H$ | Categorical transfer matrix $\mathcal{T}_q$ |
-| Mass gap $\Delta > 0$ | $\inf_{\varrho \neq 0} \mathfrak{m}(\varrho) = \Delta_q > 0$ |
-| Two-point function $\langle \phi(t)\phi(0)\rangle$ | Frobenius pairing $\langle \tau(\varrho(t)), \tau(\varrho(0))\rangle_{\Omega_0}$ |
+| Mass gap $\Delta > 0$ | $\inf_{\varrho \neq 0}\, \mathfrak{m}(\varrho) = \Delta_q > 0$ |
+| Two-point function $\langle \phi(t)\phi(0)\rangle$ | Frobenius pairing $\langle \tau(\varrho(t)),\, \tau(\varrho(0))\rangle_{\Omega_0}$ |
 | Lightest glueball mass | Categorical mass of the simplest non-trivial vortex $\varrho \colon \mathbf{1} \to A$ |
 
 **Why the categorical setting is natural.**
@@ -84,11 +84,11 @@ below by the minimum crossing energy:
 
 $$
   \Delta_q
-   \geq 
+  \;\geq\;
   \mathbf{E}_\times(q) \cdot (q - 1)^2
-  = 
+  \;=\;
   \tfrac{1}{2}(q - q^{-1})(q - 1)^2
-   >  0
+  \;>\; 0
   \quad\text{for all } q > 1.
 $$
 
@@ -100,7 +100,7 @@ braid word to carry strictly positive crossing energy.
 
 **The $\mathbb{G}_m$-torsion obstruction.**
 The mass gap is a regular function on
-$\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$
+$\mathbb{G}_m = \mathrm{Spec}\,\mathbb{Z}[q, q^{-1}]$
 ([substrate as $\mathbb{G}_m$-section](#rem:substrate-gm-torsion)).
 It vanishes precisely on the 2-torsion subgroup
 $\mu_2 = \{1, -1\}$, and is strictly positive on the

@@ -71,6 +71,7 @@ concurrency:
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
+  packages:       read    # required to pull the paper-assistant container image
 
 jobs:
   build-and-publish:
@@ -82,11 +83,14 @@ jobs:
     defaults:
       run:
         shell: bash
-    # Official TeX Live image — public on Docker Hub, no auth needed,
-    # full TeX Live pre-installed.  Replaces the custom latex-ci image
-    # which was never built (see build-latex-image.yml).
+    # Paper-assistant image — same image used by the folio MCP server.
+    # Pre-installs: TeX Live (full), Lean 4, Bun, pandoc, ripgrep, Python.
+    # Built by build-lean-mcp.yml → ghcr.io/litlfred/qou/paper-assistant.
     container:
-      image: texlive/texlive:latest
+      image: ghcr.io/${{ github.repository }}/paper-assistant:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -140,19 +144,13 @@ jobs:
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
           git config --global --add safe.directory '*'
 
-      - name: Install Bun
+      - name: Verify pre-installed tools
         run: |
-          curl -fsSL https://bun.sh/install | bash
-          export PATH="$HOME/.bun/bin:$PATH"
-          echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
-          bun --version
-
-      - name: Install missing tools
-        run: |
-          # texlive/texlive has TeX Live but may lack pandoc, graphviz, jq
-          apt-get update -qq && apt-get install -y --no-install-recommends \
-            pandoc graphviz jq \
-          && rm -rf /var/lib/apt/lists/*
+          # All tools are pre-installed in the paper-assistant image
+          echo "bun $(bun --version)"
+          echo "pdflatex $(pdflatex --version | head -1)"
+          echo "pandoc $(pandoc --version | head -1)"
+          echo "lean $(lean --version 2>&1 | head -1 || echo 'not needed for this workflow')"
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
@@ -183,13 +181,22 @@ jobs:
             fi
 
             echo "── Building: ${paper_dir}"
-            bun run pipeline/build.ts \
-              "${paper_dir}/${paper_dir}.ts" \
-              --out-dir ../chapters/ \
-              --generate-main \
-              --main-out ../main.tex \
-              --preamble ../latex/preamble.tex \
-              || echo "::warning::Content build had issues for ${paper_dir}"
+            if [ "${paper_dir}" = "quantum-observable-universe" ]; then
+              # Primary paper: generate main.tex for PDF compilation
+              bun run pipeline/build.ts \
+                "${paper_dir}/${paper_dir}.ts" \
+                --out-dir ../chapters/ \
+                --generate-main \
+                --main-out ../main.tex \
+                --preamble ../latex/preamble.tex \
+                || echo "::warning::Content build had issues for ${paper_dir}"
+            else
+              # Secondary papers: build chapter .tex only (don't overwrite main.tex)
+              bun run pipeline/build.ts \
+                "${paper_dir}/${paper_dir}.ts" \
+                --out-dir ../chapters/ \
+                || echo "::warning::Content build had issues for ${paper_dir}"
+            fi
           done
 
           echo "── Bibliography QA"
@@ -368,67 +375,31 @@ jobs:
             fi
           fi
 
-      # ── 2c. Extract appendices as separate PDFs ──────────────────────────
-      - name: Extract appendix PDFs
+      # ── 2c. Compile standalone appendix PDFs ──────────────────────────
+      - name: Compile standalone appendix PDFs
         continue-on-error: true
         run: |
-          if [ ! -f main.pdf ]; then
-            echo "::warning::main.pdf not found, skipping appendix extraction"
-            exit 0
-          fi
-          # Install qpdf for page extraction (lighter than pdftk)
-          apt-get update -qq && apt-get install -y --no-install-recommends qpdf >/dev/null 2>&1 || true
-
-          # Get total pages
-          TOTAL=$(qpdf --show-npages main.pdf 2>/dev/null || echo 0)
-          echo "Total pages in main.pdf: $TOTAL"
-
-          # Find appendix start pages from the .aux file
-          # Appendices are the last 3 \input chapters in main.tex
-          APPENDICES=(
-            "appendix-knot-periodic-table:Knot Periodic Table"
-            "appendix-transfer-matrices:Transfer Matrices"
-            "appendix-atomic-mass-calculations:Atomic Mass Calculations"
-          )
-
-          # Extract page ranges from main.log (chapter start pages)
-          for entry in "${APPENDICES[@]}"; do
-            slug="${entry%%:*}"
-            title="${entry#*:}"
-            # Find the page where this chapter starts in the log
-            start_page=$(grep -oP "\[(\d+)\]" main.log | tr -d '[]' | sort -n | uniq | tail -1)
-            # Use grep on the .aux file for the chapter label
-            page=$(grep -oP "\\\\newlabel{chap:${slug}}{.*?{(\d+)}" main.aux 2>/dev/null | grep -oP '\d+$' | head -1 || true)
-            if [ -n "$page" ]; then
-              echo "  Found ${slug} at page ${page}"
-              echo "${slug}:${page}" >> appendix-pages.txt
+          # Standalone appendix .tex files are generated by the content pipeline
+          # (one per appendix chapter excluded from main.tex).
+          for tex in standalone-*.tex; do
+            [ -f "$tex" ] || continue
+            slug="${tex#standalone-}"
+            slug="${slug%.tex}"
+            echo "── Compiling standalone appendix: ${slug}"
+            latexmk -pdf -interaction=nonstopmode -halt-on-error "$tex" 2>&1 \
+              | grep -v '^LaTeX Warning: .*undefined' \
+              | grep -v '^Overfull \\hbox' \
+              | grep -v '^Underfull \\hbox' \
+              || true
+            pdf="${tex%.tex}.pdf"
+            if [ -f "$pdf" ]; then
+              # Rename to match the chapter slug (drop "standalone-" prefix)
+              mv "$pdf" "${slug}.pdf"
+              echo "  ✓ ${slug}.pdf"
+            else
+              echo "  ::warning::Failed to compile ${slug}.pdf"
             fi
           done
-
-          # If we found appendix pages, extract them
-          if [ -f appendix-pages.txt ] && [ -s appendix-pages.txt ]; then
-            # Sort by page number, extract each appendix
-            PREV_END=""
-            mapfile -t ENTRIES < <(sort -t: -k2 -n appendix-pages.txt)
-            for i in "${!ENTRIES[@]}"; do
-              slug="${ENTRIES[$i]%%:*}"
-              page="${ENTRIES[$i]#*:}"
-              # End page is either next appendix start - 1, or total pages
-              if [ $((i + 1)) -lt ${#ENTRIES[@]} ]; then
-                next_page="${ENTRIES[$((i+1))]#*:}"
-                end_page=$((next_page - 1))
-              else
-                end_page="$TOTAL"
-              fi
-              if [ "$end_page" -ge "$page" ] && [ "$page" -gt 0 ]; then
-                qpdf main.pdf --pages . ${page}-${end_page} -- "${slug}.pdf" 2>/dev/null \
-                  && echo "✓ ${slug}.pdf (pages ${page}-${end_page})" \
-                  || echo "::warning::Failed to extract ${slug}.pdf"
-              fi
-            done
-          else
-            echo "::warning::Could not determine appendix page numbers"
-          fi
 
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
@@ -460,9 +431,13 @@ jobs:
             cp diff.pdf "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf"
           fi
 
-          # Copy appendix PDFs
-          for apdf in appendix-knot-periodic-table.pdf appendix-transfer-matrices.pdf appendix-atomic-mass-calculations.pdf; do
-            if [ -f "$apdf" ]; then
+          # Copy appendix PDFs (standalone compiled from individual .tex files)
+          for apdf in *.pdf; do
+            case "$apdf" in
+              main.pdf|diff.pdf|standalone-*) continue ;;
+            esac
+            # Only copy appendix-related PDFs (those generated from standalone-*.tex)
+            if [ -f "standalone-${apdf%.pdf}.tex" ] || echo "$apdf" | grep -qE '^(glossary|appendix-|index-of-)'; then
               cp "$apdf" "${PAPER_OUTDIR}/${apdf}"
               echo "  ✓ Appendix: ${apdf}"
             fi
@@ -701,31 +676,7 @@ jobs:
           retention-days: 1
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
-      - name: Install GitHub CLI
-        if: env.HEAD_REF != 'main'
-        run: |
-          if command -v gh >/dev/null 2>&1; then
-            echo "gh already available: $(gh --version | head -1)"
-            exit 0
-          fi
-          apt-get update -qq
-          if ! command -v wget >/dev/null 2>&1; then
-            apt-get install -y -qq wget >/dev/null
-          fi
-          mkdir -p -m 755 /etc/apt/keyrings
-          wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-            | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
-            | tee /etc/apt/sources.list.d/github-cli.list >/dev/null
-          apt-get update -qq
-          apt-get install -y -qq gh >/dev/null
-          rm -rf /var/lib/apt/lists/*
-          if command -v gh >/dev/null 2>&1; then
-            echo "gh installed: $(gh --version | head -1)"
-          else
-            echo "::error::Failed to install GitHub CLI (gh)"
-            exit 1
-          fi
+      # gh CLI is pre-installed in the paper-assistant image.
 
       - name: Comment preview link on PR
         if: env.HEAD_REF != 'main'

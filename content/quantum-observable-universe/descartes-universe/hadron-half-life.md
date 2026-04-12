@@ -14,7 +14,7 @@ has beta-decay half-life
 
 $$
   t_{1/2}(p, A)
-  = 
+  \;=\;
   \frac{\ln 2}{\Gamma_\beta(p, A)}
 $$
 
@@ -37,13 +37,13 @@ The decay rate is:
 
 $$
   \Gamma_\beta(p, A)
-  = 
+  \;=\;
   \frac{|\mathcal{W}(q)|^2 \cdot \mu_0}{2\pi^3}
-   \cdot 
+  \;\cdot\;
   [2]_q
-   \cdot 
+  \;\cdot\;
   |\mathcal{M}_q|^2
-   \cdot 
+  \;\cdot\;
   f(\mathcal{Q}_q)
 $$
 
@@ -68,12 +68,12 @@ where every factor is determined by $q$:
 
    $$
      |\mathcal{M}_q|^2
-     = 
+     \;=\;
      s^2
-      \cdot 
+     \;\cdot\;
      \prod_{i=0}^{p}
      \left|
-       \frac{\hat{V}_i^{\mathrm{par}}}{\hat{V}_i^{\mathrm{dau}}}
+       \frac{\hat{V}_i^{\,\mathrm{par}}}{\hat{V}_i^{\,\mathrm{dau}}}
      \right|^2
    $$
 
@@ -92,7 +92,7 @@ where every factor is determined by $q$:
    composite link
    ([terminal resolution](#prop:terminal-resolution)),
    evaluated at $q$ using the pair Skein mass formula
-   $\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$.
+   $\mathcal{S}_{ab}(q) = (q\,\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$.
    The fifth-power Sargent rule gives $f(\mathcal{Q}_q) \propto \mathcal{Q}_q^5$
    for allowed transitions.
 
@@ -103,13 +103,13 @@ where every factor is determined by $q$:
 ## Relation to the Fermi constant
 
 The standard Fermi theory writes the decay rate as
-$\Gamma = G_F^2m_e^5/(2\pi^3) \cdot |M|^2 \cdot f(Z, Q)$.
+$\Gamma = G_F^2\,m_e^5/(2\pi^3) \cdot |M|^2 \cdot f(Z, Q)$.
 This effective-theory formula packages together two mass scales:
 
-- the **electron mass** $m_e = 3\mathbf{E}_{\times}(q) \cdot \mu_0$
+- the **electron mass** $m_e = 3\,\mathbf{E}_{\times}(q) \cdot \mu_0$
   ([building blocks](#rem:building-block-knots)), where
   $\mathbf{E}_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy;
-- the **weak scale** $v \approx 246$ GeV, via $G_F = 1/(\sqrt{2}v^2)$.
+- the **weak scale** $v \approx 246$ GeV, via $G_F = 1/(\sqrt{2}\,v^2)$.
 
 Both mass scales are determined by $q$ and the single dimensional
 unit $\mu_0$, but they arise from **different knot structures**:
@@ -120,18 +120,18 @@ is a pure number that the topology must determine.
 The combination that enters the half-life is:
 
 $$
-  G_F^2m_e^5
-  = 
-  \frac{m_e^5}{2v^4}
-  = 
-  \frac{(3\mathbf{E}_{\times})^5}{2(N_v\mathbf{E}_{\times})^4}
-   \cdot  \mu_0
-  = 
-  \frac{243\mathbf{E}_{\times}}{2N_v^4}
-   \cdot  \mu_0
+  G_F^2\,m_e^5
+  \;=\;
+  \frac{m_e^5}{2\,v^4}
+  \;=\;
+  \frac{(3\,\mathbf{E}_{\times})^5}{2\,(N_v\,\mathbf{E}_{\times})^4}
+  \;\cdot\; \mu_0
+  \;=\;
+  \frac{243\,\mathbf{E}_{\times}}{2\,N_v^4}
+  \;\cdot\; \mu_0
 $$
 
-where $N_v = v / (\mathbf{E}_{\times}\mu_0)$ is the effective crossing
+where $N_v = v / (\mathbf{E}_{\times}\,\mu_0)$ is the effective crossing
 count of the weak scale.  This is a pure function of $q$ times
 $\mu_0$ — the Fermi constant is not an independent parameter.
 
@@ -175,11 +175,11 @@ The sensitivity of the decay rate to $q$ is
 
 $$
   \frac{\partial \ln \Gamma_\beta}{\partial \ln q}
-  = 
+  \;=\;
   \frac{q^2 - 1}{q^2 + 1}
-  + 
-  5\frac{q^2 + 1}{q^2 - 1}
-   \approx  48
+  \;+\;
+  5\,\frac{q^2 + 1}{q^2 - 1}
+  \;\approx\; 48
   \quad\text{at } q = q_0.
 $$
 
@@ -201,8 +201,8 @@ The half-life formula uses:
 
 Every standard-physics constant decomposes into $q$-dependent
 factors times $\mu_0$: the electron mass
-$m_e = 3\mathbf{E}_{\times}\mu_0$, the weak scale
-$v = N_v\mathbf{E}_{\times}\mu_0$, and the fine structure constant
+$m_e = 3\,\mathbf{E}_{\times}\,\mu_0$, the weak scale
+$v = N_v\,\mathbf{E}_{\times}\,\mu_0$, and the fine structure constant
 $\alpha = q^{-1}/([9]_q \cdot [10]_q)$
 ([EM coupling projection](#prop:em-coupling-projection)).
 The fine structure constant is now fully derived from $q$ alone

@@ -5,12 +5,12 @@ $(j, K)$ modulo gauge equivalence:
 
 $$
   \mathcal{M}_{j,K}
-  = 
+  \;=\;
   \bigl\{
     \gamma \colon S^1 \to \mathcal{S}
-     \big| 
-    \delta\mathcal{E}_q[\gamma] = 0,
-    \mathrm{type}(\gamma) = K,
+    \;\big|\;
+    \delta\mathcal{E}_q[\gamma] = 0,\;
+    \mathrm{type}(\gamma) = K,\;
     \mathrm{level}(\gamma) = j
   \bigr\}
   \big/ \mathcal{G},
@@ -31,8 +31,8 @@ on this bundle is
 
 $$
   \mathcal{A}_{\mathrm{Berry}}
-  = 
-  i\langle\psi_\gamma|d|\psi_\gamma\rangle,
+  \;=\;
+  i\,\langle\psi_\gamma|\,d\,|\psi_\gamma\rangle,
 $$
 
 where $|\psi_\gamma\rangle$ is the ground state at configuration
@@ -47,9 +47,9 @@ decomposes as
 
 $$
   \mathcal{F}
-  = 
+  \;=\;
   \sum_i \mathcal{F}_i^{\mathrm{self}}
-  + 
+  \;+\;
   \sum_{i < j}
   \mathcal{F}_{ij}^{\mathrm{mutual}},
 $$
@@ -69,7 +69,7 @@ Berry phase
 
 $$
   \Phi_{\mathrm{Berry}}(\sigma_i)
-  = 
+  \;=\;
   \arg\bigl(\text{eigenvalue of } \rho_n(\sigma_i)\bigr),
 $$
 
@@ -99,8 +99,8 @@ $\mathcal{H}_q$ of the tangle:
 
 $$
   \Phi_{\mathrm{Berry}}[L]
-  = 
-  2\pi\mathcal{H}_q[L] \pmod{2\pi}.
+  \;=\;
+  2\pi\,\mathcal{H}_q[L] \pmod{2\pi}.
 $$
 
 This identifies the helicity — a hydrodynamic invariant — with
@@ -108,9 +108,9 @@ a quantum-mechanical phase, completing the triangle:
 
 $$
   \text{Knot topology (Jones polynomial)}
-  \longleftrightarrow
+  \;\longleftrightarrow\;
   \text{Fluid helicity}
-  \longleftrightarrow
+  \;\longleftrightarrow\;
   \text{Berry phase (statistics)}.
 $$
 

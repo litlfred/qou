@@ -49,7 +49,7 @@ character is visible algebraically:
 
 $$
   \mathcal{L}
-   \sim 
+  \;\sim\;
   \tfrac{1}{2}(n_+ + n_-)\bigl[(q + q^{-1}) -
   (q_{\mathrm{gold}} + q_{\mathrm{gold}}^{-1})\bigr]
 $$
@@ -76,9 +76,9 @@ thermal energy matches the Hopf binding energy per baryon:
 
 $$
   k_B T_c
-   \sim 
+  \;\sim\;
   |\mathbf{E}_{\mathrm{cross}}(\mathfrak{p})|
-   \sim 
+  \;\sim\;
   \tfrac{1}{2}(q + q^{-1}) \cdot n_{\mathrm{link}},
 $$
 
@@ -92,11 +92,11 @@ stability margin:
 
 $$
   \frac{k_B T_c}{\Lambda_{\mathrm{QCD}}}
-   \sim 
+  \;\sim\;
   \frac{q - q_{\mathrm{gold}}}{q}
-  = 
+  \;=\;
   \frac{q_0 - 0.382}{q_0}
-   \approx  0.656.
+  \;\approx\; 0.656.
 $$
 
 **The golden ratio is the deconfinement threshold.**

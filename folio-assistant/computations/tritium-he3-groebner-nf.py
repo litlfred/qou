@@ -20,8 +20,8 @@ Particle–knot dictionary (H₃(q) basis ↔ particle sector):
   │ Braid word │ Cross. │ Closure    │ Particle knot name          │
   ├────────────┼────────┼────────────┼─────────────────────────────┤
   │ 𝟏          │ 0      │ unknot K₀  │ ν   (neutrino)              │
-  │ σ₀         │ 1      │ Hopf half  │ σ₀  (Hopf gen at 0)        │
-  │ σ₁         │ 1      │ Hopf half  │ σ₁  (Hopf gen at 1)        │
+  │ σ₀         │ 1      │ Hopf half  │ H⁰  (Hopf gen at 0)        │
+  │ σ₁         │ 1      │ Hopf half  │ H¹  (Hopf gen at 1)        │
   │ σ₀σ₁       │ 2      │ Hopf link  │ L₊  (Hopf pair, positive)  │
   │ σ₁σ₀       │ 2      │ Hopf link  │ L₋  (Hopf pair, reversed)  │
   │ σ₀σ₁σ₀     │ 3      │ trefoil 3₁ │ e⁻  (electron / Δ₃)        │
@@ -88,8 +88,8 @@ mu_0 = M_E_MEV / (3 * E_CROSS)
 
 PARTICLE_KNOT = {
     ():         ("ν",   "K₀  (unknot)",       0, "neutrino sector"),
-    (0,):       ("σ₀",  "T₂,₁⁽⁰⁾ (Hopf gen)", 1, "Hopf crossing gen 0"),
-    (1,):       ("σ₁",  "T₂,₁⁽¹⁾ (Hopf gen)", 1, "Hopf crossing gen 1"),
+    (0,):       ("H⁰",  "T₂,₁⁽⁰⁾ (Hopf gen)", 1, "Hopf crossing gen 0"),
+    (1,):       ("H¹",  "T₂,₁⁽¹⁾ (Hopf gen)", 1, "Hopf crossing gen 1"),
     (0, 1):     ("L₊",  "L₂,₁  (Hopf link)",  2, "Hopf pair (positive)"),
     (1, 0):     ("L₋",  "L₂,₁' (Hopf rev)",   2, "Hopf pair (reversed)"),
     (0, 1, 0):  ("e⁻",  "T₂,₃  (trefoil 3₁)", 3, "electron (Garside Δ₃)"),
@@ -309,9 +309,9 @@ print("  Strand assignment: [𝔭=strand 0, 𝔫₁=strand 1, 𝔫₂=strand 2] 
 print("  Construction: B₃ · (pairwise crossings)")
 print("    B₃ = (σ₀σ₁⁻¹)³ — Borromean confinement braid")
 print("  Crossings (in particle knot notation):")
-print("    (𝔭, 𝔫₁)   at gen 0 → mixed: ((1+q²)/2)·σ₀ + (-q·s/2)·ν")
-print("    (𝔭, 𝔫₂)   at gen 0 → mixed: ((1+q²)/2)·σ₀ + (-q·s/2)·ν")
-print("    (𝔫₁, 𝔫₂)  at gen 1 → n-n:   q²·σ₁ + (-q·s)·ν")
+print("    (𝔭, 𝔫₁)   at gen 0 → mixed: ((1+q²)/2)·H⁰ + (-q·s/2)·ν")
+print("    (𝔭, 𝔫₂)   at gen 0 → mixed: ((1+q²)/2)·H⁰ + (-q·s/2)·ν")
+print("    (𝔫₁, 𝔫₂)  at gen 1 → n-n:   q²·H¹ + (-q·s)·ν")
 print()
 
 tritium, steps_3H = build_nucleus_nf(['u', 'd', 'd'], "³H")
@@ -343,9 +343,9 @@ print("  Strand assignment: [𝔭₁=strand 0, 𝔭₂=strand 1, 𝔫=strand 2] 
 print("  Construction: B₃ · (pairwise crossings)")
 print("    B₃ = (σ₀σ₁⁻¹)³ — Borromean confinement braid")
 print("  Crossings (in particle knot notation):")
-print("    (𝔭₁, 𝔭₂) at gen 0 → p-p: σ₀")
-print("    (𝔭₁, 𝔫)  at gen 0 → mixed: ((1+q²)/2)·σ₀ + (-q·s/2)·ν")
-print("    (𝔭₂, 𝔫)  at gen 1 → mixed: ((1+q²)/2)·σ₁ + (-q·s/2)·ν")
+print("    (𝔭₁, 𝔭₂) at gen 0 → p-p: H⁰")
+print("    (𝔭₁, 𝔫)  at gen 0 → mixed: ((1+q²)/2)·H⁰ + (-q·s/2)·ν")
+print("    (𝔭₂, 𝔫)  at gen 1 → mixed: ((1+q²)/2)·H¹ + (-q·s/2)·ν")
 print()
 
 helium3, steps_He3 = build_nucleus_nf(['u', 'u', 'd'], "³He")
@@ -713,8 +713,8 @@ for w in all_words:
 print()
 print("  READING THE TABLE:")
 print("    ν  (𝟏)         = neutrino sector (0 crossings, unknot)")
-print("    σ₀ (σ₀)       = Hopf gen 0 (𝔭–𝔫₁ or 𝔭₁–𝔭₂ link)")
-print("    σ₁ (σ₁)       = Hopf gen 1 (𝔫₁–𝔫₂ or 𝔭₂–𝔫 link)")
+print("    H⁰ (σ₀)       = Hopf gen 0 (𝔭–𝔫₁ or 𝔭₁–𝔭₂ link)")
+print("    H¹ (σ₁)       = Hopf gen 1 (𝔫₁–𝔫₂ or 𝔭₂–𝔫 link)")
 print("    L₊ (σ₀σ₁)     = Hopf pair, positive (2 crossings)")
 print("    L₋ (σ₁σ₀)     = Hopf pair, reversed (2 crossings)")
 print("    e⁻ (σ₀σ₁σ₀)   = electron / Garside Δ₃ (3 crossings, trefoil)")
@@ -1003,9 +1003,9 @@ witness = {
     "particle_knot_dictionary": {
         "1":     {"symbol": "ν",  "knot": "K₀ (unknot)", "crossings": 0,
                   "description": "neutrino sector"},
-        "s0":    {"symbol": "σ₀", "knot": "T₂,₁⁽⁰⁾ (Hopf gen)", "crossings": 1,
+        "s0":    {"symbol": "H⁰", "knot": "T₂,₁⁽⁰⁾ (Hopf gen)", "crossings": 1,
                   "description": "Hopf crossing gen 0"},
-        "s1":    {"symbol": "σ₁", "knot": "T₂,₁⁽¹⁾ (Hopf gen)", "crossings": 1,
+        "s1":    {"symbol": "H¹", "knot": "T₂,₁⁽¹⁾ (Hopf gen)", "crossings": 1,
                   "description": "Hopf crossing gen 1"},
         "s0.s1": {"symbol": "L₊", "knot": "L₂,₁ (Hopf link)", "crossings": 2,
                   "description": "Hopf pair (positive)"},

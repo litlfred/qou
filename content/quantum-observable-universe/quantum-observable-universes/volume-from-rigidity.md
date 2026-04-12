@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
 category, and let $V$ be a simple object that is
 *symplectically self-dual*: there exists an isomorphism
-$\phi \colon V \xrightarrow{ \sim } V^{\vee}$ satisfying
+$\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying
 $\phi^{\vee} = -\phi$ (alternating). The alternating condition forces
 $\mathrm{rank}(V) = 2$: the composite
 $\mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ factors through

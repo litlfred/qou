@@ -12,7 +12,7 @@ The natural Lyapunov function for the Skein-Collatz uses
 $q$ as the logarithm base:
 
 $$
-  \Phi(P)  :=  \log_q |P|.
+  \Phi(P) \;:=\; \log_q |P|.
 $$
 
 Why $q$?  Because the contraction gap is $q$ itself:
@@ -22,9 +22,9 @@ halvings, $\Phi$ decreases by
 
 $$
   |\Delta\Phi|
-  = 
+  \;=\;
   \log_q \frac{[2]_q^2}{[3]_q}
-  = 
+  \;=\;
   \log_q\!\left(1 + \frac{q}{[3]_q}\right).
 $$
 
@@ -43,9 +43,9 @@ total entropy budget to convergence is:
 
 $$
   I_{\mathrm{total}}
-  = 
+  \;=\;
   \frac{\Phi_0}{|\Delta\Phi|} \cdot 3\eta_q
-   \approx 
+  \;\approx\;
   \Phi_0 \cdot \eta_q
   \quad q\text{-bits}.
 $$
@@ -135,9 +135,9 @@ commensurate:
 
 $$
   \frac{|\Delta\Phi|}{\hbar_q}
-  = 
+  \;=\;
   \frac{\log_q([2]^2/[3])}{(q-1)/q}
-   \approx  2.9
+  \;\approx\; 2.9
   \quad\text{at } q_0.
 $$
 

@@ -33,6 +33,7 @@ from experimental_constants import (
 )
 
 HA = q - qi
+S = q**0.5 - q**(-0.5)
 Z_m = 1.0 / (q**0.5 + q**(-0.5))
 mu_0 = M_E_MEV / (3 * E_CROSS)
 ln_q = math.log(q)
@@ -137,8 +138,8 @@ def vol(M):
     return Z_m * M[0][0] + M[1][0]
 
 T_pp = T_mat(1.0, 0.0)
-T_nn = T_mat(1.0, -HA)
-T_mix = T_mat(1.0, -HA/2)
+T_nn = T_mat(q**2, -q*S)
+T_mix = T_mat((1+q**2)/2, -q*S/2)
 
 # ── Shell-level Skein polynomial ────────────────────────────────
 
@@ -247,8 +248,8 @@ def nucleon_log_skein(ordering):
         for j in range(i + 1, A):
             ti, tj = ordering[i], ordering[j]
             if ti == 'p' and tj == 'p': c, d = 1.0, 0.0
-            elif ti == 'n' and tj == 'n': c, d = 1.0, -HA
-            else: c, d = 1.0, -HA/2
+            elif ti == 'n' and tj == 'n': c, d = q**2, -q*S
+            else: c, d = (1+q**2)/2, -q*S/2
             T = T_mat(c, d)
             M = mat_mul(M, T)
         V = vol(M)

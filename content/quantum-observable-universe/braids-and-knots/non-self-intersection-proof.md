@@ -4,7 +4,7 @@ $\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \hat{\otimes} \mathcal{U}_q(\ma
 cocommutativity square
 
 $$
-  \sigma \circ \Delta  \neq  \Delta,
+  \sigma \circ \Delta \;\neq\; \Delta,
 $$
 
 where $\sigma$ is the tensor swap.  At $q = 1$ one has
@@ -23,9 +23,9 @@ $q$-deformed commutator
 
 $$
   [\hat{X}, \hat{P}]_q
-  = 
-  \hat{X}\hat{P} - q\hat{P}\hat{X}
-  = 
+  \;=\;
+  \hat{X}\hat{P} - q\,\hat{P}\hat{X}
+  \;=\;
   i\hbar_q,
 $$
 
@@ -34,9 +34,9 @@ strictly stronger
 
 $$
   \frac{1}{\lvert \varrho(s) - \varrho(t) \rvert^2}
-   \longmapsto 
+  \;\longmapsto\;
   \frac{[2]_q}{\lvert \varrho(s) - \varrho(t) \rvert^2
-  - \hbar_q^{2}},
+  - \hbar_q^{\,2}},
 $$
 
 where $[2]_q = q + q^{-1}$ is the quantum integer and

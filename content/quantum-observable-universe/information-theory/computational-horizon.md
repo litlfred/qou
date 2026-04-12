@@ -29,8 +29,8 @@ $\mathcal{H}_c \subset \mathcal{R}(L)$ such that:
    computation requires
 
    $$
-     t  \geq  \frac{c \cdot \log 3}{\mathcal{B}(q)}
-      \cdot  3^{c - c_0}
+     t \;\geq\; \frac{c \cdot \log 3}{\mathcal{B}(q)}
+     \;\cdot\; 3^{c - c_0}
    $$
 
    Planck steps whenever the surviving tree below depth $c_0$

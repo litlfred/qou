@@ -1,11 +1,11 @@
 The universal $R$-matrix
-$\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \hat{\otimes} \mathcal{U}_q(\mathfrak{su}(2))$
+$\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \;\hat{\otimes}\; \mathcal{U}_q(\mathfrak{su}(2))$
 ([quantum SU(2)](#def:quantum-su2)) satisfies the Yang--Baxter equation
 
 $$
-  \mathcal{R}_{12}\mathcal{R}_{13}\mathcal{R}_{23}
-  = 
-  \mathcal{R}_{23}\mathcal{R}_{13}\mathcal{R}_{12},
+  \mathcal{R}_{12}\,\mathcal{R}_{13}\,\mathcal{R}_{23}
+  \;=\;
+  \mathcal{R}_{23}\,\mathcal{R}_{13}\,\mathcal{R}_{12},
 $$
 
 and the braid operator $\check{R} = P \circ \mathcal{R}$ (where $P$ is

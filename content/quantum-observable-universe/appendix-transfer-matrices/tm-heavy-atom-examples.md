@@ -80,7 +80,7 @@ daughter breaks it: $N = 8 \to N' = 7$.
 **Parent** ${}^{14}\mathrm{C}(6, 8)$: 13 generators,
 $\binom{14}{2} = 91$ transfer matrix multiplications.
 
-Nucleon ordering: $[\underbrace{\mathfrak{p} \cdots \mathfrak{p}}_{6}
+Nucleon ordering: $[\underbrace{\mathfrak{p} \cdots \mathfrak{p}}_{6}\,
 \underbrace{\mathfrak{n} \cdots \mathfrak{n}}_{8}]$.
 
 At each generator $\sigma_i$, the crossings decompose into
@@ -113,7 +113,7 @@ The parent's 8-neutron shell is closed.  The Skein polynomial
 
 $$
   J_{8\mathfrak{n}}(q)
-  = 
+  \;=\;
   J_{\mathcal{N}(0,2)}(q)^4 \cdot (\text{linking factors})
 $$
 
@@ -122,11 +122,11 @@ matrix element is suppressed by:
 
 $$
   |\mathcal{M}|^2
-   \propto 
+  \;\propto\;
   \frac{1}{|J_{\mathcal{N}(0,2)}(q)|}
-   \approx 
+  \;\approx\;
   \frac{1}{q + q^{-1}}
-   \approx 
+  \;\approx\;
   \frac{1}{2.01}
 $$
 
@@ -142,9 +142,9 @@ $5730$ yr (ratio 1.17).  The 17% residual is the
 
 $$
   \frac{\Delta t_{1/2}}{t_{1/2}}
-   \approx 
+  \;\approx\;
   -5 \cdot \frac{\delta E_{\mathrm{shell}}}{Q_0}
-   \approx  -17\%
+  \;\approx\; -17\%
 $$
 
 The $n = 8$ closed sub-link provides extra parent stability,
@@ -188,11 +188,11 @@ transfer matrix multiplications).
 
 $$
   \Delta_{\mathrm{shell}}
-  = 
+  \;=\;
   \underbrace{(\log_q \tau(8) - \log_q \tau(7))}_{\text{proton: } 5.29 - 2.51 = +2.78}
-  + 
+  \;+\;
   \underbrace{(\log_q \tau(4) - \log_q \tau(5))}_{\text{neutron: } 2.19 - (-0.07) = +2.26}
-  =  +5.04
+  \;=\; +5.04
 $$
 
 The proton shell closure ($+2.78$) is the dominant correction:
@@ -202,17 +202,17 @@ the daughter gains the stability of a closed $Z = 28$ shell.
 
 $$
   \mathcal{Q}_q
-  = 
+  \;=\;
   |{-32.09 + 5.04 + (-3.37)}|
-   \times 
+  \;\times\;
   \hbar_q \cdot E_{\times} \cdot \mu_0
 $$
 
 $$
-  = 
+  \;=\;
   30.42 \times 0.0991 \times 0.1045 \times 1.630
-   \approx 
-  0.513  \text{MeV}
+  \;\approx\;
+  0.513 \;\text{MeV}
 $$
 
 $\mathcal{Q}_{\mathrm{exp}} \approx 0.318$ MeV.  Error:

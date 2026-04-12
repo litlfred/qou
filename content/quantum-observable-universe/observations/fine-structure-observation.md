@@ -5,7 +5,7 @@ alone, with no free parameters:
 
 $$
   \alpha_{\mathrm{EM}}(q)
-  = 
+  \;=\;
   \frac{q^{-1}}{[9]_q \cdot [10]_q}.
 $$
 
@@ -18,11 +18,11 @@ $q$-integers are fixed by the Descartes substrate parameter.
 
 | Quantity | QOU prediction ($q = q_0$) | CODATA 2018 |
 |----------|------------------------------|-------------|
-| $q^{-1}$ | $0.900901$ | — |
-| $[9]_q$ | $10.36404$ | — |
-| $[10]_q$ | $11.89501$ | — |
+| $q^{-1}$ | $0.900\,901$ | — |
+| $[9]_q$ | $10.364\,04$ | — |
+| $[10]_q$ | $11.895\,01$ | — |
 | $[9]_q \cdot [10]_q$ | $123.257$ | — |
-| $\alpha_{\mathrm{EM}}^{-1}$ | $\mathbf{136.84}$ | $137.035999084(21)$ |
+| $\alpha_{\mathrm{EM}}^{-1}$ | $\mathbf{136.84}$ | $137.035\,999\,084(21)$ |
 | Discrepancy | | $+0.14\%$ |
 
 The predicted value $\alpha^{-1} = 136.84$ at $q = q_0$ agrees
@@ -34,7 +34,7 @@ Conversely, fixing $\alpha^{-1} \approx 137.036$ and solving for $q$
 gives
 
 $$
-  q_{\mathrm{CODATA}} = 1.11023.
+  q_{\mathrm{CODATA}} = 1.110\,23.
 $$
 
 This is consistent with the substrate parameter determined
@@ -49,8 +49,8 @@ The coupling is sensitive to $q$:
 
 $$
   \frac{\partial \ln \alpha_{\mathrm{EM}}}{\partial \ln q}
-  =  -1 - 
-  \frac{9  q^9 [10]_q + 10  q^{10} [9]_q}
+  \;=\; -1 \;-\;
+  \frac{9 \, q^9 [10]_q + 10 \, q^{10} [9]_q}
        {[9]_q [10]_q (q - q^{-1})}.
 $$
 
@@ -64,7 +64,7 @@ window around $q_0$.
 | Observable | Predicted from $q$ | Experimental | Chapter |
 |-----------|-------------------|-------------|---------|
 | $\alpha_{\mathrm{EM}}^{-1}$ | $136.84$ | $137.036$ | §7.3 (here) |
-| $m_n / m_p$ | from Skein mass formula | $1.0013784$ | [mass comparison](#sec:mass-comparison-table) |
+| $m_n / m_p$ | from Skein mass formula | $1.001\,378\,4$ | [mass comparison](#sec:mass-comparison-table) |
 | $\tau_{1/2}$ ratios | from transfer matrix | PDG values | [half-life verification](#rem:hadron-half-life-verification) |
 
 The substrate parameter $q_0$ is overdetermined: three

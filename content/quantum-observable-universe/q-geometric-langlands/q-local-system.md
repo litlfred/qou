@@ -16,7 +16,7 @@ $\varrho \colon \mathbf{1} \to \mathbf{1}$ in $\Pi_1(X)$, the
 monodromy satisfies
 
 $$
-  \mathcal{L}_q(\varrho) = \mathrm{id} + (q - 1)\Omega_q(\varrho),
+  \mathcal{L}_q(\varrho) = \mathrm{id} + (q - 1)\,\Omega_q(\varrho),
 $$
 
 where $\Omega_q(\varrho) \in \mathrm{End}(\tau(\mathcal{L}_q))$ is the

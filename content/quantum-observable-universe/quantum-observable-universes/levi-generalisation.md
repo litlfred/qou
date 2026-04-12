@@ -5,7 +5,7 @@ conditions hold.
 
 1. *Kohn--Rossi finite-dimensionality.*
    The tangential CR complex
-   $(\Omega^{0,\bullet}_b(M), \bar\partial_b)$ has
+   $(\Omega^{0,\bullet}_b(M),\, \bar\partial_b)$ has
    finite-dimensional cohomology
    $H^{0,k}_{\bar\partial_b}(M)$ for all $k$. This replaces
    strict pseudoconvexity in ensuring analytic control over

@@ -4,8 +4,8 @@ five structural properties of the
 [main theorem](#thm:qu-to-qou) for $G = \mathrm{SU}(2)$.
 
 **Hypotheses.** From the [SU(2) QOU](#ex:qou-su2), the quantum universe
-is $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with substrate parameter $q$.  Observability holds:
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ because
+is $(\mathrm{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\, \tau)$ with substrate parameter $q$.  Observability holds:
+$\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$ because
 $\mathrm{Ad}(\mathrm{SU}(2)) \cong \mathfrak{su}(2)$ has no trivial
 sub-representation (the adjoint representation is irreducible,
 isomorphic to $V_1$).
@@ -18,11 +18,11 @@ dimension $\mathrm{rank}(\mathrm{SU}(2)) = 1$.  The geometric descent
 tower is
 
 $$
-  \mathbb{CP}^1  \longrightarrow  \mathrm{pt},
+  \mathbb{CP}^1 \;\longrightarrow\; \mathrm{pt},
 $$
 
 which terminates in $1$ step (since
-$\mathrm{Krulldim} Z(\mathrm{End}(A)) = 1$).  At each step, the
+$\mathrm{Krull\;dim}\, Z(\mathrm{End}(A)) = 1$).  At each step, the
 $G_q$-action is faithful (observability ensures strict dimension
 reduction).
 
@@ -31,9 +31,9 @@ The Yekutieli obstruction $\kappa_0 \in H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \ma
 the Hopf fibration is $c_1(\text{Hopf}) = 1$.  Under the trace map,
 
 $$
-  \kappa_0  \longmapsto  \chi(A)
-  =  \mathrm{tr}(\mathrm{id}_A)
-  =  \chi(\mathbb{CP}^1) =  2.
+  \kappa_0 \;\longmapsto\; \chi(A)
+  \;=\; \mathrm{tr}(\mathrm{id}_A)
+  \;=\; \chi(\mathbb{CP}^1) \;=\; 2.
 $$
 
 **(3) Perpetual obstruction.**
@@ -52,8 +52,8 @@ $\mathbb{CP}^1 \to \mathbb{CP}^1$ has degree $d = 1$ (the identity
 covering).  The Riemann--Hurwitz formula gives
 
 $$
-  R_{\mathrm{tot}} =  2d + |\chi(A)|
-  =  2 \cdot 1 + |2| =  4,
+  R_{\mathrm{tot}} \;=\; 2d + |\chi(A)|
+  \;=\; 2 \cdot 1 + |2| \;=\; 4,
 $$
 
 with $B = 2$ branch points (the north and south poles of $\mathbb{CP}^1 \cong S^2$), each with ramification index $e = 2$.
@@ -61,13 +61,13 @@ with $B = 2$ branch points (the north and south poles of $\mathbb{CP}^1 \cong S^
 **(5) Terminal fiber data.**
 At each branch point $p \in \{0, \infty\} \subset \mathbb{CP}^1$, the
 QOU reduces to fiber data
-$(\mathcal{O}(\mathrm{SU}(2)), \tau, q(p))$ with the involution
+$(\mathcal{O}(\mathrm{SU}(2)),\, \tau,\, q(p))$ with the involution
 
 $$
   \sigma \colon \mathbb{CP}^1
-   \hookrightarrow 
+  \;\hookrightarrow\;
   \mathrm{Ad}(\mathrm{SU}(2))
-  =  \mathfrak{su}(2).
+  \;=\; \mathfrak{su}(2).
 $$
 
 This embedding realizes $\mathbb{CP}^1 \cong S^2$ as the unit sphere in
@@ -80,7 +80,7 @@ $w \colon e_3 \mapsto -e_3$.
 
 **Conclusion.** All five properties of the
 [main theorem](#thm:qu-to-qou) are verified for $\mathrm{SU}(2)$.  The
-quantum universe $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with observability and the
+quantum universe $(\mathrm{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\, \tau)$ with observability and the
 Yekutieli lifting condition is a quantum observable universe, with
 descent terminating in $1$ step, perpetually obstructed brane tower,
 $2$ branch points on $\mathbb{CP}^1$, and fiber data governed by the

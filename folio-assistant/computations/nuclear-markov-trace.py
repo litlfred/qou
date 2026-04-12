@@ -50,8 +50,7 @@ Q_HALF = Q**0.5
 Q_HALF_INV = 1.0 / Q_HALF
 DELTA = -(Q_HALF + Q_HALF_INV)          # TL loop value
 Z_MARKOV = 1.0 / (Q_HALF + Q_HALF_INV)  # = -1/δ = Markov parameter
-SKEIN_AMP = Q_HALF - Q_HALF_INV          # q^½ - q^{-½} (for Skein L_0)
-HA = Q - Q_INV                           # Hecke amplitude q - q⁻¹
+SKEIN_AMP = Q_HALF - Q_HALF_INV
 
 
 def quantum_int(n, q=Q):
@@ -195,16 +194,16 @@ def nuclear_trace_direct(p, n, q=Q):
                 # Positive: just σ_i
                 crossing_terms = {(gen,): 1.0}
             elif ti == 'n' and tj == 'n':
-                # Negative: σ_i^{-1} = σ_i - (q - q⁻¹)
+                # Negative: σ_i^{-1} = q² σ_i - q(q^½ - q^{-½})
                 crossing_terms = {
-                    (gen,): 1.0,
-                    (): -HA
+                    (gen,): q**2,
+                    (): -q * SKEIN_AMP
                 }
             else:
-                # Mixed: ½(σ_i + σ_i^{-1}) = σ_i - ½(q - q⁻¹)
+                # Mixed: ½(σ_i + σ_i^{-1}) = ½(1 + q²) σ_i - ½ q(q^½ - q^{-½})
                 crossing_terms = {
-                    (gen,): 1.0,
-                    (): -HA / 2
+                    (gen,): 0.5 * (1 + q**2),
+                    (): -0.5 * q * SKEIN_AMP
                 }
 
             # Multiply into result: result = result × crossing
@@ -332,9 +331,9 @@ def nuclear_trace_factored(p, n, q=Q, skip_nucleon=None):
             if ti == 'p' and tj == 'p':
                 c, d = 1.0, 0.0  # σ_i
             elif ti == 'n' and tj == 'n':
-                c, d = 1.0, -HA  # σ_i - (q - q⁻¹)
+                c, d = q**2, -q * SKEIN_AMP  # q² σ_i - q·skein
             else:
-                c, d = 1.0, -HA / 2  # σ_i - ½(q - q⁻¹)
+                c, d = 0.5 * (1 + q**2), -0.5 * q * SKEIN_AMP  # mixed
 
             # Multiply (a σ_i + b) × (c σ_i + d):
             # = ac σ_i² + (ad + bc) σ_i + bd
@@ -388,11 +387,11 @@ def nuclear_trace_no_crossing(p, n, skip_nucleon, q=Q):
             if ti == 'p' and tj == 'p':
                 crossing_terms = {(gen,): 1.0}
             elif ti == 'n' and tj == 'n':
-                crossing_terms = {(gen,): 1.0, (): -HA}
+                crossing_terms = {(gen,): q**2, (): -q * SKEIN_AMP}
             else:
                 crossing_terms = {
-                    (gen,): 1.0,
-                    (): -HA / 2
+                    (gen,): 0.5 * (1 + q**2),
+                    (): -0.5 * q * SKEIN_AMP
                 }
 
             new_result = {}
@@ -599,7 +598,6 @@ def compute_all():
             'delta_TL': DELTA,
             'z_markov': Z_MARKOV,
             'skein_amplitude': SKEIN_AMP,
-            'hecke_amplitude': HA,
         },
         'results': results,
     }

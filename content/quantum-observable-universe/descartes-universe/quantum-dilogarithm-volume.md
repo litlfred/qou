@@ -6,21 +6,15 @@ $A$.  The **physical energy** is not the product itself but its
 
 **Three volumes of a knot.**
 
-| Volume | Formula | Ring | Scaling | Used for |
-|--------|---------|------|---------|----------|
-| Algebraic | $\mathrm{Vol}_q = \prod \hat{V}_i$ | $\mathbb{Z}[q^{1/2}, q^{-1/2}]$ | $O(A)$ factors | **Universal (specialises to all others)** |
-| Hyperbolic | $\text{Vol}(S^3 \setminus K)$ | $\mathbb{R}$ | $O(1)$ per knot | Single-particle mass |
-| Hecke weight | $\sum \lVert c_w\rVert \cdot \ell(w)$ | $\mathbb{Z}$ | $O(e^A)$ | Gröbner--Shirshov energy |
-| Quantum dilogarithm | $\Phi_q = \sum_i \log \lvert\hat{V}_i\rvert$ | $\mathbb{R}$ | $O(A)$ | **Nuclear binding energy** |
+| Volume | Formula | Scaling | Used for |
+|--------|---------|---------|----------|
+| Hyperbolic | $\text{Vol}(S^3 \setminus K)$ | $O(1)$ per knot | Single-particle mass |
+| Hecke weight | $\sum \lVert c_w\rVert \cdot \ell(w)$ | $O(e^A)$ | Gröbner--Shirshov energy (algebraic) |
+| Quantum dilogarithm | $\Phi_q(z) = \sum_i \log \hat{V}_i$ | $O(A)$ | **Nuclear binding energy** |
 
-The **algebraic quantum volume**
-([algebraic quantum volume](#def:algebraic-quantum-volume))
-$\mathrm{Vol}_q = \prod \hat{V}_i$ is the fundamental object in
-$\mathbb{Z}[q^{1/2}, q^{-1/2}]$.  The quantum dilogarithm
-$\Phi_q = \ln\lvert\mathrm{Vol}_{q_0}\rvert$ is its archimedean
-shadow.  The hyperbolic volume is recovered via the Habiro ring
-specialisation at roots of unity
-([specialisation](#prop:algebraic-volume-specialization)).
+The hyperbolic volume is the classical ($q \to 1$) limit of
+$\Phi_q$.  The Hecke weight is the exponential of $\Phi_q$.  The
+quantum dilogarithm $\Phi_q$ is the intensive, physical volume.
 
 **Proposition.**
 The nuclear binding energy is the quantum dilogarithm volume
@@ -28,7 +22,7 @@ of the Markov trace, normalised by $\hbar_q^2$:
 
 $$
   \mathbf{E}_{\mathrm{bind}}(p, n)
-  = 
+  \;=\;
   \frac{\Phi_q(\mathcal{N}(Z, N))}{\hbar_q^2}
 $$
 
@@ -37,9 +31,9 @@ Markov trace product:
 
 $$
   \Phi_q(\mathcal{N}(Z, N))
-   := 
+  \;:=\;
   \sum_{i=0}^{A-2} \log |z \cdot a_i + b_i|
-  = 
+  \;=\;
   \log \prod_{i=0}^{A-2} |\hat{V}_i|.
 $$
 
@@ -73,9 +67,9 @@ The $Q$-value for the transition $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!
 
 $$
   Q_\beta
-  = 
+  \;=\;
   \frac{\Phi_q^{\mathrm{par}} - \Phi_q^{\mathrm{dau}}}{\hbar_q^2}
-  = 
+  \;=\;
   \frac{1}{\hbar_q^2}
   \sum_{i=0}^{p}
   \log \left|
@@ -94,12 +88,12 @@ golden rule:
 
 $$
   t_{1/2}
-  = 
-  \frac{\ln 2 \cdot 2N_v^4}{243\mathbf{E}_{\times} \cdot \mu_0}
-   \cdot 
-  \frac{1}{[2]_q  \cdot  s^2
-     \cdot  f(Z_d, \mathcal{Q}_q)}
-   \cdot 
+  \;=\;
+  \frac{\ln 2 \cdot 2\,N_v^4}{243\,\mathbf{E}_{\times} \cdot \mu_0}
+  \;\cdot\;
+  \frac{1}{[2]_q \;\cdot\; s^2
+    \;\cdot\; f(Z_d, \mathcal{Q}_q)}
+  \;\cdot\;
   \prod_{i=0}^{p}
   \left|
     \frac{\hat{V}_i^{\mathrm{dau}}}{\hat{V}_i^{\mathrm{par}}}
@@ -109,8 +103,8 @@ $$
 where $s = q^{1/2} - q^{-1/2}$,
 $\mathbf{E}_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
 dimensional scale, and $N_v$ is the effective crossing count
-of the weak scale ($v = N_v\mathbf{E}_{\times}\mu_0$).
-The prefactor replaces $G_F^2m_e^5/(2\pi^3)$
+of the weak scale ($v = N_v\,\mathbf{E}_{\times}\,\mu_0$).
+The prefactor replaces $G_F^2\,m_e^5/(2\pi^3)$
 ([hadron half-life](#prop:hadron-half-life)).
 Every quantity is determined by the Iwahori--Hecke algebra computation
 at $q$, plus $\mu_0$ (unit choice) and $N_v$ (topological

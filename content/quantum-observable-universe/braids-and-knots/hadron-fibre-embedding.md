@@ -5,9 +5,9 @@ knot bundle over a point $p \in \mathbb{P}(V)$
 embedding** is a morphism
 
 $$
-  \iota_p  \colon 
+  \iota_p \;\colon\;
   \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}
-   \longrightarrow 
+  \;\longrightarrow\;
   \mathcal{S}_p
 $$
 
@@ -27,7 +27,7 @@ satisfying the following conditions:
    finite Mobius energy bound:
 
    $$
-     \mathcal{E}_{\mathrm{Mob}}(\iota_p)  <  \infty,
+     \mathcal{E}_{\mathrm{Mob}}(\iota_p) \;<\; \infty,
    $$
 
    which prevents the knot complement from developing cusps that

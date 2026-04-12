@@ -24,7 +24,7 @@ the chiral fiber at that value of $q$.
 
 **Transport equations.**
 The $q$-connection
-$\nabla_q = q^{-1}\nabla + (1 - q^{-1})(\iota_\xi\nabla) \theta_A$
+$\nabla_q = q^{-1}\,\nabla + (1 - q^{-1})\,(\iota_\xi\,\nabla)\, \theta_A$
 has coefficients that depend continuously on $q$.  As $q$ decreases
 from $q_0$ to $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$,
 the connection weight shifts:
@@ -47,10 +47,10 @@ other diverges.  The parallelogram $\Pi(q)$ is stretched without
 bound in one direction:
 
 $$
-  \Pi(q) \xrightarrow{q \to q_{\mathrm{gold}}}
-   \text{infinite strip}
-  \xrightarrow{ \text{pinch}}
-   \text{node}.
+  \Pi(q) \;\xrightarrow{\;q \to q_{\mathrm{gold}}\;}
+  \;\text{infinite strip}
+  \;\xrightarrow{\;\text{pinch}\;}
+  \;\text{node}.
 $$
 
 The golden-ratio diagonal, which at $q = q_0$ encoded a finite

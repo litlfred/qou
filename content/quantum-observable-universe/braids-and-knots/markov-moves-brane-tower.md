@@ -25,7 +25,7 @@ cosimplicial structure
    ([recursive brane tower](#def:recursive-brane-tower)).  In the weight
    decomposition, this is the non-zero-weight (vertical) component
    $\alpha_V$: moving between levels of the tower.  The Markov property
-   $\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
+   $\mathrm{tr}_M(x\, T_n^{\pm 1}) = z^{\pm 1}\,\mathrm{tr}_M(x)$
    ensures the trace scales predictably under these vertical inclusions.
 
 The Iwahori--Hecke algebra tower $H_1(q) \hookrightarrow H_2(q) \hookrightarrow \cdots$ thus shadows the brane tower
@@ -36,7 +36,7 @@ generate all equivalences between braid representatives of the same
 link --- is the statement that horizontal and vertical moves together
 exhaust the gauge freedom of the cosimplicial crossed groupoid.  The
 direct limit
-$\mathcal{A}_\infty = \varinjlim\mathrm{End}_{\mathbf{C}}(A_n)$
+$\mathcal{A}_\infty = \varinjlim\,\mathrm{End}_{\mathbf{C}}(A_n)$
 ([direct limit algebra](#def:direct-limit-algebra)) is the algebraic
 receptacle for this invariance: it is the algebra on which the Markov
 trace stabilises to a well-defined link invariant.

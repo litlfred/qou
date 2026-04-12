@@ -1,12 +1,12 @@
 **Existing data sets.**
 
-- **CODATA 2018** (NIST): $\alpha^{-1} \approx 137.035999084(21)$,
+- **CODATA 2018** (NIST): $\alpha^{-1} \approx 137.035\,999\,084(21)$,
   relative uncertainty $1.5 \times 10^{-10}$.  Determined from
   electron $g - 2$ combined with QED calculations to tenth order.
 - **Cs-133 recoil** (Parker et al., 2018):
-  $\alpha^{-1} \approx 137.035999046(27)$, independent of $g - 2$.
+  $\alpha^{-1} \approx 137.035\,999\,046(27)$, independent of $g - 2$.
 - **Rb-87 recoil** (Morel et al., 2020):
-  $\alpha^{-1} \approx 137.035999206(11)$, the most precise
+  $\alpha^{-1} \approx 137.035\,999\,206(11)$, the most precise
   determination to date.
 
 **Sensitivity to $q$.**

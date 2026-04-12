@@ -4,8 +4,8 @@ fibre functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$.
 Then the coend
 
 $$
-  H =  \mathrm{End}^{\otimes}(\tau)
-  =  \int^{X \in \mathbf{C}}
+  H \;=\; \mathrm{End}^{\otimes}(\tau)
+  \;=\; \int^{X \in \mathbf{C}}
   \tau(X)^{\vee} \otimes_R \tau(X)
 $$
 

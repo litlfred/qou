@@ -27,7 +27,8 @@ from q_parameter import (Q as q, Q_INV as qi, S_SKEIN as s_amp,
                          E_CROSS, TWO_Q, HBAR_Q_SQ)
 
 # ── Parameters (Skein convention) ────────────────────────────────
-HA = q - qi                        # Hecke amplitude q - q⁻¹
+HA = q - qi
+S = q**0.5 - q**(-0.5)
 Z = 1.0 / (q**0.5 + q**(-0.5))
 
 # Crossing coefficients (from Skein relation: σ⁻¹ = q²σ - qs)
@@ -37,9 +38,9 @@ def crossing_coeffs(ti, tj):
     if ti == 'p' and tj == 'p':
         return 1.0, 0.0
     elif ti == 'n' and tj == 'n':
-        return 1.0, -HA
+        return q**2, -q * S
     else:  # mixed
-        return 1.0, -HA / 2
+        return 0.5 * (1 + q**2), -0.5 * q * S
 
 # 2×2 matrix ops
 def mat_mul(A, B):
@@ -100,7 +101,7 @@ def skein_polynomial(p, n, ordering=None):
 # ── All 6 nuclei ────────────────────────────────────────────────
 
 print(f"All 6 nuclei: Skein polynomial from transfer matrix chain")
-print(f"q = {q:.10f}, ha = {HA:.10f}, z = {Z:.10f}")
+print(f"q = {q:.10f}, ha = {HA:.10f}, s = {S:.10f}, z = {Z:.10f}")
 print(f"E_× = {E_CROSS:.6f}, μ₀ = {0.511/(3*E_CROSS):.6f} MeV")
 print()
 
@@ -274,7 +275,7 @@ witness = {
     "computation": "all-nuclei-transfer-matrix",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "description": "Skein polynomial from 2×2 transfer matrix chain for all 6 nuclei",
-    "parameters": {"q": q, "HA": HA, "Z": Z, "E_cross": E_CROSS,
+    "parameters": {"q": q, "HA": HA, "S": S, "Z": Z, "E_cross": E_CROSS,
                     "mu_0": mu_0, "alpha_em": alpha_em},
     "results": results,
 }

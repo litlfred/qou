@@ -8,8 +8,8 @@ $\beta \in B_n$.  The **$q$-angular momentum** is defined by the
 $q$-Casimir operator $C_q$ of $\mathrm{SU}_q(2)$:
 
 $$
-  J_q^2(K) =  [j]_q  [j+1]_q
-  =  \frac{q^j - q^{-j}}{q - q^{-1}} \cdot
+  J_q^2(K) \;=\; [j]_q \, [j+1]_q
+  \;=\; \frac{q^j - q^{-j}}{q - q^{-1}} \cdot
         \frac{q^{j+1} - q^{-(j+1)}}{q - q^{-1}}
 $$
 
@@ -26,7 +26,7 @@ The generators $J_+, J_-, J_z$ of $\mathrm{SU}_q(2)$ satisfy:
 $$
   [J_z, J_{\pm}] = \pm J_{\pm}, \qquad
   [J_+, J_-] = [2 J_z]_q
-  =  \frac{q^{2J_z} - q^{-2J_z}}{q - q^{-1}}
+  \;=\; \frac{q^{2J_z} - q^{-2J_z}}{q - q^{-1}}
 $$
 
 This differs from the classical $[J_+, J_-] = 2J_z$ by

@@ -28,14 +28,14 @@ logarithmic derivative with respect to $\ln q$ is
 
 $$
   \frac{\partial \ln \Gamma_\beta}{\partial \ln q}
-  = 
+  \;=\;
   \frac{q^2 - 1}{q^2 + 1}
-  + 
-  5\frac{q^2 + 1}{q^2 - 1},
+  \;+\;
+  5\,\frac{q^2 + 1}{q^2 - 1},
 $$
 
 where the first term comes from $\partial_{\ln q}\ln(q + q^{-1})$
-and the second from $5\partial_{\ln q}\ln(q - q^{-1})$.  This
+and the second from $5\,\partial_{\ln q}\ln(q - q^{-1})$.  This
 evaluates to $\approx 48$ at $q = q_0$, confirming that nuclear
 half-lives are exquisitely sensitive to $q$: a $1\%$ shift in $q$
 changes decay rates by $\sim 50\%$.  This extreme sensitivity is why

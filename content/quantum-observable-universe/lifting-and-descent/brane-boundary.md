@@ -8,9 +8,9 @@ $r_n \colon A_n \to A_{n-1}$ has non-trivial kernel:
 
 $$
   \partial A_n
-  = 
-  \bigl\{ S \hookrightarrow A_n \bigm|
-    \ker(r_n|_S) \neq 0 \bigr\}.
+  \;=\;
+  \bigl\{\, S \hookrightarrow A_n \;\bigm|\;
+    \ker(r_n|_S) \neq 0 \,\bigr\}.
 $$
 
 In the archimedean realisation,

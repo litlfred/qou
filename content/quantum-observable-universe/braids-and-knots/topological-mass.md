@@ -16,15 +16,15 @@ descent involution $\hat{\tau}_n$
 ```tex
 \begin{equation}\label{eq:topological-mass-decomp}
   \mathfrak{m}(\varrho)
-  = 
-  \bigl\lVert
+  \;=\;
+  \bigl\lVert\,
   \mathrm{tr}_{\mathrm{desc}}(\varrho)
-  \bigr\rVert
-  + 
+  \,\bigr\rVert
+  \;+\;
   \sum_{i=1}^{N}
-  \bigl\lVert
-  \mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)
-  \bigr\rVert,
+  \bigl\lVert\,
+  \mathrm{tr}_{\mathrm{trans}}(\varrho,\, p_i)
+  \,\bigr\rVert,
 \end{equation}
 ```
 
@@ -33,7 +33,7 @@ where:
 1. $\mathrm{tr}_{\mathrm{desc}}(\varrho)$ is the categorical trace of
    $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$ restricted
    to the descended subalgebra
-   $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\hat{\tau}_n$
+   $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$
    ([descent eigenspaces](#prop:descent-eigenspaces)).  Since
    $\mathcal{A}^{\mathrm{desc}} \cong \mathrm{End}_{\mathbf{C}}(A_n)$
    via the ascent embedding $\ell_n$, this equals the mass of the
@@ -41,7 +41,7 @@ where:
    the Frobenius--Hopf structure along the trivial core.
 2. Each $\mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)$ is the categorical
    trace restricted to the component of the transient complement
-   $\mathcal{A}^{\mathrm{trans}} = \ker\hat{\tau}_n$ localised at the
+   $\mathcal{A}^{\mathrm{trans}} = \ker\,\hat{\tau}_n$ localised at the
    $i$-th blow-up centre $p_i$
    ([brane boundary](#def:brane-boundary)).  The localisation is
    well-defined because the kernels of $\mathfrak{d}_{n+1}$ at

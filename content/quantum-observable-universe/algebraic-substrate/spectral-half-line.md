@@ -4,7 +4,7 @@ $|\alpha_i| = q^{1/2}$ and $|q^{\rho_i}| = q^{\mathrm{Re}(\rho_i)}$,
 we obtain:
 
 $$
-\mathrm{Re}(\rho_i) = \frac{1}{2} \qquad \text{for all } \rho_i \in \mathrm{Spec}(\xi_q), i = 1, \ldots, 8
+\mathrm{Re}(\rho_i) = \frac{1}{2} \qquad \text{for all } \rho_i \in \mathrm{Spec}(\xi_q),\; i = 1, \ldots, 8
 $$
 
 All 8 fundamental modes of the Reeb spectrum lie exactly on the critical

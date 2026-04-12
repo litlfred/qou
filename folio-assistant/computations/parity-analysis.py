@@ -43,8 +43,8 @@ def shell_degree(n):
 def crossing_coeffs(ti, tj):
     pair = ti + tj
     if pair == 'pp': return (1.0, 0.0)
-    elif pair == 'nn': return (1.0, -HA)
-    else: return (1.0, -HA / 2.0)
+    elif pair == 'nn': return (Q**2, -Q * S_SK)
+    else: return ((1.0 + Q**2)/2.0, -Q * S_SK / 2.0)
 
 def generator_volumes(z, n):
     a = z+n; types = ['p']*z + ['n']*n; vols = []
@@ -185,7 +185,7 @@ def hecke_pairing_ratio():
     print(f"  √(V̂(paired)/V̂(single)²) = {math.sqrt(v_paired/v_sq):.6f}")
 
     # For nn crossing:
-    c_nn, d_nn = 1.0, -HA
+    c_nn, d_nn = Q**2, -Q * S_SK
     v_nn = z * (c_nn * HA + d_nn) + c_nn
     # T_nn² = T(c,d) · T(c,d)
     t00 = (c_nn*HA + d_nn)**2 + c_nn**2

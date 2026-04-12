@@ -11,7 +11,7 @@ of the *Leibniz triangle*:
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   A \otimes A
     \ar[r, "\mu"]
-    \ar[dr, "{\nabla \otimes 1 + 1 \otimes \nabla}"']
+    \ar[dr, "{\nabla \otimes 1 \,+\, 1 \otimes \nabla}"']
   & A \ar[d, "\nabla"]
   \\
   & A \otimes \Omega^1(A)

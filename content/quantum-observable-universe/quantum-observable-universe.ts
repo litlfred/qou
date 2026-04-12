@@ -51,7 +51,6 @@ export default paper({
 
     // ── Part III: The Descartes Universe and Observations ────────────
     chapterRef({ dir: "descartes-universe" }),               // Bring's surface, χ = −6
-    chapterRef({ dir: "particle-interactions" }),             // GB, LP, nuclear structure
     chapterRef({ dir: "observations" }),                     // Physical observations
 
     // ── q-Geometric Langlands ───────────────────────────────────────
@@ -60,7 +59,6 @@ export default paper({
     // ── Back matter ─────────────────────────────────────────────────
     chapterRef({ dir: "glossary" }),
     chapterRef({ dir: "appendix-knot-periodic-table" }),
-    chapterRef({ dir: "appendix-knot-operations" }),
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-atomic-mass-calculations" }),
     chapterRef({ dir: "index-of-definitions" }),

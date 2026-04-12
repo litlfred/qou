@@ -34,7 +34,7 @@ export default proof({
     "prop:trace-ratio-observable",
   ],
   computation: {
-    engine: "sympy",
+    engine: "hecke-engine/h9_beta",
     script: "tools/hecke-engine/src/bin/h9_beta.rs",
     witness: "tools/hecke-engine/h9_beta.witness.json",
     status: "verified",

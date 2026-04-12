@@ -1,5 +1,5 @@
 **The Madelung split.**
-Write $\psi = \sqrt{\rho}\exp(JS/\hbar_q)$ to decompose the
+Write $\psi = \sqrt{\rho}\,\exp(JS/\hbar_q)$ to decompose the
 [q-deformed Schrödinger equation](#rem:schrodinger-jet-coaction) into two
 real equations.  Setting $v = \nabla_A S$ and fluid density
 $\rho = |\psi|^2$:
@@ -9,10 +9,10 @@ $\rho = |\psi|^2$:
 
 $$
   \partial_t v + (v\cdot\nabla_A)v
-  =  -\nabla_A\!\left(\frac{\delta\mathcal{H}}{\delta\rho}\right)
-  -  \nabla_A Q_q,
+  \;=\; -\nabla_A\!\left(\frac{\delta\mathcal{H}}{\delta\rho}\right)
+  \;-\; \nabla_A Q_q,
   \qquad
-  Q_q =  -\frac{\hbar_q^2}{2}\frac{\Delta_q\sqrt{\rho}}{\sqrt{\rho}},
+  Q_q \;=\; -\frac{\hbar_q^2}{2}\,\frac{\Delta_q\sqrt{\rho}}{\sqrt{\rho}},
 $$
 
 where $Q_q$ is the $q$-deformed quantum pressure.
@@ -32,11 +32,11 @@ the vacuum is the state of maximal classical certainty.
 
 **Acoustic metric and analogue gravity.**
 Perturbations $\delta\psi$ around a background flow satisfy
-$\Box_{g_{\mathrm{ac}}}\delta\psi = 0$ with the acoustic metric
+$\Box_{g_{\mathrm{ac}}}\,\delta\psi = 0$ with the acoustic metric
 
 $$
   g_{\mathrm{ac}}
-  = 
+  \;=\;
   \frac{\rho}{c_s}
   \begin{pmatrix}
     -(c_s^2 - v^2) & -v^T \\
@@ -60,7 +60,7 @@ Fermionic modes spiral around the zeros of $\psi$, forming stable vortex
 filaments $\gamma$ whose mass is controlled by
 
 $$
-  m  \propto  \oint_\gamma \|\nabla_A q\|\cdot\|L \wedge F^+\|,
+  m \;\propto\; \oint_\gamma \|\nabla_A q\|\cdot\|L \wedge F^+\|,
 $$
 
 reproducing the [mass identity](#def:mass-identity) as a line integral of
@@ -74,7 +74,7 @@ $E_i \cong \mathbb{CP}^1$:
 - **Splitting:** a single zero resolves into multiple components
   $E_{i_1}, \ldots, E_{i_k}$; the vortex filament bifurcates and
   the mass decomposes as
-  $\sum_j \lambda_j|\Phi_q(z_{i_j})|$,
+  $\sum_j \lambda_j\,|\Phi_q(z_{i_j})|$,
   recovering the [topological decomposition](#conj:topological-decomposition-mass).
 
 - **Linking:** $E_i \cdot E_j \neq 0$ in homology if and only if the

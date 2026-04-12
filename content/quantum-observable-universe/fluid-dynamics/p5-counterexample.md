@@ -10,7 +10,7 @@ $z$-direction:
 
 $$
   v_0(x)
-  = 
+  \;=\;
   \frac{\Gamma}{2\pi}
   \left(
     \frac{(x - d/2)^\perp}{|x - d/2|^2}
@@ -62,9 +62,9 @@ $v_{\mathrm{ind}} \sim \Gamma/(2\pi d)$, which diverges as
 $d \to 0$.  Without quantum pressure to arrest the approach:
 
 $$
-  d(t) \sim \sqrt{d_0^2 - c\Gammat},
+  d(t) \sim \sqrt{d_0^2 - c\,\Gamma\,t},
   \qquad
-  T^* = d_0^2/(c\Gamma) < \infty.
+  T^* = d_0^2/(c\,\Gamma) < \infty.
 $$
 
 At $t = T^*$, the filaments collide: $d(T^*) = 0$.
@@ -101,11 +101,11 @@ at the collision locus is
 
 $$
   \kappa_2
-  = 
+  \;=\;
   \mathrm{lk}(\varrho_1, \varrho_2)
   \cdot [\mathcal{B}]
-   \in 
-  H^2(\Sigma, \mathcal{O}^{\times}_M),
+  \;\in\;
+  H^2(\Sigma,\, \mathcal{O}^{\times}_M),
 $$
 
 where $\mathrm{lk}(\varrho_1, \varrho_2)$ is the linking number
@@ -125,7 +125,7 @@ collision point $p \in \Sigma$ satisfies
 
 $$
   H^1_{\mathfrak{m}_1}(A_p)
-   \cong 
+  \;\cong\;
   V_{1/2} \oplus V_{1/2},
 $$
 
@@ -144,10 +144,10 @@ that the velocity field cannot be extended smoothly across $p$.
 $$
   \boxed{
     \bigl(
-      v_0^{\mathrm{anti-par}},
-      T^* = d_0^2/(c\Gamma),
-      \Sigma = \text{line segment},
-      n^* = 2,
+      v_0^{\mathrm{anti-par}},\;
+      T^* = d_0^2/(c\Gamma),\;
+      \Sigma = \text{line segment},\;
+      n^* = 2,\;
       \kappa_2 = \mathrm{lk} \cdot [\mathcal{B}]
     \bigr)
   }

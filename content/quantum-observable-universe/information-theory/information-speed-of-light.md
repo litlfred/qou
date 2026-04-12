@@ -10,10 +10,10 @@ The archimedean $q$-connection
 into horizontal (spatial) and vertical (Reeb/temporal) components:
 
 $$
-  A_q =  q^{-1}A
-  +  (1 - q^{-1})\iota_\xi A\theta
-  =  q^{-1}A
-  +  \hbar_q\iota_\xi A\theta.
+  A_q \;=\; q^{-1}\,A
+  \;+\; (1 - q^{-1})\,\iota_\xi A\;\theta
+  \;=\; q^{-1}\,A
+  \;+\; \hbar_q\,\iota_\xi A\;\theta.
 $$
 
 The weight $q^{-1}$ controls horizontal information transfer
@@ -29,14 +29,14 @@ spatial coupling weight to the temporal coupling weight of the
 $q$-connection:
 
 $$
-  c_q  :=  \frac{q^{-1}}{\hbar_q}
-  =  \frac{q^{-1}}{1 - q^{-1}}
-  =  \frac{1}{q - 1}.
+  c_q \;:=\; \frac{q^{-1}}{\hbar_q}
+  \;=\; \frac{q^{-1}}{1 - q^{-1}}
+  \;=\; \frac{1}{q - 1}.
 $$
 
 This is the contact affine coordinate
 ([contact affine chart](#def:contact-affine-chart)):
-$Z = \alpha_H / (\iota_\xi\alpha)$ evaluated on the
+$Z = \alpha_H / (\iota_\xi\,\alpha)$ evaluated on the
 $q$-connection, measuring the ratio of horizontal spatial diffusion
 to vertical quantum spin.
 
@@ -54,10 +54,10 @@ The speed of light is how many fibres of spatial information are
 correlated per unit of Reeb phase advance:
 
 $$
-  c_q =  \frac{\text{spatial coupling per step}}
+  c_q \;=\; \frac{\text{spatial coupling per step}}
                    {\text{temporal advance per step}}
-  =  \frac{q^{-1}}{\hbar_q}
-  =  \frac{1}{q - 1}.
+  \;=\; \frac{q^{-1}}{\hbar_q}
+  \;=\; \frac{1}{q - 1}.
 $$
 
 **Regime behaviour.**
@@ -66,7 +66,7 @@ $$
 |--------|-----|-------------------|----------------|
 | Deep-quantum | $q \to \infty$ | $\to 0$ | No spatial propagation; each fibre is isolated |
 | Deep quantum | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed |
-| Our universe | $q_0$ | $\approx 9.12$ | ${\sim}9$ fibres correlated per Reeb phase advance |
+| Our universe | $q_0$ | $\approx 9.12$ | ${\sim}\,9$ fibres correlated per Reeb phase advance |
 | Near-classical | $1.01$ | $100$ | Fast spatial propagation; nearly continuous |
 | Classical limit | $q \to 1^+$ | $\to \infty$ | Instantaneous spatial coupling; the $q$-connection reduces to $A$ |
 
@@ -105,10 +105,10 @@ outside the causal cone:
 
 $$
   \bigl\lVert
-    [\mathcal{O}_x(n), \mathcal{O}_y(0)]
+    [\,\mathcal{O}_x(n),\, \mathcal{O}_y(0)\,]
   \bigr\rVert
-   \leq 
-  C  e^{-\mu(d(x,y) -  n \cdot c_q \cdot \hbar_q)}
+  \;\leq\;
+  C \, e^{-\mu\,(d(x,y)\, - \, n \cdot c_q \cdot \hbar_q)}
 $$
 
 for constants $C, \mu > 0$ depending on $q$.  The causal cone
@@ -124,20 +124,20 @@ per tick) and the operational entropy per fibre
 
 $$
   \mathcal{B}(q)
-  =  c_q \cdot n_R(q) \cdot \eta_q
-  =  \frac{\eta_q}{\hbar_q \cdot (q-1)}
-  =  \frac{\eta_q}{q^{-1}(q-1)^2}
-  =  \frac{q \cdot \eta_q}{(q-1)^2}.
+  \;=\; c_q \cdot n_R(q) \cdot \eta_q
+  \;=\; \frac{\eta_q}{\hbar_q \cdot (q-1)}
+  \;=\; \frac{\eta_q}{q^{-1}(q-1)^2}
+  \;=\; \frac{q \cdot \eta_q}{(q-1)^2}.
 $$
 
 At $q = q_0$:
-$\mathcal{B} = q\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
+$\mathcal{B} = q\,\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
 
 **Comparison with information-theoretic speed limits.**
 
 | Result | Bound | QOU analog |
 |--------|-------|------------|
 | Margolus--Levitin (1998) | $\leq 2E/\pi\hbar$ ops/sec | $n_R(q) = 1/\hbar_q$ ops per Planck time |
-| Bremermann (1962) | $\leq mc^2/h$ bits/sec/kg | $\mathcal{B}(q) = q\eta_q / (q-1)^2$ bits per Planck time |
+| Bremermann (1962) | $\leq mc^2/h$ bits/sec/kg | $\mathcal{B}(q) = q\,\eta_q / (q-1)^2$ bits per Planck time |
 | Bekenstein (1981) | $S \leq 2\pi RE / \hbar c$ | Fibre entropy $\leq \eta_q$ per operation |
 | Pawlowski (2009) | No-signaling from information causality | Lieb--Robinson decay outside $\lvert Z\rvert = c_q$ cone |

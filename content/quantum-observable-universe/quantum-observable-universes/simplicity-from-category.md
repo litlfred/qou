@@ -6,13 +6,13 @@ chain
 
 $$
   \text{volume constraint}
-  \xRightarrow{\text{Tannaka}}
+  \;\xRightarrow{\text{Tannaka}}\;
   G_q = \mathrm{SU}_q(2)
-  \xRightarrow{\mathrm{INN}}
+  \;\xRightarrow{\mathrm{INN}}\;
   F_A = B
-  \xRightarrow{*\text{-structure}}
+  \;\xRightarrow{*\text{-structure}}\;
   B = F_A^+
-  \Longrightarrow
+  \;\Longrightarrow\;
   F_A^- = 0
 $$
 

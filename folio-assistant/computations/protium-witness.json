@@ -1,7 +1,7 @@
 {
   "computation": "protium-witness",
-  "timestamp": "2026-04-07T14:55:21.448864+00:00",
-  "commit_sha": "01db6d7d920ddde128c0aeddda8e6be4ebaa4661",
+  "timestamp": "2026-04-06T11:16:01.352188+00:00",
+  "commit_sha": "143e26c382cfc285a9d443fecfb1597eaeb04e44",
   "q": 1.1099785955541805,
   "definitions": {
     "u0": "T_{2,1}(u_r) at sigma_0 \u2014 leading up quark crossing (degree 0)",
@@ -12,7 +12,7 @@
     "terms": [
       {
         "sign": "+",
-        "coefficient": 0.009336913072779455,
+        "coefficient": 0.011754453560091006,
         "word": "\u03c3_2",
         "length": 1,
         "named": "\u03c3_2",
@@ -22,7 +22,7 @@
       },
       {
         "sign": "\u2212",
-        "coefficient": -0.04320778758182197,
+        "coefficient": -0.053033613548850445,
         "word": "\u03c3_0 \u00b7 \u03c3_2",
         "length": 2,
         "named": "\u03c3_0 \u00b7 \u03c3_2",
@@ -32,7 +32,7 @@
       },
       {
         "sign": "+",
-        "coefficient": 0.03768139332505545,
+        "coefficient": 0.04976895303691108,
         "word": "\u03c3_1 \u00b7 \u03c3_2",
         "length": 2,
         "named": "\ud835\udd25\u2081",
@@ -42,7 +42,7 @@
       },
       {
         "sign": "\u2212",
-        "coefficient": -0.10122109480149175,
+        "coefficient": -0.06280612740113559,
         "word": "\u03c3_0 \u00b7 \u03c3_1 \u00b7 \u03c3_2",
         "length": 3,
         "named": "\ud835\udd32\u2080 \u00b7 \ud835\udd25\u2081",
@@ -52,7 +52,7 @@
       },
       {
         "sign": "+",
-        "coefficient": 0.09032075080559145,
+        "coefficient": 0.18093078511965482,
         "word": "\u03c3_1 \u00b7 \u03c3_0 \u00b7 \u03c3_2",
         "length": 3,
         "named": "YB(\ud835\udd32\u2080 \u00b7 \ud835\udd25\u2081)",
@@ -62,7 +62,7 @@
       },
       {
         "sign": "+",
-        "coefficient": 1.0184049268677813,
+        "coefficient": 1.281995658283128,
         "word": "\u03c3_0 \u00b7 \u03c3_1 \u00b7 \u03c3_0 \u00b7 \u03c3_2",
         "length": 4,
         "named": "B\u2083(u_r, u_g, d_b) \u22c8 T_{2,1}(e\u207b)",
@@ -71,9 +71,9 @@
         "degree": "0"
       }
     ],
-    "net": 1.0113151016878938,
-    "markov_trace_4strand": 0.06523219681227141,
-    "hecke_energy": 1.2900273559685744,
+    "net": 1.4086101090497989,
+    "markov_trace_4strand": 0.09945069171461636,
+    "hecke_energy": 1.3446259561979212,
     "hecke_steps": 32,
     "yb_steps": 10
   },
@@ -81,7 +81,7 @@
     "input_slots": [
       {
         "sign": "+",
-        "coefficient": 0.03768139332505545,
+        "coefficient": 0.04976895303691108,
         "word": "\u03c3_1 \u00b7 \u03c3_2",
         "length": 2,
         "named": "\ud835\udd25\u2081",
@@ -91,7 +91,7 @@
       },
       {
         "sign": "\u2212",
-        "coefficient": -0.10122109480149175,
+        "coefficient": -0.06280612740113559,
         "word": "\u03c3_0 \u00b7 \u03c3_1 \u00b7 \u03c3_2",
         "length": 3,
         "named": "\ud835\udd32\u2080 \u00b7 \ud835\udd25\u2081",
@@ -103,7 +103,7 @@
     "mediator": [
       {
         "sign": "+",
-        "coefficient": 0.09032075080559145,
+        "coefficient": 0.18093078511965482,
         "word": "\u03c3_1 \u00b7 \u03c3_0 \u00b7 \u03c3_2",
         "length": 3,
         "named": "YB(\ud835\udd32\u2080 \u00b7 \ud835\udd25\u2081)",
@@ -115,7 +115,7 @@
     "observable": [
       {
         "sign": "+",
-        "coefficient": 1.0184049268677813,
+        "coefficient": 1.281995658283128,
         "word": "\u03c3_0 \u00b7 \u03c3_1 \u00b7 \u03c3_0 \u00b7 \u03c3_2",
         "length": 4,
         "named": "B\u2083(u_r, u_g, d_b) \u22c8 T_{2,1}(e\u207b)",
@@ -151,7 +151,7 @@
       "gen": "\u03c3_0",
       "hecke_steps": 2,
       "yb_steps": 0,
-      "hecke_energy": 0.2177807497584912
+      "hecke_energy": 0.24304903157920504
     },
     {
       "crossing": "(1,2)",
@@ -160,7 +160,7 @@
       "gen": "\u03c3_1",
       "hecke_steps": 3,
       "yb_steps": 2,
-      "hecke_energy": 0.011488568142714907
+      "hecke_energy": 0.014335351762453784
     },
     {
       "crossing": "(0,3)",
@@ -169,7 +169,7 @@
       "gen": "\u03c3_0",
       "hecke_steps": 3,
       "yb_steps": 0,
-      "hecke_energy": 0.018454615098917965
+      "hecke_energy": 0.02343558480541528
     },
     {
       "crossing": "(1,3)",
@@ -178,7 +178,7 @@
       "gen": "\u03c3_1",
       "hecke_steps": 3,
       "yb_steps": 2,
-      "hecke_energy": 0.029867497283497406
+      "hecke_energy": 0.05137006236589394
     },
     {
       "crossing": "(2,3)",

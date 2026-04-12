@@ -20,8 +20,8 @@ on $\mathbb{CP}^1$, the connecting homomorphism gives
 
 $$
   H^1(\mathbb{CP}^1, \mathcal{O}^{\times})
-  \xrightarrow{c_1}
-  H^2(\mathbb{CP}^1, \mathbb{Z})  \cong  \mathbb{Z}.
+  \;\xrightarrow{\;c_1\;}\;
+  H^2(\mathbb{CP}^1, \mathbb{Z}) \;\cong\; \mathbb{Z}.
 $$
 
 The obstruction to lifting a line bundle $L$ on $\mathbb{CP}^1$ to the

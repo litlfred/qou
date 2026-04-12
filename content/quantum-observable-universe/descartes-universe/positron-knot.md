@@ -2,7 +2,7 @@ The **positron** is the mirror trefoil $T_{2,3}^{\sigma}$ in the
 lepton sector — the antiparticle of the electron.
 
 $$
-  e^+ =  T_{2,3}^{\sigma} \qquad \text{(mirror trefoil, outlined ○)}
+  e^+ \;=\; T_{2,3}^{\sigma} \qquad \text{(mirror trefoil, outlined ○)}
 $$
 
 The positron is the same knot as the down quark, distinguished

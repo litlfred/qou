@@ -9,7 +9,7 @@ universality** directly from the Iwahori--Hecke algebra structure.
 
 Let $T_{3,5} = (\sigma_0 \sigma_1)^5$ be the weak vertex in
 $H_3(q)$, and let $f(x)$ denote the phase-space factor for
-$\tau \to \ell  \bar\nu_\ell  \nu_\tau$ with
+$\tau \to \ell \, \bar\nu_\ell \, \nu_\tau$ with
 $x = (m_\ell / m_\tau)^2$:
 
 $$
@@ -20,9 +20,9 @@ $$
 Then the ratio of leptonic branching fractions is
 
 $$
-  \frac{\mathrm{BR}(\tau \to e\bar\nu_e\nu_\tau)}
-       {\mathrm{BR}(\tau \to \mu\bar\nu_\mu\nu_\tau)}
-  = 
+  \frac{\mathrm{BR}(\tau \to e\,\bar\nu_e\,\nu_\tau)}
+       {\mathrm{BR}(\tau \to \mu\,\bar\nu_\mu\,\nu_\tau)}
+  \;=\;
   \frac{|\mathcal{M}_e|^2 \cdot f(m_e^2/m_\tau^2)}
        {|\mathcal{M}_\mu|^2 \cdot f(m_\mu^2/m_\tau^2)}.
 $$
@@ -32,9 +32,9 @@ is the universal matrix element:
 
 $$
   |\mathcal{M}_e|^2
-  = 
+  \;=\;
   |\mathcal{M}_\mu|^2
-  = 
+  \;=\;
   \bigl|\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})\bigr|^2,
 $$
 
@@ -43,7 +43,7 @@ ratio reduces to the **pure phase-space ratio**:
 
 $$
   \frac{\mathrm{BR}(\tau \to e)}{\mathrm{BR}(\tau \to \mu)}
-  = 
+  \;=\;
   \frac{f(m_e^2 / m_\tau^2)}{f(m_\mu^2 / m_\tau^2)}.
 $$
 
@@ -64,10 +64,10 @@ neutrinos ($\nu = \mathbf{1}$) are produced as separate link
 components.  The transition amplitude therefore **factorises**:
 
 $$
-  \mathcal{M}(\tau \to \ell\bar\nu\nu_\tau)
-  = 
+  \mathcal{M}(\tau \to \ell\,\bar\nu\,\nu_\tau)
+  \;=\;
   \mathrm{tr}_{\mathrm{Markov}}(T_{3,5})
-   \times 
+  \;\times\;
   (\text{kinematic factors depending on } m_\ell).
 $$
 

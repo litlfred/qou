@@ -10,9 +10,9 @@ Then:*
    factors as*
 
 $$
-  P_{\mathrm{flip}}(q; k_1, k_2)
-  = 
-  c_{k_1 k_2}(q)  \cdot  \Phi(q)
+  P_{\mathrm{flip}}(q;\, k_1, k_2)
+  \;=\;
+  c_{k_1 k_2}(q) \;\cdot\; \Phi(q)
 $$
 
 *where $c_{k_1 k_2}$ is the crossing coefficient of the
@@ -22,19 +22,19 @@ of the control types:*
 
 $$
   \Phi(q)
-  = 
+  \;=\;
   \frac{
-    (q - 1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1)
+    (q - 1)\,(q^{3/2} + q^{1/2} - 1)\,(q^{3/2} + q + 1)
   }{
-    2(q + 1)^2
+    2\,(q + 1)^2
   }
 $$
 
-| Control pair | $c_{k_1 k_2}$ | $d_{k_1 k_2}$ |
-|:------------:|:--------------:|:--------------:|
-| $\mathfrak{p}\mathfrak{p}$ | $1$ | $0$ |
-| mixed | $1$ | $-\frac{q - q^{-1}}{2}$ |
-| $\mathfrak{n}\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ |
+| Control pair | $c_{k_1 k_2}$ | Weight |
+|:------------:|:--------------:|:------:|
+| $\mathfrak{p}\mathfrak{p}$ | $1$ | unit |
+| mixed | $\frac{1 + q^2}{2}$ | middle |
+| $\mathfrak{n}\mathfrak{n}$ | $q^2$ | heaviest |
 
 2. **(Single-crossing type-blindness.)** *At generator
    $\sigma_1$ (one crossing), the traced volume
@@ -91,14 +91,18 @@ $$
 
 $$
   \hat{V}_1^{(\mathrm{mix})}
-  = z \cdot 1 - \tfrac{q - q^{-1}}{2}
-  = z - \tfrac{q - q^{-1}}{2}
+  = z \cdot \tfrac{1+q^2}{2} - \tfrac{qs}{2}
+  = \frac{(1+q^2)}{2(q^{1/2}+q^{-1/2})}
+    - \frac{q(q^{1/2}-q^{-1/2})}{2}
+  = z
 $$
 
 $$
   \hat{V}_1^{(nn)}
-  = z \cdot 1 - (q - q^{-1})
-  = z - (q - q^{-1})
+  = z \cdot q^2 - qs
+  = \frac{q^2}{q^{1/2}+q^{-1/2}}
+    - q(q^{1/2}-q^{-1/2})
+  = z
 $$
 
 All three equal $z$.  (Algebraically:
@@ -140,19 +144,17 @@ give:
 | Target | Control pair | $c$ | Amplitude |
 |:------:|:----------:|:---:|:---------:|
 | strand $2$ | $\mathfrak{p}\mathfrak{p}$ | $1$ | $\Phi$ |
-| strand $1$ | $\mathfrak{p}\mathfrak{n}$ | $1$ | $\Phi$ |
-| strand $0$ | $\mathfrak{p}\mathfrak{n}$ | $1$ | $\Phi$ |
+| strand $1$ | $\mathfrak{p}\mathfrak{n}$ | $\frac{1+q^2}{2}$ | $\frac{1+q^2}{2}\,\Phi$ |
+| strand $0$ | $\mathfrak{p}\mathfrak{n}$ | $\frac{1+q^2}{2}$ | $\frac{1+q^2}{2}\,\Phi$ |
 
 The Toffoli selects the governor: the target with
-$c = 1$ (unit weight).  In the $(1, -(q - q^{-1}))$
-convention all crossing types share $c = 1$; the
-distinction moves to the $d$ coefficient.
+$c = 1$ (unit weight).
 
 **Antisymmetry.**  The reverse transition swaps
 parent and daughter, negating $\Delta_0$.  Hence
 $P_{6,7} = -P_{7,6}$.
 
-**Classical limit.**  At $q = 1$: $q - q^{-1} = 0$, all crossing
+**Classical limit.**  At $q = 1$: $s = 0$, all crossing
 types coincide, $\Delta_0 = 0$.  The factor $(q - 1)$
 in $\Phi$ confirms this.
 
@@ -166,8 +168,8 @@ $\square$
 | Controls | $c_{k_1 k_2}$ | $P_{\mathrm{flip}}$ | $P_{7,6}$ ratio |
 |:--------:|:-----------:|:-------------------:|:---:|
 | $\mathfrak{p}\mathfrak{p}$ | $1$ | $+0.0495$ | $1\times$ |
-| mixed | $1$ | $+0.0495$ | $1\times$ |
-| $\mathfrak{n}\mathfrak{n}$ | $1$ | $+0.0495$ | $1\times$ |
+| mixed | $1.116$ | $+0.0553$ | $1.12\times$ |
+| $\mathfrak{n}\mathfrak{n}$ | $1.232$ | $+0.0610$ | $1.23\times$ |
 
 | Entry | Symbolic | Numerical |
 |:-----:|----------|:---------:|

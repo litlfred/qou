@@ -4,5 +4,5 @@ coordinate on
 *Briggs--Klein affine chart* is the coordinate system $(w_1,w_2)$
 restricted to the open set $0<r<\infty$, equipped with the Hermitian metric
 inherited from the Fubini--Study metric on $\mathbb{P}^4$.  In this chart
-the $C_5$ action is the phase rotation $w_k\mapsto\zeta^kw_k$, and the
+the $C_5$ action is the phase rotation $w_k\mapsto\zeta^k\,w_k$, and the
 radial coordinate $r$ is $C_5$-invariant.

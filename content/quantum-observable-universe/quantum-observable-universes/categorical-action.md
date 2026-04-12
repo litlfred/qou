@@ -6,11 +6,11 @@ $\mathcal{S} \colon \mathbf{1} \to \mathbf{1}$ of the form
 ```tex
 \begin{equation}\label{eq:categorical-action}
   \mathcal{S}
-  = 
+  \;=\;
   \mathrm{ev}_A
-    \circ
+    \;\circ\;
     \bigl(\mathrm{id}_{A^\vee} \otimes \Phi\bigr)
-    \circ
+    \;\circ\;
     \mathrm{coev}_A,
 \end{equation}
 ```

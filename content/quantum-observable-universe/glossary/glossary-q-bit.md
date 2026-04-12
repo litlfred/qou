@@ -11,7 +11,7 @@ on the exceptional divisor.
 natural units, where
 
 $$
-  \eta_q =  \frac{2q - 1}{q^3}
+  \eta_q \;=\; \frac{2q - 1}{q^3}
 $$
 
 is the operational entropy

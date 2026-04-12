@@ -3,7 +3,7 @@ modes, summarised in the following table:
 
 | | **Mode 1: Massive particle** | **Mode 2: Photon (with color content)** |
 |---|---|---|
-| **Geometric identity** | $q$-harmonic form ($\Delta_q\alpha = 0$) | Color-dressed identity $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ |
+| **Geometric identity** | $q$-harmonic form ($\Delta_q\alpha = 0$) | Color-dressed identity $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ |
 | **Phase mechanism** | $q$-Laplacian cross-coupling | Color twist $q\phi$ + polarisation eigenvalues $(\varphi_0 q, -\varphi_1 q^{-1})$ |
 | **Interference formula** | $\cos^2(\Delta\Phi_q / 2)$ | $\cos^2(\Delta\Phi_q^{(\mathrm{color})} / 2)$ |
 | **Envelope** | $q$-corrected sinc${}^2$ | Julia-set measure $\mu_J$ modulated by color visibility $V_{\mathrm{color}}$ |
@@ -20,7 +20,7 @@ experiments report systematic deviations:
    attributed to Coulomb interaction with slit edges, but the
    correction is *ad hoc* and not derived from the wave equation.
    In the QOU model, the excess width arises from the spin-core term
-   $(1 - q^{-1})^2\Delta_\xi$ of the $q$-Laplacian, which adds
+   $(1 - q^{-1})^2\,\Delta_\xi$ of the $q$-Laplacian, which adds
    Reeb-direction broadening to the envelope *without free parameters*
    once $q$ is fixed by the
    [local substrate value](#prop:local-substrate-q).
@@ -67,9 +67,9 @@ widths at the same slit geometry:
 
 $$
   \frac{w_{\mathrm{photon}}}{w_{\mathrm{electron}}}
-  = 
-  \frac{d_H}{2}
-  \frac{1 + (1 - q^{-1})^2\langle\Delta_\xi\rangle_e /
+  \;=\;
+  \frac{d_H}{2}\,
+  \frac{1 + (1 - q^{-1})^2\,\langle\Delta_\xi\rangle_e /
             \langle\Delta\rangle_e}{1},
 $$
 
@@ -88,14 +88,14 @@ fringe shift acquires an $\alpha$-dependent term:
 
 $$
   \delta\Delta\Phi(\alpha)
-  = 
-  (\cos\alphaq - \sin\alphaq^{-1})
-  \hbar_q\mathrm{Vol}(K_{\mathrm{mat}})\Delta\phi_\xi.
+  \;=\;
+  (\cos\alpha\,q - \sin\alpha\,q^{-1})\,
+  \hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})\,\Delta\phi_\xi.
 $$
 
 Sweeping $\alpha$ from $0$ to $\pi/2$ traces a sinusoidal modulation of
 the fringe positions.  The amplitude of this modulation scales with
-$(q + q^{-1})\hbar_q\mathrm{Vol}(K_{\mathrm{mat}})$ and is
+$(q + q^{-1})\,\hbar_q\,\mathrm{Vol}(K_{\mathrm{mat}})$ and is
 material-dependent (different slit materials give different
 $\mathrm{Vol}(K_{\mathrm{mat}})$), while the classical birefringence
 prediction depends on refractive index.  A single apparatus with

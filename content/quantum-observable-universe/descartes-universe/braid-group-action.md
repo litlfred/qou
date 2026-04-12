@@ -17,13 +17,13 @@ the spacetime degrees of freedom collapse projectively to the ratio
 $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$.  The transposition
 $x_0\leftrightarrow x_1$ acts as the Mobius involution
 $z\mapsto 1/z$, which is a $\pi$-rotation on $\mathbb{P}^1(\mathbb{C})$ and embeds
-into $\mathrm{SU}(2)$ as $\beta=\exp(\pie_1)$.
+into $\mathrm{SU}(2)$ as $\beta=\exp(\pi\,e_1)$.
 In the resolvent basis this acts as
 
 ```tex
 \begin{equation}\label{eq:spacetime-shift}
-  w_k \longmapsto 
-  w_k+\tfrac{1}{\sqrt{5}}(1-\zeta^k)(x_1-x_0),
+  w_k\;\longmapsto\;
+  w_k+\tfrac{1}{\sqrt{5}}\,(1-\zeta^k)(x_1-x_0),
   \qquad k=1,\dots,4,
 \end{equation}
 ```
@@ -42,11 +42,11 @@ $$
   \eta_1=\frac{w_1}{w_2},\qquad\eta_2=\frac{w_3}{w_4}:
 $$
 
-$\sigma_1$ inverts both ratios $(\eta_1\mapsto\eta_1^{-1}, \eta_2\mapsto\eta_2^{-1})$, while $\sigma_2$ exchanges them
-$(\eta_1\mapsto\eta_2^{-1},\eta_2\mapsto\eta_1^{-1})$.  The
+$\sigma_1$ inverts both ratios $(\eta_1\mapsto\eta_1^{-1},\; \eta_2\mapsto\eta_2^{-1})$, while $\sigma_2$ exchanges them
+$(\eta_1\mapsto\eta_2^{-1},\;\eta_2\mapsto\eta_1^{-1})$.  The
 $2$-cycle (reflection) swaps the pairs
 $(w_1,w_4)\leftrightarrow(w_2,w_3)$; the $3$-cycle (rotation) sends
-$(\eta_1,\eta_2)\mapsto(\eta_1,\zeta^j\eta_2)$ for $j\in\{1,2,3\}$,
+$(\eta_1,\eta_2)\mapsto(\eta_1,\,\zeta^j\eta_2)$ for $j\in\{1,2,3\}$,
 permuting the three complex branches of the cubic
 constraint.  The
 $\mathrm{SU}(2)$ representation assigns the $3$-cycle to
@@ -66,9 +66,9 @@ permutation $\sigma\in S_3$ of $(x_2,x_3,x_4)$ acts as
 
 ```tex
 \begin{equation}\label{eq:coord-s3-shift}
-  w_k \longmapsto 
+  w_k\;\longmapsto\;
   w_k+\tfrac{1}{\sqrt{5}}\sum_{j=2}^{4}
-    \bigl(\zeta^{k\sigma(j)}-\zeta^{kj}\bigr)x_j,
+    \bigl(\zeta^{k\,\sigma(j)}-\zeta^{kj}\bigr)\,x_j,
 \end{equation}
 ```
 

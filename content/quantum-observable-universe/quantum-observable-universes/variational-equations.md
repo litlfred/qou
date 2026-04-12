@@ -7,8 +7,8 @@ equations are:
    *categorical Einstein equation*:
 
    $$
-     R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\mathrm{id}_A
-     =  T_q[\nabla, \psi],
+     R_{\int} - \tfrac{1}{2}\,\mathrm{tr}(R_{\int})\,\mathrm{id}_A
+     \;=\; T_q[\nabla, \psi],
    $$
 
    where $T_q$ is the stress-energy endomorphism constructed from the
@@ -19,8 +19,8 @@ equations are:
    *categorical Yang--Mills equation*:
 
    $$
-     \nabla \star_q F_\nabla + q \cdot [F_\nabla, \star_q F_\nabla]
-     =  J_\psi,
+     \nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
+     \;=\; J_\psi,
    $$
 
    where $J_\psi = \psi^* \otimes D_\nabla\psi - D_\nabla\psi^* \otimes \psi$
@@ -31,7 +31,7 @@ equations are:
    *categorical transport equation*:
 
    $$
-     D_\nabla\psi =  0.
+     D_\nabla\,\psi \;=\; 0.
    $$
 
 ```tex
@@ -40,7 +40,7 @@ equations are:
   \mathcal{S}_q \ar[r, "\delta/\delta\!\int_A"]
     \ar[d, "\delta/\delta\nabla"']
     \ar[dr, "\delta/\delta\psi"]
-  & R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\mathrm{id} = T_q \\
+  & R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\,\mathrm{id} = T_q \\
   \nabla \star_q F + q[F, \star_q F] = J_\psi
   & D_\nabla \psi = 0 \ar[from=ul, crossing over]
 \end{tikzcd}

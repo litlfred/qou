@@ -13,9 +13,9 @@ points, so the winding indices are always $(m,n)$.
 **Generator set.** The *torus knot generators* are the family
 
 $$
-  \mathcal{G} =  \bigl\{ T_{m,n}  \big| 
-  \gcd(m,n) = 1, m < n,
-  m + n \leq N(\chi) \bigr\}
+  \mathcal{G} \;=\; \bigl\{\, T_{m,n} \;\big|\;
+  \gcd(m,n) = 1,\; m < n,\;
+  m + n \leq N(\chi) \,\bigr\}
 $$
 
 where $N(\chi)$ is a cutoff determined by the Euler characteristic
@@ -44,8 +44,8 @@ under the topological mass formula
 ([topological mass formula](#prop:topological-mass-formula)) vanishes:
 
 $$
-  \mathcal{M}_{\mathrm{bare}}(T_{m,n}) = 
-  \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{2}} =  0.
+  \mathcal{M}_{\mathrm{bare}}(T_{m,n}) \;=\;
+  \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}} \;=\; 0.
 $$
 
 Mass arises *entirely* through the linking operations: Hopf linking
@@ -56,16 +56,16 @@ change.
 ([Skein generation](#prop:skein-generation)) admits a presentation
 
 $$
-  \mathcal{S}_q(\mathbf{C}) = 
-  \mathbb{Z}[q^{\pm 1}]\bigl\langle
-    \mathcal{G},
-    \mathcal{L}_{\mathrm{Hopf}},
+  \mathcal{S}_q(\mathbf{C}) \;=\;
+  \mathbb{Z}[q^{\pm 1}]\bigl\langle\,
+    \mathcal{G},\;
+    \mathcal{L}_{\mathrm{Hopf}},\;
     \ell_c
-  \bigr\rangle
+  \,\bigr\rangle
   \Big/
-  \bigl(
-    qL_+ - q^{-1}L_- - (q^{1/2} - q^{-1/2})L_0
-  \bigr)
+  \bigl(\,
+    q\,L_+ - q^{-1}L_- - (q^{1/2} - q^{-1/2})\,L_0
+  \,\bigr)
 $$
 
 where $\mathcal{G}$ is the torus knot generator set and the

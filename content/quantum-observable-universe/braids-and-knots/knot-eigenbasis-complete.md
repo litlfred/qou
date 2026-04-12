@@ -9,8 +9,8 @@ representation.  Suppose $q$ is not a root of unity.  Then:
 
    $$
      V^{\otimes n}
-      \cong 
-     \bigoplus_{\lambda \vdash n}
+     \;\cong\;
+     \bigoplus_{\lambda \,\vdash\, n}
      V_\lambda \otimes S_\lambda,
    $$
 
@@ -29,15 +29,15 @@ representation.  Suppose $q$ is not a root of unity.  Then:
 
    $$
      \{\text{knot types}\}
-      \longrightarrow 
-     \{\text{irreducible summands of } V^{\otimes n}, n \geq 1\}
+     \;\longrightarrow\;
+     \{\text{irreducible summands of } V^{\otimes n},\; n \geq 1\}
    $$
 
    given by $L \mapsto$ the summand in which $\mathrm{tr}_M(\rho_n(\beta))$
    is supported, has image containing every irreducible summand.
 3. **(Density in the physical Hilbert space.)**  In the
    archimedean realisation, the physical state space is the direct limit
-   $\mathcal{H}_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ along
+   $\mathcal{H}_{\mathrm{phys}} = \varinjlim\, V^{\otimes n}$ along
    the inclusion maps
    $V^{\otimes n} \hookrightarrow V^{\otimes (n+1)}$ induced by the
    unit $\eta \colon \mathbf{1} \to V$.  Since each $V^{\otimes n}$ is

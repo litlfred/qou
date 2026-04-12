@@ -14,10 +14,10 @@ equations become:
   w_0 &= 0
     &&\text{(linear projection),}
     \label{eq:resolvent-linear}\\[4pt]
-  w_1w_4+w_2w_3 &= 0
+  w_1\,w_4+w_2\,w_3 &= 0
     &&\text{(Hermitian quadric),}
     \label{eq:resolvent-quadric}\\[4pt]
-  w_1^2w_3+w_4^2w_2+w_2^2w_1+w_3^2w_4 &= 0
+  w_1^2\,w_3+w_4^2\,w_2+w_2^2\,w_1+w_3^2\,w_4 &= 0
     &&\text{(symmetric cubic).}
     \label{eq:resolvent-cubic}
 \end{align}

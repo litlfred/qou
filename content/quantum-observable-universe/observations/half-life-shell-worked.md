@@ -129,9 +129,9 @@ is suppressed by the ratio of Skein polynomials:
 
 $$
   |\mathcal{M}|^2
-   \propto 
+  \;\propto\;
   \frac{|J_{\mathcal{N}(7,7)}(q)|}{|J_{\mathcal{N}(6,8)}(q)|}
-   \cdot 
+  \;\cdot\;
   \frac{1}{|J_{\mathcal{N}(0,2)}(q)|}
 $$
 
@@ -154,9 +154,9 @@ decay rate via $Q^5$:
 
 $$
   \frac{\Delta t_{1/2}}{t_{1/2}}
-   \approx 
+  \;\approx\;
   -5 \cdot \frac{\delta E_{\mathrm{shell}}}{Q_0}
-   \approx  -17\%
+  \;\approx\; -17\%
 $$
 
 giving $\delta E_{\mathrm{shell}} \approx 0.17 \times Q_0 / 5 \approx 0.005$ MeV for this transition — consistent with the

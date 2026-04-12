@@ -12,7 +12,7 @@ By the universal property, $H \cong \mathcal{O}_q(\mathrm{SU}(2))$
 determined $q$:
 
 $$
-  G_q =  \mathrm{SU}_q(2),
+  G_q \;=\; \mathrm{SU}_q(2),
   \qquad
   q = \text{eigenvalue of } c_{V,V} \text{ on } S^2 V.
 $$

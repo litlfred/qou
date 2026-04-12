@@ -38,6 +38,7 @@ from experimental_constants import (
 
 # ── Parameters ──────────────────────────────────────────────────
 HA = q - qi
+S = q**0.5 - q**(-0.5)
 Z_m = 1.0 / (q**0.5 + q**(-0.5))
 mu_0 = M_E_MEV / (3 * E_CROSS)
 
@@ -65,8 +66,8 @@ def traced_vol(M):
 
 def crossing_coeffs(ti, tj):
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return 1.0, -HA
-    else: return 1.0, -HA/2
+    elif ti == 'n' and tj == 'n': return q**2, -q*S
+    else: return 0.5*(1+q**2), -0.5*q*S
 
 # ── Shell-aware ordering ───────────────────────────────────────
 

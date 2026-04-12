@@ -2,7 +2,7 @@
 The condition $\nabla^2 = 0$ is the geometric incarnation of
 $d^2 = 0$.  In the QOU, $d_q^2 \neq 0$ introduces a canonical
 obstruction to flatness proportional to $(q-1)$.  The
-$q$-flatness equation $\nabla_q^2 = (q-1)\mathcal{F}_q$ absorbs
+$q$-flatness equation $\nabla_q^2 = (q-1)\,\mathcal{F}_q$ absorbs
 this obstruction: a $q$-flat connection is not truly flat but carries
 the minimal curvature compatible with the $q$-deformation.
 

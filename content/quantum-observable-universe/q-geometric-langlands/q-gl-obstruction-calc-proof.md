@@ -1,5 +1,5 @@
 **Item (1).**
-The $q$-flatness equation is $\nabla_q^2 = (q-1)\mathcal{F}_q$
+The $q$-flatness equation is $\nabla_q^2 = (q-1)\,\mathcal{F}_q$
 ([q-flat connection](#def:q-flat-connection)).  The
 $q$-curvature $\mathcal{F}_q$ is a class in
 $\mathrm{End}(\mathcal{V}) \otimes \Omega^2_q$, which the

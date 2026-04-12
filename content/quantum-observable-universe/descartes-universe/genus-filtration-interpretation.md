@@ -1,6 +1,6 @@
 ## Formal coordinates: unwinding $d_q^2 \neq 0$
 
-The non-nilpotence $d_q^2 \alpha = q^{-1}(1-q^{-1}) \omega_V \wedge_q [\xi, \alpha]$
+The non-nilpotence $d_q^2 \alpha = q^{-1}(1-q^{-1})\, \omega_V \wedge_q [\xi, \alpha]$
 ([categorical $d_q^2$](#prop:categorical-dq-squared)) provides
 the differential-geometric mechanism.
 
@@ -11,7 +11,7 @@ Maurer--Cartan form on $H_2(q)$) and $u = s^2$ acts as a
 grading parameter.
 
 The weight decomposition assigns degree $k$ in $u$ to the
-$k$-th Seifert cycle: $\alpha_p = \sum_{k=0}^{g_p} c_k  u^k \omega_T$, with $[\xi, u^k \omega_T] = k \cdot u^k \omega_T$
+$k$-th Seifert cycle: $\alpha_p = \sum_{k=0}^{g_p} c_k \, u^k \omega_T$, with $[\xi, u^k \omega_T] = k \cdot u^k \omega_T$
 (the Lie derivative counts Seifert cycles).
 
 Applying $d_q^2$ iteratively:
@@ -28,9 +28,9 @@ Applying $d_q^2$ iteratively:
    The obstruction
 
    $$
-     d_q^2(c_{g+1} u^{g+1} \omega_T)
-     = 
-     q^{-1}(1-q^{-1})(g+1) c_{g+1} u^{g+1}
+     d_q^2(c_{g+1}\, u^{g+1}\, \omega_T)
+     \;=\;
+     q^{-1}(1-q^{-1})\,(g+1)\, c_{g+1}\, u^{g+1}\,
      \omega_V \wedge_q \omega_T
    $$
 
@@ -45,9 +45,9 @@ Applying $d_q^2$ iteratively:
 
    $$
      \kappa(T_{2,p})
-     = 
+     \;=\;
      (g+1) \cdot q^{-1}(1-q^{-1}) \cdot [\omega_V \wedge_q \omega_T]
-      \in  H^2(\Sigma_g, \mathbb{Z})
+     \;\in\; H^2(\Sigma_g,\, \mathbb{Z})
    $$
 
    which is nonzero for $q \neq 1$.  At $q = 1$ (the classical

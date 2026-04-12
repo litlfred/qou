@@ -16,7 +16,7 @@ $\mathrm{tr}_n \colon \mathrm{End}_{\mathbf{C}}(A_n) \to R$ defined by
 
 $$
   \mathrm{tr}_n(\alpha)
-  = 
+  \;=\;
   (\varepsilon \circ \alpha \circ \eta)(\mathbf{1}),
 $$
 

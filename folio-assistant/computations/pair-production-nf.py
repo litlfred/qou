@@ -51,12 +51,12 @@ HA_sym  = q_sym - 1 / q_sym          # q − q⁻¹  (symbolic)
 HA_num  = HA0                         # numeric at q₀
 
 PARTICLE_KNOT = {
-    ():        ("ν",  "𝟏",      "unknot (0₁)"),
-    (0,):      ("σ₀", "σ₀",     "virtual (ℓ=1)"),
-    (1,):      ("σ₁", "σ₁",     "virtual (ℓ=1)"),
-    (0, 1):    ("L₊", "σ₀σ₁",   "Hopf link"),
-    (1, 0):    ("L₋", "σ₁σ₀",   "Hopf link"),
-    (0, 1, 0): ("e⁻", "σ₀σ₁σ₀", "trefoil (3₁)"),
+    ():        ("ν",  "𝟏"),
+    (0,):      ("H⁰", "σ₀"),
+    (1,):      ("H¹", "σ₁"),
+    (0, 1):    ("L₊", "σ₀σ₁"),
+    (1, 0):    ("L₋", "σ₁σ₀"),
+    (0, 1, 0): ("e⁻", "σ₀σ₁σ₀"),
 }
 
 def ws(w):
@@ -71,7 +71,7 @@ def ws(w):
     return "·".join(parts)
 
 def pn(w):
-    return PARTICLE_KNOT.get(w, ("?", "?", "?"))[0]
+    return PARTICLE_KNOT.get(w, ("?", "?"))[0]
 
 def eval_q0(c):
     if isinstance(c, (int, float)):

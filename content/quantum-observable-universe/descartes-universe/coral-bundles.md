@@ -26,7 +26,7 @@ trefoil-knot group.
 **Adjoint bundle.**
 The $\mathrm{SO}(3)$ images $R_\alpha,R_\beta$
 act on the triple $(\omega_1,\omega_2,\omega_3)$, which therefore spans a
-section of the adjoint bundle $\mathrm{ad}P\to\mathbb{P}^1(\mathbb{C})$ associated
+section of the adjoint bundle $\mathrm{ad}\,P\to\mathbb{P}^1(\mathbb{C})$ associated
 to the principal $\mathrm{SU}(2)$-bundle $P$.  The T-duality involution
 $\iota\colon X\leftrightarrow z$ ([T-duality on elliptic fibres](#rem:t-duality-elliptic))
 interchanges the fibre and base of the adjoint bundle, exchanging

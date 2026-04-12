@@ -12,8 +12,8 @@ The Frobenius relation asserts:
 
 $$
 (\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta)
-=  \Delta \circ \mu
-=  (\mathrm{id} \otimes \mu) \circ (\Delta \otimes \mathrm{id}).
+\;=\; \Delta \circ \mu
+\;=\; (\mathrm{id} \otimes \mu) \circ (\Delta \otimes \mathrm{id}).
 $$
 
 **Concrete verification.** Write $g \in \mathrm{SU}(2)$ as
@@ -38,10 +38,10 @@ Both sides evaluate to $f(xz) \cdot h(xz)$ when we use the Sweedler
 components correctly. The key identity is:
 
 $$
-\sum f(x)  h_1(x)  h_2(z) = (f \cdot h)(xz),
+\sum f(x) \, h_1(x) \, h_2(z) = (f \cdot h)(xz),
 $$
 
-which holds because $\sum h_1(x)  h_2(z) = h(xz)$ is exactly the
+which holds because $\sum h_1(x) \, h_2(z) = h(xz)$ is exactly the
 definition of $\Delta$.
 
 **Explicit example with matrix entries.** Take $f = \alpha$ and
@@ -59,7 +59,7 @@ Then:
 $$
 \Delta(\alpha \cdot \beta)(x, z)
 = (\alpha \cdot \beta)(xz)
-= \alpha(xz)  \beta(xz).
+= \alpha(xz) \, \beta(xz).
 $$
 
 On the other side:
@@ -70,7 +70,7 @@ $$
 $$
 
 Evaluating at $(x, z)$ gives $\alpha(x)\beta(x)\alpha(z) + \alpha(x)\bar{\alpha}(x)\beta(z)$. Using the group-multiplication
-formula for $xz$, this equals $\alpha(xz)\beta(xz)$, confirming
+formula for $xz$, this equals $\alpha(xz)\,\beta(xz)$, confirming
 the Frobenius relation.
 
 **Interpretation.** The Frobenius relation says: *multiplying two

@@ -1,8 +1,8 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
-  label: "def:ns-regular-qou",
-  title: "NS-regular quantum observable universe",
+  label: "def:ns-obstruction",
+  title: "The NS obstruction of a quantum universe",
   uses: [
     "def:quantum-universe",
     "def:q-navier-stokes",

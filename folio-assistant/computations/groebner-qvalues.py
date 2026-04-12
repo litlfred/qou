@@ -27,6 +27,7 @@ from q_parameter import Q as q, Q_INV as qi, E_CROSS, HBAR_Q
 from experimental_constants import *
 
 HA = q - qi
+S = q**0.5 - qi**0.5
 Z_m = 1/(q**0.5 + qi**0.5)
 LN_Q = math.log(q)
 mu_0 = M_E_MEV / (3 * E_CROSS)
@@ -37,8 +38,8 @@ def log_q(x):
 def crossing_coeffs(ti, tj):
     """Crossing coefficients (c, d) from nucleon types."""
     if ti == 'p' and tj == 'p': return 1.0, 0.0
-    elif ti == 'n' and tj == 'n': return 1.0, -HA
-    else: return 1.0, -HA/2
+    elif ti == 'n' and tj == 'n': return q**2, -q*S
+    else: return (1+q**2)/2, -q*S/2
 
 def groebner_energy(p, n):
     """Compute the Gröbner-Shirshov energy for N(p,n).

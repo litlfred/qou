@@ -22,10 +22,10 @@ functions on the group. Its Hopf structure encodes the group operations:
 | *Comultiplication* $\Delta(f)(x, y)$ | $f(xy)$ | pullback of group multiplication |
 | *Counit* $\varepsilon(f)$ | $f(e)$ | evaluation at the identity |
 | *Antipode* $S(f)(x)$ | $f(x^{-1})$ | pullback of inversion |
-| *Frobenius form* $\int_A(f)$ | $\int_G f d\mu$ | Haar integration on $G$ |
+| *Frobenius form* $\int_A(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
 
 The [Frobenius pairing](#def:frobenius-pairing)
-$\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f(x) g(x) d\mu_{\mathrm{Haar}}(x)$
+$\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f(x)\, g(x)\, d\mu_{\mathrm{Haar}}(x)$
 is positive definite (faithfulness of the Haar integral).
 
 **(iii) Fibre functor.**
@@ -42,8 +42,8 @@ The left-invariant calculus on $\mathrm{SU}(2)$ provides
 $\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$,
 the left-invariant $1$-forms dual to the Lie algebra basis
 $\{e_1, e_2, e_3\}$ of $\mathfrak{su}(2)$ (with
-$[e_a, e_b] = \epsilon_{abc} e_c$;
+$[e_a, e_b] = \epsilon_{abc}\, e_c$;
 [SU(2) basis](#def:su2-basis)).
 The universal derivation $d \colon A \to \Omega^1(A)$
-acts by $df = \sum_i (\partial_i f) \omega_i$, recovering the
+acts by $df = \sum_i (\partial_i f)\, \omega_i$, recovering the
 Lie derivative along each generator.

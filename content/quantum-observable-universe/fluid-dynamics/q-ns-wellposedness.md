@@ -17,7 +17,7 @@ admits a **unique global solution**
 
 $$
   (v, p) \colon [0, \infty)
-   \to 
+  \;\to\;
   \ker(\delta_q|_{\Omega^1(A)}) \times A
 $$
 
@@ -32,18 +32,18 @@ such that:
    $$
      \lVert v(t) \rVert_A^2
      + 2\nu_q \int_0^t
-     \lVert d_qv(s) \rVert_A^2ds
-      \leq 
+     \lVert d_q\,v(s) \rVert_A^2\,ds
+     \;\leq\;
      \lVert v_0 \rVert_A^2.
    $$
 
 3. **Spectral decay**: the $\Delta_q$-eigencomponents
    $\hat{v}_k \in V_k \subset \Omega^1(A)$
-   (where $\Delta_q|_{V_k} = [k]_q^2\mathrm{id}$) satisfy
+   (where $\Delta_q|_{V_k} = [k]_q^2\,\mathrm{id}$) satisfy
 
    $$
-     |\hat{v}_k(t)|  \leq 
-     |\hat{v}_k(0)|e^{-\nu_q [k]_q^2 t}
+     |\hat{v}_k(t)| \;\leq\;
+     |\hat{v}_k(0)|\,e^{-\nu_q [k]_q^2 t}
    $$
 
    so that modes decay at exponential-in-$k$ rate.
@@ -63,10 +63,10 @@ satisfying the coordinate form
 
 $$
   \partial_t v + (v \cdot \nabla_A) v
-  = 
-  -\frac{1}{\rho}\nabla_A p
+  \;=\;
+  -\frac{1}{\rho}\,\nabla_A p
   - \nabla_A Q_q
-  + \nu_q\Delta_q v,
+  + \nu_q\,\Delta_q v,
   \qquad
   v|_{t=0} = v_0,
 $$
@@ -76,8 +76,8 @@ with energy inequality
 $$
   \lVert v(\cdot, t)\rVert_{L^2}^2
   + 2\nu_q \int_0^t
-  \sum_{k=1}^\infty [k]_q^2|\hat{v}_k(s)|^2ds
-   \leq 
+  \sum_{k=1}^\infty [k]_q^2\,|\hat{v}_k(s)|^2\,ds
+  \;\leq\;
   \lVert v_0\rVert_{L^2}^2
 $$
 

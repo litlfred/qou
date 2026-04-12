@@ -1,12 +1,12 @@
 A *Hopf diquark* is a pair of quarks
-$(\mathfrak{q}_i^a, \mathfrak{q}_j^b)$ in distinct coral tubes
+$(\mathfrak{q}_i^a,\, \mathfrak{q}_j^b)$ in distinct coral tubes
 $a \neq b$ of the Bring's surface, joined by the Hopf link
 $\mathcal{L}_H$:
 
 $$
   D_{ij}^{[ab]}
-  = 
-  \mathfrak{q}_i^a  \bowtie  \mathfrak{q}_j^b,
+  \;=\;
+  \mathfrak{q}_i^a \;\bowtie\; \mathfrak{q}_j^b,
 $$
 
 where $i, j \in \{\mathfrak{u}, \mathfrak{d}, \mathfrak{s}\}$ are
@@ -32,11 +32,11 @@ crossing energy is
 
 $$
   \mathbf{E}_{\mathrm{cross}}(D_{ij}^{[ab]})
-  = 
+  \;=\;
   \epsilon_i \cdot q^{\epsilon_i}
-  + 
+  \;+\;
   \epsilon_j \cdot q^{\epsilon_j}
-  + 
+  \;+\;
   \mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H),
 $$
 
@@ -52,8 +52,8 @@ $\bar{\mathbf{3}}_c$ of $\mathrm{SU}(3)$:
 
 $$
   \bar{\mathbf{3}}_c
-  = 
-  \epsilon^{abc}\mathfrak{q}^b \otimes \mathfrak{q}^c.
+  \;=\;
+  \epsilon^{abc}\,\mathfrak{q}^b \otimes \mathfrak{q}^c.
 $$
 
 The antisymmetry $D^{[ab]} = -D^{[ba]}$ is automatic from the

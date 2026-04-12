@@ -25,8 +25,8 @@ absorbs the stretching into the dissipation, leaving
 
 $$
   \frac{d\Omega}{dt}
-  \leq -\nu_q\Omega + \frac{C_q^2 E_0}{\nu_q}\Omega
-  = \Lambda_q\Omega.
+  \leq -\nu_q\,\Omega + \frac{C_q^2 E_0}{\nu_q}\,\Omega
+  = \Lambda_q\,\Omega.
 $$
 
 Since $\Lambda_q < \infty$ for $q > 1$, Gronwall gives at most

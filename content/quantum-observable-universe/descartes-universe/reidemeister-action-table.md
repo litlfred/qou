@@ -10,11 +10,11 @@ representative $\beta \in B_A$:
 
 $$
   \mathcal{S}_q[\beta]
-  = 
+  \;=\;
   \underbrace{E_0}_{\text{gravity}}
-  + 
+  \;+\;
   \underbrace{\sum_{\text{crossings}} \mathcal{S}_{ij}(q)}_{\text{gauge}}
-  + 
+  \;+\;
   \underbrace{\mathcal{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
 $$
 
@@ -153,9 +153,9 @@ At $q = 1$ (classical): $T^2 = 1$, all crossings cancel,
 no binding energy, no Coulomb repulsion, no beta decay.  All
 nuclear configurations at fixed $A$ are degenerate.
 
-At the substrate parameter $q$ (Descartes): $T^2 = 0.209T + 1$.
+At the substrate parameter $q$ (Descartes): $T^2 = 0.209\,T + 1$.
 The crossing asymmetry $0.209 = q - q^{-1}$ splits the
-degeneracy.  The $0.209T$ term is the electromagnetic
+degeneracy.  The $0.209\,T$ term is the electromagnetic
 interaction (Coulomb repulsion between protons, Coulomb
 enhancement of beta decay).  The $1$ term is the strong
 interaction (volume binding, independent of crossing chirality).

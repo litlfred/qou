@@ -11,7 +11,7 @@ export default conjecture({
     "thm:q-aubin-lions",
     "conj:ns-counterexample",
     "def:quantum-observable-universe",
-    "def:levi-form-defect",
+    "rem:levi-form-defect",
   ],
   tags: [
     "conjecture",

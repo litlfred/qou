@@ -22,7 +22,7 @@ accumulation of infinitely many such truncations.
 
    $$
      N_{ij}^k
-     = \int_0^1 \frac{S_{ik}S_{jk}}{S_{0k}}dk,
+     = \int_0^1 \frac{S_{ik}\,S_{jk}}{S_{0k}}\,dk,
    $$
 
    where $S$ is the modular $S$-matrix.  The representation
@@ -78,14 +78,14 @@ fine-scale structure beyond the cutoff.  In particular:
 - At root of unity: only $(\kappa-1)/2$ modes exist, so
   $\kappa(t)$ is a trigonometric polynomial of bounded degree.
 - A trigonometric polynomial of degree $N$ satisfies
-  $|\kappa'(t)| \leq N\|\kappa\|_\infty$ (Bernstein
+  $|\kappa'(t)| \leq N\,\|\kappa\|_\infty$ (Bernstein
   inequality), preventing rapid oscillation.
 
 This gives an **explicit bound** at each root of unity:
 
 $$
   \sup_{t < T^*} \kappa(t)
-   \leq 
+  \;\leq\;
   1 + C \cdot (\kappa - 1)
 $$
 
@@ -122,9 +122,9 @@ integrable) iff $\lambda_{\min} \to 0$, i.e. $\kappa(t) \to
 $$
   \boxed{
     \text{NS blows up}
-    \iff
+    \;\iff\;
     \text{Levi form stays non-degenerate at collision}
-    \iff
+    \;\iff\;
     \kappa(t) = O(1).
   }
 $$

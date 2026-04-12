@@ -3,8 +3,8 @@ In the $\mathrm{SU}(2)$ representation
 $xyx=yxy$ becomes the operator identity
 
 $$
-  \alpha\beta\alpha
-  = \beta\alpha\beta
+  \alpha\,\beta\,\alpha
+  \;=\;\beta\,\alpha\,\beta
 $$
 
 for the generators $\alpha$ and

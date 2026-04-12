@@ -6,10 +6,10 @@ endomorphisms of $V$ by
 
 $$
   \mathrm{tr}_{\mathrm{Ad}}(f)
-  = 
-  \int_A \!\circ \mu \circ (f \otimes \mathrm{id}_{V^{\vee}})
+  \;=\;
+  \int_A \!\circ\; \mu \circ (f \otimes \mathrm{id}_{V^{\vee}})
     \circ \mathrm{coev}_V
-   \in 
+  \;\in\;
   \mathrm{Hom}(\mathbf{1}, \mathbf{1}) \cong R,
 $$
 
@@ -31,8 +31,8 @@ trace recovers the Killing form on $\mathfrak{su}(2)$:
 
 $$
   \mathrm{tr}_{\mathrm{Ad}}(f)
-  = 
+  \;=\;
   \mathrm{tr}(\mathrm{ad}(f))
-  = 
-  -2\mathrm{tr}_{\mathbb{C}^2}(f).
+  \;=\;
+  -2\,\mathrm{tr}_{\mathbb{C}^2}(f).
 $$

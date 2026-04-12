@@ -5,8 +5,8 @@ for the $q$-deformed exterior derivative
 $\Omega^k(M)$:
 
 $$
-  d_q^2\alpha
-  =  q^{-1}(1 - q^{-1})d\theta \wedge \mathcal{L}_\xi\alpha.
+  d_q^2\,\alpha
+  \;=\; q^{-1}(1 - q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha.
 $$
 
 ```tex
@@ -23,7 +23,7 @@ $$
 Here the categorical curvature $\omega_V$ of the weight projection
 specialises to $d\theta$ (the symplectic form on $H$) via the
 ([categorical--geometric correspondence](#prop:categorical-archimedean-bridge)),
-and $[\xi, \alpha]$ becomes $\mathcal{L}_\xi\alpha$.
+and $[\xi, \alpha]$ becomes $\mathcal{L}_\xi\,\alpha$.
 
 In particular, $d_q^2 = 0$ if and only if $q = 1$ (classical case) or
 $\alpha$ lies in the kernel of $\mathcal{L}_\xi$ (Reeb-invariant forms).

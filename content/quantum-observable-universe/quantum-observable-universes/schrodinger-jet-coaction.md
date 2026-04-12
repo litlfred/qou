@@ -7,10 +7,10 @@ vector field $\xi_q$ ([$q$-Reeb vector field](#ex:q-reeb-vector-field)), the
 Schrödinger dynamics take the form
 
 $$
-  J\hbar_q(p)\iota_{\xi_q} D_A \psi =  \hat{H}_q \psi,
+  J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\; \hat{H}_q\, \psi,
 $$
 
-where $\hat{H}_q = -\tfrac{1}{2}\hbar_q\Delta_q + V_q$ is the
+where $\hat{H}_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$ is the
 *$q$-deformed Hamiltonian* (here $\Delta_q$ is the $q$-Laplacian of
 [$q$-harmonic form](#def:q-harmonic-form) acting on sections of
 $\mathcal{S}_{\mathrm{lin}}$, and $V_q$ is a potential depending on the curvature

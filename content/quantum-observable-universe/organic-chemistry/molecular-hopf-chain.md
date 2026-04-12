@@ -9,13 +9,13 @@ length $N$ and bond order $k$ is the composite
 
 $$
   \mathcal{C}_N^{(k)}
-  = 
+  \;=\;
   \mathcal{A}_1
-   \underset{B_k}{\bowtie}
+  \;\underset{B_k}{\bowtie}\;
   \mathcal{A}_2
-   \underset{B_k}{\bowtie}
+  \;\underset{B_k}{\bowtie}\;
   \cdots
-   \underset{B_k}{\bowtie}
+  \;\underset{B_k}{\bowtie}\;
   \mathcal{A}_N
 $$
 
@@ -25,7 +25,7 @@ $N \times N$ matrix
 
 $$
   L^{\mathrm{chain}}_{ij}
-  = 
+  \;=\;
   \begin{cases}
     k & \text{if } |i - j| = 1, \\
     0 & \text{otherwise}.
@@ -49,7 +49,7 @@ The total crossing energy is the sum over $N - 1$ bonds:
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N^{(k)})
-  = 
+  \;=\;
   (N - 1) \cdot E_{\mathrm{bond}}(k).
 $$
 

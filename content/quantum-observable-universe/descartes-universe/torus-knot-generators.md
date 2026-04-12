@@ -15,7 +15,7 @@ with $\gcd(m,n) = 1$ and $m < n$ embeds into the Seifert genus-$g$
 surface of $A$ only if the Seifert genus satisfies
 
 $$
-  g(T_{m,n}) =  \frac{(m-1)(n-1)}{2}  \leq  g(A) =  4.
+  g(T_{m,n}) \;=\; \frac{(m-1)(n-1)}{2} \;\leq\; g(A) \;=\; 4.
 $$
 
 The constraint $(m-1)(n-1) \leq 8$ admits exactly the following

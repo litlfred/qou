@@ -19,7 +19,7 @@ CP violation is firmly established in three systems:
 
 2. **$B$ mesons** (2001).  The BaBar \cite{aubert2001} and Belle
    experiments measured CP-violating asymmetries in
-   $B^0 \to J/\psiK_S$ decays, confirming the
+   $B^0 \to J/\psi\,K_S$ decays, confirming the
    Kobayashi--Maskawa mechanism: the CKM quark-mixing matrix
    contains an irreducible complex phase $\delta_{\mathrm{CKM}}$
    that cannot be removed by field redefinitions.
@@ -44,7 +44,7 @@ sources of CP violation are needed.
 
 In the [complex chirality rotation](#conj:complex-chirality-rotation)
 framework, CP violation arises from a residual phase $\theta$ of
-the complex substrate parameter $q = |q|e^{i\theta}$:
+the complex substrate parameter $q = |q|\,e^{i\theta}$:
 
 - The observable sector projects $\theta \to 0$, but this projection
   may be imperfect — a small residual $\theta_{\mathrm{res}}$ could
@@ -54,7 +54,7 @@ the complex substrate parameter $q = |q|e^{i\theta}$:
   for single-crossing systems (electron/positron).
 - For **multi-crossing composites** (kaons: quark--antiquark with
   multiple internal crossings), the phase accumulates:
-  $\delta_{\mathrm{CP}} \sim n_c\theta_{\mathrm{res}}$, where
+  $\delta_{\mathrm{CP}} \sim n_c\,\theta_{\mathrm{res}}$, where
   $n_c$ is the total crossing number of the hadronic braid word.
 - This provides a **geometric origin** for the CKM phase: it is
   the total accumulated crossing phase from the complex-$q$ sector,

@@ -11,7 +11,7 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
 1. **(Quadratic level.)** *There exists a root of unity
    $q_k = e^{2\pi i/(k+2)}$ with $k \geq 3$ and*
 
-   $$k + 2  \leq  c^2 - 1$$
+   $$k + 2 \;\leq\; c^2 - 1$$
 
    *such that $P_L(q_k) \neq 0$ — the Skein polynomial does
    not degenerate at $q_k$.  The level $k$ grows
@@ -35,14 +35,14 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
 
    $$
      \mathrm{End}(V^{\otimes n})
-     = 
-     \mathcal{A}^{\mathrm{desc}}  \oplus  \mathcal{A}^{\mathrm{trans}}
+     \;=\;
+     \mathcal{A}^{\mathrm{desc}} \;\oplus\; \mathcal{A}^{\mathrm{trans}}
    $$
 
    *([descent eigenspaces](#prop:descent-eigenspaces)).
-   The descended subalgebra $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\hat{\tau}$ is the classical shadow — the
+   The descended subalgebra $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}$ is the classical shadow — the
    Toffoli computation at real $q$.  The transient complement
-   $\mathcal{A}^{\mathrm{trans}} = \ker\hat{\tau}$ carries
+   $\mathcal{A}^{\mathrm{trans}} = \ker\,\hat{\tau}$ carries
    the quantum parallelism: exponentially many Skein
    resolution paths that destructively interfere upon
    observation.*
@@ -72,9 +72,9 @@ involution projects back.  The round-trip*
 
 $$
   q_{\mathrm{real}}
-  \xrightarrow{ \text{lift}}
+  \;\xrightarrow{\;\text{lift}\;}
   q_k = e^{2\pi i/(k+2)}
-  \xrightarrow{\hat{\tau}}
+  \;\xrightarrow{\;\hat{\tau}\;}
   q_{\mathrm{real}}
 $$
 

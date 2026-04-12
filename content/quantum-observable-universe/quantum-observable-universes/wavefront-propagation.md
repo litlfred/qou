@@ -2,7 +2,7 @@ The third variational equation ([variational equations](#prop:variational-equati
 yields the *categorical transport equation*
 
 $$
-  \mathcal{D}_\nabla\psi =  0,
+  \mathcal{D}_\nabla\,\psi \;=\; 0,
 $$
 
 where $\mathcal{D}_\nabla = q^{-1}\nabla + (1-q^{-1})\iota_\xi\nabla$
@@ -41,10 +41,10 @@ packages this as
 
 $$
   \mathcal{L}_q(\nabla, \psi)
-  = 
-  \underbrace{\mathcal{D}_\nabla^{2}}_{\text{gauge (curvature)}}
-  + 
-  \underbrace{\psi^* \otimes \mathcal{D}_\nabla\psi}_{\text{matter (propagation)}},
+  \;=\;
+  \underbrace{\mathcal{D}_\nabla^{\,2}}_{\text{gauge (curvature)}}
+  \;+\;
+  \underbrace{\psi^* \otimes \mathcal{D}_\nabla\,\psi}_{\text{matter (propagation)}},
 $$
 
 so that the on-shell condition $\mathcal{D}_\nabla\psi = 0$ eliminates

@@ -6,7 +6,7 @@ surface.
 The Frobenius form $\int_A = h_q$ is the Haar state on
 $A = \mathcal{O}_q(\mathrm{SU}(2))$.  Faithfulness of $h_q$ for compact
 quantum groups gives the isomorphism
-$A \xrightarrow{ \sim } A^{\vee}$.  The antipode $S$ and $h_q$
+$A \xrightarrow{\;\sim\;} A^{\vee}$.  The antipode $S$ and $h_q$
 together define the dagger $f^{\dagger} = h_q \circ \mu(S(f) \otimes -)$,
 which is positive-definite
 ([positive definite dagger](#prop:positive-definite-dagger)) because the Haar state
@@ -15,7 +15,7 @@ satisfies $h_q(a^* a) > 0$ for $a \neq 0$.
 **(ii) Observability.**
 The adjoint representation decomposes as
 $\mathrm{Ad}(A) \cong V_1 \oplus V_2 \oplus \cdots$ with no spin-$0$
-summand, so $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ by the
+summand, so $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$ by the
 quantum Schur lemma.  Geometrically, this is the statement that
 Bring's surface has no global holomorphic vector field
 (it has genus $g = 4 > 1$).
@@ -28,7 +28,7 @@ defining representation carried by the state bundle fibre
 $\mathcal{S}_p \cong \mathbb{C}^2$ ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple), item 3).
 The non-degenerate epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 is instantiated by the Levi form
-$L_\theta = -id\theta|_{H \times H}$
+$L_\theta = -i\,d\theta|_{H \times H}$
 ([archimedean realisations](#rem:archimedean-realisations)): because $L_\theta$ is
 alternating and non-degenerate on the rank-$4$ real distribution
 $H = \ker\theta$, it furnishes the symplectic pairing that makes $V$

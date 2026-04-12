@@ -4,11 +4,11 @@ zero neutrons, one electron.
 
 $$
   \mathcal{A}(1, 0)
-  = 
+  \;=\;
   \underbrace{
     \mathcal{B}_3(\nu_r, \nu_g, \nu_b) \bowtie \mathcal{L}_H
   }_{\mathfrak{p}\text{ (proton)}}
-   \bowtie 
+  \;\bowtie\;
   \underbrace{T_{2,3}}_{e^-\text{ (electron)}}
 $$
 
@@ -50,15 +50,15 @@ The electron $T_{2,3}$ is Hopf-linked to the proton at the
 ground state ($n = 1$).  The ionization energy is
 
 $$
-  E_{\mathrm{ion}} =  \frac{m_e \cdot \alpha^2}{2}
-  =  13.6 \text{ eV}
+  E_{\mathrm{ion}} \;=\; \frac{m_e \cdot \alpha^2}{2}
+  \;=\; 13.6 \text{ eV}
 $$
 
 where $\alpha$ is the fine structure constant.  In the QOU
 framework, $\alpha$ relates to the substrate parameter via
 
 $$
-  \alpha =  \frac{\tanh(\ln q)}{C_{\mathrm{geom}}}
+  \alpha \;=\; \frac{\tanh(\ln q)}{C_{\mathrm{geom}}}
 $$
 
 The fundamental formula for $\alpha$ is the EM coupling
@@ -67,7 +67,7 @@ projection
 
 $$
   \alpha_{\mathrm{EM}}(q)
-  = 
+  \;=\;
   \frac{q^{-1}}{[9]_q \cdot [10]_q}
 $$
 
@@ -83,11 +83,11 @@ which fixes
 
 $$
   C_{\mathrm{geom}}
-  = 
+  \;=\;
   \frac{\tanh(\ln q) \cdot [9]_q \cdot [10]_q}{q^{-1}}
-  = 
+  \;=\;
   \frac{(q^2 - 1) \cdot [9]_q \cdot [10]_q}{q^2 + 1}
-   \approx  14.26.
+  \;\approx\; 14.26.
 $$
 
 **Physical reading:** the electromagnetic coupling is the
@@ -110,7 +110,7 @@ Hopf linking level.  The energy is
 
 $$
   \Delta E_{n \to n'}
-  =  13.6 \left(\frac{1}{n^2} - \frac{1}{n'^2}\right)
+  \;=\; 13.6 \left(\frac{1}{n^2} - \frac{1}{n'^2}\right)
   \text{ eV}
 $$
 

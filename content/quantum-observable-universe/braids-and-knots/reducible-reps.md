@@ -10,9 +10,9 @@ the passage from the reducible to the irreducible sector.
 
 Concretely, the PBW filtration on
 $\mathcal{U}_q(\mathfrak{su}(2))$ equips the associated graded algebra
-$\mathrm{gr}\mathcal{U}_q$ with a commutative product.  A
+$\mathrm{gr}\,\mathcal{U}_q$ with a commutative product.  A
 Groebner--Shirshov basis for the $q$-deformed relations then exhibits
-$\mathcal{U}_q$ as a flat deformation of $\mathrm{gr}\mathcal{U}_q$:
+$\mathcal{U}_q$ as a flat deformation of $\mathrm{gr}\,\mathcal{U}_q$:
 the leading monomials of the $q$-Serre relations provide a set of
 non-overlapping obstructions whose resolution (composition lemma) yields
 a normal-form basis coinciding with the Lusztig divided-power

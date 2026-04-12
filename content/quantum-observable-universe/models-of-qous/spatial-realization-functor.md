@@ -19,7 +19,7 @@ $\mathbf{C}$:
 
    $$
      A / \mathfrak{m}_p^2
-      \cong 
+     \;\cong\;
      \mathbf{1} \oplus \mathfrak{m}_p / \mathfrak{m}_p^2.
    $$
 
@@ -37,7 +37,7 @@ $\mathbf{C}$:
 4. **The Reeb derivation.** The generator $\xi$ of the maximal torus
    action ([categorical Reeb](#def:categorical-reeb)) satisfies the
    Cartan relations $\iota_\xi \theta_A = \mathrm{id}_{\mathbf{1}}$
-   and $\iota_\xid\theta_A = 0$ within the non-commutative
+   and $\iota_\xi\,d\theta_A = 0$ within the non-commutative
    differential calculus.
 
 ```tex

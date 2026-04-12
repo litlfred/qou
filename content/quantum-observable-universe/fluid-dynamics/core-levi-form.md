@@ -2,7 +2,7 @@ Let $\gamma$ be a [geodesic vortex](#rem:geodesic-vortices) in
 the [state bundle](#def:state-bundle) $(\mathcal{S}, \theta)$
 with contact form $\theta$ and
 [Levi form](#rem:levi-form-defect)
-$\mathcal{L}_\theta(V, W) = -id\theta(V, \bar{W})$.  At each
+$\mathcal{L}_\theta(V, W) = -i\,d\theta(V, \bar{W})$.  At each
 point $p \in \gamma$, let $N_p\gamma \subset \ker(\theta_p)$ be
 the horizontal normal plane.  Define:
 
@@ -22,9 +22,9 @@ eigenvalue ratio:
 
 $$
   \frac{a_\perp(p)}{a_\parallel(p)}
-  = 
+  \;=\;
   \sqrt{\frac{\lambda_\parallel(p)}{\lambda_\perp(p)}}
-   \cdot 
+  \;\cdot\;
   \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
@@ -32,15 +32,15 @@ $$
 
 $$
   \mathrm{cond}(\mathcal{L}_\theta|_{N_p})
-  \equiv
+  \;\equiv\;
   \frac{\max(\lambda_\parallel, \lambda_\perp)}
        {\min(\lambda_\parallel, \lambda_\perp)}
-  = 
+  \;=\;
   \max\!\left(
-    \frac{a_\perp}{a_\parallel},
+    \frac{a_\perp}{a_\parallel},\;
     \frac{a_\parallel}{a_\perp}
   \right)^2
-  \cdot
+  \cdot\;
   \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
@@ -68,9 +68,9 @@ enforces
 
 $$
   \mathrm{cond}(\mathcal{L}_\theta|_{N_p})
-   \leq 
-  1 + C_0\hbar_q^2
-   <  \infty,
+  \;\leq\;
+  1 + C_0\,\hbar_q^2
+  \;<\; \infty,
 $$
 
 so conditions (1)--(5) hold.  The

@@ -9,11 +9,11 @@ is the boundary datum
 
 $$
   \mathrm{CMB}(\mathcal{S}_0)
-  = 
-  \bigl(
-    \Gamma(U, A_1/A_0)|_{\mathcal{S}_0}, 
-    \Gamma(U, A_2/A_0)|_{\mathcal{S}_0}
-  \bigr)
+  \;=\;
+  \bigl(\,
+    \Gamma(U,\, A_1/A_0)|_{\mathcal{S}_0},\;\;
+    \Gamma(U,\, A_2/A_0)|_{\mathcal{S}_0}
+  \,\bigr)
 $$
 
 — the pair of degree-$1$ (linear transport) and degree-$2$
@@ -24,7 +24,7 @@ $A_1 \oplus A_2$ to $\mathcal{S}_0$:
 
 $$
   \mathrm{CMB}(\mathcal{S}_0)
-   \cong 
+  \;\cong\;
   \bigl(A_1 \oplus A_2\bigr)\big|_{\mathcal{S}_0}.
 $$
 

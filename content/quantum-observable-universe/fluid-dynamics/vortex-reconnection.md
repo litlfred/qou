@@ -1,15 +1,15 @@
 When two vortex filaments approach, the divisor
 $\{\psi = 0\}$ undergoes surgery.  The quantum pressure $Q_q$
-regularises the classical reconnection singularity.  Let $D = \sum_i n_i\varrho_i$ be the effective
+regularises the classical reconnection singularity.  Let $D = \sum_i n_i\,\varrho_i$ be the effective
 divisor encoding the vortex configuration, where $\varrho_i$ are
 the filament components and $n_i \in \frac{1}{2}\mathbb{Z}$ are
 their intensity levels.  Reconnection is a **birational
 transformation** of the divisor:
 
 $$
-  D =  \cdots + \varrho_i + \varrho_j + \cdots
+  D \;=\; \cdots + \varrho_i + \varrho_j + \cdots
   \quad\xrightarrow{\text{surgery}}\quad
-  D' =  \cdots + \varrho_i' + \varrho_j' + \cdots,
+  D' \;=\; \cdots + \varrho_i' + \varrho_j' + \cdots,
 $$
 
 where $\varrho_i'$ and $\varrho_j'$ are the reconnected filaments.
@@ -50,7 +50,7 @@ fundamental mode), the exceptional divisor inflates into a
 filament--anti-filament pair:
 
 $$
-  E_0  \to  \varrho_{\mathrm{new}} + \bar\varrho_{\mathrm{new}},
+  E_0 \;\to\; \varrho_{\mathrm{new}} + \bar\varrho_{\mathrm{new}},
 $$
 
 with the new filaments inheriting the minimum intensity level
@@ -67,7 +67,7 @@ permitted only if the Clebsch--Gordan decomposition
 
 $$
   V_{j_i} \otimes V_{j_j}
-  = 
+  \;=\;
   \bigoplus_{J = |j_i - j_j|}^{j_i + j_j} V_J
 $$
 

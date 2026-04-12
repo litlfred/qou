@@ -6,7 +6,7 @@ involutive structure built from the antipode:
   (an equivariant linear map between representations),
   $f^{\dagger}$ is the *Hilbert-space adjoint*: the unique
   map $f^{\dagger} \colon V_k \to V_j$ satisfying
-  $\langle f^{\dagger}(w), v \rangle_j = \langle w, f(v) \rangle_k$
+  $\langle f^{\dagger}(w),\, v \rangle_j = \langle w,\, f(v) \rangle_k$
   for all $v \in V_j$, $w \in V_k$.
 - *Why it exists.* Each irreducible representation $V_j$
   carries a unique (up to scalar) $\mathrm{SU}(2)$-invariant

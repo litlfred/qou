@@ -6,11 +6,11 @@ $\mathbf{g}_z$, or $\mathbf{b}_z$ is used:
 
 ```tex
 \begin{equation}\label{eq:color-tube-fiber-def}
-  R_z  := 
-  \bigl\{\mathbf{r}_z \in \mathbb{A}^1 :
-    \mathbf{r}_z^{3} + (4z+1)\mathbf{r}_z^{2}
-    + (6z^2+3z+1)\mathbf{r}_z
-    + (4z^3+3z^2+2z+1) = 0\bigr\},
+  R_z \;:=\;
+  \bigl\{\,\mathbf{r}_z \in \mathbb{A}^1 :
+    \mathbf{r}_z^{\,3} + (4z+1)\,\mathbf{r}_z^{\,2}
+    + (6z^2+3z+1)\,\mathbf{r}_z
+    + (4z^3+3z^2+2z+1) = 0\,\bigr\},
 \end{equation}
 ```
 

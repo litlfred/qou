@@ -6,9 +6,9 @@ $\mathrm{vol} = \omega_1 \wedge \omega_2 \wedge \omega_3$
 
 - $\star 1 = \mathrm{vol}$,
   $\star\mathrm{vol} = 1$.
-- On $1$-forms: $\star\omega_i = \tfrac{1}{2}\epsilon_{ijk} \omega_j \wedge \omega_k$ (each basis form maps to its
+- On $1$-forms: $\star\omega_i = \tfrac{1}{2}\epsilon_{ijk}\, \omega_j \wedge \omega_k$ (each basis form maps to its
   complementary $2$-form).
-- On $2$-forms: $\star(\omega_i \wedge \omega_j) = \epsilon_{ijk}\omega_k$ (each basis $2$-form maps to its
+- On $2$-forms: $\star(\omega_i \wedge \omega_j) = \epsilon_{ijk}\,\omega_k$ (each basis $2$-form maps to its
   complementary $1$-form).
 
 The Hodge star is the categorical version of "rotating a form into

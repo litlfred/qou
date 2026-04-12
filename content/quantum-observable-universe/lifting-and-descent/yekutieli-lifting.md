@@ -5,10 +5,10 @@ $\{A_n\}_{n \geq 0}$ be the
 gerbes
 
 $$
-  1  \longrightarrow  \mathcal{B}
-   \longrightarrow  \mathfrak{G}_{n+1}
-   \longrightarrow  \mathfrak{G}_n
-   \longrightarrow  1
+  1 \;\longrightarrow\; \mathcal{B}
+  \;\longrightarrow\; \mathfrak{G}_{n+1}
+  \;\longrightarrow\; \mathfrak{G}_n
+  \;\longrightarrow\; 1
 $$
 
 arising from the
@@ -17,6 +17,6 @@ Condition ([Yekutieli lifting condition](#def:yekutieli-lifting-condition)).  In
 archimedean realisation, $\mathcal{B} = \mathcal{O}_M^{\times}$.  In
 particular, the lift of the Frobenius--Hopf object from level $n$ to
 level $n{+}1$ exists if and only if the obstruction class
-$\kappa_n \in H^2(M, \mathcal{B})$
+$\kappa_n \in H^2(M,\, \mathcal{B})$
 ([quantum characteristic classes](#def:quantum-characteristic-classes)) vanishes.
 

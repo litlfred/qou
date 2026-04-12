@@ -7,9 +7,9 @@ $(\xi \cdot f)(g) = \frac{d}{dt}\big|_{t=0} f(e^{-t\xi} g)$
 $\theta_A = \omega_3$ (the left-invariant $1$-form dual to $e_3$), and:
 
 - $\omega_3(\xi) = 1$ (normalisation).
-- $\Omega^k_H(A) = \{\alpha : \iota_\xi\alpha = 0\}$
+- $\Omega^k_H(A) = \{\alpha : \iota_\xi\,\alpha = 0\}$
   (forms with no $\omega_3$ component).
 - In the archimedean realisation on a CR manifold $(M, \theta)$,
-  $\xi$ becomes the Reeb vector field with $\iota_\xid\theta = 0$
+  $\xi$ becomes the Reeb vector field with $\iota_\xi\,d\theta = 0$
   and $\theta(\xi) = 1$
   ([Reeb decomposition](#ex:reeb-decomposition)).

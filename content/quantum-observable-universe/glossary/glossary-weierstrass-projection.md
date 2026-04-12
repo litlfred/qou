@@ -5,8 +5,8 @@ be the period lattice of $\mathcal{E}_q$.  The **Weierstrass projection** is the
 meromorphic function $\wp_q : \mathbb{C}/\Lambda_q \to \mathbb{P}^1$ defined by
 
 $$
-  \wp_q(z) =  \frac{1}{z^2}
-  +  \sum_{\omega \in \Lambda_q \setminus \{0\}}
+  \wp_q(z) \;=\; \frac{1}{z^2}
+  \;+\; \sum_{\omega \in \Lambda_q \setminus \{0\}}
   \left(\frac{1}{(z - \omega)^2} - \frac{1}{\omega^2}\right).
 $$
 
@@ -22,9 +22,9 @@ $\mathcal{E}_q$.
 The map
 
 $$
-  \mathbb{C}/\Lambda_q \xrightarrow{ \sim } \mathcal{E}_q,
+  \mathbb{C}/\Lambda_q \;\xrightarrow{\;\sim\;}\; \mathcal{E}_q,
   \qquad
-  z  \longmapsto  [\wp_q(z) : \wp_q'(z) : 1]
+  z \;\longmapsto\; [\wp_q(z) : \wp_q'(z) : 1]
 $$
 
 is an isomorphism of Riemann surfaces (with $0 \mapsto [0:1:0]$, the
@@ -35,20 +35,20 @@ universal cover of $\mathcal{E}_q$.
 The function $\wp_q$ satisfies
 
 $$
-  \wp_q'(z)^2 =  4\wp_q(z)^3
-  +  4p(q)\wp_q(z)
-  +  4r(q),
+  \wp_q'(z)^2 \;=\; 4\,\wp_q(z)^3
+  \;+\; 4\,p(q)\,\wp_q(z)
+  \;+\; 4\,r(q),
 $$
 
 which is the standard Weierstrass equation $\wp'^2 = 4\wp^3 - g_2\wp - g_3$
 with invariants
 
 $$
-  g_2(q) = -4p(q), \qquad g_3(q) = -4r(q).
+  g_2(q) = -4\,p(q), \qquad g_3(q) = -4\,r(q).
 $$
 
 The factor of $4$ arises from converting the short Weierstrass form
-$y^2 = x^3 + px + r$ of the [Descartes elliptic curve](#prop:descartes-elliptic-curve)
+$y^2 = x^3 + p\,x + r$ of the [Descartes elliptic curve](#prop:descartes-elliptic-curve)
 to the classical $\wp$-function normalisation.
 
 **Regime table.**

@@ -15,6 +15,6 @@ $(\pi_H, \pi_V)$ of $\Omega^k(A)$ satisfying:
   & \Omega^k_H(A) \\
   \Omega^k_V(A)
 \end{tikzcd}
-\qquad (\pi_H + \pi_V = \mathrm{id}, \pi_H \pi_V = 0)
+\qquad (\pi_H + \pi_V = \mathrm{id},\; \pi_H \pi_V = 0)
 \end{equation}
 ```

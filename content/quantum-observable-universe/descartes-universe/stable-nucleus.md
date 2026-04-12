@@ -12,9 +12,9 @@ a brane point.)
 
 $$
   \mathcal{N}(Z, N)
-  = 
+  \;=\;
   \underbrace{\mathfrak{p} \bowtie \cdots \bowtie \mathfrak{p}}_{Z}
-   \bowtie 
+  \;\bowtie\;
   \underbrace{\mathfrak{n} \bowtie \cdots \bowtie \mathfrak{n}}_{N}.
 $$
 
@@ -29,7 +29,7 @@ $$
   \bigg|_{A}
   = 0
   \qquad \Longleftrightarrow \qquad
-  Z = \frac{A}{2 + a_C  A^{2/3} / (2a_A)}
+  Z = \frac{A}{2 + a_C \, A^{2/3} / (2\,a_A)}
 $$
 
 where $a_C = (q - q^{-1}) \cdot \lambda_C$ and $a_A$ is the Pauli
@@ -39,8 +39,8 @@ A **stable atom** appends $Z$ electrons:
 
 $$
   \mathcal{A}(Z, N)
-  = 
-  \mathcal{N}(Z, N)  \bowtie  Z \cdot T_{2,3}.
+  \;=\;
+  \mathcal{N}(Z, N) \;\bowtie\; Z \cdot T_{2,3}.
 $$
 
 **Restricting the hadron definition.**

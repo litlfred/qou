@@ -1,0 +1,18 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  interprets: "prop:boltzmann-constant",
+  label: "rem:gas-constant-derivation",
+  title: "Gas constant from $q$ and the Borromean volume",
+  tags: [
+    "gas-constant",
+    "avogadro",
+    "borromean-volume",
+    "carbon-12",
+    "fundamental-constants",
+  ],
+  uses: [
+    "prop:boltzmann-constant",
+    "prop:terminal-resolution",
+  ],
+});

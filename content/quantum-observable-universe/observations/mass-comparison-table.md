@@ -67,45 +67,9 @@ to six significant figures with $q = q_0$.
    systematic Skein polynomial algorithms.
 
 4. *Table cutoff.* The table is truncated at ${}^4\mathrm{He}$.
-   Heavier nuclei remain computable in principle --- the
+   Heavier nuclei remain computable in principle — the
    embeddability closure
    ([embeddability closure](#thm:embeddability-closure)) guarantees
-   all constituents descend to the base manifold --- but the
+   all constituents descend to the base manifold — but the
    multi-body Skein polynomials have not yet been evaluated beyond
    $A = 4$.
-
-5. *Source classification.* Proton and neutron masses in this table
-   use CODATA 2022 values directly. Nuclear masses use AME2020
-   binding energies $B/A$ as input. These are NOT predictions from
-   $q$ --- the table recombines observed constants and the
-   agreement is trivially guaranteed. The genuine $q$-predictions
-   are mass *ratios* ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$),
-   $Q$-values (mass differences from $\Delta\mathrm{net} \times E_0$),
-   and half-life ratios via $\log_q(ft)$ spectroscopy. The one
-   external scaling parameter is $m_e = 0.51099895$ MeV (CODATA),
-   which converts dimensionless $q$-ratios to physical MeV.
-
-*Isotope-level data (hecke-engine certificates, $A \leq 14$).*
-
-47 isotopes from ${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$
-have hecke-engine certificates providing exact Skein polynomial
-evaluations at $q_0$. All 47 have AME2020 binding-energy data
-available ("matched" = lookup succeeded, NOT a prediction test).
-The certificate fields encode crossing structure (combinatorial
-data), not mass directly:
-
-| Isotope | $Z$ | $N$ | $A$ | $B/A$ (AME2020) | $F_{\mathrm{Pauli}}$ | $\ln\lvert P\rvert$ |
-|:--------|----:|----:|----:|----------------:|---------------------:|--------------------:|
-| ${}^2\mathrm{H}$ | 1 | 1 | 2 | 1.1121 | 1.005 | 0.051 |
-| ${}^3\mathrm{H}$ | 1 | 2 | 3 | 2.8273 | 0.900 | $-0.684$ |
-| ${}^3\mathrm{He}$ | 2 | 1 | 3 | 2.5727 | 0.746 | $-0.436$ |
-| ${}^4\mathrm{He}$ | 2 | 2 | 4 | 7.0739 | 1.114 | $-0.574$ |
-| ${}^{12}\mathrm{C}$ | 6 | 6 | 12 | 7.6801 | 1.496 | $-3.860$ |
-| ${}^{14}\mathrm{N}$ | 7 | 7 | 14 | 7.4756 | 0.849 | $-5.343$ |
-| ${}^{16}\mathrm{O}$ | 8 | 8 | 16 | 7.9762 | 2.639 | $-5.275$ |
-
-The $F_{\mathrm{Pauli}}$ factor is $O(1)$ for all isotopes and
-encodes the Pauli exclusion statistical weight. The $\ln|P|$ column
-is the transfer matrix Skein polynomial evaluated at $q_0$. Neither
-field maps linearly to $B/A$ or mass in MeV. The full validation is
-in `certificate-to-mass.witness.json`.

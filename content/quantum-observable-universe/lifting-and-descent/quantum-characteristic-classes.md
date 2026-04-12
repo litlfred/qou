@@ -9,17 +9,17 @@ $\mathcal{B}$, and the
 ([jet prolongation](#prop:jet-prolongation)) produces a central extension
 
 $$
-  1  \longrightarrow  \mathcal{B}
-   \longrightarrow  \mathfrak{G}_{n+1}
-   \longrightarrow  \mathfrak{G}_n
-   \longrightarrow  1.
+  1 \;\longrightarrow\; \mathcal{B}
+  \;\longrightarrow\; \mathfrak{G}_{n+1}
+  \;\longrightarrow\; \mathfrak{G}_n
+  \;\longrightarrow\; 1.
 $$
 
 The *quantum characteristic classes* (Yekutieli obstruction classes)
 are the cohomology classes
 
 $$
-  \kappa_n  \in  H^2(\mathcal{S}, \mathcal{B})
+  \kappa_n \;\in\; H^2(\mathcal{S},\, \mathcal{B})
 $$
 
 that obstruct the lifting of objects from $\mathfrak{G}_n$

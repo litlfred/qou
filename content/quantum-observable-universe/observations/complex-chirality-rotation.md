@@ -1,4 +1,4 @@
-Let $q = |q|e^{i\theta}$ be a complex substrate parameter with
+Let $q = |q|\,e^{i\theta}$ be a complex substrate parameter with
 $|q| > 1$ and $\theta \in (-\pi, \pi]$, as in the
 [complex substrate interpretation](#rem:complex-substrate-interpretation).
 
@@ -12,14 +12,14 @@ is governed by the phase $\theta$:
    $\mathcal{S}_c(T_{p,k}; q)$, the complex extension satisfies
 
    $$
-     \mathcal{S}_c(T_{p,k}; |q|e^{i\theta})
-     = 
-     \mathcal{S}_c(T_{p,k}; |q|)e^{in_c\theta},
+     \mathcal{S}_c(T_{p,k};\, |q|\,e^{i\theta})
+     \;=\;
+     \mathcal{S}_c(T_{p,k};\, |q|)\,e^{i\,n_c\,\theta},
    $$
 
    where $n_c$ is the crossing number.  The mirror image
    $T_{p,k}^{\sigma}$ has crossing number $-n_c$, giving
-   $\mathcal{S}_c(T_{p,k}^{\sigma}) = \mathcal{S}_c(T_{p,k}; |q|)e^{-in_c\theta}$.
+   $\mathcal{S}_c(T_{p,k}^{\sigma}) = \mathcal{S}_c(T_{p,k};\, |q|)\,e^{-i\,n_c\,\theta}$.
 
 2. **Chirality interpolation.**  Define the chirality operator
    $\mathcal{X}_\varphi \colon \theta \mapsto \theta + \varphi$
@@ -28,7 +28,7 @@ is governed by the phase $\theta$:
    - At $\varphi = \pi / n_c$: crossing energies of particle and
      antiparticle become equal in magnitude, opposite in phase.
    - At $\varphi = \pi$: full chirality reversal
-     ($q \mapsto |q|e^{i(\theta + \pi)}$).
+     ($q \mapsto |q|\,e^{i(\theta + \pi)}$).
    The discrete electron/positron flip of the
    [chirality remark](#rem:chirality-trefoil-electron-positron) is
    recovered as the endpoint $\varphi = \pi$ of a continuous
@@ -54,9 +54,9 @@ electron--positron system:
 
 $$
   \delta_{\mathrm{CP}}
-  = 
+  \;=\;
   \frac{|\mathcal{S}_c(T_{2,3})| - |\mathcal{S}_c(T_{2,3}^{\sigma})|}{|\mathcal{S}_c(T_{2,3})| + |\mathcal{S}_c(T_{2,3}^{\sigma})|}
-   \sim 
+  \;\sim\;
   \mathcal{O}(\theta^2),
 $$
 

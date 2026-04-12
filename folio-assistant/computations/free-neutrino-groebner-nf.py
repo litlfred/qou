@@ -52,8 +52,8 @@ mu_0 = M_E_MEV / (3 * E_cross_num)
 # ── Particle–knot dictionary ────────────────────────────────────
 PARTICLE_KNOT = {
     ():         ("ν",   "K₀  (unknot)",       0, "neutrino sector"),
-    (0,):       ("σ₀",  "T₂,₁⁽⁰⁾ (Hopf gen)", 1, "Hopf crossing gen 0"),
-    (1,):       ("σ₁",  "T₂,₁⁽¹⁾ (Hopf gen)", 1, "Hopf crossing gen 1"),
+    (0,):       ("H⁰",  "T₂,₁⁽⁰⁾ (Hopf gen)", 1, "Hopf crossing gen 0"),
+    (1,):       ("H¹",  "T₂,₁⁽¹⁾ (Hopf gen)", 1, "Hopf crossing gen 1"),
     (0, 1):     ("L₊",  "L₂,₁  (Hopf link)",  2, "Hopf pair (positive)"),
     (1, 0):     ("L₋",  "L₂,₁' (Hopf rev)",   2, "Hopf pair (reversed)"),
     (0, 1, 0):  ("e⁻",  "T₂,₃  (trefoil 3₁)", 3, "electron (Garside Δ₃)"),
@@ -388,8 +388,8 @@ print()
 print("  Quark assignment: [u₁=strand 0, u₂=strand 1, d=strand 2] in B₃")
 print("  Crossings:")
 print("    (u₁, u₂) at gen 0 → u-u:  σ₀")
-print("    (u₁, d)  at gen 0 → mixed: ((1+q²)/2)·σ₀ + (−q·s/2)·ν")
-print("    (u₂, d)  at gen 1 → mixed: ((1+q²)/2)·σ₁ + (−q·s/2)·ν")
+print("    (u₁, d)  at gen 0 → mixed: ((1+q²)/2)·H⁰ + (−q·s/2)·ν")
+print("    (u₂, d)  at gen 1 → mixed: ((1+q²)/2)·H¹ + (−q·s/2)·ν")
 print()
 
 proton, steps_p = build_nucleus_nf(['u', 'u', 'd'], "proton")
@@ -792,9 +792,9 @@ witness = {
     "particle_knot_dictionary": {
         "1":     {"symbol": "ν",  "knot": "K₀ (unknot)", "crossings": 0,
                   "description": "neutrino sector"},
-        "s0":    {"symbol": "σ₀", "knot": "T₂,₁⁽⁰⁾ (Hopf gen)", "crossings": 1,
+        "s0":    {"symbol": "H⁰", "knot": "T₂,₁⁽⁰⁾ (Hopf gen)", "crossings": 1,
                   "description": "Hopf crossing gen 0"},
-        "s1":    {"symbol": "σ₁", "knot": "T₂,₁⁽¹⁾ (Hopf gen)", "crossings": 1,
+        "s1":    {"symbol": "H¹", "knot": "T₂,₁⁽¹⁾ (Hopf gen)", "crossings": 1,
                   "description": "Hopf crossing gen 1"},
         "s0.s1": {"symbol": "L₊", "knot": "L₂,₁ (Hopf link)", "crossings": 2,
                   "description": "Hopf pair (positive)"},

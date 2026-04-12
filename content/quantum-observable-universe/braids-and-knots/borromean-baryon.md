@@ -4,8 +4,8 @@ Borromean link $\mathcal{B}_3$, bound by the Hopf link
 $\mathcal{L}_H$.
 
 $$
-  B = 
-  \mathcal{B}_3(K_{0_1}, K_{0_1}, K_{0_1})
-   \bowtie  \mathcal{L}_H
+  B \;=\;
+  \mathcal{B}_3(K_{0_1},\, K_{0_1},\, K_{0_1})
+  \;\bowtie\; \mathcal{L}_H
 $$
 

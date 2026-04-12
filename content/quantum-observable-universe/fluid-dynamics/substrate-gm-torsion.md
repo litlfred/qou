@@ -12,11 +12,11 @@ $\mathbb{G}_m(k) = k^\times$ is the group of units.  The
 $\mathbb{G}_m$-family of operators
 
 $$
-  d_q = q^{-1}d + (1 - q^{-1})\pi_V \circ d
+  d_q = q^{-1}\,d + (1 - q^{-1})\,\pi_V \circ d
 $$
 
 is a universal deformation parametrised by the tautological
-coordinate on $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$.
+coordinate on $\mathbb{G}_m = \mathrm{Spec}\,\mathbb{Z}[q, q^{-1}]$.
 
 The Lusztig integral form
 $\mathcal{U}^\mathbb{Z}_q(\mathfrak{su}(2))$ is a
@@ -109,9 +109,9 @@ Neron model:
 
 $$
   \mathrm{obs}(q \to 1)
-   \in 
+  \;\in\;
   \Phi_{q=1}(\mathbb{G}_m)
-  = 
+  \;=\;
   \text{component group of the special fibre}.
 $$
 
@@ -131,7 +131,7 @@ $\mathcal{O}_M^\times$ is the sheaf of sections of
 $\mathbb{G}_m$.  So:
 
 $$
-  \kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)
+  \kappa_n \in H^2(\mathcal{S},\, \mathbb{G}_m)
 $$
 
 and the specialisation $q \to 1$ is the pullback along the
@@ -139,10 +139,10 @@ inclusion $\{1\} \hookrightarrow \mathbb{G}_m$:
 
 $$
   \kappa_n\big|_{q=1}
-   \in 
-  H^2(\mathcal{S}, \mathbb{G}_m)
-  \xrightarrow{ \mathrm{sp}_{q=1}}
-  H^2(\mathcal{S}, \mu_\infty).
+  \;\in\;
+  H^2(\mathcal{S},\, \mathbb{G}_m)
+  \;\xrightarrow{\;\mathrm{sp}_{q=1}\;}
+  H^2(\mathcal{S},\, \mu_\infty).
 $$
 
 The specialisation map $\mathrm{sp}_{q=1}$ factors through the

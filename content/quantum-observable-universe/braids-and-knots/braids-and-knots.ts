@@ -49,18 +49,6 @@ export default chapter({
     }),
 
     section({
-      title: "Feynman Path Integrals as a Special Case",
-      label: "sec:feynman-special-case",
-      blocks: [
-        "feynman-categorical-trace",
-        "feynman-categorical-trace-proof",
-        "feynman-classical-limit",
-        "feynman-classical-limit-interpretation",
-        "feynman-qou-dictionary",
-      ],
-    }),
-
-    section({
       title: "Braid group and symmetric group",
       label: "sec:braid-symmetric",
       blocks: [
@@ -207,9 +195,6 @@ export default chapter({
         "transfer-matrix-level-independence",
         "transfer-matrix-level-independence-proof",
         "topological-mass-formula",
-        "hecke-mass-element",
-        "hecke-mass-trace",
-        "hecke-charge-mass-duality",
         "skein-decomposition",
         "topological-field-ansatz",
       ],
@@ -279,8 +264,6 @@ export default chapter({
       blocks: [
         "borromean-baryon",
         "borromean-baryon-interpretation",
-        "typed-crossing-operator",
-        "nucleon-hecke-element",
         "hadron-proton-example",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",
@@ -296,21 +279,6 @@ export default chapter({
       blocks: [
         "topological-mass",
         "topological-mass-categorical-proof",
-        "categorical-mass-markov",
-        "mass-endomorphism-conjecture",
-        "mass-element-nf",
-        "calibration-inputs",
-        "three-parameters-wedderburn",
-        "binding-scale-catalan",
-        "wedderburn-mass-formula",
-        "algebraic-quantum-volume",
-        "habiro-ring",
-        "algebraic-quantum-volume-specialization",
-        "quantum-bloch-group",
-        "degree-two-baryon-weight",
-        "hook-weight-derivation",
-        "mass-endomorphism-tower",
-        "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",

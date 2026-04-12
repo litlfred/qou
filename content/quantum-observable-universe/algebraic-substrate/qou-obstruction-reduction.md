@@ -9,8 +9,8 @@ is one-dimensional:
 
 $$
 \dim_k \mathrm{Obs}(\mathbf{C}, q \to 1)
-=  \dim_k HH^2(\mathcal{U}_q, \mathrm{Ad})
-=  1.
+\;=\; \dim_k HH^2(\mathcal{U}_q, \mathrm{Ad})
+\;=\; 1.
 $$
 
 **(b)** The unique obstruction class is the image of the Euler
@@ -18,9 +18,9 @@ characteristic under the trace map:
 
 $$
 \mathrm{Obs}(\mathbf{C}, q \to 1)
- \cong  k,
+\;\cong\; k,
 \qquad
-[\phi_1] \mapsto \chi(A) \in R.
+[\phi_1] \;\mapsto\; \chi(A) \in R.
 $$
 
 **(c)** The obstruction vanishes at Kummer level $n$ iff
@@ -65,7 +65,7 @@ Poincare duality on Hochschild cohomology
 
 $$
 HH^n(\mathcal{U}_q, \mathrm{Ad})
- \cong 
+\;\cong\;
 HH^{d-n}(\mathcal{U}_q, \mathrm{Ad})^\vee,
 \qquad d = \dim G.
 $$
@@ -107,7 +107,7 @@ is determined by the single scalar $\chi(A)$.  $\square$
 *Proof of (c).*
 This is the Kummer specialisation
 ([Kummer](#prop:ns-kummer-specialisation)): $\kappa_0 \bmod n = 0$
-in $H^2(\mathcal{S}, \mathbb{G}_m) / nH^2(\mathcal{S}, \mathbb{G}_m)$
+in $H^2(\mathcal{S}, \mathbb{G}_m) / n\,H^2(\mathcal{S}, \mathbb{G}_m)$
 iff $n$ divides the trace $\chi(A)$.  $\square$
 
 **The obstruction as a function on $\mathbb{P}^1$.**
@@ -148,8 +148,8 @@ in the Kummer tower is
 
 $$
 \delta
-=  1 - \frac{|\{n : n \mid 6\}|}{N}
-\xrightarrow{N \to \infty} 1.
+\;=\; 1 - \frac{|\{n : n \mid 6\}|}{N}
+\;\xrightarrow{N \to \infty}\; 1.
 $$
 
 In the limit: the obstruction is nonzero at density-$1$ set

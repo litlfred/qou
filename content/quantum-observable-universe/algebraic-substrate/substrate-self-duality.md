@@ -4,7 +4,7 @@ complex concentrated in degree zero, and its rigid dualizing complex
 $\omega_A^\bullet$:
 
 $$
-A \xrightarrow{ \sim } \omega_A^\bullet
+A \;\xrightarrow{\;\sim\;}\; \omega_A^\bullet
 \quad\text{in } D(A).
 $$
 

@@ -14,7 +14,7 @@ $q$-local system is the $q$-oper connection itself:
 
 $$
   \mathbf{T}_{x,\lambda}^{(q)}(\mathcal{M}_{\nabla_q})
-  \simeq
+  \;\simeq\;
   \mathcal{M}_{\nabla_q} \otimes
   V_\lambda^{(q)}(\nabla_q)_x.
 $$

@@ -58,7 +58,7 @@ approximation already encodes the non-commutativity of position
 and momentum.
 
 **Step 2: the quadratic approximation.**
-$J^2(E) = E + dE \cdot \delta p + \tfrac{1}{2}d^2E \cdot (\delta p)^2$.
+$J^2(E) = E + dE \cdot \delta p + \tfrac{1}{2}\,d^2E \cdot (\delta p)^2$.
 
 The second jet introduces **curvature**.  The connection applied
 twice produces the Hessian $d^2E$: the quadratic form that
@@ -74,13 +74,13 @@ critical point.  Over $\mathbb{F}_\pp$: whether the quadratic has
 roots is a quadratic residue condition.
 
 **Step 3: the cubic approximation.**
-$J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}d^2 E \cdot (\delta p)^2 + \tfrac{1}{6}d^3 E \cdot (\delta p)^3$.
+$J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}\,d^2 E \cdot (\delta p)^2 + \tfrac{1}{6}\,d^3 E \cdot (\delta p)^3$.
 
 The third jet is where the **coral structure appears**.  The coral
 elliptic curve ([coral elliptic](#prop:coral-elliptic))
 
 $$
-  X^3 + (z+1)X^2 + (z^2+z+1)X + (z^3+z^2+z+1) = 0
+  X^3 + (z+1)\,X^2 + (z^2+z+1)\,X + (z^3+z^2+z+1) = 0
 $$
 
 is a cubic in $X$ — it is a **third-order approximation** of the

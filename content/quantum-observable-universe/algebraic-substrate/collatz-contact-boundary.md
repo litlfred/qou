@@ -18,8 +18,8 @@ The $[2]_q$-divisor is the locus where $[2]_q = 0$,
 i.e. $q = -1$:
 
 $$
-  D_{[2]}  :=  \{q : [2]_q = 0\}
-  =  \{-1\}.
+  D_{[2]} \;:=\; \{q : [2]_q = 0\}
+  \;=\; \{-1\}.
 $$
 
 This is where the $q$-analog of "dividing by $2$"
@@ -43,7 +43,7 @@ For an element $P \in \mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$
 of the Skein module, define the **$[2]_q$-adic valuation**:
 
 $$
-  v_{[2]}(P)  :=  \max\bigl\{k \geq 0 :
+  v_{[2]}(P) \;:=\; \max\bigl\{k \geq 0 :
   [2]_q^k \mid P \text{ in } \mathbb{Z}[q^{\pm 1}]\bigr\}.
 $$
 
@@ -101,7 +101,7 @@ results:
 
 $$
   \langle v_{[2]} \rangle_N(P)
-   := 
+  \;:=\;
   \frac{1}{N_{\mathrm{odd}}}
   \sum_{\substack{0 \leq k < N \\
     \mathcal{C}_q^k(P) \text{ is } q\text{-odd}}}
@@ -116,7 +116,7 @@ by **at least two halvings on average**:
 $$
   \text{orbit converges}
   \quad\Longleftarrow\quad
-  \langle v_{[2]} \rangle(P)  \geq  2.
+  \langle v_{[2]} \rangle(P) \;\geq\; 2.
 $$
 
 Two halvings multiply by $[2]_q^{-2}$; one tripling
@@ -125,7 +125,7 @@ multiplies by $[3]_q / [2]_q$.  The net factor per cycle
 
 $$
   \frac{[3]_q}{[2]_q} \cdot \frac{1}{[2]_q^2}
-  = 
+  \;=\;
   \frac{[3]_q}{[2]_q^3}.
 $$
 
@@ -134,9 +134,9 @@ The contraction ratio is:
 
 $$
   \frac{[3]_q}{[2]_q^3}
-  = 
+  \;=\;
   \frac{[2]_q^2 - q}{[2]_q^3}
-  = 
+  \;=\;
   \frac{1}{[2]_q} - \frac{q}{[2]_q^3},
 $$
 
@@ -145,7 +145,7 @@ per cycle.  The **margin** — the gap between two halvings
 and the minimum needed — is:
 
 $$
-  [2]_q^2 - [3]_q =  q.
+  [2]_q^2 - [3]_q \;=\; q.
 $$
 
 The margin is the substrate parameter itself.
@@ -170,7 +170,7 @@ critical:
 
 $$
   \mathcal{H}_{Col}(q)
-  = 
+  \;=\;
   \bigl\{P \in \mathcal{S}(q) :
   \langle v_{[2]} \rangle(P) = v^*(q)\bigr\}.
 $$
@@ -202,7 +202,7 @@ The $q$-Collatz conjecture
 $$
   \boxed{
   \bigl\langle v_{[2]}([3]_q P + 1) \bigr\rangle
-   \geq  2
+  \;\geq\; 2
   \quad\text{for all } P \in \mathcal{S}(q)_{>0}.
   }
 $$

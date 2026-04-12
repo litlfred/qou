@@ -47,8 +47,8 @@ aperiodic interactions.
 The Bring curve is the projective variety
 
 $$
-  \Sigma_4  :  x_1^5 + x_2^5 + x_3^5 + x_4^5 + x_5^5 = 0
-  \quad\subset \mathbb{P}^3
+  \Sigma_4 \;:\; x_1^5 + x_2^5 + x_3^5 + x_4^5 + x_5^5 = 0
+  \quad\subset\; \mathbb{P}^3
 $$
 
 (after fixing $x_1 + x_2 + x_3 + x_4 + x_5 = 0$).  The
@@ -63,7 +63,7 @@ pentagon.  The five sheets of $\Sigma_4$ meet at ramification
 points where two or more coordinates coincide.  At a generic
 ramification point, two sheets merge (simple branching).  The
 **monodromy** around such a point is a transposition
-$(x_i x_j) \in S_5$.  The transpositions generate $S_5$,
+$(x_i\; x_j) \in S_5$.  The transpositions generate $S_5$,
 so the full $5$-fold symmetry is recovered by encircling all
 ramification points.
 
@@ -73,11 +73,11 @@ diagonal to side is
 
 $$
   \frac{\text{diagonal}}{\text{side}}
-  = 
+  \;=\;
   \varphi
-  = 
+  \;=\;
   \frac{1 + \sqrt{5}}{2}
-   \approx  1.618
+  \;\approx\; 1.618
 $$
 
 the golden ratio.  In the Bring surface: the five sheets at a

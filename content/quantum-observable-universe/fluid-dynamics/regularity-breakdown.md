@@ -15,8 +15,8 @@ singularity in finite time.  Specifically:
 
    $$
      \lim_{t \to T^{*-}}
-     \int_{\mathbb{R}^3} |\omega(x, t)|^2dx
-     =  +\infty,
+     \int_{\mathbb{R}^3} |\omega(x, t)|^2\,dx
+     \;=\; +\infty,
    $$
 
    where $\omega = \nabla \times v$ is the vorticity.
@@ -31,21 +31,21 @@ singularity in finite time.  Specifically:
 
    $$
      v(x, t)
-      \approx 
-     \frac{1}{\sqrt{T^* - t}}
+     \;\approx\;
+     \frac{1}{\sqrt{T^* - t}}\,
      V\!\left(\frac{x - x_0}{\sqrt{T^* - t}}\right),
    $$
 
    where $V(\xi)$ solves the Leray equations
    $-\frac{1}{2}V - \frac{1}{2}(\xi \cdot \nabla)V +
-   (V \cdot \nabla)V = -\nabla P + \nu\Delta V$.
+   (V \cdot \nabla)V = -\nabla P + \nu\,\Delta V$.
 
 **The three obstructions (why each mechanism fails at $q = 1$).**
 
 **Obstruction 1: Loss of UV regularisation.**
 At $q = 1$, the $q$-Laplacian eigenvalues degenerate from
 exponential to polynomial: $[k]_1 = k$.  The dissipation rate
-$\gamma_k = \nuk^2/L^2$ grows only quadratically, which is
+$\gamma_k = \nu\,k^2/L^2$ grows only quadratically, which is
 insufficient to control the cubic nonlinearity in the
 enstrophy equation.  The $q$-deformation provides a "spectral
 gap" between mode $k$ and mode $k+1$ of size
@@ -64,7 +64,7 @@ $N_{\mathrm{eff}} \to \infty$.
 The [q-turbulence spectrum](#prop:q-turbulence-spectrum) has
 discrete transfer rates with exponentially decreasing amplitude.
 At $q = 1$, the cascade becomes continuous and the transfer rate
-$T_{k \to k+1} \to \varepsilonk^{-1/3}$ (Kolmogorov), allowing
+$T_{k \to k+1} \to \varepsilon\,k^{-1/3}$ (Kolmogorov), allowing
 energy to reach arbitrarily high wavenumbers in finite time.
 
 **Critical exponents.**
@@ -72,7 +72,7 @@ The transition at $q = 1$ has the structure of a second-order
 phase transition.  Define:
 
 - **Enstrophy order parameter**:
-  $\Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2|\hat{v}_k(t)|^2$.
+  $\Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2\,|\hat{v}_k(t)|^2$.
   For $q > 1$, $\Omega(q) < \infty$ (regularity).  At $q = 1$,
   $\Omega(1) = +\infty$ (blowup).
 

@@ -4,7 +4,7 @@ $\Delta$ operator:
 
 $$
   \Delta_{K_1 K_2 \to K_1' K_2'}(q)
-  = 
+  \;=\;
   T_{K_1', K_2'}(q) - T_{K_1, K_2}(q)
 $$
 
@@ -15,9 +15,9 @@ The step from any nuclear crossing type to the next is
 
 $$
   \Delta_\beta(q)
-  = 
+  \;=\;
   T_{\mathrm{mix}}(q) - T_{nn}(q)
-  = 
+  \;=\;
   T_{pp}(q) - T_{\mathrm{mix}}(q)
 $$
 
@@ -26,32 +26,35 @@ In closed form:
 $$
   \boxed{
     \Delta_\beta(q)
-    = 
-    \tfrac{1}{2}(q - q^{-1}) \mathbb{I}
+    \;=\;
+    \tfrac{1}{2}(1 - q^2) \, T_{pp}(q)
+    \;+\;
+    \tfrac{1}{2}\,q\,s\;\mathbb{I}
   }
 $$
 
 **Explicit entries:**
 
 $$
-  \Delta_\beta(q) = 
+  \Delta_\beta(q) \;=\;
   \begin{pmatrix}
-    \dfrac{q - q^{-1}}{2} & 0 \\[6pt]
-    0 & \dfrac{q - q^{-1}}{2}
+    \dfrac{1 - q^2}{2}(q - q^{-1}) + \dfrac{qs}{2}
+      & \dfrac{1 - q^2}{2} \\[6pt]
+    \dfrac{1 - q^2}{2} & \dfrac{qs}{2}
   \end{pmatrix}
 $$
 
-| Entry | Formula |
-|:-----:|---------|
-| $(1,1)$ | $\frac{q - q^{-1}}{2}$ |
-| $(1,2)$ | $0$ |
-| $(2,1)$ | $0$ |
-| $(2,2)$ | $\frac{q - q^{-1}}{2}$ |
+| Entry | Expanded formula |
+|:-----:|-----------------|
+| $(1,1)$ | $\frac{(1-q^2)(q-q^{-1}) + q(q^{1/2} - q^{-1/2})}{2}$ |
+| $(1,2)$ | $\frac{1-q^2}{2}$ |
+| $(2,1)$ | $\frac{1-q^2}{2}$ |
+| $(2,2)$ | $\frac{q(q^{1/2} - q^{-1/2})}{2}$ |
 
 **Properties:**
 
-- $\Delta_\beta$ is **scalar** (proportional to $\mathbb{I}$): it commutes with every transfer matrix.
-- At $q = 1$: $q - q^{-1} = 0$ and $\Delta_\beta = 0$ (no parity violation classically).
+- $\Delta_\beta$ is **symmetric** (off-diagonals equal).
+- At $q = 1$: $s = 0$ and $\Delta_\beta = 0$ (no parity violation classically).
 - **Universality**: the same $\Delta_\beta$ applies to every nucleus, for
   every converting nucleon, regardless of the partner.
 
@@ -59,7 +62,7 @@ $$
 
 $$
   \boxed{
-    \Delta_{\beta^+}(q) =  -\Delta_\beta(q)
+    \Delta_{\beta^+}(q) \;=\; -\Delta_\beta(q)
   }
 $$
 
@@ -75,8 +78,8 @@ the chain at the absorbing generator:
 
 $$
   \boxed{
-    M_i^{(n+1)}(q) =  T_{\gamma e}(q) \cdot M_i^{(n)}(q)
-    =  T_{pp}(q) \cdot M_i^{(n)}(q)
+    M_i^{(n+1)}(q) \;=\; T_{\gamma e}(q) \cdot M_i^{(n)}(q)
+    \;=\; T_{pp}(q) \cdot M_i^{(n)}(q)
   }
 $$
 
@@ -84,7 +87,7 @@ The energy change for shell $n \to n+1$:
 
 $$
   \Delta E_{n \to n+1}
-  = 
+  \;=\;
   \hat{V}(M_i^{(n+1)}) - \hat{V}(M_i^{(n)})
 $$
 
@@ -98,11 +101,11 @@ the larger eigenvalue of $T_{pp}$.
 $$
   \boxed{
     \Delta_{\mathrm{pair}}(q)
-    = 
+    \;=\;
     T_{e^- e^+}(q) - T_{\gamma\gamma}(q)
-    = 
+    \;=\;
     T_{\mathrm{mix}}(q) - T_{pp}(q)
-    = 
+    \;=\;
     -\Delta_\beta(q)
   }
 $$
@@ -122,11 +125,11 @@ nucleons at positions $p_1$ and $p_2$:
 
 $$
   \Delta M_i^{(2\beta)}
-  = 
+  \;=\;
   L_i \cdot \Delta_\beta \cdot C_i \cdot \Delta_\beta \cdot R_i
-  + 
+  \;+\;
   L_i \cdot \Delta_\beta \cdot R_i'
-  + 
+  \;+\;
   L_i' \cdot \Delta_\beta \cdot R_i
 $$
 
@@ -146,7 +149,7 @@ has unit crossing coefficient ($c = 1$).
 The target-flip amplitude factors as:
 
 $$
-  P_{\mathrm{flip}}(q; k_1, k_2) =  c_{k_1 k_2}(q) \cdot \Phi(q)
+  P_{\mathrm{flip}}(q;\, k_1, k_2) \;=\; c_{k_1 k_2}(q) \cdot \Phi(q)
 $$
 
 where $c_{k_1 k_2}$ is the control--control crossing
@@ -154,7 +157,7 @@ coefficient and:
 
 $$
   \boxed{
-    \Phi(q) = 
+    \Phi(q) \;=\;
     \frac{(q-1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1)}{2(q+1)^2}
   }
 $$
@@ -176,8 +179,8 @@ type.  A single crossing carries no type information.
 
 | Process | $\Delta$ operator | Explicit matrix |
 |---------|-------------------|-----------------|
-| $\beta^-$ decay ($\mathfrak{d} \to \mathfrak{u}$) | $\Delta_\beta$ | $\frac{q - q^{-1}}{2}\mathbb{I}$ |
-| $\beta^+$ decay ($\mathfrak{u} \to \mathfrak{d}$) | $-\Delta_\beta$ | $-\frac{q - q^{-1}}{2}\mathbb{I}$ |
+| $\beta^-$ decay ($\mathfrak{d} \to \mathfrak{u}$) | $\Delta_\beta$ | $\frac{1-q^2}{2} T_{pp} + \frac{qs}{2}\mathbb{I}$ |
+| $\beta^+$ decay ($\mathfrak{u} \to \mathfrak{d}$) | $-\Delta_\beta$ | $\frac{q^2-1}{2} T_{pp} - \frac{qs}{2}\mathbb{I}$ |
 | Photon absorption | $T_{pp}$ (appended) | $\begin{pmatrix} q-q^{-1} & 1 \\ 1 & 0 \end{pmatrix}$ (new factor) |
 | Photon emission | $T_{pp}^{-1}$ (removed) | Remove one factor from chain |
 | Pair creation $\gamma\gamma \to e^- e^+$ | $-\Delta_\beta$ | Same as $\beta^+$ |

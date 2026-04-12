@@ -5,7 +5,7 @@ vortex pair initial data, and let
 
 $$
   \mathcal{C}(\kappa)
-  = 
+  \;=\;
   \sup_{0 \leq t < T^*_\kappa}
   \mathrm{cond}\bigl(
     \mathcal{L}_\theta\big|_{N_p\gamma(t)}

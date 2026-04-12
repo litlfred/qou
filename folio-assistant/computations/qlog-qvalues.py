@@ -35,7 +35,7 @@ from experimental_constants import (
 
 HA = q - qi
 LN_Q = math.log(q)  # only used internally for log_q computation
-HA_crossing = q - qi  # Hecke amplitude q - q⁻¹ (crossing convention)
+S = q**0.5 - qi**0.5
 Z_m = 1 / (q**0.5 + qi**0.5)
 mu_0 = M_E_MEV / (3 * E_CROSS)
 
@@ -68,9 +68,9 @@ def vol(M):
     return Z_m * M[0][0] + M[1][0]
 
 # Crossing coefficients (in q-expressions):
-# pp: c = 1, d = 0
-# nn: c = 1, d = -(q - q⁻¹)
-# mix: c = 1, d = -(q - q⁻¹)/2
+# pp: c = [1]_q = 1, d = 0
+# nn: c = q², d = -q × (q^½ - q^{-½})
+# mix: c = (1+q²)/2, d = -q(q^½-q^{-½})/2
 # These are polynomials in q — no classical functions.
 
 def logq_skein_poly(p, n):
@@ -86,9 +86,9 @@ def logq_skein_poly(p, n):
             if ti == 'p' and tj == 'p':
                 c, d = 1.0, 0.0
             elif ti == 'n' and tj == 'n':
-                c, d = 1.0, -HA_crossing
+                c, d = q**2, -q*S
             else:
-                c, d = 1.0, -HA_crossing/2
+                c, d = (1+q**2)/2, -q*S/2
             M = mat_mul(M, T_mat(c, d))
         V = vol(M)
         if abs(V) > 0:

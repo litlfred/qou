@@ -11,8 +11,8 @@ by the Hopf link $\mathcal{L}_H$.  Then:
 
 $$
   Q(\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s}))
-  =  +\tfrac{2}{3} - \tfrac{1}{3} - \tfrac{1}{3}
-  =  0.
+  \;=\; +\tfrac{2}{3} - \tfrac{1}{3} - \tfrac{1}{3}
+  \;=\; 0.
 $$
 
    The strangelet is **electromagnetically neutral** for all $q > 0$.
@@ -24,7 +24,7 @@ $$
 
 $$
   \mathbf{E}_{\mathrm{cross}}(\mathcal{S}_N)
-  = 
+  \;=\;
   N \cdot \tfrac{1}{2}(n_+ + n_-)(q + q^{-1})
 $$
 
@@ -47,9 +47,9 @@ $$
 
 $$
   \mathbf{E}_{\mathrm{bind}}^{(\mathrm{uds})}
-  =  8q^{-1}
-   >  6q^{-1}
-  =  \mathbf{E}_{\mathrm{bind}}^{(\mathrm{udd})}
+  \;=\; 8\,q^{-1}
+  \;>\; 6\,q^{-1}
+  \;=\; \mathbf{E}_{\mathrm{bind}}^{(\mathrm{udd})}
 $$
 
    for all $q > 0$.  Strange matter has **strictly more

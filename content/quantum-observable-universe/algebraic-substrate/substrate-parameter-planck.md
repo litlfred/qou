@@ -7,7 +7,7 @@ shadow.
 The *quantum Planck constant* associated to $q$ is
 
 $$
-\hbar_q =  1 - q^{-1} =  \frac{q - 1}{q}.
+\hbar_q \;=\; 1 - q^{-1} \;=\; \frac{q - 1}{q}.
 $$
 
 The pair $(q, \hbar_q)$ parametrizes the deviation of $A$ from

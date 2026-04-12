@@ -1,5 +1,5 @@
 The electron configuration of atoms — the shell structure
-$1s^2 2s^2 2p^6 3s^2 3p^6 3d^{10} \ldots$ with shell
+$1s^2\, 2s^2 2p^6\, 3s^2 3p^6 3d^{10}\, \ldots$ with shell
 capacities $2, 8, 18, 32, \ldots = 2n^2$ — should arise from
 the **closed sub-Hopf link structure** of the multi-electron
 trefoil chain.
@@ -12,9 +12,9 @@ trefoil $T_{2,3}$.  The full atom
 
 $$
   \mathcal{A}(p, n)
-  = 
-  \underbrace{Z\mathfrak{p} \bowtie N\mathfrak{n}}_{\text{nucleus}}
-   \bowtie 
+  \;=\;
+  \underbrace{Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}}_{\text{nucleus}}
+  \;\bowtie\;
   \underbrace{p \cdot T_{2,3}}_{\text{electron cloud}}.
 $$
 
@@ -89,7 +89,7 @@ still capture the electron's vortex tube.
 The ionization energy of the outermost electron is
 
 $$
-  E_{\mathrm{ion}}  \propto 
+  E_{\mathrm{ion}} \;\propto\;
   \frac{\mathbf{E}_{\mathrm{cross}}(\text{electron--nucleus link})}{n^2}
 $$
 

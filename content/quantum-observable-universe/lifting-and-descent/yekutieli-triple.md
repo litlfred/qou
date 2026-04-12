@@ -3,7 +3,7 @@ $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
 of the underlying site $\mathcal{S}$ trivialising every level of the tower.
 The *Yekutieli triple* at level $n$ over an intersection
-$U_i \cap U_j$ is the datum $(x_{ij}^{(n)}, g_{ij}^{(n)}, a_{ij}^{(n)})$
+$U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$
 where:
 
 1. *Objects* $x_i^{(n)} \in \mathrm{Ob}(\mathfrak{G}_n|_{U_i})$
@@ -23,5 +23,5 @@ the
 ([jet prolongation](#prop:jet-prolongation)) sends the triple at level $n$
 to the triple at level $n{+}1$, and the descent homomorphism
 $\mathfrak{d}_{n+1}$ ([descent](#lem:descent)) reverses this assignment.
-In the archimedean realisation, $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j, \mathrm{SU}_{q_n}(2))$ are gauge transition
+In the archimedean realisation, $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$ are gauge transition
 functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.

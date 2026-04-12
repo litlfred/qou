@@ -7,7 +7,7 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
    The differential calculus $\Omega^1(A)$ is the Woronowicz
    $3$-dimensional calculus.
 2. *Observability.*
-   $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ by the quantum
+   $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$ by the quantum
    Schur lemma: $\mathrm{SU}_q(2)$ has no non-trivial invariants in the
    adjoint representation.
 3. *Yekutieli lifting.*  The brane tower satisfies the Yekutieli
@@ -17,9 +17,9 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 5. *Geometric descent* (for $n = 1$, $\dim M_S = 3$):
 
    $$
-     M_S \xrightarrow{ \mathrm{Reeb}} \Sigma_4
-     \xrightarrow{\pi} \mathbb{P}(V)
-     \xrightarrow{ \mathrm{branch}} \{6 \text{points}\}.
+     M_S \;\xrightarrow{\;\mathrm{Reeb}\;}\; \Sigma_4
+     \;\xrightarrow{\;\pi\;}\; \mathbb{P}(V)
+     \;\xrightarrow{\;\mathrm{branch}\;}\; \{6\;\text{points}\}.
    $$
 
    The degree-$4$ covering $\pi$ has $6$ branch points with total
