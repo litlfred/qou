@@ -1,0 +1,25 @@
+import { definition } from "../../schema/builders";
+
+/**
+ * The molecular braid: extending atomic braids to multi-atom systems
+ * by Hopf-linking pre-computed atomic braids with shared electron trefoils.
+ */
+export default definition({
+  label: "def:molecular-braid",
+  title: "Molecular braid $H_{N_{\\mathrm{mol}}}(q)$",
+  lean: {
+    decl: "QOU.Molecular.MolecularBraid",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:atomic-braid",
+    "def:hecke-normal-form",
+    "prop:nuclear-groebner-reduction",
+  ],
+  tags: [
+    "molecular",
+    "hecke-algebra",
+    "covalent-bond",
+    "iterative-construction",
+  ],
+});
