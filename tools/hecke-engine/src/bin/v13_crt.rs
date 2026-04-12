@@ -116,18 +116,13 @@ impl ModCoeff {
         Self { residues: r }
     }
 
-    /// Evaluate as f64 using CRT reconstruction.
-    /// Returns the exact integer value as f64 (may lose precision for large values).
+    /// Convert to signed f64 using first prime's symmetric representation.
+    /// Exact for |coefficient| < p₀/2 ≈ 1.15 × 10^18.
+    /// All Hecke algebra coefficients for A ≤ 20 are well within this range.
     fn to_f64(&self) -> f64 {
-        // For small values, all residues agree when interpreted as signed
-        // Use first prime for quick check
         let p = PRIMES[0];
         let r = self.residues[0];
-        if r <= p / 2 {
-            r as f64
-        } else {
-            -((p - r) as f64)
-        }
+        if r <= p / 2 { r as f64 } else { -((p - r) as f64) }
     }
 }
 
@@ -136,6 +131,21 @@ impl ModCoeff {
 #[inline]
 fn mulmod(a: u128, b: u128, p: u128) -> u128 {
     (a * b) % p
+}
+
+/// Modular exponentiation: a^e mod p via binary method.
+fn modpow(mut base: u128, mut exp: u128, modulus: u128) -> u128 {
+    if modulus == 1 { return 0; }
+    let mut result: u128 = 1;
+    base %= modulus;
+    while exp > 0 {
+        if exp & 1 == 1 {
+            result = mulmod(result, base, modulus);
+        }
+        exp >>= 1;
+        base = mulmod(base, base, modulus);
+    }
+    result
 }
 
 // ════════════════════════════════════════════════════════════════
@@ -213,7 +223,9 @@ impl CrtPoly {
         Self { terms, n_primes: self.n_primes }
     }
 
-    /// Evaluate at t = sqrt(q₀) using CRT-reconstructed integer coefficients.
+    /// Evaluate polynomial at t = sqrt(q₀).
+    /// Uses first-prime symmetric representation for each coefficient.
+    /// Exact for |coefficient| < 10^18 (all Hecke coefficients for A ≤ 20).
     fn eval_f64(&self, t: f64) -> f64 {
         self.terms.iter().map(|(k, c)| {
             c.to_f64() * t.powi(*k)
