@@ -21,6 +21,6 @@ export default remark({
     "def:categorical-proton",
     "def:quark-antiquark-production",
     "conj:borromean-quark",
-    "rem:beta-decay-energy-scale",
+    "rem:energy-scale-planck",
   ],
 });

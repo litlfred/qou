@@ -1,0 +1,18 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-10T04:42:24.050016+00:00",
+  "commitSha": "f55bccd0866c7574b692efc4b83ef16a65ac11fb",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "atom-mass-gram-full",
+  "scriptFile": "atom_mass_gram_full.py",
+  "scriptHash": "6dda26e09ac1",
+  "scriptCommitSha": "",
+  "description": "Gram character mass with full H_A(q) certificates.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "n_certs": "9"
+  }
+}

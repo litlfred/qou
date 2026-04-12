@@ -1,22 +1,14 @@
-# Build and publish the QOU CI Docker image to GitHub Container Registry.
+# DEPRECATED — All CI workflows now use the unified paper-assistant image.
+# See build-lean-mcp.yml for the active build workflow.
 #
-# Triggers:
-#   - Push to main when Dockerfile or lean-toolchain changes
-#   - Weekly (Monday 04:00 UTC) to pick up base image security updates
-#   - Manual dispatch
+# This workflow is disabled (no automatic triggers). Use manual dispatch
+# only if you need a standalone qou-ci image for some reason.
 #
-# The image is published to ghcr.io/<owner>/qou-ci:latest (and :sha-<short>).
+# Original: Build and publish the QOU CI Docker image to GHCR.
 
-name: CI Docker Image
+name: "[DEPRECATED] CI Docker Image"
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/docker/Dockerfile'
-      - 'content/quantum-observable-universe/lean/lean-toolchain'
-  schedule:
-    - cron: '0 4 * * 1'   # Weekly Monday 04:00 UTC
   workflow_dispatch:
 
 permissions:

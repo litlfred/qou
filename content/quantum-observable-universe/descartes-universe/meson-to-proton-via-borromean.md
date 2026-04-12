@@ -6,6 +6,30 @@ $B = 1$ as required for a baryon.  The antiquark inside the meson
 cannot spontaneously convert into a quark — baryon number is
 conserved.
 
+## Mesons are unstable at $q_0$
+
+Before discussing proton formation, note that the meson itself is
+**not a stable bound state** at $q_0$.  The NF of the $\mathfrak{u}\bar{\mathfrak{d}}$
+meson ($\sigma_0 \cdot L_+ \cdot \sigma_0^{-1}$) in $H_3(q)$ is:
+
+$$
+  \mathrm{NF}(\mathfrak{M}_+)
+  =
+  -0.209\sigma_1 - 0.044 L_+ + 1.000 L_- + 0.209 e^-
+$$
+
+with $\mathrm{net}(\mathfrak{M}_+) \approx +0.956$ and demand profile
+$\{\sigma_1 = -0.209, L_+ = -0.044\}$.  The meson has two negative
+NF coefficients — it demands crossing content ($\sigma_1$) and
+Hopf link content ($L_+$) from its environment.
+
+This is consistent with observed physics: mesons are short-lived
+(the charged pion decays in $\sim 26$ ns).  At $q_0$, the meson's
+demand makes it a transient intermediate, not a stable endpoint.
+The only stable hadronic states are those produced by
+$\mathcal{B}_3$ confinement (proton, neutron), where the Borromean
+topology provides genuine 3-body binding.
+
 ## Three pair productions $\to$ proton
 
 The proton requires three quarks ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$)
@@ -119,5 +143,17 @@ $\Delta_i$ contributes $\Delta_i \times \mathbf{E}_0$ MeV to the
 decay energy budget — and the six terms sum exactly to $Q_\beta$
 ([energy scale](#rem:beta-decay-energy-scale)).
 
+**Full derivation.**
+The chain described above is now formalized with full rigor in
+[4-term pair nucleon](#prop:four-term-pair-nucleon): the
+confinement operator $\mathcal{B}_3$ is derived from
+minimum-action ([confinement selection](#prop:confinement-operator-selection)),
+nucleon NFs are proved independent of photon polarization
+([confinement universality](#prop:confinement-universality)),
+and the beta decay channel emerges as the $e^- < 0$ coefficient
+in the confined NF
+([demand stability](#prop:demand-stability)).
+
 Witness: `meson-nucleon-nf.witness.json`,
-`beta-decay-energy-scale.witness.json`.
+`beta-decay-energy-scale.witness.json`,
+`confinement-operator-selection.witness.json`.

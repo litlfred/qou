@@ -1,12 +1,19 @@
 # Build and push the Paper Assistant Docker image to GHCR.
 #
-# Triggers on:
-#   - Push to main touching mcp-server/, content/, content/quantum-observable-universe/lean/, or Dockerfile
-#   - Manual dispatch
-#   - Weekly (to pick up Mathlib cache updates)
+# This is the UNIFIED image used by:
+#   - Folio deployment (folio.litlfred.org) — MCP server + viewer
+#   - publish.yml — PDF build, HTML generation, PR previews
+#   - lean-build.yml — content pipeline + Lean proof status
+#   - blueprint.yml — LeanBlueprint + doc-gen4
+#   - Local hooks — render-on-change.sh, render-pre-commit.sh (Docker fallback)
 #
-# The image is used by the folio deployment (folio.litlfred.org).
-# The self-updater polls for new image digests and auto-deploys.
+# Triggers on:
+#   - Push to main touching content, Lean, MCP server, Dockerfile, or CI scripts
+#   - Manual dispatch
+#   - Weekly (to pick up Mathlib cache + TeX Live security updates)
+#
+# The self-updater on the folio server polls for new image digests
+# and auto-deploys.
 
 name: Build Paper Assistant Image
 
@@ -18,6 +25,8 @@ on:
       - 'content/**'
       - 'content/quantum-observable-universe/lean/**'
       - 'scripts/mcp-server/Dockerfile'
+      - '.github/scripts/**'
+      - 'folio-assistant/**'
   workflow_dispatch:
   schedule:
     - cron: '0 6 * * 0'  # Weekly Sunday 06:00 UTC
