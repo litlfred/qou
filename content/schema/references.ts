@@ -1920,6 +1920,35 @@ export const references: CSLData[] = [
     DOI: "10.1016/0040-9383(91)90010-2",
     URL: "https://doi.org/10.1016/0040-9383(91)90010-2",
   }),
+
+  // ── Diaconis--Ram 2000 (random walks on Hecke algebras) ─────
+  ref({
+    id: "diaconis-ram2000",
+    type: "article-journal",
+    title: "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques",
+    author: [
+      { family: "Diaconis", given: "Persi" },
+      { family: "Ram", given: "Arun" },
+    ],
+    "container-title": "Michigan Mathematical Journal",
+    issued: { "date-parts": [[2000]] },
+    volume: "48",
+    issue: "1",
+    page: "157-190",
+    DOI: "10.1307/mmj/1030132713",
+  }),
+
+  // ── Bufetov 2020 (ASEP and Hecke algebras) ──────────────────
+  ref({
+    id: "bufetov2020",
+    type: "article",
+    title: "Interacting particle systems and random walks on Hecke algebras",
+    author: [
+      { family: "Bufetov", given: "Alexey" },
+    ],
+    issued: { "date-parts": [[2020]] },
+    note: "arXiv:2003.02730",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
