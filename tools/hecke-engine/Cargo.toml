@@ -38,6 +38,7 @@ num-bigint = "0.4"
 num-rational = "0.4"
 num-traits = "0.2"
 num-integer = "0.1"
+rayon = "1.10"
 
 [build-dependencies]
 
@@ -64,3 +65,8 @@ path = "src/bin/v13_stream.rs"
 [[bin]]
 name = "hecke-hapower"
 path = "src/bin/v14_hapower.rs"
+
+# Per-irrep via Young seminormal form (vector action mode: O(dim) memory)
+[[bin]]
+name = "hecke-irrep"
+path = "src/bin/v14_irrep.rs"
