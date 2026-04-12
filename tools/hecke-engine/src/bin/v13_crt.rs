@@ -235,29 +235,45 @@ impl CrtPoly {
 }
 
 // ════════════════════════════════════════════════════════════════
-// Compact word (1-indexed generators, 5 bits each, max 12 in u64)
+// Compact word: [u128; 4] with explicit length (matches v9).
+// 8 bits per generator, up to 64 generators.
 // ════════════════════════════════════════════════════════════════
 
 #[derive(Clone, Copy, PartialEq, Eq, Hash)]
-struct W(u64);
+struct W { data: [u128; 4], len: u8 }
 
 impl W {
-    const E: W = W(0);
-    fn len(self) -> usize { if self.0 == 0 { 0 } else { ((64 - self.0.leading_zeros() + 4) / 5) as usize } }
-    fn get(self, i: usize) -> u8 { (((self.0 >> (i * 5)) & 0x1F) as u8) - 1 }
-    fn push(self, g: u8) -> W { let l = self.len(); W(self.0 | (((g + 1) as u64) << (l * 5))) }
-    fn set(&mut self, i: usize, g: u8) {
-        let mask = !(0x1Fu64 << (i * 5));
-        self.0 = (self.0 & mask) | (((g + 1) as u64) << (i * 5));
+    const E: W = W { data: [0; 4], len: 0 };
+    fn len(self) -> usize { self.len as usize }
+    fn get(self, i: usize) -> u8 {
+        let w = i / 16; let s = (i % 16) * 8;
+        ((self.data[w] >> s) & 0xFF) as u8
+    }
+    fn push(mut self, v: u8) -> W {
+        let l = self.len as usize;
+        if l >= 64 { return self; }
+        let w = l / 16; let s = (l % 16) * 8;
+        self.data[w] |= (v as u128) << s;
+        self.len += 1;
+        self
+    }
+    fn set(&mut self, i: usize, v: u8) {
+        let w = i / 16; let s = (i % 16) * 8;
+        self.data[w] &= !(0xFF_u128 << s);
+        self.data[w] |= (v as u128) << s;
     }
     fn remove_at(self, pos: usize) -> W {
-        let l = self.len(); let mut r = W::E;
+        let l = self.len();
+        let mut r = W::E;
         for i in 0..l { if i != pos { r = r.push(self.get(i)); } }
         r
     }
     fn drop_last(self) -> W {
-        let l = self.len(); if l <= 1 { return W::E; }
-        let mut r = W::E; for i in 0..l-1 { r = r.push(self.get(i)); } r
+        let l = self.len();
+        if l <= 1 { return W::E; }
+        let mut r = W::E;
+        for i in 0..l-1 { r = r.push(self.get(i)); }
+        r
     }
 }
 
@@ -325,73 +341,118 @@ struct Engine;
 
 impl Engine {
     fn multiply_and_reduce(elem: &mut CrtElem, gen: u8, c: &CrtPoly, d: &CrtPoly, doubled: bool, ha: &CrtPoly) {
+        // Port of v9's exact multiply_and_reduce logic.
+        if doubled { elem.pn_count += 1; }
         let old: Vec<(W, CrtPoly)> = elem.terms.drain().collect();
         let np = elem.np;
+        let mut stable: FxHashMap<W, CrtPoly> = FxHashMap::default();
+        let mut pending: Vec<(W, CrtPoly)> = Vec::new();
 
-        // Add ALL new terms (both d and c) to elem.terms
-        for (word, coeff) in old {
+        // d-terms go to stable, c-terms go to pending
+        for (w, coeff) in old {
             if coeff.is_zero() { continue; }
             if !d.is_zero() {
                 let nc = coeff.mul(d);
                 if !nc.is_zero() {
-                    let e = elem.terms.entry(word).or_insert_with(|| CrtPoly::zero(np));
+                    let e = stable.entry(w).or_insert_with(|| CrtPoly::zero(np));
                     *e = e.add(&nc);
                 }
             }
             if !c.is_zero() {
                 let nc = coeff.mul(c);
                 if !nc.is_zero() {
-                    let wg = word.push(gen);
-                    let e = elem.terms.entry(wg).or_insert_with(|| CrtPoly::zero(np));
-                    *e = e.add(&nc);
+                    pending.push((w.push(gen), nc));
                 }
             }
         }
-        if doubled { elem.pn_count += 1; }
 
-        // Full reduction: find ONE reducible term, apply rule, repeat
+        // Reduction loop: exactly matches v9
         loop {
-            let reducible = elem.terms.iter()
-                .filter(|(_, c)| !c.is_zero())
-                .find_map(|(word, _)| {
-                    let l = word.len();
-                    if l < 2 { return None; }
+            let mut next: Vec<(W, CrtPoly)> = Vec::new();
+            let mut any_reduced = false;
+
+            for (word, coeff) in pending {
+                if coeff.is_zero() { continue; }
+
+                // Find reduction (junction check + full scan)
+                let l = word.len();
+                let mut red = None;
+                if l >= 2 {
                     for p in 0..l-1 {
                         let a = word.get(p); let b = word.get(p+1);
-                        if a == b { return Some((*word, p, 0u8)); }
-                        if (a as i16 - b as i16) >= 2 { return Some((*word, p, 1)); }
+                        if a == b { red = Some((p, 0u8)); break; }
+                        if (a as i16 - b as i16) >= 2 { red = Some((p, 1)); break; }
                         if p+2 < l {
-                            let c = word.get(p+2);
-                            if a == c && (a as i16 - b as i16).abs() == 1 && b < a { return Some((*word, p, 2)); }
+                            let cv = word.get(p+2);
+                            if a == cv && (a as i16 - b as i16).abs() == 1 && b < a { red = Some((p, 2)); break; }
                         }
                     }
-                    None
-                });
+                }
 
-            match reducible {
-                None => break,
-                Some((word, pos, rule)) => {
-                    let coeff = elem.terms.remove(&word).unwrap();
+                if let Some((pos, rule)) = red {
+                    any_reduced = true;
                     match rule {
-                        0 => {
-                            let w1 = word.remove_at(pos+1); let w2 = w1.remove_at(pos);
-                            let c1 = coeff.mul(ha);
-                            let e1 = elem.terms.entry(w1).or_insert_with(|| CrtPoly::zero(np)); *e1 = e1.add(&c1);
-                            let e2 = elem.terms.entry(w2).or_insert_with(|| CrtPoly::zero(np)); *e2 = e2.add(&coeff);
-                        }
+                        0 => { let w1 = word.remove_at(pos+1); let w2 = w1.remove_at(pos);
+                            next.push((w1, coeff.mul(ha))); next.push((w2, coeff)); }
                         1 => { let mut w = word; let (a,b) = (w.get(pos), w.get(pos+1)); w.set(pos, b); w.set(pos+1, a);
-                            let e = elem.terms.entry(w).or_insert_with(|| CrtPoly::zero(np)); *e = e.add(&coeff);
-                        }
+                            next.push((w, coeff)); }
                         2 => { let mut w = word; let (a,b) = (w.get(pos), w.get(pos+1)); w.set(pos, b); w.set(pos+1, a); w.set(pos+2, b);
-                            let e = elem.terms.entry(w).or_insert_with(|| CrtPoly::zero(np)); *e = e.add(&coeff);
-                        }
+                            next.push((w, coeff)); }
                         _ => {}
                     }
-                    // Clean up zero terms that might have been created
-                    elem.terms.retain(|_, c| !c.is_zero());
+                } else {
+                    // Stable — add to stable map
+                    let e = stable.entry(word).or_insert_with(|| CrtPoly::zero(np));
+                    *e = e.add(&coeff);
+                }
+            }
+
+            if !any_reduced { break; }
+
+            // v9's KEY: consolidate next, then merge with stable and re-check
+            let mut consolidated: FxHashMap<W, CrtPoly> = FxHashMap::default();
+            for (w, cv) in next {
+                if cv.is_zero() { continue; }
+                let e = consolidated.entry(w).or_insert_with(|| CrtPoly::zero(np));
+                *e = e.add(&cv);
+            }
+
+            pending = Vec::new();
+            for (w, cv) in consolidated {
+                if cv.is_zero() { continue; }
+                if let Some(existing) = stable.remove(&w) {
+                    // Merge with existing stable term
+                    let merged = existing.add(&cv);
+                    if !merged.is_zero() {
+                        // Check if the merged result is NOW reducible
+                        let l = w.len();
+                        let mut has_red = false;
+                        if l >= 2 {
+                            for p in 0..l-1 {
+                                let a = w.get(p); let b = w.get(p+1);
+                                if a == b { has_red = true; break; }
+                                if (a as i16 - b as i16) >= 2 { has_red = true; break; }
+                                if p+2 < l {
+                                    let cv2 = w.get(p+2);
+                                    if a == cv2 && (a as i16 - b as i16).abs() == 1 && b < a { has_red = true; break; }
+                                }
+                            }
+                        }
+                        if has_red {
+                            pending.push((w, merged));
+                        } else {
+                            stable.insert(w, merged);
+                        }
+                    }
+                } else {
+                    // New word — put in pending for reduction check
+                    pending.push((w, cv));
                 }
             }
         }
+
+        stable.retain(|_, cv| !cv.is_zero());
+        elem.terms = stable;
     }
 
     fn strip(terms: &mut FxHashMap<W, CrtPoly>, np: usize, t0: f64) -> PauliAcc {
@@ -600,3 +661,51 @@ mod tests {
         assert!((tm2_coeff - (-1.0)).abs() < 1e-10, "t⁻² coeff should be -1, got {}", tm2_coeff);
     }
 }
+
+    #[test]
+    fn test_w_roundtrip() {
+        // Build σ₀σ₁σ₂σ₃σ₄ and verify each position
+        let mut w = W::E;
+        for g in 0..5u8 { w = w.push(g); }
+        assert_eq!(w.len(), 5);
+        for g in 0..5u8 { assert_eq!(w.get(g as usize), g, "get({}) failed", g); }
+        
+        // Test remove_at
+        let w2 = w.remove_at(2); // remove σ₂ → σ₀σ₁σ₃σ₄
+        assert_eq!(w2.len(), 4);
+        assert_eq!(w2.get(0), 0);
+        assert_eq!(w2.get(1), 1);
+        assert_eq!(w2.get(2), 3);
+        assert_eq!(w2.get(3), 4);
+        
+        // Test set
+        let mut w3 = w;
+        w3.set(2, 7);
+        assert_eq!(w3.get(2), 7);
+        assert_eq!(w3.get(0), 0); // others unchanged
+        assert_eq!(w3.get(4), 4);
+    }
+
+    #[test]
+    fn test_w_hash_distinct() {
+        // σ₀σ₁ and σ₁σ₀ must be distinct
+        let w1 = W::E.push(0).push(1);
+        let w2 = W::E.push(1).push(0);
+        assert_ne!(w1, w2);
+        // σ₀σ₀ must equal itself
+        let w3 = W::E.push(0).push(0);
+        let w4 = W::E.push(0).push(0);
+        assert_eq!(w3, w4);
+    }
+
+    #[test]
+    fn test_w_max_gen() {
+        // Test with generator 12 (max for 5-bit: 31-1=30, but we only need ~17 for 6×3=18 strands)
+        let w = W::E.push(12);
+        assert_eq!(w.len(), 1);
+        assert_eq!(w.get(0), 12);
+        let w2 = w.push(0);
+        assert_eq!(w2.len(), 2);
+        assert_eq!(w2.get(0), 12);
+        assert_eq!(w2.get(1), 0);
+    }
