@@ -36,6 +36,26 @@ The 0-gluon proton CONVERGES in the eigenvalue sense (|λ| < q)
 but is LP UNSTABLE in the NF Frobenius sense (Gx[γ] < 0).
 These are different constraints.
 
+## Key Finding: BW Coefficients from q₀ and m_e
+
+3 of 4 Bethe-Weizsäcker energy scales derived (zero fitting):
+
+| Coefficient | Formula | Error |
+|------------|---------|-------|
+| λ_V (volume) | 3 × m_e/ℏ_q | −0.02% |
+| λ_S (surface) | 3q × m_e/ℏ_q | +0.22% |
+| λ_A (Pauli) | (9/2) × m_e/ℏ_q | −0.35% |
+| λ_C (Coulomb) | TBD | — |
+
+Unit: m_e/ℏ_q = 5.157 MeV (crossing energy scale).
+Integer factors: 3 (quarks), q (surface ratio), 3/2 (Pauli/volume).
+Only λ_C remains — may need Q_β as 3rd calibration point.
+
+3 Wedderburn irreps → 3 forces → 3 calibrations:
+  Symmetric → Strong → m_μ/m_e
+  Standard → EM → m_e
+  Alternating → Weak → Q_β (for λ_C)
+
 ## Goal
 Rebuild the full particle chain from γγ → quarks → nucleons → atoms → isotopes,
 tracking error bounds at every step, symbolic in q until too slow, then CRT multi-prime.
