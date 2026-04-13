@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-04-13T18:11:07.424276+00:00",
-  "commitSha": "c22a28bedca0b19f1c9435e2f0f921775c2a6e66",
+  "computedAt": "2026-04-13T22:23:47.478857+00:00",
+  "commitSha": "30cda2cfce1b314bfbcbbbfff3fe638095b41b20",
   "assertions": [
     {
       "name": "M(Hydrogen)",
@@ -186,7 +186,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 58,
   "computation": "atom-mass-full-hecke",
   "scriptFile": "atom_mass_full_hecke.py",
   "scriptHash": "2f6cc6719302",
@@ -234,7 +234,7 @@
         "M_ame2020": 938.78308711,
         "delta_MeV": 0.0,
         "sym_alt_correction": 0.0,
-        "elapsed_s": 0.0005826950073242188
+        "elapsed_s": 0.0004284381866455078
       },
       {
         "element": "Helium",
@@ -269,7 +269,7 @@
         "M_ame2020": 3728.40141526,
         "delta_MeV": 4.3506443511541875,
         "sym_alt_correction": 0.8694035154396371,
-        "elapsed_s": 0.04923653602600098
+        "elapsed_s": 0.050121307373046875
       },
       {
         "element": "Lithium",
@@ -307,7 +307,7 @@
         "M_ame2020": 6535.36684341,
         "delta_MeV": -3.6081031192588853,
         "sym_alt_correction": 2.9331455065555,
-        "elapsed_s": 0.13919544219970703
+        "elapsed_s": 0.12094640731811523
       },
       {
         "element": "Beryllium",
@@ -347,7 +347,7 @@
         "M_ame2020": 8394.79425104,
         "delta_MeV": -2.656983464348741,
         "sym_alt_correction": 10.29358902179381,
-        "elapsed_s": 0.28037548065185547
+        "elapsed_s": 0.27785253524780273
       },
       {
         "element": "Boron",
@@ -389,7 +389,7 @@
         "M_ame2020": 10255.10325867,
         "delta_MeV": -2.9368534474706394,
         "sym_alt_correction": 41.406060094066206,
-        "elapsed_s": 1.0600459575653076
+        "elapsed_s": 1.0017218589782715
       },
       {
         "element": "Carbon",
@@ -432,7 +432,7 @@
         "M_ame2020": 11177.92984578,
         "delta_MeV": 1.4211305881199223,
         "sym_alt_correction": 98.2722616464211,
-        "elapsed_s": 2.406297445297241
+        "elapsed_s": 2.19814133644104
       },
       {
         "element": "Nitrogen",
@@ -477,7 +477,7 @@
         "M_ame2020": 13043.78115341,
         "delta_MeV": 2.257084061133355,
         "sym_alt_correction": 555.2698367074971,
-        "elapsed_s": 13.005592107772827
+        "elapsed_s": 12.16236662864685
       },
       {
         "element": "Oxygen",
@@ -524,7 +524,7 @@
         "M_ame2020": 14899.16886104,
         "delta_MeV": 0.5527399667535065,
         "sym_alt_correction": 15.60157771183313,
-        "elapsed_s": 0.16268491744995117
+        "elapsed_s": 0.10871624946594238
       },
       {
         "element": "Fluorine",
@@ -574,7 +574,7 @@
         "M_ame2020": 17696.900989190002,
         "delta_MeV": -6.04185906195562,
         "sym_alt_correction": 7806674.396758593,
-        "elapsed_s": 0.2208564281463623
+        "elapsed_s": 0.19996190071105957
       },
       {
         "element": "Neon",
@@ -625,7 +625,7 @@
         "M_ame2020": 18622.835076299998,
         "delta_MeV": -3.171626538878627,
         "sym_alt_correction": 16.369504111159443,
-        "elapsed_s": 0.16073131561279297
+        "elapsed_s": 0.14197182655334473
       },
       {
         "element": "Sodium",
@@ -679,7 +679,7 @@
         "M_ame2020": 21414.829904449998,
         "delta_MeV": -4.7489846698408655,
         "sym_alt_correction": 66488951.26788508,
-        "elapsed_s": 0.30614399909973145
+        "elapsed_s": 0.26711010932922363
       },
       {
         "element": "Magnesium",
@@ -734,7 +734,7 @@
         "M_ame2020": 22341.90849156,
         "delta_MeV": -2.3605073153667036,
         "sym_alt_correction": 10.10048985457816,
-        "elapsed_s": 0.21572303771972656
+        "elapsed_s": 0.1893148422241211
       },
       {
         "element": "Aluminium",
@@ -792,7 +792,7 @@
         "M_ame2020": 25133.14281971,
         "delta_MeV": -3.6371518518535595,
         "sym_alt_correction": 110194219.5515752,
-        "elapsed_s": 0.40631890296936035
+        "elapsed_s": 0.3578028678894043
       },
       {
         "element": "Silicon",
@@ -851,7 +851,7 @@
         "M_ame2020": 26060.34350682,
         "delta_MeV": -0.7613889713793469,
         "sym_alt_correction": 3.2938341178282613,
-        "elapsed_s": 0.335369348526001
+        "elapsed_s": 0.2778139114379883
       },
       {
         "element": "Phosphorus",
@@ -913,7 +913,7 @@
         "M_ame2020": 28851.87273497,
         "delta_MeV": -2.6273816003049433,
         "sym_alt_correction": 54084526.5783686,
-        "elapsed_s": 0.5479109287261963
+        "elapsed_s": 0.49545764923095703
       },
       {
         "element": "Sulfur",
@@ -976,7 +976,7 @@
         "M_ame2020": 29781.800122079996,
         "delta_MeV": -1.9079045194448554,
         "sym_alt_correction": 0.3261415219086144,
-        "elapsed_s": 0.4425051212310791
+        "elapsed_s": 0.40647101402282715
       },
       {
         "element": "Chlorine",
@@ -1042,7 +1042,7 @@
         "M_ame2020": 32573.283050230002,
         "delta_MeV": -3.90994095136557,
         "sym_alt_correction": 9308777.688721647,
-        "elapsed_s": 0.767467737197876
+        "elapsed_s": 0.6835901737213135
       },
       {
         "element": "Argon",
@@ -1113,7 +1113,7 @@
         "M_ame2020": 37224.71881942,
         "delta_MeV": -14.265028954316222,
         "sym_alt_correction": 0.33329349731737806,
-        "elapsed_s": 3.1046953201293945
+        "elapsed_s": 2.856294631958008
       },
       {
         "element": "Potassium",
@@ -1183,7 +1183,7 @@
         "M_ame2020": 36294.46406549001,
         "delta_MeV": -4.525581923153368,
         "sym_alt_correction": 612100.3155927905,
-        "elapsed_s": 1.2161316871643066
+        "elapsed_s": 1.1583802700042725
       },
       {
         "element": "Calcium",
@@ -1254,7 +1254,7 @@
         "M_ame2020": 37224.918152599996,
         "delta_MeV": -3.276530264163739,
         "sym_alt_correction": 0.3307656847178428,
-        "elapsed_s": 1.2032513618469238
+        "elapsed_s": 1.168715476989746
       }
     ]
   }
