@@ -1,0 +1,114 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-13T18:32:42.156256+00:00",
+  "commitSha": "c473339abe71f2eccf1ddb92e0cc00bf983de037",
+  "assertions": [
+    {
+      "name": "H₂ positive binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "min-writhe LP"
+    },
+    {
+      "name": "CO positive binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "min-writhe LP"
+    },
+    {
+      "name": "CO₂ positive binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "min-writhe LP"
+    },
+    {
+      "name": "CH₄ positive binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "min-writhe LP"
+    },
+    {
+      "name": "C₆H₆ positive binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "min-writhe LP"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "ch-bond-writhe-lp",
+  "scriptFile": "ch-bond-writhe-lp.py",
+  "scriptHash": "91026a78a9d2",
+  "scriptCommitSha": "",
+  "description": "Molecular bonds from two-level LP dual. Degree 0: minimize |tr_M|. Degree 1: minimize writhe. Selects smallest n with positive binding at minimum writhe.",
+  "contentBlock": "def:molecular-braid",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "E_mol_eV": 6.750278523641413
+  },
+  "data": {
+    "bond_H-H": {
+      "n": 2,
+      "writhe": -2,
+      "ops": "σ₁⁻¹,σ₁⁻¹",
+      "E_eV": 9.324678534223416
+    },
+    "bond_C-H": {
+      "n": 1,
+      "writhe": -1,
+      "ops": "σ₀⁻¹",
+      "E_eV": 0.19669447305202334
+    },
+    "bond_C-O": {
+      "n": 1,
+      "writhe": -1,
+      "ops": "σ₁⁻¹",
+      "E_eV": 1.368406367903587
+    },
+    "bond_C-C": {
+      "n": 1,
+      "writhe": -1,
+      "ops": "σ₁⁻¹",
+      "E_eV": 1.6159120482781306
+    },
+    "bond_O-H": {
+      "n": 1,
+      "writhe": -1,
+      "ops": "σ₀⁻¹",
+      "E_eV": 0.045850782412635106
+    },
+    "molecules": [
+      {
+        "name": "H₂",
+        "pred_eV": 9.324678534223416,
+        "obs_eV": 4.478
+      },
+      {
+        "name": "CO",
+        "pred_eV": 4.105219103710761,
+        "obs_eV": 11.09
+      },
+      {
+        "name": "CO₂",
+        "pred_eV": 5.473625471614348,
+        "obs_eV": 16.56
+      },
+      {
+        "name": "CH₄",
+        "pred_eV": 0.7867778922080934,
+        "obs_eV": 17.9
+      },
+      {
+        "name": "C₆H₆",
+        "pred_eV": 15.723375272815314,
+        "obs_eV": 57.4
+      }
+    ]
+  }
+}
