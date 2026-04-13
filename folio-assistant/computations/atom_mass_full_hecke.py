@@ -359,10 +359,9 @@ def compute_atom(Z, N, element_name):
     else:
         ordering, method = ground_state_ordering(Z, N)
 
-    # Step 2: Symbolic three-channel traces
-    # Set include_gluon=True to add LP-derived internal crossings per nucleon
+    # Step 2: Symbolic three-channel traces with LP-derived gluon
     # (proton: 2×σ₀, neutron: 4×σ from L₊→L₋)
-    tr_sym, tr_std, tr_alt = three_channel_traces_symbolic(ordering, include_gluon=False)
+    tr_sym, tr_std, tr_alt = three_channel_traces_symbolic(ordering, include_gluon=True)
     tr_full = Rational(1, 6) * tr_sym + Rational(4, 6) * tr_std + Rational(1, 6) * tr_alt
 
     # Step 3: Symbolic crossing energy

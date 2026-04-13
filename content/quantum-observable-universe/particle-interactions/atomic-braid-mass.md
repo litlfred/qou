@@ -14,6 +14,15 @@ where $A = Z + N$.  The crossing coefficients are:*
 | $\mathfrak{p}e$ | $\sigma^{-1}$ | $1$ | $-(q - q^{-1})$ | EM attraction |
 | $\mathfrak{n}e$ | $\mathrm{id}$ | $0$ | $1$ | no interaction |
 | $ee$ | $\sigma$ | $1$ | $0$ | EM repulsion |
+| $\mathfrak{p}_{\mathrm{gluon}}$ | $\sigma^2$ | | | $2\sigma_0$ internal (LP-derived) |
+| $\mathfrak{n}_{\mathrm{gluon}}$ | $L_+L_-$ | | | $4\sigma$ internal (LP-derived) |
+
+*Each nucleon also carries **internal gluon crossings** from LP
+stability ([integer LP gluon](#prop:mass-endomorphism-tower)):
+$2$ bare $\sigma_0$ for protons ($11$ total crossings) and
+$L_+ \to L_-$ for neutrons ($13$ total crossings).  These
+are prepended to the nucleon's per-generator crossing chain
+in the Wedderburn traced volume computation.*
 
 *The **ground-state ordering** is determined by:*
 1. *Nuclear ordering: minimize $\Phi_1$ over all permutations of
