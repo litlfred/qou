@@ -112,7 +112,7 @@ internal twist has a definite handedness.
 **Electron channel ($e^-$):**
 Entirely absent in the 3-term specialization ($\varphi_{01} =
 \psi_{01} = 0$).  Opens only when at least one photon carries Hopf
-dressing, through two distinct mechanisms:
+dressing, through three distinct mechanisms:
 
 1. **$L_+ \cdot \sigma_0 = e^-$** (term 14): the Hopf dressing of
    photon 1 combines with the horizontal crossing of photon 2 to
