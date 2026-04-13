@@ -22,6 +22,7 @@ export default chapter({
       blocks: [
         "particle-interactions-intro",
         "nuclear-groebner-reduction",
+        "nuclear-reduction-algorithm",
         "groebner-shirshov-energy",
         "inductive-gb-reduction",
         "box-braid-irreducibility",
