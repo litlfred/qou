@@ -202,7 +202,7 @@ def vol_sym(crossings):
     nf3 = qint(1)*qint(2)*qint(3)
     ws = sp.S(1)**2 / nf3  # dim(sym)=1
     wa = sp.S(1)**2 / nf3  # dim(alt)=1
-    wd = qint(3)**2 / nf3  # dim(std)=[3]_q
+    wd = qint(2)**2 / nf3  # dim(std)=[2]_q (hook lengths for (2,1): 3,1,1)
     wt = ws + wd + wa
     ws /= wt; wd /= wt; wa /= wt
 

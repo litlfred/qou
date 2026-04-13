@@ -246,7 +246,7 @@ d_sym_part = qint_sym(3)  # qdim((3,), 3) = [3]! / [3] = [2]·[1] ... actually
 # qdim for partition (2,1) of 3: hook lengths are 2,1,1 → qdim = [3]!/([2][1][1]) = [3]
 # qdim for partition (1,1,1) of 3: hook lengths are 3,2,1 → qdim = 1
 dim_sym = sp.S(1)
-dim_std = qint_sym(3)  # = [3]_q
+dim_std = qint_sym(2)  # = [2]_q (hook lengths for (2,1): 3,1,1)
 dim_alt = sp.S(1)
 
 w_sym_s = dim_sym**2 / nf3
