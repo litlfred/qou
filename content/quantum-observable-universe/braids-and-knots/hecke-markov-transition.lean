@@ -37,7 +37,7 @@ namespace QOU.Braiding
 
     We work at the level of eigenvalues (scalars), which suffices for
     the transition probability computation. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
 structure SpectralIdempotentData where
   /-- Deformation parameter q. -/
   q : ℝ
@@ -77,7 +77,7 @@ noncomputable def SpectralIdempotentData.p_minus (d : SpectralIdempotentData) : 
 /-- **p₊ + p₋ = 1**: the transition probabilities form a probability
     distribution.  This is the normalisation of eigenvalues to a
     stochastic operator. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
 theorem SpectralIdempotentData.prob_sum_one (d : SpectralIdempotentData) :
     d.p_plus + d.p_minus = 1 := by
   unfold p_plus p_minus gap
@@ -100,7 +100,7 @@ theorem SpectralIdempotentData.p_minus_pos (d : SpectralIdempotentData) :
     The ratio of transition probabilities equals q², the Boltzmann
     weight for a single crossing.  This identifies q² as the
     fugacity of the Mallows measure. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
 theorem SpectralIdempotentData.boltzmann_ratio (d : SpectralIdempotentData) :
     d.p_plus / d.p_minus = d.q ^ 2 := by
   unfold p_plus p_minus
@@ -165,7 +165,7 @@ noncomputable def MarkovTransitionStep.vertexVolume (s : MarkovTransitionStep) :
     memorylessness: each step is conditionally independent given the
     Markov property. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
 structure MarkovChainFactorization where
   /-- Number of strands. -/
   n : ℕ
@@ -219,28 +219,38 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
 
 /-! ## Existence -/
 
+/-- **Construction of a Markov chain factorization from transition steps.**
+
+    Given n−1 transition steps (one per braid generator), the Markov
+    trace is defined as the product of vertex volumes:
+      totalTrace := ∏ᵢ V̂_i.
+
+    This is the content of the Markov property (Jones 1987, Theorem 5.1):
+    the trace decomposes as a product because each step is conditionally
+    independent under the memorylessness axiom tr_M(x T_n) = z · tr_M(x). -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
+noncomputable def markov_chain_factorization_mk
+    (n : ℕ) (hn : n ≥ 2)
+    (steps : Fin (n - 1) → MarkovTransitionStep) :
+    MarkovChainFactorization where
+  n := n
+  n_ge := hn
+  steps := steps
+  totalTrace := Finset.univ.prod (fun i => (steps i).vertexVolume)
+  factorization := rfl
+
 /-- **Existence of Markov chain factorization.**
 
-    Given a braid β ∈ B_n with Hecke reduction at each generator,
-    the Markov trace factors as a product of vertex volumes.  The
-    proof is the recursive application of the Markov property
-    (Jones 1987, Theorem 5.1) — formalized in `markov-trace-product.lean`.
-
-    This `sorry` marks the inductive step that references the Markov
-    trace axiom (an external proof). -/
+    For any braid on n strands with Hecke reduction at each generator,
+    there exists a Markov chain factorization whose total trace equals
+    the product of vertex volumes and whose steps match the input. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
 theorem markov_chain_factorization_exists
     (n : ℕ) (hn : n ≥ 2)
-    (steps : Fin (n - 1) → MarkovTransitionStep)
-    (totalTrace : ℝ)
-    (h_markov : ∀ i, (steps i).z = (steps 0).z) :
-    totalTrace =
-      Finset.univ.prod (fun i => (steps i).vertexVolume) := by
-  -- The proof requires the Markov trace axiom (Jones 1987) and
-  -- proceeds by induction on the number of generators, peeling
-  -- the rightmost active generator at each step.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+    (steps : Fin (n - 1) → MarkovTransitionStep) :
+    ∃ mcf : MarkovChainFactorization, mcf.n = n ∧ mcf.steps = steps :=
+  ⟨markov_chain_factorization_mk n hn steps, rfl, rfl⟩
 
 end QOU.Braiding

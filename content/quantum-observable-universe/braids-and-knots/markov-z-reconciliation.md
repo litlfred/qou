@@ -1,7 +1,7 @@
 Two conventions for the Markov parameter $z$ appear in the
 literature and in this paper.  They differ by a factor of
-$q^{1/2} - q^{-1/2}$ and arise from different normalisation
-choices for the trace.
+$q - 1$ and arise from different normalisation choices for
+the trace.
 
 **Convention 1 (Jones, 1987).**
 The Jones--Markov trace
@@ -37,11 +37,11 @@ giving $z_{\mathrm{m}} \approx 0.499$ at $q_0$.
 $$
   z_{\mathrm{J}}
   \;=\;
-  (q^{1/2} - q^{-1/2})\,z_{\mathrm{m}}^{\,2},
+  (q - 1)\,z_{\mathrm{m}}^{\,2},
 $$
 
-since $q - 1 = (q^{1/2} - q^{-1/2})(q^{1/2} + q^{-1/2})$.
-Equivalently, $z_{\mathrm{m}} = z_{\mathrm{J}}^{1/2}\,(q^{1/2} - q^{-1/2})^{-1/2}$.
+since $z_{\mathrm{m}}^2 = 1/(q^{1/2}+q^{-1/2})^2$ by definition.
+Equivalently, $z_{\mathrm{m}} = z_{\mathrm{J}}^{1/2}\,(q - 1)^{-1/2}$.
 
 **Why two conventions.**
 Convention 1 is the natural normalisation for the Jones polynomial
