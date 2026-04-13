@@ -20,7 +20,9 @@ export default chapter({
       title: "The Gröbner–Shirshov reduction engine",
       label: "sec:groebner-engine",
       blocks: [
+        "particle-interactions-intro",
         "nuclear-groebner-reduction",
+        "nuclear-reduction-algorithm",
         "groebner-shirshov-energy",
         "inductive-gb-reduction",
         "box-braid-irreducibility",
@@ -36,6 +38,7 @@ export default chapter({
       blocks: [
         "confinement-operator-selection",
         "confinement-lp",
+        "operator-selection-lp",
         "confinement-topological",
       ],
     }),

@@ -4,7 +4,7 @@ $|\alpha_i| = q^{1/2}$ unconditionally.  The question is:
 entire chain of categorical machinery to a single geometric constraint.
 
 **Step 1: Global coherence demands vanishing Chern classes.**
-The Yekutieli multiplicative integral computes a path-ordered product
+The multiplicative integral \cite{yekutieli2015} computes a path-ordered product
 of holonomy matrices along the Reeb flow. For this product to be
 globally well-defined --- yielding the same answer regardless of how
 one triangulates the bounding surface --- the connection on the
@@ -79,7 +79,7 @@ phase* of exact balance between order and disorder
 ([unitary stability](#rem:unitary-stability)). If any eigenvalue
 drifted off the critical line, the holonomy around the corresponding
 prime orbit would cease to be unitary, the Chern classes would become
-nonzero, and the Yekutieli integral would develop an anomaly --- the
+nonzero, and the multiplicative integral would develop an anomaly --- the
 global coherence of the counting mechanism would break down.
 
 In summary: the prime distribution cannot have wild, unconstrained

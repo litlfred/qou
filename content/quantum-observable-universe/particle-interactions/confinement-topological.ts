@@ -12,7 +12,7 @@ export default proposition({
     "borromean",
   ],
   lean: {
-    decl: "QOU.Interactions.confinementTopological",
+    decl: "QOU.Interactions.gram_indefinite_witness",
     validation: "not_checked",
   },
   uses: [

@@ -15,6 +15,11 @@ LaTeX label: `prop:shell-structure-eigenvalues`
 
 ## References
 - [manuscript] §6/shell-structure-eigenvalues
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

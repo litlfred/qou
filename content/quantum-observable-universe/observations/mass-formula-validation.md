@@ -22,8 +22,11 @@ to $0.75\%$.  The residual is the brane-tower correction
 (single-level vs full-tower).  Using the derived $E_0$, the
 neutron $Q$-value becomes a prediction:
 $Q_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
-(CODATA: $0.782$ MeV, $0.75\%$ error).  No third calibration
-input is needed.
+(CODATA: $0.782$ MeV, $0.75\%$ error).  In this derivation
+the hadronic scale $E_0$ is itself derived from $Q_\beta(n)$;
+the complete framework uses three calibration inputs
+([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
+$m_\mu/m_e$, and $m_e$.
 
 ## What the substrate parameter $q$ genuinely predicts
 
@@ -230,15 +233,15 @@ negative channels demand. Concretely:
 - The neutron has negative $L_+$ --- the binding operator must supply
   Hopf link content to the neutron.
 
-**TODO**: Find a torus knot $T(2,k)$ whose NF, when applied to
-both proton and neutron simultaneously, fills their negative
-channels and yields $B/A$ matching the AME2020 curve. The candidate
-must have positive $\gamma$, positive $e^-$, and positive $L_+$
-coefficients. The Borromean link $B_3 = (\sigma_0\sigma_1^{-1})^3$
-already provides exactly this pattern with
-$\mathrm{net}(B_3) = +1.000$, $L_+ = +0.046$, $L_- = -0.044$,
-but operates at the single-nucleon (gluon) level, not the
-inter-nucleon binding level.
+**Open problem.** The outstanding computational goal is to identify a
+torus knot $T(2,k)$ whose normal form, when applied to both proton
+and neutron simultaneously, fills their negative channels and yields
+$B/A$ matching the AME2020 curve.  The candidate must have positive
+$\gamma$, positive $e^-$, and positive $L_+$ coefficients.  The
+Borromean link $B_3 = (\sigma_0\sigma_1^{-1})^3$ already provides
+exactly this pattern with $\mathrm{net}(B_3) = +1.000$,
+$L_+ = +0.046$, $L_- = -0.044$, but operates at the single-nucleon
+(gluon) level, not the inter-nucleon binding level.
 
 **Approach 4:** Certificate polynomial roots --- the tr\_alt
 polynomial's root structure at $q = q_0$ may encode binding through

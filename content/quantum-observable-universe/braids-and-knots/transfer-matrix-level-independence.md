@@ -7,14 +7,14 @@ Then:
 1. **Constituent-composite agreement.**  The Markov trace computed
    from the constituent insertion points $(z_1, \ldots, z_n)$
    and the Markov trace computed from the composite insertion
-   point $z_H$ yield the same Skein polynomial:
+   point $z_H$ yield the same Jones polynomial:
 
    $$
      \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{const}}(q)
      = 
      \hat{V}^{\mathrm{comp}}(q)
      = 
-     P_{K_{\mathfrak{H}}}(q).
+     J_{K_{\mathfrak{H}}}(q).
    $$
 
 2. **Path independence on $\mathcal{S}_p$.**  Two braiding operations

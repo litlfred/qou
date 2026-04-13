@@ -1,8 +1,16 @@
+# DEPRECATED — Use scripts/mcp-server/Dockerfile (paper-assistant) instead.
+#
+# All CI workflows now use the unified paper-assistant image which includes
+# everything this image had plus Lean 4, GitHub CLI, and more.
+# See build-lean-mcp.yml for the build workflow.
+#
+# This file is kept for reference only. The build-latex-image.yml workflow
+# that builds this image has been disabled.
+#
+# Original description:
 # QOU LaTeX Build Docker Image
 # Pre-installs TeX Live, pandoc, latexdiff, graphviz, Python, and Bun
 # so the publish.yml workflow skips expensive apt-get install steps.
-#
-# Rebuild triggers: main.tex package changes, weekly schedule, manual dispatch.
 
 FROM ubuntu:24.04
 

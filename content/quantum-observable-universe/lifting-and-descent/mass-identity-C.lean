@@ -14,6 +14,11 @@ an axiom with full bibliographic citation.
 
 - [yekutieli2015] Nonabelian multiplicative integration on surfaces
 - [manuscript] §3
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Analysis.Normed.Group.Basic

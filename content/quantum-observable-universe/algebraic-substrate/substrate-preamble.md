@@ -19,8 +19,8 @@ $\mathcal{B}$ provides the coordinate fibers: the $2g = 8$ independent
 cycles of this genus-$4$ curve determine the fundamental modes of the
 Reeb spectrum.
 
-Self-duality is the conceptual keystone. Yekutieli's rigid dualizing
-complex $\omega_A^\bullet$ provides a canonical duality theory for the
+Self-duality is the conceptual keystone. The rigid dualizing
+complex $\omega_A^\bullet$ \cite{yekutieli2010} provides a canonical duality theory for the
 non-commutative algebra $A$. The Frobenius form induces a
 quasi-isomorphism $A \xrightarrow{\sim} \omega_A^\bullet$, establishing
 that the observer trace $\Phi = \lambda \circ \mu$ and the observed

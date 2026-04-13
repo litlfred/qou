@@ -8,21 +8,23 @@ QOU object is defined.
 |:---|:---|:---|
 | Configuration space of paths | Braid group $B_n$ acting on $V^{\otimes n}$ | [braid action](#prop:braid-action-tensor) |
 | Path measure $\mathcal{D}\phi$ | Markov trace $\mathrm{tr}_M$ on $H_n(q)$ | [Jones--Markov trace](#thm:jones-markov-trace) |
-| Action functional $S[\phi]$ | Categorical action $S_q = \mathrm{tr}_M(\rho(\beta))$ | [$q$-energy](#def:q-energy) |
-| Amplitude $e^{iS[\phi]/\hbar}$ | $R$-matrix eigenvalues $q$, $-q^{-1}$ of $c_{V,V}$ | [$R$-matrix braiding](#rem:r-matrix-braiding) |
+| Action functional $S[\phi]$ | $q$-energy $\mathbf{E}_q(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$ | [$q$-energy](#def:q-energy) |
+| Transition amplitude $\langle\psi_f|\psi_i\rangle$ | Markov trace $\mathrm{tr}_M(\rho(\beta))$ | [categorical trace](#prop:feynman-categorical-trace) |
+| Amplitude phase $e^{iS[\phi]/\hbar}$ | $R$-matrix eigenvalues $q$, $-q^{-1}$ of $c_{V,V}$ | [$R$-matrix braiding](#rem:r-matrix-braiding) |
 | Propagator $K(x,y;t)$ | Categorical transfer matrix $\mathcal{T}(\mathfrak{H})$ | [transfer matrix](#def:categorical-transfer-matrix) |
 | Hilbert space $\mathcal{H}$ | Direct limit $\mathcal{H}_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ | [knot eigenbasis](#prop:knot-eigenbasis-complete) |
 | Basis states $|n\rangle$ | Irreducible summands $V_\lambda \otimes S_\lambda$ | [knot eigenbasis](#prop:knot-eigenbasis-complete) |
 | Planck constant $\hbar$ | Quantum Planck constant $\hbar_q = 1 - q^{-1}$ | [$q$-energy](#def:q-energy) |
 | Classical limit $\hbar \to 0$ | $q \to 1$ limit | [classical limit](#prop:feynman-classical-limit) |
-| Regularisation / renormalisation | Absent | — |
+| Partition function $Z$ | $\dim_q(V^{\otimes n}) = \sum_\lambda \dim_q(V_\lambda)\dim(S_\lambda)$ | [knot eigenbasis](#prop:knot-eigenbasis-complete) |
+| Regularisation / renormalisation | Absent (finite sum, no divergences) | — |
 
 **Three finite computations of the path integral.**
 The categorical trace admits three independent evaluation methods
 --- analytic, algebraic, and computational --- each producing the
 same finite answer without regularisation:
 
-1. **Yekutieli multiplicative integral** (analytic):
+1. **Multiplicative integral** (analytic) \cite{yekutieli2015}:
    $\mathfrak{m} = \lVert\mathrm{MI}\int_\Sigma(\nabla_A q, L \wedge F^+)\rVert$.
    The surface $\Sigma$ is the disc swept by the photon threading
    through the hadron braid; the multiplicative integral accumulates

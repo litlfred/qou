@@ -49,7 +49,7 @@ non-torsion locus of the substrate), satisfying:
    locus $\mathbb{G}_m^{\mathrm{nt}}$.  At roots of unity
    $q \in \mu_n$ the quantum dimension $[n]_q = 0$ vanishes,
    the Frobenius pairing degenerates, and $\mathbb{L}_q$
-   degenerates.  The Yekutieli obstruction
+   degenerates.  The obstruction
    ([Kummer filtration](#rem:kummer-filtration-obstruction))
    persists at all Kummer levels $n \nmid \chi(A)$.
 

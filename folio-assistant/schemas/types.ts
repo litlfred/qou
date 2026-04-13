@@ -668,6 +668,44 @@ export type FormalizableBlock =
   | DefinitionBlock
   | ProofBlock;
 
+// ── Cross-reference helpers ─────────────────────────────────────
+
+/**
+ * All known label prefixes used in content objects.
+ *
+ * Used to distinguish same-paper references (e.g. "def:foo") from
+ * cross-paper qualified references (e.g. "unital-groebner-bases:def:foo").
+ * A label that contains ":" but doesn't start with one of these prefixes
+ * is treated as a cross-paper reference.
+ */
+export const KNOWN_LABEL_PREFIXES = [
+  "def:", "thm:", "lem:", "prop:", "cor:", "rem:", "ex:", "conj:",
+  "prf:", "sim:", "eq:", "fig:", "tbl:",
+  "sec:", "chap:", "app:", "bib:",
+] as const;
+
+/**
+ * Test whether a label is a cross-paper qualified reference.
+ *
+ * Cross-paper refs use "paper-dir:label" syntax (e.g.
+ * "unital-groebner-bases:def:foo"). They contain a colon but don't
+ * start with a known label prefix.
+ */
+export function isCrossPaperRef(label: string): boolean {
+  return label.includes(":") && !KNOWN_LABEL_PREFIXES.some(p => label.startsWith(p));
+}
+
+/**
+ * Extract the label from a Block, regardless of block kind.
+ *
+ * Environment blocks (definition, theorem, etc.) always have `label`.
+ * Non-environment blocks (prose, equation, diagram, table) may have
+ * an optional `label`. Returns `undefined` if no label is set.
+ */
+export function extractBlockLabel(block: Block): string | undefined {
+  return "label" in block ? block.label : undefined;
+}
+
 // ── Document structure ───────────────────────────────────────────
 
 export interface Section {

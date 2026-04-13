@@ -17,7 +17,6 @@ export default proposition({
     "def:big-bang-state",
     "def:cmb-boundary-datum",
     "prop:horizon-conformal-invariance",
-    "conj:aeon-boundary-generates-chart",
     "def:observation",
   ],
   cites: ["penrose2010"],

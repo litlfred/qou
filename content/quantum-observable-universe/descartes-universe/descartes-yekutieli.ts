@@ -3,7 +3,7 @@ import { example } from "../../schema/builders";
 export default example({
   interprets: "thm:qu-to-qou",
   label: "ex:descartes-yekutieli",
-  title: "Bring's surface and Yekutieli obstructions",
+  title: "Bring's surface and $q$-flatness obstructions",
   tags: ["descartes-universe", "yekutieli", "brings-surface"],
   uses: [
     "rem:mass-geometric-drag",

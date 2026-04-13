@@ -6,12 +6,25 @@ restricted to 0 < |w₁|² < ∞, with inherited Fubini–Study metric and
 C₅-action by phase rotation w_k ↦ ζᵏ w_k.
 
 LaTeX label: `def:briggs-klein-chart`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Complex.Basic
 
 namespace QOU.Brings
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Briggs–Klein affine chart**: coordinate system on Bring's surface
     using resolvent coordinates (w₁, w₂) ∈ ℂ², restricted to the open

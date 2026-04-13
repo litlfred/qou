@@ -13,6 +13,11 @@
   ## References
   - [frenkel2004] https://doi.org/10.1090/surv/088
   - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.Topology.FiberBundle.Basic
@@ -20,12 +25,19 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 namespace QOU
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- A vertex operator on the exceptional divisor 𝒮_p.
     Given a state a ∈ V_n (level n of the brane tower), the vertex
     operator Y(a, z) is a formal Laurent series in the affine
     coordinate z = v₁/v₂ on 𝒮_p whose modes are R-matrix insertions. -/
 -- Ref: [frenkel2004] https://doi.org/10.1090/surv/088
-structure VertexOperator (q : ℝ) where
+structure VertexOperator (q : R_q) where
   /-- The Reeb bundle (base space for the insertion). -/
   bundle : ReebBundle q
   /-- Conformal weight (jet level) of the state. -/
@@ -34,14 +46,14 @@ structure VertexOperator (q : ℝ) where
 /-- The OPE (operator product expansion) of two vertex operators.
     Records the leading singularity data: the eigenvalues of the
     Hecke generator T acting on the collision Y₁(z)Y₂(w) as z → w. -/
-structure OPE (q : ℝ) where
+structure OPE (q : R_q) where
   /-- The two vertex operators whose collision is being resolved. -/
   left : VertexOperator q
   right : VertexOperator q
   /-- The symmetric (bosonic) eigenvalue of the Hecke generator. -/
-  bosonic_eigenvalue : ℝ
+  bosonic_eigenvalue : R_q
   /-- The antisymmetric (fermionic) eigenvalue. -/
-  fermionic_eigenvalue : ℝ
+  fermionic_eigenvalue : R_q
 
 /-- The OPE of any two vertex operators in a QOU with q > 1 has
     its leading singularity governed by the Hecke relation
@@ -52,7 +64,7 @@ structure OPE (q : ℝ) where
     to the strand collision on 𝒮_p. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 axiom ope_is_skein
-    {q : ℝ} (hq : q > 1)
+    -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (Y₁ Y₂ : VertexOperator q)
     : ∃ (ope : OPE q),
         ope.left = Y₁ ∧ ope.right = Y₂ ∧

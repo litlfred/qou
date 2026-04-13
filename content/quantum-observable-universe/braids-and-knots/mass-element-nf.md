@@ -78,11 +78,11 @@ gives:
 |:---:|:---:|:---:|:---:|
 | $S_1$ ($n = 1, 4, 7, \ldots$) | $\sigma_0, \sigma_1$ | $76.9\%$ | $a_1 \approx 86.2$ |
 | $S_2$ ($n = 2, 5, 8, \ldots$) | $L_+, L_-$ | $16.7\%$ | $a_3 \approx 37.4$ |
-| $S_0$ ($n = 3, 6, 9, \ldots$) | $e^-$ | $6.4\%$ | $a_5 \approx 13.0$ |
+| $S_0$ ($n = 3, 6, 9, \ldots$) | $e^-$ | $6.4\%$ | $a_5 \approx 13.4$ |
 
 The electron mass is mostly carried by the **crossing
 channels** ($\sigma_0, \sigma_1$), not by the trefoil
-channel itself.  The $e^-$ coefficient ($\approx 14.0$
+channel itself.  The $e^-$ coefficient ($\approx 13.4$
 including the descended part) is only $12\%$ of the total
 mass element norm.
 

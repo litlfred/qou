@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$, $V$ the fundamental
+$\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, $V$ the fundamental
 representation, and $q$ not a root of unity.  Let
 $\varrho \colon \mathbf{1} \to A$ be a closed cycle with braid
 representative $\beta \in B_n$.

@@ -16,6 +16,11 @@ LaTeX label: `prop:descartes-elliptic-curve`
 ## References
 
 - [manuscript] §5/descartes-elliptic-curve
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

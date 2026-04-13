@@ -10,7 +10,7 @@ adjoint representation and thereby the fibre functor $\tau$.
 Since $\tau$ uniquely determines $\mathbb{L}_q$, the
 automorphic--spectral duality is a consequence of observability.
 Relaxing observability reintroduces adjoint cohomology, and the
-Yekutieli obstruction classes $\kappa_n$ interact with this
+obstruction classes $\kappa_n$ interact with this
 cohomology to produce additional obstructions to the equivalence
 ([fibre-functor rigidity](#rem:fibre-functor-rigidity)).
 

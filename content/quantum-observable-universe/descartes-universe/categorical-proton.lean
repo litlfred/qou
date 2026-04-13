@@ -8,6 +8,11 @@ LaTeX label: `def:categorical-proton`
 
 ## References
 - [manuscript] §3/categorical-proton
+
+**Ground ring**: `ℝ` (archimedean realisation).
+Evaluates formal results at q₀ ≈ 1.1098 for comparison with
+experimental data. NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

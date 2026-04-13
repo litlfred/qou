@@ -7,6 +7,11 @@ rotating each sector.  They tile the exceptional divisor
 exactly at each brane point.
 
 LaTeX label: `def:coral-sector-coords`
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

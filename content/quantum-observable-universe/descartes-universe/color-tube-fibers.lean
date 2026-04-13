@@ -6,12 +6,25 @@ c³ + (4z+1)c² + (6z²+3z+1)c + (4z³+3z²+2z+1) = 0,
 isomorphic to the coral elliptic fiber via the shift X = c + z.
 
 LaTeX label: `def:color-tube-fibers`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Tactic.Ring
 
 namespace QOU.Brings
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Color tube fibre data** at spacetime ratio z.
 
@@ -50,8 +63,8 @@ theorem shift_isomorphism (R : Type*) [CommRing R] (z c : R) :
 
 /-- At z = 0, the color tube cubic specialises to c³ + c² + c + 1. -/
 -- Ref: [manuscript] §5, Coral fibration
-theorem color_tube_at_z_zero (c : ℝ) :
-    colorTubeCubic ℝ 0 c = c ^ 3 + c ^ 2 + c + 1 := by
+theorem color_tube_at_z_zero (c : R_q) :
+    colorTubeCubic R_q 0 c = c ^ 3 + c ^ 2 + c + 1 := by
   unfold colorTubeCubic
   ring
 
@@ -59,7 +72,7 @@ theorem color_tube_at_z_zero (c : ℝ) :
     (4z+1)(z²+1) − z(z+1). More directly: 4z³+3z²+2z+1 = (2z+1)²(z) + 1,
     but the cleanest identity is that it equals (z+1)⁴ − z⁴. -/
 -- Ref: [manuscript] §5, Coral fibration
-theorem constant_term_identity (z : ℝ) :
+theorem constant_term_identity (z : R_q) :
     4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1 = (z + 1) ^ 4 - z ^ 4 := by ring
 
 end QOU.Brings

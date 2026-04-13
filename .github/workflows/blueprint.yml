@@ -54,14 +54,16 @@ permissions:
   id-token: write
   issues: write
   pull-requests: write
-  packages: read          # required to pull the latex-ci container image
+  packages: read          # required to pull the paper-assistant container image
 
 jobs:
   build_blueprint:
     runs-on: ubuntu-latest
     name: Build project & blueprint
+    # Paper-assistant image — same image used by the folio MCP server.
+    # Pre-installs: TeX Live (full), Lean 4, Bun, pandoc, ripgrep, Python.
     container:
-      image: ghcr.io/${{ github.repository }}/latex-ci:latest
+      image: ghcr.io/${{ github.repository }}/paper-assistant:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
@@ -90,7 +92,7 @@ jobs:
           git config --global --add safe.directory "${{ github.workspace }}"
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
 
-      # Bun is pre-installed in the latex-ci container image.
+      # Bun + TeX + Lean are pre-installed in the paper-assistant image.
 
       - name: Build content objects to LaTeX chapters
         continue-on-error: true

@@ -10,24 +10,39 @@
 
 noncomputable section
 
-/-- The Coulomb coefficient a_C = (q - q⁻¹) · λ_C -/
-def coulomb_coeff (q λ_C : ℝ) : ℝ := (q - q⁻¹) * λ_C
+/-!
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 
-/-- The curvature parameter c = a_C / (2 · a_A) -/
-def curvature_param (q λ_C a_A : ℝ) : ℝ :=
-  coulomb_coeff q λ_C / (2 * a_A)
+NOTE: The beta-stability formula uses fractional exponents (A^{2/3})
+and division, which require evaluation over ℝ. The algebraic
+definitions (coulomb_coeff, curvature_param, beta_stability_continuous)
+are commented out; only the witness table and verification remain.
+-/
 
-/-- The continuous beta-stability optimum: p*(A) = A / (2 + c · A^{2/3}) -/
-def beta_stability_continuous (c : ℝ) (A : ℝ) : ℝ :=
-  A / (2 + c * A ^ (2/3 : ℝ))
+/-- The Coulomb coefficient a_C = (q - q⁻¹) · λ_C.
+    NOTE: Uses q⁻¹ — requires evaluation over ℝ. -/
+-- def coulomb_coeff (q λ_C : R_q) : R_q := (q - q⁻¹) * λ_C
 
-/-- The stable neutron number: solve p = A/(2 + c·A^{2/3}) for A,
+/-- The curvature parameter c = a_C / (2 · a_A).
+    NOTE: Uses division — requires evaluation over ℝ. -/
+-- def curvature_param (q λ_C a_A : R_q) : R_q :=
+--   coulomb_coeff q λ_C / (2 * a_A)
+
+/-- The continuous beta-stability optimum: p*(A) = A / (2 + c · A^{2/3}).
+    NOTE: Uses fractional exponent A^{2/3} — requires evaluation over ℝ. -/
+-- def beta_stability_continuous (c : R_q) (A : R_q) : R_q :=
+--   A / (2 + c * A ^ (2/3 : R_q))
+
+/-- The stable neutron number: solve p = A/(2 + c A^{2/3}) for A,
     then n = round(A) - p.  Implemented as a lookup from the witness table
     for p = 1..103; returns 0 for p outside this range.
     The witness values are computed from the cubic t³ = 2p(1 + ct²)
     at q = 1.10997, λ_C = 3.334, a_A = 23.29. -/
 -- Ref: [manuscript] Ch. 6, §3
-def stable_neutron_number (_q _λ_C _a_A : ℝ) (p : ℕ) : ℕ :=
+def stable_neutron_number (p : ℕ) : ℕ :=
   match stable_neutron_witness.find? (fun pair => pair.1 == p) with
   | some (_, n) => n
   | none => 0

@@ -69,6 +69,26 @@ Lean tools require running Claude Code locally where lean/lake are installed.
 After setup, verify with the `lean_status` MCP tool. If mode is
 `local`, Lean is fully operational.
 
+## Docker-based setup (offline)
+
+If the paper-assistant Docker image is available, all tools (Lean, TeX,
+Bun) are pre-installed and ready to use without any network access:
+
+```bash
+# Pull once (requires network)
+docker pull ghcr.io/litlfred/qou/paper-assistant:latest
+
+# Run with repo mounted — full toolchain available
+docker run --rm --entrypoint "" \
+  -v $(pwd):/work -w /work \
+  ghcr.io/litlfred/qou/paper-assistant:latest \
+  bash -c "lean --version && lake --version && pdflatex --version | head -1"
+```
+
+The render hooks (`render-on-change.sh`, `render-pre-commit.sh`) auto-detect
+Docker and use the image as a fallback when local tools are missing. See
+`scripts/lib/docker-tex.sh` for the helper library.
+
 ## Fallback: Structural Analysis Without Lean
 
 When Lean is not installed, agents can still:

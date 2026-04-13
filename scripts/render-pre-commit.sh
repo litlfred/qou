@@ -4,6 +4,7 @@
 #
 # If any content .md files with ```tex blocks are staged, re-renders
 # their SVGs and stages the updated SVGs + hashes + .ts manifests.
+# Uses local pdflatex if available, otherwise Docker paper-assistant image.
 #
 # Exit 0 always — we don't want rendering failures to block commits,
 # but we do want to auto-fix stale SVGs when possible.
@@ -11,22 +12,24 @@
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+source "$REPO_ROOT/scripts/lib/docker-tex.sh"
 
 # Check if any content .md files are staged
 if ! git diff --cached --name-only 2>/dev/null | grep -q '^content/.*\.md$'; then
   exit 0
 fi
 
-# Need pdflatex + dvisvgm
-if ! command -v pdflatex &>/dev/null || ! command -v dvisvgm &>/dev/null; then
-  echo "[pre-commit] WARNING: pdflatex/dvisvgm not installed — SVGs may be stale"
+# Need TeX tools (local or Docker)
+if ! tex_available; then
+  echo "[pre-commit] WARNING: No TeX available (local or Docker) — SVGs may be stale"
   exit 0
 fi
 
 echo "[pre-commit] Re-rendering TeX blocks for staged .md files..."
 
 # Run the renderer (hash-based — only re-renders changed blocks)
-bun run "$REPO_ROOT/scripts/render-tex/render-tex-blocks.ts" 2>&1 | sed 's/^/  /' || true
+# Use repo-relative path so it works both locally and inside Docker container
+(cd "$REPO_ROOT" && tex_exec bun run scripts/render-tex/render-tex-blocks.ts) 2>&1 | sed 's/^/  /' || true
 
 # Stage any updated SVGs, hashes, and .ts manifests
 git diff --name-only -- 'content/*/rendered/*.svg' 'content/*/rendered/*.svg.hash' 'content/*/*.ts' 2>/dev/null | while read -r f; do

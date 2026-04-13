@@ -244,11 +244,15 @@ export async function validateObjects(objectsDir: string): Promise<ValidationRes
 
   // Phase 2: Constraint rules
   for (const [name, { block, dir }] of allBlocks) {
+    // Load companion .md content for cross-reference validation
+    const mdPath = join(dir, `${name}.md`);
+    const mdContent = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : undefined;
     const ctx: ConstraintContext = {
       rootName: name,
       dir,
       allLabels,
       fileExists: (p: string) => existsSync(p),
+      mdContent,
     };
 
     for (const rule of CONSTRAINT_RULES) {

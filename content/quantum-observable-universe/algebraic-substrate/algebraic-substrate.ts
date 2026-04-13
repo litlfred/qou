@@ -17,6 +17,7 @@ export default chapter({
       title: "The algebraic substrate and the Reeb derivation",
       label: "sec:algebraic-substrate-reeb",
       blocks: [
+        "algebraic-substrate-intro",
         "substrate-preamble",
         "frobenius-hopf-substrate",
         "substrate-parameter-planck",
@@ -24,6 +25,7 @@ export default chapter({
         "reeb-flow-bridge",
         "brings-coordinate-ring",
         "rigid-dualizing-complex",
+        "rigid-dualizing-brings",
         "substrate-self-duality",
       ],
     }),
@@ -52,6 +54,7 @@ export default chapter({
         "q-von-mangoldt-function",
         "q-chebyshev-function",
         "tannaka-krein-isomorphism",
+        "tannaka-krein-su2",
         "explicit-formula",
         "yekutieli-quantum-li",
       ],

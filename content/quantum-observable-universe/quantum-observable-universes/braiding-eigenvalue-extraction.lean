@@ -30,16 +30,29 @@ LaTeX label: `prop:braiding-eigenvalue-extraction`
 ## References
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [woronowicz1988] https://doi.org/10.1007/BF01219077
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Order.Field.Basic
 
 open CategoryTheory MonoidalCategory
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Part 1: Categorical setup (Mathlib infrastructure)
 
@@ -94,7 +107,7 @@ axiom spectral_decomposition_of_braiding
     (h_volume : Prop)
     -- The category is semisimple
     (h_semisimple : Prop)
-    : ∃ (λ_sym λ_anti : ℝ),
+    : ∃ (λ_sym λ_anti : R_q),
         λ_sym ≠ 0 ∧ λ_anti ≠ 0 ∧ λ_sym * λ_anti = -1
 
 /-! ## Part 3: Pure algebra (no sorry, no axiom)
@@ -113,9 +126,9 @@ below is proved by Lean's `field_simp`, `ring`, and `linarith`. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 structure BraidingEigenvalueData where
   /-- Eigenvalue on the symmetric summand S²V. -/
-  λ_sym : ℝ
+  λ_sym : R_q
   /-- Eigenvalue on the antisymmetric summand Λ²V ≅ 𝟙. -/
-  λ_anti : ℝ
+  λ_anti : R_q
   /-- The braiding is non-degenerate: both eigenvalues are nonzero. -/
   λ_sym_ne_zero : λ_sym ≠ 0
   λ_anti_ne_zero : λ_anti ≠ 0
@@ -129,7 +142,7 @@ structure BraidingEigenvalueData where
 
 /-- The deformation parameter q extracted from braiding eigenvalues.
     By convention, q := λ_sym (the symmetric eigenvalue). -/
-noncomputable def BraidingEigenvalueData.q (bed : BraidingEigenvalueData) : ℝ :=
+noncomputable def BraidingEigenvalueData.q (bed : BraidingEigenvalueData) : R_q :=
   bed.λ_sym
 
 /-- The antisymmetric eigenvalue is forced to be -q⁻¹ by the
@@ -171,7 +184,7 @@ theorem quantum_regime (bed : BraidingEigenvalueData)
     q, the forced antisymmetric eigenvalue, and the Hecke relation. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem braiding_eigenvalue_extraction
-    (λ_sym λ_anti : ℝ)
+    (λ_sym λ_anti : R_q)
     (hλs : λ_sym ≠ 0)
     (hλa : λ_anti ≠ 0)
     (hdet : λ_sym * λ_anti = -1)

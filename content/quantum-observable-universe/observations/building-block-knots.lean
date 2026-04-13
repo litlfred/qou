@@ -12,6 +12,11 @@ LaTeX label: `rem:building-block-knots`
 - [jones1987] https://doi.org/10.2307/1971403
 - [turaev2010] https://doi.org/10.1515/9783110221831
 - SnapPy census (Culler, Dunfield, Goerner, Weeks)
+
+**Ground ring**: `ℝ` (archimedean realisation).
+Evaluates formal results at q₀ ≈ 1.1098 for comparison with
+experimental data. NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

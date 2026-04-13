@@ -8,6 +8,11 @@ Riemann hypothesis. The three equivalent conditions are:
 (3) spectral persistence under the classical limit functor.
 
 LaTeX label: `thm:macroscopic-stability-equivalence`
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 set_option autoImplicit false
@@ -19,12 +24,19 @@ open Complex Filter
 
 namespace QOU.AlgebraicSubstrate
 
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
 /-- Macroscopic stability: the classical Chebyshev function satisfies
     ψ(X) = X + O(X^{1/2 + ε}) for all ε > 0. -/
-def MacroscopicStability (ψ : ℝ → ℝ) : Prop :=
-  ∀ (ε : ℝ), ε > 0 →
-    ∃ (C_const : ℝ), C_const > 0 ∧
-      ∀ (X : ℝ), X ≥ 2 →
+def MacroscopicStability (ψ : R_q → R_q) : Prop :=
+  ∀ (ε : R_q), ε > 0 →
+    ∃ (C_const : R_q), C_const > 0 ∧
+      ∀ (X : R_q), X ≥ 2 →
         |ψ X - X| ≤ C_const * X ^ (1/2 + ε)
 
 /-- Riemann hypothesis: all non-trivial zeros of ζ(s) have Re(s) = 1/2. -/
@@ -36,7 +48,7 @@ def RiemannHypothesis (ζ : ℂ → ℂ) : Prop :=
     a sequence of deformation parameters q_n → 1, if the Reeb eigenvalues
     at each q_n satisfy Re(ρ_i) = 1/2, then the limiting spectral data
     also satisfies Re(ρ) = 1/2. -/
-def SpectralPersistence (spectral_limit : ℕ → Fin 8 → ℝ) : Prop :=
+def SpectralPersistence (spectral_limit : ℕ → Fin 8 → R_q) : Prop :=
   (∀ (n : ℕ) (i : Fin 8), spectral_limit n i = 1/2) →
     ∀ (i : Fin 8), spectral_limit 0 i = 1/2
 
@@ -48,7 +60,7 @@ def SpectralPersistence (spectral_limit : ℕ → Fin 8 → ℝ) : Prop :=
     formula: if any zero has Re(ρ) > 1/2, the oscillatory term
     X^ρ/ρ violates the error bound. -/
 -- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
-theorem macroscopic_iff_rh (ψ : ℝ → ℝ) (ζ : ℂ → ℂ) :
+theorem macroscopic_iff_rh (ψ : R_q → R_q) (ζ : ℂ → ℂ) :
     MacroscopicStability ψ ↔ RiemannHypothesis ζ := by
   -- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
   sorry
@@ -60,7 +72,7 @@ theorem macroscopic_iff_rh (ψ : ℝ → ℝ) (ζ : ℂ → ℂ) :
     persists to the global zeros if and only if ζ satisfies RH. -/
 -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
 theorem rh_iff_persistence (ζ : ℂ → ℂ)
-    (spectral_limit : ℕ → Fin 8 → ℝ) :
+    (spectral_limit : ℕ → Fin 8 → R_q) :
     RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit := by
   -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
   sorry
@@ -77,8 +89,8 @@ theorem rh_iff_persistence (ζ : ℂ → ℂ)
 
     LaTeX: `\label{thm:macroscopic-stability-equivalence}` -/
 theorem macroscopic_stability_equivalence
-    (ψ : ℝ → ℝ) (ζ : ℂ → ℂ)
-    (spectral_limit : ℕ → Fin 8 → ℝ) :
+    (ψ : R_q → R_q) (ζ : ℂ → ℂ)
+    (spectral_limit : ℕ → Fin 8 → R_q) :
     (MacroscopicStability ψ ↔ RiemannHypothesis ζ)
     ∧ (RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit) :=
   ⟨macroscopic_iff_rh ψ ζ, rh_iff_persistence ζ spectral_limit⟩
