@@ -14,7 +14,7 @@ $\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1
 + \psi_{01}\sigma_0\sigma_1$, the product $\gamma_1 \cdot \gamma_2$
 expands into $4 \times 4 = 16$ cross-terms.  Each is an elementary
 Hecke product that reduces to normal form via the Hecke relation
-$\sigma_i^2 = h\sigma_i + \mathbf{1}$ and the Yang--Baxter relation
+$\sigma_i^2 = h\sigma_i + \mathbf{1}$ (where $h = q - q^{-1}$) and the Yang--Baxter relation
 $\sigma_1\sigma_0\sigma_1 = \sigma_0\sigma_1\sigma_0 = e^-$.
 
 ### Block I: the photon core ($\mathbf{1}$) meets everything
@@ -47,14 +47,14 @@ transparent to the other.
 | (9) | $\varphi_1\sigma_1 \cdot \mathbf{1}$ | $\varphi_1\sigma_1$ | Vertical passes through core; unchanged. |
 | (10) | $\varphi_1\sigma_1 \cdot \psi_0\sigma_0$ | $\varphi_1\psi_0 L_-$ | **Cross-polarization linking (reversed).**  Vertical meets horizontal and they link into $L_- = \sigma_1\sigma_0$.  Compare term (7): the ordering of which photon contributes which polarization determines the **chirality** of the link ($L_+$ vs $L_-$). |
 | (11) | $\varphi_1\sigma_1 \cdot \psi_1\sigma_1$ | $\varphi_1\psi_1\gamma + \varphi_1\psi_1 h\,\sigma_1$ | **Same-axis collision** (vertical).  Identical structure to term (6): partial annihilation to vacuum plus residual polarization. |
-| (12) | $\varphi_1\sigma_1 \cdot \psi_{01}L_+$ | $\varphi_1\psi_{01} e^-$ | **Vertical polarization meets Hopf dressing: electron production.**  Via Yang--Baxter: $\sigma_1 \cdot \sigma_0\sigma_1 = \sigma_1\sigma_0\sigma_1 = e^-$.  The vertical crossing of one photon completes the Hopf dressing of the other into a trefoil.  This is one of the two mechanisms by which $T_{1,0}$ opens the electron channel. |
+| (12) | $\varphi_1\sigma_1 \cdot \psi_{01}L_+$ | $\varphi_1\psi_{01} e^-$ | **Vertical polarization meets Hopf dressing: electron production.**  Via Yang--Baxter: $\sigma_1 \cdot \sigma_0\sigma_1 = \sigma_1\sigma_0\sigma_1 = e^-$.  The vertical crossing of one photon completes the Hopf dressing of the other into a trefoil.  This is one of three mechanisms by which $T_{1,0}$ opens the electron channel. |
 
 ### Block IV: Hopf dressing ($\varphi_{01}\sigma_0\sigma_1$) meets everything
 
 | Term | Product | NF | Interpretation |
 |:---:|:---|:---|:---|
 | (13) | $\varphi_{01}L_+ \cdot \mathbf{1}$ | $\varphi_{01}L_+$ | Hopf dressing passes through core; unchanged. |
-| (14) | $\varphi_{01}L_+ \cdot \psi_0\sigma_0$ | $\varphi_{01}\psi_0 e^-$ | **Hopf dressing meets horizontal polarization: electron production.**  Via $\sigma_0\sigma_1 \cdot \sigma_0 = \sigma_0\sigma_1\sigma_0 = e^-$.  The Hopf content of one photon combines with the horizontal crossing of the other to form a trefoil.  This is the second mechanism for electron production under $T_{1,0}$. |
+| (14) | $\varphi_{01}L_+ \cdot \psi_0\sigma_0$ | $\varphi_{01}\psi_0 e^-$ | **Hopf dressing meets horizontal polarization: electron production.**  Via $\sigma_0\sigma_1 \cdot \sigma_0 = \sigma_0\sigma_1\sigma_0 = e^-$.  The Hopf content of one photon combines with the horizontal crossing of the other to form a trefoil.  This is the second of three mechanisms for electron production under $T_{1,0}$. |
 | (15) | $\varphi_{01}L_+ \cdot \psi_1\sigma_1$ | $\varphi_{01}\psi_1\sigma_0 + \varphi_{01}\psi_1 h\,L_+$ | **Twist meets vertical polarization.**  Via $\sigma_0\sigma_1 \cdot \sigma_1 = \sigma_0\sigma_1^2 = \sigma_0(h\sigma_1 + \mathbf{1}) = h L_+ + \sigma_0$: the twist absorbs the vertical crossing (Hecke relation on $\sigma_1^2$) and emits the orthogonal polarization $\sigma_0$.  Compare term (8) --- the twist acts as a **polarization rotator** in both directions. |
 | (16) | $\varphi_{01}L_+ \cdot \psi_{01}L_+$ | $\varphi_{01}\psi_{01} L_- + \varphi_{01}\psi_{01} h\,e^-$ | **Two Hopf dressings collide.**  Via $(\sigma_0\sigma_1)^2 = L_- + he^-$: the self-product of the Hopf link produces the reversed link $L_-$ plus an electron channel weighted by $h$.  Two pre-twisted photons interacting through their twist content alone generate both chirality reversal and pair production. |
 
