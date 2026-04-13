@@ -37,7 +37,7 @@ z = 1.0 / (q0**0.5 + q0**(-0.5))
 NF_BASIS_3 = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES_3 = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 # Markov trace values for H₃ basis elements
-TR_M_3 = [1.0, z, z, z**2, z**2, HA * z**2 + z]
+TR_M_3 = [1.0, z, z, z**2, z**2, z**3]
 
 
 def hecke_mul(t1, t2):

@@ -11,42 +11,51 @@ Same as [proton](#def:categorical-proton) Step 1:
 $\mathrm{net}(\mathcal{B}_3) = +1.000$, with intrinsic Hopf link
 content (no separate $\mathcal{L}_H$ factor).
 
-**Step 2: typed crossings.**
+**Step 2: typed crossings + Hopf gluon stabilisation.**
 The two down quarks introduce stronger $-H_A$ shifts than
 the proton's single down quark:
 
 | Pair | Type | Crossing element |
 |:---|:---|:---|
+| $(1,2)$ | $\mathfrak{d}$-$\mathfrak{d}$ | $\sigma_0 - H_A \mathbf{1}$ |
 | $(0,1)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A \mathbf{1}$ |
-| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A \mathbf{1}$ |
-| $(1,2)$ | $\mathfrak{d}$-$\mathfrak{d}$ | $\sigma_1 - H_A \mathbf{1}$ |
+| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_1 - \tfrac{1}{2}H_A \mathbf{1}$ |
 
-The $\mathfrak{d}$-$\mathfrak{d}$ crossing on pair $(1,2)$
-carries the full $-H_A$ shift (eigenvalue $-q^{-1}$), pulling
-the net further below the proton's.
+As with the proton, the 9-crossing element
+$\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$
+is LP unstable — the $\sigma_0$ channel violates Frobenius
+positivity after the second quark crossing.  A single Hopf
+link $L_- = \sigma_1\sigma_0$ restores stability.
 
-**Step 3: neutron NF.**
+The **integer LP dual** selects $L_+ \to L_-$ (two Hopf
+links = $4$ gluon crossings) as the minimum-action
+stabiliser.  The neutron needs more gluon than the proton
+($4$ vs $2$) because the $\mathfrak{d}\mathfrak{d}$ crossing
+creates deeper instability ($\mathrm{tr}_M = -0.132$ vs
+$-0.006$).  Total: $13$ crossings ($6$ B₃ + $3$ quarks
++ $4$ gluon).
+
+**Step 3: neutron NF** (with Hopf gluon)**.**
 At $q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
-| $\mathbf{1}$ | $\gamma$ | $-0.2017$ |
-| $\sigma_0$ | $\sigma_0$ | $+0.0481$ |
-| $\sigma_1$ | $\sigma_1$ | $+1.0090$ |
-| $\sigma_0\sigma_1$ | $L_+$ | $-0.0096$ |
-| $\sigma_1\sigma_0$ | $L_-$ | $+0.0092$ |
-| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $-0.0442$ |
+| $\mathbf{1}$ | $\gamma$ | $-0.0096$ |
+| $\sigma_0$ | $\sigma_0$ | $-0.0481$ |
+| $\sigma_1$ | $\sigma_1$ | $+0.0461$ |
+| $\sigma_0\sigma_1$ | $L_+$ | $-0.2206$ |
+| $\sigma_1\sigma_0$ | $L_-$ | $+0.0189$ |
+| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $+1.0109$ |
 
 $$
-  \mathrm{net}(\mathfrak{n}) = +0.8108
+  \mathrm{net}(\mathfrak{n}) = +0.7976
 $$
 
-Compared to the proton ($\mathrm{net} = +0.9991$):
-the extra down quark drives $\gamma$ more negative
-($-0.0997 \to -0.2017$) and flips $L_+$ from positive
-($+0.0994$) to negative ($-0.0096$).  The $\sigma_1$ term
-stays near $+1$ in both, since both contain one up quark
-on strand 1.
+Compared to the proton ($\mathrm{net} = +1.0065$):
+the extra down quark produces a larger $L_+$ demand
+($-0.2206$ vs $-0.1114$).  Both nucleons are dominated
+by the trefoil channel $e^- \approx +1.0$ after Hopf
+gluon stabilisation.
 
 **Transition: proton $\to$ neutron.**
 The NF difference (coefficient by coefficient) gives the
@@ -55,7 +64,7 @@ dimensionless beta decay transition
 
 $$
   \Delta\mathrm{net}(\mathfrak{n} - \mathfrak{p})
-  = 0.8108 - 0.9991 = -0.1883
+  = 0.7976 - 1.0065 = -0.2089
 $$
 
 The energy scale $\mathbf{E}_0 = Q_\beta / |\Delta\mathrm{net}|
@@ -65,15 +74,15 @@ The energy scale $\mathbf{E}_0 = Q_\beta / |\Delta\mathrm{net}|
 **Mass.**
 
 $$
-  m_{\mathfrak{n}} =
+  \mathfrak{m}_{\mathfrak{n}} =
   2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$: $m_{\mathfrak{n}}(q_0) \approx 939.565$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
+At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx 939.565$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
 proton--neutron mass splitting is
 
 $$
-  m_{\mathfrak{n}} - m_{\mathfrak{p}} =
+  \mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} =
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   \approx 1.293 \text{ MeV}
 $$

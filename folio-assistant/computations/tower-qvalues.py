@@ -329,7 +329,7 @@ print("  difference vector.")
 # NF basis and Gram matrix (from Hecke algebra)
 NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES = ["gamma", "sigma0", "sigma1", "L+", "L-", "e-"]
-TR_M = [1.0, z, z, z**2, z**2, h * z**2 + z]
+TR_M = [1.0, z, z, z**2, z**2, z**3]
 
 
 def hecke_mul(t1, t2):

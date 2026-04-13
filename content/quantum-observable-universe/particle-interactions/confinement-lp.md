@@ -91,6 +91,18 @@ constraints are **tight** at two indices ($\sigma_0$ and $L_-$),
 giving the two active demand channels that correspond to the
 proton's residual demand.
 
+## Caveat: $\mathcal{B}_3$ is a local minimum
+
+With the corrected Markov trace $\mathrm{tr}_M(e^-) = z^3$
+([corrected trace](#prop:corrected-markov-trace)),
+the Gram matrix acquires a negative eigenvalue ($\approx -0.956$).
+The LP has a global minimum at $\mathrm{tr}_M = 0$ (massless
+confined state).  The Borromean solution $\mathcal{B}_3$ is a
+**local minimum** — the LP vertex with minimum $|\lambda|$
+eigenvalue, not maximum.  See
+[$\mathcal{B}_3$ local minimum](#rem:b3-local-minimum)
+for interpretation.
+
 ## Quadratic extension
 
 When the interaction involves a bilinear Frobenius pairing

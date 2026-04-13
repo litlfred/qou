@@ -29,7 +29,20 @@ Baryon number is conserved: $3 \times 0 = 1 + (-1)$.*
 *Each triple of quarks is confined by the minimum-action operator
 $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$
 ([confinement selection](#prop:confinement-operator-selection)),
-yielding nucleon NF elements $\mathfrak{N}_k \in H_3(q)$.*
+yielding pre-gluon NF elements in $H_3(q)$.*
+
+**(iii-b) Gluon stabilisation.**
+*The confined nucleon $\mathcal{B}_3 \times \Delta_3$ is LP
+unstable ([integer LP gluon](#prop:mass-endomorphism-tower)):
+the $\gamma$ Frobenius channel violates positivity.
+The integer LP dual selects the minimum gluon:*
+- *Proton: $\sigma_0 \to \sigma_0$ ($2$ bare crossings, $11$ total)*
+- *Neutron: $L_+ \to L_-$ ($4$ Hopf link crossings, $13$ total)*
+
+*The gluon is required by LP stability at $q_0 \approx 1.110$
+(the proton is stable without gluon only for $q < 1.104$).
+The stabilised nucleon NF elements are
+$\mathfrak{N}_k \in H_3(q)$.*
 
 **(iv) Nuclear assembly.**
 *The $A = Z + N$ nucleons are linked by inter-nucleon typed

@@ -10,6 +10,7 @@ $$
   (\mathfrak{u}_1, \mathfrak{u}_2, \mathfrak{d}_3)
   + (\bar{\mathfrak{u}}_1, \bar{\mathfrak{u}}_2, \bar{\mathfrak{d}}_3)
   \xrightarrow{\mathcal{B}_3}
+  \xrightarrow{\text{gluon } \sigma_0^2}
   \mathfrak{p}
   \xrightarrow{\sigma_0}
   \mathfrak{p} \bowtie T_{2,3}
@@ -23,8 +24,13 @@ quark--antiquark pairs
 **Step 2**: Three quarks
 $(\mathfrak{u}_1, \mathfrak{u}_2, \mathfrak{d}_3)$ are confined by
 $\mathcal{B}_3$
-([confinement selection](#prop:confinement-operator-selection)),
-yielding the proton NF with $\mathrm{net}(\mathfrak{p}) \approx +0.999$.
+([confinement selection](#prop:confinement-operator-selection)).
+
+**Step 2b**: The LP-derived gluon ($\sigma_0 \to \sigma_0$, two
+crossings) stabilises the confined state
+([integer LP gluon](#prop:mass-endomorphism-tower)), yielding
+the proton NF with $\mathrm{net}(\mathfrak{p}) \approx +0.986$
+($11$ total crossings: $6$ B₃ + $3$ quarks + $2$ gluon).
 
 **Step 3**: The proton is Hopf-linked to the electron (trefoil
 $T_{2,3}$) via the electromagnetic crossing $\sigma_0$:
