@@ -38,6 +38,7 @@ export default chapter({
       label: "sec:knot-operator-basis-table",
       blocks: [
         "knot-operator-basis-table",
+        "polarization-writhe-tracking",
       ],
     }),
   ],
