@@ -37,6 +37,7 @@ export default chapter({
       blocks: [
         "confinement-operator-selection",
         "confinement-lp",
+        "operator-selection-lp",
         "confinement-topological",
       ],
     }),
