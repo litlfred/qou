@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T17:17:07.606400+00:00",
-  "commitSha": "79dba635be0cbb2a3dd1d668b1ef6f2d7caa8eba",
+  "computedAt": "2026-04-13T18:04:14.405169+00:00",
+  "commitSha": "d9c0c2a9ef842d34e00d6b13bbae0d61af3e48bf",
   "assertions": [
     {
       "name": "H₂ binding",
@@ -15,7 +15,7 @@
     },
     {
       "name": "CO binding",
-      "computed": 8.74,
+      "computed": 12.3,
       "expected": 11.09,
       "passed": true,
       "tolerance": 5.545,
@@ -24,7 +24,7 @@
     },
     {
       "name": "CO₂ binding",
-      "computed": 11.65,
+      "computed": 16.4,
       "expected": 16.56,
       "passed": true,
       "tolerance": 8.28,
@@ -51,11 +51,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "molecular-integer-lp",
   "scriptFile": "molecular-integer-lp.py",
-  "scriptHash": "e517e0b6f9b2",
-  "scriptCommitSha": "",
+  "scriptHash": "d5443f0a4f05",
+  "scriptCommitSha": "1b752046eea3ea674825bc2ec89da8b850654a85",
   "description": "Molecular binding energies from integer LP. Bond operator σ₁⁻¹·σ₁⁻¹ derived from H₂ scan. Atoms built from nucleons (B₃ + quarks + gluon). Zero fitted parameters.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
@@ -86,12 +86,12 @@
       },
       {
         "molecule": "CO",
-        "predicted_eV": 8.73987342151187,
+        "predicted_eV": 12.298408789438781,
         "observed_eV": 11.09
       },
       {
         "molecule": "CO₂",
-        "predicted_eV": 11.653164562015828,
+        "predicted_eV": 16.397878385918375,
         "observed_eV": 16.56
       },
       {
