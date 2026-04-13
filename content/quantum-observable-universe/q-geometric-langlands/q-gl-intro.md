@@ -11,7 +11,7 @@ are central to the present chapter:
    producing a canonical obstruction to flatness of
    $q$-connections.
 
-2. The Yekutieli obstruction classes
+2. The obstruction classes
    $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$
    ([quantum characteristic classes](#def:quantum-characteristic-classes))
    control the lifting of Frobenius--Hopf objects through the

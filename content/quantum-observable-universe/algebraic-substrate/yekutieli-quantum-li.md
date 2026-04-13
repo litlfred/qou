@@ -13,7 +13,7 @@ logarithm converts multiplication to addition, and the integral sums
 independent contributions.
 
 **The quantum replacement.** In the substrate framework, the counting
-mechanism is Yekutieli's nonabelian multiplicative integral
+mechanism is the nonabelian multiplicative integral
 \cite{yekutieli2015}. Instead of summing scalar weights $1/\ln t$,
 one computes a *path-ordered product of matrices* along the Reeb flow.
 Each factor in the product encodes the parallel transport of the
@@ -21,7 +21,7 @@ adjoint representation $\mathrm{Ad}(A)$ along one orbit of $\xi_q$,
 and the ordering reflects the non-commutativity of the gauge
 connection.
 
-Concretely, the Yekutieli integral replaces the classical
+Concretely, the multiplicative integral replaces the classical
 $\mathrm{Li}(x)$ as follows:
 
 | Classical | Quantum substrate |
@@ -31,8 +31,8 @@ $\mathrm{Li}(x)$ as follows:
 | Additive (abelian) | Multiplicative (nonabelian) |
 | Result: a real number $\mathrm{Li}(x)$ | Result: a holonomy matrix in $\mathrm{GL}(V)$ |
 
-The crucial step is the application of Yekutieli's *nonabelian Stokes
-theorem* ([nonabelian Stokes](#rem:yekutieli-stokes)). In the
+The crucial step is the application of the *nonabelian Stokes
+theorem* \cite{yekutieli2015} ([nonabelian Stokes](#rem:yekutieli-stokes)). In the
 classical setting, Stokes' theorem reduces a 2-dimensional integral
 over a region to a 1-dimensional integral over its boundary. The
 nonabelian analog does the same for the multiplicative integral:
@@ -51,5 +51,5 @@ This is why the explicit formula involves $q$-integers $[\rho]_q$
 rather than ordinary logarithms: the $q$-integer is the trace of the
 holonomy matrix in the fundamental representation, encoding the full
 nonabelian content of the transport around the prime orbit.
-The Yekutieli integral is, in precise terms, the *quantum
+The multiplicative integral is, in precise terms, the *quantum
 $\mathrm{Li}(x)$*.

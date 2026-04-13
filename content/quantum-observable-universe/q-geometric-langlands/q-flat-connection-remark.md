@@ -9,11 +9,11 @@ the minimal curvature compatible with the $q$-deformation.
 **The HKR identification.**
 The Hochschild--Kostant--Rosenberg comparison
 ([Kummer filtration](#rem:kummer-filtration-obstruction))
-identifies the $q$-curvature $\mathcal{F}_q$ with the Yekutieli
+identifies the $q$-curvature $\mathcal{F}_q$ with the obstruction
 class $\kappa_0 = e(\xi)$ in
 $H^2(\mathcal{S}, \mathbb{G}_m)$.  The deformation-theoretic
 obstruction (Hochschild $HH^2$) and the gerbe-theoretic
-obstruction (Yekutieli $H^2$) are two views of the same class.
+obstruction (gerbe-theoretic $H^2$) are two views of the same class.
 The Kummer filtration on the target pulls back to a filtration on
 $HH^2$ measuring $n$-divisibility of the $q$-curvature.
 

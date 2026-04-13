@@ -13,7 +13,7 @@ $$
 
 where $\mathcal{F}_q^{\mathrm{intr}} \in
 \mathrm{End}(\mathcal{V}) \otimes \Omega^2_q$ is the
-**intrinsic $q$-curvature**, the image of the Yekutieli class
+**intrinsic $q$-curvature**, the image of the obstruction class $\kappa_0$
 under the HKR map
 ([Kummer filtration](#rem:kummer-filtration-obstruction)):
 

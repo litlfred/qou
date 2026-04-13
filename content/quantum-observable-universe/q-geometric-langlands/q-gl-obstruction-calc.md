@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-$\chi(A) \neq 0$ and Yekutieli class
+$\chi(A) \neq 0$ and obstruction class
 $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
 ([quantum characteristic classes](#def:quantum-characteristic-classes)).
 
