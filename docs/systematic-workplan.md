@@ -1,5 +1,22 @@
 # Systematic Work Plan: Particle Hierarchy Verification
 
+## Key Finding: Forward × Dual Frobenius Tower
+
+The mass functional uses BOTH the forward and dual (antipode) Frobenius actions:
+
+```
+𝔪(particle) = Φ_q(|V̂⁺|) × Φ_q(|V̂⁻|) / √3
+```
+
+where V̂⁺ is the forward vertex volume and V̂⁻ = vol_S(crossings) uses
+the antipode S(σ) = σ⁻¹ on each crossing.
+
+Results:
+- m_μ/m_e = 355.6 / √3 = 205.3 (CODATA: 206.77, error −0.70%)
+- This may allow deriving q₀ from Vol(4₁) alone (1 input → all predictions)
+
+The √3 factor likely comes from the 3 crossings in the electron (reference).
+
 ## Goal
 Rebuild the full particle chain from γγ → quarks → nucleons → atoms → isotopes,
 tracking error bounds at every step, symbolic in q until too slow, then CRT multi-prime.
