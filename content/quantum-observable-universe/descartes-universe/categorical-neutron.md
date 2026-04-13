@@ -74,15 +74,15 @@ The energy scale $\mathbf{E}_0 = Q_\beta / |\Delta\mathrm{net}|
 **Mass.**
 
 $$
-  m_{\mathfrak{n}} =
+  \mathfrak{m}_{\mathfrak{n}} =
   2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$: $m_{\mathfrak{n}}(q_0) \approx 939.565$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
+At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx 939.565$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
 proton--neutron mass splitting is
 
 $$
-  m_{\mathfrak{n}} - m_{\mathfrak{p}} =
+  \mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} =
   \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   \approx 1.293 \text{ MeV}
 $$

@@ -118,7 +118,7 @@ The proton mass comes from the hyperbolic volume of the
 Borromean link:
 
 $$
-  m_{\mathfrak{p}} =
+  \mathfrak{m}_{\mathfrak{p}} =
   \frac{\mathrm{Vol}(S^3 \setminus \mathcal{B}_3)}{\hbar_q^2}
   \cdot \lambda_{\mathrm{scale}}
   + \text{Skein corrections}
@@ -128,11 +128,11 @@ The Skein corrections arise from the crossing asymmetry between
 the $\mathfrak{u}$ and $\mathfrak{d}$ components.  The pair Skein formula gives:
 
 $$
-  m_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
+  \mathfrak{m}_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$: $m_{\mathfrak{p}}(q_0) \approx 938.272$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
+At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{p}}(q_0) \approx 938.272$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
 
 **Coulomb charge.**
 The proton carries net **positive crossing chirality**: two
