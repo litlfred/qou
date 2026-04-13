@@ -16,6 +16,7 @@ export default chapter({
       title: "Emergent Gravity and Information Geometry",
       label: "sec:info-emergent-gravity",
       blocks: [
+        "information-theory-intro",
         "emergent-gravity-info",
         "planck-info-unit",
       ],

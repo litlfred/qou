@@ -17,7 +17,7 @@ $q$-deformed matter sector: $\check{G}_q$-local systems carry
 parallel transport data for matter fields, and the Langlands dual
 $\check{G}_q$ controls the allowed representations.  The Kummer
 filtration on $\mathrm{LocSys}_{\check{G}_q}$ stratifies the
-matter sector by the divisibility of the Yekutieli obstruction.
+matter sector by the divisibility of the obstruction class $\kappa_0$.
 
 **The equivalence as gauge/matter duality.**
 The functor $\mathbb{L}_q$ is the categorical statement that

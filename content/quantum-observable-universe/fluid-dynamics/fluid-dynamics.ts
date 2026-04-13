@@ -22,6 +22,7 @@ export default chapter({
       title: "$q$-deformed hydrodynamics",
       label: "sec:q-hydrodynamics",
       blocks: [
+        "fluid-dynamics-intro",
         "brane-fluid",
         "madelung-fluid",
         "hamilton-jacobi-phase",

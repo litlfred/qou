@@ -1,5 +1,5 @@
 The perpetual obstruction
-([Yekutieli obstruction](#prop:q-gl-obstruction-calc)) and the
+([obstruction calculation](#prop:q-gl-obstruction-calc)) and the
 classical limit
 ([classical recovery](#conj:q-gl-classical-limit)) are compatible,
 but their coexistence reveals that the $q$-Geometric Langlands
@@ -20,7 +20,7 @@ generic point.
 
 **The perpetual obstruction constrains the non-torsion locus.**
 For $q \in \mathbb{G}_m^{\mathrm{nt}}$ and $\chi(A) \neq 0$,
-the Yekutieli class $\kappa_0$ is non-trivial at density-$1$
+the obstruction class $\kappa_0$ is non-trivial at density-$1$
 Kummer levels.  This means $q$-flatness is a strictly stronger
 condition than classical flatness: fewer connections are
 $q$-flat than classically flat.  The moduli

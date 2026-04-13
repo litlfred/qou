@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:quantum-characteristic-classes",
   lean: { decl: "QOU.QuantumCharacteristicClass", validation: "not_checked" },
-  title: "Quantum Characteristic Classes (Yekutieli obstruction)",
+  title: "Quantum Characteristic Classes",
   tags: ["yekutieli", "obstruction", "cohomology", "brane-tower"],
   examples: ["ex:quantum-characteristic-classes-su2"],
   uses: [

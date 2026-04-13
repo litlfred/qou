@@ -10,7 +10,7 @@ naive flatness condition fails.  The $q$-monodromy condition
 replaces it: the deviation from the identity for contractible loops
 is controlled by $(q-1)$ and vanishes in the classical limit.
 
-The Kummer filtration provides a finer invariant.  The Yekutieli
+The Kummer filtration provides a finer invariant.  The obstruction
 class $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
 has Kummer reduction $\kappa_0 \bmod n = 0$ precisely when
 $n \mid \chi(A)$

@@ -28,7 +28,7 @@ $\mathbb{G}_m$-family structure: at $q = 1$ the residue vanishes and
 $\mathcal{L}_1$ is a classical local system (flat bundle), while for
 $q \neq 1$ the non-vanishing of $d_q^2$
 ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared))
-obstructs trivial monodromy.  The Kummer reduction of the Yekutieli
+obstructs trivial monodromy.  The Kummer reduction of the obstruction
 class $\kappa_0$ at level $n$
 ([Kummer filtration](#rem:kummer-filtration-obstruction))
 controls which $q$-local systems admit lifts through the brane tower:

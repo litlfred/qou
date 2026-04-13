@@ -31,7 +31,7 @@ $$
 
 where $d$ is the homological dimension of $A$.
 
-The rigidity condition, introduced by Yekutieli, ensures that the
+The rigidity condition \cite{yekutieli2010} ensures that the
 dualizing complex is *intrinsic* to $A$ --- it does not depend on a
 choice of base ring or presentation. This makes $\omega_A^\bullet$ the
 correct categorical substitute for the canonical sheaf in the

@@ -16,7 +16,20 @@ import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
 import { remark } from "remark";
 import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
+// Selective GFM: exclude gfm-autolink-literal which causes OOM on
+// dotted Lean identifiers (e.g. "QOU.Descartes.Foo.bar").
+// Tables and strikethrough are loaded individually from the transitive
+// deps of remark-gfm.
+import { gfmTable } from "micromark-extension-gfm-table";
+import {
+  gfmTableFromMarkdown,
+  gfmTableToMarkdown,
+} from "mdast-util-gfm-table";
+import { gfmStrikethrough } from "micromark-extension-gfm-strikethrough";
+import {
+  gfmStrikethroughFromMarkdown,
+  gfmStrikethroughToMarkdown,
+} from "mdast-util-gfm-strikethrough";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 import { isCrossPaperRef } from "../schema/types";
 import { extractCitations } from "./citations";
@@ -67,8 +80,16 @@ export function escapeLatex(text: string): string {
 
 // ── Markdown → LaTeX conversion (AST-based) ─────────────────────
 
-/** Shared remark parser instance with math extension. */
-const mdParser = remark().use(remarkGfm).use(remarkMath);
+/** Shared remark parser instance with math + selective GFM (no autolink).
+ *  The full remarkGfm bundle includes gfm-autolink-literal which causes
+ *  OOM on dotted Lean identifiers. We load only tables + strikethrough. */
+const mdParser = remark()
+  .data("micromarkExtensions", [gfmTable(), gfmStrikethrough()])
+  .data("fromMarkdownExtensions", [
+    gfmTableFromMarkdown(),
+    gfmStrikethroughFromMarkdown(),
+  ])
+  .use(remarkMath);
 
 /**
  * Convert markdown content to LaTeX body text via remark AST.
