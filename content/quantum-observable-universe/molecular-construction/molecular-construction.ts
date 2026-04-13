@@ -25,6 +25,7 @@ export default chapter({
         "molecular-braid",
         "molecular-crossing-table",
         "covalent-bond-shared-trefoil",
+        "ilp-covalent-bond",
       ],
     }),
 

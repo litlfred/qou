@@ -30,3 +30,27 @@ penalty for electron-electron repulsion at shell $n$.*
 *The dual variable $y_0$ gives the **marginal $\Phi_1$ cost** of
 adding one more electron — this is the electronegativity in the
 braid framework.*
+
+### ILP electron attachment
+
+*The integer LP builds each electron shell from scratch: starting
+from the bare nucleus, add electrons one at a time, at each step
+selecting the operator that minimises $|tr_M|$ subject to
+Frobenius positivity $G \cdot x \geq 0$.  The ILP discovers
+that electrons **alternate generators**:*
+
+| Electron | Carbon | Nitrogen | Oxygen |
+|:---------|:-------|:---------|:-------|
+| $e_1$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ |
+| $e_2$ | $\sigma_0^{-1}$ | $\sigma_0^{-1}$ | $\sigma_0^{-1}$ |
+| $e_3$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ |
+| $e_4$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ |
+| $e_5$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ | $\sigma_1^{-1}$ |
+| $e_6$ | $\sigma_0^{-1}$ | $\sigma_0^{-1}$ | $\sigma_0^{-1}$ |
+| $e_7$ | — | $\sigma_0^{-1}$ | $\sigma_0^{-1}$ |
+| $e_8$ | — | — | $\sigma_1^{-1}$ |
+
+*The generator alternation is the Hecke algebra manifestation
+of Hund's rule: electrons $e_2$ and $e_6$ (and $e_7$ for $N$, $O$)
+attach via $\sigma_0^{-1}$ rather than $\sigma_1^{-1}$, corresponding
+to orbital pairing in the $2s$ and $2p$ subshells.*
