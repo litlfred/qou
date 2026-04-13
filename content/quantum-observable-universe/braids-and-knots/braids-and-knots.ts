@@ -280,13 +280,45 @@ export default chapter({
       ],
     }),
 
-    // ── Topological mass + nuclear binding (from lifting-and-descent §12) ───
+    // ── Categorical mass foundations ────────────────────────────────────
     section({
-      title: "Topological Mass and Nuclear Binding",
-      label: "sec:topological-mass-binding",
+      title: "Categorical Mass Foundations",
+      label: "sec:categorical-mass-foundations",
       blocks: [
         "topological-mass",
         "topological-mass-categorical-proof",
+        "categorical-mass-markov",
+        "markov-z-reconciliation",
+        "mass-endomorphism-conjecture",
+      ],
+    }),
+
+    // ── Calibration and algebraic mass formula ──────────────────────────
+    section({
+      title: "Calibration and Algebraic Mass Formula",
+      label: "sec:calibration-algebraic-mass",
+      blocks: [
+        "mass-element-nf",
+        "calibration-inputs",
+        "three-parameters-wedderburn",
+        "binding-scale-catalan",
+        "wedderburn-mass-formula",
+        "algebraic-quantum-volume",
+        "habiro-ring",
+        "algebraic-quantum-volume-specialization",
+        "quantum-bloch-group",
+        "degree-two-baryon-weight",
+      ],
+    }),
+
+    // ── Nuclear binding and beta stability ──────────────────────────────
+    section({
+      title: "Nuclear Binding and Beta Stability",
+      label: "sec:nuclear-binding-beta-stability",
+      blocks: [
+        "hook-weight-derivation",
+        "mass-endomorphism-tower",
+        "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",
