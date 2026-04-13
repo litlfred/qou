@@ -8,9 +8,9 @@ into a descended term (base-level Markov trace) and transient
 terms (Φ_q at blow-up centres), one per generator and one per
 adjacent generator pair.
 
-Ref: [mass-endomorphism-conjecture] (conjecture)
-     [topological-mass] (decomposition theorem)
-     [hecke-mass-element] (categorical definition)
+Content blocks: conj:mass-endomorphism-conjecture,
+     def:topological-mass (decomposition theorem),
+     def:hecke-mass-element (categorical definition)
 -/
 
 namespace QOU.MassEndomorphism
