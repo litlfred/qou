@@ -66,7 +66,12 @@ path = "src/bin/v13_stream.rs"
 name = "hecke-hapower"
 path = "src/bin/v14_hapower.rs"
 
-# Per-irrep via Young seminormal form (vector action mode: O(dim) memory)
+# Per-irrep Garside via Young's seminormal form (vector + confine + knots)
 [[bin]]
 name = "hecke-irrep"
 path = "src/bin/v14_irrep.rs"
+
+# Molecular binding: two atoms + bond crossings on full tower
+[[bin]]
+name = "hecke-molecular"
+path = "src/bin/v15_molecular.rs"
