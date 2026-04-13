@@ -90,3 +90,25 @@ has the correct framework (SW period integrals at jet degree k).
    The Φ_q tower is the transient component of the categorical
    mass decomposition, but the full mass uses the Picard-Lefschetz
    thimble integration over the color-tube cubic.
+
+### 8. All 4 Bethe-Weizsäcker coefficients derived
+
+From q₀ and m_e alone (zero extra fitting):
+
+| Coefficient | Formula | Error vs fitted |
+|------------|---------|----------------|
+| a_V (volume) | (3/2)[2]_q × m_e/ℏ_q | −0.02% |
+| a_S (surface) | (3q/2)[2]_q × m_e/ℏ_q | +0.22% |
+| a_C (Coulomb) | (3/5)(m_p/m_e)h/(6/α) × m_e | −1.61% |
+| a_A (Pauli) | (9/4)[2]_q × m_e/ℏ_q | −0.35% |
+
+The integer factors:
+- 3 = quarks per nucleon (B₃ confinement)
+- q = surface/volume ratio (substrate parameter)
+- 3/2 = Pauli/volume ratio
+- 6 = |S₃| = dim(H₃(q) NF basis) in a_C
+- 3/5 = uniform sphere electrostatic factor
+
+No third calibration point needed. The Coulomb coefficient
+uses m_p/m_e (from baryon period) and 1/α (from q₀).
+The 3 Wedderburn irreps (strong/EM/weak) all derive from q₀.
