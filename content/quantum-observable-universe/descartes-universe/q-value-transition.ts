@@ -17,5 +17,9 @@ export default definition({
     decl: "QOU.Descartes.QValueTransition",
     validation: "not_checked",
   },
-  uses: ["def:q-energy"],
+  uses: [
+    "def:q-energy",
+    "prop:branching-qvalue-factorization",
+    "thm:parity-regime-selection",
+  ],
 });

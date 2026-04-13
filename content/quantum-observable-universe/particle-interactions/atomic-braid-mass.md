@@ -14,6 +14,15 @@ where $A = Z + N$.  The crossing coefficients are:*
 | $\mathfrak{p}e$ | $\sigma^{-1}$ | $1$ | $-(q - q^{-1})$ | EM attraction |
 | $\mathfrak{n}e$ | $\mathrm{id}$ | $0$ | $1$ | no interaction |
 | $ee$ | $\sigma$ | $1$ | $0$ | EM repulsion |
+| $\mathfrak{p}_{\mathrm{gluon}}$ | $\sigma^2$ | | | $2\sigma_0$ internal (LP-derived) |
+| $\mathfrak{n}_{\mathrm{gluon}}$ | $L_+L_-$ | | | $4\sigma$ internal (LP-derived) |
+
+*Each nucleon also carries **internal gluon crossings** from LP
+stability ([integer LP gluon](#prop:mass-endomorphism-tower)):
+$2$ bare $\sigma_0$ for protons ($11$ total crossings) and
+$L_+ \to L_-$ for neutrons ($13$ total crossings).  These
+are prepended to the nucleon's per-generator crossing chain
+in the Wedderburn traced volume computation.*
 
 *The **ground-state ordering** is determined by:*
 1. *Nuclear ordering: minimize $\Phi_1$ over all permutations of
@@ -113,17 +122,20 @@ $\ln|0.14| \approx -1.9$.*
 **Brane tower correction.**
 *The single-level formula above computes the traced volume at
 brane level $n = 0$.  The full tower
-([topological decomposition](#thm:topological-mass)) multiplies
-the product $\prod_i \hat{V}_i^{\mathrm{full}}$ by the
-constant factor $\mathrm{Li}_2(q^{-2}) \approx 1.098$, adding
-$\ln\mathrm{Li}_2(q^{-2}) \approx +0.094$ to
-$\sum_i \ln|\hat{V}_i^{\mathrm{full}}|$.  This correction is
-uniform across generators because each brane level $n$
-contributes $q^{-2n}/n^2$ to the dilogarithm series, independent
-of the crossing pattern.  Level~1 captures $73.9\%$ of the
-tower; levels $1$--$3$ capture $94.3\%$; levels $1$--$10$
-capture $99.75\%$.  The tower correction is $< 1\%$ of $\Phi$
-and does not materially change the accuracy.*
+([mass endomorphism tower](#prop:mass-endomorphism-tower))
+adds per-generator $\Phi_q(\lvert\hat{V}_i\rvert)$ terms and
+adjacent cross-terms $z^2 \cdot \Phi_q(\lvert\hat{V}_i\hat{V}_j\rvert)$.
+In the log-separated approximation, this is equivalent to
+multiplying the base product by
+$\mathrm{Li}_2(q^{-2}) \approx 1.098$ (adding
+$\ln\mathrm{Li}_2(q^{-2}) \approx +0.094$ in log space).
+The correction is uniform across generators because each
+brane level $n$ contributes $q^{-2n}/n^2$ to the dilogarithm
+series, independent of the crossing pattern.  Level~1
+captures $73.9\%$ of the tower; levels $1$--$3$ capture
+$94.3\%$; levels $1$--$10$ capture $99.75\%$.  The tower
+correction is $< 1\%$ of $\Phi$ and does not materially
+change the accuracy.*
 
 **Log-separated approximation.**
 *The additive formula can be approximated by separating the

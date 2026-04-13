@@ -42,8 +42,9 @@ NF_LATEX = [r"\gamma", r"\sigma_0", r"\sigma_1", r"L_+", r"L_-", r"e^-"]
 #   tr_M(σ₁) = z  (Markov II)
 #   tr_M(σ₀σ₁) = z²  (Markov II on σ₀ · σ₁)
 #   tr_M(σ₁σ₀) = z²  (cyclicity)
-#   tr_M(σ₀σ₁σ₀) = HA·z² + z  (cyclicity → σ₀²σ₁ → Hecke)
-TR_M_BASIS = [1.0, z, z, z**2, z**2, HA * z**2 + z]
+#   tr_M(σ₀σ₁σ₀) = z³  (Markov chain: tr_M(σ₁σ₀σ₁) = z·tr_M(σ₀σ₁) = z·z² = z³)
+#   NOT HA·z² + z — vertex volume product fails for adjacent generators.
+TR_M_BASIS = [1.0, z, z, z**2, z**2, z**3]
 
 
 def markov_trace_nf(nf_vec):

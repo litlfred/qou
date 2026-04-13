@@ -48,7 +48,7 @@ NF_NAMES = ["gamma", "sigma0", "sigma1", "L+", "L-", "e-"]
 NF_DISPLAY = ["\u03b3", "\u03c3\u2080", "\u03c3\u2081", "L\u208a", "L\u208b", "e\u207b"]
 
 # Markov traces of basis elements
-TR_M = [1.0, z, z, z**2, z**2, h * z**2 + z]
+TR_M = [1.0, z, z, z**2, z**2, z**3]
 
 
 def hecke_mul(t1, t2):

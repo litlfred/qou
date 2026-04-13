@@ -1,0 +1,44 @@
+{
+  "computation": "lp-duality-check",
+  "timestamp": "2026-04-13T19:33:00.220829+00:00",
+  "q0": 1.1099785955541805,
+  "q0_err": 1.3578965598837824e-09,
+  "corrected_markov_trace": {
+    "tr_M_electron_z3": 0.12449094312996863,
+    "tr_M_electron_old": 0.5514434199198297,
+    "correct": "z^3",
+    "verification": "Markov property chain: tr_M(\u03c3\u2080\u03c3\u2081\u03c3\u2080) = z\u00b7z\u00b7z = z\u00b3"
+  },
+  "lp_feasibility": {
+    "net_B3": 0.9996006459669027,
+    "tr_M_B3": 0.9983666218385048,
+    "frobenius_positive": true,
+    "Gb3": [
+      0.9983666218385048,
+      0.5098263860689201,
+      0.48765722850470195,
+      0.2158502046728741,
+      0.2842542602539225,
+      0.12530652205916962
+    ],
+    "active_constraints": []
+  },
+  "gram_eigenstructure": {
+    "eigenvalues": [
+      -0.9557345134563314,
+      0.4139987135224253,
+      0.4281147970398728,
+      0.9557345134563316,
+      1.2820197506195958,
+      2.893070201351516
+    ],
+    "min_eigenvalue": -0.9557345134563314,
+    "min_abs_eigenvalue": 0.4139987135224253,
+    "indefinite": true
+  },
+  "error_bounds": {
+    "delta_q": 1.3578965598837824e-09,
+    "delta_z": 1.5919574672561445e-11,
+    "delta_tr_electron": 1.1907243087050698e-11
+  }
+}

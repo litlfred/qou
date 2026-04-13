@@ -49,3 +49,25 @@ This works because:
 Applying this recursively from $i = n-2$ down to $i = 0$ gives the
 product formula.  $\square$
 
+## Caveat: non-adjacent generators only
+
+The product factorization requires that the generators
+$\sigma_i$ at each reduction step are **non-adjacent** —
+that is, step 4 above (independence of the remaining word
+from $\sigma_i$) must hold.  When generators are adjacent
+(e.g. $\sigma_0 \sigma_1 \sigma_0$ in the trefoil), the
+Yang–Baxter relation $\sigma_0 \sigma_1 \sigma_0 =
+\sigma_1 \sigma_0 \sigma_1$ creates dependencies that
+invalidate the factorization.
+
+For the Borromean braid $\mathcal{B}_3 = (\sigma_0
+\sigma_1^{-1})^3$ with adjacent generators $\sigma_0$
+and $\sigma_1$: the vertex volume product gives
+$hz^2 + z$, but the correct Markov trace is $z^3$
+([corrected Markov trace](#prop:corrected-markov-trace)).
+
+The product formula remains valid for the **nuclear
+Garside element** (where generators are distant) and for
+braids whose Hecke reduction separates generators into
+independent chains.
+

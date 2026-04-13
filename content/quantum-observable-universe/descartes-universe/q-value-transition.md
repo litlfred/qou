@@ -28,6 +28,23 @@ each knot/link.
 This is the **primary definition**.  No conservation law is
 invoked.  $\mathcal{Q}_q$ is a computable function of $q$ alone.
 
+## Branching formula (primary computational method)
+
+For nuclear beta decays, the Q-value is most efficiently
+computed via the
+[branching factorization](#prop:branching-qvalue-factorization):
+
+$$
+  \mathcal{Q}_q = |a^Z \cdot b^{N-1} \cdot (a - b)| \times m_e
+  \quad (\text{odd } A)
+$$
+
+where $a, b$ are the per-nucleon channel sums.  The
+[parity regime](#thm:parity-regime-selection) determines
+whether the odd-$A$ or even-$A$ formula applies, and the
+[positron correction](#prop:positron-correction) accounts
+for the $+1$ term when needed.
+
 ## Crossing-level decomposition
 
 The parent and daughter normal forms $\mathcal{N}(p,n)$
