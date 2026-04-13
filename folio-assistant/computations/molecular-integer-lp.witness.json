@@ -1,0 +1,109 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-13T17:17:07.606400+00:00",
+  "commitSha": "79dba635be0cbb2a3dd1d668b1ef6f2d7caa8eba",
+  "assertions": [
+    {
+      "name": "H₂ binding",
+      "computed": 7.3,
+      "expected": 4.478,
+      "passed": false,
+      "tolerance": 2.239,
+      "unit": "eV",
+      "source": "Observed atomisation energy"
+    },
+    {
+      "name": "CO binding",
+      "computed": 8.74,
+      "expected": 11.09,
+      "passed": true,
+      "tolerance": 5.545,
+      "unit": "eV",
+      "source": "Observed atomisation energy"
+    },
+    {
+      "name": "CO₂ binding",
+      "computed": 11.65,
+      "expected": 16.56,
+      "passed": true,
+      "tolerance": 8.28,
+      "unit": "eV",
+      "source": "Observed atomisation energy"
+    },
+    {
+      "name": "CH₄ binding",
+      "computed": 10.65,
+      "expected": 17.9,
+      "passed": true,
+      "tolerance": 8.95,
+      "unit": "eV",
+      "source": "Observed atomisation energy"
+    },
+    {
+      "name": "C₆H₆ binding",
+      "computed": 45.59,
+      "expected": 57.4,
+      "passed": true,
+      "tolerance": 28.7,
+      "unit": "eV",
+      "source": "Observed atomisation energy"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 9,
+  "computation": "molecular-integer-lp",
+  "scriptFile": "molecular-integer-lp.py",
+  "scriptHash": "e517e0b6f9b2",
+  "scriptCommitSha": "",
+  "description": "Molecular binding energies from integer LP. Bond operator σ₁⁻¹·σ₁⁻¹ derived from H₂ scan. Atoms built from nucleons (B₃ + quarks + gluon). Zero fitted parameters.",
+  "contentBlock": "def:molecular-braid",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "E_mol_eV": 6.750278523641413,
+    "bond_operator": "sigma_1_inv, sigma_1_inv"
+  },
+  "data": {
+    "atoms": {
+      "H": {
+        "Phi1": -1.1698389841909715,
+        "tr": 0.31041691927314524
+      },
+      "C": {
+        "Phi1": 3.711962590830405,
+        "tr": 40.93406456414992
+      },
+      "O": {
+        "Phi1": 5.140155628833986,
+        "tr": 170.74233868479345
+      }
+    },
+    "results": [
+      {
+        "molecule": "H₂",
+        "predicted_eV": 7.3035623289396785,
+        "observed_eV": 4.478
+      },
+      {
+        "molecule": "CO",
+        "predicted_eV": 8.73987342151187,
+        "observed_eV": 11.09
+      },
+      {
+        "molecule": "CO₂",
+        "predicted_eV": 11.653164562015828,
+        "observed_eV": 16.56
+      },
+      {
+        "molecule": "CH₄",
+        "predicted_eV": 10.649982710240922,
+        "observed_eV": 17.9
+      },
+      {
+        "molecule": "C₆H₆",
+        "predicted_eV": 45.59396473389279,
+        "observed_eV": 57.4
+      }
+    ]
+  }
+}
