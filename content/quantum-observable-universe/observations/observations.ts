@@ -17,6 +17,7 @@ export default chapter({
       title: "The Substrate Consistency Window",
       label: "sec:substrate-consistency",
       blocks: [
+        "observations-intro",
         "substrate-consistency-window",
       ],
     }),

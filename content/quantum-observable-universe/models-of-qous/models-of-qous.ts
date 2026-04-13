@@ -23,6 +23,7 @@ export default chapter({
       title: "Physical interpretation and the main result",
       label: "sec:physical-interpretation",
       blocks: [
+        "models-of-qous-intro",
         "q-yang-mills-levi",
         "yang-mills-mass-gap",
         "gr-substrate-geometry",

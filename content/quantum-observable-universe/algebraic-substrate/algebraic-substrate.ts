@@ -17,6 +17,7 @@ export default chapter({
       title: "The algebraic substrate and the Reeb derivation",
       label: "sec:algebraic-substrate-reeb",
       blocks: [
+        "algebraic-substrate-intro",
         "substrate-preamble",
         "frobenius-hopf-substrate",
         "substrate-parameter-planck",

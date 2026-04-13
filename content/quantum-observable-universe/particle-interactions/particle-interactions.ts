@@ -20,6 +20,7 @@ export default chapter({
       title: "The Gröbner–Shirshov reduction engine",
       label: "sec:groebner-engine",
       blocks: [
+        "particle-interactions-intro",
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
         "inductive-gb-reduction",
