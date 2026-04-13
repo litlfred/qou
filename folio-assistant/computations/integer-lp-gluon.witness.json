@@ -1,0 +1,46 @@
+{
+  "computation": "integer-lp-gluon",
+  "timestamp": "2026-04-13T22:12:26.161069+00:00",
+  "q0": 1.1099785955541805,
+  "proton": {
+    "base_crossings": 9,
+    "base_stable": false,
+    "base_trM": -0.00593630132433054,
+    "gluon_optimal": "\u03c3\u2080 \u2192 \u03c3\u2080",
+    "gluon_crossings": 2,
+    "total_crossings": 11,
+    "optimal_trM": 0.027447218242728555,
+    "n_feasible": 40,
+    "NF": [
+      -0.11086188696272463,
+      -0.07677007648620146,
+      0.04513889336452193,
+      9.983850827433374e-05,
+      0.10899457695115032,
+      1.0193809158944747
+    ]
+  },
+  "neutron": {
+    "base_crossings": 9,
+    "base_stable": false,
+    "base_trM": -0.13222378922807793,
+    "gluon_optimal": "L\u208a \u2192 L\u208b",
+    "gluon_crossings": 4,
+    "total_crossings": 13,
+    "optimal_trM": 0.11196647479356037,
+    "n_feasible": 26,
+    "NF": [
+      -0.011508102172807205,
+      -0.06837924420943284,
+      0.05650034951076198,
+      -0.11117904745693372,
+      0.12070671970413661,
+      1.0203995617105592
+    ]
+  },
+  "stability_boundary": {
+    "polynomial": "u\u2076 \u2212 3u\u2075 + 5u\u2074 \u2212 8u\u00b3 + 5u\u00b2 \u2212 3u + 1",
+    "critical_q": 1.104,
+    "our_q0": 1.1099785955541805
+  }
+}
