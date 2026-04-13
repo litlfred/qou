@@ -15,7 +15,26 @@ Results:
 - m_μ/m_e = 355.6 / √3 = 205.3 (CODATA: 206.77, error −0.70%)
 - This may allow deriving q₀ from Vol(4₁) alone (1 input → all predictions)
 
-The √3 factor likely comes from the 3 crossings in the electron (reference).
+## Key Finding: Eigenvalue Boundary Structure
+
+In the 2×2 standard rep of H₃(q), particle eigenvalues have fixed relationships to q:
+
+| Particle | |λ|_max in std rep | Boundary status |
+|----------|-------------------|-----------------|
+| Electron (T_{2,3}) | = q exactly | ON boundary (topological) |
+| Muon (T_{2,5}) | = 1 exactly | Inside (topological) |
+| B₃ confinement | ≈ 0.935 | Inside |
+| Proton (0-gluon) | ≈ 1.073 | Inside (< q = 1.110) |
+
+The matrix tower Z(M) = Π_k det(I - q⁻ᵏM)⁻¹ converges when |λ| < q.
+
+Standard-rep-only mass ratios (incomplete — needs all 3 Wedderburn channels):
+  m_μ/m_e = 20.2 (need 206.8)
+  m_p/m_e (L₊ gluon) = 242.8 (need 1836.2)
+
+The 0-gluon proton CONVERGES in the eigenvalue sense (|λ| < q)
+but is LP UNSTABLE in the NF Frobenius sense (Gx[γ] < 0).
+These are different constraints.
 
 ## Goal
 Rebuild the full particle chain from γγ → quarks → nucleons → atoms → isotopes,
