@@ -78,12 +78,15 @@ $G x[\gamma] < 0$.  A single Hopf link $L_- = \sigma_1\sigma_0$
 is the **minimum** additional structure that restores stability.
 The gluon is not assumed — it is **required** by the LP dual.
 
-The ordering matters: the LP-optimal insertion point (every
-intermediate step stable) is
-$\mathcal{B}_3 \to L_- \to \sigma_1(\mathfrak{u}\mathfrak{d})
-\to \sigma_0(\mathfrak{u}\mathfrak{u})
-\to \sigma_0(\mathfrak{u}\mathfrak{d})$,
-giving 11 crossings total (6 B₃ + 3 quarks + 2 Hopf gluon).
+The **integer LP dual** enumerates all feasible gluon
+combinations (up to $3$ operations from
+$\{\sigma_0, \sigma_1, L_+, L_-\}$, requiring Frobenius
+stability at every intermediate step) and selects the one
+with minimum $|\mathrm{tr}_M|$.  Among $40$ feasible
+solutions, the optimum is $\sigma_0 \to \sigma_0$: two
+bare $\sigma_0$ crossings, giving $11$ crossings total
+($6$ B₃ + $3$ quarks + $2$ gluon) with
+$|\mathrm{tr}_M| = 0.027$.
 
 **Step 3: proton NF** (with Hopf gluon)**.**
 After typed crossings and Hopf link stabilisation at

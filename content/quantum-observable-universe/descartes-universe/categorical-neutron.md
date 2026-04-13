@@ -27,12 +27,13 @@ is LP unstable — the $\sigma_0$ channel violates Frobenius
 positivity after the second quark crossing.  A single Hopf
 link $L_- = \sigma_1\sigma_0$ restores stability.
 
-The LP-optimal ordering (stable at every step) is:
-$\mathcal{B}_3 \to \sigma_0^{-1}(\mathfrak{d}\mathfrak{d})
-\to \sigma_0(\mathfrak{u}\mathfrak{d})
-\to L_-(\text{gluon})
-\to \sigma_1(\mathfrak{u}\mathfrak{d})$,
-giving 11 crossings (6 B₃ + 3 quarks + 2 Hopf gluon).
+The **integer LP dual** selects $L_+ \to L_-$ (two Hopf
+links = $4$ gluon crossings) as the minimum-action
+stabiliser.  The neutron needs more gluon than the proton
+($4$ vs $2$) because the $\mathfrak{d}\mathfrak{d}$ crossing
+creates deeper instability ($\mathrm{tr}_M = -0.132$ vs
+$-0.006$).  Total: $13$ crossings ($6$ B₃ + $3$ quarks
++ $4$ gluon).
 
 **Step 3: neutron NF** (with Hopf gluon)**.**
 At $q_0 \approx 1.1100$:
