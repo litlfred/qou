@@ -227,7 +227,7 @@ def interpolate_f_pauli(Z, N, n_pp, n_nn, n_pn, known_atoms):
 # ══════════════════════════════════════════════════════════════
 
 NF_BASIS_3 = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
-TR_M_3 = [1.0, z, z, z**2, z**2, HA * z**2 + z]
+TR_M_3 = [1.0, z, z, z**2, z**2, z**3]
 
 def hecke_mul(t1, t2):
     result = {}

@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T00:10:08.269038+00:00",
-  "commitSha": "76a6bebe0cdf504957670cdfd757a76331bb2fac",
+  "computedAt": "2026-04-13T01:12:15.563176+00:00",
+  "commitSha": "e85964cd735dcf8a0ca1972d063b180bae0e874f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 9,
   "computation": "mass-endomorphism",
   "scriptFile": "mass_endomorphism.py",
   "scriptHash": "27c1dd737c95",
-  "scriptCommitSha": "dded142386473d36404fa0be4eb2618bbdd212c2",
+  "scriptCommitSha": "d36396f555a6034a632a4f8b5982395d52a707ce",
   "description": "Mass endomorphism via Φ_q tower with z²-weighted cross-term. m_p/m_e = 1869.8506 (CODATA: 1836.152, error 1.84%). Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra.",
   "parameters": {
     "q0": "1.1099785955541805",
