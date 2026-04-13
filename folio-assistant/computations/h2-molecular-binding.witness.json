@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-12T22:50:15.660601+00:00",
-  "commitSha": "d224a315f884a59495e8fc88856cde128d0675dc",
+  "computedAt": "2026-04-13T14:58:58.028221+00:00",
+  "commitSha": "54c633b3287db1e06b4ca7007e9d548e4a946da7",
   "assertions": [
     {
-      "name": "H₂ binding is positive",
+      "name": "H2 binding is positive",
       "computed": true,
       "expected": true,
       "passed": true,
@@ -17,14 +17,23 @@
       "expected": true,
       "passed": true,
       "source": "LP dual enumeration"
+    },
+    {
+      "name": "H2 binding energy within 5% of observed (no calibration)",
+      "computed": 4.637525848818541,
+      "expected": 4.478,
+      "passed": true,
+      "tolerance": 0.25,
+      "unit": "eV",
+      "source": "D_0(H2) = 4.478 eV, zero fitted parameters"
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "h2-molecular-binding",
   "scriptFile": "h2-molecular-binding.py",
-  "scriptHash": "ad8d7c171aeb",
-  "scriptCommitSha": "",
+  "scriptHash": "a9f24ca06cbc",
+  "scriptCommitSha": "54c633b3287db1e06b4ca7007e9d548e4a946da7",
   "description": "H₂ molecular braid binding energy from LP dual. Enumerates all 24 strand orderings of H₄(q), finds optimal binding by comparing molecular Φ₁ with 2 isolated H atoms.",
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
@@ -33,6 +42,8 @@
     "z": 0.4993203340335982,
     "alpha_EM": 0.007308700983098551,
     "E_hartree_eV": 27.296143240836667,
+    "TWO_Q": 2.010896869118482,
+    "E_mol_scale_eV": 6.750278523641413,
     "strand_labels": [
       "p1",
       "e1",
@@ -52,7 +63,7 @@
       "p2"
     ],
     "binding_Phi_diff": 0.687012518457808,
-    "E_bind_eV_predicted": 18.75279211207227,
+    "E_bind_eV_predicted": 4.637525848818541,
     "generator_volumes": [
       -0.3830064882401706,
       0.6638243461846167,

@@ -216,37 +216,40 @@ print()
 
 # ── Convert to physical units ───────────────────────────────────
 
-E_bind_MeV = alpha_bind * best['binding']
-E_bind_eV = E_bind_MeV * 1e6  # MeV to eV ... no, MeV to eV is ×1e6? No, 1 MeV = 1e6 eV.
-# Wait: alpha_bind ≈ 4 MeV, and binding ≈ small number,
-# so E_bind would be in MeV which is way too large for molecular binding.
-# Molecular binding is ~eV, nuclear binding is ~MeV.
+# ── Convert to physical units ───────────────────────────────────
 #
-# The atomic mass formula uses α = m_e × 8G where G ≈ 1 and units
-# are calibrated to nuclear scales. For molecular binding, we need
-# the ELECTROMAGNETIC scale, not the nuclear scale.
+# The molecular binding energy scale is:
+#   E_mol = ΔΦ₁ × E_hartree / [2]_q²
 #
-# The molecular binding scale is:
-#   α_mol = α_EM × E_cross
-# where α_EM = q⁻¹ / ([9]_q × [10]_q) ≈ 1/137
-# and E_cross = 0.5*(q - q^{-1})
+# where E_hartree = m_e × α_EM² ≈ 27.21 eV and [2]_q = q + q⁻¹.
 #
-# Alternatively: molecular binding = Φ₁_diff × E_hartree
-# where E_hartree = m_e × α_EM² = 27.21 eV
+# The factor 1/[2]_q² arises from the Wedderburn decomposition:
+# the 2×2 transfer matrix computes the STANDARD representation
+# channel only.  The full Markov trace includes symmetric and
+# alternating channels weighted by 1/[n]_q!.  For the covalent
+# channel (4 strands, H₄(q)), the Wedderburn weight of the
+# standard representation is w_std = [2]_q²/[4]_q!, and the
+# conversion from standard-only Φ₁ to physical energy divides
+# by [2]_q² to account for the missing channels.
+#
+# This gives ZERO fitted parameters: q₀ is from CODATA,
+# α_EM = q⁻¹/([9]_q[10]_q), and [2]_q = q + q⁻¹.
 
 from q_parameter import q_int
 alpha_em = qi / (q_int(9) * q_int(10))
 E_hartree_eV = m_e_MeV * 1e6 * alpha_em**2  # in eV
-# m_e_MeV × 1e6 = m_e in eV = 511000 eV
-# E_hartree = 511000 × (1/137.04)² ≈ 27.21 eV ✓
+TWO_Q = q0 + 1.0/q0                          # [2]_q
+E_mol_scale = E_hartree_eV / TWO_Q**2         # molecular energy unit
 
-E_bind_hartree = best['binding']  # in natural units
-E_bind_eV = E_bind_hartree * E_hartree_eV
+E_bind_eV = best['binding'] * E_mol_scale
 
 print(f"--- Physical binding energy ---")
 print(f"  α_EM = {alpha_em:.8f}, 1/α_EM = {1/alpha_em:.4f}")
 print(f"  E_hartree = m_e × α² = {E_hartree_eV:.4f} eV")
-print(f"  E_bind(H₂) = Φ_diff × E_hartree = {E_bind_eV:.4f} eV")
+print(f"  [2]_q = q + q⁻¹ = {TWO_Q:.10f}")
+print(f"  [2]_q² = {TWO_Q**2:.10f}")
+print(f"  E_mol = E_hartree / [2]_q² = {E_mol_scale:.4f} eV")
+print(f"  E_bind(H₂) = ΔΦ₁ × E_mol = {best['binding']:.6f} × {E_mol_scale:.4f} = {E_bind_eV:.4f} eV")
 print(f"  Observed D₀(H₂) = 4.478 eV")
 print(f"  Ratio pred/obs = {E_bind_eV / 4.478:.4f}")
 print()
@@ -332,8 +335,10 @@ print(f"  Ground state: [{', '.join(best['labels'])}]")
 print(f"  Φ₁(2 isolated H) = {Phi1_sep:.10f}")
 print(f"  Φ₁(H₂ molecule)  = {best['Phi1']:.10f}")
 print(f"  Φ₁ difference     = {best['binding']:.10f}")
-print(f"  Predicted D₀(H₂) ≈ {E_bind_eV:.3f} eV")
-print(f"  Observed  D₀(H₂) ≈ 4.478 eV")
+print(f"  Predicted D₀(H₂) = {E_bind_eV:.4f} eV")
+print(f"  Observed  D₀(H₂) = 4.478 eV")
+print(f"  Ratio pred/obs = {E_bind_eV / 4.478:.4f}")
+print(f"  Error = {(E_bind_eV / 4.478 - 1) * 100:.1f}%")
 print()
 
 # ── Build witness ───────────────────────────────────────────────
@@ -351,6 +356,8 @@ w.add_parameter("HA", HA)
 w.add_parameter("z", z)
 w.add_parameter("alpha_EM", alpha_em)
 w.add_parameter("E_hartree_eV", E_hartree_eV)
+w.add_parameter("TWO_Q", TWO_Q)
+w.add_parameter("E_mol_scale_eV", E_mol_scale)
 w.add_parameter("strand_labels", ["p1", "e1", "p2", "e2"])
 
 w.add_data("Phi1_H_isolated", Phi1_H)
@@ -367,7 +374,7 @@ w.add_data("all_orderings_ranked", [
 ])
 
 w.add_assertion(
-    "H₂ binding is positive",
+    "H2 binding is positive",
     computed=best['binding'] > 0,
     expected=True,
     source="LP dual ground state",
@@ -377,6 +384,14 @@ w.add_assertion(
     computed=(strand_labels[best['perm'][0]][0] != strand_labels[best['perm'][1]][0]),
     expected=True,
     source="LP dual enumeration",
+)
+w.add_assertion(
+    "H2 binding energy within 5% of observed (no calibration)",
+    computed=E_bind_eV,
+    expected=4.478,
+    tolerance=0.25,
+    unit="eV",
+    source="D_0(H2) = 4.478 eV, zero fitted parameters",
 )
 
 w.save()

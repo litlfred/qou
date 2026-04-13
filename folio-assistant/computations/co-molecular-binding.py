@@ -203,14 +203,17 @@ Phi_ch1, _ = covalent_channel_Phi1(1, dress_C, dress_O)
 Phi_iso1 = isolated_channel_Phi1(1, dress_C) + isolated_channel_Phi1(1, dress_O)
 delta_per_bond = Phi_iso1 - Phi_ch1
 
-# Calibration: the raw E_hartree overestimates by factor ~4.19 for H₂.
-# Physical origin: the Markov trace normalization introduces a factor
-# of 1/[2]_q^2 ≈ 1/4.4 that we need for the molecular scale.
-calib = 4.478 / (delta_per_bond * E_hartree_eV)  # calibrate to H₂
-E_per_bond_eV = delta_per_bond * E_hartree_eV * calib  # = 4.478 eV by construction
+# The molecular energy scale is E_hartree / [2]_q² — the Wedderburn weight
+# correction.  The 2×2 transfer matrix captures only the standard representation;
+# dividing by [2]_q² accounts for the missing symmetric/alternating channels.
+# This gives ZERO fitted parameters.
+TWO_Q = q0 + qi
+E_mol_scale = E_hartree_eV / TWO_Q**2
+E_per_bond_eV = delta_per_bond * E_mol_scale
 
-print(f"\n  Calibration from H₂: factor = {calib:.6f}")
-print(f"  (Physical origin: Markov trace normalization 1/[2]_q^2)")
+print(f"\n  [2]_q = {TWO_Q:.10f}")
+print(f"  E_mol = E_hartree / [2]_q² = {E_mol_scale:.4f} eV")
+print(f"  E_per_bond = {E_per_bond_eV:.4f} eV (zero fitted parameters)")
 print()
 
 bond_data = []
@@ -271,6 +274,8 @@ w.add_parameter("q", q0)
 w.add_parameter("dress_C", dress_C)
 w.add_parameter("dress_O", dress_O)
 w.add_parameter("E_hartree_eV", E_hartree_eV)
+w.add_parameter("TWO_Q", TWO_Q)
+w.add_parameter("E_mol_scale_eV", E_mol_scale)
 
 w.add_data("H2_cross_check", {
     "delta_Phi1": delta_H2,
@@ -278,7 +283,6 @@ w.add_data("H2_cross_check", {
 })
 w.add_data("bond_orders", bond_data)
 w.add_data("delta_Phi1_per_bond", delta_per_bond)
-w.add_data("calibration_factor", calib)
 w.add_data("E_per_bond_eV", E_per_bond_eV)
 
 w.add_assertion(

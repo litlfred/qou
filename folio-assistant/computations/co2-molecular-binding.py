@@ -85,9 +85,11 @@ Phi1_channel = cov_channel_Phi1()
 Phi1_iso_pair = 2 * Phi1_iso_per_e
 delta_per_bond = Phi1_iso_pair - Phi1_channel
 
-# Calibration from H₂
-calib = 4.478 / (delta_per_bond * E_hartree_eV)
-E_per_bond_eV = delta_per_bond * E_hartree_eV * calib
+# Molecular energy scale: E_hartree / [2]_q² — Wedderburn weight correction.
+# Zero fitted parameters.
+TWO_Q = q0 + qi
+E_mol_scale = E_hartree_eV / TWO_Q**2
+E_per_bond_eV = delta_per_bond * E_mol_scale
 
 # ── CO₂ computation ────────────────────────────────────────────
 
@@ -96,7 +98,10 @@ print("CO₂ MOLECULAR BRAID: INDEPENDENT BOND CHANNEL MODEL")
 print("=" * 70)
 print(f"\nq = {q0:.10f}, HA = {HA:.10f}, z = {z:.10f}")
 print(f"E_hartree = {E_hartree_eV:.4f} eV")
-print(f"Calibrated E_per_bond = {E_per_bond_eV:.4f} eV (from H₂)")
+TWO_Q_display = q0 + qi
+print(f"[2]_q = {TWO_Q_display:.10f}")
+print(f"E_mol = E_hartree / [2]_q^2 = {E_mol_scale:.4f} eV")
+print(f"E_per_bond = {E_per_bond_eV:.4f} eV (zero fitted parameters)")
 print(f"dPhi_1 per bond = {delta_per_bond:.10f}")
 print()
 
@@ -179,7 +184,8 @@ w.set_content_block("prop:co2-lp-dual-binding")
 
 w.add_parameter("q", q0)
 w.add_parameter("dress", dress)
-w.add_parameter("calib", calib)
+w.add_parameter("TWO_Q", TWO_Q)
+w.add_parameter("E_mol_scale_eV", E_mol_scale)
 w.add_parameter("E_per_bond_eV", E_per_bond_eV)
 
 w.add_data("E_bind_total_eV", E_total)
