@@ -6,7 +6,7 @@ export default proposition({
     decl: "QOU.Torsion.global_gluing",
     validation: "not_checked",
   },
-  title: "Global gluing via Yekutieli's twisted quantization",
+  title: "Global gluing via twisted quantization",
   tags: ["yekutieli", "twisted-quantization", "global-gluing"],
   uses: [
     "def:quantum-planck-constant",
