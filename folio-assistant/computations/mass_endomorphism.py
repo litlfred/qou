@@ -151,6 +151,21 @@ proton_cross = {
 proton_vols = additive_wedderburn_volumes(3, proton_cross)
 p_desc, p_single, p_cross, p_total = mass_from_tower(proton_vols)
 
+# Neutron = B₃ × udd × gluon on 3 strands (4-channel budget)
+# Same B₃ + gluon structure, but udd quark content:
+#   dd pair: σ⁻¹ (instead of uu: σ)
+#   ud pairs: same ½(σ + σ⁻¹) as proton
+neutron_cross = {
+    0: [(1.0, 0.0)] * 3          # B₃: 3 × σ₀
+       + [(1.0, -HA)]            # dd quark pair (σ⁻¹)
+       + [(1.0, -HA / 2)]        # ud quark pair
+       + [(1.0, 0.0)] * 2,       # 2 gluon self-coupling modes
+    1: [(1.0, -HA)] * 3          # B₃: 3 × σ₁⁻¹
+       + [(1.0, -HA / 2)],       # ud quark pair
+}
+neutron_vols = additive_wedderburn_volumes(3, neutron_cross)
+n_desc, n_single, n_cross, n_total = mass_from_tower(neutron_vols)
+
 # === OUTPUT ===
 
 print("MASS ENDOMORPHISM: non-perturbative Φ_q tower")
@@ -176,9 +191,20 @@ print(f"  Single:    {p_single:.4f}")
 print(f"  Cross:     {p_cross:.4f}  (z²·Φ_q(V₀V₁), z²={z_mark**2:.6f})")
 print(f"  Total:     {p_total:.4f}")
 print()
-print(f"m_p/m_e = {p_total / e_total:.4f}")
-print(f"CODATA:   1836.152")
-print(f"Error:    {abs(p_total / e_total - 1836.152) / 1836.152 * 100:.1f}%")
+print(f"NEUTRON (B₃ × udd + gluon, 2 generators):")
+for i, v in enumerate(neutron_vols):
+    phi = Phi_q(abs(v["full"]))
+    print(f"  Gen {i}: V̂_full={v['full']:.6f}, Φ_q={phi:.4f}")
+print(f"  Descended: {n_desc:.6f}")
+print(f"  Single:    {n_single:.4f}")
+print(f"  Cross:     {n_cross:.4f}")
+print(f"  Total:     {n_total:.4f}")
+print()
+print(f"m_p/m_e = {p_total / e_total:.4f}  (CODATA: 1836.152, error {abs(p_total/e_total - 1836.152)/1836.152*100:.2f}%)")
+print(f"m_n/m_e = {n_total / e_total:.4f}  (CODATA: 1838.684, error {abs(n_total/e_total - 1838.684)/1838.684*100:.2f}%)")
+print(f"m_n/m_p = {n_total / p_total:.6f}  (CODATA: 1.001378, error {abs(n_total/p_total - 1.001378)/1.001378*100:.4f}%)")
+print(f"m_n - m_p (units of m_e) = {(n_total - p_total)/e_total:.4f}  (CODATA: 2.531)")
+print(f"Δm (MeV) = {(n_total - p_total)/e_total * 0.51100:.4f}  (CODATA: 1.293 MeV)")
 
 # === WITNESS ===
 w = WitnessBuilder("mass-endomorphism", engine="python")
