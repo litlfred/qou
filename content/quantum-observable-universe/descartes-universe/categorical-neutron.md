@@ -11,42 +11,50 @@ Same as [proton](#def:categorical-proton) Step 1:
 $\mathrm{net}(\mathcal{B}_3) = +1.000$, with intrinsic Hopf link
 content (no separate $\mathcal{L}_H$ factor).
 
-**Step 2: typed crossings.**
+**Step 2: typed crossings + Hopf gluon stabilisation.**
 The two down quarks introduce stronger $-H_A$ shifts than
 the proton's single down quark:
 
 | Pair | Type | Crossing element |
 |:---|:---|:---|
+| $(1,2)$ | $\mathfrak{d}$-$\mathfrak{d}$ | $\sigma_0 - H_A \mathbf{1}$ |
 | $(0,1)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A \mathbf{1}$ |
-| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A \mathbf{1}$ |
-| $(1,2)$ | $\mathfrak{d}$-$\mathfrak{d}$ | $\sigma_1 - H_A \mathbf{1}$ |
+| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_1 - \tfrac{1}{2}H_A \mathbf{1}$ |
 
-The $\mathfrak{d}$-$\mathfrak{d}$ crossing on pair $(1,2)$
-carries the full $-H_A$ shift (eigenvalue $-q^{-1}$), pulling
-the net further below the proton's.
+As with the proton, the 9-crossing element
+$\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$
+is LP unstable — the $\sigma_0$ channel violates Frobenius
+positivity after the second quark crossing.  A single Hopf
+link $L_- = \sigma_1\sigma_0$ restores stability.
 
-**Step 3: neutron NF.**
+The LP-optimal ordering (stable at every step) is:
+$\mathcal{B}_3 \to \sigma_0^{-1}(\mathfrak{d}\mathfrak{d})
+\to \sigma_0(\mathfrak{u}\mathfrak{d})
+\to L_-(\text{gluon})
+\to \sigma_1(\mathfrak{u}\mathfrak{d})$,
+giving 11 crossings (6 B₃ + 3 quarks + 2 Hopf gluon).
+
+**Step 3: neutron NF** (with Hopf gluon)**.**
 At $q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
-| $\mathbf{1}$ | $\gamma$ | $-0.2017$ |
-| $\sigma_0$ | $\sigma_0$ | $+0.0481$ |
-| $\sigma_1$ | $\sigma_1$ | $+1.0090$ |
-| $\sigma_0\sigma_1$ | $L_+$ | $-0.0096$ |
-| $\sigma_1\sigma_0$ | $L_-$ | $+0.0092$ |
-| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $-0.0442$ |
+| $\mathbf{1}$ | $\gamma$ | $-0.0096$ |
+| $\sigma_0$ | $\sigma_0$ | $-0.0481$ |
+| $\sigma_1$ | $\sigma_1$ | $+0.0461$ |
+| $\sigma_0\sigma_1$ | $L_+$ | $-0.2206$ |
+| $\sigma_1\sigma_0$ | $L_-$ | $+0.0189$ |
+| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $+1.0109$ |
 
 $$
-  \mathrm{net}(\mathfrak{n}) = +0.8108
+  \mathrm{net}(\mathfrak{n}) = +0.7976
 $$
 
-Compared to the proton ($\mathrm{net} = +0.9991$):
-the extra down quark drives $\gamma$ more negative
-($-0.0997 \to -0.2017$) and flips $L_+$ from positive
-($+0.0994$) to negative ($-0.0096$).  The $\sigma_1$ term
-stays near $+1$ in both, since both contain one up quark
-on strand 1.
+Compared to the proton ($\mathrm{net} = +1.0065$):
+the extra down quark produces a larger $L_+$ demand
+($-0.2206$ vs $-0.1114$).  Both nucleons are dominated
+by the trefoil channel $e^- \approx +1.0$ after Hopf
+gluon stabilisation.
 
 **Transition: proton $\to$ neutron.**
 The NF difference (coefficient by coefficient) gives the
@@ -55,7 +63,7 @@ dimensionless beta decay transition
 
 $$
   \Delta\mathrm{net}(\mathfrak{n} - \mathfrak{p})
-  = 0.8108 - 0.9991 = -0.1883
+  = 0.7976 - 1.0065 = -0.2089
 $$
 
 The energy scale $\mathbf{E}_0 = Q_\beta / |\Delta\mathrm{net}|

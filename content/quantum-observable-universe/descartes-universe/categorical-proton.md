@@ -67,32 +67,48 @@ crossings get a half-shift $-\tfrac{1}{2}H_A$.
 The proton is
 $\mathfrak{p} = \mathcal{B}_3 \times \sigma_0
 \times (\sigma_0 - \tfrac{1}{2}H_A)
-\times (\sigma_1 - \tfrac{1}{2}H_A)$,
+\times (\sigma_1 - \tfrac{1}{2}H_A)
+\times L_-$,
 reduced at each step by Gröbner–Shirshov.
 
-**Step 3: proton NF.**
-After all three typed crossings at $q_0 \approx 1.1100$:
+**LP stability constraint.**
+The 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$
+(without the gluon) violates Frobenius positivity:
+$G x[\gamma] < 0$.  A single Hopf link $L_- = \sigma_1\sigma_0$
+is the **minimum** additional structure that restores stability.
+The gluon is not assumed — it is **required** by the LP dual.
+
+The ordering matters: the LP-optimal insertion point (every
+intermediate step stable) is
+$\mathcal{B}_3 \to L_- \to \sigma_1(\mathfrak{u}\mathfrak{d})
+\to \sigma_0(\mathfrak{u}\mathfrak{u})
+\to \sigma_0(\mathfrak{u}\mathfrak{d})$,
+giving 11 crossings total (6 B₃ + 3 quarks + 2 Hopf gluon).
+
+**Step 3: proton NF** (with Hopf gluon)**.**
+After typed crossings and Hopf link stabilisation at
+$q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
 |:---:|:---:|---:|
-| $\mathbf{1}$ | $\gamma$ | $-0.0997$ |
-| $\sigma_0$ | $\sigma_0$ | $+0.0357$ |
-| $\sigma_1$ | $\sigma_1$ | $+0.9976$ |
-| $\sigma_0\sigma_1$ | $L_+$ | $+0.0994$ |
-| $\sigma_1\sigma_0$ | $L_-$ | $+0.0093$ |
-| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $-0.0432$ |
+| $\mathbf{1}$ | $\gamma$ | $-0.0095$ |
+| $\sigma_0$ | $\sigma_0$ | $-0.0472$ |
+| $\sigma_1$ | $\sigma_1$ | $+0.0337$ |
+| $\sigma_0\sigma_1$ | $L_+$ | $-0.1114$ |
+| $\sigma_1\sigma_0$ | $L_-$ | $+0.1185$ |
+| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $+1.0224$ |
 
 $$
-  \mathrm{net}(\mathfrak{p}) = +0.9991
+  \mathrm{net}(\mathfrak{p}) = +1.0065
 $$
 
-The dominant term is $\sigma_1 \approx +0.998$, reflecting
-the up-quark crossing on strand 1.  The two mixed
-$\mathfrak{u}$-$\mathfrak{d}$ half-shifts drive $\gamma$ negative
-($+0.998 \to -0.100$) and produce a trefoil component
-$e^- \approx -0.043$.  The $L_+$ and $L_-$ coefficients
-change sign pattern relative to B₃, encoding the interplay
-of flavor and color confinement.
+The dominant term is $e^- \approx +1.022$ — the Hopf
+gluon link redistributes the NF weight from $\sigma_1$
+to the trefoil channel.  The Hopf link content
+$L_\pm \approx \pm 0.11$ is larger than the B₃-only
+value ($\pm 0.045$), reflecting the additional gluon
+binding.  The construction is LP stable at every
+intermediate step.
 
 **Mass.**
 The proton mass comes from the hyperbolic volume of the
