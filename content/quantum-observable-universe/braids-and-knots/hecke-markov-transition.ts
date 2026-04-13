@@ -14,7 +14,7 @@ export default proposition({
     decl: "QOU.Braiding.SpectralIdempotentData",
     validation: "not_checked",
   },
-  cites: ["diaconis-ram2000", "bufetov2020"],
+  cites: ["diaconisram2000", "bufetov2020"],
   uses: [
     "rem:hecke-algebra-from-braiding",
     "thm:jones-markov-trace",

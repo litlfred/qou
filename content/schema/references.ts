@@ -2024,7 +2024,7 @@ export const references: CSLData[] = [
 
   // ── Diaconis--Ram 2000 (random walks on Hecke algebras) ─────
   ref({
-    id: "diaconis-ram2000",
+    id: "diaconisram2000",
     type: "article-journal",
     title: "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques",
     author: [

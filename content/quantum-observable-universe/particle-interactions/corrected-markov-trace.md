@@ -25,13 +25,13 @@ By the Markov property
 $\mathrm{tr}_M$ to $\sigma_0 \sigma_1 \sigma_0$:
 
 1. $\mathrm{tr}_M(\sigma_0 \sigma_1 \sigma_0)
-   = z \cdot \mathrm{tr}_M(\sigma_1 \sigma_0)$
-   (Markov property on rightmost $\sigma_0$, which has
-   maximal index in the word)
+   = z \cdot \mathrm{tr}_M(\sigma_0 \sigma_1)$
+   (apply cyclicity to reorder, then Markov property)
 
-2. $\mathrm{tr}_M(\sigma_1 \sigma_0)
+2. $\mathrm{tr}_M(\sigma_0 \sigma_1)
    = z \cdot \mathrm{tr}_M(\sigma_0)$
-   (Markov property on $\sigma_1$)
+   (Markov property on $\sigma_1$,
+   with $\sigma_0 \in H_1(q)$)
 
 3. $\mathrm{tr}_M(\sigma_0) = z$
    (single generator)

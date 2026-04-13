@@ -88,7 +88,7 @@ bare $\sigma_0$ crossings, giving $11$ crossings total
 ($6$ B₃ + $3$ quarks + $2$ gluon) with
 $|\mathrm{tr}_M| = 0.027$.
 
-**Step 3: proton NF** (with Hopf gluon)**.**
+**Step 3: proton NF (with Hopf gluon).**
 After typed crossings and Hopf link stabilisation at
 $q_0 \approx 1.1100$:
 

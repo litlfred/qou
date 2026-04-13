@@ -95,7 +95,7 @@ is the transposed subspace.  The convex combination
 $K_i = p_+ \cdot \mathrm{id} + p_- \cdot s_i$ is manifestly
 stochastic (non-negative entries, rows summing to $1$).
 
-This is precisely the Diaconis--Ram construction \cite{diaconis-ram2000}:
+This is precisely the Diaconis--Ram construction \cite{diaconisram2000}:
 the systematic-scan Metropolis algorithm on $S_n$ targeting the
 Mallows measure $\pi(\sigma) \propto q^{\mathrm{inv}(\sigma)}$
 has transition operator $K = K_1 K_2 \cdots K_{n-1}$, a product

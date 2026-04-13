@@ -15,7 +15,7 @@ LaTeX label: `prop:hecke-markov-transition`
 
 ## References
 
-- [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
+- [diaconisram2000] https://doi.org/10.1307/mmj/1030132713
 - [jones1987] https://doi.org/10.2307/1971403
 - [bufetov2020] https://arxiv.org/abs/2003.02730
 -/
@@ -37,7 +37,7 @@ namespace QOU.Braiding
 
     We work at the level of eigenvalues (scalars), which suffices for
     the transition probability computation. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconisram2000] https://doi.org/10.1214/aoap/1019487508
 structure SpectralIdempotentData where
   /-- Deformation parameter q. -/
   q : ℝ
@@ -77,7 +77,7 @@ noncomputable def SpectralIdempotentData.p_minus (d : SpectralIdempotentData) : 
 /-- **p₊ + p₋ = 1**: the transition probabilities form a probability
     distribution.  This is the normalisation of eigenvalues to a
     stochastic operator. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconisram2000] https://doi.org/10.1214/aoap/1019487508
 theorem SpectralIdempotentData.prob_sum_one (d : SpectralIdempotentData) :
     d.p_plus + d.p_minus = 1 := by
   unfold p_plus p_minus gap
@@ -100,7 +100,7 @@ theorem SpectralIdempotentData.p_minus_pos (d : SpectralIdempotentData) :
     The ratio of transition probabilities equals q², the Boltzmann
     weight for a single crossing.  This identifies q² as the
     fugacity of the Mallows measure. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconisram2000] https://doi.org/10.1214/aoap/1019487508
 theorem SpectralIdempotentData.boltzmann_ratio (d : SpectralIdempotentData) :
     d.p_plus / d.p_minus = d.q ^ 2 := by
   unfold p_plus p_minus
@@ -165,7 +165,7 @@ noncomputable def MarkovTransitionStep.vertexVolume (s : MarkovTransitionStep) :
     memorylessness: each step is conditionally independent given the
     Markov property. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconisram2000] https://doi.org/10.1214/aoap/1019487508
 structure MarkovChainFactorization where
   /-- Number of strands. -/
   n : ℕ
@@ -207,7 +207,7 @@ structure CrossingData where
 
     This is the spectral content of the Markov parameter:
     the expected eigenvalue under the stochastic transition operator. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
+-- Ref: [diaconisram2000] https://doi.org/10.1307/mmj/1030132713
 theorem eigenvalue_expectation (d : SpectralIdempotentData) :
     d.p_plus * d.q + d.p_minus * (-d.q⁻¹) =
     d.q - d.q⁻¹ := by
@@ -229,7 +229,7 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
     This `sorry` marks the inductive step that references the Markov
     trace axiom (an external proof). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconisram2000] https://doi.org/10.1214/aoap/1019487508
 theorem markov_chain_factorization_exists
     (n : ℕ) (hn : n ≥ 2)
     (steps : Fin (n - 1) → MarkovTransitionStep)

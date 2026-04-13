@@ -92,9 +92,10 @@ print(f"    |tr_M(p)| = {V_hat_p:.10f}")
 print(f"    |tr_M(n)| = {V_hat_n:.10f}")
 print(f"    ratio = {V_hat_n/V_hat_p:.4f} (need 1.0014)")
 
-# Tower iteration: Φ_q(x) = [x]_q = (q^x - q^{-x})/(q - q^{-1})
-def phi_q(x, qq=q0):
-    """q-integer function: Φ_q(x) = (q^x - q^{-x})/(q - q^{-1})"""
+# Tower iteration: q-integer [x]_q = (q^x - q^{-x})/(q - q^{-1})
+# Note: this is the q-integer (q-analogue of x), not the quantum dilogarithm.
+def q_integer(x, qq=q0):
+    """q-integer [x]_q = (q^x - q^{-x})/(q - q^{-1})"""
     return (qq**x - qq**(-x)) / (qq - 1.0/qq)
 
 # Iterate tower
@@ -110,8 +111,8 @@ for k in range(15):
     if abs(v_p) > 1e10 or abs(v_n) > 1e10:
         print("  ... (diverging)")
         break
-    v_p_new = phi_q(v_p)
-    v_n_new = phi_q(v_n)
+    v_p_new = q_integer(v_p)
+    v_n_new = q_integer(v_n)
     v_p = v_p_new
     v_n = v_n_new
 
@@ -132,8 +133,8 @@ for k in range(15):
     if abs(v_p) > 1e10 or abs(v_n) > 1e10:
         print("  ... (diverging)")
         break
-    v_p = phi_q(v_p)
-    v_n = phi_q(v_n)
+    v_p = q_integer(v_p)
+    v_n = q_integer(v_n)
 
 # ═══════════════════════════════════════════════════════════════
 # TASK 4: NEUTRINO MASS
@@ -168,8 +169,8 @@ for k in range(20):
     if abs(v_nu) > 1e10 or abs(v_e) > 1e10:
         print("  ... (diverging)")
         break
-    v_nu = phi_q(v_nu)
-    v_e = phi_q(v_e)
+    v_nu = q_integer(v_nu)
+    v_e = q_integer(v_e)
 
 # The ratio should converge to m_ν/m_e
 if len(mass_ratio_history) > 5:

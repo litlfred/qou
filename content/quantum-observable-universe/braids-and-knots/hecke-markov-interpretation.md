@@ -82,7 +82,7 @@ algebra.  The stationary distribution is the Mallows measure
 $\pi(\sigma) \propto q^{\mathrm{inv}(\sigma)}$ --- the unique
 probability measure on $S_n$ that weights each permutation
 by $q$ raised to its number of inversions
-\cite{diaconis-ram2000}.
+\cite{diaconisram2000}.
 
 ## Consequences
 
@@ -94,7 +94,7 @@ function of a well-defined stochastic process.  The transfer
 matrix eigenvalues are $q$ and $-q^{-1}$ because these are
 the Boltzmann weights of the two channels.
 
-In the language of Diaconis--Ram \cite{diaconis-ram2000}, the
+In the language of Diaconis--Ram \cite{diaconisram2000}, the
 nuclear physics of the QOU is a systematic-scan Metropolis
 algorithm on $S_n$: $n$ is the number of strands in the
 nuclear braid word, $q$ is the substrate parameter, and the

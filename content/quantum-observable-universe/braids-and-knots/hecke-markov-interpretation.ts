@@ -12,7 +12,7 @@ export default remark({
     "boltzmann-weight",
     "memoryless",
   ],
-  cites: ["diaconis-ram2000", "bufetov2020"],
+  cites: ["diaconisram2000", "bufetov2020"],
   uses: [
     "prop:hecke-markov-transition",
     "def:information-theoretic-time",
