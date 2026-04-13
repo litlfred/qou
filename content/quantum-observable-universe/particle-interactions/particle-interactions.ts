@@ -113,6 +113,7 @@ export default chapter({
         "atomic-braid-mass",
         "atomic-nf-witness",
         "groebner-reduction-methods",
+        "tower-binding-energy",
       ],
     }),
 
