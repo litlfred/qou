@@ -45,9 +45,10 @@ I = sp.Integer(1)
 
 names = ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻']
 
-# NF(b_i · b_j) as symbolic 6-vectors
-# Using: σᵢ² = hσᵢ + 1, YB: σ₀σ₁σ₀ = σ₁σ₀σ₁ = e⁻
-# And: e⁻·σ₀ = σ₁σ₀σ₁·σ₀ (YB on first 3) = ... need to be careful
+# NF products b_i · b_j reduced using only:
+#   σᵢ² = hσᵢ + γ  (Hecke relation)
+#   σ₀σ₁σ₀ = σ₁σ₀σ₁  (Yang-Baxter)
+# Basis order: [γ, σ₀, σ₁, L₊, L₋, e⁻]
 
 # Row i, column j → NF coefficients of b_i · b_j
 NF = {}
@@ -126,37 +127,20 @@ NF[('L₊','L₋')] = [I, h, O, O, O, h]
 # = σ₁σ₀σ₁² = σ₁σ₀(hσ₁+γ) = hσ₁σ₀σ₁ + σ₁σ₀ = he⁻ + L₋
 # So e⁻·σ₁ = he⁻ + L₋? That can't be right — that's the same as σ₀·e⁻
 # Let me recheck: σ₀·e⁻ = σ₀·σ₀σ₁σ₀ = σ₀²σ₁σ₀ = (hσ₀+1)σ₁σ₀ = hL₋... wait
-# No: σ₀²σ₁σ₀ = (hσ₀+1)σ₁σ₀ = h·σ₀σ₁σ₀ + σ₁σ₀ = h·e⁻ + L₋. OK good.
-# e⁻·σ₁ = σ₀σ₁σ₀·σ₁ = σ₀·σ₁σ₀σ₁ (YB on last 3) = σ₀·σ₀σ₁σ₀... no!
-# YB: σ₁σ₀σ₁ = σ₀σ₁σ₀. So σ₀σ₁(σ₀σ₁) has no direct YB.
-# Let me use: σ₀σ₁σ₀σ₁ = σ₀(σ₁σ₀σ₁) = σ₀(σ₀σ₁σ₀) by YB
-# = σ₀²σ₁σ₀ = (hσ₀+1)σ₁σ₀ = h·σ₀σ₁σ₀ + σ₁σ₀ = he⁻ + L₋
-# So e⁻·σ₁ = σ₀σ₁σ₀σ₁ = he⁻ + L₋. Hmm, same as σ₀·e⁻.
-# Actually wait: σ₀·e⁻ = σ₀·(σ₀σ₁σ₀) = σ₀²σ₁σ₀ → he⁻ + L₋
-# and e⁻·σ₁ = (σ₀σ₁σ₀)·σ₁ = σ₀·(σ₁σ₀σ₁) = σ₀·(σ₀σ₁σ₀) = σ₀²σ₁σ₀ → he⁻ + L₋
-# Yes, same! Because YB maps both to the same reduced form.
+# e⁻·σ₁ = σ₀σ₁σ₀σ₁ = σ₀²σ₁σ₀ = he⁻ + L₋
 
 NF[('e⁻','σ₁')] = [O, O, O, O, I, h]
 
 # e⁻·σ₀ = σ₀σ₁σ₀·σ₀ = σ₀σ₁σ₀² = σ₀σ₁(hσ₀+γ) = hσ₀σ₁σ₀ + σ₀σ₁ = he⁻ + L₊
 NF[('e⁻','σ₀')] = [O, O, O, I, O, h]
 
-# e⁻·L₊ = e⁻·σ₀σ₁ = (he⁻+L₊)σ₁ = h(e⁻·σ₁) + L₊·σ₁
-# e⁻·σ₁ = he⁻ + L₋ (computed above)
-# L₊·σ₁ = hL₊ + σ₀ (computed above)
-# So: h(he⁻ + L₋) + hL₊ + σ₀ = h²e⁻ + hL₋ + hL₊ + σ₀
+# e⁻·L₊ = (he⁻+L₊)σ₁ = h(he⁻+L₋) + (hL₊+σ₀) = h²e⁻ + hL₋ + hL₊ + σ₀
 NF[('e⁻','L₊')] = [O, I, O, h, h, h**2]
 
-# e⁻·L₋ = e⁻·σ₁σ₀ = (he⁻+L₋)σ₀  ... wait, e⁻·σ₁ = he⁻ + L₋
-# Hmm no. e⁻·L₋ = (σ₀σ₁σ₀)·(σ₁σ₀) = σ₀σ₁σ₀σ₁σ₀ = T_{2,5}
-# Let me compute in steps.
-# e⁻·σ₁ = he⁻ + L₋ (verified above)
-# Then (he⁻+L₋)·σ₀ = h·(e⁻·σ₀) + L₋·σ₀
-# e⁻·σ₀ = he⁻ + L₊
-# L₋·σ₀ = σ₁σ₀·σ₀ = σ₁σ₀² = σ₁(hσ₀+γ) = hσ₁σ₀ + σ₁ = hL₋ + σ₁
+# L₋·σ₀ = σ₁σ₀² = σ₁(hσ₀+γ) = hL₋ + σ₁
 NF[('L₋','σ₀')] = [O, O, I, O, h, O]
 
-# Continuing: e⁻·L₋ = h(he⁻+L₊) + hL₋ + σ₁ = h²e⁻ + hL₊ + hL₋ + σ₁
+# e⁻·L₋ = (he⁻+L₋)σ₀ = h(he⁻+L₊) + (hL₋+σ₁) = h²e⁻ + hL₊ + hL₋ + σ₁
 NF[('e⁻','L₋')] = [O, O, I, h, h, h**2]
 
 # L₋ · σ₁ = σ₁σ₀·σ₁ = σ₁σ₀σ₁ = e⁻ (by YB)

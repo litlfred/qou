@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-07T04:28:31.110420+00:00",
+  "generated_at": "2026-04-13T17:13:44.486083+00:00",
   "mappings": [
     {
       "narrative": "{Bring's surface}",
@@ -71,6 +71,21 @@
       "narrative": "{$\\mathcal{Q}_q$-Value as Categorical Action Difference}",
       "lean_id": "QOU.DescartesUniverse.QValueTransition",
       "latex_label": "def:q-value-transition"
+    },
+    {
+      "narrative": "{Breit--Wheeler pair production (categorical)}",
+      "lean_id": "QOU.DescartesUniverse.BreitWheelerPairProduction",
+      "latex_label": "def:breit-wheeler-pair-production"
+    },
+    {
+      "narrative": "{Quark--antiquark production from pair creation}",
+      "lean_id": "QOU.DescartesUniverse.QuarkAntiquarkProduction",
+      "latex_label": "def:quark-antiquark-production"
+    },
+    {
+      "narrative": "{Meson (categorical)}",
+      "lean_id": "QOU.DescartesUniverse.CategoricalMeson",
+      "latex_label": "def:categorical-meson"
     },
     {
       "narrative": "{Proton (categorical)}",

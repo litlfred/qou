@@ -11,6 +11,11 @@ LaTeX label: `def:knot-particle-generation`
 ## References
 
 - [manuscript] §3-lifting-of-quantum-torsion/knot-particle-generation
+
+**Ground ring**: `ℝ` (archimedean realisation).
+Evaluates formal results at q₀ ≈ 1.1098 for comparison with
+experimental data. NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

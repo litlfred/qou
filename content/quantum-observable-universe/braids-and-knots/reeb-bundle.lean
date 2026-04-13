@@ -8,6 +8,11 @@
 
   ## References
   - [kock2004] https://doi.org/10.1017/CBO9780511615443
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Topology.FiberBundle.Basic

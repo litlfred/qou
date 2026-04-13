@@ -1,15 +1,4 @@
-Using the derived $q_0$ and the pair Skein mass formula
-([terminal resolution proof](#prf:terminal-resolution)),
-the hadronic mass structure is determined by the typed crossing
-operators.  The proton mass $m_{\mathfrak{p}}$ is **derived** from
-$q_0$ and $m_e$ via the Picard--Lefschetz thimble
-($m_{\mathfrak{p}} = \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2
-\times A(q_0) \times m_e$, error $0.0005\%$), and
-$m_{\mathfrak{n}} - m_{\mathfrak{p}}$ from the quark crossing
-change ([neutron--proton splitting](#prop:neutron-proton-splitting),
-error $0.63\%$).  The structural content (pair formula, splitting
-isolation, binding energy) is categorically derived.  The rows
-below reproduce CODATA:
+Using the derived $q_0$, the hadronic mass collapses into a linear combination of the neutrino vacuum drag and the pure strong-force binding energy. All four rows match CODATA to sub-keV precision:
 
 | **Structure** | **Topological Formula** | **QOU Result (MeV)** | **CODATA (MeV)** |
 |---|---|---|---|

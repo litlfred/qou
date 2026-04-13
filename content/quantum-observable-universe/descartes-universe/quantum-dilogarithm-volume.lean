@@ -15,6 +15,11 @@ LaTeX label: `prop:quantum-dilogarithm-volume`
 
 - [manuscript] §5/quantum-dilogarithm-volume
 - [turaev2010] https://doi.org/10.1515/9783110221848
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

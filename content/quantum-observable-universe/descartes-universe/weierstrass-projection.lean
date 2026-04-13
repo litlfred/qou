@@ -8,12 +8,25 @@ LaTeX label: `def:weierstrass-projection`
 
 ## References
 - [manuscript] §5/weierstrass-projection
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.Data.Complex.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Weierstrass projection** ℘_q : ℂ/Λ_q → ℙ¹.
 
@@ -25,7 +38,7 @@ namespace QOU.Descartes
     where p, r are the short Weierstrass coefficients of E_q. -/
 -- Ref: [manuscript] §5/weierstrass-projection
 noncomputable def weierstrassProjection
-    (g2 g3 : ℝ) (z : ℂ) : ℂ :=
+    (g2 g3 : R_q) (z : ℂ) : ℂ :=
   -- Ref: [manuscript] §5/weierstrass-projection
   sorry
 
@@ -37,7 +50,7 @@ noncomputable def weierstrassProjection
     at ℘_q(z). -/
 -- Ref: [manuscript] §5/weierstrass-projection
 -- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6
-theorem weierstrass_diff_eq (g2 g3 : ℝ) (z : ℂ)
+theorem weierstrass_diff_eq (g2 g3 : R_q) (z : ℂ)
     (hz : z ≠ 0) :
     ∃ (wp_deriv wp_val : ℂ),
       wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3 := by

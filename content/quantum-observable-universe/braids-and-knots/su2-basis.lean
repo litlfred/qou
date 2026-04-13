@@ -9,13 +9,26 @@ LaTeX label: `def:su2-basis`
 ## References
 
 - [manuscript] Chapter 4, §SU(2)–SO(3)
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Fin.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **𝔰𝔲(2) basis data**: three generators e₁, e₂, e₃ with
     structure constants given by the Levi-Civita symbol. -/
@@ -39,7 +52,7 @@ structure Su2Basis where
 -- Ref: [manuscript] Chapter 4
 structure Su2KillingForm extends Su2Basis where
   /-- The Killing form. -/
-  killing : LieAlg → LieAlg → ℝ
+  killing : LieAlg → LieAlg → R_q
   /-- Normalisation: ⟨eₐ, eₐ⟩ = -1/2. -/
   normalised : ∀ a : Fin 3, killing (basis a) (basis a) = -1/2
   /-- Orthogonality: ⟨eₐ, e_b⟩ = 0 for a ≠ b. -/

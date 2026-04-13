@@ -13,8 +13,9 @@ LaTeX label: `prop:box-braid-irreducibility`
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
 
 namespace QOU.Descartes
 

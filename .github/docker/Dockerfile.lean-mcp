@@ -1,11 +1,10 @@
-# Lean MCP Server Docker Image
+# DEPRECATED — Use scripts/mcp-server/Dockerfile (paper-assistant) instead.
 #
-# Multi-stage build that bakes in all Lean dependencies and oleans
-# from lakefile.toml so the MCP server starts fast (~5-10s warm).
+# The unified paper-assistant image now serves as both the MCP server
+# and the CI toolbox. This slim MCP-only image is kept for reference.
 #
-# Built automatically by .github/workflows/build-lean-mcp.yml on
-# every push to main that touches content/quantum-observable-universe/lean/ or lakefile.toml.
-#
+# Original description:
+# Lean MCP Server Docker Image — multi-stage build with baked-in oleans.
 # Auth: FOLIO_API_TOKEN env var for bearer token auth.
 # Transport: Streamable HTTP on port 8080.
 

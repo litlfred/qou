@@ -14,6 +14,11 @@ LaTeX label: `prop:emergence-to-quantum-flat`
 
 - [baez2004] https://doi.org/10.4310/ATMP.2004.v8.n6.a3
 - [manuscript] §1-quantum-observable-universe/emergence-to-quantum-flat
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

@@ -65,7 +65,7 @@ characteristic pattern:
    back to $\sim 10$–$600$ terms at the boundary.
 
 The bottleneck is always the **last crossing of a large strand**
-(typically the nn crossings at the end, which have $c = 1$, $d = -(q - q^{-1})$ and
+(typically the n–n crossings at the end, which have $c = 1$, $d = -(q - q^{-1})$ and
 produce the most new terms).  Peak memory occurs at the moment
 before stripping.
 
@@ -109,7 +109,7 @@ For very large strands, the quotient strip fires **within**
 a crossing multiplication (not just at strand boundaries) when
 the term count exceeds a threshold (30,000 terms).  This prevents
 the exponential blowup from adjacent generator cascading
-(e.g., 3 consecutive nn crossings would produce $8\times$ terms
+(e.g., 3 consecutive n–n crossings would produce $8\times$ terms
 without mid-crossing stripping).
 
 ### Pattern discovery during construction

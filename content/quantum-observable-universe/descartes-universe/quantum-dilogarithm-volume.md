@@ -6,21 +6,15 @@ $A$.  The **physical energy** is not the product itself but its
 
 **Three volumes of a knot.**
 
-| Volume | Formula | Ring | Scaling | Used for |
-|--------|---------|------|---------|----------|
-| Algebraic | $\mathrm{Vol}_q = \prod \hat{V}_i$ | $\mathbb{Z}[q^{1/2}, q^{-1/2}]$ | $O(A)$ factors | **Universal (specialises to all others)** |
-| Hyperbolic | $\text{Vol}(S^3 \setminus K)$ | $\mathbb{R}$ | $O(1)$ per knot | Single-particle mass |
-| Hecke weight | $\sum \lVert c_w\rVert \cdot \ell(w)$ | $\mathbb{Z}$ | $O(e^A)$ | Gröbner--Shirshov energy |
-| Quantum dilogarithm | $\Phi_q = \sum_i \log \lvert\hat{V}_i\rvert$ | $\mathbb{R}$ | $O(A)$ | **Nuclear binding energy** |
+| Volume | Formula | Scaling | Used for |
+|--------|---------|---------|----------|
+| Hyperbolic | $\text{Vol}(S^3 \setminus K)$ | $O(1)$ per knot | Single-particle mass |
+| Hecke weight | $\sum \lVert c_w\rVert \cdot \ell(w)$ | $O(e^A)$ | Gröbner--Shirshov energy (algebraic) |
+| Quantum dilogarithm | $\Phi_q(z) = \sum_i \log \hat{V}_i$ | $O(A)$ | **Nuclear binding energy** |
 
-The **algebraic quantum volume**
-([algebraic quantum volume](#def:algebraic-quantum-volume))
-$\mathrm{Vol}_q = \prod \hat{V}_i$ is the fundamental object in
-$\mathbb{Z}[q^{1/2}, q^{-1/2}]$.  The quantum dilogarithm
-$\Phi_q = \ln\lvert\mathrm{Vol}_{q_0}\rvert$ is its archimedean
-shadow.  The hyperbolic volume is recovered via the Habiro ring
-specialisation at roots of unity
-([specialisation](#prop:algebraic-volume-specialization)).
+The hyperbolic volume is the classical ($q \to 1$) limit of
+$\Phi_q$.  The Hecke weight is the exponential of $\Phi_q$.  The
+quantum dilogarithm $\Phi_q$ is the intensive, physical volume.
 
 **Proposition.**
 The nuclear binding energy is the quantum dilogarithm volume

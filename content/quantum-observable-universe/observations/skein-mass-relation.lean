@@ -16,6 +16,11 @@ LaTeX label: `rem:skein-mass-relation`
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 - CODATA 2018 recommended values
 - [manuscript] §11-experimental-evidence/skein-mass-relation
+
+**Ground ring**: `ℝ` (archimedean realisation).
+Evaluates formal results at q₀ ≈ 1.1098 for comparison with
+experimental data. NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

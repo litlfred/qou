@@ -73,10 +73,18 @@ describe("lean-mcp.config.json", () => {
 
   test("has required fields", () => {
     const config = JSON.parse(readFileSync(configPath, "utf-8"));
-    expect(config).toHaveProperty("domain");
     expect(config).toHaveProperty("image");
     expect(config).toHaveProperty("mcp_internal_port");
     expect(config).toHaveProperty("auth");
+    expect(config).toHaveProperty("folio");
+    expect(config.folio).toHaveProperty("domain");
+  });
+
+  test("has llm provider config", () => {
+    const config = JSON.parse(readFileSync(configPath, "utf-8"));
+    expect(config).toHaveProperty("llm");
+    expect(config.llm).toHaveProperty("provider");
+    expect(config.llm).toHaveProperty("providers");
   });
 });
 
@@ -88,9 +96,72 @@ describe(".mcp.json", () => {
     expect(() => JSON.parse(content)).not.toThrow();
   });
 
-  test("has lean-lsp server", () => {
+  test("has paper-assistant server", () => {
     const mcp = JSON.parse(readFileSync(mcpPath, "utf-8"));
-    expect(mcp.mcpServers).toHaveProperty("lean-lsp");
+    expect(mcp.mcpServers).toHaveProperty("paper-assistant");
+  });
+});
+
+// ── Unified Docker image ───────────────────────────────────────
+
+describe("Unified paper-assistant image", () => {
+  test("Dockerfile exists", () => {
+    expect(existsSync(join(REPO_ROOT, "scripts/mcp-server/Dockerfile"))).toBe(true);
+  });
+
+  test("Dockerfile includes TeX Live", () => {
+    const df = readFileSync(join(REPO_ROOT, "scripts/mcp-server/Dockerfile"), "utf-8");
+    expect(df).toContain("texlive-full");
+  });
+
+  test("Dockerfile includes gh CLI", () => {
+    const df = readFileSync(join(REPO_ROOT, "scripts/mcp-server/Dockerfile"), "utf-8");
+    expect(df).toMatch(/apt-get\s+install\b[^\n]*\bgh\b/);
+    expect(df).toMatch(/\bgh\s+--version\b/);
+  });
+
+  test("Dockerfile includes Python requests", () => {
+    const df = readFileSync(join(REPO_ROOT, "scripts/mcp-server/Dockerfile"), "utf-8");
+    expect(df).toContain("requests");
+  });
+
+  test("all CI workflows use paper-assistant image", () => {
+    for (const wf of ["publish.yml", "lean-build.yml", "blueprint.yml"]) {
+      const content = readFileSync(join(REPO_ROOT, `.github/workflows/${wf}`), "utf-8");
+      expect(content).toContain("paper-assistant");
+      expect(content).not.toContain("texlive/texlive");
+      expect(content).not.toContain("latex-ci");
+    }
+  });
+
+  test("deprecated workflows have no automatic triggers", () => {
+    for (const wf of ["docker-ci-image.yml", "build-latex-image.yml"]) {
+      const content = readFileSync(join(REPO_ROOT, `.github/workflows/${wf}`), "utf-8");
+      expect(content).toContain("DEPRECATED");
+      expect(content).not.toMatch(/^\s+- cron:/m);
+      expect(content).not.toMatch(/push:\s*\n\s+branches:/m);
+    }
+  });
+
+  test("docker-tex.sh helper exists", () => {
+    expect(existsSync(join(REPO_ROOT, "scripts/lib/docker-tex.sh"))).toBe(true);
+  });
+
+  test("render-on-change.sh uses docker-tex.sh", () => {
+    const script = readFileSync(join(REPO_ROOT, "scripts/render-on-change.sh"), "utf-8");
+    expect(script).toContain("docker-tex.sh");
+  });
+
+  test("render-pre-commit.sh uses docker-tex.sh", () => {
+    const script = readFileSync(join(REPO_ROOT, "scripts/render-pre-commit.sh"), "utf-8");
+    expect(script).toContain("docker-tex.sh");
+  });
+
+  test("config image matches build workflow", () => {
+    const config = JSON.parse(readFileSync(join(REPO_ROOT, "lean-mcp.config.json"), "utf-8"));
+    const workflow = readFileSync(join(REPO_ROOT, ".github/workflows/build-lean-mcp.yml"), "utf-8");
+    expect(config.image).toContain("paper-assistant");
+    expect(workflow).toContain("paper-assistant");
   });
 });
 

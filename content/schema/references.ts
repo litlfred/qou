@@ -321,6 +321,24 @@ export const references: CSLData[] = [
     URL: "https://www.numdam.org/item/AST_2002__278__R1_0/",
   }),
 
+  // ── Zagier 1986 ───────────────────────────────────────────────
+  ref({
+    id: "zagier1986",
+    type: "chapter",
+    title: "Hyperbolic Manifolds and Special Values of Dedekind Zeta-Functions",
+    author: [
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Arbeitstagung Bonn 1984",
+    publisher: "Springer",
+    "publisher-place": "Berlin, Heidelberg",
+    issued: { "date-parts": [[1986]] },
+    page: "283-299",
+    "collection-title": "Lecture Notes in Mathematics",
+    "collection-number": 1111,
+    DOI: "10.1007/BFb0084581",
+  }),
+
   // ── Lusztig 1993 ──────────────────────────────────────────────
   ref({
     id: "lusztig1993",
@@ -428,6 +446,24 @@ export const references: CSLData[] = [
     issue: "3",
     page: "353-386",
     DOI: "10.1007/BF01223371",
+  }),
+
+  // ── Witten 2011 ───────────────────────────────────────────────
+  ref({
+    id: "witten2011",
+    type: "chapter",
+    title: "Analytic Continuation Of Chern-Simons Theory",
+    author: [
+      { family: "Witten", given: "Edward" },
+    ],
+    "container-title": "Chern-Simons Gauge Theory: 20 Years After",
+    publisher: "American Mathematical Society",
+    issued: { "date-parts": [[2011]] },
+    "collection-title": "AMS/IP Studies in Advanced Mathematics",
+    volume: "50",
+    page: "347-446",
+    DOI: "10.1090/conm/560",
+    note: "arXiv:1001.2933",
   }),
 
   // ── Yekutieli 2010 ────────────────────────────────────────────
@@ -857,6 +893,23 @@ export const references: CSLData[] = [
     URL: "https://archive.org/details/physicsphilosoph00heis",
   }),
 
+  // ── Habiro 2008 (published 2008, circulated 2002) ──────────────
+  ref({
+    id: "habiro2002",
+    type: "article-journal",
+    title: "Bottom tangles and universal invariants",
+    author: [
+      { family: "Habiro", given: "Kazuo" },
+    ],
+    "container-title": "Algebraic & Geometric Topology",
+    issued: { "date-parts": [[2008]] },
+    volume: "12",
+    issue: "4",
+    page: "2091-2170",
+    DOI: "10.2140/gt.2008.12.2091",
+    note: "First circulated 2002",
+  }),
+
   // ── BEC vortex experiments ──────────────────────────────────────
 
   ref({
@@ -1033,6 +1086,22 @@ export const references: CSLData[] = [
     page: "091801",
     DOI: "10.1103/PhysRevLett.87.091801",
     issued: { "date-parts": [[2001]] },
+  }),
+
+  // ── Feynman 1948 ──────────────────────────────────────────────
+  ref({
+    id: "feynman1948",
+    type: "article-journal",
+    title: "Space-Time Approach to Non-Relativistic Quantum Mechanics",
+    author: [
+      { family: "Feynman", given: "R. P." },
+    ],
+    "container-title": "Reviews of Modern Physics",
+    issued: { "date-parts": [[1948]] },
+    volume: "20",
+    issue: "2",
+    page: "367-387",
+    DOI: "10.1103/RevModPhys.20.367",
   }),
 
   // ── Feynman Lectures: Color Vision ──────────────────────────────
@@ -1902,6 +1971,38 @@ export const references: CSLData[] = [
     page: "61-66",
     DOI: "10.1007/BF01212349",
     URL: "https://doi.org/10.1007/BF01212349",
+  }),
+
+  // ── Gödel 1931: incompleteness theorems ──────────────────────
+  ref({
+    id: "goedel1931",
+    type: "article-journal",
+    title:
+      "\u00DCber formal unentscheidbare S\u00e4tze der Principia Mathematica und verwandter Systeme I",
+    author: [{ family: "G\u00f6del", given: "Kurt" }],
+    "container-title": "Monatshefte f\u00fcr Mathematik und Physik",
+    issued: { "date-parts": [[1931]] },
+    volume: "38",
+    page: "173-198",
+    DOI: "10.1007/BF01700692",
+    URL: "https://doi.org/10.1007/BF01700692",
+  }),
+
+  // ── Turing 1936: computable numbers ────────────────────────
+  ref({
+    id: "turing1936",
+    type: "article-journal",
+    title:
+      "On Computable Numbers, with an Application to the Entscheidungsproblem",
+    author: [{ family: "Turing", given: "Alan M." }],
+    "container-title":
+      "Proceedings of the London Mathematical Society",
+    issued: { "date-parts": [[1936]] },
+    volume: "s2-42",
+    issue: "1",
+    page: "230-265",
+    DOI: "10.1112/plms/s2-42.1.230",
+    URL: "https://doi.org/10.1112/plms/s2-42.1.230",
   }),
 
   // ── O'Hara 1991 (energy of knots) ────────────────────────────

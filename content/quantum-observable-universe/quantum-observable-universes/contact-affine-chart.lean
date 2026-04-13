@@ -11,12 +11,25 @@ LaTeX label: `def:contact-affine-chart`
 ## References
 
 - [manuscript] Chapter 1
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import QOU.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Contact affine chart**: the open dense subset of P(V) where the
     Reeb contraction is non-vanishing.
@@ -28,16 +41,16 @@ structure ContactAffineChart (M : Type*) where
   /-- The base manifold point. -/
   point : M
   /-- The horizontal component α_H. -/
-  horizontal : ℝ
+  horizontal : R_q
   /-- The Reeb contraction ι_ξ α (non-vanishing on U_ξ). -/
-  reeb_contraction : ℝ
+  reeb_contraction : R_q
   /-- Non-vanishing condition: ι_ξ α ≠ 0. -/
   reeb_nonzero : reeb_contraction ≠ 0
 
 /-- The affine coordinate Z = α_H / ι_ξ α on the contact chart. -/
 -- Ref: [manuscript] Chapter 1
 noncomputable def ContactAffineChart.affineCoord {M : Type*}
-    (chart : ContactAffineChart M) : ℝ :=
+    (chart : ContactAffineChart M) : R_q :=
   chart.horizontal / chart.reeb_contraction
 
 /-- The affine coordinate is well-defined (denominator nonzero). -/

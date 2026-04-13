@@ -6,8 +6,8 @@ $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the
 ```tex
 \begin{align*}
   \mathfrak{r}(\phi,\psi)
-  &=  O + R\bigl(\sin\phi\bigl(\cos(\psi + q\phi)T_1
-         + \sin(\psi + q\phi)T_2\bigr) - \cos\phi\,N\bigr),\\
+  &=  O + R\bigl(\sin\phi \bigl(\cos(\psi + q\phi) T_1
+         + \sin(\psi + q\phi) T_2\bigr) - \cos\phi N\bigr),\\
   \mathfrak{g}(\phi,\psi)
   &=  \mathfrak{r}\!\bigl(\phi,\psi + \tfrac{2\pi}{3}\bigr),\\
   \mathfrak{b}(\phi,\psi)

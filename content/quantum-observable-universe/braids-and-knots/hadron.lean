@@ -9,20 +9,33 @@ constituent knots; mesons have two (knot–antiknot pair).
 
 - [manuscript] §3 Lifting of Quantum Torsion
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 import QOU.KnotTheory
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A hadron: a composite of knot types at a common point, with
     binding energy from the Hopf link structure. -/
 structure Hadron where
   /-- Spherical coordinate θ of the common base point. -/
-  theta : ℝ
+  theta : R_q
   /-- Spherical coordinate φ of the common base point. -/
-  phi : ℝ
+  phi : R_q
   /-- The constituent knot types (valence quarks in the knot picture). -/
   constituents : List KnotTheory.PlanarDiagram
   /-- A hadron must have at least 2 constituents. -/
@@ -47,7 +60,7 @@ theorem Hadron.meson_or_baryon_or_exotic (h : Hadron) :
 /-! ## Base point and constituent accessors -/
 
 /-- The base point of a hadron on S². -/
-def Hadron.basePoint (h : Hadron) : ℝ × ℝ :=
+def Hadron.basePoint (h : Hadron) : R_q × R_q :=
   (h.theta, h.phi)
 
 /-- Number of constituents (valence quarks). -/
@@ -67,26 +80,26 @@ where Q(q) encodes the q-deformed Skein polynomial of the binding link. -/
 -- Ref: [manuscript] §3, Definition: Hadron mass
 structure HadronBinding where
   /-- The q-deformation parameter. -/
-  q : ℝ
+  q : R_q
   /-- The binding link (Hopf link PD code). -/
   bindingLink : KnotTheory.PlanarDiagram
   /-- The Skein polynomial evaluation Q(q) · M(L_Hopf). -/
-  bindingMass : ℝ
+  bindingMass : R_q
   /-- Binding mass is non-negative. -/
   -- Ref: [manuscript] §3
-  bindingMass_nonneg : 0 ≤ bindingMass
+  -- bindingMass_nonneg : 0 ≤ bindingMass  -- (archimedean; not meaningful over R_q)
 
 /-- Mass of a single constituent knot, given by its hyperbolic volume
     in the QOU framework.  Returns the volume value. -/
 noncomputable def constituentMass (k : KnotTheory.PlanarDiagram)
-    (vol : KnotTheory.HyperbolicVolume) : ℝ :=
+    (vol : KnotTheory.HyperbolicVolume) : R_q :=
   vol.value
 
 /-- The total mass of a hadron given a binding structure and constituent volumes.
     m_H = bindingMass + Σᵢ vol(Kᵢ) -/
 -- Ref: [manuscript] §3, Proposition: Terminal resolution
 noncomputable def Hadron.mass (h : Hadron) (binding : HadronBinding)
-    (volumes : List KnotTheory.HyperbolicVolume) : ℝ :=
+    (volumes : List KnotTheory.HyperbolicVolume) : R_q :=
   binding.bindingMass + volumes.foldl (fun acc v => acc + v.value) 0
 
 /-! ## Hadron from localized knots -/

@@ -14,11 +14,24 @@ LaTeX label: `def:crossing-energy`
 
 - [manuscript] Ch. 4, §10
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Braiding
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Crossing Energy -/
 
@@ -58,25 +71,25 @@ structure CrossingEnergy where
   /-- The braid word representing the linking pattern. -/
   braidWord : BraidWord
   /-- Substrate parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0 (required for q⁻¹ to be well-defined). -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- q > 1 (physical constraint from the substrate). -/
-  q_gt_one : 1 < q
+  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
 
 /-- The crossing energy value: n₊ · q − n₋ · q⁻¹. -/
-noncomputable def CrossingEnergy.value (E : CrossingEnergy) : ℝ :=
+noncomputable def CrossingEnergy.value (E : CrossingEnergy) : R_q :=
   E.braidWord.numPositive * E.q - E.braidWord.numNegative * E.q⁻¹
 
 /-- Baseline (strong) contribution: ½(n₊ + n₋)(q + q⁻¹).
     This is the symmetric part under q ↔ q⁻¹. -/
-noncomputable def CrossingEnergy.baseline (E : CrossingEnergy) : ℝ :=
+noncomputable def CrossingEnergy.baseline (E : CrossingEnergy) : R_q :=
   (E.braidWord.numPositive + E.braidWord.numNegative) * (E.q + E.q⁻¹) / 2
 
 /-- Coulomb correction contribution: ½(n₊ − n₋)(q − q⁻¹).
     This is the antisymmetric part under q ↔ q⁻¹. -/
-noncomputable def CrossingEnergy.coulombContribution (E : CrossingEnergy) : ℝ :=
-  ((E.braidWord.numPositive : ℝ) - E.braidWord.numNegative) * (E.q - E.q⁻¹) / 2
+noncomputable def CrossingEnergy.coulombContribution (E : CrossingEnergy) : R_q :=
+  ((E.braidWord.numPositive : R_q) - E.braidWord.numNegative) * (E.q - E.q⁻¹) / 2
 
 /-- The crossing energy decomposes as baseline + Coulomb correction:
 

@@ -16,10 +16,22 @@ Write $h = q - q^{-1}$ and $z = 1/(q^{1/2} + q^{-1/2})$.
 | $\sigma_1$ | $z$ |
 | $L_+ = \sigma_0\sigma_1$ | $z^2$ |
 | $L_- = \sigma_1\sigma_0$ | $z^2$ |
-| $e^- = \sigma_0\sigma_1\sigma_0$ | $hz^2 + z$ |
+| $e^- = \sigma_0\sigma_1\sigma_0$ | $z^3$ |
 
-The trace of $e^-$ follows from cyclicity:
-$\mathrm{tr}_M(\sigma_0\sigma_1\sigma_0) = \mathrm{tr}_M(\sigma_0^2\sigma_1) = h \cdot \mathrm{tr}_M(\sigma_0\sigma_1) + \mathrm{tr}_M(\sigma_1) = hz^2 + z$.
+The trace of $e^-$ follows from Yang--Baxter and the Markov property:
+$\mathrm{tr}_M(\sigma_0\sigma_1\sigma_0)
+= \mathrm{tr}_M(\sigma_1\sigma_0\sigma_1)
+= z \cdot \mathrm{tr}_M(\sigma_1\sigma_0)
+= z \cdot z^2 = z^3$.
+
+**Note.** An earlier version of this document used a cyclicity
+argument giving $hz^2 + z$.  That derivation incorrectly applied
+$\sigma_0\sigma_1\sigma_0 = \sigma_0^2\sigma_1$ (cyclicity gives
+$\mathrm{tr}_M(ABC) = \mathrm{tr}_M(CAB)$, yielding
+$\sigma_0 \cdot \sigma_0\sigma_1 \neq \sigma_0^2\sigma_1$ as a
+rewrite of $\sigma_0\sigma_1\sigma_0$).  The canonical Markov-property
+derivation (peeling the boundary generator $\sigma_1$ from the right
+at each step) gives $z^3$.
 
 ## Gram matrix (symbolic in $q$)
 
@@ -31,20 +43,20 @@ $$
   G
   =
   \begin{pmatrix}
-    1     & z     & z     & z^2     & z^2     & hz^2+z \\
-    z     & hz+1  & z^2   & hz^2+z  & hz^2+z  & g_{15} \\
-    z     & z^2   & hz+1  & hz^2+z  & hz^2+z  & g_{15} \\
-    z^2   & hz^2+z & hz^2+z & g_{15} & g_{34} & g_{35} \\
-    z^2   & hz^2+z & hz^2+z & g_{34} & g_{15} & g_{35} \\
-    hz^2+z & g_{15} & g_{15} & g_{35} & g_{35} & g_{55}
+    1     & z     & z     & z^2     & z^2     & z^3 \\
+    z     & hz+1  & z^2   & hz^2+z  & z^3  & g_{15} \\
+    z     & z^2   & hz+1  & z^3  & hz^2+z  & g_{15} \\
+    z^2   & hz^2+z & z^3 & g_{15} & g_{34} & g_{35} \\
+    z^2   & z^3 & hz^2+z & g_{34} & g_{15} & g_{35} \\
+    z^3 & g_{15} & g_{15} & g_{35} & g_{35} & g_{55}
   \end{pmatrix}
 $$
 
 *where:*
-- $g_{15} = h^2z^2 + hz + z^2$ (from $\sigma_0 \cdot e^- = he^- + L_-$)
-- $g_{34} = h^2z^2 + 2hz + 1$ (from $L_+ \cdot L_- = he^- + h\sigma_0 + \gamma$)
-- $g_{35} = h^4z^2 + 2h^2z + h^2z^2 + z$ (from $L_+ \cdot e^- = h^2e^- + hL_+ + hL_- + \sigma_1$)
-- $g_{55} = (h^3+h)^2z^2 + 2(h^3+h)z + h^2 \cdot 2z^2 + 2hz + 1$ (from $e^- \cdot e^-$)
+- $g_{15} = hz^3 + z^2$ (from $\sigma_0 \cdot e^- = he^- + L_-$)
+- $g_{34} = hz^3 + hz + 1$ (from $L_+ \cdot L_- = he^- + h\sigma_0 + \gamma$)
+- $g_{35} = h^2z^3 + 2hz^2 + z$ (from $L_+ \cdot e^- = h^2e^- + hL_+ + hL_- + \sigma_1$)
+- $g_{55} = (h^3+h)z^3 + 2h^2z^2 + 2hz + 1$ (from $e^- \cdot e^- = (h^3+h)e^- + h^2L_+ + h^2L_- + h\sigma_1 + h\sigma_0 + \gamma$)
 
 *The matrix is **symmetric** ($G_{ij} = G_{ji}$, by cyclicity of the
 Markov trace) and **non-degenerate** ($\det G \neq 0$ for $q \neq 0, 1$),

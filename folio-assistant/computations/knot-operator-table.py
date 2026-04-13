@@ -258,8 +258,8 @@ if __name__ == "__main__":
     print("  " + "-" * (len(hdr) - 2))
 
     for op_name, op_word in KNOT_OPERATORS.items():
-        # γ = σ₀ (bare photon)
-        vec = apply_operator(1, op_word, 1)  # σ₀ · T · σ₀
+        # Compute σ₀ · T · σ₀ (single-crossing photon channel)
+        vec = apply_operator(1, op_word, 1)
         net = nf_net(vec)
         has_e = "YES" if abs(vec[5]) > 1e-10 else "no"
         line = f"  {op_name:10s}"

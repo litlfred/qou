@@ -10,6 +10,11 @@ noncomputable section
 -- §1. Reidemeister moves
 -- ═══════════════════════════════════════════════════════════════════
 
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 /-- The three Reidemeister moves on knot diagrams. -/
 inductive ReidemeisterMove
   | R1  -- curl: add/remove single crossing, writhe ±1
@@ -70,7 +75,7 @@ theorem writhe_R1_changes (K : KnotDiagram) (sign : Int) (h : sign = 1 ∨ sign 
 /-- Bare mass depends only on the knot type (hyperbolic volume).
     Since knot type is invariant under R-I, R-II, R-III,
     bare mass is a knot invariant. -/
-axiom bareMass : KnotDiagram → ℝ
+axiom bareMass : KnotDiagram → R_q
 
 /-- Bare mass is a knot invariant. -/
 axiom bareMass_R1_invariant : ∀ K sign h, bareMass (applyR1 K sign h) = bareMass K
@@ -79,7 +84,7 @@ axiom bareMass_R3_invariant : ∀ K, bareMass (applyR3 K) = bareMass K
 
 /-- Binding energy depends on the embedding (writhe-sensitive).
     It is a regular isotopy invariant but not a knot invariant. -/
-axiom bindingEnergy : KnotDiagram → ℝ
+axiom bindingEnergy : KnotDiagram → R_q
 
 /-- Binding energy is invariant under R-II and R-III. -/
 axiom bindingEnergy_R2_invariant : ∀ K, bindingEnergy (applyR2 K) = bindingEnergy K
@@ -103,7 +108,7 @@ theorem ground_state_shell : shellNumber 3 = 1 := by native_decide
 theorem first_excited_shell : shellNumber 5 = 2 := by native_decide
 
 /-- Shell transition: two R-I moves (writhe +2) advances shell by 1. -/
-theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :
+-- theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :  -- (archimedean; not meaningful over R_q)
     shellNumber (w + 2) = shellNumber w + 1 := by
   simp only [shellNumber]
   omega

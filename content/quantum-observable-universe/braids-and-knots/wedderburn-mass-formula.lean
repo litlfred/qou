@@ -54,7 +54,7 @@ noncomputable def beta2 (q : ℝ) : ℝ := -2 * quantumInt q 3
     The interior partitions (hooks) contribute subdominant corrections
     identifiable with meson exchange channels. -/
 -- Ref: [manuscript] prop:three-parameters-wedderburn
--- Ref: [kazhdan-lusztig-1979] https://doi.org/10.1007/BF01390002
+-- Ref: [kazhdan-lusztig1979] https://doi.org/10.1007/BF01390002
 theorem extremal_irreps_count :
     ∀ (n : ℕ), n ≥ 3 →
     -- S_n has exactly 3 one-row/one-column/hook partitions

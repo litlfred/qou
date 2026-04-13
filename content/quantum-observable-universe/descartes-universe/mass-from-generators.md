@@ -5,24 +5,19 @@ generators ([finiteness of generators](#prop:torus-knot-generators))
 and the two linking operations.  This remark traces the pipeline
 from generators through linking to CODATA-comparable masses.
 
-**Step 1: Bare generators have zero hyperbolic volume.**
+**Step 1: Bare generators have zero mass.**
 Every torus knot $T_{m,n}$ has zero hyperbolic volume (torus knots
-are non-hyperbolic):
+are non-hyperbolic), so the topological mass formula
+([topological mass formula](#prop:topological-mass-formula)) gives
 
 $$
-  \mathrm{Vol}(T_{m,n}) = 0.
+  \mathcal{M}_{\mathrm{bare}}(T_{m,n})
+  =  \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{2}}
+  =  0.
 $$
 
-At a single brane level, the categorical mass $|\mathrm{tr}_M(\rho(\beta))|$
-is nonzero (e.g.\ $|\mathrm{tr}_M(e^-)| = hz^2 + z \approx 0.551$),
-but the full tower-summed mass
-([topological mass formula](#prop:topological-mass-formula))
-gives $\mathrm{Vol}/\hbar_q^2 = 0$ for bare torus knots.  The
-physical mass of torus knot particles (leptons) arises from the
-quantum dilogarithm contributions across the brane tower and from
-coupling to the Higgs mechanism ($4_1$, figure-eight).
 Mass is not an intrinsic property of the generator — it is
-*created by linking and tower accumulation*.
+*created by linking*.
 
 **Step 2: Hopf linking generates leptonic mass.**
 A single Hopf linking of two generators on the exceptional divisor
@@ -130,8 +125,7 @@ participates.
 
 The entire chart is determined by three inputs:
 
-1. The substrate parameter $q_0$ (determined by the CODATA input
-   $m_\mu/m_e$, [calibration inputs](#rem:calibration-inputs)),
+1. The substrate parameter $q_0$ (from CODATA),
 2. The seven $T_{m,n}$ generators (from $\chi = -6$), and
 3. The two linking operations $\ell_H$, $\ell_c$ (from the
    exceptional divisor and Bring's surface geometry).

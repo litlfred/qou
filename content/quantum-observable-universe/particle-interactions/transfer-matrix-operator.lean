@@ -101,9 +101,11 @@ noncomputable def photonAbsorptionOp (q : ℝ) : InteractionOp where
     λ± = ½[(q-q⁻¹) ± √((q-q⁻¹)² + 4)] -/
 -- Ref: [manuscript] §6/transfer-matrix-operator
 noncomputable def T_pp_eigenvalue_plus (q : ℝ) : ℝ :=
+  let disc_sqrt := Real.sqrt ((q - 1/q)^2 + 4)
   ((q - 1/q) + disc_sqrt) / 2
 
 noncomputable def T_pp_eigenvalue_minus (q : ℝ) : ℝ :=
+  let disc_sqrt := Real.sqrt ((q - 1/q)^2 + 4)
   ((q - 1/q) - disc_sqrt) / 2
 
 /-- The eigenvalues of T_pp are real and distinct for q > 0. -/

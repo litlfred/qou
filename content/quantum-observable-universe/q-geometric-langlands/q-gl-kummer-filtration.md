@@ -34,7 +34,7 @@ $\varrho$.  Then:
    $n$-divisible monodromy.
 
 3. By the
-   [Yekutieli obstruction](#prop:q-gl-obstruction-calc), the
+   [obstruction calculation](#prop:q-gl-obstruction-calc), the
    sublocus $\mathrm{LocSys}_{\check{G}_q}^{(n)}$ admits lifts
    through the brane tower only when $n \mid \chi(A)$.  At
    levels $n \nmid \chi(A)$ the perpetual obstruction prevents

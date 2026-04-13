@@ -55,7 +55,7 @@ export default chapter({
 
     // ── Yekutieli lifting (needed by cosimplicial + descent) ───────────
     section({
-      title: "Yekutieli Lifting and Quantum Characteristic Classes",
+      title: "Categorical Lifting and Quantum Characteristic Classes",
       label: "sec:yekutieli-lifting",
       blocks: [
         "yekutieli-lifting-condition",
@@ -81,6 +81,7 @@ export default chapter({
         "stack-like-structure",
         "vacuum-state",
         "vacuum-state-proof",
+        "vacuum-state-su2",
         "global-gluing",
         "global-gluing-proof",
         "ordering-jet-compatibility",

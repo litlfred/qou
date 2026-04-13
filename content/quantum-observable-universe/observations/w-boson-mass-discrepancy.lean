@@ -22,6 +22,11 @@ LaTeX label: `rem:w-boson-mass-discrepancy`
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 - CDF II: https://doi.org/10.1126/science.abk1781
 - ATLAS: https://doi.org/10.1140/epjc/s10052-024-12632-6
+
+**Ground ring**: `ℝ` (archimedean realisation).
+Evaluates formal results at q₀ ≈ 1.1098 for comparison with
+experimental data. NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
 -/
 
 import Mathlib.Data.Real.Basic

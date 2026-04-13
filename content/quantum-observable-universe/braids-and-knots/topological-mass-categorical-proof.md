@@ -72,7 +72,7 @@ $$
 $$
 
 where $\alpha_0 = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho_0$ is the mass integrand of the base-level cycle.  Hence
-$\lVert \mathrm{tr}(\hat{\tau}_n(\alpha)) \rVert = m(\varrho_0)$.
+$\lVert \mathrm{tr}(\hat{\tau}_n(\alpha)) \rVert = \mathfrak{m}(\varrho_0)$.
 
 *Step 3: Transient terms localise to blow-up centres.*
 The transient component $\alpha - \hat{\tau}_n(\alpha) \in \mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat{\tau}_n$.  By the structure

@@ -11,11 +11,24 @@ LaTeX label: `def:up-quark`
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
 - [manuscript] Ch. 5, §up-quark
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU.Descartes
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The up quark: unknot K_{0₁} with positive crossing orientation
     in the Borromean link B₃.  Threaded through a color tube;
@@ -28,7 +41,7 @@ structure UpQuark where
   /-- Seifert genus (trivial knot). -/
   genus : ℕ := 0
   /-- Hyperbolic volume (unknot is non-hyperbolic). -/
-  volume : ℝ := 0
+  volume : R_q := 0
   /-- Crossing orientation: +1 for positive (contributes +q to Skein). -/
   crossing_orientation : ℤ := 1
   /-- Number of Borromean components this quark links with. -/

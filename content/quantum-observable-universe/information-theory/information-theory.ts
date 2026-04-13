@@ -16,6 +16,7 @@ export default chapter({
       title: "Emergent Gravity and Information Geometry",
       label: "sec:info-emergent-gravity",
       blocks: [
+        "information-theory-intro",
         "emergent-gravity-info",
         "planck-info-unit",
       ],
@@ -85,6 +86,37 @@ section({
       label: "sec:stat-mech",
       blocks: [
         "stat-mech-intro",
+        "quantum-temperature",
+        "quantum-temperature-interpretation",
+        "quantum-pressure",
+        "quantum-pressure-interpretation",
+        "quantum-volume",
+        "quantum-volume-interpretation",
+        "quantum-ideal-gas-law",
+        "quantum-ideal-gas-law-interpretation",
+        "boltzmann-constant",
+        "gas-constant-derivation",
+        "hydrogen-partition-function",
+      ],
+    }),
+    section({
+      title: "Phase Transitions and Sublimation",
+      label: "sec:phase-transitions",
+      blocks: [
+        "phase-transition-boundary",
+        "phase-transition-interpretation",
+        "composite-crossing-parity",
+        "crossing-parity-test",
+      ],
+    }),
+    section({
+      title: "Incompleteness and the Horizon",
+      label: "sec:incompleteness-horizon",
+      blocks: [
+        "incompleteness-implies-horizon",
+        "incompleteness-horizon",
+        "stat-mech-computational-horizon",
+        "information-paradox-incompleteness",
       ],
     }),
     section({

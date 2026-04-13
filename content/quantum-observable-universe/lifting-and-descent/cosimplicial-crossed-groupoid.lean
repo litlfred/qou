@@ -11,12 +11,25 @@ maps from descent, and the crossed structure from conjugation of
 - [yekutieli2010] Central Extensions of Gerbes, §3–4
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
 - [manuscript] §3 Lifting and Descent
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Yekutieli triple
 
@@ -28,15 +41,15 @@ trivialisations), 1-morphisms (gauge transitions), and 2-morphisms
     the datum `(x, g, a)` of local trivialisations, transition
     automorphisms, and deformation parameters. -/
 -- Ref: [yekutieli2010] §3
-structure YekutieliTriple (M : Type*) where
+structure YekutielijTriple (M : Type*) where
   /-- Level in the brane tower. -/
   level : ℕ
   /-- Objects: local trivialisations of the Frobenius–Hopf object Aₙ. -/
   objects : M → M
   /-- 1-morphisms: transition automorphisms g_{ij} in Aut_C(Aₙ). -/
-  oneMorphisms : M → ℝ
+  oneMorphisms : M → R_q
   /-- 2-morphisms: deformation parameters a_{ij} in the band 𝒪_M×. -/
-  twoMorphisms : M → ℝ
+  twoMorphisms : M → R_q
   /-- The 2-morphisms are invertible (they live in 𝒪_M×). -/
   twoMorphisms_ne_zero : ∀ (p : M), twoMorphisms p ≠ 0
 
@@ -53,12 +66,12 @@ central elements, and the action is conjugation. -/
 structure CrossedModule where
   /-- The boundary map ∂ : 𝒪_M× → SU_{qₙ}(2), sending a unit to
       its central embedding. -/
-  boundary : ℝ → ℝ
+  boundary : R_q → R_q
   /-- Conjugation action of 1-morphisms on 2-morphisms. -/
-  conjugation : ℝ → ℝ → ℝ
+  conjugation : R_q → R_q → R_q
   /-- Peiffer identity: ∂(a) · b = a · b · a⁻¹.
       Automatic for central extensions. -/
-  peiffer : ∀ (a b : ℝ) (ha : a ≠ 0),
+  peiffer : ∀ (a b : R_q) (ha : a ≠ 0),
     boundary a * b = a * b * a⁻¹
 
 /-! ## Cosimplicial crossed groupoid
@@ -78,22 +91,22 @@ in the category of crossed groupoids. -/
 -- Ref: [yekutieli2010] §4, [manuscript] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   /-- The Yekutieli triple at each level. -/
-  tripleAt : (n : ℕ) → YekutieliTriple M
+  tripleAt : (n : ℕ) → YekutielijTriple M
   /-- Coface map: jet prolongation sends level-n data to level-(n+1). -/
-  coface : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
+  coface : (n : ℕ) → YekutielijTriple M → YekutielijTriple M
   /-- Codegeneracy map: descent sends level-(n+1) data to level-n. -/
-  codegeneracy : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
+  codegeneracy : (n : ℕ) → YekutielijTriple M → YekutielijTriple M
   /-- Retraction: `σ ∘ δ = id` on levels (from 𝔡_{n+1} ∘ ℓ_n = id). -/
-  retraction : ∀ (n : ℕ) (t : YekutieliTriple M),
+  retraction : ∀ (n : ℕ) (t : YekutielijTriple M),
     (codegeneracy n (coface n t)).level = t.level
   /-- The crossed-module structure at each level. -/
   crossedMod : (n : ℕ) → CrossedModule
   /-- Cosimplicial identity: δʲ ∘ δⁱ = δⁱ ∘ δʲ⁻¹ for i < j. -/
-  coface_coface : ∀ (n : ℕ) (t : YekutieliTriple M),
+  coface_coface : ∀ (n : ℕ) (t : YekutielijTriple M),
     (coface (n + 1) (coface n t)).level =
     (coface n (coface n t)).level
   /-- Cosimplicial identity: σʲ ∘ σⁱ = σⁱ ∘ σʲ⁺¹ for i ≤ j. -/
-  codegen_codegen : ∀ (n : ℕ) (t : YekutieliTriple M),
+  codegen_codegen : ∀ (n : ℕ) (t : YekutielijTriple M),
     (codegeneracy n (codegeneracy (n + 1) t)).level =
     (codegeneracy n (codegeneracy n t)).level
 
@@ -120,7 +133,7 @@ theorem cosimplicial_crossed_groupoid_exists (M : Type*)
 /-- The Peiffer identity for central extensions. -/
 -- Ref: [yekutieli2010] §2, Remark 2.3
 theorem peiffer_central_automatic (cm : CrossedModule)
-    (a b : ℝ) (ha : a ≠ 0) :
+    (a b : R_q) (ha : a ≠ 0) :
     cm.boundary a * b = a * b * a⁻¹ :=
   cm.peiffer a b ha
 

@@ -33,4 +33,3 @@ import QOU.LightningPath
 import QOU.RepresentationTheory
 import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
-import QOU.FeynmanPathIntegrals

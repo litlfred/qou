@@ -10,7 +10,9 @@ import Mathlib.Data.Real.Basic
 
 namespace QOU.BindingScale
 
-/-- Catalan's constant G = Σ (-1)^k / (2k+1)². -/
+/-- Catalan's constant G = Σ (-1)^k / (2k+1)².
+    TODO: replace with `Real.catalan` when available in Mathlib. -/
+-- Ref: [manuscript] §5/binding-scale-catalan
 noncomputable def catalanConstant : ℝ := 0.9159655941772190
 
 /-- Volume of the Borromean rings complement = 8G.

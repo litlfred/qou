@@ -175,13 +175,73 @@ python3 .github/scripts/generate_dependency_graph.py \
   --output dependency-graph.svg
 ```
 
+## Unified Docker image
+
+All CI/CD workflows use the same **paper-assistant** Docker image
+(`scripts/mcp-server/Dockerfile`), which is also the folio MCP server.
+This eliminates per-workflow tool installation and ensures consistent
+build environments.
+
+### Image contents
+
+| Tool | Purpose |
+|------|---------|
+| TeX Live (full) | PDF compilation, SVG rendering |
+| Lean 4 + elan | Formal verification, doc-gen4 |
+| Bun | Content pipeline, MCP server |
+| pandoc | LaTeX → HTML/Markdown conversion |
+| latexdiff | Feature-branch diff PDFs |
+| graphviz | Dependency graph SVGs |
+| gh CLI | PR preview comments |
+| Python 3 + requests | CI scripts |
+| ripgrep | Lean symbol search |
+
+### Image lifecycle
+
+| Trigger | When |
+|---------|------|
+| Push to main | Content, Lean, MCP server, or CI script changes |
+| Weekly (Sunday) | Picks up Mathlib cache + TeX Live updates |
+| Manual dispatch | `build-lean-mcp.yml` workflow |
+
+Image: `ghcr.io/litlfred/qou/paper-assistant:latest`
+
+### Using locally (Docker fallback)
+
+When pdflatex isn't installed locally, the render hooks automatically
+fall back to the Docker image:
+
+```bash
+# Pull once
+docker pull ghcr.io/litlfred/qou/paper-assistant:latest
+
+# Use as CI toolbox (override entrypoint)
+docker run --rm --entrypoint "" \
+  -v $(pwd):/work -w /work \
+  ghcr.io/litlfred/qou/paper-assistant:latest \
+  latexmk -pdf main.tex
+```
+
+The `scripts/lib/docker-tex.sh` helper automates this fallback for
+`render-on-change.sh` and `render-pre-commit.sh`.
+
+### Deprecated images
+
+These images are superseded by paper-assistant:
+
+| Image | Dockerfile | Status |
+|-------|-----------|--------|
+| `qou-ci` | `.github/docker/Dockerfile` | Deprecated (workflow disabled) |
+| `latex-ci` | `.github/docker/Dockerfile.latex` | Deprecated (never built) |
+| `lean-mcp` | `.github/docker/Dockerfile.lean-mcp` | Deprecated (slim MCP only) |
+
 ## CI workflows
 
-| Workflow | Docs generated |
-|----------|---------------|
-| `publish.yml` | Paper PDF/HTML/MD, folio index, schema docs, dep graph |
-| `blueprint.yml` | Blueprint HTML/PDF, doc-gen4, axiom report, manifests |
-| `lean_ci.yml` | Lean source browser, doc-gen4 fallback, axiom report |
+| Workflow | Container | Docs generated |
+|----------|-----------|---------------|
+| `publish.yml` | paper-assistant | Paper PDF/HTML/MD, folio index, schema docs, dep graph |
+| `blueprint.yml` | paper-assistant | Blueprint HTML/PDF, doc-gen4, axiom report, manifests |
+| `lean_ci.yml` | (installs inline) | Lean source browser, doc-gen4 fallback, axiom report |
 
 ## When to use this skill
 

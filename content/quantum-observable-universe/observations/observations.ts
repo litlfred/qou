@@ -17,6 +17,7 @@ export default chapter({
       title: "The Substrate Consistency Window",
       label: "sec:substrate-consistency",
       blocks: [
+        "observations-intro",
         "substrate-consistency-window",
       ],
     }),
@@ -68,10 +69,6 @@ export default chapter({
         "mass-predictions-data",
         "mass-comparison-table",
         "mass-formula-validation",
-        "atom-mass-full-hecke",
-        "feynman-qou-comparison",
-        "neutron-proton-mass-splitting",
-        "photon-channel-wedderburn-chain",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
         "w-boson-mass-discrepancy",

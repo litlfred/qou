@@ -198,7 +198,7 @@ curves.  The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2) \approx 1.043$ 
 |----------|-----------|------------|
 | $c_q$ | $1/(q-1)$ | $q$ only |
 | $\hbar_q$ | $(q-1)/q$ | $q$ only |
-| $G(q)$ | $c^3 \hbar_q / S_{\mathrm{cell}}$ | $q$ and jet tower entropy |
+| $G(q)$ | $c_q^3 \hbar_q / S_{\mathrm{cell}}$ | $q$ and jet tower entropy |
 
 The speed of light and Planck constant are algebraic in $q$.  The
 gravitational constant requires the full jet tower information

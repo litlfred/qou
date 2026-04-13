@@ -66,11 +66,56 @@ self-updater will pick up changes within 60 seconds.
 | `/api/block/save` | POST | collaborator | Edit markdown content |
 | `/mcp` | POST | viewer (OAuth) or bearer token | MCP protocol |
 
+## Unified Docker Image
+
+The folio deployment uses the **same Docker image** as all CI/CD
+workflows: `ghcr.io/litlfred/qou/paper-assistant:latest`.
+
+Built by `.github/workflows/build-lean-mcp.yml` from
+`scripts/mcp-server/Dockerfile`, it includes everything needed to
+run the MCP server, build PDFs, compile Lean, and execute CI scripts —
+all offline once pulled.
+
+### Image build triggers
+
+| Trigger | Frequency |
+|---------|-----------|
+| Push to main (content, Lean, MCP, CI scripts) | On change |
+| Weekly schedule | Sunday 06:00 UTC |
+| Manual dispatch | `build-lean-mcp.yml` |
+
+### Auto-deployment
+
+The `deploy/self-update-folio.sh` cron script (runs every 60s on the
+Hetzner server) polls GHCR for new image digests and auto-deploys.
+Typical latency from merge to live: ~2-3 minutes.
+
+### LLM provider config
+
+The `llm` section in `lean-mcp.config.json` configures which LLM
+backend the MCP server uses:
+
+```json
+"llm": {
+  "provider": "anthropic",   // "anthropic" | "openai" | "local"
+  "providers": {
+    "anthropic": { "model": "claude-sonnet-4-6", "api_base": "https://api.anthropic.com" },
+    "openai":    { "model": "gpt-4o", "api_base": "https://api.openai.com/v1" },
+    "local":     { "model": "llama3", "api_base": "http://localhost:11434/v1" }
+  }
+}
+```
+
+Switch provider by changing `"provider"`. For local LLMs, start
+Ollama (`ollama serve`) before the MCP server.
+
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `lean-mcp.config.json` | Central config (auth section defines providers, owner, session TTL) |
+| `lean-mcp.config.json` | Central config (auth, LLM, Lean, image, domain) |
+| `scripts/mcp-server/Dockerfile` | **Unified Docker image** (MCP + CI + build) |
+| `.github/workflows/build-lean-mcp.yml` | Image build workflow |
 | `deploy/auth-gateway/server.ts` | Auth gateway service (Bun, ~520 lines) |
 | `deploy/docker-compose.folio.yml` | Service orchestration (Caddy + auth-gateway + lean-mcp) |
 | `deploy/Caddyfile.folio.template` | Reverse proxy config template |

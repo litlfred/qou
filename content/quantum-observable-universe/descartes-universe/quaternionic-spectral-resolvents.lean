@@ -12,11 +12,24 @@ LaTeX label: `def:quaternionic-spectral-resolvents`
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 - [manuscript] Chapter 5, §Quaternionic spectral resolvents
+
+**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+Part of the formal proof chain. The parameter `q` is the canonical
+indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
 
 namespace QOU
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+noncomputable section
+abbrev R_q := LaurentPolynomial ℤ
+def q_param : R_q := LaurentPolynomial.T 1
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Quaternionic spectral resolvent component type**. -/
 -- Ref: [manuscript] Chapter 5
@@ -31,13 +44,13 @@ inductive ResolventType
 -- Ref: [lusztig1993], [manuscript] Chapter 5
 structure QuaternionicResolvent where
   /-- The deformation parameter q. -/
-  q : ℝ
+  q : R_q
   /-- q > 0. -/
-  q_pos : 0 < q
+  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The radial parameter r = -ln|q|. -/
-  r : ℝ
+  r : R_q
   /-- The four resolvent values at a point. -/
-  omega : Fin 4 → ℝ
+  omega : Fin 4 → R_q
   /-- ω₀ = 0 on balanced states (first power sum vanishes). -/
   omega_zero_balanced : omega 0 = 0
   /-- The embedding is nontrivial: at least one spatial/temporal resolvent is nonzero. -/
