@@ -291,6 +291,7 @@ export default chapter({
         "fivefold-symmetry",
         "cohomological-embedding",
         "knot-basis-color-content",
+        "trivial-knot-photon-interpretation",
       ],
     }),
   ],
