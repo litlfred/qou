@@ -40,6 +40,16 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 alpha_em = qi / (q_int(9) * q_int(10))
 CATALAN_G = 0.915965594177219015054603514932
 ALPHA = M_E_MEV * 8 * CATALAN_G  # binding scale = m_e × Vol(Borromean)
+
+# Fine structure constant with Chern-Simons correction
+# 1/α = q·[9]·[10] / (1 - δ) where δ = CS·ℏ_q²/bare
+_CS_T29 = _math.pi**2 * 10.0/9.0       # CS(T_{2,9}) = π²(m²-1)(n²-1)/(12mn)
+_CS_T35 = _math.pi**2 * 16.0/15.0      # CS(T_{3,5})
+_hbar_q2 = (1.0 - qi)**2               # ℏ_q²
+_bare_alpha_inv = q0 * q_int(9) * q_int(10)
+_delta_cs = (_CS_T29 + _CS_T35) * (q_int(2)/2.0) * _hbar_q2 / _bare_alpha_inv
+ALPHA_EM_INV_DERIVED = _bare_alpha_inv / (1.0 - _delta_cs)  # 137.0357 (0.0002%)
+alpha_em_derived = 1.0 / ALPHA_EM_INV_DERIVED
 E_HARTREE_EV = 511000.0 * alpha_em**2
 TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q**2  # molecular energy unit (eV)
