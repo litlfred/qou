@@ -66,6 +66,43 @@ $[2]_q[7]_q$ with different integer prefactors (2 vs 3).  This
 relation is approximate in the fitted BW formula ($23.29/15.56 = 1.50$)
 and exact here.*
 
+### Derivation from the channel product
+
+*The first three BW coefficients $\lambda_V$, $\lambda_S$, $\lambda_C$
+are derivable from the per-nucleon channel product
+([per-nucleon channel decomposition](#rem:per-nucleon-channel-decomposition)).
+The effective binding scale is $\alpha_{\mathrm{eff}} = m_e \times 8G
+\times [3]_q$, where $8G = \mathrm{Vol}(\mathcal{B}_3)$ is the
+Borromean link volume and $[3]_q$ is the nucleon strand count:*
+
+$$
+  \lambda_V
+  = \alpha_{\mathrm{eff}} \cdot
+    \bigl\lvert \tfrac{1}{2} \ln(ab) \bigr\rvert
+  \qquad (-1.3\%\text{ vs } 2[2]_q[7]_q m_e)
+$$
+
+$$
+  \lambda_S
+  = \lambda_V \times \frac{[4]_q^2}{[2]_q [7]_q}
+  \qquad (\text{exact: } \sigma_1/\sigma_0\text{ crossing ratio})
+$$
+
+$$
+  \lambda_C
+  = \frac{\alpha_{\mathrm{eff}}}{2}
+    \ln \frac{2q^{-1}}{3q^{-1} - q}
+  \qquad (+3.0\%\text{ vs } (q{-}q^{-1})[6]_q m_e)
+$$
+
+*where $a = -(q-q^{-1})/2$ and
+$b = -3(q^2-1)(q^2+1)^2/(4q^3)$ are the proton and
+neutron channel sums.  Volume arises from the geometric
+mean of channel sums; the surface/volume ratio
+$[4]_q^2/([2]_q[7]_q)$ counts the $\sigma_1$ vs $\sigma_0$
+crossings; Coulomb is the pp-vs-pn crossing eigenvalue
+deficit in the confining channel.*
+
 ### Derivation of the exchange and shell terms
 
 *The exchange Coulomb $\lambda_{\mathrm{ex}}$ corrects the direct
