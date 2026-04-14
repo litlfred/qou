@@ -1,0 +1,126 @@
+# Copilot Cloud Agent — Environment Setup
+#
+# Pre-installs all tools the QOU project needs so the agent can build,
+# validate, render, and test content without trial-and-error discovery.
+#
+# Installed:
+#   - TeX Live (pdflatex, latexmk, dvisvgm, biber) → PDF generation + TeX block preview
+#   - Pandoc → HTML export
+#   - Bun → content pipeline + MCP server
+#   - uv → lean-lsp-mcp
+#   - Lean 4 via elan → Lean formalization
+#   - Rust/Cargo (pre-installed) + hecke-engine build
+#   - Bun deps for content/ and scripts/mcp-server/
+#   - ccicons CTAN package (custom font)
+
+name: "Copilot Setup Steps"
+
+on:
+    workflow_dispatch:
+    push:
+        paths:
+            - .github/workflows/copilot-setup-steps.yml
+    pull_request:
+        paths:
+            - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+    copilot-setup-steps:
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+
+        permissions:
+            contents: read
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            # ── TeX Live + document tools ────────────────────────────
+            - name: Install TeX Live and document tools
+              run: |
+                  sudo apt-get update -qq
+                  sudo apt-get install -y --no-install-recommends \
+                    texlive \
+                    texlive-latex-extra \
+                    texlive-fonts-recommended \
+                    texlive-bibtex-extra \
+                    texlive-science \
+                    texlive-extra-utils \
+                    latexmk \
+                    biber \
+                    dvisvgm \
+                    pandoc \
+                    latexdiff \
+                    graphviz \
+                    libgmp-dev
+
+            # ── ccicons CTAN package ─────────────────────────────────
+            - name: Install ccicons font from CTAN
+              run: |
+                  mkdir -p /tmp/ccicons && cd /tmp/ccicons
+                  curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip
+                  unzip -q ccicons.tds.zip -d /usr/local/share/texmf
+                  sudo texhash
+                  sudo updmap-sys --enable Map=ccicons.map || true
+                  rm -rf /tmp/ccicons
+
+            # ── Bun ─────────────────────────────────────────────────
+            - name: Install Bun
+              run: |
+                  curl -fsSL https://bun.sh/install | bash
+                  echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
+
+            # ── uv (Python package manager) ──────────────────────────
+            - name: Install uv
+              run: |
+                  curl -LsSf https://astral.sh/uv/install.sh | sh
+                  echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+            # ── Lean 4 via elan ──────────────────────────────────────
+            - name: Install Lean 4 toolchain
+              run: |
+                  curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+                    | sh -s -- -y --default-toolchain none
+                  echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+                  export PATH="$HOME/.elan/bin:$PATH"
+                  TOOLCHAIN=$(cat content/quantum-observable-universe/lean/lean-toolchain | tr -d '[:space:]')
+                  elan toolchain install "$TOOLCHAIN"
+
+            # ── Bun dependencies ─────────────────────────────────────
+            - name: Install content pipeline dependencies
+              run: |
+                  export PATH="$HOME/.bun/bin:$PATH"
+                  cd content && bun install
+                  cd ../scripts/mcp-server && bun install
+
+            # ── Hecke engine (Rust) ──────────────────────────────────
+            - name: Build hecke-engine
+              run: |
+                  cd tools/hecke-engine
+                  cargo build --release
+
+            # ── Lean dependencies (cache-friendly) ───────────────────
+            - name: Fetch Lean dependencies and Mathlib cache
+              run: |
+                  export PATH="$HOME/.elan/bin:$PATH"
+                  cd content/quantum-observable-universe/lean
+                  lake update || true
+                  lake exe cache get || true
+
+            # ── Verify installations ─────────────────────────────────
+            - name: Verify tools
+              run: |
+                  export PATH="$HOME/.bun/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
+                  echo "=== Tool versions ==="
+                  pdflatex --version | head -1
+                  latexmk --version | head -1
+                  dvisvgm --version | head -1
+                  pandoc --version | head -1
+                  bun --version
+                  uv --version
+                  lean --version || true
+                  lake --version || true
+                  cargo --version
+                  rg --version | head -1
+                  echo "=== All tools verified ==="
