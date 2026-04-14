@@ -85,3 +85,8 @@ path = "src/bin/v16_tensor.rs"
 [[bin]]
 name = "hecke-allparts"
 path = "src/bin/v17_allparts.rs"
+
+# Per-generator Wedderburn vertex volumes (correct functional)
+[[bin]]
+name = "hecke-pergen"
+path = "src/bin/v18_pergen.rs"
