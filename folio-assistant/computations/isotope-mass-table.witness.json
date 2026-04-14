@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-08T09:19:05.937333+00:00",
-  "commitSha": "4c4d0dba9b000d194362bfd3e8a274927bc5b729",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-14T15:07:03.527438+00:00",
+  "commitSha": "726d3076db353313a5e8e880c70b1860008ee76c",
   "assertions": [
     {
       "name": "All isotopes computed",
@@ -14,8 +14,8 @@
     },
     {
       "name": "Certificate coverage",
-      "computed": 20,
-      "expected": 20,
+      "computed": 23,
+      "expected": 23,
       "passed": true,
       "tolerance": 0,
       "source": "tools/hecke-engine/certificate-*.json"
@@ -53,7 +53,7 @@
   "computation": "isotope-mass-table",
   "scriptFile": "isotope-mass-table.py",
   "scriptHash": "daf33d0e04c7",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "d3c7c979dccd265671b6d5d669c6223fc01918da",
   "description": "Comprehensive isotope mass table for all stable and long-lived nuclides up to Z=30. Uses CODATA nucleon masses + AME2020 binding energies. Maps each isotope to its hecke-engine certificate where available. Documents source classification (CODATA/AME2020 input vs genuine q-predictions).",
   "parameters": {
     "q₀": 1.1099785955541805,
@@ -63,7 +63,7 @@
     "m_e (MeV)": 0.51099895,
     "isotopes_count": 82,
     "stable_count": 72,
-    "certificate_count": 20
+    "certificate_count": 23
   },
   "data": {
     "isotope_results": [
@@ -79,9 +79,9 @@
         "M_err_MeV": 0.0,
         "ln_P": 0.0,
         "stability": "stable",
-        "has_certificate": false,
-        "certificate_net": null,
-        "certificate_f_pauli": null,
+        "has_certificate": true,
+        "certificate_net": 1.0,
+        "certificate_f_pauli": 1.0,
         "source": "CODATA+AME"
       },
       {
@@ -97,8 +97,8 @@
         "ln_P": 0.050878,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 1.0580927621573957,
-        "certificate_f_pauli": 1.005000358092843,
+        "certificate_net": 0.8954698390050602,
+        "certificate_f_pauli": 1.1228166385552147,
         "source": "CODATA+AME"
       },
       {
@@ -114,8 +114,8 @@
         "ln_P": -0.68364,
         "stability": "12.32 yr",
         "has_certificate": true,
-        "certificate_net": 1.540282298346931,
-        "certificate_f_pauli": 0.8999470428892993,
+        "certificate_net": 0.799581923553691,
+        "certificate_f_pauli": 1.403366939874241,
         "source": "CODATA+AME"
       },
       {
@@ -131,8 +131,8 @@
         "ln_P": -0.435642,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 1.3664344657477068,
-        "certificate_f_pauli": 0.745548599806541,
+        "certificate_net": 0.989073445442372,
+        "certificate_f_pauli": 0.9208236359282893,
         "source": "CODATA+AME"
       },
       {
@@ -148,8 +148,8 @@
         "ln_P": -0.573481,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 0.5532281305185607,
-        "certificate_f_pauli": 1.114233286906482,
+        "certificate_net": -0.2583857218512439,
+        "certificate_f_pauli": 1.1441163014124827,
         "source": "CODATA+AME"
       },
       {
@@ -165,8 +165,8 @@
         "ln_P": -1.851326,
         "stability": "806.92 ms",
         "has_certificate": true,
-        "certificate_net": 0.030324815879345157,
-        "certificate_f_pauli": 0.811630350998214,
+        "certificate_net": -0.0284127005417459,
+        "certificate_f_pauli": 1.6179731662071268,
         "source": "CODATA+AME"
       },
       {
@@ -199,8 +199,8 @@
         "ln_P": -1.473897,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 0.002534820325527709,
-        "certificate_f_pauli": 0.8115816442510957,
+        "certificate_net": -0.0141554145068703,
+        "certificate_f_pauli": 1.0135038604306232,
         "source": "CODATA+AME"
       },
       {
@@ -216,8 +216,8 @@
         "ln_P": -2.144023,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 0.00031686359226802685,
-        "certificate_f_pauli": 0.8116516501446548,
+        "certificate_net": 0.1691307668541459,
+        "certificate_f_pauli": 8.630603311363078,
         "source": "CODATA+AME"
       },
       {
@@ -250,8 +250,8 @@
         "ln_P": -3.996798,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 4.389107809092587e-06,
-        "certificate_f_pauli": 0.8503292566649517,
+        "certificate_net": -0.041986907801027484,
+        "certificate_f_pauli": 40.30360658854755,
         "source": "CODATA+AME"
       },
       {
@@ -301,8 +301,8 @@
         "ln_P": -4.27387,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 1.6080729100249757e-08,
-        "certificate_f_pauli": 1.0189911554569953,
+        "certificate_net": -0.00010605580334702233,
+        "certificate_f_pauli": 56.419970892306566,
         "source": "CODATA+AME"
       },
       {
@@ -318,8 +318,8 @@
         "ln_P": -3.859657,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 1.2204733296115313e-08,
-        "certificate_f_pauli": 1.4963450465785189,
+        "certificate_net": 4.204464580927234e-07,
+        "certificate_f_pauli": 22.68085213568008,
         "source": "CODATA+AME"
       },
       {
@@ -369,8 +369,8 @@
         "ln_P": -5.343355,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 0.00023083534261194634,
-        "certificate_f_pauli": 0.8493220011577841,
+        "certificate_net": -2.136697864189699e-06,
+        "certificate_f_pauli": 0.1897518107661926,
         "source": "CODATA+AME"
       },
       {
@@ -403,8 +403,8 @@
         "ln_P": -5.274504,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": 0.06850743619145971,
-        "certificate_f_pauli": 2.6393505627454155,
+        "certificate_net": 0.0014843200157876203,
+        "certificate_f_pauli": 0.011708474005197436,
         "source": "CODATA+AME"
       },
       {
@@ -453,9 +453,9 @@
         "M_err_MeV": 6e-06,
         "ln_P": -5.844107,
         "stability": "stable",
-        "has_certificate": false,
-        "certificate_net": null,
-        "certificate_f_pauli": null,
+        "has_certificate": true,
+        "certificate_net": -169330350931035.5,
+        "certificate_f_pauli": 0.13348103197706362,
         "source": "CODATA+AME"
       },
       {
@@ -471,8 +471,8 @@
         "ln_P": -5.055602,
         "stability": "stable",
         "has_certificate": true,
-        "certificate_net": -27162037.307300854,
-        "certificate_f_pauli": 0.867949072053096,
+        "certificate_net": -225944879588.4866,
+        "certificate_f_pauli": 1.1338339951516179,
         "source": "CODATA+AME"
       },
       {
@@ -810,9 +810,9 @@
         "M_err_MeV": 1.3e-05,
         "ln_P": 9.218164,
         "stability": "stable",
-        "has_certificate": false,
-        "certificate_net": null,
-        "certificate_f_pauli": null,
+        "has_certificate": true,
+        "certificate_net": -6.377024550589432e+127,
+        "certificate_f_pauli": 0.0005050086572870431,
         "source": "CODATA+AME"
       },
       {

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T14:15:16.512514+00:00",
-  "commitSha": "495537442f0ee520daf405261b3d03473caf7a98",
+  "computedAt": "2026-04-14T15:06:31.980395+00:00",
+  "commitSha": "726d3076db353313a5e8e880c70b1860008ee76c",
   "assertions": [
     {
       "name": "He-4 mass",
@@ -303,11 +303,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 12,
   "computation": "q-integer-bw-7term",
   "scriptFile": "q_integer_bw_7term.py",
   "scriptHash": "f7bfed9d865d",
-  "scriptCommitSha": "ba78e3f5991e835e7869c22b360d3b0cbf59118f",
+  "scriptCommitSha": "03cd48690ead4a0aea2ad95247e3b52000eb8488",
   "description": "Seven-term q-integer BW mass formula. Extends the five-term formula with exchange Coulomb ([3]_q/[2]_q·m_e) and magic shell correction ([2]_q²[3]_q·m_e × Gaussian proximity). Zero fitted parameters — all coefficients are products of quantum integers [n]_q evaluated at q₀.",
   "contentBlock": "rem:q-integer-mass-table",
   "parameters": {

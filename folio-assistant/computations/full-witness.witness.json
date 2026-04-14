@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T04:31:22.600564+00:00",
-  "commitSha": "19223afb7d2247035df4ae3b0fcda043a1a40f56",
+  "computedAt": "2026-04-14T15:07:02.777010+00:00",
+  "commitSha": "726d3076db353313a5e8e880c70b1860008ee76c",
   "assertions": [
     {
       "name": "H",
@@ -15,7 +15,7 @@
     },
     {
       "name": "He",
-      "computed": 3732.438,
+      "computed": 3728.615,
       "expected": 3727.379,
       "passed": true,
       "tolerance": 18.636895,
@@ -24,7 +24,7 @@
     },
     {
       "name": "Li",
-      "computed": 6531.057,
+      "computed": 6529.923,
       "expected": 6533.833,
       "passed": true,
       "tolerance": 32.669165,
@@ -33,7 +33,7 @@
     },
     {
       "name": "Be",
-      "computed": 8391.194,
+      "computed": 8391.512,
       "expected": 8392.751,
       "passed": true,
       "tolerance": 41.963755,
@@ -42,7 +42,7 @@
     },
     {
       "name": "B",
-      "computed": 10250.972,
+      "computed": 10252.158,
       "expected": 10252.548,
       "passed": true,
       "tolerance": 51.26274000000001,
@@ -51,7 +51,7 @@
     },
     {
       "name": "C",
-      "computed": 11178.03,
+      "computed": 11179.918,
       "expected": 11174.863,
       "passed": true,
       "tolerance": 55.874314999999996,
@@ -60,7 +60,7 @@
     },
     {
       "name": "N",
-      "computed": 13044.372,
+      "computed": 13046.657,
       "expected": 13040.204,
       "passed": true,
       "tolerance": 65.20102,
@@ -69,7 +69,7 @@
     },
     {
       "name": "O",
-      "computed": 14897.853,
+      "computed": 14900.76,
       "expected": 14895.081,
       "passed": true,
       "tolerance": 74.47540500000001,
@@ -78,7 +78,7 @@
     },
     {
       "name": "F",
-      "computed": 17688.579,
+      "computed": 17692.684,
       "expected": 17692.302,
       "passed": true,
       "tolerance": 88.46151,
@@ -87,7 +87,7 @@
     },
     {
       "name": "Ne",
-      "computed": 18617.219,
+      "computed": 18622.316,
       "expected": 18617.73,
       "passed": true,
       "tolerance": 93.08865,
@@ -99,9 +99,9 @@
   "durationMs": 4,
   "computation": "full-witness",
   "scriptFile": "full-witness.py",
-  "scriptHash": "d48277fd9121",
-  "scriptCommitSha": "66c4c04b94e4cb63e9c85bf738722b1838e51ad0",
-  "description": "Full witness: atomic masses (q-integer BW, 0.048% MAE), molecular binding (NF + vertex volume), beta decay Q-values. All using hecke_core.py infrastructure. Zero fitted parameters.",
+  "scriptHash": "6097b653f6cd",
+  "scriptCommitSha": "03cd48690ead4a0aea2ad95247e3b52000eb8488",
+  "description": "Full witness: atomic masses (7-term q-integer BW, 0.020% MAE), molecular binding (NF + vertex volume), beta decay Q-values. All using hecke_core.py infrastructure. Zero fitted parameters.",
   "contentBlock": "prop:q-integer-mass-formula",
   "parameters": {
     "q": 1.1099785955541805,
@@ -113,7 +113,7 @@
     "E_MOL_eV": 6.750278523641413
   },
   "data": {
-    "mass_mae_pct": 0.03430882352941176,
+    "mass_mae_pct": 0.04066470588235294,
     "masses": [
       {
         "atom": "H",
@@ -127,265 +127,265 @@
         "atom": "He",
         "Z": 2,
         "N": 2,
-        "M_pred": 3732.438,
+        "M_pred": 3728.615,
         "M_obs": 3727.379,
-        "err_pct": 0.1357
+        "err_pct": 0.0332
       },
       {
         "atom": "Li",
         "Z": 3,
         "N": 4,
-        "M_pred": 6531.057,
+        "M_pred": 6529.923,
         "M_obs": 6533.833,
-        "err_pct": -0.0425
+        "err_pct": -0.0598
       },
       {
         "atom": "Be",
         "Z": 4,
         "N": 5,
-        "M_pred": 8391.194,
+        "M_pred": 8391.512,
         "M_obs": 8392.751,
-        "err_pct": -0.0186
+        "err_pct": -0.0148
       },
       {
         "atom": "B",
         "Z": 5,
         "N": 6,
-        "M_pred": 10250.972,
+        "M_pred": 10252.158,
         "M_obs": 10252.548,
-        "err_pct": -0.0154
+        "err_pct": -0.0038
       },
       {
         "atom": "C",
         "Z": 6,
         "N": 6,
-        "M_pred": 11178.03,
+        "M_pred": 11179.918,
         "M_obs": 11174.863,
-        "err_pct": 0.0283
+        "err_pct": 0.0452
       },
       {
         "atom": "N",
         "Z": 7,
         "N": 7,
-        "M_pred": 13044.372,
+        "M_pred": 13046.657,
         "M_obs": 13040.204,
-        "err_pct": 0.032
+        "err_pct": 0.0495
       },
       {
         "atom": "O",
         "Z": 8,
         "N": 8,
-        "M_pred": 14897.853,
+        "M_pred": 14900.76,
         "M_obs": 14895.081,
-        "err_pct": 0.0186
+        "err_pct": 0.0381
       },
       {
         "atom": "F",
         "Z": 9,
         "N": 10,
-        "M_pred": 17688.579,
+        "M_pred": 17692.684,
         "M_obs": 17692.302,
-        "err_pct": -0.021
+        "err_pct": 0.0022
       },
       {
         "atom": "Ne",
         "Z": 10,
         "N": 10,
-        "M_pred": 18617.219,
+        "M_pred": 18622.316,
         "M_obs": 18617.73,
-        "err_pct": -0.0027
+        "err_pct": 0.0246
       },
       {
         "atom": "Na",
         "Z": 11,
         "N": 12,
-        "M_pred": 21407.216,
+        "M_pred": 21413.506,
         "M_obs": 21409.214,
-        "err_pct": -0.0093
+        "err_pct": 0.02
       },
       {
         "atom": "Mg",
         "Z": 12,
         "N": 12,
-        "M_pred": 22336.502,
+        "M_pred": 22343.659,
         "M_obs": 22335.793,
-        "err_pct": 0.0032
+        "err_pct": 0.0352
       },
       {
         "atom": "Al",
         "Z": 13,
         "N": 14,
-        "M_pred": 25126.03,
+        "M_pred": 25133.861,
         "M_obs": 25126.501,
-        "err_pct": -0.0019
+        "err_pct": 0.0293
       },
       {
         "atom": "Si",
         "Z": 14,
         "N": 14,
-        "M_pred": 26055.911,
+        "M_pred": 26064.474,
         "M_obs": 26053.188,
-        "err_pct": 0.0105
+        "err_pct": 0.0433
       },
       {
         "atom": "P",
         "Z": 15,
         "N": 16,
-        "M_pred": 28845.136,
+        "M_pred": 28854.125,
         "M_obs": 28844.211,
-        "err_pct": 0.0032
+        "err_pct": 0.0344
       },
       {
         "atom": "S",
         "Z": 16,
         "N": 16,
-        "M_pred": 29775.574,
+        "M_pred": 29785.223,
         "M_obs": 29773.619,
-        "err_pct": 0.0066
+        "err_pct": 0.039
       },
       {
         "atom": "Cl",
         "Z": 17,
         "N": 18,
-        "M_pred": 32564.608,
+        "M_pred": 32574.392,
         "M_obs": 32564.593,
-        "err_pct": 0.0
+        "err_pct": 0.0301
       },
       {
         "atom": "Ar",
         "Z": 18,
         "N": 22,
-        "M_pred": 37205.114,
+        "M_pred": 37215.12,
         "M_obs": 37215.526,
-        "err_pct": -0.028
+        "err_pct": -0.0011
       },
       {
         "atom": "K",
         "Z": 19,
         "N": 20,
-        "M_pred": 36284.496,
+        "M_pred": 36295.028,
         "M_obs": 36284.754,
-        "err_pct": -0.0007
+        "err_pct": 0.0283
       },
       {
         "atom": "Ca",
         "Z": 20,
         "N": 20,
-        "M_pred": 37215.965,
+        "M_pred": 37227.167,
         "M_obs": 37214.698,
-        "err_pct": 0.0034
+        "err_pct": 0.0335
       },
       {
         "atom": "Sc",
         "Z": 21,
         "N": 24,
-        "M_pred": 41858.951,
+        "M_pred": 41870.972,
         "M_obs": 41862.228,
-        "err_pct": -0.0078
+        "err_pct": 0.0209
       },
       {
         "atom": "Ti",
         "Z": 22,
         "N": 26,
-        "M_pred": 44644.696,
+        "M_pred": 44657.224,
         "M_obs": 44563.636,
-        "err_pct": 0.1819
+        "err_pct": 0.21
       },
       {
         "atom": "V",
         "Z": 23,
         "N": 28,
-        "M_pred": 47433.995,
+        "M_pred": 47447.009,
         "M_obs": 47449.459,
-        "err_pct": -0.0326
+        "err_pct": -0.0052
       },
       {
         "atom": "Cr",
         "Z": 24,
         "N": 28,
-        "M_pred": 48365.293,
+        "M_pred": 48379.062,
         "M_obs": 48441.703,
-        "err_pct": -0.1577
+        "err_pct": -0.1293
       },
       {
         "atom": "Mn",
         "Z": 25,
         "N": 30,
-        "M_pred": 51154.607,
+        "M_pred": 51169.047,
         "M_obs": 51147.752,
-        "err_pct": 0.0134
+        "err_pct": 0.0416
       },
       {
         "atom": "Fe",
         "Z": 26,
         "N": 30,
-        "M_pred": 52086.433,
+        "M_pred": 52101.476,
         "M_obs": 52089.78,
-        "err_pct": -0.0064
+        "err_pct": 0.0225
       },
       {
         "atom": "Co",
         "Z": 27,
         "N": 32,
-        "M_pred": 54875.79,
+        "M_pred": 54891.458,
         "M_obs": 54858.006,
-        "err_pct": 0.0324
+        "err_pct": 0.061
       },
       {
         "atom": "Ni",
         "Z": 28,
         "N": 30,
-        "M_pred": 53954.731,
+        "M_pred": 53971.044,
         "M_obs": 53950.826,
-        "err_pct": 0.0072
+        "err_pct": 0.0375
       },
       {
         "atom": "Cu",
         "Z": 29,
         "N": 34,
-        "M_pred": 58597.543,
+        "M_pred": 58614.506,
         "M_obs": 58604.36,
-        "err_pct": -0.0116
+        "err_pct": 0.0173
       },
       {
         "atom": "Zn",
         "Z": 30,
         "N": 34,
-        "M_pred": 59530.36,
+        "M_pred": 59548.141,
         "M_obs": 59544.152,
-        "err_pct": -0.0232
+        "err_pct": 0.0067
       },
       {
         "atom": "Tc",
         "Z": 43,
         "N": 56,
-        "M_pred": 92077.746,
+        "M_pred": 92102.929,
         "M_obs": 92056.66,
-        "err_pct": 0.0229
+        "err_pct": 0.0503
       },
       {
         "atom": "Sn",
         "Z": 50,
         "N": 70,
-        "M_pred": 111605.625,
+        "M_pred": 111634.251,
         "M_obs": 111662.639,
-        "err_pct": -0.0511
+        "err_pct": -0.0254
       },
       {
         "atom": "Pb",
         "Z": 82,
         "N": 126,
-        "M_pred": 193530.724,
+        "M_pred": 193576.871,
         "M_obs": 193687.122,
-        "err_pct": -0.0807
+        "err_pct": -0.0569
       },
       {
         "atom": "U",
         "Z": 92,
         "N": 146,
-        "M_pred": 221470.947,
+        "M_pred": 221522.782,
         "M_obs": 221695.893,
-        "err_pct": -0.1015
+        "err_pct": -0.0781
       }
     ],
     "bonds_nf": [
