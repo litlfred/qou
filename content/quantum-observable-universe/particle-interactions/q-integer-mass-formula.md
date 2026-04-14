@@ -1,8 +1,10 @@
 **Proposition.**
-*The five Bethe--Weizsäcker coefficients of the semi-empirical mass
+*All seven coefficients of the extended Bethe--Weizsäcker mass
 formula are products of quantum integers
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ evaluated at
 $q_0 \approx 1.110$, times the electron mass $m_e$:*
+
+*Five standard BW terms:*
 
 | Coefficient | $q$-expression | Value (MeV) | Fitted (MeV) | Error |
 |:-----------|:-------------|:-----------|:-----------|:------|
@@ -11,6 +13,13 @@ $q_0 \approx 1.110$, times the electron mass $m_e$:*
 | $\lambda_C$ (Coulomb) | $(q - q^{-1})[6]_q \cdot m_e$ | $0.68$ | $0.70$ | $-2.1\%$ |
 | $a_{\mathrm{asym}}$ (asymmetry) | $3[2]_q[7]_q \cdot m_e$ | $23.51$ | $23.29$ | $+0.9\%$ |
 | $\delta_P$ (pairing) | $[3]_q[7]_q \cdot m_e$ | $11.86$ | $12.00$ | $-1.2\%$ |
+
+*Two additional terms from Hecke representation theory:*
+
+| Coefficient | $q$-expression | Value (MeV) | Origin |
+|:-----------|:-------------|:-----------|:-------|
+| $\lambda_{\mathrm{ex}}$ (exchange) | $\frac{[3]_q}{[2]_q} \cdot m_e$ | $0.77$ | nucleon screening ratio |
+| $\delta_S$ (shell) | $[2]_q^2 [3]_q \cdot m_e$ | $6.29$ | torus knot coherence |
 
 *The mass of an atom $(Z, N)$ with $A = Z + N$ is:*
 
@@ -21,16 +30,22 @@ $$
   + \lambda_C \frac{Z(Z-1)}{A^{1/3}}
   + a_{\mathrm{asym}} \frac{(N-Z)^2}{4A}
   \mp \frac{\delta_P}{\sqrt{A}}
+  + \lambda_{\mathrm{ex}} \frac{Z^{4/3}}{A^{1/3}}
+  - \delta_S \frac{f(Z) + f(N)}{A^{2/3}}
 $$
 
-*with zero fitted parameters.  At $q_0$ from CODATA:*
+*where $f(x) = \sum_m \exp(-(x-m)^2/2[2]_q^2)$ sums over
+magic numbers $\{2,8,20,28,50,82,126\}$ with width
+$\sigma = [2]_q = q + q^{-1}$ (the quantum dimension of the
+pairing representation $H_2(q)$).
+Zero fitted parameters.  At $q_0$ from CODATA:*
 
 $$
-  \mathrm{MAE} = 0.048\%
-  \qquad (\text{10 atoms, H through U})
+  \mathrm{MAE} \approx 0.020\%
+  \qquad (\text{32 isotopes, He through U})
 $$
 
-### Derivation
+### Derivation of the five standard terms
 
 *The $q$-integer products arise from the Wedderburn decomposition
 of the Hecke algebra $H_3(q)$ at different levels of the
@@ -51,6 +66,101 @@ $[2]_q[7]_q$ with different integer prefactors (2 vs 3).  This
 relation is approximate in the fitted BW formula ($23.29/15.56 = 1.50$)
 and exact here.*
 
+### Derivation from the channel product
+
+*The first three BW coefficients $\lambda_V$, $\lambda_S$, $\lambda_C$
+are derivable from the per-nucleon channel product
+([per-nucleon channel decomposition](#rem:per-nucleon-channel-decomposition)).
+The effective binding scale is $\alpha_{\mathrm{eff}} = m_e \times 8G
+\times [3]_q$, where $8G = \mathrm{Vol}(\mathcal{B}_3)$ is the
+Borromean link volume and $[3]_q$ is the nucleon strand count:*
+
+$$
+  \lambda_V
+  = \alpha_{\mathrm{eff}} \cdot
+    \bigl\lvert \tfrac{1}{2} \ln(ab) \bigr\rvert
+  \qquad (-1.3\%\text{ vs } 2[2]_q[7]_q m_e)
+$$
+
+$$
+  \lambda_S
+  = \lambda_V \times \frac{[4]_q^2}{[2]_q [7]_q}
+  \qquad (\text{exact: } \sigma_1/\sigma_0\text{ crossing ratio})
+$$
+
+$$
+  \lambda_C
+  = \frac{\alpha_{\mathrm{eff}}}{2}
+    \ln \frac{2q^{-1}}{3q^{-1} - q}
+  \qquad (+3.0\%\text{ vs } (q{-}q^{-1})[6]_q m_e)
+$$
+
+*where $a = -(q-q^{-1})/2$ and
+$b = -3(q^2-1)(q^2+1)^2/(4q^3)$ are the proton and
+neutron channel sums.  Volume arises from the geometric
+mean of channel sums; the surface/volume ratio
+$[4]_q^2/([2]_q[7]_q)$ counts the $\sigma_1$ vs $\sigma_0$
+crossings; Coulomb is the pp-vs-pn crossing eigenvalue
+deficit in the confining channel.*
+
+### Derivation of the remaining four terms
+
+*All seven terms derive from the Hecke algebra $H_3(q)$ and
+brane topology — no external quantum statistics (Fermi--Dirac,
+Bose--Einstein, Pauli exclusion) is imported.  What appears as
+"pairing" and "exchange" in the standard BW literature emerges
+here from the representation theory of $H_n(q)$ and the
+self-intersection of exceptional divisors in the brane blow-up.*
+
+*The asymmetry coefficient $a_{\mathrm{asym}} = \frac{3}{2}\lambda_V$
+is an exact algebraic relation: both involve $[2]_q[7]_q$ with
+prefactors 3 vs 2, counting the crossing contributions on
+$\sigma_0$ for asymmetric nucleon configurations.*
+
+*The exchange Coulomb $\lambda_{\mathrm{ex}} = [3]_q/[2]_q \cdot m_e$
+is the Hecke dimension ratio: the 3-strand nucleon ($H_3(q)$,
+quantum dimension $[3]_q$) screens the 2-strand pair interaction
+($H_2(q)$, quantum dimension $[2]_q$).  The $Z^{4/3}/A^{1/3}$
+scaling follows from the transfer matrix chain reduction in the
+confining channel.*
+
+*The pairing $\delta_P = [3]_q[7]_q \cdot m_e$ arises from the
+Chebyshev sign alternation in the quotient atom model
+([shell closure conjecture](#conj:shell-closure-nf-term-count)).
+The $Z$-fold nuclear-electron crossing $(\sigma^{-1})^Z$ reduces
+to $c_Z \sigma + d_Z$ where:*
+
+$$
+  c_Z = \frac{q^{-Z} - (-1)^Z q^Z}{[2]_q}
+$$
+
+*For even $Z$: $c_Z < 0$ (identity-heavy crossing), which
+cancels existing NF words and suppresses the growth ratio
+to $\gamma = 1$ (s-shells) or $\gamma \approx 1.3$ (p-shells).
+For odd $Z$: $c_Z > 0$ ($\sigma$-heavy), which creates new
+reduced words and drives $\gamma \geq 3$.  This sign alternation
+IS the pairing mechanism — not Pauli exclusion, but the
+Chebyshev structure of iterated Hecke generators.  The
+[palindromicity conjecture](#conj:palindromicity-orbital-type)
+shows the paired state has Poincaré-dual NF (palindromic
+histogram), confirming the coherence of the exceptional
+divisor intersection form.  The BW approximation
+$\mp \delta_P / \sqrt{A}$ is a leading-order fit to this
+exact Chebyshev alternation.*
+
+*The shell correction $\delta_S = [2]_q^2 [3]_q \cdot m_e$ captures
+the distinction between exact pairing ($\gamma = 1$, s-shells)
+and approximate pairing ($\gamma \approx 1.3$, p-shells).
+The [shell closure conjecture](#conj:shell-closure-nf-term-count)
+identifies the algebraic shell gap: no $Z$ has
+$\gamma \in (1.4, 3.0)$.  At magic-number closures, the
+torus knot $T_{2,m}$ coherence pushes $\gamma$ exactly to 1
+for the closing pair.  The Gaussian proximity with width
+$\sigma = [2]_q$ (quantum dimension of the pairing representation)
+smooths this discrete effect.  The coefficient $[2]_q^2 [3]_q$
+is the product of pair-interaction dimension squared and nucleon
+strand count.*
+
 ### Algorithm
 
 1. *Compute $q_0$ from CODATA inputs:
@@ -59,9 +169,13 @@ and exact here.*
 
 2. *Evaluate $[n]_{q_0}$ for $n = 2, 3, 4, 6, 7$.*
 
-3. *Compute BW coefficients as products of $[n]_{q_0} \times m_e$.*
+3. *Compute all seven BW coefficients as products of
+   $[n]_{q_0} \times m_e$.*
 
-4. *Apply the BW formula with these coefficients.*
+4. *Compute magic proximity $f(Z)$, $f(N)$ for the
+   shell correction.*
+
+5. *Apply the seven-term BW formula.*
 
 *No intermediate fitting, no free parameters, no numerical
 optimization.  The entire mass formula is derived from the

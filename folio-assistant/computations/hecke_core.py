@@ -43,13 +43,17 @@ TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q**2  # molecular energy unit (eV)
 KAPPA = M_E_MEV                    # nuclear binding scale (MeV)
 
-# Bethe-Weizsäcker coefficients as q-integer products × m_e
+# Seven-term Bethe-Weizsäcker coefficients as q-integer products × m_e
 # These are the Wedderburn weights at different levels of H_n(q)
 LAMBDA_V = 2 * q_int(2) * q_int(7) * M_E_MEV   # volume: 2[2][7]m_e ≈ 15.67 MeV
 LAMBDA_S = 2 * q_int(4)**2 * M_E_MEV            # surface: 2[4]²m_e ≈ 17.26 MeV
 LAMBDA_C = h * q_int(6) * M_E_MEV                # Coulomb: HA×[6]m_e ≈ 0.68 MeV
 A_ASYM = 3 * q_int(2) * q_int(7) * M_E_MEV     # asymmetry: 3[2][7]m_e ≈ 23.50 MeV
 DELTA_P = q_int(3) * q_int(7) * M_E_MEV         # pairing: [3][7]m_e ≈ 11.86 MeV
+LAMBDA_EX = q_int(3) / q_int(2) * M_E_MEV       # exchange: [3]/[2]m_e ≈ 0.77 MeV
+DELTA_S = q_int(2)**2 * q_int(3) * M_E_MEV      # shell: [2]²[3]m_e ≈ 6.29 MeV
+SIGMA_SHELL = q_int(2)                            # shell width: [2]_q ≈ 2.011
+MAGIC_NUMBERS = [2, 8, 20, 28, 50, 82, 126]
 
 # NF basis
 NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
@@ -445,11 +449,17 @@ def molecular_binding_vv(Z_A, N_A, Z_B, N_B, bond_g0=None, bond_g1=None):
 # Mass computation
 # ══════════════════════════════════════════════════════════════
 
+def magic_proximity(x, sigma=SIGMA_SHELL):
+    """Gaussian proximity to magic numbers with width σ = [2]_q."""
+    return sum(math.exp(-(x - m)**2 / (2 * sigma**2)) for m in MAGIC_NUMBERS)
+
+
 def binding_energy_bw(Z, N):
-    """Bethe-Weizsäcker binding energy (MeV) with q-integer coefficients.
+    """Seven-term Bethe-Weizsäcker binding energy (MeV) with q-integer coefficients.
 
     B(Z,N) = λ_V·A - λ_S·A^{2/3} - λ_C·Z(Z-1)/A^{1/3}
              - a_asym·(N-Z)²/(4A) + δ_P/√A
+             - λ_ex·Z^{4/3}/A^{1/3} + δ_S·(f(Z)+f(N))/A^{2/3}
 
     All coefficients are q-integer products × m_e (zero fitted parameters).
     """
@@ -457,6 +467,7 @@ def binding_energy_bw(Z, N):
     if A <= 1:
         return 0.0
 
+    # Standard five terms
     B = LAMBDA_V * A
     B -= LAMBDA_S * A**(2.0/3.0)
     B -= LAMBDA_C * Z * (Z - 1) / A**(1.0/3.0)
@@ -467,6 +478,12 @@ def binding_energy_bw(Z, N):
         B += DELTA_P / math.sqrt(A)
     elif Z % 2 == 1 and N % 2 == 1:
         B -= DELTA_P / math.sqrt(A)
+
+    # Term 6: exchange Coulomb (reduces overbinding at high Z)
+    B -= LAMBDA_EX * Z**(4.0/3.0) / A**(1.0/3.0)
+
+    # Term 7: shell correction (enhanced binding at magic closures)
+    B += DELTA_S * (magic_proximity(Z) + magic_proximity(N)) / A**(2.0/3.0)
 
     return B
 
