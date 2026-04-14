@@ -51,3 +51,13 @@ $$
 
 *Best predictions: Cl $+0.000\%$, K $-0.001\%$, Al $-0.002\%$,
 Ca $+0.003\%$, Mg $+0.003\%$, P $+0.003\%$.*
+
+*AME2020 experimental uncertainties are sub-keV for light nuclei
+($\delta M \lesssim 0.001$ MeV for $Z \leq 30$) and $\sim 1$ keV
+for heavy nuclei.  The prediction errors ($0.03$--$0.2\%$,
+corresponding to $0.3$--$200$ MeV) are orders of magnitude larger
+than experimental uncertainties.  The errors are systematic
+(all from the same $q$-integer BW formula) and reflect the
+semi-empirical nature of the BW approximation, not measurement
+uncertainty.  The full mass formula using SW period integrals
+should reduce these errors further.*
