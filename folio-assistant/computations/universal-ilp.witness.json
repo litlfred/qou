@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T04:30:31.854618+00:00",
-  "commitSha": "9ec618f949289c8701599e311b263d0ab1681fbb",
+  "computedAt": "2026-04-14T04:31:22.855978+00:00",
+  "commitSha": "19223afb7d2247035df4ae3b0fcda043a1a40f56",
   "assertions": [
     {
       "name": "electron",
@@ -24,7 +24,7 @@
   "computation": "universal-ilp",
   "scriptFile": "universal-ilp.py",
   "scriptHash": "c380e9eb8fd3",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "19223afb7d2247035df4ae3b0fcda043a1a40f56",
   "description": "Universal ILP: one LP at every level. min cr(K) s.t. K∈{knots}, G·NF(x·K)≥0, tr(x·K)≤tr(x). Derives confinement, gluon, electron, and covalent bond.",
   "contentBlock": "def:universal-ilp-algorithm",
   "parameters": {

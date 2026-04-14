@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T04:14:58.606175+00:00",
-  "commitSha": "8e82d0f04741fc383de466612a6d6f18b5288a81",
+  "computedAt": "2026-04-14T04:31:22.600564+00:00",
+  "commitSha": "19223afb7d2247035df4ae3b0fcda043a1a40f56",
   "assertions": [
     {
       "name": "H",
@@ -100,7 +100,7 @@
   "computation": "full-witness",
   "scriptFile": "full-witness.py",
   "scriptHash": "d48277fd9121",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "66c4c04b94e4cb63e9c85bf738722b1838e51ad0",
   "description": "Full witness: atomic masses (q-integer BW, 0.048% MAE), molecular binding (NF + vertex volume), beta decay Q-values. All using hecke_core.py infrastructure. Zero fitted parameters.",
   "contentBlock": "prop:q-integer-mass-formula",
   "parameters": {
