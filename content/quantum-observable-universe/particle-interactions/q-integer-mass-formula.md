@@ -125,27 +125,41 @@ scaling follows from the transfer matrix chain reduction in the
 confining channel.*
 
 *The pairing $\delta_P = [3]_q[7]_q \cdot m_e$ arises from the
-exceptional divisor self-intersection $E \cdot E = -1$ at nucleon
-crossings on the brane.  For even-even nuclei, the
+Chebyshev sign alternation in the quotient atom model
+([shell closure conjecture](#conj:shell-closure-nf-term-count)).
+The $Z$-fold nuclear-electron crossing $(\sigma^{-1})^Z$ reduces
+to $c_Z \sigma + d_Z$ where:*
+
+$$
+  c_Z = \frac{q^{-Z} - (-1)^Z q^Z}{[2]_q}
+$$
+
+*For even $Z$: $c_Z < 0$ (identity-heavy crossing), which
+cancels existing NF words and suppresses the growth ratio
+to $\gamma = 1$ (s-shells) or $\gamma \approx 1.3$ (p-shells).
+For odd $Z$: $c_Z > 0$ ($\sigma$-heavy), which creates new
+reduced words and drives $\gamma \geq 3$.  This sign alternation
+IS the pairing mechanism — not Pauli exclusion, but the
+Chebyshev structure of iterated Hecke generators.  The
 [palindromicity conjecture](#conj:palindromicity-orbital-type)
-shows the NF is Poincaré-dual (palindromic word-length histogram),
-meaning all exceptional divisors are coherently aligned.  This
-coherence is maximal for pure s-orbital configurations ($\ell = 0$)
-and breaks at the first $p$-electron.  The effect is not Pauli
-exclusion — it is the topological coherence of the
-brane's intersection form.*
+shows the paired state has Poincaré-dual NF (palindromic
+histogram), confirming the coherence of the exceptional
+divisor intersection form.  The BW approximation
+$\mp \delta_P / \sqrt{A}$ is a leading-order fit to this
+exact Chebyshev alternation.*
 
 *The shell correction $\delta_S = [2]_q^2 [3]_q \cdot m_e$ captures
-enhanced binding at magic-number closures from torus knot $T_{2,m}$
-coherence.  At a closed shell, the $m$ nucleons form a collective
-torus knot whose exceptional divisors are maximally aligned —
-identified by the
-[shell closure conjecture](#conj:shell-closure-nf-term-count)
-($\Delta n = 0$ at shell closures in the quotient atom NF).
-The width $\sigma = [2]_q$ is the quantum dimension of the pairing
-representation $H_2(q)$.  The coefficient $[2]_q^2 [3]_q$ is the
-product of pair-interaction dimension squared and nucleon strand
-count.*
+the distinction between exact pairing ($\gamma = 1$, s-shells)
+and approximate pairing ($\gamma \approx 1.3$, p-shells).
+The [shell closure conjecture](#conj:shell-closure-nf-term-count)
+identifies the algebraic shell gap: no $Z$ has
+$\gamma \in (1.4, 3.0)$.  At magic-number closures, the
+torus knot $T_{2,m}$ coherence pushes $\gamma$ exactly to 1
+for the closing pair.  The Gaussian proximity with width
+$\sigma = [2]_q$ (quantum dimension of the pairing representation)
+smooths this discrete effect.  The coefficient $[2]_q^2 [3]_q$
+is the product of pair-interaction dimension squared and nucleon
+strand count.*
 
 ### Algorithm
 
