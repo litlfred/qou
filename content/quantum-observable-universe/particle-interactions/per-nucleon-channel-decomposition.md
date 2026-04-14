@@ -76,17 +76,20 @@ $$
   [\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d}) \times [\sigma_1 - h](\mathfrak{d}\mathfrak{d}) \times [\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})
 $$
 
-| Channel | $G_N(c)$ | Numeric at $q_0$ |
-|:---:|:---:|:---:|
-| Sym | $\tfrac{1}{2}[2]_q \cdot q^{-1} \cdot \tfrac{1}{2}[2]_q$ | $+0.911$ |
-| Std $\lambda_1$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.222$ |
-| Std $\lambda_2$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.800$ |
-| Alt | $(-\tfrac{1}{2}[2]_q) \cdot (-q) \cdot (-\tfrac{1}{2}[2]_q)$ | $-1.122$ |
+| Channel | $\lambda_c$ | $G_N(c)$ | Numeric at $q_0$ |
+|:---:|:---:|:---:|:---:|
+| Sym (Trivial) | $q^3$ | $\tfrac{1}{2}[2]_q \cdot q^{-1} \cdot \tfrac{1}{2}[2]_q$ | $+0.9108$ |
+| Std $\lambda_1$ (Unconf.) | $-q$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.2222$ |
+| Std $\lambda_2$ (Conf.) | $q^{-1}$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.7995$ |
+| Alt (Sign) | $-q^{-3}$ | $(-\tfrac{1}{2}[2]_q) \cdot (-q) \cdot (-\tfrac{1}{2}[2]_q)$ | $-1.1221$ |
 
 **Channel sum:** $b = \sum_c G_N(c) = -3(q^2-1)(q^2+1)^2/(4q^3)$
-(verified: $b = -0.6340$ at $q_0$).
+(verified: $b = -0.6340$ at $q_0$; individual values sum to
+$0.9108 - 1.2222 + 0.7995 - 1.1221 = -0.6340$).
 
 The eight values $\{G_P(c), G_N(c)\}_{c \in \mathrm{channels}}$
-are rational functions of $q$ and completely determine all nuclear
+are algebraic functions of $q$ (rational in the sym and alt
+channels; roots of a quadratic in the standard channel) and
+completely determine all nuclear
 Q-values via the
 [branching factorization](#prop:branching-qvalue-factorization).
