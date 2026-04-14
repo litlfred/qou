@@ -3,13 +3,17 @@
 # Pre-installs all tools the QOU project needs so the agent can build,
 # validate, render, and test content without trial-and-error discovery.
 #
+# Most heavy tools (TeX Live, Bun, Lean, hecke-engine) are pre-built
+# in the paper-assistant Docker image (ghcr.io/litlfred/qou/paper-assistant).
+# This workflow installs them on the runner and caches the result.
+#
 # Installed:
 #   - TeX Live (pdflatex, latexmk, dvisvgm, biber) → PDF generation + TeX block preview
 #   - Pandoc → HTML export
 #   - Bun → content pipeline + MCP server
 #   - uv → lean-lsp-mcp
 #   - Lean 4 via elan → Lean formalization
-#   - Rust/Cargo (pre-installed) + hecke-engine build
+#   - hecke-engine (pre-built from Docker image)
 #   - Bun deps for content/ and scripts/mcp-server/
 #   - ccicons CTAN package (custom font)
 
@@ -31,6 +35,7 @@ jobs:
 
         permissions:
             contents: read
+            packages: read
 
         steps:
             - name: Checkout repository
@@ -53,7 +58,10 @@ jobs:
                     pandoc \
                     latexdiff \
                     graphviz \
-                    libgmp-dev
+                    libgmp-dev \
+                    libgmp10 \
+                    libmpfr6 \
+                    libmpc3
 
             # ── ccicons CTAN package ─────────────────────────────────
             - name: Install ccicons font from CTAN
@@ -93,11 +101,28 @@ jobs:
                   cd content && bun install
                   cd ../scripts/mcp-server && bun install
 
-            # ── Hecke engine (Rust) ──────────────────────────────────
-            - name: Build hecke-engine
+            # ── Hecke engine (pre-built from Docker image) ───────────
+            # Pull the paper-assistant image and extract pre-built
+            # hecke-engine binaries instead of compiling from source.
+            - name: Install pre-built hecke-engine
               run: |
-                  cd tools/hecke-engine
-                  cargo build --release
+                  echo "${{ github.token }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+                  docker pull ghcr.io/litlfred/qou/paper-assistant:latest || true
+                  CID=$(docker create ghcr.io/litlfred/qou/paper-assistant:latest 2>/dev/null) || true
+                  if [ -n "$CID" ]; then
+                    mkdir -p /tmp/hecke-bins
+                    docker cp "$CID:/usr/local/bin/" /tmp/hecke-extract/ 2>/dev/null || true
+                    for f in /tmp/hecke-extract/hecke-*; do
+                      [ -f "$f" ] && sudo install -m755 "$f" /usr/local/bin/
+                    done
+                    docker rm "$CID" > /dev/null 2>&1
+                  fi
+                  # Fallback: build from source if Docker extraction failed
+                  if ! command -v hecke-engine &> /dev/null; then
+                    echo "::warning::Docker extraction failed — building hecke-engine from source"
+                    cd tools/hecke-engine && cargo build --release
+                    sudo install -m755 target/release/hecke-* /usr/local/bin/ 2>/dev/null || true
+                  fi
 
             # Lean deps may fail on network issues or version mismatches;
             # the agent can still work in degraded mode without them.
@@ -121,6 +146,6 @@ jobs:
                   uv --version
                   lean --version || true
                   lake --version || true
-                  cargo --version
+                  hecke-engine --help 2>&1 | head -1 || echo "hecke-engine: not available"
                   rg --version | head -1
                   echo "=== All tools verified ==="

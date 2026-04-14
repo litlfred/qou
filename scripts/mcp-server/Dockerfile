@@ -2,7 +2,8 @@
 #
 # Single image for both the folio MCP server AND all CI/CD workflows.
 # Includes: Bun, TeX Live (full), Pandoc, Lean 4, lean-lsp-mcp,
-#           ripgrep, graphviz, latexdiff, gh CLI, Python + requests
+#           hecke-engine (Rust), ripgrep, graphviz, latexdiff,
+#           gh CLI, Python + requests
 #
 # Build:
 #   docker build -t paper-assistant -f scripts/mcp-server/Dockerfile .
@@ -71,6 +72,13 @@ RUN curl -fsSL https://bun.sh/install | bash
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# ── GMP / MPFR / MPC runtime libs (for hecke-engine binaries) ────
+# Installed here so the runtime stage has them; -dev packages are
+# only in the hecke-build stage.
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+    libgmp10 libmpfr6 libmpc3 \
+    && rm -rf /var/lib/apt/lists/*
+
 # ── Pre-warm TeX font/format caches ─────────────────────────────
 # Running a minimal compile ensures font maps, format files, and
 # kpathsea databases are fully built inside the image.
@@ -91,6 +99,32 @@ RUN echo "=== Base tools ===" && \
     gh --version | head -1 && \
     python3 --version && \
     python3 -c "import requests; print(f'requests {requests.__version__}')"
+
+# ── Hecke engine (Rust, multi-stage) ─────────────────────────────
+# Build all hecke-engine binaries in an isolated stage; only the
+# stripped executables are copied into the final image.
+
+FROM base AS hecke-build
+
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+    build-essential \
+    libgmp-dev \
+    libmpfr-dev \
+    libmpc-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Rust via rustup (minimal profile — no docs/clippy/rustfmt)
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
+    sh -s -- -y --profile minimal
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+COPY tools/hecke-engine/ /build/hecke-engine/
+
+# Build all release binaries and collect them in /hecke-bins
+RUN cd /build/hecke-engine && cargo build --release && \
+    mkdir -p /hecke-bins && \
+    find target/release -maxdepth 1 -type f -executable -name 'hecke*' \
+      -exec cp {} /hecke-bins/ \;
 
 # ── Lean 4 (via elan) ───────────────────────────────────────────
 
@@ -117,6 +151,9 @@ COPY scripts/mcp-server/package.json scripts/mcp-server/
 COPY content/package.json content/
 COPY .github/scripts/requirements.txt .github/scripts/requirements.txt
 
+# Copy pre-built hecke-engine binaries from the Rust build stage
+COPY --from=hecke-build /hecke-bins/ /usr/local/bin/
+
 # Install Lean deps and Bun deps
 RUN cd lean && lake update && lake exe cache get || true
 RUN cd scripts/mcp-server && bun install
@@ -135,6 +172,9 @@ RUN cd lean && lake build || true
 
 # Verify lean-lsp-mcp works
 RUN uvx lean-lsp-mcp --help > /dev/null 2>&1 || echo "lean-lsp-mcp not yet cached"
+
+# Verify hecke-engine binaries
+RUN hecke-engine --help > /dev/null 2>&1 || echo "hecke-engine not available"
 
 # ── Runtime ──────────────────────────────────────────────────────
 
