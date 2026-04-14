@@ -47,21 +47,41 @@ C_NE_attract = sp.Integer(1)
 D_NE_attract = -(q - 1/q)       # = −HA
 
 
+def sigma_inv_power(Z_eff):
+    """Compute (σ⁻¹)^Z via the Hecke recurrence.
+
+    The quotient of Z proton-electron crossings is (σ⁻¹)^Z, NOT Z·σ⁻¹.
+    In the braid picture, Z protons quotiented to one strand means the
+    electron wraps Z times — giving the Z-fold composition, reduced by
+    the Hecke relation σ² = hσ + 1.
+
+    Recurrence: (σ⁻¹)^Z = c_Z σ + d_Z with
+      c_{Z+1} = d_Z,  d_{Z+1} = c_Z - h·d_Z
+    """
+    h = q - 1/q
+    if Z_eff == 0:
+        return sp.Integer(0), sp.Integer(1)
+    c, d = sp.Integer(1), -(q - 1/q)  # Z=1: σ⁻¹ = σ - h
+    for _ in range(Z_eff - 1):
+        c, d = d, c - h * d
+    return sp.expand(c), sp.expand(d)
+
+
 def crossing(type_i, type_j, gen, Z_eff=1):
     """Build crossing element.
 
     type_i, type_j: 'nuc' (nuclear core) or 'e' (electron)
-    Z_eff: effective nuclear charge (scales the attraction)
+    Z_eff: effective nuclear charge (number of protons in nucleus)
+
+    For nuclear-electron crossings: uses (σ⁻¹)^Z (Z-fold Hecke
+    composition), not Z·σ⁻¹ (scalar multiple).
     """
     if type_i == 'e' and type_j == 'e':
         # ee repulsion: σ
         return SymbolicHeckeElement({(gen,): C_EE, (): D_EE})
     elif 'nuc' in (type_i, type_j):
-        # Nuclear-electron: σ⁻¹ scaled by Z_eff
-        # Each proton contributes one σ⁻¹. Z protons → coefficient Z.
-        # In the Hecke algebra: Z·σ⁻¹ = Z·(σ − HA) = Z·σ + Z·(−HA)
-        c = sp.Integer(Z_eff)
-        d = Z_eff * (-(q - 1/q))
+        # Nuclear-electron: (σ⁻¹)^Z_eff via Hecke recurrence
+        c, d = sigma_inv_power(Z_eff)
         return SymbolicHeckeElement({(gen,): c, (): d})
     else:
         raise ValueError(f"Unknown pair: ({type_i}, {type_j})")
