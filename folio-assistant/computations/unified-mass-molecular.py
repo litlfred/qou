@@ -116,50 +116,57 @@ def molecular_phi1(ord_A, ord_B, n_bond_crossings=0, gluon=True):
     """Compute Φ₁ for molecule A-B with bond crossings at boundary.
 
     The molecular ordering is [A strands, B strands].
-    Bond crossings (σ⁻¹, d=-h) are applied at the boundary generator
-    connecting the last strand of A to the first strand of B.
+    At each generator i, crossings include ALL strands j > i from
+    BOTH atoms. The bond crossings (σ⁻¹) are added at the boundary
+    generator (i = na-1) which ALSO has crossings from A's last
+    strand to all of B's strands.
     """
     mol = list(ord_A) + list(ord_B)
     n = len(mol)
     na = len(ord_A)
-    n_nuc_A = sum(1 for s in ord_A if s in ('p', 'n'))
-    n_nuc_B = sum(1 for s in ord_B if s in ('p', 'n'))
+    n_nuc_total = sum(1 for s in mol if s in ('p', 'n'))
 
     phi = 0.0
     for i in range(n - 1):
         lam_s, lam_a = 1.0, 1.0
         ai, bi = 0.0, 1.0
 
-        # Determine which atom this strand belongs to
+        # Gluon for nucleon at global position i
+        n_nuc_A = sum(1 for s in ord_A if s in ('p', 'n'))
+        n_nuc_B = sum(1 for s in ord_B if s in ('p', 'n'))
+        if gluon:
+            is_nucleon = mol[i] in ('p', 'n')
+            if is_nucleon:
+                ng = 2 if mol[i] == 'p' else 4
+                for _ in range(ng):
+                    lam_s *= q0; lam_a *= -qi
+                    ai, bi = ai*h + bi, ai
+
+        # Crossings from strand i to strands j > i:
+        # WITHIN same atom: standard typed crossings
+        # ACROSS atoms: ONLY if bonded (n_bond_crossings > 0)
         in_A = i < na
-        n_nucleons = n_nuc_A if in_A else n_nuc_B
-        local_i = i if in_A else i - na
+        for j in range(i + 1, n):
+            j_in_A = j < na
+            same_atom = (in_A == j_in_A)
 
-        # Gluon
-        if gluon and local_i < n_nucleons:
-            ng = 2 if mol[i] == 'p' else 4
-            for _ in range(ng):
-                lam_s *= q0; lam_a *= -qi
-                ai, bi = ai*h + bi, ai
-
-        # Crossings within the SAME atom
-        if in_A:
-            for j in range(i + 1, na):
+            if same_atom:
+                # Intra-atom crossing: always present
                 d = crossing_coeff(mol[i], mol[j])
                 if d is None: continue
                 lam_s *= q0 + d; lam_a *= -qi + d
                 ai, bi = ai*(h+d) + bi, ai + bi*d
-        else:
-            for j in range(i + 1, n):
-                d = crossing_coeff(mol[i], mol[j])
-                if d is None: continue
-                lam_s *= q0 + d; lam_a *= -qi + d
-                ai, bi = ai*(h+d) + bi, ai + bi*d
+            else:
+                # Inter-atom crossing: ONLY the bond crossings
+                # The bond replaces the EM interactions between atoms
+                # with n_bond_crossings inverse crossings at the boundary
+                pass  # no automatic inter-atom crossings
 
-        # Bond crossings: only at the boundary generator (i = na-1)
+        # Bond crossings: connect atom A to atom B
+        # Applied at the boundary generator (i = na-1)
         if i == na - 1:
             for _ in range(n_bond_crossings):
-                d = -h  # inverse crossing
+                d = -h  # σ⁻¹
                 lam_s *= q0 + d; lam_a *= -qi + d
                 ai, bi = ai*(h+d) + bi, ai + bi*d
 

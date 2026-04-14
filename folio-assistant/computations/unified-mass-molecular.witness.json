@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T00:51:27.871113+00:00",
-  "commitSha": "8784b60ecefbf650edad6f33a37380c56dc48097",
+  "computedAt": "2026-04-14T00:56:54.535802+00:00",
+  "commitSha": "be666f2e261119a79073319ec10c2ee3e4b719e4",
   "assertions": [
     {
       "name": "H2",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 8,
   "computation": "unified-mass-molecular",
   "scriptFile": "unified-mass-molecular.py",
-  "scriptHash": "866e88e9b718",
-  "scriptCommitSha": "",
+  "scriptHash": "45dc98dfacd8",
+  "scriptCommitSha": "be666f2e261119a79073319ec10c2ee3e4b719e4",
   "description": "Unified atomic mass + molecular binding. Per-generator 3-channel Wedderburn on H_{A+Z}(q) with electrons. Bond: inverse crossings at boundary. Gluon: LP-derived.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
