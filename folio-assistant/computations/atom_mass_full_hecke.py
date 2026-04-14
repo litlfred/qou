@@ -72,12 +72,31 @@ def alt_eigenvalue(c, d):
     return -c * q_inv + d
 
 
-def std_chain_reduce(gen_idx, ordering):
+def std_chain_reduce(gen_idx, ordering, include_gluon=False):
     """2×2 transfer matrix chain reduction (symbolic in q).
-    Returns (a, b) such that V̂_std = z·a + b."""
+    Returns (a, b) such that V̂_std = z·a + b.
+
+    If include_gluon=True, prepend LP-derived gluon crossings:
+      proton (1): 2×σ₀ = [(1,0), (1,0)]
+      neutron (0): L₊→L₋ effective = [(1,0), (1,0), (1,0), (1,0)]
+    """
     a = sp.Integer(0)
     b = sp.Integer(1)
     A = len(ordering)
+
+    # Gluon: internal crossings for the nucleon at gen_idx
+    if include_gluon and gen_idx < A:
+        if ordering[gen_idx] == 1:  # proton: 2×σ₀
+            for c, d in [(sp.Integer(1), sp.Integer(0))] * 2:
+                new_a = sp.expand(a * c * HA + a * d + b * c)
+                new_b = sp.expand(a * c + b * d)
+                a, b = new_a, new_b
+        else:  # neutron: L₊→L₋ effective (4 positive crossings)
+            for c, d in [(sp.Integer(1), sp.Integer(0))] * 4:
+                new_a = sp.expand(a * c * HA + a * d + b * c)
+                new_b = sp.expand(a * c + b * d)
+                a, b = new_a, new_b
+
     for j in range(gen_idx + 1, A):
         c, d = crossing_coeffs(ordering[gen_idx], ordering[j])
         new_a = sp.expand(a * c * HA + a * d + b * c)
@@ -86,7 +105,7 @@ def std_chain_reduce(gen_idx, ordering):
     return a, b
 
 
-def three_channel_traces_symbolic(ordering):
+def three_channel_traces_symbolic(ordering, include_gluon=False):
     """Compute symbolic traces for all three channels.
 
     Returns (tr_sym, tr_std, tr_alt) as sympy expressions in q.
@@ -94,6 +113,10 @@ def three_channel_traces_symbolic(ordering):
     Symmetric and alternating traces are kept in FACTORED form
     (products of linear factors in q) to avoid combinatorial blowup.
     Standard trace uses the chain-reduced traced volume.
+
+    If include_gluon=True, prepend LP-derived gluon crossings per nucleon:
+      proton: 2×σ → sym ×q², alt ×q⁻²
+      neutron: 4×σ → sym ×q⁴, alt ×q⁻⁴
     """
     A = len(ordering)
     if A <= 1:
@@ -102,6 +125,17 @@ def three_channel_traces_symbolic(ordering):
     # Symmetric and alternating: collect all crossing factors
     sym_factors = []
     alt_factors = []
+
+    # Gluon: internal crossing eigenvalues per nucleon
+    if include_gluon:
+        for i in range(A):
+            if ordering[i] == 1:  # proton: 2 gluon crossings
+                sym_factors.extend([q, q])       # 2×σ in sym → q each
+                alt_factors.extend([-q_inv, -q_inv])  # 2×σ in alt → -q⁻¹ each
+            else:  # neutron: 4 gluon crossings
+                sym_factors.extend([q, q, q, q])
+                alt_factors.extend([-q_inv, -q_inv, -q_inv, -q_inv])
+
     for i in range(A):
         for j in range(i + 1, A):
             c, d = crossing_coeffs(ordering[i], ordering[j])
@@ -114,19 +148,19 @@ def three_channel_traces_symbolic(ordering):
     # Standard: product of traced volumes (each already reduced)
     std_factors = []
     for i in range(A - 1):
-        a, b = std_chain_reduce(i, ordering)
+        a, b = std_chain_reduce(i, ordering, include_gluon=include_gluon)
         std_factors.append(z * a + b)
     tr_std = sp.Mul(*std_factors)
 
     return tr_sym, tr_std, tr_alt
 
 
-def full_markov_trace_symbolic(ordering):
+def full_markov_trace_symbolic(ordering, include_gluon=False):
     """Full Wedderburn-weighted Markov trace (symbolic).
 
     w_sym = 1/6, w_std = 4/6, w_alt = 1/6.
     """
-    tr_sym, tr_std, tr_alt = three_channel_traces_symbolic(ordering)
+    tr_sym, tr_std, tr_alt = three_channel_traces_symbolic(ordering, include_gluon=include_gluon)
     return Rational(1, 6) * tr_sym + Rational(4, 6) * tr_std + Rational(1, 6) * tr_alt
 
 
@@ -325,8 +359,9 @@ def compute_atom(Z, N, element_name):
     else:
         ordering, method = ground_state_ordering(Z, N)
 
-    # Step 2: Symbolic three-channel traces
-    tr_sym, tr_std, tr_alt = three_channel_traces_symbolic(ordering)
+    # Step 2: Symbolic three-channel traces with LP-derived gluon
+    # (proton: 2×σ₀, neutron: 4×σ from L₊→L₋)
+    tr_sym, tr_std, tr_alt = three_channel_traces_symbolic(ordering, include_gluon=True)
     tr_full = Rational(1, 6) * tr_sym + Rational(4, 6) * tr_std + Rational(1, 6) * tr_alt
 
     # Step 3: Symbolic crossing energy

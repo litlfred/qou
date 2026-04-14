@@ -8,7 +8,10 @@ three for the proton ($\mathfrak{u}, \mathfrak{u}, \mathfrak{d}$),
 three for the neutron ($\mathfrak{u}, \mathfrak{d}, \mathfrak{d}$).
 Each set of three quarks is confined by $\mathcal{B}_3$
 ([confinement selection](#prop:confinement-operator-selection)),
-then the two nucleons are Hopf-linked via a $p$-$n$ typed crossing
+then stabilised by LP-derived gluon crossings: $2\sigma_0$ for
+the proton, $L_+L_-$ for the neutron
+([integer LP gluon](#prop:mass-endomorphism-tower)).
+The two nucleons are then Hopf-linked via a $p$-$n$ typed crossing
 $(\sigma_0 - \tfrac{1}{2}H_A)$.
 
 ## Nucleus NF

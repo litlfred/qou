@@ -116,6 +116,26 @@ export default chapter({
         "atomic-braid-mass",
         "atomic-nf-witness",
         "groebner-reduction-methods",
+        "tower-binding-energy",
+      ],
+    }),
+
+    // ── §9. Branching Q-value derivation ─────────────────────────
+    section({
+      title: "Branching Q-value derivation",
+      label: "sec:branching-qvalue",
+      blocks: [
+        "per-nucleon-channel-decomposition",
+        "spectator-normalization",
+        "branching-qvalue-factorization",
+        "parity-regime-selection",
+        "corrected-markov-trace",
+        "mass-ordering-corrected",
+        "positron-correction",
+        "tritium-qvalue-symbolic",
+        "frobenius-positivity-filter",
+        "categorical-quantity-map",
+        "b3-local-minimum",
       ],
     }),
   ],

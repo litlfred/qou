@@ -6,8 +6,12 @@ The doubly magic alpha particle.
 
 Twelve $\gamma\gamma$ pair productions produce four nucleons
 (2 protons, 2 neutrons), each confined by $\mathcal{B}_3$
-([confinement selection](#prop:confinement-operator-selection)).
-The four nucleons are linked by inter-nucleon typed crossings
+([confinement selection](#prop:confinement-operator-selection))
+and stabilised by LP-derived gluon crossings: $2\sigma_0$
+per proton, $L_+L_-$ per neutron
+([integer LP gluon](#prop:mass-endomorphism-tower)).
+The four nucleons ($11$ crossings each for protons, $13$ for
+neutrons) are linked by inter-nucleon typed crossings
 ($p$-$p$: $+\sigma$, $p$-$n$: mixed, $n$-$n$: $-H_A$ shifted).
 
 ## Nucleus NF ($\alpha$ particle)

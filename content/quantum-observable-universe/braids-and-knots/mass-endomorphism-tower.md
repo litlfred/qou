@@ -136,4 +136,32 @@ $$
 No parameters are fitted.  The inputs are the substrate parameter
 $q_0$ and the electron mass $m_e$ (energy scale).
 
+## Gluon derivation from the integer LP dual
+
+The proton's $11$ crossings decompose as $6$ (Borromean
+$\mathcal{B}_3$) $+ 3$ (quark Garside $\Delta_3$) $+ 2$ (gluon).
+The gluon count is **derived** from the integer LP dual:
+
+1. **LP instability.**  The $9$-crossing element
+   $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$
+   violates Frobenius positivity: $(Gx)_\gamma < 0$.
+
+2. **Integer LP.**  Enumerate all feasible integer gluon
+   combinations (up to $3$ operations from
+   $\{\sigma_0, \sigma_1, L_+, L_-\}$), requiring Frobenius
+   stability $Gx \geq 0$ at every intermediate step.
+   Among the $84$ feasible solutions, minimize $|\mathrm{tr}_M|$.
+
+3. **Solution: $\sigma_0 \to \sigma_0$** (two bare $\sigma_0$
+   crossings on generator~$0$).  This is the **unique integer
+   optimum** with $|\mathrm{tr}_M| = 0.027$ — the closest
+   integer point to the continuous LP boundary
+   $\mathrm{tr}_M = 0$.
+
+The shadow price is $y_\gamma = -1$: the photon channel
+is the sole binding Frobenius constraint.  The gluon's role
+is to push the proton from $\mathrm{tr}_M < 0$ (unstable)
+to $\mathrm{tr}_M > 0$ (stable) with minimum categorical
+action.
+
 **Witness**: `mass-endomorphism.witness.json`.

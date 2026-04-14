@@ -19,7 +19,7 @@ tr_basis = {
     'σ₁': z,
     'L₊': z**2,
     'L₋': z**2,
-    'e⁻': h * z**2 + z,
+    'e⁻': z**3,
 }
 
 print("Markov trace of NF basis elements (symbolic):")
