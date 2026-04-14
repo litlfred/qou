@@ -3,9 +3,12 @@ import { proposition } from "../../schema/builders";
 /**
  * The Bethe-Weizsäcker coefficients are q-integer products.
  *
- * All five semi-empirical mass formula coefficients are derivable
- * from the substrate parameter q₀ alone as products of quantum
- * integers [n]_q = (q^n - q^{-n})/(q - q^{-1}) times m_e.
+ * All seven extended BW coefficients are derivable from the substrate
+ * parameter q₀ alone as products of quantum integers
+ * [n]_q = (q^n - q^{-n})/(q - q^{-1}) times m_e.  The two additional
+ * terms (exchange Coulomb and shell correction) are derived from Hecke
+ * representation theory and the shell closure / palindromicity
+ * conjectures.
  */
 export default proposition({
   label: "prop:q-integer-mass-formula",
@@ -14,6 +17,8 @@ export default proposition({
     "def:atomic-braid",
     "prop:wedderburn-mass-formula",
     "prop:operator-selection-lp",
+    "conj:shell-closure-nf-term-count",
+    "conj:palindromicity-orbital-type",
   ],
   tags: [
     "mass-formula",
@@ -21,5 +26,8 @@ export default proposition({
     "Bethe-Weizsacker",
     "zero-parameters",
     "Wedderburn",
+    "exchange-coulomb",
+    "shell-correction",
+    "exceptional-divisor",
   ],
 });

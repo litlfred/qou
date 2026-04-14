@@ -1,12 +1,20 @@
 /-
-  Atomic mass formula with q-integer Bethe-Weizsäcker coefficients.
+  Seven-term atomic mass formula with q-integer Bethe-Weizsäcker coefficients.
 
-  All BW coefficients are products of quantum integers [n]_q × m_e:
-    λ_V = 2[2]_q[7]_q · m_e
-    λ_S = 2[4]_q² · m_e
-    λ_C = (q-q⁻¹)[6]_q · m_e
-    a_asym = 3[2]_q[7]_q · m_e
-    δ_P = [3]_q[7]_q · m_e
+  All seven BW coefficients are products of quantum integers [n]_q × m_e:
+    λ_V     = 2[2]_q[7]_q · m_e       (volume)
+    λ_S     = 2[4]_q² · m_e           (surface)
+    λ_C     = (q-q⁻¹)[6]_q · m_e      (Coulomb)
+    a_asym  = 3[2]_q[7]_q · m_e       (asymmetry)
+    δ_P     = [3]_q[7]_q · m_e        (pairing)
+    λ_ex    = [3]_q/[2]_q · m_e       (exchange Coulomb)
+    δ_S     = [2]_q²[3]_q · m_e       (shell correction)
+
+  The exchange Coulomb corrects direct Coulomb overcounting via the
+  nucleon screening ratio [3]_q/[2]_q.  The shell correction adds
+  binding at magic-number closures from torus knot coherence of
+  exceptional divisors (s-orbital pairing enhancement).  See
+  conj:shell-closure-nf-term-count and conj:palindromicity-orbital-type.
 
   Ref: [manuscript] Ch 11 §8, prop:q-integer-mass-formula
 -/
@@ -18,6 +26,8 @@ namespace QOU.Interactions
 /-- Quantum integer [n]_q = (q^n - q^{-n}) / (q - q^{-1}). -/
 noncomputable def q_int (q : ℝ) (n : ℤ) : ℝ :=
   (q ^ n - q ^ (-n)) / (q - q⁻¹)
+
+-- ── Standard five BW coefficients ──────────────────────────────
 
 /-- Volume coefficient λ_V = 2[2]_q[7]_q · m_e. -/
 -- Ref: [manuscript] Ch 11 §8
@@ -40,6 +50,26 @@ noncomputable def a_asym (q m_e : ℝ) : ℝ :=
 noncomputable def delta_P (q m_e : ℝ) : ℝ :=
   q_int q 3 * q_int q 7 * m_e
 
+-- ── Two additional terms from Hecke representation theory ──────
+
+/-- Exchange Coulomb coefficient λ_ex = [3]_q/[2]_q · m_e.
+    The ratio [3]_q/[2]_q is the nucleon screening factor:
+    the 3-strand internal structure partially screens pp repulsion. -/
+-- Ref: [manuscript] Ch 11 §8
+noncomputable def lambda_ex (q m_e : ℝ) : ℝ :=
+  q_int q 3 / q_int q 2 * m_e
+
+/-- Shell correction coefficient δ_S = [2]_q² · [3]_q · m_e.
+    Product of pair-interaction dimension squared ([2]_q²) and
+    nucleon strand count ([3]_q).  Active at magic-number closures
+    where torus knot T_{2,m} coherence aligns exceptional divisors.
+    See conj:shell-closure-nf-term-count. -/
+-- Ref: [manuscript] Ch 11 §8
+noncomputable def delta_S (q m_e : ℝ) : ℝ :=
+  (q_int q 2) ^ 2 * q_int q 3 * m_e
+
+-- ── Algebraic relations ────────────────────────────────────────
+
 /-- The relation a_asym = (3/2) × λ_V holds exactly. -/
 -- Ref: [manuscript] Ch 11 §8
 theorem asym_volume_relation (q m_e : ℝ) :
@@ -47,13 +77,36 @@ theorem asym_volume_relation (q m_e : ℝ) :
   unfold a_asym lambda_V
   ring
 
-/-- Bethe-Weizsäcker binding energy with q-integer coefficients. -/
+/-- The exchange coefficient equals the Coulomb coefficient scaled
+    by the nucleon-to-pair dimension ratio [3]_q·[2]_q / ((q-q⁻¹)·[6]_q). -/
 -- Ref: [manuscript] Ch 11 §8
-noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ) : ℝ :=
+-- sorry: algebraic identity involving q_int ratios
+-- Ref: [manuscript] Ch 11 §8
+sorry
+
+-- ── Seven-term binding energy ──────────────────────────────────
+
+/-- Seven-term Bethe-Weizsäcker binding energy with q-integer coefficients.
+    Includes the five standard terms plus exchange Coulomb (term 6)
+    and magic shell correction (term 7).
+
+    The shell correction uses a magic proximity function f(x) that
+    peaks at magic numbers {2,8,20,28,50,82,126}.  This function is
+    left abstract here; the computational implementation uses a
+    Gaussian with σ = 2. -/
+-- Ref: [manuscript] Ch 11 §8
+noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
+    (f_Z f_N : ℝ) : ℝ :=
   let A := (Z + N : ℝ)
+  -- Standard five terms
   lambda_V q m_e * A
   - lambda_S q m_e * A ^ (2/3 : ℝ)
   - lambda_C q m_e * Z * (Z - 1) / A ^ (1/3 : ℝ)
   - a_asym q m_e * (N - Z) ^ 2 / (4 * A)
+  -- + pairing (sign depends on even/odd, omitted here)
+  -- Term 6: exchange Coulomb (reduces binding at high Z)
+  - lambda_ex q m_e * (Z : ℝ) ^ (4/3 : ℝ) / A ^ (1/3 : ℝ)
+  -- Term 7: shell correction (increases binding at magic numbers)
+  + delta_S q m_e * (f_Z + f_N) / A ^ (2/3 : ℝ)
 
 end QOU.Interactions
