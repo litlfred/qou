@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-04-13T17:13:44.483704+00:00",
-  "commit_sha": "1839b7cc046b4e0433a5b4f12cb029c4120e665f",
+  "generated_at": "2026-04-14T21:17:25.855561+00:00",
+  "commit_sha": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
   "entry_count": 23,
   "ambiguity_count": 1,
   "entries": [
@@ -164,7 +164,7 @@
       "narrative_term": "{Neutron (categorical)}",
       "lean_name": "QOU.DescartesUniverse.CategoricalNeutron",
       "kind": "def",
-      "narrative_definition": "The  is the baryon with 1 + 2 crossing partition: one up quark and two down quarks in the Borromean braid _3 (hyperref[conj:borromean-quark]Borromean quark).  [  = _3(,,) ]   Same as hyperref[def:categorical-proton]proton Step 1: (_3) = +1.000, with intrinsic Hopf link content (no separate _H factor).   The two down quarks introduce stronger -H_A shifts than the proton's single down quark:  l l l toprule Pair & Type & Crossing element  midrule (0,1) & - & sigma_0 - 2H_A   (0,2) & - & sigma_0 - 2",
+      "narrative_definition": "The  is the baryon with 1 + 2 crossing partition: one up quark and two down quarks in the Borromean braid _3 (hyperref[conj:borromean-quark]Borromean quark).  [  = _3(,,) ]   Same as hyperref[def:categorical-proton]proton Step 1: (_3) = +1.000, with intrinsic Hopf link content (no separate _H factor).   The two down quarks introduce stronger -H_A shifts than the proton's single down quark:  l l l toprule Pair & Type & Crossing element  midrule (1,2) & - & sigma_0 - H_A   (0,1) & - & sigma_0 - 2H",
       "latex_label": "def:categorical-neutron",
       "chapter": 6
     },
