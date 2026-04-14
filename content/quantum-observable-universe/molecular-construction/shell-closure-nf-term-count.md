@@ -17,14 +17,17 @@ protons, $N$ neutrons, and $Z$ electrons, quotient the nuclear
 core $\mathcal{N}(Z, N)$ to a single formal variable.  The
 resulting element lives in $H_{Z+1}(q)$ with crossing types:
 
-| Pair | Element | Coefficients $(c, d)$ |
-|:-----|:--------|:---------------------|
-| $\mathcal{N}\text{-}e$ | $Z \cdot \sigma^{-1}$ | $(Z,\; -Z(q - q^{-1}))$ |
+| Pair | Element | Coefficients $(c_Z, d_Z)$ |
+|:-----|:--------|:--------------------------|
+| $\mathcal{N}\text{-}e$ | $(\sigma^{-1})^Z$ | Hecke recurrence (see below) |
 | $e\text{-}e$ | $\sigma$ | $(1,\; 0)$ |
 
-The nucleus–electron crossing is $Z$ copies of the attractive
-$\sigma^{-1}$ (one per proton); the electron–electron crossing
-is the repulsive $\sigma$.
+The nucleus–electron crossing is the $Z$-fold composition
+$(\sigma^{-1})^Z$, not the scalar multiple $Z \cdot \sigma^{-1}$.
+In the braid picture, quotienting $Z$ proton strands to one
+means the electron wraps $Z$ times.  The Hecke relation
+$\sigma^2 = h\sigma + 1$ reduces $(\sigma^{-1})^Z = c_Z\sigma + d_Z$
+via the recurrence $c_{Z+1} = d_Z$, $d_{Z+1} = c_Z - h \cdot d_Z$.
 
 **The NF.** Build the atom by sequential Hopf-linking:
 start with $\mathcal{N}$, add $e_1, e_2, \ldots, e_Z$ one at
