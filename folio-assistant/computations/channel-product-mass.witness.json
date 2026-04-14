@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T15:06:41.006497+00:00",
-  "commitSha": "726d3076db353313a5e8e880c70b1860008ee76c",
+  "computedAt": "2026-04-14T16:24:23.782584+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
       "name": "He-4 mass",
@@ -294,7 +294,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "channel-product-mass",
   "scriptFile": "channel_product_mass.py",
   "scriptHash": "e82186d514c2",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T15:40:32.110837+00:00",
-  "commitSha": "a47d133426c29b66e43e19f992c5e4054d2b03e8",
+  "computedAt": "2026-04-14T16:24:18.281487+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
       "name": "He-4 mass",
@@ -303,7 +303,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 32,
   "computation": "q-integer-bw-7term",
   "scriptFile": "q_integer_bw_7term.py",
   "scriptHash": "f7bfed9d865d",

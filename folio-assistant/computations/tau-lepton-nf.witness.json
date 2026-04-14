@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T15:10:39.429245+00:00",
-  "commitSha": "726d3076db353313a5e8e880c70b1860008ee76c",
+  "computedAt": "2026-04-14T16:24:55.119944+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
       "name": "Continuant recurrence bₙ₊₁ = h·bₙ + bₙ₋₁ (all n)",
@@ -51,7 +51,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "tau-lepton-nf",
   "scriptFile": "tau-lepton-nf.py",
   "scriptHash": "5a1c2a6ff89b",

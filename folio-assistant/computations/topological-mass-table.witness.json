@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T15:07:40.097331+00:00",
-  "commitSha": "726d3076db353313a5e8e880c70b1860008ee76c",
+  "computedAt": "2026-04-14T16:24:44.473333+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
       "name": "m_μ/m_e = Vol(4₁)/ℏ_q² (self-consistency)",
@@ -123,7 +123,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "topological-mass-table",
   "scriptFile": "topological-mass-table.py",
   "scriptHash": "df99f918db14",

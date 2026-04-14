@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-04-14T15:10:23.919074+00:00",
-  "commitSha": "726d3076db353313a5e8e880c70b1860008ee76c",
+  "computedAt": "2026-04-14T16:24:54.850068+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
       "name": "ℏ_q² = Vol(4_1) / (m_μ/m_e)",
@@ -92,7 +92,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "mass-from-q-symbolic",
   "scriptFile": "mass-from-q-symbolic.py",
   "scriptHash": "43e02aded403",

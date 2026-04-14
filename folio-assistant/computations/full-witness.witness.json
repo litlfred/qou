@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T15:40:33.322947+00:00",
-  "commitSha": "a47d133426c29b66e43e19f992c5e4054d2b03e8",
+  "computedAt": "2026-04-14T16:24:28.205834+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
       "name": "H",
@@ -96,7 +96,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "full-witness",
   "scriptFile": "full-witness.py",
   "scriptHash": "6097b653f6cd",
