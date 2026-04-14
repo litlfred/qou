@@ -2,12 +2,18 @@
 
 ## What Was Accomplished
 
-### 1/α Fine Structure Constant (0.155% → 0.0002%)
-- **Formula**: 1/α = q·[9]·[10] / (1 - δ), δ = (CS₁+CS₂)·([2]_q/2)·ℏ_q²/bare
-- CS(T_{2,9}) = π²·10/9, CS(T_{3,5}) = π²·16/15 (Chern-Simons of force carriers)
-- Result: 137.0357 vs observed 137.0360 (2 ppm)
-- **Remaining gap**: 0.000292 = 0.03×ℏ_q²
-- File: `hecke_core.py` has `ALPHA_EM_INV_DERIVED`
+### 1/α Fine Structure Constant (bare: 0.155% off)
+- **Bare formula**: 1/α = q·[9]·[10] = 136.823 (0.155% from CODATA 137.036)
+- α is NOT a Markov trace.  It is the antisymmetric R-matrix eigenvalue (q⁻¹)
+  divided by q-dimensions of force carriers ([9]_q · [10]_q).  These are
+  representation-theoretic quantities (eigenvalues, characters), not traces.
+- **CS correction (RETRACTED)**: The Chern-Simons correction (CS(T_{2,9})+CS(T_{3,5}))·ℏ_q²
+  was numerically close (2 ppm) but not categorically justified.  None of the
+  categorical trace formulas match.
+- The 0.155% gap should come from the descent decomposition's exceptional
+  divisors — the same framework that gives surface/Coulomb/exchange corrections
+  to the mass volume term — but applied to the EM endomorphism P_anti.
+- File: `hecke_core.py` has `ALPHA_EM_INV_DERIVED` (bare value only)
 
 ### 11-Term BW Mass Formula (MAE 0.007%)
 - ALL coefficients identified as q-integer products × m_e
@@ -30,19 +36,27 @@
 
 ## IMMEDIATE NEXT STEPS
 
-### A. Close the 1/α gap (0.03×ℏ_q²)
+### A. Close the 1/α gap (0.155%)
 
-The gap = 0.000292. Four candidates were tested:
-1. **Classical CS** (current): gap = +0.000292 (undershoot)
-2. **q-deformed CS** (replace m²-1 → [m]²-1): gap = -0.025 (overshoot 85×)
-3. **Linking correction**: gap = -0.138 (overshoot 470×)
-4. **Cross-term CS₁·CS₂·ℏ⁴**: gap = -0.011 (overshoot 38×)
+The bare formula 1/α = q·[9]·[10] = 136.823 is 0.155% off.  The gap = 0.213.
 
-**Where to investigate**:
-- The q-deformation overshoots badly. The CORRECT q-CS should use a PARTIAL q-deformation — not replacing all integers with q-integers, but only the ones that correspond to the Hecke parameter. Look at the ACTUAL categorical Chern-Simons in the framework (not the Freed-Gompf classical formula).
-- Read `content/quantum-observable-universe/descartes-universe/em-coupling-projection.md` carefully for the three-layer structure. The correction should come from Layer 2 (the braiding eigenvalue), not Layer 3 (the normalization).
-- The self-linking numbers are BOTH 8 = 2×genus. This is not a coincidence. The correction may involve the genus directly: δ = CS·ℏ²·(1 + genus·ℏ²) or similar tower correction.
-- Try: intermediate between classical and q-deformed. The correction is 0.03×ℏ_q² which is ~3% of ℏ_q². This suggests a SINGLE q-correction term, not a full q-deformation.
+**The CS correction was retracted** — it gave numerically close results (2 ppm)
+but is not categorically derived.  α is an eigenvalue/character ratio, not a trace.
+
+The correction should come from the **descent decomposition** applied to the EM
+endomorphism P_anti — the same framework that gives surface/Coulomb/exchange
+corrections to the mass volume term:
+
+- The BW descent: 𝔪 = Hol(ϱ₀) + Σᵢ Φ_q(zᵢ)
+- For coupling: 1/α = q·[9]·[10] + (divisor corrections)
+
+**What's needed**:
+- The Frobenius form ∫_A evaluated on T_{2,9} ∪ T_{3,5} on Bring's surface,
+  respecting A ≅ A^∨ through S = ev ∘ (id⊗Φ) ∘ coev
+- The blow-up structure at crossing degeneracies where the force carriers embed
+  on the genus-4 surface
+- Each blow-up centre contributes a quantum dilogarithm correction to 1/α,
+  analogous to the surface term -λ_S·A^{2/3} correcting the volume
 
 ### B. Write Content Blocks (8 propositions)
 
@@ -53,7 +67,7 @@ These are PROVEN and need `.ts` + `.md` + `.lean` stubs:
 3. `prop:content-scaling-correspondence` — content = m_j by Schur-Weyl
 4. `prop:volume-perturbation-formula` — δΦ_k = z²·Vol(4₁)·[k-3]_q
 5. `prop:hecke-convergence-bound` — MAE ≤ C·r^{-(k-3)}
-6. `prop:em-coupling-chern-simons` — 1/α with CS correction
+6. `prop:em-coupling-descent` — 1/α descent decomposition (OPEN: divisor corrections)
 7. `prop:character-table-symbolic` — all χ_λ(σ) through H₇
 8. `prop:bw-categorical-descent` — BW = descent decomposition
 
@@ -80,7 +94,7 @@ Term 12 = [3]_q/[2]_q·m_e × T²(T+1)²/A² (from residual fit, R²=0.38).
 
 ## OPEN QUESTIONS (ranked by importance)
 
-1. **1/α remaining 0.03×ℏ_q²** — see section A above
+1. **1/α gap (0.155%)** — see section A above.  Needs descent decomposition exceptional divisors on force-carrier braids.
 2. **Magic numbers** {2,8,20,28,50,82,126} — should be derivable from torus knot embeddings on Bring's surface. The shell correction uses these as INPUT.
 3. **Energy scale E₀ = 4.155 MeV** — calibrated from n→p decay (single data point). Route: E₀ = m_e × 8G × f(B₃ crossings)?
 4. **Neutrino mass** — L₋ channel gives m_ν/m_e ≈ 2 (wrong by 10⁶). Needs vacuum drag or tower mechanism.

@@ -10,9 +10,9 @@ renormalisation-group running are required at the fundamental level.
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate
 parameter $q$ and force-carrier generators $T_{2,9}$ (crossing
 number $c_s = 9$) and $T_{3,5}$ (crossing number $c_w = 10$).  Then
-the electromagnetic fine structure constant, defined as the
-$\tau$-trace of the antisymmetric braiding component normalised by
-the force-carrier crossing complexities, is
+the electromagnetic fine structure constant is the antisymmetric
+eigenvalue of the $R$-matrix normalised by the $q$-deformed crossing
+complexities of the force-carrying sector:
 
 $$
   \alpha_{\mathrm{EM}}(q)
@@ -116,3 +116,48 @@ $\alpha_{\mathrm{EM}} \to 1/(9 \times 10) = 1/90$.  The observed
 value $\alpha^{-1} \approx 137$ requires $q > 1$; the departure
 from the classical limit is what makes the coupling weaker than
 $1/90$.
+
+**Categorical status of the formula.**
+
+The coupling $\alpha$ is **not** the Markov trace of any braid
+word.  It is assembled from representation-theoretic quantities:
+
+- $q^{-1}$ = antisymmetric eigenvalue squared (from the $R$-matrix)
+- $[9]_q$ = quantum dimension / character of $T_{2,9}$
+- $[10]_q$ = quantum dimension / character of $T_{3,5}$
+
+This contrasts with mass, where the Markov trace of the nuclear
+braid is the central object.  The electromagnetic coupling is a
+ratio of **eigenvalues and characters**, not a trace.
+
+**Open problem: the 0.155% gap.**
+
+The bare formula $\alpha^{-1} = q \cdot [9]_q \cdot [10]_q = 136.823$
+agrees with CODATA to $0.155\%$.  By analogy with the descent
+decomposition of mass, this gap should arise from exceptional
+divisor corrections to the bare coupling — the transient component
+of the descent involution $\hat{\tau}$ applied to the EM
+endomorphism $P_{\mathrm{anti}}$.
+
+For mass, the descent decomposition gives:
+
+$$
+  \mathfrak{m} = \underbrace{\mathrm{Hol}(\varrho_0)}_{\text{base / volume}}
+  + \underbrace{\sum_i \Phi_q(z_i)}_{\text{exceptional divisors}}.
+$$
+
+For coupling, the analogous structure would be:
+
+$$
+  \frac{1}{\alpha} = \underbrace{q \cdot [9]_q \cdot [10]_q}_{\text{bare coupling}}
+  + \underbrace{\text{(divisor corrections)}}_{\text{0.213 gap}}.
+$$
+
+The divisor corrections require the Frobenius form $\int_A$ evaluated
+on the force-carrier braids $T_{2,9} \cup T_{3,5}$ on Bring's
+surface, respecting the self-duality $A \cong A^{\vee}$ through the
+categorical trace $S = \mathrm{ev} \circ (\mathrm{id} \otimes \Phi) \circ \mathrm{coev}$.
+
+The specific computation — the blow-up structure at the crossing
+degeneracies where $T_{2,9}$ and $T_{3,5}$ embed on the genus-$4$
+surface — has not yet been carried out.
