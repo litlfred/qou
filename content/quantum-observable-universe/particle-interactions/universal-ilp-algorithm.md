@@ -14,39 +14,37 @@ to quarks, nucleons, atoms, and molecules.*
 
 ### Algorithm
 
-1. **Frobenius check.**
-   Compute $Gx$.  If $Gx_i < 0$ for any $i$, the state is
-   **unstable** — go to Step 2a.  Otherwise the state is
-   **stable** — go to Step 2b.
+*A single LP handles both unstable and stable states:*
 
-2a. **Unstable → restore stability.**
-    Solve the ILP:
-    $$
-      \min_{K} \; \mathrm{cr}(K) \quad
-      \text{s.t.} \quad K \in \mathcal{B}_3, \quad
-      G \cdot \mathrm{NF}(x \cdot K) \geq 0
-    $$
-    where $\mathcal{B}_3$ is the braid group on 3 strands and
-    $\mathrm{cr}(K)$ is the crossing number.  The ILP finds the
-    **minimum-crossing braid** that restores Frobenius positivity.
-    Apply $K$ to the state: $x \leftarrow \mathrm{NF}(x \cdot K)$.
-    Return to Step 1.
+$$
+  \min_{K} \; \mathrm{cr}(K) \quad
+  \text{s.t.} \quad K \in \{\text{knots}\}, \quad
+  G \cdot \mathrm{NF}(x \cdot K) \geq 0, \quad
+  \mathrm{tr}_M(x \cdot K) \leq \mathrm{tr}_M(x)
+$$
 
-2b. **Stable → create binding.**
-    Solve the ILP:
-    $$
-      \min_{K} \; \mathrm{cr}(K) \quad
-      \text{s.t.} \quad K \in \{\text{knots}\}, \quad
-      E(x, K, y) > 0
-    $$
-    where $\{\text{knots}\}$ is the set of single-component braid
-    closures, and $E(x, K, y)$ is the binding energy between
-    states $x$ and $y$ mediated by $K$.  The ILP finds the
-    **minimum-crossing knot** with positive binding.
+*The three constraints are:*
 
-3. **Update state.**
-   Apply the selected operator to the state.  The new state
-   becomes the input for the next level.
+1. **$K$ is a knot** — a braid whose closure is a
+   single-component curve (the unknot, trefoil, etc.).
+2. **Frobenius positivity** $G \cdot \mathrm{NF}(x \cdot K) \geq 0$ —
+   the resulting state must be LP-stable.
+3. **Non-increasing trace** $\mathrm{tr}_M(x \cdot K) \leq \mathrm{tr}_M(x)$ —
+   the operator must not increase the categorical action.
+
+*When the state is **unstable** ($Gx \not\geq 0$), the Frobenius
+constraint dominates: the LP must find a knot that restores
+stability.  The unknot (identity) is infeasible because $Gx < 0$.
+The LP selects the minimum-crossing stabilizing knot.*
+
+*When the state is **stable** ($Gx \geq 0$), the Frobenius
+constraint is automatically satisfied by the unknot.  The trace
+constraint then selects: the unknot gives $\mathrm{tr}_M(x \cdot 1) = \mathrm{tr}_M(x)$
+(equality, no binding).  The LP selects the minimum-crossing
+knot that **strictly decreases** the trace — this is the bond.*
+
+*Apply $K$ to the state: $x \leftarrow \mathrm{NF}(x \cdot K)$.
+Proceed to the next level.*
 
 ### Instantiations
 
