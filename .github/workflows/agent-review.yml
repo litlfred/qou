@@ -41,11 +41,15 @@ jobs:
       - name: Get commit diff
         id: diff
         run: |
-          DIFF=$(git diff HEAD~1 HEAD -- . ':(exclude).github' || git diff --root HEAD -- . ':(exclude).github')
+          DIFF=$(git diff HEAD~1 HEAD -- . ':(exclude).github' 2>/dev/null || git diff --root HEAD -- . ':(exclude).github' 2>/dev/null || true)
+          # Truncate in-variable to avoid broken pipe from piping into head
+          DIFF="${DIFF:0:50000}"
+          # Use a random delimiter to prevent collisions with diff content
+          DELIM="DIFF_EOF_$(head -c 8 /dev/urandom | xxd -p)"
           {
-            echo "diff<<DIFF_EOF"
-            echo "$DIFF" | head -c 50000
-            echo "DIFF_EOF"
+            echo "diff<<${DELIM}"
+            printf '%s\n' "$DIFF"
+            echo "${DELIM}"
           } >> "$GITHUB_OUTPUT"
 
       - name: Get commit info
