@@ -33,9 +33,17 @@ s_skein = q_half - q_half_inv            # q^½ − q^{-½}
 z_markov = 1 / (q_half + q_half_inv)     # 1/(q^½ + q^{-½})
 
 # Crossing coefficients — from Hecke inverse σ⁻¹ = σ − (q − q⁻¹)
-# pp → σ:          c = 1,   d = 0
-# nn → σ⁻¹:        c = 1,   d = −(q − q⁻¹)
-# pn → ½(σ+σ⁻¹): c = 1,   d = −½(q − q⁻¹)
+#
+# Nuclear crossings:
+#   pp → σ:          c = 1,   d = 0
+#   nn → σ⁻¹:        c = 1,   d = −(q − q⁻¹)
+#   pn → ½(σ+σ⁻¹): c = 1,   d = −½(q − q⁻¹)
+#
+# Electron crossings:
+#   pe → σ⁻¹:        c = 1,   d = −(q − q⁻¹)   (EM attraction, same as nn)
+#   ne → 𝟏:          c = 0,   d = 1               (no interaction)
+#   ee → σ:          c = 1,   d = 0               (EM repulsion, same as pp)
+#
 C_PP = sp.Integer(1)
 D_PP = sp.Integer(0)
 
@@ -45,7 +53,16 @@ D_NN = -(q - 1/q)                        # = −HA = −(q − q⁻¹)
 C_MIX = sp.Integer(1)                    # mixed: ½(σ + σ⁻¹)
 D_MIX = -(q - 1/q) / 2                  # = −HA/2
 
-C_HOPF = sp.Integer(1)                   # Hopf link: σ
+C_PE = sp.Integer(1)                     # proton-electron: σ⁻¹ (EM attraction)
+D_PE = -(q - 1/q)                        # = −HA (same as nn)
+
+C_NE = sp.Integer(0)                     # neutron-electron: 𝟏 (no interaction)
+D_NE = sp.Integer(1)
+
+C_EE = sp.Integer(1)                     # electron-electron: σ (EM repulsion)
+D_EE = sp.Integer(0)                     # (same as pp)
+
+C_HOPF = sp.Integer(1)                   # Hopf link: σ (legacy alias)
 D_HOPF = sp.Integer(0)
 
 
@@ -640,14 +657,47 @@ class SymbolicHeckeDivision:
     # ── Crossing constructors ────────────────────────────────────
 
     def crossing(self, type_i, type_j, gen):
-        """Build crossing element for pair types at generator gen."""
+        """Build crossing element for pair types at generator gen.
+
+        Quark-level types: 'u' (up), 'd' (down)
+        Nucleon-level types: 'p' (proton), 'n' (neutron)
+        Electron type: 'e' (electron)
+        """
+        pair = frozenset([type_i, type_j])
+
+        # Quark-level crossings
         if type_i == type_j == 'u':
             return SymbolicHeckeElement({(gen,): C_PP})
         elif type_i == type_j == 'd':
             return SymbolicHeckeElement({(gen,): C_NN, (): D_NN})
-        elif set([type_i, type_j]) == set(['u', 'd']):
+        elif pair == frozenset(['u', 'd']):
             return SymbolicHeckeElement({(gen,): C_MIX, (): D_MIX})
-        else:  # Hopf link (any-electron)
+
+        # Nucleon-level crossings
+        elif type_i == type_j == 'p':
+            return SymbolicHeckeElement({(gen,): C_PP})
+        elif type_i == type_j == 'n':
+            return SymbolicHeckeElement({(gen,): C_NN, (): D_NN})
+        elif pair == frozenset(['p', 'n']):
+            return SymbolicHeckeElement({(gen,): C_MIX, (): D_MIX})
+
+        # Electron crossings
+        elif pair == frozenset(['p', 'e']):
+            return SymbolicHeckeElement({(gen,): C_PE, (): D_PE})
+        elif pair == frozenset(['n', 'e']):
+            # Neutron-electron: identity (no crossing)
+            return SymbolicHeckeElement({(): D_NE})
+        elif type_i == type_j == 'e':
+            return SymbolicHeckeElement({(gen,): C_EE})
+
+        # Quark-electron crossings: u (+2/3) attracts e, d (-1/3) repels e
+        elif 'e' in pair and 'u' in pair:
+            return SymbolicHeckeElement({(gen,): C_PE, (): D_PE})
+        elif 'e' in pair and 'd' in pair:
+            return SymbolicHeckeElement({(gen,): C_EE})
+
+        else:
+            # Fallback: Hopf link
             return SymbolicHeckeElement({(gen,): C_HOPF})
 
     def reduce(self, elem, max_iterations=10000, use_quotient=True):
