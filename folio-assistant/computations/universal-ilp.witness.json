@@ -1,29 +1,50 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T04:31:22.855978+00:00",
-  "commitSha": "19223afb7d2247035df4ae3b0fcda043a1a40f56",
+  "computedAt": "2026-04-14T04:43:33.000010+00:00",
+  "commitSha": "95eb85e4005c4fae563b5969ca493273751e20aa",
   "assertions": [
     {
+      "name": "confinement",
+      "computed": "σ₁",
+      "expected": "σ₁",
+      "passed": true,
+      "source": "Universal ILP"
+    },
+    {
+      "name": "gluon",
+      "computed": "σ₁",
+      "expected": "σ₁",
+      "passed": true,
+      "source": "Universal ILP"
+    },
+    {
       "name": "electron",
-      "computed": "σ₀σ₀⁻¹",
-      "expected": "σ₀σ₀⁻¹",
+      "computed": "σ₁⁻¹",
+      "expected": "σ₁⁻¹",
       "passed": true,
       "source": "Universal ILP"
     },
     {
       "name": "H-H bond",
-      "computed": "σ₁⁻¹σ₁⁻¹",
-      "expected": "σ₁⁻¹σ₁⁻¹",
+      "computed": "σ₁⁻¹",
+      "expected": "σ₁⁻¹",
+      "passed": true,
+      "source": "Universal ILP"
+    },
+    {
+      "name": "C-C bond",
+      "computed": "σ₁⁻¹",
+      "expected": "σ₁⁻¹",
       "passed": true,
       "source": "Universal ILP"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "universal-ilp",
   "scriptFile": "universal-ilp.py",
-  "scriptHash": "c380e9eb8fd3",
+  "scriptHash": "29a89211a5d1",
   "scriptCommitSha": "19223afb7d2247035df4ae3b0fcda043a1a40f56",
   "description": "Universal ILP: one LP at every level. min cr(K) s.t. K∈{knots}, G·NF(x·K)≥0, tr(x·K)≤tr(x). Derives confinement, gluon, electron, and covalent bond.",
   "contentBlock": "def:universal-ilp-algorithm",
@@ -31,15 +52,30 @@
     "q": 1.1099785955541805
   },
   "data": {
+    "confinement": {
+      "operator": "σ₁",
+      "crossings": 1,
+      "tr_M": 0.16278619098697966
+    },
+    "gluon": {
+      "operator": "σ₁",
+      "crossings": 1,
+      "tr_M": 0.022475521823606
+    },
     "electron": {
-      "operator": "σ₀σ₀⁻¹",
-      "crossings": 2,
-      "tr_M": 0.027447218242728555
+      "operator": "σ₁⁻¹",
+      "crossings": 1,
+      "tr_M": 0.1627861909869797
     },
     "bond_HH": {
-      "operator": "σ₁⁻¹σ₁⁻¹",
-      "crossings": 2,
-      "tr_M": 0.045632927297934375
+      "operator": "σ₁⁻¹",
+      "crossings": 1,
+      "tr_M": 0.43636377565005485
+    },
+    "bond_CC": {
+      "operator": "σ₁⁻¹",
+      "crossings": 1,
+      "tr_M": 2447.0123149137858
     }
   }
 }

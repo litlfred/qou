@@ -18,30 +18,33 @@ to quarks, nucleons, atoms, and molecules.*
 
 $$
   \min_{K} \; \mathrm{cr}(K) \quad
-  \text{s.t.} \quad K \in \{\text{knots}\}, \quad
-  G \cdot \mathrm{NF}(x \cdot K) \geq 0, \quad
-  \mathrm{tr}_M(x \cdot K) \leq \mathrm{tr}_M(x)
+  \text{s.t.} \quad K \in \{\text{knots}\} \setminus \{1\}, \quad
+  G \cdot \mathrm{NF}(x \cdot K) \geq 0
 $$
 
-*The three constraints are:*
+*with objective among feasible $K$: minimise $|\mathrm{tr}_M(x \cdot K)|$
+at each crossing number, selecting the smallest $\mathrm{cr}(K)$
+that satisfies Frobenius.*
 
-1. **$K$ is a knot** — a braid whose closure is a
-   single-component curve (the unknot, trefoil, etc.).
+*The two constraints are:*
+
+1. **$K$ is a non-trivial knot** — a braid whose closure is a
+   single-component curve, excluding the unknot (identity).
 2. **Frobenius positivity** $G \cdot \mathrm{NF}(x \cdot K) \geq 0$ —
    the resulting state must be LP-stable.
-3. **Non-increasing trace** $\mathrm{tr}_M(x \cdot K) \leq \mathrm{tr}_M(x)$ —
-   the operator must not increase the categorical action.
 
-*When the state is **unstable** ($Gx \not\geq 0$), the Frobenius
-constraint dominates: the LP must find a knot that restores
-stability.  The unknot (identity) is infeasible because $Gx < 0$.
-The LP selects the minimum-crossing stabilizing knot.*
+*The unknot is excluded because it leaves the state unchanged:
+$x \cdot 1 = x$.  Among non-trivial knots, the LP minimises
+crossing number first, then $|\mathrm{tr}_M|$ as tiebreaker.*
 
-*When the state is **stable** ($Gx \geq 0$), the Frobenius
-constraint is automatically satisfied by the unknot.  The trace
-constraint then selects: the unknot gives $\mathrm{tr}_M(x \cdot 1) = \mathrm{tr}_M(x)$
-(equality, no binding).  The LP selects the minimum-crossing
-knot that **strictly decreases** the trace — this is the bond.*
+- *When the state is **unstable** ($Gx \not\geq 0$):
+  the Frobenius constraint forces a non-trivial $K$ that
+  restores stability.  The LP selects the minimum-crossing
+  knot that achieves $Gx' \geq 0$.*
+- *When the state is **stable** ($Gx \geq 0$):
+  any non-trivial knot is a candidate.  The LP selects the
+  minimum-crossing one, with $|\mathrm{tr}_M|$ minimised
+  as tiebreaker.  This is the bond operator.*
 
 *Apply $K$ to the state: $x \leftarrow \mathrm{NF}(x \cdot K)$.
 Proceed to the next level.*

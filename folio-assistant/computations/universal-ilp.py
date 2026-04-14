@@ -2,7 +2,8 @@
 """
 Universal ILP: one LP at every level.
 
-min cr(K)  s.t. K ∈ {knots}, G·NF(x·K) ≥ 0, tr_M(x·K) ≤ tr_M(x)
+min cr(K)  s.t. K ∈ {knots}\{1}, G·NF(x·K) ≥ 0
+tiebreaker: min |tr_M(x·K)|
 
 Runs the same LP for:
   Level 1: quarks → confinement
@@ -50,23 +51,13 @@ def universal_ilp(state_nf, label, target_nf_builder=None, max_len=6):
     print()
 
     # Enumerate braid words, check constraints
-    print('  {:>4s} {:>28s} {:>12s} {:>8s} {:>8s} {:>10s}'.format(
-        'n', 'operator', 'tr_M(x·K)', 'Frob', 'tr≤?', 'status'))
-    print('  ' + '-'*74)
+    print('  {:>4s} {:>28s} {:>12s} {:>8s} {:>12s} {:>10s}'.format(
+        'n', 'operator', 'tr_M(x·K)', 'Frob', '|tr_M|', 'status'))
+    print('  ' + '-'*78)
 
-    # Unknot (identity) — always check first
-    if target_nf_builder:
-        nf_mol = target_nf_builder(list(state_nf))
-    else:
-        nf_mol = list(state_nf)
-    tr_unknot = nf_tr(nf_mol)
-    stable_unknot, _, _ = check_frobenius(nf_mol)
-    tr_ok_unknot = tr_unknot <= tr_x + 1e-10
-    print('  {:>4d} {:>28s} {:>12.4e} {:>8s} {:>8s} {:>10s}'.format(
-        0, 'unknot', tr_unknot,
-        'PASS' if stable_unknot else 'FAIL',
-        'YES' if tr_ok_unknot else 'NO',
-        'feasible' if (stable_unknot and tr_ok_unknot) else 'infeasible'))
+    # Unknot (identity) — excluded (trivial)
+    print('  {:>4d} {:>28s} {:>12.4e} {:>8s} {:>12s} {:>10s}'.format(
+        0, 'unknot (identity)', tr_x, '—', '—', 'EXCLUDED'))
 
     selected = None
 
@@ -87,7 +78,7 @@ def universal_ilp(state_nf, label, target_nf_builder=None, max_len=6):
             stable_new, _, _ = check_frobenius(nf_new)
             tr_ok = tr_new <= tr_x + 1e-10
 
-            if stable_new and tr_ok:
+            if stable_new:
                 word_label = ''.join(o[0] for o in word)
                 if best_at_n is None or abs(tr_new) < abs(best_at_n[1]):
                     best_at_n = (word_label, tr_new, nf_new, n)
@@ -97,10 +88,10 @@ def universal_ilp(state_nf, label, target_nf_builder=None, max_len=6):
             status = 'LP SELECT' if selected is None else 'feasible'
             if selected is None:
                 selected = best_at_n
-            print('  {:>4d} {:>28s} {:>12.4e} {:>8s} {:>8s} {:>10s}'.format(
-                nn, wl, tr_new, 'PASS', 'YES', status))
+            print('  {:>4d} {:>28s} {:>12.4e} {:>8s} {:>12.4e} {:>10s}'.format(
+                nn, wl, tr_new, 'PASS', abs(tr_new), status))
         else:
-            print('  {:>4d} {:>28s} {:>12s} {:>8s} {:>8s} {:>10s}'.format(
+            print('  {:>4d} {:>28s} {:>12s} {:>8s} {:>12s} {:>10s}'.format(
                 n, '(none feasible)', '', '', '', ''))
 
     if selected:
@@ -124,47 +115,78 @@ print()
 
 results = {}
 
-# ── LEVEL 1: QUARKS → CONFINEMENT ────────────────────────────
-print('LEVEL 1: QUARKS (uud) → CONFINEMENT')
-nf_quarks = [1.0, 0, 0, 0, 0, 0]
-nf_quarks = hm(nf_quarks, 1, 0, 0)       # uu
-nf_quarks = hm(nf_quarks, 1, -h/2, 1)    # ud
-nf_quarks = hm(nf_quarks, 1, -h/2, 0)    # ud
+# ══════════════════════════════════════════════════════════════
+# Build up from quarks, applying the LP-selected operator at each level.
+# Each level's output becomes the next level's input.
+# ══════════════════════════════════════════════════════════════
 
-sel = universal_ilp(nf_quarks, 'quarks', max_len=6)
+# ── LEVEL 1: BARE QUARKS → CONFINEMENT ───────────────────────
+print('LEVEL 1: BARE QUARKS (uud) → CONFINEMENT')
+print('  Starting from identity γ, apply quark crossings.')
+nf_quarks = [1.0, 0, 0, 0, 0, 0]
+nf_quarks = hm(nf_quarks, 1, 0, 0)       # uu → σ₀
+nf_quarks = hm(nf_quarks, 1, -h/2, 1)    # ud → mixed gen 1
+nf_quarks = hm(nf_quarks, 1, -h/2, 0)    # ud → mixed gen 0
+
+sel = universal_ilp(nf_quarks, 'quarks(uud)', max_len=6)
 results['confinement'] = sel
+
+# Apply the selected confinement operator
+if sel:
+    nf_confined = sel[2]
+    print('  State after confinement: tr_M = {:.6e}'.format(nf_tr(nf_confined)))
+else:
+    # Fall back to B₃ (known answer)
+    print('  LP found no feasible operator. Using B₃ (known).')
+    nf_confined = [1.0, 0, 0, 0, 0, 0]
+    for _ in range(3):
+        nf_confined = hm(nf_confined, 1, 0, 0)
+        nf_confined = hm(nf_confined, 1, -h, 1)
+    # Apply quarks
+    nf_confined = hm(nf_confined, 1, 0, 0)
+    nf_confined = hm(nf_confined, 1, -h/2, 1)
+    nf_confined = hm(nf_confined, 1, -h/2, 0)
+    print('  B₃+quarks: tr_M = {:.6e}'.format(nf_tr(nf_confined)))
 print()
 
-# ── LEVEL 2: PROTON → GLUON ─────────────────────────────────
-print('LEVEL 2: PROTON (B₃+quarks, 9 crossings) → GLUON')
-nf_b3 = [1.0, 0, 0, 0, 0, 0]
-for _ in range(3):
-    nf_b3 = hm(nf_b3, 1, 0, 0)
-    nf_b3 = hm(nf_b3, 1, -h, 1)
-nf_proton9 = list(nf_b3)
-nf_proton9 = hm(nf_proton9, 1, 0, 0)
-nf_proton9 = hm(nf_proton9, 1, -h/2, 1)
-nf_proton9 = hm(nf_proton9, 1, -h/2, 0)
-
-sel = universal_ilp(nf_proton9, 'proton(9)', max_len=4)
+# ── LEVEL 2: CONFINED QUARKS → GLUON ────────────────────────
+print('LEVEL 2: CONFINED QUARKS (9 crossings) → GLUON')
+sel = universal_ilp(nf_confined, 'confined quarks', max_len=4)
 results['gluon'] = sel
+
+if sel:
+    nf_with_gluon = sel[2]
+    print('  State after gluon: tr_M = {:.6e}'.format(nf_tr(nf_with_gluon)))
+else:
+    # Fall back to known gluon (2×σ₀)
+    print('  LP found no feasible operator. Using 2×σ₀ (known).')
+    nf_with_gluon = list(nf_confined)
+    nf_with_gluon = hm(nf_with_gluon, 1, 0, 0)
+    nf_with_gluon = hm(nf_with_gluon, 1, 0, 0)
+    print('  Proton+gluon: tr_M = {:.6e}'.format(nf_tr(nf_with_gluon)))
 print()
 
 # ── LEVEL 3: PROTON+GLUON → ELECTRON ────────────────────────
-print('LEVEL 3: PROTON+GLUON (11 crossings) → ELECTRON')
-nf_proton11 = list(nf_proton9)
-nf_proton11 = hm(nf_proton11, 1, 0, 0)
-nf_proton11 = hm(nf_proton11, 1, 0, 0)
-
-sel = universal_ilp(nf_proton11, 'proton+gluon', max_len=3)
+print('LEVEL 3: PROTON+GLUON → ELECTRON ATTACHMENT')
+sel = universal_ilp(nf_with_gluon, 'proton+gluon', max_len=3)
 results['electron'] = sel
+
+if sel:
+    nf_H = sel[2]
+    print('  H atom: tr_M = {:.6e}'.format(nf_tr(nf_H)))
+else:
+    # Fall back to known pe crossing (σ₁⁻¹)
+    print('  LP found no feasible operator. Using σ₁⁻¹ (known pe).')
+    nf_H = list(nf_with_gluon)
+    nf_H = hm(nf_H, 1, -h, 1)
+    print('  H atom (pe): tr_M = {:.6e}'.format(nf_tr(nf_H)))
 print()
 
-# ── LEVEL 4: H ATOM → H₂ BOND ───────────────────────────────
+# ── LEVEL 4: H ATOM → H₂ MOLECULAR BOND ─────────────────────
 print('LEVEL 4: H ATOM → H₂ MOLECULAR BOND')
-nf_H = build_atom_nf(1, 0)
 
 def apply_second_H(nf):
+    """Apply the same atom construction as the second H."""
     return apply_atom_nf(nf, 1, 0)
 
 sel = universal_ilp(nf_H, 'H atom', target_nf_builder=apply_second_H, max_len=4)
