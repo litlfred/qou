@@ -82,14 +82,23 @@ This has 2 nonzero terms. -/
 /-- Hydrogen atom NF: (−HA)·𝟏 + 1·σ₀. -/
 noncomputable def hydrogen_nf : H2_NF := h2_nuc_e_Z1
 
+/-- HA = q − q⁻¹ is nonzero in ℤ[q, q⁻¹]. -/
+-- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+theorem HA_ne_zero : HA ≠ 0 := by
+  unfold HA q q_inv
+  intro h
+  -- T(1) - T(-1) = 0 means T(1) = T(-1)
+  have : LaurentPolynomial.T (1 : ℤ) = LaurentPolynomial.T (-1 : ℤ) := by linarith
+  -- But T is injective, and 1 ≠ -1
+  have : (1 : ℤ) = -1 := LaurentPolynomial.T_injective ℤ this
+  norm_num at this
+
 /-- Hydrogen has 2 NF terms (both coefficients are nonzero). -/
 theorem hydrogen_terms_eq_two : hydrogen_nf 0 ≠ 0 ∧ hydrogen_nf 1 ≠ 0 := by
   constructor
   · -- −HA ≠ 0
-    unfold hydrogen_nf h2_nuc_e_Z1 HA q q_inv
-    simp [LaurentPolynomial.T]
-    ring_nf
-    sorry -- Ref: [iwahori1964] — HA ≠ 0 in ℤ[q,q⁻¹] (q is transcendental)
+    unfold hydrogen_nf h2_nuc_e_Z1
+    exact neg_ne_zero.mpr HA_ne_zero
   · -- 1 ≠ 0
     unfold hydrogen_nf h2_nuc_e_Z1
     exact one_ne_zero
@@ -192,22 +201,32 @@ theorem helium_slot1_zero : helium_nf 1 = 0 := by
   ring
 
 /-- Helium NF has nonzero σ₁-coefficient (slot 2).
-    This is 4·(q⁴ − q² + 1)/q². -/
+    This is 4·(q⁴ − q² + 1)/q² = 4·T(2) − 4 + 4·T(−2). -/
 -- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
 theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  ring_nf
-  sorry -- Ref: [iwahori1964] — polynomial ≠ 0 (degree argument)
+  -- After unfolding, the expression is 4·T(2) − 4·T(0) + 4·T(−2)
+  -- This is nonzero because T(2) has coefficient 4 at degree 2,
+  -- while T(0) and T(−2) contribute 0 at degree 2.
+  intro h
+  -- If the polynomial is 0, evaluating coefficients gives contradictions.
+  -- The expression contains T(2) with a nonzero coefficient.
+  ring_nf at h
+  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (2 : ℤ)]
 
 /-- Helium NF has nonzero σ₀σ₁-coefficient (slot 3).
-    This is −4·(q² − 1)/q. -/
+    This is −4·(q² − 1)/q = −4·(T(1) − T(−1)) = −4·HA. -/
 -- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
 theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  ring_nf
-  sorry -- Ref: [iwahori1964] — polynomial ≠ 0 (degree argument)
+  -- After unfolding, the expression is −4·(T(1) − T(−1))
+  -- This is nonzero because T(1) ≠ T(−1) (T is injective, 1 ≠ −1)
+  -- and −4 ≠ 0, and ℤ[q,q⁻¹] is an integral domain.
+  intro h
+  ring_nf at h
+  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
 
 /-- Helium NF has zero σ₁σ₀-coefficient (slot 4). -/
 -- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
