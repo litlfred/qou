@@ -8,8 +8,12 @@ Then invert: for each p, find A such that Z_stable(A) = p.
 """
 
 import math
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+from computations.q_parameter import Q
 
-q = 1.10997
+q = Q
 delta_m = 1.293  # MeV, m_n - m_p = S_dd - S_uu
 
 # Bethe-Weizsäcker coefficients (MeV)
@@ -107,7 +111,7 @@ print()
 print(f"  {'q':>7}  {'a_C':>7}  {'n(Fe)':>6}  {'n(Pb)':>6}  {'n(U)':>6}  {'n/p(Pb)':>8}")
 print(f"  {'─'*7}  {'─'*7}  {'─'*6}  {'─'*6}  {'─'*6}  {'─'*8}")
 
-for q_test in [1.0001, 1.01, 1.05, 1.10, 1.10997, 1.15, 1.20, 1.50, 2.0]:
+for q_test in [1.0001, 1.01, 1.05, 1.10, q, 1.15, 1.20, 1.50, 2.0]:
     a_C_test = (q_test - 1/q_test) * geo_factor
     n_fe = find_stable_A_qou(26, a_C_test) - 26
     n_pb = find_stable_A_qou(82, a_C_test) - 82
@@ -147,4 +151,4 @@ print()
 print("  The stable configuration extremizes L_bind:")
 print("    δL_bind/δn = 0  →  n*(p) = beta-stability line")
 print()
-print("  Everything flows from the single parameter q = 1.10997.")
+print(f"  Everything flows from the single parameter q = {q:.15f}.")

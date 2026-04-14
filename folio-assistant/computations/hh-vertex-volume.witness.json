@@ -1,0 +1,28 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-14T04:31:33.613775+00:00",
+  "commitSha": "19223afb7d2247035df4ae3b0fcda043a1a40f56",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "hh-vertex-volume",
+  "scriptFile": "hh-vertex-volume.py",
+  "scriptHash": "9be006cff385",
+  "scriptCommitSha": "f57e3805ebacc994938427f70f76e439284a2e34",
+  "description": "H₂ binding via per-generator 3-channel Wedderburn vertex volumes. V̂_full = w_sym·λ_sym + w_std·(z·a+b) + w_alt·λ_alt per generator.",
+  "contentBlock": "def:h2-molecular-braid",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "w_sym": 0.16546138476810043,
+    "w_std": 0.6690772304637992,
+    "w_alt": 0.16546138476810043,
+    "E_mol_eV": 6.750278523641413
+  },
+  "data": {
+    "H_gen0_n_crossings": 7,
+    "H_gen1_n_crossings": 5,
+    "Phi_H_isolated": -1.9459490398815302,
+    "Phi_HH_unbonded": 0.9769468344204325
+  }
+}

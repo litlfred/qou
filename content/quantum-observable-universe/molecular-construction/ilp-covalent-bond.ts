@@ -1,0 +1,27 @@
+import { proposition } from "../../schema/builders";
+
+/**
+ * ILP derivation of the covalent bond operator.
+ *
+ * The covalent bond is the minimum-crossing knot operator with
+ * positive binding energy between two atoms.
+ */
+export default proposition({
+  label: "prop:ilp-covalent-bond",
+  title: "The covalent bond is the inverse trefoil $T_{2,3}^{-1}$",
+  uses: [
+    "def:molecular-braid",
+    "def:atomic-braid",
+    "prop:wedderburn-mass-formula",
+    "def:universal-ilp-algorithm",
+    "prop:q-integer-mass-formula",
+  ],
+  tags: [
+    "covalent-bond",
+    "inverse-trefoil",
+    "ILP",
+    "knot-operator",
+    "molecular",
+    "zero-parameters",
+  ],
+});

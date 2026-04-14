@@ -1,0 +1,127 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-13T18:16:18.364683+00:00",
+  "commitSha": "15bf02565f8c9d1002495d0c1622db99f8a3fd6a",
+  "assertions": [
+    {
+      "name": "H2 binding positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Frobenius LP feasibility"
+    },
+    {
+      "name": "CO binding positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Frobenius LP feasibility"
+    },
+    {
+      "name": "CO2 binding positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Frobenius LP feasibility"
+    },
+    {
+      "name": "CH4 binding positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Frobenius LP feasibility"
+    },
+    {
+      "name": "C6H6 binding positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Frobenius LP feasibility"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "molecular-frobenius-lp",
+  "scriptFile": "molecular-frobenius-lp.py",
+  "scriptHash": "89d8cbedfe48",
+  "scriptCommitSha": "",
+  "description": "Molecular covalent bonds derived from Frobenius LP dual. Bond operators selected by: (1) Frobenius positivity Gx >= 0, (2) minimum Markov trace among feasible operators. Zero fitted parameters.",
+  "contentBlock": "def:molecular-braid",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "E_mol_eV": 6.750278523641413,
+    "gram_eigenvalues": [
+      -0.7408452101064132,
+      0.4139987135224257,
+      0.4281147970398734,
+      0.7408452101064141,
+      1.2820197506195954,
+      2.8930702013515126
+    ]
+  },
+  "data": {
+    "bond_H-H": {
+      "ops": "s1i,s0i,s0i,s1i",
+      "n_crossings": 4,
+      "E_eV": 11.561288812999095,
+      "tr_M": 0.032762794145174474,
+      "frobenius_passes": true
+    },
+    "bond_C-H": {
+      "ops": "s1i,s1i,s1i,s1i",
+      "n_crossings": 4,
+      "E_eV": 6.574364440958041,
+      "tr_M": 11.326688823918166,
+      "frobenius_passes": true
+    },
+    "bond_C-O": {
+      "ops": "s1i,s1i,s1i,s0i",
+      "n_crossings": 4,
+      "E_eV": 4.099469596479594,
+      "tr_M": 7428.559515873955,
+      "frobenius_passes": true
+    },
+    "bond_C-C": {
+      "ops": "s1i,s1i,s1i,s0i",
+      "n_crossings": 4,
+      "E_eV": 4.735953778678927,
+      "tr_M": 1538.195409110985,
+      "frobenius_passes": true
+    },
+    "bond_O-H": {
+      "ops": "s1i,s1i,s1i,s1i",
+      "n_crossings": 4,
+      "E_eV": 5.24264520784366,
+      "tr_M": 66.45371049072408,
+      "frobenius_passes": true
+    },
+    "molecules": [
+      {
+        "name": "H2",
+        "predicted_eV": 11.561288812999095,
+        "observed_eV": 4.478
+      },
+      {
+        "name": "CO",
+        "predicted_eV": 12.298408789438781,
+        "observed_eV": 11.09
+      },
+      {
+        "name": "CO2",
+        "predicted_eV": 16.397878385918375,
+        "observed_eV": 16.56
+      },
+      {
+        "name": "CH4",
+        "predicted_eV": 26.297457763832163,
+        "observed_eV": 17.9
+      },
+      {
+        "name": "C6H6",
+        "predicted_eV": 82.06977065385858,
+        "observed_eV": 57.4
+      }
+    ]
+  }
+}

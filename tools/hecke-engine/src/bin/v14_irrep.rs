@@ -342,60 +342,69 @@ fn garside_trace(a: usize, b: usize, quark_ordering: &[u8], q: f64) -> f64 {
 }
 
 // ════════════════════════════════════════════════════════════════
-// VECTOR ACTION: O(n_crossings × dim) per matrix element
+// Vector action: O(dim) per crossing instead of O(dim²)
 // ════════════════════════════════════════════════════════════════
 
-/// Apply the typed Garside element to a single vector: |ψ⟩ = Δ|v⟩.
-/// Each crossing acts via sparse 2×2 blocks: O(dim) per crossing.
-/// Total: O(n_crossings × dim) instead of O(n_crossings × dim²).
-///
-/// For dim=13260 and 153 crossings: ~2M ops vs ~27B ops (13260× speedup).
-fn garside_apply_vector(
+/// Apply one crossing to a vector (not matrix). O(dim) per crossing.
+fn apply_crossing_to_vec(
+    vec: &mut [f64],
+    tabs: &[Vec<bool>],
+    tab_idx: &std::collections::HashMap<Vec<bool>, usize>,
+    sweep: usize,
+    d_coeff: f64,
+    q: f64,
+) {
+    let dim = vec.len();
+    let mut processed = vec![false; dim];
+    for j in 0..dim {
+        if processed[j] { continue; }
+        let (diag_j, off_j) = seminormal_entry(&tabs[j], sweep, q);
+        let dj = diag_j + d_coeff;
+
+        if let Some(off_val) = off_j {
+            if let Some(swapped) = syt_swap(&tabs[j], sweep + 1) {
+                if let Some(&j2) = tab_idx.get(&swapped) {
+                    if !processed[j2] {
+                        let (diag_j2, _) = seminormal_entry(&tabs[j2], sweep, q);
+                        let dj2 = diag_j2 + d_coeff;
+                        let off_val_j2 = seminormal_entry(&tabs[j2], sweep, q).1.unwrap_or(0.0);
+                        let vj = vec[j];
+                        let vj2 = vec[j2];
+                        vec[j]  = vj * dj  + vj2 * off_val_j2;
+                        vec[j2] = vj * off_val + vj2 * dj2;
+                        processed[j] = true;
+                        processed[j2] = true;
+                        continue;
+                    }
+                }
+            }
+        }
+        if !processed[j] {
+            vec[j] *= dj;
+            processed[j] = true;
+        }
+    }
+}
+
+/// Apply full Garside staircase to a vector. Returns the resulting vector.
+fn garside_vec_action(
     a: usize, b: usize,
     quark_ordering: &[u8],
     initial: &[f64],
     q: f64,
 ) -> Vec<f64> {
     let n = a + b;
-    assert_eq!(n, quark_ordering.len());
-
     let ha = q - 1.0 / q;
     let tabs = generate_syt(a, b);
     let dim = tabs.len();
-    if dim == 0 { return vec![]; }
 
     let mut tab_idx: std::collections::HashMap<Vec<bool>, usize> = std::collections::HashMap::new();
     for (i, t) in tabs.iter().enumerate() {
         tab_idx.insert(t.clone(), i);
     }
 
-    // Precompute swap partners and seminormal data for each generator
-    // (sweep position). Cache: for each (gen, tableau_idx) → (diag, partner_idx, off_diag)
-    struct CrossingData {
-        diag: f64,
-        partner: Option<(usize, f64)>,  // (partner_idx, off_diagonal)
-    }
-
-    let mut gen_crossing_data: Vec<Vec<CrossingData>> = Vec::with_capacity(n - 1);
-    for gen in 0..n-1 {
-        let mut data = Vec::with_capacity(dim);
-        for j in 0..dim {
-            let (diag_j, off_j) = seminormal_entry(&tabs[j], gen, q);
-            let partner = if let Some(off_val) = off_j {
-                if let Some(swapped) = syt_swap(&tabs[j], gen + 1) {
-                    tab_idx.get(&swapped).map(|&j2| (j2, off_val))
-                } else { None }
-            } else { None };
-            data.push(CrossingData { diag: diag_j, partner });
-        }
-        gen_crossing_data.push(data);
-    }
-
     let mut vec = initial.to_vec();
-    assert_eq!(vec.len(), dim);
-
-    // Apply each crossing in Garside order
-    for level in 0..n - 1 {
+    for level in 0..n-1 {
         for sweep in (0..=level).rev() {
             let ti = quark_ordering[sweep];
             let tj = quark_ordering[level + 1];
@@ -404,363 +413,95 @@ fn garside_apply_vector(
                 (b'd', b'd') | (b'n', b'n') => -ha,
                 _ => -ha / 2.0,
             };
-
-            let cdata = &gen_crossing_data[sweep];
-
-            // Apply sparse crossing to vector
-            let mut processed = vec![false; dim];
-            for j in 0..dim {
-                if processed[j] { continue; }
-                let dj = cdata[j].diag + d_coeff;
-
-                if let Some((j2, off_j)) = cdata[j].partner {
-                    if !processed[j2] {
-                        let dj2 = cdata[j2].diag + d_coeff;
-                        // off_j2 = off-diagonal from j2 column to j row
-                        let off_j2 = cdata[j2].partner
-                            .filter(|&(p, _)| p == j)
-                            .map(|(_, o)| o)
-                            .unwrap_or(0.0);
-
-                        // 2×2 block action on vector components j and j2:
-                        //   new[j]  = old[j]*dj  + old[j2]*off_j2
-                        //   new[j2] = old[j]*off_j + old[j2]*dj2
-                        let vj = vec[j];
-                        let vj2 = vec[j2];
-                        vec[j]  = vj * dj  + vj2 * off_j2;
-                        vec[j2] = vj * off_j + vj2 * dj2;
-
-                        processed[j] = true;
-                        processed[j2] = true;
-                        continue;
-                    }
-                }
-
-                // Unpaired: just scale
-                if !processed[j] {
-                    vec[j] *= dj;
-                    processed[j] = true;
-                }
-            }
+            apply_crossing_to_vec(&mut vec, &tabs, &tab_idx, sweep, d_coeff, q);
         }
     }
-
     vec
 }
 
-/// Compute the matrix element ⟨v|Δ|v⟩ for the typed Garside element.
-fn garside_matrix_element(
-    a: usize, b: usize,
-    quark_ordering: &[u8],
-    v: &[f64],
-    q: f64,
-) -> f64 {
-    let result = garside_apply_vector(a, b, quark_ordering, v, q);
-    // Inner product ⟨v|result⟩
-    v.iter().zip(result.iter()).map(|(a, b)| a * b).sum()
-}
-
-/// Compute ALL diagonal elements ⟨e_i|Δ|e_i⟩ via vector action.
-/// This gives the full trace as the sum: tr(Δ) = Σ_i ⟨e_i|Δ|e_i⟩.
-/// Cost: O(dim × n_crossings × dim) — same as matrix method,
-/// but uses O(dim) memory instead of O(dim²).
-fn garside_all_diagonals(
-    a: usize, b: usize,
-    quark_ordering: &[u8],
-    q: f64,
-) -> Vec<f64> {
-    let dim = generate_syt(a, b).len();
-    (0..dim).map(|i| {
-        let mut e_i = vec![0.0f64; dim];
-        e_i[i] = 1.0;
-        let result = garside_apply_vector(a, b, quark_ordering, &e_i, q);
-        result[i]  // ⟨e_i|Δ|e_i⟩
-    }).collect()
-}
-
-/// Kostka support check: K_{(a,b),(n_u,n_d)} > 0 iff a >= max(n_u, n_d).
-fn kostka_supported(a: usize, b: usize, n_u: usize, n_d: usize) -> bool {
-    let n = a + b;
-    if n_u + n_d != n { return false; }
-    a >= n_u.max(n_d)
-}
-
 // ════════════════════════════════════════════════════════════════
-// CONFINEMENT EIGENVECTOR: q-torsion leaf projection
+// Knot operator eigenvectors (confinement)
 // ════════════════════════════════════════════════════════════════
-//
-// The T_{2,3} trefoil σ_k · σ_{k+1} · σ_k confines each nucleon triple.
-// For A nucleons, the combined confinement operator is:
-//   K_conf = Π_{nucleon m=0..A-1} T_{2,3}(strands 3m, 3m+1, 3m+2)
-//
-// The leading eigenvector of K_conf is the q-torsion leaf — the
-// invariant submanifold where the q-curvature is minimized.
-//
-// Power iteration finds it in O(iterations × 3A × dim) time.
 
-/// Apply a single generator σ_gen to a vector (sparse 2×2 blocks).
-/// This is the core building block for trefoil and Garside actions.
-fn apply_generator_to_vector(
-    gen: usize,
-    d_coeff: f64,
-    vec: &mut [f64],
-    gen_crossing_data: &[(f64, Option<(usize, f64)>)], // (diag, partner)
-) {
-    let dim = vec.len();
-    let mut processed = vec![false; dim];
-    for j in 0..dim {
-        if processed[j] { continue; }
-        let dj = gen_crossing_data[j].0 + d_coeff;
-
-        if let Some((j2, off_j)) = gen_crossing_data[j].1 {
-            if !processed[j2] {
-                let dj2 = gen_crossing_data[j2].0 + d_coeff;
-                let off_j2 = gen_crossing_data[j2].1
-                    .filter(|&(p, _)| p == j)
-                    .map(|(_, o)| o)
-                    .unwrap_or(0.0);
-
-                let vj = vec[j];
-                let vj2 = vec[j2];
-                vec[j]  = vj * dj  + vj2 * off_j2;
-                vec[j2] = vj * off_j + vj2 * dj2;
-                processed[j] = true;
-                processed[j2] = true;
-                continue;
-            }
-        }
-
-        if !processed[j] {
-            vec[j] *= dj;
-            processed[j] = true;
-        }
+/// Knot operator braid words.
+fn knot_braid(name: &str) -> Vec<i32> {
+    match name {
+        "T23" | "trefoil" => vec![0, 1, 0],
+        "T25" | "cinquefoil" => vec![0, 1, 0, 1, 0],
+        "T34" => vec![0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2],
+        "T35" | "weak" => vec![0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2],
+        "borromean" | "B3" => vec![0, -2, 0, -2, 0, -2],  // σ₀σ₁⁻¹σ₀σ₁⁻¹σ₀σ₁⁻¹
+        "figure8" | "41" => vec![0, -2, 0, -2],  // σ₀σ₁⁻¹σ₀σ₁⁻¹
+        _ => vec![0, 1, 0],  // default: trefoil
     }
 }
 
-/// Precompute crossing data for all generators of an irrep.
-/// Returns: Vec<Vec<(diag, Option<(partner_idx, off_diag)>)>>
-fn precompute_crossing_data(
+/// Apply a knot operator (braid word) to a vector.
+fn apply_knot_to_vec(
+    vec: &mut [f64],
     tabs: &[Vec<bool>],
     tab_idx: &std::collections::HashMap<Vec<bool>, usize>,
-    n: usize,
+    braid: &[i32],
     q: f64,
-) -> Vec<Vec<(f64, Option<(usize, f64)>)>> {
-    let dim = tabs.len();
-    (0..n-1).map(|gen| {
-        (0..dim).map(|j| {
-            let (diag_j, off_j) = seminormal_entry(&tabs[j], gen, q);
-            let partner = if let Some(off_val) = off_j {
-                if let Some(swapped) = syt_swap(&tabs[j], gen + 1) {
-                    tab_idx.get(&swapped).map(|&j2| (j2, off_val))
-                } else { None }
-            } else { None };
-            (diag_j, partner)
-        }).collect()
-    }).collect()
-}
-
-// ════════════════════════════════════════════════════════════════
-// KNOT OPERATOR LIBRARY
-// ════════════════════════════════════════════════════════════════
-//
-// Each knot operator is a braid word acting on 3 strands (per nucleon).
-// The combined operator for A nucleons applies the knot to each B₃ triple.
-// Generator indices are offset by 3m for nucleon m.
-
-/// A knot operator defined by its braid word on B₃.
-/// Each entry is a generator index (0 or 1) and sign (+1 or -1).
-/// The braid word is applied left-to-right.
-struct KnotOperator {
-    name: &'static str,
-    /// Braid word: Vec of (generator_offset, sign).
-    /// generator_offset 0 = σ₀, 1 = σ₁ within each B₃.
-    /// sign: +1 for σ, -1 for σ⁻¹ = σ - h (Hecke inverse).
-    word: Vec<(usize, i8)>,
-}
-
-fn knot_operators() -> Vec<KnotOperator> {
-    vec![
-        KnotOperator {
-            name: "T_{2,3}",  // trefoil = electron
-            word: vec![(0, 1), (1, 1), (0, 1)],  // σ₀σ₁σ₀
-        },
-        KnotOperator {
-            name: "T_{2,5}",  // cinquefoil = muon
-            word: vec![(0, 1), (1, 1), (0, 1), (1, 1), (0, 1)],  // σ₀σ₁σ₀σ₁σ₀
-        },
-        KnotOperator {
-            name: "T_{3,4}",  // Hopf² color
-            word: vec![(0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (0, 1), (1, 1), (0, 1)],
-        },
-        KnotOperator {
-            name: "T_{3,5}",  // weak force
-            word: vec![(0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (1, 1), (0, 1), (1, 1)],
-        },
-        KnotOperator {
-            name: "Borromean",  // σ₀σ₁⁻¹σ₀σ₁⁻¹σ₀σ₁⁻¹
-            word: vec![(0, 1), (1, -1), (0, 1), (1, -1), (0, 1), (1, -1)],
-        },
-        KnotOperator {
-            name: "figure-8",  // σ₀σ₁⁻¹σ₀σ₁⁻¹
-            word: vec![(0, 1), (1, -1), (0, 1), (1, -1)],
-        },
-    ]
-}
-
-/// Apply a knot operator to a vector for ALL nucleons.
-/// For inverse generators (sign = -1): σ⁻¹ = σ - h (Hecke relation).
-/// So σ⁻¹|v⟩ = σ|v⟩ - h|v⟩ = (σ + (-h)·I)|v⟩.
-fn apply_knot_operator(
-    knot: &KnotOperator,
-    n_nucleons: usize,
-    n: usize,
-    vec: &mut [f64],
-    cdata: &[Vec<(f64, Option<(usize, f64)>)>],
-    ha: f64,
 ) {
-    for m in 0..n_nucleons {
-        for &(gen_offset, sign) in &knot.word {
-            let gen = 3 * m + gen_offset;
-            if gen >= n - 1 { continue; }
-            // For positive sign: apply σ_gen with d_coeff = 0
-            // For negative sign (inverse): σ⁻¹ = σ - h, so d_coeff = -h
-            let d_coeff = if sign > 0 { 0.0 } else { -ha };
-            apply_generator_to_vector(gen, d_coeff, vec, &cdata[gen]);
-        }
+    let ha = q - 1.0 / q;
+    for &gen in braid {
+        let (sweep, d_coeff) = if gen >= 0 {
+            (gen as usize, 0.0)  // positive crossing: σ
+        } else {
+            ((-gen - 1) as usize, -ha)  // negative crossing: σ⁻¹ = σ - h
+        };
+        apply_crossing_to_vec(vec, tabs, tab_idx, sweep, d_coeff, q);
     }
 }
 
-/// Find the MINIMUM eigenvalue eigenvector via shift-and-invert power iteration.
-///
-/// The confinement LP MINIMIZES action. The ground state = minimum eigenvalue
-/// of the knot operator = tightest confinement = q⁻¹ channel (antisymmetric).
-///
-/// Method:
-///   1. Power iteration on K to find λ_max (a few iterations suffice)
-///   2. Shift: B = λ_max·I - K (flips spectrum: λ_min of K → λ_max of B)
-///   3. Power iteration on B to find eigenvector of λ_max(B) = λ_min(K)
-///
-/// The shift-and-invert is exact because applying B|v⟩ = λ_max|v⟩ - K|v⟩
-/// only requires K|v⟩ (which we already have).
-fn knot_eigenvector(
-    a: usize, b: usize,
-    knot: &KnotOperator,
-    n_nucleons: usize,
-    q: f64,
-    max_iter: usize,
-    tol: f64,
+/// Find min-eigenvalue eigenvector of a knot operator via shift-and-invert.
+/// Power iteration on (λ_max·I - K) finds the vector with smallest eigenvalue of K.
+fn knot_eigenvector_min(
+    a: usize, b: usize, knot_name: &str, q: f64, n_iter: usize,
 ) -> (Vec<f64>, f64) {
-    let n = a + b;
-    let ha = q - 1.0 / q;
     let tabs = generate_syt(a, b);
     let dim = tabs.len();
+    if dim == 0 { return (vec![], 0.0); }
 
     let mut tab_idx: std::collections::HashMap<Vec<bool>, usize> = std::collections::HashMap::new();
     for (i, t) in tabs.iter().enumerate() {
         tab_idx.insert(t.clone(), i);
     }
 
-    let cdata = precompute_crossing_data(&tabs, &tab_idx, n, q);
+    let braid = knot_braid(knot_name);
 
-    if dim <= 1 {
-        // 1D: only one eigenvector
-        let mut v = vec![1.0; dim];
-        let mut w = v.clone();
-        apply_knot_operator(knot, n_nucleons, n, &mut w, &cdata, ha);
-        let eigenvalue = if dim == 1 { w[0] } else { 0.0 };
-        return (v, eigenvalue);
-    }
-
-    // Step 1: Find λ_max via standard power iteration (20 iterations suffice)
-    let inv_sqrt_dim = 1.0 / (dim as f64).sqrt();
-    let mut v = vec![inv_sqrt_dim; dim];
+    // First find λ_max via power iteration
+    let mut v = vec![1.0 / (dim as f64).sqrt(); dim];
     let mut lambda_max = 0.0f64;
-
-    for _ in 0..30 {
-        apply_knot_operator(knot, n_nucleons, n, &mut v, &cdata, ha);
+    for _ in 0..n_iter {
+        apply_knot_to_vec(&mut v, &tabs, &tab_idx, &braid, q);
         let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
         if norm < 1e-300 { break; }
-        lambda_max = norm;
+        lambda_max = norm * v.iter().sum::<f64>().signum();  // signed
         for x in v.iter_mut() { *x /= norm; }
     }
+    lambda_max = lambda_max.abs() * 1.1;  // shift slightly above max
 
-    // Step 2: Find the eigenvector with SMALLEST |λ| (closest to origin).
-    //
-    // The physical ground state is the q⁻¹ channel (antisymmetric, confined),
-    // NOT the -q channel (most negative). We want min |λ|.
-    //
-    // Method: power iteration on K⁻¹ via solving K|w⟩ = |v⟩ at each step.
-    // But K⁻¹ requires matrix inversion (O(dim³)).
-    //
-    // Practical alternative for our knot operators:
-    //   1. Power iteration on K gives |λ_max|
-    //   2. Power iteration on K² gives |λ_max|²
-    //   3. Deflation: subtract λ_max component, iterate again
-    //
-    // Simplest robust approach: compute K|v⟩ AND Rayleigh quotient
-    // for both the max eigenvector and its orthogonal complement.
-
-    // Step 2a: We already have v_max from step 1. Store it.
-    let v_max = v.clone();
-
-    // Step 2b: Power iteration with deflation — project out v_max at each step.
-    let mut v = vec![inv_sqrt_dim; dim];
-    // Make orthogonal to v_max
-    let dot: f64 = v.iter().zip(v_max.iter()).map(|(a, b)| a * b).sum();
-    for j in 0..dim { v[j] -= dot * v_max[j]; }
-    let norm0: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
-    if norm0 < 1e-300 {
-        // Only one eigenvector (1D or degenerate) — return lambda_max
-        return (v_max, lambda_max);
-    }
-    for x in v.iter_mut() { *x /= norm0; }
-
-    let mut eigenvalue_2 = 0.0f64;
-
-    for _iter in 0..max_iter {
-        apply_knot_operator(knot, n_nucleons, n, &mut v, &cdata, ha);
-
-        // Project out v_max component (deflation)
-        let dot: f64 = v.iter().zip(v_max.iter()).map(|(a, b)| a * b).sum();
-        for j in 0..dim { v[j] -= dot * v_max[j]; }
-
-        let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
-        if norm < 1e-300 { break; }
-        let new_eigenvalue_2 = norm;
-        for x in v.iter_mut() { *x /= norm; }
-
-        if (new_eigenvalue_2 - eigenvalue_2).abs() / (eigenvalue_2.abs() + 1e-15) < tol {
-            eigenvalue_2 = new_eigenvalue_2;
-            break;
+    // Now power iteration on (λ_max·I - K) to find min eigenvalue of K
+    let mut v = vec![1.0 / (dim as f64).sqrt(); dim];
+    let mut lambda_shifted = 0.0f64;
+    for _ in 0..n_iter {
+        // Apply K
+        let mut kv = v.clone();
+        apply_knot_to_vec(&mut kv, &tabs, &tab_idx, &braid, q);
+        // shifted = λ_max * v - Kv
+        for j in 0..dim {
+            v[j] = lambda_max * v[j] - kv[j];
         }
-        eigenvalue_2 = new_eigenvalue_2;
+        let norm: f64 = v.iter().map(|x| x * x).sum::<f64>().sqrt();
+        if norm < 1e-300 { break; }
+        lambda_shifted = norm;
+        for x in v.iter_mut() { *x /= norm; }
     }
+    let lambda_min = lambda_max - lambda_shifted;
 
-    // Compute Rayleigh quotient for v to get the SIGNED eigenvalue
-    let mut kv = v.clone();
-    apply_knot_operator(knot, n_nucleons, n, &mut kv, &cdata, ha);
-    let rayleigh: f64 = v.iter().zip(kv.iter()).map(|(a, b)| a * b).sum();
-    let lambda_2 = rayleigh;  // signed eigenvalue
-
-    // Pick whichever has smaller |λ| — that's the confined (q⁻¹) channel
-    if eigenvalue_2.abs() < lambda_max.abs() {
-        (v, lambda_2)
-    } else {
-        (v_max, lambda_max)
-    }
-}
-
-/// Compute matrix element ⟨v_K|Δ|v_K⟩ for a specific knot operator K.
-fn garside_knot_element(
-    a: usize, b: usize,
-    quark_ordering: &[u8],
-    knot: &KnotOperator,
-    n_nucleons: usize,
-    q: f64,
-) -> (f64, f64) {
-    let (v_knot, eigenvalue) = knot_eigenvector(a, b, knot, n_nucleons, q, 200, 1e-12);
-    let me = garside_matrix_element(a, b, quark_ordering, &v_knot, q);
-    (me, eigenvalue)
+    (v, lambda_min)
 }
 
 // ════════════════════════════════════════════════════════════════
@@ -769,31 +510,30 @@ fn garside_knot_element(
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let use_vector = args.iter().any(|a| a == "--vector" || a == "-v");
-    let use_confine = args.iter().any(|a| a == "--confine" || a == "-c");
-    let positional: Vec<&String> = args[1..].iter().filter(|a| !a.starts_with('-')).collect();
-
-    if positional.is_empty() {
+    if args.len() < 2 {
         eprintln!("hecke-irrep v14 — Per-irrep Garside via Young's seminormal form");
-        eprintln!();
-        eprintln!("Usage: hecke-irrep [--vector|--confine] PARENT DAUGHTER [max_dim]");
-        eprintln!("  Orderings: u/d strings (quark level, length must be 3×A)");
-        eprintln!("  --vector:  Compute diagonal ⟨e_i|Δ|e_i⟩ via O(dim) vector action");
-        eprintln!("  --confine: Compute ⟨v_conf|Δ|v_conf⟩ where v_conf is the");
-        eprintln!("             leading eigenvector of the T_{{2,3}} confinement operator.");
-        eprintln!("             This is the q-torsion leaf projection — the physical");
-        eprintln!("             state selected by Borromean B₃ confinement.");
-        eprintln!("             Cost: O(n_crossings × dim) per irrep (same as --vector)");
-        eprintln!("  max_dim:   skip irreps with dim > this (default: unlimited)");
+        eprintln!("Usage:");
+        eprintln!("  hecke-irrep PARENT DAUGHTER [max_dim]     # matrix mode (full trace)");
+        eprintln!("  hecke-irrep --vector PARENT DAUGHTER      # vector mode (all diagonals)");
+        eprintln!("  hecke-irrep --confine PARENT DAUGHTER [KNOT]  # confinement eigenvector");
+        eprintln!("  hecke-irrep --knots PARENT DAUGHTER       # all 6 knot operators");
         std::process::exit(1);
     }
+
+    // Check for mode flags
+    let mode = if args[1] == "--vector" { "vector" }
+        else if args[1] == "--confine" { "confine" }
+        else if args[1] == "--knots" { "knots" }
+        else { "matrix" };
+
+    let arg_offset = if mode != "matrix" { 1 } else { 0 };
 
     let q0 = compute_q0();
     let ha = q0 - 1.0 / q0;
 
-    let par_str = positional[0].as_str();
-    let dau_str = if positional.len() > 1 { positional[1].as_str() } else { par_str };
-    let max_dim: usize = positional.get(2).and_then(|s| s.parse().ok()).unwrap_or(usize::MAX);
+    let par_str = &args[1 + arg_offset];
+    let dau_str = if args.len() > 2 + arg_offset { &args[2 + arg_offset] } else { par_str };
+    let max_dim: usize = args.get(3 + arg_offset).and_then(|s| s.parse().ok()).unwrap_or(usize::MAX);
 
     let par_types: Vec<u8> = par_str.chars().map(|c| match c {
         'u' | 'p' | '1' => b'p', _ => b'n',
@@ -805,183 +545,120 @@ fn main() {
     let n = par_types.len();
     assert_eq!(n, dau_types.len(), "Parent and daughter must have same length");
 
-    let n_u_par = par_types.iter().filter(|&&t| t == b'p').count();
-    let n_d_par = par_types.iter().filter(|&&t| t == b'n').count();
-    let n_u_dau = dau_types.iter().filter(|&&t| t == b'p').count();
-    let n_d_dau = dau_types.iter().filter(|&&t| t == b'n').count();
+    eprintln!("hecke-irrep v14 — q₀ = {:.15} (mode: {})", q0, mode);
+    eprintln!("  parent:   {} (n={})", par_str, n);
+    eprintln!("  daughter: {}", dau_str);
 
-    eprintln!("hecke-irrep v14 — q₀ = {:.15} (derived from CODATA)", q0);
-    eprintln!("  mode:     {}", if use_vector { "VECTOR (O(dim) per element)" } else { "MATRIX (O(dim²) full product)" });
-    eprintln!("  parent:   {} (n={}, {}u+{}d)", par_str, n, n_u_par, n_d_par);
-    eprintln!("  daughter: {} ({}u+{}d)", dau_str, n_u_dau, n_d_dau);
+    // ── Confine mode: single knot operator, min-eigenvalue ──────
+    if mode == "confine" || mode == "knots" {
+        // Filter knot operators by strand count (max generator index + 1 ≤ n)
+        let all_knots = vec!["trefoil", "cinquefoil", "T34", "weak", "borromean", "figure8"];
+        let knot_names: Vec<&str> = if mode == "knots" {
+            all_knots.into_iter().filter(|kn| {
+                let max_gen = knot_braid(kn).iter().map(|g| if *g >= 0 { *g } else { -g - 1 }).max().unwrap_or(0);
+                (max_gen as usize + 1) < n  // need at least max_gen+2 strands
+            }).collect()
+        } else {
+            let kn = args.get(3 + arg_offset).map(|s| s.as_str()).unwrap_or("borromean");
+            vec![kn]
+        };
 
-    // 2-row partitions of n
-    let all_partitions: Vec<(usize, usize)> = (0..=n/2).map(|b| (n - b, b)).collect();
+        let partitions: Vec<(usize, usize)> = (0..=n/2).map(|b| (n - b, b)).collect();
+        let t_total = Instant::now();
 
-    // Kostka support filtering
-    let partitions: Vec<(usize, usize)> = all_partitions.iter()
-        .filter(|&&(a, b)| {
-            let k_par = kostka_supported(a, b, n_u_par, n_d_par);
-            let k_dau = kostka_supported(a, b, n_u_dau, n_d_dau);
-            // Need support for at least one of parent/daughter to have nonzero Δ
-            k_par || k_dau
-        })
-        .cloned()
-        .collect();
+        for knot_name in &knot_names {
+            let mut total_dme = 0.0f64;
+            eprintln!("\n  Knot: {} ({})", knot_name, knot_braid(knot_name).iter()
+                .map(|g| if *g >= 0 { format!("σ{}", g) } else { format!("σ{}⁻¹", -g-1) })
+                .collect::<Vec<_>>().join("·"));
 
-    let skipped_kostka = all_partitions.len() - partitions.len();
-    eprintln!("  {} two-row irreps ({} skipped by Kostka K=0)", partitions.len(), skipped_kostka);
-
-    let t_total = Instant::now();
-
-    // ────────────────────────────────────────────────────────────
-    //  VECTOR MODE: O(dim) per crossing, O(dim) memory
-    // ────────────────────────────────────────────────────────────
-    if use_vector {
-        eprintln!("  Vector mode: computing diagonal elements ⟨e_i|Δ|e_i⟩");
-        eprintln!("  Memory per irrep: O(dim) instead of O(dim²)");
-
-        // ALL irreps can run in parallel — only O(dim) memory each
-        let results: Vec<(usize, usize, usize, f64, f64, f64, f64)> = partitions.par_iter()
-            .filter_map(|&(a, b)| {
-                let dim = generate_syt(a, b).len();
-                if dim > max_dim || dim == 0 { return None; }
+            for &(a, b) in &partitions {
+                let tabs = generate_syt(a, b);
+                let dim = tabs.len();
+                if dim == 0 || dim > max_dim { continue; }
 
                 let t0 = Instant::now();
 
-                // Compute all diagonal elements for parent and daughter
-                let diag_par = garside_all_diagonals(a, b, &par_types, q0);
-                let diag_dau = garside_all_diagonals(a, b, &dau_types, q0);
+                // Find min-eigenvalue eigenvector for this knot in this irrep
+                // Use 3-strand knot in the first 3 strands of n-strand rep
+                let (eigvec, lambda_min) = knot_eigenvector_min(a, b, knot_name, q0, 50);
+                if eigvec.is_empty() { continue; }
 
-                let tr_par: f64 = diag_par.iter().sum();
-                let tr_dau: f64 = diag_dau.iter().sum();
-                let dtr = tr_dau - tr_par;
+                // Apply Garside to eigenvector for parent and daughter
+                let v_par = garside_vec_action(a, b, &par_types, &eigvec, q0);
+                let v_dau = garside_vec_action(a, b, &dau_types, &eigvec, q0);
+
+                // Matrix elements
+                let me_par: f64 = eigvec.iter().zip(v_par.iter()).map(|(a, b)| a * b).sum();
+                let me_dau: f64 = eigvec.iter().zip(v_dau.iter()).map(|(a, b)| a * b).sum();
+                let dme = me_par - me_dau;
+                total_dme += dme;
 
                 let elapsed = t0.elapsed().as_secs_f64();
-                let mem_kb = dim * 8 * 2 / 1024;  // 2 vectors
+                eprintln!("    λ=({},{}): dim={:>6}, λ_min={:>+.4}, Δme={:>+.6e}, {:.3}s",
+                    a, b, dim, lambda_min, dme, elapsed);
+            }
 
-                eprintln!("  λ=({},{}): dim={:>6} ({} KB), tr_par={:>+12.4}, tr_dau={:>+12.4}, Δtr={:>+14.6e}, {:.1}s",
-                    a, b, dim, mem_kb, tr_par, tr_dau, dtr, elapsed);
+            let q_pred = total_dme.abs() * M_E_MEV;
+            eprintln!("  {} → Q = {:.4} MeV (Σ Δme = {:+.6e})", knot_name, q_pred, total_dme);
 
-                Some((a, b, dim, tr_par, tr_dau, dtr, elapsed))
-            })
-            .collect();
+            // JSON line
+            println!("{{\"knot\":\"{}\",\"total_dme\":{:.10e},\"q_mev\":{:.6}}}",
+                knot_name, total_dme, q_pred);
+        }
 
-        let total_dtr: f64 = results.iter().map(|r| r.5).sum();
+        let elapsed_total = t_total.elapsed().as_secs_f64();
+        eprintln!("\n  Total: {:.1}s", elapsed_total);
+        return;
+    }
+
+    // ── Vector mode: all diagonal elements ──────────────────────
+    if mode == "vector" {
+        let partitions: Vec<(usize, usize)> = (0..=n/2).map(|b| (n - b, b)).collect();
+        let t_total = Instant::now();
+        let mut total_dtr = 0.0f64;
+
+        for &(a, b) in &partitions {
+            let tabs = generate_syt(a, b);
+            let dim = tabs.len();
+            if dim == 0 || dim > max_dim { continue; }
+
+            let t0 = Instant::now();
+            let mut sum_dme = 0.0f64;
+
+            // For each basis vector, compute diagonal matrix element
+            for j in 0..dim {
+                let mut e_j = vec![0.0f64; dim];
+                e_j[j] = 1.0;
+
+                let v_par = garside_vec_action(a, b, &par_types, &e_j, q0);
+                let v_dau = garside_vec_action(a, b, &dau_types, &e_j, q0);
+
+                sum_dme += v_par[j] - v_dau[j];
+            }
+            total_dtr += sum_dme;
+
+            let elapsed = t0.elapsed().as_secs_f64();
+            eprintln!("  λ=({},{}): dim={:>6}, Δtr={:>+.6e}, {:.1}s", a, b, dim, sum_dme, elapsed);
+        }
+
         let q_pred = total_dtr.abs() * M_E_MEV;
         let elapsed_total = t_total.elapsed().as_secs_f64();
-
         eprintln!("\n  Σ Δtr = {:+.10e}", total_dtr);
-        eprintln!("  Q = |Σ Δtr| × m_e = {:.6} MeV", q_pred);
+        eprintln!("  Q = |Σ Δtr| × m_e = {:.4} MeV", q_pred);
         eprintln!("  Total: {:.1}s", elapsed_total);
-
-        // JSON output
-        print!("{{\"mode\":\"vector\",\"parent\":\"{}\",\"daughter\":\"{}\",\"n\":{},\"n_irreps\":{}", par_str, dau_str, n, results.len());
-        print!(",\"irreps\":[");
-        for (i, (a, b, dim, tr_p, tr_d, dtr, t)) in results.iter().enumerate() {
-            if i > 0 { print!(","); }
-            print!("{{\"a\":{},\"b\":{},\"dim\":{},\"tr_par\":{:.10e},\"tr_dau\":{:.10e},\"dtr\":{:.10e},\"time\":{:.3}}}",
-                a, b, dim, tr_p, tr_d, dtr, t);
-        }
-        println!("],\"total_dtr\":{:.10e},\"q_mev\":{:.6},\"q0\":{:.15},\"m_e_mev\":{},\"elapsed_s\":{:.3}}}",
-            total_dtr, q_pred, q0, M_E_MEV, elapsed_total);
-
+        println!("{{\"mode\":\"vector\",\"total_dtr\":{:.10e},\"q_mev\":{:.6},\"elapsed_s\":{:.3}}}",
+            total_dtr, q_pred, elapsed_total);
         return;
     }
 
-    // ────────────────────────────────────────────────────────────
-    //  CONFINE / KNOTS MODE: knot operator eigenvector channels
-    // ────────────────────────────────────────────────────────────
-    if use_confine {
-        assert_eq!(n % 3, 0, "Quark ordering length must be 3×A for confinement mode");
-        let n_nucleons = n / 3;
+    // ── Matrix mode (original) ──────────────────────────────────
+    // 2-row partitions of n
+    let partitions: Vec<(usize, usize)> = (0..=n/2).map(|b| (n - b, b)).collect();
 
-        let knots = knot_operators();
-        eprintln!("  Knot operator mode: {} operators × {} irreps", knots.len(), partitions.len());
-        eprintln!("  {} nucleons, {} quarks", n_nucleons, n);
-        eprintln!("  Operators: {}", knots.iter().map(|k| k.name).collect::<Vec<_>>().join(", "));
+    eprintln!("  {} two-row irreps", partitions.len());
 
-        // For each irrep, compute matrix elements for ALL knot operators
-        // Each knot gives a different q-torsion leaf → different channel
-        // The LP dual will select optimal weights
-
-        // Structure: per irrep, per knot → (me_par, me_dau, eigenvalue)
-        let results: Vec<(usize, usize, usize, Vec<(String, f64, f64, f64, f64)>, f64)> = partitions.par_iter()
-            .filter_map(|&(a, b)| {
-                let dim = generate_syt(a, b).len();
-                if dim > max_dim || dim == 0 { return None; }
-
-                let t0 = Instant::now();
-
-                let mut knot_results: Vec<(String, f64, f64, f64, f64)> = Vec::new();
-
-                for knot in &knots {
-                    let (v_knot, lambda) = knot_eigenvector(a, b, knot, n_nucleons, q0, 200, 1e-12);
-                    let me_par = garside_matrix_element(a, b, &par_types, &v_knot, q0);
-                    let me_dau = garside_matrix_element(a, b, &dau_types, &v_knot, q0);
-                    let dme = me_dau - me_par;
-                    knot_results.push((knot.name.to_string(), me_par, me_dau, dme, lambda));
-                }
-
-                let elapsed = t0.elapsed().as_secs_f64();
-
-                // Print summary for this irrep
-                eprintln!("  λ=({},{}): dim={:>6}, {:.1}s", a, b, dim, elapsed);
-                for (kname, me_p, me_d, dme, lam) in &knot_results {
-                    eprintln!("    {:>12}: λ_K={:.4e}, ⟨v|Δ_p|v⟩={:>+10.4}, ⟨v|Δ_d|v⟩={:>+10.4}, Δme={:>+12.6e}",
-                        kname, lam, me_p, me_d, dme);
-                }
-
-                Some((a, b, dim, knot_results, elapsed))
-            })
-            .collect();
-
-        let elapsed_total = t_total.elapsed().as_secs_f64();
-
-        // Per-knot-operator totals across all irreps
-        eprintln!("\n  PER-OPERATOR TOTALS (Σ_λ Δme):");
-        let knot_names: Vec<&str> = knots.iter().map(|k| k.name).collect();
-        let mut knot_totals: Vec<f64> = vec![0.0; knots.len()];
-        for (_, _, _, knot_results, _) in &results {
-            for (ki, (_, _, _, dme, _)) in knot_results.iter().enumerate() {
-                knot_totals[ki] += dme;
-            }
-        }
-
-        for (ki, name) in knot_names.iter().enumerate() {
-            let q_pred = knot_totals[ki].abs() * M_E_MEV;
-            eprintln!("    {:>12}: Σ Δme = {:>+12.6e}, Q = {:.6} MeV", name, knot_totals[ki], q_pred);
-        }
-        eprintln!("  Total: {:.1}s", elapsed_total);
-
-        // JSON output: full per-irrep, per-knot data for LP solver
-        print!("{{\"mode\":\"knots\",\"parent\":\"{}\",\"daughter\":\"{}\",\"n\":{},\"n_nucleons\":{},\"n_irreps\":{},\"n_knots\":{}",
-            par_str, dau_str, n, n_nucleons, results.len(), knots.len());
-        print!(",\"knot_names\":[{}]", knot_names.iter().map(|n| format!("\"{}\"", n)).collect::<Vec<_>>().join(","));
-
-        // Per-knot totals
-        print!(",\"knot_totals\":[{}]", knot_totals.iter().map(|t| format!("{:.10e}", t)).collect::<Vec<_>>().join(","));
-
-        // Per-irrep data
-        print!(",\"irreps\":[");
-        for (ri, (a, b, dim, knot_results, t)) in results.iter().enumerate() {
-            if ri > 0 { print!(","); }
-            print!("{{\"a\":{},\"b\":{},\"dim\":{},\"time\":{:.3},\"channels\":[", a, b, dim, t);
-            for (ki, (kname, me_p, me_d, dme, lam)) in knot_results.iter().enumerate() {
-                if ki > 0 { print!(","); }
-                print!("{{\"knot\":\"{}\",\"me_par\":{:.10e},\"me_dau\":{:.10e},\"dme\":{:.10e},\"lambda\":{:.10e}}}",
-                    kname, me_p, me_d, dme, lam);
-            }
-            print!("]}}");
-        }
-        println!("],\"q0\":{:.15},\"m_e_mev\":{},\"elapsed_s\":{:.3}}}", q0, M_E_MEV, elapsed_total);
-
-        return;
-    }
-
-    // ────────────────────────────────────────────────────────────
-    //  MATRIX MODE (original): O(dim²) per crossing
-    // ────────────────────────────────────────────────────────────
+    let t_total = Instant::now();
 
     // Memory-aware scheduling: parallel for small irreps, sequential for large
     // Each irrep needs 2 × dim² × 8 bytes of working memory

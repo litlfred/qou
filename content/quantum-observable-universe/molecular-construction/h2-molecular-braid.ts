@@ -1,0 +1,26 @@
+import { definition } from "../../schema/builders";
+
+/**
+ * H₂ molecular braid: the simplest covalent molecule.
+ * Two protons + two electrons in H₄(q).
+ */
+export default definition({
+  label: "def:h2-molecular-braid",
+  title: "Hydrogen molecule $H_2$ as a braid in $H_4(q)$",
+  lean: {
+    decl: "QOU.Molecular.H2Braid",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:molecular-braid",
+    "def:covalent-bond-shared-trefoil",
+    "def:atomic-braid",
+  ],
+  tags: [
+    "hydrogen",
+    "H2",
+    "covalent-bond",
+    "molecular-braid",
+    "prototype",
+  ],
+});

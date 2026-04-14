@@ -88,6 +88,7 @@ export default chapter({
         "core-levi-form",
         "core-levi-interpretation",
         "ns-regular-qou",
+        "ns-obstruction",
         "ns-classical-formulation",
         "ns-obstruction-tower",
         "ns-obstruction-computation",

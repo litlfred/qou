@@ -2,8 +2,12 @@
 """Generate appendix markdown table v2: includes observed atomic mass."""
 
 import math
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+from computations.q_parameter import Q
 
-q = 1.10997
+q = Q
 q_half = math.sqrt(q)
 mu_u, mu_d = 311.10, 312.39
 

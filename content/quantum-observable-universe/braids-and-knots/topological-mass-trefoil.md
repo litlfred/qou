@@ -54,15 +54,18 @@ It is the unique amphichiral knot in $H^{0,1}(\Sigma_4)$, and
 its hyperbolic volume drives the mass mechanism.  The muon
 ($T_{2,5}$, cinquefoil) acquires its mass through the Higgs
 field ($4_1$), which universally couples to all knot-particles
-with crossings $> 0$.  The ratio of topological masses is
+with crossings $> 0$.  The dimensionless mass of $4_1$ is
 
 $$
-  \frac{\mathfrak{m}(4_1)}{\mathfrak{m}(\tau(2,3))}
-   \approx  207.1,
+  \mathfrak{m}(4_1)
+  = 
+  \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
+  \approx 207.1,
 $$
 
 which matches the muon-to-electron mass ratio
-$\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$.
+$\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$
+(the electron mass $\mathfrak{m}_e = 1$ is the dimensionless unit).
 The correspondence
 
 $$

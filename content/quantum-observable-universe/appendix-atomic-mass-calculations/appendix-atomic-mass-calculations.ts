@@ -38,5 +38,12 @@ export default chapter({
         "amc-summary",
       ],
     }),
+    section({
+      title: "$q$-integer mass table (zero fitted parameters)",
+      label: "sec:amc-q-integer",
+      blocks: [
+        "amc-q-integer-table",
+      ],
+    }),
   ],
 });

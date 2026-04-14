@@ -8,11 +8,16 @@ Compares results against CODATA/AME2020 atomic masses.
 """
 
 import math
+import sys
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Optional
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+from computations.q_parameter import Q, VOL_FIGURE_EIGHT as VOL_4_1_CANONICAL
+
 # ── Substrate parameter (from muon-electron mass ratio) ──────────────
-q = 1.10997
+q = Q
 hbar_q = 1.0 - 1.0 / q  # quantum Planck constant
 q_half = math.sqrt(q)
 q_inv_half = 1.0 / q_half
@@ -23,8 +28,8 @@ VOL_FIGURE_EIGHT = 3.0 * (  # Vol(4_1) = 3 Cl_2(π/3)
         for k in range(1000))
     * 2  # Clausen function Cl_2(θ) = -∫₀^θ ln|2sin(t/2)| dt
 )
-# Use exact known value
-VOL_4_1 = 2.0298832128      # figure-eight knot
+# Use canonical value from q_parameter.py
+VOL_4_1 = VOL_4_1_CANONICAL  # figure-eight knot (2.029883212819307)
 VOL_5_2 = 2.8281220883      # three-twist knot (from SnapPy)
 VOL_5_1 = 0.0               # cinquefoil (torus knot, zero volume)
 VOL_TREFOIL = 0.0            # trefoil (torus knot, zero volume)
