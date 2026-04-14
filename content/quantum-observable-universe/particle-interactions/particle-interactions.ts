@@ -117,6 +117,7 @@ export default chapter({
         "atomic-lp-stability",
         "wedderburn-mass-formula",
         "q-integer-mass-formula",
+        "universal-ilp-algorithm",
         "neutron-proton-splitting",
         "color-pairing-binding",
         "mass-table-z1-20",
