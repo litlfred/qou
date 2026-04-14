@@ -61,7 +61,10 @@ PROTON_G0 = [(1,0)]*3 + [(1,0)] + [(1,0)]*2 + [(1,-h/2)]     # 7 crossings
 PROTON_G1 = [(1,-h)]*3 + [(1,-h/2)]                            # 4 crossings
 NEUTRON_G0 = [(1,0)]*3 + [(1,-h/2)] + [(1,0)] + [(1,0)] + [(1,-h/2)]  # 7
 NEUTRON_G1 = [(1,-h)]*3 + [(1,-h)] + [(1,0)] + [(1,0)]        # 6
-PE = (1, -h)  # electron pe crossing on gen 1
+# Electron crossing coefficients (c, d) for cσ + d·𝟏
+PE = (1, -h)   # proton-electron: σ⁻¹ (EM attraction, same as nn)
+NE = (0, 1)    # neutron-electron: 𝟏 (no interaction)
+EE = (1, 0)    # electron-electron: σ (EM repulsion, same as pp)
 
 # Bond operators
 INV_TREFOIL_G0 = [(1,-h), (1,-h)]  # σ₀⁻¹σ₀⁻¹

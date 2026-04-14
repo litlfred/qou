@@ -72,15 +72,17 @@ IDEAL = {
 # - e-e: Hopf link between electrons = positive crossing sigma
 
 CROSSING_TYPES = {
-    "pp": {"c": 1.0, "d": 0.0, "description": "proton-proton: positive crossing sigma"},
+    # Nuclear crossings
+    "pp": {"c": 1.0, "d": 0.0, "description": "proton-proton: σ (Coulomb repulsion)"},
     "nn": {"c": 1.0, "d": float(-HA), "description": "neutron-neutron: σ⁻¹ = σ - (q-q⁻¹)"},
     "pn": {"c": 1.0, "d": float(-HA/2), "description": "proton-neutron: ½(σ + σ⁻¹) = σ - ½(q-q⁻¹)"},
     "np": {"c": 1.0, "d": float(-HA/2), "description": "neutron-proton: ½(σ + σ⁻¹) = σ - ½(q-q⁻¹)"},
-    "pe": {"c": 1.0, "d": 0.0, "description": "proton-electron: Hopf link sigma"},
-    "ep": {"c": 1.0, "d": 0.0, "description": "electron-proton: Hopf link sigma"},
-    "ne": {"c": 1.0, "d": 0.0, "description": "neutron-electron: Hopf link sigma"},
-    "en": {"c": 1.0, "d": 0.0, "description": "electron-neutron: Hopf link sigma"},
-    "ee": {"c": 1.0, "d": 0.0, "description": "electron-electron: Hopf link sigma"},
+    # Electron crossings
+    "pe": {"c": 1.0, "d": float(-HA), "description": "proton-electron: σ⁻¹ (EM attraction)"},
+    "ep": {"c": 1.0, "d": float(-HA), "description": "electron-proton: σ⁻¹ (EM attraction)"},
+    "ne": {"c": 0.0, "d": 1.0, "description": "neutron-electron: 𝟏 (no interaction)"},
+    "en": {"c": 0.0, "d": 1.0, "description": "electron-neutron: 𝟏 (no interaction)"},
+    "ee": {"c": 1.0, "d": 0.0, "description": "electron-electron: σ (EM repulsion)"},
 }
 
 c_nn = 1.0; d_nn = -HA
@@ -88,14 +90,22 @@ c_mix = 1.0; d_mix = -HA/2
 
 def crossing_element(ti, tj, gen):
     """Build the Hecke element for a crossing between types ti, tj at generator gen."""
-    if ti == tj == 'p' or ti == tj == 'e':
-        return sigma(gen)
+    pair = frozenset([ti, tj])
+
+    if ti == tj == 'p':
+        return sigma(gen)                                    # pp: σ
     elif ti == tj == 'n':
-        return HeckeElement({(gen,): c_nn, (): d_nn})
-    elif set([ti, tj]) == set(['p', 'n']):
-        return HeckeElement({(gen,): c_mix, (): d_mix})
-    else:  # p-e, n-e, e-p, e-n
-        return sigma(gen)
+        return HeckeElement({(gen,): c_nn, (): d_nn})        # nn: σ⁻¹
+    elif pair == frozenset(['p', 'n']):
+        return HeckeElement({(gen,): c_mix, (): d_mix})      # pn: ½(σ+σ⁻¹)
+    elif pair == frozenset(['p', 'e']):
+        return HeckeElement({(gen,): 1.0, (): float(-HA)})   # pe: σ⁻¹ (attraction)
+    elif pair == frozenset(['n', 'e']):
+        return HeckeElement({(): 1.0})                       # ne: 𝟏 (no interaction)
+    elif ti == tj == 'e':
+        return sigma(gen)                                    # ee: σ (repulsion)
+    else:
+        return sigma(gen)                                    # fallback: σ
 
 def nf_dict(elem):
     """Convert element to serializable dict."""

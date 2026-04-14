@@ -37,6 +37,8 @@ export default chapter({
         "electron-shell-braid-capacity",
         "shell-filling-rule",
         "valence-from-braid",
+        "shell-closure-nf-term-count",
+        "palindromicity-orbital-type",
       ],
     }),
 
