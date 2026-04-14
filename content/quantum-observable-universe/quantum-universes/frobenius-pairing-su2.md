@@ -42,7 +42,7 @@ $$
   =  \tfrac{1}{2},
   \qquad
   \langle \alpha, \beta \rangle_A
-  =  \int_{\mathrm{SU}(2)} \alpha\betad\mu
+  =  \int_{\mathrm{SU}(2)} \alpha\beta\,d\mu
   =  0.
 $$
 
