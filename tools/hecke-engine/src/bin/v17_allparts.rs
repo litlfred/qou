@@ -327,43 +327,33 @@ fn main() {
                 let mut v = vec![0.0f64; dim];
                 v[j] = 1.0;
 
-                // Atom A: B₃ confinement + quarks + gluon per nucleon,
-                // then inter-nucleon Garside, then pe crossings.
+                // Atom A: physical braid from transfer matrix chain.
                 //
-                // For each proton: B₃ = (σ₀σ₁⁻¹)³ in H₃ maps to
-                // 3 positive + 3 inverse crossings at generators (i, i).
-                // But on the full tower, B₃ is internal to the nucleon
-                // and manifests as the typed crossing + gluon boost.
+                // At each generator i (i = 0..n_A-2):
+                //   - Gluon crossings (if nucleon)
+                //   - Typed crossing with EVERY strand j > i
+                //     (accumulated at generator i, same as all-nuclei-transfer-matrix.py)
                 //
-                // The gluon adds at each nucleon's first generator:
-                //   Proton: 2 positive crossings (σ, d=0)
-                //   Neutron: 4 positive crossings (L₊L₋ effective)
+                // This matches the per-generator vertex volume V̂_i = z·a + b
+                // where (a,b) is the 2×2 chain product of all crossings at gen i.
+                //
+                // In the per-irrep basis, each crossing at generator i acts
+                // via the seminormal matrix for σ_i with coefficient d.
                 let a_nucleons = z1 + n1;
-                // Phase 1: nucleon Garside with gluon
-                for level in 0..a_nucleons.saturating_sub(1) {
-                    // Gluon for nucleon at position level
-                    let n_gluon = if mol[level] == b'p' { 2 } else { 4 };
-                    for _ in 0..n_gluon {
-                        apply_crossing(&mut v, &tabs, &tab_idx, level, 0.0, q0);
+                for i in 0..na.saturating_sub(1) {
+                    // Gluon for nucleon at position i
+                    if i < a_nucleons {
+                        let n_gluon = if mol[i] == b'p' { 2 } else { 4 };
+                        for _ in 0..n_gluon {
+                            apply_crossing(&mut v, &tabs, &tab_idx, i, 0.0, q0);
+                        }
                     }
-                    // Inter-nucleon crossings at this level
-                    for sweep in (0..=level).rev() {
-                        let ti = mol[sweep]; let tj = mol[level+1];
-                        if ti == b'e' || tj == b'e' { continue; } // skip pe/ee for now
+                    // ALL crossings from strand i to strands j > i (within atom A)
+                    for jj in (i+1)..na {
+                        let ti = mol[i]; let tj = mol[jj];
                         if is_identity(ti,tj) { continue; }
                         let dc = cross_coeff(ti,tj,ha);
-                        apply_crossing(&mut v, &tabs, &tab_idx, sweep, dc, q0);
-                    }
-                }
-                // Phase 2: electron crossings (pe + ee)
-                for level in a_nucleons..na {
-                    for sweep in (0..=level.saturating_sub(1)).rev() {
-                        let ti = mol[sweep]; let tj = mol[level];
-                        if is_identity(ti,tj) { continue; }
-                        // Only pe and ee crossings
-                        if !(ti == b'e' || tj == b'e') { continue; }
-                        let dc = cross_coeff(ti,tj,ha);
-                        apply_crossing(&mut v, &tabs, &tab_idx, sweep, dc, q0);
+                        apply_crossing(&mut v, &tabs, &tab_idx, i, dc, q0);
                     }
                 }
 
@@ -372,36 +362,25 @@ fn main() {
                     apply_crossing(&mut v, &tabs, &tab_idx, na-1, -ha, q0);
                 }
 
-                // Atom B: same structure as A
+                // Atom B: same chain structure
                 let b_nucleons = z2 + n2;
                 let nb = sb.len();
-                // Phase 1: nucleon Garside with gluon
-                for level in 0..b_nucleons.saturating_sub(1) {
-                    let gi = na + level;
-                    let n_gluon = if mol[gi] == b'p' { 2 } else { 4 };
-                    for _ in 0..n_gluon {
-                        apply_crossing(&mut v, &tabs, &tab_idx, gi, 0.0, q0);
+                for i in 0..nb.saturating_sub(1) {
+                    let gi = na + i;
+                    // Gluon
+                    if i < b_nucleons {
+                        let n_gluon = if mol[gi] == b'p' { 2 } else { 4 };
+                        for _ in 0..n_gluon {
+                            apply_crossing(&mut v, &tabs, &tab_idx, gi, 0.0, q0);
+                        }
                     }
-                    for sweep in (0..=level).rev() {
-                        let gs = na + sweep;
-                        let gl = na + level + 1;
-                        let ti = mol[gs]; let tj = mol[gl];
-                        if ti == b'e' || tj == b'e' { continue; }
+                    // ALL crossings from strand gi to strands gj > gi (within atom B)
+                    for jj in (i+1)..nb {
+                        let gj = na + jj;
+                        let ti = mol[gi]; let tj = mol[gj];
                         if is_identity(ti,tj) { continue; }
                         let dc = cross_coeff(ti,tj,ha);
-                        apply_crossing(&mut v, &tabs, &tab_idx, gs, dc, q0);
-                    }
-                }
-                // Phase 2: electron crossings
-                for level in b_nucleons..nb {
-                    for sweep in (0..=level.saturating_sub(1)).rev() {
-                        let gs = na + sweep;
-                        let gl = na + level;
-                        let ti = mol[gs]; let tj = mol[gl];
-                        if is_identity(ti,tj) { continue; }
-                        if !(ti == b'e' || tj == b'e') { continue; }
-                        let dc = cross_coeff(ti,tj,ha);
-                        apply_crossing(&mut v, &tabs, &tab_idx, gs, dc, q0);
+                        apply_crossing(&mut v, &tabs, &tab_idx, gi, dc, q0);
                     }
                 }
 
