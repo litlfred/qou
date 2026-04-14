@@ -23,46 +23,91 @@ open QOU.Descartes
 
 /-! ## §1  Nucleon and crossing types -/
 
-/-- A nucleon type: proton or neutron. -/
-inductive NucleonType where
-  | proton  : NucleonType
-  | neutron : NucleonType
+/-- A particle type: proton, neutron, or electron. -/
+inductive ParticleType where
+  | proton   : ParticleType
+  | neutron  : ParticleType
+  | electron : ParticleType
   deriving DecidableEq, Repr
 
-/-- Inter-nucleon crossing type. -/
+/-- Legacy alias for backward compatibility. -/
+abbrev NucleonType := ParticleType
+
+/-- Inter-particle crossing type.
+
+    Nuclear crossings:
+      pp — proton-proton: σ (Coulomb repulsion)
+      nn — neutron-neutron: σ⁻¹ (strong force)
+      pn — proton-neutron: ½(σ + σ⁻¹) (mixed)
+
+    Electron crossings:
+      pe — proton-electron: σ⁻¹ (EM attraction, same coeffs as nn)
+      ne — neutron-electron: 𝟏 (no interaction)
+      ee — electron-electron: σ (EM repulsion, same coeffs as pp) -/
 inductive CrossingType where
   | pp : CrossingType  -- proton-proton: eigenvalue +q
   | nn : CrossingType  -- neutron-neutron: eigenvalue -q⁻¹
   | pn : CrossingType  -- proton-neutron: mixed
+  | pe : CrossingType  -- proton-electron: σ⁻¹ (EM attraction)
+  | ne : CrossingType  -- neutron-electron: 𝟏 (no interaction)
+  | ee : CrossingType  -- electron-electron: σ (EM repulsion)
   deriving DecidableEq, Repr
 
-/-- Determine crossing type from nucleon pair. -/
-def crossingType : NucleonType → NucleonType → CrossingType
-  | .proton,  .proton  => .pp
-  | .neutron, .neutron => .nn
-  | _,        _        => .pn
+/-- Determine crossing type from particle pair. -/
+def crossingType : ParticleType → ParticleType → CrossingType
+  | .proton,   .proton   => .pp
+  | .neutron,  .neutron  => .nn
+  | .proton,   .neutron  => .pn
+  | .neutron,  .proton   => .pn
+  | .proton,   .electron => .pe
+  | .electron, .proton   => .pe
+  | .neutron,  .electron => .ne
+  | .electron, .neutron  => .ne
+  | .electron, .electron => .ee
 
 /-! ## §2  Typed crossing coefficients (symbolic in q) -/
 
-/-- The typed crossing element in H₃(q).
+/-- The typed crossing element.
     Returns (σ-coefficient, 𝟙-coefficient) in ℤ[q, q⁻¹].
 
-    pp: (1, 0)          — pure positive crossing
-    nn: (1, −HA)        — Hecke inverse crossing
-    pn: (1, −HA/2)      — averaged mixed crossing
+    Nuclear:
+      pp: (1, 0)          — pure positive crossing (Coulomb repulsion)
+      nn: (1, −HA)        — Hecke inverse crossing (strong force)
+      pn: (2, −HA)        — averaged mixed crossing, stored as 2× to stay in ℤ[q,q⁻¹]
 
-    Note: HA/2 takes us outside ℤ[q, q⁻¹]. For formal proofs
-    we work with 2·d_pn = −HA to stay in the ground ring. -/
+    Electron (POSTULATES — not derived from the Hecke algebra):
+      pe: (1, −HA)        — EM attraction (same as nn)
+      ne: (0, 1)          — no interaction (identity)
+      ee: (1, 0)          — EM repulsion (same as pp)
+
+    Note: The electron crossing assignments map EM attraction/repulsion
+    to the same algebraic structure as strong-force crossings. This is
+    a modeling ansatz, not a derivation. See discussion in PR #349. -/
 noncomputable def crossingCoeffs : CrossingType → R_q × R_q
   | .pp => (1, 0)
   | .nn => (1, -HA)
-  | .pn => (1, -HA)  -- stored as 2× to stay in ℤ[q, q⁻¹]
+  | .pn => (2, -HA)  -- 2× physical value to stay in ℤ[q, q⁻¹]
+  | .pe => (1, -HA)  -- POSTULATE: EM attraction ↦ σ⁻¹
+  | .ne => (0, 1)    -- POSTULATE: no interaction ↦ 𝟏
+  | .ee => (1, 0)    -- POSTULATE: EM repulsion ↦ σ
 
 /-- The pp crossing coefficient is just σ (no identity shift). -/
 theorem pp_no_shift : (crossingCoeffs .pp).2 = 0 := by rfl
 
 /-- The nn crossing has identity shift −HA = −(q − q⁻¹). -/
 theorem nn_shift : (crossingCoeffs .nn).2 = -HA := by rfl
+
+/-- The pn crossing σ-coefficient is 2 (doubled to stay in ℤ[q,q⁻¹]). -/
+theorem pn_sigma_coeff : (crossingCoeffs .pn).1 = 2 := by rfl
+
+/-- The pe crossing has the same 𝟙-shift as nn (EM attraction). -/
+theorem pe_shift_eq_nn : (crossingCoeffs .pe).2 = (crossingCoeffs .nn).2 := by rfl
+
+/-- The ee crossing has the same coefficients as pp (EM repulsion). -/
+theorem ee_eq_pp : crossingCoeffs .ee = crossingCoeffs .pp := by rfl
+
+/-- The ne crossing is the identity (no interaction). -/
+theorem ne_identity : crossingCoeffs .ne = (0, 1) := by rfl
 
 /-! ## §3  Confinement universality -/
 
