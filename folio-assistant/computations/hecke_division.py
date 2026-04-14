@@ -422,6 +422,51 @@ class HeckeDivision:
             (): 0.5 * self.inv_const,
         })
 
+    # ── Electron crossings ───────────────────────────────────────
+
+    def crossing_pe(self, i):
+        """σ_i⁻¹ = σ_i − (q − q⁻¹)·𝟏  (proton-electron: EM attraction).
+        Same as nn crossing — the EM attraction between p and e
+        is topologically equivalent to the strong-force nn crossing."""
+        return self.crossing_negative(i)
+
+    def crossing_ne(self, i):
+        """𝟏  (neutron-electron: no interaction).
+        The neutron is electrically neutral, so the crossing is trivial."""
+        return HeckeElement({(): 1.0})
+
+    def crossing_ee(self, i):
+        """σ_i  (electron-electron: EM repulsion).
+        Same as pp crossing — same-charge repulsion."""
+        return self.crossing_positive(i)
+
+    def crossing_for_pair(self, type_i, type_j, gen):
+        """Build crossing element for an arbitrary pair of particle types.
+
+        Supported types: 'p' (proton), 'n' (neutron), 'e' (electron),
+                         'u' (up quark), 'd' (down quark).
+        """
+        pair = frozenset([type_i, type_j])
+
+        if type_i == type_j == 'p' or type_i == type_j == 'u':
+            return self.crossing_positive(gen)
+        elif type_i == type_j == 'n' or type_i == type_j == 'd':
+            return self.crossing_negative(gen)
+        elif pair in (frozenset(['p', 'n']), frozenset(['u', 'd'])):
+            return self.crossing_mixed(gen)
+        elif pair == frozenset(['p', 'e']):
+            return self.crossing_pe(gen)
+        elif pair == frozenset(['n', 'e']):
+            return self.crossing_ne(gen)
+        elif type_i == type_j == 'e':
+            return self.crossing_ee(gen)
+        elif 'e' in pair:
+            # Quark-electron: treat as pe-like (attraction)
+            return self.crossing_pe(gen)
+        else:
+            # Fallback: positive crossing
+            return self.crossing_positive(gen)
+
     # ── Generator inverses and Borromean braid ───────────────────
 
     def sigma(self, i):
