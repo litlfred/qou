@@ -27,6 +27,7 @@ on:
       - 'scripts/mcp-server/Dockerfile'
       - '.github/scripts/**'
       - 'folio-assistant/**'
+      - 'tools/hecke-engine/**'
   workflow_dispatch:
   schedule:
     - cron: '0 6 * * 0'  # Weekly Sunday 06:00 UTC
