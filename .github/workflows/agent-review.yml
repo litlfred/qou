@@ -41,11 +41,21 @@ jobs:
       - name: Get commit diff
         id: diff
         run: |
-          DIFF=$(git diff HEAD~1 HEAD -- . ':(exclude).github' 2>/dev/null || git diff --root HEAD -- . ':(exclude).github' 2>/dev/null || true)
+          if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
+            if ! DIFF=$(git diff HEAD~1 HEAD -- . ':(exclude).github' 2>/dev/null); then
+              echo "Failed to compute commit diff against HEAD~1." >&2
+              exit 1
+            fi
+          else
+            if ! DIFF=$(git diff --root HEAD -- . ':(exclude).github' 2>/dev/null); then
+              echo "Failed to compute root commit diff." >&2
+              exit 1
+            fi
+          fi
           # Truncate in-variable to avoid broken pipe from piping into head
           DIFF="${DIFF:0:50000}"
           # Use a random delimiter to prevent collisions with diff content
-          DELIM="DIFF_EOF_$(head -c 8 /dev/urandom | xxd -p)"
+          DELIM="DIFF_EOF_$(python -c 'import secrets; print(secrets.token_hex(8))')"
           {
             echo "diff<<${DELIM}"
             printf '%s\n' "$DIFF"
