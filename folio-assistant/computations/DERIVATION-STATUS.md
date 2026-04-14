@@ -124,3 +124,4 @@ Computing χ_{[3,1,1]}(σ_i·σ_j) requires the 6×6 representation matrices
 of [3,1,1] at each generator, then multiplying pairs and taking traces.
 This is computationally straightforward but hasn't been done yet.
 DERIVATION-STATUS.md
+
