@@ -80,3 +80,8 @@ path = "src/bin/v15_molecular.rs"
 [[bin]]
 name = "hecke-tensor"
 path = "src/bin/v16_tensor.rs"
+
+# Full partition molecular binding (all irreps, not just 2-row)
+[[bin]]
+name = "hecke-allparts"
+path = "src/bin/v17_allparts.rs"
