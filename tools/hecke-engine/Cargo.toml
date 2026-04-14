@@ -75,3 +75,8 @@ path = "src/bin/v14_irrep.rs"
 [[bin]]
 name = "hecke-molecular"
 path = "src/bin/v15_molecular.rs"
+
+# Tensor product molecular binding
+[[bin]]
+name = "hecke-tensor"
+path = "src/bin/v16_tensor.rs"
