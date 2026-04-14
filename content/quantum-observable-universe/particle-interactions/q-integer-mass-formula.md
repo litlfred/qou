@@ -34,8 +34,10 @@ $$
   - \delta_S \frac{f(Z) + f(N)}{A^{2/3}}
 $$
 
-*where $f(x) = \sum_m \exp(-(x-m)^2/2\sigma^2)$ sums over
-magic numbers $\{2,8,20,28,50,82,126\}$ with $\sigma = 2$.
+*where $f(x) = \sum_m \exp(-(x-m)^2/2[2]_q^2)$ sums over
+magic numbers $\{2,8,20,28,50,82,126\}$ with width
+$\sigma = [2]_q = q + q^{-1}$ (the quantum dimension of the
+pairing representation $H_2(q)$).
 Zero fitted parameters.  At $q_0$ from CODATA:*
 
 $$

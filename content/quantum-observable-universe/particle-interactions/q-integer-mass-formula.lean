@@ -77,12 +77,16 @@ theorem asym_volume_relation (q m_e : ℝ) :
   unfold a_asym lambda_V
   ring
 
-/-- The exchange coefficient equals the Coulomb coefficient scaled
-    by the nucleon-to-pair dimension ratio [3]_q·[2]_q / ((q-q⁻¹)·[6]_q). -/
+/-- The exchange-to-Coulomb ratio is the nucleon screening factor:
+    λ_ex · (q-q⁻¹) · [6]_q · [2]_q = λ_C · [3]_q.
+    Both sides equal (q-q⁻¹) · [3]_q · [6]_q · m_e when expanded. -/
 -- Ref: [manuscript] Ch 11 §8
--- sorry: algebraic identity involving q_int ratios
--- Ref: [manuscript] Ch 11 §8
-sorry
+theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
+    lambda_ex q m_e * (q - q⁻¹) * q_int q 6 * q_int q 2 =
+    lambda_C q m_e * q_int q 3 := by
+  unfold lambda_ex lambda_C
+  field_simp
+  ring
 
 -- ── Seven-term binding energy ──────────────────────────────────
 
