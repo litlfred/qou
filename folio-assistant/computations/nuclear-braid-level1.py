@@ -37,15 +37,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-# ── Parameters ───────────────────────────────────────────────────
+# ── Parameters (from canonical q_parameter.py) ──────────────────
 
-Q_VAL = 1.110
-Q_INV = 1.0 / Q_VAL
+from q_parameter import Q as Q_VAL, Q_INV, HA, S_SKEIN as SKEIN_AMP, HBAR_Q
 Q_HALF = Q_VAL**0.5
 Z_MARKOV = 1.0 / (Q_HALF + 1.0/Q_HALF)
-HA = Q_VAL - Q_INV  # Hecke coefficient (q - q⁻¹)
-SKEIN_AMP = Q_HALF - 1.0/Q_HALF
-HBAR_Q = 1.0 - Q_INV
 HBAR_Q2 = HBAR_Q**2
 
 
