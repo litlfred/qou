@@ -87,6 +87,7 @@ export default chapter({
         "half-life-as-q-probe",
         "finiteness-bound-interpretation",
         "tritium-decay-knot-equation",
+        "tritium-qvalue-audit",
         "nitrogen-14-threading",
         "trace-ratio-observable",
         "trace-ratio-interpretation",
