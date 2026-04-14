@@ -49,25 +49,32 @@ is the product of per-crossing eigenvalues.  In the standard
 channel (dim $= 2$), $v_c$ is the eigenvector of
 $T_{2,3} = \sigma_0\sigma_1\sigma_0$ in the seminormal basis.
 
-**Proton** ($\mathfrak{p} = \mathfrak{u}\mathfrak{u}\mathfrak{d}$,
-crossings: $\sigma_0(\mathfrak{u}\mathfrak{u}) \times
-[\sigma_1 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d}) \times
-[\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})$):
+**Proton** ($\mathfrak{p} = \mathfrak{u}\mathfrak{u}\mathfrak{d}$), crossings:
+
+$$
+  \sigma_0(\mathfrak{u}\mathfrak{u}) \times [\sigma_1 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d}) \times [\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})
+$$
+
+The four channels correspond to the earlier eigendecomposition:
+Sym $= $ Trivial ($\lambda = q^3$), Std $\lambda_1 = $ Unconfining
+($\lambda = -q$), Std $\lambda_2 = $ Confining ($\lambda = q^{-1}$),
+Alt $= $ Sign ($\lambda = -q^{-3}$).
 
 | Channel | $\lambda_c$ | $G_P(c)$ | Numeric at $q_0$ |
 |:---:|:---:|:---:|:---:|
-| Sym | $q^3$ | $q \cdot \tfrac{1}{2}[2]_q \cdot \tfrac{1}{2}[2]_q$ | $+1.122$ |
-| Std $\lambda_1$ | $-q$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.174$ |
-| Std $\lambda_2$ | $q^{-1}$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.858$ |
-| Alt | $-q^{-3}$ | $(-q^{-1}) \cdot (-\tfrac{1}{2}[2]_q)^2$ | $-0.911$ |
+| Sym (Trivial) | $q^3$ | $q \cdot \tfrac{1}{2}[2]_q \cdot \tfrac{1}{2}[2]_q$ | $+1.122$ |
+| Std $\lambda_1$ (Unconf.) | $-q$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.174$ |
+| Std $\lambda_2$ (Conf.) | $q^{-1}$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.858$ |
+| Alt (Sign) | $-q^{-3}$ | $(-q^{-1}) \cdot (-\tfrac{1}{2}[2]_q)^2$ | $-0.911$ |
 
 **Channel sum:** $a = \sum_c G_P(c) = -h/2$ (verified algebraically
 and numerically at $q_0$: $a = -0.1045$).
 
-**Neutron** ($\mathfrak{n} = \mathfrak{u}\mathfrak{d}\mathfrak{d}$,
-crossings: $[\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})
-\times [\sigma_1 - h](\mathfrak{d}\mathfrak{d})
-\times [\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})$):
+**Neutron** ($\mathfrak{n} = \mathfrak{u}\mathfrak{d}\mathfrak{d}$), crossings:
+
+$$
+  [\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d}) \times [\sigma_1 - h](\mathfrak{d}\mathfrak{d}) \times [\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})
+$$
 
 | Channel | $G_N(c)$ | Numeric at $q_0$ |
 |:---:|:---:|:---:|
