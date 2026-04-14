@@ -1,0 +1,109 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-13T21:30:01.975644+00:00",
+  "commitSha": "789d28a5c1de15887bfe98cc987627dd3c85d1db",
+  "assertions": [
+    {
+      "name": "H₂",
+      "computed": 4.5,
+      "expected": 4.478,
+      "passed": true,
+      "tolerance": 1.3434,
+      "unit": "eV"
+    },
+    {
+      "name": "CO",
+      "computed": 10.6,
+      "expected": 11.09,
+      "passed": true,
+      "tolerance": 3.327,
+      "unit": "eV"
+    },
+    {
+      "name": "CO₂",
+      "computed": 14.1,
+      "expected": 16.56,
+      "passed": true,
+      "tolerance": 4.967999999999999,
+      "unit": "eV"
+    },
+    {
+      "name": "CH₄",
+      "computed": 16.9,
+      "expected": 17.9,
+      "passed": true,
+      "tolerance": 5.369999999999999,
+      "unit": "eV"
+    },
+    {
+      "name": "C₆H₆",
+      "computed": 57.1,
+      "expected": 57.4,
+      "passed": true,
+      "tolerance": 17.22,
+      "unit": "eV"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "molecular-trefoil-scan",
+  "scriptFile": "molecular-trefoil-scan.py",
+  "scriptHash": "372ee79a6e83",
+  "scriptCommitSha": "",
+  "description": "Integer LP: scan inverse trefoil count per bond until marginal gain exhausts. Uses 3-channel vertex volumes.",
+  "contentBlock": "def:molecular-braid",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "E_mol_eV": 6.750278523641413
+  },
+  "data": {
+    "bond_HH": {
+      "k_trefoils": 1,
+      "E_eV": 4.483351450017505
+    },
+    "bond_CH": {
+      "k_trefoils": 6,
+      "E_eV": 4.224029768807166
+    },
+    "bond_CC": {
+      "k_trefoils": 5,
+      "E_eV": 3.521649670694491
+    },
+    "bond_CO": {
+      "k_trefoils": 5,
+      "E_eV": 3.5216453881049623
+    },
+    "bond_OH": {
+      "k_trefoils": 7,
+      "E_eV": 4.93002721976578
+    },
+    "molecules": [
+      {
+        "name": "H₂",
+        "pred_eV": 4.483351450017505,
+        "obs_eV": 4.478
+      },
+      {
+        "name": "CO",
+        "pred_eV": 10.564935314832548,
+        "obs_eV": 11.09
+      },
+      {
+        "name": "CO₂",
+        "pred_eV": 14.086580027486491,
+        "obs_eV": 16.56
+      },
+      {
+        "name": "CH₄",
+        "pred_eV": 16.90350310279815,
+        "obs_eV": 17.9
+      },
+      {
+        "name": "C₆H₆",
+        "pred_eV": 57.05064911127017,
+        "obs_eV": 57.4
+      }
+    ]
+  }
+}

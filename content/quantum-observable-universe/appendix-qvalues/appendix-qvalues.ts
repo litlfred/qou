@@ -7,8 +7,8 @@ export default chapter({
     {
       heading: "Transfer matrix Q-values",
       blocks: [
-        "rem:qvalue-derivation-chain",
-        "ex:qvalue-benchmark-table",
+        "qvalue-derivation-chain",
+        "qvalue-benchmark-table",
       ],
     },
   ],

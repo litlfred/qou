@@ -51,6 +51,8 @@ export default paper({
 
     // ── Part III: The Descartes Universe and Observations ────────────
     chapterRef({ dir: "descartes-universe" }),               // Bring's surface, χ = −6
+    chapterRef({ dir: "particle-interactions" }),             // GB, LP, nuclear structure
+    chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂→benzene
     chapterRef({ dir: "observations" }),                     // Physical observations
 
     // ── q-Geometric Langlands ───────────────────────────────────────

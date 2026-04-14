@@ -1,0 +1,15 @@
+import { proposition } from "../../schema/builders";
+
+/**
+ * LP dual binding for CO₂: linear geometry emerges from optimization.
+ */
+export default proposition({
+  label: "prop:co2-lp-dual-binding",
+  title: "LP dual selects linear $O{=}C{=}O$ geometry",
+  uses: [
+    "def:co2-molecular-braid",
+    "prop:h2-lp-dual-binding",
+    "prop:co-lp-dual-binding",
+  ],
+  tags: ["CO2", "LP-dual", "linear", "geometry", "double-bond"],
+});

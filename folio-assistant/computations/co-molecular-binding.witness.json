@@ -1,0 +1,73 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-13T14:59:01.557365+00:00",
+  "commitSha": "54c633b3287db1e06b4ca7007e9d548e4a946da7",
+  "assertions": [
+    {
+      "name": "CO triple bond binding is positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Independent channel model"
+    },
+    {
+      "name": "CO triple bond within 25% of observed",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "tolerance": 0.25,
+      "source": "Comparison with D_0(CO) = 11.09 eV"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 7,
+  "computation": "co-molecular-binding",
+  "scriptFile": "co-molecular-binding.py",
+  "scriptHash": "8d3738b697a8",
+  "scriptCommitSha": "54c633b3287db1e06b4ca7007e9d548e4a946da7",
+  "description": "CO molecular braid binding via reduced covalent channel model. Each atom's nuclear structure is encoded as B3-dressed eigenvalues. The covalent channel has 2k+2 strands for bond order k.",
+  "contentBlock": "prop:co-lp-dual-binding",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "dress_C": 5,
+    "dress_O": 5,
+    "E_hartree_eV": 27.296143240836667,
+    "TWO_Q": 2.010896869118482,
+    "E_mol_scale_eV": 6.750278523641413
+  },
+  "data": {
+    "H2_cross_check": {
+      "delta_Phi1": 0.687012518457808,
+      "E_bind_eV": 18.75279211207227
+    },
+    "bond_orders": [
+      {
+        "k": 1,
+        "bond_type": "sigma",
+        "delta_Phi1_per_bond": 0.687012518457808,
+        "total_delta_Phi1": 0.687012518457808,
+        "E_bind_eV": 4.637525848818541,
+        "per_bond_eV": 4.637525848818541
+      },
+      {
+        "k": 2,
+        "bond_type": "sigma + 1 pi",
+        "delta_Phi1_per_bond": 0.687012518457808,
+        "total_delta_Phi1": 1.374025036915616,
+        "E_bind_eV": 9.275051697637082,
+        "per_bond_eV": 4.637525848818541
+      },
+      {
+        "k": 3,
+        "bond_type": "sigma + 2 pi",
+        "delta_Phi1_per_bond": 0.687012518457808,
+        "total_delta_Phi1": 2.061037555373424,
+        "E_bind_eV": 13.912577546455623,
+        "per_bond_eV": 4.637525848818541
+      }
+    ],
+    "delta_Phi1_per_bond": 0.687012518457808,
+    "E_per_bond_eV": 4.637525848818541
+  }
+}

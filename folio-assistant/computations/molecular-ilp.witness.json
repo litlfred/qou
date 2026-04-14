@@ -1,0 +1,139 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-13T21:36:55.411013+00:00",
+  "commitSha": "2de2a620f06217c85f57982973df84456b533102",
+  "assertions": [
+    {
+      "name": "H₂",
+      "computed": 26.9,
+      "expected": 4.478,
+      "passed": false,
+      "tolerance": 2.239,
+      "unit": "eV"
+    },
+    {
+      "name": "CO",
+      "computed": 34.8,
+      "expected": 11.09,
+      "passed": false,
+      "tolerance": 5.545,
+      "unit": "eV"
+    },
+    {
+      "name": "CO₂",
+      "computed": 46.3,
+      "expected": 16.56,
+      "passed": false,
+      "tolerance": 8.28,
+      "unit": "eV"
+    },
+    {
+      "name": "CH₄",
+      "computed": 89.9,
+      "expected": 17.9,
+      "passed": false,
+      "tolerance": 8.95,
+      "unit": "eV"
+    },
+    {
+      "name": "C₆H₆",
+      "computed": 266.3,
+      "expected": 57.4,
+      "passed": false,
+      "tolerance": 28.7,
+      "unit": "eV"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 4,
+  "computation": "molecular-ilp",
+  "scriptFile": "molecular-ilp.py",
+  "scriptHash": "81b154a98d86",
+  "scriptCommitSha": "",
+  "description": "Molecular bonds from integer LP. Exact enumeration over operator counts (σ₀,σ₁,σ₀⁻¹,σ₁⁻¹) up to 10 total crossings. Minimize Φ₁ subject to positive binding. Valence channel only.",
+  "contentBlock": "def:molecular-braid",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "E_mol_eV": 6.750278523641413
+  },
+  "data": {
+    "bond_HH": {
+      "operators": {
+        "σ₀": 0,
+        "σ₁": 5,
+        "σ₀⁻¹": 5,
+        "σ₁⁻¹": 0
+      },
+      "total_crossings": 10,
+      "E_eV": 26.928796621256428
+    },
+    "bond_CH": {
+      "operators": {
+        "σ₀": 0,
+        "σ₁": 8,
+        "σ₀⁻¹": 1,
+        "σ₁⁻¹": 0
+      },
+      "total_crossings": 9,
+      "E_eV": 22.485458678388312
+    },
+    "bond_CC": {
+      "operators": {
+        "σ₀": 0,
+        "σ₁": 9,
+        "σ₀⁻¹": 1,
+        "σ₁⁻¹": 0
+      },
+      "total_crossings": 10,
+      "E_eV": 14.603507519161921
+    },
+    "bond_CO": {
+      "operators": {
+        "σ₀": 0,
+        "σ₁": 9,
+        "σ₀⁻¹": 1,
+        "σ₁⁻¹": 0
+      },
+      "total_crossings": 10,
+      "E_eV": 11.584672095265628
+    },
+    "bond_OH": {
+      "operators": {
+        "σ₀": 0,
+        "σ₁": 10,
+        "σ₀⁻¹": 0,
+        "σ₁⁻¹": 0
+      },
+      "total_crossings": 10,
+      "E_eV": 22.9297496563613
+    },
+    "molecules": [
+      {
+        "name": "H₂",
+        "pred": 26.928796621256428,
+        "obs": 4.478
+      },
+      {
+        "name": "CO",
+        "pred": 34.75401628579688,
+        "obs": 11.09
+      },
+      {
+        "name": "CO₂",
+        "pred": 46.33868838106251,
+        "obs": 16.56
+      },
+      {
+        "name": "CH₄",
+        "pred": 89.94183471355325,
+        "obs": 17.9
+      },
+      {
+        "name": "C₆H₆",
+        "pred": 266.34431974278715,
+        "obs": 57.4
+      }
+    ]
+  }
+}

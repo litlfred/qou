@@ -1,6 +1,6 @@
 This chapter develops the computational engine that derives particle
 interactions, nuclear structure, and atomic construction from the
-categorical framework established in Parts~I and~II.  The two
+categorical framework established in Parts I and II.  The two
 principal tools are the Groebner--Shirshov reduction in the
 Iwahori--Hecke algebra $H_A(q)$ --- which produces unique normal
 forms for nuclear braid words --- and linear programming duality
@@ -19,6 +19,6 @@ atomic masses.
 
 The derivations are symbolic in the substrate parameter $q$; witness
 evaluations at $q_0$ provide numerical verification against CODATA
-and AME2020 data.  The chapter separates the \emph{how} of particle
-interactions from the \emph{what} of particle definitions (Chapter~9)
-and the \emph{observed} predictions (Chapter~10).
+and AME2020 data.  The chapter separates the *how* of particle
+interactions from the *what* of particle definitions (Chapter 9)
+and the *observed* predictions (Chapter 10).
