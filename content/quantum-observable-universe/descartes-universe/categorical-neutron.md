@@ -35,7 +35,7 @@ creates deeper instability ($\mathrm{tr}_M = -0.132$ vs
 $-0.006$).  Total: $13$ crossings ($6$ B₃ + $3$ quarks
 + $4$ gluon).
 
-**Step 3: neutron NF** (with Hopf gluon)**.**
+**Step 3: neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:
 
 | Basis | Particle | Coefficient |
