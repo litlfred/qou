@@ -690,9 +690,11 @@ class SymbolicHeckeDivision:
         elif type_i == type_j == 'e':
             return SymbolicHeckeElement({(gen,): C_EE})
 
-        # Quark-electron crossings (treat as pe-like attraction)
-        elif 'e' in pair and ('u' in pair or 'd' in pair):
+        # Quark-electron crossings: u (+2/3) attracts e, d (-1/3) repels e
+        elif 'e' in pair and 'u' in pair:
             return SymbolicHeckeElement({(gen,): C_PE, (): D_PE})
+        elif 'e' in pair and 'd' in pair:
+            return SymbolicHeckeElement({(gen,): C_EE})
 
         else:
             # Fallback: Hopf link

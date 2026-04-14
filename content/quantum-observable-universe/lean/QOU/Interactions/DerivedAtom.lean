@@ -73,22 +73,23 @@ def crossingType : ParticleType → ParticleType → CrossingType
     Nuclear:
       pp: (1, 0)          — pure positive crossing (Coulomb repulsion)
       nn: (1, −HA)        — Hecke inverse crossing (strong force)
-      pn: (1, −HA/2)      — averaged mixed crossing
+      pn: (2, −HA)        — averaged mixed crossing, stored as 2× to stay in ℤ[q,q⁻¹]
 
-    Electron:
+    Electron (POSTULATES — not derived from the Hecke algebra):
       pe: (1, −HA)        — EM attraction (same as nn)
       ne: (0, 1)          — no interaction (identity)
       ee: (1, 0)          — EM repulsion (same as pp)
 
-    Note: HA/2 takes us outside ℤ[q, q⁻¹]. For formal proofs
-    we work with 2·d_pn = −HA to stay in the ground ring. -/
+    Note: The electron crossing assignments map EM attraction/repulsion
+    to the same algebraic structure as strong-force crossings. This is
+    a modeling ansatz, not a derivation. See discussion in PR #349. -/
 noncomputable def crossingCoeffs : CrossingType → R_q × R_q
   | .pp => (1, 0)
   | .nn => (1, -HA)
-  | .pn => (1, -HA)  -- stored as 2× to stay in ℤ[q, q⁻¹]
-  | .pe => (1, -HA)  -- EM attraction: same coefficients as nn
-  | .ne => (0, 1)    -- no interaction: identity element
-  | .ee => (1, 0)    -- EM repulsion: same coefficients as pp
+  | .pn => (2, -HA)  -- 2× physical value to stay in ℤ[q, q⁻¹]
+  | .pe => (1, -HA)  -- POSTULATE: EM attraction ↦ σ⁻¹
+  | .ne => (0, 1)    -- POSTULATE: no interaction ↦ 𝟏
+  | .ee => (1, 0)    -- POSTULATE: EM repulsion ↦ σ
 
 /-- The pp crossing coefficient is just σ (no identity shift). -/
 theorem pp_no_shift : (crossingCoeffs .pp).2 = 0 := by rfl
@@ -96,8 +97,11 @@ theorem pp_no_shift : (crossingCoeffs .pp).2 = 0 := by rfl
 /-- The nn crossing has identity shift −HA = −(q − q⁻¹). -/
 theorem nn_shift : (crossingCoeffs .nn).2 = -HA := by rfl
 
-/-- The pe crossing has the same coefficients as nn (EM attraction). -/
-theorem pe_eq_nn : crossingCoeffs .pe = crossingCoeffs .nn := by rfl
+/-- The pn crossing σ-coefficient is 2 (doubled to stay in ℤ[q,q⁻¹]). -/
+theorem pn_sigma_coeff : (crossingCoeffs .pn).1 = 2 := by rfl
+
+/-- The pe crossing has the same 𝟙-shift as nn (EM attraction). -/
+theorem pe_shift_eq_nn : (crossingCoeffs .pe).2 = (crossingCoeffs .nn).2 := by rfl
 
 /-- The ee crossing has the same coefficients as pp (EM repulsion). -/
 theorem ee_eq_pp : crossingCoeffs .ee = crossingCoeffs .pp := by rfl

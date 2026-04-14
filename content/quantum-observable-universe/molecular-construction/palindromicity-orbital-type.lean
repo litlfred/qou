@@ -39,18 +39,22 @@ def IsPalindromic (xs : List ℕ) : Prop :=
 noncomputable def h3_histogram (x : Fin 6 → R_q) : List ℕ :=
   let count_at := fun (slots : List (Fin 6)) =>
     slots.filter (fun i => x i ≠ 0) |>.length
+  -- Full histogram over all word lengths 0..3.
+  -- Do NOT filter zeros: [1, 0, 1, 0] is NOT palindromic,
+  -- but filtering to [1, 1] would incorrectly pass.
   [count_at [⟨0, by omega⟩],
    count_at [⟨1, by omega⟩, ⟨2, by omega⟩],
    count_at [⟨3, by omega⟩, ⟨4, by omega⟩],
-   count_at [⟨5, by omega⟩]].filter (· > 0)
+   count_at [⟨5, by omega⟩]]
 
 /-! ## §2  Helium palindromicity (verified) -/
 
-/-- The helium histogram is [1, 1] — one term at length 1 (σ₁) and
-    one term at length 2 (σ₀σ₁).  This is palindromic. -/
+/-- The helium histogram is [0, 1, 1, 0] — zero terms at length 0,
+    one at length 1 (σ₁), one at length 2 (σ₀σ₁), zero at length 3.
+    This is palindromic (Poincaré dual). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem helium_histogram_palindromic :
-    IsPalindromic [1, 1] := by
+    IsPalindromic [0, 1, 1, 0] := by
   unfold IsPalindromic
   simp [List.reverse]
 
@@ -73,7 +77,7 @@ class PalindromicityOrbitalType (Z : ℕ) where
 /-- Z=2 instance: helium is palindromic and Z ≤ 4. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 instance : PalindromicityOrbitalType 2 where
-  histogram := [1, 1]
+  histogram := [0, 1, 1, 0]
   palindromic_iff_s_type := by
     constructor
     · intro _; omega

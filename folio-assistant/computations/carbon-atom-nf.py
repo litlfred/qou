@@ -27,16 +27,22 @@ from hecke_symbolic import (
 )
 
 # ── Crossing coefficients ────────────────────────────────────
-
+#
+# POSTULATES: The electron crossing assignments below are modeling
+# choices that map EM interactions onto the Hecke algebra structure.
+# They are NOT derived from the algebra itself — the Hecke relation
+# treats all generators identically. The physical content is in
+# these three assignments. The shell structure results depend on them.
+#
 # Electron crossing types
-C_PE = sp.Integer(1)       # proton-electron: σ⁻¹ (attractive)
-D_PE = -(q - 1/q)          # same as nn
+C_PE = sp.Integer(1)       # POSTULATE: proton-electron → σ⁻¹ (EM attraction)
+D_PE = -(q - 1/q)          # same coefficients as nn
 
-C_NE = sp.Integer(0)       # neutron-electron: identity (no interaction)
+C_NE = sp.Integer(0)       # POSTULATE: neutron-electron → 𝟏 (no EM interaction)
 D_NE = sp.Integer(1)
 
-C_EE = sp.Integer(1)       # electron-electron: σ (repulsive)
-D_EE = sp.Integer(0)       # same as pp
+C_EE = sp.Integer(1)       # POSTULATE: electron-electron → σ (EM repulsion)
+D_EE = sp.Integer(0)       # same coefficients as pp
 
 
 def crossing_element(type_i, type_j, gen):
@@ -337,13 +343,14 @@ if __name__ == '__main__':
         net_fac = sp.factor(net)
         print(f"\n  {label} (Z={p}): net = {net_fac}")
 
-        # q-degree: highest power of q in the net coefficient
-        net_poly = sp.Poly(sp.expand(net * q**10), q)  # shift to avoid negative powers
-        if net_poly.is_zero:
+        # q-degree: highest power of q in the Laurent polynomial
+        net_cancelled = sp.cancel(net)
+        num, den = net_cancelled.as_numer_denom()
+        if num == 0:
             print(f"    q-degree: 0")
         else:
-            deg = net_poly.degree()
-            print(f"    q-degree (shifted): {deg}")
+            deg = sp.degree(num, q) - sp.degree(den, q)
+            print(f"    q-degree: {deg}")
 
     # ── Summary ──────────────────────────────────────────────
 

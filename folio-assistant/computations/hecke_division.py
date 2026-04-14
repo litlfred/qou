@@ -460,8 +460,14 @@ class HeckeDivision:
             return self.crossing_ne(gen)
         elif type_i == type_j == 'e':
             return self.crossing_ee(gen)
+        elif 'e' in pair and 'u' in pair:
+            # u-quark (+2/3) attracts electron (-1)
+            return self.crossing_pe(gen)
+        elif 'e' in pair and 'd' in pair:
+            # d-quark (-1/3) repels electron (-1)
+            return self.crossing_ee(gen)
         elif 'e' in pair:
-            # Quark-electron: treat as pe-like (attraction)
+            # Other quark-electron: default to attraction
             return self.crossing_pe(gen)
         else:
             # Fallback: positive crossing
