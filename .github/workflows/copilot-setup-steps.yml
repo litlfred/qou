@@ -60,7 +60,7 @@ jobs:
               run: |
                   mkdir -p /tmp/ccicons && cd /tmp/ccicons
                   curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip
-                  unzip -q ccicons.tds.zip -d /usr/local/share/texmf
+                  sudo unzip -q ccicons.tds.zip -d /usr/local/share/texmf
                   sudo texhash
                   sudo updmap-sys --enable Map=ccicons.map || true
                   rm -rf /tmp/ccicons
@@ -83,9 +83,8 @@ jobs:
                   curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
                     | sh -s -- -y --default-toolchain none
                   echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-                  export PATH="$HOME/.elan/bin:$PATH"
                   TOOLCHAIN=$(cat content/quantum-observable-universe/lean/lean-toolchain | tr -d '[:space:]')
-                  elan toolchain install "$TOOLCHAIN"
+                  "$HOME/.elan/bin/elan" toolchain install "$TOOLCHAIN"
 
             # ── Bun dependencies ─────────────────────────────────────
             - name: Install content pipeline dependencies
@@ -100,13 +99,14 @@ jobs:
                   cd tools/hecke-engine
                   cargo build --release
 
-            # ── Lean dependencies (cache-friendly) ───────────────────
+            # Lean deps may fail on network issues or version mismatches;
+            # the agent can still work in degraded mode without them.
             - name: Fetch Lean dependencies and Mathlib cache
               run: |
                   export PATH="$HOME/.elan/bin:$PATH"
                   cd content/quantum-observable-universe/lean
-                  lake update || true
-                  lake exe cache get || true
+                  lake update || echo "::warning::lake update failed — Lean will run in degraded mode"
+                  lake exe cache get || echo "::warning::Mathlib cache fetch failed — Lean will run in degraded mode"
 
             # ── Verify installations ─────────────────────────────────
             - name: Verify tools
