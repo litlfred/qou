@@ -43,8 +43,8 @@ ALPHA = M_E_MEV * 8 * CATALAN_G  # binding scale = m_e × Vol(Borromean)
 
 # Fine structure constant with Chern-Simons correction
 # 1/α = q·[9]·[10] / (1 - δ) where δ = CS·ℏ_q²/bare
-_CS_T29 = _math.pi**2 * 10.0/9.0       # CS(T_{2,9}) = π²(m²-1)(n²-1)/(12mn)
-_CS_T35 = _math.pi**2 * 16.0/15.0      # CS(T_{3,5})
+_CS_T29 = math.pi**2 * 10.0/9.0       # CS(T_{2,9}) = π²(m²-1)(n²-1)/(12mn)
+_CS_T35 = math.pi**2 * 16.0/15.0      # CS(T_{3,5})
 _hbar_q2 = (1.0 - qi)**2               # ℏ_q²
 _bare_alpha_inv = q0 * q_int(9) * q_int(10)
 _delta_cs = (_CS_T29 + _CS_T35) * (q_int(2)/2.0) * _hbar_q2 / _bare_alpha_inv
@@ -75,8 +75,7 @@ _dim_hook = _n4_fac / (q_int(3) * q_int(2)**2)   # dim_q([2,2])
 _w_hook = _dim_hook**2 / _n4_fac                   # Wedderburn weight
 BETA_4 = -_w_hook / 2                              # hook coefficient ≈ -0.083
 LAMBDA_HOOK_EIG = q_int(2) - 2                     # hook eigenvalue [2]_q - 2 ≈ 0.011
-import math as _math
-DELTA_HOOK = abs(BETA_4) * abs(_math.log(LAMBDA_HOOK_EIG)) * M_E_MEV  # |β₄|·|ln λ|·m_e ≈ 0.192 MeV
+DELTA_HOOK = abs(BETA_4) * abs(math.log(LAMBDA_HOOK_EIG)) * M_E_MEV  # |β₄|·|ln λ|·m_e ≈ 0.192 MeV
 
 # Terms 9-11: H₅(q) partitions — derived from residual analysis
 # These scalings are DERIVED: they correlate with 8-term residuals at R²=0.993
@@ -503,16 +502,16 @@ def magic_proximity(x, sigma=SIGMA_SHELL):
     return sum(math.exp(-(x - m)**2 / (2 * sigma**2)) for m in MAGIC_NUMBERS)
 
 
-def binding_energy_bw(Z, N, k=5):
+def binding_energy_bw(Z, N, k=3):
     """Bethe-Weizsäcker binding energy (MeV) at Hecke level k.
 
-    Terms 1-8:  H₃(q) + H₄(q) Wedderburn partitions (q-integer × m_e)
-    Terms 9-11: H₅(q) partitions (derived scalings)
-    Level correction: δΦ_k = z² · Vol(4₁) · [k-3]_q per Hecke level
+    k=3 (default): 6-term H₃(q) formula (volume, surface, Coulomb,
+                    asymmetry, pairing, exchange)
+    k=4:           + H₄(q) terms 7-8 (shell, hook partition)
+    k=5:           + H₅(q) terms 9-11 (Wigner, form factor, pn corr.)
+    k≥6:           + higher level volume perturbation corrections
 
-    The level-k formula adds the volume perturbation from levels 4..k:
-      δB_k = -α · z² · Vol(4₁) · Σ_{j=4}^{k} [j-3]_q × scaling(Z,N,j)
-
+    Level correction: δΦ_k = z² · Vol(4₁) · [k-3]_q per Hecke level.
     All coefficients derived from algebra + knot geometry.
     Zero fitted parameters.
     """
@@ -535,11 +534,12 @@ def binding_energy_bw(Z, N, k=5):
     B -= LAMBDA_EX * Z**(4.0/3.0) / A**(1.0/3.0)
 
     # ── H₄(q) terms 7-8 ─────────────────────────────────────
-    B += DELTA_S * (magic_proximity(Z) + magic_proximity(N)) / A**(2.0/3.0)
+    if k >= 4:
+        B += DELTA_S * (magic_proximity(Z) + magic_proximity(N)) / A**(2.0/3.0)
 
-    h_Z = 1.0 - magic_proximity(Z)
-    h_N = 1.0 - magic_proximity(N)
-    B -= DELTA_HOOK * (h_Z + h_N) * A**(1.0/3.0)
+        h_Z = 1.0 - magic_proximity(Z)
+        h_N = 1.0 - magic_proximity(N)
+        B -= DELTA_HOOK * (h_Z + h_N) * A**(1.0/3.0)
 
     # ── H₅+ volume perturbation ─────────────────────────────
     # δΦ_k = z² · Vol(4₁) · [k-3]_q  (derived from knot geometry)

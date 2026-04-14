@@ -238,9 +238,8 @@ print("=" * 95)
 print()
 
 print(f"{'Atom':>4} {'Z':>3} {'N':>3} {'A':>3}"
-      f"  {'B_lattice':>10} {'B_obs':>10} {'M_pred':>12} {'M_obs':>12} {'Error':>8}"
-      f"  {'#parts':>6}")
-print("-" * 85)
+      f"  {'B_lattice':>10} {'B_obs':>10} {'M_pred':>12} {'M_obs':>12} {'Error':>8}")
+print("-" * 79)
 
 results = []
 from hecke_core import binding_energy_bw
@@ -252,16 +251,14 @@ for name, Z, N, A, BperA in ATOMS:
 
     if A <= 1:
         B_lat = 0.0
-        n_parts = 1
     else:
         B_lat = lattice_binding(Z, N, max_partitions=25)
-        n_parts = min(25, len(list(range(1))))  # placeholder
 
     M_lat = Mf - B_lat
     pct = (M_lat - M_obs) / M_obs * 100 if M_obs > 0 else 0
 
     # Also get BW for comparison
-    B_bw = binding_energy_bw(Z, N) if A > 1 else 0.0
+    B_bw = binding_energy_bw(Z, N, k=5) if A > 1 else 0.0
     M_bw = Mf - B_bw
     pct_bw = (M_bw - M_obs) / M_obs * 100 if M_obs > 0 else 0
 

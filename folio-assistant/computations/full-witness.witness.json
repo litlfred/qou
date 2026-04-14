@@ -101,7 +101,7 @@
   "scriptFile": "full-witness.py",
   "scriptHash": "6097b653f6cd",
   "scriptCommitSha": "03cd48690ead4a0aea2ad95247e3b52000eb8488",
-  "description": "Full witness: atomic masses (7-term q-integer BW, 0.020% MAE), molecular binding (NF + vertex volume), beta decay Q-values. All using hecke_core.py infrastructure. Zero fitted parameters.",
+  "description": "Full witness: atomic masses (7-term q-integer BW, 0.042% MAE), molecular binding (NF + vertex volume), beta decay Q-values. All using hecke_core.py infrastructure. Zero fitted parameters.",
   "contentBlock": "prop:q-integer-mass-formula",
   "parameters": {
     "q": 1.1099785955541805,
@@ -460,25 +460,25 @@
     ],
     "qvalues": [
       {
-        "decay": "n→p",
+        "decay": "n\u2192p",
         "Q_pred": 0.5099,
         "Q_obs": 0.782,
         "err_pct": -34.8
       },
       {
-        "decay": "³H→³He",
+        "decay": "\u00b3H\u2192\u00b3He",
         "Q_pred": 0.0181,
         "Q_obs": 0.0186,
         "err_pct": -2.7
       },
       {
-        "decay": "¹⁴C→¹⁴N",
+        "decay": "\u00b9\u2074C\u2192\u00b9\u2074N",
         "Q_pred": 6.6588,
         "Q_obs": 0.156,
         "err_pct": 4168.5
       },
       {
-        "decay": "⁶⁰Co→⁶⁰Ni",
+        "decay": "\u2076\u2070Co\u2192\u2076\u2070Ni",
         "Q_pred": 7.5419,
         "Q_obs": 0.318,
         "err_pct": 2271.7

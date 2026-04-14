@@ -163,8 +163,7 @@ def markov_trace_word(word, n_strands):
                       for k in range(pos + 1, len(word)))
 
     if can_commute:
-        # Move σ_{n-1} to the end
-        new_word = word[:pos] + word[pos+1:] + (n_strands - 1,)
+        # Move σ_{n-1} to the end, then apply the Markov factor
         return z * markov_trace_word(word[:pos] + word[pos+1:], n_strands)
 
     # General case: expand via NF reduction and recurse on each term
@@ -200,8 +199,12 @@ def build_nucleon_h4(nf, nucleon_type, gen_offset=0):
     """
     # The nucleon braid B₃ = (σ_a · σ_b⁻¹)³
     # where a = gen_offset, b = gen_offset + 1
+    if gen_offset < 0 or gen_offset > 1:
+        raise ValueError(
+            f"gen_offset must be 0 or 1 in H₄(q); got {gen_offset}"
+        )
     a = gen_offset
-    b = gen_offset + 1 if gen_offset + 1 <= 2 else gen_offset
+    b = gen_offset + 1
 
     # B₃ = (σ_a · (σ_b - h))³
     for _ in range(3):
