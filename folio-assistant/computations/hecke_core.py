@@ -55,6 +55,17 @@ DELTA_S = q_int(2)**2 * q_int(3) * M_E_MEV      # shell: [2]²[3]m_e ≈ 6.29 Me
 SIGMA_SHELL = q_int(2)                            # shell width: [2]_q ≈ 2.011
 MAGIC_NUMBERS = [2, 8, 20, 28, 50, 82, 126]
 
+# Term 8: Hook partition [2,2] from H₄(q) baryon Wedderburn decomposition
+# (prop:hook-weight-derivation)
+# β₄ = -½ · w_{[2,2]}(4) = -dim_q([2,2])² / (2·[4]_q!)
+_n4_fac = q_int(2) * q_int(3) * q_int(4)         # [4]_q!
+_dim_hook = _n4_fac / (q_int(3) * q_int(2)**2)   # dim_q([2,2])
+_w_hook = _dim_hook**2 / _n4_fac                   # Wedderburn weight
+BETA_4 = -_w_hook / 2                              # hook coefficient ≈ -0.083
+LAMBDA_HOOK_EIG = q_int(2) - 2                     # hook eigenvalue [2]_q - 2 ≈ 0.011
+import math as _math
+DELTA_HOOK = abs(BETA_4) * abs(_math.log(LAMBDA_HOOK_EIG)) * M_E_MEV  # |β₄|·|ln λ|·m_e ≈ 0.192 MeV
+
 # NF basis
 NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
 NF_NAMES = ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻']
@@ -455,13 +466,16 @@ def magic_proximity(x, sigma=SIGMA_SHELL):
 
 
 def binding_energy_bw(Z, N):
-    """Seven-term Bethe-Weizsäcker binding energy (MeV) with q-integer coefficients.
+    """Eight-term Bethe-Weizsäcker binding energy (MeV) with q-integer coefficients.
 
     B(Z,N) = λ_V·A - λ_S·A^{2/3} - λ_C·Z(Z-1)/A^{1/3}
              - a_asym·(N-Z)²/(4A) + δ_P/√A
              - λ_ex·Z^{4/3}/A^{1/3} + δ_S·(f(Z)+f(N))/A^{2/3}
+             - δ_hook·(h(Z)+h(N))·A^{1/3}
 
     All coefficients are q-integer products × m_e (zero fitted parameters).
+    Term 8 (hook) from the [2,2] partition of H₄(q) baryon Wedderburn
+    decomposition (prop:hook-weight-derivation).
     """
     A = Z + N
     if A <= 1:
@@ -484,6 +498,13 @@ def binding_energy_bw(Z, N):
 
     # Term 7: shell correction (enhanced binding at magic closures)
     B += DELTA_S * (magic_proximity(Z) + magic_proximity(N)) / A**(2.0/3.0)
+
+    # Term 8: hook partition correction (inter-shell deformation)
+    # The hook trace vanishes at magic numbers; maximal between shells.
+    # β₄ < 0 → reduces binding for non-magic nuclei.
+    h_Z = 1.0 - magic_proximity(Z)
+    h_N = 1.0 - magic_proximity(N)
+    B -= DELTA_HOOK * (h_Z + h_N) * A**(1.0/3.0)
 
     return B
 
