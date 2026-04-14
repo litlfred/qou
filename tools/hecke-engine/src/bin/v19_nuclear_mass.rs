@@ -41,14 +41,21 @@ fn main() {
     eprintln!("  z = {:.10}", z);
     eprintln!();
 
-    // Crossing coefficients (nucleon only)
-    let cc = |ti: i32, tj: i32| -> (f64, f64) {
-        if ti == 1 && tj == 1 { (1.0, 0.0) }        // pp
-        else if ti == 0 && tj == 0 { (1.0, -ha) }    // nn
-        else { (1.0, -ha / 2.0) }                     // pn
+    // Crossing coefficients: nucleon + electron
+    // Strand types: 1=proton, 0=neutron, 2=electron
+    let cc = |ti: i32, tj: i32| -> Option<(f64, f64)> {
+        match (ti, tj) {
+            (1, 1) => Some((1.0, 0.0)),         // pp: σ
+            (0, 0) => Some((1.0, -ha)),          // nn: σ⁻¹
+            (1, 0) | (0, 1) => Some((1.0, -ha / 2.0)), // pn: mixed
+            (1, 2) | (2, 1) => Some((1.0, -ha)), // pe: EM attraction
+            (2, 2) => Some((1.0, 0.0)),          // ee: EM repulsion
+            (0, 2) | (2, 0) => None,             // ne: identity (skip)
+            _ => None,
+        }
     };
 
-    // Ground state ordering (interleaved)
+    // Ground state ordering: interleaved nucleons + electrons
     let ordering = |p: usize, n: usize| -> Vec<i32> {
         let a = p + n;
         let mut ord = Vec::new();
@@ -58,31 +65,31 @@ fn main() {
             else if nc < n { ord.push(0); nc += 1; }
             else { ord.push(1); pc += 1; }
         }
+        // Append Z electrons
+        for _ in 0..p { ord.push(2); }
         ord
     };
 
-    // Per-generator 3-channel vertex volume
+    // Per-generator 3-channel vertex volume (nucleons + electrons)
     let compute_binding = |p: usize, n: usize, include_gluon: bool| -> f64 {
         let ord = ordering(p, n);
-        let a = ord.len();
-        if a <= 1 { return 0.0; }
+        let a = p + n; // number of nucleons (for gluon)
+        let total = ord.len();
+        if total <= 1 { return 0.0; }
 
         let mut phi = 0.0f64;
 
-        for i in 0..a-1 {
-            // Symmetric channel: product of eigenvalues at gen i
+        for i in 0..total-1 {
             let mut lam_s = 1.0f64;
-            // Alternating channel
             let mut lam_a = 1.0f64;
-            // Standard channel: 2×2 chain
             let mut ai = 0.0f64;
             let mut bi = 1.0f64;
 
             // Gluon: prepend crossings for nucleon at position i
-            if include_gluon {
+            if include_gluon && i < a {
                 let n_gluon = if ord[i] == 1 { 2 } else { 4 };
                 for _ in 0..n_gluon {
-                    let (c, d) = (1.0, 0.0); // σ (positive)
+                    let (c, d) = (1.0, 0.0);
                     lam_s *= c * q0 + d;
                     lam_a *= -c * qi + d;
                     let new_a = ai * c * ha + ai * d + bi * c;
@@ -91,14 +98,16 @@ fn main() {
                 }
             }
 
-            // Crossings with all nucleons j > i
-            for j in i+1..a {
-                let (c, d) = cc(ord[i], ord[j]);
-                lam_s *= c * q0 + d;
-                lam_a *= -c * qi + d;
-                let new_a = ai * c * ha + ai * d + bi * c;
-                let new_b = ai * c + bi * d;
-                ai = new_a; bi = new_b;
+            // Crossings with all strands j > i (nucleons + electrons)
+            for j in i+1..total {
+                if let Some((c, d)) = cc(ord[i], ord[j]) {
+                    lam_s *= c * q0 + d;
+                    lam_a *= -c * qi + d;
+                    let new_a = ai * c * ha + ai * d + bi * c;
+                    let new_b = ai * c + bi * d;
+                    ai = new_a; bi = new_b;
+                }
+                // ne crossings return None → skipped (identity)
             }
 
             let v_std = z * ai + bi;
