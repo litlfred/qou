@@ -47,6 +47,7 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 | Quantity | Predicted | Observed | $\delta$ | Method |
 |:---------|----------:|---------:|---------:|:-------|
 | $m_\mu/m_e$ | $206.768$ | $206.768$ | $<0.001\%$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ (by construction) |
+| $B(d)$ | $2.2329$ MeV | $2.2246$ MeV | $+0.38\%$ | $\mathrm{tr}_M$ volume integral ([derived binding](#prop:deuterium-derived-binding)) |
 | $Q({}^3\mathrm{H})$ | $0.01849$ MeV | $0.01861$ MeV | $-0.6\%$ | $\Delta\mathrm{net} \times E_0$ |
 | $Q({}^{14}\mathrm{C})$ | $0.15300$ MeV | $0.15648$ MeV | $-2.2\%$ | $\Delta\mathrm{net} \times E_0$ |
 | $Q({}^{90}\mathrm{Sr})$ | $0.55740$ MeV | $0.54590$ MeV | $+2.1\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |

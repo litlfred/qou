@@ -587,16 +587,102 @@ def binding_energy_bw(Z, N, k=3):
     return B
 
 
+def build_nucleon_nf(quarks):
+    """Build a single nucleon NF from quark content.
+
+    quarks: list of 'u' or 'd' characters, e.g. ['u','u','d'] for proton.
+
+    Construction: nucleon = B₃ · crossings(quarks)
+    where B₃ = (σ₀σ₁⁻¹)³ is the gluon field (Borromean confinement),
+    and crossings encode flavor:
+      uu → σ_gen (c=1, d=0)
+      dd → σ_gen⁻¹ (c=1, d=-h)
+      ud → ½(σ_gen + σ_gen⁻¹) (c=1, d=-h/2)
+
+    Generator assignment: pair (i,j) uses gen = i (the lower quark index).
+    For 3 quarks: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1.
+
+    No separate gluon dressing — B₃ IS the gluon structure.
+    """
+    nf = [1.0, 0, 0, 0, 0, 0]
+    # B₃ confinement: (σ₀·σ₁⁻¹)³
+    for _ in range(3):
+        nf = hm(nf, 1, 0, 0)       # σ₀
+        nf = hm(nf, 1, -h, 1)      # σ₁⁻¹
+    # Quark pairwise crossings: (0,1), (0,2), (1,2)
+    pairs = [(0, 1), (0, 2), (1, 2)]
+    for i, j in pairs:
+        qi, qj = quarks[i], quarks[j]
+        gen = i  # generator = lower index
+        if qi == qj == 'u':
+            nf = hm(nf, 1, 0, gen)       # σ_gen
+        elif qi == qj == 'd':
+            nf = hm(nf, 1, -h, gen)      # σ_gen⁻¹
+        else:  # mixed u-d
+            nf = hm(nf, 1, -h/2, gen)    # ½(σ + σ⁻¹)
+    return nf
+
+
+# Precomputed nucleon NFs
+PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
+NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
+
+
+def binding_energy_derived(Z, N):
+    """Binding energy (MeV) from first-principles volume integral.
+
+    B(Z,N) = [Σᵢ tr_M(nucleon_i) - Σ_{i<j} tr_M(T_ij · nucleon_j)] × m_e·Vol(B₃)
+
+    For each nucleon pair (i,j), the crossing operator T_ij encodes the
+    inter-nucleon interaction:
+      pp: T = σ₀           (c=1, d=0)    — electromagnetic repulsion
+      nn: T = σ₀⁻¹         (c=1, d=-h)   — attractive nuclear
+      pn: T = ½(σ₀+σ₀⁻¹)  (c=1, d=-h/2) — symmetric nuclear (strongest)
+
+    The Markov trace tr_M weights each NF component by z^{word_length}.
+
+    Energy scale α = m_e × Vol(B₃) = m_e × 8G  (Borromean binding scale).
+
+    Zero fitted parameters.  All inputs from q₀ and quark content.
+    """
+    if Z + N <= 1:
+        return 0.0
+
+    # Free nucleon Markov traces
+    tr_free = Z * nf_tr(PROTON_NF) + N * nf_tr(NEUTRON_NF)
+
+    # Pair crossing traces (volume integral expansion)
+    # Each pair (i,j) contributes tr_M(T_ij · NF_j) to the bound-state volume.
+    # Crossing operators by pair type:
+    n_pp = Z * (Z - 1) // 2
+    n_nn = N * (N - 1) // 2
+    n_pn = Z * N
+
+    # Apply crossing to one nucleon of each pair
+    tr_pp = nf_tr(hm(list(PROTON_NF), 1, 0, 0))       # σ₀ on proton
+    tr_nn = nf_tr(hm(list(NEUTRON_NF), 1, -h, 0))      # σ₀⁻¹ on neutron
+    tr_pn = nf_tr(hm(list(NEUTRON_NF), 1, -h/2, 0))    # ½(σ₀+σ₀⁻¹) on neutron
+
+    tr_bound = n_pp * tr_pp + n_nn * tr_nn + n_pn * tr_pn
+
+    delta = tr_free - tr_bound
+    return delta * ALPHA
+
+
 def atom_mass(Z, N, method='phi1'):
     """Compute atomic mass (MeV).
 
-    method='phi1':  M = constituents + κ×Φ₁ (zero-parameter, 1.03% MAE)
-    method='bw':    M = constituents - B(Z,N) (q-integer BW, ~0.1% MAE)
+    method='phi1':    M = constituents + κ×Φ₁ (zero-parameter, 1.03% MAE)
+    method='bw':      M = constituents - B(Z,N) (q-integer BW, ~0.1% MAE)
+    method='derived': M = constituents - B_derived(Z,N) (first-principles)
     """
     M_const = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
 
     if method == 'bw':
         B = binding_energy_bw(Z, N)
+        return M_const - B, -B
+    elif method == 'derived':
+        B = binding_energy_derived(Z, N)
         return M_const - B, -B
     else:
         phi = compute_phi1_full(Z, N)

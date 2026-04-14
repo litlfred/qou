@@ -73,6 +73,7 @@ export default chapter({
       blocks: [
         "hydrogen-derived-nf",
         "deuterium-derived-nf",
+        "deuterium-derived-binding",
         "helium4-derived-nf",
         "li6-derived-nf",
         "o16-derived-nf",
