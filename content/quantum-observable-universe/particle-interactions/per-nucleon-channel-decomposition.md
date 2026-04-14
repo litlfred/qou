@@ -36,15 +36,48 @@ channels:
 
 ## Per-nucleon channel data
 
-For each channel $c$, the per-nucleon Garside factor is:
+For each channel $c$, the per-nucleon Garside factor $G(c)$
+is the expectation value of the typed Garside element $\Delta_3$
+in the $T_{2,3}$ eigenvector $v_c$:
 
-- **Proton** ($\mathfrak{p} = \mathfrak{u}\mathfrak{u}\mathfrak{d}$):
-  $G_P(c)$ — computed from the typed crossing operator
-  with quark content $(u, u, d)$
+$$
+  G(c) = \langle v_c | \Delta_3(\text{quarks}) | v_c \rangle
+$$
 
-- **Neutron** ($\mathfrak{n} = \mathfrak{u}\mathfrak{d}\mathfrak{d}$):
-  $G_N(c)$ — computed from the typed crossing operator
-  with quark content $(u, d, d)$
+In the symmetric and alternating channels (dim $= 1$), this
+is the product of per-crossing eigenvalues.  In the standard
+channel (dim $= 2$), $v_c$ is the eigenvector of
+$T_{2,3} = \sigma_0\sigma_1\sigma_0$ in the seminormal basis.
+
+**Proton** ($\mathfrak{p} = \mathfrak{u}\mathfrak{u}\mathfrak{d}$,
+crossings: $\sigma_0(\mathfrak{u}\mathfrak{u}) \times
+[\sigma_1 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d}) \times
+[\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})$):
+
+| Channel | $\lambda_c$ | $G_P(c)$ | Numeric at $q_0$ |
+|:---:|:---:|:---:|:---:|
+| Sym | $q^3$ | $q \cdot \tfrac{1}{2}[2]_q \cdot \tfrac{1}{2}[2]_q$ | $+1.122$ |
+| Std $\lambda_1$ | $-q$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.174$ |
+| Std $\lambda_2$ | $q^{-1}$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.858$ |
+| Alt | $-q^{-3}$ | $(-q^{-1}) \cdot (-\tfrac{1}{2}[2]_q)^2$ | $-0.911$ |
+
+**Channel sum:** $a = \sum_c G_P(c) = -h/2$ (verified algebraically
+and numerically at $q_0$: $a = -0.1045$).
+
+**Neutron** ($\mathfrak{n} = \mathfrak{u}\mathfrak{d}\mathfrak{d}$,
+crossings: $[\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})
+\times [\sigma_1 - h](\mathfrak{d}\mathfrak{d})
+\times [\sigma_0 - \tfrac{1}{2}h](\mathfrak{u}\mathfrak{d})$):
+
+| Channel | $G_N(c)$ | Numeric at $q_0$ |
+|:---:|:---:|:---:|
+| Sym | $\tfrac{1}{2}[2]_q \cdot q^{-1} \cdot \tfrac{1}{2}[2]_q$ | $+0.911$ |
+| Std $\lambda_1$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.222$ |
+| Std $\lambda_2$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.800$ |
+| Alt | $(-\tfrac{1}{2}[2]_q) \cdot (-q) \cdot (-\tfrac{1}{2}[2]_q)$ | $-1.122$ |
+
+**Channel sum:** $b = \sum_c G_N(c) = -3(q^2-1)(q^2+1)^2/(4q^3)$
+(verified: $b = -0.6340$ at $q_0$).
 
 The eight values $\{G_P(c), G_N(c)\}_{c \in \mathrm{channels}}$
 are rational functions of $q$ and completely determine all nuclear
