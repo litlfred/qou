@@ -13,6 +13,8 @@ export default proposition({
     "def:molecular-braid",
     "def:atomic-braid",
     "prop:wedderburn-mass-formula",
+    "def:universal-ilp-algorithm",
+    "prop:q-integer-mass-formula",
   ],
   tags: [
     "covalent-bond",

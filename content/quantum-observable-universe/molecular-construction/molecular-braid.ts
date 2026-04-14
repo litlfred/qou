@@ -15,6 +15,7 @@ export default definition({
     "def:atomic-braid",
     "def:hecke-normal-form",
     "prop:nuclear-groebner-reduction",
+    "def:universal-ilp-algorithm",
   ],
   tags: [
     "molecular",

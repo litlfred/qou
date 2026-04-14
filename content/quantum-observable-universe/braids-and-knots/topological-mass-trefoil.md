@@ -64,12 +64,8 @@ $$
 $$
 
 which matches the muon-to-electron mass ratio
-<<<<<<< HEAD
-$\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$.
-=======
 $\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$
 (the electron mass $\mathfrak{m}_e = 1$ is the dimensionless unit).
->>>>>>> f1eee6ff (Fix topological-mass-trefoil.md: dimensionless mass, not ratio)
 The correspondence
 
 $$
