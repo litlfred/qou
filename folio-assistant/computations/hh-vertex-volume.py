@@ -43,8 +43,7 @@ w_std = w_std_raw / w_total
 w_alt = w_alt_raw / w_total
 
 TWO_Q = q0 + qi0
-alpha_em = qi0 / (q_int(9) * q_int(10))
-E_mol = 511000.0 * alpha_em**2 / TWO_Q**2
+from hecke_core import alpha_em, E_MOL as E_mol
 
 print("=" * 70)
 print("H₂ BINDING: PER-GENERATOR 3-CHANNEL WEDDERBURN VERTEX VOLUMES")

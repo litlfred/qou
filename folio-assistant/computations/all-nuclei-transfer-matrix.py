@@ -120,7 +120,7 @@ hbar = 6.582119569e-22
 
 def q_int(n):
     return (q**n - qi**n) / (q - qi)
-alpha_em = qi / (q_int(9) * q_int(10))
+from hecke_core import alpha_em
 
 def phase_space(Z_d, Q_MeV, n_steps=50000):
     W0 = 1.0 + Q_MeV / m_e

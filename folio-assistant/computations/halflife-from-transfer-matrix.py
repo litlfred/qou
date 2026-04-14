@@ -41,7 +41,7 @@ sec_per_yr = 3.15576e7
 
 def q_int(n):
     return (q**n - qi**n) / (q - qi)
-alpha_em = qi / (q_int(9) * q_int(10))
+from hecke_core import alpha_em
 
 print(f"Half-lives from transfer matrix Skein polynomial ratios")
 print(f"q = {q:.10f}, α_EM = {alpha_em:.6f} (1/α = {1/alpha_em:.2f})")

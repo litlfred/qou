@@ -27,8 +27,7 @@ NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 TR_M = np.array([1.0, z, z, z**2, z**2, z**3])
 
 TWO_Q = q0 + qi0
-alpha_em = qi0 / (q_int(9) * q_int(10))
-E_mol = 511000.0 * alpha_em**2 / TWO_Q**2
+from hecke_core import alpha_em, E_MOL as E_mol
 
 
 def hecke_mul(nf, c, d, gen):

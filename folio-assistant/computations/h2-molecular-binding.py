@@ -236,10 +236,10 @@ print()
 # α_EM = q⁻¹/([9]_q[10]_q), and [2]_q = q + q⁻¹.
 
 from q_parameter import q_int
-alpha_em = qi / (q_int(9) * q_int(10))
-E_hartree_eV = m_e_MeV * 1e6 * alpha_em**2  # in eV
+from hecke_core import alpha_em, E_HARTREE_EV, E_MOL
+E_hartree_eV = E_HARTREE_EV
 TWO_Q = q0 + 1.0/q0                          # [2]_q
-E_mol_scale = E_hartree_eV / TWO_Q**2         # molecular energy unit
+E_mol_scale = E_MOL                           # molecular energy unit
 
 E_bind_eV = best['binding'] * E_mol_scale
 

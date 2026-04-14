@@ -37,20 +37,34 @@ W_ALT = q2 / _denom_w
 # Energy scales
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
-alpha_em = qi / (q_int(9) * q_int(10))
-CATALAN_G = 0.915965594177219015054603514932
-ALPHA = M_E_MEV * 8 * CATALAN_G  # binding scale = m_e × Vol(Borromean)
+# ── Fine structure constant ────────────────────────────────────────────────────
+# α_EM enters the physics through THREE channels:
+#   1. Coulomb term (term 3): uses HA·[6]_q·m_e, NOT α_EM.
+#      The nuclear Coulomb interaction is encoded in the pp crossing eigenvalue.
+#   2. Molecular binding: uses E_HARTREE = m_e·c²·α² → USES corrected α.
+#   3. Half-lives: uses α_EM in Fermi phase space (Sommerfeld factor) → USES corrected α.
+#
+# Bare value (Hecke algebra projection, no CS correction):
+_bare_alpha_em = qi / (q_int(9) * q_int(10))
+_bare_alpha_inv = q0 * q_int(9) * q_int(10)
 
-# Fine structure constant with Chern-Simons correction
-# 1/α = q·[9]·[10] / (1 - δ) where δ = CS·ℏ_q²/bare
+# CS-corrected value (physical α_EM):
+# 1/α = q·[9]·[10] / (1 - δ) where δ = (CS₁+CS₂)·([2]_q/2)·ℏ_q²/bare
 _CS_T29 = math.pi**2 * 10.0/9.0       # CS(T_{2,9}) = π²(m²-1)(n²-1)/(12mn)
 _CS_T35 = math.pi**2 * 16.0/15.0      # CS(T_{3,5})
 _hbar_q2 = (1.0 - qi)**2               # ℏ_q²
-_bare_alpha_inv = q0 * q_int(9) * q_int(10)
 _delta_cs = (_CS_T29 + _CS_T35) * (q_int(2)/2.0) * _hbar_q2 / _bare_alpha_inv
 ALPHA_EM_INV_DERIVED = _bare_alpha_inv / (1.0 - _delta_cs)  # 137.0357 (0.0002%)
-alpha_em_derived = 1.0 / ALPHA_EM_INV_DERIVED
-E_HARTREE_EV = 511000.0 * alpha_em**2
+
+# Canonical α_EM: the CS-corrected value is physical
+alpha_em = 1.0 / ALPHA_EM_INV_DERIVED
+alpha_em_derived = alpha_em  # alias for backward compatibility
+
+CATALAN_G = 0.915965594177219015054603514932
+ALPHA = M_E_MEV * 8 * CATALAN_G  # binding scale = m_e × Vol(Borromean)
+
+# Molecular energy scales (use corrected α)
+E_HARTREE_EV = 511000.0 * alpha_em**2  # Hartree energy (eV)
 TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q**2  # molecular energy unit (eV)
 KAPPA = M_E_MEV                    # nuclear binding scale (MeV)

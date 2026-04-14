@@ -42,8 +42,7 @@ w_s = 1.0/nf3; w_d = dim_std**2/nf3; w_a = 1.0/nf3
 wt = w_s+w_d+w_a; w_s/=wt; w_d/=wt; w_a/=wt
 
 TWO_Q = q0+qi0
-alpha_em = qi0/(q_int(9)*q_int(10))
-E_mol = 511000.0*alpha_em**2/TWO_Q**2
+from hecke_core import alpha_em, E_MOL as E_mol
 
 NF_NAMES = ["γ","σ₀","σ₁","L₊","L₋","e⁻"]
 TR_M = np.array([1.0, z, z, z**2, z**2, z**3])

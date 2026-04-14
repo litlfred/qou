@@ -25,9 +25,9 @@ from witness_base import WitnessBuilder
 
 # ── Parameters ──────────────────────────────────────────────────
 z = 1.0 / (q0**0.5 + qi**0.5)
-alpha_em = qi / (q_int(9) * q_int(10))
+from hecke_core import alpha_em, E_HARTREE_EV
 m_e_eV = 511000.0
-E_hartree_eV = m_e_eV * alpha_em**2
+E_hartree_eV = E_HARTREE_EV
 
 # ── Single bond channel (from H₂/CO) ───────────────────────────
 # Each covalent bond is an independent channel: [p_A, e_B, e_A, p_B]

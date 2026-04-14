@@ -46,9 +46,7 @@ w_std = (q2 + 1)**2 / denom_w
 w_alt = q2 / denom_w
 
 TWO_Q = q0 + qi0
-alpha_em = qi0 / (q_int(9) * q_int(10))
-E_hartree_eV = 511000.0 * alpha_em**2
-E_mol = E_hartree_eV / TWO_Q**2
+from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
 
 NF_NAMES = ["gamma", "s0", "s1", "L+", "L-", "e-"]
 TR_M = np.array([1.0, z, z, z**2, z**2, z**3])

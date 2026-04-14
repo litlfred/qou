@@ -34,7 +34,7 @@ z = 1.0 / (q0**0.5 + q0**(-0.5))
 A_PL = 2.4586
 m_p = VOL_BORROMEAN / HBAR_Q_SQ * A_PL * M_E_MEV
 m_n = m_p + 1.29333
-alpha_em = (1/q0) / (q_int(9) * q_int(10))
+from hecke_core import alpha_em
 bind = alpha_em * m_p
 
 CERT_DIR = Path(__file__).parent.parent.parent / "tools" / "hecke-engine"

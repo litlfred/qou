@@ -34,10 +34,8 @@ w_d = (q2+1)**2 / denom_w
 w_a = q2 / denom_w
 
 # Molecular energy scale
-alpha_em = qi / (q_int(9) * q_int(10))
-E_hartree_eV = 511000.0 * alpha_em**2
+from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
 TWO_Q = q0 + qi
-E_mol = E_hartree_eV / TWO_Q**2
 
 
 # ══════════════════════════════════════════════════════════════
