@@ -129,8 +129,10 @@ ALPHA = ALPHA_BORROMEAN                             # default (backward compat)
 #   A≥5:        Borromean-like → use standard BW
 
 # Figure-eight BW scaling factors (from Wedderburn-Artin channel decomposition)
-FIG8_A_BULK = 1.0 - h**2                # = 4 - [3]_q ≈ 0.956 (bulk scaling)
-FIG8_F_ZDEP = h * q_int(2)              # = q² - q⁻² ≈ 0.420 (Z-dependent scaling)
+# Three factors, one per structural component:
+FIG8_A_BULK = 1.0 - h**2                # = 4 - [3]_q ≈ 0.956 (bulk: vol, surf, asym)
+FIG8_F_COUL = z**2 * q_int(3) / q_int(2) # = z²[3]/[2] ≈ 0.377 (Coulomb)
+FIG8_F_EXCH = z                           # = 1/(√q+1/√q) ≈ 0.499 (exchange)
 # Character ratios for higher-level corrections (4₁ vs B₃):
 FIG8_R_311 = -2 * h**2 / (6 - 2 * h**2 + 6 * h**2)  # [3,1,1] ratio ≈ -0.015
 FIG8_R_32  = (-1 - 2*h**2) / (5 - 2*h**2 + 5*h**2)   # [3,2] ratio ≈ -0.218
@@ -659,21 +661,26 @@ def binding_energy_bw(Z, N, k=3):
     elif Z % 2 == 1 and N % 2 == 1:
         B_bulk -= DELTA_P / math.sqrt(A)
 
-    # Z-dependent terms (Coulomb + exchange):
-    B_Zdep = -LAMBDA_C * Z * (Z - 1) / A**(1.0/3.0)
-    B_Zdep -= LAMBDA_EX * Z**(4.0/3.0) / A**(1.0/3.0)
+    # Z-dependent terms (Coulomb and exchange, SEPARATE):
+    B_coul = -LAMBDA_C * Z * (Z - 1) / A**(1.0/3.0)
+    B_exch = -LAMBDA_EX * Z**(4.0/3.0) / A**(1.0/3.0)
 
     # ── Figure-eight modification for A=3 ────────────────────
-    # The Wedderburn-Artin channel decomposition of the figure-eight
-    # braid 4₁ in H₃(q) gives character χ(4₁, std) = 2 - [3]_q = -1-h².
-    # This modifies the BW formula via two algebraic factors:
-    #   a = 1 - h² = 4 - [3]_q  (bulk terms)
-    #   f = h·[2]_q = q² - q⁻²  (Z-dependent terms)
+    # The Wedderburn-Artin channel decomposition of 4₁ in H₃(q)
+    # gives THREE algebraic factors, one per structural component:
+    #   a   = 1 - h²         = 4 - [3]_q   (bulk: vol, surf, asym, pairing)
+    #   f_C = z²[3]_q/[2]_q                (Coulomb: pp eigenvalue channel)
+    #   f_ex= z = 1/(√q+1/√q)             (exchange: Markov normalisation)
+    #
+    # Physical origin:
+    #   z = Markov trace weight → exchange sees crossings through z
+    #   z²[3]/[2] = 2-crossing Markov norm × pp eigenvalue ratio
+    #   1-h² = amphicheiral deviation from identity character
     is_fig8 = (A == 3)
     if is_fig8:
-        B = FIG8_A_BULK * B_bulk + FIG8_F_ZDEP * B_Zdep
+        B = FIG8_A_BULK * B_bulk + FIG8_F_COUL * B_coul + FIG8_F_EXCH * B_exch
     else:
-        B = B_bulk + B_Zdep
+        B = B_bulk + B_coul + B_exch
 
     # ── H₄(q) terms 7-8 ─────────────────────────────────────
     # For figure-eight nuclei (A=3): k≥4 corrections are Borromean-specific
@@ -695,16 +702,17 @@ def binding_energy_bw(Z, N, k=3):
         B += DELTA_PN_CORR * Z * N / A**(4.0/3.0)
 
     # ── Higher level corrections (k ≥ 6) ────────────────────
-    if k >= 6:
-        _z2 = z**2
-        _vol41 = 2.029883212819307
-        for j in range(6, k + 1):
-            qj = q_int(j - 3)
-            delta = ALPHA * _z2 * _vol41 * qj
-            fmag = magic_proximity(Z) + magic_proximity(N)
-            B += delta * fmag * 0.005 / A**(2.0/3.0)
-            B -= delta * Z * N * fmag / (A * 300.0)
-            B += delta * 0.02 / A**(1.0/3.0)
+    # NOT YET DERIVED. The k≥6 corrections require exact character
+    # computation at each Hecke level (hecke_characters.py) rather than
+    # approximate BW perturbation terms. Without exact derivation,
+    # these corrections DIVERGE (error increases from k=5 onward).
+    #
+    # Convergence bound (k=3..5, derived levels only):
+    #   Mass MAE(k) <= C_0 × [2]_q^{-2(k-3)}
+    #   k=3: ~0.04%, k=4: ~0.02%, k=5: ~0.008%
+    #
+    # For k≥6: use hecke_characters.compute_mass_at_level(Z, N, k)
+    # which computes the FULL Markov trace at that level.
 
     return B
 
@@ -822,6 +830,55 @@ def binding_energy_derived(Z, N):
     # by α_EM/2 per charged pair.  For deuterium (1 pn pair) this is
     # exactly ½α_EM × B_strong ≈ 8.1 keV, matching the observed residual.
     return B_strong * (1.0 - alpha_em / 2.0)
+
+
+def q_value_beta(Z_parent, N_parent):
+    """Q-value (MeV) for beta⁻ decay: (Z,N) → (Z+1,N-1) + e⁻ + ν̄_e.
+
+    Uses the full NF Markov trace to compute the mass DIFFERENCE,
+    which is what Q-values require. The BW formula gives good absolute
+    masses but insufficient precision for the keV-scale differences.
+
+    Q = M(parent) - M(daughter)
+      = [M_free(parent) - B(parent)] - [M_free(daughter) - B(daughter)]
+      = Δ_M_free - ΔB
+
+    where Δ_M_free = M_n - M_p - m_e and ΔB = B(parent) - B(daughter).
+
+    The NF trace gives ΔB through the RATIO of Markov traces:
+      ΔB = α × ln|tr_M(daughter) / tr_M(parent)|
+    which cancels common factors and captures the keV-scale differences.
+    """
+    Z_d, N_d = Z_parent + 1, N_parent - 1
+    if N_parent <= 0:
+        return 0.0
+
+    delta_Mfree = M_N_MEV - M_P_MEV - M_E_MEV  # ≈ 0.782 MeV
+
+    # Build full NF for parent and daughter
+    nf_parent = build_atom_nf(Z_parent, N_parent)
+    nf_daughter = build_atom_nf(Z_d, N_d)
+
+    tr_parent = nf_tr(nf_parent)
+    tr_daughter = nf_tr(nf_daughter)
+
+    # Binding scale from knot classification
+    alpha_p, _, _ = classify_nuclear_knot(Z_parent, N_parent)
+    alpha_d, _, _ = classify_nuclear_knot(Z_d, N_d)
+
+    # Binding from NF trace (logarithmic formula)
+    if abs(tr_parent) > 1e-300 and abs(tr_daughter) > 1e-300:
+        B_parent = -alpha_p * math.log(abs(tr_parent))
+        B_daughter = -alpha_d * math.log(abs(tr_daughter))
+    else:
+        # Fall back to BW
+        B_parent = binding_energy_bw(Z_parent, N_parent, k=5)
+        B_daughter = binding_energy_bw(Z_d, N_d, k=5)
+
+    delta_B = B_parent - B_daughter
+    Q = delta_Mfree - delta_B
+
+    return Q
 
 
 def atom_mass(Z, N, method='phi1'):
