@@ -31,7 +31,7 @@ $$
 $$
 
 Inverting $\hbar_q = 1 - 1/q$ yields
-$1/q = 1 - 0.09908 = 0.90092$, so
+$1/q \approx 1 - 0.09908 \approx 0.90092$, so
 
 $$
   q  \approx  1.10997.
