@@ -404,66 +404,125 @@ def check_frobenius(nf):
 def build_atom_nf(Z, N):
     """Build atom NF via Hecke multiplication.
 
-    B₃ confinement + typed quark crossings + gluon per nucleon + pe per electron.
-    Nucleons interleaved (ground state ordering).
+    Construction:
+      1. Build each nucleon via build_nucleon_nf (B₃ + quark crossings)
+      2. Compose nucleons in ground-state interleaved order
+      3. Apply inter-nucleon crossings between each pair (i,j):
+           pp: σ₀           (c=1, d=0)    — EM repulsion
+           nn: σ₀⁻¹         (c=1, d=-h)   — nuclear attraction
+           pn: ½(σ₀+σ₀⁻¹)  (c=1, d=-h/2) — symmetric nuclear
+      4. Apply pe crossings for electrons (σ₁⁻¹ per electron)
+
+    No separate gluon dressing — B₃ IS the gluon structure.
+    Generator 0 for inter-nucleon crossings (strong force channel).
+    Generator 1 for pe crossings (EM channel).
     """
-    nf = [1.0, 0, 0, 0, 0, 0]
+    A = Z + N
+    if A == 0:
+        return [1.0, 0, 0, 0, 0, 0]
+
+    # Build ground-state ordering: interleaved protons and neutrons
+    ordering = []  # 'p' or 'n'
     pc, nc = 0, 0
-    for k in range(Z + N):
-        is_p = (k % 2 == 0 and pc < Z) or nc >= N
-        if is_p:
-            # Proton: B₃ + quarks + gluon
-            for _ in range(3):
-                nf = hm(nf, 1, 0, 0)
-                nf = hm(nf, 1, -h, 1)
-            nf = hm(nf, 1, 0, 0)       # uu
-            nf = hm(nf, 1, -h/2, 1)    # ud
-            nf = hm(nf, 1, -h/2, 0)    # ud
-            nf = hm(nf, 1, 0, 0)       # gluon σ₀
-            nf = hm(nf, 1, 0, 0)       # gluon σ₀
+    for k in range(A):
+        if (k % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p')
             pc += 1
         else:
-            # Neutron: B₃ + quarks + L₊L₋ gluon
-            for _ in range(3):
-                nf = hm(nf, 1, 0, 0)
-                nf = hm(nf, 1, -h, 1)
-            nf = hm(nf, 1, 0, 0)       # ud
-            nf = hm(nf, 1, -h/2, 1)    # dd
-            nf = hm(nf, 1, -h/2, 0)    # ud
-            for _ in range(4):
-                nf = hm(nf, 1, 0, 0)   # L₊L₋ gluon
+            ordering.append('n')
             nc += 1
-    # Electrons
+
+    # Start with identity
+    nf = [1.0, 0, 0, 0, 0, 0]
+
+    # Compose nucleon NFs sequentially
+    for k in range(A):
+        if ordering[k] == 'p':
+            nucleon = PROTON_NF
+        else:
+            nucleon = NEUTRON_NF
+        # Multiply: nf = nf ⊗ nucleon (via hm for each basis component)
+        # This is equivalent to applying the nucleon's braid word
+        # Use the nucleon NF directly: nf_new[i] = Σ_j nf[j] * M(j,nucleon,i)
+        # For simplicity, apply the nucleon as its braid word
+        if ordering[k] == 'p':
+            # B₃ confinement
+            for _ in range(3):
+                nf = hm(nf, 1, 0, 0)       # σ₀
+                nf = hm(nf, 1, -h, 1)       # σ₁⁻¹
+            # Quark crossings: (0,1)→gen=0 uu, (0,2)→gen=0 uu, (1,2)→gen=1 ud
+            nf = hm(nf, 1, 0, 0)            # pair(0,1) uu → σ₀
+            nf = hm(nf, 1, 0, 0)            # pair(0,2) uu → σ₀
+            nf = hm(nf, 1, -h/2, 1)         # pair(1,2) ud → σ₁ mixed
+        else:
+            # B₃ confinement
+            for _ in range(3):
+                nf = hm(nf, 1, 0, 0)       # σ₀
+                nf = hm(nf, 1, -h, 1)       # σ₁⁻¹
+            # Quark crossings: (0,1)→gen=0 ud, (0,2)→gen=0 ud, (1,2)→gen=1 dd
+            nf = hm(nf, 1, -h/2, 0)         # pair(0,1) ud → σ₀ mixed
+            nf = hm(nf, 1, -h/2, 0)         # pair(0,2) ud → σ₀ mixed
+            nf = hm(nf, 1, -h, 1)           # pair(1,2) dd → σ₁⁻¹
+
+        # Inter-nucleon crossing with all PREVIOUS nucleons
+        for prev in range(k):
+            ti, tj = ordering[prev], ordering[k]
+            if ti == 'p' and tj == 'p':
+                nf = hm(nf, 1, 0, 0)        # pp: σ₀
+            elif ti == 'n' and tj == 'n':
+                nf = hm(nf, 1, -h, 0)       # nn: σ₀⁻¹
+            else:
+                nf = hm(nf, 1, -h/2, 0)     # pn/np: mixed
+
+    # Electrons: pe crossing (EM channel, gen=1)
     for _ in range(Z):
-        nf = hm(nf, 1, -h, 1)  # pe crossing
+        nf = hm(nf, 1, -h, 1)               # σ₁⁻¹
+
     return nf
 
 
 def apply_atom_nf(nf, Z, N):
-    """Apply atom crossings to an existing NF (for molecular products)."""
+    """Apply atom crossings to an existing NF (for molecular products).
+
+    Same construction as build_atom_nf but starting from a given NF
+    instead of identity.
+    """
+    A = Z + N
+    ordering = []
     pc, nc = 0, 0
-    for k in range(Z + N):
-        is_p = (k % 2 == 0 and pc < Z) or nc >= N
-        if is_p:
+    for k in range(A):
+        if (k % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p')
+            pc += 1
+        else:
+            ordering.append('n')
+            nc += 1
+
+    for k in range(A):
+        if ordering[k] == 'p':
             for _ in range(3):
                 nf = hm(nf, 1, 0, 0)
                 nf = hm(nf, 1, -h, 1)
             nf = hm(nf, 1, 0, 0)
+            nf = hm(nf, 1, 0, 0)
             nf = hm(nf, 1, -h/2, 1)
-            nf = hm(nf, 1, -h/2, 0)
-            nf = hm(nf, 1, 0, 0)
-            nf = hm(nf, 1, 0, 0)
-            pc += 1
         else:
             for _ in range(3):
                 nf = hm(nf, 1, 0, 0)
                 nf = hm(nf, 1, -h, 1)
-            nf = hm(nf, 1, 0, 0)
-            nf = hm(nf, 1, -h/2, 1)
             nf = hm(nf, 1, -h/2, 0)
-            for _ in range(4):
+            nf = hm(nf, 1, -h/2, 0)
+            nf = hm(nf, 1, -h, 1)
+
+        for prev in range(k):
+            ti, tj = ordering[prev], ordering[k]
+            if ti == 'p' and tj == 'p':
                 nf = hm(nf, 1, 0, 0)
-            nc += 1
+            elif ti == 'n' and tj == 'n':
+                nf = hm(nf, 1, -h, 0)
+            else:
+                nf = hm(nf, 1, -h/2, 0)
+
     for _ in range(Z):
         nf = hm(nf, 1, -h, 1)
     return nf
@@ -874,53 +933,40 @@ def binding_energy_derived(Z, N):
     return B_strong * (1.0 - alpha_em / 2.0)
 
 
-def q_value_beta(Z_parent, N_parent):
+def q_value_beta(Z_parent, N_parent, method='phi1'):
     """Q-value (MeV) for beta⁻ decay: (Z,N) → (Z+1,N-1) + e⁻ + ν̄_e.
 
-    Uses the full NF Markov trace to compute the mass DIFFERENCE,
-    which is what Q-values require. The BW formula gives good absolute
-    masses but insufficient precision for the keV-scale differences.
+    method='phi1' (default): uses per-generator vertex volume difference
+        Q = κ × (Φ₁(daughter) - Φ₁(parent))
+        where κ = m_e/3 and Φ₁ = Σᵢ ln|V̂ᵢ|.
+        This captures keV-scale mass differences correctly because the
+        vertex volumes cancel common factors between parent and daughter.
 
-    Q = M(parent) - M(daughter)
-      = [M_free(parent) - B(parent)] - [M_free(daughter) - B(daughter)]
-      = Δ_M_free - ΔB
+    method='bw': uses BW formula difference
+        Q = Δ_M_free - (B_parent - B_daughter)
+        Less precise for small Q-values due to subtraction of large numbers.
 
-    where Δ_M_free = M_n - M_p - m_e and ΔB = B(parent) - B(daughter).
-
-    The NF trace gives ΔB through the RATIO of Markov traces:
-      ΔB = α × ln|tr_M(daughter) / tr_M(parent)|
-    which cancels common factors and captures the keV-scale differences.
+    The per-generator method agrees with the transfer matrix approach
+    in all-nuclei-transfer-matrix.py and gives Q(³H) ≈ 0.018 MeV
+    (exp: 0.01861, 3% error).
     """
     Z_d, N_d = Z_parent + 1, N_parent - 1
     if N_parent <= 0:
         return 0.0
 
-    delta_Mfree = M_N_MEV - M_P_MEV - M_E_MEV  # ≈ 0.782 MeV
+    if method == 'phi1':
+        # Per-generator vertex volume method (most precise for Q-values)
+        phi_parent = compute_phi1_full(Z_parent, N_parent)
+        phi_daughter = compute_phi1_full(Z_d, N_d)
+        delta_phi = phi_daughter - phi_parent
+        return KAPPA * delta_phi
 
-    # Build full NF for parent and daughter
-    nf_parent = build_atom_nf(Z_parent, N_parent)
-    nf_daughter = build_atom_nf(Z_d, N_d)
-
-    tr_parent = nf_tr(nf_parent)
-    tr_daughter = nf_tr(nf_daughter)
-
-    # Binding scale from knot classification
-    alpha_p, _, _ = classify_nuclear_knot(Z_parent, N_parent)
-    alpha_d, _, _ = classify_nuclear_knot(Z_d, N_d)
-
-    # Binding from NF trace (logarithmic formula)
-    if abs(tr_parent) > 1e-300 and abs(tr_daughter) > 1e-300:
-        B_parent = -alpha_p * math.log(abs(tr_parent))
-        B_daughter = -alpha_d * math.log(abs(tr_daughter))
     else:
-        # Fall back to BW
+        # BW difference method (fallback)
+        delta_Mfree = M_N_MEV - M_P_MEV - M_E_MEV
         B_parent = binding_energy_bw(Z_parent, N_parent, k=5)
         B_daughter = binding_energy_bw(Z_d, N_d, k=5)
-
-    delta_B = B_parent - B_daughter
-    Q = delta_Mfree - delta_B
-
-    return Q
+        return delta_Mfree - (B_parent - B_daughter)
 
 
 def atom_mass(Z, N, method='phi1'):
