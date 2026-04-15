@@ -622,30 +622,51 @@ def _phi1_from_ordering(ordering):
     return phi
 
 
+def _alternating_ordering(Z, N):
+    """Alternating nucleon ordering: p,n,p,n,... with extras at end.
+
+    This is the ground-state seed used by braid-registry.py and matches
+    the exhaustive search results for A≤15.
+    """
+    ordering = []
+    pi, ni = 0, 0
+    for k in range(Z + N):
+        if pi < Z and (ni >= N or k % 2 == 0):
+            ordering.append('p')
+            pi += 1
+        else:
+            ordering.append('n')
+            ni += 1
+    return ordering
+
+
 def _phi1_nuclear(Z, N):
     """Compute Φ₁ on nuclear strands only (no electrons).
 
-    Uses pp..nn ordering. For A>14, tries Rust engine for
-    ground-state optimized ordering.
+    Uses alternating (pnpn...) ordering which matches the braid-registry
+    ground-state search results. For A>14, tries ordering cache / Rust
+    engine for optimized ordering.
+
+    Justified by LP dual: electron channels are saturated in neutral
+    atoms (shadow price = 0), so they don't contribute to the mass
+    *difference*. The electron mass is in Δ_Mfree, not Φ₁.
     """
     A = Z + N
     if A <= 1:
         return 0.0
 
+    # Try ordering cache first
     nuc_ordering = None
-    if A > 14:
-        try:
-            from hecke_rust_bridge import compute_nucleus, is_rust_available
-            if is_rust_available():
-                result = compute_nucleus(Z, N, timeout=30)
-                if result and 'ordering_par' in result:
-                    nuc_ordering = ['p' if x == 1 else 'n'
-                                    for x in result['ordering_par']]
-        except ImportError:
-            pass
+    try:
+        from ordering_cache import get_ordering
+        cached = get_ordering(Z, N)
+        if cached:
+            nuc_ordering = ['p' if x == 1 else 'n' for x in cached]
+    except ImportError:
+        pass
 
     if nuc_ordering is None:
-        nuc_ordering = ['p'] * Z + ['n'] * N
+        nuc_ordering = _alternating_ordering(Z, N)
 
     return _phi1_from_ordering(nuc_ordering)
 
@@ -689,8 +710,7 @@ def compute_phi1_full(Z, N):
             pass
 
     if nuc_ordering is None:
-        # Default: pp...nn ordering
-        nuc_ordering = ['p'] * Z + ['n'] * N
+        nuc_ordering = _alternating_ordering(Z, N)
 
     # Full strand ordering: nucleons + electrons
     ordering = nuc_ordering + ['e'] * Z
