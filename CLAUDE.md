@@ -1,5 +1,15 @@
 # Claude Code — Quantum Observable Universe
 
+## User accessibility
+
+The repo owner is physically disabled and types with difficulty.
+Adapt ALL responses accordingly:
+- **Short answers.** One-liners when possible.
+- **Offer choices as numbered lists** so the user can reply "1" or "2".
+- **Run commands proactively** — don't ask "shall I run X?", just run it.
+- **Branch/commit/push without asking** unless destructive.
+- **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
+
 This repository is a formal mathematics paper with:
 - **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source
 - **LaTeX** as a rendering target (generated from content objects)
