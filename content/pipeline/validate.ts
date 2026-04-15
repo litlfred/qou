@@ -244,15 +244,16 @@ export async function validateObjects(objectsDir: string): Promise<ValidationRes
 
   // Pre-load all .md content once — avoids redundant filesystem reads
   // across Phase 2 (constraint rules) and Phase 3 (AST validation).
-  const mdCache = new Map<string, string>();
+  // Store undefined for missing files to preserve the distinction from empty files.
+  const mdCache = new Map<string, string | undefined>();
   for (const [name, { dir }] of allBlocks) {
     const mdPath = join(dir, `${name}.md`);
-    mdCache.set(name, existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "");
+    mdCache.set(name, existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : undefined);
   }
 
   // Phase 2: Constraint rules
   for (const [name, { block, dir }] of allBlocks) {
-    const mdContent = mdCache.get(name) || undefined;
+    const mdContent = mdCache.get(name);
     const ctx: ConstraintContext = {
       rootName: name,
       dir,

@@ -95,13 +95,19 @@ const mdParser = remark()
  * Parse markdown content via remark, caching the resulting AST.
  * Multiple render functions (markdownToLatex, extractMathContent)
  * may be called on the same content within a single build — this
- * avoids redundant parses.
+ * avoids redundant parses.  Bounded to 512 entries to cap memory.
  */
+const MD_AST_CACHE_LIMIT = 512;
 const _mdAstCache = new Map<string, any>();
 function parseMdCached(md: string): any {
   let tree = _mdAstCache.get(md);
   if (!tree) {
     tree = mdParser.parse(md);
+    if (_mdAstCache.size >= MD_AST_CACHE_LIMIT) {
+      // Evict oldest entry (first inserted key)
+      const firstKey = _mdAstCache.keys().next().value;
+      if (firstKey !== undefined) _mdAstCache.delete(firstKey);
+    }
     _mdAstCache.set(md, tree);
   }
   return tree;
