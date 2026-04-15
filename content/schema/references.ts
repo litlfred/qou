@@ -2077,6 +2077,23 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1988]] },
     DOI: "10.1007/BF01404457",
   }),
+
+  // ── Neumann-Zagier 1985 (volumes of hyperbolic 3-manifolds) ───
+  ref({
+    id: "neumann-zagier1985",
+    type: "article-journal",
+    title: "Volumes of hyperbolic three-manifolds",
+    author: [
+      { family: "Neumann", given: "Walter D." },
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Topology",
+    volume: "24",
+    issue: "3",
+    page: "307-332",
+    issued: { "date-parts": [[1985]] },
+    DOI: "10.1016/0040-9383(85)90004-7",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
