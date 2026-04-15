@@ -126,6 +126,7 @@ export default chapter({
         "step-lp-verification",
         "groebner-reduction-methods",
         "tower-binding-energy",
+        "bw-categorical-descent",
       ],
     }),
 

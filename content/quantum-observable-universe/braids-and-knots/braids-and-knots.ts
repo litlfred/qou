@@ -302,6 +302,7 @@ export default chapter({
         "mass-element-nf",
         "calibration-inputs",
         "three-parameters-wedderburn",
+        "wedderburn-trace-identity",
         "binding-scale-catalan",
         "wedderburn-mass-formula",
         "algebraic-quantum-volume",
