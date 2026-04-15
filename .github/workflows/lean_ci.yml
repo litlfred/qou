@@ -260,9 +260,11 @@ jobs:
 
       - name: Build Lean project (ensure .olean files exist)
         working-directory: content/quantum-observable-universe/lean
+        env:
+          CACHE_HIT: ${{ steps.lean-cache-docs.outputs.cache-hit }}
         run: |
           # Only fetch dependencies on cache miss
-          if [ "${{ steps.lean-cache-docs.outputs.cache-hit }}" != "true" ]; then
+          if [ "$CACHE_HIT" != "true" ]; then
             lake update
           fi
           lake build

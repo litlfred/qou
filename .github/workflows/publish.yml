@@ -98,9 +98,6 @@ jobs:
     env:
       HEAD_REF: ${{ inputs.source_branch || github.event.pull_request.head.ref || github.ref_name }}
       HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
-      # Only enable -shell-escape on trusted push events, not on PRs
-      # (pull_request_target runs untrusted TeX that could exploit shell access).
-      LATEXMK_PDFLATEX: ${{ github.event_name == 'push' && 'pdflatex -shell-escape %O %S' || 'pdflatex %O %S' }}
       # FEATURE_REF: the branch to diff against main (latexdiff).
       # Priority: explicit input > PR base branch (if not main) > HEAD_REF.
       # This ensures diff is main↔feature-branch, not main↔assistant-branch.
@@ -282,9 +279,7 @@ jobs:
 
       - name: Compile LaTeX to PDF
         run: |
-          mkdir -p tikz-cache
-          latexmk -pdf -interaction=nonstopmode -halt-on-error \
-            -pdflatex="$LATEXMK_PDFLATEX" main.tex 2>&1 \
+          scripts/latexmk-compile.sh main.tex 2>&1 \
             | grep -v '^LaTeX Warning: .*undefined' \
             | grep -v '^pdfTeX warning (ext4): destination with the same identifier' \
             | grep -v '^<to be read again>' \
@@ -355,8 +350,7 @@ jobs:
             sed -i 's/\\definecolor{BLUE}{rgb}{[^}]*}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
             sed -i 's/\\color{[Bb][Ll][Uu][Ee]}/\\color{DIFgreen}/g' diff.tex
 
-            latexmk -pdf -interaction=nonstopmode -halt-on-error \
-              -pdflatex="$LATEXMK_PDFLATEX" diff.tex \
+            scripts/latexmk-compile.sh diff.tex \
               && echo "[diff] ✓ diff.pdf generated" \
               || echo "[diff] ✗ diff.pdf compilation failed"
 
@@ -408,8 +402,7 @@ jobs:
             slug="${tex#standalone-}"
             slug="${slug%.tex}"
             echo "── Compiling standalone appendix: ${slug}"
-            latexmk -pdf -interaction=nonstopmode -halt-on-error \
-              -pdflatex="$LATEXMK_PDFLATEX" "$tex" 2>&1 \
+            scripts/latexmk-compile.sh "$tex" 2>&1 \
               | grep -v '^LaTeX Warning: .*undefined' \
               | grep -v '^Overfull \\hbox' \
               | grep -v '^Underfull \\hbox' \
