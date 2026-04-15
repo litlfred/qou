@@ -39,7 +39,7 @@ mu_0 = m_e / (3 * E_CROSS)
 def q_int(n):
     return (q**n - qi**n) / HA
 
-alpha_em = qi / (q_int(9) * q_int(10))
+from hecke_core import alpha_em
 three_q = q_int(3)
 
 # G_F from CODATA (open: derive from T_{3,5})

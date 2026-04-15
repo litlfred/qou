@@ -39,8 +39,8 @@ ame2020 = [
 
 print("=" * 70)
 print("§1. ATOMIC MASSES (q-integer BW formula)")
-print("  7-term: λ_V=2[2][7]m_e, λ_S=2[4]²m_e, λ_C=HA[6]m_e")
-print("  a_A=3[2][7]m_e, δ_P=[3][7]m_e, λ_ex=[3]/[2]m_e, δ_S=[2]²[3]m_e")
+print("  6-term H₃(q): λ_V=2[2][7]m_e, λ_S=2[4]²m_e, λ_C=HA[6]m_e")
+print("  a_A=3[2][7]m_e, δ_P=[3][7]m_e, λ_ex=[3]/[2]m_e")
 print("=" * 70)
 print()
 print("{:>4s} {:>3s} {:>3s} {:>10s} {:>10s} {:>8s}".format(
@@ -130,7 +130,7 @@ for name, Z_p, N_p, Z_d, N_d, Q_obs in [
 
 w = WitnessBuilder("full-witness", engine="python")
 w.set_description(
-    "Full witness: atomic masses (7-term q-integer BW, 0.020% MAE), "
+    "Full witness: atomic masses (6-term q-integer BW, k=3 H₃(q)), "
     "molecular binding (NF + vertex volume), beta decay Q-values. "
     "All using hecke_core.py infrastructure. Zero fitted parameters."
 )

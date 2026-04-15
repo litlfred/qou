@@ -43,7 +43,7 @@ $$
   \ln\bigl|\Phi_q(\hat{V}_i^\lambda)\bigr|,
 $$
 
-*where $w_\lambda$ are the Wedderburn weights:
+*where $w_\lambda$ are the Wedderburn-Artin weights:
 $w_{\mathrm{sym}} = w_{\mathrm{alt}} = 1/([2]_q^2 + 2)$,
 $w_{\mathrm{std}} = [2]_q^2/([2]_q^2 + 2)$.*
 
@@ -71,7 +71,7 @@ $$
   \bigr).
 $$
 
-Under the Wedderburn decomposition of $H_3(q)$, the gauge
+Under the Wedderburn-Artin decomposition of $H_3(q)$, the gauge
 functional decomposes into three channels.  Although the
 weights satisfy $w_{\mathrm{sym}} = w_{\mathrm{alt}}$, the
 channels do **not** cancel in the binding: the nonlinearity

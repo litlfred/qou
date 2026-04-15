@@ -89,7 +89,7 @@ $Gx \geq 0$.  The only difference between levels is the
 ### Consistency
 
 *The same energy functional $\Phi_1 = \ln|\mathrm{tr}_M|$ and
-the same Wedderburn weights
+the same Wedderburn-Artin weights
 $(w_s, w_d, w_a) = (q^2, (q^2+1)^2, q^2)/(q^4+4q^2+1)$
 are used at every level.  The binding energy is:*
 

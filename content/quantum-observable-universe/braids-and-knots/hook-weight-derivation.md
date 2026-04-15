@@ -9,12 +9,12 @@ $$
 $$
 
 *where $w_{[2,2]}(4) = \dim_q([2,2])^2 / [4]_q!$ is the
-Wedderburn weight of the hook partition $[2,2]$ in $H_4(q)$,
+Wedderburn-Artin weight of the hook partition $[2,2]$ in $H_4(q)$,
 the baryon's internal Hecke algebra (3 quarks + gluon =
 4 strands).*
 
 *Proof.*
-The Wedderburn decomposition of $H_n(q)$ assigns weight
+The Wedderburn-Artin decomposition of $H_n(q)$ assigns weight
 $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ to each irreducible
 representation $\lambda$.  The mass formula uses the Markov
 trace, which decomposes as

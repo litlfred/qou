@@ -47,7 +47,7 @@ $$
 
 ### Derivation of the five standard terms
 
-*The $q$-integer products arise from the Wedderburn decomposition
+*The $q$-integer products arise from the Wedderburn-Artin decomposition
 of the Hecke algebra $H_3(q)$ at different levels of the
 nuclear construction:*
 

@@ -51,7 +51,7 @@ The Jones--Markov trace is the unique trace on $\bigcup_n H_n(q)$
 satisfying the Markov property
 $\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
 ([Jones--Markov trace](#thm:jones-markov-trace)).
-By the Wedderburn decomposition of the semisimple algebra $H_n(q)$,
+By the Wedderburn-Artin decomposition of the semisimple algebra $H_n(q)$,
 every trace decomposes as a weighted sum of irreducible characters:
 
 $$

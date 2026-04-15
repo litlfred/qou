@@ -30,10 +30,9 @@ from experimental_constants import M_P_MEV, M_N_MEV, M_E_MEV
 HA = q0 - 1.0/q0
 z = 1.0 / (q0**0.5 + q0**(-0.5))
 
-# α_EM from q₀ (derived, no fitting)
-q9 = (q0**9 - q0**(-9)) / HA   # [9]_q
-q10 = (q0**10 - q0**(-10)) / HA  # [10]_q
-ALPHA_EM = 1.0 / (q0 * q9 * q10)
+# α_EM from q₀ (CS-corrected, physical value)
+from hecke_core import alpha_em as _alpha_em
+ALPHA_EM = _alpha_em
 print(f"α_EM = {ALPHA_EM:.6f}  (CODATA: 0.007297)")
 
 

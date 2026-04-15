@@ -22,9 +22,11 @@ export default chapter({
       label: "sec:jet-prolongation",
       blocks: [
         "jet-prolongation",
+        "jet-prolongation-su2",
         "jet-prolongation-proof",
         "prolongation-categorical",
         "recursive-brane-tower",
+        "recursive-brane-tower-su2",
         "brane-tower-levels",
       ],
     }),
@@ -48,8 +50,10 @@ export default chapter({
       label: "ssec:descent-prelim",
       blocks: [
         "descent-lemma",
+        "descent-lemma-su2",
         "descent-lemma-proof",
         "descent-involution",
+        "descent-involution-su2",
       ],
     }),
 
@@ -59,10 +63,14 @@ export default chapter({
       label: "sec:yekutieli-lifting",
       blocks: [
         "yekutieli-lifting-condition",
+        "yekutieli-lifting-condition-su2",
         "quantum-characteristic-classes",
+        "quantum-characteristic-classes-su2",
         "yekutieli-lifting",
+        "yekutieli-lifting-su2",
         "yekutieli-lifting-proof",
         "qu-to-qou",
+        "qu-to-qou-su2",
         "fermionic-twisted-sectors",
         "kummer-filtration-obstruction",
         "kummer-tower",
@@ -76,6 +84,7 @@ export default chapter({
       label: "sec:direct-limit",
       blocks: [
         "direct-limit-algebra",
+        "direct-limit-algebra-su2",
         "direct-limit-lusztig",
         "jet-shell",
         "stack-like-structure",
@@ -96,6 +105,7 @@ export default chapter({
         "euler-char-stability",
         "euler-char-stability-proof",
         "mass-identity",
+        "mass-identity-su2",
       ],
     }),
 
@@ -119,8 +129,10 @@ export default chapter({
       blocks: [
         "descent-intro",
         "descent-eigenspaces",
+        "descent-eigenspaces-su2",
         "descent-eigenspaces-proof",
         "brane-boundary",
+        "brane-boundary-su2",
         "brane-boundary-structure",
         "descent-reduction-zero",
         "descent-physical-zero",
@@ -177,6 +189,7 @@ export default chapter({
         "quantum-dilogarithm-proof",
         "topological-mass-conjecture",
         "topological-mass-proof",
+        "topological-mass-su2",
       ],
     }),
   ],

@@ -2052,6 +2052,101 @@ export const references: CSLData[] = [
     note: "arXiv:2003.02730",
     URL: "https://arxiv.org/abs/2003.02730",
   }),
+
+  // ── Hoefsmit 1974 (seminormal Hecke representations) ──────────
+  ref({
+    id: "hoefsmit1974",
+    type: "thesis",
+    title:
+      "Representations of Hecke algebras of finite groups with BN-pairs of classical type",
+    author: [{ family: "Hoefsmit", given: "Philippus Nicolaas" }],
+    publisher: "University of British Columbia",
+    issued: { "date-parts": [[1974]] },
+    genre: "PhD thesis",
+  }),
+
+  // ── Wenzl 1988 (Hecke algebra subfactors) ─────────────────────
+  ref({
+    id: "wenzl1988",
+    type: "article-journal",
+    title: "Hecke algebras of type A_n and subfactors",
+    author: [{ family: "Wenzl", given: "Hans" }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "92",
+    page: "349-383",
+    issued: { "date-parts": [[1988]] },
+    DOI: "10.1007/BF01404457",
+  }),
+
+  // ── Neumann-Zagier 1985 (volumes of hyperbolic 3-manifolds) ───
+  ref({
+    id: "neumann-zagier1985",
+    type: "article-journal",
+    title: "Volumes of hyperbolic three-manifolds",
+    author: [
+      { family: "Neumann", given: "Walter D." },
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Topology",
+    volume: "24",
+    issue: "3",
+    page: "307-332",
+    issued: { "date-parts": [[1985]] },
+    DOI: "10.1016/0040-9383(85)90004-7",
+  }),
+
+  // ── Young 1901 (quantitative substitutional analysis) ─────────
+  ref({
+    id: "young1901",
+    type: "article-journal",
+    title: "On quantitative substitutional analysis",
+    author: [{ family: "Young", given: "Alfred" }],
+    "container-title": "Proceedings of the London Mathematical Society",
+    volume: "s1-33",
+    page: "97-145",
+    issued: { "date-parts": [[1901]] },
+  }),
+
+  // ── Rutherford 1948 (substitutional analysis) ─────────────────
+  ref({
+    id: "rutherford1948",
+    type: "book",
+    title: "Substitutional Analysis",
+    author: [{ family: "Rutherford", given: "Daniel Edwin" }],
+    publisher: "Edinburgh University Press",
+    issued: { "date-parts": [[1948]] },
+  }),
+
+  // ── Kashaev 1997 (Volume Conjecture) ──────────────────────────
+  ref({
+    id: "kashaev1997",
+    type: "article-journal",
+    title:
+      "The hyperbolic volume of knots from the quantum dilogarithm",
+    author: [{ family: "Kashaev", given: "Rinat M." }],
+    "container-title": "Letters in Mathematical Physics",
+    volume: "39",
+    page: "269-275",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1023/A:1007364912784",
+  }),
+
+  // ── Murakami-Murakami 2001 (Volume Conjecture proof) ──────────
+  ref({
+    id: "murakami-murakami2001",
+    type: "article-journal",
+    title:
+      "The colored Jones polynomials and the simplicial volume of a knot",
+    author: [
+      { family: "Murakami", given: "Hitoshi" },
+      { family: "Murakami", given: "Jun" },
+    ],
+    "container-title": "Acta Mathematica",
+    volume: "186",
+    page: "85-104",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1007/BF02392716",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

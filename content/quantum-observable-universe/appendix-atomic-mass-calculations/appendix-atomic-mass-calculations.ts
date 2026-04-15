@@ -22,6 +22,7 @@ export default chapter({
       label: "sec:amc-method",
       blocks: [
         "amc-method",
+        "amc-wedderburn-method",
       ],
     }),
     section({

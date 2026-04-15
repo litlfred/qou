@@ -57,7 +57,7 @@ S_dd = S_ab(mu_d, mu_d)
 # Fine structure constant from q
 def q_int(n):
     return (q**n - qi**n) / (q - qi)
-alpha_em = qi / (q_int(9) * q_int(10))
+from hecke_core import alpha_em
 
 print(f"\nStep 1: Constants from q = {q:.10f}")
 print(f"  E_× = {E_CROSS:.6f}")

@@ -59,12 +59,10 @@ except ImportError:
     sys.exit(1)
 
 
-# ── Parameters ───────────────────────────────────────────────────
+# ── Parameters (from canonical q_parameter.py) ──────────────────
 
-Q = 1.110
+from q_parameter import Q, Q_INV, S_SKEIN as SKEIN_AMP
 Q_HALF = Q**0.5
-Q_INV = 1.0 / Q
-SKEIN_AMP = Q_HALF - 1.0 / Q_HALF  # q^{1/2} - q^{-1/2}
 
 
 # ── Braid word representation ───────────────────────────────────

@@ -134,6 +134,7 @@ export default chapter({
         "torus-knot-generators",
         "embeddability-closure",
         "genus-filtration-ideal",
+        "genus-filtration-ideal-proof",
         "genus-filtration-interpretation",
         "torus-embeddable-complete",
         "generation-completeness",
@@ -162,6 +163,9 @@ export default chapter({
         // Pair production and quark-antiquark creation
         "breit-wheeler-pair-production",
         "quark-antiquark-production",
+        // Knot operator selection and Frobenius Gram matrix
+        "knot-operator-selection",
+        "frobenius-gram-matrix",
         // Meson, proton, neutron, stable nucleus
         "categorical-meson",
         "meson-formation-chain",
@@ -215,6 +219,11 @@ export default chapter({
         "nucleon-nf-observability",
         "beta-decay-energy-scale",
         "beta-decay-braid-visualizer",
+        // NF computation and shell corrections
+        "groebner-nf-computation",
+        "nf-computation-strategy",
+        "kummer-shell-closure",
+        "skein-shell-correction",
       ],
     }),
 
@@ -275,6 +284,20 @@ export default chapter({
         // Knot-to-particle mass spectrum
         "knot-formula-table",
         "mass-from-generators",
+        // Volume tower and Picard-Lefschetz decomposition
+        "picard-lefschetz-thimble",
+        "volume-tower-decomposition",
+        "cs-evaluation-faithfulness",
+        // Transcendence and algebraic independence
+        "hyperbolic-volume-transcendence",
+        "single-volume-irrationality",
+        "borel-zagier-qou-volumes",
+        "formal-chain-transcendence-remark",
+        "yekutieli-transcendence-shadow",
+        // Baryon periods and integration limits
+        "baryon-period-conjecture",
+        "baryon-integration-limit",
+        "mobius-golden-fixed-points",
       ],
     }),
     // ── §5. Orbital symmetry and cohomological embedding ────────────

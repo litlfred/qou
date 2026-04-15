@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-08T09:24:20.891005+00:00",
-  "commitSha": "d3c7c979dccd265671b6d5d669c6223fc01918da",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-14T22:24:05.073297+00:00",
+  "commitSha": "9c7af975ec8405b4f0c3f93dc70cfb8fe2d81ce6",
   "assertions": [
     {
       "name": "m_μ/m_e = Vol(4₁)/ℏ_q² (self-consistency)",
@@ -127,7 +127,7 @@
   "computation": "topological-mass-table",
   "scriptFile": "topological-mass-table.py",
   "scriptHash": "df99f918db14",
-  "scriptCommitSha": "8433724339034a6a074e74a07ac320aeda7c1672",
+  "scriptCommitSha": "ed07738267cd4ddece2d359e322a66330f9288b4",
   "description": "Complete atomic mass table for all 118 elements built from the muon/electron mass ratio. Derivation chain: m_μ/m_e → Vol(4₁) → ℏ_q² → q₀ → transfer matrix T(c,d) → Skein polynomials P_p, P_n → M(Z,N) using CODATA m_p, m_n. Crossing convention matches hecke_division.py and HeckeH3.lean (σ⁻¹ = σ − HA). Binding energies B/A from AME2020.",
   "contentBlock": "rem:amc-calculations",
   "parameters": {

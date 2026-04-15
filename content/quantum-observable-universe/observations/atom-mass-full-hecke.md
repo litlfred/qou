@@ -15,7 +15,7 @@ with all three irreducible channels tracked independently.
 
 ## Three-channel decomposition
 
-The Wedderburn decomposition of $H_3(q)$ gives
+The Wedderburn-Artin decomposition of $H_3(q)$ gives
 
 $$
   H_3(q) \;\cong\;
@@ -43,7 +43,7 @@ $$
   + w_{\mathrm{alt}}\,\mathrm{tr}_{\mathrm{alt}}
 $$
 
-with Wedderburn weights $w_\lambda = d_\lambda^2 / |S_3|$.
+with Wedderburn-Artin weights $w_\lambda = d_\lambda^2 / |S_3|$.
 
 ## Mass decomposition (fibre / horizontal / mixed)
 

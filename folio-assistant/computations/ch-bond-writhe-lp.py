@@ -27,8 +27,7 @@ from witness_base import WitnessBuilder
 z = 1.0 / (q0**0.5 + qi0**0.5)
 TR_M = [1.0, z, z, z**2, z**2, z**3]
 TWO_Q = q0 + qi0
-alpha_em = qi0 / (q_int(9) * q_int(10))
-E_mol = 511000.0 * alpha_em**2 / TWO_Q**2
+from hecke_core import alpha_em, E_MOL as E_mol
 
 def hm(nf, c, d, g):
     r = [0.0]*6

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T14:22:12.926586+00:00",
-  "commitSha": "a7c90a33a60f8d2862f648ca326f72d9f2d7bcff",
+  "computedAt": "2026-04-14T16:24:23.782584+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
       "name": "He-4 mass",
@@ -294,11 +294,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "channel-product-mass",
   "scriptFile": "channel_product_mass.py",
   "scriptHash": "e82186d514c2",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "438b318d1bec1a7e1ff1b82718ab09869196301f",
   "description": "Exact per-nucleon channel product mass formula. Uses the T_{2,3} eigendecomposition of H₃(q) to factor the nuclear Garside element as a product of per-nucleon channel sums: a = -HA/2 (proton), b = -3(q²-1)(q²+1)²/(4q³) (neutron). Mass = constituents - α·(Z·ln|a| + N·ln|b|) with α = m_e × 8G. Zero fitted parameters.",
   "contentBlock": "rem:q-integer-mass-table",
   "parameters": {

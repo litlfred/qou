@@ -44,7 +44,7 @@ mu_0 = M_E_MEV / (3 * E_CROSS)
 def q_int(n):
     return (q**n - qi**n) / HA
 
-alpha_em = qi / (q_int(9) * q_int(10))
+from hecke_core import alpha_em
 two_q = q_int(2)
 
 print(f"Shell-aware half-lives")
