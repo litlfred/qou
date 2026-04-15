@@ -156,3 +156,28 @@ For $\mathrm{SU}(2)$ at level $n$: $m \sim 3n$, $k = O(1)$.
 | Per-step rule scan | $O(n^2)$ | $O(n)$ |
 | **Total per level** | $O(n^4)$ | $O(n^2)$ |
 | **Cumulative through level $N$** | $O(N^5)$ | $O(N^3)$ |
+
+---
+
+## Empirical benchmark
+
+The Hecke algebra $H_n(q)$ at $q = 1.1097$, starting from
+$H_3(q)$ (3 generators) and adding 3 generators per jet level.
+The rule count includes Hecke ($n$), Yang--Baxter ($\sim n$), and
+far-commutativity ($\sim n^2$) relations.
+
+| Level | Gens | Rules | Naive pairs | Strat pairs | Skipped | Speedup |
+|-------|------|-------|-------------|-------------|---------|---------|
+| 1 | 6 | 21 | 231 | 210 | 21 | 1.1$\times$ |
+| 3 | 12 | 78 | 3,081 | 2,046 | 1,035 | 1.5$\times$ |
+| 6 | 21 | 231 | 26,796 | 12,090 | 14,706 | 2.2$\times$ |
+| 9 | 30 | 465 | 108,345 | 36,714 | 71,631 | 3.0$\times$ |
+| 12 | 39 | 780 | 304,590 | 82,479 | 222,111 | 3.7$\times$ |
+
+Scaling exponents (fitted from benchmark):
+naive pairs $\sim n^{3.95}$, stratified pairs $\sim n^{3.08}$.
+The pair-count speedup ratio grows linearly with level
+($\approx 0.3 \cdot \text{level}$).  Wall-clock speedup at
+level 12: $3.75\times$.
+
+Witness: `folio-assistant/computations/jet-stratified-benchmark.witness.json`.
