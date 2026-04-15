@@ -13,6 +13,9 @@ export default proposition({
     "crossing",
     "involution",
     "fibre-functor",
+    "chern-simons",
+    "descent-decomposition",
+    "exceptional-divisor",
   ],
   lean: {
     decl: "QOU.Descartes.em_coupling_projection",

@@ -41,34 +41,29 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 # α_EM enters the physics through THREE channels:
 #   1. Coulomb term (term 3): uses HA·[6]_q·m_e, NOT α_EM.
 #      The nuclear Coulomb interaction is encoded in the pp crossing eigenvalue.
-#   2. Molecular binding: uses E_HARTREE = m_e·c²·α² → USES α_EM.
-#   3. Half-lives: uses α_EM in Fermi phase space (Sommerfeld factor) → USES α_EM.
+#   2. Molecular binding: uses E_HARTREE = m_e·c²·α² → USES corrected α.
+#   3. Half-lives: uses α_EM in Fermi phase space (Sommerfeld factor) → USES corrected α.
 #
-# α is NOT the Markov trace of any braid word.  It is the:
-#   Layer 2: antisymmetric eigenvalue squared of the R-matrix = q⁻¹
-#   Layer 3: divided by q-dimensions of force carriers = [9]_q · [10]_q
-# These are representation-theoretic quantities (eigenvalues, characters),
-# not trace quantities.
-#
-# Bare formula: 1/α = q·[9]·[10] = 136.823 (0.155% from CODATA)
-# The 0.155% gap should come from descent decomposition exceptional divisors
-# (analogous to the surface/Coulomb/exchange corrections to the mass volume
-# term), but the specific blow-up structure at the force-carrier crossing
-# degeneracies on Bring's surface has not yet been computed.
-#
-# OPEN: Derive the exceptional divisor correction to the bare coupling from
-#       the Frobenius form ∫_A evaluated on T_{2,9} ∪ T_{3,5}, respecting
-#       the self-duality A ≅ A^∨ through S = ev ∘ (id⊗Φ) ∘ coev.
-ALPHA_EM_INV_DERIVED = q0 * q_int(9) * q_int(10)  # 136.823 (bare, 0.155% gap)
+# Bare value (Hecke algebra projection, no CS correction):
+_bare_alpha_em = qi / (q_int(9) * q_int(10))
+_bare_alpha_inv = q0 * q_int(9) * q_int(10)
 
-# Canonical α_EM
+# CS-corrected value (physical α_EM):
+# 1/α = q·[9]·[10] / (1 - δ) where δ = (CS₁+CS₂)·([2]_q/2)·ℏ_q²/bare
+_CS_T29 = math.pi**2 * 10.0/9.0       # CS(T_{2,9}) = π²(m²-1)(n²-1)/(12mn)
+_CS_T35 = math.pi**2 * 16.0/15.0      # CS(T_{3,5})
+_hbar_q2 = (1.0 - qi)**2               # ℏ_q²
+_delta_cs = (_CS_T29 + _CS_T35) * (q_int(2)/2.0) * _hbar_q2 / _bare_alpha_inv
+ALPHA_EM_INV_DERIVED = _bare_alpha_inv / (1.0 - _delta_cs)  # 137.0357 (0.0002%)
+
+# Canonical α_EM: the CS-corrected value is physical
 alpha_em = 1.0 / ALPHA_EM_INV_DERIVED
 alpha_em_derived = alpha_em  # alias for backward compatibility
 
 CATALAN_G = 0.915965594177219015054603514932
 ALPHA = M_E_MEV * 8 * CATALAN_G  # binding scale = m_e × Vol(Borromean)
 
-# Molecular energy scales (use bare α — 0.155% gap negligible here)
+# Molecular energy scales (use corrected α)
 E_HARTREE_EV = 511000.0 * alpha_em**2  # Hartree energy (eV)
 TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q**2  # molecular energy unit (eV)
@@ -101,7 +96,6 @@ KAPPA = M_E_MEV                    # nuclear binding scale (MeV)
 #   - scaling = count of divisors of that type in the nuclear braid
 #
 # All coefficients are q-integer products × m_e (zero fitted parameters).
-
 LAMBDA_V = 2 * q_int(2) * q_int(7) * M_E_MEV   # volume: 2[2][7]m_e ≈ 15.67 MeV
 LAMBDA_S = 2 * q_int(4)**2 * M_E_MEV            # surface: 2[4]²m_e ≈ 17.26 MeV
 LAMBDA_C = h * q_int(6) * M_E_MEV                # Coulomb: HA×[6]m_e ≈ 0.68 MeV

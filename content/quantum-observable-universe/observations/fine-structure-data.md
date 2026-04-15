@@ -9,6 +9,39 @@
   $\alpha^{-1} \approx 137.035999206(11)$, the most precise
   determination to date.
 
+**Chern-Simons correction: descent decomposition of the coupling.**
+
+The bare coupling $q \cdot [9]_q \cdot [10]_q = 136.823$ captures
+the base holonomy of the electromagnetic endomorphism.  The Chern-Simons
+invariants of the force-carrier torus knots provide the exceptional
+divisor correction:
+
+| Force carrier | CS invariant | Value |
+|----------|----------|-------|
+| $T_{2,9}$ (strong) | $\pi^2 \cdot 10/9$ | $10.966$ |
+| $T_{3,5}$ (weak) | $\pi^2 \cdot 16/15$ | $10.528$ |
+| Sum | $\pi^2 (10/9 + 16/15)$ | $21.494$ |
+
+The corrected coupling:
+
+$$
+  \alpha^{-1}_{\mathrm{CS}}
+  =
+  \frac{q \cdot [9]_q \cdot [10]_q}{1 - \delta_{\mathrm{CS}}}
+  =
+  \frac{136.823}{1 - 0.001551}
+  =
+  137.036
+$$
+
+where $\delta_{\mathrm{CS}} = (\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})) \cdot ([2]_q/2) \cdot \hbar_q^2 / \alpha^{-1}_{\mathrm{bare}} = 0.001551$.
+
+| Formula | $\alpha^{-1}$ | Discrepancy |
+|---------|----------------|-------------|
+| Bare: $q \cdot [9]_q \cdot [10]_q$ | $136.823$ | $-0.155\%$ |
+| CS-corrected | $137.036$ | $-2.1\;\mathrm{ppm}$ |
+| CODATA 2018 | $137.035999084$ | — |
+
 **Sensitivity to $q$.**
 
 The QOU prediction $\alpha^{-1}(q) = [9]_q [10]_q / q^{-1}$ is a

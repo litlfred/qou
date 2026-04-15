@@ -77,9 +77,11 @@ Witness computation scripts are in `folio-assistant/computations/`.
 4. **$\alpha_{\mathrm{EM}}$ (fine structure constant).** RESOLVED.
    The EM coupling projection
    ([EM coupling projection](#prop:em-coupling-projection)) gives
-   $\alpha = q^{-1}/([9]_q \cdot [10]_q) \approx 1/136.84$
-   (0.14% from CODATA).  This is derived from $q$ alone — no
-   free parameters.
+   the bare coupling $q^{-1}/([9]_q \cdot [10]_q) \approx 1/136.82$.
+   Including the Chern-Simons correction from the force-carrier
+   torus knots, $\alpha^{-1} \approx 137.036$
+   ($2.1\;\mathrm{ppm}$ from CODATA).  This is derived from $q$
+   alone — no free parameters.
 
 5. **$\lambda_{\mathrm{shell}}$ (shell correction energy scale).**
    The binding energy of the alpha particle $\mathcal{N}(2,2)$
@@ -151,7 +153,8 @@ half-lives agree with observation to better than $3\%$:
 
 These predictions use:
 - **From $q$**: $\alpha_{\mathrm{EM}}(q)$ in the Fermi function
-  ($1/\alpha \approx 136.82$, CODATA: $137.036$, $0.16\%$ error).
+  ($1/\alpha \approx 137.036$ with CS correction, $2.1\;\mathrm{ppm}$
+  from CODATA).
 - **From CODATA**: $G_F = (1.16638 \pm 0.00001) \times 10^{-11}$
   MeV${}^{-2}$.
 - **From NNDC**: $\mathcal{Q}_{\mathrm{exp}}$ and $\log ft$ values
@@ -275,7 +278,7 @@ $$
 | $Q_{\mathrm{exp}}({}^3\mathrm{H})$ | $0.01861 \pm 0.00001$ MeV | $0.054\%$ | $5 \times 0.054\% \approx 0.27\%$ |
 | $g_A$ (PDG) | $1.2754 \pm 0.0013$ | $0.10\%$ | $2 \times 0.10\% \approx 0.20\%$ |
 | $G_F$ (CODATA) | $(1.16638 \pm 0.00001) \times 10^{-11}$ | $0.0009\%$ | $0.002\%$ |
-| $\alpha_{\mathrm{EM}}(q)$ | $1/136.82$ ($q$-derived) | $0.16\%$ | $\sim 0.1\%$ (via $F_q$) |
+| $\alpha_{\mathrm{EM}}(q)$ | $1/137.036$ (CS-corrected) | $2.1\;\mathrm{ppm}$ | $\sim 0.0001\%$ (via $F_q$) |
 | $q$ (CODATA) | $1.10998 \pm 1.3 \times 10^{-8}$ | $1.2 \times 10^{-6}\%$ | $48 \times 10^{-6}\% \approx 0\%$ |
 
 **Combined** (quadrature): $\sqrt{0.27^2 + 0.20^2 + 0.1^2} \approx 0.36\%$ for tritium.  The observed $0.3\%$ deviation

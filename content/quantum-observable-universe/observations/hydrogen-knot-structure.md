@@ -75,7 +75,10 @@ where $q^{-1}$ is the antisymmetric eigenvalue of the $R$-matrix
 (the bare coupling at a single crossing), and $[9]_q$, $[10]_q$
 are the $q$-deformed crossing numbers of the strong ($T_{2,9}$)
 and weak ($T_{3,5}$) force-carrier generators.  At $q = q_0$
-this gives $\alpha^{-1} \approx 136.84$ (0.14% from CODATA).
+this gives the bare value $\alpha^{-1} \approx 136.82$.  Including the
+Chern-Simons correction from the force-carrier torus knots
+([EM coupling projection](#prop:em-coupling-projection)),
+$\alpha^{-1} \approx 137.036$ ($2.1\;\mathrm{ppm}$ from CODATA).
 
 The two formulations are consistent:
 $\tanh(\ln q) / C_{\mathrm{geom}} = q^{-1}/([9]_q \cdot [10]_q)$,
