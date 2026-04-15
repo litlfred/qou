@@ -119,6 +119,14 @@ jobs:
         run: python3 .github/scripts/generate_lean_stubs.py
 
       # ── Build Lean project ───────────────────────────────────────
+      - name: Cache Lean build artifacts
+        uses: actions/cache@v4
+        with:
+          path: content/quantum-observable-universe/lean/.lake
+          key: lean-ci-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/quantum-observable-universe/lean/lake-manifest.json') }}
+          restore-keys: |
+            lean-ci-${{ runner.os }}-
+
       - name: Build and lint Lean project
         id: lean_build
         uses: leanprover/lean-action@v1
