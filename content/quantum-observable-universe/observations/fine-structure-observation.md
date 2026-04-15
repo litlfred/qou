@@ -38,8 +38,8 @@ $q$-integers are fixed by the Descartes substrate parameter.
 | Bare $\alpha_{\mathrm{EM}}^{-1}$ | $\approx 136.823$ | — |
 | $\delta_{\mathrm{CS}}$ | $\approx 0.001551$ | — |
 | CS-corrected $\alpha_{\mathrm{EM}}^{-1}$ | $\approx \mathbf{137.036}$ | $137.035999084(21)$ |
-| Discrepancy (bare) | | $-0.155\%$ |
-| Discrepancy (corrected) | | $-2.1\;\mathrm{ppm}$ |
+| $\boldsymbol{\varepsilon}_\alpha$ (bare) | | $-0.155\%$ |
+| $\boldsymbol{\varepsilon}_\alpha$ (corrected) | | $-2.1\;\mathrm{ppm}$ |
 
 The Chern-Simons correction improves agreement 120-fold, from
 $0.155\%$ to $2.1\;\mathrm{ppm}$, with no additional parameters.

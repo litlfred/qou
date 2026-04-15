@@ -407,6 +407,9 @@ Agents **must** use the correct font for each concept.
 | Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
 | Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
 | Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
+| Error / discrepancy | bold epsilon | `$\boldsymbol{\varepsilon}_X$` (prediction error for observable $X$). Subscript = observable or source: `$\boldsymbol{\varepsilon}_\alpha$` (fine structure), `$\boldsymbol{\varepsilon}_m$` (mass), `$\boldsymbol{\varepsilon}_{q_0}$` (substrate-sourced). **Never** bare `$\epsilon$` or prose "error: X%" in display equations. |
+| Parametric uncertainty | Greek delta | `$\delta q / q$` (relative substrate uncertainty), `$\delta \mathcal{Q}_q$` (Q-value uncertainty). For propagated uncertainties through a function $f$: `$\delta f / f$`. |
+| Asymptotic bounds | plain italic | `$O(\hbar_q^n)$` (big-O), `$o(\hbar_q^n)$` (little-o). Standard Landau notation. Always specify the asymptotic variable: `$O(\hbar_q^2)$` as $q \to 1$, or `$O(\varepsilon)$` for parametric errors. |
 
 **Key collision avoidances:**
 - `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
@@ -449,6 +452,71 @@ $\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272 + O(10^{-3})\;\text{MeV}$
 This applies to all physical predictions, CODATA comparisons, and
 numerical evaluations at `$q_0$`. Exact algebraic identities
 (e.g. `$c_q = 1/(q-1)$`) use `$=$` since they hold for all `$q$`.
+
+### 7ac. Error bounds and asymptotic notation (STRICT)
+
+**Error symbol.** The prediction error for an observable $X$ is
+denoted `$\boldsymbol{\varepsilon}_X$` (bold varepsilon, subscripted
+by the observable). This replaces ad-hoc prose like "error: 0.63%"
+in mathematical expressions.
+
+```latex
+% WRONG — prose error in a mathematical context
+$\Delta m \approx 1.293\;\text{MeV}$ (error: $0.63\%$)
+
+% RIGHT — formal error notation
+$\Delta m \approx 1.293\;\text{MeV}, \quad
+ \boldsymbol{\varepsilon}_{\Delta m} = 0.63\%$
+
+% RIGHT — with big-O error term (permits $=$)
+$\Delta m = 1.293 + O(10^{-2})\;\text{MeV}$
+```
+
+**Standard subscripts:**
+
+| Subscript | Meaning |
+|-----------|---------|
+| `$\boldsymbol{\varepsilon}_\alpha$` | Fine structure constant error |
+| `$\boldsymbol{\varepsilon}_m$` | Mass prediction error |
+| `$\boldsymbol{\varepsilon}_{\mathcal{Q}}$` | $Q$-value prediction error |
+| `$\boldsymbol{\varepsilon}_{t_{1/2}}$` | Half-life prediction error |
+| `$\boldsymbol{\varepsilon}_{q_0}$` | Substrate-sourced parametric error |
+
+**Parametric uncertainty.** The relative uncertainty in the substrate
+parameter is `$\varepsilon = \delta q / q$` (plain varepsilon, no
+bold — this is a small parameter, not a prediction error). Propagated
+uncertainties use `$\delta f / f$`.
+
+**Big-O and little-o (Landau notation).** Always state the
+asymptotic variable:
+
+```latex
+% Big-O: bounded above (up to constant)
+$f(q) = g(q) + O(\hbar_q^2) \quad \text{as } q \to 1$
+$\boldsymbol{\varepsilon}_{q_0} = O(\varepsilon) \quad
+ \text{where } \varepsilon = \delta q / q$
+
+% Little-o: vanishes faster than
+$\delta_{\mathrm{CS}} = o(1) \quad \text{as } q \to \infty$
+```
+
+**When to use each form:**
+
+| Context | Notation |
+|---------|----------|
+| Prediction vs. experiment (tables) | `$\boldsymbol{\varepsilon}_X = \ldots\%$` |
+| Algebraic remainder | `$= f(q) + O(\hbar_q^n)$` |
+| Asymptotic vanishing | `$= o(\hbar_q^n)$` as $q \to 1$ |
+| Parametric sensitivity | `$\delta f / f = (\partial \ln f / \partial \ln q) \cdot \varepsilon$` |
+| Prose (informal, not display math) | "within $0.63\%$" (acceptable) |
+
+**Collision avoidance:**
+- `$\boldsymbol{\varepsilon}_X$` (bold, subscripted) = prediction error.
+  **Never** bare `$\epsilon$` or `$\varepsilon$` alone for errors.
+- `$\varepsilon$` (plain, no subscript) = small parameter
+  `$\delta q / q$` only.
+- `$\delta$` = increment/perturbation (not error).
+- `$\Delta$` = finite difference (e.g., `$\Delta m = m_n - m_p$`).
 
 ### 7a. Hecke-Skein convention (STRICT)
 

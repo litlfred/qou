@@ -54,6 +54,7 @@ $$
   \Delta m = 3.7445 \times 0.3476 \approx 1.302 \;\mathrm{MeV}
 $$
 
-CODATA value: $\Delta m \approx 1.2934$ MeV.  Error: $0.63\%$.
+CODATA value: $\Delta m \approx 1.2934$ MeV;
+$\boldsymbol{\varepsilon}_{\Delta m} = 0.63\%$.
 
 **Witness**: `atom-mass-complete-wedderburn.witness.json`.

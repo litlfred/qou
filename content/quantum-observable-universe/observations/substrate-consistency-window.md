@@ -30,7 +30,7 @@ is fixed by any one of the three determinations above.
 
 *Dimensionless ratios.*
 
-| Quantity | QOU formula | QOU value | Measured | Discrepancy |
+| Quantity | QOU formula | QOU value | Measured | $\boldsymbol{\varepsilon}$ |
 |----------|-----------|-----------|----------|-------------|
 | $\alpha_{\mathrm{EM}}^{-1}$ | CS-corrected $q \cdot [9]_q \cdot [10]_q/(1-\delta_{\mathrm{CS}})$ | $137.036$ | $137.036$ | $-2.1\;\mathrm{ppm}$ |
 | EM/strong ratio | $\tanh(\ln q)$ | $0.104$ | $\sim 0.1$ | Constituent scale |

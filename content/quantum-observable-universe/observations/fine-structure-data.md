@@ -36,10 +36,10 @@ $$
 
 where $\delta_{\mathrm{CS}} = (\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})) \cdot ([2]_q/2) \cdot \hbar_q^2 / \alpha^{-1}_{\mathrm{bare}} \approx 0.001551$.
 
-| Formula | $\alpha^{-1}$ | Discrepancy |
+| Formula | $\alpha^{-1}$ | $\boldsymbol{\varepsilon}_\alpha$ |
 |---------|----------------|-------------|
-| Bare: $q \cdot [9]_q \cdot [10]_q$ | $136.823$ | $-0.155\%$ |
-| CS-corrected | $137.036$ | $-2.1\;\mathrm{ppm}$ |
+| Bare: $q \cdot [9]_q \cdot [10]_q$ | $\approx 136.823$ | $-0.155\%$ |
+| CS-corrected | $\approx 137.036$ | $-2.1\;\mathrm{ppm}$ |
 | CODATA 2018 | $137.035999084$ | — |
 
 **Sensitivity to $q$.**
