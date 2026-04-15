@@ -1,14 +1,14 @@
-The Iwahori--Hecke algebra in which all subsequent Gröbner--Shirshov normal-form
-computations take place is *not* an algebra with a free parameter.
-It is the quotient of the braid-group algebra by the minimal
-polynomial of the categorical braiding.
+We emphasize that the Iwahori--Hecke algebra underlying all subsequent
+Gröbner--Shirshov normal-form computations is *not* an algebra with a free
+parameter.  We obtain it as the quotient of the braid-group algebra by the
+minimal polynomial of the categorical braiding.
 
 Concretely, the braiding eigenvalue extraction
 ([eigenvalue extraction](#prop:braiding-eigenvalue-extraction))
 shows that $c_{V,V}$ has eigenvalues $(q, -q^{-1})$ on the
 decomposition $V \otimes V = S^2 V \oplus \Lambda^2 V$.
-Applying the fibre functor $\tau$ gives the endomorphism
-$T = \tau(c_{V,V})$ satisfying the Hecke relation
+When we apply the fibre functor $\tau$, we get the endomorphism
+$T = \tau(c_{V,V})$, which satisfies the Hecke relation
 
 $$
   (T - q)(T + q^{-1}) =  0,

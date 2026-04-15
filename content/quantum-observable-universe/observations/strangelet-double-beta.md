@@ -85,7 +85,7 @@ $$
 The intermediate knot is the **figure-eight** $4_1$ — the
 amphichiral knot identified with the Higgs mass mechanism
 ([building block knots](#rem:building-block-knots)).  Its
-Jones polynomial at $q = q_0$ is $J(4_1) = 1.033$, close
+Jones polynomial at $q = q_0$ is $J(4_1) \approx 1.033$, close
 to $1$ (the unknot value).  The intermediate state is
 "almost trivial" — a fleeting Higgs-like excitation between
 the two beta decays.

@@ -48,6 +48,7 @@ theorem figure_eight_bw_coefficients (q₀ : ℝ) (hq : q₀ > 1)
     -- B_{4₁} = a · B_bulk + f · B_Z
     a > 0 ∧ f > 0 := by
   exact ⟨fig8BulkFactor q₀ hq, fig8ZdepFactor q₀ hq,
+    -- Ref: [manuscript] Ch 5 §5.9
     rfl, rfl, by sorry, by sorry⟩
 
 end QOU.BraidKnot

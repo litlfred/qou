@@ -29,7 +29,7 @@ $$
 
 with $\mathrm{net}(\gamma\gamma) = 1 + (q - q^{-1}) \approx 1.209$.
 This yields a bare pair energy $E_{\mathrm{pair}} \approx 1.006$ MeV,
-which is $1.6\%$ below $2m_e = 1.022$ MeV.
+which is $1.6\%$ below $2m_e \approx 1.022$ MeV.
 
 **Colored photon (general form).**
 To match the threshold $2m_e$ exactly, the photon acquires

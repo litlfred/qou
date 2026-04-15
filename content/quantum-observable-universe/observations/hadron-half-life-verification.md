@@ -209,14 +209,14 @@ coefficients in $\mathcal{Q}_{\mathrm{bare}}$.
 **Degree-$2$ shells, partial** ($N > 28$, $N \notin \{50,82,126\}$;
 active knot $\in \{T_{2,9}, T_{3,4}\}$): the degree-$2$ knot
 operator average suppresses $\mathcal{Q}_{\mathrm{bare}}$ by
-$F = 0.5904$, reducing the $+70$–$82\%$ overshoot to
+$F \approx 0.5904$, reducing the $+70$–$82\%$ overshoot to
 $+0.2$–$7.7\%$.
 
 **Degree-$2$ shells, full** ($N \in \{50, 82, 126\}$):
 the Pauli principle forces the fully occupied shell into
 the alternating irrep $(1,1,1)$ of $H_3(q)$.  The knot
 operator average is additionally suppressed by the
-Schur–Weyl projection: $F = 0.5904 \times 0.6382 = 0.3768$.
+Schur–Weyl projection: $F \approx 0.5904 \times 0.6382 \approx 0.3768$.
 This reduces the ${}^{137}\mathrm{Cs}$ error from $+171\%$
 to $+2.2\%$.
 

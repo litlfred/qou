@@ -11,7 +11,7 @@ export default conjecture({
     "thm:topological-mass",
     "prop:knot-operator-selection",
     "prop:frobenius-gram-matrix",
-    "cor:topological-decomposition-mass",
+    "conj:topological-decomposition-mass",
   ],
   tags: [
     "mass",

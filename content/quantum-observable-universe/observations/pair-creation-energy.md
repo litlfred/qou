@@ -8,7 +8,7 @@ conservation forbids it.  The minimum process is **pair production**:
 a photon near a nucleus creates an $e^- e^+$ pair, requiring
 
 $$
-  E_{\gamma}  \geq  2m_ec^2 =  1.022  \text{MeV}.
+  E_{\gamma}  \geq  2m_ec^2 \approx  1.022  \text{MeV}.
 $$
 
 The original electron is unchanged; a new pair appears from the
@@ -22,7 +22,7 @@ $$
   \mathbf{E}_{\mathrm{cross}}(e^-)
   =  3q
    \approx  3  q_0
-  =  3.330
+  \approx  3.330
   \quad (\text{in Skein units}).
 $$
 
@@ -32,7 +32,7 @@ $$
   \mathbf{E}_{\mathrm{cross}}(e^+)
   =  -3q^{-1}
    \approx  -3 \times 0.9010
-  =  -2.703
+  \approx  -2.703
   \quad (\text{in Skein units}).
 $$
 

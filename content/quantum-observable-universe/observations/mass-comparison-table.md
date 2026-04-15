@@ -1,9 +1,9 @@
-The following table evaluates the topological knot formulas
+We evaluate the topological knot formulas
 ([knot formula table](#rem:knot-formula-table)) at the substrate
 parameter $q_0$ derived from the muon--electron mass
 ratio ([Skein mass relation](#rem:skein-mass-relation)), and
-compares the results against CODATA 2022 recommended values and
-PDG 2024 averages.  All masses are in MeV/$c^2$.
+compare the results against CODATA 2022 recommended values and
+PDG 2024 averages. All masses are in MeV/$c^2$.
 
 **Input parameters** (one free parameter):
 
@@ -82,7 +82,7 @@ to six significant figures with $q = q_0$.
    are mass *ratios* ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$),
    $Q$-values (mass differences from $\Delta\mathrm{net} \times E_0$),
    and half-life ratios via $\log_q(ft)$ spectroscopy. The one
-   external scaling parameter is $m_e = 0.51099895$ MeV (CODATA),
+   external scaling parameter is $m_e \approx 0.51099895$ MeV (CODATA),
    which converts dimensionless $q$-ratios to physical MeV.
 
 *Isotope-level data (hecke-engine certificates, $A \leq 14$).*

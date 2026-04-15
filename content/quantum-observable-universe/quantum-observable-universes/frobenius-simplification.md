@@ -60,7 +60,7 @@ reduce to a triple:
    category of vector bundles over $M$, playing the role of
    $(G, \mathcal{S})$; and
 3. an instanton connection on the underlying $A$-bundle
-   ([instanton](#def:instanton)).
+   ([instanton](#def:categorical-instanton)).
 
 The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
 the non-degeneracy of the Frobenius form $\int_A$ via the diagram
@@ -87,7 +87,7 @@ The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
 [Frobenius pairing](#def:frobenius-pairing) from $\int_A$; any global parallel section would
 pair non-trivially with itself, contradicting the irreducibility of
 the instanton connection
-([irreducible connection](#lem:irreducible-connection)). Hence the Frobenius
+([irreducible connection](#ex:irreducible-connection)). Hence the Frobenius
 non-degeneracy, combined with irreducibility, forces
 $H^0(M, \mathrm{Ad}(A)) = 0$. The section-vanishing condition
 $\Gamma_c(M, \mathcal{S}) = 0$ follows similarly from the non-existence of

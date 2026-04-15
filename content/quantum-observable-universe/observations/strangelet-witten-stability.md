@@ -22,7 +22,7 @@ Fact (3) is the QOU version of Witten's observation: by replacing
 down quarks ($T_{2,3}^{\sigma}$, 3 negative crossings) with
 strange quarks ($T_{2,5}^{\sigma}$, 5 negative crossings), each
 baryon gains $2q^{-1}$ additional binding in the strong channel.
-At $q = q_0$: this is $2 \times 0.9011 = 1.802$ Skein units
+At $q = q_0$: this is $2 \times 0.9011 \approx 1.802$ Skein units
 per baryon.
 
 **The Jones polynomial obstruction.**
@@ -75,7 +75,7 @@ strange matter is **decisively not** the ground state.
 |-------------|-----------|----------------|-----------|
 | Strong binding (crossing) | $8 q^{-1}$ | $6 q^{-1}$ | SQM by $4/3$ |
 | Coulomb correction | $0$ | $Q \cdot (q - q^{-1})$ | SQM (no EM drag) |
-| Jones polynomial cost | $\lvert J_{\mathfrak{s}}\rvert = 1.176$ | $\lvert J_{\mathfrak{d}}\rvert = 0.960$ | Ordinary ($22\%$ lighter) |
+| Jones polynomial cost | $\lvert J_{\mathfrak{s}}\rvert \approx 1.176$ | $\lvert J_{\mathfrak{d}}\rvert \approx 0.960$ | Ordinary ($22\%$ lighter) |
 | Borromean volume | $V_B = 7.328$ (same) | $V_B = 7.328$ (same) | Tie |
 
 **Where strangelets DO exist: neutron star cores.**

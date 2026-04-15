@@ -132,7 +132,8 @@ theorem hecke_basis_size (A : ℕ) :
     ∃ basis : Finset (List ℕ),
     basis.card ≤ Nat.factorial A ∧
     ∀ w ∈ basis, IsNormalForm [w] :=
-  sorry -- Ref: [kazhdan-lusztig1979]
+  -- Ref: [kazhdan-lusztig1979] https://doi.org/10.1007/BF01390031
+  sorry
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART I: Palindromic histogram

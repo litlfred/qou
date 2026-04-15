@@ -153,8 +153,8 @@ At $q = 1$ (classical): $T^2 = 1$, all crossings cancel,
 no binding energy, no Coulomb repulsion, no beta decay.  All
 nuclear configurations at fixed $A$ are degenerate.
 
-At the substrate parameter $q$ (Descartes): $T^2 = 0.209T + 1$.
-The crossing asymmetry $0.209 = q - q^{-1}$ splits the
+At the substrate parameter $q$ (Descartes): $T^2 \approx 0.209T + 1$.
+The crossing asymmetry $0.209 \approx q - q^{-1}$ splits the
 degeneracy.  The $0.209T$ term is the electromagnetic
 interaction (Coulomb repulsion between protons, Coulomb
 enhancement of beta decay).  The $1$ term is the strong

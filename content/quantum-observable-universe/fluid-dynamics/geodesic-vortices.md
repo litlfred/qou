@@ -1,6 +1,7 @@
-Geodesics of the [acoustic metric](#rem:madelung-fluid) coincide
-with critical points of a $q$-deformed energy functional on closed
-curves in the [state bundle](#def:state-bundle) $\mathcal{S}$.
+We show that geodesics of the [acoustic metric](#rem:madelung-fluid)
+coincide with critical points of a $q$-deformed energy functional on
+closed curves in the [state bundle](#def:substrate-line-bundle)
+$\mathcal{S}$.
 
 **The $q$-energy functional.**
 For $\gamma \colon S^1 \to \mathcal{S}$:
@@ -21,19 +22,19 @@ where $\dot\gamma^H$ is the horizontal velocity, $Q_q$ the
 the curvature along the filament.
 
 **Critical points are geodesics.**
-$\delta\mathcal{E}_q / \delta\gamma = 0$ gives
+We set the first variation to zero, $\delta\mathcal{E}_q / \delta\gamma = 0$, and obtain the geodesic equation
 
 $$
   \nabla_{\dot\gamma}\dot\gamma
   = -\nabla^\perp Q_q - \iota_{\dot\gamma}{*F_A}.
 $$
 
-At $q \to 1$: $Q_q \to 0$, the gauge term reduces to Biot--Savart
-self-induction (Hasimoto soliton).
+At $q \to 1$ we have $Q_q \to 0$, and the gauge term reduces to Biot--Savart
+self-induction (the Hasimoto soliton).
 
 **Stability.**
-The second variation $\delta^2\mathcal{E}_q$ decomposes via the
-[weight-space decomposition](#def:adjoint-weight-decomposition):
+We decompose the second variation $\delta^2\mathcal{E}_q$ using the
+[weight-space decomposition](#def:weight-decomposition):
 
 - **Longitudinal** (Cartan): stable, eigenvalues
   $[k]_q^2 \hbar_q / L_q^2$ ([discrete
@@ -44,9 +45,9 @@ The second variation $\delta^2\mathcal{E}_q$ decomposes via the
 - **Gauge**: quotiented out by symmetry.
 
 **Index theorem.**
-The Morse index of the fundamental vortex ($j = 1/2$) is zero:
-no lower state exists.  The lightest fermion is an absolute
-minimum of $\mathcal{E}_q$ in its topological class.
+We compute the Morse index of the fundamental vortex ($j = 1/2$) and
+find it is zero: no lower state exists.  The lightest fermion therefore
+sits at an absolute minimum of $\mathcal{E}_q$ in its topological class.
 
 **Connection to mass.**
 $\mathcal{E}_q[\gamma_0] = \oint_{\gamma_0}

@@ -22,6 +22,7 @@ noncomputable def predictedMAE (k : ℕ) : ℝ :=
 /-- At k = 11, the model error is below the q₀ measurement floor. -/
 theorem hecke_convergence_bound :
     predictedMAE 11 < 2e-8 := by
+  -- Ref: [manuscript] Ch 5 §5.10
   sorry
 
 end QOU.BraidKnot

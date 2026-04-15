@@ -113,7 +113,7 @@ which grows with $\kappa$.  The question is the **rate of growth**:
   intermediate case.  The lower bound holds if $\beta < 1/2$
   (the flattening is slower than the approach).
 
-The [Levi form condition number](#rem:levi-form-defect) at the
+The [Levi form condition number](#def:levi-form-defect) at the
 vortex core is $\lambda_{\max}/\lambda_{\min}$, which equals
 $\kappa(t)^2$.  The contact structure degenerates (becomes
 integrable) iff $\lambda_{\min} \to 0$, i.e. $\kappa(t) \to

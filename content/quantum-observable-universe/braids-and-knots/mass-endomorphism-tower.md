@@ -6,7 +6,7 @@ the non-perturbative quantum dilogarithm
 ([quantum Bloch group](#def:quantum-bloch-group)).  Let
 $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
-([three-invariant mass formula](#prop:atomic-braid-mass)).
+([three-invariant mass formula](#prop:q-integer-mass-formula)).
 
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative

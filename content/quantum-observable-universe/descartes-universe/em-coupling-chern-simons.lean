@@ -24,6 +24,7 @@ noncomputable def chernSimons (m n : ℕ) : ℝ :=
 noncomputable def gramKappa (q : ℝ) (hq : q > 1) : ℝ :=
   -- κ = det(G_CS_classical) / det(G_CS_q-deformed)
   -- Computed numerically: κ ≈ 1.722 at q₀
+  -- Ref: [manuscript] Ch 5 (Descartes) §6.4
   sorry
 
 /-- The corrected inverse fine structure constant. -/
@@ -40,6 +41,7 @@ noncomputable def alphaEmInvCorrected (q : ℝ) (hq : q > 1) : ℝ :=
 theorem em_coupling_chern_simons (q₀ : ℝ) (hq : q₀ > 1)
     (hq₀ : q₀ = 1 / (1 - Real.sqrt (2.029883212819307 / 206.7682830))) :
     |alphaEmInvCorrected q₀ hq - 137.035999084| < 0.0001 := by
+  -- Ref: [manuscript] Ch 5 (Descartes) §6.4
   sorry
 
 end QOU.DescartesUniverse

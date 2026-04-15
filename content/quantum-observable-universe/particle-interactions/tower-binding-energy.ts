@@ -21,7 +21,7 @@ export default proposition({
     "thm:topological-mass",
     "def:recursive-brane-tower",
     "prop:mass-endomorphism-tower",
-    "prop:atomic-braid-mass",
+    "prop:q-integer-mass-formula",
     "rem:hecke-charge-mass-duality",
   ],
 });

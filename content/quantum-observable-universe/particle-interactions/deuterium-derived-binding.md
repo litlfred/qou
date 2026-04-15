@@ -101,7 +101,7 @@ The derivation chain:
 
 1. $\mathrm{Vol}(4_1) = 2.0299$ (SnapPy, hyperbolic volume)
 2. $m_\mu/m_e = 206.768$ (CODATA 2022, gives $q_0$)
-3. $m_e = 0.5110\;\text{MeV}$ (CODATA 2022, gives MeV scale)
+3. $m_e \approx 0.5110\;\text{MeV}$ (CODATA 2022, gives MeV scale)
 4. $G = 0.9160$ (Catalan's constant, computed)
 5. Quark content: $\mathfrak{p} = \mathfrak{u}\mathfrak{u}\mathfrak{d}$,
    $\mathfrak{n} = \mathfrak{u}\mathfrak{d}\mathfrak{d}$

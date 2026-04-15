@@ -1,7 +1,7 @@
-The [substrate parameter](#def:substrate-parameter) is defined over an
-arbitrary base field $k$, so $q \in \mathrm{End}(\mathbf{1}) \cong k^\times$.
-Nothing in the *algebraic* definition of $d_q$ requires $q$ to be real.
-Over $k = \mathbb{C}$, write $q$ in polar form:
+We can define the [substrate parameter](#def:substrate-parameter) over
+any base field $k$, giving $q \in \mathrm{End}(\mathbf{1}) \cong k^\times$.
+Algebraically, nothing forces $q$ to be real — but physics will.
+Over $k = \mathbb{C}$, we write $q$ in polar form:
 
 $$
   q =  |q|e^{i\theta}, \qquad |q| \geq 1,\quad \theta \in (-\pi, \pi].
@@ -70,7 +70,7 @@ or algebraic sector — the phase $\theta$ has a geometric interpretation:
    phase rotation of the internal quantum state.
 
 **Relation to root-of-unity specialisations.**  The
-[SU(2) specialisation](#def:substrate-parameter-su2) at
+[SU(2) specialisation](#ex:substrate-parameter-su2) at
 $q_0 = e^{\pi i / \kappa}$ has $|q_0| = 1$ and
 $\theta = \pi / \kappa$ — it is genuinely complex.  This does not
 contradict the observability constraint because root-of-unity

@@ -30,9 +30,9 @@ locally (at one crossing), it transmutes quark flavour.
 
 | Input | Operation | Output | Physical meaning |
 |-------|-----------|--------|-----------------|
-| $T_{2,3}$ ($e^-$, $u$) | Global mirror $\sigma$ | $T_{2,3}^{\sigma}$ ($e^+$, $d$) | Particle → antiparticle |
-| $T_{2,5}$ ($\mu$, $b$) | Global mirror $\sigma$ | $T_{2,5}^{\sigma}$ ($\mu^+$, $s$) | Muon/bottom → antimuon/strange |
-| $T_{2,7}$ ($\tau$, $c$) | Global mirror $\sigma$ | $T_{2,7}^{\sigma}$ ($\tau^+$, $c^{\sigma}$) | Tau/charm → antitau/anticharm |
+| $T_{2,3}$ ($e^-$, $\mathfrak{u}$) | Global mirror $\sigma$ | $T_{2,3}^{\sigma}$ ($e^+$, $\mathfrak{d}$) | Particle → antiparticle |
+| $T_{2,5}$ ($\mu$, $\mathfrak{b}$) | Global mirror $\sigma$ | $T_{2,5}^{\sigma}$ ($\mu^+$, $\mathfrak{s}$) | Muon/bottom → antimuon/strange |
+| $T_{2,7}$ ($\tau$, $\mathfrak{c}$) | Global mirror $\sigma$ | $T_{2,7}^{\sigma}$ ($\tau^+$, $\mathfrak{c}^{\sigma}$) | Tau/charm → antitau/anticharm |
 | $T_{1,0}$ ($\nu$) | Global mirror $\sigma$ | $T_{1,0}^{\sigma}$ ($\nu^{\sigma}$) | Neutrino → antineutrino |
 | $4_1$ ($H$) | Global mirror $\sigma$ | $4_1$ ($H$) | Self-mirror (amphichiral Higgs) |
 | $\mathfrak{n}$ = $[u,d,d]_p$ | Local $\sigma$ at one $d$ | $\mathfrak{p}$ = $[u,u,d]_p$ | Beta decay ($n \to p$) |

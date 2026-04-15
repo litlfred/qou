@@ -4,21 +4,21 @@ $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ means in the
 fluid-dynamical setting.
 
 **Categorical statement.**
-No morphism $\phi \colon \mathbf{1} \to \mathrm{Ad}(A)$ exists
-in $\mathbf{C}$.  That is: the adjoint representation of the
-Frobenius--Hopf object $A$ has no trivial sub-object.
+We require that no morphism $\phi \colon \mathbf{1} \to \mathrm{Ad}(A)$
+exists in $\mathbf{C}$.  In other words, the adjoint representation of
+the Frobenius--Hopf object $A$ admits no trivial sub-object.
 
 **Gauge-theoretic translation.**
-$H^0(M, \mathrm{Ad}(P)) = 0$: no nonzero section of the adjoint
-bundle $\mathrm{Ad}(P) = P \times_G \mathfrak{g}$ is
-gauge-equivariant.  Every infinitesimal gauge transformation
+$H^0(M, \mathrm{Ad}(P)) = 0$: we find that the adjoint bundle
+$\mathrm{Ad}(P) = P \times_G \mathfrak{g}$ admits no nonzero
+gauge-equivariant section.  Every infinitesimal gauge transformation
 acts nontrivially on some observable.
 
 **Contact-geometric translation.**
-The Levi form $\mathcal{L}_\theta$ is non-degenerate everywhere.
-The horizontal distribution $\ker(\theta)$ is maximally
-non-integrable (no integral submanifolds of dimension
-$> \frac{1}{2}\dim\ker\theta$).
+We verify that the Levi form $\mathcal{L}_\theta$ is non-degenerate
+everywhere, which makes the horizontal distribution $\ker(\theta)$
+maximally non-integrable (it admits no integral submanifolds of
+dimension $> \frac{1}{2}\dim\ker\theta$).
 
 **Fluid-dynamical translation.**
 In the [brane fluid](#sec:brane-fluid):
@@ -42,7 +42,7 @@ In the [brane fluid](#sec:brane-fluid):
    dynamically active.
 
 4. **Vortex stretching is isotropic.**  The
-   [weight-space decomposition](#def:adjoint-weight-decomposition)
+   [weight-space decomposition](#def:weight-decomposition)
    of the adjoint bundle has no trivial component.  The
    stretching term $(\omega \cdot \nabla)v$ in the vorticity
    equation acts nontrivially in every direction — vorticity

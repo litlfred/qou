@@ -1,7 +1,7 @@
 Let $\gamma$ be a [geodesic vortex](#rem:geodesic-vortices) in
-the [state bundle](#def:state-bundle) $(\mathcal{S}, \theta)$
+the [state bundle](#def:substrate-line-bundle) $(\mathcal{S}, \theta)$
 with contact form $\theta$ and
-[Levi form](#rem:levi-form-defect)
+[Levi form](#def:levi-form-defect)
 $\mathcal{L}_\theta(V, W) = -id\theta(V, \bar{W})$.  At each
 point $p \in \gamma$, let $N_p\gamma \subset \ker(\theta_p)$ be
 the horizontal normal plane.  Define:

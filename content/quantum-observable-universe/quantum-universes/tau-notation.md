@@ -11,7 +11,7 @@ choice of $\tau$ carries several resonances:
 - **Trace / integration.** In von Neumann algebra theory, a faithful
   normal state is traditionally denoted $\tau$ (the trace). Since the
   forgetful functor underlies the Frobenius integration $\int_A$
-  ([integral notation](#rem:frobenius-integration)), this
+  ([integral notation](#sec:frobenius-integration)), this
   identification is more than notational.
 
 - **Proper time.** In the archimedean realisation, $\tau$ can be read

@@ -82,7 +82,7 @@ The bound predicts instability at $A = 5$.  Experimentally:
 
 **Both $A = 5$ nuclei are unbound.** This is the famous
 "$A = 5$ gap" in nuclear physics — no stable nucleus exists
-with $A = 5$.  The QOU predicts this exactly: $[4]_q! = 25.15 > [2]_q^4 = 16.35$ at $q = q_0$.
+with $A = 5$.  The QOU predicts this exactly: $[4]_q! \approx 25.15 > [2]_q^4 \approx 16.35$ at $q = q_0$.
 
 ### The $\mathbf{A = 8}$ gap
 

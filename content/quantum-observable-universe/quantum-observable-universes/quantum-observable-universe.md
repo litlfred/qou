@@ -61,7 +61,7 @@ conditions hold:
 
 4. *(categorical volume constraint)*
    let $V$ denote the fundamental object of $\mathbf{C}$
-   ([Remark](#rem:fundamental-object-explication)); there exists a
+   ([Remark](#sec:fundamental-object-explication)); there exists a
    non-degenerate epimorphism $\epsilon$ preserved by the rigid
    dualities, making the following diagram commute for every
    $g \in \mathrm{Aut}^{\otimes}(\tau)$:
