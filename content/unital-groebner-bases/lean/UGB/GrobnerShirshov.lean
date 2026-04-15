@@ -26,12 +26,14 @@ provides the algebraic engine behind the QOU lifting mechanism.
 
 ```
 Basic.lean
+  ├─ AlgOps.lean              (algebra operations: add, smul, leftMulGen)
   ├─ CompositionLemma.lean    (diamond lemma: GS ⟹ confluence)
   │    └─ NormalForms.lean     (PBW bases for U_q and Dist(G))
   │         └─ Flatness.lean   (Dist(G) is flat over Dist(H))
   │              └─ StrongMultiplicativity.lean  (Δ(xy) = Δ(x)·Δ(y))
   └─ JetOrder.lean            (jet-stratified reduction algorithm)
-       └─ Flatness.lean       (filtration + Hilbert function)
+       ├─ imports: Basic, AlgOps, CompositionLemma, Flatness
+       └─ uses: filtration + Hilbert function from Flatness
 ```
 
 The composition lemma does triple duty:

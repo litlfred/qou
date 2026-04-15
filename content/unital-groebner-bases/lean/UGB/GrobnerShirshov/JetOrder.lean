@@ -32,7 +32,7 @@ S-polynomial work from `O(n²)` to `O(n)` per jet level.
 
 - [fred2005, §3] — Gröbner–Shirshov basis for Dist(G)
 - [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-- Bokut & Chen, Bull. Math. Sci. 4 (2014), §2.1.
+- [bokutchen2014] Bokut & Chen, Bull. Math. Sci. 4 (2014), §2.1.
 -/
 
 
@@ -118,20 +118,17 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
 
 /-! ### Ordering extends through the jet tower -/
 
-/-- **Extension lemma**: the deg-lex ordering at level `n` is
-    preserved by the jet embedding `ℓₙ : Aₙ ↪ A_{n+1}`.
+/-- **Compatibility lemma**: when a deg-lex comparison has already
+    been established for two descended monomials, it is preserved
+    unchanged by the jet embedding (which maps level-`n` generators
+    to the first `numGens` indices at level `n+1`).
 
-    The embedding maps level-`n` generators to the first `numGens`
-    indices at level `n+1`.  Since these indices are smaller than
-    the new transient indices, deg-lex is preserved on descended
-    monomials.
+    The substantive content is that the embedding is order-preserving;
+    this lemma records the formal consequence for reuse at call sites.
 
     Reference: [manuscript] §3/ordering-jet-compatibility. -/
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-theorem ordering_extends (jc : JetConfig)
-    (a b : List ℕ) (hab : degLexNat a b)
-    (ha : monomialDescended jc a)
-    (hb : monomialDescended jc b) :
+theorem ordering_extends (a b : List ℕ) (hab : degLexNat a b) :
     degLexNat a b := hab
 
 /-- **Well-foundedness at each level**: within the alphabet
@@ -150,9 +147,10 @@ theorem wellfounded_at_level (n : ℕ) :
     and the bounded-alphabet restriction is a subrelation. -/
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Ref: [manuscript] §3/ordering-jet-compatibility
-axiom direct_limit_terminates (n : ℕ) (w : List ℕ)
+theorem direct_limit_terminates (n : ℕ) (w : List ℕ)
     (hw : ∀ g ∈ w, g < n) :
-    ∃ (w' : List ℕ), ¬ degLexNat w' w
+    Acc degLexNat w :=
+  degLexNat_wf.apply w
 
 /-! ## §2  Descended / Transient Splitting of Rewriting Systems -/
 
@@ -211,11 +209,17 @@ def classifySPoly (c₁ c₂ : RuleClass) : SPolyClass :=
 
 /-! ## §4  Jet-Stratified GS Verification -/
 
-/-- **Descended GS inheritance**: if the descended subsystem is
-    already a GS basis (verified at level `n`), then all
-    descended × descended S-polynomials resolve to zero.
+/-- **Descended GS inheritance** (axiom stub): if the descended
+    subsystem is already a GS basis (verified at level `n`), then
+    all descended × descended S-polynomials resolve to zero.
 
-    This is the key lemma that eliminates `O(|Σₙ|²)` checks. -/
+    This is the key lemma that eliminates `O(|Σₙ|²)` checks.
+
+    Axiomatised because the proof requires constructing the reduction
+    of each descended S-polynomial within the full system, showing that
+    the extra transient rules do not interfere with the descended
+    reduction (since transient leading monomials involve new generators
+    that cannot appear in descended monomials). -/
 -- Ref: [fred2005] §3, Proposition 3.8
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 axiom descended_gs_inherited
@@ -228,14 +232,19 @@ axiom descended_gs_inherited
     (h₂ : oc.rule₂ ∈ jss.descended.rules) :
     ∃ nf, ReducesToNF ord jss.full oc.spoly nf ∧ nf.isZero
 
-/-- **Jet-stratified GS criterion**: the full system at level `n+1`
-    is a GS basis if and only if:
+/-- **Jet-stratified GS criterion** (axiom stub): the full system
+    at level `n+1` is a GS basis if and only if:
     1. The descended subsystem is a GS basis (from level `n`), AND
     2. All desc×trans and trans×trans S-polynomials resolve to zero.
 
     Condition (1) is inherited.  Only condition (2) requires new
     computation: `O(|Σₙ| · k + k²)` S-poly checks instead of
     `O(|Σ_{n+1}|²)`.
+
+    Axiomatised because the full proof requires showing that the
+    descended subsystem's GS property lifts through the inclusion
+    into the full system, using `descended_gs_inherited` plus the
+    hypotheses on new S-polynomials.
 
     Reference: [fred2005, §3], extended to jet towers. -/
 -- Ref: [fred2005] §3, Proposition 3.8
@@ -282,12 +291,17 @@ def bucketize {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
       (leadingMonomial ord r.relation r.nonzero).length = d
   }
 
-/-- **Degree-filtered reduction**: when reducing a monomial of
-    degree `d`, only rules with leading monomial degree `≤ d`
-    can apply (since reduction strictly decreases the leading
+/-- **Degree-filtered reduction** (axiom stub): when reducing a
+    monomial of degree `d`, only rules with leading monomial degree
+    `≤ d` can apply (since reduction strictly decreases the leading
     monomial under deg-lex).
 
-    This reduces per-step scanning from `O(|Σ|)` to `O(|B_{≤d}|)`. -/
+    This reduces per-step scanning from `O(|Σ|)` to `O(|B_{≤d}|)`.
+
+    Axiomatised because the proof requires showing that
+    `SingleStepReduction` with a rule of LM degree `> d` cannot
+    match any monomial of degree `d` (the LM is too long to be
+    a subword). -/
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 axiom degree_filtered_reduction_correct
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]

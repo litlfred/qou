@@ -6,11 +6,15 @@ the Hecke algebra H_n(q) at increasing jet levels.
 
 Measures:
   1. S-polynomial pair counts (naive vs stratified)
-  2. Reduction step counts (naive vs degree-bucketed)
+  2. Proxy reduction step counts (naive vs degree-bucketed)
   3. Wall-clock time for both algorithms
 
-The Hecke algebra at level n has:
-  - n generators σ₁, …, σ_{n-1}
+Caveat: reduction is a monomial-rewriting proxy (replaces by first
+RHS term, not full polynomial reduction).  Pair-count savings are
+exact; wall-clock speedups are indicative of structure, not a
+faithful GS verification runtime.
+
+The Hecke algebra with n generators has:
   - n Hecke relations (degree 2): σᵢ² → (q-q⁻¹)σᵢ + 1
   - ~n Yang–Baxter relations (degree 3): σᵢσⱼσᵢ → σⱼσᵢσⱼ
   - ~n² far-commutativity relations (degree 2): σᵢσⱼ → σⱼσᵢ
@@ -23,16 +27,13 @@ Usage:
 
 import time
 import json
-import sys
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass
 from typing import List, Tuple, Optional
+from q_parameter import Q, Q_INV
 
 # ══════════════════════════════════════════════════════════════
 # §1  Hecke Algebra Rewriting System
 # ══════════════════════════════════════════════════════════════
-
-Q = 1.1097  # substrate parameter
-Q_INV = 1.0 / Q
 
 
 @dataclass
@@ -85,13 +86,14 @@ def hecke_rules(n_gens: int) -> List[ReductionRule]:
 
 def find_overlaps(lm1: Tuple[int, ...],
                   lm2: Tuple[int, ...]) -> List[Tuple[int, ...]]:
-    """Find all non-trivial overlaps between two leading monomials.
+    """Find all proper overlaps between two leading monomials.
 
-    An overlap exists when a suffix of lm1 equals a prefix of lm2.
-    Returns list of overlap subwords."""
+    An overlap exists when a proper suffix of lm1 equals a proper
+    prefix of lm2.  Full-word overlaps (k == len) are excluded
+    since those correspond to inclusion compositions."""
     overlaps = []
     max_overlap = min(len(lm1), len(lm2))
-    for k in range(1, max_overlap + 1):
+    for k in range(1, max_overlap):
         if lm1[-k:] == lm2[:k]:
             overlaps.append(lm1[-k:])
     return overlaps
@@ -99,8 +101,10 @@ def find_overlaps(lm1: Tuple[int, ...],
 
 def has_inclusion(lm_inner: Tuple[int, ...],
                   lm_outer: Tuple[int, ...]) -> bool:
-    """Check if lm_inner appears as a subword of lm_outer."""
+    """Check if lm_inner appears as a proper subword of lm_outer."""
     n, m = len(lm_outer), len(lm_inner)
+    if m >= n:
+        return False  # must be strictly shorter
     for start in range(n - m + 1):
         if lm_outer[start:start + m] == lm_inner:
             return True
@@ -145,7 +149,11 @@ class BenchmarkResult:
 def reduce_element(monomial: Tuple[int, ...],
                    rules: List[ReductionRule],
                    max_degree: Optional[int] = None) -> Tuple[int, int]:
-    """Reduce a monomial to normal form.
+    """Proxy reduction: rewrite a monomial using first RHS terms.
+
+    This is NOT full polynomial reduction — it substitutes only
+    the first RHS term of each matching rule.  Used for counting
+    reduction steps and benchmarking pair-screening structure.
 
     Returns (reduction_steps, rules_scanned).
     If max_degree is set, only scan rules with degree ≤ max_degree."""
@@ -165,7 +173,7 @@ def reduce_element(monomial: Tuple[int, ...],
             n, m = len(current), len(lm)
             for start in range(n - m + 1):
                 if current[start:start + m] == lm:
-                    # Replace with first RHS term (for counting purposes)
+                    # Replace with first RHS term (proxy reduction)
                     if rule.rhs:
                         _, replacement = rule.rhs[0]
                         current = current[:start] + list(replacement) + current[start + m:]
@@ -181,43 +189,34 @@ def reduce_element(monomial: Tuple[int, ...],
 
 
 def naive_buchberger(rules: List[ReductionRule]) -> BenchmarkResult:
-    """Run naive Buchberger: check ALL S-polynomial pairs."""
+    """Run naive Buchberger: check ALL S-polynomial pairs (i < j)."""
     result = BenchmarkResult(n_gens=0, n_rules=len(rules))
     t0 = time.perf_counter()
 
     n = len(rules)
     for i in range(n):
-        for j in range(i, n):
+        for j in range(i + 1, n):
             result.naive_pairs_checked += 1
 
-            # Check overlaps
-            overlaps = find_overlaps(rules[i].lm, rules[j].lm)
-            if overlaps:
-                result.naive_overlaps_found += len(overlaps)
-                # Reduce each S-polynomial
-                for ov in overlaps:
-                    # Build the S-polynomial ambient monomial
-                    ambient = rules[i].lm + rules[j].lm[len(ov):]
-                    steps, scanned = reduce_element(ambient, rules)
-                    result.naive_reductions += steps
-
-            if i != j:
-                overlaps2 = find_overlaps(rules[j].lm, rules[i].lm)
-                if overlaps2:
-                    result.naive_overlaps_found += len(overlaps2)
-                    for ov in overlaps2:
-                        ambient = rules[j].lm + rules[i].lm[len(ov):]
-                        steps, scanned = reduce_element(ambient, rules)
+            # Check overlaps in both directions
+            for lm_a, lm_b in [(rules[i].lm, rules[j].lm),
+                                (rules[j].lm, rules[i].lm)]:
+                overlaps = find_overlaps(lm_a, lm_b)
+                if overlaps:
+                    result.naive_overlaps_found += len(overlaps)
+                    for ov in overlaps:
+                        ambient = lm_a + lm_b[len(ov):]
+                        steps, _ = reduce_element(ambient, rules)
                         result.naive_reductions += steps
 
-            # Check inclusions
+            # Check inclusions in both directions
             if has_inclusion(rules[i].lm, rules[j].lm):
                 result.naive_inclusions_found += 1
-                steps, scanned = reduce_element(rules[j].lm, rules)
+                steps, _ = reduce_element(rules[j].lm, rules)
                 result.naive_reductions += steps
-            if i != j and has_inclusion(rules[j].lm, rules[i].lm):
+            if has_inclusion(rules[j].lm, rules[i].lm):
                 result.naive_inclusions_found += 1
-                steps, scanned = reduce_element(rules[i].lm, rules)
+                steps, _ = reduce_element(rules[i].lm, rules)
                 result.naive_reductions += steps
 
     t1 = time.perf_counter()
@@ -249,9 +248,17 @@ def jet_stratified_buchberger(rules: List[ReductionRule],
     for r in rules:
         buckets[r.degree].append(r)
 
+    # Pre-compute cumulative buckets: cumulative_buckets[d] = rules with degree ≤ d
+    cumulative_buckets = {}
+    current_rules = []
+    for d in range(max_deg + 1):
+        if d in buckets:
+            current_rules = current_rules + buckets[d]
+        cumulative_buckets[d] = current_rules
+
     n = len(rules)
     for i in range(n):
-        for j in range(i, n):
+        for j in range(i + 1, n):
             both_desc = (i < n_desc and j < n_desc)
 
             if both_desc:
@@ -260,44 +267,28 @@ def jet_stratified_buchberger(rules: List[ReductionRule],
 
             result.strat_pairs_checked += 1
 
-            # Check overlaps (same logic, but use degree-bucketed reduction)
-            overlaps = find_overlaps(rules[i].lm, rules[j].lm)
-            if overlaps:
-                result.strat_overlaps_found += len(overlaps)
-                for ov in overlaps:
-                    ambient = rules[i].lm + rules[j].lm[len(ov):]
-                    # Degree-bucketed: only scan rules with degree ≤ len(ambient)
-                    bucket_rules = []
-                    for d in range(len(ambient) + 1):
-                        if d in buckets:
-                            bucket_rules.extend(buckets[d])
-                    result.bucket_scan_saved += len(rules) - len(bucket_rules)
-                    steps, scanned = reduce_element(ambient, bucket_rules,
-                                                     max_degree=len(ambient))
-                    result.strat_reductions += steps
-
-            if i != j:
-                overlaps2 = find_overlaps(rules[j].lm, rules[i].lm)
-                if overlaps2:
-                    result.strat_overlaps_found += len(overlaps2)
-                    for ov in overlaps2:
-                        ambient = rules[j].lm + rules[i].lm[len(ov):]
-                        bucket_rules = []
-                        for d in range(len(ambient) + 1):
-                            if d in buckets:
-                                bucket_rules.extend(buckets[d])
+            # Check overlaps in both directions, with degree-bucketed reduction
+            for lm_a, lm_b in [(rules[i].lm, rules[j].lm),
+                                (rules[j].lm, rules[i].lm)]:
+                overlaps = find_overlaps(lm_a, lm_b)
+                if overlaps:
+                    result.strat_overlaps_found += len(overlaps)
+                    for ov in overlaps:
+                        ambient = lm_a + lm_b[len(ov):]
+                        ambient_deg = min(len(ambient), max_deg)
+                        bucket_rules = cumulative_buckets[ambient_deg]
                         result.bucket_scan_saved += len(rules) - len(bucket_rules)
-                        steps, scanned = reduce_element(ambient, bucket_rules,
-                                                         max_degree=len(ambient))
+                        steps, _ = reduce_element(ambient, bucket_rules,
+                                                   max_degree=len(ambient))
                         result.strat_reductions += steps
 
-            # Check inclusions
+            # Check inclusions in both directions
             if has_inclusion(rules[i].lm, rules[j].lm):
                 result.strat_inclusions_found += 1
                 steps, _ = reduce_element(rules[j].lm, rules,
                                           max_degree=len(rules[j].lm))
                 result.strat_reductions += steps
-            if i != j and has_inclusion(rules[j].lm, rules[i].lm):
+            if has_inclusion(rules[j].lm, rules[i].lm):
                 result.strat_inclusions_found += 1
                 steps, _ = reduce_element(rules[i].lm, rules,
                                           max_degree=len(rules[i].lm))
@@ -314,7 +305,7 @@ def jet_stratified_buchberger(rules: List[ReductionRule],
 
 def run_benchmark(max_level: int = 12,
                   new_gens_per_level: int = 3) -> dict:
-    """Run the full benchmark across jet levels 2..max_level.
+    """Run the full benchmark across jet levels 1..max_level.
 
     At each level, we simulate jet prolongation by adding
     new_gens_per_level generators to the Hecke algebra.
@@ -323,10 +314,8 @@ def run_benchmark(max_level: int = 12,
     """
     results = []
 
-    # Level 0: base algebra
-    base_gens = 3  # H₃(q) to start (3 strands, 2 generators)
-    prev_rules = hecke_rules(base_gens)
-    prev_n_rules = len(prev_rules)
+    # Level 0: base algebra H₄(q) (4 strands, 3 generators σ₀,σ₁,σ₂)
+    base_gens = 3
 
     print(f"{'Level':>5} {'Gens':>5} {'Rules':>6} "
           f"{'Naive':>8} {'Strat':>8} {'Skip':>8} "
@@ -337,18 +326,8 @@ def run_benchmark(max_level: int = 12,
         n_gens = base_gens + level * new_gens_per_level
         all_rules = hecke_rules(n_gens)
 
-        # Descended = rules that existed at previous level
-        # (rules involving only generators < prev_n_gens)
+        # Descended = rules involving only generators < prev_n_gens
         prev_n_gens = base_gens + (level - 1) * new_gens_per_level
-        n_desc = 0
-        for r in all_rules:
-            if all(g < prev_n_gens for g in r.lm):
-                n_desc += 1
-            else:
-                break  # rules are ordered: descended first
-
-        # Actually, hecke_rules doesn't guarantee descended-first ordering.
-        # Re-sort: descended rules first, then transient.
         desc_rules = [r for r in all_rules if all(g < prev_n_gens for g in r.lm)]
         trans_rules = [r for r in all_rules if not all(g < prev_n_gens for g in r.lm)]
         sorted_rules = desc_rules + trans_rules
@@ -398,8 +377,6 @@ def run_benchmark(max_level: int = 12,
             "time_speedup": round(time_speedup, 2),
         })
 
-        prev_n_rules = len(sorted_rules)
-
     return {
         "algorithm": "jet-stratified-groebner-shirshov",
         "q": Q,
@@ -418,7 +395,7 @@ if __name__ == "__main__":
     print("=" * 85)
     print("Jet-Stratified Gröbner–Shirshov Benchmark")
     print("Hecke algebra H_n(q), q = {:.4f}".format(Q))
-    print("Base: H₃(q) (3 generators), +3 generators per jet level")
+    print("Base: H₄(q) (4 strands, 3 generators), +3 generators per jet level")
     print("=" * 85)
     print()
 

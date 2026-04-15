@@ -19,6 +19,7 @@ export default definition({
     "def:division-algorithm",
     "def:groebner-basis",
     "def:admissible-system",
+    "thm:buchberger",
     "unital-groebner-bases:cor:pbw",
   ],
 });
