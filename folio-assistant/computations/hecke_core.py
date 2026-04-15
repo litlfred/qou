@@ -91,7 +91,63 @@ alpha_em = 1.0 / ALPHA_EM_INV_DERIVED
 alpha_em_derived = alpha_em  # alias for backward compatibility
 
 CATALAN_G = 0.915965594177219015054603514932
-ALPHA = M_E_MEV * 8 * CATALAN_G  # binding scale = m_e × Vol(Borromean)
+VOL_BORROMEAN = 8 * CATALAN_G                     # Vol(B₃) = 7.328 (hyperbolic)
+VOL_FIGURE8 = 2.029883212819307                    # Vol(4₁) = 2.030 (hyperbolic)
+ALPHA_BORROMEAN = M_E_MEV * VOL_BORROMEAN          # binding scale for Borromean-like nuclei
+ALPHA_FIGURE8 = M_E_MEV * VOL_FIGURE8             # binding scale for figure-8-like nuclei
+ALPHA = ALPHA_BORROMEAN                             # default (backward compat)
+
+# ── Knot classification and jet-level binding scale ──────────────
+# Each NF basis element lives at a jet level determined by word length:
+#   J⁰: γ (length 0) → unknot, Vol=0, CS=0
+#   J¹: σ₀, σ₁ (length 1) → unknot, Vol=0, CS=0
+#   J²: L₊, L₋ (length 2) → Hopf link, torus, CS=π²/6
+#   J³: e⁻ (length 3) → trefoil T₂₃, torus, CS=π²/3
+#
+# The nuclear braid NF x = Σ cᵢ eᵢ is a JET EXPANSION.
+# Each component contributes binding weighted by the knot invariant
+# at its jet level.
+#
+# For the BINDING SCALE: the dominant NF component determines
+# whether to use Vol (hyperbolic) or CS (torus).
+#
+# Nuclear systems by knot type (from hyperbolicity audit):
+#   A=2 (D):    satellite (mixed) → use ALPHA_BORROMEAN × correction
+#   A=3 (³H,³He): figure-8-like → use ALPHA_FIGURE8
+#   A=4 (⁴He):  Borromean-like → use ALPHA_BORROMEAN
+#   A≥5:        Borromean-like → use ALPHA_BORROMEAN
+
+def classify_nuclear_knot(Z, N):
+    """Classify the nuclear braid's knot type and return binding scale.
+
+    Returns: (alpha_scale, knot_name, is_hyperbolic)
+    """
+    A = Z + N
+    if A <= 1:
+        return ALPHA_BORROMEAN, 'trivial', False
+
+    nf = build_atom_nf(Z, N)
+
+    # Check for figure-8-like: σ₀ and σ₁ have opposite signs
+    # AND L₊ or L₋ present with significant weight
+    has_alternating_sigma = (abs(nf[1]) > 0.1 and abs(nf[2]) > 0.1
+                             and nf[1] * nf[2] < 0)
+
+    # Check for Borromean-like: γ dominates with Hopf corrections
+    gamma_dominates = (abs(nf[0]) > abs(nf[i]) for i in range(1, 6))
+    has_hopf = abs(nf[3]) > 0.01 or abs(nf[4]) > 0.01
+    is_borromean = nf[0] > 0.3 and has_hopf
+
+    if A == 2:
+        return ALPHA_BORROMEAN, 'satellite', False
+    elif A == 3 and has_alternating_sigma:
+        return ALPHA_FIGURE8, 'figure-8-like', True
+    elif A >= 4 and is_borromean:
+        return ALPHA_BORROMEAN, 'Borromean-like', True
+    elif has_alternating_sigma:
+        return ALPHA_FIGURE8, 'figure-8-like', True
+    else:
+        return ALPHA_BORROMEAN, 'Borromean-like', True
 
 # Molecular energy scales (use corrected α)
 E_HARTREE_EV = 511000.0 * alpha_em**2  # Hartree energy (eV)
@@ -718,7 +774,9 @@ def binding_energy_derived(Z, N):
 
     The Markov trace tr_M weights each NF component by z^{word_length}.
 
-    Energy scale α = m_e × Vol(B₃) = m_e × 8G  (Borromean binding scale).
+    Energy scale α = m_e × Vol(K) where K depends on the nuclear knot type:
+      Borromean-like (A≥4): Vol(B₃) = 8G = 7.328
+      Figure-8-like (A=3):  Vol(4₁) = 2.030
 
     The factor (1 - α_EM/2) is the one-loop QED correction to the nuclear
     potential: the bare Hecke algebra computes the strong-force binding,
@@ -748,7 +806,12 @@ def binding_energy_derived(Z, N):
     tr_bound = n_pp * tr_pp + n_nn * tr_nn + n_pn * tr_pn
 
     delta = tr_free - tr_bound
-    B_strong = delta * ALPHA
+
+    # Knot-dependent binding scale:
+    # The nuclear braid's knot type determines which geometric invariant
+    # (Vol for hyperbolic, CS for torus) sets the binding scale.
+    alpha_knot, knot_name, is_hyp = classify_nuclear_knot(Z, N)
+    B_strong = delta * alpha_knot
 
     # One-loop QED correction: virtual photon exchange reduces binding
     # by α_EM/2 per charged pair.  For deuterium (1 pn pair) this is
