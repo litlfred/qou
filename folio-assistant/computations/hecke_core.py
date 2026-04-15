@@ -568,21 +568,33 @@ def _crossing_coeff(ti, tj):
 def _phi1_from_ordering(ordering):
     """Compute Φ₁ = Σᵢ ln|V̂ᵢ| for a given strand ordering.
 
-    Each strand i has a traced volume V̂ᵢ = z·aᵢ + bᵢ computed
-    from the transfer matrix chain of crossings with all j > i.
+    Each strand i has a traced volume V̂ᵢ = z·M₀₀ + M₁₀ computed
+    from the 2×2 transfer matrix product M = ∏ⱼ T(cⱼ, dⱼ) for all
+    crossings with strands j > i.
+
+    T(c,d) = [[c·h + d, c], [c, d]]  (Hecke transfer matrix)
+    V̂ᵢ = z·M[0][0] + M[1][0]       (Markov-traced volume)
     """
     n = len(ordering)
     if n <= 1:
         return 0.0
     phi = 0.0
     for i in range(n - 1):
-        ai, bi = 0.0, 1.0
+        # 2×2 transfer matrix product (start with identity)
+        M00, M01, M10, M11 = 1.0, 0.0, 0.0, 1.0
         for j in range(i + 1, n):
             d = _crossing_coeff(ordering[i], ordering[j])
             if d is None:
                 continue
-            ai, bi = ai * h + ai * d + bi, ai + bi * d
-        V = z * ai + bi
+            # T = [[h+d, 1], [1, d]]  (c=1 always)
+            t00, t01, t10, t11 = h + d, 1.0, 1.0, d
+            # M = M × T
+            n00 = M00*t00 + M01*t10
+            n01 = M00*t01 + M01*t11
+            n10 = M10*t00 + M11*t10
+            n11 = M10*t01 + M11*t11
+            M00, M01, M10, M11 = n00, n01, n10, n11
+        V = z * M00 + M10
         if abs(V) > 1e-300:
             phi += math.log(abs(V))
     return phi
@@ -838,7 +850,7 @@ PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
 
 
-def q_value_beta(Z_parent, N_parent, method='phi1'):
+def q_value_beta(Z_parent, N_parent, method='bw'):
     """Q-value (MeV) for beta⁻ decay: (Z,N) → (Z+1,N-1) + e⁻ + ν̄_e.
 
     method='phi1' (default): uses transfer matrix Skein polynomial ratio
