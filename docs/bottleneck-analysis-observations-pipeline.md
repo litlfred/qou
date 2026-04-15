@@ -114,11 +114,64 @@ Dominates I/O during audits.
 **Fix:** Compress or split into per-nucleus files (already done for
 braid-registry).
 
-## Priority Order
+## Witness Usage Analysis
 
-1. Phase-space vectorization (quick win, ~1 hour, ~500x speedup)
-2. Python→Rust bridge for ground-state search (high impact, ~1 day)
-3. DAG runner for witness pipeline (high impact, ~1 day)
-4. Batch git queries in audit (quick win, ~2 hours)
-5. hecke_core precompute cache (moderate, ~half day)
-6. Compress large witness JSON (trivial)
+Of 144 `.witness.json` files:
+- **20** are linked to content blocks via `contentBlock` field (13.9%)
+- **124** are orphaned — exploratory/historical, not displayed in paper
+- **103** of 204 scripts produce orphaned witnesses
+
+Content-linked witnesses:
+
+| Content block | Witnesses |
+|--------------|-----------|
+| `def:molecular-braid` | 4 (ch-bond, frobenius-lp, trefoil-scan, unified-mass) |
+| `def:h2-molecular-braid` | 2 (hh-trefoil, hh-vertex) |
+| `prop:h2-lp-dual-binding` | 2 (h2-integer-lp, h2-molecular) |
+| `prop:spectral-decomposition-qvalue` | 2 (qvalue-rep-theory, rosso-jones) |
+| `rem:atom-mass-full-hecke` | 2 (atom-mass-derived, atom-mass-full-hecke) |
+| `rem:q-integer-mass-table` | 2 (channel-product, q-integer-bw-7term) |
+| `rem:amc-calculations` | 1 (topological-mass-table) |
+| `thm:topological-mass` | 1 (mass-from-q-symbolic) |
+| others | 4 (full-witness, picard-lefschetz, tau-lepton, universal-ilp) |
+
+**Recommendation:** Focus pipeline runs on the 20 content-linked witnesses.
+Use `run_pipeline.py --content-only` to skip exploratory scripts.
+
+## Implemented Fixes
+
+### 1. `phase_space.py` — Vectorized Fermi integral (bottleneck #2)
+
+Replaces the 50K-step Python loop with numpy vectorization.
+Measured 18x speedup with full numerical agreement (2.2e-15 relative error).
+
+### 2. `hecke_startup_cache.py` — Precomputed constants (bottleneck #5)
+
+Serializes Gram matrix, Wedderburn weights, fine structure constant, BW
+coefficients, and nucleon NFs to JSON. Cache invalidates automatically when
+`q_parameter.py`, `experimental_constants.py`, or `hecke_core.py` change.
+
+- Generation: 88ms (one-time)
+- Cache load: 20ms vs 70ms fresh import (3.5x faster)
+- 59 keys covering all downstream-consumed constants
+
+### 3. `run_pipeline.py` — Dependency DAG runner (bottleneck #3)
+
+Scans import statements to build a dependency graph, checks staleness,
+propagates staleness through dependencies, and runs scripts in topological
+order.
+
+Features:
+- `--dry-run`: show what would run
+- `--content-only`: only content-linked witnesses (20 scripts)
+- `--list-deps`: print dependency graph
+- `--list-orphaned`: find unlinked witnesses
+- `--force SCRIPT`: force rerun + dependents
+- `--jobs N`: parallel execution (future)
+
+## Remaining Work
+
+1. Python→Rust bridge for ground-state search (bottleneck #1, highest impact)
+2. Batch git queries in witness-audit.ts (bottleneck #6)
+3. Compress/archive orphaned witnesses (bottleneck #7)
+4. Migrate `all-nuclei-transfer-matrix.py` to use `phase_space.py`
