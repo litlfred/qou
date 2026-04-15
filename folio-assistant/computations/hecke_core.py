@@ -786,19 +786,60 @@ def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
         phi_bond += math.log(abs(V1_bond))
 
     binding = phi_ub - phi_bond
+    E_eV = binding * E_MOL
 
-    # Valence scaling: the bond perturbation is proportional to the
-    # geometric mean of valence electron counts. Justified by LP dual:
-    # core electrons (saturated Frobenius channels, shadow price = 0)
-    # don't participate in the binding. The valence overlap integral
-    # scales as √(Z_A_val × Z_B_val).
-    Z_A_val = max(valence_Z(Z_A), 1)
-    Z_B_val = max(valence_Z(Z_B), 1)
-    scale = math.sqrt(Z_A_val * Z_B_val)
+    return E_eV, binding, phi_ub, phi_bond
 
-    E_eV = binding * E_MOL * scale
 
-    return E_eV, binding * scale, phi_ub, phi_bond
+def molecular_binding_frobenius(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
+    """Molecular binding from the Frobenius bilinear form.
+
+    E_bond = |x_A^T · G · ((T⁻¹)^n - I) · x_B| × E_MOL
+
+    where x_A, x_B are atom NF vectors, G is the Gram matrix,
+    T⁻¹ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ is the inverse trefoil (bond operator),
+    and n is the bond multiplicity (1=single, 2=double, 3=triple).
+
+    This is the representation-theoretic approach: the bond energy
+    is the change in the Frobenius inner product ⟨A, B⟩_F when the
+    bond operator is inserted. No ad hoc scaling — the atom NF
+    coefficients naturally encode the atom-size dependence.
+
+    Requires Frobenius-stable atom NFs (Gx ≥ 0). Falls back to
+    molecular_binding_nf (vertex volume) if atoms are unstable.
+
+    Returns (E_eV, raw_pairing).
+    """
+    nf_A = build_atom_nf(Z_A, N_A)
+    nf_B = build_atom_nf(Z_B, N_B)
+
+    # Check Frobenius stability
+    stable_A, _, _ = check_frobenius(nf_A)
+    stable_B, _, _ = check_frobenius(nf_B)
+
+    if not (stable_A and stable_B):
+        # Fall back to vertex volume approach
+        E, bind, _, _ = molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils)
+        return E, bind
+
+    # Build (T⁻¹)^n - I matrix on NF basis
+    import numpy as np
+    M_Tinv = np.zeros((6, 6))
+    for j in range(6):
+        ej = [0.0] * 6
+        ej[j] = 1.0
+        result = list(ej)
+        for _ in range(n_inv_trefoils):
+            result = hm(result, 1, -h, 0)
+            result = hm(result, 1, -h, 1)
+            result = hm(result, 1, -h, 0)
+        M_Tinv[:, j] = result
+    Delta = M_Tinv - np.eye(6)
+
+    pairing = float(np.array(nf_A) @ G @ Delta @ np.array(nf_B))
+    E_eV = abs(pairing) * E_MOL
+
+    return E_eV, pairing
 
 
 # ══════════════════════════════════════════════════════════════
