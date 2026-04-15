@@ -83,7 +83,7 @@ $$
 beta decay operator
 ([beta decay](#def:beta-decay-skein)), and $e_{(1^3)}$ the
 alternating Young symmetrizer of $H_3(q)$
-([glossary](#rem:glossary-young-symmetrizer)).*
+([Wedderburn decomposition](#prop:three-parameters-wedderburn)).*
 
 **(iv)** *The product over $\mathcal{E}_g$ **collapses to a
 single term**: only the converting neutron's shell knot

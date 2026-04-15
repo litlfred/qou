@@ -22,7 +22,7 @@ $$
 *produces a normal form with at most $\binom{A-1}{\lfloor(A-1)/2\rfloor}$
 terms, where $r(\cdot, G)$ is the Gröbner--Shirshov division
 algorithm
-([nuclear Gröbner reduction](#def:nuclear-groebner-reduction)).*
+([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).*
 
 *The total computation for $\mathcal{N}(Z, N)$ requires
 $O(A^2)$ multiplications and $O(A^3)$ Hecke reduction steps.*

@@ -54,7 +54,7 @@ conditions hold:
    The first condition ensures the adjoint bundle is
    orientable, precluding global anomalies; the second ensures
    the volume form acquires no topological phases (see
-   [Remark](#rem:yekutieli-stokes-remark) for the connection to
+   [Remark](#rem:yekutieli-stokes) for the connection to
    categorical flatness via Yekutieli's nonabelian Stokes theorem).
    For many applications, axioms (1), (2), and (3) suffice — axiom
    (3) is needed only when global topology of $M$ matters.

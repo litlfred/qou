@@ -12,8 +12,8 @@ export default remark({
     "def:braid-twist-flip",
   ],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/braid-group-action-0.svg", blockIndex: 0, hash: "f44799e1a010" },
-    { mime: "image/svg+xml", url: "rendered/braid-group-action-1.svg", blockIndex: 1, hash: "1c761b8c5b7c" },
+    { mime: "image/svg+xml", url: "rendered/braid-group-action-0.svg", blockIndex: 0, hash: "6ed88e108444" },
+    { mime: "image/svg+xml", url: "rendered/braid-group-action-1.svg", blockIndex: 1, hash: "a286057dd3b8" },
   ],
 
 });

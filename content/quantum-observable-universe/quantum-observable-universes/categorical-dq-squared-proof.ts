@@ -9,7 +9,7 @@ export default proof({
     validation: "leanok",
   },
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/categorical-dq-squared-proof-0.svg", blockIndex: 0, hash: "9269fbe261dd" },
+    { mime: "image/svg+xml", url: "rendered/categorical-dq-squared-proof-0.svg", blockIndex: 0, hash: "129ff7020ff3" },
   ],
 
 });

@@ -10,7 +10,7 @@ export default definition({
   },
   uses: ["def:quantum-universe"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/categorical-point-0.svg", blockIndex: 0, hash: "209c12202df6" },
+    { mime: "image/svg+xml", url: "rendered/categorical-point-0.svg", blockIndex: 0, hash: "94f33a65d570" },
   ],
 
 });

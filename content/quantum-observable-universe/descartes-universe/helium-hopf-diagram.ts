@@ -13,4 +13,9 @@ export default remark({
     "diagram",
   ],
   uses: ["conj:electron-shells-hopf"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/helium-hopf-diagram-0.svg", blockIndex: 0, hash: "a270d88da756" },
+    { mime: "image/svg+xml", url: "rendered/helium-hopf-diagram-1.svg", blockIndex: 1, hash: "a91ebcaaed3f" },
+  ],
+
 });

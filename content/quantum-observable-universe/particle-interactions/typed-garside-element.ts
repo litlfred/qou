@@ -22,4 +22,8 @@ export default definition({
     "prop:braiding-induced-ordering",
     "prop:nuclear-groebner-reduction",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/typed-garside-element-0.svg", blockIndex: 0, hash: "31af2f985ef8" },
+  ],
+
 });

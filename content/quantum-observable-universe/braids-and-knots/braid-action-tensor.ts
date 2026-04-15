@@ -11,7 +11,7 @@ export default proposition({
   uses: ["def:quantum-observable-universe"],
   proofs: ["prf:braid-action-tensor"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/braid-action-tensor-0.svg", blockIndex: 0, hash: "0d1faa325318" },
+    { mime: "image/svg+xml", url: "rendered/braid-action-tensor-0.svg", blockIndex: 0, hash: "53f1ba09bdc7" },
   ],
 
 });

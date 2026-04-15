@@ -3,7 +3,7 @@ substrate parameter $q$
 ([quantum observable universe](#def:quantum-observable-universe)).
 Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
-([quantum Bloch group](#def:quantum-bloch-group)).  Let
+([quantum Bloch group](#rem:quantum-bloch-group)).  Let
 $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
 ([three-invariant mass formula](#prop:q-integer-mass-formula)).

@@ -25,4 +25,8 @@ export default proposition({
     "ex:reeb-decomposition",
     "rem:gr-substrate-geometry",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-archimedean-bridge-0.svg", blockIndex: 0, hash: "e4d60d3569a1" },
+  ],
+
 });

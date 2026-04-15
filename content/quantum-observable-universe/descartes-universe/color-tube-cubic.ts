@@ -5,10 +5,9 @@ export default remark({
   label: "rem:color-tube-cubic",
   title: "Color tube cubic",
   uses: ["prop:coral-elliptic", "def:color-tube-coordinates"],
-
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/color-tube-cubic-0.svg", blockIndex: 0, hash: "6fa069be7f96" },
-    { mime: "image/svg+xml", url: "rendered/color-tube-cubic-1.svg", blockIndex: 1, hash: "1151740223ee" },
+    { mime: "image/svg+xml", url: "rendered/color-tube-cubic-0.svg", blockIndex: 0, hash: "b44160410440" },
+    { mime: "image/svg+xml", url: "rendered/color-tube-cubic-1.svg", blockIndex: 1, hash: "6c0c8b4b2835" },
   ],
 
 });

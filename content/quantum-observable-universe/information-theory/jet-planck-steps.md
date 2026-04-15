@@ -137,7 +137,7 @@ degree to encode $c$ crossings of the braid closure.
 **Step 0: only the photon.**
 Before any transport, only the fiber value exists.  The photon is
 $K = \varnothing$ — the empty knot
-([photon wavefront example](#ex:photon-wavefront-example)):
+([photon wavefront example](#ex:photon-wavefront)):
 background flux on the state bundle with no topological identity.
 It requires no braiding, no crossings, no connection.  It is
 **pre-geometric**: it exists at the zeroth jet because it *is*

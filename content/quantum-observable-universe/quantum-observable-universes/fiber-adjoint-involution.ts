@@ -11,4 +11,8 @@ export default proposition({
   proofs: ["prf:fiber-adjoint-involution"],
   examples: ["ex:fiber-adjoint-su2"],
   tags: ["involution", "adjoint"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/fiber-adjoint-involution-0.svg", blockIndex: 0, hash: "6e7ee5806e2d" },
+  ],
+
 });

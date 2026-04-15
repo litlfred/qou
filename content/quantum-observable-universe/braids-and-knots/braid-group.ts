@@ -7,7 +7,7 @@ export default definition({
   tags: ["braid-group", "group-theory"],
   uses: [],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/braid-group-0.svg", blockIndex: 0, hash: "7617d6c04ba1" },
+    { mime: "image/svg+xml", url: "rendered/braid-group-0.svg", blockIndex: 0, hash: "8e9175967307" },
   ],
 
 });

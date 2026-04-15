@@ -14,8 +14,8 @@ export default definition({
     "prop:fibre-functor-atlas",
   ],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/observation-0.svg", blockIndex: 0, hash: "dc276429434c" },
-    { mime: "image/svg+xml", url: "rendered/observation-1.svg", blockIndex: 1, hash: "98292928e613" },
+    { mime: "image/svg+xml", url: "rendered/observation-0.svg", blockIndex: 0, hash: "aea4499ee68b" },
+    { mime: "image/svg+xml", url: "rendered/observation-1.svg", blockIndex: 1, hash: "3eafe160604b" },
   ],
 
 });

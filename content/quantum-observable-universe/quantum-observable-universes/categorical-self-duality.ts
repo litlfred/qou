@@ -11,7 +11,7 @@ export default proposition({
   uses: ["def:categorical-instanton"],
   proofs: ["prf:categorical-self-duality"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/categorical-self-duality-0.svg", blockIndex: 0, hash: "c997dc218a1d" },
+    { mime: "image/svg+xml", url: "rendered/categorical-self-duality-0.svg", blockIndex: 0, hash: "806556474f30" },
   ],
 
 });

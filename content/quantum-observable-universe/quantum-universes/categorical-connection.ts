@@ -11,7 +11,7 @@ export default definition({
   examples: ["ex:connection-su2"],
   tags: ["connection", "curvature"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/categorical-connection-0.svg", blockIndex: 0, hash: "c99fb28bf175" },
+    { mime: "image/svg+xml", url: "rendered/categorical-connection-0.svg", blockIndex: 0, hash: "36d70138d58f" },
     { mime: "image/svg+xml", url: "rendered/categorical-connection-1.svg", blockIndex: 1, hash: "8f8ed636851b" },
   ],
 

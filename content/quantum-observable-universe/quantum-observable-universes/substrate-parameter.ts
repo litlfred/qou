@@ -11,4 +11,8 @@ export default definition({
   },
   uses: ["def:categorical-reeb"],
   examples: ["ex:substrate-parameter-su2"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/substrate-parameter-0.svg", blockIndex: 0, hash: "6a4120f43ca8" },
+  ],
+
 });

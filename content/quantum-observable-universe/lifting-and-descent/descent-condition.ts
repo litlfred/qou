@@ -15,7 +15,7 @@ export default proposition({
   ],
   proofs: ["prf:descent-condition"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/descent-condition-0.svg", blockIndex: 0, hash: "2cc87fe2ebcd" },
+    { mime: "image/svg+xml", url: "rendered/descent-condition-0.svg", blockIndex: 0, hash: "efd97a733efe" },
   ],
 
 });

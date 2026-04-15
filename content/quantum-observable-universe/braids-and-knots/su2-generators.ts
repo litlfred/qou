@@ -7,7 +7,7 @@ export default definition({
   tags: ["su2", "binary-dihedral", "dic3"],
   uses: ["def:su2-basis"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/su2-generators-0.svg", blockIndex: 0, hash: "8aacfb81d220" },
+    { mime: "image/svg+xml", url: "rendered/su2-generators-0.svg", blockIndex: 0, hash: "f70379f1fd65" },
   ],
 
 });
