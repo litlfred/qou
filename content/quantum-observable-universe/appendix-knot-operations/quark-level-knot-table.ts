@@ -3,11 +3,11 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:quark-level-knot-table",
   title:
-    "Quark-level knot decomposition table for nucleons and light atoms",
+    "Hadron-level knot decomposition table for nucleons and atoms",
   tags: [
     "hecke",
     "normal-form",
-    "quark",
+    "hadron",
     "knot-table",
     "appendix",
     "witness",
@@ -20,8 +20,8 @@ export default remark({
   interprets: "rem:particle-nf-table",
   computation: {
     engine: "python",
-    script: "computations/quark-level-knot-table.py",
-    witness: "computations/quark-level-knot-table.witness.json",
+    script: "computations/hadron_knot_table.py",
+    witness: "computations/hadron-knot-table.witness.json",
     status: "verified",
   },
 });

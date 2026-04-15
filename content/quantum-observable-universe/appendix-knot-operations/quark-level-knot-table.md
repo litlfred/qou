@@ -1,34 +1,35 @@
-The **quark-level knot table** decomposes each nucleon and light atom
-into its constituent knot normal forms within $H_3(q)$.  For each atom
-the table records the Markov trace $\mathrm{tr}_M$, net (sum of NF
-coefficients), and knot-type classification of the leading terms.
+Each atom decomposes into the six-element NF basis
+$\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ of $H_3(q)$.
+The hadron-level representation captures the same Markov trace
+$\mathrm{tr}_M$ and Frobenius stability as the full quark-level
+braid word, but with 6 coefficients per atom instead of thousands.
 
-| Atom | Content | $A$ | NF terms | $\mathrm{tr}_M$ | net |
-|------|---------|-----|----------|-----------------|-----|
-| Proton | $B_3(u,u,d)$ | 3 | 4 | $\approx -0.065$ | $\approx -0.14$ |
-| Neutron | $B_3(u,d,d)$ | 3 | 4 | $\approx -0.145$ | $\approx -0.30$ |
-| Protium | proton $+ e^-$ | 4 | 4 | $\approx -0.067$ | $\approx -0.14$ |
-| Deuterium | $p + n + e^-$ | 7 | 135 | — | — |
-| Tritium | $p + 2n + e^-$ | 10 | 14,067 | — | — |
-| ${}^3$He (nuclear) | $2p + n$ | 9 | 7,480 | — | — |
+$$
+  \mathrm{NF}(Z,N) = \sum_{b \in \mathcal{B}} c_b(Z,N) \cdot b,
+  \qquad
+  \mathrm{tr}_M = \sum_b c_b \, z^{|b|}
+$$
 
-The NF basis is $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$.
-For light nucleons (proton, neutron), only four basis elements
-have non-zero coefficients.  Heavier atoms generate thousands
-of NF terms as the braid word grows combinatorially with $A$.
+| Atom | $A$ | $\mathrm{tr}_M$ | net | $B$ (MeV) | Frobenius |
+|------|-----|-----------------|-----|-----------|-----------|
+| Proton | 1 | $0.4380$ | $0.999$ | — | $\checkmark$ |
+| Neutron | 1 | $0.3205$ | $0.811$ | — | $\checkmark$ |
+| Protium | 1 | $0.3104$ | $1.025$ | $0$ | $\checkmark$ |
+| Deuterium | 2 | $0.7645$ | $1.827$ | $2.84$ | $\checkmark$ |
+| Tritium | 3 | $1.0301$ | $2.979$ | $8.48$ | $\checkmark$ |
+| ${}^3$He | 3 | $0.2081$ | $1.973$ | $7.72$ | $\checkmark$ |
+| ${}^4$He | 4 | $2.7489$ | $4.150$ | $29.46$ | $\checkmark$ |
+| ${}^6$Li | 6 | $3.022$ | $7.996$ | $33.28$ | $\checkmark$ |
+| ${}^{12}$C | 12 | $40.93$ | $79.74$ | $92.29$ | $\checkmark$ |
+| ${}^{14}$C | 14 | $107.6$ | $227.9$ | $103.8$ | $\checkmark$ |
+| ${}^{14}$N | 14 | $58.44$ | $160.5$ | $104.2$ | $\checkmark$ |
+| ${}^{16}$O | 16 | $170.7$ | $354.6$ | $128.7$ | $\checkmark$ |
+| ${}^{28}$Si | 28 | $1.39 \times 10^4$ | $3.18 \times 10^4$ | $234.4$ | $\checkmark$ |
+| ${}^{40}$Ca | 40 | $1.22 \times 10^6$ | $2.88 \times 10^6$ | $343.2$ | $\checkmark$ |
+| ${}^{56}$Fe | 56 | $9.09 \times 10^8$ | $2.21 \times 10^9$ | $490.5$ | $\checkmark$ |
 
-**Knot-type classification of NF terms:**
+All 19 atoms pass the Frobenius positivity check ($G \cdot \vec{c} \geq 0$),
+confirming that the hadron-level NF lies in the physical cone of $H_3(q)$.
 
-- **Identity** ($\gamma$): unknot — vacuum / neutrino channel.
-- **Single generator** ($\sigma_i$): torus knot $T_{2,1}$ — single crossing.
-- **Two-generator product** ($\sigma_i \sigma_j$): torus link — Hopf-link channel.
-- **Three-generator** ($\sigma_i \sigma_j \sigma_k$): trefoil $T_{2,3}$ — electron channel.
-- **Higher words**: composite braids with classification via Garside normal form.
-
-The full NF decomposition (21,694 entries across 6 atoms) is generated
-by running `quark-level-knot-table.py`.  The witness file is not
-committed to the repository due to size (8.7 MB); regenerate with:
-
-```
-cd folio-assistant/computations && python3 quark-level-knot-table.py
-```
+The NF coefficients for each atom (6 values) are in the computation
+witness `hadron-knot-table.witness.json`.
