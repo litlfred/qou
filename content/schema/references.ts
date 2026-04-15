@@ -2094,6 +2094,59 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1985]] },
     DOI: "10.1016/0040-9383(85)90004-7",
   }),
+
+  // ── Young 1901 (quantitative substitutional analysis) ─────────
+  ref({
+    id: "young1901",
+    type: "article-journal",
+    title: "On quantitative substitutional analysis",
+    author: [{ family: "Young", given: "Alfred" }],
+    "container-title": "Proceedings of the London Mathematical Society",
+    volume: "s1-33",
+    page: "97-145",
+    issued: { "date-parts": [[1901]] },
+  }),
+
+  // ── Rutherford 1948 (substitutional analysis) ─────────────────
+  ref({
+    id: "rutherford1948",
+    type: "book",
+    title: "Substitutional Analysis",
+    author: [{ family: "Rutherford", given: "Daniel Edwin" }],
+    publisher: "Edinburgh University Press",
+    issued: { "date-parts": [[1948]] },
+  }),
+
+  // ── Kashaev 1997 (Volume Conjecture) ──────────────────────────
+  ref({
+    id: "kashaev1997",
+    type: "article-journal",
+    title:
+      "The hyperbolic volume of knots from the quantum dilogarithm",
+    author: [{ family: "Kashaev", given: "Rinat M." }],
+    "container-title": "Letters in Mathematical Physics",
+    volume: "39",
+    page: "269-275",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1023/A:1007364912784",
+  }),
+
+  // ── Murakami-Murakami 2001 (Volume Conjecture proof) ──────────
+  ref({
+    id: "murakami-murakami2001",
+    type: "article-journal",
+    title:
+      "The colored Jones polynomials and the simplicial volume of a knot",
+    author: [
+      { family: "Murakami", given: "Hitoshi" },
+      { family: "Murakami", given: "Jun" },
+    ],
+    "container-title": "Acta Mathematica",
+    volume: "186",
+    page: "85-104",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1007/BF02392716",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
