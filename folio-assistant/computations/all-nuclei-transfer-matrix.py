@@ -121,21 +121,10 @@ hbar = 6.582119569e-22
 def q_int(n):
     return (q**n - qi**n) / (q - qi)
 from hecke_core import alpha_em
+from phase_space import fermi_phase_space
 
 def phase_space(Z_d, Q_MeV, n_steps=50000):
-    W0 = 1.0 + Q_MeV / m_e
-    if W0 <= 1.0:
-        return 0.0
-    dW = (W0 - 1.0) / n_steps
-    total = 0.0
-    for k in range(n_steps):
-        W = 1.0 + (k + 0.5) * dW
-        p_e = math.sqrt(W*W - 1)
-        beta = p_e / W
-        eta = alpha_em * Z_d / beta
-        F = 2*math.pi*eta / (1 - math.exp(-2*math.pi*eta)) if abs(eta) > 1e-12 else 1.0
-        total += F * p_e * W * (W0 - W)**2 * dW
-    return total
+    return fermi_phase_space(Z_d, Q_MeV, alpha_em=alpha_em, m_e_MeV=m_e, n_steps=n_steps)
 
 print(f"{'Nuc':>6} {'A':>4} {'log P_par':>10} {'log P_dau':>10} {'ln(Pd/Pp)':>10} "
       f"{'Q_pred':>8} {'Q_exp':>8}")

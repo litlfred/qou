@@ -50,24 +50,11 @@ print()
 
 # ── Phase space integral (exact) ─────────────────────────────────
 
+from phase_space import fermi_phase_space
+
 def phase_space(Z, Q_MeV, n_steps=50000):
-    """Exact integrated Fermi function × phase space."""
-    W0 = 1.0 + Q_MeV / m_e
-    if W0 <= 1.0:
-        return 0.0
-    dW = (W0 - 1.0) / n_steps
-    total = 0.0
-    for k in range(n_steps):
-        W = 1.0 + (k + 0.5) * dW
-        p = math.sqrt(W*W - 1)
-        beta = p / W
-        eta = alpha_em * Z / beta
-        if abs(eta) < 1e-12:
-            F = 1.0
-        else:
-            F = 2*math.pi*eta / (1 - math.exp(-2*math.pi*eta))
-        total += F * p * W * (W0 - W)**2 * dW
-    return total
+    """Vectorized Fermi phase-space integral (delegated to phase_space.py)."""
+    return fermi_phase_space(Z, Q_MeV, alpha_em=alpha_em, m_e_MeV=m_e, n_steps=n_steps)
 
 # ── HeckeEngine for all nuclei ───────────────────────────────────
 
