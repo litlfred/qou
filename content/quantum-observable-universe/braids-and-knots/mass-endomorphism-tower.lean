@@ -28,7 +28,7 @@ noncomputable def markovParam (q : ℝ) : ℝ :=
   1 / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
 
 /-- The mass formula for a vortex with `n` generators on `n+1` strands.
-    Each generator `i` has additive Wedderburn traced volume `V i`.
+    Each generator `i` has additive Wedderburn-Artin traced volume `V i`.
     The mass is:
       `𝔪 = |∏ V i| + Σᵢ Φ_q(|V i|) + Σ_{adj pairs} z² · Φ_q(|V i · V j|)`
     where the adjacent sum runs over `(i, i+1)` pairs. -/
@@ -42,7 +42,7 @@ noncomputable def mass (q : ℝ) (n : ℕ) (V : Fin n → ℝ) : ℝ :=
     ∑ i : Fin (n - 1),
       quantumDilog q |V ⟨i.val, by omega⟩ * V ⟨i.val + 1, by omega⟩|
 
-/-- Axiomatized mass evaluation at the Wedderburn traced volumes.
+/-- Axiomatized mass evaluation at the Wedderburn-Artin traced volumes.
 
     The mass formula involves the quantum dilogarithm
     `Φ_q(z) = ∏_{k≥1}(1 − q⁻ᵏz)⁻¹`, whose evaluation at specific

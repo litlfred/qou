@@ -82,7 +82,7 @@ noncomputable def multiStdMatrix : List (R_t × R_t) → TMatrix
     does not interact with the standard matrix, etc.
 
     Proof: the 6×6 matrix is block-diagonal for each generator
-    (by the Wedderburn decomposition of `H₃(q)`), and the product
+    (by the Wedderburn-Artin decomposition of `H₃(q)`), and the product
     of block-diagonal matrices is block-diagonal. -/
 -- Ref: [mathas1999]
 theorem independent_channel_evolution (seq : List (R_t × R_t)) :

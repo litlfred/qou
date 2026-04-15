@@ -22,7 +22,7 @@ of the brane blow-up.*
 
 The descended component consists of Casimir operators — elements
 of the centre $Z(H_n(q))$ that commute with all generators.  By
-the Wedderburn decomposition, these are indexed by partitions
+the Wedderburn-Artin decomposition, these are indexed by partitions
 $\lambda \vdash n$:
 
 | BW term | Casimir level | Partition family | Scaling |
@@ -76,7 +76,7 @@ of both mass and coupling as endomorphisms in $\mathbf{C}$,
 decomposed by the same involution $\hat{\tau}$.
 
 *Proof sketch.*
-The Wedderburn decomposition
+The Wedderburn-Artin decomposition
 $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{C})$
 identifies $Z(H_n(q))$ with the diagonal scalars in each block.
 The mass endomorphism $\mathfrak{m} = \sum_i \ln |M_i|$ decomposes

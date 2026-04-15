@@ -6,7 +6,7 @@ The 11-term BW mass formula uses coefficients from the **Borromean braid B₃ = 
 
 The nuclear knot classification (`prop:nuclear-knot-classification`) shows A=3 nuclei are **figure-eight-like** (Vol(4₁) = 2.030), not Borromean (Vol(B₃) = 7.328).
 
-**The task**: derive the BW coefficient chain for **4₁ = σ₀σ₁⁻¹σ₀⁻¹σ₁** (4 crossings) from scratch. Same method as Borromean: Wedderburn → eigenvalue products → q-integer identification. The figure-eight has different crossing structure → different q-integer indices.
+**The task**: derive the BW coefficient chain for **4₁ = σ₀σ₁⁻¹σ₀⁻¹σ₁** (4 crossings) from scratch. Same method as Borromean: Wedderburn-Artin → eigenvalue products → q-integer identification. The figure-eight has different crossing structure → different q-integer indices.
 
 ### Approaches tried and failed
 

@@ -3,7 +3,7 @@ The number of calibration inputs
 it equals the number of **irreducible representations** of
 $H_3(q)$, which is the number of partitions of $3$.
 
-## Wedderburn decomposition
+## Wedderburn-Artin decomposition
 
 The Iwahori--Hecke algebra $H_3(q)$ is semisimple for generic
 $q$ and decomposes via the Wedderburn theorem as:

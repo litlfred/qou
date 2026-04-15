@@ -67,7 +67,7 @@ the full partition sum gives the exact Markov trace.*
 zero fitted parameters.*
 
 *Proof sketch.*
-The Wedderburn decomposition
+The Wedderburn-Artin decomposition
 $H_n(q) \cong M_1(\mathbb{C}) \oplus M_{n-1}(\mathbb{C})
 \oplus M_1(\mathbb{C})$
 ([three-parameter decomposition](#prop:three-parameters-wedderburn))

@@ -2,7 +2,7 @@
   Wigner coefficient = [5]_q! · m_e from Frobenius reciprocity.
 
   The isospin Casimir traced over H₅(q) gives Σ dim_q(λ)² = [5]_q!
-  by the Wedderburn trace identity.
+  by the Wedderburn-Artin trace identity.
 
   Ref: [manuscript] §5.7, prop:wigner-coefficient-derivation
 -/

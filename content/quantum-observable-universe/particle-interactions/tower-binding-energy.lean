@@ -3,7 +3,7 @@
 
   B(Z,N) = Σ_λ w_λ × m_e × Σ_i ln|Φ_q(|V̂_i^λ|)|
 
-  where w_λ are Wedderburn weights, V̂_i^λ are per-generator
+  where w_λ are Wedderburn-Artin weights, V̂_i^λ are per-generator
   vertex volumes in each channel, and Φ_q is the quantum
   dilogarithm (analytically continued past |V̂| = q).
 
@@ -12,18 +12,18 @@
 
 namespace QOU.ParticleInteractions
 
-/-- The Wedderburn weight of the standard irrep of H₃(q):
+/-- The Wedderburn-Artin weight of the standard irrep of H₃(q):
     w_std = [2]_q² / ([2]_q² + 2) where [2]_q = q + q⁻¹. -/
 noncomputable def wedderburnStd (q : ℝ) (hq : q > 1) : ℝ :=
   let two_q := q + q⁻¹
   two_q ^ 2 / (two_q ^ 2 + 2)
 
-/-- The Wedderburn weight of the symmetric (= alternating) irrep:
+/-- The Wedderburn-Artin weight of the symmetric (= alternating) irrep:
     w_sym = w_alt = 1 / ([2]_q² + 2). -/
 noncomputable def wedderburnSym (q : ℝ) (hq : q > 1) : ℝ :=
   1 / ((q + q⁻¹) ^ 2 + 2)
 
-/-- The three Wedderburn weights sum to 1. -/
+/-- The three Wedderburn-Artin weights sum to 1. -/
 theorem wedderburnWeightsSum (q : ℝ) (hq : q > 1) :
     wedderburnSym q hq + wedderburnStd q hq + wedderburnSym q hq = 1 := by
   simp [wedderburnSym, wedderburnStd]

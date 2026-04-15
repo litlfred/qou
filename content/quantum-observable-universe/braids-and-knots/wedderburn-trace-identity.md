@@ -52,7 +52,7 @@ formula arises from the Frobenius reciprocity of the $[n{-}2, 2]$
 and $[n{-}2, 1^2]$ partitions at Hecke level $k = 5$.
 
 *Proof.*
-The Wedderburn decomposition
+The Wedderburn-Artin decomposition
 $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{C})$
 gives $\dim H_n(q) = \sum_\lambda d_\lambda^2$.  Since
 $\dim H_n(q) = n!$ classically (as a quotient of the group algebra
