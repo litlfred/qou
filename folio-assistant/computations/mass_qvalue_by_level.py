@@ -30,8 +30,8 @@ from experimental_constants import (
     M_E_MEV_ERR, M_N_MINUS_P_MEV,
 )
 from hecke_core import (
-    binding_energy_bw, binding_energy_physical, atom_mass,
-    build_atom_nf, nf_tr, classify_nuclear_knot, q_value_beta,
+    binding_energy_bw, atom_mass,
+    build_atom_nf, nf_tr, q_value_beta,
     LAMBDA_V, LAMBDA_S, LAMBDA_C, A_ASYM, DELTA_P, LAMBDA_EX,
     DELTA_S, DELTA_HOOK, DELTA_WIGNER, DELTA_FORMFACTOR, DELTA_PN_CORR,
 )

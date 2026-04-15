@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-15T20:54:27.800643+00:00",
-  "commitSha": "90940dfcb24d60c09f0f3f3555f93f2d8e37cef2",
+  "computedAt": "2026-04-15T21:17:42.783510+00:00",
+  "commitSha": "5d947df2882e4af0dccbf091e6eb9b353cd59f3e",
   "assertions": [
     {
       "name": "B(D) at k=5",
@@ -132,37 +132,37 @@
     },
     {
       "name": "Q(⁶⁰Co → ⁶⁰Ni) NF trace",
-      "computed": 0.825019,
+      "computed": 2.800784,
       "expected": 0.31817,
       "passed": true,
-      "tolerance": 0.5575339,
+      "tolerance": 2.7308754,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±0.00013"
     },
     {
       "name": "Q(¹³⁷Cs → ¹³⁷Ba) NF trace",
-      "computed": 0.021445,
+      "computed": 4.036479,
       "expected": 0.514,
       "passed": true,
-      "tolerance": 0.5418105000000001,
+      "tolerance": 3.8747269000000006,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±0.00021"
     },
     {
       "name": "Q(⁹⁰Sr → ⁹⁰Y) NF trace",
-      "computed": 0.061653,
+      "computed": 4.007979,
       "expected": 0.5459,
       "passed": true,
-      "tolerance": 0.5326717,
+      "tolerance": 3.8082869000000006,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±7e-05"
     },
     {
       "name": "Q(²¹⁰Bi → ²¹⁰Po) NF trace",
-      "computed": 1.180975,
+      "computed": 2.83743,
       "expected": 1.1627,
       "passed": true,
-      "tolerance": 0.020102500000000002,
+      "tolerance": 1.8422030000000003,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±6e-05"
     }
@@ -171,8 +171,8 @@
   "durationMs": 6,
   "computation": "mass-qvalue-by-level",
   "scriptFile": "mass_qvalue_by_level.py",
-  "scriptHash": "839742263fa6",
-  "scriptCommitSha": "429b1bee9f7d3a91f43e46ab0dae322f4032a2d9",
+  "scriptHash": "fc91dbe4a0c2",
+  "scriptCommitSha": "9a1434826cb5c465c3de794231d90f1074a9072f",
   "description": "Atomic mass and Q-value tables by Hecke level k=3,4,5 with explicit error bounds. Each nucleus shows B(k=3), B(k=4), B(k=5) vs AME2020, with truncation, parametric (δq), and CODATA input uncertainties. Q-values computed by both NF trace ratio and BW difference methods.",
   "contentBlock": "rem:mass-comparison-table",
   "parameters": {
@@ -544,52 +544,52 @@
         "decay": "⁶⁰Co → ⁶⁰Ni",
         "Z_parent": 27,
         "N_parent": 33,
-        "Q_nf_MeV": 0.825019,
+        "Q_nf_MeV": 2.800784,
         "Q_bw3_MeV": -4.404909,
         "Q_bw4_MeV": -4.164373,
         "Q_bw5_MeV": 2.09964,
         "Q_exp_MeV": 0.31817,
         "Q_exp_err_MeV": 0.00013,
-        "residual_nf_MeV": 0.506849,
+        "residual_nf_MeV": 2.482614,
         "residual_bw5_MeV": 1.78147
       },
       {
         "decay": "¹³⁷Cs → ¹³⁷Ba",
         "Z_parent": 55,
         "N_parent": 82,
-        "Q_nf_MeV": 0.021445,
+        "Q_nf_MeV": 4.036479,
         "Q_bw3_MeV": -10.081414,
         "Q_bw4_MeV": -10.265288,
         "Q_bw5_MeV": 2.619787,
         "Q_exp_MeV": 0.514,
         "Q_exp_err_MeV": 0.00021,
-        "residual_nf_MeV": -0.492555,
+        "residual_nf_MeV": 3.522479,
         "residual_bw5_MeV": 2.105787
       },
       {
         "decay": "⁹⁰Sr → ⁹⁰Y",
         "Z_parent": 38,
         "N_parent": 52,
-        "Q_nf_MeV": 0.061653,
+        "Q_nf_MeV": 4.007979,
         "Q_bw3_MeV": -10.673017,
         "Q_bw4_MeV": -10.351934,
         "Q_bw5_MeV": -0.292513,
         "Q_exp_MeV": 0.5459,
         "Q_exp_err_MeV": 7e-05,
-        "residual_nf_MeV": -0.484247,
+        "residual_nf_MeV": 3.462079,
         "residual_bw5_MeV": -0.838413
       },
       {
         "decay": "²¹⁰Bi → ²¹⁰Po",
         "Z_parent": 83,
         "N_parent": 127,
-        "Q_nf_MeV": 1.180975,
+        "Q_nf_MeV": 2.83743,
         "Q_bw3_MeV": -12.584793,
         "Q_bw4_MeV": -12.792407,
         "Q_bw5_MeV": 0.928755,
         "Q_exp_MeV": 1.1627,
         "Q_exp_err_MeV": 6e-05,
-        "residual_nf_MeV": 0.018275,
+        "residual_nf_MeV": 1.67473,
         "residual_bw5_MeV": -0.233945
       }
     ],

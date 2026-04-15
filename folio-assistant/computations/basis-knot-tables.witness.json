@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-15T20:41:04.042380+00:00",
-  "commitSha": "38031086f313a1e6146d306bd982c0b22d4ca68e",
+  "computedAt": "2026-04-15T21:17:17.070969+00:00",
+  "commitSha": "5d947df2882e4af0dccbf091e6eb9b353cd59f3e",
   "assertions": [
     {
       "name": "γ e⁻ pair count",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "basis-knot-tables",
   "scriptFile": "basis_knot_tables.py",
   "scriptHash": "5e5d2d39c00b",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "b5d1b24a797d1b0b99b42951d8387126b292f8a4",
   "description": "Complete multiplication tables for all 6 basis knots of H₃(q). Each table is a 6×6 matrix of 6-element NF vectors showing b_i · K · b_j for basis knot K. The e⁻ channel count progression 19 → 24 → 24 → 32 → 32 → 36 demonstrates that the trefoil is the unique minimum-crossing universal pair-production operator.",
   "contentBlock": "rem:hecke-operations",
   "parameters": {

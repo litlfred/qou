@@ -269,17 +269,7 @@ NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
 NF_NAMES = ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻']
 TR_M = np.array([1.0, z, z, z**2, z**2, z**3])
 
-# Crossing coefficients for per-generator chain
-PROTON_G0 = [(1,0)]*3 + [(1,0)] + [(1,0)]*2 + [(1,-h/2)]     # 7 crossings
-PROTON_G1 = [(1,-h)]*3 + [(1,-h/2)]                            # 4 crossings
-NEUTRON_G0 = [(1,0)]*3 + [(1,-h/2)] + [(1,0)] + [(1,0)] + [(1,-h/2)]  # 7
-NEUTRON_G1 = [(1,-h)]*3 + [(1,-h)] + [(1,0)] + [(1,0)]        # 6
-# Electron crossing coefficients (c, d) for cσ + d·𝟏
-PE = (1, -h)   # proton-electron: σ⁻¹ (EM attraction, same as nn)
-NE = (0, 1)    # neutron-electron: 𝟏 (no interaction)
-EE = (1, 0)    # electron-electron: σ (EM repulsion, same as pp)
-
-# Bond operators
+# Bond operators for molecular binding (per-generator crossing chains)
 INV_TREFOIL_G0 = [(1,-h), (1,-h)]  # σ₀⁻¹σ₀⁻¹
 INV_TREFOIL_G1 = [(1,-h)]          # σ₁⁻¹
 
@@ -481,93 +471,20 @@ def build_atom_nf(Z, N):
     return nf
 
 
-def apply_atom_nf(nf, Z, N):
-    """Apply atom crossings to an existing NF (for molecular products).
-
-    Same construction as build_atom_nf but starting from a given NF
-    instead of identity.
-    """
-    A = Z + N
-    ordering = []
-    pc, nc = 0, 0
-    for k in range(A):
-        if (k % 2 == 0 and pc < Z) or nc >= N:
-            ordering.append('p')
-            pc += 1
-        else:
-            ordering.append('n')
-            nc += 1
-
-    for k in range(A):
-        if ordering[k] == 'p':
-            for _ in range(3):
-                nf = hm(nf, 1, 0, 0)
-                nf = hm(nf, 1, -h, 1)
-            nf = hm(nf, 1, 0, 0)
-            nf = hm(nf, 1, 0, 0)
-            nf = hm(nf, 1, -h/2, 1)
-        else:
-            for _ in range(3):
-                nf = hm(nf, 1, 0, 0)
-                nf = hm(nf, 1, -h, 1)
-            nf = hm(nf, 1, -h/2, 0)
-            nf = hm(nf, 1, -h/2, 0)
-            nf = hm(nf, 1, -h, 1)
-
-        for prev in range(k):
-            ti, tj = ordering[prev], ordering[k]
-            if ti == 'p' and tj == 'p':
-                nf = hm(nf, 1, 0, 0)
-            elif ti == 'n' and tj == 'n':
-                nf = hm(nf, 1, -h, 0)
-            else:
-                nf = hm(nf, 1, -h/2, 0)
-
-    for _ in range(Z):
-        nf = hm(nf, 1, -h, 1)
-    return nf
-
-
-def apply_inv_trefoil(nf):
-    """Apply inverse trefoil T(2,3)⁻¹ = σ₀⁻¹σ₁⁻¹σ₀⁻¹."""
-    nf = hm(nf, 1, -h, 0)
-    nf = hm(nf, 1, -h, 1)
-    nf = hm(nf, 1, -h, 0)
-    return nf
-
-
 # ══════════════════════════════════════════════════════════════
-# Per-generator vertex volumes (3-channel)
+# Per-generator vertex volumes (3-channel Wedderburn-Artin)
 # ══════════════════════════════════════════════════════════════
-
-def crossing_coeff(ti, tj):
-    """Crossing coefficient d for strand pair (ti, tj). c=1 always.
-    Returns None for identity crossings (ne)."""
-    if ti == 'p' and tj == 'p': return 0.0
-    if ti == 'n' and tj == 'n': return -h
-    if (ti, tj) in (('p','n'), ('n','p')): return -h/2
-    if (ti, tj) in (('p','e'), ('e','p')): return -h
-    if ti == 'e' and tj == 'e': return 0.0
-    return None  # ne: identity
-
-
-def atom_ordering(Z, N):
-    """Ground-state interleaved ordering: nucleons then electrons."""
-    o = []
-    pc, nc = 0, 0
-    for k in range(Z + N):
-        if k % 2 == 0 and pc < Z:
-            o.append('p'); pc += 1
-        elif nc < N:
-            o.append('n'); nc += 1
-        else:
-            o.append('p'); pc += 1
-    o.extend(['e'] * Z)
-    return o
-
 
 def vertex_volume(chain):
-    """3-channel Wedderburn-Artin vertex volume from crossing chain."""
+    """3-channel Wedderburn-Artin vertex volume from crossing chain.
+
+    Each crossing (c, d) acts on the three irrep channels of H₃(q):
+      symmetric:  eigenvalue cq + d
+      standard:   traced volume z·a + b (from 2×2 transfer matrix)
+      alternating: eigenvalue -cq⁻¹ + d
+
+    Full volume = W_sym × λ_sym + W_std × V_std + W_alt × λ_alt.
+    """
     a, b = 0.0, 1.0
     sp, ap = 1.0, 1.0
     for c, d in chain:
@@ -578,104 +495,144 @@ def vertex_volume(chain):
     return W_SYM * sp + W_STD * V_std + W_ALT * ap
 
 
-def atom_gen_chains(Z, N):
-    """Per-generator crossing chains for atom (Z, N).
-    Returns (g0_chain, g1_chain)."""
-    g0, g1 = [], []
-    pc, nc = 0, 0
-    for k in range(Z + N):
-        is_p = (k % 2 == 0 and pc < Z) or nc >= N
-        if is_p:
-            g0.extend(PROTON_G0)
-            g1.extend(PROTON_G1)
-            pc += 1
+def nucleon_gen_chains(quarks):
+    """Per-generator crossing chains for one nucleon.
+
+    Derives chains from the quark content, matching build_nucleon_nf:
+      B₃ = (σ₀σ₁⁻¹)³ contributes to both gen 0 and gen 1
+      Quark pairs: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1
+
+    Returns (g0_chain, g1_chain) as lists of (c, d) tuples.
+    """
+    # B₃ confinement: (σ₀·σ₁⁻¹)³
+    # gen 0 gets 3× σ₀ = (1, 0)
+    # gen 1 gets 3× σ₁⁻¹ = (1, -h)
+    g0 = [(1, 0)] * 3
+    g1 = [(1, -h)] * 3
+
+    # Quark pairwise crossings
+    pairs = [(0, 1, 0), (0, 2, 0), (1, 2, 1)]  # (qi, qj, gen)
+    for i, j, gen in pairs:
+        qi_f, qj_f = quarks[i], quarks[j]
+        if qi_f == qj_f == 'u':
+            cd = (1, 0)       # σ
+        elif qi_f == qj_f == 'd':
+            cd = (1, -h)      # σ⁻¹
         else:
-            g0.extend(NEUTRON_G0)
-            g1.extend(NEUTRON_G1)
-            nc += 1
-    for _ in range(Z):
-        g1.append(PE)
+            cd = (1, -h/2)    # mixed
+        if gen == 0:
+            g0.append(cd)
+        else:
+            g1.append(cd)
+
     return g0, g1
 
 
-def compute_phi1_vv(Z, N):
-    """Compute Φ₁ = ln|V̂₀| + ln|V̂₁| from per-generator vertex volumes.
+# Precomputed per-generator chains for proton and neutron
+_PROTON_G0, _PROTON_G1 = nucleon_gen_chains(['u', 'u', 'd'])
+_NEUTRON_G0, _NEUTRON_G1 = nucleon_gen_chains(['u', 'd', 'd'])
 
-    DEPRECATED: Uses hardcoded PROTON_G0/G1 chains with old gluon dressing.
-    Prefer compute_phi1_full which matches the transfer matrix approach.
+
+def atom_gen_chains(Z, N):
+    """Per-generator crossing chains for atom (Z, N).
+
+    Concatenates nucleon chains in pp...nn ordering (protons first),
+    then appends electron crossings on gen 1.
+
+    Returns (g0_chain, g1_chain).
     """
-    g0, g1 = atom_gen_chains(Z, N)
-    V0 = vertex_volume(g0)
-    V1 = vertex_volume(g1)
+    g0, g1 = [], []
+    for _ in range(Z):
+        g0.extend(_PROTON_G0)
+        g1.extend(_PROTON_G1)
+    for _ in range(N):
+        g0.extend(_NEUTRON_G0)
+        g1.extend(_NEUTRON_G1)
+    # Electron crossings: pe = σ⁻¹ on gen 1
+    for _ in range(Z):
+        g1.append((1, -h))
+    return g0, g1
+
+
+def _crossing_coeff(ti, tj):
+    """Crossing coefficient d for strand pair (ti, tj). c=1 always.
+    Returns None for identity crossings (ne)."""
+    if ti == 'p' and tj == 'p': return 0.0
+    if ti == 'n' and tj == 'n': return -h
+    if (ti, tj) in (('p','n'), ('n','p')): return -h/2
+    if (ti, tj) in (('p','e'), ('e','p')): return -h
+    if ti == 'e' and tj == 'e': return 0.0
+    return None  # ne: identity
+
+
+def _phi1_from_ordering(ordering):
+    """Compute Φ₁ = Σᵢ ln|V̂ᵢ| for a given strand ordering.
+
+    Each strand i has a traced volume V̂ᵢ = z·aᵢ + bᵢ computed
+    from the transfer matrix chain of crossings with all j > i.
+    """
+    n = len(ordering)
+    if n <= 1:
+        return 0.0
     phi = 0.0
-    if abs(V0) > 1e-300:
-        phi += math.log(abs(V0))
-    if abs(V1) > 1e-300:
-        phi += math.log(abs(V1))
+    for i in range(n - 1):
+        ai, bi = 0.0, 1.0
+        for j in range(i + 1, n):
+            d = _crossing_coeff(ordering[i], ordering[j])
+            if d is None:
+                continue
+            ai, bi = ai * h + ai * d + bi, ai + bi * d
+        V = z * ai + bi
+        if abs(V) > 1e-300:
+            phi += math.log(abs(V))
     return phi
 
 
 def compute_phi1_full(Z, N):
     """Compute Φ₁ = Σᵢ ln|V̂ᵢ| from the transfer matrix chain.
 
-    This is the Skein polynomial log-volume: for each strand i
-    in the atomic braid, the traced volume V̂ᵢ = z·aᵢ + bᵢ is
-    computed from the chain of crossings with all strands j > i.
-
-    Strand types and crossing conventions:
+    The full atomic braid includes nucleon AND electron strands.
+    Crossing conventions:
       pp: (c=1, d=0)     — positive crossing (EM repulsion)
       nn: (c=1, d=-HA)   — inverse crossing (nuclear attraction)
       pn: (c=1, d=-HA/2) — mixed crossing (symmetric nuclear)
-      pe: (c=1, d=-HA)   — proton-electron (EM attraction, same as nn)
-      ee: (c=1, d=0)     — electron-electron (EM repulsion, same as pp)
+      pe: (c=1, d=-HA)   — proton-electron (EM attraction)
+      ee: (c=1, d=0)     — electron-electron (EM repulsion)
       ne: skip            — neutron-electron (no interaction)
 
-    The full atomic braid includes nucleons AND electrons.
-    B₃ confinement is encoded in the nucleon identity; quark
-    crossings are internal to each nucleon. The transfer matrix
-    captures inter-strand interactions.
+    Nucleon ordering for A ≤ 14: pp...nn (protons first).
+    For A > 14: tries Rust hecke-engine for optimized ground-state
+    ordering, falls back to pp...nn if unavailable.
 
-    Nucleon ordering: pp...nn (protons first, then neutrons).
-    Electron strands appended after nucleons.
+    B₃ confinement justifies treating nucleons as atomic units
+    (proved by confinement-lp.py via LP duality + Gram indefiniteness).
     """
     A = Z + N
     if A <= 1 and Z == 0:
         return 0.0
 
-    # Build strand ordering: protons, then neutrons, then electrons
-    ordering = ['p'] * Z + ['n'] * N + ['e'] * Z
-    n = len(ordering)
+    # Nucleon ordering
+    nuc_ordering = None
+    if A > 14:
+        # Try Rust engine for ground-state optimized ordering
+        try:
+            from hecke_rust_bridge import compute_nucleus, is_rust_available
+            if is_rust_available():
+                result = compute_nucleus(Z, N, timeout=30)
+                if result and 'ordering_par' in result:
+                    # Convert 0/1 ordering to p/n
+                    nuc_ordering = ['p' if x == 1 else 'n'
+                                    for x in result['ordering_par']]
+        except ImportError:
+            pass
 
-    if n <= 1:
-        return 0.0
+    if nuc_ordering is None:
+        # Default: pp...nn ordering
+        nuc_ordering = ['p'] * Z + ['n'] * N
 
-    phi = 0.0
-    for i in range(n - 1):
-        ai, bi = 0.0, 1.0
-        for j in range(i + 1, n):
-            ti, tj = ordering[i], ordering[j]
-            # Crossing coefficient
-            if ti == 'p' and tj == 'p':
-                c, d = 1.0, 0.0
-            elif ti == 'n' and tj == 'n':
-                c, d = 1.0, -h
-            elif (ti in ('p', 'n')) and (tj in ('p', 'n')):
-                c, d = 1.0, -h / 2.0
-            elif (ti == 'p' and tj == 'e') or (ti == 'e' and tj == 'p'):
-                c, d = 1.0, -h       # pe/ep: EM attraction
-            elif (ti == 'n' and tj == 'e') or (ti == 'e' and tj == 'n'):
-                continue              # ne/en: identity (no interaction)
-            elif ti == 'e' and tj == 'e':
-                c, d = 1.0, 0.0      # ee: EM repulsion
-            else:
-                continue
-            ai, bi = ai * c * h + ai * d + bi * c, ai * c + bi * d
-
-        V = z * ai + bi
-        if abs(V) > 1e-300:
-            phi += math.log(abs(V))
-
-    return phi
+    # Full strand ordering: nucleons + electrons
+    ordering = nuc_ordering + ['e'] * Z
+    return _phi1_from_ordering(ordering)
 
 
 # ══════════════════════════════════════════════════════════════
@@ -733,29 +690,6 @@ def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
     E_eV = binding * E_MOL
 
     return E_eV, binding, phi_ub, phi_bond
-
-
-def molecular_binding_vv(Z_A, N_A, Z_B, N_B, bond_g0=None, bond_g1=None):
-    """Compute molecular binding using per-generator vertex volumes.
-
-    gen 0: A_g0 + bond_g0 + B_g0
-    gen 1: A_g1 + bond_g1 + B_g1
-    """
-    g0A, g1A = atom_gen_chains(Z_A, N_A)
-    g0B, g1B = atom_gen_chains(Z_B, N_B)
-
-    if bond_g0 is None:
-        bond_g0 = INV_TREFOIL_G0
-    if bond_g1 is None:
-        bond_g1 = INV_TREFOIL_G1
-
-    phi_ub = math.log(abs(vertex_volume(g0A + g0B))) + \
-             math.log(abs(vertex_volume(g1A + g1B)))
-    phi_bond = math.log(abs(vertex_volume(g0A + bond_g0 + g0B))) + \
-               math.log(abs(vertex_volume(g1A + bond_g1 + g1B)))
-
-    binding = phi_ub - phi_bond
-    return binding * E_MOL, binding
 
 
 # ══════════════════════════════════════════════════════════════
@@ -863,21 +797,6 @@ def binding_energy_bw(Z, N, k=3):
     return B
 
 
-def binding_energy_physical(Z, N, k=5):
-    """Physical binding including QED correction and q-torsion.
-
-    M_phys = M_free - B_BW × (1 - α/2 - ∂α/∂q × ℏ²/2)
-
-    The (1-α/2) is the one-loop QED correction.
-    The ∂α/∂q × ℏ²/2 is the q-torsion from J²(A).
-    """
-    B = binding_energy_bw(Z, N, k=k)
-    # QED: virtual photon exchange reduces binding
-    # q-torsion: shared q-dependence of strong and EM sectors
-    _dalpha_dq = -0.04506  # ∂α/∂q at q₀
-    return B * (1.0 - alpha_em / 2.0 - _dalpha_dq * _hbar_q2 / 2.0)
-
-
 def build_nucleon_nf(quarks):
     """Build a single nucleon NF from quark content.
 
@@ -917,65 +836,6 @@ def build_nucleon_nf(quarks):
 # Precomputed nucleon NFs
 PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
-
-
-def binding_energy_derived(Z, N):
-    """Binding energy (MeV) from first-principles volume integral.
-
-    B(Z,N) = [Σᵢ tr_M(nucleon_i) - Σ_{i<j} tr_M(T_ij · nucleon_j)]
-             × m_e·Vol(B₃) × (1 - α_EM/2)
-
-    For each nucleon pair (i,j), the crossing operator T_ij encodes the
-    inter-nucleon interaction:
-      pp: T = σ₀           (c=1, d=0)    — electromagnetic repulsion
-      nn: T = σ₀⁻¹         (c=1, d=-h)   — attractive nuclear
-      pn: T = ½(σ₀+σ₀⁻¹)  (c=1, d=-h/2) — symmetric nuclear (strongest)
-
-    The Markov trace tr_M weights each NF component by z^{word_length}.
-
-    Energy scale α = m_e × Vol(K) where K depends on the nuclear knot type:
-      Borromean-like (A≥4): Vol(B₃) = 8G = 7.328
-      Figure-8-like (A=3):  Vol(4₁) = 2.030
-
-    The factor (1 - α_EM/2) is the one-loop QED correction to the nuclear
-    potential: the bare Hecke algebra computes the strong-force binding,
-    and the single virtual photon exchange between charged nucleons reduces
-    the binding energy by α_EM/2.
-
-    Zero fitted parameters.  All inputs from q₀ and quark content.
-    """
-    if Z + N <= 1:
-        return 0.0
-
-    # Free nucleon Markov traces
-    tr_free = Z * nf_tr(PROTON_NF) + N * nf_tr(NEUTRON_NF)
-
-    # Pair crossing traces (volume integral expansion)
-    # Each pair (i,j) contributes tr_M(T_ij · NF_j) to the bound-state volume.
-    # Crossing operators by pair type:
-    n_pp = Z * (Z - 1) // 2
-    n_nn = N * (N - 1) // 2
-    n_pn = Z * N
-
-    # Apply crossing to one nucleon of each pair
-    tr_pp = nf_tr(hm(list(PROTON_NF), 1, 0, 0))       # σ₀ on proton
-    tr_nn = nf_tr(hm(list(NEUTRON_NF), 1, -h, 0))      # σ₀⁻¹ on neutron
-    tr_pn = nf_tr(hm(list(NEUTRON_NF), 1, -h/2, 0))    # ½(σ₀+σ₀⁻¹) on neutron
-
-    tr_bound = n_pp * tr_pp + n_nn * tr_nn + n_pn * tr_pn
-
-    delta = tr_free - tr_bound
-
-    # Knot-dependent binding scale:
-    # The nuclear braid's knot type determines which geometric invariant
-    # (Vol for hyperbolic, CS for torus) sets the binding scale.
-    alpha_knot, knot_name, is_hyp = classify_nuclear_knot(Z, N)
-    B_strong = delta * alpha_knot
-
-    # One-loop QED correction: virtual photon exchange reduces binding
-    # by α_EM/2 per charged pair.  For deuterium (1 pn pair) this is
-    # exactly ½α_EM × B_strong ≈ 8.1 keV, matching the observed residual.
-    return B_strong * (1.0 - alpha_em / 2.0)
 
 
 def q_value_beta(Z_parent, N_parent, method='phi1'):
@@ -1020,30 +880,24 @@ def q_value_beta(Z_parent, N_parent, method='phi1'):
         return delta_Mfree - (B_parent - B_daughter)
 
 
-def atom_mass(Z, N, method='phi1'):
+def atom_mass(Z, N, method='bw', k=5):
     """Compute atomic mass (MeV).
 
-    method='phi1':    M = constituents + κ×Φ₁ (zero-parameter, 1.03% MAE)
-    method='bw':      M = constituents - B(Z,N) (q-integer BW, ~0.1% MAE)
-    method='derived': M = constituents - B_derived(Z,N) (first-principles)
+    method='bw' (default): M = constituents - B(Z,N) at Hecke level k.
+        Uses binding_energy_bw with q-integer BW coefficients.
+        k=3: 6-term, k=4: +shell/hook, k=5: +Wigner/form/pn.
+        MAE: k=3 ~0.04%, k=4 ~0.02%, k=5 ~0.008%.
+
+    method='phi1': M = constituents + κ×Φ₁ (transfer matrix).
+        Uses compute_phi1_full for the Skein polynomial log-volume.
+        Zero-parameter. Better for mass DIFFERENCES (Q-values).
+
+    Returns (M_MeV, binding_info).
     """
     M_const = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
 
-    if method == 'best':
-        # Hybrid: exact NF for A≤2 (where BW fails), BW for A≥3
-        # D (A=2): derived NF gives 0.6 keV accuracy
-        # A=3+: BW with Wigner saturation
-        A = Z + N
-        if A <= 2:
-            B = binding_energy_derived(Z, N)
-        else:
-            B = binding_energy_bw(Z, N, k=5)
-        return M_const - B, -B
-    elif method == 'bw':
-        B = binding_energy_bw(Z, N)
-        return M_const - B, -B
-    elif method == 'derived':
-        B = binding_energy_derived(Z, N)
+    if method == 'bw':
+        B = binding_energy_bw(Z, N, k=k)
         return M_const - B, -B
     else:
         phi = compute_phi1_full(Z, N)

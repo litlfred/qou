@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-15T20:54:27.959558+00:00",
-  "commitSha": "90940dfcb24d60c09f0f3f3555f93f2d8e37cef2",
+  "computedAt": "2026-04-15T21:17:16.967220+00:00",
+  "commitSha": "5d947df2882e4af0dccbf091e6eb9b353cd59f3e",
   "assertions": [
     {
       "name": "tr_M(proton)",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "hadron-knot-table",
   "scriptFile": "hadron_knot_table.py",
   "scriptHash": "2f036f485a91",
-  "scriptCommitSha": "11241367d2c1a256d5317c7c20f297084659afc0",
+  "scriptCommitSha": "6d360ac496ad5c25f1d8519329751562ac53333e",
   "description": "Hadron-level knot decomposition table for 19 atoms in the H₃(q) NF basis. Each atom is 6 coefficients (vs thousands at quark level). Same Markov traces, nets, and Frobenius stability.",
   "contentBlock": "rem:quark-level-knot-table",
   "parameters": {
