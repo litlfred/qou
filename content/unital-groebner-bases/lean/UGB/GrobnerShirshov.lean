@@ -3,6 +3,7 @@ import UGB.GrobnerShirshov.CompositionLemma
 import UGB.GrobnerShirshov.NormalForms
 import UGB.GrobnerShirshov.Flatness
 import UGB.GrobnerShirshov.StrongMultiplicativity
+import UGB.GrobnerShirshov.JetOrder
 
 /-!
 # Gröbner–Shirshov Bases — Module Root
@@ -19,15 +20,18 @@ provides the algebraic engine behind the QOU lifting mechanism.
 | `NormalForms` | PBW-type bases for `U_q(su(2))` and `Dist(G)` |
 | `Flatness` | Flat deformation from GS confluence |
 | `StrongMultiplicativity` | Frobenius preservation under deformation |
+| `JetOrder` | Jet-stratified reduction: ordering extension + complexity |
 
 ## How the pieces fit together
 
 ```
 Basic.lean
-  └─ CompositionLemma.lean    (diamond lemma: GS ⟹ confluence)
-       └─ NormalForms.lean     (PBW bases for U_q and Dist(G))
-            └─ Flatness.lean   (Dist(G) is flat over Dist(H))
-                 └─ StrongMultiplicativity.lean  (Δ(xy) = Δ(x)·Δ(y))
+  ├─ CompositionLemma.lean    (diamond lemma: GS ⟹ confluence)
+  │    └─ NormalForms.lean     (PBW bases for U_q and Dist(G))
+  │         └─ Flatness.lean   (Dist(G) is flat over Dist(H))
+  │              └─ StrongMultiplicativity.lean  (Δ(xy) = Δ(x)·Δ(y))
+  └─ JetOrder.lean            (jet-stratified reduction algorithm)
+       └─ Flatness.lean       (filtration + Hilbert function)
 ```
 
 The composition lemma does triple duty:
