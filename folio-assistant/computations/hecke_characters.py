@@ -119,12 +119,17 @@ def standard_young_tableaux(shape):
 # §2  SEMINORMAL REPRESENTATION MATRICES
 # ══════════════════════════════════════════════════════════════
 
-def build_seminormal_matrices(shape):
+def build_seminormal_matrices(shape, sparse=None):
     """Build representation matrices for σ₁..σ_{n-1} in the
     seminormal basis for partition `shape`.
 
-    Returns: list of numpy arrays [σ₁, σ₂, ..., σ_{n-1}]
+    Returns: list of numpy/scipy arrays [σ₁, σ₂, ..., σ_{n-1}]
              (0-indexed: sigmas[0] = σ₁)
+
+    If sparse=True (or sparse=None and dim > 500), uses scipy sparse
+    CSR matrices. Each Hoefsmit matrix has at most 2 nonzeros per row
+    (block-diagonal with 1×1 and 2×2 blocks), so sparse format gives
+    ~dim/2 × memory savings.
     """
     n = sum(shape)
     syts, cells, contents = standard_young_tableaux(shape)
@@ -133,10 +138,12 @@ def build_seminormal_matrices(shape):
     if dim == 0:
         return [], dim, syts
 
+    use_sparse = sparse if sparse is not None else (dim > 500)
+
     sigmas = []
 
     for k in range(1, n):  # generator σ_k swaps entries k and k+1
-        M = np.zeros((dim, dim))
+        rows, cols, vals = [], [], []
         processed = set()
 
         for i in range(dim):
@@ -167,7 +174,7 @@ def build_seminormal_matrices(shape):
 
             if j is None:
                 # 1×1 block: eigenvalue is q (same row) or -q⁻¹ (same col)
-                M[i, i] = a
+                rows.append(i); cols.append(i); vals.append(a)
                 processed.add(i)
             else:
                 # 2×2 block
@@ -176,13 +183,20 @@ def build_seminormal_matrices(shape):
                 b_sq = a * a_prime + 1.0
                 b = math.sqrt(abs(b_sq))
 
-                M[i, i] = a
-                M[j, j] = a_prime
-                M[i, j] = b
-                M[j, i] = b
+                rows.extend([i, j, i, j])
+                cols.extend([i, j, j, i])
+                vals.extend([a, a_prime, b, b])
 
                 processed.add(i)
                 processed.add(j)
+
+        if use_sparse:
+            from scipy import sparse as sp_sparse
+            M = sp_sparse.csr_matrix((vals, (rows, cols)), shape=(dim, dim))
+        else:
+            M = np.zeros((dim, dim))
+            for r, c, v in zip(rows, cols, vals):
+                M[r, c] = v
 
         sigmas.append(M)
 
@@ -231,16 +245,27 @@ def nuclear_braid_character(Z, N, sigmas, dim, n_gens):
             nc_ += 1
 
     # Accumulate product of crossing matrices
-    product = np.eye(dim)
+    # Handle both dense (numpy) and sparse (scipy) matrices
+    from scipy import sparse as sp_sparse
+    is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
+
+    if is_sparse:
+        product = sp_sparse.eye(dim, format='csr')
+        I = sp_sparse.eye(dim, format='csr')
+    else:
+        product = np.eye(dim)
+        I = np.eye(dim)
 
     for i in range(A - 1):
         for j in range(i + 1, A):
             c, d = crossing_coeffs(ordering[i], ordering[j])
             # Generator index (0-based): cycle through available generators
             g = (i + j) % n_gens
-            M = c * sigmas[g] + d * np.eye(dim)
+            M = c * sigmas[g] + d * I
             product = product @ M
 
+    if is_sparse:
+        return float(product.diagonal().sum())
     return np.trace(product)
 
 
