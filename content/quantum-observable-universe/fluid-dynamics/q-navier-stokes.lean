@@ -45,7 +45,7 @@ theorem QNavierStokes.viscosity_pos (ns : QNavierStokes) :
     0 < ns.viscosity := by
   unfold viscosity
   apply div_pos
-  · linarith [ns.q_gt_one]
-  · linarith [ns.q_gt_one]
+  · exact sub_pos.mpr ns.q_gt_one
+  · exact lt_trans zero_lt_one ns.q_gt_one
 
 end QOU.FluidDynamics

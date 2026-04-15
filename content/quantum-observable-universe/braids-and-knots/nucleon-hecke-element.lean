@@ -30,25 +30,25 @@ namespace QOU.Braiding
 -- Ref: [manuscript] Ch 3 §16
 structure NucleonHeckeElement where
   /-- Flavor triple (f₁, f₂, f₃) of the three quarks. -/
-  flavors : Fin 3 → Bool  -- true = up, false = down
+  flavors : Fin 3 → QuarkFlavor
   /-- The resulting Hecke algebra element in H_3(q). -/
   -- Ref: [manuscript] Ch 3 §16
   element : LaurentPolynomial ℤ := sorry
 
 /-- A proton has flavor triple (u, u, d). -/
 -- Ref: [manuscript] Ch 3 §16
-def protonFlavors : Fin 3 → Bool
-  | ⟨0, _⟩ => true   -- up
-  | ⟨1, _⟩ => true   -- up
-  | ⟨2, _⟩ => false   -- down
-  | ⟨n + 3, h⟩ => absurd h (by omega)
+def protonFlavors : Fin 3 → QuarkFlavor
+  | ⟨0, _⟩ => .up
+  | ⟨1, _⟩ => .up
+  | ⟨2, _⟩ => .down
+  | ⟨n + 3, h⟩ => absurd h (by decide)
 
 /-- A neutron has flavor triple (u, d, d). -/
 -- Ref: [manuscript] Ch 3 §16
-def neutronFlavors : Fin 3 → Bool
-  | ⟨0, _⟩ => true   -- up
-  | ⟨1, _⟩ => false   -- down
-  | ⟨2, _⟩ => false   -- down
-  | ⟨n + 3, h⟩ => absurd h (by omega)
+def neutronFlavors : Fin 3 → QuarkFlavor
+  | ⟨0, _⟩ => .up
+  | ⟨1, _⟩ => .down
+  | ⟨2, _⟩ => .down
+  | ⟨n + 3, h⟩ => absurd h (by decide)
 
 end QOU.Braiding

@@ -27,14 +27,12 @@ namespace QOU.FluidDynamics
     differential forms d_q, δ_q varying over the base Spec R. -/
 -- Ref: [manuscript] Ch 10 §1
 structure SubstrateLineBundle where
-  /-- The ground ring R (typically ℤ[q, q⁻¹] or ℝ). -/
-  R : Type*
   /-- The substrate section q ∈ R^x (invertible element). -/
   q : ℝ
   /-- The substrate parameter is strictly positive. -/
   q_pos : 0 < q
   /-- The q-parametrised family of differentials (abstractly). -/
   -- Ref: [manuscript] Ch 10 §1
-  differential_family : sorry
+  differential_family : Type*
 
 end QOU.FluidDynamics

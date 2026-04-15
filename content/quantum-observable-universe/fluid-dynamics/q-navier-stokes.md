@@ -72,7 +72,7 @@ modes that could trivially satisfy it.
 Under the [categorical--archimedean
 bridge](#prop:categorical-archimedean-bridge), the fibre functor
 $\tau$ sends the categorical system to coordinates on the
-[state bundle](#def:substrate-line-bundle) $\mathcal{S}$:
+[substrate line bundle](#def:substrate-line-bundle) $\mathcal{S}$:
 
 $$
   \partial_t v + (v \cdot \nabla_A)v

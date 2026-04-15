@@ -18,7 +18,7 @@ $\mathrm{Re}_q = 2/(q-1)$ bounds the number of active modes:
 $N_{\mathrm{eff}} \leq \lfloor \log_q(\mathrm{Re}_q^{3/4})
 \rfloor < \infty$.  We therefore reduce the q-NS equation to a
 finite-dimensional ODE, which we recognize as globally well-posed
-by Picard--Lindelof.
+by Picard--Lindelöf.
 
 **Step 3: Bootstrap to smoothness.**
 We observe that higher modes decay to zero in finite time.  Applying

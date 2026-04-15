@@ -31,9 +31,9 @@ structure NSObstruction where
   eulerChar : ℤ
   /-- The obstruction class, abstractly an element of H³_loc(A, θ). -/
   -- Ref: [manuscript] Ch 10 §2
-  obstructionClass : sorry
+  obstructionClass : ℤ
   /-- The obstruction vanishes iff the Euler characteristic vanishes. -/
   -- Ref: [manuscript] Ch 10 §2
-  obstruction_iff_euler : sorry
+  obstruction_iff_euler : obstructionClass = 0 ↔ eulerChar = 0
 
 end QOU.FluidDynamics
