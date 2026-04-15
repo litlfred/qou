@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-15T20:38:48.017205+00:00",
-  "commitSha": "11241367d2c1a256d5317c7c20f297084659afc0",
+  "computedAt": "2026-04-15T20:40:12.759751+00:00",
+  "commitSha": "38031086f313a1e6146d306bd982c0b22d4ca68e",
   "assertions": [
     {
       "name": "T_{1,0} e⁻ pair count",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "photon-operator-table",
   "scriptFile": "photon_operator_table.py",
   "scriptHash": "7a871d0ae7fd",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "38031086f313a1e6146d306bd982c0b22d4ca68e",
   "description": "Compact photon operator table: NF of b_i·β(T_{m,n})·b_j for all 6×6 basis pairs and 5 torus knot operators. Each operator stored as a 6×6 matrix of 6-element NF vectors. Replaces the verbose knot-operator-table witness (78KB → ~8KB).",
   "contentBlock": "rem:knot-operator-basis-table",
   "parameters": {
