@@ -70,7 +70,7 @@ the relevant level, so $\kappa_0 \bmod 2 \neq 0$ — the obstruction
 
 Verified at $A = 6$:
 $\mathrm{net}({}^6\mathrm{He}(2,4)) / \mathrm{net}({}^6\mathrm{Li}(3,3))
-= 6.64 / 4.96 = 1.34$ — a $34\%$ pairing enhancement for even-even
+\approx 6.64 / 4.96 \approx 1.34$ — a $34\%$ pairing enhancement for even-even
 over odd-odd.
 
 This gives the algebraic formula for the **pairing correction** $I_{10}$

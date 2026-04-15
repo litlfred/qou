@@ -187,7 +187,7 @@ Each factor in $\mathcal{Q}_q$ reads geometrically:
 | $m_e / 3$ | Mass per trefoil crossing ($\mathcal{K}_e = \tau(2,3)$ has $3$ crossings) |
 | $F(\tau(k^*), N)$ | Spectral projection onto the active divisor |
 
-The ratio $\hbar_q / \ln q = 0.9496$ is the **discretisation
+The ratio $\hbar_q / \ln q \approx 0.9496$ is the **discretisation
 correction**: the exceptional divisors are $q$-spaced (discrete),
 not $e$-spaced (continuous).
 
@@ -279,7 +279,7 @@ $$
 $$
 
 where $[\cdot]$ is the Iverson bracket.  The proportion
-$F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5904 \times 0.6382 \approx 0.377$
+$F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} \approx 0.5904 \times 0.6382 \approx 0.377$
 applies to magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$
 with $N = 82$).
 

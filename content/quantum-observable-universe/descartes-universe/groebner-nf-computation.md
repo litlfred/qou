@@ -129,7 +129,7 @@ $W(\ell)$ depends on $(Z, N)$.  At the same $A$:
 The ratio $\mathrm{net}(\text{even-even}) / \mathrm{net}(\text{odd-odd})$
 at the same $A$ quantifies the **pairing energy**.  At $A = 6$:
 $\mathrm{net}({}^6\mathrm{He}(2,4)) / \mathrm{net}({}^6\mathrm{Li}(3,3))
-= 6.64 / 4.96 = 1.34$ — a $34\%$ enhancement from pairing.
+\approx 6.64 / 4.96 \approx 1.34$ — a $34\%$ enhancement from pairing.
 
 The pairing mechanism in the NF: when two same-type crossings are
 adjacent (even occupancy), their Hecke product $\sigma^2 = (q - q^{-1})
@@ -225,7 +225,7 @@ $\mathbb{Z}$ in $t = q^{1/2}$).  The denominator $2^{p_n}$ is
 tracked separately (from the doubled pn crossing convention).
 
 The $H_3(q)$ Pauli factor (from $3$-strand irrep decomposition)
-is $F_{\mathrm{Pauli}} = 0.6382$.  The $A$-strand values differ
+is $F_{\mathrm{Pauli}} \approx 0.6382$.  The $A$-strand values differ
 because they capture the full multi-generator interaction, not just
 the $3$-strand projection.
 

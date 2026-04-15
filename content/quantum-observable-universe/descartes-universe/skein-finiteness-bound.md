@@ -194,7 +194,7 @@ grows monotonically.  The crossover:
 
 The crossover occurs at $A = 5$ for all $q > 1$ (the
 $q$-correction is $O(\varepsilon^2)$ where $\varepsilon = \ln q$,
-and at $q = q_0$: $\varepsilon^2 = 0.011$, negligible).
+and at $q = q_0$: $\varepsilon^2 \approx 0.011$, negligible).
 
 **At $q = q_0$:** $[A\!-\!1]_q! > [2]_q^{A-1}$ first at
 $A = 5$.  The Skein polynomial sign flip occurs at $A = 6$
