@@ -100,7 +100,7 @@ $$
 
 Expanding gives the four terms (I)--(IV).
 
-**Verified** against explicit Hoefsmit matrix computation for all $N = Z$
+Verified against explicit Hoefsmit matrix computation for all $N = Z$
 nuclei ($T = 0$: ${}^4\mathrm{He}$, ${}^6\mathrm{Li}$, ${}^{12}\mathrm{C}$,
 ${}^{16}\mathrm{O}$) to machine precision.
 

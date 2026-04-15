@@ -101,7 +101,11 @@ acts as a Feynman path integral via the non-abelian Stokes formula,
 but because the space is finite-dimensional it naturally avoids
 standard infinities.  The embeddability bound on $\Sigma_4$ yields
 exactly $7$ transfer matrices — six non-trivial force operators
-and the identity (**interaction completeness**).
+and the identity (**interaction completeness**).  The volumes of
+the hyperbolic knots that appear — $\mathrm{Vol}(4_1)$,
+$\mathrm{Vol}(B_3)$, and others — encode the physical constants;
+understanding the arithmetic relations between these volumes is a
+question of independent interest.
 
 [Chapter 5](#chap:models-qou) examines concrete realisations of
 the QOU axioms: archimedean, $p$-adic, and finite-field models.
