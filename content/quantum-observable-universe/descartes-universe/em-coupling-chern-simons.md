@@ -68,7 +68,7 @@ and $c_i = m_i n_i$ is the crossing product.  The $q$-deformed
 version replaces $m,n$ with $[m]_q, [n]_q$ throughout.
 
 The determinant ratio $\kappa = \det G^{\mathrm{cl}} / \det G^q
-= 1.722$ captures the self-dual damping at the $J^2$ jet level.
+\approx 1.722$ captures the self-dual damping at the $J^2$ jet level.
 
 Combining: $1/\alpha \approx 136.823 + 0.212 + 0.001 \approx 137.036$.
 $\square$
