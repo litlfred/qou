@@ -40,5 +40,12 @@ export default chapter({
         "knot-operator-basis-table",
       ],
     }),
+    section({
+      title: "Quark-level knot decomposition table",
+      label: "sec:quark-level-knot-table",
+      blocks: [
+        "quark-level-knot-table",
+      ],
+    }),
   ],
 });
