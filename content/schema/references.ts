@@ -2052,6 +2052,31 @@ export const references: CSLData[] = [
     note: "arXiv:2003.02730",
     URL: "https://arxiv.org/abs/2003.02730",
   }),
+
+  // ── Hoefsmit 1974 (seminormal Hecke representations) ──────────
+  ref({
+    id: "hoefsmit1974",
+    type: "thesis",
+    title:
+      "Representations of Hecke algebras of finite groups with BN-pairs of classical type",
+    author: [{ family: "Hoefsmit", given: "Philippus Nicolaas" }],
+    publisher: "University of British Columbia",
+    issued: { "date-parts": [[1974]] },
+    genre: "PhD thesis",
+  }),
+
+  // ── Wenzl 1988 (Hecke algebra subfactors) ─────────────────────
+  ref({
+    id: "wenzl1988",
+    type: "article-journal",
+    title: "Hecke algebras of type A_n and subfactors",
+    author: [{ family: "Wenzl", given: "Hans" }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "92",
+    page: "349-383",
+    issued: { "date-parts": [[1988]] },
+    DOI: "10.1007/BF01404457",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
