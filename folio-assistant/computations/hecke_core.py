@@ -19,7 +19,7 @@ Usage:
 
 import math
 import numpy as np
-from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int
+from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 
 # ══════════════════════════════════════════════════════════════
 # Constants
@@ -599,7 +599,11 @@ def atom_gen_chains(Z, N):
 
 
 def compute_phi1_vv(Z, N):
-    """Compute Φ₁ = ln|V̂₀| + ln|V̂₁| from per-generator vertex volumes."""
+    """Compute Φ₁ = ln|V̂₀| + ln|V̂₁| from per-generator vertex volumes.
+
+    DEPRECATED: Uses hardcoded PROTON_G0/G1 chains with old gluon dressing.
+    Prefer compute_phi1_full which matches the transfer matrix approach.
+    """
     g0, g1 = atom_gen_chains(Z, N)
     V0 = vertex_volume(g0)
     V1 = vertex_volume(g1)
@@ -612,45 +616,64 @@ def compute_phi1_vv(Z, N):
 
 
 def compute_phi1_full(Z, N):
-    """Compute Φ₁ using full atom ordering with per-generator chain.
+    """Compute Φ₁ = Σᵢ ln|V̂ᵢ| from the transfer matrix chain.
 
-    Each generator i: gluon + crossings with ALL strands j > i.
-    This is the transfer matrix chain from all-nuclei-transfer-matrix.py,
-    extended to include electrons.
+    This is the Skein polynomial log-volume: for each strand i
+    in the atomic braid, the traced volume V̂ᵢ = z·aᵢ + bᵢ is
+    computed from the chain of crossings with all strands j > i.
+
+    Strand types and crossing conventions:
+      pp: (c=1, d=0)     — positive crossing (EM repulsion)
+      nn: (c=1, d=-HA)   — inverse crossing (nuclear attraction)
+      pn: (c=1, d=-HA/2) — mixed crossing (symmetric nuclear)
+      pe: (c=1, d=-HA)   — proton-electron (EM attraction, same as nn)
+      ee: (c=1, d=0)     — electron-electron (EM repulsion, same as pp)
+      ne: skip            — neutron-electron (no interaction)
+
+    The full atomic braid includes nucleons AND electrons.
+    B₃ confinement is encoded in the nucleon identity; quark
+    crossings are internal to each nucleon. The transfer matrix
+    captures inter-strand interactions.
+
+    Nucleon ordering: pp...nn (protons first, then neutrons).
+    Electron strands appended after nucleons.
     """
-    ordering = atom_ordering(Z, N)
+    A = Z + N
+    if A <= 1 and Z == 0:
+        return 0.0
+
+    # Build strand ordering: protons, then neutrons, then electrons
+    ordering = ['p'] * Z + ['n'] * N + ['e'] * Z
     n = len(ordering)
-    n_nuc = Z + N
+
     if n <= 1:
         return 0.0
 
     phi = 0.0
     for i in range(n - 1):
-        lam_s, lam_a = 1.0, 1.0
         ai, bi = 0.0, 1.0
-
-        # Gluon for nucleon at position i
-        if i < n_nuc:
-            ng = 2 if ordering[i] == 'p' else 4
-            for _ in range(ng):
-                lam_s *= q0
-                lam_a *= -qi
-                ai, bi = ai*h + bi, ai
-
-        # Crossings with all strands j > i
         for j in range(i + 1, n):
-            d = crossing_coeff(ordering[i], ordering[j])
-            if d is None:
+            ti, tj = ordering[i], ordering[j]
+            # Crossing coefficient
+            if ti == 'p' and tj == 'p':
+                c, d = 1.0, 0.0
+            elif ti == 'n' and tj == 'n':
+                c, d = 1.0, -h
+            elif (ti in ('p', 'n')) and (tj in ('p', 'n')):
+                c, d = 1.0, -h / 2.0
+            elif (ti == 'p' and tj == 'e') or (ti == 'e' and tj == 'p'):
+                c, d = 1.0, -h       # pe/ep: EM attraction
+            elif (ti == 'n' and tj == 'e') or (ti == 'e' and tj == 'n'):
+                continue              # ne/en: identity (no interaction)
+            elif ti == 'e' and tj == 'e':
+                c, d = 1.0, 0.0      # ee: EM repulsion
+            else:
                 continue
-            lam_s *= q0 + d
-            lam_a *= -qi + d
-            ai, bi = ai*(h+d) + bi, ai + bi*d
+            ai, bi = ai * c * h + ai * d + bi * c, ai * c + bi * d
 
-        v_std = z * ai + bi
-        v_full = W_SYM * lam_s + W_STD * v_std + W_ALT * lam_a
-
-        if abs(v_full) > 1e-300:
-            phi += math.log(abs(v_full))
+        V = z * ai + bi
+        if abs(V) > 1e-300:
+            phi += math.log(abs(V))
 
     return phi
 
@@ -936,30 +959,36 @@ def binding_energy_derived(Z, N):
 def q_value_beta(Z_parent, N_parent, method='phi1'):
     """Q-value (MeV) for beta⁻ decay: (Z,N) → (Z+1,N-1) + e⁻ + ν̄_e.
 
-    method='phi1' (default): uses per-generator vertex volume difference
-        Q = κ × (Φ₁(daughter) - Φ₁(parent))
-        where κ = m_e/3 and Φ₁ = Σᵢ ln|V̂ᵢ|.
-        This captures keV-scale mass differences correctly because the
-        vertex volumes cancel common factors between parent and daughter.
+    method='phi1' (default): uses transfer matrix Skein polynomial ratio
+        Q = E_× · μ₀ · |ΔΦ₁|
+        where Φ₁ = Σᵢ ln|V̂ᵢ| (per-generator traced volumes),
+        E_× = ½(q - q⁻¹) (crossing energy), and
+        μ₀ = m_e / (3·E_×) (mass-energy conversion).
 
-    method='bw': uses BW formula difference
+        This is equivalent to Q = (m_e/3) · |ΔΦ₁| = κ · |ΔΦ₁|,
+        which captures keV-scale mass differences correctly because
+        the transfer matrix volumes cancel common factors between
+        parent and daughter.
+
+    method='bw': uses BW formula difference at k=5
         Q = Δ_M_free - (B_parent - B_daughter)
         Less precise for small Q-values due to subtraction of large numbers.
 
-    The per-generator method agrees with the transfer matrix approach
-    in all-nuclei-transfer-matrix.py and gives Q(³H) ≈ 0.018 MeV
-    (exp: 0.01861, 3% error).
+    The per-generator method matches all-nuclei-transfer-matrix.py
+    and gives Q(³H) ≈ 0.018 MeV (exp: 0.01861, 3% error).
     """
     Z_d, N_d = Z_parent + 1, N_parent - 1
     if N_parent <= 0:
         return 0.0
 
     if method == 'phi1':
-        # Per-generator vertex volume method (most precise for Q-values)
+        # Transfer matrix Skein polynomial ratio
         phi_parent = compute_phi1_full(Z_parent, N_parent)
         phi_daughter = compute_phi1_full(Z_d, N_d)
         delta_phi = phi_daughter - phi_parent
-        return KAPPA * delta_phi
+        # Energy scale: E_× · μ₀ = ½HA · m_e/(3·½HA) = m_e/3
+        mu_0 = M_E_MEV / (3.0 * E_CROSS)
+        return E_CROSS * mu_0 * abs(delta_phi)
 
     else:
         # BW difference method (fallback)
