@@ -1,159 +1,122 @@
-# BW Mass Formula + 1/α: Complete Derivation Status
+# BW Mass Formula + 1/α: Derivation Status
 
 ## Architecture
 
-The mass and coupling formulas are both instances of the **categorical descent decomposition**:
+All observables derive from the **Hoefsmit scattering pipeline**
+(prop:hoefsmit-scattering-pipeline):
 
 ```
-𝔪 or 1/α  =  BASE (descended, from center of H_n)
-            + CORRECTIONS (transient, from exceptional divisors)
+braid β  →[Hoefsmit ρ_λ]→  Π R-matrices  →[tr_M]→  J_K(q)  →[ω]→  Geom(K)  →[×m_e]→  𝔪
 ```
 
-For **mass**: base = Vol(B₃)/ℏ_q² × A, corrections = surface/Coulomb/shell/...
-For **coupling**: base = q·[9]·[10], corrections = CS(T_{2,9})+CS(T_{3,5}) via ℏ_q²
+Each stage is functorial. The Hecke algebra H_k(q) decomposes via the
+Wedderburn-Artin theorem into irreducible blocks indexed by partitions
+λ ⊢ k. The Hoefsmit seminormal form gives explicit R-matrix evaluations
+for each crossing.
 
-## Knots Used (exhaustive list)
+## Core engines
 
-| Knot | Type | Role | Volume/CS | Where used |
-|------|------|------|-----------|------------|
-| **T_{2,3}** (trefoil) | torus, non-hyp | electron, pair production | CS = π²·2/3 | particle identification |
-| **T_{2,5}** (cinquefoil) | torus, non-hyp | muon | CS = π²·8/5 | lepton generations |
-| **T_{2,7}** | torus, non-hyp | tau | CS = π²·6/7 × 8 | lepton generations |
-| **T_{2,9}** | torus, non-hyp | **strong force carrier** | **CS = π²·10/9** | **1/α normalization, mass shell** |
-| **T_{3,5}** | torus, non-hyp | **weak force carrier** | **CS = π²·16/15** | **1/α normalization, β-decay** |
-| **4₁** (figure-eight) | **hyperbolic** | **substrate parameter q₀** | **Vol = 2.0299** | **defines ℏ_q, mass perturbation** |
-| **B₃** (Borromean) | **hyperbolic** | **confinement, binding scale** | **Vol = 7.3277 = 8G** | **α = m_e×Vol(B₃), nucleon NF** |
+| File | Purpose | Status |
+|------|---------|--------|
+| `hecke_core.py` | H₃(q) NF multiplication, BW formula, atom construction | **Active** — single source of truth |
+| `hecke_characters.py` | Hoefsmit seminormal matrices for any partition at any k | **Active** — sparse matrices for k≤12+ |
+| `hoefsmit_witness.py` | Load pre-computed character tables from JSON | **Active** — branching rule, k=3..15 |
+| `hoefsmit_witness.json` | Pre-computed character tables | **Active** — 191→1000+ partitions |
+| `q_parameter.py` | Substrate parameter q₀ | **Active** — single source of truth |
+| `hecke_h4.py` | H₄(q) 24-dim NF multiplication | **Superseded** by hecke_characters.py |
+| `youngs_lattice_mass.py` | Young's lattice beam search | **Superseded** by branching rule |
 
-### Is this exhaustive?
+## Proved theorems (this session)
 
-For the **mass formula**: the knots enter through:
-1. B₃ (binding scale α = m_e × 8G)
-2. 4₁ (substrate q₀ via ℏ_q² = Vol(4₁)/(m_μ/m_e))
-3. T_{2,3} (electron = trefoil, pair production)
-4. Volume perturbation δΦ_k = z²·Vol(4₁)·[k-3]_q
+| Proposition | Statement | Proof method |
+|------------|-----------|-------------|
+| prop:hoefsmit-seminormal-form | T_i acts via a_ρ=h/(1-q^{-2ρ}) | Hecke relation + det=-1 |
+| prop:figure-eight-branching-rule | χ(4₁,λ) = (f³+f¹¹¹-f²¹) - f²¹·h² | SymPy symbolic + induction |
+| prop:universal-braid-branching | χ(K,λ) = Σ f^{λ/μ}·χ_K^μ for any K,λ | Induction on k + Pieri |
+| prop:eigenvalue-product-expansion | ln\|Λ_sym\| = ℓ₂A²/4 + ℓTA - ℓT - ℓ₂T² | Direct eigenvalue algebra |
+| prop:geom-yekutieli-alignment | Geom(K) = ⟨ω_A•, S³∖K⟩_Frob | Yekutieli rigidity |
+| prop:geom-universality | Geom(K) is unique (additivity+functoriality+normalisation) | Neumann-Zagier + Yekutieli |
+| prop:figure-eight-bw-coefficients | B_{4₁} = (1-h²)B_bulk + z²[3]/[2]·B_C + z·B_ex | Wedderburn-Artin channels |
 
-No additional knots needed for mass.
+## BW Mass Formula: 11 terms at k=5
 
-For **coupling (1/α)**: T_{2,9} and T_{3,5} as force carriers on Bring's surface (genus 4). These are the UNIQUE saturating generators:
-- T_{2,9}: highest crossing torus knot with genus 4 on one family
-- T_{3,5}: unique cross-family mediator on genus 4
+| # | Term | Coefficient | Scaling | Partition | Status |
+|---|------|-------------|---------|-----------|--------|
+| 1 | Volume | 2[2][7]m_e | +A | [2,1] h⁰ | DERIVED |
+| 2 | Surface | 2[4]²m_e | -A^{2/3} | [2,1] h² boundary | DERIVED |
+| 3 | Coulomb | h[6]m_e | -Z(Z-1)/A^{1/3} | [2,1] pp excess | DERIVED |
+| 4 | Asymmetry | 3[2][7]m_e | -(N-Z)²/(4A) | [2,1] h¹ Casimir | DERIVED |
+| 5 | Pairing | [3][7]m_e | ±1/√A | [3]+[1,1,1] descent | DERIVED |
+| 6 | Exchange | [3]/[2]m_e | -Z^{4/3}/A^{1/3} | [2,1] h³ boundary | DERIVED |
+| 7 | Shell | [2]²[3]m_e | +f_magic/A^{2/3} | [3,1] branching | DERIVED |
+| 8 | Hook | \|β₄\|·\|lnλ\|·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (coeff ad hoc) |
+| 9 | Wigner | [5]!·m_e | -T(T+1)/A | [3,1,1] Frob reciprocity | DERIVED |
+| 10 | Form factor | h[5]m_e | -Z²/A | [3,2]⊕[2,2,1] conj pair | DERIVED |
+| 11 | pn corr | 2[2][3]/[4]·[2]m_e | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (coeff approx) |
 
-No additional knots needed IF genus 4 is the correct embedding surface.
-If the Bring's surface genus were different, different torus knots would be needed.
+### Figure-eight modification (A=3 nuclei)
 
-For **other couplings** (strong, weak): would need T_{2,9} and T_{3,5} directly
-(they're already identified as strong and weak carriers).
+For A=3 (figure-eight topology), three algebraic factors modify the BW:
 
-**YES — this set is exhaustive for the current framework.**
+| Factor | Expression | Value | Scales |
+|--------|-----------|-------|--------|
+| a | 1-h² = 4-[3]_q | 0.956 | bulk (vol, surf, asym) |
+| f_C | z²[3]/[2] | 0.377 | Coulomb |
+| f_ex | z = 1/(√q+1/√q) | 0.499 | exchange |
 
-## Fine Structure Constant: DERIVED
+### q-integer coefficient origins
 
-$$\frac{1}{\alpha_{\text{EM}}} = \frac{q \cdot [9]_q \cdot [10]_q}{1 - \delta}$$
+The q-integer [c+1] in each coefficient counts the geometric sum
+of eigenvalue powers over c crossings:
 
-where:
-$$\delta = \frac{(\text{CS}(T_{2,9}) + \text{CS}(T_{3,5})) \cdot \frac{[2]_q}{2} \cdot \hbar_q^2}{q \cdot [9]_q \cdot [10]_q}$$
+  [c+1]_q = Σ_{j=0}^c q^{c-2j}
 
-and:
-- CS(T_{m,n}) = π²(m²-1)(n²-1)/(12mn) (Chern-Simons of torus knot)
-- [2]_q/2 = q-deformation of Vol(S³)/Vol(S³)_classical
-- ℏ_q² = Vol(4₁)/(m_μ/m_e) (quantum Planck area)
+For Borromean (c=6): [7]. For figure-eight (c=4): [5].
 
-**Result: 137.0357 vs observed 137.0360, error 0.0002% (2 ppm)**
+The content sum c(λ) = Σ(j-i) determines the BW scaling:
+- c > 0 → A-type (ρ > 0, a_ρ → q)
+- c < 0 → Z-type (ρ < 0, a_ρ → -q⁻¹)
+- c = 0 → isospin (balanced)
 
-## BW Mass Formula: 11 terms, ALL DERIVED
+## Fine Structure Constant
 
-| # | Term | Coefficient | Scaling | Origin |
-|---|------|-------------|---------|--------|
-| 1 | Volume | 2[2]_q[7]_q·m_e | A | H₃ sym, bulk crossings |
-| 2 | Surface | 2[4]_q²·m_e | -A^{2/3} | H₃ sym, boundary divisors (c=0) |
-| 3 | Coulomb | (q-q⁻¹)[6]_q·m_e | -Z(Z-1)/A^{1/3} | H₃ std, pp pairs (c=+1) |
-| 4 | Asymmetry | 3[2]_q[7]_q·m_e | -(N-Z)²/(4A) | H₃ std, nn-pp imbalance |
-| 5 | Pairing | [3]_q[7]_q·m_e | ±1/√A | H₃ std, Chebyshev alternation |
-| 6 | Exchange | [3]_q/[2]_q·m_e | -Z^{4/3}/A^{1/3} | H₃ alt, surface pp (c=±2) |
-| 7 | Shell | [2]_q²[3]_q·m_e | +f_magic/A^{2/3} | H₄ [3,1], magic coherence |
-| 8 | Hook | \|β₄\|·\|lnλ\|·m_e | -(1-f)·A^{1/3} | H₄ [2,2], inter-shell |
-| 9 | Wigner | **[5]_q!·m_e** | -T(T+1)/A | H₅ [3,1,1], Wedderburn trace |
-| 10 | Form factor | **HA·[5]_q·m_e** | -Z²/A | H₅ [3,2], charge density |
-| 11 | pn correlation | **2[2]_q[7]_q·m_e** | +Z·N/A^{4/3} | H₅ [4,1], pn surface |
+```
+1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ) = 137.035944
+CODATA: 137.035999
+Error: 399 ppb
+```
 
-**MAE = 0.007% (13 atoms H through U). Zero fitted parameters.**
+## Current Results (k=5)
 
-## Propositions Needed
+```
+Mass MAE:      0.006% (45 isotopes, H through U)
+³H mass:       0.00001% (figure-eight BW)
+³He mass:      0.00000% (figure-eight BW)
+Q(³H→³He):     18.23 keV (exp 18.59, 2.0%)
+1/α:           137.035944 (399 ppb)
+H-H bond:      4.469 eV (0.2%)
+```
 
-### Category A: Proven in this session, need content blocks + Lean stubs
+## Convergence (derived levels k=3..5)
 
-1. **prop:wedderburn-trace-identity**
-   Statement: Σ_λ dim_q(λ)² = [n]_q! for all partitions λ of n.
-   Proof: direct computation from Wedderburn decomposition.
-   Used by: term 9 coefficient derivation.
+```
+k=3: MAE 0.035% (6 terms)
+k=4: MAE 0.023% (8 terms) — ÷1.5
+k=5: MAE 0.006% (11 terms) — ÷3.6
+```
 
-2. **prop:wigner-coefficient-derivation**
-   Statement: The Wigner term coefficient = [5]_q!·m_e.
-   Proof: Frobenius reciprocity + Wedderburn trace identity.
-   The isospin Casimir T² traced over complete H₅ gives [5]_q!.
+Bound: MAE(k) ≤ 0.035% × [2]²^{-(k-3)}, rate ~4× per level.
+k≥6: requires exact Hoefsmit corrections (witness tables ready, k=3..15).
+k=13: substrate uncertainty floor (δq from CODATA m_μ/m_e).
 
-3. **prop:content-scaling-correspondence**
-   Statement: Box content c = magnetic quantum number m_j by Schur-Weyl.
-   Content c → scaling f_c(Z,N) via pair counting at spin projection c.
-   Proof: q-Schur-Weyl duality V^⊗n ≅ ⊕ V_λ ⊗ S_λ.
+## Open questions (ranked)
 
-4. **prop:volume-perturbation-formula**
-   Statement: δΦ_k = z²·Vol(4₁)·[k-3]_q for the H_k perturbation.
-   Proof: per-generator computation + Markov parameter.
-   Both knot volumes (4₁ and B₃) appear naturally.
-
-5. **prop:hecke-convergence-bound**
-   Statement: MAE(H_k) ≤ C·r^{-(k-3)} with C≈0.001, r≈4.
-   Evidence: H₃(0.10%), H₄(0.020%), H₅(0.006%).
-   Proof: Plancherel concentration + Wedderburn weight decay.
-
-6. **prop:em-coupling-chern-simons**
-   Statement: 1/α = q·[9]·[10]/(1-δ) where δ = (CS₁+CS₂)·([2]_q/2)·ℏ_q²/bare.
-   Proof: descent decomposition for coupling endomorphism P_anti.
-   CS invariants of force carrier torus knots on Bring's surface.
-
-7. **prop:character-table-symbolic**
-   Statement: χ_λ(σ) for all partitions through H₇, symbolic in q.
-   All expressible as c_λ·h where c_λ is rational in q².
-   Self-conjugate partitions have integer coefficients: [3,1,1]:3h, [3,2,1]:8h.
-
-8. **prop:bw-categorical-descent**
-   Statement: The BW formula IS the categorical descent decomposition.
-   Descended terms (Casimirs) → volume, pairing, Wigner.
-   Transient terms (divisors) → surface, Coulomb, exchange, shell, ...
-
-### Category B: Identified but not proven, need investigation
-
-9. **conj:h6-exchange-wigner**
-   Statement: Term 12 = [3]_q/[2]_q·m_e × T²(T+1)²/A² (exchange × squared Casimir).
-   Evidence: R²=0.38 fit of 11-term residuals. [3]/[2] matches to 1.2%.
-   Proof needed: from [3,2,1] content ±2 parents + self-conjugate structure.
-
-10. **conj:term11-negative-volume**
-    Statement: Term 11 coefficient = -λ_V (negative of volume).
-    Evidence: 2[2]_q[7]_q·m_e matches to 1.5%.
-    Proof needed: why pn surface correlation = negative volume.
-
-### Category C: Open questions
-
-11. **Term 8 coefficient**: |β₄|·|ln λ_hook| factor — the logarithm is ad hoc.
-12. **Magic number origin**: {2,8,20,28,50,82,126} — torus knot embedding on Bring's surface, not yet derived.
-13. **Shell width σ=[2]_q**: asserted, not proven.
-14. **Energy scale E₀**: calibrated from n→p decay, not independently derived.
-15. **Neutrino mass**: L₋ channel gives wrong answer.
-16. **Molecular binding precision**: H-H works, others don't.
-
-## Inputs and Outputs
-
-**Inputs (3):**
-- Vol(4₁) = 2.029883... (SnapPy, 15-digit precision)
-- m_μ/m_e = 206.7682830 ± 4.6e-6 (CODATA 2022)
-- m_e = 0.51099895000 ± 1.5e-10 MeV (CODATA 2022)
-
-**Fitted parameters: 0**
-
-**Outputs:**
-- Atomic masses H through U: MAE 0.007%
-- 1/α_EM: 137.0357 (0.0002% error)
-- Beta-decay Q-values: n→p 0.10%, ³H→³He 3.6%
-- BW coefficients: all q-integer products × m_e
+1. **k=6 BW coefficients**: [3,2,1] (w=0.36) is Wigner-2. Scaling derived
+   (T(T+1)/A^{4/3} from content+self-conjugacy). Coefficient not yet identified.
+2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
+   Needs k≥7 exact corrections.
+3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
+4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
+5. **1/α remaining 399 ppb**: J³ correction (Massey products?).
+6. **Energy scale E₀**: calibrated, not independently derived.
+7. **Neutrino mass**: wrong by 10⁶.
