@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  label: "rem:quark-level-knot-table",
+  label: "rem:hadron-level-knot-table",
   title:
     "Hadron-level knot decomposition table for nucleons and atoms",
   tags: [

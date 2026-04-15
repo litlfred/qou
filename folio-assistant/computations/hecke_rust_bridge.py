@@ -37,7 +37,6 @@ _HECKE_DIR = _REPO_ROOT / "tools" / "hecke-engine"
 _HECKE_BIN = _HECKE_DIR / "target" / "release" / "hecke-engine"
 _HECKE_QVALUES = _HECKE_DIR / "target" / "release" / "hecke-qvalues"
 
-# Also check PATH
 _HECKE_BIN_PATH = None
 for candidate in [_HECKE_BIN, _HECKE_QVALUES]:
     if candidate.exists():
@@ -133,7 +132,7 @@ def compute_table(
 ) -> list[Optional[dict]]:
     """Compute Hecke data for a list of (p, n) pairs.
 
-    Uses Rust --all mode if available for batch efficiency.
+    Loops over nuclei and calls compute_nucleus for each.
     """
     results = []
     for p, n in nuclei:

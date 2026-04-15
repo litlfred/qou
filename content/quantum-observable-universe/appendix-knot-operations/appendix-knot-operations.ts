@@ -41,10 +41,10 @@ export default chapter({
       ],
     }),
     section({
-      title: "Quark-level knot decomposition table",
-      label: "sec:quark-level-knot-table",
+      title: "Hadron-level knot decomposition table",
+      label: "sec:hadron-level-knot-table",
       blocks: [
-        "quark-level-knot-table",
+        "hadron-level-knot-table",
       ],
     }),
   ],

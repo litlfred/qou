@@ -72,7 +72,7 @@ def fermi_phase_space(
     with np.errstate(over="ignore", divide="ignore"):
         F = np.where(
             np.abs(eta) > 1e-12,
-            two_pi_eta / (1.0 - np.exp(-two_pi_eta)),
+            two_pi_eta / (-np.expm1(-two_pi_eta)),
             1.0,
         )
 

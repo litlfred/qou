@@ -427,14 +427,9 @@ def build_atom_nf(Z, N):
 
     # Compose nucleon NFs sequentially
     for k in range(A):
-        if ordering[k] == 'p':
-            nucleon = PROTON_NF
-        else:
-            nucleon = NEUTRON_NF
         # Multiply: nf = nf ⊗ nucleon (via hm for each basis component)
         # This is equivalent to applying the nucleon's braid word
-        # Use the nucleon NF directly: nf_new[i] = Σ_j nf[j] * M(j,nucleon,i)
-        # For simplicity, apply the nucleon as its braid word
+        # Apply the nucleon as its braid word
         if ordering[k] == 'p':
             # B₃ confinement
             for _ in range(3):

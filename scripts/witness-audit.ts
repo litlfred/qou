@@ -86,15 +86,6 @@ function gitFileShas(filePaths: string[]): Map<string, string> {
   if (filePaths.length === 0) return result;
 
   try {
-    // Single git command: get last commit hash + filename for all files
-    const output = execSync(
-      `git log --all --format=%H --name-only -- ${filePaths.map((f) => `"${f}"`).join(" ")}`,
-      { cwd: REPO_ROOT, maxBuffer: 10 * 1024 * 1024 }
-    ).toString();
-
-    // Parse: alternating lines of commit SHA and filenames
-    // But this gives ALL commits. We need just the last per file.
-    // Better approach: one git log with --diff-filter
     const perFile = new Map<string, string>();
     for (const fp of filePaths) {
       if (!perFile.has(fp)) {
@@ -109,6 +100,7 @@ function gitFileShas(filePaths: string[]): Map<string, string> {
     ).toString();
 
     let currentCommit = "unknown";
+    let unresolvedCount = filePaths.length;
     for (const line of batchOutput.split("\n")) {
       if (line.startsWith("COMMIT ")) {
         currentCommit = line.slice(7).trim();
@@ -117,6 +109,8 @@ function gitFileShas(filePaths: string[]): Map<string, string> {
         // Only record the FIRST (most recent) commit per file
         if (perFile.has(relPath) && perFile.get(relPath) === "unknown") {
           perFile.set(relPath, currentCommit);
+          unresolvedCount--;
+          if (unresolvedCount <= 0) break;
         }
       }
     }

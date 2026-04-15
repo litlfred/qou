@@ -131,7 +131,7 @@ w.set_description(
     f"H₃(q) NF basis. Each atom is 6 coefficients (vs thousands at "
     f"quark level). Same Markov traces, nets, and Frobenius stability."
 )
-w.set_content_block("rem:quark-level-knot-table")
+w.set_content_block("rem:hadron-level-knot-table")
 w.add_parameter("q", Q)
 w.add_parameter("basis", NF_NAMES)
 w.add_parameter("n_atoms", len(ATOMS))

@@ -61,7 +61,7 @@ INFRA_SCRIPTS = {
 # ── Dependency extraction ────────────────────────────────────────
 
 _IMPORT_RE = re.compile(
-    r"^(?:from\s+([\w_]+)\s+import|import\s+([\w_]+))", re.MULTILINE
+    r"^\s*(?:from\s+([\w_]+)\s+import|import\s+([\w_]+))", re.MULTILINE
 )
 
 def _local_module_name(py_file: Path) -> str:
@@ -177,6 +177,52 @@ def _is_stale(script_name: str) -> tuple[bool, str]:
     return False, "current"
 
 
+_INFRA_HASH_FILE = COMP_DIR / ".infra-hashes.json"
+
+
+def _check_infra_staleness() -> set[str]:
+    """Check if any INFRA_SCRIPTS have changed since last recorded hashes.
+
+    Compares current file hashes against stored hashes in .infra-hashes.json.
+    Updates the stored hashes after comparison.
+
+    Returns the set of infra script filenames that have changed.
+    """
+    import hashlib
+
+    # Load stored hashes
+    stored: dict[str, str] = {}
+    if _INFRA_HASH_FILE.exists():
+        try:
+            stored = json.loads(_INFRA_HASH_FILE.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            stored = {}
+
+    current: dict[str, str] = {}
+    changed: set[str] = set()
+
+    for name in sorted(INFRA_SCRIPTS):
+        path = COMP_DIR / name
+        if not path.exists():
+            continue
+        content = path.read_text(encoding="utf-8")
+        h = hashlib.sha256(content.encode()).hexdigest()[:12]
+        current[name] = h
+        if stored.get(name) != h:
+            changed.add(name)
+
+    # Persist updated hashes
+    try:
+        _INFRA_HASH_FILE.write_text(
+            json.dumps(current, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+    except OSError:
+        pass
+
+    return changed
+
+
 def _has_content_block(script_name: str) -> Optional[str]:
     """Check if this script's witness is linked to a content block."""
     witness_path = _witness_path(script_name)
@@ -229,7 +275,7 @@ def main():
     parser.add_argument("--force", nargs="*", metavar="SCRIPT",
                         help="Force rerun of specific scripts + dependents")
     parser.add_argument("--jobs", "-j", type=int, default=1,
-                        help="Number of parallel jobs (default: 1)")
+                        help="Number of parallel jobs (default: 1, parallel not yet implemented)")
     parser.add_argument("--timeout", type=int, default=300,
                         help="Per-script timeout in seconds (default: 300)")
     parser.add_argument("--list-deps", action="store_true",
@@ -268,6 +314,9 @@ def main():
     stale = {}
     forced = set(args.force) if args.force else set()
 
+    # Check if any infra script has changed vs stored hashes
+    infra_changed = _check_infra_staleness()
+
     for script in order:
         if script in forced:
             stale[script] = "forced"
@@ -277,6 +326,15 @@ def main():
         if is_s:
             stale[script] = reason
             continue
+
+        # Propagate: if any infra dependency changed, mark stale
+        if infra_changed:
+            deps = graph.get(script, set())
+            changed_infra_deps = deps & infra_changed
+            if changed_infra_deps:
+                dep_names = ", ".join(sorted(changed_infra_deps))
+                stale[script] = f"infra dependency changed: {dep_names}"
+                continue
 
         # Propagate: if any dependency is stale, this is stale too
         deps = graph.get(script, set())

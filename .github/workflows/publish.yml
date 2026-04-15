@@ -171,6 +171,7 @@ jobs:
       - name: Regenerate stale witnesses
         continue-on-error: true
         run: |
+          set -o pipefail
           cd folio-assistant/computations
           # Refresh startup cache (Gram matrix, Wedderburn weights, BW coeffs)
           python3 hecke_startup_cache.py 2>/dev/null || true
