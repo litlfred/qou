@@ -23,7 +23,7 @@ $$
 $$
   C_{[3,2,1]}
   = \frac{[2]_q\,[4]_q\,[6]_q \cdot h}
-         {2\,[3]_q^3\,[5]_q}
+         {2\,[3]_q^2\,[5]_q}
 $$
 
 *Proof.*
@@ -140,8 +140,9 @@ $$
 where $(Z{-}N)(A{-}1) = Z(Z{-}1) - N(N{-}1)$ counts the net
 $pp$ minus $nn$ crossing asymmetry, NOT the isospin Casimir
 $T(T{+}1)$.  This is why $\chi_{[3,2,1]}$ vanishes for deuterium
-(pure $pn$) and ${}^3\mathrm{He}$ (where the $pp$ and $pn$
-crossings cancel).
+(pure $pn$) and ${}^3\mathrm{He}$ (where the single $pp$
+crossing's contribution is cancelled by the full matrix
+product structure at second order in $h$).
 
 **Remark (character structure).**
 The nuclear character $\chi_{[3,2,1]}$ has universal factor

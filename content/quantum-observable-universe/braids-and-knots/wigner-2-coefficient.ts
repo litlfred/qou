@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 /**
  * The Wigner-2 coefficient at k=6 derived from the LP dual:
- * C_{321} = w_{321} · h/2 = [2][4][6]h/(2[3]³[5]).
+ * C_{321} = w_{321} · h/2 = [2][4][6]h/(2[3]²[5]).
  *
  * The h/2 is a THEOREM about self-conjugate partitions:
  * conjugation pairs SYT T↔T' with opposite axial distances,

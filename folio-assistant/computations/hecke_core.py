@@ -252,7 +252,7 @@ DELTA_W2 = _w_321 * h / 2 * M_E_MEV              # [2][4][6]h/(2[3]³[5])·m_e �
 _dim_411 = _n6_fac / (q_int(6) * q_int(3) * q_int(2))  # dim_q([4,1,1]) = [4][5]/[2]
 _w_411 = _dim_411**2 / _n6_fac
 _tr_411 = (3 * q0**2 - 2) / (5 * q0)                    # (3q²-2)/(5q)
-DELTA_411 = 2 * _w_411 * _tr_411 * M_E_MEV               # ×2 for conjugate pair ≈ 42 keV
+DELTA_411 = _w_411 * h * M_E_MEV                          # conjugate pair: tr+tr'=h
 
 # Term 14: [4,2]+[2,2,1,1] conjugate pair
 #           tr(σ)/dim = (2q²-1)/(3q) and (q²-2)/(3q)
@@ -262,7 +262,7 @@ _dim_42 = _n6_fac / (q_int(5) * q_int(4) * q_int(2)**2)  # dim_q([4,2]) = [3][6]
 _w_42 = _dim_42**2 / _n6_fac
 _tr_42 = (2 * q0**2 - 1) / (3 * q0)                       # (2q²-1)/(3q)
 _tr_2211 = (q0**2 - 2) / (3 * q0)                          # (q²-2)/(3q)
-DELTA_42 = (_w_42 * _tr_42 + _w_42 * abs(_tr_2211)) * M_E_MEV  # ≈ 25 keV
+DELTA_42 = _w_42 * h * M_E_MEV                                 # conjugate pair: tr+tr'=h
 
 # NF basis
 NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
