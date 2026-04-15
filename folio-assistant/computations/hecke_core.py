@@ -683,34 +683,56 @@ def compute_phi1_full(Z, N):
 # ══════════════════════════════════════════════════════════════
 
 def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
-    """Compute molecular binding energy using NF multiplication.
+    """Compute molecular binding energy using per-generator Φ₁.
 
-    mol = A × (inv_trefoil)^k × B
-    binding = ln|tr(A×B)| - ln|tr(mol)|
-    E = binding × E_MOL (eV)
+    Uses the same per-generator vertex volume approach as molecular_binding_vv
+    but with the full crossing coefficient table (pp/nn/pn/pe/ee) and
+    the correct bond operator insertion at the junction between atoms.
+
+    The molecular braid has two generators (σ₀, σ₁). For each generator:
+      gen 0: atom_A crossings + bond crossings + atom_B crossings
+      gen 1: atom_A crossings + bond crossings + atom_B crossings
+
+    The bond is (T_{2,3}⁻¹)^k = (σ₀⁻¹σ₁⁻¹σ₀⁻¹)^k, which contributes:
+      gen 0: [(1,-h), (1,-h)]  per inv_trefoil (σ₀⁻¹ × 2)
+      gen 1: [(1,-h)]          per inv_trefoil (σ₁⁻¹ × 1)
+
+    Binding = Φ₁(unbonded) - Φ₁(bonded), E = binding × E_MOL.
+
+    Returns (E_eV, binding_phi, phi_ub, phi_bond).
     """
-    nf_A = build_atom_nf(Z_A, N_A)
+    # Build per-generator crossing chains for each atom
+    g0A, g1A = atom_gen_chains(Z_A, N_A)
+    g0B, g1B = atom_gen_chains(Z_B, N_B)
 
-    # Unbonded: A × B
-    nf_ub = apply_atom_nf(list(nf_A), Z_B, N_B)
-    tr_ub = nf_tr(nf_ub)
+    # Bond crossings per generator
+    bond_g0 = INV_TREFOIL_G0 * n_inv_trefoils  # [(1,-h),(1,-h)] per bond
+    bond_g1 = INV_TREFOIL_G1 * n_inv_trefoils  # [(1,-h)] per bond
 
-    # Bonded: A × T⁻¹ᵏ × B
-    nf_bond = list(nf_A)
-    for _ in range(n_inv_trefoils):
-        nf_bond = apply_inv_trefoil(nf_bond)
-    nf_bond = apply_atom_nf(nf_bond, Z_B, N_B)
-    tr_bond = nf_tr(nf_bond)
+    # Unbonded: just concatenate A + B chains (no bond crossings)
+    V0_ub = vertex_volume(g0A + g0B)
+    V1_ub = vertex_volume(g1A + g1B)
 
-    if abs(tr_ub) < 1e-300 or abs(tr_bond) < 1e-300:
-        return 0.0, 0.0, tr_ub, tr_bond
+    phi_ub = 0.0
+    if abs(V0_ub) > 1e-300:
+        phi_ub += math.log(abs(V0_ub))
+    if abs(V1_ub) > 1e-300:
+        phi_ub += math.log(abs(V1_ub))
 
-    phi_ub = math.log(abs(tr_ub))
-    phi_bond = math.log(abs(tr_bond))
+    # Bonded: A + bond + B chains
+    V0_bond = vertex_volume(g0A + bond_g0 + g0B)
+    V1_bond = vertex_volume(g1A + bond_g1 + g1B)
+
+    phi_bond = 0.0
+    if abs(V0_bond) > 1e-300:
+        phi_bond += math.log(abs(V0_bond))
+    if abs(V1_bond) > 1e-300:
+        phi_bond += math.log(abs(V1_bond))
+
     binding = phi_ub - phi_bond
     E_eV = binding * E_MOL
 
-    return E_eV, binding, tr_ub, tr_bond
+    return E_eV, binding, phi_ub, phi_bond
 
 
 def molecular_binding_vv(Z_A, N_A, Z_B, N_B, bond_g0=None, bond_g1=None):
