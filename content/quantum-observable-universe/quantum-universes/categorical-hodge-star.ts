@@ -10,4 +10,8 @@ export default definition({
   uses: ["def:higher-forms"],
   examples: ["ex:hodge-su2"],
   tags: ["hodge-star"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-hodge-star-0.svg", blockIndex: 0, hash: "20a1de92f2ef" },
+  ],
+
 });

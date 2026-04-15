@@ -7,9 +7,9 @@ The 0.0000% entries are arithmetic checks, not predictions.
 ## The ruler: $m_e$ as external scaling parameter
 
 The substrate parameter $q$ determines all dimensionless mass ratios
-($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = 206.768$), but to convert
+($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 \approx 206.768$), but to convert
 these ratios into physical MeV we need one external input:
-$m_e = 0.51099895$ MeV (CODATA 2022). This is our **ruler** ---
+$m_e \approx 0.51099895$ MeV (CODATA 2022). This is our **ruler** ---
 it fixes the absolute energy scale. Without $m_e$, QOU predicts
 ratios only.
 
@@ -22,7 +22,7 @@ to $0.75\%$.  The residual is the brane-tower correction
 (single-level vs full-tower).  Using the derived $E_0$, the
 neutron $Q$-value becomes a prediction:
 $Q_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
-(CODATA: $0.782$ MeV, $0.75\%$ error).  In this derivation
+(CODATA: $0.782$ MeV, $\boldsymbol{\varepsilon}_{Q_\beta} = 0.75\%$).  In this derivation
 the hadronic scale $E_0$ is itself derived from $Q_\beta(n)$;
 the complete framework uses three calibration inputs
 ([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
@@ -33,7 +33,7 @@ $m_\mu/m_e$, and $m_e$.
 The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 \to \hbar_q \to q_0$ yields:
 
-- **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = 206.768$
+- **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 \approx 206.768$
   (definitional, by construction).
 - **$Q$-values**: mass differences $\Delta m = \Delta\mathrm{net}
   \times E_0$ where $E_0 = Q_\mathrm{neutron}/|\Delta\mathrm{net}|
@@ -44,7 +44,7 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 
 **Genuine predictions summary** (observed vs predicted with %):
 
-| Quantity | Predicted | Observed | $\delta$ | Method |
+| Quantity | Predicted | Observed | $\boldsymbol{\varepsilon}$ | Method |
 |:---------|----------:|---------:|---------:|:-------|
 | $m_\mu/m_e$ | $206.768$ | $206.768$ | $<0.001\%$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ (by construction) |
 | $B(d)$ | $2.2329$ MeV | $2.2246$ MeV | $+0.38\%$ | $\mathrm{tr}_M$ volume integral ([derived binding](#prop:deuterium-derived-binding)) |

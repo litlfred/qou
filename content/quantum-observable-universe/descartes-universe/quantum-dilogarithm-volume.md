@@ -53,7 +53,7 @@ topological mass proof
 ([topological mass proof](#prf:topological-mass)) shows that
 each transient trace contribution evaluates to the quantum
 dilogarithm $\Phi_q(z_i)$ on the exceptional divisor $E_i$
-([quantum dilogarithm](#rem:quantum-dilogarithm)).  Summing
+([quantum dilogarithm](#cor:quantum-dilogarithm)).  Summing
 over all exceptional divisors (one per nucleon crossing) gives
 the total quantum dilogarithm volume $\Phi_q$.
 

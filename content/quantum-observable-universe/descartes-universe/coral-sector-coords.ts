@@ -11,7 +11,7 @@ export default definition({
     "rem:chirality-trefoil",
   ],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/coral-sector-coords-0.svg", blockIndex: 0, hash: "1c3e0203468f" },
+    { mime: "image/svg+xml", url: "rendered/coral-sector-coords-0.svg", blockIndex: 0, hash: "733bcd4c9cbf" },
   ],
 
 });

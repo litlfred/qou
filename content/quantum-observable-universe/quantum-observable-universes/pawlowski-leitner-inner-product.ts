@@ -12,4 +12,8 @@ export default proposition({
     "rem:adjoint-trace",
   ],
   tags: ["inner-product", "intertwiner", "orthogonality", "pawlowski-leitner"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/pawlowski-leitner-inner-product-0.svg", blockIndex: 0, hash: "e7a934af92d9" },
+  ],
+
 });

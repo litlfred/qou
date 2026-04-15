@@ -6,7 +6,7 @@ export default remark({
   title: "T-duality in color tube coordinates",
   uses: ["rem:t-duality-elliptic", "rem:color-tube-cubic"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/t-duality-color-tube-0.svg", blockIndex: 0, hash: "fc2bf421fb36" },
+    { mime: "image/svg+xml", url: "rendered/t-duality-color-tube-0.svg", blockIndex: 0, hash: "8ecfabada87c" },
   ],
 
 });

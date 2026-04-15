@@ -34,7 +34,7 @@ proton--neutron crossings.
 ## Full atom NF (with $1s^2$ shell)
 
 After adding two Hopf-linked electrons
-([helium Hopf diagram](#ex:helium-hopf-diagram)):
+([helium Hopf diagram](#rem:helium-hopf-diagram)):
 
 $$
   \mathrm{NF}(\mathcal{A}(2,2))

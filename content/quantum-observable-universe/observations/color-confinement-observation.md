@@ -50,7 +50,7 @@ is controlled by the Skein asymmetry $q - q^{-1}$:
   $[L_+] = [L_-]$, and all coefficients can be made positive.
   No confinement is needed — individual "colors" are separately
   observable.
-- At $q = q_0$ (Descartes value): $q - q^{-1} = 0.209$,
+- At $q = q_0$ (Descartes value): $q - q^{-1} \approx 0.209$,
   producing $\sim 20\%$ negativity in Skein coefficients.
   Individual quarks have negative $\tau$-evaluations — they are
   confined.
@@ -68,7 +68,7 @@ here derived from the $q$-chromaticity constraint.
 
 **Quantitative prediction.**
 
-The Skein negativity at a single crossing is $q^{-1} = 0.901$
+The Skein negativity at a single crossing is $q^{-1} \approx 0.901$
 (the antisymmetric $R$-matrix eigenvalue).  For a baryon with
 $n$ internal crossings, the probability of observing a single
 quark in isolation scales as

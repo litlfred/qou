@@ -9,10 +9,10 @@ export default remark({
     "lem:volume-from-rigidity",
   ],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/seiberg-witten-0.svg", blockIndex: 0, hash: "c74a7197e9db" },
-    { mime: "image/svg+xml", url: "rendered/seiberg-witten-1.svg", blockIndex: 1, hash: "70f466e71bad" },
-    { mime: "image/svg+xml", url: "rendered/seiberg-witten-2.svg", blockIndex: 2, hash: "d6db2b56da68" },
-    { mime: "image/svg+xml", url: "rendered/seiberg-witten-3.svg", blockIndex: 3, hash: "43dc77c4fa70" },
+    { mime: "image/svg+xml", url: "rendered/seiberg-witten-0.svg", blockIndex: 0, hash: "6313412fc189" },
+    { mime: "image/svg+xml", url: "rendered/seiberg-witten-1.svg", blockIndex: 1, hash: "9abf4e9959d9" },
+    { mime: "image/svg+xml", url: "rendered/seiberg-witten-2.svg", blockIndex: 2, hash: "eaa01e83227e" },
+    { mime: "image/svg+xml", url: "rendered/seiberg-witten-3.svg", blockIndex: 3, hash: "9a141f1c7bbd" },
   ],
 
 });

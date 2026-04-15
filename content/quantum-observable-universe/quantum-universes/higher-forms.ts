@@ -10,4 +10,8 @@ export default definition({
   },
   uses: ["def:quantum-universe"],
   examples: ["ex:higher-forms-su2"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/higher-forms-0.svg", blockIndex: 0, hash: "eee96a54ef11" },
+  ],
+
 });

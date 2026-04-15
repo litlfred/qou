@@ -31,7 +31,7 @@ $\epsilon \colon \Lambda^2 V \to \mathbf{1}$, which forces
 $\mathrm{rank}(V) = 2$: the epimorphism is non-degenerate only
 when $\Lambda^2 V$ has rank $1$, and
 $\mathrm{rank}(\Lambda^2 V) = \binom{r}{2}$ equals $1$ precisely
-for $r = 2$ (see [Remark](#rem:fundamental-object-explication)). Thus
+for $r = 2$ (see [Remark](#sec:fundamental-object-explication)). Thus
 $\tau(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \tau(V)$ has
 rank $1$. The induced operator $\Lambda^2 g_V$ acts on this rank-$1$
 module as scalar multiplication by $\det(g_V)$. Following

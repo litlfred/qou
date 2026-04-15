@@ -28,9 +28,9 @@ From the witness (`free-neutron-decay.witness.json`, typed crossings):
 
 From CODATA 2022:
 
-- $\mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} = 1.29333 \text{MeV}$
-- $\mathfrak{m}_{e} = 0.51100 \text{MeV}$
-- $Q_{\beta} = 0.78233 \text{MeV}$
+- $\mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} \approx 1.29333 \text{MeV}$
+- $\mathfrak{m}_{e} \approx 0.51100 \text{MeV}$
+- $Q_{\beta} \approx 0.78233 \text{MeV}$
 
 Therefore:
 
@@ -143,7 +143,7 @@ $$
 Beta decay pays down the neutron's leptonic debt.  With typed
 crossings, the process
 $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$
-releases $Q_\beta = 0.782 \text{MeV}$ because:
+releases $Q_\beta \approx 0.782 \text{MeV}$ because:
 
 1. The neutron's $L_+$ (Hopf link) coefficient is **negative**
    ($-0.010$) while the proton's is positive ($+0.099$).  This

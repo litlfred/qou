@@ -1,7 +1,7 @@
 The Gröbner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly
 **six terms**, one for each basis element of the Iwahori--Hecke algebra.
-With typed crossings ($u$-$u = \sigma$, $d$-$d = \sigma - (q - q^{-1})\mathbf{1}$,
-$u$-$d = \sigma - \tfrac{1}{2}(q - q^{-1})\mathbf{1}$), the sign pattern
+With typed crossings ($\mathfrak{u}$-$\mathfrak{u} = \sigma$, $\mathfrak{d}$-$\mathfrak{d} = \sigma - (q - q^{-1})\mathbf{1}$,
+$\mathfrak{u}$-$\mathfrak{d} = \sigma - \tfrac{1}{2}(q - q^{-1})\mathbf{1}$), the sign pattern
 differs between neutron and proton.  We classify each term by
 **word length** $\ell$ and **observability** — whether the
 corresponding knot/link is topologically non-trivial.
@@ -29,7 +29,7 @@ With typed crossings, the sign patterns are:
   unchanged from untyped.
 
 The neutron's $L_+$ sign flip is the key effect of typed crossings:
-the $d$-$d$ crossing in neutron $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$
+the $\mathfrak{d}$-$\mathfrak{d}$ crossing in neutron $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$
 shifts the $\sigma_0\sigma_1$ coefficient below zero.
 
 ## Observability criterion
@@ -73,7 +73,7 @@ The observable positive terms are the **Hopf links**
 $L_+ = \sigma_0\sigma_1$ (proton only) and
 $L_- = \sigma_1\sigma_0$ (both), which are bound states of
 two linked rings.  Note that $L_+$ is **negative** for the
-neutron — the typed $d$-$d$ crossing turns it into a debt.
+neutron — the typed $\mathfrak{d}$-$\mathfrak{d}$ crossing turns it into a debt.
 
 ## Where $\sigma_1$ lives: the color tube fiber
 

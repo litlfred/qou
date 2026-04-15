@@ -6,7 +6,7 @@ export default proof({
   uses: ["thm:su2-emergence"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/su2-emergence-proof-0.svg", blockIndex: 0, hash: "d24d0649617d" },
-    { mime: "image/svg+xml", url: "rendered/su2-emergence-proof-1.svg", blockIndex: 1, hash: "e6bb15a051f3" },
+    { mime: "image/svg+xml", url: "rendered/su2-emergence-proof-1.svg", blockIndex: 1, hash: "5f6ad8935773" },
   ],
 
 });

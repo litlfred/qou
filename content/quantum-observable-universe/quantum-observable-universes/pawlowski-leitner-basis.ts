@@ -13,4 +13,8 @@ export default proposition({
   ],
   examples: ["rem:adjoint-trace"],
   tags: ["basis", "intertwiner", "representation", "pawlei"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/pawlowski-leitner-basis-0.svg", blockIndex: 0, hash: "376f745000df" },
+  ],
+
 });

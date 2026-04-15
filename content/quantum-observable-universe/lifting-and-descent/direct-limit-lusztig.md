@@ -11,7 +11,7 @@ power basis $(E^{(m)}, F^{(m)}, K^{\pm 1})$ from the integral form.  This
 ensures that the quaternionic jet embedding
 ([quaternionic spectral resolvents](#def:quaternionic-spectral-resolvents)) remains robust
 under the arithmetic descent to $M_0$, with the $q$-deformed scaling
-function $\exp_q(r) - 1$ (equation [eq:q-exp](#eq:q-exp)) regulating the
+function $\exp_q(r) - 1$ ([$q$-exponential](#def:quaternionic-spectral-resolvents)) regulating the
 transition between the divided power basis of the space-like and time-like
 resolvents.
 

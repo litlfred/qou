@@ -7,8 +7,8 @@ export default remark({
   tags: ["2-group", "gauge-theory", "instanton"],
   uses: ["ex:instanton"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/self-dual-2group-0.svg", blockIndex: 0, hash: "603a995de45a" },
-    { mime: "image/svg+xml", url: "rendered/self-dual-2group-1.svg", blockIndex: 1, hash: "1e3fb1843331" },
+    { mime: "image/svg+xml", url: "rendered/self-dual-2group-0.svg", blockIndex: 0, hash: "46ca4142308c" },
+    { mime: "image/svg+xml", url: "rendered/self-dual-2group-1.svg", blockIndex: 1, hash: "82e59c50df46" },
   ],
 
 });

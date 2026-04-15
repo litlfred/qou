@@ -7,7 +7,7 @@ export default definition({
   tags: ["quantum-group", "hopf-algebra", "su2"],
   uses: [],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/quantum-su2-0.svg", blockIndex: 0, hash: "e090dbcaa151" },
+    { mime: "image/svg+xml", url: "rendered/quantum-su2-0.svg", blockIndex: 0, hash: "5308f8f2ccac" },
   ],
 
 });

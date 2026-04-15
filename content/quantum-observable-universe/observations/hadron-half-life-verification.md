@@ -142,7 +142,7 @@ $\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$
 ([EM coupling](#prop:em-coupling-projection)), all six
 half-lives agree with observation to better than $3\%$:
 
-| Nucleus | $t_{1/2}^{\mathrm{pred}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio | Error |
+| Nucleus | $t_{1/2}^{\mathrm{pred}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio | $\boldsymbol{\varepsilon}_{t_{1/2}}$ |
 |---------|:-:|:-:|:-:|:-:|
 | ${}^{3}\mathrm{H}$ | $12.28$ yr | $12.32 \pm 0.02$ yr | $0.997$ | $-0.3\%$ |
 | ${}^{14}\mathrm{C}$ | $5896$ yr | $5730 \pm 40$ yr | $1.029$ | $+2.9\%$ |
@@ -190,7 +190,7 @@ Shells unchanged by the decay contribute $F = 1$ (cancel in the
 $\mathcal{Q}$ ratio).  The product collapses to a single active
 term — the converting neutron's shell knot $T_{k^*}$.
 
-| Nucleus | $\mathcal{Q}_{\mathrm{bare}}$ | $T_{k^*}$ | $F(T_{k^*}, N)$ | $\mathcal{Q}_q^{\mathrm{pred}}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ | Error |
+| Nucleus | $\mathcal{Q}_{\mathrm{bare}}$ | $T_{k^*}$ | $F(T_{k^*}, N)$ | $\mathcal{Q}_q^{\mathrm{pred}}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ | $\boldsymbol{\varepsilon}_{\mathcal{Q}}$ |
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|
 | ${}^{3}\mathrm{H}$ | $0.01739$ | $T_{2,3}$ | $1$ | $0.01739$ | $0.01861 \pm 0.00001$ | $-6.5\%$ |
 | ${}^{14}\mathrm{C}$ | $0.14936$ | $T_{2,5}$ | $1$ | $0.14936$ | $0.15648 \pm 0.00004$ | $-4.6\%$ |
@@ -199,8 +199,8 @@ term — the converting neutron's shell knot $T_{k^*}$.
 | ${}^{137}\mathrm{Cs}$ | $1.39442$ | $T_{3,4}$ | $0.3768$ | $0.52536$ | $0.51400 \pm 0.00021$ | $+2.2\%$ |
 | ${}^{210}\mathrm{Bi}$ | $2.12100$ | $T_{2,9}$ | $0.5904$ | $1.25224$ | $1.16270 \pm 0.00006$ | $+7.7\%$ |
 
-All six nuclei within $\pm 8\%$.  Mean absolute error: $4.5\%$;
-RMS: $5.2\%$.
+All six nuclei within $\pm 8\%$. Mean $|\boldsymbol{\varepsilon}_{\mathcal{Q}}| \approx 4.5\%$;
+RMS $\approx 5.2\%$.
 
 **Degree-$1$ shells** ($N \leq 28$; active knot $\in \{T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}\}$): the knot operator gives $F = 1$
 because degree-$1$ binding is already captured by the crossing
@@ -209,14 +209,14 @@ coefficients in $\mathcal{Q}_{\mathrm{bare}}$.
 **Degree-$2$ shells, partial** ($N > 28$, $N \notin \{50,82,126\}$;
 active knot $\in \{T_{2,9}, T_{3,4}\}$): the degree-$2$ knot
 operator average suppresses $\mathcal{Q}_{\mathrm{bare}}$ by
-$F = 0.5904$, reducing the $+70$–$82\%$ overshoot to
+$F \approx 0.5904$, reducing the $+70$–$82\%$ overshoot to
 $+0.2$–$7.7\%$.
 
 **Degree-$2$ shells, full** ($N \in \{50, 82, 126\}$):
 the Pauli principle forces the fully occupied shell into
 the alternating irrep $(1,1,1)$ of $H_3(q)$.  The knot
 operator average is additionally suppressed by the
-Schur–Weyl projection: $F = 0.5904 \times 0.6382 = 0.3768$.
+Schur–Weyl projection: $F \approx 0.5904 \times 0.6382 \approx 0.3768$.
 This reduces the ${}^{137}\mathrm{Cs}$ error from $+171\%$
 to $+2.2\%$.
 

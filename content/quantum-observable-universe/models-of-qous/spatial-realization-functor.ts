@@ -13,4 +13,8 @@ export default definition({
     "def:frobenius-pairing",
     "def:categorical-reeb",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/spatial-realization-functor-0.svg", blockIndex: 0, hash: "f19d96f655ad" },
+  ],
+
 });

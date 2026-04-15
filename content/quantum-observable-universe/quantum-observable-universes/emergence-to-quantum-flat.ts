@@ -10,4 +10,8 @@ export default proposition({
   tags: ["tannaka-krein", "2-group", "instanton"],
   uses: ["rem:self-dual-2group"],
   proofs: ["prf:emergence-to-quantum-flat"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/emergence-to-quantum-flat-0.svg", blockIndex: 0, hash: "85544363cb90" },
+  ],
+
 });

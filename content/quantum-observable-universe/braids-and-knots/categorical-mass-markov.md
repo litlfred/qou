@@ -36,7 +36,7 @@ $\mathrm{tr} \mapsto \mathrm{tr}_M$ from the archimedean
 descent
 ([RJ interpretation](#rem:rj-inner-product-interpretation)),
 satisfying Markov properties I and II
-([vertex algebra relations](#rem:vertex-algebra-relations),
+([vertex algebra relations](#prop:vertex-algebra-relations),
 QU-3).
 
 **Step 2 (Nakayama automorphism = identity).**

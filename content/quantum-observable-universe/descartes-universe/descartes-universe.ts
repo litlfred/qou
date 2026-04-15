@@ -165,6 +165,7 @@ export default chapter({
         "quark-antiquark-production",
         // Knot operator selection and Frobenius Gram matrix
         "knot-operator-selection",
+        "photon-knot-operations",
         "frobenius-gram-matrix",
         // Meson, proton, neutron, stable nucleus
         "categorical-meson",

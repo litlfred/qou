@@ -30,13 +30,12 @@ over any field and reconstructs an affine group scheme. For quantum
 groups ($q \neq 1$), the appropriate extension is due to
 Woronowicz \cite{woronowicz1988}.
 
-**Where $q$ comes from.**  The deformation parameter $q$ is not
-imposed from outside. When the braiding $c_{V,V}$ on the
-fundamental object $V$ is non-symmetric ($c_{V,V}^2 \neq \mathrm{id}$),
-$q$ is the eigenvalue of $c_{V,V}$ on the symmetric summand
-$S^2 V$ — a purely categorical invariant extracted from the
-Hecke relation $(T - q)(T + q^{-1}) = 0$. Woronowicz's
-reconstruction then recovers $\mathrm{SU}_q(2)$ as
-$\mathrm{End}^{\otimes}(\tau)$ with this categorically determined
-$q$. The full derivation is given in
-[§Substrate parameter](#sec:substrate-parameter).
+**Where $q$ comes from.**  We never choose $q$ by hand. When
+the braiding $c_{V,V}$ on the fundamental object $V$ fails to be
+symmetric ($c_{V,V}^2 \neq \mathrm{id}$), $q$ emerges as the
+eigenvalue of $c_{V,V}$ on the symmetric summand $S^2 V$ — a
+purely categorical invariant extracted from the Hecke relation
+$(T - q)(T + q^{-1}) = 0$. Woronowicz's reconstruction then
+recovers $\mathrm{SU}_q(2)$ as $\mathrm{End}^{\otimes}(\tau)$
+with this categorically determined $q$. We give the full
+derivation in [§Substrate parameter](#sec:substrate-parameter).

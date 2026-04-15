@@ -5,7 +5,7 @@ export default proof({
   title: "Proof of Jacobiator of the q-Lie bracket",
   uses: ["prop:q-jacobiator"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/q-jacobiator-proof-0.svg", blockIndex: 0, hash: "1aac21e2c547" },
+    { mime: "image/svg+xml", url: "rendered/q-jacobiator-proof-0.svg", blockIndex: 0, hash: "3d61af084906" },
   ],
 
 });

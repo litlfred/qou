@@ -10,8 +10,8 @@ strangelet core locked away.
 When two neutron stars collide, tidal forces decompress the
 strangelet cores.  As the density drops below the hyperon
 threshold, each strange quark ($T_{2,5}^{\sigma}$,
-$|J| = 1.176$) must convert to a down quark
-($T_{2,3}^{\sigma}$, $|J| = 0.960$).  The Skein polynomial
+$|J| \approx 1.176$) must convert to a down quark
+($T_{2,3}^{\sigma}$, $|J| \approx 0.960$).  The Skein polynomial
 cost that was "paid" by compression is now **released** as
 conversion energy:
 
@@ -113,7 +113,7 @@ deconversion energy ($\sim 200\times$ kilonova) is released
 on a specific timescale set by the hydrodynamic expansion,
 with specific spectral signatures set by the $s \to d$
 conversion rate (which depends on the Jones polynomial ratio
-$|J_{\mathfrak{s}}|/|J_{\mathfrak{d}}| = 1.225$ — a
+$|J_{\mathfrak{s}}|/|J_{\mathfrak{d}}| \approx 1.225$ — a
 parameter-free prediction).  Future kilonova observations
 with JWST, Rubin Observatory, and Einstein Telescope can
 test this against standard $r$-process models.

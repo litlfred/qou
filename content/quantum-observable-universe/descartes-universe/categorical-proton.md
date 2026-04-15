@@ -86,7 +86,7 @@ with minimum $|\mathrm{tr}_M|$.  Among $40$ feasible
 solutions, the optimum is $\sigma_0 \to \sigma_0$: two
 bare $\sigma_0$ crossings, giving $11$ crossings total
 ($6$ B₃ + $3$ quarks + $2$ gluon) with
-$|\mathrm{tr}_M| = 0.027$.
+$|\mathrm{tr}_M| \approx 0.027$.
 
 **Step 3: proton NF (with Hopf gluon).**
 After typed crossings and Hopf link stabilisation at

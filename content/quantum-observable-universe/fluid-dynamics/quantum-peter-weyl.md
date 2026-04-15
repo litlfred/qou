@@ -86,7 +86,7 @@ $$
 
 and $\mathrm{tr}_A(\mathrm{id}_{V_j}) = [2j+1]_q$ (quantum
 dimension from the [Pawlowski--Leitner
-norm](#rem:pawlowski-leitner-inner-product)).
+norm](#prop:pawlowski-leitner-inner-product)).
 
 The result uses only Schur's lemma (which holds in
 any semisimple abelian category) and the Frobenius trace.

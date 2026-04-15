@@ -6,7 +6,7 @@ $q_0 \approx 1.110$, times the electron mass $m_e$:*
 
 *Five standard BW terms:*
 
-| Coefficient | $q$-expression | Value (MeV) | Fitted (MeV) | Error |
+| Coefficient | $q$-expression | Value (MeV) | Fitted (MeV) | $\boldsymbol{\varepsilon}$ |
 |:-----------|:-------------|:-----------|:-----------|:------|
 | $\lambda_V$ (volume) | $2[2]_q[7]_q \cdot m_e$ | $15.67$ | $15.56$ | $+0.7\%$ |
 | $\lambda_S$ (surface) | $2[4]_q^2 \cdot m_e$ | $17.26$ | $17.23$ | $+0.2\%$ |
@@ -70,7 +70,7 @@ and exact here.*
 
 *The first three BW coefficients $\lambda_V$, $\lambda_S$, $\lambda_C$
 are derivable from the per-nucleon channel product
-([per-nucleon channel decomposition](#rem:per-nucleon-channel-decomposition)).
+([per-nucleon channel decomposition](#def:per-nucleon-channel-decomposition)).
 The effective binding scale is $\alpha_{\mathrm{eff}} = m_e \times 8G
 \times [3]_q$, where $8G = \mathrm{Vol}(\mathcal{B}_3)$ is the
 Borromean link volume and $[3]_q$ is the nucleon strand count:*

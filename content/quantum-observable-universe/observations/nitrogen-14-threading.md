@@ -19,7 +19,7 @@ With $p = n = 7$, every crossing in the braid word is a
 $\mathfrak{p}$-$\mathfrak{n}$ mixed crossing.  The mixed
 crossing weight $(q + q^{-1})/2 \approx 1.005$ is the **average**
 of the positive weight $q = q_0$ and negative weight
-$q^{-1} = 0.901$.  No crossing carries the Coulomb penalty
+$q^{-1} \approx 0.901$.  No crossing carries the Coulomb penalty
 $(q - q^{-1})/2 \approx 0.105$ and no crossing carries the
 attractive excess $-(q - q^{-1})/2$.
 
@@ -54,7 +54,7 @@ crossings carry weight $q^{-1}$ instead of $(q + q^{-1})/2$:
 
 The fractional ideal volume at the converting generator
 ([generator volume decomposition](#prop:generator-volume-decomposition))
-captures this: $e(I)/e(R) = 0.1563$, matching the Q-value of
+captures this: $e(I)/e(R) \approx 0.1563$, matching the Q-value of
 $0.156$ MeV
 ([hadron half-life verification](#ex:hadron-half-life-verification)).
 

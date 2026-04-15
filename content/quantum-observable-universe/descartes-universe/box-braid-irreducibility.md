@@ -17,7 +17,7 @@ application — one Planck step.  Therefore:*
 
 The process $\gamma\gamma \to \nu\nu^{\sigma}$ has no tree-level
 realisation because photons ($K = \varnothing$,
-[photon](#ex:photon-wavefront-example)) carry no braid strands and
+[photon](#ex:photon-wavefront)) carry no braid strands and
 neutrinos ($K_{0_1}$, [neutrino](#def:neutrino-knot)) have zero
 crossing chirality $Q(\nu) = 0$.  The minimal topology is a box
 with four vertices and four internal propagators, all at brane

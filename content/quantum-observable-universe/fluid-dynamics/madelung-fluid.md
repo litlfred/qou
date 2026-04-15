@@ -1,8 +1,8 @@
 **The Madelung split.**
-Write $\psi = \sqrt{\rho}\exp(JS/\hbar_q)$ to decompose the
+We write $\psi = \sqrt{\rho}\exp(JS/\hbar_q)$ to decompose the
 [q-deformed Schrödinger equation](#rem:schrodinger-jet-coaction) into two
 real equations.  Setting $v = \nabla_A S$ and fluid density
-$\rho = |\psi|^2$:
+$\rho = |\psi|^2$, we obtain:
 
 - **Continuity:** $\partial_t \rho + \nabla_A\cdot(\rho v) = 0$.
 - **Quantum Euler equation:**
@@ -31,8 +31,8 @@ lies outside the support of all harmonic modes filtered by the
 the vacuum is the state of maximal classical certainty.
 
 **Acoustic metric and analogue gravity.**
-Perturbations $\delta\psi$ around a background flow satisfy
-$\Box_{g_{\mathrm{ac}}}\delta\psi = 0$ with the acoustic metric
+We linearize around a background flow and find that perturbations $\delta\psi$
+obey $\Box_{g_{\mathrm{ac}}}\delta\psi = 0$.  The acoustic metric takes the form
 
 $$
   g_{\mathrm{ac}}
@@ -46,7 +46,7 @@ $$
   c_s^2 = \frac{\partial P}{\partial\rho}\bigg|_{Q_q}.
 $$
 
-An acoustic horizon forms wherever $|v| = c_s$, coinciding with a
+We identify an acoustic horizon wherever $|v| = c_s$, which coincides with a
 gravitational horizon in the substrate geometry.  General relativity
 emerges as the geometry of non-uniform brane flow: the
 [GR substrate geometry](#rem:gr-substrate-geometry) is the acoustic

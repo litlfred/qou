@@ -114,7 +114,7 @@ At $q_0 \approx 1.110$:
 | ${}^{16}\mathrm{O}$ | 8 | 8 | $117.12$ | $127.62$ | $+0.070\%$ |
 | ${}^{40}\mathrm{Ca}$ | 20 | 20 | $317.38$ | $342.05$ | $+0.066\%$ |
 
-Zero fitted parameters.  Mean mass error: $0.071\%$ across
+Zero fitted parameters. Mean $|\boldsymbol{\varepsilon}_m| \approx 0.071\%$ across
 $Z = 1$ to $Z = 20$.  All coefficients derived from $q_0$
 and $m_e$.
 

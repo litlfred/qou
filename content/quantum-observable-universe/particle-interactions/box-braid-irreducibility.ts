@@ -33,4 +33,8 @@ export default proposition({
     "ex:photon-wavefront",
     "prop:reidemeister-action-table",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/box-braid-irreducibility-0.svg", blockIndex: 0, hash: "4a1d8f5cc4d7" },
+  ],
+
 });

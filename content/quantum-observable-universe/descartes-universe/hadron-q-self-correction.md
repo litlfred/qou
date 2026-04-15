@@ -118,7 +118,7 @@ the decay rate depends on $q$ with sensitivity $\approx 48$
 of $\Delta q / q_0 \sim 0.1$--$0.4\%$ produces a measurable
 change in the decay rate.
 
-For ${}^{3}\mathrm{H}$ ($A = 3$): $\Delta q_{\mathrm{eff}} = (2/9) \times \hbar_q^2 = 0.00218$, the largest correction.  This
+For ${}^{3}\mathrm{H}$ ($A = 3$): $\Delta q_{\mathrm{eff}} = (2/9) \times \hbar_q^2 \approx 0.00218$, the largest correction.  This
 is a categorical quantity: it follows from $q$, $A$, and the
 linking structure of the nuclear braid.
 

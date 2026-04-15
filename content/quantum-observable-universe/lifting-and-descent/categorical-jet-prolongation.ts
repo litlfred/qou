@@ -11,7 +11,7 @@ export default proposition({
   tags: ["jet-bundle", "frobenius-hopf", "category-theory"],
   uses: ["def:categorical-jet"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/categorical-jet-prolongation-0.svg", blockIndex: 0, hash: "4cae20680c94" },
+    { mime: "image/svg+xml", url: "rendered/categorical-jet-prolongation-0.svg", blockIndex: 0, hash: "5194c6b3a42b" },
   ],
 
 });

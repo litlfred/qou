@@ -64,13 +64,13 @@ The Hecke relation $T^2 = (q - q^{-1})T + 1$ breaks
 the symmetry between positive and negative crossings.  At $q = 1$:
 $T^2 = 1$ (positive and negative crossings cancel — parity
 conserved).  At the substrate parameter $q$:
-$T^2 = 0.209T + 1$ (the $0.209T$ term
+$T^2 \approx 0.209T + 1$ (the $0.209T$ term
 distinguishes positive from negative — parity violated).
 
 The **degree of parity violation** is controlled by:
 
 $$
-  q - q^{-1} = 0.209 \quad (\text{at } q = q_0)
+  q - q^{-1} \approx 0.209 \quad (\text{at } q = q_0)
 $$
 
 This is the same quantity that appears in the Skein amplitude
@@ -88,7 +88,7 @@ Descartes framework, this corresponds to the crossing chirality:
 - A **negative crossing** $\sigma_i^{-1}$ contributes weight
   $q^{-1}$.
 
-The ratio $q / q^{-1} = q^2 = 1.232$ measures the
+The ratio $q / q^{-1} = q^2 \approx 1.232$ measures the
 left-right asymmetry.  At $q = 1$: ratio $= 1$ (no asymmetry).
 At $q \to \infty$: ratio $\to \infty$ (maximal asymmetry).
 

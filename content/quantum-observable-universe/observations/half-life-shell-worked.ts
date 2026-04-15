@@ -19,4 +19,8 @@ export default example({
     "prop:hadron-q-self-correction",
     "prop:skein-coulomb-enhancement",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/half-life-shell-worked-0.svg", blockIndex: 0, hash: "a434e44f9b8d" },
+  ],
+
 });

@@ -207,7 +207,7 @@ $$
 The **Rydberg scaling** $E_n \propto 1/n^2$ emerges in the
 regime $\lambda_+ \approx 1 + \epsilon$ with
 $\epsilon = \lambda_+ - 1 \ll 1$.  At the substrate parameter $q$:
-$\epsilon = 0.1073$.  For low shells ($n = 1, 2, 3, \ldots$):
+$\epsilon \approx 0.1073$.  For low shells ($n = 1, 2, 3, \ldots$):
 
 $$
   \lambda_+^n \approx e^{n\epsilon}

@@ -6,7 +6,7 @@ export default remark({
   title: "Cyclotomic reduction and $C_{\\mathfrak{p}}$ preservation",
   uses: ["rem:lagrange-resolvents"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/cyclotomic-reduction-0.svg", blockIndex: 0, hash: "d2265d148681" },
+    { mime: "image/svg+xml", url: "rendered/cyclotomic-reduction-0.svg", blockIndex: 0, hash: "32c0947aa056" },
   ],
 
 });

@@ -61,7 +61,7 @@ globally regular.
 **Equivalent formulations.**
 
 1. **Contact geometry:** Does the
-   [Levi form](#rem:levi-form-defect) $\mathcal{L}_\theta$
+   [Levi form](#def:levi-form-defect) $\mathcal{L}_\theta$
    degenerate at the collision locus when $q \to 1$?
 
 2. **Representation theory:** Does the finite-dimensional

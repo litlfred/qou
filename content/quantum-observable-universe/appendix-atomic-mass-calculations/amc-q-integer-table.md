@@ -28,7 +28,7 @@ The shell correction adds binding at magic-number closures
 $\{2,8,20,28,50,82,126\}$ where torus knot $T_{2,m}$ coherence
 enhances the exceptional-divisor pairing (s-orbital effect).*
 
-| Atom | $Z$ | $N$ | $A$ | $M_{\mathrm{pred}}$ (MeV) | $M_{\mathrm{obs}}$ (MeV) | Error |
+| Atom | $Z$ | $N$ | $A$ | $M_{\mathrm{pred}}$ (MeV) | $M_{\mathrm{obs}}$ (MeV) | $\boldsymbol{\varepsilon}_m$ |
 |:-----|:---:|:---:|:---:|:---------------------|:---------------------|:------|
 | He | 2 | 2 | 4 | 3728.618 | 3728.401 | $+0.006\%$ |
 | Li | 3 | 4 | 7 | 6529.939 | 6535.367 | $-0.083\%$ |
@@ -63,7 +63,7 @@ enhances the exceptional-divisor pairing (s-orbital effect).*
 | Pb | 82 | 126 | 208 | 193576.871 | 193729.016 | $-0.079\%$ |
 | U | 92 | 146 | 238 | 221522.782 | 221742.888 | $-0.099\%$ |
 
-*Mean absolute error: $0.020\%$ (32 isotopes, He through U).*
+*Mean $|\boldsymbol{\varepsilon}_m| \approx 0.020\%$ (32 isotopes, He through U).*
 
 *Best predictions: K $+0.002\%$, Zn $-0.003\%$, Ne $-0.003\%$,
 Al $+0.003\%$, Fe $-0.003\%$, Cl $+0.003\%$.*

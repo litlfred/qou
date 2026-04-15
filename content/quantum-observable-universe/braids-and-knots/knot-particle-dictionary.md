@@ -1,7 +1,7 @@
-The localized knot framework ([Definition](#def:localized-knot)) assigns
-a topological identity to each fundamental particle.  This dictionary is
-*derived* from the categorical braiding on $V = V_{1/2}$, not postulated:
-the $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ endows
+Using the localized knot framework ([Definition](#def:localized-knot)), we
+assign a topological identity to each fundamental particle.  We *derive*
+this dictionary from the categorical braiding on $V = V_{1/2}$ rather than
+postulating it: the $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ endows
 $V^{\otimes n}$ with a faithful $B_n$-action
 ([Proposition](#prop:braid-action-tensor)), and
 $q$-Schur--Weyl duality

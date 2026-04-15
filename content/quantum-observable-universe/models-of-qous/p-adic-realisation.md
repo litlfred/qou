@@ -14,7 +14,7 @@ is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
 The observability condition
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the
 irreducibility of the associated $F$-crystal, generalising
-[irreducible connection](#lem:irreducible-connection) to the $\pp$-adic setting.
+[irreducible connection](#ex:irreducible-connection) to the $\pp$-adic setting.
 
 *Key structures.*
 

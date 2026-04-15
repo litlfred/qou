@@ -9,4 +9,8 @@ export default definition({
     "def:q-local-system",
   ],
   tags: ["geometric-langlands", "hecke-algebra", "q-deformation"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/q-hecke-operator-0.svg", blockIndex: 0, hash: "573c00e327cd" },
+  ],
+
 });
