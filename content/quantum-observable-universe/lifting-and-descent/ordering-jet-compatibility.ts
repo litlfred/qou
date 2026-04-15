@@ -12,5 +12,8 @@ export default proposition({
     "groebner",
     "time",
   ],
-  uses: ["def:direct-limit-algebra"],
+  uses: [
+    "def:direct-limit-algebra",
+    "unital-groebner-bases:def:jet-stratified-reduction",
+  ],
 });

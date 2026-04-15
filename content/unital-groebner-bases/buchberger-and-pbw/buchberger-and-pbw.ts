@@ -25,6 +25,13 @@ export default chapter({
       ],
     }),
     section({
+      title: "Jet-stratified reduction",
+      label: "sec:ugb-jet-stratified",
+      blocks: [
+        "jet-stratified-reduction",
+      ],
+    }),
+    section({
       title: "The PBW theorem over a commutative ring",
       label: "sec:ugb-pbw",
       blocks: [
