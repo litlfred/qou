@@ -828,7 +828,17 @@ def atom_mass(Z, N, method='phi1'):
     """
     M_const = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
 
-    if method == 'bw':
+    if method == 'best':
+        # Hybrid: exact NF for A≤2 (where BW fails), BW for A≥3
+        # D (A=2): derived NF gives 0.6 keV accuracy
+        # A=3+: BW with Wigner saturation
+        A = Z + N
+        if A <= 2:
+            B = binding_energy_derived(Z, N)
+        else:
+            B = binding_energy_bw(Z, N, k=5)
+        return M_const - B, -B
+    elif method == 'bw':
         B = binding_energy_bw(Z, N)
         return M_const - B, -B
     elif method == 'derived':
