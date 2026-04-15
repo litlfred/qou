@@ -40,8 +40,10 @@ theorem frobenius_self_pairing_unitary (q : ℝ) (hq : q > 1) (vol : ℝ)
     (hvol : vol > 0) :
     let hbar_q2 := (1 - 1/q) ^ 2
     (vol / hbar_q2) * (hbar_q2 / vol) = 1 := by
-  simp [div_mul_div_comm]
-  -- Ref: [yekutieli2015]
-  sorry
+  have hq_pos : q > 0 := by linarith
+  have hbar_ne : (1 - 1/q) ^ 2 ≠ 0 := by
+    apply pow_ne_zero; linarith [div_lt_one_of_lt hq hq_pos]
+  field_simp
+  ring
 
 end QOU.BraidKnot

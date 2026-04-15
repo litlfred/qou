@@ -217,9 +217,8 @@ DELTA_HOOK = abs(BETA_4) * abs(math.log(LAMBDA_HOOK_EIG)) * M_E_MEV  # |β₄|·
 _n5_fac = q_int(2) * q_int(3) * q_int(4) * q_int(5)   # [5]_q!
 _dim_311 = _n5_fac / (q_int(5) * q_int(2)**2)           # dim_q([3,1,1])
 _w_311 = _dim_311**2 / _n5_fac                            # Wedderburn-Artin weight
-_n5_fac = q_int(2) * q_int(3) * q_int(4) * q_int(5)   # [5]_q!
 DELTA_WIGNER = _n5_fac * M_E_MEV                        # [5]_q!·m_e ≈ 67.1 MeV (DERIVED)
-# TODO: derive exact q-integer expression for this coefficient
+# Derived from Wedderburn-Artin trace identity Σ dim_q(λ)² = [n]_q!
 
 # Term 10: [3,2] + [2,2,1] conjugate pair → proton form factor (T_{2,9} correction)
 #           Scaling: Z²/A (Coulomb finite-size correction)

@@ -16,7 +16,7 @@ export default proposition({
     "partition",
   ],
   lean: {
-    decl: "QOU.BraidsKnots.wedderburn_trace_identity",
+    decl: "QOU.BraidKnot.wedderburn_trace_identity",
     validation: "not_checked",
   },
   uses: [
