@@ -127,7 +127,7 @@ Set $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$
 Equal Hopf link content ($L_+ = L_- = \phi^2$) — no chirality.
 Net $= (1 + 2\phi)^2 + 2\phi^2 h$.
 Setting $E_{\mathrm{pair}} = 2m_e$ fixes
-$\phi = 0.0487$.
+$\phi \approx 0.0487$.
 
 *Circular (orthogonal) polarization.*
 Set $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$
@@ -142,7 +142,7 @@ Set $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$
 Only $L_+$ appears ($L_- = 0$) — maximally chiral Hopf content.
 No Hecke self-energy ($\varphi_0\psi_0 = \varphi_1\psi_1 = 0$).
 Net $= (1 + s)^2$.
-Setting $E_{\mathrm{pair}} = 2m_e$ fixes $s = 0.0978$.
+Setting $E_{\mathrm{pair}} = 2m_e$ fixes $s \approx 0.0978$.
 
 **Energy alignment.**
 Both models close the $1.6\%$ gap.  The color weight generates
