@@ -325,6 +325,7 @@ export default chapter({
       label: "sec:nuclear-binding-beta-stability",
       blocks: [
         "hook-weight-derivation",
+        "wigner-coefficient-derivation",
         "bw-coefficient-shadow-price",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",

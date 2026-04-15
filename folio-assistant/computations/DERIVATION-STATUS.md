@@ -145,7 +145,7 @@ ALL k=6 partition coefficients (in q-integer units, ×m_e for MeV):
 The [3,2,1] coefficient decomposes as:
   C_{321} = 0.448 × [5]! + 0.534 × h[5] + 0.534 × h[5]
           = 58.88 + 0.58 + 0.58
-          = 60.05  (98% from Wigner branching)
+          = 60.04  (98% from Wigner branching)
 
 ### Marginal correction (frontier)
 
@@ -166,7 +166,7 @@ different levels interact non-trivially.
 
 ## Open questions (ranked)
 
-1. **k=6 net correction (spectral LP)**: branching gives C_{321}=60.05,
+1. **k=6 net correction (spectral LP)**: branching gives C_{321}=60.04,
    but the net correction requires the full H_6 spectral LP to determine
    the scaling mismatch between k=5 and k=6.  The marginal is sub-MeV.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.

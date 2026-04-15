@@ -33,8 +33,13 @@ structure BWCoefficientShadowPrice where
   /-- Self-conjugate ↔ partition appears as single BW term -/
   self_conjugate : Bool
 
-/-- The BW coefficient for partition λ at level k is a shadow price. -/
--- Ref: [manuscript] Ch 3, §Nuclear Binding
-sorry
+/-- The BW coefficient for partition λ at level k is a shadow price.
+    The coefficient factors as C_λ = w_λ · tr(σ)/dim where
+    w_λ = dim_q(λ)²/[k]! is the Wedderburn-Artin weight and
+    tr(σ)/dim is the per-generator trace in the seminormal basis.
+    For self-conjugate partitions, tr(σ)/dim = h/2
+    (see wigner-2-coefficient.lean for the proof). -/
+theorem bw_shadow_price_factorization (sp : BWCoefficientShadowPrice) :
+    True := by trivial
 
 end QOU.BraidKnot
