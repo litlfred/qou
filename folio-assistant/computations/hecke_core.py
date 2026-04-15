@@ -536,21 +536,51 @@ _NEUTRON_G0, _NEUTRON_G1 = nucleon_gen_chains(['u', 'd', 'd'])
 def atom_gen_chains(Z, N):
     """Per-generator crossing chains for atom (Z, N).
 
-    Concatenates nucleon chains in pp...nn ordering (protons first),
-    then appends electron crossings on gen 1.
+    Builds the complete atomic braid crossing chains for generators
+    σ₀ and σ₁, including:
+      1. Intra-nucleon crossings (B₃ + quark pairs) — from nucleon_gen_chains
+      2. Inter-nucleon crossings between ALL nucleon pairs — on gen 0
+      3. Electron crossings (pe) — on gen 1
+
+    Nucleon ordering: pp...nn (protons first, then neutrons).
+
+    Inter-nucleon crossings (strong force, gen 0):
+      pp: (1, 0)     — positive crossing
+      nn: (1, -h)    — inverse crossing
+      pn: (1, -h/2)  — mixed crossing
 
     Returns (g0_chain, g1_chain).
     """
     g0, g1 = [], []
-    for _ in range(Z):
-        g0.extend(_PROTON_G0)
-        g1.extend(_PROTON_G1)
-    for _ in range(N):
-        g0.extend(_NEUTRON_G0)
-        g1.extend(_NEUTRON_G1)
-    # Electron crossings: pe = σ⁻¹ on gen 1
+
+    # Build nucleon ordering
+    ordering = ['p'] * Z + ['n'] * N
+
+    # 1. Intra-nucleon crossings (B₃ + quarks per nucleon)
+    for nuc_type in ordering:
+        if nuc_type == 'p':
+            g0.extend(_PROTON_G0)
+            g1.extend(_PROTON_G1)
+        else:
+            g0.extend(_NEUTRON_G0)
+            g1.extend(_NEUTRON_G1)
+
+    # 2. Inter-nucleon crossings on gen 0 (strong force channel)
+    A = Z + N
+    for i in range(A):
+        for j in range(i + 1, A):
+            ti, tj = ordering[i], ordering[j]
+            if ti == 'p' and tj == 'p':
+                g0.append((1, 0))       # pp: σ₀
+            elif ti == 'n' and tj == 'n':
+                g0.append((1, -h))      # nn: σ₀⁻¹
+            else:
+                g0.append((1, -h / 2))  # pn: mixed
+
+    # 3. Electron crossings: pe = σ⁻¹ on gen 1
     for _ in range(Z):
         g1.append((1, -h))
+
     return g0, g1
 
 
