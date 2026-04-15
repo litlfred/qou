@@ -326,6 +326,7 @@ export default chapter({
       blocks: [
         "hook-weight-derivation",
         "bw-coefficient-shadow-price",
+        "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "energy-scale-planck",
         "topological-mass-trefoil",

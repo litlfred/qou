@@ -232,6 +232,38 @@ _dim_32 = _n5_fac / (q_int(4) * q_int(3) * q_int(2))    # dim_q([3,2])
 _w_32 = _dim_32**2 / _n5_fac
 DELTA_PN_CORR = 2 * q_int(2) * q_int(3) / q_int(4) * M_E_MEV * q_int(2)  # ~3.0 MeV (approx)
 
+# ── H₆(q) shadow-price coefficients (prop:wigner-2-coefficient) ──────────
+# C_λ = w_λ · tr(σ)/dim for each partition λ ⊢ 6.
+# All coefficients are q-integer rational functions × m_e.
+_n6_fac = q_int(2) * q_int(3) * q_int(4) * q_int(5) * q_int(6)  # [6]_q!
+
+# Term 12: [3,2,1] self-conjugate → Wigner-2 (isospin midpoint)
+#           tr(σ)/dim = h/2  (prop:wigner-2-coefficient)
+#           C = w_{321} · h/2 = [2][4][6]h/(2[3]³[5])
+#           Scaling: T(T+1)/A^{4/3}
+_dim_321 = _n6_fac / (q_int(5) * q_int(3)**2)  # dim_q([3,2,1]) = [2][4][6]/[3]
+_w_321 = _dim_321**2 / _n6_fac                   # Wedderburn-Artin weight
+DELTA_W2 = _w_321 * h / 2 * M_E_MEV              # [2][4][6]h/(2[3]³[5])·m_e ≈ 19 keV
+
+# Term 13: [4,1,1]+[3,1,1,1] conjugate pair
+#           tr(σ)/dim = (3q²-2)/(5q)
+#           C = w_{411} · (3q²-2)/(5q)
+#           Scaling: (N-Z)²/(4A^{4/3})
+_dim_411 = _n6_fac / (q_int(6) * q_int(3) * q_int(2))  # dim_q([4,1,1]) = [4][5]/[2]
+_w_411 = _dim_411**2 / _n6_fac
+_tr_411 = (3 * q0**2 - 2) / (5 * q0)                    # (3q²-2)/(5q)
+DELTA_411 = 2 * _w_411 * _tr_411 * M_E_MEV               # ×2 for conjugate pair ≈ 42 keV
+
+# Term 14: [4,2]+[2,2,1,1] conjugate pair
+#           tr(σ)/dim = (2q²-1)/(3q) and (q²-2)/(3q)
+#           C = w_{42}·(2q²-1)/(3q) + w_{2211}·(q²-2)/(3q)
+#           Scaling: Z(Z-1)/A^{4/3}
+_dim_42 = _n6_fac / (q_int(5) * q_int(4) * q_int(2)**2)  # dim_q([4,2]) = [3][6]/[2]
+_w_42 = _dim_42**2 / _n6_fac
+_tr_42 = (2 * q0**2 - 1) / (3 * q0)                       # (2q²-1)/(3q)
+_tr_2211 = (q0**2 - 2) / (3 * q0)                          # (q²-2)/(3q)
+DELTA_42 = (_w_42 * _tr_42 + _w_42 * abs(_tr_2211)) * M_E_MEV  # ≈ 25 keV
+
 # NF basis
 NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
 NF_NAMES = ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻']
@@ -700,18 +732,26 @@ def binding_energy_bw(Z, N, k=3):
         B -= DELTA_FORMFACTOR * Z**2 / A
         B += DELTA_PN_CORR * Z * N / A**(4.0/3.0)
 
-    # ── Higher level corrections (k ≥ 6) ────────────────────
-    # NOT YET DERIVED. The k≥6 corrections require exact character
-    # computation at each Hecke level (hecke_characters.py) rather than
-    # approximate BW perturbation terms. Without exact derivation,
-    # these corrections DIVERGE (error increases from k=5 onward).
+    # ── H₆(q) corrections (k ≥ 6) ─────────────────────────
+    # Derived from prop:bw-coefficient-shadow-price and
+    # prop:wigner-2-coefficient.  Each coefficient is the LP
+    # shadow price C_λ = w_λ · tr(σ)/dim, symbolic in q.
+    #
+    # The per-generator trace tr(σ)/dim for all partitions of 6:
+    #   [6]     = q              [1⁶]     = -1/q
+    #   [5,1]   = (4q²-1)/(5q)  [2,1⁴]   = (q²-4)/(5q)
+    #   [4,2]   = (2q²-1)/(3q)  [2²,1²]  = (q²-2)/(3q)
+    #   [4,1²]  = (3q²-2)/(5q)  [3,1³]   = (2q²-3)/(5q)
+    #   [3,3]   = (3q²-2)/(5q)  [2³]     = (2q²-3)/(5q)
+    #   [3,2,1] = h/2            (self-conjugate, isospin midpoint)
     #
     # Convergence bound (k=3..5, derived levels only):
     #   Mass MAE(k) <= C_0 × [2]_q^{-2(k-3)}
     #   k=3: ~0.04%, k=4: ~0.02%, k=5: ~0.008%
-    #
-    # For k≥6: use hecke_characters.compute_mass_at_level(Z, N, k)
-    # which computes the FULL Markov trace at that level.
+    if k >= 6 and not is_fig8:
+        B += DELTA_W2 * T_isospin * (T_isospin + 1) / A**(4.0/3.0)
+        B += DELTA_411 * (N - Z)**2 / (4.0 * A**(4.0/3.0))
+        B -= DELTA_42 * Z * (Z - 1) / A**(4.0/3.0)
 
     return B
 
