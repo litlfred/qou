@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Divisor Visualization — Color Tubes on Brane</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap');
+:root {
+  --bg:#020710;--panel:rgba(3,10,30,0.93);--border:rgba(60,120,255,0.20);
+  --accent:#3a90ff;--accent2:#ff5533;--accent3:#33ffaa;--accent4:#ffaa33;
+  --text:#b8ccff;--dim:#3a4a78;
+}
+body.light {
+  --bg:#f0f4ff;--panel:rgba(235,240,255,0.96);--border:rgba(60,80,180,0.25);
+  --accent:#1a5fcc;--accent2:#cc3300;--accent3:#006633;--accent4:#885500;
+  --text:#1a2855;--dim:#6070a0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monospace;font-size:11px;overflow:hidden;user-select:none;}
+#canvas-wrap{position:fixed;inset:0;}
+.panel{position:absolute;background:var(--panel);border:1px solid var(--border);border-radius:3px;padding:13px;backdrop-filter:blur(18px);}
+.panel-title{font-family:'Rajdhani',sans-serif;font-weight:300;font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.sec{font-size:9px;letter-spacing:.18em;color:var(--dim);margin:10px 0 4px;}
+.row{display:grid;grid-template-columns:96px 1fr 46px;align-items:center;gap:6px;margin:4px 0;}
+.lbl{color:#6070a0;font-size:10px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:rgba(58,144,255,0.15);border-radius:2px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:9px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow:0 0 7px rgba(58,144,255,.8);}
+.val{color:var(--accent);font-size:10px;text-align:right;}
+#vis-opts{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;}
+.ck{display:flex;align-items:center;gap:4px;cursor:pointer;font-size:9px;color:var(--dim);}
+.ck input{accent-color:var(--accent);}
+#legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;}
+.leg{display:flex;align-items:center;gap:4px;font-size:9px;color:#4a5a80;}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+#info .ci-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;}
+.ci{background:rgba(58,144,255,.04);border:1px solid rgba(58,144,255,.09);border-radius:2px;padding:5px 7px;}
+.ci-lbl{color:var(--dim);font-size:8px;margin-bottom:1px;}
+.ci-val{color:var(--accent3);font-size:10px;font-weight:bold;}
+#formula{line-height:1.85;font-size:10px;}
+#formula .fr{color:rgba(255,85,51,.85);}
+#formula .fg{color:rgba(51,255,170,.85);}
+#formula .fb{color:rgba(90,120,255,.85);}
+</style>
+</head>
+<body>
+<div id="canvas-wrap"></div>
+
+<!-- CONTROLS -->
+<div class="panel" id="ctrl" style="top:14px;right:14px;width:256px;">
+  <div class="panel-title">Divisor Chart — Color Tubes</div>
+  <div class="sec">── Substrate parameter q ───────────</div>
+  <div class="row">
+    <span class="lbl">q (torsion)</span>
+    <input type="range" id="sl_q" min="0.3" max="2.5" step="0.001" value="1.1097">
+    <span class="val" id="v_q">1.110</span>
+  </div>
+  <div class="row">
+    <span class="lbl">twist rate</span>
+    <input type="range" id="sl_tw" min="0.0" max="2.0" step="0.01" value="0.50">
+    <span class="val" id="v_tw">0.50</span>
+  </div>
+  <div class="sec">── Affine chart range z ∈ P¹ ───────</div>
+  <div class="row">
+    <span class="lbl">z<sub>min</sub></span>
+    <input type="range" id="sl_zmin" min="-4" max="0" step="0.1" value="-2.0">
+    <span class="val" id="v_zmin">-2.0</span>
+  </div>
+  <div class="row">
+    <span class="lbl">z<sub>max</sub></span>
+    <input type="range" id="sl_zmax" min="0.5" max="6" step="0.1" value="3.0">
+    <span class="val" id="v_zmax">3.0</span>
+  </div>
+  <div class="sec">── Tube thickness ──────────────────</div>
+  <div class="row">
+    <span class="lbl">radius</span>
+    <input type="range" id="sl_tr" min="0.02" max="0.20" step="0.005" value="0.07">
+    <span class="val" id="v_tr">0.07</span>
+  </div>
+  <div id="vis-opts">
+    <label class="ck"><input type="checkbox" id="cb_brane" checked> Brane</label>
+    <label class="ck"><input type="checkbox" id="cb_tubes" checked> Tubes</label>
+    <label class="ck"><input type="checkbox" id="cb_div"   checked> Divisors</label>
+    <label class="ck"><input type="checkbox" id="cb_axes"  checked> Axes</label>
+    <label class="ck"><input type="checkbox" id="cb_auto"  checked> Rotate</label>
+  </div>
+  <div id="legend">
+    <div class="leg"><div class="dot" style="background:#ff4433"></div>c<sub>r</sub> = w₂−z</div>
+    <div class="leg"><div class="dot" style="background:#33ff88"></div>c<sub>g</sub> = w₃−z</div>
+    <div class="leg"><div class="dot" style="background:#3366ff"></div>c<sub>b</sub> = w₄−z</div>
+    <div class="leg"><div class="dot" style="background:#8B6914"></div>Brane P¹</div>
+  </div>
+</div>
+
+<!-- INFO -->
+<div class="panel" id="info" style="bottom:14px;left:14px;width:300px;">
+  <div class="panel-title">Fiber State</div>
+  <div class="ci-grid">
+    <div class="ci"><div class="ci-lbl">|c<sub>r</sub>|</div><div class="ci-val" id="v_cr">—</div></div>
+    <div class="ci"><div class="ci-lbl">|c<sub>g</sub>|</div><div class="ci-val" id="v_cg">—</div></div>
+    <div class="ci"><div class="ci-lbl">|c<sub>b</sub>|</div><div class="ci-val" id="v_cb">—</div></div>
+    <div class="ci"><div class="ci-lbl">q − q⁻¹</div><div class="ci-val" id="v_tor">—</div></div>
+    <div class="ci"><div class="ci-lbl">Δ(z=0)</div><div class="ci-val" id="v_disc">—</div></div>
+    <div class="ci"><div class="ci-lbl">divisors</div><div class="ci-val" id="v_ndiv">—</div></div>
+  </div>
+</div>
+
+<!-- FORMULA -->
+<div class="panel" id="formula" style="bottom:14px;right:14px;width:250px;">
+  <div class="panel-title">Brings Surface Fiber</div>
+  <span style="color:var(--dim)">t³+(1+z)t²+(1+z+z²)t</span><br>
+  <span style="color:var(--dim)">  +(1+z)(1+z²) = 0</span><br>
+  <span class="fr">c<sub>r</sub> = w₂ − z</span>  (red)<br>
+  <span class="fg">c<sub>g</sub> = w₃ − z</span>  (green)<br>
+  <span class="fb">c<sub>b</sub> = w₄ − z</span>  (blue)<br>
+  <span style="color:var(--dim)">w<sub>k</sub> = (1/√5) Σ ζ<sup>kj</sup>x<sub>j</sub></span><br>
+  <span style="color:var(--dim)">torsion = (q−q⁻¹)·z·rate</span><br>
+  <span style="color:var(--dim)">Brane = P¹(ℂ) affine chart</span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+'use strict';
+
+// ════════════════════════════════════════════════════════════════
+//   DIVISOR VISUALIZATION — Color Tubes on Brane (Brings Surface)
+//
+//   Brings surface Σ₄ → P¹(C), degree-4 cover, Aut ≅ S₅
+//   Fiber cubic: t³+(1+z)t²+(1+z+z²)t+(1+z)(1+z²)=0
+//   Color tubes: c_k = w_{k+1} − z (Lagrange resolvents, DFT)
+//   Torsion: (q − q⁻¹)·z controls twist of color fibers
+// ════════════════════════════════════════════════════════════════
+
+const TAU = 2*Math.PI, SQRT5 = Math.sqrt(5), INV5 = 1/SQRT5;
+
+// ζ = e^{2πi/5} powers (precomputed)
+const ZR = [], ZI = [];
+for(let k=0;k<5;k++){ ZR[k]=Math.cos(TAU*k/5); ZI[k]=Math.sin(TAU*k/5); }
+
+// ── Cubic solver: t³ + at² + bt + c = 0 → 3 complex roots ───
+function solveCubic(a,b,c){
+  var p = b - a*a/3;
+  var qd = 2*a*a*a/27 - a*b/3 + c;
+  var D = qd*qd/4 + p*p*p/27;
+  if(D > 1e-12){
+    var sqD=Math.sqrt(D);
+    var u=Math.cbrt(-qd/2+sqD), v=Math.cbrt(-qd/2-sqD);
+    return [[u+v-a/3, 0],
+            [-(u+v)/2-a/3, (u-v)*Math.sqrt(3)/2],
+            [-(u+v)/2-a/3,-(u-v)*Math.sqrt(3)/2]];
+  } else if(D < -1e-12){
+    var m=2*Math.sqrt(-p/3);
+    var th=Math.acos(Math.max(-1,Math.min(1, 3*qd/(p*m))))/3;
+    return [[m*Math.cos(th)-a/3,0],
+            [m*Math.cos(th-TAU/3)-a/3,0],
+            [m*Math.cos(th-2*TAU/3)-a/3,0]];
+  } else {
+    var u2=Math.cbrt(-qd/2);
+    return [[2*u2-a/3,0],[-u2-a/3,0],[-u2-a/3,0]];
+  }
+}
+
+// ── Compute color tube coords at z with q-torsion ────────────
+function colorTubes(z, q, twistRate){
+  var ca=1+z, cb=1+z+z*z, cc=(1+z)*(1+z*z);
+  var roots = solveCubic(ca, cb, cc);
+  // x₀=1, x₁=z, x₂..x₄ = roots
+  var xr=[1,z, roots[0][0],roots[1][0],roots[2][0]];
+  var xi=[0,0, roots[0][1],roots[1][1],roots[2][1]];
+
+  // DFT resolvents w_k for k=2,3,4 → color tubes
+  var tubes=[];
+  for(var k=2;k<=4;k++){
+    var sr=0,si=0;
+    for(var j=0;j<5;j++){
+      var idx=(k*j)%5;
+      sr += ZR[idx]*xr[j] - ZI[idx]*xi[j];
+      si += ZR[idx]*xi[j] + ZI[idx]*xr[j];
+    }
+    // c_k = w_k - z
+    var cr = sr*INV5 - z, ci2 = si*INV5;
+    tubes.push([cr, ci2]);
+  }
+
+  // Apply q-torsion rotation: angle = (q - 1/q) * z * twistRate
+  var torsion = (q - 1/q) * z * twistRate;
+  var cosT=Math.cos(torsion), sinT=Math.sin(torsion);
+  for(var i=0;i<3;i++){
+    var rr=tubes[i][0], ri=tubes[i][1];
+    tubes[i] = [rr*cosT - ri*sinT, rr*sinT + ri*cosT];
+  }
+  return tubes;
+}
+
+// ── THREE.js setup ───────────────────────────────────────────
+var wrap = document.getElementById('canvas-wrap');
+var renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setClearColor(0x020710);
+wrap.appendChild(renderer.domElement);
+
+var scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x020710, 0.018);
+var camera = new THREE.PerspectiveCamera(52, innerWidth/innerHeight, 0.01, 200);
+
+// Lighting
+scene.add(new THREE.AmbientLight(0x223355, 0.6));
+var dL1=new THREE.DirectionalLight(0x6688cc,1.2); dL1.position.set(5,8,6); scene.add(dL1);
+var dL2=new THREE.DirectionalLight(0xff8844,0.5); dL2.position.set(-4,2,-3); scene.add(dL2);
+
+// Stars
+(function(){
+  var sg=new THREE.BufferGeometry(), sp=new Float32Array(2400*3);
+  for(var i=0;i<sp.length;i++) sp[i]=(Math.random()-.5)*120;
+  sg.setAttribute('position',new THREE.BufferAttribute(sp,3));
+  scene.add(new THREE.Points(sg, new THREE.PointsMaterial({color:0x334488,size:.05,transparent:true,opacity:.4})));
+})();
+
+var axHelper = new THREE.AxesHelper(4);
+scene.add(axHelper);
+
+// ── Orbit camera ─────────────────────────────────────────────
+var orb={th:0.5, ph:1.0, r:9};
+function applyCam(){
+  camera.position.set(
+    orb.r*Math.sin(orb.ph)*Math.sin(orb.th),
+    orb.r*Math.cos(orb.ph),
+    orb.r*Math.sin(orb.ph)*Math.cos(orb.th));
+  camera.lookAt(0.5,0,0);
+}
+applyCam();
+
+var drag=false, pM={x:0,y:0};
+renderer.domElement.addEventListener('mousedown',function(e){drag=true;pM={x:e.clientX,y:e.clientY};});
+window.addEventListener('mouseup',function(){drag=false;});
+window.addEventListener('mousemove',function(e){
+  if(!drag) return;
+  orb.th += (e.clientX-pM.x)*.008;
+  orb.ph = Math.max(.05, Math.min(Math.PI-.05, orb.ph+(e.clientY-pM.y)*.008));
+  pM={x:e.clientX,y:e.clientY};
+  applyCam();
+});
+renderer.domElement.addEventListener('wheel',function(e){
+  orb.r=Math.max(2,Math.min(30, orb.r*(1+e.deltaY*.001)));
+  applyCam(); e.preventDefault();
+},{passive:false});
+
+// Touch support
+var touchDist=0;
+renderer.domElement.addEventListener('touchstart',function(e){
+  if(e.touches.length===1){drag=true;pM={x:e.touches[0].clientX,y:e.touches[0].clientY};}
+  if(e.touches.length===2){
+    var dx=e.touches[0].clientX-e.touches[1].clientX;
+    var dy=e.touches[0].clientY-e.touches[1].clientY;
+    touchDist=Math.sqrt(dx*dx+dy*dy);
+  }
+},{passive:true});
+renderer.domElement.addEventListener('touchmove',function(e){
+  if(e.touches.length===1&&drag){
+    var t=e.touches[0];
+    orb.th+=(t.clientX-pM.x)*.008;
+    orb.ph=Math.max(.05,Math.min(Math.PI-.05,orb.ph+(t.clientY-pM.y)*.008));
+    pM={x:t.clientX,y:t.clientY};
+    applyCam();
+  }
+  if(e.touches.length===2){
+    var dx=e.touches[0].clientX-e.touches[1].clientX;
+    var dy=e.touches[0].clientY-e.touches[1].clientY;
+    var d=Math.sqrt(dx*dx+dy*dy);
+    if(touchDist>0){orb.r=Math.max(2,Math.min(30,orb.r*(touchDist/d)));applyCam();}
+    touchDist=d;
+  }
+  e.preventDefault();
+},{passive:false});
+renderer.domElement.addEventListener('touchend',function(){drag=false;touchDist=0;});
+
+// ════════════════════════════════════════════════════════════════
+//   Build scene geometry
+// ════════════════════════════════════════════════════════════════
+
+var braneGroup = new THREE.Group();
+var tubeGroup  = new THREE.Group();
+var divGroup   = new THREE.Group();
+scene.add(braneGroup); scene.add(tubeGroup); scene.add(divGroup);
+
+function readParams(){
+  return {
+    q:    parseFloat(document.getElementById('sl_q').value),
+    tw:   parseFloat(document.getElementById('sl_tw').value),
+    zMin: parseFloat(document.getElementById('sl_zmin').value),
+    zMax: parseFloat(document.getElementById('sl_zmax').value),
+    tRad: parseFloat(document.getElementById('sl_tr').value),
+    showBrane: document.getElementById('cb_brane').checked,
+    showTubes: document.getElementById('cb_tubes').checked,
+    showDiv:   document.getElementById('cb_div').checked,
+    showAxes:  document.getElementById('cb_axes').checked,
+    autoRot:   document.getElementById('cb_auto').checked,
+  };
+}
+
+function clearGroup(g){ while(g.children.length){var c=g.children[0];g.remove(c);if(c.geometry)c.geometry.dispose();if(c.material)c.material.dispose();} }
+
+function rebuild(){
+  var P = readParams();
+  // Update display
+  document.getElementById('v_q').textContent    = P.q.toFixed(3);
+  document.getElementById('v_tw').textContent   = P.tw.toFixed(2);
+  document.getElementById('v_zmin').textContent = P.zMin.toFixed(1);
+  document.getElementById('v_zmax').textContent = P.zMax.toFixed(1);
+  document.getElementById('v_tr').textContent   = P.tRad.toFixed(3);
+
+  clearGroup(braneGroup); clearGroup(tubeGroup); clearGroup(divGroup);
+  axHelper.visible = P.showAxes;
+
+  var NZ = 400;   // samples along z
+  var dz = (P.zMax - P.zMin)/NZ;
+
+  // ── Compute color tube curves ────────────────────────────
+  var curves = [[],[],[]]; // three arrays of Vector3
+  var mags   = [[],[],[]]; // magnitudes for brane profile
+  var allTubes = [];       // raw complex values
+
+  for(var i=0;i<=NZ;i++){
+    var z = P.zMin + i*dz;
+    var tubes = colorTubes(z, P.q, P.tw);
+    allTubes.push(tubes);
+    for(var k=0;k<3;k++){
+      var re=tubes[k][0], im=tubes[k][1];
+      var mag=Math.sqrt(re*re+im*im);
+      var arg=Math.atan2(im,re);
+      // 3D cylindrical: x=z, y=mag*cos(arg), z_3d=mag*sin(arg)
+      curves[k].push(new THREE.Vector3(z, mag*Math.cos(arg), mag*Math.sin(arg)));
+      mags[k].push(mag);
+    }
+  }
+
+  // ── Brane surface (brown surface of revolution) ──────────
+  if(P.showBrane){
+    var NTH = 48; // angular resolution
+    var braneR = []; // radius profile = min of the three tube magnitudes * 0.6
+    for(var i=0;i<=NZ;i++){
+      var mn = Math.min(mags[0][i], mags[1][i], mags[2][i]);
+      var avg = (mags[0][i]+mags[1][i]+mags[2][i])/3;
+      braneR.push(avg * 0.55);
+    }
+
+    var nV = (NZ+1)*(NTH+1);
+    var pos = new Float32Array(nV*3);
+    var nrm = new Float32Array(nV*3);
+    for(var i=0;i<=NZ;i++){
+      var z = P.zMin + i*dz;
+      var r = braneR[i];
+      for(var j=0;j<=NTH;j++){
+        var th = j*TAU/NTH;
+        var vi = i*(NTH+1)+j;
+        pos[vi*3]   = z;
+        pos[vi*3+1] = r*Math.cos(th);
+        pos[vi*3+2] = r*Math.sin(th);
+        // approximate normal (radial outward)
+        nrm[vi*3]   = 0;
+        nrm[vi*3+1] = Math.cos(th);
+        nrm[vi*3+2] = Math.sin(th);
+      }
+    }
+    var idx=[];
+    for(var i=0;i<NZ;i++) for(var j=0;j<NTH;j++){
+      var a=i*(NTH+1)+j, b=a+1, c=(i+1)*(NTH+1)+j, d=c+1;
+      idx.push(a,c,b, b,c,d);
+    }
+    var bg = new THREE.BufferGeometry();
+    bg.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    bg.setAttribute('normal', new THREE.BufferAttribute(nrm,3));
+    bg.setIndex(idx);
+    var bMat = new THREE.MeshPhongMaterial({
+      color:0x8B6914, transparent:true, opacity:0.35,
+      side:THREE.DoubleSide, shininess:40,
+      specular:new THREE.Color(0.3,0.2,0.1)
+    });
+    braneGroup.add(new THREE.Mesh(bg, bMat));
+
+    // Wireframe overlay
+    var wg = new THREE.WireframeGeometry(bg);
+    var wm = new THREE.LineBasicMaterial({color:0x8B6914, transparent:true, opacity:0.12});
+    braneGroup.add(new THREE.LineSegments(wg, wm));
+  }
+
+  // ── Color tube geometry (TubeGeometry from curves) ───────
+  var TUBE_COLORS = [0xff4433, 0x33ff88, 0x3366ff];
+  if(P.showTubes){
+    for(var k=0;k<3;k++){
+      if(curves[k].length < 2) continue;
+      var path = new THREE.CatmullRomCurve3(curves[k], false, 'catmullrom', 0.5);
+      var tg = new THREE.TubeGeometry(path, Math.min(curves[k].length, 300), P.tRad, 8, false);
+      var tm = new THREE.MeshPhongMaterial({
+        color:TUBE_COLORS[k], shininess:80,
+        specular:new THREE.Color(0.4,0.4,0.4),
+        transparent:true, opacity:0.85
+      });
+      tubeGroup.add(new THREE.Mesh(tg, tm));
+    }
+  }
+
+  // ── Divisor markers: where tubes cross the brane surface ─
+  // A tube crosses the brane when |c_k| ≈ braneR at that z
+  if(P.showDiv){
+    var divCount = 0;
+    var braneR2 = [];
+    for(var i=0;i<=NZ;i++){
+      var avg = (mags[0][i]+mags[1][i]+mags[2][i])/3;
+      braneR2.push(avg * 0.55);
+    }
+    for(var k=0;k<3;k++){
+      for(var i=1;i<=NZ;i++){
+        var diff0 = mags[k][i-1] - braneR2[i-1];
+        var diff1 = mags[k][i]   - braneR2[i];
+        // Sign change = crossing
+        if(diff0*diff1 < 0){
+          // Interpolate crossing point
+          var t = Math.abs(diff0)/(Math.abs(diff0)+Math.abs(diff1));
+          var pt = new THREE.Vector3().lerpVectors(curves[k][i-1], curves[k][i], t);
+          var sg = new THREE.SphereGeometry(0.10, 12, 12);
+          var sm = new THREE.MeshPhongMaterial({
+            color:0xffffff, emissive:TUBE_COLORS[k], emissiveIntensity:0.6
+          });
+          var sph = new THREE.Mesh(sg, sm);
+          sph.position.copy(pt);
+          divGroup.add(sph);
+          divCount++;
+        }
+      }
+      // Also mark closest-approach points (local minima of |c_k|)
+      for(var i=1;i<NZ;i++){
+        if(mags[k][i] < mags[k][i-1] && mags[k][i] < mags[k][i+1] && mags[k][i] < 0.3){
+          var sg2 = new THREE.SphereGeometry(0.06, 8, 8);
+          var sm2 = new THREE.MeshPhongMaterial({
+            color:TUBE_COLORS[k], emissive:TUBE_COLORS[k], emissiveIntensity:0.8,
+            transparent:true, opacity:0.9
+          });
+          var sph2 = new THREE.Mesh(sg2, sm2);
+          sph2.position.copy(curves[k][i]);
+          divGroup.add(sph2);
+          divCount++;
+        }
+      }
+    }
+    document.getElementById('v_ndiv').textContent = divCount;
+  }
+
+  // ── Update info panel ──────────────────────────────────────
+  var mid = colorTubes(0, P.q, P.tw);
+  document.getElementById('v_cr').textContent = Math.sqrt(mid[0][0]*mid[0][0]+mid[0][1]*mid[0][1]).toFixed(3);
+  document.getElementById('v_cg').textContent = Math.sqrt(mid[1][0]*mid[1][0]+mid[1][1]*mid[1][1]).toFixed(3);
+  document.getElementById('v_cb').textContent = Math.sqrt(mid[2][0]*mid[2][0]+mid[2][1]*mid[2][1]).toFixed(3);
+  document.getElementById('v_tor').textContent = (P.q - 1/P.q).toFixed(4);
+
+  // Discriminant at z=0
+  var p0 = 2/3, q0 = 20/27;
+  var D0 = q0*q0/4 + p0*p0*p0/27;
+  document.getElementById('v_disc').textContent = (-108*D0).toFixed(2);
+}
+
+// ── Slider event wiring ──────────────────────────────────────
+var sliders = document.querySelectorAll('input[type=range], input[type=checkbox]');
+for(var i=0;i<sliders.length;i++) sliders[i].addEventListener('input', rebuild);
+
+// ── Animation loop ───────────────────────────────────────────
+var clock = new THREE.Clock();
+function animate(){
+  requestAnimationFrame(animate);
+  if(document.getElementById('cb_auto').checked){
+    orb.th += 0.003;
+    applyCam();
+  }
+  renderer.render(scene, camera);
+}
+
+// ── Resize ───────────────────────────────────────────────────
+window.addEventListener('resize', function(){
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+// ── Theme sync with viewer ───────────────────────────────────
+(function(){
+  function syncTheme(isLight){
+    if(isLight) document.body.classList.add('light');
+    else document.body.classList.remove('light');
+    renderer.setClearColor(isLight ? 0xf0f4ff : 0x020710);
+    if(scene.fog) scene.fog.color.set(isLight ? 0xf0f4ff : 0x020710);
+  }
+  var p = new URLSearchParams(location.search);
+  syncTheme(p.get('theme')==='light');
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.type==='folio-theme') syncTheme(e.data.theme==='light');
+  });
+  // Apply URL params
+  if(p.get('q'))    document.getElementById('sl_q').value = p.get('q');
+  if(p.get('zMin')) document.getElementById('sl_zmin').value = p.get('zMin');
+  if(p.get('zMax')) document.getElementById('sl_zmax').value = p.get('zMax');
+})();
+
+// ── Init ─────────────────────────────────────────────────────
+rebuild();
+animate();
+
+})();
+</script>
+</body>
+</html>
