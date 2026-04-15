@@ -82,11 +82,10 @@ function gitHeadSha(): string {
  * Single `git log` call instead of one per file (~20x faster).
  */
 function gitFileShas(filePaths: string[]): Map<string, string> {
-  const result = new Map<string, string>();
-  if (filePaths.length === 0) return result;
+  const perFile = new Map<string, string>();
+  if (filePaths.length === 0) return perFile;
 
   try {
-    const perFile = new Map<string, string>();
     for (const fp of filePaths) {
       if (!perFile.has(fp)) {
         perFile.set(fp, "unknown");

@@ -19,7 +19,7 @@ Usage:
 Output:
     hadron-knot-table.witness.json
 
-Content block: rem:quark-level-knot-table
+Content block: rem:hadron-level-knot-table
 """
 
 import math
