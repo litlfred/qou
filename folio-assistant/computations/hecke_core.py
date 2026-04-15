@@ -619,7 +619,13 @@ def binding_energy_bw(Z, N, k=3):
 
     if k >= 5:
         T_isospin = abs(N - Z) / 2.0
-        B -= DELTA_WIGNER * T_isospin * (T_isospin + 1) / A
+        # Wigner with saturation for A ≤ 4:
+        # The BW scaling T(T+1)/A assumes a nuclear medium (A >> 1).
+        # For A ≤ 4, the scaling overcorrects because there's no bulk.
+        # Saturation: replace 1/A with 1/max(A, A_sat) where A_sat = [2]_q²
+        # [2]_q² ≈ 4.04 — the quantum pairing threshold.
+        A_eff_wigner = max(A, q_int(2)**2)
+        B -= DELTA_WIGNER * T_isospin * (T_isospin + 1) / A_eff_wigner
         B -= DELTA_FORMFACTOR * Z**2 / A
         B += DELTA_PN_CORR * Z * N / A**(4.0/3.0)
 
@@ -640,6 +646,21 @@ def binding_energy_bw(Z, N, k=3):
             B += delta * 0.02 / A**(1.0/3.0)
 
     return B
+
+
+def binding_energy_physical(Z, N, k=5):
+    """Physical binding including QED correction and q-torsion.
+
+    M_phys = M_free - B_BW × (1 - α/2 - ∂α/∂q × ℏ²/2)
+
+    The (1-α/2) is the one-loop QED correction.
+    The ∂α/∂q × ℏ²/2 is the q-torsion from J²(A).
+    """
+    B = binding_energy_bw(Z, N, k=k)
+    # QED: virtual photon exchange reduces binding
+    # q-torsion: shared q-dependence of strong and EM sectors
+    _dalpha_dq = -0.04506  # ∂α/∂q at q₀
+    return B * (1.0 - alpha_em / 2.0 - _dalpha_dq * _hbar_q2 / 2.0)
 
 
 def build_nucleon_nf(quarks):
