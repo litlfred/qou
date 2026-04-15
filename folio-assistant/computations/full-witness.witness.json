@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T22:23:52.917837+00:00",
-  "commitSha": "9c7af975ec8405b4f0c3f93dc70cfb8fe2d81ce6",
+  "computedAt": "2026-04-15T13:13:58.207280+00:00",
+  "commitSha": "c7f24117de39ad9f39b27c9d354b276d05c12b65",
   "assertions": [
     {
       "name": "H",
@@ -15,7 +15,7 @@
     },
     {
       "name": "He",
-      "computed": 3727.238,
+      "computed": 3733.665,
       "expected": 3727.379,
       "passed": true,
       "tolerance": 18.636895,
@@ -24,7 +24,7 @@
     },
     {
       "name": "Li",
-      "computed": 6535.205,
+      "computed": 6532.806,
       "expected": 6533.833,
       "passed": true,
       "tolerance": 32.669165,
@@ -33,7 +33,7 @@
     },
     {
       "name": "Be",
-      "computed": 8395.062,
+      "computed": 8393.555,
       "expected": 8392.751,
       "passed": true,
       "tolerance": 41.963755,
@@ -42,7 +42,7 @@
     },
     {
       "name": "B",
-      "computed": 10254.501,
+      "computed": 10253.945,
       "expected": 10252.548,
       "passed": true,
       "tolerance": 51.26274000000001,
@@ -51,7 +51,7 @@
     },
     {
       "name": "C",
-      "computed": 11177.802,
+      "computed": 11181.713,
       "expected": 11174.863,
       "passed": true,
       "tolerance": 55.874314999999996,
@@ -60,7 +60,7 @@
     },
     {
       "name": "N",
-      "computed": 13044.23,
+      "computed": 13048.669,
       "expected": 13040.204,
       "passed": true,
       "tolerance": 65.20102,
@@ -69,7 +69,7 @@
     },
     {
       "name": "O",
-      "computed": 14898.12,
+      "computed": 14902.764,
       "expected": 14895.081,
       "passed": true,
       "tolerance": 74.47540500000001,
@@ -78,7 +78,7 @@
     },
     {
       "name": "F",
-      "computed": 17692.535,
+      "computed": 17694.006,
       "expected": 17692.302,
       "passed": true,
       "tolerance": 88.46151,
@@ -87,7 +87,7 @@
     },
     {
       "name": "Ne",
-      "computed": 18619.872,
+      "computed": 18623.358,
       "expected": 18617.73,
       "passed": true,
       "tolerance": 93.08865,
@@ -96,12 +96,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "full-witness",
   "scriptFile": "full-witness.py",
-  "scriptHash": "6097b653f6cd",
-  "scriptCommitSha": "03cd48690ead4a0aea2ad95247e3b52000eb8488",
-  "description": "Full witness: atomic masses (7-term q-integer BW, 0.042% MAE), molecular binding (NF + vertex volume), beta decay Q-values. All using hecke_core.py infrastructure. Zero fitted parameters.",
+  "scriptHash": "f3eee989ce1c",
+  "scriptCommitSha": "b94f4715774e14b0481ecb950f452dc33570cdc4",
+  "description": "Full witness: atomic masses (6-term q-integer BW, k=3 H₃(q)), molecular binding (NF + vertex volume), beta decay Q-values. All using hecke_core.py infrastructure. Zero fitted parameters.",
   "contentBlock": "prop:q-integer-mass-formula",
   "parameters": {
     "q": 1.1099785955541805,
@@ -110,10 +110,10 @@
     "LAMBDA_C_MeV": 0.6824367768318278,
     "A_ASYM_MeV": 23.50663140039128,
     "DELTA_P_MeV": 11.859928648717453,
-    "E_MOL_eV": 6.750278523641413
+    "E_MOL_eV": 6.729337493682183
   },
   "data": {
-    "mass_mae_pct": 0.036105882352941175,
+    "mass_mae_pct": 0.04565588235294119,
     "masses": [
       {
         "atom": "H",
@@ -127,358 +127,358 @@
         "atom": "He",
         "Z": 2,
         "N": 2,
-        "M_pred": 3727.238,
+        "M_pred": 3733.665,
         "M_obs": 3727.379,
-        "err_pct": -0.0038
+        "err_pct": 0.1687
       },
       {
         "atom": "Li",
         "Z": 3,
         "N": 4,
-        "M_pred": 6535.205,
+        "M_pred": 6532.806,
         "M_obs": 6533.833,
-        "err_pct": 0.021
+        "err_pct": -0.0157
       },
       {
         "atom": "Be",
         "Z": 4,
         "N": 5,
-        "M_pred": 8395.062,
+        "M_pred": 8393.555,
         "M_obs": 8392.751,
-        "err_pct": 0.0275
+        "err_pct": 0.0096
       },
       {
         "atom": "B",
         "Z": 5,
         "N": 6,
-        "M_pred": 10254.501,
+        "M_pred": 10253.945,
         "M_obs": 10252.548,
-        "err_pct": 0.019
+        "err_pct": 0.0136
       },
       {
         "atom": "C",
         "Z": 6,
         "N": 6,
-        "M_pred": 11177.802,
+        "M_pred": 11181.713,
         "M_obs": 11174.863,
-        "err_pct": 0.0263
+        "err_pct": 0.0613
       },
       {
         "atom": "N",
         "Z": 7,
         "N": 7,
-        "M_pred": 13044.23,
+        "M_pred": 13048.669,
         "M_obs": 13040.204,
-        "err_pct": 0.0309
+        "err_pct": 0.0649
       },
       {
         "atom": "O",
         "Z": 8,
         "N": 8,
-        "M_pred": 14898.12,
+        "M_pred": 14902.764,
         "M_obs": 14895.081,
-        "err_pct": 0.0204
+        "err_pct": 0.0516
       },
       {
         "atom": "F",
         "Z": 9,
         "N": 10,
-        "M_pred": 17692.535,
+        "M_pred": 17694.006,
         "M_obs": 17692.302,
-        "err_pct": 0.0013
+        "err_pct": 0.0096
       },
       {
         "atom": "Ne",
         "Z": 10,
         "N": 10,
-        "M_pred": 18619.872,
+        "M_pred": 18623.358,
         "M_obs": 18617.73,
-        "err_pct": 0.0115
+        "err_pct": 0.0302
       },
       {
         "atom": "Na",
         "Z": 11,
         "N": 12,
-        "M_pred": 21413.287,
+        "M_pred": 21413.869,
         "M_obs": 21409.214,
-        "err_pct": 0.019
+        "err_pct": 0.0217
       },
       {
         "atom": "Mg",
         "Z": 12,
         "N": 12,
-        "M_pred": 22341.592,
+        "M_pred": 22343.869,
         "M_obs": 22335.793,
-        "err_pct": 0.026
+        "err_pct": 0.0362
       },
       {
         "atom": "Al",
         "Z": 13,
         "N": 14,
-        "M_pred": 25133.448,
+        "M_pred": 25133.911,
         "M_obs": 25126.501,
-        "err_pct": 0.0276
+        "err_pct": 0.0295
       },
       {
         "atom": "Si",
         "Z": 14,
         "N": 14,
-        "M_pred": 26062.459,
+        "M_pred": 26064.506,
         "M_obs": 26053.188,
-        "err_pct": 0.0356
+        "err_pct": 0.0434
       },
       {
         "atom": "P",
         "Z": 15,
         "N": 16,
-        "M_pred": 28853.346,
+        "M_pred": 28854.244,
         "M_obs": 28844.211,
-        "err_pct": 0.0317
+        "err_pct": 0.0348
       },
       {
         "atom": "S",
         "Z": 16,
         "N": 16,
-        "M_pred": 29783.021,
+        "M_pred": 29785.396,
         "M_obs": 29773.619,
-        "err_pct": 0.0316
+        "err_pct": 0.0396
       },
       {
         "atom": "Cl",
         "Z": 17,
         "N": 18,
-        "M_pred": 32572.92,
+        "M_pred": 32574.943,
         "M_obs": 32564.593,
-        "err_pct": 0.0256
+        "err_pct": 0.0318
       },
       {
         "atom": "Ar",
         "Z": 18,
         "N": 22,
-        "M_pred": 37221.347,
+        "M_pred": 37215.783,
         "M_obs": 37215.526,
-        "err_pct": 0.0156
+        "err_pct": 0.0007
       },
       {
         "atom": "K",
         "Z": 19,
         "N": 20,
-        "M_pred": 36292.762,
+        "M_pred": 36296.059,
         "M_obs": 36284.754,
-        "err_pct": 0.0221
+        "err_pct": 0.0312
       },
       {
         "atom": "Ca",
         "Z": 20,
         "N": 20,
-        "M_pred": 37223.794,
+        "M_pred": 37228.243,
         "M_obs": 37214.698,
-        "err_pct": 0.0244
+        "err_pct": 0.0364
       },
       {
         "atom": "Sc",
         "Z": 21,
         "N": 24,
-        "M_pred": 41872.963,
+        "M_pred": 41871.55,
         "M_obs": 41862.228,
-        "err_pct": 0.0256
+        "err_pct": 0.0223
       },
       {
         "atom": "Ti",
         "Z": 22,
         "N": 26,
-        "M_pred": 44661.727,
+        "M_pred": 44657.816,
         "M_obs": 44563.636,
-        "err_pct": 0.2201
+        "err_pct": 0.2113
       },
       {
         "atom": "V",
         "Z": 23,
         "N": 28,
-        "M_pred": 47454.329,
+        "M_pred": 47447.637,
         "M_obs": 47449.459,
-        "err_pct": 0.0103
+        "err_pct": -0.0038
       },
       {
         "atom": "Cr",
         "Z": 24,
         "N": 28,
-        "M_pred": 48382.902,
+        "M_pred": 48379.638,
         "M_obs": 48441.703,
-        "err_pct": -0.1214
+        "err_pct": -0.1281
       },
       {
         "atom": "Mn",
         "Z": 25,
         "N": 30,
-        "M_pred": 51175.825,
+        "M_pred": 51169.475,
         "M_obs": 51147.752,
-        "err_pct": 0.0549
+        "err_pct": 0.0425
       },
       {
         "atom": "Fe",
         "Z": 26,
         "N": 30,
-        "M_pred": 52104.818,
+        "M_pred": 52102.005,
         "M_obs": 52089.78,
-        "err_pct": 0.0289
+        "err_pct": 0.0235
       },
       {
         "atom": "Co",
         "Z": 27,
         "N": 32,
-        "M_pred": 54897.515,
+        "M_pred": 54891.883,
         "M_obs": 54858.006,
-        "err_pct": 0.072
+        "err_pct": 0.0618
       },
       {
         "atom": "Ni",
         "Z": 28,
         "N": 30,
-        "M_pred": 53969.734,
+        "M_pred": 53971.72,
         "M_obs": 53950.826,
-        "err_pct": 0.035
+        "err_pct": 0.0387
       },
       {
         "atom": "Cu",
         "Z": 29,
         "N": 34,
-        "M_pred": 58620.075,
+        "M_pred": 58614.862,
         "M_obs": 58604.36,
-        "err_pct": 0.0268
+        "err_pct": 0.0179
       },
       {
         "atom": "Zn",
         "Z": 30,
         "N": 34,
-        "M_pred": 59551.136,
+        "M_pred": 59548.385,
         "M_obs": 59544.152,
-        "err_pct": 0.0117
+        "err_pct": 0.0071
       },
       {
         "atom": "Tc",
         "Z": 43,
         "N": 56,
-        "M_pred": 92132.055,
+        "M_pred": 92102.933,
         "M_obs": 92056.66,
-        "err_pct": 0.0819
+        "err_pct": 0.0503
       },
       {
         "atom": "Sn",
         "Z": 50,
         "N": 70,
-        "M_pred": 111690.226,
+        "M_pred": 111634.509,
         "M_obs": 111662.639,
-        "err_pct": 0.0247
+        "err_pct": -0.0252
       },
       {
         "atom": "Pb",
         "Z": 82,
         "N": 126,
-        "M_pred": 193732.475,
+        "M_pred": 193577.229,
         "M_obs": 193687.122,
-        "err_pct": 0.0234
+        "err_pct": -0.0567
       },
       {
         "atom": "U",
         "Z": 92,
         "N": 146,
-        "M_pred": 221730.262,
+        "M_pred": 221522.782,
         "M_obs": 221695.893,
-        "err_pct": 0.0155
+        "err_pct": -0.0781
       }
     ],
     "bonds_nf": [
       {
         "bond": "H-H",
-        "E_eV": 7.3036,
+        "E_eV": 7.2809,
         "obs_eV": 4.478,
-        "err_pct": 63.1
+        "err_pct": 62.6
       },
       {
         "bond": "C-H",
-        "E_eV": 1.5679,
+        "E_eV": 1.563,
         "obs_eV": 4.33,
-        "err_pct": -63.8
+        "err_pct": -63.9
       },
       {
         "bond": "C-C",
-        "E_eV": 3.208,
+        "E_eV": 3.1981,
         "obs_eV": 3.6,
-        "err_pct": -10.9
+        "err_pct": -11.2
       },
       {
         "bond": "C-O",
-        "E_eV": 2.8598,
+        "E_eV": 2.8509,
         "obs_eV": 3.71,
-        "err_pct": -22.9
+        "err_pct": -23.2
       },
       {
         "bond": "O-H",
-        "E_eV": 1.8263,
+        "E_eV": 1.8206,
         "obs_eV": 4.82,
-        "err_pct": -62.1
+        "err_pct": -62.2
       },
       {
         "bond": "N-H",
-        "E_eV": 1.9741,
+        "E_eV": 1.968,
         "obs_eV": 3.87,
-        "err_pct": -49.0
+        "err_pct": -49.1
       }
     ],
     "bonds_vv": [
       {
         "bond": "H-H",
-        "E_eV": 4.4834,
+        "E_eV": 4.4694,
         "obs_eV": 4.478,
-        "err_pct": 0.1
+        "err_pct": -0.2
       },
       {
         "bond": "C-H",
-        "E_eV": 0.6994,
+        "E_eV": 0.6972,
         "obs_eV": 4.33,
-        "err_pct": -83.8
+        "err_pct": -83.9
       },
       {
         "bond": "C-C",
-        "E_eV": 0.7043,
+        "E_eV": 0.7022,
         "obs_eV": 3.6,
-        "err_pct": -80.4
+        "err_pct": -80.5
       },
       {
         "bond": "C-O",
-        "E_eV": 0.7043,
+        "E_eV": 0.7021,
         "obs_eV": 3.71,
-        "err_pct": -81.0
+        "err_pct": -81.1
       },
       {
         "bond": "O-H",
-        "E_eV": 0.7039,
+        "E_eV": 0.7017,
         "obs_eV": 4.82,
         "err_pct": -85.4
       }
     ],
     "qvalues": [
       {
-        "decay": "n\u2192p",
+        "decay": "n→p",
         "Q_pred": 0.5099,
         "Q_obs": 0.782,
         "err_pct": -34.8
       },
       {
-        "decay": "\u00b3H\u2192\u00b3He",
+        "decay": "³H→³He",
         "Q_pred": 0.0181,
         "Q_obs": 0.0186,
         "err_pct": -2.7
       },
       {
-        "decay": "\u00b9\u2074C\u2192\u00b9\u2074N",
+        "decay": "¹⁴C→¹⁴N",
         "Q_pred": 6.6588,
         "Q_obs": 0.156,
         "err_pct": 4168.5
       },
       {
-        "decay": "\u2076\u2070Co\u2192\u2076\u2070Ni",
+        "decay": "⁶⁰Co→⁶⁰Ni",
         "Q_pred": 7.5419,
         "Q_obs": 0.318,
         "err_pct": 2271.7
