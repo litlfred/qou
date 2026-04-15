@@ -785,7 +785,13 @@ def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
     if abs(V1_bond) > 1e-300:
         phi_bond += math.log(abs(V1_bond))
 
-    binding = phi_ub - phi_bond
+    # Per-generator absolute binding: sum |Δln|V̂ᵢ|| over generators.
+    # The sign of V̂ may flip when the bond is inserted (due to alternating
+    # channel eigenvalue accumulation in nn crossings). The physical binding
+    # is the magnitude of the change at each generator, not the signed sum.
+    bind_g0 = abs(math.log(abs(V0_ub)) - math.log(abs(V0_bond)))
+    bind_g1 = abs(math.log(abs(V1_ub)) - math.log(abs(V1_bond)))
+    binding = bind_g0 + bind_g1
     E_eV = binding * E_MOL
 
     return E_eV, binding, phi_ub, phi_bond
