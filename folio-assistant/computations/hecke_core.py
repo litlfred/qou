@@ -749,7 +749,10 @@ def binding_energy_bw(Z, N, k=3):
     #   Mass MAE(k) <= C_0 × [2]_q^{-2(k-3)}
     #   k=3: ~0.04%, k=4: ~0.02%, k=5: ~0.008%
     if k >= 6 and not is_fig8:
-        B += DELTA_W2 * T_isospin * (T_isospin + 1) / A**(4.0/3.0)
+        # [3,2,1] sees ONLY pp and nn crossings (pn invisible: tr(σ-h/2)/dim=0).
+        # Per-crossing: pp → +h/2, nn → −h/2.
+        # Scaling: (Z−N)(A−1)/A^{4/3} = net pp−nn crossing asymmetry.
+        B += DELTA_W2 * (Z - N) * (A - 1) / A**(4.0/3.0)
         B += DELTA_411 * (N - Z)**2 / (4.0 * A**(4.0/3.0))
         B -= DELTA_42 * Z * (Z - 1) / A**(4.0/3.0)
 

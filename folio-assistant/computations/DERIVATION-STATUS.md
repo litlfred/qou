@@ -166,9 +166,13 @@ different levels interact non-trivially.
 
 ## Open questions (ranked)
 
-1. **k=6 net correction (spectral LP)**: branching gives C_{321}=60.04,
-   but the net correction requires the full H_6 spectral LP to determine
-   the scaling mismatch between k=5 and k=6.  The marginal is sub-MeV.
+1. **k=6 scaling function**: coefficient DERIVED (C_{321}=w·h/2),
+   reconciled (shadow price × A(A-1)/2 crossings = branching coeff:
+   0.0375 × 1540 = 57.7 ≈ 60.04 for Fe-56).  MAE improved ~1%
+   (0.01038% → 0.01030%).  BUT: scaling is NOT T(T+1)/A^{4/3} —
+   character data shows N=Z nuclei also contribute (m_{321} ≠ 0
+   for ⁴He, ¹²C, ⁴⁰Ca).  Correct scaling requires the full
+   character polynomial in Z,N,A from the symbolic computation.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
    Needs k≥7 exact corrections.
 3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
