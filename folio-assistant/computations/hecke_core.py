@@ -721,6 +721,23 @@ def compute_phi1_full(Z, N):
 # Molecular binding
 # ══════════════════════════════════════════════════════════════
 
+NOBLE_GAS_Z = [2, 10, 18, 36, 54, 86]
+
+
+def valence_Z(Z):
+    """Number of valence electrons (Z minus largest noble gas core).
+
+    Noble gas cores have saturated Frobenius channels (Gx >> 0,
+    LP dual shadow price = 0). Only valence electrons participate
+    in molecular binding.
+    """
+    core = 0
+    for z_ng in NOBLE_GAS_Z:
+        if z_ng < Z:
+            core = z_ng
+    return Z - core
+
+
 def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
     """Compute molecular binding energy using per-generator Φ₁.
 
@@ -769,9 +786,19 @@ def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
         phi_bond += math.log(abs(V1_bond))
 
     binding = phi_ub - phi_bond
-    E_eV = binding * E_MOL
 
-    return E_eV, binding, phi_ub, phi_bond
+    # Valence scaling: the bond perturbation is proportional to the
+    # geometric mean of valence electron counts. Justified by LP dual:
+    # core electrons (saturated Frobenius channels, shadow price = 0)
+    # don't participate in the binding. The valence overlap integral
+    # scales as √(Z_A_val × Z_B_val).
+    Z_A_val = max(valence_Z(Z_A), 1)
+    Z_B_val = max(valence_Z(Z_B), 1)
+    scale = math.sqrt(Z_A_val * Z_B_val)
+
+    E_eV = binding * E_MOL * scale
+
+    return E_eV, binding * scale, phi_ub, phi_bond
 
 
 # ══════════════════════════════════════════════════════════════

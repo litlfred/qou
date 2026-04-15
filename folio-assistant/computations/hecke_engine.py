@@ -61,22 +61,23 @@ class QRat:
         else:
             return Fraction(1), -self.ha / 2
 
-    def chain_reduce(self, gen_idx, ordering):
-        """Reduce the chain at generator gen_idx to (a, b)."""
-        a = Fraction(0)
-        b = Fraction(1)
+    def traced_volume(self, gen_idx, ordering):
+        """V̂_i = z·M₀₀ + M₁₀ via 2×2 transfer matrix product (exact rational).
+
+        M = ∏ T(c,d) where T(c,d) = [[c·HA+d, c], [c, d]],
+        and V̂ = z·M[0][0] + M[1][0].
+        """
+        M00 = Fraction(1); M01 = Fraction(0)
+        M10 = Fraction(0); M11 = Fraction(1)
         A = len(ordering)
         for j in range(gen_idx + 1, A):
             c, d = self.crossing(ordering[gen_idx], ordering[j])
-            new_a = a * c * self.ha + a * d + b * c
-            new_b = a * c + b * d
-            a, b = new_a, new_b
-        return a, b
-
-    def traced_volume(self, gen_idx, ordering):
-        """V̂_i = z·a_i + b_i (exact rational)."""
-        a, b = self.chain_reduce(gen_idx, ordering)
-        return self.z * a + b
+            t00 = c * self.ha + d; t01 = c
+            t10 = c;               t11 = d
+            n00 = M00*t00 + M01*t10; n01 = M00*t01 + M01*t11
+            n10 = M10*t00 + M11*t10; n11 = M10*t01 + M11*t11
+            M00, M01, M10, M11 = n00, n01, n10, n11
+        return self.z * M00 + M10
 
     def markov_trace(self, ordering):
         """Product of traced volumes (exact rational)."""
