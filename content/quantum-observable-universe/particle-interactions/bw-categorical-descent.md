@@ -32,7 +32,7 @@ $\lambda \vdash n$:
 | Wigner ($\lambda_W \cdot T(T+1)/A$) | $k = 5$ | $[n-2,2] + [n-2,1^2]$ | $T(T+1)/A$ |
 
 Their coefficients are quantum factorials $[n]_q!$ by the
-Wedderburn trace identity (Proposition~\ref{prop:wedderburn-trace-identity}):
+[Wedderburn trace identity](#prop:wedderburn-trace-identity):
 the sum $\sum_\lambda \dim_q(\lambda)^2 = [n]_q!$ partitions the
 total Markov weight among the irreducible representations.
 
