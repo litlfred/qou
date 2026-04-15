@@ -325,6 +325,7 @@ export default chapter({
       label: "sec:nuclear-binding-beta-stability",
       blocks: [
         "hook-weight-derivation",
+        "bw-coefficient-shadow-price",
         "mass-endomorphism-tower",
         "energy-scale-planck",
         "topological-mass-trefoil",
