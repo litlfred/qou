@@ -187,6 +187,12 @@ export default chapter({
         // Markov chain interpretation of the algebraic framework
         "hecke-markov-transition",
         "hecke-markov-interpretation",
+        // Feynman path integrals as categorical traces
+        "feynman-categorical-trace",
+        "feynman-categorical-trace-proof",
+        "feynman-qou-dictionary",
+        "feynman-classical-limit",
+        "feynman-classical-limit-interpretation",
       ],
     }),
 
