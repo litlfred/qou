@@ -73,7 +73,10 @@ if [ "$TEX_ONLY" = false ]; then
     if command -v bun &>/dev/null; then
       bun install --frozen-lockfile
     else
-      npm install
+      echo "Error: Bun is required to install content pipeline dependencies reproducibly." >&2
+      echo "The content/ directory is locked with bun.lock, so npm fallback is disabled." >&2
+      echo "Please install Bun and re-run this script, or use --tex-only to skip the content pipeline." >&2
+      exit 1
     fi
   fi
 
@@ -85,7 +88,7 @@ if [ "$TEX_ONLY" = false ]; then
     --preamble ../latex/preamble.tex
 
   echo "    Exporting BibTeX..."
-  npx tsx pipeline/export-bibtex.ts || true
+  npx tsx pipeline/export-bibtex.ts
 
   cd "$REPO_ROOT"
   echo "==> Content pipeline complete."
@@ -130,7 +133,7 @@ for tex in standalone-*.tex; do
     -v "$REPO_ROOT:/workspace" \
     -w /workspace \
     "$DOCKER_IMAGE" \
-    latexmk $LATEXMK_FLAGS "$tex" || true
+    latexmk $LATEXMK_FLAGS "$tex"
 done
 
 echo "==> Build complete."
