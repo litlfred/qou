@@ -260,7 +260,8 @@ jobs:
       - name: Build Lean project (ensure .olean files exist)
         working-directory: content/quantum-observable-universe/lean
         run: |
-          lake update
+          # Skip lake update — dependencies are already in the shared cache
+          # from the build job or a previous run. Only rebuild .olean files.
           lake build
         continue-on-error: true
 

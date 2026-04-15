@@ -24,6 +24,8 @@
 \usepackage{titlesec}         % Compact heading styles
 \usepackage{tikz}             % Inline figures
 \usepackage{tikz-cd}          % Commutative diagrams (tikzcd environment)
+\usetikzlibrary{external}     % Cache compiled TikZ pictures as standalone PDFs
+\tikzexternalize[prefix=tikz-cache/]
 \usepackage[dvipsnames]{xcolor}  % Extended colour names (teal, etc.)
 \usepackage{booktabs}            % Professional table rules (\toprule, \midrule, \bottomrule)
 \usepackage{enumitem}            % Customised list labels (label=, leftmargin=)

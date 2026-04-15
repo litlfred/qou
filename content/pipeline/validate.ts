@@ -242,11 +242,17 @@ export async function validateObjects(objectsDir: string): Promise<ValidationRes
     }
   }
 
+  // Pre-load all .md content once — avoids redundant filesystem reads
+  // across Phase 2 (constraint rules) and Phase 3 (AST validation).
+  const mdCache = new Map<string, string>();
+  for (const [name, { dir }] of allBlocks) {
+    const mdPath = join(dir, `${name}.md`);
+    mdCache.set(name, existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "");
+  }
+
   // Phase 2: Constraint rules
   for (const [name, { block, dir }] of allBlocks) {
-    // Load companion .md content for cross-reference validation
-    const mdPath = join(dir, `${name}.md`);
-    const mdContent = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : undefined;
+    const mdContent = mdCache.get(name) || undefined;
     const ctx: ConstraintContext = {
       rootName: name,
       dir,
@@ -271,8 +277,7 @@ export async function validateObjects(objectsDir: string): Promise<ValidationRes
 
   // Phase 3: AST validation (render → parse)
   for (const [name, { block, dir }] of allBlocks) {
-    const mdPath = join(dir, `${name}.md`);
-    const mdContent = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
+    const mdContent = mdCache.get(name) ?? "";
 
     try {
       const latex = renderBlock(block, mdContent);

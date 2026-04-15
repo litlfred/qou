@@ -74,9 +74,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: content/quantum-observable-universe/lean/.lake
-          key: lean-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml') }}
+          key: lean-ci-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml') }}
           restore-keys: |
-            lean-${{ runner.os }}-
+            lean-ci-${{ runner.os }}-
 
       # ── Step 5: Build Lean project ─────────────────────────────────
       - name: Build Lean project

@@ -92,6 +92,27 @@ const mdParser = remark()
   .use(remarkMath);
 
 /**
+ * Parse markdown content via remark, caching the resulting AST.
+ * Multiple render functions (markdownToLatex, extractMathContent)
+ * may be called on the same content within a single build — this
+ * avoids redundant parses.
+ */
+const _mdAstCache = new Map<string, any>();
+function parseMdCached(md: string): any {
+  let tree = _mdAstCache.get(md);
+  if (!tree) {
+    tree = mdParser.parse(md);
+    _mdAstCache.set(md, tree);
+  }
+  return tree;
+}
+
+/** Clear the markdown AST cache (e.g. between builds in watch mode). */
+export function clearMdAstCache(): void {
+  _mdAstCache.clear();
+}
+
+/**
  * Convert markdown content to LaTeX body text via remark AST.
  *
  * Walks the parsed AST instead of line-by-line regex matching.
@@ -114,7 +135,7 @@ const mdParser = remark()
  *   | paragraph     | children + blank line                |
  */
 export function markdownToLatex(md: string): string {
-  const tree = mdParser.parse(md);
+  const tree = parseMdCached(md);
   return renderMdastNode(tree).trim();
 }
 
@@ -124,7 +145,7 @@ export function markdownToLatex(md: string): string {
  * lists, prose, and formatting are skipped.
  */
 export function extractMathContent(md: string): string {
-  const tree = mdParser.parse(md);
+  const tree = parseMdCached(md);
   const parts: string[] = [];
 
   for (const child of (tree as any).children ?? []) {
