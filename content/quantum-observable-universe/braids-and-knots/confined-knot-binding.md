@@ -66,6 +66,35 @@ $$
   = W_{\mathrm{std}} \cdot \Bigl(z - \frac{H_A}{2}\Bigr)
 $$
 
+**Cross-channel interaction (adjacent generators).**
+*The symmetric and alternating representations are $1$-dimensional,
+so products of consecutive crossings on the same generator are
+scalar: $\chi_{\mathrm{sym}}(\beta) = \prod_k (c_k q + d_k)$.
+The standard representation is $2$-dimensional — consecutive
+crossings compose as $2 \times 2$ matrix products:*
+
+$$
+  M_i = \prod_k \begin{pmatrix}
+    c_k H_A + d_k & c_k \\ c_k & d_k
+  \end{pmatrix}
+$$
+
+*This non-commutativity produces the cross-channel term between
+adjacent generators $i$ and $i{+}1$, weighted by the Markov
+parameter $z^2 = \mathrm{tr}_M(\sigma_i \sigma_{i+1})$:*
+
+$$
+  \delta_{\times}
+  = z^2 \sum_{|i-j|=1}
+    \ln\bigl\lvert
+      \hat{V}_i^{\mathrm{full}} \cdot \hat{V}_j^{\mathrm{full}}
+    \bigr\rvert
+$$
+
+*The weight $z^2$ is derived from the Hecke algebra (not fitted):
+it is the Markov trace of the adjacent generator product
+$\mathrm{tr}_M(\sigma_0 \sigma_1) = z^2$.*
+
 **General confined-state character ratio.**
 *For an $A$-nucleon system with construction at jet levels
 $\ell = 0$ (quark), $\ell = 1$ (nucleon), $\ell = 2$ (nucleus),
@@ -88,6 +117,31 @@ $$
 *This product emerges from the algebraic structure of $H_3(q)$ —
 the character ratios are functions of $q$ alone, with no empirical
 input.*
+
+**Molecular extension.**
+*The same decomposition applies at the molecular level.  A
+covalent bond is an inverse trefoil $T^{-1}$ inserted between
+two atomic braids $\mathcal{A}$, $\mathcal{B}$.  The molecular
+binding energy is:*
+
+$$
+  E_{\mathrm{bond}}
+  = \bigl(
+      W_{\mathrm{sym}} \cdot \Delta\Phi_{\mathrm{sym}}
+    + W_{\mathrm{std}} \cdot \Delta\Phi_{\mathrm{std}}
+    + W_{\mathrm{alt}} \cdot \Delta\Phi_{\mathrm{alt}}
+    \bigr) \times E_{\mathrm{mol}}
+$$
+
+*where $\Delta\Phi_\lambda = \bigl\lvert
+\ln|\chi_\lambda(\mathcal{A} \cdot \mathcal{B})|
+- \ln|\chi_\lambda(\mathcal{A} \cdot T^{-1} \cdot \mathcal{B})|
+\bigr\rvert$
+is the per-channel volume shift from inserting the bond, and
+$E_{\mathrm{mol}} = m_e \alpha^2 / 2$ is the Hartree energy
+scale (derived from $q$).  Double and triple bonds use $n$
+inverse trefoils: $\Delta\Phi \propto n$, so bond energies
+scale as $1 : 2 : 3$.*
 
 *Proof.*
 The equality $W_{\mathrm{sym}} = W_{\mathrm{alt}}$ follows from
