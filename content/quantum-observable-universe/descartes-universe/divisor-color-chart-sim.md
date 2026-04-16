@@ -1,11 +1,27 @@
-Interactive 3D visualisation of the color tube divisors on the
-Brings surface brane, embedded in $\mathbb{P}^4(\mathbb{C})$ —
-the projective space containing both the spacetime base
-$\mathbb{P}^1(\mathbb{C})$ and the color fiber directions.
+Interactive 3D visualisation of the Brings-surface cover
+$\pi \colon \Sigma_4 \to \mathbb{P}^1(\mathbb{C})$ on the **Riemann sphere**.
 
-The brown surface of revolution represents the brane with smooth
-profile $R(z) = s\sqrt{(2+z+2z^2)/3}$ derived from the cubic
-discriminant structure.  Three color tubes spiral around it:
+**Geometry.**  The base $\mathbb{P}^1 \cong S^2$ is shown as a sphere.
+The brane lives on the **interior** of the sphere (the filled 3-ball).
+The three color tubes (sheets of the cover) live on the **exterior** of
+the sphere — at radius $R_{\text{brane}} + \Delta R$ — so they never
+pierce spacetime.
+
+**Parameterisation.**  For $z \in [0, \infty] = \mathbb{P}^1(\mathbb{R})$,
+the meridian $\theta(z) \in [0,\pi]$ traces the sphere from pole to pole.
+At each meridian point, the three cover sheets are placed at azimuthal
+angles $\varphi_k(z) = \arg c_k(z)$:
+
+$$
+  \text{sheet}_k(z) = \bigl((R_b+\Delta R)\sin\theta\cos\varphi_k,\; (R_b+\Delta R)\cos\theta,\; (R_b+\Delta R)\sin\theta\sin\varphi_k\bigr).
+$$
+
+**Exceptional divisors.**  At the two poles $\theta = 0$ (z=0) and
+$\theta = \pi$ (z=∞), $\sin\theta \to 0$ so all three color tubes
+converge to the *same* point.  These are the **exceptional divisors**
+— the loci where the brane (interior) and color sheets (exterior)
+meet.  They are the ramification points of $\pi$ at $z=0$ and
+$z=\infty$.
 
 | Tube | Color coordinate | Resolvent |
 |------|-----------------|-----------|
@@ -17,28 +33,18 @@ where $x_2, x_3, x_4$ are the three roots of the Brings fiber cubic
 $$
   t^3 + (1{+}z)\,t^2 + (1{+}z{+}z^2)\,t + (1{+}z)(1{+}z^2) = 0
 $$
-at each point $z \in [0, \infty] = \mathbb{P}^1(\mathbb{R})$.
+at each point $z$.
 
-**Base scaling.**  Four modes map $z \in [0, \infty]$ to visual space:
+**Base scaling.**  Four modes map $z \in [0, \infty]$ to $\theta \in [0,\pi]$:
 
 | Mode | Mapping | Behaviour |
 |------|---------|-----------|
-| arctan | $x = \arctan z$ | Compactifies $\infty$; projective |
-| log | $x = \ln(1+z)$ | Moderate compression |
-| $\sqrt{z}$ | $x = \sqrt{z}$ | Emphasises small $z$ |
-| linear | $x = z$ | Affine chart |
+| arctan | $\theta \propto \arctan z$ | Compactifies $\infty$; projective |
+| log | $\theta \propto \ln(1+z)$ | Moderate compression |
+| $\sqrt{z}$ | $\theta \propto \sqrt{z}$ | Emphasises small $z$ |
+| linear | $\theta \propto z$ | Affine |
 
-Each color tube is a *section* of the cover — it lives **on** the brane
-surface at azimuthal angle $\arg(c_k(z))$, never piercing through it.
-Its 3D position is $(x(z),\, R(z)\cos\arg c_k,\, R(z)\sin\arg c_k)$,
-with only the phase of $c_k$ determining the position.
-
-**Divisor markers** (white spheres) appear where two color tubes collide
-in angle, $\arg(c_j) \equiv \arg(c_k) \pmod{2\pi}$.  These are the
-ramification points of the covering $\pi\colon\Sigma_4\to\mathbb{P}^1(\mathbb{C})$
-— where two sheets of the cover merge.
-
-**Torsion parameter $q$.**  The substrate parameter controls the
-twist rate of the color tubes via $(q - q^{-1})\cdot z$.  At $q = 1$
-(classical limit) the torsion vanishes; as $q$ departs from $1$ the
-color tubes wind more tightly, shifting the divisor locations.
+**Torsion parameter $q$.**  The substrate parameter rotates the sheets
+by $(q - q^{-1})\cdot z \cdot \text{rate}$, shifting the secondary (blue)
+collision markers along the sphere while leaving the two pole divisors
+fixed.
