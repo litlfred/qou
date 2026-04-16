@@ -168,12 +168,20 @@ def seminormal_matrix(shape: tuple, gen: int) -> np.ndarray:
 # Bond character computation
 # ══════════════════════════════════════════════════════════════
 
-@lru_cache(maxsize=1024)
 def bond_character_cached(shape: tuple, n_bonds: int) -> tuple:
-    """Compute χ_λ(T⁻ⁿ) and dim for partition λ.
+    """Compute bond character for n independent shared electron pairs.
 
-    T⁻¹ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ (inverse trefoil)
-    σᵢ⁻¹ = σᵢ - HA·I (Hecke relation)
+    A single bond shares 1 electron pair: χ_λ(T⁻¹).
+    A double bond shares 2 independent pairs: χ_λ(T⁻¹)² / dim(λ).
+    A triple bond shares 3 independent pairs: χ_λ(T⁻¹)³ / dim(λ)².
+
+    The independent model: each shared pair is one T⁻¹ acting on a
+    separate electron. The total character is the PRODUCT of individual
+    characters normalized by dimension (tensor product trace).
+
+    This differs from (T⁻¹)^n (matrix power), which incorrectly
+    implies all pairs share the SAME Hecke algebra channel and creates
+    near-cancellation for double bonds.
 
     Returns (chi, dim).
     """
@@ -193,9 +201,10 @@ def bond_character_cached(shape: tuple, n_bonds: int) -> tuple:
     M1_inv = M1 - HA * np.eye(d)
 
     T_inv = M0_inv @ M1_inv @ M0_inv
-    T_inv_n = np.linalg.matrix_power(T_inv, n_bonds)
+    chi_1 = float(np.trace(T_inv))
 
-    chi = float(np.trace(T_inv_n))
+    # Independent bond model: χ(n bonds) = χ₁ⁿ / dimⁿ⁻¹
+    chi = chi_1**n_bonds / d**(n_bonds - 1)
     return (chi, d)
 
 
