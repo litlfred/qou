@@ -124,9 +124,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
   <span class="fg">c<sub>g</sub> = w₃ − z</span>  (green)<br>
   <span class="fb">c<sub>b</sub> = w₄ − z</span>  (blue)<br>
   <span style="color:var(--dim)">w<sub>k</sub> = (1/√5) Σ ζ<sup>kj</sup>x<sub>j</sub></span><br>
+  <span style="color:var(--dim)">tubes on brane: R·e<sup>i·arg(c)</sup></span><br>
   <span style="color:var(--dim)">torsion = (q−q⁻¹)·z·rate</span><br>
   <span style="color:var(--dim)">R(z) = s·√((2+z+2z²)/3)</span><br>
-  <span style="color:var(--dim)">Σ₄ ⊂ P⁴(ℂ) ⊃ P¹ × color</span><br>
+  <span style="color:var(--dim)">divisor = arg(c<sub>j</sub>)=arg(c<sub>k</sub>)</span><br>
   <span style="color:var(--dim)">z ∈ [0, ∞] = P¹(ℝ)</span>
 </div>
 
@@ -354,8 +355,11 @@ function rebuild(){
   var NZ = 400;
 
   // ── Sample z ∈ [0, zMax] uniformly in visual space ──────
+  // Color tubes are SECTIONS of π: Σ₄ → P¹, living on the brane.
+  // Each tube lies on the brane surface at azimuthal angle arg(c_k(z)).
   var curves = [[],[],[]];
-  var mags   = [[],[],[]];
+  var angles = [[],[],[]];  // raw phase angles for divisor detection
+  var mags   = [[],[],[]];  // |c_k| magnitudes (kept for info panel)
   var braneR = [];
   var zVals  = [];
 
@@ -373,7 +377,9 @@ function rebuild(){
       var re=tubes[k][0], im=tubes[k][1];
       var mag=Math.sqrt(re*re+im*im);
       var arg=Math.atan2(im,re);
-      curves[k].push(new THREE.Vector3(xPos, mag*Math.cos(arg), mag*Math.sin(arg)));
+      // Place tube ON the brane surface at azimuth arg(c_k)
+      curves[k].push(new THREE.Vector3(xPos, R*Math.cos(arg), R*Math.sin(arg)));
+      angles[k].push(arg);
       mags[k].push(mag);
     }
   }
@@ -435,33 +441,31 @@ function rebuild(){
     }
   }
 
-  // ── Divisor markers: tube crosses brane surface ───────────
+  // ── Divisor markers: ramification points (tube collisions) ─
+  // A divisor is where two color sheets meet, i.e. where
+  // arg(c_j) ≡ arg(c_k) (mod 2π) for j ≠ k on the brane surface.
   var divCount = 0;
   if(P.showDiv){
-    for(var k=0;k<3;k++){
+    function angDiff(a,b){ var d=a-b; while(d>Math.PI)d-=TAU; while(d<-Math.PI)d+=TAU; return d; }
+    var pairs = [[0,1],[1,2],[0,2]];
+    for(var pi=0;pi<3;pi++){
+      var j=pairs[pi][0], k=pairs[pi][1];
       for(var i=1;i<=NZ;i++){
-        var d0 = mags[k][i-1] - braneR[i-1];
-        var d1 = mags[k][i]   - braneR[i];
-        if(d0*d1 < 0){
+        var d0 = angDiff(angles[j][i-1], angles[k][i-1]);
+        var d1 = angDiff(angles[j][i],   angles[k][i]);
+        // Zero-crossing of angular separation (modulo 2π)
+        if(d0*d1 < 0 && Math.abs(d0)+Math.abs(d1) < Math.PI){
           var frac = Math.abs(d0)/(Math.abs(d0)+Math.abs(d1));
-          var pt = new THREE.Vector3().lerpVectors(curves[k][i-1], curves[k][i], frac);
+          var pt = new THREE.Vector3().lerpVectors(curves[j][i-1], curves[j][i], frac);
           var sph = new THREE.Mesh(
-            new THREE.SphereGeometry(0.10, 12, 12),
-            new THREE.MeshPhongMaterial({color:0xffffff, emissive:TUBE_COLORS[k], emissiveIntensity:0.6})
+            new THREE.SphereGeometry(0.09, 14, 14),
+            new THREE.MeshPhongMaterial({
+              color:0xffffff, emissive:0xffeecc, emissiveIntensity:0.8,
+              shininess:120
+            })
           );
           sph.position.copy(pt);
           divGroup.add(sph); divCount++;
-        }
-      }
-      // Local minima (closest approach to axis)
-      for(var i=1;i<NZ;i++){
-        if(mags[k][i]<mags[k][i-1] && mags[k][i]<mags[k][i+1] && mags[k][i]<0.3){
-          var sph2 = new THREE.Mesh(
-            new THREE.SphereGeometry(0.06, 8, 8),
-            new THREE.MeshPhongMaterial({color:TUBE_COLORS[k], emissive:TUBE_COLORS[k], emissiveIntensity:0.8, transparent:true, opacity:0.9})
-          );
-          sph2.position.copy(curves[k][i]);
-          divGroup.add(sph2); divCount++;
         }
       }
     }

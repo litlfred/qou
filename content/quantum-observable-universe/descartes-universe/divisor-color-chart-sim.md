@@ -28,9 +28,15 @@ at each point $z \in [0, \infty] = \mathbb{P}^1(\mathbb{R})$.
 | $\sqrt{z}$ | $x = \sqrt{z}$ | Emphasises small $z$ |
 | linear | $x = z$ | Affine chart |
 
-**Divisor markers** (white spheres) appear where a color tube crosses
-the brane surface.  These are the ramification points of the covering
-$\pi\colon\Sigma_4\to\mathbb{P}^1(\mathbb{C})$.
+Each color tube is a *section* of the cover — it lives **on** the brane
+surface at azimuthal angle $\arg(c_k(z))$, never piercing through it.
+Its 3D position is $(x(z),\, R(z)\cos\arg c_k,\, R(z)\sin\arg c_k)$,
+with only the phase of $c_k$ determining the position.
+
+**Divisor markers** (white spheres) appear where two color tubes collide
+in angle, $\arg(c_j) \equiv \arg(c_k) \pmod{2\pi}$.  These are the
+ramification points of the covering $\pi\colon\Sigma_4\to\mathbb{P}^1(\mathbb{C})$
+— where two sheets of the cover merge.
 
 **Torsion parameter $q$.**  The substrate parameter controls the
 twist rate of the color tubes via $(q - q^{-1})\cdot z$.  At $q = 1$
