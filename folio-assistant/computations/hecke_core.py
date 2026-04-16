@@ -591,22 +591,27 @@ def build_atom_nf_exact(Z, N):
 
     for k in range(A):
         if ordering[k] == 'p':
-            # B₃: INTERLEAVED σ₀, σ₁⁻¹ (matching build_atom_nf exactly)
             for _ in range(3):
-                nf = hm_exact(nf, F1, F0, 0)       # σ₀
-                nf = hm_exact(nf, F1, -Fh, 1)       # σ₁⁻¹
-            # Quark: uu on gen0, uu on gen0, ud on gen1
+                nf = hm_exact(nf, F1, F0, 0)
+                nf = hm_exact(nf, F1, -Fh, 1)
+            # Quark: (0,1)=uu→σ₀, (0,2)=ud→mixed, (1,2)=ud→mixed
+            nf = hm_exact(nf, F1, F0, 0)      # uu
+            nf = hm_exact(nf, F1, -Fh2, 0)    # ud mixed
+            nf = hm_exact(nf, F1, -Fh2, 1)    # ud mixed
+            # Gluon: 2 σ₀
             nf = hm_exact(nf, F1, F0, 0)
             nf = hm_exact(nf, F1, F0, 0)
-            nf = hm_exact(nf, F1, -Fh2, 1)
         else:
             for _ in range(3):
                 nf = hm_exact(nf, F1, F0, 0)
                 nf = hm_exact(nf, F1, -Fh, 1)
-            # Quark: ud on gen0, ud on gen0, dd on gen1
+            # Quark: (0,1)=ud→mixed, (0,2)=ud→mixed, (1,2)=dd→σ⁻¹
             nf = hm_exact(nf, F1, -Fh2, 0)
             nf = hm_exact(nf, F1, -Fh2, 0)
             nf = hm_exact(nf, F1, -Fh, 1)
+            # Gluon: 2 σ₀
+            nf = hm_exact(nf, F1, F0, 0)
+            nf = hm_exact(nf, F1, F0, 0)
 
         # Inter-nucleon with all PREVIOUS nucleons (on gen 0)
         for prev in range(k):
@@ -722,23 +727,29 @@ def build_atom_nf(Z, N):
     # Compose nucleon NFs sequentially
     for k in range(A):
         if ordering[k] == 'p':
-            # B₃ confinement
+            # B₃ confinement (3 interleaved σ₀, σ₁⁻¹)
             for _ in range(3):
                 nf = hm(nf, 1, 0, 0)       # σ₀
                 nf = hm(nf, 1, -h, 1)       # σ₁⁻¹
-            # Quark crossings: (0,1)→gen=0 uu, (0,2)→gen=0 uu, (1,2)→gen=1 ud
+            # Quark crossings: (0,1)=uu→σ₀, (0,2)=ud→mixed, (1,2)=ud→mixed
             nf = hm(nf, 1, 0, 0)            # pair(0,1) uu → σ₀
-            nf = hm(nf, 1, 0, 0)            # pair(0,2) uu → σ₀
+            nf = hm(nf, 1, -h/2, 0)         # pair(0,2) ud → σ₀ mixed
             nf = hm(nf, 1, -h/2, 1)         # pair(1,2) ud → σ₁ mixed
+            # Gluon self-coupling: 2 σ₀ (ILP-derived, prop:mass-endomorphism-tower)
+            nf = hm(nf, 1, 0, 0)            # gluon 1
+            nf = hm(nf, 1, 0, 0)            # gluon 2
         else:
             # B₃ confinement
             for _ in range(3):
                 nf = hm(nf, 1, 0, 0)       # σ₀
                 nf = hm(nf, 1, -h, 1)       # σ₁⁻¹
-            # Quark crossings: (0,1)→gen=0 ud, (0,2)→gen=0 ud, (1,2)→gen=1 dd
+            # Quark crossings: (0,1)=ud→mixed, (0,2)=ud→mixed, (1,2)=dd→σ⁻¹
             nf = hm(nf, 1, -h/2, 0)         # pair(0,1) ud → σ₀ mixed
             nf = hm(nf, 1, -h/2, 0)         # pair(0,2) ud → σ₀ mixed
             nf = hm(nf, 1, -h, 1)           # pair(1,2) dd → σ₁⁻¹
+            # Gluon self-coupling: 2 σ₀ (same as proton)
+            nf = hm(nf, 1, 0, 0)            # gluon 1
+            nf = hm(nf, 1, 0, 0)            # gluon 2
 
         # Inter-nucleon crossing with all PREVIOUS nucleons
         for prev in range(k):
@@ -810,6 +821,10 @@ def nucleon_gen_chains(quarks):
             g0.append(cd)
         else:
             g1.append(cd)
+
+    # Gluon self-coupling: 2 σ₀ per nucleon (ILP-derived)
+    g0.append((1, 0))
+    g0.append((1, 0))
 
     return g0, g1
 
