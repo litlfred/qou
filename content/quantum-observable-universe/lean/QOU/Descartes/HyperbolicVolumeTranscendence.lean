@@ -301,11 +301,27 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
     BorelZagierQOU where
   linear_independent := by
     intro a₁ a₂ a₃ h
-    -- Linear combination is a degree-1 polynomial relation.
-    -- Encode as finitely-supported function on ℕ³.
-    -- The three monomials are (1,0,0), (0,1,0), (0,0,1).
-    -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
-    sorry
+    -- A linear combination is a degree-1 polynomial relation.
+    -- Define f on {(1,0,0), (0,1,0), (0,0,1)} as a₁, a₂, a₃.
+    let S : Finset (ℕ × ℕ × ℕ) := {(1, 0, 0), (0, 1, 0), (0, 0, 1)}
+    let f : ℕ × ℕ × ℕ → ℚ := fun ijk =>
+      if ijk = (1, 0, 0) then a₁
+      else if ijk = (0, 1, 0) then a₂
+      else if ijk = (0, 0, 1) then a₃
+      else 0
+    have hf_supp : ∀ ijk, ijk ∉ S → f ijk = 0 := by
+      intro ijk hijk
+      simp [S, f] at hijk ⊢
+      tauto
+    -- The sum equals a₁·v₁ + a₂·v₂ + a₃·v₃ = 0
+    have hf_sum : (S.sum fun ijk =>
+        (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
+      simp [S, f, Finset.sum_insert, Finset.sum_pair]
+      simp [pow_zero, pow_one]
+      linarith
+    -- Apply no_relation
+    have := hvi.no_relation S f hf_supp hf_sum
+    exact ⟨this (1, 0, 0), this (0, 1, 0), this (0, 0, 1)⟩
 
 /-! ## §9  The full chain: tower → faithfulness → independence
 

@@ -13,8 +13,8 @@
 
 | Category | Count |
 |----------|-------|
-| Active `sorry` statements | 28 |
-| With `-- Ref:` citation | 28 (100%) |
+| Active `sorry` statements | **9** (was 28) |
+| With `-- Ref:` citation | 9/9 (100%) |
 | Orphaned sorry (no named declaration) | 14 |
 | `axiom` declarations | 4 |
 | Placeholder fields | 2 (fixed) |

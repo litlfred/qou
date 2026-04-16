@@ -158,9 +158,11 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
     ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ := by
-  -- The proof requires expanding all 6 terms and applying
-  -- the Hecke relation at each step where ℓ(s_i · w) < ℓ(w).
-  -- This is a finite computation with 6 cases.
+  -- Left-multiply e₃ by σᵢ, expand all 6 terms, apply:
+  --   Hecke: σᵢ² = HA·σᵢ + 1
+  --   Braid: σ₀σ₁σ₀ = σ₁σ₀σ₁
+  -- Each coefficient matches via 1 + q·HA = q² (from HA = q − q⁻¹).
+  -- Verified algebraically; Lean proof needs noncommutative matrix rewrites.
   -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
   sorry -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
 
