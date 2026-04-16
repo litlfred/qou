@@ -249,7 +249,7 @@ DELTA_W2 = _w_321 * h / 2 * M_E_MEV              # [2][4][6]h/(2[3]³[5])·m_e �
 #           tr(σ)/dim = (3q²-2)/(5q)
 #           C = w_{411} · (3q²-2)/(5q)
 #           Scaling: (N-Z)²/(4A^{4/3})
-_dim_411 = _n6_fac / (q_int(6) * q_int(3) * q_int(2))  # dim_q([4,1,1]) = [4][5]/[2]
+_dim_411 = _n6_fac / (q_int(6) * q_int(3) * q_int(2)**2)  # dim_q([4,1,1]) = [4][5]/[2]
 _w_411 = _dim_411**2 / _n6_fac
 _tr_411 = (3 * q0**2 - 2) / (5 * q0)                    # (3q²-2)/(5q)
 DELTA_411 = _w_411 * h * M_E_MEV                          # conjugate pair: tr+tr'=h
@@ -936,9 +936,16 @@ def binding_energy_bw(Z, N, k=3):
         B += DELTA_PN_CORR * Z * N / A**(4.0/3.0)
 
     # ── H₆(q) corrections (k ≥ 6) ─────────────────────────
-    # Derived from prop:bw-coefficient-shadow-price and
-    # prop:wigner-2-coefficient.  Each coefficient is the LP
-    # shadow price C_λ = w_λ · tr(σ)/dim, symbolic in q.
+    # DISABLED: k=6 corrections currently DEGRADE RMS (1.603 → 1.658).
+    #
+    # Root cause: the scaling functions were guessed, not derived from
+    # content structure. Content analysis shows each conjugate pair
+    # contributes TWO terms (pn ∝ ZN and asymmetry ∝ (Z-N)(A-1)),
+    # not the single scaling used here. The coefficients (DELTA_W2,
+    # DELTA_411, DELTA_42) are correct q-integer expressions, but the
+    # polynomial scalings {(Z-N)(A-1)/A^{4/3}, (N-Z)²/A^{4/3},
+    # Z(Z-1)/A^{4/3}} don't match the actual per-partition content
+    # polynomial decomposition.
     #
     # The per-generator trace tr(σ)/dim for all partitions of 6:
     #   [6]     = q              [1⁶]     = -1/q
@@ -948,33 +955,27 @@ def binding_energy_bw(Z, N, k=3):
     #   [3,3]   = (3q²-2)/(5q)  [2³]     = (2q²-3)/(5q)
     #   [3,2,1] = h/2            (self-conjugate, isospin midpoint)
     #
-    # Convergence bound (k=3..5, derived levels only):
-    #   Mass MAE(k) <= C_0 × [2]_q^{-2(k-3)}
-    #   k=3: ~0.04%, k=4: ~0.02%, k=5: ~0.008%
-    if k >= 6 and not is_fig8:
-        # [3,2,1] sees ONLY pp and nn crossings (pn invisible: tr(σ-h/2)/dim=0).
-        # Per-crossing: pp → +h/2, nn → −h/2.
-        # Scaling: (Z−N)(A−1)/A^{4/3} = net pp−nn crossing asymmetry.
-        B += DELTA_W2 * (Z - N) * (A - 1) / A**(4.0/3.0)
-        B += DELTA_411 * (N - Z)**2 / (4.0 * A**(4.0/3.0))
-        B -= DELTA_42 * Z * (Z - 1) / A**(4.0/3.0)
+    # To enable k=6: derive scaling functions from per-partition content
+    # polynomial Φ_λ(Z,N) = (n_pp-n_nn)·ln(q)·C₁(λ) + n_pn·C₂(λ)
+    # where C₁ = Σ c(□) and C₂ = Σ ln|cosh(c·ln q)|, then decompose
+    # the Wedderburn-weighted sum into the BW polynomial basis.
+    #
+    # if k >= 6 and not is_fig8:
+    #     B += DELTA_W2 * (Z - N) * (A - 1) / A**(4.0/3.0)
+    #     B += DELTA_411 * (N - Z)**2 / (4.0 * A**(4.0/3.0))
+    #     B -= DELTA_42 * Z * (Z - 1) / A**(4.0/3.0)
 
-    # ── k≥7 corrections: NOT YET DERIVED ─────────────────────
-    # The k=7+ corrections require computing the FULL spectral LP
-    # at each level: identifying the scaling function S_λ(Z,N,A) for
-    # each new partition λ ⊢ k. The branching rule (PR #360) gives
-    # the shadow price C_λ, but the scaling function must be derived
-    # individually for each partition from its content structure.
+    # ── k≥6 status ───────────────────────────────────────────
+    # Current best: k=5 (RMS 1.603 MeV, 11 terms).
+    # The 1.6 MeV residual is dominated by the precision of the
+    # k=3-5 COEFFICIENTS (q-integer products determining LAMBDA_V,
+    # LAMBDA_S, etc.), not by missing higher-k partitions.
+    # k=6 coefficients are ~0.01-0.05 MeV (3 orders below k=5 Wigner
+    # at 67 MeV). Higher-k corrections are even smaller.
     #
-    # The Hoefsmit witness provides χ_λ(B₃) up to k=15, and the
-    # per-irrep vertex volume (level_k_binding.py) can evaluate
-    # these on actual atomic chains. But translating this to the
-    # BW formula requires per-partition scaling identification,
-    # which is an open research problem.
-    #
-    # Current best: k=6 (RMS 1.59 MeV, 14 terms).
-    # Convergence bound: |δB(k)| ~ [2]_q^{-2(k-3)} per level.
-    # Estimated k=7 improvement: ~0.3 MeV RMS reduction.
+    # Path to improvement: refine the k=3-5 coefficient derivations
+    # (the q-integer products) or derive exact scaling exponents from
+    # the partition content structure.
 
     return B
 
