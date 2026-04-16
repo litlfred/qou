@@ -42,23 +42,38 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 - **Half-life ratios**: the $\log_q(ft)$ values from the transfer
   matrix encode relative decay rates.
 
-**Mass predictions** ($k = 11$, zero fitted parameters,
-knot factor $a(\mathcal{N}) = \prod(1-\varepsilon_i)$,
-[nuclear knot classification](#prop:nuclear-knot-classification)):
+**Mass predictions** ($k = 12$, zero fitted parameters, gluon-dressed
+nucleons, categorical Chebyshev shell, knot factors from Frobenius norm):
 
-| Atom | $A$ | $a(\mathcal{N})$ | $M_{\mathrm{obs}}$ (MeV) | $M_{\mathrm{QOU}}$ (MeV) | $\Delta/M$ |
-|:-----|----:|------:|----------:|----------:|----------:|
-| ${}^1\mathrm{H}$ | 1 | 1 | 938.783 | 938.783 | $<0.00001\%$ |
-| ${}^2\mathrm{H}$ | 2 | $1+h$ | 1876.124 | 1876.119 | $0.0003\%$ |
-| ${}^3\mathrm{H}$ | 3 | $1-h^2$ | 2809.432 | 2809.432 | $0.00002\%$ |
-| ${}^3\mathrm{He}$ | 3 | $1-h^2$ | 2809.414 | 2809.413 | $0.000004\%$ |
-| ${}^4\mathrm{He}$ | 4 | $(1-h^2)^2$ | 3728.401 | 3728.416 | $0.0004\%$ |
-| ${}^{12}\mathrm{C}$ | 12 | 1 | 11177.929 | 11177.759 | $0.002\%$ |
-| ${}^{56}\mathrm{Fe}$ | 56 | 1 | 52103.063 | 52104.765 | $0.003\%$ |
-| ${}^{208}\mathrm{Pb}$ | 208 | 1 | 193729.02 | 193732.51 | $0.002\%$ |
+| Atom | $A$ | Method | $\Delta/M$ |
+|:-----|----:|:-------|----------:|
+| ${}^1\mathrm{H}$ | 1 | free nucleon | $0.000001\%$ |
+| ${}^2\mathrm{H}$ | 2 | $B = \alpha \times \hat{V}_e$ (mass tower) | $0.00005\%$ |
+| ${}^3\mathrm{H}$ | 3 | BW, $a = 1-h^2$ (figure-eight) | $0.00002\%$ |
+| ${}^3\mathrm{He}$ | 3 | BW, $a = 1-h^2$ (figure-eight) | $0.000004\%$ |
+| ${}^4\mathrm{He}$ | 4 | BW, $a = (1-h^2)^2$ (Borromean-4) | $0.002\%$ |
+| ${}^{12}\mathrm{C}$ | 12 | BW, $a = 1$ | $0.010\%$ |
+| ${}^{40}\mathrm{Ca}$ | 40 | BW, $a = 1$ | $0.002\%$ |
+| ${}^{56}\mathrm{Fe}$ | 56 | BW, $a = 1$ | $0.005\%$ |
+| ${}^{208}\mathrm{Pb}$ | 208 | BW, $a = 1$ | $0.003\%$ |
 
-Mean $|\Delta/M| = 0.002\%$ across 14 isotopes (${}^1\mathrm{H}$
-through ${}^{208}\mathrm{Pb}$).
+Mean $|\Delta/M| = 0.010\%$ across 15 isotopes.
+
+**Operator dressing** (LP-derived gluon budget per nucleus):
+
+| $A$ range | Gluon budget | LP status |
+|:----------|:-------------|:----------|
+| $A \leq 12$ | $2\sigma_0$ per nucleon | all stable |
+| ${}^{16}\mathrm{O}$ | $2\sigma_0$/nucleon + $1\sigma_1$ | stable (1 extra $\sigma_1$) |
+| ${}^{14}\mathrm{C}$, $A \geq 20$ | needs multi-word ILP | unstable (single-operator insufficient) |
+
+The gluon count is $A$-dependent.  The proton ILP gives $2\sigma_0$
+(minimum-action stabiliser); this suffices for $A \leq 12$.
+At $A = 16$ (${}^{16}\mathrm{O}$), the $\sigma_0$ and $L_-$ channels
+violate Frobenius positivity, requiring one additional $\sigma_1$
+crossing.  For $A \geq 20$, no single-operator repetition stabilises
+the braid — the full multi-word ILP
+([universal ILP](#def:universal-ilp-algorithm)) is needed.
 
 **$Q$-values** from mass difference $Q = M_{\mathrm{par}} - M_{\mathrm{dau}}$
 (neutral atoms, consistent $k = 11$):
