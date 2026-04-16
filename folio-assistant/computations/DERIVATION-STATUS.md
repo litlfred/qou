@@ -171,8 +171,33 @@ different levels interact non-trivially.
    0.0375 × 1540 = 57.7 ≈ 60.04 for Fe-56).  MAE improved ~1%
    (0.01038% → 0.01030%).  BUT: scaling is NOT T(T+1)/A^{4/3} —
    character data shows N=Z nuclei also contribute (m_{321} ≠ 0
-   for ⁴He, ¹²C, ⁴⁰Ca).  Correct scaling requires the full
-   character polynomial in Z,N,A from the symbolic computation.
+   for ⁴He, ¹²C, ⁴⁰Ca).
+
+   **Finding (Apr 2026)** — `k6_scaling_refine.py` attempts to fit
+   the exact m_{321}(Z,N) from inter-nucleon crossing characters
+   against polynomial bases in (Z, N, A).  For 16 stable nuclei
+   (A=2..16, range −35.6 to +19.5 keV), **all polynomial fits
+   fail** (R² ≤ 0.06):
+
+   | Kernel | R² | RMS residual |
+   |--------|----|--------------|
+   | ZN / A^{4/3} (current) | 0.030 | 16.8 keV |
+   | (Z−N)(A−1) / A^{4/3} | −0.06 | 17.5 keV |
+   | {ZN, Z(Z−1), N(N−1)} / A^{4/3} | 0.046 | 16.6 keV |
+   | {Z, N, ZN, Z², N², A} / A^{4/3} | 0.057 | 16.5 keV |
+   | {n_pp, n_nn, n_pn} / A^{4/3} | 0.046 | 16.6 keV |
+
+   The character χ_{[3,2,1]} on the nuclear braid is NOT a low-order
+   polynomial in (Z, N, A): it oscillates in sign between ⁸Be
+   (−31 keV) and ¹²C (+19.5 keV), both N=Z.  The ordering-dependence
+   of the interleaved p/n braid path breaks Z↔N symmetry in a way
+   that closed-form scaling cannot capture.  A refined formula must
+   either (a) evaluate the exact character per-nucleus (numerically
+   stable only for A ≤ 16), or (b) accept the first-order
+   approximation with ~keV-scale residuals — consistent with the
+   shadow-price coefficient magnitude ≈ 19 keV (DELTA_W2).  See
+   `k6_higher_order_fit.py` for the full per-partition Markov table
+   at A=2..7.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
    Needs k≥7 exact corrections.
 3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
