@@ -74,26 +74,27 @@ ATOMS = [
 
 
 def compute_per_generator_volumes(Z, N):
-    """Per-generator traced volumes V_i for the nuclear braid.
+    """Per-generator full traced volumes V̂_i^full and cross-channel.
 
-    Uses HeckeRational (exact) on the ground-state ordering.
+    Uses the CANONICAL paper formula (wedderburn-mass-formula.md):
+        V̂_i^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt
+    via HeckeRational.V_full (central utility).
+
+    Cross-channel (mass-endomorphism-tower formula sum 3):
+        δ_xchan = z² × Σ_{|i-j|=1} ln|V̂_i^full · V̂_j^full| × m_e
+
     Returns:
-        ordering: list of 0/1 (0=n, 1=p) for the GS ordering
-        V_list: [V_0, V_1, ..., V_{A-2}] traced volumes per generator
-        cross_sum: Σ_{i} ln|V_i V_{i+1}| over adjacent pairs
-        delta_xchan_MeV: z² × cross_sum × m_e (cross-channel correction)
+        ordering, V_full_list, cross_sum, delta_xchan_MeV
     """
     A = Z + N
     if A < 2:
         return [], [], 0.0, 0.0
 
     ordering, method = _HE.ground_state_ordering(Z, N)
-    V_list = [float(_HE.qr.traced_volume(i, ordering))
-              for i in range(A - 1)]
+    V_list = [float(v) for v in _HE.qr.V_full_all(ordering)]
 
-    # Cross-channel: Σ_{|i-j|=1} ln|V_i V_j|
     cross_sum = 0.0
-    for i in range(A - 2):
+    for i in range(len(V_list) - 1):
         prod = abs(V_list[i] * V_list[i + 1])
         if prod > 1e-300:
             cross_sum += math.log(prod)
