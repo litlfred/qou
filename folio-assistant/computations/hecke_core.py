@@ -98,6 +98,18 @@ ALPHA_BORROMEAN = M_E_MEV * VOL_BORROMEAN          # binding scale for Borromean
 ALPHA_FIGURE8 = M_E_MEV * VOL_FIGURE8             # binding scale for figure-8-like nuclei
 ALPHA = ALPHA_BORROMEAN                             # default (backward compat)
 
+# ── Electron traced volume V̂_e (mass-tower formula) ──────────────
+# Trefoil σ³ on 2 strands (1 generator), 3 crossings (c=1, d=0).
+# V̂_e = W_SYM×q³ + W_STD×V_std + W_ALT×(-1/q)³
+# where V_std = z·a+b from transfer matrix T(1,0)³.
+# This is the SAME V̂ that gives m_p/m_e = 1870 in the mass-tower.
+# B(D) = α × V̂_e (deuteron binding = Borromean scale × electron action).
+# Reference: prop:mass-endomorphism-tower
+_a_e, _b_e = 0.0, 1.0
+for _ in range(3):
+    _a_e, _b_e = _a_e * h + _b_e, _a_e
+V_HAT_ELECTRON = W_SYM * q0**3 + W_STD * (z * _a_e + _b_e) + W_ALT * (-qi)**3
+
 # ── Knot classification and Wedderburn-Artin modification ────────
 # Each NF basis element lives at a jet level determined by word length:
 #   J⁰: γ (length 0) → unknot, Vol=0, CS=0
@@ -1008,6 +1020,29 @@ def _phi1_nuclear(Z, N):
     if A <= 1:
         return 0.0
 
+    # ── A=2 (Deuterium): dedicated formula ────────────────────
+    # B(D) = α × V̂_e  where V̂_e is the electron's Wedderburn-weighted
+    # traced volume from the trefoil σ₁³.
+    # The pn crossing is mediated by the shared electron.
+    # Reference: prop:mass-endomorphism-tower
+    if A == 2:
+        # V̂_e = w_sym × q³ + w_std × V_std + w_alt × (-1/q³)
+        # For trefoil σ₁³ on 2 strands: 3 crossings, all (c=1, d=0) on gen 0.
+        # V_std = z×M[0][0] + M[1][0] where M = T(1,0)³
+        # T(1,0) = [[h, 1],[1, 0]] → T³ = specific matrix
+        _t = [[h, 1.0], [1.0, 0.0]]
+        _M = [[1.0, 0.0], [0.0, 1.0]]
+        for _ in range(3):
+            _M = [[_M[0][0]*_t[0][0]+_M[0][1]*_t[1][0],
+                   _M[0][0]*_t[0][1]+_M[0][1]*_t[1][1]],
+                  [_M[1][0]*_t[0][0]+_M[1][1]*_t[1][0],
+                   _M[1][0]*_t[0][1]+_M[1][1]*_t[1][1]]]
+        _V_std = z * _M[0][0] + _M[1][0]
+        _V_e = W_SYM * q0**3 + W_STD * _V_std + W_ALT * (-qi**3)
+        CATALAN_G = 0.915965594177219015054603514932
+        _alpha = M_E_MEV * 8 * CATALAN_G
+        return _alpha * abs(_V_e)
+
     # Try ordering cache first
     nuc_ordering = None
     try:
@@ -1286,12 +1321,13 @@ def binding_energy_bw(Z, N, k=3):
         # No nuclear braid → no binding.
         return 0.0
 
-    # NOTE: A=2 (Deuterium) is a SATELLITE knot, not Borromean.
-    # The k=3+ BW polynomial gives ~2.86 MeV vs AME 2.224 MeV (29% over).
-    # The proper A=2 formula needs H_2(q) Wedderburn (only sym + alt
-    # irreps; no standard rep [n-1,1] exists for n=2), which differs
-    # from the H_3+ polynomial extrapolation. The pairing 1/√A and
-    # shell terms are inappropriate at A=2. Open derivation work.
+    # ── A=2 (Deuterium): B(D) = α × V̂_e ─────────────────────
+    # The pn crossing is mediated by the shared electron.
+    # V̂_e = electron's Wedderburn-weighted traced volume (trefoil σ₁³).
+    # Reference: prop:mass-endomorphism-tower
+    if A == 2:
+        # B(D) = α × V̂_e (prop:mass-endomorphism-tower)
+        return ALPHA_BORROMEAN * abs(V_HAT_ELECTRON)
 
     # ── H₃(q) terms 1-6 ─────────────────────────────────────
     # Z-independent (bulk) terms:
