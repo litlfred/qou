@@ -255,9 +255,14 @@ torus-knot words define the full particle spectrum.
 
 [Chapter 10](#chap:particle-interactions) develops the Gröbner–Shirshov
 reduction engine that computes normal forms for knot words in the
-Iwahori–Hecke algebra, together with the linear programming
-problem whose stability constraints generate the nuclear force.
-The embeddability bound on $\Sigma_4$ yields exactly $7$ transfer
+Iwahori–Hecke algebra, together with an **integer linear program**
+whose **dual** — taken over the Frobenius Gram matrix — selects
+the unique transfer operator that fires at each vertex.  The ILP
+dual is the mechanism by which the framework decides *which*
+particle interaction happens: of the admissible operators at a
+given configuration, the one minimising the categorical action
+wins, and strong duality identifies it uniquely.  The
+embeddability bound on $\Sigma_4$ yields exactly $7$ transfer
 matrices — six non-trivial force operators and the identity
 (**interaction completeness**).  The hyperbolic volumes of the
 knots that appear — $\mathrm{Vol}(4_1)$, $\mathrm{Vol}(B_3)$, and
