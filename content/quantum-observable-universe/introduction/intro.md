@@ -6,9 +6,9 @@ where we stand or which way we face.  Time flows: the world
 unfolds, and we drift along that flow.  Three-fold structure recurs
 throughout nature — three colours, three generations of matter,
 three-fold chirality — in a way that demands explanation rather
-than stipulation.  And crucially, multiple observers share the same
-world — not each illuminating a private universe, but all
-navigating a common landscape.
+than stipulation.  Multiple observers share the same world — not
+each illuminating a private universe, but all navigating a common
+landscape.
 
 Some observations run deeper.  We can measure, record, and compare,
 and those comparisons are consistent — there is a pairing between
@@ -26,30 +26,29 @@ reason, count, and calculate — seems woven into the fabric rather
 than bolted on.
 
 Heisenberg reminded us that what we observe is not nature itself
-but nature exposed to our method of questioning.  This book takes
+but nature exposed to our method of questioning.  This paper takes
 that insight seriously.  We do not ask what the universe *is* — we
 ask what its mechanics *do*.  Category theory is the natural
 language for this, because it describes structure and transformation
 without committing to any particular ontology.
 
-A remarkable fact — and the central thesis of this book — is that
-these everyday observations, once stated carefully, determine a
-specific algebraic structure: a *rigid monoidal category* equipped
-with a fibre functor and a Frobenius trace $\int_A$.  We call this
-structure a **quantum observable universe** (QOU).  Its axioms
-encode precisely the features listed above and nothing more.
+The central thesis of this paper is that these everyday
+observations, once stated carefully, determine a specific algebraic
+structure: a *rigid monoidal category* equipped with a fibre
+functor and a Frobenius trace $\int_A$.  We call this structure a
+**quantum observable universe** (QOU).  Its axioms encode precisely
+the features listed above and nothing more.
 
-What follows from these axioms is surprising in both scope and
-specificity.  The symmetry group $\mathrm{SU}_2(R)$ is not assumed;
-it emerges via Tannaka–Krein reconstruction.  The uncertainty
-principle is not postulated; it appears as the geometric signature
-of degrees of freedom not yet resolved.  Observation is an act of
-intention, and intention can produce genuinely new outcomes — not
-merely reveal pre-existing ones.  Genus four is not chosen either;
-it is forced.  The Descartes obstruction $\chi(A) = -6$ drops out
-of the lifting theory, and a single algebraic curve realises it
-canonically: Bring's surface $\Sigma_4$, the universal genus-$4$
-curve with maximal automorphism group $S_5$.  It becomes a natural
+The consequences are broad in scope and specific in detail.  The
+symmetry group $\mathrm{SU}_2(R)$ is not assumed; it emerges via
+Tannaka–Krein reconstruction.  The uncertainty principle is not
+postulated; it appears as the geometric signature of degrees of
+freedom not yet resolved.  Observation is an act of intention, and
+intention produces outcomes not determined by the initial
+conditions.  Genus four is not chosen either; it is forced, and a
+single algebraic curve realises it canonically: Bring's surface
+$\Sigma_4$, the universal genus-$4$ curve with maximal automorphism
+group $S_5$.  It becomes a natural
 object of study — not a model imposed from outside, but the unique
 geometric carrier the axioms demand.
 
@@ -236,9 +235,9 @@ $$
   d_H(q) = \frac{(2q - 1)^2}{q^3}.
 $$
 
-The framework provides an interesting perspective on questions such
-as P versus NP in terms of categorical obstructions and event
-horizons for information flow.  Crossing energy relates to
+The framework recasts questions such as P versus NP as statements
+about categorical obstructions and event horizons for information
+flow.  Crossing energy relates to
 categorical mass by
 
 $$
