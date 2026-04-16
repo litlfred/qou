@@ -355,8 +355,5 @@ Python, together with the Lean sources, are available at
 The author used large language models throughout the drafting and
 formalisation process, both because a physical disability prevents
 sustained typing and to assist with Lean proof engineering.  Human
-adjudication of every line is not complete.
-
-> *Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu
-> le loisir de la faire plus courte.*
-> — Blaise Pascal
+adjudication of every line is not complete.  Finally the author would
+like to evoke Pascal *Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu le loisir de la faire plus courte.*
