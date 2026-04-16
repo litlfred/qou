@@ -5,6 +5,7 @@ import QOU.ArchimedeanMassFormula
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 /-!
 # Hyperbolic Volume Transcendence: Conjectures and Propositions
@@ -134,17 +135,20 @@ structure VolumeTowerDecomposition where
       the dominant contribution. -/
   baseline_dominant : levelContribution 0 > 0
 
-/-- The tail of the tower decomposition is bounded.
-    (Proved from summability.) -/
-theorem VolumeTowerDecomposition.tail_bounded
-    (vtd : VolumeTowerDecomposition) (N : ℕ) :
-    ∃ (C : ℝ), C ≥ 0 ∧
-      ∀ n, n ≥ N → |vtd.levelContribution n| ≤ C / (n + 1) := by
-  -- Follows from vtd.summable: summable sequences are O(1/n).
-  -- Proof: summable → tendsto_atTop_zero → eventually bounded → ∃ C.
-  -- Requires Mathlib's Summable.tendsto_atTop_zero and Filter API.
-  -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
-  sorry
+/-- The level contributions tend to zero.
+    Proved: summable ⟹ terms → 0. -/
+theorem VolumeTowerDecomposition.tendsto_zero
+    (vtd : VolumeTowerDecomposition) :
+    Filter.Tendsto vtd.levelContribution Filter.atTop (nhds 0) :=
+  vtd.sum_eq.tendsto_atTop_zero
+
+/-- For any ε > 0, eventually |Φ_n(K)| < ε. -/
+theorem VolumeTowerDecomposition.eventually_small
+    (vtd : VolumeTowerDecomposition) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N, ∀ n, n ≥ N → |vtd.levelContribution n| < ε := by
+  have h := vtd.tendsto_zero
+  rw [Metric.tendsto_atTop] at h
+  exact h ε hε
 
 /-- Tower decomposition for Vol(4₁). -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
