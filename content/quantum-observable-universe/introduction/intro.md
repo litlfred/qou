@@ -101,7 +101,7 @@ The paper is organised as follows.
 the algebraic skeleton encoded in the triple
 
 $$
-  (\mathbf{C}, A, \tau)
+(\mathbf{C}, A, \tau)
 $$
 
 — a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf object
@@ -132,7 +132,7 @@ limitation of four on the state space.  The QOU is characterised
 by the archimedean tuple
 
 $$
-  (\mathbf{C}, \theta, G, \mathcal{S}).
+(\mathbf{C}, \theta, G, \mathcal{S}).
 $$
 
 A categorical Dirac operator $\mathcal{D}_\nabla$, constructed
@@ -144,15 +144,10 @@ field curves (Yang–Mills).  Coupling a matter state $\psi$ adds
 a third — yielding the categorical action
 
 $$
-  \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
-  = 
-  \underbrace{\mathrm{tr}\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}}
-  + 
-  \underbrace{\textstyle\int_A \!\circ \mathrm{tr}_A\bigl(
-    F_\nabla \wedge_q \star_q F_\nabla
-  \bigr)}_{\text{gauge}}
-  + 
-  \underbrace{\textstyle\int_A\!\bigl(\psi^{\ast} \cdot \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}},
+\mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
+= \underbrace{\mathrm{tr}\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}}
++ \underbrace{\textstyle\int_A \!\circ \mathrm{tr}_A\bigl( F_\nabla \wedge_q \star_q F_\nabla \bigr)}_{\text{gauge}}
++ \underbrace{\textstyle\int_A\!\bigl(\psi^{\ast} \cdot \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}},
 $$
 
 from which quantum versions of the Einstein, Yang–Mills, and Dirac
@@ -232,7 +227,7 @@ clock of the algebra — generates a dynamical system whose boundary
 is a fractal (a Julia set) with Hausdorff dimension
 
 $$
-  d_H(q) = \frac{(2q - 1)^2}{q^3}.
+d_H(q) = \frac{(2q - 1)^2}{q^3}.
 $$
 
 The framework recasts questions such as P versus NP as statements
@@ -241,9 +236,7 @@ flow.  Crossing energy relates to
 categorical mass by
 
 $$
-  E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{2},
-  \qquad
-  c_q = \frac{1}{q - 1},
+E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{2}, \qquad c_q = \frac{1}{q - 1},
 $$
 
 where $c_q$ is the information speed of light — $E = mc^2$
@@ -272,7 +265,7 @@ others — encode the physical constants; the topological mass
 formula
 
 $$
-  \mathfrak{m}(K) = \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}
+\mathfrak{m}(K) = \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}
 $$
 
 acts as a Feynman path integral via the non-abelian Stokes formula,
@@ -291,14 +284,13 @@ $m_\mu/m_e$ fixes the substrate parameter via the Skein mass
 relation
 
 $$
-  \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}},
-  \qquad \hbar_q = \frac{q - 1}{q},
+\frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = \frac{q - 1}{q},
 $$
 
 giving
 
 $$
-  q_0 = 1.1097 + O\!\bigl(2.2 \times 10^{-8}\bigr)
+q_0 = 1.1097 + O\!\bigl(2.2 \times 10^{-8}\bigr)
 $$
 
 for our local patch of the universe.  Once $q_0$ and the two
@@ -309,18 +301,10 @@ A few examples:
   $\mathfrak{m}_A(Z, N; q_0)$ via the Wedderburn formula on the
   Iwahori–Hecke algebra, matching AME2020 across the periodic
   table to sub-percent precision.
-- **Fine-structure constant**
-  from a $q$-deformed Chern–Simons calculation on the force-carrier
-  torus knots $T_{2,9}$ and $T_{3,5}$,
-
-  $$
-    \frac{1}{\alpha_{\mathrm{EM}}}
-    = q \cdot [9]_q \cdot [10]_q \cdot
-      \bigl(1 + c_1 + c_1^{2}\kappa\bigr)
-    \approx 137.0359
-    \quad\text{vs CODATA}\ 137.035999\ (399\text{ ppb}).
-  $$
-
+- **Fine-structure constant** from a $q$-deformed Chern–Simons
+  calculation on the force-carrier torus knots $T_{2,9}$ and
+  $T_{3,5}$: $1/\alpha_{\mathrm{EM}} = q \cdot [9]_q \cdot [10]_q \cdot \bigl(1 + c_1 + c_1^{2}\kappa\bigr) \approx 137.0359$,
+  vs CODATA $137.035999$ (399 ppb).
 - **Proton-to-electron mass ratio**
   from the non-perturbative $\Phi_q$-tower endomorphism,
   $m_p / m_e \approx 1836$, together with **$\beta$-decay Q-values**
@@ -359,3 +343,7 @@ typing and to assist with Lean proof engineering.  Human
 adjudication of every line is not complete.
 
 *= almost; in progress.
+
+> *Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu
+> le loisir de la faire plus courte.*
+> — Blaise Pascal
