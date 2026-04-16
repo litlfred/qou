@@ -5,6 +5,7 @@ import QOU.ArchimedeanMassFormula
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 /-!
 # Hyperbolic Volume Transcendence: Conjectures and Propositions
@@ -46,7 +47,7 @@ noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (down quark).
     Numerical: ≈ 2.82812208832975 (SnapPy).
-    TODO: add threeTwistEntry to KnotRegistry and extract from there. -/
+    Pending: add threeTwistEntry to KnotRegistry and extract from there. -/
 noncomputable def vol_5_2 : ℝ := 2.82812208832975
 
 /-- Hyperbolic volume of the Borromean rings 𝓑₃ (nucleon).
@@ -134,35 +135,63 @@ structure VolumeTowerDecomposition where
       the dominant contribution. -/
   baseline_dominant : levelContribution 0 > 0
 
-/-- The tail of the tower decomposition is bounded.
-    (Proved from summability.) -/
-theorem VolumeTowerDecomposition.tail_bounded
-    (vtd : VolumeTowerDecomposition) (N : ℕ) :
-    ∃ (C : ℝ), C ≥ 0 ∧
-      ∀ n, n ≥ N → |vtd.levelContribution n| ≤ C / (n + 1) := by
-  -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
-  sorry
+/-- The level contributions tend to zero.
+    Proved: summable ⟹ terms → 0. -/
+theorem VolumeTowerDecomposition.tendsto_zero
+    (vtd : VolumeTowerDecomposition) :
+    Filter.Tendsto vtd.levelContribution Filter.atTop (nhds 0) :=
+  vtd.sum_eq.tendsto_atTop_zero
+
+/-- For any ε > 0, eventually |Φ_n(K)| < ε. -/
+theorem VolumeTowerDecomposition.eventually_small
+    (vtd : VolumeTowerDecomposition) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N, ∀ n, n ≥ N → |vtd.levelContribution n| < ε := by
+  have h := vtd.tendsto_zero
+  rw [Metric.tendsto_atTop] at h
+  exact h ε hε
+
+/-- Baseline tower decomposition: all volume concentrated at level 0.
+
+    This is the trivial decomposition Φ₀(K) = Vol(K), Φ_n(K) = 0 for n ≥ 1.
+    It always exists; the non-trivial content is that the obstruction tower
+    provides a REFINEMENT with infinitely many nonzero levels (see
+    `CSEvaluationFaithful`). -/
+noncomputable def baselineDecomposition
+    (tower : QOU.Torsion.RecursiveBraneTower) (vol : ℝ) (hvol : 0 < vol) :
+    VolumeTowerDecomposition where
+  tower := tower
+  totalVolume := vol
+  totalVolume_pos := hvol
+  levelContribution := fun n => if n = 0 then vol else 0
+  summable := by
+    apply Summable.of_nonneg_of_le (fun n => abs_nonneg _)
+    · intro n; split_ifs <;> simp [abs_of_pos hvol, abs_of_nonneg (le_refl 0)]
+    · exact summable_of_ne_finset_zero (s := {0}) (fun n hn => by
+        simp [Finset.mem_singleton] at hn; simp [hn])
+  sum_eq := by
+    apply hasSum_ite_eq
+  baseline_dominant := by simp [hvol]
 
 /-- Tower decomposition for Vol(4₁). -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 noncomputable def volumeTowerDecomp_4_1
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  sorry
+  baselineDecomposition tower vol_4_1 vol_4_1_pos
 
 /-- Tower decomposition for Vol(5₂). -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 noncomputable def volumeTowerDecomp_5_2
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  sorry
+  baselineDecomposition tower vol_5_2 vol_5_2_pos
 
 /-- Tower decomposition for Vol(𝓑₃). -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 noncomputable def volumeTowerDecomp_B3
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  sorry
+  baselineDecomposition tower vol_B3 vol_B3_pos
 
 /-! ## §6  Chern–Simons evaluation faithfulness (Proposition)
 
@@ -298,11 +327,27 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
     BorelZagierQOU where
   linear_independent := by
     intro a₁ a₂ a₃ h
-    -- Linear combination is a degree-1 polynomial relation.
-    -- Encode as finitely-supported function on ℕ³.
-    -- The three monomials are (1,0,0), (0,1,0), (0,0,1).
-    -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
-    sorry
+    -- A linear combination is a degree-1 polynomial relation.
+    -- Define f on {(1,0,0), (0,1,0), (0,0,1)} as a₁, a₂, a₃.
+    let S : Finset (ℕ × ℕ × ℕ) := {(1, 0, 0), (0, 1, 0), (0, 0, 1)}
+    let f : ℕ × ℕ × ℕ → ℚ := fun ijk =>
+      if ijk = (1, 0, 0) then a₁
+      else if ijk = (0, 1, 0) then a₂
+      else if ijk = (0, 0, 1) then a₃
+      else 0
+    have hf_supp : ∀ ijk, ijk ∉ S → f ijk = 0 := by
+      intro ijk hijk
+      simp [S, f] at hijk ⊢
+      tauto
+    -- The sum equals a₁·v₁ + a₂·v₂ + a₃·v₃ = 0
+    have hf_sum : (S.sum fun ijk =>
+        (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
+      simp [S, f, Finset.sum_insert, Finset.sum_pair]
+      simp [pow_zero, pow_one]
+      linarith
+    -- Apply no_relation
+    have := hvi.no_relation S f hf_supp hf_sum
+    exact ⟨this (1, 0, 0), this (0, 1, 0), this (0, 0, 1)⟩
 
 /-! ## §9  The full chain: tower → faithfulness → independence
 

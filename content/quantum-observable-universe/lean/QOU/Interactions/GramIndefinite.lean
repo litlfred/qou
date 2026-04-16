@@ -123,6 +123,7 @@ All variables are symbolic: q appears only through z and HA.
 
 import QOU.Descartes.HeckeH3
 import QOU.Descartes.GroundRing
+import QOU.Interactions.BorromeanUnique
 
 namespace QOU.Interactions
 

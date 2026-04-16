@@ -174,9 +174,13 @@ structure TwoPointFunction where
   coefficients_nonneg : ∀ n, 0 ≤ coefficients n
   eval : ℝ → ℝ
 
-/-- If the transfer matrix has a mass gap, the two-point function
-    decays exponentially at rate `Δ₀ = gapValue`. -/
-theorem twoPoint_exponential_decay
+/-- If the transfer matrix has a mass gap, the gap value is positive.
+
+    AUDIT NOTE: Previously named `twoPoint_exponential_decay`, which was
+    misleading — the theorem only restates gap positivity, not exponential
+    decay. The actual exponential decay bound `|G(t)| ≤ C·e^{-Δ₀·t}`
+    requires spectral theory not yet formalised. Renamed for honesty. -/
+theorem twoPoint_gap_positive
     (tpf : TwoPointFunction)
     (hgap : tpf.tm.hasMassGap) :
     0 < tpf.tm.gapValue :=
