@@ -80,7 +80,13 @@ generator knots are identified, purely mathematically, with the
 objects we label *quarks* (unknot in a Borromean braid),
 *electrons* (trefoil $3_1 = T_{2,3}$), *hadrons* (Borromean
 three-braid $\mathcal{B}_3$), and *photons* (unframed unknot
-$T_{1,0}$).
+$T_{1,0}$).  All further structure — leptons, baryons, nuclei,
+atoms, molecules — is obtained by iterating knot operations
+starting from $\gamma\gamma$ pair production: the Breit–Wheeler
+vertex $\gamma + \gamma \to e^+ + e^-$ is the seed that promotes
+two unframed unknots into a trefoil–antitrefoil pair, and every
+subsequent particle is reached by further crossings, braid
+concatenations, and Skein resolutions.
 
 Even the capacity for computation — the Turing completeness of the
 substrate — is a consequence, not an input.  That so much structure
