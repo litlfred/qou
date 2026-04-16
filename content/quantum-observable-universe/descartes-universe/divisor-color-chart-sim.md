@@ -1,10 +1,11 @@
 Interactive 3D visualisation of the color tube divisors on the
-Brings surface brane.
+Brings surface brane, embedded in $\mathbb{P}^4(\mathbb{C})$ —
+the projective space containing both the spacetime base
+$\mathbb{P}^1(\mathbb{C})$ and the color fiber directions.
 
-The brown surface of revolution represents the
-$\mathbb{P}^1(\mathbb{C})$ affine chart (the brane), with its
-profile determined by the Brings surface fiber structure.  Three
-color tubes spiral around the brane:
+The brown surface of revolution represents the brane with smooth
+profile $R(z) = s\sqrt{(2+z+2z^2)/3}$ derived from the cubic
+discriminant structure.  Three color tubes spiral around it:
 
 | Tube | Color coordinate | Resolvent |
 |------|-----------------|-----------|
@@ -16,7 +17,16 @@ where $x_2, x_3, x_4$ are the three roots of the Brings fiber cubic
 $$
   t^3 + (1{+}z)\,t^2 + (1{+}z{+}z^2)\,t + (1{+}z)(1{+}z^2) = 0
 $$
-at each point $z$ of the affine chart.
+at each point $z \in [0, \infty] = \mathbb{P}^1(\mathbb{R})$.
+
+**Base scaling.**  Four modes map $z \in [0, \infty]$ to visual space:
+
+| Mode | Mapping | Behaviour |
+|------|---------|-----------|
+| arctan | $x = \arctan z$ | Compactifies $\infty$; projective |
+| log | $x = \ln(1+z)$ | Moderate compression |
+| $\sqrt{z}$ | $x = \sqrt{z}$ | Emphasises small $z$ |
+| linear | $x = z$ | Affine chart |
 
 **Divisor markers** (white spheres) appear where a color tube crosses
 the brane surface.  These are the ramification points of the covering

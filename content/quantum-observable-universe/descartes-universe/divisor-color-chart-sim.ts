@@ -1,12 +1,13 @@
 import { simulator } from "../../../folio-assistant/schemas/builders";
 
 /**
- * Divisor Visualization — Color Tubes on Brane.
+ * Divisor Visualization — Color Tubes on Brane (P⁴ embedding).
  *
  * 3D WebGL rendering of the three color tube coordinates
- * (c_r, c_g, c_b) on the Brings surface affine chart,
- * with q-dependent torsion and divisor markers where
- * color tubes cross the brane surface.
+ * (c_r, c_g, c_b) on the Brings surface with projective
+ * parameterization z ∈ [0, ∞] = P¹(R), smooth brane profile
+ * R(z) = s·√((2+z+2z²)/3), q-dependent torsion, and selectable
+ * base scalings (arctan, log, √z, linear).
  */
 export default simulator({
   label: "sim:divisor-color-chart",
@@ -24,8 +25,9 @@ export default simulator({
     params: {
       q: 1.1097,
       twistRate: 0.50,
-      zMin: -2,
-      zMax: 3,
+      zMax: 8,
+      braneScale: 0.35,
+      scale: "projective",
       tubeRadius: 0.07,
       showBrane: true,
       showTubes: true,
@@ -40,8 +42,9 @@ export default simulator({
       params: {
         q: 1.0,
         twistRate: 0.50,
-        zMin: -2,
-        zMax: 3,
+        zMax: 8,
+        braneScale: 0.35,
+        scale: "projective",
         tubeRadius: 0.07,
         showBrane: true,
         showTubes: true,
@@ -55,8 +58,9 @@ export default simulator({
       params: {
         q: 1.8,
         twistRate: 0.50,
-        zMin: -2,
-        zMax: 3,
+        zMax: 8,
+        braneScale: 0.35,
+        scale: "projective",
         tubeRadius: 0.07,
         showBrane: true,
         showTubes: true,
@@ -66,12 +70,13 @@ export default simulator({
     },
     {
       name: "wide-range",
-      title: "Wide affine chart ($z \\in [-4, 6]$)",
+      title: "Wide range ($z_{\\max} = 20$, log scale)",
       params: {
         q: 1.1097,
         twistRate: 0.50,
-        zMin: -4,
-        zMax: 6,
+        zMax: 20,
+        braneScale: 0.25,
+        scale: "log",
         tubeRadius: 0.05,
         showBrane: true,
         showTubes: true,
