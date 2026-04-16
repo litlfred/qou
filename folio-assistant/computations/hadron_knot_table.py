@@ -34,7 +34,15 @@ from hecke_core import (
     build_atom_nf, build_nucleon_nf, nf_tr, nf_net, check_frobenius,
     NF_NAMES, binding_energy_bw, classify_nuclear_knot,
 )
+from hecke_engine import HeckeEngine, HeckeRational
 from witness_base import WitnessBuilder
+
+# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) for cross-channel weight
+_z = 1.0 / (Q**0.5 + Q_INV**0.5)
+_Z2 = _z * _z
+
+# Reusable engine for per-generator traced volumes
+_HE = HeckeEngine(111, 100)
 
 
 # ── Atoms to compute ─────────────────────────────────────────────
@@ -65,6 +73,35 @@ ATOMS = [
 ]
 
 
+def compute_per_generator_volumes(Z, N):
+    """Per-generator traced volumes V_i for the nuclear braid.
+
+    Uses HeckeRational (exact) on the ground-state ordering.
+    Returns:
+        ordering: list of 0/1 (0=n, 1=p) for the GS ordering
+        V_list: [V_0, V_1, ..., V_{A-2}] traced volumes per generator
+        cross_sum: Σ_{i} ln|V_i V_{i+1}| over adjacent pairs
+        delta_xchan_MeV: z² × cross_sum × m_e (cross-channel correction)
+    """
+    A = Z + N
+    if A < 2:
+        return [], [], 0.0, 0.0
+
+    ordering, method = _HE.ground_state_ordering(Z, N)
+    V_list = [float(_HE.qr.traced_volume(i, ordering))
+              for i in range(A - 1)]
+
+    # Cross-channel: Σ_{|i-j|=1} ln|V_i V_j|
+    cross_sum = 0.0
+    for i in range(A - 2):
+        prod = abs(V_list[i] * V_list[i + 1])
+        if prod > 1e-300:
+            cross_sum += math.log(prod)
+
+    delta_xchan = _Z2 * cross_sum * M_E_MEV
+    return ordering, V_list, cross_sum, delta_xchan
+
+
 def compute_atom(name, Z, N, quarks=None):
     """Compute hadron-level NF for one atom."""
     if quarks:
@@ -85,6 +122,10 @@ def compute_atom(name, Z, N, quarks=None):
         if abs(val) > 1e-15:
             nf_compact[bname] = round(val, 12)
 
+    # Per-generator traced volumes + cross-channel (mass-tower sum 3)
+    ordering, V_list, cross_sum, delta_xchan = compute_per_generator_volumes(Z, N)
+    V_rounded = [round(v, 12) for v in V_list]
+
     return {
         "name": name,
         "Z": Z,
@@ -98,6 +139,11 @@ def compute_atom(name, Z, N, quarks=None):
         "frobenius_stable": stable,
         "knot_type": knot_name,
         "B_MeV": round(B, 4),
+        # Per-generator traced volumes (mass-tower formula, sum 1 + 3)
+        "ordering": ordering,
+        "V_per_gen": V_rounded,
+        "cross_channel_sum": round(cross_sum, 12),
+        "delta_xchan_MeV": round(delta_xchan, 6),
     }
 
 
@@ -107,16 +153,18 @@ results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
 print(f"q = {Q:.10f}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
 print()
-print(f"{'Atom':>12} {'A':>3} {'terms':>5} {'tr_M':>16} {'net':>16} {'B(MeV)':>10} {'Frob':>5}")
-print("-" * 75)
+print(f"{'Atom':>12} {'A':>3} {'tr_M':>14} {'B(MeV)':>10} {'cross_sum':>11} {'δ_xchan':>10} {'Frob':>5}")
+print("-" * 80)
 
 for name, Z, N, quarks in ATOMS:
     r = compute_atom(name, Z, N, quarks)
     results.append(r)
     print(
-        f"{name:>12} {r['A']:>3} {r['n_terms']:>5} "
-        f"{r['tr_M']:>16.8f} {r['net']:>16.8f} "
+        f"{name:>12} {r['A']:>3} "
+        f"{r['tr_M']:>14.6f} "
         f"{r['B_MeV']:>10.4f} "
+        f"{r['cross_channel_sum']:>+11.6f} "
+        f"{r['delta_xchan_MeV']:>+10.4f} "
         f"{'OK' if r['frobenius_stable'] else 'FAIL':>5}"
     )
 
@@ -129,11 +177,15 @@ w = WitnessBuilder("hadron-knot-table", engine="python")
 w.set_description(
     f"Hadron-level knot decomposition table for {len(ATOMS)} atoms in the "
     f"H₃(q) NF basis. Each atom is 6 coefficients (vs thousands at "
-    f"quark level). Same Markov traces, nets, and Frobenius stability."
+    f"quark level). Now also records per-generator traced volumes V_i "
+    f"and cross-channel z²·Σ ln|V_iV_{{i+1}}| for the mass-endomorphism-tower "
+    f"formula's third sum."
 )
 w.set_content_block("rem:hadron-level-knot-table")
 w.add_parameter("q", Q)
 w.add_parameter("basis", NF_NAMES)
+w.add_parameter("z_markov", _z)
+w.add_parameter("z_squared", _Z2)
 w.add_parameter("n_atoms", len(ATOMS))
 w.add_parameter("total_nf_entries", total_terms)
 
