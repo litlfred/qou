@@ -279,15 +279,7 @@ acts as a Feynman path integral via the non-abelian Stokes formula,
 but avoids standard infinities because the space is
 finite-dimensional.
 
-[Chapter 11](#chap:molecular-construction) extends the knot-word
-formalism from nucleons to molecules.  The molecular Hecke
-algebra describes bond formation as braid concatenation; the
-Frobenius linear-programming problem that stabilised nucleons
-returns here to compute molecular binding energies.  Worked
-examples span $\mathrm{H}_2$, $\mathrm{H}_2\mathrm{O}$, and
-benzene.
-
-[Chapter 12](#chap:observations) confronts theory with experiment.
+[Chapter 11](#chap:observations) confronts theory with experiment.
 The representation theory of $H_n(q)$ and the Bring constraint
 $\chi = -6$ together fix the number of free parameters: **exactly
 three** calibration inputs are needed — one dimensionless ratio,
@@ -315,7 +307,7 @@ A few examples:
 
 - **Atomic masses**
   $\mathfrak{m}_A(Z, N; q_0)$ via the Wedderburn formula on the
-  molecular Hecke algebra, matching AME2020 across the periodic
+  Iwahori–Hecke algebra, matching AME2020 across the periodic
   table to sub-percent precision.
 - **Fine-structure constant**
   from a $q$-deformed Chern–Simons calculation on the force-carrier
@@ -333,6 +325,14 @@ A few examples:
   from the non-perturbative $\Phi_q$-tower endomorphism,
   $m_p / m_e \approx 1836$, together with **$\beta$-decay Q-values**
   for six benchmark nuclei at $4.4\%$ mean absolute error.
+
+[Chapter 12](#chap:molecular-construction) extends the knot-word
+formalism from nucleons to molecules.  The molecular Hecke
+algebra describes bond formation as braid concatenation; the
+Frobenius linear-programming problem that stabilised nucleons
+returns here to compute molecular binding energies at the
+calibrated $q_0$.  Worked examples span $\mathrm{H}_2$,
+$\mathrm{H}_2\mathrm{O}$, and benzene.
 
 [Chapter 13](#chap:q-geometric-langlands) develops the
 $q$-geometric Langlands correspondence that connects the
