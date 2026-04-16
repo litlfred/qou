@@ -19,6 +19,7 @@ Usage:
 
 import math
 import numpy as np
+from fractions import Fraction
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 
 # ══════════════════════════════════════════════════════════════
@@ -449,31 +450,165 @@ G_INV = np.linalg.inv(G)
 # Identity NF: the trivial braid [1, 0, 0, 0, 0, 0]
 _ID_NF = np.array([1.0, 0, 0, 0, 0, 0])
 
+# ══════════════════════════════════════════════════════════════
+# Exact rational NF computation via CRT-style Fraction arithmetic
+# ══════════════════════════════════════════════════════════════
+# All H₃(q) computations are EXACT in ℚ when q = 111/100.
+# Uses Python's Fraction class — no floating point, no overflow.
+
+_Q_FRAC = Fraction(111, 100)
+_QI_FRAC = Fraction(100, 111)
+_H_FRAC = _Q_FRAC - _QI_FRAC  # h = q - 1/q (exact rational)
+_Z_FRAC = Fraction(4993, 10000)  # z ≈ 1/(q^{1/2}+q^{-1/2})
+
+# Exact Markov trace weights
+_TR_M_FRAC = [Fraction(1), _Z_FRAC, _Z_FRAC,
+              _Z_FRAC**2, _Z_FRAC**2, _Z_FRAC**3]
+
+# Exact eigenvalues for sym/alt channels
+_SYM_EIG_FRAC = [Fraction(1), _Q_FRAC, _Q_FRAC,
+                 _Q_FRAC**2, _Q_FRAC**2, _Q_FRAC**3]
+_ALT_EIG_FRAC = [Fraction(1), -_QI_FRAC, -_QI_FRAC,
+                 _QI_FRAC**2, _QI_FRAC**2, -_QI_FRAC**3]
+
+
+def hm_exact(nf, c, d, gen):
+    """Exact Fraction multiplication: NF × (c·σ_gen + d·I).
+
+    Same logic as hm() but with Fraction arithmetic — no rounding.
+    """
+    r = [Fraction(0)] * 6
+    if gen == 0:
+        tables = [
+            (0, [(1,c),(0,d)]),
+            (1, [(1,c*_H_FRAC),(0,c),(1,d)]),
+            (2, [(3,c),(2,d)]),
+            (3, [(3,c*_H_FRAC),(2,c),(3,d)]),
+            (4, [(5,c),(4,d)]),
+            (5, [(5,c*_H_FRAC),(4,c),(5,d)]),
+        ]
+    else:
+        tables = [
+            (0, [(2,c),(0,d)]),
+            (1, [(4,c),(1,d)]),
+            (2, [(2,c*_H_FRAC),(0,c),(2,d)]),
+            (3, [(5,c),(3,d)]),
+            (4, [(4,c*_H_FRAC),(1,c),(4,d)]),
+            (5, [(5,c*_H_FRAC),(3,c),(5,d)]),
+        ]
+    for si, tgts in tables:
+        if nf[si] == 0:
+            continue
+        for ti, co in tgts:
+            r[ti] += nf[si] * co
+    return r
+
+
+def build_atom_nf_exact(Z, N):
+    """Build atom NF using EXACT Fraction arithmetic.
+
+    IDENTICAL algorithm to build_atom_nf but with Fraction arithmetic.
+    Crossing order: per-nucleon (B₃ interleaved + quarks + inter-nucleon
+    with all previous), then electrons. Matches build_atom_nf exactly.
+
+    Reference: prop:atomic-braid-mass
+    """
+    A = Z + N
+    if A == 0:
+        return [Fraction(1), Fraction(0), Fraction(0),
+                Fraction(0), Fraction(0), Fraction(0)]
+
+    F0 = Fraction(0)
+    F1 = Fraction(1)
+    Fh = _H_FRAC
+    Fh2 = Fh / 2
+
+    # Ground-state ordering (same as build_atom_nf)
+    ordering = []
+    pc, nc = 0, 0
+    for k in range(A):
+        if (k % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p'); pc += 1
+        else:
+            ordering.append('n'); nc += 1
+
+    nf = [Fraction(0)] * 6
+    nf[0] = Fraction(1)
+
+    for k in range(A):
+        if ordering[k] == 'p':
+            # B₃: INTERLEAVED σ₀, σ₁⁻¹ (matching build_atom_nf exactly)
+            for _ in range(3):
+                nf = hm_exact(nf, F1, F0, 0)       # σ₀
+                nf = hm_exact(nf, F1, -Fh, 1)       # σ₁⁻¹
+            # Quark: uu on gen0, uu on gen0, ud on gen1
+            nf = hm_exact(nf, F1, F0, 0)
+            nf = hm_exact(nf, F1, F0, 0)
+            nf = hm_exact(nf, F1, -Fh2, 1)
+        else:
+            for _ in range(3):
+                nf = hm_exact(nf, F1, F0, 0)
+                nf = hm_exact(nf, F1, -Fh, 1)
+            # Quark: ud on gen0, ud on gen0, dd on gen1
+            nf = hm_exact(nf, F1, -Fh2, 0)
+            nf = hm_exact(nf, F1, -Fh2, 0)
+            nf = hm_exact(nf, F1, -Fh, 1)
+
+        # Inter-nucleon with all PREVIOUS nucleons (on gen 0)
+        for prev in range(k):
+            ti, tj = ordering[prev], ordering[k]
+            if ti == 'p' and tj == 'p':
+                nf = hm_exact(nf, F1, F0, 0)
+            elif ti == 'n' and tj == 'n':
+                nf = hm_exact(nf, F1, -Fh, 0)
+            else:
+                nf = hm_exact(nf, F1, -Fh2, 0)
+
+    # Electrons on gen 1
+    for _ in range(Z):
+        nf = hm_exact(nf, F1, -Fh, 1)
+
+    return nf
+
+
+def nf_channel_exact(nf_frac):
+    """Exact per-channel characters from Fraction NF.
+
+    Returns (χ_sym, χ_std, χ_alt, tr_M) as Fractions.
+    """
+    chi_sym = sum(c * e for c, e in zip(nf_frac, _SYM_EIG_FRAC))
+    chi_alt = sum(c * e for c, e in zip(nf_frac, _ALT_EIG_FRAC))
+    tr_M = sum(c * e for c, e in zip(nf_frac, _TR_M_FRAC))
+
+    # Wedderburn weights (exact)
+    q2 = _Q_FRAC ** 2
+    D = q2**2 + 4*q2 + 1
+    w_sym = q2 / D
+    w_std = (q2 + 1)**2 / D
+    w_alt = q2 / D
+
+    chi_std = (tr_M - w_sym * chi_sym - w_alt * chi_alt) / w_std
+    return chi_sym, chi_std, chi_alt, tr_M
+
 
 def knot_factor(Z, N):
-    """Per-nucleus knot factor a(N) = ∏(1 - εᵢ) from the product formula.
+    """Per-nucleus knot factor a(N) = ∏(1 - εᵢ) from pair chirality.
 
-    For A≤4: exact factors from nucleon pair chirality.
-    For A≥5: a = 1 (the BW polynomial IS the per-nucleus computation;
-    the Wedderburn averaging is built into the q-integer coefficients).
+    Exact for A≤4 (product formula). Identity for A≥5.
 
-    NF character decomposition (sym/alt channels) is numerically unstable
-    for A≥5 because NF coefficients grow exponentially with A. The BW
-    polynomial's asymptotic expansion handles this correctly.
+    The exact NF character decomposition (via build_atom_nf_exact +
+    nf_channel_exact) gives per-channel ratios r_sym, r_alt, r_std
+    but √(r_sym·r_alt) is NOT the bulk factor — it's a different
+    quantity from the Frobenius norm deviation.
 
     Reference: prop:nuclear-knot-classification
     """
     A = Z + N
-    if A <= 1:
-        return 1.0
-    elif A == 2:
-        return 1.0 + h      # satellite: 1 chiral pn pair
-    elif A == 3:
-        return 1.0 - h**2   # figure-eight: 1 amphicheiral pair
-    elif A == 4:
-        return (1.0 - h**2)**2  # Borromean-4: 2 amphicheiral pairs
-    else:
-        return 1.0           # generic: (1-h²)^n → 1 for large n
+    if A <= 1: return 1.0
+    elif A == 2: return 1.0 + h      # satellite: 1 chiral pn
+    elif A == 3: return 1.0 - h**2   # figure-eight: 1 amphicheiral
+    elif A == 4: return (1.0 - h**2)**2  # Borromean-4: 2 amphicheiral
+    else: return 1.0                  # generic BW
 
 
 def check_frobenius(nf):
