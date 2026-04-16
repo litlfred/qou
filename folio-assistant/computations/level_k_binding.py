@@ -371,6 +371,111 @@ class LevelKEngine:
 
         return results
 
+    def per_irrep_vertex_volume(self, ZA, NA, ZB, NB, n_bonds=1, k=7, max_dim=100):
+        """Molecular binding via per-irrep vertex volumes on actual atomic chains.
+
+        For each partition λ ⊢ k with dim(λ) ≤ max_dim:
+          1. Build dim×dim crossing matrices for each crossing type (pp, nn, pn, pe, bond)
+          2. Compute per-generator traced volume on atom_A + bond + atom_B chain
+          3. Binding = Σ_λ w_λ × |Δln V_λ| per generator
+
+        This captures BOTH atom-dependent chain structure (from VV) and
+        partition-resolved Wedderburn weights (from level-k).
+
+        Returns (E_eV, per_partition_details).
+        """
+        level = self.partitions_at_level(k)
+        if not level:
+            return 0.0, []
+
+        def _crossing_mat(shape, gen, ct):
+            M = seminormal_matrix(shape, gen)
+            d = M.shape[0]
+            if ct == 'pp': return M
+            elif ct in ('nn', 'pe', 'bond'): return M - HA * np.eye(d)
+            elif ct == 'pn': return M - (HA / 2) * np.eye(d)
+            return np.eye(d)
+
+        def _build_chain(ordering, gen, is_bonded, n_b):
+            chain = []
+            for nuc in ordering:
+                if gen == 0:
+                    chain.extend(['pp'] * 3)  # B₃ on gen 0
+                    if nuc == 'p':
+                        chain.extend(['pp', 'pp'])  # uu, uu
+                    else:
+                        chain.extend(['pn', 'pn'])  # ud, ud
+                else:
+                    chain.extend(['nn'] * 3)  # B₃ on gen 1
+                    chain.append('pn' if nuc == 'p' else 'nn')
+            # Inter-nucleon (gen 0 only)
+            if gen == 0:
+                A = len(ordering)
+                for i in range(A):
+                    for j in range(i + 1, A):
+                        ti, tj = ordering[i], ordering[j]
+                        if ti == 'p' and tj == 'p': chain.append('pp')
+                        elif ti == 'n' and tj == 'n': chain.append('nn')
+                        else: chain.append('pn')
+            # Bond
+            if is_bonded:
+                if gen == 0:
+                    chain.extend(['bond'] * (2 * n_b))
+                else:
+                    chain.extend(['bond'] * n_b)
+            return chain
+
+        ord_A = ['p'] * ZA + ['n'] * NA
+        ord_B = ['p'] * ZB + ['n'] * NB
+
+        total_bind = 0.0
+        details = []
+
+        for entry in level:
+            shape = tuple(entry['shape'])
+            w = entry['w']
+            dim = entry['dim']
+
+            if dim > max_dim:
+                continue
+
+            part_bind = 0.0
+            for gen in [0, 1]:
+                chain_ub = _build_chain(ord_A, gen, False, 0) + _build_chain(ord_B, gen, False, 0)
+                chain_bd = _build_chain(ord_A, gen, True, n_bonds) + _build_chain(ord_B, gen, False, 0)
+
+                # Electrons on gen 1
+                if gen == 1:
+                    chain_ub.extend(['pe'] * (ZA + ZB))
+                    chain_bd.extend(['pe'] * (ZA + ZB))
+
+                # Compute traced volumes
+                tabs = standard_young_tableaux(shape)
+                d = len(tabs)
+                if d == 0:
+                    continue
+
+                M_ub = np.eye(d)
+                for ct in chain_ub:
+                    M_ub = M_ub @ _crossing_mat(shape, gen, ct)
+
+                M_bd = np.eye(d)
+                for ct in chain_bd:
+                    M_bd = M_bd @ _crossing_mat(shape, gen, ct)
+
+                tr_ub = float(np.trace(M_ub))
+                tr_bd = float(np.trace(M_bd))
+
+                if abs(tr_ub) > 1e-300 and abs(tr_bd) > 1e-300:
+                    delta = abs(math.log(abs(tr_ub)) - math.log(abs(tr_bd)))
+                    part_bind += delta
+
+            total_bind += w * part_bind
+            details.append({'shape': shape, 'w': w, 'dim': dim, 'bind': part_bind})
+
+        E_eV = total_bind * E_MOL
+        return E_eV, details
+
     def save_witness(self, results_1, results_2, results_3):
         """Save computation witness."""
         from witness_base import WitnessBuilder
