@@ -69,9 +69,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
     <input type="range" id="sl_phi" min="0" max="6.283" step="0.01" value="0">
     <span class="val" id="v_phi">0.00</span>
   </div>
-  <div class="sec">── |z| range [0, ∞] ────────────────</div>
+  <div class="sec">── q<sub>fiber</sub> range [0, ∞] ──────────</div>
   <div class="row">
-    <span class="lbl">z<sub>max</sub></span>
+    <span class="lbl">q<sub>max</sub></span>
     <input type="range" id="sl_zmax" min="1" max="30" step="0.5" value="8.0">
     <span class="val" id="v_zmax">8.0</span>
   </div>
@@ -122,8 +122,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
     <div class="ci"><div class="ci-lbl">|c<sub>r</sub>|</div><div class="ci-val" id="v_cr">—</div></div>
     <div class="ci"><div class="ci-lbl">|c<sub>g</sub>|</div><div class="ci-val" id="v_cg">—</div></div>
     <div class="ci"><div class="ci-lbl">|c<sub>b</sub>|</div><div class="ci-val" id="v_cb">—</div></div>
-    <div class="ci"><div class="ci-lbl">q − q⁻¹</div><div class="ci-val" id="v_tor">—</div></div>
-    <div class="ci"><div class="ci-lbl">Δ(z=0)</div><div class="ci-val" id="v_disc">—</div></div>
+    <div class="ci"><div class="ci-lbl">z₀=√q−1/√q</div><div class="ci-val" id="v_tor">—</div></div>
+    <div class="ci"><div class="ci-lbl">z<sub>M</sub>=1/(√q+1/√q)</div><div class="ci-val" id="v_disc">—</div></div>
     <div class="ci"><div class="ci-lbl">divisors</div><div class="ci-val" id="v_ndiv">—</div></div>
   </div>
 </div>
@@ -131,7 +131,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
 <!-- FORMULA -->
 <div class="panel" id="formula" style="bottom:14px;right:14px;width:250px;">
   <div class="panel-title">Brings Surface Fiber</div>
-  <span style="color:var(--dim)">[a:b]=[cos θ/2 : sin θ/2]</span><br>
+  <span style="color:var(--dim)">z = √q − 1/√q (spacetime ratio)</span><br>
+  <span style="color:var(--dim)">z<sub>M</sub> = 1/(√q + 1/√q) (Markov)</span><br>
   <span style="color:var(--dim)">t³+(a+b)t²+(1+ab)t+(a+b)=0</span><br>
   <span class="fr">x₂ = root₁(z₀)</span>  (red)<br>
   <span class="fg">x₃ = root₂(z₀)</span>  (green)<br>
@@ -176,13 +177,20 @@ function csqrt(a){var r=Math.pow(a[0]*a[0]+a[1]*a[1],0.25);var t=Math.atan2(a[1]
 function ccbrt(a){var r=Math.pow(a[0]*a[0]+a[1]*a[1],1/6);var t=Math.atan2(a[1],a[0])/3;return[r*Math.cos(t),r*Math.sin(t)];}
 var C1=[1,0];
 
-// Inverse scaling: uniform t ∈ [0,1] → |z| used to sample the meridian
-function zFromT(t, zMax){
+// Spacetime ratio: z = √q − 1/√q (Descartes elliptic curve)
+// Markov parameter: z_M = 1/(√q + 1/√q) (volume perturbation)
+// q_fiber ∈ (0, ∞) parameterizes position along the meridian.
+// t ∈ [0,1] uniform → q_fiber via scaling → z = √q_f − 1/√q_f → θ = 2·atan(|z|+1)
+function zFromQf(qf){ var s=Math.sqrt(Math.abs(qf)+1e-15); return s-1/s; }
+function markovZ(qf){ var s=Math.sqrt(Math.abs(qf)+1e-15); return 1/(s+1/s); }
+
+// Inverse scaling: uniform t ∈ [0,1] → q_fiber value
+function qfFromT(t, qfMax){
   switch(scaleMode){
-    case 'projective': return Math.tan(t * Math.atan(zMax));
-    case 'log': return Math.exp(t * Math.log(1+zMax)) - 1;
-    case 'sqrt': var s = t*Math.sqrt(zMax); return s*s;
-    case 'affine': default: return t * zMax;
+    case 'projective': return Math.tan(t * Math.atan(qfMax));
+    case 'log': return Math.exp(t * Math.log(1+qfMax)) - 1;
+    case 'sqrt': var s2 = t*Math.sqrt(qfMax); return s2*s2;
+    case 'affine': default: return t * qfMax;
   }
 }
 
@@ -361,11 +369,19 @@ function rebuild(){
   var phases = [[],[],[]]; // arg(c_k) for divisor detection
   var mags   = [[],[],[]];
 
+  // Physical point marker: z₀ = √q − 1/√q at the substrate q
+  var z_phys = zFromQf(P.q);
+  var theta_phys = 2*Math.atan(Math.abs(z_phys)+1);
+  var z_markov = markovZ(P.q);
+
   for(var i=0;i<=NZ;i++){
     var t = i/NZ;
-    var z = zFromT(t, P.zMax);
-    // θ = 2·arctan(z) maps z∈[0,∞] → θ∈[0,π] (stereographic)
-    var theta = 2 * Math.atan(z);
+    var qf = qfFromT(t, P.zMax);  // q_fiber along meridian
+    var z = zFromQf(qf);           // spacetime ratio z = √q_f − 1/√q_f
+    // θ via stereographic: z maps to angle on sphere
+    var theta = 2 * Math.atan(Math.abs(z) + 1);
+    // Clamp to valid range (avoid pole singularity)
+    theta = Math.max(0.01, Math.min(Math.PI-0.01, theta));
     var sinT = Math.sin(theta), cosT = Math.cos(theta);
 
     var roots = bringsRoots(theta, P.phi, P.q, P.tw);
@@ -407,6 +423,17 @@ function rebuild(){
       new THREE.BufferGeometry().setFromPoints(meridPts),
       new THREE.LineBasicMaterial({color:0xddaa55, transparent:true, opacity:0.55})
     ));
+  }
+
+  // ── Physical point marker: z₀ = √q − 1/√q on the sphere ─
+  if(P.showDiv){
+    var sinPhys=Math.sin(theta_phys), cosPhys=Math.cos(theta_phys);
+    var marker = new THREE.Mesh(
+      new THREE.SphereGeometry(0.08, 12, 12),
+      new THREE.MeshPhongMaterial({color:0xffcc00, emissive:0xffaa00, emissiveIntensity:0.9})
+    );
+    marker.position.set(R_BRANE*sinPhys*Math.cos(P.phi), R_BRANE*cosPhys, R_BRANE*sinPhys*Math.sin(P.phi));
+    divGroup.add(marker);
   }
 
   // ── Optional outer "cover envelope" sphere ──────────────
@@ -503,14 +530,13 @@ function rebuild(){
   document.getElementById('v_ndiv').textContent = divCount;
 
   // ── Info panel ────────────────────────────────────────────
-  // Info at midpoint θ=π/2 (z=1)
-  var mid = bringsRoots(Math.PI/2, P.phi, P.q, P.tw);
+  // Info: physical spacetime ratio and Markov parameter
+  var mid = bringsRoots(theta_phys, P.phi, P.q, P.tw);
   document.getElementById('v_cr').textContent = Math.sqrt(mid[0][0]*mid[0][0]+mid[0][1]*mid[0][1]).toFixed(3);
   document.getElementById('v_cg').textContent = Math.sqrt(mid[1][0]*mid[1][0]+mid[1][1]*mid[1][1]).toFixed(3);
   document.getElementById('v_cb').textContent = Math.sqrt(mid[2][0]*mid[2][0]+mid[2][1]*mid[2][1]).toFixed(3);
-  document.getElementById('v_tor').textContent= (P.q - 1/P.q).toFixed(4);
-  var p0=2/3, q0d=20/27, D0=q0d*q0d/4+p0*p0*p0/27;
-  document.getElementById('v_disc').textContent = (-108*D0).toFixed(2);
+  document.getElementById('v_tor').textContent= z_phys.toFixed(4);
+  document.getElementById('v_disc').textContent= z_markov.toFixed(4);
 }
 
 // ── Scale mode pills ─────────────────────────────────────────
