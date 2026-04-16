@@ -4,7 +4,7 @@ setup --- the knot-to-particle mapping and Skein decomposition
 ([Chapter 9](#chap:descartes-universe)), the Gröbner--Shirshov
 reduction engine and Wedderburn mass formula
 ([Chapter 10](#chap:particle-interactions)), and the molecular
-braid construction ([Chapter 11](#chap:molecular-construction))
+braid construction ([Chapter 12](#chap:molecular-construction))
 --- has already been developed; the present chapter is purely
 observational.
 

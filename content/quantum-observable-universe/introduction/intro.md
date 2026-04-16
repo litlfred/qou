@@ -177,7 +177,7 @@ acts on the fibre degrees of freedom; particle exchange becomes a
 representation of $B_n$ inside the Iwahori–Hecke algebra $H_n(q)$,
 with the substrate parameter $q$ tracking the energy cost of each
 crossing.  Specific knot types map to particle identities — the
-trefoil to the quark, the unknot to the neutrino, lifts of these
+unknot to the quark, the trefoil to the nucleon, lifts of these
 to heavier generations.
 
 [Chapter 5](#chap:models-qou) examines concrete realisations of

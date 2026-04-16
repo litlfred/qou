@@ -20,4 +20,4 @@ knot arises as a bound state of three quark unknots, realising the nucleon;
 and heavier generations appear as lifts of these through the brane tower.
 The geometry that carries these knots — Bring's surface — is developed in
 [Chapter 9](#chap:descartes-universe); the physical predictions it generates
-are collected in [Chapter 12](#chap:observations).
+are collected in [Chapter 11](#chap:observations).

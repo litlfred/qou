@@ -6,4 +6,4 @@ of the associated particle, and the Skein decomposition of the Jones
 polynomial separates the contributions of the Picard--Lefschetz thimbles
 attached to the exceptional coral tubes.  The results feed directly into the
 nuclear structure of [Chapter 10](#chap:particle-interactions) and the
-numerical predictions of [Chapter 12](#chap:observations).
+numerical predictions of [Chapter 11](#chap:observations).
