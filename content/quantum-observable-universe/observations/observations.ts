@@ -96,6 +96,7 @@ export default chapter({
         "trace-ratio-observable",
         "trace-ratio-interpretation",
         "shell-threading-conjecture",
+        "magic-numbers-from-q",
       ],
     }),
 

@@ -106,7 +106,6 @@ class HeckeRational:
 
     def _channel_weights(self):
         """Wedderburn-Artin weights (w_sym, w_std, w_alt), sum=1 exactly."""
-        q2 = self.q ** 2 + 2 / self.q ** 0  # ≠, recompute correctly
         # [2]² = (q + 1/q)² = q² + 2 + 1/q²
         n2_sq = self.q ** 2 + 2 + self.q_inv ** 2
         denom = n2_sq + 2  # ([2]² + 2) = sum dim²

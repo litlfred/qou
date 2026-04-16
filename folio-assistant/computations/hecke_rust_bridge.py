@@ -118,11 +118,12 @@ def compute_nucleus(
     # Fall back to Python
     try:
         from hecke_engine import HeckeEngine
-        from dataclasses import asdict
         engine = HeckeEngine()
-        result = engine.compute(p, n, Q_exp)
-        return asdict(result)
-    except ImportError:
+        ordering, method = engine.ground_state_ordering(p, n)
+        tr = float(engine.qr.markov_trace(ordering))
+        return {"p": p, "n": n, "ordering": ordering,
+                "trace_par_float": tr, "ordering_method": method}
+    except (ImportError, AttributeError):
         return None
 
 
