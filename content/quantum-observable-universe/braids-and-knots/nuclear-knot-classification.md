@@ -1,26 +1,39 @@
 **Proposition.**
 *The closure of the nuclear braid $\mathcal{N}(Z,N)$ in $H_3(q)$
-falls into one of four knot types, each determining the binding
-scale through its geometric invariant:*
+determines a bulk modification factor $a(\mathcal{N})$ for the
+BW binding energy.  This factor is a single product over
+independent nucleon pairs:*
 
-| $A$ | Knot type | Chirality | Bulk factor | Value |
-|-----|-----------|-----------|-------------|-------|
-| $1$ | unknot $0_1$ | — | $0$ (free) | $0$ |
-| $2$ | satellite (Hopf) | 1 chiral pn | $1 + h$ | $\approx 1.209$ |
-| $3$ | figure-eight $4_1$ | 1 amphicheiral | $1 - h^2$ | $\approx 0.956$ |
-| $4$ | Borromean $\mathcal{B}_3$ | 2 amphicheiral | $(1 - h^2)^2$ | $\approx 0.914$ |
-| $\geq 5$ | Borromean (generic) | $\to 1$ | $1$ | $1$ |
+$$
+  a(\mathcal{N})
+  \;=\;
+  \prod_{i=1}^{n_{\mathrm{pairs}}}
+    (1 - \varepsilon_i)
+$$
 
-*The bulk factor is the Frobenius norm deviation from the identity
-braid, determined by the amphicheiral property:*
+*where $\varepsilon_i$ is the Frobenius norm deviation of the
+$i$-th nucleon pair from the identity braid:*
 
-- **Amphicheiral** knots ($K = \bar{K}$, e.g.\ $4_1$): the Frobenius
-  self-pairing is real, giving deviation $h^2 = (q - q^{-1})^2$ per
-  nucleon pair.  Factor: $(1 - h^2)^{n_{\mathrm{pairs}}}$.
-- **Chiral** knots (e.g.\ satellite pn): deviation $h$ (first order).
-  Factor: $1 + h$ for positive chirality.
-- **Large-$A$ limit**: $(1 - h^2)^{n} \to 1$ as $n \to \infty$,
-  recovering the standard BW formula.
+- *Amphicheiral pair (pp or nn in $\mathcal{B}_3$):
+  $\varepsilon = h^2 = (q - q^{-1})^2$*
+- *Chiral pair (pn):
+  $\varepsilon = -h = -(q - q^{-1})$*
+
+*The sign convention: amphicheiral pairs ($K = \bar{K}$) deviate
+quadratically ($h^2 > 0$, reducing binding); chiral pairs deviate
+linearly ($-h < 0$, increasing binding).*
+
+| $A$ | Pairs | Deviations $\varepsilon_i$ | $a(\mathcal{N})$ |
+|-----|-------|---------------------------|-------------------|
+| $1$ | $0$ | — | free nucleon |
+| $2$ | $1$ pn (chiral) | $-h$ | $1 + h \approx 1.209$ |
+| $3$ | $1$ pp or nn (amphicheiral) | $h^2$ | $1 - h^2 \approx 0.956$ |
+| $4$ | $2$ (pp + nn, amphicheiral) | $h^2, h^2$ | $(1 - h^2)^2 \approx 0.914$ |
+| $\geq 5$ | many | $(1 - h^2)^n \to 1$ | $1$ |
+
+*In the large-$A$ limit, $(1 - h^2)^n \to 1$ since
+$h^2 \approx 0.044 \ll 1$, recovering the standard
+BW formula for heavy nuclei.*
 
 *Proof.*
 The nuclear braid $\mathcal{N}(Z,N)$ is built by interleaving $Z$
