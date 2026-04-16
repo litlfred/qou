@@ -347,14 +347,15 @@ searchable reference.
 **A note on authoring.**
 Every* proof in this paper has a corresponding Lean 4
 formalisation, except where external references are cited for large
-prior results.  Numerical computations — braid-word reductions,
+prior results.  Computations — braid-word reductions,
 Gröbner–Shirshov normal forms, linear programs, hyperbolic volumes
-— are implemented in Rust and Python and are available, with the
-Lean sources, in the repository at
-\url{https://github.com/litlfred/qou}.  The author used large
-language models throughout the drafting and formalisation process,
-both because a physical disability prevents sustained typing and to
-assist with Lean proof engineering.  Human adjudication of every
-line is not complete.
+— are all symbolic in the substrate parameter $q$ and are attached
+as witnesses to the proofs they support wherever appropriate.  The
+implementations in Rust and Python, together with the Lean sources,
+are available at \url{https://github.com/litlfred/qou}.  The author
+used large language models throughout the drafting and formalisation
+process, both because a physical disability prevents sustained
+typing and to assist with Lean proof engineering.  Human
+adjudication of every line is not complete.
 
 *= almost; in progress.
