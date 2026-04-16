@@ -976,20 +976,34 @@ def binding_energy_bw(Z, N, k=3):
     B_coul = -LAMBDA_C * Z * (Z - 1) / A**(1.0/3.0)
     B_exch = -LAMBDA_EX * Z**(4.0/3.0) / A**(1.0/3.0)
 
-    # ── Figure-eight modification for A=3 ────────────────────
-    # The Wedderburn-Artin channel decomposition of 4₁ in H₃(q)
-    # gives THREE algebraic factors, one per structural component:
-    #   a   = 1 - h²         = 4 - [3]_q   (bulk: vol, surf, asym, pairing)
-    #   f_C = z²[3]_q/[2]_q                (Coulomb: pp eigenvalue channel)
-    #   f_ex= z = 1/(√q+1/√q)             (exchange: Markov normalisation)
+    # ── Knot-type Wedderburn-Artin channel factors ────────────
+    # (prop:figure-eight-bw-coefficients, prop:nuclear-knot-classification)
     #
-    # Physical origin:
-    #   z = Markov trace weight → exchange sees crossings through z
-    #   z²[3]/[2] = 2-crossing Markov norm × pp eigenvalue ratio
-    #   1-h² = amphicheiral deviation from identity character
+    # Each knot type modifies the k=3 BW via channel factors:
+    #   B = a·B_bulk + f_C·B_coul + f_ex·B_exch
+    #
+    # The bulk factor follows the amphicheiral pattern (1-h²)^n:
+    #   A=2 satellite: a = 1+h (first-order, inverse amphicheiral)
+    #   A=3 figure-8:  a = 1-h² (amphicheiral character of 4₁)
+    #   A=4 Borromean:  a = (1-h²)² (double amphicheiral)
+    #   A≥5 Borromean:  a = 1 (identity, generic BW)
+    #
+    # ILP-verified (hadron-knot-table.witness.json).
+    is_satellite = (A == 2)
     is_fig8 = (A == 3)
-    if is_fig8:
+    is_borromean4 = (A == 4)
+
+    if is_satellite:
+        SAT_A_BULK = 1.0 + h                     # 1 + (q - q⁻¹) ≈ 1.209
+        SAT_F_EXCH = z                            # Markov weight
+        B = SAT_A_BULK * B_bulk + SAT_F_EXCH * B_exch
+    elif is_fig8:
         B = FIG8_A_BULK * B_bulk + FIG8_F_COUL * B_coul + FIG8_F_EXCH * B_exch
+    elif is_borromean4:
+        BOR4_A_BULK = FIG8_A_BULK ** 2            # (1-h²)² ≈ 0.914
+        BOR4_F_COUL = z ** 2                      # z² ≈ 0.249
+        BOR4_F_EXCH = z * q_int(3) / q_int(2)    # z[3]/[2] ≈ 0.756
+        B = BOR4_A_BULK * B_bulk + BOR4_F_COUL * B_coul + BOR4_F_EXCH * B_exch
     else:
         B = B_bulk + B_coul + B_exch
 
@@ -998,6 +1012,7 @@ def binding_energy_bw(Z, N, k=3):
     # (derived from residual analysis of A≥4 data). The figure-eight k=3
     # formula with Wedderburn-Artin factors already captures the binding
     # to 0.5-0.9% accuracy.
+    is_small = is_satellite or is_fig8 or is_borromean4
     if k >= 4 and not is_fig8:
         B += DELTA_S * (magic_proximity(Z) + magic_proximity(N)) / A**(2.0/3.0)
         h_Z = 1.0 - magic_proximity(Z)
