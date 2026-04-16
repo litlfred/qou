@@ -77,9 +77,9 @@ The Gröbner–Shirshov basis then tracks, as a function of the
 substrate parameter $q$, the energy required to cross and uncross
 knots — giving a computable cost for every interaction.  Four
 generator knots are identified, purely mathematically, with the
-objects we label *quarks* (unknot in a Borromean braid),
-*electrons* (trefoil $3_1 = T_{2,3}$), *hadrons* (Borromean
-three-braid $\mathcal{B}_3$), and *photons* (unframed unknot
+objects we label **quarks** (unknot in a Borromean braid),
+**electrons** (trefoil $3_1 = T_{2,3}$), **hadrons** (Borromean
+three-braid $\mathcal{B}_3$), and **photons** (unframed unknot
 $T_{1,0}$).  All further structure — leptons, baryons, nuclei,
 atoms, molecules — is obtained by iterating knot operations
 starting from $\gamma\gamma$ pair production: the Breit–Wheeler
