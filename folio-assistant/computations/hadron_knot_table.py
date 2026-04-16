@@ -190,7 +190,7 @@ w.add_parameter("z_squared", _Z2)
 w.add_parameter("n_atoms", len(ATOMS))
 w.add_parameter("total_nf_entries", total_terms)
 
-# Assertions: check key traces
+# Assertions: check key traces AND LP stability
 for r in results:
     if r["A"] <= 4:
         w.add_assertion(
@@ -200,6 +200,17 @@ for r in results:
             tolerance=1e-10,
             unit="dimensionless",
             source="hecke_core.build_atom_nf → nf_tr",
+        )
+    # LP stability assertion: all atoms must be Frobenius-stable
+    # (gluon-dressed nucleons satisfy Gx ≥ 0). Catches missing operators.
+    if r["A"] >= 2:
+        w.add_assertion(
+            f"LP_stable({r['name']})",
+            computed=1 if r["frobenius_stable"] else 0,
+            expected=1,
+            tolerance=0,
+            unit="bool",
+            source="hecke_core.check_frobenius (Gx ≥ 0)",
         )
 
 w.add_data("atoms", results)

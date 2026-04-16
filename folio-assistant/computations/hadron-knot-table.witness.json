@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-16T21:29:13.256984+00:00",
-  "commitSha": "70488e56977de429ec5c53c02bd59137aeb2a858",
+  "computedAt": "2026-04-16T21:50:48.495000+00:00",
+  "commitSha": "5f01233cc786876386aa96950bacfc92fe705e0d",
   "assertions": [
     {
       "name": "tr_M(proton)",
@@ -41,6 +41,15 @@
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
     {
+      "name": "LP_stable(deuterium)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
       "name": "tr_M(tritium)",
       "computed": 0.715442085926,
       "expected": 0.715442085926,
@@ -48,6 +57,15 @@
       "tolerance": 1e-10,
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
+    },
+    {
+      "name": "LP_stable(tritium)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
     },
     {
       "name": "tr_M(he3)",
@@ -59,6 +77,15 @@
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
     {
+      "name": "LP_stable(he3)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
       "name": "tr_M(he4)",
       "computed": 1.427904013137,
       "expected": 1.427904013137,
@@ -66,13 +93,130 @@
       "tolerance": 1e-10,
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
+    },
+    {
+      "name": "LP_stable(he4)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(li6)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(li7)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(be9)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(b11)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(c12)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(c14)",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(n14)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(o16)",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(ne20)",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(si28)",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(ca40)",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
+    },
+    {
+      "name": "LP_stable(fe56)",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "hecke_core.check_frobenius (Gx ≥ 0)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 5,
+  "allPassed": false,
+  "durationMs": 8,
   "computation": "hadron-knot-table",
   "scriptFile": "hadron_knot_table.py",
-  "scriptHash": "98e61841d28a",
+  "scriptHash": "bb86bfa94159",
   "scriptCommitSha": "1464883fd2fa99d3fb5f10f368bb908be0dbf30d",
   "description": "Hadron-level knot decomposition table for 19 atoms in the H₃(q) NF basis. Each atom is 6 coefficients (vs thousands at quark level). Now also records per-generator traced volumes V_i and cross-channel z²·Σ ln|V_iV_{i+1}| for the mass-endomorphism-tower formula's third sum.",
   "contentBlock": "rem:hadron-level-knot-table",
