@@ -29,7 +29,6 @@ export default chapter({
       title: "Preliminary: rigid monoidal categories",
       label: "sec:rigid-monoidal",
       blocks: [
-        "no-quasi-zeros",
         "snake-identity",
         "monoidal-justification",
         "rigid-monoidal-category",

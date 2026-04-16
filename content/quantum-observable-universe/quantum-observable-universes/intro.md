@@ -1,5 +1,7 @@
-This chapter collects the categorical, algebraic, and analytic details
-that underpin the definitions of [Chapter](#chap:qou). The reader
-who has read [Chapter](#chap:qou) may return to specific sections as
-needed; the remainder of the paper does not require this chapter in
-linear order.
+The remaining sections of this chapter collect the categorical,
+algebraic, and analytic elaborations of the QOU axioms.  A reader
+focussed on the main development may take the definitions above as
+given and proceed to [Chapter 3](#chap:torsion); the elaboration
+sections below fill in the TQFT context, the $q$-jacobiator, the
+physical interpretation of the categorical action, and the
+categorical lifting that prepares the Yekutieli tower.
