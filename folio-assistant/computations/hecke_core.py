@@ -1210,44 +1210,44 @@ import json as _json
 from pathlib import Path as _Path
 
 def _load_categorical_shell():
-    """Load witnessed δ²Φ and build shell proximity function."""
-    witness_path = _Path(__file__).parent / 'shell-closure.witness.json'
-    if not witness_path.exists():
-        return None
+    """Categorical shell from Chebyshev growth ratio γ(Z).
 
-    with open(witness_path) as f:
-        fd2 = _json.load(f)['data']['forward_delta2']
+    f(Z) = 1/γ(Z), normalized by max.
+    γ(Z) = |c_Z/c_{Z-1}| from (σ⁻¹)^Z = c_Z σ + d_Z.
 
-    all_d2 = {int(Z): v for Z, v in fd2.items()}
+    Recurrence: c_{n+1} = d_n, d_{n+1} = c_n - d_n·h, h = q−q⁻¹.
+    All symbolic in q. No Gaussian, no empirical magic numbers.
 
-    # Even-Z values (positive = shell closed)
-    even_vals = {Z: v for Z, v in all_d2.items() if Z % 2 == 0}
-    max_even = max((v for v in even_vals.values() if v > 0), default=1)
-
-    # Build lookup: even Z direct, odd Z interpolated
-    shell = {}
+    Reference: prop:q-integer-mass-formula, conj:shell-closure-nf-term-count
+    """
+    _h = q0 - qi
+    c, d = 0.0, 1.0
+    prev_c = 1.0
+    inv_gamma = {}
     for Z in range(1, 200):
-        if Z % 2 == 0:
-            v = even_vals.get(Z, 0)
-        else:
-            v = (even_vals.get(Z - 1, 0) + even_vals.get(Z + 1, 0)) / 2
-        shell[Z] = max(0, v) / max_even
-    return shell
+        c_new = d
+        d_new = c - d * _h
+        c, d = c_new, d_new
+        g = abs(c / prev_c) if abs(prev_c) > 1e-300 else 1.0
+        inv_gamma[Z] = 1.0 / g if g > 1e-300 else 0.0
+        prev_c = c
+    mx = max(inv_gamma.values())
+    return {Z: v / mx for Z, v in inv_gamma.items()}
 
 
 _CATEGORICAL_SHELL = _load_categorical_shell()
 
 
 def magic_proximity(x, sigma=None):
-    """Shell proximity from witnessed per-partition computation.
+    """Shell proximity from Chebyshev pairing ratio 1/γ(Z).
 
-    Pure categorical: emerges from Hoefsmit seminormal character
-    at k=3..12. No Gaussian, no empirical magic numbers.
+    Fully categorical: γ(Z) from the Hecke recurrence in q.
+    No Gaussian, no empirical magic numbers.
 
-    Reference: prop:magic-numbers-from-q, shell-closure.witness.json
+    Reference: prop:q-integer-mass-formula
     """
     Z = int(round(x))
-    if _CATEGORICAL_SHELL is not None and Z in _CATEGORICAL_SHELL:
+    if Z in _CATEGORICAL_SHELL:
         return _CATEGORICAL_SHELL[Z]
     return 0.0
 
