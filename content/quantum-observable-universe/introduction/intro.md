@@ -53,6 +53,14 @@ of the state bundle.  These two pictures are not competing
 descriptions but equivalent viewpoints, exchanged by the Frobenius
 self-duality $A \cong A^{\vee}$.
 
+Genus four is not chosen; it is forced.  The Descartes obstruction
+$\chi(A) = -6$ drops out of the lifting theory, and a single
+algebraic curve realises it canonically: Bring's surface
+$\Sigma_4$, the universal genus-$4$ curve with maximal
+automorphism group $S_5$.  It becomes a natural object of study —
+not a model imposed from outside, but the unique geometric
+carrier the axioms demand.
+
 Even the capacity for computation — the Turing completeness of the
 substrate — is a consequence, not an input.  That so much structure
 follows from so little input is, as Wigner put it, "something
@@ -62,20 +70,34 @@ The paper is organised as follows.
 
 **Part I: Foundations.**
 [Chapter 1](#chap:qu) introduces the **quantum universe** (QU):
-a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf object
+the algebraic skeleton encoded in the triple
+
+$$
+  (\mathbf{C}, A, \tau)
+$$
+
+— a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf object
 $A$, and a fibre functor $\tau$.  The Frobenius trace
-$\int_A \colon A \to \mathbf{1}$ provides categorical integration;
-combined with Kähler differentials on $A$, it provides
-differentiation.  Self-duality $A \cong A^{\vee}$ ensures these
-operations are compatible.  From these ingredients the chapter
-derives the Frobenius relation, the dagger involution, and the
-Tannaka–Krein reconstruction of the symmetry group.
+$\int_A \colon A \to \mathbf{1}$ is the categorical analogue of
+integration: it assigns a scalar to each element of the algebra.
+Combined with the differential calculus (Kähler differentials on
+$A$), it gives the algebra both the ability to differentiate and
+to integrate.  The Frobenius condition $A \cong A^{\vee}$ — the
+self-duality of the algebra — says that these two operations are
+compatible: integrating and then differentiating yields the same
+result as differentiating and then integrating.  Neither path
+destroys information.  From these ingredients the chapter derives
+the Frobenius relation, the dagger involution, and the Tannaka–Krein
+reconstruction of the symmetry group.
 
 [Chapter 2](#chap:qou) imposes three cohomological constraints —
 observability, measurability, and volume — that promote the QU to
-a **quantum observable universe** (QOU).  These constraints remove
-unobservable hidden structures and bad behaviour.  Self-duality
-within this constrained space forces the gauge group
+a **quantum observable universe** (QOU).  The volume axiom makes
+the observation from paragraph two precise: the Frobenius trace
+$\int_A$ is non-degenerate, so the algebra has a well-defined
+notion of size — volume is not assumed but follows from the
+interaction of integration and self-duality.  Self-duality within
+this constrained space forces the gauge group
 $G = \mathrm{SU}_2(R)$ to emerge naturally, together with a
 natural coordinate $q$, an ordering direction, and a strict genus
 limitation of four on the state space.  The QOU is characterised
@@ -85,9 +107,13 @@ $$
   (\mathbf{C}, \theta, G, \mathcal{S}).
 $$
 
-A categorical Dirac operator $\mathcal{D}_\nabla$, forced by the
-Frobenius–Hopf structure, decomposes into gravity (Ricci), gauge
-(Yang–Mills), and matter terms — yielding the categorical action
+A categorical Dirac operator $\mathcal{D}_\nabla$, constructed
+from the connection and Reeb derivation, has a square that
+decomposes — forced by the Frobenius–Hopf structure, not by
+assumption — into exactly two curvature terms: one measuring how
+space itself curves (Ricci), one measuring how the internal gauge
+field curves (Yang–Mills).  Coupling a matter state $\psi$ adds
+a third — yielding the categorical action
 
 $$
   \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
@@ -105,11 +131,21 @@ from which quantum versions of the Einstein, Yang–Mills, and Dirac
 equations follow.
 
 [Chapter 3](#chap:torsion) addresses the obstructions that arise
-when local categorical data is extended globally.  The Yekutieli
-lifting condition makes this precise: an object admits a lift if
-and only if its obstruction class $\kappa(x) \in H^2(S, B)$
-vanishes.  A key result is the Descartes condition $\chi(A) = -6$,
-forced by the lifting obstructions and the Archimedean constraint.
+when local categorical data is extended globally.  Measurement
+constrains observation, and observation constrains what can be
+lifted from one level of the brane tower to the next.  The
+Yekutieli lifting condition makes this precise: an object admits
+a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$
+vanishes.  The descent involution $\hat{\tau}$ then decomposes the
+algebra at each level into descended (observable) and transient
+(pre-observable) modes.  A key result is the Descartes condition
+$\chi(A) = -6$, forced by the lifting obstructions and the
+Archimedean constraint.  The Kummer exact sequence
+$1 \to \mu_n \to \mathbb{G}_m \to \mathbb{G}_m \to 1$
+filtrates the obstruction space by divisibility: the class
+$\kappa_0$ persists at all Kummer levels $n \nmid \chi(A)$,
+a perpetual obstruction that no amount of jet refinement can
+remove.
 
 **Part II: Structure.**
 [Chapter 4](#chap:path-integrals-braiding) replaces continuum path
@@ -129,13 +165,28 @@ the substrate can be transferred.
 
 [Chapter 6](#chap:algebraic-substrate) develops the spectral theory
 of the Frobenius–Hopf algebra.  The local $q$-zeta function of
-Bring's curve encodes the Frobenius eigenvalues, and the
-Hasse–Weil bound confines them to the critical line
-$|\alpha_i| = q^{1/2}$.  The categorical machinery provides a
-natural framing for classical questions in analytic number theory —
-including the Riemann hypothesis, the Birch and Swinnerton-Dyer
-conjecture \cite{birch1965}, and the Collatz problem — through the
-Kummer tower associated to the Frobenius–Hopf algebra.
+Bring's curve encodes the Frobenius eigenvalues; the Hasse–Weil
+bound confines them to the critical line $|\alpha_i| = q^{1/2}$
+— the Riemann hypothesis, proved unconditionally at the
+$q$-scale.  The classical limit functor
+$\mathcal{L} \colon \mathbf{C}_q \to \mathbf{C}_1$ is exact but
+not full: quantum information is lost as $q \to 1$.  The
+obstruction to properties persisting through this limit is a
+single cohomology class in $HH^2(\mathcal{U}_q, \mathrm{Ad})$,
+whose dimension the QOU axioms collapse from arbitrary to one —
+controlled by the Euler characteristic $\chi(A) = -6$ and its
+Kummer divisibility.  The chapter formulates a $q$-deformed
+Birch and Swinnerton-Dyer conjecture \cite{birch1965}: the
+categorical Mordell–Weil group $\mathrm{Hom}(\mathbf{1}, E_q)$
+is trivial (forced by the observability axiom and Tannaka–Krein),
+so $L(\mathcal{E}_q, 1) \neq 0$ at the $q$-scale.  Whether this
+non-vanishing survives the classical limit is obstructed by the
+same Kummer tower that controls the Riemann hypothesis.  A
+$q$-deformed Collatz conjecture completes the picture: the Skein
+divisibility identity $[3]_q = q[2]_q + 1$ and the contraction
+gap $[2]_q^2 - [3]_q = q$ place the $(2,3)$ Collatz map at a
+unique arithmetic point — the only critical case where the
+$q$-gap is a monomial.
 
 [Chapter 7](#chap:fluid-dynamics) develops the fluid dynamics of
 the brane.  The $q$-deformed Navier–Stokes equation is derived
@@ -143,16 +194,32 @@ from the Frobenius–Hopf structure, and the obstruction to global
 smoothness is located in a single cohomology class — offering an
 obstruction-based perspective on Navier–Stokes regularity.
 
-[Chapter 8](#chap:info-theory) examines the categorical framework
-through the lens of information theory and computational
-complexity.  The Gröbner–Shirshov basis makes computation
-*confluent*; the Reeb flow generates a dynamical system whose
-boundary is a Julia-set fractal.  The framework provides an
-interesting perspective on questions such as P versus NP in terms
-of categorical obstructions and event horizons for information
-flow.  Crossing energy relates to categorical mass by
-$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{2}$
-where $c_q = 1/(q - 1)$.
+[Chapter 8](#chap:info-theory) addresses Wigner's mystery directly:
+the mechanics of a QOU turn out to be Turing complete — the
+combinatorics supporting logic and computation is a property of
+the algebraic substrate, not the medium.  The Gröbner–Shirshov
+basis makes this computation *confluent* — every reduction
+terminates at the same normal form.  The Reeb flow — the internal
+clock of the algebra — generates a dynamical system whose boundary
+is a fractal (a Julia set) with Hausdorff dimension
+
+$$
+  d_H(q) = \frac{(2q - 1)^2}{q^3}.
+$$
+
+The framework provides an interesting perspective on questions such
+as P versus NP in terms of categorical obstructions and event
+horizons for information flow.  Crossing energy relates to
+categorical mass by
+
+$$
+  E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{2},
+  \qquad
+  c_q = \frac{1}{q - 1},
+$$
+
+where $c_q$ is the information speed of light — $E = mc^2$
+derived from the categorical structure.
 
 **Part III: The Descartes Universe and Observations.**
 [Chapter 9](#chap:descartes-universe) maps the genus-$4$ constraint
