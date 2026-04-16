@@ -125,12 +125,12 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
 <!-- FORMULA -->
 <div class="panel" id="formula" style="bottom:14px;right:14px;width:250px;">
   <div class="panel-title">Brings Surface Fiber</div>
-  <span style="color:var(--dim)">t³+(1+z)t²+(1+z+z²)t</span><br>
-  <span style="color:var(--dim)">  +(1+z)(1+z²) = 0</span><br>
-  <span class="fr">c<sub>r</sub> = w₂ − z</span>  (red)<br>
-  <span class="fg">c<sub>g</sub> = w₃ − z</span>  (green)<br>
-  <span class="fb">c<sub>b</sub> = w₄ − z</span>  (blue)<br>
-  <span style="color:var(--dim)">w<sub>k</sub> = (1/√5) Σ ζ<sup>kj</sup>x<sub>j</sub></span><br>
+  <span style="color:var(--dim)">[a:b]=[cos θ/2 : sin θ/2]</span><br>
+  <span style="color:var(--dim)">t³+(a+b)t²+(1+ab)t+(a+b)=0</span><br>
+  <span class="fr">W₂ = Σ ζ<sup>2j</sup>x<sub>j</sub></span>  (red)<br>
+  <span class="fg">W₃ = Σ ζ<sup>3j</sup>x<sub>j</sub></span>  (green)<br>
+  <span class="fb">W₄ = Σ ζ<sup>4j</sup>x<sub>j</sub></span>  (blue)<br>
+  <span style="color:var(--dim)">φ<sub>k</sub> = arg(W<sub>k</sub>)  (chart-free)</span><br>
   <span style="color:var(--dim)">brane = S² (interior), R<sub>b</sub></span><br>
   <span style="color:var(--dim)">tubes = cover sheets on S² at R<sub>b</sub>+ΔR</span><br>
   <span style="color:var(--dim)">θ(z) = π·t(z),  φ = arg(c<sub>k</sub>)</span><br>
@@ -145,12 +145,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
 'use strict';
 
 // ════════════════════════════════════════════════════════════════
-//   DIVISOR VISUALIZATION — Color Tubes on Brane (Brings Surface)
+//   DIVISOR VISUALIZATION — Brings Cover on the Riemann Sphere
 //
 //   Brings surface Σ₄ → P¹(C), degree-4 cover, Aut ≅ S₅
-//   Fiber cubic: t³+(1+z)t²+(1+z+z²)t+(1+z)(1+z²)=0
-//   Color tubes: c_k = w_{k+1} − z (Lagrange resolvents, DFT)
-//   Torsion: (q − q⁻¹)·z controls twist of color fibers
+//   HOMOGENEOUS COORDS: [a:b] = [cos θ/2 : sin θ/2] on P¹
+//   Fiber cubic: t³+(a+b)t²+(1+ab)t+(a+b)=0  (bounded at both poles)
+//   Color phases: arg(W_k) for k=2,3,4 (DFT resolvents, projective)
+//   Torsion: (q − q⁻¹)·θ controls twist of color fibers
 // ════════════════════════════════════════════════════════════════
 
 const TAU = 2*Math.PI, SQRT5 = Math.sqrt(5), INV5 = 1/SQRT5;
@@ -193,15 +194,19 @@ function solveCubic(a,b,c){
   }
 }
 
-// ── Compute color tube coords at z with q-torsion ────────────
-function colorTubes(z, q, twistRate){
-  var ca=1+z, cb=1+z+z*z, cc=(1+z)*(1+z*z);
-  var roots = solveCubic(ca, cb, cc);
-  // x₀=1, x₁=z, x₂..x₄ = roots
-  var xr=[1,z, roots[0][0],roots[1][0],roots[2][0]];
-  var xi=[0,0, roots[0][1],roots[1][1],roots[2][1]];
+// ── Compute color tubes in HOMOGENEOUS coordinates ──────
+// [a:b] = [cos(θ/2):sin(θ/2)] on P¹.
+// Cubic: t³+(a+b)t²+(1+ab)t+(a+b)=0 — bounded at both poles.
+// Returns W_k (homogeneous DFT resolvents) with q-torsion applied.
+function colorTubesProj(theta, q, twistRate){
+  var a = Math.cos(theta/2), b = Math.sin(theta/2);
+  var s = a + b;
+  var roots = solveCubic(s, 1 + a*b, s);
+  // Homogeneous coords: x₀=a, x₁=b, x₂..x₄ = roots
+  var xr=[a, b, roots[0][0],roots[1][0],roots[2][0]];
+  var xi=[0, 0, roots[0][1],roots[1][1],roots[2][1]];
 
-  // DFT resolvents w_k for k=2,3,4 → color tubes
+  // DFT resolvents W_k for k=2,3,4 (homogeneous, unnormalized)
   var tubes=[];
   for(var k=2;k<=4;k++){
     var sr=0,si=0;
@@ -210,13 +215,11 @@ function colorTubes(z, q, twistRate){
       sr += ZR[idx]*xr[j] - ZI[idx]*xi[j];
       si += ZR[idx]*xi[j] + ZI[idx]*xr[j];
     }
-    // c_k = w_k - z
-    var cr = sr*INV5 - z, ci2 = si*INV5;
-    tubes.push([cr, ci2]);
+    tubes.push([sr, si]);
   }
 
-  // Apply q-torsion rotation: angle = (q - 1/q) * z * twistRate
-  var torsion = (q - 1/q) * z * twistRate;
+  // q-torsion (uses θ directly — bounded on [0,π])
+  var torsion = (q - 1/q) * theta * twistRate;
   var cosT=Math.cos(torsion), sinT=Math.sin(torsion);
   for(var i=0;i<3;i++){
     var rr=tubes[i][0], ri=tubes[i][1];
@@ -367,11 +370,11 @@ function rebuild(){
   for(var i=0;i<=NZ;i++){
     var t = i/NZ;
     var z = zFromT(t, P.zMax);
-    // θ ∈ [0, π], uniform in visual param t
-    var theta = Math.PI * t;
+    // θ = 2·arctan(z) maps z∈[0,∞] → θ∈[0,π] (stereographic)
+    var theta = 2 * Math.atan(z);
     var sinT = Math.sin(theta), cosT = Math.cos(theta);
 
-    var tubes = colorTubes(z, P.q, P.tw);
+    var tubes = colorTubesProj(theta, P.q, P.tw);
     for(var k=0;k<3;k++){
       var re=tubes[k][0], im=tubes[k][1];
       var mag=Math.sqrt(re*re+im*im);
@@ -506,7 +509,8 @@ function rebuild(){
   document.getElementById('v_ndiv').textContent = divCount;
 
   // ── Info panel ────────────────────────────────────────────
-  var mid = colorTubes(0, P.q, P.tw);
+  // Info at midpoint θ=π/2 (z=1)
+  var mid = colorTubesProj(Math.PI/2, P.q, P.tw);
   document.getElementById('v_cr').textContent = Math.sqrt(mid[0][0]*mid[0][0]+mid[0][1]*mid[0][1]).toFixed(3);
   document.getElementById('v_cg').textContent = Math.sqrt(mid[1][0]*mid[1][0]+mid[1][1]*mid[1][1]).toFixed(3);
   document.getElementById('v_cb').textContent = Math.sqrt(mid[2][0]*mid[2][0]+mid[2][1]*mid[2][1]).toFixed(3);
