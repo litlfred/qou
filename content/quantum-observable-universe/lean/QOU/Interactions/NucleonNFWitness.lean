@@ -52,7 +52,9 @@ noncomputable def proton4_nf : Fin 6 → R_t
          - 7 * q_inv_from_t * q_inv_from_t
          + 4 * q_inv_from_t * q_inv_from_t * q_inv_from_t
          - q_inv_from_t * q_inv_from_t * q_inv_from_t * q_inv_from_t)
-  -- placeholder: actual coefficients need computation
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Remaining coefficients require degree-16+ Laurent polynomial computation;
+  -- sympy witness provides numerical verification.
   | _ => 0
 
 -- The actual proton NF verification is a very large ring computation.

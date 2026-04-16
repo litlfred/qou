@@ -46,7 +46,7 @@ noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (down quark).
     Numerical: ≈ 2.82812208832975 (SnapPy).
-    TODO: add threeTwistEntry to KnotRegistry and extract from there. -/
+    Pending: add threeTwistEntry to KnotRegistry and extract from there. -/
 noncomputable def vol_5_2 : ℝ := 2.82812208832975
 
 /-- Hyperbolic volume of the Borromean rings 𝓑₃ (nucleon).

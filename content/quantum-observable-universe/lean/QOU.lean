@@ -33,3 +33,14 @@ import QOU.LightningPath
 import QOU.RepresentationTheory
 import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
+import QOU.Descartes
+import QOU.Interactions
+import QOU.ArchimedeanMassFormula
+import QOU.CODATAChain
+import QOU.ClassicalLimitObstruction
+import QOU.FeynmanPathIntegrals
+import QOU.MathConstants
+import QOU.PhotonThreading
+import QOU.QBirchSwinnertonDyer
+import QOU.QCollatz
+import QOU.QGeometricLanglands
