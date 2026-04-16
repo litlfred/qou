@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-16T19:49:54.862148+00:00",
-  "commitSha": "b0f3e6ea6d821161bc0a0d6e2d1a65ba54dbb662",
+  "computedAt": "2026-04-16T22:00:16.316689+00:00",
+  "commitSha": "681d6827796583c519334d44a8832db7aa452cd8",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "transition-nf",
   "scriptFile": "transition_nf.py",
   "scriptHash": "63cf638a2d8d",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "f54c1977511744651ad9c856d7217b3e383760b0",
   "description": "Transition NF for β⁻ decays. Tracks per-crossing changes between parent and daughter at quark level.",
   "data": {
     "Z0N1": {
@@ -36,7 +36,7 @@
       "tr_delta": 7.723367519546188,
       "tr_ratio": -2.6762578726156896,
       "n_changed": 7,
-      "Q_mass_MeV": 13.773793,
+      "Q_mass_MeV": 13.402582,
       "Q_exp_MeV": 3.5078
     },
     "Z6N8": {
@@ -45,7 +45,7 @@
       "tr_delta": 950.1577373613375,
       "tr_ratio": -0.4669256286195942,
       "n_changed": 15,
-      "Q_mass_MeV": 1.261616,
+      "Q_mass_MeV": 0.454076,
       "Q_exp_MeV": 0.15648
     }
   }
