@@ -3993,7 +3993,7 @@
     }
 
     // ── Paper ────────────────────────────────────────────
-    function renderPaper(p) {
+    async function renderPaper(p) {
       paper = p;
       katexMacros = buildKatexMacros(p.macros);
       bix.clear();
@@ -4014,6 +4014,18 @@
 
       const app = document.getElementById('app');
       app.innerHTML = '';
+
+      // ── Progressive paint phase 1: real header (title/authors/date) ──
+      // Built & appended first so the user sees the paper identity immediately,
+      // well before the sidebar, chapter containers, or content index are built.
+      const hdrEarly = mk('div','hdr');
+      hdrEarly.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.affiliations?.length?`<div class="af">${p.affiliations.map(esc).join('; ')}</div>`:''}${p.date?`<div class="dt">${p.date}</div>`:''}`;
+      app.appendChild(hdrEarly);
+      document.title = `${p.title} — Folio`;
+      const topletEl0 = document.getElementById('toplet');
+      if (topletEl0) topletEl0.textContent = `Folio: ${p.title}`;
+      // Yield so the header actually paints before the heavy sidebar build.
+      await yieldPaint();
 
       // Build sidebar
       const sb = document.getElementById('sidebar');
@@ -4480,12 +4492,9 @@
         sb.appendChild(bibEl);
         sb.appendChild(bibBody);
       }
-      renderMath(sb);
-
-      // Header
-      const hdr = mk('div','hdr');
-      hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.affiliations?.length?`<div class="af">${p.affiliations.map(esc).join('; ')}</div>`:''}${p.date?`<div class="dt">${p.date}</div>`:''}`;
-      app.appendChild(hdr);
+      // Sidebar KaTeX is deferred: math in chapter/section titles renders after
+      // first paint so the paper header appears ~instantly.
+      (window.requestIdleCallback || requestAnimationFrame)(() => renderMath(sb));
 
       // Build section/chapter label index for cross-ref resolution
       for (const ch of p.chapters) {
@@ -4494,6 +4503,9 @@
           if (sec.label) secIndex.set(sec.label, { title: sec.title, kind: 'section' });
         }
       }
+
+      // Yield before building chapter containers so the sidebar paints.
+      await yieldPaint();
 
       // Render each chapter into its own hidden div
       for (const ch of p.chapters) {
@@ -4643,11 +4655,12 @@
         ciEl.classList.toggle('open');
         saveSbOpenChapters();
         showChapter(ciNum);
+        populateContentIndex();
       };
       sb.appendChild(ciEl);
       sb.appendChild(ciBody);
 
-      // Build Content Index chapter div
+      // Build Content Index chapter div (empty; body is built lazily on first open)
       const ciDiv = mk('div','ch');
       ciDiv.dataset.chNum = String(ciNum);
       ciDiv.style.display = 'none';
@@ -4658,94 +4671,100 @@
       chapterDivs.set(ciNum, ciDiv);
       app.appendChild(ciDiv);
 
-      // Populate content index from paper data
-      const ciContainer = ciDiv.querySelector('#ci-blocks');
+      // Populate content index from paper data — built lazily on first open so it
+      // does not block first paint. In lazy mode blocks may still be empty; we
+      // rebuild whenever the user opens the panel.
       const kindColors = {definition:'#4a9eff',theorem:'#e06c75',proposition:'#c678dd',lemma:'#c678dd',corollary:'#c678dd',remark:'#98c379',example:'#d19a66',proof:'#abb2bf',prose:'#abb2bf',conjecture:'#e5c07b'};
-      for (const ch of p.chapters) {
-        const chGrp = mk('div','ci-chapter');
-        const chHdr = mk('div','');
-        chHdr.style.cssText = 'font-weight:600;font-size:.7rem;margin:.8rem 0 .3rem;color:var(--fg);font-family:var(--f-head)';
-        chHdr.textContent = `${ch.number != null ? 'Ch ' + ch.number + '. ' : ''}${ch.title}`;
-        chGrp.appendChild(chHdr);
-
-        for (const sec of ch.sections) {
-          for (const b of sec.blocks) {
-            const stub = mk('div','ci-stub');
-            stub.dataset.search = `${b.kind} ${b.label || ''} ${b.title || ''} ${(b.tags || []).join(' ')}`.toLowerCase();
-            stub.style.cssText = 'display:flex;align-items:baseline;gap:.4rem;padding:.2rem .4rem;border-radius:3px;cursor:pointer;border-left:3px solid transparent';
-            stub.style.borderLeftColor = kindColors[b.kind] || 'var(--bd)';
-
-            const kindSpan = mk('span','');
-            kindSpan.style.cssText = 'font-family:var(--f-mono);font-size:.55rem;min-width:3rem;color:var(--fg-d)';
-            kindSpan.textContent = b.kind;
-            stub.appendChild(kindSpan);
-
-            const titleSpan = mk('span','');
-            titleSpan.style.cssText = 'flex:1;font-family:var(--f-head)';
-            titleSpan.innerHTML = inl(b.title || b.rootName);
-            renderMath(titleSpan);
-            stub.appendChild(titleSpan);
-
-            const labelSpan = mk('span','');
-            labelSpan.style.cssText = 'font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)';
-            labelSpan.textContent = b.label || '';
-            stub.appendChild(labelSpan);
-
-            if (b.lean?.file || b.lean?.decl) {
-              const lBadge = mk('span','');
-              lBadge.style.cssText = 'font-size:.5rem;padding:0 .2rem;border-radius:2px;background:rgba(42,170,70,.15);color:#2aaa46';
-              lBadge.textContent = 'lean';
-              stub.appendChild(lBadge);
-            }
-            if (b.uses?.length) {
-              const uBadge = mk('span','');
-              uBadge.style.cssText = 'font-size:.5rem;color:var(--fg-d)';
-              uBadge.textContent = `${b.uses.length} dep${b.uses.length > 1 ? 's' : ''}`;
-              stub.appendChild(uBadge);
-            }
-
-            stub.onclick = () => {
-              showChapter(chKey(ch));
-              requestAnimationFrame(() => {
-                if (b.label) {
-                  const el = document.getElementById(b.label);
-                  if (el) {
-                    const wrap = el.closest('.blk-remark, .blk-example');
-                    if (wrap && wrap.style.display === 'none') wrap.style.display = '';
-                    window.scrollTo({ top: el.offsetTop - 48, behavior: 'instant' });
-                    el.style.outline = '2px solid var(--ac)';
-                    setTimeout(() => { el.style.outline = ''; }, 2000);
+      let _ciBuiltFromBlocks = 0;
+      function populateContentIndex() {
+        const ciContainer = ciDiv.querySelector('#ci-blocks');
+        if (!ciContainer) return;
+        // Count currently-known blocks; skip rebuild if unchanged.
+        let total = 0;
+        for (const ch of p.chapters) for (const sec of ch.sections) total += sec.blocks.length;
+        if (total === _ciBuiltFromBlocks && ciContainer.childElementCount > 0) return;
+        _ciBuiltFromBlocks = total;
+        ciContainer.innerHTML = '';
+        for (const ch of p.chapters) {
+          const chGrp = mk('div','ci-chapter');
+          const chHdr = mk('div','');
+          chHdr.style.cssText = 'font-weight:600;font-size:.7rem;margin:.8rem 0 .3rem;color:var(--fg);font-family:var(--f-head)';
+          chHdr.textContent = `${ch.number != null ? 'Ch ' + ch.number + '. ' : ''}${ch.title}`;
+          chGrp.appendChild(chHdr);
+          for (const sec of ch.sections) {
+            for (const b of sec.blocks) {
+              const stub = mk('div','ci-stub');
+              stub.dataset.search = `${b.kind} ${b.label || ''} ${b.title || ''} ${(b.tags || []).join(' ')}`.toLowerCase();
+              stub.style.cssText = 'display:flex;align-items:baseline;gap:.4rem;padding:.2rem .4rem;border-radius:3px;cursor:pointer;border-left:3px solid transparent';
+              stub.style.borderLeftColor = kindColors[b.kind] || 'var(--bd)';
+              const kindSpan = mk('span','');
+              kindSpan.style.cssText = 'font-family:var(--f-mono);font-size:.55rem;min-width:3rem;color:var(--fg-d)';
+              kindSpan.textContent = b.kind;
+              stub.appendChild(kindSpan);
+              const titleSpan = mk('span','');
+              titleSpan.style.cssText = 'flex:1;font-family:var(--f-head)';
+              titleSpan.innerHTML = inl(b.title || b.rootName);
+              renderMath(titleSpan);
+              stub.appendChild(titleSpan);
+              const labelSpan = mk('span','');
+              labelSpan.style.cssText = 'font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)';
+              labelSpan.textContent = b.label || '';
+              stub.appendChild(labelSpan);
+              if (b.lean?.file || b.lean?.decl) {
+                const lBadge = mk('span','');
+                lBadge.style.cssText = 'font-size:.5rem;padding:0 .2rem;border-radius:2px;background:rgba(42,170,70,.15);color:#2aaa46';
+                lBadge.textContent = 'lean';
+                stub.appendChild(lBadge);
+              }
+              if (b.uses?.length) {
+                const uBadge = mk('span','');
+                uBadge.style.cssText = 'font-size:.5rem;color:var(--fg-d)';
+                uBadge.textContent = `${b.uses.length} dep${b.uses.length > 1 ? 's' : ''}`;
+                stub.appendChild(uBadge);
+              }
+              stub.onclick = () => {
+                showChapter(chKey(ch));
+                requestAnimationFrame(() => {
+                  if (b.label) {
+                    const el = document.getElementById(b.label);
+                    if (el) {
+                      const wrap = el.closest('.blk-remark, .blk-example');
+                      if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+                      window.scrollTo({ top: el.offsetTop - 48, behavior: 'instant' });
+                      el.style.outline = '2px solid var(--ac)';
+                      setTimeout(() => { el.style.outline = ''; }, 2000);
+                    }
                   }
-                }
-              });
-            };
-            stub.onmouseover = () => { stub.style.background = 'var(--bg-r)'; };
-            stub.onmouseout = () => { stub.style.background = ''; };
-            chGrp.appendChild(stub);
+                });
+              };
+              stub.onmouseover = () => { stub.style.background = 'var(--bg-r)'; };
+              stub.onmouseout = () => { stub.style.background = ''; };
+              chGrp.appendChild(stub);
+            }
           }
+          ciContainer.appendChild(chGrp);
         }
-        ciContainer.appendChild(chGrp);
+        renderMath(ciContainer);
+        // Filter input (bind once)
+        const ciSearch = ciDiv.querySelector('#ci-search');
+        if (ciSearch && !ciSearch._bound) {
+          ciSearch._bound = true;
+          ciSearch.oninput = () => {
+            const q = ciSearch.value.toLowerCase().trim();
+            for (const s of ciContainer.querySelectorAll('.ci-stub')) {
+              s.style.display = (!q || s.dataset.search.includes(q)) ? '' : 'none';
+            }
+            for (const c of ciContainer.querySelectorAll('.ci-chapter')) {
+              const visible = c.querySelectorAll('.ci-stub:not([style*="display: none"])').length;
+              c.style.display = visible ? '' : 'none';
+            }
+          };
+        }
       }
-      renderMath(ciContainer);
-
-      // Filter input
-      const ciSearch = ciDiv.querySelector('#ci-search');
-      if (ciSearch) {
-        ciSearch.oninput = () => {
-          const q = ciSearch.value.toLowerCase().trim();
-          for (const s of ciContainer.querySelectorAll('.ci-stub')) {
-            s.style.display = (!q || s.dataset.search.includes(q)) ? '' : 'none';
-          }
-          for (const c of ciContainer.querySelectorAll('.ci-chapter')) {
-            const visible = c.querySelectorAll('.ci-stub:not([style*="display: none"])').length;
-            c.style.display = visible ? '' : 'none';
-          }
-        };
-      }
+      // Expose so other handlers (e.g. Content Index click) can refresh it.
+      paper._populateContentIndex = populateContentIndex;
 
       document.getElementById('c-hash').textContent = p._hash || '';
-      document.title = `${p.title} — Folio`;
-      document.getElementById('toplet').textContent = `Folio: ${p.title}`;
 
       // Expose chapter navigation and lazy-load helpers for cross-function use
       paper._showChapter = showChapter;
@@ -6653,9 +6672,22 @@
       }
     }
 
+    // Double rAF guarantees the previous frame has painted before resolving.
+    const yieldPaint = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+    // Humanize a paper id slug for the instant-placeholder title.
+    function prettifyPaperId(id) {
+      return String(id || '').split(/[-_]+/).map(w => w ? w[0].toUpperCase() + w.slice(1) : '').join(' ');
+    }
+
     async function loadPaper(id) {
       const app = document.getElementById('app');
-      app.innerHTML = '<div class="loading">loading paper...</div>';
+      // Instant placeholder header — paints before any network round-trip.
+      const guessTitle = prettifyPaperId(id);
+      app.innerHTML = `<div class="hdr loading-hdr"><h1 style="opacity:.55">${esc(guessTitle)}</h1><div class="au" style="color:var(--fg-d);font-size:.75rem">loading paper…</div></div>`;
+      document.title = `${guessTitle} — Folio`;
+      const topletEl = document.getElementById('toplet');
+      if (topletEl) topletEl.textContent = `Folio: ${guessTitle}`;
       try {
         // Reset lazy-load state
         paperOutline = null;
@@ -6693,7 +6725,7 @@
             })),
           })),
         };
-        renderPaper(p);
+        await renderPaper(p);
         startScrollTracking();
 
         // Update URL to be shareable (embed branch if non-default)
@@ -6709,7 +6741,7 @@
           const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
           if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
           paperOutline = null;
-          renderPaper(await r.json());
+          await renderPaper(await r.json());
           startScrollTracking();
           const target = hashWithBranch(`view/${id}`);
           history.replaceState(null, '', `#/${target}`);

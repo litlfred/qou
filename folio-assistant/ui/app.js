@@ -29,6 +29,14 @@
   const branchSelect = $("#c-br");
   const diffBtn = $("#c-diff");
 
+  // ── Progressive rendering helpers ────────────────────────
+  // Double-rAF guarantees the previous frame has painted before we continue.
+  const yieldPaint = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  // Humanize a slug like "quantum-observable-universe" → "Quantum Observable Universe".
+  function prettifyPaperId(id) {
+    return String(id || "").split(/[-_]+/).map(w => w ? w[0].toUpperCase() + w.slice(1) : "").join(" ");
+  }
+
   // ── Auth: fetch current user ──────────────────────────────
   async function fetchUser() {
     try {
@@ -298,17 +306,33 @@
 
   // ── Paper view ──────────────────────────────────────────
   async function loadPaper(id) {
-    app.innerHTML = '<div class="loading">loading paper...</div>';
+    // Instant placeholder paints before any network round-trip.
+    const guessTitle = prettifyPaperId(id);
+    app.innerHTML = `<div class="paper-layout"><div class="paper-content"><div class="paper-hdr"><h1 style="opacity:.55">${esc(guessTitle)}</h1><div class="au" style="color:var(--fg-d);font-size:.8rem">loading paper…</div></div></div></div>`;
+    document.title = `${guessTitle} — Folio`;
+    currentPaperId = id;
+
+    // Phase 1 — lightweight outline for the real header + sidebar skeleton.
+    // We fetch outline and full paper in parallel so the UI paints structure
+    // quickly while full block content streams in behind it.
+    const outlinePromise = api(branchQuery(`/api/paper/outline?id=${encodeURIComponent(id)}`)).catch(() => null);
+    const fullPromise = api(branchQuery(`/api/paper?id=${encodeURIComponent(id)}`));
+
     try {
-      const data = await api(branchQuery(`/api/paper?id=${encodeURIComponent(id)}`));
+      const outline = await outlinePromise;
+      if (outline && mode === "read") {
+        renderPaperSkeleton(outline);
+        await yieldPaint();
+      }
+
+      const data = await fullPromise;
       paper = data;
-      currentPaperId = id;
       katexMacros = buildKatexMacros(data.macros);
       buildBlockIndex();
       updateReadOnlyBanner();
       if (mode === "diff") await loadDiff();
       else if (mode === "qc") renderQC();
-      else renderPaper();
+      else await renderPaper();
       // Scroll to pending label after render
       if (pendingScrollLabel) {
         requestAnimationFrame(() => setTimeout(() => scrollToBlock(pendingScrollLabel), 500));
@@ -316,6 +340,36 @@
     } catch (e) {
       app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
     }
+  }
+
+  // Paints header + sidebar chapter list from the outline (no block content)
+  // so the user sees the paper's structure before the full fetch completes.
+  function renderPaperSkeleton(outline) {
+    document.body.dataset.folioMode = "read";
+    const wrap = h("div", "paper-layout");
+    const sb = h("aside", "sidebar");
+    const sbHead = h("div", "sidebar-header", esc(outline.title));
+    sb.appendChild(sbHead);
+    for (const ch of outline.chapters || []) {
+      const tabLbl = ch.tabLabel || (ch.number != null ? String(ch.number) : "");
+      const chEl = h("div", "sb-ch", `<span class="sb-tab">${esc(tabLbl)}</span><span class="arrow">&#9654;</span> <span class="sb-ch-title">${esc(ch.title)}</span>`);
+      sb.appendChild(chEl);
+    }
+    wrap.appendChild(sb);
+    const content = h("div", "paper-content");
+    const hdr = h("div", "paper-hdr");
+    hdr.innerHTML = `
+      <h1>${esc(outline.title)}</h1>
+      <div class="au">${esc((outline.authors || []).join(", "))}</div>
+      ${outline.date ? `<div class="dt">${esc(outline.date)}</div>` : ""}`;
+    content.appendChild(hdr);
+    const skel = h("div", "loading", "loading chapters…");
+    skel.style.cssText = "color:var(--fg-d);font-size:.8rem;padding:1rem 0";
+    content.appendChild(skel);
+    wrap.appendChild(content);
+    app.innerHTML = "";
+    app.appendChild(wrap);
+    document.title = `${outline.title} — Folio`;
   }
 
   function buildBlockIndex() {
@@ -383,7 +437,7 @@
   }
 
   // ── Paper: read mode ────────────────────────────────────
-  function renderPaper() {
+  async function renderPaper() {
     document.body.dataset.folioMode = "read";
     updateNav();
     const wrap = h("div", "paper-layout");
@@ -449,19 +503,35 @@
       ${paper.date ? `<div class="dt">${esc(paper.date)}</div>` : ""}`;
     content.appendChild(hdr);
 
-    // chapters
-    for (const ch of paper.chapters || []) {
-      content.appendChild(renderChapter(ch));
-    }
+    // Mount header + sidebar immediately so the user sees structure;
+    // chapters are appended incrementally below with rAF yields between them.
     wrap.appendChild(content);
-
     app.innerHTML = "";
     app.appendChild(wrap);
-    renderMath(app);
-    attachPopupListeners(app);
-    addCopyButtons(app);
-    enhanceIndexLinks(app);
-    observeVisibleBlocks(sb);
+    document.title = `${paper.title} — Folio`;
+    await yieldPaint();
+
+    // Render chapters progressively — one per frame, with the surrounding
+    // paint committed between each. Cheap chapters batch; huge chapters break
+    // naturally on the yield boundary.
+    const chapters = paper.chapters || [];
+    for (let i = 0; i < chapters.length; i++) {
+      const chEl = renderChapter(chapters[i]);
+      content.appendChild(chEl);
+      // Render math for this chapter only so KaTeX cost amortizes per frame.
+      try { renderMath(chEl); } catch {}
+      if (i + 1 < chapters.length) await yieldPaint();
+    }
+
+    // Final polish: listeners, copy buttons, cross-ref enhancement, sidebar
+    // active-block tracking. Deferred to idle so they don't block first paint.
+    const finalize = () => {
+      try { attachPopupListeners(app); } catch {}
+      try { addCopyButtons(app); } catch {}
+      try { enhanceIndexLinks(app); } catch {}
+      try { observeVisibleBlocks(sb); } catch {}
+    };
+    (window.requestIdleCallback || requestAnimationFrame)(finalize);
   }
 
   function renderChapter(ch) {
