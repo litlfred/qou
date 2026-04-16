@@ -446,6 +446,35 @@ def _build_gram():
 G = _build_gram()
 G_INV = np.linalg.inv(G)
 
+# Identity NF: the trivial braid [1, 0, 0, 0, 0, 0]
+_ID_NF = np.array([1.0, 0, 0, 0, 0, 0])
+
+
+def knot_factor(Z, N):
+    """Per-nucleus knot factor a(N) = ∏(1 - εᵢ) from the product formula.
+
+    For A≤4: exact factors from nucleon pair chirality.
+    For A≥5: a = 1 (the BW polynomial IS the per-nucleus computation;
+    the Wedderburn averaging is built into the q-integer coefficients).
+
+    NF character decomposition (sym/alt channels) is numerically unstable
+    for A≥5 because NF coefficients grow exponentially with A. The BW
+    polynomial's asymptotic expansion handles this correctly.
+
+    Reference: prop:nuclear-knot-classification
+    """
+    A = Z + N
+    if A <= 1:
+        return 1.0
+    elif A == 2:
+        return 1.0 + h      # satellite: 1 chiral pn pair
+    elif A == 3:
+        return 1.0 - h**2   # figure-eight: 1 amphicheiral pair
+    elif A == 4:
+        return (1.0 - h**2)**2  # Borromean-4: 2 amphicheiral pairs
+    else:
+        return 1.0           # generic: (1-h²)^n → 1 for large n
+
 
 def check_frobenius(nf):
     """Check Frobenius positivity G·x ≥ 0. Returns (stable, Gx, violations)."""
@@ -1033,31 +1062,23 @@ def binding_energy_bw(Z, N, k=3):
     #   A=3 figure-8:  a = 1-h² (1 amphicheiral pair, ε = h²)
     #   A=4 Borromean:  a = (1-h²)² (2 amphicheiral pairs)
     #   A≥5:            a = 1 (generic, (1-h²)^n → 1)
-    # Knot classification from NF signature.
+    # ── Knot factor a(N) = ∏(1-εᵢ) ─────────────────────────
     # (prop:nuclear-knot-classification)
     #
-    # Each nucleus has a specific NF whose Frobenius character determines
-    # the knot factor a(N). For A=2..4, exact factors are derived from
-    # the product formula a = ∏(1-εᵢ). For A≥5, the generic BW (a=1)
-    # applies because the NF approaches Borromean identity.
-    #
-    # The NF signature (σ₀·σ₁ sign) tracks knot type through the GB
-    # reduction, but applying figure-eight factors to A≥5 nuclei with
-    # figure-eight-like signatures (e.g. ⁶Li) overshoots because the
-    # character MAGNITUDE differs from pure 4₁. Per-nucleus correction
-    # requires computing the actual Frobenius norm from the witnessed NF.
-    is_satellite = (A == 2)
+    # a(N) modifies k=3 bulk. For A≤4: exact from pair chirality.
+    # For A≥5: a=1 (BW polynomial handles Wedderburn averaging).
+    # Coulomb/exchange have separate channel factors for A=3,4.
+    a_N = knot_factor(Z, N)
     is_fig8 = (A == 3)
-    is_borromean4 = (A == 4)
 
-    if is_satellite:
-        B = (1.0 + h) * B_bulk + z * B_exch
-    elif is_fig8:
-        B = FIG8_A_BULK * B_bulk + FIG8_F_COUL * B_coul + FIG8_F_EXCH * B_exch
-    elif is_borromean4:
-        B = (FIG8_A_BULK ** 2) * B_bulk + (z ** 2) * B_coul + (z * q_int(3) / q_int(2)) * B_exch
+    if A == 3:
+        B = a_N * B_bulk + FIG8_F_COUL * B_coul + FIG8_F_EXCH * B_exch
+    elif A == 4:
+        B = a_N * B_bulk + z**2 * B_coul + (z * q_int(3) / q_int(2)) * B_exch
+    elif A == 2:
+        B = a_N * B_bulk + z * B_exch  # no Coulomb for Z=1
     else:
-        B = B_bulk + B_coul + B_exch
+        B = a_N * B_bulk + B_coul + B_exch
 
     # ── H₄(q) terms 7-8 ─────────────────────────────────────
     # Topology-independent: shell/hook corrections from nuclear size.
