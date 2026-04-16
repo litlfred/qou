@@ -1,25 +1,25 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-16T00:16:51.426150+00:00",
-  "commitSha": "bfbfbf2d9593ae82ebaea92a933a5b887d3486c8",
+  "computedAt": "2026-04-16T00:24:08.045427+00:00",
+  "commitSha": "e58f78e3d323719d878e90d3c6b4a85ff606ec14",
   "assertions": [
     {
       "name": "N≡N triple bond at k=3",
-      "computed": 9.03,
+      "computed": 13.97,
       "expected": 9.79,
-      "passed": true,
+      "passed": false,
       "tolerance": 1.0,
       "unit": "eV",
       "source": "N≡N experimental bond energy"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 4,
   "computation": "level-k-binding",
   "scriptFile": "level_k_binding.py",
-  "scriptHash": "f6bfd8d74142",
-  "scriptCommitSha": "9098a61f223116518a6548f6dcf674dff92edc76",
+  "scriptHash": "16e5f7de8322",
+  "scriptCommitSha": "e58f78e3d323719d878e90d3c6b4a85ff606ec14",
   "description": "Level-k molecular binding via LP dual shadow prices (k=3..10). Bond character χ_λ(T⁻ⁿ) from Hoefsmit seminormal form. Branching rule propagates shadow prices from k=3 Wedderburn weights.",
   "parameters": {
     "k_max": 10,
@@ -28,34 +28,34 @@
   },
   "data": {
     "single_bond": {
-      "3": 7.6245,
-      "4": 7.5838,
-      "5": 7.5843,
-      "6": 7.6527,
-      "7": 7.8176,
-      "8": 8.1121,
-      "9": 8.5782,
-      "10": 9.2731
+      "3": 25.9353,
+      "4": 26.0068,
+      "5": 26.0054,
+      "6": 25.8841,
+      "7": 25.5967,
+      "8": 25.0985,
+      "9": 24.3461,
+      "10": 23.2973
     },
     "double_bond": {
-      "3": 5.8966,
-      "4": 5.712,
-      "5": 5.8334,
-      "6": 6.0576,
-      "7": 6.319,
-      "8": 6.6476,
-      "9": 7.0942,
-      "10": 7.7174
+      "3": 12.4829,
+      "4": 21.4909,
+      "5": 27.6027,
+      "6": 31.9705,
+      "7": 35.1011,
+      "8": 37.2654,
+      "9": 38.6211,
+      "10": 39.2636
     },
     "triple_bond": {
-      "3": 9.028,
-      "4": 7.4747,
-      "5": 7.0579,
-      "6": 6.9507,
-      "7": 7.0129,
-      "8": 7.2249,
-      "9": 7.6054,
-      "10": 8.1964
+      "3": 13.9705,
+      "4": 27.6048,
+      "5": 36.4612,
+      "6": 42.7239,
+      "7": 47.3253,
+      "8": 50.7202,
+      "9": 53.1508,
+      "10": 54.7529
     }
   }
 }
