@@ -1,0 +1,61 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-16T00:10:17.961698+00:00",
+  "commitSha": "2dc8ffab9113f67392fc3ce19e3bfb45f5787e4b",
+  "assertions": [
+    {
+      "name": "N≡N triple bond at k=3",
+      "computed": 9.89,
+      "expected": 9.79,
+      "passed": true,
+      "tolerance": 1.0,
+      "unit": "eV",
+      "source": "N≡N experimental bond energy"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "level-k-binding",
+  "scriptFile": "level_k_binding.py",
+  "scriptHash": "a0f03d62ad66",
+  "scriptCommitSha": "",
+  "description": "Level-k molecular binding via LP dual shadow prices (k=3..10). Bond character χ_λ(T⁻ⁿ) from Hoefsmit seminormal form. Branching rule propagates shadow prices from k=3 Wedderburn weights.",
+  "parameters": {
+    "k_max": 10,
+    "E_MOL_eV": 6.72933203541817,
+    "q": 1.1099785955541805
+  },
+  "data": {
+    "single_bond": {
+      "3": 7.6245,
+      "4": 7.5838,
+      "5": 7.5843,
+      "6": 7.6527,
+      "7": 7.8176,
+      "8": 8.1121,
+      "9": 8.5782,
+      "10": 9.2731
+    },
+    "double_bond": {
+      "3": 1.6002,
+      "4": 1.4937,
+      "5": 1.1925,
+      "6": 1.0031,
+      "7": 0.8751,
+      "8": 0.8473,
+      "9": 0.8329,
+      "10": 0.8478
+    },
+    "triple_bond": {
+      "3": 9.8897,
+      "4": 9.8371,
+      "5": 9.8378,
+      "6": 9.9266,
+      "7": 10.1406,
+      "8": 10.5227,
+      "9": 11.1275,
+      "10": 12.0289
+    }
+  }
+}
