@@ -644,6 +644,50 @@ def atom_gen_chains(Z, N):
     return g0, g1
 
 
+def atom_V_full(Z, N):
+    """Quark-level per-generator V̂_i^full for the mass-tower formula.
+
+    Uses atom_gen_chains to get the FULL braid (B₃ × quarks +
+    inter-nucleon + electrons), then computes the Wedderburn-weighted
+    traced volume per generator:
+
+      V̂_i^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt
+
+    For H₃(q), i ∈ {0, 1} (two generators).
+
+    Returns (V0_full, V1_full) as floats.
+
+    Reference: prop:mass-endomorphism-tower, thm:wedderburn-mass-formula
+    """
+    g0_chain, g1_chain = atom_gen_chains(Z, N)
+    return _chain_V_full(g0_chain), _chain_V_full(g1_chain)
+
+
+def _chain_V_full(chain):
+    """Wedderburn-weighted traced volume from a crossing chain.
+
+    chain: list of (c, d) tuples.
+    Returns V̂^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt.
+    """
+    lam_sym = 1.0
+    for c, d in chain:
+        lam_sym *= c * q0 + d
+
+    lam_alt = 1.0
+    for c, d in chain:
+        lam_alt *= -c * qi + d
+
+    M00, M01, M10, M11 = 1.0, 0.0, 0.0, 1.0
+    for c, d in chain:
+        t00 = c * h + d; t01 = c; t10 = c; t11 = d
+        n00 = M00*t00 + M01*t10; n01 = M00*t01 + M01*t11
+        n10 = M10*t00 + M11*t10; n11 = M10*t01 + M11*t11
+        M00, M01, M10, M11 = n00, n01, n10, n11
+    V_std = z * M00 + M10
+
+    return W_SYM * lam_sym + W_STD * V_std + W_ALT * lam_alt
+
+
 def _crossing_coeff(ti, tj):
     """Crossing coefficient d for strand pair (ti, tj). c=1 always.
     Returns None for identity crossings (ne)."""
