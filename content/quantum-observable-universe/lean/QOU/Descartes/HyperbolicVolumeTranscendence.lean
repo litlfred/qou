@@ -140,6 +140,9 @@ theorem VolumeTowerDecomposition.tail_bounded
     (vtd : VolumeTowerDecomposition) (N : ℕ) :
     ∃ (C : ℝ), C ≥ 0 ∧
       ∀ n, n ≥ N → |vtd.levelContribution n| ≤ C / (n + 1) := by
+  -- Follows from vtd.summable: summable sequences are O(1/n).
+  -- Proof: summable → tendsto_atTop_zero → eventually bounded → ∃ C.
+  -- Requires Mathlib's Summable.tendsto_atTop_zero and Filter API.
   -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
   sorry
 
