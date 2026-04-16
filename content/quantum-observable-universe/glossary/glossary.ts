@@ -56,6 +56,7 @@ export default chapter({
       label: "sec:glossary-enrichment",
       blocks: [
         "glossary-r-linear-category",
+        "glossary-no-quasi-zeros",
       ],
     }),
 

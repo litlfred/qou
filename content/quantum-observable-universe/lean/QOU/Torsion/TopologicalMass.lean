@@ -57,6 +57,11 @@ structure TopologicalMassDecomposition (M : Type*) where
   totalMass_nonneg : 0 ≤ totalMass
   decomposition : totalMass = baselineHolonomy +
     (Finset.univ.sum fun i => exceptionalContribution i)
+  -- AUDIT NOTE: The following two conditions are degenerate (→ True).
+  -- They should encode actual constraints:
+  --   baseline_is_descended: baseline holonomy lives in the descended subalgebra
+  --   transient_supported_on_boundary: transient mass vanishes away from boundary
+  -- Ref: [manuscript] §4-torsion
   baseline_is_descended : ∀ (f : M → ℝ), di.tau f = f → True
   transient_supported_on_boundary : ∀ (p : M), p ∉ bb.boundary → True
 

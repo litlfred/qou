@@ -136,13 +136,10 @@ theorem ne_identity : crossingCoeffs .ne = (0, 1) := by rfl
     The nucleon NF depends only on q and the quark flavor assignment,
     not on photon polarization parameters (φ₀, φ₁, φ₀₁).
 
-    Proof: `crossingCoeffs` is defined as a function of `CrossingType`
-    alone — no photon parameter appears in its type signature or body.
-    The crossing type is determined by `crossingType`, which depends
-    only on `ParticleType` values (proton/neutron/electron), not on
-    any continuous parameter. Therefore any function built from
-    `crossingCoeffs` and `crossingType` is independent of photon
-    polarization by construction. -/
+    AUDIT NOTE: Currently a tautology (`f x = f x` by rfl). The actual
+    claim requires introducing a photon-polarization parameter type and
+    showing that the crossing coefficients are constant with respect to it.
+    The current type signature has no polarization parameter to vary. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem confinement_universality :
     ∀ (p₁ p₂ : ParticleType), crossingCoeffs (crossingType p₁ p₂) =

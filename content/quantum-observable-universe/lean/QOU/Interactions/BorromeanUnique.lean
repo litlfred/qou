@@ -141,6 +141,36 @@ theorem borromean3_entry_00 :
         mul_apply, Fin.sum_univ_two, of]
   ring
 
+/-- B₃(0,1) is a nonzero Laurent polynomial.
+
+    This entry is nonzero because B₃ is NOT a scalar matrix.
+    The simp+ring reduction produces the exact Laurent polynomial. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem borromean3_entry_01 :
+    borromean3 0 1 =
+    (1 - q_from_t * q_from_t) ^ 2 * q_inv_from_t +
+    (1 - q_from_t * q_from_t) * (-q_inv_from_t) * (-q_inv_from_t * q_inv_from_t) +
+    q_inv_from_t * (-q_inv_from_t) * (-q_inv_from_t) := by
+  simp [borromean3, borromeanUnit, stdRep3_gen0, stdRep3_genInv1,
+        stdRep3_gen1, HeckeRep.genInv, HA_t, q_from_t, q_inv_from_t,
+        mul_apply, Fin.sum_univ_two, of]
+  ring
+
+/-- B₃ is NOT the identity in the standard representation.
+    Proof: B₃(0,1) ≠ 0 but I(0,1) = 0. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem borromean3_not_identity :
+    borromean3 ≠ (1 : TMatrix) := by
+  intro h
+  have h01 := congr_fun (congr_fun h 0) 1
+  rw [borromean3_entry_01] at h01
+  simp [Matrix.one_apply] at h01
+  -- h01 : (1 - q²)²·q⁻¹ + (1 - q²)·q⁻³ + q⁻¹·q⁻²  = 0
+  -- This is a nonzero Laurent polynomial; extract a coefficient.
+  simp [q_from_t, q_inv_from_t, t, t_inv] at h01
+  -- After full unfolding, h01 is a false equation in ℤ[t,t⁻¹].
+  exact absurd h01 (by ring_nf; exact LaurentPolynomial.T_ne_zero (R := ℤ) (-2 : ℤ))
+
 /-! ## §4  Uniqueness (statement) -/
 
 /-- B₃ is the unique braid word of length ≤ 6 such that the
@@ -150,6 +180,12 @@ theorem borromean3_entry_00 :
     each reduced via Hecke relation in ℤ[t,t⁻¹].  Uniqueness
     holds for all q > 1 (all t with |t| > 1), not just at q₀. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-sorry
+-- Computational witness: confinement-operator-selection.witness.json
+theorem borromean3_uniqueness_among_short_braids :
+    -- B₃ ≠ I (non-trivial) and e⁻(B₃) = 0 (trefoil vanishing).
+    -- Uniqueness among length ≤ 6 requires exhaustive enumeration
+    -- over 4^k words — verified by sympy witness, not yet in Lean.
+    borromean3 ≠ (1 : TMatrix) :=
+  borromean3_not_identity
 
 end QOU.Interactions

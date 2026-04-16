@@ -111,15 +111,22 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-! ### Variational equations of the categorical action -/
 
-/-- **Einstein equation**: `R_λ - ½ tr(R_λ) id = T_q`. -/
+/-- **Einstein equation**: `R_λ - ½ tr(R_λ) id = T_q`.
+    AUDIT NOTE: This is currently a tautology (proves `x = x`).
+    The actual variational equation requires encoding the Euler-Lagrange
+    derivative of the categorical action, which depends on a calculus
+    of variations framework not yet available in Lean/Mathlib. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
+-- sorry -- actual variational derivation requires categorical calculus of variations
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
     ca.gravity = ca.gravity := rfl
 
-/-- **Yang–Mills equation**: `∇ ★_q F + q[F, ★_q F] = J_ψ`. -/
+/-- **Yang–Mills equation**: `∇ ★_q F + q[F, ★_q F] = J_ψ`.
+    AUDIT NOTE: This is currently a tautology (proves `x = x`).
+    Same limitation as `variational_einstein`. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
@@ -127,7 +134,9 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     (ca : CategoricalAction C fh) :
     ca.gauge = ca.gauge := rfl
 
-/-- **Transport equation**: `D_∇ ψ = 0`. -/
+/-- **Transport equation**: `D_∇ ψ = 0`.
+    AUDIT NOTE: This is currently a tautology (proves `x = x`).
+    Same limitation as `variational_einstein`. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]

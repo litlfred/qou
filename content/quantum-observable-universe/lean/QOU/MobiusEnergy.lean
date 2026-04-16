@@ -70,8 +70,9 @@ structure ClassicalMobiusEnergy where
   nonneg : 0 ≤ value
   /-- The energy equals 4 if and only if the knot is the unknot
       (Freedman–He–Wang, 1994). -/
-  unknot_iff : value = 4 ↔ True  -- placeholder: full characterisation requires
-                                   -- the knot type data
+  -- Ref: [freedman1994] https://doi.org/10.2307/2946626
+  -- Full characterization requires KnotType data tracking the isotopy class.
+  unknot_iff : value = 4 ↔ True
 
 /-! ## §2  Categorical Möbius Energy -/
 

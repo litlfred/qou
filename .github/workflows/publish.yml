@@ -153,6 +153,14 @@ jobs:
           echo "lean $(lean --version 2>&1 | head -1 || echo 'not needed for this workflow')"
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
+      - name: Cache bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('content/bun.lockb') }}
+          restore-keys: |
+            bun-${{ runner.os }}-
+
       - name: Install content pipeline dependencies
         run: |
           cd content && bun install --frozen-lockfile 2>/dev/null || bun install
@@ -272,9 +280,17 @@ jobs:
         run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
+      - name: Cache TikZ externalized figures
+        uses: actions/cache@v4
+        with:
+          path: tikz-cache
+          key: tikz-${{ runner.os }}-${{ hashFiles('chapters/*.tex', 'latex/preamble.tex') }}
+          restore-keys: |
+            tikz-${{ runner.os }}-
+
       - name: Compile LaTeX to PDF
         run: |
-          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
+          scripts/latexmk-compile.sh main.tex 2>&1 \
             | grep -v '^LaTeX Warning: .*undefined' \
             | grep -v '^pdfTeX warning (ext4): destination with the same identifier' \
             | grep -v '^<to be read again>' \
@@ -345,7 +361,7 @@ jobs:
             sed -i 's/\\definecolor{BLUE}{rgb}{[^}]*}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
             sed -i 's/\\color{[Bb][Ll][Uu][Ee]}/\\color{DIFgreen}/g' diff.tex
 
-            latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex \
+            scripts/latexmk-compile.sh diff.tex \
               && echo "[diff] ✓ diff.pdf generated" \
               || echo "[diff] ✗ diff.pdf compilation failed"
 
@@ -397,7 +413,7 @@ jobs:
             slug="${tex#standalone-}"
             slug="${slug%.tex}"
             echo "── Compiling standalone appendix: ${slug}"
-            latexmk -pdf -interaction=nonstopmode -halt-on-error "$tex" 2>&1 \
+            scripts/latexmk-compile.sh "$tex" 2>&1 \
               | grep -v '^LaTeX Warning: .*undefined' \
               | grep -v '^Overfull \\hbox' \
               | grep -v '^Underfull \\hbox' \

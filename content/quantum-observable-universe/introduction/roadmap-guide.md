@@ -9,10 +9,11 @@ $\mathrm{SU}(2)$, and the lifting obstructions that force genus $4$.
 Part II (Chapters 4–8) develops the structural consequences: braids
 and knots, models over various ground fields, the algebraic substrate
 (including the $q$-Riemann hypothesis), fluid dynamics, and
-information theory.  Part III (Chapters 9–10) specialises to the
-Descartes universe on Bring's surface and confronts predictions with
-experiment.  Chapter 11 develops the $q$-geometric Langlands
-correspondence.
+information theory.  Part III (Chapters 9–12) specialises to the
+Descartes universe on Bring's surface, develops particle
+interactions, confronts predictions with experiment, and extends
+the formalism to molecules.  Chapter 13 develops the $q$-geometric
+Langlands correspondence.
 
 The dashed line on the right marks the $\mathrm{SU}(2)$ running
 example (`ex:*-su2` blocks): a single concrete instance that

@@ -35,3 +35,8 @@ import QOU.Descartes.TMCorrespondence
 import QOU.Descartes.MassGapGm
 import QOU.Descartes.YoungIdempotent
 import QOU.Descartes.MultiGeneratorSpectrum
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.HeckeH3
+import QOU.Descartes.QuotientIdeal
+import QOU.Descartes.NuclearNormalForms
+import QOU.Descartes.HyperbolicVolumeTranscendence
