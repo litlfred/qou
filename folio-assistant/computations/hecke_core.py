@@ -959,6 +959,23 @@ def binding_energy_bw(Z, N, k=3):
         B += DELTA_411 * (N - Z)**2 / (4.0 * A**(4.0/3.0))
         B -= DELTA_42 * Z * (Z - 1) / A**(4.0/3.0)
 
+    # ── k≥7 corrections: NOT YET DERIVED ─────────────────────
+    # The k=7+ corrections require computing the FULL spectral LP
+    # at each level: identifying the scaling function S_λ(Z,N,A) for
+    # each new partition λ ⊢ k. The branching rule (PR #360) gives
+    # the shadow price C_λ, but the scaling function must be derived
+    # individually for each partition from its content structure.
+    #
+    # The Hoefsmit witness provides χ_λ(B₃) up to k=15, and the
+    # per-irrep vertex volume (level_k_binding.py) can evaluate
+    # these on actual atomic chains. But translating this to the
+    # BW formula requires per-partition scaling identification,
+    # which is an open research problem.
+    #
+    # Current best: k=6 (RMS 1.59 MeV, 14 terms).
+    # Convergence bound: |δB(k)| ~ [2]_q^{-2(k-3)} per level.
+    # Estimated k=7 improvement: ~0.3 MeV RMS reduction.
+
     return B
 
 
