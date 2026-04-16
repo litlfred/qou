@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-16T22:00:16.316689+00:00",
-  "commitSha": "681d6827796583c519334d44a8832db7aa452cd8",
+  "computedAt": "2026-04-16T23:35:08.345005+00:00",
+  "commitSha": "f14d6393777ad9bf53cf3f052981c1c27ccc8c5a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "transition-nf",
   "scriptFile": "transition_nf.py",
   "scriptHash": "63cf638a2d8d",
@@ -36,7 +36,7 @@
       "tr_delta": 7.723367519546188,
       "tr_ratio": -2.6762578726156896,
       "n_changed": 7,
-      "Q_mass_MeV": 13.402582,
+      "Q_mass_MeV": 11.743673,
       "Q_exp_MeV": 3.5078
     },
     "Z6N8": {
