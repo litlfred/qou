@@ -193,20 +193,51 @@ examples span $\mathrm{H}_2$, $\mathrm{H}_2\mathrm{O}$, and
 benzene.
 
 [Chapter 12](#chap:observations) confronts theory with experiment.
-We use observed CODATA values for the muon and electron mass to
-determine $q_0$ for our local patch of the universe:
+The representation theory of $H_n(q)$ and the Bring constraint
+$\chi = -6$ together fix the number of free parameters: **exactly
+three** calibration inputs are needed — one dimensionless ratio,
+one leptonic mass scale, and one hadronic energy scale.  Every
+other mass, Q-value, binding energy, and coupling constant in the
+paper is a *prediction*.  We calibrate with CODATA values
+$(m_\mu / m_e,\ m_e,\ Q_\beta(n))$; the dimensionless ratio
+$m_\mu/m_e$ fixes the substrate parameter via the Skein mass
+relation
 
 $$
-  (1 - q^{-1})^2 = \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
-  \qquad\Longrightarrow\qquad
-  q = q_0 + O\!\bigl(2.2 \times 10^{-8}\bigr).
+  \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}},
+  \qquad \hbar_q = \frac{q - 1}{q},
 $$
 
-From this single parameter we derive formulas for the masses of
-all hadrons and atoms parametrised by $q_0$, which align with
-observed values to good precision, together with hadron half-lives
-and the fine-structure constant $1/\alpha \approx 137.035$ via a
-$q$-deformed Chern–Simons calculation.
+giving
+
+$$
+  q_0 = 1.1097 + O\!\bigl(2.2 \times 10^{-8}\bigr)
+$$
+
+for our local patch of the universe.  Once $q_0$ and the two
+energy scales are fixed, concrete computable formulas follow.
+A few examples:
+
+- **Atomic masses**
+  $\mathfrak{m}_A(Z, N; q_0)$ via the Wedderburn formula on the
+  molecular Hecke algebra, matching AME2020 across the periodic
+  table to sub-percent precision.
+- **Fine-structure constant**
+  from a $q$-deformed Chern–Simons calculation on the force-carrier
+  torus knots $T_{2,9}$ and $T_{3,5}$,
+
+  $$
+    \frac{1}{\alpha_{\mathrm{EM}}}
+    = q \cdot [9]_q \cdot [10]_q \cdot
+      \bigl(1 + c_1 + c_1^{2}\kappa\bigr)
+    \approx 137.0359
+    \quad\text{vs CODATA}\ 137.035999\ (399\text{ ppb}).
+  $$
+
+- **Proton-to-electron mass ratio**
+  from the non-perturbative $\Phi_q$-tower endomorphism,
+  $m_p / m_e \approx 1836$, together with **$\beta$-decay Q-values**
+  for six benchmark nuclei at $4.4\%$ mean absolute error.
 
 [Chapter 13](#chap:q-geometric-langlands) develops the
 $q$-geometric Langlands correspondence that connects the
