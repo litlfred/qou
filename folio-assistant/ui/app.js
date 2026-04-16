@@ -37,6 +37,29 @@
     return String(id || "").split(/[-_]+/).map(w => w ? w[0].toUpperCase() + w.slice(1) : "").join(" ");
   }
 
+  // While the user is actively selecting text, suppress hover-triggered popups
+  // and hover-opacity transitions (blk-actions fade-in). Each one otherwise
+  // repaints per block the cursor crosses during a drag.
+  (function trackSelectionState() {
+    let down = false;
+    document.addEventListener("mousedown", () => { down = true; document.body.classList.remove("selecting"); }, true);
+    document.addEventListener("mousemove", () => {
+      if (down) document.body.classList.add("selecting");
+    }, true);
+    document.addEventListener("mouseup", () => {
+      down = false;
+      // Keep selecting class briefly so the final hover target can't flash a popup.
+      setTimeout(() => {
+        const sel = window.getSelection && window.getSelection();
+        if (!sel || sel.isCollapsed) document.body.classList.remove("selecting");
+      }, 0);
+    }, true);
+    document.addEventListener("selectionchange", () => {
+      const sel = window.getSelection && window.getSelection();
+      if (!sel || sel.isCollapsed) document.body.classList.remove("selecting");
+    });
+  })();
+
   // ── Auth: fetch current user ──────────────────────────────
   async function fetchUser() {
     try {
@@ -1565,8 +1588,22 @@
     for (const a of root.querySelectorAll("a.uref")) {
       const label = (a.getAttribute("href") || "").replace("#", "");
       if (!label || !blockIndex[label]) continue;
-      a.addEventListener("mouseenter", () => showPopup(label, a));
-      a.addEventListener("mouseleave", () => hidePopup());
+      let hoverTimer = null;
+      a.addEventListener("mouseenter", () => {
+        // Debounce: only show after sustained hover. Prevents firing during
+        // text selection drags, which otherwise triggers a full mdToHtml +
+        // renderMath cycle per link the cursor crosses.
+        clearTimeout(hoverTimer);
+        if (document.body.classList.contains("selecting")) return;
+        hoverTimer = setTimeout(() => {
+          if (document.body.classList.contains("selecting")) return;
+          showPopup(label, a);
+        }, 250);
+      });
+      a.addEventListener("mouseleave", () => {
+        clearTimeout(hoverTimer);
+        hidePopup();
+      });
     }
   }
 

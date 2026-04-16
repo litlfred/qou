@@ -154,8 +154,13 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .bh-lean-status{font-size:.5rem;font-weight:400;opacity:.8}
 
 /* ── Block action bar ───────────────────────────────────── */
-.blk-actions{display:flex;gap:.3rem;position:absolute;top:.4rem;right:.4rem;opacity:0;transition:opacity .2s}
-.blk:hover .blk-actions,.env:hover .blk-actions{opacity:1}
+.blk-actions{display:flex;gap:.3rem;position:absolute;top:.4rem;right:.4rem;opacity:0;transition:opacity .2s;pointer-events:none}
+.blk:hover .blk-actions,.env:hover .blk-actions{opacity:1;pointer-events:auto}
+/* During text selection, suppress hover-triggered paints: block-actions and
+   cross-ref popups otherwise animate per block the cursor crosses on a drag,
+   which stalls selection. */
+body.selecting .blk-actions,body.selecting .blk-popup{transition:none!important;opacity:0!important;pointer-events:none!important}
+body.selecting .blk:hover .blk-actions,body.selecting .env:hover .blk-actions{opacity:0!important}
 .blk-act{width:22px;height:18px;background:none;border:1px solid transparent;color:var(--fg-d);cursor:pointer;font-size:.55rem;font-family:var(--f-mono);display:flex;align-items:center;justify-content:center;border-radius:2px;transition:all .15s}
 .blk-act:hover{color:var(--ac);border-color:var(--brd);background:var(--bg-r)}
 
