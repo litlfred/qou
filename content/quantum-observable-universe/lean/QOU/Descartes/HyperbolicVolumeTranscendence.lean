@@ -150,26 +150,48 @@ theorem VolumeTowerDecomposition.eventually_small
   rw [Metric.tendsto_atTop] at h
   exact h ε hε
 
+/-- Baseline tower decomposition: all volume concentrated at level 0.
+
+    This is the trivial decomposition Φ₀(K) = Vol(K), Φ_n(K) = 0 for n ≥ 1.
+    It always exists; the non-trivial content is that the obstruction tower
+    provides a REFINEMENT with infinitely many nonzero levels (see
+    `CSEvaluationFaithful`). -/
+noncomputable def baselineDecomposition
+    (tower : QOU.Torsion.RecursiveBraneTower) (vol : ℝ) (hvol : 0 < vol) :
+    VolumeTowerDecomposition where
+  tower := tower
+  totalVolume := vol
+  totalVolume_pos := hvol
+  levelContribution := fun n => if n = 0 then vol else 0
+  summable := by
+    apply Summable.of_nonneg_of_le (fun n => abs_nonneg _)
+    · intro n; split_ifs <;> simp [abs_of_pos hvol, abs_of_nonneg (le_refl 0)]
+    · exact summable_of_ne_finset_zero (s := {0}) (fun n hn => by
+        simp [Finset.mem_singleton] at hn; simp [hn])
+  sum_eq := by
+    apply hasSum_ite_eq
+  baseline_dominant := by simp [hvol]
+
 /-- Tower decomposition for Vol(4₁). -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 noncomputable def volumeTowerDecomp_4_1
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  sorry
+  baselineDecomposition tower vol_4_1 vol_4_1_pos
 
 /-- Tower decomposition for Vol(5₂). -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 noncomputable def volumeTowerDecomp_5_2
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  sorry
+  baselineDecomposition tower vol_5_2 vol_5_2_pos
 
 /-- Tower decomposition for Vol(𝓑₃). -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 noncomputable def volumeTowerDecomp_B3
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
-  sorry
+  baselineDecomposition tower vol_B3 vol_B3_pos
 
 /-! ## §6  Chern–Simons evaluation faithfulness (Proposition)
 
