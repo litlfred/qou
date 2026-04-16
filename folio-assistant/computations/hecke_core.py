@@ -605,10 +605,18 @@ def knot_factor(Z, N):
     """
     A = Z + N
     if A <= 1: return 1.0
-    elif A == 2: return 1.0 + h      # satellite: 1 chiral pn
-    elif A == 3: return 1.0 - h**2   # figure-eight: 1 amphicheiral
+    elif A == 2: return 1.0 + h       # satellite: 1 chiral pn
+    elif A == 3: return 1.0 - h**2    # figure-eight: 1 amphicheiral
     elif A == 4: return (1.0 - h**2)**2  # Borromean-4: 2 amphicheiral
-    else: return 1.0                  # generic BW
+
+    # A≥5: check NF signature for figure-eight-like topology
+    # σ₀·σ₁ < 0 with small |γ| → figure-eight braid closure
+    if A <= 8:
+        nf = build_atom_nf(Z, N)
+        if nf[1] * nf[2] < 0 and abs(nf[0]) < 0.3:
+            return 1.0 - h**2  # figure-eight NF signature
+
+    return 1.0  # generic Borromean
 
 
 def check_frobenius(nf):
