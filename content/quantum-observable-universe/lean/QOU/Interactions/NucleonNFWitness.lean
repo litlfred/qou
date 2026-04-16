@@ -72,13 +72,10 @@ noncomputable def proton4_nf : Fin 6 → R_t
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- (Verification via faithful representation; ring may timeout on
 --  the 16+ degree Laurent polynomials.)
-theorem proton4_nf_verification :
-    -- The e⁻ coefficient of 4× proton is nonzero (proved in HeckeEngine.lean
-    -- via nf_proton4_trefoil). The full NF matching requires degree-16+
-    -- Laurent polynomial ring computation which may timeout.
-    -- Ref: [jones1987] https://doi.org/10.2307/1971403
-    True :=
-  trivial
+-- proton4_nf_verification: the full NF matching (proton4 = nfToMatrix proton4_nf)
+-- requires degree-16+ Laurent polynomial ring computation which may timeout.
+-- The e⁻ coefficient is proved nonzero in HeckeEngine.lean (nf_proton4_trefoil).
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-! ## §3  Key property: proton and neutron e⁻ signs -/
 

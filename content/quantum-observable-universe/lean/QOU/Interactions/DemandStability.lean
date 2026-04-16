@@ -45,12 +45,10 @@ open QOU.Descartes
     configurations to check.  -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- (Beta stability from NF demand minimization.)
-theorem beta_stability_criterion :
-    -- The typed crossing coefficients are well-defined for all particle types,
-    -- establishing the finite enumeration over which demand is minimized.
-    ∀ (p₁ p₂ : ParticleType),
-      crossingCoeffs (crossingType p₁ p₂) = crossingCoeffs (crossingType p₁ p₂) := by
-  intro p₁ p₂; rfl
+-- beta_stability_criterion: requires defining demandMag over ℝ (evaluating
+-- Laurent polynomials at q₀) and showing minimum over A+1 configurations.
+-- Not yet formalised; the typed crossing infrastructure is in DerivedAtom.lean.
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-! ## §3  The e⁻ coefficient as beta decay receptivity -/
 
@@ -81,14 +79,9 @@ theorem beta_stability_criterion :
     Verified computationally for Z = 2 (He-3: demand = ∅). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- (Magic numbers from demand closure in the NF basis.)
-theorem magic_numbers_conjecture :
-    -- This is a conjecture verified computationally for small Z.
-    -- The formal statement requires a demand magnitude function over ℝ
-    -- (evaluating Laurent polynomials at q₀), which is not yet available.
-    -- We state the He-4 case as a witnessed fact.
-    True :=
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  trivial
+-- magic_numbers_conjecture: requires demand magnitude function over ℝ.
+-- Verified computationally for Z = 2 (He-4: demand = ∅).
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-! ## §5  Hecke square identity for typed crossings -/
 
@@ -112,13 +105,14 @@ theorem typed_crossing_square_pp (ρ : HeckeRep 3 2) (i : Fin 2) :
     This requires expanding (σ - ½HA)² and using the Hecke relation.
     Since ½ ∉ ℤ[t,t⁻¹], we multiply through by 4. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem mixed_crossing_square_identity :
-    -- The mixed crossing uses (2σ - HA), so (2σ - HA)² = 4σ² - 4HA·σ + HA²
-    -- = 4(HA·σ + 1) - 4HA·σ + HA² = 4 + HA².
-    -- Therefore 4·C_pn² = 4·HA·C_pn + 4 + HA² (not − ¼HA²).
-    -- The exact identity depends on crossing convention.
-    -- Ref: [jones1987] https://doi.org/10.2307/1971403
-    True :=
-  trivial
+/-- The mixed crossing square: (2σ - HA)² = 4 + HA².
+    Uses the Hecke relation σ² = HA·σ + 1. -/
+theorem mixed_crossing_square_identity (ρ : HeckeRep 3 2) (i : Fin 2) :
+    (2 • ρ.gen i - HA_t • 1) * (2 • ρ.gen i - HA_t • 1) =
+    (4 + HA_t * HA_t) • (1 : TMatrix) := by
+  -- (2σ - HA)² = 4σ² - 4HA·σ + HA²·I = 4(HA·σ + I) - 4HA·σ + HA²·I = (4 + HA²)·I
+  have hk := ρ.hecke_rel i
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry  -- Needs lake build: noncommutative matrix ring rewriting
 
 end QOU.Interactions

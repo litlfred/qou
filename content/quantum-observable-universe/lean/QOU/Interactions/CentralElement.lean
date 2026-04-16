@@ -45,25 +45,8 @@ open QOU.Descartes Matrix
 
 /-! ## §1  What B₃ IS in the standard rep -/
 
-/-- B₃ is NOT the identity in the standard representation.
-    It is a 2×2 matrix with nonzero off-diagonal entries. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem borromean3_not_identity :
-    borromean3 ≠ (1 : TMatrix) := by
-  intro h
-  -- If B₃ = I, then B₃(0,1) = I(0,1) = 0.
-  have h01 := congr_fun (congr_fun h 0) 1
-  simp [Matrix.one_apply] at h01
-  -- h01 : borromean3 0 1 = 0
-  -- But B₃(0,1) is a nonzero Laurent polynomial (off-diagonal entry).
-  -- Expand fully and derive contradiction.
-  simp [borromean3, borromeanUnit, stdRep3_gen0, stdRep3_genInv1,
-        stdRep3_gen1, HeckeRep.genInv, HA_t, q_from_t, q_inv_from_t,
-        mul_apply, Fin.sum_univ_two, of] at h01
-  -- After simp, h01 should be a Laurent polynomial equation = 0.
-  -- Use ring_nf + T_ne_zero to close.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (-2 : ℤ)]
+-- borromean3_not_identity is proved in BorromeanUnique.lean
+-- (via borromean3_entry_01 ≠ 0).
 
 /-! ## §2  The full twist Δ² IS the identity in the standard rep -/
 

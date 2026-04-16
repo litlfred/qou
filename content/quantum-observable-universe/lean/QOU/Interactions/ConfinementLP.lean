@@ -15,6 +15,7 @@ for confinement. The topological (Borromean) constraint is independent.
 
 import QOU.Descartes.HeckeH3
 import QOU.Descartes.GroundRing
+import QOU.Interactions.BorromeanUnique
 import QOU.Interactions.GramIndefinite
 
 namespace QOU.Interactions
@@ -50,12 +51,10 @@ noncomputable def markovTraceNF (z h : R_q) : Fin 6 → R_q
     matrix and verifying G = Gᵀ. The real content is in
     GramIndefinite.lean (which proves the form is indefinite). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem gram_symmetric :
-    -- Gram symmetry follows from Markov trace cyclicity.
-    -- Full 6×6 verification deferred; the key result
-    -- (indefiniteness) is proved in GramIndefinite.lean.
-    hopfPlus * hopfMinus = hopfMinus * hopfPlus → True :=
-  fun _ => trivial
+-- gram_symmetric: Full 6×6 Gram matrix symmetry verification deferred.
+-- The key result (indefiniteness) is proved in GramIndefinite.lean
+-- via gram_indefinite_witness.
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-! ## §3  Indefinite signature -/
 

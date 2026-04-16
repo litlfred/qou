@@ -131,17 +131,14 @@ theorem sym_trace_ordering_independent
 theorem std_trace_braid_dependent :
     ∃ (M₁ M₂ : TMatrix), tracedVolCleared M₁ ≠ tracedVolCleared M₂ := by
   -- Witness: σ₀ and σ₁ have different tracedVolCleared values.
-  -- tracedVolCleared M = M 0 0 + markov_denom * M 1 0
-  -- σ₀(0,0) = q, σ₀(1,0) = 0 → tracedVolCleared σ₀ = q
-  -- σ₁(0,0) = -q⁻¹, σ₁(1,0) = 1 → tracedVolCleared σ₁ = -q⁻¹ + (t+t⁻¹)
-  -- These are different Laurent polynomials.
-  use stdRep3_gen0, stdRep3_gen1
-  simp [tracedVolCleared, stdRep3_gen0, stdRep3_gen1,
-        markov_denom, q_from_t, q_inv_from_t, t, t_inv, of]
-  ring_nf
-  -- After ring_nf, the difference should be a nonzero Laurent poly.
+  -- tracedVolCleared σ₀ = q = T(2), tracedVolCleared σ₁ = -q⁻¹ + (t+t⁻¹)
+  -- These differ: coefficient of T(2) is 1 in σ₀ and 0 in σ₁.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  exact LaurentPolynomial.T_ne_zero (R := ℤ) (2 : ℤ)
+  use stdRep3_gen0, stdRep3_gen1
+  simp only [tracedVolCleared, stdRep3_gen0, stdRep3_gen1,
+        markov_denom, q_from_t, q_inv_from_t, t, t_inv, of,
+        mul_apply, Fin.sum_univ_two, Matrix.of_apply]
+  sorry  -- Needs lake build to determine exact tactic after simp
 
 /-- The 3-fold color average is essential: no single pairing
     gives the correct g_A.

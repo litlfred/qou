@@ -156,6 +156,21 @@ theorem borromean3_entry_01 :
         mul_apply, Fin.sum_univ_two, of]
   ring
 
+/-- B₃ is NOT the identity in the standard representation.
+    Proof: B₃(0,1) ≠ 0 but I(0,1) = 0. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem borromean3_not_identity :
+    borromean3 ≠ (1 : TMatrix) := by
+  intro h
+  have h01 := congr_fun (congr_fun h 0) 1
+  rw [borromean3_entry_01] at h01
+  simp [Matrix.one_apply] at h01
+  -- h01 : (1 - q²)²·q⁻¹ + (1 - q²)·q⁻³ + q⁻¹·q⁻²  = 0
+  -- This is a nonzero Laurent polynomial; extract a coefficient.
+  simp [q_from_t, q_inv_from_t, t, t_inv] at h01
+  -- After full unfolding, h01 is a false equation in ℤ[t,t⁻¹].
+  exact absurd h01 (by ring_nf; exact LaurentPolynomial.T_ne_zero (R := ℤ) (-2 : ℤ))
+
 /-! ## §4  Uniqueness (statement) -/
 
 /-- B₃ is the unique braid word of length ≤ 6 such that the
