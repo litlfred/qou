@@ -3,22 +3,24 @@
 falls into one of four knot types, each determining the binding
 scale through its geometric invariant:*
 
-| $A$ | Knot type | Geometric invariant | Binding scale $\alpha$ |
-|-----|-----------|---------------------|------------------------|
-| $1$ | unknot $0_1$ | $\mathrm{Vol} = 0$ | $0$ (free nucleon) |
-| $2$ | satellite | mixed | $\alpha_{\mathrm{Borr}}$ (default) |
-| $3$ | figure-eight $4_1$ | $\mathrm{Vol}(4_1) = 2.0299$ | $m_e \times \mathrm{Vol}(4_1)$ |
-| $\geq 4$ | Borromean $\mathcal{B}_3$ | $\mathrm{Vol}(\mathcal{B}_3) = 8G$ | $m_e \times 8G$ |
+| $A$ | Knot type | Chirality | Bulk factor | Value |
+|-----|-----------|-----------|-------------|-------|
+| $1$ | unknot $0_1$ | — | $0$ (free) | $0$ |
+| $2$ | satellite (Hopf) | 1 chiral pn | $1 + h$ | $\approx 1.209$ |
+| $3$ | figure-eight $4_1$ | 1 amphicheiral | $1 - h^2$ | $\approx 0.956$ |
+| $4$ | Borromean $\mathcal{B}_3$ | 2 amphicheiral | $(1 - h^2)^2$ | $\approx 0.914$ |
+| $\geq 5$ | Borromean (generic) | $\to 1$ | $1$ | $1$ |
 
-*The classification is determined by the dominant NF component
-of the full nuclear braid, computed via $\texttt{build\_atom\_nf}(Z,N)$:*
+*The bulk factor is the Frobenius norm deviation from the identity
+braid, determined by the amphicheiral property:*
 
-- **Borromean-like**: identity $\gamma$ dominates ($|\gamma| > 0.3$
-  with Hopf corrections $|L_\pm| > 0.01$). Hyperbolic, $\mathrm{Vol} = 7.328$.
-- **Figure-eight-like**: generators $\sigma_0, \sigma_1$ have opposite
-  signs ($\sigma_0 \cdot \sigma_1 < 0$). Hyperbolic, $\mathrm{Vol} = 2.030$.
-- **Satellite**: mixed NF with no single dominant component.
-  Uses Borromean scale as default.
+- **Amphicheiral** knots ($K = \bar{K}$, e.g.\ $4_1$): the Frobenius
+  self-pairing is real, giving deviation $h^2 = (q - q^{-1})^2$ per
+  nucleon pair.  Factor: $(1 - h^2)^{n_{\mathrm{pairs}}}$.
+- **Chiral** knots (e.g.\ satellite pn): deviation $h$ (first order).
+  Factor: $1 + h$ for positive chirality.
+- **Large-$A$ limit**: $(1 - h^2)^{n} \to 1$ as $n \to \infty$,
+  recovering the standard BW formula.
 
 *Proof.*
 The nuclear braid $\mathcal{N}(Z,N)$ is built by interleaving $Z$

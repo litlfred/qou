@@ -106,4 +106,20 @@ the partition.  For the Wigner-relevant partition $[3{,}1{,}1]$, the
 ratio is $\approx -0.015$, effectively nullifying the Wigner correction
 for $A = 3$ nuclei — consistent with the absence of a nuclear
 "medium" at $A = 3$.
+
+**Extension to all knot types.**
+The amphicheiral property generalises via the Frobenius norm deviation
+$\| K - \mathrm{id} \|_F$:
+
+| $A$ | Knot type | Chirality | Bulk factor |
+|-----|-----------|-----------|-------------|
+| $2$ (D) | satellite | chiral ($+h$) | $1 + h \approx 1.209$ |
+| $3$ (T, ${}^3$He) | figure-eight | amphicheiral ($h^2$) | $1 - h^2 \approx 0.956$ |
+| $4$ (${}^4$He) | Borromean | 2 amphicheiral | $(1 - h^2)^2 \approx 0.914$ |
+| $\geq 5$ | Borromean | many $\to 1$ | $1$ |
+
+For *chiral* knots (D satellite, 1 pn crossing): the deviation is
+first-order in $h$, with positive sign from the positive crossing.
+For *amphicheiral* knots ($4_1$): the deviation is quadratic $h^2$.
+For *multiple pairs*: independent pairs contribute multiplicatively.
 $\square$
