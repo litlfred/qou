@@ -1,29 +1,23 @@
 #!/usr/bin/env python3
 """
-Categorical shell closure computation — sparse + symbolic.
+Categorical shell closure — block-diagonal optimized.
 
-Computes per-partition nuclear character at k=3..15 using:
-  - scipy.sparse for Hoefsmit seminormal matrices (block-diagonal)
-  - Optional Fraction arithmetic for symbolic-in-q exactness
+Hoefsmit seminormal matrices are:
+  Gen 0: PURE DIAGONAL (eigenvalue per SYT)
+  Gen 1: block-diagonal (2×2 blocks + diagonal singletons)
+
+This gives O(d) per crossing instead of O(d³), enabling k=10..15
+computation in seconds instead of hours.
 
 The shell correction EMERGES from the per-partition weighted
-forward δ²(ln|χ_λ|) — no Gaussian, no empirical magic numbers.
+forward δ²(ln|χ_λ|) — no Gaussian, no heat kernel, no bolted-on
+function.
 
 Usage:
-    # Numeric (fast, for testing):
-    python3 shell_closure_compute.py --numeric --kmax 10
+    python3 shell_closure_compute.py --kmax 15 --zmax 30
 
-    # Symbolic (exact in q, overnight):
-    python3 shell_closure_compute.py --symbolic --kmax 15
-
-Output:
-    shell-closure.witness.json
-
-Reference: prop:shell-closure-nf-term-count,
-           prop:nuclear-knot-classification
+Reference: prop:shell-closure-nf-term-count
 """
-
-import argparse
 import json
 import math
 import sys
@@ -33,86 +27,184 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
-from scipy import sparse
-
 from level_k_binding import seminormal_matrix, standard_young_tableaux
 from hoefsmit_witness import load_witness
 from q_parameter import Q as q0, Q_INV as qi, HA
 from witness_base import WitnessBuilder
 
 
-def sparse_seminormal(shape, gen):
-    """Hoefsmit seminormal matrix as scipy.sparse CSR."""
-    M = seminormal_matrix(shape, gen)
-    return sparse.csr_matrix(M)
+def _extract_blocks(shape, gen):
+    """Extract block structure from Hoefsmit seminormal matrix.
 
-
-def crossing_sparse(shape, gen, ct):
-    """Sparse crossing matrix."""
-    S = sparse_seminormal(shape, gen)
-    d = S.shape[0]
-    if ct == 'pp':
-        return S
-    elif ct == 'nn':
-        return S - HA * sparse.eye(d, format='csr')
-    elif ct == 'pn':
-        return S - (HA / 2) * sparse.eye(d, format='csr')
-    return sparse.eye(d, format='csr')
-
-
-def nuclear_character_sparse(shape, Z, N):
-    """Nuclear character using sparse matrix multiplication."""
+    Returns:
+      diag: array of diagonal eigenvalues for singleton blocks
+      blocks: list of (i, j, a, b, c, d) for 2×2 blocks
+              [[a, b], [c, d]] at positions (i,j)
+    """
     tabs = standard_young_tableaux(shape)
-    d = len(tabs)
-    if d == 0:
-        return None
+    dim = len(tabs)
+    if dim == 0:
+        return np.array([]), []
 
+    M = seminormal_matrix(shape, gen)
+
+    paired = set()
+    blocks = []
+    for i in range(dim):
+        if i in paired:
+            continue
+        # Find off-diagonal partner
+        partner = None
+        for j in range(dim):
+            if j != i and abs(M[i, j]) > 1e-15:
+                partner = j
+                break
+        if partner is not None:
+            j = partner
+            blocks.append((i, j, M[i, i], M[i, j], M[j, i], M[j, j]))
+            paired.add(i)
+            paired.add(j)
+
+    # Singletons
+    diag = np.zeros(dim)
+    singleton_mask = np.ones(dim, dtype=bool)
+    for i, j, a, b, c, d in blocks:
+        singleton_mask[i] = False
+        singleton_mask[j] = False
+    for i in range(dim):
+        if singleton_mask[i]:
+            diag[i] = M[i, i]
+
+    return diag, blocks, singleton_mask, dim
+
+
+def _apply_crossing_block(diag, blocks, singleton_mask, dim, ct):
+    """Apply one crossing to the block-diagonal state.
+
+    The crossing modifies eigenvalues:
+      pp: σ_gen (identity on blocks)
+      nn: σ_gen - h·I
+      pn: σ_gen - h/2·I
+
+    For diagonal state D and block-diagonal crossing C:
+      New state = D × C (element-wise for diag, 2×2 for blocks)
+    """
+    if ct == 'pp':
+        shift = 0.0
+    elif ct == 'nn':
+        shift = -HA
+    elif ct == 'pn':
+        shift = -HA / 2
+    else:
+        shift = 0.0
+    return shift
+
+
+def nuclear_character_fast(shape, Z, N, gen0_struct, gen1_struct):
+    """Fast nuclear character using block-diagonal structure.
+
+    Gen 0: pure diagonal → eigenvalue products
+    Gen 1: 2×2 blocks → small matrix products
+    """
     ordering = ['p'] * Z + ['n'] * N
     A = Z + N
-    total = 0.0
 
-    for gen in [0, 1]:
-        M = sparse.eye(d, format='csr')
-        for nuc in ordering:
-            if gen == 0:
-                for _ in range(3):
-                    M = M @ crossing_sparse(shape, gen, 'pp')
-                if nuc == 'p':
-                    M = M @ crossing_sparse(shape, gen, 'pp')
-                    M = M @ crossing_sparse(shape, gen, 'pp')
-                else:
-                    M = M @ crossing_sparse(shape, gen, 'pn')
-                    M = M @ crossing_sparse(shape, gen, 'pn')
-            else:
-                for _ in range(3):
-                    M = M @ crossing_sparse(shape, gen, 'nn')
-                M = M @ crossing_sparse(shape, gen,
-                                         'pn' if nuc == 'p' else 'nn')
-        if gen == 0:
-            for i in range(A):
-                for j in range(i + 1, A):
-                    ti, tj = ordering[i], ordering[j]
-                    ct = ('pp' if ti == 'p' and tj == 'p'
-                          else ('nn' if ti == 'n' and tj == 'n' else 'pn'))
-                    M = M @ crossing_sparse(shape, gen, ct)
-        if gen == 1:
-            for _ in range(Z):
-                M = M @ crossing_sparse(shape, gen, 'nn')
+    # ── Gen 0: diagonal ──
+    diag0, _, _, dim = gen0_struct
+    if dim == 0:
+        return 0.0
 
-        if sparse.issparse(M):
-            total += M.diagonal().sum()
+    # Start: identity diagonal
+    state0 = np.ones(dim)
+
+    # Per-nucleon crossings on gen 0
+    for nuc in ordering:
+        # B₃: 3× σ₀ (pp)
+        for _ in range(3):
+            state0 *= diag0  # pp: multiply by eigenvalue
+
+        if nuc == 'p':
+            state0 *= diag0  # uu pair: pp
+            state0 *= diag0  # uu pair: pp
         else:
-            total += float(np.trace(M.toarray() if sparse.issparse(M) else M))
+            state0 *= (diag0 - HA / 2)  # ud pair: pn
+            state0 *= (diag0 - HA / 2)  # ud pair: pn
 
-    return total
+    # Inter-nucleon crossings on gen 0
+    for i in range(A):
+        for j in range(i + 1, A):
+            ti, tj = ordering[i], ordering[j]
+            if ti == 'p' and tj == 'p':
+                state0 *= diag0
+            elif ti == 'n' and tj == 'n':
+                state0 *= (diag0 - HA)
+            else:
+                state0 *= (diag0 - HA / 2)
+
+    tr_gen0 = np.sum(state0)
+
+    # ── Gen 1: block-diagonal ──
+    diag1, blocks1, sing1, dim = gen1_struct
+
+    # State: diagonal part (singletons) + 2×2 blocks
+    # Singletons: scalar product chain
+    sing_state = np.ones(dim)
+
+    # 2×2 block states: each block tracks a 2×2 matrix
+    block_states = []
+    for i, j, a, b, c, d in blocks1:
+        block_states.append(np.eye(2))
+
+    def apply_gen1_crossing(ct):
+        nonlocal sing_state
+        if ct == 'nn':
+            shift = -HA
+        elif ct == 'pn':
+            shift = -HA / 2
+        else:
+            shift = 0.0
+
+        # Singletons
+        for idx in range(dim):
+            if sing1[idx]:
+                sing_state[idx] *= (diag1[idx] + shift)
+
+        # 2×2 blocks
+        for bi, (i, j, a, b, c, d) in enumerate(blocks1):
+            C = np.array([[a + shift, b], [c, d + shift]])
+            block_states[bi] = block_states[bi] @ C
+
+    # Per-nucleon crossings on gen 1
+    for nuc in ordering:
+        # B₃: 3× σ₁⁻¹ (nn)
+        for _ in range(3):
+            apply_gen1_crossing('nn')
+
+        if nuc == 'p':
+            apply_gen1_crossing('pn')  # ud pair
+        else:
+            apply_gen1_crossing('nn')  # dd pair
+
+    # Electrons on gen 1
+    for _ in range(Z):
+        apply_gen1_crossing('nn')  # pe = σ⁻¹
+
+    # Trace
+    tr_gen1 = 0.0
+    for idx in range(dim):
+        if sing1[idx]:
+            tr_gen1 += sing_state[idx]
+    for bi, (i, j, a, b, c, d) in enumerate(blocks1):
+        tr_gen1 += block_states[bi][0, 0] + block_states[bi][1, 1]
+
+    return tr_gen0 + tr_gen1
 
 
 def main():
+    import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--kmax', type=int, default=10)
+    parser.add_argument('--kmax', type=int, default=15)
     parser.add_argument('--zmax', type=int, default=30)
-    parser.add_argument('--symbolic', action='store_true')
-    parser.add_argument('--numeric', action='store_true', default=True)
     args = parser.parse_args()
 
     witness_data = load_witness()
@@ -126,14 +218,28 @@ def main():
 
         t0 = time.time()
         max_dim = max(e['dim'] for e in level)
-        per_Z = {}
 
+        # Precompute block structures
+        structs = {}
+        for entry in level:
+            shape = tuple(entry['shape'])
+            dim = entry['dim']
+            structs[shape] = {
+                0: _extract_blocks(shape, 0),
+                1: _extract_blocks(shape, 1),
+            }
+
+        per_Z = {}
         for Z in range(1, args.zmax + 1):
             total = 0.0
             for entry in level:
                 shape = tuple(entry['shape'])
                 w = entry['w']
-                chi = nuclear_character_sparse(shape, Z, Z)
+                chi = nuclear_character_fast(
+                    shape, Z, Z,
+                    structs[shape][0],
+                    structs[shape][1],
+                )
                 if chi is None:
                     continue
                 ln_chi = math.log(abs(chi)) if abs(chi) > 1e-300 else 0
@@ -143,22 +249,21 @@ def main():
         results[k] = per_Z
         elapsed = time.time() - t0
         print(f"k={k:>2d}: {len(level):>3d} partitions, "
-              f"max_dim={max_dim:>4d}, {elapsed:.1f}s")
+              f"max_dim={max_dim:>5d}, {elapsed:.1f}s")
 
-    # Compute cumulative forward δ² and output
+    # Forward δ²
     print()
-    print(f"Forward δ²(cumulative w·ln|χ|, k=3..{args.kmax}):")
-    print(f"{'Z':>3s} {'δ²':>10s} {'magic':>6s}")
-    print("─" * 25)
-
+    K = args.kmax
     cum = {}
     for Z in range(1, args.zmax + 1):
-        cum[Z] = sum(results.get(kk, {}).get(Z, 0)
-                      for kk in range(3, args.kmax + 1))
+        cum[Z] = sum(results.get(kk, {}).get(Z, 0) for kk in range(3, K + 1))
 
     d1 = {Z: cum[Z] - cum[Z - 1] for Z in range(2, args.zmax + 1)}
     fwd_d2 = {Z: d1[Z] - d1[Z - 1] for Z in range(3, args.zmax + 1)}
 
+    print(f"Forward δ²(cumulative k=3..{K}):")
+    print(f"{'Z':>3s} {'δ²':>10s} {'magic':>6s}")
+    print("─" * 25)
     for Z in range(3, args.zmax):
         m = " ★" if Z in MAGIC else ""
         print(f"{Z:>3d} {fwd_d2.get(Z, 0):>+10.4f}{m}")
@@ -166,16 +271,12 @@ def main():
     # Save witness
     w = WitnessBuilder("shell-closure", engine="python")
     w.set_description(
-        f"Categorical shell closure from per-partition nuclear character "
-        f"at k=3..{args.kmax}. Forward δ² of cumulative Wedderburn-weighted "
-        f"ln|χ_λ(Z)|. Computed with sparse seminormal matrices."
+        f"Categorical shell closure k=3..{K}. Block-diagonal optimized."
     )
-    w.add_parameter("kmax", args.kmax)
-    w.add_parameter("zmax", args.zmax)
-    w.add_data("cumulative_ln_chi", {str(Z): cum[Z] for Z in cum})
-    w.add_data("forward_delta2", {str(Z): fwd_d2.get(Z, 0) for Z in range(3, args.zmax)})
+    w.add_parameter("kmax", K)
+    w.add_data("forward_delta2",
+               {str(Z): round(fwd_d2.get(Z, 0), 10) for Z in range(3, args.zmax)})
     w.save()
-    print(f"\nWitness saved.")
 
 
 if __name__ == "__main__":
