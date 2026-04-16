@@ -19,38 +19,55 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
-from level_k_binding import seminormal_matrix, standard_young_tableaux
+from level_k_binding import seminormal_matrix, standard_young_tableaux, content_of
 from hoefsmit_witness import load_witness
 from q_parameter import Q as q0, Q_INV as qi, HA
 from witness_base import WitnessBuilder
 
 
 def extract_blocks(shape, gen):
-    """Extract block structure: diagonal + 2×2 blocks."""
+    """Direct block extraction from SYT — no dense matrix. O(d) memory."""
     tabs = standard_young_tableaux(shape)
-    dim = len(tabs)
-    if dim == 0:
+    d = len(tabs)
+    if d == 0:
         return None
 
-    M = seminormal_matrix(shape, gen)
-    paired = set()
+    a, b = gen + 1, gen + 2
+    tab_index = {T: i for i, T in enumerate(tabs)}
+
+    diag = np.zeros(d)
+    sing = np.ones(d, dtype=bool)
     blocks = []
-    for i in range(dim):
-        if i in paired: continue
-        for j in range(dim):
-            if j != i and abs(M[i,j]) > 1e-15:
-                blocks.append((i, j, M[i,i], M[i,j], M[j,i], M[j,j]))
-                paired.add(i); paired.add(j)
-                break
+    processed = set()
 
-    diag = np.zeros(dim)
-    sing = np.ones(dim, dtype=bool)
-    for i,j,_,_,_,_ in blocks:
+    for i, T in enumerate(tabs):
+        if i in processed:
+            continue
+        rho = content_of(T, b) - content_of(T, a)
+        if rho == 0:
+            continue
+        same_row = any(a in row and b in row for row in T)
+        if same_row:
+            diag[i] = q0; processed.add(i); continue
+        same_col = False
+        for c_idx in range(max(len(row) for row in T)):
+            col_vals = [T[r][c_idx] for r in range(len(T)) if c_idx < len(T[r])]
+            if a in col_vals and b in col_vals:
+                same_col = True
+        if same_col:
+            diag[i] = -qi; processed.add(i); continue
+        T_swap = tuple(tuple(b if v == a else (a if v == b else v) for v in row) for row in T)
+        j = tab_index.get(T_swap)
+        if j is None or j == i:
+            diag[i] = q0 if rho > 0 else -qi; processed.add(i); continue
+        qr = (q0**rho - qi**rho) / HA
+        dv = HA / qr
+        od = (1.0 - dv**2)**0.5 if 1.0 - dv**2 > 0 else 0.0
+        blocks.append((i, j, dv, od, od, HA - dv))
         sing[i] = sing[j] = False
-    for i in range(dim):
-        if sing[i]: diag[i] = M[i,i]
+        processed.add(i); processed.add(j)
 
-    return diag, blocks, sing, dim
+    return diag, blocks, sing, d
 
 
 class PartitionState:
