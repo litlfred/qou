@@ -20,5 +20,8 @@ atomic masses.
 The derivations are symbolic in the substrate parameter $q$; witness
 evaluations at $q_0$ provide numerical verification against CODATA
 and AME2020 data.  The chapter separates the *how* of particle
-interactions from the *what* of particle definitions (Chapter 9)
-and the *observed* predictions (Chapter 10).
+interactions from the *what* of particle definitions
+([Chapter 9](#chap:descartes-universe)) and the *observed*
+predictions ([Chapter 12](#chap:observations)).  Molecular
+extensions of this machinery are developed in
+[Chapter 11](#chap:molecular-construction).

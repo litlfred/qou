@@ -15,8 +15,9 @@ $\mathcal{U}_q(\mathfrak{su}(2))$ furnishes a $q$-deformed braid operator
 whose eigenvalues govern the phase acquired under particle exchange.
 
 Under this correspondence, specific knot types map to particle identities.  The
-trefoil knot, being the simplest non-trivial torus knot, is identified with the
-quark; the muon arises as a lift of the trefoil to a higher fibre level.  The
-unknot, carrying trivial braiding, corresponds to the neutrino.
-Experimental evidence supporting this $q$-deformed braiding picture is
-discussed in [Chapter 6](#chap:descartes-universe).
+unknot, carrying trivial braiding, is identified with the quark; the trefoil
+knot arises as a bound state of three quark unknots, realising the nucleon;
+and heavier generations appear as lifts of these through the brane tower.
+The geometry that carries these knots — Bring's surface — is developed in
+[Chapter 9](#chap:descartes-universe); the physical predictions it generates
+are collected in [Chapter 12](#chap:observations).

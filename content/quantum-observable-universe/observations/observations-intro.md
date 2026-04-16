@@ -1,8 +1,12 @@
 This chapter collects the physical predictions of the Descartes
 universe and compares them with experimental data.  All mathematical
-setup --- the knot-to-particle mapping, the Wedderburn mass formula,
-the Skein decomposition of nuclear braid words --- resides in
-Chapters~9 and~11; the present chapter is purely observational.
+setup --- the knot-to-particle mapping and Skein decomposition
+([Chapter 9](#chap:descartes-universe)), the Gröbner--Shirshov
+reduction engine and Wedderburn mass formula
+([Chapter 10](#chap:particle-interactions)), and the molecular
+braid construction ([Chapter 11](#chap:molecular-construction))
+--- has already been developed; the present chapter is purely
+observational.
 
 The central result is the substrate consistency window: multiple
 independent physical observables (lepton mass ratios, the fine
