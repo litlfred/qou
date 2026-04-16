@@ -1199,9 +1199,57 @@ def molecular_binding_frobenius(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
 # Mass computation
 # ══════════════════════════════════════════════════════════════
 
-def magic_proximity(x, sigma=SIGMA_SHELL):
-    """Gaussian proximity to magic numbers with width σ = [2]_q."""
-    return sum(math.exp(-(x - m)**2 / (2 * sigma**2)) for m in MAGIC_NUMBERS)
+# ── Categorical shell closure from witnessed per-partition computation ──
+# Replaces the Gaussian. Uses δ²_even from shell-closure.witness.json.
+# The shell signal EMERGES from the Hoefsmit seminormal character
+# computation at k=3..12. No empirical magic numbers, no Gaussian.
+#
+# Reference: prop:magic-numbers-from-q
+
+import json as _json
+from pathlib import Path as _Path
+
+def _load_categorical_shell():
+    """Load witnessed δ²Φ and build shell proximity function."""
+    witness_path = _Path(__file__).parent / 'shell-closure.witness.json'
+    if not witness_path.exists():
+        return None
+
+    with open(witness_path) as f:
+        fd2 = _json.load(f)['data']['forward_delta2']
+
+    all_d2 = {int(Z): v for Z, v in fd2.items()}
+
+    # Even-Z values (positive = shell closed)
+    even_vals = {Z: v for Z, v in all_d2.items() if Z % 2 == 0}
+    max_even = max((v for v in even_vals.values() if v > 0), default=1)
+
+    # Build lookup: even Z direct, odd Z interpolated
+    shell = {}
+    for Z in range(1, 200):
+        if Z % 2 == 0:
+            v = even_vals.get(Z, 0)
+        else:
+            v = (even_vals.get(Z - 1, 0) + even_vals.get(Z + 1, 0)) / 2
+        shell[Z] = max(0, v) / max_even
+    return shell
+
+
+_CATEGORICAL_SHELL = _load_categorical_shell()
+
+
+def magic_proximity(x, sigma=None):
+    """Shell proximity from witnessed per-partition computation.
+
+    Pure categorical: emerges from Hoefsmit seminormal character
+    at k=3..12. No Gaussian, no empirical magic numbers.
+
+    Reference: prop:magic-numbers-from-q, shell-closure.witness.json
+    """
+    Z = int(round(x))
+    if _CATEGORICAL_SHELL is not None and Z in _CATEGORICAL_SHELL:
+        return _CATEGORICAL_SHELL[Z]
+    return 0.0
 
 
 def binding_energy_bw(Z, N, k=3):
