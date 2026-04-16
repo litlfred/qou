@@ -10,13 +10,13 @@ cd "$(dirname "$0")"
 echo "=== Shell closure overnight computation ==="
 echo "Started: $(date)"
 
-# Run with increasing k, timeout each level
-python3 shell_closure_compute.py --kmax 9 --zmax 30
+# Block-diagonal optimizer: k=10 in 48s, k=11 in 196s, k=12 in ~15m
+python3 shell_closure_compute.py --kmax 12 --zmax 32
 
 echo ""
-echo "k=3..9 done. Attempting k=10 (may take hours)..."
-timeout 14400 python3 shell_closure_compute.py --kmax 10 --zmax 30 || {
-    echo "k=10 timed out after 4 hours. Using k=9 results."
+echo "k=3..12 done. Attempting k=13 (est ~1h)..."
+timeout 7200 python3 shell_closure_compute.py --kmax 13 --zmax 32 || {
+    echo "k=13 timed out. Using k=12 results."
 }
 
 echo ""
