@@ -63,7 +63,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
     <input type="range" id="sl_tw" min="0.0" max="2.0" step="0.01" value="0.50">
     <span class="val" id="v_tw">0.50</span>
   </div>
-  <div class="sec">── P¹ range z ∈ [0, ∞] ────────────</div>
+  <div class="sec">── z₀ ∈ ℂ*: Re=time, Im=space ─────</div>
+  <div class="row">
+    <span class="lbl">φ (space angle)</span>
+    <input type="range" id="sl_phi" min="0" max="6.283" step="0.01" value="0">
+    <span class="val" id="v_phi">0.00</span>
+  </div>
+  <div class="sec">── |z| range [0, ∞] ────────────────</div>
   <div class="row">
     <span class="lbl">z<sub>max</sub></span>
     <input type="range" id="sl_zmax" min="1" max="30" step="0.5" value="8.0">
@@ -158,7 +164,19 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height
 const TAU = 2*Math.PI;
 var scaleMode = 'projective';
 
-// Inverse scaling: uniform t ∈ [0,1] → z value used to sample the meridian
+// ── Complex arithmetic ([re,im] pairs) ──────────────────
+function ca(a,b){return[a[0]+b[0],a[1]+b[1]];}
+function cs(a,b){return[a[0]-b[0],a[1]-b[1]];}
+function cm(a,b){return[a[0]*b[0]-a[1]*b[1],a[0]*b[1]+a[1]*b[0]];}
+function cd(a,b){var d=b[0]*b[0]+b[1]*b[1];return d<1e-30?[0,0]:[(a[0]*b[0]+a[1]*b[1])/d,(a[1]*b[0]-a[0]*b[1])/d];}
+function csc(s,a){return[s*a[0],s*a[1]];}
+function cab(a){return Math.sqrt(a[0]*a[0]+a[1]*a[1]);}
+function cag(a){return Math.atan2(a[1],a[0]);}
+function csqrt(a){var r=Math.pow(a[0]*a[0]+a[1]*a[1],0.25);var t=Math.atan2(a[1],a[0])/2;return[r*Math.cos(t),r*Math.sin(t)];}
+function ccbrt(a){var r=Math.pow(a[0]*a[0]+a[1]*a[1],1/6);var t=Math.atan2(a[1],a[0])/3;return[r*Math.cos(t),r*Math.sin(t)];}
+var C1=[1,0];
+
+// Inverse scaling: uniform t ∈ [0,1] → |z| used to sample the meridian
 function zFromT(t, zMax){
   switch(scaleMode){
     case 'projective': return Math.tan(t * Math.atan(zMax));
@@ -168,46 +186,36 @@ function zFromT(t, zMax){
   }
 }
 
-// ── Cubic solver: t³ + at² + bt + c = 0 → 3 complex roots ───
-function solveCubic(a,b,c){
-  var p = b - a*a/3;
-  var qd = 2*a*a*a/27 - a*b/3 + c;
-  var D = qd*qd/4 + p*p*p/27;
-  if(D > 1e-12){
-    var sqD=Math.sqrt(D);
-    var u=Math.cbrt(-qd/2+sqD), v=Math.cbrt(-qd/2-sqD);
-    return [[u+v-a/3, 0],
-            [-(u+v)/2-a/3, (u-v)*Math.sqrt(3)/2],
-            [-(u+v)/2-a/3,-(u-v)*Math.sqrt(3)/2]];
-  } else if(D < -1e-12){
-    var m=2*Math.sqrt(-p/3);
-    var th=Math.acos(Math.max(-1,Math.min(1, 3*qd/(p*m))))/3;
-    return [[m*Math.cos(th)-a/3,0],
-            [m*Math.cos(th-TAU/3)-a/3,0],
-            [m*Math.cos(th-2*TAU/3)-a/3,0]];
-  } else {
-    var u2=Math.cbrt(-qd/2);
-    return [[2*u2-a/3,0],[-u2-a/3,0],[-u2-a/3,0]];
-  }
+// ── Complex cubic: t³+At²+Bt+C=0, complex A,B,C → 3 roots ──
+// Cardano with full complex arithmetic. Works for z₀ ∈ ℂ*.
+function cubicC(A,B,C){
+  var A3=csc(1/3,A);
+  var p=cs(B, csc(1/3,cm(A,A)));
+  var qd=ca(cs(csc(2/27,cm(A,cm(A,A))), csc(1/3,cm(A,B))),C);
+  var D=ca(csc(0.25,cm(qd,qd)), csc(1/27,cm(p,cm(p,p))));
+  var sqD=csqrt(D);
+  var u=ccbrt(ca(csc(-0.5,qd),sqD));
+  var v=(cab(u)>1e-12)?cd(csc(-1,p),csc(3,u)):ccbrt(cs(csc(-0.5,qd),sqD));
+  var w1=[-0.5,0.8660254037844386],w2=[-0.5,-0.8660254037844386];
+  return[cs(ca(u,v),A3),cs(ca(cm(w1,u),cm(w2,v)),A3),cs(ca(cm(w2,u),cm(w1,v)),A3)];
 }
 
-// ── Brings surface roots in HOMOGENEOUS coordinates ─────
-// [x₀:x₁] = [a:b] = [cos(θ/2):sin(θ/2)] on P¹.
-// x₄ = 0 (projected away). Remaining roots x₂,x₃ from the
-// cubic: t³+(a+b)t²+(1+ab)t+(a+b)=0
-// Returns [x₂, x₃, x₄] = the 3 cubic roots (with q-torsion).
-function bringsRoots(theta, q, twistRate){
-  var a = Math.cos(theta/2), b = Math.sin(theta/2);
-  var s = a + b;
-  var roots = solveCubic(s, 1 + a*b, s);
-
-  // q-torsion (bounded, uses θ)
-  var torsion = (q - 1/q) * theta * twistRate;
-  var cosT=Math.cos(torsion), sinT=Math.sin(torsion);
+// ── Brings surface roots — full ℂ* parameterization ─────
+// z₀ ∈ ℂ*: Re(z₀)=time, Im(z₀)=space, poles 0,∞ removed.
+// Homogeneous: [x₀:x₁] = [a:b] where a=cos(θ/2) (real),
+// b=sin(θ/2)·e^{iφ} (complex). x₄ projected away.
+// Cubic: t³+(a+b)t²+(1+ab)t+(a+b)=0 (complex coefficients).
+function bringsRoots(theta, phi, q, twistRate){
+  var ar=[Math.cos(theta/2),0];
+  var br=[Math.sin(theta/2)*Math.cos(phi),Math.sin(theta/2)*Math.sin(phi)];
+  var s=ca(ar,br);
+  var roots=cubicC(s, ca(C1,cm(ar,br)), s);
+  var torsion=(q-1/q)*theta*twistRate;
+  var cosT=Math.cos(torsion),sinT=Math.sin(torsion);
   var out=[];
   for(var i=0;i<3;i++){
-    var rr=roots[i][0], ri=roots[i][1];
-    out.push([rr*cosT - ri*sinT, rr*sinT + ri*cosT]);
+    var rr=roots[i][0],ri=roots[i][1];
+    out.push([rr*cosT-ri*sinT,rr*sinT+ri*cosT]);
   }
   return out;
 }
@@ -310,6 +318,7 @@ function readParams(){
   return {
     q:    parseFloat(document.getElementById('sl_q').value),
     tw:   parseFloat(document.getElementById('sl_tw').value),
+    phi:  parseFloat(document.getElementById('sl_phi').value),
     zMax: parseFloat(document.getElementById('sl_zmax').value),
     bs:   parseFloat(document.getElementById('sl_bs').value),
     dr:   parseFloat(document.getElementById('sl_dr').value),
@@ -330,6 +339,7 @@ function rebuild(){
   var P = readParams();
   document.getElementById('v_q').textContent   = P.q.toFixed(3);
   document.getElementById('v_tw').textContent  = P.tw.toFixed(2);
+  document.getElementById('v_phi').textContent = P.phi.toFixed(2);
   document.getElementById('v_zmax').textContent= P.zMax.toFixed(1);
   document.getElementById('v_bs').textContent  = P.bs.toFixed(2);
   document.getElementById('v_dr').textContent  = P.dr.toFixed(2);
@@ -358,7 +368,7 @@ function rebuild(){
     var theta = 2 * Math.atan(z);
     var sinT = Math.sin(theta), cosT = Math.cos(theta);
 
-    var roots = bringsRoots(theta, P.q, P.tw);
+    var roots = bringsRoots(theta, P.phi, P.q, P.tw);
     for(var k=0;k<3;k++){
       var re=roots[k][0], im=roots[k][1];
       var mag=Math.sqrt(re*re+im*im);
@@ -494,7 +504,7 @@ function rebuild(){
 
   // ── Info panel ────────────────────────────────────────────
   // Info at midpoint θ=π/2 (z=1)
-  var mid = bringsRoots(Math.PI/2, P.q, P.tw);
+  var mid = bringsRoots(Math.PI/2, P.phi, P.q, P.tw);
   document.getElementById('v_cr').textContent = Math.sqrt(mid[0][0]*mid[0][0]+mid[0][1]*mid[0][1]).toFixed(3);
   document.getElementById('v_cg').textContent = Math.sqrt(mid[1][0]*mid[1][0]+mid[1][1]*mid[1][1]).toFixed(3);
   document.getElementById('v_cb').textContent = Math.sqrt(mid[2][0]*mid[2][0]+mid[2][1]*mid[2][1]).toFixed(3);
