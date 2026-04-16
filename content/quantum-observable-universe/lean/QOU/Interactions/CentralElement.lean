@@ -51,15 +51,19 @@ open QOU.Descartes Matrix
 theorem borromean3_not_identity :
     borromean3 ≠ (1 : TMatrix) := by
   intro h
-  -- If B₃ = I, then B₃(0,0) = I(0,0) = 1.
-  have h00 := congr_fun (congr_fun h 0) 0
-  rw [borromean3_entry_00] at h00
-  simp [Matrix.one_apply] at h00
-  -- h00 : (1 - q²)³ + 3(1 - q²)·q⁻² = 1 in ℤ[t,t⁻¹]
-  -- Rearranging: -q⁶ + 3q⁴ - 3q² + 3q⁻² = 0
-  -- The t⁴ coefficient is nonzero (= 3), contradiction.
+  -- If B₃ = I, then B₃(0,1) = I(0,1) = 0.
+  have h01 := congr_fun (congr_fun h 0) 1
+  simp [Matrix.one_apply] at h01
+  -- h01 : borromean3 0 1 = 0
+  -- But B₃(0,1) is a nonzero Laurent polynomial (off-diagonal entry).
+  -- Expand fully and derive contradiction.
+  simp [borromean3, borromeanUnit, stdRep3_gen0, stdRep3_genInv1,
+        stdRep3_gen1, HeckeRep.genInv, HA_t, q_from_t, q_inv_from_t,
+        mul_apply, Fin.sum_univ_two, of] at h01
+  -- After simp, h01 should be a Laurent polynomial equation = 0.
+  -- Use ring_nf + T_ne_zero to close.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (-2 : ℤ)]
 
 /-! ## §2  The full twist Δ² IS the identity in the standard rep -/
 

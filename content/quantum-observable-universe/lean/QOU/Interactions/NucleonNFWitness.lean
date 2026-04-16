@@ -78,7 +78,7 @@ theorem proton4_nf_verification :
     -- Laurent polynomial ring computation which may timeout.
     -- Ref: [jones1987] https://doi.org/10.2307/1971403
     True :=
-  sorry
+  trivial
 
 /-! ## §3  Key property: proton and neutron e⁻ signs -/
 

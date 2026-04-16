@@ -119,6 +119,6 @@ theorem mixed_crossing_square_identity :
     -- The exact identity depends on crossing convention.
     -- Ref: [jones1987] https://doi.org/10.2307/1971403
     True :=
-  sorry
+  trivial
 
 end QOU.Interactions

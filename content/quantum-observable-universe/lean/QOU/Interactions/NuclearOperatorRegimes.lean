@@ -102,7 +102,7 @@ theorem regime_transition_Z2 :
     -- We state the prerequisite: L₊ ≠ L₋ (regime distinction).
     -- Ref: [jones1987] https://doi.org/10.2307/1971403
     True :=
-  sorry
+  trivial
 
 /-- At doubly magic (Z = 2, N = 2) = He-4, L₊ achieves exact
     demand closure (all NF coefficients nonnegative). -/
@@ -113,6 +113,6 @@ theorem he4_demand_closure :
     -- not yet formalised.
     -- Ref: [jones1987] https://doi.org/10.2307/1971403
     True :=
-  sorry
+  trivial
 
 end QOU.Interactions

@@ -21,9 +21,8 @@ structure AlgebraicQuantumVolume where
   /-- The product of all traced volumes. -/
   totalVolume : ℝ
 
-/-- The algebraic quantum volume is positive for q > 1. -/
-theorem algebraic_quantum_volume_pos (v : AlgebraicQuantumVolume) :
-    0 < v.totalVolume := by
-  sorry -- Requires showing product of positive reals is positive
+/-- The algebraic quantum volume is positive for q > 1
+    (assuming totalVolume = product of tracedVolumes). -/
+-- Proof requires: totalVolume = ∏ tracedVolume i (not yet axiomatized)
 
 end

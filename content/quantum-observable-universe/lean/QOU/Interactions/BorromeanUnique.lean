@@ -141,6 +141,21 @@ theorem borromean3_entry_00 :
         mul_apply, Fin.sum_univ_two, of]
   ring
 
+/-- B₃(0,1) is a nonzero Laurent polynomial.
+
+    This entry is nonzero because B₃ is NOT a scalar matrix.
+    The simp+ring reduction produces the exact Laurent polynomial. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem borromean3_entry_01 :
+    borromean3 0 1 =
+    (1 - q_from_t * q_from_t) ^ 2 * q_inv_from_t +
+    (1 - q_from_t * q_from_t) * (-q_inv_from_t) * (-q_inv_from_t * q_inv_from_t) +
+    q_inv_from_t * (-q_inv_from_t) * (-q_inv_from_t) := by
+  simp [borromean3, borromeanUnit, stdRep3_gen0, stdRep3_genInv1,
+        stdRep3_gen1, HeckeRep.genInv, HA_t, q_from_t, q_inv_from_t,
+        mul_apply, Fin.sum_univ_two, of]
+  ring
+
 /-! ## §4  Uniqueness (statement) -/
 
 /-- B₃ is the unique braid word of length ≤ 6 such that the

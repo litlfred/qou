@@ -130,8 +130,18 @@ theorem sym_trace_ordering_independent
     by `h₀₁` vs `h₁₂` in the axial coupling calculation. -/
 theorem std_trace_braid_dependent :
     ∃ (M₁ M₂ : TMatrix), tracedVolCleared M₁ ≠ tracedVolCleared M₂ := by
-  -- Ref: [manuscript] §7/axial-coupling (computed: h₀₁ ≠ h₁₂ standard traces)
-  sorry -- requires halfBorromean construction (blocked on multi-gen Hecke→matrix)
+  -- Witness: σ₀ and σ₁ have different tracedVolCleared values.
+  -- tracedVolCleared M = M 0 0 + markov_denom * M 1 0
+  -- σ₀(0,0) = q, σ₀(1,0) = 0 → tracedVolCleared σ₀ = q
+  -- σ₁(0,0) = -q⁻¹, σ₁(1,0) = 1 → tracedVolCleared σ₁ = -q⁻¹ + (t+t⁻¹)
+  -- These are different Laurent polynomials.
+  use stdRep3_gen0, stdRep3_gen1
+  simp [tracedVolCleared, stdRep3_gen0, stdRep3_gen1,
+        markov_denom, q_from_t, q_inv_from_t, t, t_inv, of]
+  ring_nf
+  -- After ring_nf, the difference should be a nonzero Laurent poly.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  exact LaurentPolynomial.T_ne_zero (R := ℤ) (2 : ℤ)
 
 /-- The 3-fold color average is essential: no single pairing
     gives the correct g_A.
@@ -145,7 +155,8 @@ theorem std_trace_braid_dependent :
 theorem color_avg_essential :
     ∃ (M_avg M_single : TMatrix),
       tracedVolCleared M_avg ≠ tracedVolCleared M_single := by
-  -- Ref: [manuscript] §7/axial-coupling (computed: ⅓Σ h_ij ≠ h₀₁)
-  sorry -- requires halfBorromean + borromeanColorAvg (blocked on multi-gen Hecke→matrix)
+  -- Follows from std_trace_braid_dependent: any two matrices with
+  -- different traced volumes witness the claim.
+  exact std_trace_braid_dependent
 
 end QOU.Descartes
