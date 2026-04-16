@@ -949,7 +949,16 @@ def binding_energy_bw(Z, N, k=3):
     """
     A = Z + N
     if A <= 1:
+        # Unknot/trivial case: H (single proton), free n.
+        # No nuclear braid → no binding.
         return 0.0
+
+    # NOTE: A=2 (Deuterium) is a SATELLITE knot, not Borromean.
+    # The k=3+ BW polynomial gives ~2.86 MeV vs AME 2.224 MeV (29% over).
+    # The proper A=2 formula needs H_2(q) Wedderburn (only sym + alt
+    # irreps; no standard rep [n-1,1] exists for n=2), which differs
+    # from the H_3+ polynomial extrapolation. The pairing 1/√A and
+    # shell terms are inappropriate at A=2. Open derivation work.
 
     # ── H₃(q) terms 1-6 ─────────────────────────────────────
     # Z-independent (bulk) terms:
