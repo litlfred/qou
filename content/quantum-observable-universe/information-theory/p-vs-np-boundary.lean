@@ -211,7 +211,7 @@ structure NonTorsionReal where
     - NS obstruction depends on χ(A) (topological)
     - Computational obstruction depends on deg P_L (topological)
     - Both use the perpetual obstruction (complementary subgroups)
-    - Both are resolved at the q-scale (q > 1)
+    - Both have quantum analogues at finite q-level (q > 1)
     - Both are open at the classical limit (q → 1)
 
     This structure captures the parallel. -/

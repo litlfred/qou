@@ -68,8 +68,9 @@ theorem macroscopic_iff_rh (ψ : R_q → R_q) (ζ : ℂ → ℂ) :
 /-- The equivalence (2) ↔ (3) follows from the spectral coordinate
     mapping and the explicit formula: the non-trivial zeros of ζ(s)
     are precisely the limits of the Reeb eigenvalues under q → 1.
-    The critical-line property Re(ρ) = 1/2 at each q-scale (Hasse-Weil)
-    persists to the global zeros if and only if ζ satisfies RH. -/
+    The quantum analogue of the critical-line property (Hasse-Weil
+    at each finite q-level) persists to the global zeros if and
+    only if ζ satisfies RH. -/
 -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
 theorem rh_iff_persistence (ζ : ℂ → ℂ)
     (spectral_limit : ℕ → Fin 8 → R_q) :
@@ -82,8 +83,8 @@ theorem rh_iff_persistence (ζ : ℂ → ℂ)
     (2) The Riemann hypothesis (all non-trivial zeros on Re(s) = 1/2)
     (3) Spectral persistence under the classical limit functor
 
-    The q-scale analog of (1) is an unconditional theorem (Hasse-Weil).
-    The obstacle to the macroscopic extension is that the classical limit
+    We discuss a quantum analogue of RH: the Hasse-Weil bound applies
+    at each finite q-level.  The obstacle to the macroscopic extension is that the classical limit
     functor L is not full: quantum information (relative phases of
     local spectra) is lost in the adelic assembly.
 

@@ -17,7 +17,8 @@ In the Descartes QOU with `G = SU(2)`, the elliptic fiber
 Mordell–Weil group is trivial: `r_q = 0`.
 
 The weak q-BSD then reduces to `L(𝓔_q, 1) ≠ 0`, which is
-unconditionally true at the q-scale by the Hasse–Weil bound.
+a quantum analogue of the Birch–Swinnerton-Dyer conjecture
+(the Hasse–Weil bound applies at each finite q-level).
 
 ## The ℙ¹ family and 𝔾_m torsion
 
@@ -89,9 +90,10 @@ theorem descartes_rank_zero
 /-- **Weak q-BSD conjecture** as a `Prop`: for a given QOU, the
     L-function of the Descartes elliptic curve does not vanish at s = 1.
 
-    At the q-scale this is an unconditional theorem (Hasse–Weil).
-    The conjecture is that it persists through q → 1, predicting
-    L(E₁, 1) ≠ 0 for E₁ : y² = x³ + ⅔x + 20/27.
+    We discuss a quantum analogue of BSD: the Hasse–Weil bound
+    applies at each finite q-level.  The conjecture is that this
+    persists through q → 1, predicting L(E₁, 1) ≠ 0 for
+    E₁ : y² = x³ + ⅔x + 20/27.
 
     Ref: [birch1965] https://doi.org/10.1515/crll.1965.218.79
     Ref: [wiles1995] https://doi.org/10.2307/2118559 -/
