@@ -41,7 +41,7 @@ from typing import Optional
 
 # ── Exact rational arithmetic ────────────────────────────────────
 
-class QRat:
+class HeckeRational:
     """Rational arithmetic with q = p_num/p_den."""
     def __init__(self, p_num=111, p_den=100):
         self.q = Fraction(p_num, p_den)
@@ -127,7 +127,7 @@ class HeckeResult:
 
 class HeckeEngine:
     def __init__(self, q_num=111, q_den=100):
-        self.qr = QRat(q_num, q_den)
+        self.qr = HeckeRational(q_num, q_den)
 
     def ground_state_ordering(self, p, n, max_orderings=5000):
         """Find minimum-energy ordering."""
