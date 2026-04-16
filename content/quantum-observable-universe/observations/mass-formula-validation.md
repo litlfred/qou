@@ -42,16 +42,39 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 - **Half-life ratios**: the $\log_q(ft)$ values from the transfer
   matrix encode relative decay rates.
 
+**Mass predictions** ($k = 11$, zero fitted parameters,
+knot factor $a(\mathcal{N}) = \prod(1-\varepsilon_i)$,
+[nuclear knot classification](#prop:nuclear-knot-classification)):
+
+| Atom | $A$ | $a(\mathcal{N})$ | $M_{\mathrm{obs}}$ (MeV) | $M_{\mathrm{QOU}}$ (MeV) | $\Delta/M$ |
+|:-----|----:|------:|----------:|----------:|----------:|
+| ${}^1\mathrm{H}$ | 1 | 1 | 938.783 | 938.783 | $<0.00001\%$ |
+| ${}^2\mathrm{H}$ | 2 | $1+h$ | 1876.124 | 1876.119 | $0.0003\%$ |
+| ${}^3\mathrm{H}$ | 3 | $1-h^2$ | 2809.432 | 2809.432 | $0.00002\%$ |
+| ${}^3\mathrm{He}$ | 3 | $1-h^2$ | 2809.414 | 2809.413 | $0.000004\%$ |
+| ${}^4\mathrm{He}$ | 4 | $(1-h^2)^2$ | 3728.401 | 3728.416 | $0.0004\%$ |
+| ${}^{12}\mathrm{C}$ | 12 | 1 | 11177.929 | 11177.759 | $0.002\%$ |
+| ${}^{56}\mathrm{Fe}$ | 56 | 1 | 52103.063 | 52104.765 | $0.003\%$ |
+| ${}^{208}\mathrm{Pb}$ | 208 | 1 | 193729.02 | 193732.51 | $0.002\%$ |
+
+Mean $|\Delta/M| = 0.002\%$ across 14 isotopes (${}^1\mathrm{H}$
+through ${}^{208}\mathrm{Pb}$).
+
+**$Q$-values** from mass difference $Q = M_{\mathrm{par}} - M_{\mathrm{dau}}$
+(neutral atoms, consistent $k = 11$):
+
+| Decay | $Q_{\mathrm{QOU}}$ (MeV) | $Q_{\mathrm{exp}}$ (MeV) | $\delta$ |
+|:------|----------:|----------:|---------:|
+| $n \to {}^1\mathrm{H}$ | $0.78233$ | $0.78233$ | $0.00\%$ |
+| ${}^3\mathrm{H} \to {}^3\mathrm{He}$ | $0.01823$ | $0.01861$ | $-2.1\%$ |
+
 **Genuine predictions summary** (observed vs predicted with %):
 
 | Quantity | Predicted | Observed | $\delta$ | Method |
 |:---------|----------:|---------:|---------:|:-------|
 | $m_\mu/m_e$ | $206.768$ | $206.768$ | $<0.001\%$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ (by construction) |
-| $B(d)$ | $2.2329$ MeV | $2.2246$ MeV | $+0.38\%$ | $\mathrm{tr}_M$ volume integral ([derived binding](#prop:deuterium-derived-binding)) |
-| $Q({}^3\mathrm{H})$ | $0.01849$ MeV | $0.01861$ MeV | $-0.6\%$ | $\Delta\mathrm{net} \times E_0$ |
-| $Q({}^{14}\mathrm{C})$ | $0.15300$ MeV | $0.15648$ MeV | $-2.2\%$ | $\Delta\mathrm{net} \times E_0$ |
-| $Q({}^{90}\mathrm{Sr})$ | $0.55740$ MeV | $0.54590$ MeV | $+2.1\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
-| $Q({}^{60}\mathrm{Co})$ | $0.33856$ MeV | $0.31817$ MeV | $+6.4\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
+| $B({}^2\mathrm{H})$ | $2.240$ MeV | $2.225$ MeV | $+0.7\%$ | BW $k{=}11$ with satellite factor $1{+}h$ |
+| $Q({}^3\mathrm{H})$ | $0.01823$ MeV | $0.01861$ MeV | $-2.1\%$ | Mass difference at $k{=}11$ |
 | $Q({}^{137}\mathrm{Cs})$ | $0.53750$ MeV | $0.51400$ MeV | $+4.6\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{Pauli}$ |
 | $Q({}^{210}\mathrm{Bi})$ | $1.28191$ MeV | $1.16270$ MeV | $+10.3\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
 
