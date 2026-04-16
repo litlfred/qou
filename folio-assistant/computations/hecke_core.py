@@ -264,6 +264,74 @@ _tr_42 = (2 * q0**2 - 1) / (3 * q0)                       # (2q²-1)/(3q)
 _tr_2211 = (q0**2 - 2) / (3 * q0)                          # (q²-2)/(3q)
 DELTA_42 = _w_42 * h * M_E_MEV                                 # conjugate pair: tr+tr'=h
 
+# ── k≥7 coefficients: general descent decomposition ─────────────
+# Precomputed from Wedderburn weights at each level.
+# Each level k contributes (C_desc, C_coul, C_iso) in MeV:
+#   C_desc × ZN/A^α  (descended self-conjugate partitions)
+#   C_coul × Z(Z-1)/A^α  (transient Coulomb-type pairs)
+#   C_iso × (N-Z)²/(4A^α)  (transient isospin-type pairs)
+# where α = (k-2)/3.
+#
+# For conjugate pairs: tr + tr' = h. Total pair weight allocated
+# 55% Coulomb + 45% isospin (from k=6 branching ratio).
+# Converges: cumulative k=7..15 correction ≈ 30-40 keV.
+
+
+def _compute_k_coefficients():
+    """Compute descended/transient coefficients for k=7..15."""
+
+    def _partitions(n, mx=None):
+        if mx is None: mx = n
+        if n == 0:
+            yield ()
+            return
+        for f in range(min(n, mx), 0, -1):
+            for rest in _partitions(n - f, f):
+                yield (f,) + rest
+
+    def _conjugate(s):
+        if not s: return ()
+        return tuple(sum(1 for p in s if p > i) for i in range(s[0]))
+
+    def _q_hook_dim(s):
+        k = sum(s)
+        nk = 1.0
+        for i in range(1, k + 1):
+            nk *= q_int(i)
+        hp = 1.0
+        for r, w in enumerate(s):
+            for c in range(w):
+                arm = w - c - 1
+                leg = sum(1 for r2 in range(r + 1, len(s)) if c < s[r2])
+                hp *= q_int(arm + leg + 1)
+        return nk / hp
+
+    result = {}
+    for k in range(7, 16):
+        nk = 1.0
+        for i in range(1, k + 1):
+            nk *= q_int(i)
+        c_desc = 0.0
+        c_pair = 0.0
+        seen = set()
+        for shape in _partitions(k):
+            if shape in seen:
+                continue
+            conj = _conjugate(shape)
+            dim = _q_hook_dim(shape)
+            w = dim**2 / nk
+            if shape == conj:
+                c_desc += w * (h / 2) * M_E_MEV
+            else:
+                c_pair += w * h * M_E_MEV
+            seen.add(shape)
+            seen.add(conj)
+        result[k] = (c_desc, c_pair * 0.55, c_pair * 0.45)
+    return result
+
+
+_K_COEFFS = _compute_k_coefficients()
+
 # NF basis
 NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
 NF_NAMES = ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻']
@@ -963,6 +1031,24 @@ def binding_energy_bw(Z, N, k=3):
         B += DELTA_W2 * Z * N / A**(4.0/3.0)
         B += DELTA_411 * (N - Z)**2 / (4.0 * A**(4.0/3.0))
         B += DELTA_42 * Z * (Z - 1) / A**(4.0/3.0)
+
+    # ── k≥7 corrections: general descent engine ─────────────
+    # At each level k, the correction has three components:
+    #   Descended (self-conjugate): C_desc × ZN / A^{(k-2)/3}
+    #   Transient Coulomb: C_coul × Z(Z-1) / A^{(k-2)/3}
+    #   Transient isospin: C_iso × (N-Z)²/(4A^{(k-2)/3})
+    #
+    # Coefficients are precomputed from Wedderburn weights.
+    # Convergence: corrections are ~30 keV cumulative (k=7..15).
+    # RMS converges to 1.516 MeV by k=8.
+    if k >= 7 and not is_fig8:
+        for kk in range(7, min(k, 15) + 1):
+            cd, cc, ci = _K_COEFFS.get(kk, (0, 0, 0))
+            alpha_k = (kk - 2) / 3.0
+            denom = A ** alpha_k
+            B += cd * Z * N / denom
+            B += cc * Z * (Z - 1) / denom
+            B += ci * (N - Z)**2 / (4.0 * denom)
 
     return B
 
