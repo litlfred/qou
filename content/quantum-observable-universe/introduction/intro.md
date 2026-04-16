@@ -45,7 +45,23 @@ it emerges via Tannaka–Krein reconstruction.  The uncertainty
 principle is not postulated; it appears as the geometric signature
 of degrees of freedom not yet resolved.  Observation is an act of
 intention, and intention can produce genuinely new outcomes — not
-merely reveal pre-existing ones.
+merely reveal pre-existing ones.  Genus four is not chosen either;
+it is forced.  The Descartes obstruction $\chi(A) = -6$ drops out
+of the lifting theory, and a single algebraic curve realises it
+canonically: Bring's surface $\Sigma_4$, the universal genus-$4$
+curve with maximal automorphism group $S_5$.  It becomes a natural
+object of study — not a model imposed from outside, but the unique
+geometric carrier the axioms demand.
+
+The categorical language does more than name the structure: it
+identifies, as internal objects of the category, the physical
+concepts that describe the mechanics of a quantum universe.  The
+Lagrangian is a trace; the Dirac operator is a connection twisted
+by the Reeb derivation; the action is an integral; curvature,
+gauge field, and matter current are specific morphisms in
+$\mathbf{C}$.  Each is forced — not borrowed from the classical
+dictionary, but recovered as the unique construction the axioms
+allow.
 
 Particles are knots — topological objects classified by their
 crossing structure — and simultaneously vortex lines in the fibre
@@ -53,18 +69,31 @@ of the state bundle.  These two pictures are not competing
 descriptions but equivalent viewpoints, exchanged by the Frobenius
 self-duality $A \cong A^{\vee}$.
 
-Genus four is not chosen; it is forced.  The Descartes obstruction
-$\chi(A) = -6$ drops out of the lifting theory, and a single
-algebraic curve realises it canonically: Bring's surface
-$\Sigma_4$, the universal genus-$4$ curve with maximal
-automorphism group $S_5$.  It becomes a natural object of study —
-not a model imposed from outside, but the unique geometric
-carrier the axioms demand.
+Restricting to knots that embed in $\Sigma_4$ produces a *finite*
+knot operator space — the embeddability bound yields exactly six
+force operators and the identity, no more.  We enumerate this
+space explicitly and tie each operator to the geometry of Bring's
+surface: coral tubes, exceptional divisors, and the $S_5$ action.
+The Gröbner–Shirshov basis then tracks, as a function of the
+substrate parameter $q$, the energy required to cross and uncross
+knots — giving a computable cost for every interaction.  Specific
+knots and knot words are identified, purely mathematically, with
+the objects we label *photons*, *quarks*, *electrons*, and
+*hadrons*.
 
 Even the capacity for computation — the Turing completeness of the
 substrate — is a consequence, not an input.  That so much structure
 follows from so little input is, as Wigner put it, "something
 bordering on the mysterious."
+
+We conclude by comparing the framework's formulae with experiment.
+Representation theory of the Iwahori–Hecke algebra and the
+Bring constraint $\chi = -6$ together fix the degrees of freedom:
+**exactly three** calibration inputs are required — one
+dimensionless ratio ($m_\mu/m_e$), one leptonic mass scale
+($m_e$), and one hadronic energy scale ($Q_\beta(n)$).  Every
+other mass, Q-value, binding energy, and coupling constant is a
+prediction.
 
 The paper is organised as follows.
 
