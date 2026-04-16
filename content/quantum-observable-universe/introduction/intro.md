@@ -75,10 +75,12 @@ space explicitly and tie each operator to the geometry of Bring's
 surface: coral tubes, exceptional divisors, and the $S_5$ action.
 The Gröbner–Shirshov basis then tracks, as a function of the
 substrate parameter $q$, the energy required to cross and uncross
-knots — giving a computable cost for every interaction.  Specific
-knots and knot words are identified, purely mathematically, with
-the objects we label *photons*, *quarks*, *electrons*, and
-*hadrons*.
+knots — giving a computable cost for every interaction.  Four
+generator knots are identified, purely mathematically, with the
+objects we label *quarks* (unknot in a Borromean braid),
+*electrons* (trefoil $3_1 = T_{2,3}$), *hadrons* (Borromean
+three-braid $\mathcal{B}_3$), and *photons* (unframed unknot
+$T_{1,0}$).
 
 Even the capacity for computation — the Turing completeness of the
 substrate — is a consequence, not an input.  That so much structure
@@ -177,8 +179,9 @@ acts on the fibre degrees of freedom; particle exchange becomes a
 representation of $B_n$ inside the Iwahori–Hecke algebra $H_n(q)$,
 with the substrate parameter $q$ tracking the energy cost of each
 crossing.  Specific knot types map to particle identities — the
-unknot to the quark, the trefoil to the nucleon, lifts of these
-to heavier generations.
+unknot to the photon (and, with framing, the neutrino); the
+trefoil $3_1$ to the electron; higher torus knots $T_{2,2k+1}$
+to the muon and tau through the brane tower.
 
 [Chapter 5](#chap:models-qou) examines concrete realisations of
 the QOU axioms: archimedean, $p$-adic, and finite-field models.
@@ -334,20 +337,19 @@ collects the elements with their knot assignments, and the
 searchable reference.
 
 **A note on authoring.**
-Every* proof in this paper has a corresponding Lean 4
-formalisation, except where external references are cited for large
-prior results.  Computations — braid-word reductions,
-Gröbner–Shirshov normal forms, linear programs, hyperbolic volumes
-— are all symbolic in the substrate parameter $q$ and are attached
-as witnesses to the proofs they support wherever appropriate.  The
-implementations in Rust and Python, together with the Lean sources,
-are available at \url{https://github.com/litlfred/qou}.  The author
-used large language models throughout the drafting and formalisation
-process, both because a physical disability prevents sustained
-typing and to assist with Lean proof engineering.  Human
+Every proof in this paper — in progress, but nearly complete — has
+a corresponding Lean 4 formalisation, except where external
+references are cited for large prior results.  Computations —
+braid-word reductions, Gröbner–Shirshov normal forms, linear
+programs, hyperbolic volumes — are all symbolic in the substrate
+parameter $q$ and are attached as witnesses to the proofs they
+support wherever appropriate.  The implementations in Rust and
+Python, together with the Lean sources, are available at
+[https://github.com/litlfred/qou](https://github.com/litlfred/qou).
+The author used large language models throughout the drafting and
+formalisation process, both because a physical disability prevents
+sustained typing and to assist with Lean proof engineering.  Human
 adjudication of every line is not complete.
-
-*= almost; in progress.
 
 > *Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu
 > le loisir de la faire plus courte.*

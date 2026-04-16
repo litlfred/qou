@@ -1,12 +1,13 @@
 This chapter collects the physical predictions of the Descartes
-universe and compares them with experimental data.  All mathematical
-setup --- the knot-to-particle mapping and Skein decomposition
-([Chapter 9](#chap:descartes-universe)), the Gröbner--Shirshov
+universe and compares them with experimental data.  The knot-to-particle
+mapping and Skein decomposition
+([Chapter 9](#chap:descartes-universe)) and the Gröbner--Shirshov
 reduction engine and Wedderburn mass formula
-([Chapter 10](#chap:particle-interactions)), and the molecular
-braid construction ([Chapter 12](#chap:molecular-construction))
---- has already been developed; the present chapter is purely
-observational.
+([Chapter 10](#chap:particle-interactions)) have already been
+developed; the present chapter is purely observational, calibrating
+the substrate parameter $q_0$ from those constructions.  The
+molecular extension ([Chapter 12](#chap:molecular-construction))
+then builds on the calibrated $q_0$.
 
 The central result is the substrate consistency window: multiple
 independent physical observables (lepton mass ratios, the fine
