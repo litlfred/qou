@@ -864,11 +864,22 @@ def atom_gen_chains(Z, N):
     """
     g0, g1 = [], []
 
-    # Build nucleon ordering
-    ordering = ['p'] * Z + ['n'] * N
+    # Build nucleon ordering (interleaved, matching build_atom_nf)
+    A = Z + N
+    ordering = []
+    pc, nc = 0, 0
+    for k in range(A):
+        if (k % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p')
+            pc += 1
+        else:
+            ordering.append('n')
+            nc += 1
 
-    # 1. Intra-nucleon crossings (B₃ + quarks per nucleon)
-    for nuc_type in ordering:
+    # 1. Nucleon crossings + inter-nucleon (matching build_atom_nf order)
+    # Each nucleon's intra-nucleon crossings, then inter-nucleon with ALL previous
+    for k in range(A):
+        nuc_type = ordering[k]
         if nuc_type == 'p':
             g0.extend(_PROTON_G0)
             g1.extend(_PROTON_G1)
@@ -876,11 +887,9 @@ def atom_gen_chains(Z, N):
             g0.extend(_NEUTRON_G0)
             g1.extend(_NEUTRON_G1)
 
-    # 2. Inter-nucleon crossings on gen 0 (strong force channel)
-    A = Z + N
-    for i in range(A):
-        for j in range(i + 1, A):
-            ti, tj = ordering[i], ordering[j]
+        # Inter-nucleon crossings with all previous nucleons (gen 0)
+        for prev in range(k):
+            ti, tj = ordering[prev], ordering[k]
             if ti == 'p' and tj == 'p':
                 g0.append((1, 0))       # pp: σ₀
             elif ti == 'n' and tj == 'n':
@@ -888,7 +897,7 @@ def atom_gen_chains(Z, N):
             else:
                 g0.append((1, -h / 2))  # pn: mixed
 
-    # 3. Electron crossings: pe = σ⁻¹ on gen 1
+    # 2. Electron crossings: pe = σ⁻¹ on gen 1
     for _ in range(Z):
         g1.append((1, -h))
 
