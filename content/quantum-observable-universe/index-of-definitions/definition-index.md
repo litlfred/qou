@@ -14,7 +14,6 @@
 | [def:q-hodge-star](#def:q-hodge-star) | $q$-Hodge star | Ch 2 | `QOU.QHodgeStar` |
 | [def:q-momentum](#def:q-momentum) | $q$-Momentum from the braid writhe | Ch 4 | `QOU.Descartes.QMomentum` |
 | [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-Weighted Yang--Mills--Levi functional | Ch 5 | `QOU.QYangMillsLevi` |
-| [def:no-quasi-zeros](#def:no-quasi-zeros) | Algebra without quasi-zeros | Ch 1 | `QOU.NoQuasiZeros` |
 | [def:antineutrino-knot](#def:antineutrino-knot) | Antineutrino as mirror unknot $T_{1,0}^{\sigma}$ | Ch 6 | `QOU.Descartes.Antineutrino` |
 | [def:beta-decay-skein](#def:beta-decay-skein) | Beta decay as a Skein crossing change on the Gröbner--Shirshov normal form | Ch 6 | `QOU.Descartes.BetaDecaySkein` |
 | [def:borromean-baryon](#def:borromean-baryon) | Borromean baryon | Ch 4 | `QOU.Braiding.BorromeanBaryon` |
