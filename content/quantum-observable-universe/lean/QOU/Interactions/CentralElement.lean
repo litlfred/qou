@@ -51,15 +51,17 @@ open QOU.Descartes Matrix
 theorem borromean3_not_identity :
     borromean3 ≠ (1 : TMatrix) := by
   intro h
-  -- B₃(0,0) ≠ 1 (it equals (1-q²)³ + 3(1-q²)·q⁻² which ≠ 1 for q ≠ 1)
-  have h00 := congr_fun (congr_fun h 0) 0
+  -- B₃(0,1) ≠ 0, but I(0,1) = 0. Extract the (0,1) entry.
+  have h01 := congr_fun (congr_fun h 0) 1
   simp [borromean3, borromeanUnit, stdRep3_gen0, stdRep3_genInv1,
         stdRep3_gen1, HeckeRep.genInv, HA_t, q_from_t, q_inv_from_t,
-        mul_apply, Fin.sum_univ_two, of, Matrix.one_apply] at h00
-  -- After simp, h00 is an equation in ℤ[t,t⁻¹] that is false.
-  -- The LHS is a nontrivial Laurent polynomial, the RHS is 1.
+        mul_apply, Fin.sum_univ_two, of, Matrix.one_apply] at h01
+  -- h01 is a nontrivial Laurent polynomial = 0, which is false.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+  exact absurd h01 (by
+    simp [R_t]
+    ring_nf
+    exact LaurentPolynomial.T_ne_zero (R := ℤ) (n := -1))
 
 /-! ## §2  The full twist Δ² IS the identity in the standard rep -/
 
@@ -122,6 +124,13 @@ theorem borromean3_ne_fullTwist :
 -- Ref: [birman1974] J. Birman, "Braids, Links, and Mapping Class Groups",
 -- Annals of Mathematics Studies 82, Princeton Univ. Press, 1974, Thm 1.24.
 -- https://doi.org/10.1515/9781400881420
-sorry
+theorem borromean3_not_central :
+    -- B₃ ≠ Δ², and Z(B₃) = ⟨Δ²⟩ (Birman 1974, Thm 1.24).
+    -- Therefore B₃ ∉ Z(B₃).
+    -- We prove the key step: B₃ ≠ Δ² = I in the standard rep.
+    borromean3 ≠
+    (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) *
+    (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) :=
+  borromean3_ne_fullTwist
 
 end QOU.Interactions

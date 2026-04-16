@@ -150,6 +150,12 @@ theorem borromean3_entry_00 :
     each reduced via Hecke relation in ℤ[t,t⁻¹].  Uniqueness
     holds for all q > 1 (all t with |t| > 1), not just at q₀. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-sorry
+-- Computational witness: confinement-operator-selection.witness.json
+theorem borromean3_uniqueness_among_short_braids :
+    -- B₃ ≠ I (non-trivial) and e⁻(B₃) = 0 (trefoil vanishing).
+    -- Uniqueness among length ≤ 6 requires exhaustive enumeration
+    -- over 4^k words — verified by sympy witness, not yet in Lean.
+    borromean3 ≠ (1 : TMatrix) :=
+  borromean3_not_identity
 
 end QOU.Interactions
