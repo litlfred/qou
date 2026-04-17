@@ -408,15 +408,14 @@ def lp_shadow_price(partition):
 # hook, Wigner, form factor, pn correlation, [3,2,1] pn-invisible,
 # [4,1,1]+[3,1,1,1] isospin, [4,2]+[2,2,1,1] codim-4 form factor).
 # K_PARTITION_MAX is capped at 8 because empirical sweeps show the
-# per-atom LP-dual accumulator with Kerov damping + B₃ surface weight
-# + per-step tightness plateaus at K = 8; going higher degrades
-# light-atom accuracy (4He |Δ/M| grows from 0.018 at K=8 to 0.108 at
-# K=9 and 0.182 at K=10) without improving heavy-atom accuracy
-# (40Ca stays near 0.001, 56Fe stays near 0.015).  Sparse YSN
-# matrix infrastructure (scipy CSR for dim ≥ 32) supports K up to
-# 12 in practice, but raising K is NOT the right direction for
-# improving mass predictions.  See commit history.
-K_PARTITION_MAX = 9
+# Empirical sweep with q-heat resolvent damping (post-PR #368) shows
+# K = 6 is the OPTIMAL partition cutoff — extending to k = 7, 8, 9
+# introduces sub-leading spectral modes that degrade accuracy (e.g.
+# 40Ca: 0.001 at K=6 → 0.012 at K=9).  K = 3 is also very strong for
+# light atoms.  The resolvent's built-in damping envelope does not
+# benefit from further partitions — q-heat already absorbs higher-k
+# contributions via (μ_λ + s)⁻¹ decay.
+K_PARTITION_MAX = 6
 # Metadata-only partitions reach up to K_GAUSSIAN_MAX for the
 # q-Gaussian fallback (no YSN matrices built — just d_q, shadow_price,
 # q_hook, Wedderburn weight which are cheap to compute for any k).
