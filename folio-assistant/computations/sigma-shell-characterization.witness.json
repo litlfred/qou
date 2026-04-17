@@ -1,0 +1,117 @@
+{
+  "computation": "sigma-shell-characterization",
+  "description": "\u03c3_shell characterization per user insight: shell operator has SAME Hecke parameters (c=1, d=0, eigenvalues q/-q\u207b\u00b9) as any \u03c3; shell structure is encoded via POSITION (shell-boundary generator 3\u00b7A_magic - 1) and LP-DUAL WEIGHT (shadow price at shell partition (A_magic - 1, 1)). Young's-lattice branching: contribution is y_shell \u00b7 \u03c3_eigenvalue, multiplied by skew-SYT count f^{\u03bb/(A_magic-1,1)} at target partition \u03bb \u22a2 3A for the specific atom.",
+  "timestamp": "2026-04-17T21:50:56.163530+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "mpmath_dps": 50
+  },
+  "sigma_shell_parameters": {
+    "c": 1,
+    "d": 0,
+    "eigenvalues": "(q, -q\u207b\u00b9) in the (A-1, 1) standard rep",
+    "comment": "\u03c3_shell has the same Hecke parameters as any \u03c3. The shell structure is encoded via POSITION (shell-boundary generator) and LP-dual WEIGHT (shell_shadow_price at the shell partition)."
+  },
+  "shell_shadow_prices": [
+    {
+      "A_magic": 2,
+      "shell_partition": [
+        1,
+        1
+      ],
+      "classical_dim": 1,
+      "q_dim": "1.0",
+      "wedderburn_weight": "0.49729054500859147895226965599454221878277750561284",
+      "shadow_price_y": "0.0",
+      "shadow_price_abs": "0.0",
+      "q_factorial_A_magic": "2.0108968691184816752825727171174109085783898958687"
+    },
+    {
+      "A_magic": 8,
+      "shell_partition": [
+        7,
+        1
+      ],
+      "classical_dim": 7,
+      "q_dim": "7.6253421788940075632143145882172734417176126872338",
+      "wedderburn_weight": "0.0010161707224481095788461115543040733801783289255371",
+      "shadow_price_y": "0.00012769100590674487962623340203755847268315251587656",
+      "shadow_price_abs": "0.00012769100590674487962623340203755847268315251587656",
+      "q_factorial_A_magic": "57220.545781065060219241160772726002647494657008166"
+    },
+    {
+      "A_magic": 20,
+      "shell_partition": [
+        19,
+        1
+      ],
+      "classical_dim": 19,
+      "q_dim": "34.071290379860399876829122001639900062272769681679",
+      "wedderburn_weight": "4.0312062719032680536038917577095129960269679319669e-18",
+      "shadow_price_y": "2.0869612639439049101129058669742733995076651791777e-19",
+      "shadow_price_abs": "2.0869612639439049101129058669742733995076651791777e-19",
+      "q_factorial_A_magic": "287966615908416457977.43579684910658204394435222989"
+    },
+    {
+      "A_magic": 28,
+      "shell_partition": [
+        27,
+        1
+      ],
+      "classical_dim": 27,
+      "q_dim": "79.738536388123380903947834215271256948675986102291",
+      "wedderburn_weight": "1.1168344223104147043386200167254831868840800210103e-31",
+      "shadow_price_y": "4.1188586198160114498354633523441906398077011089552e-33",
+      "shadow_price_abs": "4.1188586198160114498354633523441906398077011089552e-33",
+      "q_factorial_A_magic": "56930857952664884535856723657214540.825281113417919"
+    },
+    {
+      "A_magic": 50,
+      "shell_partition": [
+        49,
+        1
+      ],
+      "classical_dim": 49,
+      "q_dim": "794.56283354660679333819786913695897444149882597257",
+      "wedderburn_weight": "5.2223873837010533443285362146022855295328680322961e-84",
+      "shadow_price_y": "1.0657106232192291789795215631895872206474507844737e-85",
+      "shadow_price_abs": "1.0657106232192291789795215631895872206474507844737e-85",
+      "q_factorial_A_magic": "1.2088917387170070339582799231470085092483791866625e+89"
+    },
+    {
+      "A_magic": 82,
+      "shell_partition": [
+        81,
+        1
+      ],
+      "classical_dim": 81,
+      "q_dim": "22398.106012382095213557942842829878327847459389428",
+      "wedderburn_weight": "2.7371862699519293869686682098232990650687591179221e-199",
+      "shadow_price_y": "3.3792417629733329169195097115877514571774853238034e-201",
+      "shadow_price_abs": "3.3792417629733329169195097115877514571774853238034e-201",
+      "q_factorial_A_magic": "1.8328133472287123830318361987730204315982767976373e+207"
+    },
+    {
+      "A_magic": 126,
+      "shell_partition": [
+        125,
+        1
+      ],
+      "classical_dim": 125,
+      "q_dim": "2208278.7600198834893652771496532085757700887390549",
+      "wedderburn_weight": "1.4467420695745756669694611985126901814717359625341e-433",
+      "shadow_price_y": "1.1573936556299928717557484316098635085799967212009e-435",
+      "shadow_price_abs": "1.1573936556299928717557484316098635085799967212009e-435",
+      "q_factorial_A_magic": "3.3706734493377390197332848811677678219806157949442e+445"
+    }
+  ],
+  "magic_numbers": [
+    2,
+    8,
+    20,
+    28,
+    50,
+    82,
+    126
+  ]
+}
