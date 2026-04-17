@@ -1,11 +1,11 @@
 Beyond the grouplike $\exp_q$ ([$q$-exponential](#def:q-exponential))
 and its primitive inverse $\log_q$
 ([$q$-logarithm](#def:q-logarithm)), the $q$-shuffle Hopf algebra
-$H_q$ admits a canonical *level-2* element — the $q$-dilogarithm —
+$\mathcal{H}_q$ admits a canonical *level-2* element — the $q$-dilogarithm —
 obtained by iterating the primitive structure once.
 
-**Iterated-primitive definition.**  A *level-$k$ primitive* of $H_q$
-is an element $p_k \in H_q^{\otimes k}$ satisfying the shuffle
+**Iterated-primitive definition.**  A *level-$k$ primitive* of $\mathcal{H}_q$
+is an element $p_k \in \mathcal{H}_q^{\otimes k}$ satisfying the shuffle
 recursion
 
 $$
@@ -18,7 +18,7 @@ is one-dimensional (up to primitives of lower levels).  The
 *$q$-dilogarithm* is the unique level-2 primitive
 
 $$
-  \mathrm{Li}_2^q \;\in\; H_q^{\otimes 2}
+  \mathrm{Li}_2^q \;\in\; \mathcal{H}_q^{\otimes 2}
 $$
 
 normalised by the *pentagon identity* (below).
@@ -72,7 +72,7 @@ recovers the braiding of two quantum-plane modules.
 
 **Base-ring independence.**  Like $\exp_q$ and $\log_q$,
 $\mathrm{Li}_2^q$ is defined abstractly as an iterated primitive of
-$H_q$ — its existence and uniqueness are Hopf-algebraic, not
+$\mathcal{H}_q$ — its existence and uniqueness are Hopf-algebraic, not
 analytic.  Over $\mathbb{F}_p$ the pentagon identity is a polynomial
 equation over the base ring, solvable as long as the denominators
 $1 - xy, [n]_q$ do not vanish; outside those loci $\mathrm{Li}_2^q$

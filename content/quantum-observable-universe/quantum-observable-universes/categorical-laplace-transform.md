@@ -1,7 +1,7 @@
 Fix a quantum observable universe $(\mathbf{C}, \theta, G, \mathcal{S})$
 with Markov trace
 $\mathrm{tr}_M \colon \mathrm{End}_{\mathbf{C}}(A) \to \mathbf{1}_{\mathbf{C}}$
-([adjoint trace](#rem:adjoint-trace)).  Let $H_q$ be the convolution
+([adjoint trace](#rem:adjoint-trace)).  Let $\mathcal{H}_q$ be the convolution
 Hopf algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under the
 $q$-deformed convolution $\ast_q$.
 
@@ -16,7 +16,7 @@ $$
 
 defined, for each spectral parameter $s \in \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A)$,
 by the Hopf pairing against the real exponential grouplike
-$\exp_q(-s\cdot) \in G(H_q)$:
+$\exp_q(-s\cdot) \in G(\mathcal{H}_q)$:
 
 $$
   \mathcal{L}[f](s)
@@ -40,27 +40,27 @@ $$
 $$
 
 and this property characterises $\mathcal{L}$ up to isomorphism — it
-is the *mate* of the comultiplication $\Delta_q$ on $H_q$.
+is the *mate* of the comultiplication $\Delta_q$ on $\mathcal{H}_q$.
 
 ```tex
 \begin{equation}\label{eq:categorical-laplace-square}
 \begin{tikzcd}[row sep=2.5em, column sep=4em]
-  H_q \otimes H_q
+  \mathcal{H}_q \otimes \mathcal{H}_q
     \ar[r, "\ast_q"]
     \ar[d, "\mathcal{L} \otimes \mathcal{L}"']
-  & H_q
+  & \mathcal{H}_q
     \ar[d, "\mathcal{L}"]
   \\
-  H_q \otimes H_q
+  \mathcal{H}_q \otimes \mathcal{H}_q
     \ar[r, "\cdot"']
-  & H_q
+  & \mathcal{H}_q
 \end{tikzcd}
 \end{equation}
 ```
 
 **Base-ring independence.**  Because $\exp_q(-s\cdot)$ is defined
-abstractly as a grouplike of $H_q$ — not as a convergent series —
-$\mathcal{L}$ makes sense over any base ring $R$ where $H_q$ has the
+abstractly as a grouplike of $\mathcal{H}_q$ — not as a convergent series —
+$\mathcal{L}$ makes sense over any base ring $R$ where $\mathcal{H}_q$ has the
 grouplike, i.e. anywhere $q \ne 1$ and $s$ is algebraic.  The familiar
 integral
 
@@ -80,8 +80,8 @@ orbits, but $\mathcal{L}$ itself is unchanged.
 [$p$-adic $\exp_q$](#rem:q-exp-p-adic)):
 
 - **$\mathbb{F}_p$.**  $\mathcal{L}$ becomes a finite sum over the
-  grouplike spectrum $\mathrm{Spec}_{\mathbb{F}_p}(G(H_q))$, which is
-  finite because $G(H_q) \otimes \mathbb{F}_p$ is an étale group scheme
+  grouplike spectrum $\mathrm{Spec}_{\mathbb{F}_p}(G(\mathcal{H}_q))$, which is
+  finite because $G(\mathcal{H}_q) \otimes \mathbb{F}_p$ is an étale group scheme
   of bounded rank.  This is the Gauss-sum avatar: pairing against
   $\exp_q^{(p)}$ over a finite base gives a finite character sum, and
   monoidality of $\mathcal{L}$ is the product formula for Gauss sums.

@@ -4,7 +4,7 @@ categorical Fourier
 ([categorical Fourier transform](#def:categorical-fourier))
 transforms are **two real forms of a single complex spectral
 pairing**.  Both are defined by pairing against the $q$-exponential
-grouplike $\exp_q \in G(H_q)$ ([$q$-exponential](#def:q-exponential));
+grouplike $\exp_q \in G(\mathcal{H}_q)$ ([$q$-exponential](#def:q-exponential));
 they differ only in which character of the Reeb-translation object
 one evaluates:
 
@@ -72,4 +72,4 @@ the Peter--Weyl spectral decomposition, the Mercer kernel, the
 content-Casimir eigenvalues $\mu_\lambda(q)$ — has a mirror
 statement about the quantum-mechanical $q$-Schrödinger evolution,
 obtained by $t \mapsto it$*.  Together they are the full analytic
-shadow of the single Hopf-algebraic object $\exp_q \in G(H_q)$.
+shadow of the single Hopf-algebraic object $\exp_q \in G(\mathcal{H}_q)$.

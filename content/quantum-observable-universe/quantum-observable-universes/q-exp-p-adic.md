@@ -1,4 +1,4 @@
-The formal grouplike $\exp_q \in G(H_q)$
+The formal grouplike $\exp_q \in G(\mathcal{H}_q)$
 ([$q$-exponential](#def:q-exponential)) admits convergent
 power-series realisations over the $p$-adic fields $\mathbb{Q}_p$ and
 $\mathbb{C}_p$, recovering the archimedean Taylor series
@@ -57,7 +57,7 @@ $$
 
 converges in $\mathbb{Q}_p$ because
 $v_p(x^n/[n]_q!) \ge n - (n - s_p(n))/(p-1) \to \infty$.  The limit is a
-grouplike of $H_q \otimes \mathbb{Q}_p$ and agrees, under the reduction
+grouplike of $\mathcal{H}_q \otimes \mathbb{Q}_p$ and agrees, under the reduction
 $\mathbb{Z}_p \twoheadrightarrow \mathbb{F}_p$, with the truncated
 exponential $\exp_q^{(p)}$ of the finite-field remark.  Equivalently,
 the $p$-adic $\exp_q$ is the **Witt-vector lift** of the

@@ -1,6 +1,6 @@
 The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))
 is defined purely Hopf-algebraically: $\exp_q$ is the unique grouplike
-of $H_q$ satisfying $D_q \exp_q = \exp_q$.  This characterisation is
+of $\mathcal{H}_q$ satisfying $D_q \exp_q = \exp_q$.  This characterisation is
 base-ring independent.  Its archimedean realisation as the Taylor series
 
 $$
@@ -21,7 +21,7 @@ formal series $\sum x^n / [n]_q!$ has divisions by zero starting at
 degree $\mathrm{ord}_{\mathbb{F}_p^\times}(q)$.
 
 **What survives abstractly.**  The grouplike $\exp_q$ nonetheless
-*exists* in the formal Hopf algebra $H_q \otimes \mathbb{F}_p$:
+*exists* in the formal Hopf algebra $\mathcal{H}_q \otimes \mathbb{F}_p$:
 one can define $\exp_q$ as a *symbol* (a formal grouplike, adjoined
 to the Hopf algebra), characterised by its coproduct
 $\Delta_q(\exp_q) = \exp_q \otimes \exp_q$ and the flow equation
@@ -43,7 +43,7 @@ a polynomial, not a grouplike of the full Hopf algebra — but it
 *becomes* grouplike modulo the relation $x^p = 0$ (or the
 $\mathbb{F}_p$-Frobenius twist).  Geometrically: the $p$-truncated
 $\exp_q$ lives on the first-order infinitesimal neighbourhood of
-the identity in $G(H_q)$.
+the identity in $G(\mathcal{H}_q)$.
 
 **Witt-vector lift.**  The truncated $\mathbb{F}_p$-exponential lifts
 uniquely to a convergent grouplike on $\mathbb{Q}_p$ and $\mathbb{C}_p$

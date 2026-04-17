@@ -1,4 +1,4 @@
-Any two grouplikes $e_1, e_2 \in G(H_q)$ satisfying the flow equation
+Any two grouplikes $e_1, e_2 \in G(\mathcal{H}_q)$ satisfying the flow equation
 $D_q e_i = e_i$ and the counit normalisation $\epsilon(e_i) = 1$
 coincide:
 

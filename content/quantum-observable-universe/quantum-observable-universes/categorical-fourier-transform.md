@@ -1,7 +1,7 @@
 The Laplace transform ([categorical Laplace transform](#def:categorical-laplace))
 pairs against the *real* exponential grouplike $\exp_q(-s\cdot)$.  Its
 companion pairs against the *unitary* grouplike $\exp_q(i\xi\cdot)$ — a
-second grouplike of the same Hopf algebra $H_q$, distinguished only by
+second grouplike of the same Hopf algebra $\mathcal{H}_q$, distinguished only by
 the sign of the spectral parameter.
 
 **Categorical Fourier transform.**  The categorical Fourier transform
@@ -41,13 +41,13 @@ irreducible characters.
 ```tex
 \begin{equation}\label{eq:categorical-fourier-peter-weyl}
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
-  H_q
+  \mathcal{H}_q
     \ar[r, "\mathcal{F}"]
     \ar[d, "\ast_q"']
   & \displaystyle\bigoplus_{j} V_j \otimes V_j^\vee
     \ar[d, "{\otimes_j\,\pi_j}"]
   \\
-  H_q
+  \mathcal{H}_q
     \ar[r, "\mathcal{F}"']
   & \displaystyle\bigoplus_{j} V_j \otimes V_j^\vee
 \end{tikzcd}

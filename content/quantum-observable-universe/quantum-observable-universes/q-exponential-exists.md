@@ -1,8 +1,8 @@
-Let $H_q$ be the $q$-shuffle Hopf algebra
+Let $\mathcal{H}_q$ be the $q$-shuffle Hopf algebra
 ([$q$-exponential](#def:q-exponential)) over a base ring $R$ in which
 the Jackson integers $[n]_q = (1 - q^n)/(1 - q)$ are invertible for
 all $n \ge 1$.  Then there exists a grouplike
-$\exp_q \in G(H_q)$ satisfying the flow equation
+$\exp_q \in G(\mathcal{H}_q)$ satisfying the flow equation
 
 $$
   D_q \exp_q \;=\; \exp_q,
@@ -14,7 +14,7 @@ $$
 the element
 
 $$
-  \exp_q \;=\; \sum_{n \ge 0} \frac{x^n}{[n]_q!} \;\in\; H_q
+  \exp_q \;=\; \sum_{n \ge 0} \frac{x^n}{[n]_q!} \;\in\; \mathcal{H}_q
 $$
 
 is grouplike (verified by the $q$-binomial identity

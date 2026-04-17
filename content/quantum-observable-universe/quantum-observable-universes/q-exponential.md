@@ -1,7 +1,7 @@
-Let $H_q$ be the $q$-shuffle Hopf algebra of a quantum observable
+Let $\mathcal{H}_q$ be the $q$-shuffle Hopf algebra of a quantum observable
 universe with coproduct $\Delta_q$, counit $\epsilon$, antipode $S_q$,
-and $q$-Jackson derivative $D_q$.  A *grouplike* of $H_q$ is an
-element $g \in H_q$ satisfying
+and $q$-Jackson derivative $D_q$.  A *grouplike* of $\mathcal{H}_q$ is an
+element $g \in \mathcal{H}_q$ satisfying
 
 $$
   \Delta_q(g) = g \otimes g,
@@ -9,11 +9,11 @@ $$
   \epsilon(g) = 1.
 $$
 
-Grouplikes form a group $G(H_q) \subseteq H_q$ under multiplication:
+Grouplikes form a group $G(\mathcal{H}_q) \subseteq \mathcal{H}_q$ under multiplication:
 they are the characters of the coalgebra structure.
 
 **$q$-Exponential.**  The *$q$-exponential* is the unique grouplike
-$\exp_q \in G(H_q)$ satisfying the categorical flow equation
+$\exp_q \in G(\mathcal{H}_q)$ satisfying the categorical flow equation
 
 $$
   D_q  \exp_q  =  \exp_q,
@@ -21,7 +21,7 @@ $$
   \exp_q(0) = 1.
 $$
 
-Equivalently, $\exp_q$ is the unique element of $H_q$ with
+Equivalently, $\exp_q$ is the unique element of $\mathcal{H}_q$ with
 $\mathcal{L}_q^{-1}[(1 - s)_q^{-1}] = \exp_q$, where $\mathcal{L}_q$ is
 the categorical Laplace transform
 ([categorical Laplace transform](#def:categorical-laplace)).
@@ -57,7 +57,7 @@ grouplike-ness functorially.
 
 **Base-ring independence.**  Because this definition characterises
 $\exp_q$ by a purely Hopf-algebraic universal property — *grouplike* +
-*flow-invariant* — it makes sense in any base ring $R$ where $H_q$
+*flow-invariant* — it makes sense in any base ring $R$ where $\mathcal{H}_q$
 admits a grouplike.  In particular $\exp_q$ exists abstractly over
 $\mathbb{F}_p$, $\mathbb{Q}_p$, and $\mathbb{Z}[q, q^{-1}]$ as an
 element of the formal Hopf algebra, independently of any convergent
