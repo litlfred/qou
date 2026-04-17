@@ -11,6 +11,6 @@ export default definition({
   uses: [
     "def:categorical-laplace",
     "rem:base-field-independence",
-    "def:adjoint-trace",
+    "rem:adjoint-trace",
   ],
 });

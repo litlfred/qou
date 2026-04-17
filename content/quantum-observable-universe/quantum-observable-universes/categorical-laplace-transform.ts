@@ -9,7 +9,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:adjoint-trace",
+    "rem:adjoint-trace",
     "def:q-harmonic-form",
     "rem:base-field-independence",
   ],

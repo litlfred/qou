@@ -232,6 +232,22 @@ export default chapter({
       ],
     }),
 
+    // ── q-Harmonic analysis: heat equation, Laplace, Fourier ─────────
+    section({
+      title: "$q$-Harmonic analysis: heat equation, Laplace, Fourier",
+      label: "sec:q-harmonic-analysis",
+      blocks: [
+        "q-heat-equation",
+        "categorical-laplace-transform",
+        "categorical-fourier-transform",
+        "laplace-fourier-wick-rotation",
+        "q-exponential",
+        "q-exp-finite-field-obstruction",
+        "q-logarithm",
+        "q-dilogarithm",
+      ],
+    }),
+
     // ── Elaboration: categorical and analytic foundations ──────────────
     section({
       title: "Elaboration: categorical context",

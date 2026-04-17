@@ -75,5 +75,5 @@ grouplike — not its defining property.
 Reeb flow*: the unique Hopf-algebra element whose action on the
 substrate coordinate $Z$ produces the $q$-deformed rotation
 $\mathcal{L}_\xi Z = J\hbar_q Z$
-([substrate radial coordinate](#rem:substrate-radial-coordinate)).
+([substrate radial coordinate](#prop:substrate-radial-coordinate)).
 The Planck step $t_P(q) = q/(q-1)$ is one full $\exp_q$-orbit.

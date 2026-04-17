@@ -11,6 +11,6 @@ export default definition({
   uses: [
     "def:q-harmonic-form",
     "rem:q-laplacian-expansion",
-    "rem:substrate-radial-coordinate",
+    "prop:substrate-radial-coordinate",
   ],
 });
