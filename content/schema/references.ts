@@ -147,6 +147,28 @@ export const references: CSLData[] = [
     URL: "https://journals.aps.org/prx/abstract/10.1103/2dyh-yhrb",
   }),
 
+  // ── PRL: Ding et al. 2026 (pseudospin symmetry, magic numbers) ─
+  ref({
+    id: "ding2026",
+    type: "article-journal",
+    title:
+      "From Spin to Pseudospin Symmetry: The Origin of Magic Numbers in Nuclear Structure",
+    author: [
+      { family: "Ding", given: "C. R." },
+      { family: "Wang", given: "C. C." },
+      { family: "Yao", given: "J. M." },
+      { family: "Hergert", given: "H." },
+      { family: "Liang", given: "H. Z." },
+      { family: "Bogner", given: "S. K." },
+    ],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[2026]] },
+    volume: "136",
+    page: "052501",
+    DOI: "10.1103/8lzc-j1lx",
+    URL: "https://journals.aps.org/prl/abstract/10.1103/8lzc-j1lx",
+  }),
+
   // ── PRX: Carney et al. 2025 ───────────────────────────────────
   ref({
     id: "carney2025",

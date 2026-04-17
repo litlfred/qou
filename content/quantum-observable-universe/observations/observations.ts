@@ -97,6 +97,7 @@ export default chapter({
         "trace-ratio-interpretation",
         "shell-threading-conjecture",
         "magic-numbers-from-q",
+        "pseudospin-magic-alignment",
       ],
     }),
 
@@ -123,6 +124,7 @@ export default chapter({
         "golden-ratio-degeneration",
         "hydrogen-knot-structure",
         "sdp-regime-switch",
+        "islands-of-stability-from-q",
       ],
     }),
 
