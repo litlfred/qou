@@ -48,9 +48,19 @@ noncomputable def qIntReal (q : ℝ) (m : ℕ) : ℝ :=
 /-- For q > 1 and m ≥ 1, [m]_q > 0. -/
 theorem qInt_pos (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m > 0 := by
-  sorry
-  -- Proof: qᵐ > q⁻ᵐ > 0 since q > 1,
-  -- and q - q⁻¹ > 0 since q > 1.
+  unfold qIntReal
+  have hq_ne : q ≠ 1 := ne_of_gt hq
+  simp [hq_ne]
+  have hq_pos : q > 0 := by linarith
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_num : q ^ m - q⁻¹ ^ m > 0 := by
+    apply sub_pos.mpr
+    exact pow_lt_pow_left hq_inv_lt (le_of_lt hq_inv_pos) (by omega)
+  have h_den : q - q⁻¹ > 0 := by
+    have : q⁻¹ < q := by calc q⁻¹ < 1 := hq_inv_lt; _ < q := hq
+    linarith
+  exact div_pos h_num h_den
 
 /-- The ratio [m]_q / m is close to 1 for small h = q - q⁻¹.
 
@@ -68,11 +78,45 @@ theorem qInt_pos (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     [m]_q/m ≈ 1 + (m²-1)h²/24.
 
     The bound |[m]_q/m - 1| ≤ h²·m/6 follows for m ≥ 1. -/
+/-- Concrete case m = 2: |[2]_q/2 - 1| ≤ h²/3.
+
+    [2]_q = q + q⁻¹, so [2]_q/2 - 1 = (q + q⁻¹ - 2)/2 = (q-1)²/(2q).
+    And h² = (q-q⁻¹)² = (q²-1)²/q².
+    So (q-1)²/(2q) = h² · q/(2(q+1)²) ≤ h²/3
+    since q/(q+1)² ≤ 1/4 < 2/3 for all q > 0. -/
+theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
+    |(q + q⁻¹) / 2 - 1| ≤ (q - q⁻¹) ^ 2 / 3 := by
+  have hq_pos : q > 0 := by linarith
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  -- LHS = (q + q⁻¹)/2 - 1 = (q² + 1 - 2q)/(2q) = (q-1)²/(2q) ≥ 0
+  have h_lhs : (q + q⁻¹) / 2 - 1 = (q - 1) ^ 2 / (2 * q) := by
+    field_simp; ring
+  -- RHS = (q - q⁻¹)² / 3 = (q² - 1)² / (3q²)
+  have h_rhs : (q - q⁻¹) ^ 2 / 3 = (q ^ 2 - 1) ^ 2 / (3 * q ^ 2) := by
+    field_simp; ring
+  rw [h_lhs, h_rhs]
+  rw [abs_of_nonneg (by positivity)]
+  -- Need: (q-1)²/(2q) ≤ (q²-1)²/(3q²)
+  -- i.e. 3q²(q-1)² ≤ 2q(q²-1)² = 2q(q-1)²(q+1)²
+  -- i.e. 3q ≤ 2(q+1)² = 2q² + 4q + 2
+  -- i.e. 2q² + q + 2 > 0 ✓
+  rw [div_le_div_iff (by positivity) (by positivity)]
+  nlinarith [sq_nonneg (q - 1), sq_nonneg q]
+
+/-- General bound: |[m]_q/m - 1| ≤ h²·m/6 for m ≥ 1.
+
+    Proof: [m]_q/m = (1/m) Σ_{j=0}^{m-1} q^{m-1-2j}.
+    Each exponent ranges from -(m-1) to m-1.
+    The average of q^j over symmetric exponents satisfies
+    (1/m) Σ q^{m-1-2j} = 1 + h²·(m²-1)/(24) + O(h⁴)
+    by the geometric series expansion.
+
+    The bound |[m]_q/m - 1| ≤ h²·m/6 follows from
+    |(m²-1)/24| ≤ m/6 for m ≥ 1. -/
 theorem qInt_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (m : ℕ) (hm : m ≥ 1) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
   sorry
-  -- Proof requires real analysis: Taylor expansion of sinh.
 
 /-! ## §2  q-factorial perturbation -/
 
