@@ -1391,6 +1391,20 @@ def binding_energy_bw(Z, N, k=3):
         h_N = 1.0 - magic_proximity(N)
         B -= DELTA_HOOK * (h_Z + h_N) * A**(1.0/3.0)
 
+        # ── (2,2) partition: Wigner energy (T=0 np pairing) ────
+        # For N=Z nuclei: the self-conjugate partition (2,2) at k=4
+        # contributes extra binding from isoscalar pn pairing.
+        # ΔB = V_pn × α × Z / A where:
+        #   V_pn = W_std × (z - h/2)  [prop:confined-knot-binding]
+        #   α = m_e × 8G(Catalan)     [prop:binding-scale-catalan]
+        # This is the Wigner energy from unpaired pn crossings whose
+        # binding is not captured by the bulk BW polynomial.
+        # Active for N=Z only (δ_{N,Z}).
+        # Reference: partition (2,2), Kerov q-hook walk [kerov1996].
+        if Z == N and A >= 5:
+            V_pn = W_STD * (z - h / 2)
+            B += V_pn * ALPHA * Z / A
+
     # ── H₅+ volume perturbation ─────────────────────────────
     if k >= 5 and not is_fig8:
         T_isospin = abs(N - Z) / 2.0
