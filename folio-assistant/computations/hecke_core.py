@@ -415,7 +415,7 @@ def lp_shadow_price(partition):
 # light atoms.  The resolvent's built-in damping envelope does not
 # benefit from further partitions — q-heat already absorbs higher-k
 # contributions via (μ_λ + s)⁻¹ decay.
-K_PARTITION_MAX = 6
+K_PARTITION_MAX = 9
 # Metadata-only partitions reach up to K_GAUSSIAN_MAX for the
 # q-Gaussian fallback (no YSN matrices built — just d_q, shadow_price,
 # q_hook, Wedderburn weight which are cheap to compute for any k).
@@ -2296,14 +2296,13 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             log_cur = (s['log_norm'] + math.log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
             raw_delta = s['scale'] * (log_cur - s['log_prev'])
-            # Per-step complementary slackness: the LP dual at step k
-            # has its own tight/slack structure.  Only count this step's
-            # delta if the running trace at this step is ≤ 0 (tight).
-            # The B₃ "surface weight" (k+1)^(-1/3) (previously bolted on
-            # here, post-hoc to match BW A^{2/3}) has been removed —
-            # B₃ is a 2-generator group in a 2D plane, not a 3D lattice.
-            step_is_tight = tr_run <= 0
-            delta = raw_delta if step_is_tight else 0.0
+            # LP complementary slackness is a FINAL-STATE condition:
+            # y_λ* × tr(Φ_λ*) = 0 on the SOLVED LP.  The per-step
+            # tightness filter would be a heuristic approximation of
+            # this; experimentally it over-gates (k-instability).
+            # Here we accumulate raw deltas at every step; the final
+            # sign gate is applied in Pass 2 below.
+            delta = raw_delta
             s['cumul_partition'] += delta
             s['log_prev'] = log_cur
             # Store raw trace sign for final-state complementary slackness.
@@ -2368,17 +2367,31 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                 'n_gaussian_partitions': len(active_gaussian),
             })
 
-    # Per-step gating is now inline (tr_run sign checked at each step),
-    # so cumul_total already contains only tight-step contributions.
+    # ── Pass 2: final-state complementary slackness gate ─────────
+    # LP duality theorem: on the OPTIMAL primal-dual pair (Φ*, y*),
+    #   y_λ* × ⟨Φ*, π_λ⟩_F = 0  for every partition λ.
+    # So y_λ* > 0 only when the Frobenius constraint is TIGHT at the
+    # atom's FINAL state, i.e. tr(M_λ(W_atom)) ≤ 0.  Partitions with
+    # positive final trace are SLACK → y_λ* = 0 → zero contribution.
+    # Replace cumul_total with the gated sum over tight partitions.
+    gated_total = 0.0
+    n_tight = 0
+    for s in state:
+        if s.get('final_tr_sign', 1) <= 0:
+            gated_total += s['cumul_partition']
+            n_tight += 1
+
     if return_per_step:
         if per_step:
-            per_step[-1]['gated_total_MeV'] = cumul_total
+            per_step[-1]['raw_total_MeV'] = cumul_total
+            per_step[-1]['gated_total_MeV'] = gated_total
             per_step[-1]['n_active_exact'] = len(active_exact)
             per_step[-1]['n_active_gaussian'] = len(active_gaussian)
+            per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
-        return cumul_total, per_step
-    return cumul_total
+        return gated_total, per_step
+    return gated_total
 
 
 def binding_energy_bw(Z, N, k=3, unified=False):
