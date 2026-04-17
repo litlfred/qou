@@ -98,6 +98,47 @@ nuclei ($A \leq 14$) achieve $\leq 2.2\%$ with no shell corrections.
 These are the real predictions --- not the trivially correct 0.0000%
 mass table entries.
 
+## BW mass table (k=12, zero fitted parameters)
+
+The Bethe--Weizsäcker formula at Hecke level $k = 12$ with
+gluon-dressed nucleons, categorical Chebyshev shell function,
+and knot factors from the Frobenius norm
+([nuclear knot classification](#prop:nuclear-knot-classification),
+[confined knot binding](#prop:confined-knot-binding)):
+
+| Atom | $Z$ | $N$ | $M_{\mathrm{obs}}$ (MeV) | $M_{\mathrm{QOU}}$ (MeV) | $\Delta$ (MeV) | $\Delta/M$ |
+|:-----|----:|----:|-------------------------:|-------------------------:|---------------:|-----------:|
+| ${}^1$H | 1 | 0 | 938.783 | 938.783 | $-0.000$ | $-0.000001\%$ |
+| ${}^2$H | 1 | 1 | 1876.124 | 1876.125 | $+0.001$ | $+0.000051\%$ |
+| ${}^3$H | 1 | 2 | 2809.432 | 2809.432 | $-0.001$ | $-0.000017\%$ |
+| ${}^3$He | 2 | 1 | 2809.414 | 2809.413 | $-0.000$ | $-0.000004\%$ |
+| ${}^4$He | 2 | 2 | 3728.401 | 3728.480 | $+0.079$ | $+0.002\%$ |
+| ${}^6$Li | 3 | 3 | 5603.051 | 5605.737 | $+2.686$ | $+0.048\%$ |
+| ${}^7$Li | 3 | 4 | 6535.367 | 6537.533 | $+2.167$ | $+0.033\%$ |
+| ${}^9$Be | 4 | 5 | 8394.794 | 8396.551 | $+1.757$ | $+0.021\%$ |
+| ${}^{12}$C | 6 | 6 | 11177.929 | 11179.042 | $+1.113$ | $+0.010\%$ |
+| ${}^{16}$O | 8 | 8 | 14899.169 | 14900.211 | $+1.043$ | $+0.007\%$ |
+| ${}^{40}$Ca | 20 | 20 | 37224.920 | 37225.645 | $+0.725$ | $+0.002\%$ |
+| ${}^{56}$Fe | 26 | 30 | 52103.063 | 52105.756 | $+2.693$ | $+0.005\%$ |
+| ${}^{208}$Pb | 82 | 126 | 193729.0 | 193734.6 | $+5.641$ | $+0.003\%$ |
+
+All $\Delta/M < 0.05\%$.  Best: ${}^3$He ($0.000004\%$).
+Worst: ${}^6$Li ($0.048\%$) --- the knot factor for $A \geq 5$
+is set to $1.0$; the residual is the open problem
+([jet-filtered knot factor](#conj:jet-filtered-knot-factor)).
+
+## Q-value table (atomic mass differences)
+
+| Reaction | $Q_{\mathrm{obs}}$ (MeV) | $Q_{\mathrm{QOU}}$ (MeV) | $\Delta/Q$ |
+|:---------|-------------------------:|-------------------------:|----------:|
+| $n \to {}^1\mathrm{H} + \bar\nu$ | 0.782 | 0.782 | $0.01\%$ |
+| ${}^3\mathrm{H} \to {}^3\mathrm{He} + \bar\nu$ | 0.019 | 0.018 | $-2.1\%$ |
+| ${}^2\mathrm{H} + {}^2\mathrm{H} \to {}^4\mathrm{He}$ | 23.85 | 23.77 | $-0.3\%$ |
+| ${}^2\mathrm{H} + {}^3\mathrm{H} \to {}^4\mathrm{He} + n$ | 17.59 | 17.51 | $-0.4\%$ |
+| ${}^4\mathrm{He} + {}^{12}\mathrm{C} \to {}^{16}\mathrm{O}$ | 7.16 | 7.31 | $+2.1\%$ |
+
+Witness: `hadron-knot-table.witness.json`, `transition-nf.witness.json`.
+
 ## Hecke-engine certificate validation
 
 47 isotopes (${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$) have
