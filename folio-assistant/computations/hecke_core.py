@@ -338,7 +338,7 @@ def lp_shadow_price(partition):
 # [4,1,1]+[3,1,1,1] isospin, [4,2]+[2,2,1,1] codim-4 form factor).
 # Push K_PARTITION_MAX higher (e.g. 7, 8) to absorb the H₇⁺ descent
 # corrections at the cost of larger YSN matrix builds.
-K_PARTITION_MAX = 7
+K_PARTITION_MAX = 8
 
 _PARTITION_TABLE = []
 for _k in range(2, K_PARTITION_MAX + 1):
