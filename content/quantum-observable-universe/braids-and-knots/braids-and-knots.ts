@@ -349,6 +349,7 @@ export default chapter({
         "stable-atom-decidable",
         "unstable-atom",
         "unstable-atom-decay-channel",
+        "ilp-solution-count-unwrap",
       ],
     }),
 
