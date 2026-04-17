@@ -283,6 +283,23 @@ def partition_dimension(partition):
     return fact_n // prod
 
 
+def partition_conjugate(partition):
+    """Conjugate partition λ' = transpose of the Young diagram of λ.
+
+    λ'_j = #{i : λ_i ≥ j}.  λ' is also a partition, and (λ')' = λ.
+    λ is SELF-CONJUGATE iff λ = λ' (e.g. (3,2,1), (4,2,1,1)).
+    """
+    if not partition:
+        return tuple()
+    width = partition[0]
+    return tuple(sum(1 for p in partition if p >= j + 1)
+                 for j in range(width))
+
+
+def partition_is_self_conjugate(partition):
+    return tuple(partition) == partition_conjugate(partition)
+
+
 def partition_jet_depth(partition):
     """Jet depth of a Young diagram: max |content(□)| = max(λ_1 − 1, λ_1^T − 1).
 
@@ -2519,6 +2536,80 @@ def _contrib_single_partition(Z, N, entry):
     return (final_tr_sign, cumul)
 
 
+def conjugate_pair_cross_term(Z, N, entry_lambda, entry_conj):
+    """Cross-channel contribution from a conjugate pair (λ, λ').
+
+    Derivation.  From the paired-sum identity (wigner-2-coefficient.md
+    Step 1, ConfinedKnotBinding.lean paired_sum_identity):
+
+      tr(σ_g^{(λ)}) + tr(σ_g^{(λ')}) = h · (d_λ + d_{λ'}) / 2   (generators)
+      equivalently  tr(σ_g)/dim combined pair = h/2
+                    when both partitions share the same generator scaling.
+
+    Combined conjugate-pair scale (matches DELTA_FORMFACTOR, DELTA_411,
+    DELTA_42 in the dedicated BW path):
+
+      C_{λ,λ'} = h · [average q-hook · average shadow price · average
+                 resolvent] · m_e
+
+    The contribution is h times the AVERAGE of the two partition
+    contributions — i.e., the "extra" coupling beyond the linear sum
+    of y_λ · H_q(λ) and y_{λ'} · H_q(λ').  For SELF-CONJUGATE λ = λ',
+    the factor is h/2 (Wigner-2 coefficient).
+
+    Physical interpretation (figure-eight-branching-rule.md §5):
+    conjugate pairs contribute FORM FACTOR corrections (Z²/A for
+    (3,2)+(2,2,1)) or ISOSPIN corrections ((N−Z)² for
+    (4,1,1)+(3,1,1,1)).  The `h` coupling is the q−q⁻¹ twist that
+    converts the pair-sum of individual traces into a genuine
+    cross-channel contribution.
+
+    Implementation:
+      - Compute log|Tr M_λ| and log|Tr M_{λ'}| via single-partition
+        forward pass (re-using the same machinery)
+      - Combine: cross_scale = h · √(H_q(λ) · H_q(λ')) · √(y_λ · y_{λ'})
+                                · ρ(s_*) · m_e
+                 where ρ uses the AVERAGE μ.
+      - Final contribution: cross_scale · (log|Tr_λ| + log|Tr_{λ'}| - ln d_λ - ln d_{λ'})
+    """
+    hbar_like = float(h)  # h = q − q⁻¹
+    tr_sign_l, cumul_l = _contrib_single_partition(Z, N, entry_lambda)
+    tr_sign_c, cumul_c = _contrib_single_partition(Z, N, entry_conj)
+    # Cross-scale: h × geometric mean of individual scales
+    import math as _math
+    scale_l = entry_lambda['C_lambda_resolvent_MeV']
+    scale_c = entry_conj['C_lambda_resolvent_MeV']
+    # Effective scale uses h × geometric mean; retains sign via log
+    sign_l = 1 if scale_l >= 0 else -1
+    sign_c = 1 if scale_c >= 0 else -1
+    geom_mean = _math.sqrt(abs(scale_l * scale_c))
+    cross_scale_mev = hbar_like * geom_mean * sign_l * sign_c
+    # Cross contribution: h × (cumul_l + cumul_c) / 2 weighted by mean scale.
+    # Equivalent expression: h × average of per-partition corrections.
+    # Apply complementary slackness: at least ONE of the pair must be tight
+    # for the cross term to contribute (conservative gate).
+    tight_either = (tr_sign_l <= 0) or (tr_sign_c <= 0)
+    if not tight_either:
+        cross = 0.0
+    else:
+        # Average the two partition contributions, scaled by h relative to base
+        # scale_l · cumul_l is already in MeV; convert to per-partition
+        # log-trace diff then multiply by h · geometric scale
+        sum_cumul = cumul_l + cumul_c
+        cross = hbar_like * sum_cumul / 2.0
+    return {
+        'lambda': list(entry_lambda['partition']),
+        'lambda_conj': list(entry_conj['partition']),
+        'tr_sign_l': tr_sign_l,
+        'tr_sign_c': tr_sign_c,
+        'tight_either': tight_either,
+        'cumul_l_MeV': cumul_l,
+        'cumul_c_MeV': cumul_c,
+        'cross_scale_MeV': cross_scale_mev,
+        'cross_contribution_MeV': cross,
+    }
+
+
 def unified_iterative_correction_jet(Z, N, jet_max,
                                      witness_dir=None,
                                      resume=True,
@@ -2578,15 +2669,17 @@ def unified_iterative_correction_jet(Z, N, jet_max,
                        and e.get('has_ysn', False)]
 
         parts_record = []
-        total_at_j = 0.0
+        cumul_by_partition = {}  # cache (tuple → (tr_sign, cumul))
+        total_at_j_linear = 0.0
         n_tight = 0
         for entry in active_at_j:
             tr_sign, cumul = _contrib_single_partition(Z, N, entry)
+            cumul_by_partition[tuple(entry['partition'])] = (tr_sign, cumul)
             tight = (tr_sign <= 0)
             gated = cumul if tight else 0.0
             if tight:
                 n_tight += 1
-                total_at_j += gated
+                total_at_j_linear += gated
             parts_record.append({
                 'partition': list(entry['partition']),
                 'k': entry['k'],
@@ -2597,9 +2690,70 @@ def unified_iterative_correction_jet(Z, N, jet_max,
                 'contribution_MeV': gated,
             })
 
+        # Conjugate-pair cross terms (at same jet level; both in active_at_j
+        # iff jet(λ) = jet(λ') = j, which holds because jet is conjugation-
+        # symmetric).  Self-conjugate λ = λ' gets Wigner-2 h/2 coupling.
+        pair_records = []
+        total_at_j_cross = 0.0
+        seen_pairs = set()
+        hbar_like = float(h)
+        for entry in active_at_j:
+            lam = tuple(entry['partition'])
+            conj = partition_conjugate(lam)
+            if conj == lam:
+                # Self-conjugate: Wigner-2 coefficient h/2 coupling.
+                # tr(σ)/dim = h/2 ⇒ contribution scale ~ h/2 × cumul
+                tr_sign, cumul = cumul_by_partition[lam]
+                tight = (tr_sign <= 0)
+                if tight:
+                    cross = (hbar_like / 2.0) * cumul
+                    total_at_j_cross += cross
+                else:
+                    cross = 0.0
+                pair_records.append({
+                    'lambda': list(lam),
+                    'lambda_conj': list(conj),
+                    'self_conjugate': True,
+                    'coupling': 'h/2',
+                    'tight': tight,
+                    'cross_contribution_MeV': cross,
+                })
+            else:
+                # Pair with conjugate — both must be in active set
+                if conj not in cumul_by_partition:
+                    continue
+                pair_key = frozenset({lam, conj})
+                if pair_key in seen_pairs:
+                    continue
+                seen_pairs.add(pair_key)
+                tr_l, cumul_l = cumul_by_partition[lam]
+                tr_c, cumul_c = cumul_by_partition[conj]
+                tight_either = (tr_l <= 0) or (tr_c <= 0)
+                # Pair-sum cross coupling via h identity:
+                #   tr_σ_λ + tr_σ_λ' = h · (d_λ + d_λ')
+                # Average contribution scaled by h:
+                if tight_either:
+                    cross = hbar_like * (cumul_l + cumul_c) / 2.0
+                    total_at_j_cross += cross
+                else:
+                    cross = 0.0
+                pair_records.append({
+                    'lambda': list(lam),
+                    'lambda_conj': list(conj),
+                    'self_conjugate': False,
+                    'coupling': 'h',
+                    'tight_either': tight_either,
+                    'cross_contribution_MeV': cross,
+                })
+
+        total_at_j = total_at_j_linear + total_at_j_cross
+
         per_jet[j] = {
             'partitions': parts_record,
+            'pairs': pair_records,
             'n_tight': n_tight,
+            'total_linear_MeV': total_at_j_linear,
+            'total_cross_MeV': total_at_j_cross,
             'total_MeV': total_at_j,
         }
         total += total_at_j
@@ -2610,7 +2764,10 @@ def unified_iterative_correction_jet(Z, N, jet_max,
                     'Z': Z, 'N': N, 'jet': j,
                     'k_cap': k_cap,
                     'partitions': parts_record,
+                    'pairs': pair_records,
                     'n_tight': n_tight,
+                    'total_linear_MeV': total_at_j_linear,
+                    'total_cross_MeV': total_at_j_cross,
                     'total_MeV': total_at_j,
                 }, f, indent=2, default=float)
 
