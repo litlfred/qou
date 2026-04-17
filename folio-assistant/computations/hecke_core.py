@@ -2960,6 +2960,135 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
     return (norm_sq, per, max_ln)
 
 
+def atom_per_generator_volumes(Z, N, include_inter=True):
+    """Per-generator additive Wedderburn volumes V̂_i^full for the atom braid.
+
+    Returns a list of length n_strands - 1 = 3A - 1 (atom case) or
+    n_strands - 1 = 2A (free case) of dicts:
+        [{"std": Vs, "sym": sp, "alt": ap, "full": Vf}, ...]
+    indexed by generator position i = 0, 1, ..., len-1.
+
+    These are the V̂_i^full feeding the tower formula
+    (prop:mass-endomorphism-tower):
+        𝔪(W) = |Π V̂_i| + Σ Φ_q(|V̂_i|)
+              + z² Σ_{|i-j|=1} Φ_q(|V̂_i V̂_j|).
+
+    Implementation: replays _step_chain_generic for each nucleon, but
+    instead of tracking a single accumulated YSN matrix, accumulates
+    per-generator (a, b, sp, ap) — the additive Wedderburn channel
+    state.  Mirrors mass_endomorphism.additive_wedderburn_volumes
+    extended to A-nucleon atoms.
+
+    Parameters
+    ----------
+    Z, N : int
+        Proton and neutron counts.
+    include_inter : bool
+        If True: full atom braid with pp/nn/pn inter-nucleon crossings.
+        If False: free disconnected-tensor baseline.
+
+    Returns
+    -------
+    list of dict, one per generator.
+    """
+    A = Z + N
+    if A < 1:
+        return []
+
+    # Nucleon ordering (Z protons then N neutrons) — matches
+    # atom_character_raw convention.
+    ordering = ['p'] * Z + ['n'] * N
+
+    # n_gens for the joint braid
+    if include_inter:
+        n_strands = 3 * A
+        n_gens_total = n_strands - 1  # 3A - 1
+    else:
+        # Free baseline: per-nucleon disjoint blocks of 2 generators each
+        n_gens_total = 2 * A
+
+    # Per-generator accumulators (a, b for std; sp for sym; ap for alt)
+    a_arr  = [0.0] * n_gens_total
+    b_arr  = [1.0] * n_gens_total
+    sp_arr = [1.0] * n_gens_total
+    ap_arr = [1.0] * n_gens_total
+
+    # Build the atom braid by walking the nucleon chain.  For each
+    # nucleon k, the intra-nucleon crossings live on local gens; for
+    # the joint braid, these are mapped to global gens 3k, 3k+1.
+    # Inter-nucleon crossings (when include_inter) live on gen 3k+2,
+    # connecting nucleon k with nucleon k+1.
+    for k, nuc in enumerate(ordering):
+        intra    = _PROTON_G0 if nuc == 'p' else _NEUTRON_G0
+        intra_g1 = _PROTON_G1 if nuc == 'p' else _NEUTRON_G1
+        if include_inter:
+            base_g0 = 3 * k       # global gen for first intra slot
+            base_g1 = 3 * k + 1   # global gen for second intra slot
+        else:
+            base_g0 = 2 * k
+            base_g1 = 2 * k + 1
+        # Intra-nucleon, first generator slot
+        for c, d in intra:
+            i = base_g0
+            a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
+            b_new = a_arr[i] * c + b_arr[i] * d
+            a_arr[i] = a_new
+            b_arr[i] = b_new
+            sp_arr[i] *= c * q0 + d
+            ap_arr[i] *= -c * qi + d
+        # Intra-nucleon, second generator slot
+        for c, d in intra_g1:
+            i = base_g1
+            a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
+            b_new = a_arr[i] * c + b_arr[i] * d
+            a_arr[i] = a_new
+            b_arr[i] = b_new
+            sp_arr[i] *= c * q0 + d
+            ap_arr[i] *= -c * qi + d
+        # Inter-nucleon crossings (only when include_inter and k < A-1)
+        if include_inter and k < A - 1:
+            i = 3 * k + 2  # global gen for inter-nucleon between k and k+1
+            next_nuc = ordering[k + 1]
+            if nuc == 'p' and next_nuc == 'p':
+                pair_cross = [(1.0, 0.0)]      # pp: σ
+            elif nuc == 'n' and next_nuc == 'n':
+                pair_cross = [(1.0, -h)]       # nn: σ⁻¹
+            else:
+                pair_cross = [(1.0, -h / 2)]   # pn: ½(σ + σ⁻¹)
+            for c, d in pair_cross:
+                a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
+                b_new = a_arr[i] * c + b_arr[i] * d
+                a_arr[i] = a_new
+                b_arr[i] = b_new
+                sp_arr[i] *= c * q0 + d
+                ap_arr[i] *= -c * qi + d
+
+    # Build per-generator V̂_full from accumulators
+    z_mark = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+    # Wedderburn weights (H_3 weights — same as mass_endomorphism.py)
+    nf3 = q_int(2) * q_int(3) * q_int(1)  # [3]_q!  (with [1]_q = 1)
+    # Use H_3 weights as in mass_endomorphism (1-dim sym, 2-dim std, 1-dim alt)
+    # W_sym, W_std, W_alt computed from quantum dimensions
+    qdim_sym = 1.0
+    qdim_std = q_int(2)
+    qdim_alt = 1.0
+    nf3_val = q_int(1) * q_int(2) * q_int(3)
+    w_sym = qdim_sym ** 2 / nf3_val
+    w_std = qdim_std ** 2 / nf3_val
+    w_alt = qdim_alt ** 2 / nf3_val
+    wt = w_sym + w_std + w_alt
+    w_sym /= wt
+    w_std /= wt
+    w_alt /= wt
+
+    vols = []
+    for i in range(n_gens_total):
+        Vs = z_mark * a_arr[i] + b_arr[i]
+        Vf = w_sym * sp_arr[i] + w_std * Vs + w_alt * ap_arr[i]
+        vols.append({"std": Vs, "sym": sp_arr[i], "alt": ap_arr[i], "full": Vf})
+    return vols
+
+
 def free_nucleon_frobenius_norm_sq(Z, N, k_cap=None):
     """Frobenius-norm squared of the free-nucleon baseline.
 
