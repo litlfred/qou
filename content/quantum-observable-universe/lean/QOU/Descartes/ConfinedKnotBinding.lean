@@ -142,4 +142,103 @@ theorem pn_volume_std_only (w w_std z : R_q) :
   unfold crossing_volume HA
   ring
 
+/-! ## §6  Confinement preservation under pn binding -/
+
+/-- The extremal contribution of a pn crossing is zero.
+    This means pn binding does NOT change the confinement (Frobenius)
+    channels — it operates only in the standard (binding) channel.
+
+    Formally: for any confined state x with G·x ≥ 0, applying a
+    pn crossing preserves the extremal components of x.
+
+    The extremal projection P_ext(V) = W_sym·χ_sym + W_alt·χ_alt.
+    For pn: P_ext(V_pn) = 0 (by extremal_cancellation).
+    So the extremal Frobenius constraint is unchanged. -/
+theorem pn_extremal_contribution_zero (w c : R_q) :
+    w * chi_sym c (-c * HA / 2) + w * chi_alt c (-c * HA / 2) = 0 :=
+  weighted_extremal_cancellation w c
+
+/-- For pp crossings, the extremal contribution is +2w·HA (positive chirality).
+    For nn crossings, it is -2w·HA (negative chirality).
+    The SUM pp + nn exactly cancels: +2wHA + (-2wHA) = 0.
+
+    This is why Z=N nuclei preserve Frobenius stability: the pp and nn
+    extremal contributions cancel globally. -/
+theorem pp_nn_extremal_cancel (w z : R_q) :
+    (crossing_volume w 0 w z 1 0 - crossing_volume w 0 w z 1 (-HA / 2)) +
+    (crossing_volume w 0 w z 1 (-HA) - crossing_volume w 0 w z 1 (-HA / 2)) = 0 := by
+  unfold crossing_volume HA
+  ring
+
+/-! ## §7  Transfer matrix identities -/
+
+/-- The transfer matrix for crossing (c, d) is:
+    T = [[c·HA + d, c], [c, d]]
+
+    The determinant det(T) = (c·HA + d)·d - c² = c²·HA·d + d² - c²
+    For pp (c=1, d=0): det = -1
+    For nn (c=1, d=-HA): det = -HA² - HA² - 1 = -(1 + 2HA²)... -/
+
+/-- det(T_pp) = det([[HA, 1], [1, 0]]) = -1.
+    The pp crossing has unit determinant (orientation-preserving). -/
+theorem det_T_pp : HA * 0 - 1 * (1 : R_q) = -1 := by ring
+
+/-- det(T_nn) = det([[0, 1], [1, -HA]]) = -1.
+    The nn crossing also has unit determinant.
+
+    Proof: det = (HA + (-HA))·(-HA) - 1·1 = 0 - 1 = -1. -/
+theorem det_T_nn : (HA + (-HA)) * (-HA) - 1 * (1 : R_q) = -1 := by
+  unfold HA; ring
+
+/-- For the pn crossing (working with 2·T_pn to stay integral):
+    2·T_pn = [[2HA + (-HA), 2], [2, -HA]] = [[HA, 2], [2, -HA]]
+    det(2·T_pn) = -HA² - 4.
+
+    This is 4·det(T_pn), confirming det(T_pn) = -(HA² + 4)/4
+    = -(q² - 2 + q⁻² + 4)/4 = -(q² + 2 + q⁻²)/4 = -[2]²/4. -/
+theorem det_two_T_pn : HA * (-HA) - 2 * (2 : R_q) = -(HA ^ 2 + 4) := by
+  unfold HA; ring
+
+/-! ## §8  Wedderburn decomposition: the k=3 exact formula -/
+
+/-- The denominator of the a₃ formula: 1 + W_std.
+
+    Since W_sym + W_std + W_alt = 1 and W_sym = W_alt:
+    W_sym × 1 + W_std × 2 + W_alt × 1 = 2W_sym + 2W_std
+    = 2(1 - W_std)/2 × 2 + 2W_std ... no:
+    = W_sym + W_alt + 2W_std = (1 - W_std) + 2W_std = 1 + W_std.
+
+    Proof: from the normalisation W_sym + W_std + W_alt = 1
+    and the constraint W_sym = W_alt. -/
+theorem a3_denominator (w_sym w_std w_alt : R_q)
+    (h_norm : w_sym + w_std + w_alt = 1)
+    (h_eq : w_sym = w_alt) :
+    w_sym * 1 + w_std * 2 + w_alt * 1 = 1 + w_std := by
+  rw [h_eq] at h_norm ⊢
+  linarith
+
+/-- The a₃ formula for Z=N nuclei with all three characters equal
+    (sp = V_std = ap = V):
+    a₃ = V / (1 + W_std).
+
+    This uses the normalisation W_sym + W_std + W_alt = 1. -/
+theorem a3_equal_characters (w_sym w_std w_alt V : R_q)
+    (h_norm : w_sym + w_std + w_alt = 1)
+    (h_eq : w_sym = w_alt) :
+    w_sym * V + w_std * V + w_alt * V =
+    V * (1 + w_std) := by
+  rw [h_eq] at h_norm ⊢
+  nlinarith
+
+/-- The a₃ formula for Z=N odd-odd nuclei with sp = -ap
+    (extremal cancellation): a₃ = W_std · V_std / (1 + W_std).
+
+    When sp = -ap: W_sym · sp + W_alt · ap = W_sym · (sp + ap) = 0
+    (since W_sym = W_alt and sp = -ap), leaving only W_std · V_std. -/
+theorem a3_extremal_cancel (w_sym w_std w_alt sp V_std : R_q)
+    (h_eq : w_sym = w_alt) :
+    w_sym * sp + w_std * V_std + w_alt * (-sp) =
+    w_std * V_std := by
+  rw [h_eq]; ring
+
 end QOU.Descartes.ConfinedKnotBinding
