@@ -13,5 +13,5 @@ HO gap.
 
 In a QOU with a different Borromean-like structure (e.g. a
 4-component Brunnian link with crossing number $c$), the
-intruder threshold would shift to $N \geq c$, producing
+shell-transition threshold would shift to $N \geq c$, producing
 different stability pairs.

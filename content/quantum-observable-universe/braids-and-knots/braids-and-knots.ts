@@ -283,8 +283,8 @@ export default chapter({
         "hadron-proton-example",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",
-        "nuclear-shell-intruder",
-        "nuclear-shell-intruder-interpretation",
+        "shell-transition-knot",
+        "shell-transition-knot-interpretation",
       ],
     }),
 

@@ -65,7 +65,7 @@ where $j - \ell = +\tfrac{1}{2}$ for the high-$j$ level
 (pushed **down** in energy) and $j - \ell = -\tfrac{1}{2}$
 for the low-$j$ level (pushed **up**).
 
-**Step 3: The intruder threshold at $N = 3$.**
+**Step 3: The shell-transition threshold at $N = 3$.**
 
 The Borromean baryon $\mathcal{B}_3$ has exactly **3 internal
 crossings** (the minimum crossing number of the Borromean
@@ -89,11 +89,11 @@ crossings.
 When the threshold is exceeded, the highest-$j$ sub-level at
 HO level $N$ — with $j = N + \tfrac{1}{2}$ and $2(N+1)$
 states — drops below the gap and joins the **previous shell
-closure**.  This is the **intruder level**.
+closure**.  This is the **shell-transition level**.
 
 **Step 4: The stability pairs.**
 
-| $K$ | HO $C_K$ | Intruder | States | Stability pair |
+| $K$ | HO $C_K$ | Shell-transition | States | Stability pair |
 |----:|----------:|----------|-------:|:---:|
 | 0 | 2 | — | — | **2** ✓ |
 | 1 | 8 | — | — | **8** ✓ |
@@ -109,7 +109,7 @@ closure**.  This is the **intruder level**.
 | 5 | 112 | accumulated | — | — |
 | — | 112 | $1i_{13/2}$ (arrives) | $+14$ | **126** ✓ |
 
-The intruder levels with their state counts $2(N+1)$:
+The shell-transition levels with their state counts $2(N+1)$:
 
 | From $N$ | Level | $j$ | States $2(N+1)$ | Creates |
 |---------:|-------|----:|----------------:|--------:|
@@ -122,10 +122,10 @@ The intruder levels with their state counts $2(N+1)$:
 
 *Proof.*
 The HO cumulative $C_N = (N+1)(N+2)(N+3)/3$ is standard.
-The intruder mechanism at $N \geq 3$ follows from the
+The shell-transition mechanism at $N \geq 3$ follows from the
 spin-orbit coupling exceeding the HO gap, with the
 Borromean crossing number $3$ setting the threshold.  The
-state count $2(N+1)$ for the intruder level is the degeneracy
+state count $2(N+1)$ for the shell-transition level is the degeneracy
 of the $j = N + 1/2$ sub-level.  The cumulative result
 matches $\{2, 8, 20, 28, 50, 82, 126\}$ by direct
 computation. $\square$

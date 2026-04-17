@@ -12,7 +12,7 @@ export default remark({
     "prop:genus-filtration-ideal",
     "prop:vertex-algebra-jet-relations",
     "prop:shell-structure-eigenvalues",
-    "prop:nuclear-shell-intruder",
+    "prop:shell-transition-knot",
     "rem:fivefold-symmetry",
     "thm:embeddability-closure",
   ],

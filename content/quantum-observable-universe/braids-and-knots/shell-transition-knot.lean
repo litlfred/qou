@@ -1,6 +1,6 @@
 -- Ref: [manuscript] Ch. 4
--- Stability pairs from Borromean spin-orbit intruder levels.
--- The 3 crossings of B_3 set the intruder threshold at N ≥ 3.
+-- Stability pairs from Borromean spin-orbit shell-transition levels.
+-- The 3 crossings of B_3 set the shell-transition threshold at N ≥ 3.
 
 noncomputable section
 
@@ -38,34 +38,34 @@ theorem ho_closures :
   native_decide
 
 -- ═══════════════════════════════════════════════════════════════════
--- §2. Intruder level state counts
+-- §2. Shell-transition level state counts
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The intruder level from HO shell N has j = N + 1/2 and
+/-- The shell-transition level from HO shell N has j = N + 1/2 and
     2(N+1) states. -/
-def intruderStates (N : ℕ) : ℕ := 2 * (N + 1)
+def shellTransitionStates (N : ℕ) : ℕ := 2 * (N + 1)
 
 /-- Borromean crossing number. -/
 def borromeanCrossingNumber : ℕ := 3
 
-/-- The intruder threshold: N ≥ borromeanCrossingNumber. -/
-def isIntruder (N : ℕ) : Bool := N ≥ borromeanCrossingNumber
+/-- The shell-transition threshold: N ≥ borromeanCrossingNumber. -/
+def isShell-transition (N : ℕ) : Bool := N ≥ borromeanCrossingNumber
 
 -- ═══════════════════════════════════════════════════════════════════
--- §3. Stability pairs from intruder mechanism
+-- §3. Stability pairs from shell-transition mechanism
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Compute the stability pair at level K.
     For K ≤ 2: just the HO cumulative.
-    For K ≥ 3: HO cumulative at K-1, plus intruder from N=K. -/
+    For K ≥ 3: HO cumulative at K-1, plus shell-transition from N=K. -/
 def stabilityPair : ℕ → ℕ
   | 0 => 2     -- C_0
   | 1 => 8     -- C_1
   | 2 => 20    -- C_2
-  | 3 => 28    -- C_2 + intruder(3) = 20 + 8
-  | 4 => 50    -- C_3 - intruder(3) + intruder(4) = 40 - 8 + 10 + 8 = 50
-  | 5 => 82    -- previous + remaining + intruder(5)
-  | 6 => 126   -- previous + remaining + intruder(6)
+  | 3 => 28    -- C_2 + shell-transition(3) = 20 + 8
+  | 4 => 50    -- C_3 - shell-transition(3) + shell-transition(4) = 40 - 8 + 10 + 8 = 50
+  | 5 => 82    -- previous + remaining + shell-transition(5)
+  | 6 => 126   -- previous + remaining + shell-transition(6)
   | _ => 0     -- beyond known
 
 /-- The 7 stability pairs match the observed values. -/
@@ -78,29 +78,29 @@ theorem stability_pairs_correct :
 /-- The observed stability pairs as a list. -/
 def observedStabilityPairs : List ℕ := [2, 8, 20, 28, 50, 82, 126]
 
-/-- First three stability pairs equal HO closures (no intruder). -/
+/-- First three stability pairs equal HO closures (no shell-transition). -/
 theorem first_three_eq_ho :
     stabilityPair 0 = hoCumulative 0 ∧
     stabilityPair 1 = hoCumulative 1 ∧
     stabilityPair 2 = hoCumulative 2 := by
   native_decide
 
-/-- The 4th stability pair (28) = HO(2) + intruder from N=3. -/
+/-- The 4th stability pair (28) = HO(2) + shell-transition from N=3. -/
 theorem fourth_pair :
-    stabilityPair 3 = hoCumulative 2 + intruderStates 3 := by
+    stabilityPair 3 = hoCumulative 2 + shellTransitionStates 3 := by
   native_decide
 
-/-- Intruder states for N = 3, 4, 5, 6. -/
-theorem intruder_counts :
-    [intruderStates 3, intruderStates 4,
-     intruderStates 5, intruderStates 6] = [8, 10, 12, 14] := by
+/-- Shell-transition states for N = 3, 4, 5, 6. -/
+theorem shell-transition_counts :
+    [shellTransitionStates 3, shellTransitionStates 4,
+     shellTransitionStates 5, shellTransitionStates 6] = [8, 10, 12, 14] := by
   native_decide
 
-/-- The intruder threshold is exactly at N = 3 = borromeanCrossingNumber. -/
-theorem intruder_threshold :
-    ∀ N, isIntruder N = true ↔ N ≥ 3 := by
+/-- The shell-transition threshold is exactly at N = 3 = borromeanCrossingNumber. -/
+theorem shell-transition_threshold :
+    ∀ N, isShell-transition N = true ↔ N ≥ 3 := by
   intro N
-  simp [isIntruder, borromeanCrossingNumber]
+  simp [isShell-transition, borromeanCrossingNumber]
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §4. The key formula: HO level spacing vs spin-orbit coupling

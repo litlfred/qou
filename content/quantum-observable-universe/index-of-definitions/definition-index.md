@@ -215,7 +215,7 @@
 | [prop:sorting-color-energy](#prop:sorting-color-energy) | Sorting deposits energy $q + q^{-1}$ per crossing in the colour fibre | Ch 4 | — |
 | [prop:spin-labels](#prop:spin-labels) | Spin labels and the fundamental object | Ch 2 | `QOU.SpinDecomposition` |
 | [prop:euler-char-stability](#prop:euler-char-stability) | Stability of the Euler characteristic | Ch 3 | `QOU.Torsion.euler_char_constant` |
-| [prop:nuclear-shell-intruder](#prop:nuclear-shell-intruder) | Stability pairs from Borromean spin-orbit intruder levels | Ch 4 | `QOU.Braiding.nuclear_shell_intruder` |
+| [prop:shell-transition-knot](#prop:shell-transition-knot) | Stability pairs from Borromean spin-orbit shell-transition knots | Ch 4 | `QOU.Braiding.shell_transition_knot` |
 | [prop:strangelet-double-beta](#prop:strangelet-double-beta) | Strangelet interactions descend from the degree-2 fiber via double beta decay | Ch 7 | `QOU.Descartes.strangelet_double_beta` |
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 3 | `QOU.Torsion.brane_boundary_structure` |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 | `QOU.substrate_radial_coordinate` |

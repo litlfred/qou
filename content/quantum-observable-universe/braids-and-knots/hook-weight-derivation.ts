@@ -12,6 +12,6 @@ export default proposition({
     "thm:wedderburn-mass-formula",
     "prop:degree-two-baryon-weight",
     "def:hecke-mass-element",
-    "prop:nuclear-shell-intruder",
+    "prop:shell-transition-knot",
   ],
 });

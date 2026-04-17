@@ -7,7 +7,7 @@ trefoil resonance modes.
 **Organizing principles.**
 
 1. **Rows**: nuclear HO level $N$ with magic splits
-   ([nuclear shell magic numbers](#prop:nuclear-shell-intruder)).
+   ([shell-transition knot](#prop:shell-transition-knot)).
    Each row boundary is a magic number (stability pair).
 
 2. **Columns**: proton sub-shell filling order
@@ -20,7 +20,7 @@ trefoil resonance modes.
 
    The sub-shell capacities follow the spin-orbit
    splitting of the harmonic oscillator levels
-   ([nuclear shell magic numbers](#prop:nuclear-shell-intruder)):
+   ([shell-transition knot](#prop:shell-transition-knot)):
    each sub-level $nl_j$ accommodates $2j + 1$ protons.
    The electron shell structure is determined by the
    eigenvalues of the photon-electron transfer matrix
