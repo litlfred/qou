@@ -49,10 +49,19 @@ different-looking starting point:
    ([orbital Fourier decomposition](#prop:orbital-fourier-decomposition)).
    The pseudospin-degeneracy condition reads
    $[\ell - 1]_q [\ell]_q \approx [\ell - 2]_q [\ell - 1]_q$,
-   which in the classical limit $q \to 1$ is exact and which at
-   $q_0 \approx 1.1098$ holds to a few percent for
-   $\ell \geq 3$ — precisely the regime where
-   \cite{ding2026} reports the cleanest pseudospin doublets.
+   which in the classical limit $q \to 1$ reduces to the ratio
+   $\ell / (\ell - 2)$: not exact, but **monotonically
+   approaching unity as $\ell \to \infty$** (e.g.\ $5/3$ at
+   $\ell = 5$, $7/5$ at $\ell = 7$, $9/7$ at $\ell = 9$).  At
+   $q_0 \approx 1.1098$ the $q$-deformation corrections partially
+   cancel this classical mismatch, and the ratio
+   $[\ell - 1]_q [\ell]_q / ([\ell - 2]_q [\ell - 1]_q)$ holds
+   within a few percent for $\ell \geq 3$ — precisely the regime
+   where \cite{ding2026} reports the cleanest pseudospin
+   doublets.  Pseudospin in our framework is therefore an
+   **asymptotic / approximate** symmetry, emerging at large $\ell$
+   and mildly improved by the $q$-deformation, not an exact
+   symmetry at any value of $q$.
 
 **Where the accounts differ.**
 

@@ -15,8 +15,9 @@ $3 \cdot [\ell]_q [\ell+1]_q > 2(N+1)$.  For $N = 7$:
 
 - $\ell = 7$, $j = 15/2$: intruder $1j_{15/2}$ with
   $2(7{+}1) = 16$ states.
-- $q$-Laplacian threshold:
-  $3 [7]_q [8]_q \approx 3 \cdot 10.0 \cdot 12.1 \approx 363$,
+- $q$-Laplacian threshold (using the symmetric convention
+  $[n]_q = (q^n - q^{-n})/(q - q^{-1})$):
+  $3 [7]_q [8]_q \approx 3 \cdot 7.70 \cdot 9.11 \approx 210$,
   vastly exceeds $2(7+1) = 16$ — the intruder is *deeply*
   subducted into the $N = 6$ shell.
 
@@ -57,7 +58,7 @@ corrected closures:
 | $q$ window | $Z_{\mathrm{pred}}$ | $N_{\mathrm{pred}}$ | Comment |
 |:----------:|:-------------------:|:-------------------:|:--------|
 | $[1.109, 1.112]$ | $114$ | $184$ | Flerovium-centred island |
-| $[1.108, 1.110]$ | $120$ | $184$ | Secondary closure (unbihexium) |
+| $[1.108, 1.110]$ | $120$ | $184$ | Secondary closure (unbinilium) |
 | $[1.107, 1.109]$ | $126$ | $184$ | Bare HO + intruder magic |
 
 The three candidate proton magic numbers $\{114, 120, 126\}$
