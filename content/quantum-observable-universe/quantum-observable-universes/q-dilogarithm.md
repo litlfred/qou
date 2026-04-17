@@ -1,0 +1,110 @@
+Beyond the grouplike $\exp_q$ ([$q$-exponential](#def:q-exponential))
+and its primitive inverse $\log_q$
+([$q$-logarithm](#def:q-logarithm)), the $q$-shuffle Hopf algebra
+$H_q$ admits a canonical *level-2* element — the $q$-dilogarithm —
+obtained by iterating the primitive structure once.
+
+**Iterated-primitive definition.**  A *level-$k$ primitive* of $H_q$
+is an element $p_k \in H_q^{\otimes k}$ satisfying the shuffle
+recursion
+
+$$
+  \Delta_q(p_k) \;=\; p_k \otimes 1 + 1 \otimes p_k + \sum_{i=1}^{k-1}
+    p_i \otimes p_{k-i},
+$$
+
+with $p_0 = 1$ and $p_1 = \log_q$.  The solution space at each level
+is one-dimensional (up to primitives of lower levels).  The
+*$q$-dilogarithm* is the unique level-2 primitive
+
+$$
+  \mathrm{Li}_2^q \;\in\; H_q^{\otimes 2}
+$$
+
+normalised by the *pentagon identity* (below).
+
+**Pentagon identity.**  The $q$-dilogarithm satisfies the five-term
+relation
+
+$$
+  \mathrm{Li}_2^q(y) + \mathrm{Li}_2^q(x)
+  \;=\;
+  \mathrm{Li}_2^q(xy) + \mathrm{Li}_2^q\!\left(\frac{x(1-y)}{1-xy}\right)
+  + \mathrm{Li}_2^q\!\left(\frac{y(1-x)}{1-xy}\right),
+$$
+
+which is the Hopf-algebraic avatar of the *pentagon axiom* for the
+monoidal category $\mathbf{C}$.  This identity characterises
+$\mathrm{Li}_2^q$ up to a scalar — it is the unique level-2 primitive
+compatible with the monoidal associator $\alpha_{X,Y,Z}$.
+
+```tex
+\begin{equation}\label{eq:q-dilog-pentagon}
+\begin{tikzcd}[row sep=2.5em, column sep=2em]
+  (X \otimes Y) \otimes (Z \otimes W)
+    \ar[r, "\alpha"]
+    \ar[d, "\alpha \otimes \mathrm{id}"']
+  &  X \otimes (Y \otimes (Z \otimes W))
+    \ar[d, "\mathrm{id} \otimes \alpha"]
+  \\
+  ((X \otimes Y) \otimes Z) \otimes W
+    \ar[r, "\alpha"']
+  &  X \otimes ((Y \otimes Z) \otimes W)
+\end{tikzcd}
+\qquad
+\leftrightarrow
+\qquad
+\mathrm{Li}_2^q\text{-pentagon}
+\end{equation}
+```
+
+**Universal R-matrix interpretation.**  The universal R-matrix of
+$U_q(\mathfrak{sl}_2)$ admits the Faddeev--Kashaev factorisation
+
+$$
+  \mathcal{R} \;=\; q^{H \otimes H / 2}  \exp_q\!\bigl((q - q^{-1}) E \otimes F\bigr),
+$$
+
+and the *logarithm* of $\mathcal{R}$ is, at leading order in the
+adjoint action, the $q$-dilogarithm.  Hence $\mathrm{Li}_2^q$ is the
+categorical *braiding potential*: its derivative along $E \otimes F$
+recovers the braiding of two quantum-plane modules.
+
+**Base-ring independence.**  Like $\exp_q$ and $\log_q$,
+$\mathrm{Li}_2^q$ is defined abstractly as an iterated primitive of
+$H_q$ — its existence and uniqueness are Hopf-algebraic, not
+analytic.  Over $\mathbb{F}_p$ the pentagon identity is a polynomial
+equation over the base ring, solvable as long as the denominators
+$1 - xy, [n]_q$ do not vanish; outside those loci $\mathrm{Li}_2^q$
+descends to a finite-field element.
+
+**Archimedean realisation.**  Over $\mathbb{C}$ the $q$-dilogarithm is
+represented by the convergent series
+
+$$
+  \mathrm{Li}_2^q(x) \;=\; \sum_{n \ge 1} \frac{x^n}{n  [n]_q}
+  \qquad (|x| < 1,  q \ne 1),
+$$
+
+sometimes called the *Kirillov dilogarithm*.  At $q = 1$ this reduces
+to the classical dilogarithm $\mathrm{Li}_2(x) = \sum x^n / n^2$.
+
+**Role in the $q$-heat story.**  The Laplace transform
+([categorical Laplace transform](#def:categorical-laplace)) of the
+$q$-heat kernel ([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl))
+involves the resolvent $(\widehat{\Delta_q} + s)^{-1}$, whose
+contour integral against the spectrum picks up a logarithmic branch
+at each eigenvalue $\lambda_j(q)$.  Summing these logarithms over
+$j \in \widehat{G}$ produces a generating function that is
+precisely the $q$-dilogarithm of $\exp(-s t_P(q))$.  In short:
+$\mathrm{Li}_2^q$ is the *partition function* of the $q$-heat flow,
+and the pentagon identity is the monoidal compatibility of heat
+flows on tensor-product state spaces.
+
+**Physical meaning.**  The $q$-dilogarithm is the generating
+function for Bethe-ansatz energies in integrable lattice models
+governed by $U_q(\mathfrak{sl}_2)$.  In the QOU context, it
+organises the one-loop correction to the Reeb-flow entropy on
+the substrate — the leading non-trivial term in
+$\log Z_q(\beta)$ past the classical and first quantum
+($\hbar_q$) corrections.

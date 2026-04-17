@@ -1,0 +1,95 @@
+The Laplace transform ([categorical Laplace transform](#def:categorical-laplace))
+pairs against the *real* exponential grouplike $\exp_q(-s\cdot)$.  Its
+companion pairs against the *unitary* grouplike $\exp_q(i\xi\cdot)$ — a
+second grouplike of the same Hopf algebra $H_q$, distinguished only by
+the sign of the spectral parameter.
+
+**Categorical Fourier transform.**  The categorical Fourier transform
+is the monoidal functor
+
+$$
+  \mathcal{F}\colon \bigl(\mathrm{End}_{\mathbf{C}}(A), \ast_q\bigr)
+  \;\longrightarrow\;
+  \bigl(\mathrm{End}_{\mathbf{C}}(A), \cdot\bigr),
+  \qquad
+  \mathcal{F}[f](\xi) \;=\; \mathrm{tr}_M\bigl(\exp_q(i\xi\cdot)  \cdot  f\bigr),
+$$
+
+where $\xi$ ranges over the categorical spectrum
+$\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A^\vee)$ — the Pontryagin dual
+of the Reeb-translation object.
+
+**Tannakian reconstruction.**  When $G = \mathrm{SU}_q(2)$ and
+$\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, the Tannaka--Krein
+reconstruction ([Tannaka--Krein reconstruction](#prop:tannaka-krein-reconstruction))
+identifies $\mathcal{F}$ with the *Peter--Weyl decomposition*:
+
+$$
+  \mathcal{F}\colon L^2(G, \mathrm{Haar}_q)
+  \;\xrightarrow{\;\sim\;}\;
+  \bigoplus_{j \in \widehat{G}} V_j \otimes V_j^\vee,
+  \qquad
+  f \mapsto \bigl(\pi_j(f)\bigr)_{j \in \widehat{G}}.
+$$
+
+The Fourier coefficients $\pi_j(f)$ are the matrix elements of $f$ in
+the irreducible representation $V_j$, and the monoidal property
+$\mathcal{F}[f \ast_q g] = \mathcal{F}[f] \cdot \mathcal{F}[g]$ becomes
+the statement that convolution of class functions diagonalises over
+irreducible characters.
+
+```tex
+\begin{equation}\label{eq:categorical-fourier-peter-weyl}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  H_q
+    \ar[r, "\mathcal{F}"]
+    \ar[d, "\ast_q"']
+  & \displaystyle\bigoplus_{j} V_j \otimes V_j^\vee
+    \ar[d, "{\otimes_j\,\pi_j}"]
+  \\
+  H_q
+    \ar[r, "\mathcal{F}"']
+  & \displaystyle\bigoplus_{j} V_j \otimes V_j^\vee
+\end{tikzcd}
+\end{equation}
+```
+
+**Wick rotation.**  Because $\exp_q(-s\cdot)$ and $\exp_q(i\xi\cdot)$ are
+the *same* abstract grouplike evaluated at real versus imaginary
+spectral parameter, Laplace and Fourier are related by
+$s = i\xi$:
+
+$$
+  \mathcal{F}[f](\xi) \;=\; \mathcal{L}[f](i\xi).
+$$
+
+This is the categorical version of **Wick rotation** — the heat
+equation (Laplace side) and the Schrödinger equation (Fourier side)
+are the two real forms of a single complex spectral equation, differing
+only in which character of the Reeb-translation object one pairs
+against.
+
+**Role in the $q$-heat story.**  Applying $\mathcal{F}$ to both sides
+of the $q$-heat equation $\partial_t u = \Delta_q u$ diagonalises the
+$q$-Laplacian on each Peter--Weyl summand:
+
+$$
+  \partial_t \pi_j(u) \;=\; -\lambda_j(q) \cdot \pi_j(u),
+  \qquad
+  \pi_j(u)(t) \;=\; e^{-\lambda_j(q)t}  \pi_j(u_0),
+$$
+
+where $\lambda_j(q) = [j]_q[j+1]_q (1 - q^{-1})^2$ is the eigenvalue
+of $\Delta_\xi$ on the $j$-th irrep (plus the classical $q^{-2}\Delta$
+eigenvalue on the base).  Reassembling over irreducibles gives the
+**Peter--Weyl heat kernel**, which is the archimedean realisation of
+the inverse Fourier of the resolvent.
+
+**Base-ring independence.**  The Peter--Weyl decomposition of
+$\mathbf{Rep}(\mathrm{SU}_q(2))$ as a direct sum of $V_j$'s is a
+purely categorical statement — it holds whenever the category has a
+set of simple objects indexed by $\widehat{G}$, regardless of base
+ring.  The *integral* realisation of $\mathcal{F}$ as
+$\int_G f(g) e^{i\xi g} dg$ requires a Haar measure (archimedean), but
+the **algebraic** Fourier transform as Peter--Weyl projection works
+over $\mathbb{F}_p$, $\mathbb{Q}_p$, and $\mathbb{Z}[q, q^{-1}]$.

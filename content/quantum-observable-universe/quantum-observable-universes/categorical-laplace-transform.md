@@ -16,14 +16,14 @@ $$
 
 defined, for each spectral parameter $s \in \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A)$,
 by the Hopf pairing against the real exponential grouplike
-$e_q^{-s\cdot} \in G(H_q)$:
+$\exp_q(-s\cdot) \in G(H_q)$:
 
 $$
   \mathcal{L}[f](s)
   \;=\;
-  \mathrm{tr}_M\bigl(e_q^{-s\cdot}  \cdot  f\bigr)
+  \mathrm{tr}_M\bigl(\exp_q(-s\cdot)  \cdot  f\bigr)
   \;=\;
-  \bigl\langle e_q^{-s\cdot},  f\bigr\rangle_{\mathrm{tr}_M}.
+  \bigl\langle \exp_q(-s\cdot),  f\bigr\rangle_{\mathrm{tr}_M}.
 $$
 
 No integral sign appears: the pairing is the Frobenius pairing
@@ -58,7 +58,7 @@ is the *mate* of the comultiplication $\Delta_q$ on $H_q$.
 \end{equation}
 ```
 
-**Base-ring independence.**  Because $e_q^{-s\cdot}$ is defined
+**Base-ring independence.**  Because $\exp_q(-s\cdot)$ is defined
 abstractly as a grouplike of $H_q$ — not as a convergent series —
 $\mathcal{L}$ makes sense over any base ring $R$ where $H_q$ has the
 grouplike, i.e. anywhere $q \ne 1$ and $s$ is algebraic.  The familiar
