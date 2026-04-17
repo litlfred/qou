@@ -2774,7 +2774,7 @@ def unified_iterative_correction_jet(Z, N, jet_max,
     return total, per_jet
 
 
-def binding_energy_bw(Z, N, k=3, unified=False):
+def binding_energy_bw(Z, N, k=3, unified=False, drop_bw=False):
     """Bethe-Weizsäcker binding energy (MeV) at Hecke level k.
 
     k=3 (default): 6-term H₃(q) formula (volume, surface, Coulomb,
@@ -2800,6 +2800,15 @@ def binding_energy_bw(Z, N, k=3, unified=False):
         # Unknot/trivial case: H (single proton), free n.
         # No nuclear braid → no binding.
         return 0.0
+
+    if drop_bw:
+        # NO BW bulk, NO shell, NO form-factor, NO descent — pure
+        # LP-dual accumulator from the q-heat resolvent framework
+        # (PR #368).  This measures the gap between the current LP-dual
+        # machinery and the full binding.  Any difference vs empirical
+        # AME shows what BW's LAMBDA_V·A + LAMBDA_S·A^{2/3} + ...
+        # bulk terms contribute that the LP dual alone does NOT.
+        return unified_iterative_correction(Z, N)
 
     if unified:
         # Unified iterative path: per-step (2,2) Wedderburn projection
