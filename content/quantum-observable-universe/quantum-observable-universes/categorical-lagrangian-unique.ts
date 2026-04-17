@@ -1,0 +1,16 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:categorical-lagrangian-unique",
+  title: "Uniqueness of the categorical Lagrangian",
+  lean: {
+    decl: "QOU.CategoricalLagrangian.unique",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:categorical-lagrangian",
+    "prop:categorical-lagrangian-exists",
+  ],
+  proofs: ["prf:categorical-lagrangian-unique"],
+  tags: ["uniqueness", "lagrangian"],
+});
