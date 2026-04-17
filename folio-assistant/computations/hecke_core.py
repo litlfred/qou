@@ -2848,6 +2848,63 @@ def unified_iterative_correction_jet(Z, N, jet_max,
     return total, per_jet
 
 
+def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
+    """Markov trace of the atom braid word via Wedderburn decomposition:
+
+        tr_M(W_atom) = Σ_λ w_λ · χ_λ(W_atom) / d_λ
+
+    This is the CATEGORICAL MASS at a single brane level
+    (prop:categorical-mass-markov, def:mass-identity): the categorical
+    mass of the braid β representing the atom is exactly |tr_M(ρ(β))|.
+    Yekutieli's 2D nonabelian Stokes theorem (Yekutieli 2015, Ch 5-6)
+    identifies this with the multiplicative integral on SU(2) (or
+    SU_q(2)).
+
+    No prefactor tuning: the formula is dimensionally complete up to
+    ONE archimedean calibration constant E_0 (the fibre functor
+    τ: R → ℝ mapping categorical scalars to MeV).  Per
+    prop:categorical-mass-markov: "To obtain physical masses in MeV,
+    multiply by a calibration constant E_0, determined by matching one
+    experimental value (e.g. the free neutron beta-decay Q-value)."
+
+    Returns the (possibly complex) scalar tr_M(W_atom).
+
+    include_inter : bool (default True)
+        If False, returns the FREE-NUCLEON Markov trace (intra only).
+    """
+    import math as _math
+    if k_cap is None:
+        k_cap = K_PARTITION_MAX
+    active = [e for e in _PARTITION_TABLE
+              if e.get('k', 0) <= k_cap
+              and e.get('dim', 0) >= 2
+              and e.get('has_ysn', False)]
+    # Include 1-dim (sym, alt) reps too — they contribute to Markov trace
+    # even when they have y_λ = 0 in the LP.
+    active_all = [e for e in _PARTITION_TABLE
+                  if e.get('k', 0) <= k_cap
+                  and e.get('has_ysn', False)]
+    # Note: 1-dim reps have trivial YSN matrices (scalars) — already handled.
+    chi_data = {}
+    log_norms = {}
+    for e in active_all:
+        chi_q, ln, _d = atom_character_raw(Z, N, e,
+                                           include_inter=include_inter)
+        chi_data[tuple(e['partition'])] = (chi_q, ln, e)
+        log_norms[tuple(e['partition'])] = ln
+    if not log_norms:
+        return 0.0
+    max_ln = max(log_norms.values())
+    trace = 0.0
+    for lam, (chi_q, ln, entry) in chi_data.items():
+        chi_eff = chi_q * _math.exp(ln - max_ln)
+        d_l = entry['dim']
+        w_l = entry['wedderburn_weight']
+        # Linear Markov trace — NOT squared
+        trace += w_l * chi_eff / d_l
+    return trace
+
+
 def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
     """Frobenius-norm squared of the atom braid word W_atom via Schur-Weyl:
 
@@ -2929,38 +2986,43 @@ def free_nucleon_frobenius_norm_sq(Z, N, k_cap=None):
     return norm_sq
 
 
+E_0_CALIBRATION_MEV = 0.782  # Q-value of free neutron β-decay (MeV).
+# Single calibration constant E_0 prescribed by prop:categorical-mass-markov
+# as the dimensional bridge τ: R → ℝ from categorical mass to MeV.
+# "To obtain physical masses in MeV, multiply by a calibration constant E_0,
+#  determined by matching one experimental value (e.g. the free neutron
+#  beta-decay Q-value)."
+
+
 def binding_from_frobenius_pairing(Z, N, k_cap=None):
-    """Categorical replacement for LAMBDA_V·A + LAMBDA_S·A^{2/3} + knot_factor:
-    the Frobenius-pairing LOG ratio of atom to free nucleons.
+    """Categorical binding via the mass-identity Markov trace formula.
 
-        B_bulk(Z, N) = C_bulk · log( ||W_free||²_F / ||W_atom||²_F )
+        B_bulk(Z, N) = E_0 · ( |tr_M(W_free)| - |tr_M(W_atom)| )
 
-    Derivation: self-duality of End_C(A) (rigid monoidal) gives a
-    positive-definite Frobenius pairing.  The atom's norm is SMALLER
-    than the disconnected-tensor baseline (confinement = destructive
-    interference).  The log-ratio log(||W_free||²/||W_atom||²) is
-    the dimensionless binding measure.
+    Derivation (prop:categorical-mass-markov, def:mass-identity):
+    at a single brane level, the categorical mass of a braid β is
+    m(β) = |tr_M(ρ(β))| — the absolute Markov trace.  Binding is the
+    mass defect:
+        B = m_free_nucleons - m_atom
+          = |tr_M(W_free)| - |tr_M(W_atom)|
+    times the ONE archimedean calibration E_0 (fibre functor
+    τ: R → ℝ), prescribed by the prop to match ONE experimental
+    value (free neutron β-decay Q).
 
-    LINEAR ratio saturates at 1 for A >> 1; the LOG-ratio grows
-    linearly in A (since ||W_free||² grows exponentially, tensor-
-    product over A nucleons).  This matches the LAMBDA_V * A
-    scaling of the old BW bulk.
+    Yekutieli's 2D nonabelian Stokes theorem (Yekutieli 2015) gives
+    the Markov trace as the nonabelian multiplicative integral of
+    the connection over the surface of the braid closure — a
+    categorical action functional.  NO prefactor tuning.
 
-    Prefactor: C_bulk = m_p * h_q^2 ~ 9.2 MeV (per-A saturation).
-    Categorical derivation pending - currently selected to give the
-    right order of magnitude (bulk per nucleon ~ 8-9 MeV empirically).
+    Note: categorical-mass-markov explicitly warns that single-level
+    Markov trace does NOT reproduce mass ratios like m_μ/m_e ≈ 206.8;
+    those require the FULL brane tower sum Σ ‖Φ_q(z_i)‖ over
+    exceptional divisors.  Current implementation is single-level
+    only.  Extension to the full tower sum is conj:mass-endomorphism.
     """
-    import math as _math
-    hbar_q = (q0 - 1.0) / q0
-    hbar_q_sq = hbar_q * hbar_q
-    atom_sq, _, _ = atom_frobenius_norm_sq(Z, N, k_cap)
-    free_sq = free_nucleon_frobenius_norm_sq(Z, N, k_cap)
-    if atom_sq <= 0 or free_sq <= 0:
-        return 0.0
-    log_ratio = _math.log(free_sq / atom_sq)
-    from experimental_constants import M_P_MEV
-    C_bulk = M_P_MEV * hbar_q_sq
-    return C_bulk * log_ratio
+    atom_tr = atom_markov_trace(Z, N, k_cap, include_inter=True)
+    free_tr = atom_markov_trace(Z, N, k_cap, include_inter=False)
+    return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))
 
 
 def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
