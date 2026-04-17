@@ -1,0 +1,17 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:categorical-laplace-unique",
+  title: "Uniqueness of the categorical Laplace transform",
+  lean: {
+    decl: "QOU.CategoricalLaplace.unique",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:categorical-laplace",
+    "prop:categorical-laplace-exists",
+    "prop:q-exponential-unique",
+  ],
+  proofs: ["prf:categorical-laplace-unique"],
+  tags: ["uniqueness", "laplace"],
+});

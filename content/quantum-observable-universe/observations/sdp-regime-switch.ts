@@ -12,7 +12,7 @@ export default proposition({
     "prop:bw-coefficient-shadow-price",
     "prop:unified-iterative-correction",
     "prop:wigner-2-coefficient",
-    "def:categorical-laplace-transform",
+    "def:categorical-laplace",
   ],
   tags: [
     "sdp",

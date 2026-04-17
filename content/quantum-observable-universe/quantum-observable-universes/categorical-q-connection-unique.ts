@@ -1,0 +1,17 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:categorical-q-connection-unique",
+  title: "Uniqueness of the categorical $q$-connection",
+  lean: {
+    decl: "QOU.CategoricalQConnection.unique",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:categorical-q-connection",
+    "prop:categorical-q-connection-exists",
+    "prop:categorical-connection-unique",
+  ],
+  proofs: ["prf:categorical-q-connection-unique"],
+  tags: ["uniqueness", "q-connection"],
+});

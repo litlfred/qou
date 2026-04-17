@@ -430,6 +430,10 @@ Agents **must** use the correct font for each concept.
 | Measures | Greek | `$\mu_J$` (Julia-set measure) |
 | Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
 | Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+| $q$-shuffle Hopf algebra | calligraphic | `$\mathcal{H}_q$` — convolution algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under $\ast_q$; carries the grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$. **Never** plain `$H_q$` (collides with Hecke and Hamiltonian). |
+| Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
+| $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
+| Hook-length product | Latin cap + arg | `$H_q(\lambda) = \prod_{x \in \lambda} [h_x(\lambda)]_q$` — always with partition argument; unambiguous in knot/partition contexts. |
 | Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
 | Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
 | Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
@@ -444,6 +448,7 @@ Agents **must** use the correct font for each concept.
 - `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
   **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
 - `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
+- `$H_q$` alone = **not used**. Three distinct concepts share the letter $H$: `$\mathcal{H}_q$` (shuffle Hopf algebra), `$\hat{H}_q$` (Hamiltonian operator), `$H_n(q)$` or `$H_q(\lambda)$` (Hecke/hook-length, always with argument).
 - `$q = 1.1097$` (or any specific numerical value of the substrate
   parameter) **must not appear** outside the introduction and
   Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
