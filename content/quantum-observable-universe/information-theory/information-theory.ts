@@ -106,7 +106,6 @@ section({
         "quantum-volume-interpretation",
         "quantum-ideal-gas-law",
         "quantum-ideal-gas-law-interpretation",
-        "baryonic-pressure",
         "boltzmann-constant",
         "gas-constant-derivation",
         "hydrogen-partition-function",
