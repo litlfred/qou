@@ -415,7 +415,7 @@ def lp_shadow_price(partition):
 # light atoms.  The resolvent's built-in damping envelope does not
 # benefit from further partitions — q-heat already absorbs higher-k
 # contributions via (μ_λ + s)⁻¹ decay.
-K_PARTITION_MAX = 9
+K_PARTITION_MAX = 11
 # Metadata-only partitions reach up to K_GAUSSIAN_MAX for the
 # q-Gaussian fallback (no YSN matrices built — just d_q, shadow_price,
 # q_hook, Wedderburn weight which are cheap to compute for any k).
