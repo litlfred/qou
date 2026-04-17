@@ -351,6 +351,7 @@ export default chapter({
         "unstable-atom-decay-channel",
         "ilp-solution-count-unwrap",
         "shell-schur-weyl-self-duality",
+        "compound-beta-shell-calibration",
       ],
     }),
 
