@@ -209,6 +209,46 @@ LAMBDA_EX = q_int(3) / q_int(2) * M_E_MEV       # exchange: [3]/[2]m_e ≈ 0.77 
 DELTA_S = q_int(2)**2 * q_int(3) * M_E_MEV      # shell: [2]²[3]m_e ≈ 6.29 MeV
 SIGMA_SHELL = q_int(2)                            # shell width: [2]_q ≈ 2.011
 
+# ── q-hook product (symbolic) and (2,2) coefficient at k=4 ─────
+# For partition λ ⊢ n the q-hook product is H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q,
+# where h_x is the hook length at cell x. The Wedderburn weight is
+# w_λ = d_q(λ)² / [n]_q!  with d_q(λ) = [n]_q! / H_q(λ), so
+# w_λ × H_q(λ)² = [n]_q!.
+#
+# The (2,2) ⊢ 4 hook lengths are {3, 2, 2, 1} (the 2×2 Young diagram),
+# giving H_q((2,2)) = [3]·[2]·[2]·[1] = [3]·[2]², which evaluated at q₀
+# is exactly the empirical Wigner energy scale Δ_W ≈ 6.3 MeV [satula1997].
+# This is the SAME q-integer product that defines DELTA_S (shell), so
+# the (2,2) channel and the shell correction share one categorical scale.
+
+def q_hook_product(partition):
+    """q-hook product H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q  (fully symbolic in q).
+
+    Hook length h_x = arm_x + leg_x + 1 where arm = #boxes to the right
+    in the same row, leg = #boxes below in the same column.
+    """
+    lam = list(partition)
+    if not lam:
+        return 1.0
+    width = lam[0]
+    conj = [sum(1 for p in lam if p > j) for j in range(width)]
+    H = 1.0
+    for i, li in enumerate(lam):
+        for j in range(li):
+            arm = li - j - 1
+            leg = conj[j] - i - 1
+            H *= q_int(arm + leg + 1)
+    return H
+
+
+# (2,2) hook product = [3]·[2]²·[1] = [3]·[2]²
+H_Q_22 = q_hook_product((2, 2))                   # = [3]·[2]² ≈ 12.31
+DELTA_22 = H_Q_22 * M_E_MEV                       # = [3]·[2]²·m_e ≈ 6.29 MeV
+# Wedderburn weight of (2,2): w = d_q²/[4]_q! where d_q = [4]_q!/H_q
+_n4_fac_22 = q_int(2) * q_int(3) * q_int(4)       # [4]_q!
+D_Q_22 = _n4_fac_22 / H_Q_22                       # d_q((2,2)) = [4]_q!/H_q ≈ 2.044
+W_22 = D_Q_22**2 / _n4_fac_22                      # w_{(2,2)} = d_q²/[4]_q! ≈ 0.166
+
 
 def _q_exp(x, n_terms=20):
     """q-exponential exp_q(x) = Σ x^n / [n]_q!. Fully symbolic in q."""
@@ -1309,7 +1349,222 @@ def magic_proximity(x, sigma=None):
     return 0.0
 
 
-def binding_energy_bw(Z, N, k=3):
+# ══════════════════════════════════════════════════════════════
+# Unified iterative (2,2) correction (replaces D + knot_factor + Wigner)
+# ══════════════════════════════════════════════════════════════
+#
+# Categorical content (fully symbolic in q):
+#
+# • Energy scale.  The (2,2) ⊢ 4 q-hook product is
+#       H_q((2,2)) = ∏_{x∈(2,2)} [h_x]_q = [3]·[2]·[2]·[1] = [3]·[2]²,
+#   giving DELTA_22 = m_e · H_q((2,2)) ≈ 6.29 MeV — the categorical
+#   Wigner / shell scale matched against the empirical Δ_W ≈ 6.3 MeV
+#   [satula1997].
+#
+# • YSN matrices.  In the Young seminormal form of (2,2) (a 2-dim irrep
+#   of H_4(q)) every Hecke generator σ_j has the same trace χ_{(2,2)}(σ)
+#   = q − q⁻¹ = h.  We embed every crossing (c, d) acting between two
+#   adjacent strands as M(c, d) = c · M_σ + d · I.  By the Kerov q-hook
+#   walk [kerov1996], the trace of a chain of crossings in (2,2) is the
+#   transition probability of the walk on the (2,2) cell of the Young
+#   lattice; Féray–Méliot [feray-meliot2012] give the asymptotic
+#   convergence rate O(1/√k).
+#
+# • Per-step accumulation.  At each step k, the crossings introduced by
+#   adding nucleon k (intra-nucleon B₃·quark·gluon block, plus inter-
+#   nucleon crossings with previous nucleons) form a chain whose YSN
+#   matrix product M_22(step k) has character χ_22(step k).  The per-step
+#   Wedderburn projection is w_{(2,2)} · χ_22(step k) / dim((2,2)),
+#   i.e. the average eigenvalue of M_22 weighted by the (2,2) Wedderburn
+#   weight.  Multiplying by DELTA_22 gives a MeV-valued contribution.
+#
+# • Restartability.  Each step is recorded as a witness row containing
+#   (A, Z_k, N_k, nuc, χ_22, projection, cumulative).  Resuming the
+#   accumulator from any A only requires the last row.
+#
+# Reference: prop:unified-iterative-correction.
+
+# (2,2) YSN matrices for the three H_4(q) generators σ_1, σ_2, σ_3.
+# Tableaux: T1 = [[1,2],[3,4]], T2 = [[1,3],[2,4]] (lex order).
+#
+# σ_1 swaps (1,2): T1 same row → eigenvalue q; T2 same column → -q⁻¹.
+# σ_3 swaps (3,4): T1 same row → eigenvalue q; T2 same column → -q⁻¹.
+# σ_2 swaps (2,3): mixes T1 ↔ T2 with axial-distance ρ = ±2.
+#   diag = h / [ρ]_q,  off-diagonal = √(diag·(h-diag)+1).
+#
+# All entries are q-rational (computed from q₀ via q_int).
+_M22_S1 = ((q0,    0.0    ),
+           (0.0,   -qi    ))
+_M22_S3 = ((q0,    0.0    ),
+           (0.0,   -qi    ))
+_diag_T1 = h / q_int(-2)                          # = -h/[2]_q
+_diag_T2 = h - _diag_T1                            # h([2]_q+1)/[2]_q
+_bc_22 = _diag_T1 * _diag_T2 + 1.0
+_off_22 = math.sqrt(abs(_bc_22)) * (1.0 if _bc_22 > 0 else -1.0)
+_M22_S2 = ((_diag_T1, _off_22),
+           (_off_22,  _diag_T2))
+
+
+def _matmul2(A, B):
+    """Multiply two 2×2 matrices."""
+    return ((A[0][0]*B[0][0] + A[0][1]*B[1][0], A[0][0]*B[0][1] + A[0][1]*B[1][1]),
+            (A[1][0]*B[0][0] + A[1][1]*B[1][0], A[1][0]*B[0][1] + A[1][1]*B[1][1]))
+
+
+def _crossing_M22(c, d, j):
+    """Matrix of c·σ_j + d·I in the (2,2) representation, j ∈ {1,2,3}."""
+    Mj = _M22_S1 if j == 1 else (_M22_S2 if j == 2 else _M22_S3)
+    return ((c*Mj[0][0] + d, c*Mj[0][1]    ),
+            (c*Mj[1][0],     c*Mj[1][1] + d))
+
+
+def _chain_M22(chain):
+    """YSN matrix product in (2,2) for a list of (c, d, j) crossings.
+
+    A pure (c, d) tuple is interpreted as j = 1 (default generator).
+    Returns the 2×2 matrix product.
+    """
+    M = ((1.0, 0.0), (0.0, 1.0))
+    for entry in chain:
+        if len(entry) == 2:
+            c, d = entry
+            j = 1
+        else:
+            c, d, j = entry
+        M = _matmul2(M, _crossing_M22(c, d, j))
+    return M
+
+
+def _step_chain_22(nucleon_type, prev_types):
+    """Crossing chain (in H_4 generators) for one NF-construction step.
+
+    Returns a list of (c, d, j) tuples encoding the new crossings:
+      • intra-nucleon block (B₃ + quark + gluon) — alternates σ_1, σ_2;
+      • inter-nucleon crossings with all previous nucleons — uses σ_3.
+
+    The choice of generator (1 vs 3 for the gen-0 block, 2 for the
+    gen-1 block) reflects the two-generator H_3 structure embedded into
+    H_4; (2,2) characters are independent of which σ_j we use because
+    χ_{(2,2)}(σ_j) = h for all j.
+    """
+    chain = []
+    intra = _PROTON_G0 if nucleon_type == 'p' else _NEUTRON_G0
+    intra_g1 = _PROTON_G1 if nucleon_type == 'p' else _NEUTRON_G1
+    for c, d in intra:
+        chain.append((c, d, 1))
+    for c, d in intra_g1:
+        chain.append((c, d, 2))
+    for ti in prev_types:
+        if ti == 'p' and nucleon_type == 'p':
+            chain.append((1.0, 0.0, 3))      # pp
+        elif ti == 'n' and nucleon_type == 'n':
+            chain.append((1.0, -h, 3))       # nn
+        else:
+            chain.append((1.0, -h / 2, 3))   # pn
+    return chain
+
+
+def unified_iterative_correction(Z, N, return_per_step=False):
+    """Unified iterative (2,2) correction (MeV).
+
+    Replaces, in one categorical mechanism, the dedicated D-binding
+    (A = 2), the knot factor (A = 3, 4), and the Wigner energy
+    (k ≥ 5) by accumulating the per-step (2,2) Wedderburn projection
+    of the NF transition.
+
+    The per-step accumulator is the log-derivative of the running
+    (2,2) trace, which is the energy-additive form (matching the
+    `next_partition_levels` channel decomposition).  Let
+
+      M_22^{(0..k)} = ∏_{j ≤ k} M_22(step j)
+
+    be the running YSN matrix product through step k, with
+    M_22^{(0)} = I and Tr = dim((2,2)) = 2.  Then
+
+      ΔB_k = DELTA_22 · w_{(2,2)} · ( ln|Tr M_22^{(0..k)}|
+                                     − ln|Tr M_22^{(0..k−1)}| )
+
+    so the total accumulated correction telescopes to
+
+      B_unified = DELTA_22 · w_{(2,2)} · ( ln|Tr M_22^{(0..A)}| − ln 2 ).
+
+    This is exactly the (2,2) contribution to the Wedderburn-Artin
+    log-trace identity, multiplied by the categorical Wigner scale.
+
+    Parameters
+    ----------
+    Z, N : int
+        Proton and neutron counts.
+    return_per_step : bool
+        If True, also return the list of per-step witness rows.
+
+    Returns
+    -------
+    float (or (float, list)): total accumulated correction in MeV.
+
+    References
+    ----------
+    Kerov 1996 (q-hook walk on Young diagrams) [kerov1996],
+    Féray–Méliot 2010 (q-Plancherel CLT) [feray-meliot2012],
+    Satuła et al. 1997 (empirical Wigner energy) [satula1997].
+    """
+    A = Z + N
+    if A < 2:
+        if return_per_step:
+            return 0.0, []
+        return 0.0
+
+    # Ground-state ordering (matches build_atom_nf / atom_gen_chains)
+    ordering = []
+    pc, nc = 0, 0
+    for kk in range(A):
+        if (kk % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p'); pc += 1
+        else:
+            ordering.append('n'); nc += 1
+
+    per_step = []
+    M_run = ((1.0, 0.0), (0.0, 1.0))               # M_22^{(0)} = I
+    log_norm = 0.0                                     # accumulated rescaling exponent
+    log_prev = math.log(2.0)                          # ln|Tr I| = ln 2
+    scale = DELTA_22 * W_22                           # MeV per unit of ln-trace
+    cumul = 0.0
+    for kk in range(A):
+        nuc = ordering[kk]
+        prev_types = ordering[:kk]
+        chain = _step_chain_22(nuc, prev_types)
+        M_step = _chain_M22(chain)
+        M_run = _matmul2(M_run, M_step)
+        # Periodic rescaling: keep matrix entries bounded by extracting
+        # the dominant scale into log_norm.
+        m_max = max(abs(M_run[0][0]), abs(M_run[0][1]),
+                    abs(M_run[1][0]), abs(M_run[1][1]))
+        if m_max > 1e80:
+            M_run = ((M_run[0][0]/m_max, M_run[0][1]/m_max),
+                     (M_run[1][0]/m_max, M_run[1][1]/m_max))
+            log_norm += math.log(m_max)
+        tr_run = M_run[0][0] + M_run[1][1]
+        log_cur = (log_norm + math.log(abs(tr_run))
+                   if abs(tr_run) > 1e-300 else log_prev)
+        delta = scale * (log_cur - log_prev)
+        cumul += delta
+        if return_per_step:
+            Z_k = sum(1 for x in ordering[:kk + 1] if x == 'p')
+            N_k = (kk + 1) - Z_k
+            per_step.append({
+                'A': kk + 1, 'Z': Z_k, 'N': N_k, 'nuc': nuc,
+                'log_trace_22': log_cur,
+                'delta_MeV': delta,
+                'cumulative_MeV': cumul,
+            })
+        log_prev = log_cur
+
+    if return_per_step:
+        return cumul, per_step
+    return cumul
+
+
+def binding_energy_bw(Z, N, k=3, unified=False):
     """Bethe-Weizsäcker binding energy (MeV) at Hecke level k.
 
     k=3 (default): 6-term H₃(q) formula (volume, surface, Coulomb,
@@ -1317,6 +1572,14 @@ def binding_energy_bw(Z, N, k=3):
     k=4:           + H₄(q) terms 7-8 (shell, hook partition)
     k=5:           + H₅(q) terms 9-11 (Wigner, form factor, pn corr.)
     k≥6:           + higher level volume perturbation corrections
+
+    If `unified=True`, the dedicated D-binding (A=2), knot factor
+    (A=3,4), and Wigner term (k≥5) are replaced by a single
+    accumulated per-step (2,2) Wedderburn projection
+    `unified_iterative_correction(Z, N)` (prop:unified-iterative-
+    correction).  All other terms (volume, surface, Coulomb, pairing,
+    asymmetry, exchange, shell, hook, form factor, pn correlation,
+    H₆+ descent) are unchanged.
 
     Level correction: δΦ_k = z² · Vol(4₁) · [k-3]_q per Hecke level.
     All coefficients derived from algebra + knot geometry.
@@ -1327,6 +1590,15 @@ def binding_energy_bw(Z, N, k=3):
         # Unknot/trivial case: H (single proton), free n.
         # No nuclear braid → no binding.
         return 0.0
+
+    if unified:
+        # Unified iterative path: per-step (2,2) Wedderburn projection
+        # accumulates the categorical correction that, in the dedicated
+        # path, is split across the D-binding (A=2), knot factor (A=3,4),
+        # and Wigner energy (k≥5) terms.  See prop:unified-iterative-
+        # correction.
+        if A == 2:
+            return unified_iterative_correction(Z, N)
 
     # ── A=2 (Deuterium): B(D) = α × V̂_e ─────────────────────
     # The pn crossing is mediated by the shared electron.
@@ -1371,8 +1643,12 @@ def binding_energy_bw(Z, N, k=3):
     # a(N) modifies k=3 bulk. For A≤4: exact from pair chirality.
     # For A≥5: a=1 (BW polynomial handles Wedderburn averaging).
     # Coulomb/exchange have separate channel factors for A=3,4.
-    a_N = knot_factor(Z, N)
     is_fig8 = (A == 3)
+    if unified:
+        # Unified path: knot factor → 1, the (2,2) accumulator absorbs it.
+        a_N = 1.0
+    else:
+        a_N = knot_factor(Z, N)
 
     if A == 3:
         B = a_N * B_bulk + FIG8_F_COUL * B_coul + FIG8_F_EXCH * B_exch
@@ -1391,20 +1667,25 @@ def binding_energy_bw(Z, N, k=3):
         h_N = 1.0 - magic_proximity(N)
         B -= DELTA_HOOK * (h_Z + h_N) * A**(1.0/3.0)
 
-        # ── (2,2) partition: Wigner energy (T=0 np pairing) ────
-        # The self-conjugate partition (2,2) at k=4 contributes extra
-        # binding from isoscalar pn pairing. The coefficient must be
-        # derived from the Wedderburn decomposition at k=4 (the same
-        # way LAMBDA_V, LAMBDA_S etc. are derived at k=3), not guessed.
-        # See conj:jet-filtered-knot-factor and prop:wigner-np-pairing.
-        # TODO: derive (2,2) q-integer coefficient from k=4 Wedderburn.
-        # Currently NOT wired in — the scaling is open.
+        # ── (2,2) partition: unified iterative Wigner / np pairing ────
+        # Categorical Wigner energy = per-step (2,2) Wedderburn projection
+        # of the NF transition, accumulated from A = 1.  Energy scale is
+        # the (2,2) q-hook product DELTA_22 = [3]·[2]²·m_e ≈ 6.29 MeV
+        # (matches empirical Δ_W [satula1997]).  See prop:unified-
+        # iterative-correction.  Active only under the unified path —
+        # it absorbs D + knot_factor + Wigner in one mechanism.
+        if unified:
+            B += unified_iterative_correction(Z, N)
 
     # ── H₅+ volume perturbation ─────────────────────────────
+    # In the `unified` path the Wigner term is ALREADY accounted for by
+    # the (2,2) accumulator above; only the form factor and pn
+    # correlation remain at this level.
     if k >= 5 and not is_fig8:
-        T_isospin = abs(N - Z) / 2.0
-        A_eff_wigner = max(A, q_int(2)**2)
-        B -= DELTA_WIGNER * T_isospin * (T_isospin + 1) / A_eff_wigner
+        if not unified:
+            T_isospin = abs(N - Z) / 2.0
+            A_eff_wigner = max(A, q_int(2)**2)
+            B -= DELTA_WIGNER * T_isospin * (T_isospin + 1) / A_eff_wigner
         B -= DELTA_FORMFACTOR * Z**2 / A
         B += DELTA_PN_CORR * Z * N / A**(4.0/3.0)
 

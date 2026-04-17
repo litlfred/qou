@@ -328,6 +328,7 @@ export default chapter({
         "jet-filtered-knot-factor",
         "jet-convergence-classical-limit",
         "wigner-np-pairing",
+        "unified-iterative-correction",
         "hook-weight-derivation",
         "wigner-coefficient-derivation",
         "bw-coefficient-shadow-price",

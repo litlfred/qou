@@ -1,17 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-15T23:11:36.289219+00:00",
-  "commitSha": "b83599cea1934a490211f516f63a093372e79d42",
+  "computedAt": "2026-04-17T03:01:09.929228+00:00",
+  "commitSha": "5c3152fb3f9adae1bd1755534dc58908db017b93",
   "assertions": [
     {
       "name": "B(D) at k=5",
-      "computed": 2.8435,
+      "computed": 2.2236,
       "expected": 2.2242,
-      "passed": true,
-      "tolerance": 1.5551,
+      "passed": false,
+      "tolerance": 0.0006,
       "unit": "MeV",
-      "source": "BW(k=5) vs AME2020, δ_total=0.936 MeV"
+      "source": "BW(k=5) vs AME2020, δ_total=0.000 MeV"
     },
     {
       "name": "B(T) at k=5",
@@ -33,82 +33,82 @@
     },
     {
       "name": "B(⁴He) at k=5",
-      "computed": 29.4592,
+      "computed": 28.1915,
       "expected": 28.2956,
       "passed": true,
-      "tolerance": 2.534,
+      "tolerance": 1.4745000000000001,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=1.370 MeV"
     },
     {
       "name": "B(⁶Li) at k=5",
-      "computed": 33.2752,
+      "computed": 29.277,
       "expected": 31.9938,
       "passed": true,
-      "tolerance": 2.9714,
+      "tolerance": 4.4068000000000005,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=1.690 MeV"
     },
     {
       "name": "B(⁷Li) at k=5",
-      "computed": 39.4056,
+      "computed": 37.0601,
       "expected": 39.2441,
       "passed": true,
-      "tolerance": 5.325,
+      "tolerance": 7.3475,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=5.163 MeV"
     },
     {
       "name": "B(⁹Be) at k=5",
-      "computed": 57.8971,
+      "computed": 56.3858,
       "expected": 58.1652,
       "passed": true,
-      "tolerance": 3.5814,
+      "tolerance": 5.0927,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=3.313 MeV"
     },
     {
       "name": "B(¹¹B) at k=5",
-      "computed": 76.8069,
+      "computed": 75.1601,
       "expected": 76.2047,
       "passed": true,
-      "tolerance": 2.6914,
+      "tolerance": 3.1338,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=2.089 MeV"
     },
     {
       "name": "B(¹²C) at k=5",
-      "computed": 92.2894,
+      "computed": 91.0063,
       "expected": 92.1612,
       "passed": true,
-      "tolerance": 2.4658,
+      "tolerance": 3.4925,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=2.338 MeV"
     },
     {
       "name": "B(¹⁴C) at k=5",
-      "computed": 103.7554,
+      "computed": 102.0295,
       "expected": 104.6584,
       "passed": true,
-      "tolerance": 7.568899999999999,
+      "tolerance": 9.294799999999999,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=6.666 MeV"
     },
     {
       "name": "B(¹⁴N) at k=5",
-      "computed": 104.2097,
+      "computed": 101.6762,
       "expected": 104.6584,
       "passed": true,
-      "tolerance": 2.9415,
+      "tolerance": 5.475,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=2.493 MeV"
     },
     {
       "name": "B(¹⁶O) at k=5",
-      "computed": 128.6676,
+      "computed": 126.5286,
       "expected": 127.6192,
       "passed": true,
-      "tolerance": 3.6762,
+      "tolerance": 3.7184,
       "unit": "MeV",
       "source": "BW(k=5) vs AME2020, δ_total=2.628 MeV"
     },
@@ -123,56 +123,56 @@
     },
     {
       "name": "Q(¹⁴C → ¹⁴N) NF trace",
-      "computed": 0.141643,
+      "computed": 0.114658,
       "expected": 0.15648,
       "passed": true,
-      "tolerance": 0.0163207,
+      "tolerance": 0.0460042,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±4e-05"
     },
     {
       "name": "Q(⁶⁰Co → ⁶⁰Ni) NF trace",
-      "computed": 0.931708,
+      "computed": 0.967318,
       "expected": 0.31817,
       "passed": true,
-      "tolerance": 0.6748918,
+      "tolerance": 0.7140628,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±0.00013"
     },
     {
       "name": "Q(¹³⁷Cs → ¹³⁷Ba) NF trace",
-      "computed": 0.256892,
+      "computed": 0.292437,
       "expected": 0.514,
       "passed": true,
-      "tolerance": 0.28281880000000004,
+      "tolerance": 0.24371930000000003,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±0.00021"
     },
     {
       "name": "Q(⁹⁰Sr → ⁹⁰Y) NF trace",
-      "computed": 0.106699,
+      "computed": 0.025464,
       "expected": 0.5459,
       "passed": true,
-      "tolerance": 0.4831211,
+      "tolerance": 0.5724796000000001,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±7e-05"
     },
     {
       "name": "Q(²¹⁰Bi → ²¹⁰Po) NF trace",
-      "computed": 0.547651,
+      "computed": 0.582975,
       "expected": 1.1627,
       "passed": true,
-      "tolerance": 0.6765539,
+      "tolerance": 0.6376975000000001,
       "unit": "MeV",
       "source": "NF Markov trace ratio vs NNDC/ENSDF ±6e-05"
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 68,
   "computation": "mass-qvalue-by-level",
   "scriptFile": "mass_qvalue_by_level.py",
-  "scriptHash": "fc91dbe4a0c2",
-  "scriptCommitSha": "f4a20e4f94fdb58918d124328c89f80535f95c53",
+  "scriptHash": "e44a52a4d69e",
+  "scriptCommitSha": "ccfecb3b76acc3b454127feaaf89f548b70fcd9d",
   "description": "Atomic mass and Q-value tables by Hecke level k=3,4,5 with explicit error bounds. Each nucleus shows B(k=3), B(k=4), B(k=5) vs AME2020, with truncation, parametric (δq), and CODATA input uncertainties. Q-values computed by both NF trace ratio and BW difference methods.",
   "contentBlock": "rem:mass-comparison-table",
   "parameters": {
@@ -185,7 +185,10 @@
       3,
       4,
       5
-    ]
+    ],
+    "DELTA_22_MeV": 6.289300348688731,
+    "H_q_22": 12.307853761125598,
+    "W_22": 0.1660489519858909
   },
   "data": {
     "mass_by_level": [
@@ -197,6 +200,12 @@
         "B_k3_MeV": 0.0,
         "B_k4_MeV": 0.0,
         "B_k5_MeV": 0.0,
+        "B_k3_unified_MeV": 0.0,
+        "B_k4_unified_MeV": 0.0,
+        "B_k5_unified_MeV": 0.0,
+        "delta_22_unified_MeV": 0.0,
+        "residual_unified_MeV": 0.0,
+        "pct_error_unified": 0,
         "B_AME_MeV": 0.0,
         "delta_trunc_MeV": 0.0,
         "delta_param_MeV": 0.0,
@@ -211,17 +220,23 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "B_k3_MeV": -5.0581,
-        "B_k4_MeV": 1.9077,
-        "B_k5_MeV": 2.8435,
+        "B_k3_MeV": 2.2236,
+        "B_k4_MeV": 2.2236,
+        "B_k5_MeV": 2.2236,
+        "B_k3_unified_MeV": 0.6984,
+        "B_k4_unified_MeV": 0.6984,
+        "B_k5_unified_MeV": 0.6984,
+        "delta_22_unified_MeV": 0.6984,
+        "residual_unified_MeV": -1.5258,
+        "pct_error_unified": 68.5987,
         "B_AME_MeV": 2.2242,
-        "delta_trunc_MeV": 0.9358,
+        "delta_trunc_MeV": 0.0,
         "delta_param_MeV": 0.0,
         "delta_codata_MeV": 1e-06,
-        "delta_total_MeV": 0.9358,
-        "residual_MeV": 0.6193,
-        "pct_error": 27.8446,
-        "k_best": 4
+        "delta_total_MeV": 0.0,
+        "residual_MeV": -0.0006,
+        "pct_error": 0.025,
+        "k_best": 3
       },
       {
         "name": "T",
@@ -231,6 +246,12 @@
         "B_k3_MeV": 8.4823,
         "B_k4_MeV": 8.4823,
         "B_k5_MeV": 8.4823,
+        "B_k3_unified_MeV": 8.8822,
+        "B_k4_unified_MeV": 8.8822,
+        "B_k5_unified_MeV": 8.8822,
+        "delta_22_unified_MeV": 1.4064,
+        "residual_unified_MeV": 0.4003,
+        "pct_error_unified": 4.7198,
         "B_AME_MeV": 8.4819,
         "delta_trunc_MeV": 0.0,
         "delta_param_MeV": 1e-06,
@@ -248,6 +269,12 @@
         "B_k3_MeV": 7.7182,
         "B_k4_MeV": 7.7182,
         "B_k5_MeV": 7.7182,
+        "B_k3_unified_MeV": 8.1181,
+        "B_k4_unified_MeV": 8.1181,
+        "B_k5_unified_MeV": 8.1181,
+        "delta_22_unified_MeV": 1.6662,
+        "residual_unified_MeV": 0.4,
+        "pct_error_unified": 5.1829,
         "B_AME_MeV": 7.7181,
         "delta_trunc_MeV": 0.0,
         "delta_param_MeV": 1e-06,
@@ -262,17 +289,23 @@
         "Z": 2,
         "N": 2,
         "A": 4,
-        "B_k3_MeV": 23.0317,
-        "B_k4_MeV": 28.0888,
-        "B_k5_MeV": 29.4592,
+        "B_k3_MeV": 21.8292,
+        "B_k4_MeV": 26.821,
+        "B_k5_MeV": 28.1915,
+        "B_k3_unified_MeV": 23.977,
+        "B_k4_unified_MeV": 31.249,
+        "B_k5_unified_MeV": 32.6195,
+        "delta_22_unified_MeV": 2.2802,
+        "residual_unified_MeV": 4.3239,
+        "pct_error_unified": 15.2811,
         "B_AME_MeV": 28.2956,
         "delta_trunc_MeV": 1.3704,
         "delta_param_MeV": 1e-06,
         "delta_codata_MeV": 1e-06,
         "delta_total_MeV": 1.3704,
-        "residual_MeV": 1.1636,
-        "pct_error": 4.1125,
-        "k_best": 4
+        "residual_MeV": -0.1041,
+        "pct_error": 0.368,
+        "k_best": 5
       },
       {
         "name": "⁶Li",
@@ -280,16 +313,22 @@
         "N": 3,
         "A": 6,
         "B_k3_MeV": 28.0951,
-        "B_k4_MeV": 31.5852,
-        "B_k5_MeV": 33.2752,
+        "B_k4_MeV": 27.587,
+        "B_k5_MeV": 29.277,
+        "B_k3_unified_MeV": 28.0951,
+        "B_k4_unified_MeV": 31.3996,
+        "B_k5_unified_MeV": 33.0896,
+        "delta_22_unified_MeV": 3.8126,
+        "residual_unified_MeV": 1.0958,
+        "pct_error_unified": 3.4251,
         "B_AME_MeV": 31.9938,
         "delta_trunc_MeV": 1.69,
         "delta_param_MeV": 1e-06,
         "delta_codata_MeV": 2e-06,
         "delta_total_MeV": 1.69,
-        "residual_MeV": 1.2814,
-        "pct_error": 4.0052,
-        "k_best": 4
+        "residual_MeV": -2.7168,
+        "pct_error": 8.4917,
+        "k_best": 5
       },
       {
         "name": "⁷Li",
@@ -297,15 +336,21 @@
         "N": 4,
         "A": 7,
         "B_k3_MeV": 41.8048,
-        "B_k4_MeV": 44.5691,
-        "B_k5_MeV": 39.4056,
+        "B_k4_MeV": 42.2236,
+        "B_k5_MeV": 37.0601,
+        "B_k3_unified_MeV": 41.8048,
+        "B_k4_unified_MeV": 46.446,
+        "B_k5_unified_MeV": 48.4718,
+        "delta_22_unified_MeV": 4.2223,
+        "residual_unified_MeV": 9.2277,
+        "pct_error_unified": 23.5137,
         "B_AME_MeV": 39.2441,
         "delta_trunc_MeV": 5.1635,
         "delta_param_MeV": 1e-06,
         "delta_codata_MeV": 2e-06,
         "delta_total_MeV": 5.1635,
-        "residual_MeV": 0.1615,
-        "pct_error": 0.4116,
+        "residual_MeV": -2.184,
+        "pct_error": 5.5651,
         "k_best": 5
       },
       {
@@ -314,16 +359,22 @@
         "N": 5,
         "A": 9,
         "B_k3_MeV": 59.4047,
-        "B_k4_MeV": 61.2104,
-        "B_k5_MeV": 57.8971,
+        "B_k4_MeV": 59.6991,
+        "B_k5_MeV": 56.3858,
+        "B_k3_unified_MeV": 59.4047,
+        "B_k4_unified_MeV": 65.3749,
+        "B_k5_unified_MeV": 67.6533,
+        "delta_22_unified_MeV": 5.6758,
+        "residual_unified_MeV": 9.4881,
+        "pct_error_unified": 16.3123,
         "B_AME_MeV": 58.1652,
         "delta_trunc_MeV": 3.3133,
         "delta_param_MeV": 2e-06,
         "delta_codata_MeV": 3e-06,
         "delta_total_MeV": 3.3133,
-        "residual_MeV": -0.2681,
-        "pct_error": 0.461,
-        "k_best": 5
+        "residual_MeV": -1.7794,
+        "pct_error": 3.0592,
+        "k_best": 3
       },
       {
         "name": "¹¹B",
@@ -331,15 +382,21 @@
         "N": 6,
         "A": 11,
         "B_k3_MeV": 77.3627,
-        "B_k4_MeV": 78.8961,
-        "B_k5_MeV": 76.8069,
+        "B_k4_MeV": 77.2493,
+        "B_k5_MeV": 75.1601,
+        "B_k3_unified_MeV": 77.3627,
+        "B_k4_unified_MeV": 84.4015,
+        "B_k5_unified_MeV": 86.8874,
+        "delta_22_unified_MeV": 7.1522,
+        "residual_unified_MeV": 10.6827,
+        "pct_error_unified": 14.0184,
         "B_AME_MeV": 76.2047,
         "delta_trunc_MeV": 2.0892,
         "delta_param_MeV": 2e-06,
         "delta_codata_MeV": 4e-06,
         "delta_total_MeV": 2.0892,
-        "residual_MeV": 0.6022,
-        "pct_error": 0.7903,
+        "residual_MeV": -1.0446,
+        "pct_error": 1.3707,
         "k_best": 5
       },
       {
@@ -348,15 +405,21 @@
         "N": 6,
         "A": 12,
         "B_k3_MeV": 88.3776,
-        "B_k4_MeV": 89.9518,
-        "B_k5_MeV": 92.2894,
+        "B_k4_MeV": 88.6687,
+        "B_k5_MeV": 91.0063,
+        "B_k3_unified_MeV": 88.3776,
+        "B_k4_unified_MeV": 97.2446,
+        "B_k5_unified_MeV": 99.5822,
+        "delta_22_unified_MeV": 8.5759,
+        "residual_unified_MeV": 7.421,
+        "pct_error_unified": 8.0522,
         "B_AME_MeV": 92.1612,
         "delta_trunc_MeV": 2.3376,
         "delta_param_MeV": 2e-06,
         "delta_codata_MeV": 4e-06,
         "delta_total_MeV": 2.3376,
-        "residual_MeV": 0.1282,
-        "pct_error": 0.1391,
+        "residual_MeV": -1.1549,
+        "pct_error": 1.2531,
         "k_best": 5
       },
       {
@@ -365,15 +428,21 @@
         "N": 8,
         "A": 14,
         "B_k3_MeV": 108.6269,
-        "B_k4_MeV": 110.4212,
-        "B_k5_MeV": 103.7554,
+        "B_k4_MeV": 108.6953,
+        "B_k5_MeV": 102.0295,
+        "B_k3_unified_MeV": 108.6269,
+        "B_k4_unified_MeV": 117.0821,
+        "B_k5_unified_MeV": 120.0021,
+        "delta_22_unified_MeV": 8.3868,
+        "residual_unified_MeV": 15.3437,
+        "pct_error_unified": 14.6608,
         "B_AME_MeV": 104.6584,
         "delta_trunc_MeV": 6.6659,
         "delta_param_MeV": 3e-06,
         "delta_codata_MeV": 5e-06,
         "delta_total_MeV": 6.6659,
-        "residual_MeV": -0.903,
-        "pct_error": 0.8628,
+        "residual_MeV": -2.6289,
+        "pct_error": 2.5119,
         "k_best": 5
       },
       {
@@ -382,15 +451,21 @@
         "N": 7,
         "A": 14,
         "B_k3_MeV": 99.7703,
-        "B_k4_MeV": 101.7168,
-        "B_k5_MeV": 104.2097,
+        "B_k4_MeV": 99.1834,
+        "B_k5_MeV": 101.6762,
+        "B_k3_unified_MeV": 99.7703,
+        "B_k4_unified_MeV": 109.4041,
+        "B_k5_unified_MeV": 111.8969,
+        "delta_22_unified_MeV": 10.2207,
+        "residual_unified_MeV": 7.2385,
+        "pct_error_unified": 6.9163,
         "B_AME_MeV": 104.6584,
         "delta_trunc_MeV": 2.4928,
         "delta_param_MeV": 3e-06,
         "delta_codata_MeV": 4e-06,
         "delta_total_MeV": 2.4928,
-        "residual_MeV": -0.4487,
-        "pct_error": 0.4288,
+        "residual_MeV": -2.9822,
+        "pct_error": 2.8494,
         "k_best": 5
       },
       {
@@ -399,15 +474,21 @@
         "N": 8,
         "A": 16,
         "B_k3_MeV": 124.0244,
-        "B_k4_MeV": 126.0398,
-        "B_k5_MeV": 128.6676,
+        "B_k4_MeV": 123.9008,
+        "B_k5_MeV": 126.5286,
+        "B_k3_unified_MeV": 124.0244,
+        "B_k4_unified_MeV": 135.7993,
+        "B_k5_unified_MeV": 138.4271,
+        "delta_22_unified_MeV": 11.8986,
+        "residual_unified_MeV": 10.8079,
+        "pct_error_unified": 8.4689,
         "B_AME_MeV": 127.6192,
         "delta_trunc_MeV": 2.6278,
         "delta_param_MeV": 3e-06,
         "delta_codata_MeV": 5e-06,
         "delta_total_MeV": 2.6278,
-        "residual_MeV": 1.0484,
-        "pct_error": 0.8215,
+        "residual_MeV": -1.0906,
+        "pct_error": 0.8546,
         "k_best": 5
       },
       {
@@ -416,16 +497,22 @@
         "N": 10,
         "A": 20,
         "B_k3_MeV": 160.1275,
-        "B_k4_MeV": 160.7634,
-        "B_k5_MeV": 163.6128,
+        "B_k4_MeV": 159.7678,
+        "B_k5_MeV": 162.6172,
+        "B_k3_unified_MeV": 160.1275,
+        "B_k4_unified_MeV": 175.1374,
+        "B_k5_unified_MeV": 177.9868,
+        "delta_22_unified_MeV": 15.3696,
+        "residual_unified_MeV": 17.3368,
+        "pct_error_unified": 10.7917,
         "B_AME_MeV": 160.65,
         "delta_trunc_MeV": 2.8494,
         "delta_param_MeV": 4e-06,
         "delta_codata_MeV": 6e-06,
         "delta_total_MeV": 2.8494,
-        "residual_MeV": 2.9628,
-        "pct_error": 1.8443,
-        "k_best": 4
+        "residual_MeV": 1.9672,
+        "pct_error": 1.2245,
+        "k_best": 3
       },
       {
         "name": "²⁸Si",
@@ -433,15 +520,21 @@
         "N": 14,
         "A": 28,
         "B_k3_MeV": 232.3733,
-        "B_k4_MeV": 231.2679,
-        "B_k5_MeV": 234.4196,
+        "B_k4_MeV": 231.7457,
+        "B_k5_MeV": 234.8974,
+        "B_k3_unified_MeV": 232.3733,
+        "B_k4_unified_MeV": 254.6816,
+        "B_k5_unified_MeV": 257.8334,
+        "delta_22_unified_MeV": 22.936,
+        "residual_unified_MeV": 21.2978,
+        "pct_error_unified": 9.004,
         "B_AME_MeV": 236.5356,
         "delta_trunc_MeV": 3.1518,
         "delta_param_MeV": 5e-06,
         "delta_codata_MeV": 9e-06,
         "delta_total_MeV": 3.1518,
-        "residual_MeV": -2.116,
-        "pct_error": 0.8946,
+        "residual_MeV": -1.6382,
+        "pct_error": 0.6926,
         "k_best": 5
       },
       {
@@ -450,15 +543,21 @@
         "N": 20,
         "A": 40,
         "B_k3_MeV": 338.7274,
-        "B_k4_MeV": 339.8038,
-        "B_k5_MeV": 343.1764,
+        "B_k4_MeV": 337.8812,
+        "B_k5_MeV": 341.2539,
+        "B_k3_unified_MeV": 338.7274,
+        "B_k4_unified_MeV": 374.8044,
+        "B_k5_unified_MeV": 378.177,
+        "delta_22_unified_MeV": 36.9232,
+        "residual_unified_MeV": 36.125,
+        "pct_error_unified": 10.5613,
         "B_AME_MeV": 342.052,
         "delta_trunc_MeV": 3.3726,
         "delta_param_MeV": 7e-06,
         "delta_codata_MeV": 1.2e-05,
         "delta_total_MeV": 3.3726,
-        "residual_MeV": 1.1244,
-        "pct_error": 0.3287,
+        "residual_MeV": -0.7981,
+        "pct_error": 0.2333,
         "k_best": 5
       },
       {
@@ -467,15 +566,21 @@
         "N": 30,
         "A": 56,
         "B_k3_MeV": 493.3181,
-        "B_k4_MeV": 493.2833,
-        "B_k5_MeV": 490.5047,
+        "B_k4_MeV": 492.2923,
+        "B_k5_MeV": 489.5137,
+        "B_k3_unified_MeV": 493.3181,
+        "B_k4_unified_MeV": 558.6963,
+        "B_k5_unified_MeV": 563.107,
+        "delta_22_unified_MeV": 66.404,
+        "residual_unified_MeV": 70.8446,
+        "pct_error_unified": 14.3916,
         "B_AME_MeV": 492.2624,
         "delta_trunc_MeV": 2.7786,
         "delta_param_MeV": 1e-05,
         "delta_codata_MeV": 1.8e-05,
         "delta_total_MeV": 2.7786,
-        "residual_MeV": -1.7577,
-        "pct_error": 0.3571,
+        "residual_MeV": -2.7487,
+        "pct_error": 0.5584,
         "k_best": 4
       },
       {
@@ -484,15 +589,21 @@
         "N": 70,
         "A": 120,
         "B_k3_MeV": 1074.2243,
-        "B_k4_MeV": 1073.5371,
-        "B_k5_MeV": 1018.5081,
+        "B_k4_MeV": 1072.7865,
+        "B_k5_MeV": 1017.7575,
+        "B_k3_unified_MeV": 1074.2243,
+        "B_k4_unified_MeV": 1407.7542,
+        "B_k5_unified_MeV": 1414.2343,
+        "delta_22_unified_MeV": 334.9677,
+        "residual_unified_MeV": 393.6343,
+        "pct_error_unified": 38.5689,
         "B_AME_MeV": 1020.6,
         "delta_trunc_MeV": 55.029,
         "delta_param_MeV": 2.1e-05,
         "delta_codata_MeV": 4e-05,
         "delta_total_MeV": 55.029,
-        "residual_MeV": -2.0919,
-        "pct_error": 0.205,
+        "residual_MeV": -2.8425,
+        "pct_error": 0.2785,
         "k_best": 5
       },
       {
@@ -501,15 +612,21 @@
         "N": 126,
         "A": 208,
         "B_k3_MeV": 1788.227,
-        "B_k4_MeV": 1788.5854,
-        "B_k5_MeV": 1632.981,
+        "B_k4_MeV": 1786.4504,
+        "B_k5_MeV": 1630.8461,
+        "B_k3_unified_MeV": 1788.227,
+        "B_k4_unified_MeV": 2899.9841,
+        "B_k5_unified_MeV": 2907.6155,
+        "delta_22_unified_MeV": 1113.5337,
+        "residual_unified_MeV": 1271.1755,
+        "pct_error_unified": 77.6793,
         "B_AME_MeV": 1636.44,
         "delta_trunc_MeV": 155.6043,
         "delta_param_MeV": 3.7e-05,
         "delta_codata_MeV": 7.2e-05,
         "delta_total_MeV": 155.6043,
-        "residual_MeV": -3.459,
-        "pct_error": 0.2114,
+        "residual_MeV": -5.5939,
+        "pct_error": 0.3418,
         "k_best": 5
       }
     ],
@@ -531,68 +648,5273 @@
         "decay": "¹⁴C → ¹⁴N",
         "Z_parent": 6,
         "N_parent": 8,
-        "Q_nf_MeV": 0.141643,
+        "Q_nf_MeV": 0.114658,
         "Q_bw3_MeV": -8.074216,
-        "Q_bw4_MeV": -7.922051,
-        "Q_bw5_MeV": 1.236632,
+        "Q_bw4_MeV": -8.729591,
+        "Q_bw5_MeV": 0.429092,
         "Q_exp_MeV": 0.15648,
         "Q_exp_err_MeV": 4e-05,
-        "residual_nf_MeV": -0.014837,
-        "residual_bw5_MeV": 1.080152
+        "residual_nf_MeV": -0.041822,
+        "residual_bw5_MeV": 0.272612
       },
       {
         "decay": "⁶⁰Co → ⁶⁰Ni",
         "Z_parent": 27,
         "N_parent": 33,
-        "Q_nf_MeV": 0.931708,
+        "Q_nf_MeV": 0.967318,
         "Q_bw3_MeV": -4.404909,
-        "Q_bw4_MeV": -4.164373,
-        "Q_bw5_MeV": 2.09964,
+        "Q_bw4_MeV": -4.400639,
+        "Q_bw5_MeV": 1.863375,
         "Q_exp_MeV": 0.31817,
         "Q_exp_err_MeV": 0.00013,
-        "residual_nf_MeV": 0.613538,
-        "residual_bw5_MeV": 1.78147
+        "residual_nf_MeV": 0.649148,
+        "residual_bw5_MeV": 1.545205
       },
       {
         "decay": "¹³⁷Cs → ¹³⁷Ba",
         "Z_parent": 55,
         "N_parent": 82,
-        "Q_nf_MeV": 0.256892,
+        "Q_nf_MeV": 0.292437,
         "Q_bw3_MeV": -10.081414,
-        "Q_bw4_MeV": -10.265288,
-        "Q_bw5_MeV": 2.619787,
+        "Q_bw4_MeV": -10.081404,
+        "Q_bw5_MeV": 2.803671,
         "Q_exp_MeV": 0.514,
         "Q_exp_err_MeV": 0.00021,
-        "residual_nf_MeV": -0.257108,
-        "residual_bw5_MeV": 2.105787
+        "residual_nf_MeV": -0.221563,
+        "residual_bw5_MeV": 2.289671
       },
       {
         "decay": "⁹⁰Sr → ⁹⁰Y",
         "Z_parent": 38,
         "N_parent": 52,
-        "Q_nf_MeV": 0.106699,
+        "Q_nf_MeV": 0.025464,
         "Q_bw3_MeV": -10.673017,
-        "Q_bw4_MeV": -10.351934,
-        "Q_bw5_MeV": -0.292513,
+        "Q_bw4_MeV": -10.67336,
+        "Q_bw5_MeV": -0.613938,
         "Q_exp_MeV": 0.5459,
         "Q_exp_err_MeV": 7e-05,
-        "residual_nf_MeV": -0.439201,
-        "residual_bw5_MeV": -0.838413
+        "residual_nf_MeV": -0.520436,
+        "residual_bw5_MeV": -1.159838
       },
       {
         "decay": "²¹⁰Bi → ²¹⁰Po",
         "Z_parent": 83,
         "N_parent": 127,
-        "Q_nf_MeV": 0.547651,
+        "Q_nf_MeV": 0.582975,
         "Q_bw3_MeV": -12.584793,
-        "Q_bw4_MeV": -12.792407,
-        "Q_bw5_MeV": 0.928755,
+        "Q_bw4_MeV": -12.584793,
+        "Q_bw5_MeV": 1.136369,
         "Q_exp_MeV": 1.1627,
         "Q_exp_err_MeV": 6e-05,
-        "residual_nf_MeV": -0.615049,
-        "residual_bw5_MeV": -0.233945
+        "residual_nf_MeV": -0.579725,
+        "residual_bw5_MeV": -0.026331
       }
     ],
+    "unified_iterative_per_step": {
+      "H": [],
+      "D": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        }
+      ],
+      "T": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 1,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.039876347198104,
+          "delta_MeV": 0.708005260079216,
+          "cumulative_MeV": 1.4064320026241277
+        }
+      ],
+      "³He": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        }
+      ],
+      "⁴He": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        }
+      ],
+      "⁶Li": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        }
+      ],
+      "⁷Li": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 3,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 4.736248157364031,
+          "delta_MeV": 0.4097035028824914,
+          "cumulative_MeV": 4.2223386442375554
+        }
+      ],
+      "⁹Be": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 4,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 6.127975395042782,
+          "delta_MeV": 0.3017197404120639,
+          "cumulative_MeV": 5.675763560311255
+        }
+      ],
+      "¹¹B": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 5,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 7.5417563399187655,
+          "delta_MeV": 0.19108730694282738,
+          "cumulative_MeV": 7.152219862610977
+        }
+      ],
+      "¹²C": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        }
+      ],
+      "¹⁴C": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 6,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 8.977438079152659,
+          "delta_MeV": 0.07565005730573555,
+          "cumulative_MeV": 8.65154785940644
+        },
+        {
+          "A": 14,
+          "Z": 6,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 8.723936576773395,
+          "delta_MeV": -0.26473966294908824,
+          "cumulative_MeV": 8.386808196457352
+        }
+      ],
+      "¹⁴N": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        }
+      ],
+      "¹⁶O": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        },
+        {
+          "A": 15,
+          "Z": 8,
+          "N": 7,
+          "nuc": "p",
+          "log_trace_22": 12.023764553972144,
+          "delta_MeV": 1.6122345389730015,
+          "cumulative_MeV": 11.832923261947508
+        },
+        {
+          "A": 16,
+          "Z": 8,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 12.086611361487883,
+          "delta_MeV": 0.0656329153199676,
+          "cumulative_MeV": 11.898556177267476
+        }
+      ],
+      "²⁰Ne": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        },
+        {
+          "A": 15,
+          "Z": 8,
+          "N": 7,
+          "nuc": "p",
+          "log_trace_22": 12.023764553972144,
+          "delta_MeV": 1.6122345389730015,
+          "cumulative_MeV": 11.832923261947508
+        },
+        {
+          "A": 16,
+          "Z": 8,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 12.086611361487883,
+          "delta_MeV": 0.0656329153199676,
+          "cumulative_MeV": 11.898556177267476
+        },
+        {
+          "A": 17,
+          "Z": 9,
+          "N": 8,
+          "nuc": "p",
+          "log_trace_22": 13.748695996539608,
+          "delta_MeV": 1.7357677250296475,
+          "cumulative_MeV": 13.634323902297124
+        },
+        {
+          "A": 18,
+          "Z": 9,
+          "N": 9,
+          "nuc": "n",
+          "log_trace_22": 13.72857119118741,
+          "delta_MeV": -0.021016972822062458,
+          "cumulative_MeV": 13.613306929475062
+        },
+        {
+          "A": 19,
+          "Z": 10,
+          "N": 9,
+          "nuc": "p",
+          "log_trace_22": 15.510359954594943,
+          "delta_MeV": 1.8607785446780416,
+          "cumulative_MeV": 15.474085474153103
+        },
+        {
+          "A": 20,
+          "Z": 10,
+          "N": 10,
+          "nuc": "n",
+          "log_trace_22": 15.410292540272518,
+          "delta_MeV": -0.10450357607850004,
+          "cumulative_MeV": 15.369581898074603
+        }
+      ],
+      "²⁸Si": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        },
+        {
+          "A": 15,
+          "Z": 8,
+          "N": 7,
+          "nuc": "p",
+          "log_trace_22": 12.023764553972144,
+          "delta_MeV": 1.6122345389730015,
+          "cumulative_MeV": 11.832923261947508
+        },
+        {
+          "A": 16,
+          "Z": 8,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 12.086611361487883,
+          "delta_MeV": 0.0656329153199676,
+          "cumulative_MeV": 11.898556177267476
+        },
+        {
+          "A": 17,
+          "Z": 9,
+          "N": 8,
+          "nuc": "p",
+          "log_trace_22": 13.748695996539608,
+          "delta_MeV": 1.7357677250296475,
+          "cumulative_MeV": 13.634323902297124
+        },
+        {
+          "A": 18,
+          "Z": 9,
+          "N": 9,
+          "nuc": "n",
+          "log_trace_22": 13.72857119118741,
+          "delta_MeV": -0.021016972822062458,
+          "cumulative_MeV": 13.613306929475062
+        },
+        {
+          "A": 19,
+          "Z": 10,
+          "N": 9,
+          "nuc": "p",
+          "log_trace_22": 15.510359954594943,
+          "delta_MeV": 1.8607785446780416,
+          "cumulative_MeV": 15.474085474153103
+        },
+        {
+          "A": 20,
+          "Z": 10,
+          "N": 10,
+          "nuc": "n",
+          "log_trace_22": 15.410292540272518,
+          "delta_MeV": -0.10450357607850004,
+          "cumulative_MeV": 15.369581898074603
+        },
+        {
+          "A": 21,
+          "Z": 11,
+          "N": 10,
+          "nuc": "p",
+          "log_trace_22": 17.313426982069863,
+          "delta_MeV": 1.9875036871159946,
+          "cumulative_MeV": 17.357085585190596
+        },
+        {
+          "A": 22,
+          "Z": 11,
+          "N": 11,
+          "nuc": "n",
+          "log_trace_22": 17.13709250338341,
+          "delta_MeV": -0.1841516914716849,
+          "cumulative_MeV": 17.172933893718913
+        },
+        {
+          "A": 23,
+          "Z": 12,
+          "N": 11,
+          "nuc": "p",
+          "log_trace_22": 19.163430210090066,
+          "delta_MeV": 2.1161687661004978,
+          "cumulative_MeV": 19.28910265981941
+        },
+        {
+          "A": 24,
+          "Z": 12,
+          "N": 12,
+          "nuc": "n",
+          "log_trace_22": 18.915227856111816,
+          "delta_MeV": -0.25920559412332417,
+          "cumulative_MeV": 19.029897065696087
+        },
+        {
+          "A": 25,
+          "Z": 13,
+          "N": 12,
+          "nuc": "p",
+          "log_trace_22": 21.066815494839865,
+          "delta_MeV": 2.2469712444942207,
+          "cumulative_MeV": 21.27686831019031
+        },
+        {
+          "A": 26,
+          "Z": 13,
+          "N": 13,
+          "nuc": "n",
+          "log_trace_22": 20.751942832756267,
+          "delta_MeV": -0.328831512434905,
+          "cumulative_MeV": 20.948036797755403
+        },
+        {
+          "A": 27,
+          "Z": 14,
+          "N": 13,
+          "nuc": "p",
+          "log_trace_22": 23.030968000231223,
+          "delta_MeV": 2.3800582995643937,
+          "cumulative_MeV": 23.328095097319796
+        },
+        {
+          "A": 28,
+          "Z": 14,
+          "N": 14,
+          "nuc": "n",
+          "log_trace_22": 22.655485517896327,
+          "delta_MeV": -0.3921282709713777,
+          "cumulative_MeV": 22.93596682634842
+        }
+      ],
+      "⁴⁰Ca": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        },
+        {
+          "A": 15,
+          "Z": 8,
+          "N": 7,
+          "nuc": "p",
+          "log_trace_22": 12.023764553972144,
+          "delta_MeV": 1.6122345389730015,
+          "cumulative_MeV": 11.832923261947508
+        },
+        {
+          "A": 16,
+          "Z": 8,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 12.086611361487883,
+          "delta_MeV": 0.0656329153199676,
+          "cumulative_MeV": 11.898556177267476
+        },
+        {
+          "A": 17,
+          "Z": 9,
+          "N": 8,
+          "nuc": "p",
+          "log_trace_22": 13.748695996539608,
+          "delta_MeV": 1.7357677250296475,
+          "cumulative_MeV": 13.634323902297124
+        },
+        {
+          "A": 18,
+          "Z": 9,
+          "N": 9,
+          "nuc": "n",
+          "log_trace_22": 13.72857119118741,
+          "delta_MeV": -0.021016972822062458,
+          "cumulative_MeV": 13.613306929475062
+        },
+        {
+          "A": 19,
+          "Z": 10,
+          "N": 9,
+          "nuc": "p",
+          "log_trace_22": 15.510359954594943,
+          "delta_MeV": 1.8607785446780416,
+          "cumulative_MeV": 15.474085474153103
+        },
+        {
+          "A": 20,
+          "Z": 10,
+          "N": 10,
+          "nuc": "n",
+          "log_trace_22": 15.410292540272518,
+          "delta_MeV": -0.10450357607850004,
+          "cumulative_MeV": 15.369581898074603
+        },
+        {
+          "A": 21,
+          "Z": 11,
+          "N": 10,
+          "nuc": "p",
+          "log_trace_22": 17.313426982069863,
+          "delta_MeV": 1.9875036871159946,
+          "cumulative_MeV": 17.357085585190596
+        },
+        {
+          "A": 22,
+          "Z": 11,
+          "N": 11,
+          "nuc": "n",
+          "log_trace_22": 17.13709250338341,
+          "delta_MeV": -0.1841516914716849,
+          "cumulative_MeV": 17.172933893718913
+        },
+        {
+          "A": 23,
+          "Z": 12,
+          "N": 11,
+          "nuc": "p",
+          "log_trace_22": 19.163430210090066,
+          "delta_MeV": 2.1161687661004978,
+          "cumulative_MeV": 19.28910265981941
+        },
+        {
+          "A": 24,
+          "Z": 12,
+          "N": 12,
+          "nuc": "n",
+          "log_trace_22": 18.915227856111816,
+          "delta_MeV": -0.25920559412332417,
+          "cumulative_MeV": 19.029897065696087
+        },
+        {
+          "A": 25,
+          "Z": 13,
+          "N": 12,
+          "nuc": "p",
+          "log_trace_22": 21.066815494839865,
+          "delta_MeV": 2.2469712444942207,
+          "cumulative_MeV": 21.27686831019031
+        },
+        {
+          "A": 26,
+          "Z": 13,
+          "N": 13,
+          "nuc": "n",
+          "log_trace_22": 20.751942832756267,
+          "delta_MeV": -0.328831512434905,
+          "cumulative_MeV": 20.948036797755403
+        },
+        {
+          "A": 27,
+          "Z": 14,
+          "N": 13,
+          "nuc": "p",
+          "log_trace_22": 23.030968000231223,
+          "delta_MeV": 2.3800582995643937,
+          "cumulative_MeV": 23.328095097319796
+        },
+        {
+          "A": 28,
+          "Z": 14,
+          "N": 14,
+          "nuc": "n",
+          "log_trace_22": 22.655485517896327,
+          "delta_MeV": -0.3921282709713777,
+          "cumulative_MeV": 22.93596682634842
+        },
+        {
+          "A": 29,
+          "Z": 15,
+          "N": 14,
+          "nuc": "p",
+          "log_trace_22": 25.064203838312544,
+          "delta_MeV": 2.5155009745553514,
+          "cumulative_MeV": 25.45146780090377
+        },
+        {
+          "A": 30,
+          "Z": 15,
+          "N": 15,
+          "nuc": "n",
+          "log_trace_22": 24.63507945965479,
+          "delta_MeV": -0.4481482054458376,
+          "cumulative_MeV": 25.003319595457935
+        },
+        {
+          "A": 31,
+          "Z": 16,
+          "N": 15,
+          "nuc": "p",
+          "log_trace_22": 27.175716188420665,
+          "delta_MeV": 2.653267554380267,
+          "cumulative_MeV": 27.656587149838202
+        },
+        {
+          "A": 32,
+          "Z": 16,
+          "N": 16,
+          "nuc": "n",
+          "log_trace_22": 26.70083857957162,
+          "delta_MeV": -0.4959297555589123,
+          "cumulative_MeV": 27.16065739427929
+        },
+        {
+          "A": 33,
+          "Z": 17,
+          "N": 16,
+          "nuc": "p",
+          "log_trace_22": 29.37546839239447,
+          "delta_MeV": 2.793200783879163,
+          "cumulative_MeV": 29.953858178158455
+        },
+        {
+          "A": 34,
+          "Z": 17,
+          "N": 17,
+          "nuc": "n",
+          "log_trace_22": 28.863617969472145,
+          "delta_MeV": -0.534541638503083,
+          "cumulative_MeV": 29.419316539655373
+        },
+        {
+          "A": 35,
+          "Z": 18,
+          "N": 17,
+          "nuc": "p",
+          "log_trace_22": 31.67403214411488,
+          "delta_MeV": 2.935004701586017,
+          "cumulative_MeV": 32.354321241241394
+        },
+        {
+          "A": 36,
+          "Z": 18,
+          "N": 18,
+          "nuc": "n",
+          "log_trace_22": 31.134800985739176,
+          "delta_MeV": -0.5631362093722544,
+          "cumulative_MeV": 31.79118503186914
+        },
+        {
+          "A": 37,
+          "Z": 19,
+          "N": 18,
+          "nuc": "p",
+          "log_trace_22": 34.082376557420986,
+          "delta_MeV": 3.0782467008678385,
+          "cumulative_MeV": 34.86943173273698
+        },
+        {
+          "A": 38,
+          "Z": 19,
+          "N": 19,
+          "nuc": "n",
+          "log_trace_22": 33.526033317709505,
+          "delta_MeV": -0.5810068989053427,
+          "cumulative_MeV": 34.288424833831634
+        },
+        {
+          "A": 39,
+          "Z": 20,
+          "N": 19,
+          "nuc": "p",
+          "log_trace_22": 36.61162217190085,
+          "delta_MeV": 3.2223783511781674,
+          "cumulative_MeV": 37.5108031850098
+        },
+        {
+          "A": 40,
+          "Z": 20,
+          "N": 20,
+          "nuc": "n",
+          "log_trace_22": 36.04892523509596,
+          "delta_MeV": -0.5876422663931191,
+          "cumulative_MeV": 36.92316091861668
+        }
+      ],
+      "⁵⁶Fe": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        },
+        {
+          "A": 15,
+          "Z": 8,
+          "N": 7,
+          "nuc": "p",
+          "log_trace_22": 12.023764553972144,
+          "delta_MeV": 1.6122345389730015,
+          "cumulative_MeV": 11.832923261947508
+        },
+        {
+          "A": 16,
+          "Z": 8,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 12.086611361487883,
+          "delta_MeV": 0.0656329153199676,
+          "cumulative_MeV": 11.898556177267476
+        },
+        {
+          "A": 17,
+          "Z": 9,
+          "N": 8,
+          "nuc": "p",
+          "log_trace_22": 13.748695996539608,
+          "delta_MeV": 1.7357677250296475,
+          "cumulative_MeV": 13.634323902297124
+        },
+        {
+          "A": 18,
+          "Z": 9,
+          "N": 9,
+          "nuc": "n",
+          "log_trace_22": 13.72857119118741,
+          "delta_MeV": -0.021016972822062458,
+          "cumulative_MeV": 13.613306929475062
+        },
+        {
+          "A": 19,
+          "Z": 10,
+          "N": 9,
+          "nuc": "p",
+          "log_trace_22": 15.510359954594943,
+          "delta_MeV": 1.8607785446780416,
+          "cumulative_MeV": 15.474085474153103
+        },
+        {
+          "A": 20,
+          "Z": 10,
+          "N": 10,
+          "nuc": "n",
+          "log_trace_22": 15.410292540272518,
+          "delta_MeV": -0.10450357607850004,
+          "cumulative_MeV": 15.369581898074603
+        },
+        {
+          "A": 21,
+          "Z": 11,
+          "N": 10,
+          "nuc": "p",
+          "log_trace_22": 17.313426982069863,
+          "delta_MeV": 1.9875036871159946,
+          "cumulative_MeV": 17.357085585190596
+        },
+        {
+          "A": 22,
+          "Z": 11,
+          "N": 11,
+          "nuc": "n",
+          "log_trace_22": 17.13709250338341,
+          "delta_MeV": -0.1841516914716849,
+          "cumulative_MeV": 17.172933893718913
+        },
+        {
+          "A": 23,
+          "Z": 12,
+          "N": 11,
+          "nuc": "p",
+          "log_trace_22": 19.163430210090066,
+          "delta_MeV": 2.1161687661004978,
+          "cumulative_MeV": 19.28910265981941
+        },
+        {
+          "A": 24,
+          "Z": 12,
+          "N": 12,
+          "nuc": "n",
+          "log_trace_22": 18.915227856111816,
+          "delta_MeV": -0.25920559412332417,
+          "cumulative_MeV": 19.029897065696087
+        },
+        {
+          "A": 25,
+          "Z": 13,
+          "N": 12,
+          "nuc": "p",
+          "log_trace_22": 21.066815494839865,
+          "delta_MeV": 2.2469712444942207,
+          "cumulative_MeV": 21.27686831019031
+        },
+        {
+          "A": 26,
+          "Z": 13,
+          "N": 13,
+          "nuc": "n",
+          "log_trace_22": 20.751942832756267,
+          "delta_MeV": -0.328831512434905,
+          "cumulative_MeV": 20.948036797755403
+        },
+        {
+          "A": 27,
+          "Z": 14,
+          "N": 13,
+          "nuc": "p",
+          "log_trace_22": 23.030968000231223,
+          "delta_MeV": 2.3800582995643937,
+          "cumulative_MeV": 23.328095097319796
+        },
+        {
+          "A": 28,
+          "Z": 14,
+          "N": 14,
+          "nuc": "n",
+          "log_trace_22": 22.655485517896327,
+          "delta_MeV": -0.3921282709713777,
+          "cumulative_MeV": 22.93596682634842
+        },
+        {
+          "A": 29,
+          "Z": 15,
+          "N": 14,
+          "nuc": "p",
+          "log_trace_22": 25.064203838312544,
+          "delta_MeV": 2.5155009745553514,
+          "cumulative_MeV": 25.45146780090377
+        },
+        {
+          "A": 30,
+          "Z": 15,
+          "N": 15,
+          "nuc": "n",
+          "log_trace_22": 24.63507945965479,
+          "delta_MeV": -0.4481482054458376,
+          "cumulative_MeV": 25.003319595457935
+        },
+        {
+          "A": 31,
+          "Z": 16,
+          "N": 15,
+          "nuc": "p",
+          "log_trace_22": 27.175716188420665,
+          "delta_MeV": 2.653267554380267,
+          "cumulative_MeV": 27.656587149838202
+        },
+        {
+          "A": 32,
+          "Z": 16,
+          "N": 16,
+          "nuc": "n",
+          "log_trace_22": 26.70083857957162,
+          "delta_MeV": -0.4959297555589123,
+          "cumulative_MeV": 27.16065739427929
+        },
+        {
+          "A": 33,
+          "Z": 17,
+          "N": 16,
+          "nuc": "p",
+          "log_trace_22": 29.37546839239447,
+          "delta_MeV": 2.793200783879163,
+          "cumulative_MeV": 29.953858178158455
+        },
+        {
+          "A": 34,
+          "Z": 17,
+          "N": 17,
+          "nuc": "n",
+          "log_trace_22": 28.863617969472145,
+          "delta_MeV": -0.534541638503083,
+          "cumulative_MeV": 29.419316539655373
+        },
+        {
+          "A": 35,
+          "Z": 18,
+          "N": 17,
+          "nuc": "p",
+          "log_trace_22": 31.67403214411488,
+          "delta_MeV": 2.935004701586017,
+          "cumulative_MeV": 32.354321241241394
+        },
+        {
+          "A": 36,
+          "Z": 18,
+          "N": 18,
+          "nuc": "n",
+          "log_trace_22": 31.134800985739176,
+          "delta_MeV": -0.5631362093722544,
+          "cumulative_MeV": 31.79118503186914
+        },
+        {
+          "A": 37,
+          "Z": 19,
+          "N": 18,
+          "nuc": "p",
+          "log_trace_22": 34.082376557420986,
+          "delta_MeV": 3.0782467008678385,
+          "cumulative_MeV": 34.86943173273698
+        },
+        {
+          "A": 38,
+          "Z": 19,
+          "N": 19,
+          "nuc": "n",
+          "log_trace_22": 33.526033317709505,
+          "delta_MeV": -0.5810068989053427,
+          "cumulative_MeV": 34.288424833831634
+        },
+        {
+          "A": 39,
+          "Z": 20,
+          "N": 19,
+          "nuc": "p",
+          "log_trace_22": 36.61162217190085,
+          "delta_MeV": 3.2223783511781674,
+          "cumulative_MeV": 37.5108031850098
+        },
+        {
+          "A": 40,
+          "Z": 20,
+          "N": 20,
+          "nuc": "n",
+          "log_trace_22": 36.04892523509596,
+          "delta_MeV": -0.5876422663931191,
+          "cumulative_MeV": 36.92316091861668
+        },
+        {
+          "A": 41,
+          "Z": 21,
+          "N": 20,
+          "nuc": "p",
+          "log_trace_22": 39.27278072266322,
+          "delta_MeV": 3.3667745838374996,
+          "cumulative_MeV": 40.28993550245418
+        },
+        {
+          "A": 42,
+          "Z": 21,
+          "N": 21,
+          "nuc": "n",
+          "log_trace_22": 38.71475094374253,
+          "delta_MeV": -0.5827682053181492,
+          "cumulative_MeV": 39.70716729713603
+        },
+        {
+          "A": 43,
+          "Z": 22,
+          "N": 21,
+          "nuc": "p",
+          "log_trace_22": 42.07650467972406,
+          "delta_MeV": 3.510786100391923,
+          "cumulative_MeV": 43.21795339752796
+        },
+        {
+          "A": 44,
+          "Z": 22,
+          "N": 22,
+          "nuc": "n",
+          "log_trace_22": 41.53417610878295,
+          "delta_MeV": -0.5663709356002398,
+          "cumulative_MeV": 42.65158246192772
+        },
+        {
+          "A": 45,
+          "Z": 23,
+          "N": 22,
+          "nuc": "p",
+          "log_trace_22": 45.032869029314384,
+          "delta_MeV": 3.6537960361201374,
+          "cumulative_MeV": 46.30537849804785
+        },
+        {
+          "A": 46,
+          "Z": 23,
+          "N": 23,
+          "nuc": "n",
+          "log_trace_22": 44.517039997302284,
+          "delta_MeV": -0.538696626223263,
+          "cumulative_MeV": 45.76668187182459
+        },
+        {
+          "A": 47,
+          "Z": 24,
+          "N": 23,
+          "nuc": "p",
+          "log_trace_22": 48.151201930088696,
+          "delta_MeV": 3.7952706242698087,
+          "cumulative_MeV": 49.5619524960944
+        },
+        {
+          "A": 48,
+          "Z": 24,
+          "N": 24,
+          "nuc": "n",
+          "log_trace_22": 47.67220859329543,
+          "delta_MeV": -0.5002279408497949,
+          "cumulative_MeV": 49.0617245552446
+        },
+        {
+          "A": 49,
+          "Z": 25,
+          "N": 24,
+          "nuc": "p",
+          "log_trace_22": 51.439972523502526,
+          "delta_MeV": 3.9347954295846113,
+          "cumulative_MeV": 52.99651998482921
+        },
+        {
+          "A": 50,
+          "Z": 25,
+          "N": 25,
+          "nuc": "n",
+          "log_trace_22": 51.00750259899718,
+          "delta_MeV": -0.45164206513408395,
+          "cumulative_MeV": 52.54487791969513
+        },
+        {
+          "A": 51,
+          "Z": 26,
+          "N": 25,
+          "nuc": "p",
+          "log_trace_22": 54.90673567662499,
+          "delta_MeV": 4.072092831965653,
+          "cumulative_MeV": 56.61697075166079
+        },
+        {
+          "A": 52,
+          "Z": 26,
+          "N": 26,
+          "nuc": "n",
+          "log_trace_22": 54.52969306567791,
+          "delta_MeV": -0.39375756278649593,
+          "cumulative_MeV": 56.22321318887429
+        },
+        {
+          "A": 53,
+          "Z": 26,
+          "N": 27,
+          "nuc": "n",
+          "log_trace_22": 56.56102286841234,
+          "delta_MeV": 2.1213821703896136,
+          "cumulative_MeV": 58.344595359263906
+        },
+        {
+          "A": 54,
+          "Z": 26,
+          "N": 28,
+          "nuc": "n",
+          "log_trace_22": 59.08155373485094,
+          "delta_MeV": 2.63227036436023,
+          "cumulative_MeV": 60.97686572362414
+        },
+        {
+          "A": 55,
+          "Z": 26,
+          "N": 29,
+          "nuc": "n",
+          "log_trace_22": 61.576510619719656,
+          "delta_MeV": 2.605562643902818,
+          "cumulative_MeV": 63.58242836752696
+        },
+        {
+          "A": 56,
+          "Z": 26,
+          "N": 30,
+          "nuc": "n",
+          "log_trace_22": 64.27826677164816,
+          "delta_MeV": 2.82152968057,
+          "cumulative_MeV": 66.40395804809695
+        }
+      ],
+      "¹²⁰Sn": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        },
+        {
+          "A": 15,
+          "Z": 8,
+          "N": 7,
+          "nuc": "p",
+          "log_trace_22": 12.023764553972144,
+          "delta_MeV": 1.6122345389730015,
+          "cumulative_MeV": 11.832923261947508
+        },
+        {
+          "A": 16,
+          "Z": 8,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 12.086611361487883,
+          "delta_MeV": 0.0656329153199676,
+          "cumulative_MeV": 11.898556177267476
+        },
+        {
+          "A": 17,
+          "Z": 9,
+          "N": 8,
+          "nuc": "p",
+          "log_trace_22": 13.748695996539608,
+          "delta_MeV": 1.7357677250296475,
+          "cumulative_MeV": 13.634323902297124
+        },
+        {
+          "A": 18,
+          "Z": 9,
+          "N": 9,
+          "nuc": "n",
+          "log_trace_22": 13.72857119118741,
+          "delta_MeV": -0.021016972822062458,
+          "cumulative_MeV": 13.613306929475062
+        },
+        {
+          "A": 19,
+          "Z": 10,
+          "N": 9,
+          "nuc": "p",
+          "log_trace_22": 15.510359954594943,
+          "delta_MeV": 1.8607785446780416,
+          "cumulative_MeV": 15.474085474153103
+        },
+        {
+          "A": 20,
+          "Z": 10,
+          "N": 10,
+          "nuc": "n",
+          "log_trace_22": 15.410292540272518,
+          "delta_MeV": -0.10450357607850004,
+          "cumulative_MeV": 15.369581898074603
+        },
+        {
+          "A": 21,
+          "Z": 11,
+          "N": 10,
+          "nuc": "p",
+          "log_trace_22": 17.313426982069863,
+          "delta_MeV": 1.9875036871159946,
+          "cumulative_MeV": 17.357085585190596
+        },
+        {
+          "A": 22,
+          "Z": 11,
+          "N": 11,
+          "nuc": "n",
+          "log_trace_22": 17.13709250338341,
+          "delta_MeV": -0.1841516914716849,
+          "cumulative_MeV": 17.172933893718913
+        },
+        {
+          "A": 23,
+          "Z": 12,
+          "N": 11,
+          "nuc": "p",
+          "log_trace_22": 19.163430210090066,
+          "delta_MeV": 2.1161687661004978,
+          "cumulative_MeV": 19.28910265981941
+        },
+        {
+          "A": 24,
+          "Z": 12,
+          "N": 12,
+          "nuc": "n",
+          "log_trace_22": 18.915227856111816,
+          "delta_MeV": -0.25920559412332417,
+          "cumulative_MeV": 19.029897065696087
+        },
+        {
+          "A": 25,
+          "Z": 13,
+          "N": 12,
+          "nuc": "p",
+          "log_trace_22": 21.066815494839865,
+          "delta_MeV": 2.2469712444942207,
+          "cumulative_MeV": 21.27686831019031
+        },
+        {
+          "A": 26,
+          "Z": 13,
+          "N": 13,
+          "nuc": "n",
+          "log_trace_22": 20.751942832756267,
+          "delta_MeV": -0.328831512434905,
+          "cumulative_MeV": 20.948036797755403
+        },
+        {
+          "A": 27,
+          "Z": 14,
+          "N": 13,
+          "nuc": "p",
+          "log_trace_22": 23.030968000231223,
+          "delta_MeV": 2.3800582995643937,
+          "cumulative_MeV": 23.328095097319796
+        },
+        {
+          "A": 28,
+          "Z": 14,
+          "N": 14,
+          "nuc": "n",
+          "log_trace_22": 22.655485517896327,
+          "delta_MeV": -0.3921282709713777,
+          "cumulative_MeV": 22.93596682634842
+        },
+        {
+          "A": 29,
+          "Z": 15,
+          "N": 14,
+          "nuc": "p",
+          "log_trace_22": 25.064203838312544,
+          "delta_MeV": 2.5155009745553514,
+          "cumulative_MeV": 25.45146780090377
+        },
+        {
+          "A": 30,
+          "Z": 15,
+          "N": 15,
+          "nuc": "n",
+          "log_trace_22": 24.63507945965479,
+          "delta_MeV": -0.4481482054458376,
+          "cumulative_MeV": 25.003319595457935
+        },
+        {
+          "A": 31,
+          "Z": 16,
+          "N": 15,
+          "nuc": "p",
+          "log_trace_22": 27.175716188420665,
+          "delta_MeV": 2.653267554380267,
+          "cumulative_MeV": 27.656587149838202
+        },
+        {
+          "A": 32,
+          "Z": 16,
+          "N": 16,
+          "nuc": "n",
+          "log_trace_22": 26.70083857957162,
+          "delta_MeV": -0.4959297555589123,
+          "cumulative_MeV": 27.16065739427929
+        },
+        {
+          "A": 33,
+          "Z": 17,
+          "N": 16,
+          "nuc": "p",
+          "log_trace_22": 29.37546839239447,
+          "delta_MeV": 2.793200783879163,
+          "cumulative_MeV": 29.953858178158455
+        },
+        {
+          "A": 34,
+          "Z": 17,
+          "N": 17,
+          "nuc": "n",
+          "log_trace_22": 28.863617969472145,
+          "delta_MeV": -0.534541638503083,
+          "cumulative_MeV": 29.419316539655373
+        },
+        {
+          "A": 35,
+          "Z": 18,
+          "N": 17,
+          "nuc": "p",
+          "log_trace_22": 31.67403214411488,
+          "delta_MeV": 2.935004701586017,
+          "cumulative_MeV": 32.354321241241394
+        },
+        {
+          "A": 36,
+          "Z": 18,
+          "N": 18,
+          "nuc": "n",
+          "log_trace_22": 31.134800985739176,
+          "delta_MeV": -0.5631362093722544,
+          "cumulative_MeV": 31.79118503186914
+        },
+        {
+          "A": 37,
+          "Z": 19,
+          "N": 18,
+          "nuc": "p",
+          "log_trace_22": 34.082376557420986,
+          "delta_MeV": 3.0782467008678385,
+          "cumulative_MeV": 34.86943173273698
+        },
+        {
+          "A": 38,
+          "Z": 19,
+          "N": 19,
+          "nuc": "n",
+          "log_trace_22": 33.526033317709505,
+          "delta_MeV": -0.5810068989053427,
+          "cumulative_MeV": 34.288424833831634
+        },
+        {
+          "A": 39,
+          "Z": 20,
+          "N": 19,
+          "nuc": "p",
+          "log_trace_22": 36.61162217190085,
+          "delta_MeV": 3.2223783511781674,
+          "cumulative_MeV": 37.5108031850098
+        },
+        {
+          "A": 40,
+          "Z": 20,
+          "N": 20,
+          "nuc": "n",
+          "log_trace_22": 36.04892523509596,
+          "delta_MeV": -0.5876422663931191,
+          "cumulative_MeV": 36.92316091861668
+        },
+        {
+          "A": 41,
+          "Z": 21,
+          "N": 20,
+          "nuc": "p",
+          "log_trace_22": 39.27278072266322,
+          "delta_MeV": 3.3667745838374996,
+          "cumulative_MeV": 40.28993550245418
+        },
+        {
+          "A": 42,
+          "Z": 21,
+          "N": 21,
+          "nuc": "n",
+          "log_trace_22": 38.71475094374253,
+          "delta_MeV": -0.5827682053181492,
+          "cumulative_MeV": 39.70716729713603
+        },
+        {
+          "A": 43,
+          "Z": 22,
+          "N": 21,
+          "nuc": "p",
+          "log_trace_22": 42.07650467972406,
+          "delta_MeV": 3.510786100391923,
+          "cumulative_MeV": 43.21795339752796
+        },
+        {
+          "A": 44,
+          "Z": 22,
+          "N": 22,
+          "nuc": "n",
+          "log_trace_22": 41.53417610878295,
+          "delta_MeV": -0.5663709356002398,
+          "cumulative_MeV": 42.65158246192772
+        },
+        {
+          "A": 45,
+          "Z": 23,
+          "N": 22,
+          "nuc": "p",
+          "log_trace_22": 45.032869029314384,
+          "delta_MeV": 3.6537960361201374,
+          "cumulative_MeV": 46.30537849804785
+        },
+        {
+          "A": 46,
+          "Z": 23,
+          "N": 23,
+          "nuc": "n",
+          "log_trace_22": 44.517039997302284,
+          "delta_MeV": -0.538696626223263,
+          "cumulative_MeV": 45.76668187182459
+        },
+        {
+          "A": 47,
+          "Z": 24,
+          "N": 23,
+          "nuc": "p",
+          "log_trace_22": 48.151201930088696,
+          "delta_MeV": 3.7952706242698087,
+          "cumulative_MeV": 49.5619524960944
+        },
+        {
+          "A": 48,
+          "Z": 24,
+          "N": 24,
+          "nuc": "n",
+          "log_trace_22": 47.67220859329543,
+          "delta_MeV": -0.5002279408497949,
+          "cumulative_MeV": 49.0617245552446
+        },
+        {
+          "A": 49,
+          "Z": 25,
+          "N": 24,
+          "nuc": "p",
+          "log_trace_22": 51.439972523502526,
+          "delta_MeV": 3.9347954295846113,
+          "cumulative_MeV": 52.99651998482921
+        },
+        {
+          "A": 50,
+          "Z": 25,
+          "N": 25,
+          "nuc": "n",
+          "log_trace_22": 51.00750259899718,
+          "delta_MeV": -0.45164206513408395,
+          "cumulative_MeV": 52.54487791969513
+        },
+        {
+          "A": 51,
+          "Z": 26,
+          "N": 25,
+          "nuc": "p",
+          "log_trace_22": 54.90673567662499,
+          "delta_MeV": 4.072092831965653,
+          "cumulative_MeV": 56.61697075166079
+        },
+        {
+          "A": 52,
+          "Z": 26,
+          "N": 26,
+          "nuc": "n",
+          "log_trace_22": 54.52969306567791,
+          "delta_MeV": -0.39375756278649593,
+          "cumulative_MeV": 56.22321318887429
+        },
+        {
+          "A": 53,
+          "Z": 27,
+          "N": 26,
+          "nuc": "p",
+          "log_trace_22": 58.55812675641862,
+          "delta_MeV": 4.207021131984765,
+          "cumulative_MeV": 60.43023432085906
+        },
+        {
+          "A": 54,
+          "Z": 27,
+          "N": 27,
+          "nuc": "n",
+          "log_trace_22": 58.24455003801159,
+          "delta_MeV": -0.327478117331072,
+          "cumulative_MeV": 60.10275620352799
+        },
+        {
+          "A": 55,
+          "Z": 28,
+          "N": 27,
+          "nuc": "p",
+          "log_trace_22": 62.3998956466695,
+          "delta_MeV": 4.339559274986988,
+          "cumulative_MeV": 64.44231547851497
+        },
+        {
+          "A": 56,
+          "Z": 28,
+          "N": 28,
+          "nuc": "n",
+          "log_trace_22": 62.156926802086744,
+          "delta_MeV": -0.25374007419385486,
+          "cumulative_MeV": 64.18857540432111
+        },
+        {
+          "A": 57,
+          "Z": 29,
+          "N": 28,
+          "nuc": "p",
+          "log_trace_22": 66.43696806550518,
+          "delta_MeV": 4.469782904049073,
+          "cumulative_MeV": 68.65835830837018
+        },
+        {
+          "A": 58,
+          "Z": 29,
+          "N": 29,
+          "nuc": "n",
+          "log_trace_22": 66.27086330968709,
+          "delta_MeV": -0.17346846727453824,
+          "cumulative_MeV": 68.48488984109565
+        },
+        {
+          "A": 59,
+          "Z": 30,
+          "N": 29,
+          "nuc": "p",
+          "log_trace_22": 70.67352311433714,
+          "delta_MeV": 4.597837337542728,
+          "cumulative_MeV": 73.08272717863838
+        },
+        {
+          "A": 60,
+          "Z": 30,
+          "N": 30,
+          "nuc": "n",
+          "log_trace_22": 70.5896955792776,
+          "delta_MeV": -0.08754375484652398,
+          "cumulative_MeV": 72.99518342379186
+        },
+        {
+          "A": 61,
+          "Z": 31,
+          "N": 30,
+          "nuc": "p",
+          "log_trace_22": 75.11307798876172,
+          "delta_MeV": 4.723911784495271,
+          "cumulative_MeV": 77.71909520828713
+        },
+        {
+          "A": 62,
+          "Z": 31,
+          "N": 31,
+          "nuc": "n",
+          "log_trace_22": 75.11616184740178,
+          "delta_MeV": 0.0032205714336663014,
+          "cumulative_MeV": 77.7223157797208
+        },
+        {
+          "A": 63,
+          "Z": 32,
+          "N": 31,
+          "nuc": "p",
+          "log_trace_22": 79.75857314218118,
+          "delta_MeV": 4.848217426388995,
+          "cumulative_MeV": 82.5705332061098
+        },
+        {
+          "A": 64,
+          "Z": 32,
+          "N": 32,
+          "nuc": "n",
+          "log_trace_22": 79.8524999235459,
+          "delta_MeV": 0.098090718228521,
+          "cumulative_MeV": 82.66862392433832
+        },
+        {
+          "A": 65,
+          "Z": 33,
+          "N": 32,
+          "nuc": "p",
+          "log_trace_22": 84.61245341113337,
+          "delta_MeV": 4.970970468143164,
+          "cumulative_MeV": 87.63959439248148
+        },
+        {
+          "A": 66,
+          "Z": 33,
+          "N": 33,
+          "nuc": "n",
+          "log_trace_22": 84.80053308168343,
+          "delta_MeV": 0.1964175680288575,
+          "cumulative_MeV": 87.83601196051035
+        },
+        {
+          "A": 67,
+          "Z": 34,
+          "N": 33,
+          "nuc": "p",
+          "log_trace_22": 89.67674243879347,
+          "delta_MeV": 5.09238016167316,
+          "cumulative_MeV": 92.92839212218351
+        },
+        {
+          "A": 68,
+          "Z": 34,
+          "N": 34,
+          "nuc": "n",
+          "log_trace_22": 89.96174380126934,
+          "delta_MeV": 0.2976359663896965,
+          "cumulative_MeV": 93.2260280885732
+        },
+        {
+          "A": 69,
+          "Z": 35,
+          "N": 34,
+          "nuc": "p",
+          "log_trace_22": 94.95310910258159,
+          "delta_MeV": 5.212641168288686,
+          "cumulative_MeV": 98.43866925686189
+        },
+        {
+          "A": 70,
+          "Z": 35,
+          "N": 35,
+          "nuc": "n",
+          "log_trace_22": 95.33733587135886,
+          "delta_MeV": 0.4012602067735588,
+          "cumulative_MeV": 98.83992946363544
+        },
+        {
+          "A": 71,
+          "Z": 36,
+          "N": 35,
+          "nuc": "p",
+          "log_trace_22": 100.44292559907655,
+          "delta_MeV": 5.331929361310454,
+          "cumulative_MeV": 104.1718588249459
+        },
+        {
+          "A": 72,
+          "Z": 36,
+          "N": 36,
+          "nuc": "n",
+          "log_trace_22": 100.92828599491378,
+          "delta_MeV": 0.506877262646535,
+          "cumulative_MeV": 104.67873608759244
+        },
+        {
+          "A": 73,
+          "Z": 37,
+          "N": 36,
+          "nuc": "p",
+          "log_trace_22": 106.1473174440128,
+          "delta_MeV": 5.450400150639061,
+          "cumulative_MeV": 110.1291362382315
+        },
+        {
+          "A": 74,
+          "Z": 37,
+          "N": 37,
+          "nuc": "n",
+          "log_trace_22": 106.73538627196703,
+          "delta_MeV": 0.6141389374116925,
+          "cumulative_MeV": 110.74327517564319
+        },
+        {
+          "A": 75,
+          "Z": 38,
+          "N": 37,
+          "nuc": "p",
+          "log_trace_22": 112.06720599426781,
+          "delta_MeV": 5.568188523298764,
+          "cumulative_MeV": 116.31146369894195
+        },
+        {
+          "A": 76,
+          "Z": 38,
+          "N": 38,
+          "nuc": "n",
+          "log_trace_22": 112.75927895490454,
+          "delta_MeV": 0.7227537533920921,
+          "cumulative_MeV": 117.03421745233405
+        },
+        {
+          "A": 77,
+          "Z": 39,
+          "N": 38,
+          "nuc": "p",
+          "log_trace_22": 118.2033442697351,
+          "delta_MeV": 5.685410157312575,
+          "cumulative_MeV": 122.71962760964662
+        },
+        {
+          "A": 78,
+          "Z": 39,
+          "N": 39,
+          "nuc": "n",
+          "log_trace_22": 119.00048476444724,
+          "delta_MeV": 0.8324791131905485,
+          "cumulative_MeV": 123.55210672283717
+        },
+        {
+          "A": 79,
+          "Z": 40,
+          "N": 39,
+          "nuc": "p",
+          "log_trace_22": 124.55634690705675,
+          "delta_MeV": 5.802163132057075,
+          "cumulative_MeV": 129.35426985489426
+        },
+        {
+          "A": 80,
+          "Z": 40,
+          "N": 40,
+          "nuc": "n",
+          "log_trace_22": 125.45942589905404,
+          "delta_MeV": 0.9431140475060232,
+          "cumulative_MeV": 130.29738390240027
+        },
+        {
+          "A": 81,
+          "Z": 41,
+          "N": 40,
+          "nuc": "p",
+          "log_trace_22": 131.12671505943334,
+          "delta_MeV": 5.918529902474321,
+          "cumulative_MeV": 136.2159138048746
+        },
+        {
+          "A": 82,
+          "Z": 41,
+          "N": 41,
+          "nuc": "n",
+          "log_trace_22": 132.13644470274,
+          "delta_MeV": 1.0544927068667884,
+          "cumulative_MeV": 137.27040651174138
+        },
+        {
+          "A": 83,
+          "Z": 42,
+          "N": 41,
+          "nuc": "p",
+          "log_trace_22": 137.91485699854252,
+          "delta_MeV": 6.034579318914378,
+          "cumulative_MeV": 143.30498583065577
+        },
+        {
+          "A": 84,
+          "Z": 42,
+          "N": 42,
+          "nuc": "n",
+          "log_trace_22": 139.0318187971906,
+          "delta_MeV": 1.1664786493402968,
+          "cumulative_MeV": 144.47146447999606
+        },
+        {
+          "A": 85,
+          "Z": 43,
+          "N": 42,
+          "nuc": "p",
+          "log_trace_22": 144.92110509683303,
+          "delta_MeV": 6.150368559336627,
+          "cumulative_MeV": 150.62183303933267
+        },
+        {
+          "A": 86,
+          "Z": 43,
+          "N": 43,
+          "nuc": "n",
+          "log_trace_22": 146.1457733426344,
+          "delta_MeV": 1.278959909803005,
+          "cumulative_MeV": 151.90079294913568
+        },
+        {
+          "A": 87,
+          "Z": 44,
+          "N": 43,
+          "nuc": "p",
+          "log_trace_22": 152.14572978431937,
+          "delta_MeV": 6.265944900414997,
+          "cumulative_MeV": 158.16673784955069
+        },
+        {
+          "A": 88,
+          "Z": 44,
+          "N": 44,
+          "nuc": "n",
+          "log_trace_22": 153.47849097090892,
+          "delta_MeV": 1.3918447978326713,
+          "cumulative_MeV": 159.55858264738336
+        },
+        {
+          "A": 89,
+          "Z": 45,
+          "N": 44,
+          "nuc": "p",
+          "log_trace_22": 159.58895099137712,
+          "delta_MeV": 6.381347294196374,
+          "cumulative_MeV": 165.93992994157975
+        },
+        {
+          "A": 90,
+          "Z": 45,
+          "N": 45,
+          "nuc": "n",
+          "log_trace_22": 161.03011983293794,
+          "delta_MeV": 1.5050583518701468,
+          "cumulative_MeV": 167.44498829344988
+        },
+        {
+          "A": 91,
+          "Z": 46,
+          "N": 45,
+          "nuc": "p",
+          "log_trace_22": 167.25094751227587,
+          "delta_MeV": 6.496607742499119,
+          "cumulative_MeV": 173.941596035949
+        },
+        {
+          "A": 92,
+          "Z": 46,
+          "N": 46,
+          "nuc": "n",
+          "log_trace_22": 168.800780119398,
+          "delta_MeV": 1.6185393703236104,
+          "cumulative_MeV": 175.56013540627262
+        },
+        {
+          "A": 93,
+          "Z": 47,
+          "N": 46,
+          "nuc": "p",
+          "log_trace_22": 175.1318646553579,
+          "delta_MeV": 6.611752476498578,
+          "cumulative_MeV": 182.1718878827712
+        },
+        {
+          "A": 94,
+          "Z": 47,
+          "N": 47,
+          "nuc": "n",
+          "log_trace_22": 176.79056934516763,
+          "delta_MeV": 1.7322379409622735,
+          "cumulative_MeV": 183.90412582373347
+        },
+        {
+          "A": 95,
+          "Z": 48,
+          "N": 47,
+          "nuc": "p",
+          "log_trace_22": 183.23182048553298,
+          "delta_MeV": 6.726802957244501,
+          "cumulative_MeV": 190.63092878097797
+        },
+        {
+          "A": 96,
+          "Z": 48,
+          "N": 48,
+          "nuc": "n",
+          "log_trace_22": 184.99956663273605,
+          "delta_MeV": 1.8461133949806996,
+          "cumulative_MeV": 192.47704217595867
+        },
+        {
+          "A": 97,
+          "Z": 49,
+          "N": 48,
+          "nuc": "p",
+          "log_trace_22": 191.5509109129505,
+          "delta_MeV": 6.841776716623077,
+          "cumulative_MeV": 199.31881889258176
+        },
+        {
+          "A": 98,
+          "Z": 49,
+          "N": 49,
+          "nuc": "n",
+          "log_trace_22": 193.4278361848449,
+          "delta_MeV": 1.9601326193267954,
+          "cumulative_MeV": 201.27895151190856
+        },
+        {
+          "A": 99,
+          "Z": 50,
+          "N": 49,
+          "nuc": "p",
+          "log_trace_22": 200.08921383771528,
+          "delta_MeV": 6.956688059225291,
+          "cumulative_MeV": 208.23563957113385
+        },
+        {
+          "A": 100,
+          "Z": 50,
+          "N": 50,
+          "nuc": "n",
+          "log_trace_22": 202.07543010031188,
+          "delta_MeV": 2.0742686688977763,
+          "cumulative_MeV": 210.30990824003163
+        },
+        {
+          "A": 101,
+          "Z": 50,
+          "N": 51,
+          "nuc": "n",
+          "log_trace_22": 207.05027879325223,
+          "delta_MeV": 5.195392350067098,
+          "cumulative_MeV": 215.50530059009873
+        },
+        {
+          "A": 102,
+          "Z": 50,
+          "N": 52,
+          "nuc": "n",
+          "log_trace_22": 212.13225483938263,
+          "delta_MeV": 5.307268844328373,
+          "cumulative_MeV": 220.8125694344271
+        },
+        {
+          "A": 103,
+          "Z": 50,
+          "N": 53,
+          "nuc": "n",
+          "log_trace_22": 217.31772722914243,
+          "delta_MeV": 5.4153533600876615,
+          "cumulative_MeV": 226.22792279451477
+        },
+        {
+          "A": 104,
+          "Z": 50,
+          "N": 54,
+          "nuc": "n",
+          "log_trace_22": 222.6082255730353,
+          "delta_MeV": 5.525035296632924,
+          "cumulative_MeV": 231.7529580911477
+        },
+        {
+          "A": 105,
+          "Z": 50,
+          "N": 55,
+          "nuc": "n",
+          "log_trace_22": 228.00250847903854,
+          "delta_MeV": 5.6334208080975205,
+          "cumulative_MeV": 237.38637889924522
+        },
+        {
+          "A": 106,
+          "Z": 50,
+          "N": 56,
+          "nuc": "n",
+          "log_trace_22": 233.50158352985102,
+          "delta_MeV": 5.7428585701467725,
+          "cumulative_MeV": 243.129237469392
+        },
+        {
+          "A": 107,
+          "Z": 50,
+          "N": 57,
+          "nuc": "n",
+          "log_trace_22": 239.10463291867873,
+          "delta_MeV": 5.8514422706107085,
+          "cumulative_MeV": 248.9806797400027
+        },
+        {
+          "A": 108,
+          "Z": 50,
+          "N": 58,
+          "nuc": "n",
+          "log_trace_22": 244.81232042242453,
+          "delta_MeV": 5.960719174357015,
+          "cumulative_MeV": 254.94139891435972
+        },
+        {
+          "A": 109,
+          "Z": 50,
+          "N": 59,
+          "nuc": "n",
+          "log_trace_22": 250.62410728472207,
+          "delta_MeV": 6.0694334377343235,
+          "cumulative_MeV": 261.01083235209404
+        },
+        {
+          "A": 110,
+          "Z": 50,
+          "N": 60,
+          "nuc": "n",
+          "log_trace_22": 256.54043078960706,
+          "delta_MeV": 6.17860437070586,
+          "cumulative_MeV": 267.1894367227999
+        },
+        {
+          "A": 111,
+          "Z": 50,
+          "N": 61,
+          "nuc": "n",
+          "log_trace_22": 262.5609360141344,
+          "delta_MeV": 6.2874046463835835,
+          "cumulative_MeV": 273.4768413691835
+        },
+        {
+          "A": 112,
+          "Z": 50,
+          "N": 62,
+          "nuc": "n",
+          "log_trace_22": 268.68591103302003,
+          "delta_MeV": 6.3965057676281525,
+          "cumulative_MeV": 279.8733471368116
+        },
+        {
+          "A": 113,
+          "Z": 50,
+          "N": 63,
+          "nuc": "n",
+          "log_trace_22": 274.91512202946444,
+          "delta_MeV": 6.505362706569683,
+          "cumulative_MeV": 286.3787098433813
+        },
+        {
+          "A": 114,
+          "Z": 50,
+          "N": 64,
+          "nuc": "n",
+          "log_trace_22": 281.24875878182525,
+          "delta_MeV": 6.614417837072025,
+          "cumulative_MeV": 292.9931276804533
+        },
+        {
+          "A": 115,
+          "Z": 50,
+          "N": 65,
+          "nuc": "n",
+          "log_trace_22": 287.6866672558415,
+          "delta_MeV": 6.723312104707889,
+          "cumulative_MeV": 299.7164397851612
+        },
+        {
+          "A": 116,
+          "Z": 50,
+          "N": 66,
+          "nuc": "n",
+          "log_trace_22": 294.22897247403074,
+          "delta_MeV": 6.832336937326031,
+          "cumulative_MeV": 306.5487767224872
+        },
+        {
+          "A": 117,
+          "Z": 50,
+          "N": 67,
+          "nuc": "n",
+          "log_trace_22": 300.8755729614221,
+          "delta_MeV": 6.94125579641209,
+          "cumulative_MeV": 313.4900325188993
+        },
+        {
+          "A": 118,
+          "Z": 50,
+          "N": 68,
+          "nuc": "n",
+          "log_trace_22": 307.62655108056964,
+          "delta_MeV": 7.050260669326846,
+          "cumulative_MeV": 320.54029318822614
+        },
+        {
+          "A": 119,
+          "Z": 50,
+          "N": 69,
+          "nuc": "n",
+          "log_trace_22": 314.4818399816085,
+          "delta_MeV": 7.1591957288065124,
+          "cumulative_MeV": 327.6994889170327
+        },
+        {
+          "A": 120,
+          "Z": 50,
+          "N": 70,
+          "nuc": "n",
+          "log_trace_22": 321.44149392348766,
+          "delta_MeV": 7.268187452628262,
+          "cumulative_MeV": 334.9676763696609
+        }
+      ],
+      "²⁰⁸Pb": [
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "nuc": "p",
+          "log_trace_22": 0.4556313588625615,
+          "delta_MeV": -0.24804530936138824,
+          "cumulative_MeV": -0.24804530936138824
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "nuc": "n",
+          "log_trace_22": 1.3619258084568875,
+          "delta_MeV": 0.9464720519062998,
+          "cumulative_MeV": 0.6984267425449115
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "nuc": "p",
+          "log_trace_22": 2.2886504745875547,
+          "delta_MeV": 0.9678079753191556,
+          "cumulative_MeV": 1.666234717864067
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "nuc": "n",
+          "log_trace_22": 2.8765937617035995,
+          "delta_MeV": 0.6140078311307597,
+          "cumulative_MeV": 2.280242548994827
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "nuc": "p",
+          "log_trace_22": 3.8383656581201877,
+          "delta_MeV": 1.004408910012286,
+          "cumulative_MeV": 3.2846514590071125
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "nuc": "n",
+          "log_trace_22": 4.343936509181825,
+          "delta_MeV": 0.5279836823479515,
+          "cumulative_MeV": 3.812635141355064
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "nuc": "p",
+          "log_trace_22": 5.424573379114567,
+          "delta_MeV": 1.1285433736338828,
+          "cumulative_MeV": 4.9411785149889464
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "nuc": "n",
+          "log_trace_22": 5.839063614163735,
+          "delta_MeV": 0.4328653049102454,
+          "cumulative_MeV": 5.3740438198991916
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "nuc": "p",
+          "log_trace_22": 7.034249500395108,
+          "delta_MeV": 1.248170546180888,
+          "cumulative_MeV": 6.62221436608008
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "nuc": "n",
+          "log_trace_22": 7.358780661639195,
+          "delta_MeV": 0.3389181895880698,
+          "cumulative_MeV": 6.96113255566815
+        },
+        {
+          "A": 11,
+          "Z": 6,
+          "N": 5,
+          "nuc": "p",
+          "log_trace_22": 8.66934697820768,
+          "delta_MeV": 1.3686659907903955,
+          "cumulative_MeV": 8.329798546458544
+        },
+        {
+          "A": 12,
+          "Z": 6,
+          "N": 6,
+          "nuc": "n",
+          "log_trace_22": 8.904999355885986,
+          "delta_MeV": 0.2460992556421603,
+          "cumulative_MeV": 8.575897802100705
+        },
+        {
+          "A": 13,
+          "Z": 7,
+          "N": 6,
+          "nuc": "p",
+          "log_trace_22": 10.331694503179097,
+          "delta_MeV": 1.4899430136725467,
+          "cumulative_MeV": 10.065840815773251
+        },
+        {
+          "A": 14,
+          "Z": 7,
+          "N": 7,
+          "nuc": "n",
+          "log_trace_22": 10.47996913901767,
+          "delta_MeV": 0.1548479072012544,
+          "cumulative_MeV": 10.220688722974506
+        },
+        {
+          "A": 15,
+          "Z": 8,
+          "N": 7,
+          "nuc": "p",
+          "log_trace_22": 12.023764553972144,
+          "delta_MeV": 1.6122345389730015,
+          "cumulative_MeV": 11.832923261947508
+        },
+        {
+          "A": 16,
+          "Z": 8,
+          "N": 8,
+          "nuc": "n",
+          "log_trace_22": 12.086611361487883,
+          "delta_MeV": 0.0656329153199676,
+          "cumulative_MeV": 11.898556177267476
+        },
+        {
+          "A": 17,
+          "Z": 9,
+          "N": 8,
+          "nuc": "p",
+          "log_trace_22": 13.748695996539608,
+          "delta_MeV": 1.7357677250296475,
+          "cumulative_MeV": 13.634323902297124
+        },
+        {
+          "A": 18,
+          "Z": 9,
+          "N": 9,
+          "nuc": "n",
+          "log_trace_22": 13.72857119118741,
+          "delta_MeV": -0.021016972822062458,
+          "cumulative_MeV": 13.613306929475062
+        },
+        {
+          "A": 19,
+          "Z": 10,
+          "N": 9,
+          "nuc": "p",
+          "log_trace_22": 15.510359954594943,
+          "delta_MeV": 1.8607785446780416,
+          "cumulative_MeV": 15.474085474153103
+        },
+        {
+          "A": 20,
+          "Z": 10,
+          "N": 10,
+          "nuc": "n",
+          "log_trace_22": 15.410292540272518,
+          "delta_MeV": -0.10450357607850004,
+          "cumulative_MeV": 15.369581898074603
+        },
+        {
+          "A": 21,
+          "Z": 11,
+          "N": 10,
+          "nuc": "p",
+          "log_trace_22": 17.313426982069863,
+          "delta_MeV": 1.9875036871159946,
+          "cumulative_MeV": 17.357085585190596
+        },
+        {
+          "A": 22,
+          "Z": 11,
+          "N": 11,
+          "nuc": "n",
+          "log_trace_22": 17.13709250338341,
+          "delta_MeV": -0.1841516914716849,
+          "cumulative_MeV": 17.172933893718913
+        },
+        {
+          "A": 23,
+          "Z": 12,
+          "N": 11,
+          "nuc": "p",
+          "log_trace_22": 19.163430210090066,
+          "delta_MeV": 2.1161687661004978,
+          "cumulative_MeV": 19.28910265981941
+        },
+        {
+          "A": 24,
+          "Z": 12,
+          "N": 12,
+          "nuc": "n",
+          "log_trace_22": 18.915227856111816,
+          "delta_MeV": -0.25920559412332417,
+          "cumulative_MeV": 19.029897065696087
+        },
+        {
+          "A": 25,
+          "Z": 13,
+          "N": 12,
+          "nuc": "p",
+          "log_trace_22": 21.066815494839865,
+          "delta_MeV": 2.2469712444942207,
+          "cumulative_MeV": 21.27686831019031
+        },
+        {
+          "A": 26,
+          "Z": 13,
+          "N": 13,
+          "nuc": "n",
+          "log_trace_22": 20.751942832756267,
+          "delta_MeV": -0.328831512434905,
+          "cumulative_MeV": 20.948036797755403
+        },
+        {
+          "A": 27,
+          "Z": 14,
+          "N": 13,
+          "nuc": "p",
+          "log_trace_22": 23.030968000231223,
+          "delta_MeV": 2.3800582995643937,
+          "cumulative_MeV": 23.328095097319796
+        },
+        {
+          "A": 28,
+          "Z": 14,
+          "N": 14,
+          "nuc": "n",
+          "log_trace_22": 22.655485517896327,
+          "delta_MeV": -0.3921282709713777,
+          "cumulative_MeV": 22.93596682634842
+        },
+        {
+          "A": 29,
+          "Z": 15,
+          "N": 14,
+          "nuc": "p",
+          "log_trace_22": 25.064203838312544,
+          "delta_MeV": 2.5155009745553514,
+          "cumulative_MeV": 25.45146780090377
+        },
+        {
+          "A": 30,
+          "Z": 15,
+          "N": 15,
+          "nuc": "n",
+          "log_trace_22": 24.63507945965479,
+          "delta_MeV": -0.4481482054458376,
+          "cumulative_MeV": 25.003319595457935
+        },
+        {
+          "A": 31,
+          "Z": 16,
+          "N": 15,
+          "nuc": "p",
+          "log_trace_22": 27.175716188420665,
+          "delta_MeV": 2.653267554380267,
+          "cumulative_MeV": 27.656587149838202
+        },
+        {
+          "A": 32,
+          "Z": 16,
+          "N": 16,
+          "nuc": "n",
+          "log_trace_22": 26.70083857957162,
+          "delta_MeV": -0.4959297555589123,
+          "cumulative_MeV": 27.16065739427929
+        },
+        {
+          "A": 33,
+          "Z": 17,
+          "N": 16,
+          "nuc": "p",
+          "log_trace_22": 29.37546839239447,
+          "delta_MeV": 2.793200783879163,
+          "cumulative_MeV": 29.953858178158455
+        },
+        {
+          "A": 34,
+          "Z": 17,
+          "N": 17,
+          "nuc": "n",
+          "log_trace_22": 28.863617969472145,
+          "delta_MeV": -0.534541638503083,
+          "cumulative_MeV": 29.419316539655373
+        },
+        {
+          "A": 35,
+          "Z": 18,
+          "N": 17,
+          "nuc": "p",
+          "log_trace_22": 31.67403214411488,
+          "delta_MeV": 2.935004701586017,
+          "cumulative_MeV": 32.354321241241394
+        },
+        {
+          "A": 36,
+          "Z": 18,
+          "N": 18,
+          "nuc": "n",
+          "log_trace_22": 31.134800985739176,
+          "delta_MeV": -0.5631362093722544,
+          "cumulative_MeV": 31.79118503186914
+        },
+        {
+          "A": 37,
+          "Z": 19,
+          "N": 18,
+          "nuc": "p",
+          "log_trace_22": 34.082376557420986,
+          "delta_MeV": 3.0782467008678385,
+          "cumulative_MeV": 34.86943173273698
+        },
+        {
+          "A": 38,
+          "Z": 19,
+          "N": 19,
+          "nuc": "n",
+          "log_trace_22": 33.526033317709505,
+          "delta_MeV": -0.5810068989053427,
+          "cumulative_MeV": 34.288424833831634
+        },
+        {
+          "A": 39,
+          "Z": 20,
+          "N": 19,
+          "nuc": "p",
+          "log_trace_22": 36.61162217190085,
+          "delta_MeV": 3.2223783511781674,
+          "cumulative_MeV": 37.5108031850098
+        },
+        {
+          "A": 40,
+          "Z": 20,
+          "N": 20,
+          "nuc": "n",
+          "log_trace_22": 36.04892523509596,
+          "delta_MeV": -0.5876422663931191,
+          "cumulative_MeV": 36.92316091861668
+        },
+        {
+          "A": 41,
+          "Z": 21,
+          "N": 20,
+          "nuc": "p",
+          "log_trace_22": 39.27278072266322,
+          "delta_MeV": 3.3667745838374996,
+          "cumulative_MeV": 40.28993550245418
+        },
+        {
+          "A": 42,
+          "Z": 21,
+          "N": 21,
+          "nuc": "n",
+          "log_trace_22": 38.71475094374253,
+          "delta_MeV": -0.5827682053181492,
+          "cumulative_MeV": 39.70716729713603
+        },
+        {
+          "A": 43,
+          "Z": 22,
+          "N": 21,
+          "nuc": "p",
+          "log_trace_22": 42.07650467972406,
+          "delta_MeV": 3.510786100391923,
+          "cumulative_MeV": 43.21795339752796
+        },
+        {
+          "A": 44,
+          "Z": 22,
+          "N": 22,
+          "nuc": "n",
+          "log_trace_22": 41.53417610878295,
+          "delta_MeV": -0.5663709356002398,
+          "cumulative_MeV": 42.65158246192772
+        },
+        {
+          "A": 45,
+          "Z": 23,
+          "N": 22,
+          "nuc": "p",
+          "log_trace_22": 45.032869029314384,
+          "delta_MeV": 3.6537960361201374,
+          "cumulative_MeV": 46.30537849804785
+        },
+        {
+          "A": 46,
+          "Z": 23,
+          "N": 23,
+          "nuc": "n",
+          "log_trace_22": 44.517039997302284,
+          "delta_MeV": -0.538696626223263,
+          "cumulative_MeV": 45.76668187182459
+        },
+        {
+          "A": 47,
+          "Z": 24,
+          "N": 23,
+          "nuc": "p",
+          "log_trace_22": 48.151201930088696,
+          "delta_MeV": 3.7952706242698087,
+          "cumulative_MeV": 49.5619524960944
+        },
+        {
+          "A": 48,
+          "Z": 24,
+          "N": 24,
+          "nuc": "n",
+          "log_trace_22": 47.67220859329543,
+          "delta_MeV": -0.5002279408497949,
+          "cumulative_MeV": 49.0617245552446
+        },
+        {
+          "A": 49,
+          "Z": 25,
+          "N": 24,
+          "nuc": "p",
+          "log_trace_22": 51.439972523502526,
+          "delta_MeV": 3.9347954295846113,
+          "cumulative_MeV": 52.99651998482921
+        },
+        {
+          "A": 50,
+          "Z": 25,
+          "N": 25,
+          "nuc": "n",
+          "log_trace_22": 51.00750259899718,
+          "delta_MeV": -0.45164206513408395,
+          "cumulative_MeV": 52.54487791969513
+        },
+        {
+          "A": 51,
+          "Z": 26,
+          "N": 25,
+          "nuc": "p",
+          "log_trace_22": 54.90673567662499,
+          "delta_MeV": 4.072092831965653,
+          "cumulative_MeV": 56.61697075166079
+        },
+        {
+          "A": 52,
+          "Z": 26,
+          "N": 26,
+          "nuc": "n",
+          "log_trace_22": 54.52969306567791,
+          "delta_MeV": -0.39375756278649593,
+          "cumulative_MeV": 56.22321318887429
+        },
+        {
+          "A": 53,
+          "Z": 27,
+          "N": 26,
+          "nuc": "p",
+          "log_trace_22": 58.55812675641862,
+          "delta_MeV": 4.207021131984765,
+          "cumulative_MeV": 60.43023432085906
+        },
+        {
+          "A": 54,
+          "Z": 27,
+          "N": 27,
+          "nuc": "n",
+          "log_trace_22": 58.24455003801159,
+          "delta_MeV": -0.327478117331072,
+          "cumulative_MeV": 60.10275620352799
+        },
+        {
+          "A": 55,
+          "Z": 28,
+          "N": 27,
+          "nuc": "p",
+          "log_trace_22": 62.3998956466695,
+          "delta_MeV": 4.339559274986988,
+          "cumulative_MeV": 64.44231547851497
+        },
+        {
+          "A": 56,
+          "Z": 28,
+          "N": 28,
+          "nuc": "n",
+          "log_trace_22": 62.156926802086744,
+          "delta_MeV": -0.25374007419385486,
+          "cumulative_MeV": 64.18857540432111
+        },
+        {
+          "A": 57,
+          "Z": 29,
+          "N": 28,
+          "nuc": "p",
+          "log_trace_22": 66.43696806550518,
+          "delta_MeV": 4.469782904049073,
+          "cumulative_MeV": 68.65835830837018
+        },
+        {
+          "A": 58,
+          "Z": 29,
+          "N": 29,
+          "nuc": "n",
+          "log_trace_22": 66.27086330968709,
+          "delta_MeV": -0.17346846727453824,
+          "cumulative_MeV": 68.48488984109565
+        },
+        {
+          "A": 59,
+          "Z": 30,
+          "N": 29,
+          "nuc": "p",
+          "log_trace_22": 70.67352311433714,
+          "delta_MeV": 4.597837337542728,
+          "cumulative_MeV": 73.08272717863838
+        },
+        {
+          "A": 60,
+          "Z": 30,
+          "N": 30,
+          "nuc": "n",
+          "log_trace_22": 70.5896955792776,
+          "delta_MeV": -0.08754375484652398,
+          "cumulative_MeV": 72.99518342379186
+        },
+        {
+          "A": 61,
+          "Z": 31,
+          "N": 30,
+          "nuc": "p",
+          "log_trace_22": 75.11307798876172,
+          "delta_MeV": 4.723911784495271,
+          "cumulative_MeV": 77.71909520828713
+        },
+        {
+          "A": 62,
+          "Z": 31,
+          "N": 31,
+          "nuc": "n",
+          "log_trace_22": 75.11616184740178,
+          "delta_MeV": 0.0032205714336663014,
+          "cumulative_MeV": 77.7223157797208
+        },
+        {
+          "A": 63,
+          "Z": 32,
+          "N": 31,
+          "nuc": "p",
+          "log_trace_22": 79.75857314218118,
+          "delta_MeV": 4.848217426388995,
+          "cumulative_MeV": 82.5705332061098
+        },
+        {
+          "A": 64,
+          "Z": 32,
+          "N": 32,
+          "nuc": "n",
+          "log_trace_22": 79.8524999235459,
+          "delta_MeV": 0.098090718228521,
+          "cumulative_MeV": 82.66862392433832
+        },
+        {
+          "A": 65,
+          "Z": 33,
+          "N": 32,
+          "nuc": "p",
+          "log_trace_22": 84.61245341113337,
+          "delta_MeV": 4.970970468143164,
+          "cumulative_MeV": 87.63959439248148
+        },
+        {
+          "A": 66,
+          "Z": 33,
+          "N": 33,
+          "nuc": "n",
+          "log_trace_22": 84.80053308168343,
+          "delta_MeV": 0.1964175680288575,
+          "cumulative_MeV": 87.83601196051035
+        },
+        {
+          "A": 67,
+          "Z": 34,
+          "N": 33,
+          "nuc": "p",
+          "log_trace_22": 89.67674243879347,
+          "delta_MeV": 5.09238016167316,
+          "cumulative_MeV": 92.92839212218351
+        },
+        {
+          "A": 68,
+          "Z": 34,
+          "N": 34,
+          "nuc": "n",
+          "log_trace_22": 89.96174380126934,
+          "delta_MeV": 0.2976359663896965,
+          "cumulative_MeV": 93.2260280885732
+        },
+        {
+          "A": 69,
+          "Z": 35,
+          "N": 34,
+          "nuc": "p",
+          "log_trace_22": 94.95310910258159,
+          "delta_MeV": 5.212641168288686,
+          "cumulative_MeV": 98.43866925686189
+        },
+        {
+          "A": 70,
+          "Z": 35,
+          "N": 35,
+          "nuc": "n",
+          "log_trace_22": 95.33733587135886,
+          "delta_MeV": 0.4012602067735588,
+          "cumulative_MeV": 98.83992946363544
+        },
+        {
+          "A": 71,
+          "Z": 36,
+          "N": 35,
+          "nuc": "p",
+          "log_trace_22": 100.44292559907655,
+          "delta_MeV": 5.331929361310454,
+          "cumulative_MeV": 104.1718588249459
+        },
+        {
+          "A": 72,
+          "Z": 36,
+          "N": 36,
+          "nuc": "n",
+          "log_trace_22": 100.92828599491378,
+          "delta_MeV": 0.506877262646535,
+          "cumulative_MeV": 104.67873608759244
+        },
+        {
+          "A": 73,
+          "Z": 37,
+          "N": 36,
+          "nuc": "p",
+          "log_trace_22": 106.1473174440128,
+          "delta_MeV": 5.450400150639061,
+          "cumulative_MeV": 110.1291362382315
+        },
+        {
+          "A": 74,
+          "Z": 37,
+          "N": 37,
+          "nuc": "n",
+          "log_trace_22": 106.73538627196703,
+          "delta_MeV": 0.6141389374116925,
+          "cumulative_MeV": 110.74327517564319
+        },
+        {
+          "A": 75,
+          "Z": 38,
+          "N": 37,
+          "nuc": "p",
+          "log_trace_22": 112.06720599426781,
+          "delta_MeV": 5.568188523298764,
+          "cumulative_MeV": 116.31146369894195
+        },
+        {
+          "A": 76,
+          "Z": 38,
+          "N": 38,
+          "nuc": "n",
+          "log_trace_22": 112.75927895490454,
+          "delta_MeV": 0.7227537533920921,
+          "cumulative_MeV": 117.03421745233405
+        },
+        {
+          "A": 77,
+          "Z": 39,
+          "N": 38,
+          "nuc": "p",
+          "log_trace_22": 118.2033442697351,
+          "delta_MeV": 5.685410157312575,
+          "cumulative_MeV": 122.71962760964662
+        },
+        {
+          "A": 78,
+          "Z": 39,
+          "N": 39,
+          "nuc": "n",
+          "log_trace_22": 119.00048476444724,
+          "delta_MeV": 0.8324791131905485,
+          "cumulative_MeV": 123.55210672283717
+        },
+        {
+          "A": 79,
+          "Z": 40,
+          "N": 39,
+          "nuc": "p",
+          "log_trace_22": 124.55634690705675,
+          "delta_MeV": 5.802163132057075,
+          "cumulative_MeV": 129.35426985489426
+        },
+        {
+          "A": 80,
+          "Z": 40,
+          "N": 40,
+          "nuc": "n",
+          "log_trace_22": 125.45942589905404,
+          "delta_MeV": 0.9431140475060232,
+          "cumulative_MeV": 130.29738390240027
+        },
+        {
+          "A": 81,
+          "Z": 41,
+          "N": 40,
+          "nuc": "p",
+          "log_trace_22": 131.12671505943334,
+          "delta_MeV": 5.918529902474321,
+          "cumulative_MeV": 136.2159138048746
+        },
+        {
+          "A": 82,
+          "Z": 41,
+          "N": 41,
+          "nuc": "n",
+          "log_trace_22": 132.13644470274,
+          "delta_MeV": 1.0544927068667884,
+          "cumulative_MeV": 137.27040651174138
+        },
+        {
+          "A": 83,
+          "Z": 42,
+          "N": 41,
+          "nuc": "p",
+          "log_trace_22": 137.91485699854252,
+          "delta_MeV": 6.034579318914378,
+          "cumulative_MeV": 143.30498583065577
+        },
+        {
+          "A": 84,
+          "Z": 42,
+          "N": 42,
+          "nuc": "n",
+          "log_trace_22": 139.0318187971906,
+          "delta_MeV": 1.1664786493402968,
+          "cumulative_MeV": 144.47146447999606
+        },
+        {
+          "A": 85,
+          "Z": 43,
+          "N": 42,
+          "nuc": "p",
+          "log_trace_22": 144.92110509683303,
+          "delta_MeV": 6.150368559336627,
+          "cumulative_MeV": 150.62183303933267
+        },
+        {
+          "A": 86,
+          "Z": 43,
+          "N": 43,
+          "nuc": "n",
+          "log_trace_22": 146.1457733426344,
+          "delta_MeV": 1.278959909803005,
+          "cumulative_MeV": 151.90079294913568
+        },
+        {
+          "A": 87,
+          "Z": 44,
+          "N": 43,
+          "nuc": "p",
+          "log_trace_22": 152.14572978431937,
+          "delta_MeV": 6.265944900414997,
+          "cumulative_MeV": 158.16673784955069
+        },
+        {
+          "A": 88,
+          "Z": 44,
+          "N": 44,
+          "nuc": "n",
+          "log_trace_22": 153.47849097090892,
+          "delta_MeV": 1.3918447978326713,
+          "cumulative_MeV": 159.55858264738336
+        },
+        {
+          "A": 89,
+          "Z": 45,
+          "N": 44,
+          "nuc": "p",
+          "log_trace_22": 159.58895099137712,
+          "delta_MeV": 6.381347294196374,
+          "cumulative_MeV": 165.93992994157975
+        },
+        {
+          "A": 90,
+          "Z": 45,
+          "N": 45,
+          "nuc": "n",
+          "log_trace_22": 161.03011983293794,
+          "delta_MeV": 1.5050583518701468,
+          "cumulative_MeV": 167.44498829344988
+        },
+        {
+          "A": 91,
+          "Z": 46,
+          "N": 45,
+          "nuc": "p",
+          "log_trace_22": 167.25094751227587,
+          "delta_MeV": 6.496607742499119,
+          "cumulative_MeV": 173.941596035949
+        },
+        {
+          "A": 92,
+          "Z": 46,
+          "N": 46,
+          "nuc": "n",
+          "log_trace_22": 168.800780119398,
+          "delta_MeV": 1.6185393703236104,
+          "cumulative_MeV": 175.56013540627262
+        },
+        {
+          "A": 93,
+          "Z": 47,
+          "N": 46,
+          "nuc": "p",
+          "log_trace_22": 175.1318646553579,
+          "delta_MeV": 6.611752476498578,
+          "cumulative_MeV": 182.1718878827712
+        },
+        {
+          "A": 94,
+          "Z": 47,
+          "N": 47,
+          "nuc": "n",
+          "log_trace_22": 176.79056934516763,
+          "delta_MeV": 1.7322379409622735,
+          "cumulative_MeV": 183.90412582373347
+        },
+        {
+          "A": 95,
+          "Z": 48,
+          "N": 47,
+          "nuc": "p",
+          "log_trace_22": 183.23182048553298,
+          "delta_MeV": 6.726802957244501,
+          "cumulative_MeV": 190.63092878097797
+        },
+        {
+          "A": 96,
+          "Z": 48,
+          "N": 48,
+          "nuc": "n",
+          "log_trace_22": 184.99956663273605,
+          "delta_MeV": 1.8461133949806996,
+          "cumulative_MeV": 192.47704217595867
+        },
+        {
+          "A": 97,
+          "Z": 49,
+          "N": 48,
+          "nuc": "p",
+          "log_trace_22": 191.5509109129505,
+          "delta_MeV": 6.841776716623077,
+          "cumulative_MeV": 199.31881889258176
+        },
+        {
+          "A": 98,
+          "Z": 49,
+          "N": 49,
+          "nuc": "n",
+          "log_trace_22": 193.4278361848449,
+          "delta_MeV": 1.9601326193267954,
+          "cumulative_MeV": 201.27895151190856
+        },
+        {
+          "A": 99,
+          "Z": 50,
+          "N": 49,
+          "nuc": "p",
+          "log_trace_22": 200.08921383771528,
+          "delta_MeV": 6.956688059225291,
+          "cumulative_MeV": 208.23563957113385
+        },
+        {
+          "A": 100,
+          "Z": 50,
+          "N": 50,
+          "nuc": "n",
+          "log_trace_22": 202.07543010031188,
+          "delta_MeV": 2.0742686688977763,
+          "cumulative_MeV": 210.30990824003163
+        },
+        {
+          "A": 101,
+          "Z": 51,
+          "N": 50,
+          "nuc": "p",
+          "log_trace_22": 208.84679252351413,
+          "delta_MeV": 7.071548644878263,
+          "cumulative_MeV": 217.38145688490988
+        },
+        {
+          "A": 102,
+          "Z": 51,
+          "N": 51,
+          "nuc": "n",
+          "log_trace_22": 210.94239065762096,
+          "delta_MeV": 2.188499628180365,
+          "cumulative_MeV": 219.56995651309023
+        },
+        {
+          "A": 103,
+          "Z": 52,
+          "N": 51,
+          "nuc": "p",
+          "log_trace_22": 217.82369834213478,
+          "delta_MeV": 7.186367970007652,
+          "cumulative_MeV": 226.7563244830979
+        },
+        {
+          "A": 104,
+          "Z": 52,
+          "N": 52,
+          "nuc": "n",
+          "log_trace_22": 220.02875216713062,
+          "delta_MeV": 2.3028076793826115,
+          "cumulative_MeV": 229.05913216248052
+        },
+        {
+          "A": 105,
+          "Z": 53,
+          "N": 52,
+          "nuc": "p",
+          "log_trace_22": 227.01997300522072,
+          "delta_MeV": 7.301153764010259,
+          "cumulative_MeV": 236.36028592649077
+        },
+        {
+          "A": 106,
+          "Z": 53,
+          "N": 53,
+          "nuc": "n",
+          "log_trace_22": 229.33454247356565,
+          "delta_MeV": 2.4171783408413057,
+          "cumulative_MeV": 238.77746426733208
+        },
+        {
+          "A": 107,
+          "Z": 54,
+          "N": 53,
+          "nuc": "p",
+          "log_trace_22": 236.43565037842393,
+          "delta_MeV": 7.415912314731384,
+          "cumulative_MeV": 246.19337658206345
+        },
+        {
+          "A": 108,
+          "Z": 54,
+          "N": 54,
+          "nuc": "n",
+          "log_trace_22": 238.85978417494354,
+          "delta_MeV": 2.531599845408223,
+          "cumulative_MeV": 248.72497642747166
+        },
+        {
+          "A": 109,
+          "Z": 55,
+          "N": 54,
+          "nuc": "p",
+          "log_trace_22": 246.07075795567562,
+          "delta_MeV": 7.53064873512908,
+          "cumulative_MeV": 256.2556251626007
+        },
+        {
+          "A": 110,
+          "Z": 55,
+          "N": 55,
+          "nuc": "n",
+          "log_trace_22": 248.60449561153507,
+          "delta_MeV": 2.646062633625302,
+          "cumulative_MeV": 258.90168779622604
+        },
+        {
+          "A": 111,
+          "Z": 56,
+          "N": 55,
+          "nuc": "p",
+          "log_trace_22": 255.92531805697422,
+          "delta_MeV": 7.64536718135923,
+          "cumulative_MeV": 266.5470549775853
+        },
+        {
+          "A": 112,
+          "Z": 56,
+          "N": 56,
+          "nuc": "n",
+          "log_trace_22": 258.56869166830114,
+          "delta_MeV": 2.760558940846923,
+          "cumulative_MeV": 269.3076139184322
+        },
+        {
+          "A": 113,
+          "Z": 57,
+          "N": 56,
+          "nuc": "p",
+          "log_trace_22": 265.9993488013597,
+          "delta_MeV": 7.7600710308732195,
+          "cumulative_MeV": 277.06768494930543
+        },
+        {
+          "A": 114,
+          "Z": 57,
+          "N": 57,
+          "nuc": "n",
+          "log_trace_22": 268.75238442602245,
+          "delta_MeV": 2.8750824611273247,
+          "cumulative_MeV": 279.94276741043274
+        },
+        {
+          "A": 115,
+          "Z": 58,
+          "N": 57,
+          "nuc": "p",
+          "log_trace_22": 276.2928648971487,
+          "delta_MeV": 7.874763027690231,
+          "cumulative_MeV": 287.81753043812296
+        },
+        {
+          "A": 116,
+          "Z": 58,
+          "N": 58,
+          "nuc": "n",
+          "log_trace_22": 279.1555836896782,
+          "delta_MeV": 2.9896280737556555,
+          "cumulative_MeV": 290.80715851187864
+        },
+        {
+          "A": 117,
+          "Z": 59,
+          "N": 58,
+          "nuc": "p",
+          "log_trace_22": 286.8058782836734,
+          "delta_MeV": 7.9894454007827065,
+          "cumulative_MeV": 298.79660391266134
+        },
+        {
+          "A": 118,
+          "Z": 59,
+          "N": 59,
+          "nuc": "n",
+          "log_trace_22": 289.7782974172318,
+          "delta_MeV": 3.1041916208621214,
+          "cumulative_MeV": 301.9007955335235
+        },
+        {
+          "A": 119,
+          "Z": 60,
+          "N": 59,
+          "nuc": "p",
+          "log_trace_22": 297.5383986523752,
+          "delta_MeV": 8.104119960476876,
+          "cumulative_MeV": 310.00491549400033
+        },
+        {
+          "A": 120,
+          "Z": 60,
+          "N": 60,
+          "nuc": "n",
+          "log_trace_22": 300.6205320676056,
+          "delta_MeV": 3.2187697266245956,
+          "cumulative_MeV": 313.22368522062493
+        },
+        {
+          "A": 121,
+          "Z": 61,
+          "N": 60,
+          "nuc": "p",
+          "log_trace_22": 308.4904338699007,
+          "delta_MeV": 8.21878817690373,
+          "cumulative_MeV": 321.44247339752866
+        },
+        {
+          "A": 122,
+          "Z": 61,
+          "N": 61,
+          "nuc": "n",
+          "log_trace_22": 311.68229288308436,
+          "delta_MeV": 3.333359650338599,
+          "cumulative_MeV": 324.77583304786725
+        },
+        {
+          "A": 123,
+          "Z": 62,
+          "N": 61,
+          "nuc": "p",
+          "log_trace_22": 319.6619903216068,
+          "delta_MeV": 8.333451243809852,
+          "cumulative_MeV": 333.1092842916771
+        },
+        {
+          "A": 124,
+          "Z": 62,
+          "N": 62,
+          "nuc": "n",
+          "log_trace_22": 322.9635841185061,
+          "delta_MeV": 3.44795916703575,
+          "cumulative_MeV": 336.5572434587129
+        },
+        {
+          "A": 125,
+          "Z": 63,
+          "N": 62,
+          "nuc": "p",
+          "log_trace_22": 331.053073190432,
+          "delta_MeV": 8.448110130439886,
+          "cumulative_MeV": 345.0053535891528
+        },
+        {
+          "A": 126,
+          "Z": 63,
+          "N": 63,
+          "nuc": "n",
+          "log_trace_22": 334.4644092272721,
+          "delta_MeV": 3.562566470505481,
+          "cumulative_MeV": 348.56792005965826
+        },
+        {
+          "A": 127,
+          "Z": 64,
+          "N": 63,
+          "nuc": "p",
+          "log_trace_22": 342.6636866832852,
+          "delta_MeV": 8.562765623705971,
+          "cumulative_MeV": 357.1306856833642
+        },
+        {
+          "A": 128,
+          "Z": 64,
+          "N": 64,
+          "nuc": "n",
+          "log_trace_22": 346.1847710123129,
+          "delta_MeV": 3.6771800945285515,
+          "cumulative_MeV": 360.80786577789274
+        },
+        {
+          "A": 129,
+          "Z": 65,
+          "N": 64,
+          "nuc": "p",
+          "log_trace_22": 354.4938342148241,
+          "delta_MeV": 8.677418362453954,
+          "cumulative_MeV": 369.4852841403467
+        },
+        {
+          "A": 130,
+          "Z": 65,
+          "N": 65,
+          "nuc": "n",
+          "log_trace_22": 358.124671748614,
+          "delta_MeV": 3.791798848909142,
+          "cumulative_MeV": 373.27708298925586
+        },
+        {
+          "A": 131,
+          "Z": 66,
+          "N": 65,
+          "nuc": "p",
+          "log_trace_22": 366.54351855663674,
+          "delta_MeV": 8.792068865301788,
+          "cumulative_MeV": 382.0691518545577
+        },
+        {
+          "A": 132,
+          "Z": 66,
+          "N": 66,
+          "nuc": "n",
+          "log_trace_22": 370.2841132826606,
+          "delta_MeV": 3.906421767533077,
+          "cumulative_MeV": 385.97557362209074
+        },
+        {
+          "A": 133,
+          "Z": 67,
+          "N": 66,
+          "nuc": "p",
+          "log_trace_22": 378.81274195833794,
+          "delta_MeV": 8.906717553250452,
+          "cumulative_MeV": 394.8822911753412
+        },
+        {
+          "A": 134,
+          "Z": 67,
+          "N": 67,
+          "nuc": "n",
+          "log_trace_22": 382.663097113149,
+          "delta_MeV": 4.021048066192217,
+          "cumulative_MeV": 398.90333924153344
+        },
+        {
+          "A": 135,
+          "Z": 68,
+          "N": 67,
+          "nuc": "p",
+          "log_trace_22": 391.3015062458659,
+          "delta_MeV": 9.02136476804908,
+          "cumulative_MeV": 407.9247040095825
+        },
+        {
+          "A": 136,
+          "Z": 68,
+          "N": 68,
+          "nuc": "n",
+          "log_trace_22": 395.26162445649487,
+          "delta_MeV": 4.135677108342948,
+          "cumulative_MeV": 412.0603811179255
+        },
+        {
+          "A": 137,
+          "Z": 69,
+          "N": 68,
+          "nuc": "p",
+          "log_trace_22": 404.0098129012696,
+          "delta_MeV": 9.136010787106935,
+          "cumulative_MeV": 421.19639190503244
+        },
+        {
+          "A": 138,
+          "Z": 69,
+          "N": 69,
+          "nuc": "n",
+          "log_trace_22": 408.0796963000023,
+          "delta_MeV": 4.2503083773073715,
+          "cumulative_MeV": 425.4467002823398
+        },
+        {
+          "A": 139,
+          "Z": 70,
+          "N": 69,
+          "nuc": "p",
+          "log_trace_22": 416.93766312747266,
+          "delta_MeV": 9.250655835602394,
+          "cumulative_MeV": 434.6973561179422
+        },
+        {
+          "A": 140,
+          "Z": 70,
+          "N": 70,
+          "nuc": "n",
+          "log_trace_22": 421.1173134450174,
+          "delta_MeV": 4.364941453705367,
+          "cumulative_MeV": 439.06229757164755
+        },
+        {
+          "A": 141,
+          "Z": 71,
+          "N": 70,
+          "nuc": "p",
+          "log_trace_22": 430.08505790084104,
+          "delta_MeV": 9.3653000963142,
+          "cumulative_MeV": 448.4275976679618
+        },
+        {
+          "A": 142,
+          "Z": 71,
+          "N": 71,
+          "nuc": "n",
+          "log_trace_22": 434.3744765419536,
+          "delta_MeV": 4.4795759971344555,
+          "cumulative_MeV": 452.90717366509625
+        },
+        {
+          "A": 143,
+          "Z": 72,
+          "N": 71,
+          "nuc": "p",
+          "log_trace_22": 443.45199801385127,
+          "delta_MeV": 9.479943717603327,
+          "cumulative_MeV": 462.38711738269956
+        },
+        {
+          "A": 144,
+          "Z": 72,
+          "N": 72,
+          "nuc": "n",
+          "log_trace_22": 447.8511861187204,
+          "delta_MeV": 4.594211731298858,
+          "cumulative_MeV": 466.9813291139984
+        },
+        {
+          "A": 145,
+          "Z": 73,
+          "N": 72,
+          "nuc": "p",
+          "log_trace_22": 457.03848410972375,
+          "delta_MeV": 9.594586819892614,
+          "cumulative_MeV": 476.57591593389105
+        },
+        {
+          "A": 146,
+          "Z": 73,
+          "N": 73,
+          "nuc": "n",
+          "log_trace_22": 461.5474426037965,
+          "delta_MeV": 4.708848431936942,
+          "cumulative_MeV": 481.284764365828
+        },
+        {
+          "A": 147,
+          "Z": 74,
+          "N": 73,
+          "nuc": "p",
+          "log_trace_22": 470.844516710533,
+          "delta_MeV": 9.709229500927206,
+          "cumulative_MeV": 490.9939938667552
+        },
+        {
+          "A": 148,
+          "Z": 74,
+          "N": 74,
+          "nuc": "n",
+          "log_trace_22": 475.46324634495784,
+          "delta_MeV": 4.823485917023171,
+          "cumulative_MeV": 495.81747978377837
+        },
+        {
+          "A": 149,
+          "Z": 75,
+          "N": 74,
+          "nuc": "p",
+          "log_trace_22": 484.8700962400245,
+          "delta_MeV": 9.823871840044482,
+          "cumulative_MeV": 505.64135162382286
+        },
+        {
+          "A": 150,
+          "Z": 75,
+          "N": 75,
+          "nuc": "n",
+          "log_trace_22": 489.59859762447746,
+          "delta_MeV": 4.9381240388134735,
+          "cumulative_MeV": 510.57947566263636
+        },
+        {
+          "A": 151,
+          "Z": 76,
+          "N": 75,
+          "nuc": "p",
+          "log_trace_22": 499.11522304213383,
+          "delta_MeV": 9.938513901640544,
+          "cumulative_MeV": 520.517989564277
+        },
+        {
+          "A": 152,
+          "Z": 76,
+          "N": 76,
+          "nuc": "n",
+          "log_trace_22": 503.9534966714634,
+          "delta_MeV": 5.052762677389776,
+          "cumulative_MeV": 525.5707522416667
+        },
+        {
+          "A": 153,
+          "Z": 77,
+          "N": 76,
+          "nuc": "p",
+          "log_trace_22": 513.5798973960183,
+          "delta_MeV": 10.053155737983422,
+          "cumulative_MeV": 535.6239079796501
+        },
+        {
+          "A": 154,
+          "Z": 77,
+          "N": 77,
+          "nuc": "n",
+          "log_trace_22": 518.5279436718716,
+          "delta_MeV": 5.167401735418918,
+          "cumulative_MeV": 540.791309715069
+        },
+        {
+          "A": 155,
+          "Z": 78,
+          "N": 77,
+          "nuc": "p",
+          "log_trace_22": 528.2641195282573,
+          "delta_MeV": 10.16779739149758,
+          "cumulative_MeV": 550.9591071065666
+        },
+        {
+          "A": 156,
+          "Z": 78,
+          "N": 78,
+          "nuc": "n",
+          "log_trace_22": 533.321938776634,
+          "delta_MeV": 5.28204113389981,
+          "cumulative_MeV": 556.2411482404665
+        },
+        {
+          "A": 157,
+          "Z": 79,
+          "N": 78,
+          "nuc": "p",
+          "log_trace_22": 543.1678896227554,
+          "delta_MeV": 10.28243889661728,
+          "cumulative_MeV": 566.5235871370837
+        },
+        {
+          "A": 158,
+          "Z": 79,
+          "N": 79,
+          "nuc": "n",
+          "log_trace_22": 548.3354821082551,
+          "delta_MeV": 5.396680808710377,
+          "cumulative_MeV": 571.9202679457941
+        },
+        {
+          "A": 159,
+          "Z": 80,
+          "N": 79,
+          "nuc": "p",
+          "log_trace_22": 558.2912078287795,
+          "delta_MeV": 10.397080281291522,
+          "cumulative_MeV": 582.3173482270856
+        },
+        {
+          "A": 160,
+          "Z": 80,
+          "N": 80,
+          "nuc": "n",
+          "log_trace_22": 563.5685737661656,
+          "delta_MeV": 5.511320707805315,
+          "cumulative_MeV": 587.828668934891
+        },
+        {
+          "A": 161,
+          "Z": 81,
+          "N": 80,
+          "nuc": "p",
+          "log_trace_22": 573.6340742674828,
+          "delta_MeV": 10.511721568205427,
+          "cumulative_MeV": 598.3403905030964
+        },
+        {
+          "A": 162,
+          "Z": 81,
+          "N": 81,
+          "nuc": "n",
+          "log_trace_22": 579.0212138310693,
+          "delta_MeV": 5.625960788941876,
+          "cumulative_MeV": 603.9663512920382
+        },
+        {
+          "A": 163,
+          "Z": 82,
+          "N": 81,
+          "nuc": "p",
+          "log_trace_22": 589.1964890371996,
+          "delta_MeV": 10.626362775771499,
+          "cumulative_MeV": 614.5927140678098
+        },
+        {
+          "A": 164,
+          "Z": 82,
+          "N": 82,
+          "nuc": "n",
+          "log_trace_22": 594.6934023684695,
+          "delta_MeV": 5.74060101783355,
+          "cumulative_MeV": 620.3333150856433
+        },
+        {
+          "A": 165,
+          "Z": 82,
+          "N": 83,
+          "nuc": "n",
+          "log_trace_22": 603.1833486677792,
+          "delta_MeV": 8.86632032015513,
+          "cumulative_MeV": 629.1996354057985
+        },
+        {
+          "A": 166,
+          "Z": 82,
+          "N": 84,
+          "nuc": "n",
+          "log_trace_22": 611.7776392082801,
+          "delta_MeV": 8.975290322243296,
+          "cumulative_MeV": 638.1749257280418
+        },
+        {
+          "A": 167,
+          "Z": 82,
+          "N": 85,
+          "nuc": "n",
+          "log_trace_22": 620.4762694181348,
+          "delta_MeV": 9.084255549816719,
+          "cumulative_MeV": 647.2591812778585
+        },
+        {
+          "A": 168,
+          "Z": 82,
+          "N": 86,
+          "nuc": "n",
+          "log_trace_22": 629.2792412222253,
+          "delta_MeV": 9.19322278760536,
+          "cumulative_MeV": 656.4524040654638
+        },
+        {
+          "A": 169,
+          "Z": 82,
+          "N": 87,
+          "nuc": "n",
+          "log_trace_22": 638.186553058214,
+          "delta_MeV": 9.30218839379537,
+          "cumulative_MeV": 665.7545924592592
+        },
+        {
+          "A": 170,
+          "Z": 82,
+          "N": 88,
+          "nuc": "n",
+          "log_trace_22": 647.198206194178,
+          "delta_MeV": 9.411155324278521,
+          "cumulative_MeV": 675.1657477835378
+        },
+        {
+          "A": 171,
+          "Z": 82,
+          "N": 89,
+          "nuc": "n",
+          "log_trace_22": 656.314199600878,
+          "delta_MeV": 9.520121179894366,
+          "cumulative_MeV": 684.6858689634321
+        },
+        {
+          "A": 172,
+          "Z": 82,
+          "N": 90,
+          "nuc": "n",
+          "log_trace_22": 665.5345341136998,
+          "delta_MeV": 9.629087907930085,
+          "cumulative_MeV": 694.3149568713621
+        },
+        {
+          "A": 173,
+          "Z": 82,
+          "N": 91,
+          "nuc": "n",
+          "log_trace_22": 674.8592090545992,
+          "delta_MeV": 9.738053927862833,
+          "cumulative_MeV": 704.0530107992249
+        },
+        {
+          "A": 174,
+          "Z": 82,
+          "N": 92,
+          "nuc": "n",
+          "log_trace_22": 684.2882249739135,
+          "delta_MeV": 9.847020522530276,
+          "cumulative_MeV": 713.9000313217553
+        },
+        {
+          "A": 175,
+          "Z": 82,
+          "N": 93,
+          "nuc": "n",
+          "log_trace_22": 693.8215814249594,
+          "delta_MeV": 9.955986650712038,
+          "cumulative_MeV": 723.8560179724673
+        },
+        {
+          "A": 176,
+          "Z": 82,
+          "N": 94,
+          "nuc": "n",
+          "log_trace_22": 703.4592787702891,
+          "delta_MeV": 10.064953157518701,
+          "cumulative_MeV": 733.920971129986
+        },
+        {
+          "A": 177,
+          "Z": 82,
+          "N": 95,
+          "nuc": "n",
+          "log_trace_22": 713.2013167156356,
+          "delta_MeV": 10.173919357012988,
+          "cumulative_MeV": 744.094890486999
+        },
+        {
+          "A": 178,
+          "Z": 82,
+          "N": 96,
+          "nuc": "n",
+          "log_trace_22": 723.0476954998418,
+          "delta_MeV": 10.28288580593845,
+          "cumulative_MeV": 754.3777762929375
+        },
+        {
+          "A": 179,
+          "Z": 82,
+          "N": 97,
+          "nuc": "n",
+          "log_trace_22": 732.9984149290501,
+          "delta_MeV": 10.391852052412327,
+          "cumulative_MeV": 764.7696283453498
+        },
+        {
+          "A": 180,
+          "Z": 82,
+          "N": 98,
+          "nuc": "n",
+          "log_trace_22": 743.0534751606057,
+          "delta_MeV": 10.500818463206668,
+          "cumulative_MeV": 775.2704468085565
+        },
+        {
+          "A": 181,
+          "Z": 82,
+          "N": 99,
+          "nuc": "n",
+          "log_trace_22": 753.2128760667988,
+          "delta_MeV": 10.609784740629765,
+          "cumulative_MeV": 785.8802315491862
+        },
+        {
+          "A": 182,
+          "Z": 82,
+          "N": 100,
+          "nuc": "n",
+          "log_trace_22": 763.4766177512855,
+          "delta_MeV": 10.718751126304133,
+          "cumulative_MeV": 796.5989826754903
+        },
+        {
+          "A": 183,
+          "Z": 82,
+          "N": 101,
+          "nuc": "n",
+          "log_trace_22": 773.844700129933,
+          "delta_MeV": 10.82771742411594,
+          "cumulative_MeV": 807.4267000996063
+        },
+        {
+          "A": 184,
+          "Z": 82,
+          "N": 102,
+          "nuc": "n",
+          "log_trace_22": 784.317123271028,
+          "delta_MeV": 10.936683793241697,
+          "cumulative_MeV": 818.363383892848
+        },
+        {
+          "A": 185,
+          "Z": 82,
+          "N": 103,
+          "nuc": "n",
+          "log_trace_22": 794.8938871191452,
+          "delta_MeV": 11.045650104485183,
+          "cumulative_MeV": 829.4090339973332
+        },
+        {
+          "A": 186,
+          "Z": 82,
+          "N": 104,
+          "nuc": "n",
+          "log_trace_22": 805.5749917192709,
+          "delta_MeV": 11.15461646270909,
+          "cumulative_MeV": 840.5636504600423
+        },
+        {
+          "A": 187,
+          "Z": 82,
+          "N": 105,
+          "nuc": "n",
+          "log_trace_22": 816.3604370348917,
+          "delta_MeV": 11.263582782801045,
+          "cumulative_MeV": 851.8272332428432
+        },
+        {
+          "A": 188,
+          "Z": 82,
+          "N": 106,
+          "nuc": "n",
+          "log_trace_22": 827.2502230956438,
+          "delta_MeV": 11.372549133843052,
+          "cumulative_MeV": 863.1997823766862
+        },
+        {
+          "A": 189,
+          "Z": 82,
+          "N": 107,
+          "nuc": "n",
+          "log_trace_22": 838.2443498774732,
+          "delta_MeV": 11.481515459764491,
+          "cumulative_MeV": 874.6812978364508
+        },
+        {
+          "A": 190,
+          "Z": 82,
+          "N": 108,
+          "nuc": "n",
+          "log_trace_22": 849.3428173999031,
+          "delta_MeV": 11.590481806074878,
+          "cumulative_MeV": 886.2717796425256
+        },
+        {
+          "A": 191,
+          "Z": 82,
+          "N": 109,
+          "nuc": "n",
+          "log_trace_22": 860.5456256470874,
+          "delta_MeV": 11.699448135836537,
+          "cumulative_MeV": 897.9712277783622
+        },
+        {
+          "A": 192,
+          "Z": 82,
+          "N": 110,
+          "nuc": "n",
+          "log_trace_22": 871.8527746318879,
+          "delta_MeV": 11.808414479030228,
+          "cumulative_MeV": 909.7796422573924
+        },
+        {
+          "A": 193,
+          "Z": 82,
+          "N": 111,
+          "nuc": "n",
+          "log_trace_22": 883.2642643438651,
+          "delta_MeV": 11.917380811321596,
+          "cumulative_MeV": 921.697023068714
+        },
+        {
+          "A": 194,
+          "Z": 82,
+          "N": 112,
+          "nuc": "n",
+          "log_trace_22": 894.7800947914922,
+          "delta_MeV": 12.02634715246179,
+          "cumulative_MeV": 933.7233702211757
+        },
+        {
+          "A": 195,
+          "Z": 82,
+          "N": 113,
+          "nuc": "n",
+          "log_trace_22": 906.400265967892,
+          "delta_MeV": 12.135313486419964,
+          "cumulative_MeV": 945.8586837075957
+        },
+        {
+          "A": 196,
+          "Z": 82,
+          "N": 114,
+          "nuc": "n",
+          "log_trace_22": 918.1247778786463,
+          "delta_MeV": 12.244279826207384,
+          "cumulative_MeV": 958.1029635338031
+        },
+        {
+          "A": 197,
+          "Z": 82,
+          "N": 115,
+          "nuc": "n",
+          "log_trace_22": 929.9536305192247,
+          "delta_MeV": 12.353246161263424,
+          "cumulative_MeV": 970.4562096950665
+        },
+        {
+          "A": 198,
+          "Z": 82,
+          "N": 116,
+          "nuc": "n",
+          "log_trace_22": 941.8868238933044,
+          "delta_MeV": 12.4622125001598,
+          "cumulative_MeV": 982.9184221952263
+        },
+        {
+          "A": 199,
+          "Z": 82,
+          "N": 117,
+          "nuc": "n",
+          "log_trace_22": 953.9243579979006,
+          "delta_MeV": 12.571178835939124,
+          "cumulative_MeV": 995.4896010311654
+        },
+        {
+          "A": 200,
+          "Z": 82,
+          "N": 118,
+          "nuc": "n",
+          "log_trace_22": 966.066232835436,
+          "delta_MeV": 12.680145174248395,
+          "cumulative_MeV": 1008.1697462054138
+        },
+        {
+          "A": 201,
+          "Z": 82,
+          "N": 119,
+          "nuc": "n",
+          "log_trace_22": 978.3124484039444,
+          "delta_MeV": 12.789111510504288,
+          "cumulative_MeV": 1020.9588577159182
+        },
+        {
+          "A": 202,
+          "Z": 82,
+          "N": 120,
+          "nuc": "n",
+          "log_trace_22": 990.6630047050214,
+          "delta_MeV": 12.898077848426748,
+          "cumulative_MeV": 1033.856935564345
+        },
+        {
+          "A": 203,
+          "Z": 82,
+          "N": 121,
+          "nuc": "n",
+          "log_trace_22": 1003.117901737372,
+          "delta_MeV": 13.007044184996555,
+          "cumulative_MeV": 1046.8639797493415
+        },
+        {
+          "A": 204,
+          "Z": 82,
+          "N": 122,
+          "nuc": "n",
+          "log_trace_22": 1015.6771395020473,
+          "delta_MeV": 13.116010522664228,
+          "cumulative_MeV": 1059.9799902720058
+        },
+        {
+          "A": 205,
+          "Z": 82,
+          "N": 123,
+          "nuc": "n",
+          "log_trace_22": 1028.3407179981941,
+          "delta_MeV": 13.224976859440737,
+          "cumulative_MeV": 1073.2049671314464
+        },
+        {
+          "A": 206,
+          "Z": 82,
+          "N": 124,
+          "nuc": "n",
+          "log_trace_22": 1041.1086372265052,
+          "delta_MeV": 13.333943196940767,
+          "cumulative_MeV": 1086.5389103283871
+        },
+        {
+          "A": 207,
+          "Z": 82,
+          "N": 125,
+          "nuc": "n",
+          "log_trace_22": 1053.9808971864181,
+          "delta_MeV": 13.442909533853577,
+          "cumulative_MeV": 1099.9818198622406
+        },
+        {
+          "A": 208,
+          "Z": 82,
+          "N": 126,
+          "nuc": "n",
+          "log_trace_22": 1066.9574978783892,
+          "delta_MeV": 13.551875871242716,
+          "cumulative_MeV": 1113.5336957334835
+        }
+      ]
+    },
+    "unified_path": {
+      "description": "Unified iterative (2,2) Wedderburn projection accumulator — replaces dedicated D-binding (A=2), knot factor (A=3,4), and Wigner energy (k≥5) terms by ONE mechanism (prop:unified-iterative-correction).  Per-step: ΔB_k = DELTA_22 × w_(2,2) × (ln|Tr M_22^(0..k)| − ln|Tr M_22^(0..k-1)|), telescopes to B_unified = DELTA_22 × w_(2,2) × ln|Tr M_22^(0..A)/2|.",
+      "energy_scale_derivation": "DELTA_22 = m_e × H_q((2,2)) = m_e × [3]·[2]² (q-hook product) — equals empirical Wigner scale Δ_W ≈ 6.3 MeV [satula1997] without fitting.",
+      "references": [
+        "kerov1996 (q-hook walk on Young diagrams)",
+        "feray-meliot2012 (q-Plancherel CLT, convergence rate O(1/√k))",
+        "satula1997 (empirical Wigner energy ≈ 6.3 MeV)"
+      ]
+    },
     "error_budget": {
       "parametric": "δq propagation through q-integer BW coefficients",
       "truncation": "|B(k) - B(k-1)|: magnitude of last included correction",

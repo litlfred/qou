@@ -14,10 +14,16 @@ export default proposition({
     "conj:jet-filtered-knot-factor",
     "prop:hook-weight-derivation",
   ],
+  cites: [
+    "kerov1996",
+    "feray-meliot2012",
+    "satula1997",
+  ],
   tags: [
     "wigner-energy",
     "np-pairing",
     "partition-22",
     "binding",
+    "q-hook-product",
   ],
 });
