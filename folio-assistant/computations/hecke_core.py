@@ -2454,6 +2454,68 @@ def _jet_witness_path(Z, N, jet, witness_dir):
                          f'unified_jet_Z{Z}_N{N}_j{jet}.json')
 
 
+def atom_character_raw(Z, N, entry):
+    """Return the raw characters of the atom braid word in partition λ.
+
+    Returns (chi_q_atom, log_norm, dim) where chi_q_atom × exp(log_norm)
+    is the actual YSN trace Tr(M_λ(W_atom)) at q = q_0.
+    Uses periodic rescaling to avoid overflow; caller reconstructs via
+    log-trace = log|chi_q_atom| + log_norm.
+    """
+    try:
+        from scipy.sparse import issparse as _issparse
+    except ImportError:
+        _issparse = lambda x: False
+    A = Z + N
+    if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
+        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
+
+    ordering = []
+    pc, nc = 0, 0
+    for kk in range(A):
+        if (kk % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p'); pc += 1
+        else:
+            ordering.append('n'); nc += 1
+    sigmas = entry['ysn']
+    n_gens = entry['n_gens']
+    first = sigmas[0]
+    sparse_sigmas = _issparse(first)
+    dim = first.shape[0] if sparse_sigmas else len(first)
+    M = np.eye(dim) if sparse_sigmas else _identity(dim)
+    log_norm = 0.0
+    for kkk in range(A):
+        nuc = ordering[kkk]
+        prev_types = ordering[:kkk]
+        chain = _step_chain_generic(nuc, prev_types, n_gens)
+        if sparse_sigmas:
+            M_run = M
+            for c, d, gen in chain:
+                sig_sparse = sigmas[gen]
+                Msig = sig_sparse.T.dot(M_run.T).T
+                M_run = c * Msig + d * M_run
+            M = M_run
+        else:
+            M_step = _identity(dim)
+            for c, d, gen in chain:
+                M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
+                M_step = _matmul_dim(M_step, M_cross, dim)
+            M = _matmul_dim(M, M_step, dim)
+        if isinstance(M, np.ndarray):
+            m_max = float(np.max(np.abs(M)))
+        else:
+            m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
+        if m_max > 1e80:
+            if isinstance(M, np.ndarray):
+                M = M / m_max
+            else:
+                M = tuple(tuple(M[i][j]/m_max for j in range(dim))
+                          for i in range(dim))
+            log_norm += math.log(m_max)
+    chi = _trace_dim(M, dim)
+    return (float(chi), float(log_norm), int(dim))
+
+
 def _contrib_single_partition(Z, N, entry):
     """Compute one partition's final LP-dual contribution for atom (Z,N).
     Returns (final_trace_sign, cumul_delta_MeV).

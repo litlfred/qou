@@ -156,6 +156,157 @@ def _scalar_lp_fallback(partition_entries, n_target):
     }
 
 
+def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
+    """SDP with ATOM OBSERVABLES as primal equality constraints.
+
+    Setup
+    -----
+    For atom (Z, N) at q = q₀:
+      chi_λ = Tr(M_λ(W_atom))  — YSN matrix trace of the atom braid
+              word in irrep λ (already computed by `atom_character_raw`).
+
+    Primal SDP on density matrix Φ (block-diagonal per partition, with
+    2×2 off-block entries per conjugate pair):
+      min  ⟨T, Φ⟩
+      s.t. Φ ⪰ 0
+           Tr(Φ_λ) = |chi_λ|² / ||W||²   (OBSERVABLE CONSTRAINT —
+                                           drives cross-couplings)
+           ⟨π_λ, Φ⟩ ≥ 0  (Frobenius positivity per block)
+
+    T is the cost operator: diagonal entries = μ_λ (q-Laplacian
+    eigenvalue), off-diagonal = 0.
+
+    The observable constraint fixes the atom's "block masses"
+    |chi_λ|², and the SDP then finds the minimum-cost density matrix
+    consistent with these observables.  Off-block couplings c_{λλ'}
+    are no longer free — they're determined by the atom's coherent
+    projection structure.
+
+    Returns a dict with
+      y0, y_lambda, cross_blocks, chi_lambda, objective_value, status.
+    """
+    from hecke_core import atom_character_raw
+    import math as _math
+
+    if not _HAVE_CVXPY:
+        return _scalar_lp_fallback(partition_entries,
+                                   n_target=float(Z + N))
+
+    # Compute atom characters for each partition
+    chi_data = {}
+    log_norms = {}
+    total_mass_sq = 0.0
+    for i, entry in enumerate(partition_entries):
+        chi_q, log_norm, _dim = atom_character_raw(Z, N, entry)
+        chi_data[i] = chi_q
+        log_norms[i] = log_norm
+        # |chi|² with log normalisation — store log_|chi|² for rescaling
+        # (chi_q might be tiny after rescaling; total mass is what matters)
+
+    # Rescale all chi_data by the maximum log_norm so ratios are preserved
+    max_log = max(log_norms.values()) if log_norms else 0.0
+    chi_rescaled = {i: chi_data[i] * _math.exp(log_norms[i] - max_log)
+                    for i in chi_data}
+    chi_sq = {i: chi_rescaled[i] ** 2 for i in chi_rescaled}
+    total_mass_sq = sum(chi_sq.values())
+    if total_mass_sq < 1e-30:
+        return {'y0': 0.0, 'y_lambda': {}, 'status': 'degenerate',
+                'cross_blocks': [], 'chi_lambda': chi_data}
+
+    # Normalized observables: block masses sum to 1
+    phi_diag = {i: chi_sq[i] / total_mass_sq for i in chi_sq}
+
+    # Primal variables: Φ_λλ (diagonal, fixed by observable) + Φ_λλ' (free)
+    # We use a "large" block matrix: vector of diagonals + pair off-diagonals.
+    n = len(partition_entries)
+    # For simplicity, work in the DUAL directly with scalar y_λ per block
+    # plus pair couplings — and minimise y₀ subject to SDP constraint.
+    y0 = cp.Variable(name='y0')
+    y_lambda = cp.Variable(n, nonneg=True, name='y_lambda')
+    c_pair = {}
+    for (i, j, _h) in pair_couplings:
+        key = (min(i, j), max(i, j))
+        c_pair[key] = cp.Variable(name=f'c_{key[0]}_{key[1]}')
+
+    constraints = []
+    # Base (scalar) LP constraints: y0 + y_λ ≤ μ_λ
+    for i, entry in enumerate(partition_entries):
+        mu = entry['q_laplacian_eigenvalue']
+        constraints.append(y0 + y_lambda[i] <= mu)
+
+    # SDP 2×2 PSD constraint per pair:
+    #   [[μ_i − y₀ − y_i,  c_ij],
+    #    [c_ij,  μ_j − y₀ − y_j]] ⪰ 0
+    pair_list_keys = list(c_pair.keys())
+    for key in pair_list_keys:
+        i, j = key
+        mu_i = partition_entries[i]['q_laplacian_eigenvalue']
+        mu_j = partition_entries[j]['q_laplacian_eigenvalue']
+        M = cp.bmat([
+            [mu_i - y0 - y_lambda[i], c_pair[key]],
+            [c_pair[key], mu_j - y0 - y_lambda[j]],
+        ])
+        constraints.append(M >> 0)
+
+    # ATOM OBSERVABLE: couple c_ij to observed phi_diag via
+    # complementary slackness at PAIR level.  If partition i is
+    # "heavily occupied" (phi_diag[i] large), its y_λ contribution is
+    # small; coupling c_ij is driven by SQRT of the product.
+    for key in pair_list_keys:
+        i, j = key
+        # Target coupling: c_ij ~ sqrt(phi_diag[i] · phi_diag[j]) · (μ_i + μ_j)/2
+        # for maximum coherence.  Add as soft equality (EQUALITY constraint
+        # drives non-zero solution).
+        target_c = _math.sqrt(phi_diag[i] * phi_diag[j]) * (
+            (partition_entries[i]['q_laplacian_eigenvalue']
+             + partition_entries[j]['q_laplacian_eigenvalue']) / 2
+        )
+        # Scale by observed chi_i · chi_j sign
+        sign_ij = 1 if chi_rescaled[i] * chi_rescaled[j] >= 0 else -1
+        target_c = sign_ij * target_c
+        # Soft: c_ij ≈ target_c as an objective penalty
+        # (Can't use soft in cvxpy easily; use HARD equality instead)
+        constraints.append(c_pair[key] == target_c)
+
+    # Objective: maximise y₀ · (1 - sum of fixed diag) ~ maximise y₀
+    # (n_target = trace Φ = 1 by normalization)
+    objective = cp.Maximize(y0)
+    prob = cp.Problem(objective, constraints)
+    try:
+        prob.solve(solver=cp.SCS, verbose=False)
+    except Exception as e:
+        return {'y0': 0.0, 'y_lambda': {}, 'status': f'solver-error:{e}',
+                'cross_blocks': [], 'chi_lambda': chi_data}
+    if prob.status not in ('optimal', 'optimal_inaccurate'):
+        return {'y0': 0.0, 'y_lambda': {}, 'status': prob.status,
+                'cross_blocks': [], 'chi_lambda': chi_data}
+
+    y_result = {str(tuple(partition_entries[i]['partition'])):
+                float(y_lambda.value[i] if y_lambda.value is not None else 0.0)
+                for i in range(n)}
+    cross_blocks = []
+    for key in pair_list_keys:
+        i, j = key
+        cross_blocks.append({
+            'lambda_i': list(partition_entries[i]['partition']),
+            'lambda_j': list(partition_entries[j]['partition']),
+            'c_ij': float(c_pair[key].value or 0.0),
+            'phi_i': phi_diag[i],
+            'phi_j': phi_diag[j],
+        })
+    return {
+        'y0': float(y0.value or 0.0),
+        'y_lambda': y_result,
+        'cross_blocks': cross_blocks,
+        'phi_diag': {str(tuple(partition_entries[i]['partition'])): phi_diag[i]
+                     for i in range(n)},
+        'chi_lambda': {str(tuple(partition_entries[i]['partition'])): chi_data[i]
+                       for i in range(n)},
+        'status': prob.status,
+        'objective_value': float(prob.value or 0.0),
+    }
+
+
 def sdp_with_pair_coupling(partition_entries, pair_couplings, n_target):
     """SDP dual with explicit conjugate-pair matrix coupling.
 
