@@ -1,25 +1,7 @@
-**Proposition.**
-*Let $\beta \in H_3(q)$ be a nuclear braid with Wedderburn
-characters $\chi_{\mathrm{sym}}(\beta)$, $\chi_{\mathrm{std}}(\beta)$,
-$\chi_{\mathrm{alt}}(\beta)$.  The jet-filtered knot invariant
-$a_k(\beta)$
-([jet-filtered knot factor](#conj:jet-filtered-knot-factor))
-converges as $k \to \infty$:*
+**Proposition (exact at $k = 3$, convergence conjectural).**
 
-$$
-  a_k(\beta) \;\xrightarrow{k \to \infty}\;
-  a_\infty(\beta)
-  = \frac{\chi_{\mathrm{sym}}(\beta) + \chi_{\mathrm{alt}}(\beta)
-    + 2\,\chi_{\mathrm{std}}(\beta)}{6}
-$$
-
-*The limit uses **classical** (${q = 1}$) dimensions
-$\dim\mu = (1, 2, 1)$ for $\mu = (3), (2{,}1), (1{,}1{,}1)$,
-not the $q$-deformed Wedderburn weights $W_\lambda$.
-The denominator is $\sum_\mu \dim(\mu)^2 / \sum_\mu \dim(\mu) = 6/4 = 3/2$.*
-
-*At $k = 3$ (initial level), the invariant uses $q$-deformed
-weights:*
+**Part A (Proved).** *At $k = 3$, the jet-filtered knot invariant
+is exact:*
 
 $$
   a_3(\beta)
@@ -29,88 +11,114 @@ $$
   {1 + W_{\mathrm{std}}}
 $$
 
-*The transition from $q$-deformed ($k = 3$) to classical ($k \to \infty$)
-is the jet filtration washing out the $q$-deformation.  The rate
-of convergence is $O(h^2/k)$ per level.*
+*where $W_\lambda = d_q(\lambda)^2 / [3]_q!$ are the $q$-deformed
+Wedderburn weights.  The denominator simplifies because
+$W_{\mathrm{sym}} + 2 W_{\mathrm{std}} + W_{\mathrm{alt}} =
+1 + W_{\mathrm{std}}$.*
 
-*Proof.*
-The Wedderburn weight at level $k$ is
-$w_\lambda = d_q(\lambda)^2 / [k]_q!$ where $d_q(\lambda)$ is
-the $q$-hook length formula.  For the classical ($q = 1$) limit:
+*Proof.* Direct computation from the Wedderburn-Artin
+decomposition $H_3(q) \cong M_1 \oplus M_2 \oplus M_1$
+with weights $W_\lambda$ and restricted characters
+$\chi_\lambda(\beta)$. $\square$
 
-$$
-  \frac{d_q(\lambda)}{\dim(\lambda)}
-  = 1 + O\!\left(\frac{h^2}{k}\right)
-$$
-
-because each $q$-integer $[m]_q = m + O(h^2/m)$, and the
-$q$-hook formula is a product of $k$ such factors, giving
-a bounded relative perturbation of order $h^2/k$.
-
-The branching multiplicity $m_\mu^\lambda$ counts standard
-Young tableaux of the skew shape $\lambda / \mu$.  For
-$k \gg 3$, the $k - 3$ cells of $\lambda / \mu$ can be placed
-in approximately $\dim(\mu)$ distinct ways per cell position
-(by the Robinson--Schensted correspondence), so the
-Wedderburn-weighted average satisfies:
+**Part B (Proved).** *The branching multiplicities
+$m_\mu^\lambda = \#\mathrm{SYT}(\lambda/\mu)$ are $q$-independent
+(purely combinatorial).  They satisfy the classical dimension
+identity $\sum_\mu m_\mu^\lambda \dim(\mu) = \dim(\lambda)$ at
+$q = 1$, but the $q$-deformed version*
 
 $$
-  \frac{\sum_\lambda w_\lambda \, m_\mu^\lambda}
-       {\sum_\lambda w_\lambda \, \sum_\nu m_\nu^\lambda}
-  \;\xrightarrow{k \to \infty}\;
-  \frac{\dim(\mu)}{\sum_\nu \dim(\nu)}
-  = \frac{\dim(\mu)}{4}
+  \sum_\mu m_\mu^\lambda \, d_q(\mu) \neq d_q(\lambda)
+  \quad\text{for } k \geq 4
 $$
 
-Substituting into the definition of $a_k$:
+*fails with error $O(h^2)$ per skew cell.  This is because the
+$q$-hook formula for $d_q(\lambda)$ involves content-dependent
+$q$-corrections that do not factorise over the branching.*
+
+**Part C (Convergence to $q$-deformed dimensions).**
+*The per-level invariant $a_k(\beta)$ converges as $k \to \infty$
+to the $q$-dimension-weighted average:*
 
 $$
-  a_k \to
-  \frac{\sum_\mu \frac{\dim(\mu)}{4} \cdot \chi_\mu(\beta)}
-       {\sum_\mu \frac{\dim(\mu)}{4} \cdot \dim(\mu)}
-  = \frac{\chi_{\mathrm{sym}} + 2\chi_{\mathrm{std}}
-    + \chi_{\mathrm{alt}}}
-       {1 + 4 + 1}
+  a_\infty(\beta)
   = \frac{\chi_{\mathrm{sym}} + \chi_{\mathrm{alt}}
-    + 2\chi_{\mathrm{std}}}{6}
+    + d_q((2{,}1)) \cdot \chi_{\mathrm{std}}}
+  {2 + d_q((2{,}1))^2}
 $$
 
-The denominator is $\sum_\mu \dim(\mu)^2 / 4 = 6/4 = 3/2$,
-giving the factor $6$ in the denominator.
+*where $d_q((2{,}1)) = [2]_q = q + q^{-1}$.
+The asymptotic branching fractions are:*
 
-The convergence rate follows from the
-$q$-deformation bound: at level $k$, the branching fraction
-deviates from its classical limit by
-$|f_\mu^{(k)} - \dim(\mu)/4| \leq C \cdot h^2 / k$
-for a universal constant $C$.
+$$
+  f_\mu^\infty = \frac{d_q(\mu)}{\sum_\nu d_q(\nu)}
+  = \frac{d_q(\mu)}{2 + [2]_q}
+$$
+
+*transitioning from the $k = 3$ Wedderburn weights
+$W_\mu = d_q(\mu)^2/[3]_q!$ (squared scaling) to the
+$k = \infty$ linear scaling $d_q(\mu)/\sum d_q(\nu)$.*
+
+*Proof sketch.*
+In the seminormal basis of $H_k(q)$, each standard Young
+tableau $t$ of shape $\lambda$ restricts to $H_3$ by
+reading its first $3$ entries, giving a SYT of shape $\mu$.
+The branching multiplicity $m_\mu^\lambda = \#\mathrm{SYT}(\lambda/\mu)$
+is $q$-independent.
+
+For the $q$-Plancherel measure $w_\lambda = d_q(\lambda)^2/[k]_q!$:
+the ``typical'' partition $\lambda$ (concentrating the measure)
+has $d_q(\lambda) \approx \dim(\lambda) \cdot (1 + O(h^2/k))$,
+so the weighted branching is dominated by the first-order
+$q$-correction to the classical Plancherel branching.
+
+The classical Plancherel branching gives
+$f_\mu^{(1)} = \dim(\mu)/4$, and the leading $q$-correction is
+$f_\mu = \dim(\mu)/4 + (d_q(\mu) - \dim(\mu)) \cdot C_k$
+where $C_k \to 1/(4 \sum d_q)$ as $k \to \infty$, yielding
+$f_\mu^\infty = d_q(\mu)/(2 + [2]_q)$.
+
+The convergence rate is $O(1/k)$: at each jet level, the
+new partitions contribute branching proportional to
+$d_q(\mu)$ (first order) rather than $d_q(\mu)^2$ (zeroth order).
 $\square$
+
+*Numerical verification ($k = 3 \ldots 9$): the
+$q$-deformed target $d_q/\Sigma d_q = (0.249, 0.501, 0.249)$
+matches within $0.008$ at $k = 9$, with monotone convergence
+from above for $f_{\mathrm{std}}^{(k)}$.*
 
 **Corollaries.**
 
 1. *For $Z = N$ even-even nuclei
   ($\chi_{\mathrm{sym}} = \chi_{\mathrm{alt}} =
-  V_{\mathrm{std}}^{\mathrm{inter}}$):*
+  V_{\mathrm{std}}^{\mathrm{inter}} = V$):*
 
 $$
-  a_\infty = \frac{2V + 2V}{6}
-  = \frac{2\,V_{\mathrm{std}}^{\mathrm{inter}}}{3}
+  a_\infty = \frac{(2 + [2]_q) \cdot V}{2 + [2]_q^2}
 $$
 
 2. *For $Z = N$ odd-odd nuclei
   ($\chi_{\mathrm{sym}} = -\chi_{\mathrm{alt}}$,
-  extremal cancellation):*
+  extremal cancellation
+  [confined knot binding](#prop:confined-knot-binding)):*
 
 $$
-  a_\infty = \frac{2\,\chi_{\mathrm{std}}}{6}
-  = \frac{V_{\mathrm{std}}^{\mathrm{inter}}}{3}
+  a_\infty = \frac{[2]_q \cdot V_{\mathrm{std}}}{2 + [2]_q^2}
 $$
 
-3. *The $q$-deformation at $k = 3$ enhances the standard
-  channel: $W_{\mathrm{std}} = 0.669 > 1/2$ (classical).
-  This means the $k = 3$ invariant is MORE sensitive to
-  the standard channel than the asymptotic invariant,
-  explaining why nuclear topology (carried by the
-  $2$-dimensional standard representation) dominates
-  the binding formula at the physical level $k = 3$.*
+3. *The transition $k = 3 \to k = \infty$ is from
+  **squared** to **linear** $q$-dimension scaling:*
+
+| Level | Fraction $f_\mu$ | Scaling |
+|-------|------------------|---------|
+| $k = 3$ | $d_q(\mu)^2 / [3]_q!$ | quadratic |
+| $k \to \infty$ | $d_q(\mu) / \sum d_q(\nu)$ | linear |
+
+*At $k = 3$: $W_{\mathrm{std}} = [2]_q^2/([2]_q^2 + 2) \approx 0.669$.
+At $k = \infty$: $f_{\mathrm{std}} = [2]_q/([2]_q + 2) \approx 0.501$.
+The $q$-deformation enhances the standard channel at low $k$,
+explaining why nuclear topology (carried by the $2$-dimensional
+standard representation) dominates binding at the physical level.*
 
 **Witness**: `jet-knot-invariants.witness.json`.
