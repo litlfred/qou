@@ -1,19 +1,21 @@
 **Proposition.**
 *Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
-and $\ell \in \{0, 1, 2, 3, 4\}$ a jet level of the confined-knot
-tower ([confined knot binding](#prop:confined-knot-binding)):*
+and let $\ell$ index the confined-knot jet tower
+([confined knot binding](#prop:confined-knot-binding)). Each
+level $\ell$ is characterised **algebraically** — not by a
+physical species — as a regime of the Hecke algebra
+$H_{n_\ell}(q)$ in which a specific Hecke operator
+$\Omega_\ell(q)$ is strictly positive, and the phase boundary
+between levels $\ell$ and $\ell{+}1$ is the zero locus*
 
-| $\ell$ | Confined unit | Braid algebra |
-|:--:|:--|:--|
-| $0$ | Quark | $H_3(q)$ strand |
-| $1$ | Baryon $\mathfrak{H}$ | $H_3(q)$ closure |
-| $2$ | Nucleus ($A = Z{+}N$) | $H_{3A}(q)$ |
-| $3$ | Atom | Shell-filled $H_n(q)$ |
-| $4$ | Molecule | $H_m(q)$ with $T^{-1}$-bond insertions |
+$$
+  \Omega_\ell(q)  =  0.
+$$
 
 *Let $U \subset M$ be a region of the brane with volume $V_q(U)$,
-and let $\mathrm{Conf}_\ell(U)$ be the set of confined knot
-configurations at jet level $\ell$. The **level-$\ell$
+and let $\mathrm{Conf}_\ell(U)$ be the set of LP-stable
+configurations ([LP-dual stability](#prop:lp-dual-stability)) in
+the phase $\Omega_\ell(q) > 0$. The **level-$\ell$
 confinement pressure** is the information-theoretic derivative*
 
 $$
@@ -92,17 +94,66 @@ $n_\ell = N^{(\ell)}/N_A(q)$ moles of level-$\ell$ objects and
 $R_q$ the categorical gas constant
 ([gas constant](#def:gas-constant)).*
 
-**Level-by-level specialisation.**
+**Algebraic phase stratification (motivated by states of matter).**
+*The jet tower stratifies the substrate into algebraic phases
+indexed by which Hecke operator $\Omega_\ell(q)$ is the dominant
+positive binding witness. The pressure, LP-dual binding energy,
+and equation of state take a distinct form in each phase; the
+boundary between phases is a real zero of $\Omega_\ell(q)$ in
+$(0, \infty)$.*
 
-| $\ell$ | Volume $V_q^{(\ell)}$ | Pressure $P_q^{(\ell)}$ | Confinement witness |
-|:--:|:--|:--|:--|
-| $0$ | $\hbar_q \, \mathrm{tr}_M(\sigma_i)$ (quark) | LP-infeasible in isolation | Borromean operator $B_3$ |
-| $1$ | $V_B = \mathrm{Vol}(\mathcal{B}_3)$ (baryon) | $P_{\mathfrak{H}} = T_q \, \partial_{V_q} \ln Z_q^{(1)}$ | Gram indefiniteness |
-| $2$ | Wedderburn nuclear volume $\hat{V}_A(q)$ | $P_{\mathrm{nuc}} = T_q \, \partial_{V_q} \ln Z_q^{(2)}$ | Character ratio $a_2$ |
-| $3$ | Shell-filled atomic volume | $P_{\mathrm{atom}} = T_q \, \partial_{V_q} \ln Z_q^{(3)}$ | Shell-filling rule |
-| $4$ | Hartree-scale molecular volume | $P_{\mathrm{mol}} = T_q \, \partial_{V_q} \ln Z_q^{(4)}$ | Inverse trefoil $T^{-1}$ |
+| $\ell$ | Phase (motivation) | Dominant operator $\Omega_\ell(q)$ | LP-dual binding $\mathbf{E}_{\mathrm{bind}}^{(\ell)}$ | $PV = NT_q$ correction | Phase boundary $\Omega_\ell(q) = 0$ |
+|:--:|:--|:--|:--|:--|:--|
+| $0$ | Symmetric plasma $(q\text{-gas})$ | $\mathrm{eig}_+(T) = q$ (symmetric Hecke eigenvalue) | $\mathbf{E}_{\mathrm{bind}}^{(0)} = 0$ (LP-infeasible) | $1 + O(\hbar_q^2)$ | $q \to \infty$ (decoupling) |
+| $1$ | Hopf-diquark / CFL fluid | $\Delta_{\mathrm{Hopf}}(q) = q + q^{-1}$ (Hopf link gap) | $\mathbf{E}_{\mathrm{bind}}^{(1)} = -(q - q^{-1})/2$ (pairwise) | $+3\Delta_{\mathrm{Hopf}}^2 \mu_q^2 / (\pi^2 N T_q)$ | $q^2 = -1$ (gap closes) |
+| $2$ | Borromean-confined "baryonic" | $\lambda_{\min}(G(q))$ (Gram min eigenvalue) | $\mathbf{E}_{\mathrm{bind}}^{(2)} = +V_B / \hbar_q^2$ (volume-mass) | $+(\hbar_q^2 / [2]_q)\,\langle S_q^{(2)}\rangle$ | $\lambda_{\min}(G) = 0$ |
+| $3$ | Standard-channel ordered $(q\text{-liquid})$ | $P_{7,7}(q) = (q + q^{1/2} - 1)/(q + 1)$ (Toffoli diagonal) | $\mathbf{E}_{\mathrm{bind}}^{(3)} = +\ln P_{7,7}(q)$ | $-(a_{\mathrm{attr}}/V_q^2)$ (attractive) | $q = 1/\varphi^2$ (golden) |
+| $4$ | Antisymmetric "rigid" $(q\text{-solid})$ | $\mathrm{eig}_-(T) = -q^{-1}$ (sign rep) | $\mathbf{E}_{\mathrm{bind}}^{(4)} = +\mathrm{tr}_M(T^{-1})\,\ln q$ (trefoil lattice) | $(q - 1)^2$-suppressed | $q = 1$ (classical limit) |
 
-*The pressures factorise through the jet tower:*
+*Here $T = \sigma_i$ is the Hecke generator with eigenvalues
+$\{q, -q^{-1}\}$ from the Hecke relation $(T-q)(T+q^{-1}) = 0$,
+$G$ is the Gram matrix
+([Gram matrix](#prop:frobenius-gram-matrix)), $P_{7,7}$ is the
+Toffoli diagonal ([Toffoli transfer](#prop:toffoli-transfer-matrix)),
+and $\varphi = (1+\sqrt{5})/2$. The LP-dual binding energy
+$\mathbf{E}_{\mathrm{bind}}^{(\ell)}$ is the Lagrange multiplier
+of the LP-confinement program
+([confinement as LP](#prop:confinement-lp)) in phase $\ell$; it
+is positive in LP-stable phases and vanishes at the phase
+boundary.*
+
+**Phase transitions are zeros of $\Omega_\ell$.**
+*At each phase boundary $\Omega_\ell(q_\ell^\star) = 0$, the LP
+problem becomes degenerate (the Gram matrix acquires a null
+direction), the free-entropy slope $\partial_{V_q} \ln Z_q^{(\ell)}$
+is non-analytic, and the equation of state changes class. The
+substrate parameter $q_0 \approx 1.110$ sits in phase $\ell = 2$
+(Borromean-confined), consistent with a universe of
+$\mathfrak{H}$-hadrons rather than a CFL fluid or quark-gluon
+plasma ([EOS Borromean vs CFL](#prop:eos-borromean-cfl)).*
+
+**Level-ℓ pressure and PV = NT_q in each phase.**
+*In phase $\ell$, the quantum ideal gas law is the full
+proposition applied with partition function $Z_q^{(\ell)}$ and
+the $\langle S_q^{(\ell)} \rangle$-correction specialised to the
+phase's operator content:*
+
+$$
+  P_q^{(\ell)} V_q
+   = 
+  N^{(\ell)}  T_q
+   + 
+  \underbrace{\hbar_q^2  \mathbf{E}_{\mathrm{bind}}^{(\ell)}  N^{(\ell)}
+  / [2]_q}_{\text{LP-dual correction}}.
+$$
+
+*The Fermi-gas baryonic pressure $P_B \propto n_B^{5/3}/M_B$
+([EOS Borromean vs CFL](#prop:eos-borromean-cfl)) is the
+degenerate-limit specialisation of $P_q^{(2)}$; the CFL
+pressure is that of $P_q^{(1)}$ with
+$\Delta_{\mathrm{Hopf}} = q + q^{-1}$.*
+
+**Pressures factorise through the jet tower:**
 
 $$
   P_q^{(\ell)}
@@ -154,13 +205,26 @@ the recursion $P_q^{(\ell)} = P_q^{(\ell-1)} \cdot
 specialisation of the $q$-anomaly term in
 [quantum pressure](#def:quantum-pressure). $\square$
 
-**Remark.**
-The Fermi-gas baryonic pressure $P_B \propto n_B^{5/3} / M_B$
-([EOS Borromean vs CFL](#prop:eos-borromean-cfl)) is recovered
-from $P_q^{(1)}$ in the degenerate limit $N^{(1)} \gg 1$,
-$T_q \to 0$ with $T_q/E_F$ small. At this level,
-$\ln Z_q^{(1)}$ scales as $N^{(1)} (E_F/T_q)$ and the volume
-derivative reproduces the $n_B^{5/3}$ power law. The molecular
-case $\ell = 4$ recovers the van der Waals equation of state in
-the classical limit $q \to 1$, with the $T^{-1}$ bond insertions
-playing the role of the attractive $a/V^2$ correction.
+**Remark (algebraic analogues of classical phase transitions).**
+The phase table above is the Hecke-algebraic analogue of the
+state-of-matter hierarchy. The symmetric plasma phase
+($\ell = 0$, gas-like) degenerates at $q \to \infty$; the
+Hopf-fluid phase ($\ell = 1$, CFL-like liquid) is bounded by the
+complex gap zero $q^2 = -1$; the Borromean-confined phase
+($\ell = 2$, hadronic "solid" relative to quark matter) is
+stabilised by Gram positivity; the standard-channel phase
+($\ell = 3$, $q$-liquid) has its attractive LP correction
+$a_{\mathrm{attr}} \propto -\Phi(q)/V_q^2$ that plays the role
+of the van der Waals $a/V^2$ term — except $a_{\mathrm{attr}}$
+is determined algebraically by the q-AND amplitude, not fitted.
+The antisymmetric phase ($\ell = 4$, $q$-solid) recovers the
+classical-rigid limit as $q \to 1$.
+
+**No ad-hoc potentials.** In the classical theory phase
+transitions require inter-particle potentials added by hand.
+In the QOU each $\Omega_\ell(q)$ is an element of the Hecke
+algebra $H_{n_\ell}(q)$ and its vanishing is a purely algebraic
+(zero-locus) condition on $q$. The LP-dual binding energy
+$\mathbf{E}_{\mathrm{bind}}^{(\ell)}$ is a shadow price of the
+LP-confinement program ([LP-dual stability](#prop:lp-dual-stability)),
+not a fitted coupling.
