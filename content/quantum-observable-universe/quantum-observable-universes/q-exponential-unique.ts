@@ -11,5 +11,6 @@ export default proposition({
     "def:q-exponential",
     "prop:q-exponential-exists",
   ],
+  proofs: ["prf:q-exponential-unique"],
   tags: ["uniqueness", "q-exponential", "grouplike", "hopf-algebra"],
 });

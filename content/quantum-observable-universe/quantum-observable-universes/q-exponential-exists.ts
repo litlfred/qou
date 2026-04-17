@@ -11,5 +11,6 @@ export default proposition({
     "def:q-exponential",
     "rem:base-field-independence",
   ],
+  proofs: ["prf:q-exponential-exists"],
   tags: ["existence", "q-exponential", "grouplike", "hopf-algebra"],
 });
