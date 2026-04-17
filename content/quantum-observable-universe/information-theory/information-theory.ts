@@ -87,6 +87,7 @@ section({
       blocks: [
         "q-exponential-taylor",
         "q-gaussian-solves-q-heat",
+        "q-gaussian-breit-wigner",
         "q-heat-kernel-peter-weyl",
         "q-heat-kernel-computational-fallback",
       ],
