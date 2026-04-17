@@ -2960,8 +2960,12 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
     return (norm_sq, per, max_ln)
 
 
-def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1):
+def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
+                                m_pp=None, m_pn=None, m_nn=None):
     """Per-generator additive Wedderburn volumes V̂_i^full for the atom braid.
+
+    If m_pp, m_pn, m_nn are given (ILP solution), use them per pair type.
+    Otherwise fall back to uniform crossings_per_pair.
 
     Returns a list of length n_strands - 1 = 3A - 1 (atom case) or
     n_strands - 1 = 2A (free case) of dicts:
@@ -3054,11 +3058,14 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1):
             next_nuc = ordering[k + 1]
             if nuc == 'p' and next_nuc == 'p':
                 base_cross = (1.0, 0.0)      # pp: σ
+                m_this = m_pp if m_pp is not None else crossings_per_pair
             elif nuc == 'n' and next_nuc == 'n':
                 base_cross = (1.0, -h)       # nn: σ⁻¹
+                m_this = m_nn if m_nn is not None else crossings_per_pair
             else:
                 base_cross = (1.0, -h / 2)   # pn: ½(σ + σ⁻¹)
-            pair_cross = [base_cross] * crossings_per_pair
+                m_this = m_pn if m_pn is not None else crossings_per_pair
+            pair_cross = [base_cross] * m_this
             for c, d in pair_cross:
                 a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
                 b_new = a_arr[i] * c + b_arr[i] * d
