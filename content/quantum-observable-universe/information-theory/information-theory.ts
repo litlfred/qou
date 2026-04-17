@@ -82,6 +82,16 @@ section({
       ],
     }),
     section({
+      title: "$q$-Heat kernel and spectral analysis",
+      label: "sec:q-heat-kernel-analysis",
+      blocks: [
+        "q-exponential-taylor",
+        "q-gaussian-solves-q-heat",
+        "q-heat-kernel-peter-weyl",
+        "q-heat-kernel-computational-fallback",
+      ],
+    }),
+    section({
       title: "Statistical Mechanics",
       label: "sec:stat-mech",
       blocks: [
