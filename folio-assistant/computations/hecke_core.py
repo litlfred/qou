@@ -336,9 +336,9 @@ def lp_shadow_price(partition):
 # (volume, surface, Coulomb, asymmetry, pairing, exchange, shell,
 # hook, Wigner, form factor, pn correlation, [3,2,1] pn-invisible,
 # [4,1,1]+[3,1,1,1] isospin, [4,2]+[2,2,1,1] codim-4 form factor).
-# Push K_PARTITION_MAX higher (e.g. 7, 8) to absorb the H₇⁺ descent
+# Push K_PARTITION_MAX higher (e.g. 7, 8, 9) to absorb the H₇⁺ descent
 # corrections at the cost of larger YSN matrix builds.
-K_PARTITION_MAX = 8
+K_PARTITION_MAX = 9
 
 _PARTITION_TABLE = []
 for _k in range(2, K_PARTITION_MAX + 1):
@@ -1982,7 +1982,11 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             # recovering the BW surface scaling categorically from the
             # combinatorics of B₃ braid geometry.
             surface_weight = (kk + 1) ** (-1.0 / 3.0) if kk > 0 else 1.0
-            delta = raw_delta * surface_weight
+            # Per-step complementary slackness: the LP dual at step k
+            # has its own tight/slack structure.  Only count this step's
+            # delta if the running trace at this step is ≤ 0 (tight).
+            step_is_tight = tr_run <= 0
+            delta = raw_delta * surface_weight if step_is_tight else 0.0
             s['cumul_partition'] += delta
             s['log_prev'] = log_cur
             # Store raw trace sign for final-state complementary slackness.
@@ -2005,24 +2009,14 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                 'partitions': partitions_step,
             })
 
-    # ── Pass 2: complementary slackness gate ──────────────────
-    # Only sum contributions from partitions whose FINAL trace is
-    # non-positive (tight Frobenius constraint → y_λ* > 0).
-    # Partitions with positive final trace are SLACK → y_λ* = 0.
-    gated_total = 0.0
-    n_tight = 0
-    for s in state:
-        if s['final_tr_sign'] <= 0:
-            gated_total += s['cumul_partition']
-            n_tight += 1
-
+    # Per-step gating is now inline (tr_run sign checked at each step),
+    # so cumul_total already contains only tight-step contributions.
     if return_per_step:
         if per_step:
-            per_step[-1]['gated_total_MeV'] = gated_total
-            per_step[-1]['n_tight'] = n_tight
+            per_step[-1]['gated_total_MeV'] = cumul_total
             per_step[-1]['n_active'] = len(state)
-        return gated_total, per_step
-    return gated_total
+        return cumul_total, per_step
+    return cumul_total
 
 
 def binding_energy_bw(Z, N, k=3, unified=False):
