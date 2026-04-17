@@ -39,17 +39,16 @@ $$
 
 with $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ the symmetric $q$-number.
 This scalar is the **$q$-Casimir eigenvalue**; the downstream block
-[def:q-angular-momentum](#def:q-angular-momentum) specialises this
-eigenvalue to define $J_q^2(K) = [j]_q\,[j+1]_q$ as the
-$q$-angular momentum of a knot.  In the classical limit $q \to 1$
-it recovers the usual Casimir $C = FE + \tfrac12 H(\tfrac12 H + 1)$
-with eigenvalue $j(j+1)$.
+[def:q-angular-momentum](#def:q-angular-momentum) specialises it to
+$J_q^2(K) = [j]_q\,[j+1]_q$, the $q$-angular momentum of a knot.
+In the classical limit $q \to 1$ the eigenvalue becomes $j(j+1)$,
+the eigenvalue of the usual Casimir $C = FE + \tfrac12 H(\tfrac12 H + 1)$.
 
 **Role in the categorical framework.**
-Because $C_q$ is central, it descends to an endomorphism of the
-identity functor on $\mathbf{Rep}(\mathrm{SU}_q(2))$ — equivalently,
-a natural transformation $C_q \colon \mathrm{id} \Rightarrow \mathrm{id}$
-whose component at each simple object $V_j$ is the scalar
-$[j]_q[j+1]_q \cdot \mathrm{id}_{V_j}$. It is the categorical
-incarnation of angular momentum squared in the rigid monoidal setting
-of Chapter 3.
+Centrality of $C_q$ realises it as an endomorphism of the identity
+functor on $\mathbf{Rep}(\mathrm{SU}_q(2))$ — equivalently, a natural
+transformation $C_q \colon \mathrm{id} \Rightarrow \mathrm{id}$ whose
+component at each simple object $V_j$ is
+$[j]_q[j+1]_q \cdot \mathrm{id}_{V_j}$.  In the rigid monoidal setting
+this is the categorical counterpart of the angular-momentum-squared
+operator.
