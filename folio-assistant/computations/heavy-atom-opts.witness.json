@@ -1,0 +1,158 @@
+{
+  "created": "2026-04-17T21:11:24.346127+00:00",
+  "parameters": {
+    "q": 1.1099785955541805
+  },
+  "opt2_nucleon_chars": {
+    "p": {
+      "sym": 1.3824945145464391,
+      "std": 0.2018034902342516,
+      "alt": -0.7392235469701228
+    },
+    "n": {
+      "sym": 1.1221068372363028,
+      "std": 0.15624232606471783,
+      "alt": -0.9107622062323655
+    }
+  },
+  "opt3_skew_syt": {
+    "k_max_6": {
+      "cached_entries": 78
+    }
+  },
+  "opt5_shorthand_masses": {
+    "1-1": {
+      "m_free": 1609210.1160871715,
+      "m_atom": 1609390.2729715903,
+      "pair_contrib": 180.15688441882145,
+      "n_nucleon_strands": 2,
+      "n_quark_strands_skipped": 4
+    },
+    "1-2": {
+      "m_free": 2039424.7067377558,
+      "m_atom": 2039785.0205065934,
+      "pair_contrib": 360.3137688376429,
+      "n_nucleon_strands": 3,
+      "n_quark_strands_skipped": 6
+    },
+    "2-1": {
+      "m_free": 2788205.6415237584,
+      "m_atom": 2788565.955292596,
+      "pair_contrib": 360.3137688376429,
+      "n_nucleon_strands": 3,
+      "n_quark_strands_skipped": 6
+    },
+    "2-2": {
+      "m_free": 3218420.232174343,
+      "m_atom": 3218960.7028275994,
+      "pair_contrib": 540.4706532564643,
+      "n_nucleon_strands": 4,
+      "n_quark_strands_skipped": 8
+    },
+    "3-3": {
+      "m_free": 4827630.348261515,
+      "m_atom": 4828531.132683609,
+      "pair_contrib": 900.7844220941072,
+      "n_nucleon_strands": 6,
+      "n_quark_strands_skipped": 12
+    },
+    "6-6": {
+      "m_free": 9655260.69652303,
+      "m_atom": 9657242.422251636,
+      "pair_contrib": 1981.7257286070358,
+      "n_nucleon_strands": 12,
+      "n_quark_strands_skipped": 24
+    },
+    "6-8": {
+      "m_free": 10515689.877824198,
+      "m_atom": 10518031.917321643,
+      "pair_contrib": 2342.039497444679,
+      "n_nucleon_strands": 14,
+      "n_quark_strands_skipped": 28
+    },
+    "8-8": {
+      "m_free": 12873680.928697372,
+      "m_atom": 12876383.281963654,
+      "pair_contrib": 2702.353266282322,
+      "n_nucleon_strands": 16,
+      "n_quark_strands_skipped": 32
+    },
+    "10-10": {
+      "m_free": 16092101.160871714,
+      "m_atom": 16095524.141675672,
+      "pair_contrib": 3422.980803957608,
+      "n_nucleon_strands": 20,
+      "n_quark_strands_skipped": 40
+    },
+    "20-20": {
+      "m_free": 32184202.32174343,
+      "m_atom": 32191228.440235764,
+      "pair_contrib": 7026.118492334036,
+      "n_nucleon_strands": 40,
+      "n_quark_strands_skipped": 80
+    }
+  },
+  "opt7_magic_anchors": {
+    "1-2": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "magic_type": "N-magic",
+      "atom_trM_signed": 2.533379875394145,
+      "free_trM_signed": 1.149020044199799,
+      "k_cap_used": 6,
+      "n_partitions": 28
+    },
+    "2-1": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "magic_type": "Z-magic",
+      "atom_trM_signed": 2.969794087799862,
+      "free_trM_signed": 1.315652354581157,
+      "k_cap_used": 6,
+      "n_partitions": 28
+    },
+    "2-2": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "magic_type": "double",
+      "atom_trM_signed": 2.3643012347456733,
+      "free_trM_signed": 3.048900524000875,
+      "k_cap_used": 6,
+      "n_partitions": 28
+    },
+    "6-8": {
+      "Z": 6,
+      "N": 8,
+      "A": 14,
+      "magic_type": "N-magic",
+      "atom_trM_signed": 4.6386180884477675,
+      "free_trM_signed": 40.954651779538146,
+      "k_cap_used": 6,
+      "n_partitions": 28
+    },
+    "8-8": {
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "magic_type": "double",
+      "atom_trM_signed": 36.580713044213375,
+      "free_trM_signed": 71.42153415841268,
+      "k_cap_used": 6,
+      "n_partitions": 28
+    },
+    "20-20": {
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "magic_type": "double",
+      "atom_trM_signed": 40250.29020084803,
+      "free_trM_signed": 372355.2358693371,
+      "k_cap_used": 6,
+      "n_partitions": 28
+    }
+  },
+  "last_updated": "2026-04-17T21:11:56.382625+00:00"
+}
