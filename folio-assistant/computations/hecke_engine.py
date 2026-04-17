@@ -62,10 +62,11 @@ class HeckeRational:
             return Fraction(1), -self.ha / 2
 
     def traced_volume(self, gen_idx, ordering):
-        """V̂_i = z·M₀₀ + M₁₀ via 2×2 transfer matrix product (exact rational).
+        """V̂_i = z·M₁₀ + M₁₁ via 2×2 transfer matrix product (exact rational).
 
-        M = ∏ T(c,d) where T(c,d) = [[c·HA+d, c], [c, d]],
-        and V̂ = z·M[0][0] + M[1][0].
+        M = ∏ T(c,d) where T(c,d) = [[c·HA+d, c], [c, d]].
+        Initial state [a,b] = [0,1], so [aₙ,bₙ] = [0,1]×M = (M₁₀, M₁₁).
+        V̂ = z·aₙ + bₙ = z·M₁₀ + M₁₁.
         """
         M00 = Fraction(1); M01 = Fraction(0)
         M10 = Fraction(0); M11 = Fraction(1)
@@ -77,7 +78,7 @@ class HeckeRational:
             n00 = M00*t00 + M01*t10; n01 = M00*t01 + M01*t11
             n10 = M10*t00 + M11*t10; n11 = M10*t01 + M11*t11
             M00, M01, M10, M11 = n00, n01, n10, n11
-        return self.z * M00 + M10
+        return self.z * M10 + M11
 
     def markov_trace(self, ordering):
         """Product of traced volumes (exact rational)."""

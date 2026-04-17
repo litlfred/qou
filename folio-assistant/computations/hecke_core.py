@@ -943,7 +943,7 @@ def _chain_V_full(chain):
         n00 = M00*t00 + M01*t10; n01 = M00*t01 + M01*t11
         n10 = M10*t00 + M11*t10; n11 = M10*t01 + M11*t11
         M00, M01, M10, M11 = n00, n01, n10, n11
-    V_std = z * M00 + M10
+    V_std = z * M10 + M11  # second row: [a,b] = [0,1] × M → (M₁₀, M₁₁)
 
     return W_SYM * lam_sym + W_STD * V_std + W_ALT * lam_alt
 
@@ -988,7 +988,7 @@ def _phi1_from_ordering(ordering):
             n10 = M10*t00 + M11*t10
             n11 = M10*t01 + M11*t11
             M00, M01, M10, M11 = n00, n01, n10, n11
-        V = z * M00 + M10
+        V = z * M10 + M11  # second row: [a,b]=[0,1]×M → (M₁₀, M₁₁)
         if abs(V) > 1e-300:
             phi += math.log(abs(V))
     return phi
@@ -1393,31 +1393,12 @@ def binding_energy_bw(Z, N, k=3):
 
         # ── (2,2) partition: Wigner energy (T=0 np pairing) ────
         # The self-conjugate partition (2,2) at k=4 contributes extra
-        # binding from isoscalar pn pairing when the KNOT FACTOR is 1
-        # (i.e. the pn topology is NOT already captured by a₃ ≠ 1).
-        #
-        # Constructive: for each atom, the Wigner residual is
-        #   ΔB = V_pn × α × Z × δ_{N,Z} / A × (2 - a_N - a_N⁻¹)/h²
-        # where the factor (2 - a - 1/a)/h² measures how much of the
-        # pn binding is NOT captured by the knot factor.
-        # For a_N = 1: factor = 0/h² ... hmm, need different formula.
-        #
-        # SIMPLEST CONSTRUCTIVE: the Wigner term is proportional to
-        # the PRODUCT of extremal cancellation and the (2,2) weight:
-        #   ΔB = V_pn × α × min(Z, N) / A
-        # This is nonzero for ALL atoms with both protons and neutrons.
-        # For A=2 (D): V_pn × α × 1/2 ≈ 0.49 MeV. But D is handled
-        # by the dedicated formula B(D) = α × V̂_e, which ALREADY
-        # includes the pn binding. So no double-count for A=2.
-        # For A=3,4: the knot factor (1-h²), (1-h²)² already modifies
-        # the bulk. The Wigner term is ADDITIONAL to the knot factor.
-        # It adds ~0.33 MeV for T, ~0.25 for He4. These are small
-        # compared to the knot factor effect (~0.4-2.4 MeV).
-        #
-        # ALL atoms get the Wigner term. No conditional on A.
-        V_pn_wigner = W_STD * (z - h / 2)
-        if Z > 0 and N > 0:
-            B += V_pn_wigner * ALPHA * min(Z, N) / A
+        # binding from isoscalar pn pairing. The coefficient must be
+        # derived from the Wedderburn decomposition at k=4 (the same
+        # way LAMBDA_V, LAMBDA_S etc. are derived at k=3), not guessed.
+        # See conj:jet-filtered-knot-factor and prop:wigner-np-pairing.
+        # TODO: derive (2,2) q-integer coefficient from k=4 Wedderburn.
+        # Currently NOT wired in — the scaling is open.
 
     # ── H₅+ volume perturbation ─────────────────────────────
     if k >= 5 and not is_fig8:
