@@ -242,6 +242,8 @@ export default chapter({
         "categorical-fourier-transform",
         "laplace-fourier-wick-rotation",
         "q-exponential",
+        "q-exponential-exists",
+        "q-exponential-unique",
         "q-exp-finite-field-obstruction",
         "q-exp-p-adic",
         "q-logarithm",
