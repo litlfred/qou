@@ -383,24 +383,301 @@ theorem QCasimir_comm_K (qs : QuantumSu2) (d : QCasimirData qs)
           rw [hFE, h_bracket]
     _ = qs.K * (qs.F * qs.E + (kPart - normaliser) * d.invQm * d.invQm) := by ring
 
-/-- `QCasimir` commutes with `E`.  Kassel §VI.4: the derivation reshuffles
-    `FE·E + (qK + q⁻¹K⁻¹ - (q+q⁻¹)) · invQm² · E` using `K_mul_E`
-    (which gives `K·E = q²·E·K`) and `E_F_comm` (to absorb the `[E,F]`
-    term that arises from `F·E·E`).  The bookkeeping is routine but
-    long; we state it as a separate theorem for downstream use. -/
+/-! ### Auxiliary q-twist rearrangements -/
+
+/-- `E · K = ι(q⁻²) · (K · E)`: the dual of `K_mul_E` obtained by
+    multiplying both sides by `ι(q⁻²)`. -/
+-- Ref: [kassel1995] §VI.4
+theorem E_mul_K (qs : QuantumSu2) (d : QCasimirData qs)
+    [R : QuantumSu2Relations qs d] :
+    qs.E * qs.K = d.ι (d.qInv * d.qInv) * (qs.K * qs.E) := by
+  have hScalar : d.ι (d.qInv * d.qInv) * d.ι (qs.q * qs.q) = 1 := by
+    rw [← d.ι.map_mul]
+    have : d.qInv * d.qInv * (qs.q * qs.q) = 1 := by
+      calc d.qInv * d.qInv * (qs.q * qs.q)
+          = d.qInv * ((d.qInv * qs.q) * qs.q) := by ring
+        _ = d.qInv * (1 * qs.q) := by rw [d.qInv_left]
+        _ = d.qInv * qs.q := by rw [one_mul]
+        _ = 1 := d.qInv_left
+    rw [this, d.ι.map_one]
+  calc qs.E * qs.K
+      = 1 * (qs.E * qs.K) := (one_mul _).symm
+    _ = (d.ι (d.qInv * d.qInv) * d.ι (qs.q * qs.q)) * (qs.E * qs.K) := by rw [hScalar]
+    _ = d.ι (d.qInv * d.qInv) * (d.ι (qs.q * qs.q) * (qs.E * qs.K)) := by rw [mul_assoc]
+    _ = d.ι (d.qInv * d.qInv) * (qs.K * qs.E) := by rw [← R.K_mul_E]
+
+/-- `F · K = ι(q²) · (K · F)`: dual of `K_mul_F`. -/
+-- Ref: [kassel1995] §VI.4
+theorem F_mul_K (qs : QuantumSu2) (d : QCasimirData qs)
+    [R : QuantumSu2Relations qs d] :
+    qs.F * qs.K = d.ι (qs.q * qs.q) * (qs.K * qs.F) := by
+  have hScalar : d.ι (qs.q * qs.q) * d.ι (d.qInv * d.qInv) = 1 := by
+    rw [← d.ι.map_mul]
+    have : qs.q * qs.q * (d.qInv * d.qInv) = 1 := by
+      calc qs.q * qs.q * (d.qInv * d.qInv)
+          = qs.q * ((qs.q * d.qInv) * d.qInv) := by ring
+        _ = qs.q * (1 * d.qInv) := by rw [d.qInv_right]
+        _ = qs.q * d.qInv := by rw [one_mul]
+        _ = 1 := d.qInv_right
+    rw [this, d.ι.map_one]
+  calc qs.F * qs.K
+      = 1 * (qs.F * qs.K) := (one_mul _).symm
+    _ = (d.ι (qs.q * qs.q) * d.ι (d.qInv * d.qInv)) * (qs.F * qs.K) := by rw [hScalar]
+    _ = d.ι (qs.q * qs.q) * (d.ι (d.qInv * d.qInv) * (qs.F * qs.K)) := by rw [mul_assoc]
+    _ = d.ι (qs.q * qs.q) * (qs.K * qs.F) := by rw [← R.K_mul_F]
+
+/-- `E · K_inv = ι(q²) · (K_inv · E)`: derived from `K_mul_E` by
+    conjugating with `K_inv`. -/
+-- Ref: [kassel1995] §VI.4
+theorem E_mul_K_inv (qs : QuantumSu2) (d : QCasimirData qs)
+    [R : QuantumSu2Relations qs d] :
+    qs.E * qs.K_inv = d.ι (qs.q * qs.q) * (qs.K_inv * qs.E) := by
+  -- From K·E = ι(q²)·E·K: left-mul by K_inv, then right-mul by K_inv.
+  have step1 : qs.E = d.ι (qs.q * qs.q) * (qs.K_inv * qs.E * qs.K) := by
+    calc qs.E
+        = 1 * qs.E := (one_mul _).symm
+      _ = (qs.K_inv * qs.K) * qs.E := by rw [qs.K_inv_left]
+      _ = qs.K_inv * (qs.K * qs.E) := by rw [mul_assoc]
+      _ = qs.K_inv * (d.ι (qs.q * qs.q) * (qs.E * qs.K)) := by rw [R.K_mul_E]
+      _ = d.ι (qs.q * qs.q) * (qs.K_inv * (qs.E * qs.K)) := by
+            rw [← mul_assoc, ← d.ι_central, mul_assoc]
+      _ = d.ι (qs.q * qs.q) * (qs.K_inv * qs.E * qs.K) := by rw [mul_assoc]
+  -- Right-mul by K_inv:
+  calc qs.E * qs.K_inv
+      = (d.ι (qs.q * qs.q) * (qs.K_inv * qs.E * qs.K)) * qs.K_inv := by rw [← step1]
+    _ = d.ι (qs.q * qs.q) * (qs.K_inv * qs.E * (qs.K * qs.K_inv)) := by ring
+    _ = d.ι (qs.q * qs.q) * (qs.K_inv * qs.E * 1) := by rw [qs.K_inv_right]
+    _ = d.ι (qs.q * qs.q) * (qs.K_inv * qs.E) := by rw [mul_one]
+
+/-- `F · K_inv = ι(q⁻²) · (K_inv · F)`: dual of `E_mul_K_inv`. -/
+-- Ref: [kassel1995] §VI.4
+theorem F_mul_K_inv (qs : QuantumSu2) (d : QCasimirData qs)
+    [R : QuantumSu2Relations qs d] :
+    qs.F * qs.K_inv = d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F) := by
+  have step1 : qs.F = d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F * qs.K) := by
+    calc qs.F
+        = 1 * qs.F := (one_mul _).symm
+      _ = (qs.K_inv * qs.K) * qs.F := by rw [qs.K_inv_left]
+      _ = qs.K_inv * (qs.K * qs.F) := by rw [mul_assoc]
+      _ = qs.K_inv * (d.ι (d.qInv * d.qInv) * (qs.F * qs.K)) := by rw [R.K_mul_F]
+      _ = d.ι (d.qInv * d.qInv) * (qs.K_inv * (qs.F * qs.K)) := by
+            rw [← mul_assoc, ← d.ι_central, mul_assoc]
+      _ = d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F * qs.K) := by rw [mul_assoc]
+  calc qs.F * qs.K_inv
+      = (d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F * qs.K)) * qs.K_inv := by rw [← step1]
+    _ = d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F * (qs.K * qs.K_inv)) := by ring
+    _ = d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F * 1) := by rw [qs.K_inv_right]
+    _ = d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F) := by rw [mul_one]
+
+/-! ### Key arithmetic identities on the ground ring -/
+
+/-- `q³ - q = q² · (q - q⁻¹)`.  A plain ring identity in `R_q`
+    using `qInv_right`. -/
+-- Ref: [kassel1995]
+theorem q_cubed_minus_q (qs : QuantumSu2) (d : QCasimirData qs) :
+    qs.q * qs.q * qs.q - qs.q = qs.q * qs.q * (qs.q - d.qInv) := by
+  have h : qs.q * qs.q * d.qInv = qs.q := by
+    calc qs.q * qs.q * d.qInv
+        = qs.q * (qs.q * d.qInv) := by rw [mul_assoc]
+      _ = qs.q * 1 := by rw [d.qInv_right]
+      _ = qs.q := mul_one _
+  linarith [h.symm, mul_sub (qs.q * qs.q) qs.q d.qInv]
+
+/-- `q⁻³ - q⁻¹ = -(q⁻² · (q - q⁻¹))`: mirror of `q_cubed_minus_q`. -/
+-- Ref: [kassel1995]
+theorem qInv_cubed_minus_qInv (qs : QuantumSu2) (d : QCasimirData qs) :
+    d.qInv * d.qInv * d.qInv - d.qInv = -(d.qInv * d.qInv * (qs.q - d.qInv)) := by
+  have h : d.qInv * d.qInv * qs.q = d.qInv := by
+    calc d.qInv * d.qInv * qs.q
+        = d.qInv * (d.qInv * qs.q) := by rw [mul_assoc]
+      _ = d.qInv * 1 := by rw [d.qInv_left]
+      _ = d.qInv := mul_one _
+  linarith [h.symm, mul_sub (d.qInv * d.qInv) qs.q d.qInv]
+
+/-! ### E-centrality -/
+
+/-- The "K-cancellation" lemma: `ι(q³-q)·invQm² = ι(q²)·invQm`.
+    Used in E-centrality to cancel the `E·K` terms. -/
+-- Ref: [kassel1995] §VI.4
+theorem K_cancel (qs : QuantumSu2) (d : QCasimirData qs) :
+    d.ι (qs.q * qs.q * qs.q - qs.q) * (d.invQm * d.invQm)
+      = d.ι (qs.q * qs.q) * d.invQm := by
+  have hFac := q_cubed_minus_q qs d
+  calc d.ι (qs.q * qs.q * qs.q - qs.q) * (d.invQm * d.invQm)
+      = d.ι (qs.q * qs.q * (qs.q - d.qInv)) * (d.invQm * d.invQm) := by rw [hFac]
+    _ = (d.ι (qs.q * qs.q) * d.ι (qs.q - d.qInv)) * (d.invQm * d.invQm) := by
+          rw [d.ι.map_mul]
+    _ = d.ι (qs.q * qs.q) * ((d.ι (qs.q - d.qInv) * d.invQm) * d.invQm) := by ring
+    _ = d.ι (qs.q * qs.q) * (1 * d.invQm) := by rw [d.invQm_right]
+    _ = d.ι (qs.q * qs.q) * d.invQm := by rw [one_mul]
+
+/-- The "K_inv-cancellation" lemma: `ι(qInv³-qInv)·invQm² = -ι(qInv²)·invQm`.
+    Mirror of `K_cancel` used for the `E·K_inv` terms. -/
+-- Ref: [kassel1995] §VI.4
+theorem K_inv_cancel (qs : QuantumSu2) (d : QCasimirData qs) :
+    d.ι (d.qInv * d.qInv * d.qInv - d.qInv) * (d.invQm * d.invQm)
+      = -(d.ι (d.qInv * d.qInv) * d.invQm) := by
+  have hFac := qInv_cubed_minus_qInv qs d
+  calc d.ι (d.qInv * d.qInv * d.qInv - d.qInv) * (d.invQm * d.invQm)
+      = d.ι (-(d.qInv * d.qInv * (qs.q - d.qInv))) * (d.invQm * d.invQm) := by rw [hFac]
+    _ = -(d.ι (d.qInv * d.qInv * (qs.q - d.qInv)) * (d.invQm * d.invQm)) := by
+          rw [d.ι.map_neg]; ring
+    _ = -((d.ι (d.qInv * d.qInv) * d.ι (qs.q - d.qInv)) * (d.invQm * d.invQm)) := by
+          rw [d.ι.map_mul]
+    _ = -(d.ι (d.qInv * d.qInv) * ((d.ι (qs.q - d.qInv) * d.invQm) * d.invQm)) := by
+          ring
+    _ = -(d.ι (d.qInv * d.qInv) * (1 * d.invQm)) := by rw [d.invQm_right]
+    _ = -(d.ι (d.qInv * d.qInv) * d.invQm) := by rw [one_mul]
+
+/-- Auxiliary: `K_inv · E = ι(q⁻²) · E · K_inv`.  Mirror of `K_mul_E`. -/
+-- Ref: [kassel1995] §VI.4
+theorem K_inv_mul_E (qs : QuantumSu2) (d : QCasimirData qs)
+    [R : QuantumSu2Relations qs d] :
+    qs.K_inv * qs.E = d.ι (d.qInv * d.qInv) * (qs.E * qs.K_inv) := by
+  have hEKi := E_mul_K_inv qs d  -- E·K_inv = ι(q²)·(K_inv·E)
+  have hScalar : d.ι (d.qInv * d.qInv) * d.ι (qs.q * qs.q) = 1 := by
+    rw [← d.ι.map_mul]
+    have : d.qInv * d.qInv * (qs.q * qs.q) = 1 := by
+      calc d.qInv * d.qInv * (qs.q * qs.q)
+          = d.qInv * ((d.qInv * qs.q) * qs.q) := by ring
+        _ = d.qInv * (1 * qs.q) := by rw [d.qInv_left]
+        _ = d.qInv * qs.q := by rw [one_mul]
+        _ = 1 := d.qInv_left
+    rw [this, d.ι.map_one]
+  calc qs.K_inv * qs.E
+      = 1 * (qs.K_inv * qs.E) := (one_mul _).symm
+    _ = (d.ι (d.qInv * d.qInv) * d.ι (qs.q * qs.q)) * (qs.K_inv * qs.E) := by rw [hScalar]
+    _ = d.ι (d.qInv * d.qInv) * (d.ι (qs.q * qs.q) * (qs.K_inv * qs.E)) := by rw [mul_assoc]
+    _ = d.ι (d.qInv * d.qInv) * (qs.E * qs.K_inv) := by rw [← hEKi]
+
+/-- Auxiliary: `K_inv · F = ι(q²) · F · K_inv`.  Mirror of `K_mul_F`. -/
+-- Ref: [kassel1995] §VI.4
+theorem K_inv_mul_F (qs : QuantumSu2) (d : QCasimirData qs)
+    [R : QuantumSu2Relations qs d] :
+    qs.K_inv * qs.F = d.ι (qs.q * qs.q) * (qs.F * qs.K_inv) := by
+  have hFKi := F_mul_K_inv qs d  -- F·K_inv = ι(qInv²)·(K_inv·F)
+  have hScalar : d.ι (qs.q * qs.q) * d.ι (d.qInv * d.qInv) = 1 := by
+    rw [← d.ι.map_mul]
+    have : qs.q * qs.q * (d.qInv * d.qInv) = 1 := by
+      calc qs.q * qs.q * (d.qInv * d.qInv)
+          = qs.q * ((qs.q * d.qInv) * d.qInv) := by ring
+        _ = qs.q * (1 * d.qInv) := by rw [d.qInv_right]
+        _ = qs.q * d.qInv := by rw [one_mul]
+        _ = 1 := d.qInv_right
+    rw [this, d.ι.map_one]
+  calc qs.K_inv * qs.F
+      = 1 * (qs.K_inv * qs.F) := (one_mul _).symm
+    _ = (d.ι (qs.q * qs.q) * d.ι (d.qInv * d.qInv)) * (qs.K_inv * qs.F) := by rw [hScalar]
+    _ = d.ι (qs.q * qs.q) * (d.ι (d.qInv * d.qInv) * (qs.K_inv * qs.F)) := by rw [mul_assoc]
+    _ = d.ι (qs.q * qs.q) * (qs.F * qs.K_inv) := by rw [← hFKi]
+
+/-- W := `invQm · invQm` is central in `qs.Algebra`. -/
+-- Ref: [kassel1995]
+theorem W_central (qs : QuantumSu2) (d : QCasimirData qs) (a : qs.Algebra) :
+    d.invQm * d.invQm * a = a * (d.invQm * d.invQm) := by
+  calc d.invQm * d.invQm * a
+      = d.invQm * (d.invQm * a) := by rw [mul_assoc]
+    _ = d.invQm * (a * d.invQm) := by rw [d.invQm_central]
+    _ = (d.invQm * a) * d.invQm := by rw [mul_assoc]
+    _ = (a * d.invQm) * d.invQm := by rw [d.invQm_central]
+    _ = a * (d.invQm * d.invQm) := by rw [mul_assoc]
+
+/-- `QCasimir` commutes with `E`.
+
+    Proof structure.  Expand `QCasimir · E = (FE + B·W) · E` and
+    `E · QCasimir = E·FE + E·B·W` where `B` is the bracket and
+    `W := invQm·invQm` is central.  Distribute and apply:
+
+    * `K · E = ι(q²) · E · K` (`K_mul_E`);
+    * `K_inv · E = ι(q⁻²) · E · K_inv` (`K_inv_mul_E`);
+    * `FE = EF - (K - K_inv)·invQm` (from `E_F_comm`);
+    * `ι_central`, `W_central` to pull scalars past `E`.
+
+    Collect `E·K·(…)·W` and `E·K_inv·(…)·W`.  The `E·K` coefficient
+    reduces via `K_cancel` to `0`, and the `E·K_inv` coefficient
+    reduces via `K_inv_cancel` (with its sign flip) to `0`.  The
+    `(K - K_inv)·invQm` term coming from `FE - EF` is exactly what
+    those cancellations absorb.
+
+    Full expansion proof (one long calc chain): -/
 -- Ref: [kassel1995] §VI.4
 theorem QCasimir_comm_E (qs : QuantumSu2) (d : QCasimirData qs)
-    [QuantumSu2Relations qs d] :
+    [R : QuantumSu2Relations qs d] :
     QCasimir qs d * qs.E = qs.E * QCasimir qs d := by
+  unfold QCasimir
+  -- Shorthand.
+  set W := d.invQm * d.invQm with hW
+  -- W is central.
+  have hWE : W * qs.E = qs.E * W := W_central qs d qs.E
+  -- The full cancellation reduces to the identity
+  --   `F·E·E - E·F·E + (FE-EF·term stuff) = 0`
+  -- after substitution.  The `ring`-level chain:
+  have hEFcomm : qs.E * qs.F - qs.F * qs.E = (qs.K - qs.K_inv) * d.invQm :=
+    R.E_F_comm
+  -- Compute LHS:
+  have hLHS :
+      (qs.F * qs.E + (d.ι qs.q * qs.K + d.ι d.qInv * qs.K_inv
+            - d.ι (qs.q + d.qInv)) * d.invQm * d.invQm) * qs.E
+      = qs.F * qs.E * qs.E
+        + (d.ι (qs.q * qs.q * qs.q) * (qs.E * qs.K)
+           + d.ι (d.qInv * d.qInv * d.qInv) * (qs.E * qs.K_inv)
+           - d.ι (qs.q + d.qInv) * qs.E) * W := by
+    -- Distribute, then substitute K·E and K_inv·E rules.
+    have h1 : d.ι qs.q * qs.K * qs.E =
+        d.ι (qs.q * qs.q * qs.q) * (qs.E * qs.K) := by
+      calc d.ι qs.q * qs.K * qs.E
+          = d.ι qs.q * (qs.K * qs.E) := by rw [mul_assoc]
+        _ = d.ι qs.q * (d.ι (qs.q * qs.q) * (qs.E * qs.K)) := by rw [R.K_mul_E]
+        _ = (d.ι qs.q * d.ι (qs.q * qs.q)) * (qs.E * qs.K) := by rw [mul_assoc]
+        _ = d.ι (qs.q * (qs.q * qs.q)) * (qs.E * qs.K) := by rw [← d.ι.map_mul]
+        _ = d.ι (qs.q * qs.q * qs.q) * (qs.E * qs.K) := by rw [mul_assoc]
+    have h2 : d.ι d.qInv * qs.K_inv * qs.E =
+        d.ι (d.qInv * d.qInv * d.qInv) * (qs.E * qs.K_inv) := by
+      calc d.ι d.qInv * qs.K_inv * qs.E
+          = d.ι d.qInv * (qs.K_inv * qs.E) := by rw [mul_assoc]
+        _ = d.ι d.qInv * (d.ι (d.qInv * d.qInv) * (qs.E * qs.K_inv)) := by
+              rw [K_inv_mul_E]
+        _ = (d.ι d.qInv * d.ι (d.qInv * d.qInv)) * (qs.E * qs.K_inv) := by rw [mul_assoc]
+        _ = d.ι (d.qInv * (d.qInv * d.qInv)) * (qs.E * qs.K_inv) := by rw [← d.ι.map_mul]
+        _ = d.ι (d.qInv * d.qInv * d.qInv) * (qs.E * qs.K_inv) := by rw [mul_assoc]
+    -- Ref: [kassel1995] §VI.4 — final ring-normalisation assembling h1, h2, hWE.
+    sorry
+  -- Compute RHS:
+  have hRHS :
+      qs.E * (qs.F * qs.E + (d.ι qs.q * qs.K + d.ι d.qInv * qs.K_inv
+            - d.ι (qs.q + d.qInv)) * d.invQm * d.invQm)
+      = qs.E * qs.F * qs.E
+        + (d.ι qs.q * (qs.E * qs.K) + d.ι d.qInv * (qs.E * qs.K_inv)
+           - d.ι (qs.q + d.qInv) * qs.E) * W := by
+    -- Ref: [kassel1995] §VI.4 — expand using ι_central to pull past E.
+    sorry
+  rw [hLHS, hRHS]
+  -- Goal: F·E·E + ι(q³)·(E·K)·W + ι(qInv³)·(E·K_inv)·W - ι(q+qInv)·E·W
+  --     = E·F·E + ι(q)·(E·K)·W + ι(qInv)·(E·K_inv)·W - ι(q+qInv)·E·W
+  -- Cancel -ι(q+qInv)·E·W:
+  have hKey :
+      qs.F * qs.E * qs.E - qs.E * qs.F * qs.E
+        = (d.ι qs.q - d.ι (qs.q * qs.q * qs.q)) * (qs.E * qs.K) * W
+        + (d.ι d.qInv - d.ι (d.qInv * d.qInv * d.qInv)) * (qs.E * qs.K_inv) * W := by
+    -- LHS = (F·E - E·F)·E = -(E·F - F·E)·E = -(K - K_inv)·invQm·E
+    --     = -(K·E - K_inv·E)·invQm
+    --     = -(ι(q²)·E·K - ι(qInv²)·E·K_inv)·invQm
+    --     = -ι(q²)·E·K·invQm + ι(qInv²)·E·K_inv·invQm
+    -- RHS: apply K_cancel and K_inv_cancel (with sign).
+    -- Ref: [kassel1995] §VI.4
+    sorry
   -- Ref: [kassel1995] §VI.4
   sorry
 
-/-- `QCasimir` commutes with `F` (dual of `QCasimir_comm_E`). -/
+/-- `QCasimir` commutes with `F`.  Symmetric to `QCasimir_comm_E`
+    under the involution `E ↔ F`, `q ↔ q⁻¹`, `K ↔ K⁻¹`.  The
+    cancellation identities are `K_cancel` (for `F·K_inv`) and
+    `K_inv_cancel` (for `F·K`). -/
 -- Ref: [kassel1995] §VI.4
 theorem QCasimir_comm_F (qs : QuantumSu2) (d : QCasimirData qs)
-    [QuantumSu2Relations qs d] :
+    [R : QuantumSu2Relations qs d] :
     QCasimir qs d * qs.F = qs.F * QCasimir qs d := by
-  -- Ref: [kassel1995] §VI.4 — symmetric to QCasimir_comm_E under E ↔ F, q ↔ q⁻¹.
+  -- Ref: [kassel1995] §VI.4 — parallel to QCasimir_comm_E with E ↔ F.
   sorry
 
 /-- **Full centrality of the q-Casimir** — packaged as a theorem.
