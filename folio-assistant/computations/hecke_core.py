@@ -2042,11 +2042,16 @@ for _entry in _PARTITION_TABLE:
     _entry['n_gens'] = max(0, _entry['k'] - 1)
 
 
-def _step_chain_generic(nucleon_type, prev_types, n_gens):
+def _step_chain_generic(nucleon_type, prev_types, n_gens, include_inter=True):
     """Crossing chain in the H_{n_gens+1}(q) generators σ_1, …, σ_{n_gens}
     for one NF-construction step.  Same chain content as `_step_chain_22`
     but the generator index cycles modulo `n_gens`, so any partition of
-    size k = n_gens + 1 receives a full set of crossings."""
+    size k = n_gens + 1 receives a full set of crossings.
+
+    include_inter : bool (default True)
+        If False, skip inter-nucleon crossings — gives the disconnected
+        intra-nucleon braid segment used for the free-nucleon baseline.
+    """
     chain = []
     intra = _PROTON_G0 if nucleon_type == 'p' else _NEUTRON_G0
     intra_g1 = _PROTON_G1 if nucleon_type == 'p' else _NEUTRON_G1
@@ -2057,14 +2062,15 @@ def _step_chain_generic(nucleon_type, prev_types, n_gens):
     for c, d in intra_g1:
         chain.append((c, d, g % n_gens))
         g += 1
-    for ti in prev_types:
-        if ti == 'p' and nucleon_type == 'p':
-            chain.append((1.0, 0.0, g % n_gens))      # pp
-        elif ti == 'n' and nucleon_type == 'n':
-            chain.append((1.0, -h, g % n_gens))       # nn
-        else:
-            chain.append((1.0, -h / 2, g % n_gens))   # pn
-        g += 1
+    if include_inter:
+        for ti in prev_types:
+            if ti == 'p' and nucleon_type == 'p':
+                chain.append((1.0, 0.0, g % n_gens))      # pp
+            elif ti == 'n' and nucleon_type == 'n':
+                chain.append((1.0, -h, g % n_gens))       # nn
+            else:
+                chain.append((1.0, -h / 2, g % n_gens))   # pn
+            g += 1
     return chain
 
 
@@ -2454,13 +2460,19 @@ def _jet_witness_path(Z, N, jet, witness_dir):
                          f'unified_jet_Z{Z}_N{N}_j{jet}.json')
 
 
-def atom_character_raw(Z, N, entry):
+def atom_character_raw(Z, N, entry, include_inter=True):
     """Return the raw characters of the atom braid word in partition λ.
 
     Returns (chi_q_atom, log_norm, dim) where chi_q_atom × exp(log_norm)
     is the actual YSN trace Tr(M_λ(W_atom)) at q = q_0.
     Uses periodic rescaling to avoid overflow; caller reconstructs via
     log-trace = log|chi_q_atom| + log_norm.
+
+    include_inter : bool (default True)
+        If False, skip inter-nucleon crossings — gives the
+        disconnected-tensor FREE NUCLEON baseline χ_λ(W_free).
+        The resulting braid is the disconnected product of
+        intra-nucleon blocks, corresponding to H_3(q)^⊗A ↪ H_{3A}(q).
     """
     try:
         from scipy.sparse import issparse as _issparse
@@ -2487,7 +2499,7 @@ def atom_character_raw(Z, N, entry):
     for kkk in range(A):
         nuc = ordering[kkk]
         prev_types = ordering[:kkk]
-        chain = _step_chain_generic(nuc, prev_types, n_gens)
+        chain = _step_chain_generic(nuc, prev_types, n_gens, include_inter=include_inter)
         if sparse_sigmas:
             M_run = M
             for c, d, gen in chain:
@@ -2836,7 +2848,7 @@ def unified_iterative_correction_jet(Z, N, jet_max,
     return total, per_jet
 
 
-def atom_frobenius_norm_sq(Z, N, k_cap=None):
+def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
     """Frobenius-norm squared of the atom braid word W_atom via Schur-Weyl:
 
         ||W||²_F = Σ_λ w_λ · |χ_λ(W) / d_λ|²
@@ -2866,7 +2878,7 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None):
     chi_data = {}
     log_norms = {}
     for e in active:
-        chi_q, ln, _d = atom_character_raw(Z, N, e)
+        chi_q, ln, _d = atom_character_raw(Z, N, e, include_inter=include_inter)
         chi_data[tuple(e['partition'])] = (chi_q, ln, e)
         log_norms[tuple(e['partition'])] = ln
 
@@ -2913,37 +2925,42 @@ def free_nucleon_frobenius_norm_sq(Z, N, k_cap=None):
     TODO: proper tensor-product decomposition via H_3(q)^⊗A restriction.
     For now: ||W_free||² ≈ Σ_λ w_λ · 1 = 1 (Wedderburn trace identity).
     """
-    # Placeholder: identity-braid norm is Σ w_λ = 1 (Wedderburn trace id)
-    # A proper implementation uses atom_character_raw on intra-only chains.
-    return 1.0
+    norm_sq, _, _ = atom_frobenius_norm_sq(Z, N, k_cap, include_inter=False)
+    return norm_sq
 
 
 def binding_from_frobenius_pairing(Z, N, k_cap=None):
     """Categorical replacement for LAMBDA_V·A + LAMBDA_S·A^{2/3} + knot_factor:
-    the Frobenius-pairing ratio of atom over free nucleons.
+    the Frobenius-pairing LOG ratio of atom to free nucleons.
 
-        B_bulk(Z, N) = m_e · ℏ_q² · (||W_atom||²_F − ||W_free||²_F) / ||W_free||²_F
+        B_bulk(Z, N) = C_bulk · log( ||W_free||²_F / ||W_atom||²_F )
 
     Derivation: self-duality of End_C(A) (rigid monoidal) gives a
-    positive-definite Frobenius pairing ⟨X, Y⟩_F = tr_M(X · Y†).
-    The knot factor a(N) of the old BW is the Frobenius ratio
-    ⟨W_nuclear, W_free⟩_F / ⟨W_free, W_free⟩_F — the reciprocity
-    defect of the atom from being an induced product of free
-    nucleons (prop:fibre-functor-rigidity, Frobenius reciprocity
-    on the Hecke tower H_n ⊃ H_{n-1}).
+    positive-definite Frobenius pairing.  The atom's norm is SMALLER
+    than the disconnected-tensor baseline (confinement = destructive
+    interference).  The log-ratio log(||W_free||²/||W_atom||²) is
+    the dimensionless binding measure.
 
-    The ℏ_q² prefactor comes from the q-heat equation's pure-spin
-    eigenvalue coupling (1 − q⁻¹)² Δ_ξ (rem:q-laplacian-expansion);
-    m_e is the Reeb quantum of energy.
+    LINEAR ratio saturates at 1 for A >> 1; the LOG-ratio grows
+    linearly in A (since ||W_free||² grows exponentially, tensor-
+    product over A nucleons).  This matches the LAMBDA_V * A
+    scaling of the old BW bulk.
+
+    Prefactor: C_bulk = m_p * h_q^2 ~ 9.2 MeV (per-A saturation).
+    Categorical derivation pending - currently selected to give the
+    right order of magnitude (bulk per nucleon ~ 8-9 MeV empirically).
     """
+    import math as _math
     hbar_q = (q0 - 1.0) / q0
     hbar_q_sq = hbar_q * hbar_q
     atom_sq, _, _ = atom_frobenius_norm_sq(Z, N, k_cap)
     free_sq = free_nucleon_frobenius_norm_sq(Z, N, k_cap)
-    if abs(free_sq) < 1e-30:
+    if atom_sq <= 0 or free_sq <= 0:
         return 0.0
-    ratio = (atom_sq - free_sq) / free_sq
-    return M_E_MEV * hbar_q_sq * ratio
+    log_ratio = _math.log(free_sq / atom_sq)
+    from experimental_constants import M_P_MEV
+    C_bulk = M_P_MEV * hbar_q_sq
+    return C_bulk * log_ratio
 
 
 def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
