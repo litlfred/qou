@@ -112,6 +112,7 @@ export default chapter({
         "enveloping-algebras-intro",
         "enveloping-algebra",
         "quantum-su2",
+        "q-casimir",
         "r-matrix-braiding-structure",
         "r-matrix-braiding",
         "skein-crossing-asymmetry-prop",

@@ -18,6 +18,7 @@ export default definition({
   },
   uses: [
     "def:q-momentum",
+    "def:q-casimir",
     "prop:nuclear-spin-parity",
   ],
 });
