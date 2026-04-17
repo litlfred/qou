@@ -1,7 +1,7 @@
 {
   "computation": "sigma-shell-characterization",
-  "description": "\u03c3_shell characterization per user insight: shell operator has SAME Hecke parameters (c=1, d=0, eigenvalues q/-q\u207b\u00b9) as any \u03c3; shell structure is encoded via POSITION (shell-boundary generator 3\u00b7A_magic - 1) and LP-DUAL WEIGHT (shadow price at shell partition (A_magic - 1, 1)). Young's-lattice branching: contribution is y_shell \u00b7 \u03c3_eigenvalue, multiplied by skew-SYT count f^{\u03bb/(A_magic-1,1)} at target partition \u03bb \u22a2 3A for the specific atom.",
-  "timestamp": "2026-04-17T21:50:56.163530+00:00",
+  "description": "\u03c3_shell characterization attempting 3 approaches to identify the shell partition: (1) (A-1, 1), (3) maximal-weight argmax, and enumeration. Target y_shell ~ 10\u207b\u00b3 to 10\u207b\u00b9 for physical binding.",
+  "timestamp": "2026-04-17T21:55:20.641924+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "mpmath_dps": 50
@@ -12,7 +12,7 @@
     "eigenvalues": "(q, -q\u207b\u00b9) in the (A-1, 1) standard rep",
     "comment": "\u03c3_shell has the same Hecke parameters as any \u03c3. The shell structure is encoded via POSITION (shell-boundary generator) and LP-dual WEIGHT (shell_shadow_price at the shell partition)."
   },
-  "shell_shadow_prices": [
+  "approach_1_shadow_prices": [
     {
       "A_magic": 2,
       "shell_partition": [
@@ -105,6 +105,107 @@
       "q_factorial_A_magic": "3.3706734493377390197332848811677678219806157949442e+445"
     }
   ],
+  "approach_3_maximal_weight": [
+    {
+      "A_magic": 2,
+      "partition": "(2,)",
+      "w_max": "0.49729054500859147895226965599454221878277750561284",
+      "y_abs": "0.0"
+    },
+    {
+      "A_magic": 8,
+      "partition": "(4, 2, 1, 1)",
+      "w_max": "0.21097989564352015652432556865085871134563180935382",
+      "y_abs": "0.0023267448225485087424423110856385812904662843606042"
+    },
+    {
+      "A_magic": 20,
+      "partition": "(6, 5, 3, 2, 2, 1, 1)",
+      "w_max": "0.42846172704980501003426084520173914918215172049596",
+      "y_abs": "0.0000000017178281467085672389667998435461630892974365596861"
+    }
+  ],
+  "enumeration_top_by_magnitude": {
+    "2": [],
+    "8": [
+      {
+        "partition": "(4, 2, 1, 1)",
+        "y_abs": 0.002326744822548509,
+        "w_lam": 0.21097989564352015
+      },
+      {
+        "partition": "(4, 3, 1)",
+        "y_abs": 0.0018570617177979356,
+        "w_lam": 0.13121765705686445
+      },
+      {
+        "partition": "(3, 2, 2, 1)",
+        "y_abs": 0.0018570617177979356,
+        "w_lam": 0.13121765705686445
+      },
+      {
+        "partition": "(5, 2, 1)",
+        "y_abs": 0.0016082536409684927,
+        "w_lam": 0.10404671239204887
+      },
+      {
+        "partition": "(3, 2, 1, 1, 1)",
+        "y_abs": 0.0016082536409684927,
+        "w_lam": 0.10404671239204887
+      },
+      {
+        "partition": "(4, 2, 2)",
+        "y_abs": 0.0014824285067649775,
+        "w_lam": 0.0839946658276459
+      },
+      {
+        "partition": "(3, 3, 1, 1)",
+        "y_abs": 0.0014824285067649775,
+        "w_lam": 0.0839946658276459
+      },
+      {
+        "partition": "(3, 3, 2)",
+        "y_abs": 0.0011394097341010708,
+        "w_lam": 0.048589210918850344
+      },
+      {
+        "partition": "(5, 1, 1, 1)",
+        "y_abs": 0.000844449029166276,
+        "w_lam": 0.030167384426324138
+      },
+      {
+        "partition": "(4, 1, 1, 1, 1)",
+        "y_abs": 0.000844449029166276,
+        "w_lam": 0.030167384426324138
+      },
+      {
+        "partition": "(5, 3)",
+        "y_abs": 0.0007007425162162021,
+        "w_lam": 0.02011012517845724
+      },
+      {
+        "partition": "(2, 2, 2, 1, 1)",
+        "y_abs": 0.0007007425162162021,
+        "w_lam": 0.02011012517845724
+      },
+      {
+        "partition": "(6, 1, 1)",
+        "y_abs": 0.00047084924279194645,
+        "w_lam": 0.010254835141933562
+      },
+      {
+        "partition": "(3, 1, 1, 1, 1, 1)",
+        "y_abs": 0.00047084924279194645,
+        "w_lam": 0.010254835141933562
+      },
+      {
+        "partition": "(6, 2)",
+        "y_abs": 0.00045380542271200233,
+        "w_lam": 0.009425633257385463
+      }
+    ],
+    "20": []
+  },
   "magic_numbers": [
     2,
     8,

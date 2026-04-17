@@ -81,27 +81,71 @@ def q_dim(partition, n):
     return num / den if abs(den) > 0 else mpmath.mpf(0)
 
 
-def shell_shadow_price(A_magic):
-    """LP-dual shadow price y_shell at shell-partition (A_magic-1, 1)."""
-    # Shell partition at H_{A_magic}(q): standard (A_magic - 1, 1)
-    shell_partition = (A_magic - 1, 1)
-    k = A_magic
-    d_cl = classical_dim(shell_partition, k)
-    d_q_shell = q_dim(shell_partition, k)
+def partitions_of(n):
+    """All partitions of n."""
+    if n == 0:
+        return [()]
+    out = []
+    def rec(rem, mx, cur):
+        if rem == 0:
+            out.append(tuple(cur))
+            return
+        for p in range(min(rem, mx), 0, -1):
+            rec(rem - p, p, cur + [p])
+    rec(n, n, [])
+    return out
+
+
+def shadow_price_at_partition(partition, k):
+    """Generic shadow price y_λ at partition λ ⊢ k."""
+    d_cl = classical_dim(partition, k)
+    if d_cl == 0:
+        return None
+    d_q_lam = q_dim(partition, k)
     kq_fact = q_fact_mp(k)
-    # Wedderburn weight w_λ = d_q²/[k]_q!
-    w_lam = (d_q_shell ** 2) / kq_fact
-    # Shadow price (normalised)
-    y_shell = w_lam / d_cl - 1 / kq_fact
+    w_lam = (d_q_lam ** 2) / kq_fact
+    y = w_lam / d_cl - 1 / kq_fact
+    return {
+        "partition": partition,
+        "classical_dim": d_cl,
+        "q_dim": d_q_lam,
+        "wedderburn_weight": w_lam,
+        "shadow_price_y": y,
+        "shadow_price_abs": abs(y),
+        "q_factorial_k": kq_fact,
+    }
+
+
+def maximal_weight_partition(A):
+    """Find partition λ ⊢ A with maximal Wedderburn weight w_λ = d_q²/[A]_q!."""
+    parts = partitions_of(A)
+    best = None
+    best_w = mpmath.mpf(0)
+    for p in parts:
+        w = (q_dim(p, A) ** 2) / q_fact_mp(A)
+        if w > best_w:
+            best_w = w
+            best = p
+    return best, best_w
+
+
+def shell_shadow_price(A_magic, partition=None):
+    """Shell shadow price at a GIVEN partition (default (A_magic-1, 1))."""
+    if partition is None:
+        partition = (A_magic - 1, 1)
+    k = A_magic
+    data = shadow_price_at_partition(partition, k)
+    if data is None:
+        return {"A_magic": A_magic, "error": "d_cl = 0"}
     return {
         "A_magic": A_magic,
-        "shell_partition": shell_partition,
-        "classical_dim": d_cl,
-        "q_dim": str(d_q_shell),
-        "wedderburn_weight": str(w_lam),
-        "shadow_price_y": str(y_shell),
-        "shadow_price_abs": str(abs(y_shell)),
-        "q_factorial_A_magic": str(kq_fact),
+        "shell_partition": partition,
+        "classical_dim": data["classical_dim"],
+        "q_dim": str(data["q_dim"]),
+        "wedderburn_weight": str(data["wedderburn_weight"]),
+        "shadow_price_y": str(data["shadow_price_y"]),
+        "shadow_price_abs": str(data["shadow_price_abs"]),
+        "q_factorial_A_magic": str(data["q_factorial_k"]),
     }
 
 
@@ -171,32 +215,64 @@ def shell_contribution(atom_Z, atom_N, A_magic):
 
 
 if __name__ == "__main__":
-    print("σ_SHELL CHARACTERIZATION (LP-dual + Young tableaux)")
+    print("σ_SHELL CHARACTERIZATION (3 approaches)")
     print("=" * 80)
     print(f"q_0 = {q0}, precision = {mpmath.mp.dps} digits")
     print()
-
-    # σ_shell parameters (same for all shells)
-    print("σ_shell Hecke parameters:")
-    params = shell_sigma_parameters()
-    for k, v in params.items():
-        print(f"  {k}: {v}")
+    print("Target binding scale: B_AME/(A·938) ≈ 0.009 (0.9% of rest mass)")
+    print("→ expect y_shell ~ 10⁻³ to 10⁻² for physical binding")
     print()
 
-    # Shadow prices for each magic shell
-    print(f"Shell shadow prices y_shell(A_magic) at q_0:")
-    print(f"  {'A_magic':>8} {'shell part':>12} {'d_cl':>6} {'d_q':>10} "
-          f"{'w_λ':>14} {'|y_shell|':>18}")
-    print("  " + "-" * 76)
-    shell_data = []
-    for A_m in MAGIC:
+    print("APPROACH 1: (A-1, 1) partition")
+    print(f"  {'A_magic':>8} {'partition':>12} {'|y|':>14}")
+    for A_m in [2, 8, 20, 28]:
         d = shell_shadow_price(A_m)
         print(f"  {d['A_magic']:>8d} {str(d['shell_partition']):>12} "
-              f"{d['classical_dim']:>6d} {float(mpmath.mpf(d['q_dim'])):>10.4f} "
-              f"{float(mpmath.mpf(d['wedderburn_weight'])):>14.4e} "
-              f"{float(mpmath.mpf(d['shadow_price_abs'])):>18.6e}")
-        shell_data.append(d)
+              f"{float(mpmath.mpf(d['shadow_price_abs'])):>14.4e}")
+    print("  → Too small; shadow price drops exponentially.")
     print()
+
+    print("APPROACH 3: Maximal-weight partition (argmax w_λ)")
+    print(f"  {'A_magic':>8} {'argmax partition':>25} {'w_max':>14} {'|y|':>14}")
+    max_wt_data = []
+    for A_m in [2, 8, 20]:
+        best_p, best_w = maximal_weight_partition(A_m)
+        y_data = shadow_price_at_partition(best_p, A_m)
+        print(f"  {A_m:>8d} {str(best_p):>25} "
+              f"{float(best_w):>14.4e} "
+              f"{float(y_data['shadow_price_abs']):>14.4e}")
+        max_wt_data.append({
+            "A_magic": A_m, "partition": str(best_p),
+            "w_max": str(best_w),
+            "y_abs": str(y_data["shadow_price_abs"]),
+        })
+    print()
+
+    print("ENUMERATION: all partitions at each magic A, find y in physical range")
+    print("(physical range: 10⁻³ to 10⁻¹)")
+    enum_data = {}
+    for A_m in [2, 8, 20]:
+        print(f"\nA_magic = {A_m}:")
+        parts = partitions_of(A_m)
+        candidates = []
+        for p in parts:
+            y_data = shadow_price_at_partition(p, A_m)
+            if y_data is None:
+                continue
+            y_abs = float(y_data["shadow_price_abs"])
+            if 1e-4 < y_abs < 1e0:
+                candidates.append((p, y_abs, float(y_data["wedderburn_weight"])))
+        # Sort by |y| descending
+        candidates.sort(key=lambda x: -x[1])
+        print(f"  {'partition':>25} {'|y|':>14} {'w_λ':>14}")
+        for p, y, w in candidates[:8]:  # top 8 by |y|
+            print(f"  {str(p):>25} {y:>14.4e} {w:>14.4e}")
+        enum_data[A_m] = [{"partition": str(p), "y_abs": y, "w_lam": w}
+                           for p, y, w in candidates[:15]]
+
+    # σ_shell parameters
+    params = shell_sigma_parameters()
+    shell_data = [shell_shadow_price(A_m) for A_m in MAGIC]
 
     # Atom-level shell contributions
     print("Atom-level shell contributions (for each shell within atom):")
@@ -224,19 +300,17 @@ if __name__ == "__main__":
     witness = {
         "computation": "sigma-shell-characterization",
         "description": (
-            "σ_shell characterization per user insight: shell operator "
-            "has SAME Hecke parameters (c=1, d=0, eigenvalues q/-q⁻¹) as "
-            "any σ; shell structure is encoded via POSITION (shell-boundary "
-            "generator 3·A_magic - 1) and LP-DUAL WEIGHT (shadow price at "
-            "shell partition (A_magic - 1, 1)). "
-            "Young's-lattice branching: contribution is y_shell · σ_eigenvalue, "
-            "multiplied by skew-SYT count f^{λ/(A_magic-1,1)} at target "
-            "partition λ ⊢ 3A for the specific atom."
+            "σ_shell characterization attempting 3 approaches to identify "
+            "the shell partition: (1) (A-1, 1), (3) maximal-weight argmax, "
+            "and enumeration. Target y_shell ~ 10⁻³ to 10⁻¹ for physical "
+            "binding."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q_0": str(q0), "mpmath_dps": 50},
         "sigma_shell_parameters": params,
-        "shell_shadow_prices": shell_data,
+        "approach_1_shadow_prices": shell_data,
+        "approach_3_maximal_weight": max_wt_data,
+        "enumeration_top_by_magnitude": enum_data,
         "magic_numbers": MAGIC,
     }
     out = Path(__file__).parent / "sigma-shell-characterization.witness.json"
