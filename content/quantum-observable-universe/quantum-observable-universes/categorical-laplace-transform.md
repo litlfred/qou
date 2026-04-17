@@ -108,6 +108,7 @@ $$
 $$
 
 yielding the *resolvent of the $q$-Laplacian*,
-$\hat{u}(s) = (s + \widehat{\Delta_q})^{-1} u_0$.  The heat kernel is
+$\hat{u}(s) = (s + \widehat{\Delta_q})^{-1} u_0$
+([$q$-resolvent](#def:q-resolvent)).  The heat kernel is
 the inverse Laplace of the resolvent, and lives in the archimedean
 realisation.

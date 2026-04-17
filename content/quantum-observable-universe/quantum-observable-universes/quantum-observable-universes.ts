@@ -240,6 +240,7 @@ export default chapter({
         "q-heat-equation",
         "categorical-laplace-transform",
         "categorical-fourier-transform",
+        "q-resolvent",
         "laplace-fourier-wick-rotation",
         "q-exponential",
         "q-exponential-exists",
