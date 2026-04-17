@@ -2836,7 +2836,97 @@ def unified_iterative_correction_jet(Z, N, jet_max,
     return total, per_jet
 
 
-def binding_energy_bw(Z, N, k=3, unified=False, drop_bw=False):
+def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
+    """Compute SDP-derived cross-channel energy contribution (MeV).
+
+    Runs the SDP with atom observables over all active conjugate pairs
+    (both partitions at k ≤ k_cap, jet ≤ jet_max, both mixing).
+    Each pair's coupling c_ij* contributes c_ij × m_e to the binding
+    energy via the categorical identity
+
+        ΔB_pair = m_e · |c_ij*|
+
+    Self-conjugate partitions get the Wigner-2 h/2 contribution
+    as the diagonal coupling.
+
+    Returns total contribution (MeV) and per-pair breakdown.
+    """
+    if k_cap is None:
+        k_cap = K_PARTITION_MAX
+    try:
+        from sdp_cross_channel import sdp_with_atom_observables
+    except ImportError:
+        return 0.0, []
+
+    active = [e for e in _PARTITION_TABLE
+              if e.get('k', 0) <= k_cap
+              and e.get('dim', 0) >= 2
+              and e.get('has_ysn', False)
+              and (jet_max is None or e.get('jet', 0) <= jet_max)]
+
+    # Build pair list (non-self-conjugate); self-conjugate handled via h/2
+    pair_couplings = []
+    self_conj_indices = []
+    seen = set()
+    h_val = float(h)
+    name_to_idx = {tuple(e['partition']): i for i, e in enumerate(active)}
+    for i, e in enumerate(active):
+        lam = tuple(e['partition'])
+        conj = partition_conjugate(lam)
+        if conj == lam:
+            self_conj_indices.append(i)
+            continue
+        if conj not in name_to_idx:
+            continue
+        j = name_to_idx[conj]
+        key = frozenset({i, j})
+        if key in seen:
+            continue
+        seen.add(key)
+        pair_couplings.append((i, j, h_val))
+
+    if not active:
+        return 0.0, []
+
+    sol = sdp_with_atom_observables(Z, N, active, pair_couplings)
+    if sol.get('status') not in ('optimal', 'optimal_inaccurate'):
+        return 0.0, []
+
+    # Sum |c_ij| across pairs, scale by m_e
+    total_mev = 0.0
+    per_pair = []
+    for cb in sol['cross_blocks']:
+        c = cb['c_ij']
+        contribution = M_E_MEV * abs(c)
+        total_mev += contribution
+        per_pair.append({
+            'lambda_i': cb['lambda_i'],
+            'lambda_j': cb['lambda_j'],
+            'c_ij': c,
+            'contribution_MeV': contribution,
+        })
+
+    # Self-conjugate h/2 contribution (Wigner-2)
+    for i in self_conj_indices:
+        e = active[i]
+        mu = e['q_laplacian_eigenvalue']
+        # Self-conj partition: effective coupling at Wigner-2 scale
+        #   h/2 · w_λ · m_e (matches DELTA_W2 formula)
+        w_lam = e['wedderburn_weight']
+        contribution = M_E_MEV * w_lam * h_val / 2.0
+        total_mev += contribution
+        per_pair.append({
+            'lambda_i': list(e['partition']),
+            'lambda_j': list(e['partition']),
+            'c_ij': h_val / 2.0,
+            'self_conjugate': True,
+            'contribution_MeV': contribution,
+        })
+
+    return total_mev, per_pair
+
+
+def binding_energy_bw(Z, N, k=3, unified=False, drop_bw=False, sdp=False):
     """Bethe-Weizsäcker binding energy (MeV) at Hecke level k.
 
     k=3 (default): 6-term H₃(q) formula (volume, surface, Coulomb,
@@ -3017,6 +3107,17 @@ def binding_energy_bw(Z, N, k=3, unified=False, drop_bw=False):
             B += cd * Z * N / denom
             B += cc * Z * (Z - 1) / denom
             B += ci * (N - Z)**2 / (4.0 * denom)
+
+    # ── SDP cross-channel addition (experimental, gated by sdp=True) ──
+    # Adds the SDP-derived pair couplings c_ij and self-conjugate h/2
+    # contributions on top of the BW formula.  When used WITH the
+    # dedicated DELTA_FORMFACTOR, DELTA_W2, DELTA_411, DELTA_42 terms,
+    # this double-counts — intended for DIAGNOSIS: if the SDP couplings
+    # reproduce the dedi cross-channel terms, then the SDP framework
+    # categorically derives what was hand-inserted.
+    if sdp:
+        sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
+        B += sdp_contrib
 
     return B
 
