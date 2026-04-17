@@ -1972,7 +1972,17 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             tr_run = _trace_dim(s['M'], dim)
             log_cur = (s['log_norm'] + math.log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
-            delta = s['scale'] * (log_cur - s['log_prev'])
+            raw_delta = s['scale'] * (log_cur - s['log_prev'])
+            # Combinatorial surface weight: in the B₃ braid (3 generators
+            # → 3D lattice), the surface of a k-nucleon cluster scales as
+            # k^{2/3} while volume scales as k.  The fraction of the
+            # new nucleon's inter-crossings that are on the boundary
+            # (contributing to binding) is k^{2/3}/k = k^{-1/3}.
+            # Cumulative: Σ_{k=1..A} k^{-1/3} = (3/2)·A^{2/3} + O(A^{1/3}),
+            # recovering the BW surface scaling categorically from the
+            # combinatorics of B₃ braid geometry.
+            surface_weight = (kk + 1) ** (-1.0 / 3.0) if kk > 0 else 1.0
+            delta = raw_delta * surface_weight
             s['cumul_partition'] += delta
             s['log_prev'] = log_cur
             # Store raw trace sign for final-state complementary slackness.
