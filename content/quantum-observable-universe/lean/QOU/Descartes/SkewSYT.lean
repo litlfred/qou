@@ -135,32 +135,66 @@ structure IsSkewSYT (λ μ : Partition) (f : SkewFilling λ μ) : Prop where
     c₁ ∈ skewCells λ μ → c₂ ∈ skewCells λ μ →
     f c₁ < f c₂
 
-/-- A skew SYT is a function from the cells of λ/μ to Fin n
-    (where n = |λ/μ|) that is row-increasing and column-increasing,
-    i.e. an order-preserving bijection.
+/-- A corner cell of a skew shape λ/μ is a cell (i, j) ∈ λ/μ such that
+    (i, j+1) ∉ λ/μ and (i+1, j) ∉ λ/μ.
+    Removing a corner from λ gives a valid partition with size one less. -/
+def isSkewCorner (λ μ : Partition) (c : Cell) : Prop :=
+  c ∈ skewCells λ μ ∧
+  (⟨c.row, c.col + 1⟩ : Cell) ∉ skewCells λ μ ∧
+  (⟨c.row + 1, c.col⟩ : Cell) ∉ skewCells λ μ
 
-    We define the count via the recursive jeu de taquin / RSK
-    formulation rather than enumerating all bijections. -/
+/-- The corner cells of a skew shape. -/
+def skewCorners (λ μ : Partition) : Finset Cell :=
+  (skewCells λ μ).filter fun c =>
+    (⟨c.row, c.col + 1⟩ : Cell) ∉ skewCells λ μ ∧
+    (⟨c.row + 1, c.col⟩ : Cell) ∉ skewCells λ μ
+
+/-- Remove a corner cell from a partition.
+    Decrements the part at the given row by 1. -/
+def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
+  ⟨λ.parts.mapIdx fun i p => if i = row then p - 1 else p,
+   sorry⟩  -- sortedness preserved when removing a corner
+   -- Ref: [sagan2001] a corner removal preserves the partition property
+
+/-- Removing a corner decreases the size by exactly 1. -/
+theorem removeCorner_size (λ : Partition) (row : ℕ)
+    (h : row < λ.length) (hp : λ.part row > 0) :
+    (λ.removeCorner row).size = λ.size - 1 := by
+  sorry -- follows from the definition: one part decremented by 1
+  -- Ref: [sagan2001]
 
 /-- The number of skew SYT of shape λ/μ.
-    This is denoted f^{λ/μ} in the literature.
+    Denoted f^{λ/μ} in the literature.
 
-    Defined recursively: for each removable corner cell c of λ/μ
-    (a cell whose removal leaves a valid skew shape),
-    f^{λ/μ} = Σ_{c removable} f^{(λ \ c)/μ}.
+    Defined recursively: for each removable corner cell c of λ/μ,
+    f^{λ/μ} = Σ_{c ∈ corners} f^{(λ \ c)/μ}.
 
-    Base case: f^{∅} = 1.
+    Base case: f^{∅} = 1 (empty skew shape).
 
-    This recursion counts the number of ways to label cells
-    n, n-1, ..., 1 by choosing which cell gets the largest
-    label at each step. -/
+    Termination: λ.size - μ.size strictly decreases. -/
 -- Ref: [sagan2001] Proposition 3.7.1
-noncomputable def skewSYTCount (λ μ : Partition) : ℕ :=
-  if λ.size = μ.size then 1     -- empty skew shape has 1 SYT
-  else sorry  -- recursive sum over removable corners
-  -- Ref: [sagan2001] Proposition 3.7.1
-  -- Full implementation requires Partition.removeCorner and
-  -- termination proof (size decreases at each step).
+noncomputable def skewSYTCount : Partition → Partition → ℕ
+  | λ, μ =>
+    if h : λ.size ≤ μ.size then 1
+    else
+      (skewCorners λ μ).sum fun c =>
+        have : (λ.removeCorner c.row).size - μ.size < λ.size - μ.size := by
+          sorry -- follows from removeCorner_size
+        skewSYTCount (λ.removeCorner c.row) μ
+termination_by λ.size - μ.size
+
+/-- SYT count of empty skew shape is 1. -/
+theorem skewSYTCount_empty (λ : Partition) :
+    skewSYTCount λ λ = 1 := by
+  unfold skewSYTCount
+  simp
+
+/-- SYT count of a single cell is 1. -/
+theorem skewSYTCount_single_cell (λ μ : Partition)
+    (h : λ.size = μ.size + 1) (hc : (skewCorners λ μ).card = 1) :
+    skewSYTCount λ μ = 1 := by
+  sorry -- one corner, and removing it gives the empty shape
+  -- Ref: [sagan2001]
 
 /-! ## §5  Branching multiplicity -/
 
