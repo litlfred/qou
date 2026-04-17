@@ -299,6 +299,76 @@ def wedderburn_weight(partition):
     return q_dimension(partition)**2 / q_factorial(n)
 
 
+def q_laplacian_eigenvalue(partition):
+    """q-Laplacian eigenvalue on the λ-block of the Wedderburn
+    decomposition of H_n(q) (prop:q-laplacian-expansion, def:q-heat-equation).
+
+    Derivation.  The q-Laplacian Δ_q = d_q δ_q + δ_q d_q is the
+    q-deformed Hodge Laplacian on the quantum observable universe.
+    On each Wedderburn block V_λ ⊂ End_C(A) it acts as the scalar
+    q-Casimir eigenvalue, computed via the Jucys-Murphy elements
+    L_1, ..., L_n of H_n(q):
+
+        μ_λ = Σ_{x ∈ λ} [c(x)]_q²
+
+    where c(x) = col(x) − row(x) is the content of cell x.
+
+    At q = 1 this reduces to the classical Laplacian eigenvalue
+    (content-squared sum), consistent with prop:q-laplacian-expansion's
+    "classical core ∝ q^{−2}Δ" term.  Fully symbolic in q — the
+    eigenvalue is a polynomial in q, q⁻¹ with integer coefficients,
+    valid over any base ring where q − 1 is invertible (base-ring
+    independence, rem:base-field-independence).
+
+    References
+    ----------
+    def:q-heat-equation, rem:q-laplacian-expansion, def:q-angular-momentum
+    (qCasimir is the spin-j specialisation), Kassel "Quantum Groups" 1995.
+    """
+    lam = list(partition)
+    if not lam:
+        return 0.0
+    mu = 0.0
+    for i, li in enumerate(lam):
+        for j in range(li):
+            c = j - i  # content
+            # [c]_q at c = 0 is 0 (contributes 0²); for c ≠ 0, standard q-integer
+            if c == 0:
+                mu += 0.0  # [0]_q = 0
+            else:
+                qc = q_int(c)
+                mu += qc * qc
+    return mu
+
+
+def q_resolvent_weight(partition, s=None):
+    """Resolvent weight 1 / (μ_λ + s_*) derived from the q-Laplacian
+    spectrum (def:categorical-laplace-transform).
+
+    The categorical Laplace transform of the q-heat equation
+    (def:q-heat-equation) gives ℒ[u](s) = (Δ̂_q + s)⁻¹ u_0 — the
+    resolvent of the q-Laplacian.  On each λ-block this acts by a
+    scalar:
+
+        ρ_λ(s) = 1 / (μ_λ + s)
+
+    where s is the spectral parameter conjugate to the Reeb-flow
+    time t.  A canonical choice is the Planck step t_P(q) = q/(q−1)
+    (def:q-heat-equation §"units of the Planck step"); then
+    s_* = 1/t_P(q) = (q−1)/q has base-ring independent meaning
+    (rem:substrate-radial-coordinate).
+
+    This resolvent damping replaces the ad-hoc Kerov Plancherel
+    multiplier: it is DERIVED from the q-heat spectrum rather than
+    assumed from the q-hook walk's stationary measure.
+    """
+    if s is None:
+        # Default: Planck-step Reeb time scale s_* = (q − 1) / q
+        s = (q0 - 1.0) / q0
+    mu = q_laplacian_eigenvalue(partition)
+    return 1.0 / (mu + s)
+
+
 def lp_shadow_price(partition):
     """LP-dual shadow price y_λ for the Frobenius positivity constraint
     of partition λ in the operator-selection LP at level k = |λ|.
@@ -422,6 +492,11 @@ def partition_spectral_log_rate(partition):
     return math.log(ratio) if ratio > 0 else 0.0
 
 
+# Canonical Reeb-time spectral parameter s_* = (q − 1) / q = 1 / t_P(q).
+# def:q-heat-equation: "in units of the Planck step t_P(q) = q/(q − 1)".
+# rem:substrate-radial-coordinate: s_* is base-ring independent.
+S_REEB_PLANCK = (q0 - 1.0) / q0
+
 _PARTITION_TABLE = []
 for _k in range(2, K_GAUSSIAN_MAX + 1):
     for _lam in partitions_of(_k):
@@ -434,6 +509,15 @@ for _k in range(2, K_GAUSSIAN_MAX + 1):
         _chi = partition_character_sigma1(_lam)
         _rho = abs(_chi) / _d if _d > 0 else 0.0
         _log_rho = math.log(_rho) if _rho > 1e-300 else -30.0
+        # q-Laplacian eigenvalue and resolvent weight (def:q-heat-equation,
+        # def:categorical-laplace-transform): categorical damping derived
+        # from the q-heat spectrum rather than the Kerov Plancherel measure.
+        _mu = q_laplacian_eigenvalue(_lam)
+        _resolvent = 1.0 / (_mu + S_REEB_PLANCK) if (_mu + S_REEB_PLANCK) > 0 else 0.0
+        # Resolvent-damped scale: m_e · H_q(λ) · y_λ · ρ_λ(s_*).
+        # Replaces the ad-hoc Kerov multiplier w_λ with the categorically
+        # derived resolvent of the q-Laplacian at Planck-step Reeb time.
+        _resolvent_scale = _Hq * _y * _resolvent * M_E_MEV
         _PARTITION_TABLE.append({
             'partition': _lam,
             'k': _k,
@@ -446,6 +530,9 @@ for _k in range(2, K_GAUSSIAN_MAX + 1):
             'C_lambda_kerov_MeV': _kerov_scale,
             'chi_sigma1': _chi,
             'spectral_log_rate': _log_rho,
+            'q_laplacian_eigenvalue': _mu,
+            'resolvent_weight_planck': _resolvent,
+            'C_lambda_resolvent_MeV': _resolvent_scale,
             # YSN matrices built only for k ≤ K_PARTITION_MAX.
             # For higher k, q-Gaussian fallback uses the metadata above.
             'has_ysn': _k <= K_PARTITION_MAX,
@@ -2130,11 +2217,16 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         else:
             M = _identity(dim)
         L0 = math.log(dim)
-        # Pure LP-dual scale: C_λ = m_e · H_q(λ) · y_λ.
-        # The Kerov Plancherel multiplier w_λ (previously bolted on here)
-        # double-counted w_λ already present in y_λ = w_λ/d_λ − 1/[k]!,
-        # so this commit removes it — honest LP-dual baseline.
-        scale = M_E_MEV * e['q_hook'] * e['shadow_price']
+        # Resolvent-damped scale (def:q-heat-equation,
+        # def:categorical-laplace-transform):
+        #   C_λ = m_e · H_q(λ) · y_λ · ρ_λ(s_*)
+        # where ρ_λ(s) = 1/(μ_λ + s) is the resolvent of the q-Laplacian
+        # at Reeb-time spectral parameter s, μ_λ = Σ_{x∈λ} [c(x)]_q² is
+        # the q-Casimir eigenvalue on the λ-block, and s_* = (q−1)/q
+        # is the Planck-step Reeb frequency (1/t_P(q)).
+        # This replaces the ad-hoc Kerov Plancherel multiplier with a
+        # categorically-derived damping from the q-heat spectrum.
+        scale = e['C_lambda_resolvent_MeV']
         state.append({
             'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
             'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
