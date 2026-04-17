@@ -2960,7 +2960,7 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
     return (norm_sq, per, max_ln)
 
 
-def atom_per_generator_volumes(Z, N, include_inter=True):
+def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1):
     """Per-generator additive Wedderburn volumes V̂_i^full for the atom braid.
 
     Returns a list of length n_strands - 1 = 3A - 1 (atom case) or
@@ -3046,15 +3046,19 @@ def atom_per_generator_volumes(Z, N, include_inter=True):
             sp_arr[i] *= c * q0 + d
             ap_arr[i] *= -c * qi + d
         # Inter-nucleon crossings (only when include_inter and k < A-1)
+        # crossings_per_pair: number of repetitions of the basic pair
+        # crossing.  For ILP-stable pairs, this should be derived from
+        # Frobenius positivity (currently a parameter; see witness).
         if include_inter and k < A - 1:
             i = 3 * k + 2  # global gen for inter-nucleon between k and k+1
             next_nuc = ordering[k + 1]
             if nuc == 'p' and next_nuc == 'p':
-                pair_cross = [(1.0, 0.0)]      # pp: σ
+                base_cross = (1.0, 0.0)      # pp: σ
             elif nuc == 'n' and next_nuc == 'n':
-                pair_cross = [(1.0, -h)]       # nn: σ⁻¹
+                base_cross = (1.0, -h)       # nn: σ⁻¹
             else:
-                pair_cross = [(1.0, -h / 2)]   # pn: ½(σ + σ⁻¹)
+                base_cross = (1.0, -h / 2)   # pn: ½(σ + σ⁻¹)
+            pair_cross = [base_cross] * crossings_per_pair
             for c, d in pair_cross:
                 a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
                 b_new = a_arr[i] * c + b_arr[i] * d
