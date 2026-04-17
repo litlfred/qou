@@ -198,7 +198,11 @@ def magic_type(Z, N):
 
 
 def compute_magic_anchor(Z, N, cache):
-    """Exact signed Markov trace for magic configurations."""
+    """Exact signed Markov trace for magic configurations.
+
+    Uses COMMON max_ln rescaling between atom and free so that the
+    ratio atom/free is meaningful.
+    """
     key = f"{Z}-{N}"
     if key in cache["opt7_magic_anchors"]:
         return cache["opt7_magic_anchors"][key]
@@ -211,41 +215,39 @@ def compute_magic_anchor(Z, N, cache):
         k_cap = min(6, 3 * A)
         active = [e for e in _PARTITION_TABLE
                   if e.get('has_ysn', False) and e.get('k', 0) <= k_cap]
-        # Atom (signed Markov trace — no filter)
-        max_ln = 0.0
+        # Compute both atom and free with common max_ln scaling
         atom_data = []
-        for entry in active:
-            chi_q, ln, dim = atom_character_raw(Z, N, entry, include_inter=True)
-            atom_data.append({
-                'partition': entry['partition'],
-                'chi': chi_q, 'ln': ln, 'dim': dim,
-                'weight': entry.get('wedderburn_weight', 0),
-            })
-            if ln > max_ln:
-                max_ln = ln
-        atom_total = 0.0
-        for pd in atom_data:
-            chi_rescaled = pd['chi'] * math.exp(pd['ln'] - max_ln)
-            atom_total += pd['weight'] * chi_rescaled / pd['dim']
-        # Free (signed)
         free_data = []
         for entry in active:
-            chi_q, ln, dim = atom_character_raw(Z, N, entry, include_inter=False)
-            free_data.append({
-                'partition': entry['partition'],
-                'chi': chi_q, 'ln': ln, 'dim': dim,
-                'weight': entry.get('wedderburn_weight', 0),
+            a_chi, a_ln, dim = atom_character_raw(Z, N, entry, include_inter=True)
+            f_chi, f_ln, _ = atom_character_raw(Z, N, entry, include_inter=False)
+            atom_data.append({
+                'partition': entry['partition'], 'chi': a_chi, 'ln': a_ln,
+                'dim': dim, 'weight': entry.get('wedderburn_weight', 0),
             })
-        max_ln_free = max((d['ln'] for d in free_data), default=0)
+            free_data.append({
+                'partition': entry['partition'], 'chi': f_chi, 'ln': f_ln,
+                'dim': dim, 'weight': entry.get('wedderburn_weight', 0),
+            })
+        # Common max_ln for meaningful ratio
+        common_max_ln = max(
+            max((d['ln'] for d in atom_data), default=0),
+            max((d['ln'] for d in free_data), default=0),
+        )
+        atom_total = 0.0
         free_total = 0.0
+        for pd in atom_data:
+            chi_rescaled = pd['chi'] * math.exp(pd['ln'] - common_max_ln)
+            atom_total += pd['weight'] * chi_rescaled / pd['dim']
         for fd in free_data:
-            chi_rescaled = fd['chi'] * math.exp(fd['ln'] - max_ln_free)
+            chi_rescaled = fd['chi'] * math.exp(fd['ln'] - common_max_ln)
             free_total += fd['weight'] * chi_rescaled / fd['dim']
         result = {
             "Z": Z, "N": N, "A": A,
             "magic_type": mtype,
             "atom_trM_signed": atom_total,
             "free_trM_signed": free_total,
+            "common_max_ln": common_max_ln,
             "k_cap_used": k_cap,
             "n_partitions": len(active),
         }
