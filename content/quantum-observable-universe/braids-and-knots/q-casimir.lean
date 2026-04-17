@@ -30,6 +30,17 @@ the definition by:
 Concretely, callers supply a `QCasimirData` (e.g. after localising at
 `q - q⁻¹` or extending scalars to the fraction field).  See Kassel
 §VI.4 for the standard choice.
+
+## Build context
+
+This `.lean` file is a **content-block stub**: one sibling of the
+`.ts`/`.md`/`.lean` triple under `content/.../braids-and-knots/`.
+It is not compiled as part of the main Lake build graph (`QOU/…`);
+the `QuantumSu2` structure referenced here lives in the sibling file
+`quantum-su2.lean`.  Cross-block references are therefore notional
+documentation of the intended formalisation, not live imports.  To
+lift this file into the Lake build, define it under
+`QOU/QuantumSu2.lean` (e.g. `import QOU.QuantumSu2`).
 -/
 
 import QOU.Basic
@@ -40,21 +51,31 @@ namespace QOU
 
 noncomputable section
 
-/-- Data needed to construct the q-Casimir element: a ring-hom
-    embedding of the ground ring `R_q` into `qs.Algebra`, together with
-    an algebra element witnessing that `(q - q⁻¹)` becomes a two-sided
-    unit after the embedding.  These inputs abstract the act of
-    localising (or extending scalars) at `q - q⁻¹`. -/
+/-- Data needed to construct the q-Casimir element.
+
+    `R_q = LaurentPolynomial ℤ` is only a commutative ring, so neither
+    the zpow `qs.q ^ (-1 : ℤ)` nor the field-style inverse `⁻¹` is
+    available on an abstract `qs.q`.  We therefore carry the inverse
+    of `q` as an **explicit field** `qInv : R_q` with a two-sided
+    witness, and analogously carry an algebra-level inverse `invQm`
+    of `ι (q - qInv)`.  These inputs abstract the act of localising
+    (or extending scalars) at `q - q⁻¹`. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 structure QCasimirData (qs : QuantumSu2) where
+  /-- Explicit inverse of `q` in the ground ring. -/
+  qInv : R_q
+  /-- Left inverse witness for `qInv`. -/
+  qInv_left  : qInv * qs.q = 1
+  /-- Right inverse witness for `qInv`. -/
+  qInv_right : qs.q * qInv = 1
   /-- Embedding of the ground ring into the algebra. -/
   ι : R_q →+* qs.Algebra
-  /-- An algebra element that inverts `ι (q - q⁻¹)`. -/
+  /-- An algebra element that inverts `ι (q - qInv)`. -/
   invQm : qs.Algebra
-  /-- Left inverse witness. -/
-  invQm_left  : invQm * ι (qs.q - qs.q ^ (-(1 : ℤ))) = 1
-  /-- Right inverse witness. -/
-  invQm_right : ι (qs.q - qs.q ^ (-(1 : ℤ))) * invQm = 1
+  /-- Left inverse witness for `invQm`. -/
+  invQm_left  : invQm * ι (qs.q - qInv) = 1
+  /-- Right inverse witness for `invQm`. -/
+  invQm_right : ι (qs.q - qInv) * invQm = 1
 
 /-- The (normalised) q-Casimir element inside `qs.Algebra`:
       C_q = F·E + (q·K + q⁻¹·K⁻¹ - (q + q⁻¹)) · (q - q⁻¹)⁻²
@@ -66,9 +87,8 @@ structure QCasimirData (qs : QuantumSu2) where
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 def QCasimir (qs : QuantumSu2) (d : QCasimirData qs) : qs.Algebra :=
-  let qInv        := qs.q ^ (-(1 : ℤ))
-  let kPart       := d.ι qs.q * qs.K + d.ι qInv * qs.K_inv
-  let normaliser  := d.ι (qs.q + qInv)
+  let kPart       := d.ι qs.q * qs.K + d.ι d.qInv * qs.K_inv
+  let normaliser  := d.ι (qs.q + d.qInv)
   qs.F * qs.E + (kPart - normaliser) * d.invQm * d.invQm
 
 /-- Centrality of the q-Casimir.  The proof reduces to the commutation
