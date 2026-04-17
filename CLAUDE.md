@@ -15,6 +15,22 @@ This repository is a formal mathematics paper with:
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
 
+## Always provide GitHub links for changed files
+
+Whenever a skill or agent creates or modifies a file, the reply **must**
+include a clickable GitHub blob URL for every affected file on the pushed
+branch, using the pattern:
+
+```
+https://github.com/litlfred/qou/blob/<branch>/<relative-path>
+```
+
+This applies to `.md`, `.ts`, `.lean`, `.tex`, config, and any other file
+kinds — not just content blocks.  If the branch is not yet pushed, say so
+explicitly and do not fabricate URLs.  See
+`.claude/skills/local/delivery-summary.md` for the full presentation
+format (block table + commits + branch diff).
+
 ## CRITICAL: Protected Files — DO NOT MODIFY
 
 The following files are **strictly off-limits** to all coding agents
