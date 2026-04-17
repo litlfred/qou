@@ -117,14 +117,45 @@ theorem rowBump_length (row : List ℕ) (x : ℕ) :
 
     Returns the new tableau and the position (row, col) where
     the final element was placed. -/
+/-- Schensted insertion: cascade rowBump through rows.
+
+    We implement this as a loop over row indices, carrying
+    the current value to insert. When no bump occurs (value
+    appended), we stop.
+
+    Returns the list of new rows and the (row, col) of the
+    final placement. -/
+def schenstedInsertRows (rows : List (List ℕ)) (x : ℕ) :
+    List (List ℕ) × (ℕ × ℕ) :=
+  let rec go (remaining : List (List ℕ)) (val : ℕ) (rowIdx : ℕ)
+      (acc : List (List ℕ)) :
+      List (List ℕ) × (ℕ × ℕ) :=
+    match remaining with
+    | [] =>
+      -- Past all rows: start new row with val
+      (acc.reverse ++ [[val]], (rowIdx, 0))
+    | row :: rest =>
+      let (newRow, bumped) := rowBump row val
+      match bumped with
+      | none =>
+        -- No bump: val was appended. Done.
+        (acc.reverse ++ [newRow] ++ rest, (rowIdx, newRow.length - 1))
+      | some b =>
+        -- Bump: continue with bumped value in next row
+        go rest b (rowIdx + 1) (newRow :: acc)
+  go rows x 0 []
+
+/-- Wrapper: insert into a YoungTableau. The proof that the
+    result is a valid tableau is the main sorry here. -/
 def schenstedInsert (T : YoungTableau) (x : ℕ) :
     YoungTableau × (ℕ × ℕ) :=
-  sorry
-  -- Implementation: iterate rowBump through rows.
-  -- If bump cascades past last row, start a new row.
-  -- Track the column position at each level.
-  -- The result is a valid YoungTableau (proof needed).
-  -- Ref: [sagan2001] Algorithm 3.1.2
+  let (newRows, pos) := schenstedInsertRows T.rows x
+  (⟨newRows,
+    sorry,  -- rows sorted (preserved by rowBump_sorted cascade)
+    sorry,  -- rows decreasing (insertion only grows one row by 1)
+    sorry⟩, -- cols strict (preserved by bump property)
+   pos)
+  -- Ref: [sagan2001] Algorithm 3.1.2, Lemma 3.1.3
 
 /-- Schensted insertion preserves the Young tableau property. -/
 theorem schenstedInsert_valid (T : YoungTableau) (x : ℕ) :
@@ -146,12 +177,28 @@ theorem schenstedInsert_size (T : YoungTableau) (x : ℕ) :
 
     For a permutation (all entries distinct), both P and Q are
     standard Young tableaux. -/
+/-- Add a value at a specific (row, col) position in a tableau.
+    Used to build the recording tableau Q. -/
+def addAtPosition (rows : List (List ℕ)) (val : ℕ) (r c : ℕ) :
+    List (List ℕ) :=
+  if r < rows.length then
+    rows.mapIdx fun i row => if i = r then row ++ [val] else row
+  else
+    rows ++ [List.replicate c 0 ++ [val]]  -- new row
+
+/-- The RSK map: process each element of w, building P by
+    Schensted insertion and Q by recording the position. -/
 def rsk (w : List ℕ) : YoungTableau × YoungTableau :=
-  w.enum.foldl (fun (P, Q) (i, x) =>
-    let (P', pos) := schenstedInsert P x
-    -- Q gets entry (i+1) at position `pos`
-    sorry  -- construct Q by adding (i+1) at pos
-  ) (emptyTableau, emptyTableau)
+  let (pRows, qRows) := w.enum.foldl (fun (pR, qR) (i, x) =>
+    let (newPRows, (r, c)) := schenstedInsertRows pR x
+    let newQRows := addAtPosition qR (i + 1) r c
+    (newPRows, newQRows)
+  ) ([], [])
+  (⟨pRows, sorry, sorry, sorry⟩,
+   ⟨qRows, sorry, sorry, sorry⟩)
+  -- The tableau properties (sorted, decreasing, col-strict)
+  -- follow from the Schensted insertion invariants.
+  -- Ref: [sagan2001] Theorem 3.1.4
 
 /-- P and Q have the same shape after RSK. -/
 -- Ref: [sagan2001] Theorem 3.1.4
