@@ -150,18 +150,47 @@ def skewCorners (λ μ : Partition) : Finset Cell :=
     (⟨c.row + 1, c.col⟩ : Cell) ∉ skewCells λ μ
 
 /-- Remove a corner cell from a partition.
-    Decrements the part at the given row by 1. -/
+    Decrements the part at the given row by 1.
+
+    The sortedness proof is deferred: it requires that the cell
+    being removed is actually a corner (λ_row > λ_{row+1} or row
+    is the last row), so decrementing preserves weak decrease.
+
+    For a valid corner: λ_row - 1 ≥ λ_{row+1} (since the cell at
+    (row, λ_row - 1) has no cell below it in the skew shape). -/
 def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
   ⟨λ.parts.mapIdx fun i p => if i = row then p - 1 else p,
-   sorry⟩  -- sortedness preserved when removing a corner
-   -- Ref: [sagan2001] a corner removal preserves the partition property
+   by
+    -- Ref: [sagan2001] corner removal preserves partition property
+    sorry⟩
 
-/-- Removing a corner decreases the size by exactly 1. -/
-theorem removeCorner_size (λ : Partition) (row : ℕ)
-    (h : row < λ.length) (hp : λ.part row > 0) :
-    (λ.removeCorner row).size = λ.size - 1 := by
-  sorry -- follows from the definition: one part decremented by 1
+/-- The sum of parts after removing a corner at row `row` equals
+    the original sum minus 1.
+
+    Proof: mapIdx changes exactly one element (at index `row`)
+    from `p` to `p - 1`, reducing the sum by 1. -/
+theorem removeCorner_sum (λ : Partition) (row : ℕ)
+    (h : row < λ.length) (hp : 0 < λ.part row) :
+    (λ.parts.mapIdx fun i p => if i = row then p - 1 else p).sum =
+    λ.parts.sum - 1 := by
   -- Ref: [sagan2001]
+  sorry
+
+/-- Removing a corner decreases the partition size by exactly 1. -/
+theorem removeCorner_size (λ : Partition) (row : ℕ)
+    (h : row < λ.length) (hp : 0 < λ.part row) :
+    (λ.removeCorner row).size = λ.size - 1 := by
+  unfold Partition.removeCorner Partition.size
+  exact removeCorner_sum λ row h hp
+
+/-- The termination measure for skewSYTCount decreases when
+    removing a corner. -/
+theorem removeCorner_decreases (λ μ : Partition) (row : ℕ)
+    (h_row : row < λ.length) (h_pos : 0 < λ.part row)
+    (h_gt : μ.size < λ.size) :
+    (λ.removeCorner row).size - μ.size < λ.size - μ.size := by
+  have h1 := removeCorner_size λ row h_row h_pos
+  omega
 
 /-- The number of skew SYT of shape λ/μ.
     Denoted f^{λ/μ} in the literature.
@@ -179,7 +208,9 @@ noncomputable def skewSYTCount : Partition → Partition → ℕ
     else
       (skewCorners λ μ).sum fun c =>
         have : (λ.removeCorner c.row).size - μ.size < λ.size - μ.size := by
-          sorry -- follows from removeCorner_size
+          -- Corner cell is in skewCells, so row < λ.length and part > 0
+          -- removeCorner_decreases then gives the strict decrease
+          sorry
         skewSYTCount (λ.removeCorner c.row) μ
 termination_by λ.size - μ.size
 
@@ -189,12 +220,20 @@ theorem skewSYTCount_empty (λ : Partition) :
   unfold skewSYTCount
   simp
 
-/-- SYT count of a single cell is 1. -/
-theorem skewSYTCount_single_cell (λ μ : Partition)
-    (h : λ.size = μ.size + 1) (hc : (skewCorners λ μ).card = 1) :
-    skewSYTCount λ μ = 1 := by
-  sorry -- one corner, and removing it gives the empty shape
-  -- Ref: [sagan2001]
+/-- SYT count is nonneg (it's a natural number). -/
+theorem skewSYTCount_nonneg (λ μ : Partition) :
+    0 ≤ skewSYTCount λ μ := Nat.zero_le _
+
+/-- SYT count is positive when λ ⊇ μ (there's always at least one SYT). -/
+-- Ref: [fulton1997] Proposition 3.1
+theorem skewSYTCount_pos (λ μ : Partition) (h : λ.contains μ) :
+    0 < skewSYTCount λ μ := by
+  sorry
+  -- Proof: by induction on λ.size - μ.size.
+  -- Base: size = 0 → count = 1 > 0.
+  -- Step: there exists at least one corner (nonempty skew shape
+  -- always has a corner), and the recursive call is positive by IH.
+  -- Ref: [fulton1997]
 
 /-! ## §5  Branching multiplicity -/
 
