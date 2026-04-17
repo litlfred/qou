@@ -209,7 +209,7 @@ def main():
     print(f"wrote {out_path}")
     print(f"q⋆ = {Q_STAR:.10f}")
     print(f"P_{{7,7}}(q⋆) = {p77_at_star:.3e}  (should ≈ 0)")
-    print(f"Φ(q⋆)       = {phi_at_star:.3e}  (should ≈ 0)")
+    print(f"Φ(q⋆)       = {phi_at_star:.3e}  (non-zero: Φ zero is at q_Φ ≈ 0.4656, not q⋆)")
     print(f"P_{{7,7}}(q₀) = {toffoli_diagonal(Q0):.6f}")
     print(f"Φ(q₀)       = {q_and_amplitude(Q0):.6f}")
 

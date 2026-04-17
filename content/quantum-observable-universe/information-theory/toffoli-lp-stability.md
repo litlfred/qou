@@ -126,7 +126,7 @@ $\kappa(G(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$, which
 is finite on $q > 1$. At $q_0 \approx 1.110$ the witness
 gives $\kappa(G(q_0)) \approx 3.03$ and
 $\lambda_{\min}(G(q_0)) \approx -0.956$
-([`confinement-lp.witness.json`](`confinement-lp.witness.json`)). $\square$
+([`toffoli-lp-stability.witness.json`](`toffoli-lp-stability.witness.json`)). $\square$
 
 **Physical consequence.**
 The substrate parameter $q_0 \approx 1.110$ lies comfortably in
