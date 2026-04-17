@@ -195,13 +195,15 @@ print("  Per-partition weight:      y_λ = w_λ/d_λ - 1/[k]_q!  (LP-dual shadow
 print(f"  (2,2) reference: C_(2,2) = {DELTA_22:.4f} MeV · y_(2,2) = {W_22:.6f}/d_(2,2) - 1/[4]_q!")
 print("=" * 110)
 print(f"{'Atom':>6s} {'A':>3s} | {'B_dedi(k=5)':>12s} {'B_unif(k=5)':>12s} "
-      f"{'B(AME)':>10s} | {'Δ_22':>8s} {'res_dedi':>9s} {'res_unif':>9s}")
-print("-" * 100)
+      f"{'B(AME)':>10s} | {'Δ_LP':>8s} {'res_dedi':>9s} {'%err_d':>6s} | "
+      f"{'res_unif':>9s} {'%err_u':>6s}")
+print("-" * 110)
 for r in mass_results:
     print(f"{r['name']:>6s} {r['A']:>3d} | {r['B_k5_MeV']:>12.3f} "
           f"{r['B_k5_unified_MeV']:>12.3f} {r['B_AME_MeV']:>10.3f} | "
           f"{r['delta_22_unified_MeV']:>+8.3f} {r['residual_MeV']:>+9.3f} "
-          f"{r['residual_unified_MeV']:>+9.3f}")
+          f"{r['pct_error']:>+6.2f} | "
+          f"{r['residual_unified_MeV']:>+9.3f} {r['pct_error_unified']:>+6.2f}")
 
 # ── Q-value table by method ──────────────────────────────────────
 

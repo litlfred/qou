@@ -338,7 +338,7 @@ def lp_shadow_price(partition):
 # [4,1,1]+[3,1,1,1] isospin, [4,2]+[2,2,1,1] codim-4 form factor).
 # Push K_PARTITION_MAX higher (e.g. 7, 8) to absorb the H₇⁺ descent
 # corrections at the cost of larger YSN matrix builds.
-K_PARTITION_MAX = 6
+K_PARTITION_MAX = 7
 
 _PARTITION_TABLE = []
 for _k in range(2, K_PARTITION_MAX + 1):
@@ -1724,7 +1724,10 @@ def _build_ysn_matrices(partition):
 
 
 def _matmul_dim(A, B, dim):
-    """Multiply two dim×dim matrices."""
+    """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8 (significant
+    speedup for higher Hecke levels)."""
+    if dim >= 8:
+        return np.asarray(A) @ np.asarray(B)
     out = [[0.0] * dim for _ in range(dim)]
     for i in range(dim):
         for j in range(dim):
@@ -1736,10 +1739,14 @@ def _matmul_dim(A, B, dim):
 
 
 def _trace_dim(M, dim):
+    if isinstance(M, np.ndarray):
+        return float(np.trace(M))
     return sum(M[i][i] for i in range(dim))
 
 
 def _identity(dim):
+    if dim >= 8:
+        return np.eye(dim)
     return tuple(tuple(1.0 if i == j else 0.0 for j in range(dim))
                  for i in range(dim))
 
@@ -1747,6 +1754,10 @@ def _identity(dim):
 def _crossing_in_partition(c, d, gen_index, sigmas, dim):
     """Matrix of c·σ_{gen} + d·I  in YSN representation of a partition."""
     sig = sigmas[gen_index]
+    if dim >= 8:
+        # Work in numpy for large dims
+        sig_np = sig if isinstance(sig, np.ndarray) else np.asarray(sig)
+        return c * sig_np + d * np.eye(dim)
     out = [[c * sig[i][j] + (d if i == j else 0.0) for j in range(dim)]
            for i in range(dim)]
     return tuple(tuple(r) for r in out)
@@ -1871,6 +1882,8 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     # rescaling, previous log-trace, scale (m_e · H_q(λ) · y_λ).
     state = []
     for e in active:
+        # YSN matrices may be tuples (small dim) or numpy arrays (large dim);
+        # both support len() giving the row count.
         dim = len(e['ysn'][0])
         M = _identity(dim)
         L0 = math.log(dim)                     # ln |Tr I| = ln dim
@@ -1903,15 +1916,21 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                 M_step = _matmul_dim(M_step, M_cross, dim)
             # Update running matrix and rescale if needed.
             s['M'] = _matmul_dim(s['M'], M_step, dim)
-            m_max = 0.0
-            for i in range(dim):
-                for j in range(dim):
-                    if abs(s['M'][i][j]) > m_max:
-                        m_max = abs(s['M'][i][j])
+            if isinstance(s['M'], np.ndarray):
+                m_max = float(np.max(np.abs(s['M'])))
+            else:
+                m_max = 0.0
+                for i in range(dim):
+                    for j in range(dim):
+                        if abs(s['M'][i][j]) > m_max:
+                            m_max = abs(s['M'][i][j])
             if m_max > 1e80:
-                M_rescaled = [[s['M'][i][j] / m_max for j in range(dim)]
-                              for i in range(dim)]
-                s['M'] = tuple(tuple(r) for r in M_rescaled)
+                if isinstance(s['M'], np.ndarray):
+                    s['M'] = s['M'] / m_max
+                else:
+                    M_rescaled = [[s['M'][i][j] / m_max for j in range(dim)]
+                                  for i in range(dim)]
+                    s['M'] = tuple(tuple(r) for r in M_rescaled)
                 s['log_norm'] += math.log(m_max)
             tr_run = _trace_dim(s['M'], dim)
             log_cur = (s['log_norm'] + math.log(abs(tr_run))
