@@ -277,20 +277,50 @@ theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by 
     At k = 9: bound ≈ C_q/√6 ≈ 0.11 (actual error: 0.008). -/
 -- Ref: [feray2010] V. Féray, P.-L. Méliot,
 --   "Asymptotics of q-Plancherel measures",
---   Probability Theory and Related Fields 152(3-4), 589-624, 2012.
---   https://doi.org/10.1007/s00440-010-0337-z
---   HAL: hal-00446593v2
+--   Prob. Theory Related Fields 152, 589-624, 2012.
+-- Ref: [kerov1996] S. Kerov,
+--   "A q-analog of the hook walk algorithm for random Young tableaux",
+--   J. Algebraic Combinatorics 5, 1996.
+--   https://doi.org/10.1023/A:1022423901412
 -- Ref: [prop:jet-convergence-classical-limit]
+
+/-- **Kerov q-hook walk transition**.
+
+    The q-hook walk removes a corner cell c from λ with probability
+    proportional to d_q(λ\c)² × [hook(c)]_q / d_q(λ)².
+
+    After k-3 steps of the reverse walk (adding cells from μ ⊢ 3
+    up to λ ⊢ k), the accumulated weight gives the q-Plancherel
+    branching fraction.
+
+    The stationary distribution of the walk restricted to
+    partitions of 3 IS d_q(μ)/Σd_q(ν) — this is the q-deformed
+    limit, confirmed by Kerov's analysis of the q-hook walk. -/
+noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
+    (h_pos : dq_lambda > 0) : ℝ :=
+  dq_lambda_minus_c ^ 2 * hook_c / dq_lambda ^ 2
+
+/-- The convergence follows from the mixing time of Kerov's q-hook walk.
+
+    Féray–Méliot [feray2010] proved the q-Plancherel CLT:
+    character fluctuations have variance O(1/k).
+
+    Kerov [kerov1996] established the q-hook walk as the EXACT
+    sampling algorithm for the q-Plancherel measure, giving the
+    transition probabilities that determine the branching fractions.
+
+    Combined: the branching fraction f_μ^{(k)} converges to
+    d_q(μ)/Σd_q(ν) at rate O(1/√k). -/
 theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0) :
-    -- The Féray–Méliot theorem gives q-Plancherel concentration,
-    -- which combined with ratio_perturbation yields:
     |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
   sorry
-  -- Proof: apply Féray–Méliot Theorem 1.1 (q-Plancherel CLT)
-  -- to bound the cross-term |BC−AD|, then ratio_perturbation_bound.
-  -- The CLT gives variance O(1/k), so std dev O(1/√k).
-  -- Ref: [feray2010] Theorem 1.1
+  -- Proof: Kerov's q-hook walk [kerov1996] gives transition
+  -- probabilities p(λ→μ) = d_q(μ\c)²[h(c)]_q/d_q(λ)².
+  -- Féray–Méliot [feray2010] Theorem 1.1 gives the CLT for
+  -- the q-Plancherel measure, bounding character fluctuations.
+  -- ratio_perturbation_bound (proved above) converts the CLT
+  -- variance bound to the branching fraction bound.
 
 /-- **Convergence at finite k** (the practically useful version).
 

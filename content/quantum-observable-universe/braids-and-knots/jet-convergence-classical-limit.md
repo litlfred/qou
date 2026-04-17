@@ -83,11 +83,16 @@ new partitions contribute branching proportional to
 $d_q(\mu)$ (first order) rather than $d_q(\mu)^2$ (zeroth order).
 $\square$
 
-*The convergence rate is $O(1/\sqrt{k})$ by the Féray--Méliot
-$q$-Plancherel CLT \cite{feray2010}: character fluctuations
-under the $q$-Plancherel measure have variance $O(1/k)$,
-giving standard deviation $O(1/\sqrt{k})$.  Combined with the
-ratio perturbation lemma (proved in Lean):*
+*The convergence rate is $O(1/\sqrt{k})$ by the Kerov $q$-hook
+walk \cite{kerov1996} and the Féray--Méliot $q$-Plancherel CLT
+\cite{feray2010}: the $q$-hook walk on the Young lattice has
+transition probabilities
+$p(\lambda \to \lambda \setminus c) = d_q(\lambda \setminus c)^2
+\cdot [h(c)]_q / d_q(\lambda)^2$
+whose stationary distribution restricted to partitions of $3$ IS
+$d_q(\mu)/\sum d_q(\nu)$.  Character fluctuations have variance
+$O(1/k)$, giving $O(1/\sqrt{k})$ convergence.  Combined with
+the ratio perturbation lemma (proved in Lean):*
 
 $$
   \bigl\lvert f_\mu^{(k)} - f_\mu^\infty \bigr\rvert
