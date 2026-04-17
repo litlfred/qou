@@ -241,6 +241,122 @@ def q_hook_product(partition):
     return H
 
 
+def q_factorial(n):
+    """[n]_q! = [1]_q · [2]_q · ... · [n]_q (symbolic in q)."""
+    f = 1.0
+    for i in range(1, n + 1):
+        f *= q_int(i)
+    return f
+
+
+def partitions_of(n):
+    """Enumerate partitions of n as decreasing tuples."""
+    if n == 0:
+        yield ()
+        return
+    def gen(rem, mx):
+        if rem == 0:
+            yield ()
+            return
+        for k in range(min(rem, mx), 0, -1):
+            for r in gen(rem - k, k):
+                yield (k,) + r
+    yield from gen(n, n)
+
+
+def partition_dimension(partition):
+    """Dimension d(λ) = number of standard Young tableaux of shape λ
+    (computed by the hook-length formula: d = n! / ∏ h_x)."""
+    n = sum(partition)
+    if n == 0:
+        return 1
+    fact_n = math.factorial(n)
+    lam = list(partition)
+    width = lam[0]
+    conj = [sum(1 for p in lam if p > j) for j in range(width)]
+    prod = 1
+    for i, li in enumerate(lam):
+        for j in range(li):
+            arm = li - j - 1
+            leg = conj[j] - i - 1
+            prod *= (arm + leg + 1)
+    return fact_n // prod
+
+
+def q_dimension(partition):
+    """Quantum dimension d_q(λ) = [n]_q! / H_q(λ) (symbolic in q)."""
+    n = sum(partition)
+    if n == 0:
+        return 1.0
+    return q_factorial(n) / q_hook_product(partition)
+
+
+def wedderburn_weight(partition):
+    """Wedderburn-Artin weight w_λ = d_q(λ)² / [n]_q! (symbolic in q)."""
+    n = sum(partition)
+    if n == 0:
+        return 1.0
+    return q_dimension(partition)**2 / q_factorial(n)
+
+
+def lp_shadow_price(partition):
+    """LP-dual shadow price y_λ for the Frobenius positivity constraint
+    of partition λ in the operator-selection LP at level k = |λ|.
+
+    From prop:bw-coefficient-shadow-price:
+
+        y_λ = w_λ / d_λ − y_0
+
+    where y_0 = min_λ (w_λ / d_λ) = 1/[k]_q! is the dual variable of the
+    normalisation constraint 1ᵀx = n_target, and d_λ = dim(λ) is the
+    classical dimension (number of standard Young tableaux).
+
+    The shadow price y_λ multiplies the categorical scale C_λ = m_e ·
+    H_q(λ) to produce a per-partition binding contribution
+    Δ B_λ = y_λ · C_λ · S_λ(Z, N, A) (BW formula factorisation).
+
+    Reference: prop:bw-coefficient-shadow-price.
+    """
+    k = sum(partition)
+    if k == 0:
+        return 0.0
+    w = wedderburn_weight(partition)
+    d = partition_dimension(partition)
+    # y_0 is the smallest of w_λ/d_λ across all partitions of k.
+    # For the trivial (n) partition (sym): w = 1/[n]_q!, d = 1.
+    # So y_0 = 1/[n]_q! (the LP normalisation dual).
+    y_0 = 1.0 / q_factorial(k)
+    return w / d - y_0
+
+
+# Pre-compute all partitions of k = 2..K_PARTITION_MAX with q-hook,
+# weight, dimension, shadow price.  K = 6 covers H₂..H₆ (24 partitions
+# in total: 2 + 3 + 5 + 7 + 11) — enough to host every Wedderburn
+# channel that contributes a BW term in the dedicated formulation
+# (volume, surface, Coulomb, asymmetry, pairing, exchange, shell,
+# hook, Wigner, form factor, pn correlation, [3,2,1] pn-invisible,
+# [4,1,1]+[3,1,1,1] isospin, [4,2]+[2,2,1,1] codim-4 form factor).
+# Push K_PARTITION_MAX higher (e.g. 7, 8) to absorb the H₇⁺ descent
+# corrections at the cost of larger YSN matrix builds.
+K_PARTITION_MAX = 6
+
+_PARTITION_TABLE = []
+for _k in range(2, K_PARTITION_MAX + 1):
+    for _lam in partitions_of(_k):
+        _Hq = q_hook_product(_lam)
+        _w = wedderburn_weight(_lam)
+        _d = partition_dimension(_lam)
+        _y = lp_shadow_price(_lam)
+        _PARTITION_TABLE.append({
+            'partition': _lam,
+            'k': _k,
+            'q_hook': _Hq,
+            'wedderburn_weight': _w,
+            'dim': _d,
+            'shadow_price': _y,
+            'C_lambda_MeV': _Hq * M_E_MEV,
+        })
+
 # (2,2) hook product = [3]·[2]²·[1] = [3]·[2]²
 H_Q_22 = q_hook_product((2, 2))                   # = [3]·[2]² ≈ 12.31
 DELTA_22 = H_Q_22 * M_E_MEV                       # = [3]·[2]²·m_e ≈ 6.29 MeV
@@ -248,6 +364,7 @@ DELTA_22 = H_Q_22 * M_E_MEV                       # = [3]·[2]²·m_e ≈ 6.29 M
 _n4_fac_22 = q_int(2) * q_int(3) * q_int(4)       # [4]_q!
 D_Q_22 = _n4_fac_22 / H_Q_22                       # d_q((2,2)) = [4]_q!/H_q ≈ 2.044
 W_22 = D_Q_22**2 / _n4_fac_22                      # w_{(2,2)} = d_q²/[4]_q! ≈ 0.166
+Y_22 = lp_shadow_price((2, 2))                     # LP-dual shadow price of (2,2)
 
 
 def _q_exp(x, n_terms=20):
@@ -1464,57 +1581,278 @@ def _step_chain_22(nucleon_type, prev_types):
     return chain
 
 
-def unified_iterative_correction(Z, N, return_per_step=False):
-    """Unified iterative (2,2) correction (MeV).
+# ──────────────────────────────────────────────────────────────────
+# Generic YSN matrices (Young seminormal form) for any partition λ
+# ──────────────────────────────────────────────────────────────────
+#
+# A standard Young tableau of shape λ assigns 1, 2, …, |λ| to the
+# cells of λ row-strictly increasing left-to-right and column-strictly
+# increasing top-to-bottom.  In the YSN representation, the Hecke
+# generator σ_k acts on each tableau T by:
+#
+#   • σ_k T = (q) T              if k, k+1 share a row;
+#   • σ_k T = (-q⁻¹) T           if k, k+1 share a column;
+#   • otherwise (different row, different col), 2×2 mixing block:
+#         a_ρ = h / [ρ]_q,  a_{-ρ} = h - a_ρ,  b² = a_ρ a_{-ρ} + 1.
+#
+# All matrix entries are q-rational, evaluated numerically here using
+# the substrate q₀.  The character χ_λ(σ_k) is independent of k
+# (class function), so any embedding of crossings into σ_1, σ_2, …
+# yields the same trace.
 
-    Replaces, in one categorical mechanism, the dedicated D-binding
-    (A = 2), the knot factor (A = 3, 4), and the Wigner energy
-    (k ≥ 5) by accumulating the per-step (2,2) Wedderburn projection
-    of the NF transition.
+def _standard_tableaux(partition):
+    """Enumerate standard Young tableaux of the given shape."""
+    n = sum(partition)
+    rows = list(partition)
 
-    The per-step accumulator is the log-derivative of the running
-    (2,2) trace, which is the energy-additive form (matching the
-    `next_partition_levels` channel decomposition).  Let
+    def fill(filled, val, remaining):
+        if val > n:
+            yield [list(r) for r in filled]
+            return
+        for r in range(len(rows)):
+            if remaining[r] == 0:
+                continue
+            col = len(filled[r])
+            if r > 0 and col >= len(filled[r - 1]):
+                continue
+            filled[r].append(val)
+            remaining[r] -= 1
+            yield from fill(filled, val + 1, remaining)
+            filled[r].pop()
+            remaining[r] += 1
 
-      M_22^{(0..k)} = ∏_{j ≤ k} M_22(step j)
+    yield from fill([[] for _ in rows], 1, list(rows))
 
-    be the running YSN matrix product through step k, with
-    M_22^{(0)} = I and Tr = dim((2,2)) = 2.  Then
 
-      ΔB_k = DELTA_22 · w_{(2,2)} · ( ln|Tr M_22^{(0..k)}|
-                                     − ln|Tr M_22^{(0..k−1)}| )
+def _content_at(tab, val):
+    """Return content c(val) = column − row for value val in tableau tab."""
+    for r, row in enumerate(tab):
+        for c, v in enumerate(row):
+            if v == val:
+                return c - r
+    return None
 
-    so the total accumulated correction telescopes to
 
-      B_unified = DELTA_22 · w_{(2,2)} · ( ln|Tr M_22^{(0..A)}| − ln 2 ).
+def _swap_tab(tab, a, b):
+    """Return tableau with a, b swapped — or None if result is invalid."""
+    new = [list(r) for r in tab]
+    pa = pb = None
+    for r, row in enumerate(new):
+        for c, v in enumerate(row):
+            if v == a:
+                pa = (r, c)
+            if v == b:
+                pb = (r, c)
+    new[pa[0]][pa[1]] = b
+    new[pb[0]][pb[1]] = a
+    for row in new:
+        if row != sorted(row):
+            return None
+    width = max(len(r) for r in new)
+    for c in range(width):
+        col = [new[r][c] for r in range(len(new)) if c < len(new[r])]
+        if col != sorted(col):
+            return None
+    return new
 
-    This is exactly the (2,2) contribution to the Wedderburn-Artin
-    log-trace identity, multiplied by the categorical Wigner scale.
+
+def _build_ysn_matrices(partition):
+    """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
+
+    Returns a list of 2D tuples (matrix entries) of shape (dim × dim),
+    one per generator.  Numerical (evaluated at q₀).
+    """
+    n = sum(partition)
+    if n < 2:
+        return []
+    tabs = list(_standard_tableaux(partition))
+    dim = len(tabs)
+    if dim == 0:
+        return []
+    tab_index = {tuple(tuple(r) for r in T): i for i, T in enumerate(tabs)}
+
+    matrices = []
+    for k in range(1, n):
+        M = [[0.0] * dim for _ in range(dim)]
+        processed = set()
+        for i, T in enumerate(tabs):
+            if i in processed:
+                continue
+            ca = _content_at(T, k)
+            cb = _content_at(T, k + 1)
+            rho = cb - ca
+            if rho == 0:
+                continue
+            same_row = any(k in row and (k + 1) in row for row in T)
+            same_col = False
+            width = max(len(r) for r in T)
+            for c in range(width):
+                col_vals = [T[r][c] for r in range(len(T)) if c < len(T[r])]
+                if k in col_vals and (k + 1) in col_vals:
+                    same_col = True
+                    break
+            if same_row:
+                M[i][i] = q0
+                processed.add(i)
+            elif same_col:
+                M[i][i] = -qi
+                processed.add(i)
+            else:
+                T_swapped = _swap_tab(T, k, k + 1)
+                if T_swapped is None:
+                    M[i][i] = q0 if rho > 0 else -qi
+                    processed.add(i)
+                    continue
+                key = tuple(tuple(r) for r in T_swapped)
+                j = tab_index.get(key)
+                if j is None:
+                    M[i][i] = q0 if rho > 0 else -qi
+                    processed.add(i)
+                    continue
+                a_rho = h / q_int(rho)            # diagonal i
+                a_neg = h - a_rho                  # diagonal j
+                bsq = a_rho * a_neg + 1.0
+                off = math.sqrt(abs(bsq)) * (1.0 if bsq > 0 else -1.0)
+                M[i][i] = a_rho
+                M[j][j] = a_neg
+                M[i][j] = off
+                M[j][i] = off
+                processed.add(i)
+                processed.add(j)
+        matrices.append(tuple(tuple(row) for row in M))
+    return matrices
+
+
+def _matmul_dim(A, B, dim):
+    """Multiply two dim×dim matrices."""
+    out = [[0.0] * dim for _ in range(dim)]
+    for i in range(dim):
+        for j in range(dim):
+            s = 0.0
+            for kk in range(dim):
+                s += A[i][kk] * B[kk][j]
+            out[i][j] = s
+    return tuple(tuple(r) for r in out)
+
+
+def _trace_dim(M, dim):
+    return sum(M[i][i] for i in range(dim))
+
+
+def _identity(dim):
+    return tuple(tuple(1.0 if i == j else 0.0 for j in range(dim))
+                 for i in range(dim))
+
+
+def _crossing_in_partition(c, d, gen_index, sigmas, dim):
+    """Matrix of c·σ_{gen} + d·I  in YSN representation of a partition."""
+    sig = sigmas[gen_index]
+    out = [[c * sig[i][j] + (d if i == j else 0.0) for j in range(dim)]
+           for i in range(dim)]
+    return tuple(tuple(r) for r in out)
+
+
+# Pre-compute YSN matrices and metadata for every entry in
+# _PARTITION_TABLE (k = 2..K_PARTITION_MAX).  Skipped if dim < 2 (no
+# mixing structure → trivial trace).
+for _entry in _PARTITION_TABLE:
+    _entry['ysn'] = _build_ysn_matrices(_entry['partition'])
+    _entry['n_gens'] = max(0, _entry['k'] - 1)
+
+
+def _step_chain_generic(nucleon_type, prev_types, n_gens):
+    """Crossing chain in the H_{n_gens+1}(q) generators σ_1, …, σ_{n_gens}
+    for one NF-construction step.  Same chain content as `_step_chain_22`
+    but the generator index cycles modulo `n_gens`, so any partition of
+    size k = n_gens + 1 receives a full set of crossings."""
+    chain = []
+    intra = _PROTON_G0 if nucleon_type == 'p' else _NEUTRON_G0
+    intra_g1 = _PROTON_G1 if nucleon_type == 'p' else _NEUTRON_G1
+    g = 0
+    for c, d in intra:
+        chain.append((c, d, g % n_gens))
+        g += 1
+    for c, d in intra_g1:
+        chain.append((c, d, g % n_gens))
+        g += 1
+    for ti in prev_types:
+        if ti == 'p' and nucleon_type == 'p':
+            chain.append((1.0, 0.0, g % n_gens))      # pp
+        elif ti == 'n' and nucleon_type == 'n':
+            chain.append((1.0, -h, g % n_gens))       # nn
+        else:
+            chain.append((1.0, -h / 2, g % n_gens))   # pn
+        g += 1
+    return chain
+
+
+def unified_iterative_correction(Z, N, return_per_step=False,
+                                 k_max=K_PARTITION_MAX):
+    """Unified iterative correction via LP-dual shadow prices.
+
+    A SINGLE consistent algorithm — no special cases for any A.
+    Starts at A = 1 and accumulates a per-step contribution from
+    EVERY partition λ ⊢ k for k = 2, …, k_max:
+
+      ΔB_k(step) = m_e · H_q(λ) · y_λ ·
+                   ( ln|Tr M_λ^{(0..step)}| − ln|Tr M_λ^{(0..step−1)}| )
+
+    where:
+
+      • H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q is the q-hook product (the
+        categorical scale C_λ = m_e · H_q(λ) generalises the (2,2)
+        derivation of [3]·[2]² · m_e to every λ);
+      • y_λ = w_λ/d_λ − 1/[k]_q! is the LP-dual shadow price of the
+        Frobenius positivity constraint of λ
+        (prop:bw-coefficient-shadow-price); shadow prices are the
+        unique invariants that the operator-selection LP assigns to
+        the partition basis;
+      • M_λ^{(0..step)} is the running YSN matrix product across
+        all steps so far, embedded into the Hecke generators
+        σ_1, …, σ_{k-1} of H_k(q) (cyclic generator index keeps the
+        embedding well-defined for any k);
+      • the log-trace difference is the energy-additive accumulator
+        (matches the `next_partition_levels` channel decomposition).
+
+    Telescoping: total contribution per partition is
+      B_λ = m_e · H_q(λ) · y_λ · ( ln|Tr M_λ^{(0..A)}| − ln d_λ ),
+    summed over all enumerated partitions.
+
+    The mechanism replaces — without any special-case branches — the
+    dedicated D-binding formula (A = 2), the knot factor (A = 3, 4),
+    the Wigner energy (k ≥ 5), and any further per-partition shadow
+    contributions up to k_max.
 
     Parameters
     ----------
     Z, N : int
         Proton and neutron counts.
     return_per_step : bool
-        If True, also return the list of per-step witness rows.
+        If True, also return per-step witness rows.
+    k_max : int
+        Maximum Hecke level for partition enumeration (default
+        K_PARTITION_MAX = 6).  Must be ≤ K_PARTITION_MAX (the YSN
+        matrices are precomputed up to that limit).
 
     Returns
     -------
-    float (or (float, list)): total accumulated correction in MeV.
+    float (total correction, MeV) or
+    (float, list-of-dicts) if return_per_step.
 
     References
     ----------
-    Kerov 1996 (q-hook walk on Young diagrams) [kerov1996],
+    Kerov 1996 (q-hook walk) [kerov1996],
     Féray–Méliot 2010 (q-Plancherel CLT) [feray-meliot2012],
-    Satuła et al. 1997 (empirical Wigner energy) [satula1997].
+    Satuła et al. 1997 (empirical Wigner energy) [satula1997],
+    prop:bw-coefficient-shadow-price (LP dual = BW coefficient).
     """
     A = Z + N
-    if A < 2:
+    if A < 1:
         if return_per_step:
             return 0.0, []
         return 0.0
 
-    # Ground-state ordering (matches build_atom_nf / atom_gen_chains)
+    # Ground-state ordering (matches build_atom_nf / atom_gen_chains).
     ordering = []
     pc, nc = 0, 0
     for kk in range(A):
@@ -1523,45 +1861,85 @@ def unified_iterative_correction(Z, N, return_per_step=False):
         else:
             ordering.append('n'); nc += 1
 
+    # Active partition entries: those with k ≤ k_max and dim ≥ 2 (1-dim
+    # sym/alt reps already feed the bulk BW; only mixing partitions
+    # contribute to the unified correction).
+    active = [e for e in _PARTITION_TABLE
+              if e['k'] <= k_max and len(e['ysn']) > 0]
+
+    # Per-partition state: running YSN matrix M_λ, accumulated log
+    # rescaling, previous log-trace, scale (m_e · H_q(λ) · y_λ).
+    state = []
+    for e in active:
+        dim = len(e['ysn'][0])
+        M = _identity(dim)
+        L0 = math.log(dim)                     # ln |Tr I| = ln dim
+        scale = M_E_MEV * e['q_hook'] * e['shadow_price']
+        state.append({
+            'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
+            'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
+        })
+
     per_step = []
-    M_run = ((1.0, 0.0), (0.0, 1.0))               # M_22^{(0)} = I
-    log_norm = 0.0                                     # accumulated rescaling exponent
-    log_prev = math.log(2.0)                          # ln|Tr I| = ln 2
-    scale = DELTA_22 * W_22                           # MeV per unit of ln-trace
-    cumul = 0.0
+    cumul_total = 0.0
+
     for kk in range(A):
         nuc = ordering[kk]
         prev_types = ordering[:kk]
-        chain = _step_chain_22(nuc, prev_types)
-        M_step = _chain_M22(chain)
-        M_run = _matmul2(M_run, M_step)
-        # Periodic rescaling: keep matrix entries bounded by extracting
-        # the dominant scale into log_norm.
-        m_max = max(abs(M_run[0][0]), abs(M_run[0][1]),
-                    abs(M_run[1][0]), abs(M_run[1][1]))
-        if m_max > 1e80:
-            M_run = ((M_run[0][0]/m_max, M_run[0][1]/m_max),
-                     (M_run[1][0]/m_max, M_run[1][1]/m_max))
-            log_norm += math.log(m_max)
-        tr_run = M_run[0][0] + M_run[1][1]
-        log_cur = (log_norm + math.log(abs(tr_run))
-                   if abs(tr_run) > 1e-300 else log_prev)
-        delta = scale * (log_cur - log_prev)
-        cumul += delta
+
+        step_delta_total = 0.0
+        partitions_step = {}
+
+        for s in state:
+            entry = s['entry']
+            dim = s['dim']
+            sigmas = entry['ysn']
+            n_gens = entry['n_gens']
+            chain = _step_chain_generic(nuc, prev_types, n_gens)
+            # Build M_step = product of c·σ_g + d·I across the chain.
+            M_step = _identity(dim)
+            for c, d, gen in chain:
+                M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
+                M_step = _matmul_dim(M_step, M_cross, dim)
+            # Update running matrix and rescale if needed.
+            s['M'] = _matmul_dim(s['M'], M_step, dim)
+            m_max = 0.0
+            for i in range(dim):
+                for j in range(dim):
+                    if abs(s['M'][i][j]) > m_max:
+                        m_max = abs(s['M'][i][j])
+            if m_max > 1e80:
+                M_rescaled = [[s['M'][i][j] / m_max for j in range(dim)]
+                              for i in range(dim)]
+                s['M'] = tuple(tuple(r) for r in M_rescaled)
+                s['log_norm'] += math.log(m_max)
+            tr_run = _trace_dim(s['M'], dim)
+            log_cur = (s['log_norm'] + math.log(abs(tr_run))
+                       if abs(tr_run) > 1e-300 else s['log_prev'])
+            delta = s['scale'] * (log_cur - s['log_prev'])
+            s['cumul_partition'] += delta
+            s['log_prev'] = log_cur
+            step_delta_total += delta
+            partitions_step[str(entry['partition'])] = {
+                'log_trace': log_cur,
+                'delta_MeV': delta,
+            }
+
+        cumul_total += step_delta_total
+
         if return_per_step:
             Z_k = sum(1 for x in ordering[:kk + 1] if x == 'p')
             N_k = (kk + 1) - Z_k
             per_step.append({
                 'A': kk + 1, 'Z': Z_k, 'N': N_k, 'nuc': nuc,
-                'log_trace_22': log_cur,
-                'delta_MeV': delta,
-                'cumulative_MeV': cumul,
+                'delta_total_MeV': step_delta_total,
+                'cumulative_MeV': cumul_total,
+                'partitions': partitions_step,
             })
-        log_prev = log_cur
 
     if return_per_step:
-        return cumul, per_step
-    return cumul
+        return cumul_total, per_step
+    return cumul_total
 
 
 def binding_energy_bw(Z, N, k=3, unified=False):

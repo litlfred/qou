@@ -78,10 +78,24 @@ noncomputable def dq22 (q : F) : F :=
 /-- Wedderburn weight w_{(2,2)} = d_q² / [4]_q!. -/
 noncomputable def w22 (q : F) : F := (dq22 q) ^ 2 / qFact4 q
 
-/-! ## §4  Per-step accumulator and telescoping -/
+/-! ## §4  Per-partition LP-dual shadow price + telescoping -/
 
-/-- Per-step contribution: ΔB_k = Δ_(2,2) · w_(2,2) · (L_k − L_{k-1}),
-    where L_k = ln |tr M_(2,2)^(0..k)| is the running log-trace. -/
+/-- LP-dual shadow price (prop:bw-coefficient-shadow-price):
+    y_λ = w_λ / d_λ − 1/[k]_q!.
+    The constant 1/[k]_q! is the LP normalisation dual (smallest
+    w_λ/d_λ across partitions of k, attained by the trivial 1-dim
+    sym/alt reps with w = 1/[k]_q! and d = 1). -/
+noncomputable def shadowPrice (w_lambda d_lambda qfac_k : F) : F :=
+  w_lambda / d_lambda - 1 / qfac_k
+
+/-- Per-partition per-step contribution:
+    ΔB_λ = m_e · H_q(λ) · y_λ · (L_k − L_{k−1}),
+    the log-derivative of the running YSN trace in λ. -/
+noncomputable def stepDeltaPartition
+    (m_e H_q_lambda y_lambda Lk Lk_prev : F) : F :=
+  m_e * H_q_lambda * y_lambda * (Lk - Lk_prev)
+
+/-- (2,2) instance of the per-partition step delta. -/
 noncomputable def stepDelta (q m_e Lk Lk_prev : F) : F :=
   Delta22 q m_e * w22 q * (Lk - Lk_prev)
 
@@ -116,7 +130,20 @@ theorem Delta22_eq (q m_e : F) :
   unfold Delta22 qHookProduct22
   ring
 
-/-- Convenience name matching the proposition label. -/
+/-- Per-partition telescoping: total contribution of a single partition λ
+    is m_e · H_q(λ) · y_λ · (L_A − L_0).  This holds for every λ, so the
+    total unified correction is the sum over all enumerated partitions. -/
+theorem unified_telescope_partition {A : ℕ}
+    (m_e H_q_lambda y_lambda : F) (L : ℕ → F) (L0 : F)
+    (hL0 : L 0 = L0) :
+    (Finset.range A).sum
+      (fun k => stepDeltaPartition m_e H_q_lambda y_lambda (L (k+1)) (L k))
+    = m_e * H_q_lambda * y_lambda * (L A - L0) := by
+  unfold stepDeltaPartition
+  rw [← Finset.mul_sum, step_telescope, hL0]
+
+/-- Convenience name matching the proposition label.
+    Single-partition (2,2) instance. -/
 theorem unified_iterative_correction {A : ℕ} (q m_e : F) (L : ℕ → F)
     (hL0 : L 0 = (2 : F)) :
     (Finset.range A).sum (fun k => stepDelta q m_e (L (k+1)) (L k))

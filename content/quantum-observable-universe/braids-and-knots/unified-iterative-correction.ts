@@ -3,8 +3,9 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:unified-iterative-correction",
   title:
-    "Unified iterative $(2,2)$ correction: per-step Wedderburn projection " +
-    "replaces $D$ binding, knot factor, and Wigner energy",
+    "Unified iterative LP-dual correction: per-step Wedderburn " +
+    "projection over all partitions $\\lambda \\vdash k$ for " +
+    "$k = 2, \\ldots, K$, starting at $A = 1$ (no special cases)",
   lean: {
     decl:
       "QOU.Descartes.ConfinedKnotBinding.Unified.unified_iterative_correction",
@@ -15,6 +16,7 @@ export default proposition({
     "prop:confined-knot-binding",
     "prop:hook-weight-derivation",
     "prop:wedderburn-trace-identity",
+    "prop:bw-coefficient-shadow-price",
     "prop:mass-endomorphism-tower",
     "prop:nuclear-knot-classification",
   ],

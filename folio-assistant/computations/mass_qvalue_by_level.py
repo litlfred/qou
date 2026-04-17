@@ -189,9 +189,10 @@ for (Z, N), (A, BperA, name) in sorted(AME2020.items(), key=lambda x: x[1][0]):
 # ── Unified-path comparison table ────────────────────────────────
 print()
 print("=" * 110)
-print("UNIFIED ITERATIVE (2,2) PATH — replaces D + knot_factor + Wigner")
-print(f"  Energy scale: DELTA_22 = H_q((2,2)) × m_e = [3]·[2]² × m_e = {DELTA_22:.4f} MeV")
-print(f"  Wedderburn weight: w_(2,2) = {W_22:.6f}")
+print("UNIFIED ITERATIVE LP-DUAL PATH — single algorithm, all partitions, A=1 onward")
+print("  Per-partition coefficient: C_λ = m_e · H_q(λ)  (q-hook product)")
+print("  Per-partition weight:      y_λ = w_λ/d_λ - 1/[k]_q!  (LP-dual shadow price)")
+print(f"  (2,2) reference: C_(2,2) = {DELTA_22:.4f} MeV · y_(2,2) = {W_22:.6f}/d_(2,2) - 1/[4]_q!")
 print("=" * 110)
 print(f"{'Atom':>6s} {'A':>3s} | {'B_dedi(k=5)':>12s} {'B_unif(k=5)':>12s} "
       f"{'B(AME)':>10s} | {'Δ_22':>8s} {'res_dedi':>9s} {'res_unif':>9s}")
@@ -296,20 +297,29 @@ w.add_data("qvalues", qvalue_results)
 w.add_data("unified_iterative_per_step", unified_per_step)
 w.add_data("unified_path", {
     "description":
-        "Unified iterative (2,2) Wedderburn projection accumulator — "
-        "replaces dedicated D-binding (A=2), knot factor (A=3,4), and "
-        "Wigner energy (k≥5) terms by ONE mechanism (prop:unified-"
-        "iterative-correction).  Per-step: ΔB_k = DELTA_22 × w_(2,2) × "
-        "(ln|Tr M_22^(0..k)| − ln|Tr M_22^(0..k-1)|), telescopes to "
-        "B_unified = DELTA_22 × w_(2,2) × ln|Tr M_22^(0..A)/2|.",
+        "Unified iterative LP-dual accumulator — ONE consistent algorithm, "
+        "no special cases, runs from A = 1 over EVERY partition λ ⊢ k for "
+        "k = 2, …, K_PARTITION_MAX.  Per-step contribution per partition: "
+        "ΔB_λ(step) = m_e · H_q(λ) · y_λ · "
+        "(ln|Tr M_λ^(0..step)| − ln|Tr M_λ^(0..step-1)|).  Telescopes to "
+        "B_λ = m_e · H_q(λ) · y_λ · (ln|Tr M_λ^(0..A)| − ln d_λ).  "
+        "Total = Σ_λ B_λ.  References: prop:unified-iterative-correction, "
+        "prop:bw-coefficient-shadow-price.",
     "energy_scale_derivation":
-        "DELTA_22 = m_e × H_q((2,2)) = m_e × [3]·[2]² (q-hook product) — "
-        "equals empirical Wigner scale Δ_W ≈ 6.3 MeV [satula1997] without "
-        "fitting.",
+        "Per-partition: C_λ = m_e × H_q(λ) (q-hook product).  For (2,2): "
+        "H_q = [3]·[2]² → C_(2,2) ≈ 6.29 MeV (matches empirical Δ_W).",
+    "lp_dual_shadow_price":
+        "y_λ = w_λ/d_λ − 1/[k]_q! where w_λ is the Wedderburn weight, "
+        "d_λ the classical dimension, and 1/[k]_q! the LP normalisation "
+        "dual variable (smallest w_λ/d_λ across partitions of k, attained "
+        "by the trivial sym/alt 1-dim reps).  1-dim reps therefore have "
+        "y_λ = 0 and contribute nothing; only mixing partitions feed the "
+        "unified accumulator.",
     "references": [
         "kerov1996 (q-hook walk on Young diagrams)",
         "feray-meliot2012 (q-Plancherel CLT, convergence rate O(1/√k))",
         "satula1997 (empirical Wigner energy ≈ 6.3 MeV)",
+        "prop:bw-coefficient-shadow-price (LP dual = BW coefficient)",
     ],
 })
 w.add_data("error_budget", {
