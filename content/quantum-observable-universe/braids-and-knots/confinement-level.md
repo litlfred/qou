@@ -46,10 +46,31 @@ of $q$-dependence:*
    collapses, and the level structure rebuilds.  This is a
    categorical phase transition.*
 
+**Per-atom truncation $k_{\max}(K, q)$ — witnessed, not chosen.**
+*The truncation $k_{\max}$ is **not a global pragmatic parameter**.
+It is determined per atom-knot $K$ at $q$ by the **interaction-
+strand requirement**: $k_{\max}(K, q)$ is the smallest $k$ such
+that the NF $T_w$ of $K$ does not require any partition of size
+$> k$ to express its operator content.  Concretely:*
+
+1. *Compute the NF $T_w \in H_{n(K)}(q)$.*
+2. *Determine the maximal $k \leq n(K)$ such that the operator
+   $T_w$ has a nonzero projection on some Wedderburn block
+   $\lambda \vdash k$ with $d_\lambda \geq 2$ (mixing rep).*
+3. *Set $k_{\max}(K, q)$ to this value.*
+
+*Non-magic atoms typically have small $k_{\max}$ (few generators
+needed for the interaction graph).  Magic configurations have
+larger $k_{\max}$ because shell closure forces additional
+operator content.  This is computed once per atom-knot and
+**witnessed** as part of $K$'s NF data — not chosen externally.*
+
 **Magic configurations.**
 *A confined knot $K$ at $q$ is **deeply confined** at level $\ell$
 iff $E_\ell(q) \ll E_{\ell+1}(q)$ — there is a large energy gap
 to the next operator.  In nuclear contexts this corresponds to
 **magic numbers** $A \in \{2, 8, 20, 28, 50, 82, 126\}$: the
 nucleus sits at the bottom of an energy gap, far from the next
-LP-boundary.*
+LP-boundary, and its $k_{\max}(K, q)$ jumps to a higher value
+than non-magic neighbors (more strand interactions are required
+to express the closed-shell structure).*
