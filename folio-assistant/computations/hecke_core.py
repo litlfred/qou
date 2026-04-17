@@ -1977,7 +1977,11 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         else:
             M = _identity(dim)
         L0 = math.log(dim)
-        scale = e['C_lambda_kerov_MeV']
+        # Pure LP-dual scale: C_λ = m_e · H_q(λ) · y_λ.
+        # The Kerov Plancherel multiplier w_λ (previously bolted on here)
+        # double-counted w_λ already present in y_λ = w_λ/d_λ − 1/[k]!,
+        # so this commit removes it — honest LP-dual baseline.
+        scale = M_E_MEV * e['q_hook'] * e['shadow_price']
         state.append({
             'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
             'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
@@ -2041,20 +2045,14 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             log_cur = (s['log_norm'] + math.log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
             raw_delta = s['scale'] * (log_cur - s['log_prev'])
-            # Combinatorial surface weight: in the B₃ braid (3 generators
-            # → 3D lattice), the surface of a k-nucleon cluster scales as
-            # k^{2/3} while volume scales as k.  The fraction of the
-            # new nucleon's inter-crossings that are on the boundary
-            # (contributing to binding) is k^{2/3}/k = k^{-1/3}.
-            # Cumulative: Σ_{k=1..A} k^{-1/3} = (3/2)·A^{2/3} + O(A^{1/3}),
-            # recovering the BW surface scaling categorically from the
-            # combinatorics of B₃ braid geometry.
-            surface_weight = (kk + 1) ** (-1.0 / 3.0) if kk > 0 else 1.0
             # Per-step complementary slackness: the LP dual at step k
             # has its own tight/slack structure.  Only count this step's
             # delta if the running trace at this step is ≤ 0 (tight).
+            # The B₃ "surface weight" (k+1)^(-1/3) (previously bolted on
+            # here, post-hoc to match BW A^{2/3}) has been removed —
+            # B₃ is a 2-generator group in a 2D plane, not a 3D lattice.
             step_is_tight = tr_run <= 0
-            delta = raw_delta * surface_weight if step_is_tight else 0.0
+            delta = raw_delta if step_is_tight else 0.0
             s['cumul_partition'] += delta
             s['log_prev'] = log_cur
             # Store raw trace sign for final-state complementary slackness.
