@@ -89,25 +89,89 @@ def rowBump (row : List ℕ) (x : ℕ) : List ℕ × Option ℕ :=
       let bumped := row.get ⟨idx, by omega⟩
       (row.set ⟨idx, by omega⟩ x, some bumped)
 
-/-- Row bump preserves sortedness. -/
-theorem rowBump_sorted (row : List ℕ) (x : ℕ)
-    (h : row.Sorted (· < ·)) :
-    (rowBump row x).1.Sorted (· < ·) := by
+/-- The findIdx gives a valid index or length. -/
+private theorem findIdx_le_length (row : List ℕ) (p : ℕ → Bool) :
+    row.findIdx p ≤ row.length := List.findIdx_le_length p row
+
+/-- Elements before findIdx do NOT satisfy the predicate. -/
+private theorem lt_findIdx_not (row : List ℕ) (p : ℕ → Bool) (i : ℕ)
+    (hi : i < row.findIdx p) (hil : i < row.length) :
+    p (row.get ⟨i, hil⟩) = false := by
+  exact List.not_of_lt_findIdx hi ▸ sorry
+  -- Ref: Mathlib List.findIdx properties
+
+/-- The bumped element is strictly greater than x. -/
+theorem rowBump_bumped_gt (row : List ℕ) (x : ℕ)
+    (h : row.Sorted (· < ·))
+    (hb : (rowBump row x).2 = some b) :
+    x < b := by
   sorry
-  -- Proof: x replaces the leftmost element > x.
-  -- The elements before idx are ≤ x (by minimality of idx).
-  -- The elements after idx are > bumped > x.
-  -- So the new row is still sorted.
+  -- The bumped element is row[idx] where idx = findIdx (· > x).
+  -- By definition, row[idx] > x.
   -- Ref: [sagan2001] Lemma 3.1.1
 
-/-- Row bump preserves or increases length by 1. -/
-theorem rowBump_length (row : List ℕ) (x : ℕ) :
-    (rowBump row x).1.length = row.length +
-    (if (rowBump row x).2.isNone then 1 else 0) := by
+/-- Row bump preserves sortedness.
+
+    Case 1 (no bump): x appended to end. Since all elements ≤ x
+    (findIdx reached end), the new list is sorted.
+
+    Case 2 (bump at idx): x replaces row[idx].
+    - Elements before idx are < row[idx] (sorted) and ≤ x
+      (by findIdx minimality). So they are < x? No: they are ≤ x.
+      Actually: before idx, ¬(elem > x), so elem ≤ x.
+      And sorted means elem[i] < elem[i+1] for all i.
+      So elem[idx-1] ≤ x and x < row[idx] < row[idx+1].
+      After replacement: [..., elem[idx-1], x, row[idx+1], ...]
+      Need elem[idx-1] < x: we know elem[idx-1] ≤ x.
+      If elem[idx-1] = x: then row has elem[idx-1] = x < row[idx].
+      But row is strictly sorted and has no duplicates.
+      Since elem[idx-1] ≤ x and elem[idx-1] < row[idx]:
+      If elem[idx-1] = x, the replacement gives [..., x, x, ...]
+      which is NOT strictly sorted! But wait: x is NOT in the row
+      (we're inserting a new value). However rowBump doesn't check
+      for duplicates. For SYT insertion, the values are always new.
+
+      For the general case without the SYT assumption:
+      elem[idx-1] ≤ x (from findIdx) and x < row[idx+1] (from sorted + row[idx] < row[idx+1]).
+      Strict: if elem[idx-1] < row[idx] and elem[idx-1] ≤ x < row[idx],
+      then elem[idx-1] ≤ x. Need STRICT: elem[idx-1] < x.
+      This holds when x ∉ row (which is the SYT case). -/
+theorem rowBump_sorted (row : List ℕ) (x : ℕ)
+    (h : row.Sorted (· < ·))
+    (hnodup : x ∉ row) :  -- x is a fresh value (SYT case)
+    (rowBump row x).1.Sorted (· < ·) := by
   sorry
-  -- If no bump: appended, length + 1.
-  -- If bump: replaced, same length.
-  -- Ref: [sagan2001] §3.1
+  -- Full proof requires case split on findIdx = length vs < length,
+  -- then List.Sorted properties under List.set / List.append.
+  -- The key insight: x fresh + row sorted → strict ordering preserved.
+  -- Ref: [sagan2001] Lemma 3.1.1
+
+/-- Row bump: no-bump case gives length + 1. -/
+theorem rowBump_length_append (row : List ℕ) (x : ℕ)
+    (h : row.findIdx (· > x) = row.length) :
+    (rowBump row x).1.length = row.length + 1 := by
+  unfold rowBump
+  simp [h]
+
+/-- Row bump: bump case preserves length. -/
+theorem rowBump_length_bump (row : List ℕ) (x : ℕ)
+    (h : row.findIdx (· > x) < row.length) :
+    (rowBump row x).1.length = row.length := by
+  unfold rowBump
+  simp [show ¬(row.findIdx (· > x) = row.length) by omega]
+  exact List.length_set row ⟨_, h⟩ x
+
+/-- The bumped element (if any) is strictly between x and the
+    element that was after it in the row. This is the KEY property
+    for column-strictness: bumped values increase as they cascade
+    down through rows. -/
+theorem rowBump_bumped_increases (row : List ℕ) (x : ℕ)
+    (h : row.Sorted (· < ·)) (b : ℕ)
+    (hb : (rowBump row x).2 = some b) :
+    x < b := by
+  sorry
+  -- b = row[findIdx (· > x)], and findIdx guarantees row[idx] > x.
+  -- Ref: [sagan2001] Lemma 3.1.1
 
 /-! ## §3  Full Schensted insertion -/
 
