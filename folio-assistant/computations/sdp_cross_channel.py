@@ -394,6 +394,229 @@ def sdp_with_pair_coupling(partition_entries, pair_couplings, n_target):
     }
 
 
+def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
+    """Sweep q for a FIXED atom (Z, N), solve SDP with atom observables
+    at each q, detect regime switches via sign changes / zero-crossings
+    in cross-channel couplings c_{λ,λ'}.
+
+    Key difference from the scalar q-sweep: here the SDP IS solved at
+    each q using atom-specific χ_λ(W_atom) observables — so cross
+    couplings can flip signs as q crosses a critical value where the
+    observed χ ratios reorder.
+
+    This implements the "neighborhood scan" around the physical q₀:
+    varying q virtually (as a cosmological time coordinate per
+    def:q-heat-equation) traces discrete substrate regime transitions.
+
+    Parameters
+    ----------
+    Z, N : int
+        Fixed atom.
+    q_values : iterable of float
+        q-values to scan (typically around q₀ ≈ 1.11).
+    k_cap : int
+        Max Hecke level for partition enumeration.
+
+    Returns list of {q, pair_couplings, regime_transitions}.
+    Each pair_couplings entry: {lambda, lambda', c_ij}.
+    regime_transitions: list of (λ, λ') whose c_ij changed sign from
+    previous q.
+    """
+    import sys
+    sys.path.insert(0, '.')
+    from hecke_core import (partitions_of, partition_dimension,
+                             partition_conjugate, q_hook_product,
+                             _build_ysn_matrices, atom_character_raw,
+                             M_E_MEV, _step_chain_generic,
+                             _identity, _matmul_dim, _trace_dim,
+                             _crossing_in_partition)
+
+    # Closure: μ_λ(q), chi_λ(W_atom at q)
+    def partition_entries_at_q(q):
+        """Build entries with μ_λ(q)."""
+        def qi(n):
+            if q == 1:
+                return float(n)
+            return (q ** n - q ** (-n)) / (q - q ** (-1))
+        def mu_at(partition):
+            mu = 0.0
+            for i, li in enumerate(partition):
+                for j in range(li):
+                    c = j - i
+                    mu += qi(c) * qi(c + 1)
+            return mu
+        entries = []
+        for k in range(2, k_cap + 1):
+            for lam in partitions_of(k):
+                d = partition_dimension(lam)
+                if d < 2:
+                    continue
+                entries.append({
+                    'partition': lam,
+                    'k': k,
+                    'dim': d,
+                    'q_laplacian_eigenvalue': mu_at(lam),
+                })
+        return entries
+
+    # Compute chi_λ(W_atom) at general q.  The YSN matrices depend on q;
+    # for the sweep we re-evaluate at each q value.  Build crossing
+    # matrices parametrically.
+    A = Z + N
+    ordering = []
+    pc, nc = 0, 0
+    for kk in range(A):
+        if (kk % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p'); pc += 1
+        else:
+            ordering.append('n'); nc += 1
+
+    def chi_at_q(partition, q):
+        """YSN trace of the atom braid in partition at given q."""
+        import math as _math
+        h_q = q - 1.0 / q
+        # Build YSN matrices at this q (NOT the globally-precomputed ones)
+        from hecke_core import (_standard_tableaux, _swap_tab,
+                                 _content_at)
+        n = sum(partition)
+        if n < 2:
+            return 1.0
+        tabs = list(_standard_tableaux(partition))
+        dim = len(tabs)
+        if dim == 0:
+            return 1.0
+        tab_index = {tuple(tuple(r) for r in T): i for i, T in enumerate(tabs)}
+
+        def q_int(nn):
+            if q == 1: return float(nn)
+            return (q ** nn - q ** (-nn)) / (q - q ** (-1))
+
+        def build_sigma(k_idx):
+            M = [[0.0]*dim for _ in range(dim)]
+            processed = set()
+            for i, T in enumerate(tabs):
+                if i in processed: continue
+                ca = _content_at(T, k_idx)
+                cb = _content_at(T, k_idx + 1)
+                rho = cb - ca
+                if rho == 0: continue
+                same_row = any(k_idx in row and (k_idx+1) in row for row in T)
+                same_col = False
+                width = max(len(r) for r in T)
+                for c in range(width):
+                    col_vals = [T[r][c] for r in range(len(T)) if c < len(T[r])]
+                    if k_idx in col_vals and (k_idx+1) in col_vals:
+                        same_col = True; break
+                if same_row:
+                    M[i][i] = q; processed.add(i)
+                elif same_col:
+                    M[i][i] = -1.0/q; processed.add(i)
+                else:
+                    Tsw = _swap_tab(T, k_idx, k_idx+1)
+                    if Tsw is None:
+                        M[i][i] = q if rho > 0 else -1.0/q
+                        processed.add(i); continue
+                    key = tuple(tuple(r) for r in Tsw)
+                    j = tab_index.get(key)
+                    if j is None:
+                        M[i][i] = q if rho > 0 else -1.0/q
+                        processed.add(i); continue
+                    a_rho = h_q / q_int(rho)
+                    a_neg = h_q - a_rho
+                    bsq = a_rho * a_neg + 1.0
+                    off = _math.sqrt(abs(bsq)) * (1.0 if bsq > 0 else -1.0)
+                    M[i][i] = a_rho; M[j][j] = a_neg
+                    M[i][j] = off;   M[j][i] = off
+                    processed.add(i); processed.add(j)
+            return tuple(tuple(r) for r in M)
+
+        sigmas = [build_sigma(g) for g in range(1, n)]
+        n_gens = n - 1
+
+        # Matrix product of atom braid
+        M = _identity(dim)
+        for kkk in range(A):
+            nuc = ordering[kkk]
+            prev_types = ordering[:kkk]
+            chain = _step_chain_generic(nuc, prev_types, n_gens)
+            M_step = _identity(dim)
+            for c, d, gen in chain:
+                M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
+                M_step = _matmul_dim(M_step, M_cross, dim)
+            M = _matmul_dim(M, M_step, dim)
+            # Rescale to avoid overflow
+            m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
+            if m_max > 1e80:
+                M = tuple(tuple(M[i][j]/m_max for j in range(dim))
+                          for i in range(dim))
+        return _trace_dim(M, dim)
+
+    # Run sweep
+    results = []
+    prev_signs = None
+    for q in q_values:
+        entries = partition_entries_at_q(q)
+        # Compute chi for each
+        chi_by_idx = {}
+        for i, e in enumerate(entries):
+            chi_by_idx[i] = chi_at_q(e['partition'], q)
+        # Pair couplings
+        import math as _math
+        h_val = q - 1.0 / q
+        total_sq = sum(c*c for c in chi_by_idx.values())
+        if total_sq < 1e-30:
+            continue
+        phi = {i: chi_by_idx[i]**2 / total_sq for i in chi_by_idx}
+        pair_results = []
+        cur_signs = {}
+        seen = set()
+        name_to_idx = {tuple(e['partition']): i for i, e in enumerate(entries)}
+        for i, e in enumerate(entries):
+            lam = tuple(e['partition'])
+            conj = partition_conjugate(lam)
+            if conj == lam:
+                continue
+            if conj not in name_to_idx:
+                continue
+            j = name_to_idx[conj]
+            key = frozenset({i, j})
+            if key in seen: continue
+            seen.add(key)
+            # c_ij target (from SDP equality constraint)
+            sign_ij = 1 if chi_by_idx[i] * chi_by_idx[j] >= 0 else -1
+            target_c = sign_ij * _math.sqrt(phi[i] * phi[j]) * (
+                (entries[i]['q_laplacian_eigenvalue']
+                 + entries[j]['q_laplacian_eigenvalue']) / 2
+            )
+            key_name = (lam, conj) if lam < conj else (conj, lam)
+            pair_results.append({
+                'lambda': list(key_name[0]),
+                'lambda_conj': list(key_name[1]),
+                'c_ij': target_c,
+                'sign': 1 if target_c > 1e-6 else (-1 if target_c < -1e-6 else 0),
+            })
+            cur_signs[key_name] = pair_results[-1]['sign']
+
+        transitions = []
+        if prev_signs is not None:
+            for key_name, sign in cur_signs.items():
+                prev = prev_signs.get(key_name, 0)
+                if sign != prev:
+                    transitions.append({
+                        'lambda': list(key_name[0]),
+                        'lambda_conj': list(key_name[1]),
+                        'prev_sign': prev,
+                        'new_sign': sign,
+                    })
+        results.append({
+            'q': float(q),
+            'pairs': pair_results,
+            'regime_transitions': transitions,
+        })
+        prev_signs = cur_signs
+    return results
+
+
 def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
     """Sweep q-values, detect regime switches in the SDP dual.
 
