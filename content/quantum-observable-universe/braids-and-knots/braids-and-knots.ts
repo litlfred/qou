@@ -320,6 +320,20 @@ export default chapter({
       ],
     }),
 
+    // ── Atom, isotope, and confinement levels ──────────────────────────
+    section({
+      title: "Atom, Isotope, and Confinement Levels",
+      label: "sec:atom-isotope-confinement",
+      blocks: [
+        "knot-operator-energy",
+        "confinement-level",
+        "atom-knot",
+        "isotope-knot",
+        "stable-atom",
+        "unstable-atom",
+      ],
+    }),
+
     // ── Nuclear binding and beta stability ──────────────────────────────
     section({
       title: "Nuclear Binding and Beta Stability",
