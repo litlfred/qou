@@ -84,8 +84,7 @@ if [ -n "$BRANCH" ]; then
       exit 1
     fi
     echo "==> Switching to branch: $BRANCH"
-    git fetch origin "$BRANCH" 2>/dev/null || true
-    git checkout "$BRANCH" --
+    git switch "$BRANCH" && git pull origin "$BRANCH"
   fi
 fi
 
