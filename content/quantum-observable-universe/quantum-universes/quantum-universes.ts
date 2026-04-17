@@ -82,6 +82,10 @@ export default chapter({
       label: "sec:qu-structures",
       blocks: [
         "categorical-connection",
+        "categorical-connection-exists",
+        "categorical-connection-exists-proof",
+        "categorical-connection-unique",
+        "categorical-connection-unique-proof",
         "categorical-connection-su2",
         "categorical-jet",
         "categorical-hodge-star",
