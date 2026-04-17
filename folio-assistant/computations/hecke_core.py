@@ -1889,26 +1889,26 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             ordering.append('n'); nc += 1
 
     # Active partition entries: those with k ≤ k_max and dim ≥ 2 (1-dim
-    # sym/alt reps already feed the bulk BW; only mixing partitions
-    # contribute to the unified correction).
+    # sym/alt reps have y_λ = 0 and contribute nothing).
+    # ALL mixing partitions including (2,1) are kept because:
+    #
+    #   The accumulator computes (atom LP − free-nucleon baseline LP),
+    #   which subtracts the per-nucleon intra-block projection.
+    #   This makes the result a genuine BINDING correction — the
+    #   categorical definition M_atom − Σ M_free_nucleon.
     active = [e for e in _PARTITION_TABLE
               if e['k'] <= k_max and len(e['ysn']) > 0]
 
     # Per-partition state: running YSN matrix M_λ, accumulated log
     # rescaling, previous log-trace, scale (m_e · H_q(λ) · y_λ).
     state = []
+    # Kerov-damped scale per partition:
+    #   C_λ^kerov = w_λ · y_λ · H_q(λ) · m_e
+    state = []
     for e in active:
-        # YSN matrices may be tuples (small dim) or numpy arrays (large dim);
-        # both support len() giving the row count.
         dim = len(e['ysn'][0])
         M = _identity(dim)
-        L0 = math.log(dim)                     # ln |Tr I| = ln dim
-        # Kerov-damped scale: m_e · H_q(λ) · y_λ · w_λ.  The factor
-        # w_λ is the q-Plancherel probability of reaching λ under the
-        # Kerov q-hook walk [kerov1996]; multiplying the LP-dual cost
-        # y_λ · H_q(λ) by w_λ gives the expected marginal cost in the
-        # stationary regime — a categorically-justified damping (no
-        # ad-hoc bound).
+        L0 = math.log(dim)
         scale = e['C_lambda_kerov_MeV']
         state.append({
             'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
