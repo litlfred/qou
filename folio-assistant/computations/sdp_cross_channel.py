@@ -394,7 +394,94 @@ def sdp_with_pair_coupling(partition_entries, pair_couplings, n_target):
     }
 
 
-def q_sweep_regime_detection(partition_entries_at_q, q_values):
+def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
+    """Sweep q-values, detect regime switches in the SDP dual.
+
+    A REGIME SWITCH is a discrete change in the TIGHT-CONSTRAINT SET
+    of the SDP dual as the substrate parameter q varies continuously.
+    Physically: at q_crit, an eigenvalue of the primal Φ* crosses
+    zero, causing the active-constraint set to jump.
+
+    Strategy: at each q in q_values, rebuild the partition table's
+    μ_λ(q) (content-Casimir depends on q) and re-solve the SDP dual.
+    Compare the set of tight partitions (y_λ* ≈ 0) across q values;
+    any change = regime switch.
+
+    Note: partition-table REBUILD is expensive; this is a coarse
+    proof-of-concept.  Production version should symbolically
+    parameterise μ_λ(q) as a rational function.
+
+    Returns list of {q, y0, tight_partitions, regime_transition}.
+    """
+    import sys
+    sys.path.insert(0, '.')
+    from hecke_core import (partitions_of, q_hook_product,
+                             wedderburn_weight, partition_dimension,
+                             lp_shadow_price, partition_jet_depth,
+                             M_E_MEV, partition_conjugate)
+    # Override q for this sweep by monkey-patching Q temporarily?
+    # Too invasive.  Instead: reuse existing partitions, just recompute μ_λ
+    # using q_int(c, q) · q_int(c+1, q) as a function of q.
+    import hecke_core as hc_orig
+    from q_parameter import HA as h_orig
+
+    results = []
+    prev_tight = None
+
+    def mu_at_q(partition, q):
+        """q-Laplacian eigenvalue with explicit q (not q_0)."""
+        mu = 0.0
+        def qi(n):
+            if q == 1:
+                return float(n)
+            return (q**n - q**(-n)) / (q - q**(-1))
+        for i, li in enumerate(list(partition)):
+            for j in range(li):
+                c = j - i
+                mu += qi(c) * qi(c + 1)
+        return mu
+
+    for q in q_values:
+        # Build partition entries at this q
+        entries = []
+        for _k in range(2, k_cap + 1):
+            for lam in partitions_of(_k):
+                d = partition_dimension(lam)
+                if d < 2:
+                    continue
+                entries.append({
+                    'partition': lam,
+                    'k': _k,
+                    'dim': d,
+                    'q_laplacian_eigenvalue': mu_at_q(lam, q),
+                    'wedderburn_weight': 1.0,  # not needed for sweep
+                    'q_hook': 1.0,
+                })
+
+        if not entries:
+            continue
+        # Solve scalar LP (faster; SDP structure only matters for
+        # cross-couplings which we'll add in a future version)
+        sol = _scalar_lp_fallback(entries, n_target=float(Z + N))
+        # Tight partitions = those with y_λ ≈ 0
+        tight = frozenset(name for name, y in sol['y_lambda'].items()
+                          if abs(y) < 1e-6)
+        transition = (prev_tight is not None
+                      and tight != prev_tight)
+        results.append({
+            'q': float(q),
+            'y0': sol['y0'],
+            'n_tight': len(tight),
+            'tight_partitions': sorted(tight),
+            'regime_transition': bool(transition),
+            'transition_added': sorted(tight - (prev_tight or frozenset())),
+            'transition_removed': sorted((prev_tight or frozenset()) - tight),
+        })
+        prev_tight = tight
+    return results
+
+
+def q_sweep_regime_detection_OLD(partition_entries_at_q, q_values):
     """Sweep q-values, solve SDP at each, detect regime switches.
 
     A regime switch is a discrete change in the set of TIGHT constraints

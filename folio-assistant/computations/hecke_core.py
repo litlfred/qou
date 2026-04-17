@@ -2926,199 +2926,48 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     return total_mev, per_pair
 
 
-def binding_energy_bw(Z, N, k=3, unified=False, drop_bw=False, sdp=False):
-    """Bethe-Weizsäcker binding energy (MeV) at Hecke level k.
+def binding_energy_bw(Z, N, k=3, unified=True, drop_bw=True, sdp=True):
+    """Binding energy (MeV) — PURE LP-dual / SDP categorical path.
 
-    k=3 (default): 6-term H₃(q) formula (volume, surface, Coulomb,
-                    asymmetry, pairing, exchange)
-    k=4:           + H₄(q) terms 7-8 (shell, hook partition)
-    k=5:           + H₅(q) terms 9-11 (Wigner, form factor, pn corr.)
-    k≥6:           + higher level volume perturbation corrections
+    ALL BW terms (LAMBDA_V·A volume, LAMBDA_S·A^{2/3} surface,
+    LAMBDA_C·Z(Z-1)/A^{1/3} Coulomb, A_ASYM·(N-Z)²/(4A) asymmetry,
+    DELTA_P·±/√A pairing, LAMBDA_EX·Z^{4/3}/A^{1/3} exchange,
+    DELTA_S shell, DELTA_HOOK hook, DELTA_WIGNER Wigner,
+    DELTA_FORMFACTOR, DELTA_PN_CORR, DELTA_W2, DELTA_411, DELTA_42,
+    and the k≥7 descent engine) have been REMOVED — they were
+    empirical BW coefficients that the LP-dual categorical framework
+    should replace from first principles.
 
-    If `unified=True`, the dedicated D-binding (A=2), knot factor
-    (A=3,4), and Wigner term (k≥5) are replaced by a single
-    accumulated per-step (2,2) Wedderburn projection
-    `unified_iterative_correction(Z, N)` (prop:unified-iterative-
-    correction).  All other terms (volume, surface, Coulomb, pairing,
-    asymmetry, exchange, shell, hook, form factor, pn correlation,
-    H₆+ descent) are unchanged.
+    Current path (all categorically derived):
+      - Unified iterative correction (LP-dual shadow prices × q-heat
+        resolvent damping) via `unified_iterative_correction`
+      - Cross-channel SDP contribution via `sdp_cross_channel_contribution`
+        (activated when sdp=True, default)
 
-    Level correction: δΦ_k = z² · Vol(4₁) · [k-3]_q per Hecke level.
-    All coefficients derived from algebra + knot geometry.
-    Zero fitted parameters.
+    The `unified`, `drop_bw`, `sdp` flags are retained for backward
+    compatibility but default to True.  NO BW path remains.
+
+    Known gap: the LP-dual alone does not reproduce the full binding
+    energy (~10 MeV at D/He4 vs empirical 2.2/28.3 MeV; scales
+    diverge further for heavy atoms).  The gap is categorically
+    unresolved and corresponds to the bulk contribution (A-scaling)
+    that the scalar LP-dual does not produce.  See
+    `sdp_cross_channel.py` and the SDP with atom observables for
+    ongoing categorical derivation.
+
+    k : retained for API compatibility; currently ignored (no level
+        truncation in the LP-dual path — that's controlled by
+        K_PARTITION_MAX globally).
     """
     A = Z + N
     if A <= 1:
-        # Unknot/trivial case: H (single proton), free n.
-        # No nuclear braid → no binding.
         return 0.0
 
-    if drop_bw:
-        # NO BW bulk, NO shell, NO form-factor, NO descent — pure
-        # LP-dual accumulator from the q-heat resolvent framework
-        # (PR #368).  This measures the gap between the current LP-dual
-        # machinery and the full binding.  Any difference vs empirical
-        # AME shows what BW's LAMBDA_V·A + LAMBDA_S·A^{2/3} + ...
-        # bulk terms contribute that the LP dual alone does NOT.
-        return unified_iterative_correction(Z, N)
-
-    if unified:
-        # Unified iterative path: per-step (2,2) Wedderburn projection
-        # accumulates the categorical correction that, in the dedicated
-        # path, is split across the D-binding (A=2), knot factor (A=3,4),
-        # and Wigner energy (k≥5) terms.  See prop:unified-iterative-
-        # correction.
-        if A == 2:
-            return unified_iterative_correction(Z, N)
-
-    # ── A=2 (Deuterium): B(D) = α × V̂_e ─────────────────────
-    # The pn crossing is mediated by the shared electron.
-    # V̂_e = electron's Wedderburn-weighted traced volume (trefoil σ₁³).
-    # Reference: prop:mass-endomorphism-tower
-    if A == 2:
-        # B(D) = α × V̂_e (prop:mass-endomorphism-tower)
-        return ALPHA_BORROMEAN * abs(V_HAT_ELECTRON)
-
-    # ── H₃(q) terms 1-6 ─────────────────────────────────────
-    # Z-independent (bulk) terms:
-    B_bulk = LAMBDA_V * A
-    B_bulk -= LAMBDA_S * A**(2.0/3.0)
-    B_bulk -= A_ASYM * (N - Z)**2 / (4.0 * A)
-
-    # Pairing (Z-independent: depends on parity, not magnitude)
-    if Z % 2 == 0 and N % 2 == 0:
-        B_bulk += DELTA_P / math.sqrt(A)
-    elif Z % 2 == 1 and N % 2 == 1:
-        B_bulk -= DELTA_P / math.sqrt(A)
-
-    # Z-dependent terms (Coulomb and exchange, SEPARATE):
-    B_coul = -LAMBDA_C * Z * (Z - 1) / A**(1.0/3.0)
-    B_exch = -LAMBDA_EX * Z**(4.0/3.0) / A**(1.0/3.0)
-
-    # ── Knot-type Wedderburn-Artin channel factors ────────────
-    # (prop:nuclear-knot-classification)
-    #
-    # a(N) = ∏(1-εᵢ) over independent nucleon pairs modifies k=3.
-    # Higher levels k≥4 are TOPOLOGY-INDEPENDENT (shell, form factor
-    # etc. depend on nuclear size, not local knot type), so a_k → 1
-    # for k≥4. The recursive product ∏_k a_k = a₃ × 1 × 1 × ... = a₃.
-    #
-    # a₃(N) = ∏(1-εᵢ):
-    #   A=2 satellite: a = 1+h (1 chiral pn pair, ε = -h)
-    #   A=3 figure-8:  a = 1-h² (1 amphicheiral pair, ε = h²)
-    #   A=4 Borromean:  a = (1-h²)² (2 amphicheiral pairs)
-    #   A≥5:            a = 1 (generic, (1-h²)^n → 1)
-    # ── Knot factor a(N) = ∏(1-εᵢ) ─────────────────────────
-    # (prop:nuclear-knot-classification)
-    #
-    # a(N) modifies k=3 bulk. For A≤4: exact from pair chirality.
-    # For A≥5: a=1 (BW polynomial handles Wedderburn averaging).
-    # Coulomb/exchange have separate channel factors for A=3,4.
-    is_fig8 = (A == 3)
-    if unified:
-        # Unified path: knot factor → 1, the (2,2) accumulator absorbs it.
-        a_N = 1.0
-    else:
-        a_N = knot_factor(Z, N)
-
-    if A == 3:
-        B = a_N * B_bulk + FIG8_F_COUL * B_coul + FIG8_F_EXCH * B_exch
-    elif A == 4:
-        B = a_N * B_bulk + z**2 * B_coul + (z * q_int(3) / q_int(2)) * B_exch
-    elif A == 2:
-        B = a_N * B_bulk + z * B_exch  # no Coulomb for Z=1
-    else:
-        B = a_N * B_bulk + B_coul + B_exch
-
-    # ── H₄(q) terms 7-8 ─────────────────────────────────────
-    # Topology-independent: shell/hook corrections from nuclear size.
-    if k >= 4 and not is_fig8:
-        B += DELTA_S * (magic_proximity(Z) + magic_proximity(N)) / A**(2.0/3.0)
-        h_Z = 1.0 - magic_proximity(Z)
-        h_N = 1.0 - magic_proximity(N)
-        B -= DELTA_HOOK * (h_Z + h_N) * A**(1.0/3.0)
-
-        # ── (2,2) partition: unified iterative Wigner / np pairing ────
-        # Categorical Wigner energy = per-step (2,2) Wedderburn projection
-        # of the NF transition, accumulated from A = 1.  Energy scale is
-        # the (2,2) q-hook product DELTA_22 = [3]·[2]²·m_e ≈ 6.29 MeV
-        # (matches empirical Δ_W [satula1997]).  See prop:unified-
-        # iterative-correction.  Active only under the unified path —
-        # it absorbs D + knot_factor + Wigner in one mechanism.
-        if unified:
-            B += unified_iterative_correction(Z, N)
-
-    # ── H₅+ volume perturbation ─────────────────────────────
-    # In the `unified` path the Wigner term is ALREADY accounted for by
-    # the (2,2) accumulator above; only the form factor and pn
-    # correlation remain at this level.
-    if k >= 5 and not is_fig8:
-        if not unified:
-            T_isospin = abs(N - Z) / 2.0
-            A_eff_wigner = max(A, q_int(2)**2)
-            B -= DELTA_WIGNER * T_isospin * (T_isospin + 1) / A_eff_wigner
-        B -= DELTA_FORMFACTOR * Z**2 / A
-        B += DELTA_PN_CORR * Z * N / A**(4.0/3.0)
-
-    # ── H₆(q) corrections (k ≥ 6) ─────────────────────────
-    # Scaling functions derived from categorical descent decomposition:
-    #
-    # Codimension progression: k=3 → A^{1/3}, k=4 → A^{2/3},
-    # k=5 → A, k=6 → A^{4/3}.  Each level adds 1/3 to the denominator
-    # exponent (from 3D braid structure of B₃).
-    #
-    # [3,2,1] DESCENDED (self-conjugate, tr/dim = h/2):
-    #   pn crossing INVISIBLE (prop:wigner-2-coefficient).
-    #   pp → +h/2, nn → −h/2, pn → 0 exactly.
-    #   Scaling: (Z−N)(A−1)/A^{4/3} (pp−nn asymmetry, NOT ZN).
-    #   Coefficient: w_{321}·(h/2)·m_e
-    #
-    # [4,1,1]+[3,1,1,1] TRANSIENT (conjugate pair):
-    #   Exceptional divisor at content c=±3. T(T+1) isospin scaling.
-    #   Scaling: (N-Z)²/(4A^{4/3})  (isospin T(T+1) at codim 4)
-    #   Coefficient: w_{411}·h·m_e  (conjugate pair: tr+tr'=h)
-    #
-    # [4,2]+[2,2,1,1] TRANSIENT (conjugate pair):
-    #   Codim-4 Coulomb form factor. ADDS binding (reduces repulsion).
-    #   Scaling: Z(Z-1)/A^{4/3}  (pp Coulomb at codim 4)
-    #   Coefficient: w_{42}·h·m_e  (conjugate pair: tr+tr'=h)
-    #   Sign: POSITIVE (form factor makes Coulomb less repulsive)
-    #
-    # Combined: RMS improves 1.603 → 1.530 MeV.
-    if k >= 6 and not is_fig8:
-        B += DELTA_W2 * (Z - N) * (A - 1) / A**(4.0/3.0)
-        B += DELTA_411 * (N - Z)**2 / (4.0 * A**(4.0/3.0))
-        B += DELTA_42 * Z * (Z - 1) / A**(4.0/3.0)
-
-    # ── k≥7 corrections: general descent engine ─────────────
-    # At each level k, the correction has three components:
-    #   Descended (self-conjugate): C_desc × ZN / A^{(k-2)/3}
-    #   Transient Coulomb: C_coul × Z(Z-1) / A^{(k-2)/3}
-    #   Transient isospin: C_iso × (N-Z)²/(4A^{(k-2)/3})
-    #
-    # Coefficients are precomputed from Wedderburn weights.
-    # Convergence: corrections are ~30 keV cumulative (k=7..15).
-    # RMS converges to 1.516 MeV by k=8.
-    if k >= 7 and not is_fig8:
-        for kk in range(7, min(k, 15) + 1):
-            cd, cc, ci = _K_COEFFS.get(kk, (0, 0, 0))
-            alpha_k = (kk - 2) / 3.0
-            denom = A ** alpha_k
-            B += cd * Z * N / denom
-            B += cc * Z * (Z - 1) / denom
-            B += ci * (N - Z)**2 / (4.0 * denom)
-
-    # ── SDP cross-channel addition (experimental, gated by sdp=True) ──
-    # Adds the SDP-derived pair couplings c_ij and self-conjugate h/2
-    # contributions on top of the BW formula.  When used WITH the
-    # dedicated DELTA_FORMFACTOR, DELTA_W2, DELTA_411, DELTA_42 terms,
-    # this double-counts — intended for DIAGNOSIS: if the SDP couplings
-    # reproduce the dedi cross-channel terms, then the SDP framework
-    # categorically derives what was hand-inserted.
+    # Pure LP-dual path — no BW bulk, no hand-inserted scaling functions
+    B = unified_iterative_correction(Z, N)
     if sdp:
         sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
         B += sdp_contrib
-
     return B
 
 
