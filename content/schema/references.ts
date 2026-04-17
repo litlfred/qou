@@ -1417,6 +1417,22 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01857727",
   }),
 
+  // ── Peña et al. 2022: Quantum Game of Life (QGoL) ─────────────
+  ref({
+    id: "pena2022",
+    type: "chapter",
+    title: "QGoL: A Quantum Game of Life",
+    author: [
+      { family: "Peña", given: "G." },
+      { family: "et al." },
+    ],
+    "container-title":
+      "Advances in Quantum Computation and Quantum Cellular Automata",
+    publisher: "Springer Nature",
+    issued: { "date-parts": [[2022]] },
+    note: "Models Conway's Game of Life as a reversible quantum circuit with Toffoli-based neighbour-count logic.",
+  }),
+
   // ── Cook 1971: NP-completeness ─────────────────────────────────
   ref({
     id: "cook1971",
