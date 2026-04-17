@@ -326,6 +326,7 @@ export default chapter({
       blocks: [
         "confined-knot-binding",
         "jet-filtered-knot-factor",
+        "jet-convergence-classical-limit",
         "hook-weight-derivation",
         "wigner-coefficient-derivation",
         "bw-coefficient-shadow-price",
