@@ -243,6 +243,7 @@ export default chapter({
         "laplace-fourier-wick-rotation",
         "q-exponential",
         "q-exp-finite-field-obstruction",
+        "q-exp-p-adic",
         "q-logarithm",
         "q-dilogarithm",
       ],

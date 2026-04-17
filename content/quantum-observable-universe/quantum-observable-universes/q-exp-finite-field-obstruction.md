@@ -45,14 +45,12 @@ $\mathbb{F}_p$-Frobenius twist).  Geometrically: the $p$-truncated
 $\exp_q$ lives on the first-order infinitesimal neighbourhood of
 the identity in $G(H_q)$.
 
-**Witt-vector lift.**  The passage
-$\mathbb{F}_p \to \mathbb{Q}_p$ via Witt vectors
-([Witt vector lift](#rem:witt-lift-qou)) recovers a convergent
-$\exp_q$ on the $p$-adic side.  Specifically, for $x \in p\mathbb{Z}_p$
-with $v_p(x) \ge 1$ and $q \in \mathbb{Z}_p^\times$ with
-$v_p(q - 1) \ge 1$, the series $\sum x^n / [n]_q!$ converges in
-$\mathbb{Q}_p$.  The $p$-adic $\exp_q$ is the Witt-vector lift of
-the truncated $\mathbb{F}_p$-exponential.
+**Witt-vector lift.**  The truncated $\mathbb{F}_p$-exponential lifts
+uniquely to a convergent grouplike on $\mathbb{Q}_p$ and $\mathbb{C}_p$
+when $q$ is $p$-adically close to $1$ — see
+[$p$-adic realisations of $\exp_q$](#rem:q-exp-p-adic) for the
+convergence radii and the $q$-analogue of the Artin--Hasse
+exponential.
 
 **Moral.**  $\exp_q$ is archimedean in its *series representation*,
 but base-ring independent in its *Hopf-algebraic content*.  The same

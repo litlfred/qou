@@ -118,3 +118,24 @@ ring.  The *integral* realisation of $\mathcal{F}$ as
 $\int_G f(g) e^{i\xi g} dg$ requires a Haar measure (archimedean), but
 the **algebraic** Fourier transform as Peter--Weyl projection works
 over $\mathbb{F}_p$, $\mathbb{Q}_p$, and $\mathbb{Z}[q, q^{-1}]$.
+
+**Three-context behaviour.**
+
+- **$\mathbb{F}_p$.**  Peter--Weyl over $\mathbb{F}_p$ is valid
+  whenever $p \nmid |\widehat{G}|$ and $p \nmid [n]_q!$ for small $n$
+  (Maschke semisimplicity for quantum groups).  Under these conditions
+  $\mathcal{F}$ is a *finite* Fourier transform — the Peter--Weyl
+  matrix is invertible, and the heat-equation diagonalisation holds
+  termwise.  The archimedean Gauss sum $\sum_j e^{i\xi j}$ becomes a
+  character sum over $\mathbb{F}_p^\times$.
+- **$\mathbb{Q}_p$.**  $\mathcal{F}$ sends locally constant $f$ to its
+  $p$-adic Mellin transform, convergent on the same disc as
+  $\exp_q(i\xi\cdot)$.  When $G = \mathrm{SU}_q(2)$ with
+  $q \in 1 + p\mathbb{Z}_p$, the Peter--Weyl sum $\sum_j \pi_j(f)$
+  converges in $\mathbb{Q}_p$ because the irrep dimensions $[2j+1]_q$
+  have bounded $p$-adic valuation.
+- **$\mathbb{C}_p$.**  Peter--Weyl holds identically; the Wick rotation
+  $\mathcal{F}[f](\xi) = \mathcal{L}[f](i\xi)$ is a *formal* identity
+  in $\mathbb{C}_p[\![\xi]\!]$ because both sides are now series in
+  grouplike coefficients.  No analytic continuation is required — the
+  categorical Fourier transform is an identity of Hopf-algebra mates.
