@@ -283,6 +283,34 @@ def partition_dimension(partition):
     return fact_n // prod
 
 
+def partition_jet_depth(partition):
+    """Jet depth of a Young diagram: max |content(□)| = max(λ_1 − 1, λ_1^T − 1).
+
+    The content c(□) = col − row measures the diagonal distance of
+    a cell.  The maximum |c| over cells equals the larger of
+    (width − 1, height − 1), giving a conjugation-symmetric
+    measure of "diagonal reach".
+
+    Jet filtration correspondence:
+      jet = 0: only (1) and empty — trivial, no braid structure
+      jet = 1: (2), (1,1), (2,1), (2,2), (2,2,1), (2,1,1), ...
+               — partitions fitting in a 2-column-or-2-row rectangle
+               — "Hopf-like" complexity (J¹-J² in braid-length terms)
+      jet = 2: adds (3), (3,1), (3,2), (3,1,1), (3,2,1), (3,3,1), ...
+               — fits in 3-column-or-3-row rectangle
+               — "trefoil-like" complexity (J³)
+      ...
+
+    This gives a DISCRETE hierarchy complementary to the continuous
+    k-level partition enumeration: jet j ⊂ jet j+1.
+    """
+    if not partition:
+        return 0
+    width = partition[0]
+    height = len(partition)
+    return max(width - 1, height - 1)
+
+
 def q_dimension(partition):
     """Quantum dimension d_q(λ) = [n]_q! / H_q(λ) (symbolic in q)."""
     n = sum(partition)
@@ -527,6 +555,7 @@ for _k in range(2, K_GAUSSIAN_MAX + 1):
         _PARTITION_TABLE.append({
             'partition': _lam,
             'k': _k,
+            'jet': partition_jet_depth(_lam),
             'q_hook': _Hq,
             'wedderburn_weight': _w,
             'dim': _d,
@@ -2392,6 +2421,200 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             per_step[-1]['k_max'] = k_max
         return gated_total, per_step
     return gated_total
+
+
+# ══════════════════════════════════════════════════════════════
+# Jet-filtered LP-dual iterative accumulator (with checkpoints)
+# ══════════════════════════════════════════════════════════════
+
+import json as _json
+import os as _os
+
+
+def _jet_witness_path(Z, N, jet, witness_dir):
+    """Witness file path for one (Z, N, jet) cell."""
+    return _os.path.join(witness_dir,
+                         f'unified_jet_Z{Z}_N{N}_j{jet}.json')
+
+
+def _contrib_single_partition(Z, N, entry):
+    """Compute one partition's final LP-dual contribution for atom (Z,N).
+    Returns (final_trace_sign, cumul_delta_MeV).
+    Separate from the multi-partition accumulator so we can process
+    partitions one at a time (needed for the jet-incremental loop).
+    """
+    try:
+        from scipy.sparse import issparse as _issparse
+    except ImportError:
+        _issparse = lambda x: False
+
+    A = Z + N
+    if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
+        return (+1, 0.0)  # slack by default
+
+    ordering = []
+    pc, nc = 0, 0
+    for kk in range(A):
+        if (kk % 2 == 0 and pc < Z) or nc >= N:
+            ordering.append('p'); pc += 1
+        else:
+            ordering.append('n'); nc += 1
+
+    sigmas = entry['ysn']
+    n_gens = entry['n_gens']
+    first = sigmas[0]
+    sparse_sigmas = _issparse(first)
+    dim = first.shape[0] if sparse_sigmas else len(first)
+
+    if sparse_sigmas:
+        M = np.eye(dim)
+    else:
+        M = _identity(dim)
+
+    log_norm = 0.0
+    log_prev = math.log(dim)
+    scale = entry['C_lambda_resolvent_MeV']
+    cumul = 0.0
+    tr_run = dim  # initial trace of identity
+
+    for kkk in range(A):
+        nuc = ordering[kkk]
+        prev_types = ordering[:kkk]
+        chain = _step_chain_generic(nuc, prev_types, n_gens)
+        if sparse_sigmas:
+            M_run = M
+            for c, d, gen in chain:
+                sig_sparse = sigmas[gen]
+                Msig = sig_sparse.T.dot(M_run.T).T
+                M_run = c * Msig + d * M_run
+            M = M_run
+        else:
+            M_step = _identity(dim)
+            for c, d, gen in chain:
+                M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
+                M_step = _matmul_dim(M_step, M_cross, dim)
+            M = _matmul_dim(M, M_step, dim)
+
+        if isinstance(M, np.ndarray):
+            m_max = float(np.max(np.abs(M)))
+        else:
+            m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
+        if m_max > 1e80:
+            if isinstance(M, np.ndarray):
+                M = M / m_max
+            else:
+                M = tuple(tuple(M[i][j]/m_max for j in range(dim))
+                          for i in range(dim))
+            log_norm += math.log(m_max)
+
+        tr_run = _trace_dim(M, dim)
+        if abs(tr_run) > 1e-300:
+            log_cur = log_norm + math.log(abs(tr_run))
+        else:
+            log_cur = log_prev
+        cumul += scale * (log_cur - log_prev)
+        log_prev = log_cur
+
+    final_tr_sign = +1 if tr_run > 0 else -1
+    return (final_tr_sign, cumul)
+
+
+def unified_iterative_correction_jet(Z, N, jet_max,
+                                     witness_dir=None,
+                                     resume=True,
+                                     k_cap=None):
+    """Jet-filtered iterative LP-dual accumulator with per-jet witnesses.
+
+    Architecture:
+      For j = 1, 2, ..., jet_max:
+        Exact-jet partitions at j = {λ in _PARTITION_TABLE
+                                     : jet(λ) = j, dim(λ) >= 2,
+                                       k(λ) <= k_cap (or K_PARTITION_MAX)}
+        For each such λ:
+          Compute final LP-dual contribution for atom (Z, N)
+          (YSN matrix product through all A steps, complementary
+           slackness gate on final trace sign).
+        Aggregate total_at_j = Σ_{λ tight, jet(λ) = j} contribution_λ.
+        Save per-jet witness: list of partitions processed, their
+        final trace signs, contributions, and total_at_j.
+
+    Restart:
+      If witness_dir is given and resume=True, existing per-jet
+      witnesses are loaded (skipping recomputation).  This lets us
+      pick up from any checkpoint j_star by running jet_max > j_star.
+
+    Returns:
+      (total, per_jet_summary) where total = Σ_{j ≤ jet_max} total_at_j
+      and per_jet_summary[j] = {partitions, n_tight, total_MeV}.
+    """
+    if k_cap is None:
+        k_cap = K_PARTITION_MAX
+
+    total = 0.0
+    per_jet = {}
+
+    for j in range(1, jet_max + 1):
+        # Try to load existing witness
+        wpath = None
+        if witness_dir is not None:
+            _os.makedirs(witness_dir, exist_ok=True)
+            wpath = _jet_witness_path(Z, N, j, witness_dir)
+            if resume and _os.path.exists(wpath):
+                with open(wpath, 'r') as f:
+                    data = _json.load(f)
+                per_jet[j] = {
+                    'partitions': data['partitions'],
+                    'n_tight': data['n_tight'],
+                    'total_MeV': data['total_MeV'],
+                }
+                total += data['total_MeV']
+                continue
+
+        # Compute at this jet
+        active_at_j = [e for e in _PARTITION_TABLE
+                       if e.get('jet') == j
+                       and e.get('dim', 0) >= 2
+                       and e.get('k', 0) <= k_cap
+                       and e.get('has_ysn', False)]
+
+        parts_record = []
+        total_at_j = 0.0
+        n_tight = 0
+        for entry in active_at_j:
+            tr_sign, cumul = _contrib_single_partition(Z, N, entry)
+            tight = (tr_sign <= 0)
+            gated = cumul if tight else 0.0
+            if tight:
+                n_tight += 1
+                total_at_j += gated
+            parts_record.append({
+                'partition': list(entry['partition']),
+                'k': entry['k'],
+                'dim': entry['dim'],
+                'final_tr_sign': tr_sign,
+                'tight': tight,
+                'cumul_raw_MeV': cumul,
+                'contribution_MeV': gated,
+            })
+
+        per_jet[j] = {
+            'partitions': parts_record,
+            'n_tight': n_tight,
+            'total_MeV': total_at_j,
+        }
+        total += total_at_j
+
+        if wpath is not None:
+            with open(wpath, 'w') as f:
+                _json.dump({
+                    'Z': Z, 'N': N, 'jet': j,
+                    'k_cap': k_cap,
+                    'partitions': parts_record,
+                    'n_tight': n_tight,
+                    'total_MeV': total_at_j,
+                }, f, indent=2, default=float)
+
+    return total, per_jet
 
 
 def binding_energy_bw(Z, N, k=3, unified=False):
