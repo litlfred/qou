@@ -1853,50 +1853,59 @@ def _step_chain_generic(nucleon_type, prev_types, n_gens):
 
 
 def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
-    """Bozejko-Speicher q-Gaussian leading-order approximation to
-    ln|Tr M_λ(step)| at step step_idx, for partition λ at Hecke level k.
+    """Perron-Frobenius dominant-eigenvalue approximation to ln|Tr M_λ|.
 
-    Derivation (leading order, q-Plancherel CLT regime):
+    IMPORTANT NOTE — Bozejko-Speicher q-Gaussian does NOT apply here:
 
-    The Bozejko-Speicher q-Gaussian framework [bozejko-speicher1991]
-    gives the free/q-Markov trace of a braid word W = σ_{i_1}...σ_{i_N}
-    as a sum over non-crossing pair partitions π of {1,...,N}:
+      The Bozejko-Speicher q-Gaussian [bozejko-speicher1991] requires
+      |q| ≤ 1 for a convergent noncommutative distribution.  Our
+      substrate q₀ ≈ 1.11 > 1, so the Touchard pair-partition moments
+      T_n(q₀) = Σ_{π} q₀^{cr(π)} grow super-exponentially in n — NO
+      well-defined q-Gaussian distribution exists at q > 1.
+      Attempting to use Bozejko-Speicher at q₀ would conceptually
+      misapply the framework.
 
-        E_q[W] = Σ_{π NC-pair}  q^{cr(π)}  · [pair-match factor]
+    WHAT WE USE INSTEAD — Perron-Frobenius dominant eigenvalue:
 
-    Combined with Frobenius reciprocity over irreducible H_k(q) reps,
-    the CHARACTER ratio χ_λ(W) / d_q(λ) concentrates (as k → ∞) on
-    the q-Gaussian moment of the corresponding limit shape, with
-    asymptotic rate O(1/√N) from the Féray-Méliot q-Plancherel CLT
-    and per-level damping [2]_q^{−(k−3)} relative to the k = 3
-    baseline.
+      For any representation of the braid group, the trace of a long
+      word W is dominated by the largest |eigenvalue| of the "mean"
+      crossing matrix in that representation:
+           ln|Tr M_λ(W_N)| ≈ ln d_q(λ) + N · ln|μ_λ|
+      where μ_λ is the spectral radius of a typical crossing (c·σ+d·I)
+      in the λ-irrep.  This is pure linear algebra (Perron-Frobenius
+      theorem for positive operators) and is valid for any q > 0
+      including q > 1.
 
-    Leading-order expression used here (exact in two respects: uses
-    the actual d_q(λ) and the actual per-step crossing count; the
-    per-crossing contribution is the Féray-Méliot asymptotic form):
+      For the "average" inter-nucleon crossing (mix of pp, nn, pn):
+        mean (c, d) ≈ (1, -h/2)
+        eigenvalues of (σ - h/2 I) in 1-dim sym rep: q - h/2
+        eigenvalues in alt rep: -q⁻¹ - h/2
+        max |eigenvalue|: max(|q-h/2|, |q⁻¹+h/2|)
+
+      For dim ≥ 2 irreps, the spectral radius is bounded by q (the
+      largest eigenvalue of σ in sym is q; mixing blocks have
+      eigenvalues between q and -q⁻¹).
+
+      Féray-Méliot damping [2]_q^{−(k−3)} modulates how much weight
+      higher-k partitions carry in the typical q-Plancherel spectrum.
+
+    Working approximation (uses actual crossing count, exact d_q,
+    spectral-radius-informed per-crossing rate, Féray-Méliot damping):
 
         ln|Tr M_λ(step)| ≈ ln d_q(λ)
-                         + N(step) · [2]_q^{−(k−3)} · ln([2]_q/2)
+                         + N(step) · [2]_q^{−(k−3)} · ln(q₀)
 
-    where N(step) = total crossings through step = 12·(step+1)
-    (intra per nucleon) + step·(step+1)/2 (inter up to step).
-    The factor ln([2]_q/2) ≈ 0.00546 is the per-crossing log
-    character in the free probability limit (q=0) carried up to
-    finite q by Féray-Méliot.
-
-    This is the LEADING ORDER; higher-order q-Catalan corrections
-    are O(N²/dim) smaller and omitted.  Exact YSN evaluation is
-    preferred whenever the partition fits in memory (k ≤ k_exact).
+    where N(step) = 12·(step+1) + step·(step+1)/2, and ln(q₀) is
+    the per-crossing log dominant eigenvalue (≈ 0.104).
     """
     k = entry['k']
     dim = entry['dim']
-    # Total crossings through this step: intra + inter
-    n_intra = 12 * (step_idx + 1)          # 12 per nucleon
+    n_intra = 12 * (step_idx + 1)
     n_inter = step_idx * (step_idx + 1) // 2
     N_total = n_intra + n_inter
-    # Per-crossing log character (free-prob limit q → 0 gives ln([2]/2))
-    per_cross_log = math.log(TWO_Q / 2.0)
-    # Féray-Méliot damping relative to k=3 baseline
+    # Per-crossing log spectral radius ≈ ln q₀ (Perron-Frobenius)
+    per_cross_log = math.log(q0)
+    # Féray-Méliot damping relative to H₃(q) baseline
     damping = TWO_Q ** (-(k - 3)) if k > 3 else 1.0
     return math.log(dim) + N_total * damping * per_cross_log
 
