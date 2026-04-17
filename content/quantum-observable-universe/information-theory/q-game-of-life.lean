@@ -31,17 +31,18 @@ def qAnd_amplitude : R_q := q_param - 1  -- leading (q-1) factor
     Ref: [pena2022] QGoL: A Quantum Game of Life (Springer 2022) -/
 def qGameOfLife {L : Type*} (_generations : ℕ) : L → L := id
 
-/-- **Unitarity of q-GoL.** The automaton is unitary because each
-    q-Toffoli is unitary (σᵢ† σᵢ = 1 in H₃(q) under the Markov trace
-    involution) and compositions of unitaries are unitary.
+/-- **Unitarity / bijectivity of q-GoL.** The automaton is unitary
+    because each q-Toffoli is unitary (σᵢ† σᵢ = 1 in H₃(q) under the
+    Markov trace involution) and compositions of unitaries are
+    unitary. At the type-level placeholder, this reduces to
+    bijectivity of the identity map.
     Ref: [toffoli1980] https://doi.org/10.1007/3-540-10003-2_104 -/
 theorem qGameOfLife_unitary {L : Type*} (gens : ℕ) :
-    Function.Injective (qGameOfLife (L := L) gens) := by
+    Function.Bijective (qGameOfLife (L := L) gens) := by
   -- Ref: [toffoli1980] https://doi.org/10.1007/3-540-10003-2_104
-  -- Reduces to injectivity of the identity map, which models the
-  -- Hecke-algebra Markov trace involution at the type level.
+  -- Ref: [manuscript] Chapter 8, prop:toffoli-transfer-matrix
   unfold qGameOfLife
-  exact Function.injective_id
+  exact Function.bijective_id
 
 /-- **Reversibility.** Each q-Toffoli is its own inverse, so the
     full q-GoL tick admits a reverse tick. -/

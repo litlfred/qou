@@ -23,7 +23,7 @@ export default proposition({
     "prop:toffoli-transfer-matrix",
     "rem:toffoli-q-and",
     "prop:toffoli-lp-stability",
-    "rem:reeb-operations-per-planck",
+    "prop:reeb-operations-per-planck",
     "rem:discrete-planck-step",
     "def:categorical-action",
     "def:information-speed-of-light",

@@ -80,7 +80,7 @@ $$
    classical dissipation of Conway's GoL is replaced by
    $q$-energy conservation
    ([quantum temperature](#def:quantum-temperature),
-   [mass-energy equivalence](#prop:mass-energy-equivalence)):
+   [mass-energy equivalence](#thm:mass-energy-equivalence)):
    the $q$-energy* $\mathbf{E}_q = \langle \Psi | \hat{H}_{\mathrm{q\text{-}GoL}} | \Psi \rangle$
    *is conserved along the automaton orbit, where
    $\hat{H}_{\mathrm{q\text{-}GoL}} = i\hbar_q \ln \mathcal{U}_{\mathrm{q\text{-}GoL}}/t_P$
@@ -103,20 +103,21 @@ $$
 $$
 
 **Stability condition.**
-*The $q$-GoL evolution is well-defined (all Toffoli amplitudes
-are LP-stable) iff*
+*The $q$-GoL evolution is well-defined — both the Toffoli
+diagonal $P_{7,7}(q)$ and the q-AND amplitude $\Phi(q)$ are
+strictly positive — on the physical regime*
 
 $$
-  q  >  1/\varphi^2,
-  \qquad
-  \varphi = (1 + \sqrt{5})/2,
+  q  >  1,
 $$
 
-*([Toffoli LP-stability](#prop:toffoli-lp-stability)). At
-$q = 1/\varphi^2$ the diagonal $P_{7,7}(q)$ vanishes
-([golden-ratio zero](#prop:toffoli-transfer-matrix)) and the
-automaton becomes degenerate. The physical substrate value
-$q_0 \approx 1.110$ is safely above this threshold.*
+*with three operator zeros in $(0, 1]$ that bound the
+sub-physical behaviour: $q_\star = 1/\varphi^2 \approx 0.382$
+(golden-ratio zero of $P_{7,7}$), $q_\Phi \approx 0.466$ (cubic
+root of $\Phi$), and $q = 1$ (classical limit, $\Phi$ trivially
+vanishes). See [Toffoli LP-stability](#prop:toffoli-lp-stability)
+for the full table. The physical substrate value $q_0 \approx 1.110$
+is safely inside the stable regime $q > 1$.*
 
 *Proof sketch.*
 The operator $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is built

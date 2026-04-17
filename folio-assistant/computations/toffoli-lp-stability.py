@@ -9,9 +9,9 @@ Computes, at a grid of substrate parameters q:
   • Phi(q)    = (q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1) / (2(q+1)^2)
                                                    — q-AND amplitude
   • Gram matrix G(q) on NF basis {γ, σ₀, σ₁, L₊, L₋, e⁻}
-  • Min eigenvalue λ_min(G(q))
-  • G·t vector for t = Markov-trace row vector (canonical confined
-    witness); verifies LP-stability component-wise for q > q⋆.
+  • Full eigenvalue spectrum of G(q); min and max eigenvalues
+  • Gram condition number κ(G) = λ_max(G) / |λ_min(G)| (positive
+    definition consistent with the manuscript proposition)
 
 The golden-ratio threshold is q⋆ = 1/φ² = (3-√5)/2 ≈ 0.382 — the
 real zero of P_{7,7}(q) in (0, ∞). Substrate q₀ ≈ 1.110 sits well
@@ -161,7 +161,7 @@ def main():
             "gram_eigenvalues": evals,
             "gram_lambda_min": evals[0],
             "gram_lambda_max": evals[-1],
-            "gram_condition": evals[-1] / evals[0] if evals[0] != 0 else float("inf"),
+            "gram_condition": evals[-1] / abs(evals[0]) if evals[0] != 0 else float("inf"),
             "P_77_sign": "+" if toffoli_diagonal(q) > 0 else ("0" if toffoli_diagonal(q) == 0 else "-"),
             "Phi_sign": "+" if q_and_amplitude(q) > 0 else ("0" if q_and_amplitude(q) == 0 else "-"),
         }

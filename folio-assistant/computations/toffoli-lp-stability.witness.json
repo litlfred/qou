@@ -2,8 +2,8 @@
   "computation": "toffoli-lp-stability",
   "description": "LP-dual stability of the q-Toffoli braid: P_{7,7}(q), \u03a6(q), Gram spectrum on a q-grid spanning the golden-ratio threshold q\u22c6 = 1/\u03c6\u00b2.",
   "label": "prop:toffoli-lp-stability",
-  "timestamp": "2026-04-17T19:16:21.749220+00:00",
-  "git_sha": "1152c3d7636dc6dce96adb5f979fe09c93812601",
+  "timestamp": "2026-04-17T20:18:13.317138+00:00",
+  "git_sha": "555b846893b01c6615bd15f68fef04b585a27eb7",
   "constants": {
     "phi_golden": 1.618033988749895,
     "q_star": 0.38196601125010515,
@@ -89,7 +89,7 @@
       ],
       "gram_lambda_min": -0.6474620159422558,
       "gram_lambda_max": 1.286767057817947,
-      "gram_condition": -1.9874016175996152,
+      "gram_condition": 1.9874016175996152,
       "P_77_sign": "-",
       "Phi_sign": "+"
     },
@@ -107,7 +107,7 @@
       ],
       "gram_lambda_min": -0.41815681400581534,
       "gram_lambda_max": 1.3574187656570431,
-      "gram_condition": -3.2461954945882225,
+      "gram_condition": 3.2461954945882225,
       "P_77_sign": "-",
       "Phi_sign": "+"
     },
@@ -125,7 +125,7 @@
       ],
       "gram_lambda_min": -0.28944271909999153,
       "gram_lambda_max": 1.4049844718999243,
-      "gram_condition": -4.854101966249686,
+      "gram_condition": 4.854101966249686,
       "P_77_sign": "0",
       "Phi_sign": "+"
     },
@@ -143,7 +143,7 @@
       ],
       "gram_lambda_min": -0.04961623815755911,
       "gram_lambda_max": 1.5120768273821472,
-      "gram_condition": -30.475442789122052,
+      "gram_condition": 30.475442789122052,
       "P_77_sign": "+",
       "Phi_sign": "+"
     },
@@ -161,7 +161,7 @@
       ],
       "gram_lambda_min": -0.27689749874270536,
       "gram_lambda_max": 1.774206224668831,
-      "gram_condition": -6.407447639378762,
+      "gram_condition": 6.407447639378762,
       "P_77_sign": "+",
       "Phi_sign": "-"
     },
@@ -179,7 +179,7 @@
       ],
       "gram_lambda_min": -0.5912449272277033,
       "gram_lambda_max": 2.1739142550715242,
-      "gram_condition": -3.676842125757969,
+      "gram_condition": 3.676842125757969,
       "P_77_sign": "+",
       "Phi_sign": "-"
     },
@@ -197,7 +197,7 @@
       ],
       "gram_lambda_min": -0.7813039515175443,
       "gram_lambda_max": 2.5077071744833215,
-      "gram_condition": -3.2096435319603147,
+      "gram_condition": 3.2096435319603147,
       "P_77_sign": "+",
       "Phi_sign": "-"
     },
@@ -215,7 +215,7 @@
       ],
       "gram_lambda_min": -0.838525491562421,
       "gram_lambda_max": 2.6250000000000004,
-      "gram_condition": -3.130495168499707,
+      "gram_condition": 3.130495168499707,
       "P_77_sign": "+",
       "Phi_sign": "0"
     },
@@ -233,7 +233,7 @@
       ],
       "gram_lambda_min": -0.8931930998835935,
       "gram_lambda_max": 2.7451837314809846,
-      "gram_condition": -3.0734493267343357,
+      "gram_condition": 3.0734493267343357,
       "P_77_sign": "+",
       "Phi_sign": "+"
     },
@@ -251,7 +251,7 @@
       ],
       "gram_lambda_min": -0.9557345134563312,
       "gram_lambda_max": 2.8930702013515166,
-      "gram_condition": -3.0270646927764266,
+      "gram_condition": 3.0270646927764266,
       "P_77_sign": "+",
       "Phi_sign": "+"
     },
@@ -269,7 +269,7 @@
       ],
       "gram_lambda_min": -1.090627261766464,
       "gram_lambda_max": 3.253498411014521,
-      "gram_condition": -2.983144218992751,
+      "gram_condition": 2.983144218992751,
       "P_77_sign": "+",
       "Phi_sign": "+"
     },
@@ -287,7 +287,7 @@
       ],
       "gram_lambda_min": -1.300906239716357,
       "gram_lambda_max": 3.946511184000782,
-      "gram_condition": -3.0336630446643555,
+      "gram_condition": 3.0336630446643555,
       "P_77_sign": "+",
       "Phi_sign": "+"
     },
@@ -305,7 +305,7 @@
       ],
       "gram_lambda_min": -1.6416016463590077,
       "gram_lambda_max": 5.501448342348181,
-      "gram_condition": -3.3512687773858687,
+      "gram_condition": 3.3512687773858687,
       "P_77_sign": "+",
       "Phi_sign": "+"
     },
@@ -323,7 +323,7 @@
       ],
       "gram_lambda_min": -2.1437070871184916,
       "gram_lambda_max": 9.165203014682673,
-      "gram_condition": -4.275398943146786,
+      "gram_condition": 4.275398943146786,
       "P_77_sign": "+",
       "Phi_sign": "+"
     }

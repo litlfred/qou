@@ -86,8 +86,9 @@ The Gram matrix $G$ over $H_3(q)$ has characteristic polynomial
 whose eigenvalue crossings are controlled by the discriminant
 of the Hecke relation $(T - q)(T + q^{-1}) = 0$. The smallest
 eigenvalue $\lambda_{\min}(G(q))$ is a continuous function of
-$q$ that becomes negative exactly when the standard
-representation channel develops an indefinite pairing.
+$q$ and, in the computed witness scan, remains negative
+throughout the sampled domain, consistent with the standard
+representation channel carrying an indefinite pairing.
 
 Write $T_q$ in the NF basis. The target-flip amplitude
 $P_{7,6}(q) = \Phi(q)$ determines the off-diagonal mass
@@ -126,7 +127,7 @@ $\kappa(G(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$, which
 is finite on $q > 1$. At $q_0 \approx 1.110$ the witness
 gives $\kappa(G(q_0)) \approx 3.03$ and
 $\lambda_{\min}(G(q_0)) \approx -0.956$
-([`toffoli-lp-stability.witness.json`](`toffoli-lp-stability.witness.json`)). $\square$
+(`toffoli-lp-stability.witness.json`). $\square$
 
 **Physical consequence.**
 The substrate parameter $q_0 \approx 1.110$ lies comfortably in

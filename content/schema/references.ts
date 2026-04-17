@@ -1423,8 +1423,7 @@ export const references: CSLData[] = [
     type: "chapter",
     title: "QGoL: A Quantum Game of Life",
     author: [
-      { family: "Peña", given: "G." },
-      { family: "et al." },
+      { literal: "Peña et al." },
     ],
     "container-title":
       "Advances in Quantum Computation and Quantum Cellular Automata",
