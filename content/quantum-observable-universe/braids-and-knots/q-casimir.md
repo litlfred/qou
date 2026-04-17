@@ -5,16 +5,26 @@ irreducible encodes the categorical $q$-angular momentum.
 
 **Definition.**
 Inside $\mathcal{U}_q(\mathfrak{su}(2))$ with generators $E, F, K,
-K^{-1}$ and parameter $q \neq 1$, the **$q$-Casimir element** is
+K^{-1}$ and parameter $q$ satisfying $q^2 \neq 1$ (so that
+$q - q^{-1}$ is invertible), the **(normalised) $q$-Casimir element**
+is
 
 $$
-  C_q  =  F E  +  \frac{q\,K + q^{-1} K^{-1}}{(q - q^{-1})^2}
-      =  E F  +  \frac{q^{-1}\,K + q\,K^{-1}}{(q - q^{-1})^2}.
+  C_q  =  F E  +  \frac{q\,K + q^{-1} K^{-1} - (q + q^{-1})}
+                       {(q - q^{-1})^2}.
 $$
 
-Both expressions coincide as elements of
-$\mathcal{U}_q(\mathfrak{su}(2))$, because the commutation relation
-$[E, F] = (K - K^{-1})/(q - q^{-1})$ rearranges the quadratic part.
+The subtraction of $(q + q^{-1})$ in the numerator is the standard
+normalisation (Kassel VI.4): it ensures the eigenvalue vanishes on
+the trivial representation and has a finite classical limit $q \to 1$.
+Using the commutation relation
+$[E, F] = (K - K^{-1})/(q - q^{-1})$, the element is equivalently
+
+$$
+  C_q  =  E F  +  \frac{q^{-1}\,K + q\,K^{-1} - (q + q^{-1})}
+                        {(q - q^{-1})^2}.
+$$
+
 The element is **central**: it commutes with each generator, i.e.
 $C_q E = E C_q$, $C_q F = F C_q$, and $C_q K = K C_q$.
 
