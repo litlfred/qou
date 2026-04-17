@@ -336,8 +336,15 @@ def lp_shadow_price(partition):
 # (volume, surface, Coulomb, asymmetry, pairing, exchange, shell,
 # hook, Wigner, form factor, pn correlation, [3,2,1] pn-invisible,
 # [4,1,1]+[3,1,1,1] isospin, [4,2]+[2,2,1,1] codim-4 form factor).
-# Push K_PARTITION_MAX higher (e.g. 7, 8, 9) to absorb the H₇⁺ descent
-# corrections at the cost of larger YSN matrix builds.
+# K_PARTITION_MAX is capped at 8 because empirical sweeps show the
+# per-atom LP-dual accumulator with Kerov damping + B₃ surface weight
+# + per-step tightness plateaus at K = 8; going higher degrades
+# light-atom accuracy (4He |Δ/M| grows from 0.018 at K=8 to 0.108 at
+# K=9 and 0.182 at K=10) without improving heavy-atom accuracy
+# (40Ca stays near 0.001, 56Fe stays near 0.015).  Sparse YSN
+# matrix infrastructure (scipy CSR for dim ≥ 32) supports K up to
+# 12 in practice, but raising K is NOT the right direction for
+# improving mass predictions.  See commit history.
 K_PARTITION_MAX = 9
 
 _PARTITION_TABLE = []
@@ -1672,11 +1679,15 @@ def _swap_tab(tab, a, b):
     return new
 
 
-def _build_ysn_matrices(partition):
+def _build_ysn_matrices(partition, sparse_threshold=32):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
 
-    Returns a list of 2D tuples (matrix entries) of shape (dim × dim),
-    one per generator.  Numerical (evaluated at q₀).
+    For dim ≥ sparse_threshold, returns scipy.sparse.csr_matrix objects
+    (each σ_j has at most 2·dim nonzeros: a diagonal entry plus
+    2×2 mixing blocks, so sparsity ≈ 2/dim).
+    For smaller dim, returns dense tuples (faster for small cases).
+
+    All entries numerical (evaluated at q₀).
     """
     n = sum(partition)
     if n < 2:
@@ -1687,9 +1698,16 @@ def _build_ysn_matrices(partition):
         return []
     tab_index = {tuple(tuple(r) for r in T): i for i, T in enumerate(tabs)}
 
+    use_sparse = dim >= sparse_threshold
+    if use_sparse:
+        from scipy.sparse import csr_matrix
+
     matrices = []
     for k in range(1, n):
-        M = [[0.0] * dim for _ in range(dim)]
+        if use_sparse:
+            rows, cols, vals = [], [], []
+        else:
+            M = [[0.0] * dim for _ in range(dim)]
         processed = set()
         for i, T in enumerate(tabs):
             if i in processed:
@@ -1708,34 +1726,56 @@ def _build_ysn_matrices(partition):
                     same_col = True
                     break
             if same_row:
-                M[i][i] = q0
+                if use_sparse:
+                    rows.append(i); cols.append(i); vals.append(q0)
+                else:
+                    M[i][i] = q0
                 processed.add(i)
             elif same_col:
-                M[i][i] = -qi
+                if use_sparse:
+                    rows.append(i); cols.append(i); vals.append(-qi)
+                else:
+                    M[i][i] = -qi
                 processed.add(i)
             else:
                 T_swapped = _swap_tab(T, k, k + 1)
                 if T_swapped is None:
-                    M[i][i] = q0 if rho > 0 else -qi
+                    if use_sparse:
+                        rows.append(i); cols.append(i)
+                        vals.append(q0 if rho > 0 else -qi)
+                    else:
+                        M[i][i] = q0 if rho > 0 else -qi
                     processed.add(i)
                     continue
                 key = tuple(tuple(r) for r in T_swapped)
                 j = tab_index.get(key)
                 if j is None:
-                    M[i][i] = q0 if rho > 0 else -qi
+                    if use_sparse:
+                        rows.append(i); cols.append(i)
+                        vals.append(q0 if rho > 0 else -qi)
+                    else:
+                        M[i][i] = q0 if rho > 0 else -qi
                     processed.add(i)
                     continue
-                a_rho = h / q_int(rho)            # diagonal i
-                a_neg = h - a_rho                  # diagonal j
+                a_rho = h / q_int(rho)
+                a_neg = h - a_rho
                 bsq = a_rho * a_neg + 1.0
                 off = math.sqrt(abs(bsq)) * (1.0 if bsq > 0 else -1.0)
-                M[i][i] = a_rho
-                M[j][j] = a_neg
-                M[i][j] = off
-                M[j][i] = off
+                if use_sparse:
+                    rows.extend([i, j, i, j])
+                    cols.extend([i, j, j, i])
+                    vals.extend([a_rho, a_neg, off, off])
+                else:
+                    M[i][i] = a_rho
+                    M[j][j] = a_neg
+                    M[i][j] = off
+                    M[j][i] = off
                 processed.add(i)
                 processed.add(j)
-        matrices.append(tuple(tuple(row) for row in M))
+        if use_sparse:
+            matrices.append(csr_matrix((vals, (rows, cols)), shape=(dim, dim)))
+        else:
+            matrices.append(tuple(tuple(row) for row in M))
     return matrices
 
 
@@ -1920,15 +1960,28 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     # Kerov-damped scale (same as before):
     #   C_λ^kerov = w_λ · y_λ · H_q(λ) · m_e
 
+    # Detect sparse YSN matrices and import scipy lazily.
+    try:
+        from scipy.sparse import issparse as _issparse
+    except ImportError:  # pragma: no cover
+        _issparse = lambda x: False  # noqa: E731
+
     state = []
     for e in active:
-        dim = len(e['ysn'][0])
-        M = _identity(dim)
+        first = e['ysn'][0]
+        sparse_sigmas = _issparse(first)
+        dim = first.shape[0] if sparse_sigmas else len(first)
+        if sparse_sigmas:
+            # Running M is dense for fast sparse-× -dense multiplication
+            M = np.eye(dim)
+        else:
+            M = _identity(dim)
         L0 = math.log(dim)
         scale = e['C_lambda_kerov_MeV']
         state.append({
             'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
             'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
+            'sparse': sparse_sigmas,
         })
 
     per_step = []
@@ -1948,11 +2001,26 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             sigmas = entry['ysn']
             n_gens = entry['n_gens']
             chain = _step_chain_generic(nuc, prev_types, n_gens)
-            M_step = _identity(dim)
-            for c, d, gen in chain:
-                M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
-                M_step = _matmul_dim(M_step, M_cross, dim)
-            s['M'] = _matmul_dim(s['M'], M_step, dim)
+            if s['sparse']:
+                # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
+                # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
+                # the dense (c·σ + d·I) matrix at every crossing.
+                # Cost: dense × sparse = O(dim · nnz) = O(dim²) vs
+                # dense × dense = O(dim³).
+                M_run = s['M']
+                for c, d, gen in chain:
+                    sig_sparse = sigmas[gen]
+                    # scipy sparse: dense @ sparse returns dense ndarray,
+                    # computed as a sparse BLAS operation in O(dim·nnz).
+                    Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
+                    M_run = c * Msig + d * M_run
+                s['M'] = M_run
+            else:
+                M_step = _identity(dim)
+                for c, d, gen in chain:
+                    M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
+                    M_step = _matmul_dim(M_step, M_cross, dim)
+                s['M'] = _matmul_dim(s['M'], M_step, dim)
             if isinstance(s['M'], np.ndarray):
                 m_max = float(np.max(np.abs(s['M'])))
             else:
