@@ -27,10 +27,13 @@ $$
   C_q \big|_{V_j}  =  [j]_q\,[j+1]_q\,\mathrm{id}_{V_j},
 $$
 
-which is the **$q$-Casimir eigenvalue** already defined as
-`qCasimir` in [def:q-angular-momentum](#def:q-angular-momentum).
-In the classical limit $q \to 1$ this recovers the usual Casimir
-$C = F E + \tfrac12 H (\tfrac12 H + 1)$ with eigenvalue $j(j+1)$.
+with $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ the symmetric $q$-number.
+This scalar is the **$q$-Casimir eigenvalue**; the downstream block
+[def:q-angular-momentum](#def:q-angular-momentum) specialises this
+eigenvalue to define $J_q^2(K) = [j]_q\,[j+1]_q$ as the
+$q$-angular momentum of a knot.  In the classical limit $q \to 1$
+it recovers the usual Casimir $C = FE + \tfrac12 H(\tfrac12 H + 1)$
+with eigenvalue $j(j+1)$.
 
 **Role in the categorical framework.**
 Because $C_q$ is central, it descends to an endomorphism of the

@@ -65,36 +65,28 @@ class QCasimirCentral (qs : QuantumSu2) : Prop where
   /-- C_q commutes with K. -/
   comm_K : QCasimir qs * qs.K = qs.K * QCasimir qs
 
+/-- Symmetric q-number `[n]_q = (qⁿ - q⁻ⁿ) / (q - q⁻¹)` — the standard
+    convention for the q-Casimir on 𝒰_q(𝔰𝔲(2)).  Distinguish from the
+    asymmetric `QuantumSu2.qInt` (`(qⁿ - 1)/(q - 1)`). -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+noncomputable def qNumberSym (q : R_q) (n : R_q) : R_q :=
+  (q ^ n - q ^ (-n)) / (q - q ^ (-(1 : R_q)))
+
 /-- Eigenvalue of the q-Casimir on the spin-j irreducible.
 
     On the highest-weight module `V_j`, the central element `QCasimir qs`
-    acts as the scalar `[j]_q · [j+1]_q`.  This matches the
-    `qCasimir` function defined in `q-angular-momentum.lean` and
-    justifies calling the latter the "q-Casimir eigenvalue". -/
+    acts as the scalar `[j]_q · [j+1]_q` with the **symmetric** q-number
+    `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)`.  Downstream, `QAngularMomentum`
+    specialises this formula to knot representations. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-noncomputable def QCasimirEigenvalue (qs : QuantumSu2) (j : ℕ) : R_q :=
-  qs.qInt j * qs.qInt (j + 1)
+noncomputable def QCasimirEigenvalue (qs : QuantumSu2) (j : R_q) : R_q :=
+  qNumberSym qs.q j * qNumberSym qs.q (j + 1)
 
-/-- Sanity check: on the trivial (spin-0) representation the eigenvalue
-    vanishes, because `[0]_q = 0` and so the product `[0]_q · [1]_q = 0`. -/
+/-- Sanity check: `[0]_q = 0` in the symmetric convention. -/
 -- Ref: [kassel1995]
-theorem QCasimirEigenvalue_trivial (qs : QuantumSu2) :
-    QCasimirEigenvalue qs 0 = 0 := by
-  unfold QCasimirEigenvalue QuantumSu2.qInt
-  simp
-
-/-- Sanity check: on the spin-½ representation (here encoded as j = 1
-    in half-integer units where `[1]_q = 1`, `[2]_q = q + 1`), the
-    q-Casimir eigenvalue equals `q + 1`.  For the genuine half-integer
-    spin-½ value `[1/2]_q · [3/2]_q`, the specialisation lives in
-    `QAngularMomentum.spin_half_casimir_q1110`. -/
--- Ref: [kassel1995]
-theorem QCasimirEigenvalue_j_one (qs : QuantumSu2) :
-    QCasimirEigenvalue qs 1 = qs.q + 1 := by
-  unfold QCasimirEigenvalue
-  rw [qs.qInt_one, qs.qInt_two]
-  ring
+theorem qNumberSym_zero (q : R_q) : qNumberSym q 0 = 0 := by
+  unfold qNumberSym; simp
 
 end
 
