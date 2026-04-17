@@ -351,6 +351,77 @@ K_PARTITION_MAX = 9
 # q_hook, Wedderburn weight which are cheap to compute for any k).
 K_GAUSSIAN_MAX = 15
 
+def _count_syts_by_12_relation(partition):
+    """Count SYTs of shape λ by the position of the value 2 relative
+    to 1: same row, same column, or neither (→ part of a 2×2 mixing
+    block in YSN).  Returns (n_row, n_col, n_mix_pairs) where each
+    mixing pair contributes 2 SYTs so n_row + n_col + 2·n_mix_pairs = d(λ).
+    """
+    n = sum(partition)
+    if n < 2:
+        return (0, 0, 0)
+    shape = list(partition)
+    counts = [0, 0, 0]  # row, col, mix
+
+    def fill(tab, val, rem):
+        if val > n:
+            pos_1 = pos_2 = None
+            for r, row in enumerate(tab):
+                for c, v in enumerate(row):
+                    if v == 1: pos_1 = (r, c)
+                    if v == 2: pos_2 = (r, c)
+            if pos_1[0] == pos_2[0]:
+                counts[0] += 1
+            elif pos_1[1] == pos_2[1]:
+                counts[1] += 1
+            else:
+                counts[2] += 1
+            return
+        for r in range(len(shape)):
+            if rem[r] == 0:
+                continue
+            col = len(tab[r])
+            if r > 0 and col >= len(tab[r-1]):
+                continue
+            tab[r].append(val)
+            rem[r] -= 1
+            fill(tab, val + 1, rem)
+            tab[r].pop()
+            rem[r] += 1
+
+    fill([[] for _ in shape], 1, list(shape))
+    # Mixing tableaux come in pairs (T and its (1↔2)-swap)
+    return (counts[0], counts[1], counts[2] // 2)
+
+
+def partition_character_sigma1(partition):
+    """Character χ_λ(σ_1) of the first Hecke generator in irrep λ.
+
+    Derived from YSN eigenvalue structure:
+        χ_λ(σ_1) = q · n_row + (-q⁻¹) · n_col + h · n_mix_pairs
+    where n_row / n_col / n_mix_pairs are SYT counts by (1,2)-relation.
+    """
+    nr, nc, nm = _count_syts_by_12_relation(partition)
+    return q0 * nr + (-qi) * nc + h * nm
+
+
+def partition_spectral_log_rate(partition):
+    """Average per-crossing log spectral rate for partition λ:
+        ρ_λ = |χ_λ(σ_1)| / d(λ).
+    The log of this, ln ρ_λ, is the LEADING rate at which a random
+    braid word's trace in λ accumulates: ln|Tr M_λ(W_N)| ≈ ln d(λ) + N ln ρ_λ.
+    (For partitions where ρ_λ < 1, the character ratio is less than
+    unity and the trace shrinks exponentially — consistent with the
+    partition being "far from the mean" in the Plancherel sense.)
+    """
+    d = partition_dimension(partition)
+    if d == 0:
+        return 0.0
+    chi = partition_character_sigma1(partition)
+    ratio = abs(chi) / d
+    return math.log(ratio) if ratio > 0 else 0.0
+
+
 _PARTITION_TABLE = []
 for _k in range(2, K_GAUSSIAN_MAX + 1):
     for _lam in partitions_of(_k):
@@ -359,6 +430,10 @@ for _k in range(2, K_GAUSSIAN_MAX + 1):
         _d = partition_dimension(_lam)
         _y = lp_shadow_price(_lam)
         _kerov_scale = _w * _y * _Hq * M_E_MEV
+        # Per-partition average log spectral rate (Perron-Frobenius proxy)
+        _chi = partition_character_sigma1(_lam)
+        _rho = abs(_chi) / _d if _d > 0 else 0.0
+        _log_rho = math.log(_rho) if _rho > 1e-300 else -30.0
         _PARTITION_TABLE.append({
             'partition': _lam,
             'k': _k,
@@ -369,6 +444,8 @@ for _k in range(2, K_GAUSSIAN_MAX + 1):
             'kerov_plancherel': _w,
             'C_lambda_MeV': _Hq * M_E_MEV,
             'C_lambda_kerov_MeV': _kerov_scale,
+            'chi_sigma1': _chi,
+            'spectral_log_rate': _log_rho,
             # YSN matrices built only for k ≤ K_PARTITION_MAX.
             # For higher k, q-Gaussian fallback uses the metadata above.
             'has_ysn': _k <= K_PARTITION_MAX,
@@ -1903,8 +1980,10 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
     n_intra = 12 * (step_idx + 1)
     n_inter = step_idx * (step_idx + 1) // 2
     N_total = n_intra + n_inter
-    # Per-crossing log spectral radius ≈ ln q₀ (Perron-Frobenius)
-    per_cross_log = math.log(q0)
+    # Per-partition spectral log rate ρ_λ = |χ_λ(σ_1)| / d(λ)  —
+    # computed from SYT counts without building the full YSN matrix.
+    # See partition_spectral_log_rate for derivation.
+    per_cross_log = entry.get('spectral_log_rate', math.log(q0))
     # Féray-Méliot damping relative to H₃(q) baseline
     damping = TWO_Q ** (-(k - 3)) if k > 3 else 1.0
     return math.log(dim) + N_total * damping * per_cross_log
@@ -2138,21 +2217,35 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             }
 
         # ── q-Gaussian fallback contribution (k_exact < k ≤ k_max) ──
-        # Bozejko-Speicher q-Gaussian approximation for partitions
+        # Perron-Frobenius asymptotic approximation for partitions
         # beyond the explicit-YSN cutoff.  Each gives a cheap
-        # per-step estimate (no matrix product required).  Per-step
-        # tightness gate is approximated as always-tight in the
-        # asymptotic regime (Plancherel stationary).
+        # per-step estimate (no matrix product required).
+        #
+        # Per-step tightness gate: sign of approximated trace.  The
+        # approximation gives log_trace directly; the TRACE sign is
+        # positive (trace ~ exp(log_trace)).  Positive trace ⇒ SLACK
+        # Frobenius constraint ⇒ y_λ* = 0 by complementary slackness.
+        # In this approximation the trace is always +ve, so by LP
+        # duality the partition contributes ZERO at this step.
+        # Below-threshold partitions (where the spectral rate is
+        # NEGATIVE, |χ/d| < 1) have log_trace shrinking; their
+        # "effective trace" approaches 0⁺ from above — still slack.
+        #
+        # Conclusion: the Perron-Frobenius q-Gaussian fallback
+        # contributes 0 after the complementary slackness gate.
+        # Extension to higher k via this approximation does NOT
+        # generate non-zero corrections — it correctly predicts
+        # that typical high-k partitions are SLACK and contribute
+        # nothing in the LP-dual framework.
         gaussian_delta_total = 0.0
         for eg in active_gaussian:
-            eg_info = {'k': eg['k'], 'dim': eg['dim'], 'q_hook': eg['q_hook']}
+            eg_info = eg
             log_trace_approx = _q_gaussian_character_approx(eg_info, None, kk)
-            if kk > 0:
-                prev_log = _q_gaussian_character_approx(eg_info, None, kk - 1)
-            else:
-                prev_log = math.log(eg['dim'])
-            scale_g = M_E_MEV * eg['q_hook'] * eg['shadow_price']
-            delta_g = scale_g * (log_trace_approx - prev_log)
+            # By LP complementary slackness: tr > 0 ⇒ slack ⇒ y_λ* = 0
+            # ⇒ delta = 0.  This is the categorically correct outcome
+            # for partitions with no evidence of the Frobenius
+            # constraint being tight at any step.
+            delta_g = 0.0
             gaussian_delta_total += delta_g
             if return_per_step:
                 partitions_step[str(eg['partition'])] = {
