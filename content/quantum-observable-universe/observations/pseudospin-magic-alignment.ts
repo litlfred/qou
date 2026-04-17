@@ -5,6 +5,10 @@ export default remark({
   title:
     "Alignment with Ding et al.\\ (2026): pseudospin symmetry from the resolution scale",
   interprets: "prop:magic-numbers-from-q",
+  lean: {
+    decl: "QOU.Observations.PseudospinMagicAlignment",
+    validation: "not_checked",
+  },
   uses: [
     "prop:magic-numbers-from-q",
     "prop:nuclear-shell-intruder",

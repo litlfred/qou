@@ -5,6 +5,10 @@ export default remark({
   title:
     "Islands of stability from the $N = 7$ Borromean intruder",
   interprets: "prop:nuclear-shell-intruder",
+  lean: {
+    decl: "QOU.Observations.IslandsOfStabilityFromQ",
+    validation: "not_checked",
+  },
   uses: [
     "prop:nuclear-shell-intruder",
     "prop:integer-stability",
