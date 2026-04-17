@@ -691,50 +691,56 @@ theorem QCasimir_central (qs : QuantumSu2) (d : QCasimirData qs)
     (QCasimir qs d * qs.K = qs.K * QCasimir qs d) :=
   ⟨QCasimir_comm_E qs d, QCasimir_comm_F qs d, QCasimir_comm_K qs d⟩
 
-/-! ## The symmetric q-number and eigenvalue -/
+/-! ## The symmetric q-number and eigenvalue
 
-/-- Symmetric q-number `[n]_q = (qⁿ - q⁻ⁿ) / (q - q⁻¹)` — the standard
-    convention for the q-Casimir on 𝒰_q(𝔰𝔲(2)).  Distinguish from the
-    asymmetric `QuantumSu2.qInt` (`(qⁿ - 1)/(q - 1)`).
+    These objects live over a *field* because the defining formula
+    involves division by `q - q⁻¹`.  The ground ring `R_q` is only
+    a commutative ring, so we do **not** define these functions on
+    `R_q` itself; instead we parameterise by a field `K` (typically
+    the fraction field of `R_q` or `ℝ` / `ℂ` after specialising the
+    indeterminate).  The spin parameter is `n : ℤ` (integer spin)
+    or `n : ℤ` interpreting `n = 2·spin` for half-integer cases.
 
-    Note: the `^` here is the generic ring power; in concrete settings
-    (e.g. after specialising to `ℝ` or after localising), `[n]_q`
-    coincides with the geometric-series expansion
-    `q^{n-1} + q^{n-3} + … + q^{-(n-1)}`. -/
+    The `q ^ n` below is the `zpow` of the `GroupWithZero` structure
+    induced by any `Field`, taking `q ≠ 0`. -/
+
+/-- Symmetric q-number over any field: `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)`.
+    Requires `q ≠ 0` implicitly (via `zpow`) and `q² ≠ 1` for the
+    denominator to be nonzero.  Distinguish from the asymmetric
+    `QuantumSu2.qInt` (`(qⁿ - 1)/(q - 1)`). -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-def qNumberSym (q : R_q) (n : R_q) : R_q :=
-  (q ^ n - q ^ (-n)) / (q - q ^ (-(1 : R_q)))
+noncomputable def qNumberSym {K : Type*} [Field K] (q : K) (n : ℤ) : K :=
+  (q ^ n - q ^ (-n)) / (q - q⁻¹)
 
-/-- Eigenvalue of the q-Casimir on the spin-`j` irreducible.
+/-- Eigenvalue of the q-Casimir on the integer-spin irreducible `V_j`.
 
     On the highest-weight module `V_j` (with convention
-    `K v_j = q^{2j} v_j`), the central element `QCasimir qs d` acts
-    as the scalar `[j]_q · [j+1]_q` with the symmetric q-number.
-    Downstream, `QAngularMomentum` specialises this formula to knot
-    representations.  The parameter `j` ranges over `R_q` to
-    accommodate half-integer spins. -/
+    `K v_j = q^{2j} v_j`), the normalised q-Casimir acts as the
+    scalar `[j]_q · [j+1]_q`.  For half-integer spins, reparametrise
+    using `q^{1/2}` (Kassel §VI.4); the integer case below handles
+    the representation-theoretic content after this reparametrisation. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-def QCasimirEigenvalue (qs : QuantumSu2) (j : R_q) : R_q :=
-  qNumberSym qs.q j * qNumberSym qs.q (j + 1)
+noncomputable def QCasimirEigenvalue {K : Type*} [Field K] (q : K) (j : ℤ) : K :=
+  qNumberSym q j * qNumberSym q (j + 1)
 
 /-- Sanity check: `[0]_q = 0` in the symmetric convention. -/
 -- Ref: [kassel1995]
-theorem qNumberSym_zero (q : R_q) : qNumberSym q 0 = 0 := by
+theorem qNumberSym_zero {K : Type*} [Field K] (q : K) : qNumberSym q 0 = 0 := by
   unfold qNumberSym; simp
 
 /-- Sanity check: the eigenvalue on the trivial representation `V_0`
     vanishes — exactly the normalisation chosen in `QCasimir`. -/
 -- Ref: [kassel1995]
-theorem QCasimirEigenvalue_zero (qs : QuantumSu2) :
-    QCasimirEigenvalue qs 0 = 0 := by
+theorem QCasimirEigenvalue_zero {K : Type*} [Field K] (q : K) :
+    QCasimirEigenvalue q 0 = 0 := by
   unfold QCasimirEigenvalue
   rw [qNumberSym_zero]
   ring
 
 /-- Negation-antisymmetry of the symmetric q-number: `[-n]_q = -[n]_q`. -/
 -- Ref: [kassel1995] §VI.4
-theorem qNumberSym_neg (q : R_q) (n : R_q) :
+theorem qNumberSym_neg {K : Type*} [Field K] (q : K) (n : ℤ) :
     qNumberSym q (-n) = -qNumberSym q n := by
   unfold qNumberSym
   have : q ^ (-(-n)) = q ^ n := by rw [neg_neg]
@@ -746,34 +752,48 @@ theorem qNumberSym_neg (q : R_q) (n : R_q) :
     Reflects the Weyl-symmetry `j ↔ -j-1` of `j(j+1)` in the
     classical limit. -/
 -- Ref: [kassel1995] §VI.4
-theorem QCasimirEigenvalue_weyl (qs : QuantumSu2) (j : R_q) :
-    QCasimirEigenvalue qs j = QCasimirEigenvalue qs (-(j + 1)) := by
+theorem QCasimirEigenvalue_weyl {K : Type*} [Field K] (q : K) (j : ℤ) :
+    QCasimirEigenvalue q j = QCasimirEigenvalue q (-(j + 1)) := by
   unfold QCasimirEigenvalue
   -- Rewrite the argument of the second factor: -(j+1) + 1 = -j
-  have hArg : (-(j + 1) : R_q) + 1 = -j := by ring
+  have hArg : -(j + 1) + 1 = -j := by ring
   rw [hArg]
-  -- Both `-(j+1)` and `-j` give a sign flip via `qNumberSym_neg`
-  rw [qNumberSym_neg qs.q (j + 1), qNumberSym_neg qs.q j]
-  -- `(-a) * (-b) = b * a` in the commutative ring `R_q`
+  rw [qNumberSym_neg q (j + 1), qNumberSym_neg q j]
   ring
 
 /-! ## Classical limit -/
 
-/-- **Classical limit (statement)**: as `q → 1`, the eigenvalue
-    `[j]_q · [j+1]_q` converges to the classical Casimir `j(j+1)`.
+open Filter Topology
 
-    This is the q → 1 instance of L'Hôpital applied twice to
-    `qNumberSym`; the same pattern as `QAngularMomentum`'s
-    `qCasimir_classical_limit`.  Stated in `Filter.Tendsto` form
-    so it can be specialised after extending scalars to `ℝ`. -/
+/-- **Classical limit**: as `q → 1`, the symmetric q-number `[n]_q`
+    converges to `n`.  Standard L'Hôpital on `ℝ`: over a
+    punctured neighbourhood of `1`, the geometric-series expansion
+    `(q^n - q^{-n})/(q - q⁻¹) = q^{-(n-1)}·(q^{2n} - 1)/(q² - 1)` is
+    a ratio of polynomials with common factor `q - 1` that cancels,
+    leaving `n` at `q = 1`. -/
 -- Ref: [kassel1995] §VI.4
 -- Ref: [lusztig1993]
-theorem QCasimirEigenvalue_classical_limit (qs : QuantumSu2) (j : R_q) :
-    -- lim_{q → 1} qNumberSym q j · qNumberSym q (j+1) = j · (j+1)
-    -- proved in concrete specialisations (e.g. `R_q ↪ ℝ`) by L'Hôpital.
-    qNumberSym 1 0 = 0 := by
-  -- Ref: [kassel1995]
-  exact qNumberSym_zero 1
+theorem qNumberSym_classical_limit (n : ℤ) :
+    Tendsto (fun q : ℝ => qNumberSym q n) (𝓝[≠] 1) (𝓝 (n : ℝ)) := by
+  -- Ref: [kassel1995] §VI.4 — polynomial form of the symmetric q-number
+  -- after cancellation has a removable singularity at q = 1 evaluating
+  -- to n.  Full proof uses continuity of polynomials + L'Hôpital.
+  sorry
+
+/-- **Classical limit of the Casimir eigenvalue**: as `q → 1`,
+    `[j]_q · [j+1]_q → j · (j+1)`.  Combines two instances of
+    `qNumberSym_classical_limit` with `Filter.Tendsto.mul`. -/
+-- Ref: [kassel1995] §VI.4
+-- Ref: [lusztig1993]
+theorem QCasimirEigenvalue_classical_limit (j : ℤ) :
+    Tendsto (fun q : ℝ => QCasimirEigenvalue q j) (𝓝[≠] 1)
+      (𝓝 ((j : ℝ) * (j + 1))) := by
+  unfold QCasimirEigenvalue
+  have hj := qNumberSym_classical_limit j
+  have hj1 := qNumberSym_classical_limit (j + 1)
+  have hCast : ((j + 1 : ℤ) : ℝ) = (j : ℝ) + 1 := by push_cast; ring
+  rw [hCast] at hj1
+  exact hj.mul hj1
 
 end
 
