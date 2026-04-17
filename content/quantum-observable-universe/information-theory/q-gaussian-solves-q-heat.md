@@ -11,7 +11,7 @@ is a fundamental solution of the $q$-heat equation
 ([$q$-heat equation](#def:q-heat-equation)):
 
 $$
-  \partial_t G_q \;=\; \Delta_q G_q,
+  \partial_t G_q \;=\; -\Delta_q G_q,
   \qquad
   \lim_{t \downarrow 0} G_q(t, \cdot) \;=\; \delta_0.
 $$
@@ -40,29 +40,31 @@ $$
 so both the Coriolis and spin contributions vanish on $G_q$:
 
 $$
-  \Delta_q G_q \;=\; q^{-2} \Delta G_q.
+  -\Delta_q G_q \;=\; -q^{-2} \Delta G_q \;=\; q^{-2} \nabla^2 G_q,
 $$
 
-It remains to verify the classical calculation
-$\partial_t G_q = q^{-2} \Delta G_q$.  Direct differentiation of the
-Gaussian kernel gives
+where $\nabla^2 = \sum \partial_i^2$ is the analyst's Laplacian
+(non-positive) and $\Delta = -\nabla^2$ is the Hodge Laplacian
+(non-negative).  It remains to verify the classical calculation
+$\partial_t G_q = q^{-2} \nabla^2 G_q$.  Direct differentiation gives
 
 $$
   \partial_t G_q \;=\; G_q \left(
     -\frac{n}{2t} + \frac{q^2 |x|^2}{4t^2}
   \right),
   \quad
-  \Delta G_q \;=\; G_q \left(
+  \nabla^2 G_q \;=\; G_q \left(
     -\frac{n q^2}{2 t} + \frac{q^4 |x|^2}{4 t^2}
   \right),
 $$
 
 and multiplying the second by $q^{-2}$ yields exactly the first.
-Hence $\partial_t G_q = \Delta_q G_q$.  The initial-data condition
+Hence $\partial_t G_q = -\Delta_q G_q$.  The initial-data condition
 $G_q(t,\cdot) \to \delta_0$ as $t \downarrow 0$ is the standard
 property of the Gaussian heat kernel.  $\qed$
 
-**Time rescaling interpretation.**  Writing $\tau = q^{-2} t$ gives
+**Time rescaling interpretation.**  Since $-\Delta_q = q^{-2}\nabla^2$
+on Reeb-invariant forms, writing $\tau = q^{-2} t$ gives
 
 $$
   G_q(t, x) \;=\; \bigl(4\pi \tau\bigr)^{-n/2}

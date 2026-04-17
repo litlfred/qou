@@ -76,17 +76,17 @@ $\mathbb{Q}_p$ the integral is replaced by a sum over Frobenius
 orbits, but $\mathcal{L}$ itself is unchanged.
 
 **Role in the $q$-heat story.**  The $q$-heat equation
-([$q$-heat equation](#def:q-heat-equation)) is turned by $\mathcal{L}$
-into a *spectral* equation on the Hopf-algebraic side: differentiation
-in $t$ becomes multiplication by $-s$, so $\partial_t u = \Delta_q u$
-transforms to
+([$q$-heat equation](#def:q-heat-equation)) $\partial_t u = -\Delta_q u$
+is turned by $\mathcal{L}$ into a spectral equation: differentiation
+in $t$ maps to multiplication by $s$ (plus initial data), so
 
 $$
-  -s  \mathcal{L}[u](s)
+  s  \hat{u}(s) - u_0
   \;=\;
-  \widehat{\Delta_q}  \mathcal{L}[u](s),
+  -\widehat{\Delta_q}  \hat{u}(s),
 $$
 
-making $\mathcal{L}[u](s) = (\widehat{\Delta_q} + s)^{-1} u_0$ — the
-*resolvent of the $q$-Laplacian*.  The heat kernel is the inverse
-Laplace of the resolvent, and lives in the archimedean realisation.
+yielding the *resolvent of the $q$-Laplacian*,
+$\hat{u}(s) = (s + \widehat{\Delta_q})^{-1} u_0$.  The heat kernel is
+the inverse Laplace of the resolvent, and lives in the archimedean
+realisation.

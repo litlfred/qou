@@ -47,9 +47,9 @@ structure CategoricalFourier (A : Type*) (Irreps : Type*) where
 def CategoricalFourier.fromLaplace
     {A Irreps : Type*}
     (L : (A → A) → ℂ → (A → A))
-    (wick : ∀ (f : A → A) (ξ : ℝ), L f (Complex.I * ξ) = L f (Complex.I * ξ))
+    (F : (A → A) → ℝ → (A → A))
+    (wick : ∀ (f : A → A) (ξ : ℝ), F f ξ = L f (Complex.I * ξ))
     : Prop :=
-  True  -- placeholder: the abstract wick-rotation compatibility holds
-        -- by construction of L and F from the same grouplike e_q.
+  ∀ (f : A → A) (ξ : ℝ), F f ξ = L f (Complex.I * ξ)
 
 end QOU

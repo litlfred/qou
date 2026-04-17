@@ -14,5 +14,6 @@ export default proposition({
     "prop:q-gaussian-solves-q-heat",
     "rem:q-laplacian-expansion",
     "rem:archimedean-realisations",
+    "def:categorical-laplace",
   ],
 });

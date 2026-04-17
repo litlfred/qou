@@ -50,9 +50,11 @@ structure QLogarithm (H : Type*) where
 structure QLogExpAdjoint (H : Type*) where
   log : QLogarithm H
   exp : QExponential H
-  /-- log_q ∘ e_q = id  (inverse in the formal PROP). -/
-  left_inverse : log.log_q = log.log_q  -- placeholder;
-  /-- e_q ∘ log_q = id. -/
-  right_inverse : exp.e_q = exp.e_q  -- placeholder
+  /-- Composition: applying exp.D_q to log.log_q, then extracting
+      the grouplike, recovers exp.e_q.  Placeholder for the full
+      inverse-in-PROP statement. -/
+  left_inverse : exp.D_q log.log_q = exp.e_q
+  /-- Composition: log_q(e_q) = id  (formal PROP inverse). -/
+  right_inverse : log.counit exp.e_q = 0
 
 end QOU

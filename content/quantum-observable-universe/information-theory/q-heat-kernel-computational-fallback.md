@@ -40,8 +40,8 @@ with the dominant $\mu_\lambda$ for the mean inter-nucleon crossing
 being the $q$-Casimir eigenvalue of the symmetric rep $\lambda = (2)$:
 
 $$
-  \mu_{(2)}(q_0) \;=\; [1]_{q_0}[2]_{q_0}  \hbar_{q_0}^2
-  \;\approx\; 0.019.
+  \mu_{(2)}(q_0) \;=\; \hbar_{q_0}^2  [1]_{q_0}[2]_{q_0}
+  \;\approx\; 0.021.
 $$
 
 More generally $\ln q_0 \approx 0.104$ used in the branch matches

@@ -7,7 +7,7 @@ The q-heat kernel decomposes over Hecke-algebra irreducibles:
 
 with the content-Casimir eigenvalue
 
-  μ_λ(q) = q⁻² Σ c(c+1) + ℏ_q² Σ [c]_q [c+1]_q.
+  μ_λ(q) = ℏ_q² Σ [c]_q [c+1]_q.
 
 LaTeX label: `prop:q-heat-kernel-peter-weyl`
 
@@ -49,19 +49,21 @@ def contentSumQCasimir (q : ℝ) (lam : YoungDiagram) : ℝ :=
   ∑ cell ∈ lam.cells,
     jacksonInt q (cell.2 - cell.1) * jacksonInt q (cell.2 - cell.1 + 1)
 
-/-- **q-Laplacian eigenvalue on Wedderburn block**:
+/-- **Reeb-spin eigenvalue on Wedderburn block**:
 
-    μ_λ(q) = q⁻² · (classical content-sum) + ℏ_q² · (q-Casimir sum). -/
+    μ_λ(q) = ℏ_q² · Σ_{□ ∈ λ} [c(□)]_q · [c(□)+1]_q.
+
+    The base-manifold eigenvalue q⁻² |k|² is separate and depends
+    on the spatial mode, not on the partition λ. -/
 -- Ref: [manuscript] §9
 def muLambda (q : ℝ) (lam : YoungDiagram) : ℝ :=
-  q^(-2 : ℤ) * (contentSumClassical lam : ℝ)
-    + (hbar_q q)^2 * contentSumQCasimir q lam
+  (hbar_q q)^2 * contentSumQCasimir q lam
 
 /-- **At q = 1** (classical limit): μ_λ reduces to the classical
     content sum (the spin term vanishes because ℏ_q = 0). -/
 -- Ref: [manuscript] §9
 theorem muLambda_classical (lam : YoungDiagram) :
-    muLambda 1 lam = (contentSumClassical lam : ℝ) := by
+    muLambda 1 lam = 0 := by
   unfold muLambda hbar_q
   simp
 

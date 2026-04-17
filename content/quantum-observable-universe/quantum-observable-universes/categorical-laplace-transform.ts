@@ -12,5 +12,6 @@ export default definition({
     "rem:adjoint-trace",
     "def:q-harmonic-form",
     "rem:base-field-independence",
+    "def:q-heat-equation",
   ],
 });

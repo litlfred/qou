@@ -13,10 +13,10 @@ LaTeX label: `def:q-heat-equation`
 
 - [manuscript] §2-quantum-observable-universes/q-heat-equation
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` — the operator equation is
-purely algebraic and holds in `End(S)` over any base ring where
-`q - 1` is invertible. Convergent solutions (heat kernel, q-Gaussian)
-are archimedean and live in `archimedean-realisations`.
+**Ground ring**: `R_q = ℤ[q, q⁻¹]`.  The operator equation is
+purely algebraic and holds in `End(S)` over `R_q`.  Convergent
+solutions (heat kernel, q-Gaussian) are archimedean and live in
+`archimedean-realisations`.
 -/
 
 import Mathlib.Algebra.Polynomial.Laurent
@@ -42,7 +42,7 @@ structure QHeatEquation (S : Type*) where
   /-- q-Laplacian applied to `u`: `Δ_q u : ℝ → S → R_q`. -/
   dq_u : ℝ → S → R_q
   /-- The evolution equation: `∂ₜ u(t,x) = Δ_q u(t,x)` pointwise. -/
-  evolves : ∀ (t : ℝ) (x : S), dt_u t x = dq_u t x
+  evolves : ∀ (t : ℝ) (x : S), dt_u t x = -dq_u t x
 
 /-- Classical heat equation is the `q = 1` specialisation.  Over
     `R_q`, evaluating at `q = 1` corresponds to the evaluation

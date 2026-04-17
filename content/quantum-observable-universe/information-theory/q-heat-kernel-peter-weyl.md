@@ -7,7 +7,7 @@ of any quantum group acting on the substrate).  This gives an
 explicit spectral formula for the $q$-heat kernel.
 
 **Spectral decomposition.**  For $u \colon \mathbb{R}_{\ge 0} \times \mathcal{S} \to \mathbb{C}$
-solving $\partial_t u = \Delta_q u$ with initial datum $u_0$:
+solving $\partial_t u = -\Delta_q u$ with initial datum $u_0$:
 
 $$
   u(t, x) \;=\; \sum_{\lambda \in \widehat{H_n(q)}}
@@ -22,49 +22,49 @@ $\pi_\lambda$ is the projection onto the $V_\lambda$-isotypic
 component, and $\mu_\lambda(q)$ is the $q$-Laplacian eigenvalue.
 
 **Explicit content-Casimir formula.**  For a partition
-$\lambda \vdash n$ with cell contents $c(\square) = j - i$:
+$\lambda \vdash n$ with cell contents $c(\square) = j - i$, the
+**Reeb-spin eigenvalue** of $\Delta_\xi$ on $V_\lambda$ is:
 
 $$
   \boxed{\;
   \mu_\lambda(q)
   \;=\;
-  q^{-2}  \sum_{\square \in \lambda}  c(\square) \bigl(c(\square) + 1\bigr)
-  \;+\;
   \hbar_q^2  \sum_{\square \in \lambda}  [c(\square)]_q \, [c(\square) + 1]_q,
   \;}
 $$
 
 where $\hbar_q = (q - 1)/q$ is the quantum Planck constant
 ([quantum Planck constant](#def:quantum-planck-constant)) and
-$[k]_q = (1 - q^k)/(1 - q)$ is the Jackson integer.
-
-The two terms correspond to the classical-core
-($q^{-2}\Delta$) and the Reeb-spin
-($(1 - q^{-1})^2 \Delta_\xi$) pieces of the three-term expansion
-([$q$-Laplacian expansion](#rem:q-laplacian-expansion)); the
-Coriolis cross-terms vanish on Hecke-representation spaces by
-Schur's lemma.
+$[k]_q = (1 - q^k)/(1 - q)$ is the Jackson integer.  This is the
+eigenvalue of the pure-spin piece $(1 - q^{-1})^2 \Delta_\xi$ from
+the three-term expansion
+([$q$-Laplacian expansion](#rem:q-laplacian-expansion)).  The
+classical-core piece $q^{-2}\Delta$ acts on spatial modes of the
+base manifold $M$ and contributes a *separate* eigenvalue
+$q^{-2}|\mathbf{k}|^2$ depending on the spatial wavenumber
+$\mathbf{k}$, not on the partition $\lambda$.  Coriolis cross-terms
+vanish on Hecke-representation spaces by Schur's lemma.
 
 *Proof sketch.*  Schur's lemma on the irreducible Wedderburn block
-$M_{d_\lambda(q)}$ forces $\Delta_q$ to act by a scalar.  The
+$M_{d_\lambda(q)}$ forces $\Delta_\xi$ to act by a scalar.  The
 scalar is computed by evaluating the $q$-Casimir on a highest-weight
 vector; for $H_n(q)$, the Casimir value is the sum of
 $[c(\square)]_q[c(\square) + 1]_q$ over cells $\square \in \lambda$,
-a classical fact due to Jucys--Murphy (q-deformed by Ram).  The
-classical-core contribution follows analogously using the
-Plancherel Laplacian on Young diagrams.  $\qed$
+a classical fact due to Jucys--Murphy ($q$-deformed by Ram).
+Multiplying by $\hbar_q^2 = (1 - q^{-1})^2$ gives $\mu_\lambda(q)$.
+$\qed$
 
 **Small-$\lambda$ table** (at physical substrate $q_0 \approx 1.11$,
-numerical values):
+$\hbar_{q_0}^2 \approx 0.00976$):
 
-| $\lambda$ | $\sum c(c+1)$ (classical) | $\sum [c]_q[c+1]_q$ (q-Casimir) | $\mu_\lambda(q_0)$ |
-|-----------|---------------------------|------------------------------------|---------------------|
-| $(1)$     | $0$                       | $0$                                | $0$                 |
-| $(2)$     | $2$                       | $[0]_q[1]_q + [1]_q[2]_q$          | $\approx 0.019$     |
-| $(1,1)$   | $-2$                      | $[-1]_q[0]_q + [0]_q[1]_q$         | $\approx -0.017$    |
-| $(3)$     | $8$                       | $[1]_q[2]_q + [2]_q[3]_q$          | $\approx 0.083$     |
-| $(2,1)$   | $0$                       | $\hbar_q [2]_q$                    | $\approx 0.007$     |
-| $(1^3)$   | $-8$                      | $-q^{-2}([1]_q[2]_q + [2]_q[3]_q)$ | $\approx -0.064$    |
+| $\lambda$ | $\sum [c]_q[c+1]_q$ | $\mu_\lambda(q_0) = \hbar_q^2 \cdot \sum$ |
+|-----------|----------------------|--------------------------------------------|
+| $(1)$     | $0$                  | $0$                                        |
+| $(2)$     | $[1]_q[2]_q \approx 2.11$    | $\approx 0.0206$                   |
+| $(1,1)$   | $[-1]_q[0]_q = 0$   | $0$                                        |
+| $(3)$     | $[1]_q[2]_q + [2]_q[3]_q \approx 8.84$ | $\approx 0.0863$           |
+| $(2,1)$   | $[1]_q[2]_q + [-1]_q[0]_q \approx 2.11$ | $\approx 0.0206$          |
+| $(1^3)$   | $[-1]_q[0]_q + [-2]_q[-1]_q \approx 2.82$ | $\approx 0.0275$        |
 
 The content-Casimir sum is *explicit from partition data* — no
 diagonalisation is required for the spectrum.

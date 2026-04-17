@@ -4,7 +4,7 @@ universe with $q$-Laplacian $\Delta_q = d_q\delta_q + \delta_qd_q$
 *$q$-heat equation* is the evolution equation
 
 $$
-  \partial_t u \;=\; \Delta_q u
+  \partial_t u \;=\; -\Delta_q u
 $$
 
 for a time-dependent section
@@ -38,7 +38,7 @@ choice of base field is required.
     \ar[r, "u(t)"]
     \ar[d, "\phi_\epsilon^q"']
   & \mathbf{1}_{\mathbf{C}}
-    \ar[d, "\mathrm{id} + \epsilon\Delta_q"]
+    \ar[d, "\mathrm{id} - \epsilon\Delta_q"]
   \\
   \mathcal{S}
     \ar[r, "u(t + \epsilon)"']
@@ -51,9 +51,9 @@ choice of base field is required.
 ([$q$-Laplacian expansion](#rem:q-laplacian-expansion)) gives
 
 $$
-  \partial_t u  =  q^{-2}\Delta u
-  + q^{-1}(1 - q^{-1})[\text{Coriolis}]u
-  + (1 - q^{-1})^2\Delta_\xi u.
+  \partial_t u  =  -q^{-2}\Delta u
+  - q^{-1}(1 - q^{-1})[\text{Coriolis}]u
+  - (1 - q^{-1})^2\Delta_\xi u.
 $$
 
 The three terms correspond to:
@@ -66,7 +66,9 @@ The three terms correspond to:
    Reeb-rotation.
 
 At $q = 1$ only the classical term survives and one recovers the
-ordinary heat equation $\partial_t u = \Delta u$.  As $q \to \infty$
+ordinary heat equation $\partial_t u = \nabla^2 u$ (since
+$-\Delta = \nabla^2$ on $0$-forms in the Hodge convention).  As
+$q \to \infty$
 the classical term is suppressed and diffusion is dominated by pure
 Reeb-spin dynamics.
 
@@ -74,7 +76,8 @@ Reeb-spin dynamics.
 operator in $q, q^{-1}$
 ([base-field independence](#rem:base-field-independence)), the
 $q$-heat equation makes sense over any commutative ring in which
-$q - 1$ is invertible — including $\mathbb{F}_p$, $\mathbb{Q}_p$,
-and $\mathbb{Z}[q, q^{-1}]$.  Convergent series representations of
-its solutions (heat kernel, $q$-Gaussian) are archimedean phenomena
-and require $\mathrm{char} = 0$.
+$q - 1$ is invertible — including $\mathbb{F}_p$ and $\mathbb{Q}_p$
+(after specialising $q$ to a unit $\ne 1$), and the universal ring
+$\mathbb{Z}[q, q^{-1}, (q - 1)^{-1}]$.  Convergent series
+representations of its solutions (heat kernel, $q$-Gaussian) are
+archimedean phenomena and require $\mathrm{char} = 0$.

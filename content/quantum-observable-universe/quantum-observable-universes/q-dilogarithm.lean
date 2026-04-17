@@ -33,13 +33,22 @@ structure QDilogarithm (H : Type*) where
   Li2 : H × H
   /-- The level-1 primitive log_q ∈ H (needed for pentagon). -/
   log_q : H
-  /-- Binary operation encoding the pentagon argument composition. -/
-  pentagon_compose : H → H → H → H → H
-  /-- **Pentagon identity** (5-term relation): axiom linking values
-      of Li₂_q at composite arguments. -/
-  pentagon :
-    ∀ (x y : H),
-      pentagon_compose x y x y = pentagon_compose y x y x
+  /-- Evaluation map: Li₂_q applied to an element of H. -/
+  Li2_eval : H → H
+  /-- Binary composition for pentagon arguments: (x,y) ↦ xy. -/
+  mul : H → H → H
+  /-- Complement: x ↦ 1 - x. -/
+  compl : H → H
+  /-- Division: (x,y) ↦ x/y (requires y invertible). -/
+  div : H → H → H
+  /-- **Pentagon identity** (5-term relation):
+      Li₂_q(y) + Li₂_q(x) = Li₂_q(xy) +
+        Li₂_q(x(1-y)/(1-xy)) + Li₂_q(y(1-x)/(1-xy)). -/
+  pentagon : ∀ (x y : H),
+    Li2_eval y + Li2_eval x =
+      Li2_eval (mul x y) +
+      Li2_eval (div (mul x (compl y)) (compl (mul x y))) +
+      Li2_eval (div (mul y (compl x)) (compl (mul x y)))
 
 /-- **Uniqueness**: any two level-2 primitives satisfying the pentagon
     coincide up to a level-1 shift (the universal property of the
@@ -49,7 +58,9 @@ structure QDilogarithm (H : Type*) where
 theorem QDilogarithm.unique_up_to_shift
     {H : Type*} (L₁ L₂ : QDilogarithm H)
     (h_log : L₁.log_q = L₂.log_q)
-    (h_pent : L₁.pentagon_compose = L₂.pentagon_compose) :
+    (h_mul : L₁.mul = L₂.mul)
+    (h_compl : L₁.compl = L₂.compl)
+    (h_div : L₁.div = L₂.div) :
     L₁.Li2.1 = L₂.Li2.1 := by
   -- Ref: [manuscript] §2 — follows from rigidity of level-2
   -- primitives modulo shuffle products.

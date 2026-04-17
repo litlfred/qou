@@ -70,7 +70,7 @@ only in which character of the Reeb-translation object one pairs
 against.
 
 **Role in the $q$-heat story.**  Applying $\mathcal{F}$ to both sides
-of the $q$-heat equation $\partial_t u = \Delta_q u$ diagonalises the
+of the $q$-heat equation $\partial_t u = -\Delta_q u$ diagonalises the
 $q$-Laplacian on each Peter--Weyl summand:
 
 $$
