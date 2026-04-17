@@ -16,10 +16,18 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical Dirac operator.** -/
+/-- **Uniqueness of the categorical Dirac operator.**
+
+    Given fixed ∇, q, ξ, the operator
+    `𝒟_∇ = q⁻¹ ∇ + (1 - q⁻¹) ι_ξ ∇` is uniquely determined. -/
 -- Ref: [connes1994]
-theorem CategoricalDirac.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalDirac.unique
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Subsingleton (CategoricalDiracOperator C fh) := by
+  -- Formula is an R-linear combination of fixed morphisms.
+  -- Ref: [connes1994]
+  sorry
 
 end QOU

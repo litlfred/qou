@@ -15,10 +15,19 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of categorical connections.** -/
+/-- **Existence of categorical connections.**
+
+    For every `FrobeniusHopfData C`, a `CategoricalConnection C fh`
+    term exists — the trivial witness being the de Rham differential
+    `∇₀ = d`; non-trivial witnesses add an `Ad(A)`-valued 1-form. -/
 -- Ref: [kock2004]
-theorem CategoricalConnection.exists :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalConnection.exists
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Nonempty (CategoricalConnection C fh) := by
+  -- Witness: ∇₀ = d via the QU differential-calculus axiom.
+  -- Ref: [kock2004]
+  sorry
 
 end QOU

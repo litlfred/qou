@@ -15,10 +15,14 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical proton up to braid isotopy.** -/
+/-- **Uniqueness of the categorical proton up to braid isotopy.**
+
+    Two `CategoricalProton` terms with the same Hecke NF in H₃(q)
+    (and the same S₃-color assignment) coincide. -/
 -- Ref: [jones1987]
-theorem CategoricalProton.unique_up_to_isotopy :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalProton.unique_up_to_isotopy : Subsingleton CategoricalProton := by
+  -- Hecke NF is unique; S₃ color permutations act by inner autos.
+  -- Ref: [jones1987]
+  sorry
 
 end QOU

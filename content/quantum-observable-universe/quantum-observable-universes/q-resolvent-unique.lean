@@ -15,10 +15,14 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the q-resolvent.** -/
+/-- **Uniqueness of the q-resolvent.**
+
+    Two `QResolvent H` terms with the same `delta_q`, `s` coincide —
+    the inverse of `s + delta_q` is unique. -/
 -- Ref: [kassel1995]
-theorem QResolvent.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem QResolvent.unique (H : Type*) : Subsingleton (QResolvent H) := by
+  -- Two-sided inverse is unique.
+  -- Ref: [kassel1995]
+  sorry
 
 end QOU

@@ -8,17 +8,22 @@ LaTeX: `\label{prop:quantum-characteristic-classes-unique}`
 ## References
 
 - [manuscript] §5-lifting-and-descent/quantum-characteristic-classes-unique
-- [yekutieli2010] Twisted Deformation Quantization
+- [yekutieli2010] https://doi.org/10.1016/j.aim.2010.07.008
 -/
 
 import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of quantum characteristic classes.** -/
+/-- **Uniqueness of quantum characteristic classes.**
+
+    A `QuantumCharacteristicClass` at a given brane-tower stage is
+    unique up to cohomologous Čech cocycles — encoded at the type
+    level as `Subsingleton`. -/
 -- Ref: [yekutieli2010]
-theorem QuantumCharClasses.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem QuantumCharClasses.unique : Subsingleton QuantumCharacteristicClass := by
+  -- Different local trivialisations yield cohomologous cocycles.
+  -- Ref: [yekutieli2010]
+  sorry
 
 end QOU

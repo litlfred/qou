@@ -15,12 +15,18 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical action.** -/
--- Ref: [kelly1982] Basic Concepts of Enriched Category Theory
-theorem CategoricalAction.unique :
-    ∃ (_ : Type), True := by
-  -- Rigid structure is canonical; trace is unique up to iso.
+/-- **Uniqueness of the categorical action.**
+
+    The rigid structure `(ev_A, coev_A)` is canonical; for fixed Φ,
+    the action `𝒮_Φ = tr(Φ)` is therefore unique. -/
+-- Ref: [kelly1982]
+theorem CategoricalAction.unique
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Subsingleton (CategoricalAction C fh) := by
+  -- Rigid structure canonical; trace unique up to canonical iso.
   -- Ref: [kelly1982]
-  exact ⟨Unit, trivial⟩
+  sorry
 
 end QOU

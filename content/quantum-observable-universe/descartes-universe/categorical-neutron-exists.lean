@@ -16,10 +16,14 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the categorical neutron.** -/
+/-- **Existence of the categorical neutron.**
+
+    B₃(u,d,d) + two-Hopf-link gluon stabiliser yields a
+    `CategoricalNeutron` term with negative crossing energy. -/
 -- Ref: [jones1987]
-theorem CategoricalNeutron.exists :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalNeutron.exists : Nonempty CategoricalNeutron := by
+  -- Witness: concrete braid B₃(u,d,d) × (L_- ∘ L_-) reduced to NF.
+  -- Ref: [jones1987]
+  sorry
 
 end QOU

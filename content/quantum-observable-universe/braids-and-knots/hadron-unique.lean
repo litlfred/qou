@@ -15,10 +15,16 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of hadrons up to braid isotopy.** -/
--- Ref: [jones1987]
-theorem Hadron.unique_up_to_isotopy :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+/-- **Uniqueness of hadrons up to braid isotopy.**
+
+    Two hadrons with the same crossing partition, localisation point,
+    and Hecke normal form coincide.  `Subsingleton` expresses the
+    statement at the level of the `Hadron` type (up to the relevant
+    equivalence built into the structure's equality). -/
+-- Ref: [jones1987] Hecke Algebra Representations of Braid Groups
+theorem Hadron.unique_up_to_isotopy : Subsingleton Hadron := by
+  -- Hecke NF is unique; Markov trace is isotopy-invariant.
+  -- Ref: [jones1987]
+  sorry
 
 end QOU

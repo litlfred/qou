@@ -16,10 +16,16 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the q-dilogarithm.** -/
+/-- **Existence of the q-dilogarithm.**
+
+    For any type `H` (representing 𝓗_q), a `QDilogarithm H` term
+    exists — the level-2 iterated primitive with pentagon-identity
+    normalisation. -/
 -- Ref: [kassel1995]
-theorem QDilogarithm.exists :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem QDilogarithm.exists (H : Type*) [Nonempty H] :
+    Nonempty (QDilogarithm H) := by
+  -- Witness: shuffle recursion + pentagon normalisation.
+  -- Ref: [kassel1995]
+  sorry
 
 end QOU

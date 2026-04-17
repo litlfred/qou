@@ -15,13 +15,16 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the q-Casimir element up to scalar.** -/
+/-- **Uniqueness of the q-Casimir element (up to scalar).**
+
+    Two `QCasimirData` instances on the same `qs : QuantumSu2` with
+    the same spin-j eigenvalues differ only by a scalar in the ground
+    ring — encoded at the type level as `Subsingleton`. -/
 -- Ref: [kassel1995] Quantum Groups, §VI.4.9
-theorem QCasimir.unique_up_to_scalar :
-    ∃ (_ : Type), True := by
-  -- Z(𝒰_q(𝔰𝔲(2))) = R[C_q] (Joseph-Letzter); fixed eigenvalues pin
-  -- down the polynomial representative uniquely.
-  -- Ref: [kassel1995]
-  exact ⟨Unit, trivial⟩
+theorem QCasimir.unique_up_to_scalar (qs : QuantumSu2) :
+    Subsingleton (QCasimirData qs) := by
+  -- Joseph–Letzter: Z(𝒰_q(𝔰𝔲(2))) = R[C_q]; eigenvalues pin C_q.
+  -- Ref: [kassel1995] §VI.4.9
+  sorry
 
 end QOU

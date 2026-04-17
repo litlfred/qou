@@ -20,20 +20,17 @@ namespace QOU
 
 /-- **Uniqueness of the Frobenius pairing (up to scalar).**
 
-    Any two non-degenerate Frobenius forms on a simple QU object
-    differ by an invertible scalar, so the induced pairings
-    ⟨·,·⟩ᵢ = ∫_A^(i) ∘ μ differ by the same scalar.
-
-    The proof uses 1-dimensionality of Hom(𝟙, A) for simple A. -/
--- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
+    Two `FrobeniusHopfData C` terms (on a simple QU object) differ
+    only by an invertible scalar in the unit object's endomorphism
+    ring.  `Subsingleton` captures uniqueness at the type level after
+    the scalar normalisation is fixed. -/
+-- Ref: [kock2004]
 theorem FrobeniusHopfData.frobeniusForm_unique
-    {C : Type*} [CategoryTheory.Category C]
+    (C : Type*) [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C] :
-    ∀ (A : C), True := by
-  -- Requires: definition of "simple QU object", 1-dim Hom(𝟙, A),
-  -- and the snake-identity factorisation.  Recorded as stub.
-  -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
-  intro _
-  trivial
+    Subsingleton (FrobeniusHopfData C) := by
+  -- 1-dim Hom(𝟙, A) + snake identities force uniqueness up to scalar.
+  -- Ref: [kock2004] Ch 2
+  sorry
 
 end QOU

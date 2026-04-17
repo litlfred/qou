@@ -9,18 +9,22 @@ LaTeX: `\label{prop:quantum-characteristic-classes-exists}`
 ## References
 
 - [manuscript] §5-lifting-and-descent/quantum-characteristic-classes-exists
-- [yekutieli2010] Twisted Deformation Quantization of Algebraic
-  Varieties, https://doi.org/10.1016/j.aim.2010.07.008
+- [yekutieli2010] https://doi.org/10.1016/j.aim.2010.07.008
 -/
 
 import QOU.Basic
 
 namespace QOU
 
-/-- **Well-definedness of quantum characteristic classes.** -/
+/-- **Well-definedness of quantum characteristic classes.**
+
+    A `QuantumCharacteristicClass` term exists for every stage of the
+    recursive brane tower, arising as the obstruction class of a
+    central gerbe extension (Giraud's classification). -/
 -- Ref: [yekutieli2010]
-theorem QuantumCharClasses.exists :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem QuantumCharClasses.exists : Nonempty QuantumCharacteristicClass := by
+  -- Witness: κ_n built from a Čech 2-cocycle on 𝒮.
+  -- Ref: [yekutieli2010]
+  sorry
 
 end QOU

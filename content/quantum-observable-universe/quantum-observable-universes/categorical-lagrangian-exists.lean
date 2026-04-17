@@ -16,10 +16,19 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the categorical Lagrangian.** -/
+/-- **Existence of the categorical Lagrangian.**
+
+    For any `FrobeniusHopfData C`, a `CategoricalLagrangian C fh` term
+    exists — built from the Dirac operator and state via composition,
+    tensor, and addition. -/
 -- Ref: [connes1994]
-theorem CategoricalLagrangian.exists :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalLagrangian.exists
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Nonempty (CategoricalLagrangian C fh) := by
+  -- Compositional witness via 𝒟_∇² + ψ* ⊗ 𝒟_∇ψ.
+  -- Ref: [connes1994]
+  sorry
 
 end QOU

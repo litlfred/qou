@@ -17,12 +17,18 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the categorical q-exterior derivative.** -/
--- Ref: [majid2002] A Quantum Groups Primer, §5
-theorem CategoricalQExtDeriv.exists :
-    ∃ (_ : Type), True := by
-  -- Witness is compositional: de Rham d + π_V + scalars.
-  -- Ref: [majid2002] A Quantum Groups Primer, §5
-  exact ⟨Unit, trivial⟩
+/-- **Existence of the categorical q-exterior derivative.**
+
+    For every category `C` with monoidal structure, a
+    `CategoricalQExtDeriv C` term exists via the formula
+    `d_q = q⁻¹ d + (1 - q⁻¹) π_V ∘ d`. -/
+-- Ref: [majid2002]
+theorem CategoricalQExtDeriv.exists
+    (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] :
+    Nonempty (CategoricalQExtDeriv C) := by
+  -- Compositional witness via de Rham d + π_V + scalars.
+  -- Ref: [majid2002]
+  sorry
 
 end QOU

@@ -16,12 +16,18 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical q-exterior derivative.** -/
--- Ref: [majid2002] A Quantum Groups Primer, §5
-theorem CategoricalQExtDeriv.unique :
-    ∃ (_ : Type), True := by
-  -- Unique because π_H + π_V = id decomposes every form uniquely.
-  -- Ref: [majid2002] A Quantum Groups Primer, §5
-  exact ⟨Unit, trivial⟩
+/-- **Uniqueness of the categorical q-exterior derivative.**
+
+    Given fixed `d`, `π_V`, and `q`, a `CategoricalQExtDeriv C` is
+    uniquely determined (any two agree on horizontal and vertical
+    components by the weight decomposition). -/
+-- Ref: [majid2002]
+theorem CategoricalQExtDeriv.unique
+    (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] :
+    Subsingleton (CategoricalQExtDeriv C) := by
+  -- Weight decomposition π_H + π_V = id forces uniqueness.
+  -- Ref: [majid2002]
+  sorry
 
 end QOU

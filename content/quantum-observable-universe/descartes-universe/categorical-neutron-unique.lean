@@ -17,8 +17,9 @@ namespace QOU
 
 /-- **Uniqueness of the categorical neutron up to braid isotopy.** -/
 -- Ref: [jones1987]
-theorem CategoricalNeutron.unique_up_to_isotopy :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalNeutron.unique_up_to_isotopy : Subsingleton CategoricalNeutron := by
+  -- Mirrors CategoricalProton.unique: Hecke NF + S₃ colour symmetry.
+  -- Ref: [jones1987]
+  sorry
 
 end QOU

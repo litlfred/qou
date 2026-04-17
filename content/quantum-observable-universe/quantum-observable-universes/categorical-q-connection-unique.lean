@@ -16,10 +16,20 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical q-connection.** -/
+/-- **Uniqueness of the categorical q-connection.**
+
+    Given fixed (∇, ξ, θ, q), the q-connection
+    `∇_q = q⁻¹ ∇ + (1 - q⁻¹) ι_ξ ∇ ∘ θ` is uniquely determined;
+    q-deformation introduces no additional gauge freedom. -/
 -- Ref: [connes1994]
-theorem CategoricalQConnection.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalQConnection.unique
+    (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    [CategoryTheory.Linear R_q C] :
+    Subsingleton (CategoricalQConnection C) := by
+  -- Formula-determined; inherits from base connection uniqueness.
+  -- Ref: [connes1994]
+  sorry
 
 end QOU

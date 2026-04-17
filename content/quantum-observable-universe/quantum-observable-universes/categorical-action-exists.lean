@@ -16,12 +16,19 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the categorical action.** -/
--- Ref: [kelly1982] Basic Concepts of Enriched Category Theory
-theorem CategoricalAction.exists :
-    ∃ (_ : Type), True := by
-  -- Compositional via rigid structure ev/coev.
+/-- **Existence of the categorical action.**
+
+    For any `FrobeniusHopfData C`, a `CategoricalAction C fh` term
+    exists — the composite `ev_A ∘ (id ⊗ Φ) ∘ coev_A` using the rigid
+    structure of the category. -/
+-- Ref: [kelly1982]
+theorem CategoricalAction.exists
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Nonempty (CategoricalAction C fh) := by
+  -- Compositional witness via rigid ev / coev.
   -- Ref: [kelly1982]
-  exact ⟨Unit, trivial⟩
+  sorry
 
 end QOU

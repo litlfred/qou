@@ -16,10 +16,20 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of categorical instantons (moduli).** -/
+/-- **Uniqueness of categorical instantons (moduli).**
+
+    For fixed `FrobeniusHopfData`, the moduli of self-dual instanton
+    connections is a quotient by categorical gauge transformations;
+    `Subsingleton` expresses the type-level uniqueness of the moduli
+    point for a given topological charge. -/
 -- Ref: [atiyah1978]
-theorem CategoricalInstanton.unique_up_to_gauge :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalInstanton.unique_up_to_gauge
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : @FrobeniusHopfData C _ _) :
+    Subsingleton (@CategoricalInstanton C _ _ fh) := by
+  -- Instantons of the same c₂ differ by a gauge transformation.
+  -- Ref: [atiyah1978]
+  sorry
 
 end QOU

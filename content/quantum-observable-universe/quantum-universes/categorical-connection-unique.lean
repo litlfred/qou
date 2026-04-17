@@ -15,10 +15,20 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of categorical connections up to gauge.** -/
+/-- **Uniqueness of categorical connections up to gauge.**
+
+    Two `CategoricalConnection C fh` terms differ by an
+    `Ad(A)`-valued 1-form: the affine structure makes the space of
+    connections a torsor over `Ω¹(A) ⊗ Ad(A)`.  `Subsingleton`
+    captures the type-level uniqueness after fixing a gauge. -/
 -- Ref: [kock2004]
-theorem CategoricalConnection.unique_up_to_gauge :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalConnection.unique_up_to_gauge
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Subsingleton (CategoricalConnection C fh) := by
+  -- Connections form an affine space; quotient by gauge is trivial.
+  -- Ref: [kock2004]
+  sorry
 
 end QOU

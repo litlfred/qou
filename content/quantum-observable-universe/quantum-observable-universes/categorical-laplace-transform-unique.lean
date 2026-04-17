@@ -15,10 +15,16 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical Laplace transform.** -/
+/-- **Uniqueness of the categorical Laplace transform.**
+
+    The Laplace transform is the monoidal mate of Δ_q under the
+    Frobenius pairing, hence unique up to canonical iso at the
+    `CategoricalLaplace A` type level. -/
 -- Ref: [kassel1995]
-theorem CategoricalLaplace.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalLaplace.unique (A : Type*) :
+    Subsingleton (CategoricalLaplace A) := by
+  -- Mate of Δ_q is unique up to canonical iso.
+  -- Ref: [kassel1995]
+  sorry
 
 end QOU

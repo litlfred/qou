@@ -17,12 +17,15 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the q-Casimir element.** -/
+/-- **Existence of the q-Casimir element.**
+
+    For any `qs : QuantumSu2`, the q-Casimir data `QCasimirData qs`
+    is inhabited by the element
+    `C_q = FE + (qK + q⁻¹K⁻¹ - (q + q⁻¹))/(q - q⁻¹)²`. -/
 -- Ref: [kassel1995] Quantum Groups, §VI.4
-theorem QCasimir.exists :
-    ∃ (_ : Type), True := by
-  -- Explicit formula; centrality via Hecke relation + Serre relations.
+theorem QCasimir.exists (qs : QuantumSu2) : Nonempty (QCasimirData qs) := by
+  -- Witness: the explicit formula above; centrality via Hecke + Serre.
   -- Ref: [kassel1995]
-  exact ⟨Unit, trivial⟩
+  sorry
 
 end QOU

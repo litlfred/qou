@@ -16,10 +16,17 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical Hodge star.** -/
+/-- **Uniqueness of the categorical Hodge star.**
+
+    On a fixed object `X`, two `CatHodgeInvolution X` terms with the
+    same Frobenius pairing + volume form coincide. -/
 -- Ref: [kock2004]
-theorem CategoricalHodgeStar.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalHodgeStar.unique
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    (X : C) :
+    Subsingleton (CatHodgeInvolution X) := by
+  -- Wedge pairing non-degeneracy forces uniqueness.
+  -- Ref: [kock2004]
+  sorry
 
 end QOU

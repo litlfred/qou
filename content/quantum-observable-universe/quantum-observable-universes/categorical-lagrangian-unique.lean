@@ -15,10 +15,18 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the categorical Lagrangian.** -/
+/-- **Uniqueness of the categorical Lagrangian.**
+
+    Given fixed (∇, ψ), the Lagrangian
+    `𝒟_∇² + ψ* ⊗ 𝒟_∇ψ` is uniquely determined. -/
 -- Ref: [connes1994]
-theorem CategoricalLagrangian.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalLagrangian.unique
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Subsingleton (CategoricalLagrangian C fh) := by
+  -- Formula-determined; inherits uniqueness from Dirac + ψ adjoint.
+  -- Ref: [connes1994]
+  sorry
 
 end QOU

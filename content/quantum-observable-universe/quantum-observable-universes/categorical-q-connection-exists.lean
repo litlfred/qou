@@ -15,10 +15,20 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the categorical q-connection.** -/
+/-- **Existence of the categorical q-connection.**
+
+    For every category `C` with the required enrichments, a
+    `CategoricalQConnection C` term exists via the formula
+    `∇_q = q⁻¹ ∇ + (1 - q⁻¹) ι_ξ ∇ ∘ θ`. -/
 -- Ref: [connes1994]
-theorem CategoricalQConnection.exists :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem CategoricalQConnection.exists
+    (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    [CategoryTheory.Linear R_q C] :
+    Nonempty (CategoricalQConnection C) := by
+  -- Compositional witness via base connection + Reeb interior product.
+  -- Ref: [connes1994]
+  sorry
 
 end QOU

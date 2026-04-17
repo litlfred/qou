@@ -16,10 +16,15 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Uniqueness of the q-dilogarithm.** -/
+/-- **Uniqueness of the q-dilogarithm.**
+
+    Two `QDilogarithm H` terms satisfying the pentagon identity
+    coincide — the solution space at level 2 is one-dimensional. -/
 -- Ref: [kassel1995]
-theorem QDilogarithm.unique :
-    ∃ (_ : Type), True := by
-  exact ⟨Unit, trivial⟩
+theorem QDilogarithm.unique (H : Type*) :
+    Subsingleton (QDilogarithm H) := by
+  -- One-dim solution space + pentagon normalisation.
+  -- Ref: [kassel1995]
+  sorry
 
 end QOU
