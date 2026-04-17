@@ -1899,11 +1899,27 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     active = [e for e in _PARTITION_TABLE
               if e['k'] <= k_max and len(e['ysn']) > 0]
 
-    # Per-partition state: running YSN matrix M_λ, accumulated log
-    # rescaling, previous log-trace, scale (m_e · H_q(λ) · y_λ).
-    state = []
-    # Kerov-damped scale per partition:
+    # ═══ TWO-PASS LP-DUAL WITH COMPLEMENTARY SLACKNESS ═════════
+    #
+    # Pass 1 (forward): accumulate running YSN matrix M_λ for every
+    #   active partition through all A steps.  Record per-step
+    #   log-traces and per-partition cumulative contributions.
+    #
+    # Pass 2 (gate): at the FINAL state, check the sign of the raw
+    #   trace tr(M_λ(atom)).  By complementary slackness of the
+    #   operator-selection LP (prop:bw-coefficient-shadow-price):
+    #     y_λ* × ⟨Φ*, π_λ⟩_F = 0
+    #   so y_λ* = 0 whenever the Frobenius constraint is SLACK
+    #   (tr > 0).  Only partitions with TIGHT constraints (tr ≤ 0)
+    #   contribute a nonzero shadow price.
+    #
+    # This is the per-atom LP dual: each atom's braid Φ(Z,N) has a
+    # different set of tight partitions, so the correction is
+    # atom-specific — exactly as the categorical LP predicts.
+    #
+    # Kerov-damped scale (same as before):
     #   C_λ^kerov = w_λ · y_λ · H_q(λ) · m_e
+
     state = []
     for e in active:
         dim = len(e['ysn'][0])
@@ -1918,6 +1934,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     per_step = []
     cumul_total = 0.0
 
+    # ── Pass 1: forward accumulation ──────────────────────────
     for kk in range(A):
         nuc = ordering[kk]
         prev_types = ordering[:kk]
@@ -1931,12 +1948,10 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             sigmas = entry['ysn']
             n_gens = entry['n_gens']
             chain = _step_chain_generic(nuc, prev_types, n_gens)
-            # Build M_step = product of c·σ_g + d·I across the chain.
             M_step = _identity(dim)
             for c, d, gen in chain:
                 M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
                 M_step = _matmul_dim(M_step, M_cross, dim)
-            # Update running matrix and rescale if needed.
             s['M'] = _matmul_dim(s['M'], M_step, dim)
             if isinstance(s['M'], np.ndarray):
                 m_max = float(np.max(np.abs(s['M'])))
@@ -1960,6 +1975,8 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             delta = s['scale'] * (log_cur - s['log_prev'])
             s['cumul_partition'] += delta
             s['log_prev'] = log_cur
+            # Store raw trace sign for final-state complementary slackness.
+            s['final_tr_sign'] = 1 if tr_run > 0 else -1
             step_delta_total += delta
             partitions_step[str(entry['partition'])] = {
                 'log_trace': log_cur,
@@ -1978,9 +1995,24 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                 'partitions': partitions_step,
             })
 
+    # ── Pass 2: complementary slackness gate ──────────────────
+    # Only sum contributions from partitions whose FINAL trace is
+    # non-positive (tight Frobenius constraint → y_λ* > 0).
+    # Partitions with positive final trace are SLACK → y_λ* = 0.
+    gated_total = 0.0
+    n_tight = 0
+    for s in state:
+        if s['final_tr_sign'] <= 0:
+            gated_total += s['cumul_partition']
+            n_tight += 1
+
     if return_per_step:
-        return cumul_total, per_step
-    return cumul_total
+        if per_step:
+            per_step[-1]['gated_total_MeV'] = gated_total
+            per_step[-1]['n_tight'] = n_tight
+            per_step[-1]['n_active'] = len(state)
+        return gated_total, per_step
+    return gated_total
 
 
 def binding_energy_bw(Z, N, k=3, unified=False):
