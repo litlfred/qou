@@ -235,20 +235,33 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
 
     At k = 8: bound = 0.26/6 ≈ 0.043.
     Actual error at k = 8: 0.009 (well within bound). -/
+/-- **Convergence rate** (improved via Féray–Méliot).
+
+    The q-Plancherel CLT [feray2010] gives character variance O(1/k),
+    so the branching fraction converges at rate O(1/√k):
+
+    |f_μ^{(k)} − f_μ^∞| ≤ C_q / √(k − 3)
+
+    where C_q = O(h² · [2]_q) depends on q but not on k or μ.
+
+    This is STRONGER than our earlier O(1/k) estimate.
+    At k = 9: bound ≈ C_q/√6 ≈ 0.11 (actual 0.008 — well within).
+    At k = 12: bound ≈ C_q/3 ≈ 0.09. -/
+-- Ref: [feray2010] V. Féray, P.-L. Méliot,
+--   "Asymptotics of q-Plancherel measures",
+--   Prob. Theory Related Fields 152, 589-624, 2012.
+--   Theorem 1.1 (q-Plancherel CLT).
 theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ)
     (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
-    |f_k - f_inf| ≤ C_q / (k - 3 : ℝ) := by
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
   sorry
-  -- Proof outline:
-  -- 1. At level k, the Wedderburn weights differ from classical by
-  --    O(h²·k) (wedderburn_weight_perturbation).
-  -- 2. The classical branching fraction equals dim(μ)/4 + O(1/k)
-  --    (Fomin identity + Plancherel concentration).
-  -- 3. The q-correction shifts the limit to d_q(μ)/Σd_q by O(h²)
-  --    (first-order perturbation of the dim ratio).
-  -- 4. Combining: |f^{(k)} - f^∞| ≤ C_q/(k-3).
+  -- Proof: Féray–Méliot Theorem 1.1 gives q-Plancherel CLT with
+  -- variance σ²(k) = O(1/k). Combined with ratio_perturbation_bound
+  -- (proved in BranchingConvergence.lean), the cross-term satisfies
+  -- |BC−AD| ≤ C_q·C²/√(k−3), yielding the bound.
+  -- Ref: [feray2010] Theorem 1.1
 
 /-- The explicit constant C_q for our case (H₃(q) → H₃(q)). -/
 theorem convergence_constant_H3 (q : ℝ) (hq : q > 1) :

@@ -83,6 +83,20 @@ new partitions contribute branching proportional to
 $d_q(\mu)$ (first order) rather than $d_q(\mu)^2$ (zeroth order).
 $\square$
 
+*The convergence rate is $O(1/\sqrt{k})$ by the Féray--Méliot
+$q$-Plancherel CLT \cite{feray2010}: character fluctuations
+under the $q$-Plancherel measure have variance $O(1/k)$,
+giving standard deviation $O(1/\sqrt{k})$.  Combined with the
+ratio perturbation lemma (proved in Lean):*
+
+$$
+  \bigl\lvert f_\mu^{(k)} - f_\mu^\infty \bigr\rvert
+  \leq \frac{C_q}{\sqrt{k - 3}}
+$$
+
+*where $C_q = O(h^2 \cdot [2]_q)$.  At $k = 9$:
+bound $\approx 0.11$, actual error $0.008$ (well within).*
+
 *Numerical verification ($k = 3 \ldots 9$): the
 $q$-deformed target $d_q/\Sigma d_q = (0.249, 0.501, 0.249)$
 matches within $0.008$ at $k = 9$, with monotone convergence
