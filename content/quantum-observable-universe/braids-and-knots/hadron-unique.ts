@@ -10,6 +10,7 @@ export default proposition({
   uses: [
     "def:hadron",
     "prop:hadron-exists",
+    "def:hecke-normal-form",
   ],
   proofs: ["prf:hadron-unique"],
   tags: ["uniqueness", "hadron", "isotopy"],

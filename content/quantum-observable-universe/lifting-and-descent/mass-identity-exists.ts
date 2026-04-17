@@ -11,6 +11,7 @@ export default proposition({
     "def:mass-identity",
     "def:quantum-observable-universe",
     "def:frobenius-pairing",
+    "def:rigid-monoidal-category",
   ],
   proofs: ["prf:mass-identity-exists"],
   tags: ["existence", "mass-identity", "inertial-mass"],

@@ -11,6 +11,7 @@ export default proposition({
     "def:q-resolvent",
     "def:q-heat-equation",
     "prop:categorical-laplace-exists",
+    "prop:q-heat-kernel-peter-weyl",
   ],
   proofs: ["prf:q-resolvent-exists"],
   tags: ["existence", "resolvent"],
