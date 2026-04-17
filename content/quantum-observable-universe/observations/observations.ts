@@ -122,6 +122,7 @@ export default chapter({
         "valley-table",
         "golden-ratio-degeneration",
         "hydrogen-knot-structure",
+        "sdp-regime-switch",
       ],
     }),
 
