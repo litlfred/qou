@@ -67,6 +67,41 @@ different-looking starting point:
   $K$ provided the truncation exceeds the shell's resolution
   threshold.
 
+**Caveats — where the data currently do not fit cleanly.**
+
+1. **Spin-orbit strength overshoot at low $K$.**  Our derivation
+   gives a *single* coefficient (the Borromean crossing number
+   $3$), whereas \cite{ding2026} reports a smoothly varying SO
+   potential whose amplitude grows as $\lambda$ decreases.  At
+   small Hecke truncation $K \lesssim 4$ our
+   $3 \cdot [\ell]_q [\ell+1]_q$ exceeds the chiral-EFT SO
+   strength at corresponding $\lambda$; quantitative agreement
+   requires either $K \geq 7$ or an explanation of why the
+   Borromean integer is effectively renormalised at coarse
+   resolution.  This is a **known open point**, not a refutation.
+
+2. **Pseudospin degeneracy breaks for the $sd$-shell.**  The
+   degeneracy ratio
+   $[\ell - 1]_q [\ell]_q / [\ell - 2]_q [\ell - 1]_q$ is within
+   $3$–$5\,\%$ of unity for $\ell \geq 3$ at $q_0 \approx
+   1.1098$ — consistent with the "near-degenerate" doublets
+   reported in \cite{ding2026}.  At $\ell = 2$ (the $sd$-shell)
+   the deviation grows to $\sim 10$–$15\,\%$, which is larger
+   than the residual breaking seen in the PRL data.  Either the
+   $sd$-shell lies outside the pseudospin regime (consistent
+   with Ding et al., who emphasise its cleanest appearance at
+   higher $\ell$) or an additional $q$-correction is needed at
+   $\ell = 2$.
+
+3. **Magic number $28$ is marginal.**  In
+   [magic numbers from $q$](#prop:magic-numbers-from-q) the
+   $\delta^2 \Phi$ peak at $Z = 28$ is only $+4.4$ at
+   $K = 10$, compared to $+33.2$ at $Z = 8$ and $+20.4$ at
+   $Z = 20$.  Ding et al.\ report $Z = 28$ as fully robust
+   across their $\lambda$ range; our signal at $K = 10$ is at
+   best "consistent" rather than "clean", and a higher-$K$
+   computation is needed to confirm.
+
 **Net assessment.** The two frameworks agree on the observable
 content (same seven magic numbers, same intruder levels
 $1f_{7/2}, 1g_{9/2}, 1h_{11/2}, 1i_{13/2}$) and disagree only on
@@ -76,4 +111,7 @@ analogous roles.  We read \cite{ding2026} as independent
 evidence that a *single* structural control parameter — SRG
 scale for them, Borromean crossing number plus $q$ for us — is
 sufficient to explain the stability hierarchy; neither account
-requires an externally tuned spin-orbit coupling.
+requires an externally tuned spin-orbit coupling.  The three
+caveats above mark where further computation (higher $K$,
+$\ell = 2$ correction) is needed to make the alignment
+quantitative rather than qualitative.
