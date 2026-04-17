@@ -188,12 +188,38 @@ if __name__ == "__main__":
     print()
 
     ATOMS = [
+        # Light (A ≤ 10)
         ("D",    1,  1,   2.22,  1, 1, 1),
         ("T",    1,  2,   8.48,  1, 1, 1),
+        ("3He",  2,  1,   7.72,  1, 1, 1),
         ("4He",  2,  2,  28.30,  1, 1, 1),
         ("6Li",  3,  3,  32.00,  1, 1, 1),
+        ("7Li",  3,  4,  39.24,  1, 1, 1),
+        ("9Be",  4,  5,  58.17,  1, 1, 1),
+        ("10B",  5,  5,  64.75,  1, 1, 1),
+        # A = 11-20
+        ("11B",  5,  6,  76.20,  1, 1, 1),
         ("12C",  6,  6,  92.16,  1, 1, 1),
+        ("13C",  6,  7,  97.11,  1, 1, 1),
+        ("14C",  6,  8, 105.66,  1, 1, 1),
+        ("14N",  7,  7, 104.66,  1, 1, 1),
+        ("15N",  7,  8, 115.49,  1, 1, 1),
         ("16O",  8,  8, 127.62,  1, 1, 1),
+        ("17O",  8,  9, 131.76,  1, 1, 1),
+        ("18O",  8, 10, 139.81,  1, 1, 1),
+        ("19F",  9, 10, 147.80,  1, 1, 1),
+        ("20Ne", 10, 10, 160.65, 1, 1, 1),
+        # A = 21-40
+        ("22Ne", 10, 12, 177.77, 1, 1, 1),
+        ("23Na", 11, 12, 186.56, 1, 1, 1),
+        ("24Mg", 12, 12, 198.26, 1, 1, 1),
+        ("27Al", 13, 14, 224.95, 1, 1, 1),
+        ("28Si", 14, 14, 236.54, 1, 1, 1),
+        ("31P",  15, 16, 262.92, 1, 1, 1),
+        ("32S",  16, 16, 271.78, 1, 1, 1),
+        ("35Cl", 17, 18, 298.21, 1, 1, 1),
+        ("36Ar", 18, 18, 306.72, 1, 1, 1),
+        ("39K",  19, 20, 333.72, 1, 1, 1),
         ("40Ca", 20, 20, 342.05, 1, 1, 1),
     ]
 
@@ -224,22 +250,58 @@ if __name__ == "__main__":
     print(f"    E_0 (β)    = 0.782 / Q_cat = {E_0_cat!s} MeV/cat.unit")
     print()
 
-    print(f"  {'Atom':>6} {'A':>3} {'B_pred (MeV)':>22} {'B_AME':>8} {'|Δm/m|%':>12}")
-    print("  " + "-" * 68)
+    print(f"  {'Atom':>6} {'Z':>3} {'N':>3} {'A':>3} "
+          f"{'B_pred':>12} {'B_AME':>8} {'B_err':>9} "
+          f"{'|Δm/m|%':>9} {'B/A_pred':>9} {'B/A_AME':>9}")
+    print("  " + "-" * 90)
     final_results = []
     for r in results:
         tr_atom = mpmath.mpf(r["tr_atom_abs"])
         tr_free = mpmath.mpf(r["tr_free_abs"])
         B_cat = tr_free - tr_atom
-        B_MeV = E_0_cat * B_cat
+        B_MeV = float(E_0_cat * B_cat)
         M_total = r["A"] * 938.272
-        dm_m = abs(float(B_MeV) - r["B_AME_MeV"]) / M_total * 100
-        print(f"  {r['atom']:>6} {r['A']:>3d} {B_MeV!s:>22} "
-              f"{r['B_AME_MeV']:>8.2f} {dm_m:>11.4f}%")
+        dm_m = abs(B_MeV - r["B_AME_MeV"]) / M_total * 100
+        B_err = B_MeV - r["B_AME_MeV"]
+        Bpa = B_MeV / r["A"]
+        Bpa_AME = r["B_AME_MeV"] / r["A"]
+        print(f"  {r['atom']:>6} {r['Z']:>3d} {r['N']:>3d} {r['A']:>3d} "
+              f"{B_MeV:>12.4f} {r['B_AME_MeV']:>8.2f} {B_err:>+9.3f} "
+              f"{dm_m:>8.4f}% {Bpa:>9.4f} {Bpa_AME:>9.4f}")
         final_results.append({
-            **r, "B_pred_MeV": str(B_MeV), "E_0_cat": str(E_0_cat),
+            **r, "B_pred_MeV": B_MeV, "E_0_cat": str(E_0_cat),
+            "B_err_MeV": B_err,
+            "B_per_A_pred": Bpa, "B_per_A_AME": Bpa_AME,
             "delta_m_over_m_pct": dm_m,
         })
+
+    # Summary stats
+    dms = [r["delta_m_over_m_pct"] for r in final_results]
+    print()
+    print(f"|Δm/m|% summary: min={min(dms):.4f}%, max={max(dms):.4f}%, "
+          f"mean={sum(dms)/len(dms):.4f}%, n={len(dms)}")
+
+    # By A-bucket trend
+    print()
+    print("Trend by A-bucket:")
+    buckets = {"A≤5": [], "A∈[6,10]": [], "A∈[11,20]": [],
+               "A∈[21,30]": [], "A∈[31,40]": []}
+    for r in final_results:
+        A = r["A"]
+        if A <= 5:
+            buckets["A≤5"].append(r["delta_m_over_m_pct"])
+        elif A <= 10:
+            buckets["A∈[6,10]"].append(r["delta_m_over_m_pct"])
+        elif A <= 20:
+            buckets["A∈[11,20]"].append(r["delta_m_over_m_pct"])
+        elif A <= 30:
+            buckets["A∈[21,30]"].append(r["delta_m_over_m_pct"])
+        else:
+            buckets["A∈[31,40]"].append(r["delta_m_over_m_pct"])
+    for b, v in buckets.items():
+        if v:
+            print(f"  {b:>12}: n={len(v)}, mean={sum(v)/len(v):.4f}%, "
+                  f"range [{min(v):.4f}%, {max(v):.4f}%]")
 
     witness = {
         "computation": "crt-markov-trace",
