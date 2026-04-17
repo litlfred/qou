@@ -30,7 +30,7 @@ from fractions import Fraction
 
 from q_parameter import (Q as q, Q_INV as qi, S_SKEIN as s,
                          E_CROSS, TWO_Q, HBAR_Q, HBAR_Q_SQ)
-from hecke_engine import HeckeEngine, QRat
+from hecke_engine import HeckeEngine, HeckeRational
 
 # ═══════════════════════════════════════════════════════════════════
 # STEP 1: Level 0 generator volumes (exact rational, HeckeEngine)
@@ -102,8 +102,8 @@ n_gens = n_strands - 1  # 8 generators
 print(f"\n  Parent ³H quarks:  {''.join('u' if x else 'd' for x in ord_par_L1)}")
 print(f"  Daughter ³He quarks: {''.join('u' if x else 'd' for x in ord_dau_L1)}")
 
-# Use QRat for exact computation at quark level
-qr_L1 = QRat(111, 100)  # q = 1.11 (rational approximation)
+# Use HeckeRational for exact computation at quark level
+qr_L1 = HeckeRational(111, 100)  # q = 1.11 (rational approximation)
 
 print(f"\n  Generator volumes (Level 1, {n_strands} strands, {n_gens} generators):")
 print(f"  {'Gen':>4} {'V̂_par':>14} {'V̂_dau':>14} {'ratio':>14} {'changed?':>10}")

@@ -40,5 +40,12 @@ export default chapter({
         "knot-operator-basis-table",
       ],
     }),
+    section({
+      title: "Hadron-level knot decomposition table",
+      label: "sec:hadron-level-knot-table",
+      blocks: [
+        "hadron-level-knot-table",
+      ],
+    }),
   ],
 });

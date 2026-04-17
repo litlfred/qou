@@ -1,0 +1,23 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:wigner-np-pairing",
+  title:
+    "Wigner energy from $T{=}0$ np pairing: $(2,2)$ partition at $k{=}4$",
+  lean: {
+    decl: "QOU.Descartes.ConfinedKnotBinding.wigner_energy_from_22",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:confined-knot-binding",
+    "prop:binding-scale-catalan",
+    "conj:jet-filtered-knot-factor",
+    "prop:hook-weight-derivation",
+  ],
+  tags: [
+    "wigner-energy",
+    "np-pairing",
+    "partition-22",
+    "binding",
+  ],
+});

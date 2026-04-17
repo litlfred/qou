@@ -93,7 +93,7 @@ for bname, ZA, NA, ZB, NB, obs in [
     ('H-H',1,0,1,0,4.478),('C-H',6,6,1,0,4.33),('C-C',6,6,6,6,3.60),
     ('C-O',6,6,8,8,3.71),('O-H',8,8,1,0,4.82),
 ]:
-    E, bind = molecular_binding_vv(ZA, NA, ZB, NB)
+    E, bind, _, _ = molecular_binding_nf(ZA, NA, ZB, NB)
     err = (E/obs-1)*100 if E > 0 else float('nan')
     print("  {}: {:.4f} eV (obs {:.2f}, {:+.1f}%)".format(bname, E, obs, err))
     vv_data.append({"bond":bname,"E_eV":round(E,4),"obs_eV":obs,"err_pct":round(err,1)})

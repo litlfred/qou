@@ -2,7 +2,7 @@
 """
 Branch-and-bound ground state search using exact rational arithmetic.
 
-Uses the existing QRat engine from hecke_engine.py for exact computation.
+Uses the existing HeckeRational engine from hecke_engine.py for exact computation.
 Prunes branches using T_pp·T_nn = I: same-type pairs cancel, so the
 lower bound on Φ_q assumes all remaining crossings are pn (mixed).
 
@@ -25,10 +25,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, HBAR_Q, Q_RAT_NUM, Q_RAT_DEN
-from hecke_engine import QRat
+from hecke_engine import HeckeRational
 
 # Use exact rational arithmetic
-qr = QRat(Q_RAT_NUM, Q_RAT_DEN)
+qr = HeckeRational(Q_RAT_NUM, Q_RAT_DEN)
 
 
 def compute_Phi_exact(ordering):

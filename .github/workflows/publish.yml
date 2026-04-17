@@ -175,6 +175,17 @@ jobs:
           # Store as output for downstream steps
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
+      # ── 0d½. Regenerate stale computation witnesses (appendix tables, etc.) ─
+      - name: Regenerate stale witnesses
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          cd folio-assistant/computations
+          # Refresh startup cache (Gram matrix, Wedderburn weights, BW coeffs)
+          python3 hecke_startup_cache.py 2>/dev/null || true
+          # Run only content-linked witnesses that are stale
+          python3 run_pipeline.py --content-only --timeout 120 2>&1 | tail -20 || echo "::warning::Some witness computations failed"
+
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
       - name: Validate and build content objects for all papers
         continue-on-error: true

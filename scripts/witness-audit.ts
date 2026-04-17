@@ -77,14 +77,57 @@ function gitHeadSha(): string {
   }
 }
 
-function gitFileSha(filePath: string): string {
+/**
+ * Batch-query git for the last commit SHA of multiple files.
+ * Single `git log` call instead of one per file (~20x faster).
+ */
+function gitFileShas(filePaths: string[]): Map<string, string> {
+  const perFile = new Map<string, string>();
+  if (filePaths.length === 0) return perFile;
+
   try {
-    return execSync(`git log -1 --format=%H -- "${filePath}"`, { cwd: REPO_ROOT })
-      .toString()
-      .trim();
+    for (const fp of filePaths) {
+      if (!perFile.has(fp)) {
+        perFile.set(fp, "unknown");
+      }
+    }
+
+    // Use git log with format that gives us file→commit mapping
+    const batchOutput = execSync(
+      `git log --format="COMMIT %H" --name-only -- ${filePaths.map((f) => `"${f}"`).join(" ")}`,
+      { cwd: REPO_ROOT, maxBuffer: 10 * 1024 * 1024 }
+    ).toString();
+
+    let currentCommit = "unknown";
+    let unresolvedCount = filePaths.length;
+    for (const line of batchOutput.split("\n")) {
+      if (line.startsWith("COMMIT ")) {
+        currentCommit = line.slice(7).trim();
+      } else if (line.trim()) {
+        const relPath = line.trim();
+        // Only record the FIRST (most recent) commit per file
+        if (perFile.has(relPath) && perFile.get(relPath) === "unknown") {
+          perFile.set(relPath, currentCommit);
+          unresolvedCount--;
+          if (unresolvedCount <= 0) break;
+        }
+      }
+    }
+
+    return perFile;
   } catch {
-    return "unknown";
+    // Fallback: return "unknown" for all
+    const fallback = new Map<string, string>();
+    for (const fp of filePaths) {
+      fallback.set(fp, "unknown");
+    }
+    return fallback;
   }
+}
+
+function gitFileSha(filePath: string): string {
+  const result = gitFileShas([filePath]);
+  return result.get(filePath) || "unknown";
 }
 
 // ── Lean witness audit ───────────────────────────────────────────
@@ -97,12 +140,17 @@ function auditLeanWitnesses(): WitnessStatus[] {
 
   const results: WitnessStatus[] = [];
 
+  // Batch git query for all lean files at once (instead of per-file)
+  const relLeanFiles = leanFiles.map((f) => f.replace(REPO_ROOT + "/", ""));
+  const commitMap = gitFileShas(relLeanFiles);
+
   for (const lf of leanFiles) {
     const witnessFiles = globSync(`${lf}.*.witness`);
     if (witnessFiles.length === 0) continue; // no witness = pending, not stale
 
     const currentHash = fileContentHash(lf);
-    const fileCommit = gitFileSha(lf);
+    const relPath = lf.replace(REPO_ROOT + "/", "");
+    const fileCommit = commitMap.get(relPath) || "unknown";
 
     // Report exactly one status per .lean file (use the best-matching witness)
     const currentWitnessPath = `${lf}.${currentHash}.witness`;
@@ -161,53 +209,33 @@ function auditPythonWitnesses(): WitnessStatus[] {
     absolute: true,
   });
 
-  const results: WitnessStatus[] = [];
+  // Pre-collect all script paths for batch git query
+  const scriptPaths: string[] = [];
+  const witnessData: { wf: string; witness: any; scriptFile: string; scriptPath: string }[] = [];
 
   for (const wf of witnessFiles) {
     try {
       const witness = JSON.parse(readFileSync(wf, "utf-8"));
       const witnessName = basename(wf, ".witness.json");
-
-      // Determine the script file
-      const scriptFile =
-        witness.scriptFile || `${witnessName}.py`;
+      const scriptFile = witness.scriptFile || `${witnessName}.py`;
       const scriptPath = resolve(dirname(wf), scriptFile);
-
-      const status: WitnessStatus = {
-        file: wf.replace(REPO_ROOT + "/", ""),
-        type: "python",
-        stale: false,
-        hasStructuredFormat: !!(witness.engine && witness.computedAt),
-        hasCommitSha: !!(witness.commitSha || witness.git_sha),
-        hasAssertions: Array.isArray(witness.assertions) && witness.assertions.length > 0,
-        scriptFile,
-        contentBlock: witness.contentBlock,
-      };
-
-      // Check scriptHash staleness
-      if (witness.scriptHash && existsSync(scriptPath)) {
-        const currentHash = fileContentHash(scriptPath);
-        if (currentHash !== witness.scriptHash) {
-          status.stale = true;
-          status.reason = `script content changed (witness: ${witness.scriptHash}, current: ${currentHash})`;
-        }
+      witnessData.push({ wf, witness, scriptFile, scriptPath });
+      if (existsSync(scriptPath)) {
+        const relPath = scriptPath.replace(REPO_ROOT + "/", "");
+        scriptPaths.push(relPath);
       }
-
-      // Check commit SHA staleness (secondary signal)
-      if (!status.stale && witness.scriptCommitSha && existsSync(scriptPath)) {
-        const currentCommit = gitFileSha(scriptPath);
-        if (
-          witness.scriptCommitSha !== "unknown" &&
-          currentCommit !== "unknown" &&
-          witness.scriptCommitSha !== currentCommit
-        ) {
-          status.stale = true;
-          status.reason = `script commit SHA changed (witness: ${witness.scriptCommitSha?.slice(0, 8)}, current: ${currentCommit.slice(0, 8)})`;
-        }
-      }
-
-      results.push(status);
     } catch {
+      witnessData.push({ wf, witness: null, scriptFile: "", scriptPath: "" });
+    }
+  }
+
+  // Single batch git query for all script files
+  const commitMap = gitFileShas(scriptPaths);
+
+  const results: WitnessStatus[] = [];
+
+  for (const { wf, witness, scriptFile, scriptPath } of witnessData) {
+    if (!witness) {
       results.push({
         file: wf.replace(REPO_ROOT + "/", ""),
         type: "python",
@@ -217,7 +245,44 @@ function auditPythonWitnesses(): WitnessStatus[] {
         hasCommitSha: false,
         hasAssertions: false,
       });
+      continue;
     }
+
+    const status: WitnessStatus = {
+      file: wf.replace(REPO_ROOT + "/", ""),
+      type: "python",
+      stale: false,
+      hasStructuredFormat: !!(witness.engine && witness.computedAt),
+      hasCommitSha: !!(witness.commitSha || witness.git_sha),
+      hasAssertions: Array.isArray(witness.assertions) && witness.assertions.length > 0,
+      scriptFile,
+      contentBlock: witness.contentBlock,
+    };
+
+    // Check scriptHash staleness
+    if (witness.scriptHash && existsSync(scriptPath)) {
+      const currentHash = fileContentHash(scriptPath);
+      if (currentHash !== witness.scriptHash) {
+        status.stale = true;
+        status.reason = `script content changed (witness: ${witness.scriptHash}, current: ${currentHash})`;
+      }
+    }
+
+    // Check commit SHA staleness (secondary signal) — uses batch result
+    if (!status.stale && witness.scriptCommitSha && existsSync(scriptPath)) {
+      const relPath = scriptPath.replace(REPO_ROOT + "/", "");
+      const currentCommit = commitMap.get(relPath) || "unknown";
+      if (
+        witness.scriptCommitSha !== "unknown" &&
+        currentCommit !== "unknown" &&
+        witness.scriptCommitSha !== currentCommit
+      ) {
+        status.stale = true;
+        status.reason = `script commit SHA changed (witness: ${witness.scriptCommitSha?.slice(0, 8)}, current: ${currentCommit.slice(0, 8)})`;
+      }
+    }
+
+    results.push(status);
   }
 
   return results;

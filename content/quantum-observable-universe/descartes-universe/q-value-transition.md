@@ -3,47 +3,30 @@ $q$-deformed transition energy.  It is NOT defined by classical
 energy conservation — it is defined directly from the categorical
 action.
 
-## Definition (categorical, primary)
+## Definition (mass difference, primary)
 
-For a beta decay $\mathcal{N}_{\mathrm{par}} \to \mathcal{N}_{\mathrm{dau}}
-+ e + \nu^{\sigma}$, the **$\mathcal{Q}_q$-value** is the net change
-in categorical action at the Skein crossing change:
-
-$$
-  \mathcal{Q}_q
-   := 
-  S_q(\mathcal{N}_{\mathrm{par}})
-  - 
-  S_q(\mathcal{N}_{\mathrm{dau}})
-  - 
-  S_q(e)
-  - 
-  S_q(\nu^{\sigma})
-$$
-
-where $S_q(K) = \mathrm{tr}_\tau(\rho(\beta_K))$ is the
-categorical action evaluated on the Gröbner--Shirshov normal form of
-each knot/link.
-
-This is the **primary definition**.  No conservation law is
-invoked.  $\mathcal{Q}_q$ is a computable function of $q$ alone.
-
-## Branching formula (primary computational method)
-
-For nuclear beta decays, the Q-value is most efficiently
-computed via the
-[branching factorization](#prop:branching-qvalue-factorization):
+For a $\beta^-$ decay $\mathcal{N}(Z,N) \to \mathcal{N}(Z{+}1,N{-}1)
++ e^- + \bar{\nu}_e$, the **$Q$-value** is the mass difference
+of neutral atoms:
 
 $$
-  \mathcal{Q}_q = |a^Z \cdot b^{N-1} \cdot (a - b)| \times m_e
-  \quad (\text{odd } A)
+  Q = M(Z, N) - M(Z{+}1, N{-}1)
 $$
 
-where $a, b$ are the per-nucleon channel sums.  The
-[parity regime](#thm:parity-regime-selection) determines
-whether the odd-$A$ or even-$A$ formula applies, and the
-[positron correction](#prop:positron-correction) accounts
-for the $+1$ term when needed.
+where $M(Z, N) = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e
+- B(Z, N)$ is the neutral atomic mass and $B(Z, N)$ is the BW
+binding energy at Hecke level $k$
+([q-integer mass formula](#prop:q-integer-mass-formula)).
+
+This definition is consistent with the mass accuracy: if
+$|\Delta M/M| \approx 0.002\%$, then $Q$-values for transitions
+with $Q \gg \Delta M$ inherit the same precision.  For transitions
+with small $Q$ (e.g.\ ${}^3\mathrm{H} \to {}^3\mathrm{He}$,
+$Q = 18.6$ keV), catastrophic cancellation amplifies the mass
+error: $\delta Q/Q \approx (M/Q) \times (\delta M/M)$.
+
+At $k = 11$: $Q(n \to {}^1\mathrm{H}) = 0.782$ MeV ($0.00\%$),
+$Q({}^3\mathrm{H} \to {}^3\mathrm{He}) = 0.01823$ MeV ($-2.1\%$).
 
 ## Crossing-level decomposition
 

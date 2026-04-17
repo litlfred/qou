@@ -1,24 +1,39 @@
 **Proposition.**
 *The closure of the nuclear braid $\mathcal{N}(Z,N)$ in $H_3(q)$
-falls into one of four knot types, each determining the binding
-scale through its geometric invariant:*
+determines a bulk modification factor $a(\mathcal{N})$ for the
+BW binding energy.  This factor is a single product over
+independent nucleon pairs:*
 
-| $A$ | Knot type | Geometric invariant | Binding scale $\alpha$ |
-|-----|-----------|---------------------|------------------------|
-| $1$ | unknot $0_1$ | $\mathrm{Vol} = 0$ | $0$ (free nucleon) |
-| $2$ | satellite | mixed | $\alpha_{\mathrm{Borr}}$ (default) |
-| $3$ | figure-eight $4_1$ | $\mathrm{Vol}(4_1) = 2.0299$ | $m_e \times \mathrm{Vol}(4_1)$ |
-| $\geq 4$ | Borromean $\mathcal{B}_3$ | $\mathrm{Vol}(\mathcal{B}_3) = 8G$ | $m_e \times 8G$ |
+$$
+  a(\mathcal{N})
+  \;=\;
+  \prod_{i=1}^{n_{\mathrm{pairs}}}
+    (1 - \varepsilon_i)
+$$
 
-*The classification is determined by the dominant NF component
-of the full nuclear braid, computed via $\texttt{build\_atom\_nf}(Z,N)$:*
+*where $\varepsilon_i$ is the Frobenius norm deviation of the
+$i$-th nucleon pair from the identity braid:*
 
-- **Borromean-like**: identity $\gamma$ dominates ($|\gamma| > 0.3$
-  with Hopf corrections $|L_\pm| > 0.01$). Hyperbolic, $\mathrm{Vol} = 7.328$.
-- **Figure-eight-like**: generators $\sigma_0, \sigma_1$ have opposite
-  signs ($\sigma_0 \cdot \sigma_1 < 0$). Hyperbolic, $\mathrm{Vol} = 2.030$.
-- **Satellite**: mixed NF with no single dominant component.
-  Uses Borromean scale as default.
+- *Amphicheiral pair (pp or nn in $\mathcal{B}_3$):
+  $\varepsilon = h^2 = (q - q^{-1})^2$*
+- *Chiral pair (pn):
+  $\varepsilon = -h = -(q - q^{-1})$*
+
+*The sign convention: amphicheiral pairs ($K = \bar{K}$) deviate
+quadratically ($h^2 > 0$, reducing binding); chiral pairs deviate
+linearly ($-h < 0$, increasing binding).*
+
+| $A$ | Pairs | Deviations $\varepsilon_i$ | $a(\mathcal{N})$ |
+|-----|-------|---------------------------|-------------------|
+| $1$ | $0$ | — | free nucleon |
+| $2$ | $1$ pn (chiral) | $-h$ | $1 + h \approx 1.209$ |
+| $3$ | $1$ pp or nn (amphicheiral) | $h^2$ | $1 - h^2 \approx 0.956$ |
+| $4$ | $2$ (pp + nn, amphicheiral) | $h^2, h^2$ | $(1 - h^2)^2 \approx 0.914$ |
+| $\geq 5$ | many | $(1 - h^2)^n \to 1$ | $1$ |
+
+*In the large-$A$ limit, $(1 - h^2)^n \to 1$ since
+$h^2 \approx 0.044 \ll 1$, recovering the standard
+BW formula for heavy nuclei.*
 
 *Proof.*
 The nuclear braid $\mathcal{N}(Z,N)$ is built by interleaving $Z$

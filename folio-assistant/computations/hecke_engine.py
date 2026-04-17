@@ -41,7 +41,7 @@ from typing import Optional
 
 # ── Exact rational arithmetic ────────────────────────────────────
 
-class QRat:
+class HeckeRational:
     """Rational arithmetic with q = p_num/p_den."""
     def __init__(self, p_num=111, p_den=100):
         self.q = Fraction(p_num, p_den)
@@ -61,22 +61,24 @@ class QRat:
         else:
             return Fraction(1), -self.ha / 2
 
-    def chain_reduce(self, gen_idx, ordering):
-        """Reduce the chain at generator gen_idx to (a, b)."""
-        a = Fraction(0)
-        b = Fraction(1)
+    def traced_volume(self, gen_idx, ordering):
+        """V̂_i = z·M₁₀ + M₁₁ via 2×2 transfer matrix product (exact rational).
+
+        M = ∏ T(c,d) where T(c,d) = [[c·HA+d, c], [c, d]].
+        Initial state [a,b] = [0,1], so [aₙ,bₙ] = [0,1]×M = (M₁₀, M₁₁).
+        V̂ = z·aₙ + bₙ = z·M₁₀ + M₁₁.
+        """
+        M00 = Fraction(1); M01 = Fraction(0)
+        M10 = Fraction(0); M11 = Fraction(1)
         A = len(ordering)
         for j in range(gen_idx + 1, A):
             c, d = self.crossing(ordering[gen_idx], ordering[j])
-            new_a = a * c * self.ha + a * d + b * c
-            new_b = a * c + b * d
-            a, b = new_a, new_b
-        return a, b
-
-    def traced_volume(self, gen_idx, ordering):
-        """V̂_i = z·a_i + b_i (exact rational)."""
-        a, b = self.chain_reduce(gen_idx, ordering)
-        return self.z * a + b
+            t00 = c * self.ha + d; t01 = c
+            t10 = c;               t11 = d
+            n00 = M00*t00 + M01*t10; n01 = M00*t01 + M01*t11
+            n10 = M10*t00 + M11*t10; n11 = M10*t01 + M11*t11
+            M00, M01, M10, M11 = n00, n01, n10, n11
+        return self.z * M10 + M11
 
     def markov_trace(self, ordering):
         """Product of traced volumes (exact rational)."""
@@ -95,6 +97,56 @@ class QRat:
             return Fraction(0)
         fiv = (Vp - Vd) / Vp
         return abs(fiv)
+
+    # ── Wedderburn channels (CANONICAL per paper) ─────────────
+    # Reference: wedderburn-mass-formula.md, tower-binding-energy.md
+    #   V̂_i^full = w_sym·λ_i^sym + w_std·V_i^std + w_alt·λ_i^alt
+    # where w_λ = dim_q(λ)² / ([2]² + 2), exactly summing to 1.
+    #
+    # ALL OBSERVABLES from H_3(q) MUST use V̂_i^full (not per-channel).
+
+    def _channel_weights(self):
+        """Wedderburn-Artin weights (w_sym, w_std, w_alt), sum=1 exactly."""
+        # [2]² = (q + 1/q)² = q² + 2 + 1/q²
+        n2_sq = self.q ** 2 + 2 + self.q_inv ** 2
+        denom = n2_sq + 2  # ([2]² + 2) = sum dim²
+        w_sym = Fraction(1) / denom
+        w_std = n2_sq / denom
+        w_alt = Fraction(1) / denom
+        return w_sym, w_std, w_alt
+
+    def lambda_sym(self, gen_idx, ordering):
+        """Symmetric channel eigenvalue: λ_sym = ∏_{j>i} (c·q + d)."""
+        prod = Fraction(1)
+        A = len(ordering)
+        for j in range(gen_idx + 1, A):
+            c, d = self.crossing(ordering[gen_idx], ordering[j])
+            prod *= c * self.q + d
+        return prod
+
+    def lambda_alt(self, gen_idx, ordering):
+        """Alternating channel eigenvalue: λ_alt = ∏_{j>i} (-c/q + d)."""
+        prod = Fraction(1)
+        A = len(ordering)
+        for j in range(gen_idx + 1, A):
+            c, d = self.crossing(ordering[gen_idx], ordering[j])
+            prod *= -c * self.q_inv + d
+        return prod
+
+    def V_full(self, gen_idx, ordering):
+        """Wedderburn-weighted full traced volume per paper.
+
+        V̂_i^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt
+        """
+        w_sym, w_std, w_alt = self._channel_weights()
+        lam_sym = self.lambda_sym(gen_idx, ordering)
+        lam_alt = self.lambda_alt(gen_idx, ordering)
+        v_std = self.traced_volume(gen_idx, ordering)
+        return w_sym * lam_sym + w_std * v_std + w_alt * lam_alt
+
+    def V_full_all(self, ordering):
+        """All per-generator V̂_i^full for an ordering."""
+        return [self.V_full(i, ordering) for i in range(len(ordering) - 1)]
 
 
 # ── Result dataclass ─────────────────────────────────────────────
@@ -126,7 +178,7 @@ class HeckeResult:
 
 class HeckeEngine:
     def __init__(self, q_num=111, q_den=100):
-        self.qr = QRat(q_num, q_den)
+        self.qr = HeckeRational(q_num, q_den)
 
     def ground_state_ordering(self, p, n, max_orderings=5000):
         """Find minimum-energy ordering."""

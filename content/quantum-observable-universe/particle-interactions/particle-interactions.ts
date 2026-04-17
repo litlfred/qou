@@ -41,6 +41,8 @@ export default chapter({
         "confinement-lp",
         "operator-selection-lp",
         "confinement-topological",
+        "confinement-nucleon-unit",
+        "lp-dual-stability",
       ],
     }),
 

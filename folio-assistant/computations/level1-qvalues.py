@@ -30,7 +30,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from computations.hecke_engine import QRat
+from computations.hecke_engine import HeckeRational
 
 # ── Quark-level ordering expansion ───────────────────────────────
 
@@ -72,7 +72,7 @@ nuclei = [
 # ── Engine ───────────────────────────────────────────────────────
 
 from q_parameter import Q_RAT_NUM, Q_RAT_DEN, Q, HBAR_Q_SQ
-qr = QRat(Q_RAT_NUM, Q_RAT_DEN)
+qr = HeckeRational(Q_RAT_NUM, Q_RAT_DEN)
 hbar_q_sq = HBAR_Q_SQ
 
 print("=" * 60)

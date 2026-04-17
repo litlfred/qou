@@ -324,6 +324,10 @@ export default chapter({
       title: "Nuclear Binding and Beta Stability",
       label: "sec:nuclear-binding-beta-stability",
       blocks: [
+        "confined-knot-binding",
+        "jet-filtered-knot-factor",
+        "jet-convergence-classical-limit",
+        "wigner-np-pairing",
         "hook-weight-derivation",
         "wigner-coefficient-derivation",
         "bw-coefficient-shadow-price",
