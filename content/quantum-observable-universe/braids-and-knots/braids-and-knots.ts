@@ -232,6 +232,10 @@ export default chapter({
       label: "sec:hadron-algebra",
       blocks: [
         "hadron",
+        "hadron-exists",
+        "hadron-exists-proof",
+        "hadron-unique",
+        "hadron-unique-proof",
         "hadron-interpretation",
         "hadron-operations-closure",
         "hadron-operations",
