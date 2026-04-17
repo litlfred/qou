@@ -1,0 +1,17 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:mass-identity-exists",
+  title: "Well-definedness of the inertial mass identity",
+  lean: {
+    decl: "QOU.MassIdentity.exists",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:mass-identity",
+    "def:quantum-observable-universe",
+    "def:frobenius-pairing",
+  ],
+  proofs: ["prf:mass-identity-exists"],
+  tags: ["existence", "mass-identity", "inertial-mass"],
+});
