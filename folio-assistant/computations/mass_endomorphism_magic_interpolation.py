@@ -102,12 +102,14 @@ def magic_anchor_ratios():
 
 
 def interpolate_r(A, anchors):
-    """Linear interpolation of r(A) between magic anchors."""
+    """Linear interpolation of r(A) between magic anchors.
+
+    Returns None when A is outside [A_min_anchor, A_max_anchor].
+    No extrapolation: out-of-range atoms get no prediction.
+    """
     A_anchors = sorted(a["A"] for a in anchors)
-    if A <= A_anchors[0]:
-        return next(a["r"] for a in anchors if a["A"] == A_anchors[0])
-    if A >= A_anchors[-1]:
-        return next(a["r"] for a in anchors if a["A"] == A_anchors[-1])
+    if A < A_anchors[0] or A > A_anchors[-1]:
+        return None  # out of interpolation range — no extrapolation
     # Find bracketing anchors
     for i in range(len(A_anchors) - 1):
         A_lo, A_hi = A_anchors[i], A_anchors[i + 1]
@@ -116,20 +118,30 @@ def interpolate_r(A, anchors):
             r_hi = next(a["r"] for a in anchors if a["A"] == A_hi)
             t = (A - A_lo) / (A_hi - A_lo)
             return r_lo + t * (r_hi - r_lo)
-    return 0.0  # unreachable
+    return None  # unreachable when bracketed
 
 
 def binding_magic_interp(Z, N, anchors):
-    """Categorical binding via magic-anchor interpolation of deficit ratio."""
+    """Categorical binding via magic-anchor interpolation of deficit ratio.
+
+    Returns None for B when A is outside the anchor range
+    (no extrapolation).
+    """
     A = Z + N
     m_free = free_tower(Z, N)
     r = interpolate_r(A, anchors)
+    if r is None:
+        return {
+            "Z": Z, "N": N, "A": A,
+            "m_free_tower": m_free, "m_atom_tower": None,
+            "r": None, "B_MeV": None, "out_of_range": True,
+        }
     m_atom = m_free * (1 - r)
     B = E_0_TOWER_MEV * (m_free - m_atom)
     return {
         "Z": Z, "N": N, "A": A,
         "m_free_tower": m_free, "m_atom_tower": m_atom,
-        "r": r, "B_MeV": B,
+        "r": r, "B_MeV": B, "out_of_range": False,
     }
 
 
@@ -172,6 +184,11 @@ if __name__ == "__main__":
         ("40Ca", 20, 20, 342.05),
     ]
 
+    A_min = min(a["A"] for a in anchors)
+    A_max = max(a["A"] for a in anchors)
+    print(f"Interpolation range: A ∈ [{A_min}, {A_max}]; "
+          f"NO EXTRAPOLATION outside this range.")
+    print()
     print("Binding via magic-anchor interpolation:")
     print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} {'r':>10} "
           f"{'B_pred':>10} {'|Δ/B|':>8}")
@@ -179,13 +196,19 @@ if __name__ == "__main__":
     results = []
     for atom, Z, N, B_AME in ATOMS:
         r = binding_magic_interp(Z, N, anchors)
-        ratio = abs(r["B_MeV"] - B_AME) / B_AME if B_AME > 0 else 0
-        marker = " *" if any(a["atom"] == atom for a in anchors) else ""
-        print(f"  {atom:>6} {Z+N:>3d} {B_AME:>8.2f} {r['r']:>10.6f} "
-              f"{r['B_MeV']:>10.4f} {ratio:>8.4f}{marker}")
-        results.append({**r, "atom": atom, "B_AME_MeV": B_AME,
-                        "ratio_off_AME": ratio,
-                        "is_anchor": any(a["atom"] == atom for a in anchors)})
+        is_anchor = any(a["atom"] == atom for a in anchors)
+        marker = " *" if is_anchor else ""
+        if r["out_of_range"]:
+            print(f"  {atom:>6} {Z+N:>3d} {B_AME:>8.2f} "
+                  f"{'—':>10} {'—':>10} {'OOR':>8}{marker}")
+            results.append({**r, "atom": atom, "B_AME_MeV": B_AME,
+                            "ratio_off_AME": None, "is_anchor": is_anchor})
+        else:
+            ratio = abs(r["B_MeV"] - B_AME) / B_AME if B_AME > 0 else 0
+            print(f"  {atom:>6} {Z+N:>3d} {B_AME:>8.2f} {r['r']:>10.6f} "
+                  f"{r['B_MeV']:>10.4f} {ratio:>8.4f}{marker}")
+            results.append({**r, "atom": atom, "B_AME_MeV": B_AME,
+                            "ratio_off_AME": ratio, "is_anchor": is_anchor})
 
     # Save witness
     witness = {
