@@ -21,21 +21,23 @@ namespace QOU
 
 /-- **Existence of the non-degenerate Frobenius pairing.**
 
-    Every `FrobeniusHopfData` supplies the pairing ∫_A ∘ μ and the
-    snake identities certifying non-degeneracy.  The pairing is
-    therefore definable as a term, not proved as an exists-statement;
-    we record the existence theorem for completeness. -/
+    Every `FrobeniusHopfData C` carries the data for a pairing
+    ∫_A ∘ μ : A ⊗ A → 𝟙 satisfying the snake identities.  The
+    statement records the existence of a `FrobeniusHopfData` instance
+    on a quantum universe; the pairing itself is then definable as a
+    term-level composition.
+
+    Stub: witness would be provided by the QU's Frobenius-Hopf data,
+    but constructing a non-trivial `FrobeniusHopfData` term on a
+    specific `C` requires category-theoretic infrastructure not yet
+    in `QOU.Basic`. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 theorem FrobeniusHopfData.frobeniusForm_exists
-    {C : Type*} [CategoryTheory.Category C]
+    (C : Type*) [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C] :
-    ∀ (A : C), True := by
-  -- The Frobenius pairing is a term-level composition; existence
-  -- follows from the availability of μ and ∫_A in the QU axioms.
-  -- Non-degeneracy follows from the snake identities in the rigid
-  -- monoidal structure.
-  -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
-  intro _
-  trivial
+    Nonempty (FrobeniusHopfData C) := by
+  -- Witness: the Frobenius-Hopf data on the QU object A.
+  -- Ref: [kock2004] Ch 2
+  sorry
 
 end QOU

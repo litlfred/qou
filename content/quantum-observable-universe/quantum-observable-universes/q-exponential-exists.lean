@@ -2,7 +2,7 @@
 # QOU.QExponential.exists_in_shuffle_hopf — existence of the q-exponential
 
 Over a base ring where the Jackson factorials [n]_q! are invertible,
-the q-shuffle Hopf algebra H_q admits a grouplike `e_q` satisfying the
+the q-shuffle Hopf algebra 𝓗_q admits a grouplike `e_q` satisfying the
 flow equation D_q e_q = e_q, ε(e_q) = 1.
 
 LaTeX: `\label{prop:q-exponential-exists}`
@@ -37,7 +37,7 @@ noncomputable section
 -- Ref: [kassel1995] Quantum Groups, §IV.2
 theorem QExponential.exists_in_shuffle_hopf
     (H : Type*) [Nonempty H] :
-    ∃ (e : QExponential H), True := by
+    Nonempty (QExponential H) := by
   -- The construction requires the q-shuffle Hopf algebra structure
   -- with q-binomial coproduct.  See Kassel §IV.2 for the full proof.
   -- Ref: [kassel1995] Quantum Groups, §IV.2
