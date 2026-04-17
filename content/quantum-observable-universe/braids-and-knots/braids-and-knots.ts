@@ -325,6 +325,7 @@ export default chapter({
       label: "sec:nuclear-binding-beta-stability",
       blocks: [
         "confined-knot-binding",
+        "jet-filtered-knot-factor",
         "hook-weight-derivation",
         "wigner-coefficient-derivation",
         "bw-coefficient-shadow-price",
