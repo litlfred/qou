@@ -197,8 +197,15 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     crossings, n_strands = _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h)
 
     # Per-generator V_full
+    # For FREE baseline (include_inter=False), skip inter-nucleon generators
+    # (positions 3k+2). Disconnected tensor: only intra-nucleon generators
+    # count. Including empty inter-gens gives V=1 → Φ_q(1)≈10⁴ spurious.
+    A = Z + N
     V_full_list = []
     for gen in range(n_strands - 1):
+        # Skip inter-nucleon generators when computing free baseline
+        if not include_inter and (gen % 3 == 2) and gen < 3 * A - 1:
+            continue
         a = mpmath.mpf(0); b = mpmath.mpf(1)
         sp = mpmath.mpf(1); ap = mpmath.mpf(1)
         for c, d in crossings[gen]:
