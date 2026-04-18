@@ -21,5 +21,5 @@ export default proposition({
     decl: "QOU.Descartes.em_coupling_projection",
     validation: "not_checked",
   },
-  uses: ["rem:force-knot-identification"],
+  uses: ["rem:force-knot-identification", "prop:em-coupling-chern-simons"],
 });

@@ -17,10 +17,16 @@ This repository is a formal mathematics paper with:
 
 ## Always provide GitHub links — default to `.md`
 
-**Default link target is always the `.md` file.** When citing a content
-block (definition, proposition, remark, etc.) in chat replies, reviews,
-or summaries, the clickable link **must** point to the `.md` sibling —
-never to `.ts` or `.lean` as the primary link.
+Whenever a skill or agent creates or modifies a file, the reply **must**
+include a clickable GitHub blob URL for every affected file on the
+pushed branch. This applies to all file kinds: `.md`, `.ts`, `.lean`,
+`.tex`, config files, scripts, etc.
+
+**Default link target for content blocks is always the `.md` file.**
+When citing a content block (definition, proposition, remark, etc.) in
+chat replies, reviews, or summaries, the primary clickable link
+**must** point to the `.md` sibling — never to `.ts` or `.lean` as the
+primary link.
 
 Rationale: `.md` is the narrative/authoritative human-readable face of a
 content block. `.ts` is manifest metadata; `.lean` is formalization.

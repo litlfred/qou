@@ -176,12 +176,12 @@ Planck constant is $\hbar_q = (q - 1)/q$.
 | $[2]_q / 2$ | $1.00545$ |
 | $c_1$ | $0.001551$ |
 | $\kappa$ | $1.722$ |
-| $\alpha^{-1}_{\mathrm{CS}}$ | $\mathbf{137.036}$ |
+| $\alpha^{-1}_{\mathrm{CS}}$ | $\mathbf{137.035944}$ |
 | CODATA 2018 | $137.035999084(21)$ |
-| Residual | $-2.1\;\mathrm{ppm}$ |
+| Residual | $399\;\mathrm{ppb}$ |
 
 The Chern-Simons correction reduces the discrepancy from $0.155\%$
-(bare formula) to $2.1\;\mathrm{ppm}$ — a $120\times$ improvement
+(bare formula) to $399\;\mathrm{ppb}$ — a $3900\times$ improvement
 with zero additional parameters.
 
 **Physical interpretation.**
