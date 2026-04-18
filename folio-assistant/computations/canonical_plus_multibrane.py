@@ -141,6 +141,35 @@ def lift_V_markov(V: list[float], level: int) -> list[float]:
     return [v * factor for v in V]
 
 
+# ── Built-in jet-brane scaling: ℏ_q per brane level ──────────
+#
+# The recursive brane tower A_{n+1} = A_n ⊗ Ω¹(A_n) introduces a
+# Kähler 1-form factor at each jet step.  Dimensionally, Ω¹ has
+# "order" ℏ_q = (q − 1)/q ≈ 0.099 at q₀.  So level n's mass
+# contribution naturally carries a prefactor of ℏ_q^{2n} (TWO
+# powers per level — one from the Kähler form, one from its dual
+# via the Frobenius pairing).
+#
+# Vol(4_1)/ℏ_q² = m_μ/m_e ≈ 206.8 is the hyperbolic/q-connection
+# identity the paper uses as the archimedean scaling baseline.
+# For mass CONTRIBUTIONS (not ratios), each brane level
+# dampens by ℏ_q^{2n}.
+
+HBAR_Q = (Q0 - 1.0) / Q0  # ℏ_q = (q - 1)/q
+HBAR_Q_SQ = HBAR_Q * HBAR_Q  # ℏ_q² — jet-level damping per brane step
+
+
+def brane_scaling(n: int) -> float:
+    """ℏ_q^{2n} — built-in jet-brane scaling at level n.
+
+    Level 0: factor 1 (no damping).
+    Level n ≥ 1: ℏ_q^{2n} ≈ 0.0098^n exponential decay.
+    Effective for making Σ_n tower^(n) a convergent series
+    whose magnitude stays comparable to |tr_M| ≲ 1.
+    """
+    return HBAR_Q_SQ ** n
+
+
 # ── Canonical Markov trace + multi-brane tower ──────────────
 
 def binding_canonical_plus_multibrane(
@@ -282,8 +311,13 @@ if __name__ == "__main__":
         print(f"  {name}: |tr_atom|={abs(ta):.4f}, |tr_free|={abs(tf):.4f}, "
               f"{time.time()-t0:.1f}s")
 
-    def _binding_cached(Z, N, n_brane_levels, pair_mode):
-        """Like binding_canonical_plus_multibrane, but canonical cached."""
+    def _binding_cached(Z, N, n_brane_levels, pair_mode,
+                          apply_brane_scaling=True):
+        """Like binding_canonical_plus_multibrane, but canonical cached.
+
+        apply_brane_scaling=True: each jet level damped by ℏ_q^{2n}.
+        apply_brane_scaling=False: no damping (legacy mode, over-counts).
+        """
         A = Z + N
         ta, tf = _cached_canonical(Z, N)
         canonical_term = abs(tf) - abs(ta)
@@ -298,45 +332,66 @@ if __name__ == "__main__":
                 m_a = tower_mass_level(V_a, pair_mode=pair_mode)
                 m_f = tower_mass_level(V_f, pair_mode=pair_mode)
                 delta = m_f - m_a
-                tower_term += delta
-                per_level.append({"level": n, "delta": delta})
+                if apply_brane_scaling:
+                    scale = brane_scaling(n)
+                    delta_scaled = scale * delta
+                else:
+                    scale = 1.0
+                    delta_scaled = delta
+                tower_term += delta_scaled
+                per_level.append({
+                    "level": n, "delta_raw": delta,
+                    "scale": scale, "delta_scaled": delta_scaled,
+                })
         B = E_0_BETA_DECAY_MEV * (canonical_term + tower_term)
         return {"Z": Z, "N": N, "A": A, "n_brane_levels": n_brane_levels,
                  "pair_mode": pair_mode,
+                 "apply_brane_scaling": apply_brane_scaling,
                  "canonical_contribution_MeV": E_0_BETA_DECAY_MEV * canonical_term,
                  "tower_contribution_MeV": E_0_BETA_DECAY_MEV * tower_term,
                  "B_MeV": B, "per_level": per_level,
                  "tr_M_atom": ta, "tr_M_free": tf}
 
-    for pair_mode in ["adjacent", "full"]:
-        for n_levels in [0, 1, 2, 5, 10]:
-            print(f"\n-- pair_mode = {pair_mode}, "
-                  f"n_brane_levels = {n_levels} --")
-            print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} "
-                  f"{'B_canon':>10} {'B_tower':>10} {'B_total':>10} "
-                  f"{'|Δm/m|%':>10}")
-            print("  " + "-" * 80)
-            for name, Z, N, B_AME in ATOMS:
-                A = Z + N
-                try:
-                    t0 = time.time()
-                    r = _binding_cached(Z, N, n_levels, pair_mode)
-                    dt = time.time() - t0
-                    dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
-                           if math.isfinite(r["B_MeV"])
-                           else float("nan"))
-                    print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
-                          f"{r['canonical_contribution_MeV']:>+10.4f} "
-                          f"{r['tower_contribution_MeV']:>+10.4f} "
-                          f"{r['B_MeV']:>+10.4f} "
-                          f"{dm:>9.4f}%  "
-                          f"({dt:.1f}s)")
-                    results.append({**r, "atom": name,
-                                     "B_AME_MeV": B_AME,
-                                     "delta_m_over_m_pct": dm})
-                except Exception as e:
-                    print(f"  {name:>6} ERR: {type(e).__name__}: "
-                          f"{str(e)[:60]}")
+    print(f"\nBrane-level scaling: ℏ_q^(2n) = {HBAR_Q_SQ:.6f}^n "
+          f"(ℏ_q = {HBAR_Q:.4f})")
+
+    for apply_scaling in [True, False]:
+        scaling_tag = "ℏ_q^2n" if apply_scaling else "none"
+        print(f"\n\n{'=' * 80}")
+        print(f"BRANE SCALING: "
+              + ("ON (ℏ_q^2n)" if apply_scaling else "OFF (legacy)"))
+        print("=" * 80)
+        for pair_mode in ["adjacent", "full"]:
+            for n_levels in [0, 1, 2, 5, 10]:
+                print(f"\n-- pair_mode = {pair_mode}, "
+                      f"n_brane_levels = {n_levels}, "
+                      f"scaling = {scaling_tag} --")
+                print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} "
+                      f"{'B_canon':>10} {'B_tower':>10} {'B_total':>10} "
+                      f"{'|Δm/m|%':>10}")
+                print("  " + "-" * 80)
+                for name, Z, N, B_AME in ATOMS:
+                    A = Z + N
+                    try:
+                        t0 = time.time()
+                        r = _binding_cached(Z, N, n_levels, pair_mode,
+                                              apply_brane_scaling=apply_scaling)
+                        dt = time.time() - t0
+                        dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
+                               if math.isfinite(r["B_MeV"])
+                               else float("nan"))
+                        print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
+                              f"{r['canonical_contribution_MeV']:>+10.4f} "
+                              f"{r['tower_contribution_MeV']:>+10.4f} "
+                              f"{r['B_MeV']:>+10.4f} "
+                              f"{dm:>9.4f}%  "
+                              f"({dt:.1f}s)")
+                        results.append({**r, "atom": name,
+                                         "B_AME_MeV": B_AME,
+                                         "delta_m_over_m_pct": dm})
+                    except Exception as e:
+                        print(f"  {name:>6} ERR: {type(e).__name__}: "
+                              f"{str(e)[:60]}")
 
     witness = {
         "computation": "canonical-plus-multibrane",
