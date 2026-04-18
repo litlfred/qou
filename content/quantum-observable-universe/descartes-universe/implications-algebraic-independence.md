@@ -15,8 +15,9 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
 2. **Irrationality of each volume.** Each of
    $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)$,
    $\mathrm{Vol}(5_2)$, and $\mathrm{Vol}(\mathcal{B}_3)$ is
-   irrational --- a conclusion which, even taken singly, is currently
-   open for every hyperbolic $3$-manifold.
+   irrational.  Irrationality of a single hyperbolic $3$-manifold
+   volume is open; algebraic independence settles the question for
+   the whole triple.
 
 3. **Bloch--Wigner dilogarithm transcendence.** Since each volume is
    $D(\xi)$ for an algebraic $\xi$ in a number field
@@ -46,9 +47,9 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    \to \mathbb{R}$ at $q = q_0$ is injective.  The physical coefficient
    ring is as rich as the formal Laurent polynomial ring admits.
 
-4. **Strong falsifiability.** The Chapter 9 information-bandwidth
-   bounds $\mathcal{B}(q)$ are tight: any experimental evidence
-   of algebraic relations among computed volumes would contradict the
+4. **Strong falsifiability.** The information-bandwidth bounds
+   $\mathcal{B}(q)$ are tight: any experimental evidence of
+   algebraic relations among computed volumes would contradict the
    prediction.
 
 **Lean status.** Independence is encoded as the class
