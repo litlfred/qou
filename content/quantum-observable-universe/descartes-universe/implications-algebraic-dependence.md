@@ -6,19 +6,21 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
 
 **Mathematical consequences.**
 
-1. **Refutation of Milnor's conjecture on this triple.** Since
-   algebraic dependence over $\mathbb{Q}$ entails $\mathbb{Q}$-linear
-   dependence whenever the polynomial has degree one in some variable,
-   even a weak dependence forces a linear relation among volumes of
-   pairwise non-commensurable hyperbolic $3$-manifolds, contrary to
-   Milnor's prediction.
+1. **Milnor's conjecture remains open on this triple.** Algebraic
+   dependence is strictly weaker than $\mathbb{Q}$-linear dependence,
+   so failure of algebraic independence is compatible with Milnor's
+   prediction ($\mathbb{Q}$-linear independence of volumes of
+   pairwise non-commensurable hyperbolic $3$-manifolds).  Only a
+   dependence polynomial of total degree one refutes Milnor; a
+   higher-degree relation refutes only the stronger QOU conjecture.
 
 2. **Unexpected Bloch--Wigner identity.** Each volume is
    $D(\xi_K)$ for algebraic $\xi_K$ in distinct number fields.  A
    dependence would yield a non-trivial $\mathbb{Q}$-polynomial
    identity among Bloch--Wigner values across
    $\mathbb{Q}(\sqrt{-3})$, the cubic field of $5_2$, and
-   $\mathbb{Q}(i)$ --- a new and surprising arithmetic identity.
+   $\mathbb{Q}(i)$ --- an arithmetic identity for which no candidate
+   is presently known.
 
 3. **Collapse of the formal transcendence conjecture chain.** The
    implication chain
@@ -41,10 +43,10 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    confinement is categorically inessential.
 
 3. **Borromean baryon interpretation weakens.** The obstruction-theoretic
-   basis for identifying the proton with the Borromean link
-   $\mathcal{B}_3$ (which distinguishes it from a mere sum of Hopf
-   pairs) loses its categorical teeth: the distinguishing invariant
-   becomes computable from finite data.
+   distinction between the Borromean link $\mathcal{B}_3$ and a sum of
+   Hopf pairs reduces to finite categorical data: the invariant that
+   singles out the proton as a three-body configuration becomes
+   computable without the infinite tower.
 
 4. **Coefficient ring simplifies.** The evaluation map
    $\iota$ is non-injective; the physical ring
@@ -52,9 +54,9 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    \mathrm{Vol}(\mathcal{B}_3)]$ is strictly smaller than the formal
    Laurent ring admits.
 
-5. **Partial QOU falsification.** The Chapter 9 bandwidth bounds
-   $\mathcal{B}(q)$ are satisfied with slack; the information-theoretic
-   "hardness" of the substrate is weaker than the full conjecture
+5. **Partial QOU falsification.** The information-bandwidth bounds
+   $\mathcal{B}(q)$ are satisfied with slack; the substrate carries
+   less information-theoretic hardness than the full conjecture
    predicts.  This is a falsification of the strong form but not of
    the topological mass formula, Gr\"obner--Shirshov construction, or
    experimental predictions --- those live entirely in
