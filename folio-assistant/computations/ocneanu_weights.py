@@ -259,7 +259,9 @@ def tr_M_via_ocneanu_word(Z: int, N: int, *,
 
 def omega_lambda_via_inversion(n: int, *,
                                  q_val: float = None,
-                                 z_val: float = None) -> dict[tuple, float]:
+                                 z_val: float = None,
+                                 use_conjugate_symmetry: bool = True
+                                 ) -> dict[tuple, float]:
     """Compute ω_λ for all λ ⊢ n by inverting the canonical tr_M system.
 
     Uses:
@@ -267,13 +269,25 @@ def omega_lambda_via_inversion(n: int, *,
       • hecke_characters seminormal matrices for χ_λ(T_w).
       • scipy.linalg.solve for the linear inversion.
 
-    Cached per n.
+    When ``use_conjugate_symmetry=True`` (default), for each
+    non-self-conjugate pair (λ, λ') only ONE set of Hoefsmit matrices
+    is built; χ^{λ'}(T_w) is derived from χ^λ(T_w) via the Track-2
+    formula χ^{λ'}(T_w) = (-1)^{ℓ(w)} · χ^λ(T_w) |_{q → q^{-1}}.
+    The matrix rebuild at q^{-1} is cheap compared to repeated
+    character matmul, halving the dominant cost for non-self-conj
+    partitions.  At n=12: 9 self-conj + 34 pairs = 43 distinct
+    matrix-builds instead of 77.
+
+    Cached per n (disk cache is shared across symmetry modes).
     """
     import numpy as np
     from scipy.linalg import solve
     from hecke_characters import (partitions_of, build_seminormal_matrices)
     from markov_trace_canonical import tr_M_element
     from hecke_symbolic import SymbolicHeckeElement, q as q_sym_hs
+    from conjugate_symmetry import (is_self_conjugate,
+                                       conjugate_partition,
+                                       conjugate_pair_representatives)
 
     if q_val is None:
         q_val = Q0
@@ -288,48 +302,83 @@ def omega_lambda_via_inversion(n: int, *,
         return disk_omegas
 
     shapes = list(partitions_of(n))
+    shape_index = {s: j for j, s in enumerate(shapes)}
     words = _reduced_words_for_basis(n)
     assert len(shapes) == len(words), \
         f"p({n}) = {len(shapes)} partitions, {len(words)} words"
 
-    # Build coefficient matrix M[k, λ] = χ_λ(T_w_k) / d_λ
+    # Decide which shapes to evaluate directly vs derive via conjugate.
+    if use_conjugate_symmetry:
+        self_conj, pairs = conjugate_pair_representatives(n)
+        direct_shapes = list(self_conj) + [rep for rep, _ in pairs]
+        derived_map = {other: rep for rep, other in pairs}
+    else:
+        direct_shapes = shapes
+        derived_map = {}
+
+    from scipy.sparse import issparse, eye as speye
+    from conjugate_symmetry import _build_seminormal_at_q
+
+    def _eval_chi(sigmas, dim, w):
+        if dim == 0:
+            return 0.0
+        is_sparse = issparse(sigmas[0]) if sigmas else False
+        if is_sparse:
+            prod = speye(dim, format='csr')
+        else:
+            prod = np.eye(dim)
+        for g in w:
+            if 0 <= g < len(sigmas):
+                prod = prod @ sigmas[g]
+            else:
+                return None
+        if is_sparse:
+            return float(prod.diagonal().sum())
+        return float(np.trace(prod))
+
+    # Build coefficient matrix M[k, λ] = χ_λ(T_w_k) / d_λ.
+    # Conjugate symmetry: build each Hoefsmit matrix set at q ONCE per
+    # direct shape, and (if it has a conjugate partner) also at q^{-1}
+    # ONCE per representative.  For non-symmetry mode, fall back to the
+    # original per-(k,shape) rebuild (matches legacy behaviour).
     M = np.zeros((len(shapes), len(shapes)))
     rhs = np.zeros(len(shapes))
+
+    sigmas_at_q_cache: dict[tuple, tuple] = {}
+    sigmas_at_qinv_cache: dict[tuple, tuple] = {}
+    if use_conjugate_symmetry:
+        for shape in direct_shapes:
+            sigmas_at_q_cache[shape] = build_seminormal_matrices(shape)[:2]
+        reps_needing_qinv = set(derived_map.values())
+        for shape in reps_needing_qinv:
+            sigmas_qi, dim = _build_seminormal_at_q(shape, 1.0 / q_val)
+            sigmas_at_qinv_cache[shape] = (sigmas_qi, dim)
+
     for k, w in enumerate(words):
-        # tr_M(T_w) via canonical reduction
         elem = (SymbolicHeckeElement({w: 1}) if w
                 else SymbolicHeckeElement({(): 1}))
         tr_sym = tr_M_element(elem, n)
         tr_num = float(sp.N(tr_sym.subs(q_sym_hs, q_val)))
         rhs[k] = tr_num
-        for j, shape in enumerate(shapes):
-            sigmas, d_lam, _syts = build_seminormal_matrices(shape)
-            if d_lam == 0:
-                continue
-            # Build T_w in irrep λ
-            try:
-                from scipy.sparse import issparse, eye as speye
-                is_sparse = issparse(sigmas[0]) if sigmas else False
-            except ImportError:
-                is_sparse = False
-            if is_sparse:
-                from scipy.sparse import eye as speye
-                prod = speye(d_lam, format='csr')
+        for shape in direct_shapes:
+            if use_conjugate_symmetry:
+                sigmas, d_lam = sigmas_at_q_cache[shape]
             else:
-                prod = np.eye(d_lam)
-            for g in w:
-                if 0 <= g < len(sigmas):
-                    prod = prod @ sigmas[g]
-                else:
-                    prod = None
-                    break
-            if prod is None:
+                sigmas, d_lam, _ = build_seminormal_matrices(shape)
+            chi = _eval_chi(sigmas, d_lam, w)
+            if chi is None or d_lam == 0:
                 continue
-            if is_sparse:
-                chi = float(prod.diagonal().sum())
-            else:
-                chi = float(np.trace(prod))
+            j = shape_index[shape]
             M[k, j] = chi / d_lam
+        if use_conjugate_symmetry:
+            for lp, rep in derived_map.items():
+                sigmas_qi, dim = sigmas_at_qinv_cache[rep]
+                chi_qi = _eval_chi(sigmas_qi, dim, w)
+                if chi_qi is None or dim == 0:
+                    continue
+                chi_lp = ((-1) ** len(w)) * chi_qi
+                j = shape_index[lp]
+                M[k, j] = chi_lp / dim
 
     # Solve M · ω = rhs
     omega = solve(M, rhs)
