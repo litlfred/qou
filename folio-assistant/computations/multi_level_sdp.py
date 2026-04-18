@@ -86,17 +86,44 @@ def sdp_level(level, Z, N, m_pp=1, m_pn=1, m_nn=1, extra_params=None):
                 psd_blocks.append(f"level4_shell_boundary_{i}")
 
     if level >= 5:
-        # Cross-shell transitions: PSD for shell-straddling
-        if not (Z in MAGIC and N in MAGIC):
-            # Non-magic: add cross-shell PSD between magic shells
-            # (simplified: one extra block at mid-atom position)
+        # Cross-shell transitions: PSD for every pair of generators
+        # (i, j) that STRADDLES a shell boundary b = 3·A_m - 1, i.e.
+        # i < b ≤ j.  One PSD coupling per straddling pair per
+        # internal boundary.  Enumerate all magic A_m ≤ A/2 and all
+        # (i, j) pairs on opposite sides of b.
+        shell_bounds = _shell_boundaries(Z, N)
+        # Only boundaries with strands on both sides count
+        internal_bounds = [b for b in shell_bounds
+                            if 0 < b < n_gens - 1]
+        cross_count = 0
+        # Bound total cross-shell PSD blocks to keep SDP tractable
+        MAX_CROSS = min(256, n_gens * len(internal_bounds))
+        for b in internal_bounds:
+            for i in range(b):
+                if cross_count >= MAX_CROSS:
+                    break
+                for j in range(b + 1, n_gens):
+                    if cross_count >= MAX_CROSS:
+                        break
+                    x_cs = cp.Variable(nonneg=True)
+                    block_cs = cp.bmat([[V[i], x_cs], [x_cs, V[j]]])
+                    constraints.append(block_cs >> 0)
+                    constraints.append(x_cs <= (V[i] + V[j]) / 2)
+                    psd_blocks.append(
+                        f"level5_cross_shell_b{b}_i{i}_j{j}")
+                    cross_count += 1
+            if cross_count >= MAX_CROSS:
+                break
+        # Fallback for atoms with NO internal shell boundary (A < 3):
+        # add the single mid-atom placeholder we had historically.
+        if not internal_bounds and n_gens >= 3:
             mid = n_gens // 2
             if 0 < mid < n_gens - 1:
                 x_cs = cp.Variable(nonneg=True)
                 block_cs = cp.bmat([[V[mid - 1], x_cs],
                                      [x_cs, V[mid + 1]]])
                 constraints.append(block_cs >> 0)
-                psd_blocks.append(f"level5_cross_shell_{mid}")
+                psd_blocks.append(f"level5_cross_shell_mid_{mid}")
 
     if level >= 6:
         # Electron-shell PSD: one block per electron shell boundary

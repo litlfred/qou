@@ -161,6 +161,7 @@ export default chapter({
         "categorical-action-notation-su2",
         "qou-canonical-action",
         "physicist-translation",
+        "categorical-action-vs-chern-simons",
         "variational-equations",
         "variational-equations-proof",
         "wavefront-propagation",

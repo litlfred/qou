@@ -15,18 +15,18 @@ Output: folio-assistant/computations/beta-decay-matrix.witness.json
 
 import json
 import math
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q, Q_INV, HA, S_SKEIN as S
+
 # ── Parameters ───────────────────────────────────────────────────
 
-Q = 1.110
-Q_INV = 1.0 / Q
 Q_HALF = Q**0.5
 Q_INV_HALF = 1.0 / Q_HALF
-HA = Q - Q_INV              # Hecke coefficient: q - q⁻¹
-S = Q_HALF - Q_INV_HALF     # Skein amplitude: q½ - q⁻½
-Z = 1.0 / (Q_HALF + Q_INV_HALF)  # Markov parameter
+Z = 1.0 / (Q_HALF + Q_INV_HALF)  # Markov parameter z = 1/(q^½ + q^{-½})
 
 print(f"q = {Q}")
 print(f"q⁻¹ = {Q_INV:.10f}")

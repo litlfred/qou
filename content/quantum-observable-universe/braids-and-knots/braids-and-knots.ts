@@ -192,6 +192,8 @@ export default chapter({
         // Markov chain interpretation of the algebraic framework
         "hecke-markov-transition",
         "hecke-markov-interpretation",
+        "markov-lambda-knot-operations",
+        "markov-chain-fluctuations",
         // Feynman path integrals as categorical traces
         "feynman-categorical-trace",
         "feynman-categorical-trace-proof",
@@ -371,6 +373,8 @@ export default chapter({
         "bw-coefficient-shadow-price",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
+        "mass-endomorphism-jet-tower",
+        "mass-tower-syt-cells",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",

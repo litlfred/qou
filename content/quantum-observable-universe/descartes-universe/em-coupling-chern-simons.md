@@ -6,13 +6,15 @@ $T_{2,9}$ and $T_{3,5}$ on Bring's surface:*
 $$
   \frac{1}{\alpha_{\mathrm{EM}}}
   = q \cdot [9]_q \cdot [10]_q
-    \cdot \bigl(1 + c_1 + c_1^2 \cdot \kappa\bigr)
+    \cdot \bigl(1 + \delta_{\mathrm{CS}}
+                 + \delta_{\mathrm{CS}}^2 \cdot \kappa\bigr)
 $$
 
 *where:*
 
 $$
-  c_1 = \frac{\bigl(\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})\bigr)
+  \delta_{\mathrm{CS}}
+  = \frac{\bigl(\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})\bigr)
               \cdot \tfrac{[2]_q}{2} \cdot \hbar_q^2}
              {q \cdot [9]_q \cdot [10]_q}
 $$

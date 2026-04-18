@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from mass_endomorphism import (
     proton_cross, neutron_cross,
 )
+from q_parameter import Q as _Q_CANONICAL
 
 
 # Symbolic q
@@ -36,8 +37,8 @@ qi_sym = 1 / q_sym
 h_sym = q_sym - qi_sym
 z_sym = 1 / (q_sym ** sp.Rational(1, 2) + q_sym ** sp.Rational(-1, 2))
 
-# Substrate parameter value
-q0_mp = mpmath.mpf('1.1099785955541805')
+# Substrate parameter value (from q_parameter — single source of truth)
+q0_mp = mpmath.mpf(repr(_Q_CANONICAL))
 
 # Numerical Wedderburn weights at H_3 (symbolic)
 def q_int_sym(k):

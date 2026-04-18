@@ -188,6 +188,8 @@ export default chapter({
         "torus-knot-prime-powers",
         "force-knot-identification",
         "em-coupling-projection",
+        "em-coupling-chern-simons",
+        "chern-simons-as-knot-invariant",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
@@ -302,6 +304,8 @@ export default chapter({
         "borel-zagier-qou-volumes",
         "formal-chain-transcendence-remark",
         "yekutieli-transcendence-shadow",
+        "implications-algebraic-independence",
+        "implications-algebraic-dependence",
         // Baryon periods and integration limits
         "baryon-period-conjecture",
         "baryon-integration-limit",
