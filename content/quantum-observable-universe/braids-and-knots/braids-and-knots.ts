@@ -342,6 +342,8 @@ export default chapter({
         "confinement-level",
         "confinement-level-exists",
         "confinement-level-unique",
+        "level-sufficiency",
+        "level-sufficiency-interprets",
         "atom-knot",
         "atom-knot-exists",
         "atom-knot-unique",
