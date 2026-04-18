@@ -15,21 +15,33 @@ This repository is a formal mathematics paper with:
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
 
-## Always provide GitHub links for changed files
+## Always provide GitHub links — default to `.md`
 
-Whenever a skill or agent creates or modifies a file, the reply **must**
-include a clickable GitHub blob URL for every affected file on the pushed
-branch, using the pattern:
+**Default link target is always the `.md` file.** When citing a content
+block (definition, proposition, remark, etc.) in chat replies, reviews,
+or summaries, the clickable link **must** point to the `.md` sibling —
+never to `.ts` or `.lean` as the primary link.
+
+Rationale: `.md` is the narrative/authoritative human-readable face of a
+content block. `.ts` is manifest metadata; `.lean` is formalization.
+Users want to read the statement, not the manifest.
+
+Pattern (always):
 
 ```
-https://github.com/litlfred/qou/blob/<branch>/<relative-path>
+https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
 ```
 
-This applies to `.md`, `.ts`, `.lean`, `.tex`, config, and any other file
-kinds — not just content blocks.  If the branch is not yet pushed, say so
-explicitly and do not fabricate URLs.  See
-`.claude/skills/local/delivery-summary.md` for the full presentation
-format (block table + commits + branch diff).
+**When to link siblings (`.ts`, `.lean`, `.tex`):**
+- Only in delivery summaries for **modified** files (see
+  `.claude/skills/local/delivery-summary.md`) — list every sibling that
+  actually changed.
+- When the user explicitly asks about the Lean formalization or TS
+  manifest.
+- Never as the primary citation link for a block reference.
+
+If the branch is not yet pushed, say so explicitly and do not fabricate
+URLs.
 
 ## CRITICAL: Protected Files — DO NOT MODIFY
 
