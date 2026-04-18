@@ -207,7 +207,6 @@ export default chapter({
         "breit-wheeler-observation",
         "pair-creation-energy",
         "photon-nucleon-hecke-action",
-        "hopf-dressing-pair-signature",
         "neutron-horizontal-blindness",
       ],
     }),
