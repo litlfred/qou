@@ -21,16 +21,9 @@ def test_dispatch_rejects_invalid_level():
 
 
 def test_implemented_levels():
-    """Levels 3 and 4 are implemented; 5-7 remain."""
-    assert sdp.implemented_levels() == [3, 4]
-    assert sdp.pending_levels() == [5, 6, 7]
-
-
-@pytest.mark.parametrize("level", [5, 6, 7])
-def test_pending_levels_report_not_implemented(level):
-    result = sdp.multi_level_sdp(level)
-    assert result.status == "not_implemented"
-    assert any("Track C" in c or "audit" in c.lower() for c in result.caveats)
+    """All four upper levels 3..7 are implemented."""
+    assert sdp.implemented_levels() == [3, 4, 5, 6, 7]
+    assert sdp.pending_levels() == []
 
 
 # ── Level 4 — shell-magic SDP ──────────────────────────────────────────
@@ -74,6 +67,92 @@ def test_level4_psd_block_structure():
     assert len(blocks) == 1
     assert blocks[0]["name"] == "shell_closure_2x2"
     assert blocks[0]["size"] == 2
+
+
+# ── Level 5 — cross-shell SDP ──────────────────────────────────────────
+
+@pytest.mark.parametrize("a", [4, 12, 24, 40, 60, 100])
+def test_level5_non_magic_counts(a):
+    try:
+        r = sdp.solve_cross_shell_sdp(a=a)
+    except ImportError:
+        pytest.skip("sigma_shell_characterization not importable")
+    if r.status == "not_implemented":
+        pytest.skip("upstream not available")
+    assert r.level == 5
+    assert r.status == "optimal"
+    assert r.primal is not None
+    assert r.primal["a_lower"] in sdp.MAGIC_NUMBERS
+    assert r.primal["a_upper"] in sdp.MAGIC_NUMBERS
+    assert r.primal["a_lower"] <= a <= r.primal["a_upper"] or r.primal["a_lower"] == r.primal["a_upper"]
+    assert r.primal["det_2x2"] >= -1e-12
+
+
+def test_level5_magic_count_collapses():
+    """For a magic number, a_lower == a_upper."""
+    try:
+        r = sdp.solve_cross_shell_sdp(a=20)
+    except ImportError:
+        pytest.skip("sigma_shell_characterization not importable")
+    if r.status == "not_implemented":
+        pytest.skip("upstream not available")
+    assert r.primal["a_lower"] == 20
+    assert r.primal["a_upper"] == 20
+
+
+# ── Level 6 — atom-electron SDP ────────────────────────────────────────
+
+@pytest.mark.parametrize("z", [1, 2, 6, 20, 82])
+def test_level6_stable_z(z):
+    try:
+        r = sdp.solve_atom_electron_sdp(z=z)
+    except ImportError:
+        pytest.skip("hecke_core.alpha_em not importable")
+    if r.status == "not_implemented":
+        pytest.skip("upstream not available")
+    assert r.level == 6
+    assert r.status == "optimal"
+    assert r.primal["z"] == z
+    assert r.primal["z_alpha"] < 1.0  # orbital stability
+
+
+def test_level6_superheavy_infeasible():
+    """Z >= 137 should fail the orbital-stability PSD bound."""
+    try:
+        r = sdp.solve_atom_electron_sdp(z=150)
+    except ImportError:
+        pytest.skip("hecke_core.alpha_em not importable")
+    if r.status == "not_implemented":
+        pytest.skip("upstream not available")
+    assert r.status == "infeasible"
+
+
+# ── Level 7 — molecule SDP ─────────────────────────────────────────────
+
+@pytest.mark.parametrize("n_atoms,bond_order", [(2, 1.0), (3, 1.0), (4, 2.0), (6, 1.5)])
+def test_level7_small_molecules(n_atoms, bond_order):
+    r = sdp.solve_molecule_sdp(n_atoms=n_atoms, bond_order=bond_order)
+    assert r.level == 7
+    assert r.status == "optimal"
+    assert r.primal["n_atoms"] == n_atoms
+    assert r.primal["bond_order"] == bond_order
+    # Diagonal must be 1
+    m = r.primal["matrix"]
+    for i in range(n_atoms):
+        assert abs(m[i][i] - 1.0) < 1e-12
+
+
+def test_level7_rejects_single_atom():
+    r = sdp.solve_molecule_sdp(n_atoms=1)
+    assert r.status == "infeasible"
+
+
+def test_level7_all_levels_round_trip_through_dispatcher():
+    """Every implemented level is reachable via multi_level_sdp()."""
+    for lvl in sdp.implemented_levels():
+        r = sdp.multi_level_sdp(lvl)
+        assert isinstance(r, sdp.SDPResult)
+        assert r.level == lvl
 
 
 def test_sdp_result_dataclass():
