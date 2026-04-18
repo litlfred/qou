@@ -1,0 +1,323 @@
+{
+  "computation": "canonical-plus-multibrane",
+  "description": "Canonical Jones-Markov trace (level 0) PLUS multi-brane \u03a6_q tower (levels 1..N) per prop:categorical-mass-markov's full formula \ud835\udd2a = |tr_M| + \u03a3 \u2016\u03a6_q(z_i)\u2016.  Level 0 uses markov_trace_canonical.tr_M_element (7/7 prop-table values).  Levels 1..N use aggregated V\u0302 (\u03a3_\u03bb w_\u03bb V\u0302_i^\u03bb) with Markov-stabilization jet lift V\u0302^(n) = z^n V\u0302^(0).  Aggregated-BEFORE-\u03a6_q ordering matches the prop's letter (\u03a6_q nonlinearity breaks per-irrep-then-sum).  Proper K\u00e4hler-differential jet lift is open.",
+  "timestamp": "2026-04-18T11:42:20.410447+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782
+  },
+  "results": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "adjacent",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 0.0,
+      "B_MeV": 0.465477453510069,
+      "per_level": [],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.0937384120217768
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "adjacent",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 140.76803220644726,
+      "B_MeV": 141.23350965995732,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 180.0102713637433
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.407712777316029
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "adjacent",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 148.78505760854523,
+      "B_MeV": 149.2505350620553,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 180.0102713637433
+        },
+        {
+          "level": 2,
+          "delta": 10.25195064206899
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.834935661623456
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 5,
+      "pair_mode": "adjacent",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 151.40213589888668,
+      "B_MeV": 151.86761335239675,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 180.0102713637433
+        },
+        {
+          "level": 2,
+          "delta": 10.25195064206899
+        },
+        {
+          "level": 3,
+          "delta": 2.2379366987560285
+        },
+        {
+          "level": 4,
+          "delta": 0.7797784558414005
+        },
+        {
+          "level": 5,
+          "delta": 0.32893227550674453
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.9743983275850026
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 10,
+      "pair_mode": "adjacent",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 151.6255632501633,
+      "B_MeV": 152.09104070367337,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 180.0102713637433
+        },
+        {
+          "level": 2,
+          "delta": 10.25195064206899
+        },
+        {
+          "level": 3,
+          "delta": 2.2379366987560285
+        },
+        {
+          "level": 4,
+          "delta": 0.7797784558414005
+        },
+        {
+          "level": 5,
+          "delta": 0.32893227550674453
+        },
+        {
+          "level": 6,
+          "delta": 0.1513328790958841
+        },
+        {
+          "level": 7,
+          "delta": 0.072575393020335
+        },
+        {
+          "level": 8,
+          "delta": 0.03551997077858626
+        },
+        {
+          "level": 9,
+          "delta": 0.01755992492865488
+        },
+        {
+          "level": 10,
+          "delta": 0.00872455759419477
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.986304648528004
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "full",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 0.0,
+      "B_MeV": 0.465477453510069,
+      "per_level": [],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.0937384120217768
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "full",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 143.91999052565026,
+      "B_MeV": 144.38546797916032,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 184.0409086005758
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.575678906498346
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "full",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 152.19143077185558,
+      "B_MeV": 152.65690822536564,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 184.0409086005758
+        },
+        {
+          "level": 2,
+          "delta": 10.577289317398069
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 8.016459418237229
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 5,
+      "pair_mode": "full",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 154.87438567668318,
+      "B_MeV": 155.33986313019324,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 184.0409086005758
+        },
+        {
+          "level": 2,
+          "delta": 10.577289317398069
+        },
+        {
+          "level": 3,
+          "delta": 2.3029874303921325
+        },
+        {
+          "level": 4,
+          "delta": 0.7951780377943507
+        },
+        {
+          "level": 5,
+          "delta": 0.33272315691273846
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 8.159432612834722
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 10,
+      "pair_mode": "full",
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 155.09879335050456,
+      "B_MeV": 155.56427080401463,
+      "per_level": [
+        {
+          "level": 1,
+          "delta": 184.0409086005758
+        },
+        {
+          "level": 2,
+          "delta": 10.577289317398069
+        },
+        {
+          "level": 3,
+          "delta": 2.3029874303921325
+        },
+        {
+          "level": 4,
+          "delta": 0.7951780377943507
+        },
+        {
+          "level": 5,
+          "delta": 0.33272315691273846
+        },
+        {
+          "level": 6,
+          "delta": 0.1522750414449554
+        },
+        {
+          "level": 7,
+          "delta": 0.07281010878427452
+        },
+        {
+          "level": 8,
+          "delta": 0.035578478814253245
+        },
+        {
+          "level": 9,
+          "delta": 0.017574511484861333
+        },
+        {
+          "level": 10,
+          "delta": 0.008728194281626855
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 8.171391174628178
+    }
+  ]
+}
