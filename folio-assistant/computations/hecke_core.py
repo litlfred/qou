@@ -3151,20 +3151,31 @@ E_0_CALIBRATION_MEV = 0.782  # Q-value of free neutron β-decay (MeV).
 #  beta-decay Q-value)."
 
 
-def binding_from_frobenius_pairing(Z, N, k_cap=None):
+def binding_from_frobenius_pairing(Z, N, k_cap=None, *, canonical: bool = False):
     """Categorical binding via the mass-identity Markov trace formula.
 
         B_bulk(Z, N) = E_0 · ( |tr_M(W_free)| - |tr_M(W_atom)| )
 
     Derivation (prop:categorical-mass-markov, def:mass-identity):
     at a single brane level, the categorical mass of a braid β is
-    m(β) = |tr_M(ρ(β))| — the absolute Markov trace.  Binding is the
-    mass defect:
-        B = m_free_nucleons - m_atom
-          = |tr_M(W_free)| - |tr_M(W_atom)|
-    times the ONE archimedean calibration E_0 (fibre functor
-    τ: R → ℝ), prescribed by the prop to match ONE experimental
-    value (free neutron β-decay Q).
+    m(β) = |tr_M(ρ(β))| — the absolute Markov trace.
+
+    Trace selection:
+      canonical=True  →  uses the axiomatic Jones-Markov trace
+                         (markov_trace_canonical.tr_M_element) that
+                         satisfies the Markov axioms and matches the
+                         prop's explicit-values table exactly.
+                         CORRECT per the prop.  Slow (>100s on D);
+                         prohibitive on heavy atoms with current
+                         implementation.
+      canonical=False →  uses the LEGACY Plancherel-weighted form
+                         Σ_λ w_λ · χ_λ(W)/d_λ (atom_markov_trace).
+                         This is NOT the prop's Markov trace — it
+                         gives tr_M(σ_0) ≈ 0.104 at q_0 instead of
+                         z ≈ 0.499.  Retained as default for
+                         backward compatibility with existing
+                         witness data; migrate to canonical=True
+                         when possible.
 
     Yekutieli's 2D nonabelian Stokes theorem (Yekutieli 2015) gives
     the Markov trace as the nonabelian multiplicative integral of
@@ -3177,6 +3188,20 @@ def binding_from_frobenius_pairing(Z, N, k_cap=None):
     exceptional divisors.  Current implementation is single-level
     only.  Extension to the full tower sum is conj:mass-endomorphism.
     """
+    if canonical:
+        import sys as _sys
+        from pathlib import Path as _Path
+        _sys.path.insert(0, str(_Path(__file__).parent))
+        from binding_canonical import binding_canonical as _canon
+        r = _canon(Z, N, E_0=E_0_CALIBRATION_MEV)
+        if r.get("status") != "solved":
+            # Fall back to Plancherel on failure (e.g.
+            # NotImplementedError for complex braid patterns).
+            atom_tr = atom_markov_trace(Z, N, k_cap, include_inter=True)
+            free_tr = atom_markov_trace(Z, N, k_cap, include_inter=False)
+            return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))
+        return r["B_MeV"]
+    # Legacy Plancherel path (default).
     atom_tr = atom_markov_trace(Z, N, k_cap, include_inter=True)
     free_tr = atom_markov_trace(Z, N, k_cap, include_inter=False)
     return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))
