@@ -16,5 +16,9 @@ export default proposition({
     "def:algebraic-quantum-volume",
     "rem:photon-channel-wedderburn-chain",
     "thm:wedderburn-mass-formula",
+    "cor:quantum-dilogarithm",
+    "def:briggs-klein-chart",
+    "def:quantum-bloch-group",
+    "rem:mass-endomorphism-jet-tower",
   ],
 });

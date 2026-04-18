@@ -8,6 +8,7 @@ export const massEndomorphismJetTower = remark({
     "prop:mass-endomorphism-tower",
     "def:recursive-brane-tower",
     "def:descent-involution",
+    "prop:descent-eigenspaces",
     "def:quantum-bloch-group",
     "thm:jones-markov-trace",
   ],
