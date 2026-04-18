@@ -26,13 +26,22 @@ with a clickable viewer link and a short explanation of what changed.
 
 ### How to find changed blocks
 
-Run this to extract labels from changed content `.ts` files:
+Extract labels from changed content `.ts`/`.md`/`.lean` triples
+(a `.md`-only edit is still a block change):
 
 ```bash
-for f in $(git diff origin/main..HEAD --name-only -- 'content/**/*.ts' | grep -v '/rendered/' | grep -v 'schema/' | grep -v 'pipeline/'); do
-  label=$(grep -oP "label:\s*['\"]\\K[^'\"]+" "$f" 2>/dev/null || echo "")
-  if [ -n "$label" ]; then echo "$f|$label"; fi
-done
+# Collect changed content files (any sibling triggers the block)
+changed=$(git diff origin/main..HEAD --name-only -- \
+  'content/**/*.ts' 'content/**/*.md' 'content/**/*.lean' \
+  | grep -v '/rendered/' | grep -v 'schema/' | grep -v 'pipeline/')
+
+# For each, resolve to the sibling .ts and pull the label
+for f in $changed; do
+  ts="${f%.*}.ts"
+  [ -f "$ts" ] || continue
+  label=$(grep -oP "label:\s*['\"]\\K[^'\"]+" "$ts" 2>/dev/null || echo "")
+  [ -n "$label" ] && echo "$ts|$label"
+done | sort -u
 ```
 
 ### Link format
