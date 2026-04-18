@@ -2,11 +2,15 @@
 """
 MASS ENDOMORPHISM: proton-electron mass ratio from Φ_q tower.
 
-    𝔪(β) = |∏ V̂_i| + Σ_i Φ_q(|V̂_i|) + Σ_{adj} z² · Φ_q(|V̂_i V̂_j|)
+    𝔪(β) = |∏ V̂_i| + Σ_i Φ_q(|V̂_i|) + Σ_{i<j} z² · Φ_q(|V̂_i V̂_j|)
 
 where Φ_q(z) = ∏_{k≥1} (1 - q⁻ᵏz)⁻¹ is the non-perturbative
-quantum dilogarithm and z² = tr_M(σ₀σ₁) is the Markov trace of
-the adjacent generator product.
+quantum dilogarithm and z² = tr_M(σ_i σ_j) is the Markov trace of
+any pair of distinct generators (adjacent σ_iσ_j contributes z² via
+braid relations; non-adjacent via far-commutativity tr_M(σ_iσ_j) =
+tr_M(σ_i) tr_M(σ_j) = z·z = z²).  The earlier adjacent-only form
+(prop:mass-endomorphism-tower) empirically undercounts blow-up
+centres for A ≥ 3 atoms; see adjacent_vs_full_probe.witness.json.
 
 Electron (trefoil σ₁³, 2 strands, 1 generator):
   V̂_e ≈ 0.594, Φ_q ≈ 630.  No cross-term.
@@ -14,7 +18,7 @@ Electron (trefoil σ₁³, 2 strands, 1 generator):
 Proton (B₃ × uud + 2 gluon, 3 strands, 2 generators):
   V̂₀ ≈ 0.989, V̂₁ ≈ 0.971.
   11 crossings from 4-channel γγ→qq̄ production.
-  Adjacent cross-term z² · Φ_q(V̂₀V̂₁) ≈ 82,000.
+  Cross-term z² · Φ_q(V̂₀V̂₁) ≈ 82,000  (one pair for n = 2).
 
 Result: m_p/m_e ≈ 1870 (CODATA: 1836, error 1.8%).
 Zero fitted parameters.  Inputs: q₀ and m_e only.
@@ -100,15 +104,23 @@ def additive_wedderburn_volumes(n_strands, crossings_per_gen):
 
 
 def mass_from_tower(vols):
-    """𝔪 = |Π V̂_full| + Σ Φ_q(|V̂_full|) + Σ_{adj} z² Φ_q(|V̂_i V̂_j|).
+    """𝔪 = |Π V̂_full| + Σ Φ_q(|V̂_full|) + Σ_{i<j} z² Φ_q(|V̂_i V̂_j|).
 
     The three terms correspond to:
-    1. Descended (base-level Markov trace product)
-    2. Single-generator blow-up centres (weight 1 per generator)
-    3. Adjacent-generator cross-terms (weight z² = tr_M(σ_i σ_j))
+    1. Descended (base-level Markov trace product).
+    2. Single-generator blow-up centres (weight 1 per generator).
+    3. Pair blow-up centres over all distinct generator pairs (i, j),
+       weighted by z² = tr_M(σ_i σ_j).
 
-    The cross-term weight z² is derived from the Markov trace of the
-    adjacent generator product, not fitted.
+    The cross-term weight z² is derived from the Markov trace of
+    σ_i σ_j.  For adjacent pairs (|i−j|=1) the weight follows from
+    the Hecke braid relation; for non-adjacent pairs (|i−j|≥2) it
+    follows from far-commutativity: tr_M(σ_i σ_j) = tr_M(σ_i)·
+    tr_M(σ_j) = z·z = z².  The earlier adjacent-only restriction
+    (prop:mass-endomorphism-tower) was empirically refuted by
+    adjacent_vs_full_probe: including non-adjacent pairs closes the
+    2–3% heavy-atom bias (A ≥ 6) and is required for consistency
+    with the Wedderburn blow-up count of the brane tower.
     """
     n = len(vols)
     z_mark = 1.0 / (Q0 ** 0.5 + (1.0 / Q0) ** 0.5)
@@ -121,10 +133,11 @@ def mass_from_tower(vols):
     single = sum(Phi_q(abs(v["full"])) for v in vols)
 
     cross = 0.0
-    for i in range(n - 1):
-        cross += z_mark ** 2 * Phi_q(
-            abs(vols[i]["full"] * vols[i + 1]["full"])
-        )
+    for i in range(n):
+        for j in range(i + 1, n):
+            cross += z_mark ** 2 * Phi_q(
+                abs(vols[i]["full"] * vols[j]["full"])
+            )
 
     return desc, single, cross, desc + single + cross
 
