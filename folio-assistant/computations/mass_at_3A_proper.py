@@ -387,9 +387,84 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     return out
 
 
+def phi_q_safe(z_val: float, *, q: float = Q0, cap_frac: float = 0.98,
+                 max_k: int = 2000) -> float:
+    """Saturation-safe Φ_q: clips |z| ≤ cap_frac · q before evaluation.
+
+    The raw Φ_q diverges as |z| → q (k=1 factor hits zero); the
+    Plancherel-weighted character sum at H_{3A} routinely produces
+    V̂_i slightly above q for intra-nucleon generators, which would
+    make the tower mass infinite.  Capping |z| at cap_frac · q
+    regularizes Φ_q at the cost of a known approximation near the
+    singularity — same symptom as the general ``V_full saturation
+    near q₀'' issue flagged in HANDOVER-STATUS.
+    """
+    qi = 1.0 / q
+    cap = cap_frac * q
+    z_clipped = max(-cap, min(z_val, cap))  # clamp to [−cap, +cap]
+    z_abs = abs(z_clipped)
+    product = 1.0
+    for k in range(1, max_k + 1):
+        factor = 1.0 - (qi ** k) * z_abs
+        if abs(factor) < 1e-300:
+            return float("inf")
+        product /= factor
+        if (qi ** k) * z_abs < 1e-15:
+            break
+    return product
+
+
+def log_phi_q(z_val: float, *, q: float = Q0,
+                cap_frac: float = 0.9999, max_k: int = 2000) -> float:
+    """log Φ_q(|z|) = −Σ_k log(1 − q^{−k} |z|).
+
+    Finite for |z| < q (cap prevents log(0)).  Useful for numerical
+    stability when Φ_q itself would overflow: tower sums done in
+    log-space avoid exp-of-huge intermediates.
+    """
+    qi = 1.0 / q
+    cap = cap_frac * q
+    z_abs = min(abs(z_val), cap)
+    total = 0.0
+    for k in range(1, max_k + 1):
+        factor = 1.0 - (qi ** k) * z_abs
+        if factor <= 0.0:
+            return float("inf")
+        total -= math.log(factor)
+        if (qi ** k) * z_abs < 1e-15:
+            break
+    return total
+
+
+def mass_from_tower_safe(vols, *, cap_frac: float = 0.98):
+    """Tower mass using phi_q_safe — Φ_q evaluations clipped at cap_frac·q₀.
+
+    Mirrors mass_endomorphism.mass_from_tower but regularizes the
+    divergent Φ_q(V̂) contributions when V̂_i exceeds q₀ − ε.
+    Returns (desc, single, cross, total), same interface as the raw
+    mass_from_tower so it's drop-in for tower binding callers.
+    """
+    from mass_endomorphism import z_mark as _zm
+    n = len(vols)
+    desc = 1.0
+    for v in vols:
+        desc *= v["full"]
+    desc = abs(desc)
+    single = sum(phi_q_safe(abs(v["full"]), cap_frac=cap_frac)
+                  for v in vols)
+    cross = 0.0
+    for i in range(n - 1):
+        cross += _zm * _zm * phi_q_safe(
+            abs(vols[i]["full"] * vols[i + 1]["full"]),
+            cap_frac=cap_frac)
+    return desc, single, cross, desc + single + cross
+
+
 def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        E_0: float = E_0_CALIBRATION_MEV,
                        weight_scheme: str = "normalized_plancherel",
+                       cap_frac: float = 0.98,
+                       use_safe_phi_q: bool = True,
                        verbose: bool = False) -> dict:
     """FULL-TOWER + H_{3A} binding.
 
@@ -414,8 +489,14 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         include_inter=False, weight_scheme=weight_scheme, verbose=verbose)
     if not vols_atom or not vols_free:
         return {"status": "trivial", "Z": Z, "N": N}
-    desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
-    desc_f, sgl_f, cross_f, total_f = mass_from_tower(vols_free)
+    if use_safe_phi_q:
+        desc_a, sgl_a, cross_a, total_a = mass_from_tower_safe(
+            vols_atom, cap_frac=cap_frac)
+        desc_f, sgl_f, cross_f, total_f = mass_from_tower_safe(
+            vols_free, cap_frac=cap_frac)
+    else:
+        desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
+        desc_f, sgl_f, cross_f, total_f = mass_from_tower(vols_free)
     return {
         "Z": Z, "N": N, "A": Z + N,
         "m_pp": m_pp, "m_pn": m_pn, "m_nn": m_nn,
@@ -426,6 +507,8 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         "m_free_breakdown": {"desc": desc_f, "single": sgl_f,
                               "cross": cross_f},
         "E_0_MeV": E_0,
+        "weight_scheme": weight_scheme,
+        "cap_frac": cap_frac if use_safe_phi_q else None,
         "B_MeV": E_0 * (total_f - total_a),
     }
 
