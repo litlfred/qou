@@ -16,7 +16,7 @@ each class should behave as follows.
    makes the three-nucleon contribution to $^{3}\mathrm{He}$ and
    $^{3}\mathrm{H}$ binding irreducible: no pairwise decomposition of
    the $NN$ potential should close the observed $\approx 8\%$ gap
-   between two-body $ab\ initio$ predictions and measured binding
+   between two-body *ab initio* predictions and measured binding
    energies.  Chiral effective field theory calculations should
    continue to require an irreducible $3N$ term.
 

@@ -14,6 +14,7 @@ export default remark({
   ],
   uses: [
     "conj:hyperbolic-volume-transcendence",
+    "rem:yekutieli-transcendence-shadow",
     "prop:yekutieli-lifting",
     "prop:cs-evaluation-faithfulness",
     "prop:volume-tower-decomposition",
