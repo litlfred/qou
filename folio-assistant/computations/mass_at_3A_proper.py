@@ -436,13 +436,24 @@ def log_phi_q(z_val: float, *, q: float = Q0,
     return total
 
 
-def mass_from_tower_safe(vols, *, cap_frac: float = 0.98):
+def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
+                            cross_mode: str = "adjacent"):
     """Tower mass using phi_q_safe — Φ_q evaluations clipped at cap_frac·q₀.
 
     Mirrors mass_endomorphism.mass_from_tower but regularizes the
     divergent Φ_q(V̂) contributions when V̂_i exceeds q₀ − ε.
-    Returns (desc, single, cross, total), same interface as the raw
-    mass_from_tower so it's drop-in for tower binding callers.
+
+    ``cross_mode`` selects the quadratic cross-term:
+      "adjacent" — z² · Σ_{|i−j|=1} Φ_q(|V̂_i V̂_j|)  (standard
+                   prop:mass-endomorphism-tower form)
+      "full"     — z² · Σ_{i<j}     Φ_q(|V̂_i V̂_j|)  (full
+                   quadratic channel over all generator pairs;
+                   each pair weighted by z² as in adjacent case)
+      "full_z2pow" — z^{2|i-j|} · Σ_{i<j} Φ_q(|V̂_i V̂_j|)
+                   (distance-graded weighting; Markov-trace power
+                   of the separation between gens i, j)
+
+    Returns (desc, single, cross, total).
     """
     from mass_endomorphism import z_mark as _zm
     n = len(vols)
@@ -453,10 +464,25 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98):
     single = sum(phi_q_safe(abs(v["full"]), cap_frac=cap_frac)
                   for v in vols)
     cross = 0.0
-    for i in range(n - 1):
-        cross += _zm * _zm * phi_q_safe(
-            abs(vols[i]["full"] * vols[i + 1]["full"]),
-            cap_frac=cap_frac)
+    if cross_mode == "adjacent":
+        for i in range(n - 1):
+            cross += _zm * _zm * phi_q_safe(
+                abs(vols[i]["full"] * vols[i + 1]["full"]),
+                cap_frac=cap_frac)
+    elif cross_mode == "full":
+        for i in range(n):
+            for j in range(i + 1, n):
+                cross += _zm * _zm * phi_q_safe(
+                    abs(vols[i]["full"] * vols[j]["full"]),
+                    cap_frac=cap_frac)
+    elif cross_mode == "full_z2pow":
+        for i in range(n):
+            for j in range(i + 1, n):
+                cross += (_zm ** (2 * (j - i))) * phi_q_safe(
+                    abs(vols[i]["full"] * vols[j]["full"]),
+                    cap_frac=cap_frac)
+    else:
+        raise ValueError(f"unknown cross_mode: {cross_mode}")
     return desc, single, cross, desc + single + cross
 
 
@@ -465,6 +491,7 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        weight_scheme: str = "normalized_plancherel",
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
+                       cross_mode: str = "full",
                        verbose: bool = False) -> dict:
     """FULL-TOWER + H_{3A} binding.
 
@@ -491,9 +518,9 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         return {"status": "trivial", "Z": Z, "N": N}
     if use_safe_phi_q:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower_safe(
-            vols_atom, cap_frac=cap_frac)
+            vols_atom, cap_frac=cap_frac, cross_mode=cross_mode)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower_safe(
-            vols_free, cap_frac=cap_frac)
+            vols_free, cap_frac=cap_frac, cross_mode=cross_mode)
     else:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower(vols_free)
@@ -509,6 +536,7 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         "E_0_MeV": E_0,
         "weight_scheme": weight_scheme,
         "cap_frac": cap_frac if use_safe_phi_q else None,
+        "cross_mode": cross_mode,
         "B_MeV": E_0 * (total_f - total_a),
     }
 
