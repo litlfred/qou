@@ -31,25 +31,33 @@ Hecke-algebra image $T_i = \rho_\lambda(\sigma_i)$, whose
 matrix entries in the tableau basis are
 
 $$
-  \rho_\lambda(\sigma_i)_{T, T'}
+  \rho^\lambda_q(\sigma_i)_{T, T'}
   =
   \begin{cases}
-    a_{\rho_i}(T) & T' = T, \\
-    b(\rho_i(T)) & T' = s_i \cdot T, \\
+    a_{\rho_i}(q) & T' = T, \\
+    b(\rho_i, q) & T' = s_i \cdot T, \\
     0 & \text{otherwise},
   \end{cases}
+  \qquad
+  a_\rho(q) = \frac{q - q^{-1}}{1 - q^{-2\rho}},
+  \quad
+  b(\rho, q) = \sqrt{a_\rho(q)\,a_{-\rho}(q) + 1},
 $$
 
-where $\rho_i(T) = c_T(i{+}1) - c_T(i)$ is the axial distance
+where $\rho_i = c_T(i{+}1) - c_T(i)$ is the axial distance
 between the cells carrying $i$ and $i{+}1$ in $T$
 ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
-Because this is a **quantum deformation** governed by the
-substrate parameter $q$, the matrix $\rho^\lambda(\sigma_i)$
-does **not** contain classical probabilities: its entries
-$a_\rho, b$ are real but can be negative, and they square to
-weights that sum to one only after a Markov trace.  In the
-physicists' sense, $\rho^\lambda(\sigma_i)$ is a matrix of
-**probability amplitudes**.
+Every non-zero entry is an **explicit rational / radical
+function of $q$**: this is a genuine quantum deformation of the
+classical Young seminormal form, which is recovered at $q = 1$
+by l'H\^{o}pital ($a_\rho(1) = 1/\rho$).  Because of this
+$q$-deformation, the matrix $\rho^\lambda_q(\sigma_i)$ does
+**not** contain classical probabilities: its entries are real
+but can be negative, and they square to weights that sum to one
+only after a Markov trace.  In the physicists' sense,
+$\rho^\lambda_q(\sigma_i)$ is a matrix of **probability
+amplitudes**, with $q$ playing the role of the deformation
+parameter that distinguishes amplitudes from probabilities.
 
 Two compatible pictures coexist on the same algebra:
 
