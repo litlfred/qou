@@ -9,9 +9,11 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "def:confined-particle",
+    "def:confinement-category",
     "def:confinement-level",
     "def:hecke-normal-form",
-    "prop:confinement-lp",
+    "prop:confinement-sdp",
     "prop:confinement-topological",
     "prop:confinement-operator-selection",
   ],

@@ -299,7 +299,8 @@ def dim_q(shape):
     return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
 
 
-def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None):
+def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None,
+                            block_cache=None):
     """Compute atomic mass using ALL partitions at Hecke level k.
 
     For each partition λ of k:
@@ -341,10 +342,17 @@ def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None):
     total_markov = 0.0
     partition_data = []
 
+    if block_cache is not None:
+        from syt_prefix_cache import build_seminormal_matrices_cached
+        _build = lambda shape: build_seminormal_matrices_cached(
+            shape, cache=block_cache)
+    else:
+        _build = build_seminormal_matrices
+
     for shape in partitions_of(k):
         if partition_filter is not None and not partition_filter(shape):
             continue
-        sigmas, dim, syts = build_seminormal_matrices(shape)
+        sigmas, dim, syts = _build(shape)
 
         if dim == 0:
             continue
@@ -392,7 +400,8 @@ def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None):
     }
 
 
-def compute_mass_at_3A(Z, N, verbose=False, partition_filter=None):
+def compute_mass_at_3A(Z, N, verbose=False, partition_filter=None,
+                          block_cache=None):
     """Atomic mass summed over λ ⊢ 3A — the canonical H_{3A} Wedderburn form.
 
     Replaces the per-generator H_3 weighting used in the tower formula
@@ -411,7 +420,8 @@ def compute_mass_at_3A(Z, N, verbose=False, partition_filter=None):
         return Z * M_P_MEV + N * M_N_MEV + Z * me, {
             'binding': 0.0, 'markov_trace': 1.0, 'partitions': [], 'level': 0}
     return compute_mass_at_level(Z, N, k=3 * A, verbose=verbose,
-                                   partition_filter=partition_filter)
+                                   partition_filter=partition_filter,
+                                   block_cache=block_cache)
 
 
 # ══════════════════════════════════════════════════════════════
