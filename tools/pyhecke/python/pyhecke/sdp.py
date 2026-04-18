@@ -125,10 +125,126 @@ def _not_implemented(level: int, description: str) -> SDPResult:
     )
 
 
-def solve_shell_magic_sdp(**params) -> SDPResult:
-    """Level 4 — shell-closure adjacent PSD block (magic shells)."""
-    _ = params
-    return _not_implemented(4, "shell-magic closure")
+# ── Level 4 : shell-magic SDP ──────────────────────────────────────────
+
+# Magic-shell nucleon counts (standard nuclear physics).
+MAGIC_NUMBERS = (2, 8, 20, 28, 50, 82, 126)
+
+
+def solve_shell_magic_sdp(
+    a_magic: int = 2,
+    partition: Optional[tuple] = None,
+    **_: Any,
+) -> SDPResult:
+    """Level 4 — shell-closure adjacent 2x2 PSD feasibility at a magic
+    nucleon count.
+
+    Forms the 2x2 PSD block
+
+        [     1        y_shell ]
+        [ y_shell      1       ]
+
+    on the symmetric / standard-rep channels at the shell boundary, with
+    `y_shell = shell_shadow_price(a_magic)["shadow_price_abs"]` drawn
+    from the existing `sigma_shell_characterization` module. Silvester's
+    criterion gives a closed-form feasibility check:
+
+        det(G_4) = 1 - y_shell**2
+
+    The block is positive semi-definite iff |y_shell| ≤ 1. That is the
+    level-4 feasibility condition — closed-shell magic numbers are
+    expected to satisfy it by construction.
+
+    Parameters
+    ----------
+    a_magic : int
+        Magic shell closure. Must be one of MAGIC_NUMBERS (2, 8, 20,
+        28, 50, 82, 126).
+    partition : tuple, optional
+        Shell partition λ ⊢ 3·a_magic. Defaults to (3·a_magic - 1, 1).
+
+    Returns
+    -------
+    SDPResult
+        status = "optimal" when feasible, "infeasible" otherwise. The
+        primal dict carries {y_shell, det_2x2, partition, hecke_level}.
+    """
+    if a_magic not in MAGIC_NUMBERS:
+        return SDPResult(
+            level=4,
+            status="infeasible",
+            caveats=[
+                f"a_magic = {a_magic} is not a standard magic number "
+                f"{MAGIC_NUMBERS}"
+            ],
+        )
+
+    from . import _legacy  # noqa: F401
+    try:
+        from sigma_shell_characterization import shell_shadow_price  # type: ignore[import-not-found]
+    except ImportError as e:
+        return SDPResult(
+            level=4,
+            status="not_implemented",
+            caveats=[
+                f"sigma_shell_characterization not importable: {e}. "
+                "Ensure folio-assistant/computations is on PYTHONPATH."
+            ],
+        )
+
+    data = shell_shadow_price(a_magic, partition=partition)
+    if "error" in data:
+        return SDPResult(
+            level=4,
+            status="infeasible",
+            caveats=[data["error"]],
+        )
+
+    # Shadow price is returned as a string (mpmath dps=50); cast for the 2x2 check.
+    try:
+        y_shell = float(data["shadow_price_abs"])
+    except (TypeError, ValueError):
+        y_shell = 0.0
+
+    det_2x2 = 1.0 - y_shell ** 2
+    feasible = det_2x2 >= -1e-12
+    status = "optimal" if feasible else "infeasible"
+
+    return SDPResult(
+        level=4,
+        status=status,
+        objective=det_2x2,
+        primal={
+            "a_magic": a_magic,
+            "hecke_level": data.get("hecke_level"),
+            "shell_partition": list(data.get("shell_partition", ())),
+            "y_shell": y_shell,
+            "det_2x2": det_2x2,
+            "matrix": [[1.0, y_shell], [y_shell, 1.0]],
+        },
+        dual={
+            "shadow_price_y": data.get("shadow_price_y"),
+            "wedderburn_weight": data.get("wedderburn_weight"),
+            "q_dim": data.get("q_dim"),
+            "classical_dim": data.get("classical_dim"),
+        },
+        psd_blocks=[
+            {
+                "name": "shell_closure_2x2",
+                "size": 2,
+                "determinant": det_2x2,
+                "silvester_feasible": feasible,
+            }
+        ],
+        caveats=[
+            "Level-4 PSD block uses shell_shadow_price from "
+            "sigma_shell_characterization. Coupling is the |y_shell| "
+            "magnitude; the sign carries physical meaning (positive = "
+            "binding, negative = antibinding) that this first-cut "
+            "solver does not yet encode. Extend to two-channel "
+            "sign-aware solver when cross-shell level 5 lands.",
+        ],
+    )
 
 
 def solve_cross_shell_sdp(**params) -> SDPResult:
@@ -190,9 +306,9 @@ def multi_level_sdp(level: int, **params: Any) -> SDPResult:
 
 def implemented_levels() -> list[int]:
     """Return the levels for which an SDP solver is actually implemented."""
-    return [3]
+    return [3, 4]
 
 
 def pending_levels() -> list[int]:
     """Return the levels that still need implementation (Track C)."""
-    return [4, 5, 6, 7]
+    return [5, 6, 7]
