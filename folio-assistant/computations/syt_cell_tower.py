@@ -52,7 +52,7 @@ from mass_endomorphism import Phi_q, z_mark
 from hecke_characters import (partitions_of, dim_q, qfac,
                                 standard_young_tableaux,
                                 build_seminormal_matrices)
-from mass_at_3A_proper import atom_braid_word_3A
+from mass_at_3A_proper import atom_braid_word_3A, _cached_seminormal
 
 
 def _word_diagonal_in_lambda(shape: tuple[int, ...],
@@ -66,7 +66,7 @@ def _word_diagonal_in_lambda(shape: tuple[int, ...],
     import numpy as np
     from scipy.sparse import issparse, eye as speye
 
-    sigmas, dim, _syts = build_seminormal_matrices(shape)
+    sigmas, dim, _syts = _cached_seminormal(shape)
     if dim == 0:
         return []
     is_sparse = issparse(sigmas[0]) if sigmas else False
@@ -168,6 +168,13 @@ if __name__ == "__main__":
         description="SYT-cell JM mass tower probe")
     parser.add_argument("--include-4he", action="store_true",
                           help="Also compute 4He (n = 12, minutes)")
+    parser.add_argument("--heavy", action="store_true",
+                          help="Heavy-atom AME test: 6Li + 9Be (n = 18, "
+                           "27; minutes to hours).  Requires the "
+                           "seminormal disk cache in .cache/seminormal/.")
+    parser.add_argument("--only", type=str, default=None,
+                          help="Comma-separated atom symbols to run "
+                           "(e.g. '6Li').  Overrides the default list.")
     args = parser.parse_args()
 
     from adjacent_vs_full_probe import (mass_from_tower_probe,
@@ -181,6 +188,15 @@ if __name__ == "__main__":
     ]
     if args.include_4he:
         ATOMS.append(('4He', 2, 2, 28.295674))
+    if args.heavy:
+        # AME2020 binding totals (A * B/A):
+        # 6Li: 6 * 5.3326 = 31.9956 MeV
+        # 9Be: 9 * 6.4628 = 58.1652 MeV
+        ATOMS.append(('6Li', 3, 3, 31.9956))
+        ATOMS.append(('9Be', 4, 5, 58.1652))
+    if args.only:
+        keep = set(s.strip() for s in args.only.split(','))
+        ATOMS = [a for a in ATOMS if a[0] in keep]
 
     print("=" * 110)
     print("SYT-CELL JM TOWER PROBE (Track 1)")
