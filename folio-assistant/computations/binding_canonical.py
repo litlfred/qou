@@ -43,18 +43,40 @@ from q_parameter import Q as Q0_NUM, HA as H0_NUM  # central source of truth
 
 def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
                           m_pp: int = 1, m_pn: int = 1,
-                          m_nn: int = 1) -> SymbolicHeckeElement:
-    """Build atom braid as SymbolicHeckeElement using symbolic q."""
+                          m_nn: int = 1,
+                          reduce_every: int = 4,
+                          max_terms: int = 50000,
+                          ) -> SymbolicHeckeElement:
+    """Build atom braid as SymbolicHeckeElement using symbolic q.
+
+    Incremental Gröbner-Shirshov reduction: apply `div.reduce()` after
+    every `reduce_every` factors multiplied in, instead of letting
+    the flat product expand to millions of terms before a single
+    final reduction.  This matches the pattern in
+    `nuclear-braid-exact.py::build_nuclear_braid_incremental`.
+
+    Parameters
+    ----------
+    reduce_every : int
+        Number of factors to multiply in between reduction steps.
+        Setting this to 1 reduces after every factor (safest, slowest
+        per-factor); 4 matches a nucleon intra-shell (two gens × two
+        factors); setting it to infinity reproduces the legacy flat
+        build (blows up at 4He).  Default 4.
+    max_terms : int
+        Abort if the intermediate element exceeds this many terms
+        after a reduction step.  Matches the nuclear-braid-exact
+        default; raises RuntimeError if hit.
+    """
     word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
                                 include_inter=include_inter)
-    elem = SymbolicHeckeElement.identity()
-    for (c_f, d_f, g) in word:
-        # Map numeric (c, d) to symbolic.  c ∈ {0, 1};
-        # d ∈ {0, -h (nn, pe), -h/2 (pn), 1 (ne)}.
+
+    def _factor_from(c_f: float, d_f: float, g: int
+                      ) -> SymbolicHeckeElement:
         if abs(c_f) < 1e-12:
             c = sp.Integer(0)
         else:
-            c = sp.Integer(1)  # always 1 in our convention
+            c = sp.Integer(1)
         if abs(d_f) < 1e-12:
             d = sp.Integer(0)
         elif abs(d_f - 1.0) < 1e-12:
@@ -65,8 +87,24 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
             d = -H_SYMB / 2
         else:
             d = sp.nsimplify(d_f)
-        factor = SymbolicHeckeElement({(g,): c, (): d})
-        elem = elem * factor
+        return SymbolicHeckeElement({(g,): c, (): d})
+
+    div = SymbolicHeckeDivision()
+    elem = SymbolicHeckeElement.identity()
+    since_last_reduce = 0
+    for (c_f, d_f, g) in word:
+        elem = elem * _factor_from(c_f, d_f, g)
+        since_last_reduce += 1
+        if since_last_reduce >= reduce_every:
+            elem, _ = div.reduce(elem)
+            since_last_reduce = 0
+            if elem.n_terms() > max_terms:
+                raise RuntimeError(
+                    f"atom-braid build exceeded max_terms={max_terms} "
+                    f"(Z={Z}, N={N}, gen={g}); current terms = "
+                    f"{elem.n_terms()}")
+    if since_last_reduce > 0:
+        elem, _ = div.reduce(elem)
     return elem
 
 
