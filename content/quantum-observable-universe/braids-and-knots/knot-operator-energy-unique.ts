@@ -1,0 +1,15 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:knot-operator-energy-unique",
+  title: "Uniqueness of the knot operator energy",
+  lean: {
+    decl: "QOU.BraidKnot.KnotOperatorEnergy.unique",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:knot-operator-energy",
+    "prop:knot-operator-energy-exists",
+  ],
+  tags: ["uniqueness", "knot-operator", "shadow-price"],
+});

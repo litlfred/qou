@@ -34,6 +34,7 @@ from hecke_core import (
     build_atom_nf, nf_tr, q_value_beta,
     LAMBDA_V, LAMBDA_S, LAMBDA_C, A_ASYM, DELTA_P, LAMBDA_EX,
     DELTA_S, DELTA_HOOK, DELTA_WIGNER, DELTA_FORMFACTOR, DELTA_PN_CORR,
+    DELTA_22, H_Q_22, W_22, unified_iterative_correction,
 )
 from witness_base import WitnessBuilder
 
@@ -120,20 +121,29 @@ print("=" * 110)
 print(f"q₀ = {Q:.10f} ± {Q_ERR:.2e}")
 print()
 
-# Header
+# Header — dedicated path
 print(f"{'Atom':>6s} {'A':>3s} | {'B(k=3)':>10s} {'B(k=4)':>10s} {'B(k=5)':>10s} "
       f"{'B(AME)':>10s} | {'δ_trunc':>8s} {'δ_param':>8s} {'δ_total':>8s} "
       f"| {'Δ(k=5)':>8s} {'%err':>6s} | k_best")
 print("-" * 110)
 
 mass_results = []
+unified_per_step = {}
 
 for (Z, N), (A, BperA, name) in sorted(AME2020.items(), key=lambda x: x[1][0]):
     B_ame = A * BperA
 
+    # Dedicated path (D + knot_factor + Wigner separate)
     B3 = binding_energy_bw(Z, N, k=3)
     B4 = binding_energy_bw(Z, N, k=4)
     B5 = binding_energy_bw(Z, N, k=5)
+
+    # Unified iterative path (per-step (2,2) Wedderburn projection)
+    B3u = binding_energy_bw(Z, N, k=3, unified=True)
+    B4u = binding_energy_bw(Z, N, k=4, unified=True)
+    B5u = binding_energy_bw(Z, N, k=5, unified=True)
+    delta_22, per_step = unified_iterative_correction(Z, N, return_per_step=True)
+    unified_per_step[name] = per_step
 
     delta_trunc = truncation_error(Z, N, k=5)
     delta_param = parametric_mass_error(Z, N, k=5)
@@ -142,6 +152,8 @@ for (Z, N), (A, BperA, name) in sorted(AME2020.items(), key=lambda x: x[1][0]):
 
     residual = B5 - B_ame
     pct_err = abs(residual / B_ame * 100) if B_ame > 0 else 0
+    residual_u = B5u - B_ame
+    pct_err_u = abs(residual_u / B_ame * 100) if B_ame > 0 else 0
 
     # Which level is "best" (smallest residual)?
     resids = [(3, abs(B3 - B_ame)), (4, abs(B4 - B_ame)), (5, abs(B5 - B_ame))]
@@ -156,6 +168,14 @@ for (Z, N), (A, BperA, name) in sorted(AME2020.items(), key=lambda x: x[1][0]):
         "B_k3_MeV": round(B3, 4),
         "B_k4_MeV": round(B4, 4),
         "B_k5_MeV": round(B5, 4),
+        # Unified iterative (2,2) accumulator
+        "B_k3_unified_MeV": round(B3u, 4),
+        "B_k4_unified_MeV": round(B4u, 4),
+        "B_k5_unified_MeV": round(B5u, 4),
+        "delta_22_unified_MeV": round(delta_22, 4),
+        "residual_unified_MeV": round(residual_u, 4),
+        "pct_error_unified": round(pct_err_u, 4),
+        # AME comparison
         "B_AME_MeV": round(B_ame, 4),
         "delta_trunc_MeV": round(delta_trunc, 4),
         "delta_param_MeV": round(delta_param, 6),
@@ -165,6 +185,25 @@ for (Z, N), (A, BperA, name) in sorted(AME2020.items(), key=lambda x: x[1][0]):
         "pct_error": round(pct_err, 4),
         "k_best": k_best,
     })
+
+# ── Unified-path comparison table ────────────────────────────────
+print()
+print("=" * 110)
+print("UNIFIED ITERATIVE LP-DUAL PATH — single algorithm, all partitions, A=1 onward")
+print("  Per-partition coefficient: C_λ = m_e · H_q(λ)  (q-hook product)")
+print("  Per-partition weight:      y_λ = w_λ/d_λ - 1/[k]_q!  (LP-dual shadow price)")
+print(f"  (2,2) reference: C_(2,2) = {DELTA_22:.4f} MeV · y_(2,2) = {W_22:.6f}/d_(2,2) - 1/[4]_q!")
+print("=" * 110)
+print(f"{'Atom':>6s} {'A':>3s} | {'B_dedi(k=5)':>12s} {'B_unif(k=5)':>12s} "
+      f"{'B(AME)':>10s} | {'Δ_LP':>8s} {'res_dedi':>9s} {'%err_d':>6s} | "
+      f"{'res_unif':>9s} {'%err_u':>6s}")
+print("-" * 110)
+for r in mass_results:
+    print(f"{r['name']:>6s} {r['A']:>3d} | {r['B_k5_MeV']:>12.3f} "
+          f"{r['B_k5_unified_MeV']:>12.3f} {r['B_AME_MeV']:>10.3f} | "
+          f"{r['delta_22_unified_MeV']:>+8.3f} {r['residual_MeV']:>+9.3f} "
+          f"{r['pct_error']:>+6.2f} | "
+          f"{r['residual_unified_MeV']:>+9.3f} {r['pct_error_unified']:>+6.2f}")
 
 # ── Q-value table by method ──────────────────────────────────────
 
@@ -252,8 +291,39 @@ for r in qvalue_results:
         source=f"NF Markov trace ratio vs NNDC/ENSDF ±{r['Q_exp_err_MeV']}",
     )
 
+w.add_parameter("DELTA_22_MeV", DELTA_22)
+w.add_parameter("H_q_22", H_Q_22)
+w.add_parameter("W_22", W_22)
 w.add_data("mass_by_level", mass_results)
 w.add_data("qvalues", qvalue_results)
+w.add_data("unified_iterative_per_step", unified_per_step)
+w.add_data("unified_path", {
+    "description":
+        "Unified iterative LP-dual accumulator — ONE consistent algorithm, "
+        "no special cases, runs from A = 1 over EVERY partition λ ⊢ k for "
+        "k = 2, …, K_PARTITION_MAX.  Per-step contribution per partition: "
+        "ΔB_λ(step) = m_e · H_q(λ) · y_λ · "
+        "(ln|Tr M_λ^(0..step)| − ln|Tr M_λ^(0..step-1)|).  Telescopes to "
+        "B_λ = m_e · H_q(λ) · y_λ · (ln|Tr M_λ^(0..A)| − ln d_λ).  "
+        "Total = Σ_λ B_λ.  References: prop:unified-iterative-correction, "
+        "prop:bw-coefficient-shadow-price.",
+    "energy_scale_derivation":
+        "Per-partition: C_λ = m_e × H_q(λ) (q-hook product).  For (2,2): "
+        "H_q = [3]·[2]² → C_(2,2) ≈ 6.29 MeV (matches empirical Δ_W).",
+    "lp_dual_shadow_price":
+        "y_λ = w_λ/d_λ − 1/[k]_q! where w_λ is the Wedderburn weight, "
+        "d_λ the classical dimension, and 1/[k]_q! the LP normalisation "
+        "dual variable (smallest w_λ/d_λ across partitions of k, attained "
+        "by the trivial sym/alt 1-dim reps).  1-dim reps therefore have "
+        "y_λ = 0 and contribute nothing; only mixing partitions feed the "
+        "unified accumulator.",
+    "references": [
+        "kerov1996 (q-hook walk on Young diagrams)",
+        "feray-meliot2012 (q-Plancherel CLT, convergence rate O(1/√k))",
+        "satula1997 (empirical Wigner energy ≈ 6.3 MeV)",
+        "prop:bw-coefficient-shadow-price (LP dual = BW coefficient)",
+    ],
+})
 w.add_data("error_budget", {
     "parametric": "δq propagation through q-integer BW coefficients",
     "truncation": "|B(k) - B(k-1)|: magnitude of last included correction",

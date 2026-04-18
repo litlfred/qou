@@ -1,0 +1,9 @@
+Let $(\mathbf{C}, A, \tau)$ be a
+[quantum universe](#def:quantum-universe) of dimension $n$ with
+volume form $\mathrm{vol} \in \Omega^n(A)$.  Then the
+[categorical Hodge star](#def:categorical-hodge-star)
+$\star \colon \Omega^k(A) \to \Omega^{n-k}(A)$ exists as a morphism
+in $\mathbf{C}$ and satisfies $\star^2 = \mathrm{id}$.
+
+Uniqueness is
+([uniqueness of categorical Hodge star](#prop:categorical-hodge-star-unique)).

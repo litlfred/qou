@@ -1,0 +1,91 @@
+{
+  "computation": "sdp-on-shadows",
+  "description": "SDP/LP/ILP on shadow prices to identify shell-operator partition support. Constraint: \u03a3 x_\u03bb y_\u03bb = target_y (physical binding scale \u2248 0.009). Reports active partitions.",
+  "timestamp": "2026-04-17T22:01:33.216669+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "target_y": "0.009",
+    "magic_numbers": [
+      2,
+      8,
+      20
+    ]
+  },
+  "results": {
+    "2": {
+      "LP": {
+        "status": "no_solution"
+      },
+      "SDP_PSD": {
+        "status": "no_solution"
+      },
+      "ILP": {
+        "status": "solve_error",
+        "error": "The solver GLPK_MI is not installed."
+      }
+    },
+    "8": {
+      "LP": {
+        "status": "solved",
+        "A_magic": 8,
+        "target_y": 0.009,
+        "objective_value": 0.07162242694965605,
+        "n_partitions": 22,
+        "n_active": 2,
+        "active_partitions": [
+          {
+            "partition": "(7, 1)",
+            "x": 35.241335071629294,
+            "y_abs": 0.00012769100590674488,
+            "w_lam": 0.0010161707224481096
+          },
+          {
+            "partition": "(2, 1, 1, 1, 1, 1, 1)",
+            "x": 35.241335071629294,
+            "y_abs": 0.00012769100590674488,
+            "w_lam": 0.0010161707224481096
+          }
+        ],
+        "use_integer": false
+      },
+      "SDP_PSD": {
+        "status": "solved",
+        "A_magic": 8,
+        "target_y": 0.009,
+        "objective_value": 0.07162240527528496,
+        "n_psd_blocks": 21,
+        "n_active": 2,
+        "active_partitions": [
+          {
+            "partition": "(2, 1, 1, 1, 1, 1, 1)",
+            "x": 35.241322872165945,
+            "y_abs": 0.00012769100590674488,
+            "w_lam": 0.0010161707224481096
+          },
+          {
+            "partition": "(7, 1)",
+            "x": 35.24132287216262,
+            "y_abs": 0.00012769100590674488,
+            "w_lam": 0.0010161707224481096
+          }
+        ]
+      },
+      "ILP": {
+        "status": "solve_error",
+        "error": "The solver GLPK_MI is not installed."
+      }
+    },
+    "20": {
+      "LP": {
+        "status": "no_solution"
+      },
+      "SDP_PSD": {
+        "status": "no_solution"
+      },
+      "ILP": {
+        "status": "solve_error",
+        "error": "The solver GLPK_MI is not installed."
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+For fixed $(\nabla, \psi)$, the
+[categorical Lagrangian](#def:categorical-lagrangian) $\mathcal{L}_q(\nabla, \psi)$
+is uniquely determined by its defining formula.  Any endomorphism
+of $A$ equal to $\mathcal{D}_\nabla^2 + \psi^* \otimes \mathcal{D}_\nabla \psi$
+coincides with $\mathcal{L}_q$.

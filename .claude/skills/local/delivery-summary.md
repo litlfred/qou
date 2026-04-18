@@ -47,12 +47,30 @@ http://localhost:8080/assistant/#<label>
 ### Presentation format
 
 Group by chapter. Use a markdown table with columns: **Block** (clickable
-link), **What changed** (1-line description). For example:
+link), **Files** (GitHub blob links to each sibling that changed — `.md`,
+`.ts`, `.lean`), **What changed** (1-line description). For example:
 
-| Block | What changed |
-|-------|-------------|
-| [def:quantum-universe](http://localhost:8080/assistant/#def:quantum-universe) | Updated notation from λ to ∫_A |
-| [prf:dq-squared](http://localhost:8080/assistant/#prf:dq-squared) | Added first SVG render |
+| Block | Files | What changed |
+|-------|-------|-------------|
+| [def:quantum-universe](http://localhost:8080/assistant/#def:quantum-universe) | [md](https://github.com/litlfred/qou/blob/<branch>/content/.../quantum-universe.md) · [ts](https://github.com/litlfred/qou/blob/<branch>/content/.../quantum-universe.ts) · [lean](https://github.com/litlfred/qou/blob/<branch>/content/.../quantum-universe.lean) | Updated notation from λ to ∫_A |
+| [prf:dq-squared](http://localhost:8080/assistant/#prf:dq-squared) | [md](https://github.com/litlfred/qou/blob/<branch>/content/.../dq-squared.md) | Added first SVG render |
+
+### GitHub blob links — ALWAYS PROVIDE
+
+For **every** created or modified file, include a direct GitHub blob URL
+using the pattern:
+
+```
+https://github.com/litlfred/qou/blob/<branch>/<relative-path>
+```
+
+This applies to **all** file kinds: `.md`, `.ts`, `.lean`, `.tex`, config
+files, etc.  When a content block is added or changed, list every sibling
+file in the triple.  Never report "created/edited `foo.md`" without also
+giving its clickable GitHub blob link on the pushed branch.
+
+If the branch is not yet pushed, say so explicitly — do not fabricate a
+URL that will 404.
 
 ### Categorize changes
 
@@ -71,7 +89,10 @@ For remote/deployed builds:
 
 ## 3. GitHub links
 
-Also provide:
+Always provide:
+- **File blob links**: `https://github.com/litlfred/qou/blob/<branch>/<path>`
+  for every created/modified file (see §2, "GitHub blob links — ALWAYS
+  PROVIDE")
 - **Commit links**: `https://github.com/litlfred/qou/commit/<hash>` for each commit
 - **Branch diff**: `https://github.com/litlfred/qou/compare/main...<branch>`
 

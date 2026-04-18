@@ -2147,6 +2147,70 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2001]] },
     DOI: "10.1007/BF02392716",
   }),
+
+  // ── Kerov 1996 (q-hook walk on Young diagrams) ────────────────
+  ref({
+    id: "kerov1996",
+    type: "article-journal",
+    title:
+      "A differential model for the growth of Young diagrams",
+    author: [{ family: "Kerov", given: "Sergei V." }],
+    "container-title":
+      "Proceedings of the St. Petersburg Mathematical Society",
+    volume: "4",
+    page: "165-192",
+    issued: { "date-parts": [[1996]] },
+    note:
+      "Introduces the q-deformed hook walk: a Markov chain on Young " +
+      "diagrams whose stationary measure is the q-Plancherel measure. " +
+      "The transition kernel projects step-by-step onto each partition, " +
+      "with branching weights determined by q-hook products.",
+  }),
+
+  // ── Féray-Méliot 2012 (q-Plancherel CLT) ──────────────────────
+  ref({
+    id: "feray-meliot2012",
+    type: "article-journal",
+    title:
+      "Asymptotics of $q$-Plancherel measures",
+    author: [
+      { family: "F\u00e9ray", given: "Valentin" },
+      { family: "M\u00e9liot", given: "Pierre-Lo\u00efc" },
+    ],
+    "container-title": "Probability Theory and Related Fields",
+    volume: "152",
+    page: "589-624",
+    issued: { "date-parts": [[2012]] },
+    DOI: "10.1007/s00440-010-0331-6",
+    note:
+      "Central limit theorem for the q-Plancherel measure on Young " +
+      "diagrams, with convergence rate O(1/\u221ak). Provides the " +
+      "asymptotic theory for iterative q-hook walk accumulation.",
+  }),
+
+  // ── Satuła et al. 1997 (Wigner energy in nuclei) ──────────────
+  ref({
+    id: "satula1997",
+    type: "article-journal",
+    title:
+      "On the origin of the Wigner energy",
+    author: [
+      { family: "Satu\u0142a", given: "W." },
+      { family: "Dean", given: "D. J." },
+      { family: "Gary", given: "J." },
+      { family: "Mizutori", given: "S." },
+      { family: "Nazarewicz", given: "W." },
+    ],
+    "container-title": "Physics Letters B",
+    volume: "407",
+    page: "103-109",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1016/S0370-2693(97)00711-9",
+    note:
+      "Empirical extraction of the Wigner energy term \u0394_W \u2248 6.3 MeV " +
+      "in the nuclear mass formula, attributed to T=0 isoscalar " +
+      "proton-neutron pairing.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

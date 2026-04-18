@@ -1,0 +1,16 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:q-exponential-unique",
+  title: "Uniqueness of the $q$-exponential grouplike",
+  lean: {
+    decl: "QOU.QExponential.unique",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:q-exponential",
+    "prop:q-exponential-exists",
+  ],
+  proofs: ["prf:q-exponential-unique"],
+  tags: ["uniqueness", "q-exponential", "grouplike", "hopf-algebra"],
+});

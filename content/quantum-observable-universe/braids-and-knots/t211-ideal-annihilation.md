@@ -84,9 +84,9 @@ $$
 - **No shell structure**: eigenvalues $(1, 1)$ give the
   degenerate Chebyshev recurrence $\hat{V}(n) = 1$ for all $n$
   — flat, no energy separation, no sub-shells.
-- **No intruder levels**: zero effective crossings on $\Sigma_4$,
+- **No shell-transition levels**: zero effective crossings on $\Sigma_4$,
   so it cannot push a spin-orbit level across a gap
-  ([nuclear shell intruder](#prop:nuclear-shell-intruder)).
+  ([shell-transition knot](#prop:shell-transition-knot)).
 - **Null force operator**: the $(2,11)$ channel contributes the
   identity factor to the spectral decomposition — a
   multiplicative ghost.

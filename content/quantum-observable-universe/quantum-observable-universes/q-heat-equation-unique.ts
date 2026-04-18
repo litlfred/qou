@@ -1,0 +1,16 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:q-heat-equation-unique",
+  title: "Uniqueness of solutions of the $q$-heat equation",
+  lean: {
+    decl: "QOU.QHeatEquation.unique_solution",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:q-heat-equation",
+    "prop:q-heat-equation-exists",
+  ],
+  proofs: ["prf:q-heat-equation-unique"],
+  tags: ["uniqueness", "q-heat-equation"],
+});

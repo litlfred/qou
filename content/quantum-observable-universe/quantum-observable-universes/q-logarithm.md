@@ -1,6 +1,6 @@
 Dual to the $q$-exponential ([$q$-exponential](#def:q-exponential))
 is its categorical inverse.  A *primitive* of the $q$-shuffle Hopf
-algebra $H_q$ is an element $p$ satisfying
+algebra $\mathcal{H}_q$ is an element $p$ satisfying
 
 $$
   \Delta_q(p) = p \otimes 1 + 1 \otimes p,
@@ -8,13 +8,13 @@ $$
   \epsilon(p) = 0.
 $$
 
-Primitives form a Lie algebra $\mathrm{Prim}(H_q) \subseteq H_q$ under
+Primitives form a Lie algebra $\mathrm{Prim}(\mathcal{H}_q) \subseteq \mathcal{H}_q$ under
 the $q$-commutator, and they are exactly the *infinitesimal* data of
-grouplikes: the Milnor--Moore theorem identifies $\mathrm{Prim}(H_q)$
-with the tangent space at $1 \in G(H_q)$.
+grouplikes: the Milnor--Moore theorem identifies $\mathrm{Prim}(\mathcal{H}_q)$
+with the tangent space at $1 \in G(\mathcal{H}_q)$.
 
 **$q$-Logarithm.**  The *$q$-logarithm* is the unique primitive
-$\log_q \in \mathrm{Prim}(H_q)$ such that
+$\log_q \in \mathrm{Prim}(\mathcal{H}_q)$ such that
 
 $$
   \log_q \circ \exp_q \;=\; \mathrm{id}
@@ -26,9 +26,9 @@ Equivalently, $\log_q$ and $\exp_q$ form an *adjoint pair*
 $$
   \log_q \;\dashv\; \exp_q
   \qquad
-  \bigl(\mathrm{Prim}(H_q), [\cdot,\cdot]_q\bigr)
+  \bigl(\mathrm{Prim}(\mathcal{H}_q), [\cdot,\cdot]_q\bigr)
   \;\rightleftarrows\;
-  \bigl(G(H_q), \cdot\bigr)
+  \bigl(G(\mathcal{H}_q), \cdot\bigr)
 $$
 
 between the Lie algebra of primitives and the group of grouplikes.
@@ -38,10 +38,10 @@ $\mathfrak{g} \to G$.
 ```tex
 \begin{equation}\label{eq:q-log-adjunction}
 \begin{tikzcd}[row sep=2.5em, column sep=4em]
-  \mathrm{Prim}(H_q)
+  \mathrm{Prim}(\mathcal{H}_q)
     \ar[r, bend left=15, "\exp_q"]
     \ar[r, phantom, "\dashv"]
-  & G(H_q)
+  & G(\mathcal{H}_q)
     \ar[l, bend left=15, "\log_q"]
 \end{tikzcd}
 \end{equation}
@@ -49,12 +49,12 @@ $\mathfrak{g} \to G$.
 
 **Universal property.**  $\log_q$ is the left adjoint of the
 functor *grouplike-of* from primitives to grouplikes.  For any
-Hopf-algebra morphism $\Phi \colon H_q \to K$ sending grouplikes to
+Hopf-algebra morphism $\Phi \colon \mathcal{H}_q \to K$ sending grouplikes to
 grouplikes and primitives to primitives,
 
 $$
   \Phi(\log_q g) \;=\; \log_K \Phi(g)
-  \qquad\forall  g \in G(H_q),
+  \qquad\forall  g \in G(\mathcal{H}_q),
 $$
 
 so $\log_q$ is *natural* in the Hopf algebra.
@@ -64,6 +64,26 @@ in the universal setting of Hopf algebras — no convergence is
 required.  Over $\mathbb{F}_p$ the $\log_q$ of a grouplike is still
 a well-defined primitive, even when the series representation fails
 ([finite-field obstruction](#rem:q-exp-finite-field-obstruction)).
+
+**Three-context behaviour.**  Mirroring $\exp_q$
+([$p$-adic $\exp_q$](#rem:q-exp-p-adic)):
+
+- **$\mathbb{F}_p$.**  The series $\log_q(1 + x) = \sum (-1)^{n-1} x^n / [n]_q$
+  has zero denominators whenever $[n]_q$ vanishes in $\mathbb{F}_p$
+  (i.e. $n \ge \mathrm{ord}_{\mathbb{F}_p^\times}(q)$).  The truncation
+  $\log_q^{(p)}(1+x) = \sum_{n=1}^{p-1} (-1)^{n-1} x^n / [n]_q$ becomes
+  primitive modulo $x^p = 0$ and inverts $\exp_q^{(p)}$ on the first
+  infinitesimal neighbourhood of $1$.
+- **$\mathbb{Q}_p$.**  For $q \in 1 + p\mathbb{Z}_p$ the series
+  converges on $1 + p\mathbb{Z}_p$ because $v_p([n]_q) = v_p(n)$ and
+  the denominators grow no faster than the classical $p$-adic
+  $\log$; the result is a continuous primitive $p\mathbb{Z}_p \to p\mathbb{Z}_p$
+  inverting the Witt-vector $\exp_q$.
+- **$\mathbb{C}_p$.**  Converges on $v_p(x) > 0$ (the open unit disc
+  around $1$, i.e. $|1 + x - 1|_p < 1$), matching the classical $p$-adic
+  $\log$ radius.  The logarithm extends by Iwasawa's convention to all
+  of $\mathbb{C}_p^\times$ via $\log_q(p) = 0$ if one wants a global
+  branch.
 
 **Archimedean realisation.**  Over $\mathbb{C}$ the adjoint pair
 $(\log_q, \exp_q)$ is represented by the convergent series
@@ -77,6 +97,6 @@ $$
 
 **Physical meaning.**  The Reeb-flow holonomy between two substrate
 slices $q_1 < q_2$ is a grouplike element; its $q$-logarithm is the
-infinitesimal generator of the flow on $\mathrm{Prim}(H_q)$.  Hence
+infinitesimal generator of the flow on $\mathrm{Prim}(\mathcal{H}_q)$.  Hence
 $\log_q$ measures *cosmological displacement* in Hopf-algebraic
 units — the analogue of a "time rapidity" on the substrate side.

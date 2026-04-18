@@ -1,0 +1,18 @@
+Let $(\mathbf{C}, A, \tau)$ be a
+[quantum observable universe](#def:quantum-observable-universe) with
+categorical Dirac operator $\mathcal{D}_\nabla$ and state
+$\psi \colon \mathbf{1} \to A$.  Then the
+[categorical Lagrangian](#def:categorical-lagrangian)
+
+$$
+  \mathcal{L}_q(\nabla, \psi)
+  \;=\;
+  \mathcal{D}_\nabla^2
+  + \psi^* \otimes \mathcal{D}_\nabla \psi
+  \;\in\; \mathrm{End}_{\mathbf{C}}(A)
+$$
+
+exists as an endomorphism of $A$.
+
+Uniqueness given $(\nabla, \psi)$ is
+([uniqueness of categorical Lagrangian](#prop:categorical-lagrangian-unique)).

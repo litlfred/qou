@@ -1,0 +1,16 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:q-logarithm-unique",
+  title: "Uniqueness of the $q$-logarithm primitive",
+  lean: {
+    decl: "QOU.QLogarithm.unique",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:q-logarithm",
+    "prop:q-logarithm-exists",
+  ],
+  proofs: ["prf:q-logarithm-unique"],
+  tags: ["uniqueness", "q-logarithm", "primitive", "hopf-algebra"],
+});
