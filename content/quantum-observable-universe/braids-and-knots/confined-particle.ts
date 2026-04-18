@@ -10,7 +10,7 @@ export default definition({
   uses: [
     "def:hecke-normal-form",
     "def:confinement-level",
-    "prop:confinement-lp",
+    "prop:confinement-sdp",
   ],
   tags: [
     "confinement",

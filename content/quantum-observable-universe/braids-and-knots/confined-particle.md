@@ -27,8 +27,9 @@ $$
 
 *The class $[K]_M$ is **not required to be confined at any
 particular $q$**: confinement is a $q$-indexed predicate
-$\mathrm{confined}(P, q)$ that holds iff the Frobenius cone trap
-[confinement LP](#prop:confinement-lp) is satisfied.  A confined
+$\mathrm{confined}(P, q)$ that holds iff the matrix Frobenius
+PSD cone admits a feasible $\Phi^* \succeq 0$
+([confinement SDP](#prop:confinement-sdp)).  A confined
 particle is **stable at $q$** iff it is additionally
 Frobenius-non-degenerate there ([topological
 confinement](#prop:confinement-topological)).  Unstable species
