@@ -371,6 +371,7 @@ export default chapter({
         "bw-coefficient-shadow-price",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
+        "mass-endomorphism-jet-tower",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
