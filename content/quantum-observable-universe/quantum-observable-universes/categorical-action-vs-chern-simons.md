@@ -1,4 +1,4 @@
-The classical Chern--Simons action
+The classical Chern--Simons action \cite{witten1988}
 
 $$
   S_{\mathrm{CS}}[A_{\mathrm{cl}}]
@@ -40,6 +40,7 @@ Classical Chern--Simons itself is **not** recovered as the bulk
 categorical action: the archimedean image of
 $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$ is
 Einstein--Hilbert + Yang--Mills + Dirac, not CS
-\cite{witten1988}.  Classical CS re-enters the framework as a
-geometric *knot* invariant for non-hyperbolic torus knots
-([Chern--Simons as knot invariant](#rem:chern-simons-as-knot-invariant)).
+([physicist translation](#rem:physicist-translation)).  Classical
+CS re-enters the framework elsewhere as a geometric *knot*
+invariant for non-hyperbolic torus knots (see the corresponding
+remark in the Descartes chapter).

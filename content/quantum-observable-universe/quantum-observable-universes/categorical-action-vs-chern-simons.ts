@@ -9,6 +9,5 @@ export default remark({
     "def:categorical-action",
     "prop:qou-canonical-action",
     "rem:physicist-translation",
-    "rem:chern-simons-as-knot-invariant",
   ],
 });
