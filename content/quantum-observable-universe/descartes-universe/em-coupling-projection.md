@@ -134,13 +134,14 @@ $$
   \frac{1}{\alpha_{\mathrm{EM}}}
   =
   q \cdot [9]_q \cdot [10]_q
-  \cdot \bigl(1 + c_1 + c_1^2 \cdot \kappa\bigr)
+  \cdot \bigl(1 + \delta_{\mathrm{CS}}
+               + \delta_{\mathrm{CS}}^2 \cdot \kappa\bigr)
 $$
 
 where
 
 $$
-  c_1
+  \delta_{\mathrm{CS}}
   =
   \frac{\bigl(\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})\bigr)
         \cdot \tfrac{[2]_q}{2} \cdot \hbar_q^2}
@@ -150,7 +151,11 @@ $$
 and $\kappa = \det G_{\mathrm{CS}}^{\mathrm{cl}}
 / \det G_{\mathrm{CS}}^{q} \approx 1.722$ is the Gram determinant
 ratio of the classical and $q$-deformed Chern–Simons pairing,
-capturing self-dual damping at the second jet level.
+capturing self-dual damping at the second jet level.  Both
+$\delta_{\mathrm{CS}}$ and $\kappa$ are **derived** from the
+Chern–Simons invariants and the Bring-surface Gram matrix — no
+free parameters are introduced
+([EM coupling Chern-Simons](#prop:em-coupling-chern-simons)).
 
 The Chern-Simons invariants of torus knots
 $T_{m,n}$ are given by the universal formula
@@ -174,7 +179,7 @@ Planck constant is $\hbar_q = (q - 1)/q$.
 | $\mathrm{CS}(T_{3,5})$ | $\pi^2 \cdot 16/15 \approx 10.528$ |
 | $\hbar_q^2$ | $0.009817$ |
 | $[2]_q / 2$ | $1.00545$ |
-| $c_1$ | $0.001551$ |
+| $\delta_{\mathrm{CS}}$ | $0.001551$ |
 | $\kappa$ | $1.722$ |
 | $\alpha^{-1}_{\mathrm{CS}}$ | $\mathbf{137.035944}$ |
 | CODATA 2018 | $137.035999084(21)$ |
