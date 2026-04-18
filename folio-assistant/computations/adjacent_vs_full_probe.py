@@ -159,8 +159,26 @@ def mass_from_tower_probe(vols, cross_mode="adjacent",
     """Tower mass with configurable cross-term mode + Φ_q variant.
 
     phi_q_variant ∈ {"raw", "series", "noresonance", "resonance_sum"}
-    cross_mode     ∈ {"adjacent", "full", "full_z2pow"}
+    cross_mode     ∈ {"adjacent", "full", "full_z2pow", "all_subsets"}
+
+    all_subsets:  extends the prop's adjacent-pair form to ALL
+    subsets S ⊂ {gens}, with each |S|=k subset contributing
+    z^k · Φ_q(Π_{i∈S} |V̂_i|).  This is the Hecke-natural
+    extrapolation — tr_M of a reduced word of length k gives z^k,
+    so a k-subset blow-up centre carries z^k weight.  Includes
+    all pair, triple, …, (n−1)-tuple centres.  The descended
+    term |Π V̂| is the k=n "saturated" blow-up.
+
+    User note: indices i, j, … on V̂_i are GENERATOR POSITIONS,
+    not partition / Young-tableau indices.  A future
+    reformulation might align them with Jucys–Murphy
+    eigenvalue positions (L_k = T_{k−1} … T_1 T_1 … T_{k−1} has
+    Plancherel-content eigenvalue per SYT cell), in which case
+    the all-subsets sum over GENERATOR subsets becomes a sum
+    over CELL subsets in a Young diagram — a more natural
+    partition-theoretic form.  Noted as future direction.
     """
+    from itertools import combinations
     phi_fn = {
         "raw": Phi_q,
         "series": phi_q_series,
@@ -189,6 +207,20 @@ def mass_from_tower_probe(vols, cross_mode="adjacent",
             for j in range(i + 1, n):
                 cross += (z_mark ** (2 * (j - i))) * phi_fn(
                     abs(vols[i]["full"] * vols[j]["full"]))
+    elif cross_mode == "all_subsets":
+        # k=2, 3, …, k_max — non-trivial subsets (singles already
+        # covered by 'single' term; full k=n product in 'desc').
+        # Each k-subset: z^k · Φ_q(Π).  For heavy atoms n_gens can
+        # be 47+, so C(n, k) explodes; cap at k ≤ 4 by default
+        # (z^5 ≈ 0.03 is sub-percent and further levels damp fast).
+        K_MAX = 4
+        for k in range(2, min(n, K_MAX + 1)):
+            zk = z_mark ** k
+            for S in combinations(range(n), k):
+                prod = 1.0
+                for i in S:
+                    prod *= vols[i]["full"]
+                cross += zk * phi_fn(abs(prod))
     else:
         raise ValueError(cross_mode)
     return desc, single, cross, desc + single + cross
@@ -270,16 +302,14 @@ if __name__ == "__main__":
     # the natural "what Hecke algebra gives to keep track of many
     # adjacent with q" attenuator.
     VARIANTS = [
-        ("adjacent",   "raw"),            # prop form
-        ("full",       "raw"),            # all-pairs, raw Φ_q
-        ("full_z2pow", "raw"),            # distance-attenuated, raw Φ_q
-        ("adjacent",   "series"),         # prop + (1-q) series
-        ("full",       "series"),         # all-pairs + (1-q) series
-        ("full_z2pow", "series"),         # distance-attenuated + series
-        ("full",       "noresonance"),    # all-pairs + off-resonance Φ_q
-        ("full_z2pow", "noresonance"),    # attenuated + off-resonance
-        ("full",       "resonance_sum"),  # all-pairs + resonance + off-res
-        ("full_z2pow", "resonance_sum"),  # attenuated + resonance + off-res
+        ("adjacent",    "raw"),          # prop form
+        ("full",        "raw"),          # all-pairs, raw Φ_q
+        ("all_subsets", "raw"),          # all k-subsets z^k (incl triple+)
+        ("adjacent",    "series"),       # prop + (1-q) series
+        ("full",        "series"),       # all-pairs + series
+        ("all_subsets", "series"),       # all-subsets + series
+        ("full",        "noresonance"),  # all-pairs + off-resonance
+        ("all_subsets", "noresonance"),  # all-subsets + off-resonance
     ]
 
     all_results = []
