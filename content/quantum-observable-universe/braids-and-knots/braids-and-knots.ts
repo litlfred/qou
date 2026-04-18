@@ -346,6 +346,8 @@ export default chapter({
         "confinement-category",
         "electron-shell",
         "dressed-particle",
+        "shell-closure-stability",
+        "shell-closure-stability-interprets",
         "level-sufficiency",
         "level-sufficiency-interprets",
         "atom-knot",
