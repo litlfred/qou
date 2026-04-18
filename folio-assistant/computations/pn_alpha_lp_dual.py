@@ -254,6 +254,92 @@ def pn_element_vec(pn_alpha: float) -> np.ndarray:
     return v
 
 
+def tower_binding_derivative(alpha: float, delta: float = 1e-5) -> dict:
+    """Numerical ∂B/∂α on D via central difference.
+
+    A stationary point ∂B/∂α|_{α=½} = 0 would be evidence of a
+    tower-level derivation of the ½ postulate (via first-order
+    optimality).  Returns the derivative value and the per-generator
+    V̂ contributions to disentangle where α enters.
+    """
+    b_lo = binding_at_alpha(1, 1, alpha - delta)
+    b_hi = binding_at_alpha(1, 1, alpha + delta)
+    return {
+        "alpha": alpha,
+        "dB_dalpha": (b_hi["B_pred"] - b_lo["B_pred"]) / (2 * delta),
+        "dVpn_dalpha": ((b_hi["V_pn_gen"] - b_lo["V_pn_gen"])
+                         / (2 * delta)),
+        "B_pred": 0.5 * (b_hi["B_pred"] + b_lo["B_pred"]),
+    }
+
+
+def tower_sdp_dual_at_alpha(alpha: float) -> dict:
+    """Adjacent-pair SDP on the D tower at given α.
+
+    Variables V̂_i ≥ 0 for each generator, bounded by the Φ_q
+    singularity (V̂_i < q₀ − 0.05).  Per-generator V̂_i is FIXED to
+    the tower value at this α (not free) — we still construct a
+    2×2 PSD block per adjacent pair and ask cvxpy for shadow prices
+    on the PSD constraint.  A non-zero shadow price means that pair
+    is tight; how the shadow prices MOVE with α is the tower-level
+    LP-dual signal.
+
+    Setup:
+        min   Σ w_i · V̂_i  (fixed V̂_i; objective = constant =
+              Σ w_i · V̂_i(α), passed through)
+        s.t.  [[V̂_i, x_i], [x_i, V̂_{i+1}]] ⪰ 0  (auxiliary x_i ≥ 0)
+              x_i ≤ (V̂_i + V̂_{i+1})/2
+
+    Returns per-pair x_i values + SDP dual norms (coarse proxy).
+    """
+    try:
+        import cvxpy as cp
+    except ImportError:
+        return {"alpha": alpha, "status": "no_cvxpy"}
+
+    va = atom_per_gen_vols_alpha(1, 1, pn_alpha=alpha)
+    V_hat = [v["full"] for v in va]
+    n = len(V_hat)
+    if n < 2:
+        return {"alpha": alpha, "status": "trivial"}
+    # Auxiliary pair variables
+    x = cp.Variable(n - 1, nonneg=True)
+    constraints = []
+    for i in range(n - 1):
+        block = cp.bmat([
+            [cp.Constant(V_hat[i]), x[i]],
+            [x[i], cp.Constant(V_hat[i + 1])],
+        ])
+        constraints.append(block >> 0)
+        constraints.append(
+            x[i] <= (V_hat[i] + V_hat[i + 1]) / 2)
+    # Maximize pair couplings x_i (probes adjacent-pair PSD tightness)
+    objective = cp.Maximize(cp.sum(x))
+    prob = cp.Problem(objective, constraints)
+    try:
+        prob.solve(solver=cp.SCS, verbose=False)
+        if prob.status in [cp.OPTIMAL, cp.OPTIMAL_INACCURATE]:
+            x_vals = x.value if x.value is not None else np.zeros(n - 1)
+            # Pair tightness: x_i = √(V̂_i V̂_{i+1})?  If so, PSD is
+            # marginal (det = 0).  x_i < √(V̂_i V̂_{i+1}) → slack.
+            sqrt_geom = [(V_hat[i] * V_hat[i + 1]) ** 0.5
+                          for i in range(n - 1)]
+            tight = [bool(abs(x_vals[i] - sqrt_geom[i]) < 1e-4)
+                      for i in range(n - 1)]
+            return {
+                "alpha": alpha,
+                "status": "solved",
+                "V_hat": V_hat,
+                "x_pair": list(x_vals),
+                "sqrt_geom": sqrt_geom,
+                "tight_pairs": tight,
+                "objective": float(prob.value),
+            }
+        return {"alpha": alpha, "status": prob.status}
+    except Exception as e:
+        return {"alpha": alpha, "status": f"error:{e}"}
+
+
 def lp_dual_at_alpha(alpha: float, G: np.ndarray) -> dict:
     """Solve the primal + dual LP with pn-element target net.
 
@@ -340,6 +426,54 @@ if __name__ == "__main__":
         print(f"{a:>7.3f} {r['target_net']:>+9.4f} {obj_str:>12} {y0_str:>10}  {tight}")
         lp_scan.append(r)
 
+    # ── Tower-level ∂B/∂α scan ───────────────────────────────
+    print("\n─── Tower-level derivative scan: ∂B_pred/∂α on D ───")
+    print(f"{'α':>7} {'B_pred':>12} {'∂B/∂α':>14} {'∂V̂_pn/∂α':>12}")
+    deriv_scan = []
+    for a in alphas:
+        d = tower_binding_derivative(a)
+        deriv_scan.append(d)
+        marker = ""
+        if abs(a - 0.5) < 1e-9:
+            marker = "  ← postulate"
+        print(f"{a:>7.3f} {d['B_pred']:>+12.4f} {d['dB_dalpha']:>+14.4e} "
+              f"{d['dVpn_dalpha']:>+12.4e}{marker}")
+
+    # Scan for zero-crossing (critical points)
+    zero_crossings = []
+    for i in range(1, len(deriv_scan)):
+        if (deriv_scan[i - 1]["dB_dalpha"] * deriv_scan[i]["dB_dalpha"] < 0):
+            zero_crossings.append({
+                "between": (deriv_scan[i - 1]["alpha"],
+                             deriv_scan[i]["alpha"]),
+                "dB_lo": deriv_scan[i - 1]["dB_dalpha"],
+                "dB_hi": deriv_scan[i]["dB_dalpha"],
+            })
+    print("\n∂B/∂α zero-crossings (tower-level critical points):")
+    if not zero_crossings:
+        print(f"  (none — ∂B/∂α is monotone; ½ is NOT a stationary point)")
+    else:
+        for zc in zero_crossings:
+            print(f"  α* ∈ ({zc['between'][0]:.4f}, "
+                  f"{zc['between'][1]:.4f})")
+
+    # ── Tower-level adjacent-pair SDP dual sweep ─────────────
+    print("\n─── Tower SDP: adjacent-pair PSD on D per α ───")
+    print(f"{'α':>7} {'obj':>9} {'x_0':>7} {'x_1':>7} "
+          f"{'x_2':>7} {'x_3':>7} {'tight pairs'}")
+    sdp_scan = []
+    # Cheap grid (every 4th α) — SDP is slow
+    sdp_alphas = alphas[::4]
+    for a in sdp_alphas:
+        r = tower_sdp_dual_at_alpha(a)
+        sdp_scan.append(r)
+        if r.get("status") == "solved":
+            xs = r["x_pair"]
+            tight_str = ",".join(f"{i}" for i, t in enumerate(r["tight_pairs"]) if t)
+            print(f"{a:>7.3f} {r['objective']:>9.4f} "
+                  f"{xs[0]:>7.4f} {xs[1]:>7.4f} "
+                  f"{xs[2]:>7.4f} {xs[3]:>7.4f}  {tight_str}")
+
     # Where do tight constraints change?
     transitions = []
     for i in range(1, len(lp_scan)):
@@ -371,18 +505,24 @@ if __name__ == "__main__":
         "computation": "pn-alpha-lp-dual",
         "description": (
             "LP-dual stability scan for the pn-mixing α in the "
-            "inter-nucleon crossing (1, −α·HA).  Reports D tower "
-            "binding B_pred(α) and LP-dual shadow prices on the "
-            "H_3 basis across α ∈ [0, 1].  Tests whether α = ½ is "
-            "picked out by stability (active-set change, degenerate "
-            "y₀, or minimum |B_pred − B_AME|)."
+            "inter-nucleon crossing (1, −α·HA).  Three probes: "
+            "(a) D tower binding B_pred(α) on a fine α grid; "
+            "(b) single-block H_3 LP dual (γ, σ₀, σ₁, L₊, L₋, e⁻) "
+            "shadow prices; (c) TOWER-LEVEL tests: ∂B/∂α numerical "
+            "derivative + adjacent-pair SDP PSD sweep.  Tests "
+            "whether α = ½ is picked out by stability (active-set "
+            "change, degenerate y₀, ∂B/∂α zero-crossing, tight "
+            "pair PSD transition, or minimum |B_pred − B_AME|)."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q0": q0, "HA": HA, "E_0_MeV": E_0_CAL_MEV,
                         "B_AME_D": B_AME_D_MEV},
         "binding_scan": binding_scan,
-        "lp_dual_scan": lp_scan,
+        "lp_dual_scan_h3": lp_scan,
         "active_set_transitions": transitions,
+        "tower_derivative_scan": deriv_scan,
+        "tower_derivative_zero_crossings": zero_crossings,
+        "tower_sdp_dual_scan": sdp_scan,
         "best_alpha_for_binding": best,
     }
     out = Path(__file__).parent / "pn-alpha-lp-dual.witness.json"
