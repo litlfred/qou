@@ -1,11 +1,11 @@
 {
   "computation": "mass-at-3A-proper",
   "description": "Task-1 fix: H_{3A} Wedderburn-character binding.  For each (Z, N), builds the full 3A-strand braid word and evaluates \u03c7_\u03bb(W) in the Hoefsmit seminormal basis for every \u03bb \u22a2 3A.  Markov trace = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7_\u03bb / d_\u03bb.  Binding = E_0 \u00b7 (|tr_M_free| \u2212 |tr_M_atom|) with E_0 = 0.782 MeV (free-neutron \u03b2-decay Q).  NO ALPHA \u00b7 Catalan anywhere.  p(3A) grows quickly; this module tops out near A = 10-12 via full enumeration.",
-  "timestamp": "2026-04-18T01:32:51.223327+00:00",
+  "timestamp": "2026-04-18T01:36:35.637790+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782,
-    "max_A": 3
+    "max_A": 4
   },
   "results": [
     {
@@ -24,7 +24,7 @@
       "atom": "D",
       "B_AME_MeV": 2.22452,
       "delta_m_over_m_pct": 0.10102981834013262,
-      "time_sec": 0.012366771697998047
+      "time_sec": 0.011748790740966797
     },
     {
       "Z": 1,
@@ -42,7 +42,7 @@
       "atom": "T",
       "B_AME_MeV": 8.481821,
       "delta_m_over_m_pct": 0.2933346775932987,
-      "time_sec": 0.35972166061401367
+      "time_sec": 0.21262168884277344
     },
     {
       "Z": 2,
@@ -60,7 +60,25 @@
       "atom": "3He",
       "B_AME_MeV": 7.71804,
       "delta_m_over_m_pct": 0.264778643444865,
-      "time_sec": 0.14397406578063965
+      "time_sec": 0.14036321640014648
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_atom": 3.718718253334805e-05,
+      "tr_M_free": 0.2797677702839086,
+      "abs_diff": 0.2797305831013752,
+      "E_0_MeV": 0.782,
+      "B_MeV": 0.21874931598527542,
+      "n_partitions": 77,
+      "atom": "4He",
+      "B_AME_MeV": 28.295674,
+      "delta_m_over_m_pct": 0.7481019545508851,
+      "time_sec": 180.04578971862793
     }
   ]
 }
