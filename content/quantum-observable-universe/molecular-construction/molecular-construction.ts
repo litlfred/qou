@@ -76,6 +76,17 @@ export default chapter({
       ],
     }),
 
+    // ── §5b. H₂O: bent triatomic with lone pairs ────────────────────
+    section({
+      title: "Water: bent triatomic with lone pairs",
+      label: "sec:h2o-computation",
+      blocks: [
+        "h2o-molecular-braid",
+        "h2o-lp-dual-binding",
+        "h2o-bent-geometry",
+      ],
+    }),
+
     // ── §6. CH₄: tetrahedral methane ────────────────────────────────
     section({
       title: "Methane: tetrahedral bonding from braid optimization",

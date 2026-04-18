@@ -115,6 +115,7 @@ section({
       blocks: [
         "phase-transition-boundary",
         "phase-transition-interpretation",
+        "pv-nrt-at-q0",
         "composite-crossing-parity",
         "crossing-parity-test",
       ],
