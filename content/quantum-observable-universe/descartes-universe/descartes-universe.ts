@@ -302,6 +302,8 @@ export default chapter({
         "borel-zagier-qou-volumes",
         "formal-chain-transcendence-remark",
         "yekutieli-transcendence-shadow",
+        "implications-algebraic-independence",
+        "implications-algebraic-dependence",
         // Baryon periods and integration limits
         "baryon-period-conjecture",
         "baryon-integration-limit",
