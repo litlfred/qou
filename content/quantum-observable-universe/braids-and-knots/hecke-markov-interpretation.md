@@ -6,6 +6,97 @@ viewed through different lenses: the Hecke algebra $H_n(q)$
 is simultaneously an algebra of braid-group representations
 and a space of stochastic transition operators.
 
+## Overview: SYT paths on the Young graph
+
+Fix an irrep $\lambda \vdash n$.  In the Hoefsmit seminormal
+form ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)),
+the irrep $\rho_\lambda \colon H_n(q) \to M_{d_\lambda}(\mathbb{C})$
+is built on the basis of **standard Young tableaux** of shape
+$\lambda$.  Each such tableau is a saturated chain
+
+$$
+  \varnothing = \lambda^{(0)} \nearrow \lambda^{(1)} \nearrow \cdots
+    \nearrow \lambda^{(n)} = \lambda
+$$
+
+in the **Young graph** (Young lattice), where each step
+$\lambda^{(k-1)} \nearrow \lambda^{(k)}$ adds a single box.
+The space of all valid SYTs is therefore the space of all
+length-$n$ paths from the empty diagram $\varnothing$ to
+$\lambda$ on the Young graph, and it is this path space that
+plays the role of the **discrete state space** of the chain.
+
+The generator $\sigma_i \in B_n$ acts at step $i$ by the
+Hecke-algebra image $T_i = \rho_\lambda(\sigma_i)$, whose
+matrix entries in the tableau basis are
+
+$$
+  \rho_\lambda(\sigma_i)_{T, T'}
+  =
+  \begin{cases}
+    a_{\rho_i}(T) & T' = T, \\
+    b(\rho_i(T)) & T' = s_i \cdot T, \\
+    0 & \text{otherwise},
+  \end{cases}
+$$
+
+where $\rho_i(T) = c_T(i{+}1) - c_T(i)$ is the axial distance
+between the cells carrying $i$ and $i{+}1$ in $T$
+([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
+Because this is a **quantum deformation** governed by the
+substrate parameter $q$, the matrix $\rho^\lambda(\sigma_i)$
+does **not** contain classical probabilities: its entries
+$a_\rho, b$ are real but can be negative, and they square to
+weights that sum to one only after a Markov trace.  In the
+physicists' sense, $\rho^\lambda(\sigma_i)$ is a matrix of
+**probability amplitudes**.
+
+Two compatible pictures coexist on the same algebra:
+
+1. **Amplitude picture.** On the SYT path space of irrep
+   $\lambda$, amplitudes $\rho^\lambda(\sigma_i)_{T, T'}$
+   evolve a complex state vector $\psi(T)$.  The Jones
+   polynomial
+   $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$
+   ([Jones--Markov trace](#thm:jones-markov-trace)) is the
+   closed-path sum of these amplitudes over all SYT paths,
+   weighted by the Markov trace weights $w_\lambda$ — exactly
+   the shape of a Feynman path integral.
+
+2. **Probability picture.** Summing the amplitudes through
+   the spectral idempotents
+   $e_\pm^{(i)} = (T_i + q^{-1})/(q + q^{-1})$,
+   $(q - T_i)/(q + q^{-1})$
+   ([Hecke transition operator](#prop:hecke-markov-transition))
+   yields the classical stochastic operator
+   $K_i = p_+ \cdot \mathrm{id} + p_- \cdot s_i$ with
+   $p_\pm = q^{\pm 1}/(q + q^{-1})$.  This $K_i$ is the
+   row-stochastic Markov kernel targeting the Mallows
+   measure \cite{diaconis-ram2000}.
+
+The two pictures are related by the quadratic Hecke relation
+$(T_i - q)(T_i + q^{-1}) = 0$: the amplitudes living on SYT
+edges square, via the idempotents, to the symmetric /
+antisymmetric Boltzmann weights of the classical chain.  SYT
+paths on the Young graph are therefore the **quantum sample
+space**, and the Markov chain of §2 is its classical shadow.
+
+### Jucys--Murphy / SYT cell reindexing
+
+In the same SYT basis, the Jucys--Murphy elements
+$L_k = T_{k-1}\cdots T_1 T_1 \cdots T_{k-1}$ act diagonally
+with eigenvalue $q^{2 c_T(k)}$, where $c_T(k)$ is the content
+of the cell added at step $k$ of the tableau.  Because
+$[L_i, L_j] = 0$, pairs of SYT cells are on equal footing with
+no adjacent/far distinction; this is the representation-
+theoretic origin of the uniform all-pairs coupling seen in the
+mass-tower empirical probes on the
+`claude/fix-partitions-shell-operator-TFznx` branch (see the
+SYT/Jucys--Murphy reindexing of the mass-tower pair set
+developed there).  The amplitude-to-probability passage above
+is therefore also a passage from the **generator indexing** of
+the chain to the **cell indexing** of the Young graph paths.
+
 ## Dictionary
 
 | Algebraic object | Markov chain reading |
