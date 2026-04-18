@@ -1,4 +1,4 @@
-import { remark } from "../../schema/builders.js";
+import { remark } from "../../schema/builders";
 
 export const massTowerSYTCells = remark({
   label: "rem:mass-tower-syt-cells",

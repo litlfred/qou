@@ -1,4 +1,4 @@
-import { remark } from "../../schema/builders.js";
+import { remark } from "../../schema/builders";
 
 export const massEndomorphismJetTower = remark({
   label: "rem:mass-endomorphism-jet-tower",
