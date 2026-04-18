@@ -34,8 +34,13 @@ Usage:
     python3 carbon-atom-nf.py [--audit-only]
 """
 
+import sys
 import sympy as sp
 import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q as _Q_CANONICAL
 from hecke_symbolic import (
     SymbolicHeckeDivision, SymbolicHeckeElement,
     q, HA,
@@ -267,7 +272,7 @@ if __name__ == '__main__':
                     help="Run only the GS consistency audit and exit")
     args = ap.parse_args()
 
-    q0 = 1.10998
+    q0 = _Q_CANONICAL
     t0 = time.time()
 
     print("=" * 72)

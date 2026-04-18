@@ -33,6 +33,7 @@ import numpy as np
 import mpmath
 
 sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q as _Q_CANONICAL
 
 
 def markov_trace_at_q(W_crossings_per_gen, n_strands, q_val):
@@ -290,7 +291,7 @@ def tr_M_at_q0_via_crt(Z, N, include_inter, m_pp, m_pn, m_nn,
 def test_tower_binding():
     """Test FULL tower binding (descended + Φ_q terms) across atoms."""
     mpmath.mp.dps = 50
-    q0 = mpmath.mpf('1.1099785955541805')
+    q0 = mpmath.mpf(repr(_Q_CANONICAL))
     print("FULL TOWER BINDING (descended + Σ Φ_q + z² Σ Φ_q cross)")
     print("=" * 88)
     print(f"q_0 = {q0}")
@@ -330,7 +331,7 @@ if __name__ == "__main__":
     print("TRACK A: CRT / high-precision Markov trace evaluation")
     print("=" * 76)
     mpmath.mp.dps = 50
-    q0 = mpmath.mpf('1.1099785955541805')
+    q0 = mpmath.mpf(repr(_Q_CANONICAL))
     print(f"q_0 = {q0}, precision = {mpmath.mp.dps} digits")
     print()
 
