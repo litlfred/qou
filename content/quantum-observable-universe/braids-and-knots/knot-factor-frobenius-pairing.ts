@@ -19,6 +19,7 @@ export default proposition({
     "def:q-heat-equation",
     "rem:base-field-independence",
     "rem:yekutieli-stokes-remark",
+    "conj:mass-endomorphism",
   ],
   cites: ["yekutieli2015", "kassel1995"],
   tags: [

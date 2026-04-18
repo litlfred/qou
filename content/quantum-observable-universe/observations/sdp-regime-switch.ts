@@ -13,6 +13,8 @@ export default proposition({
     "prop:unified-iterative-correction",
     "prop:wigner-2-coefficient",
     "def:categorical-laplace",
+    "prop:q-heat-kernel-peter-weyl",
+    "def:q-heat-equation",
   ],
   tags: [
     "sdp",

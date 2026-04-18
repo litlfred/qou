@@ -12,6 +12,7 @@ export default proposition({
     "def:atomic-braid",
     "def:hecke-normal-form",
     "def:borromean-baryon",
+    "prop:atom-knot-unique",
   ],
   tags: ["existence", "atom-knot", "borromean"],
 });

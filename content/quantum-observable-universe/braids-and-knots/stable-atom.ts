@@ -12,6 +12,8 @@ export default definition({
     "def:hecke-normal-form",
     "prop:atomic-lp-stability",
     "prop:bw-coefficient-shadow-price",
+    "prop:mass-endomorphism-tower",
+    "def:confinement-level",
   ],
   cites: [],
   tags: [

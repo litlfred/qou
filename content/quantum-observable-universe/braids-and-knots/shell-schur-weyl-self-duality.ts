@@ -15,6 +15,8 @@ export default proposition({
     "def:hecke-normal-form",
     "thm:jones-markov-trace",
     "def:quantum-su2",
+    "prop:skein-crossing-asymmetry",
+    "prop:shell-transition-knot",
   ],
   cites: [
     "kassel1995",

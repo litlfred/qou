@@ -10,6 +10,8 @@ export default definition({
   uses: [
     "def:atom-knot",
     "def:hecke-normal-form",
+    "def:stable-atom",
+    "def:unstable-atom",
   ],
   cites: [],
   tags: [

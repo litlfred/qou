@@ -11,6 +11,7 @@ export default proposition({
     "def:atom-knot",
     "prop:atom-knot-exists",
     "thm:jones-markov-trace",
+    "def:hecke-normal-form",
   ],
   tags: ["uniqueness", "atom-knot", "markov-equivalence"],
 });

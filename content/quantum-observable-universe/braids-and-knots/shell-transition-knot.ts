@@ -14,7 +14,7 @@ export default proposition({
     "crossing-number",
   ],
   lean: {
-    decl: "QOU.Braiding.shell_transition_knot",
+    decl: "QOU.Braiding.stability_pairs_correct",
     validation: "not_checked",
   },
   uses: ["prop:orbital-fourier-decomposition"],

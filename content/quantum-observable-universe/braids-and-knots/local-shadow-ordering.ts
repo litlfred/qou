@@ -10,6 +10,9 @@ export default definition({
   uses: [
     "def:knot-operator-energy",
     "prop:bw-coefficient-shadow-price",
+    "def:confinement-level",
+    "def:unstable-atom",
+    "prop:mass-endomorphism-tower",
   ],
   tags: [
     "ordering",

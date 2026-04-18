@@ -10,6 +10,7 @@ export default proposition({
   uses: [
     "def:confinement-level",
     "prop:confinement-level-exists",
+    "def:local-shadow-ordering",
   ],
   tags: ["uniqueness", "confinement", "filtration"],
 });
