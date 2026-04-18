@@ -133,14 +133,21 @@ def binding_unified(Z: int, N: int, *, pair_mode: str = "full",
     # truncation error (cf. canonical_plus_multibrane.py's
     # same-approach tower loop).
     from canonical_plus_multibrane import lift_V_markov
-    AME_MEV_PRECISION = 1e-4   # 0.1 keV per-term target
-    target_term_cat = AME_MEV_PRECISION / max(E_0, 1e-12)
+    # Jet-scaling precision target: default 1 ppm of a 2 GeV atom mass
+    # (= 2 keV in MeV = 2.6e-3 categorical).  Override per call via
+    # `target_ppm`.
+    import os
+    target_ppm = float(os.environ.get("JET_TARGET_PPM", "1.0"))
+    n_strands_mev = n_strands * 938.272
+    target_term_cat = (target_ppm * 1e-6 * n_strands_mev) / max(E_0, 1e-12)
+    jet_cap = int(os.environ.get("JET_MAX_LEVELS", "60"))
     tower_term_cat = 0.0
     V_a_n = list(V_a_1)
     V_f_n = list(V_f_1)
     delta_1 = None
+    jet_log = []
     n = 0
-    while n < 30:
+    while n < jet_cap:
         n += 1
         if n > 1:
             # Iterate Markov-stab lift from level-1 Kähler baseline
@@ -153,6 +160,11 @@ def binding_unified(Z: int, N: int, *, pair_mode: str = "full",
             delta_1 = delta_n
         term_n_cat = (HBAR_Q_SQ ** n) * delta_n
         tower_term_cat += term_n_cat
+        jet_log.append({
+            "level": n, "delta_n": delta_n,
+            "term_cat": term_n_cat,
+            "cumulative_cat": tower_term_cat,
+        })
         if abs(term_n_cat) < target_term_cat:
             break
     tower_MeV = E_0 * tower_term_cat
@@ -175,6 +187,9 @@ def binding_unified(Z: int, N: int, *, pair_mode: str = "full",
         "canonical_MeV": canonical_MeV,
         "tower_delta_1_cat": delta_1,
         "tower_MeV": tower_MeV,
+        "jet_levels_used": n,
+        "jet_target_ppm": target_ppm,
+        "jet_log": jet_log,
         "B_MeV": B,
         "eps_MeV": eps_MeV,
         "eps_order": f"O(ℏ_q^{eps_order})",
