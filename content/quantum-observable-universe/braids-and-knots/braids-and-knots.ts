@@ -372,6 +372,7 @@ export default chapter({
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
+        "mass-tower-syt-cells",
         "energy-scale-planck",
         "topological-mass-trefoil",
         "skein-binding-lagrangian",
