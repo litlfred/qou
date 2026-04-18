@@ -31,6 +31,7 @@ from . import certificate  # uses schema
 from . import bridge  # uses subprocess only
 from . import crt  # pure numpy + mpmath
 from . import undo  # Track B shortcut undo dispatcher
+from . import sdp  # Track C multi-level SDP dispatcher
 
 try:
     from . import gram  # re-exports from hecke_core
@@ -49,6 +50,7 @@ __all__ = [
     "bridge",
     "crt",
     "undo",
+    "sdp",
 ]
 
 if _legacy_available:

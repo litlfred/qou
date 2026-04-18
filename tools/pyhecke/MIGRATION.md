@@ -53,11 +53,25 @@ and for Hecke multiplication + reduction:
 | 16 | `misdp_cross_channel.py` | imports from `mass_endomorphism` | no Gram change needed | n/a |
 | 17 | `sdp_on_shadows.py` | imports from `sigma_shell_characterization` | no Gram change needed | n/a |
 
-**Net scope:** of the 17 listed in the plan, only 9 actually carry
-Gram or NF-basis duplicates (sites 1, 2, 5, 8, 9, 10, 11, 12, 13).
-The other 8 (items 3, 4, 6, 7, 14, 15, 16, 17) either have no Gram
-code or depend only on `mass_endomorphism` / snappy. They should be
-struck from the migration list.
+### Added from post-rebase upstream (main)
+
+| # | Script | Local duplicates | Imports to add | Risk |
+|:--:|:--|:--|:--|:--:|
+| 18 | `atom-stability-check.py` | local 6×6 `G = np.zeros((6, 6))` fill | `from pyhecke.gram import G, TR_M` | low |
+| 19 | `ch-bond-lp.py` | local Gram build | `from pyhecke.gram import G, G_INV` | medium |
+| 20 | `confinement-operator-selection.py` | local Gram | `from pyhecke.gram import G` | low |
+| 21 | `four-term-photon-to-atoms.py` | local Gram | `from pyhecke.gram import G` | medium |
+| 22 | `knot-ops-on-6he.py` | local Gram | `from pyhecke.gram import G, TR_M` | low |
+| 23 | `molecular-frobenius-lp.py` | local Gram via LP basis | `from pyhecke.gram import G, G_INV` | medium |
+| 24 | `pn_alpha_lp_dual.py` | local Gram | `from pyhecke.gram import G, G_INV` | medium |
+| 25 | `tbeta-dual-action.py` | local Gram | `from pyhecke.gram import G, TR_M` | low |
+| 26 | `tower-qvalues.py` | local Gram | `from pyhecke.gram import G, TR_M` | medium |
+
+**Net scope:** 14 real migration sites across the 26 surveyed
+(`atom_mass_functionals`, `atom_mass_combined`, `atom_frobenius_volume`,
+`atom_vol_hecke_unified`, `sigma_shell_characterization`,
+`multi_level_sdp`, `misdp_cross_channel`, `sdp_on_shadows` remain
+struck). Low-risk = 6, medium-risk = 8.
 
 ## Verification protocol (per site)
 
