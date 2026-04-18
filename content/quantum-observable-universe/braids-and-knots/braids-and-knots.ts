@@ -193,6 +193,7 @@ export default chapter({
         "hecke-markov-transition",
         "hecke-markov-interpretation",
         "markov-lambda-knot-operations",
+        "markov-chain-fluctuations",
         // Feynman path integrals as categorical traces
         "feynman-categorical-trace",
         "feynman-categorical-trace-proof",
