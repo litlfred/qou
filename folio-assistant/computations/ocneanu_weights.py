@@ -117,6 +117,12 @@ _OMEGA_DISK_DIR = Path(__file__).parent / ".cache" / "ocneanu"
 
 
 def _load_omega_disk(n: int, q_val: float) -> dict | None:
+    """Legacy v1 disk loader.  Deprecated — use _load_omega_disk_v2.
+
+    Key format: comma-separated integer partition string → float.
+    Returns dict keyed by tuple[int, ...] → float matching the
+    in-memory _OMEGA_CACHE signature.
+    """
     _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
     f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}.json"
     if not f.exists():
@@ -124,9 +130,13 @@ def _load_omega_disk(n: int, q_val: float) -> dict | None:
     try:
         import json as _json
         raw = _json.loads(f.read_text())
-        return {tuple(k.split(",") if "," in k else (int(k),)
-                       if k else ()): v
-                for k, v in raw.items()}
+        out = {}
+        for k, v in raw.items():
+            if not k:
+                out[()] = float(v)
+            else:
+                out[tuple(int(x) for x in k.split(","))] = float(v)
+        return out
     except Exception:
         return None
 
@@ -339,8 +349,9 @@ def verify_sum(n: int, *, q_val: float = None, z_val: float = None) -> dict:
     total = 0.0
     entries = []
     from hecke_characters import partitions_of
+    omegas = omega_lambda_via_inversion(n, q_val=q_val, z_val=z_val)
     for shape in partitions_of(n):
-        omega = omega_lambda(shape, q_val=q_val, z_val=z_val)
+        omega = omegas.get(shape, 0.0)
         total += omega
         entries.append({"shape": shape, "omega": omega})
     return {"n": n, "total": total,
@@ -368,8 +379,9 @@ def verify_trace_of_T0(n: int, *, q_val: float = None,
     qi = 1.0 / q_val
     total = 0.0
     entries = []
+    omegas = omega_lambda_via_inversion(n, q_val=q_val, z_val=z_val)
     for shape in partitions_of(n):
-        omega = omega_lambda(shape, q_val=q_val, z_val=z_val)
+        omega = omegas.get(shape, 0.0)
         mp, mm = eigen_multiplicities(shape, 0)
         d_lam = mp + mm
         if d_lam == 0:

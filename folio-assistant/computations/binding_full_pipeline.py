@@ -33,19 +33,14 @@ import time
 from pathlib import Path
 from datetime import datetime, timezone
 
-import sympy as sp
-
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0
-from ocneanu_weights import (omega_lambda_via_inversion,
-                                canonical_markov_trace_via_ocneanu,
+from ocneanu_weights import (canonical_markov_trace_via_ocneanu,
                                 z_num)
-from kahler_lift import (build_V_hat_symbolic, kahler_lift_analytic,
-                            HBAR_Q_SYM)
+from kahler_lift import (build_V_hat_symbolic, kahler_lift_analytic)
 from canonical_plus_multibrane import (tower_mass_level,
                                           HBAR_Q, HBAR_Q_SQ,
-                                          E_0_BETA_DECAY_MEV,
-                                          brane_scaling)
+                                          E_0_BETA_DECAY_MEV)
 from binding_canonical import build_atom_symbolic
 from hecke_symbolic import SymbolicHeckeDivision
 
