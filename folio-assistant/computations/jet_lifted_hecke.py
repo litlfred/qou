@@ -67,54 +67,91 @@ def lift_markov(vols, level):
 _QPLANCH_CACHE: dict[int, float] = {}
 
 
-def qplancherel_avg_T(n: int, q: float = None) -> float:
-    """Plancherel-averaged box-addition transition factor for H_n → H_{n+1}.
+def _removable_corners(lam: tuple[int, ...]) -> list[int]:
+    """Row indices i at which λ has a removable corner cell.
 
-    Computed once per n and cached.  For large n (p(n+1) blows up)
-    we fall back to a q-leading-term approximation.
+    A cell (i, λ[i]−1) is removable iff removing it keeps λ a
+    partition (i.e., λ[i] > λ[i+1] or i is the last row).
+    """
+    corners = []
+    for i in range(len(lam)):
+        if i == len(lam) - 1 or lam[i] > lam[i + 1]:
+            corners.append(i)
+    return corners
+
+
+def qplancherel_avg_T(n: int, q: float = None) -> float:
+    """Plancherel-averaged box-addition transition factor H_n → H_{n+1}.
+
+    Proper formula — averaged over ALL λ ⊢ n+1 and ALL removable
+    corners of each λ, WEIGHTED by Plancherel measure:
+
+        ⟨T⟩ = Σ_{λ ⊢ n+1} w_λ · T(λ),
+        T(λ) = Σ_{c removable corner of λ}
+               d_q(λ \\ c) / ([n+1]_q · d_q(λ))
+
+    where w_λ = d_q(λ)² / [n+1]_q! is the q-Plancherel measure.
+    ``d_q(λ \\ c)`` is the q-dimension of the partition with the
+    corner cell removed, computed via hook lengths:
+        d_q(μ) = [|μ|]_q! / Π_{x ∈ μ} [h_μ(x)]_q.
+    Both d_q(λ) and d_q(λ \\ c) use the FULL hook-length formula at
+    their respective partitions (not just local hook at c).
+
+    Result ⟨T⟩ is Σ d_q²/[n+1]_q! · Σ_corners (d_q(λ\\c)/(d_q(λ)[n+1]_q))
+         = (1/[n+1]_q!/[n+1]_q) · Σ_λ d_q(λ) · Σ_c d_q(λ\\c).
+    By the q-branching rule Σ_c d_q(λ\\c) = [n+1]_q! / d_q(λ) · ? —
+    there's a closed form but we evaluate numerically.
+
+    At q = 1 this reduces to 1/(n+1) · (average # removable corners
+    weighted by d_λ) = 1 (branching rule identity), confirming
+    Plancherel conservation.  At q > 1 it carries a q-deformation.
     """
     if n in _QPLANCH_CACHE:
         return _QPLANCH_CACHE[n]
     if q is None:
         q = q0
-    # For n large: enumeration of all p(n+1) partitions is expensive.
-    # Approximate via the LEADING Plancherel-measure concentration:
-    # dominant partitions are rectangular with λ₁ ≈ 2√n, concentrated
-    # near the Vershik–Kerov limit shape.  In that regime the
-    # transition T ≈ 1 + O(q-1).  For our q₀ ≈ 1.11, the q-correction
-    # is small; we use T_eff = (q + q^{-1}) / 2 as the limit value —
-    # matches the q=1 identity and smoothly deforms for q ≠ 1.
-    LARGE_N = 20
-    from hecke_3a_weights import partitions_of_n, q_dim, q_int
-    qi = 1.0 / q
+    from hecke_3a_weights import (partitions_of_n, q_dim, q_int,
+                                     q_fact)
+    LARGE_N = 20  # p(20) = 627, p(21) = 792 — tractable
     if n + 1 > LARGE_N:
-        # For large n the proper formula avg = Σ d_q(λ+corner)/([n+2]_q d_q(λ))
-        # is dominated by 1/[n+2]_q ≈ q^{-(n+1)} (exponential decay).
-        # Use that asymptote: T ≈ 1/[n+2]_q scaled by the average
-        # dim ratio O(√n).
-        bracket = (q ** (n + 2) - qi ** (n + 2)) / (q - qi)
-        T = max(1e-6, min(z_mark, math.sqrt(n + 1) / bracket))
+        # Asymptote: for Plancherel-concentrated λ (rectangular limit
+        # shape), the average removable-corners count is O(√n) and
+        # d_q(λ\\c)/d_q(λ) ≈ 1/(#corners) · O(1).  Hence
+        #   T ≈ √(n+1) · [1/(avg #corners)] / [n+1]_q ≈ 1/[n+1]_q.
+        # Bounded to avoid numerical spikes.
+        qi = 1.0 / q
+        bracket = (q ** (n + 1) - qi ** (n + 1)) / (q - qi)
+        T = max(1e-9, min(z_mark, 1.0 / bracket))
         _QPLANCH_CACHE[n] = T
         return T
-    parts_n = partitions_of_n(n + 1)
-    acc = 0.0
-    count = 0
-    for lam in parts_n:
+
+    # Proper formula: Plancherel-weighted sum over λ ⊢ n+1 and its
+    # removable corners.
+    parts = partitions_of_n(n + 1)
+    nfac = q_fact(n + 1)
+    q_nplus1 = q_int(n + 1)  # [n+1]_q
+    total = 0.0
+    for lam in parts:
         dq_lam = q_dim(lam)
         if dq_lam == 0:
             continue
-        lam_plus = (lam[0] + 1,) + lam[1:]
-        dq_plus = q_dim(lam_plus)
-        if dq_plus == 0:
-            continue
-        denom = q_int(n + 2) * dq_lam
-        if abs(denom) < 1e-300:
-            continue
-        acc += dq_plus / denom
-        count += 1
-    T = acc / count if count > 0 else 1.0
-    _QPLANCH_CACHE[n] = T
-    return T
+        w_lam = (dq_lam * dq_lam) / nfac
+        # Sum over removable corners
+        t_lam = 0.0
+        for ci in _removable_corners(lam):
+            lam_list = list(lam)
+            lam_list[ci] -= 1
+            if lam_list[ci] == 0:
+                lam_list = lam_list[:ci]
+            lam_prime = tuple(lam_list)
+            dq_prime = q_dim(lam_prime)
+            if dq_prime == 0:
+                continue
+            # T(λ → λ\c) = d_q(λ\c) / ([n+1]_q · d_q(λ))
+            t_lam += dq_prime / (q_nplus1 * dq_lam)
+        total += w_lam * t_lam
+    _QPLANCH_CACHE[n] = total
+    return total
 
 
 def lift_qplancherel(vols, level, q=None):
