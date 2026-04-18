@@ -157,9 +157,8 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB):
 # ── Prop table sanity ───────────────────────────────────────────
 
 if __name__ == "__main__":
-    q0_num = 1.1099785955541805
+    from q_parameter import Q as q0_num, HA as h_num
     z_num = 1.0 / (q0_num ** 0.5 + q0_num ** (-0.5))
-    h_num = q0_num - 1.0 / q0_num
 
     print("=" * 80)
     print("CANONICAL MARKOV TRACE — prop:categorical-mass-markov table")
