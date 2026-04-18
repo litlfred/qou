@@ -113,6 +113,69 @@ def omega_lambda_formula_guess(shape: tuple[int, ...], *,
 # Works at ANY convention — no need to guess the formula.
 
 _OMEGA_CACHE: dict[int, dict[tuple, float]] = {}
+_OMEGA_DISK_DIR = Path(__file__).parent / ".cache" / "ocneanu"
+
+
+def _load_omega_disk(n: int, q_val: float) -> dict | None:
+    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
+    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}.json"
+    if not f.exists():
+        return None
+    try:
+        import json as _json
+        raw = _json.loads(f.read_text())
+        return {tuple(k.split(",") if "," in k else (int(k),)
+                       if k else ()): v
+                for k, v in raw.items()}
+    except Exception:
+        return None
+
+
+def _save_omega_disk(n: int, q_val: float, omegas: dict):
+    import json as _json
+    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
+    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}.json"
+    payload = {",".join(str(x) for x in shape) if shape else "":
+                v for shape, v in omegas.items()}
+    try:
+        f.write_text(_json.dumps(payload))
+    except Exception:
+        pass
+
+
+def _load_omega_disk_v2(n: int, q_val: float):
+    """Simpler json dump: keys are shape tuples stringified."""
+    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
+    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}_v2.json"
+    if not f.exists():
+        return None
+    try:
+        import json as _json
+        raw = _json.loads(f.read_text())
+        out = {}
+        for key_str, v in raw.items():
+            if not key_str:
+                out[()] = v
+            else:
+                parts = key_str.split(",")
+                out[tuple(int(x) for x in parts)] = v
+        return out
+    except Exception:
+        return None
+
+
+def _save_omega_disk_v2(n: int, q_val: float, omegas: dict):
+    import json as _json
+    _OMEGA_DISK_DIR.mkdir(parents=True, exist_ok=True)
+    f = _OMEGA_DISK_DIR / f"n{n}_q{q_val:.10f}_v2.json"
+    payload = {}
+    for shape, v in omegas.items():
+        key = ",".join(str(x) for x in shape) if shape else ""
+        payload[key] = v
+    try:
+        f.write_text(_json.dumps(payload))
+    except Exception:
+        pass
 
 
 def _reduced_words_for_basis(n: int) -> list[tuple[int, ...]]:
@@ -140,6 +203,50 @@ def _reduced_words_for_basis(n: int) -> list[tuple[int, ...]]:
     return words
 
 
+def tr_M_via_ocneanu_word(Z: int, N: int, *,
+                            include_inter: bool = True,
+                            m_pp: int = 1, m_pn: int = 1,
+                            m_nn: int = 1,
+                            q_val: float = None,
+                            z_val: float = None) -> float:
+    """FAST tr_M(W_atom) via raw braid-word multiplication + ω_λ weights.
+
+    Bypasses SymbolicHeckeElement / Hecke reduction entirely: multiplies
+    the (c, d, gen) factors directly in each seminormal irrep, then
+    sums Σ_λ ω_λ · χ_λ(W) / d_λ with Ocneanu weights.
+
+    Use for atom binding calculations — 100s of times faster than the
+    reduce-then-Ocneanu path since it avoids the O(N²)–O(N³) Gröbner–
+    Shirshov reduction cost.
+    """
+    from mass_at_3A_proper import (atom_braid_word_3A,
+                                     chi_lambda_of_word,
+                                     _cached_seminormal)
+    from hecke_characters import partitions_of
+    if q_val is None:
+        q_val = Q0
+    if z_val is None:
+        z_val = z_num
+    A = Z + N
+    if A < 1:
+        return 1.0
+    n_strands = 3 * A
+    word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                                include_inter=include_inter)
+    omegas_by_shape = omega_lambda_via_inversion(n_strands,
+                                                    q_val=q_val,
+                                                    z_val=z_val)
+    total = 0.0
+    for shape in partitions_of(n_strands):
+        sigmas, dim, _syts = _cached_seminormal(shape)
+        if dim == 0:
+            continue
+        chi = chi_lambda_of_word(sigmas, dim, word, n_strands - 1)
+        omega = omegas_by_shape.get(shape, 0.0)
+        total += omega * chi / dim
+    return total
+
+
 def omega_lambda_via_inversion(n: int, *,
                                  q_val: float = None,
                                  z_val: float = None) -> dict[tuple, float]:
@@ -164,6 +271,11 @@ def omega_lambda_via_inversion(n: int, *,
     cache_key = n
     if cache_key in _OMEGA_CACHE:
         return _OMEGA_CACHE[cache_key]
+    # Try disk cache first
+    disk_omegas = _load_omega_disk_v2(n, q_val)
+    if disk_omegas is not None:
+        _OMEGA_CACHE[cache_key] = disk_omegas
+        return disk_omegas
 
     shapes = list(partitions_of(n))
     words = _reduced_words_for_basis(n)
@@ -214,6 +326,7 @@ def omega_lambda_via_inversion(n: int, *,
     omega_dict = {shape: float(omega[j])
                    for j, shape in enumerate(shapes)}
     _OMEGA_CACHE[cache_key] = omega_dict
+    _save_omega_disk_v2(n, q_val, omega_dict)
     return omega_dict
 
 
