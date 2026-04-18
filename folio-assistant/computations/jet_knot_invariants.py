@@ -33,7 +33,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from hecke_core import (
     h, z, q0, qi, W_SYM, W_STD, W_ALT, G, NF_NAMES,
-    hm, build_atom_nf, check_frobenius, binding_energy_bw,
+    hm, build_atom_nf, check_frobenius,
     q_int,
 )
 from hecke_characters import partitions_of, dim_q, qfac
