@@ -30,6 +30,7 @@ from . import schema  # always importable — pure stdlib + jsonschema
 from . import certificate  # uses schema
 from . import bridge  # uses subprocess only
 from . import crt  # pure numpy + mpmath
+from . import undo  # Track B shortcut undo dispatcher
 
 try:
     from . import gram  # re-exports from hecke_core
@@ -47,6 +48,7 @@ __all__ = [
     "certificate",
     "bridge",
     "crt",
+    "undo",
 ]
 
 if _legacy_available:
