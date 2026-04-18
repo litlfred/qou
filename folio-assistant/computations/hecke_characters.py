@@ -294,7 +294,7 @@ def dim_q(shape):
     return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
 
 
-def compute_mass_at_level(Z, N, k=6, verbose=False):
+def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None):
     """Compute atomic mass using ALL partitions at Hecke level k.
 
     For each partition λ of k:
@@ -304,6 +304,10 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
 
     The Markov trace = Σ_λ w_λ · χ_λ / dim(λ)
     Binding = -ALPHA · ln|Markov trace|
+
+    ``partition_filter``, if given, is a predicate ``λ → bool``; only
+    partitions for which it returns True contribute.  Useful for
+    audits (top-N by w_λ, etc.).  Default: include all partitions.
 
     Returns: (M_predicted, details_dict)
     """
@@ -320,6 +324,8 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
     partition_data = []
 
     for shape in partitions_of(k):
+        if partition_filter is not None and not partition_filter(shape):
+            continue
         sigmas, dim, syts = build_seminormal_matrices(shape)
 
         if dim == 0:
@@ -357,6 +363,28 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
         'partitions': partition_data,
         'level': k,
     }
+
+
+def compute_mass_at_3A(Z, N, verbose=False, partition_filter=None):
+    """Atomic mass summed over λ ⊢ 3A — the canonical H_{3A} Wedderburn form.
+
+    Replaces the per-generator H_3 weighting used in the tower formula
+    (hecke_core.atom_per_generator_volumes) with a full partition sum
+    at the atom-wide Iwahori–Hecke algebra H_{3A}(q).  This is the
+    principled form: the atom braid lives in H_{3A}, so weights should
+    be d_q(λ)²/[3A]_q! for λ ⊢ 3A — NOT a per-generator H_3 average.
+
+    A = Z + N.  Calls compute_mass_at_level(Z, N, k=3A).  For A ≥ 10
+    (p(3A) ≥ 5604) this is expensive; callers may pass a
+    ``partition_filter`` to restrict (audit mode), but the default
+    is the full sum — no Plancherel truncation.
+    """
+    A = Z + N
+    if A < 1:
+        return Z * M_P_MEV + N * M_N_MEV + Z * me, {
+            'binding': 0.0, 'markov_trace': 1.0, 'partitions': [], 'level': 0}
+    return compute_mass_at_level(Z, N, k=3 * A, verbose=verbose,
+                                   partition_filter=partition_filter)
 
 
 # ══════════════════════════════════════════════════════════════

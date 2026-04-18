@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 """
-SDP on shadow prices: find the linear combination of partitions λ ⊢ A_magic
-whose shadow-price-weighted sum matches the observed binding scale.
+SDP on shadow prices: find the linear combination of partitions
+λ ⊢ 3·A_magic whose shadow-price-weighted sum matches the observed
+binding scale.
+
+The shell Iwahori–Hecke algebra is H_{3·A_magic}(q) (3 strands per
+nucleon × A_magic nucleons), NOT H_{A_magic}(q); partitions therefore
+range over λ ⊢ 3·A_magic.  Full enumeration is used (no Plancherel
+truncation) — p(3·A_magic) grows quickly but stays tractable for
+A_magic ∈ {2, 8}.  Larger A_magic (20, 28) is left to the upstream
+symbolic-in-q / CRT path.
 
 Setup:
   Variables x_λ ∈ ℝ_{≥0} (or ℤ_{≥0} for integer version) for each
-  partition λ ⊢ A_magic.
+  partition λ ⊢ 3·A_magic.
   Constraints:
     - Frobenius positivity: Σ_λ x_λ · y_λ ≥ physical binding target
     - Wedderburn normalization: Σ_λ x_λ · w_λ = 1 (probability-like)
@@ -33,22 +41,29 @@ from mass_endomorphism import q0 as q0_f
 
 mpmath.mp.dps = 40
 q0 = mpmath.mpf(str(q0_f))
-MAGIC = [2, 8, 20]  # 28 too slow (p(28)=3718 partitions × PSD blocks)
+# MAGIC entries run λ ⊢ 3·A_magic.  p(6)=11, p(24)=1575 — tractable;
+# p(60) ≈ 10⁶ and p(84) ≈ 3·10⁷ are left to symbolic-in-q callers.
+MAGIC = [2, 8]
 # Target binding scale per magic A (B_AME per nucleon ~ 8.5 MeV →
 # y_shell_target ~ 8.5 / 938 ≈ 0.009)
 TARGET_Y = mpmath.mpf('0.009')
 
 
 def build_partition_data(A_magic):
-    """Build (partition, w_λ, y_λ, d_λ) for all partitions of A_magic."""
-    parts = partitions_of(A_magic)
+    """Build (partition, w_λ, y_λ, d_λ) for all partitions λ ⊢ 3·A_magic.
+
+    The shell algebra is H_{3·A_magic}(q); full enumeration (no
+    Plancherel truncation).
+    """
+    k = 3 * A_magic
+    parts = partitions_of(k)
     data = []
     for p in parts:
-        d_cl = classical_dim(p, A_magic)
+        d_cl = classical_dim(p, k)
         if d_cl == 0:
             continue
-        w = (q_dim(p, A_magic) ** 2) / q_fact_mp(A_magic)
-        y = w / d_cl - 1 / q_fact_mp(A_magic)
+        w = (q_dim(p, k) ** 2) / q_fact_mp(k)
+        y = w / d_cl - 1 / q_fact_mp(k)
         data.append({
             "partition": p, "d_cl": d_cl, "w": w, "y": y,
             "w_f": float(w), "y_f": float(y), "y_abs": abs(float(y)),
@@ -210,8 +225,9 @@ if __name__ == "__main__":
 
     all_results = {}
     for A_m in MAGIC:
-        print(f"\nA_magic = {A_m}")
-        print(f"  Partition count: {len(partitions_of(A_m))}")
+        k = 3 * A_m
+        print(f"\nA_magic = {A_m}  (Hecke level k = 3·A_magic = {k})")
+        print(f"  Partition count p({k}) = {len(partitions_of(k))}")
         print()
 
         # LP (continuous)
@@ -244,13 +260,16 @@ if __name__ == "__main__":
     witness = {
         "computation": "sdp-on-shadows",
         "description": (
-            "SDP/LP/ILP on shadow prices to identify shell-operator "
-            "partition support. Constraint: Σ x_λ y_λ = target_y "
-            "(physical binding scale ≈ 0.009). Reports active partitions."
+            "SDP/LP/ILP on shadow prices over λ ⊢ 3·A_magic to identify "
+            "shell-operator partition support. Constraint: "
+            "Σ x_λ y_λ = target_y (physical binding scale ≈ 0.009). "
+            "Full enumeration — no Plancherel truncation. Reports "
+            "active partitions."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q_0": str(q0), "target_y": str(TARGET_Y),
-                       "magic_numbers": MAGIC},
+                       "magic_numbers": MAGIC,
+                       "hecke_levels": [3 * A for A in MAGIC]},
         "results": all_results,
     }
     out = Path(__file__).parent / "sdp-on-shadows.witness.json"

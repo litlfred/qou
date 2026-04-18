@@ -2,21 +2,29 @@
 """
 σ_shell characterization via LP-dual + Young's lattice (branching rule).
 
-Per user: σ_shell parameters are NOT new parameters but derived from:
-  (a) LP-dual shadow price at shell partition (A_magic - 1, 1)
+σ_shell parameters are NOT new parameters but derived from:
+  (a) LP-dual shadow price at the shell partition λ ⊢ 3·A_magic
   (b) skew-SYT branching at the shell level
 
-σ_shell in H_{A_magic}(q) at the standard rep (A_magic - 1, 1) has
-SAME Hecke eigenvalues (q, -q⁻¹) as any σ.  The "shell" character is:
+σ_shell in H_{3·A_magic}(q) has the standard Hecke eigenvalues
+(q, -q⁻¹); the "shell" character at confinement level 4 is:
 
-  1. POSITION: placed at shell-boundary generators (gens 3·A_magic_cumulative - 1)
-  2. WEIGHT: LP-dual shadow price at shell-partition (A_magic-1, 1)
+  1. POSITION: placed at shell-boundary generators (gen 3·A_magic - 1)
+  2. WEIGHT: LP-dual shadow price at the shell-partition λ ⊢ 3·A_magic
   3. MULTIPLICITY: ILP at level 4 — # crossings per shell boundary
 
 Contribution to atom tower mass:
-  Δ𝔪_shell = z² · Φ_q(|V̂_shell|²) · y_shell(q) · f^{λ_atom/(A_magic-1,1)}
+  Δ𝔪_shell = z² · Φ_q(|V̂_shell|²) · y_shell(q) · f^{λ_atom / λ_shell}
 
 where y_shell(q) is the LP shadow price and f the skew-SYT count.
+
+H_{A_magic} vs H_{3·A_magic}: the atom braid has 3A strands (A nucleons
+× 3 quarks each).  Magic numbers index *nucleon* counts; the shell
+Iwahori–Hecke algebra therefore sits at level 3·A_magic — NOT
+A_magic.  Partition enumeration (``partitions_of``, shadow price
+queries, maximal-weight search) must run over λ ⊢ 3·A_magic.
+Historical ``shell_shadow_price(A_magic)`` signature is preserved by
+mapping internally to k = 3·A_magic.
 """
 import sys
 import math
@@ -116,13 +124,17 @@ def shadow_price_at_partition(partition, k):
     }
 
 
-def maximal_weight_partition(A):
-    """Find partition λ ⊢ A with maximal Wedderburn weight w_λ = d_q²/[A]_q!."""
-    parts = partitions_of(A)
+def maximal_weight_partition(k):
+    """Find partition λ ⊢ k with maximal Wedderburn weight w_λ = d_q²/[k]_q!.
+
+    Input is the Hecke-level k directly.  For shell analysis at a magic
+    nucleon count A_magic, pass k = 3*A_magic.
+    """
+    parts = partitions_of(k)
     best = None
     best_w = mpmath.mpf(0)
     for p in parts:
-        w = (q_dim(p, A) ** 2) / q_fact_mp(A)
+        w = (q_dim(p, k) ** 2) / q_fact_mp(k)
         if w > best_w:
             best_w = w
             best = p
@@ -130,22 +142,31 @@ def maximal_weight_partition(A):
 
 
 def shell_shadow_price(A_magic, partition=None):
-    """Shell shadow price at a GIVEN partition (default (A_magic-1, 1))."""
+    """Shell shadow price at a GIVEN partition of 3·A_magic.
+
+    The shell Iwahori–Hecke algebra sits at H_{3·A_magic}(q) (3 strands
+    per nucleon × A_magic nucleons).  ``partition`` defaults to
+    (3·A_magic - 1, 1), the standard-rep partition of 3·A_magic.
+    Historical callers that pass partitions of A_magic itself will
+    raise via the d_cl=0 branch — update them to pass λ ⊢ 3·A_magic.
+    """
+    k = 3 * A_magic
     if partition is None:
-        partition = (A_magic - 1, 1)
-    k = A_magic
+        partition = (k - 1, 1)
     data = shadow_price_at_partition(partition, k)
     if data is None:
-        return {"A_magic": A_magic, "error": "d_cl = 0"}
+        return {"A_magic": A_magic, "hecke_level": k,
+                 "error": f"d_cl = 0 for {partition} ⊢ {k}"}
     return {
         "A_magic": A_magic,
+        "hecke_level": k,  # = 3·A_magic
         "shell_partition": partition,
         "classical_dim": data["classical_dim"],
         "q_dim": str(data["q_dim"]),
         "wedderburn_weight": str(data["wedderburn_weight"]),
         "shadow_price_y": str(data["shadow_price_y"]),
         "shadow_price_abs": str(data["shadow_price_abs"]),
-        "q_factorial_A_magic": str(data["q_factorial_k"]),
+        "q_factorial_hecke_level": str(data["q_factorial_k"]),
     }
 
 
@@ -223,49 +244,51 @@ if __name__ == "__main__":
     print("→ expect y_shell ~ 10⁻³ to 10⁻² for physical binding")
     print()
 
-    print("APPROACH 1: (A-1, 1) partition")
-    print(f"  {'A_magic':>8} {'partition':>12} {'|y|':>14}")
+    print("APPROACH 1: (3A_m - 1, 1) standard-rep partition at H_{3·A_magic}")
+    print(f"  {'A_magic':>8} {'3·A_m':>6} {'partition':>14} {'|y|':>14}")
     for A_m in [2, 8, 20, 28]:
         d = shell_shadow_price(A_m)
-        print(f"  {d['A_magic']:>8d} {str(d['shell_partition']):>12} "
+        print(f"  {d['A_magic']:>8d} {d['hecke_level']:>6d} "
+              f"{str(d['shell_partition']):>14} "
               f"{float(mpmath.mpf(d['shadow_price_abs'])):>14.4e}")
-    print("  → Too small; shadow price drops exponentially.")
     print()
 
-    print("APPROACH 3: Maximal-weight partition (argmax w_λ)")
-    print(f"  {'A_magic':>8} {'argmax partition':>25} {'w_max':>14} {'|y|':>14}")
+    print("APPROACH 3: Maximal-weight partition (argmax w_λ) at H_{3·A_magic}")
+    print(f"  {'A_magic':>8} {'3·A_m':>6} {'argmax partition':>25} "
+          f"{'w_max':>14} {'|y|':>14}")
     max_wt_data = []
-    for A_m in [2, 8, 20]:
-        best_p, best_w = maximal_weight_partition(A_m)
-        y_data = shadow_price_at_partition(best_p, A_m)
-        print(f"  {A_m:>8d} {str(best_p):>25} "
+    for A_m in [2, 8]:  # 3·20 = 60 → p(60) ≈ 10⁶; too slow for argmax here
+        k = 3 * A_m
+        best_p, best_w = maximal_weight_partition(k)
+        y_data = shadow_price_at_partition(best_p, k)
+        print(f"  {A_m:>8d} {k:>6d} {str(best_p):>25} "
               f"{float(best_w):>14.4e} "
               f"{float(y_data['shadow_price_abs']):>14.4e}")
         max_wt_data.append({
-            "A_magic": A_m, "partition": str(best_p),
+            "A_magic": A_m, "hecke_level": k, "partition": str(best_p),
             "w_max": str(best_w),
             "y_abs": str(y_data["shadow_price_abs"]),
         })
     print()
 
-    print("ENUMERATION: all partitions at each magic A, find y in physical range")
+    print("ENUMERATION: all λ ⊢ 3·A_magic, find y in physical range")
     print("(physical range: 10⁻³ to 10⁻¹)")
     enum_data = {}
-    for A_m in [2, 8, 20]:
-        print(f"\nA_magic = {A_m}:")
-        parts = partitions_of(A_m)
+    for A_m in [2, 8]:  # keep A_m=20 out: p(60) enumeration is expensive
+        k = 3 * A_m
+        print(f"\nA_magic = {A_m} (k = 3·A_magic = {k}):")
+        parts = partitions_of(k)
         candidates = []
         for p in parts:
-            y_data = shadow_price_at_partition(p, A_m)
+            y_data = shadow_price_at_partition(p, k)
             if y_data is None:
                 continue
             y_abs = float(y_data["shadow_price_abs"])
             if 1e-4 < y_abs < 1e0:
                 candidates.append((p, y_abs, float(y_data["wedderburn_weight"])))
-        # Sort by |y| descending
         candidates.sort(key=lambda x: -x[1])
         print(f"  {'partition':>25} {'|y|':>14} {'w_λ':>14}")
-        for p, y, w in candidates[:8]:  # top 8 by |y|
+        for p, y, w in candidates[:8]:
             print(f"  {str(p):>25} {y:>14.4e} {w:>14.4e}")
         enum_data[A_m] = [{"partition": str(p), "y_abs": y, "w_lam": w}
                            for p, y, w in candidates[:15]]
