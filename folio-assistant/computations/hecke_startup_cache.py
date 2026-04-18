@@ -92,10 +92,6 @@ def generate_cache() -> dict:
         alpha_em, ALPHA_EM_INV_DERIVED,
         # Gram matrix
         G, G_INV,
-        # BW coefficients
-        LAMBDA_V, LAMBDA_S, LAMBDA_C, A_ASYM, DELTA_P,
-        LAMBDA_EX, DELTA_S, SIGMA_SHELL, DELTA_HOOK,
-        DELTA_WIGNER, DELTA_FORMFACTOR, DELTA_PN_CORR,
         # Figure-eight
         FIG8_A_BULK, FIG8_F_COUL, FIG8_F_EXCH,
         # Molecular
@@ -155,20 +151,6 @@ def generate_cache() -> dict:
         # ── Gram matrix (6x6) ───────────────────────────────
         "gram_matrix": G.tolist(),
         "gram_matrix_inv": G_INV.tolist(),
-
-        # ── BW coefficients (all derived from q-integers) ───
-        "lambda_v": LAMBDA_V,
-        "lambda_s": LAMBDA_S,
-        "lambda_c": LAMBDA_C,
-        "a_asym": A_ASYM,
-        "delta_p": DELTA_P,
-        "lambda_ex": LAMBDA_EX,
-        "delta_s": DELTA_S,
-        "sigma_shell": SIGMA_SHELL,
-        "delta_hook": DELTA_HOOK,
-        "delta_wigner": DELTA_WIGNER,
-        "delta_formfactor": DELTA_FORMFACTOR,
-        "delta_pn_corr": DELTA_PN_CORR,
 
         # ── Figure-eight BW modification ─────────────────────
         "fig8_a_bulk": FIG8_A_BULK,

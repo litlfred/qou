@@ -173,53 +173,11 @@ TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q**2  # molecular energy unit (eV)
 KAPPA = M_E_MEV                    # nuclear binding scale (MeV)
 
-# ══════════════════════════════════════════════════════════════
-# Bethe-Weizsäcker coefficients = descent decomposition of mass
-# ══════════════════════════════════════════════════════════════
-#
-# The BW formula IS the descent decomposition 𝔪 = Hol(ϱ₀) + Σᵢ Φ_q(zᵢ).
-# Two classes of terms arise from the descent involution τ̂:
-#
-# DESCENDED (center of H_n, commutes with everything — Casimir operators):
-#   Term 1: Volume     λ_V·A          [n]_q! coeff, Casimir eigenvalue A
-#   Term 5: Pairing    ±δ_P/√A        [n]_q! coeff, Casimir eigenvalue ±1/√A
-#   Term 9: Wigner     T(T+1)/A       [n]_q! coeff, isospin Casimir T(T+1)/A
-#
-# TRANSIENT (exceptional divisors from brane blow-up at codim ≥ 2):
-#   Term 2: Surface    A^{2/3}        boundary divisors ∂A_n (missing crossings)
-#   Term 3: Coulomb    Z(Z-1)/A^{1/3} pp crossing eigenvalue at blow-up centre
-#   Term 6: Exchange   Z^{4/3}/A^{1/3} charge-exchange at boundary
-#   Term 7: Shell      magic prox.     quantised blow-up centres at magic Z,N
-#   Term 8: Hook       (1-f_magic)     [2,2] partition from H₄ Wedderburn-Artin
-#   Term 10: Form      Z²/A           T_{2,9} correction (Coulomb finite-size)
-#   Term 11: pn corr.  Z·N/A^{4/3}   proton-neutron interaction surface
-#
-# Each transient term has:
-#   - content c = magnetic quantum number m_j (by Schur-Weyl)
-#   - coefficient = quantum dilogarithm Φ_q(z) at that centre
-#   - scaling = count of divisors of that type in the nuclear braid
-#
-# All coefficients are q-integer products × m_e (zero fitted parameters).
-LAMBDA_V = 2 * q_int(2) * q_int(7) * M_E_MEV   # volume: 2[2][7]m_e ≈ 15.67 MeV
-LAMBDA_S = 2 * q_int(4)**2 * M_E_MEV            # surface: 2[4]²m_e ≈ 17.26 MeV
-LAMBDA_C = h * q_int(6) * M_E_MEV                # Coulomb: HA×[6]m_e ≈ 0.68 MeV
-A_ASYM = 3 * q_int(2) * q_int(7) * M_E_MEV     # asymmetry: 3[2][7]m_e ≈ 23.50 MeV
-DELTA_P = q_int(3) * q_int(7) * M_E_MEV         # pairing: [3][7]m_e ≈ 11.86 MeV
-LAMBDA_EX = q_int(3) / q_int(2) * M_E_MEV       # exchange: [3]/[2]m_e ≈ 0.77 MeV
-DELTA_S = q_int(2)**2 * q_int(3) * M_E_MEV      # shell: [2]²[3]m_e ≈ 6.29 MeV
-SIGMA_SHELL = q_int(2)                            # shell width: [2]_q ≈ 2.011
-
 # ── q-hook product (symbolic) and (2,2) coefficient at k=4 ─────
 # For partition λ ⊢ n the q-hook product is H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q,
 # where h_x is the hook length at cell x. The Wedderburn weight is
 # w_λ = d_q(λ)² / [n]_q!  with d_q(λ) = [n]_q! / H_q(λ), so
 # w_λ × H_q(λ)² = [n]_q!.
-#
-# The (2,2) ⊢ 4 hook lengths are {3, 2, 2, 1} (the 2×2 Young diagram),
-# giving H_q((2,2)) = [3]·[2]·[2]·[1] = [3]·[2]², which evaluated at q₀
-# is exactly the empirical Wigner energy scale Δ_W ≈ 6.3 MeV [satula1997].
-# This is the SAME q-integer product that defines DELTA_S (shell), so
-# the (2,2) channel and the shell correction share one categorical scale.
 
 def q_hook_product(partition):
     """q-hook product H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q, evaluated numerically
@@ -658,140 +616,7 @@ _CHEBYSHEV_MAGIC = _chebyshev_magic()
 # binding trend break. Use full known set for practical accuracy.
 MAGIC_NUMBERS = [2, 8, 20, 28, 50, 82, 126]
 
-# Term 8: Hook partition [2,2] from H₄(q) baryon Wedderburn-Artin decomposition
-# (prop:hook-weight-derivation)
-# β₄ = -½ · w_{[2,2]}(4) = -dim_q([2,2])² / (2·[4]_q!)
-_n4_fac = q_int(2) * q_int(3) * q_int(4)         # [4]_q!
-_dim_hook = _n4_fac / (q_int(3) * q_int(2)**2)   # dim_q([2,2])
-_w_hook = _dim_hook**2 / _n4_fac                   # Wedderburn-Artin weight
-BETA_4 = -_w_hook / 2                              # hook coefficient ≈ -0.083
-LAMBDA_HOOK_EIG = q_int(2) - 2                     # hook eigenvalue [2]_q - 2 ≈ 0.011
-DELTA_HOOK = abs(BETA_4) * abs(math.log(LAMBDA_HOOK_EIG)) * M_E_MEV  # |β₄|·|ln λ|·m_e ≈ 0.192 MeV
 
-# Terms 9-11: H₅(q) partitions — derived from residual analysis
-# These scalings are DERIVED: they correlate with 8-term residuals at R²=0.993
-#
-# Term 9:  [3,1,1] self-conjugate partition → Wigner/isospin correction
-#          Scaling: |N-Z|·(|N-Z|+2)/(4A)  = T(T+1)/A (isospin)
-#          Coefficient: fitted from residuals, awaiting exact q-integer derivation
-#          The [3,1,1] partition has the LARGEST H₅ weight (w=0.295)
-_n5_fac = q_int(2) * q_int(3) * q_int(4) * q_int(5)   # [5]_q!
-_dim_311 = _n5_fac / (q_int(5) * q_int(2)**2)           # dim_q([3,1,1])
-_w_311 = _dim_311**2 / _n5_fac                            # Wedderburn-Artin weight
-DELTA_WIGNER = _n5_fac * M_E_MEV                        # [5]_q!·m_e ≈ 67.1 MeV (DERIVED)
-# Derived from Wedderburn-Artin trace identity Σ dim_q(λ)² = [n]_q!
-
-# Term 10: [3,2] + [2,2,1] conjugate pair → proton form factor (T_{2,9} correction)
-#           Scaling: Z²/A (Coulomb finite-size correction)
-#           Coefficient: HA·[5]_q·m_e (matches fitted value within 1.2%)
-DELTA_FORMFACTOR = h * q_int(5) * M_E_MEV                # HA·[5]_q·m_e ≈ 0.558 MeV
-
-# Term 11: [4,1] + [2,1,1,1] conjugate pair → pn correlation
-#           Scaling: Z·N/A^{4/3} (proton-neutron interaction surface)
-#           Coefficient: fitted, ~3.21 MeV
-_dim_32 = _n5_fac / (q_int(4) * q_int(3) * q_int(2))    # dim_q([3,2])
-_w_32 = _dim_32**2 / _n5_fac
-DELTA_PN_CORR = 2 * q_int(2) * q_int(3) / q_int(4) * M_E_MEV * q_int(2)  # ~3.0 MeV (approx)
-
-# ── H₆(q) shadow-price coefficients (prop:wigner-2-coefficient) ──────────
-# C_λ = w_λ · tr(σ)/dim for each partition λ ⊢ 6.
-# All coefficients are q-integer rational functions × m_e.
-_n6_fac = q_int(2) * q_int(3) * q_int(4) * q_int(5) * q_int(6)  # [6]_q!
-
-# Term 12: [3,2,1] self-conjugate → Wigner-2 (isospin midpoint)
-#           tr(σ)/dim = h/2  (prop:wigner-2-coefficient)
-#           C = w_{321} · h/2 = [2][4][6]h/(2[3]³[5])
-#           Scaling: T(T+1)/A^{4/3}
-_dim_321 = _n6_fac / (q_int(5) * q_int(3)**2)  # dim_q([3,2,1]) = [2][4][6]/[3]
-_w_321 = _dim_321**2 / _n6_fac                   # Wedderburn-Artin weight
-DELTA_W2 = _w_321 * h / 2 * M_E_MEV              # [2][4][6]h/(2[3]³[5])·m_e ≈ 19 keV
-
-# Term 13: [4,1,1]+[3,1,1,1] conjugate pair
-#           tr(σ)/dim = (3q²-2)/(5q)
-#           C = w_{411} · (3q²-2)/(5q)
-#           Scaling: (N-Z)²/(4A^{4/3})
-_dim_411 = _n6_fac / (q_int(6) * q_int(3) * q_int(2)**2)  # dim_q([4,1,1]) = [4][5]/[2]
-_w_411 = _dim_411**2 / _n6_fac
-_tr_411 = (3 * q0**2 - 2) / (5 * q0)                    # (3q²-2)/(5q)
-DELTA_411 = _w_411 * h * M_E_MEV                          # conjugate pair: tr+tr'=h
-
-# Term 14: [4,2]+[2,2,1,1] conjugate pair
-#           tr(σ)/dim = (2q²-1)/(3q) and (q²-2)/(3q)
-#           C = w_{42}·(2q²-1)/(3q) + w_{2211}·(q²-2)/(3q)
-#           Scaling: Z(Z-1)/A^{4/3}
-_dim_42 = _n6_fac / (q_int(5) * q_int(4) * q_int(2)**2)  # dim_q([4,2]) = [3][6]/[2]
-_w_42 = _dim_42**2 / _n6_fac
-_tr_42 = (2 * q0**2 - 1) / (3 * q0)                       # (2q²-1)/(3q)
-_tr_2211 = (q0**2 - 2) / (3 * q0)                          # (q²-2)/(3q)
-DELTA_42 = _w_42 * h * M_E_MEV                                 # conjugate pair: tr+tr'=h
-
-# ── k≥7 coefficients: general descent decomposition ─────────────
-# Precomputed from Wedderburn weights at each level.
-# Each level k contributes (C_desc, C_coul, C_iso) in MeV:
-#   C_desc × ZN/A^α  (descended self-conjugate partitions)
-#   C_coul × Z(Z-1)/A^α  (transient Coulomb-type pairs)
-#   C_iso × (N-Z)²/(4A^α)  (transient isospin-type pairs)
-# where α = (k-2)/3.
-#
-# For conjugate pairs: tr + tr' = h. Total pair weight allocated
-# 55% Coulomb + 45% isospin (from k=6 branching ratio).
-# Converges: cumulative k=7..15 correction ≈ 30-40 keV.
-
-
-def _compute_k_coefficients():
-    """Compute descended/transient coefficients for k=7..15."""
-
-    def _partitions(n, mx=None):
-        if mx is None: mx = n
-        if n == 0:
-            yield ()
-            return
-        for f in range(min(n, mx), 0, -1):
-            for rest in _partitions(n - f, f):
-                yield (f,) + rest
-
-    def _conjugate(s):
-        if not s: return ()
-        return tuple(sum(1 for p in s if p > i) for i in range(s[0]))
-
-    def _q_hook_dim(s):
-        k = sum(s)
-        nk = 1.0
-        for i in range(1, k + 1):
-            nk *= q_int(i)
-        hp = 1.0
-        for r, w in enumerate(s):
-            for c in range(w):
-                arm = w - c - 1
-                leg = sum(1 for r2 in range(r + 1, len(s)) if c < s[r2])
-                hp *= q_int(arm + leg + 1)
-        return nk / hp
-
-    result = {}
-    for k in range(7, 16):
-        nk = 1.0
-        for i in range(1, k + 1):
-            nk *= q_int(i)
-        c_desc = 0.0
-        c_pair = 0.0
-        seen = set()
-        for shape in _partitions(k):
-            if shape in seen:
-                continue
-            conj = _conjugate(shape)
-            dim = _q_hook_dim(shape)
-            w = dim**2 / nk
-            if shape == conj:
-                c_desc += w * (h / 2) * M_E_MEV
-            else:
-                c_pair += w * h * M_E_MEV
-            seen.add(shape)
-            seen.add(conj)
-        result[k] = (c_desc, c_pair * 0.55, c_pair * 0.45)
-    return result
-
-
-_K_COEFFS = _compute_k_coefficients()
 
 # NF basis
 NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
@@ -1062,7 +887,7 @@ def knot_factor(Z, N):
     a(N) = ∏(1 - εᵢ) where εᵢ is the Frobenius norm deviation
     per nucleon pair.
 
-    A=2: dedicated (D uses mass-tower B=α×V̂_e, handled in binding_energy_bw)
+    A=2: dedicated (D uses mass-tower B=α×V̂_e, handled in binding_energy)
     A=3: 1-h² (figure-eight amphicheiral, from Fricke relation)
     A=4: (1-h²)² (double amphicheiral)
     A≥5: 1.0 (generic BW)
@@ -1076,7 +901,7 @@ def knot_factor(Z, N):
     """
     A = Z + N
     if A <= 1: return 1.0
-    elif A == 2: return 1.0  # D handled by dedicated formula in binding_energy_bw
+    elif A == 2: return 1.0  # D handled by dedicated formula in binding_energy
     elif A == 3: return 1.0 - h**2
     elif A == 4: return (1.0 - h**2)**2
     return 1.0
@@ -3297,49 +3122,18 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     return total_mev, per_pair
 
 
-def binding_energy_bw(Z, N, k=3, unified=True, drop_bw=True, sdp=True,
-                      frobenius=True):
-    """Binding energy (MeV) — PURE LP-dual / SDP categorical path.
+def binding_energy(Z, N, *, sdp=True, frobenius=True):
+    """Binding energy (MeV) via the categorical path.
 
-    ALL BW terms (LAMBDA_V·A volume, LAMBDA_S·A^{2/3} surface,
-    LAMBDA_C·Z(Z-1)/A^{1/3} Coulomb, A_ASYM·(N-Z)²/(4A) asymmetry,
-    DELTA_P·±/√A pairing, LAMBDA_EX·Z^{4/3}/A^{1/3} exchange,
-    DELTA_S shell, DELTA_HOOK hook, DELTA_WIGNER Wigner,
-    DELTA_FORMFACTOR, DELTA_PN_CORR, DELTA_W2, DELTA_411, DELTA_42,
-    and the k≥7 descent engine) have been REMOVED — they were
-    empirical BW coefficients that the LP-dual categorical framework
-    should replace from first principles.
+    B = unified_iterative_correction(Z,N)                      [LP-dual shadow]
+      + sdp_cross_channel_contribution(Z,N)    (if sdp)        [SDP couplings]
+      + binding_from_frobenius_pairing(Z,N)    (if frobenius)  [Markov trace]
 
-    Current path (all categorically derived):
-      - Unified iterative correction (LP-dual shadow prices × q-heat
-        resolvent damping) via `unified_iterative_correction`
-      - Cross-channel SDP contribution via `sdp_cross_channel_contribution`
-        (activated when sdp=True, default)
-
-    The `unified`, `drop_bw`, `sdp` flags are retained for backward
-    compatibility but default to True.  NO BW path remains.
-
-    Known gap: the LP-dual alone does not reproduce the full binding
-    energy (~10 MeV at D/He4 vs empirical 2.2/28.3 MeV; scales
-    diverge further for heavy atoms).  The gap is categorically
-    unresolved and corresponds to the bulk contribution (A-scaling)
-    that the scalar LP-dual does not produce.  See
-    `sdp_cross_channel.py` and the SDP with atom observables for
-    ongoing categorical derivation.
-
-    k : retained for API compatibility; currently ignored (no level
-        truncation in the LP-dual path — that's controlled by
-        K_PARTITION_MAX globally).
+    Replaces the retired 11-term Bethe-Weizsäcker formula path.
     """
     A = Z + N
     if A <= 1:
         return 0.0
-
-    # Pure categorical path — all three terms derived from first principles:
-    #   (a) unified_iterative_correction: LP-dual shadow prices × q-heat resolvent
-    #   (b) sdp_cross_channel_contribution: SDP conjugate-pair couplings
-    #   (c) binding_from_frobenius_pairing: Frobenius self-pairing ratio
-    #       — replaces LAMBDA_V·A + LAMBDA_S·A^{2/3} + knot_factor
     B = unified_iterative_correction(Z, N)
     if sdp:
         sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
@@ -3390,20 +3184,10 @@ PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
 
 
-def q_value_beta(Z_parent, N_parent, method='best'):
+def q_value_beta(Z_parent, N_parent, method='phi1'):
     """Q-value (MeV) for beta⁻ decay: (Z,N) → (Z+1,N-1) + e⁻ + ν̄_e.
 
-    method='best' (default): hybrid approach
-        A=3: BW k=5 with figure-eight modification (2.1% error for ³H)
-        A>3: transfer matrix Skein polynomial ratio on nuclear strands
-             only (9.5% error for ¹⁴C with pp..nn ordering)
-
-    method='bw': BW formula difference at k=5
-        Q = Δ_M_free - (B_parent - B_daughter)
-        Good for A=3 (figure-eight BW), poor for heavier nuclei
-        due to subtraction of large numbers.
-
-    method='phi1': transfer matrix on nuclear strands (no electrons)
+    method='phi1' (default): transfer matrix on nuclear strands (no electrons)
         Q = E_× · μ₀ · |ΔΦ₁|
         where Φ₁ = Σᵢ ln|V̂ᵢ| computed over nucleon strands only.
         Uses pp..nn ordering; for A>14, tries Rust engine for
@@ -3413,51 +3197,25 @@ def q_value_beta(Z_parent, N_parent, method='best'):
     if N_parent <= 0:
         return 0.0
 
-    A = Z_parent + N_parent
-
-    if method == 'best':
-        # Hybrid: BW for A=3 (figure-eight), transfer matrix for A>3
-        if A == 3:
-            return q_value_beta(Z_parent, N_parent, method='bw')
-        else:
-            return q_value_beta(Z_parent, N_parent, method='phi1')
-
-    elif method == 'phi1':
-        # Transfer matrix on nuclear strands only (matches
-        # all-nuclei-transfer-matrix.py which gives 9.5% for ¹⁴C)
-        phi_parent = _phi1_nuclear(Z_parent, N_parent)
-        phi_daughter = _phi1_nuclear(Z_d, N_d)
-        delta_phi = phi_daughter - phi_parent
-        mu_0 = M_E_MEV / (3.0 * E_CROSS)
-        return E_CROSS * mu_0 * abs(delta_phi)
-
-    else:
-        # BW difference method
-        delta_Mfree = M_N_MEV - M_P_MEV - M_E_MEV
-        B_parent = binding_energy_bw(Z_parent, N_parent, k=5)
-        B_daughter = binding_energy_bw(Z_d, N_d, k=5)
-        return delta_Mfree - (B_parent - B_daughter)
+    # Transfer matrix on nuclear strands only (matches
+    # all-nuclei-transfer-matrix.py which gives 9.5% for ¹⁴C)
+    phi_parent = _phi1_nuclear(Z_parent, N_parent)
+    phi_daughter = _phi1_nuclear(Z_d, N_d)
+    delta_phi = phi_daughter - phi_parent
+    mu_0 = M_E_MEV / (3.0 * E_CROSS)
+    return E_CROSS * mu_0 * abs(delta_phi)
 
 
-def atom_mass(Z, N, method='bw', k=5):
-    """Compute atomic mass (MeV).
+def atom_mass(Z, N):
+    """Compute atomic mass (MeV) via transfer matrix.
 
-    method='bw' (default): M = constituents - B(Z,N) at Hecke level k.
-        Uses binding_energy_bw with q-integer BW coefficients.
-        k=3: 6-term, k=4: +shell/hook, k=5: +Wigner/form/pn.
-        MAE: k=3 ~0.04%, k=4 ~0.02%, k=5 ~0.008%.
+        M = Z·m_p + N·m_n + Z·m_e + κ·Φ₁
 
-    method='phi1': M = constituents + κ×Φ₁ (transfer matrix).
-        Uses compute_phi1_full for the Skein polynomial log-volume.
-        Zero-parameter. Better for mass DIFFERENCES (Q-values).
+    where Φ₁ = Σᵢ ln|V̂ᵢ| is the Skein polynomial log-volume summed
+    over the atom's nucleon strands (zero-parameter, not BW).
 
-    Returns (M_MeV, binding_info).
+    Returns (M_MeV, phi1).
     """
     M_const = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
-
-    if method == 'bw':
-        B = binding_energy_bw(Z, N, k=k)
-        return M_const - B, -B
-    else:
-        phi = compute_phi1_full(Z, N)
-        return M_const + KAPPA * phi, phi
+    phi = compute_phi1_full(Z, N)
+    return M_const + KAPPA * phi, phi
