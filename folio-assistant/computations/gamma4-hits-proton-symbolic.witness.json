@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "commit": "8a7a6513efc439a2a75304c3511a328424229522",
+    "symbolic": true
+  },
+  "product_gamma4_proton": {
+    "gamma": "p_gamma + p_{L_-}*phi_{01} + p_{sigma_0}*phi_0 + p_{sigma_1}*phi_1",
+    "sigma_0": "p_{L_-}*phi_1 + p_{sigma_0} + phi_0*(H_A*p_{sigma_0} + p_gamma) + phi_{01}*(H_A*p_{L_-} + p_{sigma_1})",
+    "sigma_1": "p_{L_+}*phi_0 + p_{e^-}*phi_{01} + p_{sigma_1} + phi_1*(H_A*p_{sigma_1} + p_gamma)",
+    "L_+": "p_{L_+} + p_{e^-}*phi_1 + phi_0*(H_A*p_{L_+} + p_{sigma_1}) + phi_{01}*(H_A*p_{e^-} + H_A*p_{sigma_1} + p_gamma)",
+    "L_-": "p_{L_-} + p_{e^-}*phi_0 + phi_1*(H_A*p_{L_-} + p_{sigma_0}) + phi_{01}*(H_A*p_{e^-} + p_{L_+})",
+    "e^-": "p_{e^-} + phi_0*(H_A*p_{e^-} + p_{L_-}) + phi_1*(H_A*p_{e^-} + p_{L_+}) + phi_{01}*(H_A**2*p_{e^-} + H_A*p_{L_+} + H_A*p_{L_-} + p_{sigma_0})"
+  },
+  "product_gamma4_proton_latex": {
+    "gamma": "p_{\\gamma} + p_{L_-} phi_{01} + p_{sigma_0} \\phi_{0} + p_{sigma_1} \\phi_{1}",
+    "sigma_0": "p_{L_-} \\phi_{1} + p_{sigma_0} + \\phi_{0} \\left(H_{A} p_{sigma_0} + p_{\\gamma}\\right) + phi_{01} \\left(H_{A} p_{L_-} + p_{sigma_1}\\right)",
+    "sigma_1": "p_{L_+} \\phi_{0} + p_{e^-} phi_{01} + p_{sigma_1} + \\phi_{1} \\left(H_{A} p_{sigma_1} + p_{\\gamma}\\right)",
+    "L_+": "p_{L_+} + p_{e^-} \\phi_{1} + \\phi_{0} \\left(H_{A} p_{L_+} + p_{sigma_1}\\right) + phi_{01} \\left(H_{A} p_{e^-} + H_{A} p_{sigma_1} + p_{\\gamma}\\right)",
+    "L_-": "p_{L_-} + p_{e^-} \\phi_{0} + \\phi_{1} \\left(H_{A} p_{L_-} + p_{sigma_0}\\right) + phi_{01} \\left(H_{A} p_{e^-} + p_{L_+}\\right)",
+    "e^-": "p_{e^-} + \\phi_{0} \\left(H_{A} p_{e^-} + p_{L_-}\\right) + \\phi_{1} \\left(H_{A} p_{e^-} + p_{L_+}\\right) + phi_{01} \\left(H_{A}^{2} p_{e^-} + H_{A} p_{L_+} + H_{A} p_{L_-} + p_{sigma_0}\\right)"
+  },
+  "product_proton_gamma4": {
+    "gamma": "p_gamma + p_{L_-}*phi_{01} + p_{sigma_0}*phi_0 + p_{sigma_1}*phi_1",
+    "sigma_0": "p_{L_+}*phi_1 + p_{e^-}*phi_{01} + p_{sigma_0} + phi_0*(H_A*p_{sigma_0} + p_gamma)",
+    "sigma_1": "p_{L_-}*phi_0 + p_{sigma_1} + phi_1*(H_A*p_{sigma_1} + p_gamma) + phi_{01}*(H_A*p_{L_-} + p_{sigma_0})",
+    "L_+": "p_{L_+} + p_{e^-}*phi_0 + phi_1*(H_A*p_{L_+} + p_{sigma_0}) + phi_{01}*(H_A*p_{e^-} + H_A*p_{sigma_0} + p_gamma)",
+    "L_-": "p_{L_-} + p_{e^-}*phi_1 + phi_0*(H_A*p_{L_-} + p_{sigma_1}) + phi_{01}*(H_A*p_{e^-} + p_{L_+})",
+    "e^-": "p_{e^-} + phi_0*(H_A*p_{e^-} + p_{L_+}) + phi_1*(H_A*p_{e^-} + p_{L_-}) + phi_{01}*(H_A**2*p_{e^-} + H_A*p_{L_+} + H_A*p_{L_-} + p_{sigma_1})"
+  },
+  "commutator": {
+    "gamma": "0",
+    "sigma_0": "phi_1*(-p_{L_+} + p_{L_-}) + phi_{01}*(H_A*p_{L_-} - p_{e^-} + p_{sigma_1})",
+    "sigma_1": "phi_0*(p_{L_+} - p_{L_-}) + phi_{01}*(-H_A*p_{L_-} + p_{e^-} - p_{sigma_0})",
+    "L_+": "phi_0*(H_A*p_{L_+} - p_{e^-} + p_{sigma_1}) + phi_1*(-H_A*p_{L_+} + p_{e^-} - p_{sigma_0}) + phi_{01}*(-H_A*p_{sigma_0} + H_A*p_{sigma_1})",
+    "L_-": "phi_0*(-H_A*p_{L_-} + p_{e^-} - p_{sigma_1}) + phi_1*(H_A*p_{L_-} - p_{e^-} + p_{sigma_0})",
+    "e^-": "phi_0*(-p_{L_+} + p_{L_-}) + phi_1*(p_{L_+} - p_{L_-}) + phi_{01}*(p_{sigma_0} - p_{sigma_1})"
+  },
+  "left_mult_matrix_gamma4": [
+    [
+      "1",
+      "phi_0",
+      "phi_1",
+      "0",
+      "phi_{01}",
+      "0"
+    ],
+    [
+      "phi_0",
+      "H_A*phi_0 + 1",
+      "phi_{01}",
+      "0",
+      "H_A*phi_{01} + phi_1",
+      "0"
+    ],
+    [
+      "phi_1",
+      "0",
+      "H_A*phi_1 + 1",
+      "phi_0",
+      "0",
+      "phi_{01}"
+    ],
+    [
+      "phi_{01}",
+      "0",
+      "H_A*phi_{01} + phi_0",
+      "H_A*phi_0 + 1",
+      "0",
+      "H_A*phi_{01} + phi_1"
+    ],
+    [
+      "0",
+      "phi_1",
+      "0",
+      "phi_{01}",
+      "H_A*phi_1 + 1",
+      "H_A*phi_{01} + phi_0"
+    ],
+    [
+      "0",
+      "phi_{01}",
+      "0",
+      "H_A*phi_{01} + phi_1",
+      "H_A*phi_{01} + phi_0",
+      "H_A**2*phi_{01} + H_A*phi_0 + H_A*phi_1 + 1"
+    ]
+  ]
+}
