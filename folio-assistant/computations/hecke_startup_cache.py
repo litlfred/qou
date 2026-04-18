@@ -86,21 +86,25 @@ def generate_cache() -> dict:
         ALPHA_EM_INV, G_F_MEV, HBAR_MEV_S,
     )
     from hecke_core import (
-        # Wedderburn-Artin
-        W_SYM, W_STD, W_ALT, z,
         # Fine structure
         alpha_em, ALPHA_EM_INV_DERIVED,
-        # Gram matrix
-        G, G_INV,
         # Figure-eight
         FIG8_A_BULK, FIG8_F_COUL, FIG8_F_EXCH,
         # Molecular
         E_HARTREE_EV, E_MOL, KAPPA,
         # NF
-        NF_BASIS, NF_NAMES, TR_M,
         PROTON_NF, NEUTRON_NF,
         # Volumes
         VOL_BORROMEAN, ALPHA_BORROMEAN, ALPHA_FIGURE8,
+    )
+    # Moved to pyhecke.gram via M2b inversion — import canonically.
+    from pyhecke.gram import (
+        # Wedderburn-Artin
+        W_SYM, W_STD, W_ALT, z,
+        # Gram matrix
+        G, G_INV,
+        # NF basis
+        NF_BASIS, NF_NAMES, TR_M,
     )
 
     duration_ms = int((time.monotonic() - t0) * 1000)
