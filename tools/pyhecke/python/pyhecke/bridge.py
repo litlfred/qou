@@ -89,3 +89,41 @@ def run_json(name: str, args: list[str], **kwargs) -> dict:
             f"{name} stdout was not valid JSON: {e}\n"
             f"first 500 chars: {proc.stdout[:500]}"
         ) from e
+
+
+# ─── Gram matrix via Rust engine ────────────────────────────────────
+
+def gram_from_rust(q: Optional[float] = None) -> dict:
+    """Return the Gram matrix, computed by the Rust `hecke-gram` binary.
+
+    Falls back to raising FileNotFoundError if the binary isn't built;
+    callers should catch this and use the pure-Python `pyhecke.gram.G`.
+
+    Parameters
+    ----------
+    q : float, optional
+        Substrate parameter. Defaults to the Rust-side Q_0.
+
+    Returns
+    -------
+    dict
+        Parsed output of `hecke-gram --pretty` matching gram.schema.json.
+    """
+    args = ["--pretty"]
+    if q is not None:
+        args.extend(["--q", f"{q:.17g}"])
+    return run_json("hecke-gram", args)
+
+
+def gram_matrix_from_rust(q: Optional[float] = None):
+    """Return just the 6×6 Gram matrix as a numpy array (Rust-computed).
+
+    Raises FileNotFoundError if `hecke-gram` is not available; callers
+    should fall back to `pyhecke.gram.G` or `gram_matrix()`.
+    """
+    try:
+        import numpy as np
+    except ImportError as e:  # pragma: no cover
+        raise ImportError("pyhecke.bridge.gram_matrix_from_rust requires numpy") from e
+    cert = gram_from_rust(q=q)
+    return np.array(cert["matrix"])
