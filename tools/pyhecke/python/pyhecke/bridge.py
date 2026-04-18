@@ -93,6 +93,24 @@ def run_json(name: str, args: list[str], **kwargs) -> dict:
 
 # ─── Gram matrix via Rust engine ────────────────────────────────────
 
+def _import_native():
+    """Try to import the PyO3 acceleration module. Returns None if not
+    built."""
+    try:
+        import pyhecke_native  # type: ignore[import-not-found]
+        return pyhecke_native
+    except ImportError:
+        return None
+
+
+_NATIVE = _import_native()
+
+
+def has_native() -> bool:
+    """True if the PyO3 acceleration layer is importable."""
+    return _NATIVE is not None
+
+
 def gram_from_rust(q: Optional[float] = None) -> dict:
     """Return the Gram matrix, computed by the Rust `hecke-gram` binary.
 
@@ -118,12 +136,27 @@ def gram_from_rust(q: Optional[float] = None) -> dict:
 def gram_matrix_from_rust(q: Optional[float] = None):
     """Return just the 6×6 Gram matrix as a numpy array (Rust-computed).
 
-    Raises FileNotFoundError if `hecke-gram` is not available; callers
-    should fall back to `pyhecke.gram.G` or `gram_matrix()`.
+    Dispatches in this order:
+      1. `pyhecke_native` (PyO3 in-process) — fastest, ~20ns/call.
+      2. `hecke-gram` subprocess — ~20ms/call (fork+exec).
+      3. FileNotFoundError if neither is available.
     """
     try:
         import numpy as np
     except ImportError as e:  # pragma: no cover
         raise ImportError("pyhecke.bridge.gram_matrix_from_rust requires numpy") from e
+
+    if _NATIVE is not None:
+        q_val = q if q is not None else 1.1099785955541805
+        return np.array(_NATIVE.gram_matrix(q_val))
+
     cert = gram_from_rust(q=q)
     return np.array(cert["matrix"])
+
+
+def gram_det_from_rust(q: Optional[float] = None) -> float:
+    """Return det(G) at `q`. Fast path via PyO3, fallback via subprocess."""
+    if _NATIVE is not None:
+        q_val = q if q is not None else 1.1099785955541805
+        return float(_NATIVE.gram_determinant(q_val))
+    return float(gram_from_rust(q=q)["determinant"])
