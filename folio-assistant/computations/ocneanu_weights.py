@@ -277,7 +277,7 @@ def canonical_markov_trace_via_ocneanu(elem, n: int, *,
 
     FAST alternative to markov_trace_canonical.tr_M_element (via
     Hecke reduction): uses seminormal matrices from hecke_characters
-    directly with Ocneanu weights.
+    directly with Ocneanu weights (derived by inversion).
 
     elem: SymbolicHeckeElement OR a dict word → coefficient.
     """
@@ -292,12 +292,15 @@ def canonical_markov_trace_via_ocneanu(elem, n: int, *,
         terms = elem.terms
     else:
         terms = elem
+    # Precompute ω_λ for this n (cached)
+    omegas_by_shape = omega_lambda_via_inversion(n, q_val=q_val,
+                                                    z_val=z_val)
     total = 0.0
     for shape in partitions_of(n):
         sigmas, dim, _syts = build_seminormal_matrices(shape)
         if dim == 0:
             continue
-        omega = omega_lambda(shape, q_val=q_val, z_val=z_val)
+        omega = omegas_by_shape.get(shape, 0.0)
         # Compute χ_λ(elem) = Σ_{word, coeff} coeff · tr(word in λ)
         chi_lam = 0.0
         for word, coeff in terms.items():
@@ -327,8 +330,12 @@ def canonical_markov_trace_via_ocneanu(elem, n: int, *,
                 tr_w = float(prod.diagonal().sum())
             else:
                 tr_w = float(np.trace(prod))
-            coeff_num = float(coeff) if hasattr(coeff, "__float__") \
-                         else float(sp.N(coeff.subs(sp.Symbol('q'), q_val)))
+            # Handle sympy coefficients: substitute q and evaluate
+            if hasattr(coeff, "subs"):
+                coeff_num = float(sp.N(
+                    coeff.subs(sp.Symbol('q', positive=True), q_val)))
+            else:
+                coeff_num = float(coeff)
             chi_lam += coeff_num * tr_w
         total += omega * chi_lam / dim
     return total
