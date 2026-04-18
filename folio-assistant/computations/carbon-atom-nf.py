@@ -471,3 +471,45 @@ if __name__ == '__main__':
 
     total_time = time.time() - t0
     print(f"\n  Total time: {total_time:.1f}s")
+
+    # ── Witness output ───────────────────────────────────────
+    from datetime import datetime, timezone
+    from pathlib import Path as _Path
+    import json as _json
+
+    atom_summaries = []
+    for label, p, n, e in atoms_config:
+        if label not in atoms:
+            continue
+        nf = atoms[label]
+        A = p + n + e
+        hist = word_length_histogram(nf)
+        atom_summaries.append({
+            "label": label, "Z": p, "N": n, "E": e, "A": A,
+            "n_terms": nf.n_terms(),
+            "histogram": hist,
+            "palindromic": is_palindromic(hist),
+        })
+
+    witness = {
+        "computation": "carbon-atom-nf",
+        "description": (
+            "Atom NF via Gröbner–Shirshov reduction in H_n(q). "
+            "Includes PHASE 0 (GS consistency audit of every "
+            "(c, d) crossing pair against σ² = (q−q⁻¹)σ + 𝟏), "
+            "and full atom NF builds H, D, He, Li, Be, B, C with "
+            "electron shell structure. Crossing (c, d) pairs are "
+            "imported from hecke_symbolic.py — single source of "
+            "truth for the pp, nn, pn, pe, ne, ee postulates."
+        ),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "parameters": {"q0_numeric": q0},
+        "gs_audit": audit,
+        "gs_audit_all_pass": all_ok,
+        "atoms": atom_summaries,
+        "electron_by_electron_carbon": electron_log,
+        "total_time_sec": total_time,
+    }
+    out = _Path(__file__).parent / "carbon-atom-nf.witness.json"
+    out.write_text(_json.dumps(witness, indent=2, default=str))
+    print(f"\nWitness: {out}")
