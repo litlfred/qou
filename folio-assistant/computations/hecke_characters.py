@@ -370,18 +370,22 @@ def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None):
 
     # Dimensionless categorical mass defect relative to the Markov-
     # trace identity (Σ w_λ = 1 at q = 1; at q₀ the identity sum is
-    # |1 − Σ w_λ · χ_λ(id)/d_λ|).  Callers wanting a MeV binding
-    # should use mass_at_3A_proper.binding_3A, which computes the
-    # ratio |tr_M(W_free)| − |tr_M(W_atom)| and multiplies by the
-    # prop:categorical-mass-markov calibration E_0 = 0.782 MeV.
-    B = abs(1.0 - abs(total_markov))  # dimensionless defect
+    # |1 − Σ w_λ · χ_λ(id)/d_λ|).  Use ``binding_defect`` for the
+    # dimensionless quantity; use mass_at_3A_proper.binding_3A for a
+    # MeV binding with the prop:categorical-mass-markov calibration
+    # E_0 = 0.782 MeV.
+    binding_defect = abs(1.0 - abs(total_markov))  # dimensionless
 
-    M_pred = Mfree - B  # NOTE: B here is dimensionless; preserved for
-                          # backward compat with callers that
-                          # subtract this from Mfree.
+    # M_pred is NOT converted to MeV here — the dimensionless defect
+    # has no meaningful sign or magnitude in MeV units.  Return
+    # M_pred = Mfree so the second slot of the return tuple is a
+    # well-defined MeV number (free-nucleon rest-mass sum).  Callers
+    # that need binding in MeV must use a proper calibration path.
+    M_pred = Mfree  # free rest-mass sum, MeV — no unit-mixed subtraction
 
     return M_pred, {
-        'binding': B,
+        'binding_defect_dimensionless': binding_defect,
+        'binding': binding_defect,  # legacy key; dimensionless
         'markov_trace': total_markov,
         'partitions': partition_data,
         'level': k,

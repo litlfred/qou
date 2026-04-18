@@ -178,31 +178,45 @@ _MPM_DISK_DIR = Path(__file__).parent / ".cache" / "eigen_mult"
 
 
 def _load_mpm_disk(n: int) -> dict:
-    """Load cached (shape, i) → (m_+, m_-) for all λ ⊢ n from disk."""
+    """Load cached (shape, i) → (m_+, m_-) for all λ ⊢ n from disk.
+
+    Keys in the JSON file follow the format "shape_csv:i" where
+    shape_csv is the comma-separated partition (no brackets) — see
+    _save_mpm_disk.  Returns dict keyed by (tuple[int, ...], int) →
+    tuple[int, int], matching the in-memory _MPM_CACHE signature.
+    """
     _MPM_DISK_DIR.mkdir(parents=True, exist_ok=True)
     f = _MPM_DISK_DIR / f"n{n}.json"
     if not f.exists():
         return {}
     try:
         raw = json.loads(f.read_text())
-        return {(tuple(k.split(":")[0].strip("()").split(",")),
-                  int(k.split(":")[1])):
-                tuple(v) for k, v in raw.items()}
+        out = {}
+        for k, v in raw.items():
+            shape_str, i_str = k.split(":")
+            shape = (tuple(int(x) for x in shape_str.split(","))
+                      if shape_str else ())
+            out[(shape, int(i_str))] = (int(v[0]), int(v[1]))
+        return out
     except Exception:
         return {}
 
 
 def _save_mpm_disk(n: int):
-    """Persist all cached mults for λ ⊢ n."""
+    """Persist all cached mults for λ ⊢ n.
+
+    Keys stored as "a,b,c:i" where a,b,c is the comma-joined shape
+    (no brackets) and i the generator index.
+    """
     _MPM_DISK_DIR.mkdir(parents=True, exist_ok=True)
     f = _MPM_DISK_DIR / f"n{n}.json"
-    # JSON-serializable form
     payload = {}
     for (shape, i), (mp, mm) in _MPM_CACHE.items():
         if sum(shape) != n:
             continue
-        key = f"{list(shape)}:{i}"
-        payload[key] = [mp, mm]
+        shape_str = ",".join(str(x) for x in shape) if shape else ""
+        key = f"{shape_str}:{i}"
+        payload[key] = [int(mp), int(mm)]
     try:
         f.write_text(json.dumps(payload))
     except Exception:

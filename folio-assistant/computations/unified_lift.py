@@ -111,24 +111,44 @@ def binding_unified(Z: int, N: int, *, pair_mode: str = "full",
     if verbose:
         print(f"  unified lift: {time.time()-t0:.1f}s")
 
-    # Choose V̂^(1) based on Kähler order
+    # Choose V̂^(1) based on Kähler order (level-1 baseline)
     key = {0: "V_markov", 1: "V1", 2: "V2"}[kahler_order]
     V_a_1 = a_lift[key]
     V_f_1 = f_lift[key]
 
-    # Tower at level 1 + geometric-series tail
-    # (ℏ_q² per-level damping; converges at n=2)
-    m_a_1 = tower_mass_level(V_a_1, pair_mode=pair_mode)
-    m_f_1 = tower_mass_level(V_f_1, pair_mode=pair_mode)
-    delta_1 = m_f_1 - m_a_1
-    # Geometric tail: Σ_{n≥1} ℏ_q^{2n} · tower^{(n)} with
-    # tower^{(n)} ≈ (z²)^{n-1} · tower_1.  Sum = ℏ_q² · tower_1 / (1 - ℏ_q²·z²).
-    z_mark_sq = (1.0 / (Q0 ** 0.5 + Q0 ** (-0.5))) ** 2
-    r = HBAR_Q_SQ * z_mark_sq
-    tower_term_cat = HBAR_Q_SQ * delta_1 / (1.0 - r)
+    # Term-by-term multi-level tower: Σ_{n≥1} ℏ_q^{2n} · tower^{(n)}.
+    # tower^{(n)} is computed by iterated Markov-stab lift z·V̂^{(n-1)}
+    # applied to V̂^{(1)} (the Kähler-corrected baseline), then fed
+    # into tower_mass_level.  Runs until |term_n| falls below
+    # term_precision_MeV / E_0, guaranteeing no silent series
+    # truncation error (cf. canonical_plus_multibrane.py's
+    # same-approach tower loop).
+    from canonical_plus_multibrane import lift_V_markov
+    AME_MEV_PRECISION = 1e-4   # 0.1 keV per-term target
+    target_term_cat = AME_MEV_PRECISION / max(E_0, 1e-12)
+    tower_term_cat = 0.0
+    V_a_n = list(V_a_1)
+    V_f_n = list(V_f_1)
+    delta_1 = None
+    n = 0
+    while n < 30:
+        n += 1
+        if n > 1:
+            # Iterate Markov-stab lift from level-1 Kähler baseline
+            V_a_n = lift_V_markov(V_a_1, n - 1)
+            V_f_n = lift_V_markov(V_f_1, n - 1)
+        m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode)
+        m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode)
+        delta_n = m_f_n - m_a_n
+        if delta_1 is None:
+            delta_1 = delta_n
+        term_n_cat = (HBAR_Q_SQ ** n) * delta_n
+        tower_term_cat += term_n_cat
+        if abs(term_n_cat) < target_term_cat:
+            break
     tower_MeV = E_0 * tower_term_cat
 
-    # Error budget
+    # Error budget: dominant modeling error from Kähler order.
     eps_order = 3 + kahler_order
     eps_MeV = (HBAR_Q ** eps_order) * abs(delta_1) * E_0
 
