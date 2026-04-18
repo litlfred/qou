@@ -213,6 +213,131 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     }
 
 
+def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+                             include_inter: bool = True,
+                             verbose: bool = False):
+    """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
+
+    For each generator position i ∈ {0, …, 3A − 2}, the chain-walk
+    applies a sequence of (c_k, d_k) factors at position i.  The
+    accumulated H_{3A} element at i is
+
+        W_i = Π_k (c_k · σ_i + d_k · 𝟏).
+
+    We compute
+
+        V̂_i = Σ_{λ ⊢ 3A}  w_λ · χ_λ(W_i) / d_λ,
+        w_λ = d_q(λ)² / [3A]_q!.
+
+    This is the H_{3A}-Wedderburn-weighted analog of the per-generator
+    V̂ used in atom_per_generator_volumes (which weights via H_3).
+    For include_inter=False, inter-nucleon generators 3k+2 have empty
+    W_i and contribute V̂_i = Σ w_λ (identity trace).
+
+    Returns list of length 3A − 1 of dicts {"full": V̂_i, "gen_word":
+    list of (c, d)}.
+    """
+    A = Z + N
+    if A < 1:
+        return []
+    n_strands = 3 * A
+    n_gens = n_strands - 1
+
+    word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                                include_inter=include_inter)
+    word_by_gen: list[list[tuple[float, float]]] = [[] for _ in range(n_gens)]
+    for (c, d, g) in word:
+        if 0 <= g < n_gens:
+            word_by_gen[g].append((c, d))
+
+    nfac = qfac(n_strands)
+    V_hat = [0.0] * n_gens
+    for shape in partitions_of(n_strands):
+        sigmas, dim, _syts = _cached_seminormal(shape)
+        if dim == 0:
+            continue
+        dq = dim_q(shape)
+        w_lam = (dq * dq) / nfac
+        try:
+            from scipy import sparse as sp_sparse
+            is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
+        except ImportError:
+            is_sparse = False
+        if is_sparse:
+            from scipy import sparse as sp_sparse
+            I_lam = sp_sparse.eye(dim, format='csr')
+        else:
+            I_lam = np.eye(dim)
+        for i in range(n_gens):
+            w_i_steps = word_by_gen[i]
+            if not w_i_steps:
+                # Empty word at gen i → trace = dim → contrib = w_lam
+                V_hat[i] += w_lam
+                continue
+            if i >= len(sigmas):
+                # Shouldn't happen (len(sigmas) = n_strands - 1)
+                continue
+            M = I_lam
+            for (c, d) in w_i_steps:
+                M = M @ (c * sigmas[i] + d * I_lam)
+            if is_sparse:
+                tr = float(M.diagonal().sum())
+            else:
+                tr = float(np.trace(M))
+            V_hat[i] += w_lam * tr / dim
+    out = []
+    for i, V in enumerate(V_hat):
+        out.append({"full": V, "gen_word": list(word_by_gen[i])})
+    if verbose:
+        print(f"  per-gen V̂ (H_{{{n_strands}}} Wedderburn):")
+        for i, d in enumerate(out):
+            print(f"    gen {i}: V̂ = {d['full']:+.6f}  "
+                  f"word = {d['gen_word']}")
+    return out
+
+
+def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+                       E_0: float = E_0_CALIBRATION_MEV,
+                       verbose: bool = False) -> dict:
+    """FULL-TOWER + H_{3A} binding.
+
+    Combines the Φ_q tower formula (prop:mass-endomorphism-tower)
+    with H_{3A} Wedderburn character weighting on the per-generator
+    V̂_i:
+
+        V̂_i   = Σ_{λ ⊢ 3A}  w_λ · χ_λ(W_i) / d_λ   (per-gen, H_{3A})
+        𝔪(W) = |Π V̂_i| + Σ Φ_q(|V̂_i|)
+              + z² · Σ_{|i−j|=1} Φ_q(|V̂_i V̂_j|)
+        B     = E_0 · ( 𝔪_free − 𝔪_atom ).
+
+    Replaces the H_3 per-generator weighting used in
+    tower_binding_full.  E_0 = 0.782 MeV (β-decay Q), no Catalan.
+    """
+    from mass_endomorphism import mass_from_tower
+    vols_atom = per_generator_V_hat_3A(
+        Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        include_inter=True, verbose=verbose)
+    vols_free = per_generator_V_hat_3A(
+        Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        include_inter=False, verbose=verbose)
+    if not vols_atom or not vols_free:
+        return {"status": "trivial", "Z": Z, "N": N}
+    desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
+    desc_f, sgl_f, cross_f, total_f = mass_from_tower(vols_free)
+    return {
+        "Z": Z, "N": N, "A": Z + N,
+        "m_pp": m_pp, "m_pn": m_pn, "m_nn": m_nn,
+        "m_atom_tower_H3A": total_a,
+        "m_free_tower_H3A": total_f,
+        "m_atom_breakdown": {"desc": desc_a, "single": sgl_a,
+                              "cross": cross_a},
+        "m_free_breakdown": {"desc": desc_f, "single": sgl_f,
+                              "cross": cross_f},
+        "E_0_MeV": E_0,
+        "B_MeV": E_0 * (total_f - total_a),
+    }
+
+
 def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                 E_0: float = E_0_CALIBRATION_MEV,
                 verbose: bool = False) -> dict:
@@ -266,15 +391,17 @@ if __name__ == "__main__":
         ("12C",  6, 6, 92.161728),
     ]
 
-    print("=" * 110)
+    print("=" * 116)
     print("H_{3A} WEDDERBURN-CHARACTER BINDING — task-1 fix")
     print(f"q₀ = {Q0}")
     print(f"E_0 = {args.E0:.4f} MeV  (free-neutron β-decay Q, "
           f"hecke_core.E_0_CALIBRATION_MEV)")
     print(f"No ALPHA · Catalan anywhere.")
-    print("=" * 110)
+    print("=" * 116)
 
-    results = []
+    results_mk = []
+    results_tw = []
+    print(f"\n-- single-brane Markov trace at H_{{3A}} --")
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'p(3A)':>6} "
           f"{'|tr_M_atom|':>14} {'|tr_M_free|':>14} "
           f"{'B_pred':>10} {'B_AME':>9} {'|Δm/m|%':>9} {'time':>8}")
@@ -297,30 +424,64 @@ if __name__ == "__main__":
               f"{abs(r['tr_M_free']):>14.6e} "
               f"{r['B_MeV']:>+10.4f} {B_AME:>9.3f} "
               f"{dm:>8.4f}% {dt:>7.2f}s")
-        results.append({**r, "atom": name, "B_AME_MeV": B_AME,
-                         "delta_m_over_m_pct": dm, "time_sec": dt})
+        results_mk.append({**r, "atom": name, "B_AME_MeV": B_AME,
+                            "delta_m_over_m_pct": dm, "time_sec": dt})
 
-    if results:
-        dms = [r["delta_m_over_m_pct"] for r in results]
-        print(f"\n|Δm/m|% summary:  min={min(dms):.4f}%, "
+    print(f"\n-- FULL TOWER at H_{{3A}} (per-gen V̂ via character sum) --")
+    print(f"  {'Atom':>6} {'A':>3} {'3A':>3} "
+          f"{'𝔪_atom':>12} {'𝔪_free':>12} "
+          f"{'B_pred':>10} {'B_AME':>9} {'|Δm/m|%':>9} {'time':>8}")
+    print("  " + "-" * 100)
+    for name, Z, N, B_AME in ATOMS:
+        A = Z + N
+        if A > args.max_A:
+            continue
+        t0 = time.time()
+        try:
+            r = binding_3A_tower(Z, N, E_0=args.E0,
+                                   verbose=args.verbose)
+        except Exception as e:
+            print(f"  {name:>6} {A:>3} {3*A:>3} ERR: {e}")
+            continue
+        dt = time.time() - t0
+        M_total = A * 938.272
+        dm = abs(r["B_MeV"] - B_AME) / M_total * 100
+        print(f"  {name:>6} {A:>3} {3*A:>3} "
+              f"{r['m_atom_tower_H3A']:>12.3e} "
+              f"{r['m_free_tower_H3A']:>12.3e} "
+              f"{r['B_MeV']:>+10.4f} {B_AME:>9.3f} "
+              f"{dm:>8.4f}% {dt:>7.2f}s")
+        results_tw.append({**r, "atom": name, "B_AME_MeV": B_AME,
+                            "delta_m_over_m_pct": dm, "time_sec": dt})
+
+    if results_mk:
+        dms = [r["delta_m_over_m_pct"] for r in results_mk]
+        print(f"\nMarkov   |Δm/m|% summary:  min={min(dms):.4f}%, "
               f"max={max(dms):.4f}%, mean={sum(dms)/len(dms):.4f}%")
+    if results_tw:
+        dms_t = [r["delta_m_over_m_pct"] for r in results_tw]
+        print(f"Tower    |Δm/m|% summary:  min={min(dms_t):.4f}%, "
+              f"max={max(dms_t):.4f}%, mean={sum(dms_t)/len(dms_t):.4f}%")
 
     witness = {
         "computation": "mass-at-3A-proper",
         "description": (
-            "Task-1 fix: H_{3A} Wedderburn-character binding.  For "
-            "each (Z, N), builds the full 3A-strand braid word and "
-            "evaluates χ_λ(W) in the Hoefsmit seminormal basis for "
-            "every λ ⊢ 3A.  Markov trace = Σ_λ w_λ · χ_λ / d_λ.  "
-            "Binding = E_0 · (|tr_M_free| − |tr_M_atom|) with "
-            "E_0 = 0.782 MeV (free-neutron β-decay Q).  NO "
-            "ALPHA · Catalan anywhere.  p(3A) grows quickly; this "
-            "module tops out near A = 10-12 via full enumeration."
+            "Task-1 fix: H_{3A} Wedderburn-character binding. Two "
+            "paths on the same H_{3A} character theory:\n"
+            "(a) single-brane Markov trace: B = E_0 · (|tr_M_free| − "
+            "|tr_M_atom|), tr_M(W) = Σ_λ w_λ · χ_λ(W) / d_λ;\n"
+            "(b) FULL TOWER combining H_{3A} per-generator V̂_i with "
+            "prop:mass-endomorphism-tower Φ_q formula: per-gen "
+            "V̂_i = Σ_λ w_λ · χ_λ(W_i)/d_λ, then "
+            "𝔪 = |Π V̂_i| + Σ Φ_q(|V̂_i|) + z² Σ_{adj} Φ_q(|V̂_i V̂_j|), "
+            "and B = E_0 · (𝔪_free − 𝔪_atom).\n"
+            "E_0 = 0.782 MeV (free-neutron β-decay Q). No Catalan."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q0": Q0, "E_0_MeV": args.E0,
                         "max_A": args.max_A},
-        "results": results,
+        "markov_path": results_mk,
+        "tower_path": results_tw,
     }
     out = Path(__file__).parent / "mass-at-3A-proper.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))
