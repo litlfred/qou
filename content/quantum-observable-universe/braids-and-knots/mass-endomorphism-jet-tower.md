@@ -99,13 +99,21 @@ in $H_n(q)$ gives no independent blow-up centre.  That claim is
 incorrect.  The Markov weight $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
 holds for every pair $i < j$:
 
+by the Markov-trace factorization theorem
+([Markov trace factorization](#thm:markov-trace-factorization)):
+
 - **Adjacent** ($|i-j|=1$): Hecke braid relation
-  $\sigma_i\sigma_j\sigma_i = \sigma_j\sigma_i\sigma_j$, Markov
-  property $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$.
+  $\sigma_i\sigma_j\sigma_i = \sigma_j\sigma_i\sigma_j$ reduces the
+  pair, then the Markov property
+  $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$ peels the
+  rightmost generator.
 - **Non-adjacent** ($|i-j|\geq 2$): far-commutativity
-  $\sigma_i\sigma_j = \sigma_j\sigma_i$ and
-  $\mathrm{tr}_M(\sigma_i\sigma_j) = \mathrm{tr}_M(\sigma_i)\cdot
-   \mathrm{tr}_M(\sigma_j) = z\cdot z = z^2$.
+  $\sigma_i\sigma_j = \sigma_j\sigma_i$ makes $\sigma_j$ the
+  rightmost active generator; the Markov property peels it first
+  (factor $z$), then peels the remaining $\sigma_i$ in $H_{n-1}(q)$
+  (another factor $z$), giving $\mathrm{tr}_M(\sigma_i\sigma_j)
+  = z^2$.  This is the Markov-trace factorization at the pair — not
+  a generic trace multiplicativity claim.
 
 Both cases support an independent blow-up centre at spectral
 coordinate $\hat V_i\hat V_j$, so $\mathcal{P}_n = \{(i,j) : i<j\}$
@@ -122,15 +130,15 @@ The empirical verification on stable atoms $A \geq 6$:
 | 14N  | 2.44%  | 0.81% |
 | 16O  | 2.45%  | 0.86% |
 
-Including all pair centres closes the 2–3 % heavy-atom bias to
-under 1 %, consistent with the categorical derivation.
+Including all pair centres closes the 2–3% heavy-atom bias to
+under 1%, consistent with the categorical derivation.
 
 Triple terms with $z^3 \Phi_q(|\hat V_i \hat V_j \hat V_k|)$
 inserted as explicit level-$n$ contributions overshoot the target
-(0.6–1.3 % at the same atoms), confirming the pentagon ascension:
+(0.6–1.3% at the same atoms), confirming the pentagon ascension:
 order-$\geq 3$ defects belong at level $n+1$, not as explicit
 cubic terms at level $n$
-([empirical witness](#sim:adjacent-vs-full-probe)).
+(see `adjacent-vs-full-probe.witness.json`).
 
 ## Remaining open subconjectures
 

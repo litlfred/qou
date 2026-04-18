@@ -20,5 +20,6 @@ export default proposition({
     "def:briggs-klein-chart",
     "def:quantum-bloch-group",
     "rem:mass-endomorphism-jet-tower",
+    "thm:markov-trace-factorization",
   ],
 });

@@ -5,12 +5,15 @@ MASS ENDOMORPHISM: proton-electron mass ratio from Φ_q tower.
     𝔪(β) = |∏ V̂_i| + Σ_i Φ_q(|V̂_i|) + Σ_{i<j} z² · Φ_q(|V̂_i V̂_j|)
 
 where Φ_q(z) = ∏_{k≥1} (1 - q⁻ᵏz)⁻¹ is the non-perturbative
-quantum dilogarithm and z² = tr_M(σ_i σ_j) is the Markov trace of
-any pair of distinct generators (adjacent σ_iσ_j contributes z² via
-braid relations; non-adjacent via far-commutativity tr_M(σ_iσ_j) =
-tr_M(σ_i) tr_M(σ_j) = z·z = z²).  The earlier adjacent-only form
-(prop:mass-endomorphism-tower) empirically undercounts blow-up
-centres for A ≥ 3 atoms; see adjacent_vs_full_probe.witness.json.
+quantum dilogarithm.  The pair weight z² = tr_M(σ_i σ_j) holds
+for every pair i<j by the Markov-trace factorization theorem
+(thm:markov-trace-factorization): adjacent pairs reduce via the
+Hecke braid relation + one Markov-property peel; non-adjacent
+pairs far-commute so σ_j is rightmost, and two successive
+Markov-property peels each contribute a factor z.  The earlier
+adjacent-only form (prop:mass-endomorphism-tower) empirically
+undercounts blow-up centres for A ≥ 3 atoms; see
+adjacent-vs-full-probe.witness.json.
 
 Electron (trefoil σ₁³, 2 strands, 1 generator):
   V̂_e ≈ 0.594, Φ_q ≈ 630.  No cross-term.
@@ -112,15 +115,18 @@ def mass_from_tower(vols):
     3. Pair blow-up centres over all distinct generator pairs (i, j),
        weighted by z² = tr_M(σ_i σ_j).
 
-    The cross-term weight z² is derived from the Markov trace of
-    σ_i σ_j.  For adjacent pairs (|i−j|=1) the weight follows from
-    the Hecke braid relation; for non-adjacent pairs (|i−j|≥2) it
-    follows from far-commutativity: tr_M(σ_i σ_j) = tr_M(σ_i)·
-    tr_M(σ_j) = z·z = z².  The earlier adjacent-only restriction
-    (prop:mass-endomorphism-tower) was empirically refuted by
-    adjacent_vs_full_probe: including non-adjacent pairs closes the
-    2–3% heavy-atom bias (A ≥ 6) and is required for consistency
-    with the Wedderburn blow-up count of the brane tower.
+    The cross-term weight z² is the Markov trace of σ_i σ_j,
+    z² = tr_M(σ_i σ_j), by the Markov-trace factorization theorem
+    (thm:markov-trace-factorization).  For adjacent pairs (|i−j|=1)
+    the Hecke braid relation reduces the pair and one Markov-peel
+    applies; for non-adjacent pairs (|i−j|≥2) far-commutativity
+    makes σ_j rightmost and two successive Markov-peels each
+    contribute a factor z.  The earlier adjacent-only restriction
+    (prop:mass-endomorphism-tower) was empirically refuted by the
+    adjacent-vs-full-probe witness: including non-adjacent pairs
+    closes the 2–3% heavy-atom bias (A ≥ 6) and is required for
+    consistency with the Wedderburn blow-up count of the brane
+    tower.
     """
     n = len(vols)
     z_mark = 1.0 / (Q0 ** 0.5 + (1.0 / Q0) ** 0.5)

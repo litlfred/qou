@@ -3184,14 +3184,14 @@ PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
 
 
-def q_value_beta(Z_parent, N_parent, method='phi1'):
+def q_value_beta(Z_parent, N_parent):
     """Q-value (MeV) for beta⁻ decay: (Z,N) → (Z+1,N-1) + e⁻ + ν̄_e.
 
-    method='phi1' (default): transfer matrix on nuclear strands (no electrons)
+    Transfer matrix on nuclear strands (no electrons):
         Q = E_× · μ₀ · |ΔΦ₁|
-        where Φ₁ = Σᵢ ln|V̂ᵢ| computed over nucleon strands only.
-        Uses pp..nn ordering; for A>14, tries Rust engine for
-        ground-state optimized ordering.
+    where Φ₁ = Σᵢ ln|V̂ᵢ| computed over nucleon strands only.
+    Uses pp..nn ordering; for A>14, tries Rust engine for
+    ground-state optimized ordering.
     """
     Z_d, N_d = Z_parent + 1, N_parent - 1
     if N_parent <= 0:

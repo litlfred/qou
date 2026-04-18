@@ -45,13 +45,19 @@ in the brane tower
    $z^2 \cdot \Phi_q(\lvert\hat{V}_i \hat{V}_j\rvert)$, weighted by
    $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$.*
 
-*The weight $z^2$ holds for every pair: for adjacent generators
-($\lvert i - j\rvert = 1$) it is the Markov trace of the Hecke
-product; for non-adjacent generators ($\lvert i - j\rvert \geq 2$)
-far-commutativity gives $\mathrm{tr}_M(\sigma_i\sigma_j) =
-\mathrm{tr}_M(\sigma_i)\cdot\mathrm{tr}_M(\sigma_j) = z \cdot z = z^2$.
-In both cases the pair supports an independent blow-up centre
-at the product spectral coordinate $\hat{V}_i\hat{V}_j$.*
+*The weight $z^2$ holds for every pair $(i, j)$ with $i < j$ by
+the Markov-trace factorization theorem
+([Markov trace factorization](#thm:markov-trace-factorization)):
+for adjacent generators ($\lvert i - j\rvert = 1$) it reduces
+$\sigma_i\sigma_j$ via the Hecke braid relation and applies the
+Markov property $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$;
+for non-adjacent generators ($\lvert i - j\rvert \geq 2$)
+far-commutativity makes $\sigma_j$ the rightmost active generator,
+and the Markov property peels first $\sigma_j$ then $\sigma_i$ — two
+successive Markov reductions each contributing a factor $z$, giving
+$\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$.  In both cases the pair
+supports an independent blow-up centre at the product spectral
+coordinate $\hat{V}_i\hat{V}_j$.*
 
 *The element $\sigma_i\sigma_j\sigma_i$
 ($\lvert i - j\rvert = 1$) reduces via the Yang--Baxter relation
