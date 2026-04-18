@@ -20,14 +20,14 @@ how integration and trace are encoded:
 | | Chern--Simons | Categorical |
 |---|---|---|
 | Domain | $3$-manifold $M$ | rigid monoidal $(\mathbf{C}, A, \tau)$ |
-| Integration | $\int_M (-)$ | $\mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes -) \circ \mathrm{coev}_A$ |
+| Integration | $\int_M \{-\}$ | $\mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \{-\}) \circ \mathrm{coev}_A$ |
 | Trace | Lie-algebra $\mathrm{Tr}_{\mathfrak{g}}$ | categorical (rigid) trace on $A$ |
 | Dynamics | explicit $A_{\mathrm{cl}} \wedge dA_{\mathrm{cl}} + \tfrac{2}{3} A_{\mathrm{cl}}^{\wedge 3}$ | packaged inside $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ |
 
 In the archimedean limit
 ([physicist translation](#rem:physicist-translation))
-$\mathrm{tr} \to \int_M (-)\mathrm{dvol}$, so the rigid
-"loop closure" $\mathrm{ev}_A \circ (- ) \circ \mathrm{coev}_A$
+$\mathrm{tr} \to \int_M \{-\}\,\mathrm{dvol}$, so the rigid
+"loop closure" $\mathrm{ev}_A \circ \{-\} \circ \mathrm{coev}_A$
 *is* spacetime integration --- no volume form is postulated, the
 rigid structure supplies it.  The perturbative saddle expansion
 $A_{\mathrm{cl}} = A_{\mathrm{cl}}^{(0)} + \mathcal{A}$ around a
