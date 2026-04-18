@@ -46,36 +46,44 @@ z_sym = 1 / (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym))
 
 
 def unified_lift(V_hat_sym: list[sp.Expr], *, order: int = 2) -> dict:
-    """Unified Markov-stab + Kähler lift, analytic q-derivatives.
+    """Unified Markov-stab + Kähler lift to arbitrary order.
 
-    Returns {"V0", "V_markov", "V1", "V2"} evaluated at q₀:
-      V0       = V̂^{(0)}(q₀)                       (unlifted, reference)
-      V_markov = z · V̂^{(0)}(q₀)                    (order 0: Markov-stab)
-      V1       = V_markov + ℏ_q · q · d(z V̂)/dq|₀   (order 1: +Kähler)
-      V2       = V1 + (ℏ_q²/2) · [q²d² + qd](z V̂)|₀ (order 2)
+    Returns {"V0", "V_markov", "V1", "V2", ..., f"V{order}"} evaluated
+    at q₀:
+      V0       = V̂^{(0)}(q₀)                         (unlifted reference)
+      V_markov = z · V̂^{(0)}(q₀)                     (order 0: Markov-stab)
+      V_k      = V_markov + Σ_{j=1..k} (ℏ_q^j / j!) · θ^j (z V̂)|₀
+                 for k = 1, 2, …, order.
+
+    Here θ := q · d/dq is the Euler operator; the formal Taylor series
+      exp(ℏ_q · θ) (z V̂)
+    expands into θ^j contributions with factor ℏ_q^j / j!.  Evaluated at
+    q₀ via analytic sympy derivatives.  Order n has truncation error
+    O(ℏ_q^{n+1}) (on top of the O(ℏ_q^3) Markov-stab residual captured
+    in binding_unified.eps_order).
+
+    For back-compat, the aliases V1 and V2 remain in the result dict
+    when order ≥ 1 / ≥ 2.
     """
+    if order < 0:
+        raise ValueError(f"order must be >= 0, got {order}")
     hbar_sym = HBAR_Q_SYM
-    results = {"V0": [], "V_markov": [], "V1": [], "V2": []}
+    results: dict[str, list[float]] = {"V0": [], "V_markov": []}
+    for k in range(1, order + 1):
+        results[f"V{k}"] = []
     for V_i in V_hat_sym:
-        V0_val = float(V_i.subs(q_sym, Q0))
-        results["V0"].append(V0_val)
-        # Markov-stab baseline: z(q) · V̂^{(0)}(q)
+        results["V0"].append(float(V_i.subs(q_sym, Q0)))
         zV = z_sym * V_i
-        V_markov_val = float(zV.subs(q_sym, Q0))
-        results["V_markov"].append(V_markov_val)
-        if order >= 1:
-            # First-order Kähler: + ℏ_q · q · d(zV)/dq
-            dzV = sp.diff(zV, q_sym)
-            first = hbar_sym * q_sym * dzV
-            V1_val = float((zV + first).subs(q_sym, Q0))
-            results["V1"].append(V1_val)
-        if order >= 2:
-            # Second-order: + (ℏ_q²/2) · [q²d² + qd] (zV)
-            d2zV = sp.diff(zV, q_sym, 2)
-            second = (hbar_sym ** 2 / 2) * (
-                q_sym * q_sym * d2zV + q_sym * dzV)
-            V2_val = float((zV + first + second).subs(q_sym, Q0))
-            results["V2"].append(V2_val)
+        results["V_markov"].append(float(zV.subs(q_sym, Q0)))
+        # Iteratively build θ^j(zV) and accumulate (ℏ_q^j / j!) θ^j(zV).
+        theta_j_zV = zV
+        cumulative = zV
+        for k in range(1, order + 1):
+            theta_j_zV = q_sym * sp.diff(theta_j_zV, q_sym)
+            cumulative = cumulative + (
+                hbar_sym ** k / sp.factorial(k)) * theta_j_zV
+            results[f"V{k}"].append(
+                float(cumulative.subs(q_sym, Q0)))
     return results
 
 
@@ -111,8 +119,9 @@ def binding_unified(Z: int, N: int, *, pair_mode: str = "full",
     if verbose:
         print(f"  unified lift: {time.time()-t0:.1f}s")
 
-    # Choose V̂^(1) based on Kähler order (level-1 baseline)
-    key = {0: "V_markov", 1: "V1", 2: "V2"}[kahler_order]
+    # Choose V̂^(1) based on Kähler order (level-1 baseline).
+    # order 0 → V_markov; order k ≥ 1 → V{k}.
+    key = "V_markov" if kahler_order == 0 else f"V{kahler_order}"
     V_a_1 = a_lift[key]
     V_f_1 = f_lift[key]
 
@@ -186,8 +195,14 @@ if __name__ == "__main__":
     print(f"q₀ = {Q0}, ℏ_q = {(Q0-1)/Q0:.4f}")
     print("=" * 110)
 
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--max-order", type=int, default=5,
+                      help="Highest Kähler order to test (default 5)")
+    args = ap.parse_args()
+
     results = []
-    for kahler_order in [0, 1, 2]:
+    for kahler_order in range(args.max_order + 1):
         print(f"\n--- Kähler order = {kahler_order}  "
               f"(ε = O(ℏ_q^{3+kahler_order})) ---")
         print(f"  {'Atom':>4} {'A':>3} {'B_AME':>9} {'B_canon':>10} "
