@@ -158,7 +158,151 @@ def cached_jm_avg(n: int, k: int) -> float:
     return _JM_CACHE[key]
 
 
-# ── Per-generator V̂ for the atom braid ──────────────────────
+# ── Per-λ eigenvalue multiplicities m_±(λ, i) ─────────────────
+#
+# In the seminormal basis, σ_i acts on each SYT |T⟩ as:
+#   +q          if entries (i, i+1) are in the same ROW of T
+#   −q^{-1}     if entries (i, i+1) are in the same COLUMN of T
+#   2×2 block   otherwise (T and T' related by swap(i, i+1) give
+#               a 2-dim block with eigenvalues {q, −q^{-1}} — each
+#               contributes 1 to m_+ and 1 to m_-)
+#
+# So m_+(λ, i) + m_-(λ, i) = d_λ,
+#    m_+(λ, i) = #{T: (i,i+1) same row} + (#{2×2 blocks})
+#    m_-(λ, i) = #{T: (i,i+1) same col} + (#{2×2 blocks})
+#    (each 2×2 block contributes 1 to m_+ and 1 to m_-, total 2)
+
+
+_MPM_CACHE: dict[tuple[tuple, int], tuple[int, int]] = {}
+_MPM_DISK_DIR = Path(__file__).parent / ".cache" / "eigen_mult"
+
+
+def _load_mpm_disk(n: int) -> dict:
+    """Load cached (shape, i) → (m_+, m_-) for all λ ⊢ n from disk."""
+    _MPM_DISK_DIR.mkdir(parents=True, exist_ok=True)
+    f = _MPM_DISK_DIR / f"n{n}.json"
+    if not f.exists():
+        return {}
+    try:
+        raw = json.loads(f.read_text())
+        return {(tuple(k.split(":")[0].strip("()").split(",")),
+                  int(k.split(":")[1])):
+                tuple(v) for k, v in raw.items()}
+    except Exception:
+        return {}
+
+
+def _save_mpm_disk(n: int):
+    """Persist all cached mults for λ ⊢ n."""
+    _MPM_DISK_DIR.mkdir(parents=True, exist_ok=True)
+    f = _MPM_DISK_DIR / f"n{n}.json"
+    # JSON-serializable form
+    payload = {}
+    for (shape, i), (mp, mm) in _MPM_CACHE.items():
+        if sum(shape) != n:
+            continue
+        key = f"{list(shape)}:{i}"
+        payload[key] = [mp, mm]
+    try:
+        f.write_text(json.dumps(payload))
+    except Exception:
+        pass
+
+
+def eigen_multiplicities(shape: tuple[int, ...], i: int) -> tuple[int, int]:
+    """m_+(λ, i), m_-(λ, i) for generator σ_i on irrep λ.
+
+    Returns (m_plus, m_minus) satisfying m_plus + m_minus = d_λ.
+    """
+    key = (shape, i)
+    if key in _MPM_CACHE:
+        return _MPM_CACHE[key]
+    syts, cells, _contents = standard_young_tableaux(shape)
+    m_same_row = 0
+    m_same_col = 0
+    m_2x2 = 0
+    # For each SYT, check if entries (i+1, i+2) are same row/col/other
+    # (Note: our generator index 0-based maps to entries (i+1, i+2) in
+    # the 1-indexed SYT filling.)
+    entry_a = i + 1
+    entry_b = i + 2
+    for syt in syts:
+        cell_a = cells[syt[entry_a]]
+        cell_b = cells[syt[entry_b]]
+        if cell_a[0] == cell_b[0]:
+            m_same_row += 1
+        elif cell_a[1] == cell_b[1]:
+            m_same_col += 1
+        else:
+            m_2x2 += 1  # will be counted as part of a block
+    # 2×2 blocks pair up: each SYT not same-row/col IS part of a pair.
+    # But our counting counts each SYT separately; the block contributes
+    # 1 to m_+ and 1 to m_- total, but the pair has 2 SYTs, so we split:
+    # each SYT in a pair contributes ½ to m_+ and ½ to m_-.
+    # Using integer arithmetic: m_+ += m_2x2 / 2, same for m_-.
+    # Since m_2x2 is always even (SYTs pair up), this is clean:
+    m_plus = m_same_row + m_2x2 // 2
+    m_minus = m_same_col + m_2x2 // 2
+    _MPM_CACHE[key] = (m_plus, m_minus)
+    return m_plus, m_minus
+
+
+# ── Per-(i, λ) V̂_i^λ via eigenvalue factorization ─────────
+#
+# For each generator position i and irrep λ, the accumulated matrix
+# product M_i^λ = Π_k (c_k σ_i^λ + d_k I) has trace
+#   tr_λ(M_i) = m_+(λ, i) · Π_k (c_k q + d_k)
+#             + m_-(λ, i) · Π_k (-c_k/q + d_k)
+# because σ_i^λ has exactly two eigenvalues {q, -q^{-1}} with
+# multiplicities m_±.  Normalize: V̂_i^λ = tr_λ(M_i) / d_λ.
+#
+# No matrix products needed!  Just scalar products of (c q + d) and
+# (-c/q + d) factors at each generator position, multiplied by the
+# pre-cached multiplicities.
+
+def per_irrep_V_hat(Z: int, N: int, shape: tuple[int, ...], *,
+                      include_inter: bool = True,
+                      m_pp: int = 1, m_pn: int = 1,
+                      m_nn: int = 1) -> list[float]:
+    """V̂_i^λ = tr_λ(M_i^λ) / d_λ for each generator i.
+
+    Uses eigenvalue factorization — O(num_factors) per (i, λ).
+    """
+    from hecke_characters import dim_q as _dim_q
+    A = Z + N
+    n_strands = 3 * A
+    word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                                include_inter=include_inter)
+    n_gens = n_strands - 1
+    word_by_gen: list[list[tuple[float, float]]] = [[]
+                                                      for _ in range(n_gens)]
+    for (c, d, g) in word:
+        if 0 <= g < n_gens:
+            word_by_gen[g].append((c, d))
+
+    d_cl = len(standard_young_tableaux(shape)[0])
+    if d_cl == 0:
+        return [0.0] * n_gens
+
+    V = [0.0] * n_gens
+    for i in range(n_gens):
+        factors = word_by_gen[i]
+        if not factors:
+            V[i] = 1.0  # identity at this position
+            continue
+        # Eigenvalue-factored trace
+        prod_pos = 1.0  # Π (c_k q + d_k)
+        prod_neg = 1.0  # Π (-c_k q^{-1} + d_k)
+        for (c, d) in factors:
+            prod_pos *= c * Q0 + d
+            prod_neg *= -c * QI + d
+        m_plus, m_minus = eigen_multiplicities(shape, i)
+        tr_lam = m_plus * prod_pos + m_minus * prod_neg
+        V[i] = tr_lam / d_cl
+    return V
+
+
+# ── Legacy provisional per_gen_V_hat (kept for comparison) ───
 
 def per_gen_V_hat_canonical(Z: int, N: int, *,
                               include_inter: bool = True,
@@ -296,6 +440,72 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
     return E0
 
 
+def binding_per_irrep_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+                              E_0: float | None = None,
+                              pair_mode: str = "full",
+                              verbose: bool = False) -> dict:
+    """Canonical-with-proper-tower via per-irrep V̂ + Plancherel sum.
+
+    For each λ ⊢ 3A:
+      1. Compute V̂_i^λ = tr_λ(M_i^λ)/d_λ via eigenvalue factorization.
+      2. Per-λ tower mass 𝔪^λ = |Π V̂_i^λ| + Σ Φ_q(V̂_i^λ) + cross.
+    Sum: 𝔪(W) = Σ_λ w_λ · 𝔪^λ(W) with w_λ = d_q(λ)²/[n]_q!.
+    Binding: B = E_0 · (𝔪_free − 𝔪_atom), E_0 = 938.272 / m_proton_tower.
+    """
+    from hecke_characters import dim_q as _dim_q
+    A = Z + N
+    if A < 1:
+        return {"status": "trivial"}
+    n_strands = 3 * A
+    nfac = qfac(n_strands)
+    m_atom_total = 0.0
+    m_free_total = 0.0
+    for shape in partitions_of(n_strands):
+        dq = _dim_q(shape)
+        if dq == 0:
+            continue
+        w_lam = (dq * dq) / nfac
+        V_a = per_irrep_V_hat(Z, N, shape, include_inter=True,
+                                m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
+        V_f = per_irrep_V_hat(Z, N, shape, include_inter=False,
+                                m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
+        if not V_a or not V_f:
+            continue
+        m_a = canonical_tower_mass(V_a, pair_mode=pair_mode)
+        m_f = canonical_tower_mass(V_f, pair_mode=pair_mode)
+        m_atom_total += w_lam * m_a["total"]
+        m_free_total += w_lam * m_f["total"]
+    _save_mpm_disk(n_strands)
+    # Calibrate E_0 via proton tower (A=1, n=3) using same pipeline
+    if E_0 is None:
+        E_0 = _calibrate_E0_per_irrep(pair_mode=pair_mode)
+    B = E_0 * (m_free_total - m_atom_total)
+    return {
+        "Z": Z, "N": N, "A": A,
+        "m_atom_per_irrep_total": m_atom_total,
+        "m_free_per_irrep_total": m_free_total,
+        "E_0_MeV_per_cat": E_0,
+        "B_MeV": B,
+        "pair_mode": pair_mode,
+    }
+
+
+_E0_PI_CACHE: dict[str, float] = {}
+
+
+def _calibrate_E0_per_irrep(pair_mode: str = "full") -> float:
+    """E_0 via proton tower in per-irrep formulation."""
+    if pair_mode in _E0_PI_CACHE:
+        return _E0_PI_CACHE[pair_mode]
+    r = binding_per_irrep_tower(1, 0, E_0=1.0, pair_mode=pair_mode)
+    m_p = r["m_free_per_irrep_total"]  # A=1 has no atom (no inter)
+    if m_p <= 0 or not math.isfinite(m_p):
+        return 1.0
+    E_0 = 938.272 / m_p
+    _E0_PI_CACHE[pair_mode] = E_0
+    return E_0
+
+
 def binding_canonical_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                               E_0: float | None = None,
                               pair_mode: str = "full",
@@ -347,27 +557,30 @@ if __name__ == "__main__":
           "weighted by crossing factors")
     print("=" * 100)
     results = []
-    for pair_mode in ["adjacent", "full"]:
-        print(f"\n-- pair_mode: {pair_mode} --")
-        print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} "
-              f"{'m_atom':>11} {'m_free':>11} {'B_pred':>10} "
-              f"{'|Δm/m|%':>10}")
-        print("  " + "-" * 75)
-        for name, Z, N, B_AME in ATOMS:
-            A = Z + N
-            try:
-                r = binding_canonical_tower(Z, N, pair_mode=pair_mode)
-                dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
-                       if math.isfinite(r["B_MeV"]) else float("nan"))
-                print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
-                      f"{r['m_atom']['total']:>11.3e} "
-                      f"{r['m_free']['total']:>11.3e} "
-                      f"{r['B_MeV']:>+10.4f} {dm:>9.4f}%")
-                results.append({**r, "atom": name, "B_AME_MeV": B_AME,
-                                 "delta_m_over_m_pct": dm})
-            except Exception as e:
-                print(f"  {name:>6} ERR: {type(e).__name__}: "
-                      f"{str(e)[:60]}")
+    for binder_name, binder_fn in [("per_irrep_tower (new, rigorous)",
+                                      binding_per_irrep_tower),
+                                     ("canonical_tower (provisional)",
+                                      binding_canonical_tower)]:
+        for pair_mode in ["adjacent", "full"]:
+            print(f"\n-- {binder_name} | pair_mode: {pair_mode} --")
+            print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} "
+                  f"{'B_pred':>10} {'|Δm/m|%':>10}")
+            print("  " + "-" * 60)
+            for name, Z, N, B_AME in ATOMS:
+                A = Z + N
+                try:
+                    r = binder_fn(Z, N, pair_mode=pair_mode)
+                    dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
+                           if math.isfinite(r["B_MeV"]) else float("nan"))
+                    print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
+                          f"{r['B_MeV']:>+10.4f} {dm:>9.4f}%")
+                    results.append({**r, "atom": name,
+                                     "binder": binder_name,
+                                     "B_AME_MeV": B_AME,
+                                     "delta_m_over_m_pct": dm})
+                except Exception as e:
+                    print(f"  {name:>6} ERR: {type(e).__name__}: "
+                          f"{str(e)[:60]}")
 
     witness = {
         "computation": "canonical-with-proper-tower",
