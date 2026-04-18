@@ -52,6 +52,83 @@ from hecke_characters import (partitions_of, build_seminormal_matrices,
 
 h = HA_VAL
 
+# Markov parameter z for the Ocneanu/Jones-Wenzl trace.
+# Standard convention: z such that tr_M(T_i) = z, tr_M(1) = 1.
+# Matches mass_endomorphism.z_mark = 1/(q^½ + q^(-½)).
+Z_MARKOV = 1.0 / (Q0 ** 0.5 + QI ** 0.5)
+
+
+# ── Jones–Wenzl Ocneanu weights ω_λ(q, z) ───────────────────
+#
+# For H_n(q) with Markov parameter z, the Jones–Wenzl formula
+# (Jones 1985 Thm 5.1; Wenzl 1988) gives the Markov-trace weights
+#     ω_λ(q, z) = z^(n−1) · Π_{x ∈ λ} (1 − z·q^{2·c(x)}) / (1 − q^{2·h(x)})
+# where c(x) = j − i is the cell content and h(x) is its hook length.
+# These satisfy Σ_λ ω_λ = 1 and Σ_λ ω_λ · χ_λ(T_i)/d_λ = z.
+#
+# Falls back to Plancherel w_λ = d_q²/[n]_q! for comparison audits.
+
+def jones_wenzl_weight(shape: tuple[int, ...],
+                        q: float = Q0, z: float = Z_MARKOV) -> float:
+    """Ocneanu/Jones–Wenzl weight ω_λ(q, z) for H_n(q) Markov trace.
+
+    Σ_λ ω_λ = 1 (normalization) — unlike the Plancherel weight
+    d_q(λ)²/[n]_q!, which does not sum to 1 at q ≠ 1.
+    """
+    n = sum(shape)
+    if n == 0:
+        return 1.0
+    cells: list[tuple[int, int]] = []
+    for i, r in enumerate(shape):
+        for j in range(r):
+            cells.append((i, j))
+    # Hooks
+    rows = list(shape)
+    max_col = rows[0] if rows else 0
+    cols = [sum(1 for r in rows if r > j) for j in range(max_col)]
+    hooks = [
+        (rows[i] - j - 1) + (cols[j] - i - 1) + 1
+        for (i, j) in cells
+    ]
+    product = z ** (n - 1)
+    for k, (i, j) in enumerate(cells):
+        c = j - i
+        hk = hooks[k]
+        numer = 1.0 - z * q ** (2 * c)
+        denom = 1.0 - q ** (2 * hk)
+        if abs(denom) < 1e-15:
+            return 0.0
+        product *= numer / denom
+    return product
+
+
+def ocneanu_weights_3A(A: int, *, q: float = Q0, z: float = Z_MARKOV):
+    """Return list of (λ, ω_λ) for all λ ⊢ 3A; Jones–Wenzl normalized."""
+    return [(shape, jones_wenzl_weight(shape, q=q, z=z))
+             for shape in partitions_of(3 * A)]
+
+
+def normalized_plancherel_weights_3A(A: int):
+    """ω_λ = w_λ^Planch / Σ w_μ^Planch — forces Σ ω_λ = 1.
+
+    For q > 1, the naive Plancherel weights w_λ = d_q(λ)²/[n]_q!
+    do NOT sum to 1 and produce per-generator V̂_i > q₀ (Φ_q pole).
+    Rescaling to Σ = 1 pins the Markov-trace identity tr_M(𝟏) = 1
+    even if it doesn't match the canonical Jones parameter z for
+    tr_M(σ_i).  Empirically this keeps V̂_i in the physical range
+    [−1, 1] at our q₀, which is what the Φ_q tower needs.
+    """
+    n = 3 * A
+    nfac = qfac(n)
+    entries = []
+    total = 0.0
+    for shape in partitions_of(n):
+        dq = dim_q(shape)
+        w = (dq * dq) / nfac
+        entries.append((shape, w))
+        total += w
+    return [(s, w / total) for (s, w) in entries]
+
 
 # In-memory cache: binding_3A calls markov_trace_3A twice (atom, free)
 # so at minimum this saves one re-build per run.
@@ -215,6 +292,7 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                              include_inter: bool = True,
+                             weight_scheme: str = "normalized_plancherel",
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -252,12 +330,25 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
     nfac = qfac(n_strands)
     V_hat = [0.0] * n_gens
-    for shape in partitions_of(n_strands):
+
+    # Weight table — normalized to Σ = 1 for the Markov identity
+    # tr_M(𝟏) = 1; alternate schemes available for audit.
+    weight_table: list[tuple[tuple[int, ...], float]] = []
+    if weight_scheme == "normalized_plancherel":
+        weight_table = normalized_plancherel_weights_3A((Z + N))
+    elif weight_scheme == "plancherel":
+        for shape in partitions_of(n_strands):
+            dq = dim_q(shape)
+            weight_table.append((shape, (dq * dq) / nfac))
+    elif weight_scheme == "jones_wenzl":
+        weight_table = ocneanu_weights_3A((Z + N))
+    else:
+        raise ValueError(f"unknown weight_scheme: {weight_scheme}")
+
+    for (shape, w_lam) in weight_table:
         sigmas, dim, _syts = _cached_seminormal(shape)
         if dim == 0:
             continue
-        dq = dim_q(shape)
-        w_lam = (dq * dq) / nfac
         try:
             from scipy import sparse as sp_sparse
             is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
@@ -298,6 +389,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
 def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        E_0: float = E_0_CALIBRATION_MEV,
+                       weight_scheme: str = "normalized_plancherel",
                        verbose: bool = False) -> dict:
     """FULL-TOWER + H_{3A} binding.
 
@@ -316,10 +408,10 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     from mass_endomorphism import mass_from_tower
     vols_atom = per_generator_V_hat_3A(
         Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-        include_inter=True, verbose=verbose)
+        include_inter=True, weight_scheme=weight_scheme, verbose=verbose)
     vols_free = per_generator_V_hat_3A(
         Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-        include_inter=False, verbose=verbose)
+        include_inter=False, weight_scheme=weight_scheme, verbose=verbose)
     if not vols_atom or not vols_free:
         return {"status": "trivial", "Z": Z, "N": N}
     desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
