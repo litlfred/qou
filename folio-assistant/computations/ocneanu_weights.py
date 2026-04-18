@@ -288,6 +288,7 @@ def omega_lambda_via_inversion(n: int, *,
     from conjugate_symmetry import (is_self_conjugate,
                                        conjugate_partition,
                                        conjugate_pair_representatives)
+    from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
     if q_val is None:
         q_val = Q0
@@ -346,13 +347,24 @@ def omega_lambda_via_inversion(n: int, *,
 
     sigmas_at_q_cache: dict[tuple, tuple] = {}
     sigmas_at_qinv_cache: dict[tuple, tuple] = {}
+    # Shared Hoefsmit BlockCache across all shapes — Track 1.
+    # Key ρ = content distance; entry (a_ρ, a'_ρ, b_ρ).  Reused across
+    # every partition at this n; eliminates the O(d_λ²) swap-partner
+    # scan in legacy build_seminormal_matrices.
+    from q_parameter import HA as _HA
+    block_cache = BlockCache(q_val, q_val - 1.0 / q_val)
+    block_cache_qinv = BlockCache(1.0 / q_val, 1.0 / q_val - q_val)
     if use_conjugate_symmetry:
         for shape in direct_shapes:
-            sigmas_at_q_cache[shape] = build_seminormal_matrices(shape)[:2]
+            s, d, _ = build_seminormal_matrices_cached(
+                shape, cache=block_cache)
+            sigmas_at_q_cache[shape] = (s, d)
         reps_needing_qinv = set(derived_map.values())
         for shape in reps_needing_qinv:
-            sigmas_qi, dim = _build_seminormal_at_q(shape, 1.0 / q_val)
-            sigmas_at_qinv_cache[shape] = (sigmas_qi, dim)
+            s, d, _ = build_seminormal_matrices_cached(
+                shape, cache=block_cache_qinv,
+                q_val=1.0 / q_val)
+            sigmas_at_qinv_cache[shape] = (s, d)
 
     for k, w in enumerate(words):
         elem = (SymbolicHeckeElement({w: 1}) if w
@@ -364,7 +376,9 @@ def omega_lambda_via_inversion(n: int, *,
             if use_conjugate_symmetry:
                 sigmas, d_lam = sigmas_at_q_cache[shape]
             else:
-                sigmas, d_lam, _ = build_seminormal_matrices(shape)
+                # Legacy path: share BlockCache but not per-shape cache.
+                sigmas, d_lam, _ = build_seminormal_matrices_cached(
+                    shape, cache=block_cache)
             chi = _eval_chi(sigmas, d_lam, w)
             if chi is None or d_lam == 0:
                 continue
