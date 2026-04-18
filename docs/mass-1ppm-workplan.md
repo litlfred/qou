@@ -3,9 +3,12 @@
 **North-star goal:** mass-prediction error ≤ 1 ppm across the isotope
 table (AME2020 reference).
 
-**Current ceiling:** ~0.1 % on D / T / 3He via the SYT-cell JM tower
-(`folio-assistant/computations/syt_cell_tower.py`, Track 1 of the
-previous guidance).  That's ~1000× off target.
+**Current ceiling:** 0.018 % on D (unified_lift order 0), 0.06 % on T,
+0.03 % on 3He (`folio-assistant/computations/unified_lift.py`).  The
+JM-cell path (`syt_cell_tower.py`) peaks at 0.10 % on D, 0.28 % on T
+and 0.22 % on 3He — slower asymptote than unified_lift on light
+nuclei but no Kähler-tower dependence.  Both are ~200× off the 1-ppm
+target.
 
 ## Milestones
 
@@ -71,13 +74,27 @@ identified in the session diagnosis:
    `integer-lp-gluon`, `nuclear_ilp`, `confinement-lp`,
    `knot-operator-lp`.
 
-3. **Kähler tower to arbitrary order.**
-   `unified_lift.py` hardcodes `order ∈ {0, 1, 2}`.  Each extra order
-   costs another symbolic derivative but gains roughly one factor of
-   ℏ_q ≈ 0.10.  On D the order-2 residual is ~1.4 keV; order-5 would
-   drop it to ~10⁻³ keV, well below 1 ppm.
-   Task: parametrise `unified_lift(..., order=n)` symbolically via
-   `sympy.diff` so arbitrary order is a one-line change.
+3. **Kähler tower to arbitrary order — DONE, NEGATIVE RESULT.**
+   `unified_lift.py` now supports arbitrary order n via the Euler-
+   operator exponential `exp(ℏ_q · θ) (z·V̂)`, θ = q·d/dq.  Empirical
+   sweep orders 0–5 on D / T / 3He:
+
+   | Atom | order 0 | order 1 | order 2 | order 3 | order 4 | order 5 |
+   |------|--------:|--------:|--------:|--------:|--------:|--------:|
+   | D    | 0.018%  | 0.022%  | 0.024%  | 0.024%  | 0.023%  | 0.023%  |
+   | T    | 0.060%  | 0.776%  | 3.031%  | 4.552%  | 5.109%  | 5.242%  |
+   | 3He  | 0.032%  | 0.828%  | 3.498%  | 6.002%  | 6.955%  | 7.203%  |
+
+   **The series diverges on T / 3He.** Order 0 is already optimal
+   (also for D, where higher orders drift slightly).  The formal
+   ε_MeV bound (1.4 keV → 1.4 μeV) contradicts the actual error —
+   the bound is wrong.  Arbitrary-order Kähler is therefore **not a
+   knob for reaching 1 ppm**.
+
+   Revised picture of this lever: stop at order 0 for A ≥ 3, or
+   find a Borel / resurgent resummation that reorganises the
+   asymptotic series.  The latter is an open research question
+   rather than an engineering task.
 
 4. **Plancherel SYT weight μ_T kept (not Jones-Wenzl).**
    Per session decision.  Keep the current `syt_cell_tower` weight
@@ -115,13 +132,17 @@ Once M3 is met on 6Li / 9Be with per-atom error tracked stably:
   remains at 1 ppm, escalate to the Jones-Wenzl weight question
   (re-opens Phase 2 step 4).
 
-## Prioritisation
+## Prioritisation (revised post-session)
 
 P1 is a prerequisite for every heavy-atom improvement.  Within P2:
 
 1. **Gluon LP → full SDP** (~1 MeV expected gain on D).  Highest
-   leverage.
-2. **ILP/SDP audit** (map the codebase; 1 hour).
-3. **Arbitrary-order Kähler** (mechanical; ~0.1 keV gain, only
-   matters once P2.1 lands).
-4. **E_0 unified sanity check** (diagnostic only).
+   leverage.  Session probe confirmed per-nucleon H_3 optima do NOT
+   transfer; full-atom H_{3A} SDP needed (P2.1b, parked on a
+   separate fork).
+2. **ILP/SDP audit** — DONE (`docs/ilp-sdp-audit.md`).  Six LP(PSD)
+   files identified as SDP-in-disguise.
+3. ~~**Arbitrary-order Kähler**~~ — DONE, NEGATIVE RESULT.  Series
+   diverges on T / 3He; order 0 is optimal.  Not a 1-ppm lever.
+4. **E_0 unified sanity check** (diagnostic only; no per-atom fit
+   per user decision).
