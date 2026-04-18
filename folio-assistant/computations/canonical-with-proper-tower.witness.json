@@ -1,12 +1,124 @@
 {
   "computation": "canonical-with-proper-tower",
   "description": "Canonical-with-proper-tower binding: per-generator V\u0302_i computed via Jucys-Murphy eigenvalue Plancherel averages (no H_3 shortcut), fed into the \u03a6_q tower formula of prop:mass-endomorphism-tower.  Single jet level; multi-level extension requires K\u00e4hler-differential propagation (open).  pair_mode \u2208 {adjacent, full} toggles the audit-flagged adjacent-only restriction.",
-  "timestamp": "2026-04-18T11:01:41.361303+00:00",
+  "timestamp": "2026-04-18T11:15:23.277939+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782
   },
   "results": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "m_atom_per_irrep_total": 32130258.637471188,
+      "m_free_per_irrep_total": 35842030.67556521,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 262.38089123169243,
+      "pair_mode": "adjacent",
+      "atom": "D",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 13.863590261229817
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "m_atom_per_irrep_total": 49160162.54093182,
+      "m_free_per_irrep_total": 58728227.203569986,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 676.3554732834781,
+      "pair_mode": "adjacent",
+      "atom": "T",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 8.481821,
+      "delta_m_over_m_pct": 23.72708028814239
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "m_atom_per_irrep_total": 44005620.88834314,
+      "m_free_per_irrep_total": 52269880.71052982,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 584.1910104557667,
+      "pair_mode": "adjacent",
+      "atom": "3He",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 7.71804,
+      "delta_m_over_m_pct": 20.479952169369746
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "m_atom_per_irrep_total": 83366808.0749737,
+      "m_free_per_irrep_total": 101574881.41801935,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 1287.1077378484524,
+      "pair_mode": "adjacent",
+      "atom": "4He",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 28.295674,
+      "delta_m_over_m_pct": 33.54070205250856
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "m_atom_per_irrep_total": 37279318.31110836,
+      "m_free_per_irrep_total": 46069249.65894027,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 621.3501252878144,
+      "pair_mode": "full",
+      "atom": "D",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 32.99286375847379
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "m_atom_per_irrep_total": 66128148.81382111,
+      "m_free_per_irrep_total": 92846000.47510524,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 1888.6541680732132,
+      "pair_mode": "full",
+      "atom": "T",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 8.481821,
+      "delta_m_over_m_pct": 66.79556841630902
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "m_atom_per_irrep_total": 60459055.670079716,
+      "m_free_per_irrep_total": 84568998.82282677,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 1704.3041186364383,
+      "pair_mode": "full",
+      "atom": "3He",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 7.71804,
+      "delta_m_over_m_pct": 60.27342741537771
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "m_atom_per_irrep_total": 131478039.06064251,
+      "m_free_per_irrep_total": 198931034.90579456,
+      "E_0_MeV_per_cat": 7.068884849038941e-05,
+      "B_MeV": 4768.17460352082,
+      "pair_mode": "full",
+      "atom": "4He",
+      "binder": "per_irrep_tower (new, rigorous)",
+      "B_AME_MeV": 28.295674,
+      "delta_m_over_m_pct": 126.29277356461719
+    },
     {
       "Z": 1,
       "N": 1,
@@ -41,6 +153,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "adjacent",
       "atom": "D",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 2.22452,
       "delta_m_over_m_pct": 20.487109918943467
     },
@@ -84,6 +197,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "adjacent",
       "atom": "T",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 8.481821,
       "delta_m_over_m_pct": 63.95533747255764
     },
@@ -127,6 +241,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "adjacent",
       "atom": "3He",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 7.71804,
       "delta_m_over_m_pct": 63.994441134290206
     },
@@ -176,6 +291,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "adjacent",
       "atom": "4He",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 28.295674,
       "delta_m_over_m_pct": 91.30777746069539
     },
@@ -213,6 +329,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "full",
       "atom": "D",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 2.22452,
       "delta_m_over_m_pct": 62.91400432835913
     },
@@ -256,6 +373,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "full",
       "atom": "T",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 8.481821,
       "delta_m_over_m_pct": 178.06110280395762
     },
@@ -299,6 +417,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "full",
       "atom": "3He",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 7.71804,
       "delta_m_over_m_pct": 178.11217396378456
     },
@@ -348,6 +467,7 @@
       "E_0_MeV_per_cat": 0.00012002039509983031,
       "pair_mode": "full",
       "atom": "4He",
+      "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 28.295674,
       "delta_m_over_m_pct": 327.6004699338008
     }
