@@ -245,7 +245,18 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
 def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                       include_inter: bool = True,
                       verbose: bool = False) -> dict:
-    """Full H_{3A} Markov trace of the atom (or free) braid word.
+    """[DEPRECATED — Plancherel-weighted form] H_{3A} "Markov" trace.
+
+    This function computes Σ_λ (d_q(λ)²/[3A]_q!) · χ_λ(W)/d_λ, which is
+    the Plancherel-weighted sum over partitions λ ⊢ 3A.  At q ≠ 1 this
+    is NOT the canonical Jones–Markov trace specified in
+    prop:categorical-mass-markov (which gives tr_M(σ_0) = z ≈ 0.499);
+    at H_2, this function gives ≈ 0.104.
+
+    Use markov_trace_canonical.tr_M_element for the canonical trace.
+    Retained here for backwards compatibility with downstream code
+    that computes partition-level breakdowns.  Do not use for new
+    binding calculations.
 
     Returns dict with keys
       ``total``         : tr_M(W) = Σ_λ w_λ · χ_λ(W) / d_λ
@@ -544,6 +555,15 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                 E_0: float = E_0_CALIBRATION_MEV,
                 verbose: bool = False) -> dict:
+    """[DEPRECATED — Plancherel-weighted trace] Binding via H_{3A} pattern.
+
+    Uses markov_trace_3A, which is Plancherel-weighted and does NOT
+    match prop:categorical-mass-markov's canonical z ≈ 0.499 Markov
+    parameter.  Prefer binding_canonical.binding_canonical, which
+    uses the axiomatically-correct Jones–Markov trace
+    (markov_trace_canonical.tr_M_element) — verified to match all 7
+    prop-table values exactly.
+    """
     """Binding via H_{3A} character-theoretic Markov trace.
 
     B = E_0 · ( |tr_M(W_free)| − |tr_M(W_atom)| )

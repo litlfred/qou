@@ -2853,9 +2853,22 @@ def unified_iterative_correction_jet(Z, N, jet_max,
 
 
 def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
-    """Markov trace of the atom braid word via Wedderburn decomposition:
+    """[DEPRECATED — Plancherel-weighted] "Markov" trace of atom braid.
 
-        tr_M(W_atom) = Σ_λ w_λ · χ_λ(W_atom) / d_λ
+    Computes Σ_λ (Plancherel-weight) · χ_λ(W)/d_λ.  At q ≠ 1 this is
+    NOT the canonical Jones–Markov trace specified in
+    prop:categorical-mass-markov (which gives tr_M(σ_0) = z ≈ 0.499).
+    The Plancherel form gives ≈ 0.104 at q_0 — see the validity
+    audit (rem:mass-endomorphism-tower-adjacency-audit).
+
+    Use markov_trace_canonical.tr_M_element for the canonical
+    axiomatic Markov trace that matches the prop's explicit table.
+
+    Legacy form retained for existing callers; new code should route
+    through binding_canonical.binding_canonical.
+
+    Original docstring (Plancherel-specific):
+    tr_M(W_atom) = Σ_λ w_λ · χ_λ(W_atom) / d_λ
 
     This is the CATEGORICAL MASS at a single brane level
     (prop:categorical-mass-markov, def:mass-identity): the categorical
