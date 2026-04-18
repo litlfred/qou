@@ -12,9 +12,9 @@ in **jet-brane** language.
 
 ## Why quadratic per jet level is enough
 
-The prop's formula keeps at most QUADRATIC $\hat{V}_i \hat{V}_j$
+The prop's formula keeps at most quadratic $\hat{V}_i \hat{V}_j$
 spectral coordinates (the $z^2 \Phi_q(|\hat V_i \hat V_j|)$ term)
-and NO explicit triple or higher terms.  This is not a truncation
+and no explicit triple or higher terms.  This is not a truncation
 in the prop: it is the intended content.
 
 $q$ calculations are not linear: the Hecke relation
@@ -29,11 +29,11 @@ contains:
 - **$z^2 \Phi_q(|\hat V_i \hat V_j|)$ pairs** (order-2: quadratic
   blow-up centres).
 
-A triple / quadruple interaction at level $n$ is NOT an
-independent order-3/4 term; it ASCENDS to jet level $n+1$ as a
-new singleton/pair, and is already captured by the
+A triple or quadruple interaction at level $n$ is not an
+independent order-3/4 term; it ascends to jet level $n+1$ as a
+new singleton or pair, and is already captured by the
 level-$n+1$ contribution in the tower sum.  Conversely, some
-level-$n+1$ quadratic interactions DESCEND to level-$n$ effective
+level-$n+1$ quadratic interactions descend to level-$n$ effective
 pairs via the descent involution
 ([descent involution](#def:descent-involution)).
 
@@ -55,14 +55,14 @@ contributions:
 ```
 
 where $\mathcal{P}_n$ is the set of **independent pair blow-up
-centres at jet level $n$** — the open question is exactly WHICH
+centres at jet level $n$** — the open question is exactly which
 pairs $(i, j)$ are in $\mathcal{P}_n$.
 
 ## Empirical correction to $\mathcal{P}_n$
 
 The prop asserts $\mathcal{P}_n = \{(i, j) : |i - j| = 1\}$
-(adjacent pairs only).  The justification via far-commutativity
-gives no independent blow-up centre for $|i - j| \geq 2$ is
+(adjacent pairs only).  The justification — that far-commutativity
+gives no independent blow-up centre for $|i - j| \geq 2$ — is
 [audited as asserted-without-proof](#rem:mass-endomorphism-tower-adjacency-audit)
 and empirically contradicted on stable atoms $A \geq 6$:
 
@@ -80,9 +80,9 @@ under 1%, consistent with $\mathcal{P}_n = \{(i,j) : i < j\}$
 (full quadratic pairs, no distance restriction).
 
 Triple terms with $z^3 \Phi_q(|\hat V_i \hat V_j \hat V_k|)$
-OVERSHOOT the target (0.6–1.3% at the same atoms), confirming
+overshoot the target (0.6–1.3% at the same atoms), confirming
 that higher-order terms should be handled by ascension to the
-next jet level, NOT by adding explicit cubic terms at level $n$
+next jet level, not by adding explicit cubic terms at level $n$
 ([empirical witness](#sim:adjacent-vs-full-probe)).
 
 ## Open subconjectures

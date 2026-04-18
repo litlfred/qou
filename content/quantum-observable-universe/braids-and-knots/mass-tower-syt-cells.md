@@ -43,7 +43,7 @@ $$
 with each pair $\{k_1, k_2\}$ corresponding to a pair of cells
 in any SYT shape $\lambda \vdash n$.  Under this reindexing:
 
-- **Generator distance $|i - j|$** is NOT preserved — JM indices
+- **Generator distance $|i - j|$** is not preserved — JM indices
   $k$ range over cells, not over generator positions, so there is
   no "adjacent vs far-commuting" distinction.
 - **Eigenvalue product** is diagonal: on $|T\rangle$,
