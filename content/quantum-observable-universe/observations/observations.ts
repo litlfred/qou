@@ -227,6 +227,16 @@ export default chapter({
       ],
     }),
 
+    // ── Transcendence falsifiability signatures ──────────────────────
+    section({
+      title: "Transcendence Falsifiability Signatures",
+      label: "sec:transcendence-signatures",
+      blocks: [
+        "observables-algebraic-independence",
+        "observables-algebraic-dependence",
+      ],
+    }),
+
     // ── Interactive simulations ───────────────────────────────────────
     section({
       title: "Interactive Simulations",
