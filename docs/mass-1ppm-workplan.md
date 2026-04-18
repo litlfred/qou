@@ -144,5 +144,24 @@ P1 is a prerequisite for every heavy-atom improvement.  Within P2:
    files identified as SDP-in-disguise.
 3. ~~**Arbitrary-order Kähler**~~ — DONE, NEGATIVE RESULT.  Series
    diverges on T / 3He; order 0 is optimal.  Not a 1-ppm lever.
-4. **E_0 unified sanity check** (diagnostic only; no per-atom fit
+4. ~~**Jet scaling (brane tower)**~~ — SATURATED.  Per-level
+   damping matches the predicted ℏ_q² ≈ 0.0098, loop terminates
+   at level 3 already below ppm target.  The 0.018% / 0.06% /
+   0.032% residuals on D / T / 3He are STRUCTURAL to the V̂
+   model within a level — not from truncating the jet sum.
+   See `unified_lift.py` jet-log in the witness.
+5. **E_0 unified sanity check** (diagnostic only; no per-atom fit
    per user decision).
+
+## Levers ruled out this session
+
+Both intra-level and inter-level perturbative knobs are exhausted:
+
+- **Kähler orders** (intra-level q-derivatives): diverge on T / 3He.
+- **Jet levels** (inter-level ℏ_q² scaling): converge at level 3;
+  residuals persist.
+
+Next frontier is therefore the V̂ model itself — the per-jet-level
+aggregated volumes.  P2.1b (full-atom SDP for gluon decoration) is
+the only remaining structural lever identified in this session; it
+will need a separate fork per the user plan.
