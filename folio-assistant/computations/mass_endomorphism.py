@@ -31,6 +31,7 @@ Usage:
 """
 import math
 import sys
+from functools import lru_cache
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -75,18 +76,22 @@ w_std /= wt
 w_alt /= wt
 
 
+@lru_cache(maxsize=4096)
 def Phi_q(z_val, max_k=2000):
     """Non-perturbative quantum dilogarithm Φ_q(z) = ∏ (1-q⁻ᵏz)⁻¹."""
     if abs(z_val) >= q0:
         return float("inf")
     product = 1.0
-    for k in range(1, max_k + 1):
-        factor = 1.0 - qi0**k * z_val
+    qi_pow = qi0
+    for _ in range(max_k):
+        term = qi_pow * z_val
+        factor = 1.0 - term
         if abs(factor) < 1e-300:
             return float("inf")
         product /= factor
-        if abs(qi0**k * z_val) < 1e-15:
+        if abs(term) < 1e-15:
             break
+        qi_pow *= qi0
     return product
 
 
