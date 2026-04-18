@@ -1,0 +1,66 @@
+{
+  "computation": "mass-at-3A-proper",
+  "description": "Task-1 fix: H_{3A} Wedderburn-character binding.  For each (Z, N), builds the full 3A-strand braid word and evaluates \u03c7_\u03bb(W) in the Hoefsmit seminormal basis for every \u03bb \u22a2 3A.  Markov trace = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7_\u03bb / d_\u03bb.  Binding = E_0 \u00b7 (|tr_M_free| \u2212 |tr_M_atom|) with E_0 = 0.782 MeV (free-neutron \u03b2-decay Q).  NO ALPHA \u00b7 Catalan anywhere.  p(3A) grows quickly; this module tops out near A = 10-12 via full enumeration.",
+  "timestamp": "2026-04-18T01:32:51.223327+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782,
+    "max_A": 3
+  },
+  "results": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_atom": -0.005400322224014615,
+      "tr_M_free": 0.4256701505198476,
+      "abs_diff": 0.420269828295833,
+      "E_0_MeV": 0.782,
+      "B_MeV": 0.3286510057273414,
+      "n_partitions": 11,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.10102981834013262,
+      "time_sec": 0.012366771697998047
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_atom": 0.00041595502450810293,
+      "tr_M_free": 0.28812639179613625,
+      "abs_diff": 0.28771043677162816,
+      "E_0_MeV": 0.782,
+      "B_MeV": 0.22498956155541322,
+      "n_partitions": 30,
+      "atom": "T",
+      "B_AME_MeV": 8.481821,
+      "delta_m_over_m_pct": 0.2933346775932987,
+      "time_sec": 0.35972166061401367
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_atom": -0.0003963873332270496,
+      "tr_M_free": 0.33928178340865855,
+      "abs_diff": 0.3388853960754315,
+      "E_0_MeV": 0.782,
+      "B_MeV": 0.26500837973098745,
+      "n_partitions": 30,
+      "atom": "3He",
+      "B_AME_MeV": 7.71804,
+      "delta_m_over_m_pct": 0.264778643444865,
+      "time_sec": 0.14397406578063965
+    }
+  ]
+}

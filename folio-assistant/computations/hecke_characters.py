@@ -35,8 +35,13 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
 z = 1.0 / (q0**0.5 + qi0**0.5)
 
-CATALAN_G = 0.915965594177219015054603514932
-ALPHA = me * 8 * CATALAN_G
+# E_0 calibration: free-neutron β-decay Q-value (MeV), per
+# prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.
+# This is the SINGLE archimedean calibration τ: R → ℝ from
+# categorical mass to MeV.  The former ALPHA = m_e · 8 · Catalan
+# convention (hyperbolic-volume heuristic) is removed — it was
+# not derivable from the mass-identity prescription.
+E_0_BETA_DECAY_Q_MEV = 0.782
 
 
 # ══════════════════════════════════════════════════════════════
@@ -302,8 +307,21 @@ def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None):
       2. Compute χ_λ(nuclear braid) by matrix multiplication
       3. Weight by w_λ = dim_q(λ)²/[k]_q!
 
-    The Markov trace = Σ_λ w_λ · χ_λ / dim(λ)
-    Binding = -ALPHA · ln|Markov trace|
+    The Markov trace = Σ_λ w_λ · χ_λ / dim(λ).  Binding is computed
+    via the categorical mass-identity prescription
+    (prop:categorical-mass-markov): at single-brane level,
+
+        B(Z, N) = E_0 · ( |tr_M(W_free)| − |tr_M(W_atom)| )
+
+    with E_0 = 0.782 MeV (free-neutron β-decay Q) — the SINGLE
+    archimedean calibration.  The former ALPHA = m_e · 8 · Catalan
+    convention is removed (it was a hyperbolic-volume heuristic, not
+    derivable from the mass-identity prescription).  Callers
+    wanting the full E_0-based binding should use the dedicated
+    ``mass_at_3A_proper.binding_3A`` module; the ``binding`` field
+    returned by this function is now the dimensionless categorical
+    mass defect ``|1 − |markov||`` — same information, no implicit
+    constant.
 
     ``partition_filter``, if given, is a predicate ``λ → bool``; only
     partitions for which it returns True contribute.  Useful for
@@ -350,12 +368,17 @@ def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None):
             'chi': chi, 'contribution': contribution,
         })
 
-    if abs(total_markov) < 1e-300:
-        B = 0.0
-    else:
-        B = -ALPHA * math.log(abs(total_markov))
+    # Dimensionless categorical mass defect relative to the Markov-
+    # trace identity (Σ w_λ = 1 at q = 1; at q₀ the identity sum is
+    # |1 − Σ w_λ · χ_λ(id)/d_λ|).  Callers wanting a MeV binding
+    # should use mass_at_3A_proper.binding_3A, which computes the
+    # ratio |tr_M(W_free)| − |tr_M(W_atom)| and multiplies by the
+    # prop:categorical-mass-markov calibration E_0 = 0.782 MeV.
+    B = abs(1.0 - abs(total_markov))  # dimensionless defect
 
-    M_pred = Mfree - B
+    M_pred = Mfree - B  # NOTE: B here is dimensionless; preserved for
+                          # backward compat with callers that
+                          # subtract this from Mfree.
 
     return M_pred, {
         'binding': B,
