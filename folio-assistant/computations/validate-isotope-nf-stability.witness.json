@@ -1,7 +1,7 @@
 {
   "computation": "validate-isotope-nf-stability",
   "description": "Validates that every isotope in isotope-mass-table.ISOTOPES (1) carries the nucleon gluon-pair decoration (tail of _{PROTON,NEUTRON}_G0 is two (1, 0) sigma_0 crossings), (2) yields an H_3(q) SDP-stable proton and neutron NF at the final step, with path stability and unstable step count recorded, and (3) produces a non-negative partition-truncated atom-level tr_M for 3A <= 18.  Heavy isotopes (3A > 18) record gluon + nucleon stability only.",
-  "timestamp": "2026-04-18T22:15:17.223329+00:00",
+  "timestamp": "2026-04-18T22:51:38.349824+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "z_markov": 0.4993203340335982,
@@ -84,8 +84,8 @@
     "n_fail_gluon": 0,
     "n_fail_final_stability": 0,
     "n_fail_path_stability": 82,
-    "n_fail_atom_trM_sign": 1,
-    "elapsed_sec": 275.94955134391785
+    "n_fail_atom_trM_sign": 0,
+    "elapsed_sec": 428.6307761669159
   },
   "isotopes": [
     {
@@ -100,7 +100,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": true,
-      "trM_atom": 0.7022507726245337,
+      "trM_atom_canonical": 1.0653062285923887,
+      "trM_atom_plancherel": 0.7022507726245337,
       "trM_sign_ok": true,
       "trM_truncated": false,
       "atom_info": {
@@ -108,7 +109,12 @@
         "n_partitions_used": 3,
         "n_partitions_skipped": 0,
         "truncated": false,
-        "max_dim": 200
+        "max_dim": 200,
+        "canonical": {
+          "trM": 1.0653062285923887,
+          "n_strands": 3,
+          "elem_n_terms": 4
+        }
       }
     },
     {
@@ -123,15 +129,21 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": -0.005400322224014615,
-      "trM_sign_ok": false,
+      "trM_atom_canonical": 0.3882864715477132,
+      "trM_atom_plancherel": -0.005400322224014615,
+      "trM_sign_ok": true,
       "trM_truncated": false,
       "atom_info": {
         "trM": -0.005400322224014615,
         "n_partitions_used": 11,
         "n_partitions_skipped": 0,
         "truncated": false,
-        "max_dim": 200
+        "max_dim": 200,
+        "canonical": {
+          "trM": 0.3882864715477132,
+          "n_strands": 6,
+          "elem_n_terms": 32
+        }
       }
     },
     {
@@ -146,7 +158,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": 0.004420972350259856,
+      "trM_atom_canonical": 0.004420972350259856,
+      "trM_atom_plancherel": 0.004420972350259856,
       "trM_sign_ok": true,
       "trM_truncated": true,
       "atom_info": {
@@ -154,7 +167,10 @@
         "n_partitions_used": 28,
         "n_partitions_skipped": 2,
         "truncated": true,
-        "max_dim": 200
+        "max_dim": 200,
+        "canonical": {
+          "skipped": "over CANONICAL_MAX_3A"
+        }
       }
     },
     {
@@ -169,7 +185,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": 0.0076959447422311296,
+      "trM_atom_canonical": 0.0076959447422311296,
+      "trM_atom_plancherel": 0.0076959447422311296,
       "trM_sign_ok": true,
       "trM_truncated": true,
       "atom_info": {
@@ -177,7 +194,10 @@
         "n_partitions_used": 28,
         "n_partitions_skipped": 2,
         "truncated": true,
-        "max_dim": 200
+        "max_dim": 200,
+        "canonical": {
+          "skipped": "over CANONICAL_MAX_3A"
+        }
       }
     },
     {
@@ -192,7 +212,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": 9.359832277277181e-06,
+      "trM_atom_canonical": 9.359832277277181e-06,
+      "trM_atom_plancherel": 9.359832277277181e-06,
       "trM_sign_ok": true,
       "trM_truncated": true,
       "atom_info": {
@@ -200,7 +221,10 @@
         "n_partitions_used": 14,
         "n_partitions_skipped": 63,
         "truncated": true,
-        "max_dim": 200
+        "max_dim": 200,
+        "canonical": {
+          "skipped": "over CANONICAL_MAX_3A"
+        }
       }
     },
     {
@@ -215,7 +239,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -235,7 +260,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -255,7 +281,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -275,7 +302,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -295,7 +323,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -315,7 +344,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -335,7 +365,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -355,7 +386,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -375,7 +407,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -395,7 +428,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -415,7 +449,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -435,7 +470,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -455,7 +491,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -475,7 +512,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -495,7 +533,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -515,7 +554,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -535,7 +575,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -555,7 +596,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -575,7 +617,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -595,7 +638,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -615,7 +659,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -635,7 +680,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -655,7 +701,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -675,7 +722,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -695,7 +743,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -715,7 +764,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -735,7 +785,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -755,7 +806,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -775,7 +827,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -795,7 +848,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -815,7 +869,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -835,7 +890,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -855,7 +911,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -875,7 +932,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -895,7 +953,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -915,7 +974,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -935,7 +995,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -955,7 +1016,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -975,7 +1037,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -995,7 +1058,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1015,7 +1079,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1035,7 +1100,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1055,7 +1121,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1075,7 +1142,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1095,7 +1163,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1115,7 +1184,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1135,7 +1205,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1155,7 +1226,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1175,7 +1247,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1195,7 +1268,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1215,7 +1289,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1235,7 +1310,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1255,7 +1331,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1275,7 +1352,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1295,7 +1373,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1315,7 +1394,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1335,7 +1415,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1355,7 +1436,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1375,7 +1457,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1395,7 +1478,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1415,7 +1499,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1435,7 +1520,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1455,7 +1541,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1475,7 +1562,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1495,7 +1583,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1515,7 +1604,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1535,7 +1625,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1555,7 +1646,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1575,7 +1667,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1595,7 +1688,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1615,7 +1709,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1635,7 +1730,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1655,7 +1751,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1675,7 +1772,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1695,7 +1793,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1715,7 +1814,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
@@ -1735,7 +1835,8 @@
       "neutron_final_stable": true,
       "proton_path_stable": false,
       "neutron_path_stable": false,
-      "trM_atom": null,
+      "trM_atom_canonical": null,
+      "trM_atom_plancherel": null,
       "trM_sign_ok": null,
       "trM_truncated": null,
       "atom_info": {
