@@ -367,11 +367,7 @@ def sdp_with_pair_coupling(partition_entries, pair_couplings, n_target):
         return {'y0': 0.0, 'y_lambda': {}, 'status': prob.status,
                 'cross_blocks': []}
 
-    y_result = {str(tuple(partition_entries[i]['partition'])):
-                float(y_lambda[i].value[0] if hasattr(y_lambda[i].value, '__len__')
-                      else y_lambda[i].value or 0.0)
-                for i in range(n)}
-    # Actually y_lambda is a vector — index it:
+    # y_lambda is a vector Variable; index its .value
     y_result = {str(tuple(partition_entries[i]['partition'])):
                 float(y_lambda.value[i] if y_lambda.value is not None else 0.0)
                 for i in range(n)}
@@ -699,40 +695,6 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
             'regime_transition': bool(transition),
             'transition_added': sorted(tight - (prev_tight or frozenset())),
             'transition_removed': sorted((prev_tight or frozenset()) - tight),
-        })
-        prev_tight = tight
-    return results
-
-
-def q_sweep_regime_detection_OLD(partition_entries_at_q, q_values):
-    """Sweep q-values, solve SDP at each, detect regime switches.
-
-    A regime switch is a discrete change in the set of TIGHT constraints
-    (active Frobenius inequalities) as q varies.  For the SDP this
-    corresponds to a rank change in Φ*.
-
-    partition_entries_at_q : callable q -> list of entries
-        Given q, returns the partition table with μ_λ(q) evaluated.
-    q_values : iterable of floats
-        The q-values to sweep.
-
-    Returns list of {q, y0, n_tight, y_lambda, regime_transition}.
-    """
-    results = []
-    prev_tight = None
-    for q in q_values:
-        entries = partition_entries_at_q(q)
-        sol = sdp_bulk_shadow_price(entries, n_target=1.0)
-        tight = set(name for name, y in sol['y_lambda'].items() if y < 1e-6)
-        transition = (prev_tight is not None
-                      and tight.symmetric_difference(prev_tight))
-        results.append({
-            'q': q,
-            'y0': sol['y0'],
-            'n_tight': len(tight),
-            'tight_partitions': sorted(tight),
-            'regime_transition': bool(transition),
-            'transition_set': sorted(transition) if transition else [],
         })
         prev_tight = tight
     return results

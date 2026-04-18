@@ -222,7 +222,11 @@ SIGMA_SHELL = q_int(2)                            # shell width: [2]_q ≈ 2.011
 # the (2,2) channel and the shell correction share one categorical scale.
 
 def q_hook_product(partition):
-    """q-hook product H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q  (fully symbolic in q).
+    """q-hook product H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q, evaluated numerically
+    at the global substrate q = q0 (from q_parameter).
+
+    For symbolic evaluation in q, use a sympy wrapper or the CRT
+    reconstruction in crt_markov.py.
 
     Hook length h_x = arm_x + leg_x + 1 where arm = #boxes to the right
     in the same row, leg = #boxes below in the same column.

@@ -92,23 +92,14 @@ def build_atom_crossings(Z, N, include_inter=True, m_pp=1, m_pn=1, m_nn=1):
     return crossings
 
 
-def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
-                                q_val, precision=30):
-    """Evaluate Markov trace at specific q with mpmath high precision."""
-    mpmath.mp.dps = precision
-    q = mpmath.mpf(str(q_val))
-    qi = 1 / q
-    h = q - qi
-    z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
-
+def _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h):
+    """Build crossings dict with mpmath parameters."""
     from mass_endomorphism import proton_cross, neutron_cross
     A = Z + N
     nucleon_types = ['p'] * Z + ['n'] * N
     n_strands = 3 * A
 
-    # Build crossings with q-dependent (c, d) resolved
     def resolve_cross(nucleon_chain):
-        """Convert (c, d) numeric to mpmath."""
         return [(mpmath.mpf(str(c)), mpmath.mpf(str(d))) for c, d in nucleon_chain]
 
     crossings = {}
@@ -120,19 +111,47 @@ def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
         for k in range(A - 1):
             pair = (nucleon_types[k], nucleon_types[k + 1])
             if pair == ('p', 'p'):
-                base = (mpmath.mpf(1), mpmath.mpf(0))
-                m_this = m_pp
+                base = (mpmath.mpf(1), mpmath.mpf(0)); m_this = m_pp
             elif pair == ('n', 'n'):
-                base = (mpmath.mpf(1), -h)
-                m_this = m_nn
+                base = (mpmath.mpf(1), -h); m_this = m_nn
             else:
-                base = (mpmath.mpf(1), -h / 2)
-                m_this = m_pn
+                base = (mpmath.mpf(1), -h / 2); m_this = m_pn
             crossings[3 * k + 2] = [base] * m_this
     for i in range(n_strands - 1):
         crossings.setdefault(i, [])
+    return crossings, n_strands
 
-    # Compute Markov trace as product of V_s per generator
+
+def _Phi_q_mp(z_val, q, qi, max_k=200):
+    """Quantum dilogarithm Φ_q(z) = ∏(1 - q⁻ᵏz)⁻¹ at mpmath precision."""
+    if abs(z_val) >= q:
+        return mpmath.inf
+    product = mpmath.mpf(1)
+    for k in range(1, max_k + 1):
+        factor = 1 - qi ** k * z_val
+        if abs(factor) < mpmath.mpf('1e-300'):
+            return mpmath.inf
+        product /= factor
+        term = qi ** k * abs(z_val)
+        if term < mpmath.mpf('1e-60'):
+            break
+    return product
+
+
+def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
+                                q_val, precision=30):
+    """Evaluate Markov trace (descended |ΠV_s|) at specific q.
+
+    Returns only the DESCENDED term Π V_s.  For the full tower mass,
+    use tower_mass_symbolic_eval instead.
+    """
+    mpmath.mp.dps = precision
+    q = mpmath.mpf(str(q_val))
+    qi = 1 / q
+    h = q - qi
+    z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
+    crossings, n_strands = _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h)
+
     tr_M = mpmath.mpf(1)
     for gen in range(n_strands - 1):
         a = mpmath.mpf(0)
@@ -144,6 +163,88 @@ def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
         Vs = z * a + b
         tr_M *= Vs
     return tr_M
+
+
+def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
+                              q_val, precision=30):
+    """Full tower mass 𝔪 = |ΠV̂| + ΣΦ_q(|V̂|) + z²ΣΦ_q(|V̂V̂|)
+    per prop:mass-endomorphism-tower.
+
+    Uses V_full = w_sym·V_sym + w_std·V_s + w_alt·V_alt per generator.
+    Returns dict {desc, single, cross, total, V_full_list}.
+    """
+    mpmath.mp.dps = precision
+    q = mpmath.mpf(str(q_val))
+    qi = 1 / q
+    h = q - qi
+    z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
+
+    # H_3 Wedderburn weights (additive Wedderburn, per mass_endomorphism)
+    def qint(k):
+        return (q ** k - qi ** k) / (q - qi) if k else mpmath.mpf(0)
+    nf3 = qint(1) * qint(2) * qint(3)
+    qdim_sym = mpmath.mpf(1)
+    qdim_std = qint(2)
+    qdim_alt = mpmath.mpf(1)
+    w_sym_raw = qdim_sym ** 2 / nf3
+    w_std_raw = qdim_std ** 2 / nf3
+    w_alt_raw = qdim_alt ** 2 / nf3
+    wt = w_sym_raw + w_std_raw + w_alt_raw
+    w_sym = w_sym_raw / wt
+    w_std = w_std_raw / wt
+    w_alt = w_alt_raw / wt
+
+    crossings, n_strands = _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h)
+
+    # Per-generator V_full
+    V_full_list = []
+    for gen in range(n_strands - 1):
+        a = mpmath.mpf(0); b = mpmath.mpf(1)
+        sp = mpmath.mpf(1); ap = mpmath.mpf(1)
+        for c, d in crossings[gen]:
+            a_new = a * c * h + a * d + b * c
+            b_new = a * c + b * d
+            a, b = a_new, b_new
+            sp = sp * (c * q + d)
+            ap = ap * (-c * qi + d)
+        Vs = z * a + b
+        V_full = w_sym * sp + w_std * Vs + w_alt * ap
+        V_full_list.append(V_full)
+
+    # Descended term |ΠV̂|
+    desc = mpmath.mpf(1)
+    for V in V_full_list:
+        desc *= V
+    desc_abs = abs(desc)
+
+    # Single-generator Φ_q tower: Σ Φ_q(|V̂_i|)
+    single_tower = mpmath.mpf(0)
+    for V in V_full_list:
+        V_abs = abs(V)
+        if V_abs < q:
+            phi = _Phi_q_mp(V_abs, q, qi)
+            if mpmath.isinf(phi):
+                single_tower = mpmath.inf
+                break
+            single_tower += phi
+
+    # Adjacent-pair cross tower: z² Σ_{|i-j|=1} Φ_q(|V̂_i V̂_j|)
+    cross_tower = mpmath.mpf(0)
+    if not mpmath.isinf(single_tower):
+        for i in range(len(V_full_list) - 1):
+            VV = abs(V_full_list[i] * V_full_list[i + 1])
+            if VV < q:
+                phi_pair = _Phi_q_mp(VV, q, qi)
+                if mpmath.isinf(phi_pair):
+                    cross_tower = mpmath.inf
+                    break
+                cross_tower += z ** 2 * phi_pair
+
+    total = desc_abs + single_tower + cross_tower
+    return {
+        "desc": desc_abs, "single": single_tower, "cross": cross_tower,
+        "total": total, "V_full_list": V_full_list,
+    }
 
 
 def crt_polynomial_fit(Z, N, include_inter, m_pp, m_pn, m_nn,
@@ -177,6 +278,45 @@ def tr_M_at_q0_via_crt(Z, N, include_inter, m_pp, m_pn, m_nn,
     tr_M_q0 = markov_trace_symbolic_eval(
         Z, N, include_inter, m_pp, m_pn, m_nn, q0_val, precision=precision)
     return tr_M_q0
+
+
+def test_tower_binding():
+    """Test FULL tower binding (descended + Φ_q terms) across atoms."""
+    mpmath.mp.dps = 50
+    q0 = mpmath.mpf('1.1099785955541805')
+    print("FULL TOWER BINDING (descended + Σ Φ_q + z² Σ Φ_q cross)")
+    print("=" * 88)
+    print(f"q_0 = {q0}")
+
+    # Calibration from single-nucleon proton tower
+    m_p_tower = tower_mass_symbolic_eval(1, 0, False, 1, 1, 1, q0, 50)
+    E_0_tower = mpmath.mpf('938.272') / m_p_tower["total"]
+    print(f"m_p_tower = {m_p_tower['total']!s}")
+    print(f"E_0_tower = {E_0_tower!s} MeV/cat.unit")
+    print()
+
+    ATOMS_FULL = [
+        ("D",    1,  1,   2.22,  1, 1, 1),
+        ("T",    1,  2,   8.48,  1, 1, 1),
+        ("3He",  2,  1,   7.72,  1, 1, 1),
+        ("4He",  2,  2,  28.30,  1, 1, 1),
+        ("6Li",  3,  3,  32.00,  1, 1, 1),
+        ("12C",  6,  6,  92.16,  1, 1, 1),
+        ("16O",  8,  8, 127.62,  1, 1, 1),
+    ]
+
+    print(f"  {'Atom':>6} {'A':>3} {'m_free':>15} {'m_atom':>15} "
+          f"{'B_pred':>10} {'B_AME':>8} {'|Δm/m|%':>9}")
+    print("  " + "-" * 84)
+    for atom, Z, N, B_AME, mp, mpn, mn in ATOMS_FULL:
+        mf = tower_mass_symbolic_eval(Z, N, False, mp, mpn, mn, q0, 50)
+        ma = tower_mass_symbolic_eval(Z, N, True, mp, mpn, mn, q0, 50)
+        B = float(E_0_tower * (mf["total"] - ma["total"]))
+        M_total = (Z + N) * 938.272
+        dm = abs(B - B_AME) / M_total * 100
+        print(f"  {atom:>6} {Z+N:>3d} {float(mf['total']):>15.4e} "
+              f"{float(ma['total']):>15.4e} {B:>10.4f} "
+              f"{B_AME:>8.2f} {dm:>8.4f}%")
 
 
 if __name__ == "__main__":

@@ -2167,7 +2167,7 @@ export const references: CSLData[] = [
       "with branching weights determined by q-hook products.",
   }),
 
-  // ── Féray-Méliot 2010 (q-Plancherel CLT) ──────────────────────
+  // ── Féray-Méliot 2012 (q-Plancherel CLT) ──────────────────────
   ref({
     id: "feray-meliot2012",
     type: "article-journal",

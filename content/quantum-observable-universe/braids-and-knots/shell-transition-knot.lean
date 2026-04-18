@@ -49,7 +49,7 @@ def shellTransitionStates (N : ℕ) : ℕ := 2 * (N + 1)
 def borromeanCrossingNumber : ℕ := 3
 
 /-- The shell-transition threshold: N ≥ borromeanCrossingNumber. -/
-def isShell-transition (N : ℕ) : Bool := N ≥ borromeanCrossingNumber
+def isShellTransition (N : ℕ) : Bool := N ≥ borromeanCrossingNumber
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §3. Stability pairs from shell-transition mechanism
@@ -91,16 +91,16 @@ theorem fourth_pair :
   native_decide
 
 /-- Shell-transition states for N = 3, 4, 5, 6. -/
-theorem shell-transition_counts :
+theorem shellTransition_counts :
     [shellTransitionStates 3, shellTransitionStates 4,
      shellTransitionStates 5, shellTransitionStates 6] = [8, 10, 12, 14] := by
   native_decide
 
 /-- The shell-transition threshold is exactly at N = 3 = borromeanCrossingNumber. -/
-theorem shell-transition_threshold :
-    ∀ N, isShell-transition N = true ↔ N ≥ 3 := by
+theorem shellTransition_threshold :
+    ∀ N, isShellTransition N = true ↔ N ≥ 3 := by
   intro N
-  simp [isShell-transition, borromeanCrossingNumber]
+  simp [isShellTransition, borromeanCrossingNumber]
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §4. The key formula: HO level spacing vs spin-orbit coupling
