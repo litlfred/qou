@@ -235,6 +235,29 @@ fn binding_ha(
     h_a_tower::binding_ha(z, n, m_pp, m_pn, m_nn, q_val, m_e)
 }
 
+/// H_{A+Z}(q) 3-channel binding with Z bound electrons appended to
+/// the atom braid (user: "B needs electrons", 2026-04-19).
+///
+/// Per prop:tower-binding-energy, M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N);
+/// electron binding is absorbed into B.  Electrons appear as strand
+/// code 2 with default T_{2,3} trefoil gluon and EM-channel
+/// inter-crossings against nucleons.
+#[pyfunction]
+#[pyo3(signature = (z, n, m_pp=1, m_pn=1, m_nn=1, q=None, m_e_mev=None))]
+fn binding_ha_with_electrons(
+    z: u32,
+    n: u32,
+    m_pp: u32,
+    m_pn: u32,
+    m_nn: u32,
+    q: Option<f64>,
+    m_e_mev: Option<f64>,
+) -> f64 {
+    let q_val = q.unwrap_or(nf::Q_0);
+    let m_e = m_e_mev.unwrap_or(0.51099895);
+    h_a_tower::binding_ha_with_electrons(z, n, m_pp, m_pn, m_nn, q_val, m_e)
+}
+
 /// H_A(q) 3-channel binding with explicit ordering + per-nucleon gluon
 /// tokens. Use this for nucleon-ordering SDP, joint SDP, etc.
 ///
@@ -281,6 +304,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
     m.add_function(wrap_pyfunction!(sdp_decide, m)?)?;
     m.add_function(wrap_pyfunction!(binding_ha, m)?)?;
+    m.add_function(wrap_pyfunction!(binding_ha_with_electrons, m)?)?;
     m.add_function(wrap_pyfunction!(binding_ha_custom, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review

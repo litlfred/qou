@@ -22,17 +22,27 @@
 //! symbolic (sympy) version used for content block numerics.  This
 //! Rust port is purely numerical at a given q.
 
-/// Per-pair (c, d) for the inter-nucleon crossing.
+/// Per-pair (c, d) for the inter-particle crossing.
 ///
-/// `ti`, `tj` ∈ {0 = neutron, 1 = proton}.  `h = q − q⁻¹`.
+/// Particle codes:  0 = neutron (n), 1 = proton (p), 2 = electron (e).
+/// `h = q − q⁻¹`.
+///
+/// Strong-channel crossings: pp = σ₀, nn = σ₀⁻¹, pn = symmetric mix.
+/// EM-channel crossings: pe = σ₀⁻¹ (strong Coulomb binding),
+///                        ne = identity-like (neutral), ee = σ_0.
+/// The (c, d) form follows the per prop:tower-binding-energy general
+/// Hecke relation — small-d on strongly attractive pairs.
 #[inline]
 fn crossing_coeffs(ti: u8, tj: u8, h: f64) -> (f64, f64) {
-    if ti == 1 && tj == 1 {
-        (1.0, 0.0)          // pp: σ_0
-    } else if ti == 0 && tj == 0 {
-        (1.0, -h)            // nn: σ_0⁻¹
-    } else {
-        (1.0, -h / 2.0)      // pn / np: symmetric mixture
+    match (ti, tj) {
+        (1, 1) => (1.0, 0.0),          // pp
+        (0, 0) => (1.0, -h),            // nn
+        (1, 0) | (0, 1) => (1.0, -h / 2.0),   // pn
+        // Electron couplings (EM channel):
+        (1, 2) | (2, 1) => (1.0, -h / 2.0),   // pe (Coulomb attractive)
+        (0, 2) | (2, 0) => (1.0, 0.0),        // ne (no direct EM)
+        (2, 2) => (1.0, -h),                   // ee (Pauli mix)
+        _ => (1.0, 0.0),
     }
 }
 
@@ -90,6 +100,7 @@ fn gluon_crossings(token: &str, h: f64) -> Vec<(f64, f64)> {
         "s1" => vec![(1.0, -h)],
         "Lp" => vec![(1.0, 0.0), (1.0, -h)],
         "Lm" => vec![(1.0, -h), (1.0, 0.0)],
+        "trefoil" => vec![(1.0, 0.0), (1.0, 0.0), (1.0, 0.0)],  // T_{2,3} = σ³
         _ => panic!("unknown gluon token: {}", token),
     }
 }
@@ -141,10 +152,20 @@ fn per_gen_volumes_ha(
     (sym_v, z * a + b, alt_v)
 }
 
-/// Default gluons: "s0s0" on protons, "s0x4" on neutrons — matches
-/// `full-tower-mass.py`.
+/// Default gluons per particle type:
+///   proton (1)   → "s0s0" (2·σ₀)
+///   neutron (0)  → "s0x4" (4·σ₀)
+///   electron (2) → "none" (atomic binding is ~keV scale,
+///                  orders of magnitude smaller than nuclear MeV;
+///                  self-coupling of bound electrons is ~0 in the
+///                  Hecke-tower framework).
 fn default_gluons(ordering: &[u8]) -> Vec<&'static str> {
-    ordering.iter().map(|&t| if t == 1 { "s0s0" } else { "s0x4" }).collect()
+    ordering.iter().map(|&t| match t {
+        1 => "s0s0",
+        0 => "s0x4",
+        2 => "none",
+        _ => "none",
+    }).collect()
 }
 
 /// Nuclear binding energy with an explicit ordering + gluons vector.
@@ -198,6 +219,37 @@ pub fn binding_ha(
     m_e_mev: f64,
 ) -> f64 {
     let ordering = ground_state_ordering(z, n);
+    let gluons = default_gluons(&ordering);
+    binding_ha_custom(&ordering, &gluons, m_pp, m_pn, m_nn, q, m_e_mev)
+}
+
+/// Binding energy with Z bound electrons appended to the atom braid.
+///
+/// Per user (2026-04-19) "B needs electrons": the proposition's
+/// M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N) has Z free electrons in
+/// the first three terms; binding of those electrons to the nucleus
+/// (Coulomb / QED) is absorbed into B(Z, N).  At the H_A tower level,
+/// we extend the algebra from H_A(q) (nucleons only) to H_{A+Z}(q)
+/// by appending Z "electron" strands (particle code 2) to the
+/// ordering.  Each electron has the default T_{2,3} trefoil gluon;
+/// inter-crossings between electrons and nucleons use the EM-channel
+/// (c, d) values in `crossing_coeffs`.
+///
+/// Reduces to `binding_ha` when `z == 0` (no electrons).
+pub fn binding_ha_with_electrons(
+    z: u32,
+    n: u32,
+    m_pp: u32,
+    m_pn: u32,
+    m_nn: u32,
+    q: f64,
+    m_e_mev: f64,
+) -> f64 {
+    // Nuclear ordering + electrons appended.
+    let mut ordering = ground_state_ordering(z, n);
+    for _ in 0..z {
+        ordering.push(2);                       // electron
+    }
     let gluons = default_gluons(&ordering);
     binding_ha_custom(&ordering, &gluons, m_pp, m_pn, m_nn, q, m_e_mev)
 }
