@@ -93,8 +93,8 @@ noncomputable def qou_obstruction_reduction
   euler_class_eq := rfl
   kummer_vanishes_iff := by
     -- Ref: [manuscript] §algebraic-substrate/qou-obstruction-reduction
-    -- Standard: `χ % n = 0 ↔ n ∣ χ` (see Mathlib `Int.emod_eq_zero_iff_dvd`).
+    -- Standard: `χ % n = 0 ↔ n ∣ χ` — direct Mathlib identity.
     intro n _
-    sorry
+    exact Int.emod_eq_zero_iff_dvd _ _
 
 end QOU.AlgebraicSubstrate

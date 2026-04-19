@@ -234,10 +234,6 @@ for (const chapter of chapters) {
   if (stubs.length === 0) continue;
 
   const target = targetFor(chapter);
-  // Refine each stub's final decl name: the namespace might change
-  // under a Stubs-suffix if there was a collision.
-  const stubNamespace = stubs[0].originalDecl.split(".").slice(0, -1).join(".");
-  const finalNs = stubNamespace === target.ns ? target.ns : target.ns;
 
   console.log(`\n═══ ${chapter} → ${target.file}  [${target.ns}] ═══`);
   console.log(`  ${stubs.length} stubs to migrate`);
