@@ -15,6 +15,7 @@ export default proposition({
     "def:confinement-category",
     "prop:confinement-sdp",
     "prop:confinement-topological",
+    "prop:confinement-phase-stratification",
   ],
   tags: [
     "stability",

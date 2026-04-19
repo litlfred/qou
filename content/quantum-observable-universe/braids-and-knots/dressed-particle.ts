@@ -12,6 +12,7 @@ export default definition({
     "def:electron-shell",
     "def:confinement-category",
     "prop:confinement-sdp",
+    "prop:confinement-phase-stratification",
   ],
   tags: [
     "morphism",

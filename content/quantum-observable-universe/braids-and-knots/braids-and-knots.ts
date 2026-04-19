@@ -350,6 +350,8 @@ export default chapter({
         "shell-closure-stability-interprets",
         "level-sufficiency",
         "level-sufficiency-interprets",
+        "confinement-phase-stratification",
+        "phase-scoped-applicability",
         "atom-knot",
         "atom-knot-exists",
         "atom-knot-unique",

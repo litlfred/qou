@@ -10,6 +10,7 @@ export default definition({
   uses: [
     "def:confined-particle",
     "prop:confinement-sdp",
+    "prop:confinement-phase-stratification",
     "def:hecke-normal-form",
   ],
   tags: [

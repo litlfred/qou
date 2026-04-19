@@ -11,6 +11,7 @@ export default definition({
     "def:hecke-normal-form",
     "def:confinement-level",
     "prop:confinement-sdp",
+    "prop:confinement-phase-stratification",
   ],
   tags: [
     "confinement",

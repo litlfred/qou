@@ -16,6 +16,7 @@ export default proposition({
     "prop:confinement-sdp",
     "prop:confinement-topological",
     "prop:confinement-operator-selection",
+    "prop:confinement-phase-stratification",
   ],
   tags: [
     "confinement",
