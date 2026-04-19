@@ -67,46 +67,111 @@ class SDPResult:
 
 # ── Level 3 : inter-nucleon pair SDP ───────────────────────────────────
 
-def solve_pair_sdp(**params) -> SDPResult:
-    """Level 3 SDP: adjacent inter-nucleon pair 2×2 PSD constraint.
+def solve_pair_sdp(
+    target_net: float = 1.0,
+    c: Any = None,
+    label: str = "pyhecke.sdp.level3",
+    **_: Any,
+) -> SDPResult:
+    """Level 3 SDP: inter-nucleon pair Lasserre moment relaxation.
 
-    Thin wrapper around the existing `sdp_cross_channel.py` driver so
-    callers can address all levels through `multi_level_sdp(...)`.
+    Uses the canonical `sdp_moment_lift.lp_vs_sdp_report` helper:
+    enforces the quadratic Frobenius positivity `tr(G·X) ≥ 0` on the
+    full 6×6 H_3(q) Gram matrix via a moment-matrix PSD variable
+
+        M = [[1, xᵀ], [x, X]] ⪰ 0,  tr(G·X) ≥ 0,  Σ x_i = target_net.
+
+    This is a strict upgrade over the earlier componentwise
+    `G·x ≥ 0` LP — which 10/10 LP files violate at q₀ per
+    ``sdp_lift_audit``.
+
+    Parameters
+    ----------
+    target_net : float
+        Sum constraint on the NF vector (Σ x_i = target_net). Default
+        1.0 matches the unit-net normalisation used in most LPs.
+    c : array-like or None
+        Objective vector `c @ x` to minimise. Defaults to the Markov-
+        trace weights `TR_M` (minimises Markov trace subject to
+        Frobenius positivity).
+    label : str
+        Identifier carried through to `SdpLiftReport.label`.
+
+    Returns
+    -------
+    SDPResult
+        primal: `{x, xTGx, sdp_tr_GX, moment_rank, gram_min_eigenvalue}`
+        status: "optimal" iff both LP and SDP reach optimality.
     """
     from . import _legacy  # noqa: F401
     try:
-        from sdp_cross_channel import continuous_sdp_pair_coupling  # type: ignore[import-not-found]
+        from sdp_moment_lift import lp_vs_sdp_report  # type: ignore[import-not-found]
+        import numpy as np  # noqa: F401
     except ImportError as e:
         return SDPResult(
             level=3,
             status="not_implemented",
-            caveats=[f"sdp_cross_channel not importable: {e}"],
+            caveats=[f"sdp_moment_lift / cvxpy not available: {e}"],
         )
 
-    # Leave parameter plumbing to the caller; for M3b we just ensure
-    # the entrypoint exists and routes correctly.
+    import numpy as np
+    from .gram import G, TR_M
+
+    if c is None:
+        c = np.asarray(TR_M).flatten()
+    else:
+        c = np.asarray(c, dtype=float).flatten()
+
     try:
-        out = continuous_sdp_pair_coupling(**params)  # type: ignore[misc]
-    except TypeError:
-        # Different signature than expected — fall back to a no-arg invocation.
+        rep = lp_vs_sdp_report(
+            c=c,
+            G=np.asarray(G),
+            A_eq=np.ones((1, 6)),
+            b_eq=np.array([float(target_net)]),
+            label=label,
+        )
+    except ImportError as e:
         return SDPResult(
             level=3,
-            status="unknown",
-            caveats=[
-                "continuous_sdp_pair_coupling signature mismatch — upstream "
-                "changed; re-check parameter list before reviving this path."
-            ],
+            status="not_implemented",
+            caveats=[f"cvxpy required for Lasserre lift: {e}"],
         )
-    if isinstance(out, dict):
-        return SDPResult(
-            level=3,
-            status=str(out.get("status", "unknown")),
-            objective=out.get("objective"),
-            primal=out.get("primal"),
-            dual=out.get("dual"),
-            caveats=list(out.get("caveats", [])),
-        )
-    return SDPResult(level=3, status="unknown", caveats=["non-dict return"])
+
+    # Map the SdpLiftReport onto the dispatcher's SDPResult.
+    ok = rep.sdp_status in {"optimal", "optimal_inaccurate"}
+    return SDPResult(
+        level=3,
+        status=rep.sdp_status if ok else (rep.sdp_status or "unknown"),
+        objective=rep.sdp_objective if ok else None,
+        primal={
+            "x": rep.sdp_x,
+            "xTGx": rep.sdp_xTGx,
+            "sdp_tr_GX": rep.sdp_tr_GX,
+            "moment_rank": rep.sdp_moment_rank,
+            "gram_min_eigenvalue": rep.gram_min_eigenvalue,
+            "target_net": float(target_net),
+        },
+        dual={
+            "lp_x": rep.lp_x,
+            "lp_xTGx": rep.lp_xTGx,
+            "lp_status": rep.lp_status,
+            "lp_objective": rep.lp_objective,
+        },
+        psd_blocks=[
+            {
+                "name": "moment_matrix_7x7",
+                "size": 7,
+                "trace_GX": rep.sdp_tr_GX,
+                "rank": rep.sdp_moment_rank,
+                "frobenius_feasible": rep.sdp_tr_GX >= -1e-9,
+            }
+        ],
+        caveats=[
+            f"LP: xᵀGx = {rep.lp_xTGx:.4f} {'(Frobenius-invalid)' if rep.lp_xTGx < 0 else '(Frobenius-valid)'}",
+            f"SDP: tr(G·X) = {rep.sdp_tr_GX:.4f} (moment-cone lift)",
+            "See folio-assistant/computations/sdp_moment_lift.py for details.",
+        ],
+    )
 
 
 # ── Levels 4-7 : skeleton SDPs ─────────────────────────────────────────
