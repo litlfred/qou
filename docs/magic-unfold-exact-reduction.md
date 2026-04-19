@@ -191,14 +191,68 @@ So magic-unfold:
 - Identifies the non-trivial computation = valence physics
 - Makes 6Li / 12C / 16O / 40Ca tractable for the first time
 
-## Action plan
+## Prerequisite: braid-word reordering
 
-1. **Prototype `magic_unfold_trM`** for 6Li (first non-trivial
-   case past 4He): core (4He) = scalar × inter-shell z-factor;
-   valence (D-like pn) = H_6 partition sum.  Validate against
-   full H_{18} tr_M to confirm exactness.
-2. **Extend to `atom_sdp_gluon_search`**: use magic-unfold tr_M
-   in the per-combination cost.  Unlocks 4He / 6Li / 9Be / 12C
-   gluon searches.
-3. **Formalize** in a new paper block `prop:magic-unfold-peel`
-   derived from the Markov axiom.
+The current `atom_braid_word_3A` uses ALL generators σ_0 through
+σ_{3A-2} without an unused "top" generator, so naive Markov peel
+doesn't apply out of the box.  The word is structured as:
+
+```
+  [B₃ + quarks + gluon for nucleon 0]  at gens {0, 1}
+  [inter-nucleon 0→1 crossings]        at gen 2
+  [B₃ + quarks + gluon for nucleon 1]  at gens {3, 4}
+  [inter-nucleon 1→2 crossings]        at gen 5
+  ...
+  [B₃ + quarks + gluon for nucleon A−1] at gens {3(A−1), 3A−2}
+```
+
+The LAST operation uses σ_{3A−2} — no σ_{top−1} = σ_{3A−1} is ever
+accessible (there's no such generator in H_{3A}), so we can't
+Markov-peel in the current ordering.
+
+**Required change for magic-unfold:**
+
+Reorder so that core nucleons (Z_c + N_c of them) are fully
+processed first, then valence.  The key structural requirement:
+the VALENCE portion's braid word should be a product of σ_i for
+i ≥ 3·(Z_c+N_c), so that after building the core, peeling the
+valence via Markov axioms reduces to a smaller H_n-level
+computation.
+
+New braid constructor:
+
+```python
+def atom_braid_word_core_valence(Z_c, N_c, Z_v, N_v, gluons):
+    """Atom braid with core nucleons FIRST (gens 0..3C−1),
+    valence SECOND (gens 3C..3A−2), and shell-coupling crossing
+    at gen 3C−1 between the two."""
+    ...
+```
+
+Once this exists, the magic-unfold is a 2-step computation:
+  1. tr_M(core-only word) — H_{3C} partition sum
+  2. tr_M(valence word attached via shell-coupling) — H_{3(A-C)}
+     partition sum plus one shell-coupling z factor
+Product × z^K gives tr_M(atom).
+
+## Action plan (revised)
+
+1. **Implement `atom_braid_word_core_valence`** with core-first /
+   valence-second ordering.  Verify: tr_M reproduces existing
+   atom tr_M on non-magic atoms (Z_c = N_c = 0) modulo z-factor
+   conventions.
+2. **Implement `magic_unfold_trM(Z, N, gluons)`** using the
+   reordered braid word.  Validate on 4He: doubly-magic, full
+   peel to scalar.  Should match `atom_sdp_gluon_search`'s
+   Plancherel value.
+3. **Extend `atom_sdp_gluon_search`** to offer
+   `method={"plancherel", "magic_unfold"}` (paralleling the
+   removed transfer method, but EXACT).  Unlocks 6Li/9Be/12C
+   gluon searches with no approximation.
+4. **Formalize** as `prop:magic-unfold-peel` derived rigorously
+   from the Markov axiom.
+
+Session decision (2026-04-19): the braid-word reordering is
+non-trivial and was not completed in this session.  Magic-unfold
+remains the correct EXACT reduction for heavy atoms; its
+implementation is the main remaining mass-prediction lever.
