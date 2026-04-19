@@ -141,9 +141,11 @@ def hm(nf, c, d, gen):
     Rust — one marshal per atom) instead of looping ``hm`` from Python.
     """
     if _HAS_NATIVE:
-        # `list(nf)` handles both list and numpy-array inputs;
-        # the native layer allocates a length-6 Vec internally.
-        return list(_native.hm(list(nf), float(c), float(d), int(gen)))
+        # `list(nf)` handles both list and numpy-array inputs. PyO3
+        # already converts the returned `Vec<f64>` to a Python list,
+        # so no outer `list(...)` wrapper is needed
+        # (Gemini review on PR #387).
+        return _native.hm(list(nf), float(c), float(d), int(gen))
     return _hm_pure(nf, c, d, gen)
 
 

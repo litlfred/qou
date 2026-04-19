@@ -297,12 +297,24 @@ fn main() {
 
     eprintln!("  {} feasible partitions (dim ≤ {})", parts_with_dim.len(), max_dim);
 
-    // Wedderburn weights
-    let weights: Vec<(Vec<usize>, usize, f64)> = parts_with_dim.iter()
-        .map(|(p, dim, dq)| (p.clone(), *dim, dq*dq / total_dsq))
-        .collect();
+    // Wedderburn weights — precompute the per-partition SYT set and
+    // its index map once here. The tableaux depend only on the
+    // partition shape, not on `k`, so we move them out of the bond-
+    // crossing scan loop (Gemini review on PR #387: avoid redundant
+    // O(k_max) recomputations of `generate_syt_general`).
+    let weights: Vec<(Vec<usize>, usize, f64, Vec<SYT>, HashMap<SYT, usize>)> =
+        parts_with_dim.iter()
+            .map(|(p, dim, dq)| {
+                let tabs = generate_syt_general(p);
+                let mut tab_idx = HashMap::with_capacity(tabs.len());
+                for (i, t) in tabs.iter().enumerate() {
+                    tab_idx.insert(t.clone(), i);
+                }
+                (p.clone(), *dim, dq * dq / total_dsq, tabs, tab_idx)
+            })
+            .collect();
 
-    for (p, dim, w) in &weights {
+    for (p, dim, w, _, _) in &weights {
         eprintln!("    {:?}: dim={}, w={:.6}", p, dim, w);
     }
 
@@ -317,13 +329,11 @@ fn main() {
     for k in 0..=max_k {
         // Each partition is independent — parallelize the per-irrep
         // trace computation with rayon. Captures (mol, sb, q0, ha, k,
-        // z1..n2, na) are Copy/&[_] and therefore Sync. The per-iter
-        // `tabs`, `tab_idx`, and working vector `v` are thread-local.
-        let weighted_tr: f64 = weights.par_iter().map(|(part, _dim, w)| {
-            let tabs = generate_syt_general(part);
+        // z1..n2, na) are Copy/&[_] and therefore Sync. `tabs` and
+        // `tab_idx` are borrowed read-only from the precomputed
+        // `weights` structure above.
+        let weighted_tr: f64 = weights.par_iter().map(|(_part, _dim, w, tabs, tab_idx)| {
             let dim = tabs.len();
-            let mut tab_idx = HashMap::new();
-            for (i, t) in tabs.iter().enumerate() { tab_idx.insert(t.clone(), i); }
 
             let mut trace = 0.0f64;
             for j in 0..dim {
