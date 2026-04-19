@@ -8,7 +8,7 @@
 //! polynomials — the `reduce_nf` machinery lives in the sibling
 //! [`crate::nf`] module.
 
-use crate::nf::{hecke_h, markov_z, Q_0};
+use crate::nf::markov_z;
 
 /// Multiply an NF element by `(c · σ_gen + d · 1)`.
 ///
@@ -334,6 +334,7 @@ pub fn atom_per_generator_volumes(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::nf::{hecke_h, Q_0};
 
     #[test]
     fn hm_identity_on_gamma() {
@@ -374,5 +375,86 @@ mod tests {
         for i in 1..6 {
             assert!(nf[i].abs() < 1e-14);
         }
+    }
+
+    /// Anchor the Rust `build_atom_nf` output for D, T, ³He, ⁴He to
+    /// reference values captured from the Python `hecke_core.build_atom_nf`
+    /// implementation after the gluon-count fix (PR #387 / commit e9555dc).
+    ///
+    /// These values would have flagged the `2·σ₀ → 1·σ₀` drift
+    /// immediately. Anchor tolerance is 1e-14 — byte-identical against
+    /// the Python reference.
+    fn assert_nf_close(got: [f64; 6], want: [f64; 6], label: &str) {
+        for i in 0..6 {
+            assert!(
+                (got[i] - want[i]).abs() < 1e-14,
+                "{}: component {} = {} but expected {} (Δ = {:.3e})",
+                label, i, got[i], want[i], (got[i] - want[i]).abs(),
+            );
+        }
+    }
+
+    #[test]
+    fn build_atom_nf_deuterium_anchor() {
+        // Deuterium (Z=1, N=1) — captured from Python reference.
+        let h = hecke_h(Q_0);
+        let nf = build_atom_nf(1, 1, h);
+        let want = [
+            0.07906980016041938,
+            0.03081047272161687,
+            -0.023573832439791872,
+            1.0365975259780913,
+            -0.07330449849547012,
+            -0.09753323222314403,
+        ];
+        assert_nf_close(nf, want, "deuterium D");
+    }
+
+    #[test]
+    fn build_atom_nf_tritium_anchor() {
+        // Tritium (Z=1, N=2).
+        let h = hecke_h(Q_0);
+        let nf = build_atom_nf(1, 2, h);
+        let want = [
+            1.0499136673052372,
+            -0.0919745969167634,
+            0.011010789075463379,
+            -0.05637357079266976,
+            0.0337216048367702,
+            0.08211068751035897,
+        ];
+        assert_nf_close(nf, want, "tritium T");
+    }
+
+    #[test]
+    fn build_atom_nf_helium3_anchor() {
+        // Helium-3 (Z=2, N=1).
+        let h = hecke_h(Q_0);
+        let nf = build_atom_nf(2, 1, h);
+        let want = [
+            -0.09594932576763585,
+            0.05640138172644632,
+            1.0462524512200269,
+            0.32182313719525707,
+            0.00884093610261389,
+            -0.07828524176710339,
+        ];
+        assert_nf_close(nf, want, "helium-3");
+    }
+
+    #[test]
+    fn build_atom_nf_helium4_anchor() {
+        // Helium-4 (Z=2, N=2).
+        let h = hecke_h(Q_0);
+        let nf = build_atom_nf(2, 2, h);
+        let want = [
+            1.0848298163930892,
+            0.01137427995641008,
+            -0.07551276178296537,
+            -0.08514672560596817,
+            0.006870765197978325,
+            0.2909333525459163,
+        ];
+        assert_nf_close(nf, want, "helium-4");
     }
 }
