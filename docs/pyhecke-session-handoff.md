@@ -196,6 +196,80 @@ Current M3b++ solvers are first-cut heuristics:
   three together. `test_native.py::test_native_version_bumped_to_X_Y_Z`
   pins the expected version.
 
+---
+
+## Phase A / B optimization round (session 2)
+
+Follow-up session ran through most of the optimization workplan
+(`docs/pyhecke-optimization-workplan.md`). Commits on
+`claude/add-quantum-gol-n5YS1`:
+
+| Item | Commit | Impact |
+|:--|:--|:--|
+| **A1** | `6cec48c` | Lazy `pyhecke/__init__.py` — `import pyhecke` 26 ms (was seconds) |
+| **A2** | `6cec48c` | `jsonschema` validator `lru_cache` — 100 validator calls 1.2 ms total |
+| **A3** | `6cec48c` | `WitnessBuilder.is_fresh()` staleness API for script-level skip |
+| **B1** | `d93b434` | Lazy `_PARTITION_TABLE` — **hecke_core 42 s → 217 ms (195×)**; pytest wall 47 s → 1.6 s |
+| **B3** | `be4fdfe` | Side-effect audit of 26 scripts (all standalone, no import tax today) |
+| **B4** | `3ea4c1d` | `run_pipeline.py -j N` level-grouped `ProcessPoolExecutor` |
+| **B2** | `0615c83` | PyO3 `build_atom_nf` — **⁴⁰Ca 2.7 ms → 0.025 ms (105×)** byte-identical |
+| **B2+** | `1c8afb4` | PyO3 `atom_per_generator_volumes` — ⁴⁰Ca 6× byte-identical |
+| **B2++** | `586964d` | `pyhecke.gram.build_atom_nf` / `atom_per_generator_volumes` transparent dispatch |
+| **B2+++** | `6002101` + `07ea710` | 15 consumer scripts migrated to `pyhecke.gram` imports |
+
+### Native wheel
+
+`tools/pyhecke-native/` v**0.4.0** now exposes:
+
+```
+pyhecke_native.markov_z(q)
+pyhecke_native.hecke_h(q)
+pyhecke_native.trace_weights(q) -> list[6]
+pyhecke_native.gram_matrix(q) -> list[list[6]]
+pyhecke_native.gram_determinant(q)
+pyhecke_native.gram_inverse(q)
+pyhecke_native.hm(nf, c, d, gen, h=None) -> list[6]
+pyhecke_native.nf_tr(nf, q=None)
+pyhecke_native.nf_net(nf)
+pyhecke_native.build_atom_nf(z, n, h=None) -> list[6]
+pyhecke_native.atom_per_generator_volumes(z, n, include_inter=True,
+    crossings_per_pair=1, m_pp=None, m_pn=None, m_nn=None, q=None)
+    -> list[dict{sym, std, alt, full}]
+```
+
+Version pinned via `env!("CARGO_PKG_VERSION")` — no more 3-place
+drift.
+
+### End-to-end witness runs (after all optimizations)
+
+Example wall-times with native wheel installed:
+- `tower_binding_full.py` (30 atoms D → ⁴⁰Ca): 4.65 s
+- `descent_rate_probe.py`: 9.64 s
+- `multi_level_jet_sum.py`: 0.52 s
+
+Before the session these would have been tens-to-hundreds of seconds
+per script, dominated by the 42 s hecke_core cold import and the
+heavy build_atom_nf Python loop.
+
+### Remaining workplan items (deferred)
+
+| Item | Workplan estimate | Why deferred |
+|:--|:--|:--|
+| B5 startup_cache adoption | 2 h | Mooted by B1 (217 ms import — cache saves nothing) |
+| B6 Rust crate split | 2-4 h | Invisible to users; unblocks B7 only |
+| B7 cert regen hash-skip | 2 h | Depends on B6 and CI budget |
+| C1 Rust exact `build_atom_nf` | 6-10 h | Research-grade; needs `num-rational::BigInt` integration |
+| C2 Rust CRT reconstruction | 6-10 h | Research-grade; unlocks heavy-atom symbolic exact-in-q |
+
+### Non-trivial migration residue
+
+Not migrated in B2+++ — each requires hands-on:
+- `molecular-frobenius-lp.py`, `molecular-integer-lp.py` define their
+  own local `build_atom_nf` — must replace the function, not just the
+  import.
+- `universal-ilp.py` uses `from hecke_core import *`.
+- `mass_at_3A_proper.py` imports internal `_PROTON_G0` primitives.
+
 ## Reference
 
 - Plan file: `/root/.claude/plans/want-to-ask-reverse-precious-porcupine.md`
