@@ -497,6 +497,41 @@ for nucleon_name, quark_types, target_net in [
 #  WITNESS
 # ══════════════════════════════════════════════════════════════
 
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+# The Gram matrix G has a negative eigenvalue (-0.74) at q₀, so the
+# componentwise `G·x ≥ 0` constraint enforced above is STRICTLY
+# weaker than the quadratic Frobenius positivity `xᵀG x ≥ 0`.  The
+# LP solutions here violate the quadratic form (see sdp_lift_audit).
+# We add a Lasserre moment-matrix SDP lift below to report both the
+# LP answer (kept for narrative continuity) and the SDP-valid one.
+
+print(f"\n{'═' * 80}")
+print("  SDP LIFT VALIDATION")
+print(f"{'═' * 80}")
+
+sdp_reports = []
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+
+    for _nuc_name, _qt in [("proton", ['u', 'u', 'd']),
+                             ("neutron", ['u', 'd', 'd'])]:
+        _confined = apply_typed_crossings(b3_vec, _qt)
+        _net = float(np.sum(_confined))
+        _rep = lp_vs_sdp_report(
+            c=TR_M_BASIS, G=G,
+            A_eq=np.ones((1, 6)),
+            b_eq=np.array([_net]),
+            label=f"confinement/{_nuc_name}")
+        for _line in _rep.summary_lines():
+            print(_line)
+        print()
+        sdp_reports.append(_rep.__dict__)
+except ImportError as _e:
+    print(f"  (cvxpy not available — skipping SDP lift: {_e})")
+
+
 witness = {
     "name": "confinement-lp",
     "description": "LP proof that B₃ is the unique optimal confinement operator over all of H₃(q)",
@@ -507,6 +542,7 @@ witness = {
     "gram_eigenvalues": sorted(np.linalg.eigvals(G).real.tolist()),
     "markov_traces": TR_M_BASIS.tolist(),
     "b3_nf": b3_vec.tolist(),
+    "sdp_lift": sdp_reports,
 }
 
 out_path = Path(__file__).parent / "confinement-lp.witness.json"

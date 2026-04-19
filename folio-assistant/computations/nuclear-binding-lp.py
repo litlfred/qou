@@ -387,12 +387,42 @@ for pair_name, nuc1_vec, nuc2_vec, cx_type in pair_types:
 #  WITNESS
 # ══════════════════════════════════════════════════════════════
 
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+# Componentwise G·x ≥ 0 is strictly weaker than quadratic Frobenius
+# xᵀG x ≥ 0 because G has a negative eigenvalue at q₀.  Add the
+# Lasserre moment-matrix lift as a correctness check on the LP's
+# channel-operator solutions.
+
+print(f"\n{'═' * 80}\n  SDP LIFT VALIDATION\n{'═' * 80}")
+sdp_reports = []
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+    _proton_net = float(np.sum(proton_vec))
+    _neutron_net = float(np.sum(neutron_vec))
+    for _lbl, _tgt in [("pp-channel", _proton_net * _proton_net),
+                         ("nn-channel", _neutron_net * _neutron_net),
+                         ("pn-channel", _proton_net * _neutron_net)]:
+        _rep = lp_vs_sdp_report(
+            c=TR_M_BASIS, G=G, A_eq=np.ones((1, 6)),
+            b_eq=np.array([_tgt]),
+            label=f"nuclear-binding/{_lbl}")
+        for _l in _rep.summary_lines():
+            print(_l)
+        print()
+        sdp_reports.append(_rep.__dict__)
+except ImportError as _e:
+    print(f"  (cvxpy not available: {_e})")
+
+
 witness = {
     "name": "nuclear-binding-lp",
     "description": "LP for inter-nucleon binding operators at magic/doubly-magic numbers",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "git_sha": SHA,
     "parameters": {"q0": q0, "HA": HA, "z": z},
+    "sdp_lift": sdp_reports,
 }
 
 out_path = Path(__file__).parent / "nuclear-binding-lp.witness.json"

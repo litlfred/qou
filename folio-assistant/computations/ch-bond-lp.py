@@ -325,3 +325,25 @@ if feasible_all:
     print(f"    binding = {best['bind']:.6f}")
     print(f"    E = {best['E']:.4f} eV (obs: 4.48 eV)")
     print(f"    error = {(best['E']/4.48 - 1)*100:+.1f}%")
+
+
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+print(f"\n{'=' * 70}\n  SDP LIFT VALIDATION\n{'=' * 70}")
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+    import numpy as _np
+    # Markov-trace basis vector (matches NF_BASIS above)
+    _z = 1.0 / (q0**0.5 + qi0**0.5)
+    _tr_m = _np.array([1.0, _z, _z, _z**2, _z**2, _z**3])
+    _rep = lp_vs_sdp_report(
+        c=_tr_m, G=G, A_eq=_np.ones((1, 6)),
+        b_eq=_np.array([1.0]),
+        label="ch-bond/unit-net")
+    for _l in _rep.summary_lines():
+        print(_l)
+except ImportError as _e:
+    print(f"  (cvxpy not available: {_e})")
+except Exception as _e:
+    print(f"  (SDP lift failed: {_e})")
