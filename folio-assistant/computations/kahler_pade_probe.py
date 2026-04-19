@@ -106,16 +106,36 @@ def compute_kahler_series_and_pade(
         # Direct Taylor evaluation at log-step = ℏ_q
         taylor_atom = sum(a_atom[k] * HBAR_Q**k for k in range(order + 1))
         taylor_free = sum(a_free[k] * HBAR_Q**k for k in range(order + 1))
-        # Padé [m/m] from these Taylor coefficients
+        # Padé [m/m] from these Taylor coefficients — try multiple
+        # numerator/denominator splits; NaN on [3/3] doesn't mean
+        # NaN on [2/4] or [4/2].
+        pade_results = {}
         try:
             import scipy.interpolate as si
-            m = order // 2
-            p_atom, q_atom = si.pade(a_atom, m)
-            p_free, q_free = si.pade(a_free, m)
-            pade_atom = float(p_atom(HBAR_Q) / q_atom(HBAR_Q))
-            pade_free = float(p_free(HBAR_Q) / q_free(HBAR_Q))
-        except Exception as e:
-            pade_atom = pade_free = float('nan')
+            for split in ((2, 4), (3, 3), (4, 2)):
+                m, n_d = split
+                if m + n_d > order:
+                    continue
+                try:
+                    p_atom, q_atom = si.pade(a_atom, m)
+                    p_free, q_free = si.pade(a_free, m)
+                    pa = float(p_atom(HBAR_Q) / q_atom(HBAR_Q))
+                    pf = float(p_free(HBAR_Q) / q_free(HBAR_Q))
+                    if np.isfinite(pa) and np.isfinite(pf):
+                        pade_results[f"pade_{m}_{n_d}"] = {
+                            "atom": pa, "free": pf}
+                except Exception:
+                    pass
+        except Exception:
+            pass
+        pade_atom = (pade_results.get("pade_3_3", {}).get("atom")
+                      or pade_results.get("pade_2_4", {}).get("atom")
+                      or pade_results.get("pade_4_2", {}).get("atom")
+                      or float('nan'))
+        pade_free = (pade_results.get("pade_3_3", {}).get("free")
+                      or pade_results.get("pade_2_4", {}).get("free")
+                      or pade_results.get("pade_4_2", {}).get("free")
+                      or float('nan'))
         # Direct eval (Borel-sum): V̂(q₀·exp(ℏ_q))
         direct_atom = float(V_sym_atom[i].subs(q_sym, Q0 * np.exp(HBAR_Q)))
         direct_free = float(V_sym_free[i].subs(q_sym, Q0 * np.exp(HBAR_Q)))

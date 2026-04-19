@@ -1,0 +1,141 @@
+{
+  "computation": "nucleon-ordering-probe",
+  "description": "Sensitivity of the atom Markov trace to nucleon ordering along the strand axis.  For T, 3He, 4He, 6Li, enumerates all distinct p/n permutations and computes tr_M per ordering.  Spread across orderings quantifies the physical significance of the ordering choice.",
+  "timestamp": "2026-04-19T15:07:51.921969+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782,
+    "electrons": true
+  },
+  "results": [
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME": 8.481821,
+      "orderings": [
+        {
+          "ordering": "pnn",
+          "trM_atom": 0.0010219304726249265,
+          "trM_free": -0.7965705525692438,
+          "B_pred_MeV": 0.622119022479556,
+          "err_pct": 0.27922613689564235,
+          "time_sec": 1.364814281463623
+        },
+        {
+          "ordering": "npn",
+          "trM_atom": -1.2909649493434e-05,
+          "trM_free": -0.9729099269277096,
+          "B_pred_MeV": 0.7608054675115651,
+          "err_pct": 0.2742991205282489,
+          "time_sec": 0.33733129501342773
+        },
+        {
+          "ordering": "nnp",
+          "trM_atom": -7.679301654479298e-05,
+          "trM_free": -0.9729099269277095,
+          "B_pred_MeV": 0.7607555107185308,
+          "err_pct": 0.27430089530830676,
+          "time_sec": 0.32890987396240234
+        }
+      ],
+      "spread_trM_atom": 0.0010987234891697195,
+      "spread_B_pred_MeV": 0.1386864450320091
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME": 7.71804,
+      "orderings": [
+        {
+          "ordering": "ppn",
+          "trM_atom": -0.0001031572433123125,
+          "trM_free": 2.1171363791054487,
+          "B_pred_MeV": 1.6555199794961908,
+          "err_pct": 0.21537891004256793,
+          "time_sec": 0.3334033489227295
+        },
+        {
+          "ordering": "pnp",
+          "trM_atom": 3.7584356186244675e-05,
+          "trM_free": 2.1171363791054483,
+          "B_pred_MeV": 1.6555712574939228,
+          "err_pct": 0.21537708832499447,
+          "time_sec": 0.3249053955078125
+        },
+        {
+          "ordering": "npp",
+          "trM_atom": 0.0001138257798262371,
+          "trM_free": 2.154339381784838,
+          "B_pred_MeV": 1.6846043847959196,
+          "err_pct": 0.2143456487103981,
+          "time_sec": 0.32543087005615234
+        }
+      ],
+      "spread_trM_atom": 0.0002169830231385496,
+      "spread_B_pred_MeV": 0.029084405299728777
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME": 28.295674,
+      "orderings": [
+        {
+          "ordering": "ppnn",
+          "trM_atom": 2.375277178140376e-05,
+          "trM_free": 3.4658069720450726,
+          "B_pred_MeV": 2.7102424774717138,
+          "err_pct": 0.6817168028708169,
+          "time_sec": 5.977220296859741
+        },
+        {
+          "ordering": "pnpn",
+          "trM_atom": -5.266332203576879e-08,
+          "trM_free": 3.465806972045073,
+          "B_pred_MeV": 2.7102610109565295,
+          "err_pct": 0.6817163090511992,
+          "time_sec": 4.628788709640503
+        },
+        {
+          "ordering": "pnnp",
+          "trM_atom": -7.894257791200939e-06,
+          "trM_free": 3.465806972045073,
+          "B_pred_MeV": 2.7102548788296548,
+          "err_pct": 0.6817164724400373,
+          "time_sec": 4.603581428527832
+        },
+        {
+          "ordering": "nppn",
+          "trM_atom": 7.926001843222677e-06,
+          "trM_free": 3.5267165631161888,
+          "B_pred_MeV": 2.757886154223418,
+          "err_pct": 0.6804473501760838,
+          "time_sec": 4.591118574142456
+        },
+        {
+          "ordering": "npnp",
+          "trM_atom": -5.9533366108407524e-08,
+          "trM_free": 3.5267165631161888,
+          "B_pred_MeV": 2.7578923058017675,
+          "err_pct": 0.6804471862689666,
+          "time_sec": 4.646311044692993
+        },
+        {
+          "ordering": "nnpp",
+          "trM_atom": 2.1885980774563064e-05,
+          "trM_free": 3.5267165631161883,
+          "B_pred_MeV": 2.757875237519894,
+          "err_pct": 0.680447641048654,
+          "time_sec": 4.626255989074707
+        }
+      ],
+      "spread_trM_atom": 3.16470295726047e-05,
+      "spread_B_pred_MeV": 0.04764982833005371
+    }
+  ]
+}
