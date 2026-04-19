@@ -5,7 +5,7 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::{atom, gram, nf, sdp_decision};
+use hecke_engine::{atom, gram, h_a_tower, nf, sdp_decision};
 use pyo3::prelude::*;
 use pyo3::types::PyList;
 
@@ -213,6 +213,58 @@ fn sdp_decide(
     Ok(d.into())
 }
 
+/// H_A(q) 3-channel binding energy per prop:tower-binding-energy.
+///
+/// B(Z, N) = Σ_{λ∈{sym,std,alt}} w_λ · m_e · Σ_{i=0}^{A-2} ln|Φ_q(V̂_i^λ)|
+///
+/// Default ordering is interleaved proton/neutron; default gluons
+/// are 2·σ₀ on protons, 4·σ₀ on neutrons (matches full-tower-mass.py).
+#[pyfunction]
+#[pyo3(signature = (z, n, m_pp=1, m_pn=1, m_nn=1, q=None, m_e_mev=None))]
+fn binding_ha(
+    z: u32,
+    n: u32,
+    m_pp: u32,
+    m_pn: u32,
+    m_nn: u32,
+    q: Option<f64>,
+    m_e_mev: Option<f64>,
+) -> f64 {
+    let q_val = q.unwrap_or(nf::Q_0);
+    let m_e = m_e_mev.unwrap_or(0.51099895);
+    h_a_tower::binding_ha(z, n, m_pp, m_pn, m_nn, q_val, m_e)
+}
+
+/// H_A(q) 3-channel binding with explicit ordering + per-nucleon gluon
+/// tokens. Use this for nucleon-ordering SDP, joint SDP, etc.
+///
+/// `ordering`: list of 1 (proton) / 0 (neutron), length A.
+/// `gluons`: list of gluon tokens ∈ {"none", "s0", "s0s0", "s0x4",
+///           "s1", "Lp", "Lm"}, length A.
+#[pyfunction]
+#[pyo3(signature = (ordering, gluons, m_pp=1, m_pn=1, m_nn=1,
+                     q=None, m_e_mev=None))]
+fn binding_ha_custom(
+    ordering: Vec<u8>,
+    gluons: Vec<String>,
+    m_pp: u32,
+    m_pn: u32,
+    m_nn: u32,
+    q: Option<f64>,
+    m_e_mev: Option<f64>,
+) -> PyResult<f64> {
+    if ordering.len() != gluons.len() {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            format!("ordering len {} != gluons len {}",
+                     ordering.len(), gluons.len())));
+    }
+    let q_val = q.unwrap_or(nf::Q_0);
+    let m_e = m_e_mev.unwrap_or(0.51099895);
+    let glu_refs: Vec<&str> = gluons.iter().map(|s| s.as_str()).collect();
+    Ok(h_a_tower::binding_ha_custom(
+        &ordering, &glu_refs, m_pp, m_pn, m_nn, q_val, m_e))
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -228,6 +280,8 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
     m.add_function(wrap_pyfunction!(sdp_decide, m)?)?;
+    m.add_function(wrap_pyfunction!(binding_ha, m)?)?;
+    m.add_function(wrap_pyfunction!(binding_ha_custom, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)

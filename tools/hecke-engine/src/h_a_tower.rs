@@ -77,14 +77,32 @@ fn ln_phi_q(v: f64, qi: f64, max_k: usize) -> f64 {
     s
 }
 
+/// Gluon operator token: token → list of (c, d) crossings.
+///
+/// Matches the Python `GLUON_CANDIDATES` from
+/// `sdp_gluon_multiplicity_hA.py` but numerical in `h = q − 1/q`.
+fn gluon_crossings(token: &str, h: f64) -> Vec<(f64, f64)> {
+    match token {
+        "none" => vec![],
+        "s0" => vec![(1.0, 0.0)],
+        "s0s0" => vec![(1.0, 0.0), (1.0, 0.0)],
+        "s0x4" => vec![(1.0, 0.0); 4],
+        "s1" => vec![(1.0, -h)],
+        "Lp" => vec![(1.0, 0.0), (1.0, -h)],
+        "Lm" => vec![(1.0, -h), (1.0, 0.0)],
+        _ => panic!("unknown gluon token: {}", token),
+    }
+}
+
 /// Per-generator per-channel vertex volumes V̂_i^{sym,std,alt} at q.
 ///
-/// Matches `full-tower-mass.per_gen_volumes` extended with
-/// per-pair multiplicities (m_pp, m_pn, m_nn).  `gen_idx` ∈
-/// `[0, A-2]` indexes a nucleon (the i-th inter-nucleon slot).
+/// Extended form accepting per-nucleon gluon tokens and per-pair
+/// crossing multiplicities.  Matches the Python symbolic version in
+/// `sdp_gluon_multiplicity_hA.per_gen_volumes_gluon` at q₀.
 fn per_gen_volumes_ha(
     gen_idx: usize,
     ordering: &[u8],
+    gluons: &[&str],
     q: f64,
     m_pp: u32,
     m_pn: u32,
@@ -94,10 +112,9 @@ fn per_gen_volumes_ha(
     let z = 1.0 / (q.sqrt() + 1.0 / q.sqrt());
     let (mut a, mut b) = (0.0_f64, 1.0_f64);
     let (mut sym_v, mut alt_v) = (1.0_f64, 1.0_f64);
-    // Gluon self-coupling: 2 σ₀ on proton, 4 σ₀ on neutron (default).
-    let gluon_count = if ordering[gen_idx] == 1 { 2 } else { 4 };
-    let (gc, gd) = (1.0_f64, 0.0_f64);
-    for _ in 0..gluon_count {
+    // Gluon self-coupling per the token for this nucleon.
+    let gluon = gluon_crossings(gluons[gen_idx], h);
+    for (gc, gd) in &gluon {
         let (na, nb) = (a * gc * h + a * gd + b * gc, a * gc + b * gd);
         a = na;
         b = nb;
@@ -124,24 +141,31 @@ fn per_gen_volumes_ha(
     (sym_v, z * a + b, alt_v)
 }
 
-/// Nuclear binding energy B(Z, N) per prop:tower-binding-energy.
+/// Default gluons: "s0s0" on protons, "s0x4" on neutrons — matches
+/// `full-tower-mass.py`.
+fn default_gluons(ordering: &[u8]) -> Vec<&'static str> {
+    ordering.iter().map(|&t| if t == 1 { "s0s0" } else { "s0x4" }).collect()
+}
+
+/// Nuclear binding energy with an explicit ordering + gluons vector.
 ///
-/// `m_e` is the electron-mass energy scale (MeV); default 0.51099895.
-pub fn binding_ha(
-    z: u32,
-    n: u32,
+/// `ordering`: length A, 1 = proton, 0 = neutron (physical slot order).
+/// `gluons`: length A, token per nucleon (e.g. "s0s0", "none", "Lp").
+pub fn binding_ha_custom(
+    ordering: &[u8],
+    gluons: &[&str],
     m_pp: u32,
     m_pn: u32,
     m_nn: u32,
     q: f64,
     m_e_mev: f64,
 ) -> f64 {
-    let big_a = z + n;
+    let big_a = ordering.len();
     if big_a < 2 {
         return 0.0;
     }
-    let ordering = ground_state_ordering(z, n);
-    // Wedderburn weights — canonical per the content block.
+    debug_assert_eq!(gluons.len(), big_a,
+        "gluons length must match ordering length");
     let q2 = q * q;
     let qi2 = 1.0 / q2;
     let qint2 = (q2 - qi2) / (q - 1.0 / q);
@@ -152,14 +176,30 @@ pub fn binding_ha(
 
     let qi = 1.0 / q;
     let (mut bs, mut bd, mut ba) = (0.0_f64, 0.0_f64, 0.0_f64);
-    for i in 0..((big_a - 1) as usize) {
-        let (vs, vd, va) =
-            per_gen_volumes_ha(i, &ordering, q, m_pp, m_pn, m_nn);
+    for i in 0..(big_a - 1) {
+        let (vs, vd, va) = per_gen_volumes_ha(
+            i, ordering, gluons, q, m_pp, m_pn, m_nn);
         bs += ln_phi_q(vs.abs(), qi, 500);
         bd += ln_phi_q(vd.abs(), qi, 500);
         ba += ln_phi_q(va.abs(), qi, 500);
     }
     w_sym * m_e_mev * bs + w_std * m_e_mev * bd + w_alt * m_e_mev * ba
+}
+
+/// Nuclear binding energy B(Z, N) with default ground-state ordering
+/// and default gluons (2σ₀ on proton, 4σ₀ on neutron).
+pub fn binding_ha(
+    z: u32,
+    n: u32,
+    m_pp: u32,
+    m_pn: u32,
+    m_nn: u32,
+    q: f64,
+    m_e_mev: f64,
+) -> f64 {
+    let ordering = ground_state_ordering(z, n);
+    let gluons = default_gluons(&ordering);
+    binding_ha_custom(&ordering, &gluons, m_pp, m_pn, m_nn, q, m_e_mev)
 }
 
 #[cfg(test)]
