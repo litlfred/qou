@@ -882,9 +882,11 @@ def build_atom_nf(Z, N):
             nf = hm(nf, 1, 0, 0)            # pair(0,1) uu → σ₀
             nf = hm(nf, 1, -h/2, 0)         # pair(0,2) ud → σ₀ mixed
             nf = hm(nf, 1, -h/2, 1)         # pair(1,2) ud → σ₁ mixed
-            # Gluon self-coupling: 2 σ₀ (ILP-derived, prop:mass-endomorphism-tower)
-            nf = hm(nf, 1, 0, 0)            # gluon 1
-            nf = hm(nf, 1, 0, 0)            # gluon 2
+            # Gluon self-coupling: 1 σ₀ per nucleon (atom-level SDP
+            # optimum, atom_sdp_gluon_search K=5 LP-dual run).  The
+            # earlier 2·σ₀ default (ILP-derived in H_3 only) was
+            # suboptimal at the atom level by ~0.04% on D/T/3He.
+            nf = hm(nf, 1, 0, 0)            # gluon
         else:
             # B₃ confinement
             for _ in range(3):
@@ -894,9 +896,9 @@ def build_atom_nf(Z, N):
             nf = hm(nf, 1, -h/2, 0)         # pair(0,1) ud → σ₀ mixed
             nf = hm(nf, 1, -h/2, 0)         # pair(0,2) ud → σ₀ mixed
             nf = hm(nf, 1, -h, 1)           # pair(1,2) dd → σ₁⁻¹
-            # Gluon self-coupling: 2 σ₀ (same as proton)
-            nf = hm(nf, 1, 0, 0)            # gluon 1
-            nf = hm(nf, 1, 0, 0)            # gluon 2
+            # Gluon self-coupling: 1 σ₀ per nucleon (atom-level SDP
+            # optimum — same as proton).
+            nf = hm(nf, 1, 0, 0)            # gluon
 
         # Inter-nucleon crossing with all PREVIOUS nucleons
         for prev in range(k):
@@ -969,8 +971,14 @@ def nucleon_gen_chains(quarks):
         else:
             g1.append(cd)
 
-    # Gluon self-coupling: 2 σ₀ per nucleon (ILP-derived)
-    g0.append((1, 0))
+    # Gluon self-coupling: 1 σ₀ per nucleon.  Updated 2026-04-19
+    # from 2·σ₀ (H_3 ILP-derived) based on atom-level LP-dual search
+    # in folio-assistant/computations/atom_sdp_gluon_search.py under
+    # the LP-dual-correct K=5 candidate set {∅, σ₀, σ₁, L+, L−}.
+    # ['s0'] × A is the universal per-atom optimum on D, T, 3He
+    # (~0.04% improvement over ['s0s0'] × A in Plancherel-trace
+    # binding error).  Per-isotope LP-dual at magic N/Z may refine
+    # this further — open.
     g0.append((1, 0))
 
     return g0, g1

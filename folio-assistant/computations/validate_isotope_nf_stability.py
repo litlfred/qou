@@ -172,13 +172,27 @@ def build_nucleon_nf_stepwise(g0_chain, g1_chain) -> dict:
 
 
 def gluon_fingerprint(g0_chain) -> dict:
-    """Check whether the last two entries of g0 are the (1, 0) gluon
-    pair laid down by nucleon_gen_chains."""
-    if len(g0_chain) < 2:
-        return {"has_gluon_pair": False, "tail": list(g0_chain)}
-    tail = [(float(c), float(d)) for (c, d) in g0_chain[-2:]]
-    has_pair = tail == [(1.0, 0.0), (1.0, 0.0)]
-    return {"has_gluon_pair": has_pair, "tail": tail}
+    """Check whether the trailing gluon decoration matches the
+    atom-level SDP optimum (one (1, 0) σ_0 crossing per nucleon;
+    prior revisions used two).  Returns:
+
+      has_gluon_single  — tail ends with exactly one (1, 0)
+      has_gluon_pair    — tail ends with two (1, 0) (legacy default)
+      tail              — last two entries verbatim
+    """
+    tail = [(float(c), float(d)) for (c, d) in g0_chain[-2:]] \
+        if len(g0_chain) >= 2 else [(float(c), float(d)) for (c, d) in g0_chain]
+    has_pair = (len(g0_chain) >= 2 and
+                tail == [(1.0, 0.0), (1.0, 0.0)])
+    has_single = (len(g0_chain) >= 1 and
+                  (float(g0_chain[-1][0]), float(g0_chain[-1][1])) == (1.0, 0.0)
+                  and not has_pair)
+    return {
+        "has_gluon_single": has_single,
+        "has_gluon_pair": has_pair,
+        "has_gluon": has_single or has_pair,
+        "tail": tail,
+    }
 
 
 # ── Atom-level tr_M sign (lightweight, partition-truncated) ──
@@ -320,14 +334,14 @@ def main():
           f"unstable steps = {p_data['n_unstable_steps']}/"
           f"{p_data['n_steps']}")
     print(f"           gluon pair tail = {p_glu['tail']}  "
-          f"has gluon pair = {p_glu['has_gluon_pair']}")
+          f"has gluon pair = {p_glu['has_gluon']}")
     print(f"  Neutron  final tr_M = {n_data['trM']:+.6f}  "
           f"final stable = {n_data['final_stable']}  "
           f"path stable = {n_data['path_stable']}  "
           f"unstable steps = {n_data['n_unstable_steps']}/"
           f"{n_data['n_steps']}")
     print(f"           gluon pair tail = {n_glu['tail']}  "
-          f"has gluon pair = {n_glu['has_gluon_pair']}")
+          f"has gluon pair = {n_glu['has_gluon']}")
     print()
 
     header = (f"{'Isotope':<8} {'Z':>3} {'N':>3} {'A':>3} {'3A':>3} "
@@ -351,8 +365,8 @@ def main():
     t_start = time.time()
     for (Z, N, A, BperA, sym, stability) in isotopes:
         iso_name = f"{A}{sym}"
-        has_gluon = (p_glu['has_gluon_pair'] if Z > 0 else True) and \
-                      (n_glu['has_gluon_pair'] if N > 0 else True)
+        has_gluon = (p_glu['has_gluon'] if Z > 0 else True) and \
+                      (n_glu['has_gluon'] if N > 0 else True)
         p_fin_ok = p_data['final_stable'] if Z > 0 else True
         n_fin_ok = n_data['final_stable'] if N > 0 else True
         p_path_ok = p_data['path_stable'] if Z > 0 else True
@@ -414,8 +428,8 @@ def main():
         trunc_s = ("T" if truncated else "F") if truncated is not None \
             else "—"
         print(f"{iso_name:<8} {Z:>3} {N:>3} {A:>3} {3*A:>3} "
-              f"{'Y' if Z==0 or p_glu['has_gluon_pair'] else 'N':>6} "
-              f"{'Y' if N==0 or n_glu['has_gluon_pair'] else 'N':>6} "
+              f"{'Y' if Z==0 or p_glu['has_gluon'] else 'N':>6} "
+              f"{'Y' if N==0 or n_glu['has_gluon'] else 'N':>6} "
               f"{'Y' if p_fin_ok else 'N':>8} "
               f"{'Y' if n_fin_ok else 'N':>8} "
               f"{'Y' if p_path_ok else 'N':>6} "
