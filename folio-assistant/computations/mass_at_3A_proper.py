@@ -169,13 +169,25 @@ def _cached_seminormal(shape: tuple[int, ...]):
 
 
 def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
-                         m_nn: int = 1, include_inter: bool = True):
+                         m_nn: int = 1, include_inter: bool = True,
+                         include_electrons: bool = True):
     """Full 3A-strand braid word as a list of (c, d, gen_idx) triples.
 
-    Matches the chain-walk convention of
-    hecke_core.atom_per_generator_volumes (lines 3029–3079):
-    for each nucleon k, apply intra g₀, intra g₁, then (if
-    include_inter) the appropriate pp/nn/pn crossing at gen 3k+2.
+    Matches the construction order of
+    ``hecke_core.build_atom_nf`` / ``atom_gen_chains``:
+
+      1. For each nucleon k (protons 0..Z−1, then neutrons 0..N−1):
+           (a) intra g₀ pass from _PROTON_G0 / _NEUTRON_G0 at gen 3k
+           (b) intra g₁ pass from _PROTON_G1 / _NEUTRON_G1 at gen 3k+1
+      2. Inter-nucleon crossings (if include_inter): at gen 3k+2
+         between nucleons k and k+1.
+      3. Electron EM-channel crossings (if include_electrons):
+         Z copies of σ₁⁻¹ = (1·σ₁ − h·𝟙) at gen 1, AT THE END.
+         Each electron is a pe crossing that the EM channel carries
+         on gen 1.  Present in ``atom_gen_chains`` but historically
+         MISSING from ``atom_braid_word_3A`` — unified as of
+         2026-04-19 so Plancherel-partition-sum and symbolic paths
+         compute the same atom.
 
     gen_idx is 0-based (σ_0 = sigmas[0] in build_seminormal_matrices).
     """
@@ -206,6 +218,11 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
             c, d = base_cross
             for _ in range(m_this):
                 word.append((c, d, i_inter))
+    # Electrons: Z × σ₁⁻¹ at gen 1, EM channel (matches
+    # hecke_core.build_atom_nf lines 913-915).
+    if include_electrons and Z > 0:
+        for _ in range(Z):
+            word.append((1.0, -float(h), 1))
     return word
 
 
