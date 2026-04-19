@@ -35,10 +35,11 @@ LaTeX label: `prop:gs-cost-jones-recursion`
 | `hecke_h1_is_skein` | **theorem** | `rfl` from `heckeRelation` |
 | `hecke_h2_is_yang_baxter` | **theorem** | `rfl` from `yangBaxterRelation` |
 | `hecke_h3_is_far_comm` | **theorem** | `rfl` from `farCommRelation` |
-| `MarkovTrace` | **structure** | Jones 1987, Thm 5.1 properties |
+| `MarkovTrace` | **structure** | Jones 1987, Thm 5.1 & Cor 5.3; carries `tr_reduces` (trace well-defined on `H_n(q)`) |
 | `markov_trace_exists` | **axiom** | Jones 1987, 54-page external proof |
 | `jonesValue` | **def** | `MarkovTrace.tr ∘ augmentedBraidElement` |
 | `jones_reduction_invariant` | **theorem** | From `threading_cost_unique` |
+| `jonesValue_eq_trace_of_nf` | **theorem** | From `MarkovTrace.tr_reduces` |
 | `gs_cost_jones_recursion` | **theorem** | From `threading_cost_unique` |
 
 ## References
@@ -123,8 +124,14 @@ structure MarkovTrace (n : ℕ) (hp : HeckeParams) where
       generator `T_{n-1}` rescales the trace by `z`.
       (Only stated when `n ≥ 1`, so the index is well-defined.) -/
   markov_pos : ∀ (hn : 1 ≤ n) (f : AlgElement (HeckeGen n) ℝ),
-    tr (AlgElement.rightMulGen f ⟨n - 1, Nat.sub_lt (by omega) (by omega)⟩) =
+    tr (AlgElement.rightMulGen f (HeckeGen.mk ⟨n - 1, by omega⟩)) =
       z * tr f
+  /-- **Reduction invariance**: the trace is well-defined on
+      `H_n(q) = AlgElement / (Hecke ideal)`, so it agrees on any
+      element and its Gröbner–Shirshov reduct. -/
+  tr_reduces : ∀ (f nf : AlgElement (HeckeGen n) ℝ)
+      (_ : ReducesToNF (heckeOrder n) (heckeRewritingSystem n hp) f nf),
+    tr f = tr nf
 
 /-- **Axiom (Jones 1987, Theorem 5.1 & Corollary 5.3).**
     For every `n : ℕ` and every Hecke parameter `hp` with
@@ -177,23 +184,19 @@ theorem jones_reduction_invariant (n : ℕ) (hp : HeckeParams)
   rw [h]
 
 /-- **Jones value = trace of any normal form.**
-    Corollary of `jones_reduction_invariant`: any normal-form
-    reduction of the augmented braid element gives the same trace
-    as the Jones value. In particular, one can compute
-    `jonesValue` by any valid reduction strategy. -/
+    Any Gröbner–Shirshov reduction of the augmented braid element
+    yields the same Markov-trace value as `jonesValue`. This is a
+    consequence of the `tr_reduces` field: the Markov trace is
+    well-defined on `H_n(q)`, so it agrees on any AlgElement and
+    its reduct. -/
 theorem jonesValue_eq_trace_of_nf (n : ℕ) (hp : HeckeParams)
     (β : List ℤ) (nf : AlgElement (HeckeGen (n + 1)) ℝ)
     (h : ReducesToNF (heckeOrder (n + 1))
            (heckeRewritingSystem (n + 1) hp)
-           (augmentedBraidElement hp β) nf)
-    (hbase : ReducesToNF (heckeOrder (n + 1))
-               (heckeRewritingSystem (n + 1) hp)
-               (augmentedBraidElement hp β)
-               (augmentedBraidElement hp β)) :
+           (augmentedBraidElement hp β) nf) :
     jonesValue n hp β = (markov_trace_exists (n + 1) hp).tr nf := by
   unfold jonesValue
-  exact jones_reduction_invariant n hp β
-    (augmentedBraidElement hp β) nf hbase h
+  exact (markov_trace_exists (n + 1) hp).tr_reduces _ nf h
 
 /-! ## §5  Main proposition: GS cost implements the Jones recursion -/
 
