@@ -101,3 +101,11 @@ theorem stable_neutron_max_error :
   native_decide
 
 end
+
+namespace QOU.Descartes
+
+/-- **prop:integer-stability** — placeholder stub; full proof TBD. -/
+theorem integer_stability : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/integer-stability
+  sorry
+end QOU.Descartes

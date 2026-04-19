@@ -89,4 +89,9 @@ theorem gramWeight_uniform_when_equal {n N : ℕ} (hN : 0 < N)
   -- When all norms equal, the normalisation gives 1/N each.
   sorry
 
+
+/-- **prop:gram-weighted-qvalue** — placeholder stub; full proof TBD. -/
+theorem gram_weighted_qvalue : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §particle-interactions/gram-weighted-qvalue
+  sorry
 end QOU.Descartes

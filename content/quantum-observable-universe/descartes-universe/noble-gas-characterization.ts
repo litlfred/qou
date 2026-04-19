@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:noble-gas-characterization",
+  lean: {
+    decl: "QOU.DescartesUniverse.noble_gas_characterization",
+    validation: "not_checked",
+  },
   title:
     "Noble gas characterization: full shell as full curls",
   tags: [

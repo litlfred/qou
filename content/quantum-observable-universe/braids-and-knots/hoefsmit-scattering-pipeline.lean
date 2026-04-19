@@ -55,4 +55,9 @@ theorem pipeline_convergence (q : ℝ) (hq : q > 1)
   -- Ref: [manuscript] §5.13
   trivial
 
+
+/-- **prop:hoefsmit-scattering-pipeline** — placeholder stub; full proof TBD. -/
+theorem hoefsmit_scattering_pipeline : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/hoefsmit-scattering-pipeline
+  sorry
 end QOU.BraidKnot

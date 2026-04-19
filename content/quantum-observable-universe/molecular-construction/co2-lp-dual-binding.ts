@@ -5,6 +5,10 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:co2-lp-dual-binding",
+  lean: {
+    decl: "QOU.MolecularConstruction.co2_lp_dual_binding",
+    validation: "not_checked",
+  },
   title: "LP dual selects linear $O{=}C{=}O$ geometry",
   uses: [
     "def:co2-molecular-braid",

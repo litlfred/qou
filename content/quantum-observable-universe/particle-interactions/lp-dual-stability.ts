@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:lp-dual-stability",
+  lean: {
+    decl: "QOU.ParticleInteractions.lp_dual_stability",
+    validation: "not_checked",
+  },
   title:
     "LP dual stability: confined hadrons have bounded shadow prices",
   tags: [

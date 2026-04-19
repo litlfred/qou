@@ -100,4 +100,9 @@ theorem spectatorSignPattern (q : ℝ) (hq : q > 1) (Z N : ℕ) :
     · exact mul_pos (Even.pow_pos hZe ha) (Even.pow_pos hNe hb)
     · exact mul_pos_of_neg_of_neg (Odd.pow_neg hZo ha) (Odd.pow_neg hNo hb)
 
+
+/-- **def:spectator-normalization** — placeholder stub; full definition TBD. -/
+structure SpectatorNormalization where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.ParticleInteractions

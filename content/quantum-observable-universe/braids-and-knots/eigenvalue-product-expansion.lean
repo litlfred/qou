@@ -52,4 +52,9 @@ theorem four_term_expansion (q : ℝ) (hq : q > 1) (Z N : ℕ) :
   -- Ref: [manuscript] §5.15
   trivial
 
+
+/-- **prop:eigenvalue-product-expansion** — placeholder stub; full proof TBD. -/
+theorem eigenvalue_product_expansion : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/eigenvalue-product-expansion
+  sorry
 end QOU.BraidKnot

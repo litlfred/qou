@@ -71,4 +71,9 @@ structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
       `H⁰(M, Ad(P)) = 0` ensures all sections are gauge-equivalent. -/
   obs_well_defined : ∀ s₁ s₂, gaugeEquiv s₁ s₂
 
+
+/-- **def:observation** — placeholder stub; full definition TBD. -/
+structure Intent where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:three-parameters-wedderburn",
+  lean: {
+    decl: "QOU.BraidsAndKnots.three_parameters_wedderburn",
+    validation: "not_checked",
+  },
   title: "Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$",
   uses: [
     "def:categorical-action",

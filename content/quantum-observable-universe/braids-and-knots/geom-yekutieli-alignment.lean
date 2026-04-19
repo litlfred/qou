@@ -46,4 +46,9 @@ theorem frobenius_self_pairing_unitary (q : ℝ) (hq : q > 1) (vol : ℝ)
   field_simp
   ring
 
+
+/-- **prop:geom-yekutieli-alignment** — placeholder stub; full proof TBD. -/
+theorem geom_yekutieli_alignment : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/geom-yekutieli-alignment
+  sorry
 end QOU.BraidKnot

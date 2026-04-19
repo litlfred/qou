@@ -27,4 +27,9 @@ theorem breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) 
   -- Ref: [manuscript] Chapter 6, §3b
   sorry
 
+
+/-- **def:breit-wheeler-pair-production** — placeholder stub; full definition TBD. -/
+structure BreitWheelerPairProduction where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Descartes

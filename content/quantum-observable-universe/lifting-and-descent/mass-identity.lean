@@ -81,4 +81,9 @@ def massComposite {C : Type u} [Category.{v} C] [MonoidalCategory C]
     (fh : FrobeniusHopfData C) : fh.obj ⟶ (𝟙_ C) ⊗ fh.obj :=
   fh.comul ≫ (fh.frobeniusForm ▷ fh.obj)
 
+
+/-- **def:mass-identity** — placeholder stub; full definition TBD. -/
+structure categoricalMass where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

@@ -17,4 +17,9 @@ namespace QOU.Descartes
 -- Ref: [manuscript] Chapter 6, §3b
 sorry
 
+
+/-- **def:quark-antiquark-production** — placeholder stub; full definition TBD. -/
+structure QuarkAntiquarkProduction where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Descartes

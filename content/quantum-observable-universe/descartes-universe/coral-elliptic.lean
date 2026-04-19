@@ -73,4 +73,9 @@ theorem coral_cubic_at_z_zero (X : R_q) :
   unfold coralCubic
   ring
 
+
+/-- **prop:coral-elliptic** — placeholder stub; full proof TBD. -/
+theorem coral_elliptic : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/coral-elliptic
+  sorry
 end QOU.Brings

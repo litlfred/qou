@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:metallic-character-knot",
+  lean: {
+    decl: "QOU.DescartesUniverse.metallic_character_knot",
+    validation: "not_checked",
+  },
   title:
     "Metallic character from incomplete sub-Hopf links",
   tags: [

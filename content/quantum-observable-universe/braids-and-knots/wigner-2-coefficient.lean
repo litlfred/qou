@@ -86,4 +86,9 @@ theorem self_conjugate_trace (n d : ℕ) (hd_pos : 0 < d)
     (fun i => a_rho q_val hv (axial i)) hv σ hσ h_pair
   linarith
 
+
+/-- **prop:wigner-2-coefficient** — placeholder stub; full proof TBD. -/
+theorem wigner2_coefficient : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/wigner-2-coefficient
+  sorry
 end QOU.BraidKnot

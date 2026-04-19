@@ -136,4 +136,9 @@ theorem idempotent_gives_mass_decomposition
     tr x = tr (τ x) + tr (x - τ x) := by
   rw [map_sub, add_sub_cancel]
 
+
+/-- **thm:topological-mass** — placeholder stub; full proof TBD. -/
+theorem mass_decomposition_categorical : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/topological-mass
+  sorry
 end QOU.Torsion

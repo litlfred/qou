@@ -84,4 +84,9 @@ theorem figure_eight_hoefsmit_trace (q : ℝ) (hq : q > 1) :
   -- Ref: [manuscript] §5.9, verified by SymPy
   sorry
 
+
+/-- **prop:hoefsmit-seminormal-form** — placeholder stub; full proof TBD. -/
+theorem hoefsmit_seminormal_form : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/hoefsmit-seminormal-form
+  sorry
 end QOU.BraidKnot

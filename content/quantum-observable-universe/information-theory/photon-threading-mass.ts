@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:photon-threading-mass",
+  lean: {
+    decl: "QOU.InformationTheory.photon_threading_mass",
+    validation: "not_checked",
+  },
   title: "Mass as photon threading cost",
   tags: [
     "mass",

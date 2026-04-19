@@ -88,3 +88,11 @@ axiom categorical_reeb_exists
       reeb.forms = wd.forms ∧ reeb.proj_V = wd.proj_V
 
 end QOU
+
+namespace QOU.CategoricalReeb
+
+/-- **thm:categorical-reeb-exists** — placeholder stub; full proof TBD. -/
+theorem ofWeightDecomposition : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/categorical-reeb-exists
+  sorry
+end QOU.CategoricalReeb

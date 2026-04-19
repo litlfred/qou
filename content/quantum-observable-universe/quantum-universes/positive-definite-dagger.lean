@@ -51,4 +51,9 @@ structure PositiveDefiniteStructure (C : Type u)
   positive_definite : ∀ {X : C} (f : (𝟙_ C) ⟶ X),
     f ≠ 0 → f ≫ dagger f ≠ 0
 
+
+/-- **prop:positive-definite-dagger** — placeholder stub; full proof TBD. -/
+theorem frobenius_dagger_positive_definite : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-universes/positive-definite-dagger
+  sorry
 end QOU
