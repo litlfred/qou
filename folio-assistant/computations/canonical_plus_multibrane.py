@@ -283,6 +283,7 @@ def binding_canonical_plus_multibrane(
         pair_mode: str = "adjacent",
         cap_frac: float = 0.98,
         include_canonical: bool = True,
+        apply_brane_scaling: bool = True,
         verbose: bool = False) -> dict:
     """Full mass formula per prop:categorical-mass-markov:
 
@@ -350,11 +351,21 @@ def binding_canonical_plus_multibrane(
                                      cap_frac=cap_frac)
             m_f = tower_mass_level(V_f, pair_mode=pair_mode,
                                      cap_frac=cap_frac)
-            delta = m_f - m_a
+            delta_raw = m_f - m_a
+            # Brane-tower jet scaling: each level n is damped by
+            # ℏ_q^{2n} per [def:recursive-brane-tower]. Without this
+            # the unscaled tower over-counts by ~1/ℏ_q² ≈ 100×,
+            # giving nonsensical 146 MeV predictions on D. The audit
+            # document's 0.0023% err on 3He, and 0.0420% on D, both
+            # depend on apply_brane_scaling=True.
+            scale = brane_scaling(n) if apply_brane_scaling else 1.0
+            delta = scale * delta_raw
             tower_term += delta
             per_level.append({
                 "level": n, "m_atom": m_a, "m_free": m_f,
-                "delta": delta,
+                "delta_raw": delta_raw,
+                "brane_scaling": scale,
+                "delta_scaled": delta,
             })
 
     B = E_0 * (canonical_term + tower_term)
