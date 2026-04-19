@@ -15,13 +15,50 @@ use std::time::Instant;
 
 // Prime for modular arithmetic. For A > 12, use multiple primes
 // via the --prime flag and reconstruct via CRT externally.
+//
+// P ≈ 2^30, so inputs a, b < P satisfy a + b < 2P < 2^31 and
+// a * b < 2^60, both well inside u64. The previous implementation
+// cast to u128 and used `%` — u128 division is an expensive
+// library call. Direct u64 arithmetic with a single conditional
+// subtraction (for add) and Barrett reduction (for multiply)
+// avoids u128 entirely.
 const P: u64 = 1_000_000_007;
+
+// Barrett constant: floor(2^64 / P). Lets us replace `x % P` (slow
+// hardware div) with a multiply-high + subtract.
+const BARRETT_M: u64 = ((1u128 << 64) / P as u128) as u64;
 
 type C = u64; // coefficient type
 
-fn ma(a: C, b: C) -> C { ((a as u128 + b as u128) % P as u128) as C }
-fn ms(a: C, b: C) -> C { if a >= b { a - b } else { (P as C) - b + a } }
-fn mm(a: C, b: C) -> C { ((a as u128 * b as u128) % P as u128) as C }
+/// Single-step Barrett reduction of `x < 2^62` modulo `P`. Returns
+/// `x mod P`.
+#[inline(always)]
+fn barrett_reduce(x: u64) -> u64 {
+    // q = floor(x * M / 2^64) — high word of the 128-bit product
+    let q = ((x as u128 * BARRETT_M as u128) >> 64) as u64;
+    let r = x.wrapping_sub(q.wrapping_mul(P));
+    // At most one correction needed for x < 2^62.
+    if r >= P { r - P } else { r }
+}
+
+#[inline(always)]
+fn ma(a: C, b: C) -> C {
+    // a, b < P < 2^30 ⇒ a + b < 2^31, always fits in u64 with no overflow
+    let s = a + b;
+    if s >= P { s - P } else { s }
+}
+
+#[inline(always)]
+fn ms(a: C, b: C) -> C {
+    if a >= b { a - b } else { P - b + a }
+}
+
+#[inline(always)]
+fn mm(a: C, b: C) -> C {
+    // a * b < 2^60, stays within u64; Barrett avoids the u64 hw div.
+    barrett_reduce(a * b)
+}
+
 fn mi(a: C) -> C {
     let mut r: C = 1; let mut base = a; let mut e = P - 2;
     while e > 0 { if e & 1 == 1 { r = mm(r, base); } e >>= 1; base = mm(base, base); }
