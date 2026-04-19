@@ -7,13 +7,15 @@ top).  Context: `docs/mass-1ppm-workplan.md`,
 
 ## Current ceiling
 
-| Atom | Best pipeline                          | err    |
-|------|----------------------------------------|-------:|
-| D    | `unified_lift` scalar, Kähler order 0  | 0.018% |
-| T    | `unified_lift` scalar, Kähler order 0  | 0.060% |
-| 3He  | `unified_lift` scalar, Kähler order 0  | 0.032% |
+| Atom | Best pipeline                          | err     |
+|------|----------------------------------------|--------:|
+| D    | `unified_lift` scalar, Kähler order 0  | 0.0038% |
+| T    | `unified_lift` scalar, Kähler order 0  | 0.0301% |
+| 3He  | `unified_lift` scalar, Kähler order 0  | 0.0035% |
 
-1-ppm target is ~200× beyond D.
+1-ppm target is ~40× beyond D (was ~200× before the gluon patch).
+The 1·σ₀ gluon patch (commit `b607e3e`, 2026-04-19) dropped the
+ceiling by 4.8× on D and 9.2× on 3He.
 
 ## Levers tested this session
 
@@ -69,12 +71,9 @@ m_p, m_n, m_e):**
 
 ## What is guessed / chosen / untested
 
-- **Uniform 2·σ₀ gluon per nucleon** in `hecke_core.nucleon_gen_chains`.
-  **Session finding**: the full-atom LP-dual search says
-  **1·σ₀ per nucleon is ~0.04% better** universally on D/T/3He.
-  This is the simplest concrete change remaining: patch
-  `nucleon_gen_chains` to emit one σ₀ instead of two, rebuild all
-  witnesses, expect uniform ~0.04% improvement.
+- ~~**Uniform 2·σ₀ gluon per nucleon** in `hecke_core.nucleon_gen_chains`~~
+  **LANDED in commit `b607e3e` (2026-04-19).**  Patched to 1·σ₀.
+  Empirical gain: D 4.8×, T 2.0×, 3He 9.2×.  See ceiling table above.
 - **H_3-level quark-pair gluon type** (σ₀ vs σ₁ vs L±).  Per
   `integer-lp-gluon.py` the H_3 LP says 2·σ₀ for proton and L+L−
   for neutron.  Neither transfers cleanly to atom level.
