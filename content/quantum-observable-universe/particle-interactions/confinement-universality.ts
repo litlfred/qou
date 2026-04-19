@@ -12,7 +12,7 @@ export default proposition({
     "strong-force",
   ],
   lean: {
-    decl: "QOU.Interactions.confinementUniversality",
+    decl: "QOU.Interactions.confinement_universality",
     validation: "not_checked",
   },
   uses: [
