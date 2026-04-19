@@ -17,7 +17,7 @@ export default proposition({
     "hecke-algebra",
   ],
   lean: {
-    decl: "QOU.BraidsAndKnots.CategoricalMassMarkov",
+    decl: "QOU.BraidsAndKnots.categorical_mass_markov",
     file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },

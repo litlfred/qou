@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Hook weight $\\beta_4 = -\\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition",
   lean: {
-    decl: "QOU.BraidsAndKnots.beta4_hook",
+    decl: "QOU.BraidsAndKnots.hook_weight_derivation",
     file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },

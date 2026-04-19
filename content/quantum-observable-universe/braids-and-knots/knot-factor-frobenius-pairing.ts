@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Knot factor as Frobenius self-pairing ratio",
   lean: {
-    decl: "QOU.BraidsAndKnots.KnotFactorFrobeniusPairing",
+    decl: "QOU.BraidsAndKnots.knot_factor_frobenius_pairing",
     file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },

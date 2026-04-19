@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:algebraic-volume-specialization",
   lean: {
-    decl: "QOU.BraidsAndKnots.algebraic_volume_specialization",
+    decl: "QOU.BraidsAndKnots.algebraic_quantum_volume_specialization",
     file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },
