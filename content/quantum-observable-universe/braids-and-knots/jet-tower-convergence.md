@@ -99,3 +99,18 @@ improved so $\varepsilon^{(1)}$ is at the target precision, a single
 extra jet level gives $O(\hbar_q^2)$ further reduction.  The jet
 loop is therefore **not the bottleneck for sub-ppm precision** —
 the level-1 $V̂$ model is.
+
+## Relation to confinement SDP
+
+The level-1 $\hat V^{(1)}$ baseline entering this proposition is
+produced by the SDP-feasible confinement operator of
+[prop:confinement-sdp](#prop:confinement-sdp).  When the confinement
+SDP is at a rank-1 solution (scalar LP regime) the baseline $\hat V$
+is a real braid-word product and the boundedness hypothesis
+$|\Delta^{(n)}| \le \Delta_{\max}$ holds empirically (cf.
+`sdp-lift-audit.witness.json`: every real Hecke word has $x^T G x
+\ge 0$).  At higher ranks the hypothesis is open, and the jet-tail
+bound above remains conditional on the multi-operator binding
+supporting a uniform $\Delta_{\max}$.  Closing that conditional is
+the main outstanding piece of open subconjecture 1 on
+[rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower).

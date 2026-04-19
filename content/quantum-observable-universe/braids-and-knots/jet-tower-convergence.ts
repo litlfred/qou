@@ -12,6 +12,7 @@ export default proposition({
     "prop:mass-endomorphism-tower",
     "rem:mass-endomorphism-jet-tower",
     "def:recursive-brane-tower",
+    "prop:confinement-sdp",
   ],
   cites: ["leitner2026"],
 });

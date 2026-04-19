@@ -2,6 +2,14 @@
 """
 Shared SDP (Lasserre moment-matrix) lift for LP(PSD) files.
 
+This module implements the engine side of
+``prop:confinement-sdp`` (content/quantum-observable-universe/
+particle-interactions/confinement-sdp.md): the scalar LP with
+componentwise G·x ≥ 0 is the rank-1 projection of the full matrix
+SDP with Φ ⪰ 0 and per-block Frobenius positivity.  Here we run
+the Lasserre moment-matrix relaxation (M = [[1, xᵀ], [x, X]] ⪰ 0,
+with tr(G·X) ≥ 0) as the SDP-feasibility certificate.
+
 The LPs in ``confinement-lp.py``, ``nuclear-binding-lp.py``,
 ``lp-constrained-6he.py``, ``molecular-frobenius-lp.py``,
 ``ch-bond-lp.py``, and ``integer-lp-gluon.py`` all enforce Frobenius

@@ -62,9 +62,20 @@ dedicated paper block yet (marked `—`).
 Confirmed blocks in `content/quantum-observable-universe/`:
 
 - `prop:confinement-lp` — confinement-operator selection as LP.
+- `prop:confinement-sdp` — confinement-operator selection as SDP
+  with matrix Frobenius positivity.  This is the **authoritative**
+  paper block matching the engine's Lasserre moment-matrix lift
+  (`sdp_moment_lift.py`, `confinement_sdp.py`, `sdp_lift_audit.py`):
+  the scalar LP is the rank-1 projection and the audit's 6-for-6
+  Frobenius-invalid LP solutions confirm the SDP is strictly
+  stronger.  Promoted in a concurrent branch (PR #384).
 - `prop:knot-operator-energy-exists` — existence via LP-dual (with
   Lean formalization in `knot-operator-energy-unique.lean`).
 - `prop:atomic-braid-mass` — atomic braid mass formula.
+- `prop:jet-tower-convergence` — geometric-series tail bound for
+  the brane-tower sum; takes `prop:confinement-sdp`'s rank-1
+  regime as its hypothesis source and closes the truncation
+  budget conditional on boundedness of $\Delta^{(n)}$.
 - `rem:ilp-solution-count-unwrap` — ILP enumeration remark.
 
 Engine scripts **without a dedicated paper block**:
