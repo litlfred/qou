@@ -218,6 +218,9 @@ def trM_plancherel(Z: int, N: int, gluons: tuple[str, ...],
 def search_atom(Z: int, N: int, B_AME: float, *,
                   E_0: float = E_0_BETA_DECAY_MEV,
                   limit: int = None) -> dict:
+    """Enumerate per-nucleon gluon combinations; rank by |B_pred −
+    B_AME|.  Uses the full H_{3A} Plancherel-weighted partition
+    sum (exact within the Plancherel-weight convention)."""
     """Enumerate all per-nucleon gluon combinations; rank by
     |B_pred − B_AME|.  Returns the best + top-5 runner-ups."""
     A = Z + N
@@ -290,6 +293,9 @@ if __name__ == "__main__":
         "T":   (1, 2,  8.481821),
         "3He": (2, 1,  7.71804),
         "4He": (2, 2, 28.295674),
+        "6Li": (3, 3, 31.9956),
+        "9Be": (4, 5, 58.1652),
+        "12C": (6, 6, 92.1612),
     }
     atoms = [a for a in args.atoms.split(",") if a in ALL]
 
