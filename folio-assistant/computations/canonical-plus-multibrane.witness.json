@@ -1,7 +1,7 @@
 {
   "computation": "canonical-plus-multibrane",
   "description": "Canonical Jones-Markov trace (level 0) PLUS multi-brane \u03a6_q tower (levels 1..N) per prop:categorical-mass-markov's full formula \ud835\udd2a = |tr_M| + \u03a3 \u2016\u03a6_q(z_i)\u2016.  Level 0 uses markov_trace_canonical.tr_M_element (7/7 prop-table values).  Levels 1..N use aggregated V\u0302 (\u03a3_\u03bb w_\u03bb V\u0302_i^\u03bb) with Markov-stabilization jet lift V\u0302^(n) = z^n V\u0302^(0).  Aggregated-BEFORE-\u03a6_q ordering matches the prop's letter (\u03a6_q nonlinearity breaks per-irrep-then-sum).  Proper K\u00e4hler-differential jet lift is open.",
-  "timestamp": "2026-04-18T12:19:59.067858+00:00",
+  "timestamp": "2026-04-19T18:28:32.129784+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782
@@ -15,31 +15,31 @@
       "pair_mode": "adjacent",
       "apply_brane_scaling": true,
       "geometric_closed_form": true,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 1.3827189672250204,
-      "B_MeV": 1.8481964207350894,
-      "B_truncation_err_MeV": 7.5853330013654776e-06,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 1.3839688280031623,
+      "B_MeV": 1.3856620858325988,
+      "B_truncation_err_MeV": 7.577834762565582e-06,
       "per_level": [
         {
           "level": "1..2 (converged to \u03b5<1.279e-03)",
           "N_summed": 2,
-          "delta_raw_at_level_1": 180.0102713637433,
-          "sum_scaled": 1.7681828225383893,
+          "delta_raw_at_level_1": 180.17317586000718,
+          "sum_scaled": 1.7697811099784684,
           "per_level_terms_MeV": [
-            1.381946308842129,
-            0.0007726583828915043
+            1.3831969334070504,
+            0.0007718945961118574
           ],
-          "truncation_next_term_MeV": 7.5853330013654776e-06,
-          "eps_markov_stab_MeV": 0.13692562612151962,
-          "eps_kahler_proper_MeV": 0.01356682742940919,
+          "truncation_next_term_MeV": 7.577834762565582e-06,
+          "eps_markov_stab_MeV": 0.13704954016253496,
+          "eps_kahler_proper_MeV": 0.01357910504652261,
           "within_AME_D": false
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.020054077030163462
+      "delta_m_over_m_pct": 0.04470227791980371
     },
     {
       "Z": 1,
@@ -49,31 +49,31 @@
       "pair_mode": "full",
       "apply_brane_scaling": true,
       "geometric_closed_form": true,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 1.4136868560191118,
-      "B_MeV": 1.8791643095291808,
-      "B_truncation_err_MeV": 7.826048380979921e-06,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 1.435609819388984,
+      "B_MeV": 1.4373030772184203,
+      "B_truncation_err_MeV": 7.90198300882814e-06,
       "per_level": [
         {
           "level": "1..2 (converged to \u03b5<1.279e-03)",
           "N_summed": 2,
-          "delta_raw_at_level_1": 184.0409086005758,
-          "sum_scaled": 1.8077837033492479,
+          "delta_raw_at_level_1": 186.8955536797073,
+          "sum_scaled": 1.8358181833618719,
           "per_level_terms_MeV": [
-            1.4128896778483724,
-            0.000797178170739517
+            1.4348049063532424,
+            0.0008049130357412394
           ],
-          "truncation_next_term_MeV": 7.826048380979921e-06,
-          "eps_markov_stab_MeV": 0.1399915485443951,
-          "eps_kahler_proper_MeV": 0.013870604316185614,
+          "truncation_next_term_MeV": 7.90198300882814e-06,
+          "eps_markov_stab_MeV": 0.1421629472198905,
+          "eps_kahler_proper_MeV": 0.014085750245733886,
           "within_AME_D": false
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.018403815230062244
+      "delta_m_over_m_pct": 0.04195035782702562
     },
     {
       "Z": 1,
@@ -83,16 +83,16 @@
       "pair_mode": "adjacent",
       "apply_brane_scaling": true,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
+      "canonical_contribution_MeV": 0.0016932578294363645,
       "tower_contribution_MeV": 0.0,
-      "B_MeV": 0.465477453510069,
+      "B_MeV": 0.0016932578294363645,
       "B_truncation_err_MeV": 0.0,
       "per_level": [],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.0937384120217768
+      "delta_m_over_m_pct": 0.1184532173064188
     },
     {
       "Z": 1,
@@ -102,23 +102,23 @@
       "pair_mode": "adjacent",
       "apply_brane_scaling": true,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 1.381946308842129,
-      "B_MeV": 1.847423762352198,
-      "B_truncation_err_MeV": 0.003390791614366888,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 1.3831969334070504,
+      "B_MeV": 1.3848901912364868,
+      "B_truncation_err_MeV": 0.0033938601903747423,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 180.0102713637433,
+          "delta_raw": 180.17317586000718,
           "scale": 0.009817188513478667,
-          "delta_scaled": 1.7671947683403184
+          "delta_scaled": 1.7687940324898344
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.020095251571388785
+      "delta_m_over_m_pct": 0.04474341175925068
     },
     {
       "Z": 1,
@@ -128,29 +128,29 @@
       "pair_mode": "adjacent",
       "apply_brane_scaling": true,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 1.3827189672250204,
-      "B_MeV": 1.8481964207350894,
-      "B_truncation_err_MeV": 3.3288040488162394e-05,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 1.3839688280031623,
+      "B_MeV": 1.3856620858325988,
+      "B_truncation_err_MeV": 3.3318165277299444e-05,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 180.0102713637433,
+          "delta_raw": 180.17317586000718,
           "scale": 0.009817188513478667,
-          "delta_scaled": 1.7671947683403184
+          "delta_scaled": 1.7687940324898344
         },
         {
           "level": 2,
-          "delta_raw": 10.25195064206899,
+          "delta_raw": 10.241816403524005,
           "scale": 9.637719030917748e-05,
-          "delta_scaled": 0.0009880541980709773
+          "delta_scaled": 0.0009870774886340888
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.020054077030163462
+      "delta_m_over_m_pct": 0.04470227791980371
     },
     {
       "Z": 1,
@@ -160,16 +160,16 @@
       "pair_mode": "full",
       "apply_brane_scaling": true,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
+      "canonical_contribution_MeV": 0.0016932578294363645,
       "tower_contribution_MeV": 0.0,
-      "B_MeV": 0.465477453510069,
+      "B_MeV": 0.0016932578294363645,
       "B_truncation_err_MeV": 0.0,
       "per_level": [],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.0937384120217768
+      "delta_m_over_m_pct": 0.1184532173064188
     },
     {
       "Z": 1,
@@ -179,23 +179,23 @@
       "pair_mode": "full",
       "apply_brane_scaling": true,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 1.4128896778483724,
-      "B_MeV": 1.8783671313584411,
-      "B_truncation_err_MeV": 0.003466715342716754,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 1.4348049063532424,
+      "B_MeV": 1.4364981641826788,
+      "B_truncation_err_MeV": 0.003520487310966019,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 184.0409086005758,
+          "delta_raw": 186.8955536797073,
           "scale": 0.009817188513478667,
-          "delta_scaled": 1.8067642939237498
+          "delta_scaled": 1.834788882804658
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.018446296417326688
+      "delta_m_over_m_pct": 0.041993251201001475
     },
     {
       "Z": 1,
@@ -205,29 +205,29 @@
       "pair_mode": "full",
       "apply_brane_scaling": true,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 1.4136868560191118,
-      "B_MeV": 1.8791643095291808,
-      "B_truncation_err_MeV": 3.4033398042019176e-05,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 1.435609819388984,
+      "B_MeV": 1.4373030772184203,
+      "B_truncation_err_MeV": 3.4561287591063e-05,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 184.0409086005758,
+          "delta_raw": 186.8955536797073,
           "scale": 0.009817188513478667,
-          "delta_scaled": 1.8067642939237498
+          "delta_scaled": 1.834788882804658
         },
         {
           "level": 2,
-          "delta_raw": 10.577289317398069,
+          "delta_raw": 10.679918701840869,
           "scale": 9.637719030917748e-05,
-          "delta_scaled": 0.0010194094254981035
+          "delta_scaled": 0.0010293005572138611
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.018403815230062244
+      "delta_m_over_m_pct": 0.04195035782702562
     },
     {
       "Z": 1,
@@ -237,16 +237,16 @@
       "pair_mode": "adjacent",
       "apply_brane_scaling": false,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
+      "canonical_contribution_MeV": 0.0016932578294363645,
       "tower_contribution_MeV": 0.0,
-      "B_MeV": 0.465477453510069,
+      "B_MeV": 0.0016932578294363645,
       "B_truncation_err_MeV": 0.0,
       "per_level": [],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.0937384120217768
+      "delta_m_over_m_pct": 0.1184532173064188
     },
     {
       "Z": 1,
@@ -256,23 +256,23 @@
       "pair_mode": "adjacent",
       "apply_brane_scaling": false,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 140.76803220644726,
-      "B_MeV": 141.23350965995732,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 140.89542352252562,
+      "B_MeV": 140.89711678035505,
       "B_truncation_err_MeV": 0.0,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 180.0102713637433,
+          "delta_raw": 180.17317586000718,
           "scale": 1.0,
-          "delta_scaled": 180.0102713637433
+          "delta_scaled": 180.17317586000718
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 7.407712777316029
+      "delta_m_over_m_pct": 7.389786585358777
     },
     {
       "Z": 1,
@@ -282,29 +282,29 @@
       "pair_mode": "adjacent",
       "apply_brane_scaling": false,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 148.78505760854523,
-      "B_MeV": 149.2505350620553,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 148.9045239500814,
+      "B_MeV": 148.90621720791083,
       "B_truncation_err_MeV": 0.0,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 180.0102713637433,
+          "delta_raw": 180.17317586000718,
           "scale": 1.0,
-          "delta_scaled": 180.0102713637433
+          "delta_scaled": 180.17317586000718
         },
         {
           "level": 2,
-          "delta_raw": 10.25195064206899,
+          "delta_raw": 10.241816403524005,
           "scale": 1.0,
-          "delta_scaled": 10.25195064206899
+          "delta_scaled": 10.241816403524005
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 7.834935661623456
+      "delta_m_over_m_pct": 7.816587152121709
     },
     {
       "Z": 1,
@@ -314,16 +314,16 @@
       "pair_mode": "full",
       "apply_brane_scaling": false,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
+      "canonical_contribution_MeV": 0.0016932578294363645,
       "tower_contribution_MeV": 0.0,
-      "B_MeV": 0.465477453510069,
+      "B_MeV": 0.0016932578294363645,
       "B_truncation_err_MeV": 0.0,
       "per_level": [],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.0937384120217768
+      "delta_m_over_m_pct": 0.1184532173064188
     },
     {
       "Z": 1,
@@ -333,23 +333,23 @@
       "pair_mode": "full",
       "apply_brane_scaling": false,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 143.91999052565026,
-      "B_MeV": 144.38546797916032,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 146.1523229775311,
+      "B_MeV": 146.15401623536053,
       "B_truncation_err_MeV": 0.0,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 184.0409086005758,
+          "delta_raw": 186.8955536797073,
           "scale": 1.0,
-          "delta_scaled": 184.0409086005758
+          "delta_scaled": 186.8955536797073
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 7.575678906498346
+      "delta_m_over_m_pct": 7.669923872574291
     },
     {
       "Z": 1,
@@ -359,29 +359,29 @@
       "pair_mode": "full",
       "apply_brane_scaling": false,
       "geometric_closed_form": false,
-      "canonical_contribution_MeV": 0.465477453510069,
-      "tower_contribution_MeV": 152.19143077185558,
-      "B_MeV": 152.65690822536564,
+      "canonical_contribution_MeV": 0.0016932578294363645,
+      "tower_contribution_MeV": 154.50401940237066,
+      "B_MeV": 154.5057126602001,
       "B_truncation_err_MeV": 0.0,
       "per_level": [
         {
           "level": 1,
-          "delta_raw": 184.0409086005758,
+          "delta_raw": 186.8955536797073,
           "scale": 1.0,
-          "delta_scaled": 184.0409086005758
+          "delta_scaled": 186.8955536797073
         },
         {
           "level": 2,
-          "delta_raw": 10.577289317398069,
+          "delta_raw": 10.679918701840869,
           "scale": 1.0,
-          "delta_scaled": 10.577289317398069
+          "delta_scaled": 10.679918701840869
         }
       ],
-      "tr_M_atom": 0.3882864715477132,
-      "tr_M_free": 0.9835261819186453,
+      "tr_M_atom": -0.0014124617702841549,
+      "tr_M_free": -0.0035777531122743907,
       "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 8.016459418237229
+      "delta_m_over_m_pct": 8.114981192031738
     }
   ]
 }

@@ -379,6 +379,8 @@ def binding_canonical_plus_multibrane(
 if __name__ == "__main__":
     ATOMS = [
         ("D", 1, 1, 2.22452),
+        ("T", 1, 2, 8.481821),
+        ("3He", 2, 1, 7.71804),
     ]
     print("=" * 100)
     print("CANONICAL MARKOV + MULTI-BRANE Φ_q TOWER")
