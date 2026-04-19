@@ -16,6 +16,9 @@ export default remark({
   uses: [
     "def:skein-resolution-obstruction",
     "thm:jones-markov-trace",
+    "rem:skein-turing-machine",
+    "prop:torus-knot-shell-binding",
+    "rem:strangelet-witten-stability",
     "unital-groebner-bases:prop:gs-cost-jones-recursion",
   ],
   cites: ["jones1987", "kassel1995"],

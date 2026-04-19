@@ -19,6 +19,7 @@ export default proposition({
     "def:jet-stratified-reduction",
     "thm:ugb-buchberger",
     "prop:ugb-s-poly-decomposition",
+    "quantum-observable-universe:thm:jones-markov-trace",
   ],
   cites: ["jones1987", "kassel1995", "bergman1978"],
 });

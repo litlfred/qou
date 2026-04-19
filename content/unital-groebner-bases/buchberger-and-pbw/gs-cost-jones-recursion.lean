@@ -35,7 +35,7 @@ LaTeX label: `prop:gs-cost-jones-recursion`
 | `hecke_h1_is_skein` | **theorem** | `rfl` from `heckeRelation` |
 | `hecke_h2_is_yang_baxter` | **theorem** | `rfl` from `yangBaxterRelation` |
 | `hecke_h3_is_far_comm` | **theorem** | `rfl` from `farCommRelation` |
-| `MarkovTrace` | **structure** | Jones 1987, Thm 5.1 & Cor 5.3; carries `tr_reduces` (trace well-defined on `H_n(q)`) |
+| `MarkovTrace` | **structure** | Jones 1987, Thm 5.1 & Cor 5.3; carries `tr_cyclic_gen` (cyclicity), subalgebra-restricted `markov_pos`, and `tr_reduces` |
 | `markov_trace_exists` | **axiom** | Jones 1987, 54-page external proof |
 | `jonesValue` | **def** | `MarkovTrace.tr ∘ augmentedBraidElement` |
 | `jones_reduction_invariant` | **theorem** | From `threading_cost_unique` |
@@ -116,14 +116,28 @@ structure MarkovTrace (n : ℕ) (hp : HeckeParams) where
   /-- Linearity w.r.t. scalar multiplication. -/
   tr_smul : ∀ (c : ℝ) (f : AlgElement (HeckeGen n) ℝ),
     tr (AlgElement.smul c f) = c * tr f
+  /-- **Cyclicity (single-generator form)**: `tr (g · f) = tr (f · g)`
+      for every generator `g`.  Since `AlgElement` carries no general
+      multiplication, the full cyclic property `tr (f g) = tr (g f)`
+      is captured here by its generator-wise specialisation, which
+      extends to all elements by `tr_add`, `tr_smul`, and induction
+      on the length of a monomial. -/
+  tr_cyclic_gen : ∀ (g : HeckeGen n) (f : AlgElement (HeckeGen n) ℝ),
+    tr (AlgElement.leftMulGen g f) = tr (AlgElement.rightMulGen f g)
   /-- Markov parameter `z`. -/
   z : ℝ
   /-- The Markov parameter is non-zero. -/
   z_ne_zero : z ≠ 0
-  /-- **Markov property**: right-multiplying by the last
-      generator `T_{n-1}` rescales the trace by `z`.
-      (Only stated when `n ≥ 1`, so the index is well-defined.) -/
-  markov_pos : ∀ (hn : 1 ≤ n) (f : AlgElement (HeckeGen n) ℝ),
+  /-- **Markov property (subalgebra form)**: right-multiplying by the
+      last generator `T_{n-1}` rescales the trace by `z` *for elements
+      of the subalgebra* `H_{n-1}(q) ↪ H_n(q)` --- that is, elements
+      whose support contains no occurrence of the top generator
+      `T_{n-1}`.  Stating this over all of `H_n(q)` would force `z`
+      to satisfy the Hecke quadratic, over-constraining the parameter
+      space (cf. Jones 1987, §4). -/
+  markov_pos : ∀ (hn : 1 ≤ n) (f : AlgElement (HeckeGen n) ℝ)
+      (_hsub : ∀ m ∈ f.support, ∀ (g : HeckeGen n), g ∈ m →
+                 g.index.val < n - 1),
     tr (AlgElement.rightMulGen f (HeckeGen.mk ⟨n - 1, by omega⟩)) =
       z * tr f
   /-- **Reduction invariance**: the trace is well-defined on
@@ -134,8 +148,10 @@ structure MarkovTrace (n : ℕ) (hp : HeckeParams) where
     tr f = tr nf
 
 /-- **Axiom (Jones 1987, Theorem 5.1 & Corollary 5.3).**
-    For every `n : ℕ` and every Hecke parameter `hp` with
-    `q ≠ 1`, there exists a Markov trace on `H_n(q)`.
+    For every `n : ℕ` and every `hp : HeckeParams` there exists a
+    Markov trace on `H_n(q)`.  The non-triviality condition
+    `q ≠ 1` is already bundled in `HeckeParams.q_ne_one`; no
+    separate hypothesis is needed.
 
     The proof is the 54-page construction in Jones (1987) §3–5:
     Ocneanu's trace on relative commutants (§3), the Markov
