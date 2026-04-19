@@ -32,43 +32,10 @@ fn gram_matrix(q: f64) -> Vec<Vec<f64>> {
     gram::gram_matrix(q).iter().map(|r| r.to_vec()).collect()
 }
 
-/// Gram determinant.
+/// Gram determinant — delegates to shared `hecke_engine::gram::det_6x6`.
 #[pyfunction]
 fn gram_determinant(q: f64) -> f64 {
-    let m = gram::gram_matrix(q);
-    // Inline LU-style determinant (mirrors det_6x6 in hecke_engine::gram).
-    let mut a = m;
-    let mut det = 1.0f64;
-    for i in 0..6 {
-        let mut best = i;
-        for r in i + 1..6 {
-            if a[r][i].abs() > a[best][i].abs() {
-                best = r;
-            }
-        }
-        if a[best][i].abs() < 1e-15 {
-            return 0.0;
-        }
-        if best != i {
-            a.swap(i, best);
-            det = -det;
-        }
-        det *= a[i][i];
-        let pivot = a[i][i];
-        for j in i..6 {
-            a[i][j] /= pivot;
-        }
-        for r in i + 1..6 {
-            let factor = a[r][i];
-            if factor == 0.0 {
-                continue;
-            }
-            for j in i..6 {
-                a[r][j] -= factor * a[i][j];
-            }
-        }
-    }
-    det
+    gram::det_6x6(&gram::gram_matrix(q))
 }
 
 /// Gram inverse as a 6x6 list of lists.

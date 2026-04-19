@@ -522,8 +522,16 @@ pub fn atom_per_generator_volumes(
     //   nf3_val = [1]_q · [2]_q · [3]_q = [3]_q!
     //   qdim_sym=1, qdim_std=[2]_q, qdim_alt=1
     //   w_* = qdim_*^2 / nf3_val, then renormalise so Σ w_* = 1.
+    // Symmetric q-integer with graceful handling of q = 1 (classical
+    // limit, where q - q^{-1} = 0 and [n]_q → n). Gemini review
+    // r3106... flagged the unguarded division.
+    let denom = q - 1.0 / q;
     let qint = |n: i32| -> f64 {
-        (q.powi(n) - q.powi(-n)) / (q - 1.0 / q)
+        if denom.abs() < 1e-12 {
+            n as f64
+        } else {
+            (q.powi(n) - q.powi(-n)) / denom
+        }
     };
     let qint2 = qint(2);
     let qint3 = qint(3);
@@ -582,7 +590,7 @@ pub fn certificate_at(q: f64) -> GramCertificate {
     }
 }
 
-fn det_6x6(a: &[[f64; 6]; 6]) -> f64 {
+pub fn det_6x6(a: &[[f64; 6]; 6]) -> f64 {
     let mut m = *a;
     let mut det = 1.0f64;
     for i in 0..6 {
