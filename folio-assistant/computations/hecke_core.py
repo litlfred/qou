@@ -538,47 +538,100 @@ def partition_spectral_log_rate(partition):
 # partition spectrum via ρ_λ = 1/(μ_λ + s_*).
 S_REEB_PLANCK = (q0 - 1.0) / q0
 
-_PARTITION_TABLE = []
-for _k in range(2, K_GAUSSIAN_MAX + 1):
-    for _lam in partitions_of(_k):
-        _Hq = q_hook_product(_lam)
-        _w = wedderburn_weight(_lam)
-        _d = partition_dimension(_lam)
-        _y = lp_shadow_price(_lam)
-        _kerov_scale = _w * _y * _Hq * M_E_MEV
-        # Per-partition average log spectral rate (Perron-Frobenius proxy)
-        _chi = partition_character_sigma1(_lam)
-        _rho = abs(_chi) / _d if _d > 0 else 0.0
-        _log_rho = math.log(_rho) if _rho > 1e-300 else -30.0
-        # q-Laplacian eigenvalue and resolvent weight (def:q-heat-equation,
-        # def:categorical-laplace-transform): categorical damping derived
-        # from the q-heat spectrum rather than the Kerov Plancherel measure.
-        _mu = q_laplacian_eigenvalue(_lam)
-        _resolvent = 1.0 / (_mu + S_REEB_PLANCK) if (_mu + S_REEB_PLANCK) > 0 else 0.0
-        # Resolvent-damped scale: m_e · H_q(λ) · y_λ · ρ_λ(s_*).
-        # Replaces the ad-hoc Kerov multiplier w_λ with the categorically
-        # derived resolvent of the q-Laplacian at Planck-step Reeb time.
-        _resolvent_scale = _Hq * _y * _resolvent * M_E_MEV
-        _PARTITION_TABLE.append({
-            'partition': _lam,
-            'k': _k,
-            'jet': partition_jet_depth(_lam),
-            'q_hook': _Hq,
-            'wedderburn_weight': _w,
-            'dim': _d,
-            'shadow_price': _y,
-            'kerov_plancherel': _w,
-            'C_lambda_MeV': _Hq * M_E_MEV,
-            'C_lambda_kerov_MeV': _kerov_scale,
-            'chi_sigma1': _chi,
-            'spectral_log_rate': _log_rho,
-            'q_laplacian_eigenvalue': _mu,
-            'resolvent_weight_planck': _resolvent,
-            'C_lambda_resolvent_MeV': _resolvent_scale,
-            # YSN matrices built only for k ≤ K_PARTITION_MAX.
-            # For higher k, q-Gaussian fallback uses the metadata above.
-            'has_ysn': _k <= K_PARTITION_MAX,
-        })
+# Lazy partition table — eager compute takes ~30 s (~20,000 partitions
+# up to K_GAUSSIAN_MAX=15 with q_hook_product, wedderburn_weight, etc.
+# per partition). Materialise on first access via the module-level
+# `_partition_table()` accessor below. Most downstream scripts never
+# touch this list (only jet / spectral analyses do), so gating behind
+# a lazy call saves 30 s on every fresh python that imports hecke_core.
+
+_PARTITION_TABLE_CACHE: list[dict] | None = None
+
+
+def _partition_table() -> list[dict]:
+    """Materialise _PARTITION_TABLE_CACHE on first access. ~30 s cold."""
+    global _PARTITION_TABLE_CACHE
+    if _PARTITION_TABLE_CACHE is not None:
+        return _PARTITION_TABLE_CACHE
+    table: list[dict] = []
+    for _k in range(2, K_GAUSSIAN_MAX + 1):
+        for _lam in partitions_of(_k):
+            _Hq = q_hook_product(_lam)
+            _w = wedderburn_weight(_lam)
+            _d = partition_dimension(_lam)
+            _y = lp_shadow_price(_lam)
+            _kerov_scale = _w * _y * _Hq * M_E_MEV
+            # Per-partition average log spectral rate (Perron-Frobenius proxy)
+            _chi = partition_character_sigma1(_lam)
+            _rho = abs(_chi) / _d if _d > 0 else 0.0
+            _log_rho = math.log(_rho) if _rho > 1e-300 else -30.0
+            # q-Laplacian eigenvalue and resolvent weight (def:q-heat-equation,
+            # def:categorical-laplace-transform): categorical damping derived
+            # from the q-heat spectrum rather than the Kerov Plancherel measure.
+            _mu = q_laplacian_eigenvalue(_lam)
+            _resolvent = 1.0 / (_mu + S_REEB_PLANCK) if (_mu + S_REEB_PLANCK) > 0 else 0.0
+            # Resolvent-damped scale: m_e · H_q(λ) · y_λ · ρ_λ(s_*).
+            # Replaces the ad-hoc Kerov multiplier w_λ with the categorically
+            # derived resolvent of the q-Laplacian at Planck-step Reeb time.
+            _resolvent_scale = _Hq * _y * _resolvent * M_E_MEV
+            table.append({
+                'partition': _lam,
+                'k': _k,
+                'jet': partition_jet_depth(_lam),
+                'q_hook': _Hq,
+                'wedderburn_weight': _w,
+                'dim': _d,
+                'shadow_price': _y,
+                'kerov_plancherel': _w,
+                'C_lambda_MeV': _Hq * M_E_MEV,
+                'C_lambda_kerov_MeV': _kerov_scale,
+                'chi_sigma1': _chi,
+                'spectral_log_rate': _log_rho,
+                'q_laplacian_eigenvalue': _mu,
+                'resolvent_weight_planck': _resolvent,
+                'C_lambda_resolvent_MeV': _resolvent_scale,
+                # YSN matrices built only for k ≤ K_PARTITION_MAX.
+                # For higher k, q-Gaussian fallback uses the metadata above.
+                'has_ysn': _k <= K_PARTITION_MAX,
+            })
+    _PARTITION_TABLE_CACHE = table
+    return table
+
+
+class _LazyPartitionTable:
+    """List-shaped proxy that materialises the partition table + its
+    YSN matrices on first iteration / indexing / len. Keeps every
+    existing `for e in _PARTITION_TABLE:` / `_PARTITION_TABLE[i]` /
+    comprehension working unchanged — but pays the ~60 s cost only
+    on first touch instead of unconditionally at module import.
+    """
+
+    __slots__ = ()
+
+    def _data(self):
+        # Lazy: build the base table, then attach YSN matrices once.
+        _ensure_ysn_attached()
+        return _partition_table()
+
+    def __iter__(self):
+        return iter(self._data())
+
+    def __len__(self):
+        return len(self._data())
+
+    def __getitem__(self, key):
+        return self._data()[key]
+
+    def __contains__(self, item):
+        return item in self._data()
+
+    def __repr__(self):
+        if _PARTITION_TABLE_CACHE is None:
+            return "_LazyPartitionTable(<not yet materialised>)"
+        return f"_LazyPartitionTable({len(_PARTITION_TABLE_CACHE)} entries)"
+
+
+_PARTITION_TABLE = _LazyPartitionTable()
 
 # (2,2) hook product = [3]·[2]²·[1] = [3]·[2]²
 H_Q_22 = q_hook_product((2, 2))                   # = [3]·[2]² ≈ 12.31
@@ -1725,17 +1778,32 @@ def _crossing_in_partition(c, d, gen_index, sigmas, dim):
     return tuple(tuple(r) for r in out)
 
 
-# Pre-compute YSN matrices and metadata for every entry in
-# _PARTITION_TABLE (k = 2..K_PARTITION_MAX).  Skipped if dim < 2 (no
-# mixing structure → trivial trace).  For k > K_PARTITION_MAX we keep
-# metadata-only entries (no YSN); the q-Gaussian fallback uses
-# d_q / shadow_price / q_hook without needing matrices.
-for _entry in _PARTITION_TABLE:
-    if _entry['has_ysn']:
-        _entry['ysn'] = _build_ysn_matrices(_entry['partition'])
-    else:
-        _entry['ysn'] = []
-    _entry['n_gens'] = max(0, _entry['k'] - 1)
+# YSN-matrix attachment for every entry in _PARTITION_TABLE
+# (k = 2..K_PARTITION_MAX).  Skipped if dim < 2 (no mixing structure →
+# trivial trace).  For k > K_PARTITION_MAX we keep metadata-only
+# entries (no YSN); the q-Gaussian fallback uses d_q / shadow_price /
+# q_hook without needing matrices.
+#
+# This phase used to run eagerly at module import and cost ~30 s on
+# top of the partition-table build. Now folded into a lazy helper so
+# scripts that never touch _PARTITION_TABLE pay nothing.
+
+_YSN_ATTACHED = False
+
+
+def _ensure_ysn_attached():
+    """Idempotent helper: attach YSN matrices + n_gens to each
+    partition-table entry on first demand."""
+    global _YSN_ATTACHED
+    if _YSN_ATTACHED:
+        return
+    for _entry in _partition_table():
+        if _entry['has_ysn']:
+            _entry['ysn'] = _build_ysn_matrices(_entry['partition'])
+        else:
+            _entry['ysn'] = []
+        _entry['n_gens'] = max(0, _entry['k'] - 1)
+    _YSN_ATTACHED = True
 
 
 def _step_chain_generic(nucleon_type, prev_types, n_gens, include_inter=True):
