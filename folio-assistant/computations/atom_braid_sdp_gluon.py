@@ -48,17 +48,18 @@ from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
 
 def _strip_gluon_tail(chain: list[tuple[float, float]]
                        ) -> list[tuple[float, float]]:
-    """Remove the two trailing (1, 0) σ gluon crossings from a chain.
+    """Remove the trailing (1, 0) σ gluon crossing from a chain.
 
-    Defensive: only strips if the tail actually matches (1.0, 0.0)
-    twice; otherwise returns the chain unchanged.
+    Post 2026-04-19 hecke_core patch, nucleon_gen_chains emits one
+    (1, 0) tail instead of two — the atom-level SDP optimum.
+    Defensive: strips up to two trailing (1, 0) to remain compatible
+    with witness files / data produced under the older convention.
     """
-    if len(chain) < 2:
-        return list(chain)
-    last_two = [(float(c), float(d)) for (c, d) in chain[-2:]]
-    if last_two == [(1.0, 0.0), (1.0, 0.0)]:
-        return list(chain[:-2])
-    return list(chain)
+    out = list(chain)
+    while out and (float(out[-1][0]), float(out[-1][1])) == (1.0, 0.0) \
+            and len(out) > 3:  # keep the B₃ prefix intact
+        out.pop()
+    return out
 
 
 _PROTON_G0_BODY = _strip_gluon_tail(_PROTON_G0)
