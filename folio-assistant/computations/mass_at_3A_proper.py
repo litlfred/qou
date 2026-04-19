@@ -1,5 +1,27 @@
 #!/usr/bin/env python3
 """
+DEPRECATED (2026-04-19) — USE `full-tower-mass.py` INSTEAD.
+
+This script applies the SINGLE-VORTEX mass formula from
+prop:mass-endomorphism-tower to a multi-nucleon atom braid by computing
+Plancherel tr_M at H_{3A}(q). That framework has no per-A normalisation
+for the single-vortex ∏ term and produces raw level-1 tower values
+~146 MeV (D), 21,745 MeV (4He) — blow-up at A≥4.
+
+The correct content-block prescription is prop:tower-binding-energy:
+
+  B(Z,N) = Σ_{λ∈{sym,std,alt}} w_λ · m_e · Σ_{i=0}^{A-2} ln|Φ_q(V̂_i^λ)|
+
+in **H_A(q) (A-1 generators)**, not H_{3A}(q). This is implemented by
+`full-tower-mass.py` with mean |err| = 0.071% across Z=1..20.
+
+See docs/framework-mismatch-audit-2026-04-19.md for the full reasoning.
+
+Keeping this script for reproducibility of session witnesses; callers
+should migrate to `full-tower-mass.py`.
+
+------
+
 Task-1 FIX:  Proper H_{3A} Wedderburn character-theoretic binding.
 
 Replaces the per-generator H_3 Wedderburn weighting inside

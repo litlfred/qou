@@ -1,5 +1,26 @@
 #!/usr/bin/env python3
 """
+DEPRECATED (2026-04-19) — USE `full-tower-mass.py` INSTEAD.
+
+This script's binding_canonical_plus_multibrane applies the SINGLE-
+VORTEX mass-endomorphism-tower formula to a 3A-strand atom braid.
+At A=4+ the single-vortex ∏V̂ term over 3A-1 factors blows up by
+~100x. Raw tower reaches 21,745 MeV on 4He; even with ℏ_q^2 brane
+damping (now default), the scaled tower is 213 MeV vs AME 28 MeV.
+
+The correct content-block prescription is prop:tower-binding-energy,
+implemented by `full-tower-mass.py`: H_A(q) with A-1 generators,
+3-channel Wedderburn weights (sym/std/alt), and Σ ln|Φ_q(V̂_i^λ)|
+per generator per channel. Mean |err| = 0.071% across Z=1..20.
+
+See docs/framework-mismatch-audit-2026-04-19.md for full reasoning.
+
+Kept for audit reproducibility: D = 0.0420% via the ℏ_q^2-scaled
+tower matches mass-error-source-audit-2026-04-19.md. New SDP /
+accuracy work should target `full-tower-mass.py`.
+
+------
+
 Canonical Markov trace + MULTI-BRANE Φ_q tower.
 
 Implements prop:categorical-mass-markov's FULL mass formula:
