@@ -281,6 +281,85 @@ pub fn nf_net(nf: &[f64; 6]) -> f64 {
     nf.iter().sum()
 }
 
+/// Build the atom NF for (Z, N) via Hecke multiplication.
+///
+/// Mirrors `hecke_core.build_atom_nf` byte-for-byte. Construction:
+///
+/// 1. Build each nucleon via B_3 confinement + quark crossings +
+///    gluon self-coupling.
+/// 2. Compose in ground-state interleaved order (p, n, p, n, …).
+/// 3. Apply inter-nucleon crossings between each pair:
+///    pp = σ₀, nn = σ₀⁻¹, pn = ½(σ₀ + σ₀⁻¹).
+/// 4. Apply pe crossings for Z electrons (σ₁⁻¹).
+///
+/// `h` is `hecke_h(q)` for the target q; pass `hecke_h(Q_0)` to match
+/// the Python default.
+pub fn build_atom_nf(z_count: u32, n_count: u32, h: f64) -> [f64; 6] {
+    let a = z_count + n_count;
+    if a == 0 {
+        return [1.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+    }
+
+    // Ground-state interleaved ordering.
+    let mut ordering: Vec<u8> = Vec::with_capacity(a as usize);
+    let (mut pc, mut nc) = (0u32, 0u32);
+    for k in 0..a {
+        if (k % 2 == 0 && pc < z_count) || nc >= n_count {
+            ordering.push(b'p');
+            pc += 1;
+        } else {
+            ordering.push(b'n');
+            nc += 1;
+        }
+    }
+
+    let mut nf = [1.0f64, 0.0, 0.0, 0.0, 0.0, 0.0];
+    let half_h = 0.5 * h;
+
+    for k in 0..a as usize {
+        // B_3 confinement: 3x (σ₀ σ₁⁻¹)
+        for _ in 0..3 {
+            nf = hm(&nf, 1.0, 0.0, 0, h);
+            nf = hm(&nf, 1.0, -h, 1, h);
+        }
+
+        if ordering[k] == b'p' {
+            // Proton: uud
+            nf = hm(&nf, 1.0, 0.0, 0, h);        // (0,1) uu → σ₀
+            nf = hm(&nf, 1.0, -half_h, 0, h);    // (0,2) ud → mixed
+            nf = hm(&nf, 1.0, -half_h, 1, h);    // (1,2) ud → mixed (gen 1)
+        } else {
+            // Neutron: udd
+            nf = hm(&nf, 1.0, -half_h, 0, h);    // (0,1) ud → mixed
+            nf = hm(&nf, 1.0, -half_h, 0, h);    // (0,2) ud → mixed
+            nf = hm(&nf, 1.0, -h, 1, h);         // (1,2) dd → σ₁⁻¹
+        }
+
+        // Gluon self-coupling: 2 × σ₀
+        nf = hm(&nf, 1.0, 0.0, 0, h);
+        nf = hm(&nf, 1.0, 0.0, 0, h);
+
+        // Inter-nucleon crossings with all previous nucleons
+        for prev in 0..k {
+            let (ti, tj) = (ordering[prev], ordering[k]);
+            if ti == b'p' && tj == b'p' {
+                nf = hm(&nf, 1.0, 0.0, 0, h);         // pp: σ₀
+            } else if ti == b'n' && tj == b'n' {
+                nf = hm(&nf, 1.0, -h, 0, h);          // nn: σ₀⁻¹
+            } else {
+                nf = hm(&nf, 1.0, -half_h, 0, h);     // pn/np: mixed
+            }
+        }
+    }
+
+    // Electrons: pe crossing (EM channel, gen=1)
+    for _ in 0..z_count {
+        nf = hm(&nf, 1.0, -h, 1, h);
+    }
+
+    nf
+}
+
 // ─── Serialization ───────────────────────────────────────────────────
 
 /// JSON-serializable record of a Gram-matrix computation.
@@ -434,5 +513,27 @@ mod tests {
     fn nf_net_sum() {
         let nf = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0];
         assert!((nf_net(&nf) - 21.0).abs() < 1e-14);
+    }
+
+    #[test]
+    fn build_atom_nf_hydrogen() {
+        // H (Z=1, N=0): one nucleon (proton) + one electron
+        let h = hecke_h(Q_0);
+        let nf = build_atom_nf(1, 0, h);
+        // Must be a finite length-6 result
+        assert!(nf.iter().all(|x| x.is_finite()));
+        // Non-trivial: at least one coordinate should be non-zero
+        assert!(nf.iter().any(|x| x.abs() > 1e-10));
+    }
+
+    #[test]
+    fn build_atom_nf_vacuum() {
+        // (0, 0) → identity NF
+        let h = hecke_h(Q_0);
+        let nf = build_atom_nf(0, 0, h);
+        assert!((nf[0] - 1.0).abs() < 1e-14);
+        for i in 1..6 {
+            assert!(nf[i].abs() < 1e-14);
+        }
     }
 }

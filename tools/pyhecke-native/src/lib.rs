@@ -113,6 +113,21 @@ fn nf_net(nf: Vec<f64>) -> PyResult<f64> {
     Ok(nf.iter().sum())
 }
 
+/// Build the full atom NF for (Z, N) via Hecke multiplication.
+///
+/// Mirrors `hecke_core.build_atom_nf`: proton / neutron B_3 confinement
+/// + quark crossings + gluon self-coupling + inter-nucleon crossings +
+/// electron (σ₁⁻¹) insertion. Returns a length-6 list of f64.
+///
+/// `h` defaults to `hecke_h(Q_0) = Q_0 - Q_0^{-1}` (the physical
+/// substrate value). Pass an explicit `h` for alternative q.
+#[pyfunction]
+#[pyo3(signature = (z, n, h=None))]
+fn build_atom_nf(z: u32, n: u32, h: Option<f64>) -> Vec<f64> {
+    let h_val = h.unwrap_or_else(|| gram::hecke_h(gram::Q_0));
+    gram::build_atom_nf(z, n, h_val).to_vec()
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -124,6 +139,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(hm, m)?)?;
     m.add_function(wrap_pyfunction!(nf_tr, m)?)?;
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
+    m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)

@@ -22,7 +22,7 @@ def test_native_version():
     # Version is wired from Cargo.toml via env!("CARGO_PKG_VERSION") in
     # lib.rs. If Cargo.toml bumps, update the expected here in the same
     # commit.
-    assert pyhecke_native.__version__ == "0.2.0"
+    assert pyhecke_native.__version__ == "0.3.0"
 
 
 def test_native_markov_z_matches_python():
@@ -158,9 +158,40 @@ def test_native_nf_net_matches_python():
     assert abs(pyhecke_native.nf_net(nf) - pg.nf_net(nf)) < 1e-14
 
 
-def test_native_version_bumped_to_0_2_0():
+def test_native_version_bumped():
     import pyhecke_native
     # The version pin is sourced from Cargo.toml at compile time
     # (env!("CARGO_PKG_VERSION")). Bump together with Cargo.toml +
-    # pyproject.toml.
-    assert pyhecke_native.__version__ == "0.2.0"
+    # pyproject.toml when adding new kernels.
+    assert pyhecke_native.__version__ == "0.3.0"
+
+
+# ── M3d++: build_atom_nf ───────────────────────────────────────────────
+
+@pytest.mark.parametrize("z,n", [(1, 0), (1, 1), (2, 1), (2, 2), (6, 6), (8, 8), (20, 20)])
+def test_native_build_atom_nf_matches_python(z, n):
+    """Rust build_atom_nf must be byte-identical to Python for every
+    physically relevant (Z, N)."""
+    import pyhecke_native
+    from pyhecke import gram as pg  # noqa: F401 — triggers hecke_core import
+    import hecke_core
+    import numpy as np
+
+    py = hecke_core.build_atom_nf(z, n)
+    rs = pyhecke_native.build_atom_nf(z, n)
+    diff = np.max(np.abs(np.array(py) - np.array(rs)))
+    assert diff < 1e-12, f"Z={z} N={n}: max diff {diff}"
+
+
+def test_native_build_atom_nf_vacuum():
+    """(0, 0) must return the identity NF."""
+    import pyhecke_native
+    nf = pyhecke_native.build_atom_nf(0, 0)
+    assert abs(nf[0] - 1.0) < 1e-14
+    for x in nf[1:]:
+        assert abs(x) < 1e-14
+
+
+def test_native_build_atom_nf_length_six():
+    import pyhecke_native
+    assert len(pyhecke_native.build_atom_nf(6, 6)) == 6
