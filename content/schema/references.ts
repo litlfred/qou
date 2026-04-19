@@ -960,6 +960,23 @@ export const references: CSLData[] = [
     DOI: "10.1016/0001-8708(78)90010-5",
   }),
 
+  // ── Bokut & Shiao 2001 ────────────────────────────────────────
+  ref({
+    id: "bokut-shiao2001",
+    type: "article-journal",
+    title: "Gröbner--Shirshov bases for Coxeter groups",
+    author: [
+      { family: "Bokut", given: "Leonid A." },
+      { family: "Shiao", given: "Long-Sheng" },
+    ],
+    "container-title": "Communications in Algebra",
+    issued: { "date-parts": [[2001]] },
+    volume: "29",
+    issue: "9",
+    page: "4305-4319",
+    DOI: "10.1081/AGB-100105999",
+  }),
+
   // ── Faddeev 1994 ──────────────────────────────────────────────
   ref({
     id: "faddeev1994",

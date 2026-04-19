@@ -52,8 +52,9 @@ $(L_+, L_0, L_-)$; this is (1). For (2),
 [Buchberger's theorem](#thm:ugb-buchberger) applied to
 (H1)/(H2)/(H3) --- whose S-polynomials all resolve by
 [S-polynomial decomposition](#prop:ugb-s-poly-decomposition) ---
-implies that $\mathrm{NF}(\rho(\beta))$ is unique. The Markov
-trace of this normal form equals the writhe-normalised Jones
-polynomial of $\widehat{\beta}$ by Jones 1987, Theorem 5.1.
-Claim (3) is then immediate: equal normal forms have equal cost.
-$\square$
+implies that $\mathrm{NF}(\rho(\beta))$ is unique, with the Hecke
+relations (H1)/(H2)/(H3) forming a Gröbner--Shirshov basis for
+$H_n(q)$ (Bokut \& Shiao 2001, Theorem 3.5). The Markov trace of
+this normal form equals the writhe-normalised Jones polynomial of
+$\widehat{\beta}$ by Jones 1987, Theorem 5.1. Claim (3) is then
+immediate: equal normal forms have equal cost. $\square$

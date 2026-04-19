@@ -21,5 +21,5 @@ export default proposition({
     "prop:ugb-s-poly-decomposition",
     "quantum-observable-universe:thm:jones-markov-trace",
   ],
-  cites: ["jones1987", "kassel1995", "bergman1978"],
+  cites: ["jones1987", "kassel1995", "bergman1978", "bokut-shiao2001"],
 });

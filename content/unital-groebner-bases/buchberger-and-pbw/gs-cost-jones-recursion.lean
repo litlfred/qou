@@ -47,6 +47,7 @@ LaTeX label: `prop:gs-cost-jones-recursion`
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Ch. XII
 - [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+- [bokut-shiao2001] https://doi.org/10.1081/AGB-100105999
 -/
 
 import UGB.GrobnerShirshov.HeckeGS
@@ -57,6 +58,7 @@ open UGB.GrobnerShirshov
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Ch. XII
+-- Ref: [bokut-shiao2001] https://doi.org/10.1081/AGB-100105999
 
 /-! ## §1  Skein identification (`rfl`-provable) -/
 
