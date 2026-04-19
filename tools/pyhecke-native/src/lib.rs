@@ -77,6 +77,42 @@ fn gram_inverse(q: f64) -> Vec<Vec<f64>> {
     gram::gram_inverse(q).iter().map(|r| r.to_vec()).collect()
 }
 
+/// NF multiplication: multiply NF vector by `(c · σ_gen + d · 1)`.
+///
+/// Takes the 6-element NF vector and optional `h` (defaults to
+/// `hecke_h(q_0)` = q_0 - q_0^{-1}). Returns a new 6-element list.
+#[pyfunction]
+#[pyo3(signature = (nf, c, d, gen, h=None))]
+fn hm(nf: Vec<f64>, c: f64, d: f64, gen: u8, h: Option<f64>) -> PyResult<Vec<f64>> {
+    if nf.len() != 6 {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            format!("nf must have exactly 6 elements, got {}", nf.len()),
+        ));
+    }
+    let arr: [f64; 6] = [nf[0], nf[1], nf[2], nf[3], nf[4], nf[5]];
+    let h_val = h.unwrap_or_else(|| gram::hecke_h(gram::Q_0));
+    Ok(gram::hm(&arr, c, d, gen, h_val).to_vec())
+}
+
+/// Markov trace of a 6-element NF vector at a given `q`.
+#[pyfunction]
+#[pyo3(signature = (nf, q=None))]
+fn nf_tr(nf: Vec<f64>, q: Option<f64>) -> PyResult<f64> {
+    if nf.len() != 6 {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            format!("nf must have exactly 6 elements, got {}", nf.len()),
+        ));
+    }
+    let arr: [f64; 6] = [nf[0], nf[1], nf[2], nf[3], nf[4], nf[5]];
+    Ok(gram::nf_tr(&arr, q.unwrap_or(gram::Q_0)))
+}
+
+/// Sum of NF coefficients.
+#[pyfunction]
+fn nf_net(nf: Vec<f64>) -> PyResult<f64> {
+    Ok(nf.iter().sum())
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -85,6 +121,9 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(gram_matrix, m)?)?;
     m.add_function(wrap_pyfunction!(gram_determinant, m)?)?;
     m.add_function(wrap_pyfunction!(gram_inverse, m)?)?;
-    m.add("__version__", "0.1.0")?;
+    m.add_function(wrap_pyfunction!(hm, m)?)?;
+    m.add_function(wrap_pyfunction!(nf_tr, m)?)?;
+    m.add_function(wrap_pyfunction!(nf_net, m)?)?;
+    m.add("__version__", "0.2.0")?;
     Ok(())
 }

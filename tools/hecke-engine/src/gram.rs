@@ -230,6 +230,57 @@ fn invert_6x6(a: &[[f64; 6]; 6]) -> Option<[[f64; 6]; 6]> {
     Some(inv)
 }
 
+// ─── NF multiplication kernel ────────────────────────────────────────
+
+/// Multiply an NF element by `(c · σ_gen + d · 1)`.
+///
+/// Mirrors `pyhecke.gram.hm` (which closes over `h = q - q^{-1}`).
+/// The `gen` argument must be 0 or 1.
+///
+/// `nf[0..6]` is the NF basis coefficient vector `[γ, σ₀, σ₁, L₊, L₋, e⁻]`.
+pub fn hm(nf: &[f64; 6], c: f64, d: f64, gen: u8, h: f64) -> [f64; 6] {
+    let mut r = [0.0f64; 6];
+    let tables: [(usize, &[(usize, f64)]); 6] = if gen == 0 {
+        [
+            (0, &[(1, c), (0, d)]),
+            (1, &[(1, c * h), (0, c), (1, d)]),
+            (2, &[(3, c), (2, d)]),
+            (3, &[(3, c * h), (2, c), (3, d)]),
+            (4, &[(5, c), (4, d)]),
+            (5, &[(5, c * h), (4, c), (5, d)]),
+        ]
+    } else {
+        [
+            (0, &[(2, c), (0, d)]),
+            (1, &[(4, c), (1, d)]),
+            (2, &[(2, c * h), (0, c), (2, d)]),
+            (3, &[(5, c), (3, d)]),
+            (4, &[(4, c * h), (1, c), (4, d)]),
+            (5, &[(5, c * h), (3, c), (5, d)]),
+        ]
+    };
+    for (si, tgts) in tables.iter() {
+        if nf[*si].abs() < 1e-15 {
+            continue;
+        }
+        for (ti, co) in tgts.iter() {
+            r[*ti] += nf[*si] * co;
+        }
+    }
+    r
+}
+
+/// Markov trace of an NF vector at a given `q`.
+pub fn nf_tr(nf: &[f64; 6], q: f64) -> f64 {
+    let tr = trace_weights(q);
+    (0..6).map(|i| nf[i] * tr[i]).sum()
+}
+
+/// Sum of NF coefficients (the net, or augmentation, of the element).
+pub fn nf_net(nf: &[f64; 6]) -> f64 {
+    nf.iter().sum()
+}
+
 // ─── Serialization ───────────────────────────────────────────────────
 
 /// JSON-serializable record of a Gram-matrix computation.
@@ -360,5 +411,28 @@ mod tests {
                 j, g[0][j], j, tr[j]
             );
         }
+    }
+
+    #[test]
+    fn hm_identity_on_gamma() {
+        // hm(γ, 1, 0, 0) should give σ_0 (basis index 1)
+        let nf = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+        let out = hm(&nf, 1.0, 0.0, 0, hecke_h(Q_0));
+        assert!((out[1] - 1.0).abs() < 1e-12);
+        for i in [0, 2, 3, 4, 5] {
+            assert!(out[i].abs() < 1e-12);
+        }
+    }
+
+    #[test]
+    fn nf_tr_of_gamma_is_one() {
+        let nf = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+        assert!((nf_tr(&nf, Q_0) - 1.0).abs() < 1e-14);
+    }
+
+    #[test]
+    fn nf_net_sum() {
+        let nf = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0];
+        assert!((nf_net(&nf) - 21.0).abs() < 1e-14);
     }
 }
