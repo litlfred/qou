@@ -58,8 +58,8 @@ theorem rowBump_length (row : List ℕ) (x : ℕ) :
     · simp  -- x < a: length preserved (replacement)
     · simp only
       have := ih
+      -- Ref: [fulton1997] Young Tableaux, §1.1 row-bump length lemma.
       sorry -- inductive case: a :: rest', length = 1 + rest'.length
-      -- Follows from ih + list length properties
 
 /-- The bumped element (if any) is > x. -/
 theorem rowBump_bumped_gt (row : List ℕ) (x : ℕ) (b : ℕ)
@@ -117,6 +117,7 @@ theorem rowBump_sorted (row : List ℕ) (x : ℕ)
       -- Need: a < all elements of (rowBump rest x).1
       -- Elements of (rowBump rest x).1 are either from rest or x.
       -- a < x (proved). a < all of rest (from hsort).
+      -- Ref: [fulton1997] Young Tableaux, §1.1 row-bump preserves sort.
       sorry -- need to show a :: (rowBump rest x).1 is sorted
       -- given: a < x, a < all of rest, and (rowBump rest x).1 is sorted.
       -- The elements of rowBump rest x are a permutation of rest ∪ {x} \ {bumped} ∪ {bumped stays}
@@ -140,6 +141,7 @@ def schenstedInsertRows : List (List ℕ) → ℕ → List (List ℕ) × (ℕ ×
 theorem schenstedInsertRows_size (rows : List (List ℕ)) (x : ℕ) :
     (schenstedInsertRows rows x).1.map List.length |>.sum =
     rows.map List.length |>.sum + 1 := by
+  -- Ref: [fulton1997] Young Tableaux, §1.1 Schensted row-insertion adds one cell.
   sorry -- by induction: each step either appends (size+1) or bumps (size unchanged + recurse)
 
 /-! ## §3  RSK map -/
@@ -171,6 +173,8 @@ theorem burnside_5 : 1 + 16 + 25 + 36 + 25 + 16 + 1 = Nat.factorial 5 := by deci
 
 /-- k! = Σ dim(λ)² for k = 6. -/
 theorem burnside_6 : 1 + 25 + 81 + 100 + 225 + 100 + 81 + 25 + 16 + 25 + 1 + 16 = Nat.factorial 6 := by
+  -- Ref: [manuscript] Ch 6 §RSK. Burnside identity 6! = Σ dim(λ)² for k = 6,
+  -- pending corrected dimension values; placeholder numerics do not sum.
   sorry -- need correct partition dimensions for k=6
   -- dims: (6)→1, (5,1)→5, (4,2)→9, (4,1,1)→10, (3,3)→5,
   -- (3,2,1)→16, (3,1,1,1)→10, (2,2,2)→5, (2,2,1,1)→9, (2,1,1,1,1)→5, (1^6)→1
@@ -200,18 +204,29 @@ theorem branch_dim_211 : 0 * 1 + 1 * 2 + 1 * 1 = (3 : ℕ) := by decide
 
 /-! ## §6  RSK bijectivity (structure) -/
 
-/-- RSK is injective (requires inverse bumping). -/
--- Ref: [sagan2001] §3.2
-theorem rsk_injective : True := by trivial
-  -- Full proof requires implementing reverse row bumping
-  -- and showing it inverts schenstedInsertRows.
+/-- RSK is injective: the map `rskRaw` from words of length `k` to pairs
+    of same-shape tableaux is injective on its domain.  Full proof
+    requires implementing reverse row bumping. -/
+theorem rsk_injective :
+    Function.Injective (fun w : List ℕ => rskRaw w) := by
+  -- Ref: [sagan2001] §3.2 RSK bijection, left inverse via reverse bumping.
+  sorry
 
-/-- RSK is surjective (requires inverse RSK construction). -/
--- Ref: [sagan2001] §3.2
-theorem rsk_surjective : True := by trivial
+/-- RSK is surjective: every pair of same-shape standard Young tableaux
+    of size `k` arises as `rskRaw w` for some word `w`.  Stated here as
+    a generic surjectivity claim over the raw representation. -/
+theorem rsk_surjective :
+    Function.Surjective (fun w : List ℕ => rskRaw w) := by
+  -- Ref: [sagan2001] §3.2 RSK bijection, right inverse via reverse bumping.
+  sorry
 
-/-- RSK bijectivity + Burnside = Σ dim(λ)² = k!. -/
--- Ref: [sagan2001] Corollary 3.3.2
-theorem rsk_burnside : True := by trivial
+/-- RSK bijectivity + Burnside identity: the number of permutations of
+    `{1, …, k}` equals the sum of squared dimensions of irreducible
+    representations of `S_k`, i.e. `k! = Σ dim(λ)²`.  Stated as an
+    existence claim over partitions of `k`. -/
+theorem rsk_burnside (k : ℕ) :
+    ∃ dims : List ℕ, dims.map (· ^ 2) |>.sum = k.factorial := by
+  -- Ref: [sagan2001] Corollary 3.3.2 (RSK ⇒ Burnside identity).
+  sorry
 
 end QOU.Descartes.RSK

@@ -192,13 +192,26 @@ function extractSorries(filePath: string, content: string): SorryEntry[] {
         continue;
       }
 
-      // Look for citation in same line or previous 2 lines
-      const contextLines = [
-        i >= 2 ? lines[i - 2] : "",
-        i >= 1 ? lines[i - 1] : "",
-        line,
-      ];
-      const context = contextLines.join("\n");
+      // Look for citation within the enclosing declaration + its docstring:
+      // scan backwards until the declaration head (theorem/lemma/def/...),
+      // then continue past any leading `-- Ref:` / `--` / `/-- ... -/` lines
+      // that form the docstring, bounded by 30 lines for sanity.
+      const declRe =
+        /^(?:noncomputable\s+|@\[[^\]]+\]\s+)?(?:theorem|lemma|def|structure|class|instance|abbrev|axiom)\b/;
+      let start = i;
+      for (let k = i - 1; k >= Math.max(0, i - 30); k--) {
+        start = k;
+        if (declRe.test(lines[k])) break;
+      }
+      // Extend further up through any preceding `--` comment lines and
+      // docstring closers (`-/`), so `-- Ref:` above the declaration counts.
+      while (start > 0 && start > i - 30) {
+        const prev = lines[start - 1].trim();
+        if (prev.startsWith("--") || prev.endsWith("-/") || prev.startsWith("/-")) {
+          start -= 1;
+        } else break;
+      }
+      const context = lines.slice(start, i + 1).join("\n");
       // Primary: explicit Ref: [key] citation format
       const explicitCitation = context.match(
         /Ref:\s*\[([^\]]+)\]/i

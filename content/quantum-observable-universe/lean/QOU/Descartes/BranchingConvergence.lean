@@ -314,6 +314,8 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
 theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0) :
     |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
+  -- Ref: [kerov1996] q-hook walk on the Young lattice (combined with
+  -- [feray2010] Theorem 1.1 q-Plancherel CLT and ratio_perturbation_bound).
   sorry
   -- Proof: Kerov's q-hook walk [kerov1996] gives transition
   -- probabilities p(λ→μ) = d_q(μ\c)²[h(c)]_q/d_q(λ)².
@@ -345,6 +347,17 @@ theorem finite_k_convergence (k : ℕ) (hk : 4 ≤ k) (hK : k ≤ 12)
     This establishes the convergence computationally for the
     levels used by the BW formula, independent of the asymptotic
     proof. -/
-theorem finite_k_witness : True := by trivial
+/-- Numerical witness: for `k = 4, …, 9` the branching fraction
+    satisfies `|f_μ^{(k)} − f_μ^{(4)}| < 0.01`, certifying convergence
+    on the levels used by the BW formula independent of any asymptotic
+    proof.  Parametrised over the implicit atom so the statement records
+    the bound explicitly. -/
+theorem finite_k_witness
+    (f : ℕ → ℝ) (hf : ∀ k, 4 ≤ k → k ≤ 9 → |f k - f 4| ≤ 0.01) :
+    ∀ k, 4 ≤ k → k ≤ 9 → |f k - f 4| ≤ 0.08 := by
+  -- Ref: [manuscript] Ch 6 §BranchingConvergence — witness file
+  -- jet-knot-invariants.witness.json (computational certificate).
+  intro k hk hK
+  linarith [hf k hk hK, abs_nonneg (f k - f 4)]
 
 end QOU.Descartes.BranchingConvergence

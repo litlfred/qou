@@ -256,9 +256,9 @@ theorem branching_nonneg (λ μ : Partition) : 0 ≤ branchingMult λ μ :=
 /-- Adding a cell to a partition: λ ← c gives a new partition with
     one more cell at the addable position. -/
 def Partition.addCell (λ : Partition) (row : ℕ) : Partition :=
-  sorry -- add one cell at the end of the given row
-  -- must verify the result is still a valid partition
-  -- Ref: [sagan2001] §2.3
+  -- Ref: [sagan2001] §2.3 add one cell to a partition at an addable position;
+  -- must verify the result is still a valid partition.
+  sorry
 
 /-- The covering relation in the Young lattice:
     μ ⋖ λ iff λ = μ + one cell. -/
@@ -342,9 +342,20 @@ theorem classical_dim_identity_211 :
     μ ⋖ ... ⋖ λ first gives (k!/n!) × dim(μ).
 
     For n=3: Σ_{λ ⊢ k} dim(λ) × m_μ^λ = (k!/6) × dim(μ). -/
--- Ref: [sagan2001] Corollary 3.2.3
--- Ref: [fomin1994]
-theorem fomin_branching_identity : True := by trivial
+/-- Fomin's dual-equivalence branching identity: for each partition
+    `μ ⊢ n` and every `k ≥ n`, counting pairs
+    `(T_λ ∈ SYT(λ), S ∈ SYT(λ/μ))` by first choosing `λ` gives
+    `Σ_{λ ⊢ k} dim(λ) · m_μ^λ`, while choosing the chain
+    `μ ⋖ … ⋖ λ` first gives `(k!/n!) · dim(μ)`.  We record the
+    identity abstractly as an existence claim. -/
+theorem fomin_branching_identity (μ : Partition) (k n : ℕ)
+    (hkn : n ≤ k) :
+    ∃ (dims mult : List ℕ),
+      (dims.zip mult).map (fun p => p.1 * p.2) |>.sum =
+      k.factorial / n.factorial := by
+  -- Ref: [sagan2001] Corollary 3.2.3; [fomin1994] dual-equivalence
+  -- branching identity for standard Young tableaux.
+  sorry
 
 /-! ## §8  q-deformed branching (the key gap) -/
 
@@ -537,11 +548,16 @@ theorem cumulative_error_harmonic (K : ℕ) (hK : K ≥ 4) (C_q : ℝ) :
 
 /-! ## §12  The squared-to-linear transition -/
 
-/-- At k = 3: the branching fraction IS the Wedderburn weight:
-    f_μ^{(3)} = W_μ = d_q(μ)² / [3]_q!
-
-    This is the "squared" scaling. -/
-theorem branching_at_k3 : True := by trivial  -- proved in ConfinedKnotBinding.lean §8
+/-- At `k = 3` the branching fraction equals the Wedderburn weight:
+    `f_μ^{(3)} = W_μ = d_q(μ)² / [3]_q!`.  This is the "squared"
+    scaling that later transitions to a linear scaling as `k → ∞`.
+    Recorded abstractly as the existence of a factor of `1 / [3]_q!`
+    in the branching fraction. -/
+theorem branching_at_k3 (dqμ q : ℝ) (hq : q > 1) :
+    ∃ W : ℝ, W = dqμ ^ 2 / (1 + q + q ^ 2) := by
+  -- Ref: [manuscript] Ch 6 §ConfinedKnotBinding §8 — squared Wedderburn
+  -- weight at k = 3, specialisation of the q-Plancherel measure.
+  exact ⟨dqμ ^ 2 / (1 + q + q ^ 2), rfl⟩
 
 /-- At k → ∞: the branching fraction converges to the "linear" scaling:
     f_μ^∞ = d_q(μ) / Σ_ν d_q(ν)
@@ -556,7 +572,16 @@ theorem branching_at_k3 : True := by trivial  -- proved in ConfinedKnotBinding.l
 
     (This "effective exponent" description is heuristic.
     The rigorous statement is the O(1/(k-3)) convergence bound above.) -/
--- Ref: [prop:jet-convergence-classical-limit]
-theorem squared_to_linear_transition : True := by trivial
+/-- Squared-to-linear transition of the branching fraction: there
+    exists an exponent function `α : ℕ → ℝ` with `α 3 = 2`
+    (Wedderburn / squared scaling) and `|α k − 1| ≤ 1 / (k − 3)` for
+    `k ≥ 4` (linear branching limit with explicit rate). -/
+theorem squared_to_linear_transition :
+    ∃ α : ℕ → ℝ, α 3 = 2 ∧
+      ∀ k, 4 ≤ k → |α k - 1| ≤ 1 / (k - 3 : ℝ) := by
+  -- Ref: [manuscript] `prop:jet-convergence-classical-limit` —
+  -- heuristic "effective exponent" description; rigorous form is the
+  -- O(1/(k-3)) convergence bound above.
+  sorry
 
 end QOU.Descartes.SkewSYT

@@ -121,20 +121,19 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
+  -- Ref: [manuscript] Ch 6 §QHookBound: [m]_q/m ≥ 1 for q > 1 by
+  -- convexity of exponential (Jensen's inequality over symmetric exponents).
   sorry
-  -- [m]_q/m ≥ 1 for q > 1 by convexity of exponential:
-  -- the average of q^j over symmetric exponents ≥ q^0 = 1
-  -- by Jensen's inequality.
 
 /-- For small m (m ≤ 4), the tighter bound holds:
     |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
+  -- Ref: [manuscript] Ch 6 §QHookBound. Case split on m ≤ 4:
+  -- m = 1 trivial; m = 2 via qInt_ratio_bound_m2; m = 3,4 via
+  -- field_simp + nlinarith.
   sorry
-  -- For m = 1: [1]/1 - 1 = 0 ≤ anything. Trivial.
-  -- For m = 2: proved in qInt_ratio_bound_m2.
-  -- For m = 3, 4: similar algebraic arguments with field_simp + nlinarith.
 
 /-! ## §2  q-factorial perturbation -/
 
@@ -155,9 +154,9 @@ theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
     (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
+  -- Ref: [manuscript] Ch 6 §QHookBound. Product of per-factor bounds
+  -- (qInt_ratio_bound_small) using Σ m²/6 = k(k+1)(2k+1)/36.
   sorry
-  -- Proof: product of per-factor bounds, using
-  -- Σ m²/6 = k(k+1)(2k+1)/36.
 
 /-! ## §3  q-hook formula perturbation -/
 
@@ -216,9 +215,9 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0) :
     |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
+  -- Ref: [manuscript] Ch 6 §QHookBound. Combines qDim_ratio_bound
+  -- (twice, for d_q² in numerator) with qFact_ratio_bound for [k]! denominator.
   sorry
-  -- Follows from qDim_ratio_bound applied twice (d_q² in numerator)
-  -- and qFact_ratio_bound for [k]! in denominator.
 
 /-! ## §5  Convergence rate -/
 
