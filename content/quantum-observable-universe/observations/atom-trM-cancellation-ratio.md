@@ -77,10 +77,10 @@ $^{3}\mathrm{He}$), conjugate pairs mostly have the same sign and
 the cancellation is distributed differently.
 
 This is consistent with the $H_{3A}$ Wedderburn-block structure
-collapsing at shell closure (via
-[magic-unfold](#rem:magic-unfold-peel) when that remark is
-written), and it provides an empirical signature that can
-discriminate magic from non-magic configurations.
+collapsing at shell closure via the
+[magic-unfold Markov peel](#prop:magic-unfold-peel), and it
+provides an empirical signature that can discriminate magic from
+non-magic configurations.
 
 ## Action for downstream computation
 

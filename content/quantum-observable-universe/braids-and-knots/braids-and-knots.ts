@@ -385,6 +385,7 @@ export default chapter({
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
         "jet-tower-convergence",
+        "magic-unfold-peel",
         "mass-tower-syt-cells",
         "energy-scale-planck",
         "topological-mass-trefoil",
