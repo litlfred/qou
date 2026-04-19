@@ -138,8 +138,8 @@ P1 is a prerequisite for every heavy-atom improvement.  Within P2:
 
 1. **Gluon LP → full SDP** (~1 MeV expected gain on D).  Highest
    leverage.  Session probe confirmed per-nucleon H_3 optima do NOT
-   transfer; full-atom H_{3A} SDP needed (P2.1b, parked on a
-   separate fork).
+   transfer; full-atom H_{3A} SDP (P2.1b) to be done on this branch
+   (no separate fork per user decision 2026-04-19).
 2. **ILP/SDP audit** — DONE (`docs/ilp-sdp-audit.md`).  Six LP(PSD)
    files identified as SDP-in-disguise.
 3. ~~**Arbitrary-order Kähler**~~ — DONE, NEGATIVE RESULT.  Series
