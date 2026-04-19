@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:algebraic-volume-specialization",
   lean: {
     decl: "QOU.BraidsAndKnots.algebraic_volume_specialization",
+    file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },
   title: "Specialisation of the algebraic quantum volume",

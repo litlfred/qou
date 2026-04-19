@@ -5,7 +5,8 @@ export default proposition({
   title:
     "Universality of $\\mathrm{Geom}(K)$: the categorical volume form yields $\\mathrm{Vol}(K)$ and $\\mathrm{CS}(K)$",
   lean: {
-    decl: "QOU.BraidKnot.geom_universality",
+    decl: "QOU.BraidsAndKnots.geom_universality",
+    file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },
   uses: [

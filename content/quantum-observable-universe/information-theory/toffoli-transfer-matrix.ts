@@ -3,7 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:toffoli-transfer-matrix",
   lean: {
-    decl: "QOU.InformationTheory.toffoli_transfer_matrix",
+    decl: "QOU.InformationTheory.Stubs.toffoli_transfer_matrix",
+    file: "QOU/InformationTheory/Stubs.lean",
     validation: "not_checked",
   },
   title:

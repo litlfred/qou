@@ -5,7 +5,8 @@ export default conjecture({
   title:
     "Jet-filtered knot factor: per-level character convergence and nuclear quotient braid",
   lean: {
-    decl: "QOU.BraidKnot.jet_filtered_knot_factor",
+    decl: "QOU.BraidsAndKnots.jet_filtered_knot_factor",
+    file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },
   uses: [

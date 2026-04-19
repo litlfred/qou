@@ -14,7 +14,8 @@ export default proposition({
     "regime-transition",
   ],
   lean: {
-    decl: "QOU.Interactions.nuclearOperatorRegimes",
+    decl: "QOU.ParticleInteractions.nuclearOperatorRegimes",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [

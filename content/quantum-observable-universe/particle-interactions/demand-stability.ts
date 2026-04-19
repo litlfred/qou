@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:demand-stability",
   lean: {
     decl: "QOU.ParticleInteractions.demand_stability",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title: "Demand profile determines nuclear and atomic stability",

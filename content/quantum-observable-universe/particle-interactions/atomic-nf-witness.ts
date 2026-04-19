@@ -7,6 +7,7 @@ export default proposition({
   label: "prop:atomic-nf-witness",
   lean: {
     decl: "QOU.ParticleInteractions.atomic_nf_witness",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title: "Atomic braid normal form witness",

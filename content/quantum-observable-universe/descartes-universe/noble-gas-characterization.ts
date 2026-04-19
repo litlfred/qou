@@ -3,7 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:noble-gas-characterization",
   lean: {
-    decl: "QOU.DescartesUniverse.noble_gas_characterization",
+    decl: "QOU.DescartesUniverse.Stubs.noble_gas_characterization",
+    file: "QOU/DescartesUniverse/Stubs.lean",
     validation: "not_checked",
   },
   title:

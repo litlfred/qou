@@ -3,7 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:p-bandwidth-bound",
   lean: {
-    decl: "QOU.InformationTheory.p_bandwidth_bound",
+    decl: "QOU.InformationTheory.Stubs.p_bandwidth_bound",
+    file: "QOU/InformationTheory/Stubs.lean",
     validation: "not_checked",
   },
   title: "Polynomial computation as sub-horizon bandwidth",

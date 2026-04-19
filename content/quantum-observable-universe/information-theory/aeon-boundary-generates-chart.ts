@@ -8,7 +8,8 @@ export default conjecture({
     "integrability", "torsion-flow",
   ],
   lean: {
-    decl: "QOU.aeon_boundary_generates_chart",
+    decl: "QOU.InformationTheory.Stubs.aeon_boundary_generates_chart",
+    file: "QOU/InformationTheory/Stubs.lean",
     validation: "not_checked",
   },
   uses: [

@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:confinement-lp",
   lean: {
     decl: "QOU.ParticleInteractions.confinement_lp",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title:

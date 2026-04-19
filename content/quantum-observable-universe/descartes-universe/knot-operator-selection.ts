@@ -3,7 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:knot-operator-selection",
   lean: {
-    decl: "QOU.DescartesUniverse.knot_operator_selection",
+    decl: "QOU.DescartesUniverse.Stubs.knot_operator_selection",
+    file: "QOU/DescartesUniverse/Stubs.lean",
     validation: "not_checked",
   },
   title: "Knot operator selection via Frobenius dual",

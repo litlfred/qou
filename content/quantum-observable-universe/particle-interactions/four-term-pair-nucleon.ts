@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:four-term-pair-nucleon",
   lean: {
     decl: "QOU.ParticleInteractions.four_term_pair_nucleon",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title: "Nucleon derivation from 4-term photon pair production",

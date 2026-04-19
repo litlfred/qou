@@ -15,7 +15,8 @@ export default proposition({
     "factorized-model",
   ],
   lean: {
-    decl: "QOU.Descartes.tau_leptonic_universality",
+    decl: "QOU.DescartesUniverse.Stubs.tau_leptonic_universality",
+    file: "QOU/DescartesUniverse/Stubs.lean",
     validation: "not_checked",
   },
   uses: [

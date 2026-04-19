@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:lp-dual-stability",
   lean: {
     decl: "QOU.ParticleInteractions.lp_dual_stability",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title:

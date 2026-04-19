@@ -7,6 +7,7 @@ export default proposition({
   label: "prop:neutron-proton-splitting",
   lean: {
     decl: "QOU.ParticleInteractions.neutron_proton_splitting",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title: "Neutron--proton mass splitting",

@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:observation-energy",
   lean: {
     decl: "QOU.QuantumObservableUniverses.observation_energy",
+    file: "QOU/QuantumObservableUniverses.lean",
     validation: "not_checked",
   },
   title:

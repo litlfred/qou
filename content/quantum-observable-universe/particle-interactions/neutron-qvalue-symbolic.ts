@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:neutron-qvalue-symbolic",
   lean: {
     decl: "QOU.ParticleInteractions.neutron_qvalue_symbolic",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title: "Symbolic $Q$-value of free neutron decay",

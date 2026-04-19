@@ -7,6 +7,7 @@ export default proposition({
   label: "prop:shell-filling-rule",
   lean: {
     decl: "QOU.MolecularConstruction.shell_filling_rule",
+    file: "QOU/MolecularConstruction.lean",
     validation: "not_checked",
   },
   title: "Shell filling minimises $\\Phi_1$ (aufbau from LP dual)",

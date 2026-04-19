@@ -20,6 +20,7 @@ export default proposition({
   ],
   lean: {
     decl: "QOU.ParticleInteractions.bw_categorical_descent",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [

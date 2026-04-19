@@ -3,7 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:frobenius-gram-matrix",
   lean: {
-    decl: "QOU.DescartesUniverse.frobenius_gram_matrix",
+    decl: "QOU.DescartesUniverse.Stubs.frobenius_gram_matrix",
+    file: "QOU/DescartesUniverse/Stubs.lean",
     validation: "not_checked",
   },
   title: "Frobenius Gram matrix and dual construction in $H_3(q)$",

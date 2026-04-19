@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:magic-numbers-from-q",
   lean: {
     decl: "QOU.Observations.magic_numbers_from_q",
+    file: "QOU/Observations.lean",
     validation: "not_checked",
   },
   title:

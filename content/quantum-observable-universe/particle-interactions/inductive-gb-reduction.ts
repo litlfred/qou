@@ -11,7 +11,8 @@ export default proposition({
     "hecke-algebra",
   ],
   lean: {
-    decl: "QOU.Interactions.inductiveGBReduction",
+    decl: "QOU.ParticleInteractions.inductiveGBReduction",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [

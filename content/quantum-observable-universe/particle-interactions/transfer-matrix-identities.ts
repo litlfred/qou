@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:transfer-matrix-identities",
   lean: {
     decl: "QOU.ParticleInteractions.transfer_matrix_identities",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   title: "Transfer matrix identities: $T_{pp}T_{nn} = I$ and $T_{pn}^2 = [2]_q^2/4 \\cdot I$",

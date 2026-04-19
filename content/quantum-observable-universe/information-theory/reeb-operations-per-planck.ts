@@ -3,7 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:reeb-operations-per-planck",
   lean: {
-    decl: "QOU.InformationTheory.reeb_operations_per_planck",
+    decl: "QOU.InformationTheory.Stubs.reeb_operations_per_planck",
+    file: "QOU/InformationTheory/Stubs.lean",
     validation: "not_checked",
   },
   title: "Discrete iterations per Reeb circuit",

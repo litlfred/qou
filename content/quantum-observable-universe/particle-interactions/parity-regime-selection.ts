@@ -14,6 +14,7 @@ export default theorem({
   ],
   lean: {
     decl: "QOU.ParticleInteractions.parity_regime_selection",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [

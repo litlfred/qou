@@ -16,7 +16,8 @@ export default proposition({
     "tau",
   ],
   lean: {
-    decl: "QOU.Descartes.lepton_continuant_recurrence",
+    decl: "QOU.DescartesUniverse.Stubs.lepton_continuant_recurrence",
+    file: "QOU/DescartesUniverse/Stubs.lean",
     validation: "not_checked",
   },
   uses: [

@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:collatz-contact-boundary",
   lean: {
     decl: "QOU.AlgebraicSubstrate.collatz_contact_boundary",
+    file: "QOU/AlgebraicSubstrate.lean",
     validation: "not_checked",
   },
   title:

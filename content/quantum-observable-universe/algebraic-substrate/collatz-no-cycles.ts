@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:collatz-no-cycles",
   lean: {
     decl: "QOU.AlgebraicSubstrate.collatz_no_cycles",
+    file: "QOU/AlgebraicSubstrate.lean",
     validation: "not_checked",
   },
   title:

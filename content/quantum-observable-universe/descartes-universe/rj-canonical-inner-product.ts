@@ -14,7 +14,8 @@ export default proposition({
     "uniqueness",
   ],
   lean: {
-    decl: "QOU.Descartes.rj_canonical_inner_product",
+    decl: "QOU.DescartesUniverse.Stubs.rj_canonical_inner_product",
+    file: "QOU/DescartesUniverse/Stubs.lean",
     validation: "not_checked",
   },
   uses: [

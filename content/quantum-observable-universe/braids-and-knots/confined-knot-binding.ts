@@ -5,7 +5,8 @@ export default proposition({
   title:
     "Confined knot binding mechanism: character ratio decomposition per jet level",
   lean: {
-    decl: "QOU.BraidKnot.confined_knot_binding",
+    decl: "QOU.BraidsAndKnots.confined_knot_binding",
+    file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },
   uses: [

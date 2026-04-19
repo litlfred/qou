@@ -13,6 +13,7 @@ export default proposition({
   ],
   lean: {
     decl: "QOU.ParticleInteractions.branching_qvalue_factorization",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [
