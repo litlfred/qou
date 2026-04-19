@@ -30,3 +30,11 @@ theorem KnotOperatorEnergy.shadowPrice_unique
   sorry
 
 end QOU.BraidKnot
+
+namespace QOU.BraidKnot.KnotOperatorEnergy
+
+/-- **prop:knot-operator-energy-unique** — placeholder stub; full proof TBD. -/
+theorem unique : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/knot-operator-energy-unique
+  sorry
+end QOU.BraidKnot.KnotOperatorEnergy

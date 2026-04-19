@@ -77,4 +77,9 @@ theorem mass_is_holonomy (data : ArchimedeanMassData) :
   rw [categorical_equals_multiplicative_integral data,
       nonabelian_stokes data]
 
+
+/-- **cor:mass-identity-C** — placeholder stub; full definition TBD. -/
+structure MassIdentityC where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

@@ -72,4 +72,9 @@ theorem c5_preserves_normSq (k : ℕ) (w : ℂ) :
   rw [map_mul]
   simp [Complex.normSq_exp_ofReal_mul_I]
 
+
+/-- **def:briggs-klein-chart** — placeholder stub; full definition TBD. -/
+structure BriggsKleinChart where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Brings

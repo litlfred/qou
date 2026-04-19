@@ -150,4 +150,9 @@ theorem hbar_q_pos : 0 < hbar_q := by
   have := (mass_scale_from_q substrate_q substrate_q_gt_one).1
   exact this
 
+
+/-- **prop:terminal-resolution** — placeholder stub; full proof TBD. -/
+theorem terminal_resolution : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/terminal-resolution
+  sorry
 end QOU.Experimental

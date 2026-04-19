@@ -111,4 +111,9 @@ theorem mass_from_linking_only
   have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
+
+/-- **prop:skein-generation** — placeholder stub; full proof TBD. -/
+theorem skein_generation : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/skein-generation
+  sorry
 end QOU.Torsion

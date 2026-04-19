@@ -94,3 +94,11 @@ def FrobeniusHopfData.hasNonDegeneratePairing {C : Type u} [Category.{v} C]
     exact fh.pairing_snake_right
 
 end QOU
+
+namespace QOU.FrobeniusHopfData
+
+/-- **def:frobenius-pairing** — placeholder stub; full definition TBD. -/
+structure frobeniusForm where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.FrobeniusHopfData

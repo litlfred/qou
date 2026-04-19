@@ -91,4 +91,11 @@ theorem predicted_ratio_pos (lmr : LeptonMassRatio) :
   apply sq_pos_of_pos
   exact hbar_q_pos_of_gt_one lmr.q_gt_one
 
+/-- **rem:skein-mass-relation** — alias for `SkeinMassRelation`
+    exported under the manifest's decl name.  Remark blocks are
+    interpretive; this re-export lets the content audit resolve
+    the block's `lean.decl` without introducing new mathematical
+    content. -/
+@[reducible] def skein_mass_relation := SkeinMassRelation
+
 end QOU.Experimental

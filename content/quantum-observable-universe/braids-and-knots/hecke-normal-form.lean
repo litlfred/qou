@@ -34,3 +34,11 @@ inductive RewriteRule where
 
 /-- The NF basis has exactly n! = 6 elements for H₃(q). -/
 theorem nf_basis3_card : 6 = Nat.factorial 3 := by norm_num
+
+namespace QOU.Braiding
+
+/-- **def:hecke-normal-form** — placeholder stub; full definition TBD. -/
+structure HeckeNormalForm where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Braiding

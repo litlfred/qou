@@ -164,4 +164,9 @@ noncomputable def first_shell_gap : ℝ := 1.4093 / 0.0951
 theorem first_shell_gap_large : first_shell_gap > 14 := by
   unfold first_shell_gap; norm_num
 
+
+/-- **prop:torus-knot-shell-binding** — placeholder stub; full proof TBD. -/
+theorem torus_knot_shell_binding : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/torus-knot-shell-binding
+  sorry
 end QOU.Descartes

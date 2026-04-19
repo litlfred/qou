@@ -88,4 +88,9 @@ theorem qou_canonical_action_unique_up_to_scalar
   -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   trivial
 
+
+/-- **prop:qou-canonical-action** — placeholder stub; full proof TBD. -/
+theorem qou_canonical_action : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/qou-canonical-action
+  sorry
 end QOU

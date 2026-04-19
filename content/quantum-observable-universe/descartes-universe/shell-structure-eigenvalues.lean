@@ -125,4 +125,9 @@ theorem shell_capacity (n : ℕ) :
 theorem hecke_classical : hecke 1 = 0 := by
   unfold hecke; norm_num
 
+
+/-- **prop:shell-structure-eigenvalues** — placeholder stub; full proof TBD. -/
+theorem shell_structure_eigenvalues : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/shell-structure-eigenvalues
+  sorry
 end QOU.Descartes

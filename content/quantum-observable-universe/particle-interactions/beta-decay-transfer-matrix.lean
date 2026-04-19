@@ -189,4 +189,9 @@ theorem daughter_volumes_smaller :
   unfold V_par_sigma0 V_dau_sigma0 V_par_sigma1 V_dau_sigma1
   constructor <;> norm_num
 
+
+/-- **prop:beta-decay-transfer-matrix** — placeholder stub; full proof TBD. -/
+theorem beta_decay_transfer_matrix : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §particle-interactions/beta-decay-transfer-matrix
+  sorry
 end QOU.Descartes

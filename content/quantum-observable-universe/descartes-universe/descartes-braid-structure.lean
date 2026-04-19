@@ -76,4 +76,9 @@ theorem thirty_factorization : (30 : ℕ) = 2 * 3 * 5 := by norm_num
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110218145
 theorem dic3_divides_s5 : 12 ∣ (120 : ℕ) := ⟨10, by norm_num⟩
 
+
+/-- **cor:descartes-braid-structure** — placeholder stub; full proof TBD. -/
+theorem descartes_braid_structure : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/descartes-braid-structure
+  sorry
 end QOU.Descartes

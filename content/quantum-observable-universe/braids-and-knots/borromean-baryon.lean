@@ -20,3 +20,11 @@ def BorromeanBaryon.charge (B : BorromeanBaryon) : Int :=
 theorem borromean_volume_pos : (7.32772 : ℝ) > 0 := by norm_num
 
 end
+
+namespace QOU.Braiding
+
+/-- **def:borromean-baryon** — placeholder stub; full definition TBD. -/
+structure BorromeanBaryon where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Braiding

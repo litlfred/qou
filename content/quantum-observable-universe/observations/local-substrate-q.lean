@@ -103,4 +103,9 @@ theorem codata_ratio_in_range :
   · rw [div_lt_one (by positivity : (0:ℝ) < 206.7682830)]
     norm_num
 
+
+/-- **prop:local-substrate-q** — placeholder stub; full proof TBD. -/
+theorem local_substrate_q : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §observations/local-substrate-q
+  sorry
 end QOU.Experimental

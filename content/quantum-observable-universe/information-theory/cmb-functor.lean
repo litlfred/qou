@@ -35,4 +35,9 @@ structure CMBFunctorValue where
   /-- The CMB's algebra matches the horizon's algebra. -/
   algebra_match : cmb.source.algebra = horizon.algebra
 
+
+/-- **def:cmb-functor** — placeholder stub; full definition TBD. -/
+structure CMBFunctor where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

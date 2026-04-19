@@ -22,3 +22,11 @@ structure BenzeneBraid where
 
 /-- Benzene strand count: 6 × carbon(18) + 6 × hydrogen(2). -/
 theorem benzene_strands : 6 * 18 + 6 * 2 = 120 := by norm_num
+
+namespace QOU.Molecular
+
+/-- **def:benzene-molecular-braid** — placeholder stub; full definition TBD. -/
+structure BenzeneBraid where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

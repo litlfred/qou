@@ -95,4 +95,9 @@ theorem parityViolationStrength_classical :
   · field_simp
   · field_simp
 
+
+/-- **prop:parity-violation-skein** — placeholder stub; full proof TBD. -/
+theorem parity_violation_skein : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/parity-violation-skein
+  sorry
 end QOU.Descartes

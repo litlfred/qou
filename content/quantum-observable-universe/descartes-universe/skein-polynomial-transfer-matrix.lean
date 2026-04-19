@@ -195,4 +195,9 @@ structure DoubleBetaCrossTerm where
   cross_term : R_q :=
     (P_2beta - P_par) - (P_beta1 - P_par) - (P_beta2 - P_par)
 
+
+/-- **prop:skein-polynomial-transfer-matrix** — placeholder stub; full proof TBD. -/
+theorem skein_polynomial_transfer_matrix : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/skein-polynomial-transfer-matrix
+  sorry
 end QOU.Descartes

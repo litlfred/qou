@@ -275,9 +275,14 @@ for (const b of blocks) {
     // If sibling already exists but decl missing, append to it; otherwise create.
     if (siblingHere) {
       const existing = readFileSync(b.siblingLean, "utf8");
-      if (new RegExp(`\\b${name}\\b`).test(existing)) {
+      // Only skip if the sibling actually declares `name` under the target `ns`.
+      // A bare name appearing in a comment, or under a different namespace,
+      // does NOT resolve the manifest reference.
+      const decls = parseLeanDecls(b.siblingLean);
+      const alreadyDeclared = decls.some(d => d.qualified === `${ns}.${name}`);
+      if (alreadyDeclared) {
         skippedExisting += 1;
-        continue; // decl already referenced somehow
+        continue;
       }
       if (!dryRun) {
         const append = "\n" + (b.kind === "definition" || isStructureName(name)

@@ -57,4 +57,9 @@ theorem noncocomm_iff_quantum (nsi : NonSelfIntersection) :
     0 < nsi.noncocomm :=
   nsi.noncocomm_pos
 
+
+/-- **cor:non-self-intersection** — placeholder stub; full proof TBD. -/
+theorem non_self_intersection : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/non-self-intersection
+  sorry
 end QOU.Braiding

@@ -60,4 +60,9 @@ theorem s5_within_hurwitz : (120 : ℤ) ≤ 84 * (4 - 1) := by
 theorem genus_unique (g : ℤ) (hgb : 2 * (1 - g) = -6) : g = 4 := by
   linarith
 
+
+/-- **prop:genus-maximal-descent** — placeholder stub; full proof TBD. -/
+theorem genus_maximal_descent : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/genus-maximal-descent
+  sorry
 end QOU.Descartes

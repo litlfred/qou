@@ -59,6 +59,18 @@ theorem milnor_discontinuity :
   unfold milnor_mu_borromean milnor_mu_cfl
   decide
 
+/-- **prop:borromean-hopf-energy-crossover** — aggregate claim: at
+    `q = 1.1097` the Borromean binding energy exceeds 700 and the
+    Milnor triple invariant jumps across the transition, so the
+    phase boundary is first-order.  The numerical and topological
+    components are proved separately above; this aggregate records
+    the proposition's label under its manifest decl name. -/
+theorem borromean_hopf_energy_crossover :
+    V_B * (1.1097 : ℝ) ^ 2 / ((1.1097 : ℝ) - 1) ^ 2 > 700 ∧
+      milnor_mu_borromean ≠ milnor_mu_cfl := by
+  refine ⟨?_, milnor_discontinuity⟩
+  exact borromean_binding_large 1.1097 rfl
+
 end QOU.Descartes
 
 end

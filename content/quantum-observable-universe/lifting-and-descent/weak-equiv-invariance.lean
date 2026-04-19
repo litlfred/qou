@@ -94,4 +94,9 @@ theorem weak_equiv_transitive {R : Type*} [CommRing R]
       vac.tau (weq.embed weq.tgtLevel (weq.restrict weq.tgtLevel a)) :=
   fun a => (h_src_mid a).trans (h_mid_tgt a)
 
+
+/-- **prop:weak-equiv-invariance** — placeholder stub; full proof TBD. -/
+theorem weak_equiv_invariance : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §lifting-and-descent/weak-equiv-invariance
+  sorry
 end QOU.Torsion

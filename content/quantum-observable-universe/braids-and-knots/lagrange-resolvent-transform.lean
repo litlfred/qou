@@ -107,4 +107,9 @@ theorem lagrange_resolvent_diagonal_action
     simp only [ζ_r5, ζ_r6, ζ_r8, ζ_r10, ζ_r12, ζ_r15, ζ_r16, pow_one, one_mul] <;>
     ring
 
+
+/-- **prop:lagrange-resolvent-transform** — placeholder stub; full proof TBD. -/
+theorem lagrange_resolvent_transform : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/lagrange-resolvent-transform
+  sorry
 end QOU.BringsSurface

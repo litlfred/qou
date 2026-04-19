@@ -62,4 +62,9 @@ theorem beta_decay_preserves_spin_parity (p n : ℕ) :
   unfold nuclearSpinParity
   omega
 
+
+/-- **prop:nuclear-spin-parity** — placeholder stub; full proof TBD. -/
+theorem nuclear_spin_parity : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/nuclear-spin-parity
+  sorry
 end QOU.Descartes

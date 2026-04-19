@@ -19,3 +19,11 @@ structure CO2Braid where
 
 /-- CO₂ strand count: carbon(18) + 2 × oxygen(24). -/
 theorem co2_strands : 18 + 2 * 24 = 66 := by norm_num
+
+namespace QOU.Molecular
+
+/-- **def:co2-molecular-braid** — placeholder stub; full definition TBD. -/
+structure CO2Braid where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

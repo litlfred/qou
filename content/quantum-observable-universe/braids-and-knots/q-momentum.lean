@@ -219,4 +219,9 @@ theorem writhe_mirror (signs : List ℤ) :
       rw [ih]
       ring_nf
 
+
+/-- **def:q-momentum** — placeholder stub; full definition TBD. -/
+structure QMomentum where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Descartes

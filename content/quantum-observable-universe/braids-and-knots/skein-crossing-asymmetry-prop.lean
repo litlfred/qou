@@ -53,4 +53,9 @@ noncomputable def coulombCorrection (q : R_q) : R_q :=
 --     linarith
 --   · norm_num
 
+
+/-- **prop:skein-crossing-asymmetry** — placeholder stub; full proof TBD. -/
+theorem skein_crossing_asymmetry : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/skein-crossing-asymmetry-prop
+  sorry
 end QOU.Braiding

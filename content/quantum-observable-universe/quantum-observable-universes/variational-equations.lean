@@ -107,4 +107,9 @@ structure UnifiedAction where
   /-- All share the same q. -/
   shared_q : gravity.q = q ∧ gauge.q = q ∧ matter.q = q
 
+
+/-- **prop:variational-equations** — placeholder stub; full proof TBD. -/
+theorem variational_equations : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/variational-equations
+  sorry
 end QOU

@@ -87,4 +87,9 @@ theorem tau_boundary_idem {R : Type*} [CommRing R]
   have : (bbs.tau ∘ₗ bbs.tau) x = bbs.tau x := by rw [h]
   simpa using this
 
+
+/-- **prop:brane-boundary** — placeholder stub; full proof TBD. -/
+theorem brane_boundary_structure : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §lifting-and-descent/brane-boundary-structure
+  sorry
 end QOU.Torsion

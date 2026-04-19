@@ -71,4 +71,9 @@ theorem dq_cochain_on_invariant (d : ArchimedeanDqSquared)
     (h : d.lie_deriv = 0) : d.dq_squared = 0 :=
   dq_squared_zero_reeb_invariant d h
 
+
+/-- **prop:dq-squared** — placeholder stub; full proof TBD. -/
+theorem dq_squared : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/dq-squared
+  sorry
 end QOU

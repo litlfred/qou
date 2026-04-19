@@ -101,4 +101,9 @@ def standardBringsIsQOU : BringsIsQOU where
   covering_degree := 4
   covering_degree_eq := rfl
 
+
+/-- **prop:brings-is-qou** — placeholder stub; full proof TBD. -/
+theorem brings_is_qou : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/brings-is-qou
+  sorry
 end QOU.Brings

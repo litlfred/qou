@@ -265,4 +265,9 @@ def computationalHorizonStructure (T : ResolutionTree) (pb : PolyBound)
   degree_two_leaks := True  -- Structural correlations always accessible
   horizon_nonempty := fun _ => trivial
 
+
+/-- **def:computational-horizon** — placeholder stub; full definition TBD. -/
+structure ComputationalHorizon where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.ComputationalHorizon

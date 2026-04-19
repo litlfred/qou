@@ -42,4 +42,9 @@ attribute [instance] BraidGroupData.grp
 theorem b3_generators (bg : BraidGroupData) (h : bg.numStrands = 3) :
     bg.numStrands - 1 = 2 := by omega
 
+
+/-- **def:braid-group** — placeholder stub; full definition TBD. -/
+structure BraidGroup where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

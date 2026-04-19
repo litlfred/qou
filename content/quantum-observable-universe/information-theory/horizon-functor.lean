@@ -21,4 +21,9 @@ namespace QOU
 -- Ref: [manuscript] §9/horizon-functor
 def horizonFunctor (a : Aeon) : List JetHorizon := a.boundary
 
+
+/-- **def:horizon-functor** — placeholder stub; full definition TBD. -/
+structure HorizonFunctor where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

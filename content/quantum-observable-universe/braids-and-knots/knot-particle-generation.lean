@@ -127,4 +127,9 @@ noncomputable def atomicMass (Z N : ℕ) (binding : ℝ) (m_e : ℝ) : ℝ :=
 -- Ref: CODATA 2022
 noncomputable def m_electron : ℝ := 0.51099895
 
+
+/-- **def:knot-particle-generation** — placeholder stub; full definition TBD. -/
+structure KnotParticleGeneration where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Torsion

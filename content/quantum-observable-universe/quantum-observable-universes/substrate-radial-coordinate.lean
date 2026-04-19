@@ -67,4 +67,9 @@ theorem classical_limit_hbar (q : ℝ) (hq : q = 1) :
     1 - q⁻¹ = 0 := by
   simp [hq]
 
+
+/-- **prop:substrate-radial-coordinate** — placeholder stub; full proof TBD. -/
+theorem substrate_radial_coordinate : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/substrate-radial-coordinate
+  sorry
 end QOU

@@ -59,4 +59,9 @@ theorem single_calibration_framework :
     -- Placeholder: the framework's free-parameter count is 1
     (1 : ℕ) = 1 := rfl
 
+
+/-- **prop:compound-beta-shell-calibration** — placeholder stub; full definition TBD. -/
+structure CompoundBetaShellCalibration where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.BraidKnot

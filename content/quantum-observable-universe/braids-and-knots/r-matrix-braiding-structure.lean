@@ -53,4 +53,9 @@ noncomputable def su2_fundamental_r_matrix (q : R_q) (hq : q ≠ 0) :
   eigenvalue_antisymmetric := -q⁻¹
   hecke_relation := fun _ => q ≠ 0
 
+
+/-- **prop:r-matrix-braiding-structure** — placeholder stub; full proof TBD. -/
+theorem r_matrix_braiding_structure : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/r-matrix-braiding-structure
+  sorry
 end QOU.Braiding

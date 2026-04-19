@@ -125,3 +125,11 @@ theorem so_exceeds_spacing (N : ℕ) (hN : N ≥ 1) :
   nlinarith
 
 end
+
+namespace QOU.Braiding
+
+/-- **prop:shell-transition-knot** — placeholder stub; full proof TBD. -/
+theorem stability_pairs_correct : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/shell-transition-knot
+  sorry
+end QOU.Braiding

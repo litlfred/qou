@@ -97,4 +97,9 @@ theorem mass_markov_archimedean
   unfold categoricalMassFromMarkov
   rw [h_eval, abs_of_pos (div_pos hvol (pow_pos hℏ 2))]
 
+
+/-- **prop:hecke-mass-trace** — placeholder stub; full proof TBD. -/
+theorem hecke_mass_trace : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/hecke-mass-trace
+  sorry
 end QOU.Braiding

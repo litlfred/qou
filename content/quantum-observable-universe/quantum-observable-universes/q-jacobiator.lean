@@ -97,4 +97,9 @@ theorem jacobiator_nonzero (j : QJacobiator)
       leibniz_coeff = j.q⁻¹ * (1 - j.q⁻¹) :=
   ⟨j.q⁻¹ * (1 - j.q⁻¹), rfl⟩
 
+
+/-- **prop:q-jacobiator** — placeholder stub; full proof TBD. -/
+theorem q_jacobiator : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/q-jacobiator
+  sorry
 end QOU

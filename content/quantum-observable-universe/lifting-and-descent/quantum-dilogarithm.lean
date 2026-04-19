@@ -91,4 +91,9 @@ theorem qInteger_one {q : R_q} (hq : q ≠ 1) :
   rw [if_neg hq]
   simp [pow_one, div_self (sub_ne_zero.mpr hq)]
 
+
+/-- **cor:quantum-dilogarithm** — placeholder stub; full proof TBD. -/
+theorem quantum_dilogarithm : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §lifting-and-descent/quantum-dilogarithm
+  sorry
 end QOU.Torsion

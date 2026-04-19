@@ -119,4 +119,9 @@ theorem r3_preserves_volume : BraidMove.R3_YangBaxter.preservesVolume := by
 theorem far_comm_preserves_volume : BraidMove.farCommutativity.preservesVolume := by
   exact trivial
 
+
+/-- **prop:reidemeister-action-table** — placeholder stub; full proof TBD. -/
+theorem reidemeister_action_table : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/reidemeister-action-table
+  sorry
 end QOU.Descartes

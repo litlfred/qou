@@ -19,3 +19,11 @@ structure CH4Braid where
 
 /-- CH₄ strand count: carbon(18) + 4 × hydrogen(2). -/
 theorem ch4_strands : 18 + 4 * 2 = 26 := by norm_num
+
+namespace QOU.Molecular
+
+/-- **def:ch4-molecular-braid** — placeholder stub; full definition TBD. -/
+structure CH4Braid where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

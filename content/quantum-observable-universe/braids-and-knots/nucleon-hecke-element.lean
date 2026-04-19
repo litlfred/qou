@@ -29,3 +29,11 @@ theorem proton_ne_neutron : protonFlavors ≠ neutronFlavors := by
   intro h
   have := congr_fun h 1
   simp [protonFlavors, neutronFlavors] at this
+
+namespace QOU.Braiding
+
+/-- **def:nucleon-hecke-element** — placeholder stub; full definition TBD. -/
+structure NucleonHeckeElement where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Braiding

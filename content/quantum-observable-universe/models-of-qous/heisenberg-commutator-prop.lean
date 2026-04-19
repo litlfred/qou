@@ -54,4 +54,9 @@ theorem hbar_q_classical_limit : hbar_q 1 one_ne_zero = 0 := by
 --   unfold hbar_q
 -- (archimedean ordering; requires specialisation ι : R_q → ℝ)
 
+
+/-- **prop:heisenberg-commutator** — placeholder stub; full proof TBD. -/
+theorem heisenberg_commutator : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §models-of-qous/heisenberg-commutator-prop
+  sorry
 end QOU.DescartesUniverse

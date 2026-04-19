@@ -125,4 +125,9 @@ theorem T_pp_det (q : ℝ) :
   simp [TransferMatrixOp.mk, ppCoeffs, CrossingCoeffs.mk]
   ring
 
+
+/-- **def:transfer-matrix-operator** — placeholder stub; full definition TBD. -/
+structure TransferMatrixOperator where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Descartes

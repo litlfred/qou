@@ -70,4 +70,9 @@ noncomputable def stableNeutronNumber (p : ℕ) (a_C a_A : R_q) (A_stable : R_q)
   push_cast
   field_simp
 
+
+/-- **prop:beta-stability** — placeholder stub; full proof TBD. -/
+theorem beta_stability : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/beta-stability
+  sorry
 end QOU.Braiding

@@ -50,4 +50,9 @@ structure MaxIdeal where
 --   else
 --     0
 
+
+/-- **def:q-von-mangoldt-function** — placeholder stub; full definition TBD. -/
+structure QVonMangoldtFunction where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.AlgebraicSubstrate
