@@ -33,13 +33,14 @@ from __future__ import annotations
 
 import sys
 import json
-import math
 import time
 import importlib.util
+import os
 from pathlib import Path
 from datetime import datetime, timezone
 
 import numpy as np
+from scipy.sparse import issparse, eye as speye
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -52,89 +53,117 @@ from mass_at_3A_proper import atom_braid_word_3A
 
 # isotope-mass-table has a hyphen in its filename — load via importlib.
 def _load_isotopes() -> list[tuple]:
+    isotope_table_path = Path(__file__).parent / "isotope-mass-table.py"
     spec = importlib.util.spec_from_file_location(
-        "isotope_mass_table",
-        Path(__file__).parent / "isotope-mass-table.py")
+        "isotope_mass_table", isotope_table_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(
+            f"Could not load isotope table from {isotope_table_path}")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod.ISOTOPES
 
 
-# ── H_3(q) Gram / stability machinery (from integer-lp-gluon) ──
-z = 1.0 / (q0 ** 0.5 + qi0 ** 0.5)
+# ── H_3(q) Gram / stability machinery ─────────────────────────
+# IMPORTANT: earlier revisions of this file hard-coded both a Gram
+# matrix G and a basis-index-juggling `mul_h3` routine.  They were
+# mutually INCONSISTENT (gemini-code-assist flag on PR #383) — the
+# mul rules treat basis[3] as s_1 s_0 while the hard-coded G was
+# built for basis[3] = s_0 s_1 (the NF_BASIS convention).  That
+# swap made every path-stability check report INVALID for reasons
+# unrelated to the physics.
+#
+# The canonical primitives live in ``confinement-lp.py``
+# (`hecke_mul`, `reduce_nf`, `to_vec`, `build_gram`).  We load that
+# module once and reuse its G + dict-based multiplication.
 
-G = np.array([
-    [1, z, z, z**2, z**2, z**3],
-    [z, h*z+1, z**2, h*z**2+z, z**3, h*z**3+z**2],
-    [z, z**2, h*z+1, z**3, h*z**2+z, h*z**3+z**2],
-    [z**2, z**3, h*z**2+z, h*z**3+z**2, h*(h*z**2+z)+z**2,
-       h*(h*z**3+z**2)+h*z**2+z],
-    [z**2, h*z**2+z, z**3, h*(h*z**2+z)+z**2, h*z**3+z**2,
-       h*(h*z**3+z**2)+h*z**2+z],
-    [z**3, h*z**3+z**2, h*z**3+z**2, h*(h*z**3+z**2)+h*z**2+z,
-       h*(h*z**3+z**2)+h*z**2+z,
-       h*(h*(h*z**3+z**2)+h*z**2+z)+h*z**3+z**2],
-])
+_CONF_PATH = Path(__file__).parent / "confinement-lp.py"
+_conf_spec = importlib.util.spec_from_file_location(
+    "confinement_lp_mod", _CONF_PATH)
+if _conf_spec is None or _conf_spec.loader is None:
+    raise ImportError(f"Could not load {_CONF_PATH}")
+_conf_mod = importlib.util.module_from_spec(_conf_spec)
+_old = os.dup(1)
+_null = os.open(os.devnull, os.O_WRONLY)
+os.dup2(_null, 1)
+try:
+    _conf_spec.loader.exec_module(_conf_mod)
+finally:
+    os.dup2(_old, 1)
+    os.close(_null)
+    os.close(_old)
 
-
-def mul_h3(nf, c, d, gen):
-    r = [0.0] * 6
-    if gen == 0:
-        rules = [(0, [(1, c), (0, d)]),
-                   (1, [(1, c * h), (0, c), (1, d)]),
-                   (2, [(3, c), (2, d)]),
-                   (3, [(3, c * h), (2, c), (3, d)]),
-                   (4, [(5, c), (4, d)]),
-                   (5, [(5, c * h), (4, c), (5, d)])]
-    else:
-        rules = [(0, [(2, c), (0, d)]),
-                   (1, [(4, c), (1, d)]),
-                   (2, [(2, c * h), (0, c), (2, d)]),
-                   (3, [(5, c), (3, d)]),
-                   (4, [(4, c * h), (1, c), (4, d)]),
-                   (5, [(5, c * h), (3, c), (5, d)])]
-    for src, targets in rules:
-        if abs(nf[src]) < 1e-15:
-            continue
-        for tgt, coeff in targets:
-            r[tgt] += nf[src] * coeff
-    return r
+NF_BASIS = _conf_mod.NF_BASIS
+NF_NAMES = _conf_mod.NF_NAMES
+TR_M_BASIS = _conf_mod.TR_M_BASIS
+hecke_mul = _conf_mod.hecke_mul
+reduce_nf = _conf_mod.reduce_nf
+to_vec = _conf_mod.to_vec
+G = _conf_mod.G
+z = _conf_mod.z
 
 
 def is_stable(nf, tol=1e-10):
-    return bool(np.all(G @ np.array(nf) >= -tol))
+    """H_3(q) SDP stability: componentwise LP Frobenius `G·nf ≥ 0`
+    AND the quadratic SDP Frobenius `nf^T G nf ≥ 0`.
+
+    The componentwise condition alone is strictly weaker at q_0
+    (G has a negative eigenvalue; see docs/ilp-sdp-audit.md).  Both
+    must hold for a valid Frobenius-positive H_3 NF."""
+    v = np.asarray(nf)
+    lp_ok = bool(np.all(G @ v >= -tol))
+    sdp_ok = bool(float(v @ G @ v) >= -tol)
+    return lp_ok and sdp_ok
 
 
 def trM_h3(nf):
-    w = [1, z, z, z**2, z**2, z**3]
-    return sum(nf[i] * w[i] for i in range(6))
+    return float(sum(nf[i] * TR_M_BASIS[i] for i in range(6)))
 
 
 # ── Nucleon NF step-by-step check in H_3 ─────────────────────
 
+def _mul_h3_dict(nf_dict: dict, c: float, d: float, gen: int) -> dict:
+    """Right-multiply a dict-form Hecke element by (c·σ_gen + d·𝟏).
+
+    Uses the canonical `hecke_mul` + `reduce_nf` from confinement-lp,
+    guaranteeing the basis convention (NF_BASIS) matches the Gram
+    matrix G loaded above.  Replaces the earlier hard-coded mul_h3
+    whose index convention was inconsistent with G (PR #383 review).
+    """
+    factor: dict = {}
+    if abs(c) > 1e-15:
+        factor[(gen,)] = c
+    if abs(d) > 1e-15:
+        factor[()] = d
+    prod = hecke_mul(nf_dict, factor)
+    return reduce_nf(prod)
+
+
 def build_nucleon_nf_stepwise(g0_chain, g1_chain) -> dict:
     """Reproduce atom_braid_word_3A's per-nucleon order (all g0 then
-    all g1) in H_3, tracking stability at every crossing."""
-    nf = [1, 0, 0, 0, 0, 0]
+    all g1) in H_3, tracking stability at every crossing using the
+    basis-consistent hecke_mul / reduce_nf from confinement-lp."""
+    nf_dict = {(): 1.0}
     path_stable: list[bool] = []
     unstable_at: list[int] = []
     for step, (c, d) in enumerate(g0_chain):
-        nf = mul_h3(nf, c, d, 0)
-        st = is_stable(nf)
+        nf_dict = _mul_h3_dict(nf_dict, c, d, 0)
+        st = is_stable(to_vec(nf_dict))
         path_stable.append(st)
         if not st:
             unstable_at.append(step)
     offset = len(g0_chain)
     for step, (c, d) in enumerate(g1_chain):
-        nf = mul_h3(nf, c, d, 1)
-        st = is_stable(nf)
+        nf_dict = _mul_h3_dict(nf_dict, c, d, 1)
+        st = is_stable(to_vec(nf_dict))
         path_stable.append(st)
         if not st:
             unstable_at.append(offset + step)
+    nf_vec = to_vec(nf_dict)
     return {
-        "nf": [float(x) for x in nf],
-        "trM": float(trM_h3(nf)),
-        "final_stable": is_stable(nf),
+        "nf": [float(x) for x in nf_vec],
+        "trM": trM_h3(nf_vec),
+        "final_stable": is_stable(nf_vec),
         "path_stable": all(path_stable),
         "n_steps": len(path_stable),
         "n_unstable_steps": len(unstable_at),
@@ -219,8 +248,7 @@ def atom_trM_light(Z: int, N: int, *, max_dim: int = 200) -> dict:
             continue
         w_lam = (dq * dq) / nfac
         # chi_lambda(W) = tr(product of (c sigma_g + d I))
-        from scipy.sparse import issparse, eye as speye
-        if issparse(sigmas[0]) if sigmas else False:
+        if sigmas and issparse(sigmas[0]):
             prod = speye(dim, format='csr')
             I = speye(dim, format='csr')
             for (c, d, g) in word:
@@ -313,7 +341,6 @@ def main():
     per_iso: list[dict] = []
     n_fail_gluon = 0
     n_fail_final = 0
-    n_fail_path = 0
     n_fail_sign = 0
 
     # Atom-level tr_M is expensive (p(18) = 385 partitions with
@@ -335,8 +362,6 @@ def main():
             n_fail_gluon += 1
         if not (p_fin_ok and n_fin_ok):
             n_fail_final += 1
-        if not (p_path_ok and n_path_ok):
-            n_fail_path += 1
 
         if ATOM_TRM_ENABLED and 3 * A <= MAX_ATOM_3A:
             atom_info = atom_trM_light(Z, N)
@@ -398,24 +423,36 @@ def main():
               f"{trM_s:>12} {sign_s:>8} {trunc_s:>6}")
 
     dt = time.time() - t_start
+    # Path stability is a property of the base nucleon (proton / neutron),
+    # independent of which isotope they compose — so n_fail_path is
+    # always 0 or len(isotopes).  Report it as a per-nucleon boolean
+    # to avoid misleading isotope-scale counts.
+    proton_path_stable = p_data["path_stable"]
+    neutron_path_stable = n_data["path_stable"]
     print()
     print(f"Isotopes checked: {len(per_iso)}  (elapsed {dt:.1f}s)")
     print(f"  gluon-decoration failures:    {n_fail_gluon}")
     print(f"  final-NF-stability failures:  {n_fail_final}")
-    print(f"  path-NF-stability failures:   {n_fail_path}")
+    print(f"  path stability — proton:      "
+          f"{'✓' if proton_path_stable else '✗ (intermediate unstable)'}")
+    print(f"  path stability — neutron:     "
+          f"{'✓' if neutron_path_stable else '✗ (intermediate unstable)'}")
     print(f"  atom tr_M sign failures:      {n_fail_sign}")
 
     witness = {
         "computation": "validate-isotope-nf-stability",
         "description": (
-            "Validates that every isotope in isotope-mass-table.ISOTOPES "
-            "(1) carries the nucleon gluon-pair decoration (tail of "
-            "_{PROTON,NEUTRON}_G0 is two (1, 0) sigma_0 crossings), "
-            "(2) yields an H_3(q) SDP-stable proton and neutron NF at "
-            "the final step, with path stability and unstable step "
-            "count recorded, and (3) produces a non-negative partition-"
-            "truncated atom-level tr_M for 3A <= 18.  Heavy isotopes "
-            "(3A > 18) record gluon + nucleon stability only."),
+            f"Validates that every isotope in isotope-mass-table.ISOTOPES "
+            f"(1) carries the nucleon gluon-pair decoration (tail of "
+            f"_{{PROTON,NEUTRON}}_G0 is two (1, 0) sigma_0 crossings), "
+            f"(2) yields an H_3(q) SDP-stable proton and neutron NF at "
+            f"the final step (both componentwise G·nf ≥ 0 and quadratic "
+            f"nf^T G nf ≥ 0), with path stability and unstable-step count "
+            f"recorded, and (3) produces a non-negative canonical "
+            f"Jones-Markov trace for 3A ≤ {CANONICAL_MAX_3A} (symbolic) "
+            f"and partition-weighted Plancherel trace for "
+            f"3A ≤ {ATOM_MAX_3A} (diagnostic).  Heavy isotopes "
+            f"(3A > {ATOM_MAX_3A}) record gluon + nucleon stability only."),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q0": q0,
@@ -442,7 +479,12 @@ def main():
             "n_isotopes": len(per_iso),
             "n_fail_gluon": n_fail_gluon,
             "n_fail_final_stability": n_fail_final,
-            "n_fail_path_stability": n_fail_path,
+            # Path stability is per-nucleon (not per-isotope): the
+            # proton / neutron base NF is identical across all
+            # isotopes, so the scalar `n_fail_path_stability` would
+            # trivially be 0 or len(isotopes).  Report per-nucleon.
+            "proton_path_stable": proton_path_stable,
+            "neutron_path_stable": neutron_path_stable,
             "n_fail_atom_trM_sign": n_fail_sign,
             "elapsed_sec": dt,
         },

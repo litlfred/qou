@@ -45,10 +45,14 @@ import math
 from pathlib import Path
 from datetime import datetime, timezone
 
+import numpy as np
+from scipy.sparse import issparse, eye as speye
+
 sys.path.insert(0, str(Path(__file__).parent))
 
 from q_parameter import Q as Q0
 from mass_endomorphism import Phi_q, z_mark
+from canonical_plus_multibrane import phi_q_safe
 from hecke_characters import (partitions_of, dim_q, qfac,
                                 standard_young_tableaux,
                                 build_seminormal_matrices)
@@ -56,22 +60,17 @@ from mass_at_3A_proper import atom_braid_word_3A, _cached_seminormal
 from atom_braid_sdp_gluon import atom_braid_word_3A_sdp_gluon
 
 
-def _word_diagonal_in_lambda(shape: tuple[int, ...],
-                              word: list[tuple[float, float, int]]
-                              ) -> list[float]:
-    """Return diag(W^lambda) indexed by SYT position.
-
-    W = prod_k (c_k . sigma_{g_k} + d_k . I) as a linear operator on
-    V_lambda, in the Hoefsmit seminormal basis.
-    """
-    import numpy as np
-    from scipy.sparse import issparse, eye as speye
-
-    sigmas, dim, _syts = _cached_seminormal(shape)
+def _word_diagonal_in_lambda_given(sigmas, dim,
+                                      word: list[tuple[float, float, int]]
+                                      ) -> list[float]:
+    """diag(W^lambda) in the Hoefsmit seminormal basis, given
+    pre-built sigmas + dim from _cached_seminormal.  Caller reuses
+    the same SYTs so we avoid the duplicate standard_young_tableaux
+    enumeration (PR #383 review)."""
     if dim == 0:
         return []
-    is_sparse = issparse(sigmas[0]) if sigmas else False
-    if is_sparse:
+    sparse = bool(sigmas) and issparse(sigmas[0])
+    if sparse:
         prod = speye(dim, format='csr')
         I = speye(dim, format='csr')
     else:
@@ -79,9 +78,8 @@ def _word_diagonal_in_lambda(shape: tuple[int, ...],
         I = np.eye(dim)
     for (c, d, g) in word:
         if g < len(sigmas):
-            M = c * sigmas[g] + d * I
-            prod = prod @ M
-    diag = prod.diagonal() if is_sparse else np.diag(prod)
+            prod = prod @ (c * sigmas[g] + d * I)
+    diag = prod.diagonal() if sparse else np.diag(prod)
     return [float(x) for x in diag]
 
 
@@ -117,8 +115,12 @@ def V_hat_JM_all(Z: int, N: int, *, include_inter: bool,
 
     V_JM = [0.0] * n  # V_JM[k-1] stores the k-th cell volume (k = 1..n)
 
+    # Reuse SYTs from the cached seminormal build: avoid calling
+    # standard_young_tableaux twice per partition (PR #383 review).
+    # Contents are recomputed from cells (cheap) since
+    # build_seminormal_matrices returns syts but not contents.
     for shape in partitions_of(n):
-        syts, _cells, contents = standard_young_tableaux(shape)
+        sigmas, dim, syts = _cached_seminormal(shape)
         d_lambda = len(syts)
         if d_lambda == 0:
             continue
@@ -126,8 +128,11 @@ def V_hat_JM_all(Z: int, N: int, *, include_inter: bool,
         if dq == 0:
             continue
         w_lambda = (dq * dq) / nfac
+        # Re-derive contents (row, col → col - row) from shape cells.
+        cells = [(i, j) for i, r in enumerate(shape) for j in range(r)]
+        contents = [c - r for (r, c) in cells]
 
-        diag = _word_diagonal_in_lambda(shape, word)
+        diag = _word_diagonal_in_lambda_given(sigmas, dim, word)
         if not diag:
             continue
 
@@ -144,18 +149,24 @@ def V_hat_JM_all(Z: int, N: int, *, include_inter: bool,
     return V_JM
 
 
-def tower_mass_JM(V_JM: list[float]) -> tuple[float, dict]:
-    """Assemble tower mass from cell volumes per eq:syt-cell-tower."""
+def tower_mass_JM(V_JM: list[float], *,
+                     cap_frac: float = 0.98) -> tuple[float, dict]:
+    """Assemble tower mass from cell volumes per eq:syt-cell-tower.
+
+    Uses `phi_q_safe(..., cap_frac=cap_frac)` for each Phi_q argument
+    so values near the Q0 singularity are capped rather than silently
+    skipped (PR #383 review: silent skip would under-estimate mass
+    if any |V_JM[k]| or |V_JM[k1]·V_JM[k2]| approaches Q0).
+    """
     n = len(V_JM)
     desc = abs(math.prod(V_JM)) if V_JM else 1.0
-    single = sum(Phi_q(abs(v)) for v in V_JM if abs(v) < Q0)
+    single = sum(phi_q_safe(abs(v), cap_frac=cap_frac) for v in V_JM)
     cross = 0.0
     # All pairs, no distance filter — [L_i, L_j] = 0.
     for i in range(n):
         for j in range(i + 1, n):
             prod = abs(V_JM[i] * V_JM[j])
-            if prod < Q0:
-                cross += (z_mark ** 2) * Phi_q(prod)
+            cross += (z_mark ** 2) * phi_q_safe(prod, cap_frac=cap_frac)
     return desc + single + cross, {'desc': desc, 'single': single,
                                        'cross': cross, 'V_JM': V_JM}
 
