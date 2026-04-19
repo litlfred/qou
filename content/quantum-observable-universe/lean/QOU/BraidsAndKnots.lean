@@ -11,6 +11,7 @@ the key invariants.
 -/
 
 import Mathlib.Tactic
+import QOU.BraidsAndKnots.Stubs
 
 namespace QOU.BraidsAndKnots
 

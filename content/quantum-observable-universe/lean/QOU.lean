@@ -56,3 +56,4 @@ import QOU.Observations
 import QOU.MagicUnfoldPeel
 import QOU.BraidsAndKnots
 import QOU.DescartesUniverse.Stubs
+import QOU.LiftingAndDescent
