@@ -538,6 +538,52 @@ relation, never $t$ or $A$ for the Jones polynomial variable).
 - The `.lean` sibling file must share the same root name as its `.ts`/`.md`
   siblings (e.g., `rigid-monoidal-category.lean`).
 
+### 8a. Lake project location vs sibling `.lean` files (STRICT)
+
+**Read this before editing any `.lean` file.** There are two kinds of
+`.lean` files in this repo and they behave very differently:
+
+1. **Lake-buildable sources** — live under `content/<paper>/lean/` (the
+   directory that contains `lakefile.toml` + `lean-toolchain`). The root
+   module (`QOU.lean` for the main paper) imports every other module;
+   `lake build` compiles only these. **All new Lean code that needs to
+   type-check should go here.**
+
+2. **Sibling `.lean` stubs** — live next to a content block's `.ts` + `.md`
+   (e.g. `content/<paper>/<chapter>/<block>.lean`). These are
+   co-located documentation / type-signature placeholders. **They are
+   NOT in the Lake project tree** — `lake build` does not compile them,
+   Mathlib is not in scope by default, and their declarations are not
+   visible to other `.lean` files unless explicitly imported by a path
+   inside `lean/`.
+
+**This bites agents repeatedly:**
+- Writing a sibling stub and expecting `lake build` to pick it up —
+  it won't.
+- Referencing a decl defined only in a sibling stub from another
+  sibling or from the Lake tree — the reference fails.
+- Running `lean_check` / `lean_build` MCP tools on a sibling file —
+  they report errors because Mathlib isn't imported.
+
+**Rules:**
+
+| Goal | Where the Lean code belongs |
+|------|---------------------------|
+| Real proof that must type-check | `content/<paper>/lean/QOU/<Module>.lean` |
+| Decl referenced from manifests that run through the build | `content/<paper>/lean/QOU/<Module>.lean` |
+| Type-signature stub that only documents the intended shape | Sibling `<block>.lean` is fine, but note in a file-header comment that it is a sibling stub and point to where the real code lives |
+| Decl referenced by `lean: { decl: "QOU.X.Y", file: "..." }` | The `file` must be relative to `content/<paper>/lean/` for Lake to find it |
+
+**Audit expectation:** `scripts/lean-audit.ts` indexes **both** the Lake
+tree and sibling `.lean` files so manifest cross-references resolve
+either way. But resolving to a sibling does not mean the code compiles
+— it only means the name is reserved somewhere in the repo.
+
+**When in doubt, write the real code under `content/<paper>/lean/QOU/`**
+and only leave a sibling stub if the content block's `.md` is the only
+reader (e.g., the `.lean` fragment is quoted for documentation rather
+than built).
+
 ## Content-object architecture
 
 Content is organized as **atomic knowledge units** — each definition,

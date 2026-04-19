@@ -18,6 +18,24 @@ tactic blocks.  It depends on the Ontologist skill having already produced
 a resolved glossary — every term used in theorems must have a unique type
 assignment before formalization can proceed.
 
+## Where Lean code lives (read before writing any `.lean`)
+
+There are two locations and they behave differently (see `CLAUDE.md §8a`):
+
+1. **Lake-buildable tree**: `content/<paper>/lean/QOU/...` — has
+   `lakefile.toml` + `lean-toolchain`, Mathlib in scope, compiled by
+   `lake build`, checked by `lean_check` / `lean_build` MCP tools.
+   **Default home for every new proof or definition.**
+2. **Sibling stubs**: `<chapter>/<block>.lean` alongside `.ts` + `.md`.
+   Not compiled by Lake, Mathlib not in scope. Useful only to co-locate
+   type signatures with the narrative; do not expect them to
+   type-check.
+
+When you formalize a new block, write the real code in the Lake tree
+first, then (optionally) leave a sibling stub whose header comment
+points back to the Lake module. Do not invert this: stubs are never
+the canonical source.
+
 ## When to Use This Skill
 
 - After the Ontologist has produced `glossary.json` and `Glossary.lean`

@@ -18,6 +18,22 @@ correct Lake project setup, all required imports present, content
 blocks that require `.lean` files have them, and all witnesses are
 current (not stale).
 
+## Two kinds of `.lean` files (read first)
+
+See `CLAUDE.md §8a` for the full rules. Short version:
+
+- **Lake-buildable** — under `content/<paper>/lean/` only. `lake build`
+  compiles these; they have Mathlib in scope.
+- **Sibling stubs** — next to a block's `.ts`/`.md`. Not compiled by
+  Lake, Mathlib not in scope, only useful as co-located
+  type-signature documentation.
+
+This audit indexes **both** so manifest cross-references resolve, but
+resolving to a sibling does **not** mean the declaration compiles —
+it only means the name is reserved. When you see a block linked only
+through a sibling stub, treat it as "shape recorded, proof TBD" and
+plan to migrate the real code into the Lake tree.
+
 ## When to Use This Skill
 
 - "audit lean completeness"

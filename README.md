@@ -63,6 +63,27 @@ The Lean 4 formalization lives in `content/quantum-observable-universe/lean/`
 and covers the key mathematical structures, mass-parameter derivations,
 knot theory, and categorical constructions from the manuscript.
 
+**Important — two kinds of `.lean` files:**
+
+1. **Lake-buildable sources** (`content/<paper>/lean/QOU/...`) — the
+   Lake project with `lakefile.toml` + `lean-toolchain`. `lake build`
+   compiles these; Mathlib is in scope; MCP tools (`lean_check`,
+   `lean_build`) operate on this tree. **All new proofs/definitions
+   that need to type-check belong here.**
+2. **Sibling `.lean` stubs** (next to a content block's `.ts` + `.md`,
+   e.g. `content/<paper>/<chapter>/<block>.lean`) — co-located
+   type-signature / documentation placeholders. **These are not in
+   the Lake project tree.** `lake build` does not compile them,
+   Mathlib is not in scope, and their declarations are invisible to
+   other files unless explicitly imported.
+
+The `scripts/lean-audit.ts` audit indexes **both** so manifest
+cross-references (`lean: { decl, file }`) resolve either way — but
+resolving to a sibling does not mean the declaration compiles, only
+that the name is reserved somewhere in the repo. See `CLAUDE.md §8a`
+and `.claude/skills/local/lean-completeness-audit.md` for the full
+rules.
+
 ### Modules
 
 | Module | Source |
