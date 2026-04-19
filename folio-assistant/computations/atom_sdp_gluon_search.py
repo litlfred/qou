@@ -172,16 +172,27 @@ def atom_word_with_gluons(Z: int, N: int, gluons: tuple[str, ...],
 
 
 def trM_plancherel(Z: int, N: int, gluons: tuple[str, ...],
-                     include_inter: bool) -> float:
-    """Plancherel-weighted Markov trace on the atom braid word."""
-    from scipy.sparse import issparse, eye as speye
+                     include_inter: bool,
+                     force_sparse: bool = False) -> float:
+    """Plancherel-weighted Markov trace on the atom braid word.
+
+    force_sparse=True: use sparse seminormal matrices at every dim
+    (default threshold is dim > 500 in build_seminormal_matrices).
+    Hoefsmit sigmas have ~1.5 nnz per row, so sparse saves the
+    first few multiplications before fill-in; net win for 4He.
+    """
+    from scipy.sparse import issparse, eye as speye, csr_matrix
+    from hecke_characters import build_seminormal_matrices
     A = Z + N
     n = 3 * A
     word = atom_word_with_gluons(Z, N, gluons, include_inter=include_inter)
     nfac = qfac(n)
     total = 0.0
     for shape in partitions_of(n):
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        if force_sparse:
+            sigmas, dim, _syts = build_seminormal_matrices(shape, sparse=True)
+        else:
+            sigmas, dim, _syts = _cached_seminormal(shape)
         if dim == 0:
             continue
         dq = dim_q(shape)
