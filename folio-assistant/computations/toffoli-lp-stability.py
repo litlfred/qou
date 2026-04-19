@@ -29,6 +29,11 @@ import subprocess
 import math
 
 import numpy as np
+# NF_BASIS moved to pyhecke.gram (M2b inversion).
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import NF_BASIS as _PG_NF_BASIS  # noqa: E402
+
 
 
 # ── constants ─────────────────────────────────────────────────
@@ -37,9 +42,7 @@ Q_STAR = 1.0 / (PHI ** 2)                   # ≈ 0.38197
 Q0 = 1.1099785955541805                     # physical substrate q
 
 NF_BASIS_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
-NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
-
-
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 def repo_sha():
     try:
         return subprocess.check_output(
