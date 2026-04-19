@@ -196,11 +196,23 @@ function patchManifest(tsPath: string, fullDecl: string, leanFile: string): bool
 function ensureRootImport(importLine: string): boolean {
   const txt = readFileSync(ROOT_MODULE, "utf8");
   if (txt.includes(importLine)) return false;
-  // Append near the other imports (end of the import block).
-  const out = txt.replace(
-    /(import [^\n]+\n)(?![\s\S]*^import )/m,
-    `$1${importLine}\n`,
-  );
+
+  // Walk the file line-by-line from the end to find the last existing
+  // `import …` statement, then insert after it.  If no imports exist
+  // (e.g. the root module is empty or only contains comments) prepend
+  // the new import to the top of the file instead of failing silently.
+  const lines = txt.split("\n");
+  let lastImportIdx = -1;
+  for (let i = lines.length - 1; i >= 0; i--) {
+    if (/^import\s+\S/.test(lines[i])) { lastImportIdx = i; break; }
+  }
+  let out: string;
+  if (lastImportIdx >= 0) {
+    lines.splice(lastImportIdx + 1, 0, importLine);
+    out = lines.join("\n");
+  } else {
+    out = `${importLine}\n${txt}`;
+  }
   if (!dryRun) writeFileSync(ROOT_MODULE, out);
   return true;
 }

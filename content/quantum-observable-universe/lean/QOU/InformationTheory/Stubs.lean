@@ -23,8 +23,10 @@ theorem reeb_operations_per_planck
     (q : ℝ) (hq : q ≠ 1) (hq0 : q ≠ 0) :
     q / (q - 1) = 1 / (1 - q⁻¹) := by
   -- Ref: [manuscript] §information-theory/reeb-operations-per-planck
-  have h1 : q - 1 ≠ 0 := sub_ne_zero.mpr hq
-  field_simp
+  -- Rewrite `1 − q⁻¹ = (q − 1) / q` and then `1 / ((q − 1) / q) = q / (q − 1)`.
+  have h_rhs : (1 : ℝ) - q⁻¹ = (q - 1) / q := by
+    field_simp
+  rw [h_rhs, one_div_div]
 
 /-- **prop:p-bandwidth-bound** — a decision problem encoded by a
     link `L = β̂` with `c = 3N` crossings is in `P` iff its Skein

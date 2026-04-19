@@ -45,6 +45,7 @@ theorem observation_energy
   have hsum : 0 < q + δq := by linarith
   have hsum' : q + δq ≠ 0 := ne_of_gt hsum
   field_simp
+  ring
 
 /-- Every observation with positive substrate perturbation strictly
     increases the quantum Planck constant. -/

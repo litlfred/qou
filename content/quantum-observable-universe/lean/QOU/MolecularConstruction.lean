@@ -58,7 +58,9 @@ theorem co_lp_dual_binding
     ∀ k ∈ ({1, 2, 3} : Finset ℕ), cost 3 ≤ cost k := by
   -- Ref: [manuscript] §molecular-construction/co-lp-dual-binding
   intro k hk
-  fin_cases hk
+  -- Unpack the Finset membership `k ∈ {1, 2, 3}` into a disjunction.
+  simp only [Finset.mem_insert, Finset.mem_singleton] at hk
+  rcases hk with rfl | rfl | rfl
   · exact h_min.1
   · exact h_min.2
   · exact le_refl (cost 3)

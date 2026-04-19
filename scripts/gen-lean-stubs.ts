@@ -288,10 +288,34 @@ for (const b of blocks) {
         const append = "\n" + (b.kind === "definition" || isStructureName(name)
           ? `/-- **${b.label}** — placeholder stub; full definition TBD. -/\nstructure ${name} where\n  witness : ℝ\n  witness_pos : 0 < witness\n`
           : `/-- **${b.label}** — placeholder stub; full proof TBD. -/\ntheorem ${name} : ∃ (witness : ℝ), 0 < witness := by\n  -- Ref: [manuscript] §${b.chapter}/${basename(b.tsFile).replace(/\.ts$/, "")}\n  sorry\n`);
-        const needsNamespace = !new RegExp(`namespace\\s+${ns.replace(/\./g, "\\.")}`).test(existing);
-        const stamped = needsNamespace
-          ? existing + `\nnamespace ${ns}\n${append}end ${ns}\n`
-          : existing.replace(/end\s+[A-Za-z_.]+\s*$/, append + `$&`);
+        const nsRe = new RegExp(`namespace\\s+${ns.replace(/\./g, "\\.")}\\b`);
+        const needsNamespace = !nsRe.test(existing);
+        let stamped: string;
+        if (needsNamespace) {
+          stamped = existing.replace(/\s*$/, "") +
+            `\n\nnamespace ${ns}\n${append}end ${ns}\n`;
+        } else {
+          // Insert before the last `end <ns>` line. Split on lines and
+          // walk from the end to find the last non-blank `end` line
+          // matching the target namespace; prepend the new decl there.
+          const endRe = new RegExp(`^end\\s+${ns.replace(/\./g, "\\.")}\\s*$`);
+          const lines = existing.split("\n");
+          let insertAt = -1;
+          for (let i = lines.length - 1; i >= 0; i--) {
+            if (endRe.test(lines[i])) { insertAt = i; break; }
+          }
+          if (insertAt >= 0) {
+            stamped = [
+              ...lines.slice(0, insertAt),
+              ...append.split("\n").filter(l => l.length > 0 || insertAt > 0),
+              ...lines.slice(insertAt),
+            ].join("\n");
+          } else {
+            // Namespace declaration exists but no matching `end` — append a fresh block.
+            stamped = existing.replace(/\s*$/, "") +
+              `\n\nnamespace ${ns}\n${append}end ${ns}\n`;
+          }
+        }
         writeFileSync(b.siblingLean, stamped);
         createdFiles += 1;
       }
