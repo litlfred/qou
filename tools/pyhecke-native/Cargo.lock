@@ -289,7 +289,7 @@ dependencies = [
 
 [[package]]
 name = "pyhecke-native"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "hecke-engine",
  "pyo3",

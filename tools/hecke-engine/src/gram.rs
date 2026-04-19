@@ -360,6 +360,196 @@ pub fn build_atom_nf(z_count: u32, n_count: u32, h: f64) -> [f64; 6] {
     nf
 }
 
+// ─── Per-generator Wedderburn volumes ────────────────────────────────
+
+/// Per-generator Wedderburn-channel state: (a, b) for the standard
+/// 2-dim irrep, sp for symmetric (1-dim), ap for alternating (1-dim).
+#[derive(Debug, Clone, Copy)]
+struct ChannelState {
+    a: f64,
+    b: f64,
+    sp: f64,
+    ap: f64,
+}
+
+impl ChannelState {
+    fn new() -> Self {
+        Self { a: 0.0, b: 1.0, sp: 1.0, ap: 1.0 }
+    }
+
+    fn apply(&mut self, c: f64, d: f64, h: f64, q: f64, qi: f64) {
+        let a_new = self.a * c * h + self.a * d + self.b * c;
+        let b_new = self.a * c + self.b * d;
+        self.a = a_new;
+        self.b = b_new;
+        self.sp *= c * q + d;
+        self.ap *= -c * qi + d;
+    }
+}
+
+/// Volume entry: `(sym, std, alt, full)` for one generator.
+#[derive(Debug, Clone, Copy)]
+pub struct VolumeEntry {
+    pub sym: f64,
+    pub std: f64,
+    pub alt: f64,
+    pub full: f64,
+}
+
+fn _proton_g0(h: f64) -> [(f64, f64); 6] {
+    // B_3: 3x (1, 0), then uu=(1,0), ud=(1,-h/2), gluon=(1,0), (1,0)
+    [
+        (1.0, 0.0),
+        (1.0, 0.0),
+        (1.0, 0.0),
+        (1.0, 0.0),
+        (1.0, -0.5 * h),
+        (1.0, 0.0),
+    ]
+}
+
+fn _proton_g0_full(h: f64) -> Vec<(f64, f64)> {
+    vec![
+        (1.0, 0.0), (1.0, 0.0), (1.0, 0.0),  // B_3
+        (1.0, 0.0),                           // uu
+        (1.0, -0.5 * h),                      // ud
+        (1.0, 0.0), (1.0, 0.0),               // 2 gluons
+    ]
+}
+
+fn _proton_g1(h: f64) -> Vec<(f64, f64)> {
+    vec![
+        (1.0, -h), (1.0, -h), (1.0, -h),      // B_3
+        (1.0, -0.5 * h),                       // ud (gen 1)
+    ]
+}
+
+fn _neutron_g0(h: f64) -> Vec<(f64, f64)> {
+    vec![
+        (1.0, 0.0), (1.0, 0.0), (1.0, 0.0),  // B_3
+        (1.0, -0.5 * h),                      // ud
+        (1.0, -0.5 * h),                      // ud
+        (1.0, 0.0), (1.0, 0.0),               // 2 gluons
+    ]
+}
+
+fn _neutron_g1(h: f64) -> Vec<(f64, f64)> {
+    vec![
+        (1.0, -h), (1.0, -h), (1.0, -h),      // B_3
+        (1.0, -h),                             // dd (gen 1)
+    ]
+}
+
+/// Per-generator Wedderburn volumes V̂_i^full for the atom braid.
+///
+/// Mirrors `hecke_core.atom_per_generator_volumes`. Returns one
+/// `VolumeEntry` per generator (length `n_gens_total`):
+///   * `include_inter=true`: `n_gens_total = 3A - 1` (the physical
+///     atom braid with pp/nn/pn inter-nucleon crossings)
+///   * `include_inter=false`: `n_gens_total = 2A` (free disconnected
+///     baseline)
+///
+/// `crossings_per_pair` (or explicit `m_pp`, `m_pn`, `m_nn`) controls
+/// inter-nucleon crossing multiplicity. Pass `None` for the defaults.
+pub fn atom_per_generator_volumes(
+    z_count: u32,
+    n_count: u32,
+    include_inter: bool,
+    crossings_per_pair: u32,
+    m_pp: Option<u32>,
+    m_pn: Option<u32>,
+    m_nn: Option<u32>,
+    q: f64,
+) -> Vec<VolumeEntry> {
+    let a = z_count + n_count;
+    if a == 0 {
+        return vec![];
+    }
+
+    let qi = 1.0 / q;
+    let h = q - qi;
+
+    let ordering: Vec<u8> = {
+        let mut v = Vec::with_capacity(a as usize);
+        for _ in 0..z_count { v.push(b'p'); }
+        for _ in 0..n_count { v.push(b'n'); }
+        v
+    };
+
+    let n_gens_total: usize = if include_inter {
+        (3 * a - 1) as usize
+    } else {
+        (2 * a) as usize
+    };
+    let mut states: Vec<ChannelState> = vec![ChannelState::new(); n_gens_total];
+
+    for k in 0..a as usize {
+        let nuc = ordering[k];
+        let (intra0, intra1) = if nuc == b'p' {
+            (_proton_g0_full(h), _proton_g1(h))
+        } else {
+            (_neutron_g0(h), _neutron_g1(h))
+        };
+        let (base_g0, base_g1) = if include_inter {
+            (3 * k, 3 * k + 1)
+        } else {
+            (2 * k, 2 * k + 1)
+        };
+        for &(c, d) in &intra0 {
+            states[base_g0].apply(c, d, h, q, qi);
+        }
+        for &(c, d) in &intra1 {
+            states[base_g1].apply(c, d, h, q, qi);
+        }
+        if include_inter && (k as u32) < a - 1 {
+            let i = 3 * k + 2;
+            let next_nuc = ordering[k + 1];
+            let (c, d, m) = if nuc == b'p' && next_nuc == b'p' {
+                (1.0f64, 0.0f64, m_pp.unwrap_or(crossings_per_pair))
+            } else if nuc == b'n' && next_nuc == b'n' {
+                (1.0, -h, m_nn.unwrap_or(crossings_per_pair))
+            } else {
+                (1.0, -0.5 * h, m_pn.unwrap_or(crossings_per_pair))
+            };
+            for _ in 0..m {
+                states[i].apply(c, d, h, q, qi);
+            }
+        }
+    }
+
+    // Wedderburn weights for H_3(q). Match Python byte-for-byte:
+    //   q_int(n) = (q^n - q^{-n}) / (q - q^{-1})   (symmetric q-integer)
+    //   nf3_val = [1]_q · [2]_q · [3]_q = [3]_q!
+    //   qdim_sym=1, qdim_std=[2]_q, qdim_alt=1
+    //   w_* = qdim_*^2 / nf3_val, then renormalise so Σ w_* = 1.
+    let qint = |n: i32| -> f64 {
+        (q.powi(n) - q.powi(-n)) / (q - 1.0 / q)
+    };
+    let qint2 = qint(2);
+    let qint3 = qint(3);
+    let nf3_val = qint(1) * qint2 * qint3;
+    let (qdim_sym, qdim_std, qdim_alt): (f64, f64, f64) = (1.0, qint2, 1.0);
+    let (mut w_sym, mut w_std, mut w_alt): (f64, f64, f64) =
+        (qdim_sym.powi(2) / nf3_val, qdim_std.powi(2) / nf3_val, qdim_alt.powi(2) / nf3_val);
+    let wt = w_sym + w_std + w_alt;
+    w_sym /= wt;
+    w_std /= wt;
+    w_alt /= wt;
+
+    let z_mark = markov_z(q);
+    let mut out = Vec::with_capacity(n_gens_total);
+    for s in states.iter() {
+        let v_std = z_mark * s.a + s.b;
+        out.push(VolumeEntry {
+            sym: s.sp,
+            std: v_std,
+            alt: s.ap,
+            full: w_sym * s.sp + w_std * v_std + w_alt * s.ap,
+        });
+    }
+    out
+}
+
 // ─── Serialization ───────────────────────────────────────────────────
 
 /// JSON-serializable record of a Gram-matrix computation.

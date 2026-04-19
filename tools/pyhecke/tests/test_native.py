@@ -22,7 +22,7 @@ def test_native_version():
     # Version is wired from Cargo.toml via env!("CARGO_PKG_VERSION") in
     # lib.rs. If Cargo.toml bumps, update the expected here in the same
     # commit.
-    assert pyhecke_native.__version__ == "0.3.0"
+    assert pyhecke_native.__version__ == "0.4.0"
 
 
 def test_native_markov_z_matches_python():
@@ -163,7 +163,7 @@ def test_native_version_bumped():
     # The version pin is sourced from Cargo.toml at compile time
     # (env!("CARGO_PKG_VERSION")). Bump together with Cargo.toml +
     # pyproject.toml when adding new kernels.
-    assert pyhecke_native.__version__ == "0.3.0"
+    assert pyhecke_native.__version__ == "0.4.0"
 
 
 # ── M3d++: build_atom_nf ───────────────────────────────────────────────
@@ -195,3 +195,42 @@ def test_native_build_atom_nf_vacuum():
 def test_native_build_atom_nf_length_six():
     import pyhecke_native
     assert len(pyhecke_native.build_atom_nf(6, 6)) == 6
+
+
+# ── B2+: atom_per_generator_volumes ────────────────────────────────────
+
+@pytest.mark.parametrize("z,n", [(1, 0), (2, 2), (6, 6), (8, 8), (20, 20)])
+def test_native_atom_per_generator_volumes_matches_python(z, n):
+    """Rust per-generator Wedderburn volumes match Python to f64 eps."""
+    import pyhecke_native
+    from pyhecke import gram as pg  # noqa: F401 — triggers hecke_core
+    import hecke_core
+
+    py = hecke_core.atom_per_generator_volumes(z, n)
+    rs = pyhecke_native.atom_per_generator_volumes(z, n)
+    assert len(py) == len(rs), f"Z={z} N={n}: length {len(py)} vs {len(rs)}"
+    max_diff = max(
+        abs(p[k] - r[k])
+        for p, r in zip(py, rs)
+        for k in ("sym", "std", "alt", "full")
+    )
+    assert max_diff < 1e-12, f"Z={z} N={n}: max diff {max_diff}"
+
+
+def test_native_atom_per_generator_volumes_vacuum():
+    import pyhecke_native
+    assert pyhecke_native.atom_per_generator_volumes(0, 0) == []
+
+
+def test_native_atom_per_generator_volumes_free_baseline():
+    """include_inter=False gives n_gens_total = 2A."""
+    import pyhecke_native
+    vols = pyhecke_native.atom_per_generator_volumes(2, 2, include_inter=False)
+    assert len(vols) == 2 * (2 + 2)  # 8 generators
+
+
+def test_native_atom_per_generator_volumes_inter_baseline():
+    """include_inter=True gives n_gens_total = 3A - 1."""
+    import pyhecke_native
+    vols = pyhecke_native.atom_per_generator_volumes(2, 2, include_inter=True)
+    assert len(vols) == 3 * (2 + 2) - 1  # 11 generators

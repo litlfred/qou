@@ -128,6 +128,49 @@ fn build_atom_nf(z: u32, n: u32, h: Option<f64>) -> Vec<f64> {
     gram::build_atom_nf(z, n, h_val).to_vec()
 }
 
+/// Per-generator Wedderburn volumes for the atom braid.
+///
+/// Returns a list of dicts `{sym, std, alt, full}` matching
+/// `hecke_core.atom_per_generator_volumes`. `n_gens_total` =
+/// `3A - 1` when `include_inter=True` (physical atom) else `2A`
+/// (free baseline).
+#[pyfunction]
+#[pyo3(signature = (
+    z, n,
+    include_inter=true,
+    crossings_per_pair=1,
+    m_pp=None, m_pn=None, m_nn=None,
+    q=None,
+))]
+#[allow(clippy::too_many_arguments)]
+fn atom_per_generator_volumes(
+    py: Python<'_>,
+    z: u32,
+    n: u32,
+    include_inter: bool,
+    crossings_per_pair: u32,
+    m_pp: Option<u32>,
+    m_pn: Option<u32>,
+    m_nn: Option<u32>,
+    q: Option<f64>,
+) -> PyResult<PyObject> {
+    let q_val = q.unwrap_or(gram::Q_0);
+    let vols = gram::atom_per_generator_volumes(
+        z, n, include_inter, crossings_per_pair,
+        m_pp, m_pn, m_nn, q_val,
+    );
+    let list = pyo3::types::PyList::empty(py);
+    for v in vols {
+        let d = pyo3::types::PyDict::new(py);
+        d.set_item("sym", v.sym)?;
+        d.set_item("std", v.std)?;
+        d.set_item("alt", v.alt)?;
+        d.set_item("full", v.full)?;
+        list.append(d)?;
+    }
+    Ok(list.into())
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -140,6 +183,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(nf_tr, m)?)?;
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
+    m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
