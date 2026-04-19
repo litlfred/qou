@@ -171,39 +171,26 @@ def B_tower(Z, N, m_pp=1, m_pn=1, m_nn=1, gluon_on=True):
 
 
 def B_magic_unfolded(Z, N):
-    """Magic-unfolded binding — ONE UNIFORM ALGORITHM.
+    """Magic-unfolded binding — one uniform rule.
 
-    Invariant: `B(Z, N) = B_core(Z_c, N_c) + B_valence(Z - Z_c, N - N_c)`
-    where (Z_c, N_c) is the **largest doubly-magic pair** ≤ (Z, N).
+        B(Z, N) = B_core_AME(Z_c, N_c) + B_tower(Z - Z_c, N - N_c)
 
-    For sub-magic atoms with no doubly-magic core, the "core" is
-    the trivial (0, 0) pair with B_core = 0, and B_valence =
-    B_tower(Z, N) — i.e. the algorithm reduces to direct evaluation.
+    where (Z_c, N_c) is the largest doubly-magic pair ≤ (Z, N).
 
-    For atoms AT a doubly-magic pair (e.g. ⁴He = (2,2)), (Z_c, N_c) =
-    (Z, N), B_valence = B_tower(0, 0) = 0, and B_core = B_AME(Z, N)
-    — trivially exact.
+    The magic peel is **vacuous** (no action) when no doubly-magic
+    pair fits under (Z, N): then (Z_c, N_c) = (0, 0), B_core_AME = 0,
+    and the rule reduces to direct tower evaluation on the full atom.
+    This is not a special case — it is the peel applied to the empty
+    set of peelable cores.
 
-    For atoms above a doubly-magic core (e.g. ⁶Li above ⁴He), the
-    core contribution is fixed to the AME value; only the valence
-    (Z − Z_c, N − N_c) is predicted by the tower.
-
-    No case-by-case branching on atom size.  Same tower formula
-    (H_A 3-channel with intra-gluon) used for valence in every
-    case.
+    The rule also trivially reproduces the AME value at an atom that
+    IS itself a doubly-magic pair (e.g. ⁴He): (Z_c, N_c) = (Z, N),
+    valence (0, 0), B_tower(0, 0) = 0 by construction, so
+    B = B_core_AME = AME(Z, N).  No if-branches.
     """
     Zc, Nc = largest_doubly_magic_core(Z, N)
-    Z_val = Z - Zc
-    N_val = N - Nc
-
-    # Core contribution: AME if available, else 0 (sub-magic case).
-    B_core = AME_CORE.get((Zc, Nc), 0.0)
-
-    # Valence contribution: tower on (Z_val, N_val).  When
-    # Z_val + N_val < 2, the H_A tower is 0 by construction
-    # (no generator; A < 2 case in B_tower).
-    B_val = B_tower(Z_val, N_val)
-
+    B_core = AME_CORE.get((Zc, Nc), 0.0)    # 0 when peel vacuous
+    B_val = B_tower(Z - Zc, N - Nc)          # full atom when peel vacuous
     return B_core + B_val
 
 
