@@ -653,6 +653,250 @@ export const references: CSLData[] = [
     note: "This manuscript",
   }),
 
+  // ── References added to clear CI bibliography validation ──────
+  // (PR #383; cited from .lean files in content/ after PR #384 merge)
+
+  ref({
+    id: "boyd-vandenberghe-2004",
+    type: "book",
+    title: "Convex Optimization",
+    author: [
+      { family: "Boyd", given: "Stephen" },
+      { family: "Vandenberghe", given: "Lieven" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[2004]] },
+    ISBN: "978-0-521-83378-3",
+  }),
+
+  ref({
+    id: "fomin1994",
+    type: "article-journal",
+    title: "Duality of graded graphs",
+    author: [
+      { family: "Fomin", given: "Sergey" },
+    ],
+    "container-title": "Journal of Algebraic Combinatorics",
+    volume: "3",
+    issue: "4",
+    page: "357-404",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.1023/A:1022412010826",
+  }),
+
+  ref({
+    id: "sagan2001",
+    type: "book",
+    title:
+      "The Symmetric Group: Representations, Combinatorial Algorithms, and Symmetric Functions",
+    author: [
+      { family: "Sagan", given: "Bruce E." },
+    ],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    edition: "2nd",
+    issued: { "date-parts": [[2001]] },
+    ISBN: "978-0-387-95067-9",
+  }),
+
+  ref({
+    id: "stanley1999",
+    type: "book",
+    title: "Enumerative Combinatorics, Volume 2",
+    author: [
+      { family: "Stanley", given: "Richard P." },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1999]] },
+    ISBN: "978-0-521-78987-5",
+  }),
+
+  ref({
+    id: "feray2010",
+    type: "article-journal",
+    title: "Stanley's formula for characters of the symmetric group",
+    author: [
+      { family: "F\u00e9ray", given: "Valentin" },
+    ],
+    "container-title": "Annals of Combinatorics",
+    volume: "13",
+    issue: "4",
+    page: "453-461",
+    issued: { "date-parts": [[2010]] },
+    DOI: "10.1007/s00026-009-0039-4",
+  }),
+
+  ref({
+    id: "fulton1997",
+    type: "book",
+    title:
+      "Young Tableaux: With Applications to Representation Theory and Geometry",
+    author: [
+      { family: "Fulton", given: "William" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1997]] },
+    ISBN: "978-0-521-56724-4",
+  }),
+
+  ref({
+    id: "kerov1993",
+    type: "article-journal",
+    title:
+      "Generalized Robinson-Schensted-Knuth correspondence",
+    author: [
+      { family: "Kerov", given: "Sergei V." },
+    ],
+    "container-title":
+      "Journal of Soviet Mathematics",
+    volume: "41",
+    page: "925-955",
+    issued: { "date-parts": [[1993]] },
+    DOI: "10.1007/BF01099447",
+  }),
+
+  ref({
+    id: "wedderburn1908",
+    type: "article-journal",
+    title: "On hypercomplex numbers",
+    author: [
+      { family: "Wedderburn", given: "Joseph Henry Maclagan" },
+    ],
+    "container-title":
+      "Proceedings of the London Mathematical Society",
+    volume: "s2-6",
+    issue: "1",
+    page: "77-118",
+    issued: { "date-parts": [[1908]] },
+    DOI: "10.1112/plms/s2-6.1.77",
+  }),
+
+  ref({
+    id: "atiyah1990",
+    type: "book",
+    title: "The Geometry and Physics of Knots",
+    author: [
+      { family: "Atiyah", given: "Michael" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1990]] },
+    ISBN: "978-0-521-39554-0",
+  }),
+
+  ref({
+    id: "atiyah1978",
+    type: "article-journal",
+    title:
+      "Self-duality in four-dimensional Riemannian geometry",
+    author: [
+      { family: "Atiyah", given: "M. F." },
+      { family: "Hitchin", given: "N. J." },
+      { family: "Singer", given: "I. M." },
+    ],
+    "container-title":
+      "Proceedings of the Royal Society A",
+    volume: "362",
+    page: "425-461",
+    issued: { "date-parts": [[1978]] },
+    DOI: "10.1098/rspa.1978.0143",
+  }),
+
+  ref({
+    id: "jimbo1986",
+    type: "article-journal",
+    title:
+      "A q-analogue of U(gl(N+1)), Hecke algebra, and the Yang-Baxter equation",
+    author: [
+      { family: "Jimbo", given: "Michio" },
+    ],
+    "container-title": "Letters in Mathematical Physics",
+    volume: "11",
+    issue: "3",
+    page: "247-252",
+    issued: { "date-parts": [[1986]] },
+    DOI: "10.1007/BF00400222",
+  }),
+
+  ref({
+    id: "lenstra1983",
+    type: "article-journal",
+    title:
+      "Integer programming with a fixed number of variables",
+    author: [
+      { family: "Lenstra", given: "Hendrik W." },
+    ],
+    "container-title": "Mathematics of Operations Research",
+    volume: "8",
+    issue: "4",
+    page: "538-548",
+    issued: { "date-parts": [[1983]] },
+    DOI: "10.1287/moor.8.4.538",
+  }),
+
+  ref({
+    id: "jucys1974",
+    type: "article-journal",
+    title:
+      "Symmetric polynomials and the center of the symmetric group ring",
+    author: [
+      { family: "Jucys", given: "Algimantas A." },
+    ],
+    "container-title": "Reports on Mathematical Physics",
+    volume: "5",
+    issue: "1",
+    page: "107-112",
+    issued: { "date-parts": [[1974]] },
+    DOI: "10.1016/0034-4877(74)90019-6",
+  }),
+
+  ref({
+    id: "kelly1982",
+    type: "book",
+    title: "Basic Concepts of Enriched Category Theory",
+    author: [
+      { family: "Kelly", given: "G. M." },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    "collection-title": "London Mathematical Society Lecture Note Series",
+    volume: "64",
+    issued: { "date-parts": [[1982]] },
+    ISBN: "978-0-521-28702-9",
+  }),
+
+  ref({
+    id: "connes1994",
+    type: "book",
+    title: "Noncommutative Geometry",
+    author: [
+      { family: "Connes", given: "Alain" },
+    ],
+    publisher: "Academic Press",
+    "publisher-place": "San Diego",
+    issued: { "date-parts": [[1994]] },
+    ISBN: "978-0-12-185860-5",
+  }),
+
+  ref({
+    id: "majid2002",
+    type: "book",
+    title: "A Quantum Groups Primer",
+    author: [
+      { family: "Majid", given: "Shahn" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    "collection-title":
+      "London Mathematical Society Lecture Note Series",
+    volume: "292",
+    issued: { "date-parts": [[2002]] },
+    ISBN: "978-0-521-01041-2",
+  }),
+
   // ── Woronowicz 1988 ───────────────────────────────────────────
   ref({
     id: "woronowicz1988",
@@ -1171,6 +1415,21 @@ export const references: CSLData[] = [
     page: "219-253",
     issued: { "date-parts": [[1982]] },
     DOI: "10.1007/BF01857727",
+  }),
+
+  // ── Peña et al. 2022: Quantum Game of Life (QGoL) ─────────────
+  ref({
+    id: "pena2022",
+    type: "chapter",
+    title: "QGoL: A Quantum Game of Life",
+    author: [
+      { literal: "Peña et al." },
+    ],
+    "container-title":
+      "Advances in Quantum Computation and Quantum Cellular Automata",
+    publisher: "Springer Nature",
+    issued: { "date-parts": [[2022]] },
+    note: "Models Conway's Game of Life as a reversible quantum circuit with Toffoli-based neighbour-count logic.",
   }),
 
   // ── Cook 1971: NP-completeness ─────────────────────────────────

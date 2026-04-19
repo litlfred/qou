@@ -43,7 +43,8 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from mass_endomorphism import q0, Phi_q, z_mark
-from hecke_core import atom_per_generator_volumes, E_0_CALIBRATION_MEV
+from hecke_core import E_0_CALIBRATION_MEV
+from pyhecke.gram import atom_per_generator_volumes
 
 
 # ── (1-q) series-expansion / resonance-regularized Φ_q ──────────
