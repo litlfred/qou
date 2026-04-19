@@ -1,0 +1,277 @@
+{
+  "computation": "atom-sdp-gluon-search",
+  "description": "Full-atom SDP gluon selection (P2.1b): enumerate per-nucleon gluon decorations (\u2205 / \u03c3\u2080 / \u03c3\u2080\u03c3\u2080 / L+L\u2212) and rank by binding error vs AME.  Frobenius positivity is automatic for real Hecke products (Candidate #2 finding); the search is therefore a combinatorial integer program with SDP feasibility implicit.  Uses the Plancherel-weighted partition-sum trace for performance (canonical symbolic trace is infeasible for n \u2265 9 in a full sweep).",
+  "timestamp": "2026-04-19T01:58:03.113315+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782,
+    "candidates": [
+      "none",
+      "s0",
+      "s0s0",
+      "LpLm"
+    ]
+  },
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "E_0_MeV": 0.782,
+      "B_AME_MeV": 2.22452,
+      "n_combos": 16,
+      "elapsed_sec": 0.03361058235168457,
+      "best": {
+        "gluons": [
+          "s0",
+          "s0"
+        ],
+        "trM_free": 1.4373672098414,
+        "trM_atom": 0.0029677227286122737,
+        "B_pred_MeV": 1.1217003989222,
+        "err_pct": 0.05876865136537166
+      },
+      "top5": [
+        {
+          "gluons": [
+            "s0",
+            "s0"
+          ],
+          "trM_free": 1.4373672098414,
+          "trM_atom": 0.0029677227286122737,
+          "B_pred_MeV": 1.1217003989222,
+          "err_pct": 0.05876865136537166
+        },
+        {
+          "gluons": [
+            "LpLm",
+            "s0"
+          ],
+          "trM_free": 0.8513841636545108,
+          "trM_atom": 0.0011913703720752768,
+          "B_pred_MeV": 0.6648507643468645,
+          "err_pct": 0.08311391769407675
+        },
+        {
+          "gluons": [
+            "s0s0",
+            "s0"
+          ],
+          "trM_free": 0.8449188866073966,
+          "trM_atom": 0.0017665704033217457,
+          "B_pred_MeV": 0.6593451112715866,
+          "err_pct": 0.08340731092521217
+        },
+        {
+          "gluons": [
+            "s0",
+            "s0s0"
+          ],
+          "trM_free": 0.7241064721186699,
+          "trM_atom": -0.00836856710901174,
+          "B_pred_MeV": 0.5597070417175526,
+          "err_pct": 0.0887169689750119
+        },
+        {
+          "gluons": [
+            "s0",
+            "LpLm"
+          ],
+          "trM_free": 0.7250522176927597,
+          "trM_atom": -0.009375883403485899,
+          "B_pred_MeV": 0.5596588934142122,
+          "err_pct": 0.08871953477167537
+        }
+      ],
+      "default_s0s0": {
+        "gluons": [
+          "s0s0",
+          "s0s0"
+        ],
+        "trM_free": 0.42567015051984747,
+        "trM_atom": -0.004919419594396844,
+        "B_pred_MeV": 0.3290270715837024,
+        "err_pct": 0.10100977799701459
+      }
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "E_0_MeV": 0.782,
+      "B_AME_MeV": 8.481821,
+      "n_combos": 64,
+      "elapsed_sec": 16.67832612991333,
+      "best": {
+        "gluons": [
+          "s0",
+          "s0",
+          "s0"
+        ],
+        "trM_free": 1.9314097679598776,
+        "trM_atom": -0.00037248502081966927,
+        "B_pred_MeV": 1.5100711552583432,
+        "err_pct": 0.24768048230298734
+      },
+      "top5": [
+        {
+          "gluons": [
+            "s0",
+            "s0",
+            "s0"
+          ],
+          "trM_free": 1.9314097679598776,
+          "trM_atom": -0.00037248502081966927,
+          "B_pred_MeV": 1.5100711552583432,
+          "err_pct": 0.24768048230298734
+        },
+        {
+          "gluons": [
+            "LpLm",
+            "s0",
+            "s0"
+          ],
+          "trM_free": 1.1440063437701782,
+          "trM_atom": -0.00014519540230893623,
+          "B_pred_MeV": 0.8944994180236738,
+          "err_pct": 0.2695494690230667
+        },
+        {
+          "gluons": [
+            "s0s0",
+            "s0",
+            "s0"
+          ],
+          "trM_free": 1.1352811543390833,
+          "trM_atom": -0.00022125252021349296,
+          "B_pred_MeV": 0.8876168432223562,
+          "err_pct": 0.2697939814459504
+        },
+        {
+          "gluons": [
+            "s0",
+            "s0",
+            "LpLm"
+          ],
+          "trM_free": 0.9742301591791169,
+          "trM_atom": -0.00024759069636138447,
+          "B_pred_MeV": 0.7616543685535149,
+          "err_pct": 0.2742689622144568
+        },
+        {
+          "gluons": [
+            "s0",
+            "LpLm",
+            "s0"
+          ],
+          "trM_free": 0.9742301591791172,
+          "trM_atom": 0.0012888293511105434,
+          "B_pred_MeV": 0.7608401199255012,
+          "err_pct": 0.2742978894561669
+        }
+      ],
+      "default_s0s0": {
+        "gluons": [
+          "s0s0",
+          "s0s0",
+          "s0s0"
+        ],
+        "trM_free": 0.28812639179613625,
+        "trM_atom": 0.00037165710705629407,
+        "B_pred_MeV": 0.22502420252686053,
+        "err_pct": 0.29333344692772595
+      }
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "E_0_MeV": 0.782,
+      "B_AME_MeV": 7.71804,
+      "n_combos": 64,
+      "elapsed_sec": 16.574545860290527,
+      "best": {
+        "gluons": [
+          "s0",
+          "s0",
+          "s0"
+        ],
+        "trM_free": 1.9490827559568624,
+        "trM_atom": 0.0004510557732077709,
+        "B_pred_MeV": 1.523829989543618,
+        "err_pct": 0.22005736824205852
+      },
+      "top5": [
+        {
+          "gluons": [
+            "s0",
+            "s0",
+            "s0"
+          ],
+          "trM_free": 1.9490827559568624,
+          "trM_atom": 0.0004510557732077709,
+          "B_pred_MeV": 1.523829989543618,
+          "err_pct": 0.22005736824205852
+        },
+        {
+          "gluons": [
+            "s0",
+            "LpLm",
+            "s0"
+          ],
+          "trM_free": 1.154480956142561,
+          "trM_atom": 0.0001757263082068434,
+          "B_pred_MeV": 0.9026666897304649,
+          "err_pct": 0.24212500249641664
+        },
+        {
+          "gluons": [
+            "LpLm",
+            "s0",
+            "s0"
+          ],
+          "trM_free": 1.154480956142563,
+          "trM_atom": 0.00026867666778491957,
+          "B_pred_MeV": 0.9025940025492766,
+          "err_pct": 0.24212758480308205
+        },
+        {
+          "gluons": [
+            "s0",
+            "s0s0",
+            "s0"
+          ],
+          "trM_free": 1.1456753523339696,
+          "trM_atom": 0.00022900994549259168,
+          "B_pred_MeV": 0.8957390397477889,
+          "err_pct": 0.24237111627375324
+        },
+        {
+          "gluons": [
+            "s0s0",
+            "s0",
+            "s0"
+          ],
+          "trM_free": 1.145675352333971,
+          "trM_atom": 0.0002691929019534326,
+          "B_pred_MeV": 0.8957076166758379,
+          "err_pct": 0.24237223261926044
+        }
+      ],
+      "default_s0s0": {
+        "gluons": [
+          "s0s0",
+          "s0s0",
+          "s0s0"
+        ],
+        "trM_free": 0.33928178340865855,
+        "trM_atom": -0.00036609236750959246,
+        "B_pred_MeV": 0.2650320703941785,
+        "err_pct": 0.2647778018032376
+      }
+    }
+  ]
+}
