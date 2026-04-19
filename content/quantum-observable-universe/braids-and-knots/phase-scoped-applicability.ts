@@ -22,7 +22,7 @@ export default remark({
     "def:electron-shell",
     "def:dressed-particle",
     "rem:deconfinement-golden-threshold",
-    "prop:parity-regime-selection",
+    "thm:parity-regime-selection",
   ],
   interprets: "prop:confinement-phase-stratification",
 });

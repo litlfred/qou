@@ -15,7 +15,7 @@ export default proposition({
     "prop:confinement-topological",
     "prop:level-sufficiency",
     "prop:shell-closure-stability",
-    "prop:parity-regime-selection",
+    "thm:parity-regime-selection",
     "rem:deconfinement-golden-threshold",
   ],
   tags: [

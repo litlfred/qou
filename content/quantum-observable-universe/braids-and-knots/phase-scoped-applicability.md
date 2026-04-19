@@ -41,7 +41,7 @@ single $\Omega_\alpha$):**
   *At $q \in \partial\Omega(P)$ with $\mu$-jump but preserved
   feasibility, the active support gains or loses a Wedderburn
   block; witnessed by
-  [prop:parity-regime-selection](#prop:parity-regime-selection).*
+  [prop:parity-regime-selection](#thm:parity-regime-selection).*
 - ***Critical scaling.***
   *Near a phase boundary, $\sigma_F$ typically has a non-analytic
   limit; scaling exponents and critical phenomena are the subject

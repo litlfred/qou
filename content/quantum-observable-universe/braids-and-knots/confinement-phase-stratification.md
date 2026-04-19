@@ -52,7 +52,7 @@ with strict PSD margin).  Then:*
    - ***Regime switch.** $\mu$ jumps discretely across $q_0$;
      the active support gains or loses a Wedderburn block;
      $\sigma_F$ has a non-smooth point
-     (cf. [parity regime selection](#prop:parity-regime-selection)).*
+     (cf. [parity regime selection](#thm:parity-regime-selection)).*
    - ***Both.***
 
 *Proof.*
@@ -103,7 +103,7 @@ event (primal strict PSD feasibility breaks → deconfinement) or an
 active-support transition (some $y_\lambda^*$ passes through zero
 → regime switch with $\mu$-jump).  Both correspond to the
 discrete-regime-switch phenomenology already logged in
-[prop:parity-regime-selection](#prop:parity-regime-selection) and
+[prop:parity-regime-selection](#thm:parity-regime-selection) and
 the [deconfinement golden threshold](#rem:deconfinement-golden-threshold).
 $\square$*
 
