@@ -96,6 +96,25 @@ CANDIDATES_EXTENDED = {
              (1.0, 0.0, 0), (1.0, 0.0, 1)],
 }
 
+# IMPORTANT — per-isotope LP-dual caveat:
+#
+# CANDIDATES_DUAL is the H_3(q) LP-dual-active single-op set: a
+# reasonable *upper bound* on what's Frobenius-relevant at the atom
+# level, since every Hecke element of H_{3A} decomposes via
+# embeddings of H_3-local ops.  HOWEVER, the atom-level LP-dual
+# shadow prices (at H_{3A}) are per-isotope and will shift priorities
+# between candidates — especially at MAGIC NUMBERS
+# (Z or N ∈ {2, 8, 20, 28, 50, 82, 126}) where shell closure adds
+# extra Wedderburn-block symmetry.  Double-magic atoms (4He, 16O,
+# 40Ca, ...) are the most distinctive.
+#
+# The definitive per-isotope candidate set requires the H_{3A} LP's
+# dual — but for A ≥ 6 the H_{3A} Gram is too large for direct
+# construction.  Pragmatic compromise: enumerate on
+# CANDIDATES_DUAL and flag any isotope where the winning
+# combination is NOT the universal `[σ₀] × A` pattern; those
+# isotopes warrant a per-isotope LP-dual workup.
+
 # Default: LP-dual-correct K=5 single-op set.
 CANDIDATES = CANDIDATES_DUAL
 CAND_NAMES = list(CANDIDATES.keys())
