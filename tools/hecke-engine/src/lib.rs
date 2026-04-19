@@ -16,5 +16,6 @@
 pub mod atom;
 pub mod certificate;
 pub mod gram;
+pub mod h_a_tower;
 pub mod nf;
 pub mod sdp_decision;
