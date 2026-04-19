@@ -117,8 +117,12 @@ pub fn build_atom_nf(z_count: u32, n_count: u32, h: f64) -> [f64; 6] {
             nf = hm(&nf, 1.0, -h, 1, h);         // (1,2) dd → σ₁⁻¹
         }
 
-        // Gluon self-coupling: 2 × σ₀
-        nf = hm(&nf, 1.0, 0.0, 0, h);
+        // Gluon self-coupling: 1 × σ₀ per nucleon. Patched from
+        // 2×σ₀ → 1×σ₀ to match Python `hecke_core.build_atom_nf`
+        // (commit b607e3e): atom-level SDP gluon search identified
+        // ['s0'] × A as the universal LP-dual optimum, beating the
+        // pre-existing ['s0 s0'] × A default by ~0.04% in
+        // Plancherel-trace binding error across D / T / ³He.
         nf = hm(&nf, 1.0, 0.0, 0, h);
 
         // Inter-nucleon crossings with all previous nucleons
@@ -185,7 +189,7 @@ fn _proton_g0_full(h: f64) -> Vec<(f64, f64)> {
         (1.0, 0.0), (1.0, 0.0), (1.0, 0.0),  // B_3
         (1.0, 0.0),                           // uu
         (1.0, -0.5 * h),                      // ud
-        (1.0, 0.0), (1.0, 0.0),               // 2 gluons
+        (1.0, 0.0),                           // 1 gluon (was 2 — see build_atom_nf note)
     ]
 }
 
@@ -201,7 +205,7 @@ fn _neutron_g0(h: f64) -> Vec<(f64, f64)> {
         (1.0, 0.0), (1.0, 0.0), (1.0, 0.0),  // B_3
         (1.0, -0.5 * h),                      // ud
         (1.0, -0.5 * h),                      // ud
-        (1.0, 0.0), (1.0, 0.0),               // 2 gluons
+        (1.0, 0.0),                           // 1 gluon (was 2 — see build_atom_nf note)
     ]
 }
 

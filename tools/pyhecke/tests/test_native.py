@@ -141,6 +141,47 @@ def test_native_hm_rejects_wrong_length():
         pyhecke_native.hm([1.0, 2.0, 3.0], 1.0, 0.0, 0)
 
 
+def test_native_hm_seq_matches_sequential_hm():
+    """hm_seq(nf, [(c,d,gen), ...]) must equal a Python loop of hm
+    calls — same kernel, just batched inside Rust to eliminate the
+    per-iteration Python↔Rust marshal."""
+    import pyhecke_native
+
+    nf0 = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    # A non-trivial chain: σ₀ σ₁ σ₀ σ₁ with a shifted inverse
+    ops = [(1.0, 0.0, 0), (1.0, 0.0, 1),
+           (1.0, -0.1, 0), (1.0, -0.1, 1)]
+
+    # Loop hm from Python
+    nf_loop = list(nf0)
+    for c, d, gen in ops:
+        nf_loop = pyhecke_native.hm(nf_loop, c, d, gen)
+
+    # Same chain via the batched binding
+    nf_batch = pyhecke_native.hm_seq(nf0, ops)
+
+    for a, b in zip(nf_loop, nf_batch):
+        assert abs(a - b) < 1e-14
+
+
+def test_native_hm_seq_empty_ops_is_identity():
+    """hm_seq with no ops returns the input unchanged."""
+    import pyhecke_native
+
+    nf = [0.3, 0.1, -0.2, 0.5, -0.05, 0.9]
+    out = pyhecke_native.hm_seq(nf, [])
+    for a, b in zip(nf, out):
+        assert abs(a - b) < 1e-14
+
+
+def test_native_hm_seq_rejects_wrong_length():
+    import pytest
+    import pyhecke_native
+
+    with pytest.raises(ValueError):
+        pyhecke_native.hm_seq([1.0, 2.0], [(1.0, 0.0, 0)])
+
+
 def test_native_nf_tr_matches_python():
     """nf_tr result agrees with pyhecke.gram.nf_tr."""
     import pyhecke_native
