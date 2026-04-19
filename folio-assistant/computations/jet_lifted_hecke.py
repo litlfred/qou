@@ -50,7 +50,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from mass_endomorphism import q0, Phi_q, z_mark
-from hecke_core import atom_per_generator_volumes
+from pyhecke.gram import atom_per_generator_volumes
 from multi_level_jet_sum import mass_per_level, get_ilp_ground
 
 

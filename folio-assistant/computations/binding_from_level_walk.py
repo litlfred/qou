@@ -23,7 +23,7 @@ from mass_endomorphism import (
     q0, qi0 as qi, z_mark, HA as h, mass_from_tower,
     additive_wedderburn_volumes, proton_cross, neutron_cross,
 )
-from hecke_core import atom_per_generator_volumes
+from pyhecke.gram import atom_per_generator_volumes
 
 _proton_vols = additive_wedderburn_volumes(3, proton_cross)
 _, _, _, M_PROTON = mass_from_tower(_proton_vols)

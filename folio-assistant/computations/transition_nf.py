@@ -31,9 +31,17 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from hecke_core import (
-    build_atom_nf_exact, hm_exact, nf_tr, NF_NAMES,
-    _TR_M_FRAC, _H_FRAC, check_frobenius, knot_factor,
+    build_atom_nf_exact,
+    _TR_M_FRAC,
+    _H_FRAC,
+    check_frobenius,
+    knot_factor,
     binding_energy,
+)
+from pyhecke.gram import (
+    hm_exact,
+    nf_tr,
+    NF_NAMES,
 )
 from witness_base import WitnessBuilder
 

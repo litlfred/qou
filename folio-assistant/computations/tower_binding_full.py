@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from mass_endomorphism import (
     q0, mass_from_tower, additive_wedderburn_volumes, proton_cross,
 )
-from hecke_core import atom_per_generator_volumes
+from pyhecke.gram import atom_per_generator_volumes
 
 _p_vols = additive_wedderburn_volumes(3, proton_cross)
 _, _, _, M_PROTON_TOWER = mass_from_tower(_p_vols)
