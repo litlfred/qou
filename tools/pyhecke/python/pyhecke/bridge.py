@@ -53,9 +53,11 @@ def binary_path(name: str) -> Optional[Path]:
 def run(
     name: str, args: list[str],
     timeout: Optional[float] = None,
-    capture_stderr: bool = False,
 ) -> subprocess.CompletedProcess:
-    """Invoke a hecke-engine binary. Raises FileNotFoundError if missing."""
+    """Invoke a hecke-engine binary. Raises FileNotFoundError if missing.
+
+    Always captures both stdout and stderr (``capture_output=True``).
+    """
     bin_path = binary_path(name)
     if bin_path is None:
         raise FileNotFoundError(
@@ -147,7 +149,9 @@ def gram_matrix_from_rust(q: Optional[float] = None):
         raise ImportError("pyhecke.bridge.gram_matrix_from_rust requires numpy") from e
 
     if _NATIVE is not None:
-        q_val = q if q is not None else 1.1099785955541805
+        from .gram import z as _  # noqa: F401 — triggers pyhecke.gram
+        from q_parameter import Q as _q0  # type: ignore[import-not-found]
+        q_val = q if q is not None else float(_q0)
         return np.array(_NATIVE.gram_matrix(q_val))
 
     cert = gram_from_rust(q=q)
@@ -157,6 +161,7 @@ def gram_matrix_from_rust(q: Optional[float] = None):
 def gram_det_from_rust(q: Optional[float] = None) -> float:
     """Return det(G) at `q`. Fast path via PyO3, fallback via subprocess."""
     if _NATIVE is not None:
-        q_val = q if q is not None else 1.1099785955541805
+        from q_parameter import Q as _q0  # type: ignore[import-not-found]
+        q_val = q if q is not None else float(_q0)
         return float(_NATIVE.gram_determinant(q_val))
     return float(gram_from_rust(q=q)["determinant"])

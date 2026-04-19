@@ -2,8 +2,11 @@
 
 PyO3 native acceleration layer for `pyhecke`.
 
-Exposes zero-copy Rust implementations of the hottest H_n(q) kernels
+Exposes native Rust implementations of the hottest H_n(q) kernels
 as a Python extension module `pyhecke_native`, built via maturin.
+Return types are Python `list[float]` / `list[list[float]]` — the
+current API allocates new Python objects per call (not zero-copy;
+a buffer-based NumPy interface is future work).
 
 ## Functions
 

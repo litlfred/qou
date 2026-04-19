@@ -6,7 +6,7 @@ the legacy file so downstream scripts continue to work unchanged.
 
 Stable re-exports:
   Constants:  G, G_INV, TR_M, NF_BASIS, NF_NAMES, z,
-              W_SYM, W_STD, W_ALT, alpha_em
+              W_SYM, W_STD, W_ALT
   Functions:  hm, hm_exact, nf_tr, nf_net,
               partitions_of, partition_dimension, partition_conjugate,
               partition_is_self_conjugate, q_dimension, wedderburn_weight,
@@ -43,7 +43,10 @@ _FLATTENED = {
     "NF_BASIS": "gram", "NF_NAMES": "gram",
     "hm": "gram", "hm_exact": "gram", "nf_tr": "gram", "nf_net": "gram",
     "z": "gram", "W_SYM": "gram", "W_STD": "gram", "W_ALT": "gram",
-    "alpha_em": "gram",
+    # alpha_em is NOT in pyhecke.gram — it is a CS-corrected derived
+    # constant owned by hecke_core. Import from hecke_core directly if
+    # needed. (Was erroneously listed as a flat re-export; Copilot review
+    # r3106172547 flagged the AttributeError path.)
     # from pyhecke.wedderburn
     "partitions_of": "wedderburn",
     "partition_dimension": "wedderburn",

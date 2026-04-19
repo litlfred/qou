@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import pytest
 
-pytest.importorskip("numpy")
 numpy = pytest.importorskip("numpy")
 
 try:
