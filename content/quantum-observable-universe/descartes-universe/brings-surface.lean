@@ -81,4 +81,9 @@ theorem brings_is_curve (Σ : BringsSurface) :
   rw [Σ.ambient_dim_eq, Σ.num_equations_eq]
   norm_num
 
+
+/-- **def:brings-surface** — placeholder stub; full definition TBD. -/
+structure BringsSurface where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Brings

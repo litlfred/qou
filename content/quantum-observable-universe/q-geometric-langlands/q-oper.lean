@@ -11,3 +11,11 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QOper
+
+namespace QOU
+
+/-- **def:q-oper** — placeholder stub; full definition TBD. -/
+structure QOper where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU

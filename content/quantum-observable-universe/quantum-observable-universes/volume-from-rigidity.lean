@@ -54,4 +54,9 @@ theorem volume_form_is_nondegen {C : Type u} [Category.{v} C]
     Epi vff.epsilon :=
   vff.epsilon_epi
 
+
+/-- **lem:volume-from-rigidity** — placeholder stub; full proof TBD. -/
+theorem volume_from_rigidity : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/volume-from-rigidity
+  sorry
 end QOU

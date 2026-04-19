@@ -24,3 +24,11 @@ theorem AtomKnot.isIsotope_trans (K₁ K₂ K₃ : AtomKnot)
   ⟨h₁₂.1.trans h₂₃.1, h₁₂.2.trans h₂₃.2⟩
 
 end QOU.BraidKnot
+
+namespace QOU.BraidKnot.IsotopeKnot
+
+/-- **prop:isotope-knot-equivalence** — placeholder stub; full proof TBD. -/
+theorem equivalence : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/isotope-knot-equivalence
+  sorry
+end QOU.BraidKnot.IsotopeKnot

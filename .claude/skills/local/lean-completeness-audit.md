@@ -18,6 +18,22 @@ correct Lake project setup, all required imports present, content
 blocks that require `.lean` files have them, and all witnesses are
 current (not stale).
 
+## Two kinds of `.lean` files (read first)
+
+See `CLAUDE.md §8a` for the full rules. Short version:
+
+- **Lake-buildable** — under `content/<paper>/lean/` only. `lake build`
+  compiles these; they have Mathlib in scope.
+- **Sibling stubs** — next to a block's `.ts`/`.md`. Not compiled by
+  Lake, Mathlib not in scope, only useful as co-located
+  type-signature documentation.
+
+This audit indexes **both** so manifest cross-references resolve, but
+resolving to a sibling does **not** mean the declaration compiles —
+it only means the name is reserved. When you see a block linked only
+through a sibling stub, treat it as "shape recorded, proof TBD" and
+plan to migrate the real code into the Lake tree.
+
 ## When to Use This Skill
 
 - "audit lean completeness"
@@ -40,12 +56,61 @@ bun run scripts/lean-audit.ts --json     # JSON for programmatic use
 bun run scripts/lean-audit.ts --chapter ch5  # filter to one chapter
 ```
 
+### Bulk stub generator
+
+When the audit reports many `missing-lean-file` or `unresolved-decl`
+gaps, use the generator to stub them all in one pass:
+
+```bash
+bun run scripts/gen-lean-stubs.ts                 # all chapters
+bun run scripts/gen-lean-stubs.ts --chapter foo   # one chapter
+bun run scripts/gen-lean-stubs.ts --dry-run       # preview only
+```
+
+For each provable content block it:
+1. Creates a sibling `.lean` with a non-trivial existence witness
+   signature (`∃ w : ℝ, 0 < w`) + `sorry` + `-- Ref: [manuscript]`.
+2. Patches the `.ts` manifest to add
+   `lean: { decl, validation: "not_checked" }` pointing at the stub.
+3. For manifests that already have a `lean.decl` but no matching
+   declaration, it appends a named stub under the target namespace
+   (creating a new `namespace <ns>` block if needed).
+
+**The stubs are sibling files (not in the Lake tree).** See `CLAUDE.md
+§8a` — they reserve names for the audit but do not compile under
+`lake build`. Once a real proof is written, migrate the decl into
+`content/<paper>/lean/QOU/...` and update the manifest's
+`lean.file` accordingly.
+
 This script produces:
 - Sorry inventory with citation checking
 - Trivial truth detection (`True := by trivial` placeholders)
 - Axiom inventory
 - Witness staleness (commit SHA comparison)
 - Chapter-by-chapter breakdown
+- **Block-level gaps** (added 2026-04): cross-references content `.ts`
+  manifests against the parsed Lean declaration index and reports
+  per-chapter gap buckets:
+  - `missing-lean-file` — provable block (definition/theorem/lemma/
+    proposition/corollary) has neither a sibling `.lean` nor a `lean:`
+    field
+  - `unresolved-decl` — manifest declares `lean: { decl: "X" }` but `X`
+    is not found in any `.lean` file under the paper's `lean/` tree
+  - `decl-in-wrong-file` — `X` is found, but in a different file from
+    the one the manifest references
+  - `placeholder-statement` — referenced decl's *type* is `True`,
+    `Unit`, or `PUnit`, or its body is `:= by trivial` (the narrative
+    purports a real statement but the Lean code proves nothing)
+  - `sorry-no-citation` — referenced decl uses `sorry` without a
+    `-- Ref: [key]` comment in its body window
+
+  These dimensions answer the audit questions:
+  *"# prop/thm/def missing lean"* (`missing-lean-file`),
+  *"# lean stub/placeholder"* (`placeholder-statement` + trivial truths),
+  *"# sorry but not external ref"* (`uncitedSorries` file-level +
+  `sorry-no-citation` block-level), and
+  *"# narrative does not match proof"* (`unresolved-decl` +
+  `decl-in-wrong-file` + `placeholder-statement`).
 
 ### Unified witness staleness audit (Lean + Python)
 
@@ -265,6 +330,10 @@ migrated to use `witness_base.py` when the computation is next modified.
 ### Missing Lean Files
 | Paper | Block | Kind | Label | Status |
 |-------|-------|------|-------|--------|
+
+### Block-Level Gaps (per chapter)
+| Chapter | Provable | Linked | MissingFile | UnresolvedDecl | WrongFile | Placeholder | SorryNoCite |
+|---------|---------:|-------:|------------:|---------------:|----------:|------------:|------------:|
 
 ### Stale Imports
 (list any cross-paper imports that need attention)

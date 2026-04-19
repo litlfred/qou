@@ -69,4 +69,9 @@ theorem shifted_sum {R : Type*} [Ring R] (c : ColorTubeCoordinates R) :
   rw [c.σ_eq, c.r_eq, c.g_eq, c.b_eq]
   ring
 
+
+/-- **def:color-tube-coordinates** — placeholder stub; full definition TBD. -/
+structure ColorTubeCoordinates where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Brings

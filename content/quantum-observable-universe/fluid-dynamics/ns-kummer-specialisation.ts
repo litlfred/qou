@@ -2,6 +2,11 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:ns-kummer-specialisation",
+  lean: {
+    decl: "QOU.FluidDynamics.ns_kummer_specialisation",
+    file: "QOU/FluidDynamics.lean",
+    validation: "not_checked",
+  },
   title:
     "Kummer specialisation: the NS obstruction survives $q = 1$ for $\\gcd(\\chi(A), n) \\neq n$",
   uses: [

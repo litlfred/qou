@@ -14,6 +14,7 @@ export default proposition({
   ],
   lean: {
     decl: "QOU.ParticleInteractions.deuterium_derived_binding",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [

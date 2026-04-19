@@ -119,3 +119,11 @@ theorem identity_preserved_by_shell_transition (K : KnotDiagram) (sign h) :
   bareMass_R1_invariant K sign h
 
 end
+
+namespace QOU.Braiding
+
+/-- **prop:reidemeister-mass-invariance** — placeholder stub; full proof TBD. -/
+theorem reidemeister_mass_invariance : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/reidemeister-mass-invariance
+  sorry
+end QOU.Braiding

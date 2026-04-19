@@ -29,3 +29,11 @@ theorem UnstableAtom.decay_channel_unique
     True := trivial
 
 end QOU.BraidKnot
+
+namespace QOU.BraidKnot.UnstableAtom
+
+/-- **prop:unstable-atom-decay-channel** — placeholder stub; full proof TBD. -/
+theorem decay_channel : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/unstable-atom-decay-channel
+  sorry
+end QOU.BraidKnot.UnstableAtom

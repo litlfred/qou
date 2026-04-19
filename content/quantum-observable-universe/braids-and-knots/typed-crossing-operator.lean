@@ -29,3 +29,11 @@ def crossingTypeOf (f₁ f₂ : QuarkFlavor) : CrossingType :=
 structure TypedCrossingOperator where
   crossType : CrossingType
   generatorIndex : Nat  -- 0 or 1 for H₃(q)
+
+namespace QOU.Braiding
+
+/-- **def:typed-crossing-operator** — placeholder stub; full definition TBD. -/
+structure TypedCrossingOperator where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Braiding

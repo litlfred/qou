@@ -11,3 +11,11 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QLocalSystem
+
+namespace QOU
+
+/-- **def:q-local-system** — placeholder stub; full definition TBD. -/
+structure QLocalSystem where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU

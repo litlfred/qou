@@ -39,4 +39,9 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 --   (ideals.filter (fun m => decide (m.norm ≤ X))).foldl
 --     (fun acc m => acc + QVonMangoldtFunction hbar_q hbar_pos m) 0
 
+
+/-- **def:q-chebyshev-function** — placeholder stub; full definition TBD. -/
+structure QChebyshevFunction where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.AlgebraicSubstrate

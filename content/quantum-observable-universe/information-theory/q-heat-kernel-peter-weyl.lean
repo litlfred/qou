@@ -76,13 +76,14 @@ theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
 
 /-- **Peter-Weyl heat kernel existence** (conjecture, archimedean):
     for q > 0, q ≠ 1, the series Σ d_λ(q) exp(-μ_λ(q) t) converges
-    absolutely for every t > 0. -/
+    absolutely for every t > 0.  Stated as the existence of a positive
+    kernel value; full convergence proof is deferred. -/
 -- Ref: [manuscript] §9
 theorem qHeatKernelPeterWeyl (q t : ℝ)
-    (hq : 0 < q) (hq1 : q ≠ 1) (ht : 0 < t) :
-    True := by
+    (_hq : 0 < q) (_hq1 : q ≠ 1) (_ht : 0 < t) :
+    ∃ (kernel : ℝ), 0 < kernel := by
   -- Ref: [manuscript] §9 — Mercer-type convergence follows from
   -- μ_λ ≍ n²/q² for λ ⊢ n, with polynomial-in-n dimensions.
-  trivial
+  sorry
 
 end QOU

@@ -48,4 +48,9 @@ theorem twist_flip_comm (i : Fin 4) :
     twistPerm (flipPerm i) = flipPerm (twistPerm i) := by
   fin_cases i <;> rfl
 
+
+/-- **def:braid-twist-flip** — placeholder stub; full definition TBD. -/
+structure BraidTwistFlip where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

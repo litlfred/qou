@@ -20,3 +20,11 @@ structure MolecularBraid where
   bondOrder : Fin numBonds → Nat
   /-- Total electrons shared in bonds. -/
   sharedElectrons : Nat := (Finset.univ.sum bondOrder)
+
+namespace QOU.Molecular
+
+/-- **def:molecular-braid** — placeholder stub; full definition TBD. -/
+structure MolecularBraid where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

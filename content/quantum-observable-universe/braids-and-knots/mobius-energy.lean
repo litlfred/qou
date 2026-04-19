@@ -61,4 +61,9 @@ theorem mobius_energy_nonneg (cme : CategoricalMobiusEnergy)
     0 ≤ cme.energy_classical :=
   h_embed
 
+
+/-- **prop:mobius-energy** — placeholder stub; full proof TBD. -/
+theorem mobius_energy : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/mobius-energy
+  sorry
 end QOU.Braiding

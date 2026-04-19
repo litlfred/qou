@@ -10,3 +10,11 @@
 
 -- See QOU.Descartes.PauliWitness.tr_alt_4he for the exact Laurent polynomial.
 -- See QOU.Descartes.PauliWitness.net_4he for the net polynomial.
+
+namespace QOU.Descartes.PauliWitness
+
+/-- **def:witness-4he** — placeholder stub; full definition TBD. -/
+structure witness_4He where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Descartes.PauliWitness

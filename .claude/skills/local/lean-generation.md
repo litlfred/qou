@@ -16,6 +16,23 @@ This skill covers the pipeline from LaTeX mathematical content to Lean 4
 formalization stubs.  It bridges the gap between human-readable proofs in
 the manuscript and machine-checkable formal proofs.
 
+## Where generated stubs go (read first)
+
+Per `CLAUDE.md §8a`, there are two kinds of `.lean` files:
+
+- **Lake-buildable**: under `content/<paper>/lean/QOU/...` — the only
+  place that `lake build` and the MCP tools compile. Default target for
+  generated stubs that should eventually become real proofs.
+- **Sibling stubs**: next to a block's `.ts` + `.md`. Useful for
+  documentation-level co-location but **not** compiled by Lake.
+
+If you're automating stub generation (e.g. via `scripts/gen-lean-stubs.ts`
+or `formalizer.py generate-theorems`), prefer writing into the Lake
+tree and have the manifest's `lean: { decl, file }` point there. Only
+fall back to a sibling stub when the block is explicitly
+documentation-only (a snippet quoted for the narrative, not meant to be
+built).
+
 ## When to Use This Skill
 
 - When new theorem/definition/lemma environments are added to chapter files

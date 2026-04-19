@@ -51,4 +51,9 @@ theorem frobenius_relation_left {C : Type u} [Category.{v} C]
       (fh.obj ◁ fh.mul) = fh.mul ≫ fh.comul := by
   exact fh.frobenius_relation.symm
 
+
+/-- **prop:frobenius-relation** — placeholder stub; full proof TBD. -/
+theorem frobenius_relation : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-universes/frobenius-relation
+  sorry
 end QOU

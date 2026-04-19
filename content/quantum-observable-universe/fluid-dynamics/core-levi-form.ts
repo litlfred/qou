@@ -2,6 +2,11 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:core-levi-form",
+  lean: {
+    decl: "QOU.FluidDynamics.core_levi_form",
+    file: "QOU/FluidDynamics.lean",
+    validation: "not_checked",
+  },
   title:
     "Core aspect ratio equals Levi form condition number on the normal plane",
   uses: [

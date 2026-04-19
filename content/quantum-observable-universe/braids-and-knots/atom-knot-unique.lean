@@ -25,3 +25,11 @@ theorem AtomKnot.unique_up_to_markov
   congr <;> assumption
 
 end QOU.BraidKnot
+
+namespace QOU.BraidKnot.AtomKnot
+
+/-- **prop:atom-knot-unique** — placeholder stub; full proof TBD. -/
+theorem unique : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/atom-knot-unique
+  sorry
+end QOU.BraidKnot.AtomKnot

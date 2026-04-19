@@ -327,4 +327,9 @@ theorem descartes_kummer_persistence (n : ℕ) (hn : ¬ n ∣ 6) :
   unfold kummerVanishes
   exact hn
 
+
+/-- **def:skein-resolution-obstruction** — placeholder stub; full definition TBD. -/
+structure SkeinResolutionObstruction where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.SkeinResolutionObstruction

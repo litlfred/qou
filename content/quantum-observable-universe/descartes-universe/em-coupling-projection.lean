@@ -80,4 +80,9 @@ theorem em_coupling_classical_limit :
   -- Ref: [manuscript] §5/em-coupling-projection
   sorry
 
+
+/-- **prop:em-coupling-projection** — placeholder stub; full proof TBD. -/
+theorem em_coupling_projection : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/em-coupling-projection
+  sorry
 end QOU.Descartes

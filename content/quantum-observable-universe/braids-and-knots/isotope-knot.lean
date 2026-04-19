@@ -15,4 +15,9 @@ namespace QOU.BraidKnot
 def AtomKnot.isIsotope (K₁ K₂ : AtomKnot) : Prop :=
   K₁.Z = K₂.Z ∧ K₁.protonBlock = K₂.protonBlock
 
+
+/-- **def:isotope-knot** — placeholder stub; full definition TBD. -/
+structure IsotopeKnot where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.BraidKnot

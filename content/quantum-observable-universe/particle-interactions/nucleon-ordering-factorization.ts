@@ -25,7 +25,8 @@ export default proposition({
     "optimization",
   ],
   lean: {
-    decl: "QOU.Interactions.nucleon_ordering_factorization",
+    decl: "QOU.ParticleInteractions.nucleon_ordering_factorization",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [

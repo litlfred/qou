@@ -11,3 +11,11 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QHeckeOperator
+
+namespace QOU
+
+/-- **def:q-hecke-operator** — placeholder stub; full definition TBD. -/
+structure QHeckeOperator where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU

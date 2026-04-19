@@ -230,3 +230,11 @@ theorem rydberg_formula (E_ion : R_q) (n₁ n₂ : ℕ)
   ring
 
 end
+
+namespace QOU
+
+/-- **prop:orbital-fourier-decomposition** — placeholder stub; full proof TBD. -/
+theorem orbital_fourier_decomposition : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/orbital-fourier-decomposition
+  sorry
+end QOU

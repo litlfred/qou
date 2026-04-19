@@ -54,3 +54,11 @@ theorem boson_iff_even (n : ℕ) (hn : n ≥ 2) :
     exact Nat.gcd_eq_left h2
 
 end
+
+namespace QOU.Braiding
+
+/-- **prop:fermion-boson-knot-link** — placeholder stub; full proof TBD. -/
+theorem fermion_boson_knot_link : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/fermion-boson-knot-link
+  sorry
+end QOU.Braiding

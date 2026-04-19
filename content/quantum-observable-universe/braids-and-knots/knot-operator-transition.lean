@@ -9,4 +9,9 @@ inductive AdditionKnotType where
   | singleCrossing : AdditionKnotType  -- p → D
   | hopfLink : AdditionKnotType        -- D → ³H, D → ³He
   | trefoil : AdditionKnotType         -- ³H → ⁴He, ³He → ⁴He
+
+/-- **prop:knot-operator-transition** — placeholder stub; full proof TBD. -/
+theorem knot_operator_transition : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/knot-operator-transition
+  sorry
 end QOU.BraidKnot

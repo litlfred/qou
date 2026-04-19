@@ -66,4 +66,9 @@ theorem pure_proton_garside_is_standard
   -- Ref: [manuscript] Definition def:typed-garside-element
   sorry
 
+
+/-- **def:typed-garside-element** — placeholder stub; full definition TBD. -/
+structure TypedGarsideElement where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Descartes

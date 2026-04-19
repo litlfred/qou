@@ -5,6 +5,11 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:benzene-threading-emergence",
+  lean: {
+    decl: "QOU.MolecularConstruction.benzene_threading_emergence",
+    file: "QOU/MolecularConstruction.lean",
+    validation: "not_checked",
+  },
   title: "Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration",
   uses: [
     "def:benzene-molecular-braid",

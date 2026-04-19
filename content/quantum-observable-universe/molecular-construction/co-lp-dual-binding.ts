@@ -5,6 +5,11 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:co-lp-dual-binding",
+  lean: {
+    decl: "QOU.MolecularConstruction.co_lp_dual_binding",
+    file: "QOU/MolecularConstruction.lean",
+    validation: "not_checked",
+  },
   title: "LP dual selects the triple bond as optimal for $CO$",
   uses: [
     "def:co-molecular-braid",

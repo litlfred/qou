@@ -8,3 +8,11 @@
 
 -- See QOU.Descartes.PauliWitness.tr_alt_8be for the exact Laurent polynomial.
 -- See QOU.Descartes.PauliWitness.net_8be for the net polynomial.
+
+namespace QOU.Descartes.PauliWitness
+
+/-- **def:witness-8be** — placeholder stub; full definition TBD. -/
+structure witness_8Be where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Descartes.PauliWitness

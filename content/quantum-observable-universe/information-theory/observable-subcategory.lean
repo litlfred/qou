@@ -28,4 +28,9 @@ structure ObservableConfig where
   /-- There exists a non-trivial degree-0 section. -/
   degree_zero_nontrivial : ∃ (s : algebra.sections 0), s ≠ algebra.zero 0
 
+
+/-- **def:observable-subcategory** — placeholder stub; full definition TBD. -/
+structure ObservableSubcategory where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

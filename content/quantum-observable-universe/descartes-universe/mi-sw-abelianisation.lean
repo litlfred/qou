@@ -53,4 +53,9 @@ theorem sw_determines_mi (data : MISWAbelianisation) :
     data.mi_norm = data.sw_period :=
   data.abelianisation
 
+
+/-- **prop:mi-sw-abelianisation** — placeholder stub; full proof TBD. -/
+theorem mi_sw_abelianisation : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/mi-sw-abelianisation
+  sorry
 end QOU.Brings

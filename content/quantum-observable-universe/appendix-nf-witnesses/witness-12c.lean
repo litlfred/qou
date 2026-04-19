@@ -8,3 +8,11 @@
 
 -- See QOU.Descartes.PauliWitness.tr_alt_12c for the exact Laurent polynomial.
 -- See QOU.Descartes.PauliWitness.net_12c for the net polynomial.
+
+namespace QOU.Descartes.PauliWitness
+
+/-- **def:witness-12c** — placeholder stub; full definition TBD. -/
+structure witness_12C where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Descartes.PauliWitness

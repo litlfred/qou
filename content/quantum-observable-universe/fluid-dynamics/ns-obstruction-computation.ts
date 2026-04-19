@@ -2,6 +2,11 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:ns-obstruction-computation",
+  lean: {
+    decl: "QOU.FluidDynamics.ns_obstruction_computation",
+    file: "QOU/FluidDynamics.lean",
+    validation: "not_checked",
+  },
   title:
     "Computation of the NS obstruction for the Descartes universe",
   uses: [

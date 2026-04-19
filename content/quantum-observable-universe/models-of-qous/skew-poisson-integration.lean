@@ -95,4 +95,9 @@ theorem formal_group_dim_from_genus (g : ℕ) (hg : g = 4) :
     2 * g = 8 := by
   subst hg; norm_num
 
+
+/-- **prop:skew-poisson-integration** — placeholder stub; full proof TBD. -/
+theorem skew_poisson_integration : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §models-of-qous/skew-poisson-integration
+  sorry
 end QOU.Descartes

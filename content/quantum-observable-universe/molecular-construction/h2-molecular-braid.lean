@@ -21,3 +21,11 @@ structure H2Braid where
 
 /-- H₂ has 4 strands. -/
 theorem h2_strands : (4 : Nat) = 2 + 2 := by norm_num
+
+namespace QOU.Molecular
+
+/-- **def:h2-molecular-braid** — placeholder stub; full definition TBD. -/
+structure H2Braid where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

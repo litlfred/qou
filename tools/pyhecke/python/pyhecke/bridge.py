@@ -161,6 +161,11 @@ def gram_matrix_from_rust(q: Optional[float] = None):
 def gram_det_from_rust(q: Optional[float] = None) -> float:
     """Return det(G) at `q`. Fast path via PyO3, fallback via subprocess."""
     if _NATIVE is not None:
+        # Import pyhecke.gram first so pyhecke._legacy adds
+        # folio-assistant/computations to sys.path, matching
+        # gram_matrix_from_rust's behaviour (otherwise the
+        # q_parameter import below can raise ImportError).
+        from .gram import z as _  # noqa: F401 — triggers pyhecke.gram
         from q_parameter import Q as _q0  # type: ignore[import-not-found]
         q_val = q if q is not None else float(_q0)
         return float(_NATIVE.gram_determinant(q_val))

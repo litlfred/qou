@@ -5,6 +5,7 @@ export default definition({
   title: "NS obstruction class $\\mathrm{NS}(A)$",
   lean: {
     decl: "QOU.FluidDynamics.NSObstruction",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   uses: [

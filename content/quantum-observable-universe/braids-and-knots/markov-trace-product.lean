@@ -119,4 +119,9 @@ theorem degree_bound (mtp : MarkovTraceProduct) :
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
   sorry
 
+
+/-- **thm:markov-trace-product** — placeholder stub; full proof TBD. -/
+theorem markov_trace_product : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §braids-and-knots/markov-trace-product
+  sorry
 end QOU.Braiding

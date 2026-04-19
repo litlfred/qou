@@ -65,4 +65,9 @@ theorem self_dual_eq_b_field (qfe : QuantumFlatnessEmergence) :
   have h3 := qfe.instanton
   linarith
 
+
+/-- **prop:emergence-to-quantum-flat** — placeholder stub; full proof TBD. -/
+theorem emergence_to_quantum_flat : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §quantum-observable-universes/emergence-to-quantum-flat
+  sorry
 end QOU

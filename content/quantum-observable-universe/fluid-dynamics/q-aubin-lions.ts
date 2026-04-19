@@ -2,6 +2,11 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:q-aubin-lions",
+  lean: {
+    decl: "QOU.FluidDynamics.q_aubin_lions",
+    file: "QOU/FluidDynamics.lean",
+    validation: "not_checked",
+  },
   title:
     "q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\to 1$",
   uses: [

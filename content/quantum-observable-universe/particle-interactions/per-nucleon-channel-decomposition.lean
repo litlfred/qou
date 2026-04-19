@@ -60,4 +60,9 @@ theorem branchingFactorization (q : ℝ) (hq : q > 1) (Z N : ℕ) (hN : N ≥ 1)
     have : (q^2 + 1)^2 > 0 := by positivity
     nlinarith
 
+
+/-- **def:per-nucleon-channel-decomposition** — placeholder stub; full definition TBD. -/
+structure PerNucleonChannelDecomposition where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.ParticleInteractions

@@ -207,4 +207,9 @@ theorem generator_fractions_sum :
   unfold sigma0_fraction sigma1_fraction
   ring
 
+
+/-- **def:q-value-transition** — placeholder stub; full definition TBD. -/
+structure QValueTransition where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Descartes

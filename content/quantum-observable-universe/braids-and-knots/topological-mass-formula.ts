@@ -9,7 +9,7 @@ export default proposition({
     "def:quantum-planck-constant",
   ],
   lean: {
-    decl: "QOU.Torsion.ArchimedeanMassFormula",
+    decl: "QOU.ArchimedeanMassFormula",
     file: "QOU/ArchimedeanMassFormula.lean",
     validation: "not_checked",
   },

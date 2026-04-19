@@ -43,4 +43,9 @@ theorem universal_ilp_selects_minimum (q : ℝ) (state : Fin 6 → ℝ)
     K.crossing_number ≤ K'.crossing_number :=
   hmin
 
+
+/-- **def:universal-ilp-algorithm** — placeholder stub; full definition TBD. -/
+structure UniversalILP where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Interactions

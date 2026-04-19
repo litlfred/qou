@@ -28,6 +28,7 @@ import QOU.BringsSurface
 import QOU.DescartesUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
+import QOU.FluidDynamics
 import QOU.InformationTheory
 import QOU.LightningPath
 import QOU.RepresentationTheory
@@ -45,3 +46,12 @@ import QOU.PhotonThreading
 import QOU.QBirchSwinnertonDyer
 import QOU.QCollatz
 import QOU.QGeometricLanglands
+import QOU.InformationTheory.Stubs
+import QOU.QuantumObservableUniverses
+import QOU.MolecularConstruction
+import QOU.QGeometricLanglands.Stubs
+import QOU.ParticleInteractions
+import QOU.AlgebraicSubstrate
+import QOU.Observations
+import QOU.BraidsAndKnots
+import QOU.DescartesUniverse.Stubs

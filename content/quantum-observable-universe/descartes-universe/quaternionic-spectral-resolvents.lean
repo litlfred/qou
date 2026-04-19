@@ -69,4 +69,9 @@ theorem three_resolvents_embed (qr : QuaternionicResolvent) :
     qr.omega 0 = 0 → (qr.omega 1 ≠ 0 ∨ qr.omega 2 ≠ 0 ∨ qr.omega 3 ≠ 0) :=
   fun _ => qr.nontrivial
 
+
+/-- **def:quaternionic-spectral-resolvents** — placeholder stub; full definition TBD. -/
+structure QuaternionicSpectralResolvents where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

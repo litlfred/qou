@@ -13,6 +13,7 @@ export default proposition({
   ],
   lean: {
     decl: "QOU.ParticleInteractions.tritium_qvalue_symbolic",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [

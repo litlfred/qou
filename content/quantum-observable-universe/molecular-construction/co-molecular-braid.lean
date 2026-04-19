@@ -18,3 +18,11 @@ structure COBraid where
 -- Carbon: Z=6, N=6, so 6+6+6 = 18
 -- Oxygen: Z=8, N=8, so 8+8+8 = 24
 theorem co_strands : 18 + 24 = 42 := by norm_num
+
+namespace QOU.Molecular
+
+/-- **def:co-molecular-braid** — placeholder stub; full definition TBD. -/
+structure COBraid where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

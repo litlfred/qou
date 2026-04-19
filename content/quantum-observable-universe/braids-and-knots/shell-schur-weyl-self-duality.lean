@@ -68,4 +68,9 @@ structure ConstrainedShellILP (R : Type u) [CommRing R] where
   /-- Number of conjugate-equivalence classes of partitions of A_magic. -/
   n_classes : ℕ
 
+
+/-- **prop:shell-schur-weyl-self-duality** — placeholder stub; full definition TBD. -/
+structure ShellSchurWeylSelfDuality where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.BraidKnot

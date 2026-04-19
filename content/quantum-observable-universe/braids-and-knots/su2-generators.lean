@@ -55,4 +55,9 @@ theorem commutator_eq (d : Dic3Data) :
   rw [d.dihedral]
   ring
 
+
+/-- **def:su2-generators** — placeholder stub; full definition TBD. -/
+structure Su2Generators where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU

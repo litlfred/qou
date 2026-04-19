@@ -5,7 +5,8 @@ export default proposition({
   title:
     "Jet-filtered knot invariant converges to classical dimension-weighted average",
   lean: {
-    decl: "QOU.BraidKnot.jet_convergence_classical_limit",
+    decl: "QOU.BraidsAndKnots.jet_convergence_classical_limit",
+    file: "QOU/BraidsAndKnots.lean",
     validation: "not_checked",
   },
   uses: [

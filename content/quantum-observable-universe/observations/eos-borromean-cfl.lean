@@ -114,6 +114,15 @@ theorem cs_borromean_nonrelativistic (q : ℝ) (E_F : ℝ)
 -- The physical content is that M_D is small enough to reach
 -- the conformal limit at achievable densities.
 
+/-- **prop:eos-borromean-cfl** — aggregate EoS claim: at `q = 1.1097`
+    the mass ratio between Borromean and CFL phases exceeds 1000,
+    which is the key input to the stiffness comparison below.  The
+    specialised numerical claims are proved above; this aggregate
+    records the proposition's label under its manifest decl name. -/
+theorem eos_borromean_cfl :
+    M_B 1.1097 / M_D 1.1097 > 1000 :=
+  mass_ratio_gt_1000
+
 end QOU.Descartes
 
 end

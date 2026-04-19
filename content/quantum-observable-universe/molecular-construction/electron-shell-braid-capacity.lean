@@ -23,3 +23,11 @@ theorem shell2_capacity : 2 * 2 * 2 = 8 := by norm_num
 
 /-- Shell 3 (M shell) holds at most 18 electrons. -/
 theorem shell3_capacity : 2 * 3 * 3 = 18 := by norm_num
+
+namespace QOU.Molecular
+
+/-- **def:electron-shell-braid-capacity** — placeholder stub; full definition TBD. -/
+structure ElectronShellCapacity where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

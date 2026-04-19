@@ -86,4 +86,9 @@ theorem brings_genus : bringsSurface.genus = 4 := rfl
 -- Ref: [manuscript] Chapter 6, §Descartes theorem
 theorem brings_euler : bringsSurface.eulerChar = -6 := rfl
 
+
+/-- **thm:descartes** — placeholder stub; full proof TBD. -/
+theorem descartes : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/descartes
+  sorry
 end QOU.Descartes

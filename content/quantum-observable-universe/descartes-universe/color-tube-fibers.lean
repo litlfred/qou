@@ -75,4 +75,9 @@ theorem color_tube_at_z_zero (c : R_q) :
 theorem constant_term_identity (z : R_q) :
     4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1 = (z + 1) ^ 4 - z ^ 4 := by ring
 
+
+/-- **def:color-tube-fibers** — placeholder stub; full definition TBD. -/
+structure ColorTubeFibers where
+  witness : ℝ
+  witness_pos : 0 < witness
 end QOU.Brings

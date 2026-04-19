@@ -174,4 +174,9 @@ theorem all_large_primes_obstructed (p : ℕ) (hp : 11 ≤ p) :
 example : ¬ ((11 - 1) / 2 ≤ 4) := all_large_primes_obstructed 11 (by omega)
 example : ¬ ((13 - 1) / 2 ≤ 4) := all_large_primes_obstructed 13 (by omega)
 
+
+/-- **prop:genus-filtration-ideal** — placeholder stub; full proof TBD. -/
+theorem genus_filtration_ideal : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/genus-filtration-ideal
+  sorry
 end QOU.Descartes

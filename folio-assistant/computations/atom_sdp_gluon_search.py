@@ -181,7 +181,7 @@ def trM_plancherel(Z: int, N: int, gluons: tuple[str, ...],
     Hoefsmit sigmas have ~1.5 nnz per row, so sparse saves the
     first few multiplications before fill-in; net win for 4He.
     """
-    from scipy.sparse import issparse, eye as speye, csr_matrix
+    from scipy.sparse import issparse, eye as speye
     from hecke_characters import build_seminormal_matrices
     A = Z + N
     n = 3 * A

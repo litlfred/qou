@@ -56,8 +56,13 @@ def _strip_gluon_tail(chain: list[tuple[float, float]]
     with witness files / data produced under the older convention.
     """
     out = list(chain)
-    while out and (float(out[-1][0]), float(out[-1][1])) == (1.0, 0.0) \
-            and len(out) > 3:  # keep the B₃ prefix intact
+    # Hard-cap at two pops to match the documented "up to two"
+    # behaviour; also refuse to touch the B₃ prefix.
+    for _ in range(2):
+        if not out or len(out) <= 3:
+            break
+        if (float(out[-1][0]), float(out[-1][1])) != (1.0, 0.0):
+            break
         out.pop()
     return out
 

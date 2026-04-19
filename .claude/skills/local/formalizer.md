@@ -18,6 +18,24 @@ tactic blocks.  It depends on the Ontologist skill having already produced
 a resolved glossary — every term used in theorems must have a unique type
 assignment before formalization can proceed.
 
+## Where Lean code lives (read before writing any `.lean`)
+
+There are two locations and they behave differently (see `CLAUDE.md §8a`):
+
+1. **Lake-buildable tree**: `content/<paper>/lean/QOU/...` — has
+   `lakefile.toml` + `lean-toolchain`, Mathlib in scope, compiled by
+   `lake build`, checked by `lean_check` / `lean_build` MCP tools.
+   **Default home for every new proof or definition.**
+2. **Sibling stubs**: `<chapter>/<block>.lean` alongside `.ts` + `.md`.
+   Not compiled by Lake, Mathlib not in scope. Useful only to co-locate
+   type signatures with the narrative; do not expect them to
+   type-check.
+
+When you formalize a new block, write the real code in the Lake tree
+first, then (optionally) leave a sibling stub whose header comment
+points back to the Lake module. Do not invert this: stubs are never
+the canonical source.
+
 ## When to Use This Skill
 
 - After the Ontologist has produced `glossary.json` and `Glossary.lean`
@@ -113,6 +131,37 @@ When a narrative step is too complex for immediate formalization:
    to the foundational reference that would resolve the gap
 5. Ensure the file remains syntactically correct
 6. Track the sorry count in `proof-objects.json`
+
+**Audit-friendly placement:** put the `-- Ref:` annotation either
+**immediately before** the `sorry` *or* anywhere inside the enclosing
+declaration (including its docstring). `scripts/lean-audit.ts` scans
+the whole enclosing `theorem`/`lemma`/`def` plus its leading `--`/`/--`
+comment block, so either placement counts. Avoid placing the Ref
+**after** the `sorry` — the audit looks backwards from the `sorry`,
+not forwards.
+
+### 4a. Replacing `True := by trivial` placeholders
+
+If a Lean file contains `theorem foo : True := by trivial` (flagged
+by the audit as a **trivial-truth placeholder**), do not leave it in
+place — the statement is vacuous and doesn't match the narrative.
+Replace with one of:
+
+1. **Concrete existence statement** + `sorry`:
+   ```lean
+   theorem foo (x : X) : ∃ (witness : ℝ), 0 < witness := by
+     -- Ref: [key] <url or section>
+     sorry
+   ```
+2. **Aggregate of already-proved sub-claims**:
+   ```lean
+   theorem foo : subclaim_A ∧ subclaim_B :=
+     ⟨proof_of_A, proof_of_B⟩
+   ```
+3. **Demote to `prose`/`remark`** if the `.md` is the only reader.
+
+Avoid non-trivial-looking trivialities like `True → True` or
+`: Prop` — the audit widens its placeholder check to catch these.
 
 ```lean
 /-- Intermediate step: torsion lifts through jet prolongation.

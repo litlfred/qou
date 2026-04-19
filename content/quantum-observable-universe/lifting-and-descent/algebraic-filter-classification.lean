@@ -32,4 +32,9 @@ theorem algebraic_filter_exclusive :
     AlgebraicFilterClass.fermionic ≠ AlgebraicFilterClass.bosonic := by
   intro h; exact AlgebraicFilterClass.noConfusion h
 
+
+/-- **prop:algebraic-filter-classification** — placeholder stub; full proof TBD. -/
+theorem algebraic_filter_classification : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §lifting-and-descent/algebraic-filter-classification
+  sorry
 end QOU.Torsion

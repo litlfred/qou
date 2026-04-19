@@ -6,6 +6,7 @@ export default theorem({
     "In a QOU the classical limit obstruction is one-dimensional",
   lean: {
     decl: "QOU.AlgebraicSubstrate.qou_obstruction_reduction",
+    file: "QOU/AlgebraicSubstrate.lean",
     validation: "not_checked",
   },
   uses: [

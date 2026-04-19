@@ -140,4 +140,9 @@ theorem particle_finiteness :
   unfold torusEmbeddable at hemb
   constructor <;> constructor <;> omega
 
+
+/-- **prop:skein-finiteness-bound** — placeholder stub; full proof TBD. -/
+theorem skein_finiteness_bound : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §descartes-universe/skein-finiteness-bound
+  sorry
 end QOU.Descartes

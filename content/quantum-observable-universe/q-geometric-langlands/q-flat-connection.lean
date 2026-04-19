@@ -10,3 +10,11 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QFlatConnection
+
+namespace QOU
+
+/-- **def:q-flat-connection** — placeholder stub; full definition TBD. -/
+structure QFlatConnection where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU

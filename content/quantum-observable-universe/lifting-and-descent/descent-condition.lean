@@ -99,4 +99,9 @@ theorem descent_condition_global
     dc.GloballyConsistent :=
   dc.global_iff_vanishing.mp h
 
+
+/-- **prop:descent-condition** — placeholder stub; full proof TBD. -/
+theorem descent_condition : ∃ (witness : ℝ), 0 < witness := by
+  -- Ref: [manuscript] §lifting-and-descent/descent-condition
+  sorry
 end QOU.Torsion

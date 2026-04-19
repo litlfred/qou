@@ -24,3 +24,11 @@ theorem double_bond_crossings : 2 * 2 = 4 := by norm_num
 
 /-- Triple bond has 6 attractive crossings. -/
 theorem triple_bond_crossings : 2 * 3 = 6 := by norm_num
+
+namespace QOU.Molecular
+
+/-- **def:covalent-bond-shared-trefoil** — placeholder stub; full definition TBD. -/
+structure CovalentBond where
+  witness : ℝ
+  witness_pos : 0 < witness
+end QOU.Molecular

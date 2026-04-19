@@ -2,6 +2,11 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:quantum-peter-weyl",
+  lean: {
+    decl: "QOU.FluidDynamics.quantum_peter_weyl",
+    file: "QOU/FluidDynamics.lean",
+    validation: "not_checked",
+  },
   title:
     "Quantum Peter--Weyl theorem: completeness of the $\\mathrm{SU}_q(2)$ eigenbasis",
   uses: [

@@ -12,6 +12,7 @@ export default proposition({
   ],
   lean: {
     decl: "QOU.ParticleInteractions.positron_correction",
+    file: "QOU/ParticleInteractions.lean",
     validation: "not_checked",
   },
   uses: [
