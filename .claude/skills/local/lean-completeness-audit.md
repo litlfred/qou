@@ -46,6 +46,29 @@ This script produces:
 - Axiom inventory
 - Witness staleness (commit SHA comparison)
 - Chapter-by-chapter breakdown
+- **Block-level gaps** (added 2026-04): cross-references content `.ts`
+  manifests against the parsed Lean declaration index and reports
+  per-chapter gap buckets:
+  - `missing-lean-file` — provable block (definition/theorem/lemma/
+    proposition/corollary) has neither a sibling `.lean` nor a `lean:`
+    field
+  - `unresolved-decl` — manifest declares `lean: { decl: "X" }` but `X`
+    is not found in any `.lean` file under the paper's `lean/` tree
+  - `decl-in-wrong-file` — `X` is found, but in a different file from
+    the one the manifest references
+  - `placeholder-statement` — referenced decl's *type* is `True`,
+    `Unit`, or `PUnit`, or its body is `:= by trivial` (the narrative
+    purports a real statement but the Lean code proves nothing)
+  - `sorry-no-citation` — referenced decl uses `sorry` without a
+    `-- Ref: [key]` comment in its body window
+
+  These dimensions answer the audit questions:
+  *"# prop/thm/def missing lean"* (`missing-lean-file`),
+  *"# lean stub/placeholder"* (`placeholder-statement` + trivial truths),
+  *"# sorry but not external ref"* (`uncitedSorries` file-level +
+  `sorry-no-citation` block-level), and
+  *"# narrative does not match proof"* (`unresolved-decl` +
+  `decl-in-wrong-file` + `placeholder-statement`).
 
 ### Unified witness staleness audit (Lean + Python)
 
@@ -265,6 +288,10 @@ migrated to use `witness_base.py` when the computation is next modified.
 ### Missing Lean Files
 | Paper | Block | Kind | Label | Status |
 |-------|-------|------|-------|--------|
+
+### Block-Level Gaps (per chapter)
+| Chapter | Provable | Linked | MissingFile | UnresolvedDecl | WrongFile | Placeholder | SorryNoCite |
+|---------|---------:|-------:|------------:|---------------:|----------:|------------:|------------:|
 
 ### Stale Imports
 (list any cross-paper imports that need attention)
