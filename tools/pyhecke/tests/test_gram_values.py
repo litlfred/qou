@@ -87,3 +87,32 @@ def test_hecke_core_reexports_match_pyhecke():
     assert hecke_core.TR_M is pyhecke_gram.TR_M
     assert hecke_core.hm is pyhecke_gram.hm
     assert hecke_core.hm_exact is pyhecke_gram.hm_exact
+
+
+def test_pyhecke_gram_build_atom_nf_matches_hecke_core():
+    """pyhecke.gram.build_atom_nf dispatches to native-or-legacy and
+    agrees byte-for-byte with hecke_core.build_atom_nf."""
+    import hecke_core  # type: ignore[import-not-found]
+    for Z, N in [(1, 0), (2, 2), (6, 6)]:
+        nf_dispatched = pyhecke_gram.build_atom_nf(Z, N)
+        nf_legacy = hecke_core.build_atom_nf(Z, N)
+        diff = numpy.max(numpy.abs(
+            numpy.array(nf_dispatched) - numpy.array(nf_legacy)
+        ))
+        assert diff < 1e-12, f"Z={Z} N={N}: diff {diff}"
+
+
+def test_pyhecke_gram_atom_per_generator_volumes_matches_hecke_core():
+    import hecke_core  # type: ignore[import-not-found]
+    py = hecke_core.atom_per_generator_volumes(6, 6)
+    ds = pyhecke_gram.atom_per_generator_volumes(6, 6)
+    assert len(py) == len(ds)
+    max_diff = max(
+        abs(p[k] - d[k]) for p, d in zip(py, ds) for k in ("sym", "std", "alt", "full")
+    )
+    assert max_diff < 1e-12
+
+
+def test_pyhecke_gram_has_native_exported():
+    assert callable(pyhecke_gram.has_native)
+    assert isinstance(pyhecke_gram.has_native(), bool)

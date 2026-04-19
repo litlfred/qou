@@ -229,7 +229,9 @@ __all__ = [
     # NF multiplication
     "hm", "hm_exact", "nf_tr", "nf_net",
     # Gram matrix
-    "G", "G_INV",
+    "G", "G_INV", "gram_matrix", "gram_inverse",
+    # Native-dispatched atom kernels
+    "build_atom_nf", "atom_per_generator_volumes", "has_native",
     # Exact-rational internals (rarely used externally)
     "_H_FRAC", "_Z_FRAC", "_TR_M_FRAC",
     "_SYM_EIG_FRAC", "_ALT_EIG_FRAC",
@@ -244,3 +246,59 @@ def gram_matrix() -> np.ndarray:
 def gram_inverse() -> np.ndarray:
     """Return G^{-1}."""
     return G_INV
+
+
+# ══════════════════════════════════════════════════════════════
+# Native-accelerated atom kernels
+# ══════════════════════════════════════════════════════════════
+# When the `pyhecke_native` wheel is installed, these dispatch to the
+# Rust implementation (~100× on ⁴⁰Ca). Fallback is hecke_core's pure
+# Python. hecke_core is imported lazily at call time to avoid
+# circular-import with pyhecke.gram's own loading.
+
+try:
+    import pyhecke_native as _native  # type: ignore[import-not-found]
+    _HAS_NATIVE = True
+except ImportError:
+    _native = None
+    _HAS_NATIVE = False
+
+
+def has_native() -> bool:
+    """True iff the pyhecke_native wheel is installed."""
+    return _HAS_NATIVE
+
+
+def build_atom_nf(Z: int, N: int):
+    """Build the atom NF for (Z, N). Native-dispatched; falls back
+    to hecke_core.build_atom_nf when the wheel is absent."""
+    if _HAS_NATIVE:
+        return _native.build_atom_nf(Z, N)
+    import hecke_core  # type: ignore[import-not-found]
+    return hecke_core.build_atom_nf(Z, N)
+
+
+def atom_per_generator_volumes(
+    Z: int,
+    N: int,
+    include_inter: bool = True,
+    crossings_per_pair: int = 1,
+    m_pp=None, m_pn=None, m_nn=None,
+):
+    """Per-generator Wedderburn volumes for the atom braid. Native-
+    dispatched; falls back to hecke_core.atom_per_generator_volumes
+    when the wheel is absent."""
+    if _HAS_NATIVE:
+        return _native.atom_per_generator_volumes(
+            Z, N,
+            include_inter=include_inter,
+            crossings_per_pair=crossings_per_pair,
+            m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        )
+    import hecke_core  # type: ignore[import-not-found]
+    return hecke_core.atom_per_generator_volumes(
+        Z, N,
+        include_inter=include_inter,
+        crossings_per_pair=crossings_per_pair,
+        m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+    )
