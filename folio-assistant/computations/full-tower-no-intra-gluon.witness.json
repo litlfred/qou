@@ -1,0 +1,110 @@
+{
+  "computation": "full-tower-no-intra-gluon",
+  "description": "Comparison: per_gen_volumes with vs without intra-nucleon gluons. Default includes gluons (2sigma_0 proton / 4sigma_0 neutron); refactored variant removes them, leaving only inter-nucleon crossings. Hypothesis: nucleon-internal gluons are absorbed into m_p, m_n rest masses and should NOT appear in per-generator V_hat at the inter-nucleon generator.",
+  "timestamp": "2026-04-19T21:55:53.328885+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "M_E_MEV": 0.51099895,
+    "W_sym": 0.16546138476810043,
+    "W_std": 0.6690772304637992,
+    "W_alt": 0.16546138476810043
+  },
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME": 2.224566,
+      "B_default_MeV": 4.924398973004851,
+      "err_default_pct": 0.14387261758876163,
+      "B_no_intra_MeV": 3.7107707461811383,
+      "err_no_intra_pct": 0.0791990353640063,
+      "delta_B_MeV": -1.2136282268237126
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME": 8.481798,
+      "B_default_MeV": 17.24226480220313,
+      "err_default_pct": 0.3112269790353306,
+      "B_no_intra_MeV": Infinity,
+      "err_no_intra_pct": Infinity,
+      "delta_B_MeV": Infinity
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME": 7.718058,
+      "B_default_MeV": 15.246091257101051,
+      "err_default_pct": 0.2674431741577798,
+      "B_no_intra_MeV": 11.550487243297034,
+      "err_no_intra_pct": 0.1361520342110118,
+      "delta_B_MeV": -3.695604013804017
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME": 28.295674,
+      "B_default_MeV": 19.412197989444564,
+      "err_default_pct": 0.2366977808821812,
+      "B_no_intra_MeV": 15.076382521927322,
+      "err_no_intra_pct": 0.3522243943673231,
+      "delta_B_MeV": -4.335815467517243
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "B_AME": 31.994571,
+      "B_default_MeV": 34.74071743069951,
+      "err_default_pct": 0.04878021211154674,
+      "B_no_intra_MeV": 26.808147668293298,
+      "err_no_intra_pct": 0.09212721775964579,
+      "delta_B_MeV": -7.932569762406214
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "B_AME": 39.244529,
+      "B_default_MeV": 42.238555731152054,
+      "err_default_pct": 0.04558572614873869,
+      "B_no_intra_MeV": 33.60540987675065,
+      "err_no_intra_pct": 0.08585873245481893,
+      "delta_B_MeV": -8.633145854401405
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "B_AME": 58.16498,
+      "B_default_MeV": 56.38667550539445,
+      "err_default_pct": 0.021058860148177237,
+      "B_no_intra_MeV": 45.3207156939639,
+      "err_no_intra_pct": 0.15210306589650502,
+      "delta_B_MeV": -11.065959811430552
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "B_AME": 92.161728,
+      "B_default_MeV": 82.8886980519466,
+      "err_default_pct": 0.08235911288742667,
+      "B_no_intra_MeV": 66.26809994709866,
+      "err_no_intra_pct": 0.22997620495355053,
+      "delta_B_MeV": -16.620598104847943
+    }
+  ]
+}
