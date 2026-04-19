@@ -23,8 +23,30 @@ from fractions import Fraction
 import numpy as np
 
 from . import _legacy  # noqa: F401  — adjusts sys.path
+from . import bridge  # single source of truth for pyhecke_native
 
 from q_parameter import Q as q0, Q_INV as qi, HA as h  # type: ignore[import-not-found]
+
+
+# ══════════════════════════════════════════════════════════════
+# Native acceleration (delegated to bridge — no duplicate import)
+# ══════════════════════════════════════════════════════════════
+# The PyO3 module is imported once, in `pyhecke.bridge`. This module
+# just reads the cached handle so there is a single place where native
+# availability is detected and a single place to add new native
+# dispatches.
+
+_native = bridge._NATIVE
+_HAS_NATIVE = _native is not None
+
+
+def has_native() -> bool:
+    """True iff the pyhecke_native wheel is installed.
+
+    Delegates to :func:`pyhecke.bridge.has_native` so the check is
+    defined in exactly one place.
+    """
+    return bridge.has_native()
 
 
 # ══════════════════════════════════════════════════════════════
@@ -59,42 +81,87 @@ INV_TREFOIL_G1 = [(1, -h)]  # σ₁⁻¹
 # NF multiplication in H_3(q)
 # ══════════════════════════════════════════════════════════════
 
-def hm(nf, c, d, gen):
-    """Multiply NF element by (c·σ_gen + d·I). Returns new NF."""
-    r = [0.0] * 6
+def _hm_tables(h_val, c, d, gen):
+    """Dispatch table for the NF multiplication kernel.
+
+    Returned list has the shape ``[(source_idx, [(target_idx, coeff), …]), …]``
+    matching the pre-inversion hecke_core layout. Same structure is used
+    by the float path (:func:`_hm_pure`) and the exact-rational path
+    (:func:`hm_exact`); only ``h_val`` and the initial zero differ.
+    """
     if gen == 0:
-        tables = [
+        return [
             (0, [(1, c), (0, d)]),
-            (1, [(1, c * h), (0, c), (1, d)]),
+            (1, [(1, c * h_val), (0, c), (1, d)]),
             (2, [(3, c), (2, d)]),
-            (3, [(3, c * h), (2, c), (3, d)]),
+            (3, [(3, c * h_val), (2, c), (3, d)]),
             (4, [(5, c), (4, d)]),
-            (5, [(5, c * h), (4, c), (5, d)]),
+            (5, [(5, c * h_val), (4, c), (5, d)]),
         ]
-    else:
-        tables = [
-            (0, [(2, c), (0, d)]),
-            (1, [(4, c), (1, d)]),
-            (2, [(2, c * h), (0, c), (2, d)]),
-            (3, [(5, c), (3, d)]),
-            (4, [(4, c * h), (1, c), (4, d)]),
-            (5, [(5, c * h), (3, c), (5, d)]),
-        ]
+    return [
+        (0, [(2, c), (0, d)]),
+        (1, [(4, c), (1, d)]),
+        (2, [(2, c * h_val), (0, c), (2, d)]),
+        (3, [(5, c), (3, d)]),
+        (4, [(4, c * h_val), (1, c), (4, d)]),
+        (5, [(5, c * h_val), (3, c), (5, d)]),
+    ]
+
+
+def _hm_apply(nf, tables, zero, is_zero):
+    """Run the 6-row NF multiplication given a prebuilt table."""
+    r = [zero] * 6
     for si, tgts in tables:
-        if abs(nf[si]) < 1e-15:
+        coeff = nf[si]
+        if is_zero(coeff):
             continue
         for ti, co in tgts:
-            r[ti] += nf[si] * co
+            r[ti] += coeff * co
     return r
 
 
+def _hm_pure(nf, c, d, gen):
+    """Pure-Python float NF multiplication. Used as the fallback when
+    ``pyhecke_native`` is not available."""
+    return _hm_apply(nf, _hm_tables(h, c, d, gen), 0.0,
+                     lambda x: abs(x) < 1e-15)
+
+
+def hm(nf, c, d, gen):
+    """Multiply NF element by ``(c·σ_gen + d·I)``. Returns a fresh
+    6-element list.
+
+    Dispatches to ``pyhecke_native.hm`` when the wheel is installed
+    (~10× the pure-Python speed on the hot path). Falls back to
+    :func:`_hm_pure` otherwise — numerics are byte-identical.
+
+    **Round-trip caveat**: each call marshals ``nf`` from Python to
+    Rust and back. For tight loops that apply many NF multiplications,
+    call :func:`build_atom_nf` (which keeps the full chain inside
+    Rust — one marshal per atom) instead of looping ``hm`` from Python.
+    """
+    if _HAS_NATIVE:
+        # `list(nf)` handles both list and numpy-array inputs;
+        # the native layer allocates a length-6 Vec internally.
+        return list(_native.hm(list(nf), float(c), float(d), int(gen)))
+    return _hm_pure(nf, c, d, gen)
+
+
 def nf_tr(nf):
-    """Markov trace of NF element."""
+    """Markov trace of an NF element. Native-dispatched when available."""
+    if _HAS_NATIVE:
+        return _native.nf_tr(list(nf))
     return sum(nf[i] * TR_M[i] for i in range(6))
 
 
 def nf_net(nf):
-    """Net (sum of NF coefficients)."""
+    """Net (sum of NF coefficients).
+
+    Intentionally **not** native-dispatched: ``sum(nf)`` is a trivial
+    Python builtin and the PyO3 marshal of the 6-element input would
+    outweigh the arithmetic. Use the native call directly only if you
+    already have the data on the Rust side.
+    """
     return sum(nf)
 
 
@@ -186,33 +253,13 @@ _ALT_EIG_FRAC = [Fraction(1), -_QI_FRAC, -_QI_FRAC,
 def hm_exact(nf, c, d, gen):
     """Exact Fraction multiplication: NF × (c·σ_gen + d·I).
 
-    Same logic as hm() but with Fraction arithmetic — no rounding.
+    Same logic as :func:`hm` but with Fraction arithmetic — no
+    rounding, no floating-point error. Not native-dispatched: the
+    PyO3 layer only exposes the f64 kernel. For exact rationals we
+    run the Python loop over the shared dispatch table.
     """
-    r = [Fraction(0)] * 6
-    if gen == 0:
-        tables = [
-            (0, [(1, c), (0, d)]),
-            (1, [(1, c * _H_FRAC), (0, c), (1, d)]),
-            (2, [(3, c), (2, d)]),
-            (3, [(3, c * _H_FRAC), (2, c), (3, d)]),
-            (4, [(5, c), (4, d)]),
-            (5, [(5, c * _H_FRAC), (4, c), (5, d)]),
-        ]
-    else:
-        tables = [
-            (0, [(2, c), (0, d)]),
-            (1, [(4, c), (1, d)]),
-            (2, [(2, c * _H_FRAC), (0, c), (2, d)]),
-            (3, [(5, c), (3, d)]),
-            (4, [(4, c * _H_FRAC), (1, c), (4, d)]),
-            (5, [(5, c * _H_FRAC), (3, c), (5, d)]),
-        ]
-    for si, tgts in tables:
-        if nf[si] == 0:
-            continue
-        for ti, co in tgts:
-            r[ti] += nf[si] * co
-    return r
+    return _hm_apply(nf, _hm_tables(_H_FRAC, c, d, gen), Fraction(0),
+                     lambda x: x == 0)
 
 
 # ══════════════════════════════════════════════════════════════
@@ -255,18 +302,9 @@ def gram_inverse() -> np.ndarray:
 # Rust implementation (~100× on ⁴⁰Ca). Fallback is hecke_core's pure
 # Python. hecke_core is imported lazily at call time to avoid
 # circular-import with pyhecke.gram's own loading.
-
-try:
-    import pyhecke_native as _native  # type: ignore[import-not-found]
-    _HAS_NATIVE = True
-except ImportError:
-    _native = None
-    _HAS_NATIVE = False
-
-
-def has_native() -> bool:
-    """True iff the pyhecke_native wheel is installed."""
-    return _HAS_NATIVE
+#
+# The native handle `_native` is set at the top of this module (shared
+# with `hm` / `nf_tr` dispatch) — no second import block here.
 
 
 def build_atom_nf(Z: int, N: int):

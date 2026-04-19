@@ -35,11 +35,41 @@ fn bench_atom_volumes(c: &mut Criterion) {
     });
 }
 
+/// Build a large, pre-mul'd polynomial that exercises `reduce_nf`
+/// against many word-rewrite triggers. This is the workload that
+/// the SmallVec + buffer-reuse changes actually optimize (the 6×6
+/// Gram path reduces very short words and hides the speedup).
+fn bench_reduce_nf_heavy(c: &mut Criterion) {
+    let h = nf::hecke_h(nf::Q_0);
+
+    // Build a "heavy" input: multiply the NF basis with itself twice,
+    // yielding words of length up to 6 before reduction. This is the
+    // pattern the GB-NF loop hits when reducing repeated basis
+    // products.
+    let mut heavy = nf::Poly::default();
+    for i in 0..6 {
+        for j in 0..6 {
+            for k in 0..6 {
+                let ab = nf::mul_polys(&nf::poly_from(i), &nf::poly_from(j));
+                let abc = nf::mul_polys(&ab, &nf::poly_from(k));
+                for (w, c) in abc {
+                    heavy.entry(w).and_modify(|v| *v += c).or_insert(c);
+                }
+            }
+        }
+    }
+
+    c.bench_function("reduce_nf(heavy)", |b| {
+        b.iter(|| nf::reduce_nf(black_box(heavy.clone()), black_box(h)))
+    });
+}
+
 criterion_group!(
     benches,
     bench_gram_matrix,
     bench_gram_inverse,
     bench_build_atom_nf,
-    bench_atom_volumes
+    bench_atom_volumes,
+    bench_reduce_nf_heavy,
 );
 criterion_main!(benches);

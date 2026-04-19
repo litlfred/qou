@@ -87,65 +87,39 @@ def undo_atom_to_nucleons(Z: int, N: int) -> tuple[list, list]:
     return atom_gen_chains(Z, N)
 
 
-# ── Level 4 → 3 : shell-magic → atom ───────────────────────────────────
+# ── Levels 4-7 : awaiting Track B/C implementation ────────────────────
 
-def undo_shell_magic(*args: Any, **kwargs: Any) -> Any:
-    """Expand a shell-magic shortcut (level 4) to the atom-level
-    (level 3) word.
+# Track B milestone names for levels 4-7. Each entry is the human name
+# used in the NotImplementedError message; the dispatcher below
+# produces the actual exception so there is no per-level stub to keep
+# in sync.
+_PENDING_LEVELS: dict[int, str] = {
+    4: "shell-magic",
+    5: "cross-shell",
+    6: "atom-electron",
+    7: "molecule",
+}
 
-    Not yet implemented. Tracked in INFRASTRUCTURE-AUDIT.md as the
-    level-4 shell-closure primitive. The expansion should produce the
-    atom NF word for the magic-shell-closure configuration (2, 8, 20,
-    28, 50, 82, 126 nucleons).
-    """
+
+def _raise_pending(level: int) -> None:
+    """Raise a ``NotImplementedError`` for a Track B/C level that has
+    not yet been implemented. Centralised so every pending level gives
+    a consistent message + pointer to the audit doc."""
     raise NotImplementedError(
-        "undo_shell_magic (level 4 → 3) is not yet implemented. "
-        "See folio-assistant/computations/INFRASTRUCTURE-AUDIT.md "
+        f"undo: level {level} → 3 ({_PENDING_LEVELS[level]}) is not "
+        "yet implemented. See "
+        "folio-assistant/computations/INFRASTRUCTURE-AUDIT.md "
         "section 'Track B: Shortcut infrastructure'."
     )
 
 
-# ── Level 5 → 3 : cross-shell → atom ───────────────────────────────────
-
-def undo_cross_shell(*args: Any, **kwargs: Any) -> Any:
-    """Expand a cross-shell shortcut (level 5) to the atom-level word.
-
-    Not yet implemented. Cross-shell primitives account for shell-
-    straddling cross-terms (open-shell atoms). See
-    INFRASTRUCTURE-AUDIT.md.
-    """
-    raise NotImplementedError(
-        "undo_cross_shell (level 5 → 3) is not yet implemented."
-    )
-
-
-# ── Level 6 → 3 : atom-electron → atom (nucleon) ───────────────────────
-
-def undo_atom_electron(*args: Any, **kwargs: Any) -> Any:
-    """Expand an atom-electron shortcut (level 6) to the atom-level word.
-
-    Not yet implemented. Electron-cloud primitives should decompose
-    into Z electron braidings around the nucleus.
-    """
-    raise NotImplementedError(
-        "undo_atom_electron (level 6 → 3) is not yet implemented."
-    )
-
-
-# ── Level 7 → 3 : molecule → atoms ─────────────────────────────────────
-
-def undo_molecule(*args: Any, **kwargs: Any) -> Any:
-    """Expand a molecule shortcut (level 7) to the atom-level word.
-
-    Not yet implemented. A molecule word should decompose into a sum
-    of atom words + covalent-bond crossings.
-    """
-    raise NotImplementedError(
-        "undo_molecule (level 7 → 3) is not yet implemented."
-    )
-
-
 # ── Dispatch ───────────────────────────────────────────────────────────
+
+_DISPATCH = {
+    2: undo_nucleon_to_quarks,
+    3: undo_atom_to_nucleons,
+}
+
 
 def undo_to_quark(level: int, *args: Any, **kwargs: Any) -> Any:
     """Dispatch to the appropriate level-ℓ → level-(ℓ-1) expansion.
@@ -165,22 +139,15 @@ def undo_to_quark(level: int, *args: Any, **kwargs: Any) -> Any:
     -------
     The expansion as returned by the per-level helper. Shape depends
     on the level:
-      - 2 → 1 : (g0_chain, g1_chain)   [nucleon_gen_chains]
-      - 3 → 2 : (g0_chain, g1_chain)   [atom_gen_chains]
-      - 4..7  : NotImplementedError for now
+
+      - 2 → 1 : ``(g0_chain, g1_chain)`` — see :func:`undo_nucleon_to_quarks`
+      - 3 → 2 : ``(g0_chain, g1_chain)`` — see :func:`undo_atom_to_nucleons`
+      - 4..7  : ``NotImplementedError`` (Track B/C pending)
     """
-    if level == 2:
-        return undo_nucleon_to_quarks(*args, **kwargs)
-    if level == 3:
-        return undo_atom_to_nucleons(*args, **kwargs)
-    if level == 4:
-        return undo_shell_magic(*args, **kwargs)
-    if level == 5:
-        return undo_cross_shell(*args, **kwargs)
-    if level == 6:
-        return undo_atom_electron(*args, **kwargs)
-    if level == 7:
-        return undo_molecule(*args, **kwargs)
+    if level in _DISPATCH:
+        return _DISPATCH[level](*args, **kwargs)
+    if level in _PENDING_LEVELS:
+        _raise_pending(level)
     raise ValueError(
         f"undo_to_quark: level must be 2..7, got {level!r}"
     )

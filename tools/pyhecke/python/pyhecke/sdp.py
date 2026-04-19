@@ -65,6 +65,26 @@ class SDPResult:
     caveats: list[str] = field(default_factory=list)
 
 
+def _missing_dep(level: int, module_name: str, exc: Exception,
+                 hint: str = "") -> SDPResult:
+    """Build a uniform ``not_implemented`` result for a missing optional
+    dependency. Used by every level-N solver to collapse the
+    ``try/except ImportError`` boilerplate to:
+
+    .. code-block:: python
+
+        try:
+            from X import Y
+        except ImportError as e:
+            return _missing_dep(N, "X", e)
+    """
+    caveat = f"{module_name} not available: {exc}"
+    if hint:
+        caveat = f"{caveat}. {hint}"
+    return SDPResult(level=level, status="not_implemented",
+                     caveats=[caveat])
+
+
 # ── Level 3 : inter-nucleon pair SDP ───────────────────────────────────
 
 def solve_pair_sdp(
@@ -106,13 +126,8 @@ def solve_pair_sdp(
     from . import _legacy  # noqa: F401
     try:
         from sdp_moment_lift import lp_vs_sdp_report  # type: ignore[import-not-found]
-        import numpy as np  # noqa: F401
     except ImportError as e:
-        return SDPResult(
-            level=3,
-            status="not_implemented",
-            caveats=[f"sdp_moment_lift / cvxpy not available: {e}"],
-        )
+        return _missing_dep(3, "sdp_moment_lift", e)
 
     import numpy as np
     from .gram import G, TR_M
@@ -131,11 +146,7 @@ def solve_pair_sdp(
             label=label,
         )
     except ImportError as e:
-        return SDPResult(
-            level=3,
-            status="not_implemented",
-            caveats=[f"cvxpy required for Lasserre lift: {e}"],
-        )
+        return _missing_dep(3, "cvxpy", e, hint="required for Lasserre lift")
 
     # Map the SdpLiftReport onto the dispatcher's SDPResult.
     ok = rep.sdp_status in {"optimal", "optimal_inaccurate"}
@@ -255,13 +266,9 @@ def solve_shell_magic_sdp(
     try:
         from sigma_shell_characterization import shell_shadow_price  # type: ignore[import-not-found]
     except ImportError as e:
-        return SDPResult(
-            level=4,
-            status="not_implemented",
-            caveats=[
-                f"sigma_shell_characterization not importable: {e}. "
-                "Ensure folio-assistant/computations is on PYTHONPATH."
-            ],
+        return _missing_dep(
+            4, "sigma_shell_characterization", e,
+            hint="Ensure folio-assistant/computations is on PYTHONPATH.",
         )
 
     data = shell_shadow_price(a_magic, partition=partition)
@@ -359,11 +366,7 @@ def solve_cross_shell_sdp(a: int = 12, **_: Any) -> SDPResult:
     try:
         from sigma_shell_characterization import shell_shadow_price  # type: ignore[import-not-found]
     except ImportError as e:
-        return SDPResult(
-            level=5,
-            status="not_implemented",
-            caveats=[f"sigma_shell_characterization not importable: {e}"],
-        )
+        return _missing_dep(5, "sigma_shell_characterization", e)
 
     lower, upper = _nearest_magic(a)
     y_lo = abs(float(shell_shadow_price(lower).get("shadow_price_abs", 0.0)))
@@ -427,11 +430,7 @@ def solve_atom_electron_sdp(z: int = 1, **_: Any) -> SDPResult:
     try:
         from hecke_core import alpha_em  # type: ignore[import-not-found]
     except ImportError as e:
-        return SDPResult(
-            level=6,
-            status="not_implemented",
-            caveats=[f"hecke_core.alpha_em not importable: {e}"],
-        )
+        return _missing_dep(6, "hecke_core.alpha_em", e)
 
     z_alpha = z * float(alpha_em)
     det_2x2 = 1.0 - z_alpha ** 2
@@ -487,12 +486,9 @@ def solve_molecule_sdp(
     from . import _legacy  # noqa: F401
     try:
         import numpy as np  # type: ignore[import-not-found]
-    except ImportError:
-        return SDPResult(
-            level=7,
-            status="not_implemented",
-            caveats=["numpy required for level-7 PSD determinant check"],
-        )
+    except ImportError as e:
+        return _missing_dep(7, "numpy", e,
+                            hint="required for level-7 PSD determinant check")
 
     # Hartree / nucleon-binding ratio — module-level constant
     # HARTREE_OVER_BINDING_RATIO (see definition above).
