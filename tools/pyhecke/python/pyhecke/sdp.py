@@ -195,6 +195,13 @@ def _not_implemented(level: int, description: str) -> SDPResult:
 # Magic-shell nucleon counts (standard nuclear physics).
 MAGIC_NUMBERS = (2, 8, 20, 28, 50, 82, 126)
 
+# Level-7 covalent-bond heuristic coupling. Ratio of Hartree atomic
+# binding scale (~27.2 eV) to nucleon binding scale (~7.6 MeV) is
+# ~3.6e-6; scaled up by 10^3 for a dimensionless y_bond in the
+# 2x2 PSD regime. Gemini review r3109... suggested promoting this
+# magic number to a named constant.
+HARTREE_OVER_BINDING_RATIO = 3.58e-3
+
 
 def solve_shell_magic_sdp(
     a_magic: int = 2,
@@ -487,9 +494,9 @@ def solve_molecule_sdp(
             caveats=["numpy required for level-7 PSD determinant check"],
         )
 
-    # Hartree / nucleon-binding ratio (≈ 27.2 eV / 7.6 MeV ≈ 3.6e-6,
-    # scaled up by 10^3 for a usable dimensionless coupling).
-    y_bond = bond_order * 3.58e-3
+    # Hartree / nucleon-binding ratio — module-level constant
+    # HARTREE_OVER_BINDING_RATIO (see definition above).
+    y_bond = bond_order * HARTREE_OVER_BINDING_RATIO
 
     if n_atoms < 2:
         return SDPResult(

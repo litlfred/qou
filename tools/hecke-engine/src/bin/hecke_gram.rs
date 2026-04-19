@@ -12,8 +12,8 @@
 
 use hecke_engine::gram;
 
-fn usage() -> ! {
-    eprintln!(
+fn print_usage(stream_stderr: bool) {
+    let text = format!(
         "hecke-gram [--q Q] [--pretty] [--schema]\n\
          \n\
          Options:\n  \
@@ -23,7 +23,11 @@ fn usage() -> ! {
          --help      this message",
         gram::Q_0
     );
-    std::process::exit(2);
+    if stream_stderr {
+        eprintln!("{text}");
+    } else {
+        println!("{text}");
+    }
 }
 
 fn main() {
@@ -44,10 +48,15 @@ fn main() {
             }
             "--pretty" => pretty = true,
             "--schema" => schema = true,
-            "--help" | "-h" => usage(),
+            "--help" | "-h" => {
+                // Help goes to stdout + exit 0 per POSIX convention.
+                print_usage(false);
+                std::process::exit(0);
+            }
             other => {
                 eprintln!("unknown argument: {other}");
-                usage();
+                print_usage(true);
+                std::process::exit(2);
             }
         }
     }

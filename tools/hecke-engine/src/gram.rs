@@ -183,6 +183,24 @@ pub fn gram_inverse(q: f64) -> [[f64; 6]; 6] {
     invert_6x6(&g).expect("Gram matrix is singular — check q value")
 }
 
+/// Partial pivoting + singularity detection shared by `invert_6x6`
+/// and `det_6x6`. Finds the largest-magnitude row index `≥ i` in
+/// column `i`; returns `None` if the pivot is effectively zero.
+/// Gemini review r3109... flagged the Gaussian-elimination dupe.
+fn _partial_pivot_row<const W: usize>(m: &[[f64; W]; 6], i: usize) -> Option<usize> {
+    let mut best = i;
+    for r in i + 1..6 {
+        if m[r][i].abs() > m[best][i].abs() {
+            best = r;
+        }
+    }
+    if m[best][i].abs() < 1e-15 {
+        None
+    } else {
+        Some(best)
+    }
+}
+
 fn invert_6x6(a: &[[f64; 6]; 6]) -> Option<[[f64; 6]; 6]> {
     // Augmented matrix [A | I].
     let mut m = [[0.0f64; 12]; 6];
@@ -193,21 +211,13 @@ fn invert_6x6(a: &[[f64; 6]; 6]) -> Option<[[f64; 6]; 6]> {
         m[i][6 + i] = 1.0;
     }
     for i in 0..6 {
-        // Partial pivot
-        let mut best = i;
-        for r in i + 1..6 {
-            if m[r][i].abs() > m[best][i].abs() {
-                best = r;
-            }
-        }
-        if m[best][i].abs() < 1e-15 {
-            return None;
-        }
+        let best = _partial_pivot_row(&m, i)?;
         m.swap(i, best);
         let pivot = m[i][i];
         for j in 0..12 {
             m[i][j] /= pivot;
         }
+        // Full Gauss-Jordan: zero ABOVE and BELOW pivot.
         for r in 0..6 {
             if r == i {
                 continue;
@@ -594,15 +604,10 @@ pub fn det_6x6(a: &[[f64; 6]; 6]) -> f64 {
     let mut m = *a;
     let mut det = 1.0f64;
     for i in 0..6 {
-        let mut best = i;
-        for r in i + 1..6 {
-            if m[r][i].abs() > m[best][i].abs() {
-                best = r;
-            }
-        }
-        if m[best][i].abs() < 1e-15 {
-            return 0.0;
-        }
+        let best = match _partial_pivot_row(&m, i) {
+            Some(r) => r,
+            None => return 0.0,
+        };
         if best != i {
             m.swap(i, best);
             det = -det;
@@ -612,6 +617,10 @@ pub fn det_6x6(a: &[[f64; 6]; 6]) -> f64 {
         for j in i..6 {
             m[i][j] /= pivot;
         }
+        // Forward-only elimination: zero BELOW pivot (upper-triangular
+        // target). This differs from invert_6x6's full Gauss-Jordan,
+        // which also zeroes above pivot — but the partial-pivot + zero
+        // check share the `_partial_pivot_row` helper.
         for r in i + 1..6 {
             let factor = m[r][i];
             if factor == 0.0 {
