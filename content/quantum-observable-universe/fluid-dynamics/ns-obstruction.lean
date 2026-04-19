@@ -1,5 +1,7 @@
--- Ref: [manuscript] Ch. 7, §ns-obstruction
+-- Ref: [manuscript] Ch. 10, §ns-obstruction
 -- NS obstruction class NS(A) ∈ H³_loc(A, θ)
+
+namespace QOU.FluidDynamics
 
 /-- The **NS obstruction class** of a Frobenius-Hopf object A.
 
@@ -19,3 +21,5 @@ structure NSObstruction where
 theorem ns_regular_implies_zero (obs : NSObstruction) (h : obs.isRegular = true) :
     obs.degree = 0 :=
   obs.degree_zero_iff.mpr h
+
+end QOU.FluidDynamics

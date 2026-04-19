@@ -2,6 +2,10 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:ns-singularity-descartes",
+  lean: {
+    decl: "QOU.FluidDynamics.ns_singularity_descartes",
+    validation: "not_checked",
+  },
   title:
     "The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup",
   uses: [

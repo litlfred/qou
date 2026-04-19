@@ -408,8 +408,10 @@ interface LeanIndex {
 }
 
 function buildLeanIndex(paperPath: string): LeanIndex {
-  const leanRoot = join(paperPath, "lean");
-  const files = walkLeanFiles(leanRoot);
+  // Index BOTH the Lake project (`lean/`) and sibling `.lean` files that
+  // live next to content-block `.ts` manifests. Sibling files are the
+  // convention used in chapters like information-theory and fluid-dynamics.
+  const files = walkLeanFiles(paperPath);
   const byQualified = new Map<string, LeanDecl>();
   const byBare = new Map<string, LeanDecl[]>();
   for (const f of files) {

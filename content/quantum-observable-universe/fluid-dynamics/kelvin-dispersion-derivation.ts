@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:kelvin-dispersion-derivation",
+  lean: {
+    decl: "QOU.FluidDynamics.kelvin_dispersion_derivation",
+    validation: "not_checked",
+  },
   title: "Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem",
   uses: [
     "prop:discrete-vortex-spectrum",

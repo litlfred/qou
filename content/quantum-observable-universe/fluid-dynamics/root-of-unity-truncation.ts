@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:root-of-unity-truncation",
+  lean: {
+    decl: "QOU.FluidDynamics.root_of_unity_truncation",
+    validation: "not_checked",
+  },
   title:
     "Representation-theoretic truncation at roots of unity and the $q = 1$ accumulation",
   uses: [

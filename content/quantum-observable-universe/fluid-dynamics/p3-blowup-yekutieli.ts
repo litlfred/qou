@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:blowup-yekutieli",
+  lean: {
+    decl: "QOU.FluidDynamics.blowup_yekutieli",
+    validation: "not_checked",
+  },
   title:
     "Blowup mechanism as Yekutieli lifting obstruction in the brane tower",
   uses: [

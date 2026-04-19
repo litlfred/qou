@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-spectral-sobolev",
+  lean: {
+    decl: "QOU.FluidDynamics.q_spectral_sobolev",
+    validation: "not_checked",
+  },
   title:
     "Spectral theory and Sobolev embedding for the $q$-Laplacian on $\\Omega^1(A)$",
   uses: [
