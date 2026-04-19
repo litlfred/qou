@@ -2,7 +2,7 @@
 
 Branch: `claude/add-quantum-gol-n5YS1`
 Date: 2026-04-18 → 2026-04-19
-Engine: hecke-engine 0.8.0, pyhecke 0.1.0, pyhecke-native 0.2.0
+Engine: hecke-engine 0.8.0, pyhecke 0.1.0, pyhecke-native 0.4.0
 
 ## What was accomplished
 
