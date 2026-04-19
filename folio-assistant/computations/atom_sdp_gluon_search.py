@@ -54,15 +54,50 @@ from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
 
 
 # ── Candidate gluon tails (sequence of (c, d, local_gen_index)) ──
+#
+# Candidate set derived from the LP-DUAL of confinement-lp.py:
+# the H_3(q) LP-dual's active NF-basis directions are
+#   {𝟙, σ₀, σ₁, σ₀σ₁ (= L+), σ₁σ₀ (= L−), σ₀σ₁σ₀ (= e⁻)}.
+# `integer-lp-gluon.py` extracts the four single-op integer
+# directions {σ₀, σ₁, L+, L−} as gluon primitives (with 𝟙 implicit
+# = "no gluon"; e⁻ excluded as length-3).
+#
+# The atom-level gluon candidate set is therefore the LP-dual-
+# active integer set:
+#
+#     {∅, σ₀, σ₁, L+, L−}            (K = 5, single-op LP-dual basis)
+#
+# Length-2+ compositions (σ₀σ₀, L+L−, ...) live in the length-2
+# simplex of the same dual cone; include them as an extended set
+# for the robustness check but not by default.
+#
+# Earlier versions hard-coded only {∅, σ₀, σ₀σ₀, L+L−} — a subset
+# biased toward length-matching the pre-existing 2·σ₀ default.
+# That missed σ₁, L+, L− as per-nucleon candidates (gemini-style
+# LP-dual critique on session discussion).
+#
 # local_gen_index ∈ {0, 1}: 0 = σ at base_gen, 1 = σ at base_gen+1.
 
-CANDIDATES = {
-    "none":   [],
-    "s0":     [(1.0, 0.0, 0)],
-    "s0s0":   [(1.0, 0.0, 0), (1.0, 0.0, 0)],
-    "LpLm":   [(1.0, 0.0, 0), (1.0, 0.0, 1),
-               (1.0, 0.0, 1), (1.0, 0.0, 0)],
+CANDIDATES_DUAL = {
+    "none": [],
+    "s0":   [(1.0, 0.0, 0)],
+    "s1":   [(1.0, 0.0, 1)],
+    "Lp":   [(1.0, 0.0, 0), (1.0, 0.0, 1)],
+    "Lm":   [(1.0, 0.0, 1), (1.0, 0.0, 0)],
 }
+
+CANDIDATES_EXTENDED = {
+    **CANDIDATES_DUAL,
+    "s0s0": [(1.0, 0.0, 0), (1.0, 0.0, 0)],
+    "s1s1": [(1.0, 0.0, 1), (1.0, 0.0, 1)],
+    "LpLm": [(1.0, 0.0, 0), (1.0, 0.0, 1),
+             (1.0, 0.0, 1), (1.0, 0.0, 0)],
+    "LmLp": [(1.0, 0.0, 1), (1.0, 0.0, 0),
+             (1.0, 0.0, 0), (1.0, 0.0, 1)],
+}
+
+# Default: LP-dual-correct K=5 single-op set.
+CANDIDATES = CANDIDATES_DUAL
 CAND_NAMES = list(CANDIDATES.keys())
 
 
@@ -195,7 +230,10 @@ def search_atom(Z: int, N: int, B_AME: float, *,
         "top5": rows[:5],
         "default_s0s0": next(
             (r for r in rows if r["gluons"] == ["s0s0"] * A),
-            None),
+            None),  # current hecke_core default (two sigma_0 per nucleon)
+        "default_s0": next(
+            (r for r in rows if r["gluons"] == ["s0"] * A),
+            None),  # P2.1b finding (one sigma_0 per nucleon)
     }
 
 
@@ -207,9 +245,17 @@ if __name__ == "__main__":
                       help="Comma-separated atom symbols to search")
     ap.add_argument("--limit", type=int, default=None,
                       help="Limit combinations per atom (for quick runs)")
+    ap.add_argument("--extended", action="store_true",
+                      help="Use extended K=9 candidate set (LP-dual "
+                           "single ops + length-2 compositions)")
     args = ap.parse_args()
 
+    if args.extended:
+        CANDIDATES = CANDIDATES_EXTENDED
+        CAND_NAMES = list(CANDIDATES.keys())
+
     ALL = {
+        "H":   (1, 0,  0.0),
         "D":   (1, 1,  2.22452),
         "T":   (1, 2,  8.481821),
         "3He": (2, 1,  7.71804),
@@ -233,10 +279,16 @@ if __name__ == "__main__":
         r = search_atom(Z, N, B_AME, limit=args.limit)
         print(f"  elapsed {r['elapsed_sec']:.1f}s, "
               f"{r['n_combos']} combos enumerated")
-        dflt = r.get("default_s0s0") or {}
-        if dflt:
-            print(f"  default s0s0×A: B={dflt.get('B_pred_MeV', 0):+10.4f}  "
-                  f"err={dflt.get('err_pct', 0):.4f}%")
+        d22 = r.get("default_s0s0") or {}
+        d21 = r.get("default_s0") or {}
+        if d22:
+            print(f"  baseline s0s0×A (hecke_core default): "
+                  f"B={d22.get('B_pred_MeV', 0):+10.4f}  "
+                  f"err={d22.get('err_pct', 0):.4f}%")
+        if d21:
+            print(f"  baseline s0×A   (P2.1b earlier finding): "
+                  f"B={d21.get('B_pred_MeV', 0):+10.4f}  "
+                  f"err={d21.get('err_pct', 0):.4f}%")
         print(f"  Top-5 (lowest err):")
         for i, row in enumerate(r["top5"]):
             marker = "  ★" if row["gluons"] == ["s0s0"] * A else "  "
@@ -247,23 +299,21 @@ if __name__ == "__main__":
 
     # Verdict
     print("\n" + "=" * 110)
-    print("VERDICT: best per-atom gluon combination vs default s0s0×A")
+    print("VERDICT: best per-atom gluon combination vs baselines")
     print("=" * 110)
     for r in results:
         best = r["best"]
-        dflt = r.get("default_s0s0") or {}
-        if dflt:
-            delta = best["err_pct"] - dflt["err_pct"]
-            verdict = (
-                "✓ IMPROVED" if delta < -1e-5
-                else "— tied (default is optimal)" if abs(delta) <= 1e-5
-                else "?")
-            print(f"  {r['atom']:>5}: best={best['gluons']}  "
-                  f"err_best={best['err_pct']:.4f}%  "
-                  f"err_default={dflt.get('err_pct', 0):.4f}%  "
-                  f"Δ={delta:+.4f}%  {verdict}")
-        else:
-            print(f"  {r['atom']:>5}: best={best['gluons']} err={best['err_pct']:.4f}%")
+        d22 = r.get("default_s0s0") or {}
+        d21 = r.get("default_s0") or {}
+        line = f"  {r['atom']:>5}: best={best['gluons']}  " \
+               f"err={best['err_pct']:.4f}%"
+        if d22:
+            line += f"  vs s0s0×A: {d22.get('err_pct', 0):.4f}%" \
+                    f" (Δ={best['err_pct']-d22['err_pct']:+.4f}%)"
+        if d21:
+            line += f"  vs s0×A: {d21.get('err_pct', 0):.4f}%" \
+                    f" (Δ={best['err_pct']-d21['err_pct']:+.4f}%)"
+        print(line)
 
     witness = {
         "computation": "atom-sdp-gluon-search",
