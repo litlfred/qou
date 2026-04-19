@@ -25,21 +25,18 @@ from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 # ── pyhecke bootstrap (M2b inversion: Gram + NF moved to pyhecke.gram) ─
 # Preferred: install pyhecke as a package (`pip install -e tools/pyhecke`)
 # so this file's dependencies are explicit. Fallback: development mode
-# where pyhecke lives on disk but isn't installed — we insert its source
-# directory onto sys.path. Gemini review r3103025560 flagged the
-# sys.path hack; the try/except below makes the packaged path the
-# default and the sys.path patch a clearly-marked dev fallback.
-try:  # installed pyhecke
-    from pyhecke.gram import (  # noqa: E402
-        z, W_SYM, W_STD, W_ALT,
-        NF_BASIS, NF_NAMES, TR_M,
-        INV_TREFOIL_G0, INV_TREFOIL_G1,
-        hm, hm_exact, nf_tr, nf_net,
-        G, G_INV,
-        _H_FRAC, _Z_FRAC, _TR_M_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
-    )
-    from pyhecke.gram import _Q_FRAC, _QI_FRAC  # noqa: E402
-except ImportError:  # dev mode — pyhecke is in the repo but not installed
+# where pyhecke lives on disk but isn't installed — probe-import once;
+# on failure, add the source directory to sys.path and retry via the
+# single unified import statement below.
+#
+# Gemini review r3106... flagged the earlier try/except that duplicated
+# the entire import list. This refactor keeps the dev-mode fallback but
+# avoids the duplicated symbol block: the sys.path patch runs only as
+# a side-effect of a lightweight probe, then the authoritative import
+# happens once.
+try:
+    import pyhecke.gram as _probe  # noqa: F401
+except ImportError:
     import os as _os
     import sys as _sys
     _PYHECKE_PATH = _os.path.normpath(
@@ -47,15 +44,16 @@ except ImportError:  # dev mode — pyhecke is in the repo but not installed
     )
     if _os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in _sys.path:
         _sys.path.insert(0, _PYHECKE_PATH)
-    from pyhecke.gram import (  # noqa: E402
-        z, W_SYM, W_STD, W_ALT,
-        NF_BASIS, NF_NAMES, TR_M,
-        INV_TREFOIL_G0, INV_TREFOIL_G1,
-        hm, hm_exact, nf_tr, nf_net,
-        G, G_INV,
-        _H_FRAC, _Z_FRAC, _TR_M_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
-    )
-    from pyhecke.gram import _Q_FRAC, _QI_FRAC  # noqa: E402
+
+from pyhecke.gram import (  # noqa: E402
+    z, W_SYM, W_STD, W_ALT,
+    NF_BASIS, NF_NAMES, TR_M,
+    INV_TREFOIL_G0, INV_TREFOIL_G1,
+    hm, hm_exact, nf_tr, nf_net,
+    G, G_INV,
+    _H_FRAC, _Z_FRAC, _TR_M_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
+    _Q_FRAC, _QI_FRAC,
+)
 
 # ══════════════════════════════════════════════════════════════
 # Constants (non-Gram; see pyhecke.gram for Gram/NF/Wedderburn)
