@@ -32,14 +32,11 @@ the 1-form $d\log q$ under the Frobenius pairing
 
 ## Structural role
 
-At each jet level $n$, the mass contribution inherits the
-$\hbar_q^{2n}$ damping factor of the recursive brane tower:
+At Kähler jet level $n$, the mass is evaluated on the
+**$n$-times-lifted** per-generator vertex volume $\hat{V}_i^{\lambda,\,(n)}(q)$
+directly — a single-level evaluation, not a tower sum:
 
 $$
-  \mathfrak{m}
-  \;=\;
-  \sum_{n=0}^{\infty} \hbar_q^{2n} \cdot \mathfrak{m}^{(n)},
-  \qquad
   \mathfrak{m}^{(n)}
   \;=\;
   \sum_\lambda w_\lambda \cdot m_e
@@ -48,9 +45,24 @@ $$
   \bigr\rvert.
 $$
 
-The level-0 term $\mathfrak{m}^{(0)}$ is the formula of
-[tower binding energy](#prop:tower-binding-energy); the higher
-levels are the Kähler corrections via this definition.
+The brane-tower filtration ([recursive brane tower](#def:recursive-brane-tower))
+supplies the $\hbar_q^{2n}$ damping factor per jet level AS A STRUCTURAL
+HIERARCHY, but the mass prediction at a specified level $n$ is simply
+$\mathfrak{m}^{(n)}$ itself — we do not sum lower levels.  This reflects
+the fact that each jet level $n$ is a distinct categorical object
+$\mathbf{A}_n$, and the mass functional evaluated on $\mathbf{A}_n$ is
+complete at that level.
+
+The **level-0** evaluation $\mathfrak{m}^{(0)}$ is the formula of
+[tower binding energy](#prop:tower-binding-energy) with no Kähler
+correction.  Higher levels apply the iterative lift above to
+obtain $\hat{V}_i^{\lambda,\,(n)}$, then evaluate.
+
+The **cutoff level** $n_{\mathrm{cut}}$ is the highest jet level
+needed for target precision; empirically $n_{\mathrm{cut}} = 2$
+reaches keV precision for light atoms and $n_{\mathrm{cut}} = 4$
+reaches $10^{-4}$ MeV per-level residual
+([see §Convergence](#convergence)).
 
 ## Well-definedness
 

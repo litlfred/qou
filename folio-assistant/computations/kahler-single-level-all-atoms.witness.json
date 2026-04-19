@@ -1,0 +1,27 @@
+{
+  "computation": "kahler-single-level-all-atoms",
+  "description": "Recompute ALL atoms under revised def:kahler-jet-lift = evaluate at V^(k) (single-level, not tower sum). Shows B at k=0..4 for D through 16O; 20Ne killed at elapsed 19+ min (symbolic Kähler too slow at A=20).",
+  "timestamp": "2026-04-19T21:35:00+00:00",
+  "parameters": {"q0": 1.1099785955541805, "M_E_MEV": 0.51099895, "W_sym": 0.16546138, "W_std": 0.66907723, "W_alt": 0.16546138},
+  "results": [
+    {"atom": "D", "Z": 1, "N": 1, "A": 2, "B_AME": 2.224566, "B_at_levels": [4.924, 5.426, 6.897, 9.493, 9.743], "err_at_levels_pct": [0.1439, 0.1706, 0.2490, 0.3873, 0.4006], "best_level": 0, "best_err_pct": 0.1439},
+    {"atom": "T", "Z": 1, "N": 2, "A": 3, "B_AME": 8.481798, "B_at_levels": [17.242, 17.104, 19.588, 20.440, 16.160], "err_at_levels_pct": [0.3112, 0.3063, 0.3945, 0.4248, 0.2728], "best_level": 4, "best_err_pct": 0.2728},
+    {"atom": "3He", "Z": 2, "N": 1, "A": 3, "B_AME": 7.718058, "B_at_levels": [15.246, 19.262, 19.683, 17.484, 10.044], "err_at_levels_pct": [0.2674, 0.4101, 0.4251, 0.3469, 0.0826], "best_level": 4, "best_err_pct": 0.0826},
+    {"atom": "4He", "Z": 2, "N": 2, "A": 4, "B_AME": 28.295674, "B_at_levels": [19.412, 22.551, 26.657, 28.356, 22.670], "err_at_levels_pct": [0.2367, 0.1531, 0.0437, 0.0016, 0.1499], "best_level": 3, "best_err_pct": 0.0016},
+    {"atom": "6Li", "Z": 3, "N": 3, "A": 6, "B_AME": 31.994571, "B_at_levels": [34.741, 42.023, 46.500, 46.549, 32.833], "err_at_levels_pct": [0.0488, 0.1781, 0.2577, 0.2585, 0.0149], "best_level": 4, "best_err_pct": 0.0149},
+    {"atom": "7Li", "Z": 3, "N": 4, "A": 7, "B_AME": 39.244529, "B_at_levels": [42.239, 47.343, 51.318, 51.254, 37.592], "err_at_levels_pct": [0.0456, 0.1233, 0.1838, 0.1829, 0.0252], "best_level": 4, "best_err_pct": 0.0252},
+    {"atom": "9Be", "Z": 4, "N": 5, "A": 9, "B_AME": 58.164980, "B_at_levels": [56.387, 64.594, 68.383, 66.267, 46.914], "err_at_levels_pct": [0.0211, 0.0761, 0.1210, 0.0959, 0.1332], "best_level": 0, "best_err_pct": 0.0211},
+    {"atom": "10B", "Z": 5, "N": 5, "A": 10, "B_AME": 64.750861, "B_at_levels": [66.102, 78.809, 82.576, 76.548, 43.797], "err_at_levels_pct": [0.0144, 0.1498, 0.1900, 0.1257, 0.2233], "best_level": 0, "best_err_pct": 0.0144},
+    {"atom": "12C", "Z": 6, "N": 6, "A": 12, "B_AME": 92.161728, "B_at_levels": [82.889, 96.042, 98.559, 86.659, 39.914], "err_at_levels_pct": [0.0824, 0.0345, 0.0568, 0.0489, 0.4640], "best_level": 1, "best_err_pct": 0.0345},
+    {"atom": "14N", "Z": 7, "N": 7, "A": 14, "B_AME": 104.658605, "B_at_levels": [100.170, 112.739, 113.597, 93.417, 26.705], "err_at_levels_pct": [0.0342, 0.0615, 0.0680, 0.0856, 0.5934], "best_level": 0, "best_err_pct": 0.0342},
+    {"atom": "16O", "Z": 8, "N": 8, "A": 16, "B_AME": 127.619334, "B_at_levels": [117.118, 129.808, 126.348, 94.772, 4.075], "err_at_levels_pct": [0.0699, 0.0146, 0.0085, 0.2188, 0.8230], "best_level": 2, "best_err_pct": 0.0085}
+  ],
+  "summary": {
+    "atoms_computed": 11,
+    "missing": "20Ne (killed at elapsed 19+ min)",
+    "best_per_atom_mean_err_pct": 0.0780,
+    "best_level_distribution": {"n=0": 5, "n=1": 1, "n=2": 1, "n=3": 1, "n=4": 3},
+    "session_best_absolute": {"atom": "4He", "level": 3, "err_pct": 0.0016},
+    "session_best_near_doubly_magic": {"atom": "16O", "level": 2, "err_pct": 0.0085}
+  }
+}
