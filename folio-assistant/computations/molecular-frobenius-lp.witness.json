@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-19T00:41:05.697369+00:00",
-  "commitSha": "850ad9b6deb7a96ed61cf7a380e7ef2fc07b2685",
+  "computedAt": "2026-04-19T01:33:11.563292+00:00",
+  "commitSha": "4088056410db6305a90436cf936f5a62a14613f4",
   "assertions": [
     {
       "name": "H2 binding positive",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 1417,
+  "durationMs": 2012,
   "computation": "molecular-frobenius-lp",
   "scriptFile": "molecular-frobenius-lp.py",
   "scriptHash": "e0431a5ef0a1",
-  "scriptCommitSha": "d3ed64c10a253707ff3c6b0ed511257a8ea95b25",
+  "scriptCommitSha": "d3b5fa22fbbd58b3279b2a3480eb553b3cd5a614",
   "description": "Molecular covalent bonds derived from Frobenius LP dual. Bond operators selected by: (1) Frobenius positivity Gx >= 0, (2) minimum Markov trace among feasible operators. Zero fitted parameters.",
   "contentBlock": "def:molecular-braid",
   "parameters": {

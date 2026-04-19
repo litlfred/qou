@@ -1,6 +1,6 @@
 import { remark } from "../../schema/builders";
 
-export const massTowerSYTCells = remark({
+export default remark({
   label: "rem:mass-tower-syt-cells",
   title: "SYT / Jucys\u2013Murphy reindexing of the mass tower pair set",
   interprets: "rem:mass-endomorphism-jet-tower",

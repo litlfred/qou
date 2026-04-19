@@ -1,10 +1,10 @@
 {
   "computation": "syt-cell-jm-tower",
   "description": "SYT-cell JM mass tower.  V_hat_JM[k] = tr_M(L_k . rho(W)) = Sum_lambda w_lambda / d_lambda . Sum_T q^{2 c_T(k)} . <T|W^lambda|T>.  Tower mass = |prod V_JM| + Sum_k Phi_q(|V_JM[k]|) + z^2 Sum_{k1<k2} Phi_q(|V_JM[k1] . V_JM[k2]|).  All pairs (L_i L_j commute).  Compared to scalar generator-indexed tower on D, T, 3He (and optionally 4He).",
-  "timestamp": "2026-04-18T23:29:58.394723+00:00",
+  "timestamp": "2026-04-19T01:15:31.305446+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
-    "E_0_scalar": 0.0007958232069223113,
+    "E_0_scalar": 0.000795823206922311,
     "E_0_JM": 0.0016290482379585926
   },
   "results": [
@@ -20,7 +20,7 @@
         "m_nn": 1,
         "tr_M": 1.005448434559241
       },
-      "B_scalar_MeV": -0.019033594882353573,
+      "B_scalar_MeV": -0.019033594882353566,
       "err_scalar_pct": 0.11955773991349809,
       "B_JM_MeV": 4.18612452807064,
       "err_JM_pct": 0.10453282886362589,
@@ -58,9 +58,9 @@
         0.6632221406627201,
         0.4376021309058434
       ],
-      "scalar_time_sec": 0.0014352798461914062,
-      "JM_time_sec": 0.022940397262573242,
-      "JM_SDP_time_sec": 0.00469660758972168
+      "scalar_time_sec": 0.0004494190216064453,
+      "JM_time_sec": 0.011262655258178711,
+      "JM_SDP_time_sec": 0.004116535186767578
     },
     {
       "atom": "T",
@@ -74,8 +74,8 @@
         "m_nn": 2,
         "tr_M": 0.49188098724315193
       },
-      "B_scalar_MeV": -498.21137055655925,
-      "err_scalar_pct": 18.000934752273658,
+      "B_scalar_MeV": -498.2113705565594,
+      "err_scalar_pct": 18.00093475227366,
       "B_JM_MeV": 0.6845000424660859,
       "err_JM_pct": 0.2770099700134543,
       "B_JM_SDP_MeV": 0.7068986007540113,
@@ -124,9 +124,9 @@
         0.4762481718351032,
         0.31607717131765795
       ],
-      "scalar_time_sec": 0.003026247024536133,
-      "JM_time_sec": 0.3749675750732422,
-      "JM_SDP_time_sec": 0.16988301277160645
+      "scalar_time_sec": 0.0003254413604736328,
+      "JM_time_sec": 0.45957279205322266,
+      "JM_SDP_time_sec": 0.4683518409729004
     },
     {
       "atom": "3He",
@@ -190,9 +190,9 @@
         0.5599070463535903,
         0.37156362116699104
       ],
-      "scalar_time_sec": 0.0028624534606933594,
-      "JM_time_sec": 0.16516900062561035,
-      "JM_SDP_time_sec": 0.16046404838562012
+      "scalar_time_sec": 0.0006814002990722656,
+      "JM_time_sec": 0.40989089012145996,
+      "JM_SDP_time_sec": 0.44167637825012207
     }
   ]
 }

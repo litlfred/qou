@@ -1,7 +1,7 @@
 {
   "computation": "sdp-lift-audit",
   "description": "Batch SDP-lift audit for LP(PSD) files from docs/ilp-sdp-audit.md.  Each LP is solved as a standard LP with componentwise Frobenius G\u00b7x \u2265 0, then as a Lasserre moment-matrix SDP with the quadratic tr(G\u00b7X) \u2265 0 constraint.  Flags LP solutions that violate the true quadratic Frobenius condition x\u1d40G x \u2265 0 \u2014 which the SDP correctly rules out.",
-  "timestamp": "2026-04-19T00:24:47.785663+00:00",
+  "timestamp": "2026-04-19T01:33:35.372593+00:00",
   "parameters": {
     "gram_eigenvalues": [
       -0.7408452101064132,
@@ -50,7 +50,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.024033546447753906
+      "time_sec": 0.018390655517578125
     },
     {
       "case": "confinement-lp/neutron",
@@ -84,7 +84,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.014879226684570312
+      "time_sec": 0.015826702117919922
     },
     {
       "case": "confinement-lp/refined-proton",
@@ -118,7 +118,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.015075445175170898
+      "time_sec": 0.015955686569213867
     },
     {
       "case": "confinement-lp/refined-neutron",
@@ -152,7 +152,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.013779878616333008
+      "time_sec": 0.016659021377563477
     },
     {
       "case": "nuclear-binding-lp/pp-channel",
@@ -186,7 +186,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.014164924621582031
+      "time_sec": 0.017537593841552734
     },
     {
       "case": "nuclear-binding-lp/nn-channel",
@@ -220,7 +220,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.014710664749145508
+      "time_sec": 0.018155813217163086
     },
     {
       "case": "nuclear-binding-lp/pn-channel",
@@ -254,7 +254,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.01416921615600586
+      "time_sec": 0.016619205474853516
     },
     {
       "case": "molecular-frobenius-lp/unit-net",
@@ -288,7 +288,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.01407480239868164
+      "time_sec": 0.017677783966064453
     },
     {
       "case": "lp-constrained-6he",
@@ -322,7 +322,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.014042854309082031
+      "time_sec": 0.017997264862060547
     },
     {
       "case": "ch-bond-lp",
@@ -356,7 +356,7 @@
         "X_rank": 6
       },
       "lp_frobenius_valid": false,
-      "time_sec": 0.01354217529296875
+      "time_sec": 0.017746925354003906
     }
   ]
 }
