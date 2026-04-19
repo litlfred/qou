@@ -4,6 +4,7 @@ export default theorem({
   label: "thm:q-aubin-lions",
   lean: {
     decl: "QOU.FluidDynamics.q_aubin_lions",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

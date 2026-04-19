@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:helicity-conservation",
   lean: {
     decl: "QOU.FluidDynamics.helicity_conservation",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title: "Categorical helicity conservation",

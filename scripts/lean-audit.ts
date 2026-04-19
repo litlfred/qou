@@ -170,13 +170,37 @@ function extractSorries(filePath: string, content: string): SorryEntry[] {
   const lines = content.split("\n");
   const entries: SorryEntry[] = [];
 
+  // Track multi-line block comments: /- ... -/ and /-! ... -/
+  let inBlockComment = false;
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+    const trimmed = line.trim();
+
+    // Toggle block-comment state BEFORE the match check.
+    // We handle opens and closes on the same line; multiple toggles in a
+    // single line are rare but the loop walks through each marker.
+    let scanFrom = 0;
+    while (scanFrom < line.length) {
+      const open = line.indexOf("/-", scanFrom);
+      const close = line.indexOf("-/", scanFrom);
+      if (inBlockComment) {
+        if (close < 0) { scanFrom = line.length; break; }
+        inBlockComment = false;
+        scanFrom = close + 2;
+      } else {
+        if (open < 0) { scanFrom = line.length; break; }
+        if (close >= 0 && close < open) { scanFrom = close + 2; continue; }
+        inBlockComment = true;
+        scanFrom = open + 2;
+      }
+    }
+    if (inBlockComment) continue;
+
     // Match sorry as a term (not in comments about sorry)
     if (
       /\bsorry\b/.test(line) &&
-      !line.trim().startsWith("--") &&
-      !line.trim().startsWith("/-") &&
+      !trimmed.startsWith("--") &&
+      !trimmed.startsWith("/-") &&
       !/sorry-free|sorryFree|sorry_free|not sorry|no sorry|without sorry|No sorry|Proved.*not sorry/i.test(
         line
       )

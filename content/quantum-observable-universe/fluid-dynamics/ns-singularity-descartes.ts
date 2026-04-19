@@ -4,6 +4,7 @@ export default theorem({
   label: "thm:ns-singularity-descartes",
   lean: {
     decl: "QOU.FluidDynamics.ns_singularity_descartes",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

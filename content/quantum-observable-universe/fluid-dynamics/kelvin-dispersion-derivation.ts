@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:kelvin-dispersion-derivation",
   lean: {
     decl: "QOU.FluidDynamics.kelvin_dispersion_derivation",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title: "Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem",

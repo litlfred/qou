@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:q-ns-nonlinear-uniqueness",
   lean: {
     decl: "QOU.FluidDynamics.q_ns_nonlinear_uniqueness",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

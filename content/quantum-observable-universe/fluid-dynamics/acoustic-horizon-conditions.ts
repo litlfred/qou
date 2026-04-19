@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:acoustic-horizon-conditions",
   lean: {
     decl: "QOU.FluidDynamics.acoustic_horizon_conditions",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title: "Acoustic horizon formation and gravitational emergence",

@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:q-spectral-sobolev",
   lean: {
     decl: "QOU.FluidDynamics.q_spectral_sobolev",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

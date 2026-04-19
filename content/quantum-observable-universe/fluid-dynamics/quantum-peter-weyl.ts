@@ -4,6 +4,7 @@ export default theorem({
   label: "thm:quantum-peter-weyl",
   lean: {
     decl: "QOU.FluidDynamics.quantum_peter_weyl",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

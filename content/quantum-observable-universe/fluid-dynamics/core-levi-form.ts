@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:core-levi-form",
   lean: {
     decl: "QOU.FluidDynamics.core_levi_form",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

@@ -28,6 +28,7 @@ import QOU.BringsSurface
 import QOU.DescartesUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
+import QOU.FluidDynamics
 import QOU.InformationTheory
 import QOU.LightningPath
 import QOU.RepresentationTheory

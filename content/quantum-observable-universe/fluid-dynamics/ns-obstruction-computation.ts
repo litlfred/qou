@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:ns-obstruction-computation",
   lean: {
     decl: "QOU.FluidDynamics.ns_obstruction_computation",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

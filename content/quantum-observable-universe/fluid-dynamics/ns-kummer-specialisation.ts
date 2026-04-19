@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:ns-kummer-specialisation",
   lean: {
     decl: "QOU.FluidDynamics.ns_kummer_specialisation",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

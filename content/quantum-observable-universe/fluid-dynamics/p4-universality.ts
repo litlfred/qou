@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:universality",
   lean: {
     decl: "QOU.FluidDynamics.universality",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

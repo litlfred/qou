@@ -4,6 +4,7 @@ export default theorem({
   label: "thm:observability-q-independent",
   lean: {
     decl: "QOU.FluidDynamics.observability_q_independent",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

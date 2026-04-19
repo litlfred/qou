@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:root-of-unity-truncation",
   lean: {
     decl: "QOU.FluidDynamics.root_of_unity_truncation",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

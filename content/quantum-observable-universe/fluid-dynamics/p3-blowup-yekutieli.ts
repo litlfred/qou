@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:blowup-yekutieli",
   lean: {
     decl: "QOU.FluidDynamics.blowup_yekutieli",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:

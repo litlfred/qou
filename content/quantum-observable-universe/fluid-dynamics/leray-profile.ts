@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:leray-profile",
   lean: {
     decl: "QOU.FluidDynamics.leray_profile",
+    file: "QOU/FluidDynamics.lean",
     validation: "not_checked",
   },
   title:
