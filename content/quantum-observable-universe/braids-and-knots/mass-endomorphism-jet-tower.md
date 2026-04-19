@@ -142,10 +142,16 @@ cubic terms at level $n$
 
 ## Remaining open subconjectures
 
-1. **Jet-level sum convergence**: how many jet levels $N$ does
-   the tower sum need before saturating?  The tower-binding-full
-   simulator uses $n = 3A$ directly at one level; a genuinely
-   multi-level jet sum is not yet implemented.
+1. **Jet-level sum convergence**: a geometric-series tail bound
+   has been proved conditional on uniform boundedness of
+   $\Delta^{(n)}$
+   ([brane-tower tail bound](#prop:jet-tower-convergence)):
+   if $|\Delta^{(n)}| \leq \Delta_{\max}$ for all $n$, then the
+   $N$-term truncation error is
+   $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
+   The remaining open piece is to prove the uniform bound on
+   $\Delta^{(n)}$ itself; empirically it holds (and is roughly
+   constant) on light atoms.
 2. **Pentagon $\to$ uv-commutation**: the pentagon identity as
    stated requires $uv = q\,vu$; verifying this relation for
    traced volumes $\hat V$ at generic jet level needs explicit
