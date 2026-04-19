@@ -10,7 +10,7 @@
 //! Output matches the `gram.schema.json` at
 //! `tools/hecke-engine/schemas/gram.schema.json`.
 
-use hecke_engine::gram;
+use hecke_engine::{gram, nf};
 
 fn print_usage(stream_stderr: bool) {
     let text = format!(
@@ -21,7 +21,7 @@ fn print_usage(stream_stderr: bool) {
          --pretty    indent JSON output\n  \
          --schema    print the JSON Schema and exit\n  \
          --help      this message",
-        gram::Q_0
+        nf::Q_0
     );
     if stream_stderr {
         eprintln!("{text}");
@@ -31,7 +31,7 @@ fn print_usage(stream_stderr: bool) {
 }
 
 fn main() {
-    let mut q = gram::Q_0;
+    let mut q = nf::Q_0;
     let mut pretty = false;
     let mut schema = false;
     let mut args = std::env::args().skip(1);

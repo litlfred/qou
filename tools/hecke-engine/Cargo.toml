@@ -50,12 +50,22 @@ num-traits = "0.2"
 num-integer = "0.1"
 rayon = "1.10"
 clap = { version = "4", features = ["derive"] }
+smallvec = "1.13"
 
 [build-dependencies]
 
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "gram_bench"
+harness = false
+
 [profile.release]
 opt-level = 3
-lto = true
+lto = "fat"
+codegen-units = 1
+panic = "abort"
 
 # Modular port of v9 — u64 mod p, identical NF
 [[bin]]

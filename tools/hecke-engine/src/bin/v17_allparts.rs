@@ -10,6 +10,7 @@
 
 use std::time::Instant;
 use std::collections::HashMap;
+use rayon::prelude::*;
 
 const VOL_FIGURE_EIGHT: f64 = 2.029883212819307;
 const MASS_RATIO_MU_E: f64 = 206.7682830;
@@ -314,9 +315,11 @@ fn main() {
     let mut phi_ref = 0.0f64;
 
     for k in 0..=max_k {
-        let mut weighted_tr = 0.0f64;
-
-        for (part, _dim, w) in &weights {
+        // Each partition is independent — parallelize the per-irrep
+        // trace computation with rayon. Captures (mol, sb, q0, ha, k,
+        // z1..n2, na) are Copy/&[_] and therefore Sync. The per-iter
+        // `tabs`, `tab_idx`, and working vector `v` are thread-local.
+        let weighted_tr: f64 = weights.par_iter().map(|(part, _dim, w)| {
             let tabs = generate_syt_general(part);
             let dim = tabs.len();
             let mut tab_idx = HashMap::new();
@@ -387,8 +390,8 @@ fn main() {
                 trace += v[j];
             }
 
-            weighted_tr += w * trace;
-        }
+            w * trace
+        }).sum();
 
         let phi_w = if weighted_tr.abs() > 1e-300 { weighted_tr.abs().ln() } else { -999.0 };
         if k == 0 { phi_ref = phi_w; }
