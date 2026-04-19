@@ -166,62 +166,75 @@ function countCodeLines(content: string): number {
     }).length;
 }
 
+/**
+ * Regex matching a Lean 4 declaration head. Captures the declaration's
+ * bare name. Recognises the full set of declaration keywords used in
+ * the project (theorem/lemma/def/inductive/structure/class/instance/
+ * abbrev/axiom) and permits any mix of standard modifiers
+ * (noncomputable / partial / private / protected / scoped) as well as
+ * attribute prefixes like `@[simp]`.
+ */
+const DECL_HEAD_RE =
+  /^(?:(?:noncomputable|partial|private|protected|scoped)\s+|@\[[^\]]+\]\s+)*(?:theorem|lemma|def|inductive|structure|class|instance|abbrev|axiom)\s+([A-Za-z_][A-Za-z0-9_.']*)/;
+
+/**
+ * Strip Lean comments from a single line, carrying the multi-line
+ * `/- ... -/` block-comment state across calls via a mutable state
+ * object.  Both balanced same-line blocks (`/- foo -/`) and trailing
+ * `--` line comments are removed so that a caller testing
+ * `/\bsorry\b/` against the result only sees non-comment code.
+ */
+function stripLeanComments(
+  line: string,
+  state: { inBlock: boolean },
+): string {
+  let out = "";
+  let i = 0;
+  while (i < line.length) {
+    if (state.inBlock) {
+      const close = line.indexOf("-/", i);
+      if (close < 0) { i = line.length; break; }
+      state.inBlock = false;
+      i = close + 2;
+    } else {
+      const open = line.indexOf("/-", i);
+      const lineComment = line.indexOf("--", i);
+      // Whichever marker comes first wins.
+      if (lineComment >= 0 && (open < 0 || lineComment < open)) {
+        out += line.slice(i, lineComment);
+        return out; // rest of line is a trailing `--` comment
+      }
+      if (open < 0) { out += line.slice(i); break; }
+      out += line.slice(i, open);
+      state.inBlock = true;
+      i = open + 2;
+    }
+  }
+  return out;
+}
+
 function extractSorries(filePath: string, content: string): SorryEntry[] {
   const lines = content.split("\n");
   const entries: SorryEntry[] = [];
 
-  // Track multi-line block comments: /- ... -/ and /-! ... -/
-  let inBlockComment = false;
+  const state = { inBlock: false };
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    const trimmed = line.trim();
+    const stripped = stripLeanComments(line, state);
 
-    // Toggle block-comment state BEFORE the match check.
-    // We handle opens and closes on the same line; multiple toggles in a
-    // single line are rare but the loop walks through each marker.
-    let scanFrom = 0;
-    while (scanFrom < line.length) {
-      const open = line.indexOf("/-", scanFrom);
-      const close = line.indexOf("-/", scanFrom);
-      if (inBlockComment) {
-        if (close < 0) { scanFrom = line.length; break; }
-        inBlockComment = false;
-        scanFrom = close + 2;
-      } else {
-        if (open < 0) { scanFrom = line.length; break; }
-        if (close >= 0 && close < open) { scanFrom = close + 2; continue; }
-        inBlockComment = true;
-        scanFrom = open + 2;
-      }
-    }
-    if (inBlockComment) continue;
-
-    // Match sorry as a term (not in comments about sorry)
+    // Match sorry as a term in *code* (comments have been stripped above).
     if (
-      /\bsorry\b/.test(line) &&
-      !trimmed.startsWith("--") &&
-      !trimmed.startsWith("/-") &&
+      /\bsorry\b/.test(stripped) &&
       !/sorry-free|sorryFree|sorry_free|not sorry|no sorry|without sorry|No sorry|Proved.*not sorry/i.test(
         line
       )
     ) {
-      // Check if this is actually a sorry term vs mention in a doc comment
-      const trimmed = line.trim();
-      // Skip lines that are pure comments about sorry
-      if (
-        trimmed.startsWith("--") ||
-        trimmed.startsWith("*") ||
-        trimmed.startsWith("/-!")
-      ) {
-        continue;
-      }
 
       // Look for citation within the enclosing declaration + its docstring:
       // scan backwards until the declaration head (theorem/lemma/def/...),
       // then continue past any leading `-- Ref:` / `--` / `/-- ... -/` lines
       // that form the docstring, bounded by 30 lines for sanity.
-      const declRe =
-        /^(?:noncomputable\s+|@\[[^\]]+\]\s+)?(?:theorem|lemma|def|structure|class|instance|abbrev|axiom)\b/;
+      const declRe = DECL_HEAD_RE;
       let start = i;
       for (let k = i - 1; k >= Math.max(0, i - 30); k--) {
         start = k;
@@ -343,6 +356,8 @@ interface LeanDecl {
   name: string;
   /** Fully-qualified name when the file uses `namespace ... end`. */
   qualifiedName: string;
+  /** 1-based line number of the declaration head inside `file`. */
+  line: number;
   /** Type signature text up to `:=` or end of declaration head. */
   signature: string;
   /** Whether the body uses `sorry`. */
@@ -376,24 +391,25 @@ function parseLeanDecls(filePath: string): LeanDecl[] {
   const lines = text.split("\n");
   const out: LeanDecl[] = [];
   const nsStack: string[] = [];
-  const declRe =
-    /^(?:noncomputable\s+|@\[[^\]]+\]\s+)?(?:theorem|lemma|def|structure|class|instance|abbrev|axiom)\s+([A-Za-z_][A-Za-z0-9_.']*)/;
   const nsOpen = /^namespace\s+([A-Za-z_][A-Za-z0-9_.']*)/;
   const nsClose = /^end\s+([A-Za-z_][A-Za-z0-9_.']*)/;
+  const commentState = { inBlock: false };
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    const trimmed = line.trim();
-    if (trimmed.startsWith("--") || trimmed.startsWith("/-")) continue;
-    const open = nsOpen.exec(line);
+    // Strip comments to track block state and avoid matching decls that
+    // live inside a /- ... -/ docstring.
+    const stripped = stripLeanComments(line, commentState);
+    if (!stripped.trim()) continue;
+    const open = nsOpen.exec(stripped);
     if (open) { nsStack.push(open[1]); continue; }
-    const close = nsClose.exec(line);
+    const close = nsClose.exec(stripped);
     if (close) {
       const top = nsStack[nsStack.length - 1];
       if (top === close[1]) nsStack.pop();
       continue;
     }
-    const m = declRe.exec(line);
+    const m = DECL_HEAD_RE.exec(stripped);
     if (!m) continue;
     const name = m[1];
     const qualifiedName = nsStack.length > 0 ? `${nsStack.join(".")}.${name}` : name;
@@ -417,6 +433,7 @@ function parseLeanDecls(filePath: string): LeanDecl[] {
       file: relative(REPO_ROOT, filePath),
       name,
       qualifiedName,
+      line: i + 1,
       signature,
       hasSorry,
       isTrivial,
@@ -568,18 +585,24 @@ function classifyBlockGaps(blocks: BlockManifest[], idx: LeanIndex): BlockGap[] 
       });
     }
     if (decl.hasSorry) {
-      // Pull the sorry block from the file to check for -- Ref:
+      // Use the decl's recorded line number to look at a symmetric window:
+      // 20 lines back covers the leading docstring / `-- Ref:` annotation,
+      // 50 lines forward covers multi-line proof bodies.  This avoids the
+      // fragile `indexOf(signature)` lookup which can fail for empty
+      // signatures or collide when two files share a decl name.
       try {
         const txt = readFileSync(join(REPO_ROOT, decl.file), "utf-8");
-        const idxLine = txt.indexOf(decl.signature.split("\n")[0]);
-        const tail = idxLine >= 0 ? txt.slice(idxLine, idxLine + 1500) : txt;
-        const sorryAt = tail.indexOf("sorry");
-        const window = sorryAt >= 0 ? tail.slice(Math.max(0, sorryAt - 300), sorryAt + 50) : tail;
+        const fileLines = txt.split("\n");
+        const startLine = Math.max(0, decl.line - 20 - 1);
+        const endLine = Math.min(fileLines.length, decl.line + 50);
+        const window = fileLines.slice(startLine, endLine).join("\n");
         if (!/Ref:\s*\[[^\]]+\]/i.test(window)) {
           gaps.push({
             tsFile: b.tsFile, label: b.label, kind: b.kind,
             gap: "sorry-no-citation",
-            detail: `decl ${decl.qualifiedName} uses sorry with no -- Ref: in ${decl.file}`,
+            detail:
+              `decl ${decl.qualifiedName} (@ ${decl.file}:${decl.line}) ` +
+              `uses sorry with no -- Ref: in the surrounding window`,
           });
         }
       } catch { /* file read failure — ignore */ }
