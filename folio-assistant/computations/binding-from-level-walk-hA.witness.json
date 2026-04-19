@@ -1,0 +1,134 @@
+{
+  "computation": "binding-from-level-walk-hA",
+  "description": "B(Z,N) via cached level-walk ILP (m_pp, m_pn, m_nn) per atom + H_A 3-channel tower (pyhecke_native.binding_ha). Encodes magic/non-magic via the cached ILP choice. Also reports parent-daughter \u0394B cascade to track cascade-level accuracy (independent of absolute mass sensitivity per prop:q-value-transition).",
+  "timestamp": "2026-04-19T20:49:06.330161+00:00",
+  "absolute_binding": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "ilp_triple": {
+        "m_pp": 1,
+        "m_pn": 3,
+        "m_nn": 1
+      },
+      "B_pred_MeV": 4.894049951945302,
+      "B_AME_MeV": 2.22452,
+      "gap_MeV": 2.669529951945302,
+      "err_mass_pct": 0.1422577862253857
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "ilp_triple": {
+        "m_pp": 1,
+        "m_pn": 3,
+        "m_nn": 1
+      },
+      "B_pred_MeV": 16.848689774225875,
+      "B_AME_MeV": 8.481821,
+      "gap_MeV": 8.366868774225875,
+      "err_mass_pct": 0.2972438970869099
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "ilp_triple": {
+        "m_pp": 2,
+        "m_pn": 3,
+        "m_nn": 1
+      },
+      "B_pred_MeV": 12.491224950315894,
+      "B_AME_MeV": 7.71804,
+      "gap_MeV": 4.773184950315894,
+      "err_mass_pct": 0.16957360446707329
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "ilp_triple": {
+        "m_pp": 2,
+        "m_pn": 2,
+        "m_nn": 2
+      },
+      "B_pred_MeV": 27.54857524782157,
+      "B_AME_MeV": 28.295674,
+      "gap_MeV": -0.7470987521784309,
+      "err_mass_pct": 0.019906241265284237
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "ilp_triple": {
+        "m_pp": 1,
+        "m_pn": 3,
+        "m_nn": 3
+      },
+      "B_pred_MeV": 31.797344696662005,
+      "B_AME_MeV": 32.0,
+      "gap_MeV": -0.20265530333799475,
+      "err_mass_pct": 0.003599796635694744
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "ilp_triple": {
+        "m_pp": 1,
+        "m_pn": 3,
+        "m_nn": 2
+      },
+      "B_pred_MeV": 39.63023318491149,
+      "B_AME_MeV": 39.244529,
+      "gap_MeV": 0.3857041849114893,
+      "err_mass_pct": 0.0058725612449799704
+    }
+  ],
+  "cascade_deltas": [
+    {
+      "parent": "D",
+      "daughter": "T",
+      "delta_B_pred_MeV": 11.954639822280573,
+      "delta_B_AME_MeV": 6.257301,
+      "cascade_gap_MeV": 5.697338822280573
+    },
+    {
+      "parent": "T",
+      "daughter": "3He",
+      "delta_B_pred_MeV": -4.3574648239099805,
+      "delta_B_AME_MeV": -0.7637809999999998,
+      "cascade_gap_MeV": -3.5936838239099806
+    },
+    {
+      "parent": "3He",
+      "daughter": "4He",
+      "delta_B_pred_MeV": 15.057350297505677,
+      "delta_B_AME_MeV": 20.577634000000003,
+      "cascade_gap_MeV": -5.520283702494327
+    },
+    {
+      "parent": "4He",
+      "daughter": "6Li",
+      "delta_B_pred_MeV": 4.248769448840434,
+      "delta_B_AME_MeV": 3.7043259999999982,
+      "cascade_gap_MeV": 0.5444434488404362
+    },
+    {
+      "parent": "6Li",
+      "daughter": "7Li",
+      "delta_B_pred_MeV": 7.832888488249484,
+      "delta_B_AME_MeV": 7.244529,
+      "cascade_gap_MeV": 0.588359488249484
+    }
+  ]
+}
