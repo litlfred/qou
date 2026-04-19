@@ -28,6 +28,18 @@ project requirements and flag everything that does not conform. This is a
 Run every check below for each content block. Report violations grouped by
 block, with severity (error / warning / info).
 
+**Quick entry point:** `bun run scripts/lean-audit.ts --json` produces
+a machine-readable per-chapter breakdown with the five block-level gap
+classes (`missing-lean-file`, `unresolved-decl`, `decl-in-wrong-file`,
+`placeholder-statement`, `sorry-no-citation`). When reviewing a whole
+chapter, run the audit first and then dive into the flagged blocks —
+it's faster than a manual walk.
+
+**Lake tree vs sibling `.lean`:** see `CLAUDE.md §8a`. The audit
+indexes both. When a manifest's `lean.decl` resolves only to a sibling
+stub, treat that as a warning: the name is reserved but the proof does
+not actually compile.
+
 ### 1. File triple completeness
 
 | Check | Severity | Rule |

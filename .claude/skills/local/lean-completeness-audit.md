@@ -56,6 +56,32 @@ bun run scripts/lean-audit.ts --json     # JSON for programmatic use
 bun run scripts/lean-audit.ts --chapter ch5  # filter to one chapter
 ```
 
+### Bulk stub generator
+
+When the audit reports many `missing-lean-file` or `unresolved-decl`
+gaps, use the generator to stub them all in one pass:
+
+```bash
+bun run scripts/gen-lean-stubs.ts                 # all chapters
+bun run scripts/gen-lean-stubs.ts --chapter foo   # one chapter
+bun run scripts/gen-lean-stubs.ts --dry-run       # preview only
+```
+
+For each provable content block it:
+1. Creates a sibling `.lean` with a non-trivial existence witness
+   signature (`∃ w : ℝ, 0 < w`) + `sorry` + `-- Ref: [manuscript]`.
+2. Patches the `.ts` manifest to add
+   `lean: { decl, validation: "not_checked" }` pointing at the stub.
+3. For manifests that already have a `lean.decl` but no matching
+   declaration, it appends a named stub under the target namespace
+   (creating a new `namespace <ns>` block if needed).
+
+**The stubs are sibling files (not in the Lake tree).** See `CLAUDE.md
+§8a` — they reserve names for the audit but do not compile under
+`lake build`. Once a real proof is written, migrate the decl into
+`content/<paper>/lean/QOU/...` and update the manifest's
+`lean.file` accordingly.
+
 This script produces:
 - Sorry inventory with citation checking
 - Trivial truth detection (`True := by trivial` placeholders)

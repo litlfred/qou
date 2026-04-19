@@ -132,6 +132,37 @@ When a narrative step is too complex for immediate formalization:
 5. Ensure the file remains syntactically correct
 6. Track the sorry count in `proof-objects.json`
 
+**Audit-friendly placement:** put the `-- Ref:` annotation either
+**immediately before** the `sorry` *or* anywhere inside the enclosing
+declaration (including its docstring). `scripts/lean-audit.ts` scans
+the whole enclosing `theorem`/`lemma`/`def` plus its leading `--`/`/--`
+comment block, so either placement counts. Avoid placing the Ref
+**after** the `sorry` — the audit looks backwards from the `sorry`,
+not forwards.
+
+### 4a. Replacing `True := by trivial` placeholders
+
+If a Lean file contains `theorem foo : True := by trivial` (flagged
+by the audit as a **trivial-truth placeholder**), do not leave it in
+place — the statement is vacuous and doesn't match the narrative.
+Replace with one of:
+
+1. **Concrete existence statement** + `sorry`:
+   ```lean
+   theorem foo (x : X) : ∃ (witness : ℝ), 0 < witness := by
+     -- Ref: [key] <url or section>
+     sorry
+   ```
+2. **Aggregate of already-proved sub-claims**:
+   ```lean
+   theorem foo : subclaim_A ∧ subclaim_B :=
+     ⟨proof_of_A, proof_of_B⟩
+   ```
+3. **Demote to `prose`/`remark`** if the `.md` is the only reader.
+
+Avoid non-trivial-looking trivialities like `True → True` or
+`: Prop` — the audit widens its placeholder check to catch these.
+
 ```lean
 /-- Intermediate step: torsion lifts through jet prolongation.
     TODO: formalize using the Frobenius-Hopf structure. -/
