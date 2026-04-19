@@ -15,7 +15,7 @@ deconfinement or regime switches.
 - [prop:confinement-phase-stratification]
 - [def:confined-particle]
 - [prop:confinement-sdp]
-- [def:deconfinement-golden-threshold]
+- [rem:deconfinement-golden-threshold]
 - [prop:parity-regime-selection]
 - [boyd-vandenberghe-2004]
 -/

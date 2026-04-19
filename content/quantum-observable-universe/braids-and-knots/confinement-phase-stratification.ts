@@ -16,7 +16,7 @@ export default proposition({
     "prop:level-sufficiency",
     "prop:shell-closure-stability",
     "prop:parity-regime-selection",
-    "def:deconfinement-golden-threshold",
+    "rem:deconfinement-golden-threshold",
   ],
   tags: [
     "phase",

@@ -35,10 +35,19 @@ open QOU.Descartes
 
 /-- Cost operator `T` of the confinement SDP: a symmetric
     real-algebraic endomorphism of `H_n(q)` encoding the Markov-trace
-    weighting. Placeholder — the full Markov-trace cost operator is
-    `markovTraceNF`-based; here we record its type signature. -/
+    weighting. The Hecke algebra `H_n(q)` has dimension `n!` (basis
+    indexed by permutations of `Fin n`), so `sdpCost` is an
+    `n! × n!` matrix over `R_q`. Placeholder — the full Markov-trace
+    cost operator is `markovTraceNF`-based; here we record the
+    correct type signature. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque sdpCost (n : ℕ) : Matrix (Fin n) (Fin n) R_q
+opaque sdpCost (n : ℕ) :
+    Matrix (Fin (Nat.factorial n)) (Fin (Nat.factorial n)) R_q
+
+/-- Optimal primal value of the confinement SDP at strand count
+    `n`: `⟨T, Φ*⟩`. By strong duality, equals `nTarget * y0Star n`. -/
+-- Ref: [manuscript] particle-interactions/confinement-sdp
+opaque primalOpt (n : ℕ) : R_q
 
 /-- Normalisation target `n_target` for the primal (different for
     proton ≈ 1.000 vs neutron ≈ 0.811). -/
@@ -73,14 +82,23 @@ opaque y0Star (n : ℕ) : R_q
     Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
     projection recovered when every Wedderburn block decouples.
 
+    The headline form asserted here is **strong duality**: the
+    primal and dual optima agree,
+
+        ⟨T, Φ*⟩ = n_target · y₀*.
+
     Full proof requires Mathlib SDP duality, which is not yet
     available; body is `sorry`.
 -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem ConfinementSDP (n : ℕ) (h : slaterStrict n) :
-    ∃ (y0 : R_q), y0 = y0Star n := by
-  exact ⟨y0Star n, rfl⟩
+    primalOpt n = nTarget * y0Star n := by
+  -- Strong duality under Slater regularity (Boyd-Vandenberghe
+  -- §5.4.1, §5.5.3). Deferred to Mathlib SDP duality lemmas not
+  -- yet available.
+  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+  sorry
 
 /-! ## §3  Binding multiplicity and the scalar-LP projection -/
 

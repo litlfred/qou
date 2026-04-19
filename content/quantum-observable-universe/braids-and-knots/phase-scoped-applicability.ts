@@ -21,7 +21,7 @@ export default remark({
     "prop:shell-closure-stability",
     "def:electron-shell",
     "def:dressed-particle",
-    "def:deconfinement-golden-threshold",
+    "rem:deconfinement-golden-threshold",
     "prop:parity-regime-selection",
   ],
   interprets: "prop:confinement-phase-stratification",

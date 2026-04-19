@@ -36,7 +36,7 @@ single $\Omega_\alpha$):**
   *At $q \in \partial\Omega(P)$ with Slater-strict feasibility lost,
   $P$ ceases to be realisable as a closed-braid bound state;
   the archetype is
-  [def:deconfinement-golden-threshold](#def:deconfinement-golden-threshold).*
+  [deconfinement threshold](#rem:deconfinement-golden-threshold).*
 - ***Regime switches.***
   *At $q \in \partial\Omega(P)$ with $\mu$-jump but preserved
   feasibility, the active support gains or loses a Wedderburn

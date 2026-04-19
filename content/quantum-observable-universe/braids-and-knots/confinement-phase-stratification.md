@@ -48,7 +48,7 @@ with strict PSD margin).  Then:*
    following holds:*
    - ***Deconfinement.** $\mathrm{confined}(P, q_0)$ fails;
      $P$ is not realisable as a closed-braid bound state at $q_0$
-     (cf. [deconfinement threshold](#def:deconfinement-golden-threshold)).*
+     (cf. [deconfinement threshold](#rem:deconfinement-golden-threshold)).*
    - ***Regime switch.** $\mu$ jumps discretely across $q_0$;
      the active support gains or loses a Wedderburn block;
      $\sigma_F$ has a non-smooth point
@@ -104,7 +104,7 @@ active-support transition (some $y_\lambda^*$ passes through zero
 → regime switch with $\mu$-jump).  Both correspond to the
 discrete-regime-switch phenomenology already logged in
 [prop:parity-regime-selection](#prop:parity-regime-selection) and
-the [deconfinement golden threshold](#def:deconfinement-golden-threshold).
+the [deconfinement golden threshold](#rem:deconfinement-golden-threshold).
 $\square$*
 
 **Corollary (phase-scoped applicability).**

@@ -328,6 +328,19 @@ def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None,
     partitions for which it returns True contribute.  Useful for
     audits (top-N by w_λ, etc.).  Default: include all partitions.
 
+    ``block_cache``, if given, must be a ``syt_prefix_cache.BlockCache``
+    pinned to the same q used for the seminormal-matrix build.  When
+    supplied, the per-partition loop routes through
+    ``syt_prefix_cache.build_seminormal_matrices_cached`` instead of
+    the uncached ``build_seminormal_matrices``, reusing Hoefsmit
+    content-distance arithmetic and the per-shape SYT→index map
+    across shapes.  Caller lifecycle: construct the cache once per
+    q (``BlockCache(q=Q)``), share across multiple
+    ``compute_mass_at_level`` / ``compute_mass_at_3A`` calls, discard
+    when q changes.  Default ``None`` preserves the legacy uncached
+    path.  Expected 5–20× speedup on heavy atoms (A ≥ 10, k = 3A
+    with p(3A) ≥ 5604 partitions and dim_λ up to ~1000).
+
     Returns: (M_predicted, details_dict)
     """
     A = Z + N

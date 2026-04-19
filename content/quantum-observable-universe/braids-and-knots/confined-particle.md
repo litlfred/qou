@@ -7,10 +7,12 @@ $$
 
 *where:*
 
-1. *$\mathrm{name}$ is a symbol drawn from a fixed registry
-   ([particle shortcuts](#def:particle-shortcut)) — e.g.
-   `quark`, `proton`, `neutron`, `electron`, `\He4`,
-   `\C12`, `\benzene`;*
+1. *$\mathrm{name}$ is a symbol drawn from a fixed registry of
+   particle shortcuts — e.g. `quark`, `proton`, `neutron`,
+   `electron`, `\He4`, `\C12`, `\benzene`. (The shortcut registry
+   is authoring sugar; a formal `def:particle-shortcut` block is
+   deferred and is not required for the mathematical content of
+   this definition.);*
 
 2. *$\ell \in \mathbb{Z}_{\ge 0}$ is the **confinement level**
    (quark = 0, nucleon = 1, atom = 2, molecule/compound = 3, …);*
