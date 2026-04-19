@@ -77,6 +77,7 @@ section({
       blocks: [
         "computational-horizon",
         "skein-resolution-obstruction",
+        "hecke-energy-jones-recursion",
         "p-bandwidth-bound",
         "p-vs-np-boundary",
         "p-vs-np-event-horizon",

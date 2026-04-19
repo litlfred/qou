@@ -15,6 +15,7 @@ export default chapter({
       label: "sec:ugb-s-poly-cancel",
       blocks: [
         "s-polynomial-decomposition",
+        "gs-cost-jones-recursion",
       ],
     }),
     section({
