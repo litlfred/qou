@@ -53,5 +53,6 @@ import QOU.QGeometricLanglands.Stubs
 import QOU.ParticleInteractions
 import QOU.AlgebraicSubstrate
 import QOU.Observations
+import QOU.MagicUnfoldPeel
 import QOU.BraidsAndKnots
 import QOU.DescartesUniverse.Stubs
