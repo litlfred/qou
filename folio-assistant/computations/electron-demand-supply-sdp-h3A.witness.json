@@ -1,0 +1,189 @@
+{
+  "computation": "electron-demand-supply-sdp-h3A",
+  "description": "Demand-supply SDP at H_{3A} Plancherel per-shape level. Each partition lambda is a channel; demand is on shapes with tr_M_lambda(K) < 0. SDP picks weights a_alpha \u2265 0 over {T_{2,1}, T_{2,2}, T_{2,3}, T_{2,5}} minimising crossing energy subject to per-shape supply \u2265 demand.",
+  "timestamp": "2026-04-19T17:32:52.380339+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782,
+    "electron_ops": [
+      "T_2_1",
+      "T_2_2",
+      "T_2_3",
+      "T_2_5"
+    ]
+  },
+  "results": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME_MeV": 2.22452,
+      "n_strands": 6,
+      "baseline_no_electrons_plancherel": {
+        "trM_atom": -0.0009376680544941408,
+        "trM_free": 1.4373672098413999,
+        "B_pred_MeV": 1.1232879016773603,
+        "err_pct": 0.05868405421469679,
+        "n_shapes_total": 11,
+        "n_shapes_negative": 6
+      },
+      "electrons": [
+        {
+          "electron_index": 0,
+          "sdp_status": "infeasible",
+          "dominant_op": "T_2_3",
+          "weights": {
+            "T_2_1": 0.0,
+            "T_2_2": 0.0,
+            "T_2_3": 0.0,
+            "T_2_5": 0.0
+          },
+          "E_cross": 0.0,
+          "n_demand_shapes": 6,
+          "trM_atom_after": -0.011271510757906136,
+          "trM_free_after": 0.132953696350416,
+          "B_pred_MeV": 0.09515546913334272,
+          "err_pct": 0.1134726673537448,
+          "time_sec": 0.0180816650390625
+        }
+      ],
+      "final": {
+        "trM_atom": -0.011271510757906136,
+        "trM_free": 0.132953696350416,
+        "B_pred_MeV": 0.09515546913334272,
+        "err_pct": 0.1134726673537448,
+        "dominant_ops": [
+          "T_2_3"
+        ]
+      },
+      "legacy_pile_up": {
+        "trM_atom": -0.0074932241218232006,
+        "trM_free": -0.5928789945902023,
+        "B_pred_MeV": 0.4577716725062725,
+        "err_pct": 0.09414904886289517
+      },
+      "atom": "D"
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME_MeV": 8.481821,
+      "n_strands": 9,
+      "baseline_no_electrons_plancherel": {
+        "trM_atom": 0.0001643263120389166,
+        "trM_free": 1.9314097679598776,
+        "B_pred_MeV": 1.5102339353686098,
+        "err_pct": 0.2476746993278207,
+        "n_shapes_total": 30,
+        "n_shapes_negative": 8
+      },
+      "electrons": [
+        {
+          "electron_index": 0,
+          "sdp_status": "optimal",
+          "dominant_op": "T_2_5",
+          "weights": {
+            "T_2_1": 0.8662804564271073,
+            "T_2_2": 0.0,
+            "T_2_3": 1.7131418993820072e-08,
+            "T_2_5": 11.948074471828418
+          },
+          "E_cross": 60.60665286696346,
+          "n_demand_shapes": 8,
+          "trM_atom_after": 0.001350631567269439,
+          "trM_free_after": -0.42651947712966154,
+          "B_pred_MeV": 0.33248203722979064,
+          "err_pct": 0.2895158675654184,
+          "time_sec": 0.3070046901702881
+        }
+      ],
+      "final": {
+        "trM_atom": 0.001350631567269439,
+        "trM_free": -0.42651947712966154,
+        "B_pred_MeV": 0.33248203722979064,
+        "err_pct": 0.2895158675654184,
+        "dominant_ops": [
+          "T_2_5"
+        ]
+      },
+      "legacy_pile_up": {
+        "trM_atom": 0.0010219304726249265,
+        "trM_free": -0.7965705525692438,
+        "B_pred_MeV": 0.622119022479556,
+        "err_pct": 0.27922613689564235
+      },
+      "atom": "T"
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME_MeV": 7.71804,
+      "n_strands": 9,
+      "baseline_no_electrons_plancherel": {
+        "trM_atom": -9.302595327218592e-05,
+        "trM_free": 1.9490827559568622,
+        "B_pred_MeV": 1.5241099688628075,
+        "err_pct": 0.22004742161253849,
+        "n_shapes_total": 30,
+        "n_shapes_negative": 9
+      },
+      "electrons": [
+        {
+          "electron_index": 0,
+          "sdp_status": "infeasible",
+          "dominant_op": "T_2_3",
+          "weights": {
+            "T_2_1": 0.0,
+            "T_2_2": 0.0,
+            "T_2_3": 0.0,
+            "T_2_5": 0.0
+          },
+          "E_cross": 0.0,
+          "n_demand_shapes": 9,
+          "trM_atom_after": 4.343645027558485e-06,
+          "trM_free_after": 0.18037069528820776,
+          "B_pred_MeV": 0.14104648698496694,
+          "err_pct": 0.26918255093814414,
+          "time_sec": 0.2852158546447754
+        },
+        {
+          "electron_index": 1,
+          "sdp_status": "infeasible",
+          "dominant_op": "T_2_3",
+          "weights": {
+            "T_2_1": 0.0,
+            "T_2_2": 0.0,
+            "T_2_3": 0.0,
+            "T_2_5": 0.0
+          },
+          "E_cross": 0.0,
+          "n_demand_shapes": 15,
+          "trM_atom_after": -9.589741519459719e-05,
+          "trM_free_after": 2.136323954650236,
+          "B_pred_MeV": 1.6705303407578025,
+          "err_pct": 0.21484564743280546,
+          "time_sec": 0.31496334075927734
+        }
+      ],
+      "final": {
+        "trM_atom": -9.589741519459719e-05,
+        "trM_free": 2.136323954650236,
+        "B_pred_MeV": 1.6705303407578025,
+        "err_pct": 0.21484564743280546,
+        "dominant_ops": [
+          "T_2_3",
+          "T_2_3"
+        ]
+      },
+      "legacy_pile_up": {
+        "trM_atom": -0.0001031572433123125,
+        "trM_free": 2.1171363791054487,
+        "B_pred_MeV": 1.6555199794961908,
+        "err_pct": 0.21537891004256793
+      },
+      "atom": "3He"
+    }
+  ]
+}
