@@ -1,7 +1,7 @@
 {
   "computation": "unified-lift",
   "description": "Task B: unified Markov-stab + K\u00e4hler jet lift.  V\u0302^(1) = z\u00b7V\u0302^(0) + \u210f_q\u00b7q\u00b7d(z\u00b7V\u0302)/dq + (\u210f_q\u00b2/2)(q\u00b2d\u00b2+qd)(z\u00b7V\u0302), evaluated at q\u2080 via analytic sympy q-derivatives on the Plancherel-aggregated V\u0302(q).  The z(q) factor brings V\u0302 into the \u03a6_q-safe range (reconciling Markov-stab with K\u00e4hler); K\u00e4hler corrections reduce \u03b5 from O(\u210f_q\u00b3) \u2192 O(\u210f_q\u2074) \u2192 O(\u210f_q\u2075) per order.",
-  "timestamp": "2026-04-19T09:56:52.039329+00:00",
+  "timestamp": "2026-04-19T13:08:34.018370+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782
@@ -69,7 +69,7 @@
       "atom": "D",
       "B_AME_MeV": 2.22452,
       "delta_m_over_m_pct": 0.0037621258047399776,
-      "time_sec": 6.029755592346191
+      "time_sec": 6.406676530838013
     },
     {
       "Z": 1,
@@ -145,7 +145,7 @@
       "atom": "T",
       "B_AME_MeV": 8.481821,
       "delta_m_over_m_pct": 0.030075542278729935,
-      "time_sec": 28.97843909263611
+      "time_sec": 29.66850757598877
     },
     {
       "Z": 2,
@@ -221,7 +221,7 @@
       "atom": "3He",
       "B_AME_MeV": 7.71804,
       "delta_m_over_m_pct": 0.003479095729211213,
-      "time_sec": 24.380212545394897
+      "time_sec": 25.408719062805176
     }
   ]
 }
