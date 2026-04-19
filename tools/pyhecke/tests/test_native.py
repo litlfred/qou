@@ -19,7 +19,9 @@ pytestmark = pytest.mark.skipif(
 
 def test_native_version():
     import pyhecke_native
-    # Version tracked in pyhecke-native/Cargo.toml + pyproject.toml + lib.rs.
+    # Version is wired from Cargo.toml via env!("CARGO_PKG_VERSION") in
+    # lib.rs. If Cargo.toml bumps, update the expected here in the same
+    # commit.
     assert pyhecke_native.__version__ == "0.2.0"
 
 
@@ -158,4 +160,7 @@ def test_native_nf_net_matches_python():
 
 def test_native_version_bumped_to_0_2_0():
     import pyhecke_native
+    # The version pin is sourced from Cargo.toml at compile time
+    # (env!("CARGO_PKG_VERSION")). Bump together with Cargo.toml +
+    # pyproject.toml.
     assert pyhecke_native.__version__ == "0.2.0"

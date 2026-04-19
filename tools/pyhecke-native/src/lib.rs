@@ -124,6 +124,9 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(hm, m)?)?;
     m.add_function(wrap_pyfunction!(nf_tr, m)?)?;
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
-    m.add("__version__", "0.2.0")?;
+    // Pull __version__ directly from Cargo.toml so the Python module,
+    // the Rust crate, and pyproject.toml never drift. (Gemini review
+    // r3103025537: hardcoded version is fragile.)
+    m.add("__version__", env!("CARGO_PKG_VERSION"))?;
     Ok(())
 }

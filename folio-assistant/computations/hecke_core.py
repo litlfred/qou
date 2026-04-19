@@ -18,34 +18,44 @@ Usage:
 """
 
 import math
-import os as _os
-import sys as _sys
 import numpy as np
 from fractions import Fraction
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 
 # ── pyhecke bootstrap (M2b inversion: Gram + NF moved to pyhecke.gram) ─
-_PYHECKE_PATH = _os.path.normpath(
-    _os.path.join(_os.path.dirname(__file__), "..", "..", "tools", "pyhecke", "python")
-)
-if _os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in _sys.path:
-    _sys.path.insert(0, _PYHECKE_PATH)
-
-from pyhecke.gram import (  # noqa: E402
-    # Scalar constants
-    z, W_SYM, W_STD, W_ALT,
-    # NF basis + trace weights
-    NF_BASIS, NF_NAMES, TR_M,
-    # Bond operators
-    INV_TREFOIL_G0, INV_TREFOIL_G1,
-    # NF multiplication
-    hm, hm_exact, nf_tr, nf_net,
-    # Gram matrix
-    G, G_INV,
-    # Exact-rational internals
-    _H_FRAC, _Z_FRAC, _TR_M_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
-)
-from pyhecke.gram import _Q_FRAC, _QI_FRAC  # noqa: E402
+# Preferred: install pyhecke as a package (`pip install -e tools/pyhecke`)
+# so this file's dependencies are explicit. Fallback: development mode
+# where pyhecke lives on disk but isn't installed — we insert its source
+# directory onto sys.path. Gemini review r3103025560 flagged the
+# sys.path hack; the try/except below makes the packaged path the
+# default and the sys.path patch a clearly-marked dev fallback.
+try:  # installed pyhecke
+    from pyhecke.gram import (  # noqa: E402
+        z, W_SYM, W_STD, W_ALT,
+        NF_BASIS, NF_NAMES, TR_M,
+        INV_TREFOIL_G0, INV_TREFOIL_G1,
+        hm, hm_exact, nf_tr, nf_net,
+        G, G_INV,
+        _H_FRAC, _Z_FRAC, _TR_M_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
+    )
+    from pyhecke.gram import _Q_FRAC, _QI_FRAC  # noqa: E402
+except ImportError:  # dev mode — pyhecke is in the repo but not installed
+    import os as _os
+    import sys as _sys
+    _PYHECKE_PATH = _os.path.normpath(
+        _os.path.join(_os.path.dirname(__file__), "..", "..", "tools", "pyhecke", "python")
+    )
+    if _os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in _sys.path:
+        _sys.path.insert(0, _PYHECKE_PATH)
+    from pyhecke.gram import (  # noqa: E402
+        z, W_SYM, W_STD, W_ALT,
+        NF_BASIS, NF_NAMES, TR_M,
+        INV_TREFOIL_G0, INV_TREFOIL_G1,
+        hm, hm_exact, nf_tr, nf_net,
+        G, G_INV,
+        _H_FRAC, _Z_FRAC, _TR_M_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
+    )
+    from pyhecke.gram import _Q_FRAC, _QI_FRAC  # noqa: E402
 
 # ══════════════════════════════════════════════════════════════
 # Constants (non-Gram; see pyhecke.gram for Gram/NF/Wedderburn)
