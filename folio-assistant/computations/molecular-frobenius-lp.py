@@ -399,5 +399,30 @@ for name, pred, obs in molecules:
         source="Frobenius LP feasibility",
     )
 
+
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+print(f"\n{'═' * 80}\n  SDP LIFT VALIDATION\n{'═' * 80}")
+sdp_reports = []
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+    _rep = lp_vs_sdp_report(
+        c=TR_M, G=G, A_eq=np.ones((1, 6)),
+        b_eq=np.array([1.0]),
+        label="molecular-frobenius/unit-net")
+    for _l in _rep.summary_lines():
+        print(_l)
+    sdp_reports.append(_rep.__dict__)
+    w.add_data("sdp_lift", sdp_reports)
+    w.add_assertion(
+        "LP solution Frobenius-valid (xᵀGx ≥ 0)",
+        computed=_rep.lp_frobenius_valid,
+        expected=True,
+        source="sdp_moment_lift",
+    )
+except ImportError as _e:
+    print(f"  (cvxpy not available: {_e})")
+
 w.save()
 print("Done.")

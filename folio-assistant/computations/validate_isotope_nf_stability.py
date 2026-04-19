@@ -153,16 +153,47 @@ def gluon_fingerprint(g0_chain) -> dict:
 
 
 # ── Atom-level tr_M sign (lightweight, partition-truncated) ──
+#
+# IMPORTANT: This partition-weighted sum uses the PLANCHEREL weight
+# w_lambda = d_q(lambda)^2 / [n]_q!.  That is NOT the canonical
+# Jones-Markov trace referenced in prop:categorical-mass-markov —
+# see markov_trace_canonical.py for the axiomatic version.  The two
+# disagree substantially at q != 1 (e.g. for D the Plancherel path
+# gives -0.0054 while the canonical path gives +0.3883; both are
+# computed correctly on the same braid word, but compute different
+# traces).  We also run the canonical trace via tr_M_element below
+# and prefer its sign for stability conclusions.
+
+def atom_trM_canonical_symbolic(Z: int, N: int) -> dict:
+    """Canonical Jones-Markov trace on the 3A-strand braid word,
+    computed symbolically in q via the recursive Markov-axiom
+    reduction in markov_trace_canonical.tr_M_element, then evaluated
+    at q0.  This is the authoritative trace for stability; matches
+    prop:categorical-mass-markov."""
+    import sympy as sp
+    from markov_trace_canonical import tr_M_element
+    from hecke_symbolic import q as q_sym
+    from binding_canonical import build_atom_symbolic
+    A = Z + N
+    n = 3 * A
+    if A < 1:
+        return {"trM": 1.0, "n_strands": 0}
+    elem = build_atom_symbolic(Z, N, include_inter=True)
+    tr_sym = tr_M_element(elem, n)
+    val = complex(sp.N(tr_sym.subs(q_sym, q0)))
+    tr_val = val.real if abs(val.imag) < 1e-9 else val
+    return {"trM": float(tr_val) if isinstance(tr_val, float) \
+                else complex(tr_val),
+              "n_strands": n,
+              "elem_n_terms": elem.n_terms()}
+
 
 def atom_trM_light(Z: int, N: int, *, max_dim: int = 200) -> dict:
-    """Partition-truncated Markov trace on the 3A-strand braid word.
+    """PARTITION-SUM (Plancherel) Markov trace — NOT canonical.
 
-    Only partitions lambda with dim(lambda) <= max_dim contribute; this
-    is enough to get the trace SIGN for light nuclei and provides a
-    cheap sanity check for heavier ones (top-weight partitions
-    dominate at q > 1).
-
-    Returns the sum and number of partitions included.
+    See note above: this differs from the canonical Jones-Markov
+    trace at q != 1.  Kept as a diagnostic only; do not use its
+    sign to conclude (in)stability.
     """
     A = Z + N
     n = 3 * A
@@ -218,6 +249,9 @@ def atom_trM_light(Z: int, N: int, *, max_dim: int = 200) -> dict:
 
 ATOM_TRM_ENABLED = False
 ATOM_MAX_3A = 12
+CANONICAL_MAX_3A = 6  # symbolic tr_M is slow (D ~145s);
+                        # >6 falls back to Plancherel trace.  Override
+                        # with --canonical-max-3a for T/3He/4He.
 
 
 def main():
@@ -229,9 +263,14 @@ def main():
                            "(slow; requires seminormal matrices)")
     ap.add_argument("--max-3a", type=int, default=12,
                       help="Max 3A for atom-tr_M check (default 12)")
+    ap.add_argument("--canonical-max-3a", type=int, default=6,
+                      help="Max 3A for canonical (symbolic) tr_M "
+                           "(default 6; slow beyond)")
     args = ap.parse_args()
     ATOM_TRM_ENABLED = args.atom_trm
     ATOM_MAX_3A = args.max_3a
+    global CANONICAL_MAX_3A
+    CANONICAL_MAX_3A = args.canonical_max_3a
 
     isotopes = _load_isotopes()
     print("=" * 110)
@@ -301,11 +340,23 @@ def main():
 
         if ATOM_TRM_ENABLED and 3 * A <= MAX_ATOM_3A:
             atom_info = atom_trM_light(Z, N)
-            trM_atom = atom_info['trM']
-            trM_sign_ok = trM_atom >= 0
+            trM_atom_plan = atom_info['trM']
             truncated = atom_info['truncated']
+            # Canonical Jones-Markov trace (authoritative for stability).
+            # Symbolic tr_M grows fast; cap at 3A <= 9 to keep runtime
+            # tractable unless user explicitly requests higher.
+            if 3 * A <= CANONICAL_MAX_3A:
+                can_info = atom_trM_canonical_symbolic(Z, N)
+                trM_atom = can_info['trM']
+                atom_info['canonical'] = can_info
+            else:
+                trM_atom = trM_atom_plan
+                atom_info['canonical'] = {'skipped': 'over CANONICAL_MAX_3A'}
+            trM_sign_ok = (trM_atom.real if isinstance(trM_atom, complex)
+                           else trM_atom) >= 0
         else:
             trM_atom = None
+            trM_atom_plan = None
             trM_sign_ok = None
             truncated = None
             atom_info = {"skipped_heavy": True, "3A": 3 * A}
@@ -322,7 +373,10 @@ def main():
             "neutron_final_stable": n_fin_ok,
             "proton_path_stable": p_path_ok,
             "neutron_path_stable": n_path_ok,
-            "trM_atom": trM_atom,
+            "trM_atom_canonical": (trM_atom if isinstance(trM_atom, float)
+                                       else (trM_atom if trM_atom is None
+                                             else complex(trM_atom))),
+            "trM_atom_plancherel": trM_atom_plan,
             "trM_sign_ok": trM_sign_ok,
             "trM_truncated": truncated,
             "atom_info": atom_info,

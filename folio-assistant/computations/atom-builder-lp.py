@@ -285,3 +285,23 @@ witness = {
 }
 Path("atom-builder-lp.witness.json").write_text(json.dumps(witness, indent=2, default=str))
 print(f"\nWitness written to atom-builder-lp.witness.json")
+
+
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT NOTE  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+# atom-builder-lp is exhaustive: it enumerates per-atom crossing
+# chains and scores each via |V̂| / Phi_q, not via a Gram-positivity
+# LP.  The standard Lasserre SDP lift used in confinement-lp,
+# nuclear-binding-lp, molecular-frobenius-lp, ch-bond-lp, and
+# integer-lp-gluon does not apply directly here — there is no
+# primal vector x whose componentwise G·x ≥ 0 governs feasibility.
+#
+# The corresponding SDP-worthy question for this file is:  given
+# the per-atom aggregated NF vector v, does it satisfy the quadratic
+# Frobenius positivity vᵀG v ≥ 0 in the H_3 basis?  That check uses
+# the shared G from confinement-lp.witness.json — see
+# sdp_moment_lift.lp_vs_sdp_report and confinement-sdp.py for the
+# implementation pattern.
+print("\n(SDP note: atom-builder-lp is exhaustive; see the comment "
+      "at end of file for why the Lasserre lift doesn't apply here.)")

@@ -7,6 +7,7 @@ export const massTowerSYTCells = remark({
   uses: [
     "rem:mass-endomorphism-jet-tower",
     "prop:mass-endomorphism-tower",
+    "thm:markov-trace-factorization",
     "def:recursive-brane-tower",
     "def:descent-involution",
   ],

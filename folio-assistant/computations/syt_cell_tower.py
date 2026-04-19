@@ -52,7 +52,8 @@ from mass_endomorphism import Phi_q, z_mark
 from hecke_characters import (partitions_of, dim_q, qfac,
                                 standard_young_tableaux,
                                 build_seminormal_matrices)
-from mass_at_3A_proper import atom_braid_word_3A
+from mass_at_3A_proper import atom_braid_word_3A, _cached_seminormal
+from atom_braid_sdp_gluon import atom_braid_word_3A_sdp_gluon
 
 
 def _word_diagonal_in_lambda(shape: tuple[int, ...],
@@ -66,7 +67,7 @@ def _word_diagonal_in_lambda(shape: tuple[int, ...],
     import numpy as np
     from scipy.sparse import issparse, eye as speye
 
-    sigmas, dim, _syts = build_seminormal_matrices(shape)
+    sigmas, dim, _syts = _cached_seminormal(shape)
     if dim == 0:
         return []
     is_sparse = issparse(sigmas[0]) if sigmas else False
@@ -86,19 +87,30 @@ def _word_diagonal_in_lambda(shape: tuple[int, ...],
 
 def V_hat_JM_all(Z: int, N: int, *, include_inter: bool,
                    m_pp: int = 1, m_pn: int = 1,
-                   m_nn: int = 1) -> list[float]:
+                   m_nn: int = 1,
+                   sdp_gluon: bool = False) -> list[float]:
     """JM cell volumes V_hat_JM[k] for k = 1..n, n = 3A.
 
     Computes all n cell volumes in a single pass over partitions —
     the dominant cost is building seminormal matrices and the word
     product, both of which are reused across k.
+
+    sdp_gluon: if True, use atom_braid_word_3A_sdp_gluon so each
+      neutron carries the integer-LP-optimal gluon tail L₊L₋ = σ₀σ₁σ₁σ₀
+      (proton unchanged).  If False (default), uses the uniform 2·σ₀
+      tail from atom_braid_word_3A.
     """
     A = Z + N
     n = 3 * A
     nfac = qfac(n)
 
-    word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-                                include_inter=include_inter)
+    if sdp_gluon:
+        word = atom_braid_word_3A_sdp_gluon(
+            Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+            include_inter=include_inter)
+    else:
+        word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                                    include_inter=include_inter)
     # adjacent_vs_full_probe / mass_from_tower_probe treats
     # include_inter=False as the free path.  atom_braid_word_3A
     # respects the flag — no remap needed here.
@@ -149,11 +161,14 @@ def tower_mass_JM(V_JM: list[float]) -> tuple[float, dict]:
 
 
 def binding_JM(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
-                 m_nn: int = 1, E_0: float) -> dict:
+                 m_nn: int = 1, E_0: float,
+                 sdp_gluon: bool = False) -> dict:
     """Binding B = E_0 . (m_free - m_atom) via JM tower."""
     V_a = V_hat_JM_all(Z, N, include_inter=True,
-                          m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
-    V_f = V_hat_JM_all(Z, N, include_inter=False)
+                          m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                          sdp_gluon=sdp_gluon)
+    V_f = V_hat_JM_all(Z, N, include_inter=False,
+                          sdp_gluon=sdp_gluon)
     m_a, det_a = tower_mass_JM(V_a)
     m_f, det_f = tower_mass_JM(V_f)
     B = E_0 * (m_f - m_a)
@@ -168,6 +183,13 @@ if __name__ == "__main__":
         description="SYT-cell JM mass tower probe")
     parser.add_argument("--include-4he", action="store_true",
                           help="Also compute 4He (n = 12, minutes)")
+    parser.add_argument("--heavy", action="store_true",
+                          help="Heavy-atom AME test: 6Li + 9Be (n = 18, "
+                           "27; minutes to hours).  Requires the "
+                           "seminormal disk cache in .cache/seminormal/.")
+    parser.add_argument("--only", type=str, default=None,
+                          help="Comma-separated atom symbols to run "
+                           "(e.g. '6Li').  Overrides the default list.")
     args = parser.parse_args()
 
     from adjacent_vs_full_probe import (mass_from_tower_probe,
@@ -181,6 +203,15 @@ if __name__ == "__main__":
     ]
     if args.include_4he:
         ATOMS.append(('4He', 2, 2, 28.295674))
+    if args.heavy:
+        # AME2020 binding totals (A * B/A):
+        # 6Li: 6 * 5.3326 = 31.9956 MeV
+        # 9Be: 9 * 6.4628 = 58.1652 MeV
+        ATOMS.append(('6Li', 3, 3, 31.9956))
+        ATOMS.append(('9Be', 4, 5, 58.1652))
+    if args.only:
+        keep = set(s.strip() for s in args.only.split(','))
+        ATOMS = [a for a in ATOMS if a[0] in keep]
 
     print("=" * 110)
     print("SYT-CELL JM TOWER PROBE (Track 1)")
@@ -193,13 +224,21 @@ if __name__ == "__main__":
                                                phi_q_variant='raw')
     E_0_scalar = 938.272 / m_p_s
 
-    # JM proton calibration.
+    # JM proton calibration (uniform 2·σ₀ gluon).
     V_p_JM = V_hat_JM_all(1, 0, include_inter=False)
     m_p_JM, _ = tower_mass_JM(V_p_JM)
     E_0_JM = 938.272 / m_p_JM
 
+    # JM proton under SDP-optimal gluon (proton word unchanged, so E_0
+    # should equal E_0_JM — sanity check).
+    V_p_JM_sdp = V_hat_JM_all(1, 0, include_inter=False, sdp_gluon=True)
+    m_p_JM_sdp, _ = tower_mass_JM(V_p_JM_sdp)
+    E_0_JM_sdp = 938.272 / m_p_JM_sdp
+
     print(f"Proton:  scalar m_p = {m_p_s:.4e}  E_0 = {E_0_scalar:.6e}  MeV/cat")
     print(f"         JM     m_p = {m_p_JM:.4e}  E_0 = {E_0_JM:.6e}  MeV/cat")
+    print(f"         JM+SDP m_p = {m_p_JM_sdp:.4e}  E_0 = {E_0_JM_sdp:.6e}  "
+          f"MeV/cat  (Δ = {abs(m_p_JM-m_p_JM_sdp):.2e})")
     print()
 
     results = []
@@ -225,18 +264,29 @@ if __name__ == "__main__":
         err_s = abs(B_s - B_AME) / Mtot * 100
         dt_s = time.time() - t0
 
-        # JM path
+        # JM path (uniform 2·σ₀ gluon)
         t0 = time.time()
         res_JM = binding_JM(Z, N, m_pp=mpp, m_pn=mpn, m_nn=mnn,
                                E_0=E_0_JM)
         err_JM = abs(res_JM['B_MeV'] - B_AME) / Mtot * 100
         dt_JM = time.time() - t0
 
-        print(f"  scalar: m_a={m_a_s:.4e}  m_f={m_f_s:.4e}  "
+        # JM + SDP-optimal per-nucleon gluon
+        t0 = time.time()
+        res_JM_sdp = binding_JM(Z, N, m_pp=mpp, m_pn=mpn, m_nn=mnn,
+                                   E_0=E_0_JM_sdp, sdp_gluon=True)
+        err_JM_sdp = abs(res_JM_sdp['B_MeV'] - B_AME) / Mtot * 100
+        dt_JM_sdp = time.time() - t0
+
+        print(f"  scalar:  m_a={m_a_s:.4e}  m_f={m_f_s:.4e}  "
               f"B={B_s:+8.3f}  err={err_s:.4f}%  ({dt_s:.1f}s)")
-        print(f"  JM:     m_a={res_JM['m_atom']:.4e}  "
+        print(f"  JM:      m_a={res_JM['m_atom']:.4e}  "
               f"m_f={res_JM['m_free']:.4e}  "
               f"B={res_JM['B_MeV']:+8.3f}  err={err_JM:.4f}%  ({dt_JM:.1f}s)")
+        print(f"  JM+SDP:  m_a={res_JM_sdp['m_atom']:.4e}  "
+              f"m_f={res_JM_sdp['m_free']:.4e}  "
+              f"B={res_JM_sdp['B_MeV']:+8.3f}  err={err_JM_sdp:.4f}%  "
+              f"({dt_JM_sdp:.1f}s)")
         print()
 
         results.append({
@@ -247,10 +297,15 @@ if __name__ == "__main__":
             'err_scalar_pct': err_s,
             'B_JM_MeV': res_JM['B_MeV'],
             'err_JM_pct': err_JM,
+            'B_JM_SDP_MeV': res_JM_sdp['B_MeV'],
+            'err_JM_SDP_pct': err_JM_sdp,
             'V_JM_atom': res_JM['V_atom'],
             'V_JM_free': res_JM['V_free'],
+            'V_JM_SDP_atom': res_JM_sdp['V_atom'],
+            'V_JM_SDP_free': res_JM_sdp['V_free'],
             'scalar_time_sec': dt_s,
             'JM_time_sec': dt_JM,
+            'JM_SDP_time_sec': dt_JM_sdp,
         })
 
     w = {
