@@ -196,7 +196,14 @@ def main():
         "gram_matrix_at_q0": gram_matrix(Q0).tolist(),
         "scan": scan,
         "conclusions": {
-            "stable_regime": f"q > q⋆ ≈ {Q_STAR:.6f}",
+            # LP threshold: q > q⋆ ensures P_{7,7}(q) > 0 (Toffoli
+            # diagonal positive). Full physical stability additionally
+            # requires Φ(q) > 0 — Φ has a zero at q_Φ ≈ 0.4656 and
+            # becomes negative on (q_Φ, 1), so the joint-positivity
+            # regime splits as (q⋆, q_Φ) ∪ (1, ∞).
+            "stable_regime_lp": f"q > q⋆ ≈ {Q_STAR:.6f}  (P_77 > 0)",
+            "stable_regime_physical": "q ∈ (q⋆, q_Φ) ∪ (1, ∞)  (P_77 > 0 and Φ > 0)",
+            "stable_regime": f"q > q⋆ ≈ {Q_STAR:.6f}",  # back-compat alias
             "physical_q0_stable": toffoli_diagonal(Q0) > 0 and q_and_amplitude(Q0) > 0,
             "classical_limit_q_equals_1": {
                 "P_77": toffoli_diagonal(1.0),
