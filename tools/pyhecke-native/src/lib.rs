@@ -5,7 +5,7 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::{atom, gram, nf};
+use hecke_engine::{atom, gram, nf, sdp_decision};
 use pyo3::prelude::*;
 use pyo3::types::PyList;
 
@@ -173,6 +173,46 @@ fn atom_per_generator_volumes(
     Ok(list.into())
 }
 
+/// SDP decision over a discrete H_3(q) Hecke-word candidate set.
+///
+/// `candidates`: list of `(name, [(c, d, gen), ...])` pairs. Each
+/// candidate's braid word is applied to the identity NF vector
+/// `[1, 0, 0, 0, 0, 0]` and `tr_M` is computed at `q`. The argmin
+/// plus dual-price certificates (gaps `tr_M(c_k) − tr_M(c*)`) are
+/// returned as a dict. For real Hecke products Frobenius positivity
+/// is auto-satisfied.
+#[pyfunction]
+#[pyo3(signature = (candidates, q=None, h=None, label=""))]
+fn sdp_decide(
+    py: Python<'_>,
+    candidates: Vec<(String, Vec<(f64, f64, u8)>)>,
+    q: Option<f64>,
+    h: Option<f64>,
+    label: &str,
+) -> PyResult<PyObject> {
+    let q_val = q.unwrap_or(nf::Q_0);
+    let h_val = h.unwrap_or_else(|| nf::hecke_h(q_val));
+    let cands: Vec<sdp_decision::Candidate> = candidates;
+    let rep = sdp_decision::sdp_decide(&cands, q_val, h_val, label);
+    let d = pyo3::types::PyDict::new(py);
+    d.set_item("label", rep.label)?;
+    d.set_item("n_candidates", rep.n_candidates)?;
+    d.set_item("optimal_name", rep.optimal_name)?;
+    d.set_item("optimal_tr_m", rep.optimal_tr_m)?;
+    d.set_item("frobenius_auto_valid", rep.frobenius_auto_valid)?;
+    let tr_m_list = pyo3::types::PyList::empty(py);
+    for (n, t) in rep.tr_m_by_candidate {
+        tr_m_list.append((n, t))?;
+    }
+    d.set_item("tr_m_by_candidate", tr_m_list)?;
+    let gap_list = pyo3::types::PyList::empty(py);
+    for (n, g) in rep.dual_gaps {
+        gap_list.append((n, g))?;
+    }
+    d.set_item("dual_gaps", gap_list)?;
+    Ok(d.into())
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -187,6 +227,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
+    m.add_function(wrap_pyfunction!(sdp_decide, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
