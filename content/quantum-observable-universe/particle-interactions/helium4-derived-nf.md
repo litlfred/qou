@@ -7,12 +7,17 @@ The doubly magic alpha particle.
 Twelve $\gamma\gamma$ pair productions produce four nucleons
 (2 protons, 2 neutrons), each confined by $\mathcal{B}_3$
 ([confinement selection](#prop:confinement-operator-selection))
-and stabilised by LP-derived gluon crossings: $2\sigma_0$
-per proton, $L_+L_-$ per neutron
-([integer LP gluon](#prop:mass-endomorphism-tower)).
-The four nucleons ($11$ crossings each for protons, $13$ for
-neutrons) are linked by inter-nucleon typed crossings
-($p$-$p$: $+\sigma$, $p$-$n$: mixed, $n$-$n$: $-H_A$ shifted).
+and stabilised by **atom-level-SDP-derived** gluon crossings:
+**$1\sigma_0$ per nucleon** (both protons and neutrons)
+([integer LP gluon](#prop:mass-endomorphism-tower),
+[gluon count per atom-level SDP](#rem:gluon-count-per-atom-level)).
+The four nucleons ($10$ crossings each) are linked by
+inter-nucleon typed crossings ($p$-$p$: $+\sigma$,
+$p$-$n$: mixed, $n$-$n$: $-H_A$ shifted).  The earlier
+$2\sigma_0$ (proton) / $L_+L_-$ (neutron) values are
+H_3-local ILP optima; the numerical NF coefficients below
+reflect that earlier convention and should be regenerated
+under the $1\sigma_0$ atom-level SDP for publication.
 
 ## Nucleus NF ($\alpha$ particle)
 
