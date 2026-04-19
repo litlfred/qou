@@ -1,0 +1,148 @@
+{
+  "computation": "full-tower-with-electrons",
+  "description": "Per-generator 3-channel brane tower with Z proton-electron crossings applied inside each proton generator's V\u0302^\u03bb accumulation. Extends full-tower-mass.py to include electrons at the per-generator level (instead of the failed H_{A+Z} strand-extension in h_a_tower).",
+  "timestamp": "2026-04-19T20:42:40.607677+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "q_inv": 0.9009182735643011,
+    "M_E_MEV": 0.51099895,
+    "w_sym": 0.16546138476810043,
+    "w_std": 0.6690772304637992,
+    "w_alt": 0.16546138476810043,
+    "pe_coeffs": "(1, -h/2)  [Coulomb-channel, open under SDP]"
+  },
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME_MeV": 2.224566,
+      "B_AME_uncertainty_keV": 5e-05,
+      "B_no_e_MeV": 4.924398973004851,
+      "B_with_e_MeV": 9.082906966097006,
+      "gap_with_e_MeV": 6.858340966097007,
+      "err_mass_pct": 0.3654772265450214
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME_MeV": 8.481798,
+      "B_AME_uncertainty_keV": 1e-05,
+      "B_no_e_MeV": 17.24226480220313,
+      "B_with_e_MeV": 13.053407788051423,
+      "gap_with_e_MeV": 4.571609788051424,
+      "err_mass_pct": 0.16241238461240176
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME_MeV": 7.718058,
+      "B_AME_uncertainty_keV": 3e-05,
+      "B_no_e_MeV": 15.246091257101051,
+      "B_with_e_MeV": 15.304654787112028,
+      "gap_with_e_MeV": 7.586596787112028,
+      "err_mass_pct": 0.26952371974267686
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME_MeV": 28.295674,
+      "B_AME_uncertainty_keV": 2e-05,
+      "B_no_e_MeV": 19.412197989444564,
+      "B_with_e_MeV": 19.39186736309125,
+      "gap_with_e_MeV": -8.903806636908751,
+      "err_mass_pct": 0.23723948484311455
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "B_AME_MeV": 31.994571,
+      "B_AME_uncertainty_keV": 5e-05,
+      "B_no_e_MeV": 34.74071743069951,
+      "B_with_e_MeV": 45.49316704054015,
+      "gap_with_e_MeV": 13.49859604054015,
+      "err_mass_pct": 0.23977759186639816
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "B_AME_MeV": 39.244529,
+      "B_AME_uncertainty_keV": 7e-05,
+      "B_no_e_MeV": 42.238555731152054,
+      "B_with_e_MeV": 46.79485046182937,
+      "gap_with_e_MeV": 7.55032146182937,
+      "err_mass_pct": 0.11495785355311786
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "B_AME_MeV": 58.16498,
+      "B_AME_uncertainty_keV": 0.00056,
+      "B_no_e_MeV": 56.38667550539445,
+      "B_with_e_MeV": 56.386919707017306,
+      "gap_with_e_MeV": -1.778060292982694,
+      "err_mass_pct": 0.02105596828807157
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "B_AME_MeV": 92.161728,
+      "B_AME_uncertainty_keV": 0.00044,
+      "B_no_e_MeV": 82.8886980519466,
+      "B_with_e_MeV": 84.23852935351917,
+      "gap_with_e_MeV": -7.923198646480827,
+      "err_mass_pct": 0.07037048466472433
+    },
+    {
+      "atom": "14N",
+      "Z": 7,
+      "N": 7,
+      "A": 14,
+      "B_AME_MeV": 104.658605,
+      "B_AME_uncertainty_keV": 0.00048,
+      "B_no_e_MeV": 100.17039255918763,
+      "B_with_e_MeV": 117.7127699974192,
+      "gap_with_e_MeV": 13.054164997419207,
+      "err_mass_pct": 0.09937846988490702
+    },
+    {
+      "atom": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "B_AME_MeV": 127.619334,
+      "B_AME_uncertainty_keV": 0.00083,
+      "B_no_e_MeV": 117.11825481955289,
+      "B_with_e_MeV": 118.86165268490016,
+      "gap_with_e_MeV": -8.75768131509983,
+      "err_mass_pct": 0.058336503934225827
+    },
+    {
+      "atom": "20Ne",
+      "Z": 10,
+      "N": 10,
+      "A": 20,
+      "B_AME_MeV": 160.644859,
+      "B_AME_uncertainty_keV": 0.00058,
+      "B_no_e_MeV": 150.86408347386995,
+      "B_with_e_MeV": 155.43282795993284,
+      "gap_with_e_MeV": -5.21203104006716,
+      "err_mass_pct": 0.02777462740051477
+    }
+  ]
+}
