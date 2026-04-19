@@ -158,7 +158,50 @@ asserts max abs diff < 1e-12.
 **Expected impact:** 50–100× speedup for ⁴⁰Ca witnesses; end-to-end
 heavy-atom pipeline goes from minutes to seconds.
 
-### B3. Audit all module-level side effects
+### B3. Audit all module-level side effects — DONE (documented)
+
+**Status:** audit complete. 26 scripts have top-level
+`WitnessBuilder(...)` + `.save()` NOT guarded by `__main__`:
+
+```
+atom_mass_atomic_braid.py
+atom_mass_combined.py
+ch-bond-writhe-lp.py
+co-molecular-binding.py
+co2-molecular-binding.py
+confined_knot_binding.py
+correlated_channel_mass.py
+electron-shell-ilp.py
+frobenius-bond-all.py
+h2-integer-lp.py
+h2-molecular-binding.py
+hadron_knot_table.py
+hh-trefoil-corrected.py
+hh-vertex-volume.py
+intermediate_knot_detection.py
+jet_knot_invariants.py
+molecular-frobenius-lp.py
+molecular-ilp.py
+molecular-integer-lp.py
+molecular-trefoil-scan.py
+molecular-valence-channel.py
+molecular-vertex-volume.py
+nf_transition_lifting.py
+nuclear_ilp.py
+unified-mass-molecular.py
+universal-ilp.py
+```
+
+**Gotcha:** None of these are imported by any other script. So the
+tax only fires when they are run directly as `python <name>.py` —
+which is exactly what you want. Adding `if __name__ == "__main__":`
+guards is hygiene, not performance.
+
+**Action:** skipped in this session. A follow-up cosmetic pass can
+wrap each in `__main__` for consistency with `mass_endomorphism.py`
+(M3d), but no end-to-end speedup is available here.
+
+### B3-historical. Previously audited
 
 **Goal:** Grep every `folio-assistant/computations/*.py` for
 top-level `WitnessBuilder`, `print`, heavy function calls; guard each
