@@ -20,7 +20,7 @@
 use std::process::Command;
 
 use clap::{Parser, Subcommand, ValueEnum};
-use hecke_engine::gram;
+use hecke_engine::{gram, nf};
 
 #[derive(Parser)]
 #[command(name = "hecke", about = "Unified H_n(q) engine CLI", version)]
@@ -109,7 +109,7 @@ fn main() {
     let cli = Cli::parse();
     match cli.command {
         Cmd::Gram { q, pretty } => {
-            let q = q.unwrap_or(gram::Q_0);
+            let q = q.unwrap_or(nf::Q_0);
             let cert = gram::certificate_at(q);
             let out = if pretty {
                 serde_json::to_string_pretty(&cert)

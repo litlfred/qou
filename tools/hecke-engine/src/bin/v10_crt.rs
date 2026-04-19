@@ -15,13 +15,50 @@ use std::time::Instant;
 
 // Prime for modular arithmetic. For A > 12, use multiple primes
 // via the --prime flag and reconstruct via CRT externally.
+//
+// P ≈ 2^30, so inputs a, b < P satisfy a + b < 2P < 2^31 and
+// a * b < 2^60, both well inside u64. The previous implementation
+// cast to u128 and used `%` — u128 division is an expensive
+// library call. Direct u64 arithmetic with a single conditional
+// subtraction (for add) and Barrett reduction (for multiply)
+// avoids u128 entirely.
 const P: u64 = 1_000_000_007;
+
+// Barrett constant: floor(2^64 / P). Lets us replace `x % P` (slow
+// hardware div) with a multiply-high + subtract.
+const BARRETT_M: u64 = ((1u128 << 64) / P as u128) as u64;
 
 type C = u64; // coefficient type
 
-fn ma(a: C, b: C) -> C { ((a as u128 + b as u128) % P as u128) as C }
-fn ms(a: C, b: C) -> C { if a >= b { a - b } else { (P as C) - b + a } }
-fn mm(a: C, b: C) -> C { ((a as u128 * b as u128) % P as u128) as C }
+/// Single-step Barrett reduction of `x < 2^62` modulo `P`. Returns
+/// `x mod P`.
+#[inline(always)]
+fn barrett_reduce(x: u64) -> u64 {
+    // q = floor(x * M / 2^64) — high word of the 128-bit product
+    let q = ((x as u128 * BARRETT_M as u128) >> 64) as u64;
+    let r = x.wrapping_sub(q.wrapping_mul(P));
+    // At most one correction needed for x < 2^62.
+    if r >= P { r - P } else { r }
+}
+
+#[inline(always)]
+fn ma(a: C, b: C) -> C {
+    // a, b < P < 2^30 ⇒ a + b < 2^31, always fits in u64 with no overflow
+    let s = a + b;
+    if s >= P { s - P } else { s }
+}
+
+#[inline(always)]
+fn ms(a: C, b: C) -> C {
+    if a >= b { a - b } else { P - b + a }
+}
+
+#[inline(always)]
+fn mm(a: C, b: C) -> C {
+    // a * b < 2^60, stays within u64; Barrett avoids the u64 hw div.
+    barrett_reduce(a * b)
+}
+
 fn mi(a: C) -> C {
     let mut r: C = 1; let mut base = a; let mut e = P - 2;
     while e > 0 { if e & 1 == 1 { r = mm(r, base); } e >>= 1; base = mm(base, base); }
@@ -83,8 +120,11 @@ impl LP {
     // We evaluate P_even(q) and P_odd(q) separately mod P,
     // then combine as floats.
     fn eval_split(&self) -> (u64, u64) {
-        // q_mod = 111 * inv(100) mod P
+        // q_mod = 111 * inv(100) mod P. qi_mod hoisted out of the loop —
+        // previously recomputed via `mi(q_mod)` (~30 ops) on every
+        // negative-power term. For A=60 there can be 10K+ such terms.
         let q_mod = mm(111, mi(100));
+        let qi_mod = mi(q_mod);
         let mut even_val: u64 = 0;  // Σ c_{2k} q^k mod P
         let mut odd_val: u64 = 0;   // Σ c_{2k+1} q^k mod P
         for (&power, &coeff) in &self.t {
@@ -102,7 +142,6 @@ impl LP {
                 // Negative power: t^{-n} = q^{-n/2} or q^{-(n-1)/2} / t
                 let abs_p = (-power) as u64;
                 let k = abs_p / 2;
-                let qi_mod = mi(q_mod);
                 let qk = {
                     let mut r = 1u64; let mut b = qi_mod; let mut e = k;
                     while e > 0 { if e & 1 == 1 { r = mm(r, b); } e >>= 1; b = mm(b, b); }
@@ -195,22 +234,31 @@ fn cx(ti: u8, tj: u8) -> (LP, LP, bool) {
 type Tree = BTreeMap<W, LP>;
 
 fn mul_reduce(tree: &mut Tree, gen: u8, c: &LP, d: &LP, h: &LP) {
-    let old: Vec<(W, LP)> = tree.iter().map(|(w,l)| (*w, l.clone())).collect();
-    tree.clear();
-    let mut pending: Vec<(W, LP)> = Vec::new();
+    // Move the tree out (avoids cloning every LP = BTreeMap<i32,u64>).
+    let old = std::mem::take(tree);
+    let mut pending: Vec<(W, LP)> = Vec::with_capacity(old.len());
 
     for (w, coeff) in old {
         if !d.is_zero() {
-            let e = tree.entry(w).or_insert(LP::zero());
-            *e = e.add(&coeff.mul(d));
+            let dv = coeff.mul(d);
+            tree.entry(w)
+                .and_modify(|e| *e = e.add(&dv))
+                .or_insert(dv);
         }
-        if !c.is_zero() { pending.push((w.push(gen), coeff.mul(c))); }
+        if !c.is_zero() {
+            pending.push((w.push(gen), coeff.mul(c)));
+        }
     }
 
+    // Reused across iterations to avoid per-iteration Vec/BTreeMap allocs
+    // in the hot reduction loop.
+    let mut next: Vec<(W, LP)> = Vec::with_capacity(pending.len());
+    let mut cons: BTreeMap<W, LP> = BTreeMap::new();
+
     for _ in 0..500000 {
-        let mut next: Vec<(W, LP)> = Vec::new();
+        next.clear();
         let mut any = false;
-        for (w, co) in pending {
+        for (w, co) in pending.drain(..) {
             if co.is_zero() { continue; }
             let red = w.junction().or_else(|| w.find_red());
             if let Some((pos, rule)) = red {
@@ -235,26 +283,27 @@ fn mul_reduce(tree: &mut Tree, gen: u8, c: &LP, d: &LP, h: &LP) {
                     _ => {}
                 }
             } else {
-                let e = tree.entry(w).or_insert(LP::zero());
-                *e = e.add(&co);
+                tree.entry(w)
+                    .and_modify(|e| *e = e.add(&co))
+                    .or_insert(co);
             }
         }
         if !any { break; }
         // Consolidate
-        let mut cons: BTreeMap<W, LP> = BTreeMap::new();
-        for (w, c) in next {
-            if c.is_zero() { continue; }
-            let e = cons.entry(w).or_insert(LP::zero());
-            *e = e.add(&c);
+        cons.clear();
+        for (w, cv) in next.drain(..) {
+            if cv.is_zero() { continue; }
+            cons.entry(w)
+                .and_modify(|e| *e = e.add(&cv))
+                .or_insert(cv);
         }
-        pending = Vec::new();
-        for (w, c) in cons {
-            if c.is_zero() { continue; }
+        for (w, cv) in std::mem::take(&mut cons) {
+            if cv.is_zero() { continue; }
             if let Some(ex) = tree.remove(&w) {
-                let m = ex.add(&c);
+                let m = ex.add(&cv);
                 if !m.is_zero() && w.find_red().is_some() { pending.push((w, m)); }
                 else if !m.is_zero() { tree.insert(w, m); }
-            } else { pending.push((w, c)); }
+            } else { pending.push((w, cv)); }
         }
     }
     tree.retain(|_, c| !c.is_zero());

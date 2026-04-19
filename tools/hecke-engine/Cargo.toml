@@ -50,12 +50,26 @@ num-traits = "0.2"
 num-integer = "0.1"
 rayon = "1.10"
 clap = { version = "4", features = ["derive"] }
+smallvec = "1.13"
 
 [build-dependencies]
 
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "gram_bench"
+harness = false
+
 [profile.release]
 opt-level = 3
-lto = true
+lto = "fat"
+codegen-units = 1
+# Note: `panic = "abort"` was tried but reverted per review on PR #387
+# (Copilot): the crate exposes a library (`hecke_engine`) that may be
+# consumed via FFI or linked into other Rust code where the default
+# unwind panic is preferable. The LTO + codegen-units=1 settings
+# deliver the bulk of the perf win on their own.
 
 # Modular port of v9 — u64 mod p, identical NF
 [[bin]]
