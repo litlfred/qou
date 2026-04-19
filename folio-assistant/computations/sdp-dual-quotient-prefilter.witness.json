@@ -1,7 +1,7 @@
 {
   "computation": "sdp-dual-quotient-prefilter",
   "description": "Character pre-filter stage of the SDP-dual-quotient reduction (docs/sdp-dual-quotient-reduction.md).  Drops Wedderburn blocks \u03bb \u22a2 3A with |\u03c7_\u03bb(W)| < 1e-12 from the atom Markov-trace sum.  Reports |ACTIVE| vs total and the total dropped contribution (which should be ~\u03b5).",
-  "timestamp": "2026-04-19T12:08:02.829759+00:00",
+  "timestamp": "2026-04-19T14:47:10.057978+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "chi_eps": 1e-12
@@ -14,73 +14,72 @@
       "A": 2,
       "path": "atom",
       "eps": 0.001,
-      "trM": 5.6571392829831216e-05,
-      "trM_full": -0.0009376680544941633,
+      "trM": -0.007493224121823204,
+      "trM_full": -0.007493224121823204,
       "n_total": 11,
-      "n_active": 10,
-      "n_dropped": 1,
+      "n_active": 11,
+      "n_dropped": 0,
       "active": [
+        {
+          "shape": "(3, 2, 1)",
+          "dim": 16,
+          "contribution": -0.04729719815247733
+        },
         {
           "shape": "(4, 2)",
           "dim": 9,
-          "contribution": 0.05302670200729627
+          "contribution": -0.04101205857063947
         },
         {
           "shape": "(2, 2, 1, 1)",
           "dim": 9,
-          "contribution": -0.050343630099351215
-        },
-        {
-          "shape": "(3, 1, 1, 1)",
-          "dim": 10,
-          "contribution": -0.04304065742339447
-        },
-        {
-          "shape": "(4, 1, 1)",
-          "dim": 10,
-          "contribution": 0.03985994037276124
-        },
-        {
-          "shape": "(5, 1)",
-          "dim": 5,
-          "contribution": 0.028694527534833047
+          "contribution": 0.03522140891474584
         },
         {
           "shape": "(3, 3)",
           "dim": 5,
-          "contribution": 0.023835033484603772
+          "contribution": -0.02287308007579084
         },
         {
-          "shape": "(2, 2, 2)",
-          "dim": 5,
-          "contribution": -0.02366028599367594
+          "shape": "(3, 1, 1, 1)",
+          "dim": 10,
+          "contribution": 0.021108140940852643
         },
         {
           "shape": "(2, 1, 1, 1, 1)",
           "dim": 5,
-          "contribution": -0.023317204585731856
+          "contribution": 0.01914642197386567
         },
         {
-          "shape": "(3, 2, 1)",
-          "dim": 16,
-          "contribution": -0.006507062974304619
+          "shape": "(5, 1)",
+          "dim": 5,
+          "contribution": 0.014031141706699696
+        },
+        {
+          "shape": "(2, 2, 2)",
+          "dim": 5,
+          "contribution": 0.013709177338369322
+        },
+        {
+          "shape": "(4, 1, 1)",
+          "dim": 10,
+          "contribution": -0.0019904367324400226
         },
         {
           "shape": "(6,)",
           "dim": 1,
-          "contribution": 0.0015092090697936024
-        }
-      ],
-      "top_dropped": [
+          "contribution": 0.0013596740296060376
+        },
         {
           "shape": "(1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": -0.0009942394473239945
+          "contribution": 0.0011035845053852522
         }
       ],
-      "dropped_contrib": -0.0009942394473239945,
-      "truncation_error": 0.0009942394473239945,
-      "time_sec": 0.5611231327056885
+      "top_dropped": [],
+      "dropped_contrib": 0,
+      "truncation_error": 0.0,
+      "time_sec": 0.6817121505737305
     },
     {
       "atom": "D",
@@ -89,72 +88,72 @@
       "A": 2,
       "path": "atom",
       "eps": 0.0001,
-      "trM": -0.0009376680544941633,
-      "trM_full": -0.0009376680544941633,
+      "trM": -0.007493224121823204,
+      "trM_full": -0.007493224121823204,
       "n_total": 11,
       "n_active": 11,
       "n_dropped": 0,
       "active": [
         {
+          "shape": "(3, 2, 1)",
+          "dim": 16,
+          "contribution": -0.04729719815247733
+        },
+        {
           "shape": "(4, 2)",
           "dim": 9,
-          "contribution": 0.05302670200729627
+          "contribution": -0.04101205857063947
         },
         {
           "shape": "(2, 2, 1, 1)",
           "dim": 9,
-          "contribution": -0.050343630099351215
-        },
-        {
-          "shape": "(3, 1, 1, 1)",
-          "dim": 10,
-          "contribution": -0.04304065742339447
-        },
-        {
-          "shape": "(4, 1, 1)",
-          "dim": 10,
-          "contribution": 0.03985994037276124
-        },
-        {
-          "shape": "(5, 1)",
-          "dim": 5,
-          "contribution": 0.028694527534833047
+          "contribution": 0.03522140891474584
         },
         {
           "shape": "(3, 3)",
           "dim": 5,
-          "contribution": 0.023835033484603772
+          "contribution": -0.02287308007579084
         },
         {
-          "shape": "(2, 2, 2)",
-          "dim": 5,
-          "contribution": -0.02366028599367594
+          "shape": "(3, 1, 1, 1)",
+          "dim": 10,
+          "contribution": 0.021108140940852643
         },
         {
           "shape": "(2, 1, 1, 1, 1)",
           "dim": 5,
-          "contribution": -0.023317204585731856
+          "contribution": 0.01914642197386567
         },
         {
-          "shape": "(3, 2, 1)",
-          "dim": 16,
-          "contribution": -0.006507062974304619
+          "shape": "(5, 1)",
+          "dim": 5,
+          "contribution": 0.014031141706699696
+        },
+        {
+          "shape": "(2, 2, 2)",
+          "dim": 5,
+          "contribution": 0.013709177338369322
+        },
+        {
+          "shape": "(4, 1, 1)",
+          "dim": 10,
+          "contribution": -0.0019904367324400226
         },
         {
           "shape": "(6,)",
           "dim": 1,
-          "contribution": 0.0015092090697936024
+          "contribution": 0.0013596740296060376
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": -0.0009942394473239945
+          "contribution": 0.0011035845053852522
         }
       ],
       "top_dropped": [],
       "dropped_contrib": 0,
       "truncation_error": 0.0,
-      "time_sec": 0.0009102821350097656
+      "time_sec": 0.0009546279907226562
     },
     {
       "atom": "D",
@@ -163,72 +162,72 @@
       "A": 2,
       "path": "atom",
       "eps": 1e-06,
-      "trM": -0.0009376680544941633,
-      "trM_full": -0.0009376680544941633,
+      "trM": -0.007493224121823204,
+      "trM_full": -0.007493224121823204,
       "n_total": 11,
       "n_active": 11,
       "n_dropped": 0,
       "active": [
         {
+          "shape": "(3, 2, 1)",
+          "dim": 16,
+          "contribution": -0.04729719815247733
+        },
+        {
           "shape": "(4, 2)",
           "dim": 9,
-          "contribution": 0.05302670200729627
+          "contribution": -0.04101205857063947
         },
         {
           "shape": "(2, 2, 1, 1)",
           "dim": 9,
-          "contribution": -0.050343630099351215
-        },
-        {
-          "shape": "(3, 1, 1, 1)",
-          "dim": 10,
-          "contribution": -0.04304065742339447
-        },
-        {
-          "shape": "(4, 1, 1)",
-          "dim": 10,
-          "contribution": 0.03985994037276124
-        },
-        {
-          "shape": "(5, 1)",
-          "dim": 5,
-          "contribution": 0.028694527534833047
+          "contribution": 0.03522140891474584
         },
         {
           "shape": "(3, 3)",
           "dim": 5,
-          "contribution": 0.023835033484603772
+          "contribution": -0.02287308007579084
         },
         {
-          "shape": "(2, 2, 2)",
-          "dim": 5,
-          "contribution": -0.02366028599367594
+          "shape": "(3, 1, 1, 1)",
+          "dim": 10,
+          "contribution": 0.021108140940852643
         },
         {
           "shape": "(2, 1, 1, 1, 1)",
           "dim": 5,
-          "contribution": -0.023317204585731856
+          "contribution": 0.01914642197386567
         },
         {
-          "shape": "(3, 2, 1)",
-          "dim": 16,
-          "contribution": -0.006507062974304619
+          "shape": "(5, 1)",
+          "dim": 5,
+          "contribution": 0.014031141706699696
+        },
+        {
+          "shape": "(2, 2, 2)",
+          "dim": 5,
+          "contribution": 0.013709177338369322
+        },
+        {
+          "shape": "(4, 1, 1)",
+          "dim": 10,
+          "contribution": -0.0019904367324400226
         },
         {
           "shape": "(6,)",
           "dim": 1,
-          "contribution": 0.0015092090697936024
+          "contribution": 0.0013596740296060376
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": -0.0009942394473239945
+          "contribution": 0.0011035845053852522
         }
       ],
       "top_dropped": [],
       "dropped_contrib": 0,
       "truncation_error": 0.0,
-      "time_sec": 0.0011818408966064453
+      "time_sec": 0.001177072525024414
     },
     {
       "atom": "D",
@@ -237,73 +236,72 @@
       "A": 2,
       "path": "free",
       "eps": 0.001,
-      "trM": 1.4363783580881424,
-      "trM_full": 1.4373672098413999,
+      "trM": -0.5928789945902023,
+      "trM_full": -0.5928789945902023,
       "n_total": 11,
-      "n_active": 10,
-      "n_dropped": 1,
+      "n_active": 11,
+      "n_dropped": 0,
       "active": [
         {
           "shape": "(3, 2, 1)",
           "dim": 16,
-          "contribution": 0.5377133758142302
-        },
-        {
-          "shape": "(4, 1, 1)",
-          "dim": 10,
-          "contribution": 0.19855630577613465
-        },
-        {
-          "shape": "(3, 1, 1, 1)",
-          "dim": 10,
-          "contribution": 0.18365684504860996
-        },
-        {
-          "shape": "(4, 2)",
-          "dim": 9,
-          "contribution": 0.17092758883659073
+          "contribution": -0.24499589134749342
         },
         {
           "shape": "(2, 2, 1, 1)",
           "dim": 9,
-          "contribution": 0.15201012584378215
+          "contribution": -0.11159819031521996
         },
         {
-          "shape": "(3, 3)",
-          "dim": 5,
-          "contribution": 0.056357156598199065
+          "shape": "(3, 1, 1, 1)",
+          "dim": 10,
+          "contribution": -0.10689481169233594
         },
         {
           "shape": "(2, 2, 2)",
           "dim": 5,
-          "contribution": 0.05331611203587957
+          "contribution": -0.03570937335602532
         },
         {
-          "shape": "(5, 1)",
-          "dim": 5,
-          "contribution": 0.046133001196909135
+          "shape": "(4, 1, 1)",
+          "dim": 10,
+          "contribution": -0.035626095631304866
         },
         {
           "shape": "(2, 1, 1, 1, 1)",
           "dim": 5,
-          "contribution": 0.03620681613610787
+          "contribution": -0.03175804463407669
+        },
+        {
+          "shape": "(3, 3)",
+          "dim": 5,
+          "contribution": -0.021163119273116933
+        },
+        {
+          "shape": "(4, 2)",
+          "dim": 9,
+          "contribution": -0.021110130157521178
+        },
+        {
+          "shape": "(5, 1)",
+          "dim": 5,
+          "contribution": 0.015721960018750588
         },
         {
           "shape": "(6,)",
           "dim": 1,
-          "contribution": 0.0015010308016991394
-        }
-      ],
-      "top_dropped": [
+          "contribution": 0.0013523060784336282
+        },
         {
           "shape": "(1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 0.00098885175325758
+          "contribution": -0.0010976042802921379
         }
       ],
-      "dropped_contrib": 0.00098885175325758,
-      "truncation_error": 0.0009888517532574692,
-      "time_sec": 0.00091552734375
+      "top_dropped": [],
+      "dropped_contrib": 0,
+      "truncation_error": 0.0,
+      "time_sec": 0.0008034706115722656
     },
     {
       "atom": "D",
@@ -312,8 +310,8 @@
       "A": 2,
       "path": "free",
       "eps": 0.0001,
-      "trM": 1.4373672098413999,
-      "trM_full": 1.4373672098413999,
+      "trM": -0.5928789945902023,
+      "trM_full": -0.5928789945902023,
       "n_total": 11,
       "n_active": 11,
       "n_dropped": 0,
@@ -321,63 +319,63 @@
         {
           "shape": "(3, 2, 1)",
           "dim": 16,
-          "contribution": 0.5377133758142302
-        },
-        {
-          "shape": "(4, 1, 1)",
-          "dim": 10,
-          "contribution": 0.19855630577613465
-        },
-        {
-          "shape": "(3, 1, 1, 1)",
-          "dim": 10,
-          "contribution": 0.18365684504860996
-        },
-        {
-          "shape": "(4, 2)",
-          "dim": 9,
-          "contribution": 0.17092758883659073
+          "contribution": -0.24499589134749342
         },
         {
           "shape": "(2, 2, 1, 1)",
           "dim": 9,
-          "contribution": 0.15201012584378215
+          "contribution": -0.11159819031521996
         },
         {
-          "shape": "(3, 3)",
-          "dim": 5,
-          "contribution": 0.056357156598199065
+          "shape": "(3, 1, 1, 1)",
+          "dim": 10,
+          "contribution": -0.10689481169233594
         },
         {
           "shape": "(2, 2, 2)",
           "dim": 5,
-          "contribution": 0.05331611203587957
+          "contribution": -0.03570937335602532
         },
         {
-          "shape": "(5, 1)",
-          "dim": 5,
-          "contribution": 0.046133001196909135
+          "shape": "(4, 1, 1)",
+          "dim": 10,
+          "contribution": -0.035626095631304866
         },
         {
           "shape": "(2, 1, 1, 1, 1)",
           "dim": 5,
-          "contribution": 0.03620681613610787
+          "contribution": -0.03175804463407669
+        },
+        {
+          "shape": "(3, 3)",
+          "dim": 5,
+          "contribution": -0.021163119273116933
+        },
+        {
+          "shape": "(4, 2)",
+          "dim": 9,
+          "contribution": -0.021110130157521178
+        },
+        {
+          "shape": "(5, 1)",
+          "dim": 5,
+          "contribution": 0.015721960018750588
         },
         {
           "shape": "(6,)",
           "dim": 1,
-          "contribution": 0.0015010308016991394
+          "contribution": 0.0013523060784336282
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 0.00098885175325758
+          "contribution": -0.0010976042802921379
         }
       ],
       "top_dropped": [],
       "dropped_contrib": 0,
       "truncation_error": 0.0,
-      "time_sec": 0.0010738372802734375
+      "time_sec": 0.0008473396301269531
     },
     {
       "atom": "D",
@@ -386,8 +384,8 @@
       "A": 2,
       "path": "free",
       "eps": 1e-06,
-      "trM": 1.4373672098413999,
-      "trM_full": 1.4373672098413999,
+      "trM": -0.5928789945902023,
+      "trM_full": -0.5928789945902023,
       "n_total": 11,
       "n_active": 11,
       "n_dropped": 0,
@@ -395,63 +393,63 @@
         {
           "shape": "(3, 2, 1)",
           "dim": 16,
-          "contribution": 0.5377133758142302
-        },
-        {
-          "shape": "(4, 1, 1)",
-          "dim": 10,
-          "contribution": 0.19855630577613465
-        },
-        {
-          "shape": "(3, 1, 1, 1)",
-          "dim": 10,
-          "contribution": 0.18365684504860996
-        },
-        {
-          "shape": "(4, 2)",
-          "dim": 9,
-          "contribution": 0.17092758883659073
+          "contribution": -0.24499589134749342
         },
         {
           "shape": "(2, 2, 1, 1)",
           "dim": 9,
-          "contribution": 0.15201012584378215
+          "contribution": -0.11159819031521996
         },
         {
-          "shape": "(3, 3)",
-          "dim": 5,
-          "contribution": 0.056357156598199065
+          "shape": "(3, 1, 1, 1)",
+          "dim": 10,
+          "contribution": -0.10689481169233594
         },
         {
           "shape": "(2, 2, 2)",
           "dim": 5,
-          "contribution": 0.05331611203587957
+          "contribution": -0.03570937335602532
         },
         {
-          "shape": "(5, 1)",
-          "dim": 5,
-          "contribution": 0.046133001196909135
+          "shape": "(4, 1, 1)",
+          "dim": 10,
+          "contribution": -0.035626095631304866
         },
         {
           "shape": "(2, 1, 1, 1, 1)",
           "dim": 5,
-          "contribution": 0.03620681613610787
+          "contribution": -0.03175804463407669
+        },
+        {
+          "shape": "(3, 3)",
+          "dim": 5,
+          "contribution": -0.021163119273116933
+        },
+        {
+          "shape": "(4, 2)",
+          "dim": 9,
+          "contribution": -0.021110130157521178
+        },
+        {
+          "shape": "(5, 1)",
+          "dim": 5,
+          "contribution": 0.015721960018750588
         },
         {
           "shape": "(6,)",
           "dim": 1,
-          "contribution": 0.0015010308016991394
+          "contribution": 0.0013523060784336282
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 0.00098885175325758
+          "contribution": -0.0010976042802921379
         }
       ],
       "top_dropped": [],
       "dropped_contrib": 0,
       "truncation_error": 0.0,
-      "time_sec": 0.0010612010955810547
+      "time_sec": 0.0009300708770751953
     },
     {
       "atom": "T",
@@ -460,133 +458,108 @@
       "A": 3,
       "path": "atom",
       "eps": 0.001,
-      "trM": -0.0031477069704885703,
-      "trM_full": 0.000164326312038916,
+      "trM": 0.00402248900151895,
+      "trM_full": 0.0010219304726249237,
       "n_total": 30,
-      "n_active": 18,
-      "n_dropped": 12,
+      "n_active": 13,
+      "n_dropped": 17,
       "active": [
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": -0.013191276326450539
-        },
-        {
-          "shape": "(3, 2, 2, 1, 1)",
-          "dim": 162,
-          "contribution": 0.010049274212683174
-        },
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": -0.007972196491220683
+          "contribution": 0.008950678280973894
         },
         {
           "shape": "(4, 2, 1, 1, 1)",
           "dim": 189,
-          "contribution": -0.007742284654281993
+          "contribution": 0.006459822519466945
         },
         {
-          "shape": "(3, 3, 2, 1)",
-          "dim": 168,
-          "contribution": 0.006114065119377933
+          "shape": "(3, 2, 2, 1, 1)",
+          "dim": 162,
+          "contribution": -0.0047939785937958
         },
         {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": -0.005113703508437424
+          "contribution": 0.003043560622615709
         },
         {
-          "shape": "(3, 2, 1, 1, 1, 1)",
-          "dim": 105,
-          "contribution": 0.004234761222751131
-        },
-        {
-          "shape": "(4, 3, 2)",
+          "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.0033688778546825107
+          "contribution": -0.0028127122573790844
         },
         {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.0031910131232983615
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": -0.0030421855579004175
-        },
-        {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": -0.002517516741793144
-        },
-        {
-          "shape": "(3, 2, 2, 2)",
-          "dim": 84,
-          "contribution": 0.0024035636577233147
-        },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1)",
-          "dim": 48,
-          "contribution": 0.0023883432412567427
-        },
-        {
-          "shape": "(2, 2, 2, 2, 1)",
-          "dim": 42,
-          "contribution": 0.00183367098493369
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.0017111363330960788
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0013461115956688945
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.001250161398191409
-        },
-        {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.0012327007572701773
-        }
-      ],
-      "top_dropped": [
-        {
-          "shape": "(2, 2, 1, 1, 1, 1, 1)",
-          "dim": 27,
-          "contribution": 0.0007835677548442796
-        },
-        {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.0006076611888492547
-        },
-        {
-          "shape": "(3, 1, 1, 1, 1, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0005928105715832346
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.0005849327290011486
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": 0.0022744730833515903
         },
         {
           "shape": "(6, 2, 1)",
           "dim": 105,
-          "contribution": 0.00045278563264260425
+          "contribution": -0.002138054971862655
+        },
+        {
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": -0.002093043073141428
+        },
+        {
+          "shape": "(3, 2, 1, 1, 1, 1)",
+          "dim": 105,
+          "contribution": -0.00196535875179542
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1)",
+          "dim": 48,
+          "contribution": -0.0017961592787324595
+        },
+        {
+          "shape": "(3, 3, 1, 1, 1)",
+          "dim": 120,
+          "contribution": 0.0014313306203440673
+        },
+        {
+          "shape": "(2, 2, 2, 2, 1)",
+          "dim": 42,
+          "contribution": -0.0012971225089139795
+        },
+        {
+          "shape": "(5, 2, 2)",
+          "dim": 120,
+          "contribution": -0.0012409466896124283
         }
       ],
-      "dropped_contrib": 0.003312033282527487,
-      "truncation_error": 0.0033120332825274865,
-      "time_sec": 0.3504183292388916
+      "top_dropped": [
+        {
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": -0.0009948856780924332
+        },
+        {
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": -0.0009523946015732612
+        },
+        {
+          "shape": "(2, 2, 1, 1, 1, 1, 1)",
+          "dim": 27,
+          "contribution": -0.000631748575402411
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0005146348491031147
+        },
+        {
+          "shape": "(3, 1, 1, 1, 1, 1, 1)",
+          "dim": 28,
+          "contribution": -0.00039127369111113434
+        }
+      ],
+      "dropped_contrib": -0.003000558528894026,
+      "truncation_error": 0.003000558528894026,
+      "time_sec": 0.3336009979248047
     },
     {
       "atom": "T",
@@ -595,168 +568,163 @@
       "A": 3,
       "path": "atom",
       "eps": 0.0001,
-      "trM": -1.5093390853755935e-05,
-      "trM_full": 0.000164326312038916,
+      "trM": 0.0010807850105070103,
+      "trM_full": 0.0010219304726249237,
       "n_total": 30,
-      "n_active": 26,
-      "n_dropped": 4,
+      "n_active": 24,
+      "n_dropped": 6,
       "active": [
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": -0.013191276326450539
-        },
-        {
-          "shape": "(3, 2, 2, 1, 1)",
-          "dim": 162,
-          "contribution": 0.010049274212683174
-        },
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": -0.007972196491220683
+          "contribution": 0.008950678280973894
         },
         {
           "shape": "(4, 2, 1, 1, 1)",
           "dim": 189,
-          "contribution": -0.007742284654281993
+          "contribution": 0.006459822519466945
         },
         {
-          "shape": "(3, 3, 2, 1)",
-          "dim": 168,
-          "contribution": 0.006114065119377933
+          "shape": "(3, 2, 2, 1, 1)",
+          "dim": 162,
+          "contribution": -0.0047939785937958
         },
         {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": -0.005113703508437424
+          "contribution": 0.003043560622615709
         },
         {
-          "shape": "(3, 2, 1, 1, 1, 1)",
-          "dim": 105,
-          "contribution": 0.004234761222751131
-        },
-        {
-          "shape": "(4, 3, 2)",
+          "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.0033688778546825107
+          "contribution": -0.0028127122573790844
         },
         {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.0031910131232983615
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": -0.0030421855579004175
-        },
-        {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": -0.002517516741793144
-        },
-        {
-          "shape": "(3, 2, 2, 2)",
-          "dim": 84,
-          "contribution": 0.0024035636577233147
-        },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1)",
-          "dim": 48,
-          "contribution": 0.0023883432412567427
-        },
-        {
-          "shape": "(2, 2, 2, 2, 1)",
-          "dim": 42,
-          "contribution": 0.00183367098493369
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.0017111363330960788
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0013461115956688945
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.001250161398191409
-        },
-        {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.0012327007572701773
-        },
-        {
-          "shape": "(2, 2, 1, 1, 1, 1, 1)",
-          "dim": 27,
-          "contribution": 0.0007835677548442796
-        },
-        {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.0006076611888492547
-        },
-        {
-          "shape": "(3, 1, 1, 1, 1, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0005928105715832346
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.0005849327290011486
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": 0.0022744730833515903
         },
         {
           "shape": "(6, 2, 1)",
           "dim": 105,
-          "contribution": 0.00045278563264260425
+          "contribution": -0.002138054971862655
         },
         {
-          "shape": "(4, 1, 1, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0003040334441680133
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": -0.002093043073141428
         },
         {
-          "shape": "(7, 1, 1)",
-          "dim": 28,
-          "contribution": 0.00030162095844980097
+          "shape": "(3, 2, 1, 1, 1, 1)",
+          "dim": 105,
+          "contribution": -0.00196535875179542
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1)",
+          "dim": 48,
+          "contribution": -0.0017961592787324595
         },
         {
           "shape": "(3, 3, 1, 1, 1)",
           "dim": 120,
-          "contribution": 0.00011326818843250486
+          "contribution": 0.0014313306203440673
+        },
+        {
+          "shape": "(2, 2, 2, 2, 1)",
+          "dim": 42,
+          "contribution": -0.0012971225089139795
+        },
+        {
+          "shape": "(5, 2, 2)",
+          "dim": 120,
+          "contribution": -0.0012409466896124283
+        },
+        {
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": -0.0009948856780924332
+        },
+        {
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": -0.0009523946015732612
+        },
+        {
+          "shape": "(2, 2, 1, 1, 1, 1, 1)",
+          "dim": 27,
+          "contribution": -0.000631748575402411
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0005146348491031147
+        },
+        {
+          "shape": "(3, 1, 1, 1, 1, 1, 1)",
+          "dim": 28,
+          "contribution": -0.00039127369111113434
+        },
+        {
+          "shape": "(4, 4, 1)",
+          "dim": 84,
+          "contribution": 0.0003726025495693502
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": 0.00034219658696412234
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": -0.00025621235806762494
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": -0.0002499929438509308
+        },
+        {
+          "shape": "(5, 3, 1)",
+          "dim": 162,
+          "contribution": 0.0001868213327799412
+        },
+        {
+          "shape": "(4, 1, 1, 1, 1, 1)",
+          "dim": 56,
+          "contribution": 0.00014781823687555677
         }
       ],
       "top_dropped": [
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 8,
-          "contribution": 9.023425448957251e-05
+          "contribution": -8.05382246684616e-05
         },
         {
           "shape": "(8, 1)",
           "dim": 8,
-          "contribution": 8.566296288730092e-05
+          "contribution": 4.922764983729005e-05
+        },
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": -1.7799782187764154e-05
+        },
+        {
+          "shape": "(7, 1, 1)",
+          "dim": 28,
+          "contribution": -9.74418086315126e-06
         },
         {
           "shape": "(9,)",
           "dim": 1,
-          "contribution": 1.944348109408503e-06
-        },
-        {
-          "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 1,
-          "contribution": 1.5781374063900093e-06
+          "contribution": 1.751698741936322e-06
         }
       ],
-      "dropped_contrib": 0.00017941970289267196,
-      "truncation_error": 0.00017941970289267196,
-      "time_sec": 0.2917921543121338
+      "dropped_contrib": -5.8854537882086936e-05,
+      "truncation_error": 5.885453788208664e-05,
+      "time_sec": 0.2966654300689697
     },
     {
       "atom": "T",
@@ -765,517 +733,8 @@
       "A": 3,
       "path": "atom",
       "eps": 1e-06,
-      "trM": 0.000164326312038916,
-      "trM_full": 0.000164326312038916,
-      "n_total": 30,
-      "n_active": 30,
-      "n_dropped": 0,
-      "active": [
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": -0.013191276326450539
-        },
-        {
-          "shape": "(3, 2, 2, 1, 1)",
-          "dim": 162,
-          "contribution": 0.010049274212683174
-        },
-        {
-          "shape": "(4, 3, 1, 1)",
-          "dim": 216,
-          "contribution": -0.007972196491220683
-        },
-        {
-          "shape": "(4, 2, 1, 1, 1)",
-          "dim": 189,
-          "contribution": -0.007742284654281993
-        },
-        {
-          "shape": "(3, 3, 2, 1)",
-          "dim": 168,
-          "contribution": 0.006114065119377933
-        },
-        {
-          "shape": "(4, 2, 2, 1)",
-          "dim": 216,
-          "contribution": -0.005113703508437424
-        },
-        {
-          "shape": "(3, 2, 1, 1, 1, 1)",
-          "dim": 105,
-          "contribution": 0.004234761222751131
-        },
-        {
-          "shape": "(4, 3, 2)",
-          "dim": 168,
-          "contribution": 0.0033688778546825107
-        },
-        {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.0031910131232983615
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": -0.0030421855579004175
-        },
-        {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": -0.002517516741793144
-        },
-        {
-          "shape": "(3, 2, 2, 2)",
-          "dim": 84,
-          "contribution": 0.0024035636577233147
-        },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1)",
-          "dim": 48,
-          "contribution": 0.0023883432412567427
-        },
-        {
-          "shape": "(2, 2, 2, 2, 1)",
-          "dim": 42,
-          "contribution": 0.00183367098493369
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.0017111363330960788
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0013461115956688945
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.001250161398191409
-        },
-        {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.0012327007572701773
-        },
-        {
-          "shape": "(2, 2, 1, 1, 1, 1, 1)",
-          "dim": 27,
-          "contribution": 0.0007835677548442796
-        },
-        {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.0006076611888492547
-        },
-        {
-          "shape": "(3, 1, 1, 1, 1, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0005928105715832346
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.0005849327290011486
-        },
-        {
-          "shape": "(6, 2, 1)",
-          "dim": 105,
-          "contribution": 0.00045278563264260425
-        },
-        {
-          "shape": "(4, 1, 1, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0003040334441680133
-        },
-        {
-          "shape": "(7, 1, 1)",
-          "dim": 28,
-          "contribution": 0.00030162095844980097
-        },
-        {
-          "shape": "(3, 3, 1, 1, 1)",
-          "dim": 120,
-          "contribution": 0.00011326818843250486
-        },
-        {
-          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 8,
-          "contribution": 9.023425448957251e-05
-        },
-        {
-          "shape": "(8, 1)",
-          "dim": 8,
-          "contribution": 8.566296288730092e-05
-        },
-        {
-          "shape": "(9,)",
-          "dim": 1,
-          "contribution": 1.944348109408503e-06
-        },
-        {
-          "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 1,
-          "contribution": 1.5781374063900093e-06
-        }
-      ],
-      "top_dropped": [],
-      "dropped_contrib": 0,
-      "truncation_error": 0.0,
-      "time_sec": 0.31099390983581543
-    },
-    {
-      "atom": "T",
-      "Z": 1,
-      "N": 2,
-      "A": 3,
-      "path": "free",
-      "eps": 0.001,
-      "trM": 1.9310634732653906,
-      "trM_full": 1.9314097679598774,
-      "n_total": 30,
-      "n_active": 26,
-      "n_dropped": 4,
-      "active": [
-        {
-          "shape": "(4, 3, 1, 1)",
-          "dim": 216,
-          "contribution": 0.2597913188281184
-        },
-        {
-          "shape": "(4, 2, 2, 1)",
-          "dim": 216,
-          "contribution": 0.2576998206078849
-        },
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": 0.18421830543296971
-        },
-        {
-          "shape": "(4, 2, 1, 1, 1)",
-          "dim": 189,
-          "contribution": 0.17669215005242284
-        },
-        {
-          "shape": "(4, 3, 2)",
-          "dim": 168,
-          "contribution": 0.16675304900675386
-        },
-        {
-          "shape": "(3, 3, 2, 1)",
-          "dim": 168,
-          "contribution": 0.16200852405452906
-        },
-        {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.14470584463574898
-        },
-        {
-          "shape": "(3, 2, 2, 1, 1)",
-          "dim": 162,
-          "contribution": 0.13382828954078033
-        },
-        {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": 0.07868345694947168
-        },
-        {
-          "shape": "(3, 3, 1, 1, 1)",
-          "dim": 120,
-          "contribution": 0.07393075845038197
-        },
-        {
-          "shape": "(6, 2, 1)",
-          "dim": 105,
-          "contribution": 0.053331084396279614
-        },
-        {
-          "shape": "(3, 2, 1, 1, 1, 1)",
-          "dim": 105,
-          "contribution": 0.04697877013659975
-        },
-        {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.04151233162938395
-        },
-        {
-          "shape": "(3, 2, 2, 2)",
-          "dim": 84,
-          "contribution": 0.03933088213713971
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": 0.02247270320322843
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": 0.014205848777718274
-        },
-        {
-          "shape": "(4, 1, 1, 1, 1, 1)",
-          "dim": 56,
-          "contribution": 0.01286844794039973
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.011497471734439615
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.01084626190161446
-        },
-        {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.009920999513010306
-        },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1)",
-          "dim": 48,
-          "contribution": 0.00988416608179121
-        },
-        {
-          "shape": "(2, 2, 2, 2, 1)",
-          "dim": 42,
-          "contribution": 0.008876427886294582
-        },
-        {
-          "shape": "(7, 1, 1)",
-          "dim": 28,
-          "contribution": 0.003107396279057168
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.002978527176801854
-        },
-        {
-          "shape": "(3, 1, 1, 1, 1, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0025429046891099053
-        },
-        {
-          "shape": "(2, 2, 1, 1, 1, 1, 1)",
-          "dim": 27,
-          "contribution": 0.0023977322234604278
-        }
-      ],
-      "top_dropped": [
-        {
-          "shape": "(8, 1)",
-          "dim": 8,
-          "contribution": 0.00019741749592837313
-        },
-        {
-          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 8,
-          "contribution": 0.00014531664041531511
-        },
-        {
-          "shape": "(9,)",
-          "dim": 1,
-          "contribution": 2.1464897746802497e-06
-        },
-        {
-          "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 1,
-          "contribution": 1.414068368643286e-06
-        }
-      ],
-      "dropped_contrib": 0.00034629469448701176,
-      "truncation_error": 0.00034629469448677064,
-      "time_sec": 0.33174896240234375
-    },
-    {
-      "atom": "T",
-      "Z": 1,
-      "N": 2,
-      "A": 3,
-      "path": "free",
-      "eps": 0.0001,
-      "trM": 1.9314062074017342,
-      "trM_full": 1.9314097679598774,
-      "n_total": 30,
-      "n_active": 28,
-      "n_dropped": 2,
-      "active": [
-        {
-          "shape": "(4, 3, 1, 1)",
-          "dim": 216,
-          "contribution": 0.2597913188281184
-        },
-        {
-          "shape": "(4, 2, 2, 1)",
-          "dim": 216,
-          "contribution": 0.2576998206078849
-        },
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": 0.18421830543296971
-        },
-        {
-          "shape": "(4, 2, 1, 1, 1)",
-          "dim": 189,
-          "contribution": 0.17669215005242284
-        },
-        {
-          "shape": "(4, 3, 2)",
-          "dim": 168,
-          "contribution": 0.16675304900675386
-        },
-        {
-          "shape": "(3, 3, 2, 1)",
-          "dim": 168,
-          "contribution": 0.16200852405452906
-        },
-        {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.14470584463574898
-        },
-        {
-          "shape": "(3, 2, 2, 1, 1)",
-          "dim": 162,
-          "contribution": 0.13382828954078033
-        },
-        {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": 0.07868345694947168
-        },
-        {
-          "shape": "(3, 3, 1, 1, 1)",
-          "dim": 120,
-          "contribution": 0.07393075845038197
-        },
-        {
-          "shape": "(6, 2, 1)",
-          "dim": 105,
-          "contribution": 0.053331084396279614
-        },
-        {
-          "shape": "(3, 2, 1, 1, 1, 1)",
-          "dim": 105,
-          "contribution": 0.04697877013659975
-        },
-        {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.04151233162938395
-        },
-        {
-          "shape": "(3, 2, 2, 2)",
-          "dim": 84,
-          "contribution": 0.03933088213713971
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": 0.02247270320322843
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": 0.014205848777718274
-        },
-        {
-          "shape": "(4, 1, 1, 1, 1, 1)",
-          "dim": 56,
-          "contribution": 0.01286844794039973
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.011497471734439615
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.01084626190161446
-        },
-        {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.009920999513010306
-        },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1)",
-          "dim": 48,
-          "contribution": 0.00988416608179121
-        },
-        {
-          "shape": "(2, 2, 2, 2, 1)",
-          "dim": 42,
-          "contribution": 0.008876427886294582
-        },
-        {
-          "shape": "(7, 1, 1)",
-          "dim": 28,
-          "contribution": 0.003107396279057168
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.002978527176801854
-        },
-        {
-          "shape": "(3, 1, 1, 1, 1, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0025429046891099053
-        },
-        {
-          "shape": "(2, 2, 1, 1, 1, 1, 1)",
-          "dim": 27,
-          "contribution": 0.0023977322234604278
-        },
-        {
-          "shape": "(8, 1)",
-          "dim": 8,
-          "contribution": 0.00019741749592837313
-        },
-        {
-          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 8,
-          "contribution": 0.00014531664041531511
-        }
-      ],
-      "top_dropped": [
-        {
-          "shape": "(9,)",
-          "dim": 1,
-          "contribution": 2.1464897746802497e-06
-        },
-        {
-          "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 1,
-          "contribution": 1.414068368643286e-06
-        }
-      ],
-      "dropped_contrib": 3.560558143323536e-06,
-      "truncation_error": 3.5605581432118782e-06,
-      "time_sec": 0.2901277542114258
-    },
-    {
-      "atom": "T",
-      "Z": 1,
-      "N": 2,
-      "A": 3,
-      "path": "free",
-      "eps": 1e-06,
-      "trM": 1.9314097679598774,
-      "trM_full": 1.9314097679598774,
+      "trM": 0.0010219304726249237,
+      "trM_full": 0.0010219304726249237,
       "n_total": 30,
       "n_active": 30,
       "n_dropped": 0,
@@ -1283,463 +742,967 @@
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": 0.2597913188281184
-        },
-        {
-          "shape": "(4, 2, 2, 1)",
-          "dim": 216,
-          "contribution": 0.2576998206078849
-        },
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": 0.18421830543296971
+          "contribution": 0.008950678280973894
         },
         {
           "shape": "(4, 2, 1, 1, 1)",
           "dim": 189,
-          "contribution": 0.17669215005242284
-        },
-        {
-          "shape": "(4, 3, 2)",
-          "dim": 168,
-          "contribution": 0.16675304900675386
-        },
-        {
-          "shape": "(3, 3, 2, 1)",
-          "dim": 168,
-          "contribution": 0.16200852405452906
-        },
-        {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.14470584463574898
+          "contribution": 0.006459822519466945
         },
         {
           "shape": "(3, 2, 2, 1, 1)",
           "dim": 162,
-          "contribution": 0.13382828954078033
+          "contribution": -0.0047939785937958
         },
         {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": 0.07868345694947168
+          "shape": "(4, 2, 2, 1)",
+          "dim": 216,
+          "contribution": 0.003043560622615709
         },
         {
-          "shape": "(3, 3, 1, 1, 1)",
-          "dim": 120,
-          "contribution": 0.07393075845038197
+          "shape": "(3, 3, 2, 1)",
+          "dim": 168,
+          "contribution": -0.0028127122573790844
+        },
+        {
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": 0.0022744730833515903
         },
         {
           "shape": "(6, 2, 1)",
           "dim": 105,
-          "contribution": 0.053331084396279614
+          "contribution": -0.002138054971862655
+        },
+        {
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": -0.002093043073141428
         },
         {
           "shape": "(3, 2, 1, 1, 1, 1)",
           "dim": 105,
-          "contribution": 0.04697877013659975
-        },
-        {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.04151233162938395
-        },
-        {
-          "shape": "(3, 2, 2, 2)",
-          "dim": 84,
-          "contribution": 0.03933088213713971
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": 0.02247270320322843
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": 0.014205848777718274
-        },
-        {
-          "shape": "(4, 1, 1, 1, 1, 1)",
-          "dim": 56,
-          "contribution": 0.01286844794039973
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.011497471734439615
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.01084626190161446
-        },
-        {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.009920999513010306
+          "contribution": -0.00196535875179542
         },
         {
           "shape": "(2, 2, 2, 1, 1, 1)",
           "dim": 48,
-          "contribution": 0.00988416608179121
+          "contribution": -0.0017961592787324595
+        },
+        {
+          "shape": "(3, 3, 1, 1, 1)",
+          "dim": 120,
+          "contribution": 0.0014313306203440673
         },
         {
           "shape": "(2, 2, 2, 2, 1)",
           "dim": 42,
-          "contribution": 0.008876427886294582
+          "contribution": -0.0012971225089139795
         },
         {
-          "shape": "(7, 1, 1)",
-          "dim": 28,
-          "contribution": 0.003107396279057168
+          "shape": "(5, 2, 2)",
+          "dim": 120,
+          "contribution": -0.0012409466896124283
         },
         {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.002978527176801854
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": -0.0009948856780924332
         },
         {
-          "shape": "(3, 1, 1, 1, 1, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0025429046891099053
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": -0.0009523946015732612
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1)",
           "dim": 27,
-          "contribution": 0.0023977322234604278
+          "contribution": -0.000631748575402411
         },
         {
-          "shape": "(8, 1)",
-          "dim": 8,
-          "contribution": 0.00019741749592837313
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0005146348491031147
+        },
+        {
+          "shape": "(3, 1, 1, 1, 1, 1, 1)",
+          "dim": 28,
+          "contribution": -0.00039127369111113434
+        },
+        {
+          "shape": "(4, 4, 1)",
+          "dim": 84,
+          "contribution": 0.0003726025495693502
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": 0.00034219658696412234
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": -0.00025621235806762494
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": -0.0002499929438509308
+        },
+        {
+          "shape": "(5, 3, 1)",
+          "dim": 162,
+          "contribution": 0.0001868213327799412
+        },
+        {
+          "shape": "(4, 1, 1, 1, 1, 1)",
+          "dim": 56,
+          "contribution": 0.00014781823687555677
         },
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 8,
-          "contribution": 0.00014531664041531511
+          "contribution": -8.05382246684616e-05
+        },
+        {
+          "shape": "(8, 1)",
+          "dim": 8,
+          "contribution": 4.922764983729005e-05
+        },
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": -1.7799782187764154e-05
+        },
+        {
+          "shape": "(7, 1, 1)",
+          "dim": 28,
+          "contribution": -9.74418086315126e-06
         },
         {
           "shape": "(9,)",
           "dim": 1,
-          "contribution": 2.1464897746802497e-06
+          "contribution": 1.751698741936322e-06
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 1.414068368643286e-06
+          "contribution": -1.7516987419362995e-06
         }
       ],
       "top_dropped": [],
       "dropped_contrib": 0,
       "truncation_error": 0.0,
-      "time_sec": 0.2751755714416504
+      "time_sec": 0.29297947883605957
     },
     {
-      "atom": "3He",
-      "Z": 2,
-      "N": 1,
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
       "A": 3,
-      "path": "atom",
+      "path": "free",
       "eps": 0.001,
-      "trM": -0.0009821164742573295,
-      "trM_full": -9.302595327218649e-05,
+      "trM": -0.798085737244471,
+      "trM_full": -0.7965705525692437,
       "n_total": 30,
-      "n_active": 18,
-      "n_dropped": 12,
+      "n_active": 23,
+      "n_dropped": 7,
       "active": [
-        {
-          "shape": "(4, 2, 1, 1, 1)",
-          "dim": 189,
-          "contribution": -0.011816463184411258
-        },
-        {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.010337690309605917
-        },
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": -0.00973371376315033
-        },
         {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": -0.008431155918044135
-        },
-        {
-          "shape": "(4, 3, 2)",
-          "dim": 168,
-          "contribution": 0.0062867608788841605
+          "contribution": -0.11596988802731485
         },
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": -0.00558455569561231
+          "contribution": -0.10596560696467146
         },
         {
-          "shape": "(6, 2, 1)",
-          "dim": 105,
-          "contribution": 0.004194958747921868
-        },
-        {
-          "shape": "(3, 2, 2, 1, 1)",
-          "dim": 162,
-          "contribution": 0.0033595097437325856
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": -0.0031190713552892366
+          "shape": "(4, 2, 1, 1, 1)",
+          "dim": 189,
+          "contribution": -0.08830453869779122
         },
         {
           "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.003083019848273757
+          "contribution": -0.08511028772677179
         },
         {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.0029157177163183575
+          "shape": "(3, 2, 2, 1, 1)",
+          "dim": 162,
+          "contribution": -0.08324588667766859
         },
         {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.0025276734585414134
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": -0.06241576153899372
         },
         {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.0020771522928567706
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": -0.052304616240430486
         },
         {
           "shape": "(3, 3, 1, 1, 1)",
           "dim": 120,
-          "contribution": -0.001894526079437992
+          "contribution": -0.04244215823690637
         },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1)",
-          "dim": 48,
-          "contribution": 0.001427139148468907
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.0012666516884182347
-        },
-        {
-          "shape": "(2, 2, 2, 2, 1)",
-          "dim": 42,
-          "contribution": 0.00109726171454578
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.0010238339741201804
-        }
-      ],
-      "top_dropped": [
         {
           "shape": "(3, 2, 1, 1, 1, 1)",
           "dim": 105,
-          "contribution": 0.000984534754407792
+          "contribution": -0.032240631278710054
         },
         {
-          "shape": "(4, 1, 1, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0009707107904822615
+          "shape": "(5, 3, 1)",
+          "dim": 162,
+          "contribution": -0.031215185722875228
         },
         {
-          "shape": "(7, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0007012067140155546
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0006650449121270976
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": -0.023227397978590407
         },
         {
           "shape": "(5, 2, 2)",
           "dim": 120,
-          "contribution": -0.0005997913845789699
+          "contribution": -0.01970853545352796
+        },
+        {
+          "shape": "(4, 4, 1)",
+          "dim": 84,
+          "contribution": -0.012792852238486876
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": -0.007930081282317564
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1)",
+          "dim": 48,
+          "contribution": -0.007622477308300298
+        },
+        {
+          "shape": "(4, 1, 1, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.007550595738081096
+        },
+        {
+          "shape": "(2, 2, 2, 2, 1)",
+          "dim": 42,
+          "contribution": -0.006459237769661303
+        },
+        {
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": -0.0050795520358630445
+        },
+        {
+          "shape": "(2, 2, 1, 1, 1, 1, 1)",
+          "dim": 27,
+          "contribution": -0.0020300096453423747
+        },
+        {
+          "shape": "(3, 1, 1, 1, 1, 1, 1)",
+          "dim": 28,
+          "contribution": -0.00199875918820022
+        },
+        {
+          "shape": "(6, 2, 1)",
+          "dim": 105,
+          "contribution": -0.0018555529471690464
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": -0.0014627295046149406
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0011533950421822017
         }
       ],
-      "dropped_contrib": 0.0008890905209851431,
-      "truncation_error": 0.000889090520985143,
-      "time_sec": 0.2712385654449463
+      "top_dropped": [
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": 0.000748111749541553
+        },
+        {
+          "shape": "(7, 1, 1)",
+          "dim": 28,
+          "contribution": 0.000701378191166147
+        },
+        {
+          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 8,
+          "contribution": -0.00013917258444127846
+        },
+        {
+          "shape": "(8, 1)",
+          "dim": 8,
+          "contribution": 0.00011004187680679417
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 9.44612159139988e-05
+        }
+      ],
+      "dropped_contrib": 0.0015151846752273987,
+      "truncation_error": 0.0015151846752272657,
+      "time_sec": 0.277911901473999
     },
     {
-      "atom": "3He",
-      "Z": 2,
-      "N": 1,
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
       "A": 3,
-      "path": "atom",
+      "path": "free",
       "eps": 0.0001,
-      "trM": -0.00015395000425891267,
-      "trM_full": -9.302595327218649e-05,
+      "trM": -0.7966653780113978,
+      "trM_full": -0.7965705525692437,
       "n_total": 30,
       "n_active": 27,
       "n_dropped": 3,
       "active": [
         {
-          "shape": "(4, 2, 1, 1, 1)",
-          "dim": 189,
-          "contribution": -0.011816463184411258
-        },
-        {
-          "shape": "(5, 3, 1)",
-          "dim": 162,
-          "contribution": 0.010337690309605917
-        },
-        {
-          "shape": "(5, 2, 1, 1)",
-          "dim": 189,
-          "contribution": -0.00973371376315033
-        },
-        {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": -0.008431155918044135
-        },
-        {
-          "shape": "(4, 3, 2)",
-          "dim": 168,
-          "contribution": 0.0062867608788841605
+          "contribution": -0.11596988802731485
         },
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": -0.00558455569561231
+          "contribution": -0.10596560696467146
         },
         {
-          "shape": "(6, 2, 1)",
-          "dim": 105,
-          "contribution": 0.004194958747921868
-        },
-        {
-          "shape": "(3, 2, 2, 1, 1)",
-          "dim": 162,
-          "contribution": 0.0033595097437325856
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": -0.0031190713552892366
+          "shape": "(4, 2, 1, 1, 1)",
+          "dim": 189,
+          "contribution": -0.08830453869779122
         },
         {
           "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.003083019848273757
+          "contribution": -0.08511028772677179
         },
         {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.0029157177163183575
+          "shape": "(3, 2, 2, 1, 1)",
+          "dim": 162,
+          "contribution": -0.08324588667766859
         },
         {
-          "shape": "(4, 4, 1)",
-          "dim": 84,
-          "contribution": 0.0025276734585414134
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": -0.06241576153899372
         },
         {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.0020771522928567706
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": -0.052304616240430486
         },
         {
           "shape": "(3, 3, 1, 1, 1)",
           "dim": 120,
-          "contribution": -0.001894526079437992
-        },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1)",
-          "dim": 48,
-          "contribution": 0.001427139148468907
-        },
-        {
-          "shape": "(3, 3, 3)",
-          "dim": 42,
-          "contribution": 0.0012666516884182347
-        },
-        {
-          "shape": "(2, 2, 2, 2, 1)",
-          "dim": 42,
-          "contribution": 0.00109726171454578
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.0010238339741201804
+          "contribution": -0.04244215823690637
         },
         {
           "shape": "(3, 2, 1, 1, 1, 1)",
           "dim": 105,
-          "contribution": 0.000984534754407792
+          "contribution": -0.032240631278710054
         },
         {
-          "shape": "(4, 1, 1, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0009707107904822615
-        },
-        {
-          "shape": "(7, 1, 1)",
-          "dim": 28,
-          "contribution": 0.0007012067140155546
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0006650449121270976
-        },
-        {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": -0.0005997913845789699
+          "shape": "(5, 3, 1)",
+          "dim": 162,
+          "contribution": -0.031215185722875228
         },
         {
           "shape": "(3, 2, 2, 2)",
           "dim": 84,
-          "contribution": 0.0004933687779017592
+          "contribution": -0.023227397978590407
+        },
+        {
+          "shape": "(5, 2, 2)",
+          "dim": 120,
+          "contribution": -0.01970853545352796
+        },
+        {
+          "shape": "(4, 4, 1)",
+          "dim": 84,
+          "contribution": -0.012792852238486876
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": -0.007930081282317564
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1)",
+          "dim": 48,
+          "contribution": -0.007622477308300298
+        },
+        {
+          "shape": "(4, 1, 1, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.007550595738081096
+        },
+        {
+          "shape": "(2, 2, 2, 2, 1)",
+          "dim": 42,
+          "contribution": -0.006459237769661303
+        },
+        {
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": -0.0050795520358630445
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1)",
           "dim": 27,
-          "contribution": 0.0004627509261041969
+          "contribution": -0.0020300096453423747
         },
         {
           "shape": "(3, 1, 1, 1, 1, 1, 1)",
           "dim": 28,
-          "contribution": 0.0002842729767318987
+          "contribution": -0.00199875918820022
+        },
+        {
+          "shape": "(6, 2, 1)",
+          "dim": 105,
+          "contribution": -0.0018555529471690464
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": -0.0014627295046149406
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0011533950421822017
+        },
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": 0.000748111749541553
+        },
+        {
+          "shape": "(7, 1, 1)",
+          "dim": 28,
+          "contribution": 0.000701378191166147
+        },
+        {
+          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 8,
+          "contribution": -0.00013917258444127846
         },
         {
           "shape": "(8, 1)",
           "dim": 8,
-          "contribution": 0.00013757940802554467
+          "contribution": 0.00011004187680679417
         }
       ],
       "top_dropped": [
         {
-          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 8,
-          "contribution": 5.6932973139047876e-05
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 9.44612159139988e-05
         },
         {
           "shape": "(9,)",
           "dim": 1,
-          "contribution": 2.9514296676252128e-06
+          "contribution": 1.933811862028357e-06
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 1.0396481800530916e-06
+          "contribution": -1.5695856218442657e-06
         }
       ],
-      "dropped_contrib": 6.092405098672618e-05,
-      "truncation_error": 6.092405098672618e-05,
-      "time_sec": 0.25723791122436523
+      "dropped_contrib": 9.482544215418288e-05,
+      "truncation_error": 9.48254421541117e-05,
+      "time_sec": 0.28031063079833984
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "path": "free",
+      "eps": 1e-06,
+      "trM": -0.7965705525692437,
+      "trM_full": -0.7965705525692437,
+      "n_total": 30,
+      "n_active": 30,
+      "n_dropped": 0,
+      "active": [
+        {
+          "shape": "(4, 2, 2, 1)",
+          "dim": 216,
+          "contribution": -0.11596988802731485
+        },
+        {
+          "shape": "(4, 3, 1, 1)",
+          "dim": 216,
+          "contribution": -0.10596560696467146
+        },
+        {
+          "shape": "(4, 2, 1, 1, 1)",
+          "dim": 189,
+          "contribution": -0.08830453869779122
+        },
+        {
+          "shape": "(3, 3, 2, 1)",
+          "dim": 168,
+          "contribution": -0.08511028772677179
+        },
+        {
+          "shape": "(3, 2, 2, 1, 1)",
+          "dim": 162,
+          "contribution": -0.08324588667766859
+        },
+        {
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": -0.06241576153899372
+        },
+        {
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": -0.052304616240430486
+        },
+        {
+          "shape": "(3, 3, 1, 1, 1)",
+          "dim": 120,
+          "contribution": -0.04244215823690637
+        },
+        {
+          "shape": "(3, 2, 1, 1, 1, 1)",
+          "dim": 105,
+          "contribution": -0.032240631278710054
+        },
+        {
+          "shape": "(5, 3, 1)",
+          "dim": 162,
+          "contribution": -0.031215185722875228
+        },
+        {
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": -0.023227397978590407
+        },
+        {
+          "shape": "(5, 2, 2)",
+          "dim": 120,
+          "contribution": -0.01970853545352796
+        },
+        {
+          "shape": "(4, 4, 1)",
+          "dim": 84,
+          "contribution": -0.012792852238486876
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": -0.007930081282317564
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1)",
+          "dim": 48,
+          "contribution": -0.007622477308300298
+        },
+        {
+          "shape": "(4, 1, 1, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.007550595738081096
+        },
+        {
+          "shape": "(2, 2, 2, 2, 1)",
+          "dim": 42,
+          "contribution": -0.006459237769661303
+        },
+        {
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": -0.0050795520358630445
+        },
+        {
+          "shape": "(2, 2, 1, 1, 1, 1, 1)",
+          "dim": 27,
+          "contribution": -0.0020300096453423747
+        },
+        {
+          "shape": "(3, 1, 1, 1, 1, 1, 1)",
+          "dim": 28,
+          "contribution": -0.00199875918820022
+        },
+        {
+          "shape": "(6, 2, 1)",
+          "dim": 105,
+          "contribution": -0.0018555529471690464
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": -0.0014627295046149406
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0011533950421822017
+        },
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": 0.000748111749541553
+        },
+        {
+          "shape": "(7, 1, 1)",
+          "dim": 28,
+          "contribution": 0.000701378191166147
+        },
+        {
+          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 8,
+          "contribution": -0.00013917258444127846
+        },
+        {
+          "shape": "(8, 1)",
+          "dim": 8,
+          "contribution": 0.00011004187680679417
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 9.44612159139988e-05
+        },
+        {
+          "shape": "(9,)",
+          "dim": 1,
+          "contribution": 1.933811862028357e-06
+        },
+        {
+          "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 1,
+          "contribution": -1.5695856218442657e-06
+        }
+      ],
+      "top_dropped": [],
+      "dropped_contrib": 0,
+      "truncation_error": 0.0,
+      "time_sec": 0.2763545513153076
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "path": "atom",
+      "eps": 0.001,
+      "trM": -0.002687766760865725,
+      "trM_full": -0.00010315724331230436,
+      "n_total": 30,
+      "n_active": 19,
+      "n_dropped": 11,
+      "active": [
+        {
+          "shape": "(4, 2, 1, 1, 1)",
+          "dim": 189,
+          "contribution": -0.013414337894579367
+        },
+        {
+          "shape": "(5, 3, 1)",
+          "dim": 162,
+          "contribution": 0.010857254622614363
+        },
+        {
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": -0.00983673192198138
+        },
+        {
+          "shape": "(4, 2, 2, 1)",
+          "dim": 216,
+          "contribution": -0.00911925075737844
+        },
+        {
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": 0.007214003445632679
+        },
+        {
+          "shape": "(4, 3, 1, 1)",
+          "dim": 216,
+          "contribution": -0.006861595190453479
+        },
+        {
+          "shape": "(6, 2, 1)",
+          "dim": 105,
+          "contribution": 0.004777424031872459
+        },
+        {
+          "shape": "(3, 2, 2, 1, 1)",
+          "dim": 162,
+          "contribution": 0.0035915918844145974
+        },
+        {
+          "shape": "(3, 3, 2, 1)",
+          "dim": 168,
+          "contribution": 0.0034692946475832487
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": -0.003191560517311646
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 0.002993767086901081
+        },
+        {
+          "shape": "(4, 4, 1)",
+          "dim": 84,
+          "contribution": 0.002662934245958612
+        },
+        {
+          "shape": "(3, 3, 1, 1, 1)",
+          "dim": 120,
+          "contribution": -0.0023449264634096056
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": 0.0021749847207985142
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1)",
+          "dim": 48,
+          "contribution": 0.0016514747573004192
+        },
+        {
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": 0.0014792349391260864
+        },
+        {
+          "shape": "(2, 2, 2, 2, 1)",
+          "dim": 42,
+          "contribution": 0.0012591706768610687
+        },
+        {
+          "shape": "(4, 1, 1, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0010714036304350406
+        },
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": 0.0010209045556201007
+        }
+      ],
+      "top_dropped": [
+        {
+          "shape": "(3, 2, 1, 1, 1, 1)",
+          "dim": 105,
+          "contribution": 0.0009859959047562113
+        },
+        {
+          "shape": "(7, 1, 1)",
+          "dim": 28,
+          "contribution": 0.0006905429536834153
+        },
+        {
+          "shape": "(2, 2, 1, 1, 1, 1, 1)",
+          "dim": 27,
+          "contribution": 0.0005402642398702051
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.000535976837395254
+        },
+        {
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": 0.0004891188620990215
+        }
+      ],
+      "dropped_contrib": 0.002584609517553421,
+      "truncation_error": 0.0025846095175534206,
+      "time_sec": 0.28583455085754395
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "path": "atom",
+      "eps": 0.0001,
+      "trM": -7.52965206314907e-05,
+      "trM_full": -0.00010315724331230436,
+      "n_total": 30,
+      "n_active": 26,
+      "n_dropped": 4,
+      "active": [
+        {
+          "shape": "(4, 2, 1, 1, 1)",
+          "dim": 189,
+          "contribution": -0.013414337894579367
+        },
+        {
+          "shape": "(5, 3, 1)",
+          "dim": 162,
+          "contribution": 0.010857254622614363
+        },
+        {
+          "shape": "(5, 2, 1, 1)",
+          "dim": 189,
+          "contribution": -0.00983673192198138
+        },
+        {
+          "shape": "(4, 2, 2, 1)",
+          "dim": 216,
+          "contribution": -0.00911925075737844
+        },
+        {
+          "shape": "(4, 3, 2)",
+          "dim": 168,
+          "contribution": 0.007214003445632679
+        },
+        {
+          "shape": "(4, 3, 1, 1)",
+          "dim": 216,
+          "contribution": -0.006861595190453479
+        },
+        {
+          "shape": "(6, 2, 1)",
+          "dim": 105,
+          "contribution": 0.004777424031872459
+        },
+        {
+          "shape": "(3, 2, 2, 1, 1)",
+          "dim": 162,
+          "contribution": 0.0035915918844145974
+        },
+        {
+          "shape": "(3, 3, 2, 1)",
+          "dim": 168,
+          "contribution": 0.0034692946475832487
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": -0.003191560517311646
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 0.002993767086901081
+        },
+        {
+          "shape": "(4, 4, 1)",
+          "dim": 84,
+          "contribution": 0.002662934245958612
+        },
+        {
+          "shape": "(3, 3, 1, 1, 1)",
+          "dim": 120,
+          "contribution": -0.0023449264634096056
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": 0.0021749847207985142
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1)",
+          "dim": 48,
+          "contribution": 0.0016514747573004192
+        },
+        {
+          "shape": "(3, 3, 3)",
+          "dim": 42,
+          "contribution": 0.0014792349391260864
+        },
+        {
+          "shape": "(2, 2, 2, 2, 1)",
+          "dim": 42,
+          "contribution": 0.0012591706768610687
+        },
+        {
+          "shape": "(4, 1, 1, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.0010714036304350406
+        },
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": 0.0010209045556201007
+        },
+        {
+          "shape": "(3, 2, 1, 1, 1, 1)",
+          "dim": 105,
+          "contribution": 0.0009859959047562113
+        },
+        {
+          "shape": "(7, 1, 1)",
+          "dim": 28,
+          "contribution": 0.0006905429536834153
+        },
+        {
+          "shape": "(2, 2, 1, 1, 1, 1, 1)",
+          "dim": 27,
+          "contribution": 0.0005402642398702051
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.000535976837395254
+        },
+        {
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": 0.0004891188620990215
+        },
+        {
+          "shape": "(3, 1, 1, 1, 1, 1, 1)",
+          "dim": 28,
+          "contribution": 0.00032098866222932484
+        },
+        {
+          "shape": "(8, 1)",
+          "dim": 8,
+          "contribution": 0.00012153645499131009
+        }
+      ],
+      "top_dropped": [
+        {
+          "shape": "(5, 2, 2)",
+          "dim": 120,
+          "contribution": -9.906049136560442e-05
+        },
+        {
+          "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 8,
+          "contribution": 6.752332864832491e-05
+        },
+        {
+          "shape": "(9,)",
+          "dim": 1,
+          "contribution": 2.3955389152128712e-06
+        },
+        {
+          "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 1,
+          "contribution": 1.2809011212529558e-06
+        }
+      ],
+      "dropped_contrib": -2.7860722680813678e-05,
+      "truncation_error": 2.7860722680813664e-05,
+      "time_sec": 0.282806396484375
     },
     {
       "atom": "3He",
@@ -1748,8 +1711,8 @@
       "A": 3,
       "path": "atom",
       "eps": 1e-06,
-      "trM": -9.302595327218649e-05,
-      "trM_full": -9.302595327218649e-05,
+      "trM": -0.00010315724331230436,
+      "trM_full": -0.00010315724331230436,
       "n_total": 30,
       "n_active": 30,
       "n_dropped": 0,
@@ -1757,158 +1720,158 @@
         {
           "shape": "(4, 2, 1, 1, 1)",
           "dim": 189,
-          "contribution": -0.011816463184411258
+          "contribution": -0.013414337894579367
         },
         {
           "shape": "(5, 3, 1)",
           "dim": 162,
-          "contribution": 0.010337690309605917
+          "contribution": 0.010857254622614363
         },
         {
           "shape": "(5, 2, 1, 1)",
           "dim": 189,
-          "contribution": -0.00973371376315033
+          "contribution": -0.00983673192198138
         },
         {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": -0.008431155918044135
+          "contribution": -0.00911925075737844
         },
         {
           "shape": "(4, 3, 2)",
           "dim": 168,
-          "contribution": 0.0062867608788841605
+          "contribution": 0.007214003445632679
         },
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": -0.00558455569561231
+          "contribution": -0.006861595190453479
         },
         {
           "shape": "(6, 2, 1)",
           "dim": 105,
-          "contribution": 0.004194958747921868
+          "contribution": 0.004777424031872459
         },
         {
           "shape": "(3, 2, 2, 1, 1)",
           "dim": 162,
-          "contribution": 0.0033595097437325856
-        },
-        {
-          "shape": "(5, 1, 1, 1, 1)",
-          "dim": 70,
-          "contribution": -0.0031190713552892366
+          "contribution": 0.0035915918844145974
         },
         {
           "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.003083019848273757
+          "contribution": 0.0034692946475832487
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1)",
+          "dim": 70,
+          "contribution": -0.003191560517311646
         },
         {
           "shape": "(6, 3)",
           "dim": 48,
-          "contribution": 0.0029157177163183575
+          "contribution": 0.002993767086901081
         },
         {
           "shape": "(4, 4, 1)",
           "dim": 84,
-          "contribution": 0.0025276734585414134
-        },
-        {
-          "shape": "(5, 4)",
-          "dim": 42,
-          "contribution": 0.0020771522928567706
+          "contribution": 0.002662934245958612
         },
         {
           "shape": "(3, 3, 1, 1, 1)",
           "dim": 120,
-          "contribution": -0.001894526079437992
+          "contribution": -0.0023449264634096056
+        },
+        {
+          "shape": "(5, 4)",
+          "dim": 42,
+          "contribution": 0.0021749847207985142
         },
         {
           "shape": "(2, 2, 2, 1, 1, 1)",
           "dim": 48,
-          "contribution": 0.001427139148468907
+          "contribution": 0.0016514747573004192
         },
         {
           "shape": "(3, 3, 3)",
           "dim": 42,
-          "contribution": 0.0012666516884182347
+          "contribution": 0.0014792349391260864
         },
         {
           "shape": "(2, 2, 2, 2, 1)",
           "dim": 42,
-          "contribution": 0.00109726171454578
-        },
-        {
-          "shape": "(7, 2)",
-          "dim": 27,
-          "contribution": 0.0010238339741201804
-        },
-        {
-          "shape": "(3, 2, 1, 1, 1, 1)",
-          "dim": 105,
-          "contribution": 0.000984534754407792
+          "contribution": 0.0012591706768610687
         },
         {
           "shape": "(4, 1, 1, 1, 1, 1)",
           "dim": 56,
-          "contribution": -0.0009707107904822615
+          "contribution": -0.0010714036304350406
+        },
+        {
+          "shape": "(7, 2)",
+          "dim": 27,
+          "contribution": 0.0010209045556201007
+        },
+        {
+          "shape": "(3, 2, 1, 1, 1, 1)",
+          "dim": 105,
+          "contribution": 0.0009859959047562113
         },
         {
           "shape": "(7, 1, 1)",
           "dim": 28,
-          "contribution": 0.0007012067140155546
-        },
-        {
-          "shape": "(6, 1, 1, 1)",
-          "dim": 56,
-          "contribution": -0.0006650449121270976
-        },
-        {
-          "shape": "(5, 2, 2)",
-          "dim": 120,
-          "contribution": -0.0005997913845789699
-        },
-        {
-          "shape": "(3, 2, 2, 2)",
-          "dim": 84,
-          "contribution": 0.0004933687779017592
+          "contribution": 0.0006905429536834153
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1)",
           "dim": 27,
-          "contribution": 0.0004627509261041969
+          "contribution": 0.0005402642398702051
+        },
+        {
+          "shape": "(6, 1, 1, 1)",
+          "dim": 56,
+          "contribution": -0.000535976837395254
+        },
+        {
+          "shape": "(3, 2, 2, 2)",
+          "dim": 84,
+          "contribution": 0.0004891188620990215
         },
         {
           "shape": "(3, 1, 1, 1, 1, 1, 1)",
           "dim": 28,
-          "contribution": 0.0002842729767318987
+          "contribution": 0.00032098866222932484
         },
         {
           "shape": "(8, 1)",
           "dim": 8,
-          "contribution": 0.00013757940802554467
+          "contribution": 0.00012153645499131009
+        },
+        {
+          "shape": "(5, 2, 2)",
+          "dim": 120,
+          "contribution": -9.906049136560442e-05
         },
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 8,
-          "contribution": 5.6932973139047876e-05
+          "contribution": 6.752332864832491e-05
         },
         {
           "shape": "(9,)",
           "dim": 1,
-          "contribution": 2.9514296676252128e-06
+          "contribution": 2.3955389152128712e-06
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 1.0396481800530916e-06
+          "contribution": 1.2809011212529558e-06
         }
       ],
       "top_dropped": [],
       "dropped_contrib": 0,
       "truncation_error": 0.0,
-      "time_sec": 0.24945688247680664
+      "time_sec": 0.28193092346191406
     },
     {
       "atom": "3He",
@@ -1917,8 +1880,8 @@
       "A": 3,
       "path": "free",
       "eps": 0.001,
-      "trM": 1.9487233280564638,
-      "trM_full": 1.9490827559568622,
+      "trM": 2.1167779413170305,
+      "trM_full": 2.117136379105449,
       "n_total": 30,
       "n_active": 26,
       "n_dropped": 4,
@@ -1926,159 +1889,159 @@
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": 0.26299244754032275
+          "contribution": 0.28550753706376436
         },
         {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": 0.2587445331053591
+          "contribution": 0.2833157656271285
         },
         {
           "shape": "(5, 2, 1, 1)",
           "dim": 189,
-          "contribution": 0.18945164944437676
+          "contribution": 0.20121327382657173
         },
         {
           "shape": "(4, 2, 1, 1, 1)",
           "dim": 189,
-          "contribution": 0.17428306989902534
+          "contribution": 0.1928821957556475
         },
         {
           "shape": "(4, 3, 2)",
           "dim": 168,
-          "contribution": 0.1706354726269829
+          "contribution": 0.18390580549615324
         },
         {
           "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.16106852623939347
+          "contribution": 0.17867126385191265
         },
         {
           "shape": "(5, 3, 1)",
           "dim": 162,
-          "contribution": 0.151684596134142
+          "contribution": 0.15858118082630276
         },
         {
           "shape": "(3, 2, 2, 1, 1)",
           "dim": 162,
-          "contribution": 0.12972964607096263
+          "contribution": 0.1466606151034367
         },
         {
           "shape": "(5, 2, 2)",
           "dim": 120,
-          "contribution": 0.08180184607464695
+          "contribution": 0.08621274624457223
         },
         {
           "shape": "(3, 3, 1, 1, 1)",
           "dim": 120,
-          "contribution": 0.07222753065771201
+          "contribution": 0.08093469857293008
         },
         {
           "shape": "(6, 2, 1)",
           "dim": 105,
-          "contribution": 0.05719368841936864
+          "contribution": 0.05779472557189817
         },
         {
           "shape": "(3, 2, 1, 1, 1, 1)",
           "dim": 105,
-          "contribution": 0.04437560325689812
+          "contribution": 0.050821022447579293
         },
         {
           "shape": "(4, 4, 1)",
           "dim": 84,
-          "contribution": 0.04302668181258643
+          "contribution": 0.045735717669190545
         },
         {
           "shape": "(3, 2, 2, 2)",
           "dim": 84,
-          "contribution": 0.03861617451509486
+          "contribution": 0.043373601055742894
         },
         {
           "shape": "(5, 1, 1, 1, 1)",
           "dim": 70,
-          "contribution": 0.022601175875131323
+          "contribution": 0.0243855043319983
         },
         {
           "shape": "(6, 1, 1, 1)",
           "dim": 56,
-          "contribution": 0.015007705597038252
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.012490593593468153
+          "contribution": 0.015349120735115643
         },
         {
           "shape": "(4, 1, 1, 1, 1, 1)",
           "dim": 56,
-          "contribution": 0.012310946229518439
+          "contribution": 0.013873592531875104
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 0.012478238695519601
         },
         {
           "shape": "(3, 3, 3)",
           "dim": 42,
-          "contribution": 0.010943451821771788
+          "contribution": 0.012001302839416047
         },
         {
           "shape": "(5, 4)",
           "dim": 42,
-          "contribution": 0.010580330815765829
+          "contribution": 0.010883008503988637
         },
         {
           "shape": "(2, 2, 2, 1, 1, 1)",
           "dim": 48,
-          "contribution": 0.009231347065343044
+          "contribution": 0.010721577976790755
         },
         {
           "shape": "(2, 2, 2, 2, 1)",
           "dim": 42,
-          "contribution": 0.008468390659112186
+          "contribution": 0.009751925706897242
         },
         {
           "shape": "(7, 1, 1)",
           "dim": 28,
-          "contribution": 0.0034504213061476692
+          "contribution": 0.00330705719265633
         },
         {
           "shape": "(7, 2)",
           "dim": 27,
-          "contribution": 0.003336644685135948
+          "contribution": 0.003173555173727576
         },
         {
           "shape": "(3, 1, 1, 1, 1, 1, 1)",
           "dim": 28,
-          "contribution": 0.0023091185688224746
+          "contribution": 0.0026958145452759793
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1)",
           "dim": 27,
-          "contribution": 0.0021617360423369513
+          "contribution": 0.0025470939709386522
         }
       ],
       "top_dropped": [
         {
           "shape": "(8, 1)",
           "dim": 8,
-          "contribution": 0.00023072722374098683
+          "contribution": 0.0002047379849944014
         },
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 8,
-          "contribution": 0.00012490835472795818
+          "contribution": 0.0001501392452808852
         },
         {
           "shape": "(9,)",
           "dim": 1,
-          "contribution": 2.6445880557454835e-06
+          "contribution": 2.1464897746802514e-06
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 1.1477338738626262e-06
+          "contribution": 1.4140683686432857e-06
         }
       ],
-      "dropped_contrib": 0.00035942790039855313,
-      "truncation_error": 0.00035942790039844574,
-      "time_sec": 0.24549031257629395
+      "dropped_contrib": 0.00035843778841861015,
+      "truncation_error": 0.00035843778841870844,
+      "time_sec": 0.27629613876342773
     },
     {
       "atom": "3He",
@@ -2087,8 +2050,8 @@
       "A": 3,
       "path": "free",
       "eps": 0.0001,
-      "trM": 1.9490789636349326,
-      "trM_full": 1.9490827559568622,
+      "trM": 2.1171328185473057,
+      "trM_full": 2.117136379105449,
       "n_total": 30,
       "n_active": 28,
       "n_dropped": 2,
@@ -2096,159 +2059,159 @@
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": 0.26299244754032275
+          "contribution": 0.28550753706376436
         },
         {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": 0.2587445331053591
+          "contribution": 0.2833157656271285
         },
         {
           "shape": "(5, 2, 1, 1)",
           "dim": 189,
-          "contribution": 0.18945164944437676
+          "contribution": 0.20121327382657173
         },
         {
           "shape": "(4, 2, 1, 1, 1)",
           "dim": 189,
-          "contribution": 0.17428306989902534
+          "contribution": 0.1928821957556475
         },
         {
           "shape": "(4, 3, 2)",
           "dim": 168,
-          "contribution": 0.1706354726269829
+          "contribution": 0.18390580549615324
         },
         {
           "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.16106852623939347
+          "contribution": 0.17867126385191265
         },
         {
           "shape": "(5, 3, 1)",
           "dim": 162,
-          "contribution": 0.151684596134142
+          "contribution": 0.15858118082630276
         },
         {
           "shape": "(3, 2, 2, 1, 1)",
           "dim": 162,
-          "contribution": 0.12972964607096263
+          "contribution": 0.1466606151034367
         },
         {
           "shape": "(5, 2, 2)",
           "dim": 120,
-          "contribution": 0.08180184607464695
+          "contribution": 0.08621274624457223
         },
         {
           "shape": "(3, 3, 1, 1, 1)",
           "dim": 120,
-          "contribution": 0.07222753065771201
+          "contribution": 0.08093469857293008
         },
         {
           "shape": "(6, 2, 1)",
           "dim": 105,
-          "contribution": 0.05719368841936864
+          "contribution": 0.05779472557189817
         },
         {
           "shape": "(3, 2, 1, 1, 1, 1)",
           "dim": 105,
-          "contribution": 0.04437560325689812
+          "contribution": 0.050821022447579293
         },
         {
           "shape": "(4, 4, 1)",
           "dim": 84,
-          "contribution": 0.04302668181258643
+          "contribution": 0.045735717669190545
         },
         {
           "shape": "(3, 2, 2, 2)",
           "dim": 84,
-          "contribution": 0.03861617451509486
+          "contribution": 0.043373601055742894
         },
         {
           "shape": "(5, 1, 1, 1, 1)",
           "dim": 70,
-          "contribution": 0.022601175875131323
+          "contribution": 0.0243855043319983
         },
         {
           "shape": "(6, 1, 1, 1)",
           "dim": 56,
-          "contribution": 0.015007705597038252
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.012490593593468153
+          "contribution": 0.015349120735115643
         },
         {
           "shape": "(4, 1, 1, 1, 1, 1)",
           "dim": 56,
-          "contribution": 0.012310946229518439
+          "contribution": 0.013873592531875104
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 0.012478238695519601
         },
         {
           "shape": "(3, 3, 3)",
           "dim": 42,
-          "contribution": 0.010943451821771788
+          "contribution": 0.012001302839416047
         },
         {
           "shape": "(5, 4)",
           "dim": 42,
-          "contribution": 0.010580330815765829
+          "contribution": 0.010883008503988637
         },
         {
           "shape": "(2, 2, 2, 1, 1, 1)",
           "dim": 48,
-          "contribution": 0.009231347065343044
+          "contribution": 0.010721577976790755
         },
         {
           "shape": "(2, 2, 2, 2, 1)",
           "dim": 42,
-          "contribution": 0.008468390659112186
+          "contribution": 0.009751925706897242
         },
         {
           "shape": "(7, 1, 1)",
           "dim": 28,
-          "contribution": 0.0034504213061476692
+          "contribution": 0.00330705719265633
         },
         {
           "shape": "(7, 2)",
           "dim": 27,
-          "contribution": 0.003336644685135948
+          "contribution": 0.003173555173727576
         },
         {
           "shape": "(3, 1, 1, 1, 1, 1, 1)",
           "dim": 28,
-          "contribution": 0.0023091185688224746
+          "contribution": 0.0026958145452759793
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1)",
           "dim": 27,
-          "contribution": 0.0021617360423369513
+          "contribution": 0.0025470939709386522
         },
         {
           "shape": "(8, 1)",
           "dim": 8,
-          "contribution": 0.00023072722374098683
+          "contribution": 0.0002047379849944014
         },
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 8,
-          "contribution": 0.00012490835472795818
+          "contribution": 0.0001501392452808852
         }
       ],
       "top_dropped": [
         {
           "shape": "(9,)",
           "dim": 1,
-          "contribution": 2.6445880557454835e-06
+          "contribution": 2.1464897746802514e-06
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 1.1477338738626262e-06
+          "contribution": 1.4140683686432857e-06
         }
       ],
-      "dropped_contrib": 3.79232192960811e-06,
-      "truncation_error": 3.7923219295965538e-06,
-      "time_sec": 0.22397422790527344
+      "dropped_contrib": 3.560558143323537e-06,
+      "truncation_error": 3.560558143433923e-06,
+      "time_sec": 0.28146791458129883
     },
     {
       "atom": "3He",
@@ -2257,8 +2220,8 @@
       "A": 3,
       "path": "free",
       "eps": 1e-06,
-      "trM": 1.9490827559568622,
-      "trM_full": 1.9490827559568622,
+      "trM": 2.117136379105449,
+      "trM_full": 2.117136379105449,
       "n_total": 30,
       "n_active": 30,
       "n_dropped": 0,
@@ -2266,158 +2229,158 @@
         {
           "shape": "(4, 3, 1, 1)",
           "dim": 216,
-          "contribution": 0.26299244754032275
+          "contribution": 0.28550753706376436
         },
         {
           "shape": "(4, 2, 2, 1)",
           "dim": 216,
-          "contribution": 0.2587445331053591
+          "contribution": 0.2833157656271285
         },
         {
           "shape": "(5, 2, 1, 1)",
           "dim": 189,
-          "contribution": 0.18945164944437676
+          "contribution": 0.20121327382657173
         },
         {
           "shape": "(4, 2, 1, 1, 1)",
           "dim": 189,
-          "contribution": 0.17428306989902534
+          "contribution": 0.1928821957556475
         },
         {
           "shape": "(4, 3, 2)",
           "dim": 168,
-          "contribution": 0.1706354726269829
+          "contribution": 0.18390580549615324
         },
         {
           "shape": "(3, 3, 2, 1)",
           "dim": 168,
-          "contribution": 0.16106852623939347
+          "contribution": 0.17867126385191265
         },
         {
           "shape": "(5, 3, 1)",
           "dim": 162,
-          "contribution": 0.151684596134142
+          "contribution": 0.15858118082630276
         },
         {
           "shape": "(3, 2, 2, 1, 1)",
           "dim": 162,
-          "contribution": 0.12972964607096263
+          "contribution": 0.1466606151034367
         },
         {
           "shape": "(5, 2, 2)",
           "dim": 120,
-          "contribution": 0.08180184607464695
+          "contribution": 0.08621274624457223
         },
         {
           "shape": "(3, 3, 1, 1, 1)",
           "dim": 120,
-          "contribution": 0.07222753065771201
+          "contribution": 0.08093469857293008
         },
         {
           "shape": "(6, 2, 1)",
           "dim": 105,
-          "contribution": 0.05719368841936864
+          "contribution": 0.05779472557189817
         },
         {
           "shape": "(3, 2, 1, 1, 1, 1)",
           "dim": 105,
-          "contribution": 0.04437560325689812
+          "contribution": 0.050821022447579293
         },
         {
           "shape": "(4, 4, 1)",
           "dim": 84,
-          "contribution": 0.04302668181258643
+          "contribution": 0.045735717669190545
         },
         {
           "shape": "(3, 2, 2, 2)",
           "dim": 84,
-          "contribution": 0.03861617451509486
+          "contribution": 0.043373601055742894
         },
         {
           "shape": "(5, 1, 1, 1, 1)",
           "dim": 70,
-          "contribution": 0.022601175875131323
+          "contribution": 0.0243855043319983
         },
         {
           "shape": "(6, 1, 1, 1)",
           "dim": 56,
-          "contribution": 0.015007705597038252
-        },
-        {
-          "shape": "(6, 3)",
-          "dim": 48,
-          "contribution": 0.012490593593468153
+          "contribution": 0.015349120735115643
         },
         {
           "shape": "(4, 1, 1, 1, 1, 1)",
           "dim": 56,
-          "contribution": 0.012310946229518439
+          "contribution": 0.013873592531875104
+        },
+        {
+          "shape": "(6, 3)",
+          "dim": 48,
+          "contribution": 0.012478238695519601
         },
         {
           "shape": "(3, 3, 3)",
           "dim": 42,
-          "contribution": 0.010943451821771788
+          "contribution": 0.012001302839416047
         },
         {
           "shape": "(5, 4)",
           "dim": 42,
-          "contribution": 0.010580330815765829
+          "contribution": 0.010883008503988637
         },
         {
           "shape": "(2, 2, 2, 1, 1, 1)",
           "dim": 48,
-          "contribution": 0.009231347065343044
+          "contribution": 0.010721577976790755
         },
         {
           "shape": "(2, 2, 2, 2, 1)",
           "dim": 42,
-          "contribution": 0.008468390659112186
+          "contribution": 0.009751925706897242
         },
         {
           "shape": "(7, 1, 1)",
           "dim": 28,
-          "contribution": 0.0034504213061476692
+          "contribution": 0.00330705719265633
         },
         {
           "shape": "(7, 2)",
           "dim": 27,
-          "contribution": 0.003336644685135948
+          "contribution": 0.003173555173727576
         },
         {
           "shape": "(3, 1, 1, 1, 1, 1, 1)",
           "dim": 28,
-          "contribution": 0.0023091185688224746
+          "contribution": 0.0026958145452759793
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1)",
           "dim": 27,
-          "contribution": 0.0021617360423369513
+          "contribution": 0.0025470939709386522
         },
         {
           "shape": "(8, 1)",
           "dim": 8,
-          "contribution": 0.00023072722374098683
+          "contribution": 0.0002047379849944014
         },
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 8,
-          "contribution": 0.00012490835472795818
+          "contribution": 0.0001501392452808852
         },
         {
           "shape": "(9,)",
           "dim": 1,
-          "contribution": 2.6445880557454835e-06
+          "contribution": 2.1464897746802514e-06
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 1.1477338738626262e-06
+          "contribution": 1.4140683686432857e-06
         }
       ],
       "top_dropped": [],
       "dropped_contrib": 0,
       "truncation_error": 0.0,
-      "time_sec": 0.21582484245300293
+      "time_sec": 0.26396822929382324
     },
     {
       "atom": "4He",
@@ -2426,68 +2389,73 @@
       "A": 4,
       "path": "atom",
       "eps": 0.001,
-      "trM": -0.00110374772821553,
-      "trM_full": 2.1497739609512213e-05,
+      "trM": -3.940728053564873e-05,
+      "trM_full": 2.3752771781403924e-05,
       "n_total": 77,
-      "n_active": 5,
-      "n_dropped": 72,
+      "n_active": 6,
+      "n_dropped": 71,
       "active": [
-        {
-          "shape": "(5, 2, 2, 1, 1, 1)",
-          "dim": 3696,
-          "contribution": 0.001306386658371864
-        },
         {
           "shape": "(6, 3, 1, 1, 1)",
           "dim": 3696,
-          "contribution": -0.0012635122018984806
+          "contribution": -0.001374651473180386
         },
         {
-          "shape": "(5, 4, 1, 1, 1)",
-          "dim": 3520,
-          "contribution": -0.0012589842591132555
+          "shape": "(5, 2, 2, 1, 1, 1)",
+          "dim": 3696,
+          "contribution": 0.0013730380008277411
         },
         {
           "shape": "(5, 2, 2, 2, 1)",
           "dim": 3520,
-          "contribution": 0.0012555341027551817
+          "contribution": 0.001331822956458339
+        },
+        {
+          "shape": "(5, 4, 1, 1, 1)",
+          "dim": 3520,
+          "contribution": -0.0013216694011936637
         },
         {
           "shape": "(5, 4, 2, 1)",
           "dim": 5775,
-          "contribution": -0.0011431720283308397
+          "contribution": -0.001160430410165038
+        },
+        {
+          "shape": "(4, 3, 2, 2, 1)",
+          "dim": 5775,
+          "contribution": 0.001112483046717359
         }
       ],
       "top_dropped": [
         {
-          "shape": "(4, 3, 2, 2, 1)",
-          "dim": 5775,
-          "contribution": 0.0009452995786814604
+          "shape": "(5, 3, 2, 2)",
+          "dim": 4455,
+          "contribution": 0.0009655839880555969
         },
         {
           "shape": "(4, 4, 2, 1, 1)",
           "dim": 4455,
-          "contribution": -0.0008734554033045234
-        },
-        {
-          "shape": "(5, 3, 2, 2)",
-          "dim": 4455,
-          "contribution": 0.0008613590032880332
+          "contribution": -0.0009418964734977682
         },
         {
           "shape": "(6, 4, 1, 1)",
           "dim": 3080,
-          "contribution": -0.0007844448080612606
+          "contribution": -0.000801538195855028
         },
         {
           "shape": "(4, 2, 2, 2, 1, 1)",
           "dim": 3080,
-          "contribution": 0.0006409043142475788
+          "contribution": 0.0007291488707592377
+        },
+        {
+          "shape": "(4, 3, 3, 1, 1)",
+          "dim": 4158,
+          "contribution": -0.0006162192216526527
         }
       ],
-      "dropped_contrib": 0.0011252454678250424,
-      "truncation_error": 0.0011252454678250421,
-      "time_sec": 4.186718225479126
+      "dropped_contrib": 6.316005231705287e-05,
+      "truncation_error": 6.316005231705265e-05,
+      "time_sec": 4.500422954559326
     },
     {
       "atom": "4He",
@@ -2496,253 +2464,243 @@
       "A": 4,
       "path": "atom",
       "eps": 0.0001,
-      "trM": -5.407700031216096e-05,
-      "trM_full": 2.1497739609512213e-05,
+      "trM": -0.0001196379890063345,
+      "trM_full": 2.3752771781403924e-05,
       "n_total": 77,
-      "n_active": 42,
-      "n_dropped": 35,
+      "n_active": 40,
+      "n_dropped": 37,
       "active": [
-        {
-          "shape": "(5, 2, 2, 1, 1, 1)",
-          "dim": 3696,
-          "contribution": 0.001306386658371864
-        },
         {
           "shape": "(6, 3, 1, 1, 1)",
           "dim": 3696,
-          "contribution": -0.0012635122018984806
+          "contribution": -0.001374651473180386
         },
         {
-          "shape": "(5, 4, 1, 1, 1)",
-          "dim": 3520,
-          "contribution": -0.0012589842591132555
+          "shape": "(5, 2, 2, 1, 1, 1)",
+          "dim": 3696,
+          "contribution": 0.0013730380008277411
         },
         {
           "shape": "(5, 2, 2, 2, 1)",
           "dim": 3520,
-          "contribution": 0.0012555341027551817
+          "contribution": 0.001331822956458339
+        },
+        {
+          "shape": "(5, 4, 1, 1, 1)",
+          "dim": 3520,
+          "contribution": -0.0013216694011936637
         },
         {
           "shape": "(5, 4, 2, 1)",
           "dim": 5775,
-          "contribution": -0.0011431720283308397
+          "contribution": -0.001160430410165038
         },
         {
           "shape": "(4, 3, 2, 2, 1)",
           "dim": 5775,
-          "contribution": 0.0009452995786814604
-        },
-        {
-          "shape": "(4, 4, 2, 1, 1)",
-          "dim": 4455,
-          "contribution": -0.0008734554033045234
+          "contribution": 0.001112483046717359
         },
         {
           "shape": "(5, 3, 2, 2)",
           "dim": 4455,
-          "contribution": 0.0008613590032880332
+          "contribution": 0.0009655839880555969
+        },
+        {
+          "shape": "(4, 4, 2, 1, 1)",
+          "dim": 4455,
+          "contribution": -0.0009418964734977682
         },
         {
           "shape": "(6, 4, 1, 1)",
           "dim": 3080,
-          "contribution": -0.0007844448080612606
+          "contribution": -0.000801538195855028
         },
         {
           "shape": "(4, 2, 2, 2, 1, 1)",
           "dim": 3080,
-          "contribution": 0.0006409043142475788
-        },
-        {
-          "shape": "(5, 3, 3, 1)",
-          "dim": 4158,
-          "contribution": 0.000605091294998498
+          "contribution": 0.0007291488707592377
         },
         {
           "shape": "(4, 3, 3, 1, 1)",
           "dim": 4158,
-          "contribution": -0.0005167102516115
+          "contribution": -0.0006162192216526527
+        },
+        {
+          "shape": "(5, 3, 3, 1)",
+          "dim": 4158,
+          "contribution": 0.0005996017613892946
         },
         {
           "shape": "(7, 2, 1, 1, 1)",
           "dim": 1728,
-          "contribution": -0.0004568759521078213
+          "contribution": -0.0004858652820074983
         },
         {
           "shape": "(7, 3, 1, 1)",
           "dim": 2376,
-          "contribution": -0.00044984356984081246
+          "contribution": -0.0004683603466551959
         },
         {
           "shape": "(5, 2, 1, 1, 1, 1, 1)",
           "dim": 1728,
-          "contribution": 0.0004337465417109182
+          "contribution": 0.00046724064916884217
         },
         {
           "shape": "(6, 3, 2, 1)",
           "dim": 5632,
-          "contribution": -0.0003987219135512967
-        },
-        {
-          "shape": "(6, 4, 2)",
-          "dim": 2673,
-          "contribution": 0.0003955352411611776
+          "contribution": -0.00046473490719961476
         },
         {
           "shape": "(4, 3, 2, 1, 1, 1)",
           "dim": 5632,
-          "contribution": 0.00038557195469457396
+          "contribution": 0.0004607076028047805
+        },
+        {
+          "shape": "(6, 4, 2)",
+          "dim": 2673,
+          "contribution": 0.00043891264607611694
         },
         {
           "shape": "(3, 3, 2, 2, 1, 1)",
           "dim": 2673,
-          "contribution": -0.0003834551439717301
+          "contribution": -0.00041889582242315716
         },
         {
           "shape": "(4, 2, 2, 1, 1, 1, 1)",
           "dim": 2376,
-          "contribution": 0.000342957008740519
-        },
-        {
-          "shape": "(6, 3, 3)",
-          "dim": 1650,
-          "contribution": 0.0003306556819416069
+          "contribution": 0.00039215749317618226
         },
         {
           "shape": "(4, 3, 3, 2)",
           "dim": 2970,
-          "contribution": 0.00032757335735656145
-        },
-        {
-          "shape": "(7, 2, 2, 1)",
-          "dim": 2079,
-          "contribution": -0.00032224700161150456
+          "contribution": 0.0003704426410823158
         },
         {
           "shape": "(4, 4, 3, 1)",
           "dim": 2970,
-          "contribution": -0.0002927224732482572
+          "contribution": -0.00035428800131367765
         },
         {
-          "shape": "(5, 4, 3)",
-          "dim": 2112,
-          "contribution": 0.0002777639577147942
+          "shape": "(6, 3, 3)",
+          "dim": 1650,
+          "contribution": 0.000340085094644799
+        },
+        {
+          "shape": "(7, 2, 2, 1)",
+          "dim": 2079,
+          "contribution": -0.00033820137995359777
         },
         {
           "shape": "(3, 3, 3, 1, 1, 1)",
           "dim": 1650,
-          "contribution": -0.00027750779936518805
+          "contribution": -0.00031684604159863396
         },
         {
           "shape": "(4, 3, 1, 1, 1, 1, 1)",
           "dim": 2079,
-          "contribution": 0.0002675108140493986
+          "contribution": 0.00031594335466455956
+        },
+        {
+          "shape": "(5, 4, 3)",
+          "dim": 2112,
+          "contribution": 0.0002783759475791297
         },
         {
           "shape": "(3, 3, 3, 2, 1)",
           "dim": 2112,
-          "contribution": -0.0002504009389450541
+          "contribution": -0.00027742854815829043
         },
         {
           "shape": "(7, 4, 1)",
           "dim": 1408,
-          "contribution": 0.00025027465720103864
+          "contribution": 0.00026277974108629144
         },
         {
           "shape": "(7, 3, 2)",
           "dim": 1925,
-          "contribution": 0.0002408459076960155
+          "contribution": 0.00025497811773999733
         },
         {
           "shape": "(3, 2, 2, 2, 1, 1, 1)",
           "dim": 1408,
-          "contribution": -0.00022708987000498055
+          "contribution": -0.0002535481678020728
         },
         {
           "shape": "(3, 3, 2, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": -0.00022003046382954562
+          "contribution": -0.00024334778940323347
         },
         {
           "shape": "(5, 5, 1, 1)",
           "dim": 1485,
-          "contribution": -0.00019690025649691956
+          "contribution": -0.00020346686465093662
         },
         {
           "shape": "(4, 2, 2, 2, 2)",
           "dim": 1485,
-          "contribution": 0.00016006912842754859
+          "contribution": 0.0001832068902264432
         },
         {
           "shape": "(6, 5, 1)",
           "dim": 1155,
-          "contribution": 0.00013999230031654927
+          "contribution": 0.00015233299645101952
         },
         {
           "shape": "(3, 2, 2, 2, 2, 1)",
           "dim": 1155,
-          "contribution": -0.00013398622657506215
+          "contribution": -0.00014775484102330723
         },
         {
           "shape": "(5, 3, 1, 1, 1, 1)",
           "dim": 3564,
-          "contribution": 0.00012027679167410112
-        },
-        {
-          "shape": "(8, 2, 1, 1)",
-          "dim": 945,
-          "contribution": -0.00011813858137628668
+          "contribution": 0.00014311134297313442
         },
         {
           "shape": "(8, 3, 1)",
           "dim": 891,
-          "contribution": 0.00011569344587820086
-        },
-        {
-          "shape": "(6, 2, 2, 2)",
-          "dim": 1925,
-          "contribution": 0.00010700027223262654
-        },
-        {
-          "shape": "(5, 3, 2, 1, 1)",
-          "dim": 7700,
-          "contribution": 0.0001045331758228517
+          "contribution": 0.00011991745013145091
         },
         {
           "shape": "(3, 2, 2, 1, 1, 1, 1, 1)",
           "dim": 891,
-          "contribution": -0.00010045304602894043
+          "contribution": -0.00011315891843498422
+        },
+        {
+          "shape": "(8, 2, 1, 1)",
+          "dim": 945,
+          "contribution": -0.0001092064948502284
         }
       ],
       "top_dropped": [
         {
-          "shape": "(4, 4, 1, 1, 1, 1)",
+          "shape": "(6, 2, 2, 2)",
           "dim": 1925,
-          "contribution": -8.784259780592106e-05
+          "contribution": 9.675515446994919e-05
         },
         {
           "shape": "(4, 2, 1, 1, 1, 1, 1, 1)",
           "dim": 945,
-          "contribution": 7.596292969289884e-05
+          "contribution": 8.793296025772538e-05
+        },
+        {
+          "shape": "(4, 4, 1, 1, 1, 1)",
+          "dim": 1925,
+          "contribution": -8.238331111832285e-05
         },
         {
           "shape": "(3, 3, 2, 2, 2)",
           "dim": 1320,
-          "contribution": -6.976424441437637e-05
+          "contribution": -7.402750551220461e-05
         },
         {
-          "shape": "(6, 2, 1, 1, 1, 1)",
-          "dim": 2100,
-          "contribution": 5.7309523898324276e-05
-        },
-        {
-          "shape": "(5, 5, 2)",
-          "dim": 1320,
-          "contribution": 5.314053650365627e-05
+          "shape": "(6, 2, 2, 1, 1)",
+          "dim": 3564,
+          "contribution": -6.348125759573859e-05
         }
       ],
-      "dropped_contrib": 7.557473992167321e-05,
-      "truncation_error": 7.557473992167317e-05,
-      "time_sec": 3.225234270095825
+      "dropped_contrib": 0.00014339076078773852,
+      "truncation_error": 0.00014339076078773844,
+      "time_sec": 3.3761188983917236
     },
     {
       "atom": "4He",
@@ -2751,403 +2709,403 @@
       "A": 4,
       "path": "atom",
       "eps": 1e-06,
-      "trM": 2.2201440761006323e-05,
-      "trM_full": 2.1497739609512213e-05,
+      "trM": 2.459738255568769e-05,
+      "trM_full": 2.3752771781403924e-05,
       "n_total": 77,
       "n_active": 72,
       "n_dropped": 5,
       "active": [
         {
-          "shape": "(5, 2, 2, 1, 1, 1)",
-          "dim": 3696,
-          "contribution": 0.001306386658371864
-        },
-        {
           "shape": "(6, 3, 1, 1, 1)",
           "dim": 3696,
-          "contribution": -0.0012635122018984806
+          "contribution": -0.001374651473180386
         },
         {
-          "shape": "(5, 4, 1, 1, 1)",
-          "dim": 3520,
-          "contribution": -0.0012589842591132555
+          "shape": "(5, 2, 2, 1, 1, 1)",
+          "dim": 3696,
+          "contribution": 0.0013730380008277411
         },
         {
           "shape": "(5, 2, 2, 2, 1)",
           "dim": 3520,
-          "contribution": 0.0012555341027551817
+          "contribution": 0.001331822956458339
+        },
+        {
+          "shape": "(5, 4, 1, 1, 1)",
+          "dim": 3520,
+          "contribution": -0.0013216694011936637
         },
         {
           "shape": "(5, 4, 2, 1)",
           "dim": 5775,
-          "contribution": -0.0011431720283308397
+          "contribution": -0.001160430410165038
         },
         {
           "shape": "(4, 3, 2, 2, 1)",
           "dim": 5775,
-          "contribution": 0.0009452995786814604
-        },
-        {
-          "shape": "(4, 4, 2, 1, 1)",
-          "dim": 4455,
-          "contribution": -0.0008734554033045234
+          "contribution": 0.001112483046717359
         },
         {
           "shape": "(5, 3, 2, 2)",
           "dim": 4455,
-          "contribution": 0.0008613590032880332
+          "contribution": 0.0009655839880555969
+        },
+        {
+          "shape": "(4, 4, 2, 1, 1)",
+          "dim": 4455,
+          "contribution": -0.0009418964734977682
         },
         {
           "shape": "(6, 4, 1, 1)",
           "dim": 3080,
-          "contribution": -0.0007844448080612606
+          "contribution": -0.000801538195855028
         },
         {
           "shape": "(4, 2, 2, 2, 1, 1)",
           "dim": 3080,
-          "contribution": 0.0006409043142475788
-        },
-        {
-          "shape": "(5, 3, 3, 1)",
-          "dim": 4158,
-          "contribution": 0.000605091294998498
+          "contribution": 0.0007291488707592377
         },
         {
           "shape": "(4, 3, 3, 1, 1)",
           "dim": 4158,
-          "contribution": -0.0005167102516115
+          "contribution": -0.0006162192216526527
+        },
+        {
+          "shape": "(5, 3, 3, 1)",
+          "dim": 4158,
+          "contribution": 0.0005996017613892946
         },
         {
           "shape": "(7, 2, 1, 1, 1)",
           "dim": 1728,
-          "contribution": -0.0004568759521078213
+          "contribution": -0.0004858652820074983
         },
         {
           "shape": "(7, 3, 1, 1)",
           "dim": 2376,
-          "contribution": -0.00044984356984081246
+          "contribution": -0.0004683603466551959
         },
         {
           "shape": "(5, 2, 1, 1, 1, 1, 1)",
           "dim": 1728,
-          "contribution": 0.0004337465417109182
+          "contribution": 0.00046724064916884217
         },
         {
           "shape": "(6, 3, 2, 1)",
           "dim": 5632,
-          "contribution": -0.0003987219135512967
-        },
-        {
-          "shape": "(6, 4, 2)",
-          "dim": 2673,
-          "contribution": 0.0003955352411611776
+          "contribution": -0.00046473490719961476
         },
         {
           "shape": "(4, 3, 2, 1, 1, 1)",
           "dim": 5632,
-          "contribution": 0.00038557195469457396
+          "contribution": 0.0004607076028047805
+        },
+        {
+          "shape": "(6, 4, 2)",
+          "dim": 2673,
+          "contribution": 0.00043891264607611694
         },
         {
           "shape": "(3, 3, 2, 2, 1, 1)",
           "dim": 2673,
-          "contribution": -0.0003834551439717301
+          "contribution": -0.00041889582242315716
         },
         {
           "shape": "(4, 2, 2, 1, 1, 1, 1)",
           "dim": 2376,
-          "contribution": 0.000342957008740519
-        },
-        {
-          "shape": "(6, 3, 3)",
-          "dim": 1650,
-          "contribution": 0.0003306556819416069
+          "contribution": 0.00039215749317618226
         },
         {
           "shape": "(4, 3, 3, 2)",
           "dim": 2970,
-          "contribution": 0.00032757335735656145
-        },
-        {
-          "shape": "(7, 2, 2, 1)",
-          "dim": 2079,
-          "contribution": -0.00032224700161150456
+          "contribution": 0.0003704426410823158
         },
         {
           "shape": "(4, 4, 3, 1)",
           "dim": 2970,
-          "contribution": -0.0002927224732482572
+          "contribution": -0.00035428800131367765
         },
         {
-          "shape": "(5, 4, 3)",
-          "dim": 2112,
-          "contribution": 0.0002777639577147942
+          "shape": "(6, 3, 3)",
+          "dim": 1650,
+          "contribution": 0.000340085094644799
+        },
+        {
+          "shape": "(7, 2, 2, 1)",
+          "dim": 2079,
+          "contribution": -0.00033820137995359777
         },
         {
           "shape": "(3, 3, 3, 1, 1, 1)",
           "dim": 1650,
-          "contribution": -0.00027750779936518805
+          "contribution": -0.00031684604159863396
         },
         {
           "shape": "(4, 3, 1, 1, 1, 1, 1)",
           "dim": 2079,
-          "contribution": 0.0002675108140493986
+          "contribution": 0.00031594335466455956
+        },
+        {
+          "shape": "(5, 4, 3)",
+          "dim": 2112,
+          "contribution": 0.0002783759475791297
         },
         {
           "shape": "(3, 3, 3, 2, 1)",
           "dim": 2112,
-          "contribution": -0.0002504009389450541
+          "contribution": -0.00027742854815829043
         },
         {
           "shape": "(7, 4, 1)",
           "dim": 1408,
-          "contribution": 0.00025027465720103864
+          "contribution": 0.00026277974108629144
         },
         {
           "shape": "(7, 3, 2)",
           "dim": 1925,
-          "contribution": 0.0002408459076960155
+          "contribution": 0.00025497811773999733
         },
         {
           "shape": "(3, 2, 2, 2, 1, 1, 1)",
           "dim": 1408,
-          "contribution": -0.00022708987000498055
+          "contribution": -0.0002535481678020728
         },
         {
           "shape": "(3, 3, 2, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": -0.00022003046382954562
+          "contribution": -0.00024334778940323347
         },
         {
           "shape": "(5, 5, 1, 1)",
           "dim": 1485,
-          "contribution": -0.00019690025649691956
+          "contribution": -0.00020346686465093662
         },
         {
           "shape": "(4, 2, 2, 2, 2)",
           "dim": 1485,
-          "contribution": 0.00016006912842754859
+          "contribution": 0.0001832068902264432
         },
         {
           "shape": "(6, 5, 1)",
           "dim": 1155,
-          "contribution": 0.00013999230031654927
+          "contribution": 0.00015233299645101952
         },
         {
           "shape": "(3, 2, 2, 2, 2, 1)",
           "dim": 1155,
-          "contribution": -0.00013398622657506215
+          "contribution": -0.00014775484102330723
         },
         {
           "shape": "(5, 3, 1, 1, 1, 1)",
           "dim": 3564,
-          "contribution": 0.00012027679167410112
-        },
-        {
-          "shape": "(8, 2, 1, 1)",
-          "dim": 945,
-          "contribution": -0.00011813858137628668
+          "contribution": 0.00014311134297313442
         },
         {
           "shape": "(8, 3, 1)",
           "dim": 891,
-          "contribution": 0.00011569344587820086
-        },
-        {
-          "shape": "(6, 2, 2, 2)",
-          "dim": 1925,
-          "contribution": 0.00010700027223262654
-        },
-        {
-          "shape": "(5, 3, 2, 1, 1)",
-          "dim": 7700,
-          "contribution": 0.0001045331758228517
+          "contribution": 0.00011991745013145091
         },
         {
           "shape": "(3, 2, 2, 1, 1, 1, 1, 1)",
           "dim": 891,
-          "contribution": -0.00010045304602894043
+          "contribution": -0.00011315891843498422
         },
         {
-          "shape": "(4, 4, 1, 1, 1, 1)",
+          "shape": "(8, 2, 1, 1)",
+          "dim": 945,
+          "contribution": -0.0001092064948502284
+        },
+        {
+          "shape": "(6, 2, 2, 2)",
           "dim": 1925,
-          "contribution": -8.784259780592106e-05
+          "contribution": 9.675515446994919e-05
         },
         {
           "shape": "(4, 2, 1, 1, 1, 1, 1, 1)",
           "dim": 945,
-          "contribution": 7.596292969289884e-05
+          "contribution": 8.793296025772538e-05
+        },
+        {
+          "shape": "(4, 4, 1, 1, 1, 1)",
+          "dim": 1925,
+          "contribution": -8.238331111832285e-05
         },
         {
           "shape": "(3, 3, 2, 2, 2)",
           "dim": 1320,
-          "contribution": -6.976424441437637e-05
-        },
-        {
-          "shape": "(6, 2, 1, 1, 1, 1)",
-          "dim": 2100,
-          "contribution": 5.7309523898324276e-05
-        },
-        {
-          "shape": "(5, 5, 2)",
-          "dim": 1320,
-          "contribution": 5.314053650365627e-05
-        },
-        {
-          "shape": "(7, 5)",
-          "dim": 297,
-          "contribution": 4.107202399261313e-05
-        },
-        {
-          "shape": "(8, 4)",
-          "dim": 275,
-          "contribution": 3.767130940659899e-05
-        },
-        {
-          "shape": "(2, 2, 2, 2, 2, 1, 1)",
-          "dim": 297,
-          "contribution": -3.283059487858686e-05
+          "contribution": -7.402750551220461e-05
         },
         {
           "shape": "(6, 2, 2, 1, 1)",
           "dim": 3564,
-          "contribution": 3.223685308150028e-05
+          "contribution": -6.348125759573859e-05
         },
         {
-          "shape": "(6, 1, 1, 1, 1, 1, 1)",
-          "dim": 462,
-          "contribution": 3.148501581108981e-05
+          "shape": "(5, 3, 2, 1, 1)",
+          "dim": 7700,
+          "contribution": 6.284524641158517e-05
         },
         {
-          "shape": "(8, 1, 1, 1, 1)",
-          "dim": 330,
-          "contribution": -3.136833773518113e-05
+          "shape": "(5, 5, 2)",
+          "dim": 1320,
+          "contribution": 6.0528238733928074e-05
+        },
+        {
+          "shape": "(7, 5)",
+          "dim": 297,
+          "contribution": 4.249937927866321e-05
+        },
+        {
+          "shape": "(2, 2, 2, 2, 2, 1, 1)",
+          "dim": 297,
+          "contribution": -3.792218222053072e-05
+        },
+        {
+          "shape": "(8, 4)",
+          "dim": 275,
+          "contribution": 3.757319973441876e-05
         },
         {
           "shape": "(2, 2, 2, 2, 1, 1, 1, 1)",
           "dim": 275,
-          "contribution": -2.8234210860873885e-05
+          "contribution": -3.278163335295587e-05
+        },
+        {
+          "shape": "(6, 1, 1, 1, 1, 1, 1)",
+          "dim": 462,
+          "contribution": 3.0996896631297644e-05
+        },
+        {
+          "shape": "(8, 1, 1, 1, 1)",
+          "dim": 330,
+          "contribution": -3.0155163821929057e-05
         },
         {
           "shape": "(7, 1, 1, 1, 1, 1)",
           "dim": 462,
-          "contribution": -2.5866644582831842e-05
+          "contribution": -2.816726881788284e-05
         },
         {
           "shape": "(5, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 330,
-          "contribution": 2.4954650732270154e-05
+          "contribution": 2.6744734228552482e-05
         },
         {
-          "shape": "(9, 2, 1)",
-          "dim": 320,
-          "contribution": 1.634113247641407e-05
-        },
-        {
-          "shape": "(3, 2, 1, 1, 1, 1, 1, 1, 1)",
-          "dim": 320,
-          "contribution": -1.4431971014379601e-05
-        },
-        {
-          "shape": "(9, 3)",
-          "dim": 154,
-          "contribution": 1.2507681502208172e-05
-        },
-        {
-          "shape": "(3, 3, 1, 1, 1, 1, 1, 1)",
-          "dim": 616,
-          "contribution": -9.80752942859649e-06
-        },
-        {
-          "shape": "(3, 3, 3, 3)",
-          "dim": 462,
-          "contribution": 9.720132349724186e-06
-        },
-        {
-          "shape": "(2, 2, 2, 1, 1, 1, 1, 1, 1)",
-          "dim": 154,
-          "contribution": -8.682647730305535e-06
-        },
-        {
-          "shape": "(6, 6)",
-          "dim": 132,
-          "contribution": 8.46128369681946e-06
-        },
-        {
-          "shape": "(2, 2, 2, 2, 2, 2)",
-          "dim": 132,
-          "contribution": -6.902467045309753e-06
-        },
-        {
-          "shape": "(4, 4, 4)",
-          "dim": 462,
-          "contribution": -6.724435721035657e-06
+          "shape": "(6, 2, 1, 1, 1, 1)",
+          "dim": 2100,
+          "contribution": 2.38022250760566e-05
         },
         {
           "shape": "(4, 4, 2, 2)",
           "dim": 2640,
-          "contribution": -4.8622443537257404e-06
+          "contribution": 1.8314335237966636e-05
         },
         {
-          "shape": "(9, 1, 1, 1)",
-          "dim": 165,
-          "contribution": -3.187340627576027e-06
+          "shape": "(9, 2, 1)",
+          "dim": 320,
+          "contribution": 1.7926901111338146e-05
+        },
+        {
+          "shape": "(3, 2, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 320,
+          "contribution": -1.6339365630146975e-05
+        },
+        {
+          "shape": "(9, 3)",
+          "dim": 154,
+          "contribution": 1.2242240108171654e-05
+        },
+        {
+          "shape": "(3, 3, 3, 3)",
+          "dim": 462,
+          "contribution": 1.221661861249846e-05
+        },
+        {
+          "shape": "(4, 4, 4)",
+          "dim": 462,
+          "contribution": -1.0579873847887029e-05
+        },
+        {
+          "shape": "(2, 2, 2, 1, 1, 1, 1, 1, 1)",
+          "dim": 154,
+          "contribution": -1.0153920143686552e-05
+        },
+        {
+          "shape": "(3, 3, 1, 1, 1, 1, 1, 1)",
+          "dim": 616,
+          "contribution": -9.767219502673914e-06
+        },
+        {
+          "shape": "(6, 6)",
+          "dim": 132,
+          "contribution": 8.894964085293353e-06
         },
         {
           "shape": "(8, 2, 2)",
           "dim": 616,
-          "contribution": 3.0049682919452226e-06
+          "contribution": 8.309385831457691e-06
+        },
+        {
+          "shape": "(2, 2, 2, 2, 2, 2)",
+          "dim": 132,
+          "contribution": -7.938702534170633e-06
+        },
+        {
+          "shape": "(9, 1, 1, 1)",
+          "dim": 165,
+          "contribution": -2.4158820693155372e-06
         },
         {
           "shape": "(10, 2)",
           "dim": 54,
-          "contribution": 1.7419487918271934e-06
+          "contribution": 1.6543785831166156e-06
         },
         {
           "shape": "(4, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 165,
-          "contribution": 1.226370829706376e-06
+          "contribution": 1.3953192191371092e-06
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 54,
-          "contribution": -1.1065457695863234e-06
+          "contribution": -1.304715674764921e-06
         },
         {
           "shape": "(10, 1, 1)",
           "dim": 55,
-          "contribution": 1.0538919838571508e-06
+          "contribution": 1.021195793076124e-06
         }
       ],
       "top_dropped": [
         {
           "shape": "(3, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 55,
-          "contribution": -7.51207737251754e-07
+          "contribution": -8.682346165531338e-07
         },
         {
           "shape": "(11, 1)",
           "dim": 11,
-          "contribution": 1.0107793574983834e-07
+          "contribution": 8.810006520699215e-08
         },
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 11,
-          "contribution": -5.418562778578374e-08
+          "contribution": -6.477679343455187e-08
         },
         {
           "shape": "(12,)",
           "dim": 1,
-          "contribution": 1.0852838810189195e-09
+          "contribution": 8.808747162611426e-10
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": -4.710060874306475e-10
+          "contribution": -5.803042193331929e-10
         }
       ],
-      "dropped_contrib": -7.037011514941111e-07,
-      "truncation_error": 7.037011514941101e-07,
-      "time_sec": 3.1299211978912354
+      "dropped_contrib": -8.446107742837656e-07,
+      "truncation_error": 8.446107742837669e-07,
+      "time_sec": 3.430037498474121
     },
     {
       "atom": "4He",
@@ -3156,308 +3114,318 @@
       "A": 4,
       "path": "free",
       "eps": 0.001,
-      "trM": 3.185046917980396,
-      "trM_full": 3.19072494948773,
+      "trM": 3.4618250464759734,
+      "trM_full": 3.465806972045073,
       "n_total": 77,
-      "n_active": 53,
-      "n_dropped": 24,
+      "n_active": 55,
+      "n_dropped": 22,
       "active": [
         {
           "shape": "(5, 3, 2, 1, 1)",
           "dim": 7700,
-          "contribution": 0.4007875407516441
+          "contribution": 0.43578053734144734
         },
         {
           "shape": "(5, 4, 2, 1)",
           "dim": 5775,
-          "contribution": 0.24640594508888122
+          "contribution": 0.2642756308124887
         },
         {
           "shape": "(4, 3, 2, 2, 1)",
           "dim": 5775,
-          "contribution": 0.23147905702400173
+          "contribution": 0.25617230939667895
         },
         {
           "shape": "(6, 3, 2, 1)",
           "dim": 5632,
-          "contribution": 0.21533999930748707
+          "contribution": 0.2280704764221097
         },
         {
           "shape": "(4, 3, 2, 1, 1, 1)",
           "dim": 5632,
-          "contribution": 0.19495578979573705
+          "contribution": 0.21694581502991186
         },
         {
           "shape": "(5, 3, 2, 2)",
           "dim": 4455,
-          "contribution": 0.14382790689140987
+          "contribution": 0.15578339688291276
         },
         {
           "shape": "(4, 4, 2, 1, 1)",
           "dim": 4455,
-          "contribution": 0.14050213106628845
+          "contribution": 0.153941425542091
         },
         {
           "shape": "(5, 3, 3, 1)",
           "dim": 4158,
-          "contribution": 0.12892018368969582
+          "contribution": 0.13902026748798949
         },
         {
           "shape": "(4, 3, 3, 1, 1)",
           "dim": 4158,
-          "contribution": 0.1234819407972078
+          "contribution": 0.13604665879869393
         },
         {
           "shape": "(6, 3, 1, 1, 1)",
           "dim": 3696,
-          "contribution": 0.08493481716883883
+          "contribution": 0.09050424180627555
         },
         {
           "shape": "(5, 4, 1, 1, 1)",
           "dim": 3520,
-          "contribution": 0.08377743924793903
+          "contribution": 0.09039127214759789
         },
         {
           "shape": "(5, 2, 2, 2, 1)",
           "dim": 3520,
-          "contribution": 0.08140045089950726
+          "contribution": 0.08912677961257852
         },
         {
           "shape": "(5, 2, 2, 1, 1, 1)",
           "dim": 3696,
-          "contribution": 0.0795211543706584
+          "contribution": 0.08756353355960479
         },
         {
           "shape": "(6, 2, 2, 1, 1)",
           "dim": 3564,
-          "contribution": 0.07825151835311915
+          "contribution": 0.08377853147686389
         },
         {
           "shape": "(5, 3, 1, 1, 1, 1)",
           "dim": 3564,
-          "contribution": 0.07464266331958723
+          "contribution": 0.08179347131007876
         },
         {
           "shape": "(4, 4, 3, 1)",
           "dim": 2970,
-          "contribution": 0.06891710592903291
+          "contribution": 0.07488860737956565
         },
         {
           "shape": "(4, 3, 3, 2)",
           "dim": 2970,
-          "contribution": 0.06756489057849283
+          "contribution": 0.07415800164496913
         },
         {
           "shape": "(6, 4, 1, 1)",
           "dim": 3080,
-          "contribution": 0.06438830901550133
+          "contribution": 0.06768776516869855
         },
         {
           "shape": "(4, 2, 2, 2, 1, 1)",
           "dim": 3080,
-          "contribution": 0.05666542965847408
+          "contribution": 0.06350376765107482
         },
         {
           "shape": "(4, 4, 2, 2)",
           "dim": 2640,
-          "contribution": 0.05291125169614947
+          "contribution": 0.05775230742713614
         },
         {
           "shape": "(6, 4, 2)",
           "dim": 2673,
-          "contribution": 0.05088400400252327
+          "contribution": 0.05327161891970618
         },
         {
           "shape": "(3, 3, 2, 2, 1, 1)",
           "dim": 2673,
-          "contribution": 0.04383194554621649
+          "contribution": 0.04944266344187597
         },
         {
           "shape": "(5, 4, 3)",
           "dim": 2112,
-          "contribution": 0.034921548177813164
-        },
-        {
-          "shape": "(7, 3, 1, 1)",
-          "dim": 2376,
-          "contribution": 0.03355411690441773
+          "contribution": 0.037215005681091255
         },
         {
           "shape": "(3, 3, 3, 2, 1)",
           "dim": 2112,
-          "contribution": 0.031799580738026224
+          "contribution": 0.0355160454688585
+        },
+        {
+          "shape": "(7, 3, 1, 1)",
+          "dim": 2376,
+          "contribution": 0.03463252451768316
         },
         {
           "shape": "(4, 2, 2, 1, 1, 1, 1)",
           "dim": 2376,
-          "contribution": 0.02802794316599381
+          "contribution": 0.031634292805653254
         },
         {
           "shape": "(7, 2, 2, 1)",
           "dim": 2079,
-          "contribution": 0.025463050399409725
+          "contribution": 0.026401619164625145
         },
         {
           "shape": "(6, 2, 2, 2)",
           "dim": 1925,
-          "contribution": 0.02445774196042538
+          "contribution": 0.026081463598262588
         },
         {
           "shape": "(6, 2, 1, 1, 1, 1)",
           "dim": 2100,
-          "contribution": 0.02364754398152994
-        },
-        {
-          "shape": "(7, 3, 2)",
-          "dim": 1925,
-          "contribution": 0.023094347809206807
+          "contribution": 0.025521502751024498
         },
         {
           "shape": "(4, 4, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": 0.022790550079082997
+          "contribution": 0.02516253063108836
         },
         {
           "shape": "(4, 3, 1, 1, 1, 1, 1)",
           "dim": 2079,
-          "contribution": 0.021663683703861916
+          "contribution": 0.024331333855345794
         },
         {
-          "shape": "(6, 3, 3)",
-          "dim": 1650,
-          "contribution": 0.019574883980638915
+          "shape": "(7, 3, 2)",
+          "dim": 1925,
+          "contribution": 0.023737461064519082
         },
         {
           "shape": "(3, 3, 2, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": 0.018886712103303522
+          "contribution": 0.021453272667220535
+        },
+        {
+          "shape": "(6, 3, 3)",
+          "dim": 1650,
+          "contribution": 0.02060006396815047
         },
         {
           "shape": "(3, 3, 3, 1, 1, 1)",
           "dim": 1650,
-          "contribution": 0.017182802625664313
-        },
-        {
-          "shape": "(7, 2, 1, 1, 1)",
-          "dim": 1728,
-          "contribution": 0.01613082075610754
+          "contribution": 0.01929560551822678
         },
         {
           "shape": "(5, 5, 1, 1)",
           "dim": 1485,
-          "contribution": 0.015991299330560694
+          "contribution": 0.016964305920626203
+        },
+        {
+          "shape": "(7, 2, 1, 1, 1)",
+          "dim": 1728,
+          "contribution": 0.01683002322990553
         },
         {
           "shape": "(4, 2, 2, 2, 2)",
           "dim": 1485,
-          "contribution": 0.014443617879672792
+          "contribution": 0.016129481853603418
         },
         {
           "shape": "(5, 2, 1, 1, 1, 1, 1)",
           "dim": 1728,
-          "contribution": 0.014189175909632508
+          "contribution": 0.01577338910284591
         },
         {
           "shape": "(5, 5, 2)",
           "dim": 1320,
-          "contribution": 0.0132617810196587
-        },
-        {
-          "shape": "(7, 4, 1)",
-          "dim": 1408,
-          "contribution": 0.012346003745924932
+          "contribution": 0.014011286528391393
         },
         {
           "shape": "(3, 3, 2, 2, 2)",
           "dim": 1320,
-          "contribution": 0.011723041051660808
+          "contribution": 0.01317786107947206
+        },
+        {
+          "shape": "(7, 4, 1)",
+          "dim": 1408,
+          "contribution": 0.01260002577692388
         },
         {
           "shape": "(3, 2, 2, 2, 1, 1, 1)",
           "dim": 1408,
-          "contribution": 0.00982282588032801
+          "contribution": 0.011237142985193287
         },
         {
           "shape": "(6, 5, 1)",
           "dim": 1155,
-          "contribution": 0.009319233470256273
+          "contribution": 0.009654847008133162
         },
         {
           "shape": "(3, 2, 2, 2, 2, 1)",
           "dim": 1155,
-          "contribution": 0.007726707127167005
+          "contribution": 0.0087954228040561
         },
         {
           "shape": "(8, 2, 1, 1)",
           "dim": 945,
-          "contribution": 0.004344523657978283
+          "contribution": 0.004360885617766329
         },
         {
           "shape": "(8, 3, 1)",
           "dim": 891,
-          "contribution": 0.004079811917963709
+          "contribution": 0.004060207639757161
         },
         {
           "shape": "(4, 2, 1, 1, 1, 1, 1, 1)",
           "dim": 945,
-          "contribution": 0.0033540839347676915
+          "contribution": 0.003826384022549165
         },
         {
           "shape": "(3, 2, 2, 1, 1, 1, 1, 1)",
           "dim": 891,
-          "contribution": 0.0030303454707703175
+          "contribution": 0.00349557049356752
         },
         {
           "shape": "(8, 2, 2)",
           "dim": 616,
-          "contribution": 0.0019338047843919706
+          "contribution": 0.001932915979986115
         },
         {
           "shape": "(4, 4, 4)",
           "dim": 462,
-          "contribution": 0.0017679718137370945
+          "contribution": 0.0019039453912708198
         },
         {
           "shape": "(3, 3, 3, 3)",
           "dim": 462,
-          "contribution": 0.0016636524788764494
+          "contribution": 0.00184719013616065
         },
         {
           "shape": "(3, 3, 1, 1, 1, 1, 1, 1)",
           "dim": 616,
-          "contribution": 0.0014622379231743375
-        }
-      ],
-      "top_dropped": [
+          "contribution": 0.0016784852062585128
+        },
         {
           "shape": "(7, 1, 1, 1, 1, 1)",
           "dim": 462,
-          "contribution": 0.000996517581261536
+          "contribution": 0.0010507505498606976
         },
         {
           "shape": "(6, 1, 1, 1, 1, 1, 1)",
           "dim": 462,
-          "contribution": 0.0009273582401728662
-        },
+          "contribution": 0.0010131241975456435
+        }
+      ],
+      "top_dropped": [
         {
           "shape": "(7, 5)",
           "dim": 297,
-          "contribution": 0.0005487114871897682
+          "contribution": 0.0005533548027832168
         },
         {
           "shape": "(8, 1, 1, 1, 1)",
           "dim": 330,
-          "contribution": 0.000482386828646686
+          "contribution": 0.0004883616831004996
         },
         {
           "shape": "(2, 2, 2, 2, 2, 1, 1)",
           "dim": 297,
-          "contribution": 0.000416603871168961
+          "contribution": 0.0004823979163612711
+        },
+        {
+          "shape": "(5, 1, 1, 1, 1, 1, 1, 1)",
+          "dim": 330,
+          "contribution": 0.00043756905348854477
+        },
+        {
+          "shape": "(8, 4)",
+          "dim": 275,
+          "contribution": 0.0003899342094190376
         }
       ],
-      "dropped_contrib": 0.00567803150733429,
-      "truncation_error": 0.005678031507334147,
-      "time_sec": 1.4071338176727295
+      "dropped_contrib": 0.003981925569099944,
+      "truncation_error": 0.003981925569099598,
+      "time_sec": 1.3243272304534912
     },
     {
       "atom": "4He",
@@ -3466,8 +3434,8 @@
       "A": 4,
       "path": "free",
       "eps": 0.0001,
-      "trM": 3.190377311469694,
-      "trM_full": 3.19072494948773,
+      "trM": 3.4654357763944272,
+      "trM_full": 3.465806972045073,
       "n_total": 77,
       "n_active": 65,
       "n_dropped": 12,
@@ -3475,359 +3443,359 @@
         {
           "shape": "(5, 3, 2, 1, 1)",
           "dim": 7700,
-          "contribution": 0.4007875407516441
+          "contribution": 0.43578053734144734
         },
         {
           "shape": "(5, 4, 2, 1)",
           "dim": 5775,
-          "contribution": 0.24640594508888122
+          "contribution": 0.2642756308124887
         },
         {
           "shape": "(4, 3, 2, 2, 1)",
           "dim": 5775,
-          "contribution": 0.23147905702400173
+          "contribution": 0.25617230939667895
         },
         {
           "shape": "(6, 3, 2, 1)",
           "dim": 5632,
-          "contribution": 0.21533999930748707
+          "contribution": 0.2280704764221097
         },
         {
           "shape": "(4, 3, 2, 1, 1, 1)",
           "dim": 5632,
-          "contribution": 0.19495578979573705
+          "contribution": 0.21694581502991186
         },
         {
           "shape": "(5, 3, 2, 2)",
           "dim": 4455,
-          "contribution": 0.14382790689140987
+          "contribution": 0.15578339688291276
         },
         {
           "shape": "(4, 4, 2, 1, 1)",
           "dim": 4455,
-          "contribution": 0.14050213106628845
+          "contribution": 0.153941425542091
         },
         {
           "shape": "(5, 3, 3, 1)",
           "dim": 4158,
-          "contribution": 0.12892018368969582
+          "contribution": 0.13902026748798949
         },
         {
           "shape": "(4, 3, 3, 1, 1)",
           "dim": 4158,
-          "contribution": 0.1234819407972078
+          "contribution": 0.13604665879869393
         },
         {
           "shape": "(6, 3, 1, 1, 1)",
           "dim": 3696,
-          "contribution": 0.08493481716883883
+          "contribution": 0.09050424180627555
         },
         {
           "shape": "(5, 4, 1, 1, 1)",
           "dim": 3520,
-          "contribution": 0.08377743924793903
+          "contribution": 0.09039127214759789
         },
         {
           "shape": "(5, 2, 2, 2, 1)",
           "dim": 3520,
-          "contribution": 0.08140045089950726
+          "contribution": 0.08912677961257852
         },
         {
           "shape": "(5, 2, 2, 1, 1, 1)",
           "dim": 3696,
-          "contribution": 0.0795211543706584
+          "contribution": 0.08756353355960479
         },
         {
           "shape": "(6, 2, 2, 1, 1)",
           "dim": 3564,
-          "contribution": 0.07825151835311915
+          "contribution": 0.08377853147686389
         },
         {
           "shape": "(5, 3, 1, 1, 1, 1)",
           "dim": 3564,
-          "contribution": 0.07464266331958723
+          "contribution": 0.08179347131007876
         },
         {
           "shape": "(4, 4, 3, 1)",
           "dim": 2970,
-          "contribution": 0.06891710592903291
+          "contribution": 0.07488860737956565
         },
         {
           "shape": "(4, 3, 3, 2)",
           "dim": 2970,
-          "contribution": 0.06756489057849283
+          "contribution": 0.07415800164496913
         },
         {
           "shape": "(6, 4, 1, 1)",
           "dim": 3080,
-          "contribution": 0.06438830901550133
+          "contribution": 0.06768776516869855
         },
         {
           "shape": "(4, 2, 2, 2, 1, 1)",
           "dim": 3080,
-          "contribution": 0.05666542965847408
+          "contribution": 0.06350376765107482
         },
         {
           "shape": "(4, 4, 2, 2)",
           "dim": 2640,
-          "contribution": 0.05291125169614947
+          "contribution": 0.05775230742713614
         },
         {
           "shape": "(6, 4, 2)",
           "dim": 2673,
-          "contribution": 0.05088400400252327
+          "contribution": 0.05327161891970618
         },
         {
           "shape": "(3, 3, 2, 2, 1, 1)",
           "dim": 2673,
-          "contribution": 0.04383194554621649
+          "contribution": 0.04944266344187597
         },
         {
           "shape": "(5, 4, 3)",
           "dim": 2112,
-          "contribution": 0.034921548177813164
-        },
-        {
-          "shape": "(7, 3, 1, 1)",
-          "dim": 2376,
-          "contribution": 0.03355411690441773
+          "contribution": 0.037215005681091255
         },
         {
           "shape": "(3, 3, 3, 2, 1)",
           "dim": 2112,
-          "contribution": 0.031799580738026224
+          "contribution": 0.0355160454688585
+        },
+        {
+          "shape": "(7, 3, 1, 1)",
+          "dim": 2376,
+          "contribution": 0.03463252451768316
         },
         {
           "shape": "(4, 2, 2, 1, 1, 1, 1)",
           "dim": 2376,
-          "contribution": 0.02802794316599381
+          "contribution": 0.031634292805653254
         },
         {
           "shape": "(7, 2, 2, 1)",
           "dim": 2079,
-          "contribution": 0.025463050399409725
+          "contribution": 0.026401619164625145
         },
         {
           "shape": "(6, 2, 2, 2)",
           "dim": 1925,
-          "contribution": 0.02445774196042538
+          "contribution": 0.026081463598262588
         },
         {
           "shape": "(6, 2, 1, 1, 1, 1)",
           "dim": 2100,
-          "contribution": 0.02364754398152994
-        },
-        {
-          "shape": "(7, 3, 2)",
-          "dim": 1925,
-          "contribution": 0.023094347809206807
+          "contribution": 0.025521502751024498
         },
         {
           "shape": "(4, 4, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": 0.022790550079082997
+          "contribution": 0.02516253063108836
         },
         {
           "shape": "(4, 3, 1, 1, 1, 1, 1)",
           "dim": 2079,
-          "contribution": 0.021663683703861916
+          "contribution": 0.024331333855345794
         },
         {
-          "shape": "(6, 3, 3)",
-          "dim": 1650,
-          "contribution": 0.019574883980638915
+          "shape": "(7, 3, 2)",
+          "dim": 1925,
+          "contribution": 0.023737461064519082
         },
         {
           "shape": "(3, 3, 2, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": 0.018886712103303522
+          "contribution": 0.021453272667220535
+        },
+        {
+          "shape": "(6, 3, 3)",
+          "dim": 1650,
+          "contribution": 0.02060006396815047
         },
         {
           "shape": "(3, 3, 3, 1, 1, 1)",
           "dim": 1650,
-          "contribution": 0.017182802625664313
-        },
-        {
-          "shape": "(7, 2, 1, 1, 1)",
-          "dim": 1728,
-          "contribution": 0.01613082075610754
+          "contribution": 0.01929560551822678
         },
         {
           "shape": "(5, 5, 1, 1)",
           "dim": 1485,
-          "contribution": 0.015991299330560694
+          "contribution": 0.016964305920626203
+        },
+        {
+          "shape": "(7, 2, 1, 1, 1)",
+          "dim": 1728,
+          "contribution": 0.01683002322990553
         },
         {
           "shape": "(4, 2, 2, 2, 2)",
           "dim": 1485,
-          "contribution": 0.014443617879672792
+          "contribution": 0.016129481853603418
         },
         {
           "shape": "(5, 2, 1, 1, 1, 1, 1)",
           "dim": 1728,
-          "contribution": 0.014189175909632508
+          "contribution": 0.01577338910284591
         },
         {
           "shape": "(5, 5, 2)",
           "dim": 1320,
-          "contribution": 0.0132617810196587
-        },
-        {
-          "shape": "(7, 4, 1)",
-          "dim": 1408,
-          "contribution": 0.012346003745924932
+          "contribution": 0.014011286528391393
         },
         {
           "shape": "(3, 3, 2, 2, 2)",
           "dim": 1320,
-          "contribution": 0.011723041051660808
+          "contribution": 0.01317786107947206
+        },
+        {
+          "shape": "(7, 4, 1)",
+          "dim": 1408,
+          "contribution": 0.01260002577692388
         },
         {
           "shape": "(3, 2, 2, 2, 1, 1, 1)",
           "dim": 1408,
-          "contribution": 0.00982282588032801
+          "contribution": 0.011237142985193287
         },
         {
           "shape": "(6, 5, 1)",
           "dim": 1155,
-          "contribution": 0.009319233470256273
+          "contribution": 0.009654847008133162
         },
         {
           "shape": "(3, 2, 2, 2, 2, 1)",
           "dim": 1155,
-          "contribution": 0.007726707127167005
+          "contribution": 0.0087954228040561
         },
         {
           "shape": "(8, 2, 1, 1)",
           "dim": 945,
-          "contribution": 0.004344523657978283
+          "contribution": 0.004360885617766329
         },
         {
           "shape": "(8, 3, 1)",
           "dim": 891,
-          "contribution": 0.004079811917963709
+          "contribution": 0.004060207639757161
         },
         {
           "shape": "(4, 2, 1, 1, 1, 1, 1, 1)",
           "dim": 945,
-          "contribution": 0.0033540839347676915
+          "contribution": 0.003826384022549165
         },
         {
           "shape": "(3, 2, 2, 1, 1, 1, 1, 1)",
           "dim": 891,
-          "contribution": 0.0030303454707703175
+          "contribution": 0.00349557049356752
         },
         {
           "shape": "(8, 2, 2)",
           "dim": 616,
-          "contribution": 0.0019338047843919706
+          "contribution": 0.001932915979986115
         },
         {
           "shape": "(4, 4, 4)",
           "dim": 462,
-          "contribution": 0.0017679718137370945
+          "contribution": 0.0019039453912708198
         },
         {
           "shape": "(3, 3, 3, 3)",
           "dim": 462,
-          "contribution": 0.0016636524788764494
+          "contribution": 0.00184719013616065
         },
         {
           "shape": "(3, 3, 1, 1, 1, 1, 1, 1)",
           "dim": 616,
-          "contribution": 0.0014622379231743375
+          "contribution": 0.0016784852062585128
         },
         {
           "shape": "(7, 1, 1, 1, 1, 1)",
           "dim": 462,
-          "contribution": 0.000996517581261536
+          "contribution": 0.0010507505498606976
         },
         {
           "shape": "(6, 1, 1, 1, 1, 1, 1)",
           "dim": 462,
-          "contribution": 0.0009273582401728662
+          "contribution": 0.0010131241975456435
         },
         {
           "shape": "(7, 5)",
           "dim": 297,
-          "contribution": 0.0005487114871897682
+          "contribution": 0.0005533548027832168
         },
         {
           "shape": "(8, 1, 1, 1, 1)",
           "dim": 330,
-          "contribution": 0.000482386828646686
+          "contribution": 0.0004883616831004996
         },
         {
           "shape": "(2, 2, 2, 2, 2, 1, 1)",
           "dim": 297,
-          "contribution": 0.000416603871168961
-        },
-        {
-          "shape": "(9, 2, 1)",
-          "dim": 320,
-          "contribution": 0.00040162892961409096
-        },
-        {
-          "shape": "(8, 4)",
-          "dim": 275,
-          "contribution": 0.0003952709339929367
+          "contribution": 0.0004823979163612711
         },
         {
           "shape": "(5, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 330,
-          "contribution": 0.0003883791166848937
+          "contribution": 0.00043756905348854477
+        },
+        {
+          "shape": "(8, 4)",
+          "dim": 275,
+          "contribution": 0.0003899342094190376
+        },
+        {
+          "shape": "(9, 2, 1)",
+          "dim": 320,
+          "contribution": 0.0003857501696941431
         },
         {
           "shape": "(2, 2, 2, 2, 1, 1, 1, 1)",
           "dim": 275,
-          "contribution": 0.0002831191901612714
+          "contribution": 0.0003298553777846668
         },
         {
           "shape": "(3, 2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 320,
-          "contribution": 0.0002709856790980329
+          "contribution": 0.0003162515475670276
         },
         {
           "shape": "(6, 6)",
           "dim": 132,
-          "contribution": 0.00011823064502680996
-        },
-        {
-          "shape": "(9, 1, 1, 1)",
-          "dim": 165,
-          "contribution": 0.00010120098627978119
-        }
-      ],
-      "top_dropped": [
-        {
-          "shape": "(9, 3)",
-          "dim": 154,
-          "contribution": 9.541931828158512e-05
+          "contribution": 0.00012055193025109143
         },
         {
           "shape": "(2, 2, 2, 2, 2, 2)",
           "dim": 132,
-          "contribution": 9.243215528342921e-05
+          "contribution": 0.00010670322800450616
+        }
+      ],
+      "top_dropped": [
+        {
+          "shape": "(9, 1, 1, 1)",
+          "dim": 165,
+          "contribution": 9.781507397733932e-05
+        },
+        {
+          "shape": "(9, 3)",
+          "dim": 154,
+          "contribution": 9.107850202952747e-05
         },
         {
           "shape": "(4, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 165,
-          "contribution": 7.029659352456037e-05
+          "contribution": 8.134879967580316e-05
         },
         {
           "shape": "(2, 2, 2, 1, 1, 1, 1, 1, 1)",
           "dim": 154,
-          "contribution": 6.26776415947794e-05
+          "contribution": 7.370639768699198e-05
         },
         {
           "shape": "(10, 1, 1)",
           "dim": 55,
-          "contribution": 8.36563966851156e-06
+          "contribution": 7.674088034388163e-06
         }
       ],
-      "dropped_contrib": 0.0003476380180366571,
-      "truncation_error": 0.00034763801803627814,
-      "time_sec": 1.2668342590332031
+      "dropped_contrib": 0.00037119565064593974,
+      "truncation_error": 0.00037119565064580584,
+      "time_sec": 1.3789901733398438
     },
     {
       "atom": "4He",
@@ -3836,8 +3804,8 @@
       "A": 4,
       "path": "free",
       "eps": 1e-06,
-      "trM": 3.1907246136468554,
-      "trM_full": 3.19072494948773,
+      "trM": 3.465806642433473,
+      "trM_full": 3.465806972045073,
       "n_total": 77,
       "n_active": 73,
       "n_dropped": 4,
@@ -3845,394 +3813,394 @@
         {
           "shape": "(5, 3, 2, 1, 1)",
           "dim": 7700,
-          "contribution": 0.4007875407516441
+          "contribution": 0.43578053734144734
         },
         {
           "shape": "(5, 4, 2, 1)",
           "dim": 5775,
-          "contribution": 0.24640594508888122
+          "contribution": 0.2642756308124887
         },
         {
           "shape": "(4, 3, 2, 2, 1)",
           "dim": 5775,
-          "contribution": 0.23147905702400173
+          "contribution": 0.25617230939667895
         },
         {
           "shape": "(6, 3, 2, 1)",
           "dim": 5632,
-          "contribution": 0.21533999930748707
+          "contribution": 0.2280704764221097
         },
         {
           "shape": "(4, 3, 2, 1, 1, 1)",
           "dim": 5632,
-          "contribution": 0.19495578979573705
+          "contribution": 0.21694581502991186
         },
         {
           "shape": "(5, 3, 2, 2)",
           "dim": 4455,
-          "contribution": 0.14382790689140987
+          "contribution": 0.15578339688291276
         },
         {
           "shape": "(4, 4, 2, 1, 1)",
           "dim": 4455,
-          "contribution": 0.14050213106628845
+          "contribution": 0.153941425542091
         },
         {
           "shape": "(5, 3, 3, 1)",
           "dim": 4158,
-          "contribution": 0.12892018368969582
+          "contribution": 0.13902026748798949
         },
         {
           "shape": "(4, 3, 3, 1, 1)",
           "dim": 4158,
-          "contribution": 0.1234819407972078
+          "contribution": 0.13604665879869393
         },
         {
           "shape": "(6, 3, 1, 1, 1)",
           "dim": 3696,
-          "contribution": 0.08493481716883883
+          "contribution": 0.09050424180627555
         },
         {
           "shape": "(5, 4, 1, 1, 1)",
           "dim": 3520,
-          "contribution": 0.08377743924793903
+          "contribution": 0.09039127214759789
         },
         {
           "shape": "(5, 2, 2, 2, 1)",
           "dim": 3520,
-          "contribution": 0.08140045089950726
+          "contribution": 0.08912677961257852
         },
         {
           "shape": "(5, 2, 2, 1, 1, 1)",
           "dim": 3696,
-          "contribution": 0.0795211543706584
+          "contribution": 0.08756353355960479
         },
         {
           "shape": "(6, 2, 2, 1, 1)",
           "dim": 3564,
-          "contribution": 0.07825151835311915
+          "contribution": 0.08377853147686389
         },
         {
           "shape": "(5, 3, 1, 1, 1, 1)",
           "dim": 3564,
-          "contribution": 0.07464266331958723
+          "contribution": 0.08179347131007876
         },
         {
           "shape": "(4, 4, 3, 1)",
           "dim": 2970,
-          "contribution": 0.06891710592903291
+          "contribution": 0.07488860737956565
         },
         {
           "shape": "(4, 3, 3, 2)",
           "dim": 2970,
-          "contribution": 0.06756489057849283
+          "contribution": 0.07415800164496913
         },
         {
           "shape": "(6, 4, 1, 1)",
           "dim": 3080,
-          "contribution": 0.06438830901550133
+          "contribution": 0.06768776516869855
         },
         {
           "shape": "(4, 2, 2, 2, 1, 1)",
           "dim": 3080,
-          "contribution": 0.05666542965847408
+          "contribution": 0.06350376765107482
         },
         {
           "shape": "(4, 4, 2, 2)",
           "dim": 2640,
-          "contribution": 0.05291125169614947
+          "contribution": 0.05775230742713614
         },
         {
           "shape": "(6, 4, 2)",
           "dim": 2673,
-          "contribution": 0.05088400400252327
+          "contribution": 0.05327161891970618
         },
         {
           "shape": "(3, 3, 2, 2, 1, 1)",
           "dim": 2673,
-          "contribution": 0.04383194554621649
+          "contribution": 0.04944266344187597
         },
         {
           "shape": "(5, 4, 3)",
           "dim": 2112,
-          "contribution": 0.034921548177813164
-        },
-        {
-          "shape": "(7, 3, 1, 1)",
-          "dim": 2376,
-          "contribution": 0.03355411690441773
+          "contribution": 0.037215005681091255
         },
         {
           "shape": "(3, 3, 3, 2, 1)",
           "dim": 2112,
-          "contribution": 0.031799580738026224
+          "contribution": 0.0355160454688585
+        },
+        {
+          "shape": "(7, 3, 1, 1)",
+          "dim": 2376,
+          "contribution": 0.03463252451768316
         },
         {
           "shape": "(4, 2, 2, 1, 1, 1, 1)",
           "dim": 2376,
-          "contribution": 0.02802794316599381
+          "contribution": 0.031634292805653254
         },
         {
           "shape": "(7, 2, 2, 1)",
           "dim": 2079,
-          "contribution": 0.025463050399409725
+          "contribution": 0.026401619164625145
         },
         {
           "shape": "(6, 2, 2, 2)",
           "dim": 1925,
-          "contribution": 0.02445774196042538
+          "contribution": 0.026081463598262588
         },
         {
           "shape": "(6, 2, 1, 1, 1, 1)",
           "dim": 2100,
-          "contribution": 0.02364754398152994
-        },
-        {
-          "shape": "(7, 3, 2)",
-          "dim": 1925,
-          "contribution": 0.023094347809206807
+          "contribution": 0.025521502751024498
         },
         {
           "shape": "(4, 4, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": 0.022790550079082997
+          "contribution": 0.02516253063108836
         },
         {
           "shape": "(4, 3, 1, 1, 1, 1, 1)",
           "dim": 2079,
-          "contribution": 0.021663683703861916
+          "contribution": 0.024331333855345794
         },
         {
-          "shape": "(6, 3, 3)",
-          "dim": 1650,
-          "contribution": 0.019574883980638915
+          "shape": "(7, 3, 2)",
+          "dim": 1925,
+          "contribution": 0.023737461064519082
         },
         {
           "shape": "(3, 3, 2, 1, 1, 1, 1)",
           "dim": 1925,
-          "contribution": 0.018886712103303522
+          "contribution": 0.021453272667220535
+        },
+        {
+          "shape": "(6, 3, 3)",
+          "dim": 1650,
+          "contribution": 0.02060006396815047
         },
         {
           "shape": "(3, 3, 3, 1, 1, 1)",
           "dim": 1650,
-          "contribution": 0.017182802625664313
-        },
-        {
-          "shape": "(7, 2, 1, 1, 1)",
-          "dim": 1728,
-          "contribution": 0.01613082075610754
+          "contribution": 0.01929560551822678
         },
         {
           "shape": "(5, 5, 1, 1)",
           "dim": 1485,
-          "contribution": 0.015991299330560694
+          "contribution": 0.016964305920626203
+        },
+        {
+          "shape": "(7, 2, 1, 1, 1)",
+          "dim": 1728,
+          "contribution": 0.01683002322990553
         },
         {
           "shape": "(4, 2, 2, 2, 2)",
           "dim": 1485,
-          "contribution": 0.014443617879672792
+          "contribution": 0.016129481853603418
         },
         {
           "shape": "(5, 2, 1, 1, 1, 1, 1)",
           "dim": 1728,
-          "contribution": 0.014189175909632508
+          "contribution": 0.01577338910284591
         },
         {
           "shape": "(5, 5, 2)",
           "dim": 1320,
-          "contribution": 0.0132617810196587
-        },
-        {
-          "shape": "(7, 4, 1)",
-          "dim": 1408,
-          "contribution": 0.012346003745924932
+          "contribution": 0.014011286528391393
         },
         {
           "shape": "(3, 3, 2, 2, 2)",
           "dim": 1320,
-          "contribution": 0.011723041051660808
+          "contribution": 0.01317786107947206
+        },
+        {
+          "shape": "(7, 4, 1)",
+          "dim": 1408,
+          "contribution": 0.01260002577692388
         },
         {
           "shape": "(3, 2, 2, 2, 1, 1, 1)",
           "dim": 1408,
-          "contribution": 0.00982282588032801
+          "contribution": 0.011237142985193287
         },
         {
           "shape": "(6, 5, 1)",
           "dim": 1155,
-          "contribution": 0.009319233470256273
+          "contribution": 0.009654847008133162
         },
         {
           "shape": "(3, 2, 2, 2, 2, 1)",
           "dim": 1155,
-          "contribution": 0.007726707127167005
+          "contribution": 0.0087954228040561
         },
         {
           "shape": "(8, 2, 1, 1)",
           "dim": 945,
-          "contribution": 0.004344523657978283
+          "contribution": 0.004360885617766329
         },
         {
           "shape": "(8, 3, 1)",
           "dim": 891,
-          "contribution": 0.004079811917963709
+          "contribution": 0.004060207639757161
         },
         {
           "shape": "(4, 2, 1, 1, 1, 1, 1, 1)",
           "dim": 945,
-          "contribution": 0.0033540839347676915
+          "contribution": 0.003826384022549165
         },
         {
           "shape": "(3, 2, 2, 1, 1, 1, 1, 1)",
           "dim": 891,
-          "contribution": 0.0030303454707703175
+          "contribution": 0.00349557049356752
         },
         {
           "shape": "(8, 2, 2)",
           "dim": 616,
-          "contribution": 0.0019338047843919706
+          "contribution": 0.001932915979986115
         },
         {
           "shape": "(4, 4, 4)",
           "dim": 462,
-          "contribution": 0.0017679718137370945
+          "contribution": 0.0019039453912708198
         },
         {
           "shape": "(3, 3, 3, 3)",
           "dim": 462,
-          "contribution": 0.0016636524788764494
+          "contribution": 0.00184719013616065
         },
         {
           "shape": "(3, 3, 1, 1, 1, 1, 1, 1)",
           "dim": 616,
-          "contribution": 0.0014622379231743375
+          "contribution": 0.0016784852062585128
         },
         {
           "shape": "(7, 1, 1, 1, 1, 1)",
           "dim": 462,
-          "contribution": 0.000996517581261536
+          "contribution": 0.0010507505498606976
         },
         {
           "shape": "(6, 1, 1, 1, 1, 1, 1)",
           "dim": 462,
-          "contribution": 0.0009273582401728662
+          "contribution": 0.0010131241975456435
         },
         {
           "shape": "(7, 5)",
           "dim": 297,
-          "contribution": 0.0005487114871897682
+          "contribution": 0.0005533548027832168
         },
         {
           "shape": "(8, 1, 1, 1, 1)",
           "dim": 330,
-          "contribution": 0.000482386828646686
+          "contribution": 0.0004883616831004996
         },
         {
           "shape": "(2, 2, 2, 2, 2, 1, 1)",
           "dim": 297,
-          "contribution": 0.000416603871168961
-        },
-        {
-          "shape": "(9, 2, 1)",
-          "dim": 320,
-          "contribution": 0.00040162892961409096
-        },
-        {
-          "shape": "(8, 4)",
-          "dim": 275,
-          "contribution": 0.0003952709339929367
+          "contribution": 0.0004823979163612711
         },
         {
           "shape": "(5, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 330,
-          "contribution": 0.0003883791166848937
+          "contribution": 0.00043756905348854477
+        },
+        {
+          "shape": "(8, 4)",
+          "dim": 275,
+          "contribution": 0.0003899342094190376
+        },
+        {
+          "shape": "(9, 2, 1)",
+          "dim": 320,
+          "contribution": 0.0003857501696941431
         },
         {
           "shape": "(2, 2, 2, 2, 1, 1, 1, 1)",
           "dim": 275,
-          "contribution": 0.0002831191901612714
+          "contribution": 0.0003298553777846668
         },
         {
           "shape": "(3, 2, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 320,
-          "contribution": 0.0002709856790980329
+          "contribution": 0.0003162515475670276
         },
         {
           "shape": "(6, 6)",
           "dim": 132,
-          "contribution": 0.00011823064502680996
-        },
-        {
-          "shape": "(9, 1, 1, 1)",
-          "dim": 165,
-          "contribution": 0.00010120098627978119
-        },
-        {
-          "shape": "(9, 3)",
-          "dim": 154,
-          "contribution": 9.541931828158512e-05
+          "contribution": 0.00012055193025109143
         },
         {
           "shape": "(2, 2, 2, 2, 2, 2)",
           "dim": 132,
-          "contribution": 9.243215528342921e-05
+          "contribution": 0.00010670322800450616
+        },
+        {
+          "shape": "(9, 1, 1, 1)",
+          "dim": 165,
+          "contribution": 9.781507397733932e-05
+        },
+        {
+          "shape": "(9, 3)",
+          "dim": 154,
+          "contribution": 9.107850202952747e-05
         },
         {
           "shape": "(4, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 165,
-          "contribution": 7.029659352456037e-05
+          "contribution": 8.134879967580316e-05
         },
         {
           "shape": "(2, 2, 2, 1, 1, 1, 1, 1, 1)",
           "dim": 154,
-          "contribution": 6.26776415947794e-05
+          "contribution": 7.370639768699198e-05
         },
         {
           "shape": "(10, 1, 1)",
           "dim": 55,
-          "contribution": 8.36563966851156e-06
+          "contribution": 7.674088034388163e-06
         },
         {
           "shape": "(10, 2)",
           "dim": 54,
-          "contribution": 8.269542562544497e-06
+          "contribution": 7.555437338579074e-06
         },
         {
           "shape": "(3, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 55,
-          "contribution": 4.99280220238776e-06
+          "contribution": 5.914625769019626e-06
         },
         {
           "shape": "(2, 2, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 54,
-          "contribution": 4.848484044245952e-06
+          "contribution": 5.773114534098759e-06
         }
       ],
       "top_dropped": [
         {
           "shape": "(11, 1)",
           "dim": 11,
-          "contribution": 2.2134630617622288e-07
+          "contribution": 1.9156072064826268e-07
         },
         {
           "shape": "(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 11,
-          "contribution": 1.1294671186383702e-07
+          "contribution": 1.3659761860542904e-07
         },
         {
           "shape": "(12,)",
           "dim": 1,
-          "contribution": 1.0794028253618738e-09
+          "contribution": 8.761013354675824e-10
         },
         {
           "shape": "(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
           "dim": 1,
-          "contribution": 4.68453747841502e-10
+          "contribution": 5.771596030059774e-10
         }
       ],
-      "dropped_contrib": 3.358408746132633e-07,
-      "truncation_error": 3.358408746656494e-07,
-      "time_sec": 1.2750592231750488
+      "dropped_contrib": 3.296116001921653e-07,
+      "truncation_error": 3.29611600236035e-07,
+      "time_sec": 1.3493149280548096
     }
   ]
 }
