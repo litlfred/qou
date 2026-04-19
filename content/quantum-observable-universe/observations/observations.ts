@@ -75,6 +75,7 @@ export default chapter({
         "mass-formula-validation",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
+        "atom-trM-cancellation-ratio",
         "w-boson-mass-discrepancy",
       ],
     }),
