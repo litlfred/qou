@@ -200,6 +200,108 @@ def m_e_dressed_MeV(eta: float) -> float:
     return E_0_PROTON_TOWER_MEV * total
 
 
+# ── Positron-sector projection via Wedderburn alt block ─────
+#
+# In H_n(q), the σ_i eigenvalues {+q, −q⁻¹} split into Wedderburn
+# sym (+q) and alt (−q⁻¹) blocks (plus a std 2×2 block).  The alt
+# block is the "mirror" direction — σ⁻¹-aligned, which the positron
+# braid σ⁻³ selects.  So "positron sector content" of any braid
+# element = fraction of its V̂ carried by the alt block.
+#
+# additive_wedderburn_volumes already computes per-generator
+#   sp = Π(c·q + d)      — sym block
+#   ap = Π(−c·q⁻¹ + d)   — alt block  (sign-inverted, the "positron" channel)
+#   Vs = z_mark·a + b    — std block (2×2)
+#   Vf = w_sym·sp + w_std·Vs + w_alt·ap   — full aggregated V̂
+
+
+def wedderburn_breakdown(cross: dict, n_strands: int) -> dict:
+    """Per-generator {sym, std, alt, full} V̂ + weights for the braid."""
+    # Re-import w_ weights from mass_endomorphism
+    from mass_endomorphism import w_sym, w_std, w_alt
+    vols = additive_wedderburn_volumes(n_strands, cross)
+    per_gen = []
+    for v in vols:
+        per_gen.append({
+            "sym":   v["sym"],   "sym_weighted":   w_sym * v["sym"],
+            "std":   v["std"],   "std_weighted":   w_std * v["std"],
+            "alt":   v["alt"],   "alt_weighted":   w_alt * v["alt"],
+            "full":  v["full"],
+        })
+    # Totals across generators (sum of abs for a magnitude proxy)
+    def _agg(key):
+        return sum(abs(pg[key]) for pg in per_gen)
+    alt_fraction = (_agg("alt_weighted")
+                     / max(_agg("sym_weighted") + _agg("std_weighted")
+                           + _agg("alt_weighted"), 1e-30))
+    return {
+        "per_gen": per_gen,
+        "weights": {"w_sym": w_sym, "w_std": w_std, "w_alt": w_alt},
+        "agg_abs_sym_weighted": _agg("sym_weighted"),
+        "agg_abs_std_weighted": _agg("std_weighted"),
+        "agg_abs_alt_weighted": _agg("alt_weighted"),
+        "alt_fraction_of_V": alt_fraction,
+    }
+
+
+def positron_projected_calibration() -> dict:
+    """Split proton V̂ into + (sym+std) and − (alt) sectors, recalibrate."""
+    # Proton braid as in mass_endomorphism.py
+    proton_cross = {
+        0: [(1.0, 0.0)] * 3          # B₃: 3 × σ₀
+           + [(1.0, 0.0)]            # uu
+           + [(1.0, -HA / 2)]        # ud
+           + [(1.0, 0.0)] * 2,       # 2 gluon modes
+        1: [(1.0, -HA)] * 3          # B₃: 3 × σ₁⁻¹
+           + [(1.0, -HA / 2)],       # ud
+    }
+    breakdown = wedderburn_breakdown(proton_cross, n_strands=3)
+
+    # Proton full cat mass (= 1,178,995 baseline)
+    p_vols = additive_wedderburn_volumes(3, proton_cross)
+    _, _, _, full_cat = mass_from_tower(p_vols)
+
+    # Build projected V̂ excluding the alt (positron) sector.
+    # V̂_projected per gen = w_sym·sp + w_std·Vs  (drop w_alt·ap)
+    from mass_endomorphism import w_sym, w_std, w_alt
+    projected_vols = []
+    for v in p_vols:
+        v_plus = w_sym * v["sym"] + w_std * v["std"]
+        projected_vols.append({
+            "sym": v["sym"], "std": v["std"], "alt": 0.0,
+            "full": v_plus,
+        })
+    _, _, _, projected_cat = mass_from_tower(projected_vols)
+
+    # Electron under both calibrations
+    e_vols, _, _, _, e_cat = m_cat_from_braid(
+        electron_bare_2strand_braid())
+
+    E_0_full = M_P_MEV / full_cat         # current (un-projected)
+    E_0_proj = M_P_MEV / projected_cat    # new (positron-excluded proton)
+    m_e_full = E_0_full * e_cat
+    m_e_proj = E_0_proj * e_cat
+
+    return {
+        "proton_full_cat":       full_cat,
+        "proton_projected_cat":  projected_cat,
+        "alt_fraction_of_proton_V":
+            breakdown["alt_fraction_of_V"],
+        "fractional_shift":
+            (full_cat - projected_cat) / full_cat,
+        "E_0_full_MeV_per_cat":  E_0_full,
+        "E_0_projected_MeV_per_cat": E_0_proj,
+        "electron_cat":          e_cat,
+        "m_e_full_calibration_MeV":    m_e_full,
+        "m_e_projected_calibration_MeV": m_e_proj,
+        "m_e_CODATA_MeV":        M_E_CODATA_MEV,
+        "err_full_pct":
+            (m_e_full - M_E_CODATA_MEV) / M_E_CODATA_MEV * 100,
+        "err_projected_pct":
+            (m_e_proj - M_E_CODATA_MEV) / M_E_CODATA_MEV * 100,
+    }
+
+
 # ── CLI ─────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -331,6 +433,30 @@ if __name__ == "__main__":
     print(f"    1 − z²           = {1-z_mark**2:.6f}  (Hecke)")
     print(f"    positron net     = 0.451094")
 
+    # Positron-projected calibration: remove proton's alt-block content,
+    # rerun electron prediction under the (+)-sector calibration.
+    print(f"\n{'=' * 80}")
+    print("POSITRON-PROJECTED CALIBRATION")
+    print("  = drop proton's alt-block (σ⁻¹ / positron) content before")
+    print("    fixing E_0, then apply to the unchanged electron braid.")
+    print("=" * 80)
+    proj = positron_projected_calibration()
+    print(f"  proton full cat mass:           {proj['proton_full_cat']:.3f}")
+    print(f"  proton (+)-projected cat mass:  {proj['proton_projected_cat']:.3f}")
+    print(f"  alt-block fractional shift:     "
+          f"{proj['fractional_shift']*100:+.4f}%")
+    print(f"  E_0 (full):       {proj['E_0_full_MeV_per_cat']:.6e} MeV/cat")
+    print(f"  E_0 (projected):  {proj['E_0_projected_MeV_per_cat']:.6e} MeV/cat")
+    print(f"  electron cat (unchanged):  {proj['electron_cat']:.3f}")
+    print(f"  m_e with FULL calibration:       "
+          f"{proj['m_e_full_calibration_MeV']:.6f} MeV  "
+          f"({proj['err_full_pct']:+.4f}%)")
+    print(f"  m_e with PROJECTED calibration:  "
+          f"{proj['m_e_projected_calibration_MeV']:.6f} MeV  "
+          f"({proj['err_projected_pct']:+.4f}%)")
+    print(f"  CODATA m_e:                     "
+          f"{proj['m_e_CODATA_MeV']:.6f} MeV")
+
     # Positron/negative-coef diagnostic
     print(f"\n{'=' * 80}")
     print("POSITRON NF — NEGATIVE-COEFFICIENT DIAGNOSTIC")
@@ -389,6 +515,7 @@ if __name__ == "__main__":
                 "positron_net":    0.451094,
             },
         },
+        "positron_projected_calibration": proj,
         "positron_nf_diagnostic": pos_info,
     }
     out = Path(__file__).parent / "electron-chiral-probe.witness.json"
