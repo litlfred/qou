@@ -1,0 +1,83 @@
+{
+  "computation": "markov-schur-binding",
+  "description": "Recompute atom binding using true Jones-Ocneanu Markov Schur coefficients S_\u03bb instead of Wedderburn-normalized weights.",
+  "timestamp": "2026-04-20T07:25:15.874579+00:00",
+  "schur_solutions": [
+    {
+      "A": 2,
+      "partitions": [
+        "(2,)",
+        "(1, 1)"
+      ],
+      "dims_q": [
+        1.0,
+        1.0
+      ],
+      "S_coefficients": [
+        0.6963254203144305,
+        0.3036745796855695
+      ],
+      "test_words": [
+        "1",
+        "\u03c3_0"
+      ],
+      "tr_M_values": [
+        1.0,
+        0.4993203340335982
+      ],
+      "character_matrix_det": -2.0108968691184823
+    },
+    {
+      "A": 3,
+      "partitions": [
+        "(3,)",
+        "(2, 1)",
+        "(1, 1, 1)"
+      ],
+      "dims_q": [
+        1.0,
+        2.0108968691184814,
+        1.0
+      ],
+      "S_coefficients": [
+        0.4153957863345663,
+        0.28092963397986415,
+        0.022744945705705347
+      ],
+      "test_words": [
+        "1",
+        "\u03c3_0",
+        "\u03c3_0 \u03c3_1"
+      ],
+      "tr_M_values": [
+        1.0,
+        0.4993203340335982,
+        0.2493207959794241
+      ],
+      "character_matrix_det": -6.120579304756196
+    }
+  ],
+  "atom_results": [
+    {
+      "atom": "D",
+      "A": 2,
+      "B_Schur": 9.075723549048481,
+      "B_AME": 2.224566,
+      "err_pct": 0.36509442619243043
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "B_Schur": 18.05356355280196,
+      "B_AME": 8.481798,
+      "err_pct": 0.3400494225129444
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "B_Schur": 12.870926785125404,
+      "B_AME": 7.718058,
+      "err_pct": 0.18306236660319547
+    }
+  ]
+}
