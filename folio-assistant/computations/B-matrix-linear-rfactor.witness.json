@@ -1,0 +1,85 @@
+{
+  "computation": "B-matrix-linear-rfactor",
+  "description": "Combined matrix-\u03a6_q + linear form + pair R-factor + order-5 \u210f_q.",
+  "timestamp": "2026-04-20T13:57:46.957896+00:00",
+  "order_hbar_q": 5,
+  "results": [
+    {
+      "atom": "D",
+      "A": 2,
+      "Z": 1,
+      "N": 1,
+      "AME": 2.224566,
+      "B_scalar": 0.0033319525525476387,
+      "err_scalar_pct": 0.11836834347862091,
+      "B_matrix": 0.0033319525525476387,
+      "err_matrix_pct": 0.11836834347862091
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "Z": 1,
+      "N": 2,
+      "AME": 8.481798,
+      "B_scalar": 5.0702951421536255,
+      "err_scalar_pct": 0.12119807681377304,
+      "B_matrix": 3.7859521313890956,
+      "err_matrix_pct": 0.16682603298442614
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "Z": 2,
+      "N": 1,
+      "AME": 7.718058,
+      "B_scalar": 5.23378413496119,
+      "err_scalar_pct": 0.08825706067603745,
+      "B_matrix": 3.3069521333970093,
+      "err_matrix_pct": 0.15671027401446455
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "Z": 2,
+      "N": 2,
+      "AME": 28.295674,
+      "B_scalar": 6.247874646779243,
+      "err_scalar_pct": 0.5874575643635523,
+      "B_matrix": 4.166077017359215,
+      "err_matrix_pct": 0.64292649100263
+    },
+    {
+      "atom": "6Li",
+      "A": 6,
+      "Z": 3,
+      "N": 3,
+      "AME": 31.994571,
+      "B_scalar": 13.516793357292421,
+      "err_scalar_pct": 0.32822354361186623,
+      "B_matrix": 2.6684621548839744,
+      "err_matrix_pct": 0.5209240825175788
+    },
+    {
+      "atom": "7Li",
+      "A": 7,
+      "Z": 3,
+      "N": 4,
+      "AME": 39.244529,
+      "B_scalar": 56.17660066640029,
+      "err_scalar_pct": 0.25780023073419295,
+      "B_matrix": 6.164698890230689,
+      "err_matrix_pct": 0.5036588553938869
+    },
+    {
+      "atom": "9Be",
+      "A": 9,
+      "Z": 4,
+      "N": 5,
+      "AME": 58.16498,
+      "B_scalar": NaN,
+      "err_scalar_pct": NaN,
+      "B_matrix": 76.96707325614148,
+      "err_matrix_pct": 0.22265627375692854
+    }
+  ]
+}
