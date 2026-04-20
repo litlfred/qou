@@ -211,6 +211,15 @@ def solve_schur_coefficients(A):
             return z_markov**2
         if word_gens == [0, 1, 2]:
             return z_markov**3
+        if word_gens == [0, 2]:
+            return z_markov**2     # σ_0, σ_2 commute; Markov on σ_2 gives z·tr(σ_0) = z²
+        if word_gens == [0, 1, 2, 3]:
+            return z_markov**4     # A=5+ case
+        if word_gens == [1, 2]:
+            return z_markov**2
+        if word_gens == [0, 0, 1]:
+            # σ_0² σ_1 = (h σ_0 + 1)σ_1: tr = h tr(σ_0σ_1) + tr(σ_1) = h z² + z
+            return h * z_markov**2 + z_markov
         # Fall back: raise
         return None
 
@@ -357,11 +366,15 @@ if __name__ == "__main__":
     schur_A2 = next((r for r in results if r["A"] == 2), None)
 
     atom_results = []
-    for name, (Z, N) in [("D", (1, 1)), ("T", (1, 2)), ("3He", (2, 1))]:
+    for name, (Z, N) in [("D", (1, 1)), ("T", (1, 2)), ("3He", (2, 1)),
+                              ("4He", (2, 2))]:
         A = Z + N
         B_AME = AME[name]
         Mtot = A * 938.272
-        schur = schur_A2 if A == 2 else schur_A3 if A == 3 else None
+        schur = None
+        for r in results:
+            if r["A"] == A:
+                schur = r; break
         if schur is None:
             continue
         parts = [tuple(eval(p)) if p.startswith("(") else tuple([A])
