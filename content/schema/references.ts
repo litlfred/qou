@@ -2488,6 +2488,28 @@ export const references: CSLData[] = [
       "expansion of the categorical mass endomorphism.",
   }),
 
+  // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
+  ref({
+    id: "kohno1987",
+    type: "article-journal",
+    title:
+      "Monodromy representations of braid groups and Yang-Baxter equations",
+    author: [{ family: "Kohno", given: "Toshitake" }],
+    "container-title": "Annales de l'Institut Fourier",
+    volume: "37",
+    issue: "4",
+    page: "139-160",
+    issued: { "date-parts": [[1987]] },
+    DOI: "10.5802/aif.1111",
+    note:
+      "Proves that monodromy of the Knizhnik-Zamolodchikov " +
+      "connection on the configuration space X_n coincides with " +
+      "the quantum-group R-matrix representation of U_q(g).  " +
+      "Flatness of the KZ connection at generic q is the " +
+      "mathematical content behind the lifted-crossing locality " +
+      "hypothesis in the mass-volume expansion.",
+  }),
+
   // ── Murakami & Murakami 2001 (volume conjecture) ─────────────
   ref({
     id: "murakami2001",

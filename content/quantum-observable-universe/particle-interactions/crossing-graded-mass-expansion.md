@@ -1,4 +1,4 @@
-## Crossing-graded skein expansion
+## Crossing-graded mass expansion
 
 The [mass-volume factorization](#conj:mass-volume-factorization) can
 be organized as a perturbative expansion graded by the number of
@@ -8,23 +8,22 @@ computation: the standard NF mass arises as the leading term, and
 each successive order injects the hyperbolic 3D depth carried by
 additional crossings.
 
-## The expansion
+## Statement
 
-Fix the universal shape parameter $z_q \in \mathbb{C}$ from the
-[Descartes elliptic curve](#prop:descartes-elliptic-curve) via its
-Legendre $\lambda$-invariant.  Define the **depth scalar**
+**Conjecture.**
+*Let $\mathcal{K}$ be an atomic braid with braid word $\beta$ of
+$c$ crossings, living in $H_{3A}(q)$.  Fix the universal shape
+parameter $z_q \in \mathbb{C}$ from the [Descartes elliptic
+curve](#prop:descartes-elliptic-curve) via its Legendre
+$\lambda$-invariant, and define the depth scalar*
 
 $$
   \xi(q) \;:=\; \frac{D(z_q)}{\hbar_q^2},
 $$
 
-where $D$ is the Bloch-Wigner dilogarithm and $\hbar_q^2 = V(4_1) /
-(m_\mu / m_e)$ is the pinned quantum of action.  For a braid word
-$\beta$ with $c$ crossings, grade each crossing by a binary label
-$s_i \in \{0, 1\}$: $s_i = 0$ means skein-resolved (flat, no volume),
-$s_i = 1$ means lifted (carrying shape $z_q$, contributing $D(z_q)$).
-
-**Expansion.**
+*where $D$ is the Bloch-Wigner dilogarithm and $\hbar_q^2 = V(4_1) /
+(m_\mu/m_e)$ is the pinned quantum of action.  Then the categorical
+mass endomorphism admits a crossing-graded expansion*
 
 $$
   \mathfrak{m}(\mathcal{K}; q)
@@ -33,12 +32,19 @@ $$
   \mathfrak{m}^{(n)}_{\mathrm{GB}}(\mathcal{K}),
 $$
 
+*where*
+
 $$
   \mathfrak{m}^{(n)}_{\mathrm{GB}}(\mathcal{K})
   \;=\;
   \sum_{\substack{S \subseteq \{1, \ldots, c\} \\ \lvert S \rvert = n}}
-  \mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{S \text{ lifted, rest flat}}).
+  \mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{S \text{ lifted, rest flat}}),
 $$
+
+*and $\mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{S,\mathrm{flat}})$ is
+the Gröbner-Shirshov normal form of $\beta$ with crossings in $S$
+carrying the shape $z_q$ (volume-contributing) and the remainder
+skein-resolved (flat, zero-volume).*
 
 ## Order-by-order meaning
 
@@ -50,11 +56,11 @@ $$
 | $\vdots$ | $\vdots$ | $\vdots$ |
 | $n = c$ | $\xi^c \cdot \mathfrak{m}^{(c)}_{\mathrm{GB}}$ | full Thurston volume — all crossings lifted |
 
-## Exponential scaling under locality
+## Locality corollary
 
-If lifted-crossing contributions factor (**locality hypothesis** —
-no cross-talk between distant crossings), the sum collapses to an
-exponential in crossing count:
+If lifted-crossing contributions factorize pairwise — the
+[lifted-crossing locality hypothesis](#conj:lifted-crossing-locality) —
+the sum collapses to an exponential in crossing count:
 
 $$
   \mathfrak{m}(\mathcal{K}; q)
@@ -96,3 +102,19 @@ $z_q$ — precisely the boundary of the Descartes curve at
 $q = 1/\varphi^2$ ([golden-ratio degeneration](#prop:descartes-elliptic-curve)) —
 so the GB framework is the **real-axis degeneration** of the
 volumized theory.
+
+## Status
+
+This statement is a **conjecture** rather than a theorem because:
+
+1. The universal shape parameter $z_q = \lambda(\mathcal{E}_q)$ is
+   pinned by the Descartes curve, but its agreement with per-knot
+   Thurston gluing is only an approximation (the
+   $\lambda$-witness shows $D(z_q)/v_3 \approx 0.9035$ at $q_0$).
+2. The separation of lifted vs flat crossings requires the
+   [locality hypothesis](#conj:lifted-crossing-locality) as an
+   independent assumption.
+3. The exponential collapse to $(1 + \xi)^c$ further needs locality.
+
+Each component is tracked separately as a conjecture so the status
+of the overall expansion can be refined as derivations mature.
