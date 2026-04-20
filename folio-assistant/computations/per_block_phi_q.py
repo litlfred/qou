@@ -109,7 +109,8 @@ def particle_braids() -> dict:
             "n_strands": 3,
         },
         "gamma_gamma": {
-            "cross": {0: [(1.0, HA)]},    # (HA σ + I) = Hecke-reduced σ²
+            # (c, d) = c·σ + d·I; γγ = σ² → HA·σ + I, so use (HA, 1.0)
+            "cross": {0: [(HA, 1.0)]},
             "n_strands": 2,
         },
     }

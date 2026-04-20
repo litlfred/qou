@@ -98,9 +98,9 @@ def particle_braids() -> dict:
             "n_strands": 3,
         },
         "gamma_gamma": {
-            # γγ = σ² reduces to HA·σ + I, treated as single crossing
-            # with d = HA; use 2-strand setup since γ = σ on 2 strands
-            "cross": {0: [(1.0, HA)]},            # net = HA·σ + I at q₀
+            # γγ = σ² reduces via Hecke to HA·σ + I; repo convention is
+            # (c, d) ↔ c·σ + d·I, so encode as (HA, 1.0).
+            "cross": {0: [(HA, 1.0)]},
             "n_strands": 2,
         },
     }

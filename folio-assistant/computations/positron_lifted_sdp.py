@@ -47,9 +47,7 @@ from mass_endomorphism import (z_mark, w_sym, w_std, w_alt,
 
 
 def sdp_positron_lifted(Z: int, N: int, *,
-                          mode: str = "lifted_free",
-                          target_binding: float = 0.009,
-                          verbose: bool = False) -> dict:
+                          mode: str = "lifted_free") -> dict:
     """Single-level SDP with explicit e⁻ / e⁺ sector variables.
 
     mode ∈ {"unlifted", "lifted_free", "lifted_cpt_sym",
@@ -61,8 +59,13 @@ def sdp_positron_lifted(Z: int, N: int, *,
                             4×4 PSD per adjacent pair
       lifted_cpt_sym     — V̂_i^+ = V̂_i^-  (parity-even, "particle
                             plus its positron in coherent sum")
-      lifted_cpt_antisym — V̂_i^+ = -V̂_i^- (parity-odd, pure alt/
-                            positron sector)
+      lifted_plus_zero   — V̂_i^+ = 0, V̂_i^- free (nonneg); all
+                            mass carried through the alt block.
+                            (Was originally called "lifted_cpt_antisym"
+                            but true V^+ = -V^- is infeasible under
+                            the PSD blocks, which require nonneg
+                            entries.  The V^+ = 0 boundary variant is
+                            what the code actually enforces.)
 
     Returns dict with: V_plus, V_minus (or V_scalar for unlifted),
     CPT-invariant V̂ per generator, SDP objective value, status.
@@ -106,8 +109,12 @@ def sdp_positron_lifted(Z: int, N: int, *,
         if mode == "lifted_cpt_sym":
             constraints.append(V_plus == V_minus)
         elif mode == "lifted_cpt_antisym":
-            # "Pure positron sector": forbid sym contribution.
-            # V̂_i^+ = 0 forces V̂_i^- = 2·V_avg[i] to carry everything.
+            # NOTE: the name suggests V^+ = -V^-, but under the 2x2 PSD
+            # blocks below V_plus and V_minus are constrained nonneg,
+            # so literal antisymmetry is infeasible.  What is actually
+            # enforced: V^+ = 0 (sym channel off), forcing V^- =
+            # 2·V_avg to carry all mass through the alt block.  Kept
+            # as "lifted_cpt_antisym" for witness-schema continuity.
             constraints.append(V_plus == 0)
         # Adjacent-pair 2×2 PSD blocks per sector
         for i in range(n_gens - 1):
@@ -133,7 +140,7 @@ def sdp_positron_lifted(Z: int, N: int, *,
 
     t0 = time.time()
     try:
-        prob.solve(solver=cp.SCS, verbose=False)
+        prob.solve(solver=cp.ECOS, verbose=False)
     except Exception as e:
         return {"status": f"solver_error:{type(e).__name__}",
                  "message": str(e)[:100]}

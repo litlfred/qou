@@ -31,7 +31,9 @@ From `binding-fast-pipeline.witness.json` on main:
 | D | 2 | 2.2245 | **1.8792** | **0.018%** |
 | T | 3 | 8.4818 | **6.7829** | **0.060%** |
 | ³He | 3 | 7.7180 | **6.8092** | **0.032%** |
-| ⁴He | 4 | 28.2957 | *pending (running)* | — |
+| ⁴He | 4 | 28.2957 | **1,987,649** (blow-up) | catastrophic |
+
+**⁴He note**: the binding_full pipeline at kahler_order=0 produces V̂ values past the Φ_q pole (V̂₂ = 1.52, V̂₇ = 1.60, V̂_₉ = 1.65), so the tower diverges. The canonical Markov term alone gives 0.713 MeV (same as `canonical-mass-table.witness.json` on main). **The full tower formula does not extend to ⁴He without a Kähler lift or alternative baseline.**  Compare: the recursive-three-calibration Flavour B (fit on D/T/³He) predicted ⁴He at 28.72 MeV (1.51%) — far better than the unlifted tower here.
 
 Zero free parameters beyond the fixed E_0 = Q_β = 0.782 MeV (β-decay calibration).
 

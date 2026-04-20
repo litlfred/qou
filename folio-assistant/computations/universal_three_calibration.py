@@ -15,14 +15,23 @@ for any braid W.  Apply to
   • proton  (11-factor, 3 strands)     → should give m_p = 938.272
   • neutron (11-factor, udd variant)   → should give m_n = 939.565
 
-These three fix E_0^desc, E_0^sgl, E_0^crs.  Then for each atom:
+These three fix E_0^desc, E_0^sgl, E_0^crs.  Then for each atom we
+compute two braid-level masses under the same universal calibration:
 
-    B(Z, N) = m_atom_braid − Σ_nucleons m_nucleon
-            = [E₀^desc · desc(atom)  + ...  ]
-            − Z · m_p  − N · m_n
+    m_atom_pred  = universal E₀ · channels(atom_braid, include_inter=True)
+    m_free_pred  = universal E₀ · channels(atom_braid, include_inter=False)
+
+and define binding as the framework-consistent difference:
+
+    B(Z, N) = m_free_pred − m_atom_pred
 
 No per-isotope free parameters.  Residuals are genuine framework
 errors, not artefacts of fitting.
+
+(Earlier drafts used Σ m_nucleon as the free baseline; see the
+commit history.  Both conventions fail catastrophically — atoms
+predict anti-bound under the universal calibration — so the choice
+of baseline does not affect the qualitative conclusion.)
 """
 from __future__ import annotations
 
@@ -130,8 +139,10 @@ if __name__ == "__main__":
         print(f"  {lab:>10} {A[i,0]:>12.6f} {A[i,1]:>16.4f} "
               f"{A[i,2]:>14.4f} {b[i]:>10.4f}")
 
-    # Exact solve (3x3)
-    E0 = np.linalg.solve(A, b)
+    # LSQ solve — more numerically robust than np.linalg.solve when
+    # the design matrix is nearly rank-deficient (e.g. proton and
+    # neutron channels are structurally very similar).
+    E0, *_ = np.linalg.lstsq(A, b, rcond=None)
     print(f"\n  Universal calibration (from particle masses):")
     print(f"    E_0^desc   = {E0[0]:+.6e} MeV/cat")
     print(f"    E_0^sgl    = {E0[1]:+.6e} MeV/cat")

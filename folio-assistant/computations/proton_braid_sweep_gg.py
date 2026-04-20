@@ -55,14 +55,11 @@ ELECTRON_CAT = _e_cat   # 630.5293
 
 # ── γγ Hecke correction ────────────────────────────────────
 # σ² = (q-q⁻¹)·σ + 𝟏, so a γγ insertion at gen g is equivalent
-# to applying a quadratic factor that reduces to HA·σ + I.  We
-# encode this as the factor tuple (c=1, d=HA) which gives:
-#   c·σ + d·I = σ + HA·I
-# This is NOT literally γγ=σ²; it's the Hecke-reduced equivalent
-# after one σ² → HA σ + I rewrite.  For sweeping corrections, we
-# use this as the "single γγ loop" insertion.
+# to applying a quadratic factor that reduces to HA·σ + I.  The
+# repo's (c, d) convention is c·σ + d·I, so encode as (c=HA, d=1):
+#   c·σ + d·I = HA·σ + I   ← matches σ² Hecke reduction exactly.
 
-GAMMA_GAMMA_FACTOR = (1.0, HA)
+GAMMA_GAMMA_FACTOR = (HA, 1.0)
 
 
 # ── Proton braid variants ──────────────────────────────────
@@ -193,8 +190,9 @@ if __name__ == "__main__":
     print(f"  Δ via E_0_proton_tower = "
           f"{gg['delta_pair_via_E0_proton_tower_MeV']:.6f} MeV")
     print(f"  2 m_e (CODATA)         = {gg['two_m_e_MeV']:.6f} MeV")
-    print(f"  γγ correction factor:   (c={GAMMA_GAMMA_FACTOR[0]}, "
-          f"d={GAMMA_GAMMA_FACTOR[1]:.4f})  = σ + HA·I")
+    print(f"  γγ correction factor:   (c={GAMMA_GAMMA_FACTOR[0]:.4f}, "
+          f"d={GAMMA_GAMMA_FACTOR[1]:.4f})  = HA·σ + I  "
+          f"(Hecke-reduced σ²)")
 
     # Assemble variants
     base = proton_baseline_11factor()
@@ -271,5 +269,21 @@ if __name__ == "__main__":
             best["err_vs_CODATA_pct"] if finite else None,
     }
     out = Path(__file__).parent / "proton-braid-sweep-gg.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    # Sanitize Infinity → null for strict-JSON compatibility (repo
+    # tooling uses JSON.parse which rejects bare Infinity).
+    import math as _math
+
+    def _sanitize(o):
+        if isinstance(o, float):
+            if _math.isinf(o) or _math.isnan(o):
+                return None
+            return o
+        if isinstance(o, dict):
+            return {k: _sanitize(v) for k, v in o.items()}
+        if isinstance(o, list):
+            return [_sanitize(v) for v in o]
+        return o
+
+    out.write_text(json.dumps(_sanitize(witness), indent=2, default=str,
+                                 allow_nan=False))
     print(f"\nWitness: {out}")
