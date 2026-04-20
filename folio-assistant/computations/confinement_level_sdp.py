@@ -163,8 +163,14 @@ def level_sdp(n_strands: int,
               label: str = "",
               candidate_ops: list[str] | None = None,
               strand_anchors: Sequence[int] | None = None,
+              objective: str = "min_abs_trM",
               ) -> tuple[tuple[str, ...], SdpDecisionReport]:
     """Run SDP over all per-strand knot-operator assignments.
+
+    objective:
+      "min_trM"       — minimize signed tr_M (sdp_decide default)
+      "min_abs_trM"   — minimize |tr_M|, the on-shell / ground-state
+                         configuration (physical default)
 
     Returns the optimal operator tuple + full SDP report with dual gaps.
     """
@@ -179,8 +185,17 @@ def level_sdp(n_strands: int,
         name = "+".join(assignment)
         candidates.append((name, word))
 
-    def compute_trM(w, n):
-        return tr_M_plancherel(w, n)
+    if objective == "min_abs_trM":
+        # On-shell / ground-state candidate
+        def compute_trM(w, n):
+            return abs(tr_M_plancherel(w, n))
+    elif objective == "max_abs_trM":
+        # Mass-carrying excited configuration (sdp_decide argmin → negate)
+        def compute_trM(w, n):
+            return -abs(tr_M_plancherel(w, n))
+    else:
+        def compute_trM(w, n):
+            return tr_M_plancherel(w, n)
 
     rep = sdp_decide(candidates=candidates, n_strands=n_strands,
                      compute_trM=compute_trM, label=label)
