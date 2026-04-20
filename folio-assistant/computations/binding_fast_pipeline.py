@@ -82,8 +82,11 @@ def binding_fast(Z: int, N: int, *, pair_mode: str = "full",
         n += 1
         V_a_n = lift_V_markov(V_atom_0, n)
         V_f_n = lift_V_markov(V_free_0, n)
-        m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode)
-        m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode)
+        # Level n ≥ 1: transient only (prop:descended-level-zero).
+        m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode,
+                                   include_desc=False)
+        m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode,
+                                   include_desc=False)
         delta_n = m_f_n - m_a_n
         scale_n = brane_scaling(n)
         term_n = scale_n * delta_n

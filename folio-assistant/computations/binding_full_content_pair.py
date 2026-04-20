@@ -59,20 +59,28 @@ from content_weighted_pair_probe import content_weighted_pair_term
 
 def tower_mass_level_content(V: list[float],
                                Vij: dict[tuple[int, int], float],
-                               *, cap_frac: float = 0.98) -> float:
+                               *, cap_frac: float = 0.98,
+                               include_desc: bool = True) -> float:
     """tower_mass_level with scalar pair replaced by content-weighted.
 
-    Term 1 (descended): |Π V_i|  — unchanged
-    Term 2 (single):    Σ_i Φ_q(|V_i|) — unchanged
-    Term 3 (pair):      Σ_{i<j} z² · Φ_q(|V̂_{ij}^{content}|)  ← swapped
+    Term 1 (descended): |Π V_i|  — present iff include_desc
+    Term 2 (single):    Σ_i Φ_q(|V_i|)
+    Term 3 (pair):      Σ_{i<j} z² · Φ_q(|V̂_{ij}^{content}|)
+
+    ``include_desc``: set False at jet levels n ≥ 1
+    (prop:descended-level-zero — iterated descent idempotence
+    collapses desc at every level to the same base-level holonomy).
     """
     n = len(V)
     if n == 0:
         return 0.0
-    desc = 1.0
-    for v in V:
-        desc *= v
-    desc = abs(desc)
+    if include_desc:
+        desc = 1.0
+        for v in V:
+            desc *= v
+        desc = abs(desc)
+    else:
+        desc = 0.0
     single = sum(phi_q_safe(abs(v), cap_frac=cap_frac) for v in V)
     cross = 0.0
     for i in range(n):
@@ -152,8 +160,11 @@ def binding_unified_content(Z: int, N: int, *,
             scale = z_mark ** (2 * (n - 1))
             Vij_a_n = {k: v * scale for k, v in Vij_atom.items()}
             Vij_f_n = {k: v * scale for k, v in Vij_free.items()}
-        m_a_n = tower_mass_level_content(V_a_n, Vij_a_n)
-        m_f_n = tower_mass_level_content(V_f_n, Vij_f_n)
+        # Level n ≥ 1: transient only (prop:descended-level-zero).
+        m_a_n = tower_mass_level_content(V_a_n, Vij_a_n,
+                                           include_desc=False)
+        m_f_n = tower_mass_level_content(V_f_n, Vij_f_n,
+                                           include_desc=False)
         delta_n = m_f_n - m_a_n
         if delta_1 is None:
             delta_1 = delta_n

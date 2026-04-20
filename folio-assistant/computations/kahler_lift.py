@@ -269,8 +269,11 @@ if __name__ == "__main__":
                  a_lift["V1"], f_lift["V1"]),
                 ("Kähler-2nd (+ℏq²·(q²d²+qdV)/2)",
                  a_lift["V2"], f_lift["V2"])]:
-            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode)
-            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode)
+            # Level 1: transient only (prop:descended-level-zero).
+            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode,
+                                     include_desc=False)
+            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode,
+                                     include_desc=False)
             delta_1 = m_f - m_a
             # Apply ℏ_q² brane scaling (level 1)
             tower_1_MeV = E_0_BETA_DECAY_MEV * HBAR_Q_SQ * delta_1
@@ -299,8 +302,11 @@ if __name__ == "__main__":
             ("Kähler-2nd (+ℏq²·(q²d²+qdV)/2)",
              a_lift["V2"], f_lift["V2"], 5)]:
         for pair_mode in ["adjacent", "full"]:
-            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode)
-            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode)
+            # Level 1: transient only (prop:descended-level-zero).
+            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode,
+                                     include_desc=False)
+            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode,
+                                     include_desc=False)
             delta_1 = m_f - m_a
             tower_1_MeV = E_0_BETA_DECAY_MEV * HBAR_Q_SQ * delta_1
             B_total = canon_MeV + tower_1_MeV

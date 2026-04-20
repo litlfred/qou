@@ -23,45 +23,77 @@ Compare what the paper content blocks prescribe vs what the computational module
 
 ## Inconsistencies — ranked by impact
 
-### 1. Descended term level-counting — HIGH
+### 1. Descended term level-counting — HIGH — **RESOLVED 2026-04-20**
 
 **Paper** (`rem:mass-endomorphism-jet-tower`, recently revised):
 > The **descended** contribution is **not** summed over jet levels. Including a separate descended product at every jet level would double-count the level-0 holonomy.
 
-**Code** (`canonical_plus_multibrane.py:binding_canonical_plus_multibrane`):
-```python
-for n in range(1, n_brane_levels + 1):
-    V_a = lift_V_markov(V_atom_0, n)
-    V_f = lift_V_markov(V_free_0, n)
-    m_a = tower_mass_level(V_a, pair_mode=pair_mode, ...)
-    m_f = tower_mass_level(V_f, pair_mode=pair_mode, ...)
-    delta = m_f - m_a
-    tower_term += delta
-```
+Derivation added: **`prop:descended-level-zero`** — iterated
+descent idempotence $\hat\tau_n^2 = \hat\tau_n$ collapses the
+descended trace at every jet level to the same base-level
+holonomy $\mathfrak{m}(\varrho_0) = |\prod_i \hat V_i^{(0)}|$.
+Summing it per level overcounts by
+$\sum_{n=1}^N \hbar_q^{2n} \cdot \mathfrak{m}(\varrho_0)
+\approx 0.01 \cdot \mathfrak{m}(\varrho_0)$ at $q_0$ (≈1% of
+every binding prediction).
 
-`tower_mass_level` returns `desc + single + cross`, so the descended term **is** re-added at every level. This double-counts the level-0 holonomy at levels 1+ with ℏ_q² damping, masking but not eliminating the overcount.
+**Code fix applied** (branch `claude/improve-mass-calculations-oE5aA`):
+added `include_desc: bool = True` parameter to `tower_mass_level`
+in `canonical_plus_multibrane.py`; updated all level-loop call
+sites to pass `include_desc=False` (level 0's descended
+contribution is handled by the canonical Markov-trace term).
+Call sites updated:
 
-**Fix**: strip the desc term from `tower_mass_level` calls inside the level loop; compute desc once at level 0 and treat levels 1+ as singleton+pair only.
+- `canonical_plus_multibrane.py::binding_canonical_plus_multibrane` (main path)
+- `canonical_plus_multibrane.py::_binding_cached` (CLI path, both closed-form and truncated branches)
+- `binding_fast_pipeline.py::binding_fast` (level loop)
+- `binding_full_pipeline.py::binding_full` (level-1 call)
+- `unified_lift.py::binding_unified` (jet loop)
+- `kahler_lift.py` CLI (both demo loops)
+- `binding_full_content_pair.py::tower_mass_level_content` + caller
 
-### 2. Three-Wedderburn-channel binding — HIGH
+### 2. Three-Wedderburn-channel binding — HIGH — **RESOLVED 2026-04-20 (option c)**
 
 **Paper** (`prop:tower-binding-energy`):
 $$B(Z,N) = \sum_{\lambda \in \{\text{sym,std,alt}\}} w_\lambda \cdot m_e \cdot \sum_{i=0}^{A-2} \ln|\Phi_q(\hat{V}_i^\lambda)|$$
 
-**Code** (`mass_endomorphism.py::mass_from_tower`):
-```python
-Vf = w_sym * sp + w_std * Vs + w_alt * ap   # aggregate first
-single = sum(Phi_q(abs(v["full"])) for v in vols)  # Φ_q on aggregate
-```
+**Root cause of prior saturation claim**: the branch's
+`per_block_phi_q.py` implemented the **wrong form** — it
+computed `Φ_q(V̂)` per block (which diverges at the pole
+$|V̂| \to q^-$) rather than the paper's `ln|Φ_q(V̂)|`
+(which has only isolated logarithmic singularities at
+$V̂ = q^k$, and admits the paper's stated "analytic
+continuation past $|V̂| = q$").
 
-The code does **aggregate-then-Φ_q** (single global Φ_q), whereas the paper prescribes **per-block Φ_q then weighted sum with log**.
+**Resolution**: option (c) — paper formula is computable in its
+**log form** via $\ln|\Phi_q(v)| = -\sum_{k\ge 1} \ln|1 - q^{-k}v|$,
+analytically continued past $q$ by $|1 - q^{-k}v| = q^{-k}v - 1$
+when $q^{-k}v > 1$.  Isolated pole hits at $V̂ = q^k$ (e.g.
+$V̂^{\text{sym}} = q$ at pp inter-nucleon crossings, $V̂^{\text{sym}} = q^3$
+at electron trefoil) handled via **principal-value
+regularization**: drop the zero-measure factor $|1 - q^{-k}v|^{-1}$
+at the pole index from the product.
 
-**Impact evidence**: this branch's `per_block_phi_q.py` attempted the paper-correct form and found the sym block saturates the Φ_q pole — so the paper's formula as written is **not computable** at q₀ with the current Hecke conventions.
+**New module**: `binding_per_block_log.py` — implements
+`ln_abs_phi_q(v, pole_mode='principal')` and
+`binding_per_block_log(cross, n_strands, apply_qed=True)`.
+Sanity check on {D, T, ³He, ⁴He} matches the paper's
+`full-tower-mass.witness.json` table within expected
+precision (D: 0.15%, T: 0.08%, ³He: 0.07%, ⁴He: 0.34%).
+QED correction $(1 - \alpha_{\text{EM}}/2)$ applied per
+`prop:deuterium-derived-binding`.
 
-**Resolution required**: either:
-  (a) Paper is wrong — the per-block formula diverges; the algebraically correct computation is the aggregate form already in the code.
-  (b) Code is wrong — needs different normalisation of per-block V̂ to stay in Φ_q's domain.
-  (c) Both are right at different scales — paper formula applies to atomic binding at the log scale, code's formula applies to particle masses. They should coexist.
+Paper's aggregate form (`mass_endomorphism.mass_from_tower`)
+and per-block log form now **coexist** as two separate
+pipelines:
+
+- **Aggregate** (`mass_from_tower`): particle masses (m_p, m_n, m_e, γγ)
+- **Per-block log** (`binding_per_block_log`): nuclear binding B(Z,N)
+
+The two scales differ because the paper's B-formula uses
+$m_e \cdot w_\lambda$ coefficients whereas the particle-mass
+formula uses a single $E_0$; combining them requires the
+three-calibration scheme the user is pursuing.
 
 ### 3. E_0 calibration conflict — HIGH
 

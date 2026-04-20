@@ -127,8 +127,13 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
     V_f_1 = f_lift[key_lift] if kahler_order > 0 else f_lift["V0"]
 
     # ── Tower mass at level 1 ───────────────────────────
-    m_a = tower_mass_level(V_a_1, pair_mode=pair_mode)
-    m_f = tower_mass_level(V_f_1, pair_mode=pair_mode)
+    # Level 1: transient only (prop:descended-level-zero).  Descended
+    # holonomy lives at level 0 and is captured by the canonical
+    # Markov-trace term handled separately by the caller.
+    m_a = tower_mass_level(V_a_1, pair_mode=pair_mode,
+                             include_desc=False)
+    m_f = tower_mass_level(V_f_1, pair_mode=pair_mode,
+                             include_desc=False)
     delta_1 = m_f - m_a
     # Apply ℏ_q² brane scaling at level 1.  Higher levels are O(ℏ_q⁴)
     # below AME precision — single level 1 is sufficient.

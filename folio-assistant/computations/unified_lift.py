@@ -153,8 +153,11 @@ def binding_unified(Z: int, N: int, *, pair_mode: str = "full",
             # Iterate Markov-stab lift from level-1 Kähler baseline
             V_a_n = lift_V_markov(V_a_1, n - 1)
             V_f_n = lift_V_markov(V_f_1, n - 1)
-        m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode)
-        m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode)
+        # Level n ≥ 1: transient only (prop:descended-level-zero).
+        m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode,
+                                   include_desc=False)
+        m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode,
+                                   include_desc=False)
         delta_n = m_f_n - m_a_n
         if delta_1 is None:
             delta_1 = delta_n
