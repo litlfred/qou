@@ -131,6 +131,11 @@ export default chapter({
         "groebner-reduction-methods",
         "tower-binding-energy",
         "bw-categorical-descent",
+        "thurston-volume-additivity",
+        "mass-volume-factorization",
+        "crossing-graded-skein-expansion",
+        "frobenius-packing-density",
+        "soft-confinement-at-q0",
       ],
     }),
 
