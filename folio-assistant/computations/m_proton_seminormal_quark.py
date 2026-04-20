@@ -39,27 +39,62 @@ h = q0 - qi0
 U, D = 1, 0   # u-quark (isospin up), d-quark (isospin down)
 
 
-def ln_phi_q(v, max_k=2000):
-    """ln|Φ_q(v)| = -Σ_k ln|1 - q^{-k}v|.
+hbar_log = math.log(q0)           # ℏ = log q for Faddeev expansion
+hbar_q = (q0 - 1) / q0            # conventional ℏ_q for QOU
 
-    Finite for all real v ≠ q^k (poles at those points). Handles
-    |v| ≥ q by summing signed log-terms; Φ_q itself diverges there
-    but its logarithm is well-defined as a principal-value limit.
+
+def Li2(x, max_k=2000):
+    """Real dilogarithm Li_2(x) = Σ x^k/k² for |x|<1; reflection for |x|>1."""
+    if x == 1.0: return math.pi**2 / 6
+    if x == -1.0: return -math.pi**2 / 12
+    if abs(x) < 1:
+        s = 0.0
+        xk = x
+        for k in range(1, max_k+1):
+            s += xk / (k*k)
+            xk *= x
+            if abs(xk/(k*k)) < 1e-18: break
+        return s
+    # |x|>1: reflection Li_2(x) + Li_2(1/x) = -½log²(-x) - π²/6
+    # (principal branch, real x>1)
+    if x > 1:
+        return -Li2(1.0/x) - math.pi**2/6 - 0.5*math.log(x)**2
+    # x < -1
+    return -Li2(1.0/x) - math.pi**2/3 - 0.5*math.log(-x)**2
+
+
+def ln_phi_q_faddeev(v, order=4):
+    """log|Φ_q(v)| via Faddeev-like asymptotic in ℏ = log q.
+
+    Derivation: log Φ_q(v) = Σ_{m≥1} v^m / (m (q^m - 1)).
+    Using 1/(q^m-1) = 1/(m·ℏ) · (1 - m·ℏ/2 + (m·ℏ)²/12 - ...) (Bernoulli):
+
+      log Φ_q(v) = (1/ℏ) Σ v^m/m²  −  ½ Σ v^m/m  +  (ℏ/12) Σ v^m  + O(ℏ³)
+                 = (1/ℏ) Li_2(v)   −  ½ (−log(1−v))  +  (ℏ/12) · v/(1−v) + O(ℏ³)
+                 = Li_2(v)/ℏ       +  ½ log(1−v)    +  (ℏ/12) · v/(1−v)
+
+    Valid for |v| not near branch points. For |v|<q the Euler
+    product converges; for |v|>q this analytic form still applies.
     """
-    s = 0.0
-    for k in range(1, max_k+1):
-        f = 1.0 - qi0**k * v
-        if abs(f) < 1e-300:
-            return float('inf')
-        s -= math.log(abs(f))
-        if abs(qi0**k * v) < 1e-15:
-            break
-    return s
+    if abs(1 - v) < 1e-14: return float('inf')
+    out = Li2(v) / hbar_log + 0.5 * math.log(abs(1 - v))
+    if order >= 2:
+        out += (hbar_log / 12) * v / (1 - v)
+    # Higher even-order corrections (Bernoulli B_2k / (2k)!):
+    #   + ℏ³/720 · (2v - v²)/(1-v)³ · (1/2) ... etc
+    return out
+
+
+# Use Faddeev by default
+def ln_phi_q(v, max_k=2000):
+    return ln_phi_q_faddeev(v, order=2)
 
 
 def phi_q(v, max_k=500):
-    """Quantum dilog Φ_q(v) — kept for electron trefoil below."""
-    return math.exp(ln_phi_q(v, max_k))
+    """Quantum dilog Φ_q(v) — exp of Faddeev expansion."""
+    lp = ln_phi_q_faddeev(v, order=2)
+    if lp > 700: return float('inf')
+    return math.exp(lp)
 
 
 def logsumexp(log_terms):
@@ -142,19 +177,58 @@ def dim_q_hook(partition):
     return num/den
 
 
-def m_tower_linear(flavors, include_triples=True):
-    """Compute m^tower = Σ_λ w_λ · m^λ (linear form, no outer log).
+def apply_braid(word, shape):
+    """Return χ_λ(T_{word_0} T_{word_1} ...) via seminormal."""
+    sigmas, dim_irrep, _ = _cached_seminormal(shape)
+    from scipy.sparse import issparse, eye as speye
+    sparse = bool(sigmas) and issparse(sigmas[0])
+    if sparse:
+        prod = speye(dim_irrep, format='csr')
+    else:
+        prod = np.eye(dim_irrep)
+    for g in word:
+        if g < len(sigmas):
+            prod = prod @ sigmas[g]
+    if sparse: return float(prod.diagonal().sum())
+    return float(np.trace(prod))
 
-    Returns (m_tower, breakdown_per_irrep).
+
+def schur_coefficients(A):
+    """Solve Jones–Ocneanu S_λ via Markov axiom on test words at H_A(q)."""
+    parts = list(partitions_of(A))
+    # Build test words + tr_M targets
+    tr_M = {(): 1.0}
+    for i in range(A - 1):
+        tr_M[(i,)] = z
+    for i in range(A - 1):
+        tr_M[(i, i)] = (q0 - qi0) * z + 1.0  # T_i² reduction
+    for i in range(A - 1):
+        for j in range(i + 1, A - 1):
+            if j - i >= 2:
+                tr_M[(i, j)] = z * z  # far-commuting, two Markov peels
+    words = list(tr_M.keys())
+    M = np.array([[apply_braid(list(w), tuple(p)) for p in parts] for w in words])
+    b = np.array([tr_M[w] for w in words])
+    S, *_ = np.linalg.lstsq(M, b, rcond=None)
+    return list(parts), list(S.tolist())
+
+
+def m_tower_linear(flavors, weight_convention='schur', include_triples=True):
+    """Compute m^tower = Σ_λ weight_λ · m^λ.
+
+    weight_convention:
+      'wedderburn' — w_λ = d_q(λ)² / Σ d_q²  (algebra decomposition)
+      'schur'      — S_λ from Markov axiom   (trace coefficient)
     """
     n = len(flavors)
-    if n < 2:
-        # Single-strand base case: trivial product, single Φ_q
-        return 1.0, []
+    if n < 2: return 1.0, []
     parts = list(partitions_of(n))
-    dq = [dim_q_hook(list(p)) for p in parts]
-    sum_dq2 = sum(d**2 for d in dq)
-    weights = [d**2 / sum_dq2 for d in dq]
+    if weight_convention == 'schur':
+        _, weights = schur_coefficients(n)
+    else:
+        dq = [dim_q_hook(list(p)) for p in parts]
+        sum_dq2 = sum(d**2 for d in dq)
+        weights = [d**2 / sum_dq2 for d in dq]
 
     m_tower = 0.0
     breakdown = []
@@ -166,30 +240,32 @@ def m_tower_linear(flavors, include_triples=True):
             V = V_char_div_dim(gi, flavors, shape)
             V_list.append(V if V is not None else 0.0)
 
-        desc = 1.0
-        for v in V_list: desc *= v
-        desc_abs = abs(desc)
-
-        singles = sum(phi_q(abs(v)) for v in V_list)
-
-        pairs = 0.0
+        # Work in log space since |V| may exceed q0
+        ln_desc = sum(math.log(abs(v)) if abs(v) > 0 else -float('inf') for v in V_list)
+        ln_singles = [ln_phi_q(abs(v)) for v in V_list]
+        ln_pairs = []
         for i in range(n - 1):
             for j in range(i + 1, n - 1):
-                pairs += z**2 * phi_q(abs(V_list[i] * V_list[j]))
-
-        triples = 0.0
+                ln_pairs.append(2*math.log(z) + ln_phi_q(abs(V_list[i] * V_list[j])))
+        ln_triples = []
         if include_triples and n >= 4:
             for i, j, k in itertools.combinations(range(n-1), 3):
-                triples += z**4 * phi_q(abs(V_list[i] * V_list[j] * V_list[k]))
+                ln_triples.append(4*math.log(z) + ln_phi_q(abs(V_list[i]*V_list[j]*V_list[k])))
 
-        m_lambda = desc_abs + singles + pairs + triples
+        # m^λ = e^ln_desc + Σ e^ln_single + Σ e^ln_pair + Σ e^ln_triple
+        all_log_terms = [ln_desc] + ln_singles + ln_pairs + ln_triples
+        ln_m_lambda = logsumexp(all_log_terms)
+
+        # m^λ = exp(ln_m_lambda); weight × m^λ for tower sum (also in log)
+        # We accumulate in linear space since weights can be small/neg
+        m_lambda = math.exp(ln_m_lambda) if ln_m_lambda > -500 else 0.0
         m_tower += w * m_lambda
         breakdown.append({
             'partition': str(p), 'weight': w,
             'V_list': V_list,
-            'desc': desc_abs, 'singles': singles,
-            'pairs': pairs, 'triples': triples,
+            'ln_m_lambda': ln_m_lambda,
             'm_lambda': m_lambda,
+            'contrib_to_tower': w * m_lambda,
         })
     return m_tower, breakdown
 
@@ -260,13 +336,19 @@ for b in e_bd:
 print(f"  → m^tower_e = {m_e_tower:.6f}")
 
 # Proton tower
-print(f"\nPROTON tower (uud, 3 strands):")
-m_p_tower, p_bd = m_tower_linear(PROTON_FLAVORS)
+print(f"\nPROTON tower (uud, 3 strands) — weights='schur':")
+m_p_tower, p_bd = m_tower_linear(PROTON_FLAVORS, weight_convention='schur')
 for b in p_bd:
-    print(f"  λ={b['partition']} w={b['weight']:.4f}  V={[f'{v:+.3f}' for v in b['V_list']]}")
-    print(f"     desc={b['desc']:.3f}  singles={b['singles']:.3f}  "
-          f"pairs={b['pairs']:.3f}  → m^λ={b['m_lambda']:.3f}")
-print(f"  → m^tower_p = {m_p_tower:.6f}")
+    print(f"  λ={b['partition']} w={b['weight']:.4f}  V={[f'{v:+.3f}' for v in b['V_list']]}"
+          f"  ln|m^λ|={b['ln_m_lambda']:+.3f}  → w·m^λ={b['contrib_to_tower']:.3e}")
+print(f"  → m^tower_p = {m_p_tower:.6e}")
+
+print(f"\nPROTON tower (uud, 3 strands) — weights='wedderburn':")
+m_p_tower_w, p_bd_w = m_tower_linear(PROTON_FLAVORS, weight_convention='wedderburn')
+for b in p_bd_w:
+    print(f"  λ={b['partition']} w={b['weight']:.4f}  ln|m^λ|={b['ln_m_lambda']:+.3f}"
+          f"  → w·m^λ={b['contrib_to_tower']:.3e}")
+print(f"  → m^tower_p(w) = {m_p_tower_w:.6e}")
 
 # Dimensional bridge
 ratio_p = m_p_tower / m_e_tower

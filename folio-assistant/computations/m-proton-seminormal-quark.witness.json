@@ -1,54 +1,48 @@
 {
   "computation": "m-proton-seminormal-quark",
   "description": "Proton mass via full seminormal + explicit uud quark flavors.",
-  "timestamp": "2026-04-20T13:21:01.256333+00:00",
-  "m_e_tower": Infinity,
-  "m_p_tower": Infinity,
-  "m_p_predicted_MeV": NaN,
+  "timestamp": "2026-04-20T13:27:53.951178+00:00",
+  "m_e_tower": 2261.7877343073615,
+  "m_p_tower": -682.6899537008552,
+  "m_p_predicted_MeV": -0.15423810299489346,
   "m_p_codata_MeV": 938.27208816,
-  "err_ppm": NaN,
-  "m_n_tower": Infinity,
-  "m_n_predicted_MeV": NaN,
-  "delta_mn_mp_predicted": NaN,
+  "err_ppm": 1000164.3852619524,
+  "m_n_tower": -710.9962694097937,
+  "m_n_predicted_MeV": -0.16063326439144499,
+  "delta_mn_mp_predicted": -0.006395161396551524,
   "proton_breakdown": [
     {
       "partition": "(3,)",
-      "weight": 0.16546138476810046,
+      "weight": 0.36299208698109736,
       "V_list": [
         1.375002901220376,
         1.238765239913366
       ],
-      "desc": 1.7033057988118332,
-      "singles": Infinity,
-      "pairs": Infinity,
-      "triples": 0.0,
-      "m_lambda": Infinity
+      "ln_m_lambda": 0.532570950345444,
+      "m_lambda": 1.7033057988283766,
+      "contrib_to_tower": 0.6182865266837176
     },
     {
       "partition": "(2, 1)",
-      "weight": 0.6690772304637991,
+      "weight": 0.33333333333333354,
       "V_list": [
         1.0551103311661445,
         0.21134463100393702
       ],
-      "desc": 0.2229919036087506,
-      "singles": 5287345.0687332,
-      "pairs": 2.1322115860921755,
-      "triples": 0.0,
-      "m_lambda": 5287347.42393669
+      "ln_m_lambda": 2.2976764795511038,
+      "m_lambda": 9.951034141124369,
+      "contrib_to_tower": 3.3170113803747916
     },
     {
       "partition": "(1, 1, 1)",
-      "weight": 0.16546138476810046,
+      "weight": -0.02965875364776381,
       "V_list": [
         0.7352177611119132,
         -0.8160759779054905
       ],
-      "desc": 0.5999935533728898,
-      "singles": 22972.810535653793,
-      "pairs": 170.53635700124002,
-      "triples": 0.0,
-      "m_lambda": 23143.946886208407
+      "ln_m_lambda": 10.049786622575638,
+      "m_lambda": 23150.84645034244,
+      "contrib_to_tower": -686.6252516079137
     }
   ],
   "electron_breakdown": [
@@ -56,56 +50,50 @@
       "partition": "(2,)",
       "weight": 0.5,
       "V": 1.3675518842725498,
-      "phi_q": Infinity,
-      "m_lambda": Infinity
+      "phi_q": 6.133549836774441e-12,
+      "m_lambda": 1.3675518842786833
     },
     {
       "partition": "(1, 1)",
       "weight": 0.5,
       "V": -0.7312336822466794,
-      "phi_q": 4521.025245143321,
-      "m_lambda": 4521.756478825568
+      "phi_q": 4521.476683048198,
+      "m_lambda": 4522.207916730445
     }
   ],
   "neutron_breakdown": [
     {
       "partition": "(3,)",
-      "weight": 0.16546138476810046,
+      "weight": 0.36299208698109736,
       "V_list": [
         1.2455145712572968,
         1.367551884272551
       ],
-      "desc": 1.7033057988118347,
-      "singles": Infinity,
-      "pairs": Infinity,
-      "triples": 0.0,
-      "m_lambda": Infinity
+      "ln_m_lambda": 0.5325709503452991,
+      "m_lambda": 1.7033057988281297,
+      "contrib_to_tower": 0.6182865266836279
     },
     {
       "partition": "(2, 1)",
-      "weight": 0.6690772304637991,
+      "weight": 0.33333333333333354,
       "V_list": [
         1.033018442861887,
         0.31815910101293443
       ],
-      "desc": 0.3286642191107193,
-      "singles": 2411638.5901403218,
-      "pairs": 6.497615761880789,
-      "triples": 0.0,
-      "m_lambda": 2411645.416420303
+      "ln_m_lambda": 3.403802674599727,
+      "m_lambda": 30.07826068987192,
+      "contrib_to_tower": 10.02608689662398
     },
     {
       "partition": "(1, 1, 1)",
-      "weight": 0.16546138476810046,
+      "weight": -0.02965875364776381,
       "V_list": [
         0.820522314466477,
         -0.7312336822466795
       ],
-      "desc": 0.59999355337289,
-      "singles": 24152.39678826437,
-      "pairs": 170.53635700124028,
-      "triples": 0.0,
-      "m_lambda": 24323.533138818984
+      "ln_m_lambda": 10.099525254850318,
+      "m_lambda": 24331.45544157116,
+      "contrib_to_tower": -721.6406428331013
     }
   ]
 }
