@@ -86,25 +86,25 @@ def generate_cache() -> dict:
         ALPHA_EM_INV, G_F_MEV, HBAR_MEV_S,
     )
     from hecke_core import (
-        # Wedderburn-Artin
-        W_SYM, W_STD, W_ALT, z,
         # Fine structure
         alpha_em, ALPHA_EM_INV_DERIVED,
-        # Gram matrix
-        G, G_INV,
-        # BW coefficients
-        LAMBDA_V, LAMBDA_S, LAMBDA_C, A_ASYM, DELTA_P,
-        LAMBDA_EX, DELTA_S, SIGMA_SHELL, DELTA_HOOK,
-        DELTA_WIGNER, DELTA_FORMFACTOR, DELTA_PN_CORR,
         # Figure-eight
         FIG8_A_BULK, FIG8_F_COUL, FIG8_F_EXCH,
         # Molecular
         E_HARTREE_EV, E_MOL, KAPPA,
         # NF
-        NF_BASIS, NF_NAMES, TR_M,
         PROTON_NF, NEUTRON_NF,
         # Volumes
         VOL_BORROMEAN, ALPHA_BORROMEAN, ALPHA_FIGURE8,
+    )
+    # Moved to pyhecke.gram via M2b inversion — import canonically.
+    from pyhecke.gram import (
+        # Wedderburn-Artin
+        W_SYM, W_STD, W_ALT, z,
+        # Gram matrix
+        G, G_INV,
+        # NF basis
+        NF_BASIS, NF_NAMES, TR_M,
     )
 
     duration_ms = int((time.monotonic() - t0) * 1000)
@@ -155,20 +155,6 @@ def generate_cache() -> dict:
         # ── Gram matrix (6x6) ───────────────────────────────
         "gram_matrix": G.tolist(),
         "gram_matrix_inv": G_INV.tolist(),
-
-        # ── BW coefficients (all derived from q-integers) ───
-        "lambda_v": LAMBDA_V,
-        "lambda_s": LAMBDA_S,
-        "lambda_c": LAMBDA_C,
-        "a_asym": A_ASYM,
-        "delta_p": DELTA_P,
-        "lambda_ex": LAMBDA_EX,
-        "delta_s": DELTA_S,
-        "sigma_shell": SIGMA_SHELL,
-        "delta_hook": DELTA_HOOK,
-        "delta_wigner": DELTA_WIGNER,
-        "delta_formfactor": DELTA_FORMFACTOR,
-        "delta_pn_corr": DELTA_PN_CORR,
 
         # ── Figure-eight BW modification ─────────────────────
         "fig8_a_bulk": FIG8_A_BULK,

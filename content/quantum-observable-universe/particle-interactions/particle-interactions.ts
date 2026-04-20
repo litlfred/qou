@@ -39,6 +39,7 @@ export default chapter({
       blocks: [
         "confinement-operator-selection",
         "confinement-lp",
+        "confinement-sdp",
         "operator-selection-lp",
         "confinement-topological",
         "confinement-nucleon-unit",

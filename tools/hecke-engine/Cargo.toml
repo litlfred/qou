@@ -9,6 +9,16 @@ description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
 name = "hecke-engine"
 path = "src/bin/v8.rs"
 
+# Gram matrix for H_3(q) — M3 Rust carve-out
+[[bin]]
+name = "hecke-gram"
+path = "src/bin/hecke_gram.rs"
+
+# Unified CLI — M2e — dispatches to subcommands (native Gram, exec for legacy).
+[[bin]]
+name = "hecke"
+path = "src/bin/hecke.rs"
+
 # Float engine for large A where symbolic overflows
 [[bin]]
 name = "hecke-float"
@@ -39,6 +49,7 @@ num-rational = "0.4"
 num-traits = "0.2"
 num-integer = "0.1"
 rayon = "1.10"
+clap = { version = "4", features = ["derive"] }
 
 [build-dependencies]
 

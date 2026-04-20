@@ -141,7 +141,7 @@ def tower_mass_content_weighted(Z: int, N: int, *,
     Uses current scalar V̂_i for desc+single (unchanged); replaces
     the pair cross-term with content-weighted V̂_{ij}^{content}.
     """
-    from hecke_core import atom_per_generator_volumes
+    from pyhecke.gram import atom_per_generator_volumes
     if include_inter:
         vols = atom_per_generator_volumes(
             Z, N, include_inter=True,
@@ -171,7 +171,7 @@ def tower_mass_content_weighted(Z: int, N: int, *,
 if __name__ == "__main__":
     from adjacent_vs_full_probe import (mass_from_tower_probe,
                                            get_ilp_ground)
-    from hecke_core import atom_per_generator_volumes
+    from pyhecke.gram import atom_per_generator_volumes
 
     ATOMS = [
         ('D',   1, 1,  2.22452),

@@ -18,15 +18,18 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, HBAR_Q
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+
 from experimental_constants import (
     M_E_MEV, Q_TRITIUM_MEV, Q_C14_MEV, Q_CO60_MEV,
     Q_SR90_MEV, Q_CS137_MEV, Q_BI210_MEV, Q_NEUTRON_MEV,
 )
 
-z = 1.0 / (q**0.5 + q**(-0.5))
-
-
-# ══════════════════════════════════════════════════════════════
+z = _PG_Z  # moved to pyhecke.gram
 #  HECKE ENGINE (reuse from existing scripts)
 # ══════════════════════════════════════════════════════════════
 

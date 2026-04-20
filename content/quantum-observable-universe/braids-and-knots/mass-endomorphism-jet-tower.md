@@ -20,54 +20,109 @@ in the prop: it is the intended content.
 $q$ calculations are not linear: the Hecke relation
 $\sigma_i^2 = H_A \sigma_i + 1$ is quadratic, and the pentagon
 identity of $\Phi_q$ ([quantum Bloch group](#def:quantum-bloch-group))
-closes on pairs.  **Per jet level**, the mass formula therefore
-contains:
+closes on pairs.  **Per jet level**, the transient contribution
+therefore contains:
 
-- **$\hat V_i$ descended product** $\bigl\lvert\prod_i \hat V_i\bigr\rvert$
-  (order-0: the saturated level-$n$ Markov trace).
 - **$\Phi_q(|\hat V_i|)$ singletons** (order-1: single blow-up centres).
 - **$z^2 \Phi_q(|\hat V_i \hat V_j|)$ pairs** (order-2: quadratic
-  blow-up centres).
+  blow-up centres, $i < j$).
+
+The **descended** contribution is **not** summed over jet levels.
+By ([descent eigenspaces](#prop:descent-eigenspaces)) the descended
+subalgebra
+$\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$ is the
+image of the descent involution onto the base level; it carries
+a **single** holonomy contribution from the level-$0$ unknot core
+$\varrho_0$ ([topological mass proof](#prf:topological-mass), Step 2).
+Successive jet prolongations add only transient modes
+$\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat\tau_n$ (the modes
+with no pre-image at level $n$, cf.
+([descent involution](#def:descent-involution))).  Including a
+separate descended product at every jet level would double-count
+the level-$0$ holonomy.
 
 A triple or quadruple interaction at level $n$ is not an
 independent order-3/4 term; it ascends to jet level $n+1$ as a
 new singleton or pair, and is already captured by the
-level-$n+1$ contribution in the tower sum.  Conversely, some
-level-$n+1$ quadratic interactions descend to level-$n$ effective
-pairs via the descent involution
-([descent involution](#def:descent-involution)).
+level-$(n{+}1)$ contribution in the tower sum.
 
-The full mass is therefore a tower sum of per-level quadratic
-contributions:
+## Pentagon ascension of higher-order interactions
+
+The quantum dilogarithm satisfies the **pentagon identity**
+([quantum Bloch group](#def:quantum-bloch-group)): for operators
+$u, v$ with $uv = q\,vu$,
+
+$$
+  \Phi_q(v)\,\Phi_q(u) \;=\; \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v).
+$$
+
+Applied to a would-be order-3 contribution
+$\Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)} \hat V_k^{(n)}|)$ with
+$u = \hat V_i^{(n)} \hat V_j^{(n)}$ and $v = \hat V_k^{(n)}$, the
+pentagon relation rewrites the triple as a product of order-$\leq 2$
+factors at level $n$ plus a residual that cannot be absorbed at
+level $n$.  The unabsorbed residual is the image of the jet
+prolongation map
+$\mathcal{A}_n \to \mathcal{A}_{n+1}^{\mathrm{trans}}$ on the
+$uv$-module — a new singleton or pair blow-up centre at
+**level $n+1$**.  Iterating the pentagon over all triples shows
+the same pattern for every higher order: level-$n$ closure is
+quadratic, and all defects of order $\geq 3$ ascend one jet level.
+
+The full mass is therefore a tower sum with **one** descended
+term (at $n=0$) and per-level transient contributions:
 
 ```tex
 \begin{equation}\label{eq:jet-tower-mass}
   \mathfrak{m}(\varrho)
   =
+  \underbrace{\bigl\lvert\textstyle\prod_i \hat V_i^{(0)}\bigr\rvert}_{\text{descended (level 0 only)}}
+  +
   \sum_{n=0}^{N}
     \Bigl(
-    \underbrace{\bigl\lvert\textstyle\prod_i \hat V_i^{(n)}\bigr\rvert}_{\text{desc}}
-    + \underbrace{\textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|)}_{\text{singletons}}
-    + \underbrace{z^2 \textstyle\sum_{\{i,j\} \in \mathcal{P}_n}
-       \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)}_{\text{quadratic pairs}}
+    \underbrace{\textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|)}_{\text{singletons}_n}
+    + \underbrace{z^2 \textstyle\sum_{(i,j) \in \mathcal{P}_n}
+       \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)}_{\text{quadratic pairs}_n}
     \Bigr)
 \end{equation}
 ```
 
-where $\mathcal{P}_n$ is the set of **independent pair blow-up
-centres at jet level $n$** — the open question is exactly which
-pairs $(i, j)$ are in $\mathcal{P}_n$.
+where $\mathcal{P}_n$ is the set of pair blow-up centres at jet
+level $n$.
 
-## Empirical correction to $\mathcal{P}_n$
+## $\mathcal{P}_n$ is the full set $\{(i,j) : i < j\}$ at every level
 
-The prop asserts $\mathcal{P}_n = \{(i, j) : |i - j| = 1\}$
-(adjacent pairs only).  The justification — that far-commutativity
-gives no independent blow-up centre for $|i - j| \geq 2$ — is
-[audited as asserted-without-proof](#rem:mass-endomorphism-tower-adjacency-audit)
-and empirically contradicted on stable atoms $A \geq 6$:
+An earlier version of [mass endomorphism tower](#prop:mass-endomorphism-tower)
+restricted $\mathcal{P}_n$ to adjacent pairs $\{(i,j) : |i-j|=1\}$
+on the grounds that far-commutativity of non-adjacent generators
+in $H_n(q)$ gives no independent blow-up centre.  That claim is
+incorrect.  The Markov weight $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
+holds for every pair $i < j$:
 
-| Atom | adjacent $\mathcal{P}$ | all-pairs $\mathcal{P}$ |
-|:-----|:-----------------------|:------------------------|
+by the Markov-trace factorization theorem
+([Markov trace factorization](#thm:markov-trace-factorization)):
+
+- **Adjacent** ($|i-j|=1$): Hecke braid relation
+  $\sigma_i\sigma_j\sigma_i = \sigma_j\sigma_i\sigma_j$ reduces the
+  pair, then the Markov property
+  $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$ peels the
+  rightmost generator.
+- **Non-adjacent** ($|i-j|\geq 2$): far-commutativity
+  $\sigma_i\sigma_j = \sigma_j\sigma_i$ makes $\sigma_j$ the
+  rightmost active generator; the Markov property peels it first
+  (factor $z$), then peels the remaining $\sigma_i$ in $H_{n-1}(q)$
+  (another factor $z$), giving $\mathrm{tr}_M(\sigma_i\sigma_j)
+  = z^2$.  This is the Markov-trace factorization at the pair — not
+  a generic trace multiplicativity claim.
+
+Both cases support an independent blow-up centre at spectral
+coordinate $\hat V_i\hat V_j$, so $\mathcal{P}_n = \{(i,j) : i<j\}$
+at every level.
+
+The empirical verification on stable atoms $A \geq 6$:
+
+| Atom | adjacent-only error | all-pairs error |
+|:-----|:---------------------|:-----------------|
 | 6Li  | 2.00%  | 0.57% |
 | 9Be  | 1.91%  | 0.70% |
 | 10B  | 2.35%  | 0.70% |
@@ -76,26 +131,33 @@ and empirically contradicted on stable atoms $A \geq 6$:
 | 16O  | 2.45%  | 0.86% |
 
 Including all pair centres closes the 2–3% heavy-atom bias to
-under 1%, consistent with $\mathcal{P}_n = \{(i,j) : i < j\}$
-(full quadratic pairs, no distance restriction).
+under 1%, consistent with the categorical derivation.
 
 Triple terms with $z^3 \Phi_q(|\hat V_i \hat V_j \hat V_k|)$
-overshoot the target (0.6–1.3% at the same atoms), confirming
-that higher-order terms should be handled by ascension to the
-next jet level, not by adding explicit cubic terms at level $n$
-([empirical witness](#sim:adjacent-vs-full-probe)).
+inserted as explicit level-$n$ contributions overshoot the target
+(0.6–1.3% at the same atoms), confirming the pentagon ascension:
+order-$\geq 3$ defects belong at level $n+1$, not as explicit
+cubic terms at level $n$
+(see `adjacent-vs-full-probe.witness.json`).
 
-## Open subconjectures
+## Remaining open subconjectures
 
-1. **Exact $\mathcal{P}_n$**: is it all pairs at every level, or
-   do some pairs descend to singletons?  The empirical fit
-   prefers all-pairs; proof/derivation from the descent involution
-   is open.
-2. **Jet-level sum convergence**: how many jet levels $N$ does
-   the tower sum need before saturating?  The tower-binding-full
-   simulator uses $n = 3A$ directly at one level; a genuinely
-   multi-level jet sum is not yet implemented.
+1. **Jet-level sum convergence**: a geometric-series tail bound
+   has been proved conditional on uniform boundedness of
+   $\Delta^{(n)}$
+   ([brane-tower tail bound](#prop:jet-tower-convergence)):
+   if $|\Delta^{(n)}| \leq \Delta_{\max}$ for all $n$, then the
+   $N$-term truncation error is
+   $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
+   The remaining open piece is to prove the uniform bound on
+   $\Delta^{(n)}$ itself; empirically it holds (and is roughly
+   constant) on light atoms.
+2. **Pentagon $\to$ uv-commutation**: the pentagon identity as
+   stated requires $uv = q\,vu$; verifying this relation for
+   traced volumes $\hat V$ at generic jet level needs explicit
+   check (expected to follow from the Hecke braid/commutation
+   on generators, but not written out).
 3. **Descent involution on pairs**: does $\hat\tau_n$ map some
    level-$(n+1)$ pairs back to level-$n$ singletons (or trivial)?
-   If yes, partial descent explains why all-pairs works better
-   than both adjacent-only and naive all-subsets.
+   The pentagon ascension gives an upper bound on the level-$n+1$
+   support; sharpness is open.

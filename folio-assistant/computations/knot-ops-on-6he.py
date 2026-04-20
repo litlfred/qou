@@ -21,17 +21,21 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, HBAR_Q, LN_Q
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
 
-z = 1.0 / (q**0.5 + q**(-0.5))
+
+z = _PG_Z  # moved to pyhecke.gram
 m_e = 0.51099895
 E_cross = 0.5 * h
 mu_0 = m_e / (3 * E_cross)
 
-NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
-TR_M = [1.0, z, z, z**2, z**2, z**3]
-
-
+TR_M = list(_PG_TR_M)  # moved to pyhecke.gram
 def hecke_mul(t1, t2):
     r = {}
     for w1, c1 in t1.items():

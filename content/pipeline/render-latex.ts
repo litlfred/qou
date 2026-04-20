@@ -638,6 +638,10 @@ function collectReferencedLabels(
     const entry = blocks.get(rootName);
     if (!entry) continue;
     const block = entry.block;
+    // Guard against non-object entries (a block with falsy / primitive
+    // `.block` would throw on `"examples" in block` — observed with some
+    // stub manifests; CI caught this on PR #383 / pre-existing on main).
+    if (!block || typeof block !== "object") continue;
     if ("examples" in block && Array.isArray(block.examples)) {
       for (const label of block.examples) refs.add(label);
     }
@@ -660,6 +664,13 @@ function shouldIncludeBlock(
 ): boolean {
   const mode = opts.printMode ?? "compact";
   if (mode === "formal") return true;
+
+  // Defensive: some block loaders may hand us a malformed entry
+  // (observed during concurrent PR work — PR #383 CI).  Exclude from
+  // compact render rather than throw.
+  if (!block || typeof block !== "object" || !("kind" in block)) {
+    return false;
+  }
 
   // Compact mode — check if this is an optional kind
   if (!COMPACT_OPTIONAL_KINDS.has(block.kind)) return true;
@@ -738,7 +749,10 @@ export function renderSection(
     if (!shouldIncludeBlock(entry.block, referencedLabels, opts)) {
       // Emit a phantom label so \hyperref[label]{...} references from
       // other blocks resolve without "Hyper reference undefined" warnings.
-      const label = "label" in entry.block ? entry.block.label : undefined;
+      const label = (entry.block && typeof entry.block === "object"
+          && "label" in entry.block)
+        ? (entry.block as { label?: string }).label
+        : undefined;
       if (label) {
         lines.push(`\\phantomsection\\label{${label}}% compact-mode: block excluded`);
       }
@@ -794,7 +808,8 @@ export function renderChapter(
       for (const key of extractCitations(entry.mdContent)) {
         chapterCites.add(key);
       }
-      if ("cites" in entry.block && (entry.block as any).cites) {
+      if (entry.block && typeof entry.block === "object" &&
+          "cites" in entry.block && (entry.block as any).cites) {
         for (const key of (entry.block as any).cites as string[]) {
           chapterCites.add(key);
         }

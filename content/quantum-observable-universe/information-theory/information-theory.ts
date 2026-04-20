@@ -64,6 +64,8 @@ section({
         "planck-scale-computation",
         "toffoli-transfer-matrix",
         "toffoli-q-and",
+        "toffoli-lp-stability",
+        "q-game-of-life",
         "substrate-computation",
         "quantum-computational-universality",
         "skein-turing-machine",

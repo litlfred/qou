@@ -160,7 +160,7 @@ def tower_mass_traced(V: list[float], V_pair: dict,
 if __name__ == "__main__":
     import time, json
     from datetime import datetime, timezone
-    from hecke_core import atom_per_generator_volumes
+    from pyhecke.gram import atom_per_generator_volumes
     from mass_endomorphism import Phi_q, z_mark
     from q_parameter import Q as Q0
     from adjacent_vs_full_probe import mass_from_tower_probe, get_ilp_ground

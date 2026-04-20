@@ -34,7 +34,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from mass_endomorphism import q0, Phi_q, z_mark
-from hecke_core import atom_per_generator_volumes
+from pyhecke.gram import atom_per_generator_volumes
 
 
 def mass_with_beta(vols, beta_fn):

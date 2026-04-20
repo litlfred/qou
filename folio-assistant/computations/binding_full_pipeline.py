@@ -30,6 +30,7 @@ import sys
 import json
 import math
 import time
+from functools import lru_cache
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -45,12 +46,19 @@ from binding_canonical import build_atom_symbolic
 from hecke_symbolic import SymbolicHeckeDivision
 
 
+@lru_cache(maxsize=256)
 def canonical_via_ocneanu(Z: int, N: int, include_inter: bool = True,
                            reduce_first: bool = True) -> complex:
     """|tr_M(W_atom)| via ω-weighted seminormal characters.
 
     1000× faster than Hecke-reduction path (tr_M_element) once ω_λ
     are cached per n.  Returns complex (usually real).
+
+    Result cached on (Z, N, include_inter, reduce_first) — the
+    pipeline's kahler_order sweep (0, 1, 2) calls this 3× per atom
+    per include_inter setting with identical args, so cache hits
+    deliver a 3× wall-time reduction after the first sweep populates
+    the table.
     """
     A = Z + N
     if A < 1:
