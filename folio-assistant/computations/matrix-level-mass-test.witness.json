@@ -1,0 +1,71 @@
+{
+  "computation": "matrix-level-mass-test",
+  "description": "Compare scalar vs matrix-level \u03a6_q in nuclear binding.",
+  "timestamp": "2026-04-20T13:54:29.740001+00:00",
+  "order_hbar_q": 5,
+  "results": [
+    {
+      "atom": "D",
+      "A": 2,
+      "AME": 2.224566,
+      "B_scalar": -4.440620705102113,
+      "err_scalar_pct": 0.35518414197067116,
+      "B_matrix": -8.564556246273067,
+      "err_matrix_pct": 0.5749464039358025
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "AME": 8.481798,
+      "B_scalar": -12.897960862851274,
+      "err_scalar_pct": 0.7595437450565605,
+      "B_matrix": -2.7128155572479633,
+      "err_matrix_pct": 0.3977032089219317
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "AME": 7.718058,
+      "B_scalar": -12.062728900124064,
+      "err_scalar_pct": 0.702738186088329,
+      "B_matrix": -2.9058600768694687,
+      "err_matrix_pct": 0.37742850960309543
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "AME": 28.295674,
+      "B_scalar": -3.4894207041896106,
+      "err_scalar_pct": 0.8469051273028932,
+      "B_matrix": -3.0251524940155825,
+      "err_matrix_pct": 0.834534828227198
+    },
+    {
+      "atom": "6Li",
+      "A": 6,
+      "AME": 31.994571,
+      "B_scalar": 13.795607954528851,
+      "err_scalar_pct": 0.32327091798311414,
+      "B_matrix": 4.52079522998914,
+      "err_matrix_pct": 0.4880208114848512
+    },
+    {
+      "atom": "7Li",
+      "A": 7,
+      "AME": 39.244529,
+      "B_scalar": -9275.718239165846,
+      "err_scalar_pct": 141.82550122787796,
+      "B_matrix": 11.02279810553068,
+      "err_matrix_pct": 0.42969158645542505
+    },
+    {
+      "atom": "9Be",
+      "A": 9,
+      "AME": 58.16498,
+      "B_scalar": 17877.27673698536,
+      "err_scalar_pct": 211.01570827347578,
+      "B_matrix": 15.635247020869723,
+      "err_matrix_pct": 0.5036413626933374
+    }
+  ]
+}
