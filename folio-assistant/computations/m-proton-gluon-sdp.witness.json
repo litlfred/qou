@@ -1,0 +1,124 @@
+{
+  "computation": "m-proton-gluon-sdp",
+  "description": "Proton mass: Borromean B\u2083 fixed + SDP over gluon knot operator.",
+  "timestamp": "2026-04-20T13:42:41.970013+00:00",
+  "electron_tower_reference": 630.5292680965878,
+  "proton_results": [
+    {
+      "gluon_op": "T_2_2",
+      "gluon_gen": 0,
+      "m_pred": 955.4916893413829,
+      "err_MeV": 17.219601181382927,
+      "err_ppm": 18352.460228409283
+    },
+    {
+      "gluon_op": "T_2_2",
+      "gluon_gen": 1,
+      "m_pred": 472.98053466127794,
+      "err_MeV": -465.291553498722,
+      "err_ppm": -495902.5845170166
+    },
+    {
+      "gluon_op": "T_1_0",
+      "gluon_gen": 0,
+      "m_pred": 348.6582070341778,
+      "err_MeV": -589.6138811258222,
+      "err_ppm": -628403.9444060257
+    },
+    {
+      "gluon_op": "T_1_0",
+      "gluon_gen": 1,
+      "m_pred": 348.6582070341778,
+      "err_MeV": -589.6138811258222,
+      "err_ppm": -628403.9444060257
+    },
+    {
+      "gluon_op": "T_2_5",
+      "gluon_gen": 1,
+      "m_pred": 3.183875086489932,
+      "err_MeV": -935.08821307351,
+      "err_ppm": -996606.6611949059
+    },
+    {
+      "gluon_op": "T_2_3",
+      "gluon_gen": 1,
+      "m_pred": 3.0673400322785978,
+      "err_MeV": -935.2047481277214,
+      "err_ppm": -996730.8629650341
+    },
+    {
+      "gluon_op": "T_2_1",
+      "gluon_gen": 1,
+      "m_pred": 3.0570644225640726,
+      "err_MeV": -935.2150237374359,
+      "err_ppm": -996741.8145960633
+    }
+  ],
+  "neutron_results": [
+    {
+      "gluon_op": "T_2_2",
+      "gluon_gen": 1,
+      "m_pred": 469.43933614842524,
+      "err_MeV": -470.12608437157473,
+      "err_ppm": -500365.4605672745
+    },
+    {
+      "gluon_op": "T_2_2",
+      "gluon_gen": 0,
+      "m_pred": 348.6582070341778,
+      "err_MeV": -590.9072134858222,
+      "err_ppm": -628915.4545074533
+    },
+    {
+      "gluon_op": "T_1_0",
+      "gluon_gen": 0,
+      "m_pred": 345.1935679750474,
+      "err_MeV": -594.3718525449526,
+      "err_ppm": -632602.945536245
+    },
+    {
+      "gluon_op": "T_1_0",
+      "gluon_gen": 1,
+      "m_pred": 345.1935679750474,
+      "err_MeV": -594.3718525449526,
+      "err_ppm": -632602.945536245
+    },
+    {
+      "gluon_op": "T_2_5",
+      "gluon_gen": 1,
+      "m_pred": 0.2458142115499213,
+      "err_MeV": -939.31960630845,
+      "err_ppm": -999738.3745653242
+    },
+    {
+      "gluon_op": "T_2_3",
+      "gluon_gen": 1,
+      "m_pred": 0.1332448463664683,
+      "err_MeV": -939.4321756736335,
+      "err_ppm": -999858.1845995431
+    },
+    {
+      "gluon_op": "T_2_1",
+      "gluon_gen": 1,
+      "m_pred": 0.1235448205980105,
+      "err_MeV": -939.441875699402,
+      "err_ppm": -999868.5085488464
+    }
+  ],
+  "best_proton": {
+    "gluon_op": "T_2_2",
+    "gluon_gen": 0,
+    "m_pred": 955.4916893413829,
+    "err_MeV": 17.219601181382927,
+    "err_ppm": 18352.460228409283
+  },
+  "best_neutron": {
+    "gluon_op": "T_2_2",
+    "gluon_gen": 1,
+    "m_pred": 469.43933614842524,
+    "err_MeV": -470.12608437157473,
+    "err_ppm": -500365.4605672745
+  },
+  "delta_mn_mp_predicted": -486.05235319295764,
+  "delta_mn_mp_codata": 1.2933
+}
