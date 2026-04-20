@@ -1,0 +1,271 @@
+{
+  "computation": "kahler-all-levels",
+  "description": "K\u00e4hler lift at quark, hadron, nuclear confinement levels.",
+  "timestamp": "2026-04-20T14:11:59.855845+00:00",
+  "results": [
+    {
+      "atom": "D",
+      "A": 2,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 0,
+      "B_pred": 2.561710742505301,
+      "AME": 2.224566,
+      "err_pct": 0.017966258318765832,
+      "config_label": "none"
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 0,
+      "B_pred": 12.067628557497018,
+      "AME": 8.481798,
+      "err_pct": 0.1273912951147435,
+      "config_label": "none"
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 0,
+      "B_pred": 13.46686774685391,
+      "AME": 7.718058,
+      "err_pct": 0.2042339444870965,
+      "config_label": "none"
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 0,
+      "B_pred": 15.158731082910265,
+      "AME": 28.295674,
+      "err_pct": 0.35003023955446116,
+      "config_label": "none"
+    },
+    {
+      "atom": "D",
+      "A": 2,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 3,
+      "B_pred": 3.5538876036165203,
+      "AME": 2.224566,
+      "err_pct": 0.07083881878690403,
+      "config_label": "nuclear only k=3"
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 3,
+      "B_pred": 15.396154035236501,
+      "AME": 8.481798,
+      "err_pct": 0.2456414925606683,
+      "config_label": "nuclear only k=3"
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 3,
+      "B_pred": 19.97427431316273,
+      "AME": 7.718058,
+      "err_pct": 0.43541802779161165,
+      "config_label": "nuclear only k=3"
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_quark": 0,
+      "n_hadron": 0,
+      "n_nuclear": 3,
+      "B_pred": 19.986699421793936,
+      "AME": 28.295674,
+      "err_pct": 0.22139034784705464,
+      "config_label": "nuclear only k=3"
+    },
+    {
+      "atom": "D",
+      "A": 2,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 1,
+      "B_pred": 11.779440393373976,
+      "AME": 2.224566,
+      "err_pct": 0.5091740131525814,
+      "config_label": "all levels k=1"
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 1,
+      "B_pred": 22.844718565416947,
+      "AME": 8.481798,
+      "err_pct": 0.5102614368192075,
+      "config_label": "all levels k=1"
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 1,
+      "B_pred": 21.73844864378085,
+      "AME": 7.718058,
+      "err_pct": 0.498092615779534,
+      "config_label": "all levels k=1"
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 1,
+      "B_pred": 35.623684348770745,
+      "AME": 28.295674,
+      "err_pct": 0.1952528251075046,
+      "config_label": "all levels k=1"
+    },
+    {
+      "atom": "D",
+      "A": 2,
+      "n_quark": 0,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 6.227553153199061,
+      "AME": 2.224566,
+      "err_pct": 0.21331698874095473,
+      "config_label": "hadron+nuclear"
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_quark": 0,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 21.982371049888833,
+      "AME": 8.481798,
+      "err_pct": 0.4796254195616635,
+      "config_label": "hadron+nuclear"
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_quark": 0,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 23.578101473950746,
+      "AME": 7.718058,
+      "err_pct": 0.5634486756488079,
+      "config_label": "hadron+nuclear"
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_quark": 0,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 29.742492044582622,
+      "AME": 28.295674,
+      "err_pct": 0.0385500698247049,
+      "config_label": "hadron+nuclear"
+    },
+    {
+      "atom": "D",
+      "A": 2,
+      "n_quark": 1,
+      "n_hadron": 0,
+      "n_nuclear": 2,
+      "B_pred": 7.470120642054333,
+      "AME": 2.224566,
+      "err_pct": 0.2795327283588519,
+      "config_label": "quark+nuclear"
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_quark": 1,
+      "n_hadron": 0,
+      "n_nuclear": 2,
+      "B_pred": 22.797451838781022,
+      "AME": 8.481798,
+      "err_pct": 0.5085822248694416,
+      "config_label": "quark+nuclear"
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_quark": 1,
+      "n_hadron": 0,
+      "n_nuclear": 2,
+      "B_pred": 23.041613918195647,
+      "AME": 7.718058,
+      "err_pct": 0.5443892573509475,
+      "config_label": "quark+nuclear"
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_quark": 1,
+      "n_hadron": 0,
+      "n_nuclear": 2,
+      "B_pred": 31.140820691409193,
+      "AME": 28.295674,
+      "err_pct": 0.07580815295056206,
+      "config_label": "quark+nuclear"
+    },
+    {
+      "atom": "D",
+      "A": 2,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 11.828983378755028,
+      "AME": 2.224566,
+      "err_pct": 0.5118141316566533,
+      "config_label": "all k=1 + extra nuclear"
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 23.311949549690688,
+      "AME": 8.481798,
+      "err_pct": 0.5268604253240953,
+      "config_label": "all k=1 + extra nuclear"
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 21.122166685146517,
+      "AME": 7.718058,
+      "err_pct": 0.4761983975203536,
+      "config_label": "all k=1 + extra nuclear"
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_quark": 1,
+      "n_hadron": 1,
+      "n_nuclear": 2,
+      "B_pred": 34.76699635746641,
+      "AME": 28.295674,
+      "err_pct": 0.1724266086344474,
+      "config_label": "all k=1 + extra nuclear"
+    }
+  ]
+}
