@@ -50,7 +50,7 @@ from datetime import datetime, timezone
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
 from mass_endomorphism import (additive_wedderburn_volumes, mass_from_tower,
-                                  Phi_q, HA, qi0)
+                                  Phi_q, HA, qi0, z_mark)
 
 # ── Calibration anchors ─────────────────────────────────────
 
@@ -139,6 +139,67 @@ def positron_nf_summary() -> dict:
     }
 
 
+# ── Positron-dressing probe ─────────────────────────────────
+#
+# Hypothesis: physical e⁻ is entangled with a virtual e⁺ sector.  Bare
+# electron braid σ₀σ₁σ₀ misses the QED self-energy contribution.  A
+# fraction η of the positron's V̂ should dress the electron's V̂ per
+# generator:
+#
+#     V̂_{e,dressed}(i) = V̂_{e,bare}(i) + η · V̂_{e⁺,bare}(i)
+#
+# where η is the entanglement fraction.  Mass follows through the
+# same Φ_q tower on the dressed V̂ vector.
+#
+# Braid-word encoding (on 3 strands = 2 generators):
+#   σ₀⁻¹ = σ₀ − HA·I  ↔ (c=1, d=−HA) factor
+#   e⁻  = σ₀σ₁σ₀        3 factors at gens 0, 1, 0
+#   e⁺  = σ₀⁻¹σ₁⁻¹σ₀⁻¹  3 factors, each with d=−HA
+
+
+def electron_bare_2strand_braid() -> dict:
+    """e⁻ = σ₀³ on 2 strands — matches mass_endomorphism.py convention."""
+    return {0: [(1.0, 0.0)] * 3}
+
+
+def positron_bare_2strand_braid() -> dict:
+    """e⁺ = σ₀⁻³ on 2 strands (Markov-equivalent to σ₀⁻¹σ₁⁻¹σ₀⁻¹ on 3).
+
+    σ⁻¹ = σ − HA·I  from the Hecke relation.
+    """
+    return {0: [(1.0, -HA)] * 3}
+
+
+def m_cat_from_braid(cross: dict, n_strands: int = 2) -> tuple:
+    vols = additive_wedderburn_volumes(n_strands, cross)
+    desc, single, crossT, total = mass_from_tower(vols)
+    return vols, desc, single, crossT, total
+
+
+def m_e_dressed_cat(eta: float) -> tuple:
+    """Dressed electron: V̂ per gen = V̂_e + η · V̂_{e⁺}.  Mass via tower.
+
+    Both bare braids on 2 strands = 1 generator (trefoil convention).
+    """
+    e_vols, *_ = m_cat_from_braid(electron_bare_2strand_braid())
+    p_vols, *_ = m_cat_from_braid(positron_bare_2strand_braid())
+    dressed_vols = []
+    for ve, vp in zip(e_vols, p_vols):
+        dressed_vols.append({
+            "std":  ve["std"]  + eta * vp["std"],
+            "sym":  ve["sym"]  + eta * vp["sym"],
+            "alt":  ve["alt"]  + eta * vp["alt"],
+            "full": ve["full"] + eta * vp["full"],
+        })
+    desc, single, crossT, total = mass_from_tower(dressed_vols)
+    return dressed_vols, desc, single, crossT, total
+
+
+def m_e_dressed_MeV(eta: float) -> float:
+    *_, total = m_e_dressed_cat(eta)
+    return E_0_PROTON_TOWER_MEV * total
+
+
 # ── CLI ─────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -203,6 +264,73 @@ if __name__ == "__main__":
     print(f"    sin²θ_W           = 2.3120e-01")
     print(f"    sin θ_W           = 4.8083e-01")
 
+    # Positron-dressing probe: V̂_e_dressed = V̂_e + η · V̂_{e⁺}
+    print(f"\n{'=' * 80}")
+    print("POSITRON-DRESSING PROBE: m_e(η) = mass(V̂_e + η·V̂_{e⁺})")
+    print("=" * 80)
+    # First, compute bare e⁻ and e⁺ cat-masses on 3 strands for reference.
+    ev, _, _, _, e_cat = m_cat_from_braid(electron_bare_2strand_braid())
+    pv, _, _, _, p_cat = m_cat_from_braid(positron_bare_2strand_braid())
+    print(f"  bare e⁻ (σ₀³, 2 strands): V̂ = [{ev[0]['full']:.4f}], "
+          f"cat = {e_cat:.3f}  ({E_0_PROTON_TOWER_MEV*e_cat:.6f} MeV)")
+    print(f"  bare e⁺ (σ₀⁻³, 2 strands): V̂ = [{pv[0]['full']:.4f}], "
+          f"cat = {p_cat:.3f}  ({E_0_PROTON_TOWER_MEV*p_cat:.6f} MeV)")
+
+    eta_probes = [
+        0.0,
+        -1/(137.036*math.pi),    # α/π — QED 1-loop
+        -1/(137.036*2*math.pi),  # α/(2π) — Schwinger
+        -0.0180,                 # match the 1.80% defect
+        -0.04,                   # one-loop-ish
+        -1/137.036,              # α
+        -0.1,
+        -0.5,
+        0.007297,                # α (positive, sanity)
+        0.5,
+    ]
+    print(f"\n  {'η':>14} {'m_cat':>12} {'m_MeV':>10} {'err_%':>10} {'comment':>30}")
+    comments = ["zero", "−α/π  (QED 1-loop)", "−α/(2π) (Schwinger)",
+                 "−0.0180 (err match)", "−4% (self-E scale)",
+                 "−α",  "−10%", "−50%",
+                 "+α (sanity)", "+50%"]
+    dress_rows = []
+    for eta, comment in zip(eta_probes, comments):
+        mev = m_e_dressed_MeV(eta)
+        err = (mev - M_E_CODATA_MEV) / M_E_CODATA_MEV * 100
+        print(f"  {eta:>14.6f} {mev/E_0_PROTON_TOWER_MEV:>12.3f} "
+              f"{mev:>10.6f} {err:>+9.4f}% {comment:>30}")
+        dress_rows.append({"eta": eta, "m_e_MeV": mev,
+                             "err_pct": err, "comment": comment})
+
+    # Binary-search η that reproduces CODATA m_e.  m(η) is DECREASING in η
+    # (positron's V̂ is negative, so positive η shrinks V̂_e).  Search
+    # from negative side: large negative η → high mass, positive η → low mass.
+    lo, hi = -2.0, 0.0
+    # Verify sign: m(lo) should be > CODATA, m(hi) < CODATA
+    m_lo = m_e_dressed_MeV(lo)
+    m_hi = m_e_dressed_MeV(hi)
+    if m_lo < M_E_CODATA_MEV or m_hi > M_E_CODATA_MEV:
+        print(f"  warning: bracketing failed: m({lo})={m_lo:.6f}, "
+              f"m({hi})={m_hi:.6f}")
+    for _ in range(80):
+        mid = (lo + hi) / 2
+        m = m_e_dressed_MeV(mid)
+        if m > M_E_CODATA_MEV:
+            lo = mid
+        else:
+            hi = mid
+    eta_star = (lo + hi) / 2
+    m_eta_star = m_e_dressed_MeV(eta_star)
+    print(f"\n  η_star = {eta_star:.6f}   m_e(η_star) = "
+          f"{m_eta_star:.6f} MeV  (CODATA {M_E_CODATA_MEV:.6f})")
+    print(f"  comparison to physical small-parameter scales:")
+    print(f"    α_em             = {1/137.036:.6f}")
+    print(f"    α_em/(2π)        = {1/(137.036*2*math.pi):.6f}  (QED 1-loop)")
+    print(f"    α_em/π           = {1/(137.036*math.pi):.6f}")
+    print(f"    1/(2π)           = {1/(2*math.pi):.6f}")
+    print(f"    1 − z²           = {1-z_mark**2:.6f}  (Hecke)")
+    print(f"    positron net     = 0.451094")
+
     # Positron/negative-coef diagnostic
     print(f"\n{'=' * 80}")
     print("POSITRON NF — NEGATIVE-COEFFICIENT DIAGNOSTIC")
@@ -247,6 +375,20 @@ if __name__ == "__main__":
         },
         "sweep": rows,
         "c_star_fit": {"c": c_star, "m_e_pred_MeV": m_star},
+        "positron_dressing": {
+            "bare_e_minus_cat":  e_cat,
+            "bare_e_plus_cat":   p_cat,
+            "sweep": dress_rows,
+            "eta_star": eta_star,
+            "m_e_at_eta_star_MeV": m_eta_star,
+            "reference_scales": {
+                "alpha_em":        1/137.036,
+                "alpha_em_2pi":    1/(137.036*2*math.pi),
+                "one_over_2pi":    1/(2*math.pi),
+                "one_minus_z_sq":  1 - z_mark**2,
+                "positron_net":    0.451094,
+            },
+        },
         "positron_nf_diagnostic": pos_info,
     }
     out = Path(__file__).parent / "electron-chiral-probe.witness.json"
