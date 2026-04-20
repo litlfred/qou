@@ -1,0 +1,122 @@
+{
+  "computation": "std-channel-pentagon-threshold",
+  "description": "The std channel of the 3-channel formula transitions from spurious contribution (A <= 3) to essential contribution (A >= 4) via the pentagon-identity cancellation mechanism of prop:pentagon-ascension-bound. At A=2 std irrep does not exist in H_2; at A=3 pentagon is incomplete (1 pair); at A >= 4 pentagon fully operational. Empirical rho values by atom document the transition.",
+  "timestamp": "2026-04-20T00:07:05.599666+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "M_E_MEV": 0.51099895,
+    "w_sym": 0.16546138476810043,
+    "w_std": 0.6690772304637992,
+    "w_alt": 0.16546138476810043
+  },
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME": 2.224566,
+      "B_rho_1": 4.924398973004851,
+      "err_rho_1_pct": 0.14387261758876163,
+      "B_rho_0": 2.6241589116482,
+      "err_rho_0_pct": 0.021294086983742463,
+      "rho_optimal_fit": -0.17371791682148413
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME": 8.481798,
+      "B_rho_1": 17.24226480220313,
+      "err_rho_1_pct": 0.3112269790353306,
+      "B_rho_0": 7.86798976728754,
+      "err_rho_0_pct": 0.021806335927906463,
+      "rho_optimal_fit": 0.06547794153961331
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME": 7.718058,
+      "B_rho_1": 15.246091257101051,
+      "err_rho_1_pct": 0.2674431741577798,
+      "B_rho_0": 5.256930775060642,
+      "err_rho_0_pct": 0.0874347461766367,
+      "rho_optimal_fit": 0.24637978630578997
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME": 28.295674,
+      "B_rho_1": 19.412197989444564,
+      "err_rho_1_pct": 0.2366977808821812,
+      "B_rho_0": 7.84292829569663,
+      "err_rho_0_pct": 0.5449577975337474,
+      "rho_optimal_fit": 1.767851061105101
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "B_AME": 31.994571,
+      "B_rho_1": 34.74071743069951,
+      "err_rho_1_pct": 0.04878021211154674,
+      "B_rho_0": 12.973543901971729,
+      "err_rho_0_pct": 0.33787336539987456,
+      "rho_optimal_fit": 0.873840008346733
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "B_AME": 39.244529,
+      "B_rho_1": 42.238555731152054,
+      "err_rho_1_pct": 0.04558572614873869,
+      "B_rho_0": 15.507904581319504,
+      "err_rho_0_pct": 0.361403339919105,
+      "rho_optimal_fit": 0.8879927498073383
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "B_AME": 58.16498,
+      "B_rho_1": 56.38667550539445,
+      "err_rho_1_pct": 0.021058860148177237,
+      "B_rho_0": 20.405422981695175,
+      "err_rho_0_pct": 0.4471524606262579,
+      "rho_optimal_fit": 1.0494230847976806
+    },
+    {
+      "atom": "10B",
+      "Z": 5,
+      "N": 5,
+      "A": 10,
+      "B_AME": 64.750861,
+      "B_rho_1": 66.10174145966647,
+      "err_rho_1_pct": 0.01439753567906183,
+      "B_rho_0": 22.900158295285905,
+      "err_rho_0_pct": 0.44604019628331754,
+      "rho_optimal_fit": 0.9687307649229794
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "B_AME": 92.161728,
+      "B_rho_1": 82.8886980519466,
+      "err_rho_1_pct": 0.08235911288742667,
+      "B_rho_0": 27.837087296622983,
+      "err_rho_0_pct": 0.571304134119042,
+      "rho_optimal_fit": 1.1684424818969836
+    }
+  ]
+}
