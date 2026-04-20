@@ -1,0 +1,50 @@
+{
+  "computation": "markov-schur-vs-wedderburn",
+  "description": "Comparing the Jones-Ocneanu Markov-trace Schur coefficients (solved from tr_M(1)=1, tr_M(σ_0)=z, tr_M(σ_0σ_1)=z² at q_0) to the Wedderburn-normalized weights used in full-tower-mass.py. They differ by factors of 2.4× to 7.3×. The std channel is OVER-weighted by 2.4× in the code convention — partly explaining the empirical ρ(std, A=3) < 1.",
+  "timestamp": "2026-04-20T00:00:00+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "z": 0.499320,
+    "h": 0.209060,
+    "[2]_q": 2.010898,
+    "[3]_q": 3.043706,
+    "[3]_q!": 6.120579
+  },
+  "std_irrep_characters": {
+    "chi_std(σ_0)": 0.209060,
+    "chi_std(σ_0·σ_1)": -1.000000,
+    "chi_std(σ_0·σ_1·σ_0)": 0.0,
+    "note": "chi_std of trefoil σ_0σ_1σ_0 vanishes EXACTLY at all q — potentially relevant to shell-closure resonance at doubly-magic 4He"
+  },
+  "schur_coefficients_H3_q0": {
+    "S_sym": 0.415396,
+    "S_std": 0.280930,
+    "S_alt": 0.022745,
+    "constraint": "tr_M(W) = S_sym · χ_sym(W) + S_std · χ_std(W) + S_alt · χ_alt(W)",
+    "verification": "S_sym · 1 + S_std · 2 + S_alt · 1 = 1.000001 ≈ 1 ✓"
+  },
+  "wedderburn_weights_in_code": {
+    "w_sym": 0.165461,
+    "w_std": 0.669077,
+    "w_alt": 0.165461,
+    "constraint": "Σ w_λ = 1 (probability normalization)",
+    "formula": "w_λ = d_q(λ)²/Σ d_q(μ)²"
+  },
+  "ratios_Schur_over_Wedderburn": {
+    "sym": 2.51,
+    "std": 0.42,
+    "alt": 0.14
+  },
+  "interpretation": {
+    "wedderburn_weights_are": "dimension-squared normalization for gauge-functional decomposition",
+    "schur_weights_are": "Jones-Ocneanu Markov trace coefficients",
+    "formula_uses": "wedderburn",
+    "formula_should_use": "possibly schur (for true Markov trace), or a product combining both",
+    "std_over_weighting_factor": 2.39,
+    "std_under_prediction_needed_at_A=3": "1/ρ = 1/0.066 ≈ 15× (for T), 1/0.246 ≈ 4× (for 3He)"
+  },
+  "gap": {
+    "schur_correction_accounts_for": "≈ 2.4× over-weighting of std",
+    "remaining_explanation_required": "Additional ≈ 6× for T, ≈ 1.6× for 3He — possibly from per-gen Markov trace structure at A=3 with only 2 generators, or from Yang-Baxter/braid-relation constraints that don't fully operate at A=3"
+  }
+}
