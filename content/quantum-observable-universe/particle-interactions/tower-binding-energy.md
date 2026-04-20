@@ -1,61 +1,131 @@
 The nuclear binding energy of a derived atom $\mathcal{A}(Z, N)$
 ([derived atom](#def:derived-atom)) is determined by the brane
-tower partition function evaluated on **all three** Wedderburn
-channels of $H_3(q)$.
+tower partition function evaluated on the **full Wedderburn
+decomposition of $H_A(q)$** — a sum over irreducible representations
+indexed by partitions of $A = Z + N$.
 
 ## Statement
 
 **Proposition.**
-*Let $\mathcal{A}(Z, N)$ be a derived atom with $A$ nucleons
-and $A - 1$ generators in $H_A(q)$.  For each generator $i$
-and each irrep $\lambda \in \{\mathrm{sym}, \mathrm{std},
-\mathrm{alt}\}$, let $\hat{V}_i^\lambda$ be the vertex volume
-in channel $\lambda$, computed from the Garside staircase with
-LP-derived gluon crossings
-([integer LP gluon](#prop:mass-endomorphism-tower)):*
-
-- *Symmetric: $\hat{V}_i^{\mathrm{sym}} = \prod_j (c_j q + d_j)$*
-- *Standard: $\hat{V}_i^{\mathrm{std}} = z a_i + b_i$
-  (transfer chain reduction)*
-- *Alternating: $\hat{V}_i^{\mathrm{alt}} = \prod_j (-c_j q^{-1} + d_j)$*
-
-*The brane tower at generator $i$ in channel $\lambda$ is*
+*Let $\mathcal{A}(Z, N)$ be a derived atom with $A = Z + N$ nucleons
+and $A - 1$ generators in the Iwahori–Hecke algebra $H_A(q)$.  The
+Wedderburn–Artin decomposition of $H_A(q)$ is*
 
 $$
-  \Phi_q(\hat{V}_i^\lambda)
-  =
-  \prod_{k=1}^{\infty}
-  \bigl|1 - q^{-k} \hat{V}_i^\lambda\bigr|^{-1},
+  H_A(q) \;\cong\; \bigoplus_{\lambda \,\vdash\, A}
+    \mathrm{End}_{\mathbb{Q}(q)}\bigl(V_\lambda\bigr)
 $$
 
-*analytically continued past $|\hat{V}| = q$ via the absolute
-value of the $q$-Pochhammer symbol.*
+*where $\lambda$ ranges over partitions of $A$ (the irreps of
+$H_A(q)$) and $V_\lambda$ is the irrep module of quantum dimension*
+
+$$
+  d_q(\lambda) \;=\; \frac{[A]_q!}{\prod_{x \in \lambda} [h_x(\lambda)]_q}
+$$
+
+*(quantum hook-length formula, with $h_x(\lambda)$ the hook length
+at cell $x$).*
+
+*For each generator $i \in \{0, \ldots, A-2\}$ and each irrep
+$\lambda \vdash A$, let $\hat{V}_i^\lambda(q)$ be the **per-generator
+per-irrep vertex volume** — the character of the per-generator
+Hecke element $T_i \in H_A(q)$ in the irrep $\lambda$:*
+
+$$
+  \hat{V}_i^\lambda(q)
+  \;=\;
+  \mathrm{tr}_\lambda\bigl(\rho_\lambda(T_i)\bigr).
+$$
 
 *The nuclear binding energy is*
 
 $$
+  \boxed{\;
   B(Z, N)
-  =
-  \sum_{\lambda}
-  w_\lambda \cdot m_e
-  \cdot
+  \;=\;
+  \sum_{\lambda \,\vdash\, A}
+  w_\lambda^{(A)} \cdot m_e \cdot
   \sum_{i=0}^{A-2}
-  \ln\bigl|\Phi_q(\hat{V}_i^\lambda)\bigr|,
+  \ln\bigl|\Phi_q(\hat{V}_i^\lambda)\bigr|\;}
 $$
 
-*where $w_\lambda$ are the Wedderburn-Artin weights:
-$w_{\mathrm{sym}} = w_{\mathrm{alt}} = 1/([2]_q^2 + 2)$,
-$w_{\mathrm{std}} = [2]_q^2/([2]_q^2 + 2)$.*
-
-*The atomic mass is then*
+*with the (normalised) Wedderburn–Artin weights*
 
 $$
-  M(Z, N)
+  w_\lambda^{(A)} \;=\;
+  \frac{d_q(\lambda)^2}{\sum_{\mu \,\vdash\, A} d_q(\mu)^2}.
+$$
+
+*The sum runs over $p(A)$ partitions, where $p$ is the partition
+function.*
+
+## Irrep count and special cases
+
+The irrep count varies with $A$:
+
+| $A$ | $p(A)$ | Irreps of $H_A(q)$ |
+|:---:|:------:|:--------------------|
+| 1 | 1 | trivial |
+| 2 | 2 | $\mathrm{sym} = (2)$, $\mathrm{alt} = (1,1)$ |
+| 3 | 3 | $\mathrm{sym} = (3)$, $\mathrm{std} = (2,1)$, $\mathrm{alt} = (1,1,1)$ |
+| 4 | 5 | $(4), (3,1), (2,2), (2,1,1), (1,1,1)$ |
+| 6 | 11 | $\ldots$ |
+| 8 | 22 | $\ldots$ |
+| 12 | 77 | $\ldots$ |
+| 20 | 627 | $\ldots$ |
+
+**At $A = 2$**, only two irreps exist (both $1$-dimensional); there
+is **no standard irrep** $(2,1)$.  The 3-channel special case
+(sym / std / alt) of $H_3$ is **not applicable at $A = 2$** —
+including a "std contribution" via formal transfer-chain extension
+produces spurious binding of order $+2.3\;\mathrm{MeV}$ on D
+(empirically verified, `std-channel-pentagon-threshold.witness.json`).
+
+**At $A = 3$**, all three $H_3$ irreps are present; the formula
+reduces to the original 3-channel statement with $\hat{V}^{\mathrm{sym}},
+\hat{V}^{\mathrm{std}}, \hat{V}^{\mathrm{alt}}$ as particular cases
+of $\hat{V}^\lambda$ for $\lambda = (3), (2,1), (1,1,1)$.
+
+**At $A \geq 4$**, additional irreps $(3,1), (2,2), (2,1,1), \ldots$
+contribute.  The pentagon identity
+([pentagon ascension bound](#prop:pentagon-ascension-bound))
+ensures their $O(\hbar_q^2)$ residuals ascend to the next jet
+level, so the leading $A$-independent contribution is still
+captured by the three $H_3$-channel restriction; higher irreps
+contribute corrections $O(\hbar_q^{2k})$.
+
+## The A < 4 sub-magic window
+
+For $A \in \{2, 3\}$ the per-irrep formula differs from the
+$H_3$ three-channel restriction:
+
+- At $A = 2$, the (spurious) std-channel contribution must be
+  omitted — the irrep is absent.
+- At $A = 3$, all three irreps are present but the pentagon
+  identity cannot operate (requires $\geq 3$ std generators).
+  The std-channel contribution appears with residual suppression
+  factor $\rho^{(3)}_{\mathrm{std}} \ll 1$.
+
+Empirical $\rho^{(A)}_{\mathrm{std}}$ from AME fit:
+
+| $A$ | Atom(s) | $\rho^{(A)}_{\mathrm{std}}$ |
+|:---:|:--------|:----------------------------|
+| 2 | D | $-0.17$ (effectively 0, matches prediction) |
+| 3 | T / ${}^3$He | $+0.07$ / $+0.25$ (incomplete pentagon) |
+| 4 | ${}^4$He | $+1.77$ (doubly-magic shell boost) |
+| 5-12 | ${}^6$Li–${}^{12}$C | $\approx 1$ (pentagon operational) |
+
+## Derivation
+
+The binding energy arises from the gauge sector of the categorical
+action ([canonical action](#prop:qou-canonical-action)):
+
+$$
+  \mathcal{S}_{\mathrm{gauge}}
   =
-  Z \cdot m_{\mathfrak{p}}
-  + N \cdot m_{\mathfrak{n}}
-  + Z \cdot m_e
-  - B(Z, N).
+  \int_A \mathrm{tr}_A\bigl(
+    F_\nabla \wedge_q \star_q F_\nabla
+  \bigr).
 $$
 
 ## Derivation
@@ -71,24 +141,32 @@ $$
   \bigr).
 $$
 
-Under the Wedderburn-Artin decomposition of $H_3(q)$, the gauge
-functional decomposes into three channels.  Although the
-weights satisfy $w_{\mathrm{sym}} = w_{\mathrm{alt}}$, the
-channels do **not** cancel in the binding: the nonlinearity
-of $\ln|\Phi_q|$ breaks the character cancellation because
-$\hat{V}^{\mathrm{sym}} \neq \hat{V}^{\mathrm{alt}}$.
+Under the Wedderburn-Artin decomposition of $H_A(q)$, the gauge
+functional decomposes into one channel per irrep $\lambda \vdash A$.
+Although some weights coincide (e.g. $w_{\mathrm{sym}} =
+w_{\mathrm{alt}}$ at $A = 3$ because both irreps are $1$-dim), the
+channels do **not** cancel in the binding: the nonlinearity of
+$\ln|\Phi_q|$ breaks the character cancellation because
+$\hat{V}^\lambda$ differs across irreps.
 
-Each channel contributes independently:
+In the restriction to $H_3 \subset H_A$ via inclusion of the first
+three strands, each outer irrep $\lambda$ decomposes into $H_3$
+sub-irreps.  The dominant contributors — sym, std, alt of $H_3$ —
+give three leading channels applicable at $A \geq 3$:
 
-- **Symmetric** ($\sim 20\%$ of $B$): $\hat{V}^{\mathrm{sym}}
+- **Symmetric (trivial)** $(A)$: $\hat{V}^{\mathrm{sym}}
   = \prod (c_j q + d_j)$ grows with $A$, providing the volume
-  binding baseline.
-- **Standard** ($\sim 65\%$ of $B$): the $2{\times}2$ transfer
-  chain $\hat{V}^{\mathrm{std}} = z a_i + b_i$ encodes the
-  correlated structure between adjacent nucleons.
-- **Alternating** ($\sim 15\%$ of $B$): $\hat{V}^{\mathrm{alt}}
-  = \prod (-c_j q^{-1} + d_j)$ captures the Pauli exclusion
-  and parity structure.
+  binding baseline.  $d_q((A)) = 1$.
+- **Standard (hook)** $(A-1, 1)$: the $2{\times}2$ transfer chain
+  $\hat{V}^{\mathrm{std}} = z a_i + b_i$ encodes correlated
+  structure between adjacent nucleons.  $d_q((A-1,1)) = [A-1]_q$
+  at $A \geq 3$; this irrep is **absent at $A = 2$**.
+- **Alternating (sign)** $(1^A)$: $\hat{V}^{\mathrm{alt}}
+  = \prod (-c_j q^{-1} + d_j)$ captures Pauli/parity.  $d_q = 1$.
+
+Sub-leading irreps $(A-2, 2), (A-2, 1, 1), \ldots$ for $A \geq 4$
+contribute corrections $O(\hbar_q^{2k})$ via the pentagon
+ascension mechanism.
 
 The $\Phi_q$ tower is analytically continued past
 $|\hat{V}| = q$ via the $q$-Pochhammer functional equation,
