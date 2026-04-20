@@ -44,7 +44,7 @@ $$
   B(Z, N)
   \;=\;
   \sum_{\lambda \,\vdash\, A}
-  w_\lambda^{(A)} \cdot m_e \cdot
+  w_\lambda^{(A)} \cdot \rho(\lambda, A) \cdot m_e \cdot
   \sum_{i=0}^{A-2}
   \ln\bigl|\Phi_q(\hat{V}_i^\lambda)\bigr|\;}
 $$
@@ -53,11 +53,29 @@ $$
 
 $$
   w_\lambda^{(A)} \;=\;
-  \frac{d_q(\lambda)^2}{\sum_{\mu \,\vdash\, A} d_q(\mu)^2}.
+  \frac{d_q(\lambda)^2}{\sum_{\mu \,\vdash\, A} d_q(\mu)^2}
+$$
+
+*and the **pentagon-ascension completion factor** $\rho(\lambda, A)$:*
+
+$$
+  \rho(\lambda, A)
+  \;=\;
+  \begin{cases}
+    1 & \text{if $\lambda$ is $1$-dim (sym or alt) — no pair terms}, \\
+    1 & \text{if $\dim_q(\lambda) \geq 2$ and $\lambda$ has $\geq 3$ generators in $H_A$}, \\
+    < 1 & \text{if $\lambda$ has $<3$ generators (pentagon incomplete)}, \\
+    0 & \text{if $\lambda$ does not exist in $H_A$}.
+  \end{cases}
 $$
 
 *The sum runs over $p(A)$ partitions, where $p$ is the partition
-function.*
+function.  The $\rho$-factor enforces that higher-dimensional irreps
+require the pentagon identity of the quantum Bloch group
+([pentagon ascension bound](#prop:pentagon-ascension-bound))
+to operate, which itself requires at least $3$ generators.  Under
+this factor, $\sum_\lambda w_\lambda^{(A)} \cdot \rho(\lambda, A)
+\leq 1$ at small $A$, with equality for $A \geq 4$.*
 
 ## Irrep count and special cases
 
