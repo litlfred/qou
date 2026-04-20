@@ -14,7 +14,7 @@ Compare what the paper content blocks prescribe vs what the computational module
 | `thm:jones-markov-trace`: Markov parameter z = 1/(q^{1/2}+q^{-1/2}) | `mass_endomorphism.py:35` `z_mark = 1.0 / (q0**0.5 + qi0**0.5)` | Matches. | ✓ |
 | `prop:mass-endomorphism-tower` single-level: desc + Σ Φ_q + z² Σ Φ_q pair | `canonical_plus_multibrane.py::tower_mass_level` | Matches the equation verbatim (one global Φ_q on aggregated V̂). | ✓ |
 | `rem:mass-endomorphism-jet-tower` (updated): **descended at level 0 ONLY**, singletons + pairs **per level** | `canonical_plus_multibrane.py::binding_canonical_plus_multibrane` | **INCLUDES desc term at every jet level** via `tower_mass_level`. Double-counts level-0 holonomy across iterations. | ❌ |
-| Updated `𝒫_n = all pairs (i < j)` at every level (justified by `thm:markov-trace-factorization`) | `canonical_plus_multibrane.py::tower_mass_level` with `pair_mode="full"` | Supports `pair_mode ∈ {"adjacent", "full"}`. Default is "adjacent" in some call sites, "full" in others. | ⚠︎ (default inconsistency) |
+| Updated `𝒫_n = all pairs (i < j)` at every level (justified by `thm:markov-trace-factorization`) | `canonical_plus_multibrane.py::tower_mass_level` with `pair_mode="full"` | **Fixed 2026-04-20 (commit 7a699da)**: `tower_mass_level` and `binding_canonical_plus_multibrane` default both flipped from `"adjacent"` to `"full"`.  `binding_full_pipeline.binding_full` and `unified_lift.binding_unified` were already `"full"`.  All four entry points now consistent. | ✓ |
 | Pentagon ascension: no explicit triples | `canonical_plus_multibrane.py` | No triple terms. Matches. | ✓ |
 | `prop:tower-binding-energy`: $B = \sum_\lambda w_\lambda \cdot m_e \cdot \sum_i \ln\lvert\Phi_q(\hat{V}_i^\lambda)\rvert$ (three-channel, log form, per-block) | `mass_endomorphism.py::mass_from_tower` | Uses single global Φ_q on aggregated V̂ (NOT per-block, NOT log form). | ❌ |
 | `prop:binding-scale-catalan`: α = m_e · 8G ≈ 3.7445 MeV | `canonical_plus_multibrane.py::E_0_BETA_DECAY_MEV = 0.782` | Uses Q_β = 0.782, not Catalan α. Different scale. | ❌ |
@@ -104,6 +104,18 @@ These are all **different** definitions of "free baseline". Cross-witness compar
 ## Items where code is AHEAD of paper
 
 - `thm:markov-trace-factorization` is referenced in the updated jet-tower block but I did not find an explicit `.md` for it — the code's `pair_mode="full"` anticipates this theorem. If the theorem block is missing, it should be added to close the chain.
+
+## SDP / positron probes — NOT integrated into main pipeline
+
+The following modules exist as standalone probes but are **not imported** by `binding_full_pipeline.py → canonical_plus_multibrane.py → mass_from_tower`:
+
+- `positron_lifted_sdp.py` (this branch) — explicit e⁻/e⁺ SDP variables
+- `electron_chiral_probe.py` (this branch) — positron dressing + projection
+- `pair_factorisation_probe.py` (main) — traced V̂_{ij}
+- `content_weighted_pair_probe.py` (main) — SYT-content pair weights
+- `multi_level_sdp.py`, `sdp_on_shadows.py`, `sdp_cross_channel.py`, `misdp_cross_channel.py` (main) — SDP formulations
+
+The pipeline used to produce `binding-fast-pipeline.witness.json` uses a **single global Φ_q on the Plancherel-aggregated V̂** with no explicit positron variables, no SDP lifting, no character-traced pairs.  All the probe findings on this session's branch are **diagnostic** — they confirmed the existing aggregate pipeline is algebraically optimal and that explicit positron / SDP-lifted formulations don't improve predictions.  If any should be promoted from probe to production, that's a separate follow-up.
 
 ## Recommended sequence to fix before next session
 
