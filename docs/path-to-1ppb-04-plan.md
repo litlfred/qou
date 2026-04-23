@@ -34,7 +34,7 @@ $$B = n_\alpha \cdot B(⁴He) + n_{\alpha\alpha} \cdot c_{\alpha\alpha}, \qquad 
 ✓ `docs/crossing-graded-proof.md` — formal power-series expansion proved; resummation needs locality.
 **TODO**: pentagon defect computation for adjacent crossings. Brings D from 1.1% → ~100 ppm.
 
-## Phase 3 — Atom-knot derivation (STATUS: NOT YET)
+## Phase 3 — Atom-knot derivation (STATUS: IN PROGRESS)
 
 **Biggest single leverage — do first.**
 
@@ -47,7 +47,28 @@ Currently empirical: SnapPy census search finds the knot with Vol closest to B(a
 
 Expected effect: D's 1.1% residual collapses to ~100 ppm when the exact knot (not the nearest catalog match) is used.
 
-**Time**: 2-3 sessions.
+### Progress (2026-04-23 session)
+
+Implemented prototype `folio-assistant/computations/atom_link_derivation.py`.
+Two modes:
+
+- **block** (literal `atom_braid_word_3A` output) — all four light
+  atoms close to non-hyperbolic links (Vol ≈ 0). Diagnosis:
+  `atom_braid_word_3A` emits `σ_0^a · σ_1^b` in blocks, which is
+  Hecke-equivalent to `(σ_0 σ_1⁻¹)^gcd(a,b)` but NOT
+  braid-group-equivalent. The braid closure only sees the literal
+  word, so the Hecke collapse loses the link class.
+- **interleaved** (per-nucleon zip of g_0 and g_1 chains) — all four
+  atoms close to hyperbolic links with substantial volume, but
+  volumes are 18–371% off the Kashaev target B/ρ.
+
+Full writeup: `docs/phase-3-findings.md` (witness volumes at 50 digits).
+
+**Next refinement**: "confinement-only interleave, quark-pairs
+appended" — keep `(σ_0 σ_1⁻¹)^3` interleaved per nucleon, block the
+quark-pair addenda.
+
+**Time**: 2-3 sessions (1 complete; prototype + findings merged).
 
 ## Phase 4 — High-precision SnapPy (STATUS: READY)
 
