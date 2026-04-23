@@ -1,7 +1,8 @@
-Continuing
-[Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-condition-su2), we
-construct the [jet prolongation](#prop:jet-prolongation) of
-$A = \mathcal{O}(\mathrm{SU}(2))$.
+We construct the [jet prolongation](#prop:jet-prolongation) of
+$A = \mathcal{O}(\mathrm{SU}(2))$. The resulting structure underpins
+the
+[Yekutieli lifting condition for SU(2)](#ex:yekutieli-lifting-condition-su2)
+that follows.
 
 **Kahler differentials.** The module of Kahler differentials is
 $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$, which for the
