@@ -1,0 +1,67 @@
+import { chapter } from "../../schema/builders";
+
+export default chapter({
+  label: "app:surreals",
+  title: "Surreal-number lift of QOU (appendix)",
+  sections: [
+    {
+      heading: "Motivation and scope",
+      blocks: [
+        "surreal-appendix-intro",
+      ],
+    },
+    {
+      heading: "What survives and what breaks",
+      blocks: [
+        "algebraic-core-survives",
+        "analytic-obstructions",
+        "calculus-up-to-epsilon",
+      ],
+    },
+    {
+      heading: "Surreal construction as a grading",
+      blocks: [
+        "birthday-grading",
+        "hoefsmit-is-surreal-construction",
+        "sign-sequence-of-braid",
+        "jones-birthday",
+      ],
+    },
+    {
+      heading: "Standard-part replaces classical limits",
+      blocks: [
+        "standard-part-functor",
+        "classical-limit-stpart",
+        "archimedean-stpart",
+      ],
+    },
+    {
+      heading: "Named surreals for singular objects",
+      blocks: [
+        "surreal-blowup-calculus",
+        "bigbang-heatdeath",
+      ],
+    },
+    {
+      heading: "Relaxing strict equalities to $1 + \\varepsilon$",
+      blocks: [
+        "infinitesimal-frobenius",
+        "infinitesimal-observability",
+        "vacuum-epsilon",
+      ],
+    },
+    {
+      heading: "Speculative reformulations",
+      blocks: [
+        "hahn-substrate",
+        "kashaev-surreal",
+      ],
+    },
+    {
+      heading: "Outlook",
+      blocks: [
+        "surreal-appendix-conclusion",
+      ],
+    },
+  ],
+});
