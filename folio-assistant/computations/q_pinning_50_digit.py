@@ -35,12 +35,11 @@ that precision.
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-from mpmath import mp, mpf, mpc, sqrt, log, exp, sin, cos, pi
-from mpmath import polylog, im, re, arg
+from mpmath import mp, mpf, mpc, sqrt, log
+from mpmath import polylog, im, arg
 
 # ── Set precision: 50 decimal digits (~165 bits) ─────────────
 mp.dps = 50
