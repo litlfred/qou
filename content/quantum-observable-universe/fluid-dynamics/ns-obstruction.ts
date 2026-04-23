@@ -12,6 +12,8 @@ export default definition({
     "def:q-navier-stokes",
     "def:ns-regular-qou",
     "def:quantum-characteristic-classes",
+    "def:crossing-energy",
+    "rem:hecke-algebra-from-braiding",
   ],
   tags: [
     "definition",
@@ -19,5 +21,6 @@ export default definition({
     "navier-stokes",
     "euler-characteristic",
     "categorical",
+    "spectral-gap",
   ],
 });

@@ -1,3 +1,19 @@
+### Chern--Simons level from QOU existence
+
+The Chern--Simons level $k$ appearing in this proposition is not an
+independent input: by the existence proof for a quantum observable
+universe
+([QOU existence](#prop:quantum-observable-universe-exists)), choosing
+$q = e^{\pi i/(k + h^{\vee})}$ makes $\mathbf{C} = \mathbf{Rep}_{k}(\widehat{\mathfrak{g}})$
+the modular tensor category that simultaneously fixes (a) the braiding
+used in the Skein relation and (b) the CS-level partition function on
+the brane.  Therefore $k = \langle c_{2}(\mathrm{Ad}(P)), [M] \rangle$
+*determines* both the $q$-deformation of the force-carrier
+$q$-dimensions $[m]_{q}, [n]_{q}$ and the CS functional
+$\mathrm{CS}(T_{m, n})$ through the single RT construction.  The
+proposition's numerical prediction specialises the shared object rather
+than combining two independently postulated quantities.
+
 **Proposition.**
 *The fine structure constant receives corrections from the
 Chern–Simons invariants of the force-carrier torus knots

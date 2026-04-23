@@ -15,5 +15,7 @@ export default remark({
     "prop:braiding-eigenvalue-extraction",
     "thm:jones-markov-trace",
     "def:substrate-parameter",
+    "def:crossing-energy",
+    "prop:nuclear-groebner-reduction",
   ],
 });

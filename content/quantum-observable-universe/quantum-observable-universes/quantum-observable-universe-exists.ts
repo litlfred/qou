@@ -10,8 +10,23 @@ export default proposition({
   uses: [
     "def:quantum-observable-universe",
     "def:quantum-universe",
+    "def:substrate-parameter",
     "ex:qou-su2",
+    "ex:c-quantum-observable-universe",
   ],
   proofs: ["prf:quantum-observable-universe-exists"],
-  tags: ["existence", "quantum-observable-universe"],
+  tags: [
+    "existence",
+    "quantum-observable-universe",
+    "chern-class",
+    "reshetikhin-turaev",
+    "woronowicz",
+  ],
+  cites: [
+    "woronowicz1987",
+    "woronowicz1988",
+    "reshetikhin1991",
+    "kassel1995",
+    "chari1994",
+  ],
 });

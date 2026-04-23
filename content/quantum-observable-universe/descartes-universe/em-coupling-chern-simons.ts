@@ -14,6 +14,8 @@ export default proposition({
     "prop:torus-knot-generators",
     "def:knot-particle-generation",
     "thm:topological-mass",
+    "prop:quantum-observable-universe-exists",
+    "def:substrate-parameter",
   ],
   tags: [
     "fine-structure",
