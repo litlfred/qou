@@ -94,7 +94,10 @@ def compute_phi_mp(ordering: list[str]) -> mp.mpf:
             a, b = a_new, b_new
         V = Z_MP * a + b
         if abs(V) < mp.mpf("1e-200"):
-            return mp.inf
+            # log|V| → -∞ as V → 0; return -mp.inf so
+            # B_pred = -α · Φ → +∞ (physically: infinite binding
+            # at zero-volume degeneracy).
+            return -mp.inf
         Phi += mp.log(abs(V))
     return Phi
 

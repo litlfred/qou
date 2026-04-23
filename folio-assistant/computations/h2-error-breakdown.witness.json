@@ -1,7 +1,7 @@
 {
   "name": "h2-error-breakdown",
   "description": "\u00b2H (deuterium) error source breakdown.  Identifies the dominant contribution (knot-matching mismatch, ~24 keV) and quantifies the gap between current ~13 ppm precision and the 1 ppb target (~1.88 eV residual on M(\u00b2H)).",
-  "timestamp": "2026-04-23T18:33:28.679239+00:00",
+  "timestamp": "2026-04-23T19:44:27.077970+00:00",
   "constants": {
     "q_0": 1.1099785955541805,
     "M_E_MEV": 0.51099895,
@@ -31,9 +31,9 @@
     "C3_AME_uncertainty": 1e-05,
     "C4_Vol_62_precision": 5.109989499999999e-13,
     "C5a_electron_binding": 1.3602e-05,
-    "C5b_hyperfine": 1.35e-12,
-    "C6_model_total": 0.024240794864733406
+    "C5b_hyperfine": 1.35e-12
   },
+  "note_on_model_error": "The observed residual (field `prediction.residual_MeV`) equals contribution C1 by construction \u2014 the knot-match mismatch IS the leading-order model error.  An explicit C6 is not emitted to avoid redundancy.",
   "target_1ppb_on_M_eV": 1.8761239274400001,
   "current_gap_vs_1ppb_factor": 12920.678911552683,
   "paths_to_1ppb": [

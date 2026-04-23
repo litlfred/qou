@@ -63,53 +63,71 @@ def free_mass(Z: int, N: int) -> float:
 
 
 def main() -> int:
-    # atom_mass_atomic_braid writes a thin witness; the actual per-atom
-    # predictions live in its stdout table.  Run it as a subprocess
-    # and parse.  This keeps the scripts decoupled.
-    import re
-    import subprocess
-    script = Path(__file__).parent / "atom_mass_atomic_braid.py"
-    if not script.exists():
-        print(f"ERROR: {script} missing", file=sys.stderr)
-        return 1
-    print("  Running atom_mass_atomic_braid.py to capture predictions ...\n")
-    try:
-        out = subprocess.check_output(
-            ["python3", str(script)], text=True, stderr=subprocess.STDOUT
-        )
-    except subprocess.CalledProcessError as e:
-        print(f"ERROR running {script}: {e}", file=sys.stderr)
-        return 1
+    # Import the prediction functions from atom_mass_atomic_braid
+    # directly — more robust than parsing stdout.  We reuse its
+    # crossing_coeff and compute_Phi, apply the same α·Φ + β·ln(F_nuc)
+    # calibration locally.
+    from atom_mass_atomic_braid import (
+        compute_Phi as _compute_Phi,
+        find_nuclear_gs as _find_nuc_gs,
+    )
+    # Calibrate α, β from ⁴He + ¹²C like the parent script does.
+    # ⁴He (Z=2,N=2) and ¹²C (Z=6,N=6) are used as anchors.
+    def _atomic_ordering(Z, N, nuc):
+        out, e = [], Z
+        for t in nuc:
+            out.append(t)
+            if t == "p" and e > 0:
+                out.append("e")
+                e -= 1
+        out.extend(["e"] * e)
+        return out
+
+    def _free(Z, N):
+        return Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
+
+    import math as _m
+
+    def _ln_F_nuc(Z, N):
+        # ln(F_nuc) = Φ_nuclear (no electrons)
+        return _compute_Phi(_find_nuc_gs(Z, N))
+
+    # Calibration from ⁴He and ¹²C
+    Z4, N4 = 2, 2
+    Z12, N12 = 6, 6
+    Phi4 = _compute_Phi(_atomic_ordering(Z4, N4, _find_nuc_gs(Z4, N4)))
+    Phi12 = _compute_Phi(_atomic_ordering(Z12, N12, _find_nuc_gs(Z12, N12)))
+    lnF4 = _ln_F_nuc(Z4, N4)
+    lnF12 = _ln_F_nuc(Z12, N12)
+    # M_obs for ⁴He, ¹²C:
+    M4, M12 = 3728.40133, 11177.9292
+    F4, F12 = _free(Z4, N4), _free(Z12, N12)
+    # Solve 2×2 linear system: [Φ_i, ln(F_nuc)_i] [α, β]^T = M_i - F_i
+    A_mat = [[Phi4, lnF4], [Phi12, lnF12]]
+    b_vec = [M4 - F4, M12 - F12]
+    det = A_mat[0][0] * A_mat[1][1] - A_mat[0][1] * A_mat[1][0]
+    alpha = (b_vec[0] * A_mat[1][1] - b_vec[1] * A_mat[0][1]) / det
+    beta  = (A_mat[0][0] * b_vec[1] - A_mat[1][0] * b_vec[0]) / det
 
     preds_by_symbol: dict[str, dict] = {}
-    # Lines look like:  `   1   H |      932.113 |      938.783 | ...`
-    # where the first integer is the mass number A and the letters
-    # are the chemical element.  Symbol key is "{A}{Elem}".
-    line_re = re.compile(
-        r"^\s*(\d+)\s+([A-Za-z]+)\s*\|\s*([-+0-9.]+)\s*\|\s*([-+0-9.]+)\s*\|"
-    )
-    current_source = "unknown"
-    for line in out.splitlines():
-        if "Atomic Φ" in line:
-            current_source = "atomic_braid"
+    for sym, Z, N, _M_obs, _B in AME_TABLE:
+        if Z + N == 1:
+            preds_by_symbol[sym] = {
+                "M_pred": _free(Z, N), "M_obs": _M_obs,
+                "source": "free_atom",
+            }
             continue
-        if "Nuclear" in line and ("ordering" in line or "braid" in line):
-            current_source = "nuclear_braid"
-            continue
-        m = line_re.match(line)
-        if not m:
-            continue
-        A = int(m.group(1))
-        elem = m.group(2)
-        M_pred = float(m.group(3))
-        M_obs = float(m.group(4))
-        sym = f"{A}{elem}"
-        # Prefer the most-recent source: atomic_braid table appears
-        # later in stdout and subsumes nuclear_braid predictions.
+        nuc = _find_nuc_gs(Z, N)
+        Phi = _compute_Phi(_atomic_ordering(Z, N, nuc))
+        lnF = _compute_Phi(nuc)   # nucleon-only Φ
+        M_pred = _free(Z, N) + alpha * Phi + beta * lnF
         preds_by_symbol[sym] = {
-            "M_pred": M_pred, "M_obs": M_obs,
-            "source": current_source,
+            "M_pred": M_pred, "M_obs": _M_obs,
+            "Phi": Phi, "lnF": lnF,
+            "source": "atomic_braid",
         }
+    print(f"  Calibrated α = {alpha:.4f}, β = {beta:.4f} "
+          f"(from ⁴He + ¹²C anchors)\n")
 
     print(f"\n  Predictive binding from braid-word Wedderburn mass")
     print(f"  q_0 = {Q0:.6f}, m_p = {M_P_MEV:.3f}, m_n = {M_N_MEV:.3f},"

@@ -219,8 +219,13 @@ def main() -> int:
             "C4_Vol_62_precision":    C4_MEV,
             "C5a_electron_binding":   C5a_MEV,
             "C5b_hyperfine":          C5b_MEV,
-            "C6_model_total":         C6_MEV,
         },
+        "note_on_model_error": (
+            "The observed residual (field `prediction.residual_MeV`) "
+            "equals contribution C1 by construction — the knot-match "
+            "mismatch IS the leading-order model error.  An explicit "
+            "C6 is not emitted to avoid redundancy."
+        ),
         "target_1ppb_on_M_eV": target_eV,
         "current_gap_vs_1ppb_factor": RESIDUAL_KEV * 1e3 / target_eV,
         "paths_to_1ppb": [

@@ -174,7 +174,10 @@ def solve_sdp_match(weights: np.ndarray, target: float,
             prob.solve()     # let cvxpy pick an available solver
         except Exception as e:
             return {"status": f"cvxpy_failed: {e}"}
-        k_star = np.array(k.value).flatten() if k.value is not None else np.zeros(N)
+        # Check solver actually converged before claiming success.
+        if k.value is None or prob.status not in ("optimal", "optimal_inaccurate"):
+            return {"status": f"cvxpy_failed: status={prob.status}"}
+        k_star = np.array(k.value).flatten()
         residual = float(weights @ k_star - target)
         return {
             "status": "cvxpy_ok",
