@@ -99,7 +99,6 @@ export default chapter({
         // ── Observable MTC / anyons (Track B) ──────────────────────
         "observable-mtc",
         "bn-mtc-action",
-        "fusion-spin-anyons",
       ],
     }),
 
