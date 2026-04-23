@@ -25,18 +25,18 @@ open CategoryTheory MonoidalCategory BraidedCategory
     by the field `braiding_nonsymmetric`.
 
     LaTeX: `\label{def:observable-mtc}`
-    Ref: [mooreSeiberg1989] https://doi.org/10.1007/BF01238857 -/
+    Ref: [moore-seiberg1989] https://doi.org/10.1007/BF01238857 -/
 class ObservableMTC
     (C : Type*) [Category C] [MonoidalCategory C] [BraidedCategory C]
     where
   /-- Finitely many simple-object labels indexed by Fin (N - 1),
       for fixed root-of-unity level N ≥ 3. -/
-  -- Ref: [mooreSeiberg1989] https://doi.org/10.1007/BF01238857
+  -- Ref: [moore-seiberg1989] https://doi.org/10.1007/BF01238857
   level : ℕ
   level_ge : level ≥ 3
   /-- Witness that the braiding is non-symmetric on some simple
       object: there exists V with c ∘ c ≠ id. -/
-  -- Ref: [mooreSeiberg1989] https://doi.org/10.1007/BF01238857
+  -- Ref: [moore-seiberg1989] https://doi.org/10.1007/BF01238857
   braiding_nonsymmetric : ∃ V : C,
     (β_ V V).hom ≫ (β_ V V).hom ≠ 𝟙 (V ⊗ V)
 

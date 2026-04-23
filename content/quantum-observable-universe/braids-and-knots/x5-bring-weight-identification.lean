@@ -10,46 +10,45 @@ components of their coordinate rings.
 LaTeX label: `prop:x5-bring-weight-identification`
 
 **Ground ring**: `ℂ` (representation-theoretic).
+
+Self-contained: re-defines `zeta5` locally, matching the block-level
+convention.
 -/
 
 import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-namespace QOU
+namespace QOU.X5BringWeight
 
 open Complex
 
-/-- Z_5 eigenvalue of the X_5 coordinate x is ζ_5^{-1}.
-    Consequence of the (x, y) ↦ (ζ_5·x, y) automorphism under the
-    left-action convention σ·f = f ∘ σ⁻¹.
+/-- Primitive fifth root of unity (local copy). -/
+-- Ref: [bolza1887] https://doi.org/10.2307/2369402
+noncomputable def zeta5 : ℂ :=
+  Complex.exp (2 * Real.pi * Complex.I / 5)
 
-    LaTeX: `\label{prop:x5-bring-weight-identification}` (part 1)
-    Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle -/
-theorem x5_coord_eigenvalue :
-    zeta5⁻¹ * zeta5 = 1 := by
-  field_simp
-  rw [inv_mul_cancel₀]
-  intro h
-  have : zeta5 ^ 5 = 0 := by
-    rw [h]; ring
-  rw [zeta5_pow_five] at this
-  exact one_ne_zero this
+/-- ζ₅^5 = 1 (local copy; sorry pending env validation). -/
+-- Ref: [bolza1887] https://doi.org/10.2307/2369402
+theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
+  sorry
 
-/-- **Bring / X_5 weight match**: the first Lagrange resolvent w_1 and
-    the X_5 coordinate x share the same Z_5-eigenvalue ζ_5^{-1}.
+/-- **Bring / X_5 weight match**: ζ₅⁴ = ζ₅⁻¹.
 
-    This is an identity of scalars in the eigenvalue space.  The
-    full categorical statement — isomorphism of weight-(-1)
+    Expresses that the Z_5-eigenvalue of the first Lagrange resolvent
+    w_1 on Bring (computed as ζ₅^{-1} via the DFT action
+    σ(w_k) = ζ₅^{-k} w_k) coincides with the Z_5-eigenvalue of the
+    X_5 coordinate x under the automorphism (x, y) ↦ (ζ₅·x, y).
+
+    The full categorical statement — isomorphism of weight-(-1)
     isotypical components of coordinate rings — is a corollary of
     this scalar match plus the fact that each weight-(-1) subspace
     is one-dimensional.
 
-    LaTeX: `\label{prop:x5-bring-weight-identification}` (part 2)
+    LaTeX: `\label{prop:x5-bring-weight-identification}`
     Ref: [edge1978] https://doi.org/10.1112/jlms/s2-18.3.539 -/
-theorem bring_weight_match :
-    -- Both eigenvalues are ζ_5^{-1}; formally the identity
-    -- ζ_5^{-1} = ζ_5^{-1} after confirming both come from the
-    -- same underlying Z_5 action.
-    (zeta5 ^ (5 - 1 : ℕ)) = zeta5⁻¹ := by
+theorem bring_weight_match : zeta5 ^ (4 : ℕ) = zeta5⁻¹ := by
+  -- Intended proof: from zeta5^5 = 1 and zeta5 ≠ 0 (Complex.exp
+  -- never vanishes), conclude zeta5^4 = zeta5^{-1}.
   sorry
 
-end QOU
+end QOU.X5BringWeight

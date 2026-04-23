@@ -26,7 +26,7 @@ $$
 $$
 
 so $\mathcal{X}_5$ is a hyperelliptic Riemann surface of genus $2$
-in the Bolza family [@bolza1887].  Its hyperelliptic involution
+in the Bolza family \cite{bolza1887}.  Its hyperelliptic involution
 is $\iota \colon (x, y) \mapsto (x, -y)$.
 
 **Relation to Bring's surface.**  The coordinate $x$ on

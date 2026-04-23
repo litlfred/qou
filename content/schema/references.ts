@@ -1717,7 +1717,7 @@ export const references: CSLData[] = [
 
   // ── Moore and Seiberg 1989 ───────────────────────────────────
   ref({
-    id: "mooreSeiberg1989",
+    id: "moore-seiberg1989",
     type: "article-journal",
     title: "Classical and quantum conformal field theory",
     author: [

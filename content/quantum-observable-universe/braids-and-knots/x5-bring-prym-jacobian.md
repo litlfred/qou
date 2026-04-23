@@ -34,7 +34,7 @@ $\mathcal{X}_5$ is a faithful shadow of the cyclic observable
 structure of the full $S_5$-substrate (Bring).  Passing from Bring
 to $\mathcal{X}_5$ discards the $A_5$-factor but preserves the
 cyclic Sylow-$5$ residue exactly.
-Edge [@edge1978] records the classical relation between Bring and
+Edge \cite{edge1978} records the classical relation between Bring and
 its hyperelliptic quotients; the present framing extracts the
 categorical essential that both surfaces carry compatible
 $\mathbb{Z}_5$-graded coordinate rings.

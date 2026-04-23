@@ -9,5 +9,5 @@ export default definition({
     "rem:hopf-non-cocommutativity",
     "rem:berry-vortex-moduli",
   ],
-  cites: ["mooreSeiberg1989", "kitaev2006"],
+  cites: ["moore-seiberg1989", "kitaev2006"],
 });

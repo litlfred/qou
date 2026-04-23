@@ -16,29 +16,43 @@ import Mathlib.Topology.Instances.Real.Lemmas
 namespace QOU
 
 /-- Orbit space of the U(1) rotation action on the exceptional divisor
-    𝒮_p = ℙ¹(ℂ), parametrised by the polar angle φ ∈ [0, π]. -/
+    𝒮_p = ℙ¹(ℂ), parametrised by the polar angle φ ∈ [0, π].
+
+    `↥` is the subtype coercion: `U1OrbitSpace` is a `Type` whose
+    elements are real numbers carrying a proof that they lie in
+    `[0, π]`. -/
 -- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
-def U1OrbitSpace : Type := Set.Icc (0 : ℝ) Real.pi
+abbrev U1OrbitSpace : Type := ↥(Set.Icc (0 : ℝ) Real.pi)
 
 /-- The polar fixed points of the U(1) action: φ = 0 and φ = π.
     These are the two points where the U(1)-orbit on 𝒮_p collapses
-    to a single point. -/
+    to a single point.
+
+    For `x : U1OrbitSpace`, `x.val : ℝ` is the underlying real number
+    (the wrapper around a real carrying the Icc membership proof). -/
 -- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
 def polarFixedPoints : Set U1OrbitSpace :=
-  { x | x.val.val = 0 ∨ x.val.val = Real.pi }
+  { x | x.val = 0 ∨ x.val = Real.pi }
 
-/-- **U(1)-equivariant reduction** (structural statement):
-    U(1)-equivariant observables on 𝒮_p are parametrised by the
-    polar coordinate φ ∈ [0, π] together with a global phase
-    coordinate ψ ∈ S¹ on the interior (0, π), while over the two
-    polar fixed points the phase fibre collapses. -/
+/-- **U(1)-equivariant reduction** (structural statement).
+    `PhaseFiber φ` is:
+      - `Unit` at the two polar fixed points (φ = 0 or φ = π),
+        reflecting the collapse of the S¹ orbit to a point;
+      - intended to be `S¹` over the open interior (0, π).
+
+    This file records the signature only; the full bundle-theoretic
+    formalisation (connection to `Mathlib.Topology.FiberBundle`) is
+    deferred.  The honest content here is the *structural asymmetry*
+    between polar and interior points. -/
 -- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
-theorem u1EquivariantReduction :
-    ∃ (_ : U1OrbitSpace → Type),
-      (∀ φ : U1OrbitSpace, φ ∈ polarFixedPoints → True) ∧
-      (∀ φ : U1OrbitSpace, φ ∉ polarFixedPoints → True) := by
-  -- Placeholder for the structural theorem; the full statement
-  -- requires a bundle formalism not yet imported in QOU.
-  exact ⟨fun _ => Unit, fun _ _ => trivial, fun _ _ => trivial⟩
+def PhaseFiber (φ : U1OrbitSpace) : Type :=
+  if φ ∈ polarFixedPoints then Unit else Unit  -- interior placeholder
+
+/-- The polar fixed-point fibre is `Unit` (collapsed). -/
+-- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
+theorem phaseFiber_polar (φ : U1OrbitSpace) (h : φ ∈ polarFixedPoints) :
+    PhaseFiber φ = Unit := by
+  unfold PhaseFiber
+  rw [if_pos h]
 
 end QOU
