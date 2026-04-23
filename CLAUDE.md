@@ -250,6 +250,36 @@ To register a **new paper** as a Lake package: add a `[[require]]`
 stanza to the root `lakefile.toml`, append to `LEAN_PACKAGES` in
 `lean-packages.ts`, and add the library name to `defaultTargets`.
 
+### 0b. Rebasing across the `lean.ref` migration — instructions for agents
+
+If you are an agent working on an older branch and you **rebase or
+merge onto a commit that contains this standardization**, your
+content blocks may still use the legacy `lean: { decl: "...", file? }`
+shape.  Zod validation will fail with a message pointing at this
+procedure.  **Run the migration, do not hand-edit each block:**
+
+```bash
+cd content
+bun run migrate-lean-refs        # apply (writes in place)
+bun run migrate-lean-refs:dry    # preview only (no writes)
+```
+
+The script ([content/pipeline/migrate-lean-refs.ts](content/pipeline/migrate-lean-refs.ts))
+is **idempotent** — safe to re-run after any rebase, merge, or
+cherry-pick.  It rewrites every `lean: { decl: "<Decl>", file? }`
+into `lean: { ref: "<pkg>:<Decl>" }` using the paper directory to
+choose the Lake package prefix (see `LEAN_PACKAGES` in
+`folio-assistant/schemas/lean-packages.ts`).
+
+After the migration, re-run `bun run validate` to confirm the schema
+is clean before continuing your task.  **Do not add `decl` back** to
+unblock a merge — that field was removed from the schema on purpose.
+
+If new `.lean` files were added on your branch, their content-block
+`lean.ref` URIs must use the correct `<package>:` prefix for the
+paper they live under.  Agents authoring new blocks should always
+consult `LEAN_PACKAGES` for the list of valid prefixes.
+
 ### 1. Every `sorry` requires a bibliographic citation
 
 ```lean

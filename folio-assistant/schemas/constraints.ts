@@ -54,7 +54,11 @@ export const LeanRefSchema = z.object({
     .min(1, "Lean ref is required")
     .regex(
       LEAN_REF_PATTERN,
-      "Lean ref must be \"<package>:<Decl.Path>\" (e.g. \"qou:QOU.Foo\")",
+      // Error message doubles as migration guidance for agents
+      // rebasing across the `lean.decl` → `lean.ref` URI change.
+      "Lean ref must be \"<package>:<Decl.Path>\" (e.g. \"qou:QOU.Foo\"). " +
+        "If this branch still uses the legacy { decl, file } shape, " +
+        "run `cd content && bun run migrate-lean-refs` to convert it.",
     ),
   sorryFree: z.boolean().optional(),
   mathlibLinks: z.array(z.string()).optional(),
