@@ -105,6 +105,19 @@ def strategy_A_census(symbol: str, Z: int, N: int) -> tuple[float | None, str]:
     return None, ""
 
 
+def _alpha_chain_binding(n_alpha: int) -> float:
+    """Closed-form α-chain binding for n_α alpha clusters with
+    all-pairs coupling c_αα (= m_e · Vol(7²_1)):
+
+        B = n_α · B(⁴He) + C(n_α, 2) · c_αα.
+
+    Shared helper used by strategy_B_alpha_cluster and
+    strategy_C_partial_shell to avoid duplicated formula.
+    """
+    n_pairs = n_alpha * (n_alpha - 1) // 2
+    return n_alpha * B_4HE_MEV + n_pairs * c_alpha_alpha_MEV
+
+
 def strategy_B_alpha_cluster(symbol: str, Z: int, N: int) -> tuple[float | None, str]:
     """α-chain atoms (A = 4 n_α, Z = N = 2 n_α)."""
     A = Z + N
@@ -114,7 +127,7 @@ def strategy_B_alpha_cluster(symbol: str, Z: int, N: int) -> tuple[float | None,
     if n_alpha < 1:
         return None, ""
     n_pairs = n_alpha * (n_alpha - 1) // 2
-    B_pred = n_alpha * B_4HE_MEV + n_pairs * c_alpha_alpha_MEV
+    B_pred = _alpha_chain_binding(n_alpha)
     return B_pred, f"α-cluster:n_α={n_alpha},pairs={n_pairs}"
 
 
@@ -137,16 +150,15 @@ def strategy_C_partial_shell(symbol: str, Z: int, N: int) -> tuple[float | None,
     A_below = max((x for x in anchors if x <= A), default=4)
     A_above = min((x for x in anchors if x >= A), default=A_below)
     if A_above == A_below:
-        # exactly on an anchor — use strategy B directly if applicable
+        # exactly on an anchor — use the α-chain helper directly
         n_alpha = A_below // 4
-        n_pairs = n_alpha * (n_alpha - 1) // 2
-        B_below = n_alpha * B_4HE_MEV + n_pairs * c_alpha_alpha_MEV
+        B_below = _alpha_chain_binding(n_alpha)
         return B_below, f"anchor:{A_below}"
 
     n_below = A_below // 4
     n_above = A_above // 4
-    B_below = n_below * B_4HE_MEV + (n_below * (n_below - 1) // 2) * c_alpha_alpha_MEV
-    B_above = n_above * B_4HE_MEV + (n_above * (n_above - 1) // 2) * c_alpha_alpha_MEV
+    B_below = _alpha_chain_binding(n_below)
+    B_above = _alpha_chain_binding(n_above)
     frac = (A - A_below) / (A_above - A_below)
     B_pred = B_below + frac * (B_above - B_below)
     return B_pred, (

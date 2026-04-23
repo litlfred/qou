@@ -100,7 +100,14 @@ def main() -> int:
         M_obs  = A * U_MEV + delta_obs
         M_pred = A * U_MEV + delta_pred
         ddelta = delta_pred - delta_obs
-        err_pct = (100.0 * ddelta / abs(delta_obs)) if delta_obs != 0 else 0.0
+        # For atoms where delta_obs is zero by AME definition (e.g. ¹²C),
+        # a residual-as-percentage-of-Δ is ill-defined.  Use the absolute
+        # residual divided by total mass (in ppm) as the meaningful metric
+        # and emit a sentinel for the Δ-fractional column.
+        if abs(delta_obs) > 1e-9:
+            err_pct = 100.0 * ddelta / abs(delta_obs)
+        else:
+            err_pct = float("nan")   # undefined; see M_err_ppm column instead
 
         print(
             f"  {symbol:>6} {A:>3} "

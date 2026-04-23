@@ -67,7 +67,8 @@ def search_link_census(target_vols: list, tol: float = 0.1) -> list:
             continue
         for M in census:
             try:
-                v = float(M.volume())
+                v_raw = M.volume()
+                v = float(v_raw.real) if hasattr(v_raw, "real") else float(v_raw)
                 for tgt_name, tgt_val in target_vols:
                     if tgt_val > 0 and abs(v - tgt_val) / tgt_val < tol:
                         matches.append({
@@ -146,7 +147,8 @@ if __name__ == "__main__":
             try:
                 for M in _snappy.LinkExteriors(crossings=cross_cnt):
                     try:
-                        v = float(M.volume())
+                        v_raw = M.volume()
+                        v = float(v_raw.real) if hasattr(v_raw, "real") else float(v_raw)
                         if abs(v - D_tgt) < 1.0:
                             candidates_D.append({
                                 "name": M.name(),

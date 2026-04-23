@@ -62,7 +62,8 @@ def search_for_target(target_vol: float, max_crossings: int,
             continue
         for M in it:
             try:
-                v = float(M.volume())
+                v_raw = M.volume()
+                v = float(v_raw.real) if hasattr(v_raw, "real") else float(v_raw)
             except Exception as e:
                 try:
                     mname = M.name()

@@ -147,7 +147,8 @@ if __name__ == "__main__":
             for cross_cnt in [4, 5, 6, 7]:
                 for M in snappy.LinkExteriors(crossings=cross_cnt):
                     try:
-                        v = float(M.volume())
+                        v_raw = M.volume()
+                        v = float(v_raw.real) if hasattr(v_raw, "real") else float(v_raw)
                         if abs(v - V_target) < 1.0:
                             closest.append((M.name(), v,
                                               (v - V_target) / V_target * 100))
