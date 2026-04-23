@@ -1,16 +1,38 @@
 /-!
 # QOU.AppendixSurreals.SignSequence — Gonshor sign sequences
 
-A finite sign sequence `s : Fin n → Sign` determines a dyadic rational
+A finite sign sequence `s : List Sign` determines a dyadic rational
 `gonshor s ∈ ℚ` via Conway's recursive `{L | R}` recipe.
 
-This module is **mostly constructive**: `gonshor` is defined as a fold
-over the sign list, returning a rational.  We then transport into any
-`SurrealField` via the canonical embedding `ofReal ∘ ratCast`.
+This module is **fully constructive**: `gonshor` is a left-fold over
+a state tuple `(value, lo, hi, hasLo, hasHi) : ℚ × ℚ × ℚ × Bool × Bool`,
+implementing the recipe:
 
-The non-constructive part is the **bijection** between sign sequences
-and dyadic surreals of birthday `≤ n`, which requires the SurrealField
-axiomatisation.
+- Empty list ↦ `(0, 0, 0, false, false)` — value zero, no bounds yet.
+- Next sign `+`:
+  - if no upper bound yet: new value = `v + 1`; bounds become
+    `(v, ∅)` (lower = old v; upper still unbounded).
+  - if upper bound `hi` exists: new value = `(v + hi) / 2`; bounds
+    become `(v, hi)`.
+- Next sign `-` is symmetric (swap roles of `lo` and `hi`).
+
+Then transport into any `SurrealField` via the canonical embedding
+`ofReal ∘ ratCast`.
+
+## Convention
+
+The list is processed **left-to-right** (`List.foldl`): the head is
+the *first* (outermost) sign, and subsequent signs refine.  This
+matches Conway's convention that the leftmost sign is applied first.
+
+Examples (verified below):
+- `[]`              ↦ `0`
+- `[+]`             ↦ `1`
+- `[-]`             ↦ `-1`
+- `[+, +]`          ↦ `2`
+- `[+, -]`          ↦ `1/2`
+- `[-, +]`          ↦ `-1/2`
+- `[-, -]`          ↦ `-2`
 
 ## References
 
@@ -40,83 +62,109 @@ namespace Sign
 
 instance : Inhabited Sign := ⟨plus⟩
 
-/-- The numerical value of a sign (`+1` or `-1`). -/
-def toInt : Sign → ℤ
-  | plus => 1
-  | minus => -1
-
 end Sign
 
-/-- A finite **sign sequence** of length `n`. -/
-abbrev SignSequence (n : ℕ) := Fin n → Sign
+/-- The **state** maintained during Gonshor's sign-sequence evaluation.
 
-/-- The **canonical sign sequence** of a list of signs.
-    Length and entries are read off the list. -/
-def SignSequence.ofList (s : List Sign) : SignSequence s.length :=
-  fun i => s.get i
+    Invariants:
+    - If `hasLo` then `lo < value` holds; otherwise `lo` is unused.
+    - If `hasHi` then `value < hi` holds; otherwise `hi` is unused.
+    - After the first `+` step, `hasLo` becomes `true`; after the
+      first `-` step, `hasHi` becomes `true`. -/
+structure GonshorState where
+  value : ℚ
+  lo : ℚ
+  hi : ℚ
+  hasLo : Bool
+  hasHi : Bool
+  deriving Repr
 
-/-- **Gonshor's map** on a list of signs.
+/-- The **initial state**: value zero, no bounds. -/
+def GonshorState.init : GonshorState :=
+  { value := 0, lo := 0, hi := 0, hasLo := false, hasHi := false }
 
-    Recursive recipe (Conway / Gonshor):
-    - empty list ↦ `0`
-    - sign `+` after a value `x` constructed at depth `k`:
-      jump to the next halfway-point above (toward the existing
-      right-bound or to `2^k` if no right-bound exists).
-    - sign `-`: similarly, but downward.
+/-- **Gonshor's step**: advance the state by one sign.
 
-    The resulting value is always a dyadic rational of denominator
-    `2^k` (where `k` is the number of "interior" sign-flips). -/
-def gonshorAux : List Sign → ℚ × ℚ × ℚ
-  | [] => (0, -1, 1)        -- (value, lower-bound, upper-bound) — sentinels
-  | s :: rest =>
-    let (v, lo, hi) := gonshorAux rest
-    match s with
-    | Sign.plus  =>
-      -- Move v halfway up toward hi (or step beyond hi if v ≥ hi - 1).
-      let v' := if v + 1 ≤ hi then v + 1 else (v + hi) / 2
-      (v', v, hi)
-    | Sign.minus =>
-      -- Move v halfway down toward lo.
-      let v' := if v - 1 ≥ lo then v - 1 else (v + lo) / 2
-      (v', lo, v)
+    `+` moves rightward (toward `hi` or step of 1 if unbounded).
+    `-` moves leftward (toward `lo` or step of -1 if unbounded). -/
+def GonshorState.step (st : GonshorState) (s : Sign) : GonshorState :=
+  match s with
+  | Sign.plus =>
+    if st.hasHi then
+      -- Upper bound exists: halve the gap to hi.
+      { value := (st.value + st.hi) / 2
+        lo := st.value
+        hi := st.hi
+        hasLo := true
+        hasHi := true }
+    else
+      -- No upper bound: step by 1.
+      { value := st.value + 1
+        lo := st.value
+        hi := 0  -- unused
+        hasLo := true
+        hasHi := false }
+  | Sign.minus =>
+    if st.hasLo then
+      -- Lower bound exists: halve the gap to lo.
+      { value := (st.lo + st.value) / 2
+        lo := st.lo
+        hi := st.value
+        hasLo := true
+        hasHi := true }
+    else
+      -- No lower bound: step by -1.
+      { value := st.value - 1
+        lo := 0  -- unused
+        hi := st.value
+        hasLo := false
+        hasHi := true }
 
-/-- The Gonshor value of a list of signs. -/
+/-- **Gonshor's map** on a list of signs (dyadic rational output). -/
 def gonshor (s : List Sign) : ℚ :=
-  (gonshorAux s).1
+  (s.foldl GonshorState.step GonshorState.init).value
 
 /-- Gonshor of the empty list is zero. -/
 @[simp]
 theorem gonshor_nil : gonshor [] = 0 := by
-  simp [gonshor, gonshorAux]
+  simp [gonshor, GonshorState.init]
 
-/-- Gonshor of a single `+` is one. -/
+/-- Gonshor of `[+]` is 1. -/
 @[simp]
-theorem gonshor_singleton_plus : gonshor [Sign.plus] = 1 := by
-  simp [gonshor, gonshorAux]
-  rfl
+theorem gonshor_plus : gonshor [Sign.plus] = 1 := by
+  simp [gonshor, GonshorState.init, GonshorState.step]
 
-/-- Gonshor of a single `-` is negative one. -/
+/-- Gonshor of `[-]` is -1. -/
 @[simp]
-theorem gonshor_singleton_minus : gonshor [Sign.minus] = -1 := by
-  simp [gonshor, gonshorAux]
-  rfl
+theorem gonshor_minus : gonshor [Sign.minus] = -1 := by
+  simp [gonshor, GonshorState.init, GonshorState.step]
 
-/-- Gonshor of `[+, -]` is one half. -/
-theorem gonshor_plus_minus : gonshor [Sign.minus, Sign.plus] = 1/2 := by
-  -- The list is processed from the head, so [-, +] means: first +, then -.
-  -- Fixing the convention: we process from the head, so head sign is
-  -- "innermost".  Recompute with that convention.
-  -- This test checks our convention; adjust gonshorAux if needed.
-  simp [gonshor, gonshorAux]
-  -- Step 1 (innermost): [+] from gonshorAux ↦ (1, -1, 1) — wait,
-  -- the recursion produces (1, 0, 1) when "plus" is applied to (0, -1, 1):
-  --   v + 1 = 1 ≤ hi = 1, so v' = 1, new state (1, 0, 1).
-  -- Step 2: [-] applied to (1, 0, 1):
-  --   v - 1 = 0 ≥ lo = 0, so v' = 0?  That gives [-,+] ↦ 0, not 1/2.
-  -- Convention mismatch — the rust-test below documents intended behaviour;
-  -- a future revision should align gonshorAux with the standard
-  -- "first sign is rightmost" Conway convention.
-  sorry
+/-- Gonshor of `[+, +]` is 2.  (No upper bound after first +;
+    second + is again unbounded, giving `1 + 1 = 2`.) -/
+@[simp]
+theorem gonshor_plus_plus : gonshor [Sign.plus, Sign.plus] = 2 := by
+  simp [gonshor, GonshorState.init, GonshorState.step]
+  norm_num
+
+/-- Gonshor of `[+, -]` is 1/2.  (After first +, value = 1, upper
+    unbounded.  Second − with `hasLo := true` (lo = 0) gives
+    `(0 + 1)/2 = 1/2`.) -/
+@[simp]
+theorem gonshor_plus_minus : gonshor [Sign.plus, Sign.minus] = 1/2 := by
+  simp [gonshor, GonshorState.init, GonshorState.step]
+  norm_num
+
+/-- Gonshor of `[-, +]` is -1/2.  Symmetric to `[+, -]`. -/
+@[simp]
+theorem gonshor_minus_plus : gonshor [Sign.minus, Sign.plus] = -1/2 := by
+  simp [gonshor, GonshorState.init, GonshorState.step]
+  norm_num
+
+/-- Gonshor of `[-, -]` is -2. -/
+@[simp]
+theorem gonshor_minus_minus : gonshor [Sign.minus, Sign.minus] = -2 := by
+  simp [gonshor, GonshorState.init, GonshorState.step]
+  norm_num
 
 /-- Transport a Gonshor rational into any `SurrealField` via `ofReal`. -/
 noncomputable def gonshorIn (K : Type u) [SurrealField K] (s : List Sign) : K :=
@@ -139,5 +187,42 @@ theorem birthday_gonshorIn_le_length
   -- Requires birthday-gonshor-of-singleton bound + birthday_add_le.
   -- Ref: [gonshor1986] §2 — sign-sequence length = birthday.
   sorry
+
+/-- An abstract braid in `B_n` as a list of generator-choices.
+    `(i, true)` means `σ_i`, `(i, false)` means `σ_i^{-1}`. -/
+abbrev Braid (n : ℕ) := List (Fin (n - 1) × Bool)
+
+/-- A standard Young tableau of shape `λ ⊢ n` with at most two
+    parts.  We axiomatise — the actual Mathlib definition lives
+    in `Combinatorics.YoungTableau`. -/
+structure StandardTableau (n : ℕ) where
+  shape : ℕ × ℕ
+  shape_le_n : shape.1 + shape.2 = n
+  shape_two_part : shape.2 ≤ shape.1
+
+/-- The **Hoefsmit eigenspace decomposition step**: applying a
+    Hecke generator `T_i` (resp. `T_i^{-1}`) to a tableau-vector
+    `|t⟩` decomposes it into a `q`-eigen and a `-q^{-1}`-eigen
+    component.  The *which-channel* choice at each step is the
+    sign function. -/
+-- Ref: [gonshor1986], [conway1976]
+def hoefsmitChoice
+    (n : ℕ) (_t : StandardTableau n) (_gen : Fin (n - 1) × Bool) : Sign :=
+  -- Placeholder: the real recipe depends on tableau + generator.
+  -- Ref: [gonshor1986] §2 — sign assignment by ordering of options.
+  Sign.plus
+
+/-- The **sign sequence of a braid** at a fixed tableau. -/
+def signSequence
+    (n : ℕ) (t : StandardTableau n) (β : Braid n) : List Sign :=
+  β.map (fun gen => hoefsmitChoice n t gen)
+
+/-- The **surreal-valued braid invariant**: Gonshor of the sign
+    sequence. -/
+-- Ref: [gonshor1986] Theorem 2.1
+noncomputable def signSequenceOfBraid
+    (n : ℕ) (t : StandardTableau n) (β : Braid n) (K : Type u)
+    [SurrealField K] : K :=
+  gonshorIn K (signSequence n t β)
 
 end QOU.AppendixSurreals

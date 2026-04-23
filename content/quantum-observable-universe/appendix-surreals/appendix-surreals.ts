@@ -62,6 +62,9 @@ export default chapter({
       heading: "Speculative reformulations",
       blocks: [
         "hahn-substrate",
+        "local-infinitesimal-field",
+        "spectral-normal-form",
+        "diophantine-birthday",
         "kashaev-surreal",
       ],
     },
