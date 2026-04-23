@@ -15,6 +15,8 @@ export default remark({
     "prop:shell-transition-knot",
     "rem:fivefold-symmetry",
     "thm:embeddability-closure",
+    "prop:x5-bring-weight-identification",
+    "conj:genus-2-ansatz",
   ],
   cites: ["kassel1995", "jones1987"],
 });

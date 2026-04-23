@@ -50,11 +50,16 @@ visible, identified canonically with $x$ on $\mathcal{X}_5$.
 "One tube" thus means *one non-trivial $\mathbb{Z}_5$-weight
 observed*, not a vague geometric collapse.
 
-**Targets for follow-up.**  The phrasing "in spectral coordinates"
-appears in several existing blocks that predate this identification
-(among them $T_{211}$ ideal annihilation, knot factorisation,
-Coulomb charge, vertex-algebra relations, and the colour-tube
-constraint blocks of the Descartes chapter).  Each could be
-rewritten to refer to $\mathcal{X}_5$ directly via the present
-identification --- a concrete simplification deferred to a later
-pass through those chapters.
+**Applied in existing blocks.**  Two pre-existing blocks have been
+updated to cite the present identification where the $w_1$ /
+$\mathbb{Z}_5$ structure plays a direct role:
+[rem:t211-ideal-annihilation](#rem:t211-ideal-annihilation) gains
+a representation-theoretic origin for the $T_{2,3}$ /
+$T_{2,5}$ row of its embeddability table, and
+[rem:color-tube-constraints](#rem:color-tube-constraints) gains a
+commutative-limit specialisation mapping the full $S_5$-symmetric
+color system to the single $\mathrm{U}(1)$ tube on
+$\mathcal{X}_5$.  Further rewriting of the Descartes chapter to
+express "evaluation in spectral coordinates" directly in terms of
+$\mathcal{X}_5$ coordinates is deferred to a later pass through
+that chapter.
