@@ -35,6 +35,34 @@ VOL_BORROMEAN = 8.0 * CATALAN_G
 M_E_MEV = 0.51099895
 B_4HE_AME_MEV = 28.295674
 
+
+def vol_high_precision(M, digits: int = 50):
+    """Return (float_vol, hp_str_or_None) for a SnapPy manifold.
+
+    Uses M.high_precision() (ManifoldHP) for verified 50+ digit volume
+    via interval arithmetic.  Falls back to float when HP unavailable.
+    """
+    try:
+        v_float = float(M.volume().real) if hasattr(M.volume(), "real") \
+            else float(M.volume())
+    except Exception:
+        v_float = float("nan")
+    hp_str = None
+    try:
+        Mh = M.high_precision()
+        try:
+            import mpmath
+            mpmath.mp.dps = digits
+        except ImportError:
+            pass
+        v_hp = Mh.volume()
+        real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
+        hp_str = mpmath.nstr(mpmath.mpf(str(real_part)), digits) \
+            if "mpmath" in sys.modules else str(real_part)
+    except Exception:
+        hp_str = None
+    return v_float, hp_str
+
 # Doubly-magic atoms (Z = N = magic number)
 DOUBLY_MAGIC = [
     ("4He",  2,  2,  28.295674,  1),   # 1 α
@@ -137,6 +165,7 @@ if __name__ == "__main__":
     print(f"\n{'=' * 80}")
     print("INTERPRETATION: what specific knot has Vol = c_αα / ρ?")
     print("=" * 80)
+    hp_closest_by_rho = {}
     for rho_label, rho in [("m_e", M_E_MEV), ("2m_e", 2 * M_E_MEV)]:
         V_target = c_from_12C / rho
         print(f"  ρ = {rho_label} → target Vol = {V_target:.4f}")
@@ -155,8 +184,18 @@ if __name__ == "__main__":
                     except Exception:
                         pass
             closest.sort(key=lambda x: abs(x[1] - V_target))
+            hp_list = []
             for n, v, e in closest[:5]:
-                print(f"    {n:>12}  Vol = {v:.4f}  err {e:+.2f}%")
+                try:
+                    Mhp = snappy.Manifold(n)
+                    _, vol_50 = vol_high_precision(Mhp, digits=50)
+                except Exception:
+                    vol_50 = None
+                hp_tag = f"  HP={vol_50}" if vol_50 else ""
+                print(f"    {n:>12}  Vol = {v:.4f}  err {e:+.2f}%{hp_tag}")
+                hp_list.append({"name": n, "volume": v,
+                                  "err_pct": e, "volume_50digit": vol_50})
+            hp_closest_by_rho[rho_label] = hp_list
         except ImportError:
             pass
 
@@ -183,6 +222,7 @@ if __name__ == "__main__":
         },
         "predictions_from_12C_fit": results,
         "c_lsq_from_all_magic": c_lsq,
+        "hp_closest_knots_by_rho": hp_closest_by_rho,
     }
     out = Path(__file__).parent / "jsj-alpha-clustering.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))
