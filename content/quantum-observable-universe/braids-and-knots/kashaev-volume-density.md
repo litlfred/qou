@@ -163,7 +163,7 @@ Three observations follow.
    volume enters only as the asymptotic coefficient, not as a separately
    posited datum.
 2. *The substrate evaluation is finite.*  At $q = q_{0}$ the mass is
-   computed directly from $\ln\lvert\mathrm{Vol}_{q_{0}}(\beta_{K})\rvert$
+   computed directly from $\log\lvert\mathrm{Vol}_{q_{0}}(\beta_{K})\rvert$
    without passing to the Kashaev limit; the Kashaev identity calibrates
    the overall energy scale (route 2 of
    [algebraic volume specialisation](#prop:algebraic-volume-specialization))
