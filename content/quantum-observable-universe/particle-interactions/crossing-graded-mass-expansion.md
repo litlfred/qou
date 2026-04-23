@@ -1,12 +1,23 @@
 ## Crossing-graded mass expansion
 
+**Parent framework.** The expansion below sits on top of two
+already-established objects:
+
+- [def:crossing-energy](#def:crossing-energy) — per-crossing weights
+  are the **Hecke eigenvalues** $(q, -q^{-1})$ of $T$ on
+  $S^2 V \oplus \Lambda^2 V$, derived from rigid-monoidal structure
+  (not postulated).
+- [def:algebraic-quantum-volume](#def:algebraic-quantum-volume)
+  $\mathrm{Vol}_q(\beta) = \prod_i \hat{V}_i(q) \in
+  \mathbb{Z}[q^{1/2}, q^{-1/2}]$ — the algebraic quantum volume of a
+  braid, a Laurent polynomial in $q^{1/2}$.
+
 The [mass-volume factorization](#conj:mass-volume-factorization) can
 be organized as a perturbative expansion graded by the number of
-"lifted" (volume-carrying) crossings.  This makes the factorization
-**backward-compatible** with the existing Gröbner-Shirshov normal-form
-computation: the standard NF mass arises as the leading term, and
-each successive order injects the hyperbolic 3D depth carried by
-additional crossings.
+"lifted" (volume-carrying) crossings.  The $n = 0$ term reproduces
+the existing Gröbner-Shirshov NF mass; each higher order picks up
+the per-crossing $(q, -q^{-1})$ eigenvalue contribution to
+$\mathrm{Vol}_q(\beta)$.
 
 ## Statement
 

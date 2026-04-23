@@ -1,12 +1,20 @@
 ## Mass-volume factorization
 
-The categorical mass endomorphism $\mathfrak{m}_{\mathcal{K}}$ of a
-knotted configuration $\mathcal{K}$ admits a factorization into a
-scalar **$q$-density** $\rho(q, \mathcal{K})$ and a topological
-**hyperbolic volume** $V(\mathcal{K})$.  This generalizes the
-classical physics identity *mass = density × volume* to the
-categorical setting, with $q$ playing the role of density and
-Thurston volume the role of geometric extent.
+**Parent statement:** The general volume-density factorization
+$\mathfrak{m}(K) = \mathrm{Vol}(K) \cdot \rho_q$, with substrate
+drag density $\rho_q = 1/\hbar_q^2$, is established in
+[Kashaev volume-density](#rem:kashaev-volume-density).  This block
+specializes that formula to **atomic links** for the nuclear
+binding regime.
+
+At the particle-mass scale, the Kashaev-volume-density formula
+gives $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2 \approx 102 \cdot
+\mathrm{Vol}$ in $m_e$ units (pinned via
+$\mathfrak{m}(4_1) = m_\mu / m_e$).  At the nuclear-binding
+scale — orders of magnitude below particle mass — the factorization
+takes a specialized form with the same geometric volume but a
+**physical-scale density** $\rho_F$ instead of the categorical
+$\rho_q$:
 
 ## Statement
 

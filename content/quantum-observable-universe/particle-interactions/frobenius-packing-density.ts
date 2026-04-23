@@ -15,6 +15,7 @@ export default remark({
   ],
   uses: [
     "conj:mass-volume-factorization",
+    "rem:kashaev-volume-density",
     "prop:tower-binding-energy",
   ],
 });

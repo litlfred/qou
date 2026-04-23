@@ -1,10 +1,21 @@
 ## Frobenius packing density
 
-The density factor $\rho_F$ in the
-[mass-volume factorization](#conj:mass-volume-factorization) is not a
-free parameter.  It is determined by the Frobenius pairing on the
-ambient Iwahori-Hecke algebra $H_{3A}(q)$: specifically, by **which
-Wedderburn blocks are populated** by the atomic link configuration.
+**Two density scales.** The paper uses two density quantities
+that should not be confused:
+
+| symbol | formula | scale | role |
+|---|---|---|---|
+| $\rho_q$ | $1/\hbar_q^2 \approx 102$ | dimensionless | **substrate drag** ([kashaev-volume-density](#rem:kashaev-volume-density)) — gives particle mass $\mathfrak{m}(K) = \mathrm{Vol}(K)\cdot\rho_q$ in $m_e$ units |
+| $\rho_F$ | $m_e$ or $2m_e$ | physical (MeV) | **Frobenius packing** — this block, gives nuclear binding $B(\mathcal{K}) = \rho_F \cdot V_{\mathrm{hyp}}$ in MeV |
+
+At the particle-mass scale, every crossing is charged by
+$\rho_q = 1/\hbar_q^2$ (the Kashaev drag).  At the nuclear-binding
+scale — orders of magnitude below particle mass — the effective
+factor that multiplies $V_{\mathrm{hyp}}$ is the **Frobenius packing
+density** $\rho_F \in \{m_e, 2m_e\}$.  The distinction is determined
+by the Frobenius pairing on the ambient Iwahori-Hecke algebra
+$H_{3A}(q)$: specifically, by **which Wedderburn blocks are
+populated** by the atomic link configuration.
 
 ## The packing dictionary
 

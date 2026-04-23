@@ -18,6 +18,9 @@ export default conjecture({
   },
   uses: [
     "conj:mass-volume-factorization",
+    "rem:kashaev-volume-density",
+    "def:crossing-energy",
+    "def:algebraic-quantum-volume",
     "prop:thurston-volume-additivity",
     "prop:tower-binding-energy",
   ],

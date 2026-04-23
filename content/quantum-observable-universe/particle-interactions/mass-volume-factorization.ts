@@ -17,6 +17,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
+    "rem:kashaev-volume-density",
     "prop:thurston-volume-additivity",
     "prop:tower-binding-energy",
     "def:atomic-braid",
