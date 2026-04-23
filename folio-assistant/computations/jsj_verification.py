@@ -155,8 +155,15 @@ if __name__ == "__main__":
                                 "volume": v,
                                 "err_pct": (v - D_tgt) / D_tgt * 100,
                             })
-                    except Exception:
-                        pass
+                    except Exception as e:
+                        try:
+                            mname = M.name()
+                        except Exception:
+                            mname = "<unknown>"
+                        print(
+                            f"Warning: could not process manifold {mname}: {e}",
+                            file=sys.stderr,
+                        )
             except Exception:
                 continue
         for c in sorted(candidates_D,

@@ -79,9 +79,15 @@ knot from the standard census:
 | D | $6_2$ | $4.400$ | $m_e$ | $2.249$ MeV | $2.225$ MeV |
 | T | $8_{11}$ | $8.286$ | $2m_e$ | $8.468$ MeV | $8.482$ MeV |
 | ${}^3\mathrm{He}$ | Borromean | $8G$ | $2m_e$ | $7.493$ MeV | $7.718$ MeV |
-| ${}^4\mathrm{He}$ | $4 \times \mathcal{B}_3$ | $4 \cdot 8G$ | $2m_e$ | $29.96$ MeV | $28.30$ MeV |
+| ${}^4\mathrm{He}$ | 4 Borromean components | $4 \cdot 8G$ | $2m_e$ | $29.96$ MeV | $28.30$ MeV |
 
-(Values from the atom-volume witness and AME2020.)
+(Values from the atom-volume witness and AME2020.  The ${}^4\mathrm{He}$
+row gives the **first-principles geometric prediction**
+$2m_e \cdot 4 \cdot 8G = 29.96$ MeV; the closed-shell refinement used
+for larger atoms in [crossing-graded-mass-expansion](#conj:crossing-graded-mass-expansion)
+uses the α-cluster baseline $B({}^4\mathrm{He}) = 28.30$ MeV directly
+from AME.  The $4 \cdot 8G$ notation denotes four Borromean-rings
+complements summed — not the braid group $B_3$.)
 
 ## Why this is a conjecture
 

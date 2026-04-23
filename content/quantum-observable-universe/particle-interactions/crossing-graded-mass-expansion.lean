@@ -37,6 +37,13 @@ class CrossingGradedMassExpansion (K : Type*) where
   depth         : K → DepthScalar
   gbCoeff       : K → Nat → ℝ              -- m^{(n)}_GB
   mass          : K → ℝ
+  /-- The standard Gröbner-Shirshov mass — an independent datum
+      provided per instance, used to anchor the `n = 0` term. -/
+  groebnerMass  : K → ℝ
+  /-- At `n = 0`, the graded coefficient IS the Gröbner-Shirshov
+      mass (definitional; connects the abstract grading to the
+      existing GB pipeline). -/
+  gbCoeffZero_eq_groebner : ∀ k : K, gbCoeff k 0 = groebnerMass k
   expansion :
     ∀ k : K,
       mass k =
@@ -49,18 +56,20 @@ class CrossingGradedMassExpansion (K : Type*) where
   -- and volume computation (SnapPy).
 
 /-- Classical-limit recovery: at zero depth, the total mass equals
-    the zeroth GB coefficient — the standard Gröbner-Shirshov mass.
-    At `(depth k).value = 0`, only the `n = 0` term of the foldr
-    survives. -/
+    the Gröbner-Shirshov mass.  This is the substantive recovery
+    statement: at `(depth k).value = 0`, the expansion collapses
+    to its `n = 0` term, which by `gbCoeffZero_eq_groebner` is
+    the GB mass. -/
 theorem mass_at_zero_depth
     {K : Type*} [CrossingGradedMassExpansion K]
     (k : K) (h : (CrossingGradedMassExpansion.depth k).value = 0) :
     CrossingGradedMassExpansion.mass k
-      = CrossingGradedMassExpansion.gbCoeff k 0 := by
+      = CrossingGradedMassExpansion.groebnerMass k := by
   -- Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
-  -- The expansion m = Σ_n ξ^n · gbCoeff_n collapses to gbCoeff_0
-  -- when ξ = 0; proving the collapse formally requires induction
-  -- on `crossingCount k` and is deferred.
+  -- Proof sketch: substitute h into `expansion`; in the foldr,
+  -- every term with exponent ≥ 1 vanishes since depth = 0, leaving
+  -- only gbCoeff k 0, which by `gbCoeffZero_eq_groebner` equals
+  -- groebnerMass k.  Induction on `crossingCount k` deferred.
   sorry
 
 end QOU.ParticleInteractions

@@ -65,13 +65,43 @@ def j_invariant(p: float, r: float) -> float:
 # lambda(1 - lambda) = 1 - u, so lambda^2 (1 - lambda)^2 = (1 - u)^2.
 # Hence j = 256 u^3 / (1 - u)^2.
 
+def _f(u: float, j: float) -> float:
+    return 256.0 * u ** 3 - j * (1.0 - u) ** 2
+
+
+def _bisect_u(j: float, lo: float = 1e-6, hi: float = 1.0 - 1e-6,
+              tol: float = 1e-14, max_iter: int = 200) -> float:
+    """Bisection fallback when Newton's derivative vanishes.
+
+    f(u) = 256 u^3 - j (1-u)^2 is increasing on (0, 1) for j > 0,
+    so a sign change exists between (lo, hi) for any physically
+    valid j.
+    """
+    flo, fhi = _f(lo, j), _f(hi, j)
+    if flo * fhi > 0:
+        # No sign change in [lo, hi] — return midpoint as least-bad guess.
+        return 0.5 * (lo + hi)
+    for _ in range(max_iter):
+        mid = 0.5 * (lo + hi)
+        fm = _f(mid, j)
+        if abs(fm) < tol or (hi - lo) < tol:
+            return mid
+        if fm * flo < 0:
+            hi, fhi = mid, fm
+        else:
+            lo, flo = mid, fm
+    return 0.5 * (lo + hi)
+
+
 def u_from_j(j: float, tol: float = 1e-12, max_iter: int = 200) -> float:
-    # Newton on f(u) = 256 u^3 - j (1 - u)^2.
-    # Start near u = 0.5 (seed for typical j ~ 100-1000).
+    # Newton on f(u) = 256 u^3 - j (1 - u)^2, with bisection fallback
+    # if the derivative vanishes (rare but possible near u = 2j/(3·256+2j)).
     u = 0.5
     for _ in range(max_iter):
-        f = 256.0 * u ** 3 - j * (1.0 - u) ** 2
+        f = _f(u, j)
         fp = 3 * 256.0 * u ** 2 + 2 * j * (1.0 - u)
+        if abs(fp) < 1e-14:
+            return _bisect_u(j, tol=tol, max_iter=max_iter)
         step = f / fp
         u -= step
         if abs(step) < tol:

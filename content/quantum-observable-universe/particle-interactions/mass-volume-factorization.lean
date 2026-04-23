@@ -51,12 +51,12 @@ class MassVolumeFactorization
   -- (via SnapPy volume computation and Wedderburn block analysis).
 
 /-- Binding energy derived from the factorization for a list of
-    JSJ pieces.  Conditional on `MassVolumeFactorization`. -/
+    JSJ pieces.  Conditional on `MassVolumeFactorization`.
+    Uses the `mass` field directly; by the `factorization` axiom
+    this equals `Σ (density k).value * volume k`. -/
 noncomputable def bindingFromJSJ
     {K : Type*} [MassVolumeFactorization K]
     (pieces : List K) : ℝ :=
-  (pieces.map (fun k =>
-    (MassVolumeFactorization.density k).value
-      * MassVolumeFactorization.volume k)).sum
+  (pieces.map MassVolumeFactorization.mass).sum
 
 end QOU.ParticleInteractions

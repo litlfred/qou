@@ -48,8 +48,11 @@ def snappy_volume(manifold_name: str) -> dict:
         M = snappy.Manifold(manifold_name)
         try:
             M.simplify()
-        except Exception:
-            pass
+        except Exception as e:
+            print(
+                f"Warning: could not simplify manifold {manifold_name}: {e}",
+                file=sys.stderr,
+            )
         vol = float(M.volume())
         sol = str(M.solution_type())
         n_tet = M.num_tetrahedra()
@@ -187,15 +190,16 @@ if __name__ == "__main__":
     print(f"\n{'=' * 80}")
     print("ALT: fit ΔVol-per-coupling from D, predict rest")
     print("=" * 80)
-    # For D, B(D) = 2.22, so V_linked(D) = B(D)/m_e = 4.35
-    # Expected V_free(2) = 2·8G = 14.66
-    # So binding ΔVol = V_free - V_linked = 14.66 - 4.35 = 10.31 for 1 coupling
-    # Each additional pair adds one coupling.
+    # Under hypothesis B_pred = m_e · n_pairs · coupling_delta,
+    # fitting to B(D) = 2.22 MeV with n_pairs(D) = 1 requires
+    # coupling_delta = B(D)/m_e.  This is the V-per-coupling
+    # directly, not V_free - V_linked (earlier formulation had a
+    # sign/scale bug that gave +137% on D).
     V_from_D = ATOMS[0][2] / M_E_MEV    # B(D)/m_e
-    coupling_delta = (2 * VOL_BORROMEAN) - V_from_D
+    coupling_delta = V_from_D            # ΔV_per_coupling
     print(f"  V_free(2) = 2·8G = {2 * VOL_BORROMEAN:.4f}")
     print(f"  V_linked(D) = B(D)/m_e = {V_from_D:.4f}")
-    print(f"  ΔV_per_coupling = {coupling_delta:.4f}")
+    print(f"  ΔV_per_coupling = {coupling_delta:.4f}  (= V_from_D)")
     print()
     print(f"  {'atom':>6} {'A':>3} {'n_pairs':>7} {'V_free':>10} "
           f"{'V_coup':>10} {'V_atom':>10} {'B_pred':>10} {'err_%':>10}")

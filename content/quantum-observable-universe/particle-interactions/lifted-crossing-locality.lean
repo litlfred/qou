@@ -16,7 +16,7 @@
   flatness of the KZ connection (Kohno-Drinfeld).  Fails at roots
   of unity (Jones-Wenzl truncation).
 
-  Ref: [kohno1987] https://doi.org/10.5802/aif.1111
+  Ref: [kohno1987] https://doi.org/10.5802/aif.1075
   Ref: [manuscript] Ch 11 §8 / lifted-crossing-locality
 -/
 
@@ -37,7 +37,7 @@ class LiftedCrossingLocality
     ∀ (k : K) (S : List C),
       S ⊆ crossings k →
       massGBSubset k S = massGB k * (S.map localFactor).prod
-  -- Ref: [kohno1987] https://doi.org/10.5802/aif.1111
+  -- Ref: [kohno1987] https://doi.org/10.5802/aif.1075
   -- Flatness of the KZ connection at generic q gives the
   -- factorization; fails at roots of unity.
 

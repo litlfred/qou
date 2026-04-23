@@ -2500,7 +2500,7 @@ export const references: CSLData[] = [
     issue: "4",
     page: "139-160",
     issued: { "date-parts": [[1987]] },
-    DOI: "10.5802/aif.1111",
+    DOI: "10.5802/aif.1075",
     note:
       "Proves that monodromy of the Knizhnik-Zamolodchikov " +
       "connection on the configuration space X_n coincides with " +
