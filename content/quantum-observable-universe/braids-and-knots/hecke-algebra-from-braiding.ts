@@ -16,5 +16,6 @@ export default remark({
     "thm:jones-markov-trace",
     "def:substrate-parameter",
     "def:crossing-energy",
+    "prop:nuclear-groebner-reduction",
   ],
 });

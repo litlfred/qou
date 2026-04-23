@@ -131,7 +131,7 @@ is transported by the comultiplication $\Delta$ and sorted by the
 $R$-matrix into symmetric and antisymmetric eigenspaces.  Each crossing
 contributes a rigidly determined quantum $\mathrm{E}_{\times}(q)$ from
 the eigenvalues $q$ and $-q^{-1}$ of $T$; the sum of these crossing
-energies, resolved to Gr\"obner--Shirshov normal form, is the only
+energies, resolved to Gröbner--Shirshov normal form, is the only
 physics in play.
 
 ### Consequences for the mass formula
