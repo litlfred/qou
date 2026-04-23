@@ -408,6 +408,8 @@ export default chapter({
         "hyperelliptic-quintic",
         "x5-z5-automorphism",
         "bring-z5-descent",
+        "x5-bring-weight-identification",
+        "x5-bring-prym-jacobian",
         "torus-knot-seifert-bound",
         "u1-equivariant-reduction",
         "u1-phase-tube",
