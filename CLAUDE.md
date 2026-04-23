@@ -246,6 +246,35 @@ previously proved theorems, axioms) may use provable block kinds.
 - `remark` blocks may freely interpret conjectures (they make no
   logical claims).
 
+**Definitions and conjectures (clarification):** The propagation
+rule above applies to **provable claims** (`theorem`, `proposition`,
+`lemma`, `corollary`). It does **not** force `definition` blocks to
+become conjectures even if their `uses[]` includes a `conj:` label.
+A definition names a construction; whether the named construction
+is "the right one" may itself be a conjecture, but the act of naming
+is not a logical claim.
+
+However:
+
+- A `definition` whose well-formedness genuinely depends on a
+  conjecture (e.g. defining "the unique X with property P" when P's
+  uniqueness is conjectural) **should** carry an explicit narrative
+  note in its `.md` flagging the conjectural backing, and should
+  cite any computational witnesses available
+  (`folio-assistant/computations/*.witness.json`) so empirical
+  support is discoverable from the manifest.
+- Any `theorem`/`proposition`/`lemma`/`corollary` whose `uses[]`
+  cites such a definition **does** trigger propagation — it is
+  downstream of the conjecture transitively. Track the chain via the
+  definition.
+
+Audit note: the `proof-gap-audit` skill must apply §J of its
+checklist (conjectural propagation) only to provable kinds. Flagging
+a definition as a propagation violation is a false positive (we have
+seen this hallucinated by sub-agents). Compute the transitive cone
+from any provable block; if it touches a `conj:` via any path
+(including through definitions), demote the provable block.
+
 **Lean formalization of conjectures:** Conjectures *can* (and should,
 when feasible) have `.lean` files.  The convention is:
 
