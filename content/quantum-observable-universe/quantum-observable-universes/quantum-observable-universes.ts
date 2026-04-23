@@ -141,19 +141,33 @@ export default chapter({
 
     // ── Categorical action ────────────────────────────────────────────
     section({
-      title: "Categorical action and variational equations",
-      label: "sec:categorical-action",
+      title: "Categorical Dirac operator",
+      label: "sec:categorical-dirac-operator",
       blocks: [
         "categorical-dirac-operator",
         "categorical-dirac-operator-exists",
         "categorical-dirac-operator-exists-proof",
         "categorical-dirac-operator-unique",
         "categorical-dirac-operator-unique-proof",
+      ],
+    }),
+
+    section({
+      title: "Categorical Lagrangian",
+      label: "sec:categorical-lagrangian",
+      blocks: [
         "categorical-lagrangian",
         "categorical-lagrangian-exists",
         "categorical-lagrangian-exists-proof",
         "categorical-lagrangian-unique",
         "categorical-lagrangian-unique-proof",
+      ],
+    }),
+
+    section({
+      title: "Categorical action",
+      label: "sec:categorical-action",
+      blocks: [
         "categorical-action",
         "categorical-action-exists",
         "categorical-action-exists-proof",
@@ -162,8 +176,13 @@ export default chapter({
         "categorical-action-notation",
         "categorical-action-notation-su2",
         "qou-canonical-action",
-        "physicist-translation",
-        "categorical-action-vs-chern-simons",
+      ],
+    }),
+
+    section({
+      title: "Variational equations and wavefronts",
+      label: "sec:variational-equations",
+      blocks: [
         "variational-equations",
         "variational-equations-proof",
         "wavefront-propagation",
