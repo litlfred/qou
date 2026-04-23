@@ -16,26 +16,26 @@ Hahn field $\mathbb{R}((\omega^{\mathbf{No}}))$ [@ehrlich2012].
 For $x \neq 0$ define
 
 $$
-  \mathrm{lead}(x) := y_0, \qquad
+  \mathrm{ord}_\omega(x) := y_0, \qquad
   \mathrm{lc}(x) := r_0.
 $$
 
-$\mathrm{lead}$ is a **group homomorphism** $(\mathbf{No}^\times,
+$\mathrm{ord}_\omega$ is a **group homomorphism** $(\mathbf{No}^\times,
 \cdot) \to (\mathbf{No}, +)$:
 
 $$
-  \mathrm{lead}(x \cdot y) = \mathrm{lead}(x) + \mathrm{lead}(y).
+  \mathrm{ord}_\omega(x \cdot y) = \mathrm{ord}_\omega(x) + \mathrm{ord}_\omega(y).
 $$
 
 It is the non-archimedean valuation associated to the valuation
 ring $\mathcal{O}$ of finite surreals
 ([valuation ring](#rem:valuation-ring-finite-surreals)):
 
-| Regime | Condition on $\mathrm{lead}(x)$ | Meaning |
+| Regime | Condition on $\mathrm{ord}_\omega(x)$ | Meaning |
 |---|---|---|
-| $x$ infinitesimal | $\mathrm{lead}(x) < 0$ | $x \in \mathfrak{m}$ |
-| $x$ finite non-inf. | $\mathrm{lead}(x) = 0$ | $\mathrm{st}(x) \neq 0$ |
-| $x$ infinite | $\mathrm{lead}(x) > 0$ | $x \notin \mathcal{O}$ |
+| $x$ infinitesimal | $\mathrm{ord}_\omega(x) < 0$ | $x \in \mathfrak{m}$ |
+| $x$ finite non-inf. | $\mathrm{ord}_\omega(x) = 0$ | $\mathrm{st}(x) \neq 0$ |
+| $x$ infinite | $\mathrm{ord}_\omega(x) > 0$ | $x \notin \mathcal{O}$ |
 
 ## Dictionary: Big-O / little-o $\leftrightarrow$ leading exponent
 
@@ -47,11 +47,11 @@ $f, g$ in the Hahn field):
 
 | Classical | Surreal | Proposed notation |
 |---|---|---|
-| $f = O(g)$ | $\mathrm{lead}(f) \leq \mathrm{lead}(g)$ | $f \preceq g$ |
-| $f = o(g)$ | $\mathrm{lead}(f) < \mathrm{lead}(g)$ | $f \prec g$ |
-| $f = \Theta(g)$ | $\mathrm{lead}(f) = \mathrm{lead}(g)$ | $f \asymp g$ |
-| $f \sim g$ | $\mathrm{lead}(f) = \mathrm{lead}(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
-| $f = g + O(h)$ | $\mathrm{lead}(f - g) \leq \mathrm{lead}(h)$ | $f \equiv g \pmod{\preceq h}$ |
+| $f = O(g)$ | $\mathrm{ord}_\omega(f) \leq \mathrm{ord}_\omega(g)$ | $f \preceq g$ |
+| $f = o(g)$ | $\mathrm{ord}_\omega(f) < \mathrm{ord}_\omega(g)$ | $f \prec g$ |
+| $f = \Theta(g)$ | $\mathrm{ord}_\omega(f) = \mathrm{ord}_\omega(g)$ | $f \asymp g$ |
+| $f \sim g$ | $\mathrm{ord}_\omega(f) = \mathrm{ord}_\omega(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
+| $f = g + O(h)$ | $\mathrm{ord}_\omega(f - g) \leq \mathrm{ord}_\omega(h)$ | $f \equiv g \pmod{\preceq h}$ |
 
 ## Why this is better than classical Big-O
 
@@ -68,19 +68,19 @@ Classical Big-O has three well-known pathologies:
 
 The surreal valuation replaces these with:
 
-1. **Clean inequality** $\mathrm{lead}(f) \leq \mathrm{lead}(g)$ on
+1. **Clean inequality** $\mathrm{ord}_\omega(f) \leq \mathrm{ord}_\omega(g)$ on
    elements of the ordered group $(\mathbf{No}, +)$.
 2. **Algebraic laws**:
    $$
-     \mathrm{lead}(f \cdot g) = \mathrm{lead}(f) + \mathrm{lead}(g),
+     \mathrm{ord}_\omega(f \cdot g) = \mathrm{ord}_\omega(f) + \mathrm{ord}_\omega(g),
      \qquad
-     \mathrm{lead}(f + g) \leq \max(\mathrm{lead}(f), \mathrm{lead}(g))
+     \mathrm{ord}_\omega(f + g) \leq \max(\mathrm{ord}_\omega(f), \mathrm{ord}_\omega(g))
    $$
    (ultrametric, with equality when leading exponents differ).
 3. **Strict refinement by birthday**: when two quantities share a
    leading exponent, the birthday of that exponent —
-   `$b(\mathrm{lead}(f))$` — gives an ordinal-valued depth gauge.
-   So $\mathrm{lead}(e^{-1/\varepsilon})$ and $\mathrm{lead}(\varepsilon^\omega)$
+   `$b(\mathrm{ord}_\omega(f))$` — gives an ordinal-valued depth gauge.
+   So $\mathrm{ord}_\omega(e^{-1/\varepsilon})$ and $\mathrm{ord}_\omega(\varepsilon^\omega)$
    are both negative infinite, but at *different birthdays*,
    distinguishing functions that classical Big-O cannot.
 
@@ -88,13 +88,13 @@ The surreal valuation replaces these with:
 
 ```
 classical:  f(x) = x² + 5x + O(1)  as x → ∞
-surreal:    f(x) = x² + 5x + r     where r ≺ 1  (i.e., lead(r) < 0)
+surreal:    f(x) = x² + 5x + r     where r ≺ 1  (i.e., ord_ω(r) < 0)
 
 classical:  f(q) = g(q) + O((q-1)²)  as q → 1
-surreal:    f ≡ g  (mod  ≺ ε²)      i.e., lead(f - g) ≤ -2
+surreal:    f ≡ g  (mod  ≺ ε²)      i.e., ord_ω(f - g) ≤ -2
 
 classical:  ∫₀¹ e^{-x/ε} dx ∼ ε  as ε → 0⁺
-surreal:    ∫₀¹ e^{-x/ε} dx ≃ ε   (leading term and leading coeff agree)
+surreal:    ∫₀¹ e^{-x/ε} dx ≃ ε   (leading exponent and leading coeff agree)
 ```
 
 ## Why it matters for QOU
@@ -129,7 +129,7 @@ future revision, reserving $O, o, \Theta, \sim$ for legacy citations.
 A full formalisation of Conway normal form requires Hahn series
 with surreal-valued exponents — partially present in mathlib
 (`Mathlib.RingTheory.HahnSeries`) but not yet integrated with
-the `SurrealField` axiomatic class. The $\mathrm{lead}$ function
+the `SurrealField` axiomatic class. The $\mathrm{ord}_\omega$ function
 as a group homomorphism can be stated once that integration
 lands; meanwhile the valuation-ring structure
 ([valuation ring](#rem:valuation-ring-finite-surreals)) gives
