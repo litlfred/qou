@@ -88,6 +88,8 @@ When a user request arrives, route to the right skill(s):
 | "review / check / audit Lean" | `local/lean-proof-review` | collaborator |
 | "status / tracking / manifest" | `local/proof-status-tracking` | reader |
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
+| "proof gap / missing step / unproved assertion / bridging lemma" | `local/proof-gap-audit` | reader |
+| "audit proofs / review proofs / proof editor / coordinate proof review" | `local/proof-editor` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
 | "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "audit lean / completeness / coverage" | `local/lean-completeness-audit` | collaborator |
@@ -163,8 +165,8 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
