@@ -32,7 +32,8 @@ Physically, $\rho_q$ is the **quantum drag density** imposed by the
 substrate: the categorical cost, per unit of topological volume, of
 transporting a closed vortex $\varrho \colon \mathbf{1} \to A$ through
 the Frobenius--Hopf structure.  At the substrate value $q_0 \approx
-1.10998$ the density is finite and greater than unity; in the classical
+1.10998$ ([substrate parameter](#def:substrate-parameter)) the density
+is finite and greater than unity; in the classical
 limit $q \to 1$ one has $\hbar_q \to 0$ and $\rho_q \to \infty$,
 recovering the expected decoupling of mass from topology.
 
@@ -132,7 +133,9 @@ $R$-matrix into symmetric and antisymmetric eigenspaces.  Each crossing
 contributes a rigidly determined quantum crossing weight
 ([crossing energy](#def:crossing-energy)) from the eigenvalues
 $q$ and $-q^{-1}$ of $T$; the sum of these crossing weights, resolved
-to Gröbner--Shirshov normal form, is the only physics in play.
+to Gröbner--Shirshov normal form
+([nuclear normal form](#prop:nuclear-groebner-reduction)), is the
+only physics in play.
 
 ### Consequences for the mass formula
 
@@ -162,8 +165,10 @@ Three observations follow.
    ([Markov trace product](#thm:markov-trace-product)).  The hyperbolic
    volume enters only as the asymptotic coefficient, not as a separately
    posited datum.
-2. *The substrate evaluation is finite.*  At $q = q_{0}$ the mass is
-   computed directly from $\log\lvert\mathrm{Vol}_{q_{0}}(\beta_{K})\rvert$
+2. *The substrate evaluation is finite.*  At $q = q_{0}$
+   ([substrate parameter](#def:substrate-parameter)) the mass is
+   computed directly from $\ln\lvert\mathrm{Vol}_{q_{0}}(\beta_{K})\rvert$
+   ([algebraic quantum volume](#def:algebraic-quantum-volume))
    without passing to the Kashaev limit; the Kashaev identity calibrates
    the overall energy scale (route 2 of
    [algebraic volume specialisation](#prop:algebraic-volume-specialization))
