@@ -131,3 +131,60 @@ quantum-correction expansion** for QOU, without having to
 invoke an external regularisation scheme. All corrections live
 in the same algebraic object as the leading term; they are
 distinguished only by their birthday in the surreal grading.
+
+## Proof strategy
+
+The conjecture's two layers (mathematical existence and physical
+constraint determination) need separate strategies.
+
+**Layer 1: mathematical existence (provable now)**:
+
+1. Cite Ehrlich [@ehrlich2012] Theorem 12.5: every Hahn series
+   ring $\mathbb{R}((\varepsilon^G))$ for divisible ordered
+   abelian $G$ embeds in $\mathbf{No}$.
+
+2. Specifically $G = \mathbb{Q}$ gives the
+   $\mathbb{R}((\varepsilon^{\mathbb{Q}}))$ sub-field of
+   $\mathbf{No}$ used here.
+
+3. Verify $1 + \varepsilon \in \mathbb{R}((\varepsilon^{\mathbb{Q}}))$
+   (trivially: it's a finite sum).
+
+This is provable as soon as mathlib has `HahnSeries` integrated
+with `Surreal` (partial work exists).
+
+**Layer 2: physical-constraint determination (open)**:
+
+4. Recompute the QOU mass formula with $q = 1 + \varepsilon
+   + \alpha_2 \varepsilon^2 + \cdots$ truncated at order 2.
+
+5. Find $\alpha_2 \in \mathbb{R}$ such that the formula's
+   second-order $\varepsilon$-coefficient matches measured
+   particle-mass corrections (e.g., the residual $\sim 4\%$ MAE
+   on $\mathcal{Q}$-values).
+
+6. Determine: is $\alpha_2$ uniquely determined? Is it consistent
+   across different particles?
+
+7. If unique: declare the conjecture vindicated at order 2.
+   Iterate to higher orders.
+
+8. If non-unique or inconsistent: declare the conjecture
+   refuted (the higher-order $\alpha_k$ are *free parameters*,
+   not predictions).
+
+**Required infrastructure** (Layer 2):
+- A precise CODATA-comparison protocol for second-order
+  corrections.
+- A Lean (or Python) recomputation of the QOU mass spectrum
+  with $q$ as a Hahn series.
+
+**Falsification path**: Layer 2 falsification by inconsistency
+across particles (e.g., $\alpha_2$ for the proton differs from
+$\alpha_2$ for the neutron). Either inconsistency or
+non-uniqueness refutes the predictive conjecture.
+
+**Provability assessment**: Layer 1 mathematical: tractable in
+Lean within reach of current mathlib. Layer 2 physical:
+requires sustained computational physics work. Most
+research-paper-worthy of the appendix's conjectures.

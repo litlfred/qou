@@ -96,3 +96,55 @@ category has rigid Frobenius structure
 small deformation is trivial. So the candidate examples must lie
 *outside* this rigid regime, in larger or non-rigid Frobenius
 algebras.
+
+## Proof strategy
+
+The conjecture has two halves: standard-part recovery (easy)
+and strict generalisation (hard).
+
+**Standard-part recovery (provable now)**:
+
+1. Assume an $\varepsilon$-relaxed Frobenius algebra
+   $(A, \mu, \int_A, \delta)$ over $\mathbf{No}$.
+
+2. Apply $\mathrm{St}$ to all components: $\mathrm{St}(\delta)$ has
+   coefficients in $\mathbb{R}$. Since $\delta$ is multiplied by
+   the infinitesimal $\varepsilon$, the term $\varepsilon \cdot \delta$
+   is itself infinitesimal.
+
+3. By `standardPart_of_infinitesimal`, $\mathrm{St}(\varepsilon
+   \cdot \delta) = 0$. So $\mathrm{St}((\int \circ \mu) \circ \eta)
+   = \mathrm{St}(\mathrm{id} + \varepsilon \cdot \delta) = \mathrm{id}$,
+   recovering the strict Frobenius axiom.
+
+**Strict generalisation (open)**:
+
+4. Construct a candidate non-trivial $\delta$ in a non-rigid
+   Frobenius algebra. Concrete proposal: take
+   $A = \bigwedge^* V$ (exterior algebra) at infinitesimal
+   $q$-deformation; the rigidity argument doesn't apply because
+   $\bigwedge^* V$ is not the regular representation.
+
+5. Verify the deformed pairing satisfies
+   $\int_\varepsilon \circ \mu_\varepsilon = \mathrm{id} +
+   \varepsilon \cdot \delta$ for non-zero $\delta$.
+
+6. Show the deformed structure is **not** gauge-equivalent to
+   the strict structure (a Hochschild-cohomology computation).
+
+**Required infrastructure**:
+- `standardPart_of_infinitesimal` (proved).
+- `standardPart_add` (axiomatic; reduces to
+   `IsFinite_decomposition`).
+- Hochschild cohomology of Frobenius algebras over $\mathbf{No}$
+  (does not exist in mathlib).
+
+**Falsification path**: prove a *rigidity theorem* for
+$\varepsilon$-Frobenius algebras: every $\varepsilon$-deformation
+is gauge-equivalent to the strict structure. This would refute
+the strict-generalisation half by collapsing the relaxation.
+
+**Provability assessment**: standard-part recovery provable in
+Lean today (modulo `standardPart_add` axiom). Strict
+generalisation requires deformation theory of Frobenius algebras
+over a surreal-coefficient field — substantial new mathematics.

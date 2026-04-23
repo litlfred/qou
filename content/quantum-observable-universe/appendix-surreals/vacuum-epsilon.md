@@ -72,3 +72,48 @@ and check whether the archimedean image agrees with the strict-
 vacuum prediction. The arithmetic is rational in $\varepsilon$,
 so the test reduces to a comparison of two polynomials in
 $\varepsilon$ at the standard-part.
+
+## Proof strategy
+
+The most direct of the conjectures: pure computation.
+
+1. **Recompute geometric energy** with vacuum convention
+   $\mathrm{Geom}(\unicode{9737}) = \varepsilon$. For each link
+   $L$ in the QOU mass table (Z=1–20),
+   $\mathrm{Geom}(L)$ now has an additive $\varepsilon$-dependent
+   correction proportional to the number of unknot components.
+
+2. **Recompute particle masses**:
+   $\mathfrak{m}(\mathfrak{H}) \to \mathfrak{m}(\mathfrak{H}) +
+   \varepsilon \cdot c_{\mathfrak{H}}$.
+
+3. **Apply $\mathrm{St}$**: standard-part of
+   $\mathfrak{m}(\mathfrak{H}) + \varepsilon \cdot c_{\mathfrak{H}}$
+   equals $\mathfrak{m}(\mathfrak{H})$ — the original mass. So
+   archimedean predictions are unchanged. ✓
+
+4. **Verify Möbius regularisation absorbed**: show that the
+   diagonal subtraction in
+   [Möbius energy proof](#prf:mobius-energy) is exactly
+   $\varepsilon \cdot (\text{boundary contribution})$, so the
+   classical regularisation is the $\mathrm{St}$-image of the
+   $\varepsilon$-vacuum subtraction.
+
+**Required infrastructure**:
+- `QOU.AppendixSurreals.standardPart_of_infinitesimal` (proved).
+- `QOU.AppendixSurreals.standardPart_add` (axiomatic).
+- Existing QOU mass table.
+
+**Falsification path**: recompute the mass spectrum with
+$\mathrm{Geom}(\unicode{9737}) = \varepsilon$ and find that some
+particle mass *changes* under standard-part (i.e.,
+$\mathrm{St}(\mathfrak{m} + \varepsilon \cdot c) \neq \mathfrak{m}$).
+This would only happen if $c$ contained a non-infinitesimal
+factor, contradicting the rational-in-$\varepsilon$ structure.
+
+**Provability assessment**: this is a *computational* conjecture.
+The verification is a mass-table re-computation that can be
+done in Python/Mathematica today. Lean formalisation reduces to
+the standard-part-of-infinitesimal lemma already proved.
+
+**Easiest of the appendix conjectures to settle.**

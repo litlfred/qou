@@ -112,3 +112,51 @@ expressions in $q$ make sense at any non-pole element of
 $\mathbf{No}$). The interpretive content — that these are *the*
 Big Bang and heat death — is metaphor, pending a separate
 discussion of cosmological time in QOU.
+
+## Proof strategy
+
+The mathematical kernel is well-defined; the question is one of
+*interpretation*.
+
+**Mathematical kernel** (provable now in Lean):
+
+1. Show $\mathrm{QOU}_q$ is rational in $q$ (each structure
+   constant is in $\mathbb{Q}(q)$).
+
+2. Show evaluation at any non-pole $q \in \mathbf{No}$ is
+   well-defined. Use `QOU.AppendixSurreals.omegaSurreal`,
+   `epsilonSurreal`.
+
+3. Show $\mathrm{St}_{\mathrm{QOU}} \circ \mathrm{ev}_{q = \omega}$
+   and $\mathrm{St}_{\mathrm{QOU}} \circ \mathrm{ev}_{q = 1 +
+   \varepsilon^\omega}$ both produce well-defined archimedean QOUs
+   (modulo
+   [archimedean-stpart](#conj:archimedean-stpart)).
+
+**Provable in Lean today**:
+- `c_q_eq_omega_at_one_plus_epsilon` already proved in
+  `QOU.AppendixSurreals.Conjectures`: $c_q = (q-1)^{-1}$ at
+  $q = 1 + \varepsilon$ equals $\omega$.
+
+**Required infrastructure** (interpretation):
+- A definition of "cosmological time" as an ordering on the
+  parameter $q \in \mathbf{No}$.
+- A categorical-cosmology framework distinguishing "moment"
+  (= a specific $q$) from "evolution" (= a path in $\mathbf{No}$).
+- Such a framework is **not** developed in the main paper.
+
+**Falsification path** (mathematical): show that the QOU
+structure constants have *poles* at $q = \omega$ or
+$q = 1$ in $\mathbf{No}$ that prevent evaluation. This is false
+for the rational-in-$q$ formulas, so the evaluation is well-
+defined.
+
+**Falsification path** (interpretive): show that the
+"cosmological time" reading is incompatible with QOU's
+parameter-time symmetry (the substrate $q$ does not evolve in
+the main paper). This is the most natural objection, and the
+appendix's caveat already concedes it.
+
+**Provability assessment**: the mathematical kernel is
+provable in Lean modulo the sub-conjectures. The cosmological
+interpretation is a separate matter, deliberately bracketed.
