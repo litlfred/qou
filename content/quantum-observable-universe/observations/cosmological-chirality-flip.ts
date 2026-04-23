@@ -8,6 +8,8 @@ export default remark({
     "ex:cosmological-limits",
     "rem:time-reversal-energy-barrier",
     "sec:cp-violation-evidence",
+    "prop:u1-equivariant-reduction",
+    "rem:symmetry-preserving-leptons",
   ],
   tags: [
     "big-bang", "heat-death", "chirality", "cosmological",
