@@ -25,6 +25,7 @@ export default remark({
     "thm:markov-trace-product",
     "def:crossing-energy",
     "prop:nuclear-groebner-reduction",
+    "conj:kashaev-surreal",
   ],
   cites: ["kashaev1997", "murakami-murakami2001"],
 });
