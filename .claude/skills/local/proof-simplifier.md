@@ -61,8 +61,28 @@ When the MCP server is available, use it for analysis and alternatives:
    | **Redundant hypothesis** — a condition assumed in one proof is already implied by another in the cluster | Remove the redundant hypothesis; add a remark |
    | **Shorter path** — a proof can invoke a result from the cluster directly instead of re-deriving it | Replace the derivation with a citation |
    | **Factored abstraction** — a common argument pattern appears across the cluster | Abstract into a named lemma or tactic |
+   | **Repeated invocation under same conditions** — a block is cited from 3+ proofs in one chapter, each time with the same restriction or specialisation | Promote the (block + recurring conditions) bundle to a **specialisation lemma**; replace each invocation with a citation of the new lemma |
+   | **Recurring sub-derivation** — the same 3-5 line argument (or near-verbatim variant) appears in multiple proofs | Promote to a **proposition** or shared remark; cite from each proof |
+   | **Definite-article without source** — phrases like "the canonical $X$" or "the standard $Y$" recur without a single defining block | Add a **definition** block fixing the named object; replace with hyperref |
    | **Unused generality** — a proof works in more generality than needed, making it longer | Specialise to the case actually used |
    | **Duplicate notation** — two proofs introduce the same local notation differently | Unify notation across the cluster |
+
+   The middle three rows are the **repeated-invocation heuristic**:
+   when the same block + same conditions appear ≥3 times in a chapter,
+   the abstraction is owed regardless of whether the existing proofs
+   are individually short. Detection commands:
+
+   ```bash
+   # Block cited many times under the same hypothesis suffix
+   grep -l '#def:foo' content/<paper>/<chapter>/*-proof.md \
+     | xargs grep -l "at q = q_0"
+   # Recurring distinctive phrase
+   grep -l "by faithfulness of $\\\\tau$" content/<paper>/<chapter>/*-proof.md
+   ```
+
+   This heuristic is also flagged by `proof-gap-audit` §J as an
+   inter-proof gap — the two skills cooperate, but `proof-simplifier`
+   owns the actual extraction.
 
 4. **Propose changes.** For each simplification found:
    - State the pattern (from the table above)

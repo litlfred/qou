@@ -132,7 +132,76 @@ Flag when multiple proofs rely on an unstated shared assumption:
 | Proof block downstream of a conjecture | **Must** be a `remark` with `interprets` |
 | Lean `theorem` downstream of an axiomatized conjecture class | Must take the class as `[instance]` hypothesis |
 
+### J. Repeated invocations under the same conditions
+
+When two or more proofs in a chapter invoke the **same block** with
+the **same hypotheses / specialisation / instantiation**, the shared
+sub-derivation should be promoted to its own block.
+
+| Pattern | Detection | Remediation |
+|---------|-----------|-------------|
+| Block `def:foo` is cited in 3+ proof `.md` files in one chapter, each time with the same restriction (e.g. always at $q = q_0$, always for the rank-2 case) | `grep -l '#def:foo' content/<paper>/<chapter>/*-proof.md` then check the surrounding context for shared hypotheses | Extract a **specialisation lemma** (`lem:foo-at-q0`) that bundles the cited block plus the recurring hypotheses; replace each repeated invocation with a citation of the new lemma |
+| The same 3-5 line argument ("by faithfulness of $\tau$ and the spectral splitting...") appears verbatim or near-verbatim in multiple proofs | `grep -l "<distinctive phrase>"` across `*-proof.md` | Promote the shared argument to a **proposition** (or remark with `interprets`) and reference it from each proof |
+| Two proofs construct the same auxiliary object (same Sweedler-style decomposition, same Reeb extension, etc.) before doing different things with it | Compare proof prefaces; look for matching display-math blocks | Factor the construction into a **definition** block, cite it from both |
+| A definite-article phrase ("the canonical $X$ associated to $Y$") is reused across proofs without a single source | `grep -E "the canonical|the unique|the standard <X>"` | Add a **definition** block fixing the named object; replace each occurrence with a hyperref to it |
+
+**Threshold**: 2 invocations of an identical sub-derivation are
+flagged informational; 3+ are flagged as a major-severity
+abstraction gap. The audit should report the count, the
+hypotheses being shared, and a candidate name for the extracted
+block.
+
+**Why this matters.** Repeated identical sub-proofs (a) increase
+the chance of inconsistent edits later (one copy gets fixed, others
+drift), (b) inflate the dependency graph energy unnecessarily (each
+proof carries its own copy rather than pointing to one source), and
+(c) hide the fact that the shared content is itself a theorem
+worth naming.
+
+**Cross-skill handoff.** When this skill flags a J-class gap, the
+remediation is owned by `proof-simplifier` (factoring abstractions)
+or `formalizer` (creating the new block). The shared argument may
+already be partially formalized in one of the existing proofs;
+identify which proof has the most complete version as the
+extraction starting point.
+
 ## Workflow
+
+### Phase 0 — Anti-hallucination protocol (REQUIRED)
+
+This skill has a documented history of hallucinating findings (one
+full-paper run produced a ~56% false-positive rate). Every finding
+**must** clear all five checks below before being reported:
+
+1. **Path-exists check.** Run `ls <path>` (or `find` / `Glob`) on
+   every file you cite. If a file is not on disk, the finding is
+   inadmissible. Common error: claiming a block like
+   `genus-filtration-ideal-proof.md` exists when it does not.
+
+2. **Quoted-evidence check.** Every gap claim must include a
+   verbatim quote from the proof being criticized, with line
+   numbers (e.g. "lines 24-27 of `<file>` say `>...`"). If you
+   cannot quote the offending text, the finding is inadmissible.
+
+3. **Line-count check.** Before claiming a proof is "terse" or
+   "sketchy", record `wc -l <file>`. A `.md` over 30 lines is
+   almost never legitimately "too terse"; over 80 lines, never.
+   Include the line count in the finding header.
+
+4. **Cross-reference resolution.** When a proof cites a label like
+   `prop:foo`, run `find content -name 'foo*'` (or `grep -rl
+   "label.*\"prop:foo\""`) before claiming the cited block is
+   missing. Many "missing bridging lemma" findings turn out to
+   reference blocks that already exist.
+
+5. **Transitive-dependency check.** When claiming a conjectural-
+   propagation violation (or any transitive `uses[]` issue), walk
+   the dependency chain explicitly and quote each `uses[]` array
+   in the path. Do not assert transitivity without a concrete
+   chain.
+
+A finding that fails any of checks 1-5 must be dropped from the
+report. Better to report 3 verified gaps than 18 with hallucinations.
 
 ### Phase 1 — Scope
 
@@ -174,33 +243,43 @@ blocks — hand off to `proof-editor` or the author.
 
 ## Output format
 
+Each finding **must** include the Phase-0 verification metadata
+(file path verified-exists, line count, quoted text). The format:
+
 ```
 ## Proof Gap Audit: <scope>
 
 ### Intra-proof gaps
 
-#### <block-label> (<kind>)
-- [existence]   "there exists a lift" — no construction, no citation
-                → add construction or cite [kock2004 §4.2]
-- [uniqueness]  "the canonical section" — uniqueness not proved
-                → add lemma `unique_section` or cite universal property
-- [hand-wave]   "similarly, the dual case…" — spell out or extract lemma
-- [lean]        `sorry` at line 47 missing `-- Ref:` citation
+#### <block-label> (<kind>) — <severity>
+**File**: `<repo-relative-path>` (verified-exists ✓, <N> lines)
+**Quoted** (lines X-Y):
+> ...verbatim text from the proof .md...
+
+- [existence]   <gap description>
+                → <fix>
+- [uniqueness]  ...
+- [hand-wave]   ...
+- [lean]        `sorry` at line N — current `-- Ref:` status: <none|present>
 
 ### Inter-proof gaps
 
 #### Missing bridging lemmas
 - `thm:lifting-exists` proof uses "pullback preserves monos" —
-  not stated as a proposition. Candidate: `prop:pullback-mono`
-  (immediate from Mathlib `CategoryTheory.Limits.pullback_mono`).
+  not stated as a proposition.
+  **Cited-block existence check**: `find content -name 'pullback-mono*'`
+  → no match. Candidate: `prop:pullback-mono` (immediate from Mathlib
+  `CategoryTheory.Limits.pullback_mono`).
 
 #### Broken chains
 - `prop:q-deformed-hodge` cites `lem:harmonic-decomp` which is only
   stated in prose (Ch 4 §2). Promote to a lemma block.
 
 #### Conjectural propagation violations
-- `thm:mass-ratio` depends transitively on `conj:strong-coupling`
-  (path: thm:mass-ratio → prop:binding-energy → conj:strong-coupling).
+- `thm:mass-ratio` depends transitively on `conj:strong-coupling`.
+  **Chain (each `uses[]` quoted)**:
+  - `thm:mass-ratio` uses: `["prop:binding-energy", ...]`
+  - `prop:binding-energy` uses: `["conj:strong-coupling", ...]`
   → Demote `thm:mass-ratio` to `conjecture`.
 
 ### Summary
