@@ -35,13 +35,12 @@ representation.  Suppose $q$ is not a root of unity.  Then:
 
    given by $L \mapsto$ the summand in which $\mathrm{tr}_M(\rho_n(\beta))$
    is supported, has image containing every irreducible summand.
-3. **(Density in the physical Hilbert space.)**  In the
-   archimedean realisation, the physical state space is the direct limit
-   $\mathcal{H}_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ along
-   the inclusion maps
-   $V^{\otimes n} \hookrightarrow V^{\otimes (n+1)}$ induced by the
-   unit $\eta \colon \mathbf{1} \to V$.  Since each $V^{\otimes n}$ is
-   completely decomposed by (1), the set of irreducible summands ---
-   labelled by knot types via (2) --- spans a dense subspace of
-   $\mathcal{H}_{\mathrm{phys}}$ in the Hilbert completion.
+3. **(Spanning of the algebraic state space.)**  The physical state
+   space is the algebraic direct limit
+   $V_{\mathrm{phys}} := \varinjlim V^{\otimes n}$ along the inclusion
+   maps $V^{\otimes n} \hookrightarrow V^{\otimes (n+1)}$ induced by
+   the unit $\eta \colon \mathbf{1} \to V$.  Since each $V^{\otimes n}$
+   is completely decomposed by (1), the set of irreducible summands
+   --- labelled by knot types via (2) --- spans $V_{\mathrm{phys}}$.
+   No metric completion is invoked.
 

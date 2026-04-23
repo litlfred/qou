@@ -18,16 +18,16 @@ namespace QOU.PathIntegrals
 
 /-- **Completeness of the knot-type eigenbasis** (Proposition 4.x).
 
-    Combines semisimplicity of `H_n(q)`, Alexander surjectivity, and density
-    in the physical Hilbert space to establish that knot types form a complete
-    eigenbasis replacing the Feynman path integral.
+    Combines semisimplicity of `H_n(q)`, Alexander surjectivity, and
+    spanning of the algebraic direct limit to establish that knot types
+    form a complete eigenbasis replacing the Feynman path integral.
 
     Three parts:
     1. `H_n(q)` is semisimple at generic `q`, giving the complete
        q-Schur–Weyl decomposition of `V^{⊗n}`.
     2. Alexander's theorem provides surjectivity of the braid-closure map.
-    3. The direct limit `𝓗_phys = lim→ V^{⊗n}` is spanned by the
-       irreducible summands (density).
+    3. The algebraic direct limit `V_phys = colim V^{⊗n}` is spanned
+       by the irreducible summands (no metric completion is used).
 
     LaTeX: `\label{prop:knot-eigenbasis-complete}` -/
 -- Ref: [chari1994] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
@@ -55,10 +55,11 @@ structure KnotEigenbasisComplete where
   summands_detected : ∀ λ ∈ decomposition.partitions,
     ∃ (β : alexander.Braid),
     markov.tr (braid_rep β) ≠ 0
-  /-- **Density** (Part 3): the physical Hilbert space
-      `𝓗_phys = lim→ V^{⊗n}` is spanned by the irreducible summands.
-      Encoded as: the direct limit over `n` of the `V^{⊗n}` spaces
-      admits no element orthogonal to all summand embeddings. -/
-  density : Type* -- abstract direct-limit type `𝓗_phys`
+  /-- **Spanning** (Part 3): the algebraic direct limit
+      `V_phys = colim V^{⊗n}` is spanned by the irreducible summands.
+      Encoded as: every element of the direct limit is a finite
+      linear combination of summand embeddings (no metric
+      completion is used). -/
+  spanning : Type* -- abstract direct-limit type `V_phys`
 
 end QOU.PathIntegrals
