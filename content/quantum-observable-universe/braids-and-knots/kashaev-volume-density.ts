@@ -23,6 +23,7 @@ export default remark({
     "def:habiro-ring",
     "thm:jones-markov-trace",
     "thm:markov-trace-product",
+    "def:crossing-energy",
   ],
   cites: ["kashaev1997", "murakami-murakami2001"],
 });
