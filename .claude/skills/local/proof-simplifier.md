@@ -77,6 +77,50 @@ When the MCP server is available, use it for analysis and alternatives:
 6. **Apply approved changes.** Edit LaTeX (and Lean stubs if they exist).
    Run `latex-validation` afterward to check cross-references.
 
+## Block-ordering heuristics (from `chapter-complexity-review`)
+
+The same dependency-graph heuristics used for chapter-level reordering
+also apply inside a proof cluster. Reuse them before proposing any
+simplification:
+
+| Heuristic | Definition | Application in a proof cluster |
+|-----------|-----------|------------------------------|
+| **Backward edge** | Block A `uses` B but A appears before B in manifest order | A shared lemma is declared *after* its first user → extract and move earlier |
+| **Graph energy** | Σ \|position(user) − position(dependency)\| over internal edges | High energy in a cluster = scattered helpers; tightening reduces cognitive load |
+| **Span** | \|position(user) − position(dep)\| for one edge | Span > 3 inside a cluster suggests an intermediate abstraction is missing |
+| **Max-dependents-first** | Topological order with highest-in-degree nodes earliest | Blocks used by the most cluster members belong at the top of the section |
+| **Architectural irreducibles** | Archimedean ↔ categorical cross-refs that cannot be untangled | Accept; annotate with a remark rather than refactor |
+
+### When to apply
+
+1. **Before simplification** — check the cluster's current energy and
+   backward edge count; a high-energy cluster often has a missing
+   shared lemma (pattern `Shared construction` in the table above).
+2. **After simplification** — re-compute energy to confirm the change
+   reduced span. If energy increased, the "simpler" proof actually
+   scattered dependencies and should be reconsidered.
+3. **When extracting a lemma** — the new lemma must land in a position
+   that makes all its users forward references (no new backward edges).
+4. **When merging two proofs** — verify the merged ordering is
+   topologically consistent in the containing chapter.
+
+### Cluster-level ordering fixes
+
+| Situation | Fix |
+|-----------|-----|
+| Two proofs in the cluster share an auxiliary construction, declared inline in the later one | Extract to a lemma, place before both users (reduces span to 1) |
+| Proof B cites Proof A but B's `.ts` appears first in section `blocks[]` | Swap block order in the section manifest (pure metadata edit) |
+| Proof C is used by 3 proofs in the cluster and declared last | Promote C to the cluster's first position (max-dependents-first) |
+| Cluster has a genuine cycle (A needs B, B needs A) | Extract the shared content to a `Preliminaries`-style block; neither A nor B references the other |
+
+### Tooling
+
+- Re-use the Python helper from `chapter-complexity-review`:
+  `compute_energy(ordering, block_data)` — pass only the cluster's
+  blocks to scope the computation.
+- Report before/after energy alongside proof-length reduction in
+  the simplification summary.
+
 ## Interaction with other skills
 
 | Skill | Interaction |
@@ -86,6 +130,9 @@ When the MCP server is available, use it for analysis and alternatives:
 | `proof-status-tracking` | Update `proof-objects.json` if declarations are added or removed |
 | `category-theory` | Consult for categorical simplifications (adjunction/naturality shortcuts) |
 | `proof-triage` | Feeds clusters to this skill based on complexity scores |
+| `chapter-complexity-review` | Provides the block-ordering heuristics (backward edges, graph energy, span) reused above |
+| `proof-gap-audit` | Flags missing bridging lemmas — often the same shared construction this skill extracts |
+| `proof-editor` | Dispatches this skill as part of the coordinated review pass |
 
 ## Content Object Integration
 
