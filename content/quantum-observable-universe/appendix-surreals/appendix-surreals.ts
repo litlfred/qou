@@ -5,13 +5,13 @@ export default chapter({
   title: "Surreal-number lift of QOU (appendix)",
   sections: [
     {
-      heading: "Motivation and scope",
+      title: "Motivation and scope",
       blocks: [
         "surreal-appendix-intro",
       ],
     },
     {
-      heading: "What survives and what breaks",
+      title: "What survives and what breaks",
       blocks: [
         "algebraic-core-survives",
         "analytic-obstructions",
@@ -19,7 +19,7 @@ export default chapter({
       ],
     },
     {
-      heading: "Surreal construction as a grading",
+      title: "Surreal construction as a grading",
       blocks: [
         "birthday-grading",
         "hoefsmit-is-surreal-construction",
@@ -28,7 +28,7 @@ export default chapter({
       ],
     },
     {
-      heading: "Standard-part replaces classical limits",
+      title: "Standard-part replaces classical limits",
       blocks: [
         "standard-part-functor",
         "valuation-ring-finite-surreals",
@@ -37,21 +37,21 @@ export default chapter({
       ],
     },
     {
-      heading: "Conway normal form and asymptotic notation",
+      title: "Conway normal form and asymptotic notation",
       blocks: [
         "conway-normal-form",
         "big-o-surreal",
       ],
     },
     {
-      heading: "Named surreals for singular objects",
+      title: "Named surreals for singular objects",
       blocks: [
         "surreal-blowup-calculus",
         "bigbang-heatdeath",
       ],
     },
     {
-      heading: "Relaxing strict equalities to $1 + \\varepsilon$",
+      title: "Relaxing strict equalities to $1 + \\varepsilon$",
       blocks: [
         "infinitesimal-frobenius",
         "infinitesimal-observability",
@@ -59,7 +59,7 @@ export default chapter({
       ],
     },
     {
-      heading: "Speculative reformulations",
+      title: "Speculative reformulations",
       blocks: [
         "hahn-substrate",
         "local-infinitesimal-field",
@@ -69,13 +69,13 @@ export default chapter({
       ],
     },
     {
-      heading: "Characteristic-$p$ companion: nimber surreals",
+      title: "Characteristic-$p$ companion: nimber surreals",
       blocks: [
         "on-p-modular-hecke",
       ],
     },
     {
-      heading: "Outlook",
+      title: "Outlook",
       blocks: [
         "surreal-appendix-conclusion",
       ],
