@@ -1,0 +1,508 @@
+{
+  "name": "sdp-knot-match",
+  "description": "SDP-based knot match for atomic binding.  Solves a block-coefficient QP in H_{3A}(q_0) Wedderburn space rather than scanning SnapPy's census.  Handles sign freedom (\u2079Be) and respects Frobenius positivity + soft-confinement truncation \u2113_*(q_0).",
+  "timestamp": "2026-04-23T18:53:09.734746+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "hbar_q_sq": 0.00981718851347867,
+    "M_E_MEV": 0.51099895,
+    "cutoff_l_star": 10,
+    "solver_used": "cvxpy"
+  },
+  "rows": [
+    {
+      "symbol": "2H",
+      "A": 2,
+      "Z": 1,
+      "N": 1,
+      "B_AME_MeV": 2.22458,
+      "density_tag": "m_e",
+      "rho_value_MeV": 0.51099895,
+      "target_value": 4.353394463922089,
+      "n_partitions_in_cutoff": 11,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 2.2245087579232443,
+      "residual_MeV": -7.124207675568428e-05,
+      "l1_norm_k_star": 12.13837816727463,
+      "dominant_partitions": [
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "n": 6,
+          "length": 3,
+          "first_row": 3,
+          "d_classical": 16,
+          "d_q": 17.344673582613545,
+          "w_lambda": 0.3586356424845347,
+          "k_star": 12.138378143370458,
+          "contribution": 4.353255044167898
+        }
+      ]
+    },
+    {
+      "symbol": "3H",
+      "A": 3,
+      "Z": 1,
+      "N": 2,
+      "B_AME_MeV": 8.4818,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 8.299234274356142,
+      "n_partitions_in_cutoff": 30,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 8.481450638398,
+      "residual_MeV": -0.00034936160199983135,
+      "l1_norm_k_star": 56.73815967952175,
+      "dominant_partitions": [
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "n": 9,
+          "length": 4,
+          "first_row": 4,
+          "d_classical": 216,
+          "d_q": 294.5113594114465,
+          "w_lambda": 0.14626651129310397,
+          "k_star": 28.36907869724044,
+          "contribution": 4.149446169644874
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "n": 9,
+          "length": 4,
+          "first_row": 4,
+          "d_classical": 216,
+          "d_q": 294.5113594114465,
+          "w_lambda": 0.14626651129310397,
+          "k_star": 28.36907869724044,
+          "contribution": 4.149446169644874
+        }
+      ]
+    },
+    {
+      "symbol": "3He",
+      "A": 3,
+      "Z": 2,
+      "N": 1,
+      "B_AME_MeV": 7.718,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 7.55187461735489,
+      "n_partitions_in_cutoff": 30,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 7.717650638409569,
+      "residual_MeV": -0.00034936159043130743,
+      "l1_norm_k_star": 51.62858449083814,
+      "dominant_partitions": [
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "n": 9,
+          "length": 4,
+          "first_row": 4,
+          "d_classical": 216,
+          "d_q": 294.5113594114465,
+          "w_lambda": 0.14626651129310397,
+          "k_star": 25.814291448639075,
+          "contribution": 3.7757663516958444
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "n": 9,
+          "length": 4,
+          "first_row": 4,
+          "d_classical": 216,
+          "d_q": 294.5113594114465,
+          "w_lambda": 0.14626651129310397,
+          "k_star": 25.814291448639075,
+          "contribution": 3.7757663516958444
+        }
+      ]
+    },
+    {
+      "symbol": "4He",
+      "A": 4,
+      "Z": 2,
+      "N": 2,
+      "B_AME_MeV": 28.29566,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 27.686612663294127,
+      "n_partitions_in_cutoff": 73,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 28.295141170497907,
+      "residual_MeV": -0.0005188295020950306,
+      "l1_norm_k_star": 221.58696781353206,
+      "dominant_partitions": [
+        {
+          "partition": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "n": 12,
+          "length": 5,
+          "first_row": 5,
+          "d_classical": 7700,
+          "d_q": 16707.275158579665,
+          "w_lambda": 0.1900456644783265,
+          "k_star": 49.999999986858036,
+          "contribution": 9.502283221418752
+        },
+        {
+          "partition": [
+            5,
+            4,
+            2,
+            1
+          ],
+          "n": 12,
+          "length": 4,
+          "first_row": 5,
+          "d_classical": 5775,
+          "d_q": 12787.511805990436,
+          "w_lambda": 0.11133169249049167,
+          "k_star": 49.99999996660437,
+          "contribution": 5.566584620806592
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "n": 12,
+          "length": 5,
+          "first_row": 4,
+          "d_classical": 5775,
+          "d_q": 12787.511805990436,
+          "w_lambda": 0.11133169249049167,
+          "k_star": 49.99999996660437,
+          "contribution": 5.566584620806592
+        },
+        {
+          "partition": [
+            6,
+            3,
+            2,
+            1
+          ],
+          "n": 12,
+          "length": 4,
+          "first_row": 6,
+          "d_classical": 5632,
+          "d_q": 12027.470898692676,
+          "w_lambda": 0.09849072753985015,
+          "k_star": 35.79348385074605,
+          "contribution": 3.5253262656458557
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "n": 12,
+          "length": 6,
+          "first_row": 4,
+          "d_classical": 5632,
+          "d_q": 12027.470898692676,
+          "w_lambda": 0.09849072753985015,
+          "k_star": 35.79348385074605,
+          "contribution": 3.5253262656458557
+        }
+      ]
+    },
+    {
+      "symbol": "6Li",
+      "A": 6,
+      "Z": 3,
+      "N": 3,
+      "B_AME_MeV": 31.9941,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 31.30544593095544,
+      "n_partitions_in_cutoff": 295,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 31.993919861024214,
+      "residual_MeV": -0.00018013897578583737,
+      "l1_norm_k_star": 102.16600047030602,
+      "dominant_partitions": [
+        {
+          "partition": [
+            6,
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "n": 18,
+          "length": 6,
+          "first_row": 6,
+          "d_classical": 16243500,
+          "d_q": 261420843.8449347,
+          "w_lambda": 0.30690841894836085,
+          "k_star": 49.999999886715706,
+          "contribution": 15.34542091265014
+        },
+        {
+          "partition": [
+            6,
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "n": 18,
+          "length": 6,
+          "first_row": 6,
+          "d_classical": 16243500,
+          "d_q": 261420843.84493467,
+          "w_lambda": 0.30690841894836074,
+          "k_star": 49.999999886715706,
+          "contribution": 15.345420912650134
+        },
+        {
+          "partition": [
+            7,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          "n": 18,
+          "length": 6,
+          "first_row": 7,
+          "d_classical": 16336320,
+          "d_q": 251328632.18485522,
+          "w_lambda": 0.2836692842594803,
+          "k_star": 1.0830002913532553,
+          "contribution": 0.30721391750098653
+        },
+        {
+          "partition": [
+            6,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "n": 18,
+          "length": 7,
+          "first_row": 6,
+          "d_classical": 16336320,
+          "d_q": 251328632.1848552,
+          "w_lambda": 0.28366928425948024,
+          "k_star": 1.0830002909920533,
+          "contribution": 0.3072139173985246
+        }
+      ]
+    },
+    {
+      "symbol": "7Li",
+      "A": 7,
+      "Z": 3,
+      "N": 4,
+      "B_AME_MeV": 39.2446,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 38.399883209153366,
+      "n_partitions_in_cutoff": 515,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 39.24453413567483,
+      "residual_MeV": -6.586432516542118e-05,
+      "l1_norm_k_star": 49.4947813536684,
+      "dominant_partitions": [
+        {
+          "partition": [
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "n": 21,
+          "length": 6,
+          "first_row": 6,
+          "d_classical": 1100742656,
+          "d_q": 97161189285.89104,
+          "w_lambda": 0.775835708949817,
+          "k_star": 49.49478131850759,
+          "contribution": 38.399818753560496
+        }
+      ]
+    },
+    {
+      "symbol": "9Be",
+      "A": 9,
+      "Z": 4,
+      "N": 5,
+      "B_AME_MeV": 58.1651,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 56.91313064341914,
+      "n_partitions_in_cutoff": 1289,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 58.16509778650433,
+      "residual_MeV": -2.2134956694230823e-06,
+      "l1_norm_k_star": 2.4653082088943807,
+      "dominant_partitions": [
+        {
+          "partition": [
+            8,
+            6,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 27,
+          "length": 8,
+          "first_row": 8,
+          "d_classical": 12760912164000,
+          "d_q": 1.2181660411916144e+17,
+          "w_lambda": 23.085607627132887,
+          "k_star": 2.465307660759222,
+          "contribution": 56.91312533645223
+        }
+      ]
+    },
+    {
+      "symbol": "10B",
+      "A": 10,
+      "Z": 5,
+      "N": 5,
+      "B_AME_MeV": 64.7512,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 63.357468738438705,
+      "n_partitions_in_cutoff": 1860,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 64.75119987992421,
+      "residual_MeV": -1.2007578220618598e-07,
+      "l1_norm_k_star": 0.1488788788291743,
+      "dominant_partitions": [
+        {
+          "partition": [
+            8,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          "n": 30,
+          "length": 8,
+          "first_row": 8,
+          "d_classical": 1865134921890240,
+          "d_q": 5.1019771327513605e+20,
+          "w_lambda": 425.563872975991,
+          "k_star": 0.14887886869593814,
+          "contribution": 63.35746796652746
+        }
+      ]
+    },
+    {
+      "symbol": "12C",
+      "A": 12,
+      "Z": 6,
+      "N": 6,
+      "B_AME_MeV": 92.1617,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 90.1779739469132,
+      "n_partitions_in_cutoff": 3246,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 92.16169998491695,
+      "residual_MeV": -1.5083045923347527e-08,
+      "l1_norm_k_star": 0.0004144646540522215,
+      "dominant_partitions": [
+        {
+          "partition": [
+            9,
+            7,
+            6,
+            4,
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "n": 36,
+          "length": 9,
+          "first_row": 9,
+          "d_classical": 40971642983700000000,
+          "d_q": 4.51296623147224e+28,
+          "w_lambda": 217951.93653855307,
+          "k_star": 0.0004134703317535421,
+          "contribution": 90.11665950692249
+        }
+      ]
+    },
+    {
+      "symbol": "16O",
+      "A": 16,
+      "Z": 8,
+      "N": 8,
+      "B_AME_MeV": 127.6193,
+      "density_tag": "2m_e",
+      "rho_value_MeV": 1.0219979,
+      "target_value": 124.87237008999726,
+      "n_partitions_in_cutoff": 5392,
+      "cutoff_l_star": 10,
+      "solver": "cvxpy_ok",
+      "B_pred_MeV": 127.6192994190362,
+      "residual_MeV": -5.809637997344907e-07,
+      "l1_norm_k_star": 2.5367682121754545e-12,
+      "dominant_partitions": []
+    }
+  ]
+}

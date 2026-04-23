@@ -65,6 +65,11 @@ DECOMP = [
 
 def search_near(target_vol: float, max_crossings: int = 11,
                 window: float = 0.5) -> list[dict]:
+    # Hyperbolic volumes are non-negative; a negative target means the
+    # base decomposition over-predicts binding and no census knot can
+    # close the gap.  Skip the scan and signal the anomaly to caller.
+    if target_vol <= 0:
+        return []
     candidates = []
     for n_cross in range(3, max_crossings + 1):
         try:

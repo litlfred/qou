@@ -26,13 +26,13 @@ import Mathlib.Topology.UnitInterval
 
 namespace QOU.ParticleInteractions
 
-/-- The Bloch-Wigner dilogarithm D : ℂ → ℝ, an opaque symbol
-    standing in for the classical function
+/-- The Bloch-Wigner dilogarithm D : ℂ → ℝ, declared as an axiom.
+    Stands in for the classical function
     D(z) = Im(Li₂(z)) + arg(1-z) · log|z|.
     Fully developed definition is outside the scope of this
-    formalization; we treat it as opaque (unreducible) so that
-    downstream lemmas cannot silently depend on a stub body. -/
-opaque blochWigner : ℂ → ℝ
+    formalization.  Declared via `axiom` (no body) so that
+    downstream lemmas cannot silently depend on a stub value. -/
+axiom blochWigner : ℂ → ℝ
 
 /-- Bloch-Wigner vanishes on the real line.
     Taken as an axiom because `blochWigner` is opaque and this
