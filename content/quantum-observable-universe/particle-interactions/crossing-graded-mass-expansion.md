@@ -121,7 +121,7 @@ This statement is a **conjecture** rather than a theorem because:
 1. The universal shape parameter $z_q = \lambda(\mathcal{E}_q)$ is
    pinned by the Descartes curve, but its agreement with per-knot
    Thurston gluing is only an approximation (the
-   $\lambda$-witness shows $D(z_q)/v_3 \approx 0.9035$ at $q_0$).
+   $\lambda$-witness shows $D(z_q)/v_3 \approx 0.9015$ at $q_0$).
 2. The separation of lifted vs flat crossings requires the
    [locality hypothesis](#conj:lifted-crossing-locality) as an
    independent assumption.

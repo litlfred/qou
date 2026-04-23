@@ -139,12 +139,10 @@ def bloch_wigner(z: complex, n_terms: int = 2000) -> float:
         except ImportError:
             pass  # fall through to series
     if abs(z) > 1:
-        # Inversion to bring inside the unit disk
-        Li2_inv = _li2_series(1.0 / z, n_terms)
-        log_neg_z = cmath.log(-z)
-        Li2 = -Li2_inv - (log_neg_z ** 2) / 2.0 - math.pi ** 2 / 6.0
-    else:
-        Li2 = _li2_series(z, n_terms)
+        # Bloch-Wigner functional equation D(z) = -D(1/z) — avoids
+        # complex-log branch cuts of the full Li_2 inversion.
+        return -bloch_wigner(1.0 / z, n_terms)
+    Li2 = _li2_series(z, n_terms)
     one_minus_z = 1.0 - z
     arg_1mz = cmath.phase(one_minus_z) if one_minus_z != 0 else 0.0
     log_abs_z = math.log(abs(z)) if abs(z) > 0 else 0.0

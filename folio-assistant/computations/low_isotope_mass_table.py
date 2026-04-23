@@ -107,12 +107,13 @@ def main() -> int:
         if abs(delta_obs) > 1e-9:
             err_pct = 100.0 * ddelta / abs(delta_obs)
         else:
-            err_pct = float("nan")   # undefined; see M_err_ppm column instead
+            err_pct = None   # undefined (AME-zero Δ); see M_err_ppm column
 
+        err_pct_str = f"{err_pct:>+7.2f}" if err_pct is not None else f"{'—':>7}"
         print(
             f"  {symbol:>6} {A:>3} "
             f"{delta_obs:>+9.3f} {delta_pred:>+9.3f} "
-            f"{ddelta:>+8.3f} {err_pct:>+7.2f}  "
+            f"{ddelta:>+8.3f} {err_pct_str}  "
             f"{M_obs:>11.3f} {M_pred:>11.3f}  {tag}"
         )
 

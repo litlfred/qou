@@ -47,11 +47,14 @@ class CrossingGradedMassExpansion (K : Type*) where
       mass (definitional; connects the abstract grading to the
       existing GB pipeline). -/
   gbCoeffZero_eq_groebner : ∀ k : K, gbCoeff k 0 = groebnerMass k
+  /-- Horner-form expansion: evaluates the depth polynomial in
+      O(c) multiplications, numerically more stable than the
+      naive power-based sum. -/
   expansion :
     ∀ k : K,
       mass k =
-        (List.range (crossingCount k + 1)).foldr
-          (fun n acc => (depth k).value ^ n * gbCoeff k n + acc) 0
+        (List.range (crossingCount k + 1)).reverse.foldl
+          (fun acc n => acc * (depth k).value + gbCoeff k n) 0
   -- Ref: [thurston1978] http://library.msri.org/books/gt3m/
   -- Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
   -- The `expansion` field is the conjectural claim; instances must

@@ -1,0 +1,150 @@
+{
+  "name": "predictive-binding-from-braid",
+  "description": "Binding-energy predictions derived from the existing braid-word Wedderburn mass pipeline (atom_mass_atomic_braid.py).  Truly predictive path: braid word \u2192 three-Wedderburn-channel Markov trace \u2192 total mass \u2192 subtract free nucleon masses \u2192 binding.  Zero free parameters beyond \u2074He + \u00b9\u00b2C calibration inherited from the mass pipeline.",
+  "timestamp": "2026-04-23T19:26:01.510396+00:00",
+  "source_witness": "atom-mass-atomic-braid.witness.json",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "M_P_MEV": 938.27208816,
+    "M_N_MEV": 939.56542052,
+    "M_E_MEV": 0.51099895
+  },
+  "rows": [
+    {
+      "symbol": "1H",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "M_pred_MeV": 932.113,
+      "M_obs_MeV": 938.78307,
+      "B_pred_MeV": 6.67008710999994,
+      "B_AME_MeV": 0.0,
+      "residual_MeV": 6.67008710999994,
+      "err_pct": 0.0,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "M_pred_MeV": 3728.401,
+      "M_obs_MeV": 3728.40133,
+      "B_pred_MeV": 28.296015259999876,
+      "B_AME_MeV": 28.29566,
+      "residual_MeV": 0.00035525999987484624,
+      "err_pct": 0.0012555282325093186,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "M_pred_MeV": 6548.45,
+      "M_obs_MeV": 6535.3668,
+      "B_pred_MeV": 26.160943410000073,
+      "B_AME_MeV": 39.2446,
+      "residual_MeV": -13.083656589999926,
+      "err_pct": -33.338743648807544,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "M_pred_MeV": 8400.532,
+      "M_obs_MeV": 8394.7953,
+      "B_pred_MeV": 52.42745104000096,
+      "B_AME_MeV": 58.1651,
+      "residual_MeV": -5.737648959999042,
+      "err_pct": -9.864418629038791,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "11B",
+      "Z": 5,
+      "N": 6,
+      "A": 11,
+      "M_pred_MeV": 10258.645,
+      "M_obs_MeV": 10255.1031,
+      "B_pred_MeV": 72.66295867000008,
+      "B_AME_MeV": 76.2054,
+      "residual_MeV": -3.5424413299999173,
+      "err_pct": -4.648543712125279,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "M_pred_MeV": 11177.93,
+      "M_obs_MeV": 11177.9292,
+      "B_pred_MeV": 92.16104577999977,
+      "B_AME_MeV": 92.1617,
+      "residual_MeV": -0.0006542200002286336,
+      "err_pct": -0.0007098610379676521,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "14N",
+      "Z": 7,
+      "N": 7,
+      "A": 14,
+      "M_pred_MeV": 12976.905,
+      "M_obs_MeV": 13043.7809,
+      "B_pred_MeV": 171.53455340999972,
+      "B_AME_MeV": 104.6589,
+      "residual_MeV": 66.87565340999971,
+      "err_pct": 63.89867790507994,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "M_pred_MeV": 14801.018,
+      "M_obs_MeV": 14899.1687,
+      "B_pred_MeV": 225.77006103999884,
+      "B_AME_MeV": 127.6193,
+      "residual_MeV": 98.15076103999884,
+      "err_pct": 76.90902633065598,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "19F",
+      "Z": 9,
+      "N": 10,
+      "A": 19,
+      "M_pred_MeV": 17634.071,
+      "M_obs_MeV": 17696.9006,
+      "B_pred_MeV": 210.63098919000186,
+      "B_AME_MeV": 147.8013,
+      "residual_MeV": 62.82968919000186,
+      "err_pct": 42.50956465876948,
+      "source": "atomic_braid"
+    },
+    {
+      "symbol": "20Ne",
+      "Z": 10,
+      "N": 10,
+      "A": 20,
+      "M_pred_MeV": 18582.556,
+      "M_obs_MeV": 18622.8401,
+      "B_pred_MeV": 200.929076299999,
+      "B_AME_MeV": 160.6449,
+      "residual_MeV": 40.28417629999899,
+      "err_pct": 25.076536074284952,
+      "source": "atomic_braid"
+    }
+  ],
+  "summary": {
+    "n": 9,
+    "mean_abs_residual_MeV": 32.27833736666649,
+    "max_abs_residual_MeV": 98.15076103999884,
+    "mean_abs_err_pct": 28.471941816448048
+  }
+}

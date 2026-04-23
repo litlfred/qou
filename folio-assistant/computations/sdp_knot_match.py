@@ -153,12 +153,9 @@ def solve_sdp_match(weights: np.ndarray, target: float,
         constraints = [k >= -k_max, k <= k_max]
         prob = cp.Problem(cp.Minimize(obj), constraints)
         try:
-            prob.solve(solver=cp.CLARABEL)
-        except Exception:
-            try:
-                prob.solve()
-            except Exception as e:
-                return {"status": f"cvxpy_failed: {e}"}
+            prob.solve()     # let cvxpy pick an available solver
+        except Exception as e:
+            return {"status": f"cvxpy_failed: {e}"}
         k_star = np.array(k.value).flatten() if k.value is not None else np.zeros(N)
         residual = float(weights @ k_star - target)
         return {
@@ -169,15 +166,21 @@ def solve_sdp_match(weights: np.ndarray, target: float,
             "l1_norm": float(np.sum(np.abs(k_star))),
         }
     elif HAS_SCIPY:
-        # LSQR with box bounds: min ‖Wk - B‖²  s.t. -k_max ≤ k ≤ k_max
-        from scipy.optimize import lsq_linear
-        A = weights.reshape(1, -1)
-        b = np.array([target])
-        res = lsq_linear(A, b, bounds=(-k_max, k_max))
+        # scipy fallback: use minimize with the same L1-regularized
+        # objective so it matches the cvxpy path.  Box bounds via
+        # constraints on |k_λ|.
+        from scipy.optimize import minimize
+
+        def obj(k: np.ndarray) -> float:
+            return float((weights @ k - target) ** 2 + gamma * np.sum(np.abs(k)))
+
+        x0 = np.zeros(N)
+        bounds = [(-k_max, k_max)] * N
+        res = minimize(obj, x0, method="L-BFGS-B", bounds=bounds)
         k_star = res.x
         residual = float(weights @ k_star - target)
         return {
-            "status": "scipy_lsq_linear",
+            "status": "scipy_minimize_l1",
             "k_star": k_star,
             "residual": residual,
             "fit_B": float(weights @ k_star),
@@ -275,7 +278,7 @@ def main() -> int:
         "rows": rows,
     }
     out = Path(__file__).parent / "sdp-knot-match.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=float))
+    out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\n  Wrote {out}")
 
     # Quick comparison statistics
