@@ -7,6 +7,7 @@ export default remark({
   uses: [
     "prop:x5-bring-weight-identification",
     "rem:x5-bring-prym-jacobian",
+    "thm:hyperelliptic-z5-classification",
     "conj:torus-knot-seifert-bound",
     "rem:u1-phase-tube",
   ],

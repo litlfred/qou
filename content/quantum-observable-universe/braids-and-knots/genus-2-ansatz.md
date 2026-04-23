@@ -1,33 +1,44 @@
-**Ansatz (not a derivation).**  In a strictly commutative QOU
-([def:commutative-qou](#def:commutative-qou)) the classical
-representation theory recovers the group $\mathrm{SU}(2)$ but does
-not by itself pin a base manifold: Tannakian reconstruction returns
-the group, not the geometry on which it acts.  We therefore
-*select* the geometric substrate for the commutative limit rather
-than derive it.
+**Residual conjecture (shrunk form).**
+In a strictly commutative QOU
+([def:commutative-qou](#def:commutative-qou)), the base manifold $X$
+carrying the commutative-limit observables satisfies
 
-**Selection principle.**  Among hyperelliptic Riemann surfaces
-admitting a $\mathbb{Z}_5$ automorphism inherited from the
-$S_5$ symmetry of [Bring's surface](#def:brings-surface), the unique
-surface of minimal genus is the genus-2 curve
-$\mathcal{X}_5 \colon y^2 = x^5 - 1$ of Definition
-[def:hyperelliptic-quintic](#def:hyperelliptic-quintic).  The
-ansatz of this subsection is that this $\mathcal{X}_5$ is the
-natural commutative-limit specialisation of the varying Euler
-family: the $g = 4$ Bring geometry of the Descartes chapter
-collapses to its $g = 2$ Sylow-5-invariant quotient as $q \to 1$.
+*(i)*  $X$ is hyperelliptic --- there exists a degree-$2$ morphism
+$\pi \colon X \to \mathbb{P}^1$ with involution $\iota$;
 
-**Status.**  This is a modelling choice.  It is consistent with
-the $\mathbb{Z}_5$-diagonalisation of cyclic symmetries recorded in
-[prop:lagrange-resolvent-transform](#prop:lagrange-resolvent-transform)
-and with the degeneration of braided-to-symmetric tensor structure
-at $q = 1$, but it is not a theorem.  Downstream statements
-(e.g.\ [conj:torus-knot-seifert-bound](#conj:torus-knot-seifert-bound))
-inherit their conjectural status from this ansatz and are marked
-accordingly.
+*(ii)* $X$ admits a faithful $\mathbb{Z}_5$-automorphism $\phi$
+commuting with $\iota$, where the $\mathbb{Z}_5$ is identified with
+the Sylow-5 subgroup of the $S_5$ automorphism group of
+[Bring's surface](#def:brings-surface).
 
-**Contrast with the Descartes chapter.**  The full non-commutative
-QOU retains the richer $S_5$ symmetry of Bring's surface and the
-three color tubes of the Descartes universe; the commutative-limit
-specialisation discards the $A_5$-factor and keeps only the Sylow-5
-cyclic residue $\mathbb{Z}_5 \subset S_5$.
+**What follows from this automatically.**  Given (i)+(ii) and the
+minimal-genus requirement, the classification theorem
+([thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification))
+shows that $X$ is uniquely determined: $g(X) = 2$ and
+$X \cong \mathcal{X}_5 \colon y^2 = x^5 - 1$
+([def:hyperelliptic-quintic](#def:hyperelliptic-quintic)).  Every
+quantitative consequence --- the Seifert bound
+([conj:torus-knot-seifert-bound](#conj:torus-knot-seifert-bound)),
+the single $\mathrm{U}(1)$ phase tube
+([rem:u1-phase-tube](#rem:u1-phase-tube)), the weight identification
+to Bring
+([prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification))
+--- is downstream of the theorem and therefore entirely determined
+by (i)+(ii).
+
+**Why this stays a conjecture.**  Neither (i) nor (ii) is derivable
+from `def:commutative-qou` alone: the Tannakian reconstruction
+$\mathrm{Rep}(\mathrm{SU}(2)) \leadsto \mathrm{SU}(2)$ recovers the
+classical gauge group but does not pin geometric data on a base
+manifold.  Each condition is an additional structural hypothesis,
+testable by its consequences rather than a theorem of the QOU axioms.
+A probe of each is given in
+[rem:residual-conjecture-probe](#rem:residual-conjecture-probe).
+
+**Contrast with the original overreach.**  An earlier draft claimed
+that commutativity *forces* the base to $g = 2$ via a cohomological
+argument in $H^2(X, \mathcal{T}_X)$.  That argument is vacuous on a
+Riemann surface (where $H^2$ of every coherent sheaf vanishes), and
+the provable content is what remains after the vacuity is stripped:
+given (i)+(ii), minimality picks out $\mathcal{X}_5$.  The forcing
+has been replaced with a classification.

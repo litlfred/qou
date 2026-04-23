@@ -1,10 +1,13 @@
-**Conjecture (conditional on the genus-2 ansatz).**
+**Conjecture (conditional on the residual ansatz).**
 Let $T_{r,s}$ be a torus knot with coprime parameters $r, s \geq 2$.
-In the commutative-limit QOU, working under the genus-2 ansatz
-([conj:genus-2-ansatz](#conj:genus-2-ansatz)) that the base surface
-is $\mathcal{X}_5$ of Definition
-[def:hyperelliptic-quintic](#def:hyperelliptic-quintic), the knot
-$T_{r,s}$ admits a realisation on the state-space surface only if
+In the commutative-limit QOU, working under the two-condition residual
+ansatz ([conj:genus-2-ansatz](#conj:genus-2-ansatz)) --- which via
+the classification theorem
+([thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification))
+selects $\mathcal{X}_5$ of Definition
+[def:hyperelliptic-quintic](#def:hyperelliptic-quintic) as the base
+surface --- the knot $T_{r,s}$ admits a realisation on the state-space
+surface only if
 
 $$
   \frac{(r-1)(s-1)}{2}  \leq  2.

@@ -6,6 +6,7 @@ export default conjecture({
   tags: ["torus-knot", "seifert-genus", "commutative-limit", "embedding"],
   uses: [
     "conj:genus-2-ansatz",
+    "thm:hyperelliptic-z5-classification",
     "def:hyperelliptic-quintic",
   ],
 });
