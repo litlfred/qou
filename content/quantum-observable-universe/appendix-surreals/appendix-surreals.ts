@@ -31,8 +31,15 @@ export default chapter({
       heading: "Standard-part replaces classical limits",
       blocks: [
         "standard-part-functor",
+        "valuation-ring-finite-surreals",
         "classical-limit-stpart",
         "archimedean-stpart",
+      ],
+    },
+    {
+      heading: "Conway normal form and asymptotic notation",
+      blocks: [
+        "conway-normal-form",
       ],
     },
     {

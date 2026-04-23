@@ -1,95 +1,137 @@
-Every surreal $x \in \mathbf{No}$ admits a unique **Conway normal form**
-[@conway1976 §5; @gonshor1986 Ch. 5]:
+Every surreal $x \in \mathbf{No}$ admits a unique **Conway normal
+form** [@conway1976 §5; @gonshor1986 Ch. 5]:
 
 $$
   x \;=\; \sum_{i < \lambda} \omega^{y_i} \, r_i
 $$
 
-where:
+where $y_0 > y_1 > \cdots$ is a strictly decreasing sequence of
+surreals, $r_i \in \mathbb{R} \setminus \{0\}$, and $\omega$ is the
+first infinite surreal. The sum has well-ordered support
+(Hahn-series convention). This embeds $\mathbf{No}$ into the
+Hahn field $\mathbb{R}((\omega^{\mathbf{No}}))$ [@ehrlich2012].
 
-- $\lambda$ is an ordinal (possibly finite);
-- $y_0 > y_1 > y_2 > \cdots$ is a strictly decreasing sequence of
-  surreals (not necessarily ordinals) — the **exponents**;
-- $r_i \in \mathbb{R} \setminus \{0\}$ — the **coefficients**;
-- $\omega$ is the first infinite surreal.
+## Leading exponent, leading coefficient
 
-The sum is formal; convergence is in the Hahn-series sense (well-
-ordered support). This embeds $\mathbf{No}$ into the Hahn series
-ring $\mathbb{R}((\omega^{\mathbf{No}}))$ [@ehrlich2012], making
-$\mathbf{No}$ a field of *generalised power series* in $\omega$
-with surreal exponents.
+For $x \neq 0$ define
 
-## Why this is not just an analogy
+$$
+  \mathrm{lead}(x) := y_0, \qquad
+  \mathrm{lc}(x) := r_0.
+$$
 
-The normal form **literally is** the algebra of growth rates:
-
-- The **leading exponent** $y_0$ gives the exact asymptotic class
-  of $x$.
-- Big-O notation $f = O(g)$ is a coarse, analytic shadow of the
-  algebraic relation $b(y_0^{f}) \leq b(y_0^{g})$ on leading
-  surreal exponents.
-- Multiplication of normal forms corresponds to ordinary growth-
-  rate arithmetic: $\omega^{y_i} r_i \cdot \omega^{y_j} r_j =
-  \omega^{y_i + y_j} r_i r_j$.
-- Infinitesimal $\varepsilon = 1/\omega = \omega^{-1}$; its normal
-  form is $\omega^{-1} \cdot 1$, exponent $-1$.
-- The substrate deviation $q - 1 = \varepsilon$ has normal form
-  exponent $-1$; $(q-1)^2 = \varepsilon^2$ has exponent $-2$.
-
-## Examples in the QOU setting
-
-| Quantity | Normal form at $q = 1 + \varepsilon$ | Leading exp |
-|---|---|---|
-| $c_q = 1/(q-1)$ | $\omega \cdot 1$ | $1$ |
-| $\hbar_q = (q-1)/q$ | $\omega^{-1} \cdot 1 + \omega^{-2} \cdot (-1) + \cdots$ | $-1$ |
-| $q - 1 = \varepsilon$ | $\omega^{-1} \cdot 1$ | $-1$ |
-| $d_H(q) - 1$ | $\omega^{-1} \cdot 2 + \cdots$ | $-1$ |
-| $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ at $q = 1$ | $\omega^0 \cdot n + O(\omega^{-1})$ | $0$ |
-| $\mathrm{Vol}$-like quantum dilogarithm | surreal-log expansion | transfinite |
-
-## The leading-exponent functor
-
-Write $\mathrm{lead}(x) = y_0$ for the leading exponent of
-$x \in \mathbf{No}^\times$. This is a group homomorphism from
-$(\mathbf{No}^\times, \cdot)$ to $(\mathbf{No}, +)$:
+$\mathrm{lead}$ is a **group homomorphism** $(\mathbf{No}^\times,
+\cdot) \to (\mathbf{No}, +)$:
 
 $$
   \mathrm{lead}(x \cdot y) = \mathrm{lead}(x) + \mathrm{lead}(y).
 $$
 
-It is the **non-archimedean valuation** associated to the valuation
-ring $\mathcal{O}$
-([valuation ring of finite surreals](#def:valuation-ring-finite-surreals)):
+It is the non-archimedean valuation associated to the valuation
+ring $\mathcal{O}$ of finite surreals
+([valuation ring](#rem:valuation-ring-finite-surreals)):
 
-- $\mathrm{lead}(x) < 0$ iff $x \in \mathfrak{m}$ (infinitesimal).
-- $\mathrm{lead}(x) = 0$ iff $x$ is a finite non-infinitesimal
-  (has a non-zero real standard-part).
-- $\mathrm{lead}(x) > 0$ iff $|x|$ is infinite.
+| Regime | Condition on $\mathrm{lead}(x)$ | Meaning |
+|---|---|---|
+| $x$ infinitesimal | $\mathrm{lead}(x) < 0$ | $x \in \mathfrak{m}$ |
+| $x$ finite non-inf. | $\mathrm{lead}(x) = 0$ | $\mathrm{st}(x) \neq 0$ |
+| $x$ infinite | $\mathrm{lead}(x) > 0$ | $x \notin \mathcal{O}$ |
 
-## Applications in the appendix
+## Dictionary: Big-O / little-o $\leftrightarrow$ leading exponent
 
-1. **Growth-rate of spectral operators**
-   ([spectral normal form](#conj:spectral-normal-form)): read the
-   leading exponent of each eigenvalue under $q = 1 + \varepsilon$
-   deformation.
+Classical asymptotic notation aligns cleanly — indeed, it *is* a
+leading-exponent statement in disguise.
 
-2. **Asymptotic classes of substrate expansions**: the
-   Hahn-series substrate $q = 1 + \varepsilon + \alpha_2\varepsilon^2
-   + \cdots$ has normal form
-   $\omega^0 \cdot 1 + \omega^{-1} \cdot 1 + \omega^{-2} \cdot \alpha_2 +
-   \cdots$, and each $\alpha_k$ can be tested by projection to the
-   coefficient at exponent $-k$.
+For $f, g$ evaluated at $q = 1 + \varepsilon$ (equivalently, for
+$f, g$ in the Hahn field):
 
-3. **Diophantine approximation structure**: algebraic numbers have
-   *rigid* normal forms (short, finite support in $\omega^{\mathbb{Q}}$);
-   transcendental numbers have *infinite-support* normal forms with
-   transfinite exponents. This gives a clean algebraic shadow of
-   Liouville/Roth approximation theorems.
+| Classical | Surreal | Proposed notation |
+|---|---|---|
+| $f = O(g)$ | $\mathrm{lead}(f) \leq \mathrm{lead}(g)$ | $f \preceq g$ |
+| $f = o(g)$ | $\mathrm{lead}(f) < \mathrm{lead}(g)$ | $f \prec g$ |
+| $f = \Theta(g)$ | $\mathrm{lead}(f) = \mathrm{lead}(g)$ | $f \asymp g$ |
+| $f \sim g$ | $\mathrm{lead}(f) = \mathrm{lead}(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
+| $f = g + O(h)$ | $\mathrm{lead}(f - g) \leq \mathrm{lead}(h)$ | $f \equiv g \pmod{\preceq h}$ |
 
-## Non-archimedean valuation theorem
+## Why this is better than classical Big-O
 
-Because $\mathbf{No}$ with normal-form comparison is a Hahn field
-over $(\mathbf{No}, +)$, it is a **maximally-complete valued field**
-[@ehrlich2012 Theorem 14.3]. Every universal construction in the
-theory of valued fields (Newton polygon, ramification, completions)
-can be ported.
+Classical Big-O has three well-known pathologies:
+
+1. **$=$ abuse.** $f = O(g)$ is not an equality in any group-
+   theoretic sense; $O(g)$ is silently a set and $f = O(g)$ means
+   $f \in O(g)$.
+2. **Asymmetric reading.** $O(f) + O(g) = O(f+g)$ is a rule of
+   thumb, not a theorem in any algebraic structure.
+3. **Cannot distinguish sub-polynomial behaviours.** $e^{-1/\varepsilon}$
+   and $\varepsilon^\omega$ are both $o(\varepsilon^n)$ for every
+   $n \in \mathbb{N}$, so Big-O cannot separate them.
+
+The surreal valuation replaces these with:
+
+1. **Clean inequality** $\mathrm{lead}(f) \leq \mathrm{lead}(g)$ on
+   elements of the ordered group $(\mathbf{No}, +)$.
+2. **Algebraic laws**:
+   $$
+     \mathrm{lead}(f \cdot g) = \mathrm{lead}(f) + \mathrm{lead}(g),
+     \qquad
+     \mathrm{lead}(f + g) \leq \max(\mathrm{lead}(f), \mathrm{lead}(g))
+   $$
+   (ultrametric, with equality when leading exponents differ).
+3. **Strict refinement by birthday**: when two quantities share a
+   leading exponent, the birthday of that exponent —
+   `$b(\mathrm{lead}(f))$` — gives an ordinal-valued depth gauge.
+   So $\mathrm{lead}(e^{-1/\varepsilon})$ and $\mathrm{lead}(\varepsilon^\omega)$
+   are both negative infinite, but at *different birthdays*,
+   distinguishing functions that classical Big-O cannot.
+
+## Example rewrites
+
+```
+classical:  f(x) = x² + 5x + O(1)  as x → ∞
+surreal:    f(x) = x² + 5x + r     where r ≺ 1  (i.e., lead(r) < 0)
+
+classical:  f(q) = g(q) + O((q-1)²)  as q → 1
+surreal:    f ≡ g  (mod  ≺ ε²)      i.e., lead(f - g) ≤ -2
+
+classical:  ∫₀¹ e^{-x/ε} dx ∼ ε  as ε → 0⁺
+surreal:    ∫₀¹ e^{-x/ε} dx ≃ ε   (leading term and leading coeff agree)
+```
+
+## Why it matters for QOU
+
+Three uses specific to the main paper:
+
+1. **CODATA fits.** The $\sim 4\%$ MAE on $\mathcal{Q}$-values is
+   a leading-coefficient-level fit. Writing predictions in the form
+   $\mathfrak{m}_{\mathfrak{H}} = \hat{\mathfrak{m}}_{\mathfrak{H}}
+   + r$ with $r \prec \mathfrak{m}$ makes the *order of the residual*
+   an explicit surreal exponent rather than a hidden Big-O.
+
+2. **Spectral gaps and singularity formation as $q \to 1$.** The
+   sequence of eigenvalues of a $q$-deformed operator has a normal
+   form; the leading exponent tells you whether a gap closes
+   algebraically (rational exponent) or transcendentally (involves
+   $\omega$-order infinitesimals).
+
+3. **Renormalisation counterterms.** Each counterterm $C(\Lambda)$
+   in the [blow-up calculus](#def:surreal-blowup-calculus) has a
+   specific leading exponent; matching counterterms to divergences
+   becomes: match leading exponents.
+
+## Suggested notational convention
+
+For the appendix, use $\preceq, \prec, \asymp, \simeq$ uniformly.
+The main paper can adopt this as a *macro-level* convention in a
+future revision, reserving $O, o, \Theta, \sim$ for legacy citations.
+
+## Lean status
+
+A full formalisation of Conway normal form requires Hahn series
+with surreal-valued exponents — partially present in mathlib
+(`Mathlib.RingTheory.HahnSeries`) but not yet integrated with
+the `SurrealField` axiomatic class. The $\mathrm{lead}$ function
+as a group homomorphism can be stated once that integration
+lands; meanwhile the valuation-ring structure
+([valuation ring](#rem:valuation-ring-finite-surreals)) gives
+enough infrastructure to support the asymptotic dictionary at
+the level of the standard-part map.
