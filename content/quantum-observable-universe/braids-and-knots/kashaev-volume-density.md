@@ -66,7 +66,7 @@ $$
   \mathrm{Vol}(K)
   \;=\;
   2\pi\,\lim_{N \to \infty}
-  \frac{\log\lvert J_{N}(K;\,e^{2\pi i / N})\rvert}{N},
+  \frac{\log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert}{N},
 $$
 
 where $J_{N}(K; q)$ is the **$N$-coloured** Jones polynomial at $q$:
@@ -129,10 +129,10 @@ of the knot complement" is, in the substrate, nothing more than the
 accumulated **algebraic drag** generated as the state's representation
 is transported by the comultiplication $\Delta$ and sorted by the
 $R$-matrix into symmetric and antisymmetric eigenspaces.  Each crossing
-contributes a rigidly determined quantum $\mathrm{E}_{\times}(q)$ from
-the eigenvalues $q$ and $-q^{-1}$ of $T$; the sum of these crossing
-energies, resolved to Gröbner--Shirshov normal form, is the only
-physics in play.
+contributes a rigidly determined quantum crossing weight
+([crossing energy](#def:crossing-energy)) from the eigenvalues
+$q$ and $-q^{-1}$ of $T$; the sum of these crossing weights, resolved
+to Gröbner--Shirshov normal form, is the only physics in play.
 
 ### Consequences for the mass formula
 
@@ -175,7 +175,9 @@ Three observations follow.
    and by the higher-order corrections to the topological mass
    decomposition
    ([topological mass](#thm:topological-mass)).  The underlying
-   categorical identity $\mathfrak{m}(\varrho) = \bigl\lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \bigr\rVert + \sum_{i} \bigl\lVert \mathrm{tr}_{\mathrm{trans}}(\varrho, p_{i}) \bigr\rVert$ is exact.
+   categorical identity
+   $\mathfrak{m}(\varrho) = \bigl\lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \bigr\rVert + \sum_{i} \bigl\lVert \mathrm{tr}_{\mathrm{trans}}(\varrho, p_{i}) \bigr\rVert$
+   is exact.
 
 In short: mass is volume times density; volume is the Kashaev shadow
 of an infinite family of coloured Markov traces (each a categorical
