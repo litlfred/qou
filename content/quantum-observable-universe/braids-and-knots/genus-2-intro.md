@@ -1,46 +1,44 @@
 Throughout this chapter the varying-Euler-characteristic framework has
 kept the genus of the base manifold open, with the Descartes universe
 of genus $4$ fixing one concrete representative.  We now examine a
-second natural representative at the opposite end of the deformation
-family --- the genus-$2$ specialisation reached by taking the
-commutative limit $q \to 1$.
+second natural representative --- the genus-$2$ hyperelliptic curve
+$\mathcal{X}_5 \colon y^2 = x^5 - 1$
+([def:hyperelliptic-quintic](#def:hyperelliptic-quintic)) --- and its
+relationship to Bring's genus-$4$ geometry.
 
-**Two-track organisation.**  The commutative limit is *not* the same
-specialisation as the root-of-unity truncation $q = \zeta_N$ that
-produces finite modular tensor categories in the fluid-dynamics
-chapter, even though both sharpen $q$ away from its generic value
-and both give distinguished roles to fifth roots of unity.  The two
-tracks are disjoint and deserve to be stated cleanly:
+**What the subsection develops.**  The remainder of this subsection
+treats $\mathcal{X}_5$ structurally:
 
-| Track | Parameter | Substrate | Observable category |
-|---|---|---|---|
-| A | $q = 1$ | genus-$2$ curve $\mathcal{X}_5$ | symmetric, classical $\mathrm{Rep}(\mathrm{SU}(2))$ |
-| B | $q = \zeta_N$ ($N \geq 3$) | root-of-unity truncation | non-symmetric modular tensor category $\mathbf{C}_{\mathrm{any}}(N)$ |
+- the strictly commutative QOU at the classical limit $q = 1$
+  ([def:commutative-qou](#def:commutative-qou));
+- the hyperelliptic quintic itself
+  ([def:hyperelliptic-quintic](#def:hyperelliptic-quintic));
+- its classification among minimal-genus hyperelliptic curves with
+  $\mathbb{Z}_5$-symmetry
+  ([thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification));
+- the $\mathbb{Z}_5$-automorphism $(x, y) \mapsto (\zeta_5 x, y)$
+  ([prop:x5-z5-automorphism](#prop:x5-z5-automorphism));
+- descent of this $\mathbb{Z}_5$ from Bring's Sylow-$5$ subgroup
+  ([rem:bring-z5-descent](#rem:bring-z5-descent));
+- categorical identification of $x$ on $\mathcal{X}_5$ with the first
+  Lagrange resolvent $w_1$ on Bring
+  ([prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification));
+- a $\mathrm{U}(1)$-equivariant reduction of the exceptional divisor
+  ([prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)).
 
-The commutative branch (Track A) is developed in the remainder of
-this subsection: the strictly commutative QOU
-([def:commutative-qou](#def:commutative-qou)), the genus-$2$ ansatz
-($\mathcal{X}_5$, [def:hyperelliptic-quintic](#def:hyperelliptic-quintic)),
-its $\mathbb{Z}_5$-symmetry inherited from Bring's $S_5$
-([prop:x5-z5-automorphism](#prop:x5-z5-automorphism)), and the
-$\mathrm{U}(1)$-equivariant reduction of the exceptional divisor
-([prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)).
-Track B is deferred to Chapter 7, where it naturally extends the
-existing treatment of vortex moduli
-([rem:berry-vortex-moduli](#rem:berry-vortex-moduli)) and of
-root-of-unity truncation
-([prop:root-of-unity-truncation](#prop:root-of-unity-truncation))
-in fluid dynamics.
-
-**Shared geometric anchor.**  The two tracks intersect at a single
-piece of data: the five fifth roots of unity
-$\{1, \zeta_5, \zeta_5^{2}, \zeta_5^{3}, \zeta_5^{4}\}$.  On Track A
-these are the finite branch points of the double cover
-$\mathcal{X}_5 \to \mathbb{P}^1$ and localise classical phase defects
-on the single $\mathrm{U}(1)$ tube of
-[rem:u1-phase-tube](#rem:u1-phase-tube).  On Track B they reappear as
-the special parameter values $q = \zeta_5$ at which the truncation
-yields the smallest non-trivial observable modular tensor category
-$\mathbf{C}_{\mathrm{any}}(5)$ of
-[def:observable-mtc](#def:observable-mtc).  The same discrete data
-organises two different specialisations.
+**Shared geometric anchor: the five fifth roots of unity.**  Among
+the branch points of $\mathcal{X}_5 \to \mathbb{P}^1$ are the five
+fifth roots of unity
+$\{1, \zeta_5, \zeta_5^{2}, \zeta_5^{3}, \zeta_5^{4}\}$.  The same
+discrete set appears in the Lagrange-resolvent diagonalisation of
+the cyclic subgroup $C_5 \subset S_5$ acting on Bring's surface
+([prop:lagrange-resolvent-transform](#prop:lagrange-resolvent-transform))
+and, separately, as the truncation points of the root-of-unity
+specialisation $q = \zeta_5$ treated in Chapter 7
+([def:observable-mtc](#def:observable-mtc)).  The weight
+identification of
+[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification)
+ties the first two occurrences together categorically: the coordinate
+$x$ on $\mathcal{X}_5$ and the first Lagrange resolvent $w_1$ on Bring
+are canonically identified at the level of $\mathbb{Z}_5$-weight-$(-1)$
+isotypical components of their coordinate rings.

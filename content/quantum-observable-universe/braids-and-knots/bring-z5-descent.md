@@ -15,13 +15,12 @@ Up to isomorphism this genus-$2$ quotient is the
 $\mathcal{X}_5 \colon y^2 = x^5 - 1$ of Definition
 [def:hyperelliptic-quintic](#def:hyperelliptic-quintic).
 
-**Upshot.**  The commutative-limit ansatz
-([conj:genus-2-ansatz](#conj:genus-2-ansatz)) is consistent with
-taking the $S_5$-invariant quotient of Bring's genus-$4$ geometry and
-retaining the cyclic Sylow-5 residue.  The $A_5$-invariant
-complement of the Descartes universe --- the non-abelian structure
-that accommodates three color tubes --- is discarded in this
-specialisation, consistent with the collapse to a single
+**Upshot.**  Taking the $S_5$-invariant quotient of Bring's
+genus-$4$ geometry and retaining the cyclic Sylow-5 residue gives
+a natural genus-$2$ shadow of the full Descartes structure.  The
+$A_5$-invariant complement --- the non-abelian structure that
+accommodates three color tubes --- is discarded under this
+restriction, consistent with the collapse to a single
 $\mathrm{U}(1)$ phase tube recorded in
 [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction).
 

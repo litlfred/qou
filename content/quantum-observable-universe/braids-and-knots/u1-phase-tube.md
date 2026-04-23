@@ -33,7 +33,7 @@ therefore *precisely* the weight-$(-1)$ isotypical component of the
 $\mathbb{Z}_5$-graded coordinate ring --- not a vague geometric
 collapse.
 
-**Branch-point localisation.**  On the genus-$2$ ansatz
+**Branch-point localisation.**  On the genus-$2$ curve
 $\mathcal{X}_5$ ([def:hyperelliptic-quintic](#def:hyperelliptic-quintic))
 the five branch points $\zeta_5^{k}$ of the double cover lie
 symmetrically along the unit circle of the $x$-plane.  Via the

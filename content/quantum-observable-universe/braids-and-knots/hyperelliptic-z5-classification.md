@@ -89,6 +89,6 @@ Therefore $X \cong \mathcal{X}_5$. $\square$
     asks only for a faithful $\mathbb{Z}_5$, not for that
     $\mathbb{Z}_5$ to be a Sylow subgroup of any larger symmetry
     group.  The identification of this abstract $\mathbb{Z}_5$ with
-    the Sylow-5 residue of Bring's $S_5$ is a separate assertion
-    and is the content of the residual conjecture
-    ([conj:genus-2-ansatz](#conj:genus-2-ansatz)).
+    the Sylow-5 residue of Bring's $S_5$ is a separate narrative
+    assertion, justified by the explicit computation of
+    [rem:bring-z5-descent](#rem:bring-z5-descent).

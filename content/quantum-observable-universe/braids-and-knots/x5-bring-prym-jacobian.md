@@ -29,12 +29,11 @@ different dimensions via different underlying curve geometries.
 **Why it matters.**  Taken together with
 [prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification),
 the coordinate and Jacobian compatibilities say that the cyclic
-$\mathbb{Z}_5$-observable structure of the commutative-limit
-substrate ($\mathcal{X}_5$) is a faithful shadow of the cyclic
-observable structure of the full $S_5$-substrate (Bring).  Passing
-from Bring to $\mathcal{X}_5$ discards the $A_5$-factor but
-preserves the cyclic residue exactly --- consistently with the
-ansatz of [conj:genus-2-ansatz](#conj:genus-2-ansatz).
+$\mathbb{Z}_5$-observable structure of the genus-$2$ substrate
+$\mathcal{X}_5$ is a faithful shadow of the cyclic observable
+structure of the full $S_5$-substrate (Bring).  Passing from Bring
+to $\mathcal{X}_5$ discards the $A_5$-factor but preserves the
+cyclic Sylow-$5$ residue exactly.
 Edge [@edge1978] records the classical relation between Bring and
 its hyperelliptic quotients; the present framing extracts the
 categorical essential that both surfaces carry compatible

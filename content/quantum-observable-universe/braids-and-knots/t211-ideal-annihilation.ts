@@ -16,7 +16,7 @@ export default remark({
     "rem:fivefold-symmetry",
     "thm:embeddability-closure",
     "prop:x5-bring-weight-identification",
-    "conj:genus-2-ansatz",
+    "thm:hyperelliptic-z5-classification",
   ],
   cites: ["kassel1995", "jones1987"],
 });

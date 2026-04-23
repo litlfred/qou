@@ -16,24 +16,20 @@ five-term sum on a degree-$120$-symmetric surface.  Both pictures
 are valid, but the $\mathcal{X}_5$ picture is dramatically easier
 to compute with and to formalise.
 
-**2.  $T_{2,5}$ as the saturating torus knot is forced by representation theory.**
-The Seifert bound of [conj:torus-knot-seifert-bound](#conj:torus-knot-seifert-bound)
-admits exactly two saturating witnesses:
-$T_{2,3}$ (Seifert genus $1$, strict inequality) and
-$T_{2,5}$ (Seifert genus $2$, equality).  Under the weight
-identification these are not numerical accidents.  The non-trivial
+**2.  $\mathbb{Z}_5$-isotype dimensions align with $T_{2,3}$ and $T_{2,5}$.**
+Under the weight identification, the non-trivial
 $\mathbb{Z}_5$-isotypical part of $H^1(\mathcal{X}_5, \mathbb{Q})$ is
 the four-dimensional character sum
 $\chi_1 \oplus \chi_2 \oplus \chi_3 \oplus \chi_4$
-(equivalently, $J(\mathcal{X}_5)$ has complex dimension $2 = g(T_{2,5})$).
-$T_{2,5}$ is precisely the torus knot whose Seifert surface fills this
-representation; $T_{2,3}$ uses a $2$-dimensional sub-isotype.  Higher
-torus knots $T_{r,s}$ with $(r-1)(s-1)/2 \geq 3$ would require
-representation-theoretic data that does not exist on
-$\mathcal{X}_5$.  The privileged role of the *Solomon-seal* knot
-$T_{2,5}$ in the paper's particle spectrum is therefore a
-consequence of cyclic representation theory, not a phenomenological
-choice.
+(equivalently, $J(\mathcal{X}_5)$ has complex dimension $2$).
+This four-dimensional rational isotype is exactly filled by the
+Seifert surface of the Solomon-seal torus knot $T_{2,5}$
+(Seifert genus $2$, so $\dim H^1 = 4$ over $\mathbb{Q}$);
+a two-dimensional sub-isotype is filled by the trefoil $T_{2,3}$
+(Seifert genus $1$).  The representation-theoretic dimensions match
+the Seifert dimensions exactly for these two knots --- a
+consequence of cyclic representation theory on $\mathcal{X}_5$,
+not a phenomenological coincidence.
 
 **3.  "One $\mathrm{U}(1)$ phase tube" is exactly "one cyclic weight observed".**
 The collapse of three Descartes color tubes to a single

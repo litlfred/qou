@@ -16,7 +16,7 @@ Tannakian category.
 
 **Scope.**  The strictly commutative QOU is the single-parameter
 specialisation $q = 1$ inside the full deformation family. It is the
-natural home for the genus-2 ansatz (Definition
+natural home for the hyperelliptic quintic $\mathcal{X}_5$ (Definition
 [def:hyperelliptic-quintic](#def:hyperelliptic-quintic)) and the
 $\mathrm{U}(1)$-equivariant reduction of the exceptional divisor
 (Proposition [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)).
