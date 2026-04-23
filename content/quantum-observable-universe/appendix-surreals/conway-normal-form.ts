@@ -1,21 +1,20 @@
-import { definition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default definition({
-  label: "def:conway-normal-form",
-  lean: {
-    decl: "QOU.AppendixSurreals.ConwayNormalForm",
-    validation: "not_checked",
-  },
+export default remark({
+  label: "rem:conway-normal-form",
   title:
-    "Conway normal form: $x = \\sum \\omega^{y_i} r_i$",
+    "Conway normal form unifies Big-O / little-o / Θ / $\\sim$",
   tags: [
     "surreal-numbers",
     "conway-normal-form",
-    "hahn-series",
-    "growth-rates",
+    "big-o",
+    "little-o",
     "asymptotic",
     "leading-exponent",
+    "notation",
+    "cross-reference",
   ],
+  interprets: "def:birthday-grading",
   uses: [
     "def:birthday-grading",
     "def:surreal-blowup-calculus",
