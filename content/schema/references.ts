@@ -2565,6 +2565,122 @@ export const references: CSLData[] = [
       "Underlies the quantum-dilogarithm semiclassical expansion " +
       "used in the Frobenius-JSJ binding decomposition.",
   }),
+
+  // ── Conway 1976 (On Numbers and Games / surreal numbers) ──────
+  ref({
+    id: "conway1976",
+    type: "book",
+    title: "On Numbers and Games",
+    author: [{ family: "Conway", given: "John H." }],
+    publisher: "Academic Press",
+    "publisher-place": "London",
+    issued: { "date-parts": [[1976]] },
+    note:
+      "Original construction of the surreal numbers $\\mathbf{No}$ " +
+      "as a proper-class real-closed field via the recursive " +
+      "$\\{L \\mid R\\}$ construction.  Basis for the birthday " +
+      "filtration and sign-sequence grading used in the surreal " +
+      "appendix.",
+  }),
+
+  // ── Gonshor 1986 (sign-sequence construction) ────────────────
+  ref({
+    id: "gonshor1986",
+    type: "book",
+    title: "An Introduction to the Theory of Surreal Numbers",
+    author: [{ family: "Gonshor", given: "Harry" }],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1986]] },
+    ISBN: "978-0521312059",
+    DOI: "10.1017/CBO9780511629143",
+    note:
+      "Sign-sequence presentation of $\\mathbf{No}$: every surreal " +
+      "number is a function $\\alpha \\to \\{+,-\\}$ for some ordinal " +
+      "$\\alpha$.  Provides the canonical grading used to lift braid " +
+      "words to surreals via Hecke eigenspace choices.",
+  }),
+
+  // ── Alling 1987 (analysis over surreal fields) ──────────────
+  ref({
+    id: "alling1987",
+    type: "book",
+    title: "Foundations of Analysis over Surreal Number Fields",
+    author: [{ family: "Alling", given: "Norman L." }],
+    publisher: "North-Holland",
+    "publisher-place": "Amsterdam",
+    issued: { "date-parts": [[1987]] },
+    ISBN: "978-0444702265",
+    note:
+      "Systematic development of analytic structure on surreal " +
+      "number fields: ordered-field topology, formal power series, " +
+      "and the absence of a canonical Lebesgue measure.  Reference " +
+      "for what survives of classical analysis under surreal " +
+      "replacement.",
+  }),
+
+  // ── Robinson 1966 (non-standard analysis) ───────────────────
+  ref({
+    id: "robinson1966",
+    type: "book",
+    title: "Non-standard Analysis",
+    author: [{ family: "Robinson", given: "Abraham" }],
+    publisher: "North-Holland",
+    "publisher-place": "Amsterdam",
+    issued: { "date-parts": [[1966]] },
+    note:
+      "Original model-theoretic construction of the hyperreals " +
+      "$^*\\mathbb{R}$ and the standard-part map $\\mathrm{st}$.  " +
+      "The surreal appendix adopts Robinson's standard-part " +
+      "construction as the replacement for the broken classical-" +
+      "limit functor $q \\to 1$.",
+  }),
+
+  // ── Berarducci-Mantova 2018 (derivations on surreals) ──────
+  ref({
+    id: "berarducci-mantova2018",
+    type: "article-journal",
+    title: "Surreal numbers, derivations and transseries",
+    author: [
+      { family: "Berarducci", given: "Alessandro" },
+      { family: "Mantova", given: "Vincenzo" },
+    ],
+    "container-title": "Journal of the European Mathematical Society",
+    volume: "20",
+    issue: "2",
+    page: "339-390",
+    issued: { "date-parts": [[2018]] },
+    DOI: "10.4171/JEMS/769",
+    note:
+      "Construction of a natural derivation on the surreal numbers " +
+      "extending $d/dx$ on the reals, making $\\mathbf{No}$ a " +
+      "differential field.  Provides the Jackson-derivative lift " +
+      "$d_q$ with $q = 1 + \\varepsilon$ used in " +
+      "\\ref{def:standard-part-functor}.",
+  }),
+
+  // ── Ehrlich 2012 (absolute continuum) ──────────────────────
+  ref({
+    id: "ehrlich2012",
+    type: "article-journal",
+    title:
+      "The absolute arithmetic continuum and the unification of all " +
+      "numbers great and small",
+    author: [{ family: "Ehrlich", given: "Philip" }],
+    "container-title": "Bulletin of Symbolic Logic",
+    volume: "18",
+    issue: "1",
+    page: "1-45",
+    issued: { "date-parts": [[2012]] },
+    DOI: "10.2178/bsl/1327328438",
+    note:
+      "Demonstrates that $\\mathbf{No}$ contains all real-closed " +
+      "ordered fields as subfields, including the hyperreals " +
+      "$^*\\mathbb{R}$ and the Hahn series $\\mathbb{R}((t^G))$ for " +
+      "any divisible ordered abelian group $G$.  Justifies " +
+      "embedding every analytic regime into a single surreal " +
+      "ambient.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
