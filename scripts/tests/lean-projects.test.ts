@@ -1,41 +1,44 @@
 /**
  * Lean project tests — compilation readiness, library presence, sorry audit.
  *
- * Works for any Lean project declared in lakefile.toml:
- * QOU, Fred2005, Unital, or anything added in the future.
+ * Walks every paper Lake package registered in the root workspace
+ * (`folio-assistant/schemas/lean-packages.ts`) plus the root workspace
+ * itself.
  */
 
 import { describe, test, expect } from "bun:test";
 import { readFileSync, existsSync } from "fs";
-import { join } from "path";
+import { join, relative } from "path";
 import {
   LEAN_DIR,
+  REPO_ROOT,
   discoverLeanProjects,
   discoverDependencies,
   findLeanFiles,
 } from "./helpers";
+import { LEAN_PACKAGES } from "../../folio-assistant/schemas/lean-packages";
 
-// ── Toolchain & lakefile ────────────────────────────────────────
+// ── Root workspace ──────────────────────────────────────────────
 
-describe("Lean toolchain", () => {
-  test("lean-toolchain exists", () => {
+describe("Lean root workspace", () => {
+  test("root lean-toolchain exists", () => {
     expect(existsSync(join(LEAN_DIR, "lean-toolchain"))).toBe(true);
   });
 
-  test("lean-toolchain has valid version", () => {
+  test("root lean-toolchain has valid version", () => {
     const tc = readFileSync(join(LEAN_DIR, "lean-toolchain"), "utf-8").trim();
     expect(tc).toMatch(/^leanprover\/lean4:v\d+\.\d+/);
   });
 
-  test("lakefile.toml exists", () => {
+  test("root lakefile.toml exists", () => {
     expect(existsSync(join(LEAN_DIR, "lakefile.toml"))).toBe(true);
   });
 
-  test("lake-manifest.json is valid JSON (if present)", () => {
-    const manifest = join(LEAN_DIR, "lake-manifest.json");
-    if (!existsSync(manifest)) return; // skip if not present
-    const content = readFileSync(manifest, "utf-8");
-    expect(() => JSON.parse(content)).not.toThrow();
+  test("root lakefile declares every paper package", () => {
+    const src = readFileSync(join(LEAN_DIR, "lakefile.toml"), "utf-8");
+    for (const pkg of LEAN_PACKAGES) {
+      expect(src).toContain(`name = "${pkg.name}"`);
+    }
   });
 });
 
@@ -48,12 +51,14 @@ describe("Lean dependencies", () => {
     expect(deps).toContain("mathlib");
   });
 
-  test("at least one dependency declared", () => {
-    expect(deps.length).toBeGreaterThan(0);
+  test("every registered paper package is declared", () => {
+    for (const pkg of LEAN_PACKAGES) {
+      expect(deps).toContain(pkg.name);
+    }
   });
 });
 
-// ── Per-project tests ───────────────────────────────────────────
+// ── Per-paper Lake packages ─────────────────────────────────────
 
 const projects = discoverLeanProjects();
 
@@ -61,14 +66,25 @@ describe("Lean project discovery", () => {
   test("at least one project found", () => {
     expect(projects.length).toBeGreaterThan(0);
   });
+
+  test("every LEAN_PACKAGES entry's lib is discovered", () => {
+    for (const pkg of LEAN_PACKAGES) {
+      expect(projects).toContain(pkg.lib);
+    }
+  });
 });
 
-for (const proj of projects) {
-  describe(`Project: ${proj}`, () => {
-    const projDir = join(LEAN_DIR, proj);
+for (const pkg of LEAN_PACKAGES) {
+  describe(`Paper package: ${pkg.name} (lib: ${pkg.lib})`, () => {
+    const pkgRoot = join(REPO_ROOT, pkg.lakeRoot);
+    const projDir = join(pkgRoot, pkg.lib);
     const leanFiles = findLeanFiles(projDir);
 
-    test("directory exists", () => {
+    test("lakefile.toml exists", () => {
+      expect(existsSync(join(pkgRoot, "lakefile.toml"))).toBe(true);
+    });
+
+    test("library directory exists", () => {
       expect(existsSync(projDir)).toBe(true);
     });
 
@@ -76,9 +92,8 @@ for (const proj of projects) {
       expect(leanFiles.length).toBeGreaterThan(0);
     });
 
-    // Per-file tests
     for (const file of leanFiles) {
-      const rel = file.replace(LEAN_DIR + "/", "");
+      const rel = relative(REPO_ROOT, file);
 
       test(`${rel} is non-empty`, () => {
         const content = readFileSync(file, "utf-8");
@@ -89,12 +104,12 @@ for (const proj of projects) {
         const content = readFileSync(file, "utf-8");
         const basename = file.split("/").pop()?.replace(".lean", "");
         const hasImport = /^import\s/m.test(content);
-        const isRoot = basename === proj;
+        const isRoot = basename === pkg.lib;
         expect(hasImport || isRoot).toBe(true);
       });
     }
 
-    // Sorry audit
+    // Sorry audit (informational — never fails the test run)
     test("sorry audit", () => {
       let totalSorry = 0;
       const sorryFiles: string[] = [];
@@ -103,23 +118,21 @@ for (const proj of projects) {
         const count = (content.match(/\bsorry\b/g) || []).length;
         if (count > 0) {
           totalSorry += count;
-          sorryFiles.push(`${file.replace(LEAN_DIR + "/", "")}(${count})`);
+          sorryFiles.push(`${relative(REPO_ROOT, file)}(${count})`);
         }
       }
-      // This is informational — we log but don't fail
       if (totalSorry > 0) {
-        console.log(`    ℹ ${proj}: ${totalSorry} sorry in ${sorryFiles.length} files: ${sorryFiles.join(", ")}`);
+        console.log(`    ℹ ${pkg.lib}: ${totalSorry} sorry in ${sorryFiles.length} files: ${sorryFiles.join(", ")}`);
       }
-      // Always passes — sorry count is tracked in the report
       expect(true).toBe(true);
     });
 
     // Build artifacts not tracked
-    test("no .lake/ artifacts in git", () => {
+    test("no .lake/ artifacts tracked in git", () => {
       const { execSync } = require("child_process");
       try {
-        const tracked = execSync("git ls-files --cached content/quantum-observable-universe/lean/.lake/", {
-          cwd: join(LEAN_DIR, ".."),
+        const tracked = execSync(`git ls-files --cached ${pkg.lakeRoot}/.lake/`, {
+          cwd: REPO_ROOT,
           encoding: "utf-8",
         }).trim();
         expect(tracked).toBe("");

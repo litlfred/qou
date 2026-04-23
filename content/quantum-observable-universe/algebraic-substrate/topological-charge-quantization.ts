@@ -3,8 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:topological-charge-quantization",
   title: "Quantization of topological charge",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.topological_charge_quantization",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.topological_charge_quantization",
     validation: "not_checked",
   },
   uses: [

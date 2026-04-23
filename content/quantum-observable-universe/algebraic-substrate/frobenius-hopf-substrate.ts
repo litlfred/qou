@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:frobenius-hopf-substrate",
   title: "The quantum vacuum as a Frobenius--Hopf algebra",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate",
     validation: "not_checked",
   },
   uses: ["def:quantum-universe", "def:frobenius-pairing"],

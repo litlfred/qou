@@ -31,10 +31,10 @@ import type { Data as CSLData } from "csl-json";
 import { references, referenceMap } from "../schema/references";
 import { mergeCitations } from "./citations";
 import { isWitnessed, leanFileHash } from "../../scripts/lean-witness";
+import { leanPackageByName, parseLeanRef } from "../../folio-assistant/schemas/lean-packages";
 
 const REPO_ROOT = resolve(import.meta.dir, "../..");
 const CONTENT_ROOT = join(REPO_ROOT, "content");
-const LEAN_ROOT = join(REPO_ROOT, "lean");
 
 const args = process.argv.slice(2);
 function argVal(name: string, fallback: string): string {
@@ -105,6 +105,21 @@ interface ExportedPaper {
 
 // ── Helpers ──────────────────────────────────────────────────────
 
+/**
+ * Resolve the Lake package root for a block's `lean.ref`.  Returns the
+ * absolute path to e.g. `content/quantum-observable-universe/lean/`.
+ */
+function leanPackageRoot(leanRef: LeanRef | undefined): string | undefined {
+  if (!leanRef?.ref) return undefined;
+  try {
+    const parsed = parseLeanRef(leanRef.ref);
+    const pkg = leanPackageByName(parsed.package);
+    return pkg ? join(REPO_ROOT, pkg.lakeRoot) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 function readLeanSource(leanRef: LeanRef | undefined, colocatedLeanPath?: string): string | undefined {
   if (!leanRef) return undefined;
 
@@ -113,17 +128,14 @@ function readLeanSource(leanRef: LeanRef | undefined, colocatedLeanPath?: string
     return readFileSync(colocatedLeanPath, "utf-8");
   }
 
-  // Try explicit file path in lean/ project
-  if (leanRef.file) {
-    const leanPath = join(LEAN_ROOT, leanRef.file);
-    if (existsSync(leanPath)) return readFileSync(leanPath, "utf-8");
-  }
-
-  // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo.lean, QOU/Foo/Bar.lean
-  if (leanRef.decl) {
-    const parts = leanRef.decl.split(".");
+  // Auto-resolve from the package-qualified ref:
+  //   "qou:QOU.Foo.Bar" → <lakeRoot>/QOU/Foo.lean, <lakeRoot>/QOU/Foo/Bar.lean
+  const pkgRoot = leanPackageRoot(leanRef);
+  if (pkgRoot) {
+    const parsed = parseLeanRef(leanRef.ref);
+    const parts = parsed.decl.split(".");
     for (let i = parts.length; i >= 2; i--) {
-      const candidate = join(LEAN_ROOT, parts.slice(0, i).join("/") + ".lean");
+      const candidate = join(pkgRoot, parts.slice(0, i).join("/") + ".lean");
       if (existsSync(candidate)) return readFileSync(candidate, "utf-8");
     }
   }
@@ -190,10 +202,12 @@ async function main() {
           let leanHash: string | undefined;
           let witnessed: boolean | undefined;
           if (leanRef) {
-            const leanFilePath = existsSync(colocatedLean)
-              ? colocatedLean
-              : leanRef.file ? join(LEAN_ROOT, leanRef.file) : undefined;
-            if (leanFilePath && existsSync(leanFilePath)) {
+            // Witness caching keys off the sibling .lean file when present.
+            // The package-qualified `ref` URI does not carry a single
+            // canonical file path (a decl may map to multiple candidates),
+            // so we only compute a witness when a sibling file exists.
+            const leanFilePath = existsSync(colocatedLean) ? colocatedLean : undefined;
+            if (leanFilePath) {
               const result = isWitnessed(leanFilePath);
               leanHash = result.hash;
               witnessed = result.witnessed;

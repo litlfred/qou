@@ -4,8 +4,7 @@ export default definition({
   label: "def:q-exponential",
   title: "$q$-Exponential (grouplike)",
   tags: ["hopf-algebra", "grouplike", "q-exponential", "reeb-flow"],
-  lean: {
-    decl: "QOU.QExponential",
+  lean: { ref: "qou:QOU.QExponential",
     validation: "not_checked",
   },
   uses: [

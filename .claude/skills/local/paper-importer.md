@@ -127,9 +127,10 @@ User selects which blocks to formalize. For each:
      sorry
    ```
 
-2. Update `.ts` manifest:
+2. Update `.ts` manifest (use the package-qualified `ref` URI; see
+   `folio-assistant/schemas/lean-packages.ts` for package names):
    ```typescript
-   lean: { decl: "QOU.Imported.Smith2024.imported_main_result" },
+   lean: { ref: "qou:QOU.Imported.Smith2024.imported_main_result" },
    status: "stated"
    ```
 

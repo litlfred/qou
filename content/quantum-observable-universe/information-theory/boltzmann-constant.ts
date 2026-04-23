@@ -8,8 +8,7 @@ export default proposition({
     "statistical-mechanics",
     "planck-constant",
   ],
-  lean: {
-    decl: "QOU.Information.thermalEnergy",
+  lean: { ref: "qou:QOU.Information.thermalEnergy",
     validation: "not_checked",
   },
   uses: [

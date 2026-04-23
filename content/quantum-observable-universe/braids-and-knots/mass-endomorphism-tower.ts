@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:mass-endomorphism-tower",
   title:
     "Proton--electron mass ratio from the $\\Phi_q$ tower",
-  lean: {
-    decl: "QOU.MassEndomorphism.proton_electron_ratio",
+  lean: { ref: "qou:QOU.MassEndomorphism.proton_electron_ratio",
     validation: "not_checked",
   },
   uses: [

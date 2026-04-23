@@ -592,9 +592,12 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
         lines.push(`  \\label{${block.label}}`);
       }
 
-      // Lean reference
-      if ("lean" in block && block.lean) {
-        lines.push(`  \\lean{${block.lean.decl}}`);
+      // Lean reference — emit the bare Lean declaration (without the
+      // `<package>:` URI prefix) for the LaTeX blueprint macro.
+      if ("lean" in block && block.lean?.ref) {
+        const colonIdx = block.lean.ref.indexOf(":");
+        const decl = colonIdx >= 0 ? block.lean.ref.slice(colonIdx + 1) : block.lean.ref;
+        lines.push(`  \\lean{${decl}}`);
         if (block.lean.sorryFree) {
           lines.push(`  \\leanok`);
         }

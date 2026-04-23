@@ -13,8 +13,7 @@ export default definition({
     "q-dependent",
     "cohomology",
   ],
-  lean: {
-    decl: "QOU.SkeinResolutionObstruction",
+  lean: { ref: "qou:QOU.SkeinResolutionObstruction",
     validation: "not_checked",
   },
   uses: [

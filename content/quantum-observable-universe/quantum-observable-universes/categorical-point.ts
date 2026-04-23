@@ -4,8 +4,7 @@ export default definition({
   label: "def:categorical-point",
   title: "Categorical point",
   tags: ["point", "categorical"],
-  lean: {
-    decl: "QOU.CategoricalPoint",
+  lean: { ref: "qou:QOU.CategoricalPoint",
     validation: "not_checked",
   },
   uses: ["def:quantum-universe"],

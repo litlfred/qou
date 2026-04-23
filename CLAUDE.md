@@ -200,6 +200,56 @@ These rules apply whenever an agent creates or modifies a `.lean` file.
 Agents **must** follow all of them; violations will be caught by the
 `content-block-review` skill.
 
+### 0. Standardized root Lake workspace
+
+The repo uses a **single root Lake workspace** (`/lakefile.toml`,
+`/lean-toolchain`).  Each paper is a Lake **package** declared by
+`[[require]]` with a short-form name:
+
+| Package | Paper directory | Library module |
+|---------|-----------------|----------------|
+| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+
+**Preferred build commands** (always run from repo root):
+
+```bash
+lake build           # build every paper package
+lake build QOU       # single paper library
+lake exe cache get   # fetch Mathlib cache for the workspace
+```
+
+Per-paper `cd content/<paper>/lean && lake build` still works, but
+root-workspace commands are the standardized entry point used by CI
+(`lean_ci.yml`, `blueprint.yml`) and the MCP server (`lean_build`).
+
+### 0a. Content-block `lean.ref` is a package-qualified URI
+
+Every `lean:` field on a content block uses a package-qualified URI
+of the form `"<package>:<Decl.Path>"`:
+
+```ts
+// definition in the qou package
+lean: { ref: "qou:QOU.Torsion.lifting_exists" }
+
+// cross-paper reference (ugb package)
+lean: { ref: "ugb:UGB.GrobnerShirshov.Basis" }
+```
+
+- **Package prefix** must be one of `qou`, `ugb`, `fred2005` — see
+  `folio-assistant/schemas/lean-packages.ts` for the registry and
+  `parseLeanRef()` helper.
+- The legacy `decl:` / `file:` shape is **removed**.  Validation fails
+  on blocks that still use it.
+- The pipeline resolves a `.lean` source file by: (1) sibling
+  `<rootName>.lean`, (2) `<lakeRoot>/<Decl/Path>.lean` under the
+  package's Lake root, (3) grep fallback on current branch.
+
+To register a **new paper** as a Lake package: add a `[[require]]`
+stanza to the root `lakefile.toml`, append to `LEAN_PACKAGES` in
+`lean-packages.ts`, and add the library name to `defaultTargets`.
+
 ### 1. Every `sorry` requires a bibliographic citation
 
 ```lean
@@ -762,15 +812,20 @@ configured via `.mcp.json`. It provides Claude Code with:
 Prerequisites: `git`, `curl`.
 
 Use the `lean_setup` MCP tool (provided by paper-assistant). It installs:
-uv, elan, the Lean toolchain pinned in
-`content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache,
-ripgrep, and runs `lake build`.
+uv, elan, the Lean toolchain pinned in the **root** `lean-toolchain`,
+Mathlib cache, ripgrep, and runs `lake build` in the **root Lake
+workspace**.
 
 Alternatively, from the command line:
 
 ```bash
-cd content/quantum-observable-universe/lean
+# Build every paper at once from the root workspace
 lake exe cache get && lake build
+
+# Or build a single paper package
+lake build QOU        # quantum-observable-universe
+lake build UGB        # unital-groebner-bases
+lake build Fred2005   # fred2005-formal-groups
 ```
 
 ### Local Mathlib cache
@@ -858,7 +913,11 @@ tool rather than silently failing.
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
-| `content/quantum-observable-universe/lean/` | Lean 4 formalization (lakefile.toml, QOU/) |
+| `lakefile.toml`, `lean-toolchain` | **Root Lake workspace** — aggregates every paper package; `lake build` here builds all |
+| `content/quantum-observable-universe/lean/` | `qou` Lake package (lib: `QOU`) |
+| `content/unital-groebner-bases/lean/` | `ugb` Lake package (lib: `UGB`) |
+| `content/fred2005-formal-groups/lean/` | `fred2005` Lake package (lib: `Fred2005`) |
+| `folio-assistant/schemas/lean-packages.ts` | Registry mapping `lean.ref` URI prefixes → Lake packages |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
@@ -883,7 +942,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | Workflow | Artifacts deployed to gh-pages |
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `content/quantum-observable-universe/lean/` (source browser), `content/quantum-observable-universe/lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
+| `lean_ci.yml` | `lean/content/<paper>/lean/` (per-paper source browsers for QOU/UGB/Fred2005), `lean/.../docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
 | `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents

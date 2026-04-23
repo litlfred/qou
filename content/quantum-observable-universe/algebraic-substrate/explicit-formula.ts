@@ -3,8 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:explicit-formula",
   title: "Explicit formula as a spectral--geometric trace identity",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.explicit_formula",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.explicit_formula",
     validation: "not_checked",
   },
   uses: [

@@ -14,8 +14,7 @@ export default proposition({
     "nuclear-structure",
     "inductive-construction",
   ],
-  lean: {
-    decl: "QOU.Descartes.torus_knot_shell_binding",
+  lean: { ref: "qou:QOU.Descartes.torus_knot_shell_binding",
     validation: "not_checked",
   },
   uses: [

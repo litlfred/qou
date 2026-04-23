@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:atom-knot-exists",
   title: "Existence of the atom-knot for any (Z, N)",
-  lean: {
-    decl: "QOU.BraidKnot.AtomKnot.exists",
+  lean: { ref: "qou:QOU.BraidKnot.AtomKnot.exists",
     validation: "not_checked",
   },
   uses: [

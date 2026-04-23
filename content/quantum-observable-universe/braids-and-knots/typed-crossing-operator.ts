@@ -11,8 +11,7 @@ export default definition({
     "flavor",
     "skein",
   ],
-  lean: {
-    decl: "QOU.Braiding.TypedCrossingOperator",
+  lean: { ref: "qou:QOU.Braiding.TypedCrossingOperator",
     validation: "not_checked",
   },
   uses: [

@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:confinement-phase-stratification",
   title:
     "Confinement phases are open strata of the generic $q$-locus",
-  lean: {
-    decl: "QOU.BraidKnot.ConfinementPhaseStratification",
+  lean: { ref: "qou:QOU.BraidKnot.ConfinementPhaseStratification",
     validation: "not_checked",
   },
   uses: [
