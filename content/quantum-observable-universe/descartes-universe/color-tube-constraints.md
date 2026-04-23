@@ -47,3 +47,19 @@ Eliminating $h_2(c)$ via the shifted quadric yields the
 All three equations are polynomial over $\mathbb{Z}$ in $z, r, g, b, \sigma$;
 they therefore define affine varieties over $\mathbb{Z}$ and descend
 to $\mathbb{F}_\mathfrak{p}$ for every prime $\mathfrak{p} \ne 5$.
+
+**Commutative-limit specialisation.**  Under the weight
+identification of
+[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification),
+the weight-$(-1)$ Lagrange resolvent $w_1$ on Bring's surface
+corresponds canonically to the affine coordinate $x$ on the
+hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$.
+Restricting the full $S_5$-symmetric color-tube system above to
+its cyclic $\mathbb{Z}_5 \subset S_5$ residue selects this single
+weight channel: the three color coordinates $r, g, b$ and the
+shift $z$ collapse to observables on the single $\mathrm{U}(1)$
+phase tube of
+[rem:u1-phase-tube](#rem:u1-phase-tube).  The shifted quadric
+and cubic, evaluated along $w_2 = w_3 = w_4 = 0$, reduce to the
+single-variable identity $x^5 - 1 = y^2$ that defines
+$\mathcal{X}_5$.

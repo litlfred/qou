@@ -140,6 +140,22 @@ the ghost of the fourth generation — algebraically valid,
 topologically null, with no shell action and no compatible
 symmetry.
 
+**Representation-theoretic refinement.**  The distinguished role
+of $T_{2,3}$ and $T_{2,5}$ at the top of the embedding table
+acquires a representation-theoretic origin under the weight
+identification of
+[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification).
+Passing to the hyperelliptic quintic $\mathcal{X}_5$ of
+[thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification),
+the non-trivial $\mathbb{Z}_5$-isotypical part of
+$H^1(\mathcal{X}_5, \mathbb{Q})$ is exactly the 4-dim character
+sum $\chi_1 \oplus \chi_2 \oplus \chi_3 \oplus \chi_4$, and the
+Seifert surface of $T_{2,5}$ fills this representation
+completely ($g(T_{2,5}) = 2 = \dim_{\mathbb{C}} J(\mathcal{X}_5)$),
+while $T_{2,3}$ occupies a 2-dim sub-isotype.  See
+[rem:weight-identification-consequences](#rem:weight-identification-consequences)
+for details.
+
 ---
 
 ## 5. Skein interaction: modified crossing relation
