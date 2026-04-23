@@ -58,6 +58,12 @@ export default chapter({
       ],
     },
     {
+      heading: "Characteristic-$p$ companion: nimber surreals",
+      blocks: [
+        "on-p-modular-hecke",
+      ],
+    },
+    {
       heading: "Outlook",
       blocks: [
         "surreal-appendix-conclusion",

@@ -1,0 +1,127 @@
+The Hoefsmit seminormal form
+([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form))
+diagonalises the Iwahori--Hecke algebra $H_n(q)$ acting on
+$V^{\otimes n}$ along a tower of Young--Jucys--Murphy elements
+indexed by standard tableaux. At each step, a Hecke generator $T_i$
+splits a tableau-vector into two eigencomponents:
+
+- the **symmetric** ($q$-eigen) component, corresponding to the
+  tableau where boxes $i$ and $i+1$ lie in the same row;
+- the **antisymmetric** ($-q^{-1}$-eigen) component, corresponding
+  to the tableau where they lie in the same column.
+
+This is structurally identical to Conway's recursive surreal
+construction.
+
+## Statement
+
+Let $\mathrm{Tab}(\lambda)$ denote the set of standard tableaux of
+shape $\lambda$, viewed as the vertex set of a tree $\mathcal{T}_n$
+whose edges record the Young--Jucys--Murphy ordering. Let
+$\mathbf{No}_{\leq n}$ denote the set of dyadic surreals of birthday
+$\leq n$ (equivalently, sign sequences of length $\leq n$).
+
+There is a canonical isomorphism of forests
+
+$$
+  \Phi : \bigsqcup_{\lambda \vdash n,\, \ell(\lambda) \leq 2}
+    \mathrm{Tab}(\lambda)
+   \xrightarrow{\sim}
+  \mathbf{No}_{\leq n}^{\mathrm{dy}}
+$$
+
+such that:
+
+1. The root tableau (the trivial partition $(n)$) maps to the
+   surreal $0$.
+2. Each YJM-edge $t \to t'$ corresponds to a unique sign-sequence
+   extension $s \to s\!\cdot\! +$ (symmetric channel)
+   or $s \to s\!\cdot\! -$ (antisymmetric channel).
+3. The birthday $b(\Phi(t))$ equals the YJM depth (= number of
+   boxes placed) of $t$.
+
+## Proof sketch
+
+The Hoefsmit seminormal basis is built by inductively decomposing
+$V^{\otimes n}$ via the chain
+$H_1(q) \subset H_2(q) \subset \cdots \subset H_n(q)$. At each step
+$k$, every existing eigenvector $|t\rangle$ for $H_k(q)$ splits
+under $T_k$ into:
+
+- $a^+_t \cdot |t \cup \square_{k+1}^{\to}\rangle$ (extend tableau
+  rightward; $q$-eigenvalue);
+- $a^-_t \cdot |t \cup \square_{k+1}^{\downarrow}\rangle$ (extend
+  tableau downward; $-q^{-1}$-eigenvalue).
+
+Conway's surreal construction at stage $k$ takes each existing
+surreal $x$ with sign-sequence $s$ and produces *exactly two*
+new surreals: $x^+$ (insert $+$ at position $k+1$) and $x^-$
+(insert $-$ at position $k+1$). The bijection $\Phi$ matches
+these two-fold splittings step-by-step.
+
+Compatibility with sums is forced by the eigenvalue convention:
+$T_i$'s $q$-eigenspace + $-q^{-1}$-eigenspace decomposition
+matches Conway's $\{L \mid R\}$ pairing $L < x < R$.
+
+For tableaux of shape $\lambda$ with $\ell(\lambda) \leq 2$, the
+restriction to "first or second row" is exactly the $\mathrm{SU}(2)$
+constraint that limits Young diagrams to two-rowed shapes —
+giving the *binary* (rather than $r$-ary) split needed for the
+sign-sequence interpretation.
+
+A full proof requires:
+
+- formalising the YJM-tableau tree structure (in Mathlib:
+  `Combinatorics.YoungTableau` plus a `successor` relation);
+- formalising Gonshor's sign-sequence-to-surreal map (open in
+  Mathlib's `SetTheory.Game.Surreal` development);
+- checking the eigenvalue conventions (Hoefsmit uses
+  $q$ and $-q^{-1}$; Conway's construction uses left/right of
+  midpoint).
+
+The Lean stub axiomatises the bijection
+([sign sequence functor](#def:sign-sequence-of-braid)) pending
+these prerequisites.
+
+## Consequences
+
+This identification has several immediate consequences:
+
+1. **Sign-sequence braid invariant** is well-defined and lives
+   in $\mathbf{No}_{\leq c(\beta)}^{\mathrm{dy}}$ for braid $\beta$
+   of crossing number $c(\beta)$.
+
+2. **Birthday refines crossing number**:
+   $b(\mathrm{surr}(\beta, t)) \leq c(\beta)$, with equality for
+   reduced braids.
+
+3. **Hoefsmit factorisation = Conway construction**: the closed
+   formula for $\rho_\lambda(T_i)$ as a $2 \times 2$ matrix
+   in YJM coordinates is *exactly* the recursive surreal recipe
+   $x = \{x^- \mid x^+\}$ with the eigenvalue ratio
+   $q : -q^{-1}$ determining the position of $x$ between $x^-$
+   and $x^+$.
+
+4. **The Jones polynomial $J_K(q)$** can be re-expressed as a
+   weighted sum over surreal sign sequences (rather than over
+   tableaux), exposing a previously-hidden combinatorial
+   structure
+   ([Jones polynomial birthday refinement](#conj:jones-birthday)).
+
+5. **Knot complexity** acquires an honest ordinal-valued
+   refinement: knots of unbounded crossing number live at
+   birthdays approaching $\omega$.
+
+## Significance
+
+This is the central observation of the appendix. The QOU paper
+already uses the Hoefsmit seminormal form as its
+algebraic-combinatorial backbone (it powers the mass formula,
+the $\mathcal{Q}$-value derivations, the spectral decomposition
+on $\Sigma_g$). What this proposition shows is that the same
+backbone, viewed differently, is a literal instance of Conway's
+surreal-number construction.
+
+The surreal lift of QOU is therefore not a *new* structure
+imposed on the paper; it is a different *language* for what
+Hoefsmit already provides.
