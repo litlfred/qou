@@ -1685,9 +1685,13 @@ export const references: CSLData[] = [
     title: "The Geometry and Topology of Three-Manifolds",
     author: [{ family: "Thurston", given: "William P." }],
     publisher: "Princeton University",
-    note: "Lecture notes",
     issued: { "date-parts": [[1978]] },
     URL: "https://www.msri.org/publications/books/gt3m/",
+    note:
+      "Lecture notes establishing the ideal-tetrahedron " +
+      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
+      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
+      "expansion of the categorical mass endomorphism.",
   }),
 
   // ── Bring 1786 ────────────────────────────────────────────────
@@ -2469,23 +2473,6 @@ export const references: CSLData[] = [
       "Empirical extraction of the Wigner energy term \u0394_W \u2248 6.3 MeV " +
       "in the nuclear mass formula, attributed to T=0 isoscalar " +
       "proton-neutron pairing.",
-  }),
-
-  // ── Thurston 1978 (hyperbolic geometry of 3-manifolds) ───────
-  ref({
-    id: "thurston1978",
-    type: "book",
-    title:
-      "The Geometry and Topology of Three-Manifolds",
-    author: [{ family: "Thurston", given: "William P." }],
-    publisher: "Princeton University lecture notes",
-    issued: { "date-parts": [[1978]] },
-    URL: "http://library.msri.org/books/gt3m/",
-    note:
-      "Original lecture notes establishing the ideal-tetrahedron " +
-      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
-      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
-      "expansion of the categorical mass endomorphism.",
   }),
 
   // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
