@@ -1,0 +1,24 @@
+import { conjecture } from "../../schema/builders";
+
+export default conjecture({
+  label: "conj:lifted-crossing-locality",
+  title:
+    "Locality of lifted-crossing contributions in the mass expansion",
+  tags: [
+    "locality",
+    "crossing-expansion",
+    "quantum-dilogarithm",
+    "factorization",
+    "kz-connection",
+    "flatness",
+  ],
+  lean: {
+    decl: "QOU.ParticleInteractions.LiftedCrossingLocality",
+    validation: "not_checked",
+  },
+  uses: [
+    "conj:crossing-graded-mass-expansion",
+    "conj:mass-volume-factorization",
+  ],
+  cites: ["kohno1987"],
+});

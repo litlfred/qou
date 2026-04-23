@@ -2470,6 +2470,68 @@ export const references: CSLData[] = [
       "in the nuclear mass formula, attributed to T=0 isoscalar " +
       "proton-neutron pairing.",
   }),
+
+  // ── Thurston 1978 (hyperbolic geometry of 3-manifolds) ───────
+  ref({
+    id: "thurston1978",
+    type: "book",
+    title:
+      "The Geometry and Topology of Three-Manifolds",
+    author: [{ family: "Thurston", given: "William P." }],
+    publisher: "Princeton University lecture notes",
+    issued: { "date-parts": [[1978]] },
+    URL: "http://library.msri.org/books/gt3m/",
+    note:
+      "Original lecture notes establishing the ideal-tetrahedron " +
+      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
+      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
+      "expansion of the categorical mass endomorphism.",
+  }),
+
+  // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
+  ref({
+    id: "kohno1987",
+    type: "article-journal",
+    title:
+      "Monodromy representations of braid groups and Yang-Baxter equations",
+    author: [{ family: "Kohno", given: "Toshitake" }],
+    "container-title": "Annales de l'Institut Fourier",
+    volume: "37",
+    issue: "4",
+    page: "139-160",
+    issued: { "date-parts": [[1987]] },
+    DOI: "10.5802/aif.1075",
+    note:
+      "Proves that monodromy of the Knizhnik-Zamolodchikov " +
+      "connection on the configuration space X_n coincides with " +
+      "the quantum-group R-matrix representation of U_q(g).  " +
+      "Flatness of the KZ connection at generic q is the " +
+      "mathematical content behind the lifted-crossing locality " +
+      "hypothesis in the mass-volume expansion.",
+  }),
+
+  // ── Murakami & Murakami 2001 (volume conjecture) ─────────────
+  ref({
+    id: "murakami2001",
+    type: "article-journal",
+    title:
+      "The colored Jones polynomials and the simplicial volume of a knot",
+    author: [
+      { family: "Murakami", given: "Hitoshi" },
+      { family: "Murakami", given: "Jun" },
+    ],
+    "container-title": "Acta Mathematica",
+    volume: "186",
+    issue: "1",
+    page: "85-104",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1007/BF02392716",
+    note:
+      "Formulation of the volume conjecture connecting colored " +
+      "Jones polynomials at roots of unity to hyperbolic volume. " +
+      "Underlies the quantum-dilogarithm semiclassical expansion " +
+      "used in the Frobenius-JSJ binding decomposition.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
