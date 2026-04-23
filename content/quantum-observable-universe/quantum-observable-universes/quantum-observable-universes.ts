@@ -115,6 +115,8 @@ export default chapter({
         "substrate-parameter",
         "substrate-parameter-exists",
         "substrate-parameter-exists-proof",
+        "substrate-parameter-unique",
+        "substrate-parameter-unique-proof",
         "substrate-parameter-su2",
         "substrate-parameter-brings",
         "quantum-gauge-group",
