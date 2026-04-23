@@ -15,7 +15,9 @@ export default remark({
   ],
   uses: [
     "prop:topological-mass-formula",
+    "thm:topological-mass",
     "def:quantum-planck-constant",
+    "def:substrate-parameter",
     "def:algebraic-quantum-volume",
     "prop:algebraic-volume-specialization",
     "def:habiro-ring",

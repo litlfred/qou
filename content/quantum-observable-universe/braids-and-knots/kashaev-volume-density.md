@@ -2,7 +2,7 @@ The topological mass formula
 ([topological mass formula](#prop:topological-mass-formula))
 
 $$
-  \mathfrak{m}(K) \approx \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}
+  \mathfrak{m}(K) = \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}
 $$
 
 is most naturally read as a **volume $\times$ density** product.  This
@@ -40,13 +40,16 @@ Rewriting the topological mass formula with $\rho_q$ made explicit:
 
 $$
   \mathfrak{m}(K)
-  \;\approx\;
+  \;=\;
   \underbrace{\mathrm{Vol}(K)}_{\text{topological volume}}
   \;\cdot\;
   \underbrace{\rho_q}_{\text{substrate density}}.
 $$
 
-Mass is volume weighted by the drag density of the substrate.
+Mass is volume weighted by the drag density of the substrate.  This
+rewriting is an exact algebraic restatement of the proposition; the
+$\approx$ sign only enters below, when the continuous $\mathrm{Vol}(K)$
+is replaced by the Kashaev limit of Markov traces.
 
 ### The Kashaev bridge
 
@@ -66,12 +69,22 @@ $$
   \frac{\log\lvert J_{N}(K;\,e^{2\pi i / N})\rvert}{N},
 $$
 
-where $J_{N}(K; q)$ is the $N$-coloured Jones polynomial at $q$.  In the
-QOU setting the left-hand side is the continuous holonomy term that
-appears in the archimedean proof of the mass formula; the right-hand
-side is a limit of **Markov traces** in the Iwahori--Hecke algebra
-$H_{n}(q)$, each of which is the categorical $\int_{A}$ evaluated on the
-Hecke image $\rho(\beta_{K}) \in H_{n}(q)$
+where $J_{N}(K; q)$ is the **$N$-coloured** Jones polynomial at $q$:
+the Markov trace on the Hecke closure of $\beta_{K}$ with a
+Jones--Wenzl projector $p_{N-1}$ inserted, equivalently the quantum
+trace in the $N$-dimensional irreducible representation
+$V_{N-1}$ of $U_{q}(\mathfrak{sl}_{2})$.  The standard Markov trace
+$\mathrm{tr}_{M}$ recovers only the $N = 2$ case
+([Jones--Markov trace](#thm:jones-markov-trace)); higher colourings
+replace $\mathrm{tr}_{M}$ by the trace $\mathrm{tr}_{M}^{(N)}$ on the
+$V_{N-1}$-coloured closure, and all three --- coloured trace,
+categorical $\int_{A}$ on the $N$-th symmetric power, and
+$J_{N}$ --- agree.  In the QOU setting the left-hand side is the
+continuous holonomy term that appears in the archimedean proof of
+the mass formula; the right-hand side is a limit of **coloured
+Markov traces** in the Iwahori--Hecke algebra $H_{n}(q)$, each still
+a categorical $\int_{A}$ evaluation, but on the Hecke image
+$\rho(\beta_{K})$ composed with the projector $p_{N-1}$
 ([Jones--Markov trace](#thm:jones-markov-trace);
 [Markov trace product](#thm:markov-trace-product)).
 
@@ -88,22 +101,27 @@ swap:
    $\int_{A} \colon A \to \mathbf{1}$ and the categorical trace of
    $(\int_{A} \otimes \mathrm{id}) \circ \Delta \circ \varrho$ are
    finite, exact, and defined without recourse to a continuous manifold.
-   Through the representation $\rho \colon B_{n} \to H_{n}(q)$ they
-   coincide with the Markov trace $\mathrm{tr}_{M}$
-   ([Jones--Markov trace](#thm:jones-markov-trace)).
-2. **The Jones polynomials are Markov traces.**  Each
-   $J_{N}(K;\,e^{2\pi i/N})$ is a finite algebraic evaluation of
-   $\mathrm{tr}_{M}$ on the Hecke image of the braid closure that
-   represents $K$.  The algebraic quantum volume
+   Through the representation $\rho \colon B_{n} \to H_{n}(q)$ the
+   fundamental-colour ($N = 2$) case coincides with the standard
+   Markov trace $\mathrm{tr}_{M}$
+   ([Jones--Markov trace](#thm:jones-markov-trace)); higher colours
+   use the projector-inserted trace $\mathrm{tr}_{M}^{(N)}$, still
+   defined purely inside $H_{n}(q)$.
+2. **The coloured Jones polynomials are coloured Markov traces.**
+   Each $J_{N}(K;\,e^{2\pi i/N})$ is a finite algebraic evaluation of
+   $\mathrm{tr}_{M}^{(N)}$ on the Hecke image of the braid closure
+   that represents $K$ --- equivalently, of the quantum trace in
+   $V_{N-1}$.  The algebraic quantum volume
    $\mathrm{Vol}_{q}(\beta) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$
    ([algebraic quantum volume](#def:algebraic-quantum-volume)) collects
-   these evaluations into a single Laurent polynomial, and embeds into
-   the Habiro ring ([Habiro ring](#def:habiro-ring)).
+   these evaluations (across colours and roots of unity) into a
+   single object, which embeds into the Habiro ring
+   ([Habiro ring](#def:habiro-ring)).
 3. **The hyperbolic volume is emergent.**  By the Kashaev conjecture,
    $\mathrm{Vol}(K)$ is the asymptotic coefficient of the logarithm of
-   these algebraic traces as $N \to \infty$.  It is the macroscopic
-   shadow of an infinite family of finite algebraic measurements, not an
-   input to them
+   these coloured Markov traces as the colour $N \to \infty$.  It is
+   the macroscopic shadow of an infinite family of finite algebraic
+   measurements, not an input to them
    ([algebraic volume specialisation](#prop:algebraic-volume-specialization)).
 
 What the archimedean observer calls "the continuous hyperbolic volume
@@ -128,15 +146,19 @@ $$
   \rho_{q}\;\cdot\;
   \Bigl[
     2\pi\,\lim_{N \to \infty}
-    \frac{\log\lvert \mathrm{tr}_{M}(\rho(\beta_{K}))\rvert_{q = e^{2\pi i/N}}}{N}
-  \Bigr].
+    \frac{\log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert}{N}
+  \Bigr],
 $$
+
+where each $J_{N}(K;\,e^{2\pi i/N})$ is the coloured Markov trace
+$\mathrm{tr}_{M}^{(N)}(\rho(\beta_{K}))$ at $q = e^{2\pi i/N}$ ---
+still an entirely algebraic evaluation inside $H_{n}(q)$.
 
 Three observations follow.
 
 1. *No continuous input.*  Every quantity on the right-hand side is
-   either a rational function of $q$ ($\rho_{q}$) or a Markov trace in
-   $H_{n}(q)$ evaluated at roots of unity
+   either a rational function of $q$ ($\rho_{q}$) or a coloured
+   Markov trace in $H_{n}(q)$ evaluated at roots of unity
    ([Markov trace product](#thm:markov-trace-product)).  The hyperbolic
    volume enters only as the asymptotic coefficient, not as a separately
    posited datum.
@@ -155,9 +177,10 @@ Three observations follow.
    ([topological mass](#thm:topological-mass)).  The underlying
    categorical identity $\mathfrak{m}(\varrho) = \bigl\lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \bigr\rVert + \sum_{i} \bigl\lVert \mathrm{tr}_{\mathrm{trans}}(\varrho, p_{i}) \bigr\rVert$ is exact.
 
-In short: mass is volume times density; volume is the Kashaev shadow of
-the Markov trace; the Markov trace is the categorical trace of the
-Hecke image.  The entire chain is algebraic, and the appearance of
-continuous hyperbolic geometry in the archimedean mass formula is an
-asymptotic artefact of the quantum group at roots of unity, not a
-prerequisite of the framework.
+In short: mass is volume times density; volume is the Kashaev shadow
+of an infinite family of coloured Markov traces (each a categorical
+$\int_{A}$ on the projector-inserted Hecke image); every step is
+algebraic, and the appearance of continuous hyperbolic geometry in
+the archimedean mass formula is an asymptotic artefact of the
+quantum group at roots of unity, not a prerequisite of the
+framework.
