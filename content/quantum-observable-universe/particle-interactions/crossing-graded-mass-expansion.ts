@@ -18,9 +18,11 @@ export default conjecture({
   },
   uses: [
     "conj:mass-volume-factorization",
+    "conj:lifted-crossing-locality",
     "rem:kashaev-volume-density",
     "def:crossing-energy",
     "def:algebraic-quantum-volume",
+    "prop:descartes-elliptic-curve",
     "prop:thurston-volume-additivity",
     "prop:tower-binding-energy",
   ],

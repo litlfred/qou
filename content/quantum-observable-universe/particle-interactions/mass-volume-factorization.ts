@@ -18,6 +18,7 @@ export default conjecture({
   },
   uses: [
     "rem:kashaev-volume-density",
+    "rem:frobenius-packing-density",
     "prop:thurston-volume-additivity",
     "prop:tower-binding-energy",
     "def:atomic-braid",

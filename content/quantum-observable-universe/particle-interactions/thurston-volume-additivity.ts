@@ -18,6 +18,8 @@ export default proposition({
   },
   uses: [
     "def:atomic-braid",
+    "prop:wedderburn-mass-formula",
+    "prop:local-substrate-q",
   ],
   cites: ["thurston1978"],
 });

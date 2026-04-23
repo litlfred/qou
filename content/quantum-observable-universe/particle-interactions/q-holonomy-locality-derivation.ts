@@ -16,6 +16,7 @@ export default remark({
   uses: [
     "conj:lifted-crossing-locality",
     "conj:crossing-graded-mass-expansion",
+    "rem:soft-confinement-at-q0",
   ],
   cites: ["kohno1987"],
 });

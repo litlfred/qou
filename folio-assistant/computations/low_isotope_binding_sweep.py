@@ -13,7 +13,7 @@ Strategies (in order of specificity):
 
   (A) Census knot match — for A = 2, 3 the complement of the
       atomic braid is a named hyperbolic knot/link from SnapPy's
-      census (D → 6_2, T → 8_11, ³He → Borromean 8³_9).
+      census (D → 6_2, T → 8_11, ³He → Borromean 6³_2).
       B = ρ(A) · Vol(census_knot).
 
   (B) α-cluster unfolding — for A ≥ 4 Z=N (α-chain atoms):

@@ -1,7 +1,7 @@
 {
   "name": "sdp-knot-match",
   "description": "SDP-based knot match for atomic binding.  Solves a block-coefficient QP in H_{3A}(q_0) Wedderburn space rather than scanning SnapPy's census.  Handles sign freedom (\u2079Be) and respects Frobenius positivity + soft-confinement truncation \u2113_*(q_0).",
-  "timestamp": "2026-04-23T18:53:09.734746+00:00",
+  "timestamp": "2026-04-23T19:36:41.981192+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "hbar_q_sq": 0.00981718851347867,
@@ -22,9 +22,9 @@
       "n_partitions_in_cutoff": 11,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 2.2245087579232443,
-      "residual_MeV": -7.124207675568428e-05,
-      "l1_norm_k_star": 12.13837816727463,
+      "B_pred_MeV": 2.224509393437941,
+      "residual_MeV": -7.060656205881699e-05,
+      "l1_norm_k_star": 12.030101448234237,
       "dominant_partitions": [
         {
           "partition": [
@@ -37,9 +37,9 @@
           "first_row": 3,
           "d_classical": 16,
           "d_q": 17.344673582613545,
-          "w_lambda": 0.3586356424845347,
-          "k_star": 12.138378143370458,
-          "contribution": 4.353255044167898
+          "w_lambda": 0.3618636392269049,
+          "k_star": 12.030101448234237,
+          "contribution": 4.3532562903269
         }
       ]
     },
@@ -55,9 +55,9 @@
       "n_partitions_in_cutoff": 30,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 8.481450638398,
-      "residual_MeV": -0.00034936160199983135,
-      "l1_norm_k_star": 56.73815967952175,
+      "B_pred_MeV": 8.481411886163666,
+      "residual_MeV": -0.00038811383633330365,
+      "l1_norm_k_star": 63.031445814042215,
       "dominant_partitions": [
         {
           "partition": [
@@ -71,9 +71,9 @@
           "first_row": 4,
           "d_classical": 216,
           "d_q": 294.5113594114465,
-          "w_lambda": 0.14626651129310397,
-          "k_star": 28.36907869724044,
-          "contribution": 4.149446169644874
+          "w_lambda": 0.1316621316116412,
+          "k_star": 31.515722907021107,
+          "contribution": 4.149427257220228
         },
         {
           "partition": [
@@ -87,9 +87,9 @@
           "first_row": 4,
           "d_classical": 216,
           "d_q": 294.5113594114465,
-          "w_lambda": 0.14626651129310397,
-          "k_star": 28.36907869724044,
-          "contribution": 4.149446169644874
+          "w_lambda": 0.1316621316116412,
+          "k_star": 31.515722907021107,
+          "contribution": 4.149427257220228
         }
       ]
     },
@@ -105,9 +105,9 @@
       "n_partitions_in_cutoff": 30,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 7.717650638409569,
-      "residual_MeV": -0.00034936159043130743,
-      "l1_norm_k_star": 51.62858449083814,
+      "B_pred_MeV": 7.717611886163665,
+      "residual_MeV": -0.00038811383633508,
+      "l1_norm_k_star": 57.35510100742985,
       "dominant_partitions": [
         {
           "partition": [
@@ -121,9 +121,9 @@
           "first_row": 4,
           "d_classical": 216,
           "d_q": 294.5113594114465,
-          "w_lambda": 0.14626651129310397,
-          "k_star": 25.814291448639075,
-          "contribution": 3.7757663516958444
+          "w_lambda": 0.1316621316116412,
+          "k_star": 28.677550503714926,
+          "contribution": 3.775747428719602
         },
         {
           "partition": [
@@ -137,9 +137,9 @@
           "first_row": 4,
           "d_classical": 216,
           "d_q": 294.5113594114465,
-          "w_lambda": 0.14626651129310397,
-          "k_star": 25.814291448639075,
-          "contribution": 3.7757663516958444
+          "w_lambda": 0.1316621316116412,
+          "k_star": 28.677550503714926,
+          "contribution": 3.775747428719602
         }
       ]
     },
@@ -155,27 +155,10 @@
       "n_partitions_in_cutoff": 73,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 28.295141170497907,
-      "residual_MeV": -0.0005188295020950306,
-      "l1_norm_k_star": 221.58696781353206,
+      "B_pred_MeV": 28.294335507957722,
+      "residual_MeV": -0.001324492042279246,
+      "l1_norm_k_star": 433.53166382340635,
       "dominant_partitions": [
-        {
-          "partition": [
-            5,
-            3,
-            2,
-            1,
-            1
-          ],
-          "n": 12,
-          "length": 5,
-          "first_row": 5,
-          "d_classical": 7700,
-          "d_q": 16707.275158579665,
-          "w_lambda": 0.1900456644783265,
-          "k_star": 49.999999986858036,
-          "contribution": 9.502283221418752
-        },
         {
           "partition": [
             5,
@@ -188,26 +171,9 @@
           "first_row": 5,
           "d_classical": 5775,
           "d_q": 12787.511805990436,
-          "w_lambda": 0.11133169249049167,
-          "k_star": 49.99999996660437,
-          "contribution": 5.566584620806592
-        },
-        {
-          "partition": [
-            4,
-            3,
-            2,
-            2,
-            1
-          ],
-          "n": 12,
-          "length": 5,
-          "first_row": 4,
-          "d_classical": 5775,
-          "d_q": 12787.511805990436,
-          "w_lambda": 0.11133169249049167,
-          "k_star": 49.99999996660437,
-          "contribution": 5.566584620806592
+          "w_lambda": 0.07338294368980669,
+          "k_star": 50.0,
+          "contribution": 3.6691471844903347
         },
         {
           "partition": [
@@ -221,9 +187,25 @@
           "first_row": 6,
           "d_classical": 5632,
           "d_q": 12027.470898692676,
-          "w_lambda": 0.09849072753985015,
-          "k_star": 35.79348385074605,
-          "contribution": 3.5253262656458557
+          "w_lambda": 0.06491897636104102,
+          "k_star": 50.0,
+          "contribution": 3.245948818052051
+        },
+        {
+          "partition": [
+            5,
+            3,
+            2,
+            2
+          ],
+          "n": 12,
+          "length": 4,
+          "first_row": 5,
+          "d_classical": 4455,
+          "d_q": 9866.979556905073,
+          "w_lambda": 0.043690950260273566,
+          "k_star": 50.0,
+          "contribution": 2.1845475130136784
         },
         {
           "partition": [
@@ -239,9 +221,43 @@
           "first_row": 4,
           "d_classical": 5632,
           "d_q": 12027.470898692676,
-          "w_lambda": 0.09849072753985015,
-          "k_star": 35.79348385074605,
-          "contribution": 3.5253262656458557
+          "w_lambda": 0.06491897636104102,
+          "k_star": 50.0,
+          "contribution": 3.245948818052051
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "n": 12,
+          "length": 5,
+          "first_row": 4,
+          "d_classical": 5775,
+          "d_q": 12787.511805990436,
+          "w_lambda": 0.07338294368980669,
+          "k_star": 50.0,
+          "contribution": 3.6691471844903347
+        },
+        {
+          "partition": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "n": 12,
+          "length": 5,
+          "first_row": 4,
+          "d_classical": 4455,
+          "d_q": 9866.979556905078,
+          "w_lambda": 0.043690950260273614,
+          "k_star": 50.0,
+          "contribution": 2.1845475130136807
         }
       ]
     },
@@ -254,12 +270,12 @@
       "density_tag": "2m_e",
       "rho_value_MeV": 1.0219979,
       "target_value": 31.30544593095544,
-      "n_partitions_in_cutoff": 295,
+      "n_partitions_in_cutoff": 325,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 31.993919861024214,
-      "residual_MeV": -0.00018013897578583737,
-      "l1_norm_k_star": 102.16600047030602,
+      "B_pred_MeV": 31.98844589616833,
+      "residual_MeV": -0.005654103831670199,
+      "l1_norm_k_star": 1802.1750201943626,
       "dominant_partitions": [
         {
           "partition": [
@@ -275,9 +291,9 @@
           "first_row": 6,
           "d_classical": 16243500,
           "d_q": 261420843.8449347,
-          "w_lambda": 0.30690841894836085,
-          "k_star": 49.999999886715706,
-          "contribution": 15.34542091265014
+          "w_lambda": 0.04432199808021011,
+          "k_star": 50.118513464094136,
+          "contribution": 2.221352657538565
         },
         {
           "partition": [
@@ -293,9 +309,9 @@
           "first_row": 6,
           "d_classical": 16243500,
           "d_q": 261420843.84493467,
-          "w_lambda": 0.30690841894836074,
-          "k_star": 49.999999886715706,
-          "contribution": 15.345420912650134
+          "w_lambda": 0.0443219980802101,
+          "k_star": 50.1185134640915,
+          "contribution": 2.2213526575384472
         },
         {
           "partition": [
@@ -311,9 +327,9 @@
           "first_row": 7,
           "d_classical": 16336320,
           "d_q": 251328632.18485522,
-          "w_lambda": 0.2836692842594803,
-          "k_star": 1.0830002913532553,
-          "contribution": 0.30721391750098653
+          "w_lambda": 0.04096593216779338,
+          "k_star": 50.1095396133139,
+          "contribution": 2.0527840007583724
         },
         {
           "partition": [
@@ -330,9 +346,45 @@
           "first_row": 6,
           "d_classical": 16336320,
           "d_q": 251328632.1848552,
-          "w_lambda": 0.28366928425948024,
-          "k_star": 1.0830002909920533,
-          "contribution": 0.3072139173985246
+          "w_lambda": 0.04096593216779337,
+          "k_star": 50.1095396133134,
+          "contribution": 2.052784000758352
+        },
+        {
+          "partition": [
+            7,
+            5,
+            3,
+            2,
+            1
+          ],
+          "n": 18,
+          "length": 5,
+          "first_row": 7,
+          "d_classical": 13366080,
+          "d_q": 210967862.47707447,
+          "w_lambda": 0.028864996653613743,
+          "k_star": 50.077182683376925,
+          "contribution": 1.445477710578079
+        },
+        {
+          "partition": [
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 18,
+          "length": 7,
+          "first_row": 5,
+          "d_classical": 13366080,
+          "d_q": 210967862.47707447,
+          "w_lambda": 0.028864996653613743,
+          "k_star": 50.077182683376925,
+          "contribution": 1.445477710578079
         }
       ]
     },
@@ -345,30 +397,124 @@
       "density_tag": "2m_e",
       "rho_value_MeV": 1.0219979,
       "target_value": 38.399883209153366,
-      "n_partitions_in_cutoff": 515,
+      "n_partitions_in_cutoff": 658,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 39.24453413567483,
-      "residual_MeV": -6.586432516542118e-05,
-      "l1_norm_k_star": 49.4947813536684,
+      "B_pred_MeV": 39.226921242966995,
+      "residual_MeV": -0.017678757033003478,
+      "l1_norm_k_star": 4881.935263983209,
       "dominant_partitions": [
+        {
+          "partition": [
+            6,
+            6,
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "n": 21,
+          "length": 7,
+          "first_row": 6,
+          "d_classical": 377910000,
+          "d_q": 31128497246.572613,
+          "w_lambda": 0.003029741109707249,
+          "k_star": 49.83689118725661,
+          "contribution": 0.15099287801003825
+        },
+        {
+          "partition": [
+            7,
+            4,
+            4,
+            2,
+            2,
+            2
+          ],
+          "n": 21,
+          "length": 6,
+          "first_row": 7,
+          "d_classical": 377910000,
+          "d_q": 31128497246.572617,
+          "w_lambda": 0.0030297411097072497,
+          "k_star": 49.83689118719709,
+          "contribution": 0.15099287800985797
+        },
+        {
+          "partition": [
+            7,
+            5,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "n": 21,
+          "length": 8,
+          "first_row": 7,
+          "d_classical": 435352320,
+          "d_q": 31582527092.04214,
+          "w_lambda": 0.003118767241979345,
+          "k_star": 49.83209838614138,
+          "contribution": 0.15541471604578955
+        },
+        {
+          "partition": [
+            8,
+            5,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 21,
+          "length": 7,
+          "first_row": 8,
+          "d_classical": 435352320,
+          "d_q": 31582527092.042126,
+          "w_lambda": 0.0031187672419793425,
+          "k_star": 49.83209838603824,
+          "contribution": 0.15541471604546772
+        },
         {
           "partition": [
             6,
             5,
             4,
-            3,
+            4,
+            1,
+            1
+          ],
+          "n": 21,
+          "length": 6,
+          "first_row": 6,
+          "d_classical": 352716000,
+          "d_q": 31599070741.63331,
+          "w_lambda": 0.003122035460876777,
+          "k_star": 49.831922438667014,
+          "contribution": 0.15557702893717956
+        },
+        {
+          "partition": [
+            6,
+            4,
+            4,
+            4,
             2,
             1
           ],
           "n": 21,
           "length": 6,
           "first_row": 6,
-          "d_classical": 1100742656,
-          "d_q": 97161189285.89104,
-          "w_lambda": 0.775835708949817,
-          "k_star": 49.49478131850759,
-          "contribution": 38.399818753560496
+          "d_classical": 352716000,
+          "d_q": 31599070741.633312,
+          "w_lambda": 0.0031220354608767777,
+          "k_star": 49.83192243858201,
+          "contribution": 0.15557702893691425
         }
       ]
     },
@@ -381,32 +527,130 @@
       "density_tag": "2m_e",
       "rho_value_MeV": 1.0219979,
       "target_value": 56.91313064341914,
-      "n_partitions_in_cutoff": 1289,
+      "n_partitions_in_cutoff": 2265,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 58.16509778650433,
-      "residual_MeV": -2.2134956694230823e-06,
-      "l1_norm_k_star": 2.4653082088943807,
+      "B_pred_MeV": 51.03799749033809,
+      "residual_MeV": -7.12710250966191,
+      "l1_norm_k_star": 68300.0,
       "dominant_partitions": [
         {
           "partition": [
-            8,
-            6,
+            9,
+            4,
             4,
             3,
+            3,
             2,
-            2,
+            2
+          ],
+          "n": 27,
+          "length": 7,
+          "first_row": 9,
+          "d_classical": 2114251128990,
+          "d_q": 1.958240841572884e+16,
+          "w_lambda": 0.0003879478009188387,
+          "k_star": 50.0,
+          "contribution": 0.019397390045941935
+        },
+        {
+          "partition": [
+            9,
+            4,
+            3,
+            3,
+            3,
+            1,
+            1,
+            1,
             1,
             1
           ],
           "n": 27,
-          "length": 8,
-          "first_row": 8,
-          "d_classical": 12760912164000,
-          "d_q": 1.2181660411916144e+17,
-          "w_lambda": 23.085607627132887,
-          "k_star": 2.465307660759222,
-          "contribution": 56.91312533645223
+          "length": 10,
+          "first_row": 9,
+          "d_classical": 1218087070200,
+          "d_q": 8833257766791133.0,
+          "w_lambda": 7.8937413887569e-05,
+          "k_star": 50.0,
+          "contribution": 0.00394687069437845
+        },
+        {
+          "partition": [
+            9,
+            4,
+            3,
+            3,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "n": 27,
+          "length": 9,
+          "first_row": 9,
+          "d_classical": 2544506265600,
+          "d_q": 2.0482307970068076e+16,
+          "w_lambda": 0.00042442296008934915,
+          "k_star": 50.0,
+          "contribution": 0.021221148004467456
+        },
+        {
+          "partition": [
+            9,
+            4,
+            4,
+            4,
+            3,
+            2,
+            1
+          ],
+          "n": 27,
+          "length": 7,
+          "first_row": 9,
+          "d_classical": 2741365186560,
+          "d_q": 2.6435373098505404e+16,
+          "w_lambda": 0.0007069878898593548,
+          "k_star": 50.0,
+          "contribution": 0.03534939449296774
+        },
+        {
+          "partition": [
+            9,
+            4,
+            4,
+            4,
+            3,
+            3
+          ],
+          "n": 27,
+          "length": 6,
+          "first_row": 9,
+          "d_classical": 631034118000,
+          "d_q": 6353874960248190.0,
+          "w_lambda": 4.084307333589908e-05,
+          "k_star": 50.0,
+          "contribution": 0.002042153666794954
+        },
+        {
+          "partition": [
+            9,
+            4,
+            4,
+            4,
+            4,
+            1,
+            1
+          ],
+          "n": 27,
+          "length": 7,
+          "first_row": 9,
+          "d_classical": 730852242120,
+          "d_q": 7219262572700869.0,
+          "w_lambda": 5.272623512759579e-05,
+          "k_star": 50.0,
+          "contribution": 0.0026363117563797892
         }
       ]
     },
@@ -419,32 +663,141 @@
       "density_tag": "2m_e",
       "rho_value_MeV": 1.0219979,
       "target_value": 63.357468738438705,
-      "n_partitions_in_cutoff": 1860,
+      "n_partitions_in_cutoff": 3792,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 64.75119987992421,
-      "residual_MeV": -1.2007578220618598e-07,
-      "l1_norm_k_star": 0.1488788788291743,
+      "B_pred_MeV": 51.047335620157654,
+      "residual_MeV": -13.703864379842344,
+      "l1_norm_k_star": 117692.94107758792,
       "dominant_partitions": [
         {
           "partition": [
+            12,
             8,
-            6,
+            4,
+            4,
+            2
+          ],
+          "n": 30,
+          "length": 5,
+          "first_row": 12,
+          "d_classical": 45853950767625,
+          "d_q": 7.700336428910655e+18,
+          "w_lambda": 3.7818878222210432e-06,
+          "k_star": 49.999999812463024,
+          "contribution": 0.00018909439040180835
+        },
+        {
+          "partition": [
+            5,
             5,
             4,
+            4,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "n": 30,
+          "length": 12,
+          "first_row": 5,
+          "d_classical": 45853950767625,
+          "d_q": 7.70033642891066e+18,
+          "w_lambda": 3.7818878222210475e-06,
+          "k_star": 49.99999981244525,
+          "contribution": 0.00018909439040174137
+        },
+        {
+          "partition": [
+            10,
+            7,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "n": 30,
+          "length": 10,
+          "first_row": 10,
+          "d_classical": 47595149521920,
+          "d_q": 7.70622752978454e+18,
+          "w_lambda": 3.787676661516374e-06,
+          "k_star": 49.99999981219432,
+          "contribution": 0.00018938383236447148
+        },
+        {
+          "partition": [
+            9,
+            9,
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "n": 30,
+          "length": 10,
+          "first_row": 9,
+          "d_classical": 44627909303250,
+          "d_q": 7.744927408981059e+18,
+          "w_lambda": 3.825814827067514e-06,
+          "k_star": 49.99999981030241,
+          "contribution": 0.00019129074062762785
+        },
+        {
+          "partition": [
+            10,
+            4,
             3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "n": 30,
+          "length": 9,
+          "first_row": 10,
+          "d_classical": 44627909303250,
+          "d_q": 7.744927408981063e+18,
+          "w_lambda": 3.8258148270675165e-06,
+          "k_star": 49.999999810254266,
+          "contribution": 0.00019129074062744378
+        },
+        {
+          "partition": [
+            5,
+            4,
+            4,
+            3,
+            3,
+            3,
+            2,
+            2,
             2,
             1,
             1
           ],
           "n": 30,
-          "length": 8,
-          "first_row": 8,
-          "d_classical": 1865134921890240,
-          "d_q": 5.1019771327513605e+20,
-          "w_lambda": 425.563872975991,
-          "k_star": 0.14887886869593814,
-          "contribution": 63.35746796652746
+          "length": 11,
+          "first_row": 5,
+          "d_classical": 41845975811640,
+          "d_q": 7.765007930639603e+18,
+          "w_lambda": 3.845679170765545e-06,
+          "k_star": 49.999999809295026,
+          "contribution": 0.0001922839578048871
         }
       ]
     },
@@ -457,33 +810,146 @@
       "density_tag": "2m_e",
       "rho_value_MeV": 1.0219979,
       "target_value": 90.1779739469132,
-      "n_partitions_in_cutoff": 3246,
+      "n_partitions_in_cutoff": 11141,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 92.16169998491695,
-      "residual_MeV": -1.5083045923347527e-08,
-      "l1_norm_k_star": 0.0004144646540522215,
+      "B_pred_MeV": 51.0438072789767,
+      "residual_MeV": -41.117892721023296,
+      "l1_norm_k_star": 310705.60196853976,
       "dominant_partitions": [
         {
           "partition": [
-            9,
             7,
-            6,
+            7,
+            5,
+            5,
             4,
-            3,
-            3,
-            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             1,
             1
           ],
           "n": 36,
-          "length": 9,
-          "first_row": 9,
-          "d_classical": 40971642983700000000,
-          "d_q": 4.51296623147224e+28,
-          "w_lambda": 217951.93653855307,
-          "k_star": 0.0004134703317535421,
-          "contribution": 90.11665950692249
+          "length": 13,
+          "first_row": 7,
+          "d_classical": 948437468613835200,
+          "d_q": 6.789172963454021e+26,
+          "w_lambda": 1.2507788673645787e-06,
+          "k_star": 49.99999977163515,
+          "contribution": 6.253894308259501e-05
+        },
+        {
+          "partition": [
+            13,
+            5,
+            5,
+            5,
+            4,
+            2,
+            2
+          ],
+          "n": 36,
+          "length": 7,
+          "first_row": 13,
+          "d_classical": 948437468613835200,
+          "d_q": 6.789172963454019e+26,
+          "w_lambda": 1.2507788673645779e-06,
+          "k_star": 49.9999997716304,
+          "contribution": 6.253894308258902e-05
+        },
+        {
+          "partition": [
+            11,
+            7,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "n": 36,
+          "length": 12,
+          "first_row": 11,
+          "d_classical": 1226467509242976000,
+          "d_q": 6.792597866904365e+26,
+          "w_lambda": 1.2520411352123284e-06,
+          "k_star": 49.99999977138613,
+          "contribution": 6.260205647438244e-05
+        },
+        {
+          "partition": [
+            6,
+            6,
+            6,
+            4,
+            4,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "n": 36,
+          "length": 13,
+          "first_row": 6,
+          "d_classical": 917323569756594000,
+          "d_q": 6.79446458537486e+26,
+          "w_lambda": 1.2527293930808238e-06,
+          "k_star": 49.99999977132711,
+          "contribution": 6.263646936757594e-05
+        },
+        {
+          "partition": [
+            12,
+            6,
+            6,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "n": 36,
+          "length": 11,
+          "first_row": 12,
+          "d_classical": 1226467509242976000,
+          "d_q": 6.792597866904368e+26,
+          "w_lambda": 1.2520411352123294e-06,
+          "k_star": 49.999999771303706,
+          "contribution": 6.260205647427931e-05
+        },
+        {
+          "partition": [
+            13,
+            6,
+            6,
+            5,
+            3,
+            3
+          ],
+          "n": 36,
+          "length": 6,
+          "first_row": 13,
+          "d_classical": 917323569756594000,
+          "d_q": 6.794464585374862e+26,
+          "w_lambda": 1.2527293930808244e-06,
+          "k_star": 49.999999771282226,
+          "contribution": 6.263646936751975e-05
         }
       ]
     },
@@ -496,13 +962,151 @@
       "density_tag": "2m_e",
       "rho_value_MeV": 1.0219979,
       "target_value": 124.87237008999726,
-      "n_partitions_in_cutoff": 5392,
+      "n_partitions_in_cutoff": 80262,
       "cutoff_l_star": 10,
       "solver": "cvxpy_ok",
-      "B_pred_MeV": 127.6192994190362,
-      "residual_MeV": -5.809637997344907e-07,
-      "l1_norm_k_star": 2.5367682121754545e-12,
-      "dominant_partitions": []
+      "B_pred_MeV": 50.89196786869702,
+      "residual_MeV": -76.72733213130297,
+      "l1_norm_k_star": 1376221.6487849855,
+      "dominant_partitions": [
+        {
+          "partition": [
+            9,
+            6,
+            6,
+            5,
+            5,
+            4,
+            4,
+            3,
+            3,
+            3
+          ],
+          "n": 48,
+          "length": 10,
+          "first_row": 9,
+          "d_classical": 2234566039786575925149720000,
+          "d_q": 1.3759662390683853e+47,
+          "w_lambda": 6.796396091499686e-07,
+          "k_star": 50.00081371055693,
+          "contribution": 3.3982533487423306e-05
+        },
+        {
+          "partition": [
+            10,
+            10,
+            10,
+            7,
+            5,
+            3,
+            1,
+            1,
+            1
+          ],
+          "n": 48,
+          "length": 9,
+          "first_row": 10,
+          "d_classical": 2234566039786575925149720000,
+          "d_q": 1.3759662390683845e+47,
+          "w_lambda": 6.796396091499677e-07,
+          "k_star": 50.000813710461664,
+          "contribution": 3.398253348735851e-05
+        },
+        {
+          "partition": [
+            9,
+            8,
+            8,
+            6,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 48,
+          "length": 13,
+          "first_row": 9,
+          "d_classical": 4004621119567614897749798400,
+          "d_q": 1.376075203807751e+47,
+          "w_lambda": 6.797472566824457e-07,
+          "k_star": 50.00061762059493,
+          "contribution": 3.398778266002736e-05
+        },
+        {
+          "partition": [
+            13,
+            11,
+            5,
+            4,
+            4,
+            4,
+            3,
+            3,
+            1
+          ],
+          "n": 48,
+          "length": 9,
+          "first_row": 13,
+          "d_classical": 4004621119567614897749798400,
+          "d_q": 1.3760752038077501e+47,
+          "w_lambda": 6.79747256682445e-07,
+          "k_star": 50.00061762049083,
+          "contribution": 3.398778265995656e-05
+        },
+        {
+          "partition": [
+            13,
+            8,
+            7,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1
+          ],
+          "n": 48,
+          "length": 11,
+          "first_row": 13,
+          "d_classical": 4742202526638085302485852160,
+          "d_q": 1.3757989599127328e+47,
+          "w_lambda": 6.794743687160122e-07,
+          "k_star": 50.00034764200356,
+          "contribution": 3.397395464963152e-05
+        },
+        {
+          "partition": [
+            11,
+            10,
+            8,
+            3,
+            3,
+            3,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "n": 48,
+          "length": 13,
+          "first_row": 11,
+          "d_classical": 4742202526638085302485852160,
+          "d_q": 1.3757989599127322e+47,
+          "w_lambda": 6.794743687160116e-07,
+          "k_star": 50.00034764200355,
+          "contribution": 3.3973954649631476e-05
+        }
+      ]
     }
   ]
 }

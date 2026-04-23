@@ -108,9 +108,15 @@ def rho_value(tag: str) -> float:
     return M_E_MEV if tag == "m_e" else 2 * M_E_MEV
 
 
-def soft_confinement_cutoff(q: float) -> int:
-    """ℓ_*(q) ≈ 1/ln q — depth at which Plancherel weight becomes negligible."""
-    return max(3, int(math.ceil(1.0 / math.log(q))))
+def soft_confinement_cutoff(q: float, n: int = 0) -> int:
+    """ℓ_*(q, n) — depth cutoff combining soft-confinement 1/log(q)
+    with the Plancherel-concentration scale 2√n (Vershik-Kerov /
+    Logan-Shepp limit shape).  For small n the soft-confinement
+    dominates; for large n the Plancherel scale takes over.
+    """
+    soft = int(math.ceil(1.0 / math.log(q))) if q > 1 else 10
+    planch = int(math.ceil(2.0 * math.sqrt(max(n, 1))) + 2)
+    return max(3, soft, planch)
 
 
 def build_partitions(A: int, cap: int | None = None) -> list[tuple]:
@@ -123,7 +129,19 @@ def build_partitions(A: int, cap: int | None = None) -> list[tuple]:
 
 
 def weights_vector(parts: list[tuple]) -> np.ndarray:
-    return np.array([wedderburn_weight(p) for p in parts], dtype=float)
+    """Plancherel weights, renormalized so Σ w_λ = 1.
+
+    The raw wedderburn_weight(λ) = d_q(λ)²/[n]_q! is the Plancherel
+    measure, but numerical FP cancellation at large n can inflate
+    individual weights by factors up to 10¹⁴.  Renormalizing to
+    sum=1 restores the physical Plancherel structure and prevents
+    the SDP solver from exploiting spurious large weights.
+    """
+    raw = np.array([wedderburn_weight(p) for p in parts], dtype=float)
+    total = raw.sum()
+    if total <= 0 or not np.isfinite(total):
+        return raw
+    return raw / total
 
 
 def partition_summary(p: tuple) -> dict:
@@ -166,21 +184,35 @@ def solve_sdp_match(weights: np.ndarray, target: float,
             "l1_norm": float(np.sum(np.abs(k_star))),
         }
     elif HAS_SCIPY:
-        # scipy fallback: use minimize with the same L1-regularized
-        # objective so it matches the cvxpy path.  Box bounds via
-        # constraints on |k_λ|.
+        # scipy fallback: reformulate as a smooth QP by splitting
+        # k = u - v with u, v ≥ 0, so ‖k‖₁ = sum(u + v) is smooth.
+        # This avoids L-BFGS-B's difficulty with non-differentiable
+        # |·| at zero.
         from scipy.optimize import minimize
+        w = weights.reshape(1, -1)
 
-        def obj(k: np.ndarray) -> float:
-            return float((weights @ k - target) ** 2 + gamma * np.sum(np.abs(k)))
+        def obj(z: np.ndarray) -> float:
+            u, v = z[:N], z[N:]
+            k = u - v
+            return float((w @ k - target).item() ** 2 + gamma * float((u + v).sum()))
 
-        x0 = np.zeros(N)
-        bounds = [(-k_max, k_max)] * N
-        res = minimize(obj, x0, method="L-BFGS-B", bounds=bounds)
-        k_star = res.x
+        def obj_grad(z: np.ndarray) -> np.ndarray:
+            u, v = z[:N], z[N:]
+            k = u - v
+            diff = (w @ k).item() - target
+            # ∂/∂u_i = 2·diff·w_i + γ ;  ∂/∂v_i = -2·diff·w_i + γ
+            g_u = 2.0 * diff * weights + gamma
+            g_v = -2.0 * diff * weights + gamma
+            return np.concatenate([g_u, g_v])
+
+        z0 = np.zeros(2 * N)
+        bounds = [(0.0, k_max)] * (2 * N)
+        res = minimize(obj, z0, jac=obj_grad, method="L-BFGS-B", bounds=bounds)
+        u_star, v_star = res.x[:N], res.x[N:]
+        k_star = u_star - v_star
         residual = float(weights @ k_star - target)
         return {
-            "status": "scipy_minimize_l1",
+            "status": "scipy_minimize_l1_split",
             "k_star": k_star,
             "residual": residual,
             "fit_B": float(weights @ k_star),
@@ -209,9 +241,11 @@ def main() -> int:
         rho = rho_value(rho_tag)
         target_val = B_ame / rho          # want Σ w_λ k_λ = B/ρ
 
-        parts = build_partitions(A, cap=cutoff)
+        n_strands = 3 * A
+        atom_cutoff = soft_confinement_cutoff(q, n_strands)
+        parts = build_partitions(A, cap=atom_cutoff)
         if not parts:
-            print(f"  {sym:>4} {A:>2}  — no partitions within cutoff {cutoff} —")
+            print(f"  {sym:>4} {A:>2}  — no partitions within cutoff {atom_cutoff} —")
             continue
         weights = weights_vector(parts)
 
