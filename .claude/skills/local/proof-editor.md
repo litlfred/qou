@@ -28,6 +28,8 @@ Specialists it coordinates:
 | `lean-proof-review` | Lean correctness, style, axiom soundness |
 | `lean-completeness-audit` | LaTeX→Lean coverage (what's stated but not formalized) |
 | `proof-simplifier` | Overlong/brittle proofs, tactic cleanup |
+| `proof-exposition-review` | Retrospective integration — does this proof use content added since it was written? |
+| `proof-narrative-lean-equivalence` | Does the Lean sibling prove the same thing the narrative claims? |
 | `proof-triage` | `sorry` inventory and priority ordering |
 | `remark-audit` | Dangling remarks whose formalization is owed |
 | `content-block-review` | Structural integrity of the block graph |
