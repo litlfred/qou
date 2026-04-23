@@ -19,6 +19,20 @@ tubes of the Descartes universe are consequently indistinguishable at
 the level of observables and collapse to **one $\mathrm{U}(1)$ phase
 tube**.
 
+**Weight-graded reading.**  Under the weight identification of
+[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification)
+this collapse acquires a sharp $\mathbb{Z}_5$-representation-theoretic
+content.  The full non-commutative theory keeps the five Lagrange
+weights $\zeta_5^{\,0}, \zeta_5^{\,-1}, \ldots, \zeta_5^{\,-4}$
+distinguishable as separate observable channels (the trivial weight
+plus three colour tubes plus a chiral conjugate).  The
+commutative-limit theory keeps only the weight-$(-1)$ channel
+visible and identifies it canonically with the single coordinate
+$x \in \mathcal{O}(\mathcal{X}_5)$.  The "single phase tube" is
+therefore *precisely* the weight-$(-1)$ isotypical component of the
+$\mathbb{Z}_5$-graded coordinate ring --- not a vague geometric
+collapse.
+
 **Branch-point localisation.**  On the genus-$2$ ansatz
 $\mathcal{X}_5$ ([def:hyperelliptic-quintic](#def:hyperelliptic-quintic))
 the five branch points $\zeta_5^{k}$ of the double cover lie

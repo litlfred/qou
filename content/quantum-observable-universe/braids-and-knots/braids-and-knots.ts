@@ -411,6 +411,7 @@ export default chapter({
         "x5-bring-weight-identification",
         "x5-bring-prym-jacobian",
         "torus-knot-seifert-bound",
+        "weight-identification-consequences",
         "u1-equivariant-reduction",
         "u1-phase-tube",
         // ── Mirror bundle ───────────────────────────────────────────

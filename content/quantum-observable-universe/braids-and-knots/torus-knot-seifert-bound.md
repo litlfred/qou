@@ -35,3 +35,17 @@ The bound thus admits the trefoil $T_{2,3}$ and the Solomon-seal
 $T_{2,5}$ while excluding $T_{3,4}$, $T_{3,5}$, and all higher torus
 knots --- a sharp restriction on the spectrum of particle
 topologies realisable in the commutative limit.
+
+**Representation-theoretic refinement.**  Under the weight
+identification of
+[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification),
+the bound is not merely numerical.  The non-trivial
+$\mathbb{Z}_5$-isotypical part of $H^1(\mathcal{X}_5, \mathbb{Q})$ has
+dimension $4$ over $\mathbb{Q}$ (equivalently, $\dim_{\mathbb{C}} J(\mathcal{X}_5) = 2$).
+The two saturating witnesses fit this representation exactly:
+$T_{2,3}$ occupies a two-dimensional sub-isotype, while $T_{2,5}$
+fills the entire non-trivial $\mathbb{Z}_5$-representation of
+$H^1(\mathcal{X}_5, \mathbb{Q})$.  This is the
+representation-theoretic origin of the privileged role played by
+the Solomon seal in the paper's particle spectrum; see
+[rem:weight-identification-consequences](#rem:weight-identification-consequences).
