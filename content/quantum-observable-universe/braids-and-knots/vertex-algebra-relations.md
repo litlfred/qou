@@ -677,9 +677,12 @@ $$
   \delta_q T_\beta = 0.
 $$
 
-The space $\ker \Delta_q$ is the **particle Hilbert space** —
+The space $\ker \Delta_q$ is the **particle state space** —
 its dimension equals the number of linearly independent
-knot-particles at each brane level.
+knot-particles at each brane level.  Over $K = \mathbb{R}$ it
+acquires the Hilbert structure of $\ker \Delta_q \subset L^2(A)$;
+over a general field it is simply a finite-dimensional vector
+space.
 
 ### C-9: Cohomological embedding (knot basis for $H^*$)
 

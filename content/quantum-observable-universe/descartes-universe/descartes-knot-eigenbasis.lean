@@ -3,7 +3,8 @@
 
 Instantiation theorem: a Descartes universe (χ(A) = -6) provides all the
 data needed for `KnotEigenbasisData`, establishing that knot types form a
-complete eigenbasis for its physical Hilbert space.
+complete eigenbasis for the algebraic direct limit V_phys = colim V^⊗n
+(no metric completion is used).
 
 The chain of reasoning:
 1. Descartes condition forces genus 4, hence C = Rep(SU_q(2))
