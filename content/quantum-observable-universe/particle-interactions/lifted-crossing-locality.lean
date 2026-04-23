@@ -20,6 +20,9 @@
   Ref: [manuscript] Ch 11 §8 / lifted-crossing-locality
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
+
 namespace QOU.ParticleInteractions
 
 /-- **Lifted-crossing locality** (conjectural class).

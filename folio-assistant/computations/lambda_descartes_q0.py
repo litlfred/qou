@@ -110,8 +110,9 @@ def u_from_j(j: float, tol: float = 1e-12, max_iter: int = 200) -> float:
 
 
 def lambdas_from_u(u: complex) -> list[complex]:
-    # lambda^2 - lambda + u = 0   =>   lambda = (1 +/- sqrt(1 - 4u)) / 2
-    disc = 1.0 - 4.0 * u
+    # u := λ² - λ + 1  ⇒  λ² - λ = u - 1  ⇒  λ² - λ + (1 - u) = 0
+    # Quadratic formula: λ = (1 ± √(1 - 4(1-u))) / 2 = (1 ± √(4u - 3)) / 2
+    disc = 4.0 * u - 3.0
     root = cmath.sqrt(complex(disc))
     return [(1 + root) / 2, (1 - root) / 2]
 
@@ -119,12 +120,24 @@ def lambdas_from_u(u: complex) -> list[complex]:
 def bloch_wigner(z: complex, n_terms: int = 2000) -> float:
     """D(z) = Im(Li_2(z)) + arg(1-z) * log|z|  (Bloch-Wigner dilogarithm).
 
-    Uses the direct series Li_2(z) = sum z^n / n^2 for |z| <= 1.
-    For |z| > 1 we use the inversion formula:
-        Li_2(z) = -Li_2(1/z) - (log(-z))^2 / 2 - pi^2/6
+    Primary path: direct series Li_2(z) = sum z^n / n^2 for |z| <= 1,
+    with inversion for |z| > 1.  For |z| ≈ 1 the series converges
+    slowly; we delegate to mpmath.polylog (arbitrary precision) when
+    available, falling back to the series otherwise.
     """
     if z == 0:
         return 0.0
+    # For |z| close to 1, prefer mpmath.polylog (handles boundary robustly).
+    if abs(abs(z) - 1.0) < 1e-3:
+        try:
+            import mpmath as _mp
+            Li2 = complex(_mp.polylog(2, complex(z)))
+            one_minus_z = 1.0 - z
+            arg_1mz = cmath.phase(one_minus_z) if one_minus_z != 0 else 0.0
+            log_abs_z = math.log(abs(z)) if abs(z) > 0 else 0.0
+            return Li2.imag + arg_1mz * log_abs_z
+        except ImportError:
+            pass  # fall through to series
     if abs(z) > 1:
         # Inversion to bring inside the unit disk
         Li2_inv = _li2_series(1.0 / z, n_terms)

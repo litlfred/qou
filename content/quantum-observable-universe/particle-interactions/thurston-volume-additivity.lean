@@ -19,6 +19,8 @@
   as an opaque class encoding the Thurston decomposition.
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Topology.UnitInterval
 

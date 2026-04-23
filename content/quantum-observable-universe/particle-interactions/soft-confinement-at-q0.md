@@ -11,7 +11,7 @@ more than $\ell - 1$ rows become **confined** (zero-weight).  This is
 the Jones-Wenzl truncation underlying fusion-category / TQFT
 constructions: a sharp cutoff at level $\ell$.
 
-At the substrate parameter $q_0 \approx 1.1098$ (generic real, **not**
+At the substrate parameter $q_0 \approx 1.10998$ (generic real, **not**
 a root of unity), no representation is strictly confined.  But the
 Plancherel weights **decay rapidly** with partition size, producing a
 **soft confinement level**
@@ -21,7 +21,7 @@ $$
   \;\sim\;
   \frac{1}{\log q_0}
   \;\approx\;
-  \frac{1}{\log 1.1098}
+  \frac{1}{\log 1.10998}
   \;\approx\;
   9.6.
 $$

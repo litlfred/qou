@@ -1,7 +1,7 @@
 {
   "computation": "jsj-atom-volume",
   "description": "Test the JSJ / hyperbolic-volume atom model.  Each nucleon modelled as Borromean rings (Vol=8G, hyperbolic).  Atom = either A disjoint Borromeans (free baseline) or A linked Borromeans (atom).  Binding = m_e \u00b7 \u0394Vol.  Explores three counting schemes for the number of couplings: A\u00b78G alone, all-pairs (C(A,2)), and adjacent-only (A-1).",
-  "timestamp": "2026-04-20T16:13:08.603081+00:00",
+  "timestamp": "2026-04-23T18:43:49.803737+00:00",
   "parameters": {
     "Catalan_G": 0.915965594177219,
     "Vol_Borromean_8G": 7.327724753417752,
@@ -94,7 +94,7 @@
     {
       "status": "ok",
       "manifold": "L10n107",
-      "volume": 7.327725121022635,
+      "volume": 7.327724753417803,
       "solution_type": "contains degenerate tetrahedra",
       "n_tetrahedra": 13,
       "n_cusps": 4,
@@ -243,70 +243,70 @@
       "A": 2,
       "n_pairs": 1,
       "V_free_cat": 14.655449506835504,
-      "V_coupling_total": 10.30217245998443,
-      "V_atom_cat": 4.353277046851074,
-      "B_pred_MeV": 5.26439930977096,
-      "err_pct": 136.65326945907253
+      "V_coupling_total": 4.353277046851075,
+      "V_atom_cat": 10.30217245998443,
+      "B_pred_MeV": 2.22452,
+      "err_pct": 0.0
     },
     {
       "atom": "T",
       "A": 3,
       "n_pairs": 3,
       "V_free_cat": 21.983174260253257,
-      "V_coupling_total": 30.90651737995329,
-      "V_atom_cat": -8.923343119700032,
-      "B_pred_MeV": 15.79319792931288,
-      "err_pct": 86.20101781830367
+      "V_coupling_total": 13.059831140553225,
+      "V_atom_cat": 8.923343119700032,
+      "B_pred_MeV": 6.67356,
+      "err_pct": -21.319059633568344
     },
     {
       "atom": "3He",
       "A": 3,
       "n_pairs": 3,
       "V_free_cat": 21.983174260253257,
-      "V_coupling_total": 30.90651737995329,
-      "V_atom_cat": -8.923343119700032,
-      "B_pred_MeV": 15.79319792931288,
-      "err_pct": 104.62811517637833
+      "V_coupling_total": 13.059831140553225,
+      "V_atom_cat": 8.923343119700032,
+      "B_pred_MeV": 6.67356,
+      "err_pct": -13.532521378595488
     },
     {
       "atom": "4He",
       "A": 4,
       "n_pairs": 6,
       "V_free_cat": 29.31089901367101,
-      "V_coupling_total": 61.81303475990658,
-      "V_atom_cat": -32.50213574623557,
-      "B_pred_MeV": 31.586395858625757,
-      "err_pct": 11.629667612484429
+      "V_coupling_total": 26.11966228110645,
+      "V_atom_cat": 3.1912367325645583,
+      "B_pred_MeV": 13.34712,
+      "err_pct": -52.8298646084034
     },
     {
       "atom": "6Li",
       "A": 6,
       "n_pairs": 15,
       "V_free_cat": 43.966348520506514,
-      "V_coupling_total": 154.53258689976644,
-      "V_atom_cat": -110.56623837925993,
-      "B_pred_MeV": 78.9659896465644,
-      "err_pct": 146.76871764551373
+      "V_coupling_total": 65.29915570276613,
+      "V_atom_cat": -21.332807182259614,
+      "B_pred_MeV": 33.3678,
+      "err_pct": 4.274375000000008
     },
     {
       "atom": "12C",
       "A": 12,
       "n_pairs": 66,
       "V_free_cat": 87.93269704101303,
-      "V_coupling_total": 679.9433823589724,
-      "V_atom_cat": -592.0106853179593,
-      "B_pred_MeV": 347.4503544448834,
-      "err_pct": 277.0077630695349
+      "V_coupling_total": 287.316285092171,
+      "V_atom_cat": -199.38358805115794,
+      "B_pred_MeV": 146.81832,
+      "err_pct": 59.308072916666674
     },
     {
       "atom": "16O",
       "A": 16,
       "n_pairs": 120,
       "V_free_cat": 117.24359605468403,
-      "V_coupling_total": 1236.2606951981315,
-      "V_atom_cat": -1119.0170991434475,
-      "B_pred_MeV": 631.7279171725152,
-      "err_pct": 395.0069872845284
+      "V_coupling_total": 522.393245622129,
+      "V_atom_cat": -405.149649567445,
+      "B_pred_MeV": 266.9424,
+      "err_pct": 109.16972261401034
     }
   ],
   "alt_adjacent_only_from_D": [

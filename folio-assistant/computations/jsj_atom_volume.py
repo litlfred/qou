@@ -53,7 +53,8 @@ def snappy_volume(manifold_name: str) -> dict:
                 f"Warning: could not simplify manifold {manifold_name}: {e}",
                 file=sys.stderr,
             )
-        vol = float(M.volume())
+        # SnapPy may return complex from non-hyperbolic edge cases; take real part.
+        vol = float(M.volume().real) if hasattr(M.volume(), "real") else float(M.volume())
         sol = str(M.solution_type())
         n_tet = M.num_tetrahedra()
         n_cusps = M.num_cusps()
@@ -209,7 +210,7 @@ if __name__ == "__main__":
         V_free = A * VOL_BORROMEAN
         V_coup_total = n_pairs * coupling_delta
         V_atom = V_free - V_coup_total
-        B_pred_alt = M_E_MEV * (V_free - V_atom)    # = m_e · V_coup
+        B_pred_alt = M_E_MEV * V_coup_total
         err = (B_pred_alt - B_AME) / B_AME * 100
         print(f"  {name:>6} {A:>3} {n_pairs:>7} {V_free:>10.4f} "
               f"{V_coup_total:>10.4f} {V_atom:>10.4f} "

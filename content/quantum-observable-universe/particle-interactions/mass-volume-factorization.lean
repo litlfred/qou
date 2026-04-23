@@ -16,6 +16,9 @@
   Ref: [murakami2001] https://doi.org/10.1007/BF02392716
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
+
 namespace QOU.ParticleInteractions
 
 /-- Frobenius packing density: either single-chirality (m_e) or

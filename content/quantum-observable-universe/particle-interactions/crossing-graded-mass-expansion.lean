@@ -19,6 +19,9 @@
   Ref: [thurston1978] http://library.msri.org/books/gt3m/
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
+
 namespace QOU.ParticleInteractions
 
 /-- Per-crossing universal depth scalar.  In the paper,
