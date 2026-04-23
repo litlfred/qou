@@ -325,6 +325,7 @@ export default chapter({
         "algebraic-quantum-volume",
         "habiro-ring",
         "algebraic-quantum-volume-specialization",
+        "kashaev-volume-density",
         "quantum-bloch-group",
         "degree-two-baryon-weight",
       ],
