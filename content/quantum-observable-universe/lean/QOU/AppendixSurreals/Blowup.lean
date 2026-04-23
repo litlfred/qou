@@ -80,10 +80,38 @@ theorem omegaSurreal_mul_epsilonSurreal :
 theorem epsilonSurreal_isInfinitesimal :
     SurrealField.IsInfinitesimal (epsilonSurreal K) := by
   intro r hr
-  -- Need: |ε| < ofReal r for every positive real r.
-  -- Equivalent: 1/ω < r, i.e., ω > 1/r — true since ω > every natural.
-  -- The full proof uses the ordered-field structure + omegaSurreal_gt_natCast.
-  -- Ref: [conway1976] §0 — ω larger than every natural.
-  sorry
+  -- Strategy: pick natural n > 1/r.  Then 1/n < r, and ω > n implies
+  -- ε = 1/ω < 1/n in K, and 1/n = ofReal (1/n) < ofReal r.
+  have hε_pos : (0 : K) < epsilonSurreal K := epsilonSurreal_pos K
+  rw [abs_of_pos hε_pos]
+  -- Archimedean: exists natural n > 1/r.
+  have hinv_pos : (0 : ℝ) < 1 / r := one_div_pos.mpr hr
+  obtain ⟨n, hn_lt⟩ := exists_nat_gt (1 / r)
+  -- hn_lt : 1/r < n
+  have hn_pos_real : (0 : ℝ) < n := lt_of_lt_of_le hinv_pos hn_lt.le
+  have hn_pos_nat : 0 < n := by exact_mod_cast hn_pos_real
+  -- In K: ω > n, so 1/ω < 1/n (both positive).
+  have hω_gt_n : (n : K) < omegaSurreal K := omegaSurreal_gt_natCast K n
+  have hn_pos_K : (0 : K) < (n : K) := by exact_mod_cast hn_pos_nat
+  have hω_pos : (0 : K) < omegaSurreal K := omegaSurreal_pos K
+  -- ε = ω⁻¹; want ε < (n : K)⁻¹.
+  have hinv_lt : (omegaSurreal K)⁻¹ < ((n : K)⁻¹) := by
+    apply inv_lt_inv_of_lt hn_pos_K hω_gt_n
+  -- (n : K)⁻¹ = ofReal (1/n : ℝ).
+  have hnK_eq : (n : K) = SurrealField.ofReal ((n : ℝ)) := by
+    rw [← map_natCast SurrealField.ofReal n]
+  have hninv_eq : ((n : K)⁻¹) = SurrealField.ofReal (1 / n : ℝ) := by
+    rw [hnK_eq, ← map_inv₀]
+    congr 1
+    rw [one_div]
+  -- Final chain: ε = ω⁻¹ < (n : K)⁻¹ = ofReal (1/n) < ofReal r.
+  have hε_eq : epsilonSurreal K = (omegaSurreal K)⁻¹ := rfl
+  rw [hε_eq, hninv_eq] at hinv_lt
+  have h1n_lt_r : (1 / n : ℝ) < r := by
+    rw [div_lt_iff hn_pos_real]
+    rw [lt_div_iff hr] at hn_lt
+    linarith
+  have hofmono := SurrealField.ofReal_strictMono h1n_lt_r
+  linarith [hinv_lt, hofmono]
 
 end QOU.AppendixSurreals

@@ -1,0 +1,12 @@
+-- Ref: [conway1976] Conway, *On Numbers and Games*, §5 (Normal form).
+-- Ref: [gonshor1986] Gonshor, *Surreal Numbers*, Chapter 5.
+-- Ref: [ehrlich2012] Ehrlich, *The absolute arithmetic continuum*,
+--      Theorem 14.3.
+--
+-- Sibling stub for `def:conway-normal-form`.
+--
+-- Full formalisation deferred to a future HahnSeries-over-𝐍𝐨
+-- module; pending mathlib's `Mathlib.RingTheory.HahnSeries`
+-- integration with surreal-valued exponent groups.
+--
+-- See `QOU.AppendixSurreals.ConwayNormalForm` (placeholder structure).
