@@ -55,8 +55,6 @@
 | `universal_three_calibration.py` | negative — atoms anti-bound |
 | `pair_factorisation_probe.py` | negative — scalar vs traced V̂_ij |
 | `content_weighted_pair_probe.py` | partial — JM-cell improvement on T/³He |
-| `catalan_binding.py` | negative — α = m_e · 8G literal |
-| `tower_volume_extractor.py` | preliminary — V_n per-level test |
 
 ## External libraries
 
