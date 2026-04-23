@@ -80,3 +80,50 @@ the physical scale by small parameters.
 [infinitesimal Frobenius](#conj:infinitesimal-frobenius). A
 worked example would resolve it; a Hochschild-cohomology
 obstruction theorem would refute it.
+
+## Proof strategy
+
+Same architecture as
+[infinitesimal-frobenius](#conj:infinitesimal-frobenius):
+
+**Standard-part recovery (provable now)**:
+
+1. Given an $\varepsilon$-relaxed observability witness $\xi \in
+   \mathrm{Hom}_{\mathbf{No}}(\mathbf{1}, \mathrm{Ad}(A))$ with
+   $|\xi| \leq \varepsilon$.
+
+2. $\mathrm{St}(\xi) = 0$ by `standardPart_of_infinitesimal`.
+   So the standard-part of the hom-space contains no non-zero
+   elements: $\mathrm{Hom}_{\mathbb{R}}(\mathbf{1},
+   \mathrm{Ad}(\mathrm{St}(A))) = 0$.
+
+3. Strict observability holds for the standard-part image.
+
+**Strict generalisation (open)**:
+
+4. Construct a candidate non-trivial $\xi$. Source: a class in
+   $\mathrm{HH}^1(A, A) \otimes_{\mathbb{R}} \mathbf{No}$ that
+   becomes infinitesimal under standard-part.
+
+5. Show that $\xi$ is **not** in the image of any classical (i.e.
+   strict) Hochschild representative — this would establish
+   strict generalisation.
+
+**Required infrastructure**:
+- `standardPart_of_infinitesimal` (proved).
+- Surreal-coefficient Hochschild cohomology (does not exist in
+  mathlib).
+- A specific cohomological computation distinguishing
+  $\mathrm{HH}^1_{\mathbb{R}} \otimes \mathbf{No}$ from
+  $\mathrm{HH}^1_{\mathbf{No}}$.
+
+**Falsification path**: prove that every infinitesimal element
+of $\mathrm{Hom}_{\mathbf{No}}(\mathbf{1}, \mathrm{Ad}(A))$ comes
+from a *real* element scaled by $\varepsilon$ (i.e., $\xi = \varepsilon
+\cdot \eta$ for some $\eta \in \mathrm{Hom}_{\mathbb{R}}$). If
+$\eta$ must vanish for $\xi$ to satisfy the original observability
+constraint, the relaxation is empty.
+
+**Provability assessment**: identical to
+[infinitesimal-frobenius](#conj:infinitesimal-frobenius). One
+side trivial, the other requires deformation theory.

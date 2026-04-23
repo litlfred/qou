@@ -88,3 +88,54 @@ discussion in the paper (Möbius energy comparison; CODATA
 benchmarks; $\hbar_q \to 0$ etc.) be re-stated as
 standard-part identities, eliminating one source of analytic
 machinery.
+
+## Proof strategy
+
+The conjecture splits into a single-morphism case and a
+naturality case:
+
+**Single morphism case (single-element ground field)**:
+
+1. **Specialise** to the simplest non-trivial example:
+   $\mathbf{C} = \mathrm{Vect}_{\mathbb{Q}(q)}$ and a morphism
+   $f : V \to V$ given by a single rational function
+   $f_q(x) = p(q, x) / r(q, x)$ in $\mathbb{Q}(q, x)$.
+
+2. **Show**: $\lim_{q \to 1} f_q$ (in the topological sense, where
+   defined) equals $\mathrm{st}(f_{1+\varepsilon})$. Concretely:
+   write $f_{1+\varepsilon} = f_1 + \varepsilon \cdot g + O(\varepsilon^2)$
+   by Taylor expansion in the second variable; the standard-part
+   recovers $f_1 = \lim_{q \to 1} f_q$.
+
+3. **Lemma needed**: standard-part commutes with rational arithmetic
+   on finite surreals. Provided by
+   `QOU.AppendixSurreals.standardPart_add` and
+   `standardPart_mul`.
+
+**Naturality case** (functorial promotion):
+
+4. Generalise from a single morphism to a functor
+   $\mathrm{cl}_{\mathrm{top}} : \mathbf{C}_q \to \mathbf{C}_{q=1}$.
+   This requires functoriality of $\mathrm{St}$ on the
+   $K$-linear category $\mathbf{C}_K$, which is straightforward
+   from the ring-hom property of $\mathrm{St}$ on the finite
+   subring (provided $\mathbf{C}$ is enriched over
+   $K$-modules).
+
+**Required infrastructure**:
+- `QOU.AppendixSurreals.standardPart_add`, `_mul` (proved up to
+  the `IsFinite_decomposition` axiom).
+- A decision procedure for "rational in $\varepsilon$" in Lean
+  (could specialise to `Polynomial K`).
+
+**Falsification path**: produce a categorical structure
+$\mathbf{C}_q$ where some morphism's $q \to 1$ limit exists in
+the classical (topological) sense but not as a standard-part of
+evaluation at $1 + \varepsilon$. Such a structure would have to
+involve a discontinuous-but-classically-limit-existing function,
+which (for rational structure constants) is impossible.
+
+**Provability assessment**: the single-morphism case is a Lean
+exercise once the `IsFinite_decomposition` axiom is discharged.
+The functorial case requires more `CategoryTheory` machinery but
+is structural.

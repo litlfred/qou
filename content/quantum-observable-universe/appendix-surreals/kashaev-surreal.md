@@ -132,3 +132,55 @@ If the surreal Kashaev conjecture is proved (or even just
 proved for the knot class relevant to QOU), the QOU mass formula
 acquires an algebraic foundation independent of hyperbolic
 geometry.
+
+## Proof strategy
+
+**Reformulation reducibility (provable now)**:
+
+1. Show: the classical Kashaev statement (limit form) and the
+   surreal Kashaev statement (standard-part form) are
+   *equivalent* — one holds iff the other does.
+
+2. Forward direction: if $\lim_{n \to \infty} 2\pi \log
+   |J_K(\zeta_n, n)|/n = \mathrm{Vol}(S^3 \setminus K)$, then by
+   the transfer principle the standard-part of the surreal
+   evaluation matches.
+
+3. Backward direction: if $\mathrm{st}(\cdots) =
+   \mathrm{Vol}(\cdots)$, then by definition of $\mathrm{st}$
+   the asymptotic limit converges to $\mathrm{Vol}$.
+
+**Verification on known cases (provable now)**:
+
+4. The figure-eight knot $4_1$ (Murakami–Murakami 2001
+   [@murakami2001]) and the trefoil $3_1$ have the volume
+   conjecture proved. Compute $J_K(\zeta_\omega, \omega)$
+   directly, take $\mathrm{st}$, and verify equality with the
+   known volume.
+
+5. Use `QOU.AppendixSurreals.gonshorIn` and
+   `omegaSurreal` to express the surreal evaluations.
+
+**General case (open)**:
+
+6. The general Kashaev conjecture for hyperbolic knots is open
+   classically. The surreal reformulation does not provide a new
+   line of attack, but it *separates* the algebraic content
+   (rational-in-$\omega$ evaluations of $J_K$) from the geometric
+   content (the volume identity).
+
+**Required infrastructure**:
+- Coloured Jones polynomial in Lean (does not exist in mathlib).
+- Berarducci–Mantova exponential/logarithm on $\mathbf{No}$
+  (partial in mathlib).
+- Hyperbolic-volume formalisation (does not exist in mathlib).
+
+**Falsification path**: identical to the classical Kashaev
+conjecture; if the limit form fails for some knot, the
+surreal form fails as well (and conversely).
+
+**Provability assessment**: the *equivalence* of the two
+formulations is provable in Lean (transfer principle). The
+underlying conjecture is a long-standing open problem; the
+reformulation does not by itself solve it but reorganises the
+problem productively.

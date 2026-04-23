@@ -179,3 +179,58 @@ of unity), so the binary Hoefsmit / char-0 surreal picture applies
 throughout the main paper. The char-$p$ extension is included
 here as a conceptual companion: a record of where the same
 Hoefsmit machinery would go in the modular setting.
+
+## Proof strategy
+
+The conjecture's two halves: nimber existence (mathematically
+established) and Hecke ↔ nimber correspondence (open).
+
+**Layer 1: nimber field existence (cited)**:
+
+1. $\mathbf{On}_2$ is constructed by Conway–Lenstra
+   [@conway1976] as the union of $\mathbb{F}_{2^{2^k}}$;
+   algebraically closed, characteristic 2.
+
+2. $\mathbf{On}_p$ for odd $p$: similar construction via
+   nim-arithmetic. Established in the algebraic-geometry
+   literature.
+
+**Layer 2: Hecke-cell ↔ nimber bijection (open)**:
+
+3. **Smallest case** ($p = 2$, $n = 3$): compute the
+   Kazhdan–Lusztig cells of $H_3(\zeta_2) = H_3(-1)$ explicitly.
+   $H_3(-1)$ has 3 cells: $\{1\}$, $\{T_1, T_2, T_1T_2T_1\}$,
+   and $\{T_1T_2, T_2T_1\}$ (with appropriate $W$-graph
+   structure).
+
+4. **Match against** the first 3 elements of $\mathbf{On}_2$: the
+   nim-numbers $0, 1, *2$ (where $*2$ is the third nimber, equal
+   to the surreal $\{0,1 \mid \}$).
+
+5. **Verify** that the bijection respects the $\mathbb{Z}/2$
+   action (Frobenius / sign symmetry).
+
+6. **Generalise** to larger $n$ and other primes $p$ by
+   induction on KL-cell complexity.
+
+**Required infrastructure**:
+- Mathlib's nimber arithmetic (`Mathlib.Combinatorics.Nimber`,
+  exists but limited).
+- Kazhdan–Lusztig cell theory in Lean (does not exist).
+- Modular Hecke algebra at root of unity (does not exist).
+
+**Falsification path**: produce a $H_n(\zeta_p)$-cell that does
+not correspond to any nimber of depth $\leq n$ (i.e., a
+"phantom" cell with no nimber witness). Such an example would
+require $p$-ary fusion data not captured by nim-arithmetic,
+suggesting a different combinatorial replacement is needed.
+
+**Provability assessment**: Layer 1 already established. Layer 2
+for $p = 2, n = 3$ feasible by hand and Lean — matter of weeks.
+General Layer 2: requires Kazhdan–Lusztig cell theory in Lean —
+substantial mathlib gap, multi-year project.
+
+**Significance**: even verifying the smallest case ($p = 2,
+n = 3$) would be the first formalised connection between Hecke
+combinatorics and nim-arithmetic, opening a door to a much
+larger program.

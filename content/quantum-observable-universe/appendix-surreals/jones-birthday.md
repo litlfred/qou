@@ -83,3 +83,42 @@ against this pair.
 The conjecture is open. The Hoefsmit eigenchannel data is
 explicit (Hoefsmit gives closed formulas), so the refinement is
 computable; the question is whether it is non-trivial.
+
+## Proof strategy
+
+A direct attack (computational, no new theory):
+
+1. **Compute** $\widetilde{J}_K$ for the smallest pair of knots
+   sharing a Jones polynomial — Conway's $11n34, 11n42$
+   (Khovanov-distinguishable, $J$-indistinguishable). Both are
+   eleven-crossing knots, so the YJM tableau trees have depth
+   $\leq 11$.
+
+2. **Sum over tableau trajectories**: for each YJM-extension path
+   $\pi$ of length 11 in either knot, compute the Hoefsmit matrix
+   product along $\pi$ and convert to a sign sequence via
+   `signSequenceOfBraid`. Compute the Gonshor surreal of each path.
+
+3. **Aggregate by birthday**: group contributions by
+   $b(\mathrm{Gonshor}(\pi))$ and sum coefficients. The result is
+   $\widetilde{J}_K$.
+
+4. **Compare**: if $\widetilde{J}_{11n34} \neq \widetilde{J}_{11n42}$
+   the conjecture (existence of a strict refinement) is established
+   by a single example.
+
+**Required infrastructure**:
+- Hoefsmit matrix entries for $H_{11}(q)$ (closed-form, known).
+- `gonshor` map for finite sign sequences (provided by
+  `QOU.AppendixSurreals.gonshor`).
+- A Python/Lean script computing matrix products along YJM paths.
+
+**Falsification path**: prove that the Hoefsmit-trajectory sum
+factors through the YJM endpoint (= shape $\lambda$), so the
+birthday refinement equals the partition-summed Markov trace,
+which is the Jones polynomial. This would reduce
+$\widetilde{J}_K$ to $J_K$ identically.
+
+**Provability assessment**: computational verification feasible
+in days, not months. Lean formalisation requires only the
+already-built `gonshor` plus a Hoefsmit-matrix module.
