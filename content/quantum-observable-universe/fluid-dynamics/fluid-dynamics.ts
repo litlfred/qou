@@ -96,6 +96,10 @@ export default chapter({
         "ns-singularity-descartes",
         "torus-ns-regular",
         "root-of-unity-truncation",
+        // ── Observable MTC / anyons (Track B) ──────────────────────
+        "observable-mtc",
+        "bn-mtc-action",
+        "fusion-spin-anyons",
       ],
     }),
 

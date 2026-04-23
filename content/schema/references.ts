@@ -1701,6 +1701,51 @@ export const references: CSLData[] = [
     URL: "https://en.wikipedia.org/wiki/Bring_radical",
   }),
 
+  // ── Bolza 1887 ────────────────────────────────────────────────
+  ref({
+    id: "bolza1887",
+    type: "article-journal",
+    title: "On binary sextics with linear transformations into themselves",
+    author: [{ family: "Bolza", given: "Oskar" }],
+    "container-title": "American Journal of Mathematics",
+    issued: { "date-parts": [[1887]] },
+    volume: "10",
+    issue: "1",
+    page: "47-70",
+    DOI: "10.2307/2369402",
+  }),
+
+  // ── Moore and Seiberg 1989 ───────────────────────────────────
+  ref({
+    id: "mooreSeiberg1989",
+    type: "article-journal",
+    title: "Classical and quantum conformal field theory",
+    author: [
+      { family: "Moore", given: "Gregory" },
+      { family: "Seiberg", given: "Nathan" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1989]] },
+    volume: "123",
+    issue: "2",
+    page: "177-254",
+    DOI: "10.1007/BF01238857",
+  }),
+
+  // ── Kitaev 2006 ───────────────────────────────────────────────
+  ref({
+    id: "kitaev2006",
+    type: "article-journal",
+    title: "Anyons in an exactly solved model and beyond",
+    author: [{ family: "Kitaev", given: "Alexei" }],
+    "container-title": "Annals of Physics",
+    issued: { "date-parts": [[2006]] },
+    volume: "321",
+    issue: "1",
+    page: "2-111",
+    DOI: "10.1016/j.aop.2005.10.005",
+  }),
+
   // ── Deligne 2007 ──────────────────────────────────────────────
   ref({
     id: "deligne2007",
