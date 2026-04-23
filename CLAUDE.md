@@ -92,6 +92,7 @@ When a user request arrives, route to the right skill(s):
 | "audit proofs / review proofs / proof editor / coordinate proof review" | `local/proof-editor` | collaborator |
 | "simplify exposition / revisit old proof / integrate new content" | `local/proof-exposition-review` | collaborator |
 | "lean vs narrative / do they prove the same thing / equivalence audit" | `local/proof-narrative-lean-equivalence` | collaborator |
+| "concise proof / tighten proof / cut verbose narrative / shorten human proof" | `local/proof-conciseness` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
 | "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "audit lean / completeness / coverage" | `local/lean-completeness-audit` | collaborator |
@@ -168,7 +169,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`

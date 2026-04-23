@@ -27,7 +27,8 @@ Specialists it coordinates:
 | `proof-gap-audit` | Intra- and inter-proof gaps (existence, uniqueness, bridges) |
 | `lean-proof-review` | Lean correctness, style, axiom soundness |
 | `lean-completeness-audit` | LaTeX→Lean coverage (what's stated but not formalized) |
-| `proof-simplifier` | Overlong/brittle proofs, tactic cleanup |
+| `proof-simplifier` | Overlong/brittle Lean proofs, tactic cleanup |
+| `proof-conciseness` | Tighten narrative (human) proofs — cut verbosity without cutting reasoning |
 | `proof-exposition-review` | Retrospective integration — does this proof use content added since it was written? |
 | `proof-narrative-lean-equivalence` | Does the Lean sibling prove the same thing the narrative claims? |
 | `proof-triage` | `sorry` inventory and priority ordering |
