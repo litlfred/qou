@@ -134,31 +134,35 @@ if __name__ == "__main__":
     print(f"\n{'=' * 80}")
     print("DIRECT: candidate deuterium links (Vol close to 4.35)")
     print("=" * 80)
-    import snappy
-    D_tgt = TARGETS[0][1] / M_E_MEV
-    print(f"  target: Vol(D-link) = B(D)/m_e = {D_tgt:.6f}")
     candidates_D = []
-    for cross_cnt in [6, 7, 8]:
-        try:
-            for M in snappy.LinkExteriors(crossings=cross_cnt):
-                try:
-                    v = float(M.volume())
-                    if abs(v - D_tgt) < 1.0:
-                        candidates_D.append({
-                            "name": M.name(),
-                            "crossings": cross_cnt,
-                            "cusps": M.num_cusps(),
-                            "volume": v,
-                            "err_pct": (v - D_tgt) / D_tgt * 100,
-                        })
-                except Exception:
-                    pass
-        except Exception:
-            continue
-    for c in sorted(candidates_D,
-                      key=lambda x: abs(x["volume"] - D_tgt))[:15]:
-        print(f"  {c['name']:>14} n_cusps={c['cusps']:>2}  "
-              f"Vol={c['volume']:>9.4f}  err={c['err_pct']:+.3f}%")
+    try:
+        import snappy as _snappy
+    except ImportError:
+        print("  SnapPy not installed; skipping direct deuterium-link search.")
+    else:
+        D_tgt = TARGETS[0][1] / M_E_MEV
+        print(f"  target: Vol(D-link) = B(D)/m_e = {D_tgt:.6f}")
+        for cross_cnt in [6, 7, 8]:
+            try:
+                for M in _snappy.LinkExteriors(crossings=cross_cnt):
+                    try:
+                        v = float(M.volume())
+                        if abs(v - D_tgt) < 1.0:
+                            candidates_D.append({
+                                "name": M.name(),
+                                "crossings": cross_cnt,
+                                "cusps": M.num_cusps(),
+                                "volume": v,
+                                "err_pct": (v - D_tgt) / D_tgt * 100,
+                            })
+                    except Exception:
+                        pass
+            except Exception:
+                continue
+        for c in sorted(candidates_D,
+                          key=lambda x: abs(x["volume"] - D_tgt))[:15]:
+            print(f"  {c['name']:>14} n_cusps={c['cusps']:>2}  "
+                  f"Vol={c['volume']:>9.4f}  err={c['err_pct']:+.3f}%")
 
     witness = {
         "computation": "jsj-verification",

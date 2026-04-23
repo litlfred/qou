@@ -69,7 +69,7 @@ populated, doubling the effective packing (see
 
 Pinning $\rho \in \{m_e, 2m_e\}$ and computing the hyperbolic volume
 of the atomic link complement reproduces nuclear binding energies for
-doubly-magic atoms within $\leq 6\%$ using zero free parameters:
+doubly-magic atoms within $\leq 6.2\%$ using zero free parameters:
 ${}^4\mathrm{He}$, ${}^{12}\mathrm{C}$, ${}^{16}\mathrm{O}$.  For
 light atoms, the atomic link complement is itself a named hyperbolic
 knot from the standard census:

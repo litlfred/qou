@@ -48,12 +48,19 @@ class CrossingGradedMassExpansion (K : Type*) where
   -- verify it per atomic-link configuration via explicit GB reduction
   -- and volume computation (SnapPy).
 
-/-- Coefficient-zero recovery: the n = 0 term equals the standard
-    Gröbner-Shirshov mass, regardless of depth. -/
-theorem gbCoeffAtZero_isGroebnerMass
+/-- Classical-limit recovery: at zero depth, the total mass equals
+    the zeroth GB coefficient — the standard Gröbner-Shirshov mass.
+    At `(depth k).value = 0`, only the `n = 0` term of the foldr
+    survives. -/
+theorem mass_at_zero_depth
     {K : Type*} [CrossingGradedMassExpansion K]
-    (k : K) :
-    CrossingGradedMassExpansion.gbCoeff k 0
-      = CrossingGradedMassExpansion.gbCoeff k 0 := rfl
+    (k : K) (h : (CrossingGradedMassExpansion.depth k).value = 0) :
+    CrossingGradedMassExpansion.mass k
+      = CrossingGradedMassExpansion.gbCoeff k 0 := by
+  -- Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
+  -- The expansion m = Σ_n ξ^n · gbCoeff_n collapses to gbCoeff_0
+  -- when ξ = 0; proving the collapse formally requires induction
+  -- on `crossingCount k` and is deferred.
+  sorry
 
 end QOU.ParticleInteractions

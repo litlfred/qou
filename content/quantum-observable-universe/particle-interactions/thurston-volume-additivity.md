@@ -10,7 +10,7 @@ of its four ideal vertices.
 
 ## Statement
 
-**Proposition** \cite{thurston1978}**.**
+**Proposition.** \cite{thurston1978}
 *Let $\mathcal{K} \subset S^3$ be a hyperbolic knot or link, and
 fix an ideal triangulation of $S^3 \setminus \mathcal{K}$ with
 shape parameters $z_1, \ldots, z_N$ determined by the hyperbolic

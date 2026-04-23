@@ -28,10 +28,13 @@ namespace QOU.ParticleInteractions
     standing in for the classical function
     D(z) = Im(Li₂(z)) + arg(1-z) · log|z|.
     Fully developed definition is outside the scope of this
-    formalization; we treat it as a black box. -/
-noncomputable def blochWigner : ℂ → ℝ := fun _ => 0  -- opaque stub
+    formalization; we treat it as opaque (unreducible) so that
+    downstream lemmas cannot silently depend on a stub body. -/
+opaque blochWigner : ℂ → ℝ
 
-/-- Bloch-Wigner vanishes on the real line. -/
+/-- Bloch-Wigner vanishes on the real line.
+    Taken as an axiom because `blochWigner` is opaque and this
+    is a real theorem of hyperbolic geometry (not a rfl). -/
 axiom blochWigner_real (x : ℝ) : blochWigner (x : ℂ) = 0
 
 /-- Data of a Thurston ideal triangulation: a finite list of shape

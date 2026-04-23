@@ -5,8 +5,9 @@ Low-isotope mass-volume binding-energy sweep.
 Applies the formalized framework from
 particle-interactions §8 (thurston-volume-additivity /
 mass-volume-factorization / crossing-graded-mass-expansion /
-lifted-crossing-locality / frobenius-packing-density) to all
-stable isotopes with Z = 1..10.
+lifted-crossing-locality / frobenius-packing-density) to light
+isotopes with Z = 1..10.  Includes ⁸Be (unstable, lifetime
+~10⁻¹⁶ s) as a topologically meaningful α-chain node.
 
 Strategies (in order of specificity):
 
