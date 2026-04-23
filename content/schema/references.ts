@@ -742,6 +742,24 @@ export const references: CSLData[] = [
     ISBN: "978-0-521-56724-4",
   }),
 
+  // ── Vershik-Kerov 1977 (Plancherel asymptotics / limit shape) ──
+  ref({
+    id: "vershikKerov1977",
+    type: "article-journal",
+    title:
+      "Asymptotic theory of characters of the symmetric group",
+    author: [
+      { family: "Vershik", given: "Anatoly M." },
+      { family: "Kerov", given: "Sergei V." },
+    ],
+    "container-title":
+      "Functional Analysis and Its Applications",
+    volume: "15",
+    page: "246-255",
+    issued: { "date-parts": [[1977]] },
+    DOI: "10.1007/BF01106153",
+  }),
+
   ref({
     id: "kerov1993",
     type: "article-journal",
