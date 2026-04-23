@@ -210,7 +210,7 @@ noncomputable def skewSYTCount : Partition → Partition → ℕ
         have : (λ.removeCorner c.row).size - μ.size < λ.size - μ.size := by
           -- Corner cell is in skewCells, so row < λ.length and part > 0
           -- removeCorner_decreases then gives the strict decrease
-          sorry
+          sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — skew SYT construction (§7.10)
         skewSYTCount (λ.removeCorner c.row) μ
 termination_by λ.size - μ.size
 
@@ -256,7 +256,8 @@ theorem branching_nonneg (λ μ : Partition) : 0 ≤ branchingMult λ μ :=
 /-- Adding a cell to a partition: λ ← c gives a new partition with
     one more cell at the addable position. -/
 def Partition.addCell (λ : Partition) (row : ℕ) : Partition :=
-  sorry -- add one cell at the end of the given row
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — skew tableau row extension
+  -- add one cell at the end of the given row
   -- must verify the result is still a valid partition
   -- Ref: [sagan2001] §2.3
 
