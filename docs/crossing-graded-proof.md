@@ -12,7 +12,7 @@ where $\xi(q) = D(z_q)/\hbar_q^2$ and $\mathfrak{m}^{(n)}_\text{GB}$ is a finite
 
 ## Proof
 
-### Step 1 — $\Phi_q$ is a polynomial in $z = q^{-1} \cdot z_0$
+### Step 1 — $\Phi_q$ is a power series in $z = q^{-1} \cdot z_0$ (internal: `def:quantum-dilogarithm`)
 
 By definition,
 $$\Phi_q(z) = \prod_{k=1}^\infty (1 - q^{-k} z)^{-1} = \exp\!\left(\sum_{k,n \geq 1} \frac{q^{-kn} z^n}{n}\right).$$
@@ -48,9 +48,9 @@ The "algebraic prefactor" encapsulates the per-subset-of-$n$-lifted-crossings co
 
 ### Step 5 — Closure of the series
 
-For $|\xi(q)| < 1$, the series converges absolutely. At $q_0$, however, $\xi(q_0) \approx 70.4$ (computed in q_pinning_50_digit), so the series **DIVERGES** if treated naively.
+For $|\xi(q)| < 1$, the series converges absolutely. At $q_0$, no verified committed 50-digit value of $\xi(q_0)$ is yet available (the placeholder Descartes-curve path in `q_pinning_50_digit.py` has been disabled; see `lambda_descartes_q0.py` on main for the 15-digit verified derivation pending porting). Consequently, absolute convergence at $q_0$ is **not established** by this argument.
 
-**Resolution**: the series is a FORMAL expansion that is summable via Borel summation OR via the locality-closed form (which gives the exponential $\prod_c (1 + \xi \eta(c))$ instead of the sum).
+**Resolution**: the series is therefore treated as a FORMAL expansion. Evaluation at $q_0$ requires a resummation method — either Borel summation or the locality-closed form which gives the exponential $\prod_c (1 + \xi \eta(c))$ instead of the sum.
 
 The locality conjecture provides the resummed form:
 $$\mathfrak{m}(\mathcal{K}; q) = \mathfrak{m}_\text{GB}(\mathcal{K}) \cdot \prod_c (1 + \xi(q) \eta(c))$$

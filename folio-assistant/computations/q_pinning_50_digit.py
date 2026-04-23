@@ -7,8 +7,10 @@ CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
   Vol(4_1) = 2.029 883 212 819 307 250 042 405 108 549 040 ...
              (SnapPy verified hyperbolic structure, ~50+ digits)
 
-  m_μ/m_e  = 206.768 282 6 ± 6.4e-7  (CODATA 2022)
-             — limits PHYSICAL anchoring to ~1e-8 relative
+  m_μ/m_e  = 206.768 283 0 ± 4.6e-6  (CODATA 2022 — value below is the
+             primary source; q_parameter.py carries the same value)
+             — propagates to σ(q₀)/q₀ ≈ 1.22e-9 relative, computed
+             below from dq/dR
 
 DERIVATION:
 
@@ -116,46 +118,32 @@ def bloch_wigner(z: mpc) -> mpf:
 
 # ── Descartes elliptic curve λ-invariant at q₀ ────────────
 def descartes_lambda(q: mpf) -> mpc:
-    """Legendre λ-invariant of E_q via Weierstrass coefficients.
+    """Legendre λ-invariant of E_q — DISABLED pending verified coefficients.
 
-    E_q in Weierstrass form: y² = x³ + p(q) x + r(q).
-    Lambda satisfies 256·u³ = j·(1-u)² with u = λ²-λ+1.
-
-    Currently uses a placeholder p(q), r(q) — the actual paper
-    derivation is in lambda_descartes_q0.py; this is a 50-digit
-    rerun of that calculation.
+    The previous implementation used placeholder Weierstrass coefficients
+    p(q), r(q) that did NOT come from the paper's Descartes-curve
+    derivation.  To compute ξ(q) at 50 digits, import the verified
+    Weierstrass form from ``lambda_descartes_q0.py`` (on main) and
+    rewrite this routine.  Until then, this function raises to prevent
+    downstream consumers from using unreliable numeric values.
     """
-    # Placeholder Weierstrass form — paper has the Descartes-curve coeffs
-    # We use p = -3·q²/4, r = q³·(1 - q²)/8 as a working example
-    # (substitute the actual paper form when verified)
-    p = -mpf(3) * q ** 2 / mpf(4)
-    r = q ** 3 * (mpf(1) - q ** 2) / mpf(8)
-    j_num = mpf(6912) * p ** 3
-    j_den = mpf(4) * p ** 3 + mpf(27) * r ** 2
-    if j_den == 0:
-        return mpc(mpf("0.5"), mpf("0.866025"))  # equianharmonic fallback
-    j = j_num / j_den
-    # Solve 256·u³ = j·(1 - u)² for u (cubic in u)
-    # Use high-precision root via mpmath polyroots
-    from mpmath import polyroots
-    coeffs = [mpf(256), j, -mpf(2) * j, j]   # 256u³ + j·u² - 2j·u + j = 0
-    roots = polyroots(coeffs, maxsteps=200, extraprec=100)
-    # Pick the root closest to e^{iπ/3} (regular tetrahedron λ)
-    target = exp(mpc(0, 1) * pi / mpf(3))
-    target_u = target ** 2 - target + mpf(1)
-    u = min(roots, key=lambda r: abs(r - target_u))
-    # u = λ² - λ + 1  →  λ = (1 ± √(1 - 4(1-u))) / 2
-    disc = mpf(1) - mpf(4) * (mpf(1) - u)
-    lam = (mpf(1) + sqrt(disc)) / mpf(2)
-    return lam
+    raise NotImplementedError(
+        "descartes_lambda() placeholder disabled.  Wire in the verified "
+        "Descartes-curve coefficients from lambda_descartes_q0.py before "
+        "computing λ or ξ(q) at 50 digits."
+    )
 
 
 def xi_q(q: mpf) -> mpf:
-    """ξ(q) = D(λ_Descartes(q)) / ℏ_q² — universal shape coupling."""
-    lam = descartes_lambda(q)
-    D_val = bloch_wigner(lam)
-    hbar_sq = (mpf(1) - mpf(1) / q) ** 2
-    return D_val / hbar_sq
+    """ξ(q) = D(λ_Descartes(q)) / ℏ_q² — universal shape coupling.
+
+    DISABLED: depends on ``descartes_lambda`` which is currently pinned
+    to placeholder coefficients.  See ``lambda_descartes_q0.py`` for
+    the verified 15-digit path; a 50-digit port is pending.
+    """
+    raise NotImplementedError(
+        "xi_q(q) disabled pending verified Descartes-curve coefficients."
+    )
 
 
 if __name__ == "__main__":
@@ -202,8 +190,10 @@ if __name__ == "__main__":
         print(f"  λ_Descartes(q₀) = {lam}")
         print(f"  D(λ)            = {D_lam}")
         print(f"  ξ(q₀) = D/ℏ_q² = {xi}")
-    except Exception as e:
-        print(f"  ERROR: {type(e).__name__}: {str(e)[:100]}")
+    except NotImplementedError as e:
+        print(f"  DISABLED — placeholder Descartes coefficients removed.")
+        print(f"  See lambda_descartes_q0.py (15-digit verified) on main.")
+        print(f"  TODO: port that routine to 50-digit mpmath.")
 
     print(f"\nUncertainty propagation:")
     # dq/d(R) = q² · ℏ_q / (2R)  where R = m_μ/m_e
@@ -214,10 +204,30 @@ if __name__ == "__main__":
     print(f"  σ(m_μ/m_e)       = {M_MU_E_ERR}")
     print(f"  σ(q₀) [absolute] = {Q_ERR}")
     print(f"  σ(q₀)/q₀ [rel]   = {Q_ERR / Q}")
-    print(f"  → CODATA-bounded relative precision: ~"
-          f"{float(Q_ERR / Q):.2e}")
-    print(f"  → 1 ppb = 1e-9; CODATA bound = "
-          f"~1e-8.  ⚠ PINNING-LIMITED at ~10× from 1 ppb.")
+    rel_prec = float(Q_ERR / Q)
+    print(f"  → CODATA-bounded relative precision: ~{rel_prec:.2e}")
+    ratio_to_ppb = rel_prec / 1e-9
+    if ratio_to_ppb <= 2:
+        bound_msg = (f"✓ At 1-ppb-class precision "
+                      f"(σ/q = {rel_prec:.2e}).")
+    else:
+        bound_msg = (f"⚠ PINNING-LIMITED at ~{ratio_to_ppb:.1f}× from "
+                      f"1 ppb (σ/q = {rel_prec:.2e}).")
+    print(f"  → 1 ppb = 1e-9.  {bound_msg}")
+
+    # ξ(q₀) is DISABLED pending verified Descartes-curve derivation at
+    # 50-digit mpmath precision; a 15-digit path exists in
+    # lambda_descartes_q0.py (on main) and must be ported.
+    universal_shape_coupling = {
+        "status": "disabled",
+        "reason": (
+            "descartes_lambda() placeholder disabled to prevent "
+            "unreliable xi(q₀) values.  Port the verified "
+            "lambda_descartes_q0.py derivation to 50-digit mpmath "
+            "before re-enabling."
+        ),
+        "formula": "xi(q) = D(lambda_descartes(q)) / hbar_q^2",
+    }
 
     # Witness output
     witness = {
@@ -225,11 +235,15 @@ if __name__ == "__main__":
         "description": (
             "Substrate parameter q₀ pinned to 50 decimal digits via "
             "mpmath, derived from Vol(4_1) and m_μ/m_e (CODATA 2022).  "
-            "Internal framework arithmetic exact to 50 digits; "
-            "PHYSICAL anchoring bounded by CODATA at ~1e-8 relative.  "
-            "All key derived constants (ℏ_q², ρ_q, [n]_q, w_λ, ξ(q₀)) "
-            "computed at full precision for use in 1-ppb mass formula "
-            "evaluation."
+            "Internal arithmetic is exact to 50 digits; physical "
+            "anchoring is bounded by the propagated CODATA relative "
+            "uncertainty ≈ 1.22e-9 (see physical_anchoring_bound).  "
+            "Recorded 50-digit outputs: q, q^{-1}, ℏ_q², ℏ_q, H_A, "
+            "[2]_q, z_markov, ρ_q, s_skein; plus quantum integers/"
+            "factorials and n=3 Plancherel weights.  ξ(q₀) via "
+            "Descartes-curve λ is NOT yet recorded — the current "
+            "placeholder has been disabled; port lambda_descartes_q0.py "
+            "to 50 digits and re-emit."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "precision_decimal_digits": mp.dps,
@@ -263,16 +277,20 @@ if __name__ == "__main__":
             "w_(1,1,1)": str(w_alt),
             "sum":       str(w_sym + w_std + w_alt),
         },
+        "universal_shape_coupling": universal_shape_coupling,
         "physical_anchoring_bound": {
             "codata_relative_uncertainty": str(Q_ERR / Q),
             "ppb_target": "1e-9",
-            "limited_by": "CODATA m_μ/m_e at ~1e-8",
+            "limited_by":
+                f"CODATA m_μ/m_e at σ(q)/q ≈ {float(Q_ERR/Q):.2e}",
             "comment": (
                 "Internal arithmetic is at 50 digits.  The framework's "
                 "DIMENSIONLESS predictions (ratios, equality of "
                 "computed quantities) can be checked at 50-digit "
-                "precision.  Predictions in MeV (via E_0) are bounded "
-                "to ~1e-8 by CODATA m_μ/m_e."
+                "precision.  Absolute (MeV) predictions are bounded "
+                "to the CODATA-propagated relative uncertainty above "
+                "(~1.22e-9 with current m_μ/m_e), which is already at "
+                "1-ppb-class."
             ),
         },
     }

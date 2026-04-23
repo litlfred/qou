@@ -1,7 +1,7 @@
 {
   "computation": "q-pinning-50-digit",
-  "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath, derived from Vol(4_1) and m_\u03bc/m_e (CODATA 2022).  Internal framework arithmetic exact to 50 digits; PHYSICAL anchoring bounded by CODATA at ~1e-8 relative.  All key derived constants (\u210f_q\u00b2, \u03c1_q, [n]_q, w_\u03bb, \u03be(q\u2080)) computed at full precision for use in 1-ppb mass formula evaluation.",
-  "timestamp": "2026-04-23T20:21:20.410030+00:00",
+  "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath, derived from Vol(4_1) and m_\u03bc/m_e (CODATA 2022).  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 1.22e-9 (see physical_anchoring_bound).  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, \u03c1_q, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Descartes-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_descartes_q0.py to 50 digits and re-emit.",
+  "timestamp": "2026-04-23T21:02:58.049440+00:00",
   "precision_decimal_digits": 50,
   "calibration_inputs": {
     "Vol_4_1_str": "2.0298832128193072500424051085490405710014",
@@ -44,10 +44,15 @@
     "w_(1,1,1)": "0.16338322733975821192112507841915622445416875627726",
     "sum": "0.98744022702786611120920642747847628738611217892333"
   },
+  "universal_shape_coupling": {
+    "status": "disabled",
+    "reason": "descartes_lambda() placeholder disabled to prevent unreliable xi(q\u2080) values.  Port the verified lambda_descartes_q0.py derivation to 50-digit mpmath before re-enabling.",
+    "formula": "xi(q) = D(lambda_descartes(q)) / hbar_q^2"
+  },
   "physical_anchoring_bound": {
     "codata_relative_uncertainty": "0.0000000012233538244094009483440280978774272131647597253664",
     "ppb_target": "1e-9",
-    "limited_by": "CODATA m_\u03bc/m_e at ~1e-8",
-    "comment": "Internal arithmetic is at 50 digits.  The framework's DIMENSIONLESS predictions (ratios, equality of computed quantities) can be checked at 50-digit precision.  Predictions in MeV (via E_0) are bounded to ~1e-8 by CODATA m_\u03bc/m_e."
+    "limited_by": "CODATA m_\u03bc/m_e at \u03c3(q)/q \u2248 1.22e-09",
+    "comment": "Internal arithmetic is at 50 digits.  The framework's DIMENSIONLESS predictions (ratios, equality of computed quantities) can be checked at 50-digit precision.  Absolute (MeV) predictions are bounded to the CODATA-propagated relative uncertainty above (~1.22e-9 with current m_\u03bc/m_e), which is already at 1-ppb-class."
   }
 }

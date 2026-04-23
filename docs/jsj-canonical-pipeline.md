@@ -53,7 +53,8 @@ The α-cluster + knot-Vol + Frobenius-packing-density approach gives the right m
 ## Action plan to 1 ppb
 
 ### Phase 1 — Substrate pinning (DONE)
-✓ `q_pinning_50_digit.py` pins $q_0$, $\hbar_q^2$, $\rho_q$, ξ(q₀) at 50 digits.
+✓ `q_pinning_50_digit.py` pins $q_0$, $\hbar_q^2$, $\rho_q$, z_markov at 50 digits.
+⚠ ξ(q₀) is NOT YET at 50 digits — the Descartes-curve placeholder was disabled; the 15-digit verified path exists in `lambda_descartes_q0.py` on main and must be ported.
 ✓ CODATA m_μ/m_e bound: 1.22e-9 relative on $q_0$. 1 ppb is at the EDGE.
 
 ### Phase 2 — Conjecture proofs (PARTIAL)
