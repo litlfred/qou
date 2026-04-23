@@ -1,12 +1,57 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$
 ([quantum observable universe](#def:quantum-observable-universe)).
-Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
-the non-perturbative quantum dilogarithm
-([quantum Bloch group](#def:quantum-bloch-group)).  Let
-$\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
+Let $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
 ([three-invariant mass formula](#prop:atomic-braid-mass)).
+
+### Algebraic form
+
+Via the Kashaev volume--density reading
+([Kashaev volume--density](#rem:kashaev-volume-density)), the tower
+admits a compact algebraic statement: *for every braid
+$\beta \in B_{n}$ with $n - 1$ generators,*
+
+$$
+  \mathfrak{m}(\varrho)
+  \;=\;
+  \rho_{q} \cdot
+  \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta),
+  \qquad
+  \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta)
+  \;\in\; \mathbb{Z}[q^{1/2}, q^{-1/2}],
+$$
+
+*where $\rho_{q} = 1/\hbar_{q}^{2}$ is the substrate density
+([quantum Planck constant](#def:quantum-planck-constant)) and*
+
+$$
+  \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta)
+  \;=\;
+  \prod_{i=0}^{n-2} \hat{V}_{i}^{\mathrm{full}}
+  \;+\;
+  \sum_{\emptyset \neq S \subseteq \{0,\ldots,n-2\},\;\lvert S \rvert \leq 2}
+    z^{\lvert S \rvert}
+    \cdot \mathrm{Vol}_{q}^{(S)}(\beta),
+$$
+
+*with each $\mathrm{Vol}_{q}^{(S)}(\beta) \in \mathbb{Z}[q^{1/2},
+q^{-1/2}]$ a Markov trace over the transfer-matrix chain supported on
+$S$
+([Markov trace product](#thm:markov-trace-product)), and $z = 1/(q^{1/2}
++ q^{-1/2})$ the Markov parameter.*
+
+Every per-generator contribution is a finite Laurent polynomial in $q$;
+no quantum-dilogarithm evaluation is required to **state** the tower.
+The archimedean realisation $\mathrm{Vol}_{q}^{(S)} \rightsquigarrow
+\Phi_{q}$ is a specialisation via the Kashaev limit, recorded in the
+expanded form below.
+
+### Quantum-dilogarithm form (archimedean specialisation)
+
+Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
+the non-perturbative quantum dilogarithm
+([quantum Bloch group](#def:quantum-bloch-group)).
 
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative

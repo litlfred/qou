@@ -23,5 +23,6 @@ export default definition({
     "def:quantum-observable-universe",
     "def:yekutieli-triple",
     "def:q-energy",
+    "rem:kashaev-volume-density",
   ],
 });

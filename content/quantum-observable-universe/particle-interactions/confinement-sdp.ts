@@ -13,6 +13,10 @@ export default proposition({
     "prop:frobenius-gram-matrix",
     "prop:confinement-lp",
     "prop:knot-operator-selection",
+    "def:crossing-energy",
+    "rem:hecke-algebra-from-braiding",
+    "thm:jones-markov-trace",
+    "def:substrate-parameter",
   ],
   tags: [
     "semidefinite-programming",
@@ -22,5 +26,6 @@ export default proposition({
     "cross-channel-coupling",
     "multi-operator-binding",
     "sdp-duality",
+    "spectral-gap",
   ],
 });

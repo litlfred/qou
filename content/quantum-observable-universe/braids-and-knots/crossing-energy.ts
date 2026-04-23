@@ -11,5 +11,8 @@ export default definition({
   uses: [
     "rem:r-matrix-braiding",
     "def:substrate-parameter",
+    "def:quantum-observable-universe",
+    "prop:braiding-eigenvalue-extraction",
+    "prop:nuclear-groebner-reduction",
   ],
 });
