@@ -72,10 +72,12 @@ theorem mass_at_zero_depth
     CrossingGradedMassExpansion.mass k
       = CrossingGradedMassExpansion.groebnerMass k := by
   -- Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
-  -- Proof sketch: substitute h into `expansion`; in the foldr,
-  -- every term with exponent ≥ 1 vanishes since depth = 0, leaving
-  -- only gbCoeff k 0, which by `gbCoeffZero_eq_groebner` equals
-  -- groebnerMass k.  Induction on `crossingCount k` deferred.
+  -- Proof sketch: substitute h into `expansion`; in the Horner
+  -- foldl on the reversed range, every step `acc * 0 + gbCoeff k n`
+  -- reduces `acc` to `gbCoeff k n` at each index, so the final
+  -- result is `gbCoeff k 0` — which by `gbCoeffZero_eq_groebner`
+  -- equals `groebnerMass k`.  Induction on `crossingCount k`
+  -- deferred.
   sorry
 
 end QOU.ParticleInteractions

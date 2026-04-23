@@ -106,6 +106,12 @@ def main() -> int:
     A_mat = [[Phi4, lnF4], [Phi12, lnF12]]
     b_vec = [M4 - F4, M12 - F12]
     det = A_mat[0][0] * A_mat[1][1] - A_mat[0][1] * A_mat[1][0]
+    if abs(det) < 1e-15:
+        raise ValueError(
+            "Calibration anchors (⁴He, ¹²C) are linearly dependent in "
+            "(Φ_atom, ln F_nuc) space; cannot solve for α, β.  "
+            "Pick a different anchor pair."
+        )
     alpha = (b_vec[0] * A_mat[1][1] - b_vec[1] * A_mat[0][1]) / det
     beta  = (A_mat[0][0] * b_vec[1] - A_mat[1][0] * b_vec[0]) / det
 

@@ -139,7 +139,10 @@ def weights_vector(parts: list[tuple]) -> np.ndarray:
     """
     raw = np.array([wedderburn_weight(p) for p in parts], dtype=float)
     total = raw.sum()
-    if total <= 0 or not np.isfinite(total):
+    # Guard against near-zero total — under aggressive ℓ_* cutoff the
+    # excluded partitions can carry the bulk of the measure, making
+    # the remaining sum tiny and division noisy.
+    if total < 1e-12 or not np.isfinite(total):
         return raw
     return raw / total
 
