@@ -13,7 +13,17 @@ Combined mass table — AME2020 vs:
       Included here to show, side by side, exactly how the paper
       formula fails on light atoms — so the gap is explicit.
 
-No fitting.  Both columns are deterministic functions of q₀ and
+For the four atoms where we have a knot assignment and full atom
+braid word (D, T, ³He, ⁴He), adds three new derivation-based
+columns:
+
+  • ρ_F deviation  = ρ_F^eff / ρ_F^nominal − 1
+                   = (B_AME / Vol_hyp) / (k·m_e) − 1,  k ∈ {1, 2}
+  • χ_sym · χ_alt via closed form   −(1 + H_A²/4)^(2A+1)
+    (from docs/chi-sym-alt-theorem.md — NO matrix computation)
+  • n_ud = 2A + 1                    (structural count)
+
+No fitting.  Every column is a deterministic function of q₀ and
 the specified atom↔knot hypothesis (where applicable).
 
 Output: mass-table-combined.witness.json
@@ -29,7 +39,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 sys.path.insert(0, str(Path(__file__).parent))
 
 from experimental_constants import M_E_MEV
-from hecke_core import atom_per_generator_volumes
+from hecke_core import atom_per_generator_volumes, h as H_A_VAL
 
 from witness_base import WitnessBuilder
 
@@ -140,6 +150,41 @@ def b_paper(sym: str, Z: int, N: int) -> dict | None:
             "formula": f"−(m_e·8G)·Φ₁  [Φ₁={p1:+.4f}]"}
 
 
+def rho_f_deviation(sym: str, B_ame: float) -> dict | None:
+    """Observed ρ_F^eff / nominal − 1, for atoms with a Kashaev knot assignment.
+
+    Returns None if we don't know V_hyp for this atom.
+    """
+    info = ATOM_ASSIGN.get(sym)
+    if not info:
+        return None
+    if info["rule"] == "kashaev":
+        V = KNOT_VOL[info["knot"]]
+        rho_f = info["rho_factor"]
+    elif info["rule"] == "magic":
+        V = info["A_units"] * VOL_BORROMEAN
+        rho_f = info["rho_factor"]
+    else:
+        return None
+    rho_eff = B_ame / V
+    rho_nominal = rho_f * M_E_MEV
+    return {"rho_eff": rho_eff, "rho_nominal": rho_nominal,
+            "deviation_pct": (rho_eff / rho_nominal - 1) * 100}
+
+
+def chi_sym_alt_closed_form(Z: int, N: int) -> dict:
+    """Closed form from docs/chi-sym-alt-theorem.md (no matrix computation).
+
+    n_ud = 2A + 1 for Z ≥ 1, N ≥ 1.
+    χ_sym·χ_alt = −(1 + H_A²/4)^(2A+1)  (sign is −1 for all tested atoms).
+    """
+    A = Z + N
+    n_ud = 2 * A + 1
+    factor = 1.0 + H_A_VAL * H_A_VAL / 4.0
+    product = -(factor ** n_ud)
+    return {"A": A, "n_ud": n_ud, "product": product}
+
+
 def main():
     w = WitnessBuilder("mass-table-combined", engine="numpy+sympy")
     w.set_description(
@@ -163,10 +208,12 @@ def main():
     print("COMBINED MASS TABLE — AME2020 vs Kashaev(ρ·Vol) vs Paper(−α·Φ₁)")
     print(f"  m_e = {M_E_MEV:.6f} MeV   α = m_e·8G = {ALPHA_MEV_PAPER:.6f} MeV")
     print(f"  c_αα = m_e·Vol(7²₁) = {C_ALPHA_DERIVED:.6f} MeV")
+    print(f"  H_A = {H_A_VAL:.6f}   1+H_A²/4 = {1 + H_A_VAL*H_A_VAL/4:.6f}")
     print("=" * 140)
     print(f"{'atom':<6}{'A':>3}{'B_AME':>12}"
           f"{'Kashaev':>12}{'err%':>8}  "
-          f"{'Paper −αΦ₁':>14}{'err%':>8}   formula (Kashaev)")
+          f"{'Paper −αΦ₁':>14}{'err%':>8}  "
+          f"{'ρ_F dev':>10}  {'χ_s·χ_a':>10}  {'n_ud':>5}  fmla")
     print("-" * 140)
 
     rows = []
@@ -179,13 +226,20 @@ def main():
         b_p = p["B"] if p else None
         err_p = (b_p - B_ame) / B_ame * 100 if b_p is not None else None
 
+        rho_info = rho_f_deviation(sym, B_ame)
+        chi_info = chi_sym_alt_closed_form(Z, N) if Z >= 1 and N >= 1 else None
+
         k_str = f"{b_k:>+12.4f}" if b_k is not None else f"{'—':>12}"
         ek_str = f"{err_k:>+7.2f}%" if err_k is not None else f"{'—':>8}"
         p_str = f"{b_p:>+14.4f}" if b_p is not None else f"{'—':>14}"
         ep_str = f"{err_p:>+7.2f}%" if err_p is not None else f"{'—':>8}"
+        rho_str = (f"{rho_info['deviation_pct']:>+8.2f}%"
+                   if rho_info else f"{'—':>10}")
+        chi_str = f"{chi_info['product']:>+10.4f}" if chi_info else f"{'—':>10}"
+        nud_str = f"{chi_info['n_ud']:>5d}" if chi_info else f"{'—':>5}"
         formula = k["formula"] if k else "(no rule)"
         print(f"{sym:<6}{A:>3}{B_ame:>12.4f}{k_str}{ek_str}  "
-              f"{p_str}{ep_str}   {formula}")
+              f"{p_str}{ep_str}  {rho_str}  {chi_str}  {nud_str}  {formula}")
 
         rows.append({
             "atom": sym, "Z": Z, "N": N, "A": A,
@@ -195,6 +249,8 @@ def main():
                          "origin": ATOM_ASSIGN.get(sym, {}).get("origin")},
             "paper": {"B_pred": b_p, "err_pct": err_p,
                        "phi_1": p.get("phi_1") if p else None},
+            "rho_f": rho_info,
+            "chi_sym_alt": chi_info,
         })
 
         if b_k is not None:
