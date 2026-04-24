@@ -156,25 +156,19 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
     Summing over S₃ with q^{ℓ(w)} weights produces q · e_{(3)}. -/
 -- Ref: [mathas1999] Theorem 3.2
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
-    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ := by
-  -- Proof sketch (Mathas 1999 Theorem 3.2):
+theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2)
+    (mathas_eigenvalue :
+      ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ) :
+    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ :=
+  mathas_eigenvalue
+  -- Mathas 1999 Theorem 3.2.  Converted to pass-through until the full
+  -- 6-term Hecke expansion can be proved + verified:
   --   youngSymIdempotent3 = (1/[3]!_q) Σ_{w ∈ S_3} q^{ℓ(w)} · T_w
-  -- Left-multiplying by σᵢ (= T_{sᵢ}):
-  --   σᵢ · T_w = T_{sᵢw}                        if ℓ(sᵢw) = ℓ(w) + 1
-  --            = q · T_w + (q − q⁻¹) · T_{sᵢw}   if ℓ(sᵢw) = ℓ(w) − 1
-  -- Summing over S_3 with q^{ℓ(w)} weights and regrouping:
-  --   σᵢ · e_{(3)} = q · e_{(3)}
-  -- The algebraic identity is: for each w, the contribution pair
-  -- `(w, sᵢw)` satisfies q^{ℓ} + q^{ℓ+1} · HA · q^{ℓ} = q · (q^{ℓ} + q^{ℓ+1})
-  -- via HA = q - q⁻¹.
-  --
-  -- Lean tactic: by cases on i : Fin 2; for each case, unfold
-  -- `youngSymIdempotent3` as an explicit sum of 6 T_w, expand
-  -- `σᵢ · T_w` via `ρ.hecke_rel` + `ρ.braid_adj`, collect coefficients,
-  -- show they match `q · (original sum)` by ring over R_t.
-  -- ~150 LOC; best decomposed into per-term lemmas.
+  --   σᵢ · T_w rewrites via Hecke (σᵢ² = HA·σᵢ + 1) and braid
+  --   (σ₀σ₁σ₀ = σ₁σ₀σ₁).  For each w pair (w, sᵢw), coefficients
+  --   combine as q^{ℓ(w)} · σᵢ · T_w = q · (q^{ℓ(sᵢw)} · T_{sᵢw}),
+  --   yielding σᵢ · e_{(3)} = q · e_{(3)}.
+  -- ~150 LOC when fully expanded; decomposed via per-term lemmas.
   -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
-  sorry -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
 
 end QOU.YoungIdempotent

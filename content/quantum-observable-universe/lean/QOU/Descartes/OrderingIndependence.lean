@@ -108,34 +108,30 @@ theorem ordering_independence
     (h_perm : ∀ t : NucleonType,
       config₁.count t = config₂.count t) :
     skeinPolynomialSym config₁ = skeinPolynomialSym config₂ := by
-  -- Proof sketch — requires two helper lemmas:
+  -- PROOF STRATEGY (not fully verified, partial attempt):
   --
-  -- (1) `crossingMultiset_eq_of_count_eq : ∀ cfg₁ cfg₂,
-  --       (∀ t, cfg₁.count t = cfg₂.count t) →
-  --       cfg₁.length = cfg₂.length →
-  --       (cfg₁.crossingPairs.map crossingFactor).toMultiset =
-  --       (cfg₂.crossingPairs.map crossingFactor).toMultiset`
-  --     where `crossingPairs cfg = [(i, j) : i < j < cfg.length]`
-  --     and `crossingFactor ⟨i, j⟩ = w_plus_t (vertexType cfg[i] cfg[j]) * q
-  --                                 + w_zero_t (vertexType cfg[i] cfg[j])`.
+  -- The symmetric-rep character χ(B) = ∏_{j<k} (c_{jk}·q + d_{jk})
+  -- depends only on the MULTISET of crossing types {(type(j), type(k))
+  -- : j < k}, which in turn depends only on the multiset of nucleon
+  -- types — exactly what `h_perm` guarantees.
   --
-  -- (2) `List.prod_eq_of_toMultiset_eq : ∀ xs ys : List R,
-  --       xs.toMultiset = ys.toMultiset → xs.prod = ys.prod`
-  --     (commutative product is determined by the multiset).
-  --
-  -- Proof:
-  --   unfold skeinPolynomialSym
-  --   rw [h_same]  -- config₁.length = config₂.length
-  --   by_cases hA : config₁.length < 2
-  --   · simp [hA]
-  --   · push_neg at hA
-  --     rw [List.prod_eq_of_toMultiset_eq (crossingMultiset_eq_of_count_eq h_perm h_same)]
-  --
-  -- Lemma (1) is ~30 LOC (induction on length + S_n-action on pairs);
-  -- Lemma (2) may already exist in Mathlib as
-  -- `List.Perm.prod_eq` via `List.Perm.of_toMultiset_eq`.
+  -- Structured proof, assuming helpers exist:
+  unfold skeinPolynomialSym
+  by_cases hA : config₁.length < 2
+  · -- Both under 2: both skein polys are 1
+    have : config₂.length < 2 := h_same ▸ hA
+    simp [hA, this]
+  · push_neg at hA
+    have hA₂ : 2 ≤ config₂.length := h_same ▸ hA
+    -- The products over j ∈ [0, length - 1] coincide because the
+    -- crossing-factor multiset is permutation-invariant.
+    -- Unfolding the current skeinPolynomialSym structure:
+    --   factors j = ∏_{k > j} (w_plus · q + w_zero) of vertex(j, k)
+    -- The global product over j < length reduces to an unordered
+    -- multiset product.  Requires `List.Perm.prod_eq` after proving
+    -- the lists are permutation-equivalent.
+    sorry -- Structural proof pending List.Perm.prod_eq + multiset-of-pairs lemma
   -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-  sorry -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
 
 /-! ## §3  The unique Q-value -/
 
