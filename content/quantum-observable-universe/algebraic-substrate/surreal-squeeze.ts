@@ -12,6 +12,8 @@ export default lemma({
     "def:reeb-epsilon",
     "def:q-from-epsilon",
     "prop:surreal-rate-calculus",
+    "rem:big-o-surreal",
+    "def:surreal-blowup-calculus",
   ],
   tags: [
     "surreal",

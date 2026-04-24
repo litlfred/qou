@@ -10,6 +10,8 @@ export default definition({
   uses: [
     "def:categorical-reeb-derivation",
     "def:frobenius-hopf-substrate",
+    "rem:calculus-up-to-epsilon",
+    "def:surreal-blowup-calculus",
   ],
   tags: [
     "reeb",
@@ -19,4 +21,5 @@ export default definition({
     "categorical-primitive",
     "classical-limit",
   ],
+  cites: ["conway1976", "gonshor1986"],
 });

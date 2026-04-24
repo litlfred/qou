@@ -8,9 +8,14 @@ treat $\varepsilon$ as a **strictly positive infinitesimal**: for every
 standard real $\lambda > 0$ and every $n \in \mathbb{N}$,
 $n \cdot \varepsilon < \lambda$.
 
-Equivalently, via
-[Reeb--$\omega$ identification](#prop:reeb-omega-identification),
+Equivalently, via the surreal appendix
+([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon),
+[surreal blow-up calculus](#def:surreal-blowup-calculus)),
 $\varepsilon = 1 / \omega$ inside Conway's surreal field $\mathbf{No}$.
+The asymptotic symbols $\asymp$, $O(\cdot)$, $o(\cdot)$, $\Theta(\cdot)$
+below are the surreal-valuation forms of
+[Big-O surreal](#rem:big-o-surreal) — equality up to a standard-real
+prefactor (for $\asymp$) or leading-exponent comparison (for the others).
 
 **Rate table.** Each scaling law of the classical-limit degenerations
 of

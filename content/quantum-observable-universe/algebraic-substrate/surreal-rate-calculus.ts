@@ -13,6 +13,9 @@ export default proposition({
     "def:classical-limit-functor",
     "thm:quantum-gap-collapse",
     "def:categorical-reeb-derivation",
+    "rem:big-o-surreal",
+    "rem:body-asymptotics-catalog",
+    "def:surreal-blowup-calculus",
   ],
   tags: [
     "surreal",

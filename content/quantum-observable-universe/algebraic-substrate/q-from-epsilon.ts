@@ -9,7 +9,10 @@ export default definition({
   },
   uses: [
     "def:reeb-epsilon",
+    "def:substrate-parameter",
     "def:substrate-parameter-planck",
+    "conj:infinitesimal-frobenius",
+    "rem:calculus-up-to-epsilon",
   ],
   tags: [
     "substrate-parameter",

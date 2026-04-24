@@ -40,8 +40,9 @@ These two properties pick out $\varepsilon$ as a **positive
 infinitesimal** direction in the derivation algebra.  The embedding
 of this infinitesimal into Conway's surreal field $\mathbf{No}$,
 and the identification $\varepsilon \leftrightarrow 1 / \omega$,
-are given in the appendix
-([Reeb--$\omega$ identification](#prop:reeb-omega-identification));
+are developed in the surreal-number appendix
+([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon),
+[surreal blow-up calculus](#def:surreal-blowup-calculus));
 the main text uses $\varepsilon$ only as a categorical primitive.
 
 **Summary.**
