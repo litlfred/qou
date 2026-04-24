@@ -405,6 +405,7 @@ export default chapter({
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
         "gram-matrix-spectral-connection",
+        "terms-2-6-higher-operations",
         "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",
