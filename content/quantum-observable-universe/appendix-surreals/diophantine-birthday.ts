@@ -17,7 +17,6 @@ export default conjecture({
   uses: [
     "def:birthday-grading",
     "rem:conway-normal-form",
-    "rem:big-o-surreal",
   ],
   cites: [
     "conway1976",
