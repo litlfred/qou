@@ -14,6 +14,7 @@ export default remark({
   ],
   interprets: "def:quantum-observable-universe",
   uses: [
+    "def:birthday-grading",
     "def:classical-limit-functor",
     "prop:hoefsmit-scattering-pipeline",
     "prf:mobius-energy",
