@@ -1,4 +1,4 @@
-Tate's thesis \cite{tate1950} realises the global
+Tate's thesis \cite{tate1967} realises the global
 Riemann / Dedekind $\zeta$-function as an **adelic Fourier
 transform**: the global zeta integral factors as a restricted product
 over local zeta integrals, one per place of $\mathbb{Q}$.  The QOU

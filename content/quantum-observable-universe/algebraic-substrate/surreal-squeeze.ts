@@ -9,13 +9,7 @@ export default lemma({
     file: "lean/QOU/AlgebraicSubstrate/SurrealSqueeze.lean",
     validation: "not_checked",
   },
-  uses: [
-    "def:reeb-epsilon",
-    "def:q-from-epsilon",
-    "prop:surreal-rate-calculus",
-    "rem:conway-normal-form",
-    "def:surreal-blowup-calculus",
-  ],
+  uses: ["prop:surreal-rate-calculus"],
   tags: [
     "surreal",
     "squeeze",

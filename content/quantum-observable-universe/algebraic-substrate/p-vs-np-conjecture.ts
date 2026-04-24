@@ -9,14 +9,7 @@ export default conjecture({
     file: "lean/QOU/AlgebraicSubstrate/PvsNPQou.lean",
     validation: "not_checked",
   },
-  uses: [
-    "def:reeb-epsilon",
-    "def:q-from-epsilon",
-    "def:classical-limit-functor",
-    "thm:quantum-gap-collapse",
-    "prop:surreal-rate-calculus",
-    "rem:conway-normal-form",
-  ],
+  uses: ["prop:surreal-rate-calculus"],
   tags: [
     "p-vs-np",
     "millennium-problem",

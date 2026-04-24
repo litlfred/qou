@@ -9,14 +9,9 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:reeb-epsilon",
     "def:q-from-epsilon",
-    "def:classical-limit-functor",
     "thm:quantum-gap-collapse",
-    "def:categorical-reeb-derivation",
-    "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
-    "def:surreal-blowup-calculus",
   ],
   tags: [
     "surreal",

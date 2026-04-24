@@ -8,11 +8,6 @@ export default remark({
   uses: [
     "conj:p-vs-np-qou",
     "lem:surreal-squeeze",
-    "def:reeb-epsilon",
-    "def:q-from-epsilon",
-    "prop:surreal-rate-calculus",
-    "rem:conway-normal-form",
-    "rem:calculus-up-to-epsilon",
   ],
   tags: [
     "p-vs-np",

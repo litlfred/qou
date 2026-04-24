@@ -10,7 +10,6 @@ export default definition({
   },
   uses: [
     "def:categorical-reeb-derivation",
-    "def:frobenius-hopf-substrate",
     "rem:calculus-up-to-epsilon",
     "def:surreal-blowup-calculus",
   ],
