@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 """
+DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
+
+See docs/phi-q-tower-deprecation.md.  Retained — may return for
+pentagon-defect work (Phase 2 of path-to-1ppb).
+
+─────────────────────────────────────────────────────────────────
+
 Combined probe: production unified_lift pipeline with the SCALAR pair
 term in tower_mass_level replaced by SYT-content-weighted V̂_{ij}.
 

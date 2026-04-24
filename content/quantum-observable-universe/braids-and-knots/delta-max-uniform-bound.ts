@@ -10,6 +10,7 @@ export default proposition({
     "operator-norm",
     "markov-trace",
     "binding-energy",
+    "legacy-phi-q-tower",
   ],
   lean: {
     decl: "QOU.MassEndomorphism.delta_max_uniform_bound",

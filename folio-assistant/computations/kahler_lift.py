@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 """
+DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
+
+See docs/phi-q-tower-deprecation.md.  Kähler lift on aggregated
+V̂_i(q) is legacy Φ_q-tower infrastructure.  Retained — may
+return for pentagon-defect work (Phase 2 of path-to-1ppb).
+
+─────────────────────────────────────────────────────────────────
+
 Proper Kähler-differential jet lift with analytic q-derivatives.
 
 Supersedes the Markov-stabilization stub lift_V_markov.  For the
