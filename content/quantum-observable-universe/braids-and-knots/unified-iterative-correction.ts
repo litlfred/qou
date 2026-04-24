@@ -19,6 +19,8 @@ export default proposition({
     "prop:bw-coefficient-shadow-price",
     "prop:mass-endomorphism-tower",
     "prop:nuclear-knot-classification",
+    "rem:big-o-surreal",
+    "rem:body-asymptotics-catalog",
   ],
   cites: [
     "kerov1996",

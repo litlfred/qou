@@ -191,3 +191,11 @@ algebraic, and the appearance of continuous hyperbolic geometry in
 the archimedean mass formula is an asymptotic artefact of the
 quantum group at roots of unity, not a prerequisite of the
 framework.
+
+*Formal asymptotic content. The Kashaev limit $N \to \infty$ is the
+[standard-part functor](#def:standard-part-functor) applied to the
+coloured Hecke trace at $q = e^{2\pi i/N}$; the surreal reframing
+of the volume conjecture is recorded in
+[Kashaev as standard-part](#conj:kashaev-surreal), and the
+asymptotic rate is catalogued in the
+[body asymptotics catalog](#rem:body-asymptotics-catalog).*

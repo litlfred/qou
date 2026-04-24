@@ -12,6 +12,8 @@ export default proposition({
     "prop:hoefsmit-seminormal-form",
     "prop:figure-eight-branching-rule",
     "def:hecke-algebra",
+    "rem:big-o-surreal",
+    "rem:body-asymptotics-catalog",
   ],
   cites: ["hoefsmit1974", "wenzl1988"],
   tags: [

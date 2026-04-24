@@ -41,6 +41,7 @@ export default chapter({
       blocks: [
         "conway-normal-form",
         "big-o-surreal",
+        "body-asymptotics-catalog",
       ],
     },
     {

@@ -157,3 +157,8 @@ discrepancy between the two paths quantifies the residual that
 the LP-dual accumulator over $k \leq K_{\max}$ does not absorb;
 extending $K_{\max}$ above $6$ adds further partitions, with
 shadow prices and $q$-hooks computed by the same formulas.
+
+*Formal asymptotic content. The Féray–Méliot rate $O(1/\sqrt{A})$
+has $\ordw \;=\; -\tfrac{1}{2}\,\ordw(A)$ in the surreal valuation;
+see [Big-O via $\ordw$](#rem:big-o-surreal) and the
+[body asymptotics catalog](#rem:body-asymptotics-catalog).*
