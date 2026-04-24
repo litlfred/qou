@@ -62,9 +62,14 @@ non-trivial commutation survives **only** in the ladder between
 blocks, carried by the Hecke braid relation
 $\sigma_s\sigma_{s+1}\sigma_s = \sigma_{s+1}\sigma_s\sigma_{s+1}$.
 
-*Step 3 — Braid relation at the pair level.*  Rewrite the
-braid relation in the form
-$\sigma_{s+1}\sigma_s = \sigma_s^{-1}\sigma_{s+1}\sigma_s\sigma_{s+1}^{-1}\cdot\sigma_{s+1}\sigma_s$.
+*Step 3 — Braid relation at the pair level.*  Multiplying the
+braid relation $\sigma_s\sigma_{s+1}\sigma_s = \sigma_{s+1}\sigma_s\sigma_{s+1}$
+on the left by $\sigma_s^{-1}$ gives the pair-swap identity
+$$
+  \sigma_{s+1}\sigma_s
+  \;=\;
+  \sigma_s^{-1}\,\sigma_{s+1}\sigma_s\sigma_{s+1}.
+$$
 Using $\sigma_s^{-1} = \sigma_s - (q - q^{-1})$ from the Hecke
 relation, and taking the Markov-traced volume at block-diagonal
 eigenvalue $q$:
