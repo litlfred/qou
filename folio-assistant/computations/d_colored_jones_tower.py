@@ -156,7 +156,13 @@ def j_N_of_word(basis_word: tuple, n_strands: int, N: int,
     [N]_q = (q^N - q^{-N})/(q - q^{-1}).
     """
     if len(basis_word) == 0:
-        return complex(1.0)   # closure of identity = unknot, J_N(unknot)=1 in our normalization
+        # Closure of an n_strands-empty braid is an n-component unlink
+        # with J_N = [N]_q^n / [N]_q^{n-1} = [N]_q in many Kauffman
+        # conventions; we normalise J_N(unknot) = 1 here and return
+        # the Kauffman bracket literal value 1 for the closure of the
+        # identity.  (See d_colored_jones_qtr.j_N_qtr for the
+        # unambiguous normalisation that uses quantum trace.)
+        return complex(1.0)
     M = braid_matrix(basis_word, n_strands, N, q)
     tr = np.trace(M)
     if N == 1:

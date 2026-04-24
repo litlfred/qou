@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """
+CONVENTION NOTE: the "markov_trace" computed via Σ w_λ·χ_λ with
+w_λ = d_q²/[n]_q! is technically the PLANCHEREL trace, not the
+Jones-Ocneanu Markov trace (these differ at q ≠ 1).  See
+markov_weight_verification.py.
+
 Wedderburn profile per isotope: tests whether the per-atom
 "complexity correction" rho_F_eff/rho_nominal correlates with
 specific partition characters of the atom braid.

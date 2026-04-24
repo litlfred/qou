@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 """
+CONVENTION NOTE:  The Σ_λ w_λ·χ_λ sums in this module use
+  w_λ = d_q(λ)² / [n]_q!  (Plancherel weights)
+which compute the PLANCHEREL (canonical) trace, NOT the Jones-
+Ocneanu Markov trace with z = 1/(q^{1/2}+q^{-1/2}).  The two
+differ at q ≠ 1; see markov_weight_verification.py.  Output names
+use "tr_M" historically — read as "tr_Planck" for technical rigor.
+
 Two derivations in one:
 
   (1) χ_λ(T_g + T_g⁻¹)/2  for every irrep λ of H_n(q), n = 3A
@@ -166,6 +173,13 @@ def process_atom(name: str, Z: int, N: int, max_dim: int = 50,
     print(f"  tr_M(β_full) = {total.real:+.6f}{total.imag:+.2e}j")
     print(f"  |tr_M| = {abs(total):.6f}")
     print()
+    if dominant is None:
+        print("  DOMINANT PLANCKEREL BLOCK: (no partitions computed — all "
+              "skipped due to dim or time budget; aborting)")
+        return {
+            "atom": name, "Z": Z, "N": N, "A": A, "n_strands": n,
+            "status": "no_partitions_computed",
+        }
     print(f"  DOMINANT PLANCKEREL BLOCK:")
     print(f"    shape = {dominant['shape']}  (dim = {dominant['dim']})")
     print(f"    χ_full(β) = {dominant['chi_full_re']:+.6f}")

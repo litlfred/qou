@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 """
+CONVENTION NOTE: the "tr_M" quantity computed here as
+Σ w_λ·χ_λ with w_λ = d_q(λ)²/[n]_q! is the PLANCHEREL (canonical)
+trace on H_n(q), NOT the Jones-Ocneanu Markov trace with
+z = 1/(q^{1/2}+q^{-1/2}).  These differ at q ≠ 1.  See
+markov_weight_verification.py.  Variable name 'tr_M' kept for
+backward compatibility with existing witness files.
+
 Matrix-trace closed form for χ_std(β) — all non-scalar irreps of H_{3A}(q).
 
 For 1-dim irreps (sym, alt), characters factor multiplicatively and

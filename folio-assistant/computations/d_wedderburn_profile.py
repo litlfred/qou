@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """
+CONVENTION NOTE:  Plancherel weights w_λ = d_q(λ)² / [n]_q! are
+used throughout; these give the CANONICAL trace, not the Jones-
+Ocneanu Markov trace with z = 1/(q^{1/2}+q^{-1/2}).  See
+markov_weight_verification.py for the q-dependent divergence.
+
 Compute D's Wedderburn profile: per-partition character of D's atom
 braid at q₀.
 

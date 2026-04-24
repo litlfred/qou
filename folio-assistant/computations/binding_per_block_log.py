@@ -99,27 +99,27 @@ def ln_abs_phi_q(v: float, *,
     form); the minus sign is baked in so this returns the value
     that appears directly in the paper's B(Z,N) formula.
     """
-    # Accumulate −Σ_k ln|1 − q^{−k}v|
+    # Accumulate −Σ_k ln|1 − q^{−k}v|.
+    # qi_pow starts at 1 and is advanced to q^{-k} at the TOP of each
+    # iteration, so the update happens in exactly one place.
     total = 0.0
-    qi_pow = 1.0 / q0  # q^{-1}
+    qi_pow = 1.0
     for k in range(1, K_max + 1):
+        qi_pow /= q0                 # now qi_pow = q^{-k}
         x = qi_pow * v
-        # |1 − x| — real so ||
         diff = 1.0 - x
         abs_diff = abs(diff)
         if abs_diff < pole_tol:
             if pole_mode == "raise":
                 raise ZeroDivisionError(
                     f"ln|Φ_q| diverges at v ≈ q^k (x = {x}, k = {k})")
-            elif pole_mode == "sign":
+            if pole_mode == "sign":
                 return float("inf")
-            else:  # principal: skip factor
-                qi_pow /= q0
-                continue
+            # principal: skip this factor
+            continue
         term = math.log(abs_diff)
         total -= term
-        qi_pow /= q0
-        # Converge: once |x| << 1, |ln|1−x|| ≈ |x| falls to zero.
+        # Converge: once |x| « 1, |ln|1−x|| ≈ |x| falls to zero.
         if abs(term) < skip_tol and abs(x) < skip_tol:
             break
     return total
