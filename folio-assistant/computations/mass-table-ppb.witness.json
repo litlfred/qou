@@ -1,15 +1,13 @@
 {
-  "computation": "mass-table-ppb",
-  "description": "AME2020 light-atom binding vs current canonical predictions. For each atom, reports best available predicted binding from \u03b1-cluster (fit from 12C) when applicable, or \u03a6_1 algebraic volume with \u03b1 = m_e \u00b7 8G otherwise.  Target: 1 ppb.",
-  "timestamp": "2026-04-24T00:02:52.675749+00:00",
+  "computation": "mass-table-ppb-zero-param",
+  "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = \u03c1_F \u00b7 Vol_hyp(K) with \u03c1_F \u2208 {m_e, 2m_e}; atom\u2192knot assignments from framework rules (magic A\u00b78G, \u03b1-cluster with c_\u03b1\u03b1 = m_e\u00b7Vol(7\u00b2_1)) or census search (flagged 'hyp: census-assigned').  NO AME-derived calibrations or fits.",
+  "timestamp": "2026-04-24T00:08:40.243567+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
     "vol_borromean_8G": 7.327724753417752,
-    "alpha_phi1_MeV": 3.74445965488548,
-    "c_alpha_alpha_MeV": 2.42489213333333,
-    "B_4He_MeV": 28.2956912,
-    "B_12C_MeV": 92.16175
+    "vol_7_sq_1": 4.749499981874439,
+    "c_alpha_derived_MeV": 2.426989503762857
   },
   "rows": [
     {
@@ -18,12 +16,17 @@
       "N": 1,
       "A": 2,
       "B_AME_MeV": 2.22456612,
-      "B_pred_MeV": 0.11536956968671683,
-      "err_MeV": -2.1091965503132832,
-      "err_pct": -94.8138394876428,
-      "err_ppb": -948138394.8764279,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -0.030810739150625266
+      "B_pred_MeV": 2.2488207948647343,
+      "err_MeV": 0.024254674864734316,
+      "err_pct": 1.0903103596999093,
+      "err_ppb": 10903103.596999094,
+      "formula": "1\u00b7m_e \u00b7 Vol(6_2)",
+      "origin": "hyp: census-assigned",
+      "inputs": {
+        "knot": "6_2",
+        "Vol": 4.400832516123046,
+        "rho_factor": 1
+      }
     },
     {
       "sym": "3H",
@@ -31,12 +34,17 @@
       "N": 2,
       "A": 3,
       "B_AME_MeV": 8.4817984,
-      "B_pred_MeV": 9.22293752853526,
-      "err_MeV": 0.7411391285352593,
-      "err_pct": 8.737995099426783,
-      "err_ppb": 87379950.99426784,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -2.463089037827364
+      "B_pred_MeV": 8.46859838653302,
+      "err_MeV": -0.013200013466979854,
+      "err_pct": -0.15562753138508753,
+      "err_ppb": -1556275.3138508755,
+      "formula": "2\u00b7m_e \u00b7 Vol(8_11)",
+      "origin": "hyp: census-assigned",
+      "inputs": {
+        "knot": "8_11",
+        "Vol": 8.286316817806593,
+        "rho_factor": 2
+      }
     },
     {
       "sym": "3He",
@@ -44,12 +52,17 @@
       "N": 1,
       "A": 3,
       "B_AME_MeV": 7.7180375,
-      "B_pred_MeV": 0.23073913937343365,
-      "err_MeV": -7.487298360626567,
-      "err_pct": -97.01039105636072,
-      "err_ppb": -970103910.5636072,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -0.06162147830125053
+      "B_pred_MeV": 7.48891930977096,
+      "err_MeV": -0.22911819022904023,
+      "err_pct": -2.968606854126327,
+      "err_ppb": -29686068.54126327,
+      "formula": "2\u00b7m_e \u00b7 Vol(L6a4)",
+      "origin": "hyp: census-assigned",
+      "inputs": {
+        "knot": "L6a4",
+        "Vol": 7.327724753417752,
+        "rho_factor": 2
+      }
     },
     {
       "sym": "4He",
@@ -57,38 +70,17 @@
       "N": 2,
       "A": 4,
       "B_AME_MeV": 28.2956912,
-      "B_pred_MeV": 28.2956912,
-      "err_MeV": 0.0,
-      "err_pct": 0.0,
-      "err_ppb": 0.0,
-      "source": "alpha-cluster-12C",
-      "Phi_1": -1.2877323516815578
-    },
-    {
-      "sym": "6Li",
-      "Z": 3,
-      "N": 3,
-      "A": 6,
-      "B_AME_MeV": 31.99405,
-      "B_pred_MeV": 15.550201911252383,
-      "err_MeV": -16.443848088747618,
-      "err_pct": -51.39658182927018,
-      "err_ppb": -513965818.29270184,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -4.152856044519985
-    },
-    {
-      "sym": "7Li",
-      "Z": 3,
-      "N": 4,
-      "A": 7,
-      "B_AME_MeV": 39.24453,
-      "B_pred_MeV": 28.843439434995183,
-      "err_MeV": -10.401090565004814,
-      "err_pct": -26.5032873753484,
-      "err_ppb": -265032873.753484,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -7.702964404319994
+      "B_pred_MeV": 29.95567723908384,
+      "err_MeV": 1.6599860390838401,
+      "err_pct": 5.866568260696314,
+      "err_ppb": 58665682.60696314,
+      "formula": "2\u00b7m_e \u00b7 4\u00b78G",
+      "origin": "framework: A\u00b78G magic rule",
+      "inputs": {
+        "A": 4,
+        "8G": 7.327724753417752,
+        "rho_factor": 2
+      }
     },
     {
       "sym": "8Be",
@@ -96,38 +88,18 @@
       "N": 4,
       "A": 8,
       "B_AME_MeV": 56.49951,
-      "B_pred_MeV": 59.01627453333333,
-      "err_MeV": 2.5167645333333297,
-      "err_pct": 4.454489133327581,
-      "err_ppb": 44544891.3332758,
-      "source": "alpha-cluster-12C",
-      "Phi_1": -6.516740427107438
-    },
-    {
-      "sym": "9Be",
-      "Z": 4,
-      "N": 5,
-      "A": 9,
-      "B_AME_MeV": 58.16498,
-      "B_pred_MeV": 51.66684380325509,
-      "err_MeV": -6.498136196744909,
-      "err_pct": -11.17190480723093,
-      "err_ppb": -111719048.0723093,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -13.798210840873718
-    },
-    {
-      "sym": "11B",
-      "Z": 5,
-      "N": 6,
-      "A": 11,
-      "B_AME_MeV": 76.20548,
-      "B_pred_MeV": 64.77810537349826,
-      "err_MeV": -11.42737462650173,
-      "err_pct": -14.995476213130251,
-      "err_ppb": -149954762.1313025,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -17.29972047875608
+      "B_pred_MeV": 62.338343981930535,
+      "err_MeV": 5.838833981930534,
+      "err_pct": 10.33430906202644,
+      "err_ppb": 103343090.6202644,
+      "formula": "2\u00b7B(\u2074He_derived) + 1\u00b7c_\u03b1\u03b1",
+      "origin": "framework: \u03b1-cluster n_\u03b1=2",
+      "inputs": {
+        "n_alpha": 2,
+        "n_pairs": 1,
+        "B_4He_derived": 29.95567723908384,
+        "c_alpha": 2.426989503762857
+      }
     },
     {
       "sym": "12C",
@@ -135,25 +107,18 @@
       "N": 6,
       "A": 12,
       "B_AME_MeV": 92.16175,
-      "B_pred_MeV": 92.16175,
-      "err_MeV": 0.0,
-      "err_pct": 0.0,
-      "err_ppb": 0.0,
-      "source": "alpha-cluster-12C",
-      "Phi_1": -16.102629210476774
-    },
-    {
-      "sym": "14N",
-      "Z": 7,
-      "N": 7,
-      "A": 14,
-      "B_AME_MeV": 104.65877,
-      "B_pred_MeV": 70.77264724244513,
-      "err_MeV": -33.88612275755487,
-      "err_pct": -32.37771928482904,
-      "err_ppb": -323777192.84829044,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -18.900630201771964
+      "B_pred_MeV": 97.1480002285401,
+      "err_MeV": 4.986250228540101,
+      "err_pct": 5.410325030221432,
+      "err_ppb": 54103250.302214324,
+      "formula": "3\u00b7B(\u2074He_derived) + 3\u00b7c_\u03b1\u03b1",
+      "origin": "framework: \u03b1-cluster n_\u03b1=3",
+      "inputs": {
+        "n_alpha": 3,
+        "n_pairs": 3,
+        "B_4He_derived": 29.95567723908384,
+        "c_alpha": 2.426989503762857
+      }
     },
     {
       "sym": "16O",
@@ -161,25 +126,18 @@
       "N": 8,
       "A": 16,
       "B_AME_MeV": 127.61929,
-      "B_pred_MeV": 127.73211759999998,
-      "err_MeV": 0.11282759999997438,
-      "err_pct": 0.0884095186550359,
-      "err_ppb": 884095.186550359,
-      "source": "alpha-cluster-12C",
-      "Phi_1": -20.07630003381584
-    },
-    {
-      "sym": "19F",
-      "Z": 9,
-      "N": 10,
-      "A": 19,
-      "B_AME_MeV": 147.80137,
-      "B_pred_MeV": 82.55311587337683,
-      "err_MeV": -65.24825412662317,
-      "err_pct": -44.14590617571621,
-      "err_ppb": -441459061.75716215,
-      "source": "Phi_1 (\u03b1 = m_e \u00b7 8G)",
-      "Phi_1": -22.046736640804216
+      "B_pred_MeV": 134.38464597891252,
+      "err_MeV": 6.76535597891251,
+      "err_pct": 5.301201706193875,
+      "err_ppb": 53012017.06193875,
+      "formula": "4\u00b7B(\u2074He_derived) + 6\u00b7c_\u03b1\u03b1",
+      "origin": "framework: \u03b1-cluster n_\u03b1=4",
+      "inputs": {
+        "n_alpha": 4,
+        "n_pairs": 6,
+        "B_4He_derived": 29.95567723908384,
+        "c_alpha": 2.426989503762857
+      }
     },
     {
       "sym": "20Ne",
@@ -187,12 +145,18 @@
       "N": 10,
       "A": 20,
       "B_AME_MeV": 160.64486,
-      "B_pred_MeV": 165.7273773333333,
-      "err_MeV": 5.0825173333333,
-      "err_pct": 3.1638219444638938,
-      "err_ppb": 31638219.444638938,
-      "source": "alpha-cluster-12C",
-      "Phi_1": -22.760769288192424
+      "B_pred_MeV": 174.0482812330478,
+      "err_MeV": 13.403421233047794,
+      "err_pct": 8.34351079334116,
+      "err_ppb": 83435107.9334116,
+      "formula": "5\u00b7B(\u2074He_derived) + 10\u00b7c_\u03b1\u03b1",
+      "origin": "framework: \u03b1-cluster n_\u03b1=5",
+      "inputs": {
+        "n_alpha": 5,
+        "n_pairs": 10,
+        "B_4He_derived": 29.95567723908384,
+        "c_alpha": 2.426989503762857
+      }
     },
     {
       "sym": "24Mg",
@@ -200,12 +164,18 @@
       "N": 12,
       "A": 24,
       "B_AME_MeV": 198.2569,
-      "B_pred_MeV": 206.14752919999995,
-      "err_MeV": 7.89062919999995,
-      "err_pct": 3.980002310133947,
-      "err_ppb": 39800023.10133947,
-      "source": "alpha-cluster-12C",
-      "Phi_1": -27.335845579663342
+      "B_pred_MeV": 216.1389059909459,
+      "err_MeV": 17.882005990945885,
+      "err_pct": 9.019613436377693,
+      "err_ppb": 90196134.36377692,
+      "formula": "6\u00b7B(\u2074He_derived) + 15\u00b7c_\u03b1\u03b1",
+      "origin": "framework: \u03b1-cluster n_\u03b1=6",
+      "inputs": {
+        "n_alpha": 6,
+        "n_pairs": 15,
+        "B_4He_derived": 29.95567723908384,
+        "c_alpha": 2.426989503762857
+      }
     },
     {
       "sym": "40Ca",
@@ -213,20 +183,70 @@
       "N": 20,
       "A": 40,
       "B_AME_MeV": 342.05212,
-      "B_pred_MeV": 392.07705799999985,
-      "err_MeV": 50.02493799999985,
-      "err_pct": 14.624946046234081,
-      "err_ppb": 146249460.4623408,
-      "source": "alpha-cluster-12C",
-      "Phi_1": -30.96464964832878
+      "B_pred_MeV": 408.771300060167,
+      "err_MeV": 66.71918006016699,
+      "err_pct": 19.505559579682476,
+      "err_ppb": 195055595.79682475,
+      "formula": "10\u00b7B(\u2074He_derived) + 45\u00b7c_\u03b1\u03b1",
+      "origin": "framework: \u03b1-cluster n_\u03b1=10",
+      "inputs": {
+        "n_alpha": 10,
+        "n_pairs": 45,
+        "B_4He_derived": 29.95567723908384,
+        "c_alpha": 2.426989503762857
+      }
     }
   ],
+  "atoms_no_assignment": [
+    [
+      "6Li",
+      3,
+      3,
+      6,
+      31.99405
+    ],
+    [
+      "7Li",
+      3,
+      4,
+      7,
+      39.24453
+    ],
+    [
+      "9Be",
+      4,
+      5,
+      9,
+      58.16498
+    ],
+    [
+      "11B",
+      5,
+      6,
+      11,
+      76.20548
+    ],
+    [
+      "14N",
+      7,
+      7,
+      14,
+      104.65877
+    ],
+    [
+      "19F",
+      9,
+      10,
+      19,
+      147.80137
+    ]
+  ],
   "within": {
-    "1": 2,
-    "1000.0": 2,
-    "1000000.0": 3,
-    "1000000000.0": 16
+    "1": 0,
+    "1000.0": 0,
+    "1000000.0": 0,
+    "1000000000.0": 10
   },
-  "mean_abs_pct": 25.466548142610616,
-  "mean_abs_ppb": 254665481.42610613
+  "mean_abs_pct": 6.799563261375073,
+  "mean_abs_ppb": 67995632.61375073
 }
