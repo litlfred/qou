@@ -1,115 +1,135 @@
-# Phase 3 — Atom-knot derivation: first findings
+# Phase 3 — Atom-knot derivation: corrected analysis
 
 *Companion to `docs/path-to-1ppb-04-plan.md` Phase 3. Records the
-initial attempt to replace the SnapPy census search in
-`jsj_verification.py` with a direct braid-closure derivation.*
+initial attempt to compute an atom's volume via SnapPy on its braid
+closure, and why that approach was misframed.*
 
-## Summary
+**Status.** The "block vs interleaved lift" framing in the earlier
+draft of this doc was wrong. The atom's braid word is
+**topological data**, not a derived invariant. The question "which
+lift is canonical?" does not arise — `atom_braid_word_3A` outputs the
+atom's braid word directly, and that IS the data. What's wrong is
+asking SnapPy for its hyperbolic volume.
 
-The plan's step 1 — "atom braid β_{Z,N} ∈ B_{3A} via
-`atom_braid_word_3A`" — is **insufficient as written**.  The word
-produced by `atom_braid_word_3A` collapses the braid-group information
-that the JSJ hyperbolic piece needs.
+## The correct invariant
 
-## The problem
+The paper's definition `def:algebraic-quantum-volume`
+([`content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md`](../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md))
+gives the algebraic quantum volume of a braid $\beta \in H_n(q)$ as
 
-`atom_braid_word_3A` (in `folio-assistant/computations/mass_at_3A_proper.py`)
-emits the nucleon confinement chain as a **block**:
+$$
+  \mathrm{Vol}_q(\beta)
+  = \prod_{i=0}^{n-2} \hat{V}_i(q),
+  \qquad
+  \hat{V}_i(q) = z(q) \cdot a_i(q) + b_i(q)
+$$
 
-    g0 chain:   σ_0 · σ_0 · σ_0
-    g1 chain:   σ_1⁻¹ · σ_1⁻¹ · σ_1⁻¹
+where $\hat{V}_i$ comes from the transfer-matrix chain of the Markov
+trace. This is a finite product of Laurent polynomials in
+$q^{1/2}$; it lives in the Habiro ring
+$\widehat{\mathbb{Z}[q^{1/2}]}$; it is **algorithmic** from the
+Hecke element.
 
-This is equivalent in the Hecke algebra H_{3A}(q₀) to the braid-group
-element
+The paper's binding formula (`def:algebraic-quantum-volume-specialization`)
+is the substrate evaluation:
 
-    (σ_0 · σ_1⁻¹)^3
+$$
+  \Phi_1(\beta) = \ln\bigl\lvert\mathrm{Vol}_{q_0}(\beta)\bigr\rvert
+  = \sum_{i=0}^{n-2} \ln\bigl\lvert\hat{V}_i(q_0)\bigr\rvert
+$$
 
-because the Hecke algebra imposes the braid relation
-σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}.  But these two words are
-**different** elements of the braid group B_{3A} — they have different
-Markov closures.
+$$
+  \mathcal{M}(Z, N)
+  = M_{\text{free}}
+  + \bigl(m_e \cdot 8G\bigr) \cdot \Phi_1(\text{atom}) \cdot \text{(Wedderburn weights)}
+$$
 
-## Experimental verification (q₀ = 1.1097)
+The key invariant is $\Phi_1$ as a complex number at $q_0$, NOT
+$\mathrm{Vol}_{\text{hyp}}(\widehat{\beta})$ from SnapPy.
 
-| word | closure | components | Vol |
-|------|--------|-----------:|----:|
-| `σ_0³ σ_1⁻³` (block)        | `snappy.Link(braid_closure=[1,1,1,-2,-2,-2])` | 1 | 2.05·10⁻⁶ (non-hyperbolic) |
-| `(σ_0 σ_1⁻¹)³` (interleaved) | `snappy.Link(braid_closure=[1,-2,1,-2,1,-2])` | 3 | **7.3277 (= 8G = Vol(Borromean rings))** |
+## Why SnapPy was the wrong tool at $q_0$
 
-The interleaved form **is** the Borromean rings L6a4, whose complement
-has volume 8G (8 times Catalan's constant).
+SnapPy computes the hyperbolic volume of the 3-manifold
+$S^3 \setminus \widehat{\beta}$, which is a **topological invariant**
+of the link class. The algebraic volume $\mathrm{Vol}_{q_0}(\beta)$
+is an **algebraic invariant** of the Hecke element, parametrised by
+$q_0$. These two coincide only via the volume-conjecture asymptotic
+at **roots of unity** $q = e^{2\pi i/N}$ (Kashaev–Murakami–Murakami):
 
-## Fix
+$$
+  \lvert J_N(K;\, e^{2\pi i/N})\rvert
+  \sim \exp\bigl(N \cdot \mathrm{Vol}_{\text{hyp}}(S^3 \setminus K) / 2\pi\bigr)
+$$
 
-Added an `interleave` parameter to
-`folio-assistant/computations/atom_link_derivation.py`:
+At $q_0 \approx 1.10998$ (real, not a root of unity) the asymptotic
+does not apply. The quantity that enters the mass formula is the
+direct evaluation $\mathrm{Vol}_{q_0}(\beta) = \prod \hat{V}_i(q_0)$.
 
-- `interleave="block"` — reproduce the current behaviour (collapsed,
-  non-hyperbolic).
-- `interleave="interleaved"` — per nucleon, interleave its g_0 chain
-  with its g_1 chain before emitting.  Restores braid-group
-  faithfulness.
+## Practical consequence
 
-## Result with interleaved mode
+The canonical 1-ppb pipeline does **not** need SnapPy as a primary
+invariant engine. The primary engine is:
 
-All four light atoms **do** produce hyperbolic closures under
-interleaved mode.  Volumes (float + 50-digit verified via SnapPy
-ManifoldHP):
+1. `atom_braid_word_3A` → braid word as a list of Hecke factors
+   (block form: `σ_0^a · σ_1^b · …`). This IS the atom's data.
+2. Transfer-matrix chain in $\mathbb{Z}[q^{1/2}, q^{-1/2}]$ → per-gen
+   $\hat{V}_i(q)$. See `folio-assistant/computations/exact_binding_per_operation.py`
+   (method `compute_phi_mp`) for a working mpmath-precision implementation.
+3. Evaluate at $q_0$, take $\ln|\cdot|$, sum → $\Phi_1$.
+4. Apply $\mathcal{M} = M_{\text{free}} + \alpha \cdot \Phi_1 \cdot (\text{Wedderburn})$.
 
-| atom | components | crossings | Vol_float | Vol_50digit | A·8G | err vs A·8G |
-|------|-----------:|----------:|----------:|:-----------|-----:|------------:|
-| D    | 3 | 23 | 20.5230 | 20.522817202562213956825578568814725140079015219955 | 14.66 | +40.0% |
-| T    | 4 | 35 | 35.7121 | 35.712144838226308332064508475986184594673809242794 | 21.98 | +62.5% |
-| ³He  | 4 | 35 | 25.8563 | 25.856306769460333538419003494036025228275871329306 | 21.98 | +17.6% |
-| ⁴He  | 5 | 47 | 41.0458 | 41.045634405124427913651157137794451263113886131589 | 29.31 | +40.0% |
+SnapPy enters only at **step zero**, to witness the 8G scale factor
+via route 2 (Habiro / colored Jones at roots of unity). The value
+$8G = \mathrm{Vol}(\mathcal{B}_3) = 7.327725\ldots$ is a fixed
+constant; it does not need to be recomputed per atom.
 
-Compared to the Kashaev target B/ρ:
+## What `atom_link_derivation.py` is, and is not
 
-| atom | Vol_derived | B/m_e | err | B/(2m_e) | err |
-|------|------------:|------:|----:|---------:|----:|
-| D    | 20.52 |  4.35 | +371% |  2.18 | +843% |
-| T    | 35.71 | 16.60 | +115% |  8.30 | +330% |
-| ³He  | 25.86 | 15.10 | +71%  |  7.55 | +242% |
-| ⁴He  | 41.05 | 55.37 | −26%  | 27.69 | +48% |
+The prototype at
+`folio-assistant/computations/atom_link_derivation.py`
+closes the braid word and hands it to SnapPy. This is useful for
+diagnostic purposes — it lets us see what link class the braid
+closes to, and confirms (via block closure → non-hyperbolic) that
+the current `atom_braid_word_3A` output is a braid word representing
+a satellite/torus link, not the Borromean rings.
 
-## Interpretation
+But this does **not** give the atom's binding energy. It answers a
+different question: "what is the topology of the braid closure?"
+The answer happens to be "non-hyperbolic", which is fine — the
+binding formula does not depend on hyperbolicity.
 
-Interleaved mode is **correct as a braid-group lift** but the
-per-nucleon construction currently interleaves **all** g_0/g_1
-factors, including the quark-pair addenda — not just the 3+3 pure
-confinement factors.  The quark-pair addenda should probably be
-appended (or attached as connect-summed components), not interleaved
-with the confinement chain.
+## The `jsj_atom_volume.py` discrepancy
 
-Likely next steps:
+`folio-assistant/computations/jsj_atom_volume.py` uses the
+Borromean-rings model `B = 2m_e · A · 8G` (one Borromean per
+nucleon). This implicitly assumes the atom braid IS
+$(\sigma_0 \sigma_1^{-1})^3$ per nucleon — a different model from
+`atom_braid_word_3A`'s block form.
 
-1. Try "confinement-only interleave, quark-pairs appended" — keep
-   `(σ_0 σ_1⁻¹)^3` interleaved per nucleon, but leave the quark-pair
-   σ/σ⁻¹ factors as a block after it.
-2. Test whether the inter-nucleon crossings (at 3k+2) should be
-   interleaved with the adjacent nucleon's confinement, or treated as
-   Markov stabilizations.
-3. Verify 3He = single Borromean (A·8G = 22) vs ⁴He = two Borromeans
-   joined (4·8G = 29.3) and see if the interleaved output recovers
-   these shapes.
+These two models produce:
 
-## Key result
+- Same Hecke element → same $\Phi_1$ → same $\mathcal{M}$
+- Different link class → different hyperbolic volume
 
-**The critical obstruction flagged in the handover plan's Phase 3 is
-real**: naive use of `atom_braid_word_3A` cannot derive the atom's
-knot.  The braid word needs a braid-group-faithful construction, and
-the current per-nucleon block encoding collapses precisely the
-braid-group information that determines link class.
+The mass formula depends only on $\Phi_1$, so both models give the
+same mass prediction. The apparent tension (block closure has
+Vol = 0, `jsj_atom_volume` claims Vol = $A \cdot 8G$) dissolves
+because only one of those volumes appears in the formula: neither,
+directly. What appears is $\Phi_1$, which is model-independent.
 
-This doc captures the finding; the corrected Phase 3 path needs more
-work on the interleave policy before it will predict B(atom) from
-braid closure alone.
+The `A · 8G` heuristic in `jsj_atom_volume.py` is a **rescaling
+convenience**, not a computation of Vol. It uses $8G$ as the
+energy-per-nucleon scale, which follows from route 2 (Habiro
+evaluation) but does not require computing a per-atom hyperbolic
+volume.
 
-## Pointers
+## Action items
 
-- Script: `folio-assistant/computations/atom_link_derivation.py`
-- Witness: `folio-assistant/computations/atom-link-derivation.witness.json`
-- Related: `folio-assistant/computations/jsj_verification.py`
-  (census-search variant — currently the authoritative path)
-- Upstream: `folio-assistant/computations/mass_at_3A_proper.py`
-  `atom_braid_word_3A` (block-form producer)
+- **Done:** Document the correct framing (this file).
+- **Fix:** Drop any narrative in the main plan suggesting that
+  hyperbolic volume of the braid closure is the per-atom invariant.
+- **Next:** Produce a mass table directly from $\Phi_1$ via the
+  algebraic volume pipeline, evaluated at 100-digit mpmath precision
+  at $q_0$, applying the full Wedderburn-weighted formula from
+  `def:algebraic-quantum-volume-specialization`. See
+  `folio-assistant/computations/mass_table_ppb.py`.
