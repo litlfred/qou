@@ -1,23 +1,5 @@
 #!/usr/bin/env python3
 """
-DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
-
-See docs/phi-q-tower-deprecation.md and docs/path-to-1ppb.md.
-The per-block log formula in this module reaches a 0.15% floor
-on D/T/³He that neither jet-tower augmentation nor Kähler lift
-can break.  New binding code should target the JSJ + hyperbolic-
-volume pipeline (jsj_verification.py, jsj_atom_volume.py,
-jsj_alpha_clustering.py).
-
-This module is retained (NOT deleted) in case the Φ_q tower
-needs to return (e.g. for pentagon-defect corrections in Phase 2
-of the handover plan).  All functions still work — see
-binding-per-block-log.witness.json for reference values.
-
-Original description below.
-
-─────────────────────────────────────────────────────────────────
-
 Paper-exact per-block log-form binding energy.
 
 Implements prop:tower-binding-energy verbatim:
