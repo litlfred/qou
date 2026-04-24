@@ -1423,7 +1423,8 @@ export const references: CSLData[] = [
     type: "chapter",
     title: "QGoL: A Quantum Game of Life",
     author: [
-      { literal: "Peña et al." },
+      { family: "Pe\\~{n}a" },
+      { literal: "others" },
     ],
     "container-title":
       "Advances in Quantum Computation and Quantum Cellular Automata",
@@ -2535,8 +2536,8 @@ export const references: CSLData[] = [
     DOI: "10.5802/aif.1075",
     note:
       "Proves that monodromy of the Knizhnik-Zamolodchikov " +
-      "connection on the configuration space X_n coincides with " +
-      "the quantum-group R-matrix representation of U_q(g).  " +
+      "connection on the configuration space $X_n$ coincides with " +
+      "the quantum-group R-matrix representation of $U_q(g)$.  " +
       "Flatness of the KZ connection at generic q is the " +
       "mathematical content behind the lifted-crossing locality " +
       "hypothesis in the mass-volume expansion.",
