@@ -60,8 +60,10 @@ def _get_lambdified_sigmas(shape: tuple, sigmas_sym, dim: int) -> list:
             S_arr = np.asarray(S)
         try:
             fns.append(sp.lambdify(q_sym, sp.Matrix(S_arr), modules='numpy'))
-        except Exception:
-            fns.append(None)   # fallback handled at call site
+        except (TypeError, ValueError, NotImplementedError, sp.SympifyError):
+            # These are the exception types sp.lambdify may raise for
+            # entries it can't codegen.  fallback handled at call site.
+            fns.append(None)
     _LAMBDIFY_CACHE[shape] = fns
     return fns
 
@@ -123,8 +125,10 @@ def trM_plancherel_at_q(Z: int, N: int, q_val: complex) -> complex:
         for fn, S in zip(fns, sigmas_sym):
             try:
                 sigmas_num.append(np.asarray(fn(q_val), dtype=complex))
-            except Exception:
-                # Fallback: element-wise subs (slow)
+            except (TypeError, ValueError, ZeroDivisionError):
+                # Fallback: element-wise subs (slow).  Catch numeric
+                # / symbolic evaluation errors; let unexpected
+                # exceptions (e.g. MemoryError) propagate.
                 if issparse(S):
                     S_arr = S.toarray()
                 else:

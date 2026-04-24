@@ -124,7 +124,9 @@ def main():
                 "non_magic_Q",
             )):
                 non_magic_q_predictors.append(p.name)
-        except Exception:
+        except (OSError, UnicodeDecodeError):
+            # Skip files we can't read (permissions, encoding).  Other
+            # exception types should surface as bugs.
             pass
 
     if non_magic_q_predictors:

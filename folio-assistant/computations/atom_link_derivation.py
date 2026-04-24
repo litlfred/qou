@@ -87,11 +87,13 @@ def _classify_factor(c: float, d: float) -> str:
     """Map ``(c, d)`` to 'pos', 'neg', or 'mixed'."""
     if abs(c - 1.0) > 1e-6:
         raise ValueError(f"unsupported c={c} (expected 1)")
-    if abs(d) < 1e-9:
+    # Single tolerance for all classifications.
+    TOL = 1e-7
+    if abs(d) < TOL:
         return "pos"
-    if abs(d + H_VAL) < 1e-6:
+    if abs(d + H_VAL) < TOL:
         return "neg"
-    if abs(d + H_VAL / 2) < 1e-6:
+    if abs(d + H_VAL / 2) < TOL:
         return "mixed"
     raise ValueError(f"unsupported d={d} (not 0, -h, -h/2)")
 
