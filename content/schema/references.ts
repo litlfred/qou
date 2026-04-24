@@ -1894,7 +1894,7 @@ export const references: CSLData[] = [
     "publisher-place": "New York",
     issued: { "date-parts": [[2002]] },
     DOI: "10.1007/978-1-4757-6046-0",
-    collection_title: "Graduate Texts in Mathematics",
+    "collection-title": "Graduate Texts in Mathematics",
     volume: "210",
   }),
 

@@ -188,7 +188,8 @@ export type ComputationEngine =
   | "snappea"
   | "sympy"
   | "mpmath"
-  | "sage";
+  | "sage"
+  | "python";
 
 /**
  * Status of a computational verification.
@@ -413,6 +414,8 @@ export interface DefinitionBlock extends BlockBase {
  * Lean is expected but may be WIP — missing lean triggers a warning, not an error.
  */
 interface ProvableBase extends BlockBase {
+  /** Optional Lean formalization of the result. */
+  lean?: LeanRef;
   /** Labels of proof blocks for this result (like examples[]). */
   proofs?: string[];
   /** Labels of example blocks illustrating this result. */
@@ -453,6 +456,14 @@ export interface ExampleBlock extends BlockBase {
   kind: "example";
   /** Optional Lean formalization of the example. */
   lean?: LeanRef;
+  /**
+   * Label of the provable block this example illustrates.
+   *
+   * Parallel to `RemarkBlock.interprets` — when an example concretely
+   * instantiates a definition/proposition/theorem, link it here so
+   * the viewer can cross-reference bidirectionally.
+   */
+  interprets?: string;
 }
 
 /**
@@ -478,6 +489,8 @@ export interface RemarkBlock extends BlockBase {
    * explains. The referenced block should have Lean formalization.
    */
   interprets?: string;
+  /** Optional computational verification (Python/SnapPea/sympy/etc.). */
+  computation?: Computation;
 }
 
 /**
@@ -494,6 +507,12 @@ export interface RemarkBlock extends BlockBase {
  */
 export interface ProofBlock extends BlockBase {
   kind: "proof";
+  /**
+   * Label of the provable block this proof establishes (reverse link of
+   * `ProvableBase.proofs[]`). Canonical field name — use in preference to
+   * `proves`.
+   */
+  of?: string;
   /** Optional Lean formalization of the proof. */
   lean?: LeanRef;
   /** Optional computational verification (Python/SnapPea/sympy/etc.). */
@@ -564,6 +583,10 @@ export interface ProseBlock {
   kind: "prose";
   /** Optional label for cross-referencing. */
   label?: string;
+  /** Optional section-style title rendered as a paragraph heading. */
+  title?: string;
+  /** Labels of content blocks this prose depends on (for the dependency graph). */
+  uses?: string[];
   /** Bibliography keys cited by this block. */
   cites?: string[];
   tags?: string[];
@@ -597,10 +620,15 @@ export interface DiagramBlock {
   kind: "diagram";
   /** Diagram label (e.g. "fig:monoidal-structure"). */
   label?: string;
+  /** Optional display title (rendered as a figure heading). */
+  title?: string;
   /** tikzcd or diagram TeX source (can live inline for short diagrams). */
   tex?: string;
   /** Caption text (rendered below diagram in LaTeX). */
   caption?: string;
+  tags?: string[];
+  /** Labels of content blocks this diagram depends on (for the dependency graph). */
+  uses?: string[];
   companions?: Companions;
   /** Pre-rendered diagram (e.g. SVG from tikzcd server-side render). */
   rendered?: RenderedAsset[];

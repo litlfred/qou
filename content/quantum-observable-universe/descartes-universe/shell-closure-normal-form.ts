@@ -16,7 +16,7 @@ export default proposition({
   ],
   lean: {
     decl: "QOU.OptimalNF.optimal_nf_is_standard_basis",
-    validation: "has_sorry",
+    validation: "stub",
   },
   uses: [
     "prop:nuclear-groebner-reduction",
