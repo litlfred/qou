@@ -84,20 +84,32 @@ neutron word (majority $\sigma^{-1}$).*
 *Symbolic Hoefsmit matrix products are $O(d^3)$ per generator in
 sympy, where $d = \dim S^\lambda = f^\lambda$:*
 
-- *$A = 1$: $f^\lambda \in \{1, 2, 1\}$, fast.*
-- *$A = 2$: $f^\lambda$ up to $9$ (for $\lambda = (3,3)$);
-  symbolic takes seconds per $\lambda$.*
-- *$A = 3$: $f^\lambda$ up to $42$ ($\lambda = (3,3,3)$); minutes.*
-- *$A = 4$: $f^\lambda$ up to $132$ ($\lambda = (3,3,3,3)$);
-  symbolic becomes impractical.*
+- *$A = 1$: $f^\lambda \in \{1, 2, 1\}$, fast; the values above
+  are exact.*
+- *$A \geq 2$: $f^\lambda$ up to $16$ (for $\lambda = (3,2,1)$
+  at $A=2$) and up to $132$ at $A=4$; symbolic cost becomes
+  prohibitive.  For $A \geq 2$ use the **numerical**
+  Hoefsmit pipeline in
+  `folio-assistant/computations/hecke_characters.py`
+  (well-tested, handles 2×2 block $b^2$ sign with
+  `sqrt(abs(b^2))` where the symbolic expression can turn
+  negative off the unitary locus).*
 
-*For $A \geq 3$, either (i) substitute numerical $q \to q_0$
-early and use the numerical pipeline in
-`folio-assistant/computations/hecke_characters.py`, or
-(ii) pre-prune the partition set to the MN-support
-([MN parity-blind](#rem:mn-classical-parity-blind) shows this
-is $3$–$5$ partitions out of $30$–$77$ for $A \in \{3, 4\}$),
-reducing symbolic cost by factor $\sim 10$.*
+**Correction to an earlier claim.**
+*An earlier draft asserted that the classical Murnaghan–Nakayama
+character's support equals the Hecke $q$-character's support
+(i.e., MN-support pruning is valid).  This is **false** for
+general braid words.  It holds only when $T_w$ is a pure
+standard-basis element $T_v$ for some $v \in S_n$: then
+$\chi^\lambda_q(T_v)$ is a $q$-deformation of $\chi^\lambda(v)$
+and shares its support.  For a braid word $T_{i_1}T_{i_2}\cdots
+T_{i_k}$ with mixed $\sigma^{\pm 1}$, the Hecke relations
+$T_i^2 = (q-q^{-1})T_i + I$ expand the product into a linear
+combination $\sum_v c_v(q)\,T_v$ over many $v$ with different
+cycle types.  The $q$-character pulls in all of them, so the
+effective support can be strictly larger than the
+MN-support on any single $v$.  Pruning to the MN-support at
+$A \geq 2$ produces a **biased** result and is not used.*
 
 **Reference implementation.**
 *Script: `folio-assistant/computations/hecke_character_symbolic.py`.
@@ -106,9 +118,11 @@ through atomic braid word, traces to extract $\chi^\lambda_q(T_w)$.
 Witness: `hecke-character-symbolic.witness.json`.*
 
 **Next step.**
-*Apply to $A = 2$ (deuteron) with the $11$-partition sum.  The
-support-pruning strategy using MN output reduces to $2$ partitions
-$\{(6), (3,3)\}$, making the symbolic computation tractable.
+*Apply the numerical pipeline in
+`folio-assistant/computations/hecke_characters.py` (full $H_{3A}$
+Wedderburn sum) to $A = 2$ (deuteron) with all $11$ partitions of
+$6$, weighted by the exact symbolic $w_\lambda(q_0)$.  The
+numerical Hoefsmit handles the 2×2 block $b^2$ sign robustly.
 This is the final piece needed for deuteron binding energy from
-first principles — no empirical constants except $E_0$ and
-$q_0$.*
+first principles — the only inputs are $E_0$ ($\beta$-decay) and
+$q_0$ (substrate).*
