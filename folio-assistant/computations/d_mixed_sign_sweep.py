@@ -43,14 +43,16 @@ from witness_base import WitnessBuilder
 B_AME_D = 2.22456612
 
 
+_FACTOR_EPS = 1e-7   # consistent threshold across factor classification
+
 def classify(c, d):
-    if abs(c - 1.0) > 1e-9:
+    if abs(c - 1.0) > _FACTOR_EPS:
         raise ValueError(f"c={c} not supported")
-    if abs(d) < 1e-9:
+    if abs(d) < _FACTOR_EPS:
         return "pos"
-    if abs(d + H_VAL) < 1e-6:
+    if abs(d + H_VAL) < _FACTOR_EPS:
         return "neg"
-    if abs(d + H_VAL / 2) < 1e-6:
+    if abs(d + H_VAL / 2) < _FACTOR_EPS:
         return "mixed"
     raise ValueError(f"d={d} not classified")
 

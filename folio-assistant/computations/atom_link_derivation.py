@@ -144,8 +144,6 @@ def atom_to_braid_word(Z: int, N: int,
                                for (c, d, g) in triples]
         # assume triples come in order: nucleon 0 g0 chain, g1 chain,
         # then inter, nucleon 1 g0 chain, g1 chain, inter, ...
-        last_g = None
-        last_section = None  # 'g0', 'g1', 'inter'
         for (c, d, g, kind) in triples_with_kind:
             k = g // 3
             sub = g % 3   # 0 → g0, 1 → g1, 2 → inter

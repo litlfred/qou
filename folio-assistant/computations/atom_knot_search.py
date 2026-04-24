@@ -151,11 +151,14 @@ def vol_of_closure(word: list[int], digits: int = 50):
     if v > 0.5:
         try:
             import mpmath
-            mpmath.mp.dps = digits
-            Eh = E.high_precision()
-            rp = Eh.volume().real if hasattr(Eh.volume(), "real") \
-                 else Eh.volume()
-            hp_str = mpmath.nstr(mpmath.mpf(str(rp)), digits)
+            # Use workdps so we don't leak a precision change into
+            # mpmath.mp.dps globally (which could affect other parts
+            # of the pipeline running in the same process).
+            with mpmath.workdps(digits):
+                Eh = E.high_precision()
+                rp = Eh.volume().real if hasattr(Eh.volume(), "real") \
+                     else Eh.volume()
+                hp_str = mpmath.nstr(mpmath.mpf(str(rp)), digits)
         except Exception:
             hp_str = None
     return v, hp_str, None
