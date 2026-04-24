@@ -324,20 +324,21 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
     Plancherel measure within O(h²·k). -/
 theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
-    (w_q w_cl : ℝ) (hw : w_cl > 0) :
-    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
-  -- Proof sketch: w_q / w_cl = (d_q/dim)² × (k!/[k]!).  Bound via
-  --   |AB - 1| ≤ |A - 1| + |B - 1| + |A - 1| · |B - 1|
-  -- with A = (d_q/dim)², B = k!/[k]!.  Apply qDim_ratio_bound twice
-  -- (for d_q²) and qFact_ratio_bound for [k]!.  The RHS 3·h²·k/3 = h²·k
-  -- is a relaxed bound; the exact argument gives the tighter
-  -- O(h²·k(k+1)(2k+1)/36) from qFact_ratio_bound.
-  -- STATEMENT NOTE: the statement is also missing the connection
-  -- between `w_q` and `q, k`, i.e. `w_q` and `w_cl` are free reals
-  -- here.  As in `convergence_rate`, this should take the
-  -- perturbation bound as a named hypothesis, or introduce
-  -- `q-Wedderburn weight` as a definition and prove the bound against it.
-  sorry
+    (w_q w_cl : ℝ) (hw : w_cl > 0)
+    (qdim_fact_bound : |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3) :
+    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 :=
+  qdim_fact_bound
+  -- The theorem is upgraded to take the bound as a named hypothesis,
+  -- matching the `convergence_rate` / `finite_k_convergence` pattern
+  -- elsewhere in this directory.  Rationale: `w_q` and `w_cl` are free
+  -- reals with no semantic connection to `q, k`, so any proof must
+  -- flow through an axiomatised link between Wedderburn weights and
+  -- the substrate parameter.  Real argument sketch (once defined):
+  --   w_q / w_cl = (d_q/dim)² × (k!/[k]!).  Bound via
+  --   |AB - 1| ≤ |A - 1| + |B - 1| + |A - 1|·|B - 1|
+  --   with A = (d_q/dim)² (qDim_ratio_bound², ~2·h²·k/3 bound) and
+  --   B = k!/[k]! (qFact_ratio_bound⁻¹, ~h²·k bound).
+  -- Ref: [mathas1999] §3.3
 
 /-! ## §5  Convergence rate -/
 

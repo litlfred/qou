@@ -183,49 +183,42 @@ theorem removeCorner_sum (λ : Partition) (row : ℕ)
     (h : row < λ.length) (hp : 0 < λ.part row) :
     (λ.parts.mapIdx fun i p => if i = row then p - 1 else p).sum =
     λ.parts.sum - 1 := by
-  -- Induction on λ.parts, generalizing row.
+  -- Reformulation: the mapIdx equals `List.set` at the single index `row`,
+  -- then `List.sum_set` gives the arithmetic.  This avoids the awkward
+  -- index-shift via `mapIdx_cons`.
   obtain ⟨parts, _⟩ := λ
-  simp only [Partition.length, Partition.part, List.getD_eq_getElem?_getD] at h hp
-  induction parts generalizing row with
-  | nil => simp at h
-  | cons a rest ih =>
-    cases row with
-    | zero =>
-      -- Head element is decremented; every tail index i ↦ (i+1) ≠ 0 so unchanged
-      simp only [List.mapIdx_cons, List.sum_cons, if_true]
-      have hmap : (rest.mapIdx fun i p => if i + 1 = 0 then p - 1 else p) = rest := by
-        apply List.mapIdx_eq_self.mpr  -- or: induction on rest
-        intro i p _
-        simp [Nat.succ_ne_zero]
-      rw [hmap]
-      -- Goal: a - 1 + rest.sum = a + rest.sum - 1; use hp to ensure a ≥ 1
-      simp only [List.getElem?_cons_zero, Option.getD_some] at hp
-      omega
-    | succ n =>
-      -- Head unchanged (index 0 ≠ succ n); recurse into tail with n
-      simp only [List.mapIdx_cons, List.sum_cons,
-                 show (0 : ℕ) ≠ n.succ from Nat.zero_ne_succ _, if_false]
-      have hlen : n < rest.length := by
-        simp only [List.length_cons] at h; omega
-      have hpos : 0 < rest.getD n 0 := by
-        simp only [List.getElem?_cons_succ] at hp
-        simpa [List.getD_eq_getElem?_getD] using hp
-      have hmap : (rest.mapIdx fun i p => if i + 1 = n + 1 then p - 1 else p)
-                = rest.mapIdx fun i p => if i = n then p - 1 else p := by
-        apply List.mapIdx_congr
-        intro i p _
-        simp [Nat.succ_inj]
-      rw [hmap, ih n hlen hpos]
-      -- Goal: a + (rest.sum - 1) = a + rest.sum - 1
-      -- Need rest.sum ≥ 1 so Nat subtraction distributes.
-      have hmem : rest.getD n 0 ∈ rest := by
-        simp [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hlen]
-        exact List.getElem_mem _ _ _
-      have hsum_ge : 1 ≤ rest.sum :=
-        Nat.one_le_iff_ne_zero.mpr (fun hz => by
-          have := List.sum_eq_zero_iff.mp hz _ hmem
-          omega)
-      omega
+  simp only [Partition.length, Partition.part] at h hp
+  -- Step 1: the mapIdx equals set
+  have hset : (parts.mapIdx fun i p => if i = row then p - 1 else p)
+            = parts.set row (parts.getD row 0 - 1) := by
+    -- Both sides agree at every index via List.getElem
+    apply List.ext_getElem
+    · simp [List.length_mapIdx, List.length_set]
+    · intro i hi _
+      rw [List.getElem_mapIdx]
+      rw [List.getElem_set]
+      by_cases hir : i = row
+      · subst hir
+        simp [List.getD_eq_getElem _ _ hi]
+      · simp [hir]
+  rw [hset]
+  -- Step 2: sum_set gives (L.set n a).sum = (take n).sum + (if n < len then a else 0) + (drop (n+1)).sum.
+  -- Combined with L.sum = (take n).sum + L[n] + (drop (n+1)).sum (take + drop decomposition)
+  -- and our a = L[row] - 1, L[row] ≥ 1, conclude sum = L.sum - 1.
+  rw [List.sum_set]
+  simp only [h, if_true]
+  have hpos : 0 < parts.getD row 0 := hp
+  have hparts_split : parts.sum = (parts.take row).sum + parts.getD row 0 + (parts.drop (row + 1)).sum := by
+    -- parts = take row ++ [L[row]] ++ drop (row+1)
+    rw [show parts = parts.take row ++ parts.drop row from (List.take_append_drop row parts).symm]
+    rw [List.sum_append]
+    congr 1
+    rw [show parts.drop row = parts.getD row 0 :: parts.drop (row + 1) from ?_]
+    · rw [List.sum_cons]; ring
+    · rw [List.getD_eq_getElem _ _ h, ← List.getElem_drop (by omega), ← List.drop_one,
+          ← List.drop_drop]
+      · exact (List.eq_cons_of_length_pos (by simp [List.length_drop]; omega)).symm
+  omega
 
 /-- Removing a corner decreases the partition size by exactly 1. -/
 theorem removeCorner_size (λ : Partition) (row : ℕ)
