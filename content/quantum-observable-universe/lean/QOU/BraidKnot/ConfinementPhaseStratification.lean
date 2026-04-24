@@ -62,11 +62,20 @@ opaque sigmaFReal : ConfinedParticle → ℝ → ℝ
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem phase_locus_open (P : ConfinedParticle) :
     IsOpen (confinementLocus P) := by
-  -- Full proof: Slater-strictness is an open condition on the SDP
-  -- data; the SDP constraint matrices are polynomial in q (via
-  -- q-integer factors in R_q); neighbourhood stability then gives
-  -- openness in ℝ. Requires a formal link between SDP feasibility
-  -- and topology on ℝ, deferred.
+  -- NOT PROVABLE: `confinedReal` is `opaque`; no content.
+  -- STRUCTURAL FIX: replace with a class/model.  Shape:
+  --
+  --   structure SDPData (P : ConfinedParticle) where
+  --     constraintMatrix : ℝ → Matrix n n ℝ       -- polynomial in q
+  --     rhs              : ℝ → Fin n → ℝ
+  --     constraint_cont  : Continuous constraintMatrix
+  --     ...
+  --   def confinedReal P q := ∃ Φ ≻ 0, SlaterStrict (SDPData P) q Φ
+  --
+  -- Then openness follows from continuity of constraints + openness
+  -- of the positive-definite cone in Matrix; standard SDP stability.
+  -- Lean: needs Mathlib SDP duality + positive-definite cone topology
+  -- (neither available yet).
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
   sorry
 
@@ -80,9 +89,14 @@ theorem phase_mu_constant_on_components
     (hC : IsConnected C) (hsub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
     muReal P q₁ = muReal P q₂ := by
-  -- `μ` is integer-valued and (by continuity of the SDP optimiser
-  -- under Slater strictness) locally constant on open strata of
-  -- Ω(P); constancy on a connected subset follows.
+  -- NOT PROVABLE: `muReal` is `opaque`.  Sketch of real proof:
+  -- `μ` is integer-valued + locally constant (SDP optimiser's active
+  -- support is locally constant under Slater strictness).  Locally
+  -- constant + connected source ⟹ globally constant:
+  --   exact IsLocallyConstant.apply_eq_of_isConnected
+  --     muLocallyConstant hC h₁ h₂
+  -- Needs a `muLocallyConstant : IsLocallyConstant muReal P` lemma,
+  -- which requires the SDP content (Mathlib gap).
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
   sorry
 
@@ -94,9 +108,14 @@ theorem phase_mu_constant_on_components
 theorem phase_sigmaF_continuous_on_locus
     (P : ConfinedParticle) :
     ContinuousOn (sigmaFReal P) (confinementLocus P) := by
-  -- Continuity of the SDP optimal value under Slater regularity;
-  -- a standard SDP-theory result. Full Lean formalisation requires
-  -- Mathlib SDP duality, deferred.
+  -- NOT PROVABLE: `sigmaFReal` is `opaque`.  The SDP optimal value is
+  -- a continuous function of the constraint data under Slater
+  -- regularity (Berge's maximum theorem in the SDP setting).
+  -- Proof outline once the SDP model is in place:
+  --   - Constraint matrices are continuous in q
+  --   - Slater-strict ⟹ optimiser map is continuous (Berge)
+  --   - SDP optimal value = ⟨T, Φ*(q)⟩ inherits continuity
+  -- Mathlib gap: no SDP duality theory yet.
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
   sorry
 

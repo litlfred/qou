@@ -64,10 +64,21 @@ opaque confined : ConfinedParticle → R_q → Prop
 -- Ref: [manuscript] braids-and-knots/confined-particle
 theorem coarseStrands_eq_markov_strands (P : ConfinedParticle) :
     P.coarseStrands = P.markovClass.strandCount := by
-  -- Required by the definition but not enforced at the type level.
-  -- Real-world instances (proton, neutron, electron, He4, …) are
-  -- constructed with matching values; a well-formedness predicate
-  -- should enforce this, deferred.
+  -- STATEMENT-LEVEL DEFECT: FALSE as stated.  `coarseStrands` and
+  -- `markovClass.strandCount` are independent ℕ fields of the
+  -- `ConfinedParticle` structure; there is no relation forcing them
+  -- equal.  STRUCTURAL FIX NEEDED:
+  --
+  --   structure ConfinedParticle where
+  --     name : String
+  --     level : ℕ
+  --     markovClass : MarkovClass
+  --     coarseStrands : ℕ
+  --     coarseStrands_eq : coarseStrands = markovClass.strandCount
+  --
+  -- Then this theorem becomes `P.coarseStrands_eq`.  Downside: every
+  -- existing instance constructor (proton, neutron, electron, He4, …)
+  -- must supply the proof.
   -- Ref: [manuscript] braids-and-knots/confined-particle
   sorry
 

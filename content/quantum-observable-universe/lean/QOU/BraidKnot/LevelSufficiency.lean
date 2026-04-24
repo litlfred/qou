@@ -58,12 +58,15 @@ theorem LevelSufficiency
     (h_unfold : ConfMorphism P P')
     (h_cover : kMax P q ≤ P.coarseStrands) :
     markovTrace P q = markovTrace P' q := by
-  -- Proof: compatibility of the Markov trace along the Hecke
-  -- inclusion ι : H_{n₀}(q) ↪ H_{n₁}(q), combined with the
-  -- hypothesis that all non-zero Wedderburn projections of P live
-  -- at k ≤ n₀ so no new-block contributions arise. Requires a
-  -- formal Markov-property statement for the Jones 1987 trace
-  -- compatibility — not yet available in Mathlib.
+  -- NOT PROVABLE: `markovTrace` is `opaque` (no content).
+  -- STRUCTURAL FIX: add an axiomatic Markov-compatibility hypothesis:
+  --
+  --   axiom markovTrace_compat_unfold :
+  --     ∀ P P' q, ConfMorphism P P' →
+  --       kMax P q ≤ P.coarseStrands → markovTrace P q = markovTrace P' q
+  --
+  -- Then this theorem is that axiom.  Once Mathlib has Hecke-algebra
+  -- tower compatibility [jones1987], the axiom is discharged.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   sorry
 

@@ -62,16 +62,18 @@ theorem shell_closure_monotone
     (D_prev D : DressedParticle) (q : R_q)
     (h : isOneStepDressing D_prev D) :
     frobeniusStability D_prev q ≤ frobeniusStability D q := by
-  -- SDP-relaxation monotonicity (Boyd-Vandenberghe §5.4.1):
-  --   (a) primal lift Φ ↦ ι_* Φ ⊕ 0 preserves feasibility and
-  --       objective;
+  -- NOT PROVABLE: `frobeniusStability` opaque; needs SDP model.
+  -- Real proof sketch (Boyd–Vandenberghe §5.4.1):
+  --   (a) primal lift Φ ↦ ι_* Φ ⊕ 0 preserves feasibility + objective
   --   (b) dual lift by adjoining new y_λ ≥ 0 preserves feasibility
-  --       and objective;
-  --   (c) cost compatibility T^(Z) = ι_* T^(Z−1) ⊕ T_new lets the
-  --       new y_λ dominate T_new in the matrix inequality.
-  -- The enlarged dual is a relaxation, so its max ≥ old max.
-  -- Full formalisation requires Mathlib SDP relaxation lemmas
-  -- which are not yet available.
+  --   (c) cost compatibility T^(Z) = ι_* T^(Z−1) ⊕ T_new lets the new
+  --       y_λ dominate T_new in the matrix inequality
+  -- Relaxed dual max ≥ original max → result.
+  -- Mathlib gap: SDP relaxation + positive-semidefinite cone monotonicity.
+  -- Once SDP model is in place (see ConfinementPhaseStratification.lean):
+  --   apply sdp_relaxation_monotone
+  --   · exact primal_lift_feasible ...
+  --   · exact dual_lift_feasible ...
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
   sorry
 

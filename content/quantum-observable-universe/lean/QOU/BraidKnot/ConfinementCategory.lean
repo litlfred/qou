@@ -50,9 +50,18 @@ opaque ConfMorphism.comp {P Q R : ConfinedParticle}
 theorem ConfMorphism.id_comp {P Q : ConfinedParticle}
     (f : ConfMorphism P Q) :
     ConfMorphism.comp (ConfMorphism.id Q) f = f := by
-  -- Categorical identity law; the `id` constructor acts as the
-  -- unit of composition. Full proof requires an explicit
-  -- operational definition of `comp`, deferred.
+  -- NOT PROVABLE: `ConfMorphism.comp` is `opaque`.
+  -- STRUCTURAL FIX: replace the opaque declaration with an inductive
+  -- definition by cases on `f` (id, unfold, fold, dress).  Example:
+  --
+  --   def ConfMorphism.comp : ConfMorphism P Q → ConfMorphism Q R →
+  --                           ConfMorphism P R
+  --     | .id _, g => g
+  --     | .unfold _ _ h, .id _ => .unfold _ _ h
+  --     | .unfold _ _ h, .unfold _ _ h' => .unfold _ _ (by omega)
+  --     | ...  -- enumerate the 16 constructor combinations
+  --
+  -- Then identity/associativity laws follow by `rfl` or small case work.
   -- Ref: [manuscript] braids-and-knots/confinement-category
   sorry
 
@@ -62,8 +71,9 @@ theorem ConfMorphism.assoc {P Q R S : ConfinedParticle}
     (f : ConfMorphism P Q) (g : ConfMorphism Q R) (h : ConfMorphism R S) :
     ConfMorphism.comp h (ConfMorphism.comp g f) =
     ConfMorphism.comp (ConfMorphism.comp h g) f := by
-  -- Categorical associativity. Full proof requires `comp` to be
-  -- concretely defined, deferred.
+  -- NOT PROVABLE: same root cause as id_comp — `comp` is opaque.
+  -- See the fix sketch above.  Once `comp` is inductively defined,
+  -- associativity is ~16 cases on the morphism constructors.
   -- Ref: [manuscript] braids-and-knots/confinement-category
   sorry
 
@@ -77,7 +87,9 @@ noncomputable instance : CategoryTheory.Category ConfinedParticle where
   comp := ConfMorphism.comp
   id_comp := ConfMorphism.id_comp
   comp_id f := by
-    -- Right identity law
+    -- NOT PROVABLE: same root cause (`comp` is opaque).  Once `comp`
+    -- is inductively defined, `comp_id` is a single-case rewrite:
+    --   comp f (id _) = f  by definition of comp on (_, .id _)
     -- Ref: [manuscript] braids-and-knots/confinement-category
     sorry
   assoc := ConfMorphism.assoc

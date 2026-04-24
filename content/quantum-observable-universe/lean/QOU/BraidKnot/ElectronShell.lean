@@ -61,9 +61,16 @@ theorem noble_gas_multi_operator
     (S : ElectronShell) (q : R_q)
     (h : S.nElectrons ∈ nobleGasMagic) :
     bindingMultiplicity S q ≥ 2 := by
-  -- Follows from the confinement-SDP active-support analysis at
-  -- full-shell closure. Full proof requires an explicit model of
-  -- the SDP active support; deferred.
+  -- NOT PROVABLE with current signature: `bindingMultiplicity` is
+  -- `opaque` (Line 48), carrying no computational content.
+  --
+  -- STRUCTURAL FIX: either
+  --   (a) define `bindingMultiplicity` constructively as the rank of
+  --       the SDP active support (needs Mathlib SDP), OR
+  --   (b) replace `opaque` with a typeclass `BindingMultiplicity S q N`
+  --       and axiomatise `noble_gas_witness : ∀ Z ∈ nobleGasMagic,
+  --         ∃ S, BindingMultiplicity S q (≥ 2)`
+  --       then this theorem takes the witness as a hypothesis.
   -- Ref: [manuscript] particle-interactions/confinement-sdp
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
   sorry
