@@ -172,6 +172,41 @@ adjustment.*
 *`folio-assistant/computations/ribbon_content_average.py` +
 `ribbon-content-average.witness.json`.*
 
+**Variant sweep — all fail.**
+*Script `chirality_variants_probe.py` tested 8 candidate writhe-
+ribbon formulas (varying weighting, writhe convention, and
+normalisation) against paper's assigned factors for $D$, $T$.
+**No variant matches within $20\%$**.*
+
+*Best-match variant: $a = 1 + \langle c\rangle \cdot h$ (no
+writhe prefactor, Plancherel-weighted content), giving
+$a_D^{\text{free}} = 1.524$ vs paper's $1.21$ ($26\%$ off).
+All 7 other variants diverge by $>80\%$.*
+
+*This is **strong negative evidence** that paper's chirality
+factor is NOT derivable from a simple Hecke-trace formula at
+the writhe-ribbon level.  Possible resolutions:*
+
+1. *Paper's $\{1+h, 1-h^2, (1-h^2)^2\}$ assignments are
+   **phenomenological ansätze** motivated by knot-theoretic
+   intuition but without rigorous Hecke-trace derivation.
+   The "Frobenius-norm-deviation derivation" mentioned in
+   upstream commits may be heuristic rather than theorem.*
+2. *The correct derivation uses the **quantum-group ribbon
+   element** (from $U_q(\mathfrak{sl}_2)$ acting on Schur–Weyl
+   quotients), not just the Hecke-algebra Markov trace.  The
+   former adds a framing-dependent global factor absent from
+   Markov-trace computations.*
+3. *The chirality factor is the **signature** of a specific
+   Hermitian form on the knot-complement state space, not a
+   Markov-trace quantity.  Computing it would require
+   infrastructure beyond what is in-scope here.*
+
+*Term 5 status: the writhe-$h$ linearisation **form** is correct;
+the coefficient is **not** captured by any tested Hecke-trace
+formula.  A full derivation requires quantum-group or
+knot-complement machinery.*
+
 **Consistency with amphichiral case.**
 *For an amphichiral braid, writhe $w = 0$, so the first-order
 chirality correction vanishes.  The second-order $h^2$ term then

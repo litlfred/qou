@@ -118,7 +118,7 @@ if __name__ == "__main__":
     for label, Z, N, incl in [("D atom", 1, 1, True),
                               ("D free", 1, 1, False),
                               ("T atom", 1, 2, True),
-                              ("4He atom", 2, 2, True)]:
+                              ("T free", 1, 2, False)]:
         A = Z + N
         entries, p, n, avg, crossings = collect(Z, N, incl)
         w_net = p - n
