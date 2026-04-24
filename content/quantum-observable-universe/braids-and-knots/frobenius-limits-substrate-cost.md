@@ -32,35 +32,57 @@ being processed.*
    sits slightly below the classical peak — the substrate is
    $q$-deformed but close to classical.*
 
-**Physical interpretation: substrate info-exchange cost.**
+**Physical interpretation — SPECULATIVE.**
 
-*The minimum value $2$ (in units of $m_e$) represents the **two
-self-dual endpoints** of the Young lattice: the fully symmetric
-partition $(n)$ and its conjugate $(1^n)$, both with
-$\dim_q = 1$ at every $q$.  These are the "vacuum channels" —
-the trivial and sign representations of $S_n$, corresponding to
-bosonic and fermionic coherent states.*
+⚠ *The following is **interpretive**, not derived.  The limit
+structure (Proved: $\tau \to 2$ at $q \to 0, \infty$;
+$\tau = \sum 1/d_\lambda$ at $q = 1$; $q \leftrightarrow q^{-1}$
+symmetry) is rigorous.  The "substrate information cost" reading
+below is a **plausible narrative** consistent with the limit
+structure and the role of quantum dimensions in categorical
+representation theory, but is not rigorously identified with any
+physical information measure.*
 
-*A vortex emerging from the substrate vacuum must traverse all
-available representation channels $\lambda \in \widehat{H_n(q)}$,
-and $1/\dim_q(\lambda)$ is the **transmission resistance** of
-channel $\lambda$ (quantum dimensions $\dim_q$ measure "channel
-capacity"; their reciprocals measure resistance).  The total
-$\tau(C_{\dim_q}) = \sum 1/\dim_q$ is the parallel-resistance
-total — the substrate's **fundamental information cost per
-vortex creation**:*
+*Narrative: the minimum value $2$ (in units of $m_e$) can be
+read as the **two self-dual endpoints** of the Young lattice
+— the fully symmetric $(n)$ and fully antisymmetric $(1^n)$
+partitions with $\dim_q = 1$ at every $q$.  These are the
+trivial and sign representations of $S_n$, in the language of
+statistics bosonic and fermionic coherent channels.*
+
+*One might try to interpret $1/\dim_q(\lambda)$ as a
+**transmission resistance** of channel $\lambda$, with
+$\tau(C_{\dim_q}) = \sum 1/\dim_q$ as a parallel-resistance
+sum, and the total as a "substrate info-exchange cost":*
 
 $$
   \Delta m_{\text{substrate}}(n, q)
-  \;=\;
+  \;\stackrel{?}{=}\;
   m_e \cdot \sum_{\lambda \,\vdash\, n} \frac{1}{\dim_q(\lambda)}.
 $$
 
-*The $m_e$ prefactor is the fibre-functor calibration — the
-"unit of informational currency" in MeV.  The two-endpoint
-minimum $2 m_e$ is the irreducible vacuum overhead: even a
-pure-symmetric or pure-antisymmetric vortex pays $2 m_e$ just
-to exist.*
+*But this identification is **not proved**.  A rigorous
+information-theoretic reading would require showing that
+$\tau(C_{\dim_q})$ equals a specific entropy, channel capacity,
+or thermodynamic quantity on the substrate — which has not been
+done.  Candidates and what they would require:*
+
+1. *Shannon-channel analog: would need the substrate to carry a
+   probability measure on channels $\lambda$ with entropy
+   $-\sum p_\lambda \log p_\lambda$ matching
+   $\tau(C_{\dim_q})$ up to calibration.*
+2. *Landauer-bound analog: would need a dissipation argument
+   showing the substrate must radiate at least
+   $m_e \cdot \tau(C_{\dim_q})$ to create any vortex.  No such
+   argument has been constructed in this paper.*
+3. *Entropic-gravity analog (following
+   [entropic gravity](#rem:entropic-gravity)): would need
+   a holographic boundary computation yielding
+   $\tau(C_{\dim_q})$ from an area law.*
+
+*Until one of these is rigorously established, the
+"information cost" language is **analogy, not theorem**.  The
+limit structure is real; the physical reading is a conjecture.*
 
 **Brane tower = cost of the specific computation.**
 
