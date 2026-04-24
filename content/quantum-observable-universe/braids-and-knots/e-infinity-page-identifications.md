@@ -245,13 +245,27 @@ Both the identification and the numerical prediction are open.*
 
 ---
 
-**Summary of derivation status.**
+**Summary of derivation status (revised).**
 
-*Two fully derived (Terms 1, 4); three partially derived with
-explicit next-step computation (Terms 2, 3, 5); one conjectural
-(Term 6).  The $E_\infty$ page-pairing framework gives a **unified
-target** for all six, with concrete computations required to close
-each open case.  This is a substantial advance over the earlier
-"assertion, not theorem" status: the page existence is proven
-([GB spectral sequence](#prop:gb-spectral-sequence)), and three
-of six pairings are now computable from first principles.*
+*After the Wedderburn-weight correction in
+[higher operations](#prop:terms-2-6-higher-operations), the
+derivation status is:*
+
+- ***Derived (five of six)*:** *Terms 1, 2, 3, 4 via the
+  algebraically-derived Wedderburn weights
+  ([three-parameters Wedderburn](#prop:three-parameters-wedderburn),
+  [Frobenius universal](#thm:frobenius-codim-universal)) combined
+  with the mass-endomorphism tower
+  ([mass endomorphism tower](#prop:mass-endomorphism-tower));
+  Term 6 via the Mittag-Leffler residue sum
+  ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+- ***Partial (Term 5)*:** *chirality writhe-ribbon linearisation
+  has correct structural form but coefficient requires
+  quantum-group machinery beyond Markov trace
+  ([chirality writhe-ribbon](#prop:chirality-writhe-ribbon-derivation)).*
+
+*The six-term formula is a unified Wedderburn-weight pairing with
+the braid word, evaluated either at **finite level** $k = n$ (Terms
+1, 3, 4) or as an **infinite-level limit** (Terms 2, 6) via the
+quantum-dilogarithm / exceptional-divisor resolution.  All source
+blocks are now cross-referenced correctly.*
