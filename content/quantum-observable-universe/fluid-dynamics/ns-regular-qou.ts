@@ -3,6 +3,10 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:ns-regular-qou",
   title: "NS-regular quantum observable universe",
+  lean: {
+    decl: "QOU.FluidDynamics.NSRegularQOU",
+    validation: "not_checked",
+  },
   uses: [
     "def:quantum-universe",
     "def:q-navier-stokes",

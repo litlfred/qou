@@ -1423,7 +1423,8 @@ export const references: CSLData[] = [
     type: "chapter",
     title: "QGoL: A Quantum Game of Life",
     author: [
-      { literal: "Peña et al." },
+      { family: "Pe\\~{n}a" },
+      { literal: "others" },
     ],
     "container-title":
       "Advances in Quantum Computation and Quantum Cellular Automata",
@@ -1684,10 +1685,14 @@ export const references: CSLData[] = [
     type: "book",
     title: "The Geometry and Topology of Three-Manifolds",
     author: [{ family: "Thurston", given: "William P." }],
-    publisher: "Princeton University",
-    note: "Lecture notes",
+    publisher: "Princeton University lecture notes",
     issued: { "date-parts": [[1978]] },
     URL: "https://www.msri.org/publications/books/gt3m/",
+    note:
+      "Original lecture notes establishing the ideal-tetrahedron " +
+      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
+      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
+      "expansion of the categorical mass endomorphism.",
   }),
 
   // ── Bring 1786 ────────────────────────────────────────────────
@@ -1889,7 +1894,7 @@ export const references: CSLData[] = [
     "publisher-place": "New York",
     issued: { "date-parts": [[2002]] },
     DOI: "10.1007/978-1-4757-6046-0",
-    collection_title: "Graduate Texts in Mathematics",
+    "collection-title": "Graduate Texts in Mathematics",
     volume: "210",
   }),
 
@@ -2516,23 +2521,6 @@ export const references: CSLData[] = [
       "proton-neutron pairing.",
   }),
 
-  // ── Thurston 1978 (hyperbolic geometry of 3-manifolds) ───────
-  ref({
-    id: "thurston1978",
-    type: "book",
-    title:
-      "The Geometry and Topology of Three-Manifolds",
-    author: [{ family: "Thurston", given: "William P." }],
-    publisher: "Princeton University lecture notes",
-    issued: { "date-parts": [[1978]] },
-    URL: "http://library.msri.org/books/gt3m/",
-    note:
-      "Original lecture notes establishing the ideal-tetrahedron " +
-      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
-      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
-      "expansion of the categorical mass endomorphism.",
-  }),
-
   // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
   ref({
     id: "kohno1987",
@@ -2548,8 +2536,8 @@ export const references: CSLData[] = [
     DOI: "10.5802/aif.1075",
     note:
       "Proves that monodromy of the Knizhnik-Zamolodchikov " +
-      "connection on the configuration space X_n coincides with " +
-      "the quantum-group R-matrix representation of U_q(g).  " +
+      "connection on the configuration space $X_n$ coincides with " +
+      "the quantum-group R-matrix representation of $U_q(g)$.  " +
       "Flatness of the KZ connection at generic q is the " +
       "mathematical content behind the lifted-crossing locality " +
       "hypothesis in the mass-volume expansion.",
