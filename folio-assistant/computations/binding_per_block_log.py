@@ -92,7 +92,6 @@ def ln_abs_phi_q(v: float, *,
     # Accumulate −Σ_k ln|1 − q^{−k}v|
     total = 0.0
     qi_pow = 1.0 / q0  # q^{-1}
-    poles_skipped = []
     for k in range(1, K_max + 1):
         x = qi_pow * v
         # |1 − x| — real so ||
@@ -105,7 +104,6 @@ def ln_abs_phi_q(v: float, *,
             elif pole_mode == "sign":
                 return float("inf")
             else:  # principal: skip factor
-                poles_skipped.append(k)
                 qi_pow /= q0
                 continue
         term = math.log(abs_diff)

@@ -228,7 +228,10 @@ def j_N_at_root_via_limit(basis_word, n, N,
     # Values within this relative tolerance are treated as convergent;
     # larger spread is flagged as divergent (return nan).
     DIVERGENCE_REL_TOL = 0.01
-    root = cmath.exp(2j * cmath.pi / N)
+    # Use mpmath for the root-of-unity construction so it matches
+    # the script's configured precision, then cast to complex for
+    # downstream numpy usage.
+    root = complex(mpmath.exp(2j * mpmath.pi / N))
     vals = []
     for eps in eps_list:
         q_eps = root * cmath.exp(1j * eps)
@@ -246,21 +249,25 @@ def j_N_at_root_via_limit(basis_word, n, N,
     # Build one column of Richardson estimates for each pair.
     # Single-step Richardson at pair (k-1, k):
     #   R = (r · vals[k] − vals[k-1]) / (r − 1), r = eps_{k-1} / eps_k
-    # Iterate: take successive Richardson estimates from the previous
-    # column to fully cancel higher powers.
+    # Iterate: at the m-th column (m = 1, 2, ...), the pair-level
+    # Richardson estimate cancels the O(ε^m) error term.  The correct
+    # formula therefore uses r^m (not r) in the numerator weight:
+    #   R_m = (r^m · vals[k] − vals[k-1]) / (r^m − 1)
     col = list(vals)
+    m = 1
     while len(col) >= 2:
         next_col = []
         for k in range(1, len(col)):
-            # Use actual ε ratio to form r (supports non-geometric lists)
             i_this = len(vals) - len(col) + k
             i_prev = i_this - 1
             r = eps_list[i_prev] / eps_list[i_this]
             if abs(r - 1) < 1e-15:
                 next_col.append(col[k])
             else:
-                next_col.append((r * col[k] - col[k - 1]) / (r - 1))
+                r_m = r ** m
+                next_col.append((r_m * col[k] - col[k - 1]) / (r_m - 1))
         col = next_col
+        m += 1
     return col[0] if col else vals[-1]
 
 
