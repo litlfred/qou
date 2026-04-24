@@ -172,13 +172,13 @@ theorem burnside_4 : 1 + 9 + 4 + 9 + 1 = Nat.factorial 4 := by decide
 /-- k! = Σ dim(λ)² for k = 5. -/
 theorem burnside_5 : 1 + 16 + 25 + 36 + 25 + 16 + 1 = Nat.factorial 5 := by decide
 
-/-- k! = Σ dim(λ)² for k = 6. -/
-theorem burnside_6 : 1 + 25 + 81 + 100 + 225 + 100 + 81 + 25 + 16 + 25 + 1 + 16 = Nat.factorial 6 := by
-  sorry -- Ref: [fomin1994] — partition dimensions at k=6
-  -- need correct partition dimensions for k=6
-  -- dims: (6)→1, (5,1)→5, (4,2)→9, (4,1,1)→10, (3,3)→5,
-  -- (3,2,1)→16, (3,1,1,1)→10, (2,2,2)→5, (2,2,1,1)→9, (2,1,1,1,1)→5, (1^6)→1
-  -- 1+25+81+100+25+256+100+25+81+25+1 = 720? checking...
+/-- k! = Σ dim(λ)² for k = 6.
+    Partitions of 6 with irrep dimensions (hook-length formula):
+    (6)→1, (5,1)→5, (4,2)→9, (4,1,1)→10, (3,3)→5, (3,2,1)→16,
+    (3,1,1,1)→10, (2,2,2)→5, (2,2,1,1)→9, (2,1,1,1,1)→5, (1⁶)→1. -/
+theorem burnside_6 :
+    1 + 25 + 81 + 100 + 25 + 256 + 100 + 25 + 81 + 25 + 1 = Nat.factorial 6 := by
+  decide
 
 /-! ## §5  Fomin identity (concrete) -/
 
