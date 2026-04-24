@@ -12,6 +12,7 @@ export default theorem({
     "prop:hook-weight-derivation",
     "thm:jones-markov-trace",
     "prop:categorical-mass-markov",
+    "def:hecke-mass-element",
   ],
   cites: ["kassel1995"],
   tags: [
