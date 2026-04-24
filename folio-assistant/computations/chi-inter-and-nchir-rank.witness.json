@@ -1,0 +1,1133 @@
+{
+  "engine": "hoefsmit+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T06:20:00.015370+00:00",
+  "commitSha": "b1e864ba89dcfccfb978195d910d7adbfeff47a2",
+  "assertions": [
+    {
+      "name": "D: dominant-block rank vs paper n_chir",
+      "computed": 2.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0,
+      "source": "Plancherel-weighted dominant block rank"
+    },
+    {
+      "name": "T: dominant-block rank vs paper n_chir",
+      "computed": 2.0,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Plancherel-weighted dominant block rank"
+    },
+    {
+      "name": "3He: dominant-block rank vs paper n_chir",
+      "computed": 2.0,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Plancherel-weighted dominant block rank"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 251,
+  "computation": "chi-inter-and-nchir-rank",
+  "scriptFile": "chi_inter_and_nchir_rank.py",
+  "scriptHash": "6555e63b3064",
+  "scriptCommitSha": "",
+  "description": "Two results: (1) χ_λ at the inter-nucleon pn-boundary factor for every λ ⊢ 3A — extension of chi-std-pernucleon-theorem to the inter-nucleon piece via explicit Hoefsmit trace; (2) Plancherel-weighted identification of the dominant block in tr_M(β_atom) and check of its rank against the phenomenological n_chir ∈ {1, 2}.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "H_A": 0.20906032198987945
+  },
+  "data": {
+    "atoms": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "inter_generator": 2,
+        "n_partitions": 11,
+        "per_partition": [
+          {
+            "shape": [
+              6
+            ],
+            "dim": 1,
+            "dim_q": 0.9999999999999999,
+            "w_lambda": 0.0011921233292002005,
+            "chi_inter_re": 1.0054484345592414,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 1.559758739418077,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.001859424781184186,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.001859424781184186
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "dim_q": 0.9999999999999999,
+            "w_lambda": 0.0011921233292002005,
+            "chi_inter_re": -1.005448434559241,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -0.6769250645272102,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.0008069781615432384,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0008069781615432384
+          },
+          {
+            "shape": [
+              5,
+              1
+            ],
+            "dim": 5,
+            "dim_q": 5.220441324664572,
+            "w_lambda": 0.03248894617975795,
+            "chi_inter_re": 3.016345303677724,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 3.2158914339387135,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.10448092371717947,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.10448092371717947
+          },
+          {
+            "shape": [
+              3,
+              3
+            ],
+            "dim": 5,
+            "dim_q": 5.448607072459945,
+            "w_lambda": 0.03539094559714424,
+            "chi_inter_re": 1.0054484345592418,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 4.249070292623656,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.15037861556468554,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.15037861556468554
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dim": 5,
+            "dim_q": 5.448607072459945,
+            "w_lambda": 0.03539094559714424,
+            "chi_inter_re": -1.0054484345592405,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -3.497564665288439,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.12378212079171715,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.12378212079171715
+          },
+          {
+            "shape": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 5,
+            "dim_q": 5.220441324664572,
+            "w_lambda": 0.03248894617975795,
+            "chi_inter_re": -3.016345303677723,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 2.155415987526445,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.07002719401373651,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.07002719401373651
+          },
+          {
+            "shape": [
+              4,
+              2
+            ],
+            "dim": 9,
+            "dim_q": 9.669048397124518,
+            "w_lambda": 0.11145220242008576,
+            "chi_inter_re": 3.0163453036777246,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 1.6737481247387067,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.1865429147986173,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.1865429147986173
+          },
+          {
+            "shape": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 9,
+            "dim_q": 9.669048397124518,
+            "w_lambda": 0.11145220242008576,
+            "chi_inter_re": -3.0163453036777224,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -0.8197159558910511,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.0913591486429435,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0913591486429435
+          },
+          {
+            "shape": [
+              4,
+              1,
+              1
+            ],
+            "dim": 10,
+            "dim_q": 10.669048397124513,
+            "w_lambda": 0.13569772208004172,
+            "chi_inter_re": 2.010896869118483,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -0.47019148000472233,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.0638039127780843,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0638039127780843
+          },
+          {
+            "shape": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 10,
+            "dim_q": 10.669048397124515,
+            "w_lambda": 0.13569772208004177,
+            "chi_inter_re": -2.0108968691184814,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -0.48998813829170573,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.06649027421242495,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.06649027421242495
+          },
+          {
+            "shape": [
+              3,
+              2,
+              1
+            ],
+            "dim": 16,
+            "dim_q": 17.344673582613545,
+            "w_lambda": 0.3586356424845347,
+            "chi_inter_re": 1.7763568394002505e-15,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -1.9728210551001428,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.7075239466028574,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.7075239466028574
+          }
+        ],
+        "tr_M_re": -0.5404773083141675,
+        "tr_M_im": 0.0,
+        "abs_tr_M": 0.5404773083141675,
+        "dominant_shape": [
+          3,
+          2,
+          1
+        ],
+        "dominant_dim": 16,
+        "dominant_abs_contribution": 0.7075239466028574,
+        "proposed_n_chir": 2,
+        "paper_n_chir": 1,
+        "matches_paper": false
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "inter_generator": 2,
+        "n_partitions": 30,
+        "per_partition": [
+          {
+            "shape": [
+              9
+            ],
+            "dim": 1,
+            "dim_q": 1.0,
+            "w_lambda": 1.6863231502783998e-06,
+            "chi_inter_re": 1.0054484345592414,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 1.5768015283810746,
+            "chi_full_im": 0.0,
+            "contribution_re": 2.658996920703369e-06,
+            "contribution_im": 0.0,
+            "abs_contribution": 2.658996920703369e-06
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "dim_q": 1.0,
+            "w_lambda": 1.6863231502783998e-06,
+            "chi_inter_re": -1.005448434559241,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -0.684321523176193,
+            "chi_full_im": 0.0,
+            "contribution_re": -1.1539872267657908e-06,
+            "contribution_im": 0.0,
+            "abs_contribution": 1.1539872267657908e-06
+          },
+          {
+            "shape": [
+              8,
+              1
+            ],
+            "dim": 8,
+            "dim_q": 8.94569003394804,
+            "w_lambda": 0.00013494863434999652,
+            "chi_inter_re": 6.032690607355448,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 3.7402811795852777,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.0005047458372700273,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0005047458372700273
+          },
+          {
+            "shape": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 8,
+            "dim_q": 8.94569003394804,
+            "w_lambda": 0.00013494863434999652,
+            "chi_inter_re": -6.032690607355446,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 2.6619148276336446,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.0003592217707451667,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0003592217707451667
+          },
+          {
+            "shape": [
+              7,
+              2
+            ],
+            "dim": 27,
+            "dim_q": 32.92215114695502,
+            "w_lambda": 0.0018277517611946445,
+            "chi_inter_re": 15.08172651838862,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 3.1900195401578073,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.005830563832768762,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.005830563832768762
+          },
+          {
+            "shape": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 27,
+            "dim_q": 32.922151146955024,
+            "w_lambda": 0.0018277517611946451,
+            "chi_inter_re": -15.081726518388615,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -1.8834918906730074,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.0034425556203734214,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0034425556203734214
+          },
+          {
+            "shape": [
+              7,
+              1,
+              1
+            ],
+            "dim": 28,
+            "dim_q": 33.92215114695502,
+            "w_lambda": 0.0019404728556170724,
+            "chi_inter_re": 14.07627808382938,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -0.5793963030209981,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.0011243027986571306,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0011243027986571306
+          },
+          {
+            "shape": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 28,
+            "dim_q": 33.922151146955,
+            "w_lambda": 0.0019404728556170708,
+            "chi_inter_re": -14.076278083829372,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -2.2454406369439424,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.004357216604889226,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.004357216604889226
+          },
+          {
+            "shape": [
+              5,
+              4
+            ],
+            "dim": 42,
+            "dim_q": 56.515736159755406,
+            "w_lambda": 0.005386164090360497,
+            "chi_inter_re": 14.07627808382938,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 4.424038460464793,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.023828597090129203,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.023828597090129203
+          },
+          {
+            "shape": [
+              3,
+              3,
+              3
+            ],
+            "dim": 42,
+            "dim_q": 58.985825257811726,
+            "w_lambda": 0.005867270647824394,
+            "chi_inter_re": 4.773959005888173e-15,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 9.451258089817207,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.055453089175397346,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.055453089175397346
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "dim": 42,
+            "dim_q": 56.5157361597554,
+            "w_lambda": 0.005386164090360496,
+            "chi_inter_re": -14.076278083829372,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 8.649844229996956,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.04658948037882154,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.04658948037882154
+          },
+          {
+            "shape": [
+              6,
+              3
+            ],
+            "dim": 48,
+            "dim_q": 62.24963117856479,
+            "w_lambda": 0.0065345301697155795,
+            "chi_inter_re": 20.108968691184828,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 10.16741952165563,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.06643930961241386,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.06643930961241386
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 48,
+            "dim_q": 62.24963117856479,
+            "w_lambda": 0.0065345301697155795,
+            "chi_inter_re": -20.108968691184817,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -5.113738075027502,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.033415875731290484,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.033415875731290484
+          },
+          {
+            "shape": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 70,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              4,
+              1
+            ],
+            "dim": 84,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "dim": 84,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              6,
+              2,
+              1
+            ],
+            "dim": 105,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 105,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              2,
+              2
+            ],
+            "dim": 120,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 120,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              3,
+              1
+            ],
+            "dim": 162,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 162,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              3,
+              2
+            ],
+            "dim": 168,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              3,
+              2,
+              1
+            ],
+            "dim": 168,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "dim": 189,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 189,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "dim": 216,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "dim": 216,
+            "status": "skipped_too_large"
+          }
+        ],
+        "tr_M_re": 0.15666656195202958,
+        "tr_M_im": 0.0,
+        "abs_tr_M": 0.15666656195202958,
+        "dominant_shape": [
+          6,
+          3
+        ],
+        "dominant_dim": 48,
+        "dominant_abs_contribution": 0.06643930961241386,
+        "proposed_n_chir": 2,
+        "paper_n_chir": 2,
+        "matches_paper": true
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "inter_generator": 5,
+        "n_partitions": 30,
+        "per_partition": [
+          {
+            "shape": [
+              9
+            ],
+            "dim": 1,
+            "dim_q": 1.0,
+            "w_lambda": 1.6863231502783998e-06,
+            "chi_inter_re": 1.0054484345592414,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 2.3935111147542574,
+            "chi_full_im": 0.0,
+            "contribution_re": 4.036233203258764e-06,
+            "contribution_im": 0.0,
+            "abs_contribution": 4.036233203258764e-06
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "dim_q": 1.0,
+            "w_lambda": 1.6863231502783998e-06,
+            "chi_inter_re": -1.005448434559241,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -0.4508185556343537,
+            "chi_full_im": 0.0,
+            "contribution_re": -7.602257669412814e-07,
+            "contribution_im": 0.0,
+            "abs_contribution": 7.602257669412814e-07
+          },
+          {
+            "shape": [
+              8,
+              1
+            ],
+            "dim": 8,
+            "dim_q": 8.94569003394804,
+            "w_lambda": 0.00013494863434999652,
+            "chi_inter_re": 6.032690607355448,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 6.567663928203207,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.0008862972779807564,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0008862972779807564
+          },
+          {
+            "shape": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 8,
+            "dim_q": 8.94569003394804,
+            "w_lambda": 0.00013494863434999652,
+            "chi_inter_re": -6.032690607355446,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 1.8583356615342186,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.00025077985968794016,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.00025077985968794016
+          },
+          {
+            "shape": [
+              7,
+              2
+            ],
+            "dim": 27,
+            "dim_q": 32.92215114695502,
+            "w_lambda": 0.0018277517611946445,
+            "chi_inter_re": 15.08172651838862,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 7.5675725819338036,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.013831644114597813,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.013831644114597813
+          },
+          {
+            "shape": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 27,
+            "dim_q": 32.922151146955024,
+            "w_lambda": 0.0018277517611946451,
+            "chi_inter_re": -15.081726518388612,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -1.4695203542289217,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.0026859184155532904,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.0026859184155532904
+          },
+          {
+            "shape": [
+              7,
+              1,
+              1
+            ],
+            "dim": 28,
+            "dim_q": 33.92215114695502,
+            "w_lambda": 0.0019404728556170724,
+            "chi_inter_re": 14.07627808382938,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 1.6704873634351625,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.003241535384397264,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.003241535384397264
+          },
+          {
+            "shape": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 28,
+            "dim_q": 33.922151146955,
+            "w_lambda": 0.0019404728556170708,
+            "chi_inter_re": -14.076278083829372,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -2.381403633756616,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.004621049109572569,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.004621049109572569
+          },
+          {
+            "shape": [
+              5,
+              4
+            ],
+            "dim": 42,
+            "dim_q": 56.515736159755406,
+            "w_lambda": 0.005386164090360497,
+            "chi_inter_re": 14.076278083829376,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 7.695237783827574,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.04144781341803737,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.04144781341803737
+          },
+          {
+            "shape": [
+              3,
+              3,
+              3
+            ],
+            "dim": 42,
+            "dim_q": 58.985825257811726,
+            "w_lambda": 0.005867270647824394,
+            "chi_inter_re": 3.0531133177191805e-15,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 11.305166229993471,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.06633046999001625,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.06633046999001625
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "dim": 42,
+            "dim_q": 56.5157361597554,
+            "w_lambda": 0.005386164090360496,
+            "chi_inter_re": -14.076278083829376,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 6.659205125441179,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.03586757151699584,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.03586757151699584
+          },
+          {
+            "shape": [
+              6,
+              3
+            ],
+            "dim": 48,
+            "dim_q": 62.24963117856479,
+            "w_lambda": 0.0065345301697155795,
+            "chi_inter_re": 20.108968691184828,
+            "chi_inter_im": 0.0,
+            "chi_full_re": 16.064732217029746,
+            "chi_full_im": 0.0,
+            "contribution_re": 0.10497547734058273,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.10497547734058273
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 48,
+            "dim_q": 62.24963117856479,
+            "w_lambda": 0.0065345301697155795,
+            "chi_inter_re": -20.10896869118482,
+            "chi_inter_im": 0.0,
+            "chi_full_re": -3.720258560189076,
+            "chi_full_im": 0.0,
+            "contribution_re": -0.024310141800698157,
+            "contribution_im": 0.0,
+            "abs_contribution": 0.024310141800698157
+          },
+          {
+            "shape": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 70,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              4,
+              1
+            ],
+            "dim": 84,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "dim": 84,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              6,
+              2,
+              1
+            ],
+            "dim": 105,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 105,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              2,
+              2
+            ],
+            "dim": 120,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 120,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              3,
+              1
+            ],
+            "dim": 162,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 162,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              3,
+              2
+            ],
+            "dim": 168,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              3,
+              3,
+              2,
+              1
+            ],
+            "dim": 168,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "dim": 189,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 189,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "dim": 216,
+            "status": "skipped_too_large"
+          },
+          {
+            "shape": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "dim": 216,
+            "status": "skipped_too_large"
+          }
+        ],
+        "tr_M_re": 0.23521775558390826,
+        "tr_M_im": 0.0,
+        "abs_tr_M": 0.23521775558390826,
+        "dominant_shape": [
+          6,
+          3
+        ],
+        "dominant_dim": 48,
+        "dominant_abs_contribution": 0.10497547734058273,
+        "proposed_n_chir": 2,
+        "paper_n_chir": 2,
+        "matches_paper": true
+      }
+    ]
+  },
+  "caveats": [
+    "Partitions with dim > 50 are skipped (time budget).  For ⁴He (n = 12, 77 partitions) this excludes the largest blocks; for D (n = 6) and T/³He (n = 9) all partitions are computed."
+  ]
+}
