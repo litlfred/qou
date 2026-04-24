@@ -390,6 +390,7 @@ export default chapter({
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",
+        "mn-classical-parity-blind",
         "markov-pair-z2",
         "pentagon-uv-commutation",
         "descended-level-zero",

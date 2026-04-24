@@ -152,35 +152,61 @@ def schur_weyl_weight(partition, q):
     return sp.simplify(s / H)
 
 
-# ─── Specht character placeholder ─────────────────────────────────────
-# The full Specht character χ^λ(𝒜) requires knowing the braid word as
-# a permutation and computing the Murnaghan–Nakayama character.  For a
-# first-pass witness we use the **trivial character** χ^λ(𝒜) = 1,
-# which reproduces the partition of unity (sum of w_λ) and is correct
-# only for the identity braid.  Non-trivial braids require plugging
-# in the permutation cycle type; that is a task for the next iteration.
+# ─── Specht character — Murnaghan–Nakayama ────────────────────────────
+# Full classical χ^λ(π(𝒜)) via the S_n permutation cycle type of the
+# atomic-braid word and the Murnaghan–Nakayama recursion.  This is
+# the q = 1 limit of the Hecke-algebra character χ^λ_q; the full
+# q-dependent refinement is a separate module (ribbon-tableau q-weights).
 
 def specht_character_placeholder(partition, braid_word=None):
-    """Placeholder: returns 1 for every λ (trivial character)."""
+    """Trivial character χ^λ = 1 (legacy path). Use
+    specht_character_atomic for the real Murnaghan–Nakayama value."""
     return Integer(1)
+
+
+def specht_character_atomic(partition, Z, N, include_inter=True):
+    """Classical χ^λ(π(𝒜)) — S_{3A} character evaluated on the
+    permutation underlying the atomic braid word.  Uses
+    Murnaghan–Nakayama.  Returns an integer (symbolic in no variables).
+    """
+    from murnaghan_nakayama import character_on_atomic_braid
+    chi, _cycle_type = character_on_atomic_braid(
+        partition, Z, N, include_inter)
+    return Integer(chi)
 
 
 # ─── Assembly ─────────────────────────────────────────────────────────
 
-def global_wedderburn_sum_symbolic(A, q):
-    """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜=identity) as a sympy expression.
+def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
+                                     Z=None, N=None, include_inter=True):
+    """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) as a sympy expression.
 
     Enumerates all p(3A) partitions of 3A.
-    Uses trivial Specht character (=1); real braid plug-in is future work.
+
+    char_kind:
+      "trivial"   — χ^λ = 1 (legacy path; partition of unity)
+      "mn-atom"   — Murnaghan–Nakayama χ^λ(π(𝒜)) on the atomic-braid
+                    permutation, parameterised by (Z, N).
 
     Returns (sympy_expr, partitions_with_weights_list).
     """
+    if char_kind == "mn-atom":
+        if Z is None or N is None:
+            raise ValueError("char_kind='mn-atom' requires Z and N.")
+        if Z + N != A:
+            raise ValueError(f"Z + N = {Z+N} != A = {A}")
+
     partitions = partitions_of(3 * A)
     terms = []
     total = Integer(0)
     for lam in partitions:
         w = schur_weyl_weight(lam, q)
-        chi = specht_character_placeholder(lam)
+        if char_kind == "mn-atom":
+            chi = specht_character_atomic(lam, Z, N, include_inter)
+        else:
+            chi = specht_character_placeholder(lam)
+        if chi == 0:
+            continue  # skip zero-character partitions entirely
         contrib = w * chi
         total += contrib
         terms.append({
