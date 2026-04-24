@@ -396,6 +396,7 @@ export default chapter({
         "frobenius-limits-substrate-cost",
         "knot-mass-formula-unified",
         "partition-sum-proton-residual",
+        "np-discrepancy-resolution",
         "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",
