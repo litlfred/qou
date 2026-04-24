@@ -2,6 +2,15 @@
 """
 Phase 3 — compare D's Hecke-element Jones polynomial to catalog knots.
 
+*** CAVEAT (gemini-PR#399, 2026-04): this script computes the
+PLANCHEREL/canonical trace (w_λ = d_q²/[n]_q!), NOT the Jones-
+Ocneanu Markov trace z = 1/(q^{1/2}+q^{-1/2}).  The Jones polynomial
+is defined via the MARKOV trace, so a ratio of tr_Planck(D) / J(K)
+does NOT match any catalog knot and CANNOT identify D's link class.
+The existing ratio_table is retained for diagnostic bookkeeping only;
+for link identification one must redo the trace with Markov weights
+(see markov_convention_parallel.py for the z-convention). ***
+
 Full symbolic Markov trace on D's 32-term NF is too slow (> 5 min).
 Instead, evaluate D's trace numerically at many q values by direct
 Plancherel-weighted seminormal character sum (atom_markov_trace),

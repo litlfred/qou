@@ -66,15 +66,23 @@ def ln_abs_phi_q(v: float, *,
                    pole_mode: str = "principal") -> float:
     """ln|Φ_q(v)| = −Σ_{k≥1} ln|1 − q^{−k} v|.
 
-    **Precision note on `pole_mode='principal'`:** when |1 − q^{-k}v|
-    < pole_tol the factor is CLAMPED at pole_tol (earlier revisions
-    skipped it, creating a −ln(pole_tol) discontinuity).  Default
-    pole_tol = 1e-15 ≈ double-precision epsilon, so the clamp only
-    activates for true near-poles and the clamped contribution
-    (+ln(1/pole_tol) ≈ 34.5) indicates a genuine singularity rather
-    than a spurious tolerance artefact.  Callers still computing near
-    a known q^k should verify externally that v is not within
-    1e-15 of the pole.
+    **pole_mode='principal'** implements the documented principal-
+    value regularisation (docs/infrastructure-audit-2026-04-20.md
+    line 73): the zero-measure factor |1 − q^{-k}v|^{-1} at the
+    exact pole index is DROPPED from the product.  In log-sum form
+    this means `term = 0` for factors with abs_diff < pole_tol,
+    equivalent to the integral-of-ln-near-zero vanishing.
+
+    This is the paper-exact prescription.  It introduces a
+    ≈−ln(pole_tol) ≈ 34.5 discontinuity across the pole-tolerance
+    shell (at-pole contribution = 0; just-outside contribution ≈
+    +34.5), but for the paper's use cases V̂ either equals q^k by
+    construction (designed pole hits, e.g. V̂^sym = q at pp inter-
+    nucleon crossings, V̂^sym = q^3 at the electron trefoil) or is
+    far from any q^k — intermediate cases do not arise.  If a
+    caller encounters a generic V̂ within pole_tol of a q^k, the
+    result is UNDERESTIMATED by ~34.5 per such hit and should be
+    investigated separately.
 
     Sum truncated once the summand magnitude falls below
     ``skip_tol`` — at q₀ ≈ 1.11 the tail is super-geometric
@@ -115,15 +123,13 @@ def ln_abs_phi_q(v: float, *,
                     f"ln|Φ_q| diverges at v ≈ q^k (x = {x}, k = {k})")
             if pole_mode == "sign":
                 return float("inf")
-            # principal: clamp |1 − q^{−k}v| at pole_tol rather than
-            # dropping the factor.  Dropping was equivalent to clamping
-            # at 1, which produced a discontinuity of −ln(pole_tol) ≈
-            # +32 as v crosses the near-pole shell.  Clamping at the
-            # tolerance itself produces a continuous result that
-            # diverges as pole_tol → 0, which is the correct behaviour
-            # for the genuine singularity.
-            abs_diff = pole_tol
-        term = math.log(abs_diff)
+            # principal: drop the zero-measure factor (term = 0) per
+            # the documented PV regularisation.  See docstring for
+            # the known ≈−ln(pole_tol) discontinuity across the
+            # tolerance shell.
+            term = 0.0
+        else:
+            term = math.log(abs_diff)
         total -= term
         # Converge: once |x| « 1, |ln|1−x|| ≈ |x| falls to zero.
         if abs(term) < skip_tol and abs(x) < skip_tol:

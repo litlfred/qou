@@ -149,7 +149,9 @@ def main() -> int:
         dq = complex(float(dim_q(shape)))
         w_lambda = (dq * dq) / nfac_q0
         chi_lam = chi_lambda_at_q0(shape, word)
-        contribution = w_lambda * chi_lam / dim
+        # Normalise by quantum dim so τ(1) = Σ w_λ · d_q/d_q = Σ w_λ
+        # is consistent at q ≠ 1 (classical dim gives an offset).
+        contribution = w_lambda * chi_lam / dq
         markov_total += contribution
         role = ""
         if is_sym_partition(shape, n):

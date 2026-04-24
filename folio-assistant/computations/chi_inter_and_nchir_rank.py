@@ -102,8 +102,8 @@ def inter_generator_index(Z: int, N: int) -> int:
     return 3 * Z - 1  # For ordering ['p']^Z ++ ['n']^N, pn boundary at k=Z-1
 
 
-def process_atom(name: str, Z: int, N: int, max_dim: int = 50,
-                  time_budget: float = 60.0, w: "WitnessBuilder" = None):
+def process_atom(name: str, Z: int, N: int, max_dim: int = 200,
+                  time_budget: float = 300.0, w: "WitnessBuilder" = None):
     A = Z + N
     n = 3 * A
     print(f"\n{'=' * 80}")
@@ -229,9 +229,10 @@ def main():
     w.add_parameter("q_0", float(Q0))
     w.add_parameter("H_A", float(H_A_VAL))
     w.add_caveat(
-        "Partitions with dim > 50 are skipped (time budget).  For ⁴He "
-        "(n = 12, 77 partitions) this excludes the largest blocks; for "
-        "D (n = 6) and T/³He (n = 9) all partitions are computed."
+        "Partitions with dim > 200 are skipped (time budget).  For D "
+        "(n = 6) max dim is 16, for T/³He (n = 9) max dim is 168, so "
+        "the cap includes all of those.  For ⁴He (n = 12, 77 partitions, "
+        "max dim 1232) the largest blocks are still excluded."
     )
 
     ATOMS = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1)]
