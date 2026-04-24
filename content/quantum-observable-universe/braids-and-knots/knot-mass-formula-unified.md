@@ -133,6 +133,53 @@ derivations:*
 *This theorem combines them into a single three-term formula.
 Each term is independently derived; the sum is the total mass.*
 
+**Limitation: the Frobenius piece is vortex-blind.**
+
+*The Frobenius correction $m_e \cdot \mathrm{tr}_M(C_{\dim_q})$
+**does not depend on the specific vortex $\varrho$** — only on
+the ambient Hecke algebra $H_n(q)$.  All trefoil-like vortices
+on $H_3(q)$ (proton, neutron, any quark configuration) get
+the same additive offset $(2 + 1/[2]_q) \cdot m_e$.  Mass
+differences between such vortices therefore must come from
+the first two pieces (descended + brane tower).*
+
+**Isotope binding: chirality factors are a FOURTH tier.**
+
+*For compound isotope bindings, the paper's full formula
+([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+adds a **vortex-dependent chirality factor**
+$a_K \in \{1 + h,\; 1 - h^2,\; (1 - h^2)^2\}$ for $\{D, T, ^4\mathrm{He}\}$
+respectively — reflecting the knot type (chiral+, amphichiral,
+Borromean×2).  Upstream verification
+(`folio-assistant/computations/bw_chirality_isotopes.py`) gives
+$T: 0.505\%$ and $^3\mathrm{He}: 0.856\%$ agreement with AME
+using these factors.*
+
+*The chirality factor is a fourth structural layer beyond the
+three Frobenius-universal layers of this theorem.  It is vortex-
+dependent, like the descended and tower pieces, but algebra-
+independent in form (depends only on the knot type of the
+isotope braid, not on the specific $T_w$ expansion).  A
+complete mass formula is therefore:*
+
+$$
+  \mathfrak{m}(\varrho)
+  \;=\;
+  |\mathrm{tr}_M(T_w)|
+  \;+\;
+  \sum \Phi_q(\cdot)
+  \;+\;
+  m_e \cdot \mathrm{tr}_M(C_{\dim_q})
+  \;+\;
+  a_K \cdot B_{\mathrm{bulk}}
+  \;+\;
+  (\text{jet-level corrections}),
+$$
+
+*where $a_K$ is the chirality factor and the jet-level
+corrections reflect the open-problem prefix-word structure
+per upstream `pure_hecke_binding.py`.*
+
 **Consistency checks.**
 
 1. *At $q = 1$: classical Hecke reduces to $\mathbb{C}[S_n]$, brane

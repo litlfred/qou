@@ -210,6 +210,41 @@ $\tau(C_{\dim_q})$ depends on the algebra $A$ (hence on the
 vortex content), but the **structural form** — trace of the
 Frobenius co-dimension element — is universal.*
 
+**Independence of the vortex $\varrho$.**
+*Critically, $\tau(C_{\dim_q}^{(A)})$ is **independent of the
+specific vortex $\varrho$** — it depends only on the algebra
+$A$ (equivalently on $n$ and $q$), not on the braid word
+$T_w$ representing $\varrho$.  This is both a **feature** and a
+**limitation**:*
+
+- *Feature (universality):* *Every vortex on $H_3(q)$ —
+  proton $(uud)$, neutron $(udd)$, any nucleon-like trefoil —
+  inherits the same $(2 + 1/[2]_q) \cdot m_e$ additive
+  offset.  Mass differences between nucleons come entirely
+  from the descended $|\mathrm{tr}_M|$ and brane-tower pieces,
+  not from the Frobenius correction.*
+- *Limitation (vortex-blind):* *The Frobenius correction cannot
+  by itself distinguish $\varrho_{\mathfrak{p}}$ from
+  $\varrho_{\mathfrak{n}}$ or any other trefoil-like vortex.
+  Vortex-dependent corrections (e.g. chirality factors
+  $\{1+h, 1-h^2, (1-h^2)^2\}$ per
+  ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+  or knot-factor Frobenius pairings per
+  ([knot-factor Frobenius pairing](#prop:knot-factor-frobenius-pairing))
+  — are separate structural terms beyond $\tau(C_{\dim_q})$.*
+
+*The unified mass formula
+([unified knot mass](#thm:knot-mass-formula-unified)) therefore has
+three tiers:*
+
+1. *Vortex-specific: descended $|\mathrm{tr}_M(T_w)|$ and brane
+   tower $\sum \Phi_q$.*
+2. *Algebra-specific (but vortex-independent): Frobenius
+   co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
+3. *Isotope-specific (vortex-dependent but structural):
+   chirality / knot-factor coefficients from
+   `prop:figure-eight-bw-coefficients`.*
+
 **Consistency.**
 
 1. *At $q = 1$ (classical limit): $\dim_q \to d_\lambda$ and

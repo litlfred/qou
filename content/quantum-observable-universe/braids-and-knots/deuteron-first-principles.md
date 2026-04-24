@@ -125,6 +125,73 @@ neutron contribution, not the partition sum.  Paths forward:*
    $\sum_{\lambda \vdash 3A} \frac{1}{d_\lambda}$; the upstream
    work is open on this generalisation.*
 
+**Upstream follow-up: paper's BW + chirality gives $0.5$–$0.9\%$.**
+
+*Subsequent upstream work
+(`folio-assistant/computations/bw_chirality_isotopes.py`,
+`pure_hecke_binding.py`) established two sharper findings:*
+
+1. *The **paper's own** figure-eight-BW formula with chirality
+   factors
+   ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+   gives $T$ at $0.505\%$ and $^3\mathrm{He}$ at $0.856\%$
+   agreement with AME.  Chirality factors per knot type:*
+
+| isotope | chirality | factor |
+|---|---|---|
+| D | chiral+ | $1 + h = 1.209$ |
+| T, $^3$He | amphichiral | $1 - h^2 = 0.956$ |
+| $^4$He | Borromean² | $(1 - h^2)^2 = 0.914$ |
+
+*with $h = q - q^{-1}$.  These factors modify the BW bulk term
+$B_{\mathrm{bulk}}$ per isotope, giving an $A$-dependent
+correction that the Schur–Weyl / Frobenius computation alone
+does not capture.*
+
+2. *The naive $B = E_0 \cdot (|\mathrm{tr}_M(\text{free})| -
+   |\mathrm{tr}_M(\text{atom})|)$ approach (this script) is
+   confirmed **insufficient** by upstream: for all tested
+   isotopes it gives $-99\%$ to $-100\%$ relative error.  The
+   paper's correct binding formula uses**restricted characters
+   at specific jet levels**:*
+
+$$
+  a_k(\beta)
+  \;=\;
+  \frac{\sum_\lambda w_\lambda\, \chi_\lambda^{(k)}(\beta)}
+       {\sum_\lambda w_\lambda \, \dim\mathrm{Res}^{H_k}_{H_3}(V_\lambda)},
+$$
+
+*where $\chi_\lambda^{(k)}$ is the $q$-character at jet level
+$k$ and $\mathrm{Res}^{H_k}_{H_3}$ is the restriction functor
+from $H_k$ to $H_3$.  Upstream's prefix-word per-level
+experiments
+(`pure_hecke_binding_prefix.py`) tested nucleon-cumulative
+prefix extraction and found it still fails — the correct
+prefix structure (strand-cumulative vs order-of-generation)
+is an open problem.*
+
+**Integrated picture.**
+
+*The deuteron binding predicted by my Schur–Weyl pipeline
+($0.995\;\mathrm{MeV}$) and the paper's BW + chirality formula
+($\sim 2.20\;\mathrm{MeV}$) differ by $\sim 1.2\;\mathrm{MeV}$
+— very close to the universal Frobenius co-Casimir correction
+$m_e \cdot (2 + 1/[2]_q) \approx 1.276\;\mathrm{MeV}$
+([Frobenius universal](#thm:frobenius-codim-universal)).
+The alignment suggests the two formulas are not in conflict but
+capture complementary structural levels:*
+
+- *Schur–Weyl + Frobenius = algebraic-categorical piece
+  (vortex-independent).*
+- *BW + chirality + jet-level prefix = isotope-specific
+  structural piece (vortex-dependent via knot type).*
+
+*The **full** mass formula
+([unified knot mass](#thm:knot-mass-formula-unified)) is the
+sum of all three layers; this script captures layer (1) only,
+upstream `bw_chirality_isotopes.py` captures layers (2) + (3).*
+
 *Calibration $E_0$ note: this script uses the $\beta$-decay
 calibration from the numerical pipeline, not the symbolic
 one; the numbers differ from
