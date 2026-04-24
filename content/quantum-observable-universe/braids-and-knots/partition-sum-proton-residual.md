@@ -7,34 +7,75 @@ calibration and corrected by $(1 + [2]_q \hbar_q^2)$
 Let $m_{\mathfrak{p}}^{\mathrm{CODATA}} = 938.272\;\mathrm{MeV}$
 denote the experimental proton mass.
 
-**Proposition.**
-*The proton tower residual has the exact partition-sum closed form*
+**Observation (numerical, not derivation).**
+
+⚠ *This block states a **numerical coincidence**, not a
+theorem.  The match below was discovered empirically — the
+framework does not yet derive the form of the proton tower
+residual from first principles.  Two candidate closed forms
+match the observed residual; both are listed, neither is proved.*
+
+*The observed proton tower residual is*
 
 $$
+  \Delta m_{\mathfrak{p}}
+  \;:=\;
   m_{\mathfrak{p}}^{\mathrm{CODATA}} - \mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)
   \;=\;
-  m_e \cdot \sum_{\lambda \,\vdash\, 3} \frac{1}{d_\lambda}
-  \;=\;
-  m_e \cdot \frac{5}{2}
-  \;\approx\;
-  1.277\;\mathrm{MeV},
+  1.2779\;\mathrm{MeV}.
 $$
 
-*where $d_\lambda = \dim S^\lambda$ is the classical Specht-module
-dimension (hook-length formula).  The agreement is exact to
-computational precision ($0.03\%$) using the canonical $q_0$
-derived from the CODATA $m_\mu / m_e$ ratio.*
+*Two candidate closed forms, both evaluating near this value:*
 
-**Computation.**
-*The three partitions of $3$ have dimensions
-$d_{(3)} = 1$, $d_{(2,1)} = 2$, $d_{(1,1,1)} = 1$, giving the
-exact rational*
+| candidate | expression | value | vs $\Delta m_{\mathfrak{p}}$ |
+|---|---|---|---|
+| classical | $m_e \cdot \sum_{\lambda \vdash 3} 1/d_\lambda = (5/2) m_e$ | $1.2775$ | $-0.03\%$ |
+| $q$-deformed | $m_e \cdot \sum_{\lambda \vdash 3} 1/\dim_q(\lambda) = m_e(2 + 1/[2]_q)$ | $1.2761$ | $-0.14\%$ |
 
-$$
-  \sum_{\lambda \,\vdash\, 3} \frac{1}{d_\lambda}
-  = \frac{1}{1} + \frac{1}{2} + \frac{1}{1}
-  = \frac{5}{2}.
-$$
+*Both involve the **same three partitions of $3$** and the
+**same dimension formula** — classical $d_\lambda$ vs its
+$q$-deformation $\dim_q(\lambda) = [n]_q! / \prod [h_x]_q$
+(the $q$-hook-length formula,
+[hook-weight derivation](#prop:hook-weight-derivation)).
+At $q = 1$ the two agree; at $q_0 \approx 1.11$ the
+classical form fits the observed residual marginally better
+($0.03\%$ vs $0.14\%$).*
+
+**Which is "right"?**
+*Neither form is derived from the mass-endomorphism framework.
+Both are numerical observations.  The classical $5/2$ is the
+original upstream discovery
+(`folio-assistant/computations/residual_partition_sum.py`)
+and fits to numerical-precision.  The $q$-deformed variant is
+the natural mathematical generalization (replacing classical
+dimensions with their $q$-analogues) and fits slightly worse at
+$q_0$; it is listed here because the framework's underlying
+structures are $q$-deformed, so any derivation from first
+principles is more likely to produce the $q$-deformed form
+(reducing to classical at $q = 1$).*
+
+*A provable derivation is open.  The observation is strong
+enough that a missing algebraic identity is expected — candidates
+include a Hecke-algebra trace identity, a Habiro-ring residue,
+or a heat-kernel / random-walk on the Young lattice.*
+
+**Computation detail.**
+
+*For $n = 3$ the three partitions have:*
+
+| $\lambda$ | $d_\lambda$ | $\dim_q(\lambda)$ |
+|---|---|---|
+| $(3)$ | $1$ | $1$ |
+| $(2,1)$ | $2$ | $[2]_q$ |
+| $(1,1,1)$ | $1$ | $1$ |
+
+*giving
+$\sum_\lambda 1/d_\lambda = 5/2$ classically and
+$\sum_\lambda 1/\dim_q(\lambda) = 2 + 1/[2]_q$ in $q$-deformed
+form.  At $q_0$: $[2]_q \approx 2.011$, so
+$2 + 1/[2]_q \approx 2.497$ vs classical $2.500$ — a $0.1\%$
+split that does not resolve which form the framework prefers
+until a derivation exists.*
 
 **Numerical witness at $q_0 \approx 1.11$.**
 
