@@ -51,16 +51,39 @@ def trM_plancherel_at_q(Z: int, N: int, q_val: complex) -> complex:
     import numpy as np
     word = atom_braid_word_3A(Z, N)
     n = 3 * (Z + N)
-    # qfac, dim_q, etc. work symbolically; evaluate at q_val
-    nfac_expr = qfac(n)
-    nfac = complex(sp.N(nfac_expr.subs(sp.Symbol('q'), q_val)))
+    # qfac / dim_q from hecke_characters return FLOATS at q_0; for
+    # arbitrary q_val we rebuild from the q-integer formula here.
+    q_c = complex(q_val)
+    qi_c = 1.0 / q_c
+    def q_int_at(k: int) -> complex:
+        if k == 0:
+            return 0 + 0j
+        if abs(q_c - 1) < 1e-15:
+            return complex(k)
+        if abs(q_c + 1) < 1e-15:
+            return complex(k * ((-1) ** (k - 1)))
+        return (q_c ** k - qi_c ** k) / (q_c - qi_c)
+    nfac = 1 + 0j
+    for k in range(1, n + 1):
+        nfac *= q_int_at(k)
+    if abs(nfac) < 1e-30:
+        return 0 + 0j
     total = 0 + 0j
+    def dim_q_at(shape):
+        from hecke_characters import young_hooks
+        hooks = young_hooks(shape)
+        top = 1 + 0j
+        for k in range(1, sum(shape) + 1):
+            top *= q_int_at(k)
+        bot = 1 + 0j
+        for hk in hooks:
+            bot *= q_int_at(hk)
+        return top / bot if abs(bot) > 1e-30 else 0 + 0j
     for shape in partitions_of(n):
         sigmas_sym, dim, _ = _cached_seminormal(shape)
         if dim == 0:
             continue
-        dq_expr = dim_q(shape)
-        dq = complex(sp.N(dq_expr.subs(sp.Symbol('q'), q_val)))
+        dq = dim_q_at(shape)
         if abs(dq) < 1e-18:
             continue
         w = (dq * dq) / nfac
