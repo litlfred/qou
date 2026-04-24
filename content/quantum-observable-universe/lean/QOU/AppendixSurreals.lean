@@ -12,4 +12,5 @@ import QOU.AppendixSurreals.SignSequence
 import QOU.AppendixSurreals.Blowup
 import QOU.AppendixSurreals.BirthdayGrading
 import QOU.AppendixSurreals.HoefsmitBridge
+import QOU.AppendixSurreals.Asymptotics
 import QOU.AppendixSurreals.Conjectures
