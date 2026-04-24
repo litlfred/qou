@@ -42,32 +42,13 @@ def vol_high_precision(M, digits: int = 50):
     Uses M.high_precision() (ManifoldHP) for verified 50+ digit volume
     via interval arithmetic.  Falls back to float when HP unavailable.
     """
+    from hp_volume import hp_volume_of_manifold
     try:
         v_float = float(M.volume().real) if hasattr(M.volume(), "real") \
             else float(M.volume())
-    except Exception:
+    except (AttributeError, RuntimeError, ValueError):
         v_float = float("nan")
-    hp_str = None
-    try:
-        Mh = M.high_precision()
-        mpmath_available = False
-        try:
-            import mpmath
-            mpmath_available = True
-        except ImportError:
-            pass
-        if mpmath_available:
-            # workdps: local precision change, restored on block exit.
-            with mpmath.workdps(digits):
-                v_hp = Mh.volume()
-                real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
-                hp_str = mpmath.nstr(mpmath.mpf(str(real_part)), digits)
-        else:
-            v_hp = Mh.volume()
-            real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
-            hp_str = str(real_part)
-    except Exception:
-        hp_str = None
+    hp_str = hp_volume_of_manifold(M, digits=digits)
     return v_float, hp_str
 
 # Doubly-magic atoms (Z = N = magic number)

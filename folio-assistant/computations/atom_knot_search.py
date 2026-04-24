@@ -147,20 +147,8 @@ def vol_of_closure(word: list[int], digits: int = 50):
         v = float(v_raw.real) if hasattr(v_raw, "real") else float(v_raw)
     except Exception as e:
         return None, None, str(e)
-    hp_str = None
-    if v > 0.5:
-        try:
-            import mpmath
-            # Use workdps so we don't leak a precision change into
-            # mpmath.mp.dps globally (which could affect other parts
-            # of the pipeline running in the same process).
-            with mpmath.workdps(digits):
-                Eh = E.high_precision()
-                rp = Eh.volume().real if hasattr(Eh.volume(), "real") \
-                     else Eh.volume()
-                hp_str = mpmath.nstr(mpmath.mpf(str(rp)), digits)
-        except Exception:
-            hp_str = None
+    from hp_volume import hp_volume_of_manifold
+    hp_str = hp_volume_of_manifold(E, digits=digits) if v > 0.5 else None
     return v, hp_str, None
 
 

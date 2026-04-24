@@ -200,19 +200,10 @@ def volume_of_closure(word: list[int], digits: int = 50) -> dict:
         return {"status": "volume_error", "error": str(e)}
     # Report non-hyperbolic (Vol < 0.5 is a safe threshold for torus/satellite)
     is_hyperbolic = v_float > 0.5
-    hp_str: str | None = None
-    if is_hyperbolic:
-        try:
-            import mpmath
-            # workdps: precision change is LOCAL, restored on block exit,
-            # avoiding global side effects on other callers.
-            with mpmath.workdps(digits):
-                Eh = E.high_precision()
-                v_hp = Eh.volume()
-                rp = v_hp.real if hasattr(v_hp, "real") else v_hp
-                hp_str = mpmath.nstr(mpmath.mpf(str(rp)), digits)
-        except Exception:
-            hp_str = None
+    from hp_volume import hp_volume_of_manifold
+    hp_str: str | None = (
+        hp_volume_of_manifold(E, digits=digits) if is_hyperbolic else None
+    )
     result = {
         "status": "ok",
         "components": len(L.link_components),

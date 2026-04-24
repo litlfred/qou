@@ -48,31 +48,13 @@ def vol_high_precision(M, digits: int = 50):
     gives volumes verified to 50+ decimal digits (via interval arithmetic).
     Falls back to the standard float when HP support is unavailable.
     """
+    from hp_volume import hp_volume_of_manifold
     try:
         v_float = float(M.volume().real) if hasattr(M.volume(), "real") \
             else float(M.volume())
-    except Exception:
+    except (AttributeError, RuntimeError, ValueError):
         v_float = float("nan")
-    hp_str = None
-    try:
-        Mh = M.high_precision()
-        try:
-            import mpmath
-            mpmath_available = True
-        except ImportError:
-            mpmath_available = False
-        if mpmath_available:
-            # workdps: local precision change, restored on block exit.
-            with mpmath.workdps(digits):
-                v_hp = Mh.volume()
-                real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
-                hp_str = mpmath.nstr(mpmath.mpf(str(real_part)), digits)
-        else:
-            v_hp = Mh.volume()
-            real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
-            hp_str = str(real_part)
-    except Exception:
-        hp_str = None
+    hp_str = hp_volume_of_manifold(M, digits=digits)
     return v_float, hp_str
 
 # Candidate targets — B/m_e (density=m_e) and B/(2m_e) (pair-threshold)
