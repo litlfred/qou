@@ -119,31 +119,24 @@ theorem rowBump_sorted (row : List ℕ) (x : ℕ)
     split
     · -- x < a: result = x :: rest, need x < all of rest
       next hlt =>
-      -- hsort: a < all of rest. hlt: x < a. So x < all of rest.
-      cases hsort with
-      | nil => exact List.sorted_cons.mpr ⟨by simp, List.sorted_nil⟩
-      | cons hall hrest =>
-        exact List.sorted_cons.mpr ⟨by
-          intro b hb
-          exact lt_trans hlt (hall b hb), hrest⟩
-    · -- x ≥ a: result = a :: rowBump rest x
+      rw [List.sorted_cons] at hsort
+      refine List.sorted_cons.mpr ⟨?_, hsort.2⟩
+      intro b hb
+      exact lt_trans hlt (hsort.1 b hb)
+    · -- x ≥ a: result = a :: (rowBump rest x).1
       next hge =>
       have ha_ne : x ≠ a := by
         intro heq; exact hfresh (heq ▸ List.mem_cons_self a rest)
       have hax : a < x := by omega
       have hfresh_rest : x ∉ rest := by
         intro hm; exact hfresh (List.mem_cons_of_mem a hm)
-      have hsort_rest : rest.Sorted (· < ·) := by
-        cases hsort with
-        | nil => exact List.sorted_nil
-        | cons _ h => exact h
-      have ih_result := ih hsort_rest hfresh_rest
+      rw [List.sorted_cons] at hsort
+      have ih_result := ih hsort.2 hfresh_rest
       -- Need: a < all elements of (rowBump rest x).1.  Use rowBump_mem:
-      -- each element is either in rest (> a by hsort) or equals x (> a).
       refine List.sorted_cons.mpr ⟨?_, ih_result⟩
       intro b hb
       rcases rowBump_mem rest x b hb with hrest | rfl
-      · exact (List.sorted_cons.mp hsort).1 b hrest
+      · exact hsort.1 b hrest
       · exact hax
 
 /-! ## §2  Schensted insertion (cascade) -/
@@ -166,16 +159,19 @@ theorem schenstedInsertRows_size (rows : List (List ℕ)) (x : ℕ) :
   induction rows generalizing x with
   | nil => simp [schenstedInsertRows]
   | cons row rest ih =>
-    simp only [schenstedInsertRows]
     have hlen := rowBump_length row x
-    rcases h : (rowBump row x).2 with _ | b
-    · -- bumped = none: append at row 0; rowBump_length says length grows by 1
-      simp only [h, List.map_cons, List.sum_cons]
-      simp [h] at hlen
+    simp only [schenstedInsertRows]
+    -- Case-split on whether rowBump bumps a value or appends
+    cases hbump : (rowBump row x).2 with
+    | none =>
+      -- appended at current row: length grows by 1 (from hlen)
+      simp only [hbump, List.map_cons, List.sum_cons]
+      simp [hbump] at hlen
       omega
-    · -- bumped = some b: length of new row unchanged; recurse on rest with b
-      simp only [h, List.map_cons, List.sum_cons]
-      simp [h] at hlen
+    | some b =>
+      -- bumped: length of new row preserved; recurse with b on rest
+      simp only [hbump, List.map_cons, List.sum_cons]
+      simp [hbump] at hlen
       have := ih b
       omega
 

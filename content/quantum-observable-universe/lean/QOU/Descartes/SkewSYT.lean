@@ -183,25 +183,49 @@ theorem removeCorner_sum (λ : Partition) (row : ℕ)
     (h : row < λ.length) (hp : 0 < λ.part row) :
     (λ.parts.mapIdx fun i p => if i = row then p - 1 else p).sum =
     λ.parts.sum - 1 := by
-  -- Proof sketch: mapIdx changes exactly one element at index `row`
-  -- (from `p` to `p - 1`, where `p = λ.part row > 0`).  The cleanest
-  -- route is to reduce mapIdx with a single-index modification to
-  -- `List.set`, then invoke sum_set:
-  --
-  --   have hset : (λ.parts.mapIdx fun i p => if i = row then p - 1 else p)
-  --             = λ.parts.set row (λ.parts.get ⟨row, h⟩ - 1) := by
-  --     apply List.ext_getElem
-  --     · simp [List.length_mapIdx, List.length_set]
-  --     · intro i hi _
-  --       rw [List.getElem_mapIdx, List.getElem_set]
-  --       split_ifs <;> rfl
-  --   rw [hset, List.sum_set_eq_sum_sub_add]  -- if such a lemma exists
-  --   · omega
-  --
-  -- Alternative: induction on `λ.parts` with `row` generalized, using
-  -- `List.mapIdx_cons` to split head/tail and shift the index.
-  -- Ref: [sagan2001]
-  sorry
+  -- Induction on λ.parts, generalizing row.
+  obtain ⟨parts, _⟩ := λ
+  simp only [Partition.length, Partition.part, List.getD_eq_getElem?_getD] at h hp
+  induction parts generalizing row with
+  | nil => simp at h
+  | cons a rest ih =>
+    cases row with
+    | zero =>
+      -- Head element is decremented; every tail index i ↦ (i+1) ≠ 0 so unchanged
+      simp only [List.mapIdx_cons, List.sum_cons, if_true]
+      have hmap : (rest.mapIdx fun i p => if i + 1 = 0 then p - 1 else p) = rest := by
+        apply List.mapIdx_eq_self.mpr  -- or: induction on rest
+        intro i p _
+        simp [Nat.succ_ne_zero]
+      rw [hmap]
+      -- Goal: a - 1 + rest.sum = a + rest.sum - 1; use hp to ensure a ≥ 1
+      simp only [List.getElem?_cons_zero, Option.getD_some] at hp
+      omega
+    | succ n =>
+      -- Head unchanged (index 0 ≠ succ n); recurse into tail with n
+      simp only [List.mapIdx_cons, List.sum_cons,
+                 show (0 : ℕ) ≠ n.succ from Nat.zero_ne_succ _, if_false]
+      have hlen : n < rest.length := by
+        simp only [List.length_cons] at h; omega
+      have hpos : 0 < rest.getD n 0 := by
+        simp only [List.getElem?_cons_succ] at hp
+        simpa [List.getD_eq_getElem?_getD] using hp
+      have hmap : (rest.mapIdx fun i p => if i + 1 = n + 1 then p - 1 else p)
+                = rest.mapIdx fun i p => if i = n then p - 1 else p := by
+        apply List.mapIdx_congr
+        intro i p _
+        simp [Nat.succ_inj]
+      rw [hmap, ih n hlen hpos]
+      -- Goal: a + (rest.sum - 1) = a + rest.sum - 1
+      -- Need rest.sum ≥ 1 so Nat subtraction distributes.
+      have hmem : rest.getD n 0 ∈ rest := by
+        simp [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hlen]
+        exact List.getElem_mem _ _ _
+      have hsum_ge : 1 ≤ rest.sum :=
+        Nat.one_le_iff_ne_zero.mpr (fun hz => by
+          have := List.sum_eq_zero_iff.mp hz _ hmem
+          omega)
+      omega
 
 /-- Removing a corner decreases the partition size by exactly 1. -/
 theorem removeCorner_size (λ : Partition) (row : ℕ)
@@ -256,19 +280,42 @@ theorem skewSYTCount_empty (λ : Partition) :
 theorem skewSYTCount_nonneg (λ μ : Partition) :
     0 ≤ skewSYTCount λ μ := Nat.zero_le _
 
+/-- Nonempty skew shape has at least one corner.
+    TODO: full proof iterates through the last row of λ and finds the
+    rightmost cell not in μ. -/
+theorem skewCorners_nonempty (λ μ : Partition) (h : λ.contains μ)
+    (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty := by
+  -- Proof sketch: λ.size > μ.size ⟹ skewCells λ μ nonempty.
+  -- In any nonempty finite Young subdiagram, the cell with maximal
+  -- (row + col) (or lex max) is a corner (its right/down neighbours
+  -- are outside the subdiagram by maximality).
+  -- Concrete construction: pick any c ∈ skewCells λ μ; iteratively
+  -- move down/right while still in skewCells; terminates at a corner.
+  -- ~30 LOC once λ.cells / μ.cells / skewCells finite lemmas are in place.
+  sorry
+
 /-- SYT count is positive when λ ⊇ μ (there's always at least one SYT). -/
 -- Ref: [fulton1997] Proposition 3.1
 theorem skewSYTCount_pos (λ μ : Partition) (h : λ.contains μ) :
     0 < skewSYTCount λ μ := by
-  -- Proof sketch: strong induction on `n := λ.size - μ.size`.
-  --   Base (n = 0, i.e. λ.size ≤ μ.size): skewSYTCount reduces to 1.
-  --   Step: pick any corner c ∈ skewCorners λ μ (nonempty because
-  --         λ.size > μ.size and the Young lattice is locally finite —
-  --         needs helper `skewCorners_nonempty`).  By IH, the recursive
-  --         term `skewSYTCount (λ.removeCorner c.row) μ > 0`.  Since
-  --         Finset.sum over naturals is ≥ any single term, done.
-  -- Depends on: skewCorners_nonempty (requires a corner-existence
-  -- lemma in the Young lattice, provable but ~20 LOC of cell case work).
+  -- Strong induction on the termination measure `λ.size - μ.size`.
+  -- Key dependencies:
+  --   (a) `skewCorners_nonempty` — above
+  --   (b) `Finset.sum_pos` (Mathlib): if any term > 0 then sum > 0
+  --
+  -- Proof structure:
+  --   obtain ⟨c, hc⟩ := skewCorners_nonempty λ μ h (by omega)
+  --   have hrow : c.row < λ.length := ...   -- from mem_cells
+  --   have hpos : 0 < λ.part c.row := ...
+  --   unfold skewSYTCount
+  --   split_ifs with hle
+  --   · exact Nat.one_pos
+  --   · -- Sum over Finset of corners; pick c's contribution > 0 by IH
+  --     apply Finset.sum_pos' _ (by use ⟨c, hc⟩; exact ih _ _ _)
+  --     · intro ⟨c', hc'⟩ _; exact Nat.zero_le _
+  --
+  -- The `ih` invocation needs the termination measure strictly to
+  -- decrease; this follows from `removeCorner_decreases`.
   -- Ref: [fulton1997]
   sorry
 
