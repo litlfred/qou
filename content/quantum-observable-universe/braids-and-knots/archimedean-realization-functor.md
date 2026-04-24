@@ -51,19 +51,41 @@ $$
   \;\in\;\mathbb{R}.
 $$
 
-**Compatibility with the spatial realization.** The
-[spatial realization functor](#def:spatial-realization-functor)
-$\tau \colon \mathbf{C} \to \mathrm{Sh}(M)$ realizes the categorical
-substrate as smooth geometry over a manifold $M$.
-$\mathcal{R}_{\mathrm{top}}$ is its measure-theoretic counterpart:
-where $\tau$ realizes objects (algebras, sheaves, connections),
-$\mathcal{R}_{\mathrm{top}}$ realizes their motivic *volumes*.
-The two are compatible — $\mathcal{R}_{\mathrm{top}}$ factors
-through $\tau$ on the part of $\widehat{\mathcal{M}}$ supported by
-the spatial realization — but $\mathcal{R}_{\mathrm{top}}$ extends
-to motives that have no smooth realization (e.g. the exceptional
-divisors of singular blow-ups in
-[motivic mass measure](#def:motivic-mass-measure)).
+**Identification with the QOU fibre functor.** The QOU fibre
+functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$
+([spatial realization functor](#def:spatial-realization-functor))
+realizes the categorical substrate in an archimedean target
+$\mathbf{Arch}$. *On every motive that arises from QOU braid /
+knot data, $\mathcal{R}_{\mathrm{top}}$ is exactly the
+archimedean component of $\tau$:*
+
+$$
+  \mathcal{R}_{\mathrm{top}}
+  \;=\;
+  \tau_{\mathrm{arch}}
+  \;:=\;
+  \pi_\infty \circ \tau
+  \quad\text{on } \widehat{\mathcal{M}}_{\mathrm{QOU}}
+  \;\subseteq\; \widehat{\mathcal{M}}.
+$$
+
+The motivic measure $\mu$ in
+[motivic mass measure](#def:motivic-mass-measure) prepares the
+input — assembling local cyclotomic data into a class in
+$\widehat{\mathcal{M}}$ — and $\mathcal{R}_{\mathrm{top}}$ is the
+computation rule that $\tau$ uses to evaluate that class on the
+archimedean place. There is no second functor: the *only* exit
+from $\mathbf{C}$ to $\mathbb{R}$ is $\tau$, and
+$\mathcal{R}_{\mathrm{top}}$ is just $\tau$'s name when restricted
+to motivic inputs (see
+[$\mathrm{Vol}(K)$ factors through $\tau$](#prop:vol-through-tau)).
+
+Where $\tau$ also realizes objects (algebras, sheaves, connections)
+that are not motives, $\mathcal{R}_{\mathrm{top}}$ extends $\tau$
+to motivic inputs that lack a smooth realization (e.g. the
+exceptional divisors of singular blow-ups in
+[motivic mass measure](#def:motivic-mass-measure)) — but the two
+agree on their common domain.
 
 **Synthesis.** The QOU framework computes macroscopic observables
 from discrete quantum data along a single chain:

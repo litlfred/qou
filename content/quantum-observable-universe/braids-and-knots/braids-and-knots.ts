@@ -327,6 +327,7 @@ export default chapter({
         "habiro-ring",
         "algebraic-quantum-volume-specialization",
         "archimedean-realization-functor",
+        "vol-through-tau",
         "kashaev-volume-density",
         "kashaev-as-archimedean-realization",
         "quantum-bloch-group",

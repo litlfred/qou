@@ -25,8 +25,10 @@ a purely $p$-adic / cyclotomic datum at the $N$-th place of the
 algebraic quantum volume $\mathrm{Vol}_q(\beta_K)$ packages all
 these local data into the global Habiro element.
 
-**Archimedean realization.** Taking the asymptotic limit $N \to \infty$
-is a projection to the archimedean place: it discards the
+**Archimedean realization via $\tau$.** Taking the asymptotic
+limit $N \to \infty$ is the action of the QOU fibre functor $\tau$
+restricted to its archimedean component
+$\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$: it discards the
 cyclotomic / $p$-adic information and selects the $\mathbb{R}$
 component of the adelic ring. The Kashaev–Murakami–Murakami theorem
 states the resulting limit equals the hyperbolic volume of the
@@ -40,24 +42,26 @@ $$
   \;\in\;\mathbb{R}.
 $$
 
-This is precisely $\mathcal{R}_{\mathrm{top}}$ on the algebraic
-quantum volume:
+This is precisely $\tau_{\mathrm{arch}}$ on the algebraic
+quantum volume — equivalently $\mathcal{R}_{\mathrm{top}}$
+applied to the same input
+([Vol(K) factors through $\tau$](#prop:vol-through-tau)):
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
   \;=\;
-  \mathcal{R}_{\mathrm{top}}\!\bigl(
-    \mathrm{Vol}_q(\beta_K)
-  \bigr)
+  \tau_{\mathrm{arch}}\bigl(\mathrm{Vol}_q(\beta_K)\bigr)
   \;=\;
-  (\pi_\infty \circ \chi_{\mathrm{top}})\bigl(
-    \mathrm{Vol}_q(\beta_K)
-  \bigr).
+  (\pi_\infty \circ \tau)\bigl(\mathrm{Vol}_q(\beta_K)\bigr)
+  \;=\;
+  \mathcal{R}_{\mathrm{top}}\bigl(\mathrm{Vol}_q(\beta_K)\bigr).
 $$
 
-The Euler-characteristic step $\chi_{\mathrm{top}}$ is the hyperbolic
-realization (Hodge realization at the cusp); $\pi_\infty$ is the
-$N \to \infty$ asymptotic projection.
+The fibre-functor step $\tau$ is the hyperbolic realization
+(Hodge realization at the cusp); $\pi_\infty$ is the
+$N \to \infty$ asymptotic projection. $\tau$ is the *only*
+archimedean route: there is no Kashaev limit independent of the
+fibre functor.
 
 **Physical interpretation.** Compare with
 [$q$-Kashaev volume density](#rem:kashaev-volume-density): the
