@@ -52,14 +52,18 @@ def sigmas_to_numeric(sigmas, dim):
             S_arr = S.toarray()
         else:
             S_arr = np.asarray(S)
-        M = np.empty((dim, dim), dtype=complex)
-        for i in range(dim):
-            for j in range(dim):
-                e = S_arr[i, j]
-                if hasattr(e, "subs"):
-                    M[i, j] = complex(sp.N(e.subs(q_sym, float(Q0))))
-                else:
-                    M[i, j] = complex(e)
+        try:
+            numeric_fn = sp.lambdify(q_sym, sp.Matrix(S_arr), modules="numpy")
+            M = np.asarray(numeric_fn(complex(Q0)), dtype=complex)
+        except Exception:
+            M = np.empty((dim, dim), dtype=complex)
+            for i in range(dim):
+                for j in range(dim):
+                    e = S_arr[i, j]
+                    if hasattr(e, "subs"):
+                        M[i, j] = complex(sp.N(e.subs(q_sym, float(Q0))))
+                    else:
+                        M[i, j] = complex(e)
         out.append(M)
     return out
 

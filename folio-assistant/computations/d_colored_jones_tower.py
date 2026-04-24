@@ -153,8 +153,16 @@ def j_N_of_word(basis_word: tuple, n_strands: int, N: int,
     if N == 1:
         return tr
     # Quantum dim [N]_q
+    # Edge cases via L'Hôpital:
+    #   q = 1  → [N]_q = N
+    #   q = -1 → [N]_q = N · (-1)^(N-1) = +N odd / -N even
     qN = complex(q)
-    qdim = (qN ** N - qN ** (-N)) / (qN - 1 / qN)
+    if abs(qN - 1.0) < 1e-15:
+        qdim = complex(N)
+    elif abs(qN + 1.0) < 1e-15:
+        qdim = complex(N * ((-1) ** (N - 1)))
+    else:
+        qdim = (qN ** N - qN ** (-N)) / (qN - 1 / qN)
     if abs(qdim) < 1e-15:
         return complex('nan')
     return tr / qdim
