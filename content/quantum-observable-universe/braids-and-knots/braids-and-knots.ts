@@ -395,13 +395,25 @@ export default chapter({
       ],
     }),
 
-    // ── Varying Euler + mirror bundle (merged — 2+2 blocks) ──────────
+    // ── Varying Euler + mirror bundle (merged — 2+2 blocks + genus-2) ─
     section({
       title: "Varying Euler Characteristic and the Mirror Bundle",
       label: "sec:varying-euler-mirror",
       blocks: [
         "varying-euler-intro",
         "genus-2-intro",
+        // ── Commutative-limit / genus-2 Track A ─────────────────────
+        "commutative-qou",
+        "hyperelliptic-quintic",
+        "hyperelliptic-z5-classification",
+        "x5-z5-automorphism",
+        "bring-z5-descent",
+        "x5-bring-weight-identification",
+        "x5-bring-prym-jacobian",
+        "weight-identification-consequences",
+        "u1-equivariant-reduction",
+        "u1-phase-tube",
+        // ── Mirror bundle ───────────────────────────────────────────
         "descent-mirror-intro",
         "e-minus-one",
       ],

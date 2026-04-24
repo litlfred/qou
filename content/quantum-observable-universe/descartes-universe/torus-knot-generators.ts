@@ -17,6 +17,7 @@ export default proposition({
   uses: [
     "def:knot-particle-generation",
     "prop:euler-char-stability",
+    "prop:s5-equivariant-torus-knots",
   ],
   proofs: ["prf:torus-knot-generators"],
 });
