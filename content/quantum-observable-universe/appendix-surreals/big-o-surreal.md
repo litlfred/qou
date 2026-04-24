@@ -1,25 +1,25 @@
 This remark proposes an explicit notational convention unifying
 Big-O / little-o / $\Theta$ / $\sim$ under the surreal $\omega$-adic
-valuation $\ordw$
+valuation $\Ow$
 ([Conway normal form](#rem:conway-normal-form)).
 
 ## Proposed convention for QOU
 
-The ω-adic order $\ordw : \mathbf{No}^\times \to \mathbf{No}$ is the
+The ω-adic order $\Ow : \mathbf{No}^\times \to \mathbf{No}$ is the
 leading exponent in the Conway normal form. Introduce four binary
 relations on $\mathbf{No}^\times$ corresponding to asymptotic
 classes:
 
 | Relation | Meaning | Classical equivalent |
 |---|---|---|
-| $f \preceq g$ | $\ordw(f) \leq \ordw(g)$ | $f = O(g)$ |
-| $f \prec g$ | $\ordw(f) < \ordw(g)$ | $f = o(g)$ |
-| $f \asymp g$ | $\ordw(f) = \ordw(g)$ | $f = \Theta(g)$ |
-| $f \simeq g$ | $\ordw(f) = \ordw(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \sim g$ |
-| $f \equiv g \pmod{\preceq h}$ | $\ordw(f - g) \leq \ordw(h)$ | $f = g + O(h)$ |
+| $f \preceq g$ | $\Ow(f) \leq \Ow(g)$ | $f = O(g)$ |
+| $f \prec g$ | $\Ow(f) < \Ow(g)$ | $f = o(g)$ |
+| $f \asymp g$ | $\Ow(f) = \Ow(g)$ | $f = \Theta(g)$ |
+| $f \simeq g$ | $\Ow(f) = \Ow(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \sim g$ |
+| $f \equiv g \pmod{\preceq h}$ | $\Ow(f - g) \leq \Ow(h)$ | $f = g + O(h)$ |
 
 These symbols are all standard LaTeX: $\preceq$, $\prec$,
-$\asymp$, $\simeq$. No new macros needed beyond $\ordw$ (added to
+$\asymp$, $\simeq$. No new macros needed beyond $\Ow$ (added to
 the paper manifest).
 
 ## Why adopt this
@@ -32,11 +32,11 @@ What is new, and specific to a QOU revision, is that:
 1. **The paper already uses $\omega$ as the first infinite
    surreal** (implicitly in limits, explicitly in
    [blow-up calculus](#def:surreal-blowup-calculus)), so
-   $\ordw$ is already the natural invariant.
+   $\Ow$ is already the natural invariant.
 
 2. **The paper's existing $\mathrm{ord}_{\mathbb{F}_p^\times}$
    notation** (in $q$-logarithm and $q$-dilogarithm blocks)
-   sets a precedent for subscripted-order functions. $\ordw$
+   sets a precedent for subscripted-order functions. $\Ow$
    slots in cleanly.
 
 3. **Big-O appears informally throughout** the main paper when
@@ -51,15 +51,21 @@ Registered in the paper manifest
 
 ```ts
 macros: {
-  // ω-adic order (leading exponent in Conway normal form).
-  ordw: { tex: "\\mathrm{ord}_{\\omega}", unicode: "ord_ω" },
+  // ω-adic Big-O / leading-exponent class (Conway normal form).
+  Ow: { tex: "O_{\\omega}", unicode: "O_ω" },
   // (existing macros remain unchanged)
 }
 ```
 
-Usage in `.md`: `$\ordw(f) \leq \ordw(g)$`.
+Usage in `.md`: `$\Ow(f) \leq \Ow(g)$`.
 
-Effect on rendered LaTeX: `$\mathrm{ord}_\omega(f) \leq \mathrm{ord}_\omega(g)$`.
+Effect on rendered LaTeX: `$O_\omega(f) \leq O_\omega(g)$`.
+
+The symbol is Big-O flavored because, as the table above makes
+explicit, $\Ow$ is the valuation that encodes the classical Big-O
+relation: $f = O(g) \Leftrightarrow \Ow(f) \leq \Ow(g)$. Little-o
+is the same valuation under strict inequality. The prose name —
+"ω-adic order" — is retained; only the typeset symbol changes.
 
 ## Migration guide (for future paper revisions)
 
@@ -87,7 +93,7 @@ comes from the **birthday** of that exponent. Define:
 
 $$
   f \asymp_\alpha g \quad :\Leftrightarrow \quad
-  \ordw(f) = \ordw(g) \text{ and } b(\ordw(f)) \leq \alpha.
+  \Ow(f) = \Ow(g) \text{ and } b(\Ow(f)) \leq \alpha.
 $$
 
 For finite-birthday ($\alpha \leq \omega$) this is the archimedean
@@ -109,7 +115,7 @@ distinct surreal birthdays.
 ## Summary
 
 $\preceq, \prec, \asymp, \simeq$ are the natural surreal
-asymptotic relations; $\ordw$ is their underlying invariant; both
+asymptotic relations; $\Ow$ is their underlying invariant; both
 are algebraic cleanings of Big-O / little-o / $\Theta$ / $\sim$.
 A one-line macro addition to the paper manifest suffices to make
-$\ordw$ available paper-wide.
+$\Ow$ available paper-wide.

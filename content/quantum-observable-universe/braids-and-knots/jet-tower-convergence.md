@@ -117,9 +117,9 @@ the main outstanding piece of open subconjecture 1 on
 
 *Formal asymptotic content. The geometric tail is the native
 Jackson $d_q$-difference of the brane tower; the truncation
-error has $\ordw \;=\; 2(N+1)\,\ordw(\hbar_q)$, and the recursive
+error has $\Ow \;=\; 2(N+1)\,\Ow(\hbar_q)$, and the recursive
 jet prolongation is the
 [surreal blow-up calculus](#def:surreal-blowup-calculus).
-See [Big-O via $\ordw$](#rem:big-o-surreal),
+See [Big-O via $\Ow$](#rem:big-o-surreal),
 [calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon),
 and the [body asymptotics catalog](#rem:body-asymptotics-catalog).*

@@ -141,6 +141,6 @@ $\square$
 
 *Formal asymptotic content. The truncation
 $\mathrm{MAE}(k) \leq C_0 \cdot [2]_q^{-2(k-3)}$ has
-$\ordw\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\ordw([2]_q)$;
-see [Big-O via $\ordw$](#rem:big-o-surreal) and the
+$\Ow\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\Ow([2]_q)$;
+see [Big-O via $\Ow$](#rem:big-o-surreal) and the
 [body asymptotics catalog](#rem:body-asymptotics-catalog).*

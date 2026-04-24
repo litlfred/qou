@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:body-asymptotics-catalog",
   title:
-    "Catalog: body-paper analytic bounds in surreal $\\ordw$-form",
+    "Catalog: body-paper analytic bounds in surreal $\\Ow$-form",
   interprets: "rem:big-o-surreal",
   uses: [
     "rem:big-o-surreal",
@@ -19,6 +19,8 @@ export default remark({
     "prop:ns-obstruction-computation",
     "rem:kashaev-volume-density",
     "prop:feynman-classical-limit",
+    "prf:mobius-energy",
+    "rem:mass-endomorphism-jet-tower",
   ],
   tags: [
     "surreal-numbers",
