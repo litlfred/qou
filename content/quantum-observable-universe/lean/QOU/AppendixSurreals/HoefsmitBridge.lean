@@ -164,23 +164,48 @@ theorem hoefsmit_bridge_two :
 /-- **Bridge proposition as a conjecture class** (per CLAUDE.md §3b).
 
     Encodes the general-`n` injectivity of the Hoefsmit-to-dyadic
-    bijection as a typeclass, with the intended witness pending a
-    refactor of `TwoRowTableau` to include entry data (see the
-    `hoefsmitDyadic` docstring above).
+    bijection as a typeclass.  The conjecture's full statement
+    references a hypothetical entry-aware refactor
+    `ExtendedTableau n`: a type equipped with (a) a map to
+    `TwoRowTableau n` (forgetting entries) and (b) an extended
+    Hoefsmit function agreeing with `hoefsmitDyadic` for `n ≤ 2`.
+    The conjecture asserts the existence of such a refactor with
+    globally injective extended-Hoefsmit.
 
-    We deliberately do **not** state this as an `axiom` on the
-    current partial `hoefsmitDyadic` — since the partial definition
-    uses `sorry` for `n ≥ 3`, the equality `sorry = sorry` on
-    distinct tableaux would falsify injectivity.
-
-    The proved cases are `hoefsmit_bridge_zero`,
-    `hoefsmit_bridge_one`, `hoefsmit_bridge_two`. -/
+    The proved cases for the **current** partial definition are
+    `hoefsmit_bridge_zero`, `hoefsmit_bridge_one`,
+    `hoefsmit_bridge_two`.  The current partial `hoefsmitDyadic`
+    cannot satisfy general-`n` injectivity (size-3 tableaux of
+    shape (2,1) both map to `sorry`). -/
 -- Ref: [conway1976] §0, [gonshor1986] §2, [hoefsmit1974]
 class HoefsmitIsSurrealConstruction where
-  /-- For a future entry-aware version of `TwoRowTableau`, the
-      Hoefsmit map is injective for every `n`.  The precise
-      statement requires the refactored tableau type. -/
-  injective_general : True  -- placeholder pending refactor
+  /-- There exists an entry-aware refactored tableau type for
+      which the Hoefsmit-to-dyadic map is globally injective, and
+      which agrees with the current `hoefsmitDyadic` on the
+      proved `n ≤ 2` cases.
+
+      Proving this requires the tableau-entry refactor plus the
+      inductive Gonshor-simplicity argument (see appendix §
+      `prop:hoefsmit-is-surreal-construction`).  Until that
+      infrastructure lands, an instance of this class is created
+      by `sorry` (understood per CLAUDE.md §3b as the conjecture). -/
+  exists_injective_extension :
+    ∃ (ExtendedTableau : ℕ → Type)
+      (forgetEntries : ∀ n, ExtendedTableau n → TwoRowTableau n)
+      (extendedHoefsmit : ∀ n, ExtendedTableau n → ℚ),
+      -- Global injectivity of the extended map:
+      (∀ n, Function.Injective (extendedHoefsmit n))
+      -- Compatibility for n ≤ 2: agrees with the base partial def.
+      ∧ (∀ (t : ExtendedTableau 0),
+          extendedHoefsmit 0 t = hoefsmitDyadic (forgetEntries 0 t))
+      ∧ (∀ (t : ExtendedTableau 1),
+          extendedHoefsmit 1 t = hoefsmitDyadic (forgetEntries 1 t))
+      ∧ (∀ (t : ExtendedTableau 2),
+          extendedHoefsmit 2 t = hoefsmitDyadic (forgetEntries 2 t))
+      -- Surjectivity at n = 2 onto the base codomain
+      -- (prevents trivial `Unit` inhabitation of ExtendedTableau):
+      ∧ (∀ (t : TwoRowTableau 2),
+          ∃ (t' : ExtendedTableau 2), forgetEntries 2 t' = t)
   -- Ref: [gonshor1986] §2 — sign-sequence length = birthday.
 
 end QOU.AppendixSurreals
