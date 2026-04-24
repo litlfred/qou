@@ -1,3 +1,29 @@
+**Preliminaries.**
+
+- **$\widehat{A}$**: the **isomorphism-class index set of simple
+  $A$-modules** — equivalently, the indexing set of Wedderburn
+  blocks of a finite-dim semisimple algebra $A$.  Standard
+  representation-theory notation (analogous to $\widehat{G}$ for
+  the unitary dual of a group).  For $A = H_n(q)$,
+  $\widehat{A} = \{\lambda \vdash n\}$ (partitions of $n$).
+
+- **Vortex**: a morphism $\varrho \colon \mathbf{1} \to A$ in the
+  rigid monoidal category of the quantum observable universe —
+  i.e., a closed element of $A$ arising as the closure of a braid
+  $\beta \in B_n$
+  ([Hecke mass element](#def:hecke-mass-element)).  Each vortex has
+  a Hecke-algebra representative $T_w \in H_n(q)$ whose Markov
+  trace is the categorical mass
+  ([categorical mass, Markov](#prop:categorical-mass-markov)).
+  In physics: particles (quarks, nucleons, nuclei) are vortices.
+
+- **$C_{\dim_q}$**: the "C" stands for **Casimir** (Lie-algebra /
+  TQFT terminology); "co-" because it is the Frobenius-pairing
+  dual of the unit $1 = \sum_\lambda p_\lambda$, **not** the
+  standard quadratic Casimir $\Omega = \sum_i e_i \otimes e^i$.
+  See §"Why $C_{\dim_q}$ and not something else?" below.
+
+**Setup.**
 Let $(A, \tau)$ be a finite-dimensional semisimple self-dual
 Frobenius algebra over $\mathbb{C}$ with non-degenerate symmetric
 bilinear form $\tau \colon A \to \mathbb{C}$ and Wedderburn
@@ -8,13 +34,13 @@ $$
           \mathrm{Mat}_{d_\lambda}(\mathbb{C}),
 $$
 
-where $\widehat{A}$ indexes simple blocks and $d_\lambda$ is the
-classical dimension of block $B_\lambda$.  Let $p_\lambda \in A$
-be the central idempotent of block $\lambda$, and let
-$\dim_q(\lambda) \in \mathbb{C}^\times$ denote any non-vanishing
-"quantum dimension" function on blocks (e.g., for $A = H_n(q)$
-with Markov trace, $\dim_q$ is the $q$-hook-length dimension
-giving $\tau(p_\lambda) = \dim_q(\lambda)\, d_\lambda / [n]_q!$).
+where $d_\lambda$ is the classical dimension of block $B_\lambda$.
+Let $p_\lambda \in A$ be the central idempotent of block $\lambda$,
+and let $\dim_q(\lambda) \in \mathbb{C}^\times$ denote any
+non-vanishing "quantum dimension" function on blocks (e.g., for
+$A = H_n(q)$ with Markov trace, $\dim_q$ is the $q$-hook-length
+dimension giving $\tau(p_\lambda) = \dim_q(\lambda) \, d_\lambda
+/ [n]_q!$).
 
 **Theorem (Frobenius quantum-co-dimension trace).**
 *The **quantum-co-dimension element**
@@ -53,6 +79,41 @@ $$
 $$
 
 *$\square$*
+
+**Why $C_{\dim_q}$ and not some other element? (categorical + unique)**
+
+*Two answers.  **Uniqueness**: the map
+$Z(A) \ni z \mapsto \tau(z) \in \mathbb{C}$ is a linear functional
+on the centre.  By non-degeneracy of $\tau$ on $Z(A)$ (which
+holds iff the Frobenius form restricts non-degenerately to the
+centre — true for any semisimple Frobenius algebra), the element
+$z \in Z(A)$ with $\tau(z) = \sum_\lambda 1/\dim_q(\lambda)$ is
+**unique**.  Writing $z = \sum_\lambda c_\lambda p_\lambda$ and
+matching $\tau(z) = \sum c_\lambda \cdot \tau(p_\lambda)$ to
+$\sum 1/\dim_q$ forces $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$
+— this **is** the definition of $C_{\dim_q}$.  The element is
+therefore **forced by the structure**, not ad-hoc.*
+
+*$C_{\dim_q}$ is categorical in three distinct senses:*
+
+1. *The Frobenius pairing $\tau \colon A \otimes A \to \mathbb{C}$
+   is a morphism in the monoidal category of $A$-bimodules;
+   $C_{\dim_q}$ is built from it by universal constructions
+   (central idempotents + duality).*
+2. *The $q$-dimension $\dim_q(\lambda)$ is the categorical
+   **quantum trace** of the identity on the simple module
+   $V_\lambda$ — intrinsic to a ribbon-category / rigid-monoidal
+   structure, not a choice.*
+3. *In the equivalence between Frobenius algebras and 2D TQFTs
+   (Atiyah–Segal / Abrams 1996 / Kock 2004 §2), every element of
+   $A$ corresponds to a decorated 2-cobordism.  The standard
+   Casimir $\Omega = \sum e_i \cdot e^i$ corresponds to the
+   **torus with puncture**; $C_{\dim_q}$ corresponds to the torus
+   with a **$\dim_q$-labelled puncture**, i.e., the torus twisted
+   by the ribbon-category structure.*
+
+*So the element is required (unique) and its construction is
+purely categorical — no arbitrary choices.*
 
 **TQFT / handle-element interpretation.**
 *For a 2-dimensional TQFT with state-space $A$, the
