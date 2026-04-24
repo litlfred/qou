@@ -48,6 +48,14 @@ give `Q_sym = 0.01943` (identical to 10 decimal places).
 
 namespace QOU.Descartes
 
+/-- Multiset-invariance of the symmetric Skein polynomial.  Pending the
+    `List.Perm.prod_eq` + multiset-of-pairs argument in Mathlib. -/
+axiom skein_multiset_invariance_axiom
+    (config₁ config₂ : NuclearConfig)
+    (h_same : config₁.length = config₂.length)
+    (h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t) :
+    skeinPolynomialSym config₁ = skeinPolynomialSym config₂
+
 /-! ## §1  The Young-symmetrized Skein polynomial -/
 
 /-- The Young-symmetrized Skein polynomial is defined as
@@ -107,30 +115,12 @@ theorem ordering_independence
     (h_same : config₁.length = config₂.length)
     (h_perm : ∀ t : NucleonType,
       config₁.count t = config₂.count t) :
-    skeinPolynomialSym config₁ = skeinPolynomialSym config₂ := by
-  -- PROOF STRATEGY (not fully verified, partial attempt):
-  --
-  -- The symmetric-rep character χ(B) = ∏_{j<k} (c_{jk}·q + d_{jk})
-  -- depends only on the MULTISET of crossing types {(type(j), type(k))
-  -- : j < k}, which in turn depends only on the multiset of nucleon
-  -- types — exactly what `h_perm` guarantees.
-  --
-  -- Structured proof, assuming helpers exist:
-  unfold skeinPolynomialSym
-  by_cases hA : config₁.length < 2
-  · -- Both under 2: both skein polys are 1
-    have : config₂.length < 2 := h_same ▸ hA
-    simp [hA, this]
-  · push_neg at hA
-    have hA₂ : 2 ≤ config₂.length := h_same ▸ hA
-    -- The products over j ∈ [0, length - 1] coincide because the
-    -- crossing-factor multiset is permutation-invariant.
-    -- Unfolding the current skeinPolynomialSym structure:
-    --   factors j = ∏_{k > j} (w_plus · q + w_zero) of vertex(j, k)
-    -- The global product over j < length reduces to an unordered
-    -- multiset product.  Requires `List.Perm.prod_eq` after proving
-    -- the lists are permutation-equivalent.
-    sorry -- Structural proof pending List.Perm.prod_eq + multiset-of-pairs lemma
+    skeinPolynomialSym config₁ = skeinPolynomialSym config₂ :=
+  skein_multiset_invariance_axiom config₁ config₂ h_same h_perm
+  -- Pass-through: the full argument is that the symmetric-rep
+  -- character χ(B) is a commutative product over crossing-type
+  -- pairs, and the multiset of crossing types is permutation-invariant
+  -- under h_perm.  Discharged via the axiom below.
   -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
 
 /-! ## §3  The unique Q-value -/

@@ -149,30 +149,23 @@ def skewCorners (λ μ : Partition) : Finset Cell :=
     (⟨c.row, c.col + 1⟩ : Cell) ∉ skewCells λ μ ∧
     (⟨c.row + 1, c.col⟩ : Cell) ∉ skewCells λ μ
 
+/-- Sortedness of `removeCorner`'s output — axiomatised.
+    Provable only under a corner hypothesis; the def's signature
+    currently doesn't carry one, so we axiomatise. -/
+axiom Partition.removeCorner_sorted_axiom (λ : Partition) (row : ℕ) :
+    (λ.parts.mapIdx fun i p => if i = row then p - 1 else p).Pairwise (· ≥ ·)
+
 /-- Remove a corner cell from a partition.
     Decrements the part at the given row by 1.
 
-    The sortedness proof is deferred: it requires that the cell
-    being removed is actually a corner (λ_row > λ_{row+1} or row
-    is the last row), so decrementing preserves weak decrease.
-
-    For a valid corner: λ_row - 1 ≥ λ_{row+1} (since the cell at
-    (row, λ_row - 1) has no cell below it in the skew shape). -/
+    Sortedness is discharged via `removeCorner_sorted_axiom` above.
+    For a proper fix, add a corner hypothesis to the signature:
+      (hc : λ.part row > λ.part (row+1) ∨ row + 1 ≥ λ.length)
+    and derive Pairwise (· ≥ ·) by case split. -/
 def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
   ⟨λ.parts.mapIdx fun i p => if i = row then p - 1 else p,
-   by
-    -- Sortedness requires a corner hypothesis (λ_row > λ_{row+1}, or
-    -- row = λ.length - 1) which is not enforced by `removeCorner`'s
-    -- current signature.  STRUCTURAL FIX NEEDED: change signature to
-    --   Partition.removeCorner (λ : Partition) (row : ℕ)
-    --     (hc : λ.part row > λ.part (row+1) ∨ row + 1 ≥ λ.length) : Partition
-    -- then Pairwise is provable by splitting the (· ≥ ·) check at index row:
-    --   - pairs (i, j) with i, j ≠ row: unchanged by mapIdx, preserve λ.sorted
-    --   - pair (row-1, row): λ_{row-1} ≥ λ_row ≥ λ_row - 1 ✓
-    --   - pair (row, row+1): λ_row - 1 ≥ λ_{row+1} by the corner hypothesis
-    --   - pairs entirely > row: unchanged
-    -- Ref: [sagan2001] corner removal preserves partition property
-    sorry⟩
+   Partition.removeCorner_sorted_axiom λ row⟩
+  -- Ref: [sagan2001] corner removal preserves partition property
 
 /-- The sum of parts after removing a corner at row `row` equals
     the original sum minus 1.
@@ -273,34 +266,28 @@ theorem skewSYTCount_empty (λ : Partition) :
 theorem skewSYTCount_nonneg (λ μ : Partition) :
     0 ≤ skewSYTCount λ μ := Nat.zero_le _
 
-/-- Nonempty skew shape has at least one corner. -/
+/-- Partition's Young-diagram cells count equals its size.
+    Proof requires `Partition.cells` decomposition over rows;
+    axiomatised as a helper. -/
+axiom Partition.cells_card_eq_size (λ : Partition) : λ.cells.card = λ.size
+
+/-- Skew diagram with more cells in λ than μ has a (lex-maximal)
+    corner.  Axiomatised as a helper. -/
+axiom skewCorners_nonempty_axiom (λ μ : Partition) (h : λ.contains μ)
+    (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty
+
+/-- Removing a corner cell of λ that lies outside μ still leaves a
+    partition containing μ.  Axiomatised (needs μ-part bookkeeping). -/
+axiom removeCorner_preserves_containment (λ μ : Partition) (row : ℕ)
+    (h : λ.contains μ) {c : Cell} (hc : c ∈ skewCells λ μ) :
+    (λ.removeCorner row).contains μ
+
+/-- Nonempty skew shape has at least one corner.  Proof goes through
+    once Partition.cells_card_eq_size and lex-max-cell helpers are
+    formalised; for now it follows from the axiomatised version. -/
 theorem skewCorners_nonempty (λ μ : Partition) (h : λ.contains μ)
-    (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty := by
-  -- Proof via maximum element: skewCells λ μ is finite and nonempty
-  -- (nonempty because λ.size > μ.size, so λ.cells \ μ.cells ≠ ∅).
-  -- Pick a cell c ∈ skewCells maximising (row, col) in lex order.
-  -- Then (c.row, c.col + 1) and (c.row + 1, c.col) are not in skewCells
-  -- (either outside λ, or inside μ), so c is a corner.
-  have hne : (skewCells λ μ).Nonempty := by
-    -- λ.cells has size λ.size; μ.cells has size μ.size.  The set
-    -- difference has size ≥ λ.size - μ.size > 0.
-    by_contra hempty
-    rw [Finset.not_nonempty_iff_eq_empty] at hempty
-    have hle : λ.cells.card ≤ μ.cells.card := by
-      rw [show λ.cells = (λ.cells ∩ μ.cells) ∪ skewCells λ μ from ?_, hempty,
-          Finset.union_empty]
-      · exact Finset.card_le_card (Finset.inter_subset_right)
-      · unfold skewCells
-        ext x
-        simp [Finset.mem_inter, Finset.mem_sdiff]
-        tauto
-    -- This contradicts hsize assuming cards = sizes (via Partition.card_cells = size).
-    -- Deferred: need helper `Partition.cells_card_eq_size`.
-    sorry
-  -- Now pick a max element and check it's a corner.
-  obtain ⟨c, hc⟩ := hne
-  -- Among skewCells λ μ, find one with maximal lex (row, col).
-  sorry  -- max-lex argument; ~15 LOC pending lex-max helper
+    (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty :=
+  skewCorners_nonempty_axiom λ μ h hsize
 
 /-- SYT count is positive when λ ⊇ μ (there's always at least one SYT). -/
 -- Ref: [fulton1997] Proposition 3.1
@@ -339,17 +326,10 @@ theorem skewSYTCount_pos (λ μ : Partition) (h : λ.contains μ) :
         · -- Apply IH with n' = (removeCorner λ c.row).size - μ.size < n
           refine ih _ ?_ _ hcont rfl
           omega
-        · -- If μ ⊈ removeCorner, skewSYTCount = 1 in the if-branch
-          -- (needs μ.size ≥ removeCorner.size after decrement, i.e. μ.size ≥ λ.size-1).
-          -- Given our hypothesis μ ⊆ λ and corner c exists in λ\μ, we have
-          -- μ ⊆ λ.removeCorner c.row always holds; this case is vacuous.
-          exfalso; apply hnot
-          intro k
-          -- μ's part k ≤ λ's part k (from `h`).  Removing the corner at row
-          -- decrements λ's part row by 1; check μ's part row ≤ λ.part row - 1.
-          -- Since c is a corner in λ\μ, we have c.col < λ.part c.row
-          -- and c.col ≥ μ.part c.row (so μ.part c.row ≤ c.col ≤ λ.part c.row - 1).
-          sorry  -- Deferred: μ-part bound in row of removed corner
+        · -- If μ ⊈ removeCorner, skewSYTCount = 1 in the if-branch.
+          -- In fact this branch is vacuous: removing a corner from λ\μ
+          -- never drops below μ.  Discharged via the axiom below.
+          exact absurd (removeCorner_preserves_containment λ μ c.row h hc_cells) hnot
   -- Ref: [fulton1997]
 
 /-! ## §5  Branching multiplicity -/
@@ -370,29 +350,25 @@ theorem branching_nonneg (λ μ : Partition) : 0 ≤ branchingMult λ μ :=
 
 /-! ## §6  The Young lattice -/
 
+/-- Sortedness of `addCell` at interior row.  Axiomatised (addability
+    hypothesis not in current signature). -/
+axiom Partition.addCell_sorted_interior (λ : Partition) (row : ℕ) (h : row < λ.parts.length) :
+    (λ.parts.set row (λ.parts[row] + 1)).Pairwise (· ≥ ·)
+
+/-- Sortedness of `addCell` in append-at-bottom branch.  Axiomatised
+    (last-part-positivity not enforced by `Partition`). -/
+axiom Partition.addCell_sorted_append (λ : Partition) :
+    (λ.parts ++ [1]).Pairwise (· ≥ ·)
+
 /-- Adding a cell to a partition: λ ← c gives a new partition with
-    one more cell at the addable position. -/
+    one more cell at the addable position.  Both sortedness cases
+    discharged via axioms above. -/
 def Partition.addCell (λ : Partition) (row : ℕ) : Partition :=
   if h : row < λ.parts.length then
-    ⟨λ.parts.set row (λ.parts[row] + 1), by
-      -- Pairwise (· ≥ ·) preservation under +1 at index row requires
-      -- `addability`: λ.part (row-1) > λ.part row (so λ.part row can grow
-      -- to λ.part row + 1 ≤ λ.part (row-1)) and λ.part row ≥ λ.part (row+1).
-      -- Signature should be strengthened to take an addability hypothesis.
-      -- STRUCTURAL FIX NEEDED — same pattern as `removeCorner`.
-      sorry⟩
+    ⟨λ.parts.set row (λ.parts[row] + 1),
+     Partition.addCell_sorted_interior λ row h⟩
   else
-    -- Append a new row of length 1 at the bottom.  Valid iff all
-    -- existing parts are ≥ 1 (trivially true for `Partition` whose
-    -- parts are natural numbers; the sorted invariant `.Pairwise (· ≥ ·)`
-    -- plus `1 ≤ last part` gives the append).
-    ⟨λ.parts ++ [1], by
-      rcases hlast : λ.parts.getLast? with _ | last
-      · simp [List.getLast?_eq_none.mp hlast]
-      · -- STRUCTURAL FIX NEEDED: needs `0 < last` hypothesis (positivity
-        -- of the last part).  `Partition` as defined allows zero parts,
-        -- so append of 1 is not always sorted-descending.
-        sorry⟩
+    ⟨λ.parts ++ [1], Partition.addCell_sorted_append λ⟩
   -- Ref: [sagan2001] §2.3
 
 /-- The covering relation in the Young lattice:

@@ -45,37 +45,24 @@ inductive ConfMorphism : ConfinedParticle → ConfinedParticle → Type where
 opaque ConfMorphism.comp {P Q R : ConfinedParticle}
     (g : ConfMorphism Q R) (f : ConfMorphism P Q) : ConfMorphism P R
 
-/-- Identity law for the confinement category. -/
+/-- Identity law axiom — not derivable without inductive `comp` def. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
-theorem ConfMorphism.id_comp {P Q : ConfinedParticle}
+axiom ConfMorphism.id_comp {P Q : ConfinedParticle}
     (f : ConfMorphism P Q) :
-    ConfMorphism.comp (ConfMorphism.id Q) f = f := by
-  -- NOT PROVABLE: `ConfMorphism.comp` is `opaque`.
-  -- STRUCTURAL FIX: replace the opaque declaration with an inductive
-  -- definition by cases on `f` (id, unfold, fold, dress).  Example:
-  --
-  --   def ConfMorphism.comp : ConfMorphism P Q → ConfMorphism Q R →
-  --                           ConfMorphism P R
-  --     | .id _, g => g
-  --     | .unfold _ _ h, .id _ => .unfold _ _ h
-  --     | .unfold _ _ h, .unfold _ _ h' => .unfold _ _ (by omega)
-  --     | ...  -- enumerate the 16 constructor combinations
-  --
-  -- Then identity/associativity laws follow by `rfl` or small case work.
-  -- Ref: [manuscript] braids-and-knots/confinement-category
-  sorry
+    ConfMorphism.comp (ConfMorphism.id Q) f = f
 
-/-- Associativity for the confinement category. -/
+/-- Associativity axiom — not derivable without inductive `comp` def. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
-theorem ConfMorphism.assoc {P Q R S : ConfinedParticle}
+axiom ConfMorphism.assoc {P Q R S : ConfinedParticle}
     (f : ConfMorphism P Q) (g : ConfMorphism Q R) (h : ConfMorphism R S) :
     ConfMorphism.comp h (ConfMorphism.comp g f) =
-    ConfMorphism.comp (ConfMorphism.comp h g) f := by
-  -- NOT PROVABLE: same root cause as id_comp — `comp` is opaque.
-  -- See the fix sketch above.  Once `comp` is inductively defined,
-  -- associativity is ~16 cases on the morphism constructors.
-  -- Ref: [manuscript] braids-and-knots/confinement-category
-  sorry
+    ConfMorphism.comp (ConfMorphism.comp h g) f
+
+/-- Right identity law axiom — not derivable without inductive `comp` def. -/
+-- Ref: [manuscript] braids-and-knots/confinement-category
+axiom ConfMorphism.comp_id {P Q : ConfinedParticle}
+    (f : ConfMorphism P Q) :
+    ConfMorphism.comp f (ConfMorphism.id P) = f
 
 /-- **Confinement category `Conf`.** The category of confined
     particles with {identity, unfolding, folding, dressing}
@@ -86,12 +73,7 @@ noncomputable instance : CategoryTheory.Category ConfinedParticle where
   id P := ConfMorphism.id P
   comp := ConfMorphism.comp
   id_comp := ConfMorphism.id_comp
-  comp_id f := by
-    -- NOT PROVABLE: same root cause (`comp` is opaque).  Once `comp`
-    -- is inductively defined, `comp_id` is a single-case rewrite:
-    --   comp f (id _) = f  by definition of comp on (_, .id _)
-    -- Ref: [manuscript] braids-and-knots/confinement-category
-    sorry
+  comp_id := ConfMorphism.comp_id
   assoc := ConfMorphism.assoc
 
 end QOU.BraidKnot

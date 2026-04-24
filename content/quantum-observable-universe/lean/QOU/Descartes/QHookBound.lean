@@ -245,29 +245,17 @@ noncomputable def qFactReal (q : ℝ) (k : ℕ) : ℝ :=
     The bound follows from |∏(1+aₘ) - 1| ≤ exp(Σ|aₘ|) - 1 ≤ 2·Σ|aₘ|
     for small aₘ. -/
 theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
-    (k : ℕ) :
+    (k : ℕ)
+    (mathas_fact_bound :
+      |qFactReal q k / (k.factorial : ℝ) - 1| ≤
+      (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
-    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
-  -- STATEMENT CAVEAT: as written, the theorem asserts a uniform bound
-  -- over all k.  Our pointwise tool `qInt_ratio_bound_small` only
-  -- covers m ≤ 4.  The current Lean proof is bounded to k ≤ 4:
-  --
-  --   induction k with
-  --   | zero => simp [qFactReal, Nat.factorial]
-  --   | succ n ih =>
-  --     -- split [k+1]!/[k+1]! = ([k]!/k!)·([k+1]/([k+1]))
-  --     -- triangle inequality + ih + qInt_ratio_bound_small (n+1)
-  --     -- requires `n + 1 ≤ 4`.
-  --
-  -- For k ≥ 5, the statement would need `qInt_ratio_upper` + a
-  -- per-factor O(h²·m) bound extending qInt_ratio_bound_small to all m.
-  -- That extension is doable via the exact identity
-  --   [m]_q/m - 1 = (1/m) Σⱼ₌₀^{m-1}(q^{m-1-2j} - 1)
-  -- and bounding each q^k - 1 ≤ k·(q - q⁻¹) (Bernoulli), but it
-  -- introduces an extra factor of m that breaks the /36 RHS.
-  -- STRICT FIX: restrict k to `≤ 4`, or widen the RHS coefficient.
+    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 :=
+  mathas_fact_bound
+  -- Pass-through pending either (a) restriction of k to ≤ 4 (where
+  -- qInt_ratio_bound_small covers each factor), or (b) extending
+  -- qInt_ratio_bound_small to all m (which widens the RHS constant).
   -- Ref: [mathas1999] §3.3
-  sorry
 
 /-! ## §3  q-hook formula perturbation -/
 

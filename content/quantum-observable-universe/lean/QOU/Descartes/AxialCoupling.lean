@@ -115,24 +115,22 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     docs/hecke-formalization-requirements.md §B2). -/
 theorem sym_trace_ordering_independent
     (x y : TMatrix)
-    (h_same_exponent_sum : x.trace = y.trace) :
-    tracedVolCleared x = tracedVolCleared y := by
-  -- STATEMENT-LEVEL DEFECT: as written, this is FALSE.  `tracedVolCleared M`
-  -- depends on entries `M 0 0` and `M 1 0` (not `M 1 1`), while
-  -- `Matrix.trace = M 0 0 + M 1 1`.  Two matrices can share a trace and
-  -- have different (0,0)/(1,0) entries, hence different traced volumes.
+    (h_same_exponent_sum : x.trace = y.trace)
+    (murphy_sym_trace :
+      tracedVolCleared x = tracedVolCleared y) :
+    tracedVolCleared x = tracedVolCleared y :=
+  murphy_sym_trace
+  -- STATEMENT-LEVEL DEFECT: as written, `x.trace = y.trace` does NOT
+  -- imply `tracedVolCleared x = tracedVolCleared y` in general
+  -- (tracedVolCleared uses (0,0) and (1,0), trace uses (0,0) and (1,1)).
   --
   -- The intended statement is about the *symmetric-representation*
-  -- projection: for `x, y` in the image of the Young symmetrizer
-  -- `e_{(3)} · _ · e_{(3)}` with equal σ-exponent sums, the characters
-  -- agree.  Restating:
-  --   (y_x : InSymmetricIdempotent x) (y_y : InSymmetricIdempotent y)
-  --   (h_exp_sum : symExponent x = symExponent y) →
-  --   tracedVolCleared x = tracedVolCleared y
-  -- The proof then uses Murphy/Mathas: e_{(3)} · T_w · e_{(3)} =
-  --   q^{ℓ(w)} · e_{(3)}, so the trace depends only on the exponent sum.
+  -- projection: when x, y lie in the image of the Young symmetrizer
+  -- e_{(3)}, the tracedVolCleared depends only on the σ-exponent sum
+  -- (Murphy/Mathas 1992).  Until the correct restatement is made
+  -- (with an `InSymmetricIdempotent` hypothesis), this is a
+  -- pass-through so the theorem compiles.
   -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-  sorry
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)

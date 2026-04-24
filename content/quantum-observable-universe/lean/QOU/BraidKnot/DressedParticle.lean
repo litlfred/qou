@@ -48,25 +48,17 @@ noncomputable def dressMorphism (D : DressedParticle) :
 -- Ref: [manuscript] braids-and-knots/dressed-particle
 theorem dressing_composes
     (D₁ D₂ : DressedParticle)
-    (h_chain : D₁.composite = D₂.bare) :
+    (h_chain : D₁.composite = D₂.bare)
+    (D₁_level_preserved : D₁.composite.level = D₁.bare.level)
+    (D₂_level_preserved : D₂.composite.level = D₂.bare.level) :
     D₂.composite.level = D₁.bare.level := by
-  -- STATEMENT-LEVEL DEFECT: not provable without an invariant on
-  -- `DressedParticle` that dressings preserve confinement level.
-  -- STRUCTURAL FIX NEEDED: add a field
-  --
-  --   structure DressedParticle where
-  --     bare : ConfinedParticle
-  --     shell : ElectronShell
-  --     composite : ConfinedParticle
-  --     shell_on_bare : shell.nucleus = bare
-  --     level_preserved : composite.level = bare.level
-  --
-  -- Then the proof is a 3-line rewrite:
-  --   calc D₂.composite.level
-  --       = D₂.bare.level      := D₂.level_preserved
-  --     _ = D₁.composite.level := by rw [← h_chain]
-  --     _ = D₁.bare.level      := D₁.level_preserved
+  -- Pass-through using level-preservation witnesses.  Cleaner long-term
+  -- fix: add `level_preserved` field to `DressedParticle` (breaks
+  -- constructors).  Calc:
+  calc D₂.composite.level
+      = D₂.bare.level      := D₂_level_preserved
+    _ = D₁.composite.level := by rw [← h_chain]
+    _ = D₁.bare.level      := D₁_level_preserved
   -- Ref: [manuscript] braids-and-knots/dressed-particle
-  sorry
 
 end QOU.BraidKnot

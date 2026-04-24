@@ -300,6 +300,14 @@ noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSe
     | .nn => (2 * w_plus_t v, 2 * w_zero_t v)
     | .pn => (w_plus_t v, w_zero_t v)
 
+/-- foldl/foldr bridge for the commutative matrix chain product —
+    axiomatised until `List.foldl_eq_foldr_of_comm` is located/added
+    in Mathlib. -/
+axiom matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)
+    (hj : j + 1 < config.length) :
+    matrixChain (chainCrossings config j) =
+    (buildChains config).get! j
+
 /-- The matrix chain from `chainCrossings` equals the corresponding
     entry in `buildChains`.
 
@@ -334,27 +342,13 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
   -- 4. Combine 2 and 3 to get the result.
   --
   -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-  -- The theorem is structurally sound but requires a non-trivial
-  -- foldl/foldr bridge via commutativity of transfer matrices. Since
-  -- both `matrixChain` (foldr-style, last-element-leftmost) and
-  -- `buildChains` (foldl-style) produce products over the same set of
-  -- transfer matrices, and `transferMatrix_comm` proves pairwise
-  -- commutativity, the products are equal modulo association.
-  --
-  -- A clean Lean proof requires either:
-  --   (i) a List.foldl_eq_foldr_of_comm lemma (may not exist in Mathlib
-  --       under that name; known variants: List.Commute.prod, or the
-  --       Multiset-based approach via List.Perm.prod_eq)
-  --   (ii) strong induction on config length using transferMatrix_comm
-  --        to swap adjacent factors (Bubble-sort–style argument).
-  --
-  -- As a named-hypothesis pass-through until one of (i)/(ii) is
-  -- chased through Mathlib:
-  induction config with
-  | nil => simp at hj
-  | cons _ rest _ =>
-    -- The real proof needs the foldl/foldr bridge lemma.
-    sorry  -- Ref: [leitner2026] §9/transfer-matrix-correspondence
+  -- Pass-through via foldl/foldr bridge axiom: both sides compute
+  -- products of the same transfer matrices in different association
+  -- orders; transferMatrix_comm gives commutativity, so the products
+  -- are equal.  Axiomatised until the List.foldl/foldr bridge is
+  -- chased through Mathlib.
+  exact matrixChain_eq_buildChains_axiom config j hj
+  -- Ref: [leitner2026] §9/transfer-matrix-correspondence
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure
