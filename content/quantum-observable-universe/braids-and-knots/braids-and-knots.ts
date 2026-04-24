@@ -407,6 +407,7 @@ export default chapter({
         "gram-matrix-spectral-connection",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
+        "chirality-dual-space-derivation",
         "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",
