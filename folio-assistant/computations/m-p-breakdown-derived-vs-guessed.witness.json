@@ -1,0 +1,159 @@
+{
+  "engine": "tower+SDP-gluon",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T06:52:34.499997+00:00",
+  "commitSha": "171d887841b252551f5b01247c75a561e4886c0e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "m-p-breakdown-derived-vs-guessed",
+  "scriptFile": "m_p_breakdown_derived_vs_guessed.py",
+  "scriptHash": "f4e3ef699105",
+  "scriptCommitSha": "",
+  "description": "Breakdown of each ingredient in the m_p = T1+T2+T3+T4 tower derivation into FORMAL, CONJECTURAL, ASSUMED, or INPUT.  Uses the SDP-derived neutron gluon tail (σ₀σ₁σ₁σ₀, not 2σ₀).",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "H_A": 0.20906032198987945,
+    "z_markov": 0.4993203340335982
+  },
+  "data": {
+    "provenance": [
+      {
+        "name": "m_e (MeV scale)",
+        "tag": "⎯ INPUT",
+        "note": "CODATA 2018: 0.51099895 MeV ± 1.5×10⁻¹⁰"
+      },
+      {
+        "name": "q_0 substrate parameter",
+        "tag": "⎯ INPUT (via m_μ/m_e)",
+        "note": "1.1099785956; CODATA-bounded to ~1 ppb via m_μ/m_e ratio (see q_pinning_50_digit.py)"
+      },
+      {
+        "name": "H_A = q − 1/q",
+        "tag": "✓ DERIVED",
+        "note": "Hecke relation parameter; follows from q_0 exactly"
+      },
+      {
+        "name": "Hecke relation σ_i² = H_A σ_i + 1",
+        "tag": "✓ DERIVED (standard)",
+        "note": "Kassel 'Quantum Groups' Prop. XII.1.2"
+      },
+      {
+        "name": "Wedderburn decomposition H_3(q) = sym ⊕ std ⊕ alt",
+        "tag": "✓ DERIVED (standard)",
+        "note": "Dipper–James / Hoefsmit; partitions 3 = (3), (2,1), (1,1,1)"
+      },
+      {
+        "name": "Plancherel weights w_λ = d_q(λ)² / [n]_q!",
+        "tag": "✓ DERIVED (Markov trace)",
+        "note": "w_sym = w_alt = 0.1655, w_std = 0.6691 at q_0"
+      },
+      {
+        "name": "z (Markov parameter)",
+        "tag": "✓ DERIVED from q_0",
+        "note": "z = 0.4993203340 — Jones–Conway normalization"
+      },
+      {
+        "name": "Per-generator chain for B_3 confinement: (σ_0 σ_1^{-1})^3",
+        "tag": "⚠ CONJECTURAL (quarks-Borromean)",
+        "note": "Paper claim (rem:borromean-baryon): 3-quark confinement ≡ Borromean rings.  Structural, not proven from QCD."
+      },
+      {
+        "name": "Quark-pair crossing types: uu=(1,0), dd=(1,−H), ud=(1,−H/2)",
+        "tag": "✓ DERIVED via integer-LP / SDP",
+        "note": "User note: 'no convention. comes from SDP'.  Integer-LP feasibility (integer-lp-gluon.py, atom_braid_sdp_gluon.py) picks uu=σ, dd=σ⁻¹, ud=(σ+σ⁻¹)/2 as the Gram-positive solution."
+      },
+      {
+        "name": "Gluon tail: proton = 2·σ₀, neutron = σ₀σ₁σ₁σ₀ (NOT 2·σ₀)",
+        "tag": "✓ DERIVED via integer-LP / SDP",
+        "note": "atom_braid_sdp_gluon.py — naive 2·σ₀ for neutron fails the Gram-positivity constraint; L₊ L₋ = σ₀σ₁σ₁σ₀ is the feasible optimum.  Paper's original tower used 2·σ₀ for BOTH."
+      },
+      {
+        "name": "V̂_i^full = w_sym λ^sym_i + w_std V^std_i + w_alt λ^alt_i",
+        "tag": "✓ DERIVED (per-gen additive Wedderburn)",
+        "note": "Transfer-matrix representation of the 2×2 std block (Hoefsmit); recurrence in vertex_volume()"
+      },
+      {
+        "name": "|V̂_i| operation",
+        "tag": "□ ASSUMED convention",
+        "note": "Absolute value of a signed real; no derivation that |·| is the correct nonlinearity.  Could be max(0,·) or similar."
+      },
+      {
+        "name": "Φ_q(z) = Π_{k=1}^∞ (1 − q^{-k} z)^{-1}",
+        "tag": "✓ DERIVED (quantum dilogarithm)",
+        "note": "Faddeev–Kashaev / Faddeev–Volkov quantum dilogarithm; standard"
+      },
+      {
+        "name": "Tower structure: m = |Π V̂_i| + Σ_i Φ_q(|V̂_i|) + z² Σ_{|i−j|=1} Φ_q(|V̂_i V̂_j|)",
+        "tag": "⚠ CONJECTURAL",
+        "note": "prop:mass-endomorphism-tower — paper proposes this shape; proof in content/ sketches jet-tower ascension via pentagon identity.  Not fully rigorous."
+      },
+      {
+        "name": "Restriction to pairs |i−j|=1 (adjacent only)",
+        "tag": "⚠ CONJECTURAL (locality)",
+        "note": "docs/locality-proof-attempt.md — far-commuting locality is PROVED via Kohno–Drinfeld; adjacent-locality claim is O(ℏ_q²) ≈ 1% which is the frontier."
+      }
+    ],
+    "per_gen_volumes": {
+      "V_e": 0.5938490006705095,
+      "Vp0": 0.9890073159292595,
+      "Vp1": 0.9710701586527437,
+      "Vn0_old_uniform_2sigma0": 0.8542103128258388,
+      "Vn1_old_uniform_2sigma0": 0.9755094711077458,
+      "Vn0_sdp_L_plus_minus": 0.8542103128258388,
+      "Vn1_sdp_L_plus_minus": 0.9666308461977413
+    },
+    "tower_terms": {
+      "electron": {
+        "label": "electron",
+        "V0": 0.5938490006705095,
+        "V1": null,
+        "T1": 0.5938490006705095,
+        "T2": 629.9354190959199,
+        "T3": 0.0,
+        "T4": 0.0,
+        "m_Hecke": 630.5292680965904
+      },
+      "proton": {
+        "label": "proton",
+        "V0": 0.9890073159292595,
+        "V1": 0.9710701586527437,
+        "T1": 0.9603954911881503,
+        "T2": 671221.4103737363,
+        "T3": 425756.9858019375,
+        "T4": 82016.16886541968,
+        "m_Hecke": 1178995.5254365846
+      },
+      "neutron_old_uniform": {
+        "label": "neutron (uniform 2σ₀, paper)",
+        "V0": 0.8542103128258388,
+        "V1": 0.9755094711077458,
+        "T1": 0.8332902504795161,
+        "T2": 36047.91315102721,
+        "T3": 475250.3602002083,
+        "T4": 6137.397714011542,
+        "m_Hecke": 517436.50435549754
+      },
+      "neutron_sdp": {
+        "label": "neutron (SDP σ₀σ₁σ₁σ₀)",
+        "V0": 0.8542103128258388,
+        "V1": 0.9666308461977413,
+        "T1": 0.8257060375176779,
+        "T2": 36047.91315102721,
+        "T3": 382037.82217312267,
+        "T4": 5362.440088995495,
+        "m_Hecke": 423449.0011191829
+      }
+    },
+    "predictions_MeV": {
+      "m_p_pred": 955.4916893413767,
+      "m_p_CODATA": 938.27208816,
+      "m_p_err_pct": 1.8352460228402738,
+      "m_n_old_pred": 419.345340170355,
+      "m_n_CODATA": 939.56542052,
+      "m_n_old_err_pct": -55.36815946905864,
+      "m_n_sdp_pred": 343.17517980355484,
+      "m_n_sdp_err_pct": -63.47511601548453
+    }
+  }
+}
