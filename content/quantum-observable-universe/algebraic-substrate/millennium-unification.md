@@ -1,8 +1,10 @@
-The four classical-limit problems tackled by the QOU framework —
-the Riemann hypothesis, 3D Navier--Stokes regularity, Collatz, and
-P vs NP — all reduce to a **single surreal inequality** between the
-cost of a standard-real deviation and the mass-gap infinitesimal.
-This remark collects the four squeezes side by side.
+Six classical-limit problems tackled by the QOU framework —
+the Riemann hypothesis, 3D Navier--Stokes regularity, Collatz,
+P vs NP, Birch--Swinnerton-Dyer, and Yang--Mills mass gap — all
+reduce to a **single surreal inequality** between the cost of a
+standard-real deviation and the mass-gap infinitesimal, with the
+adelic--Tate factorisation giving the local-global refinement.
+This remark collects the six squeezes side by side.
 
 **The common template.** Let $\varepsilon \in \mathrm{Der}(A)$ be the
 Reeb infinitesimal
@@ -43,13 +45,23 @@ $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$.
 | [Navier--Stokes](#rem:ns-surreal-bound) | enstrophy spike | $\asymp \varepsilon^{-4/3}$ | $\asymp \varepsilon^3$ | $\Ow(\text{cost}) = -4/3 < 3$ | finite-time blow-up in classical limit |
 | [Collatz](#rem:collatz-surreal-bound) | contact-volume drift per step | $\asymp \delta^2 \varepsilon^{-1}$ | $\asymp \varepsilon^3$ | $\Ow(\text{cost}) = -1 < 3$ | $\delta = 0$ (all orbits terminate at $1$) |
 | [P vs NP](#rem:p-vs-np-surreal-bound) | per-step $q$-efficiency $\delta_n$ | $\asymp 2^n \delta_n^2 \varepsilon^{-1}$ | $\asymp 2^n \varepsilon^3$ | $\Ow(\text{cost}) = -1 < 3$ | $\mathbf{P} \neq \mathbf{NP}$ under std-part of BQP$_q \supsetneq \mathbf{P}$ |
+| [BSD](#rem:bsd-surreal-bound) | rank-defect beyond $r$ | $\asymp \delta^2 \varepsilon^{-1}$ | $\asymp \varepsilon^3$ | $\Ow(\text{cost}) = -1 < 3$ | $\mathrm{ord}_{s=1} L(\mathcal{E}_q) = r$ (rank matches) |
+| [Yang--Mills](#rem:yang-mills-surreal-bound) | massless glueball $\delta = 0$ | degenerate | $\asymp \varepsilon^3 > 0$ | $\Ow(\Delta_q) = 3$ (strictly positive) | mass gap exists: $\Delta_{\mathrm{YM}} > 0$ |
 
 The first three rows are *unconditional* surreal translations of
 existing QOU propositions
 ([collapse of the quantum gap](#thm:quantum-gap-collapse),
 [blowup as Yekutieli lifting obstruction](#prop:blowup-yekutieli),
-[$q$-Collatz](#conj:q-collatz)); the fourth row is *conditional* on
-[P vs NP in the QOU](#conj:p-vs-np-qou).
+[$q$-Collatz](#conj:q-collatz)).  The fourth row is *conditional*
+on [P vs NP in the QOU](#conj:p-vs-np-qou).  The fifth row is
+*conditional* on [$q$-BSD](#conj:q-birch-swinnerton-dyer); the
+adelic refinement
+([adelic--Tate surreal squeeze](#rem:adelic-tate-squeeze))
+localises the fifth row at each prime.  The sixth row is
+*unconditional* once the QOU substrate is posited: the mass gap is
+a categorical invariant of $\mathbf{C}$ with $\Ow(\Delta_q) = 3$,
+and Yang--Mills on $\mathbb{R}^4$ is the standard part of the
+$q$-deformation.
 
 **Why the template works.** The mass-gap scaling
 $\Delta_q \asymp \varepsilon^3$ is a *fixed structural invariant* of
@@ -66,14 +78,19 @@ statement into the form
 $\delta^2 / \varepsilon > \varepsilon^3$ closes the argument
 uniformly.
 
-**Philosophical upshot.** In the QOU framework, the four millennium
-problems are not four independent questions but **four instances of
-the same substrate-stability requirement**: the observable universe
-can contain only those classical-limit configurations in which no
-standard-real drift absorbs more substrate energy than the mass gap
-can dissipate.  The Riemann hypothesis is the spectral instance,
-Navier--Stokes is the hydrodynamic instance, Collatz is the
-arithmetic instance, and P vs NP is the complexity instance.
+**Philosophical upshot.** In the QOU framework, the six millennium
+problems above are not independent questions but **six instances
+of the same substrate-stability requirement**: the observable
+universe can contain only those classical-limit configurations in
+which no standard-real drift absorbs more substrate energy than
+the mass gap can dissipate.  The Riemann hypothesis is the spectral
+instance, Navier--Stokes is the hydrodynamic instance, Collatz is
+the arithmetic instance, P vs NP is the complexity instance, BSD
+is the elliptic-curve instance, and Yang--Mills is the gauge-theory
+instance.  The adelic--Tate framework
+([adelic--Tate surreal squeeze](#rem:adelic-tate-squeeze))
+localises each of these at every prime, showing the squeeze is a
+strictly local-global affair.
 
 **Relation to the appendix.** The $\omega$-adic form of each
 squeeze is registered in the

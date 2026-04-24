@@ -12,7 +12,7 @@ In the $q > 1$ regime
 $\Delta_q \asymp \varepsilon^3$ serves as a quantum viscosity
 $\nu_q$, and the fluid is globally regular.
 
-**The classical limit.** Near $\varepsilon = 0$, two rates compete:
+**The surreal bound.** Near $\varepsilon = 0$, two rates compete:
 
 | Quantity | Surreal order | Role |
 |---|---|---|
@@ -22,33 +22,20 @@ $\nu_q$, and the fluid is globally regular.
 By [surreal rate calculus](#prop:surreal-rate-calculus),
 $\mathcal{Z}_q \cdot \varepsilon^{4/3} \asymp 1$ (standard-real order),
 while $\Delta_q \asymp \varepsilon^3$ is a positive infinitesimal.
-Comparing:
-
-$$
-  \frac{\mathcal{Z}_q}{\Delta_q}
-    \;\asymp\; \varepsilon^{-4/3 - 3} \;=\; \varepsilon^{-13/3}
-  \qquad (\text{in } \mathbb{R}(\varepsilon) \subset \mathbf{No}).
-$$
-
-**Surreal-squeeze form.** The NS specialisation of
-[surreal squeeze](#lem:surreal-squeeze) takes
-$\delta^2 \cdot \varepsilon^{-1}$ on the left with
-$\delta^2 = \varepsilon^{-4/3 + 1} \cdot c = c \cdot \varepsilon^{-1/3}$
-for some standard-real prefactor $c > 0$.  Since $\delta^2$ would
-have to be transfinite for the squeeze to fail, but the only
-physically admissible drifts are standard-real, the inequality
+The NS specialisation of
+[surreal squeeze](#lem:surreal-squeeze) takes the enstrophy
+$\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ in place of the generic
+cost $\delta^2 \cdot \varepsilon^{-1}$, and the inequality
 
 $$
   \mathcal{Z}_q \;>\; \Delta_q
-  \qquad (\text{strictly, in } \mathbb{R}(\varepsilon))
+  \qquad (\text{strictly, in } \mathbb{R}(\varepsilon) \subset \mathbf{No})
 $$
 
-is automatic whenever the initial data carries any standard-real
-enstrophy.  Equivalently,
-$\Ow(\mathcal{Z}_q) = -4/3 < 3 = \Ow(\Delta_q)$ in the $\omega$-adic
-order of [Big-O via $\Ow$](#rem:big-o-surreal): the cascade sits at
-**lower ω-order** than the dissipation, which is the
-$\Ow$-formalisation of "faster-than-viscous growth".
+is automatic: $\Ow(\mathcal{Z}_q) = -4/3 < 3 = \Ow(\Delta_q)$ in the
+$\omega$-adic order of [Big-O via $\Ow$](#rem:big-o-surreal).  The
+cascade sits at **lower $\omega$-order** than the dissipation,
+which is the $\Ow$-formalisation of "faster-than-viscous growth".
 
 **Conclusion.** As $\varepsilon \to 0$ (equivalently, as the substrate
 becomes classical), the enstrophy transfinite strictly outruns the

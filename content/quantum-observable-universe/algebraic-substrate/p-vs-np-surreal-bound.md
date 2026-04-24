@@ -47,11 +47,11 @@ which is the content of [P vs NP in the QOU](#conj:p-vs-np-qou).
 classically; it shows that the QOU framework, assuming
 $\mathbf{P} \subsetneq \mathrm{BQP}_q$ at positive $\varepsilon$
 (a widely-believed non-classical separation under the topological
-quantum computation model [@freedman2003]), propagates to the
+quantum computation model \cite{freedman2003}), propagates to the
 classical separation under the standard-part functor.
 
-**Relation to Cook--Levin [@cook1971].**  The classical
-NP-completeness structure is preserved by the standard part, so
+**Relation to Cook--Levin.**  The classical
+NP-completeness structure \cite{cook1971} is preserved by the standard part, so
 any Cook--Levin reduction on the $q$-substrate descends to a
 Cook--Levin reduction classically.  Combined with the surreal
 squeeze above, the separation $\mathbf{P} \neq \mathbf{NP}$ follows

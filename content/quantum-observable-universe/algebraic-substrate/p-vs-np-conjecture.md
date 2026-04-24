@@ -63,7 +63,7 @@ admit a Lean formalisation beyond the statement.  A formal
 proof would reduce the $q$-to-classical compression obstruction
 to the structural non-existence of a BQP$_q \to \mathbf{P}$
 functor, consistent with the Freedman--Kitaev--Larsen--Wang
-topological model [@freedman2003] at $q$-generic.
+topological model \cite{freedman2003} at $q$-generic.
 
 **See also.**
 [Surreal bound for P vs NP](#rem:p-vs-np-surreal-bound) for the

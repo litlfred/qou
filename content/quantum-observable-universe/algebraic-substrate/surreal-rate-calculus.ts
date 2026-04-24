@@ -4,7 +4,8 @@ export default proposition({
   label: "prop:surreal-rate-calculus",
   title: "Surreal rate calculus for the classical-limit scaling laws",
   lean: {
-    decl: "QOU.AlgebraicSubstrate.surreal_rate_calculus",
+    decl: "QOU.AlgebraicSubstrate.SurrealRateCalculus",
+    file: "lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
     validation: "not_checked",
   },
   uses: [

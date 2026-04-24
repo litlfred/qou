@@ -90,6 +90,26 @@ carry topological defects as **scars of substrate reversion**:
   exponents should match the surreal-order predictions of §A above
   to leading standard-part order.
 
+## Quantitative handles
+
+The four predicted signatures each have a specific QOU data row
+already registered in Chapter~7.  The table below pins each
+qualitative prediction to a concrete observational handle:
+
+| Signature | QOU data row | Quantitative anchor |
+|---|---|---|
+| Intermittency exponent deviations | [CMB $q$-torsion data](#rem:cmb-torsion-data) | Structure-function scaling `⟨(δu_r)^p⟩ ≍ r^{ζ_p}` with `ζ_p` a surreal-order sequence |
+| GRB hadron/lepton yield | [BEC vortex data](#rem:bec-vortex-data) | Ratio set by $q$-Hecke branching of [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding) |
+| CMB non-Gaussianity patches | [CMB $q$-torsion data](#rem:cmb-torsion-data) | Angular cross-correlation with $\chi = -6$ topology; low-$\ell$ quadrupole/octupole anomalies |
+| BEC vortex reconnection signature | [BEC vortex data](#rem:bec-vortex-data) | Transient helicity-conservation violation at reconnection events |
+
+Each row is falsifiable under the QOU framework: a null result on
+the specific observable disconfirms the surreal-squeeze
+interpretation of the corresponding millennium problem.  In
+particular, finite intermittency exponents inconsistent with any
+surreal-order scaling would disconfirm the NS-blowup reading of
+[NS surreal bound](#rem:ns-surreal-bound).
+
 ## Why the mathematical blow-up is physically finite
 
 In classical PDE theory, blow-up means $|\nabla u| \to \infty$.  In

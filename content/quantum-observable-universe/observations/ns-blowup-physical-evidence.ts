@@ -11,6 +11,11 @@ export default remark({
     "rem:millennium-unification",
     "def:reeb-epsilon",
     "def:q-from-epsilon",
+    "rem:cmb-torsion-data",
+    "rem:bec-vortex-data",
+    "rem:hecke-algebra-from-braiding",
+    "prop:leray-profile",
+    "rem:big-o-surreal",
   ],
   tags: [
     "navier-stokes",

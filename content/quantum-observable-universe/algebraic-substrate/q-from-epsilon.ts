@@ -5,6 +5,7 @@ export default definition({
   title: "The substrate parameter $q$ as $1 + \\varepsilon$",
   lean: {
     decl: "QOU.AlgebraicSubstrate.QFromEpsilon",
+    file: "lean/QOU/AlgebraicSubstrate/QFromEpsilon.lean",
     validation: "not_checked",
   },
   uses: [

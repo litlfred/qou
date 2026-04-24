@@ -5,6 +5,7 @@ export default definition({
   title: "The Reeb infinitesimal $\\varepsilon$",
   lean: {
     decl: "QOU.AlgebraicSubstrate.ReebEpsilon",
+    file: "lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean",
     validation: "not_checked",
   },
   uses: [

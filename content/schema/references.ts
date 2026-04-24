@@ -1980,6 +1980,28 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1007/BF01389745",
   }),
 
+  // ── Tate 1950 (Princeton thesis; published 1967) ─────────────
+  ref({
+    id: "tate1950",
+    type: "chapter",
+    title: "Fourier Analysis in Number Fields and Hecke's Zeta-Functions",
+    author: [{ family: "Tate", given: "John T." }],
+    "container-title":
+      "Algebraic Number Theory (Proceedings of an Instructional Conference, Brighton, 1965)",
+    editor: [
+      { family: "Cassels", given: "J. W. S." },
+      { family: "Fröhlich", given: "A." },
+    ],
+    publisher: "Academic Press",
+    issued: { "date-parts": [[1967]] },
+    page: "305-347",
+    note:
+      "Tate's 1950 Princeton PhD thesis, reprinted in the Cassels–Fröhlich proceedings. " +
+      "Introduces the adelic Fourier transform that factorises the global zeta function as a " +
+      "restricted product of local zeta integrals, one per place. The surreal lift sends each " +
+      "local place to a local Reeb infinitesimal ε_p and the global ε to a restricted product.",
+  }),
+
   // ── Collatz ─────────────────────────────────────────────────────
   ref({
     id: "collatz1937",
