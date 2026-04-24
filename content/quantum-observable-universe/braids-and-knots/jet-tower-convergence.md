@@ -116,8 +116,8 @@ the main outstanding piece of open subconjecture 1 on
 [rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower).
 
 *Formal asymptotic content. The geometric tail is the native
-Jackson $d_q$-difference of the brane tower; the truncation
-error has $\Ow \;=\; 2(N+1)\,\Ow(\hbar_q)$, and the recursive
+Jackson $d_q$-difference of the brane tower;
+$\Ow(\text{tail}) = 2(N+1)\,\Ow(\hbar_q)$, and the recursive
 jet prolongation is the
 [surreal blow-up calculus](#def:surreal-blowup-calculus).
 See [Big-O via $\Ow$](#rem:big-o-surreal),

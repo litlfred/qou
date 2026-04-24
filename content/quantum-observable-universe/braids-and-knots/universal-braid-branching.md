@@ -100,6 +100,6 @@ $k \approx 13$.
 $\square$
 
 *Formal asymptotic content. The per-level Plancherel weight
-$O([2]_q^{-2})$ is $\Ow \;=\; -2\,\Ow([2]_q)$ in the surreal
+has $\Ow(\text{per-level weight}) = -2\,\Ow([2]_q)$ in the surreal
 valuation; see [Big-O via $\Ow$](#rem:big-o-surreal) and the
 [body asymptotics catalog](#rem:body-asymptotics-catalog).*

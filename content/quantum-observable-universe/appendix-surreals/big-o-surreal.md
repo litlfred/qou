@@ -61,11 +61,12 @@ Usage in `.md`: `$\Ow(f) \leq \Ow(g)$`.
 
 Effect on rendered LaTeX: `$O_\omega(f) \leq O_\omega(g)$`.
 
-The symbol is Big-O flavored because, as the table above makes
-explicit, $\Ow$ is the valuation that encodes the classical Big-O
-relation: $f = O(g) \Leftrightarrow \Ow(f) \leq \Ow(g)$. Little-o
-is the same valuation under strict inequality. The prose name —
-"ω-adic order" — is retained; only the typeset symbol changes.
+The symbol sits in the Big-O register because, as the table above
+makes explicit, $\Ow$ is the valuation that encodes the classical
+Big-O relation: $f = O(g) \Leftrightarrow \Ow(f) \leq \Ow(g)$.
+Little-o is the same valuation under strict inequality. The prose
+name — "ω-adic order" — is retained; only the typeset symbol
+changes.
 
 ## Migration guide (for future paper revisions)
 

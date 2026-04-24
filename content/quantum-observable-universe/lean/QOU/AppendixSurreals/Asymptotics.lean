@@ -14,8 +14,8 @@ class is populated here — both are intended to be instantiated by
 downstream modules that construct or axiomatise a specific surreal
 carrier (e.g.\ via a Hahn embedding).
 
-Notation: in LaTeX we write `$O_\omega$` (Big-O flavored, via the
-`\Ow` macro).  In Lean the identifier is `Ow` for ASCII-friendliness.
+Notation: in LaTeX we write `$O_\omega$` (Big-O register, via the
+`\Ow` macro).  In Lean the identifier is `Ow` for ASCII usability.
 
 LaTeX labels: `rem:big-o-surreal`, `rem:conway-normal-form`.
 
@@ -46,7 +46,7 @@ universe u
 
     Classical analogue is the p-adic order `ord_p`.  Under the QOU
     notational convention, the symbol is typeset as `$O_\omega$`
-    (Big-O flavored) because the equivalence
+    (Big-O register) because the equivalence
     `f = O(g) ⟺ Ow(f) ≤ Ow(g)` makes Big-O the natural reading.
 
     Mathlib does not yet expose Conway normal form, so we axiomatise
