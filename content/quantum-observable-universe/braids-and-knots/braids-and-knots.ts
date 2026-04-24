@@ -392,6 +392,8 @@ export default chapter({
         "full-pole-structure-mass-trace",
         "mn-classical-parity-blind",
         "q-character-closes-parity-gap",
+        "partition-sum-proton-residual",
+        "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",
         "descended-level-zero",
