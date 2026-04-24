@@ -1,7 +1,7 @@
 {
   "computation": "jsj-alpha-clustering",
   "description": "Unfold doubly-magic atoms as \u03b1-cluster aggregates: B(atom) = n_\u03b1\u00b7B(\u2074He) + n_pairs\u00b7c_\u03b1\u03b1.  Fit c_\u03b1\u03b1 from \u00b9\u00b2C (3 \u03b1 + 3 couplings) and predict other magic atoms.  If unfolding is correct, c_\u03b1\u03b1 should correspond to a specific hyperbolic knot volume, completing the picture that each binding interaction = one JSJ piece.",
-  "timestamp": "2026-04-23T23:34:41.290346+00:00",
+  "timestamp": "2026-04-23T23:58:01.689596+00:00",
   "parameters": {
     "B_4HE_AME_MeV": 28.295674,
     "m_e_MeV": 0.51099895,
@@ -92,5 +92,64 @@
     }
   ],
   "c_lsq_from_all_magic": 1.4134170909849748,
-  "hp_closest_knots_by_rho": {}
+  "hp_closest_knots_by_rho": {
+    "m_e": [
+      {
+        "name": "7^2_1",
+        "volume": 4.74949998187444,
+        "err_pct": 0.08647133644372289,
+        "volume_50digit": "4.7494999818744385084980865556375718851941577840553"
+      },
+      {
+        "name": "7_3",
+        "volume": 4.592125697027061,
+        "err_pct": -3.229885524190302,
+        "volume_50digit": "4.5921256970270625501966139946554737323543603265433"
+      },
+      {
+        "name": "6_2",
+        "volume": 4.400832516123045,
+        "err_pct": -7.261017125511173,
+        "volume_50digit": "4.4008325161230461014412038656409280339834854185165"
+      },
+      {
+        "name": "7_4",
+        "volume": 5.137941201873416,
+        "err_pct": 8.272114284057192,
+        "volume_50digit": "5.1379412018734177698413483394748450356496750927357"
+      },
+      {
+        "name": "6^2_3",
+        "volume": 5.333489566898118,
+        "err_pct": 12.392915611696957,
+        "volume_50digit": "5.3334895668981195815934249252213000881967677771053"
+      }
+    ],
+    "2m_e": [
+      {
+        "name": "4_1",
+        "volume": 2.029883212819307,
+        "err_pct": -14.448321393197636,
+        "volume_50digit": "2.0298832128193072500424051085490405718833786150606"
+      },
+      {
+        "name": "5_2",
+        "volume": 2.8281220883307836,
+        "err_pct": 19.194341050600883,
+        "volume_50digit": "2.8281220883307831627638988092766349427709813173006"
+      },
+      {
+        "name": "6_1",
+        "volume": 3.1639632288831434,
+        "err_pct": 33.348738278001875,
+        "volume_50digit": "3.1639632288831439839910147159731544848127876715181"
+      },
+      {
+        "name": "7_2",
+        "volume": 3.331744231641114,
+        "err_pct": 40.420054663904054,
+        "volume_50digit": "3.331744231641114823914569108029712795546957909186"
+      }
+    ]
+  }
 }
