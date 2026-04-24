@@ -15,7 +15,6 @@ export default conjecture({
   ],
   uses: [
     "rem:conway-normal-form",
-    "rem:big-o-surreal",
     "def:standard-part-functor",
     "conj:classical-limit-stpart",
   ],

@@ -40,7 +40,6 @@ export default chapter({
       title: "Conway normal form and asymptotic notation",
       blocks: [
         "conway-normal-form",
-        "big-o-surreal",
         "body-asymptotics-catalog",
       ],
     },
