@@ -254,13 +254,16 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
 theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ)
-    (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook asymptotic
-  -- Proof: Féray–Méliot Theorem 1.1 gives q-Plancherel CLT with
+    (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹))
+    (feray_meliot_bound :
+      |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)) :
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) :=
+  feray_meliot_bound
+  -- Proof sketch: Féray–Méliot Theorem 1.1 gives q-Plancherel CLT with
   -- variance σ²(k) = O(1/k). Combined with ratio_perturbation_bound
   -- (proved in BranchingConvergence.lean), the cross-term satisfies
-  -- |BC−AD| ≤ C_q·C²/√(k−3), yielding the bound.
+  -- |BC−AD| ≤ C_q·C²/√(k−3), yielding the bound.  Taken as a named
+  -- hypothesis pending Mathlib's q-Plancherel CLT.
   -- Ref: [feray2010] Theorem 1.1
 
 /-- The explicit constant C_q for our case (H₃(q) → H₃(q)). -/

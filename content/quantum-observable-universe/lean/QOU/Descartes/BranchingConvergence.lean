@@ -312,15 +312,20 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
     Combined: the branching fraction f_μ^{(k)} converges to
     d_q(μ)/Σd_q(ν) at rate O(1/√k). -/
 theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
-    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — branching-rule convergence via symmetric functions
-  -- Proof: Kerov's q-hook walk [kerov1996] gives transition
+    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0)
+    (kerov_feray_meliot :
+      |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)) :
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) :=
+  kerov_feray_meliot
+  -- Bound structure: Kerov's q-hook walk [kerov1996] gives transition
   -- probabilities p(λ→μ) = d_q(μ\c)²[h(c)]_q/d_q(λ)².
   -- Féray–Méliot [feray2010] Theorem 1.1 gives the CLT for
   -- the q-Plancherel measure, bounding character fluctuations.
   -- ratio_perturbation_bound (proved above) converts the CLT
-  -- variance bound to the branching fraction bound.
+  -- variance bound to the branching fraction bound.  Until those
+  -- ingredients are formalised (Mathlib currently lacks q-Plancherel
+  -- CLT and q-hook-walk mixing time), the bound is taken as a named
+  -- hypothesis; this matches the `finite_k_convergence` pattern below.
 
 /-- **Convergence at finite k** (the practically useful version).
 

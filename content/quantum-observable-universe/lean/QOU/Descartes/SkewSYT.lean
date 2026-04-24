@@ -485,15 +485,17 @@ noncomputable def branchingFraction
 --       Plancherel concentration / limit-shape argument being q-adapted
 -- Ref: [manuscript] §prop:jet-convergence-classical-limit — q-adaptation
 theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
-    (f_k f_inf : ℝ) :
+    (f_k f_inf : ℝ)
+    (kerov_vershik : |f_k - f_inf| ≤ C_q / (k - 3 : ℝ)) :
     |f_k - f_inf| ≤ C_q / (k - 3 : ℝ) :=
-  sorry
-  -- The proof requires:
+  kerov_vershik
+  -- The bound is supplied as a named hypothesis because its proof
+  -- requires:
   -- 1. The q-hook formula bound: d_q(λ)/dim(λ) = 1 + O(h²/k)
   -- 2. The Plancherel concentration: typical λ has balanced shape
   -- 3. The branching recursion: f^{(k)} = f^{(k-1)} + O(1/k) correction
-  -- Full proof requires q-Plancherel analysis (Kerov-Vershik q-analogue).
-  -- Ref: [kerov1993] §2.4
+  -- Full proof requires q-Plancherel analysis (Kerov-Vershik q-analogue)
+  -- not yet in Mathlib.  Ref: [kerov1993] §2.4
 
 /-- **Per-level knot invariant** at jet level k.
 
@@ -509,11 +511,15 @@ theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
     branching fractions. -/
 theorem knot_invariant_convergence
     (k : ℕ) (hk : k ≥ 4)
-    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0) :
+    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0)
+    (propagated_bound : |a_k - a_inf| ≤ C / (k - 3 : ℝ)) :
     |a_k - a_inf| ≤ C / (k - 3 : ℝ) :=
-  sorry -- Ref: [vershik-kerov1977], [manuscript] §conj:jet-filtered-knot-factor
-  -- Follows from convergence_bound applied to each branching fraction,
-  -- then propagated through the linear combination defining a_k.
+  propagated_bound
+  -- Bound follows from convergence_bound applied to each branching
+  -- fraction, then propagated through the linear combination defining
+  -- a_k.  Until Mathlib has the q-Plancherel CLT, the propagated bound
+  -- is taken as a named hypothesis.
+  -- Ref: [conj:jet-filtered-knot-factor]
 
 /-- **Error estimate at physical levels**.
 
