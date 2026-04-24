@@ -164,42 +164,62 @@ def phi_q_series(v, n_max: int = 50):
     return total
 
 
+def _v_hat_chain_at_vertex(k: int, z, h) -> "mpmath.mpf":
+    """V̂ of σ_g^k at a single vertex g, via the H_2 transfer recurrence.
+
+    H_2 is generator-independent (only one σ available), so V̂ depends
+    only on the exponent k, not on the vertex index g.
+    """
+    a = mpmath.mpf(0)
+    b = mpmath.mpf(1)
+    for _ in range(k):
+        a, b = a * h + b, a
+    return z * a + b
+
+
 def v_hat_std_of_word(basis_word: tuple) -> complex:
     """Transfer-matrix V̂^std for a basis word in H_6(q) at q₀.
 
-    For a single-sigma word w = (g_1, g_2, ..., g_k), the word acts on
-    the standard (2-dim) representation through the R-matrix.  We
-    compute ρ(β_w) on V_1^⊗6 and extract a "summary" V̂^std via
-    its trace or determinant.
+    Three paths, in order of correctness:
 
-    For the simplest case: V̂^std = tr(ρ_{V_1}(w)) / 2^(n-1) to match
-    the scalar convention.  But really we want the POLYNOMIAL
-    V̂(q) = z · a + b from the transfer chain, evaluated at q₀.
+    1. **Chain case** (all generators identical): use the H_2 transfer
+       recurrence on σ_g^k directly.
 
-    Simplification: for each basis word, we treat it as a sequence of
-    σ_i, compute the per-generator transfer matrix chain, get a V̂
-    per generator (up to 5 for H_6), then take the PRODUCT.
+    2. **Disjoint case** (all generator pairs have |i − j| ≥ 2): σ_i and
+       σ_j commute in H_n, so V̂ factors as Π_g V̂(σ_g^{c_g}) where
+       c_g = count of σ_g in the word.
+
+    3. **Adjacent-generator case** (some pair has |i − j| = 1): the
+       braid relation σ_iσ_{i+1}σ_i = σ_{i+1}σ_iσ_{i+1} couples the
+       standard-rep channels across vertices and the per-vertex
+       factorization is NOT exact.  We fall back to returning NaN so
+       that the caller can skip this word rather than silently using
+       the wrong value.  A principled fix requires the explicit
+       Hoefsmit seminormal matrices of H_n on the standard rep shape
+       (n−1, 1) — not implemented here because this module is
+       DIAGNOSTIC ONLY.
+
+    Returns complex(NaN) for path 3 so that np.isnan detects it.
     """
-    # Transfer-matrix recurrence (hecke_core.vertex_volume).
-    #
-    # *** LIMITATION ***
-    # This implementation treats basis_word as a single-generator chain
-    # (ignoring individual generator indices), so it fails for words
-    # with disjoint generators like (0, 2, 4).  Per the Skein formula
-    #    P_N(q) = Π_{i=0}^{A-2} V̂_i(q)
-    # the correct per-generator volumes V̂_i should be computed
-    # separately and multiplied.  Diagnostic probe only; do not use
-    # for precision mass predictions.
     if not basis_word:
         return complex(1.0)
     z = mpmath.mpf(1) / (mpmath.sqrt(Q0_MP) + mpmath.mpf(1) / mpmath.sqrt(Q0_MP))
     h = Q0_MP - mpmath.mpf(1) / Q0_MP  # H_A = q - q⁻¹
-    a = mpmath.mpf(0)
-    b = mpmath.mpf(1)
-    for _ in basis_word:
-        # c=1, d=0 for pure σ:
-        a, b = a * h + b, a
-    return complex(z * a + b)
+    gens = sorted(set(basis_word))
+    # Path 1: chain
+    if len(gens) == 1:
+        return complex(_v_hat_chain_at_vertex(len(basis_word), z, h))
+    # Path 3 (check first): any adjacent pair forbids factorization
+    for i in range(len(gens) - 1):
+        if gens[i + 1] - gens[i] == 1:
+            return complex(float("nan"))
+    # Path 2: disjoint generators commute → product of per-vertex V̂
+    from collections import Counter
+    counts = Counter(basis_word)
+    v_total = mpmath.mpf(1)
+    for _, k in counts.items():
+        v_total *= _v_hat_chain_at_vertex(k, z, h)
+    return complex(v_total)
 
 
 def main() -> int:
@@ -238,11 +258,18 @@ def main() -> int:
     total_ln_phi = mpmath.mpf(0)
     n_strands = 6
     rows = []
+    skipped_adjacent = 0
+    import math as _math
     for (basis, coeff) in sorted(nf.terms.items(),
                                    key=lambda kv: (len(kv[0]), kv[0])):
         coeff_fn = sp.lambdify(q_sym, coeff, modules=["mpmath"])
         c_val = complex(coeff_fn(Q0_FLOAT))
         v_hat = v_hat_std_of_word(basis)
+        if _math.isnan(v_hat.real):
+            # Adjacent-generator braid: per-vertex factorization not
+            # exact (see v_hat_std_of_word docstring).  Skipped.
+            skipped_adjacent += 1
+            continue
         phi_v = phi_q_series(v_hat.real, n_max=50)
         if abs(phi_v) < 1e-50:
             continue
@@ -262,6 +289,10 @@ def main() -> int:
         })
 
     total = float(total_ln_phi)
+    if skipped_adjacent:
+        print(f"\n  (skipped {skipped_adjacent} basis words with "
+              f"adjacent-generator braids — per-vertex V̂ "
+              f"factorization not exact)")
     print(f"\n  Σ c_w · ln|Φ_q(V̂_w)|  = {total:.10f}")
     print(f"  Target (B_AME/m_e)    = {TARGET_VOL:.10f}")
     print(f"  Residual              = {total - TARGET_VOL:+.10f}")
@@ -294,6 +325,7 @@ def main() -> int:
             "n_strands": n_strands,
             "series_n_max": 50,
         },
+        "n_basis_skipped_adjacent": skipped_adjacent,
         "per_basis": rows,
         "total_ln_phi_weighted": total,
         "target": TARGET_VOL,

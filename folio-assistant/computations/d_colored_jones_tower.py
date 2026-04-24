@@ -100,14 +100,15 @@ def r_matrix_N(N: int, q: complex) -> np.ndarray:
     R = np.zeros((dim, dim), dtype=complex)
     def idx(j, k):
         return j * N + k
+    # Hecke relation R² = (q − q⁻¹)·R + I requires the (q − q⁻¹)
+    # diagonal entry for EVERY i < j pair, not just adjacent ones.
     for j in range(N):
         for k in range(N):
             if j == k:
                 R[idx(j, k), idx(j, k)] = q
             elif j < k:
                 R[idx(j, k), idx(k, j)] = 1.0
-                if k == j + 1:
-                    R[idx(j, k), idx(j, k)] = q - 1.0 / q
+                R[idx(j, k), idx(j, k)] = q - 1.0 / q
             else:
                 R[idx(j, k), idx(k, j)] = 1.0
     return R
@@ -152,18 +153,22 @@ def j_N_of_word(basis_word: tuple, n_strands: int, N: int,
                   q: complex) -> complex:
     """J_N(closure of basis_word) at q.
 
-    Returns the Markov trace tr_q(ρ_N(β)) / [N]_q where
+    Returns the Markov trace tr(ρ_N(β)) / [N]_q where
     [N]_q = (q^N - q^{-N})/(q - q^{-1}).
+
+    Empty word: handled via the same tr/[N]_q normalisation (M = I_{N^n},
+    so tr = N^n and the return is N^n / [N]_q).  This is the closure-
+    of-identity value in this unnormalised Kauffman convention —
+    consistent with the non-empty branch.  For the "J_N(unknot) = 1"
+    normalisation, each strand carries an extra 1/[N]_q factor; use
+    d_colored_jones_qtr.j_N_qtr for the unambiguous quantum-trace
+    normalisation instead.
     """
+    dim = N ** n_strands
     if len(basis_word) == 0:
-        # Closure of an n_strands-empty braid is an n-component unlink
-        # with J_N = [N]_q^n / [N]_q^{n-1} = [N]_q in many Kauffman
-        # conventions; we normalise J_N(unknot) = 1 here and return
-        # the Kauffman bracket literal value 1 for the closure of the
-        # identity.  (See d_colored_jones_qtr.j_N_qtr for the
-        # unambiguous normalisation that uses quantum trace.)
-        return complex(1.0)
-    M = braid_matrix(basis_word, n_strands, N, q)
+        M = np.eye(dim, dtype=complex)
+    else:
+        M = braid_matrix(basis_word, n_strands, N, q)
     tr = np.trace(M)
     if N == 1:
         return tr

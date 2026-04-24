@@ -101,14 +101,15 @@ def r_matrix_N(N: int, q: complex) -> np.ndarray:
     dim = N * N
     R = np.zeros((dim, dim), dtype=complex)
     def idx(j, k): return j * N + k
+    # Hecke relation R² = (q − q⁻¹)·R + I requires the (q − q⁻¹)
+    # diagonal entry for EVERY i < j pair, not just adjacent ones.
     for j in range(N):
         for k in range(N):
             if j == k:
                 R[idx(j, k), idx(j, k)] = q
             elif j < k:
                 R[idx(j, k), idx(k, j)] = 1.0
-                if k == j + 1:
-                    R[idx(j, k), idx(j, k)] = q - 1.0 / q
+                R[idx(j, k), idx(j, k)] = q - 1.0 / q
             else:
                 R[idx(j, k), idx(k, j)] = 1.0
     return R
@@ -217,8 +218,22 @@ def j_N_qtr(basis_word, n_strands, N, q, *, r_position_cache=None):
     return qtr / (nq ** n_strands)
 
 
+def build_eps_caches(n, N, eps_list):
+    """Precompute r-position caches for each (q = root · exp(iε))
+    value.  Call once outside a loop over NF basis words to avoid
+    rebuilding these caches (N^n matrices) for every word.
+
+    Returns {eps: r_position_cache} where r_position_cache is the
+    dict produced by build_r_position_cache for q = root · exp(iε).
+    """
+    root = complex(mpmath.exp(2j * mpmath.pi / N))
+    return {eps: build_r_position_cache(n, N, root * cmath.exp(1j * eps))
+            for eps in eps_list}
+
+
 def j_N_at_root_via_limit(basis_word, n, N,
-                              eps_list=(1e-4, 1e-5, 1e-6, 1e-7)) -> complex:
+                              eps_list=(1e-4, 1e-5, 1e-6, 1e-7),
+                              eps_caches=None) -> complex:
     """Evaluate J_N at q = e^{2πi/N} via limit from q = root · e^{iε}.
 
     Returns Richardson-extrapolated value as ε → 0.
@@ -229,6 +244,11 @@ def j_N_at_root_via_limit(basis_word, n, N,
         R_k = (r · f(ε_k) − f(ε_{k-1})) / (r − 1)
     This cancels the leading ε term, leaving O(ε²) error.  Iterated on
     the Richardson table removes higher powers.
+
+    `eps_caches`: optional {eps: r_position_cache} produced by
+    build_eps_caches.  Pass this in when calling j_N_at_root_via_limit
+    in a loop over NF basis words at fixed (n, N, eps_list) — without
+    it each call rebuilds N^n-dim matrices for every ε on every word.
     """
     # Convergence threshold for the last two Richardson inputs.
     # 1% is permissive but consistent with the colored-Jones
@@ -243,11 +263,12 @@ def j_N_at_root_via_limit(basis_word, n, N,
     # downstream numpy usage.
     root = complex(mpmath.exp(2j * mpmath.pi / N))
     vals = []
-    # Precompute the R-matrix position embeddings ONCE per q_eps value;
-    # caches inside j_N_qtr would otherwise repeat for every basis word.
     for eps in eps_list:
         q_eps = root * cmath.exp(1j * eps)
-        r_cache = build_r_position_cache(n, N, q_eps)
+        if eps_caches is not None and eps in eps_caches:
+            r_cache = eps_caches[eps]
+        else:
+            r_cache = build_r_position_cache(n, N, q_eps)
         v = j_N_qtr(basis_word, n, N, q_eps, r_position_cache=r_cache)
         vals.append(v)
     if any(cmath.isnan(v) for v in vals):
@@ -323,12 +344,18 @@ def main() -> int:
         J_at_root = 0j
         root = cmath.exp(2j * cmath.pi / N)
         fail = 0
+        # Precompute r-position caches once per ε for every q_eps; reused
+        # across all NF basis words to avoid N^n-dim cache rebuilds.
+        eps_list = (1e-4, 1e-5, 1e-6, 1e-7)
+        eps_caches = build_eps_caches(N_STRANDS, N, eps_list)
         for (basis, coeff) in nf.terms.items():
             coeff_fn = sp.lambdify(q_sym, coeff, modules=["numpy", "cmath"])
             # Also evaluate coeff at root (no limit needed — coeff is
             # a polynomial)
             c_val_root = complex(coeff_fn(root))
-            j_val = j_N_at_root_via_limit(basis, N_STRANDS, N)
+            j_val = j_N_at_root_via_limit(basis, N_STRANDS, N,
+                                            eps_list=eps_list,
+                                            eps_caches=eps_caches)
             if np.isnan(j_val.real):
                 fail += 1
                 continue

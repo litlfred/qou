@@ -102,7 +102,7 @@ Compared to dimensionless $q_0$-combinations (mpmath 50-digit):
 | $\hbar_q^2$ | 0.00981719 | off by 9% |
 | $(q_0 - 1)^2$ | 0.01209535 | off by 12% |
 | $H_A^2 / 2$ | 0.02185311 | off factor 2 |
-| $q_0 \cdot \hbar_q^2 = (q_0-1)^2 / q_0$ | **0.01089687** | matches $1-R$ to **0.1% relative** |
+| $q_0 \cdot \hbar_q^2 = (q_0-1)^2 / q_0$ | **0.01089687** | matches $1-R$ to **1.03% relative** |
 
 And the implied correction $1/(1 + q_0 \hbar_q^2)$ applied to
 $B_{\text{pred}}$ collapses the residual to **+6,167 ppb** (three

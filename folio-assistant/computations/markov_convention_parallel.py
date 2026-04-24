@@ -103,17 +103,21 @@ def main():
     hbar_q_sq = ((q - 1) / q) ** 2
     two_q = q + 1 / q
 
-    # Two z values
+    # Two z values.  z_Planck is the trace ratio tr_Planck(T_1)/tr_Planck(1)
+    # under Plancherel weights w_λ = d_q²/[n]_q!; verified
+    # numerically in markov_weight_verification.py to equal H_A/2,
+    # not H_A/[2]_q.
     z_JO = 1.0 / (math.sqrt(q) + 1.0 / math.sqrt(q))        # 0.4993
-    z_Planck = h / two_q                                      # 0.1045
+    z_Planck = h / 2.0                                      # 0.1045
 
     print("=" * 100)
     print("MARKOV-CONVENTION PARALLEL EVALUATION")
     print("=" * 100)
     print(f"  q_0 = {q:.10f},  [2]_q = {two_q:.6f},  H_A = {h:.6f}")
     print(f"  z_JO (Jones-Ocneanu)     = 1/(q^½+q^-½)  = {z_JO:.10f}")
-    print(f"  z_Planck (canonical)     = H_A / [2]_q   = {z_Planck:.10f}")
-    print(f"  ratio z_JO / z_Planck    = {z_JO/z_Planck:.4f} ≈ 1/H_A = {1/h:.4f}")
+    print(f"  z_Planck (canonical)     = H_A / 2       = {z_Planck:.10f}")
+    print(f"  ratio z_JO / z_Planck    = {z_JO/z_Planck:.4f} "
+          f"≈ 2/H_A/[2]_q ratio of conventions")
     print()
 
     # Compute V̂_i for proton/neutron under each convention

@@ -79,6 +79,16 @@ def q_bracket_fact(n: int) -> mp.mpf:
 BRACKET_2 = q_bracket(2)
 BRACKET_3 = q_bracket(3)
 BRACKET_3_FACT = q_bracket_fact(3)
+# Plancherel weights w_λ = d_q(λ)² / [n]_q! for n = 3.  For n = 3 the
+# partitions are (3), (2,1), (1,1,1) with d_q² = 1, [2]_q², 1 and
+# Σ w_λ = (2 + [2]_q²) / [3]_q!.  At q = 1 this sums to 1 (Plancherel
+# normalisation on S_n); at q ≠ 1 it differs by a factor ≈ 0.988 at
+# q₀.  These are the UNNORMALISED Plancherel weights: the mass formula
+# defines the derivation up to a constant α · ln(Σ w_λ) ≈ −0.046 MeV
+# at q₀, which is absorbed into the α calibration rather than being
+# treated as a physical binding-energy contribution.  See
+# markov_weight_verification.py for the full-atom numerical comparison
+# against the Jones-Ocneanu Markov normalisation z = 1/(q^{1/2}+q^{-1/2}).
 W_SYM = mp.mpf(1) / BRACKET_3_FACT
 W_ALT = W_SYM
 W_STD = BRACKET_2**2 / BRACKET_3_FACT
@@ -150,8 +160,12 @@ def binding_full(ordering: list[str]) -> dict:
         d = v_hat_full_for_gen(ordering, gen)
         gen_data.append(d)
         if d["has_crossing"]:
-            phi_full += mp.log(mp.fabs(mp.mpf(d["V_full"])))
-            phi_std += mp.log(mp.fabs(mp.mpf(d["V_std"])))
+            v_f = mp.fabs(mp.mpf(d["V_full"]))
+            if v_f > mp.mpf("1e-100"):
+                phi_full += mp.log(v_f)
+            v_s = mp.fabs(mp.mpf(d["V_std"]))
+            if v_s > mp.mpf("1e-100"):
+                phi_std += mp.log(v_s)
     B_full = -ALPHA_MP * phi_full
     B_std = -ALPHA_MP * phi_std
     return {

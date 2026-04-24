@@ -115,8 +115,14 @@ def ln_abs_phi_q(v: float, *,
                     f"ln|Φ_q| diverges at v ≈ q^k (x = {x}, k = {k})")
             if pole_mode == "sign":
                 return float("inf")
-            # principal: skip this factor
-            continue
+            # principal: clamp |1 − q^{−k}v| at pole_tol rather than
+            # dropping the factor.  Dropping was equivalent to clamping
+            # at 1, which produced a discontinuity of −ln(pole_tol) ≈
+            # +32 as v crosses the near-pole shell.  Clamping at the
+            # tolerance itself produces a continuous result that
+            # diverges as pole_tol → 0, which is the correct behaviour
+            # for the genuine singularity.
+            abs_diff = pole_tol
         term = math.log(abs_diff)
         total -= term
         # Converge: once |x| « 1, |ln|1−x|| ≈ |x| falls to zero.

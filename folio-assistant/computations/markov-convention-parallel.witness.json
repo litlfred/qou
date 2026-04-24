@@ -1,15 +1,15 @@
 {
   "engine": "tower-with-configurable-z",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-24T12:12:21.294953+00:00",
-  "commitSha": "3485a458606ce96ed2f52e7ecafa95889b79d3a8",
+  "computedAt": "2026-04-24T13:16:15.234443+00:00",
+  "commitSha": "48ff4dcbfd468587804cf607a455992a2e0f0a31",
   "assertions": [],
   "allPassed": true,
   "durationMs": 4,
   "computation": "markov-convention-parallel",
   "scriptFile": "markov_convention_parallel.py",
-  "scriptHash": "f4b779f3a0d1",
-  "scriptCommitSha": "",
+  "scriptHash": "6159ee1d1c3c",
+  "scriptCommitSha": "6c121134b8e267eb6b16c3efa6a6ee6b7d62ba26",
   "description": "Parallel evaluation of Markov-weight conventions 1 and 2 on the mass-endomorphism-tower for proton/neutron.",
   "data": {
     "params": {
@@ -18,7 +18,7 @@
       "two_q": 2.010896869118482,
       "hbar_q_sq": 0.009817188513478667,
       "z_JO": 0.4993203340335982,
-      "z_Planck": 0.10396372146201877
+      "z_Planck": 0.10453016099493972
     },
     "level_0": {
       "z_JO": {
@@ -34,16 +34,16 @@
         "m_n_err_pct": -55.36815946905864
       },
       "z_Planck": {
-        "V_e": 0.31776354492097025,
-        "V0_p": 0.6709301900220972,
-        "V1_p": 1.0552309108545856,
-        "V0_n": 0.5512220221115237,
-        "V1_n": 1.0885294804474486,
-        "m_e_Hecke": 23.47037765478621,
-        "m_p_MeV": 115700.1325494959,
-        "m_n_MeV": 609895.4267203935,
-        "m_p_err_pct": 12231.191986792428,
-        "m_n_err_pct": 64812.50246128135
+        "V_e": 0.31815910101293454,
+        "V0_p": 0.6713859088665596,
+        "V1_p": 1.0551103311661434,
+        "V0_n": 0.5516561227194695,
+        "V1_n": 1.0883675532170307,
+        "m_e_Hecke": 23.570076632058353,
+        "m_p_MeV": 114670.25166901309,
+        "m_n_MeV": 600534.4817637177,
+        "m_p_err_pct": 12121.42842316533,
+        "m_n_err_pct": 63816.19664241724
       }
     },
     "corrected_geometric_series": {
@@ -55,10 +55,10 @@
         "m_n_err_pct": -56.232195182244425
       },
       "z_Planck": {
-        "m_p_MeV": 113460.27317211285,
-        "m_n_MeV": 598088.3530320525,
-        "m_p_err_pct": 11992.470255042363,
-        "m_n_err_pct": 63555.849818423725
+        "m_p_MeV": 112450.32993817293,
+        "m_n_MeV": 588908.6282683045,
+        "m_p_err_pct": 11884.831623702443,
+        "m_n_err_pct": 62578.83166053244
       }
     }
   }
