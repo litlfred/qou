@@ -97,6 +97,29 @@ def q_pochhammer(a, n):
     return p
 
 
+def phi_q_product(v, max_iter: int = 2000):
+    """Φ_q(v) = Π_{k=1}^∞ (1 − q^{-k} v)^{-1} — the product form.
+
+    Converges for any |v| < q (not just |v| < 1), so serves as a
+    fallback when the Euler series phi_q_series diverges.  At q = q_0
+    ≈ 1.11 the convergence radius is |v| < 1.11.
+    """
+    v_mp = mpmath.mpf(v) if isinstance(v, (int, float, mpmath.mpf)) else mpmath.mpc(v)
+    if abs(v_mp) >= Q0_MP:
+        return mpmath.mpc('inf') if abs(v_mp) >= Q0_MP else mpmath.mpf(0)
+    prod = mpmath.mpf(1) if abs(v_mp) < 1 else mpmath.mpc(1, 0)
+    coef = Q0_INV
+    for k in range(1, max_iter + 1):
+        term = mpmath.mpf(1) - coef * v_mp
+        if abs(term) < mpmath.mpf('1e-300'):
+            return mpmath.mpc('inf')
+        prod /= term
+        if abs(coef * v_mp) < mpmath.mpf('1e-60'):
+            break
+        coef *= Q0_INV
+    return prod
+
+
 def phi_q_series(v, n_max: int = 50):
     """Φ_q(v) = Σ_{n=0}^{n_max} v^n / (q^{-1}; q^{-1})_n.
 
@@ -106,8 +129,15 @@ def phi_q_series(v, n_max: int = 50):
 
     Uses iterative update for the Pochhammer symbol and for v^n, so
     the whole series is O(n_max) arithmetic operations (not O(n_max²)).
+
+    **Fallback for |v| ≥ 1**: the Euler-series form diverges (terms
+    |v|^n grow before Pochhammer damps them).  We delegate to the
+    product form phi_q_product which converges for all |v| < q.
     """
-    total = mpmath.mpf(0) if abs(v) < 1 else mpmath.mpc(0, 0)
+    v_abs = abs(v)
+    if v_abs >= 1:
+        return phi_q_product(v)
+    total = mpmath.mpf(0)
     v_mp = mpmath.mpf(v) if isinstance(v, (int, float)) else mpmath.mpc(v)
     # Iterative (a; q)_n = (a; q)_{n-1} · (1 − a · q^{n-1})
     # with a = Q0_INV, q = Q0_INV.

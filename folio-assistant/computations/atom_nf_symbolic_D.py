@@ -165,10 +165,20 @@ def main() -> int:
 
     # Compute Markov trace (symbolically) — this is the Jones polynomial
     # representative (up to framing convention).
+    #
+    # NOTE: for D (n=6, 32 NF terms after Gröbner-Shirshov reduction),
+    # the fully-symbolic tr_M_element over all partitions of 6 is
+    # computationally expensive (≫5 min on a standard core).  Set
+    # SKIP_TRACE=1 to produce a witness with the NF only and leave
+    # markov_trace=0.  For arbitrary-q NUMERIC evaluation of the same
+    # trace (much faster), see atom_jones_vs_knots_D.py which uses
+    # Plancherel-weighted seminormal traces at fixed q_val.
     import os
     SKIP_TRACE = os.environ.get("SKIP_TRACE", "0") == "1"
     if SKIP_TRACE:
         print("\n  [SKIP_TRACE=1; skipping symbolic Markov trace]")
+        print("  (Numeric tr_M(D) at various q available in")
+        print("   atom-jones-vs-knots-D.witness.json.)")
         tr_simp = sp.Integer(0)
         tr_val = 0j
     else:
