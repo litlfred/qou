@@ -159,6 +159,48 @@ $\langle c\rangle_\beta$.  Possible refinements:*
    Hoefsmit content, which may differ from the classical content
    sum $c(\lambda)$.*
 
+**Empirical observation: multiplicative per-pn-crossing pattern.**
+
+*Paper's chirality assignments factor consistently as a product
+$(1 \pm h)$ over inter-nucleon crossings:*
+
+| isotope | pn crossings | factor |
+|---|---|---|
+| D | 1 positive | $(1 + h)$ |
+| T, $^3$He | 1 positive + 1 negative (amphichiral) | $(1 + h)(1 - h) = 1 - h^2$ |
+| $^4$He | 2 positive + 2 negative (double amphichiral) | $(1 + h)^2 (1 - h)^2 = (1 - h^2)^2$ |
+
+*This **matches paper's values exactly** under the rule*
+
+$$
+  a_K \;=\; \prod_{\text{pn crossings } c \in \beta_K}
+    (1 + \mathrm{sign}(c) \cdot h).
+$$
+
+*The observation is empirical: it reproduces all three paper
+assignments from a simple multiplicative rule.  A rigorous
+derivation of **why** each pn crossing contributes $(1 \pm h)$ — and
+not other $h$-polynomials — remains open.  Plausible categorical
+origins:*
+
+1. *$(1 + h)$ is the Hecke-eigenvalue spread for $\sigma$ in a
+   specific normalisation: $(q) - (-q^{-1}) \cdot q^{-1}$ or similar.*
+2. *It is the **Markov-trace ratio** $\mathrm{tr}_M(\sigma) / \mathrm{tr}_M(1)$
+   in a specific convention differing from the standard $z$.*
+3. *It is the **spin-1/2 braiding eigenvalue** $R_{11}$ in $U_q(\mathfrak{sl}_2)$
+   on $V_1 \otimes V_1$ — the "up-up" braid eigenvalue on the
+   symmetric component.  This is $(1 + h)$ in a specific
+   normalisation.*
+
+*Option 3 is the most structurally natural.  The $R$-matrix of
+$U_q(\mathfrak{sl}_2)$ acts on $V_1 \otimes V_1 = V_2 \oplus V_0$
+with eigenvalues $q$ (on $V_2$ symmetric) and $-q^{-1}$ (on $V_0$
+antisymmetric).  For a pn crossing (one positive, one negative
+strand mixing), the "effective" braiding eigenvalue weighted by
+the pn-specific Wedderburn component would give $(1 + h)$.  A
+detailed derivation requires specifying the pn coupling in
+Schur–Weyl terms.*
+
 **Status: refined, not closed.**
 *The writhe-$h$ linearisation **concept** is correct — chirality
 factor is structurally first-order in $h$ for chiral knots,

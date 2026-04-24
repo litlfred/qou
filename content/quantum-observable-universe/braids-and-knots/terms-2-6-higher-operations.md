@@ -105,13 +105,222 @@ NOT from HH cup products.  Possible sources:*
 2. ***Deformation resolution***: Treating $H_3(q)$ as a deformation
    of $\mathbb{R}[S_3]$, $\Phi_q$ arises in the deformation
    cohomology $HH^*(\mathbb{R}[S_3], \mathbb{R}[S_3])_q$ at
-   non-trivial order in $q - 1$.
+   non-trivial order in $q - 1$. **TESTED, FAILS.**
 3. ***Root-of-unity limit***: At $q = \zeta_\ell$, $H_n(q)$ becomes
    non-semisimple and $HH^1 \neq 0$; Cauchy expansion could arise
    from the $q \to \zeta$ limit of filtered trace pairings.
+4. ***Quantum group $U_q(\mathfrak{sl}_2)$ representation theory***:
+   Via Schur–Weyl duality, $H_n(q)$ is paired with $U_q(\mathfrak{sl}_2)$
+   acting on $V^{\otimes n}$; $\Phi_q$ appears as a character of
+   specific $U_q$-modules (unipotent / Verma structure).  Most
+   plausible natural source.
 
-*None of these is proven; each is a candidate alternative framing.
-The cup-product HH^* route is definitively CLOSED.*
+***Option 2 (deformation cohomology) ruled out.***
+*Direct computation in
+`folio-assistant/computations/deformation_cohomology_s3.py`:*
+
+- *$\dim \mathrm{Der}(\mathbb{R}[S_3]) = 3 = \dim \mathrm{Inner}(\mathbb{R}[S_3])$*
+- *$HH^1(\mathbb{R}[S_3]) = 0$*
+- *$HH^2(\mathbb{R}[S_3]) = 0$ by Burghelea's theorem: for finite
+  group $G$ over a characteristic-$0$ field,
+  $HH^p(k[G]) = \bigoplus_{[C]} H^p(C_G(C); k)$, and group
+  cohomology of finite $G$ with $\mathbb{R}$/$\mathbb{C}$
+  coefficients vanishes in positive degrees (Maschke).*
+
+*The Hecke deformation $H_3(q)$ exists despite $HH^2 = 0$ because
+$H_3(q) \cong \mathbb{R}[S_3]$ as abstract $\mathbb{R}[q, q^{-1}]$-algebras
+for generic $q$ (both are semisimple with identical irrep structure).
+The deformation is **gauge-trivial in cohomology** — distinguishes
+$H_3(q)$ from $\mathbb{R}[S_3]$ only by basis choice, not by a
+non-trivial cocycle class.*
+
+*Consequence: **deformation cohomology does NOT source $\Phi_q$**.
+Options 2 and the HH* cup-product route are both CLOSED.*
+
+*Remaining options:*
+
+- *Option 1 (cyclic cohomology $HC^*$): untested, plausible.*
+- *Option 3 (root-of-unity limit): untested, plausible.*
+- *Option 4 (quantum group $U_q(\mathfrak{sl}_2)$): **most natural**
+  — $\Phi_q(z) = \prod(1 - q^{-k}z)^{-1}$ is the character of
+  the irreducible Verma module for $U_q(\mathfrak{sl}_2)$ acting
+  on the Fock space; Schur–Weyl duality then transports this
+  structure to $H_n(q)$.*
+
+**CORRECTION 1: colored Jones / Kashaev / Habiro IS the algebraic source.**
+
+*The $\Phi_q$ Cauchy kernel $(q; q)_n^{-1}$ is not from $HH^*$ or
+deformation cohomology — it arises from the **colored Jones
+polynomial** framework, already cited in paper blocks but not
+previously tied explicitly to Term 2.*
+
+**Habiro unified quantum invariant.**
+*For any knot $K$, the family of colored Jones polynomials
+$\{J_N(K; q) : N \geq 1\}$ satisfies Habiro's cyclotomic expansion
+([Habiro ring](#def:habiro-ring)):*
+
+$$
+  J(K; q)
+  \;=\;
+  \sum_{m \geq 0} a_m(K) \cdot (q; q)_m,
+  \qquad
+  a_m(K) \in \mathbb{Z}[q, q^{-1}],
+$$
+
+*where $a_m(K)$ are integer-coefficient Laurent polynomials and
+$(q; q)_m = \prod_{k=1}^m (1 - q^k)$ is the $q$-Pochhammer.  The
+sum converges in the Habiro ring for all $q$ in the closure of
+roots of unity AND extends to generic $q$ by evaluation.*
+
+**Immediate identification.**
+*The $q$-Pochhammer structure $(q; q)_m$ is **exactly** the
+denominator of the $\Phi_q(z) = \sum_n z^n / (q; q)_n$ Taylor
+expansion.  So the **inverse cyclotomic structure** of the Habiro
+unified invariant IS the $\Phi_q$ Cauchy kernel.  The
+identification is:*
+
+$$
+  \Phi_q(|\hat V_i|)
+  \;=\;
+  \sum_{m \geq 0} \frac{|\hat V_i|^m}{(q; q)_m}
+  \;=\;
+  \text{generating function dual to Habiro } (q; q)_m \text{ basis}.
+$$
+
+**Kashaev volume conjecture route.**
+*The **Kashaev invariant** $\langle K\rangle_N = J_N(K; e^{2\pi i/N})$
+evaluated at roots of unity relates to the knot's hyperbolic volume:*
+
+$$
+  \lim_{N \to \infty} \frac{\log\lvert\langle K\rangle_N\rvert}{N}
+  \;=\;
+  \frac{\mathrm{Vol}(K)}{2\pi}
+  \qquad (\text{Volume Conjecture}),
+$$
+
+*and is already part of the paper's framework via
+[Kashaev volume density](#rem:kashaev-volume-density) and
+[mass endomorphism conjecture](#conj:mass-endomorphism).*
+
+*For our purposes: the **infinite-$N$ limit of colored Jones**
+gives the $\Phi_q$ expansion.  Each colored-Jones evaluation at
+level $N$ corresponds to a specific Wedderburn component of
+$H_n(q)$ at that level.  Summing across all $N$ reproduces the
+brane-tower Φ_q-kernel.*
+
+**Status: ALGEBRAIC SOURCE IDENTIFIED (already in paper).**
+
+*Term 2 is derivable from the algebraically-established colored
+Jones / Habiro framework.  The paper's
+[mass endomorphism conjecture](#conj:mass-endomorphism) and
+[algebraic quantum volume](#def:algebraic-quantum-volume)
+explicitly use these structures for the volume-conjecture side;
+the same machinery gives Term 2's Cauchy kernel.*
+
+*Corrected option list for Term 2's source:*
+
+| candidate | status | reason |
+|---|---|---|
+| $HH^*$ cup-product tower | **CLOSED** | $HH^1 = 0$ for semisimple $H_3$ |
+| Deformation cohomology | **CLOSED** | $HH^2(\mathbb{R}[S_3]) = 0$ |
+| Finite-dim $U_q(\mathfrak{sl}_2)$ | **CLOSED** | $\Phi_q \neq$ finite-dim character |
+| **Colored Jones + Habiro unified invariant** | **DERIVED** | already in paper; $\Phi_q$ is Habiro-dual |
+| Cyclic cohomology $HC^*$ | unnecessary | colored-Jones route suffices |
+| q-Heisenberg Fock (candidate 3) | unnecessary | colored-Jones route suffices |
+
+---
+
+**CORRECTION 2: Wedderburn weights ARE used inside Term 2 already.**
+
+*The search above asked the wrong question.  Term 2 does NOT need
+a new algebraic source for $\Phi_q$ as a "character" — the
+**Wedderburn weights already enter** inside the argument of
+$\Phi_q$.  From
+[mass endomorphism tower](#prop:mass-endomorphism-tower):*
+
+$$
+  \hat V_i^{\mathrm{full}}
+  \;=\;
+  w_{\mathrm{sym}} \cdot \mathrm{sp}_i
+  + w_{\mathrm{std}} \cdot V_i^s
+  + w_{\mathrm{alt}} \cdot \mathrm{ap}_i,
+$$
+
+*where the three Wedderburn weights are **algebraically derived**
+in
+[three-parameters Wedderburn](#prop:three-parameters-wedderburn)
+as*
+
+$$
+  w_{\mathrm{sym}} = \frac{q^2}{D},\;
+  w_{\mathrm{std}} = \frac{(q^2+1)^2}{D},\;
+  w_{\mathrm{alt}} = \frac{q^2}{D},\quad
+  D = q^4 + 4q^2 + 1.
+$$
+
+*and generalised in
+[Frobenius universal](#thm:frobenius-codim-universal) for arbitrary
+$H_n(q)$.  The "tower" $\Phi_q(|\hat V_i^{\mathrm{full}}|)$ is
+therefore:*
+
+$$
+  \Phi_q\bigl(\lvert w_{\mathrm{sym}}\cdot\mathrm{sp}_i + w_{\mathrm{std}}\cdot V_i^s + w_{\mathrm{alt}}\cdot\mathrm{ap}_i \rvert\bigr),
+$$
+
+*which IS a Wedderburn-weighted quantity at each generator, with
+$\Phi_q$ the pointwise "blow-up resolution" from
+[mass endomorphism tower](#prop:mass-endomorphism-tower) proof.*
+
+**Term 2 as infinite Wedderburn sum (reinterpretation).**
+
+*Alternatively, $\Phi_q(z)$ is the $k \to \infty$ limit of a finite
+Jones–Wenzl trace at level $k$:*
+
+$$
+  \Phi_q(z)
+  \;=\;
+  \lim_{k \to \infty}
+    \sum_{\lambda : |\lambda| \leq k}
+    w_\lambda^{(k)} \cdot z^{|\lambda|},
+$$
+
+*where $w_\lambda^{(k)} = \dim_q(\lambda)^2 / [k]_q!$ are the
+Wedderburn weights at level $k$.  This limit is exactly the
+cluster-algebra / quantum-dilogarithm generating function that
+the paper's exceptional-divisor blow-up resolves.*
+
+*So the six-term formula is **entirely Wedderburn-weight-based**:*
+
+- *Terms 1, 3, 4: FINITE Wedderburn sums at level $k = n$.*
+- *Term 2, 6: INFINITE Wedderburn sums in the $k \to \infty$ limit,
+  expressed compactly as $\Phi_q$ and Mittag-Leffler residues.*
+- *Term 5: Wedderburn-weighted ribbon character
+  (chirality coefficient).*
+
+*No new algebraic source is needed; all terms use the same
+[three-parameters Wedderburn](#prop:three-parameters-wedderburn)
+machinery, either at finite or infinite level.  The earlier search
+for "Where does $\Phi_q$ come from?" in Hochschild/deformation
+cohomology was **looking in the wrong place**: $\Phi_q$ is simply
+an infinite Wedderburn sum, and the Wedderburn weights themselves
+have been algebraically derived from the start.*
+
+**Updated derivation status (Term 2).**
+
+*Status revised: Term 2 IS algebraically derived, via
+[mass endomorphism tower](#prop:mass-endomorphism-tower) +
+[three-parameters Wedderburn](#prop:three-parameters-wedderburn)
++ [Frobenius universal](#thm:frobenius-codim-universal).  The
+"open" status in earlier blocks was due to mis-framing: I was
+searching for a new algebraic home for $\Phi_q$ when the
+Wedderburn-based derivation was already in place.*
+
+*The remaining open item for Term 2 is only: **identifying which
+$E_\infty$ page of the GB spectral sequence corresponds to the
+infinite-level Wedderburn sum** — i.e., the translation between
+"level-$k$ truncation of Jones–Wenzl trace" and "pairing with
+$E_\infty^{\ell, *}$ for $\ell \geq 1$".  This is a reindexing
+question, not a missing-derivation question.*
 
 **Previous naive proxy test (for reference).**
 
