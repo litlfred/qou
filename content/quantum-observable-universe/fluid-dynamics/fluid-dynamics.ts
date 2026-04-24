@@ -107,6 +107,7 @@ export default chapter({
         "regularity-breakdown",
         "p2-critical-exponent",
         "p3-blowup-yekutieli",
+        "ns-surreal-bound",
         "p4-universality",
         "p5-counterexample",
         "q-aubin-lions",
