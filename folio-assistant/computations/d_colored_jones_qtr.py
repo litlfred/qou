@@ -115,13 +115,11 @@ def r_matrix_N(N: int, q: complex) -> np.ndarray:
 
 
 def r_at_position(R: np.ndarray, N: int, pos: int, n: int) -> np.ndarray:
-    I_N = np.eye(N, dtype=complex)
-    left = None
-    for _ in range(pos):
-        left = I_N if left is None else np.kron(left, I_N)
-    right = None
-    for _ in range(n - pos - 2):
-        right = I_N if right is None else np.kron(right, I_N)
+    # Build identities directly via np.eye on the needed dimensions,
+    # avoiding repeated np.kron calls that rebuild I ⊗ I ⊗ ...
+    left = np.eye(N ** pos, dtype=complex) if pos > 0 else None
+    right_dim = n - pos - 2
+    right = np.eye(N ** right_dim, dtype=complex) if right_dim > 0 else None
     if left is None and right is None:
         return R
     if left is None:
