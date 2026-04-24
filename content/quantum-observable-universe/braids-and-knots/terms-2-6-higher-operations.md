@@ -49,7 +49,71 @@ $z \cdot q^{-(k-1)} \cdot (\text{weight})$ by the recursive
 Hecke relation.  Summing over $k$ with the $(q;q)_k$ normalisation
 gives the full $\Phi_q$ kernel.*
 
-**Status: naive proxy test FAILS; true cup-product machinery needed.**
+**DECISIVE NEGATIVE RESULT: $HH^1(H_3(q)) = 0$.**
+
+*Direct symbolic computation in `hochschild_h3.py`:*
+
+- *dim Der$(H_3(q)) = 3$ (total derivations, linear-algebra nullspace
+  of $216$ constraint equations on $36$ matrix entries).*
+- *dim Inner$(H_3(q)) = 3$ (inner derivations $[x, \cdot]$ span).*
+- ***$HH^1 = \text{Der}/\text{Inner} = 3 - 3 = \mathbf{0}$***
+  at generic $q$.*
+
+*This is consistent with $H_3(q)$ being **semisimple** over
+$\mathbb{R}[q, q^{-1}]$ away from roots of unity: semisimple algebras
+have $HH^1 = 0$ by Wedderburn (every derivation of a matrix algebra
+is inner).*
+
+*Consequence: **the cup-product tower hypothesis for Term 2 is null**.
+Since $HH^1(H_3(q)) = 0$, there is no non-trivial class $[\sigma_0]$
+to take cup products of.  The Cauchy kernel $\Phi_q$ in Term 2
+**does not** come from Hochschild cup products on $H_3(q)$.*
+
+**Corrected framework.**
+
+*The $E_\infty$ pages of the GB-filtration spectral sequence
+([GB spectral sequence](#prop:gb-spectral-sequence)) are the
+**graded pieces** of the confinement filtration on $H_3(q)$ itself:*
+
+$$
+  E_\infty^{p, *} \;=\; J^p(q) / J^{p+1}(q)
+  \quad (\text{graded pieces, NOT } HH^p(H_3(q))).
+$$
+
+*These are distinct from Hochschild cohomology classes.  My earlier
+claim that Terms 2, 3 were "pages paired with cup product" confused
+two different homological objects:*
+
+1. ***Spectral sequence on filtered algebra*** (what we have):
+   pages $E_r^{p, *}$ are graded pieces $\mathrm{gr}^p H_n(q)$;
+   pairing with $\mathrm{tr}_M$ is direct projection.
+2. ***Hochschild cohomology $HH^*$*** (what I conflated):
+   classes are outer-derivation cocycles; cup product is on
+   cochains; $HH^1(H_3(q)) = 0$ generically so no tower exists.
+
+**Where Term 2's Cauchy kernel actually comes from.**
+
+*The $\Phi_q$ Cauchy expansion $\Phi_q(z) = \sum z^k/(q;q)_k$ is
+NOT from HH cup products.  Possible sources:*
+
+1. ***Cyclic cohomology $HC^*(H_3(q))$*** (Connes, Tsygan):
+   Markov trace is a cyclic cocycle, so it lives in $HC^0$; the
+   S-operator $HC^0 \to HC^2$ creates higher cyclic classes that
+   DO have non-trivial structure even when $HH^*$ is trivial.
+   Cauchy kernel may arise from the periodicity $\mathrm{Ph}(\mathrm{tr}_M)$
+   in the cyclic complex.
+2. ***Deformation resolution***: Treating $H_3(q)$ as a deformation
+   of $\mathbb{R}[S_3]$, $\Phi_q$ arises in the deformation
+   cohomology $HH^*(\mathbb{R}[S_3], \mathbb{R}[S_3])_q$ at
+   non-trivial order in $q - 1$.
+3. ***Root-of-unity limit***: At $q = \zeta_\ell$, $H_n(q)$ becomes
+   non-semisimple and $HH^1 \neq 0$; Cauchy expansion could arise
+   from the $q \to \zeta$ limit of filtered trace pairings.
+
+*None of these is proven; each is a candidate alternative framing.
+The cup-product HH^* route is definitively CLOSED.*
+
+**Previous naive proxy test (for reference).**
 
 *Script `cup_product_tower_probe.py` tested the simplest proxy:
 compute $\mathrm{tr}_M(\sigma_0^k)$ (algebra power) symbolically in
