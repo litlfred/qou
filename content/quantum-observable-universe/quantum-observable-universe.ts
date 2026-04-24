@@ -34,6 +34,11 @@ export default paper({
     frakI: { tex: "\\mathfrak{I}",  unicode: "ℑ" },
     frakK: { tex: "\\mathfrak{K}",  unicode: "𝔎" },
     frakP: { tex: "\\mathfrak{P}",  unicode: "𝔓" },
+    // ω-adic order (leading exponent in Conway normal form).
+    // Direct analogue of p-adic ord_p; used in the surreal-numbers
+    // appendix as the surreal replacement for classical Big-O.
+    // See: app:surreals/rem:conway-normal-form.
+    ordw: { tex: "\\mathrm{ord}_{\\omega}",  unicode: "ord_ω" },
   },
   chapters: [
     // ── Part I: Foundations ──────────────────────────────────────────
@@ -64,6 +69,7 @@ export default paper({
     chapterRef({ dir: "appendix-knot-operations" }),
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-atomic-mass-calculations" }),
+    chapterRef({ dir: "appendix-surreals" }),
     chapterRef({ dir: "index-of-definitions" }),
   ],
 });

@@ -15,6 +15,8 @@ export default proposition({
     "prop:topological-mass-formula",
     "prop:geom-yekutieli-alignment",
     "prop:figure-eight-bw-coefficients",
+    "rem:conway-normal-form",
+    "rem:body-asymptotics-catalog",
   ],
   cites: ["hoefsmit1974", "wenzl1988"],
   tags: [

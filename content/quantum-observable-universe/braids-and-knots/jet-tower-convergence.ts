@@ -13,6 +13,10 @@ export default proposition({
     "rem:mass-endomorphism-jet-tower",
     "def:recursive-brane-tower",
     "prop:confinement-sdp",
+    "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
+    "def:surreal-blowup-calculus",
+    "rem:body-asymptotics-catalog",
   ],
   cites: ["leitner2026"],
 });
