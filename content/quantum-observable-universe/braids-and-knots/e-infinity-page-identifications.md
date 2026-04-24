@@ -47,16 +47,16 @@ $1$-dimensional, spanned by the class of the identity $\mathbf{1}$.*
 
 *Higher differentials $d_r$ for $r \geq 1$ act trivially on
 $E_r^{0, *}$ (there is nothing to kill), so $E_\infty^{0, *}
-\cong E_0^{0, *} = R\cdot\{[\mathbf{1}]\}$ for the ground ring
-$R \in \{\mathbb{Z}[q,q^{-1}], \mathbb{Q}(q), \mathbb{R}\}$ (cf.
-[GB spectral sequence](#prop:gb-spectral-sequence) on choice of
-ground ring — the construction works over any commutative ring
-containing $q^{\pm 1}$).*
+\cong E_0^{0, *} = R\cdot\{[\mathbf{1}]\}$ for the paper's categorical
+base ring $R$ (the fibre-functor value ring;
+[GB spectral sequence](#prop:gb-spectral-sequence)).*
 
 *Pairing with $\mathrm{tr}_M$ gives the image of $T_w$ under the
-projection $H_n(q) \to H_n(q)/J^1(q) \to R$ (the ground ring of
-interest, e.g., $\mathbb{R}$ at $q = q_0$) evaluated
-by $\mathrm{tr}_M$.  This projection extracts the "descended"
+projection $H_n(q) \to H_n(q)/J^1(q) \to R$ (paper's categorical
+base ring) evaluated by $\mathrm{tr}_M$.  The archimedean
+calibration $\tau\colon R \to \mathbb{R}$
+([categorical mass, Markov](#prop:categorical-mass-markov))
+converts this to MeV at the final step.  This projection extracts the "descended"
 component — the part of $T_w$ that reduces to the identity under
 Gröbner–Shirshov normalisation.  For atomic braids this is
 exactly the descended Markov trace:*

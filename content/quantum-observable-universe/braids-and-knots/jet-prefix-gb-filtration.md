@@ -74,17 +74,44 @@ $J^\ell/J^{\ell+1}$ is itself a semisimple $H_3$-bimodule.*
 3. *Product $\prod_\ell a_\ell = 1 + $ (corrections from higher
    strata) — matches the "near 1" shape expected.*
 
-**Status: candidate, not verified.**
-*This proposition proposes the GB-filtration indexed prefix as the
-**algebraically-natural** candidate to replace the three failed
-geometric conventions.  A computational verification requires
-implementing the symbol map $\sigma_\ell$ and the graded Markov
-trace $\mathrm{tr}_M^{[\ell]}$ numerically.  This is significantly
-heavier than the upstream attempts (needs filtration-level
-projection on each atomic braid word at each $k$).  The proposition
-is a **research direction**, not a proof; its value is in flagging
-the geometric-cutoff conventions as structurally wrong and
-pointing to the algebraic alternative.*
+**Status: candidate TESTED (height-based heuristic), FAILS.**
+
+*Script `gb_prefix_probe.py` implements a first-pass version
+using the heuristic filtration level $\ell(\lambda) = \mathrm{len}(\lambda) - 1$
+(diagram height minus one) to group partitions.  Results:*
+
+| isotope | $\prod_k a_k$ (free) | $\prod_k a_k$ (atom) |
+|---|---|---|
+| $\mathfrak{p}$ | $+0.924$ | — |
+| $\mathfrak{n}$ | $-0.647$ | — |
+| D | $+0.015$ | $-3.9 \times 10^{-4}$ |
+| T | $-2 \times 10^{-6}$ | $+1.5 \times 10^{-11}$ |
+| ³He | $-7 \times 10^{-7}$ | $-1.8 \times 10^{-11}$ |
+
+*Products collapse rapidly with $A$, have arbitrary signs, and
+differ from the expected "correction near 1" shape.  This
+heuristic filtration level does not reproduce Term 6.*
+
+*Four candidate prefix conventions have now been tested (three
+upstream + this one), all fail.  This is **structural evidence**
+that the jet-level prefix formula — as currently stated in the
+paper — is either wrong or requires a different filtration
+definition entirely.  Possibilities:*
+
+1. *The filtration index must use the **true confinement-level**
+   $\ell(K, q)$ (energy-sorted $J^\bullet$), not a combinatorial
+   proxy.  Implementing this requires solving the LP at each
+   $k$, a substantially heavier computation.*
+2. *The prefix formula should use **restriction** $\mathrm{Res}^{H_k}_{H_3}$
+   in a different basis (not classical dim but $\dim_q$).*
+3. *Term 6 may not be a multiplicative prefix at all, but an
+   additive correction in the spectral-sequence
+   ([$E_\infty$ page identifications](#prop:e-infinity-page-identifications))
+   from $E_\infty^{\ell \geq 3, *}$ pages directly.*
+
+*The "research direction" label on this proposition therefore
+upgrades: the prefix formula requires **structural reformulation**,
+not just better implementation.*
 
 **Relation to existing blocks.**
 

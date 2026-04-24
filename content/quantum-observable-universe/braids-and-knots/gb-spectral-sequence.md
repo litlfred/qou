@@ -80,24 +80,31 @@ $$
   \mathrm{Hom}_R\bigl(H_n(q)^{\otimes k},\ H_n(q)\bigr),
 $$
 
-*where the ground ring is chosen depending on context:*
+*where the ground ring is the paper's **categorical base ring $R$** —
+the target of the fibre functor
+$\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$
+([Tannaka–Krein reconstruction](#prop:tannaka-krein-reconstruction)).
+$R$ is the commutative ring in which Markov-trace values live
+before the archimedean calibration $\tau \colon R \to \mathbb{R}$
+([categorical mass, Markov](#prop:categorical-mass-markov)).*
 
-- *$R = \mathbb{Z}[q, q^{-1}]$ for the **generic Hecke algebra**
-  (integral form — natural for Gröbner–Shirshov and Wedderburn).*
-- *$R = \mathbb{Q}(q)$ for rational-function evaluations
-  (including $q = q_0$).*
-- *$R = \mathbb{R}$ at $q = q_0 \approx 1.11$ for the
-  archimedean mass values (final numeric output).*
-- *$R = \mathbb{C}$ only when taking **residues at roots of
-  unity** $\zeta_n = e^{2\pi i/n}$ off the real axis
-  ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+*Under different realisations
+([knot operator energy](#def:knot-operator-energy)):*
 
-*The derivation below works over any commutative ring $R$; complex
-numbers are **not required** for $d \circ d = 0$ or the spectral-
-sequence construction.  The choice of $R$ reflects which
-specialisation is of interest: generic structure
-($\mathbb{Z}[q, q^{-1}]$), numerical value ($\mathbb{R}$), or
-residue extraction ($\mathbb{C}$).*
+- *Archimedean: $R$ contains $\mathbb{R}[q, q^{-1}]$, evaluating
+  at $q = q_0 \in \mathbb{R}$.*
+- *$p$-adic: $R$ contains $\mathbb{Q}_p[q, q^{-1}]$.*
+- *Finite-field: $R$ contains $\mathbb{F}_p[q, q^{-1}]$.*
+
+*The spectral-sequence construction works over any such $R$; the
+physics application uses the archimedean realisation $R$ containing
+$\mathbb{R}[q, q^{-1}]$, but the **categorical** derivation is
+ring-agnostic.  Complex numbers are **not required** for
+$d \circ d = 0$ or for the spectral-sequence construction; they
+appear only as a derived embedding
+$R \hookrightarrow \mathbb{C}$ when residues at roots of unity
+are extracted
+([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
 
 *equipped with the standard Hochschild differential*
 
@@ -111,9 +118,8 @@ $$
 
 *$d \circ d = 0$ is a classical theorem
 (Cartan–Eilenberg 1956) for any associative $R$-algebra over any
-commutative ring $R$; it holds for $H_n(q)$ over
-$\mathbb{Z}[q, q^{-1}]$, $\mathbb{Q}(q)$, $\mathbb{R}$, or
-$\mathbb{C}$ verbatim.  The Markov trace $\mathrm{tr}_M$ is a
+commutative ring $R$; it holds verbatim for $H_n(q)$ over the
+paper's categorical base ring $R$ (fibre-functor value ring).  The Markov trace $\mathrm{tr}_M$ is a
 **cyclic 0-cochain** (a map $H_n(q) \to \mathbb{C}$ satisfying
 $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$), hence is $d$-closed at
 degree $0$.*
