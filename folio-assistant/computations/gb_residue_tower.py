@@ -2,9 +2,35 @@
 """
 GB residue tower: Mittag-Leffler residue sum at roots of unity.
 
-Implements the spectral sum from prop:gb-residue-spectral-sum
-(content/quantum-observable-universe/braids-and-knots/
-gb-residue-spectral-sum.md):
+⚠ DEPRECATED / SUPERSEDED — kept for historical reference.  The
+numerical contour approach has structural issues that make it
+unsuitable for sub-1% binding precision.  Use instead:
+
+    schur_weyl_symbolic.py       (exact global H_{3A} sum, sympy)
+    habiro_residue_symbolic.py   (exact residues via Φ_n, sympy)
+
+See prop:full-pole-structure-mass-trace
+(content/braids-and-knots/full-pole-structure-mass-trace.md) for
+the algebraic picture.  This script's truncation to the closest
+pole ζ_1 loses the higher-order ζ_n interference regime.
+
+Numerical issues (from the superseding propositions):
+
+  1. ε-accuracy ceiling.  Res[f;ζ] ≈ (ε/N) Σ f(ζ+ε·e^{iθ_k})·e^{iθ_k}
+     has O(ε²) error.  Sub-% binding forces ε < 10⁻³; hook-poles
+     force ε < 1/(3A) — explodes per atom.
+  2. Dense roots of unity near q₀ = 1.11: infinitely many ζ_n;
+     single contour cannot separate them.
+  3. mpmath.mpc halves precision vs mpf per multiply.
+  4. Catastrophic cancellation across alternating-sign residues.
+  5. Φ_q branch cuts crossed by any contour around ζ_n.
+
+Original description retained below for historical context.
+
+─────────────────────────────────────────────────────────────────────
+
+Implements a FIRST-PASS numerical spectral sum from
+prop:gb-residue-spectral-sum:
 
     𝔪(K, q₀) = |tr_M(T_w, q₀)|
              + Σ_{ℓ=1..k_max} Res[Φ_q · tr_{M,ℓ}(T_w); q=ζ_ℓ]
