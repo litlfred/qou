@@ -84,13 +84,30 @@ def jones_borromean(t):
     """
     return (t - 1)**2 * (t + 1) / t**3
 
-def jones_4_borromean_disjoint(t):
-    """4 disjoint Borromean rings: Jones is multiplicative per component,
-    and each Borromean contributes (−t^{1/2} − t^{-1/2})^{c-1} factor
-    for c components. For 4 disjoint linkings of 3 each (12 comp total),
-    V = (Borromean_V)^4 · (unknot-multiplier)^? — approximated here.
+def jones_4_borromean_disjoint_APPROX(t):
+    """⚠ APPROXIMATION — NOT a correct Jones polynomial.
+
+    The exact disjoint-union rule under the standard Jones normalization
+    `V(unknot) = 1` is
+        V(L₁ ⊔ L₂) = -(t^{1/2} + t^{-1/2}) · V(L₁) · V(L₂)
+    so 4 disjoint Borromean links would give
+        V = (-(t^{1/2}+t^{-1/2}))^3 · V(Borromean)^4.
+
+    This function drops the `(-(t^{1/2}+t^{-1/2}))^3` prefactor and
+    returns only `jones_borromean(t) ** 4`.  It is retained here as a
+    crude qualitative proxy for the ⁴He row of the correlation sweep
+    only; the absolute magnitude is not physically meaningful.
+
+    Flagged in the PR#401 Copilot review — if the ⁴He row is used for
+    any quantitative claim, implement the correct disjoint-union
+    convention and rename without the `_APPROX` suffix.
     """
     return jones_borromean(t) ** 4
+
+
+# Backward-compat alias — any caller relying on the prior name gets
+# the same (approximate) value but the name change is not breaking.
+jones_4_borromean_disjoint = jones_4_borromean_disjoint_APPROX
 
 
 def j_at_q0(name):

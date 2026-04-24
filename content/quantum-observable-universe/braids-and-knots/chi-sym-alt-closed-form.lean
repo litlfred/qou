@@ -19,6 +19,8 @@ import Mathlib.Data.Int.Defs
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Omega
+import Mathlib.Tactic.NormNum
 
 namespace QOU.ChiSymAlt
 
@@ -112,23 +114,23 @@ theorem chi_pair_closed_form (H_A : ℝ) (w : AtomBraidWord) :
       (1 + H_A^2 / 4)^(nUd w) := by
   rw [chiPairProduct_eq, neg_one_pow_eq_if]
 
-/-- Count of ud factors matches `2 · (Z + N) + 1` for the atom braid
-    word with `include_inter = true`, `m_pp = m_pn = m_nn = 1`,
-    Z ≥ 1, N ≥ 1.
+/-- Pure-existence lemma: for every `Z, N ∈ ℕ` there exists a braid
+    word whose ud-half count equals `2·(Z+N) + 1`.
 
-    From inspection of `mass_at_3A_proper.atom_braid_word_3A`:
-      Per nucleon: exactly 2 ud-half factors (one in each of intra_g0,
-                    intra_g1; identical for protons and neutrons).
-      Per atom: exactly 1 pn-boundary in ordering ['p']^Z ++ ['n']^N
-                (when Z ≥ 1 and N ≥ 1), adding 1 ud-half.
-      Total: 2A + 1.
+    **Scope note (Copilot PR#401 review).**  This lemma is *purely
+    existential* and is proven by exhibiting a trivial witness (a list
+    of exactly `2·(Z+N) + 1` ud-half factors).  It does **not** prove
+    that the specific word emitted by `atom_braid_word_3A` has this
+    count — that equality is argued informally in
+    `docs/chi-sym-alt-theorem.md` § Step 4-5 by inspection of the
+    Python source, and is formalization work left for future iteration.
 
-    The existential witness below is any word with the right count;
-    equality with the specific `atom_braid_word_3A` output is verified
-    externally (see `docs/chi-sym-alt-theorem.md` § Step 4-5).
+    When fully formalised, the intended statement becomes:
+      `nUd (atomBraidWord Z N) = 2·(Z+N) + 1`
+    with `atomBraidWord` a Lean port of `mass_at_3A_proper.atom_braid_word_3A`.
 
     Ref: [manuscript] docs/chi-sym-alt-theorem.md § Step 4-5. -/
-theorem n_ud_atom_braid (Z N : ℕ) (_hZ : 1 ≤ Z) (_hN : 1 ≤ N) :
+theorem n_ud_atom_braid (Z N : ℕ) :
     ∃ (w : AtomBraidWord), nUd w = 2 * (Z + N) + 1 := by
   refine ⟨List.replicate (2 * (Z + N) + 1) (FactorType.udHalf, 0), ?_⟩
   -- Induction on the replicate count.
@@ -137,22 +139,24 @@ theorem n_ud_atom_braid (Z N : ℕ) (_hZ : 1 ≤ Z) (_hN : 1 ≤ N) :
   | zero => simp [nUd]
   | succ n ih => simp [List.replicate_succ, nUd, ih]
 
-/-- The universal identity for atom braid words.  Combines
-    `chi_pair_closed_form` and `n_ud_atom_braid`: every physical
-    atom (Z ≥ 1, N ≥ 1) produces a braid word β with 2A+1 ud-half
-    factors, and the closed form applies.
+/-- Existence of a word realizing the closed form.  Combines
+    `chi_pair_closed_form` and `n_ud_atom_braid`: some word with
+    ud-half count `2·(Z+N) + 1` exists and satisfies the closed form.
 
-    For every concrete atom (D, T, ³He, ⁴He) the total word length is
-    odd, giving sign = -1 (verified numerically in
+    **Scope note (Copilot PR#401 review).**  As with
+    `n_ud_atom_braid`, this is existential only.  Linking it to the
+    concrete `atom_braid_word_3A` output requires formalising that
+    Python function in Lean.  The physical content (word length
+    parity sign = -1 for all concrete atoms D, T, ³He, ⁴He) is
+    verified numerically in
     `folio-assistant/computations/derivation_checks.py`; see
-    docs/chi-sym-alt-theorem.md Verification table). -/
-theorem chi_sym_alt_closed_form (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N)
-    (H_A : ℝ) :
+    docs/chi-sym-alt-theorem.md Verification table. -/
+theorem chi_sym_alt_closed_form (Z N : ℕ) (H_A : ℝ) :
     ∃ (w : AtomBraidWord), nUd w = 2 * (Z + N) + 1 ∧
       chiPairProduct H_A w =
         (if w.length % 2 = 0 then 1 else (-1 : ℝ)) *
         (1 + H_A^2 / 4)^(2 * (Z + N) + 1) := by
-  obtain ⟨w, hw⟩ := n_ud_atom_braid Z N hZ hN
+  obtain ⟨w, hw⟩ := n_ud_atom_braid Z N
   refine ⟨w, hw, ?_⟩
   rw [chi_pair_closed_form, hw]
 

@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
 import sympy as sp
+import mpmath as mp
 
 from hecke_characters import partitions_of, dim_q, qfac
 from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A
@@ -126,16 +127,16 @@ if __name__ == "__main__":
     # Compute profile for D, T, ³He (n ≤ 9) — fast.
     # 4He has n=12, 77 partitions → slow; compute sym/alt only.
     ATOMS = [
-        ("D",   1, 1, "6_2",    mpf_to_str := lambda: None),
-        ("T",   1, 2, "8_11",   None),
-        ("3He", 2, 1, "L6a4",   None),
-        ("4He", 2, 2, "4·L6a4", None),
+        ("D",   1, 1, "6_2"),
+        ("T",   1, 2, "8_11"),
+        ("3He", 2, 1, "L6a4"),
+        ("4He", 2, 2, "4·L6a4"),
     ]
     print(f"\n  {'atom':>4} {'A':>2} {'n':>3} {'parts':>6} "
           f"{'χ_sym(β)':>15} {'χ_alt(β)':>15} "
           f"{'χ_sym-χ_alt':>15} {'χ_sym+χ_alt':>15}")
     rows = []
-    for name, Z, N, knot, _ in ATOMS:
+    for name, Z, N, knot in ATOMS:
         prof = atom_wedderburn_profile(Z, N)
         chi_s = prof["chi_sym"]
         chi_a = prof["chi_alt"]
@@ -164,7 +165,7 @@ if __name__ == "__main__":
     print("=" * 100)
 
     dev_table = {}
-    for name, Z, N, knot, _ in ATOMS:
+    for name, Z, N, knot in ATOMS:
         d = EMPIRICAL[name]
         rho_eff = d["B_AME"] / d["V_hyp"]
         dev_factor = rho_eff / d["nominal_rho"]
@@ -181,12 +182,7 @@ if __name__ == "__main__":
         ca = r["chi_alt_re"]
         Jv = j_at_q0(r["knot"])
         try:
-            ln_J = float(sp.log(abs(Jv)).evalf()) if Jv != 0 else -99
-        except Exception:
-            ln_J = 0
-        import math
-        try:
-            ln_J = math.log(abs(float(Jv))) if float(Jv) != 0 else -99
+            ln_J = float(mp.log(abs(Jv))) if Jv != 0 else -99
         except Exception:
             ln_J = 0
         prod_sa = cs * ca
