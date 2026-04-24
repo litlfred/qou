@@ -17,6 +17,7 @@ export default proposition({
   uses: [
     "thm:jones-markov-trace",
     "thm:markov-trace-factorization",
+    "rem:mass-endomorphism-jet-tower",
   ],
   cites: ["kassel1995", "jones1987"],
 });

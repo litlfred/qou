@@ -23,6 +23,7 @@ export default proposition({
     "def:recursive-brane-tower",
     "thm:markov-trace-factorization",
     "prop:confinement-sdp",
+    "prop:descent-eigenspaces",
   ],
   cites: ["kassel1995", "leitner2026"],
 });

@@ -22,6 +22,8 @@ export default proposition({
     "prop:mass-endomorphism-tower",
     "rem:mass-endomorphism-jet-tower",
     "def:recursive-brane-tower",
+    "prop:categorical-mass-markov",
+    "thm:markov-trace-factorization",
   ],
   cites: ["leitner2026"],
 });

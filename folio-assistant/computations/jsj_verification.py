@@ -58,13 +58,19 @@ def vol_high_precision(M, digits: int = 50):
         Mh = M.high_precision()
         try:
             import mpmath
-            mpmath.mp.dps = digits
+            mpmath_available = True
         except ImportError:
-            pass
-        v_hp = Mh.volume()
-        real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
-        hp_str = mpmath.nstr(mpmath.mpf(str(real_part)), digits) \
-            if "mpmath" in sys.modules else str(real_part)
+            mpmath_available = False
+        if mpmath_available:
+            # workdps: local precision change, restored on block exit.
+            with mpmath.workdps(digits):
+                v_hp = Mh.volume()
+                real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
+                hp_str = mpmath.nstr(mpmath.mpf(str(real_part)), digits)
+        else:
+            v_hp = Mh.volume()
+            real_part = v_hp.real if hasattr(v_hp, "real") else v_hp
+            hp_str = str(real_part)
     except Exception:
         hp_str = None
     return v_float, hp_str

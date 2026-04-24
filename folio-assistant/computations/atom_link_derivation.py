@@ -202,11 +202,13 @@ def volume_of_closure(word: list[int], digits: int = 50) -> dict:
     if is_hyperbolic:
         try:
             import mpmath
-            mpmath.mp.dps = digits
-            Eh = E.high_precision()
-            v_hp = Eh.volume()
-            rp = v_hp.real if hasattr(v_hp, "real") else v_hp
-            hp_str = mpmath.nstr(mpmath.mpf(str(rp)), digits)
+            # workdps: precision change is LOCAL, restored on block exit,
+            # avoiding global side effects on other callers.
+            with mpmath.workdps(digits):
+                Eh = E.high_precision()
+                v_hp = Eh.volume()
+                rp = v_hp.real if hasattr(v_hp, "real") else v_hp
+                hp_str = mpmath.nstr(mpmath.mpf(str(rp)), digits)
         except Exception:
             hp_str = None
     result = {

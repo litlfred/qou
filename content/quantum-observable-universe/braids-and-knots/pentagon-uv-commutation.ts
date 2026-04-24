@@ -21,6 +21,11 @@ export default proposition({
     "thm:markov-trace-factorization",
     "prop:mass-endomorphism-tower",
     "rem:mass-endomorphism-jet-tower",
+    "prop:generator-volume-decomposition",
+    "def:descent-involution",
+    "prop:descent-eigenspaces",
+    "prop:descended-level-zero",
+    "thm:wedderburn-mass-formula",
   ],
   cites: ["kassel1995", "faddeev1994", "kashaev1997"],
 });
