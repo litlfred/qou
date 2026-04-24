@@ -105,13 +105,47 @@ NOT from HH cup products.  Possible sources:*
 2. ***Deformation resolution***: Treating $H_3(q)$ as a deformation
    of $\mathbb{R}[S_3]$, $\Phi_q$ arises in the deformation
    cohomology $HH^*(\mathbb{R}[S_3], \mathbb{R}[S_3])_q$ at
-   non-trivial order in $q - 1$.
+   non-trivial order in $q - 1$. **TESTED, FAILS.**
 3. ***Root-of-unity limit***: At $q = \zeta_\ell$, $H_n(q)$ becomes
    non-semisimple and $HH^1 \neq 0$; Cauchy expansion could arise
    from the $q \to \zeta$ limit of filtered trace pairings.
+4. ***Quantum group $U_q(\mathfrak{sl}_2)$ representation theory***:
+   Via Schur–Weyl duality, $H_n(q)$ is paired with $U_q(\mathfrak{sl}_2)$
+   acting on $V^{\otimes n}$; $\Phi_q$ appears as a character of
+   specific $U_q$-modules (unipotent / Verma structure).  Most
+   plausible natural source.
 
-*None of these is proven; each is a candidate alternative framing.
-The cup-product HH^* route is definitively CLOSED.*
+***Option 2 (deformation cohomology) ruled out.***
+*Direct computation in
+`folio-assistant/computations/deformation_cohomology_s3.py`:*
+
+- *$\dim \mathrm{Der}(\mathbb{R}[S_3]) = 3 = \dim \mathrm{Inner}(\mathbb{R}[S_3])$*
+- *$HH^1(\mathbb{R}[S_3]) = 0$*
+- *$HH^2(\mathbb{R}[S_3]) = 0$ by Burghelea's theorem: for finite
+  group $G$ over a characteristic-$0$ field,
+  $HH^p(k[G]) = \bigoplus_{[C]} H^p(C_G(C); k)$, and group
+  cohomology of finite $G$ with $\mathbb{R}$/$\mathbb{C}$
+  coefficients vanishes in positive degrees (Maschke).*
+
+*The Hecke deformation $H_3(q)$ exists despite $HH^2 = 0$ because
+$H_3(q) \cong \mathbb{R}[S_3]$ as abstract $\mathbb{R}[q, q^{-1}]$-algebras
+for generic $q$ (both are semisimple with identical irrep structure).
+The deformation is **gauge-trivial in cohomology** — distinguishes
+$H_3(q)$ from $\mathbb{R}[S_3]$ only by basis choice, not by a
+non-trivial cocycle class.*
+
+*Consequence: **deformation cohomology does NOT source $\Phi_q$**.
+Options 2 and the HH* cup-product route are both CLOSED.*
+
+*Remaining options:*
+
+- *Option 1 (cyclic cohomology $HC^*$): untested, plausible.*
+- *Option 3 (root-of-unity limit): untested, plausible.*
+- *Option 4 (quantum group $U_q(\mathfrak{sl}_2)$): **most natural**
+  — $\Phi_q(z) = \prod(1 - q^{-k}z)^{-1}$ is the character of
+  the irreducible Verma module for $U_q(\mathfrak{sl}_2)$ acting
+  on the Fock space; Schur–Weyl duality then transports this
+  structure to $H_n(q)$.*
 
 **Previous naive proxy test (for reference).**
 
