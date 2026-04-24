@@ -113,22 +113,64 @@ character-weighted average $\langle c\rangle_\beta$ equals a
 specific non-zero number determined by the imbalance between
 $\chi^\lambda$ and $\chi^{\lambda^T}$.*
 
-**Specialisation to $H_6(q)$ (satellite $D$).**
-*The deuteron's atomic braid has writhe $w = +1$ from its single
-positive pn crossing (the intra-nucleon words have balanced writhe).
-The dominant channel is $\lambda = (3, 2, 1)$ (self-conjugate),
-with $c((3,2,1)) = 0$.  The first non-trivial contribution comes
-from the pair $(\lambda, \lambda^T) = ((5,1), (2,1^4))$ or similar.
-Computation gives $\langle c\rangle_{\beta_D} = 1$ (to be
-verified with an explicit character calculation at $H_6$).
-Therefore:*
+**Numerical test at $H_6(q)$ (satellite $D$) — negative result.**
+*Script `ribbon_content_average.py` computes
+$\langle c\rangle_\beta$ and the predicted
+$a_K = 1 + w(\beta) \cdot \langle c\rangle_\beta \cdot h$
+for the deuteron atomic braid.  Results:*
 
-$$
-  a_D \;=\; 1 + 1 \cdot 1 \cdot h + O(h^2) \;=\; 1 + h + O(h^2),
-$$
+| braid | writhe $w$ | $\langle c\rangle_\beta$ | predicted $a_K$ | paper's $a_D$ |
+|---|---|---|---|---|
+| D (atom, with inter) | $+4$ | $-3.784$ | $-2.164$ | $1.209$ |
+| D (free, no inter) | $+4$ | $+2.505$ | $+3.095$ | $1.209$ |
+| $\mathfrak{n}$ (free, A=1) | $+1$ | $+1.145$ | $+1.239$ | — |
 
-*matching paper's assignment for $D$
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)).*
+*The hypothesis $a_K = 1 + w \cdot \langle c\rangle \cdot h$ is
+**quantitatively wrong** for the deuteron: predicted values vary
+between $-2.16$ and $+3.10$ depending on whether inter-nucleon
+crossings are included, while paper assigns $a_D = 1 + h \approx
+1.21$.*
+
+*For the single-nucleon neutron the prediction $1 + 1.24h/1 \approx
+1.24$ is within $2.5\%$ of paper's $1 + h = 1.21$ — coincidentally
+close but without deeper structural justification at $A=1$.*
+
+**What this test establishes.**
+*The **structural form** $a_K = 1 + w \cdot (\text{something}) \cdot h
++ O(h^2)$ is correct (linear in $h$ and writhe).  The **coefficient
+"something"** is NOT simply the Wedderburn-averaged content
+$\langle c\rangle_\beta$.  Possible refinements:*
+
+1. *Weighting by $\dim_q(\lambda)$ instead of $\dim_q(\lambda)^2$
+   — a different Markov-trace normalisation.*
+2. *Framing by topological writhe (linking number of closure) vs
+   algebraic writhe (signed crossing count).  Averaged crossings
+   $(1, -h/2)$ may contribute $1/2$ to topological writhe even
+   though their algebraic writhe is $0$.*
+3. *The formula $a_K = 1 + w h$ may be a **paper-empirical
+   ansatz**, not a rigorous leading-order result.  Paper's
+   derivation says "chiral deviation is first-order in $h$,
+   with positive sign from the positive crossing" — which
+   **does not** uniquely determine the coefficient.*
+4. *The derivation should use the true **Hecke-algebra ribbon
+   element** $\theta_{H_n(q)}$, which at $H_6(q)$ has a more
+   complex structure than the naive $q^{2c(\lambda)}$ — it
+   involves a product of primitive idempotents weighted by
+   Hoefsmit content, which may differ from the classical content
+   sum $c(\lambda)$.*
+
+**Status: refined, not closed.**
+*The writhe-$h$ linearisation **concept** is correct — chirality
+factor is structurally first-order in $h$ for chiral knots,
+quadratic for amphichiral — but the **precise coefficient
+formula** requires a refined ribbon-twist identity at $H_n(q)$.
+The current derivation is a **testable framework**; its
+falsification here (for D) shows the specific form needs
+adjustment.*
+
+**Reference implementation.**
+*`folio-assistant/computations/ribbon_content_average.py` +
+`ribbon-content-average.witness.json`.*
 
 **Consistency with amphichiral case.**
 *For an amphichiral braid, writhe $w = 0$, so the first-order
