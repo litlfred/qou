@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-parse": "^1.8.3",
+    "glob": "^11.0.0",
     "remark": "^15.0.1",
     "remark-math": "^6.0.0",
     "zod": "^4.3.6"

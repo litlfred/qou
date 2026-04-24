@@ -16,6 +16,5 @@ export default definition({
     file: "QOU/Knot/Complement.lean",
     validation: "not_checked",
   },
-  status: "not_started",
   uses: [],
 });
