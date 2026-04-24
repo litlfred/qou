@@ -1,8 +1,8 @@
 {
   "engine": "mass-endomorphism-tower",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-24T06:45:01.284642+00:00",
-  "commitSha": "a1d989d87b274e218a9ce6ebf99e8d4d13d236bd",
+  "computedAt": "2026-04-24T21:34:01.183187+00:00",
+  "commitSha": "86fe0914cf619438aa999499325d512c62c0d695",
   "assertions": [
     {
       "name": "m_p/m_e within 5% of CODATA",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "proton-mass-tower-derivation",
   "scriptFile": "proton_mass_tower_derivation.py",
   "scriptHash": "e98fa7cc9a0b",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "171d887841b252551f5b01247c75a561e4886c0e",
   "description": "Absolute proton mass via mass-endomorphism-tower formula (content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md §application to p-e ratio). m_p/m_e ≈ 1870 from framework; CODATA 1836.15.",
   "parameters": {
     "q_0": 1.1099785955541805,
