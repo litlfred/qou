@@ -87,10 +87,14 @@ def build_d_nf():
 
 
 def r_matrix_N(N: int, q: complex) -> np.ndarray:
-    """R-matrix for V_N ⊗ V_N at given q (complex).
+    """R-matrix for V ⊗ V at given q (complex).
 
-    Basis |j⟩⟨k| indexed by j, k ∈ {0,...,N-1}.  Diagonal
-    weight q on |j,j⟩ matches standard literature conventions.
+    **Caveat:** this implementation is the Hecke-style generalization
+    that is exact for N = 2 (standard Jones).  For N > 2 the true
+    U_q(sl_2) colored-Jones R-matrix on V_{N-1} ⊗ V_{N-1} is NOT a
+    direct element-by-element generalization (the braid action does
+    not factor through the Hecke algebra).  Results for N > 2 should
+    be treated as DIAGNOSTIC, not authoritative.
     """
     dim = N * N
     R = np.zeros((dim, dim), dtype=complex)

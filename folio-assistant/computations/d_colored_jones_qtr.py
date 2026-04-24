@@ -86,7 +86,15 @@ def build_d_nf():
 
 def r_matrix_N(N: int, q: complex) -> np.ndarray:
     """R-matrix for V ⊗ V at given q (complex), where V = V_{N-1} is
-    the N-dimensional irreducible representation of U_q(sl_2).
+    the N-dimensional vector space.
+
+    **Note: the construction below is the Hecke generalization that
+    is exact for N = 2 (standard Jones polynomial).  For N > 2 the
+    colored-Jones R-matrix of U_q(sl_2) on V_{N-1} is NOT a simple
+    element-by-element generalization — the braid group action does
+    NOT factor through H_n(q).  Results from this module for N > 2
+    are DIAGNOSTIC ONLY and should not be interpreted as correct
+    colored-Jones values.  The N=2 results are valid.**
 
     Returns an (N·N) × (N·N) complex matrix.
     """

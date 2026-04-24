@@ -180,13 +180,16 @@ def v_hat_std_of_word(basis_word: tuple) -> complex:
     σ_i, compute the per-generator transfer matrix chain, get a V̂
     per generator (up to 5 for H_6), then take the PRODUCT.
     """
-    # Transfer-matrix recurrence (hecke_core.vertex_volume):
-    # For each σ_i factor (c=1, d=0), update (a, b) via
-    #   a_new = a·c·h + a·d + b·c = a·h + b
-    #   b_new = a·c + b·d         = a
-    # starting from (a, b) = (0, 1).  The std traced volume is
-    # V̂^std = z · a_k + b_k.  This is the correct q-polynomial, not
-    # the linear approximation z·k + 1 (which only holds at q = 1).
+    # Transfer-matrix recurrence (hecke_core.vertex_volume).
+    #
+    # *** LIMITATION ***
+    # This implementation treats basis_word as a single-generator chain
+    # (ignoring individual generator indices), so it fails for words
+    # with disjoint generators like (0, 2, 4).  Per the Skein formula
+    #    P_N(q) = Π_{i=0}^{A-2} V̂_i(q)
+    # the correct per-generator volumes V̂_i should be computed
+    # separately and multiplied.  Diagnostic probe only; do not use
+    # for precision mass predictions.
     if not basis_word:
         return complex(1.0)
     z = mpmath.mpf(1) / (mpmath.sqrt(Q0_MP) + mpmath.mpf(1) / mpmath.sqrt(Q0_MP))
