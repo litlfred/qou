@@ -121,45 +121,113 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  -- Proof sketch: [m]_q = Σⱼ₌₀^{m-1} q^{m-1-2j} (symmetric around 0).
-  -- Pair j with m-1-j to get pairs {q^k + q^{-k}} (each ≥ 2 by AM-GM);
-  -- for odd m, the middle term is q^0 = 1.  Total ≥ m.
-  --
-  --   rw [qIntReal_eq_symmetric_sum]  -- helper: [m]_q = Σ q^(m-1-2j)
-  --   have hpairs : ∀ k, q^k + q^(-k) ≥ 2 := by
-  --     intro k
-  --     have := sq_nonneg (q^k - 1)
-  --     have hqk_pos : q^k > 0 := pow_pos (by linarith) k
-  --     nlinarith [hqk_pos]
-  --   -- Split sum into pairs + possible middle
-  --   induction m with ... -- standard pairing argument
-  --
-  -- ~30 LOC; doable but needs the symmetric_sum helper.
-  sorry
+  have hq_pos : q > 0 := by linarith
+  have hq_ne : q ≠ 1 := ne_of_gt hq
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hqq : q - q⁻¹ > 0 := by
+    have : q⁻¹ < q := lt_trans hq_inv_lt hq
+    linarith
+  have hm_pos : (0 : ℝ) < m := by exact_mod_cast hm
+  -- After unfolding qIntReal with q ≠ 1 branch, the goal becomes
+  --   (q^m - q⁻¹^m) / (q - q⁻¹) / m ≥ 1
+  -- ⇔ q^m - q⁻¹^m ≥ m · (q - q⁻¹)
+  -- which is a direct consequence of AM-GM: for q > 1,
+  -- q^m - 1 ≥ m(q - 1)  (Bernoulli) and q⁻¹^m - 1 ≤ m(q⁻¹ - 1) ≤ 0.
+  -- Combining: q^m - q⁻¹^m = (q^m - 1) - (q⁻¹^m - 1) ≥ m(q - 1) - m(q⁻¹ - 1)
+  --                       = m(q - q⁻¹).
+  unfold qIntReal
+  simp only [hq_ne, dif_neg, dite_false, not_false_eq_true]
+  rw [ge_iff_le, le_div_iff hm_pos, one_mul, le_div_iff hqq]
+  -- Goal: m · (q - q⁻¹) ≤ q^m - q⁻¹^m
+  have bernoulli_q : q ^ m - 1 ≥ m * (q - 1) := by
+    induction m with
+    | zero => simp
+    | succ n ih =>
+      rw [pow_succ]
+      have hqn : q ^ n ≥ 1 := one_le_pow₀ (le_of_lt hq)
+      push_cast
+      nlinarith [ih, pow_nonneg (le_of_lt hq_pos) n, hqn]
+  have bernoulli_qinv : q⁻¹ ^ m - 1 ≤ m * (q⁻¹ - 1) := by
+    -- q⁻¹ ≤ 1, so q⁻¹^m ≤ 1 and Bernoulli flips direction.
+    -- Direct: for 0 < x ≤ 1, x^m - 1 = -(1 - x^m).  And 1 - x^m ≤ m(1 - x) for 0 ≤ x ≤ 1.
+    induction m with
+    | zero => simp
+    | succ n ih =>
+      rw [pow_succ]
+      have hinv_le : q⁻¹ ≤ 1 := le_of_lt hq_inv_lt
+      have hinv_pow_le : q⁻¹ ^ n ≤ 1 := pow_le_one₀ (le_of_lt hq_inv_pos) hinv_le
+      nlinarith [ih, pow_nonneg (le_of_lt hq_inv_pos) n]
+  linarith [bernoulli_q, bernoulli_qinv]
 
 /-- For small m (m ≤ 4), the tighter bound holds:
     |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
-  -- Case-analyze m ∈ {1, 2, 3, 4} explicitly:
-  --   interval_cases m
-  --   · -- m = 1: [1]_q = 1, so LHS = 0
-  --     simp [qIntReal]; positivity
-  --   · -- m = 2: reuse qInt_ratio_bound_m2
-  --     have := qInt_ratio_bound_m2 q hq
-  --     unfold qIntReal; field_simp at this ⊢
-  --     linarith
-  --   · -- m = 3: [3]_q = q² + 1 + q⁻², so LHS = |(q² + q⁻² - 2)/3| = (q - q⁻¹)²/3
-  --     unfold qIntReal; simp [pow_succ]
-  --     field_simp
-  --     rw [abs_of_nonneg (by nlinarith [sq_nonneg (q - 1), sq_nonneg (q*q - 1)])]
-  --     nlinarith [sq_nonneg (q - q⁻¹), sq_nonneg (q*q - 1)]
-  --   · -- m = 4: similar with one more factor
-  --     unfold qIntReal; field_simp
-  --     nlinarith [sq_nonneg (q - 1), sq_nonneg (q - q⁻¹),
-  --                sq_nonneg (q^2 - 1), sq_nonneg (q*q + 1)]
-  sorry
+  have hq_pos : q > 0 := by linarith
+  have hq_ne : q ≠ 1 := ne_of_gt hq
+  have hq_ne0 : q ≠ 0 := ne_of_gt hq_pos
+  interval_cases m
+  · -- m = 1: [1]_q = 1, so LHS = 0
+    unfold qIntReal
+    simp only [hq_ne, dif_neg, dite_false, pow_one]
+    rw [div_self (by linarith : q - q⁻¹ ≠ 0), Nat.cast_one, div_one,
+        sub_self, abs_zero]
+    positivity
+  · -- m = 2: reuse qInt_ratio_bound_m2; need to rewrite [2]_q/2 form
+    have h2 := qInt_ratio_bound_m2 q hq
+    unfold qIntReal
+    simp only [hq_ne, dif_neg, dite_false]
+    -- [2]_q = (q² - q⁻²)/(q - q⁻¹) = q + q⁻¹
+    have heq : (q ^ 2 - q⁻¹ ^ 2) / (q - q⁻¹) = q + q⁻¹ := by
+      field_simp; ring
+    rw [heq]
+    push_cast
+    -- Goal: |(q + q⁻¹)/2 - 1| ≤ (q - q⁻¹)² · 2 / 6 = (q - q⁻¹)²/3
+    have : (q - q⁻¹) ^ 2 * 2 / 6 = (q - q⁻¹) ^ 2 / 3 := by ring
+    rw [this]
+    exact h2
+  · -- m = 3: [3]_q = q² + 1 + q⁻²
+    unfold qIntReal
+    simp only [hq_ne, dif_neg, dite_false]
+    have heq : (q ^ 3 - q⁻¹ ^ 3) / (q - q⁻¹) = q ^ 2 + 1 + q⁻¹ ^ 2 := by
+      field_simp
+      ring
+    rw [heq]
+    push_cast
+    -- Goal: |(q² + 1 + q⁻²)/3 - 1| ≤ (q - q⁻¹)² · 3 / 6
+    -- LHS = |(q² - 2 + q⁻²)/3| = (q - q⁻¹)²/3  (since (q-q⁻¹)² ≥ 0)
+    have hsq : (q - q⁻¹) ^ 2 = q ^ 2 - 2 + q⁻¹ ^ 2 := by
+      field_simp
+      ring
+    rw [show (q ^ 2 + 1 + q⁻¹ ^ 2) / 3 - 1 = (q ^ 2 - 2 + q⁻¹ ^ 2) / 3 by ring,
+        ← hsq, abs_of_nonneg (by positivity)]
+    linarith [sq_nonneg (q - q⁻¹)]
+  · -- m = 4: [4]_q = q³ + q + q⁻¹ + q⁻³
+    unfold qIntReal
+    simp only [hq_ne, dif_neg, dite_false]
+    have heq : (q ^ 4 - q⁻¹ ^ 4) / (q - q⁻¹) = q ^ 3 + q + q⁻¹ + q⁻¹ ^ 3 := by
+      field_simp
+      ring
+    rw [heq]
+    push_cast
+    -- Goal: |(q³ + q + q⁻¹ + q⁻³)/4 - 1| ≤ (q - q⁻¹)² · 4 / 6 = 2(q - q⁻¹)²/3
+    -- (q³ + q + q⁻¹ + q⁻³) = (q + q⁻¹)(q² + q⁻²) = (q + q⁻¹)((q-q⁻¹)² + 2)
+    -- So LHS = |((q + q⁻¹)((q-q⁻¹)² + 2) - 4)/4|
+    -- For q ∈ (1, 2): q + q⁻¹ ∈ (2, 2.5), so this bound holds by nlinarith.
+    have hsq : (q - q⁻¹) ^ 2 = q ^ 2 - 2 + q⁻¹ ^ 2 := by field_simp; ring
+    have hq_ge_1 : q ≥ 1 := le_of_lt hq
+    have hqinv_le_1 : q⁻¹ ≤ 1 := by
+      rw [inv_le_one_iff_one_le]; exact hq_ge_1
+    have hqinv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+    rw [abs_le]
+    refine ⟨?_, ?_⟩ <;>
+      nlinarith [sq_nonneg (q - q⁻¹), sq_nonneg (q + q⁻¹ - 2),
+                 sq_nonneg (q - 1), sq_nonneg (q⁻¹ - 1),
+                 mul_pos hq_pos hqinv_pos, mul_self_nonneg (q - q⁻¹),
+                 pow_pos hq_pos 2, pow_pos hqinv_pos 2,
+                 pow_pos hq_pos 3, pow_pos hqinv_pos 3]
 
 /-! ## §2  q-factorial perturbation -/
 
@@ -180,24 +248,25 @@ theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
     (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
-  -- Proof sketch: induction on k, combining qInt_ratio_bound_small
-  -- per factor.
+  -- STATEMENT CAVEAT: as written, the theorem asserts a uniform bound
+  -- over all k.  Our pointwise tool `qInt_ratio_bound_small` only
+  -- covers m ≤ 4.  The current Lean proof is bounded to k ≤ 4:
+  --
   --   induction k with
   --   | zero => simp [qFactReal, Nat.factorial]
   --   | succ n ih =>
-  --     -- Split: [k+1]!/((k+1)!) = ([k]!/k!) · ([k+1]/((k+1)))
-  --     -- Use |∏(1+εᵢ) - 1| ≤ Σ|εᵢ| + O(quadratic) inequality
-  --     unfold qFactReal Nat.factorial
-  --     rw [Finset.prod_range_succ]
-  --     -- Apply triangle inequality + ih + qInt_ratio_bound_small
-  --     -- Need k ≤ 4 to use bound_small, but statement holds for all k;
-  --     -- for k ≥ 5 a looser bound O(k³) still works but requires
-  --     -- either qInt_ratio_upper or `interval_cases` up to some K_max.
-  -- Caveat: qInt_ratio_bound_small only covers m ≤ 4.  Strict proof
-  -- of `qFact_ratio_bound` for all k needs either (i) extending
-  -- qInt_ratio_bound_small to all m (which may fail for large m) or
-  -- (ii) restricting the statement to k ≤ 4.
-  -- Σ_{m=1}^k m² = k(k+1)(2k+1)/6; numerical factor /6 gives /36 bound.
+  --     -- split [k+1]!/[k+1]! = ([k]!/k!)·([k+1]/([k+1]))
+  --     -- triangle inequality + ih + qInt_ratio_bound_small (n+1)
+  --     -- requires `n + 1 ≤ 4`.
+  --
+  -- For k ≥ 5, the statement would need `qInt_ratio_upper` + a
+  -- per-factor O(h²·m) bound extending qInt_ratio_bound_small to all m.
+  -- That extension is doable via the exact identity
+  --   [m]_q/m - 1 = (1/m) Σⱼ₌₀^{m-1}(q^{m-1-2j} - 1)
+  -- and bounding each q^k - 1 ≤ k·(q - q⁻¹) (Bernoulli), but it
+  -- introduces an extra factor of m that breaks the /36 RHS.
+  -- STRICT FIX: restrict k to `≤ 4`, or widen the RHS coefficient.
+  -- Ref: [mathas1999] §3.3
   sorry
 
 /-! ## §3  q-hook formula perturbation -/
