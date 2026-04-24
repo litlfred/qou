@@ -79,7 +79,11 @@ def build_d_nf():
 
 
 def r_matrix_N(N: int, q: complex) -> np.ndarray:
-    """R-matrix for V_{N-1} ⊗ V_{N-1} at given q (complex)."""
+    """R-matrix for V ⊗ V at given q (complex), where V = V_{N-1} is
+    the N-dimensional irreducible representation of U_q(sl_2).
+
+    Returns an (N·N) × (N·N) complex matrix.
+    """
     dim = N * N
     R = np.zeros((dim, dim), dtype=complex)
     def idx(j, k): return j * N + k
@@ -214,6 +218,10 @@ def j_N_at_root_via_limit(basis_word, n, N,
     This cancels the leading ε term, leaving O(ε²) error.  Iterated on
     the Richardson table removes higher powers.
     """
+    # Convergence threshold for the last two Richardson inputs.
+    # Values within this relative tolerance are treated as convergent;
+    # larger spread is flagged as divergent (return nan).
+    DIVERGENCE_REL_TOL = 0.01
     root = cmath.exp(2j * cmath.pi / N)
     vals = []
     for eps in eps_list:
@@ -222,9 +230,10 @@ def j_N_at_root_via_limit(basis_word, n, N,
         vals.append(v)
     if any(cmath.isnan(v) for v in vals):
         return complex("nan")
+    # Standard relative-error convergence check.
     diff = abs(vals[-1] - vals[-2])
-    ref = max(abs(v) for v in vals) + 1
-    if diff / ref > 0.01:
+    denom = abs(vals[-1]) if abs(vals[-1]) > 1e-9 else 1.0
+    if diff / denom > DIVERGENCE_REL_TOL:
         return complex("nan")   # divergent
 
     # Richardson table: assume ε_k = eps_list[k] decreases geometrically.

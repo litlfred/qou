@@ -382,16 +382,23 @@ def _build_V_per_block_symbolic(Z: int, N: int, include_inter: bool):
 
     V = {"sym": [], "std": [], "alt": []}
     for i in range(n_gens):
+        # Tolerances for float → symbolic conversion:
+        #   _C_FACTOR_TOL: c ∈ {1} vs other
+        #   _D_ZERO_TOL:   d = 0 (exact float zero)
+        #   _D_HECKE_TOL:  d = -h or -h/2 at q_0 (looser; h derived from q_0)
+        _C_FACTOR_TOL = 1e-9
+        _D_ZERO_TOL = 1e-12
+        _D_HECKE_TOL = 1e-6
         factors = cross.get(i, [])
-        # Translate numeric (c, d) to symbolic.
         factors_sym = []
         for (c_f, d_f) in factors:
-            c = sp.Integer(1) if abs(c_f - 1.0) < 1e-9 else sp.nsimplify(c_f)
-            if abs(d_f) < 1e-12:
+            c = sp.Integer(1) if abs(c_f - 1.0) < _C_FACTOR_TOL \
+                else sp.nsimplify(c_f)
+            if abs(d_f) < _D_ZERO_TOL:
                 d = sp.Integer(0)
-            elif abs(d_f + (q0 - 1.0 / q0)) < 1e-6:
+            elif abs(d_f + (q0 - 1.0 / q0)) < _D_HECKE_TOL:
                 d = -HA_sym
-            elif abs(d_f + (q0 - 1.0 / q0) / 2) < 1e-6:
+            elif abs(d_f + (q0 - 1.0 / q0) / 2) < _D_HECKE_TOL:
                 d = -HA_sym / 2
             else:
                 d = sp.nsimplify(d_f)

@@ -118,7 +118,7 @@ Three reasons to withhold this as a "fix":
 1. No derivation: neither `def:algebraic-quantum-volume-specialization`
    nor the 5-part handover writes $1/(1 + q_0 \hbar_q^2)$ as an
    explicit factor in the mass formula.
-2. Works for D only: applied to T, ³He, ⁴He it makes residuals
+2. Works for D only: applied to T, ${}^3\mathrm{He}$, ${}^4\mathrm{He}$ it makes residuals
    **worse** (changes sign of the error or increases magnitude).
 3. The conjectured pentagon-defect scale is $O(\hbar_q^2)$, not
    $O(q_0 \hbar_q^2)$. The factor-of-$q_0$ mismatch is unexplained.

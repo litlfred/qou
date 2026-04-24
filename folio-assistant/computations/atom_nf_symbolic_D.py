@@ -52,19 +52,29 @@ from q_parameter import Q as Q0_FLOAT
 _Q0_RATIONAL = sp.Rational(str(float(Q0_FLOAT)))
 
 
+# Tolerances for float-to-symbolic conversion of Hecke (c, d) coefficients:
+# - _C_FACTOR_TOL: exact-float comparison for (c ∈ {0, 1})
+# - _D_EXACT_TOL:  exact-float comparison for (d ∈ {0, 1})
+# - _D_HECKE_TOL:  numeric match to ±h or ±h/2 at q_0 (h value differs from
+#                  exact 1 by rounding of the q_0 rational; looser threshold).
+_C_FACTOR_TOL = 1e-12
+_D_EXACT_TOL = 1e-12
+_D_HECKE_TOL = 1e-3
+
+
 def _factor_from(c_f: float, d_f: float, g: int) -> SymbolicHeckeElement:
     """Hecke factor c·T_g + d·I as a symbolic element."""
-    if abs(c_f) < 1e-12:
+    if abs(c_f) < _C_FACTOR_TOL:
         c = sp.Integer(0)
     else:
         c = sp.Integer(1)
-    if abs(d_f) < 1e-12:
+    if abs(d_f) < _D_EXACT_TOL:
         d = sp.Integer(0)
-    elif abs(d_f - 1.0) < 1e-12:
+    elif abs(d_f - 1.0) < _D_EXACT_TOL:
         d = sp.Integer(1)
-    elif abs(d_f + float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < 1e-3:
+    elif abs(d_f + float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < _D_HECKE_TOL:
         d = -HA_sym            # mixed sign convention: -h
-    elif abs(d_f + 0.5 * float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < 1e-3:
+    elif abs(d_f + 0.5 * float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < _D_HECKE_TOL:
         d = -HA_sym / 2        # -h/2
     else:
         d = sp.nsimplify(d_f)
