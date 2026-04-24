@@ -2543,28 +2543,10 @@ export const references: CSLData[] = [
       "hypothesis in the mass-volume expansion.",
   }),
 
-  // ── Murakami & Murakami 2001 (volume conjecture) ─────────────
-  ref({
-    id: "murakami2001",
-    type: "article-journal",
-    title:
-      "The colored Jones polynomials and the simplicial volume of a knot",
-    author: [
-      { family: "Murakami", given: "Hitoshi" },
-      { family: "Murakami", given: "Jun" },
-    ],
-    "container-title": "Acta Mathematica",
-    volume: "186",
-    issue: "1",
-    page: "85-104",
-    issued: { "date-parts": [[2001]] },
-    DOI: "10.1007/BF02392716",
-    note:
-      "Formulation of the volume conjecture connecting colored " +
-      "Jones polynomials at roots of unity to hyperbolic volume. " +
-      "Underlies the quantum-dilogarithm semiclassical expansion " +
-      "used in the Frobenius-JSJ binding decomposition.",
-  }),
+  // Note: a duplicate entry id "murakami2001" was removed here.
+  // The canonical key is `murakami-murakami2001` (defined above at
+  // line ~2393), following the `authorYEAR` hyphen convention for
+  // multiple authors (e.g. `kazhdan-lusztig1979`).
 
   // ── Conway 1976 (On Numbers and Games / surreal numbers) ──────
   ref({

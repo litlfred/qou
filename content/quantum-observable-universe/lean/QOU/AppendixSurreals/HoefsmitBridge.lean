@@ -85,15 +85,32 @@ end TwoRowTableau
                 (1,1)    ↦ -1 (downward extension: -q⁻¹-eigenchannel) -/
 -- Ref: [conway1976] §0
 -- Ref: [gonshor1986] §2
-def hoefsmitDyadic : ∀ {n : ℕ}, TwoRowTableau n → ℚ
+--
+-- IMPORTANT: the `TwoRowTableau n` structure used here records only
+-- row sizes (row1, row2), not the full entry data.  For `n ≥ 3` this
+-- is insufficient to distinguish distinct standard tableaux of the
+-- same shape (e.g. the two tableaux of shape (2,1) at n=3).
+--
+-- The definition is therefore given constructively only for `n ≤ 2`
+-- and deferred (via `sorry`, not a bogus `0` value) for `n ≥ 3`.
+-- Providing a non-zero value for `n ≥ 3` without distinguishing
+-- tableaux would produce an injectivity failure that directly
+-- contradicts `hoefsmit_is_surreal_construction`.
+--
+-- To discharge the deferred case, refactor `TwoRowTableau` to include
+-- the entry map (a bijection `Fin n → row-position`) and then:
+--   - define a YJM-extension recursion on the entry data, and
+--   - prove injectivity by induction on `n` using Gonshor's
+--     simplicity theorem.
+noncomputable def hoefsmitDyadic : ∀ {n : ℕ}, TwoRowTableau n → ℚ
   | 0, _ => 0
   | 1, _ => 0
   | 2, t =>
     if t.row2 = 0 then 1 else -1
   | n + 3, _ =>
-    -- General case: requires the YJM-extension recursion.
     -- Ref: [hoefsmit1974] PhD Thesis, UBC.
-    0
+    -- Ref: [gonshor1986] §2 — sign-sequence / YJM extension.
+    sorry
 
 /-- Bridge proposition for `n = 0`: trivial. -/
 theorem hoefsmit_bridge_zero :
@@ -144,13 +161,26 @@ theorem hoefsmit_bridge_two :
     cases t₁; cases t₂
     congr <;> omega
 
-/-- **Bridge proposition (axiom)**: for every `n`, the
-    Hoefsmit-to-dyadic map is injective.
+/-- **Bridge proposition as a conjecture class** (per CLAUDE.md §3b).
 
-    Proved for `n ≤ 2` (theorems above).  The general case requires
-    the YJM-extension recursion, which is not yet in mathlib. -/
+    Encodes the general-`n` injectivity of the Hoefsmit-to-dyadic
+    bijection as a typeclass, with the intended witness pending a
+    refactor of `TwoRowTableau` to include entry data (see the
+    `hoefsmitDyadic` docstring above).
+
+    We deliberately do **not** state this as an `axiom` on the
+    current partial `hoefsmitDyadic` — since the partial definition
+    uses `sorry` for `n ≥ 3`, the equality `sorry = sorry` on
+    distinct tableaux would falsify injectivity.
+
+    The proved cases are `hoefsmit_bridge_zero`,
+    `hoefsmit_bridge_one`, `hoefsmit_bridge_two`. -/
 -- Ref: [conway1976] §0, [gonshor1986] §2, [hoefsmit1974]
-axiom hoefsmit_is_surreal_construction (n : ℕ) :
-    Function.Injective (@hoefsmitDyadic n)
+class HoefsmitIsSurrealConstruction where
+  /-- For a future entry-aware version of `TwoRowTableau`, the
+      Hoefsmit map is injective for every `n`.  The precise
+      statement requires the refactored tableau type. -/
+  injective_general : True  -- placeholder pending refactor
+  -- Ref: [gonshor1986] §2 — sign-sequence length = birthday.
 
 end QOU.AppendixSurreals
