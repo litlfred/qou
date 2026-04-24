@@ -49,15 +49,77 @@ $z \cdot q^{-(k-1)} \cdot (\text{weight})$ by the recursive
 Hecke relation.  Summing over $k$ with the $(q;q)_k$ normalisation
 gives the full $\Phi_q$ kernel.*
 
-**Status.**
-*The **structure** (cup-product tower matches $\Phi_q$'s Cauchy
-kernel) is rigorous in principle: both are generating functions
-of the same partition-counting sequence.  The **explicit match**
-of coefficients requires computing $[\sigma_i]^{\cup k}$ for each
-$k$ and verifying the Markov-trace weights match the
-$(q;q)_k$-normalised $\Phi_q$ series.  This is a finite-dimensional
-computation in $HH^*(H_3(q))$ for $n = 3$ — **tractable but not
-done**.*
+**Status: naive proxy test FAILS; true cup-product machinery needed.**
+
+*Script `cup_product_tower_probe.py` tested the simplest proxy:
+compute $\mathrm{tr}_M(\sigma_0^k)$ (algebra power) symbolically in
+$H_3(q)$ and compare to $\Phi_q$ Cauchy Taylor coefficients
+$1/(q; q)_k$.*
+
+| $k$ | $\mathrm{tr}_M(\sigma_0^k) @ q_0$ | $1/(q;q)_k @ q_0$ | ratio |
+|---|---|---|---|
+| 1 | $+0.499$ | $-9.09$ | $-0.055$ |
+| 2 | $+1.104$ | $+39.18$ | $+0.028$ |
+| 3 | $+0.730$ | $-106.61$ | $-0.007$ |
+| 4 | $+1.257$ | $+205.82$ | $+0.006$ |
+| 5 | $+0.993$ | $-300.52$ | $-0.003$ |
+
+*Ratios vary wildly (sign flips, non-monotone), and
+$\mathrm{tr}_M(\sigma_0^k)$ **oscillates** rather than matching
+the $\Phi_q$ generating-function growth.  The hypothesis
+"$\mathrm{tr}_M(\sigma_0^k) \propto 1/(q;q)_k$" is FALSE.*
+
+**Why the shortcut is wrong.**
+
+*Cup product in Hochschild cohomology $HH^*(A, A)$ is NOT algebra
+multiplication.  For a cochain $f \in HH^p$ represented by a map
+$A^{\otimes p} \to A$ and $g \in HH^q$ represented by
+$A^{\otimes q} \to A$, the cup product $f \cup g \in HH^{p+q}$ is
+defined by*
+
+$$
+  (f \cup g)(a_1 \otimes \cdots \otimes a_{p+q})
+  \;=\;
+  f(a_1 \otimes \cdots \otimes a_p) \cdot g(a_{p+1} \otimes \cdots \otimes a_{p+q}).
+$$
+
+*This is the cochain-level product, not the algebra-element product.
+A class $[\sigma_0] \in HH^1$ would be represented by a specific
+$1$-cocycle $f_{\sigma_0}: A \to A$ (an outer derivation), and
+$[\sigma_0]^{\cup k}$ is a $k$-cocycle $(f_{\sigma_0})^{\cup k}$
+paired against $a_1 \otimes \cdots \otimes a_k$ as a specific
+iterated-product.  Identifying this cocycle explicitly in
+$HH^1(H_3(q))$ is a non-trivial computation — NOT equivalent to
+$\sigma_0^k$.*
+
+**Correct setup (what would be needed).**
+
+*To rigorously verify Term 2 as a cup-product tower:*
+
+1. *Compute $HH^1(H_3(q))$ over $\mathbb{R}[q, q^{-1}]$ — the
+   space of outer derivations modulo inner.  This is a
+   finite-rank $R$-module.*
+2. *Identify the class $[\sigma_0] \in HH^1$ as a specific
+   outer-derivation cocycle $f_{\sigma_0}$.*
+3. *Compute $(f_{\sigma_0})^{\cup k} \in HH^k$ for $k = 1, 2, 3, \ldots$
+   via the Hochschild cochain formula.*
+4. *Evaluate the pairing
+   $\langle \mathrm{tr}_M, (f_{\sigma_0})^{\cup k}\rangle \in \mathbb{R}[q, q^{-1}]$.*
+5. *Compare to $\Phi_q$ Cauchy coefficients with the correct
+   normalisation.*
+
+*This is a **standard finite-dimensional Hochschild-cohomology
+computation**, but requires machinery (cochain complex, cup
+product, cocycle representatives) not in the current codebase.
+Estimated effort: 200-400 LoC using sympy matrix operations on
+$A \otimes A \cong H_3(q) \otimes H_3(q)$ (36-dimensional) and
+higher tensor powers ($216$-dim at degree $3$, etc.) — doable but
+significant.*
+
+*Until this full machinery is implemented, the cup-product tower
+hypothesis remains **structurally plausible but unverified**.
+The shortcut $\mathrm{tr}_M(\sigma_0^k)$ is definitively not the
+right object.*
 
 ---
 
