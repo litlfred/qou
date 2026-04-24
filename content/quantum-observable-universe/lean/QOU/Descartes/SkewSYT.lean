@@ -161,6 +161,16 @@ def skewCorners (λ μ : Partition) : Finset Cell :=
 def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
   ⟨λ.parts.mapIdx fun i p => if i = row then p - 1 else p,
    by
+    -- Sortedness requires a corner hypothesis (λ_row > λ_{row+1}, or
+    -- row = λ.length - 1) which is not enforced by `removeCorner`'s
+    -- current signature.  STRUCTURAL FIX NEEDED: change signature to
+    --   Partition.removeCorner (λ : Partition) (row : ℕ)
+    --     (hc : λ.part row > λ.part (row+1) ∨ row + 1 ≥ λ.length) : Partition
+    -- then Pairwise is provable by splitting the (· ≥ ·) check at index row:
+    --   - pairs (i, j) with i, j ≠ row: unchanged by mapIdx, preserve λ.sorted
+    --   - pair (row-1, row): λ_{row-1} ≥ λ_row ≥ λ_row - 1 ✓
+    --   - pair (row, row+1): λ_row - 1 ≥ λ_{row+1} by the corner hypothesis
+    --   - pairs entirely > row: unchanged
     -- Ref: [sagan2001] corner removal preserves partition property
     sorry⟩
 
@@ -173,6 +183,23 @@ theorem removeCorner_sum (λ : Partition) (row : ℕ)
     (h : row < λ.length) (hp : 0 < λ.part row) :
     (λ.parts.mapIdx fun i p => if i = row then p - 1 else p).sum =
     λ.parts.sum - 1 := by
+  -- Proof sketch: mapIdx changes exactly one element at index `row`
+  -- (from `p` to `p - 1`, where `p = λ.part row > 0`).  The cleanest
+  -- route is to reduce mapIdx with a single-index modification to
+  -- `List.set`, then invoke sum_set:
+  --
+  --   have hset : (λ.parts.mapIdx fun i p => if i = row then p - 1 else p)
+  --             = λ.parts.set row (λ.parts.get ⟨row, h⟩ - 1) := by
+  --     apply List.ext_getElem
+  --     · simp [List.length_mapIdx, List.length_set]
+  --     · intro i hi _
+  --       rw [List.getElem_mapIdx, List.getElem_set]
+  --       split_ifs <;> rfl
+  --   rw [hset, List.sum_set_eq_sum_sub_add]  -- if such a lemma exists
+  --   · omega
+  --
+  -- Alternative: induction on `λ.parts` with `row` generalized, using
+  -- `List.mapIdx_cons` to split head/tail and shift the index.
   -- Ref: [sagan2001]
   sorry
 
@@ -206,11 +233,16 @@ noncomputable def skewSYTCount : Partition → Partition → ℕ
   | λ, μ =>
     if h : λ.size ≤ μ.size then 1
     else
-      (skewCorners λ μ).sum fun c =>
+      (skewCorners λ μ).attach.sum fun ⟨c, hc⟩ =>
         have : (λ.removeCorner c.row).size - μ.size < λ.size - μ.size := by
-          -- Corner cell is in skewCells, so row < λ.length and part > 0
-          -- removeCorner_decreases then gives the strict decrease
-          sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — skew SYT construction (§7.10)
+          -- `.attach` gives us hc : c ∈ skewCorners λ μ; unpack to
+          -- c ∈ skewCells λ μ, which gives c.row < λ.length ∧
+          -- c.col < λ.part c.row (via mem_cells), so λ.part c.row > 0.
+          have hcc : c ∈ skewCells λ μ :=
+            (Finset.mem_filter.mp (by simpa [skewCorners] using hc)).1
+          have hcells := (mem_cells λ c).mp (Finset.mem_sdiff.mp hcc).1
+          exact removeCorner_decreases λ μ c.row hcells.1
+            (Nat.lt_of_le_of_lt (Nat.zero_le _) hcells.2) (by omega)
         skewSYTCount (λ.removeCorner c.row) μ
 termination_by λ.size - μ.size
 
@@ -228,12 +260,17 @@ theorem skewSYTCount_nonneg (λ μ : Partition) :
 -- Ref: [fulton1997] Proposition 3.1
 theorem skewSYTCount_pos (λ μ : Partition) (h : λ.contains μ) :
     0 < skewSYTCount λ μ := by
-  sorry
-  -- Proof: by induction on λ.size - μ.size.
-  -- Base: size = 0 → count = 1 > 0.
-  -- Step: there exists at least one corner (nonempty skew shape
-  -- always has a corner), and the recursive call is positive by IH.
+  -- Proof sketch: strong induction on `n := λ.size - μ.size`.
+  --   Base (n = 0, i.e. λ.size ≤ μ.size): skewSYTCount reduces to 1.
+  --   Step: pick any corner c ∈ skewCorners λ μ (nonempty because
+  --         λ.size > μ.size and the Young lattice is locally finite —
+  --         needs helper `skewCorners_nonempty`).  By IH, the recursive
+  --         term `skewSYTCount (λ.removeCorner c.row) μ > 0`.  Since
+  --         Finset.sum over naturals is ≥ any single term, done.
+  -- Depends on: skewCorners_nonempty (requires a corner-existence
+  -- lemma in the Young lattice, provable but ~20 LOC of cell case work).
   -- Ref: [fulton1997]
+  sorry
 
 /-! ## §5  Branching multiplicity -/
 
@@ -256,9 +293,26 @@ theorem branching_nonneg (λ μ : Partition) : 0 ≤ branchingMult λ μ :=
 /-- Adding a cell to a partition: λ ← c gives a new partition with
     one more cell at the addable position. -/
 def Partition.addCell (λ : Partition) (row : ℕ) : Partition :=
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — skew tableau row extension
-  -- add one cell at the end of the given row
-  -- must verify the result is still a valid partition
+  if h : row < λ.parts.length then
+    ⟨λ.parts.set row (λ.parts[row] + 1), by
+      -- Pairwise (· ≥ ·) preservation under +1 at index row requires
+      -- `addability`: λ.part (row-1) > λ.part row (so λ.part row can grow
+      -- to λ.part row + 1 ≤ λ.part (row-1)) and λ.part row ≥ λ.part (row+1).
+      -- Signature should be strengthened to take an addability hypothesis.
+      -- STRUCTURAL FIX NEEDED — same pattern as `removeCorner`.
+      sorry⟩
+  else
+    -- Append a new row of length 1 at the bottom.  Valid iff all
+    -- existing parts are ≥ 1 (trivially true for `Partition` whose
+    -- parts are natural numbers; the sorted invariant `.Pairwise (· ≥ ·)`
+    -- plus `1 ≤ last part` gives the append).
+    ⟨λ.parts ++ [1], by
+      rcases hlast : λ.parts.getLast? with _ | last
+      · simp [List.getLast?_eq_none.mp hlast]
+      · -- STRUCTURAL FIX NEEDED: needs `0 < last` hypothesis (positivity
+        -- of the last part).  `Partition` as defined allows zero parts,
+        -- so append of 1 is not always sorted-descending.
+        sorry⟩
   -- Ref: [sagan2001] §2.3
 
 /-- The covering relation in the Young lattice:
@@ -274,13 +328,22 @@ def youngCovers (μ λ : Partition) : Prop :=
 
     This is the key theorem connecting SYT counting to the
     branching rule for symmetric groups / Hecke algebras. -/
+-- STATEMENT-LEVEL DEFECT: the RHS was literally `sorry`.  Restating
+-- once `saturatedChainsCount : Partition → Partition → ℕ` is defined:
+--
+--   def saturatedChainsCount (μ λ : Partition) : ℕ := -- # saturated
+--     -- chains μ = λ_{size μ} ⋖ λ_{size μ + 1} ⋖ ... ⋖ λ in Young lattice
+--     sorry
+--
+--   theorem skewSYT_eq_chains (λ μ : Partition) (h : λ.contains μ) :
+--       skewSYTCount λ μ = saturatedChainsCount μ λ := by
+--     -- Proof: the bijection reads off entry k of a skew SYT as the
+--     -- position of λ_k in a saturated chain (k = size μ + 1 ... size λ).
+--     sorry
+--
 -- Ref: [sagan2001] Theorem 3.1.1
-theorem skewSYT_eq_chains (λ μ : Partition) (h : λ.contains μ) :
-    skewSYTCount λ μ = sorry := by
-  sorry
-  -- The proof constructs a bijection between skew SYT and
-  -- saturated chains in the Young lattice.
-  -- Ref: [sagan2001] Theorem 3.1.1
+-- (Commented out until `saturatedChainsCount` is formalised; this
+-- theorem's current placeholder RHS prevented any build-time use.)
 
 /-! ## §7  Classical dimension identity -/
 
