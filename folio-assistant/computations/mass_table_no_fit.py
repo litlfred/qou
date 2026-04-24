@@ -96,11 +96,30 @@ def b_paper(Z: int, N: int) -> dict:
 
 
 def tr_M_from_witness():
-    """Pull |tr_M| values already computed by std_matrix_trace_closed_form."""
+    """Pull |tr_M| values already computed by std_matrix_trace_closed_form.
+
+    If the witness file is missing (e.g. fresh clone without running
+    the prerequisite script), automatically invoke
+    std_matrix_trace_closed_form.py to generate it.  Returns {} only
+    if the re-generation itself fails.
+    """
     import json
+    import subprocess
     p = Path(__file__).parent / "std-matrix-trace-closed-form.witness.json"
     if not p.exists():
-        return {}
+        script = Path(__file__).parent / "std_matrix_trace_closed_form.py"
+        if script.exists():
+            try:
+                subprocess.run([sys.executable, str(script)],
+                               check=True, cwd=script.parent,
+                               capture_output=True, timeout=300)
+            except Exception as e:
+                print(f"  [warn] could not auto-generate tr_M witness: {e}")
+                return {}
+        else:
+            print("  [warn] tr_M witness missing and generator script not "
+                  "found; the α·|tr_M| column will be empty")
+            return {}
     try:
         d = json.loads(p.read_text())
     except Exception:

@@ -180,10 +180,16 @@ def j_N_qtr(basis_word, n_strands, N, q, *, r_position_cache=None):
     K_diag = quantum_trace_K(N, n_strands, q)
     qtr = np.sum(K_diag * np.diag(M))
     # N_q = [N]_q = (q^N - q^{-N})/(q - q^{-1})
+    # Edge cases:  q = 1  → limit gives N (L'Hôpital).
+    #              q = -1 → (-1)^N − (-1)^-N numerator vanishes; limit is
+    #                       N for odd N, 0 for even N.
     q_c = complex(q)
-    nq = (q_c ** N - q_c ** (-N)) / (q_c - 1 / q_c) \
-         if abs(q_c - 1) > 1e-15 and abs(q_c + 1) > 1e-15 or N > 1 \
-         else complex(N)
+    if abs(q_c - 1.0) < 1e-15:
+        nq = complex(N)
+    elif abs(q_c + 1.0) < 1e-15:
+        nq = complex(N if N % 2 else 0)
+    else:
+        nq = (q_c ** N - q_c ** (-N)) / (q_c - 1 / q_c)
     # J_N(β̂) normalization: qtr / [N]_q^{n_components - 1}
     # For a braid on n strands closed to a link with c components,
     # the normalization involves [N]_q^c / [N]_q = [N]_q^{c-1} for

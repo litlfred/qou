@@ -76,7 +76,7 @@ def _numeric_sigmas_for_shape(shape: tuple):
             S_arr = S.toarray()
         else:
             S_arr = np.asarray(S)
-        S_mat = sp.Matrix(S_arr.tolist())
+        S_mat = sp.Matrix(S_arr)
         try:
             numeric_fn = sp.lambdify(q_sym, S_mat, modules="numpy")
             arr = np.asarray(numeric_fn(complex(Q0)), dtype=complex)

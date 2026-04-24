@@ -128,12 +128,14 @@ def phi_1(Z: int, N: int) -> float:
     v_free = atom_per_generator_volumes(Z, N, include_inter=False)
 
     def sum_ln(vols):
+        # Floor near-zero |V̂| at 1e-30 so non-hyperbolic / singular
+        # generators don't collapse both branches to -inf and yield
+        # NaN in the atom-minus-free difference.  The floor is
+        # numerically negligible for physical V̂ values.
         total = 0.0
         for v in vols:
             f = v["full"]
-            if abs(f) < 1e-30:
-                return float("-inf")
-            total += math.log(abs(f))
+            total += math.log(max(abs(f), 1e-30))
         return total
 
     return sum_ln(v_atom) - sum_ln(v_free)

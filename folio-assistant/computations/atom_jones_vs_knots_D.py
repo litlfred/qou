@@ -71,10 +71,19 @@ def trM_plancherel_at_q(Z: int, N: int, q_val: complex) -> complex:
                 S_arr = S.toarray()
             else:
                 S_arr = np.asarray(S)
-            S_num = np.array([[complex(sp.N(S_arr[i, j].subs(
-                sp.Symbol('q'), q_val)))
-                               for j in range(dim)]
-                              for i in range(dim)])
+            try:
+                S_num = np.asarray(
+                    sp.lambdify(sp.Symbol('q'),
+                                 sp.Matrix(S_arr),
+                                 modules='numpy')(q_val),
+                    dtype=complex,
+                )
+            except Exception:
+                # Fallback for entries that lambdify can't handle
+                S_num = np.array([[complex(sp.N(S_arr[i, j].subs(
+                    sp.Symbol('q'), q_val)))
+                                    for j in range(dim)]
+                                   for i in range(dim)])
             sigmas_num.append(S_num)
         I = np.eye(dim, dtype=complex)
         prod = I.copy()
