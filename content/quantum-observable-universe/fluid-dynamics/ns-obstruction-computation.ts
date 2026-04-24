@@ -12,7 +12,7 @@ export default proposition({
     "prop:root-of-unity-truncation",
     "prop:core-levi-form",
     "conj:levi-degeneracy",
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
     "def:standard-part-functor",
     "def:surreal-blowup-calculus",
     "rem:body-asymptotics-catalog",

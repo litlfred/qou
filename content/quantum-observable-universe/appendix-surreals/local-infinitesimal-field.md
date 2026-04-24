@@ -81,7 +81,7 @@ birthday-ordered magnitude distribution.
 3. **Singularity detection**: a "singularity" of the main paper's
    QOU is a point $x_0$ where some quantity diverges. In the
    surreal lift, the divergence has a specific normal-form order
-   $\Ow(\cdot)$ — which, by locality, can vary in a neighbourhood
+   $\ordw(\cdot)$ — which, by locality, can vary in a neighbourhood
    of $x_0$.
 
 ## Relation to existing conjectures

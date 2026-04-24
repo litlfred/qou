@@ -32,10 +32,10 @@ $$
   \qquad (\text{strictly, in } \mathbb{R}(\varepsilon) \subset \mathbf{No})
 $$
 
-is automatic: $\Ow(\mathcal{Z}_q) = -4/3 < 3 = \Ow(\Delta_q)$ in the
-$\omega$-adic order of [Big-O via $\Ow$](#rem:big-o-surreal).  The
+is automatic: $\ordw(\mathcal{Z}_q) = -4/3 < 3 = \ordw(\Delta_q)$ in the
+$\omega$-adic order of [Big-O via $\ordw$](#rem:conway-normal-form).  The
 cascade sits at **lower $\omega$-order** than the dissipation,
-which is the $\Ow$-formalisation of "faster-than-viscous growth".
+which is the $\ordw$-formalisation of "faster-than-viscous growth".
 
 **Conclusion.** As $\varepsilon \to 0$ (equivalently, as the substrate
 becomes classical), the enstrophy transfinite strictly outruns the
@@ -45,10 +45,10 @@ Navier--Stokes flow cannot absorb the vorticity cascade: the velocity
 field develops a finite-time blow-up.  This is the surreal content of
 [blowup as Yekutieli lifting obstruction](#prop:blowup-yekutieli).
 
-**Relation to the $\Ow$-catalog entry.** The classical Biot--Savart
+**Relation to the $\ordw$-catalog entry.** The classical Biot--Savart
 scaling $|j^n v|_\Sigma \sim \Gamma / d^{n+1}$ used by
 [NS obstruction computation](#prop:ns-obstruction-computation)
-has $\Ow(|j^n v|_\Sigma) = -(n + 1)\,\Ow(d)$.  Summing over the jet
+has $\ordw(|j^n v|_\Sigma) = -(n + 1)\,\ordw(d)$.  Summing over the jet
 tower gives the $\varepsilon^{-4/3}$ ceiling above (via
 $d \asymp \varepsilon^{2/3}$ along the Leray profile); the squeeze
 inequality then inherits its strict-inequality status from

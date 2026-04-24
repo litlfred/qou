@@ -13,7 +13,7 @@ export default remark({
     "def:q-from-epsilon",
     "prop:surreal-rate-calculus",
     "rem:rh-surreal-bound",
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
     "rem:calculus-up-to-epsilon",
   ],
   tags: [

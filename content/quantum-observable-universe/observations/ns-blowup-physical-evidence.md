@@ -42,9 +42,9 @@ re-absorbed.
 **Quantitative prediction.**  Along the Leray self-similar profile
 ([Leray profile](#prop:leray-profile)),
 the distribution of velocity increments $\delta u_r$ at separation
-$r$ should satisfy $\Ow(\delta u_r) = -\tfrac{r + 1}{3} \Ow(d)$
+$r$ should satisfy $\ordw(\delta u_r) = -\tfrac{r + 1}{3} \ordw(d)$
 in surreal-order notation
-([Big-O via $\Ow$](#rem:big-o-surreal)); classical intermittency
+([Big-O via $\ordw$](#rem:conway-normal-form)); classical intermittency
 exponents are the standard parts of these surreal orders.
 
 ### B. High-energy astrophysical matter creation

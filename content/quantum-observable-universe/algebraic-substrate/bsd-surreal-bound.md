@@ -19,8 +19,8 @@ integrals, the surreal $\omega$-order of $L(\mathcal{E}_q, 1 + \delta)$
 as $\delta$ is a standard-real drift is
 
 $$
-  \Ow\bigl(L(\mathcal{E}_q, 1 + \delta)\bigr)
-   \;=\; r \cdot \Ow(\delta)
+  \ordw\bigl(L(\mathcal{E}_q, 1 + \delta)\bigr)
+   \;=\; r \cdot \ordw(\delta)
   \qquad (\text{in } \mathbb{R}(\varepsilon) \subset \mathbf{No}).
 $$
 
@@ -38,10 +38,10 @@ exceeding the mass-gap budget $\varepsilon^3$, so the $L$-function
 cannot support a hidden zero of order strictly greater than the
 rank — the surreal-order identity is rigid in $\mathbb{R}(\varepsilon)$.
 
-In $\omega$-adic form ([Big-O via $\Ow$](#rem:big-o-surreal)):
+In $\omega$-adic form ([Big-O via $\ordw$](#rem:conway-normal-form)):
 
 $$
-  \Ow\bigl(L(\mathcal{E}_q, 1 + \delta) / \delta^r\bigr) \;=\; 0
+  \ordw\bigl(L(\mathcal{E}_q, 1 + \delta) / \delta^r\bigr) \;=\; 0
   \qquad (\text{no extra vanishing beyond the rank}).
 $$
 
@@ -49,7 +49,7 @@ $$
 $s = 1$ equals $r$, as a literal identity of surreal $\omega$-orders.
 Classical BSD is recovered by applying the standard-part functor
 ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)):
-$\mathrm{st}\bigl(\Ow(L)\bigr) = r$ gives the classical rank formula.
+$\mathrm{st}\bigl(\ordw(L)\bigr) = r$ gives the classical rank formula.
 
 **Relation to RH.** The BSD bound is a generalisation of the RH
 bound ([RH surreal bound](#rem:rh-surreal-bound)) from the
@@ -65,5 +65,5 @@ the leading coefficient $c$ with the product of Tate--Shafarevich
 order, regulator, and periods.  In surreal-order terms this is a
 $\simeq$ identity (matching leading coefficients, not just
 $\omega$-orders); its proof requires integrating the surreal
-$\Ow$-calculus with the Tate thesis adelic Fourier transform
+$\ordw$-calculus with the Tate thesis adelic Fourier transform
 ([adelic--Tate surreal bound](#rem:adelic-tate-squeeze)).

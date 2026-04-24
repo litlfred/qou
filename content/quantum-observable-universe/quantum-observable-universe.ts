@@ -34,12 +34,11 @@ export default paper({
     frakI: { tex: "\\mathfrak{I}",  unicode: "ℑ" },
     frakK: { tex: "\\mathfrak{K}",  unicode: "𝔎" },
     frakP: { tex: "\\mathfrak{P}",  unicode: "𝔓" },
-    // ω-adic Big-O / leading-exponent class (Conway normal form).
-    // Valuation-style sharpening of classical Big-O: on the surreals
-    // one has O_ω(f) ≤ O_ω(g) ⟺ f = O(g) ⟺ f ⪯ g. Direct analogue
-    // of the p-adic order, written in Big-O register.
-    // See: app:surreals/rem:big-o-surreal.
-    Ow:    { tex: "O_{\\omega}",  unicode: "O_ω" },
+    // ω-adic order (leading exponent in Conway normal form).
+    // Direct analogue of p-adic ord_p; used in the surreal-numbers
+    // appendix as the surreal replacement for classical Big-O.
+    // See: app:surreals/rem:conway-normal-form.
+    ordw: { tex: "\\mathrm{ord}_{\\omega}",  unicode: "ord_ω" },
   },
   chapters: [
     // ── Part I: Foundations ──────────────────────────────────────────

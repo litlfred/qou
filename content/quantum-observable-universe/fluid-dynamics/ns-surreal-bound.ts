@@ -12,7 +12,7 @@ export default remark({
     "def:reeb-epsilon",
     "def:q-from-epsilon",
     "prop:surreal-rate-calculus",
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
   ],
   tags: [

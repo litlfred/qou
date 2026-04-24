@@ -14,7 +14,7 @@ export default proposition({
     "def:classical-limit-functor",
     "thm:quantum-gap-collapse",
     "def:categorical-reeb-derivation",
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
     "def:surreal-blowup-calculus",
   ],

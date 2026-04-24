@@ -3,10 +3,10 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:body-asymptotics-catalog",
   title:
-    "Catalog: body-paper analytic bounds in surreal $\\Ow$-form",
-  interprets: "rem:big-o-surreal",
+    "Catalog: body-paper analytic bounds in surreal $\\ordw$-form",
+  interprets: "rem:conway-normal-form",
   uses: [
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
     "rem:conway-normal-form",
     "def:standard-part-functor",
     "def:surreal-blowup-calculus",

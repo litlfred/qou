@@ -15,7 +15,7 @@ export default remark({
     "rem:bec-vortex-data",
     "rem:hecke-algebra-from-braiding",
     "prop:leray-profile",
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
   ],
   tags: [
     "navier-stokes",

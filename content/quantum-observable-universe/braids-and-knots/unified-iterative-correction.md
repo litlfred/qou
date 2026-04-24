@@ -159,6 +159,6 @@ extending $K_{\max}$ above $6$ adds further partitions, with
 shadow prices and $q$-hooks computed by the same formulas.
 
 *Formal asymptotic content. The Féray–Méliot rate $O(1/\sqrt{A})$
-has $\Ow(\text{accumulator}) = -\tfrac{1}{2}\,\Ow(A)$ in the surreal valuation;
-see [Big-O via $\Ow$](#rem:big-o-surreal) and the
+has $\ordw(\text{accumulator}) = -\tfrac{1}{2}\,\ordw(A)$ in the surreal valuation;
+see [Big-O via $\ordw$](#rem:conway-normal-form) and the
 [body asymptotics catalog](#rem:body-asymptotics-catalog).*

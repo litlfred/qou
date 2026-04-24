@@ -18,7 +18,7 @@ export default remark({
     "rem:bsd-surreal-bound",
     "rem:yang-mills-surreal-bound",
     "rem:adelic-tate-squeeze",
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
   ],
   tags: [

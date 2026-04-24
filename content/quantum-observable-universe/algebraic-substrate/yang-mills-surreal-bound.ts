@@ -11,7 +11,7 @@ export default remark({
     "lem:surreal-squeeze",
     "def:reeb-epsilon",
     "def:q-from-epsilon",
-    "rem:big-o-surreal",
+    "rem:conway-normal-form",
   ],
   tags: [
     "yang-mills",

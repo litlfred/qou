@@ -26,7 +26,7 @@ of the $\varepsilon_v$'s, in the following sense: for almost every
 place $v$, $\varepsilon_v$ equals the "tame" infinitesimal
 $\varepsilon_\infty$ (archimedean reference), and the global
 $\varepsilon$-adic valuation $\Ow_{\mathbb{A}}(f)$ of an adelic
-observable is the **sum** over $v$ of local $\Ow$-orders:
+observable is the **sum** over $v$ of local $\ordw$-orders:
 
 $$
   \Ow_{\mathbb{A}}(f)

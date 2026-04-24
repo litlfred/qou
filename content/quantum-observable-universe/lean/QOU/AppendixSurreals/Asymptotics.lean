@@ -15,9 +15,9 @@ downstream modules that construct or axiomatise a specific surreal
 carrier (e.g.\ via a Hahn embedding).
 
 Notation: in LaTeX we write `$O_\omega$` (Big-O register, via the
-`\Ow` macro).  In Lean the identifier is `Ow` for ASCII usability.
+`\ordw` macro).  In Lean the identifier is `Ow` for ASCII usability.
 
-LaTeX labels: `rem:big-o-surreal`, `rem:conway-normal-form`.
+LaTeX labels: `rem:conway-normal-form`, `rem:conway-normal-form`.
 
 ## References
 

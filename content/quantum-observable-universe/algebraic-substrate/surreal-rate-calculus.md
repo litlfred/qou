@@ -14,7 +14,7 @@ Equivalently, via the surreal appendix
 $\varepsilon = 1 / \omega$ inside Conway's surreal field $\mathbf{No}$.
 The asymptotic symbols $\asymp$, $O(\cdot)$, $o(\cdot)$, $\Theta(\cdot)$
 below are the surreal-valuation forms of
-[Big-O surreal](#rem:big-o-surreal) — equality up to a standard-real
+[Big-O surreal](#rem:conway-normal-form) — equality up to a standard-real
 prefactor (for $\asymp$) or leading-exponent comparison (for the others).
 
 **Rate table.** Each scaling law of the classical-limit degenerations

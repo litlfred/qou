@@ -35,8 +35,8 @@ $$
   \qquad (\text{in } \mathbb{R}(\varepsilon) \subset \mathbf{No}).
 $$
 
-Equivalently, $\Ow(V(\delta)) = -1 < 3 = \Ow(\Delta_q)$ in the
-$\omega$-adic order of [Big-O via $\Ow$](#rem:big-o-surreal).
+Equivalently, $\ordw(V(\delta)) = -1 < 3 = \ordw(\Delta_q)$ in the
+$\omega$-adic order of [Big-O via $\ordw$](#rem:conway-normal-form).
 
 **Conclusion.** No rogue orbit with standard-real drift $\delta > 0$
 can persist: the Reeb period sweeps a contact-volume transfinite
