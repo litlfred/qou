@@ -32,6 +32,7 @@ LaTeX label: `app:surreals` (umbrella)
 
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
+import Mathlib.SetTheory.Ordinal.NaturalSum
 import Mathlib.Data.Real.Basic
 
 namespace QOU.AppendixSurreals

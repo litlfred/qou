@@ -42,6 +42,7 @@ current small base.
 -/
 
 import Mathlib.Algebra.Polynomial.Eval
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import QOU.AppendixSurreals.Basic
 import QOU.AppendixSurreals.StandardPart
 import QOU.AppendixSurreals.SignSequence
@@ -89,14 +90,20 @@ axiom QOU_ObservabilityNorm {K : Type u} [SurrealField K]
 axiom QOU_VacuumEnergy {K : Type u} [SurrealField K]
   (Q : QOU_Surreal K) : K
 
-/-- Placeholder for the coloured Jones polynomial. -/
-axiom ColoredJones (K : Type u) [SurrealField K] : K → ℕ → K
+/-- Placeholder for a "knot" type.  Declared before `ColoredJones`
+    and `HyperbolicVolume` so those axioms can reference it. -/
+axiom Knot : Type
 
-/-- Placeholder for the hyperbolic volume of a knot complement. -/
-axiom HyperbolicVolume : Type u → ℝ
+/-- Placeholder for the coloured Jones polynomial
+    `J_K(q, n)` where `K : Knot` is the knot, `q : K` is the
+    quantum parameter (allowed to be transfinite, e.g. `ζ_ω`),
+    and `n : K` is the colour (allowed to be transfinite, e.g.
+    `omegaSurreal K`). -/
+axiom ColoredJones (K : Type u) [SurrealField K] : Knot → K → K → K
 
-/-- Placeholder for a "knot" type. -/
-axiom Knot : Type u
+/-- Placeholder for the hyperbolic volume of a knot complement
+    `Vol(S³ \ K)`. -/
+axiom HyperbolicVolume : Knot → ℝ
 
 /-- Placeholder for the Kazhdan–Lusztig cells of `H_n(ζ_p)`. -/
 axiom KazhdanLusztigCells (p n : ℕ) : Type
@@ -204,19 +211,23 @@ class BigBangHeatDeath where
 
 /-- **Conjecture: surreal Kashaev volume identity.**
 
-    For every hyperbolic knot, the standard-part of
-    `2π · log|J_K(ζ_ω, ω)| / ω` equals `Vol(S³ \ K)`.
+    For every hyperbolic knot `K_knot`, the standard-part of
+    `2π · log|J_{K_knot}(ζ_ω, ω)| / ω` equals `Vol(S³ \ K_knot)`.
 
     Requires `ColoredJones`, `HyperbolicVolume`, `surrealLog`,
     `surrealExp`, `Knot` — all placeholders. -/
 -- Ref: [kashaev1997], [murakami-murakami2001]
 class KashaevSurreal where
-  /-- Kashaev volume identity in surreal form. -/
+  /-- Kashaev volume identity in surreal form:
+      `st(2π · log|J(ζ_ω, ω)| / ω) = Vol(K_knot)` -/
   st_volume_eq_asymptotic :
     ∀ (K_knot : Knot),
       ∃ (zeta_omega : K),
-        standardPart (2 * (ColoredJones K zeta_omega 1) / omegaSurreal K)
-          = HyperbolicVolume Knot
+        standardPart
+          (2 * SurrealField.ofReal Real.pi
+            * surrealLog (|ColoredJones K K_knot zeta_omega (omegaSurreal K)|)
+            / omegaSurreal K)
+          = HyperbolicVolume K_knot
 
 /-- **Conjecture: birthday refinement of the Jones polynomial.**
 
