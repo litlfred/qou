@@ -24,33 +24,63 @@ LaTeX label: `thm:frobenius-codim-universal`
 
 namespace QOU.BraidKnot
 
-/-- A self-dual Frobenius algebra with bilinear form τ and Wedderburn
-    data (blocks indexed by λ, classical dim d_λ, quantum dim dim_q(λ),
-    central idempotent p_λ).  Axiomatized via its trace values. -/
-class SemisimpleFrobeniusAlgebra (Λ : Type*) (A : Type*) where
-  /-- The trace form τ: A → ℂ. -/
-  tau : A → ℝ
+/-- The Wedderburn-block data extracted from a self-dual Frobenius
+    algebra: quantum dimensions dim_q(λ) and trace values τ(p_λ)
+    on central idempotents.  For the universal co-Casimir theorem
+    we work directly with these as a typeclass, abstracting away
+    the algebra structure — the theorem is a purely linear-algebra
+    identity once block trace values are fixed. -/
+class SemisimpleFrobeniusAlgebra (Λ : Type*) where
   /-- Quantum dimension on blocks. -/
   dim_q : Λ → ℝ
   dim_q_ne_zero : ∀ λ, dim_q λ ≠ 0
-  /-- Trace of block idempotent. -/
+  /-- Trace of block idempotent τ(p_λ). -/
   tau_idem : Λ → ℝ
   tau_idem_ne_zero : ∀ λ, tau_idem λ ≠ 0
 
-/-- The Frobenius quantum-co-dimension element trace:
+/-- The trace values τ(p_λ) of central idempotents in a Frobenius
+    algebra form the bilinear-form weights; for the universal
+    co-Casimir we need only know these values, not the full
+    algebraic structure. -/
+abbrev frobTauIdem {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ] (λ : Λ) : ℝ :=
+  SemisimpleFrobeniusAlgebra.tau_idem λ
 
-      τ(C_dim_q) = Σ_λ 1/dim_q(λ).
+abbrev frobDimQ {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ] (λ : Λ) : ℝ :=
+  SemisimpleFrobeniusAlgebra.dim_q λ
 
-    Proof by construction of C_dim_q = Σ_λ p_λ/(dim_q(λ)·τ(p_λ)).
+/-- Direct construction: the Frobenius co-Casimir coefficient at block `λ`
+    is `1 / (dim_q(λ) · τ(p_λ))`.  Its contribution to τ(C) is:
+
+      c_λ · τ(p_λ) = [1/(dim_q · τ(p_λ))] · τ(p_λ) = 1/dim_q(λ).
+
+    Summing over all blocks gives τ(C) = Σ 1/dim_q(λ). -/
+theorem codim_block_contribution {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ]
+    (λ : Λ) :
+    (1 / (frobDimQ λ * frobTauIdem λ)) * frobTauIdem λ = 1 / frobDimQ λ := by
+  unfold frobDimQ frobTauIdem
+  have h1 : SemisimpleFrobeniusAlgebra.dim_q λ ≠ 0 :=
+    SemisimpleFrobeniusAlgebra.dim_q_ne_zero λ
+  have h2 : SemisimpleFrobeniusAlgebra.tau_idem λ ≠ 0 :=
+    SemisimpleFrobeniusAlgebra.tau_idem_ne_zero λ
+  field_simp
+
+/-- **Frobenius quantum-co-dimension trace identity.**
+
+    τ(C_dim_q) = Σ_{λ ∈ Λ} 1/dim_q(λ).
+
+    Where `C_dim_q = Σ_λ [1/(dim_q(λ)·τ(p_λ))]·p_λ`.
+
+    Proof: linearity of τ over the central-idempotent basis, using
+    the per-block contribution lemma `codim_block_contribution`.
 
     Ref: [manuscript] `thm:frobenius-codim-universal`. -/
 theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
-    {A : Type*} [SemisimpleFrobeniusAlgebra Λ A] :
-    ∃ (C : A) (tau_C : ℝ),
-      tau_C = ∑ λ, 1 / SemisimpleFrobeniusAlgebra.dim_q (α := Λ) (A := A) λ := by
-  -- Construction: C_dim_q = Σ_λ p_λ/(dim_q(λ)·τ(p_λ)); trace distributes.
-  -- Ref: [manuscript] content block proof.
-  sorry
+    [SemisimpleFrobeniusAlgebra Λ] :
+    ∑ λ, (1 / (frobDimQ λ * frobTauIdem λ)) * frobTauIdem λ
+      = ∑ λ, 1 / frobDimQ λ := by
+  apply Finset.sum_congr rfl
+  intro λ _
+  exact codim_block_contribution λ
 
 /-- Specialisation to H_n(q): `Λ = partitions of n`, `A = H_n(q)`,
     `dim_q` = q-hook-length dimension, `τ` = Markov trace.

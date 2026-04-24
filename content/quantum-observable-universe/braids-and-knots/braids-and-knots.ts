@@ -397,6 +397,7 @@ export default chapter({
         "knot-mass-formula-unified",
         "partition-sum-proton-residual",
         "np-discrepancy-resolution",
+        "mass-formula-regime-switching",
         "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",
