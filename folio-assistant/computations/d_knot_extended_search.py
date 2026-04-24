@@ -55,11 +55,11 @@ def vol_float(M) -> float:
 def vol_hp(M, digits: int = 50) -> str | None:
     try:
         import mpmath
-        mpmath.mp.dps = digits
-        Mh = M.high_precision()
-        v = Mh.volume()
-        rp = v.real if hasattr(v, "real") else v
-        return mpmath.nstr(mpmath.mpf(str(rp)), digits)
+        with mpmath.workdps(digits):
+            Mh = M.high_precision()
+            v = Mh.volume()
+            rp = v.real if hasattr(v, "real") else v
+            return mpmath.nstr(mpmath.mpf(str(rp)), digits)
     except Exception:
         return None
 

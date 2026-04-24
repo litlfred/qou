@@ -42,7 +42,11 @@ warnings.filterwarnings("ignore", category=UserWarning)
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
-mp.mp.dps = 50
+
+# Precision applied only when run as main; import-safe otherwise.
+_MP_DPS = 50
+if __name__ == "__main__":
+    mp.mp.dps = _MP_DPS
 
 from q_parameter import (
     Q as Q0_FLOAT, HBAR_Q, HBAR_Q_SQ,

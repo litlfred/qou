@@ -37,7 +37,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 import numpy as np
 import sympy as sp
 import mpmath
-mpmath.mp.dps = 50
+
+# Precision applied only when run as main.  Local high-precision
+# blocks inside helper functions use mpmath.workdps instead.
+_MP_DPS = 50
+if __name__ == "__main__":
+    mpmath.mp.dps = _MP_DPS
 
 from hecke_symbolic import (
     SymbolicHeckeElement, SymbolicHeckeDivision,

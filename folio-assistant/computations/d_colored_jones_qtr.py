@@ -33,7 +33,13 @@ sys.path.insert(0, str(Path(__file__).parent))
 import numpy as np
 import sympy as sp
 import mpmath
-mpmath.mp.dps = 40
+
+# Precision applied only when the script is run directly.  This avoids
+# leaking mpmath.mp.dps into other modules that import symbols from
+# this file.  Inside functions we use mpmath.workdps for local scope.
+_MP_DPS = 40
+if __name__ == "__main__":
+    mpmath.mp.dps = _MP_DPS
 
 from hecke_symbolic import (
     SymbolicHeckeElement, SymbolicHeckeDivision,
