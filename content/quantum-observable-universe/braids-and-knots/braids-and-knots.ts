@@ -391,6 +391,7 @@ export default chapter({
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",
         "mn-classical-parity-blind",
+        "q-character-closes-parity-gap",
         "markov-pair-z2",
         "pentagon-uv-commutation",
         "descended-level-zero",
