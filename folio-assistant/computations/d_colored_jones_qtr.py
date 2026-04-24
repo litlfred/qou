@@ -113,16 +113,38 @@ def r_at_position(R: np.ndarray, N: int, pos: int, n: int) -> np.ndarray:
     return np.kron(np.kron(left, R), right)
 
 
-def braid_matrix(word, n, N, q):
+def braid_matrix(word, n, N, q, *, r_position_cache=None):
+    """Build the braid operator on V_{N-1}^⊗n.
+
+    `r_position_cache`: optional dict {gen_index: matrix} precomputed
+    once for fixed (n, N, q) and reused across words.  If None, the
+    cache is built locally (OK for one-off calls but inefficient in
+    a loop).
+    """
     dim = N ** n
     M = np.eye(dim, dtype=complex)
-    R = r_matrix_N(N, q)
-    cache = {}
+    if r_position_cache is None:
+        R = r_matrix_N(N, q)
+        r_position_cache = {}
+        for g in word:
+            if g not in r_position_cache:
+                r_position_cache[g] = r_at_position(R, N, g, n)
     for g in word:
-        if g not in cache:
-            cache[g] = r_at_position(R, N, g, n)
-        M = M @ cache[g]
+        if g not in r_position_cache:
+            R = r_matrix_N(N, q)
+            r_position_cache[g] = r_at_position(R, N, g, n)
+        M = M @ r_position_cache[g]
     return M
+
+
+def build_r_position_cache(n, N, q):
+    """Precompute r_at_position for all generator indices 0..n-2.
+
+    Use once outside a loop over words to avoid recomputing R and
+    embedding it at each position on every braid_matrix call.
+    """
+    R = r_matrix_N(N, q)
+    return {g: r_at_position(R, N, g, n) for g in range(n - 1)}
 
 
 def quantum_trace_K(N: int, n: int, q: complex) -> np.ndarray:
@@ -141,17 +163,20 @@ def quantum_trace_K(N: int, n: int, q: complex) -> np.ndarray:
     return diag  # shape (N^n,) — multiply diag * M elementwise on diagonal
 
 
-def j_N_qtr(basis_word, n_strands, N, q):
-    """Quantum Jones J_N(closure of basis_word) at q via quantum trace."""
-    if len(basis_word) == 0:
-        # Unknot on 0 generators — empty braid on n_strands
-        # qtr(I_{N^n}) = [N]_q^n / [N]_q^{n-1} = [N]_q
-        pass  # handled by formula below
+def j_N_qtr(basis_word, n_strands, N, q, *, r_position_cache=None):
+    """Quantum Jones J_N(closure of basis_word) at q via quantum trace.
+
+    If calling in a loop over many basis words at fixed (n_strands, N, q),
+    build an r_position_cache with build_r_position_cache once and pass
+    it in — this avoids rebuilding the R-matrix and position embeddings
+    for every word.
+    """
     dim = N ** n_strands
     if len(basis_word) == 0:
         M = np.eye(dim, dtype=complex)
     else:
-        M = braid_matrix(basis_word, n_strands, N, q)
+        M = braid_matrix(basis_word, n_strands, N, q,
+                          r_position_cache=r_position_cache)
     K_diag = quantum_trace_K(N, n_strands, q)
     qtr = np.sum(K_diag * np.diag(M))
     # N_q = [N]_q = (q^N - q^{-N})/(q - q^{-1})
@@ -175,6 +200,13 @@ def j_N_at_root_via_limit(basis_word, n, N,
     """Evaluate J_N at q = e^{2πi/N} via limit from q = root · e^{iε}.
 
     Returns Richardson-extrapolated value as ε → 0.
+
+    Richardson scheme: if f(ε) = f(0) + c₁·ε + c₂·ε² + ...  and
+    successive ε_k halve (or shrink by factor r), the k-th Richardson
+    estimate is
+        R_k = (r · f(ε_k) − f(ε_{k-1})) / (r − 1)
+    This cancels the leading ε term, leaving O(ε²) error.  Iterated on
+    the Richardson table removes higher powers.
     """
     root = cmath.exp(2j * cmath.pi / N)
     vals = []
@@ -182,17 +214,33 @@ def j_N_at_root_via_limit(basis_word, n, N,
         q_eps = root * cmath.exp(1j * eps)
         v = j_N_qtr(basis_word, n, N, q_eps)
         vals.append(v)
-    # If values agree to small tolerance, take innermost.
-    # If they diverge (sign of pole), report nan.
     if any(cmath.isnan(v) for v in vals):
         return complex("nan")
-    # Check agreement
     diff = abs(vals[-1] - vals[-2])
     ref = max(abs(v) for v in vals) + 1
     if diff / ref > 0.01:
         return complex("nan")   # divergent
-    # Richardson extrapolation (linear in eps)
-    return vals[-1]
+
+    # Richardson table: assume ε_k = eps_list[k] decreases geometrically.
+    # Build one column of Richardson estimates for each pair.
+    # Single-step Richardson at pair (k-1, k):
+    #   R = (r · vals[k] − vals[k-1]) / (r − 1), r = eps_{k-1} / eps_k
+    # Iterate: take successive Richardson estimates from the previous
+    # column to fully cancel higher powers.
+    col = list(vals)
+    while len(col) >= 2:
+        next_col = []
+        for k in range(1, len(col)):
+            # Use actual ε ratio to form r (supports non-geometric lists)
+            i_this = len(vals) - len(col) + k
+            i_prev = i_this - 1
+            r = eps_list[i_prev] / eps_list[i_this]
+            if abs(r - 1) < 1e-15:
+                next_col.append(col[k])
+            else:
+                next_col.append((r * col[k] - col[k - 1]) / (r - 1))
+        col = next_col
+    return col[0] if col else vals[-1]
 
 
 def main() -> int:
@@ -214,10 +262,14 @@ def main() -> int:
 
         t0 = time.time()
         J_at_q0 = 0j
+        # Precompute the R-matrix position-embeddings for this (N, q₀)
+        # pair once; reuse for every NF basis word.
+        r_cache_q0 = build_r_position_cache(N_STRANDS, N, complex(Q0_FLOAT))
         for (basis, coeff) in nf.terms.items():
             coeff_fn = sp.lambdify(q_sym, coeff, modules=["numpy", "cmath"])
             c_val = complex(coeff_fn(complex(Q0_FLOAT)))
-            j_val = j_N_qtr(basis, N_STRANDS, N, complex(Q0_FLOAT))
+            j_val = j_N_qtr(basis, N_STRANDS, N, complex(Q0_FLOAT),
+                              r_position_cache=r_cache_q0)
             if not (np.isnan(j_val.real) or np.isnan(j_val.imag)):
                 J_at_q0 += c_val * j_val
         dt_q0 = time.time() - t0

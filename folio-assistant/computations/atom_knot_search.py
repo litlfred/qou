@@ -36,6 +36,13 @@ from atom_sdp_gluon_search import (
 )
 from experimental_constants import M_E_MEV
 
+try:
+    import snappy as _snappy
+    _SNAPPY_AVAILABLE = True
+except ImportError:
+    _snappy = None
+    _SNAPPY_AVAILABLE = False
+
 
 # Target volume: B_AME/ρ_F.  For D at ρ_F=m_e: 2.22456612 / 0.51099895
 B_D_AME = 2.22456612
@@ -130,10 +137,11 @@ def lift_to_braid(triples, mixed_rule: str,
 
 
 def vol_of_closure(word: list[int], digits: int = 50):
-    """Return (v_float, v_hp_str_or_None) from SnapPy."""
+    """Return (v_float, v_hp_str_or_None, err) from SnapPy."""
+    if not _SNAPPY_AVAILABLE:
+        return None, None, "snappy_missing"
     try:
-        import snappy
-        L = snappy.Link(braid_closure=word)
+        L = _snappy.Link(braid_closure=word)
         E = L.exterior()
         v_raw = E.volume()
         v = float(v_raw.real) if hasattr(v_raw, "real") else float(v_raw)
@@ -181,7 +189,6 @@ def search_atom(atom_key: str,
     print(f"  Enumerating {total} combinations…")
 
     all_results = []
-    import snappy  # force early import
     for gluons in gluon_combos:
         for mr in mixed_rules:
             for il in interleaves:

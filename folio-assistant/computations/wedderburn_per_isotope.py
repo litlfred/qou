@@ -52,7 +52,9 @@ ATOMS = [
 def _sigmas_to_numeric(sigmas, dim):
     """Convert symbolic seminormal matrices to numeric arrays at q=Q0.
 
-    Called once per shape; result is reused across callers.
+    Called once per shape; result is reused across callers.  Uses
+    sp.lambdify on the whole matrix for a single numpy evaluation per
+    sigma (vs element-wise sp.N which is O(dim²·sympy-overhead)).
     """
     q_sym = sp.Symbol('q')
     sigmas_num = []
@@ -61,17 +63,20 @@ def _sigmas_to_numeric(sigmas, dim):
             S_arr = S.toarray()
         else:
             S_arr = np.asarray(S)
-        row_list = []
-        for i in range(dim):
-            row = []
-            for j in range(dim):
-                e = S_arr[i, j]
-                if hasattr(e, "subs"):
-                    row.append(complex(sp.N(e.subs(q_sym, Q0))))
-                else:
-                    row.append(complex(e))
-            row_list.append(row)
-        sigmas_num.append(np.array(row_list, dtype=complex))
+        S_mat = sp.Matrix(S_arr.tolist())
+        try:
+            numeric_fn = sp.lambdify(q_sym, S_mat, modules="numpy")
+            arr = np.asarray(numeric_fn(complex(Q0)), dtype=complex)
+        except Exception:
+            arr = np.empty((dim, dim), dtype=complex)
+            for i in range(dim):
+                for j in range(dim):
+                    e = S_arr[i, j]
+                    if hasattr(e, "subs"):
+                        arr[i, j] = complex(sp.N(e.subs(q_sym, Q0)))
+                    else:
+                        arr[i, j] = complex(e)
+        sigmas_num.append(arr)
     return sigmas_num
 
 

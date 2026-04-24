@@ -55,16 +55,21 @@ def is_sym_partition(shape: tuple, n: int) -> bool:
     return shape == (n,)
 
 
-def chi_lambda_at_q0(shape: tuple, word) -> complex:
-    """Character χ_λ(W) in the λ-irrep at q = q₀, numerically."""
+_NUMERIC_SIGMAS_CACHE: dict[tuple, tuple[list, int]] = {}
+
+
+def _numeric_sigmas_for_shape(shape: tuple):
+    """Return (sigmas_num, dim) for shape, caching across calls so that
+    the expensive lambdify/subs work happens ONCE per partition even
+    when chi_lambda_at_q0 is called many times in the outer loop.
+    """
+    if shape in _NUMERIC_SIGMAS_CACHE:
+        return _NUMERIC_SIGMAS_CACHE[shape]
     sigmas, dim, _syts = _cached_seminormal(shape)
     if dim == 0:
-        return 0.0 + 0j
+        _NUMERIC_SIGMAS_CACHE[shape] = ([], 0)
+        return [], 0
     q_sym = sp.Symbol('q')
-
-    # Substitute q = q₀ into each sigma matrix.  Use sp.lambdify on the
-    # whole matrix for speed (single numpy call per sigma vs element-wise
-    # subs for larger dim).
     sigmas_num = []
     for S in sigmas:
         if hasattr(S, "toarray"):
@@ -76,7 +81,6 @@ def chi_lambda_at_q0(shape: tuple, word) -> complex:
             numeric_fn = sp.lambdify(q_sym, S_mat, modules="numpy")
             arr = np.asarray(numeric_fn(complex(Q0)), dtype=complex)
         except Exception:
-            # Fallback: element-wise (handles non-sympy entries gracefully)
             arr = np.empty((dim, dim), dtype=complex)
             for i in range(dim):
                 for j in range(dim):
@@ -86,14 +90,21 @@ def chi_lambda_at_q0(shape: tuple, word) -> complex:
                     else:
                         arr[i, j] = complex(elem)
         sigmas_num.append(arr)
+    _NUMERIC_SIGMAS_CACHE[shape] = (sigmas_num, dim)
+    return sigmas_num, dim
 
+
+def chi_lambda_at_q0(shape: tuple, word) -> complex:
+    """Character χ_λ(W) in the λ-irrep at q = q₀, numerically."""
+    sigmas_num, dim = _numeric_sigmas_for_shape(shape)
+    if dim == 0:
+        return 0.0 + 0j
     I = np.eye(dim, dtype=complex)
     prod = I.copy()
     for (c, d, g) in word:
         if g < len(sigmas_num):
             prod = prod @ (c * sigmas_num[g] + d * I)
         else:
-            # higher gen than available in this partition
             return 0.0 + 0j
     return complex(np.trace(prod))
 

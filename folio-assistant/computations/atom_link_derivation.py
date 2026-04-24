@@ -54,6 +54,13 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import HA as H_VAL  # h = q - q⁻¹ at q₀
 from mass_at_3A_proper import atom_braid_word_3A
 
+try:
+    import snappy as _snappy
+    _SNAPPY_AVAILABLE = True
+except ImportError:
+    _snappy = None
+    _SNAPPY_AVAILABLE = False
+
 CATALAN_G = 0.915965594177219015054603514932
 VOL_BORROMEAN = 8.0 * CATALAN_G
 M_E_MEV = 0.51099895
@@ -179,12 +186,10 @@ def atom_to_braid_word(Z: int, N: int,
 
 def volume_of_closure(word: list[int], digits: int = 50) -> dict:
     """Close braid, compute Vol of exterior (float + HP)."""
-    try:
-        import snappy
-    except ImportError:
+    if not _SNAPPY_AVAILABLE:
         return {"status": "snappy_missing"}
     try:
-        L = snappy.Link(braid_closure=word)
+        L = _snappy.Link(braid_closure=word)
         E = L.exterior()
     except Exception as e:
         return {"status": "construction_error", "error": str(e)}

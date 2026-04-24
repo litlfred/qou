@@ -86,7 +86,11 @@ def build_d_nf():
 
 
 def q_pochhammer(a, n):
-    """(a; q)_n = (1-a)(1-aq)(1-aq²)...(1-aq^{n-1})."""
+    """(a; q)_n = (1-a)(1-aq)(1-aq²)...(1-aq^{n-1}).  O(n) per call.
+
+    For loops over increasing n use the iterative update inside
+    phi_q_series below instead (saves O(n_max²) → O(n_max)).
+    """
     p = mpmath.mpf(1)
     for k in range(n):
         p *= (mpmath.mpf(1) - a * Q0_INV ** k)
@@ -99,17 +103,29 @@ def phi_q_series(v, n_max: int = 50):
     At q = q_0 = 1.11, |q_0^{-1}| = 0.901, the terms decay as
     |v|^n / (a geometric denominator) → sub-ppb at n_max = 50
     for |v| < 1.
+
+    Uses iterative update for the Pochhammer symbol and for v^n, so
+    the whole series is O(n_max) arithmetic operations (not O(n_max²)).
     """
     total = mpmath.mpf(0) if abs(v) < 1 else mpmath.mpc(0, 0)
     v_mp = mpmath.mpf(v) if isinstance(v, (int, float)) else mpmath.mpc(v)
+    # Iterative (a; q)_n = (a; q)_{n-1} · (1 − a · q^{n-1})
+    # with a = Q0_INV, q = Q0_INV.
+    a_poch = Q0_INV
+    poch = mpmath.mpf(1)                  # (a; q)_0 = 1
+    v_pow = mpmath.mpf(1)                 # v^0 = 1
+    a_factor = mpmath.mpf(1)              # Q0_INV^{n-1} at n=1 starts at 1
     for n in range(n_max + 1):
-        poch = q_pochhammer(Q0_INV, n)
         if abs(poch) < mpmath.mpf("1e-200"):
             break
-        term = v_mp ** n / poch
+        term = v_pow / poch
         total += term
-        if abs(term) < mpmath.mpf("1e-60"):
+        if abs(term) < mpmath.mpf("1e-60") and n > 5:
             break
+        # Update for next iteration: multiply by (1 − a · q^n)
+        poch *= (mpmath.mpf(1) - a_poch * a_factor)
+        a_factor *= Q0_INV
+        v_pow *= v_mp
     return total
 
 
