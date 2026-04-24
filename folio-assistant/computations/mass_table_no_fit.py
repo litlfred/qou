@@ -104,7 +104,12 @@ def tr_M_from_witness():
     if the re-generation itself fails.
     """
     import json
+    import os
     import subprocess
+    # Allow the auto-generation timeout to be overridden via env var.
+    # Default 300s is plenty for D/T/3He but 4He (n=12, 77 partitions)
+    # can exceed it on slower hardware.
+    timeout_s = int(os.environ.get("TR_M_WITNESS_TIMEOUT_S", "300"))
     p = Path(__file__).parent / "std-matrix-trace-closed-form.witness.json"
     if not p.exists():
         script = Path(__file__).parent / "std_matrix_trace_closed_form.py"
@@ -112,7 +117,7 @@ def tr_M_from_witness():
             try:
                 subprocess.run([sys.executable, str(script)],
                                check=True, cwd=script.parent,
-                               capture_output=True, timeout=300)
+                               capture_output=True, timeout=timeout_s)
             except Exception as e:
                 print(f"  [warn] could not auto-generate tr_M witness: {e}")
                 return {}
