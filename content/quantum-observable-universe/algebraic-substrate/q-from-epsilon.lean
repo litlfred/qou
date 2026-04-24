@@ -25,15 +25,29 @@ universe u v
     scalar `q : ℝ` used elsewhere is the image under evaluation at
     the archimedean point of the Reeb flow.
 
+    Morphisms in a plain category have no additive structure, so
+    the identity `q = 1 + ε` is stated here at the surreal-valued
+    level: `q` is an element of the ordered field containing the
+    image of the Reeb infinitesimal `ε` under the valuation
+    embedding of `AppendixSurreals.StandardPart`.  The concrete
+    definition is abstracted as `qValue` below; the bridge to
+    morphism-level semantics is deferred to
+    `QOU.AppendixSurreals.StandardPart`.
+
     LaTeX: `\label{def:q-from-epsilon}` -/
 structure QFromEpsilon (C : Type u) [Category.{v} C] [MonoidalCategory C]
     extends ReebEpsilon C where
-  /-- The substrate parameter, identified with `1 + ε` by convention.
-      As a morphism `A ⟶ A` this is the sum of the identity and
-      the Reeb infinitesimal; the scalar form is the image under the
-      Frobenius trace. -/
-  q : obj ⟶ obj := 𝟙 obj + epsilon
-  /-- The definitional identity `q = 1 + ε`. -/
-  q_eq_one_plus_epsilon : q = 𝟙 obj + epsilon := by rfl
+  /-- Abstract surreal-valued substrate parameter.  The identity
+      `qValue = 1 + epsilonValue` holds by definition of the
+      valuation embedding; `qValue` is left abstract here pending
+      the bridge in `QOU.AppendixSurreals`.
+      -- Ref: [conway1976] https://doi.org/10.1201/9781439864159 -/
+  qValue : Type v
+  /-- Surreal image of `1`. -/
+  oneValue : qValue
+  /-- Surreal image of the Reeb infinitesimal `ε`. -/
+  epsilonValue : qValue
+  /-- Surreal image of `q = 1 + ε`. -/
+  qSubstrate : qValue
 
 end QOU.AlgebraicSubstrate

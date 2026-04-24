@@ -17,10 +17,15 @@ namespace QOU.AlgebraicSubstrate
     infinitesimal `ε` over `ℝ`.
 
     The formal proof requires `Mathlib.SetTheory.Surreal.Basic`
-    plus the Reeb--`ω` identification of the appendix.  Informally:
-    multiplying by `ε > 0` reduces the claim to `δ^2 > ε⁴`, which
-    holds because `δ^2` is a strictly positive standard real and
-    `ε⁴` is a positive infinitesimal.
+    plus the Reeb--`ω` identification of
+    `QOU.AppendixSurreals.StandardPart`.  Informally: multiplying by
+    `ε > 0` reduces the claim to `δ^2 > ε⁴`, which holds because
+    `δ^2` is a strictly positive standard real and `ε⁴` is a
+    positive infinitesimal.
+
+    The statement is left as `True` here (compiles trivially) and
+    anchored in the surreal appendix, where the concrete claim is
+    made with the Mathlib surreal-field structure available.
 
     -- Ref: [conway1976] https://doi.org/10.1201/9781439864159
     -- Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143

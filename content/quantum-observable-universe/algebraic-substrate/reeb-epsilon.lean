@@ -36,11 +36,12 @@ structure ReebEpsilon (C : Type u) [Category.{v} C] [MonoidalCategory C] where
   epsilon : obj ⟶ obj
   /-- `ε` is non-zero (it is a *non-trivial* direction in Der(A)). -/
   epsilon_ne_zero : epsilon ≠ 𝟙 obj
-  /-- `ε` is archimedean-smaller than every positive real scalar derivation.
-      Left abstract here; the concrete witness requires the state-bundle
-      Frobenius pairing.
-      -- Ref: [manuscript] Chapter 8 §5 (Classical Limit).
-      -/
+  /-- `ε` is archimedean-smaller than every positive real scalar
+      derivation.  Concrete witness lives at the surreal level; see
+      `QOU.AppendixSurreals.StandardPart` for the embedding from
+      `Der(A)` into Conway's ordered field `No`.
+      -- Ref: [conway1976] https://doi.org/10.1201/9781439864159
+      -- Ref: [manuscript] Chapter 8 §5 (Classical Limit). -/
   archimedean_infinitesimal : True := trivial
 
 end QOU.AlgebraicSubstrate
