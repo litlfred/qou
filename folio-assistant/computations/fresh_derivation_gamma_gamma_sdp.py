@@ -218,18 +218,52 @@ def fit_operator_sequence(M_source, M_target, sigmas, dim, max_ops=12):
     return seq, np.linalg.norm(M - M_target)
 
 
-def hecke_energy_of_op(op_name, shape):
-    """Per-operator Hecke energy in block λ.
+def _hbar_sq():
+    """ℏ_q² = ((q − 1)/q)²  — jet-tower per-level suppression."""
+    hbar = (Q0 - mp.mpf(1)) / Q0
+    return hbar * hbar
 
-    Use |y_λ(q)| = |d_q(λ)/[n]_q! − 1/[n]_q!| (Plancherel-derived
-    shadow price).  Operators σ_0, σ_1 at a single block pay the same
-    cost (block-uniform).  σ^-1 costs more (by factor |1 + H_A|).
+
+def hecke_energy_of_op(op_name, shape):
+    """Per-operator Hecke energy in block λ, with jet-tower / GB-
+    filtration contribution for 1-dim blocks.
+
+    Base (level-0 Plancherel-derived):
+        E_0(λ) = |d_q(λ) − 1| / [n]_q!
+
+    For multi-dim blocks (d_q > 1, like std), E_0 is non-zero and
+    dominant.  For 1-dim blocks (sym, alt) d_q = 1 so E_0 = 0 —
+    these blocks only carry energy through the jet-tower.
+
+    Level-1 jet contribution (from Ω¹(A) prolongation, ℏ_q² weight):
+        E_1(λ) = ℏ_q² · |χ_λ(σ) − 1|
+    where χ_λ(σ) is the block character on a single generator:
+      sym: χ(σ) = q       → |χ−1| = q − 1 = q·ℏ_q
+      alt: χ(σ) = −1/q    → |χ−1| = 1 + 1/q
+      std: already captured by E_0 (non-trivial matrix)
+
+    Inverse generators pay extra |1 + H_A| for the σ⁻¹ = σ − H_A
+    channel decomposition.
     """
     nfac = q_fact(sum(shape))
     dq = mp.mpf(str(float(dim_q(shape))))
-    base = mp.fabs(dq - 1) / nfac
+    d_cl = classical_dim(shape)
+    # Level-0 Plancherel-derived base cost
+    E0 = mp.fabs(dq - 1) / nfac
+    # Level-1 jet-tower cost: ℏ_q² · |χ_λ(σ) − 1|
+    hbar2 = _hbar_sq()
+    if d_cl == 1 and len(shape) == 1:                # sym λ = (n,)
+        chi_sigma_minus_1 = Q0 - mp.mpf(1)            # q − 1 = q·ℏ_q
+    elif d_cl == 1 and shape == tuple([1]*sum(shape)):   # alt λ = (1^n)
+        chi_sigma_minus_1 = mp.mpf(1) + mp.mpf(1)/Q0  # 1 + 1/q
+    else:
+        # multi-dim: E_0 dominates; level-1 correction already
+        # implicit in the matrix version.  Skip.
+        chi_sigma_minus_1 = mp.mpf(0)
+    E1 = hbar2 * mp.fabs(chi_sigma_minus_1)
+    base = E0 + E1
     if op_name[0] == '-':
-        return base * (mp.mpf(1) + mp.mpf(HA_NUM))
+        base = base * (mp.mpf(1) + mp.mpf(HA_NUM))
     return base
 
 
@@ -297,20 +331,84 @@ def main() -> int:
     print("     γ = 𝟙 + σ_0 + σ_1")
     print("     γγ = 𝟙 + σ_0 + σ_1 + σ_0·σ_1")
     print()
+
+    # Electron: β_e = σ_0·σ_1·σ_0 (trefoil).  Word has 3 factors, all on
+    # alternating generators 0, 1, 0.  Provide as (c, d, gen) tuples.
+    electron_word_chains = (
+        [(1.0, 0.0)],          # g0 chain: σ_0 once
+        [(1.0, 0.0)],          # g1 chain: σ_1 once
+    )
+    # Second σ_0 handled by appending after g1 in process()? No —
+    # that's a 2-factor word.  We need the full trefoil σ_0·σ_1·σ_0.
+    # build_particle_word stacks g0 then g1; to get σ_0·σ_1·σ_0 we
+    # construct the word directly here.
+    def build_electron_word():
+        return [(1.0, 0.0, 0), (1.0, 0.0, 1), (1.0, 0.0, 0)]
+    # Wrap in the same process() signature by monkey-patching a new
+    # function that skips build_particle_word.  Simpler: just call
+    # process() with e chains that concatenate properly.
+    # process() builds word = g0_chain as gen 0, then g1_chain as gen 1.
+    # That's σ_0 · σ_1 — not σ_0·σ_1·σ_0.  So we need a bespoke call.
+
+    # Inline version for electron:
+    def process_electron(m_codata):
+        print(f"\n{'=' * 110}")
+        print(f"ELECTRON (trefoil β_e = σ_0·σ_1·σ_0) — target {m_codata} MeV")
+        print('=' * 110)
+        word_target = build_electron_word()
+        per_block = {}
+        total = mp.mpf(0)
+        print(f"  {'λ':<10} {'dim':>4} {'seq_len':>8} {'residual':>14} "
+              f"{'total_Eλ':>14}")
+        for shape in sorted(partitions_of(3), key=lambda s: -sum(s)):
+            M_gg, dim, sigmas = gamma_gamma_matrix(shape)
+            if dim == 0:
+                continue
+            M_target = apply_word_on_block(word_target, sigmas, dim)
+            seq, residual = fit_operator_sequence(M_gg, M_target, sigmas,
+                                                    dim, max_ops=20)
+            E_block = mp.mpf(0)
+            for op in seq:
+                E_block += hecke_energy_of_op(op, shape)
+            total += E_block
+            print(f"  {str(shape):<10} {dim:>4} {len(seq):>8} "
+                  f"{residual:>14.4e} {float(E_block):>14.6e}")
+            per_block[str(list(shape))] = {
+                "dim": dim, "sequence": seq, "residual": residual,
+                "hecke_energy": mp.nstr(E_block, 20),
+            }
+        print(f"\n  TOTAL Hecke energy (γγ → e⁻) = {mp.nstr(total, 15)}")
+        return {"name": "electron", "m_codata": m_codata,
+                "per_block": per_block, "total_hecke_energy": mp.nstr(total, 25)}
+
+    e = process_electron(M_E_MEV)
     p = process("PROTON",  _PROTON_G0,  _PROTON_G1,  M_P_MEV)
     n = process("NEUTRON", _NEUTRON_G0, _NEUTRON_G1, M_N_MEV)
 
     print(f"\n{'=' * 110}")
-    print("COMPARISON: proton/neutron via γγ → target Hecke-energy cost")
+    print("CALIBRATED PREFACTOR: m = (E_γγ→target / E_γγ→e⁻) · m_e")
     print('=' * 110)
+    e_E = mp.mpf(e["total_hecke_energy"])
     p_E = mp.mpf(p["total_hecke_energy"])
     n_E = mp.mpf(n["total_hecke_energy"])
-    print(f"  total_E_LP(γγ → p) = {mp.nstr(p_E, 15)}")
-    print(f"  total_E_LP(γγ → n) = {mp.nstr(n_E, 15)}")
-    if n_E > 0:
-        ratio = p_E / n_E
-        print(f"  ratio p/n          = {float(ratio):.6f}")
-        print(f"  CODATA m_p/m_n     = {M_P_MEV/M_N_MEV:.6f}")
+    print(f"  E_γγ→e⁻ = {mp.nstr(e_E, 15)}")
+    print(f"  E_γγ→p  = {mp.nstr(p_E, 15)}")
+    print(f"  E_γγ→n  = {mp.nstr(n_E, 15)}")
+    print()
+    if e_E > 0:
+        m_p_fresh = (p_E / e_E) * mp.mpf(str(M_E_MEV))
+        m_n_fresh = (n_E / e_E) * mp.mpf(str(M_E_MEV))
+        err_p = (float(m_p_fresh) - M_P_MEV) / M_P_MEV * 100
+        err_n = (float(m_n_fresh) - M_N_MEV) / M_N_MEV * 100
+        print(f"  m_p_fresh = (E_p/E_e) · m_e = {float(m_p_fresh):.6f} MeV  "
+              f"err = {err_p:+.2f}%  (CODATA {M_P_MEV})")
+        print(f"  m_n_fresh = (E_n/E_e) · m_e = {float(m_n_fresh):.6f} MeV  "
+              f"err = {err_n:+.2f}%  (CODATA {M_N_MEV})")
+        print()
+        if n_E > 0:
+            ratio = p_E / n_E
+            print(f"  ratio p/n          = {float(ratio):.6f}")
+            print(f"  CODATA m_p/m_n     = {M_P_MEV/M_N_MEV:.6f}")
 
     witness = {
         "computation": "fresh-derivation-gamma-gamma-sdp",
@@ -325,8 +423,19 @@ def main() -> int:
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "q_0": Q0_FLOAT,
+        "electron": e,
         "proton": p,
         "neutron": n,
+        "calibrated_masses": {
+            "m_p_fresh_MeV": float((p_E / e_E) * mp.mpf(str(M_E_MEV)))
+                              if e_E > 0 else None,
+            "m_n_fresh_MeV": float((n_E / e_E) * mp.mpf(str(M_E_MEV)))
+                              if e_E > 0 else None,
+            "err_p_pct": err_p if e_E > 0 else None,
+            "err_n_pct": err_n if e_E > 0 else None,
+            "ratio_pn_fresh": float(p_E / n_E) if n_E > 0 else None,
+            "ratio_pn_codata": M_P_MEV / M_N_MEV,
+        },
     }
     out = Path(__file__).parent / "fresh-derivation-gamma-gamma-sdp.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))
