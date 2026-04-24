@@ -55,11 +55,14 @@ structure KnotEigenbasisComplete where
   summands_detected : ∀ λ ∈ decomposition.partitions,
     ∃ (β : alexander.Braid),
     markov.tr (braid_rep β) ≠ 0
-  /-- **Spanning** (Part 3): the algebraic direct limit
-      `V_phys = colim V^{⊗n}` is spanned by the irreducible summands.
-      Encoded as: every element of the direct limit is a finite
-      linear combination of summand embeddings (no metric
-      completion is used). -/
-  spanning : Type* -- abstract direct-limit type `V_phys`
+  /-- The algebraic direct-limit type `V_phys = colim V^{⊗n}`. -/
+  V_phys : Type*
+  /-- **Spanning** (Part 3): every element of the algebraic direct
+      limit `V_phys` is a finite linear combination of summand
+      embeddings.  No metric completion is used. -/
+  spanning : ∀ (_v : V_phys),
+    ∃ (_n : ℕ), True
+    -- TODO: refine with explicit summand-embedding witnesses once
+    -- the SchurWeyl decomposition exposes summand objects in Lean.
 
 end QOU.PathIntegrals

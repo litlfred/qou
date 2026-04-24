@@ -62,6 +62,14 @@ class SurrealField (K : Type u) extends LinearOrderedField K where
   birthday_add_le : ∀ x y : K, birthday (x + y) ≤ birthday x ♯ birthday y
   /-- Real numbers have birthday at most ω. -/
   birthday_ofReal_le_omega : ∀ r : ℝ, birthday (ofReal r) ≤ Ordinal.omega0
+  /-- The first infinite surreal `ω` as an element of `K`.
+
+      Conway's construction: `ω = {0, 1, 2, … | }`.  Its existence
+      in any `SurrealField K` follows from `K` extending the ordinals
+      via the canonical inclusion (Ehrlich 2012, Thm 12.5). -/
+  omegaSurreal : K
+  /-- `omegaSurreal` is strictly greater than every natural number. -/
+  omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < omegaSurreal
 
 /-- Coerce a real into the surreal field. -/
 instance (K : Type u) [SurrealField K] : Coe ℝ K :=

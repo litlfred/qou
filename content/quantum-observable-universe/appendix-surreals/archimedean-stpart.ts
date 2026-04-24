@@ -16,6 +16,9 @@ export default conjecture({
     "def:quantum-observable-universe",
     "def:standard-part-functor",
     "conj:classical-limit-stpart",
+    "conj:infinitesimal-frobenius",
+    "conj:infinitesimal-observability",
+    "conj:vacuum-epsilon",
   ],
   cites: ["robinson1966", "ehrlich2012"],
 });
