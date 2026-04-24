@@ -273,44 +273,84 @@ theorem skewSYTCount_empty (λ : Partition) :
 theorem skewSYTCount_nonneg (λ μ : Partition) :
     0 ≤ skewSYTCount λ μ := Nat.zero_le _
 
-/-- Nonempty skew shape has at least one corner.
-    TODO: full proof iterates through the last row of λ and finds the
-    rightmost cell not in μ. -/
+/-- Nonempty skew shape has at least one corner. -/
 theorem skewCorners_nonempty (λ μ : Partition) (h : λ.contains μ)
     (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty := by
-  -- Proof sketch: λ.size > μ.size ⟹ skewCells λ μ nonempty.
-  -- In any nonempty finite Young subdiagram, the cell with maximal
-  -- (row + col) (or lex max) is a corner (its right/down neighbours
-  -- are outside the subdiagram by maximality).
-  -- Concrete construction: pick any c ∈ skewCells λ μ; iteratively
-  -- move down/right while still in skewCells; terminates at a corner.
-  -- ~30 LOC once λ.cells / μ.cells / skewCells finite lemmas are in place.
-  sorry
+  -- Proof via maximum element: skewCells λ μ is finite and nonempty
+  -- (nonempty because λ.size > μ.size, so λ.cells \ μ.cells ≠ ∅).
+  -- Pick a cell c ∈ skewCells maximising (row, col) in lex order.
+  -- Then (c.row, c.col + 1) and (c.row + 1, c.col) are not in skewCells
+  -- (either outside λ, or inside μ), so c is a corner.
+  have hne : (skewCells λ μ).Nonempty := by
+    -- λ.cells has size λ.size; μ.cells has size μ.size.  The set
+    -- difference has size ≥ λ.size - μ.size > 0.
+    by_contra hempty
+    rw [Finset.not_nonempty_iff_eq_empty] at hempty
+    have hle : λ.cells.card ≤ μ.cells.card := by
+      rw [show λ.cells = (λ.cells ∩ μ.cells) ∪ skewCells λ μ from ?_, hempty,
+          Finset.union_empty]
+      · exact Finset.card_le_card (Finset.inter_subset_right)
+      · unfold skewCells
+        ext x
+        simp [Finset.mem_inter, Finset.mem_sdiff]
+        tauto
+    -- This contradicts hsize assuming cards = sizes (via Partition.card_cells = size).
+    -- Deferred: need helper `Partition.cells_card_eq_size`.
+    sorry
+  -- Now pick a max element and check it's a corner.
+  obtain ⟨c, hc⟩ := hne
+  -- Among skewCells λ μ, find one with maximal lex (row, col).
+  sorry  -- max-lex argument; ~15 LOC pending lex-max helper
 
 /-- SYT count is positive when λ ⊇ μ (there's always at least one SYT). -/
 -- Ref: [fulton1997] Proposition 3.1
 theorem skewSYTCount_pos (λ μ : Partition) (h : λ.contains μ) :
     0 < skewSYTCount λ μ := by
-  -- Strong induction on the termination measure `λ.size - μ.size`.
-  -- Key dependencies:
-  --   (a) `skewCorners_nonempty` — above
-  --   (b) `Finset.sum_pos` (Mathlib): if any term > 0 then sum > 0
-  --
-  -- Proof structure:
-  --   obtain ⟨c, hc⟩ := skewCorners_nonempty λ μ h (by omega)
-  --   have hrow : c.row < λ.length := ...   -- from mem_cells
-  --   have hpos : 0 < λ.part c.row := ...
-  --   unfold skewSYTCount
-  --   split_ifs with hle
-  --   · exact Nat.one_pos
-  --   · -- Sum over Finset of corners; pick c's contribution > 0 by IH
-  --     apply Finset.sum_pos' _ (by use ⟨c, hc⟩; exact ih _ _ _)
-  --     · intro ⟨c', hc'⟩ _; exact Nat.zero_le _
-  --
-  -- The `ih` invocation needs the termination measure strictly to
-  -- decrease; this follows from `removeCorner_decreases`.
+  -- Strong induction on `λ.size - μ.size`, with `λ` generalised.
+  generalize hn : λ.size - μ.size = n
+  induction n using Nat.strong_induction_on generalizing λ with
+  | _ n ih =>
+    unfold skewSYTCount
+    split_ifs with hle
+    · exact Nat.one_pos
+    · push_neg at hle
+      have hgt : μ.size < λ.size := hle
+      obtain ⟨c, hc⟩ := skewCorners_nonempty λ μ h hgt
+      have hc_cells : c ∈ skewCells λ μ := by
+        have := Finset.mem_filter.mp (show c ∈ (skewCells λ μ).filter _ from hc)
+        exact this.1
+      have hmem_lambda : c ∈ λ.cells := (Finset.mem_sdiff.mp hc_cells).1
+      have := (mem_cells λ c).mp hmem_lambda
+      have hrow : c.row < λ.length := this.1
+      have hpos : 0 < λ.part c.row :=
+        Nat.lt_of_le_of_lt (Nat.zero_le _) this.2
+      -- Sum over .attach is positive if any term is positive.
+      -- Pick the term at c's attach element.
+      apply Finset.sum_pos'
+      · -- all terms ≥ 0
+        intros _ _; exact Nat.zero_le _
+      · -- c's term is positive by IH
+        refine ⟨⟨c, hc⟩, Finset.mem_attach _ _, ?_⟩
+        have hdec : (λ.removeCorner c.row).size - μ.size < λ.size - μ.size :=
+          removeCorner_decreases λ μ c.row hrow hpos hgt
+        have hsub : λ.removeCorner c.row ⊇ μ ∨ ¬ λ.removeCorner c.row ⊇ μ :=
+          Classical.em _
+        rcases hsub with hcont | hnot
+        · -- Apply IH with n' = (removeCorner λ c.row).size - μ.size < n
+          refine ih _ ?_ _ hcont rfl
+          omega
+        · -- If μ ⊈ removeCorner, skewSYTCount = 1 in the if-branch
+          -- (needs μ.size ≥ removeCorner.size after decrement, i.e. μ.size ≥ λ.size-1).
+          -- Given our hypothesis μ ⊆ λ and corner c exists in λ\μ, we have
+          -- μ ⊆ λ.removeCorner c.row always holds; this case is vacuous.
+          exfalso; apply hnot
+          intro k
+          -- μ's part k ≤ λ's part k (from `h`).  Removing the corner at row
+          -- decrements λ's part row by 1; check μ's part row ≤ λ.part row - 1.
+          -- Since c is a corner in λ\μ, we have c.col < λ.part c.row
+          -- and c.col ≥ μ.part c.row (so μ.part c.row ≤ c.col ≤ λ.part c.row - 1).
+          sorry  -- Deferred: μ-part bound in row of removed corner
   -- Ref: [fulton1997]
-  sorry
 
 /-! ## §5  Branching multiplicity -/
 
