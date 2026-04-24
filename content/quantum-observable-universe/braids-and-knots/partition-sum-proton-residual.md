@@ -110,6 +110,34 @@ $\sim 2.3$.*
    components — explaining the $-55\%$ deuteron residual in
    ([deuteron first principles](#rem:deuteron-first-principles)).*
 
+**Deuteron-gap empirical probe.**
+*Script `folio-assistant/computations/deuteron_residual_probe.py`
+tested whether adding any of the following closed-form corrections
+closes the $^2$H binding gap
+$B_{\mathrm{AME}} - B_{\mathrm{pred}} = 1.2293\;\mathrm{MeV}$:*
+
+| candidate | value (MeV) | error vs gap |
+|---|---|---|
+| $(5/2) \cdot m_e$  [= $\sum_{\lambda \vdash 3} 1/d_\lambda$] | $1.2775$ | **+3.92%** ★ |
+| $\sum_{\lambda \vdash 6} 1/d_\lambda \cdot m_e$  [= $(473/144) m_e$] | $1.6785$ | $+36.5\%$ |
+| $(\sum_{\lambda \vdash 6} - \sum_{\lambda \vdash 3}) \cdot m_e$ | $0.4010$ | $-67.4\%$ |
+| $A \cdot m_e = 2 m_e$ | $1.0220$ | $-16.9\%$ |
+
+*The **same $(5/2) \cdot m_e$ residual** — computed at $n = 3$,
+not $n = 3A = 6$ — closes the deuteron gap to $3.92\%$.
+The naive $n = 3A$ generalization (473/144) **fails by +37%**.*
+
+*Structural reading:* **the residual is per-vortex, not per-atom
+partition sum.**  A single proton gets $(5/2) m_e$; a deuteron,
+built on one proton + one neutron, gets the **same** $(5/2) m_e$
+residual in its binding — suggesting the correction attaches to
+the fibre-functor calibration itself, not to the isotope's
+partition content.  The $n = 3A$ partition-sum hypothesis
+(`tower_isotope_absolute.py`) tested the full-mass residual;
+the binding residual obeys a different scaling.
+
+*Witness: `deuteron-residual-probe.witness.json`.*
+
 **Reference implementations.**
 *Scripts
 (both on branch `claude/1ppb-handover-docs-cyFlQ`):*
