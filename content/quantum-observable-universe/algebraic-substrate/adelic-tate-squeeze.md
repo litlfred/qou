@@ -25,12 +25,12 @@ The global Reeb infinitesimal $\varepsilon$
 of the $\varepsilon_v$'s, in the following sense: for almost every
 place $v$, $\varepsilon_v$ equals the "tame" infinitesimal
 $\varepsilon_\infty$ (archimedean reference), and the global
-$\varepsilon$-adic valuation $\Ow_{\mathbb{A}}(f)$ of an adelic
+$\varepsilon$-adic valuation $\ordw_{\mathbb{A}}(f)$ of an adelic
 observable is the **sum** over $v$ of local $\ordw$-orders:
 
 $$
-  \Ow_{\mathbb{A}}(f)
-   \;=\; \sum_{v} \Ow_v(f_v)
+  \ordw_{\mathbb{A}}(f)
+   \;=\; \sum_{v} \ordw_v(f_v)
   \qquad \text{(finite sum by restricted-product condition).}
 $$
 
@@ -41,17 +41,17 @@ $\mathbb{R}(\varepsilon_v)$ gives a strict inequality in
 $\omega$-orders:
 
 $$
-  \Ow_v(\delta^2 \cdot \varepsilon_v^{-1}) \;<\; \Ow_v(\varepsilon_v^3).
+  \ordw_v(\delta^2 \cdot \varepsilon_v^{-1}) \;<\; \ordw_v(\varepsilon_v^3).
 $$
 
 Summing over all places (equivalently, taking the adelic
 $\omega$-order) yields the global inequality
 
 $$
-  \Ow_{\mathbb{A}}(\delta^2 \cdot \varepsilon^{-1})
-   \;=\; \sum_v \Ow_v(\delta^2 \cdot \varepsilon_v^{-1})
-   \;<\; \sum_v \Ow_v(\varepsilon_v^3)
-   \;=\; \Ow_{\mathbb{A}}(\varepsilon^3),
+  \ordw_{\mathbb{A}}(\delta^2 \cdot \varepsilon^{-1})
+   \;=\; \sum_v \ordw_v(\delta^2 \cdot \varepsilon_v^{-1})
+   \;<\; \sum_v \ordw_v(\varepsilon_v^3)
+   \;=\; \ordw_{\mathbb{A}}(\varepsilon^3),
 $$
 
 which is the global surreal squeeze of
@@ -66,8 +66,8 @@ for each place $v$.  In the surreal register, this lifts to:
 
 | Classical | Surreal |
 |---|---|
-| Local $\zeta_v(f_v, s)$ | $\Ow_v$-graded expansion in $\varepsilon_v$ |
-| Gamma factor $\gamma_v(s)$ | $\Ow_v$-preserving reflection $s \leftrightarrow 1 - s$ |
+| Local $\zeta_v(f_v, s)$ | $\ordw_v$-graded expansion in $\varepsilon_v$ |
+| Gamma factor $\gamma_v(s)$ | $\ordw_v$-preserving reflection $s \leftrightarrow 1 - s$ |
 | Local $L$-factor $(1 - p^{-s})^{-1}$ | Euler factor $(1 - \varepsilon_p)^{-1}$ at $s = 1$ |
 | Global Euler product | Adelic $\varepsilon$-product $\prod_v (1 + \varepsilon_v)$ |
 
