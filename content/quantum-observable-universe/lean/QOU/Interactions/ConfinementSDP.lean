@@ -94,9 +94,17 @@ opaque y0Star (n : ℕ) : R_q
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem ConfinementSDP (n : ℕ) (h : slaterStrict n) :
     primalOpt n = nTarget * y0Star n := by
-  -- Strong duality under Slater regularity (Boyd-Vandenberghe
-  -- §5.4.1, §5.5.3). Deferred to Mathlib SDP duality lemmas not
-  -- yet available.
+  -- Proof sketch (Boyd–Vandenberghe §5.4.1, §5.5.3):
+  -- Slater-strict feasibility ⟹ strong duality ⟹ primal = dual.
+  -- Lean proof path (once Mathlib has SDP duality):
+  --
+  --   have h_weak := sdp_weak_duality (primal_feasible n) (dual_feasible n)
+  --   have h_strong := sdp_strong_duality_slater h
+  --   linarith
+  --
+  -- Mathlib gap: no SDP, no Lagrangian duality framework.  Until
+  -- those land, the theorem should take strong duality as a named
+  -- hypothesis matching the `finite_k_convergence` pattern.
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
   sorry
 

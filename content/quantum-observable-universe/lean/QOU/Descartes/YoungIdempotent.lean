@@ -158,11 +158,22 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
     ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ := by
-  -- Left-multiply e₃ by σᵢ, expand all 6 terms, apply:
-  --   Hecke: σᵢ² = HA·σᵢ + 1
-  --   Braid: σ₀σ₁σ₀ = σ₁σ₀σ₁
-  -- Each coefficient matches via 1 + q·HA = q² (from HA = q − q⁻¹).
-  -- Verified algebraically; Lean proof needs noncommutative matrix rewrites.
+  -- Proof sketch (Mathas 1999 Theorem 3.2):
+  --   youngSymIdempotent3 = (1/[3]!_q) Σ_{w ∈ S_3} q^{ℓ(w)} · T_w
+  -- Left-multiplying by σᵢ (= T_{sᵢ}):
+  --   σᵢ · T_w = T_{sᵢw}                        if ℓ(sᵢw) = ℓ(w) + 1
+  --            = q · T_w + (q − q⁻¹) · T_{sᵢw}   if ℓ(sᵢw) = ℓ(w) − 1
+  -- Summing over S_3 with q^{ℓ(w)} weights and regrouping:
+  --   σᵢ · e_{(3)} = q · e_{(3)}
+  -- The algebraic identity is: for each w, the contribution pair
+  -- `(w, sᵢw)` satisfies q^{ℓ} + q^{ℓ+1} · HA · q^{ℓ} = q · (q^{ℓ} + q^{ℓ+1})
+  -- via HA = q - q⁻¹.
+  --
+  -- Lean tactic: by cases on i : Fin 2; for each case, unfold
+  -- `youngSymIdempotent3` as an explicit sum of 6 T_w, expand
+  -- `σᵢ · T_w` via `ρ.hecke_rel` + `ρ.braid_adj`, collect coefficients,
+  -- show they match `q · (original sum)` by ring over R_t.
+  -- ~150 LOC; best decomposed into per-term lemmas.
   -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
   sorry -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
 

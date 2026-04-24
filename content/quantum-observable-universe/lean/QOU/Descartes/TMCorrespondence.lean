@@ -338,9 +338,20 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
   | nil => simp at hj
   | cons _ rest ih =>
     simp [chainCrossings, matrixChain, buildChains]
+    -- Proof sketch: after simp, both sides reduce to products of the
+    -- same transfer matrices in different association orders.  Since
+    -- `transferMatrix_comm` (from HeckeRep.lean) says all transfer
+    -- matrices commute, any reassociation preserves the product.
+    --
+    --   apply List.foldl_eq_foldr_of_comm  -- or the explicit commuting-prod lemma
+    --   · intros; exact transferMatrix_comm _ _ _ _
+    --   · exact ih (Nat.lt_of_succ_lt_succ hj)
+    --
+    -- If `List.foldl_eq_foldr_of_comm` isn't in Mathlib under that
+    -- name, the proof pattern is:
+    --   induction on the tail list, use the commutation lemma to
+    --   move the folded value past each element.
     sorry  -- Ref: [leitner2026] §9/transfer-matrix-correspondence
-           -- foldl/structural recursion bridge (non-trivial but
-           -- mathematically sound: same factors, commutative product)
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure

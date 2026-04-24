@@ -108,25 +108,32 @@ theorem ordering_independence
     (h_perm : ∀ t : NucleonType,
       config₁.count t = config₂.count t) :
     skeinPolynomialSym config₁ = skeinPolynomialSym config₂ := by
-  -- The Young-symmetrized polynomial evaluates each crossing in the
-  -- symmetric representation (σ → q), giving a commutative product
-  -- of scalars (c_j · q + d_j) for each generator.
+  -- Proof sketch — requires two helper lemmas:
   --
-  -- The factors are determined by the MULTISET of crossing types
-  -- (vertex types between nucleon pairs), not their ordering.
+  -- (1) `crossingMultiset_eq_of_count_eq : ∀ cfg₁ cfg₂,
+  --       (∀ t, cfg₁.count t = cfg₂.count t) →
+  --       cfg₁.length = cfg₂.length →
+  --       (cfg₁.crossingPairs.map crossingFactor).toMultiset =
+  --       (cfg₂.crossingPairs.map crossingFactor).toMultiset`
+  --     where `crossingPairs cfg = [(i, j) : i < j < cfg.length]`
+  --     and `crossingFactor ⟨i, j⟩ = w_plus_t (vertexType cfg[i] cfg[j]) * q
+  --                                 + w_zero_t (vertexType cfg[i] cfg[j])`.
   --
-  -- Since config₁ and config₂ are permutations of each other
-  -- (same multiset of nucleon types), they produce the same
-  -- multiset of crossing types, and hence the same product.
+  -- (2) `List.prod_eq_of_toMultiset_eq : ∀ xs ys : List R,
+  --       xs.toMultiset = ys.toMultiset → xs.prod = ys.prod`
+  --     (commutative product is determined by the multiset).
   --
-  -- Proof outline:
-  -- 1. The symmetric-rep character χ(B) = ∏_{j<k} (c_{jk}·q + d_{jk})
-  --    where c_{jk}, d_{jk} depend on (type(j), type(k)).
-  -- 2. The multiset {(type(j), type(k)) : j < k} depends only on
-  --    the multiset of types (not their ordering).
-  -- 3. Therefore the product is the same.
+  -- Proof:
+  --   unfold skeinPolynomialSym
+  --   rw [h_same]  -- config₁.length = config₂.length
+  --   by_cases hA : config₁.length < 2
+  --   · simp [hA]
+  --   · push_neg at hA
+  --     rw [List.prod_eq_of_toMultiset_eq (crossingMultiset_eq_of_count_eq h_perm h_same)]
   --
-  -- This requires a combinatorial argument about multisets of pairs.
+  -- Lemma (1) is ~30 LOC (induction on length + S_n-action on pairs);
+  -- Lemma (2) may already exist in Mathlib as
+  -- `List.Perm.prod_eq` via `List.Perm.of_toMultiset_eq`.
   -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
   sorry -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
 

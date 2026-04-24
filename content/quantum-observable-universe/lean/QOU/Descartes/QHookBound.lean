@@ -121,20 +121,45 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook-length bound (§7.21)
-  -- [m]_q/m ≥ 1 for q > 1 by convexity of exponential:
-  -- the average of q^j over symmetric exponents ≥ q^0 = 1
-  -- by Jensen's inequality.
+  -- Proof sketch: [m]_q = Σⱼ₌₀^{m-1} q^{m-1-2j} (symmetric around 0).
+  -- Pair j with m-1-j to get pairs {q^k + q^{-k}} (each ≥ 2 by AM-GM);
+  -- for odd m, the middle term is q^0 = 1.  Total ≥ m.
+  --
+  --   rw [qIntReal_eq_symmetric_sum]  -- helper: [m]_q = Σ q^(m-1-2j)
+  --   have hpairs : ∀ k, q^k + q^(-k) ≥ 2 := by
+  --     intro k
+  --     have := sq_nonneg (q^k - 1)
+  --     have hqk_pos : q^k > 0 := pow_pos (by linarith) k
+  --     nlinarith [hqk_pos]
+  --   -- Split sum into pairs + possible middle
+  --   induction m with ... -- standard pairing argument
+  --
+  -- ~30 LOC; doable but needs the symmetric_sum helper.
+  sorry
 
 /-- For small m (m ≤ 4), the tighter bound holds:
     |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook recursion
-  -- For m = 1: [1]/1 - 1 = 0 ≤ anything. Trivial.
-  -- For m = 2: proved in qInt_ratio_bound_m2.
-  -- For m = 3, 4: similar algebraic arguments with field_simp + nlinarith.
+  -- Case-analyze m ∈ {1, 2, 3, 4} explicitly:
+  --   interval_cases m
+  --   · -- m = 1: [1]_q = 1, so LHS = 0
+  --     simp [qIntReal]; positivity
+  --   · -- m = 2: reuse qInt_ratio_bound_m2
+  --     have := qInt_ratio_bound_m2 q hq
+  --     unfold qIntReal; field_simp at this ⊢
+  --     linarith
+  --   · -- m = 3: [3]_q = q² + 1 + q⁻², so LHS = |(q² + q⁻² - 2)/3| = (q - q⁻¹)²/3
+  --     unfold qIntReal; simp [pow_succ]
+  --     field_simp
+  --     rw [abs_of_nonneg (by nlinarith [sq_nonneg (q - 1), sq_nonneg (q*q - 1)])]
+  --     nlinarith [sq_nonneg (q - q⁻¹), sq_nonneg (q*q - 1)]
+  --   · -- m = 4: similar with one more factor
+  --     unfold qIntReal; field_simp
+  --     nlinarith [sq_nonneg (q - 1), sq_nonneg (q - q⁻¹),
+  --                sq_nonneg (q^2 - 1), sq_nonneg (q*q + 1)]
+  sorry
 
 /-! ## §2  q-factorial perturbation -/
 
@@ -155,9 +180,25 @@ theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
     (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook bound inequality
-  -- Proof: product of per-factor bounds, using
-  -- Σ m²/6 = k(k+1)(2k+1)/36.
+  -- Proof sketch: induction on k, combining qInt_ratio_bound_small
+  -- per factor.
+  --   induction k with
+  --   | zero => simp [qFactReal, Nat.factorial]
+  --   | succ n ih =>
+  --     -- Split: [k+1]!/((k+1)!) = ([k]!/k!) · ([k+1]/((k+1)))
+  --     -- Use |∏(1+εᵢ) - 1| ≤ Σ|εᵢ| + O(quadratic) inequality
+  --     unfold qFactReal Nat.factorial
+  --     rw [Finset.prod_range_succ]
+  --     -- Apply triangle inequality + ih + qInt_ratio_bound_small
+  --     -- Need k ≤ 4 to use bound_small, but statement holds for all k;
+  --     -- for k ≥ 5 a looser bound O(k³) still works but requires
+  --     -- either qInt_ratio_upper or `interval_cases` up to some K_max.
+  -- Caveat: qInt_ratio_bound_small only covers m ≤ 4.  Strict proof
+  -- of `qFact_ratio_bound` for all k needs either (i) extending
+  -- qInt_ratio_bound_small to all m (which may fail for large m) or
+  -- (ii) restricting the statement to k ≤ 4.
+  -- Σ_{m=1}^k m² = k(k+1)(2k+1)/6; numerical factor /6 gives /36 bound.
+  sorry
 
 /-! ## §3  q-hook formula perturbation -/
 
@@ -216,9 +257,18 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0) :
     |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook evaluation
-  -- Follows from qDim_ratio_bound applied twice (d_q² in numerator)
-  -- and qFact_ratio_bound for [k]! in denominator.
+  -- Proof sketch: w_q / w_cl = (d_q/dim)² × (k!/[k]!).  Bound via
+  --   |AB - 1| ≤ |A - 1| + |B - 1| + |A - 1| · |B - 1|
+  -- with A = (d_q/dim)², B = k!/[k]!.  Apply qDim_ratio_bound twice
+  -- (for d_q²) and qFact_ratio_bound for [k]!.  The RHS 3·h²·k/3 = h²·k
+  -- is a relaxed bound; the exact argument gives the tighter
+  -- O(h²·k(k+1)(2k+1)/36) from qFact_ratio_bound.
+  -- STATEMENT NOTE: the statement is also missing the connection
+  -- between `w_q` and `q, k`, i.e. `w_q` and `w_cl` are free reals
+  -- here.  As in `convergence_rate`, this should take the
+  -- perturbation bound as a named hypothesis, or introduce
+  -- `q-Wedderburn weight` as a definition and prove the bound against it.
+  sorry
 
 /-! ## §5  Convergence rate -/
 

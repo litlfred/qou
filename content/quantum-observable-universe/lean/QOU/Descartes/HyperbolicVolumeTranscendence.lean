@@ -365,7 +365,26 @@ gives the Yekutieli bridge theorem. -/
 theorem tower_noncollapse_implies_independence
     (ylc : QOU.Torsion.YekutieliLiftingCondition) :
     HyperbolicVolumeIndependence :=
-  -- ylc.obstruction_exists already guarantees ∀ n, Nonempty (obstructionClass n)
+  -- Proof sketch: `ylc.obstruction_exists` provides non-zero obstruction
+  -- classes at each tower level.  Combined with `CSEvaluationFaithful`,
+  -- this gives `Φ_n(K) ≠ 0` for each K.  Independence then follows from
+  -- the tower decomposition `Vol(K) = Σₙ Φₙ(K)` + standard
+  -- number-theoretic independence (Nesterenko-type bound on Li₂ at
+  -- algebraic arguments).
+  --
+  -- The argument requires `ylc` to include a Borel–Zagier-like
+  -- independence axiom as one of its fields — without that, the class
+  -- only guarantees existence of non-zero terms in each sum, not
+  -- that they compose to algebraically independent volumes.
+  --
+  -- Concrete proof once `ylc` carries the independence ingredient:
+  --   intro S f hf_supp hf_sum
+  --   exact ylc.borel_zagier_independence S f hf_supp hf_sum
+  --
+  -- If `ylc` lacks that field, the theorem is a genuine conjecture
+  -- (per HyperbolicVolumeIndependence's `conjectures.lean` doc, §286
+  -- says `sorry` in this context IS the conjecture).
+  -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
   sorry
 
 end QOU.Descartes
