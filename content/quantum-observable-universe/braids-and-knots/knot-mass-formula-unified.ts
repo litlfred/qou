@@ -16,6 +16,8 @@ export default theorem({
     "def:hecke-mass-element",
     "thm:jones-markov-trace",
     "cor:quantum-dilogarithm",
+    "prop:figure-eight-bw-coefficients",
+    "prop:knot-factor-frobenius-pairing",
   ],
   cites: ["kassel1995"],
   tags: [

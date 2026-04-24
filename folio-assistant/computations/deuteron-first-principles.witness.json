@@ -11,7 +11,7 @@
     "braid_convention": "atomic_braid_to_crossings (proton_cross/neutron_cross/inter)",
     "note": "Symbolic-in-q variant (hecke_character_symbolic.py) worked at A=1 but blew up at A \u2265 2 due to sign of b\u00b2 in 2\u00d72 Hoefsmit blocks.  Numerical pipeline uses sqrt(abs(b\u00b2)) as established convention.  TODO: reformulate symbolic Hoefsmit to avoid sqrt issue."
   },
-  "timestamp": "2026-04-24T19:54:11.908361+00:00",
+  "timestamp": "2026-04-24T20:06:36.669320+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "E_0_MeV": 3.131194022652177
@@ -39,7 +39,7 @@
         "w_lambda": 0.0011921233292002005,
         "chi_lambda": 1.5513065472142578,
         "contribution": 0.001849348725675129,
-        "walltime_sec": 0.0001010894775390625
+        "walltime_sec": 8.225440979003906e-05
       },
       {
         "shape": [
@@ -50,7 +50,7 @@
         "w_lambda": 0.03248894617975795,
         "chi_lambda": 5.329014614105804,
         "contribution": 0.03462681379776541,
-        "walltime_sec": 0.00015234947204589844
+        "walltime_sec": 0.00013327598571777344
       },
       {
         "shape": [
@@ -61,7 +61,7 @@
         "w_lambda": 0.11145220242008576,
         "chi_lambda": 7.616303589590858,
         "contribution": 0.09431708992887845,
-        "walltime_sec": 0.00017642974853515625
+        "walltime_sec": 0.0001709461212158203
       },
       {
         "shape": [
@@ -73,7 +73,7 @@
         "w_lambda": 0.13569772208004172,
         "chi_lambda": 3.97638549190289,
         "contribution": 0.053958645336334835,
-        "walltime_sec": 0.000179290771484375
+        "walltime_sec": 0.00024437904357910156
       },
       {
         "shape": [
@@ -84,7 +84,7 @@
         "w_lambda": 0.03539094559714424,
         "chi_lambda": 3.8385955226993116,
         "contribution": 0.027170305062658558,
-        "walltime_sec": 0.00012803077697753906
+        "walltime_sec": 0.00012063980102539062
       },
       {
         "shape": [
@@ -96,7 +96,7 @@
         "w_lambda": 0.3586356424845347,
         "chi_lambda": 5.770557796485293,
         "contribution": 0.12934548142729024,
-        "walltime_sec": 0.0002694129943847656
+        "walltime_sec": 0.00020051002502441406
       },
       {
         "shape": [
@@ -109,7 +109,7 @@
         "w_lambda": 0.13569772208004177,
         "chi_lambda": -2.3830507963650156,
         "contribution": -0.03233745646677621,
-        "walltime_sec": 0.0001735687255859375
+        "walltime_sec": 0.0001423358917236328
       },
       {
         "shape": [
@@ -121,7 +121,7 @@
         "w_lambda": 0.03539094559714424,
         "chi_lambda": 2.9605458440224783,
         "contribution": 0.0209553033807302,
-        "walltime_sec": 0.0001232624053955078
+        "walltime_sec": 0.00010538101196289062
       },
       {
         "shape": [
@@ -134,7 +134,7 @@
         "w_lambda": 0.11145220242008576,
         "chi_lambda": 0.37881762264612384,
         "contribution": 0.004691117595494607,
-        "walltime_sec": 0.000156402587890625
+        "walltime_sec": 0.0001533031463623047
       },
       {
         "shape": [
@@ -148,7 +148,7 @@
         "w_lambda": 0.03248894617975795,
         "chi_lambda": -1.9084713528389319,
         "contribution": -0.01240084461359878,
-        "walltime_sec": 0.00011992454528808594
+        "walltime_sec": 0.00014281272888183594
       },
       {
         "shape": [
@@ -163,7 +163,7 @@
         "w_lambda": 0.0011921233292002005,
         "chi_lambda": 0.6732568685374246,
         "contribution": 0.0008026052195277363,
-        "walltime_sec": 8.535385131835938e-05
+        "walltime_sec": 7.653236389160156e-05
       }
     ],
     "atom_per_lambda": [
@@ -175,7 +175,7 @@
         "w_lambda": 0.0011921233292002005,
         "chi_lambda": 1.5597587394180774,
         "contribution": 0.0018594247811841865,
-        "walltime_sec": 0.00011992454528808594
+        "walltime_sec": 8.821487426757812e-05
       },
       {
         "shape": [
@@ -186,7 +186,7 @@
         "w_lambda": 0.03248894617975795,
         "chi_lambda": 2.673471840331177,
         "contribution": 0.017371656546723607,
-        "walltime_sec": 0.00013494491577148438
+        "walltime_sec": 0.00010609626770019531
       },
       {
         "shape": [
@@ -197,7 +197,7 @@
         "w_lambda": 0.11145220242008576,
         "chi_lambda": 1.583765638804527,
         "contribution": 0.01961268539577984,
-        "walltime_sec": 0.00016641616821289062
+        "walltime_sec": 0.00013494491577148438
       },
       {
         "shape": [
@@ -209,7 +209,7 @@
         "w_lambda": 0.13569772208004172,
         "chi_lambda": -0.6481636308453277,
         "contribution": -0.008795432824084003,
-        "walltime_sec": 0.00016880035400390625
+        "walltime_sec": 0.0001404285430908203
       },
       {
         "shape": [
@@ -220,7 +220,7 @@
         "w_lambda": 0.03539094559714424,
         "chi_lambda": 3.2076863422892794,
         "contribution": 0.022704610566532495,
-        "walltime_sec": 0.00013113021850585938
+        "walltime_sec": 0.00010848045349121094
       },
       {
         "shape": [
@@ -232,7 +232,7 @@
         "w_lambda": 0.3586356424845347,
         "chi_lambda": -1.8845100728432118,
         "contribution": -0.04224078004641891,
-        "walltime_sec": 0.0002448558807373047
+        "walltime_sec": 0.00022077560424804688
       },
       {
         "shape": [
@@ -245,7 +245,7 @@
         "w_lambda": 0.13569772208004177,
         "chi_lambda": 0.079473126470548,
         "contribution": 0.0010784322228632433,
-        "walltime_sec": 0.00021028518676757812
+        "walltime_sec": 0.00014019012451171875
       },
       {
         "shape": [
@@ -257,7 +257,7 @@
         "w_lambda": 0.03539094559714424,
         "chi_lambda": -2.907191188292891,
         "contribution": -0.020577649037074163,
-        "walltime_sec": 0.00012993812561035156
+        "walltime_sec": 0.00011563301086425781
       },
       {
         "shape": [
@@ -270,7 +270,7 @@
         "w_lambda": 0.11145220242008576,
         "chi_lambda": -0.6781155880379685,
         "contribution": -0.008397497309135905,
-        "walltime_sec": 0.000164031982421875
+        "walltime_sec": 0.0001361370086669922
       },
       {
         "shape": [
@@ -284,7 +284,7 @@
         "w_lambda": 0.03248894617975795,
         "chi_lambda": 2.010681783864115,
         "contribution": 0.013064986452116187,
-        "walltime_sec": 0.0001571178436279297
+        "walltime_sec": 0.00010395050048828125
       },
       {
         "shape": [
@@ -299,7 +299,7 @@
         "w_lambda": 0.0011921233292002005,
         "chi_lambda": -0.6769250645272102,
         "contribution": -0.0008069781615432384,
-        "walltime_sec": 0.0001544952392578125
+        "walltime_sec": 7.367134094238281e-05
       }
     ]
   }
