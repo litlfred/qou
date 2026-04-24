@@ -1,0 +1,65 @@
+{
+  "engine": "tower-with-configurable-z",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T12:12:21.294953+00:00",
+  "commitSha": "3485a458606ce96ed2f52e7ecafa95889b79d3a8",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "markov-convention-parallel",
+  "scriptFile": "markov_convention_parallel.py",
+  "scriptHash": "f4b779f3a0d1",
+  "scriptCommitSha": "",
+  "description": "Parallel evaluation of Markov-weight conventions 1 and 2 on the mass-endomorphism-tower for proton/neutron.",
+  "data": {
+    "params": {
+      "q_0": 1.1099785955541805,
+      "H_A": 0.20906032198987945,
+      "two_q": 2.010896869118482,
+      "hbar_q_sq": 0.009817188513478667,
+      "z_JO": 0.4993203340335982,
+      "z_Planck": 0.10396372146201877
+    },
+    "level_0": {
+      "z_JO": {
+        "V_e": 0.5938490006705095,
+        "V0_p": 0.9890073159292595,
+        "V1_p": 0.9710701586527437,
+        "V0_n": 0.8542103128258388,
+        "V1_n": 0.9755094711077458,
+        "m_e_Hecke": 630.5292680965904,
+        "m_p_MeV": 955.4916893413767,
+        "m_n_MeV": 419.345340170355,
+        "m_p_err_pct": 1.8352460228402738,
+        "m_n_err_pct": -55.36815946905864
+      },
+      "z_Planck": {
+        "V_e": 0.31776354492097025,
+        "V0_p": 0.6709301900220972,
+        "V1_p": 1.0552309108545856,
+        "V0_n": 0.5512220221115237,
+        "V1_n": 1.0885294804474486,
+        "m_e_Hecke": 23.47037765478621,
+        "m_p_MeV": 115700.1325494959,
+        "m_n_MeV": 609895.4267203935,
+        "m_p_err_pct": 12231.191986792428,
+        "m_n_err_pct": 64812.50246128135
+      }
+    },
+    "corrected_geometric_series": {
+      "correction_factor": 0.9806408227196728,
+      "z_JO": {
+        "m_p_MeV": 936.9941563375377,
+        "m_n_MeV": 411.22715938831794,
+        "m_p_err_pct": -0.1362005583016296,
+        "m_n_err_pct": -56.232195182244425
+      },
+      "z_Planck": {
+        "m_p_MeV": 113460.27317211285,
+        "m_n_MeV": 598088.3530320525,
+        "m_p_err_pct": 11992.470255042363,
+        "m_n_err_pct": 63555.849818423725
+      }
+    }
+  }
+}
