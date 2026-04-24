@@ -233,9 +233,12 @@ def j_N_at_root_via_limit(basis_word, n, N,
     # downstream numpy usage.
     root = complex(mpmath.exp(2j * mpmath.pi / N))
     vals = []
+    # Precompute the R-matrix position embeddings ONCE per q_eps value;
+    # caches inside j_N_qtr would otherwise repeat for every basis word.
     for eps in eps_list:
         q_eps = root * cmath.exp(1j * eps)
-        v = j_N_qtr(basis_word, n, N, q_eps)
+        r_cache = build_r_position_cache(n, N, q_eps)
+        v = j_N_qtr(basis_word, n, N, q_eps, r_position_cache=r_cache)
         vals.append(v)
     if any(cmath.isnan(v) for v in vals):
         return complex("nan")

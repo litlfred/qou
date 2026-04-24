@@ -111,7 +111,7 @@ def phi_q_product(v, max_iter: int = 2000):
     """
     v_mp = mpmath.mpf(v) if isinstance(v, (int, float, mpmath.mpf)) else mpmath.mpc(v)
     if abs(v_mp) >= Q0_MP:
-        return mpmath.mpc('inf') if abs(v_mp) >= Q0_MP else mpmath.mpf(0)
+        return mpmath.mpc('inf')
     prod = mpmath.mpf(1) if abs(v_mp) < 1 else mpmath.mpc(1, 0)
     coef = Q0_INV
     for k in range(1, max_iter + 1):

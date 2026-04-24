@@ -35,10 +35,35 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import numpy as np
 import sympy as sp
 
 from hecke_characters import partitions_of, dim_q, qfac
 from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A
+
+# Cache lambdified seminormal-sigma matrices per shape so multiple
+# trM_plancherel_at_q calls don't re-compile the same symbolic → numpy
+# functions on every invocation.
+_LAMBDIFY_CACHE: dict[tuple, list] = {}
+
+
+def _get_lambdified_sigmas(shape: tuple, sigmas_sym, dim: int) -> list:
+    from scipy.sparse import issparse
+    if shape in _LAMBDIFY_CACHE:
+        return _LAMBDIFY_CACHE[shape]
+    q_sym = sp.Symbol('q')
+    fns = []
+    for S in sigmas_sym:
+        if issparse(S):
+            S_arr = S.toarray()
+        else:
+            S_arr = np.asarray(S)
+        try:
+            fns.append(sp.lambdify(q_sym, sp.Matrix(S_arr), modules='numpy'))
+        except Exception:
+            fns.append(None)   # fallback handled at call site
+    _LAMBDIFY_CACHE[shape] = fns
+    return fns
 
 
 def trM_plancherel_at_q(Z: int, N: int, q_val: complex) -> complex:
@@ -47,6 +72,10 @@ def trM_plancherel_at_q(Z: int, N: int, q_val: complex) -> complex:
     Uses the seminormal representation with SYMBOLIC entries substituted
     at q_val.  Fast because no Gröbner reduction needed.
     """
+    # NOTE: this function computes the PLANCHEREL / canonical trace
+    # (w_λ = d_q²/[n]_q!), not the Jones-Ocneanu Markov trace with
+    # z = 1/(q^{1/2}+q^{-1/2}).  See markov_weight_verification.py
+    # for the q_0 divergence between the two conventions.
     from scipy.sparse import issparse, eye as speye
     import numpy as np
     word = atom_braid_word_3A(Z, N)
@@ -87,27 +116,23 @@ def trM_plancherel_at_q(Z: int, N: int, q_val: complex) -> complex:
         if abs(dq) < 1e-18:
             continue
         w = (dq * dq) / nfac
-        # Substitute q_val into each symbolic sigma matrix
+        # Cache lambdified functions per shape so multiple q_val calls
+        # reuse them instead of re-compiling each time.
+        fns = _get_lambdified_sigmas(shape, sigmas_sym, dim)
         sigmas_num = []
-        for S in sigmas_sym:
-            if issparse(S):
-                S_arr = S.toarray()
-            else:
-                S_arr = np.asarray(S)
+        for fn, S in zip(fns, sigmas_sym):
             try:
-                S_num = np.asarray(
-                    sp.lambdify(sp.Symbol('q'),
-                                 sp.Matrix(S_arr),
-                                 modules='numpy')(q_val),
-                    dtype=complex,
-                )
+                sigmas_num.append(np.asarray(fn(q_val), dtype=complex))
             except Exception:
-                # Fallback for entries that lambdify can't handle
-                S_num = np.array([[complex(sp.N(S_arr[i, j].subs(
-                    sp.Symbol('q'), q_val)))
-                                    for j in range(dim)]
-                                   for i in range(dim)])
-            sigmas_num.append(S_num)
+                # Fallback: element-wise subs (slow)
+                if issparse(S):
+                    S_arr = S.toarray()
+                else:
+                    S_arr = np.asarray(S)
+                sigmas_num.append(np.array(
+                    [[complex(sp.N(S_arr[i, j].subs(sp.Symbol('q'), q_val)))
+                       for j in range(dim)]
+                      for i in range(dim)]))
         I = np.eye(dim, dtype=complex)
         prod = I.copy()
         for (c, d, g) in word:
