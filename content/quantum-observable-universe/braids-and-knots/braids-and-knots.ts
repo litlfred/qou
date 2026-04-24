@@ -389,6 +389,7 @@ export default chapter({
         "gb-residue-spectral-sum",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
+        "full-pole-structure-mass-trace",
         "markov-pair-z2",
         "pentagon-uv-commutation",
         "descended-level-zero",
