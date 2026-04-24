@@ -33,7 +33,6 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
 import sympy as sp
-from scipy.sparse import issparse
 
 from hecke_characters import partitions_of, dim_q, qfac
 from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A
@@ -50,12 +49,12 @@ ATOMS = [
 ]
 
 
-def chi_lambda_at_q0(shape, word):
-    sigmas, dim, _ = _cached_seminormal(shape)
-    if dim == 0:
-        return 0j
-    q_sym = sp.Symbol('q')
+def _sigmas_to_numeric(sigmas, dim):
+    """Convert symbolic seminormal matrices to numeric arrays at q=Q0.
 
+    Called once per shape; result is reused across callers.
+    """
+    q_sym = sp.Symbol('q')
     sigmas_num = []
     for S in sigmas:
         if hasattr(S, "toarray"):
@@ -73,7 +72,13 @@ def chi_lambda_at_q0(shape, word):
                     row.append(complex(e))
             row_list.append(row)
         sigmas_num.append(np.array(row_list, dtype=complex))
+    return sigmas_num
 
+
+def chi_lambda_at_q0(sigmas_num, dim, word):
+    """Character χ_λ(β) from pre-converted numeric sigmas."""
+    if dim == 0:
+        return 0j
     I = np.eye(dim, dtype=complex)
     prod = I.copy()
     for (c, d, g) in word:
@@ -96,7 +101,8 @@ def profile_atom(Z, N):
             continue
         dq = float(dim_q(shape))
         w_lambda = (dq * dq) / nfac
-        chi = chi_lambda_at_q0(shape, word)
+        sigmas_num = _sigmas_to_numeric(sigmas, dim)
+        chi = chi_lambda_at_q0(sigmas_num, dim, word)
         contribution = w_lambda * chi.real / dim
         rows.append({
             "shape": list(shape),
