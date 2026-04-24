@@ -1,15 +1,15 @@
 {
   "engine": "numeric",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-24T12:06:47.525949+00:00",
-  "commitSha": "ac2521f67cc48fe32d317d83b86591a91d79843d",
+  "computedAt": "2026-04-24T13:32:09.086795+00:00",
+  "commitSha": "1df251fd643fe8c9e21a9cd3a383cadc3ec16156",
   "assertions": [],
   "allPassed": true,
   "durationMs": 4,
   "computation": "markov-weight-verification",
   "scriptFile": "markov_weight_verification.py",
-  "scriptHash": "515d86ba2449",
-  "scriptCommitSha": "",
+  "scriptHash": "94a2b210a8f9",
+  "scriptCommitSha": "9eeabafdca820175236c1e2b79b8c1bc0bde8259",
   "description": "Verify whether Σ_λ (d_q²/[n]_q!)·χ_λ(σ_1) reproduces the Markov-trace value z = 1/(q^{1/2}+q^{-1/2}) for H_2(q) and H_3(q) at q=q_0.  Addresses gemini's HIGH-priority claim.",
   "data": {
     "params": {
@@ -56,8 +56,8 @@
       "n": 3,
       "z_project": 0.4993203340335982,
       "Plancherel_sum_sigma_1": 0.17227762169280988,
-      "Plancherel_sum_1": 1.6481139993762164,
-      "ratio_sigma_over_one": 0.10453016099493972,
+      "Plancherel_sum_1": 1.6553132750035098,
+      "ratio_sigma_over_one": 0.10407553923135462,
       "expected_Markov": 0.4993203340335982,
       "Plancherel_gives_Markov": false,
       "per_partition": [
@@ -95,7 +95,7 @@
           "w_Plancherel": 0.6606737723483499,
           "chi(sigma_1)": 0.20906032198987945,
           "contribution_sigma": 0.13812067157741434,
-          "contribution_one": 1.3213475446966998
+          "contribution_one": 1.3285468203239934
         }
       ]
     }

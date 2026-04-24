@@ -116,9 +116,13 @@ def verify_n_level(n: int, q: float, z_proj: float) -> dict:
         w = plancherel_weight(lam, q)
         dq = float(dim_q(lam))
         dcl = classical_dim(lam)
-        # χ_λ(1) = dim of irrep.  Canonical trace uses classical dim.
+        # χ_λ(1) = Tr_λ(id) = d_q(λ) under the categorical (quantum)
+        # trace, so the Plancherel trace τ(1) = Σ_λ (d_q²/[n]_q!) ·
+        # d_q/d_q = Σ_λ d_q²/[n]_q! = 1 when the quantum Plancherel
+        # identity Σ d_q² = [n]_q! holds.  Using the classical dim
+        # gives an inconsistent normalisation at q ≠ 1.
         planck_sigma += w * chi_sigma
-        planck_one += w * dcl
+        planck_one += w * dq
         details.append({
             "lambda": list(lam),
             "d_classical": dcl,
@@ -126,7 +130,7 @@ def verify_n_level(n: int, q: float, z_proj: float) -> dict:
             "w_Plancherel": w,
             "chi(sigma_1)": chi_sigma,
             "contribution_sigma": w * chi_sigma,
-            "contribution_one": w * dcl,
+            "contribution_one": w * dq,
         })
     # Markov axiom: tr_M(σ_i) = z · tr_M(1) = z (if tr_M(1) = 1)
     return {
@@ -171,7 +175,7 @@ def main():
         print("─" * 100)
         result = verify_n_level(n, q, z_proj)
         print(f"  {'partition':<16} {'d_cl':>6} {'d_q':>10} "
-              f"{'w_Plancherel':>14} {'χ(σ_1)':>12} {'w·χ':>14} {'w·d_cl':>14}")
+              f"{'w_Plancherel':>14} {'χ(σ_1)':>12} {'w·χ':>14} {'w·d_q':>14}")
         for d in result["per_partition"]:
             print(f"  {str(d['lambda']):<16} {d['d_classical']:>6} "
                   f"{d['d_q']:>10.4f} {d['w_Plancherel']:>14.6f} "
@@ -180,8 +184,8 @@ def main():
                   f"{d['contribution_one']:>14.6f}")
         print()
         print(f"  Σ w·χ(σ_1)           = {result['Plancherel_sum_sigma_1']:+.10f}")
-        print(f"  Σ w·d_cl [~tr_M(1)]  = {result['Plancherel_sum_1']:+.10f}")
-        print(f"  ratio Σχ/Σd_cl        = {result['ratio_sigma_over_one']:+.10f}")
+        print(f"  Σ w·d_q [τ(1)]       = {result['Plancherel_sum_1']:+.10f}")
+        print(f"  ratio Σχ/Σd_q        = {result['ratio_sigma_over_one']:+.10f}")
         print(f"  z (project)           = {z_proj:+.10f}")
         match = result['Plancherel_gives_Markov']
         print(f"  match to z?           : {'✓ YES' if match else '✗ NO'}")
