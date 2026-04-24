@@ -139,12 +139,35 @@ def _Phi_q_mp(z_val, q, qi, max_k=200):
     return product
 
 
-def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
-                                q_val, precision=30):
-    """Evaluate Markov trace (descended |ΠV_s|) at specific q.
+def _h3_wedderburn_weights(q, qi):
+    """Return (w_sym, w_std, w_alt) for H_3(q) normalised to sum 1.
 
-    Returns only the DESCENDED term Π V_s.  For the full tower mass,
-    use tower_mass_symbolic_eval instead.
+    Ref: prop:three-parameters-wedderburn (content/braids-and-knots).
+    Uses q-dim² / |H_3| with q-integer normalisation [1]_q[2]_q[3]_q.
+    """
+    def qint(k):
+        return (q ** k - qi ** k) / (q - qi) if k else mpmath.mpf(0)
+    nf3 = qint(1) * qint(2) * qint(3)
+    qdim_sym, qdim_std, qdim_alt = mpmath.mpf(1), qint(2), mpmath.mpf(1)
+    ws = qdim_sym ** 2 / nf3
+    wt = qdim_std ** 2 / nf3
+    wa = qdim_alt ** 2 / nf3
+    tot = ws + wt + wa
+    return ws / tot, wt / tot, wa / tot
+
+
+def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
+                                q_val, precision=30, channel="std"):
+    """Evaluate Markov trace (descended |ΠV̂|) at specific q.
+
+    channel:
+      "std"  — V̂ = V_s = z·a + b                (classic descended; default)
+      "sym"  — V̂ = V_sym = Π (c·q + d)           (symmetric Wedderburn)
+      "alt"  — V̂ = V_alt = Π (-c·q⁻¹ + d)        (antisymmetric Wedderburn)
+      "full" — V̂ = w_sym·V_sym + w_std·V_s + w_alt·V_alt   (H_3 Wedderburn sum)
+
+    Ref: prop:schur-weyl-mass-decomposition
+         (content/braids-and-knots/schur-weyl-mass-decomposition.md).
     """
     mpmath.mp.dps = precision
     q = mpmath.mpf(str(q_val))
@@ -153,17 +176,59 @@ def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
     crossings, n_strands = _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h)
 
+    if channel == "full":
+        w_sym, w_std, w_alt = _h3_wedderburn_weights(q, qi)
+
     tr_M = mpmath.mpf(1)
     for gen in range(n_strands - 1):
         a = mpmath.mpf(0)
         b = mpmath.mpf(1)
+        sp = mpmath.mpf(1)
+        ap = mpmath.mpf(1)
         for c, d in crossings[gen]:
             a_new = a * c * h + a * d + b * c
             b_new = a * c + b * d
             a, b = a_new, b_new
+            sp = sp * (c * q + d)
+            ap = ap * (-c * qi + d)
         Vs = z * a + b
-        tr_M *= Vs
+        if channel == "std":
+            V_hat = Vs
+        elif channel == "sym":
+            V_hat = sp
+        elif channel == "alt":
+            V_hat = ap
+        elif channel == "full":
+            V_hat = w_sym * sp + w_std * Vs + w_alt * ap
+        else:
+            raise ValueError(f"Unknown channel: {channel!r}")
+        tr_M *= V_hat
     return tr_M
+
+
+def markov_trace_three_channels(Z, N, include_inter, m_pp, m_pn, m_nn,
+                                  q_val, precision=30):
+    """Compute all three Wedderburn-channel traces and the H_3-full sum.
+
+    Returns dict:
+      {"std": |ΠV_s|, "sym": |ΠV_sym|, "alt": |ΠV_alt|,
+       "full": |ΠV_full|, "w_sym", "w_std", "w_alt"}
+
+    Separating channels lets the caller evaluate the Schur-Weyl
+    additive-H_3 approximation error against the standard-channel trace.
+    """
+    mpmath.mp.dps = precision
+    q = mpmath.mpf(str(q_val))
+    qi = 1 / q
+    w_sym, w_std, w_alt = _h3_wedderburn_weights(q, qi)
+    out = {
+        "w_sym": w_sym, "w_std": w_std, "w_alt": w_alt,
+    }
+    for ch in ("std", "sym", "alt", "full"):
+        out[ch] = abs(markov_trace_symbolic_eval(
+            Z, N, include_inter, m_pp, m_pn, m_nn, q_val,
+            precision=precision, channel=ch))
+    return out
 
 
 def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
@@ -180,20 +245,7 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     h = q - qi
     z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
 
-    # H_3 Wedderburn weights (additive Wedderburn, per mass_endomorphism)
-    def qint(k):
-        return (q ** k - qi ** k) / (q - qi) if k else mpmath.mpf(0)
-    nf3 = qint(1) * qint(2) * qint(3)
-    qdim_sym = mpmath.mpf(1)
-    qdim_std = qint(2)
-    qdim_alt = mpmath.mpf(1)
-    w_sym_raw = qdim_sym ** 2 / nf3
-    w_std_raw = qdim_std ** 2 / nf3
-    w_alt_raw = qdim_alt ** 2 / nf3
-    wt = w_sym_raw + w_std_raw + w_alt_raw
-    w_sym = w_sym_raw / wt
-    w_std = w_std_raw / wt
-    w_alt = w_alt_raw / wt
+    w_sym, w_std, w_alt = _h3_wedderburn_weights(q, qi)
 
     crossings, n_strands = _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h)
 
@@ -451,18 +503,57 @@ if __name__ == "__main__":
             print(f"  {b:>12}: n={len(v)}, mean={sum(v)/len(v):.4f}%, "
                   f"range [{min(v):.4f}%, {max(v):.4f}%]")
 
+    # ─── Three-channel Wedderburn comparison on select atoms ─────────────
+    # Per prop:schur-weyl-mass-decomposition (content/braids-and-knots):
+    # the engine has been using only the standard channel V_s.  Here we
+    # also compute the symmetric, antisymmetric, and H_3-weighted-full
+    # traces for a side-by-side comparison.
+    print()
+    print("THREE-CHANNEL WEDDERBURN TRACES (prop:schur-weyl-mass-decomposition)")
+    print("=" * 88)
+    three_ch_atoms = [("p", 1, 0), ("n", 0, 1), ("D", 1, 1), ("T", 1, 2),
+                      ("3He", 2, 1), ("4He", 2, 2), ("12C", 6, 6), ("16O", 8, 8)]
+    three_ch_results = []
+    print(f"  {'Atom':>6} {'A':>3} {'|tr_std|':>18} {'|tr_sym|':>18} "
+          f"{'|tr_alt|':>18} {'|tr_full|':>18} {'|full-std|/std':>14}")
+    print("  " + "-" * 96)
+    for atom, Z, N in three_ch_atoms:
+        ch = markov_trace_three_channels(Z, N, True, 1, 1, 1, q0, 50)
+        dev = abs(ch["full"] - ch["std"]) / ch["std"] if ch["std"] > 0 else mpmath.inf
+        print(f"  {atom:>6} {Z+N:>3d} {float(ch['std']):>18.6e} "
+              f"{float(ch['sym']):>18.6e} {float(ch['alt']):>18.6e} "
+              f"{float(ch['full']):>18.6e} {float(dev)*100:>13.4f}%")
+        three_ch_results.append({
+            "atom": atom, "Z": Z, "N": N, "A": Z + N,
+            "tr_std_abs": str(ch["std"]),
+            "tr_sym_abs": str(ch["sym"]),
+            "tr_alt_abs": str(ch["alt"]),
+            "tr_full_abs": str(ch["full"]),
+            "full_vs_std_rel": str(dev),
+        })
+    # Log H_3 Wedderburn weights at q_0 for reference.
+    ws_q0, wt_q0, wa_q0 = _h3_wedderburn_weights(q0, 1 / q0)
+    print(f"\n  H_3 weights @ q_0: w_sym={float(ws_q0):.6f}, "
+          f"w_std={float(wt_q0):.6f}, w_alt={float(wa_q0):.6f}")
+
     witness = {
         "computation": "crt-markov-trace",
         "description": (
             "Track A: CRT-style high-precision Markov trace evaluation "
             "via mpmath. Avoids float underflow/overflow for heavy atoms. "
             "Evaluates tr_M(W) at q_0 with 50-digit precision. "
-            "β-decay calibration: E_0 = 0.782 / (|tr_M(n)| - |tr_M(p)|)."
+            "β-decay calibration: E_0 = 0.782 / (|tr_M(n)| - |tr_M(p)|). "
+            "Extended with three-channel Wedderburn traces per "
+            "prop:schur-weyl-mass-decomposition."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q_0": str(q0), "mpmath_dps": 50,
-                       "E_0_cat_MeV": str(E_0_cat)},
+                       "E_0_cat_MeV": str(E_0_cat),
+                       "w_sym_q0": str(ws_q0),
+                       "w_std_q0": str(wt_q0),
+                       "w_alt_q0": str(wa_q0)},
         "results": final_results,
+        "three_channel_results": three_ch_results,
     }
     out = Path(__file__).parent / "crt-markov.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))
