@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 """
+DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
+
+See docs/phi-q-tower-deprecation.md.  The `tower_mass_level`
+include_desc parameter and the level-1+ sum corrections here are
+structurally correct per prop:descended-level-zero, but the
+pipeline as a whole is superseded by JSJ + Vol_hyp.  Retained
+(not deleted) — may return for pentagon-defect work.
+
+─────────────────────────────────────────────────────────────────
+
 Canonical Markov trace + MULTI-BRANE Φ_q tower.
 
 Implements prop:categorical-mass-markov's FULL mass formula:

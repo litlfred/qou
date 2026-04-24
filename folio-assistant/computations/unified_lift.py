@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 """
+DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
+
+See docs/phi-q-tower-deprecation.md.  Kähler / jet-tower lifts on
+aggregated V̂ are legacy Φ_q-tower infrastructure.  Retained — may
+return for pentagon-defect work (Phase 2 of path-to-1ppb).
+
+─────────────────────────────────────────────────────────────────
+
 Task B: unified Markov-stab + Kähler jet lift.
 
 RECONCILIATION.  The Markov-stab lift  V̂^{(n+1)} = z · V̂^{(n)}  is the

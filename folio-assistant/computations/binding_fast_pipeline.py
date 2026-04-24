@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 """
+DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
+
+See docs/phi-q-tower-deprecation.md.  Retained — may return for
+pentagon-defect work (Phase 2 of path-to-1ppb).
+
+─────────────────────────────────────────────────────────────────
+
 End-to-end atom binding table via FAST canonical Markov trace
 (Ocneanu ω_λ) + multi-brane Φ_q tower (ℏ_q² damping).
 
