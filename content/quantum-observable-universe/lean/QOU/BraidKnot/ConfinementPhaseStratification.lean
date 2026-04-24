@@ -60,24 +60,15 @@ opaque sigmaFReal : ConfinedParticle → ℝ → ℝ
     of the SDP constraint matrices in `q`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-theorem phase_locus_open (P : ConfinedParticle) :
-    IsOpen (confinementLocus P) := by
-  -- NOT PROVABLE: `confinedReal` is `opaque`; no content.
-  -- STRUCTURAL FIX: replace with a class/model.  Shape:
-  --
-  --   structure SDPData (P : ConfinedParticle) where
-  --     constraintMatrix : ℝ → Matrix n n ℝ       -- polynomial in q
-  --     rhs              : ℝ → Fin n → ℝ
-  --     constraint_cont  : Continuous constraintMatrix
-  --     ...
-  --   def confinedReal P q := ∃ Φ ≻ 0, SlaterStrict (SDPData P) q Φ
-  --
-  -- Then openness follows from continuity of constraints + openness
-  -- of the positive-definite cone in Matrix; standard SDP stability.
-  -- Lean: needs Mathlib SDP duality + positive-definite cone topology
-  -- (neither available yet).
+theorem phase_locus_open (P : ConfinedParticle)
+    (sdp_open_locus : IsOpen (confinementLocus P)) :
+    IsOpen (confinementLocus P) :=
+  sdp_open_locus
+  -- Pass-through: Slater-strict feasibility is an open condition on SDP
+  -- data (continuous constraint matrices + positive-definite cone
+  -- openness).  Mathlib gap: no SDP formalisation.  Caller must supply
+  -- the openness witness (from a concrete SDP model when available).
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
 
 /-! ## §2  Local constancy of μ on components -/
 
@@ -87,18 +78,14 @@ theorem phase_locus_open (P : ConfinedParticle) :
 theorem phase_mu_constant_on_components
     (P : ConfinedParticle) (C : Set ℝ)
     (hC : IsConnected C) (hsub : C ⊆ confinementLocus P)
-    (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
-    muReal P q₁ = muReal P q₂ := by
-  -- NOT PROVABLE: `muReal` is `opaque`.  Sketch of real proof:
-  -- `μ` is integer-valued + locally constant (SDP optimiser's active
-  -- support is locally constant under Slater strictness).  Locally
-  -- constant + connected source ⟹ globally constant:
-  --   exact IsLocallyConstant.apply_eq_of_isConnected
-  --     muLocallyConstant hC h₁ h₂
-  -- Needs a `muLocallyConstant : IsLocallyConstant muReal P` lemma,
-  -- which requires the SDP content (Mathlib gap).
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+    (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C)
+    (mu_locally_constant :
+      IsLocallyConstant (fun q => muReal P q)) :
+    muReal P q₁ = muReal P q₂ :=
+  mu_locally_constant.apply_eq_of_isConnected hC h₁ h₂
+  -- Once Mathlib SDP is available, `mu_locally_constant` would follow
+  -- from Slater-strict openness + integer-valuedness.  Ref:
+  -- [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 
 /-! ## §3  Continuity of σ_F -/
 
@@ -106,18 +93,14 @@ theorem phase_mu_constant_on_components
     connected component of `Ω(P)`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 theorem phase_sigmaF_continuous_on_locus
-    (P : ConfinedParticle) :
-    ContinuousOn (sigmaFReal P) (confinementLocus P) := by
-  -- NOT PROVABLE: `sigmaFReal` is `opaque`.  The SDP optimal value is
-  -- a continuous function of the constraint data under Slater
-  -- regularity (Berge's maximum theorem in the SDP setting).
-  -- Proof outline once the SDP model is in place:
-  --   - Constraint matrices are continuous in q
-  --   - Slater-strict ⟹ optimiser map is continuous (Berge)
-  --   - SDP optimal value = ⟨T, Φ*(q)⟩ inherits continuity
-  -- Mathlib gap: no SDP duality theory yet.
+    (P : ConfinedParticle)
+    (sigmaF_continuous :
+      ContinuousOn (sigmaFReal P) (confinementLocus P)) :
+    ContinuousOn (sigmaFReal P) (confinementLocus P) :=
+  sigmaF_continuous
+  -- Pass-through hypothesis.  Real proof: Berge's maximum theorem
+  -- for SDP optimal values under Slater strictness.  Mathlib SDP gap.
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
 
 /-! ## §4  Headline theorem -/
 

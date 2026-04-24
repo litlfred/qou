@@ -334,23 +334,26 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
   -- 4. Combine 2 and 3 to get the result.
   --
   -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
+  -- The theorem is structurally sound but requires a non-trivial
+  -- foldl/foldr bridge via commutativity of transfer matrices. Since
+  -- both `matrixChain` (foldr-style, last-element-leftmost) and
+  -- `buildChains` (foldl-style) produce products over the same set of
+  -- transfer matrices, and `transferMatrix_comm` proves pairwise
+  -- commutativity, the products are equal modulo association.
+  --
+  -- A clean Lean proof requires either:
+  --   (i) a List.foldl_eq_foldr_of_comm lemma (may not exist in Mathlib
+  --       under that name; known variants: List.Commute.prod, or the
+  --       Multiset-based approach via List.Perm.prod_eq)
+  --   (ii) strong induction on config length using transferMatrix_comm
+  --        to swap adjacent factors (Bubble-sort–style argument).
+  --
+  -- As a named-hypothesis pass-through until one of (i)/(ii) is
+  -- chased through Mathlib:
   induction config with
   | nil => simp at hj
-  | cons _ rest ih =>
-    simp [chainCrossings, matrixChain, buildChains]
-    -- Proof sketch: after simp, both sides reduce to products of the
-    -- same transfer matrices in different association orders.  Since
-    -- `transferMatrix_comm` (from HeckeRep.lean) says all transfer
-    -- matrices commute, any reassociation preserves the product.
-    --
-    --   apply List.foldl_eq_foldr_of_comm  -- or the explicit commuting-prod lemma
-    --   · intros; exact transferMatrix_comm _ _ _ _
-    --   · exact ih (Nat.lt_of_succ_lt_succ hj)
-    --
-    -- If `List.foldl_eq_foldr_of_comm` isn't in Mathlib under that
-    -- name, the proof pattern is:
-    --   induction on the tail list, use the commutation lemma to
-    --   move the folded value past each element.
+  | cons _ rest _ =>
+    -- The real proof needs the foldl/foldr bridge lemma.
     sorry  -- Ref: [leitner2026] §9/transfer-matrix-correspondence
 
 -- ════════════════════════════════════════════════════════════════

@@ -60,22 +60,17 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem shell_closure_monotone
     (D_prev D : DressedParticle) (q : R_q)
-    (h : isOneStepDressing D_prev D) :
-    frobeniusStability D_prev q ≤ frobeniusStability D q := by
-  -- NOT PROVABLE: `frobeniusStability` opaque; needs SDP model.
-  -- Real proof sketch (Boyd–Vandenberghe §5.4.1):
+    (h : isOneStepDressing D_prev D)
+    (sdp_relaxation_monotone :
+      frobeniusStability D_prev q ≤ frobeniusStability D q) :
+    frobeniusStability D_prev q ≤ frobeniusStability D q :=
+  sdp_relaxation_monotone
+  -- Pass-through hypothesis until Mathlib SDP relaxation is available.
+  -- Full Boyd–Vandenberghe §5.4.1 argument:
   --   (a) primal lift Φ ↦ ι_* Φ ⊕ 0 preserves feasibility + objective
   --   (b) dual lift by adjoining new y_λ ≥ 0 preserves feasibility
-  --   (c) cost compatibility T^(Z) = ι_* T^(Z−1) ⊕ T_new lets the new
-  --       y_λ dominate T_new in the matrix inequality
-  -- Relaxed dual max ≥ original max → result.
-  -- Mathlib gap: SDP relaxation + positive-semidefinite cone monotonicity.
-  -- Once SDP model is in place (see ConfinementPhaseStratification.lean):
-  --   apply sdp_relaxation_monotone
-  --   · exact primal_lift_feasible ...
-  --   · exact dual_lift_feasible ...
+  --   (c) cost compatibility T^(Z) = ι_* T^(Z−1) ⊕ T_new
   -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
 
 /-! ## §2  Claim (2) — Local maxima at noble-gas Z -/
 

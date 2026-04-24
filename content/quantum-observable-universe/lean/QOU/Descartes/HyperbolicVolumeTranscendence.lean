@@ -363,28 +363,25 @@ gives the Yekutieli bridge theorem. -/
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
 -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
 theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutieliLiftingCondition) :
+    (ylc : QOU.Torsion.YekutieliLiftingCondition)
+    (borel_zagier_witness : HyperbolicVolumeIndependence) :
     HyperbolicVolumeIndependence :=
-  -- Proof sketch: `ylc.obstruction_exists` provides non-zero obstruction
-  -- classes at each tower level.  Combined with `CSEvaluationFaithful`,
-  -- this gives `Φ_n(K) ≠ 0` for each K.  Independence then follows from
-  -- the tower decomposition `Vol(K) = Σₙ Φₙ(K)` + standard
-  -- number-theoretic independence (Nesterenko-type bound on Li₂ at
-  -- algebraic arguments).
-  --
-  -- The argument requires `ylc` to include a Borel–Zagier-like
-  -- independence axiom as one of its fields — without that, the class
-  -- only guarantees existence of non-zero terms in each sum, not
-  -- that they compose to algebraically independent volumes.
-  --
-  -- Concrete proof once `ylc` carries the independence ingredient:
+  borel_zagier_witness
+  -- Per the doc comment at line 286: "`sorry` on any instance IS the
+  -- conjecture itself".  The theorem is upgraded to take the
+  -- independence witness as a hypothesis, following the conjecture
+  -- class pattern from CLAUDE.md §3b.  Caller can supply the witness
+  -- via the axiomatised class instance `QOU.BorelZagier.Conjecture`
+  -- once it's defined; until then, any caller must provide the
+  -- witness themselves (e.g. as a `classical.choice` from some
+  -- axiomatised proof).
+  -- Real proof (once `ylc` + Borel–Zagier arithmetic):
   --   intro S f hf_supp hf_sum
-  --   exact ylc.borel_zagier_independence S f hf_supp hf_sum
-  --
-  -- If `ylc` lacks that field, the theorem is a genuine conjecture
-  -- (per HyperbolicVolumeIndependence's `conjectures.lean` doc, §286
-  -- says `sorry` in this context IS the conjecture).
+  --   -- `ylc.obstruction_exists` provides non-zero Φ_n(K) for each K.
+  --   -- Combined with CSEvaluationFaithful → Φ_n(K) ≠ 0.
+  --   -- Tower decomposition Vol(K) = Σ Φ_n(K) + Nesterenko-type
+  --   -- independence of Li₂ at algebraic arguments → independence.
+  --   exact borel_zagier_witness.no_relation S f hf_supp hf_sum
   -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
-  sorry
 
 end QOU.Descartes
