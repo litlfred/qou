@@ -233,8 +233,12 @@ def j_N_at_root_via_limit(basis_word, n, N,
     the Richardson table removes higher powers.
     """
     # Convergence threshold for the last two Richardson inputs.
-    # Values within this relative tolerance are treated as convergent;
-    # larger spread is flagged as divergent (return nan).
+    # 1% is permissive but consistent with the colored-Jones
+    # evaluation being DIAGNOSTIC only (the N>2 R-matrix is not the
+    # true colored-Jones R-matrix anyway, see r_matrix_N docstring).
+    # For 1-ppb precision work on the PRODUCTION mass formula, this
+    # tolerance would need to be tightened to 1e-9 and the R-matrix
+    # rewritten.  Left at 1e-2 for the diagnostic regime.
     DIVERGENCE_REL_TOL = 0.01
     # Use mpmath for the root-of-unity construction so it matches
     # the script's configured precision, then cast to complex for

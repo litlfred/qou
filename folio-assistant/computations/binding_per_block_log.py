@@ -66,6 +66,16 @@ def ln_abs_phi_q(v: float, *,
                    pole_mode: str = "principal") -> float:
     """ln|Φ_q(v)| = −Σ_{k≥1} ln|1 − q^{−k} v|.
 
+    **Precision caveat on `pole_mode='principal'`:** when |1 − q^{-k}v|
+    < pole_tol the factor is SKIPPED.  This introduces a discontinuity
+    of size ≈ −ln(pole_tol) ≈ 20.7 (at pole_tol = 1e-9) as v crosses
+    the tolerance boundary.  If any traced volume V̂ is within
+    pole_tol of a pole q^k, the result jumps by ~20 units vs the
+    adjacent continuous branch — FAR above 1 ppb precision.
+    For 1 ppb work, set pole_tol to the machine epsilon of the
+    computation (~1e-15) and verify no V̂ sits within that distance
+    of any q^k.
+
     Sum truncated once the summand magnitude falls below
     ``skip_tol`` — at q₀ ≈ 1.11 the tail is super-geometric
     (q^{−k} → 0), so a few hundred terms suffice.
