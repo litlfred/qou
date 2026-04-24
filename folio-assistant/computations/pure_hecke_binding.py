@@ -68,22 +68,22 @@ def classical_dim(shape) -> int:
     return f // hp
 
 
-def markov_trace(Z: int, N: int, include_inter: bool) -> tuple:
-    """Compute tr_M(W) = Σ_λ w_λ · χ_λ(W)/d_q(λ) with Plancherel weights
-    w_λ = d_q(λ)²/[n]_q!.
+def _a_k_numerator_denominator(Z: int, N: int, include_inter: bool) -> tuple:
+    """Paper formula (knot-factor-frobenius-pairing.md + jet-filtered-knot-factor.md):
+        a_k(β) = [Σ_λ w_λ · χ_λ(β)] / [Σ_λ w_λ · d_λ]
+    where w_λ = d_q(λ)²/[n]_q! (Plancherel) and d_λ is CLASSICAL
+    (since Res^{H_k}_{H_3}(V_λ) has dim = d_λ as a vector space).
 
-    Uses atom_character_raw with pre-built partition-table entries.
-    Note: atom_character_raw returns (chi_q, log_norm, dim); the actual
-    trace is chi_q · exp(log_norm).
+    Returns (numerator_mp, denominator_mp, n_partitions_used).
     """
     n_strands = 3 * (Z + N)
     if n_strands < 2:
-        return mp.mpf(0), 0
-    # Plancherel normalizer [n]_q!
+        return mp.mpf(0), mp.mpf(1), 0
     nfac = mp.mpf(1)
     for k in range(2, n_strands + 1):
         nfac *= (Q0**k - QI**k) / (Q0 - QI)
-    total = mp.mpc(0)
+    numerator = mp.mpc(0)
+    denominator = mp.mpf(0)
     n_terms = 0
     entries = _entries_for_k(n_strands)
     for entry in entries:
@@ -94,17 +94,23 @@ def markov_trace(Z: int, N: int, include_inter: bool) -> tuple:
             continue
         if dq == 0:
             continue
+        d_cl = mp.mpf(classical_dim(shape))
         w = dq * dq / nfac
         try:
-            chi_q, log_norm, dim_cl = atom_character_raw(Z, N, entry,
-                                                           include_inter=include_inter)
-        except Exception as e:
+            chi_q, log_norm, dim_cl_entry = atom_character_raw(Z, N, entry,
+                                                          include_inter=include_inter)
+        except Exception:
             continue
-        # Reconstruct actual trace: chi_q · exp(log_norm)
         chi_actual = mp.mpc(str(float(chi_q))) * mp.exp(mp.mpf(str(float(log_norm))))
-        total += w * chi_actual / dq
+        numerator   += w * chi_actual
+        denominator += w * d_cl
         n_terms += 1
-    return total, n_terms
+    return numerator, denominator, n_terms
+
+
+def markov_trace(Z: int, N: int, include_inter: bool) -> tuple:
+    """Compute raw Plancherel sum Σ w_λ·χ_λ/d_q (old — kept for compat)."""
+    return _a_k_numerator_denominator(Z, N, include_inter)[:2]
 
 
 def main() -> int:
