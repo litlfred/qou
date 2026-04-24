@@ -21,6 +21,7 @@ export default proposition({
     "prf:topological-mass",
     "prop:mass-endomorphism-tower",
     "rem:mass-endomorphism-jet-tower",
+    "prop:jet-tower-convergence",
     "def:recursive-brane-tower",
     "prop:categorical-mass-markov",
     "thm:markov-trace-factorization",

@@ -62,19 +62,19 @@ ALPHA_BINDING_MEV = M_E_MEV * 8 * CATALAN_G
 def ln_abs_phi_q(v: float, *,
                    K_max: int = 4000,
                    skip_tol: float = 1e-15,
-                   pole_tol: float = 1e-9,
+                   pole_tol: float = 1e-15,
                    pole_mode: str = "principal") -> float:
     """ln|Φ_q(v)| = −Σ_{k≥1} ln|1 − q^{−k} v|.
 
-    **Precision caveat on `pole_mode='principal'`:** when |1 − q^{-k}v|
-    < pole_tol the factor is SKIPPED.  This introduces a discontinuity
-    of size ≈ −ln(pole_tol) ≈ 20.7 (at pole_tol = 1e-9) as v crosses
-    the tolerance boundary.  If any traced volume V̂ is within
-    pole_tol of a pole q^k, the result jumps by ~20 units vs the
-    adjacent continuous branch — FAR above 1 ppb precision.
-    For 1 ppb work, set pole_tol to the machine epsilon of the
-    computation (~1e-15) and verify no V̂ sits within that distance
-    of any q^k.
+    **Precision note on `pole_mode='principal'`:** when |1 − q^{-k}v|
+    < pole_tol the factor is CLAMPED at pole_tol (earlier revisions
+    skipped it, creating a −ln(pole_tol) discontinuity).  Default
+    pole_tol = 1e-15 ≈ double-precision epsilon, so the clamp only
+    activates for true near-poles and the clamped contribution
+    (+ln(1/pole_tol) ≈ 34.5) indicates a genuine singularity rather
+    than a spurious tolerance artefact.  Callers still computing near
+    a known q^k should verify externally that v is not within
+    1e-15 of the pole.
 
     Sum truncated once the summand magnitude falls below
     ``skip_tol`` — at q₀ ≈ 1.11 the tail is super-geometric

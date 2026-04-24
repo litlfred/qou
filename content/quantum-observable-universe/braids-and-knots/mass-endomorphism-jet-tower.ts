@@ -13,6 +13,7 @@ export default remark({
     "rem:quantum-bloch-group",
     "thm:jones-markov-trace",
     "thm:markov-trace-factorization",
+    "prop:jet-tower-convergence",
     "prop:markov-pair-z2",
     "prop:pentagon-uv-commutation",
     "prop:descended-level-zero",
