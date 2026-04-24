@@ -3,6 +3,9 @@
 -- Ref: [murakami-murakami2001] Murakami-Murakami, The colored Jones polynomials and
 --   the simplicial volume of a knot.
 -- Archimedean realization functor: motives → R via Euler characteristic + adelic projection.
+--
+-- Canonical declaration lives in: lean/QOU/MotivesArchimedean.lean
+-- This sibling is a documentation-mirror of the QOU library declaration.
 
 namespace QOU.BraidsKnots
 

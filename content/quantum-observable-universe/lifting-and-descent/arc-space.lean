@@ -1,6 +1,9 @@
 -- Ref: [denef-loeser2001] Denef, Loeser, Geometry on Arc Spaces of Algebraic Varieties.
 --   European Congress of Mathematics, Vol. I (Barcelona, 2000), 327-348.
 -- Arc space L(X) of a variety X, identified with the recursive brane tower.
+--
+-- Canonical declaration lives in: lean/QOU/LiftingDescent.lean
+-- This sibling is a documentation-mirror of the QOU library declaration.
 
 namespace QOU.LiftingDescent
 

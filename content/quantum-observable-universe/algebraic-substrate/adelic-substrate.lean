@@ -1,6 +1,9 @@
 -- Ref: [tate1967] Tate, Fourier Analysis in Number Fields and Hecke's Zeta-Functions
 --   in Algebraic Number Theory (Cassels-Fröhlich, eds.), Academic Press, 1967.
 -- Adelic substrate of the QOU framework: A_Q = R × ∏'_p Q_p.
+--
+-- Canonical declaration lives in: lean/QOU/AlgebraicSubstrate.lean
+-- This sibling is a documentation-mirror of the QOU library declaration.
 
 namespace QOU.AlgebraicSubstrate
 

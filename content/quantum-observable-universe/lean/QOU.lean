@@ -45,3 +45,6 @@ import QOU.PhotonThreading
 import QOU.QBirchSwinnertonDyer
 import QOU.QCollatz
 import QOU.QGeometricLanglands
+import QOU.AlgebraicSubstrate
+import QOU.LiftingDescent
+import QOU.MotivesArchimedean

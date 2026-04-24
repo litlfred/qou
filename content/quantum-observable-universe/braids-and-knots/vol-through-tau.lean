@@ -2,6 +2,9 @@
 -- Ref: [murakami-murakami2001] Murakami-Murakami, The colored Jones polynomials and
 --   the simplicial volume of a knot.
 -- Vol(K) factors strictly through the QOU fibre functor τ : C → Arch.
+--
+-- Canonical declaration lives in: lean/QOU/MotivesArchimedean.lean
+-- This sibling is a documentation-mirror of the QOU library declaration.
 
 namespace QOU.BraidsKnots
 

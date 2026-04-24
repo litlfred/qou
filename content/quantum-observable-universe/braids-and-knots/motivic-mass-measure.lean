@@ -1,6 +1,9 @@
 -- Ref: [kontsevich1995] M. Kontsevich, Lecture at Orsay, Dec. 1995 (motivic integration).
 -- Ref: [denef-loeser2001] J. Denef, F. Loeser, Geometry on Arc Spaces of Algebraic Varieties.
 -- Motivic mass measure on the QOU brane arc space.
+--
+-- Canonical declaration lives in: lean/QOU/MotivesArchimedean.lean
+-- This sibling is a documentation-mirror of the QOU library declaration.
 
 namespace QOU.BraidsKnots
 
