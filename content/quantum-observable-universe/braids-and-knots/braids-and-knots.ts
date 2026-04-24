@@ -401,6 +401,7 @@ export default chapter({
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
         "gb-spectral-sequence",
+        "e-infinity-page-identifications",
         "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",

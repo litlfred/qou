@@ -72,13 +72,32 @@ over the spectral sequence pages as:*
 *The rewriting rules $d_H, d_F, d_{YB}$ define a reduction
 procedure, not a genuine differential on a chain complex.  To
 get $d \circ d = 0$ we pass to the **Hochschild cochain complex**
-$C^\bullet(H_n(q), H_n(q))$:*
+over the natural ground ring $R$ of the Hecke algebra:*
 
 $$
   C^k(H_n(q), H_n(q))
   \;:=\;
-  \mathrm{Hom}_\mathbb{C}\bigl(H_n(q)^{\otimes k},\ H_n(q)\bigr),
+  \mathrm{Hom}_R\bigl(H_n(q)^{\otimes k},\ H_n(q)\bigr),
 $$
+
+*where the ground ring is chosen depending on context:*
+
+- *$R = \mathbb{Z}[q, q^{-1}]$ for the **generic Hecke algebra**
+  (integral form — natural for Gröbner–Shirshov and Wedderburn).*
+- *$R = \mathbb{Q}(q)$ for rational-function evaluations
+  (including $q = q_0$).*
+- *$R = \mathbb{R}$ at $q = q_0 \approx 1.11$ for the
+  archimedean mass values (final numeric output).*
+- *$R = \mathbb{C}$ only when taking **residues at roots of
+  unity** $\zeta_n = e^{2\pi i/n}$ off the real axis
+  ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+
+*The derivation below works over any commutative ring $R$; complex
+numbers are **not required** for $d \circ d = 0$ or the spectral-
+sequence construction.  The choice of $R$ reflects which
+specialisation is of interest: generic structure
+($\mathbb{Z}[q, q^{-1}]$), numerical value ($\mathbb{R}$), or
+residue extraction ($\mathbb{C}$).*
 
 *equipped with the standard Hochschild differential*
 
@@ -91,8 +110,10 @@ $$
 $$
 
 *$d \circ d = 0$ is a classical theorem
-(Cartan–Eilenberg 1956) for any associative algebra; it holds
-for $H_n(q)$ verbatim.  The Markov trace $\mathrm{tr}_M$ is a
+(Cartan–Eilenberg 1956) for any associative $R$-algebra over any
+commutative ring $R$; it holds for $H_n(q)$ over
+$\mathbb{Z}[q, q^{-1}]$, $\mathbb{Q}(q)$, $\mathbb{R}$, or
+$\mathbb{C}$ verbatim.  The Markov trace $\mathrm{tr}_M$ is a
 **cyclic 0-cochain** (a map $H_n(q) \to \mathbb{C}$ satisfying
 $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$), hence is $d$-closed at
 degree $0$.*
