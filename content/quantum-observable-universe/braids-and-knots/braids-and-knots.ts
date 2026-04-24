@@ -393,6 +393,7 @@ export default chapter({
         "mn-classical-parity-blind",
         "q-character-closes-parity-gap",
         "frobenius-codim-universal",
+        "knot-mass-formula-unified",
         "partition-sum-proton-residual",
         "deuteron-first-principles",
         "markov-pair-z2",
