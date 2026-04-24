@@ -138,6 +138,39 @@ the binding residual obeys a different scaling.
 
 *Witness: `deuteron-residual-probe.witness.json`.*
 
+**$q$-variant probe: is the $5/2$ a $q$-deformation?**
+*Tested several natural $q$-analogues of
+$\sum_{\lambda \vdash 3} 1/d_\lambda = 5/2$ at $q_0 \approx 1.11$:*
+
+| candidate | $q_0$ value | $\times m_e$ | vs gap |
+|---|---|---|---|
+| classical $5/2$ | $2.5000$ | $1.2775$ | $+3.92\%$ |
+| $2 + 1/[2]_q$  (via $\dim_q(\lambda)$) | $2.4973$ | $1.2761$ | $+3.81\%$ |
+| $[5]_q / [2]_q$ | $2.5961$ | $1.3266$ | $+7.91\%$ |
+| $2 + 1/(2 \cdot [2]_q)$ | $2.2486$ | $1.1491$ | $-6.53\%$ |
+| $\sum 1/H_q(\lambda)$ (raw hook) | $0.6553$ | $0.3349$ | $-72.8\%$ |
+
+*Result: **no $q$-variant closes the gap below $3.5\%$**.  The
+classical $5/2$ and the natural $q$-analogue $2 + 1/[2]_q$ cluster
+within $0.1\%$ of each other, both about $+3.9\%$ above the
+observed deuteron gap.  The $[5]_q/[2]_q$ "q-rational" variant is
+worse ($+7.9\%$).*
+
+*Structural reading: **the $5/2$ is essentially classical, not
+$q$-deformed.**  Its $q$-deformation at $q_0 = 1.11$ is a $\sim 0.1\%$
+perturbation — orders of magnitude smaller than the residual $4\%$
+gap.  That residual must come from elsewhere:*
+
+1. *The $\Phi_q$ tower terms not yet added to the Schur–Weyl
+   descended mass
+   ([mass endomorphism tower](#prop:mass-endomorphism-tower)).*
+2. *Root-of-unity residues at $\zeta_\ell$ beyond $\zeta_1$
+   ([full pole structure](#prop:full-pole-structure-mass-trace)).*
+3. *Atomic-braid convention: inter-nucleon multiplicities
+   $m_{pn}$, $m_{pp}$, $m_{nn}$ other than the default $1$.*
+
+*Witness: `q-variant-partition-sum.witness.json`.*
+
 **Reference implementations.**
 *Scripts
 (both on branch `claude/1ppb-handover-docs-cyFlQ`):*
