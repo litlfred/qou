@@ -105,7 +105,7 @@ def main() -> int:
     print(f"\n  Atom: D (Z={Z}, N={N}, A={A}, n = 3A = {n} strands)")
     print(f"  Atom braid: {len(word)} Hecke factors")
 
-    parts = partitions_of(n)
+    parts = list(partitions_of(n))
     q_sym = sp.Symbol('q')
     # qfac / dim_q return floats at q = Q0
     nfac_q0 = complex(float(qfac(n)))
@@ -124,8 +124,7 @@ def main() -> int:
         sigmas, dim, _ = _cached_seminormal(shape)
         if dim == 0:
             continue
-        dq_expr = dim_q(shape)
-        dq = complex(sp.N(dq_expr.subs(q_sym, Q0)))
+        dq = complex(float(dim_q(shape)))
         w_lambda = (dq * dq) / nfac_q0
         chi_lam = chi_lambda_at_q0(shape, word)
         contribution = w_lambda * chi_lam / dim
