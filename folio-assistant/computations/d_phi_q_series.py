@@ -129,22 +129,23 @@ def v_hat_std_of_word(basis_word: tuple) -> complex:
     σ_i, compute the per-generator transfer matrix chain, get a V̂
     per generator (up to 5 for H_6), then take the PRODUCT.
     """
-    # For a basis word (monomial in σ), each σ contributes a factor
-    # (c, d) = (1, 0) in our convention (positive crossing, Hecke).
-    # The transfer chain for a chain of σ's gives V̂ = z · a_k + b_k
-    # where (a_k, b_k) follow the recurrence.
-    # For the word, treat it as a single "channel" and accumulate.
+    # Transfer-matrix recurrence (hecke_core.vertex_volume):
+    # For each σ_i factor (c=1, d=0), update (a, b) via
+    #   a_new = a·c·h + a·d + b·c = a·h + b
+    #   b_new = a·c + b·d         = a
+    # starting from (a, b) = (0, 1).  The std traced volume is
+    # V̂^std = z · a_k + b_k.  This is the correct q-polynomial, not
+    # the linear approximation z·k + 1 (which only holds at q = 1).
     if not basis_word:
         return complex(1.0)
-    # Per-generator V̂ using fundamental rep:
-    # For σ_g applied k times: a = k, b = ...
-    # But each generator has its own V̂ contribution.
-    # Simpler: treat the word as a LENGTH-l chain at generator 0.
-    # This is a coarse reduction but gives a scalar per word.
     z = mpmath.mpf(1) / (mpmath.sqrt(Q0_MP) + mpmath.mpf(1) / mpmath.sqrt(Q0_MP))
-    # V̂ at the "word chain" = simple accumulator z·k + 1 for k σ's
-    k = len(basis_word)
-    return complex(z * k + mpmath.mpf(1))
+    h = Q0_MP - mpmath.mpf(1) / Q0_MP  # H_A = q - q⁻¹
+    a = mpmath.mpf(0)
+    b = mpmath.mpf(1)
+    for _ in basis_word:
+        # c=1, d=0 for pure σ:
+        a, b = a * h + b, a
+    return complex(z * a + b)
 
 
 def main() -> int:

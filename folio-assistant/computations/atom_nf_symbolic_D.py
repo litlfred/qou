@@ -46,6 +46,10 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from markov_trace_canonical import tr_M_element
+from q_parameter import Q as Q0_FLOAT
+
+# Rational approximation of q_0 for sympy, kept consistent with q_parameter.Q.
+_Q0_RATIONAL = sp.Rational(str(float(Q0_FLOAT)))
 
 
 def _factor_from(c_f: float, d_f: float, g: int) -> SymbolicHeckeElement:
@@ -58,12 +62,9 @@ def _factor_from(c_f: float, d_f: float, g: int) -> SymbolicHeckeElement:
         d = sp.Integer(0)
     elif abs(d_f - 1.0) < 1e-12:
         d = sp.Integer(1)
-    elif abs(d_f + float(HA_sym.subs(q_sym, sp.Rational('11099785956',
-                                                         10000000000)))) < 1e-3:
+    elif abs(d_f + float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < 1e-3:
         d = -HA_sym            # mixed sign convention: -h
-    elif abs(d_f + 0.5 * float(HA_sym.subs(q_sym,
-                                            sp.Rational('11099785956',
-                                                         10000000000)))) < 1e-3:
+    elif abs(d_f + 0.5 * float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < 1e-3:
         d = -HA_sym / 2        # -h/2
     else:
         d = sp.nsimplify(d_f)

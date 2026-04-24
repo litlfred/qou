@@ -62,24 +62,30 @@ def chi_lambda_at_q0(shape: tuple, word) -> complex:
         return 0.0 + 0j
     q_sym = sp.Symbol('q')
 
-    # Substitute q = q₀ into each sigma matrix
+    # Substitute q = q₀ into each sigma matrix.  Use sp.lambdify on the
+    # whole matrix for speed (single numpy call per sigma vs element-wise
+    # subs for larger dim).
     sigmas_num = []
     for S in sigmas:
         if hasattr(S, "toarray"):
             S_arr = S.toarray()
         else:
             S_arr = np.asarray(S)
-        rows = []
-        for i in range(dim):
-            row = []
-            for j in range(dim):
-                elem = S_arr[i, j]
-                if hasattr(elem, "subs"):
-                    row.append(complex(sp.N(elem.subs(q_sym, Q0))))
-                else:
-                    row.append(complex(elem))
-            rows.append(row)
-        sigmas_num.append(np.array(rows, dtype=complex))
+        S_mat = sp.Matrix(S_arr.tolist())
+        try:
+            numeric_fn = sp.lambdify(q_sym, S_mat, modules="numpy")
+            arr = np.asarray(numeric_fn(complex(Q0)), dtype=complex)
+        except Exception:
+            # Fallback: element-wise (handles non-sympy entries gracefully)
+            arr = np.empty((dim, dim), dtype=complex)
+            for i in range(dim):
+                for j in range(dim):
+                    elem = S_arr[i, j]
+                    if hasattr(elem, "subs"):
+                        arr[i, j] = complex(sp.N(elem.subs(q_sym, Q0)))
+                    else:
+                        arr[i, j] = complex(elem)
+        sigmas_num.append(arr)
 
     I = np.eye(dim, dtype=complex)
     prod = I.copy()
