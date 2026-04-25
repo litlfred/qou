@@ -10,6 +10,9 @@ export default definition({
     "def:frobenius-hopf-substrate",
     "def:substrate-parameter-planck",
     "conj:classical-limit-stpart",
+    "conj:archimedean-stpart",
+    "rem:archimedean-stpart-strategy",
+    "def:classical-limit-obstruction",
   ],
   tags: [
     "classical-limit",
