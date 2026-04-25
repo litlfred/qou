@@ -324,6 +324,7 @@ export default chapter({
         "wedderburn-mass-formula",
         "frobenius-s-classification",
         "commutative-chirality-vanishes",
+        "derived-mass-formula-light-isotopes",
         "algebraic-quantum-volume",
         "habiro-ring",
         "habiro-expansion-atomic",
