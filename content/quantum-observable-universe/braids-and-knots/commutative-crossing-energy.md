@@ -37,11 +37,11 @@ the commutative limit only the imaginary travel-speed $i\sin\theta$
 survives.
 
 **Branch-phase localisation.**  By
-[rem:u1-phase-tube](#rem:u1-phase-tube), the five branch points
-$\zeta_5^{k}$ of the hyperelliptic quintic
-([hyperelliptic quintic](#def:hyperelliptic-quintic)) pick out five
-preferred phase values $\varphi_k = 2\pi k/5$ on the $\mathrm{U}(1)$
-tube.  At these phases the commutative crossing weight takes only
+[rem:u1-phase-tube](#rem:u1-phase-tube), the five *finite* branch
+points $\zeta_5^{k}$ of the hyperelliptic quintic
+([hyperelliptic quintic](#def:hyperelliptic-quintic), with the
+sixth branch point at $\infty$) pick out five preferred phase values
+$\varphi_k = 2\pi k/5$ on the $\mathrm{U}(1)$ tube.  At these phases the commutative crossing weight takes only
 two distinct magnitudes,
 
 $$

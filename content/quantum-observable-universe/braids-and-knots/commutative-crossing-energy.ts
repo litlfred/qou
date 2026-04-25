@@ -21,7 +21,6 @@ export default remark({
     "prop:u1-equivariant-reduction",
     "rem:u1-phase-tube",
     "def:hyperelliptic-quintic",
-    "def:substrate-parameter",
   ],
   interprets: "def:crossing-energy",
 });
