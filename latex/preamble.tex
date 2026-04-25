@@ -24,14 +24,6 @@
 \usepackage{titlesec}         % Compact heading styles
 \usepackage{tikz}             % Inline figures
 \usepackage{tikz-cd}          % Commutative diagrams (tikzcd environment)
-% ── TikZ externalization (active only when -shell-escape is enabled) ──────
-% Caches compiled TikZ pictures as standalone PDFs so unchanged diagrams
-% are not recompiled. Silently disabled when shell escape is off.
-\usetikzlibrary{external}
-\ifnum\pdfshellescape=1
-  \tikzexternalize[prefix=tikz-cache/]
-  \immediate\write18{mkdir -p tikz-cache}
-\fi
 \usepackage[dvipsnames]{xcolor}  % Extended colour names (teal, etc.)
 \usepackage{booktabs}            % Professional table rules (\toprule, \midrule, \bottomrule)
 \usepackage{enumitem}            % Customised list labels (label=, leftmargin=)
