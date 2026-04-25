@@ -7,30 +7,52 @@ import Mathlib.Tactic
 
 Step 1 of the convergence proof for the jet-filtered knot invariant.
 
-The q-integer `[m]_q = (qᵐ − q⁻ᵐ)/(q − q⁻¹)` satisfies:
+The q-integer `[m]_q = (qᵐ − q⁻ᵐ)/(q − q⁻¹)` admits the formal
+expansion (h = q − q⁻¹):
 
-    [m]_q / m = 1 + h² · (m² − 1) / (12 · m) + O(h⁴)
+    [m]_q / m = 1 + h² · (m² − 1) / 24 + O(h⁴)
 
-where h = q − q⁻¹.  For |h| < 1, the ratio is bounded:
+The naive linear-in-m bound `|[m]_q/m − 1| ≤ h²·m/6` is **false**
+for m ≥ 5 (the O(h⁴) term is not negligible at q₀ ≈ 1.11).  The
+correct exact identity, with q = e^θ and h = 2 sinh θ, is
 
-    |[m]_q / m − 1| ≤ h² · m / 6
+    [m]_q / m = sinh(mθ) / (m · sinh θ)   ∈   [1, exp((m²−1)θ²/6)].
 
-The q-dimension d_q(λ) = [k]_q! / ∏ [hook]_q satisfies:
+What is actually proved here:
 
-    |d_q(λ) / dim(λ) − 1| ≤ h² · k / 6
+- `qInt_ratio_upper`     [m]_q/m ≥ 1 for q > 1 (Jensen — one-sided)
+- `qInt_ratio_bound_m2`  exact bound at m = 2
+- `qInt_ratio_bound_small`  |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4, q < 2
+- `qDim_geq_dim`         d_q(λ) ≥ dim(λ) (one-sided, all q > 1)
+- `wedderburn_weight_perturbation`  ratio bound for w_λ
+- `convergence_rate` / `convergence_constant_H3`  branching rate
 
-because each q-integer ratio introduces at most h²·m/6 relative
-error, and the product has cancellations (numerator and denominator
-have the same factors in different order).
+## Why convergence holds without a per-partition bound
 
-This gives the q-Plancherel perturbation: the Wedderburn weights
-w_λ = d_q(λ)²/[k]! differ from the classical Plancherel measure
-dim(λ)²/k! by a factor of (1 + O(h²/k))².
+The branching fraction is
+
+    f_μ^{(k)}  =  Σ_λ (d_q(λ)²/[k]!) · m_μ^λ
+                  ─────────────────────────────
+                  Σ_λ (d_q(λ)²/[k]!) · Σ_ν m_ν^λ
+
+Writing R(λ) = d_q(λ)/dim(λ), the [k]!-factor and one common factor
+cancel between numerator and denominator, leaving
+
+    f_μ^{(k)}  =  Σ_λ R(λ)² · dim(λ)² · m_μ^λ
+                  ──────────────────────────────
+                  Σ_λ R(λ)² · dim(λ)² · Σ_ν m_ν^λ
+
+The R² weights perturb the *classical* Plancherel measure but
+appear identically in numerator and denominator, so convergence
+to the classical limit follows from the **R² cancellation**, not
+from a uniform per-partition bound on R(λ) − 1.  The Féray–Méliot
+q-Plancherel CLT then gives the rate O(1/√k) (see §5).
 
 ## References
 
 - [prop:jet-convergence-classical-limit]
 - [mathas1999] §3.3: q-Schur algebras and q-hook formula
+- [feray2010] q-Plancherel CLT, character variance O(1/k)
 -/
 
 namespace QOU.Descartes.QHookBound
