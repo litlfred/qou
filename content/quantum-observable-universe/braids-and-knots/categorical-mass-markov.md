@@ -89,27 +89,35 @@ MeV, multiply by a calibration constant $E_0$, determined
 by matching one experimental value (e.g.\ the free neutron
 beta-decay Q-value).
 
-## Scope and limitation
+## Role in the unified mass formula
 
-This proposition establishes the categorical mass at a
-**single brane level** $A_n$.  The full mass
-([topological decomposition](#thm:topological-mass))
-includes contributions from all brane levels:
+This proposition identifies $|\mathrm{tr}_M(\rho(\beta))|$ as
+**Term 1** — the descended trace, equal to
+$E_\infty^{0,*}$ of the GB spectral sequence — in the unified
+six-term mass formula
+([unified knot mass](#thm:knot-mass-formula-unified),
+[$E_\infty$-page identifications](#prop:e-infinity-page-identifications)).
+
+The Markov trace is **vortex-specific**: it differs for
+$\varrho_{\mathfrak{p}}$ vs $\varrho_{\mathfrak{n}}$ and is
+the source of fine isotope distinctions.  It is **not** the
+constant offset of the formula; the algebra-level constant
+(vortex-independent) is the Frobenius co-Casimir
+$m_e \cdot \tau(C_{\dim_q})$
+([Frobenius universal](#thm:frobenius-codim-universal)),
+which appears as **Term 4**.
+
+The remaining terms — single-generator and pair-generator
+brane towers (Terms 2, 3), chirality (Term 5), and jet-prefix
+residues (Term 6) — are derived in
+([$E_\infty$-page identifications](#prop:e-infinity-page-identifications)).
+The full mass is therefore
 
 $$
   \mathfrak{m}(\varrho)
-  =
-  \underbrace{|\mathrm{tr}_M(\rho(\beta))|}_{\text{single-level (this prop.)}}
-  +
-  \underbrace{\sum_{i=1}^{N} \|\Phi_q(z_i)\|}_{\text{tower contributions}}
+  \;=\;
+  \sum_{p \geq 0} \bigl\langle \mathrm{tr}_M,\; E_\infty^{p,*}(T_w) \bigr\rangle
+  \;+\; a_K \;+\; m_e \cdot \tau(C_{\dim_q}),
 $$
 
-The tower contributions involve the quantum dilogarithm
-$\Phi_q$ summed over exceptional divisors.  The single-level
-Markov trace does **not** produce mass ratios like
-$\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.8$; those
-require the full tower sum, which evaluates to
-$\mathrm{Vol}(K)/\hbar_q^2$ in the archimedean realisation.
-See [mass endomorphism conjecture](#conj:mass-endomorphism)
-for the open problem of expressing the tower sum as a
-single operator in $\mathrm{End}(A)$.
+with this proposition supplying the $p = 0$ piece.
