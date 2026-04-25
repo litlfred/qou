@@ -17,7 +17,6 @@ export default remark({
     "prop:leray-profile",
     "rem:conway-normal-form",
     "rem:calculus-up-to-epsilon",
-    "rem:cmb-q-torsion",
   ],
   tags: [
     "navier-stokes",

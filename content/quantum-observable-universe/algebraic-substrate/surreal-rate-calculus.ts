@@ -13,6 +13,7 @@ export default proposition({
     "def:classical-limit-functor",
     "thm:quantum-gap-collapse",
     "def:categorical-reeb-derivation",
+    "lem:surreal-squeeze",
     "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
     "def:surreal-blowup-calculus",

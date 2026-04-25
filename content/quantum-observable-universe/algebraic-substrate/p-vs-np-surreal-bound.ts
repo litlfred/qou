@@ -5,7 +5,16 @@ export default remark({
   title:
     "Surreal bound for P vs NP: Reeb-period transfinite exceeds classical-budget standard",
   interprets: "conj:p-vs-np-qou",
-  uses: ["lem:surreal-squeeze"],
+  uses: [
+    "conj:p-vs-np-qou",
+    "lem:surreal-squeeze",
+    "def:reeb-epsilon",
+    "def:q-from-epsilon",
+    "prop:surreal-rate-calculus",
+    "rem:millennium-unification",
+    "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
+  ],
   tags: [
     "p-vs-np",
     "millennium-problem",
