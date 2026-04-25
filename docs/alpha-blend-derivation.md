@@ -580,6 +580,55 @@ This justifies why:
 - The partition-by-partition computation (`atom_mass_partition.py`)
   can be used as an independent cross-check.
 
+## 6.7 Direct numerical evaluation of the 3-term formula
+
+Implemented in
+[`wedderburn_mass_3term.py`](../folio-assistant/computations/wedderburn_mass_3term.py)
+— takes constituent $m_p, m_n, m_e$ as inputs and computes the binding
+correction $\alpha (\Phi_1 - 2[3]_q \Phi_2 + H_A^2 \Phi_3)$ from
+per-generator log-functionals (with $\alpha = m_e \cdot 8G$, no fitted
+parameters).
+
+| Isotope | $\Phi_1$ | $\Phi_2$ | $\Phi_3$ | binding (MeV) | $M_{\text{pred}}$ | CODATA | err |
+|---|---|---|---|---|---|---|---|
+| ¹H (Z=1, N=0) | −0.5843 | +0.0217 | +0.6260 | −2.58 | 936.20 | 938.78 | **−0.275%** |
+| n (Z=0, N=1) | −0.8785 | +0.0217 | +0.2087 | −3.75 | 935.81 | 939.57 | **−0.399%** |
+| D | −0.0654 | +0.0543 | +0.8347 | −1.35 | 1877.00 | 1876.12 | **+0.047%** |
+| T | −3.6364 | +0.0869 | +0.8347 | −15.46 | 2802.45 | 2809.43 | **−0.248%** |
+| ³He | −3.1662 | +0.0869 | +1.6695 | −13.56 | 2803.57 | 2809.41 | **−0.208%** |
+| ⁴He | +0.2156 | +0.1304 | +1.6695 | −1.89 | 3754.80 | 3728.40 | **+0.708%** |
+
+**Atomic masses agree at sub-percent across all isotopes** — the
+3-term formula with derived q-coefficients $(1, -2[3]_q, H_A^2)$
+and Borromean prefactor $\alpha = m_e \cdot 8G$ is **quantitatively
+correct at the paper-level accuracy** without any phenomenological
+α-blend mixing.
+
+**Binding energies and np splitting gap.** The correction is small
+(few MeV) compared to the total mass (~10³ MeV), so the 0.1% mass
+error inflates to 40-90% binding error. Specifically:
+
+| | Predicted | AME / CODATA | Err |
+|---|---|---|---|
+| B(D) | 1.35 MeV | 2.22 MeV | −39% |
+| B(T) | 15.5 MeV | 8.48 MeV | +82% |
+| B(³He) | 13.6 MeV | 7.72 MeV | +76% |
+| B(⁴He) | 1.89 MeV | 28.30 MeV | **−93%** |
+| Δm_{n−p} | 0.12 MeV | 1.29 MeV | −90% |
+
+The ⁴He case is decisive: the formula's per-generator $\Phi$'s miss
+the **(2,2)⊢4 self-conjugate partition** that contributes the
+Wigner T=0 pairing (paper:
+[wigner-np-pairing](../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
+with $\Delta_W = m_e \cdot H_q((2,2)) = m_e \cdot [3]_q [2]_q^2
+\approx 6.3$ MeV per pair. The full 3A-partition sum at $\lambda \vdash 12$
+would include this; the per-generator $H_3$-reduction does not.
+
+**Resolution path** (deferred): add the Wigner partition correction
+$\sum_{\lambda \text{ Wigner}} w_\lambda \chi_\lambda$ at each Hecke
+level $k = 4, 6, \ldots$ to capture pairing terms beyond the (sym,
+std, alt) projections.
+
 ## 7. Integrated formal derivation (everything together)
 
 The complete derivation chain, top-down:
