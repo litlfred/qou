@@ -1,4 +1,4 @@
-**Proposition.**
+**Conjecture.**
 *The categorical replacement for the empirical Bethe-Weizsäcker bulk
 ($\lambda_V \cdot A$, $\lambda_S \cdot A^{2/3}$) and the knot factor
 $a(N)$ is the **mass-identity Markov-trace defect**.  Using the
