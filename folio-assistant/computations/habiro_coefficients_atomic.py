@@ -223,11 +223,19 @@ if __name__ == "__main__":
 
     q = sp.Symbol('q', positive=True, real=True)
 
+    # A=1 (proton, neutron): tractable in symbolic q (~1 min total).
+    # A=2 (deuteron): 11 partitions of 6 with Hoefsmit dim up to 9 in
+    #   symbolic q over a 12-crossing braid — heavy (>10 min).  Run via
+    #   `--with-deuteron` flag once a faster symbolic pipeline is wired
+    #   up, or evaluate numerically at q_0 and verify integer coefficients
+    #   of the resulting Laurent polynomial.
+    import os
     cases = [
         ("p (proton, A=1)",      1, 0, False),
         ("n (neutron, A=1)",     0, 1, False),
-        ("D (deuteron, A=2)",    1, 1, True),
     ]
+    if os.environ.get("HABIRO_WITH_DEUTERON"):
+        cases.append(("D (deuteron, A=2)", 1, 1, True))
 
     results = {}
     for label, Z, N, inter in cases:
