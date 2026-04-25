@@ -32,9 +32,9 @@ $$
   \qquad (\text{strictly, in } \mathbb{R}(\varepsilon) \subset \mathbf{No})
 $$
 
-is automatic: $\ordw(\mathcal{Z}_q) = -4/3 < 3 = \ordw(\Delta_q)$ in the
+is automatic: $\ordw(\mathcal{Z}_q) = 4/3 > -3 = \ordw(\Delta_q)$ in the
 $\omega$-adic order of [Big-O via $\ordw$](#rem:conway-normal-form).  The
-cascade sits at **lower $\omega$-order** than the dissipation,
+cascade sits at **higher $\omega$-order** than the dissipation,
 which is the $\ordw$-formalisation of "faster-than-viscous growth".
 
 **Conclusion.** As $\varepsilon \to 0$ (equivalently, as the substrate

@@ -27,8 +27,8 @@ $$
 
 In the $\omega$-adic register
 ([Big-O via $\ordw$](#rem:conway-normal-form)):
-$\ordw(\Delta_q) = 3 > -\infty = \ordw(0)$, i.e. the mass gap sits at
-strictly higher $\omega$-order than the zero element.
+$\ordw(\Delta_q) = -3 > -\infty = \ordw(0)$, i.e. the mass gap sits
+at strictly higher $\omega$-order than the zero element.
 
 **The surreal squeeze specialisation.** The Yang--Mills
 specialisation of [surreal squeeze](#lem:surreal-squeeze) is
@@ -49,7 +49,7 @@ every non-trivial excitation has $\delta \geq \Delta_q \asymp \varepsilon^3
 **Conclusion.** The Yang--Mills mass-gap theorem is **literally
 true** in the QOU framework as a surreal-order inequality:
 $\Delta_q > 0$ in $\mathbb{R}(\varepsilon)$, equivalently
-$\ordw(\Delta_q) = 3$.  Classical Yang--Mills on $\mathbb{R}^4$ is
+$\ordw(\Delta_q) = -3$.  Classical Yang--Mills on $\mathbb{R}^4$ is
 recovered as the standard part
 ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)):
 $\mathrm{st}\bigl(\Delta_q / \varepsilon^3\bigr) = c > 0$ for a
@@ -85,5 +85,5 @@ fibre-functor $\tau : \mathbf{Rep}(\mathrm{SU}_q(N)) \to \mathbf{Vec}$:
 Yang--Mills observables are natural transformations of $\tau$, and
 the mass gap is the first positive eigenvalue of the Reeb
 derivation on $\mathrm{End}_{\mathbf{C}}(A)$.  The surreal-order
-statement $\ordw(\Delta_q) = 3$ is therefore not an analogy but a
+statement $\ordw(\Delta_q) = -3$ is therefore not an analogy but a
 re-expression of the Yang--Mills mass gap in the categorical register.

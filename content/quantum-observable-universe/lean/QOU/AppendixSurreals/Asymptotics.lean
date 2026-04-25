@@ -100,28 +100,33 @@ theorem preceq_ofReal_mul_left (r : ℝ) (hr : r ≠ 0) (x y : K) :
 
 end OmegaOrder
 
-/-- **Surreal Big-O ↔ classical Big-O bridge** (conjectural).
+/- **Note on the classical Big-O bridge.**
 
-    A real-valued sequence `f : ℕ → ℝ` realises as a surreal via
-    the Hahn-series embedding
-    `surrealOf f := Σₙ f(n) · ω^{-n}`.  The bridge conjecture
-    states that classical Big-O on `ℕ → ℝ` coincides with the
-    surreal `≼` under this realisation.
+    The natural conjecture would be: a real-valued sequence
+    `f : ℕ → ℝ` realises as a surreal via some Hahn-style embedding
+    `surrealOf : (ℕ → ℝ) → K`, and classical Big-O on `ℕ → ℝ`
+    coincides with the surreal `≼` under this realisation.
 
-    This is the content of Berarducci–Mantova's differential-field
-    reading of asymptotics on `𝐍𝐨` restricted to integer exponents.
-    Mathlib does not yet expose the Hahn embedding, so we package
-    the conjecture as a typeclass per CLAUDE.md §3b (conjectural
-    propagation).  An instance supplies both the Hahn realisation
-    and the proof of equivalence. -/
--- Ref: [berarducci-mantova2018] §6
--- Ref: [ehrlich2012] §6 (Hahn embeddings in 𝐍𝐨)
-class SurrealBigOBridge (K : Type u) [SurrealField K] [OmegaOrder K] where
-  /-- Hahn-series realisation of a real sequence as a surreal. -/
-  surrealOf : (ℕ → ℝ) → K
-  /-- The bridge: classical Big-O is equivalent to surreal `≼`. -/
-  bigO_iff_preceq : ∀ f g : ℕ → ℝ,
-      (∃ C > 0, ∀ n, |f n| ≤ C * |g n|)
-    ↔ OmegaOrder.preceq (surrealOf f) (surrealOf g)
+    The naïve embedding `surrealOf f := Σₙ f(n) · ω^{-n}` does **not**
+    work: the leading exponent of such a series is the index of the
+    smallest `n` with `f(n) ≠ 0`, which only sees support, not
+    coefficient growth.  Two sequences `f n = n` and `g n = 1` would
+    both realise to surreals of `Ow = 0` (or `-1` if reindexed),
+    even though `f` is unbounded.
+
+    A correct bridge requires the Berarducci–Mantova differential-field
+    interpretation: `surrealOf f` is the value `f̃(ω) ∈ 𝐍𝐨`, where
+    `f̃` is the unique transseries extension of `f` and `ω` is the
+    surreal infinity.  Under that realisation `Ow(f̃(ω))` is the
+    polynomial degree of `f` at infinity, and the Big-O equivalence
+    holds for transseries `f, g`.
+
+    Mathlib does not yet expose transseries on `𝐍𝐨`, so the bridge
+    is left as an open formal question.  No load-bearing proof in
+    this branch depends on it; downstream blocks reference the
+    bridge informally via the body-asymptotics catalog
+    (`rem:body-asymptotics-catalog`).
+
+    Refs: [berarducci-mantova2018] §6, [ehrlich2012] §6. -/
 
 end QOU.AppendixSurreals

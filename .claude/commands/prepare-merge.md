@@ -67,6 +67,50 @@ do not request external reviews until every earlier step has succeeded.
   `interprets` still resolve after integration.
 - Run the `remark-audit` skill to catch any newly dangling remarks.
 
+## 2a. Reuse and simplify pass (audit against newly-merged content)
+
+After main has been pulled in cleanly, audit the branch's own
+content against everything new that just arrived from upstream.
+Ask three concrete questions for every block, proof, and
+computation the branch added or modified:
+
+1. **Can I use anything?** Did `origin/main` introduce a definition,
+   lemma, theorem, glossary entry, simulator, or computational
+   witness that this branch is now duplicating, paraphrasing, or
+   reinventing? If yes, replace the local stand-in with a `uses[]`
+   cross-reference (or a one-line `\cite{}` to the new block) and
+   delete the duplicate. Run `local/critical-path-analysis` to
+   surface the dependency overlaps and `local/ontologist` to align
+   terminology.
+2. **Can I simplify the proof?** Walk through every Lean proof and
+   every narrative `**Proof.**` block this branch authored or
+   touched. If a newly-merged result discharges a hypothesis,
+   collapses a case split, supplies a tactic that replaces a long
+   `calc`/`refine` chain, or makes a `sorry` provable — apply it.
+   Route through `local/proof-simplifier` for narrative proofs and
+   `local/lean-build-fix` plus `local/lean-completeness-audit` for
+   Lean.
+3. **Can I simplify the exposition?** Re-read this branch's
+   narrative additions with the merged-in context in mind. If a
+   paragraph re-derives something main now defines upstream,
+   replace it with a forward-reference. If a remark interprets a
+   concept main has already glossed, drop the duplicate
+   interpretation. Route through `local/scientific-accuracy` (for
+   claim audit) and `local/readability-editing` (for prose
+   tightening).
+4. **Can I simplify the computation?** Inspect every script under
+   `folio-assistant/computations/` and every fenced ``` ```python ```
+   block this branch added. If main shipped a faster routine, a
+   prebuilt witness, a SnapPy/SymPy primitive, or a cached
+   computation that supersedes a hand-rolled loop, swap it in and
+   regenerate the witness JSON.
+
+The reuse pass is **not optional** — duplicating content that main
+already carries is the most common source of post-merge review
+churn. Running this audit now (rather than waiting for Gemini /
+Copilot to surface the duplicates in step 6) saves a full review
+cycle.
+
 ## 3. One-voice review
 
 - Invoke the `one-voice` skill across every `.md` file touched on this

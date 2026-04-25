@@ -49,7 +49,10 @@ $$
 $s = 1$ equals $r$, as a literal identity of surreal $\omega$-orders.
 Classical BSD is recovered by applying the standard-part functor
 ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)):
-$\mathrm{st}\bigl(\ordw(L)\bigr) = r$ gives the classical rank formula.
+$\mathrm{st}\bigl(-\ordw(L)\bigr) = r$ gives the classical rank
+formula (with $\delta = \omega^{-1}$ infinitesimal, $L \asymp
+\delta^r = \omega^{-r}$ has $\ordw(L) = -r$; the classical order
+of vanishing $r$ is the negation).
 
 **Relation to RH.** The BSD bound is a generalisation of the RH
 bound ([RH surreal bound](#rem:rh-surreal-bound)) from the
