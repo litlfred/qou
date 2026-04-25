@@ -7,6 +7,7 @@ export default remark({
   interprets: "thm:hasse-weil-bound",
   uses: [
     "thm:hasse-weil-bound",
+    "thm:macroscopic-stability-equivalence",
     "rem:rh-surreal-bound",
     "rem:bsd-surreal-bound",
     "lem:surreal-squeeze",

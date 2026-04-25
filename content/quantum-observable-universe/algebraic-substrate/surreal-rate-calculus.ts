@@ -16,6 +16,8 @@ export default proposition({
     "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
     "def:surreal-blowup-calculus",
+    "rem:calculus-up-to-epsilon",
+    "lem:surreal-squeeze",
   ],
   tags: [
     "surreal",

@@ -13,6 +13,7 @@ export default remark({
     "prop:surreal-rate-calculus",
     "rem:conway-normal-form",
     "rem:calculus-up-to-epsilon",
+    "rem:millennium-unification",
   ],
   tags: [
     "p-vs-np",

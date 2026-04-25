@@ -22,22 +22,29 @@ LaTeX label: `prop:surreal-rate-calculus`.
   Numbers*. DOI:10.1017/CBO9780511629143.
 -/
 
+import Mathlib.Algebra.Field.Basic
+
 namespace QOU.AlgebraicSubstrate
 
 universe u
 
 /-- The rate-table *shape*: a class recording the four
-    classical-limit rates as data over an abstract ordered-field
-    carrier `F`.
+    classical-limit rates as data over an abstract field carrier `F`.
 
-    An instance of this class, combined with a `PositiveInfinitesimal`
-    instance on `epsilon`, entails the rate table
-    [`prop:surreal-rate-calculus`]. -/
+    An instance of this class fixes the leading-coefficient equations
+    `Δ = ε³`, `Ω·ε = 1`, `Z³·ε⁴ = 1`, `E(δ)·ε = δ²` (each up to a
+    positive scalar absorbed into the named quantity) and entails
+    the rate table [`prop:surreal-rate-calculus`].  Under the surreal
+    embedding `ε ↦ 1/ω`, these equations specialise to the
+    `Ow`-valuations `Ow(Δ) = -3`, `Ow(Ω) = 1`, `Ow(Z) = 4/3`,
+    `Ow(E(δ)) = 1` for any standard real `δ ≠ 0`. -/
 -- Ref: [conway1976] On Numbers and Games §III
 -- Ref: [manuscript] Chapter 8 §5 (Surreal rate calculus)
-class SurrealRateCalculus (F : Type u) where
+class SurrealRateCalculus (F : Type u) [Field F] where
   /-- The Reeb infinitesimal embedded in `F`. -/
   epsilon : F
+  /-- `epsilon` is non-zero (so `Ω = 1/ε` is well-defined). -/
+  epsilon_ne_zero : epsilon ≠ 0
   /-- The mass gap. -/
   massGap : F
   /-- The Reeb period. -/
@@ -46,13 +53,16 @@ class SurrealRateCalculus (F : Type u) where
   enstrophyCeiling : F
   /-- Rogue-zero energy cost, parametrised by a standard-real drift. -/
   roguePartCost : F → F
-  /-- Mass-gap scaling: `Δ ≍ ε³`. -/
-  massGap_order : True
-  /-- Reeb-period scaling: `Ω ≍ ε⁻¹`. -/
-  reebPeriod_order : True
-  /-- Enstrophy scaling: `Z ≍ ε^(-4/3)`. -/
-  enstrophy_order : True
-  /-- Rogue-zero scaling: `E(δ) ≍ δ² · ε⁻¹`. -/
-  rogueZero_order : True
+  /-- Mass-gap leading-coefficient equation: `Δ = ε³`. -/
+  massGap_order : massGap = epsilon ^ 3
+  /-- Reeb-period leading-coefficient equation: `Ω · ε = 1`. -/
+  reebPeriod_order : reebPeriod * epsilon = 1
+  /-- Enstrophy leading-coefficient equation: `Z³ · ε⁴ = 1`
+      (the cubic form of `Z = ε^(-4/3)`, avoiding fractional
+      exponents at the type level). -/
+  enstrophy_order : enstrophyCeiling ^ 3 * epsilon ^ 4 = 1
+  /-- Rogue-zero leading-coefficient equation:
+      `E(δ) · ε = δ²` for every drift `δ`. -/
+  rogueZero_order : ∀ δ : F, roguePartCost δ * epsilon = δ ^ 2
 
 end QOU.AlgebraicSubstrate

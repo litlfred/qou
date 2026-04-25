@@ -27,34 +27,28 @@ namespace QOU.AlgebraicSubstrate
 
 /-- **PvsNPQou**: the QOU-framework P vs NP conjecture.
 
-    An instance of this class witnesses:
+    An instance of this class witnesses two combined properties:
     - The strict inclusion `P ⊊ BQP_q` for every positive Reeb
       infinitesimal `ε`.
     - Non-compressibility of this strict inclusion under the
       standard-part functor `ε → 0`.
 
-    Both witnesses are left abstract (`True`) per CLAUDE.md §3b:
-    the `sorry` in any instance is *understood as the conjecture*.
-    Downstream modules that accept this class hypothesis prove
-    conditional theorems whose only unproved input is the class
-    instance itself.
+    Encoded as an empty marker `Prop` class per CLAUDE.md §3b.
+    The complexity classes `P`, `NP`, `BQP_q` are not yet
+    formalised in Lean, so the meaningful Prop content cannot be
+    written down at this layer.  An instance of this class is
+    the conjecture; downstream theorems take it as a typeclass
+    hypothesis and prove conditional consequences whose only
+    unproved input is the (eventual) PvsNPQou witness.
+
+    The narrative formulation lives in `conj:p-vs-np-qou` in the
+    `algebraic-substrate` chapter; the `Ow`-valuation reading
+    (cost > budget, `1 > -3`) is recorded in
+    `rem:p-vs-np-surreal-bound`.
 
     LaTeX: `\label{conj:p-vs-np-qou}` -/
 -- Ref: [cook1971] Cook's NP-completeness theorem
 -- Ref: [freedman2003] Topological quantum computation
-class PvsNPQou : Prop where
-  /-- The strict inclusion at positive `ε`, together with the
-      non-compressibility of this inclusion under the standard-part
-      functor. -/
-  strict_inclusion_non_compressible : True
-
-/-- Conditional consequence: given `PvsNPQou`, classical `P ≠ NP`
-    follows by applying the standard-part functor to the strict
-    inclusion `P ⊊ BQP_q`.
-
-    Statement left as `True` pending a formalisation of the
-    complexity classes `P`, `NP`, `BQP_q` in Lean; the conditional
-    is fully verified modulo the class hypothesis. -/
-theorem p_ne_np_from_qou [PvsNPQou] : True := trivial
+class PvsNPQou : Prop
 
 end QOU.AlgebraicSubstrate

@@ -13,6 +13,11 @@ export default definition({
     "def:substrate-parameter-planck",
     "conj:infinitesimal-frobenius",
     "rem:calculus-up-to-epsilon",
+    "def:surreal-blowup-calculus",
+    "def:frobenius-hopf-substrate",
+    "def:classical-limit-obstruction",
+    "prop:surreal-rate-calculus",
+    "lem:surreal-squeeze",
   ],
   tags: [
     "substrate-parameter",
