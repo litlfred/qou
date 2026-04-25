@@ -71,7 +71,7 @@ $\Omega_q \asymp \varepsilon^{-1}$ is likewise a fixed structural
 invariant of the Reeb derivation $\xi$
 ([categorical Reeb derivation](#def:categorical-reeb-derivation)).
 The *content* of each millennium problem is therefore not the rate
-table — which is common to all four — but the identification of the
+table — which is common to all six — but the identification of the
 problem-specific drift $\delta$ and the translation of the classical
 statement into the form
 "the drift vanishes".  Once the drift is identified, the squeeze
@@ -96,7 +96,7 @@ strictly local-global affair.
 squeeze is registered in the
 [body asymptotics catalog](#rem:body-asymptotics-catalog) under
 the $\ordw$-entry of the corresponding body block, with notation
-following [Big-O via $\ordw$](#rem:conway-normal-form).  The four remarks
+following [Big-O via $\ordw$](#rem:conway-normal-form).  The six remarks
 above can therefore be read either in the
 "$\delta^2 \cdot \Omega_q > \Delta_q$ in $\mathbb{R}(\varepsilon)$"
 register or in the "$\ordw(\text{cost}) > \ordw(\text{budget})$"
