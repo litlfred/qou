@@ -99,5 +99,5 @@ the $\ordw$-entry of the corresponding body block, with notation
 following [Big-O via $\ordw$](#rem:conway-normal-form).  The four remarks
 above can therefore be read either in the
 "$\delta^2 \cdot \Omega_q > \Delta_q$ in $\mathbb{R}(\varepsilon)$"
-register or in the "$\ordw(\text{cost}) < \ordw(\text{budget})$"
+register or in the "$\ordw(\text{cost}) > \ordw(\text{budget})$"
 register; the two are equivalent by the Big-O bridge.
