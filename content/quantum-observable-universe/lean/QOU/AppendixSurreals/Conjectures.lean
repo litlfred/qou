@@ -94,12 +94,26 @@ axiom QOU_VacuumEnergy {K : Type u} [SurrealField K]
     and `HyperbolicVolume` so those axioms can reference it. -/
 axiom Knot : Type
 
+/-- Placeholder for the **complexification of `K`**: a `K`-algebra
+    structure `K[i] / (i² + 1)` (or any model of `K ⊗_ℝ ℂ`).
+    Required because `K` itself is real-ordered, but the Kashaev
+    volume conjecture evaluates the coloured Jones polynomial at
+    complex roots of unity `ζ_n = e^{2πi/n}` which lie outside any
+    `LinearOrderedField`. -/
+axiom KComplex (K : Type u) [SurrealField K] : Type u
+
+/-- Placeholder: the absolute value `|a + bi| = √(a² + b²)` returning
+    a non-negative element of `K`. -/
+axiom KComplex.abs {K : Type u} [SurrealField K] : KComplex K → K
+
 /-- Placeholder for the coloured Jones polynomial
-    `J_K(q, n)` where `K : Knot` is the knot, `q : K` is the
-    quantum parameter (allowed to be transfinite, e.g. `ζ_ω`),
-    and `n : K` is the colour (allowed to be transfinite, e.g.
-    `omegaSurreal K`). -/
-axiom ColoredJones (K : Type u) [SurrealField K] : Knot → K → K → K
+    `J_K(q, n)` where `K_knot : Knot` is the knot, `q : KComplex K`
+    is the (complex) quantum parameter (allowed to be transfinite,
+    e.g. `ζ_ω = e^{2πi/ω}`), and `n : K` is the colour (allowed to
+    be transfinite, e.g. `omegaSurreal K`).  Returns a complex
+    surreal value. -/
+axiom ColoredJones (K : Type u) [SurrealField K] :
+  Knot → KComplex K → K → KComplex K
 
 /-- Placeholder for the hyperbolic volume of a knot complement
     `Vol(S³ \ K)`. -/
@@ -219,13 +233,19 @@ class BigBangHeatDeath where
 -- Ref: [kashaev1997], [murakami-murakami2001]
 class KashaevSurreal where
   /-- Kashaev volume identity in surreal form:
-      `st(2π · log|J(ζ_ω, ω)| / ω) = Vol(K_knot)` -/
+      `st(2π · log|J(ζ_ω, ω)| / ω) = Vol(K_knot)`.
+
+      `zeta_omega` is a complex surreal (root of unity at order ω);
+      `KComplex.abs` extracts the K-valued modulus before taking
+      the real-valued surreal log. -/
   st_volume_eq_asymptotic :
     ∀ (K_knot : Knot),
-      ∃ (zeta_omega : K),
+      ∃ (zeta_omega : KComplex K),
         standardPart
           (2 * SurrealField.ofReal Real.pi
-            * surrealLog (|ColoredJones K K_knot zeta_omega (omegaSurreal K)|)
+            * surrealLog
+                (KComplex.abs
+                  (ColoredJones K K_knot zeta_omega (omegaSurreal K)))
             / omegaSurreal K)
           = HyperbolicVolume K_knot
 
