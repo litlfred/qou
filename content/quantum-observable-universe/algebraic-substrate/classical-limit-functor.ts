@@ -6,7 +6,11 @@ export default definition({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.ClassicalLimitFunctor",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate", "def:substrate-parameter-planck"],
+  uses: [
+    "def:frobenius-hopf-substrate",
+    "def:substrate-parameter-planck",
+    "conj:classical-limit-stpart",
+  ],
   tags: [
     "classical-limit",
     "functor",

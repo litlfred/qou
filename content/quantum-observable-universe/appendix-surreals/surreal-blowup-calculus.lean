@@ -1,0 +1,14 @@
+-- Ref: [conway1976] Conway, *On Numbers and Games*, Academic Press.
+-- Ref: [ehrlich2012] Ehrlich, *The absolute arithmetic continuum*,
+--      Bull. Symbolic Logic 18 (2012) 1–45.
+--      https://doi.org/10.2178/bsl/1327328438
+--
+-- Sibling stub for `def:surreal-blowup-calculus`.
+--
+-- The compiled formalisation lives in:
+--   QOU/AppendixSurreals/Blowup.lean
+--
+-- See `QOU.AppendixSurreals.omegaSurreal`,
+--     `QOU.AppendixSurreals.epsilonSurreal`,
+--     `QOU.AppendixSurreals.epsilonSurreal_mul_omegaSurreal`,
+--     `QOU.AppendixSurreals.epsilonSurreal_isInfinitesimal`.

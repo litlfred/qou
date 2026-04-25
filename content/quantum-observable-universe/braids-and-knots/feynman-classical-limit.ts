@@ -11,6 +11,7 @@ export default proposition({
     "prop:feynman-categorical-trace",
     "rem:hecke-algebra-from-braiding",
     "def:q-energy",
+    "conj:classical-limit-stpart",
   ],
   proofs: [],
 });

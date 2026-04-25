@@ -4,7 +4,7 @@
 For C = Rep(SU_q(2)) with q not a root of unity:
 1. V^⊗n decomposes completely via q-Schur–Weyl duality
 2. Every knot type corresponds to a braid closure (Alexander's theorem)
-3. Knot types span a dense subspace of the physical Hilbert space
+3. Knot types span the algebraic direct limit `V_phys = colim V^⊗n`
 
 The combining theorem `knot_eigenbasis_complete` shows that given
 Schur–Weyl completeness, Alexander surjectivity, and Markov trace
@@ -245,8 +245,8 @@ structure MarkovTrace (H : HeckeAlgebra) where
     3. Markov trace detection (every summand reached by some braid)
 
     Together, these establish that knot types form a complete eigenbasis
-    for the physical Hilbert space, replacing Feynman's continuum integral
-    with a finite algebraic trace. -/
+    for the algebraic direct limit `V_phys = colim V^⊗n`, replacing
+    Feynman's continuum integral with a finite algebraic trace. -/
 -- Ref: [chari1994guide], [alexander1923], [jones1987]
 structure KnotEigenbasisData (H : HeckeAlgebra) where
   /-- Part 1: Schur–Weyl decomposition (shares H). -/
