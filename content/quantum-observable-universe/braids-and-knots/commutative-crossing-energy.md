@@ -13,7 +13,8 @@ $$
   i  =  \sqrt{\lambda_-}, \qquad i^2 + 1  =  0  \;\text{in}\; R[i].
 $$
 
-The ring extension $R[i] = R[t]/(t^2 + 1)$ of the categorical ground
+The ring extension $R[i]$ (the universal $R$-algebra containing an
+element $i$ with $i^2 = -1$) of the categorical ground
 ring $R$ is therefore forced by the categorical structure: $i$ is the
 **categorical coordinate of $\mathbb{P}(V)$ in the commutative limit**,
 in exact parallel with the role of $q$ in the non-commutative theory.
@@ -86,8 +87,13 @@ chart-transition data of $\mathbb{P}(V)$
 $q$ is literally the chart-transition coefficient $z\,w = q^{-1}$ on
 the quantum projective line $\mathbb{P}_q(V)$, while $i$ is the
 square root of the chart-swap involution $\iota: z \mapsto z^{-1}$
-that the transition collapses to at $q = 1$.  This is the same
-construction in two regimes of the deformation family.
+that the transition collapses to at $q = 1$.  Formally, the
+**categorical-coordinate ring** is the universal $R$-algebra
+extension $R[i, q^{\pm 1}] = R[q, q^{-1}][i]/(i^2 + 1)$
+([prop:categorical-coordinate-ring](#prop:categorical-coordinate-ring))
+in which $q$ is invertible and the involution-eigenvalue $-1$ has a
+square root.  The chart-transition automorphism group factors as
+$\langle q \rangle \rtimes \langle \iota \rangle$ over this ring.
 
 **Half-twist and ribbon structures.**  The ribbon element $v = q^{1/2}$
 is *not* required for the categorical-coordinate construction; it

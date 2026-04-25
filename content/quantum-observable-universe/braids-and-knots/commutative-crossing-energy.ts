@@ -29,6 +29,7 @@ export default remark({
     "rem:sqrt-q-ribbon-structure",
     "rem:archimedean-realisations",
     "rem:affine-chart-origin-of-i-and-q",
+    "prop:categorical-coordinate-ring",
   ],
   interprets: "def:crossing-energy",
 });

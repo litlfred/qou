@@ -340,6 +340,7 @@ export default chapter({
         "sqrt-q-ribbon-structure",
         "i-as-braiding-orientation",
         "affine-chart-origin-of-i-and-q",
+        "categorical-coordinate-ring",
       ],
     }),
 
