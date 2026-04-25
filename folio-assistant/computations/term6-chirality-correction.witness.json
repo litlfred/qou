@@ -1,0 +1,10 @@
+{
+  "computation": "term6-chirality-correction",
+  "description": "Generalization of Term 6 (proton residual) to character-weighted partition sum.  Evaluates \u03a3_\u03bb \u03c7_\u03bb(\u03b2)/dim_q V_\u03bb for proton and neutron braids; checks if the difference matches CODATA \u0394m_{n-p} = 1.293 MeV.",
+  "timestamp": "2026-04-25T18:43:14.625500+00:00",
+  "q_0": 1.1099785955541805,
+  "sum_chi_p": 0.6363182020258741,
+  "sum_chi_n": -0.00217563358229264,
+  "sum_diff_MeV": -0.3262696795772458,
+  "codata_delta_np": 1.2933323600000222
+}

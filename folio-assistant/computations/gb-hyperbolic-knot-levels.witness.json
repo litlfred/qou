@@ -1,0 +1,222 @@
+{
+  "computation": "gb-hyperbolic-knot-levels",
+  "description": "Map hyperbolic knot braid words to their dominant GB filtration level (partition with max |\u03c7^\u03bb|).  Tests user hypothesis that GB level = scaling/dampening factor.",
+  "timestamp": "2026-04-25T18:39:35.244663+00:00",
+  "q_0": 1.1099785955541805,
+  "knots": [
+    {
+      "knot": "4_1",
+      "volume": 2.0298832,
+      "braid_word": [
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.0000000000000018,
+      "damping_factor": 1.0
+    },
+    {
+      "knot": "5_2",
+      "volume": 2.828122,
+      "braid_word": [
+        1,
+        1,
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.2320524825884345,
+      "damping_factor": 1.0
+    },
+    {
+      "knot": "6_1",
+      "volume": 3.1639633,
+      "braid_word": [
+        1,
+        1,
+        -2,
+        1,
+        -2,
+        -2
+      ],
+      "dominant_partition": [
+        2,
+        1
+      ],
+      "dominant_level": 1,
+      "dominant_chi": -1.1825492960528494,
+      "damping_factor": 0.4972905450085915
+    },
+    {
+      "knot": "6_2",
+      "volume": 4.4015175,
+      "braid_word": [
+        1,
+        1,
+        1,
+        -2,
+        1,
+        -2,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.109978595554184,
+      "damping_factor": 1.0
+    },
+    {
+      "knot": "6_3",
+      "volume": 5.6927297,
+      "braid_word": [
+        1,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.109978595554184,
+      "damping_factor": 1.0
+    },
+    {
+      "knot": "7_2",
+      "volume": 3.3317442,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.5179533198523218,
+      "damping_factor": 1.0
+    },
+    {
+      "knot": "7_3",
+      "volume": 4.5921326,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1,
+        -2,
+        1,
+        1,
+        -2
+      ],
+      "dominant_partition": [
+        2,
+        1
+      ],
+      "dominant_level": 1,
+      "dominant_chi": 2.327460679734287,
+      "damping_factor": 0.4972905450085915
+    },
+    {
+      "knot": "7_4",
+      "volume": 5.0136959,
+      "braid_word": [
+        1,
+        1,
+        -2,
+        1,
+        -2,
+        -2,
+        -2
+      ],
+      "dominant_partition": [
+        1,
+        1,
+        1
+      ],
+      "dominant_level": 2,
+      "dominant_chi": -1.1099785955541808,
+      "damping_factor": 0.3285468203239929
+    },
+    {
+      "knot": "7_5",
+      "volume": 6.4439185,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1,
+        -2,
+        1,
+        1,
+        1,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.6848956940864863,
+      "damping_factor": 1.0
+    },
+    {
+      "knot": "7_6",
+      "volume": 7.0846178,
+      "braid_word": [
+        1,
+        1,
+        1,
+        -2,
+        1,
+        -2,
+        -2,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.0000000000000038,
+      "damping_factor": 1.0
+    },
+    {
+      "knot": "7_7",
+      "volume": 7.6433568,
+      "braid_word": [
+        1,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        -2
+      ],
+      "dominant_partition": [
+        3
+      ],
+      "dominant_level": 0,
+      "dominant_chi": 1.0000000000000038,
+      "damping_factor": 1.0
+    }
+  ]
+}
