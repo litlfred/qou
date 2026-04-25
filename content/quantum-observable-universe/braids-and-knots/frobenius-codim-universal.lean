@@ -98,11 +98,44 @@ theorem hecke_n3_frobenius_codim :
   refine ⟨1, 2, by norm_num, by norm_num, ?_⟩
   ring
 
-/-- The self-duality pairing under Young-diagram transpose:
-    `dim_q(λ) = dim_q(λ')`.  Levels 0 and n-1 of the GB filtration
-    contribute 1 each (single-row and single-column partitions). -/
-theorem gb_filtration_self_dual_bound (n : ℕ) (hn : 1 ≤ n) :
-    -- τ(C_dim_q) ≥ 2 for any n ≥ 1
-    ∃ (bound : ℝ), bound = 2 := ⟨2, rfl⟩
+/-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
+
+    For any semisimple Frobenius algebra with at least two blocks
+    each having dim_q = 1 (e.g. the symmetric (n) and alternating
+    (1ⁿ) partitions of H_n(q), which have dim_q = 1 ∀ n ≥ 1):
+
+      τ(C_dim_q) = Σ_λ 1/dim_q(λ) ≥ 2.
+
+    The bound follows because the (n) and (1ⁿ) blocks each
+    contribute exactly 1 (since 1/1 = 1), and all other 1/dim_q(λ)
+    terms are positive. -/
+theorem gb_filtration_self_dual_bound
+    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    (s a : Λ) (hsa : s ≠ a)
+    (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
+    (h_pos : ∀ λ, 0 < frobDimQ λ) :
+    (2 : ℝ) ≤ ∑ λ, 1 / frobDimQ λ := by
+  -- Split the sum over the universe finset into {s, a} and the rest.
+  -- The two flagged blocks contribute 1 each; the remaining terms are positive.
+  have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
+    rw [h_dim_s, h_dim_a]; norm_num
+  -- Rewrite the sum: 1/frobDimQ s + 1/frobDimQ a + (rest)
+  have hSplit :
+      ∑ λ, 1 / frobDimQ λ
+        = 1 / frobDimQ s + 1 / frobDimQ a
+          + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ := by
+    rw [show ∑ λ, 1 / frobDimQ λ
+          = 1 / frobDimQ s + ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
+    rw [show ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ
+          = 1 / frobDimQ a + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+    ring
+  rw [hSplit, h_two]
+  -- 2 ≤ 2 + (sum of positives)
+  have h_rest_nn : (0 : ℝ) ≤
+      ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
+    Finset.sum_nonneg (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+  linarith
 
 end QOU.BraidKnot

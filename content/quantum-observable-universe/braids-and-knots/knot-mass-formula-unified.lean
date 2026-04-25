@@ -73,13 +73,17 @@ theorem single_nucleon_frobenius_correction
   -- Ref: [manuscript] content block derivation.
   sorry
 
-/-- Trivial-vortex (identity braid) mass = Frobenius vacuum.
-    For T_e = 1 ∈ H_n(q):
-      |tr_M(1)| = 1, tower(1) = 0,
-      total = 1 + 0 + m_e · Σ_{λ⊢n} 1/dim_q(λ).
-    This is the "vacuum mass" of the unit object. -/
-theorem trivial_vortex_vacuum_mass (U : UnifiedKnotMass) :
-    -- No content: placeholder for a possible consistency theorem.
-    True := trivial
+/-- **Trivial-vortex (identity braid) mass = Frobenius vacuum.**
+
+    Hypotheses: the descended trace evaluates to 1 (the trace of
+    the identity element of H_n(q)), and the brane tower at the
+    identity contributes 0.  Then the total mass equals the
+    Frobenius co-Casimir correction `m_e · Σ_{λ⊢n} 1/dim_q(λ)` —
+    the "vacuum mass" of the unit object. -/
+theorem trivial_vortex_vacuum_mass (U : UnifiedKnotMass)
+    (h_desc : U.descended = 1) (h_tower : U.tower = 0) :
+    U.total_mass = 1 + electronMass * frobeniusCoCasimirTrace U.q U.n := by
+  rw [U.unified_identity, h_desc, h_tower, U.frobenius_is_codim_trace]
+  ring
 
 end QOU.BraidKnot

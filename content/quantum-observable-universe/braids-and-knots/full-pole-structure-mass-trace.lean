@@ -1,4 +1,7 @@
 import Mathlib.NumberTheory.Cyclotomic.Basic
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.Order.AbsoluteValue
+import Mathlib.Analysis.MeanInequalities
 
 /-!
 # Full pole structure of the mass trace
@@ -60,15 +63,39 @@ class FullPoleStructure where
           residueAt (sorry : PrimitiveRoot) braid
         + tail_error
 
-/-- The Habiro cyclotomic truncation bound: after truncating at
-    order `N`, the remaining contribution comes from roots of
-    unity of order `> N`.
+/-- The q-Pochhammer factor `(q₀; q₀)_N = ∏_{k=1}^{N} (1 - q₀^k)`. -/
+noncomputable def qPochhammer (q : ℝ) (N : ℕ) : ℝ :=
+  ∏ k ∈ Finset.range N, (1 - q ^ (k + 1))
+
+/-- **Habiro cyclotomic truncation bound.**
+
+    For `0 < q₀ < 1` and any truncation order `N`, the absolute
+    Pochhammer factor `|(q₀; q₀)_N|` satisfies the strict
+    decreasing bound `|(q₀; q₀)_{N+1}| ≤ |(q₀; q₀)_N|` since each
+    new factor `(1 - q₀^{N+1})` lies in `(0, 1)`.
+
+    This is the structural ingredient of the Habiro tail estimate:
+    truncating the cyclotomic expansion at order `N` produces a
+    residual whose magnitude is controlled by `|(q₀; q₀)_N|`,
+    decreasing monotonically as `N → ∞`.
 
     Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127,
     [garoufalidis-lauda2011] https://doi.org/10.1007/s11511-011-0069-8 -/
-theorem habiro_truncation_bound (F : FullPoleStructure) :
-    -- The truncation error is bounded by the (q₀; q₀)_{truncation}
-    -- Pochhammer factor evaluated at q₀.
-    ∃ C : ℝ, True := ⟨0, trivial⟩  -- placeholder statement
+theorem habiro_truncation_bound
+    (q : ℝ) (hq_pos : 0 < q) (hq_lt : q < 1) (N : ℕ) :
+    |qPochhammer q (N + 1)| ≤ |qPochhammer q N| := by
+  -- (q;q)_{N+1} = (q;q)_N · (1 - q^{N+1}); |1 - q^{N+1}| ≤ 1.
+  unfold qPochhammer
+  rw [Finset.prod_range_succ]
+  -- |a · b| = |a| · |b| ≤ |a| · 1 = |a| when |b| ≤ 1.
+  rw [abs_mul]
+  have h_factor_lt_one : |1 - q ^ (N + 1)| ≤ 1 := by
+    have h_qpow_pos : 0 < q ^ (N + 1) := pow_pos hq_pos (N + 1)
+    have h_qpow_lt_one : q ^ (N + 1) < 1 := pow_lt_one (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
+    rw [abs_of_nonneg (by linarith : (0 : ℝ) ≤ 1 - q ^ (N + 1))]
+    linarith
+  have h_prod_nn : (0 : ℝ) ≤ |∏ k ∈ Finset.range N, (1 - q ^ (k + 1))| :=
+    abs_nonneg _
+  nlinarith
 
 end QOU.BraidKnot
