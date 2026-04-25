@@ -353,7 +353,7 @@
 | [prop:jet-prolongation](#prop:jet-prolongation) | Jet Prolongation | Ch 3 | `QOU.JetProlongation` |
 | [prop:jet-convergence-classical-limit](#prop:jet-convergence-classical-limit) | Jet-filtered knot invariant converges to classical dimension-weighted average | Ch 4 | `QOU.BraidKnot.jet_convergence_classical_limit` |
 | [prop:kelvin-dispersion-derivation](#prop:kelvin-dispersion-derivation) | Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem | Ch 7 | — |
-| [prop:knot-factor-frobenius-pairing](#prop:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 4 | `QOU.BraidKnot.KnotFactorFrobeniusPairing` |
+| [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio (conjectural — inherits from `conj:mass-endomorphism`) | Ch 4 | `QOU.BraidKnot.KnotFactorFrobeniusPairing` |
 | [prop:operator-selection-lp](#prop:operator-selection-lp) | Knot operator selection as linear program with LP duality | Ch 10 | — |
 | [prop:knot-operator-selection](#prop:knot-operator-selection) | Knot operator selection via Frobenius dual | Ch 9 | — |
 | [prop:knot-particle-correspondence](#prop:knot-particle-correspondence) | Knot--particle correspondence via $q$-Schur--Weyl duality | Ch 4 | `QOU.Braiding.knot_particle_correspondence` |
@@ -378,7 +378,7 @@
 | [prop:noble-gas-characterization](#prop:noble-gas-characterization) | Noble gas characterization: full shell as full curls | Ch 9 | — |
 | [prop:categorical-dq-squared](#prop:categorical-dq-squared) | Non-vanishing of $d_q^2$ | Ch 2 | `QOU.categorical_dq_squared` |
 | [prop:q-ns-nonlinear-uniqueness](#prop:q-ns-nonlinear-uniqueness) | Nonlinear estimates and uniqueness for the $q$-Navier--Stokes system | Ch 7 | — |
-| [prop:mass-element-nf](#prop:mass-element-nf) | Normal form of the Hecke mass element | Ch 4 | — |
+| [conj:mass-element-nf](#conj:mass-element-nf) | Normal form of the Hecke mass element (conjectural — inherits from `conj:mass-endomorphism`) | Ch 4 | — |
 | [prop:tower-binding-energy](#prop:tower-binding-energy) | Nuclear binding energy from the $3$-channel brane tower | Ch 10 | `QOU.ParticleInteractions.towerBinding` |
 | [prop:generator-volume-decomposition](#prop:generator-volume-decomposition) | Nuclear energy as a sum of generator volumes via Chebyshev recurrence | Ch 9 | `QOU.Descartes.generator_volume_decomposition` |
 | [prop:generator-volume-decomposition](#prop:generator-volume-decomposition) | Nuclear energy as a sum of generator volumes via Chebyshev recurrence | Ch 10 | `QOU.Descartes.generator_volume_decomposition` |

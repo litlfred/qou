@@ -49,6 +49,7 @@ theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
 theorem bring_weight_match : zeta5 ^ (4 : ℕ) = zeta5⁻¹ := by
   -- Intended proof: from zeta5^5 = 1 and zeta5 ≠ 0 (Complex.exp
   -- never vanishes), conclude zeta5^4 = zeta5^{-1}.
+  -- Ref: [edge1978] https://doi.org/10.1112/jlms/s2-18.3.539
   sorry
 
 end QOU.X5BringWeight

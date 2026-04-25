@@ -10,7 +10,6 @@ export default proposition({
   uses: [
     "def:quantum-observable-universe",
     "def:quantum-universe",
-    "def:substrate-parameter",
     "ex:qou-su2",
     "ex:c-quantum-observable-universe",
   ],

@@ -21,6 +21,5 @@ export default proposition({
     "def:quantum-observable-universe",
     "prop:braid-action-tensor",
     "unital-groebner-bases:def:admissible-system",
-    "def:categorical-reeb",
   ],
 });

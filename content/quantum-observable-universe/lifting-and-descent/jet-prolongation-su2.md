@@ -1,6 +1,4 @@
-Continuing
-[Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-condition-su2), we
-construct the [jet prolongation](#prop:jet-prolongation) of
+We construct the [jet prolongation](#prop:jet-prolongation) of
 $A = \mathcal{O}(\mathrm{SU}(2))$.
 
 **Kahler differentials.** The module of Kahler differentials is

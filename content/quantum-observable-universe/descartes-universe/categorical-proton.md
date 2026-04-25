@@ -142,3 +142,15 @@ giving a net Coulomb charge
 $$
   Q(\mathfrak{p}) = 2 \cdot (+\tfrac{2}{3}) + 1 \cdot (-\tfrac{1}{3}) = +1.
 $$
+
+**Computational backing.** The Borromean construction underlying
+this definition is supported by witness data committed alongside
+the paper: `folio-assistant/computations/borromean-axial-coupling.witness.json`
+(the axial-coupling $g_A$ from $H_3(q_0)$ matches PDG 2024
+$g_A = 1.2754$), `proton-braid-sweep-gg.witness.json` (proton
+braid coefficients in the NF basis at $q_0$), and
+`borromean-qvalue.py` (derivation of $q_0 \approx 1.10998$ from
+Borromean topology). These are numerical witnesses, not formal
+proofs — see also
+[Borromean-quark conjecture](#conj:borromean-quark) and the
+ground-ring annotation in `borromean-quark.lean`.
