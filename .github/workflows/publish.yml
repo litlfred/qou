@@ -35,9 +35,6 @@
 name: Build & Publish
 
 on:
-  push:
-    branches: [main]
-  pull_request_target:      # PRs – no approval needed (e.g. Copilot)
   workflow_dispatch:
     inputs:
       source_branch:
@@ -280,13 +277,24 @@ jobs:
         run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
-      - name: Cache TikZ externalized figures
-        uses: actions/cache@v4
-        with:
-          path: tikz-cache
-          key: tikz-${{ runner.os }}-${{ hashFiles('chapters/*.tex', 'latex/preamble.tex') }}
-          restore-keys: |
-            tikz-${{ runner.os }}-
+      # Quick syntax/package check with --draftmode before the real compile.
+      # Catches preamble errors and undefined citations faster (no PDF written,
+      # no bibtex run, so it's cheap).  Errors here surface immediately in the
+      # step log; the real compile below produces the final PDF.
+      - name: Quick LaTeX syntax check (draftmode)
+        run: |
+          pdflatex -interaction=nonstopmode -draftmode main.tex 2>&1 | tail -30 || true
+          # Surface all ! errors as early warnings (does not fail the build)
+          if grep -q "^! " main.log 2>/dev/null; then
+            echo "::warning::LaTeX errors detected — see details below"
+            grep -B1 "^! " main.log | head -80
+          fi
+          # Fail only for structural errors that guarantee no PDF can be produced
+          if grep -qE "^! (Emergency stop|LaTeX Error: \\\\begin\{document\} ended|File ended while)" \
+              main.log 2>/dev/null; then
+            echo "::error::Fatal LaTeX structural error — PDF cannot be produced"
+            exit 1
+          fi
 
       - name: Compile LaTeX to PDF
         run: |

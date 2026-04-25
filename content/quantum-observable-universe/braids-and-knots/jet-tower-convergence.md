@@ -94,11 +94,11 @@ subconjecture.
 
 Combined with the empirical level-1 residual $\varepsilon^{(1)} =
 |\Delta^{(1)}|$ reported by the engine, the proposition gives a
-constructive error budget: once the within-level $V̂$ model is
+constructive error budget: once the within-level $\hat{V}$ model is
 improved so $\varepsilon^{(1)}$ is at the target precision, a single
 extra jet level gives $O(\hbar_q^2)$ further reduction.  The jet
 loop is therefore **not the bottleneck for sub-ppm precision** —
-the level-1 $V̂$ model is.
+the level-1 $\hat{V}$ model is.
 
 ## Relation to confinement SDP
 

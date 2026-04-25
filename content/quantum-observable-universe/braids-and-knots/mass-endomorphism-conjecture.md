@@ -82,7 +82,7 @@ the descended trace gives $\mathrm{Vol}(K)$, each transient
 trace gives $\Phi_q(z_i)$, and they sum to
 $\mathrm{Vol}(K)/\hbar_q^2$.
 
-**Step 3 (Markov trace ≠ Vol, the gap).**
+**Step 3 (Markov trace $\neq$ Vol, the gap).**
 The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is
 the Jones polynomial $J(K; q)$ — a Laurent polynomial
 in $q^{1/2}$.  The hyperbolic volume $\mathrm{Vol}(K)$ is a

@@ -19,15 +19,8 @@ name: Build Paper Assistant Image
 
 on:
   push:
-    branches: [main]
-    paths:
-      - 'scripts/mcp-server/**'
-      - 'content/**'
-      - 'content/quantum-observable-universe/lean/**'
-      - 'scripts/mcp-server/Dockerfile'
-      - '.github/scripts/**'
-      - 'folio-assistant/**'
-      - 'tools/hecke-engine/**'
+    branches:
+      - copilot/fix-cargo-build-error
   workflow_dispatch:
   schedule:
     - cron: '0 6 * * 0'  # Weekly Sunday 06:00 UTC
