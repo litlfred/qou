@@ -9,6 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "prop:confinement-categorical",
     "prop:wedderburn-trace-identity",
     "rem:gram-matrix-spectral-connection",
     "prop:hoefsmit-scattering-pipeline",

@@ -19,13 +19,13 @@ uniqueness:
 1. *Two-strand spectral completeness*
    ([completeness theorem](#thm:em-spectral-completeness)) shows
    $\mathrm{End}_{\mathbf{C}}(A \otimes A)$ has $R$-rank $2$, with
-   exactly two central idempotents $p_+, p_-$ summing to $\mathrm{id}$.
+   exactly two central idempotents $e_+, e_-$ summing to $\mathrm{id}$.
    Plancherel completeness $w_+ + w_- = 1$ exhausts the Frobenius
    mass: **no third channel exists**.
 2. *Uniqueness of the gauge coupling* (corollary, *ibid.*): the
-   singlet idempotent $p_-$ is the unique scalar exchange channel.
+   singlet idempotent $e_-$ is the unique scalar exchange channel.
    Any $R$-linear braid-invariant scalar coupling $A \otimes A \to
-   \mathbf{1}$ is a multiple of $\mathrm{tr}_\tau(p_-) \cdot p_-$.
+   \mathbf{1}$ is a multiple of $\mathrm{tr}_\tau(e_-) \cdot e_-$.
    So $\alpha_{\mathrm{EM}}$ exists, is unique up to global
    normalisation, and the antisymmetric eigenvalue captures the
    *entirety* of the EM coupling.
@@ -48,7 +48,7 @@ substrate parameter $q$ and force-carrier generators $T_{2,9}$
 (crossing number $c_s = 9$) and $T_{3,5}$ (crossing number
 $c_w = 10$) — uniquely determined by the genus-$4$ classification
 above.  Then the electromagnetic fine structure constant, defined as
-the $\tau$-trace of the singlet idempotent $p_-$ normalised by the
+the $\tau$-trace of the singlet idempotent $e_-$ normalised by the
 force-carrier categorical complexity, is
 
 $$
@@ -89,18 +89,18 @@ The two-strand spectral completeness theorem
 braiding into central idempotents:
 
 $$
-  c_{A,A} \;=\; q^{1/2}\, p_+ \,-\, q^{-1/2}\, p_-,
-  \qquad p_+ + p_- = \mathrm{id}_{A \otimes A},\;\; p_+ p_- = 0.
+  c_{A,A} \;=\; q^{1/2}\, e_+ \,-\, q^{-1/2}\, e_-,
+  \qquad e_+ + e_- = \mathrm{id}_{A \otimes A},\;\; e_+ e_- = 0.
 $$
 
 The two eigenvalues $\{q^{1/2},\, -q^{-1/2}\} \subset R$ are the
-**only** spectral data of $c_{A,A}$.  The singlet $p_-$ projects onto
+**only** spectral data of $c_{A,A}$.  The singlet $e_-$ projects onto
 the unique copy of the unit object $\mathbf{1} \subset A \otimes A$
 (the antisymmetric channel $\Lambda^2 A$, of $R$-rank $1$).  Its
 fibre-functor trace evaluates to
 
 $$
-  |\mathrm{tr}_\tau(p_-)|^2 \;=\; q^{-1} \,\in\, R.
+  |\mathrm{tr}_\tau(e_-)|^2 \;=\; q^{-1} \,\in\, R.
 $$
 
 This is the **bare gauge coupling**: by uniqueness of the singlet
@@ -125,7 +125,7 @@ is the singlet trace divided by this forced normalisation:
 $$
   \alpha_{\mathrm{EM}}
   \;=\;
-  \frac{|\mathrm{tr}_\tau(p_-)|^2}{\dim_q T_{2,9} \cdot \dim_q T_{3,5}}
+  \frac{|\mathrm{tr}_\tau(e_-)|^2}{\dim_q T_{2,9} \cdot \dim_q T_{3,5}}
   \;=\;
   \frac{q^{-1}}{[9]_q \cdot [10]_q} \,\in\, R.
 $$

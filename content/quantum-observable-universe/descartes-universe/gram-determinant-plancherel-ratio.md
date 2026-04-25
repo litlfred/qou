@@ -4,11 +4,11 @@ $\beta_s = T_{2,9}$, $\beta_w = T_{3,5}$ be the unique pair of
 genus-$4$ torus knots
 ([Bring uniqueness](#prop:force-carrier-bring-uniqueness)).  Each
 admits a Wedderburn decomposition into central idempotents of the
-ambient Hecke algebra $H_n(q)$:*
+ambient Hecke algebra $H_n(R, q)$:*
 
 $$
   \beta_\bullet \;=\; \sum_{\lambda \,\vdash\, n}
-    c_\lambda^{(\bullet)}\; p_\lambda,
+    c_\lambda^{(\bullet)}\; e_\lambda,
   \qquad
   c_\lambda^{(\bullet)} \;=\; \chi_\lambda(\beta_\bullet) \in R.
 $$
@@ -37,7 +37,7 @@ $$
   \;}
 $$
 
-*Proof.*  The Gram matrix of the Markov pairing on $H_n(q)$ is
+*Proof.*  The Gram matrix of the Markov pairing on $H_n(R, q)$ is
 block-diagonal in the central-idempotent basis with entries
 
 $$

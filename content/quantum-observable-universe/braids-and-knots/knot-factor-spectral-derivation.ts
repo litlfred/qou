@@ -10,6 +10,7 @@ export default proposition({
   },
   uses: [
     "rem:gram-matrix-spectral-connection",
+    "prop:unified-curvature-rank-mass-formula",
     "conj:knot-factor-frobenius-pairing",
     "prop:spectral-sequence-collapse",
     "prop:wigner-np-pairing",

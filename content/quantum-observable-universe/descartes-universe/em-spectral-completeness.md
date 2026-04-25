@@ -15,18 +15,18 @@ R\text{-mod}$ the fibre functor.
 is a free $R$-module of rank $2$ with the following structure.*
 
 1. *There exist exactly two non-zero central idempotents
-   $p_+, p_- \in E$ with $p_+ + p_- = \mathrm{id}_{A \otimes A}$ and
-   $p_+ \cdot p_- = 0$.*
-2. *Each $p_\pm$ projects onto a simple summand:*
+   $e_+, e_- \in E$ with $e_+ + e_- = \mathrm{id}_{A \otimes A}$ and
+   $e_+ \cdot e_- = 0$.*
+2. *Each $e_\pm$ projects onto a simple summand:*
    $$
      A \otimes A \;\cong\; V_+ \oplus V_-,
-     \qquad p_\pm A^{\otimes 2} = V_\pm.
+     \qquad e_\pm A^{\otimes 2} = V_\pm.
    $$
    *The summand $V_-$ is canonically isomorphic to the unit object
    $\mathbf{1}$ — a singlet of $R$-rank one.*
 3. *The braiding decomposes as*
    $$
-     c_{A,A} \;=\; q^{1/2}\, p_+ \;-\; q^{-1/2}\, p_-,
+     c_{A,A} \;=\; q^{1/2}\, e_+ \;-\; q^{-1/2}\, e_-,
    $$
    *and $\{q^{1/2},\, -q^{-1/2}\}$ are the only eigenvalues of
    $c_{A,A}$ on $A \otimes A$.*
@@ -53,15 +53,15 @@ minimal polynomial splits over $R$ and Bezout produces orthogonal
 idempotents
 
 $$
-  p_- \;=\; \frac{q^{1/2} \cdot \mathrm{id} - c_{A,A}}{q^{1/2} + q^{-1/2}},
+  e_- \;=\; \frac{q^{1/2} \cdot \mathrm{id} - c_{A,A}}{q^{1/2} + q^{-1/2}},
   \qquad
-  p_+ \;=\; \mathrm{id} - p_-.
+  e_+ \;=\; \mathrm{id} - e_-.
 $$
 
 These are central in $E$ since $c_{A,A}$ generates the centraliser of
 the diagonal $R$-action by Schur--Weyl-Hecke duality.  Statement (2)
-follows from $H_2(q) \cong E$ being free of rank $2$ over $R$: $E$
-has at most two simple summands, and $p_\pm$ realise them.  The
+follows from $H_2(R, q) \cong E$ being free of rank $2$ over $R$: $E$
+has at most two simple summands, and $e_\pm$ realise them.  The
 singlet identification $V_- \cong \mathbf{1}$ is the standard
 Schur-functor decomposition $A \otimes A = S^2 A \oplus \Lambda^2 A$
 with $\Lambda^2 A \cong \mathbf{1}$ when $A$ is the fundamental of

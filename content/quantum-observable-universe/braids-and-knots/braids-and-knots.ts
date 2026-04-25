@@ -432,6 +432,7 @@ export default chapter({
         "knot-factor-shell-closed",
         "knot-factor-spectral-summary",
         "pauli-factor-wedderburn",
+        "mass-formula-wedderburn-enumeration",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
         "shell-correction-term-seven",
