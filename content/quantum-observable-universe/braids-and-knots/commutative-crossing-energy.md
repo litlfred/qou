@@ -10,13 +10,17 @@ limit is recovered by extracting the *square root* of the antisymmetric
 eigenvalue $\lambda_- = -1$:
 
 $$
-  i  =  \sqrt{\lambda_-}, \qquad i^2 + 1  =  0.
+  i  =  \sqrt{\lambda_-}, \qquad i^2 + 1  =  0  \;\text{in}\; R[i].
 $$
 
-The field extension $\mathbb{C} = \mathbb{R}[i]/(i^2 + 1)$ is therefore
-forced by the categorical structure: $i$ is the **categorical
-coordinate of $\mathbb{P}(V)$ in the commutative limit**, in exact
-parallel with the role of $q$ in the non-commutative theory.
+The ring extension $R[i]/(i^2 + 1)$ of the categorical ground ring
+$R$ is therefore forced by the categorical structure: $i$ is the
+**categorical coordinate of $\mathbb{P}(V)$ in the commutative
+limit**, in exact parallel with the role of $q$ in the
+non-commutative theory.  When $R$ already contains a square root of
+$-1$ (e.g. $R = \mathbb{C}$, the archimedean realisation), $i \in R$
+is the canonical such root; otherwise $R[i]$ is the minimal extension
+realising $\lambda_-$ as a categorical square.
 
 **Categorical-coordinate dictionary.**
 
