@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-q-ext-deriv-exists",
   title: "Existence of the categorical $q$-exterior derivative",
-  lean: {
-    decl: "QOU.CategoricalQExtDeriv.exists",
+  lean: { ref: "qou:QOU.CategoricalQExtDeriv.exists",
     validation: "not_checked",
   },
   uses: [

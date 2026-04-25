@@ -12,7 +12,15 @@ import { execSync } from "child_process";
 // ── Paths ───────────────────────────────────────────────────────
 
 export const REPO_ROOT = resolve(import.meta.dir, "../..");
-export const LEAN_DIR = join(REPO_ROOT, "content/quantum-observable-universe/lean");
+/**
+ * Root Lake workspace directory.  `lake build` at this directory
+ * builds every paper package registered in the root `lakefile.toml`.
+ * Per-paper Lake roots are under `content/<paper>/lean/`; see
+ * `folio-assistant/schemas/lean-packages.ts` for the authoritative map.
+ */
+export const LEAN_DIR = REPO_ROOT;
+/** Legacy alias: default paper's Lake directory (QOU). */
+export const QOU_LEAN_DIR = join(REPO_ROOT, "content/quantum-observable-universe/lean");
 export const CHAPTERS_DIR = join(REPO_ROOT, "chapters");
 export const SCHEMAS_DIR = join(REPO_ROOT, "schemas");
 
@@ -20,35 +28,39 @@ export const SCHEMAS_DIR = join(REPO_ROOT, "schemas");
 
 /** Names that are dependencies, not user projects. */
 const DEPENDENCY_NAMES = new Set([
-  "mathlib", "quantumInfo", "doc-gen4", "checkdecls", "qou",
+  "mathlib", "quantumInfo", "doc-gen4", "checkdecls", "qou", "ugb", "fred2005",
 ]);
 
 /**
- * Discover Lean library projects from lakefile.toml.
- * Returns project names like ["QOU", "Fred2005"].
+ * Discover Lean library projects by scanning every `lakefile.toml` in
+ * the repo-root workspace and its registered paper packages.  Returns
+ * library names like `["QOU", "UGB", "Fred2005"]`.
  */
 export function discoverLeanProjects(): string[] {
-  const lakefile = join(LEAN_DIR, "lakefile.toml");
-  if (!existsSync(lakefile)) return [];
+  const lakefiles = [
+    join(LEAN_DIR, "lakefile.toml"),
+    join(REPO_ROOT, "content/quantum-observable-universe/lean/lakefile.toml"),
+    join(REPO_ROOT, "content/unital-groebner-bases/lean/lakefile.toml"),
+    join(REPO_ROOT, "content/fred2005-formal-groups/lean/lakefile.toml"),
+  ];
+  const names = new Set<string>();
 
-  const content = readFileSync(lakefile, "utf-8");
-  const names: string[] = [];
-
-  // Match [[lean_lib]] sections followed by name = "..."
-  const libPattern = /\[\[lean_lib\]\]\s*\n\s*name\s*=\s*"([^"]+)"/g;
-  let match;
-  while ((match = libPattern.exec(content)) !== null) {
-    const name = match[1];
-    if (!DEPENDENCY_NAMES.has(name)) {
-      names.push(name);
+  for (const lakefile of lakefiles) {
+    if (!existsSync(lakefile)) continue;
+    const content = readFileSync(lakefile, "utf-8");
+    const libPattern = /\[\[lean_lib\]\]\s*\n\s*name\s*=\s*"([^"]+)"/g;
+    let match;
+    while ((match = libPattern.exec(content)) !== null) {
+      const name = match[1];
+      if (!DEPENDENCY_NAMES.has(name)) names.add(name);
     }
   }
-  return names;
+  return Array.from(names);
 }
 
 /**
- * Discover required dependencies from lakefile.toml.
- * Returns names like ["mathlib", "quantumInfo"].
+ * Discover required dependencies from the root `lakefile.toml`.
+ * Includes mathlib and every per-paper `[[require]]` stanza.
  */
 export function discoverDependencies(): string[] {
   const lakefile = join(LEAN_DIR, "lakefile.toml");

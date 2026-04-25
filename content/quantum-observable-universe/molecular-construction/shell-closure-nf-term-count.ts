@@ -6,8 +6,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:shell-closure-nf-term-count",
   title: "Shell closure from NF term count",
-  lean: {
-    decl: "QOU.Molecular.ShellClosureNFTermCount",
+  lean: { ref: "qou:QOU.Molecular.ShellClosureNFTermCount",
     validation: "not_checked",
   },
   uses: [

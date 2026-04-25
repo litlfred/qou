@@ -12,8 +12,7 @@ export default proposition({
     "coulomb",
     "magic-numbers",
   ],
-  lean: {
-    decl: "QOU.Descartes.integer_stability",
+  lean: { ref: "qou:QOU.Descartes.integer_stability",
     validation: "not_checked",
   },
   uses: ["def:stable-nucleus"],

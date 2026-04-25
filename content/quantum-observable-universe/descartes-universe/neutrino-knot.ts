@@ -4,8 +4,7 @@ export default definition({
   label: "def:neutrino-knot",
   title: "Neutrino",
   tags: ["neutrino", "unknot", "lepton", "fermion", "vacuum-drag"],
-  lean: {
-    decl: "QOU.Descartes.Neutrino",
+  lean: { ref: "qou:QOU.Descartes.Neutrino",
     validation: "not_checked",
   },
   uses: [

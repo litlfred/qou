@@ -10,8 +10,7 @@ export default proposition({
     "pair-production",
     "action-difference",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.positron_correction",
+  lean: { ref: "qou:QOU.ParticleInteractions.positron_correction",
     validation: "not_checked",
   },
   uses: [

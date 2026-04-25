@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:frobenius-relation",
-  lean: {
-    decl: "QOU.frobenius_relation",
+  lean: { ref: "qou:QOU.frobenius_relation",
     validation: "not_checked",
   },
   title: "Frobenius relation",

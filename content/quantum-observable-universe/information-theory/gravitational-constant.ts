@@ -11,8 +11,7 @@ export default definition({
     "speed-of-light",
     "emergent-gravity",
   ],
-  lean: {
-    decl: "QOU.Information.gravitationalConstant",
+  lean: { ref: "qou:QOU.Information.gravitationalConstant",
     validation: "not_checked",
   },
   uses: [

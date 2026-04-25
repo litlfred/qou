@@ -1,5 +1,5 @@
 The Kashaev volume conjecture [@kashaev1997] (proved for various
-classes of knots by Murakami--Murakami [@murakami2001] and
+classes of knots by Murakami--Murakami [@murakami-murakami2001] and
 others, but open in full generality) states:
 
 $$
@@ -106,7 +106,7 @@ just relocate the difficulty rather than dissolve it.
 value is in *separating* the algebraic content (which is
 computable) from the geometric content (which is the actual
 Kashaev). The Murakami--Murakami proof for the figure-eight
-knot [@murakami2001] should be re-derivable in the surreal form
+knot [@murakami-murakami2001] should be re-derivable in the surreal form
 as a sanity check.
 
 ## Connection to QOU
@@ -153,7 +153,7 @@ geometry.
 **Verification on known cases (provable now)**:
 
 4. The figure-eight knot $4_1$ (Murakami–Murakami 2001
-   [@murakami2001]) and the trefoil $3_1$ have the volume
+   [@murakami-murakami2001]) and the trefoil $3_1$ have the volume
    conjecture proved. Compute $J_K(\zeta_\omega, \omega)$
    directly, take $\mathrm{st}$, and verify equality with the
    known volume.

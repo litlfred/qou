@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:local-cohomology-group",
   title: "Local cohomology at the unit defect",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.LocalCohomologyGroup",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.LocalCohomologyGroup",
     validation: "not_checked",
   },
   uses: ["def:maximal-ideal-defect", "def:frobenius-hopf-substrate"],

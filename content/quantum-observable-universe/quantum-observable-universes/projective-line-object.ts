@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:projective-line-object",
   title: "Projective line object",
-  lean: {
-    decl: "QOU.ProjectiveLineObject",
+  lean: { ref: "qou:QOU.ProjectiveLineObject",
     validation: "not_checked",
   },
   uses: ["def:maximal-torus"],

@@ -14,8 +14,7 @@ export default proposition({
     "T35",
     "factorized-model",
   ],
-  lean: {
-    decl: "QOU.Descartes.tau_leptonic_universality",
+  lean: { ref: "qou:QOU.Descartes.tau_leptonic_universality",
     validation: "not_checked",
   },
   uses: [

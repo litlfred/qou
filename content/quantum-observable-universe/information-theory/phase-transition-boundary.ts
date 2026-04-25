@@ -11,8 +11,7 @@ export default proposition({
     "hecke-algebra",
     "braid-representation",
   ],
-  lean: {
-    decl: "QOU.Information.gasLiquidCriticalTemp",
+  lean: { ref: "qou:QOU.Information.gasLiquidCriticalTemp",
     validation: "not_checked",
   },
   uses: [

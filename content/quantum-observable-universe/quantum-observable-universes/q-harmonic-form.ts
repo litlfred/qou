@@ -4,8 +4,7 @@ export default definition({
   label: "def:q-harmonic-form",
   title: "Particle ($q$-harmonic form)",
   tags: ["particle", "harmonic"],
-  lean: {
-    decl: "QOU.QHarmonicForm",
+  lean: { ref: "qou:QOU.QHarmonicForm",
     validation: "leanok",
   },
   uses: ["def:categorical-q-ext-deriv"],

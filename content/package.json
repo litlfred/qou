@@ -12,7 +12,9 @@
     "validate-refs": "bun run pipeline/validate-references.ts",
     "bib-qa": "bun run pipeline/bib-qa.ts",
     "bib-qa:ci": "bun run pipeline/bib-qa.ts --ci",
-    "generate-index": "bun run pipeline/generate-index.ts"
+    "generate-index": "bun run pipeline/generate-index.ts",
+    "migrate-lean-refs": "bun run pipeline/migrate-lean-refs.ts --write",
+    "migrate-lean-refs:dry": "bun run pipeline/migrate-lean-refs.ts"
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-arguments": "^1.8.0",

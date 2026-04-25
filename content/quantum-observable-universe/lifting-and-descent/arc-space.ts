@@ -10,7 +10,7 @@ export default definition({
   ],
   cites: ["denef-loeser2001"],
   lean: {
-    decl: "QOU.LiftingDescent.ArcSpace",
+    ref: "qou:QOU.LiftingDescent.ArcSpace",
     validation: "not_checked",
   },
 });

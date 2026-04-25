@@ -18,27 +18,45 @@ construction.
 Let $\mathrm{Tab}(\lambda)$ denote the set of standard tableaux of
 shape $\lambda$, viewed as the vertex set of a tree $\mathcal{T}_n$
 whose edges record the Young--Jucys--Murphy ordering. Let
-$\mathbf{No}_{\leq n}$ denote the set of dyadic surreals of birthday
-$\leq n$ (equivalently, sign sequences of length $\leq n$).
+$\mathbf{No}_{= n}^{\mathrm{dy}}$ denote the set of dyadic surreals
+of birthday *exactly* $n$ (equivalently, sign sequences of length
+$n$).
 
-There is a canonical isomorphism of forests
+**Cardinality note.** The number of two-rowed standard tableaux of
+size $n$ is $\binom{n}{\lfloor n/2 \rfloor}$; the number of
+dyadic surreals of birthday exactly $n$ is $2^n$.  These counts do
+not match (e.g., $n = 3$ gives $3$ tableaux versus $8$ surreals), so
+the map below is an **injective embedding**, not a bijection of
+forests.
+
+There is a canonical injective embedding
 
 $$
   \Phi : \bigsqcup_{\lambda \vdash n,\, \ell(\lambda) \leq 2}
     \mathrm{Tab}(\lambda)
-   \xrightarrow{\sim}
+   \hookrightarrow
   \mathbf{No}_{\leq n}^{\mathrm{dy}}
 $$
 
-such that:
+(taking values in dyadic surreals of birthday $\leq n$) such that:
 
-1. The root tableau (the trivial partition $(n)$) maps to the
-   surreal $0$.
-2. Each YJM-edge $t \to t'$ corresponds to a unique sign-sequence
-   extension $s \to s\!\cdot\! +$ (symmetric channel)
-   or $s \to s\!\cdot\! -$ (antisymmetric channel).
-3. The birthday $b(\Phi(t))$ equals the YJM depth (= number of
-   boxes placed) of $t$.
+1. The empty tableau at $n = 0$ and the singleton tableau at
+   $n = 1$ both map to the surreal $0$ (the singleton's sign
+   sequence is empty, of length $n - 1 = 0$).  For $n \geq 2$ the
+   one-row tableau $(n)$ maps to a non-zero value determined by
+   its sign sequence (see item 2).
+2. Each YJM-edge $t \to t'$ in the tableau forest corresponds to a
+   unique sign-sequence extension $s \to s\!\cdot\! +$ (symmetric
+   channel: new box in the top row) or $s \to s\!\cdot\! -$
+   (antisymmetric channel: new box in the bottom row).  The sign
+   sequence of a size-$n$ tableau has length $n - 1$ (no choice at
+   the first box placement).
+3. The birthday $b(\Phi(t))$ is bounded by the length of the
+   sign sequence, i.e., by $n - 1$.  Surreals in the image are
+   therefore of birthday $\leq n - 1$; the complement of the image
+   in $\mathbf{No}_{\leq n}^{\mathrm{dy}}$ consists of
+   "non-tableau" dyadic rationals not reachable by YJM-extension
+   from a two-rowed shape.
 
 ## Proof sketch
 

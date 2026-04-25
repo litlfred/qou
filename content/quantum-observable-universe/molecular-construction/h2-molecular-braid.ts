@@ -7,8 +7,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:h2-molecular-braid",
   title: "Hydrogen molecule $H_2$ as a braid in $H_4(q)$",
-  lean: {
-    decl: "QOU.Molecular.H2Braid",
+  lean: { ref: "qou:QOU.Molecular.H2Braid",
     validation: "not_checked",
   },
   uses: [

@@ -11,8 +11,7 @@ export default proposition({
     "independence",
     "strong-force",
   ],
-  lean: {
-    decl: "QOU.Interactions.confinementUniversality",
+  lean: { ref: "qou:QOU.Interactions.confinementUniversality",
     validation: "not_checked",
   },
   uses: [

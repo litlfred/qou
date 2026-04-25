@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-laplace-unique",
   title: "Uniqueness of the categorical Laplace transform",
-  lean: {
-    decl: "QOU.CategoricalLaplace.unique",
+  lean: { ref: "qou:QOU.CategoricalLaplace.unique",
     validation: "not_checked",
   },
   uses: [

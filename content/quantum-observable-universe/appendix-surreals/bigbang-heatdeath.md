@@ -46,7 +46,7 @@ conjecture is:
    evaluation*: $\varepsilon \to 0^+$ in $\mathbf{No}$ is reached
    by replacing $\varepsilon$ with smaller and smaller infinitesimals
    $\varepsilon^2, \varepsilon^3, \ldots, \varepsilon^\omega$. The
-   final functor is the evaluation at the *minimum* such surreal
+   final functor is the evaluation at a specific transfinite surreal
    $\varepsilon^\omega$ (or whatever name is chosen for the
    limit), composed with $\mathrm{St}$.
 

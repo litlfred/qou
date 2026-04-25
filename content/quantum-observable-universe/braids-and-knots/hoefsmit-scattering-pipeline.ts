@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:hoefsmit-scattering-pipeline",
   title:
     "From Hoefsmit scattering weights to physical mass via the observation frame",
-  lean: {
-    decl: "QOU.BraidKnot.hoefsmit_scattering_pipeline",
+  lean: { ref: "qou:QOU.BraidKnot.hoefsmit_scattering_pipeline",
     validation: "not_checked",
   },
   uses: [

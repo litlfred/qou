@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:color-tube-fibers",
-  lean: { decl: "QOU.ColorTubeFibers", validation: "not_checked" },
+  lean: { ref: "qou:QOU.ColorTubeFibers", validation: "not_checked" },
   title: "Color tube fibers",
   tags: ["brings-surface", "color-tube"],
   uses: ["rem:color-tube-cubic"],

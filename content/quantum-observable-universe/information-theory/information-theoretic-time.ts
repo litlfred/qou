@@ -11,8 +11,7 @@ export default definition({
     "reeb-flow",
     "julia-set",
   ],
-  lean: {
-    decl: "QOU.informationTheoreticTime",
+  lean: { ref: "qou:QOU.informationTheoreticTime",
     validation: "leanok",
   },
   uses: [

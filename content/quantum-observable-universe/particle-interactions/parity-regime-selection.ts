@@ -12,8 +12,7 @@ export default theorem({
     "q-value",
     "mass-number",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.parity_regime_selection",
+  lean: { ref: "qou:QOU.ParticleInteractions.parity_regime_selection",
     validation: "not_checked",
   },
   uses: [

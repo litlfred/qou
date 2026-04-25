@@ -32,6 +32,7 @@ import {
 } from "mdast-util-gfm-strikethrough";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 import { isCrossPaperRef } from "../schema/types";
+import { parseLeanRef } from "../../folio-assistant/schemas/lean-packages";
 import { extractCitations } from "./citations";
 
 // ── LaTeX character escaping ─────────────────────────────────────
@@ -592,9 +593,19 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
         lines.push(`  \\label{${block.label}}`);
       }
 
-      // Lean reference
-      if ("lean" in block && block.lean) {
-        lines.push(`  \\lean{${block.lean.decl}}`);
+      // Lean reference — emit the bare Lean declaration (without the
+      // `<package>:` URI prefix) for the LaTeX blueprint macro.  We
+      // parse via the centralized helper so the URI grammar stays
+      // single-sourced; on malformed refs we fall back to the raw
+      // string rather than silently dropping the `\lean{}` macro.
+      if ("lean" in block && block.lean?.ref) {
+        let decl: string;
+        try {
+          decl = parseLeanRef(block.lean.ref).decl;
+        } catch {
+          decl = block.lean.ref;
+        }
+        lines.push(`  \\lean{${decl}}`);
         if (block.lean.sorryFree) {
           lines.push(`  \\leanok`);
         }

@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:compound-beta-shell-calibration",
   title:
     "Compound β-decay calibration across magic shells",
-  lean: {
-    decl: "QOU.BraidKnot.CompoundBetaShellCalibration",
+  lean: { ref: "qou:QOU.BraidKnot.CompoundBetaShellCalibration",
     validation: "not_checked",
   },
   uses: [

@@ -55,11 +55,19 @@ structure KnotEigenbasisComplete where
   summands_detected : ∀ λ ∈ decomposition.partitions,
     ∃ (β : alexander.Braid),
     markov.tr (braid_rep β) ≠ 0
-  /-- **Spanning** (Part 3): the algebraic direct limit
-      `V_phys = colim V^{⊗n}` is spanned by the irreducible summands.
-      Encoded as: every element of the direct limit is a finite
-      linear combination of summand embeddings (no metric
-      completion is used). -/
-  spanning : Type* -- abstract direct-limit type `V_phys`
+  /-- The algebraic direct-limit type `V_phys = colim V^{⊗n}`. -/
+  V_phys : Type*
+  /-- The level-`n` embedded subspace: `embed n` is the image of
+      `V^{⊗n}` inside `V_phys` under the direct-limit inclusion. -/
+  embed : ℕ → Set V_phys
+  /-- **Spanning** (Part 3): the union of all level-`n` embedded
+      subspaces is *all* of `V_phys`.  Equivalently, every element
+      of `V_phys` lies in `embed n` for some `n`.
+
+      This is the algebraic-spanning condition (no metric completion
+      is invoked).  Non-vacuous: if `embed` is the constant empty
+      set, this is unprovable; it captures the genuine
+      direct-limit-cover property. -/
+  spanning : (⋃ n, embed n) = (Set.univ : Set V_phys)
 
 end QOU.PathIntegrals

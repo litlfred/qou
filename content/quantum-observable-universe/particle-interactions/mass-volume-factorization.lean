@@ -13,7 +13,7 @@
 
   Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
   Ref: [thurston1978] http://library.msri.org/books/gt3m/
-  Ref: [murakami2001] https://doi.org/10.1007/BF02392716
+  Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 
 import Mathlib.Data.Real.Basic
@@ -48,7 +48,7 @@ class MassVolumeFactorization
   factorization :
     ∀ k : K, mass k = (density k).value * volume k
   -- Ref: [thurston1978] http://library.msri.org/books/gt3m/
-  -- Ref: [murakami2001] https://doi.org/10.1007/BF02392716
+  -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
   -- The `factorization` field is taken as an axiom of the class;
   -- instances must provide evidence per atomic link configuration
   -- (via SnapPy volume computation and Wedderburn block analysis).

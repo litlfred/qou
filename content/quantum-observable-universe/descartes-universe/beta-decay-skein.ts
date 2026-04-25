@@ -14,8 +14,7 @@ export default definition({
     "lepton",
     "normal-form",
   ],
-  lean: {
-    decl: "QOU.Descartes.BetaDecaySkein",
+  lean: { ref: "qou:QOU.Descartes.BetaDecaySkein",
     validation: "not_checked",
   },
   uses: [

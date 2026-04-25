@@ -13,6 +13,52 @@ do not request external reviews until every earlier step has succeeded.
   a resolution is non-obvious). Re-run validation after each conflict fix.
 - Continue until the rebase completes cleanly.
 
+## 1a. Migrate any legacy `lean.ref` shapes pulled in from upstream
+
+- After every rebase / merge, **run the lean-ref migration script**:
+  `cd content && bun run migrate-lean-refs`. The script is idempotent
+  (no-op when there is nothing to migrate) — running it unconditionally
+  is the standardized post-rebase workflow described in
+  CLAUDE.md §0b.
+- This catches blocks that landed on `origin/main` while the branch was
+  in flight and still use the legacy `lean: { decl: "...", file? }`
+  shape (Zod will hard-fail validation on those).
+- If the script writes any files, stage and amend them into the rebase
+  result before continuing (`git add` + `git commit --amend --no-edit`
+  on the topmost integration commit, or as a follow-up commit if the
+  rebase was non-trivial).
+- **Verify** the migration is complete (all three counts must be 0):
+
+  ```bash
+  # 1. Dry-run reports nothing left to migrate
+  cd content && bun run migrate-lean-refs:dry | tail -3
+  # Expected: "Migrated 0 lean refs across 0 files."
+
+  # 2. No legacy `lean: { decl: ... }` shape remains
+  grep -rln 'lean:\s*{[^}]*decl:' content/*/*.ts 2>/dev/null \
+    | grep -v schema/ | grep -v pipeline/ | wc -l
+  # Expected: 0
+
+  # 3. Every `lean.ref` URI uses a registered package prefix
+  python3 -c "
+  import re, glob, json
+  pkgs = re.findall(r'name:\s*\"(\w+)\"', open('folio-assistant/schemas/lean-packages.ts').read())
+  bad = []
+  for f in glob.glob('content/*/*/*.ts'):
+      txt = open(f).read()
+      for m in re.finditer(r'ref:\s*\"([^:\"]+):', txt):
+          if m.group(1) not in pkgs: bad.append(f'{f} → {m.group(1)}')
+  print(f'Unregistered package prefixes: {len(bad)}')
+  for b in bad: print(f'  {b}')
+  "
+  # Expected: 0
+  ```
+
+- If any check is non-zero, **do not proceed to Step 2**. Either run
+  the migration with `--write`, register the missing package in
+  `folio-assistant/schemas/lean-packages.ts` + root `lakefile.toml`, or
+  fix the offending block before continuing.
+
 ## 2. Integrate new content from upstream
 
 - Pull in any new content blocks, glossary updates, or references that
@@ -28,7 +74,9 @@ do not request external reviews until every earlier step has succeeded.
 
 ## 4. 100% Lean — build + resolutions
 
-- Run `lake build` in `content/quantum-observable-universe/lean/`.
+- Run `lake build` from the **repo root** (the standardized root Lake
+  workspace builds every paper package — `qou`, `ugb`, `fred2005` —
+  in one pass; see CLAUDE.md §0).
 - If the build fails, route to `lean-build-fix` and resolve.
 - Run `lean-completeness-audit`: every `sorry` must carry a `-- Ref:`
   citation, every `definition` block must have its `.lean` sibling,
