@@ -43,9 +43,9 @@ $$
 By [surreal squeeze](#lem:surreal-squeeze),
 $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$ in
 $\mathbb{R}(\varepsilon)$ whenever $\delta > 0$ is a standard real.
-Equivalently, $\ordw\bigl(E(\delta)\bigr) < \ordw(\Delta_q)$ in the
-$\omega$-adic order of [Big-O via $\ordw$](#rem:conway-normal-form): the
-cost strictly dominates the budget.
+Equivalently, $\ordw\bigl(E(\delta)\bigr) = 1 > -3 = \ordw(\Delta_q)$
+in the $\omega$-adic order of [Big-O via $\ordw$](#rem:conway-normal-form):
+the cost sits at strictly higher $\omega$-order than the budget.
 
 **Conclusion.** No configuration of the QOU substrate can sustain a
 standard-real drift $\delta > 0$.  The only value of $\delta$ with

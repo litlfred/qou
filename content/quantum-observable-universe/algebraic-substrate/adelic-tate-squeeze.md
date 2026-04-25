@@ -3,8 +3,8 @@ Riemann / Dedekind $\zeta$-function as an **adelic Fourier
 transform**: the global zeta integral factors as a restricted product
 over local zeta integrals, one per place of $\mathbb{Q}$.  The QOU
 framework lifts this factorisation to the surreal register: each
-local place carries its own Reeb infinitesimal $\varepsilon_p$, the
-global $\varepsilon$ is a restricted product of $\varepsilon_p$'s,
+local place carries its own Reeb infinitesimal $\varepsilon_v$, the
+global $\varepsilon$ is a restricted product of $\varepsilon_v$'s,
 and the [surreal squeeze](#lem:surreal-squeeze) at each prime
 descends to the global squeeze of [RH surreal bound](#rem:rh-surreal-bound).
 

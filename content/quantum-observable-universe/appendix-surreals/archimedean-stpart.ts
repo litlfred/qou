@@ -15,8 +15,11 @@ export default conjecture({
   uses: [
     "def:quantum-observable-universe",
     "def:standard-part-functor",
+    "def:surreal-blowup-calculus",
     "conj:classical-limit-stpart",
-    "rem:fibre-functor-rigidity",
+    "conj:infinitesimal-frobenius",
+    "conj:infinitesimal-observability",
+    "conj:vacuum-epsilon",
   ],
   cites: ["robinson1966", "ehrlich2012"],
 });

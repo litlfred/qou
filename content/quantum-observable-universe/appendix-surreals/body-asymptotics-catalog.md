@@ -40,9 +40,9 @@ $\ordw$-statement are **logically equivalent** under the dictionary
 of [Big-O via $\ordw$](#rem:conway-normal-form):
 
 - A classical bound $|f| \leq C \cdot g$ with $C$ a positive real
-  constant is equivalent to $\ordw(f) \geq \ordw(g)$ (i.e.\
+  constant is equivalent to $\ordw(f) \leq \ordw(g)$ (i.e.\
   $f \preceq g$).
-- A classical $f = O(g)$ is equivalent to $\ordw(f) \geq \ordw(g)$.
+- A classical $f = O(g)$ is equivalent to $\ordw(f) \leq \ordw(g)$.
 - A classical $f \sim g$ is equivalent to $\ordw(f) = \ordw(g)$
   with matching leading coefficient ($f \simeq g$).
 - A classical limit $\lim_{x \to x_0} f(x) = L$ in the body is

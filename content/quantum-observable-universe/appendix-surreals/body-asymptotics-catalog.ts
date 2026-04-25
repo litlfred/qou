@@ -20,6 +20,8 @@ export default remark({
     "prop:feynman-classical-limit",
     "prf:mobius-energy",
     "rem:mass-endomorphism-jet-tower",
+    "conj:kashaev-surreal",
+    "conj:classical-limit-stpart",
   ],
   tags: [
     "surreal-numbers",
