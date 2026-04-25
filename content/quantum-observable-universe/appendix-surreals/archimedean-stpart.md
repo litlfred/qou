@@ -1,3 +1,11 @@
+**Where this fits.** This is the *whole-tuple* version of the
+classical-limit replacement. The single-functor version is
+[classical limit as standard-part](#conj:classical-limit-stpart);
+the topological original is
+[classical limit functor](#def:classical-limit-functor); the
+proof strategy lives in
+[archimedean-stpart strategy](#rem:archimedean-stpart-strategy).
+
 A QOU is an archimedean tuple
 $(\mathbf{C}, \theta, G, \mathcal{S})$
 ([quantum observable universe](#def:quantum-observable-universe))
@@ -106,50 +114,5 @@ generalisation of the main paper:
 Both steps require the surreal-categorical machinery that does
 not yet exist in mathlib.
 
-## Proof strategy
-
-The conjecture is the *category-level* counterpart of
-[classical-limit-stpart](#conj:classical-limit-stpart). Reduce
-to that conjecture via:
-
-1. **Functorial reduction**. Show
-   $\mathrm{St}_{\mathrm{QOU}} = (\mathrm{St}, \mathrm{St}, \mathrm{St},
-   \mathrm{St})$ — the standard-part applied to each component of the
-   QOU tuple $(\mathbf{C}, \theta, G, \mathcal{S})$.
-
-2. **Reduce each component**:
-   - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
-     $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
-     $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
-     [classical-limit-stpart](#conj:classical-limit-stpart).
-   - $\theta : \mathbf{1} \to A$: just an element of a hom-space;
-     $\mathrm{St}$ acts entry-wise.
-   - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
-     of an algebraic group object.
-   - $\mathcal{S}$: state bundle; standard-part of fibre.
-
-3. **Verify axioms**: each $\varepsilon$-relaxed axiom (Frobenius,
-   observability, volume, vacuum) becomes the strict axiom under
-   $\mathrm{St}$ — content of conjectures
-   [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
-   [infinitesimal-observability](#conj:infinitesimal-observability),
-   [vacuum-epsilon](#conj:vacuum-epsilon).
-
-4. **Essential surjectivity**: every archimedean QOU lifts (set
-   $\varepsilon = 0$ trivially). This direction is automatic.
-
-**Required infrastructure**:
-- The five sub-conjectures above (or worked examples).
-- A `Functor` instance from `QOU_𝐍𝐨^ε` to `QOU_ℝ` in Lean.
-- `CategoryTheory.MonoidalFunctor` interaction with $\mathrm{St}$.
-
-**Falsification path**: exhibit an $\varepsilon$-relaxed surreal
-QOU whose standard-part image violates a strict QOU axiom
-(e.g., the Frobenius pairing of the standard-part has positive
-nullity). This would require an infinitesimal that becomes
-non-infinitesimal under standard-part — impossible by the
-definition of $\mathrm{st}$.
-
-**Provability assessment**: structurally clean once the
-sub-conjectures are settled. Mainly bookkeeping over the four
-QOU components.
+A proof strategy is broken out separately in
+[archimedean-stpart strategy](#rem:archimedean-stpart-strategy).

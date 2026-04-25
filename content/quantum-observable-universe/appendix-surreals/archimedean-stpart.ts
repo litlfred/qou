@@ -16,6 +16,7 @@ export default conjecture({
     "def:quantum-observable-universe",
     "def:standard-part-functor",
     "conj:classical-limit-stpart",
+    "rem:fibre-functor-rigidity",
   ],
   cites: ["robinson1966", "ehrlich2012"],
 });

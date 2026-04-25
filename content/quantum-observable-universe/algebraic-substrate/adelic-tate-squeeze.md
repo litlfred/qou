@@ -8,6 +8,32 @@ global $\varepsilon$ is a restricted product of $\varepsilon_p$'s,
 and the [surreal squeeze](#lem:surreal-squeeze) at each prime
 descends to the global squeeze of [RH surreal bound](#rem:rh-surreal-bound).
 
+**$\tau$ and $\mathrm{St}$ are dual archimedean reductions.**
+Two morphisms in this paper extract real-valued data from
+substrate-internal data, and they meet at the archimedean place
+$v = \infty$ of $\mathbb{A}$:
+
+- $\tau$ — the
+  [QOU fibre functor](#rem:fibre-functor-rigidity), restricted
+  to its archimedean component
+  $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$, is the
+  algebraic-geometry / Weil realization. It evaluates the
+  algebraic quantum volume on the $\mathbb{R}$-component of
+  the adelic ring (see
+  [Vol(K) factors through $\tau$](#prop:vol-through-tau)).
+- $\mathrm{St}$ — the
+  [standard-part functor](#def:standard-part-functor) is the
+  surreal-field extraction $\mathbf{No} \to \mathbb{R}$ that
+  collapses positive infinitesimals to $0$.
+
+They are *dual* reductions: $\tau_{\mathrm{arch}}$ projects across
+the adelic places (selecting $v = \infty$), while $\mathrm{St}$
+projects along the surreal birthday filtration (collapsing
+$\varepsilon \to 0$). This remark uses both — $\mathrm{St}$ inside
+each local factor (to read off the real-valued bound) and
+$\tau_{\mathrm{arch}} = \pi_\infty$ across factors (to assemble the
+global zeta).
+
 **Setup.** Let $\mathbb{A} = \mathbb{R} \times \prod_p' \mathbb{Q}_p$
 be the rational adele ring.  For each place $v$ of $\mathbb{Q}$
 (archimedean $v = \infty$ or non-archimedean $v = p$), the local

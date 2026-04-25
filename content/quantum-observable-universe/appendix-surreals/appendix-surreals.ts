@@ -34,6 +34,7 @@ export default chapter({
         "valuation-ring-finite-surreals",
         "classical-limit-stpart",
         "archimedean-stpart",
+        "archimedean-stpart-strategy",
       ],
     },
     {
