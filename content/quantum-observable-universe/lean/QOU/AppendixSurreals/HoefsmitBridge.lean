@@ -11,12 +11,19 @@ Mathlib's `Combinatorics.YoungTableau` does not yet expose the YJM
 (Young–Jucys–Murphy) extension as a rooted-tree structure, so the
 full bridge cannot be proved here.  This file provides:
 
-1. an abstract `TwoRowTableau` type matching the cardinality of
-   two-rowed standard tableaux of size `n`;
-2. an explicit bijection at small sizes (`n ≤ 2`), proving the
-   first non-trivial case of the bridge proposition;
-3. an axiomatic statement of the bridge in general, with the full
-   proof deferred to a future YJM-tree formalisation.
+1. an abstract `TwoRowTableau` type recording only the row sizes
+   `(row1, row2)` of a two-rowed Young shape.  This matches the
+   set of two-rowed *shapes* (one shape per partition), which
+   coincides with the set of two-rowed *standard tableaux* only
+   for `n ≤ 2`; for `n ≥ 3` distinct standard tableaux of the
+   same shape (e.g. the two tableaux of shape `(2, 1)` at `n = 3`)
+   are not distinguished by `TwoRowTableau`;
+2. an explicit injectivity proof at small sizes (`n ≤ 2`), the
+   first non-trivial cases of the bridge proposition;
+3. a typeclass formulation of the bridge in general (per
+   CLAUDE.md §3b), with the witness deferred to a future
+   entry-aware refactor of `TwoRowTableau` plus a YJM-tree
+   formalisation.
 
 ## References
 
@@ -153,10 +160,12 @@ theorem hoefsmit_bridge_two :
     cases t₁; cases t₂
     congr <;> omega
   · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1.
+    -- After simp, heq becomes `1 = -1` in ℚ; close via norm_num.
     simp [hoefsmitDyadic, h1, h2] at heq
-    -- heq : 1 = -1 in ℚ — contradiction.
-  · -- Symmetric: t₁ = (1,1), t₂ = (2,0).
+    exact absurd heq (by norm_num)
+  · -- Symmetric: t₁ = (1,1), t₂ = (2,0); heq : -1 = 1 in ℚ.
     simp [hoefsmitDyadic, h1, h2] at heq
+    exact absurd heq (by norm_num)
   · -- Both row2 = 1: same tableau (1, 1).
     cases t₁; cases t₂
     congr <;> omega

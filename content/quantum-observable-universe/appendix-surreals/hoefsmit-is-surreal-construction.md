@@ -40,9 +40,11 @@ $$
 
 (taking values in dyadic surreals of birthday $\leq n$) such that:
 
-1. The **empty tableau** at $n = 0$ maps to the surreal $0$.  For
-   $n \geq 1$ the one-row tableau $(n)$ maps to a non-zero value
-   determined by its sign sequence (see item 2).
+1. The empty tableau at $n = 0$ and the singleton tableau at
+   $n = 1$ both map to the surreal $0$ (the singleton's sign
+   sequence is empty, of length $n - 1 = 0$).  For $n \geq 2$ the
+   one-row tableau $(n)$ maps to a non-zero value determined by
+   its sign sequence (see item 2).
 2. Each YJM-edge $t \to t'$ in the tableau forest corresponds to a
    unique sign-sequence extension $s \to s\!\cdot\! +$ (symmetric
    channel: new box in the top row) or $s \to s\!\cdot\! -$

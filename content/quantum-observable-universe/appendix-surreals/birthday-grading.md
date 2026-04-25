@@ -12,7 +12,7 @@ $$
   b(\omega) = \omega, \qquad
   b(1/2) = 2, \qquad
   b(\pi) = \omega, \qquad
-  b(\varepsilon) = \omega + 1.
+  b(\varepsilon) = \omega.
 $$
 
 The birthday function refines the archimedean norm: if $x, y \in
@@ -61,28 +61,34 @@ only on the archimedean part.
 ## Example: substrate parameter at $q = 1 + \varepsilon$
 
 Set $q = 1 + \varepsilon$ for infinitesimal $\varepsilon \in
-\mathbf{No}$ with $b(\varepsilon) = \omega + 1$. Then:
+\mathbf{No}$ with $b(\varepsilon) = \omega$ (its sign sequence
+$(+, -, -, -, \ldots)$ has length $1 + \omega = \omega$). Then:
 
-- $c_q = 1/(q - 1) = 1/\varepsilon$ has birthday $\omega + 1$
-  (same as $\varepsilon$; reciprocal preserves birthday up to
-  ordinal arithmetic).
+- $c_q = 1/(q - 1) = 1/\varepsilon = \omega$ has birthday $\omega$.
 - $\hbar_q = (q-1)/q = \varepsilon(1 + \varepsilon)^{-1}$ has
-  birthday $\omega + 1$.
+  birthday $\omega$.
 - $d_H(q) = (2q-1)^2/q^3 = (1 + 2\varepsilon)^2(1 + \varepsilon)^{-3}$
-  has birthday $\omega + 1$ (same regime: "archimedean + one
-  order of $\varepsilon$").
+  has birthday $\omega$.
 
 In general, expressions rational in $q$ at $q = 1 + \varepsilon$
-live in the birthday stratum $\leq \omega + 1$, which is
-exactly the Laurent-series stratum $\mathbb{R}((\varepsilon))$.
+live in the birthday-$\leq \omega$ stratum, embedded in the
+Laurent-series field $\mathbb{R}(\!(\varepsilon)\!)$. The
+finite-vs-infinitesimal distinction within this stratum is
+determined by the standard-part map, **not** by birthday alone:
+limit reals like $\pi$ also have birthday $\omega$.
 
 ## Role in the appendix
 
-The birthday grading gives a clean language for "how far from
-archimedean" a statement is. Statements in birthday $\leq \omega$
-are classical; statements in birthday $\omega + 1$ are first-order
-infinitesimal; statements involving $\omega$ itself are properly
-transfinite. The appendix's relaxed axioms
+The birthday grading gives a coarse "how transfinite" depth gauge.
+Statements with all hom-coefficients of birthday $< \omega$
+involve only dyadic rationals; birthday-$\leq \omega$ statements
+include limit reals and first-order infinitesimals; birthday
+$> \omega$ statements use named infinities like $\omega$ itself
+or transseries terms like $\log \omega$.
+
+The appendix's relaxed axioms
 ([infinitesimal Frobenius](#conj:infinitesimal-frobenius)) all
-allow corrections in birthday $\leq \omega + 1$, i.e., of the
-form $\mathrm{id} + O(\varepsilon)$.
+allow corrections of the form $\mathrm{id} + O(\varepsilon)$,
+which live at birthday $\leq \omega$ but are distinguished from
+classical $\mathrm{id}$ by having non-zero standard-part of the
+$\varepsilon$-coefficient.
