@@ -11,6 +11,9 @@ export default remark({
     "rem:p-vs-np-surreal-bound",
     "rem:yang-mills-surreal-bound",
     "rem:adelic-tate-squeeze",
+    "lem:surreal-squeeze",
+    "rem:body-asymptotics-catalog",
+    "rem:conway-normal-form",
   ],
   tags: [
     "millennium-problems",

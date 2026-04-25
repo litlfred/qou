@@ -6,6 +6,24 @@ standard-real deviation and the mass-gap infinitesimal, with the
 adelic--Tate factorisation giving the local-global refinement.
 This remark collects the six squeezes side by side.
 
+**Two equivalent forms — same inequality.** The same squeeze
+appears in two notations across this section; they are *not*
+two separate proof methods:
+
+- The **$\mathbb{R}(\varepsilon)$ form** ([surreal squeeze](#lem:surreal-squeeze))
+  states the literal inequality
+  $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$ in the
+  ordered-field $\mathbb{R}(\varepsilon)$.
+- The **$\omega$-adic-order form** ([Big-O catalog](#rem:body-asymptotics-catalog))
+  rewrites it as $\ordw(\delta^2 \cdot \varepsilon^{-1}) <
+  \ordw(\varepsilon^3)$ in $\mathbb{Z}$.
+
+The two forms are interconverted by the
+[Conway normal form](#rem:conway-normal-form) bridge:
+$\ordw(\varepsilon^k) = -k$, with strict inequality preserved.
+The body uses whichever form is more convenient per problem;
+treat them as the same inequality.
+
 **The common template.** Let $\varepsilon \in \mathrm{Der}(A)$ be the
 Reeb infinitesimal
 ([Reeb infinitesimal](#def:reeb-epsilon))
