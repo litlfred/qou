@@ -38,8 +38,7 @@ Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem unique {M : Type*}
     (sp₁ sp₂ : SubstrateParameter M) :
     sp₁.field = sp₂.field := by
-  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+  sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 
 end SubstrateParameter
 end QOU

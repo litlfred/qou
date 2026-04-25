@@ -149,7 +149,7 @@ If the author says "apply all" or "go ahead":
 ### Findings (in dependency order)
 
 #### 1. `prop:q-hodge-decomp` — 2 critical, 1 major
-**GitHub**: https://github.com/litlfred/qou/blob/<branch>/content/.../q-hodge-decomp.md
+**GitHub**: <repo-url>/blob/<branch>/content/.../q-hodge-decomp.md
 
 - [critical, proof-gap-audit] Existence of harmonic representative
   asserted but not constructed. Proof says "choose $h \in \ker \Delta_q$"

@@ -98,7 +98,7 @@ cross-referencing the two views.
 ### Phase 1 — Enumerate blocks with both siblings
 
 ```bash
-find content/quantum-observable-universe -name '*.lean' -print0 | \
+find content/<paper> -name '*.lean' -print0 | \
 while IFS= read -r -d '' leanfile; do
     md="${leanfile%.lean}.md"
     ts="${leanfile%.lean}.ts"
