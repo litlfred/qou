@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:feynman-classical-limit",
-  lean: {
-    decl: "QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration",
+  lean: { ref: "qou:QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration",
     validation: "not_checked",
   },
   title: "Classical limit: recovery of the symmetric path integral",
@@ -12,6 +11,7 @@ export default proposition({
     "prop:feynman-categorical-trace",
     "rem:hecke-algebra-from-braiding",
     "def:q-energy",
+    "conj:classical-limit-stpart",
   ],
   proofs: [],
 });

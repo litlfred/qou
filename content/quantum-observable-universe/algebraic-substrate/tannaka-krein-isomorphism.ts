@@ -3,8 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:tannaka-krein-isomorphism",
   title: "Tannaka--Krein duality for the substrate",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.tannaka_krein_isomorphism",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.tannaka_krein_isomorphism",
     validation: "not_checked",
   },
   uses: [

@@ -10,8 +10,7 @@ export default definition({
     "fermionic",
     "factorization",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.SpectatorNormalization",
+  lean: { ref: "qou:QOU.ParticleInteractions.SpectatorNormalization",
     validation: "not_checked",
   },
   uses: [

@@ -6,8 +6,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:palindromicity-orbital-type",
   title: "Palindromicity and orbital type",
-  lean: {
-    decl: "QOU.Molecular.PalindromicityOrbitalType",
+  lean: { ref: "qou:QOU.Molecular.PalindromicityOrbitalType",
     validation: "not_checked",
   },
   uses: [

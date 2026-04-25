@@ -16,9 +16,7 @@ export default proposition({
     "def:quantum-characteristic-classes",
     "prop:yekutieli-lifting",
   ],
-  lean: {
-    decl: "QOU.Descartes.CSEvaluationFaithful",
-    file: "QOU/Descartes/HyperbolicVolumeTranscendence.lean",
+  lean: { ref: "qou:QOU.Descartes.CSEvaluationFaithful",
     validation: "not_checked",
   },
 });

@@ -2,7 +2,7 @@
 # QOU.Descartes.spectral_decomposition_qvalue — Spectral decomposition of the Q_q-value
 
 The torus knots embeddable on Σ₄ form a complete, self-dual basis
-for the Hilbert space of the Hecke algebra H_n(q).  The Q_q-value of
+for the regular representation of the Hecke algebra H_n(q).  The Q_q-value of
 beta decay is the spectral decomposition of the decay operator in
 this basis.  The decomposition is exact and finite — it terminates at
 degree 2 because the embeddability bound on Σ₄ kills all higher jets.

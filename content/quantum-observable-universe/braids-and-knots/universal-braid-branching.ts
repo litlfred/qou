@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:universal-braid-branching",
   title:
     "Universal braid character formula via Young's lattice branching",
-  lean: {
-    decl: "QOU.BraidKnot.universal_braid_branching",
+  lean: { ref: "qou:QOU.BraidKnot.universal_braid_branching",
     validation: "not_checked",
   },
   uses: [

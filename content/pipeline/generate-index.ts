@@ -64,7 +64,7 @@ async function main() {
             chapter: ch.title,
             chapterNumber: chapterNumber,
             section: section.title,
-            lean: block.lean?.decl,
+            lean: block.lean?.ref,
           });
         } catch {
           // Skip blocks that fail to load

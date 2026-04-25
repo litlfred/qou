@@ -4,7 +4,7 @@ export default definition({
   label: "def:q-navier-stokes",
   title: "$q$-deformed Navier--Stokes equation",
   lean: {
-    decl: "QOU.FluidDynamics.QNavierStokes",
+    ref: "qou:QOU.FluidDynamics.QNavierStokes",
     validation: "not_checked",
   },
   uses: [

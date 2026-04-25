@@ -4,7 +4,7 @@ export default example({
   interprets: "def:involutive-structure",
   label: "ex:dagger-su2",
   title: "Involutive structure on $\\mathrm{Rep}(\\mathrm{SU}(2))$",
-  lean: { decl: "QOU.Examples.su2Dagger", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Examples.su2Dagger", validation: "not_checked" },
   uses: [
     "prop:positive-definite-dagger",
     "ex:frobenius-su2",

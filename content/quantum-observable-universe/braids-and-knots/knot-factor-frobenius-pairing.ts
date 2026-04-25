@@ -4,8 +4,7 @@ export default conjecture({
   label: "conj:knot-factor-frobenius-pairing",
   title:
     "Knot factor as Frobenius self-pairing ratio",
-  lean: {
-    decl: "QOU.BraidKnot.KnotFactorFrobeniusPairing",
+  lean: { ref: "qou:QOU.BraidKnot.KnotFactorFrobeniusPairing",
     validation: "not_checked",
   },
   uses: [

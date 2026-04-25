@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mass-identity-exists",
   title: "Well-definedness of the inertial mass identity",
-  lean: {
-    decl: "QOU.MassIdentity.exists",
+  lean: { ref: "qou:QOU.MassIdentity.exists",
     validation: "not_checked",
   },
   uses: [

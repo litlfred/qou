@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:vertex-algebra-jet-relations",
-  lean: {
-    decl: "QOU.VertexAlgebra.JetRelations.euler_level_stable",
+  lean: { ref: "qou:QOU.VertexAlgebra.JetRelations.euler_level_stable",
     validation: "not_checked",
   },
   title: "QU/QUO and cohomological relations on the jet bundle",

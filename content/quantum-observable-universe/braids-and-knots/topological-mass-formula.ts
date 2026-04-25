@@ -8,9 +8,7 @@ export default proposition({
     "thm:topological-mass",
     "def:quantum-planck-constant",
   ],
-  lean: {
-    decl: "QOU.Torsion.ArchimedeanMassFormula",
-    file: "QOU/ArchimedeanMassFormula.lean",
+  lean: { ref: "qou:QOU.Torsion.ArchimedeanMassFormula",
     validation: "not_checked",
   },
 });

@@ -4,8 +4,7 @@ export default definition({
   label: "def:down-quark",
   title: "Down quark",
   tags: ["quark", "down", "unknot", "borromean", "fermion", "color-tube"],
-  lean: {
-    decl: "QOU.Descartes.DownQuark",
+  lean: { ref: "qou:QOU.Descartes.DownQuark",
     validation: "not_checked",
   },
   uses: ["def:up-quark"],

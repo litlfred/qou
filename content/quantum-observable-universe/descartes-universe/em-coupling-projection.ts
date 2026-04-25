@@ -17,8 +17,7 @@ export default proposition({
     "descent-decomposition",
     "exceptional-divisor",
   ],
-  lean: {
-    decl: "QOU.Descartes.em_coupling_projection",
+  lean: { ref: "qou:QOU.Descartes.em_coupling_projection",
     validation: "not_checked",
   },
   uses: ["rem:force-knot-identification"],

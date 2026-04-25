@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-hodge-star-unique",
   title: "Uniqueness of the categorical Hodge star",
-  lean: {
-    decl: "QOU.CategoricalHodgeStar.unique",
+  lean: { ref: "qou:QOU.CategoricalHodgeStar.unique",
     validation: "not_checked",
   },
   uses: [

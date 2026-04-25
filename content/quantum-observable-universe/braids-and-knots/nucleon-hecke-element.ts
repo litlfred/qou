@@ -12,8 +12,7 @@ export default definition({
     "borromean",
     "typed-crossing",
   ],
-  lean: {
-    decl: "QOU.Braiding.NucleonHeckeElement",
+  lean: { ref: "qou:QOU.Braiding.NucleonHeckeElement",
     validation: "not_checked",
   },
   uses: [

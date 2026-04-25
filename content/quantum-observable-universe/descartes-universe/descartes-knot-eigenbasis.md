@@ -34,7 +34,7 @@ representation.  Then the knot-type eigenbasis is complete:
    ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)),
    the three inputs --- Schur--Weyl decomposition, Alexander
    surjectivity, and Markov trace detection --- yield a complete
-   knot-type eigenbasis for
-   $\mathcal{H}_{\mathrm{phys}} = \varinjlim V^{\otimes n}$.
+   knot-type eigenbasis for the algebraic direct limit
+   $V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$.
    The Feynman path integral is replaced by a finite categorical trace
    over knot-labelled summands.

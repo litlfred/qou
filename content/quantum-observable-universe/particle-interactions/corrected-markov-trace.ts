@@ -11,8 +11,7 @@ export default proposition({
     "yang-baxter",
     "adjacent-generators",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.corrected_markov_trace",
+  lean: { ref: "qou:QOU.ParticleInteractions.corrected_markov_trace",
     validation: "not_checked",
   },
   uses: [

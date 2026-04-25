@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-logarithm-exists",
   title: "Existence of the $q$-logarithm primitive",
-  lean: {
-    decl: "QOU.QLogarithm.exists_in_shuffle_hopf",
+  lean: { ref: "qou:QOU.QLogarithm.exists_in_shuffle_hopf",
     validation: "not_checked",
   },
   uses: [
