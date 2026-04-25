@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-fourier-unique",
   title: "Uniqueness of the categorical Fourier transform",
-  lean: {
-    decl: "QOU.CategoricalFourier.unique",
+  lean: { ref: "qou:QOU.CategoricalFourier.unique",
     validation: "not_checked",
   },
   uses: [

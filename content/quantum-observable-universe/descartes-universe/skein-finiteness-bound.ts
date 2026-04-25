@@ -13,8 +13,7 @@ export default proposition({
     "drip-line",
     "nuclear-chart",
   ],
-  lean: {
-    decl: "QOU.Descartes.skein_finiteness_bound",
+  lean: { ref: "qou:QOU.Descartes.skein_finiteness_bound",
     validation: "not_checked",
   },
   uses: [

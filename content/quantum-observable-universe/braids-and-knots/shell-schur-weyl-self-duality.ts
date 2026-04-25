@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:shell-schur-weyl-self-duality",
   title:
     "Schur-Weyl justification of shell-operator self-duality",
-  lean: {
-    decl: "QOU.BraidKnot.ShellSchurWeylSelfDuality",
+  lean: { ref: "qou:QOU.BraidKnot.ShellSchurWeylSelfDuality",
     validation: "not_checked",
   },
   uses: [

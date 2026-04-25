@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-fourier-exists",
   title: "Existence of the categorical Fourier transform",
-  lean: {
-    decl: "QOU.CategoricalFourier.exists",
+  lean: { ref: "qou:QOU.CategoricalFourier.exists",
     validation: "not_checked",
   },
   uses: [

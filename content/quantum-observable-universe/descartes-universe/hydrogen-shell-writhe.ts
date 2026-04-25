@@ -5,8 +5,7 @@ export default proposition({
   title:
     "Electron shell number equals writhe level of the trefoil embedding",
   tags: ["hydrogen", "shell", "writhe", "trefoil", "reidemeister", "orbital"],
-  lean: {
-    decl: "QOU.BringsSurface.hydrogen_shell_writhe",
+  lean: { ref: "qou:QOU.BringsSurface.hydrogen_shell_writhe",
     validation: "not_checked",
   },
   uses: ["def:electron-knot"],

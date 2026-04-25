@@ -11,8 +11,7 @@ export default theorem({
     "hecke-algebra",
     "vertex-operator",
   ],
-  lean: {
-    decl: "QOU.markov_trace_product",
+  lean: { ref: "qou:QOU.markov_trace_product",
     validation: "not_checked",
   },
   uses: [

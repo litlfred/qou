@@ -4,8 +4,7 @@ export default definition({
   label: "def:quantum-universe",
   title: "Quantum Universe",
   tags: ["category-theory", "quantum"],
-  lean: {
-    decl: "QOU.QuantumUniverse",
+  lean: { ref: "qou:QOU.QuantumUniverse",
     validation: "not_checked",
   },
   uses: ["def:rigid-monoidal-category"],

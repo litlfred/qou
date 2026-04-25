@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:vertex-algebra-relations",
-  lean: {
-    decl: "QOU.VertexAlgebra.descartes_genus",
+  lean: { ref: "qou:QOU.VertexAlgebra.descartes_genus",
     validation: "not_checked",
   },
   title: "QU and QUO axioms as relations on Hecke generators",

@@ -12,8 +12,7 @@ export default conjecture({
     "kz-connection",
     "flatness",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.LiftedCrossingLocality",
+  lean: { ref: "qou:QOU.ParticleInteractions.LiftedCrossingLocality",
     validation: "not_checked",
   },
   uses: [

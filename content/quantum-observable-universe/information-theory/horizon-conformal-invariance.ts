@@ -7,8 +7,7 @@ export default proposition({
     "jet-horizon", "conformal-invariance", "aeon",
     "observability", "degree-zero",
   ],
-  lean: {
-    decl: "QOU.horizon_conformal_invariance",
+  lean: { ref: "qou:QOU.horizon_conformal_invariance",
     validation: "not_checked",
   },
   uses: [

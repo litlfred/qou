@@ -10,8 +10,7 @@ export default proposition({
     "genus",
     "finiteness",
   ],
-  lean: {
-    decl: "QOU.Torsion.torus_knot_generators_finite",
+  lean: { ref: "qou:QOU.Torsion.torus_knot_generators_finite",
     validation: "not_checked",
   },
   uses: [

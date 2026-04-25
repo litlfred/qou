@@ -13,6 +13,21 @@ do not request external reviews until every earlier step has succeeded.
   a resolution is non-obvious). Re-run validation after each conflict fix.
 - Continue until the rebase completes cleanly.
 
+## 1a. Migrate any legacy `lean.ref` shapes pulled in from upstream
+
+- After every rebase / merge, **run the lean-ref migration script**:
+  `cd content && bun run migrate-lean-refs`. The script is idempotent
+  (no-op when there is nothing to migrate) — running it unconditionally
+  is the standardized post-rebase workflow described in
+  CLAUDE.md §0b.
+- This catches blocks that landed on `origin/main` while the branch was
+  in flight and still use the legacy `lean: { decl: "...", file? }`
+  shape (Zod will hard-fail validation on those).
+- If the script writes any files, stage and amend them into the rebase
+  result before continuing (`git add` + `git commit --amend --no-edit`
+  on the topmost integration commit, or as a follow-up commit if the
+  rebase was non-trivial).
+
 ## 2. Integrate new content from upstream
 
 - Pull in any new content blocks, glossary updates, or references that
@@ -28,7 +43,9 @@ do not request external reviews until every earlier step has succeeded.
 
 ## 4. 100% Lean — build + resolutions
 
-- Run `lake build` in `content/quantum-observable-universe/lean/`.
+- Run `lake build` from the **repo root** (the standardized root Lake
+  workspace builds every paper package — `qou`, `ugb`, `fred2005` —
+  in one pass; see CLAUDE.md §0).
 - If the build fails, route to `lean-build-fix` and resolve.
 - Run `lean-completeness-audit`: every `sorry` must carry a `-- Ref:`
   citation, every `definition` block must have its `.lean` sibling,

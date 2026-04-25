@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:frobenius-pairing-unique",
   title: "Uniqueness of the Frobenius pairing",
-  lean: {
-    decl: "QOU.FrobeniusHopfData.frobeniusForm_unique",
+  lean: { ref: "qou:QOU.FrobeniusHopfData.frobeniusForm_unique",
     validation: "not_checked",
   },
   uses: [

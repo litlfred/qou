@@ -14,8 +14,7 @@ export default proposition({
     "electromagnetic-signature",
     "falsifiability",
   ],
-  lean: {
-    decl: "QOU.Descartes.strangelet_double_beta",
+  lean: { ref: "qou:QOU.Descartes.strangelet_double_beta",
     validation: "not_checked",
   },
   uses: [

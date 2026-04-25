@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-action-exists",
   title: "Existence of the categorical action",
-  lean: {
-    decl: "QOU.CategoricalAction.exists",
+  lean: { ref: "qou:QOU.CategoricalAction.exists",
     validation: "not_checked",
   },
   uses: [

@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:reeb-bundle",
-  lean: { decl: "QOU.ReebBundle", validation: "not_checked" },
+  lean: { ref: "qou:QOU.ReebBundle", validation: "not_checked" },
   title: "Reeb bundle over the exceptional divisor",
   tags: [
     "reeb-bundle", "exceptional-divisor", "hopf-fibration",

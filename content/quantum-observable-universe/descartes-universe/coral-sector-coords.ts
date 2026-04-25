@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:coral-sector-coords",
-  lean: { decl: "QOU.CoralSectorCoords", validation: "not_checked" },
+  lean: { ref: "qou:QOU.CoralSectorCoords", validation: "not_checked" },
   title: "Coral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
   tags: ["descartes-universe", "coral-sectors", "colour-charge"],
   uses: [

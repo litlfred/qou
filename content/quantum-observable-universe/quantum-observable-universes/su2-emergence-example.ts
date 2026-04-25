@@ -4,7 +4,7 @@ export default example({
   interprets: "thm:su2-emergence",
   label: "ex:su2-emergence",
   title: "Emergence of $\\mathrm{SU}(2)$: the full chain",
-  lean: { decl: "QOU.Examples.su2Emergence", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Examples.su2Emergence", validation: "not_checked" },
   uses: [
     "thm:su2-emergence",
     "ex:dagger-su2",

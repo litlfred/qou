@@ -6,8 +6,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:electron-shell-braid-capacity",
   title: "Electron shell as braid bonding capacity",
-  lean: {
-    decl: "QOU.Molecular.ElectronShellCapacity",
+  lean: { ref: "qou:QOU.Molecular.ElectronShellCapacity",
     validation: "not_checked",
   },
   uses: ["def:atomic-braid"],

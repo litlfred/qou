@@ -13,8 +13,7 @@ export default theorem({
     "spectral-filter",
     "embeddability",
   ],
-  lean: {
-    decl: "QOU.Descartes.generation_completeness",
+  lean: { ref: "qou:QOU.Descartes.generation_completeness",
     validation: "not_checked",
   },
   uses: [

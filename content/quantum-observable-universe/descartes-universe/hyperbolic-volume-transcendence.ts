@@ -15,9 +15,7 @@ export default conjecture({
     "conj:baryon-period-ratio",
     "def:substrate-parameter",
   ],
-  lean: {
-    decl: "QOU.Descartes.HyperbolicVolumeIndependence",
-    file: "QOU/Descartes/HyperbolicVolumeTranscendence.lean",
+  lean: { ref: "qou:QOU.Descartes.HyperbolicVolumeIndependence",
     validation: "not_checked",
   },
 });

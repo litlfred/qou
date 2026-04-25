@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-dirac-operator-exists",
   title: "Existence of the categorical Dirac operator",
-  lean: {
-    decl: "QOU.CategoricalDirac.exists",
+  lean: { ref: "qou:QOU.CategoricalDirac.exists",
     validation: "not_checked",
   },
   uses: [

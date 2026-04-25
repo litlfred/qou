@@ -8,8 +8,7 @@ export default proof({
     "prop:knot-eigenbasis-complete",
     "prf:knot-volumes-verification",
   ],
-  lean: {
-    decl: "QOU.HadronicMass.terminal_resolution_hadronic_mass",
+  lean: { ref: "qou:QOU.HadronicMass.terminal_resolution_hadronic_mass",
     validation: "leanok",
   },
   computation: {

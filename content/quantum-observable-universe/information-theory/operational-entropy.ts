@@ -10,8 +10,7 @@ export default definition({
     "reeb-flow",
     "hausdorff-dimension",
   ],
-  lean: {
-    decl: "QOU.Information.operationalEntropy",
+  lean: { ref: "qou:QOU.Information.operationalEntropy",
     validation: "not_checked",
   },
   uses: [

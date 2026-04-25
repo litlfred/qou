@@ -11,8 +11,7 @@ export default remark({
     "projection",
     "lattice",
   ],
-  lean: {
-    decl: "QOU.Descartes.weierstrassProjection",
+  lean: { ref: "qou:QOU.Descartes.weierstrassProjection",
     validation: "not_checked",
   },
   uses: [

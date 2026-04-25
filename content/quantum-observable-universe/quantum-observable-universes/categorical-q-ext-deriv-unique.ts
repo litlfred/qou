@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-q-ext-deriv-unique",
   title: "Uniqueness of the categorical $q$-exterior derivative",
-  lean: {
-    decl: "QOU.CategoricalQExtDeriv.unique",
+  lean: { ref: "qou:QOU.CategoricalQExtDeriv.unique",
     validation: "not_checked",
   },
   uses: [

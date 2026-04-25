@@ -4,8 +4,7 @@ export default definition({
   label: "def:categorical-meson",
   title: "Meson (categorical)",
   tags: ["meson", "hadron", "knot", "categorical", "quark-antiquark"],
-  lean: {
-    decl: "QOU.Torsion.CategoricalMeson",
+  lean: { ref: "qou:QOU.Torsion.CategoricalMeson",
     validation: "not_checked",
   },
   uses: [

@@ -4,7 +4,7 @@ export default definition({
   label: "def:derived-atom",
   title: "Derived atom $\\mathcal{A}(Z, N)$ from pair production",
   lean: {
-    decl: "QOU.Interactions.DerivedAtom",
+    ref: "qou:QOU.Interactions.DerivedAtom",
     validation: "not_checked",
   },
   tags: [
