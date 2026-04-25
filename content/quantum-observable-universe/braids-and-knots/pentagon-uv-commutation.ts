@@ -12,7 +12,7 @@ export default proposition({
     "jet-tower",
   ],
   lean: {
-    decl: "QOU.QuantumBloch.pentagon_uv_commutation",
+    ref: "qou:QOU.QuantumBloch.pentagon_uv_commutation",
     validation: "not_checked",
   },
   uses: [

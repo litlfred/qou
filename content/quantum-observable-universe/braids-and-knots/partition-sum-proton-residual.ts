@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Proton tower residual = $m_e \\cdot \\mathrm{tr}_M(C_{\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$",
   lean: {
-    decl: "QOU.BraidKnot.proton_tower_residual_frobenius",
+    ref: "qou:QOU.BraidKnot.proton_tower_residual_frobenius",
     validation: "not_checked",
   },
   uses: [

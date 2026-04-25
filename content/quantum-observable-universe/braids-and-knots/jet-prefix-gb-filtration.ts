@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)",
   lean: {
-    decl: "QOU.BraidKnot.jet_prefix_gb_filtration",
+    ref: "qou:QOU.BraidKnot.jet_prefix_gb_filtration",
     validation: "not_checked",
   },
   uses: [

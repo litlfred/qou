@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Mass formula regime switch: SW+Frob for $A \\leq 2$, BW+$\\chi$ for $A \\geq 3$ (non-additive)",
   lean: {
-    decl: "QOU.BraidKnot.mass_formula_regime_switching",
+    ref: "qou:QOU.BraidKnot.mass_formula_regime_switching",
     validation: "not_checked",
   },
   uses: [

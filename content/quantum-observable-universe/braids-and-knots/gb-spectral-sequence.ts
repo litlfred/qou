@@ -5,7 +5,7 @@ export default proposition({
   title:
     "GB-filtration spectral sequence and $E_\\infty$ convergence of the 6-term mass",
   lean: {
-    decl: "QOU.BraidKnot.gb_spectral_sequence",
+    ref: "qou:QOU.BraidKnot.gb_spectral_sequence",
     validation: "not_checked",
   },
   uses: [

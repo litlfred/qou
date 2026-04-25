@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:derived-mass-formula-light-isotopes",
   title: "Derived-only mass formula reproduces light atomic masses to sub-percent",
   lean: {
-    decl: "QOU.WedderburnMass.derivedLightIsotopeFormula",
+    ref: "qou:QOU.WedderburnMass.derivedLightIsotopeFormula",
     validation: "not_checked",
   },
   uses: [

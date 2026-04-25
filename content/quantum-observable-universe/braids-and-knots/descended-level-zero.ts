@@ -12,7 +12,7 @@ export default proposition({
     "audit",
   ],
   lean: {
-    decl: "QOU.Descent.descended_level_zero",
+    ref: "qou:QOU.Descent.descended_level_zero",
     validation: "not_checked",
   },
   uses: [

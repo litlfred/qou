@@ -19,7 +19,7 @@ export default proposition({
   ],
   cites: ["habiro2002", "kassel1995", "jones1987"],
   lean: {
-    decl: "QOU.BraidKnot.habiro_expansion_atomic",
+    ref: "qou:QOU.BraidKnot.habiro_expansion_atomic",
     validation: "not_checked",
   },
 });

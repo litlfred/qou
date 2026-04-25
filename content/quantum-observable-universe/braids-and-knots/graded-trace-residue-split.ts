@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Graded-trace residue split on the confinement filtration",
   lean: {
-    decl: "QOU.BraidKnot.graded_trace_residue_split",
+    ref: "qou:QOU.BraidKnot.graded_trace_residue_split",
     validation: "not_checked",
   },
   uses: [

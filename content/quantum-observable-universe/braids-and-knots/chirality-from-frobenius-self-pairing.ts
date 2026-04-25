@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Chirality factor from Frobenius self-pairing: $a_K = \\langle \\beta, \\beta^{\\ast} \\rangle_\\tau$",
   lean: {
-    decl: "QOU.BraidKnot.chirality_frobenius_self_pairing",
+    ref: "qou:QOU.BraidKnot.chirality_frobenius_self_pairing",
     validation: "not_checked",
   },
   uses: [

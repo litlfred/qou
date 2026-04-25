@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Explicit $d_1, d_2$ on $H_3(q)$ over $\\mathbb{R}[q, q^{-1}]$",
   lean: {
-    decl: "QOU.BraidKnot.spectral_sequence_h3_explicit",
+    ref: "qou:QOU.BraidKnot.spectral_sequence_h3_explicit",
     validation: "not_checked",
   },
   uses: [

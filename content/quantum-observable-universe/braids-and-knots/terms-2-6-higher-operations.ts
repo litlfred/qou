@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Terms 2 and 6 as higher Gerstenhaber / cup-product operations on the spectral sequence",
   lean: {
-    decl: "QOU.BraidKnot.terms_2_6_higher_operations",
+    ref: "qou:QOU.BraidKnot.terms_2_6_higher_operations",
     validation: "not_checked",
   },
   uses: [

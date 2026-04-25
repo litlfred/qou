@@ -5,7 +5,7 @@ export default theorem({
   title:
     "Universal Frobenius co-dimension trace: $\\tau(C_{\\dim_q}) = \\sum_\\lambda 1/\\dim_q(\\lambda)$",
   lean: {
-    decl: "QOU.BraidKnot.frobenius_codim_universal",
+    ref: "qou:QOU.BraidKnot.frobenius_codim_universal",
     validation: "not_checked",
   },
   uses: [

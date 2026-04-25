@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:frobenius-s-classification",
   title: "Frobenius S-eigenvalue classification of the 3-term mass formula",
   lean: {
-    decl: "QOU.WedderburnMass.frobenius_s_classification",
+    ref: "qou:QOU.WedderburnMass.frobenius_s_classification",
     validation: "not_checked",
   },
   uses: [

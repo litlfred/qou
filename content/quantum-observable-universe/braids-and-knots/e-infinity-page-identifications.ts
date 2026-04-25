@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$E_\\infty$-page identifications with the six mass-formula terms",
   lean: {
-    decl: "QOU.BraidKnot.e_infinity_identifications",
+    ref: "qou:QOU.BraidKnot.e_infinity_identifications",
     validation: "not_checked",
   },
   uses: [

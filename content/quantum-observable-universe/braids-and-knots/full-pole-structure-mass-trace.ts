@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Full pole structure of the mass trace: all roots of unity, with interference",
   lean: {
-    decl: "QOU.BraidKnot.full_pole_structure",
+    ref: "qou:QOU.BraidKnot.full_pole_structure",
     validation: "not_checked",
   },
   uses: [
