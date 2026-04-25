@@ -1172,6 +1172,47 @@ export const references: CSLData[] = [
     note: "First circulated 2002",
   }),
 
+  ref({
+    id: "habiro2004",
+    type: "article-journal",
+    title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
+    author: [{ family: "Habiro", given: "Kazuo" }],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[2008]] },
+    volume: "171",
+    page: "1-81",
+    DOI: "10.1007/s00222-007-0071-0",
+    note: "Preprint 2004; introduces the Habiro ring cyclotomic expansion.",
+  }),
+
+  // ── Nuclear shell model (Mayer–Jensen) ──────────────────────────
+
+  ref({
+    id: "mayer1949",
+    type: "article-journal",
+    title: "On closed shells in nuclei. II",
+    author: [{ family: "Mayer", given: "Maria Goeppert" }],
+    "container-title": "Physical Review",
+    issued: { "date-parts": [[1949]] },
+    volume: "75",
+    issue: "12",
+    page: "1969-1970",
+    DOI: "10.1103/PhysRev.75.1969",
+  }),
+
+  ref({
+    id: "mayer1955",
+    type: "book",
+    title: "Elementary Theory of Nuclear Shell Structure",
+    author: [
+      { family: "Mayer", given: "Maria Goeppert" },
+      { family: "Jensen", given: "J. Hans D." },
+    ],
+    publisher: "Wiley",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1955]] },
+  }),
+
   // ── BEC vortex experiments ──────────────────────────────────────
 
   ref({

@@ -1,10 +1,14 @@
-The categorical mass at a single brane level is the Markov trace
-([categorical mass as Markov trace](#prop:categorical-mass-markov)).
-The full topological mass includes a tower sum over all brane
-levels
-([topological decomposition](#thm:topological-mass)), which
-evaluates to $\mathrm{Vol}(K)/\hbar_q^2$ in the archimedean
-realisation.
+In the unified six-term formula
+([unified knot mass](#thm:knot-mass-formula-unified)),
+$|\mathrm{tr}_M(\rho(\beta))|$ is **Term 1** ($E_\infty^{0,*}$,
+vortex-specific) and the brane tower $\sum \Phi_q(z_i)$ supplies
+**Terms 2–3** ($E_\infty^{1,*}$ and $E_\infty^{2,*}$).  In the
+archimedean realisation these three terms together evaluate to
+$\mathrm{Vol}(K)/\hbar_q^2$
+([topological decomposition](#thm:topological-mass)).
+Terms 4–6 (Frobenius co-Casimir, chirality, jet prefix) are
+separate structural pieces handled elsewhere; this conjecture
+concerns only the tower piece.
 
 The **Hecke mass element**
 $\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$

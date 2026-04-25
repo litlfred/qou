@@ -1,0 +1,61 @@
+{
+  "computation": "pure-hecke-binding",
+  "description": "Pure-Hecke binding via paper's knot-factor-Frobenius-pairing formula: B = E_0\u00b7(|tr_M(W_free)|\u2212|tr_M(W_atom)|), single calibration E_0 = 0.782 MeV.  Compares tr_M ratio a(N) to paper's asserted values 1+h (A=2), 1-h\u00b2 (A=3), (1-h\u00b2)\u00b2 (A=4).  No BW scaffolding.",
+  "timestamp": "2026-04-24T19:37:50.166649+00:00",
+  "q_0": 1.1099785955541805,
+  "E_0_MeV": 0.782,
+  "rows": [
+    {
+      "isotope": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "tr_free_abs": 0.043602965340051904,
+      "tr_atom_abs": 0.005034906195421638,
+      "a_ratio": 0.11547164639274608,
+      "a_paper": 1.2090603219898792,
+      "B_pred_MeV": 0.03016022225110087,
+      "B_AME_MeV": 2.22456612,
+      "err_pct": -98.6442200130648
+    },
+    {
+      "isotope": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "tr_free_abs": 0.0006386862005740863,
+      "tr_atom_abs": 0.0005474490419264222,
+      "a_ratio": 0.857148692792086,
+      "a_paper": 0.956293781769488,
+      "B_pred_MeV": 7.134745806247338e-05,
+      "B_AME_MeV": 8.481798,
+      "err_pct": -99.99915881682088
+    },
+    {
+      "isotope": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "tr_free_abs": 0.0006152599945606781,
+      "tr_atom_abs": 0.0004773500160702832,
+      "a_ratio": 0.7758508927776646,
+      "a_paper": 0.956293781769488,
+      "B_pred_MeV": 0.00010784560317948881,
+      "B_AME_MeV": 7.718058,
+      "err_pct": -99.99860268472743
+    },
+    {
+      "isotope": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "tr_free_abs": 0.7029610554754167,
+      "tr_atom_abs": 0.7029610554754167,
+      "a_ratio": 1.0,
+      "a_paper": 0.9144977970509891,
+      "B_pred_MeV": 0.0,
+      "B_AME_MeV": 28.29566,
+      "err_pct": -100.0
+    }
+  ]
+}
