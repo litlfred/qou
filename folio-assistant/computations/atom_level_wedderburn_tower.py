@@ -127,14 +127,22 @@ if __name__ == "__main__":
     print(f"q_0 = {float(Q0):.6f}")
     print()
 
-    # Light isotopes only — atom-level is heavy at A ≥ 4
+    # Light isotopes through A = 4 (A = 5+ blocks hundreds of
+    # partitions; run selectively via `ATOM_LEVEL_WITH_A5PLUS=1`).
+    import os as _os
     ISOTOPES = [
         ("p", 1, 0, False),
         ("n", 0, 1, False),
         ("D atom", 1, 1, True),
         ("T atom", 1, 2, True),
         ("3He atom", 2, 1, True),
+        ("4He atom", 2, 2, True),
     ]
+    if _os.environ.get("ATOM_LEVEL_WITH_A5PLUS"):
+        ISOTOPES.extend([
+            ("6Li atom", 3, 3, True),
+            ("7Li atom", 3, 4, True),
+        ])
 
     results = {}
     for label, Z, N, include in ISOTOPES:
