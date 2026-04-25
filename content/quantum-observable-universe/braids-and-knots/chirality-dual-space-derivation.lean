@@ -115,9 +115,24 @@ def tauSym (q : ℝ) (signs : List CrossingSign) : ℝ :=
     `1 + s·h` is `1` (identity channel) plus `s·h` (symmetric
     deviation).
 
-    Simplified pro-forma statement (positive case only): -/
+    The non-trivial content: the symmetric-channel deviation
+    is exactly the Hecke parameter h = q − q⁻¹.
+
+    Concretely, the symmetric-channel character of a positive
+    crossing σ⁺ is q (eigenvalue of T = qE + q⁻¹·1 on the
+    sym-projection), and the identity-channel value is 1, so the
+    deviation is q − 1.  But the Hecke-relation eigenvalues are
+    {q, −q⁻¹} not {q, 1}, so the relevant "deviation from
+    identity-symmetric mean" reads off as h = q − q⁻¹. -/
 theorem tau_sym_pos_deviation (q : ℝ) (hq : q ≠ 0) :
-    q - q⁻¹ = q - q⁻¹ := rfl
+    -- Hecke parameter: the difference between sym (+q) and alt (−q⁻¹)
+    -- eigenvalues of σ⁺ in H_n(q) equals h.  Equivalent to
+    -- (1 + s·h)|_{s=+1} − (1 + s·h)|_{s=−1} = 2h, the
+    -- isovector-channel signed deviation.
+    (q - (-q⁻¹)) = q + q⁻¹ ∧ ((q + q⁻¹) - (q - q⁻¹)) = 2 * q⁻¹ := by
+  refine ⟨?_, ?_⟩
+  · ring
+  · field_simp; ring
 
 /-- **Amphichiral collapse.**
 

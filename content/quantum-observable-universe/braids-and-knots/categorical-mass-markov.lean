@@ -73,18 +73,24 @@ theorem markov_descends (x y : A) (hxy : x - y ∈ J1 (A := A)) :
     rw [← map_sub]; exact h
   linarith
 
-/-- **Term 1 of the unified mass formula.**
+/-- **Term 1 of the unified mass formula** is the descended-trace
+    absolute value `|tr_M T_w|`. -/
+def term_one (T_w : A) : ℝ := |tr_M T_w|
 
-    The descended trace pairing equals `|tr_M T_w|`.  Stated as a
-    pure equality in ℝ since we are reading off the absolute value
-    from the trace, no integration over filtration levels needed:
+/-- **Non-trivial descent property of Term 1.**
 
-      Term1(T_w) = |tr_M T_w|.
-
-    The proof is by definition once `tr_M` is fixed; this lemma
-    documents the alignment with the spectral-sequence reading. -/
-theorem term_one_is_descended_trace (T_w : A) :
-    |tr_M T_w| = |tr_M T_w| := rfl
+    Term 1 is invariant under shifts by elements of the confinement
+    ideal J1: adding any `j ∈ J1` to T_w does not change the
+    Term-1 value.  This is the spectral-sequence reading
+    `Term 1 = ⟨tr_M, E_∞^{0,*}⟩`: only the J1-quotient class of
+    T_w contributes. -/
+theorem term_one_descends (T_w j : A) (hj : j ∈ J1 (A := A)) :
+    term_one (T_w + j) = term_one T_w := by
+  unfold term_one
+  congr 1
+  -- T_w + j ≡ T_w mod J1: their difference is j ∈ J1.
+  have h_diff : (T_w + j) - T_w = j := by ring
+  exact markov_descends (T_w + j) T_w (by rw [h_diff]; exact hj)
 
 /-- Unit witness: the unit `1 ∈ A` has `tr_M = 1`, so its
     Term-1 contribution is `|1| = 1`. -/
