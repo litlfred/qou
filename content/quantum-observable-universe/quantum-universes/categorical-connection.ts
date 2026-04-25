@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:categorical-connection",
   title: "Categorical connection and curvature",
-  lean: {
-    decl: "QOU.CategoricalConnection",
+  lean: { ref: "qou:QOU.CategoricalConnection",
     validation: "not_checked",
   },
   uses: ["def:higher-forms"],

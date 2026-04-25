@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-lagrangian-unique",
   title: "Uniqueness of the categorical Lagrangian",
-  lean: {
-    decl: "QOU.CategoricalLagrangian.unique",
+  lean: { ref: "qou:QOU.CategoricalLagrangian.unique",
     validation: "not_checked",
   },
   uses: [

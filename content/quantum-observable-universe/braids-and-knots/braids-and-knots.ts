@@ -119,8 +119,6 @@ export default chapter({
         "q-casimir-unique-proof",
         "r-matrix-braiding-structure",
         "r-matrix-braiding",
-        "skein-crossing-asymmetry-prop",
-        "skein-crossing-asymmetry",
       ],
     }),
 
@@ -143,6 +141,8 @@ export default chapter({
         "crossing-energy",
         "crossing-energy-trefoil",
         "coulomb-charge",
+        "skein-crossing-asymmetry-prop",
+        "skein-crossing-asymmetry",
       ],
     }),
 
@@ -325,6 +325,7 @@ export default chapter({
         "algebraic-quantum-volume",
         "habiro-ring",
         "algebraic-quantum-volume-specialization",
+        "kashaev-volume-density",
         "quantum-bloch-group",
         "degree-two-baryon-weight",
       ],
@@ -342,6 +343,16 @@ export default chapter({
         "confinement-level",
         "confinement-level-exists",
         "confinement-level-unique",
+        "confined-particle",
+        "confinement-category",
+        "electron-shell",
+        "dressed-particle",
+        "shell-closure-stability",
+        "shell-closure-stability-interprets",
+        "level-sufficiency",
+        "level-sufficiency-interprets",
+        "confinement-phase-stratification",
+        "phase-scoped-applicability",
         "atom-knot",
         "atom-knot-exists",
         "atom-knot-unique",
@@ -374,6 +385,7 @@ export default chapter({
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
+        "jet-tower-convergence",
         "mass-tower-syt-cells",
         "energy-scale-planck",
         "topological-mass-trefoil",
@@ -383,13 +395,26 @@ export default chapter({
       ],
     }),
 
-    // ── Varying Euler + mirror bundle (merged — 2+2 blocks) ──────────
+    // ── Varying Euler + mirror bundle (merged — 2+2 blocks + genus-2) ─
     section({
       title: "Varying Euler Characteristic and the Mirror Bundle",
       label: "sec:varying-euler-mirror",
       blocks: [
         "varying-euler-intro",
         "genus-2-intro",
+        // ── Commutative-limit / genus-2 Track A ─────────────────────
+        "commutative-qou",
+        "hyperelliptic-quintic",
+        "hyperelliptic-z5-classification",
+        "x5-z5-automorphism",
+        "bring-z5-descent",
+        "x5-bring-weight-identification",
+        "x5-bring-prym-jacobian",
+        "weight-identification-consequences",
+        "u1-equivariant-reduction",
+        "u1-phase-tube",
+        "commutative-crossing-energy",
+        // ── Mirror bundle ───────────────────────────────────────────
         "descent-mirror-intro",
         "e-minus-one",
       ],

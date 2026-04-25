@@ -39,3 +39,15 @@ short-distance divergence at $s = t$, leaving a finite integral
 that agrees with $E(\gamma)/4$ up to an Euler characteristic
 correction $\chi(\Sigma_\gamma) \cdot \mathrm{const}$, where
 $\Sigma_\gamma$ is any Seifert surface spanning $\gamma$.
+
+*Scope.* The classical identity
+$\lim_{q \to 1} E_{\mathrm{cat}}(\varrho) = E(\varrho)/4 +
+\text{const}$ is stated in the archimedean realisation $K =
+\mathbb{R}$; the right-hand side $E(\varrho)$ is a Lebesgue
+integral on $S^1 \times S^1$.  Under a surreal lift (see
+[appendix on surreal lift](#app:surreals)), the left-hand side
+$E_{\mathrm{cat}}$ lifts verbatim (categorical operations only)
+and $\lim_{q \to 1}$ becomes
+$\mathrm{st} \circ \text{eval}_{q = 1 + \varepsilon}$; the
+right-hand side remains in $\mathbb{R}$ as an external anchor.
+Lebesgue measure is not used inside QOU.

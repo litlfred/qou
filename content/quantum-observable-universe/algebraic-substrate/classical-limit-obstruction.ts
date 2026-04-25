@@ -4,8 +4,7 @@ export default definition({
   label: "def:classical-limit-obstruction",
   title:
     "The classical limit obstruction of a quantum universe",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.ClassicalLimitObstruction",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction",
     validation: "not_checked",
   },
   uses: [

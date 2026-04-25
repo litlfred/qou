@@ -10,8 +10,7 @@ export default proposition({
     "normal-form",
     "hecke-algebra",
   ],
-  lean: {
-    decl: "QOU.Interactions.inductiveGBReduction",
+  lean: { ref: "qou:QOU.Interactions.inductiveGBReduction",
     validation: "not_checked",
   },
   uses: [

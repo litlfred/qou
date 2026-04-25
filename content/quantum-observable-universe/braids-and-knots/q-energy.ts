@@ -14,8 +14,7 @@ export default definition({
     "mass-energy",
     "kinematic",
   ],
-  lean: {
-    decl: "QOU.Descartes.QEnergy",
+  lean: { ref: "qou:QOU.Descartes.QEnergy",
     validation: "not_checked",
   },
   uses: ["def:q-angular-momentum"],

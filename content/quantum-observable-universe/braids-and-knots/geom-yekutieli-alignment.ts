@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:geom-yekutieli-alignment",
   title:
     "Geometric invariant $\\mathrm{Geom}(K)$ as rigid dualizing evaluation",
-  lean: {
-    decl: "QOU.BraidKnot.geom_yekutieli_alignment",
+  lean: { ref: "qou:QOU.BraidKnot.geom_yekutieli_alignment",
     validation: "not_checked",
   },
   uses: [

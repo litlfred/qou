@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:em-coupling-chern-simons",
   title:
     "Fine structure constant with Chern-Simons correction on Bring's surface",
-  lean: {
-    decl: "QOU.DescartesUniverse.em_coupling_chern_simons",
+  lean: { ref: "qou:QOU.DescartesUniverse.em_coupling_chern_simons",
     validation: "not_checked",
   },
   uses: [
@@ -14,6 +13,8 @@ export default proposition({
     "prop:torus-knot-generators",
     "def:knot-particle-generation",
     "thm:topological-mass",
+    "prop:quantum-observable-universe-exists",
+    "def:substrate-parameter",
   ],
   tags: [
     "fine-structure",

@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:mi-sw-abelianisation",
-  lean: {
-    decl: "QOU.Brings.mi_sw_abelianisation",
+  lean: { ref: "qou:QOU.Brings.mi_sw_abelianisation",
     validation: "not_checked",
   },
   title: "Abelianisation of the MI integral on exceptional divisors",

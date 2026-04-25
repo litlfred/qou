@@ -13,8 +13,7 @@ export default proposition({
     "zero-fitting",
     "analytic-continuation",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.towerBinding",
+  lean: { ref: "qou:QOU.ParticleInteractions.towerBinding",
     validation: "not_checked",
   },
   uses: [

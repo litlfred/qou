@@ -12,8 +12,7 @@ export default proposition({
     "linking-number",
     "back-reaction",
   ],
-  lean: {
-    decl: "QOU.Descartes.hadron_q_self_correction",
+  lean: { ref: "qou:QOU.Descartes.hadron_q_self_correction",
     validation: "not_checked",
   },
   uses: ["prop:hadron-half-life"],

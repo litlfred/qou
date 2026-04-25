@@ -31,10 +31,10 @@ import type { Data as CSLData } from "csl-json";
 import { references, referenceMap } from "../schema/references";
 import { mergeCitations } from "./citations";
 import { isWitnessed, leanFileHash } from "../../scripts/lean-witness";
+import { leanPackageByName, parseLeanRef } from "../../folio-assistant/schemas/lean-packages";
 
 const REPO_ROOT = resolve(import.meta.dir, "../..");
 const CONTENT_ROOT = join(REPO_ROOT, "content");
-const LEAN_ROOT = join(REPO_ROOT, "lean");
 
 const args = process.argv.slice(2);
 function argVal(name: string, fallback: string): string {
@@ -105,30 +105,65 @@ interface ExportedPaper {
 
 // ── Helpers ──────────────────────────────────────────────────────
 
-function readLeanSource(leanRef: LeanRef | undefined, colocatedLeanPath?: string): string | undefined {
+/**
+ * Resolve the Lake package root for a block's `lean.ref`.  Returns the
+ * absolute path to e.g. `content/quantum-observable-universe/lean/`.
+ */
+function leanPackageRoot(leanRef: LeanRef | undefined): string | undefined {
+  if (!leanRef?.ref) return undefined;
+  try {
+    const parsed = parseLeanRef(leanRef.ref);
+    const pkg = leanPackageByName(parsed.package);
+    return pkg ? join(REPO_ROOT, pkg.lakeRoot) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * Resolve the absolute path of the `.lean` file backing a block.
+ *
+ * Candidates, in order:
+ *   1. Co-located sibling (`<chapter>/<block>.lean`).
+ *   2. Package-qualified path under the Lake root, walking the decl
+ *      from longest to shortest prefix
+ *      (`qou:QOU.Foo.Bar` → `<lakeRoot>/QOU/Foo/Bar.lean`,
+ *       then `<lakeRoot>/QOU/Foo.lean`).
+ *
+ * Used by both `readLeanSource` (returns the file content) and the
+ * witness-hash step (needs the resolved path even when no sibling
+ * file is present).  Returns the first candidate that exists, or
+ * `undefined` if nothing resolves.
+ */
+function resolveLeanFilePath(
+  leanRef: LeanRef | undefined,
+  colocatedLeanPath?: string,
+): string | undefined {
   if (!leanRef) return undefined;
 
-  // Try co-located .lean sibling file first (content/<chapter>/<block>.lean)
   if (colocatedLeanPath && existsSync(colocatedLeanPath)) {
-    return readFileSync(colocatedLeanPath, "utf-8");
+    return colocatedLeanPath;
   }
 
-  // Try explicit file path in lean/ project
-  if (leanRef.file) {
-    const leanPath = join(LEAN_ROOT, leanRef.file);
-    if (existsSync(leanPath)) return readFileSync(leanPath, "utf-8");
+  const pkgRoot = leanPackageRoot(leanRef);
+  if (!pkgRoot || !leanRef.ref) return undefined;
+  let parsed;
+  try {
+    parsed = parseLeanRef(leanRef.ref);
+  } catch {
+    return undefined;
   }
-
-  // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo.lean, QOU/Foo/Bar.lean
-  if (leanRef.decl) {
-    const parts = leanRef.decl.split(".");
-    for (let i = parts.length; i >= 2; i--) {
-      const candidate = join(LEAN_ROOT, parts.slice(0, i).join("/") + ".lean");
-      if (existsSync(candidate)) return readFileSync(candidate, "utf-8");
-    }
+  const parts = parsed.decl.split(".");
+  for (let i = parts.length; i >= 2; i--) {
+    const candidate = join(pkgRoot, parts.slice(0, i).join("/") + ".lean");
+    if (existsSync(candidate)) return candidate;
   }
-
   return undefined;
+}
+
+function readLeanSource(leanRef: LeanRef | undefined, colocatedLeanPath?: string): string | undefined {
+  const path = resolveLeanFilePath(leanRef, colocatedLeanPath);
+  return path ? readFileSync(path, "utf-8") : undefined;
 }
 
 function readRenderedAssets(
@@ -190,10 +225,13 @@ async function main() {
           let leanHash: string | undefined;
           let witnessed: boolean | undefined;
           if (leanRef) {
-            const leanFilePath = existsSync(colocatedLean)
-              ? colocatedLean
-              : leanRef.file ? join(LEAN_ROOT, leanRef.file) : undefined;
-            if (leanFilePath && existsSync(leanFilePath)) {
+            // Witness keys off whichever `.lean` file actually backs
+            // this block — sibling first, then the package-resolved
+            // candidate.  `resolveLeanFilePath` walks the same order
+            // as `readLeanSource`, so witness metadata is consistent
+            // with the source we actually emit downstream.
+            const leanFilePath = resolveLeanFilePath(leanRef, colocatedLean);
+            if (leanFilePath) {
               const result = isWitnessed(leanFilePath);
               leanHash = result.hash;
               witnessed = result.witnessed;

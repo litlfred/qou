@@ -34,11 +34,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+
 from witness_base import WitnessBuilder
 
-z = 1.0 / (q0**0.5 + qi0**0.5)
-
-# Wedderburn weights
+z = _PG_Z  # moved to pyhecke.gram
 q2 = q0**2
 denom_w = q2**2 + 4*q2 + 1
 w_sym = q2 / denom_w
@@ -80,8 +84,7 @@ def nf_net(nf):
 # §2. Gram matrix G — Frobenius pairing ⟨b_i, b_j⟩_F = tr_M(b_i · b_j)
 # ══════════════════════════════════════════════════════════════
 
-NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
-
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 def hecke_mul_dict(t1, t2):
     result = {}
     for w1, c1 in t1.items():
@@ -398,6 +401,31 @@ for name, pred, obs in molecules:
         expected=True,
         source="Frobenius LP feasibility",
     )
+
+
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+print(f"\n{'═' * 80}\n  SDP LIFT VALIDATION\n{'═' * 80}")
+sdp_reports = []
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+    _rep = lp_vs_sdp_report(
+        c=TR_M, G=G, A_eq=np.ones((1, 6)),
+        b_eq=np.array([1.0]),
+        label="molecular-frobenius/unit-net")
+    for _l in _rep.summary_lines():
+        print(_l)
+    sdp_reports.append(_rep.__dict__)
+    w.add_data("sdp_lift", sdp_reports)
+    w.add_assertion(
+        "LP solution Frobenius-valid (xᵀGx ≥ 0)",
+        computed=_rep.lp_frobenius_valid,
+        expected=True,
+        source="sdp_moment_lift",
+    )
+except ImportError as _e:
+    print(f"  (cvxpy not available: {_e})")
 
 w.save()
 print("Done.")

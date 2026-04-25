@@ -12,8 +12,7 @@ export default definition({
     "turing-machine",
     "planck-step",
   ],
-  lean: {
-    decl: "QOU.ComputationalHorizon",
+  lean: { ref: "qou:QOU.ComputationalHorizon",
     validation: "not_checked",
   },
   uses: [

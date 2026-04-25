@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-heat-equation-exists",
   title: "Well-posedness of the $q$-heat equation",
-  lean: {
-    decl: "QOU.QHeatEquation.exists_solution",
+  lean: { ref: "qou:QOU.QHeatEquation.exists_solution",
     validation: "not_checked",
   },
   uses: [

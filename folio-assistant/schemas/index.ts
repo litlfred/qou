@@ -218,3 +218,16 @@ export type {
 } from "./assistant-workflow";
 
 export { mathAuthoringWorkflow } from "./assistant-workflow";
+
+// ── Lean package registry ───────────────────────────────────────
+
+export type { LeanPackage, ParsedLeanRef } from "./lean-packages";
+export {
+  LEAN_PACKAGES,
+  LEAN_REF_PATTERN,
+  formatLeanRef,
+  isLeanPackageName,
+  leanPackageByName,
+  leanPackageByPaperDir,
+  parseLeanRef,
+} from "./lean-packages";

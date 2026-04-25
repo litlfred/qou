@@ -6,8 +6,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:ch4-molecular-braid",
   title: "Methane $CH_4$ as a molecular braid",
-  lean: {
-    decl: "QOU.Molecular.CH4Braid",
+  lean: { ref: "qou:QOU.Molecular.CH4Braid",
     validation: "not_checked",
   },
   uses: [

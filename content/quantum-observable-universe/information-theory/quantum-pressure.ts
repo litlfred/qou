@@ -10,8 +10,7 @@ export default definition({
     "boundary",
     "q-anomaly",
   ],
-  lean: {
-    decl: "QOU.Information.boundaryPressure",
+  lean: { ref: "qou:QOU.Information.boundaryPressure",
     validation: "not_checked",
   },
   uses: [

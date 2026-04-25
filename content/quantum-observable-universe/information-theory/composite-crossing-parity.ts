@@ -11,8 +11,7 @@ export default proposition({
     "phase-transition",
     "magic-numbers",
   ],
-  lean: {
-    decl: "QOU.Information.crossing_parity_eq_Z",
+  lean: { ref: "qou:QOU.Information.crossing_parity_eq_Z",
     validation: "not_checked",
   },
   uses: [

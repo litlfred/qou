@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:q-heat-kernel-peter-weyl",
   title: "Peter--Weyl decomposition of the $q$-heat kernel (archimedean)",
   tags: ["q-heat-equation", "peter-weyl", "heat-kernel", "hecke", "wedderburn", "archimedean"],
-  lean: {
-    decl: "QOU.qHeatKernelPeterWeyl",
+  lean: { ref: "qou:QOU.qHeatKernelPeterWeyl",
     validation: "not_checked",
   },
   uses: [

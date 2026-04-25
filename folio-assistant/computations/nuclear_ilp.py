@@ -15,8 +15,18 @@ import sys, time, itertools
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from hecke_core import (build_atom_nf, hm, check_frobenius, nf_tr,
-    h, z, NF_NAMES, NF_BASIS)
+from hecke_core import (
+    check_frobenius,
+    h,
+)
+from pyhecke.gram import (
+    build_atom_nf,
+    hm,
+    nf_tr,
+    z,
+    NF_NAMES,
+    NF_BASIS,
+)
 from witness_base import WitnessBuilder
 
 # Full operator alphabet: all 6 NF basis elements and their inverses

@@ -7,8 +7,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:molecular-braid",
   title: "Molecular braid $H_{N_{\\mathrm{mol}}}(q)$",
-  lean: {
-    decl: "QOU.Molecular.MolecularBraid",
+  lean: { ref: "qou:QOU.Molecular.MolecularBraid",
     validation: "not_checked",
   },
   uses: [

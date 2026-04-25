@@ -10,6 +10,23 @@ $$
 
 with inverse temperature $\beta_q := 1/T_q = t_P(q)$.
 
+In terms of the substrate density $\rho_q = 1/\hbar_q^{2}$
+introduced by the Kashaev volume--density reading
+([Kashaev volume--density](#rem:kashaev-volume-density)), the
+temperature and its inverse square are
+
+$$
+  T_q \;=\; \rho_q^{-1/2},
+  \qquad
+  \beta_q^{2} \;=\; \rho_q.
+$$
+
+Temperature and substrate density are thus **conjugate square roots**:
+a state at high drag density (small $\hbar_q$) is at low temperature,
+and the inverse-temperature squared is the density itself.  This
+absorbs several dimensional-analysis identities that otherwise require
+separate derivation.
+
 The quantum entropy of $U$ is the non-abelian surface integral
 
 $$

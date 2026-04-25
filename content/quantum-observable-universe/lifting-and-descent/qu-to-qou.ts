@@ -2,7 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:qu-to-qou",
-  lean: { decl: "QOU.QuToQou", validation: "not_checked" },
+  lean: { ref: "qou:QOU.QuToQou", validation: "not_checked" },
   title: "Quantum universe with observability and categorical lifting is a QOU",
   tags: ["main-theorem", "qou", "yekutieli", "descent"],
   examples: ["ex:qu-to-qou-su2"],

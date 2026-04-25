@@ -5,8 +5,7 @@ export default example({
   label: "ex:q-ext-deriv",
   title: "$q$-Deformed exterior derivative",
   tags: ["exterior-derivative", "archimedean"],
-  lean: {
-    decl: "QOU.qExtDeriv",
+  lean: { ref: "qou:QOU.qExtDeriv",
     validation: "leanok",
   },
   uses: [

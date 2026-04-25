@@ -42,8 +42,14 @@ from scipy.optimize import linprog
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+
 from mass_endomorphism import mass_from_tower, HA as HA_VAL, z_mark
-from hecke_core import atom_per_generator_volumes
+from pyhecke.gram import atom_per_generator_volumes
 
 E_0_CAL_MEV = 938.272 / 1178995.5254  # proton tower → 938.272 MeV
 B_AME_D_MEV = 2.22452  # deuteron AME2020
@@ -185,7 +191,7 @@ def binding_at_alpha(Z, N, pn_alpha: float) -> dict:
 #
 # What we probe:  how the dual shadow prices y_i react as α sweeps.
 
-NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 TR_M_BASIS = np.array([1.0, z_mark, z_mark, z_mark**2, z_mark**2, z_mark**3])
 

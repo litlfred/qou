@@ -3,11 +3,14 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:classical-limit-functor",
   title: "The classical limit functor $q \\to 1$",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.ClassicalLimitFunctor",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.ClassicalLimitFunctor",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate", "def:substrate-parameter-planck"],
+  uses: [
+    "def:frobenius-hopf-substrate",
+    "def:substrate-parameter-planck",
+    "conj:classical-limit-stpart",
+  ],
   tags: [
     "classical-limit",
     "functor",

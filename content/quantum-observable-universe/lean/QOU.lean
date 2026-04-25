@@ -35,6 +35,7 @@ import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
 import QOU.Descartes
 import QOU.Interactions
+import QOU.BraidKnot
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
 import QOU.ClassicalLimitObstruction
@@ -44,3 +45,4 @@ import QOU.PhotonThreading
 import QOU.QBirchSwinnertonDyer
 import QOU.QCollatz
 import QOU.QGeometricLanglands
+import QOU.AppendixSurreals

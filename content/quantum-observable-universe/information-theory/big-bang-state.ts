@@ -7,8 +7,7 @@ export default definition({
     "big-bang-state", "jet-horizon", "initial-conditions",
     "degree-zero", "deep-quantum",
   ],
-  lean: {
-    decl: "QOU.BigBangState",
+  lean: { ref: "qou:QOU.BigBangState",
     validation: "not_checked",
   },
   uses: [

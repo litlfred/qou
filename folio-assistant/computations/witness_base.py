@@ -242,6 +242,34 @@ class WitnessBuilder:
         self.caveats.append(text)
         return self
 
+    def is_fresh(self) -> bool:
+        """Return True if an existing witness JSON on disk records the
+        same script content hash as the current source.
+
+        Use this to short-circuit expensive recomputations::
+
+            w = WitnessBuilder("my-computation", engine="sympy")
+            if w.is_fresh():
+                print(f"✓ {w.name}.witness.json fresh; skipping")
+                return
+            ... # expensive compute
+            w.add_assertion(...)
+            w.save()
+
+        Returns False if the witness file does not exist, is malformed,
+        or records a different `scriptHash`.
+        """
+        out_path = self._output_dir / f"{self.name}.witness.json"
+        if not out_path.is_file():
+            return False
+        try:
+            with out_path.open("r", encoding="utf-8") as f:
+                existing = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            return False
+        current_hash = file_content_hash(str(self._script_path))
+        return existing.get("scriptHash") == current_hash
+
     def build(self) -> dict:
         """Build the witness dictionary (without writing to disk)."""
         duration_ms = int((time.monotonic() - self._start_time) * 1000)

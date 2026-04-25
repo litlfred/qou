@@ -15,6 +15,8 @@ export default remark({
     "prop:shell-transition-knot",
     "rem:fivefold-symmetry",
     "thm:embeddability-closure",
+    "prop:x5-bring-weight-identification",
+    "thm:hyperelliptic-z5-classification",
   ],
   cites: ["kassel1995", "jones1987"],
 });

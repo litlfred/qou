@@ -105,9 +105,17 @@ def per_gen_V_hat_aggregated(Z: int, N: int, *,
     return V_hat
 
 
-def tower_mass_level(V: list[float], *, pair_mode: str = "adjacent",
+def tower_mass_level(V: list[float], *, pair_mode: str = "full",
                        cap_frac: float = 0.98) -> float:
-    """Single-level prop:mass-endomorphism-tower formula on aggregated V̂."""
+    """Single-level prop:mass-endomorphism-tower formula on aggregated V̂.
+
+    Default pair_mode changed from "adjacent" to "full" on 2026-04-20:
+    rem:mass-endomorphism-jet-tower + thm:markov-trace-factorization
+    prescribe 𝒫_n = all pairs (i, j) at every level, with Markov weight
+    tr_M(σ_i σ_j) = z² uniform in distance (two successive Markov peels
+    each contribute z).  The earlier "adjacent" default corresponded to
+    a since-retracted adjacency claim in prop:mass-endomorphism-tower.
+    """
     n = len(V)
     if n == 0:
         return 0.0
@@ -280,7 +288,7 @@ def binding_canonical_plus_multibrane(
         n_brane_levels: int = 1,
         m_pp: int = 1, m_pn: int = 1, m_nn: int = 1,
         E_0: float = E_0_BETA_DECAY_MEV,
-        pair_mode: str = "adjacent",
+        pair_mode: str = "full",
         cap_frac: float = 0.98,
         include_canonical: bool = True,
         verbose: bool = False) -> dict:

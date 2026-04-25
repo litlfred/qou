@@ -11,8 +11,7 @@ export default proposition({
     "closed-form",
     "beta-decay",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.tritium_qvalue_symbolic",
+  lean: { ref: "qou:QOU.ParticleInteractions.tritium_qvalue_symbolic",
     validation: "not_checked",
   },
   uses: [

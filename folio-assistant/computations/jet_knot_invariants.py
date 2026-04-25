@@ -32,9 +32,21 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from hecke_core import (
-    h, z, q0, qi, W_SYM, W_STD, W_ALT, G, NF_NAMES,
-    hm, build_atom_nf, check_frobenius, binding_energy_bw,
+    h,
+    q0,
+    qi,
+    check_frobenius,
     q_int,
+)
+from pyhecke.gram import (
+    z,
+    W_SYM,
+    W_STD,
+    W_ALT,
+    G,
+    NF_NAMES,
+    hm,
+    build_atom_nf,
 )
 from hecke_characters import partitions_of, dim_q, qfac
 from witness_base import WitnessBuilder

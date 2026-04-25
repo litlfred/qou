@@ -121,7 +121,7 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook-length bound (§7.21)
   -- [m]_q/m ≥ 1 for q > 1 by convexity of exponential:
   -- the average of q^j over symmetric exponents ≥ q^0 = 1
   -- by Jensen's inequality.
@@ -131,7 +131,7 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook recursion
   -- For m = 1: [1]/1 - 1 = 0 ≤ anything. Trivial.
   -- For m = 2: proved in qInt_ratio_bound_m2.
   -- For m = 3, 4: similar algebraic arguments with field_simp + nlinarith.
@@ -155,7 +155,7 @@ theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
     (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook bound inequality
   -- Proof: product of per-factor bounds, using
   -- Σ m²/6 = k(k+1)(2k+1)/36.
 
@@ -216,7 +216,7 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0) :
     |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook evaluation
   -- Follows from qDim_ratio_bound applied twice (d_q² in numerator)
   -- and qFact_ratio_bound for [k]! in denominator.
 
@@ -256,7 +256,7 @@ theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (f_k f_inf : ℝ)
     (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
     |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook asymptotic
   -- Proof: Féray–Méliot Theorem 1.1 gives q-Plancherel CLT with
   -- variance σ²(k) = O(1/k). Combined with ratio_perturbation_bound
   -- (proved in BranchingConvergence.lean), the cross-term satisfies

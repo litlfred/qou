@@ -12,8 +12,7 @@ export default definition({
     "crossing",
     "kinematic",
   ],
-  lean: {
-    decl: "QOU.Descartes.QMomentum",
+  lean: { ref: "qou:QOU.Descartes.QMomentum",
     validation: "not_checked",
   },
   uses: ["rem:building-block-knots"],

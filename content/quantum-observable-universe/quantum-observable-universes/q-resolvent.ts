@@ -4,8 +4,7 @@ export default definition({
   label: "def:q-resolvent",
   title: "$q$-Resolvent (categorical)",
   tags: ["resolvent", "q-laplacian", "spectral", "hopf-algebra"],
-  lean: {
-    decl: "QOU.QResolvent",
+  lean: { ref: "qou:QOU.QResolvent",
     validation: "not_checked",
   },
   uses: [

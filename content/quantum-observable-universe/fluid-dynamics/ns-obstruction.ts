@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:ns-obstruction",
   title: "NS obstruction class $\\mathrm{NS}(A)$",
-  lean: {
-    decl: "QOU.FluidDynamics.NSObstruction",
+  lean: { ref: "qou:QOU.FluidDynamics.NSObstruction",
     validation: "not_checked",
   },
   uses: [
@@ -12,6 +11,8 @@ export default definition({
     "def:q-navier-stokes",
     "def:ns-regular-qou",
     "def:quantum-characteristic-classes",
+    "def:crossing-energy",
+    "rem:hecke-algebra-from-braiding",
   ],
   tags: [
     "definition",
@@ -19,5 +20,6 @@ export default definition({
     "navier-stokes",
     "euler-characteristic",
     "categorical",
+    "spectral-gap",
   ],
 });

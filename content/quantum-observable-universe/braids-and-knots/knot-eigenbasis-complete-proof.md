@@ -17,10 +17,9 @@ irreducible summand $S_\lambda$, the trace restricts to a non-zero
 scalar multiple of the character, so every summand is detected by
 some braid closure.
 
-*Part (3).*  The direct limit $\varinjlim V^{\otimes n}$ is a
-pre-Hilbert space whose completion $\mathcal{H}_{\mathrm{phys}}$ is
-separable (each $V^{\otimes n}$ is finite-dimensional).  The union of
-the finite-dimensional subspaces $V^{\otimes n}$ is dense by
-construction, and each is completely decomposed by (1).  Hence the
-irreducible summands, indexed by knot types via the closure map,
-span a dense subspace.
+*Part (3).*  The algebraic direct limit
+$V_{\mathrm{phys}} := \varinjlim V^{\otimes n}$ is the union of its
+finite-dimensional subspaces $V^{\otimes n}$, each of which is
+completely decomposed by (1).  Hence the irreducible summands,
+indexed by knot types via the closure map, span $V_{\mathrm{phys}}$.
+No metric completion is used.

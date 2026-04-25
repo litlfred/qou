@@ -1,7 +1,8 @@
 **Proof.**
-The argument proceeds in three steps: decompose the Hilbert space into
-the eigenbasis, collapse the path integral to a finite sum, then
-identify the result with the Markov trace.
+The argument proceeds in three steps: decompose the algebraic state
+space $V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ into the
+eigenbasis, collapse the path integral to a finite sum, then identify
+the result with the Markov trace.
 
 **Step 1 (Eigenbasis decomposition).**
 By the $q$-analogue of Schur--Weyl duality
@@ -37,10 +38,11 @@ $$
 $$
 
 where the integral runs over all paths in configuration space.  Now
-suppose that the Hilbert space admits the complete eigenbasis from
-Step 1.  Then every path $\phi$ factors through a unique irreducible
-summand $V_\lambda \otimes S_\lambda$, and the continuum integral
-collapses to a finite weighted sum over irreducible summands.
+suppose that $V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ admits
+the complete eigenbasis from Step 1.  Then every path $\phi$ factors
+through a unique irreducible summand $V_\lambda \otimes S_\lambda$,
+and the continuum integral collapses to a finite weighted sum over
+irreducible summands.
 
 No regularisation is needed: the sum has finitely many terms because
 $V^{\otimes n}$ has finitely many irreducible summands (semisimplicity
