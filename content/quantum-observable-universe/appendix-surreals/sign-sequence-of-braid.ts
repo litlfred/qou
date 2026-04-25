@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:sign-sequence-of-braid",
   lean: {
-    decl: "QOU.AppendixSurreals.signSequenceOfBraid",
+    ref: "qou:QOU.AppendixSurreals.signSequenceOfBraid",
     validation: "not_checked",
   },
   title:

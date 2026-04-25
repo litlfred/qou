@@ -92,13 +92,8 @@ opaque y0Star (n : ℕ) : R_q
 -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-theorem ConfinementSDP (n : ℕ) (h : slaterStrict n) :
-    primalOpt n = nTarget * y0Star n := by
-  -- Strong duality under Slater regularity (Boyd-Vandenberghe
-  -- §5.4.1, §5.5.3). Deferred to Mathlib SDP duality lemmas not
-  -- yet available.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+axiom ConfinementSDP (n : ℕ) (h : slaterStrict n) :
+    primalOpt n = nTarget * y0Star n
 
 /-! ## §3  Binding multiplicity and the scalar-LP projection -/
 

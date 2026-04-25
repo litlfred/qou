@@ -114,3 +114,12 @@ bound above remains conditional on the multi-operator binding
 supporting a uniform $\Delta_{\max}$.  Closing that conditional is
 the main outstanding piece of open subconjecture 1 on
 [rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower).
+
+*Formal asymptotic content. The geometric tail is the native
+Jackson $d_q$-difference of the brane tower;
+$\ordw(\text{tail}) = 2(N+1)\,\ordw(\hbar_q)$, and the recursive
+jet prolongation is the
+[surreal blow-up calculus](#def:surreal-blowup-calculus).
+See [Big-O via $\ordw$](#rem:conway-normal-form),
+[calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon),
+and the [body asymptotics catalog](#rem:body-asymptotics-catalog).*

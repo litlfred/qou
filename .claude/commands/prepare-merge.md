@@ -27,6 +27,37 @@ do not request external reviews until every earlier step has succeeded.
   result before continuing (`git add` + `git commit --amend --no-edit`
   on the topmost integration commit, or as a follow-up commit if the
   rebase was non-trivial).
+- **Verify** the migration is complete (all three counts must be 0):
+
+  ```bash
+  # 1. Dry-run reports nothing left to migrate
+  cd content && bun run migrate-lean-refs:dry | tail -3
+  # Expected: "Migrated 0 lean refs across 0 files."
+
+  # 2. No legacy `lean: { decl: ... }` shape remains
+  grep -rln 'lean:\s*{[^}]*decl:' content/*/*.ts 2>/dev/null \
+    | grep -v schema/ | grep -v pipeline/ | wc -l
+  # Expected: 0
+
+  # 3. Every `lean.ref` URI uses a registered package prefix
+  python3 -c "
+  import re, glob, json
+  pkgs = re.findall(r'name:\s*\"(\w+)\"', open('folio-assistant/schemas/lean-packages.ts').read())
+  bad = []
+  for f in glob.glob('content/*/*/*.ts'):
+      txt = open(f).read()
+      for m in re.finditer(r'ref:\s*\"([^:\"]+):', txt):
+          if m.group(1) not in pkgs: bad.append(f'{f} → {m.group(1)}')
+  print(f'Unregistered package prefixes: {len(bad)}')
+  for b in bad: print(f'  {b}')
+  "
+  # Expected: 0
+  ```
+
+- If any check is non-zero, **do not proceed to Step 2**. Either run
+  the migration with `--write`, register the missing package in
+  `folio-assistant/schemas/lean-packages.ts` + root `lakefile.toml`, or
+  fix the offending block before continuing.
 
 ## 2. Integrate new content from upstream
 
@@ -35,6 +66,50 @@ do not request external reviews until every earlier step has succeeded.
 - Re-run `content-validation` to confirm cross-refs, `uses[]`, and
   `interprets` still resolve after integration.
 - Run the `remark-audit` skill to catch any newly dangling remarks.
+
+## 2a. Reuse and simplify pass (audit against newly-merged content)
+
+After main has been pulled in cleanly, audit the branch's own
+content against everything new that just arrived from upstream.
+Ask three concrete questions for every block, proof, and
+computation the branch added or modified:
+
+1. **Can I use anything?** Did `origin/main` introduce a definition,
+   lemma, theorem, glossary entry, simulator, or computational
+   witness that this branch is now duplicating, paraphrasing, or
+   reinventing? If yes, replace the local stand-in with a `uses[]`
+   cross-reference (or a one-line `\cite{}` to the new block) and
+   delete the duplicate. Run `local/critical-path-analysis` to
+   surface the dependency overlaps and `local/ontologist` to align
+   terminology.
+2. **Can I simplify the proof?** Walk through every Lean proof and
+   every narrative `**Proof.**` block this branch authored or
+   touched. If a newly-merged result discharges a hypothesis,
+   collapses a case split, supplies a tactic that replaces a long
+   `calc`/`refine` chain, or makes a `sorry` provable — apply it.
+   Route through `local/proof-simplifier` for narrative proofs and
+   `local/lean-build-fix` plus `local/lean-completeness-audit` for
+   Lean.
+3. **Can I simplify the exposition?** Re-read this branch's
+   narrative additions with the merged-in context in mind. If a
+   paragraph re-derives something main now defines upstream,
+   replace it with a forward-reference. If a remark interprets a
+   concept main has already glossed, drop the duplicate
+   interpretation. Route through `local/scientific-accuracy` (for
+   claim audit) and `local/readability-editing` (for prose
+   tightening).
+4. **Can I simplify the computation?** Inspect every script under
+   `folio-assistant/computations/` and every fenced ``` ```python ```
+   block this branch added. If main shipped a faster routine, a
+   prebuilt witness, a SnapPy/SymPy primitive, or a cached
+   computation that supersedes a hand-rolled loop, swap it in and
+   regenerate the witness JSON.
+
+The reuse pass is **not optional** — duplicating content that main
+already carries is the most common source of post-merge review
+churn. Running this audit now (rather than waiting for Gemini /
+Copilot to surface the duplicates in step 6) saves a full review
+cycle.
 
 ## 3. One-voice review
 
