@@ -24,6 +24,10 @@ export default remark({
     "rem:u1-phase-tube",
     "def:hyperelliptic-quintic",
     "def:exceptional-divisor",
+    "rem:braiding-unit-circle-convention",
+    "rem:i-as-braiding-orientation",
+    "rem:sqrt-q-ribbon-structure",
+    "rem:archimedean-realisations",
   ],
   interprets: "def:crossing-energy",
 });

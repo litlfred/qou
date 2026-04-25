@@ -25,7 +25,6 @@ export default chapter({
         "quantum-observable-universe-exists",
         "quantum-observable-universe-exists-proof",
         "braiding-induced-ordering",
-        "i-as-braiding-orientation",
         "frobenius-integration",
         "yekutieli-stokes-remark",
         "fibre-functor-rigidity",
@@ -112,8 +111,6 @@ export default chapter({
       blocks: [
         "quantum-universe-explication",
         "braiding-eigenvalue-extraction",
-        "braiding-unit-circle-convention",
-        "sqrt-q-ribbon-structure",
         "tannaka-krein-reconstruction",
         "substrate-parameter",
         "substrate-parameter-exists",
@@ -328,6 +325,20 @@ export default chapter({
         "q-dilogarithm-exists-proof",
         "q-dilogarithm-unique",
         "q-dilogarithm-unique-proof",
+      ],
+    }),
+
+    // ── Braiding conventions: eigenvalue labelling, ribbon, orientation ─
+    // Held out of the core definition sections (sec:qou-definition,
+    // sec:substrate-parameter) so the convention/elaboration content does
+    // not pollute the QU/QOU axiomatic statements.
+    section({
+      title: "Braiding conventions: eigenvalue labelling, ribbon, orientation",
+      label: "sec:braiding-conventions",
+      blocks: [
+        "braiding-unit-circle-convention",
+        "sqrt-q-ribbon-structure",
+        "i-as-braiding-orientation",
       ],
     }),
 
