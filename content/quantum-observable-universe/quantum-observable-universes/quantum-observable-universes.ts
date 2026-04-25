@@ -328,6 +328,22 @@ export default chapter({
       ],
     }),
 
+    // ── Braiding conventions: eigenvalue labelling, ribbon, orientation ─
+    // Held out of the core definition sections (sec:qou-definition,
+    // sec:substrate-parameter) so the convention/elaboration content does
+    // not pollute the QU/QOU axiomatic statements.
+    section({
+      title: "Braiding conventions: eigenvalue labelling, ribbon, orientation",
+      label: "sec:braiding-conventions",
+      blocks: [
+        "braiding-unit-circle-convention",
+        "sqrt-q-ribbon-structure",
+        "i-as-braiding-orientation",
+        "affine-chart-origin-of-i-and-q",
+        "categorical-coordinate-ring",
+      ],
+    }),
+
     // ── Elaboration: categorical and analytic foundations ──────────────
     section({
       title: "Elaboration: categorical context",
