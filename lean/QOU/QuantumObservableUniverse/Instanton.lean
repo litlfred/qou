@@ -78,7 +78,13 @@ structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
   self_dual : hodge.IsSelfDual curvature
 
 /-- **Lemma (Irreducibility from observability).**
-    LaTeX: `\label{lem:categorical-irreducible}` -/
+    LaTeX: `\label{lem:categorical-irreducible}`
+
+    AUDIT NOTE: Currently returns its own hypothesis. The actual content
+    (deriving Subsingleton from observability + instanton data) requires
+    encoding the adjoint representation and showing Hom(1, Ad(A)) = 0
+    from the instanton self-duality condition. -/
+-- Ref: [manuscript] §1-quantum-observable-universe
 theorem categorical_irreducible {k : Type*} [Field k]
     {C : Type u} [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     {frobHopf : FrobeniusHopfData C}
@@ -89,7 +95,12 @@ theorem categorical_irreducible {k : Type*} [Field k]
   adj_vanish
 
 /-- **Proposition (Categorical self-duality).**
-    LaTeX: `\label{prop:categorical-self-duality}` -/
+    LaTeX: `\label{prop:categorical-self-duality}`
+
+    AUDIT NOTE: Currently an accessor (returns structure field). The
+    actual proposition should derive self-duality from a variational
+    principle, not assume it as structure data. -/
+-- Ref: [manuscript] §1-quantum-observable-universe
 theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : @FrobeniusHopfData C _ _)
@@ -97,9 +108,16 @@ theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
     inst.hodge.IsSelfDual inst.curvature :=
   inst.self_dual
 
-/-- **Proposition (Non-vanishing of d_q²).**
-    LaTeX: `\label{prop:categorical-dq-squared}` -/
-theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
+/-- **Classical limit of d_q².**
+    LaTeX: `\label{prop:categorical-dq-squared}`
+
+    AUDIT NOTE: The narrative claims "non-vanishing of d_q^2" (d_q^2 != 0
+    when q != 1). This theorem proves the CONVERSE direction: d_q^2 = 0
+    when q = 1. The non-vanishing direction (the interesting claim) is
+    not yet formalized. -/
+-- Ref: [manuscript] §1-quantum-observable-universe
+theorem categorical_dq_squared_classical_limit {C : Type u}
+    [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C)
@@ -152,7 +170,10 @@ theorem categorical_jet_prolongation {C : Type u}
     cj.jetEval ≫ jp.connection = jp.prolonged_connection ≫ cj.jetEval :=
   jp.commutes
 
-/-- **Categorical transport equation**: `ℏ_q π_V(∇ψ) = H_q(ψ)`.
+/-- **Categorical transport equation**: `ℏ_q π_V(∇ψ) = Ĥ_q(ψ)`.
+    (In LaTeX: `\hat{H}_q`; distinct from the q-shuffle Hopf algebra
+    `\mathcal{H}_q` of Ch 2 and the hook-length product `H_q(λ)` of
+    the knot chapter.)
     LaTeX: `\label{def:categorical-transport}` -/
 structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
@@ -163,12 +184,12 @@ structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
   instanton : @CategoricalInstanton C _ _ jet.frobHopf
   /-- The vertical projection of the covariant derivative `π_V(∇ψ)`. -/
   proj_V_nabla : jet.jetObj ⟶ jet.jetObj
-  /-- The q-Hamiltonian `H_q`. -/
+  /-- The q-Hamiltonian `Ĥ_q` (LaTeX `\hat{H}_q`). -/
   hamiltonian : jet.jetObj ⟶ jet.jetObj
-  /-- **Transport equation**: `π_V(∇ψ) = H_q`. -/
+  /-- **Transport equation**: `π_V(∇ψ) = Ĥ_q`. -/
   transport_eq : proj_V_nabla = hamiltonian
 
-/-- The transport equation implies `H_q − π_V ∇ = 0`. -/
+/-- The transport equation implies `Ĥ_q − π_V ∇ = 0`. -/
 theorem CategoricalTransport.kernel_condition {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]

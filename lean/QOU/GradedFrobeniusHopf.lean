@@ -173,7 +173,7 @@ structure HeckeIrrepDecomposition where
 /-- The regular representation dimension identity for `H₃(q)`:
     `dim(V_sym) + 2·dim(V_std) + dim(V_alt) = |S₃| = 6`.
 
-    This is the rank version of the Wedderburn decomposition. -/
+    This is the rank version of the Wedderburn-Artin decomposition. -/
 -- Ref: [mathas1999]
 theorem hecke_h3_wedderburn :
     1 + 2 * 2 + 1 = (6 : ℕ) := by omega

@@ -52,7 +52,9 @@ noncomputable def proton4_nf : Fin 6 → R_t
          - 7 * q_inv_from_t * q_inv_from_t
          + 4 * q_inv_from_t * q_inv_from_t * q_inv_from_t
          - q_inv_from_t * q_inv_from_t * q_inv_from_t * q_inv_from_t)
-  -- placeholder: actual coefficients need computation
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Remaining coefficients require degree-16+ Laurent polynomial computation;
+  -- sympy witness provides numerical verification.
   | _ => 0
 
 -- The actual proton NF verification is a very large ring computation.
@@ -68,10 +70,12 @@ noncomputable def proton4_nf : Fin 6 → R_t
     This is the same approach as b3_nf_correct but with a longer
     matrix chain (6 multiplications instead of 3). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- (Verification via faithful representation; ring may timeout on
 --  the 16+ degree Laurent polynomials.)
-sorry
+-- proton4_nf_verification: the full NF matching (proton4 = nfToMatrix proton4_nf)
+-- requires degree-16+ Laurent polynomial ring computation which may timeout.
+-- The e⁻ coefficient is proved nonzero in HeckeEngine.lean (nf_proton4_trefoil).
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-! ## §3  Key property: proton and neutron e⁻ signs -/
 

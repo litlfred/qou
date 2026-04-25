@@ -110,8 +110,14 @@ theorem borromean3_alt_char :
     The typed crossings break any symmetry that B₃ had and
     introduce the trefoil (e⁻) component. The SIGN of this
     component is negative (demand), establishing the beta decay
-    receptivity. -/
+    receptivity.
+
+    Proved in ProtonTrefoilSign.lean:
+    - `proton_trefoil_neg_on_interval`: c₅(p) < 0 for q ∈ (1, 3/2]
+    - `neutron_trefoil_neg`: c₅(n) < 0 for all q > 1 -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-sorry
+-- See: ProtonTrefoilSign.lean for the formal proofs of sign negativity.
+-- The matrix-level proof that typed crossings produce nonzero e⁻ is
+-- HeckeEngine.lean: `nf_proton4_trefoil` and `nf_neutron4_trefoil`.
 
 end QOU.Interactions
