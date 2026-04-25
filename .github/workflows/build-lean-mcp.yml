@@ -99,5 +99,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # Registry cache (ghcr.io/.../paper-assistant:buildcache) is
+          # faster on pull than `type=gha` and isn't subject to the
+          # GHA cache size / per-key churn limits.  The cache tag is
+          # separate from `:latest` and shares the same GHCR namespace.
+          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
+          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max

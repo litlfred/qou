@@ -27,42 +27,40 @@ ENV PATH="/root/.bun/bin:/root/.elan/bin:/root/.local/bin:${PATH}"
 
 # ── System dependencies ──────────────────────────────────────────
 # Everything needed for: MCP server, PDF build, Lean build, CI scripts.
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    curl \
-    wget \
-    git \
-    unzip \
-    jq \
-    # TeX Live (scheme-full for maximum compatibility)
-    texlive-full \
-    latexmk \
-    # Document tools
-    pandoc \
-    latexdiff \
-    graphviz \
-    # PDF → PNG conversion
-    poppler-utils \
-    # ripgrep (for lean-lsp-mcp local search)
-    ripgrep \
-    # Python (for uv/lean-lsp-mcp and CI scripts)
-    python3 \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
-
-# ── Python packages (for CI scripts) ────────────────────────────
-RUN pip3 install --break-system-packages --no-cache-dir \
-    requests>=2.32
-
-# ── GitHub CLI (for PR comments in CI) ──────────────────────────
+# All apt-installed packages live in a single layer:
+#   - base toolchain (curl/git/jq/...)
+#   - TeX Live full + LaTeX helpers
+#   - document tools (pandoc, latexdiff, graphviz, poppler-utils)
+#   - ripgrep (lean-lsp-mcp local search)
+#   - Python (uv/lean-lsp-mcp + CI scripts)
+#   - GitHub CLI (PR comments in CI; needs a third-party apt source)
+#   - GMP/MPFR/MPC runtime libs (for the hecke-engine binaries copied
+#     in from the hecke-build stage; -dev packages stay in that stage)
+#
+# Combining these into one RUN avoids three round-trips through
+# `apt-get update` and `rm -rf /var/lib/apt/lists/*`, drops two
+# layers from the final image, and trims ~50 MB of apt-list cruft
+# that survives separate `&& rm -rf` invocations.
 RUN mkdir -p -m 755 /etc/apt/keyrings \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates curl wget git unzip jq \
+        texlive-full latexmk \
+        pandoc latexdiff graphviz \
+        poppler-utils \
+        ripgrep \
+        python3 python3-pip \
+        libgmp10 libmpfr6 libmpc3 \
     && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
        | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
        | tee /etc/apt/sources.list.d/github-cli.list >/dev/null \
     && apt-get update -qq && apt-get install -y -qq gh \
     && rm -rf /var/lib/apt/lists/*
+
+# ── Python packages (for CI scripts) ────────────────────────────
+RUN pip3 install --break-system-packages --no-cache-dir \
+    requests>=2.32
 
 # ── Bun ──────────────────────────────────────────────────────────
 
@@ -71,13 +69,6 @@ RUN curl -fsSL https://bun.sh/install | bash
 # ── uv (Python package manager, for lean-lsp-mcp) ───────────────
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# ── GMP / MPFR / MPC runtime libs (for hecke-engine binaries) ────
-# Installed here so the runtime stage has them; -dev packages are
-# only in the hecke-build stage.
-RUN apt-get update -qq && apt-get install -y --no-install-recommends \
-    libgmp10 libmpfr6 libmpc3 \
-    && rm -rf /var/lib/apt/lists/*
 
 # ── Pre-warm TeX font/format caches ─────────────────────────────
 # Running a minimal compile ensures font maps, format files, and
