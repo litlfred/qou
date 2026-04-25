@@ -43,17 +43,10 @@ mp.mp.dps = 30
 
 from q_parameter import Q as Q0_FLOAT
 from hecke_characters import partitions_of, dim_q, young_hooks
+from q_mpmath import set_q, qint, qfac
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
-
-
-def qint(n): return (Q0**n - QI**n) / (Q0 - QI)
-
-
-def qfac(n):
-    out = mp.mpf(1)
-    for k in range(2, n+1): out *= qint(k)
-    return out
+set_q(Q0_FLOAT)
+Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0  # kept for direct power use
 
 
 def transpose_partition(lam):
@@ -114,12 +107,13 @@ def main():
     print()
 
     # Test on small partitions first
+    chirality_cells_total = []  # (n, partition, k, w_lam) where D_q^2 = 0
     for n in [3, 4, 5, 6, 9, 12]:
         print(f"  ── n = {n} ──")
         print(f"  {'partition':<18} {'depth k':>7} {'c_λ':>5} {'D_q² eigval':>14} "
-              f"{'S-class':>8} {'dim_q':>10} {'w_λ':>10}")
+              f"{'S-class':>8} {'central?':>9} {'dim_q':>10} {'w_λ':>10}")
         nfac = float(qfac(n))
-        cells = {}  # (k, eps, D_q²) -> [partitions]
+        cells = {}  # (k, eps, central?, D_q²) -> [partitions]
         for lam in partitions_of(n):
             lam_t = tuple(lam)
             k = len(lam_t) - 1
@@ -128,20 +122,38 @@ def main():
             s_class = s_eigenvalue(lam_t)
             dq = float(dim_q(lam_t))
             w = dq*dq/nfac
+            # central? flag: D_q² = 0 marks the chirality channel where the
+            # q-Dirac operator vanishes — these are the persistent
+            # gauge-invariant background cells (gluon-condensate analogues).
+            is_central = abs(D2) < 1e-10
+            central_str = "YES" if is_central else "no"
+            if is_central:
+                chirality_cells_total.append((n, lam_t, k, w))
             print(f"  {str(lam_t):<18} {k:>7} {c:>5} {D2:>14.6f} "
-                  f"{s_class:>8} {dq:>10.4f} {w:>10.6f}")
+                  f"{s_class:>8} {central_str:>9} {dq:>10.4f} {w:>10.6f}")
             # Round D2 to reasonable precision for binning
             D2_key = round(D2, 4)
-            cell = (k, s_class, D2_key)
+            cell = (k, s_class, is_central, D2_key)
             cells.setdefault(cell, []).append(lam_t)
 
-        print(f"\n  Cell grid (k, S-class, D_q²) → partitions:")
-        for cell in sorted(cells):
-            k, eps, D2 = cell
+        print(f"\n  Cell grid (k, S-class, central?, D_q²) → partitions:")
+        for cell in sorted(cells, key=lambda c: (c[0], c[1], c[2], c[3])):
+            k, eps, central, D2 = cell
             parts = cells[cell]
-            print(f"    ({k}, {eps:>5}, D²={D2:>10.4f}): {len(parts)} partitions: "
+            star = " ★" if central else "  "
+            print(f"    ({k}, {eps:>5}, central={str(central):>5}, D²={D2:>10.4f}){star}: "
+                  f"{len(parts)} partitions: "
                   f"{[str(p) for p in parts][:3]}{'...' if len(parts) > 3 else ''}")
         print()
+
+    # Chirality channel summary (witness for prop:confinement-categorical)
+    print("=" * 100)
+    print("  CHIRALITY CHANNEL (D_q² = 0): persistent gauge-invariant background")
+    print("=" * 100)
+    print(f"  {'n':>3}  {'partition':<18}  {'depth k':>7}  {'w_λ':>10}")
+    for (n, lam_t, k, w) in chirality_cells_total:
+        print(f"  {n:>3}  {str(lam_t):<18}  {k:>7}  {w:>10.6f}")
+    print()
 
     # Specific identifications for our formulas
     print("=" * 100)

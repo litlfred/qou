@@ -40,18 +40,11 @@ mp.mp.dps = 50
 
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from q_mpmath import set_q, qint, qpoch
 
+set_q(Q0_FLOAT)
 Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
 me = mp.mpf(str(M_E_MEV))
-
-
-def qint(n): return (Q0**n - QI**n) / (Q0 - QI)
-
-
-def qpoch(n):
-    out = mp.mpf(1)
-    for k in range(1, n+1): out *= (1 - Q0**k)
-    return out
 
 
 def main():

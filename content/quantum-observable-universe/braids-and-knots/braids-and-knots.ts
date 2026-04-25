@@ -419,6 +419,7 @@ export default chapter({
         "gb-spectral-sequence",
         "curvature-rank-gb-stratification",
         "spectral-sequence-collapse",
+        "confinement-categorical",
         "plancherel-term-7-formulation",
         "unified-curvature-rank-mass-formula",
         "e-infinity-page-identifications",
