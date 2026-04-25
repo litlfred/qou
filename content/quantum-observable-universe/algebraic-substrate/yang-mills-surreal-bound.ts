@@ -11,7 +11,9 @@ export default remark({
     "lem:surreal-squeeze",
     "def:reeb-epsilon",
     "def:q-from-epsilon",
+    "rem:ns-surreal-bound",
     "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
   ],
   tags: [
     "yang-mills",

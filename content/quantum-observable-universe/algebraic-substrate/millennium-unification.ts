@@ -10,6 +10,7 @@ export default remark({
     "thm:quantum-gap-collapse",
     "prop:blowup-yekutieli",
     "conj:p-vs-np-qou",
+    "conj:q-birch-swinnerton-dyer",
     "def:categorical-reeb-derivation",
     "lem:surreal-squeeze",
     "prop:surreal-rate-calculus",

@@ -11,6 +11,7 @@ export default remark({
     "def:reeb-epsilon",
     "def:q-from-epsilon",
     "prop:surreal-rate-calculus",
+    "rem:millennium-unification",
     "rem:conway-normal-form",
     "rem:calculus-up-to-epsilon",
   ],

@@ -14,6 +14,7 @@ export default remark({
     "def:q-from-epsilon",
     "prop:surreal-rate-calculus",
     "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
   ],
   tags: [
     "riemann-hypothesis",
