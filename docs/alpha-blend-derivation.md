@@ -706,6 +706,38 @@ partitions to atomic occupancy via Schur-Weyl multiplicities.
 This refinement is a deferred research direction; the per-generator
 + (2,2)$\vdash 4$ Wigner formula remains the best-validated currently.
 
+## 6.10 Commutative-case diagnostic localizes the D, ⁴He issue
+
+To determine whether the wrong-sign binding for D and ⁴He is a
+$q$-deformation artefact, scan the parameter from $q \to 1$
+(commutative QOU, where $H_n(q) \to \mathbb{C}[S_n]$) up to $q_0$:
+
+| Iso | $q \approx 1$ | $q = q_0$ |
+|---|---|---|
+| D | **+2.62** (wrong) | +4.99 (wrong) |
+| T | −2.59 (correct) | −5.38 (correct) |
+| ³He | −2.58 (correct) | −4.65 (correct) |
+| ⁴He | **+5.24** (wrong) | +10.77 (wrong) |
+
+At $q \to 1$ the chirality term vanishes ($H_A \to 0$, so
+$H_A^2 \Phi_3 \to 0$), reducing the formula to
+$\alpha (\Phi_1 - 6 \Phi_2)$. The sign flip persists. **The issue
+is NOT $q$-dependent — it is structural in the inter-only $\Phi_1$
+for fully-paired ($Z = N$) systems**.
+
+In the commutative limit $H_n(1) = \mathbb{C}[S_n]$, the proton
+braid (uud) and neutron braid (udd) reduce to the same permutation
+structure (since uu and dd primitives both collapse to the identity
+plus same generator $\sigma$ at $H_A = 0$). The free-constituent
+subtraction then over-removes for $Z = N$ atoms because both
+constituents share the same intra-nucleon $\Phi_1$ — the inter-
+nucleon contribution $\Phi_1^{\text{inter}}$ becomes positive.
+
+This points to a refined construction: subtract only the **average**
+free-constituent baseline ($(\Phi_1^p + \Phi_1^n)/2$ per nucleon)
+rather than per-type, OR use an alternative Φ_1 normalisation that
+respects the $Z = N$ exchange symmetry. Implementation deferred.
+
 ## 7. Integrated formal derivation (everything together)
 
 The complete derivation chain, top-down:
