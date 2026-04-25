@@ -322,6 +322,7 @@ export default chapter({
         "wedderburn-trace-identity",
         "binding-scale-catalan",
         "wedderburn-mass-formula",
+        "frobenius-s-classification",
         "algebraic-quantum-volume",
         "habiro-ring",
         "algebraic-quantum-volume-specialization",
