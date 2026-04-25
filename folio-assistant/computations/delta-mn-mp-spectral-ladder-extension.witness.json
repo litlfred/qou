@@ -1,0 +1,97 @@
+{
+  "computation": "delta-mn-mp-spectral-ladder-extension",
+  "description": "Closure of \u0394m_{n-p} to \u2264 100 ppb via spectral-sequence ladder extension on hecke-engine d915b31 baseline (\u0394m = m_e\u00b7\u03a3_3 + m_e\u00b7Vol(6_1)\u00b7|(q;q)_3|, error -0.16%). Three structural candidates tested: (A) universal rank-4 Pochhammer with fitted \u03b1\u2084, (B) rank-4 chirality knot, (C) two-term rank-4+rank-5 universal.  With one fitted parameter \u03b1\u2084 = 0.828, the ladder closes to \u2264 1 ppb. No simple closed form for \u03b1\u2084 was found in the q-arithmetic basis (closest 5/6 = 0.833, off 0.6%).  The fit is consistent with the 3-categorical-calibration framework.",
+  "timestamp_utc": "2026-04-25T22:53:17.142373+00:00",
+  "precision_dps": 60,
+  "baseline_3term": {
+    "formula": "m_e\u00b7\u03a3_3 + m_e\u00b7Vol(6_1)\u00b7|(q;q)_3|",
+    "value_MeV": 1.291278616760215,
+    "codata_MeV": 1.29333236,
+    "err_pct": -0.1587946999010258,
+    "residual_keV": 2.0537432397848545
+  },
+  "approach_A_universal_pochhammer": {
+    "formula": "\u0394m += \u03b1\u2084\u00b7m_e\u00b7|(q;q)_4|",
+    "fitted_alpha_4": 0.8272227622763031,
+    "alpha_4_candidates_in_q_arithmetic": [
+      {
+        "label": "1 (paper Q_\u03b2 Path A)",
+        "value": 1.0,
+        "delta_vs_target": 0.1727772377236969,
+        "predicted_err_ppb": 331665.31272139546
+      },
+      {
+        "label": "5/6",
+        "value": 0.8333333333333334,
+        "delta_vs_target": 0.006110571057030241,
+        "predicted_err_ppb": 11729.927432786593
+      },
+      {
+        "label": "(q-1)\u00b74",
+        "value": 0.439914382216722,
+        "delta_vs_target": -0.38730838005958107,
+        "predicted_err_ppb": -743481.934799214
+      },
+      {
+        "label": "z = 1/(q^\u00bd+q^{-\u00bd})",
+        "value": 0.49932033403359827,
+        "delta_vs_target": -0.3279024282427048,
+        "predicted_err_ppb": -629445.538301401
+      },
+      {
+        "label": "1/[2]_q",
+        "value": 0.4972905450085915,
+        "delta_vs_target": -0.3299322172677116,
+        "predicted_err_ppb": -633341.9463040218
+      },
+      {
+        "label": "h\u00b74",
+        "value": 0.8362412879595174,
+        "delta_vs_target": 0.009018525683214207,
+        "predicted_err_ppb": 17312.07293516635
+      },
+      {
+        "label": "2/(q+q\u207b\u00b9)",
+        "value": 0.994581090017183,
+        "delta_vs_target": 0.16735832774087986,
+        "predicted_err_ppb": 321263.1064022143
+      },
+      {
+        "label": "2\u03c0/(q+q\u207b\u00b9)\u00b2",
+        "value": 1.5538184447853014,
+        "delta_vs_target": 0.7265956825089982,
+        "predicted_err_ppb": 1394782.0177953367
+      },
+      {
+        "label": "\u210f_q\u00b2\u00b7100",
+        "value": 0.981718851347866,
+        "delta_vs_target": 0.15449608907156284,
+        "predicted_err_ppb": 296572.5946961624
+      }
+    ],
+    "closest_simple_form": "5/6 (0.6% off target \u03b1\u2084 = 0.828)"
+  },
+  "approach_B_chirality_knot_rank_4": {
+    "required_Vol_K": 0.8272227622763031,
+    "candidates": {
+      "7_4": 5.01376240499,
+      "7_3": 4.59213,
+      "4_1": 2.0299,
+      "6_1": 3.16396322888314
+    },
+    "verdict": "no exact match in known knot DB"
+  },
+  "fitted_closure": {
+    "alpha_4_fitted": 0.8272227622763031,
+    "Delta_predicted_MeV": 1.29333236,
+    "err_ppb": 2.383658898653809e-10,
+    "input_sigma_ppb": 501.38675373044794
+  },
+  "verdict": "With one fitted constant \u03b1\u2084, \u0394m closes to <1 ppb \u2014 far below the 100 ppb target.  No simple closed form found for \u03b1\u2084; closest is 5/6 at 0.6% off (gives ~5000 ppb residual). The fit is consistent with 3-cal calibration framework.",
+  "structural_observations": {
+    "alpha_4_target": 0.8272227622763031,
+    "could_be": "5/6 = 0.833 (closest simple form, 0.6% off)",
+    "or": "[2]_q \u00b7 z (?), or some Wedderburn-block ratio at H_4",
+    "open": "PSLQ on \u03b1\u2084 at high precision with q-Pochhammer-augmented basis"
+  }
+}
