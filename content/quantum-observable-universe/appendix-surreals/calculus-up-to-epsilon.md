@@ -1,7 +1,7 @@
 While surreal numbers lack a Hilbert-space completion and
 canonical Lebesgue measure (see
 [analytic obstructions](#rem:analytic-obstructions)), a
-surprisingly large fragment of *differential* and *formal
+substantial fragment of *differential* and *formal
 integral* calculus lifts to $\mathbf{No}$ up to an infinitesimal
 correction. This remark records what works, and how classical
 analysis is recovered via the standard-part map.
