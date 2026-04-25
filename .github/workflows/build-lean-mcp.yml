@@ -18,6 +18,9 @@
 name: Build Paper Assistant Image
 
 on:
+  push:
+    branches:
+      - copilot/fix-cargo-build-error
   workflow_dispatch:
   schedule:
     - cron: '0 6 * * 0'  # Weekly Sunday 06:00 UTC
