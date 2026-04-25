@@ -215,7 +215,9 @@ def term_seven(Z, N, *, target_height=6, S_fn=S_conj, q=Q0):
 # Driver
 # ────────────────────────────────────────────────────────────────────────
 
-ISOTOPES = [
+import os
+
+ISOTOPES_ALL = [
     ("D",   1, 1),
     ("T",   1, 2),
     ("3He", 2, 1),
@@ -223,16 +225,22 @@ ISOTOPES = [
     ("6Li", 3, 3),
     ("7Li", 3, 4),
 ]
+# Default scope = A=2..4 (k=6,9,12).  Override with TERM7_MAX_A=7 to extend.
+MAX_A = int(os.environ.get("TERM7_MAX_A", "4"))
+ISOTOPES = [t for t in ISOTOPES_ALL if (t[1] + t[2]) <= MAX_A]
 
 
 def main():
     print(f"Term 7 — exact Hoefsmit τ_λ (q_0 = {float(Q0):.10f})")
     print(f"Filter:  len(λ) = 6  (GB level ℓ = 5)")
-    print(f"Isotopes: A = 2..7")
+    print(f"Scope:   A <= {MAX_A}  (set TERM7_MAX_A=7 env var to extend)")
+    print(f"Isotopes: {[i[0] for i in ISOTOPES]}")
     print("=" * 100)
     print(f"  {'iso':<5} {'A':>2} {'k=3A':>4} | {'#partitions':>11} | "
           f"{'Δ7 conj-S (MeV)':>17} | {'Δ7 hocc-S (MeV)':>17} | walltime")
-    print("-" * 100)
+    print("-" * 100, flush=True)
+
+    out_path = Path(__file__).parent / "term-seven-exact.witness.json"
 
     out = {
         "computation": "term-seven-exact",
@@ -297,9 +305,10 @@ def main():
             "top_5_contributions_hocc": rows_hocc[:5],
         })
 
-    out_path = Path(__file__).parent / "term-seven-exact.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2)
+        # Save partial witness incrementally so a timeout doesn't lose work
+        with open(out_path, "w") as fp:
+            json.dump(out, fp, indent=2)
+
     print()
     print(f"Witness: {out_path}")
 
