@@ -4,8 +4,7 @@ $\mathcal{D}_\nabla\psi = 0$
 concrete geometry of a double-slit experiment, with the photon as the
 test particle.  In the QOU, a photon is not the bare identity
 $\mathbf{1}$ but a **photon with color content**
-$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-+ \varphi_{01}\sigma_0\sigma_1$
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$
 ([color content](#rem:knot-basis-color-content)), where the Hecke
 generators encode polarisation on the exceptional divisor
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$.  The identity
