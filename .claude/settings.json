@@ -38,7 +38,7 @@
         "hooks": [
           {
             "type": "agent",
-            "prompt": "Check if the Bash command in $ARGUMENTS was a 'git push'. If it was, and it succeeded, find the open PR number for the current branch in litlfred/qou using mcp__github__list_pull_requests, then: (1) post a comment '/gemini review' on that PR using mcp__github__add_issue_comment, and (2) subscribe to PR activity using mcp__github__subscribe_pr_activity so CI failures and review comments are delivered to the session. If the command was not a git push, or there is no open PR, do nothing.",
+            "prompt": "Check if the Bash command in $ARGUMENTS was a 'git push'. If it was, and it succeeded, find the open PR number for the current branch in litlfred/qou using mcp__github__list_pull_requests, then subscribe to PR activity using mcp__github__subscribe_pr_activity so CI failures and review comments are delivered to the session. If the command was not a git push, or there is no open PR, do nothing.",
             "timeout": 30
           }
         ]

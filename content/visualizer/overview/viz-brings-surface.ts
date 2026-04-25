@@ -15,6 +15,5 @@ export default definition({
     file: "QOU/BringsSurface/Viewport.lean",
     validation: "not_checked",
   },
-  status: "not_started",
   uses: [],
 });
