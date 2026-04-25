@@ -59,7 +59,7 @@ adelic refinement
 ([adelic--Tate surreal squeeze](#rem:adelic-tate-squeeze))
 localises the fifth row at each prime.  The sixth row is
 *unconditional* once the QOU substrate is posited: the mass gap is
-a categorical invariant of $\mathbf{C}$ with $\ordw(\Delta_q) = 3$,
+a categorical invariant of $\mathbf{C}$ with $\ordw(\Delta_q) = -3$,
 and Yang--Mills on $\mathbb{R}^4$ is the standard part of the
 $q$-deformation.
 
