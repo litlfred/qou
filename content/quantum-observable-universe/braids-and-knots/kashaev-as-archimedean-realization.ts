@@ -10,6 +10,8 @@ export default remark({
     "def:algebraic-quantum-volume",
     "rem:kashaev-volume-density",
     "thm:jones-markov-trace",
+    "def:adelic-substrate",
+    "prop:vol-through-tau",
   ],
   cites: ["kashaev1997", "murakami-murakami2001"],
 });

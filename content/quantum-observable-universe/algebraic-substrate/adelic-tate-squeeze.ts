@@ -6,16 +6,15 @@ export default remark({
     "Adelic--Tate surreal squeeze: local Reeb-$\\varepsilon_p$ at each prime and the global Euler product",
   interprets: "thm:hasse-weil-bound",
   uses: [
-    "thm:hasse-weil-bound",
     "thm:macroscopic-stability-equivalence",
     "rem:rh-surreal-bound",
     "rem:bsd-surreal-bound",
-    "lem:surreal-squeeze",
+    "rem:fibre-functor-rigidity",
+    "def:standard-part-functor",
+    "prop:vol-through-tau",
     "def:reeb-epsilon",
-    "def:q-from-epsilon",
-    "prop:surreal-rate-calculus",
-    "rem:conway-normal-form",
-    "rem:calculus-up-to-epsilon",
+    "lem:surreal-squeeze",
+    "def:arc-space",
   ],
   tags: [
     "adeles",
@@ -28,5 +27,5 @@ export default remark({
     "squeeze",
     "local-global",
   ],
-  cites: ["conway1976", "tate1950"],
+  cites: ["conway1976", "tate1967"],
 });
