@@ -20,6 +20,7 @@ export default conjecture({
     "conj:infinitesimal-frobenius",
     "conj:infinitesimal-observability",
     "conj:vacuum-epsilon",
+    "rem:fibre-functor-rigidity",
   ],
   cites: ["robinson1966", "ehrlich2012"],
 });

@@ -16,6 +16,8 @@ export default remark({
     "rem:hecke-algebra-from-braiding",
     "prop:leray-profile",
     "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
+    "rem:cmb-q-torsion",
   ],
   tags: [
     "navier-stokes",

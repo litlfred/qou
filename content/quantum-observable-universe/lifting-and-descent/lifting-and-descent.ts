@@ -28,6 +28,7 @@ export default chapter({
         "recursive-brane-tower",
         "recursive-brane-tower-su2",
         "brane-tower-levels",
+        "arc-space",
       ],
     }),
 

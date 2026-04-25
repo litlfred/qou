@@ -12,6 +12,7 @@ export default remark({
     "def:reeb-epsilon",
     "def:q-from-epsilon",
     "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
   ],
   tags: [
     "yang-mills",

@@ -6,14 +6,8 @@ export default remark({
     "Surreal bound for Collatz: contact-boundary deviation costs transfinite Reeb period",
   interprets: "conj:q-collatz",
   uses: [
-    "conj:q-collatz",
     "prop:collatz-no-cycles",
     "lem:surreal-squeeze",
-    "def:reeb-epsilon",
-    "def:q-from-epsilon",
-    "prop:surreal-rate-calculus",
-    "rem:conway-normal-form",
-    "rem:calculus-up-to-epsilon",
   ],
   tags: [
     "collatz",

@@ -34,12 +34,14 @@ export default chapter({
         "valuation-ring-finite-surreals",
         "classical-limit-stpart",
         "archimedean-stpart",
+        "archimedean-stpart-strategy",
       ],
     },
     {
       title: "Conway normal form and asymptotic notation",
       blocks: [
         "conway-normal-form",
+        "body-asymptotics-catalog",
       ],
     },
     {

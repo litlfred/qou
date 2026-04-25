@@ -17,9 +17,10 @@ irreducible summand $S_\lambda$, the trace restricts to a non-zero
 scalar multiple of the character, so every summand is detected by
 some braid closure.
 
-*Part (3).*  The algebraic direct limit
-$V_{\mathrm{phys}} := \varinjlim V^{\otimes n}$ is the union of its
-finite-dimensional subspaces $V^{\otimes n}$, each of which is
-completely decomposed by (1).  Hence the irreducible summands,
-indexed by knot types via the closure map, span $V_{\mathrm{phys}}$.
-No metric completion is used.
+*Part (3).*  $V_{\mathrm{phys}} := \varinjlim V^{\otimes n}$ is
+the algebraic direct limit — the union of its finite-dimensional
+subspaces $V^{\otimes n}$, each of which is completely decomposed
+by (1) — and so the irreducible summands, indexed by knot types
+via the closure map, span $V_{\mathrm{phys}}$. The construction
+remains within rigid algebraic categories without any metric
+completion.
