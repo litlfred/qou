@@ -61,7 +61,7 @@ losing the $2^n$-fold speedup.
 compatible with the Reeb--surreal framework but does not yet
 admit a Lean formalisation beyond the statement.  A formal
 proof would reduce the $q$-to-classical compression obstruction
-to the structural non-existence of a BQP$_q \to \mathbf{P}$
+to the structural non-existence of a $\mathrm{BQP}_q \to \mathbf{P}$
 functor, consistent with the Freedman--Kitaev--Larsen--Wang
 topological model \cite{freedman2003} at $q$-generic.
 

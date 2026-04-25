@@ -61,7 +61,7 @@ non-compressibility witness of
 
 **Caveat.** Unlike the RH, NS, and Collatz bounds, the P-vs-NP
 squeeze is conditional on an independent conjecture
-(non-compressibility of BQP$_q \to \mathbf{P}$ as $\varepsilon \to 0$).
+(non-compressibility of $\mathrm{BQP}_q \to \mathbf{P}$ as $\varepsilon \to 0$).
 This places P-vs-NP in the *conditional* millennium-problem column
 rather than the *unconditional* one; see
 [millennium unification](#rem:millennium-unification) for the
