@@ -61,8 +61,8 @@ structural changes follow in the
 [confinement SDP](#prop:confinement-sdp):*
 
 *(a) **Primal relaxation.**  The primal variable space extends from
-$\mathrm{End}_{\mathbb{C}}(H_{A+Z-1}(q))$ to
-$\mathrm{End}_{\mathbb{C}}(H_{A+Z}(q))$; the cabling-induced lift
+$\mathrm{End}_R(H_{A+Z-1}(R, q))$ to
+$\mathrm{End}_R(H_{A+Z}(R, q))$; the cabling-induced lift
 $\Phi \mapsto \iota_* \Phi \oplus 0$ embeds every primal-feasible
 point of $\mathrm{SDP}_{Z-1}$ into the primal-feasible set of
 $\mathrm{SDP}_Z$ while preserving $\langle T, \Phi \rangle$.*
