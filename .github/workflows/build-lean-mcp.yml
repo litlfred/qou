@@ -32,10 +32,13 @@ on:
       - 'tools/hecke-engine/**'
   workflow_dispatch:
   schedule:
-    # Sunday + Wednesday 06:00 UTC — Mathlib master advances daily, so
-    # twice-weekly rebuilds keep the cached olean layer fresh enough
-    # that folio-assistant `lean_build` calls don't pay a multi-minute
-    # `lake exe cache get` on first use after a cold pull.
+    # Sunday + Wednesday 06:00 UTC — rebuild periodically to pick up
+    # OS / TeX Live security updates and keep the cached olean layer
+    # warm so folio-assistant `lean_build` calls do not pay a multi-
+    # minute `lake exe cache get` on first use after a cold pull.
+    # Mathlib itself is pinned by `rev` in `lakefile.toml`, so manual
+    # bumps trigger a rebuild via the `lakefile.toml` path filter
+    # above; the cron is for OS updates and cache freshness.
     - cron: '0 6 * * 0'
     - cron: '0 6 * * 3'
 
