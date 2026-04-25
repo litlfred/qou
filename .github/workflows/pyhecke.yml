@@ -1,19 +1,6 @@
 name: pyhecke
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'tools/pyhecke/**'
-      - 'tools/hecke-engine/schemas/**'
-      - 'tools/hecke-engine/certificate-*.json'
-      - '.github/workflows/pyhecke.yml'
-  pull_request:
-    paths:
-      - 'tools/pyhecke/**'
-      - 'tools/hecke-engine/schemas/**'
-      - 'tools/hecke-engine/certificate-*.json'
-      - '.github/workflows/pyhecke.yml'
   workflow_dispatch: {}
 
 concurrency:

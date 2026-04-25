@@ -2511,7 +2511,7 @@ export const references: CSLData[] = [
     DOI: "10.1007/s00440-010-0331-6",
     note:
       "Central limit theorem for the q-Plancherel measure on Young " +
-      "diagrams, with convergence rate O(1/\u221ak). Provides the " +
+      "diagrams, with convergence rate $O(1/\\sqrt{k})$. Provides the " +
       "asymptotic theory for iterative q-hook walk accumulation.",
   }),
 

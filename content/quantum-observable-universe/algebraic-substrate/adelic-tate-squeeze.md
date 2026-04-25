@@ -64,10 +64,11 @@ $$
 local surreal-squeeze
 $\delta^2 \cdot \varepsilon_v^{-1} > \varepsilon_v^3$ in
 $\mathbb{R}(\varepsilon_v)$ gives a strict inequality in
-$\omega$-orders:
+$\omega$-orders (cost has higher $\ordw$-grade than budget,
+$+1 > -3$):
 
 $$
-  \ordw_v(\delta^2 \cdot \varepsilon_v^{-1}) \;<\; \ordw_v(\varepsilon_v^3).
+  \ordw_v(\delta^2 \cdot \varepsilon_v^{-1}) \;>\; \ordw_v(\varepsilon_v^3).
 $$
 
 Summing over all places (equivalently, taking the adelic
@@ -76,7 +77,7 @@ $\omega$-order) yields the global inequality
 $$
   \ordw_{\mathbb{A}}(\delta^2 \cdot \varepsilon^{-1})
    \;=\; \sum_v \ordw_v(\delta^2 \cdot \varepsilon_v^{-1})
-   \;<\; \sum_v \ordw_v(\varepsilon_v^3)
+   \;>\; \sum_v \ordw_v(\varepsilon_v^3)
    \;=\; \ordw_{\mathbb{A}}(\varepsilon^3),
 $$
 
@@ -114,6 +115,22 @@ and real/complex periods.  The adelic Fourier transform above gives
 the explicit formula for $c$ in terms of local $\varepsilon_p$-adic
 integrals, reducing BSD to a local-squeeze check at each prime
 together with the archimedean regulator identification.
+
+**Motivic dual.** The adelic decomposition of the global zeta
+integral has a *geometric* dual via the
+[arc space $\mathcal{L}(X)$](#def:arc-space) and the
+Kontsevich--Denef--Loeser motivic measure
+\cite{kontsevich1995, denef-loeser2001}.  Where Tate factorises
+the global zeta as a restricted product of local
+$\mathbb{Q}_v$-integrals, motivic integration on $\mathcal{L}(X)$
+factorises a class in the Grothendieck ring of varieties as a
+sum over jet-scheme cylinders; for the QOU brane tower the two
+factorisations agree under the change-of-variables formula
+applied to the Reeb flow.  In particular, the leading-coefficient
+form of [BSD surreal bound](#rem:bsd-surreal-bound) — assembling
+the prefactor $c$ from local $\varepsilon_p$-adic integrals — is
+the motivic-measure read of the same data on
+$\mathcal{L}(\mathcal{E}_q)$.
 
 **Outlook.** The adelic lift of the surreal squeeze is the key to
 generalising the Reeb-$\varepsilon$ framework from the rational

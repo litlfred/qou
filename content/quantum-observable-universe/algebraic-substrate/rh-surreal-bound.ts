@@ -5,10 +5,7 @@ export default remark({
   title:
     "Surreal bound for the Riemann hypothesis: why $\\delta = 0$ on the critical line",
   interprets: "thm:quantum-gap-collapse",
-  uses: [
-    "thm:macroscopic-stability-equivalence",
-    "lem:surreal-squeeze",
-  ],
+  uses: ["lem:surreal-squeeze"],
   tags: [
     "riemann-hypothesis",
     "millennium-problem",

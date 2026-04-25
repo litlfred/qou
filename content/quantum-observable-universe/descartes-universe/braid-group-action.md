@@ -17,7 +17,7 @@ the spacetime degrees of freedom collapse projectively to the ratio
 $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$.  The transposition
 $x_0\leftrightarrow x_1$ acts as the Mobius involution
 $z\mapsto 1/z$, which is a $\pi$-rotation on $\mathbb{P}^1(\mathbb{C})$ and embeds
-into $\mathrm{SU}(2)$ as $\beta=\exp(\pie_1)$.
+into $\mathrm{SU}(2)$ as $\beta=\exp(\pi e_1)$.
 In the resolvent basis this acts as
 
 ```tex

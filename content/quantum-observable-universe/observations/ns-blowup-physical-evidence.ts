@@ -6,10 +6,18 @@ export default remark({
     "Physical signatures of the Navier--Stokes blow-up: intermittency, GRBs, CMB anomalies",
   interprets: "prop:blowup-yekutieli",
   uses: [
+    "prop:blowup-yekutieli",
+    "rem:ns-surreal-bound",
     "rem:millennium-unification",
+    "def:reeb-epsilon",
+    "def:q-from-epsilon",
     "rem:cmb-torsion-data",
     "rem:bec-vortex-data",
+    "rem:hecke-algebra-from-braiding",
     "prop:leray-profile",
+    "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
+    "rem:cmb-q-torsion",
   ],
   tags: [
     "navier-stokes",
