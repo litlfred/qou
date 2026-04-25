@@ -28,6 +28,7 @@ Goal: see if Plancherel-weighted log functionals at curvature-rank
 """
 from __future__ import annotations
 import sys, json, warnings
+from multiprocessing import Pool, cpu_count
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -43,6 +44,9 @@ from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from hecke_characters import partitions_of, dim_q, build_seminormal_matrices
 from hecke_core import _step_chain_generic
+from q_mpmath import set_q, qint, qfac as _qfac_shared
+
+set_q(Q0_FLOAT)
 
 Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
 me = mp.mpf(str(M_E_MEV))
@@ -53,14 +57,9 @@ h_val = float(H_A)
 q3_q = Q0**2 + 1 + QI**2
 
 
-def qint(n):
-    return (Q0**n - QI**n) / (Q0 - QI)
-
-
 def qfac(n):
-    out = mp.mpf(1)
-    for k in range(2, n+1): out *= qint(k)
-    return out
+    """q-factorial — re-uses shared q_mpmath.qfac."""
+    return _qfac_shared(n)
 
 
 def atomic_braid_word(Z, N):
@@ -115,6 +114,26 @@ def chi_lambda_at_q0(shape, word):
     return chi
 
 
+def _process_partition(args):
+    """Worker for multiprocessing.Pool.
+
+    Returns (lam_t, depth, w_lam, chi, log_abs_chi) or None on error/zero.
+    Top-level (picklable) function so it works with Pool.map.
+    """
+    lam_t, word, nfac = args
+    depth = len(lam_t) - 1
+    try:
+        chi = chi_lambda_at_q0(lam_t, word)
+    except Exception:
+        return None
+    if chi == 0:
+        return None
+    dq = float(dim_q(lam_t))
+    w_lam = dq * dq / nfac
+    log_abs_chi = float(np.log(abs(chi)))
+    return (lam_t, depth, w_lam, chi, log_abs_chi)
+
+
 def main():
     print("=" * 100)
     print("TERM 7 via PLANCHEREL WEIGHTS — log Φ_k at curvature-ranks 4, 5")
@@ -137,6 +156,9 @@ def main():
         ('4He', 2, 2, 3728.40133, B_NUCL[('4He', 2, 2)]),
     ]
 
+    n_workers = max(1, cpu_count() - 1)
+    print(f"  Using {n_workers} parallel workers for character evaluation\n")
+
     rows = []
     for name, Z, N, M_ref, B_nucl in isotopes:
         A = Z + N
@@ -144,20 +166,21 @@ def main():
         word = atomic_braid_word(Z, N)
         nfac = float(qfac(n))
 
-        # For each partition λ⊢n, compute χ_λ(β), w_λ, log|χ|
+        # Build job list: one (lam_t, word, nfac) tuple per partition
+        jobs = [(tuple(lam), word, nfac) for lam in partitions_of(n)]
+
+        # Parallel character evaluation across partitions (independent work)
         per_depth = {}  # depth -> [(λ, w_λ, χ, log|χ|)]
-        for lam in partitions_of(n):
-            lam_t = tuple(lam)
-            depth = len(lam_t) - 1
-            try:
-                chi = chi_lambda_at_q0(lam_t, word)
-            except Exception:
+        if n_workers > 1 and len(jobs) > 4:
+            with Pool(n_workers) as pool:
+                results = pool.map(_process_partition, jobs)
+        else:
+            results = [_process_partition(j) for j in jobs]
+
+        for r in results:
+            if r is None:
                 continue
-            if chi == 0:
-                continue
-            dq = float(dim_q(lam_t))
-            w_lam = dq * dq / nfac
-            log_abs_chi = float(np.log(abs(chi)))
+            lam_t, depth, w_lam, chi, log_abs_chi = r
             per_depth.setdefault(depth, []).append((lam_t, w_lam, chi, log_abs_chi))
 
         # Compute Φ_k = Σ_{λ at depth k} w_λ · log|χ_λ|
