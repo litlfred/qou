@@ -1,0 +1,26 @@
+import { theorem } from "../../schema/builders";
+
+export default theorem({
+  label: "thm:em-spectral-completeness",
+  title:
+    "Two-strand spectral completeness over a commutative ring $R$",
+  lean: {
+    ref: "qou:QOU.Descartes.em_spectral_completeness",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:braiding-eigenvalue-extraction",
+    "rem:hecke-algebra-from-braiding",
+    "prop:wedderburn-trace-identity",
+  ],
+  tags: [
+    "spectral-completeness",
+    "wedderburn",
+    "central-idempotent",
+    "frobenius",
+    "commutative-ring",
+    "two-strand",
+    "gauge-channel",
+    "uniqueness",
+  ],
+});
