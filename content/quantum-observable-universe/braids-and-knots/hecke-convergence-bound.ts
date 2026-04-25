@@ -8,6 +8,8 @@ export default proposition({
     "thm:wedderburn-mass-formula",
     "prop:wedderburn-trace-identity",
     "prop:q-integer-mass-formula",
+    "rem:conway-normal-form",
+    "rem:body-asymptotics-catalog",
   ],
   tags: ["convergence", "hecke-level", "plancherel", "mass-formula"],
 });

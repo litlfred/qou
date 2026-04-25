@@ -138,3 +138,9 @@ each level $k$ introduces $p(k) - p(k-1)$ new partitions whose
 total Wedderburn--Artin weight is $O([2]_q^{-2})$ of the previous
 level's weight, by Plancherel concentration.
 $\square$
+
+*Formal asymptotic content. The truncation
+$\mathrm{MAE}(k) \leq C_0 \cdot [2]_q^{-2(k-3)}$ has
+$\ordw\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\ordw([2]_q)$;
+see [Big-O via $\ordw$](#rem:conway-normal-form) and the
+[body asymptotics catalog](#rem:body-asymptotics-catalog).*

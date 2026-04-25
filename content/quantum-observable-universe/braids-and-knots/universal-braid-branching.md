@@ -98,3 +98,8 @@ uncertainty $\delta q \approx 1.4 \times 10^{-9}$ (from CODATA
 $m_\mu/m_e$), giving $\delta M/M \sim 10^{-7}\%$, reached at
 $k \approx 13$.
 $\square$
+
+*Formal asymptotic content. The per-level Plancherel weight
+has $\ordw(\text{per-level weight}) = -2\,\ordw([2]_q)$ in the surreal
+valuation; see [Big-O via $\ordw$](#rem:conway-normal-form) and the
+[body asymptotics catalog](#rem:body-asymptotics-catalog).*

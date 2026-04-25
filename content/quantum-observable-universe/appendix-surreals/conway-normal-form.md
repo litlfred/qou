@@ -104,7 +104,7 @@ Three uses specific to the main paper:
 1. **CODATA fits.** The $\sim 4\%$ MAE on $\mathcal{Q}$-values is
    a leading-coefficient-level fit. Writing predictions in the form
    $\mathfrak{m}_{\mathfrak{H}} = \hat{\mathfrak{m}}_{\mathfrak{H}}
-   + r$ with $r \prec \mathfrak{m}$ makes the *order of the residual*
+   + r$ with $r \prec 1$ makes the *order of the residual*
    an explicit surreal exponent rather than a hidden Big-O.
 
 2. **Spectral gaps and singularity formation as $q \to 1$.** The
