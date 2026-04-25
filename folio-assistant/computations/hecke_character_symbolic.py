@@ -81,8 +81,8 @@ def standard_young_tableaux(shape):
             # Check SYT validity: entry above (r-1, c) and left (r, c-1)
             # must be filled with smaller numbers.
             ok = True
-            if r > 0 and (r - 1, c) in [cells[i] for i in used] is False:
-                # find (r-1, c) cell index
+            if r > 0:
+                # entry above must already be filled (smaller value)
                 try:
                     above = cells.index((r - 1, c))
                     if above not in used:
