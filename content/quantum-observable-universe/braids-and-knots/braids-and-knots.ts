@@ -408,6 +408,7 @@ export default chapter({
         "gram-matrix-spectral-connection",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
+        "shell-correction-term-seven",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
         "deuteron-first-principles",
