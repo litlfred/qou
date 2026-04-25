@@ -1,7 +1,7 @@
 {
   "computation": "all-isotopes-chirality-residue-extended",
   "description": "Chirality-residue framework re-run with extended 56-knot B_3 hyperbolic database (4-10 crossing, channel annotation via Hoefsmit characters at q_0).  Compared to the original 11-knot run, this scans 8- and 10-crossing knot ideals as well, including all 19 std-channel knots in the database.",
-  "timestamp": "2026-04-25T20:19:35.644320+00:00",
+  "timestamp": "2026-04-25T20:21:51.263225+00:00",
   "q_0": 1.1099785955541805,
   "database": {
     "count": 56,
@@ -23,7 +23,9 @@
       "A": 1,
       "word_length": 9,
       "n_total_matches": 7,
+      "n_sym_matches": 7,
       "n_std_matches": 0,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.0,
       "std_breakdown": [],
       "all_matches": [
@@ -86,7 +88,9 @@
       "A": 1,
       "word_length": 9,
       "n_total_matches": 10,
+      "n_sym_matches": 9,
       "n_std_matches": 1,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.015165770756780378,
       "std_breakdown": [
         [
@@ -176,7 +180,9 @@
       "A": 2,
       "word_length": 13,
       "n_total_matches": 7,
+      "n_sym_matches": 7,
       "n_std_matches": 0,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.0,
       "std_breakdown": [],
       "all_matches": [
@@ -239,7 +245,9 @@
       "A": 3,
       "word_length": 17,
       "n_total_matches": 7,
+      "n_sym_matches": 7,
       "n_std_matches": 0,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.0,
       "std_breakdown": [],
       "all_matches": [
@@ -302,7 +310,9 @@
       "A": 3,
       "word_length": 17,
       "n_total_matches": 7,
+      "n_sym_matches": 7,
       "n_std_matches": 0,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.0,
       "std_breakdown": [],
       "all_matches": [
@@ -365,7 +375,9 @@
       "A": 4,
       "word_length": 21,
       "n_total_matches": 7,
+      "n_sym_matches": 7,
       "n_std_matches": 0,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.0,
       "std_breakdown": [],
       "all_matches": [
@@ -428,7 +440,9 @@
       "A": 6,
       "word_length": 29,
       "n_total_matches": 7,
+      "n_sym_matches": 7,
       "n_std_matches": 0,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.0,
       "std_breakdown": [],
       "all_matches": [
@@ -491,7 +505,9 @@
       "A": 7,
       "word_length": 33,
       "n_total_matches": 7,
+      "n_sym_matches": 7,
       "n_std_matches": 0,
+      "n_alt_matches": 0,
       "chirality_residue_MeV": 0.0,
       "std_breakdown": [],
       "all_matches": [

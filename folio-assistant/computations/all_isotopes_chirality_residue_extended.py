@@ -84,8 +84,8 @@ def main():
     # find_knot_matches default max_len=9; extend to 10 for the new DB
     max_knot_len = max(lens)
 
-    print(f"  {'iso':<8} {'#strands':>9} {'#std knots':>11} {'Σ_chir(MeV)':>14} "
-          f"{'CODATA reference':>20}")
+    print(f"  {'iso':<8} {'#strands':>9} {'#sym':>5} {'#std':>5} {'#alt':>5} "
+          f"{'Σ_chir(MeV)':>14} {'CODATA ref':>15}")
     rows = []
     for name, Z, N, M_ref, B_ame in isotopes:
         A = Z + N
@@ -93,15 +93,20 @@ def main():
         matches = find_knot_matches(word, EXTENDED_KNOTS,
                                     min_len=4, max_len=max_knot_len)
         std_matches = [m for m in matches if m['channel'] == 1]
+        sym_matches = [m for m in matches if m['channel'] == 0]
+        alt_matches = [m for m in matches if m['channel'] == 2]
         chir_total, breakdown = chirality_residue(matches, channel_filter=1)
         ref_label = (B_ame if A >= 2 else float(mp.mpf(str(M_N_MEV)) -
                                                   mp.mpf(str(M_P_MEV))))
-        print(f"  {name:<8} {len(word):>9} {len(std_matches):>11} "
-              f"{chir_total:>14.6f} {ref_label:>20.4f}")
+        print(f"  {name:<8} {len(word):>9} {len(sym_matches):>5} "
+              f"{len(std_matches):>5} {len(alt_matches):>5} "
+              f"{chir_total:>14.6f} {ref_label:>15.4f}")
         rows.append({
             'iso': name, 'Z': Z, 'N': N, 'A': A, 'word_length': len(word),
             'n_total_matches': len(matches),
+            'n_sym_matches': len(sym_matches),
             'n_std_matches': len(std_matches),
+            'n_alt_matches': len(alt_matches),
             'chirality_residue_MeV': chir_total,
             'std_breakdown': breakdown,
             'all_matches': [
