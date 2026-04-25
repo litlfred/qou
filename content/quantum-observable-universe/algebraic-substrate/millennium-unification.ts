@@ -7,6 +7,10 @@ export default remark({
   interprets: "thm:macroscopic-stability-equivalence",
   uses: [
     "thm:macroscopic-stability-equivalence",
+    "thm:quantum-gap-collapse",
+    "prop:blowup-yekutieli",
+    "conj:p-vs-np-qou",
+    "def:categorical-reeb-derivation",
     "lem:surreal-squeeze",
     "prop:surreal-rate-calculus",
     "def:reeb-epsilon",

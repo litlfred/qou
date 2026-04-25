@@ -14,6 +14,11 @@ export default lemma({
     "prop:surreal-rate-calculus",
     "rem:conway-normal-form",
     "def:surreal-blowup-calculus",
+    "rem:rh-surreal-bound",
+    "rem:ns-surreal-bound",
+    "rem:collatz-surreal-bound",
+    "rem:p-vs-np-surreal-bound",
+    "rem:millennium-unification",
   ],
   tags: [
     "surreal",

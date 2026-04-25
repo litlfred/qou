@@ -29,8 +29,8 @@ $$
 Multiplying through by the standard-real factor $2^n$ preserves the
 inequality.  In $\omega$-adic form
 ([Big-O via $\ordw$](#rem:conway-normal-form)),
-$\ordw(2^n \cdot \delta_n^2 \cdot \Omega_q) = -1 < 3 = \ordw(2^n \cdot \Delta_q)$:
-the classical simulation sits at strictly lower $\omega$-order
+$\ordw(2^n \cdot \delta_n^2 \cdot \Omega_q) = 1 > -3 = \ordw(2^n \cdot \Delta_q)$:
+the classical simulation sits at strictly higher $\omega$-order
 than the classical budget.
 
 **Conclusion.** The classical simulation of any non-trivial

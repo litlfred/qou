@@ -35,7 +35,7 @@ $$
   \qquad (\text{in } \mathbb{R}(\varepsilon) \subset \mathbf{No}).
 $$
 
-Equivalently, $\ordw(V(\delta)) = -1 < 3 = \ordw(\Delta_q)$ in the
+Equivalently, $\ordw(V(\delta)) = 1 > -3 = \ordw(\Delta_q)$ in the
 $\omega$-adic order of [Big-O via $\ordw$](#rem:conway-normal-form).
 
 **Conclusion.** No rogue orbit with standard-real drift $\delta > 0$

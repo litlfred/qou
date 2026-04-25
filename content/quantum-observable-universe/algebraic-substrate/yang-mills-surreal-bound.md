@@ -27,8 +27,8 @@ $$
 
 In the $\omega$-adic register
 ([Big-O via $\ordw$](#rem:conway-normal-form)):
-$\ordw(\Delta_q) = 3 > -\infty = \ordw(0)$, i.e. the mass gap sits at
-strictly higher $\omega$-order than the zero element.
+$\ordw(\Delta_q) = -3 > -\infty = \ordw(0)$, i.e. the mass gap sits
+at strictly higher $\omega$-order than the zero element.
 
 **The surreal squeeze specialisation.** The Yang--Mills
 specialisation of [surreal squeeze](#lem:surreal-squeeze) is
