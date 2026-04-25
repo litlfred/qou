@@ -7,7 +7,6 @@ export default remark({
   interprets: "rem:conway-normal-form",
   uses: [
     "rem:conway-normal-form",
-    "rem:conway-normal-form",
     "def:standard-part-functor",
     "def:surreal-blowup-calculus",
     "rem:calculus-up-to-epsilon",
