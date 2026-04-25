@@ -21,5 +21,5 @@ some braid closure.
 $V_{\mathrm{phys}} := \varinjlim V^{\otimes n}$ is the union of its
 finite-dimensional subspaces $V^{\otimes n}$, each of which is
 completely decomposed by (1).  Hence the irreducible summands,
-indexed by knot types via the closure map, span $V_{\mathrm{phys}}$.
-No metric completion is used.
+indexed by knot types via the closure map, span $V_{\mathrm{phys}}$,
+defined as the algebraic direct limit, avoiding metric completion.

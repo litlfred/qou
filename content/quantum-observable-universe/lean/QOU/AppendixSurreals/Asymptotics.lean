@@ -17,7 +17,7 @@ carrier (e.g.\ via a Hahn embedding).
 Notation: in LaTeX we write `$O_\omega$` (Big-O register, via the
 `\ordw` macro).  In Lean the identifier is `Ow` for ASCII usability.
 
-LaTeX labels: `rem:conway-normal-form`, `rem:conway-normal-form`.
+LaTeX label: `rem:conway-normal-form`.
 
 ## References
 
