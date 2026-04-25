@@ -9,6 +9,7 @@ export default definition({
     "def:motivic-mass-measure",
     "def:algebraic-quantum-volume",
     "def:spatial-realization-functor",
+    "def:arc-space",
   ],
   cites: ["tate1967", "kashaev1997", "murakami-murakami2001"],
   lean: {

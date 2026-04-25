@@ -10,6 +10,9 @@ export default remark({
     "rem:fibre-functor-rigidity",
     "def:standard-part-functor",
     "prop:vol-through-tau",
+    "def:reeb-epsilon",
+    "lem:surreal-squeeze",
+    "rem:rh-surreal-bound",
   ],
   tags: [
     "adeles",

@@ -14,17 +14,20 @@ structure ArchimedeanCategory where
   /-- Carrier type of the archimedean target. -/
   Obj : Type*
   /-- Real-valued evaluation π_∞ : Obj → ℝ on the archimedean place. -/
-  archProj : Obj → Real
+  archProj : Obj → ℝ
 
-/-- The fibre functor τ : C → Arch of a QOU.
-
-    Composing τ with the archimedean projection π_∞ gives the unique
-    archimedean route out of C; we name this composite τ_arch. -/
+/-- The fibre functor τ : C → Arch of a QOU. Acts on objects of C
+    by `obj`; the archimedean restriction τ_arch = π_∞ ∘ τ is the
+    derived `def FibreFunctor.archRestriction` below (not a field),
+    so it cannot disagree with `Arch.archProj ∘ obj`. -/
 structure FibreFunctor (C : Type*) (Arch : ArchimedeanCategory) where
   /-- Action of τ on objects of C. -/
   obj : C → Arch.Obj
-  /-- The archimedean restriction τ_arch = π_∞ ∘ τ on objects. -/
-  archRestriction : C → Real
+
+/-- The archimedean restriction τ_arch = π_∞ ∘ τ of a fibre functor. -/
+def FibreFunctor.archRestriction {C : Type*} {Arch : ArchimedeanCategory}
+    (τ : FibreFunctor C Arch) : C → ℝ :=
+  fun c => Arch.archProj (τ.obj c)
 
 /-- **Vol(K) factors through τ.**
 
@@ -38,7 +41,7 @@ structure VolThroughTau (C : Type*) (Arch : ArchimedeanCategory) where
   /-- The algebraic quantum volume of a braid (as an element of C). -/
   algVol : C
   /-- The real-valued knot volume of the braid closure. -/
-  knotVol : Real
+  knotVol : ℝ
   /-- Factorization: knotVol = τ_arch(algVol). -/
   factors : knotVol = τ.archRestriction algVol
 

@@ -6,6 +6,9 @@ export default definition({
   tags: ["adeles", "macroscopic-limit", "global", "non-archimedean"],
   uses: [
     "def:classical-limit-functor",
+    "def:archimedean-realization-functor",
+    "def:algebraic-quantum-volume",
+    "def:classical-riemann-zeta",
   ],
   cites: ["tate1967"],
   lean: {

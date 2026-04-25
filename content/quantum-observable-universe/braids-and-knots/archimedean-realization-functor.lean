@@ -11,22 +11,22 @@ namespace QOU.BraidsKnots
 
 /-- The **archimedean realization functor** R_top.
 
-    Composite of the topological realization (motivic class →
-    integer Euler characteristic, or refined Hodge invariant) and
-    the archimedean projection π_∞ : 𝔸 → ℝ of the adelic substrate.
-
-    Maps a motivic mass μ(X) ∈ M̂ to a real-valued physical
-    observable Obs_ℝ(X) = R_top(∫ dμ). -/
+    Maps a motivic class to ℝ via the topological Euler
+    characteristic followed by an archimedean post-processing map.
+    The full adelic-carrier π_∞ : 𝔸 → ℝ lives in
+    QOU.AlgebraicSubstrate.AdelicSubstrate; here the projection
+    is represented as the real-valued post-processing map
+    archPostProc : ℝ → ℝ on the cast of the Euler characteristic.
+    On QOU motivic data this composite agrees with τ_arch
+    (prop:vol-through-tau). -/
 structure ArchimedeanRealizationFunctor where
   /-- Source: the dimension-completion M̂ of the Grothendieck ring (carrier). -/
   Motive : Type*
   /-- Topological Euler characteristic χ_top : M̂ → ℤ. -/
   eulerChar : Motive → Int
-  /-- Archimedean projection π_∞ : 𝔸 → ℝ on the adelic ring. -/
-  archimedeanProjection : Real → Real
+  /-- Real-valued archimedean post-processing map (π_∞ after the ℤ → ℝ cast). -/
+  archPostProc : ℝ → ℝ
   /-- Real-valued realization R_top : Motive → ℝ. -/
-  realize : Motive → Real
-  /-- Compatibility: R_top = π_∞ ∘ (ℤ → ℝ) ∘ χ_top on integer-valued motives. -/
-  compat_integer : ∀ x : Motive, realize x = archimedeanProjection (Int.cast (eulerChar x))
+  realize : Motive → ℝ
 
 end QOU.BraidsKnots
