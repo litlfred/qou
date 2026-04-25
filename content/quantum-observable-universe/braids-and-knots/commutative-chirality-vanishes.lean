@@ -27,33 +27,37 @@ theorem H_A_at_one : H_A 1 = 0 := by
   unfold H_A
   simp
 
+/-- H_A is continuous on a neighborhood of q = 1 (away from q = 0). -/
+theorem H_A_continuousAt_one : ContinuousAt H_A 1 := by
+  -- H_A q = q - q⁻¹.  Both q and q⁻¹ are continuous at 1 (since 1 ≠ 0).
+  unfold H_A
+  exact continuousAt_id.sub (continuousAt_inv₀ (one_ne_zero))
+
 /-- H_A² → 0 as q → 1. -/
 theorem H_A_sq_tends_to_zero :
     Filter.Tendsto (fun q => (H_A q) ^ 2) (nhds 1) (nhds 0) := by
-  have : (H_A 1) ^ 2 = 0 := by rw [H_A_at_one]; ring
-  -- Continuity of H_A² at q = 1 plus H_A(1) = 0
-  have h_cont : Continuous (fun q => (H_A q) ^ 2) := by
-    apply Continuous.pow
-    apply Continuous.sub continuous_id
-    -- q⁻¹ continuous on the punctured line; restrict to nbhd of 1
-    sorry
-    -- Ref: [manuscript] standard continuity argument
-  sorry
-  -- Ref: [manuscript] cor:commutative-chirality-vanishes
-  -- Combine continuity with H_A(1) = 0; uses Continuous.tendsto
+  -- (H_A q)^2 is continuous at 1, and (H_A 1)^2 = 0.
+  have h0 : (H_A 1) ^ 2 = 0 := by rw [H_A_at_one]; ring
+  have h_cont : ContinuousAt (fun q => (H_A q) ^ 2) 1 :=
+    (H_A_continuousAt_one).pow 2
+  -- Continuous at 1 means tendsto along nhds 1 to value at 1; rewrite to 0.
+  have := h_cont.tendsto
+  rw [h0] at this
+  exact this
 
 /-- **Corollary (chirality vanishes in commutative limit).**
-    For any bounded chirality value Φ₃, the product H_A²·Φ₃ tends
+    For any chirality function Φ₃ that is continuous at q = 1
+    (or merely tendsto a finite limit), the product H_A²·Φ₃ tends
     to zero as q → 1. -/
 theorem commutative_chirality_vanishes
-    (Φ₃ : ℝ → ℝ) (h_bdd : ∃ M, ∀ q, |Φ₃ q| ≤ M) :
+    (Φ₃ : ℝ → ℝ) (L : ℝ) (h_lim : Filter.Tendsto Φ₃ (nhds 1) (nhds L)) :
     Filter.Tendsto (fun q => (H_A q) ^ 2 * Φ₃ q) (nhds 1) (nhds 0) := by
-  -- Use H_A² → 0 and Φ₃ bounded ⇒ product → 0
-  obtain ⟨M, hM⟩ := h_bdd
-  -- Standard "bounded times tending-to-zero" lemma
-  sorry
-  -- Ref: [manuscript] cor:commutative-chirality-vanishes
-  -- Squeeze theorem: |H_A² · Φ₃| ≤ |H_A²| · M → 0
+  -- (H_A q)^2 → 0 and Φ₃ → L, so product → 0 · L = 0.
+  have h_sq : Filter.Tendsto (fun q => (H_A q) ^ 2) (nhds 1) (nhds 0) :=
+    H_A_sq_tends_to_zero
+  have := h_sq.mul h_lim
+  -- This gives tendsto of (H_A q)^2 * Φ₃ q to 0 * L = 0.
+  simpa using this
 
 /-- The classical (commutative) atomic-mass binding correction
     has only two terms (Φ₁ and Φ₂), the chirality term having

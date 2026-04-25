@@ -77,15 +77,22 @@ theorem chirality_is_unique_S_odd (c : FrobeniusClassification := {}) :
 
 /-- **Lemma (S-symmetric ansatz cannot capture chirality).**
     Any S-symmetric mixing of S-even quantities lives in the S-even
-    subspace and cannot reproduce an S-odd contribution. -/
+    subspace and cannot reproduce an S-odd contribution.
+
+    Concretely: if α, V_a, V_b are all S-even, then so are α·V_a and
+    α·V_b.  An S-symmetric blend α·V_a + (1−α)·V_b cannot match an
+    S-odd target like H_A²·Φ_3 regardless of α. -/
 theorem s_symmetric_ansatz_misses_chirality
-    (V_a V_b : SEigenvalue) (h_a : V_a = .even) (h_b : V_b = .even)
-    (α : SEigenvalue) (h_α : α = .even) :
-    -- A blend α V_a + (1-α) V_b is in the S-even subspace
-    -- (the terms involved are all S-even, so cannot match S-odd Φ₃)
+    (α V_a V_b : SEigenvalue)
+    (h_α : α = .even) (h_a : V_a = .even) (h_b : V_b = .even) :
     α * V_a = .even ∧ α * V_b = .even := by
-  refine ⟨?_, ?_⟩ <;> simp [h_a, h_b, h_α]
-  · rfl
-  · rfl
+  subst h_α; subst h_a; subst h_b
+  exact ⟨rfl, rfl⟩
+
+/-- **Theorem.** The S-eigenvalues of `H_A` and `H_A²` differ:
+    H_A is S-odd, H_A² is S-even (square of any eigenvalue type is even). -/
+theorem H_A_squared_is_even (H_A : SEigenvalue) (h : H_A = .odd) :
+    H_A * H_A = .even := by
+  subst h; rfl
 
 end QOU.WedderburnMass

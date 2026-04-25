@@ -63,22 +63,36 @@ noncomputable def derivedLightIsotopeFormula
   + deltaWigner p Z N A
   + deltaT1 p Z N A
 
-/-- For free nucleons (A = 1), the inter-gen direct convention gives
-    Φ = 0, and both pairing corrections vanish, so the formula
-    returns the constituent input exactly. -/
-theorem free_nucleon_exact
-    (p : DerivedFormulaParams) (Z : ℕ) (h : Z + 0 = 1 ∨ 0 + 1 = 1)
+/-- For the free proton (Z=1, N=0, A=1), the formula returns
+    m_p + m_e (the hydrogen atomic mass) exactly when Φ = 0. -/
+theorem free_proton_exact
+    (p : DerivedFormulaParams)
     (Φ : ThreeFunctionals) (hΦ : Φ.Φ₁ = 0 ∧ Φ.Φ₂ = 0 ∧ Φ.Φ₃ = 0) :
-    -- For A = 1: M = Z·m_p + N·m_n + Z·m_e (no corrections)
-    True := by
-  trivial
-  -- Ref: [manuscript] prop:derived-mass-formula-light-isotopes
-  -- Full statement: for A = 1, all correction terms vanish by inspection
-  -- (deltaWigner condition A ≥ 2 fails; deltaT1 condition n_pp+n_nn > 0
-  -- fails; Φ-corrections are zero by hypothesis).
+    derivedLightIsotopeFormula p 1 0 Φ = p.m_p + p.m_e := by
+  -- A = 1 + 0 = 1, so deltaWigner returns 0 (A ≥ 2 fails),
+  -- deltaT1 returns 0 (n_pp = 0, n_nn = 0).
+  -- The Φ-correction is α·(0 - 2·q3·0 + H_A²·0) = 0.
+  unfold derivedLightIsotopeFormula deltaWigner deltaT1
+  obtain ⟨h1, h2, h3⟩ := hΦ
+  rw [h1, h2, h3]
+  -- A = 1, so the conditions A ≥ 2 fail, gates return 0.
+  simp [Nat.choose, show (1 + 0 : ℕ) = 1 by rfl]
+  ring
 
-/-- The proton-neutron mass splitting equals the constituent
-    difference exactly under inter-gen direct convention. -/
+/-- For the free neutron (Z=0, N=1, A=1), the formula returns
+    m_n exactly when Φ = 0. -/
+theorem free_neutron_exact
+    (p : DerivedFormulaParams)
+    (Φ : ThreeFunctionals) (hΦ : Φ.Φ₁ = 0 ∧ Φ.Φ₂ = 0 ∧ Φ.Φ₃ = 0) :
+    derivedLightIsotopeFormula p 0 1 Φ = p.m_n := by
+  unfold derivedLightIsotopeFormula deltaWigner deltaT1
+  obtain ⟨h1, h2, h3⟩ := hΦ
+  rw [h1, h2, h3]
+  simp [Nat.choose, show (0 + 1 : ℕ) = 1 by rfl]
+  ring
+
+/-- The proton-neutron mass splitting (bare) equals the CODATA
+    constituent difference exactly under inter-gen direct convention. -/
 theorem np_splitting_exact
     (p : DerivedFormulaParams)
     (Φp Φn : ThreeFunctionals)
@@ -87,9 +101,7 @@ theorem np_splitting_exact
     derivedLightIsotopeFormula p 0 1 Φn
       - (derivedLightIsotopeFormula p 1 0 Φp - p.m_e)
     = p.m_n - p.m_p := by
-  -- Direct computation; corrections vanish by hypothesis.
-  sorry
-  -- Ref: [manuscript] prop:derived-mass-formula-light-isotopes
-  -- Trivial after expanding the defs and applying hp, hn
+  rw [free_neutron_exact p Φn hn, free_proton_exact p Φp hp]
+  ring
 
 end QOU.WedderburnMass
