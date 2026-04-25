@@ -92,17 +92,8 @@ opaque y0Star (n : ℕ) : R_q
 -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-theorem ConfinementSDP (n : ℕ) (h : slaterStrict n)
-    (sdp_strong_duality : primalOpt n = nTarget * y0Star n) :
-    primalOpt n = nTarget * y0Star n :=
-  sdp_strong_duality
-  -- Mathlib gap: no SDP duality.  Converted to pass-through hypothesis
-  -- matching the `finite_k_convergence` pattern.  Once Mathlib has SDP,
-  -- the proof is:
-  --   have h_weak := sdp_weak_duality (primal_feasible n) (dual_feasible n)
-  --   have h_strong := sdp_strong_duality_slater h
-  --   linarith
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+axiom ConfinementSDP (n : ℕ) (h : slaterStrict n) :
+    primalOpt n = nTarget * y0Star n
 
 /-! ## §3  Binding multiplicity and the scalar-LP projection -/
 

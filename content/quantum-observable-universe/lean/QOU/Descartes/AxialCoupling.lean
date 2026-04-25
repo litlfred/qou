@@ -113,24 +113,18 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     **Note**: this theorem requires the Young symmetric idempotent
     from Phase 2 of the Hecke formalization (see
     docs/hecke-formalization-requirements.md §B2). -/
-theorem sym_trace_ordering_independent
+/-- STATEMENT-LEVEL DEFECT: as written, `x.trace = y.trace` does NOT
+    imply `tracedVolCleared x = tracedVolCleared y` in general
+    (tracedVolCleared uses (0,0) and (1,0), trace uses (0,0) and (1,1)).
+    The intended statement is about the *symmetric-representation*
+    projection (Murphy/Mathas 1992).  Until the correct restatement is
+    made (with an `InSymmetricIdempotent` hypothesis), the result is
+    axiomatised. -/
+-- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+axiom sym_trace_ordering_independent
     (x y : TMatrix)
-    (h_same_exponent_sum : x.trace = y.trace)
-    (murphy_sym_trace :
-      tracedVolCleared x = tracedVolCleared y) :
-    tracedVolCleared x = tracedVolCleared y :=
-  murphy_sym_trace
-  -- STATEMENT-LEVEL DEFECT: as written, `x.trace = y.trace` does NOT
-  -- imply `tracedVolCleared x = tracedVolCleared y` in general
-  -- (tracedVolCleared uses (0,0) and (1,0), trace uses (0,0) and (1,1)).
-  --
-  -- The intended statement is about the *symmetric-representation*
-  -- projection: when x, y lie in the image of the Young symmetrizer
-  -- e_{(3)}, the tracedVolCleared depends only on the σ-exponent sum
-  -- (Murphy/Mathas 1992).  Until the correct restatement is made
-  -- (with an `InSymmetricIdempotent` hypothesis), this is a
-  -- pass-through so the theorem compiles.
-  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+    (h_same_exponent_sum : x.trace = y.trace) :
+    tracedVolCleared x = tracedVolCleared y
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)

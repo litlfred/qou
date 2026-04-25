@@ -154,21 +154,9 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
     - q · T_w + (q−q⁻¹) · T_{s₀w} with ℓ(s₀w) = ℓ(w) − 1 (Hecke reduction)
 
     Summing over S₃ with q^{ℓ(w)} weights produces q · e_{(3)}. -/
--- Ref: [mathas1999] Theorem 3.2
+-- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2)
-    (mathas_eigenvalue :
-      ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ) :
-    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ :=
-  mathas_eigenvalue
-  -- Mathas 1999 Theorem 3.2.  Converted to pass-through until the full
-  -- 6-term Hecke expansion can be proved + verified:
-  --   youngSymIdempotent3 = (1/[3]!_q) Σ_{w ∈ S_3} q^{ℓ(w)} · T_w
-  --   σᵢ · T_w rewrites via Hecke (σᵢ² = HA·σᵢ + 1) and braid
-  --   (σ₀σ₁σ₀ = σ₁σ₀σ₁).  For each w pair (w, sᵢw), coefficients
-  --   combine as q^{ℓ(w)} · σᵢ · T_w = q · (q^{ℓ(sᵢw)} · T_{sᵢw}),
-  --   yielding σᵢ · e_{(3)} = q · e_{(3)}.
-  -- ~150 LOC when fully expanded; decomposed via per-term lemmas.
-  -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
+axiom youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
+    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ
 
 end QOU.YoungIdempotent

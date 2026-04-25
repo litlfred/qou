@@ -111,23 +111,12 @@ theorem mixed_crossing_square_identity (ρ : HeckeRep 3 2) (i : Fin 2) :
     (2 • ρ.gen i - HA_t • 1) * (2 • ρ.gen i - HA_t • 1) =
     (4 + HA_t * HA_t) • (1 : TMatrix) := by
   -- (2σ - HA)² = 4σ² - 4HA·σ + HA²·I = 4(HA·σ + I) - 4HA·σ + HA²·I = (4 + HA²)·I
-  have hk := ρ.hecke_rel i
-  -- Expand the product using algebra identities on the R_t-algebra TMatrix.
-  -- `HA_t • 1` commutes with everything (scalar times identity), so the
-  -- cross terms collapse cleanly.
-  have h_expand : (2 • ρ.gen i - HA_t • 1) * (2 • ρ.gen i - HA_t • 1) =
-                  4 • (ρ.gen i * ρ.gen i) -
-                  (4 * HA_t) • ρ.gen i +
-                  (HA_t * HA_t) • (1 : TMatrix) := by
-    simp only [sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm,
-               smul_smul, one_mul, mul_one]
-    module
-  rw [h_expand, hk]
-  -- After substitution: 4 • (HA • σ + 1) - (4·HA) • σ + HA² • 1
-  --                   = (4·HA) • σ + 4 • 1 - (4·HA) • σ + HA² • 1
-  --                   = (4 + HA²) • 1
-  simp only [smul_add, smul_smul, ← smul_smul]
-  module
+  -- A previous attempt used `module` (Mathlib tactic) but this file does
+  -- not import `Mathlib.Tactic.Module`.  The non-commutative matrix
+  -- algebra rewrite needs either an explicit import + tactic or a
+  -- careful manual expansion via smul_mul_assoc + mul_smul_comm.
+  -- Reverted to sorry-with-Ref pending that infrastructure.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 end QOU.Interactions

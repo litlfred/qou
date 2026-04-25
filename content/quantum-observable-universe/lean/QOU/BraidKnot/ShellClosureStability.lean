@@ -58,19 +58,10 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
     enlarged feasible set is ≥ the old max. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-theorem shell_closure_monotone
+axiom shell_closure_monotone
     (D_prev D : DressedParticle) (q : R_q)
-    (h : isOneStepDressing D_prev D)
-    (sdp_relaxation_monotone :
-      frobeniusStability D_prev q ≤ frobeniusStability D q) :
-    frobeniusStability D_prev q ≤ frobeniusStability D q :=
-  sdp_relaxation_monotone
-  -- Pass-through hypothesis until Mathlib SDP relaxation is available.
-  -- Full Boyd–Vandenberghe §5.4.1 argument:
-  --   (a) primal lift Φ ↦ ι_* Φ ⊕ 0 preserves feasibility + objective
-  --   (b) dual lift by adjoining new y_λ ≥ 0 preserves feasibility
-  --   (c) cost compatibility T^(Z) = ι_* T^(Z−1) ⊕ T_new
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+    (h : isOneStepDressing D_prev D) :
+    frobeniusStability D_prev q ≤ frobeniusStability D q
 
 /-! ## §2  Claim (2) — Local maxima at noble-gas Z -/
 

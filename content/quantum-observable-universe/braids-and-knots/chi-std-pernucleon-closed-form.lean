@@ -231,7 +231,7 @@ theorem chi_std_neutron_closed_form (q : ℝ) (hq : 1 < q) :
     `{m, m-2, m-4, m-8}`, with `m_proton = 11`, `m_neutron = 9`.
     This is established purely by unfolding the closed-form
     definitions and the index-set lists — no matrix manipulation. -/
-theorem chi_std_ladder_shape (q : ℝ) (hq : 1 < q) :
+theorem chi_std_ladder_shape (q : ℝ) :
     chiStdClosedForm q protonIndices =
       (q - q⁻¹) / 4 *
         (qNum q 11 + qNum q 9 + qNum q 7 + qNum q 3) ∧

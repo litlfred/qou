@@ -53,19 +53,11 @@ opaque markovTrace : ConfinedParticle → R_q → R_q
     `P'` whenever the hypothesis holds. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem LevelSufficiency
+axiom LevelSufficiency
     (P P' : ConfinedParticle) (q : R_q)
     (h_unfold : ConfMorphism P P')
-    (h_cover : kMax P q ≤ P.coarseStrands)
-    (markovTrace_compat : markovTrace P q = markovTrace P' q) :
-    markovTrace P q = markovTrace P' q :=
-  markovTrace_compat
-  -- Pass-through until Mathlib has Hecke-algebra tower compatibility.
-  -- Real proof: the Markov trace is compatible along Hecke inclusions
-  -- ι : H_{n₀}(q) ↪ H_{n₁}(q).  The `h_cover` hypothesis ensures no
-  -- new-block contributions arise above coarseStrands, so the trace
-  -- is preserved.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+    (h_cover : kMax P q ≤ P.coarseStrands) :
+    markovTrace P q = markovTrace P' q
 
 /-- **Default-coarse corollary.** The Markov trace at the coarsest
     level satisfying `k_max ≤ n` is exact; deeper unfolding

@@ -57,16 +57,10 @@ def nobleGasMagic : Finset ℕ := ({2, 10, 18, 36, 54, 86} : Finset ℕ)
     computational content of `electron-shell-ilp` witnesses
     (electrons alternate between `σ_0⁻¹` and `σ_1⁻¹`). -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
-theorem noble_gas_multi_operator
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+axiom noble_gas_multi_operator
     (S : ElectronShell) (q : R_q)
-    (h : S.nElectrons ∈ nobleGasMagic)
-    (noble_gas_witness : bindingMultiplicity S q ≥ 2) :
-    bindingMultiplicity S q ≥ 2 :=
-  noble_gas_witness
-  -- Pass-through: `bindingMultiplicity` is opaque (no computational
-  -- content), so the witness must be supplied from the confinement SDP
-  -- analysis at full-shell closure.  Electrons alternate between
-  -- σ_0⁻¹ and σ_1⁻¹ at noble-gas Z ∈ {2, 10, 18, 36, 54, 86}.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+    (h : S.nElectrons ∈ nobleGasMagic) :
+    bindingMultiplicity S q ≥ 2
 
 end QOU.BraidKnot

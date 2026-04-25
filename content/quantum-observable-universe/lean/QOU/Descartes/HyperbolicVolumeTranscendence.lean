@@ -361,27 +361,12 @@ gives the Yekutieli bridge theorem. -/
     control (Nesterenko-type theorem for Li₂ at algebraic arguments).
 
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
+-- Per CLAUDE.md §3b: a conjecture in the YekutieliLiftingCondition
+-- class is itself the open question.  Axiomatised pending
+-- Nesterenko-type results on Li₂ at algebraic arguments.
 -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
-theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutieliLiftingCondition)
-    (borel_zagier_witness : HyperbolicVolumeIndependence) :
-    HyperbolicVolumeIndependence :=
-  borel_zagier_witness
-  -- Per the doc comment at line 286: "`sorry` on any instance IS the
-  -- conjecture itself".  The theorem is upgraded to take the
-  -- independence witness as a hypothesis, following the conjecture
-  -- class pattern from CLAUDE.md §3b.  Caller can supply the witness
-  -- via the axiomatised class instance `QOU.BorelZagier.Conjecture`
-  -- once it's defined; until then, any caller must provide the
-  -- witness themselves (e.g. as a `classical.choice` from some
-  -- axiomatised proof).
-  -- Real proof (once `ylc` + Borel–Zagier arithmetic):
-  --   intro S f hf_supp hf_sum
-  --   -- `ylc.obstruction_exists` provides non-zero Φ_n(K) for each K.
-  --   -- Combined with CSEvaluationFaithful → Φ_n(K) ≠ 0.
-  --   -- Tower decomposition Vol(K) = Σ Φ_n(K) + Nesterenko-type
-  --   -- independence of Li₂ at algebraic arguments → independence.
-  --   exact borel_zagier_witness.no_relation S f hf_supp hf_sum
-  -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
+axiom tower_noncollapse_implies_independence
+    (ylc : QOU.Torsion.YekutieliLiftingCondition) :
+    HyperbolicVolumeIndependence
 
 end QOU.Descartes

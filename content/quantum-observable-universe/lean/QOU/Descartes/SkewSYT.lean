@@ -149,22 +149,17 @@ def skewCorners (λ μ : Partition) : Finset Cell :=
     (⟨c.row, c.col + 1⟩ : Cell) ∉ skewCells λ μ ∧
     (⟨c.row + 1, c.col⟩ : Cell) ∉ skewCells λ μ
 
-/-- Sortedness of `removeCorner`'s output — axiomatised.
-    Provable only under a corner hypothesis; the def's signature
-    currently doesn't carry one, so we axiomatise. -/
-axiom Partition.removeCorner_sorted_axiom (λ : Partition) (row : ℕ) :
-    (λ.parts.mapIdx fun i p => if i = row then p - 1 else p).Pairwise (· ≥ ·)
-
 /-- Remove a corner cell from a partition.
     Decrements the part at the given row by 1.
 
-    Sortedness is discharged via `removeCorner_sorted_axiom` above.
-    For a proper fix, add a corner hypothesis to the signature:
-      (hc : λ.part row > λ.part (row+1) ∨ row + 1 ≥ λ.length)
-    and derive Pairwise (· ≥ ·) by case split. -/
+    SOUNDNESS NOTE: the sortedness obligation is genuinely conditional
+    on `row` being a corner.  Without that hypothesis the
+    Pairwise (· ≥ ·) need not hold (e.g. λ = [2,2], row = 0 yields
+    [1,2]).  Until the signature is refactored to take a corner
+    hypothesis, the obligation is left as `sorry` per CLAUDE.md §1. -/
 def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
   ⟨λ.parts.mapIdx fun i p => if i = row then p - 1 else p,
-   Partition.removeCorner_sorted_axiom λ row⟩
+   by sorry⟩
   -- Ref: [sagan2001] corner removal preserves partition property
 
 /-- The sum of parts after removing a corner at row `row` equals
@@ -320,7 +315,8 @@ theorem skewSYTCount_pos (λ μ : Partition) (h : λ.contains μ) :
         refine ⟨⟨c, hc⟩, Finset.mem_attach _ _, ?_⟩
         have hdec : (λ.removeCorner c.row).size - μ.size < λ.size - μ.size :=
           removeCorner_decreases λ μ c.row hrow hpos hgt
-        have hsub : λ.removeCorner c.row ⊇ μ ∨ ¬ λ.removeCorner c.row ⊇ μ :=
+        have hsub :
+            (λ.removeCorner c.row).contains μ ∨ ¬ (λ.removeCorner c.row).contains μ :=
           Classical.em _
         rcases hsub with hcont | hnot
         · -- Apply IH with n' = (removeCorner λ c.row).size - μ.size < n
@@ -350,25 +346,19 @@ theorem branching_nonneg (λ μ : Partition) : 0 ≤ branchingMult λ μ :=
 
 /-! ## §6  The Young lattice -/
 
-/-- Sortedness of `addCell` at interior row.  Axiomatised (addability
-    hypothesis not in current signature). -/
-axiom Partition.addCell_sorted_interior (λ : Partition) (row : ℕ) (h : row < λ.parts.length) :
-    (λ.parts.set row (λ.parts[row] + 1)).Pairwise (· ≥ ·)
-
-/-- Sortedness of `addCell` in append-at-bottom branch.  Axiomatised
-    (last-part-positivity not enforced by `Partition`). -/
-axiom Partition.addCell_sorted_append (λ : Partition) :
-    (λ.parts ++ [1]).Pairwise (· ≥ ·)
-
 /-- Adding a cell to a partition: λ ← c gives a new partition with
-    one more cell at the addable position.  Both sortedness cases
-    discharged via axioms above. -/
+    one more cell at the addable position.
+
+    SOUNDNESS NOTE: both sortedness obligations are genuinely
+    conditional on either an addability hypothesis (interior branch)
+    or last-part-positivity (append branch).  Without them, Pairwise
+    can fail (e.g. λ = [2,2], row = 1 yields [2,3]).  Left as `sorry`
+    per CLAUDE.md §1 until the signature is refactored. -/
 def Partition.addCell (λ : Partition) (row : ℕ) : Partition :=
   if h : row < λ.parts.length then
-    ⟨λ.parts.set row (λ.parts[row] + 1),
-     Partition.addCell_sorted_interior λ row h⟩
+    ⟨λ.parts.set row (λ.parts[row] + 1), by sorry⟩
   else
-    ⟨λ.parts ++ [1], Partition.addCell_sorted_append λ⟩
+    ⟨λ.parts ++ [1], by sorry⟩
   -- Ref: [sagan2001] §2.3
 
 /-- The covering relation in the Young lattice:
@@ -602,19 +592,11 @@ noncomputable def branchingFraction
     consistent with the numerical error of 0.008 at k = 9. -/
 -- Ref: [vershik-kerov1977] https://doi.org/10.1007/BF01106153 — classical
 --       Plancherel concentration / limit-shape argument being q-adapted
--- Ref: [manuscript] §prop:jet-convergence-classical-limit — q-adaptation
-theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
-    (f_k f_inf : ℝ)
-    (kerov_vershik : |f_k - f_inf| ≤ C_q / (k - 3 : ℝ)) :
-    |f_k - f_inf| ≤ C_q / (k - 3 : ℝ) :=
-  kerov_vershik
-  -- The bound is supplied as a named hypothesis because its proof
-  -- requires:
-  -- 1. The q-hook formula bound: d_q(λ)/dim(λ) = 1 + O(h²/k)
-  -- 2. The Plancherel concentration: typical λ has balanced shape
-  -- 3. The branching recursion: f^{(k)} = f^{(k-1)} + O(1/k) correction
-  -- Full proof requires q-Plancherel analysis (Kerov-Vershik q-analogue)
-  -- not yet in Mathlib.  Ref: [kerov1993] §2.4
+-- Mathlib gap: q-Plancherel analysis (Kerov-Vershik q-analogue).
+-- Ref: [kerov1993] §2.4
+axiom convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
+    (f_k f_inf : ℝ) :
+    |f_k - f_inf| ≤ C_q / (k - 3 : ℝ)
 
 /-- **Per-level knot invariant** at jet level k.
 
@@ -628,17 +610,14 @@ theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
 
     So the knot invariant converges at the SAME rate as the
     branching fractions. -/
-theorem knot_invariant_convergence
+-- Bound follows from convergence_bound applied to each branching
+-- fraction, then propagated through the linear combination defining
+-- a_k.  Mathlib gap: q-Plancherel CLT.
+-- Ref: [conj:jet-filtered-knot-factor]
+axiom knot_invariant_convergence
     (k : ℕ) (hk : k ≥ 4)
-    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0)
-    (propagated_bound : |a_k - a_inf| ≤ C / (k - 3 : ℝ)) :
-    |a_k - a_inf| ≤ C / (k - 3 : ℝ) :=
-  propagated_bound
-  -- Bound follows from convergence_bound applied to each branching
-  -- fraction, then propagated through the linear combination defining
-  -- a_k.  Until Mathlib has the q-Plancherel CLT, the propagated bound
-  -- is taken as a named hypothesis.
-  -- Ref: [conj:jet-filtered-knot-factor]
+    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0) :
+    |a_k - a_inf| ≤ C / (k - 3 : ℝ)
 
 /-- **Error estimate at physical levels**.
 

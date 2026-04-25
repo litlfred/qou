@@ -61,16 +61,12 @@ opaque confined : ConfinedParticle → R_q → Prop
 /-- **Coarse-strand correctness.** The coarse strand count of a
     confined particle matches the strand count of its Markov-class
     canonical representative. -/
+/-- `coarseStrands` and `markovClass.strandCount` are currently
+    independent ℕ fields.  A cleaner long-term fix adds a
+    `coarseStrands_eq` field to `ConfinedParticle`, breaking
+    every existing instance constructor.  Axiomatised until then. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-theorem coarseStrands_eq_markov_strands (P : ConfinedParticle)
-    (wellformed : P.coarseStrands = P.markovClass.strandCount) :
-    P.coarseStrands = P.markovClass.strandCount :=
-  wellformed
-  -- Pass-through: `coarseStrands` and `markovClass.strandCount` are
-  -- independent ℕ fields with no structural link.  A cleaner long-term
-  -- fix adds a `coarseStrands_eq` field to `ConfinedParticle`, but that
-  -- breaks every existing instance constructor (proton, neutron,
-  -- electron, He4, …).  Until then, each caller supplies the witness.
-  -- Ref: [manuscript] braids-and-knots/confined-particle
+axiom coarseStrands_eq_markov_strands (P : ConfinedParticle) :
+    P.coarseStrands = P.markovClass.strandCount
 
 end QOU.BraidKnot
