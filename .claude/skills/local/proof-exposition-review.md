@@ -78,7 +78,8 @@ Build the candidate set:
    ```
 2. **Blocks sharing tags with the target**
    ```bash
-   grep -l "$(node -e 'import(\"./path/target.ts\").then(m => console.log(m.default.tags.join(\"|\")))')" \
+   # $TARGET_TS resolves to the absolute path of the block's .ts manifest
+   grep -l "$(bun -e "import(\"$TARGET_TS\").then(m => console.log(m.default.tags.join(\"|\")))")" \
        content/<paper>/**/*.ts
    ```
 3. **Propositions that interpret or generalize what the proof does**

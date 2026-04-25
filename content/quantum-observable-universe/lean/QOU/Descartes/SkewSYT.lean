@@ -507,14 +507,11 @@ theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
 
     So the knot invariant converges at the SAME rate as the
     branching fractions. -/
--- Ref: [vershik-kerov1977] https://doi.org/10.1007/BF01106153 — classical
---       Plancherel convergence argument being propagated through branching
--- Ref: [manuscript] §conj:jet-filtered-knot-factor — q-adapted statement
 theorem knot_invariant_convergence
     (k : ℕ) (hk : k ≥ 4)
     (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0) :
     |a_k - a_inf| ≤ C / (k - 3 : ℝ) :=
-  sorry
+  sorry -- Ref: [vershik-kerov1977], [manuscript] §conj:jet-filtered-knot-factor
   -- Follows from convergence_bound applied to each branching fraction,
   -- then propagated through the linear combination defining a_k.
 

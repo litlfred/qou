@@ -8,6 +8,7 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
+    "def:quantum-observable-universe",
     "def:substrate-parameter",
     "thm:substrate-parameter-exists",
     "prop:braiding-eigenvalue-extraction",
