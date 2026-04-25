@@ -7,32 +7,29 @@
 
 namespace QOU.LiftingDescent
 
-/-- The **n-th jet scheme** L_n(X) of a variety X.
-
-    L_n(X) represents the functor R ↦ Hom(Spec R[t]/(t^{n+1}), X).
-    In QOU it is identified with the n-th level of the recursive
-    brane tower S_n: a section v of S_n is an R-point of L_n(X). -/
+/-- The **n-th jet scheme** `L_n(X)`. Carrier-only: truncation
+    is a level-shifting map and lives on `JetTower`. -/
 structure JetScheme (X : Type*) (n : Nat) where
   /-- Underlying scheme of the n-th jet space. -/
   Carrier : Type*
-  /-- The truncation map L_{n+1}(X) → L_n(X). -/
-  truncation : Carrier → Carrier
 
-/-- The **arc space** L(X) of a variety X.
+/-- A **jet tower** for `X`: the family `L_n(X)` together with
+    the truncation maps `L_{n+1}(X) → L_n(X)`. -/
+structure JetTower (X : Type*) where
+  /-- The n-th jet scheme. -/
+  level : (n : Nat) → JetScheme X n
+  /-- The truncation map `L_{n+1}(X) → L_n(X)`. -/
+  truncation : ∀ n, (level (n + 1)).Carrier → (level n).Carrier
 
-    L(X) = lim_{←n} L_n(X) is the inverse limit of the jet schemes.
-    In QOU it equals the inverse limit of the recursive brane tower
-    S_∞ := lim_n S_n, and carries the formal data needed for
-    motivic integration even when the underlying X is singular. -/
-structure ArcSpace (X : Type*) where
+/-- The **arc space** `L(X) = lim_{←n} L_n(X)`. Carries the
+    formal data needed for motivic integration even when `X` is
+    singular. -/
+structure ArcSpace (X : Type*) (tower : JetTower X) where
   /-- The carrier of the arc space (inverse limit of jet schemes). -/
   Carrier : Type*
   /-- Projection to each finite jet level. -/
-  projection : (n : Nat) → Carrier → (JetScheme X n).Carrier
-  /-- Compatibility: projection at n+1 followed by truncation = projection at n. -/
-  compatible : ∀ n a, (JetScheme X n).truncation
-                        ((JetScheme X (n+1)).truncation
-                          ((projection (n+1) a)) ) =
-                      (JetScheme X n).truncation (projection n a)
+  projection : (n : Nat) → Carrier → (tower.level n).Carrier
+  /-- Compatibility with truncation: trunc_n ∘ proj_{n+1} = proj_n. -/
+  compatible : ∀ n a, tower.truncation n (projection (n + 1) a) = projection n a
 
 end QOU.LiftingDescent

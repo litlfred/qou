@@ -17,9 +17,9 @@ the Laurent polynomial entries of the transfer matrix chain
 
 *The algebraic quantum volume lives in
 $\mathbb{Z}[q^{1/2}, q^{-1/2}]$ — the ring of Laurent
-polynomials in $q^{1/2}$.  It is an algebraic object,
-not a real number.  Its real-valued archimedean shadow
-is obtained by applying the QOU fibre functor*
+polynomials in $q^{1/2}$.  It is an algebraic object.
+Its real-valued archimedean shadow is obtained by
+applying the QOU fibre functor*
 
 $$
   \tau \;:\;\mathbf{C}\;\longrightarrow\;\mathbf{Arch},
@@ -75,13 +75,11 @@ $$
   \right\rvert_{q=q_0}
 $$
 
-*The only step that is not internal to $\mathbf{C}$ is the final
-$\tau_{\mathrm{arch}}$. All intermediate computations —
-ground-state ordering, electron insertion, transfer matrix
-chain, partition traces — are algebraic in $q$ and live entirely
-inside $\mathbf{C}$. The fibre functor $\tau$ is the unique
-boundary at which categorical data crosses into archimedean
-geometry.*
+*Every intermediate computation — ground-state ordering, electron
+insertion, transfer matrix chain, partition traces — is algebraic
+in $q$ and internal to $\mathbf{C}$; the only step that exits is
+the final $\tau_{\mathrm{arch}}$, which is the unique boundary at
+which categorical data crosses into archimedean geometry.*
 
 *For the Habiro ring: the algebraic volume embeds into
 $\widehat{\mathbb{Z}[q]}$ (the cyclotomic completion),

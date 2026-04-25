@@ -77,28 +77,39 @@ structure ArchimedeanCategory where
 
 /-- The QOU **fibre functor** `τ : C → Arch`.
 
-    Acts on objects of `C` and exposes the archimedean restriction
-    `τ_arch = π_∞ ∘ τ : C → ℝ`, the unique exit from the
-    categorical substrate to the laboratory continuum. -/
+    Acts on objects of `C` by `obj : C → Arch.Obj`. The archimedean
+    restriction `τ_arch = π_∞ ∘ τ : C → ℝ` is *derived* (see
+    `FibreFunctor.archRestriction` below), so it cannot disagree
+    with `Arch.archProj ∘ obj`. -/
 structure FibreFunctor (C : Type*) (Arch : ArchimedeanCategory) where
   /-- Action of `τ` on objects of `C`. -/
   obj : C → Arch.Obj
-  /-- The archimedean restriction `τ_arch = π_∞ ∘ τ` on objects. -/
-  archRestriction : C → ℝ
+
+/-- The archimedean restriction `τ_arch = π_∞ ∘ τ` of a fibre
+    functor, derived from `obj` and `Arch.archProj`. -/
+def FibreFunctor.archRestriction {C : Type*} {Arch : ArchimedeanCategory}
+    (τ : FibreFunctor C Arch) : C → ℝ :=
+  fun c => Arch.archProj (τ.obj c)
 
 /-- The **archimedean realization functor** `R_top`.
 
-    Maps a motivic class `M̂ → ℝ` via the topological Euler
-    characteristic followed by the archimedean projection
-    `π_∞ : 𝔸 → ℝ`. On QOU motivic data this composite agrees
-    with `τ_arch` (`prop:vol-through-tau`). -/
+    Maps a motivic class to `ℝ` via the topological Euler
+    characteristic followed by an archimedean post-processing map.
+    The archimedean projection `π_∞ : 𝔸 → ℝ` of the adelic
+    substrate is, in this formalization, applied as the
+    real-valued post-processing map `archPostProc : ℝ → ℝ` on the
+    Euler characteristic (cast to `ℝ`); the full adelic-carrier
+    target lives in `QOU.AlgebraicSubstrate.AdelicSubstrate`.
+    On QOU motivic data this composite agrees with `τ_arch`
+    (`prop:vol-through-tau`). -/
 structure ArchimedeanRealizationFunctor where
   /-- Source: the dimension-completion `M̂` of the Grothendieck ring. -/
   Motive : Type*
   /-- Topological Euler characteristic `χ_top : M̂ → ℤ`. -/
   eulerChar : Motive → Int
-  /-- Archimedean projection `π_∞ : 𝔸 → ℝ`. -/
-  archimedeanProjection : ℝ → ℝ
+  /-- Real-valued archimedean post-processing map (`π_∞` after the
+      `ℤ → ℝ` cast of the Euler characteristic). -/
+  archPostProc : ℝ → ℝ
   /-- Real-valued realization `R_top : Motive → ℝ`. -/
   realize : Motive → ℝ
 
