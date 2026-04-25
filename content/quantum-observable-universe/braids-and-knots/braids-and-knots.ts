@@ -325,6 +325,7 @@ export default chapter({
         "frobenius-s-classification",
         "commutative-chirality-vanishes",
         "derived-mass-formula-light-isotopes",
+        "deuteron-binding-frobenius-codim",
         "algebraic-quantum-volume",
         "habiro-ring",
         "habiro-expansion-atomic",
