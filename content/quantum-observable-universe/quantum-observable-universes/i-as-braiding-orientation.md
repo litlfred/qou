@@ -13,7 +13,7 @@ $i$ with $-i$ swaps the two half-planes (Laplace $\leftrightarrow$
 Fourier), reversing the direction of complex-time evolution.
 
 **Geometric face (CR complex structure).**
-The [linearisation convention](#rem:linearisation-convention) identifies
+The [linearisation convention](#sec:linearisation-convention) identifies
 $i$ with the CR complex structure operator
 $J \colon H \to H$ ($J^2 = -\mathrm{Id}$) on the Levi distribution.
 The operator $J$ is determined by the contact form up to an overall

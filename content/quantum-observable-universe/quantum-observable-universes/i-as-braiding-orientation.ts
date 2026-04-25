@@ -14,7 +14,7 @@ export default remark({
     "cpt-symmetry",
   ],
   uses: [
-    "rem:linearisation-convention",
+    "sec:linearisation-convention",
     "rem:laplace-fourier-wick-rotation",
     "prop:braiding-induced-ordering",
   ],
