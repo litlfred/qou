@@ -9,6 +9,9 @@ export default conjecture({
     "def:confinement-level",
     "prop:three-parameters-wedderburn",
     "prop:gb-residue-spectral-sum",
+    "prop:bw-coefficient-shadow-price",
+    "prop:wigner-2-coefficient",
+    "prop:content-scaling-correspondence",
   ],
   tags: [
     "shell-correction",
@@ -16,6 +19,8 @@ export default conjecture({
     "nuclear-binding",
     "term-7",
     "magic-numbers",
+    "shadow-price",
+    "bw-polynomial",
   ],
   cites: ["mayer1949", "mayer1955"],
 });

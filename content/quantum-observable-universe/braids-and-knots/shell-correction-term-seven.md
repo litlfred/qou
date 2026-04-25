@@ -10,11 +10,8 @@ predictor is the GB-filtration level $\ell = 5$ (partitions of
 height $6$).  This motivates a **seventh term** capturing
 nuclear shell structure.
 
-**Conjecture.**
-*There exists a real constant $\alpha_5 \in \mathbb{R}$ and a
-universal functional $\chi_5 \colon H_{3A}(q) \to \mathbb{R}$
-— the level-$5$ character projector — such that the extended
-mass formula*
+**Conjecture (Term 7 in shadow-price form).**
+*There exists a height-$h_*$ such that the extended mass formula*
 
 $$
   \mathfrak{m}(\varrho)
@@ -26,11 +23,56 @@ $$
   \;+\;
   \underbrace{m_e \cdot \tau(C_{\dim_q})}_{\text{Term 4}}
   \;+\;
-  \underbrace{\alpha_5 \cdot \chi_5\bigl(T_w(Z, N)\bigr)}_{\text{\textbf{Term 7 (this conjecture)}}}
+  \underbrace{m_e \cdot \!\!\!\!\sum_{\substack{\lambda \,\vdash\, 3A \\ \mathrm{height}(\lambda) = h_*}}
+    \!\!\!\!  C_\lambda(q) \cdot S_\lambda(Z, N, A)}_{\text{\textbf{Term 7}}}
 $$
 
 *agrees with experimental CODATA masses to sub-percent accuracy
-for $A \geq 5$.*
+for $A \geq 5$, where:*
+
+1. *$C_\lambda(q) = w_\lambda(q) \cdot \tau_\lambda(\sigma_g)$ is the
+   **shadow-price coefficient** of partition $\lambda$
+   ([BW shadow price](#prop:bw-coefficient-shadow-price)),
+   with $w_\lambda = \dim_q(\lambda)^2 / [3A]_q!$ and
+   $\tau_\lambda = \mathrm{tr}(\sigma_g^{(\lambda)})/\dim(\lambda)$
+   the per-generator-trace per-dim;*
+
+2. *$S_\lambda(Z, N, A)$ is the **scaling function** determined by the
+   content sum $c(\lambda) = \sum_{(i,j) \in \lambda}(j - i)$
+   ([content scaling](#prop:content-scaling-correspondence));*
+
+3. *$h_* = 6$ identifies the level-5 GB-filtration channel (matching
+   the empirical residual fit at A = 1–4).*
+
+**Specialisation at A = 2 (k = 6).**
+
+*The only height-6 partition of $k = 6$ is $\lambda = (3,2,1)$ (the
+self-conjugate "staircase" partition).  Term 7 specialises to
+a single shadow price:*
+
+$$
+  \mathrm{Term~7}(Z, N, A{=}2)
+  \;=\;
+  m_e \cdot C_{[3,2,1]}(q) \cdot S_{[3,2,1]}(Z, N, 2)
+$$
+
+*By [Wigner-2 coefficient](#prop:wigner-2-coefficient), the
+self-conjugate-partition trace identity gives
+$\tau_{[3,2,1]} = h/2$ and the closed form*
+
+$$
+  C_{[3,2,1]}(q)
+  \;=\;
+  \frac{[2]_q\,[4]_q\,[6]_q \cdot h}{2\,[3]_q^3\,[5]_q}.
+$$
+
+*At $q_0 \approx 1.110$ this evaluates to
+$C_{[3,2,1]}(q_0) \approx 0.0375$ (witness:
+`shadow-price-c-321-q0.witness.json`).  The scaling function
+$S_{[3,2,1]}(Z, N, 2) = (Z-N)(A-1)/A^{4/3}$ vanishes for the
+deuteron ($Z = N = 1$), consistent with the **pn-invisibility**
+of $(3,2,1)$ noted in
+[Wigner-2](#prop:wigner-2-coefficient).
 
 ## Motivation
 
