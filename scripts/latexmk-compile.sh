@@ -25,5 +25,5 @@ if [ "${GITHUB_EVENT_NAME:-}" = "push" ] || [ "${GITHUB_EVENT_NAME:-}" = "workfl
   PDFLATEX_CMD="pdflatex -shell-escape %O %S"
 fi
 
-exec latexmk -pdf -interaction=nonstopmode -halt-on-error \
+exec latexmk -pdf -interaction=nonstopmode \
   -pdflatex="$PDFLATEX_CMD" "$@" "$TEX_FILE"

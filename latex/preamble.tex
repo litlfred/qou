@@ -95,6 +95,20 @@
 \newunicodechar{₇}{\textsubscript{7}}
 \newunicodechar{₈}{\textsubscript{8}}
 \newunicodechar{₉}{\textsubscript{9}}
+% Superscript digits (U+2070, U+2074–U+2079)
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+% Additional maths/arrow symbols (U+2194, U+2208, U+220F, U+2212, U+211D)
+\newunicodechar{↔}{\unimathsafe{\leftrightarrow}}
+\newunicodechar{∈}{\unimathsafe{\in}}
+\newunicodechar{∏}{\unimathsafe{\prod}}
+\newunicodechar{−}{\unimathsafe{-}}
+\newunicodechar{ℝ}{\unimathsafe{\mathbb{R}}}
 
 % ── Custom symbols ───────────────────────────────────────────────────────────
 \newcommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
@@ -102,6 +116,25 @@
 \newcommand{\xid}{{\xi_{d}}}   % ξ_d — Reeb field (d-component)
 \newcommand{\xiZ}{{\xi_{Z}}}   % ξ_Z — Reeb field (Z-component)
 \newcommand{\xiA}{{\xi_{A}}}   % ξ_A — Reeb field (A-component)
+% ── Stubs for compound macros (missing spaces in source content) ──────────────
+% These arise from LaTeX commands written without a separating space/brace.
+\newcommand{\pid}{\pi d}
+\newcommand{\nuk}{\nu_{k}}
+\newcommand{\varepsilonk}{\varepsilon_{k}}
+\newcommand{\varepsilonq}{\varepsilon_{q}}
+\newcommand{\foralln}{\forall n}
+\newcommand{\omegadV}{\omega\,dV}
+\newcommand{\omegads}{\omega\,ds}
+\newcommand{\Gammat}{\Gamma t}
+\newcommand{\psiK}{\psi_{K}}
+\newcommand{\pic}{\pi}
+\newcommand{\pia}{\pi a}
+\newcommand{\lambdaL}{\lambda L}
+\newcommand{\inftydt}{\infty\,dt}
+% \unicode{codepoint} — ConTeXt-style; used in appendix-surreals for ☉ (U+2609)
+\newcommand{\unicode}[1]{\ensuremath{\odot}}
+% Young-diagram macro stub (ytableau not loaded; renders partition as list)
+\newcommand{\yng}[1]{{\scriptsize[#1]}}
 
 % Unicode maths symbols that appear in plain text (outside $ … $)
 % are handled by \newunicodechar in the block above.
