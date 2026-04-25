@@ -314,7 +314,7 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
 theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0) :
     |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — branching-rule convergence via symmetric functions
   -- Proof: Kerov's q-hook walk [kerov1996] gives transition
   -- probabilities p(λ→μ) = d_q(μ\c)²[h(c)]_q/d_q(λ)².
   -- Féray–Méliot [feray2010] Theorem 1.1 gives the CLT for

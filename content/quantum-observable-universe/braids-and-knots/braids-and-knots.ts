@@ -119,8 +119,6 @@ export default chapter({
         "q-casimir-unique-proof",
         "r-matrix-braiding-structure",
         "r-matrix-braiding",
-        "skein-crossing-asymmetry-prop",
-        "skein-crossing-asymmetry",
       ],
     }),
 
@@ -143,6 +141,8 @@ export default chapter({
         "crossing-energy",
         "crossing-energy-trefoil",
         "coulomb-charge",
+        "skein-crossing-asymmetry-prop",
+        "skein-crossing-asymmetry",
       ],
     }),
 

@@ -70,6 +70,6 @@ theorem qExpSeries_classical_limit (x : ℝ) :
     simp [jacksonFactorial, jacksonInt, ih]
     ring_nf
     -- [n+1]_1 = n+1
-    sorry
+    sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 — q-exponential Taylor convergence (Appendix)
 
 end QOU

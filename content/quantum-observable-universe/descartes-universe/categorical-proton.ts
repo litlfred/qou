@@ -9,4 +9,5 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:down-quark", "conj:borromean-quark", "def:color-tube-coordinates"],
+  cites: ["manuscript"],
 });
