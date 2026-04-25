@@ -27,29 +27,6 @@
 name: Blueprint
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'lakefile.toml'
-      - 'lean-toolchain'
-      - 'content/quantum-observable-universe/lean/**'
-      - 'content/unital-groebner-bases/lean/**'
-      - 'content/fred2005-formal-groups/lean/**'
-      - 'blueprint/**'
-      - 'home_page/**'
-      - 'chapters/**'
-      - 'references.bib'
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'lakefile.toml'
-      - 'lean-toolchain'
-      - 'content/quantum-observable-universe/lean/**'
-      - 'content/unital-groebner-bases/lean/**'
-      - 'content/fred2005-formal-groups/lean/**'
-      - 'blueprint/**'
   workflow_dispatch:
 
 concurrency:

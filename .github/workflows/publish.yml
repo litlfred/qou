@@ -35,9 +35,6 @@
 name: Build & Publish
 
 on:
-  push:
-    branches: [main]
-  pull_request_target:      # PRs – no approval needed (e.g. Copilot)
   workflow_dispatch:
     inputs:
       source_branch:
