@@ -133,12 +133,14 @@ FROM base AS lean-setup
 
 WORKDIR /workspace
 
-# Copy toolchain file first to cache the Lean download
-COPY content/quantum-observable-universe/lean/lean-toolchain lean/lean-toolchain
+# Copy root toolchain file first to cache the Lean download.
+# The root toolchain is the single source of truth for the folio
+# Lake workspace; each paper's per-package toolchain matches it.
+COPY lean-toolchain ./lean-toolchain
 
 RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | \
     sh -s -- -y --default-toolchain none && \
-    elan toolchain install $(cat lean/lean-toolchain)
+    elan toolchain install $(cat lean-toolchain)
 
 # ── Project setup ────────────────────────────────────────────────
 
@@ -146,8 +148,23 @@ FROM lean-setup AS project
 
 WORKDIR /workspace
 
-# Copy dependency files first (better caching)
-COPY content/quantum-observable-universe/lean/lakefile.toml content/quantum-observable-universe/lean/lake-manifest.json lean/
+# Copy dependency files first (better caching).
+# The root lakefile aggregates all paper packages; copying it plus
+# every per-paper lakefile lets `lake exe cache get` warm Mathlib
+# and resolve the path-based [[require]] stanzas without pulling
+# in the rest of the source tree (which would bust the layer
+# cache on any unrelated change).
+COPY lakefile.toml ./
+COPY content/quantum-observable-universe/lean/lakefile.toml \
+     content/quantum-observable-universe/lean/lean-toolchain \
+     content/quantum-observable-universe/lean/lake-manifest.json \
+     content/quantum-observable-universe/lean/
+COPY content/unital-groebner-bases/lean/lakefile.toml \
+     content/unital-groebner-bases/lean/lean-toolchain \
+     content/unital-groebner-bases/lean/
+COPY content/fred2005-formal-groups/lean/lakefile.toml \
+     content/fred2005-formal-groups/lean/lean-toolchain \
+     content/fred2005-formal-groups/lean/
 COPY scripts/mcp-server/package.json scripts/mcp-server/
 COPY content/package.json content/
 COPY .github/scripts/requirements.txt .github/scripts/requirements.txt
@@ -155,8 +172,9 @@ COPY .github/scripts/requirements.txt .github/scripts/requirements.txt
 # Copy pre-built hecke-engine binaries from the Rust build stage
 COPY --from=hecke-build /hecke-bins/ /usr/local/bin/
 
-# Install Lean deps and Bun deps
-RUN cd lean && lake update && lake exe cache get || true
+# Resolve dependencies and warm the Mathlib olean cache for the
+# whole folio workspace (QOU + UGB + Fred2005).
+RUN lake update && lake exe cache get || true
 RUN cd scripts/mcp-server && bun install
 RUN cd content && bun install
 
@@ -167,9 +185,10 @@ RUN pip3 install --break-system-packages --no-cache-dir \
 # Copy full repo
 COPY . .
 
-# Build Lean (may take a while)
-RUN cd lean && lake build || true
-# Note: content/quantum-observable-universe/lean/ is the repo source dir, copied into /workspace/lean/ for build
+# Build the entire folio workspace from the root. `lake build`
+# with no target builds `defaultTargets = ["QOU", "UGB", "Fred2005"]`,
+# baking oleans for every paper into the image.
+RUN lake build || true
 
 # Verify lean-lsp-mcp works
 RUN uvx lean-lsp-mcp --help > /dev/null 2>&1 || echo "lean-lsp-mcp not yet cached"
