@@ -14,6 +14,7 @@ export default remark({
     "prop:surreal-rate-calculus",
     "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
+    "prop:ns-obstruction-computation",
   ],
   tags: [
     "navier-stokes",

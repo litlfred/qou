@@ -14,7 +14,9 @@ export default conjecture({
     "def:classical-limit-functor",
     "thm:quantum-gap-collapse",
     "prop:surreal-rate-calculus",
+    "lem:surreal-squeeze",
     "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
   ],
   tags: [
     "p-vs-np",
