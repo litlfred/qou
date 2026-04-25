@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
 """
-DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
-
-See docs/phi-q-tower-deprecation.md.  Retained — may return for
-pentagon-defect work (Phase 2 of path-to-1ppb).
-
-─────────────────────────────────────────────────────────────────
-
 Full end-to-end binding pipeline: canonical Markov trace (Ocneanu-ω)
 + multi-brane Φ_q tower (Kähler-differential lift).
 
@@ -134,13 +127,8 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
     V_f_1 = f_lift[key_lift] if kahler_order > 0 else f_lift["V0"]
 
     # ── Tower mass at level 1 ───────────────────────────
-    # Level 1: transient only (prop:descended-level-zero).  Descended
-    # holonomy lives at level 0 and is captured by the canonical
-    # Markov-trace term handled separately by the caller.
-    m_a = tower_mass_level(V_a_1, pair_mode=pair_mode,
-                             include_desc=False)
-    m_f = tower_mass_level(V_f_1, pair_mode=pair_mode,
-                             include_desc=False)
+    m_a = tower_mass_level(V_a_1, pair_mode=pair_mode)
+    m_f = tower_mass_level(V_f_1, pair_mode=pair_mode)
     delta_1 = m_f - m_a
     # Apply ℏ_q² brane scaling at level 1.  Higher levels are O(ℏ_q⁴)
     # below AME precision — single level 1 is sufficient.

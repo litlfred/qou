@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
 """
-DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
-
-See docs/phi-q-tower-deprecation.md.  The `tower_mass_level`
-include_desc parameter and the level-1+ sum corrections here are
-structurally correct per prop:descended-level-zero, but the
-pipeline as a whole is superseded by JSJ + Vol_hyp.  Retained
-(not deleted) — may return for pentagon-defect work.
-
-─────────────────────────────────────────────────────────────────
-
 Canonical Markov trace + MULTI-BRANE Φ_q tower.
 
 Implements prop:categorical-mass-markov's FULL mass formula:
@@ -116,8 +106,7 @@ def per_gen_V_hat_aggregated(Z: int, N: int, *,
 
 
 def tower_mass_level(V: list[float], *, pair_mode: str = "full",
-                       cap_frac: float = 0.98,
-                       include_desc: bool = True) -> float:
+                       cap_frac: float = 0.98) -> float:
     """Single-level prop:mass-endomorphism-tower formula on aggregated V̂.
 
     Default pair_mode changed from "adjacent" to "full" on 2026-04-20:
@@ -126,24 +115,14 @@ def tower_mass_level(V: list[float], *, pair_mode: str = "full",
     tr_M(σ_i σ_j) = z² uniform in distance (two successive Markov peels
     each contribute z).  The earlier "adjacent" default corresponded to
     a since-retracted adjacency claim in prop:mass-endomorphism-tower.
-
-    ``include_desc``: whether to include the |Π V̂| descended product
-    in the sum.  Set to False at jet levels n ≥ 1; the descended
-    contribution lives at level 0 only per prop:descended-level-zero
-    (iterated descent idempotence collapses desc at every level to
-    the same base-level holonomy, so summing it per level is a
-    double count).  Legacy default True preserves older call sites.
     """
     n = len(V)
     if n == 0:
         return 0.0
-    if include_desc:
-        desc = 1.0
-        for v in V:
-            desc *= v
-        desc = abs(desc)
-    else:
-        desc = 0.0
+    desc = 1.0
+    for v in V:
+        desc *= v
+    desc = abs(desc)
     single = sum(phi_q_safe(abs(v), cap_frac=cap_frac) for v in V)
     cross = 0.0
     if pair_mode == "adjacent":
@@ -375,16 +354,10 @@ def binding_canonical_plus_multibrane(
         for n in range(1, n_brane_levels + 1):
             V_a = lift_V_markov(V_atom_0, n)
             V_f = lift_V_markov(V_free_0, n)
-            # Levels n ≥ 1: transient only (singletons + pairs).
-            # Descended contribution lives at level 0 only, supplied
-            # by the canonical Markov trace term above
-            # (prop:descended-level-zero).
             m_a = tower_mass_level(V_a, pair_mode=pair_mode,
-                                     cap_frac=cap_frac,
-                                     include_desc=False)
+                                     cap_frac=cap_frac)
             m_f = tower_mass_level(V_f, pair_mode=pair_mode,
-                                     cap_frac=cap_frac,
-                                     include_desc=False)
+                                     cap_frac=cap_frac)
             delta = m_f - m_a
             tower_term += delta
             per_level.append({
@@ -473,10 +446,8 @@ if __name__ == "__main__":
             # — at level 1, V̂ is z-lifted from V̂^(0).
             V_a_1 = lift_V_markov(V_a_0, 1)
             V_f_1 = lift_V_markov(V_f_0, 1)
-            m_a_1 = tower_mass_level(V_a_1, pair_mode=pair_mode,
-                                       include_desc=False)
-            m_f_1 = tower_mass_level(V_f_1, pair_mode=pair_mode,
-                                       include_desc=False)
+            m_a_1 = tower_mass_level(V_a_1, pair_mode=pair_mode)
+            m_f_1 = tower_mass_level(V_f_1, pair_mode=pair_mode)
             delta_1 = m_f_1 - m_a_1
             if geometric_closed_form and apply_brane_scaling:
                 # Term-by-term sum Σ_{n=1}^∞ ℏ_q^{2n} · tower^{(n)}
@@ -495,10 +466,8 @@ if __name__ == "__main__":
                     n += 1
                     V_a_n = lift_V_markov(V_a_0, n)
                     V_f_n = lift_V_markov(V_f_0, n)
-                    m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode,
-                                               include_desc=False)
-                    m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode,
-                                               include_desc=False)
+                    m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode)
+                    m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode)
                     delta_n = m_f_n - m_a_n
                     scale_n = brane_scaling(n)
                     term_n = scale_n * delta_n
@@ -539,10 +508,8 @@ if __name__ == "__main__":
                 for n in range(1, n_brane_levels + 1):
                     V_a = lift_V_markov(V_a_0, n)
                     V_f = lift_V_markov(V_f_0, n)
-                    m_a = tower_mass_level(V_a, pair_mode=pair_mode,
-                                             include_desc=False)
-                    m_f = tower_mass_level(V_f, pair_mode=pair_mode,
-                                             include_desc=False)
+                    m_a = tower_mass_level(V_a, pair_mode=pair_mode)
+                    m_f = tower_mass_level(V_f, pair_mode=pair_mode)
                     delta = m_f - m_a
                     if apply_brane_scaling:
                         scale = brane_scaling(n)
