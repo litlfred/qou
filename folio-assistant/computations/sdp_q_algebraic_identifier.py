@@ -105,24 +105,44 @@ def q_binom(n: int, k: int) -> mp.mpf:
 
 
 # ---------- Basis construction --------------------------------------
-def build_basis(rmax: int = 8, jmax: int = 6, kmax: int = 6,
-                nmax: int = 10) -> tuple[list[str], np.ndarray]:
+def build_basis(rmax: int = 6, jmax: int = 4, kmax: int = 3,
+                nmax: int = 12,
+                magnitude_floor: float = 1e-3,
+                magnitude_ceil: float = 1e3,
+                ) -> tuple[list[str], np.ndarray]:
     """Return (labels, values) where values[i] is float64 of b_i(q_0).
 
+    The basis is curated to atoms of "natural" magnitude (between
+    1e-3 and 1e3 at q_0). Inverse Pochhammers and high inverse-ℏ_q
+    powers explode (because ℏ_q ≈ 0.099) and would let the LP cheat
+    by placing a tiny coefficient on a huge atom — we exclude them
+    or de-duplicate carefully.
+
     Atoms included:
-      * 1                                            (constant)
+      * 1                                          (constant)
       * q^j  for j ∈ [-jmax..jmax] \\ {0}
       * [n]_q  for n ∈ 1..nmax
       * 1/[n]_q  for n ∈ 2..nmax
-      * ℏ_q^k  for k ∈ 1..kmax  and  ℏ_q^{-k}
+      * ℏ_q^k  for k ∈ -kmax..kmax \\ {0}
       * |(q;q)_r| for r ∈ 1..rmax
-      * 1/|(q;q)_r| for r ∈ 1..rmax
-      * q-binomials [n choose k]_q  for n ∈ 2..min(nmax,6), 1 ≤ k < n
+      * (q-binomials [n choose k]_q for n ∈ 2..6, 1 ≤ k < n;
+        these are linear combinations of [n]_q, so they introduce
+        redundancy. We KEEP them because the LP basis pursuit is
+        invariant under such redundancy and we want to see if any
+        is preferred.)
+
+    Note: [1]_q ≡ 1 is the same as the constant atom, so we skip it
+    to avoid trivial degeneracy.
     """
     labels: list[str] = []
     vals: list[mp.mpf] = []
+    seen: set[str] = set()
 
     def add(label: str, v: mp.mpf):
+        # de-duplicate by label
+        if label in seen:
+            return
+        seen.add(label)
         labels.append(label)
         vals.append(v)
 
@@ -133,39 +153,53 @@ def build_basis(rmax: int = 8, jmax: int = 6, kmax: int = 6,
             continue
         add(f"q^{j}", Q0**j)
 
-    for n in range(1, nmax + 1):
+    # [1]_q == 1, skip
+    for n in range(2, nmax + 1):
         add(f"[{n}]_q", q_int(n))
     for n in range(2, nmax + 1):
         v = q_int(n)
         if v != 0:
             add(f"1/[{n}]_q", mp.mpf(1) / v)
 
-    for k in range(1, kmax + 1):
+    for k in range(-kmax, kmax + 1):
+        if k == 0:
+            continue
         add(f"hbar_q^{k}", hbar_q_pow(k))
-        add(f"hbar_q^-{k}", mp.mpf(1) / hbar_q_pow(k))
 
     for r in range(1, rmax + 1):
         add(f"|(q;q)_{r}|", q_pochhammer_abs(r))
-        add(f"1/|(q;q)_{r}|", mp.mpf(1) / q_pochhammer_abs(r))
 
-    for n in range(2, min(nmax, 6) + 1):
-        for k in range(1, n):
-            add(f"[{n} {k}]_q", q_binom(n, k))
+    # q-binomials (genuine new atoms beyond [n]_q for n,k ≥ 2)
+    for n in range(3, 7):
+        for k in range(2, n - 1):
+            add(f"[{n}_{k}]_q", q_binom(n, k))
 
-    # Float64 (cvxpy is float64; high precision is for the basis only)
-    arr = np.array([float(v) for v in vals], dtype=np.float64)
-    return labels, arr
+    # Pairwise products [n]_q · [m]_q for n ≤ m (both ≥ 2). These
+    # capture multiplicative formulas like 1/α_EM = q · [9]_q · [10]_q.
+    # We also include q · [n]_q · [m]_q since q is a natural prefactor
+    # in such formulas.
+    for n in range(2, nmax + 1):
+        for m in range(n, nmax + 1):
+            add(f"[{n}]·[{m}]", q_int(n) * q_int(m))
+            add(f"q·[{n}]·[{m}]", Q0 * q_int(n) * q_int(m))
+
+    # Filter atoms by magnitude: drop b_i if |b_i(q_0)| outside
+    # [magnitude_floor, magnitude_ceil]. This prevents the LP from
+    # placing a tiny coefficient on a huge atom (or huge coefficient
+    # on a tiny atom) — both are "cheating" L1 reductions that
+    # destroy interpretability.
+    raw = [(lab, float(v)) for lab, v in zip(labels, vals)]
+    filtered = [(lab, v) for lab, v in raw
+                if magnitude_floor <= abs(v) <= magnitude_ceil]
+    f_labels = [lab for lab, _ in filtered]
+    f_vals = np.array([v for _, v in filtered], dtype=np.float64)
+    return f_labels, f_vals
 
 
 # ---------- Core LP: min L1 subject to equality and box -------------
-def solve_min_l1(target: float, B: np.ndarray, M: float = 200.0,
-                 tol: float = 0.0) -> tuple[np.ndarray | None, float, str]:
-    """LP: min sum |c_i|  s.t.  B·c = target,  |c_i| ≤ M.
-
-    Returns (c_opt, objective, status). c_opt is None if infeasible.
-
-    If tol > 0, we solve  |B·c - target| ≤ tol  instead of equality.
-    """
+def _solve_weighted_l1(target: float, B: np.ndarray, weights: np.ndarray,
+                       M: float, tol: float
+                       ) -> tuple[np.ndarray | None, float, str]:
     n = B.size
     c = cp.Variable(n)
     constraints = [cp.norm(c, "inf") <= M]
@@ -173,8 +207,8 @@ def solve_min_l1(target: float, B: np.ndarray, M: float = 200.0,
         constraints.append(B @ c == target)
     else:
         constraints.append(cp.abs(B @ c - target) <= tol)
-
-    prob = cp.Problem(cp.Minimize(cp.norm(c, 1)), constraints)
+    obj = cp.Minimize(cp.sum(cp.multiply(weights, cp.abs(c))))
+    prob = cp.Problem(obj, constraints)
     try:
         prob.solve(solver=cp.CLARABEL)
     except Exception:
@@ -182,22 +216,61 @@ def solve_min_l1(target: float, B: np.ndarray, M: float = 200.0,
             prob.solve(solver=cp.SCS)
         except Exception as e:  # pragma: no cover
             return None, math.inf, f"solver_error:{e}"
-
     if c.value is None:
         return None, math.inf, prob.status or "infeasible"
     return np.asarray(c.value, dtype=np.float64), float(prob.value), prob.status
 
 
+def solve_min_l1(target: float, B: np.ndarray, M: float = 200.0,
+                 tol: float = 0.0,
+                 reweight_iters: int = 6,
+                 reweight_eps: float = 1e-3
+                 ) -> tuple[np.ndarray | None, float, str]:
+    """Iteratively reweighted L1 (Candes-Wakin '08).
+
+    Solve  min Σ w_i^(t) |c_i|   s.t.  |B·c - target| ≤ tol,  |c_i| ≤ M
+    with  w_i^(t+1) = 1 / (|c_i^(t)| + eps).  After a few iterations
+    this converges to a much sparser solution than plain L1, while
+    remaining a sequence of LPs (no integer programming needed).
+    """
+    n = B.size
+    weights = np.ones(n, dtype=np.float64)
+    last = None
+    last_obj = math.inf
+    last_status = "init"
+    for it in range(reweight_iters):
+        c, obj, status = _solve_weighted_l1(target, B, weights, M, tol)
+        if c is None:
+            return None, math.inf, status
+        # Update weights for next iteration
+        weights = 1.0 / (np.abs(c) + reweight_eps)
+        last, last_obj, last_status = c, obj, status
+    # Final pass with actual L1 objective for reporting
+    final_c, final_obj, final_status = _solve_weighted_l1(
+        target, B, np.ones(n), M, tol)
+    if final_c is None:
+        return last, last_obj, last_status
+    # Choose the sparser of the two (count near-zero entries)
+    def support_size(v):
+        thresh = 1e-6 * max(1e-12, np.max(np.abs(v)))
+        return int(np.sum(np.abs(v) > thresh))
+    if support_size(last) <= support_size(final_c):
+        return last, float(np.sum(np.abs(last))), last_status
+    return final_c, float(np.sum(np.abs(final_c))), final_status
+
+
 # ---------- Round to small rationals --------------------------------
-def round_to_rational(x: float, max_den: int = 64) -> tuple[int, int, float]:
-    """Find p/q with |q| ≤ max_den minimizing |x - p/q|. Returns (p, q, err)."""
+def round_to_rational(x: float, max_den: int = 256) -> tuple[int, int, float]:
+    """Find p/q with |q| ≤ max_den minimizing |x - p/q|. Tie-breaks
+    prefer the smaller denominator. Returns (p, q, err)."""
     if not math.isfinite(x):
         return 0, 1, math.inf
     best = (0, 1, abs(x))
     for q in range(1, max_den + 1):
         p = round(x * q)
         err = abs(x - p / q)
-        if err < best[2]:
+        # prefer smaller denom on near-ties
+        if err < best[2] - 1e-15:
             best = (p, q, err)
     return best
 
@@ -206,8 +279,9 @@ def round_to_rational(x: float, max_den: int = 64) -> tuple[int, int, float]:
 def support_uniqueness(target: float, B: np.ndarray, support: list[int],
                        M: float, tol: float) -> dict:
     """For every i in support, re-solve the LP with c_i forced to 0.
-    If any such restricted LP is feasible within tol of the original
-    L1 norm, the support is non-unique.
+    If any such restricted LP is feasible at the same tol, the
+    support is non-unique (i.e., another basis combination matches
+    the target equally well, so identification is ambiguous).
     """
     n = B.size
     rows = []
@@ -259,7 +333,7 @@ def identify(target: float, label: str, B: np.ndarray, basis_labels: list[str],
     rationalized = []
     val_check = 0.0
     for i in support:
-        p, q, err = round_to_rational(float(c[i]), max_den=64)
+        p, q, err = round_to_rational(float(c[i]), max_den=256)
         rationalized.append({
             "i": i, "label": basis_labels[i],
             "c_lp": float(c[i]),
@@ -317,10 +391,10 @@ def identify(target: float, label: str, B: np.ndarray, basis_labels: list[str],
 # ---------- CLI / main --------------------------------------------
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--rmax", type=int, default=8)
-    ap.add_argument("--jmax", type=int, default=6)
-    ap.add_argument("--kmax", type=int, default=6)
-    ap.add_argument("--nmax", type=int, default=10)
+    ap.add_argument("--rmax", type=int, default=6)
+    ap.add_argument("--jmax", type=int, default=4)
+    ap.add_argument("--kmax", type=int, default=3)
+    ap.add_argument("--nmax", type=int, default=12)
     ap.add_argument("--M", type=float, default=200.0,
                     help="Coefficient box bound ||c||_inf ≤ M")
     ap.add_argument("--rel-tol", type=float, default=1e-10)
