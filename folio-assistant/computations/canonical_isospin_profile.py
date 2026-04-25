@@ -34,20 +34,36 @@ from binding_canonical import build_atom_symbolic
 
 
 def get_rss_mb():
-    """Read RSS from /proc/self/status (Linux).  Returns MB."""
+    """Read RSS memory.  Returns MB.
+
+    Uses psutil when available (cross-platform); falls back to
+    /proc/self/status on Linux.  Returns 0.0 if neither works.
+    """
     try:
-        with open('/proc/self/status') as f:
-            for line in f:
-                if line.startswith('VmRSS:'):
-                    return int(line.split()[1]) / 1024.0
+        import psutil
+        return psutil.Process().memory_info().rss / 1048576.0
     except Exception:
-        return 0.0
+        try:
+            with open('/proc/self/status') as f:
+                for line in f:
+                    if line.startswith('VmRSS:'):
+                        return int(line.split()[1]) / 1024.0
+        except Exception:
+            pass
     return 0.0
 
 
 def profile_isotope(label, Z, N, build_timeout=300, reduce_timeout=300,
                      trace_timeout=300):
-    """Run the three stages with hard wallclock budgets."""
+    """Run the three stages and report per-stage walltime.
+
+    The `*_timeout` parameters are POST-HOC THRESHOLDS: each stage
+    runs to completion, and if its walltime exceeds the budget the
+    function returns a status='timeout' record instead of continuing
+    to subsequent stages.  This is NOT a hard interrupt — a stage
+    that hangs will still hang.  For a true hard timeout wrap this
+    in `multiprocessing.Process.join(timeout=...)` at the caller.
+    """
     print(f"\n══ {label} (Z={Z}, N={N}) ══")
     rec = {"Z": Z, "N": N, "label": label}
 

@@ -137,10 +137,7 @@ theorem chiralityFactor_replicate (h : ℝ) (c : CrossingSign) (k : ℕ) :
   induction k with
   | zero => simp [chiralityFactor]
   | succ n ih =>
-    -- List.replicate (n+1) c = c :: List.replicate n c
-    rw [List.replicate_succ]
-    rw [chiralityFactor_cons]
-    rw [ih]
+    rw [List.replicate_succ, chiralityFactor_cons, ih, pow_succ]
     ring
 
 /-- The chirality factor over an append is the product of the
@@ -228,6 +225,6 @@ theorem chirality_at_h_zero (crossings : List CrossingSign) :
 theorem chirality_dual_space_derivation (h : ℝ)
     (crossings : List CrossingSign) :
     chiralityFactor h crossings =
-      (crossings.map (crossingChiralityFactor h)).foldl (· * ·) 1 := rfl
+      (crossings.map (crossingChiralityFactor h)).prod := rfl
 
 end QOU.BraidKnot

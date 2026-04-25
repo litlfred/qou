@@ -74,10 +74,12 @@ if __name__ == "__main__":
     print("the path to compute it is not.  Use TIMEOUT_SECONDS=N to")
     print("limit per-isotope wallclock.")
     print()
-
-    import os
-    timeout_sec = int(os.environ.get("TIMEOUT_SECONDS", "180"))
-    print(f"Per-isotope timeout: {timeout_sec}s")
+    print("NOTE: this script does NOT enforce a per-isotope hard")
+    print("timeout — a stuck reduction will run until externally")
+    print("killed.  For a true wallclock cap wrap each invocation in")
+    print("`multiprocessing.Process(target=...).join(timeout=...)`.")
+    print("The recommended fast path is canonical_isospin_pyhecke.py")
+    print("(milliseconds per isotope via the optimised pyhecke backend).")
     print()
 
     cases = [

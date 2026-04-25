@@ -63,8 +63,19 @@ def recover_poly_from_samples(u_samples, p_samples, deg_u_max):
                     for u in u_samples])
     y = sp.Matrix([sp.Rational(int(v)) for v in p_samples])
     c_vec = V.LUsolve(y)
-    c_int = [int(c_vec[j]) for j in range(n)]
-    # In exact arithmetic, error should be zero; report for diagnostics.
+    # Validate every coefficient is integral BEFORE truncating —
+    # `int()` on a Rational silently truncates the fractional part,
+    # which would mask a wrong degree bound or inconsistent samples.
+    c_int = []
+    for j in range(n):
+        coeff = sp.simplify(c_vec[j])
+        if not coeff.is_integer:
+            raise ValueError(
+                f"Recovered non-integral coefficient at index {j}: {coeff}. "
+                f"Likely cause: incorrect degree bound (deg_u_max={deg_u_max}) "
+                f"or inconsistent samples.")
+        c_int.append(int(coeff))
+    # In exact arithmetic the residual is zero; report for diagnostics.
     max_err = max(abs(float(c_vec[j] - c_int[j])) for j in range(n))
     return c_int, max_err
 

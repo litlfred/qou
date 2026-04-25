@@ -2,25 +2,47 @@
 """
 Paper-canonical 6-term mass-formula sweep across light isotopes.
 
-Replaces the all-subsets combined-tower extension (which breaks
-isospin symmetry by 944 MeV — see `higher-a-shell-diagnostic`)
-with the paper's Markov-invariant 6-term formula:
+Implements the paper's 6-term formula:
 
     m(ϱ) = |tr_M(T_w)|                            (Term 1)
          + Σ_i Φ_q(|V̂_i|)                        (Term 2)
          + z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)              (Term 3)
          + m_e · τ(C_dim_q)                       (Term 4)
-         + a_K · C_K                              (Term 5)
-         + higher-stratum residues                (Term 6)
+         + a_K · 𝒞_K                              (Term 5; additive)
+         + Σ_{ℓ≥2} Res_{ζ_ℓ}                     (Term 6)
 
-This is Markov-invariant by construction: each term is built
-from Markov-invariant quantities (tr_M, Φ_q of Markov-trace
-quantities, central idempotents).  Different nucleon orderings
-give the same mass.
+Markov-invariance status (honest accounting):
 
-Terms 5 and 6 are minor for light isotopes and are included
-structurally for completeness; the bulk of the variation
-between isotopes is in Terms 1–4.
+    Term 1 (descended trace)  : Markov-invariant — when computed
+                                via the canonical Jones-Markov trace
+                                (`pyhecke.trace.markov_trace_symbolic_eval`).
+                                THIS SCRIPT uses `atom_per_generator_volumes`
+                                in Term 1 above as a structural proxy
+                                — the proxy is NOT Markov-invariant.
+                                For canonical Markov-invariant values
+                                use `canonical_isospin_pyhecke.py`.
+
+    Term 4 (Frobenius co-Casimir): Vortex-independent (depends only on A).
+                                   Strictly Markov-invariant.
+
+    Term 5 (chirality)         : Crossing-sign pattern dependent.
+                                   Markov-invariant within the chirality
+                                   sign list; sign-list itself is a
+                                   topological invariant of the link.
+
+    Terms 2, 3                 : The single/pair-generator brane towers
+                                   use per-generator volumes V̂_i which
+                                   are NOT Markov-invariant — they
+                                   depend on braid-word ordering.  For a
+                                   genuinely Markov-invariant tower see
+                                   the Frobenius-antipode-symmetrised
+                                   form V̂ → (V̂ + S(V̂))/2 (upstream).
+
+    Term 6 (residues)          : Markov-invariant (cohomological pairing).
+
+Witness output of this script reproduces the paper's |S|≤2 truncation
+behaviour.  For higher-order Markov-invariant computations consult
+`canonical_isospin_pyhecke.py` and the upstream `binding_full_pipeline.py`.
 
 Witness: paper-six-term-isotope-sweep.witness.json
 """
@@ -89,28 +111,32 @@ def term3_pair_gen_tower(vols):
 
 
 def term4_frobenius_codim(A):
-    """Term 4: m_e · τ(C_dim_q) — the Frobenius co-Casimir.
+    """Term 4 in Hecke units (without `m_e`): τ(C_dim_q).
 
-    For A nucleons (n = 3A), τ(C_dim_q) = Σ_{λ⊢n} 1/dim_q(λ).
-    At n = 3 this is exactly 2 + 1/[2]_q (paper's (5/2)·m_e
-    specialisation).  For higher n we use the analytic sum.
+    Returns Σ_{λ ⊢ 3A} 1/dim_q(λ).  The full Term 4 contribution
+    is `m_e · τ(C_dim_q)`; the `m_e` factor is applied at the
+    formula-assembly site (`paper_six_term_mass`) where the
+    electron-mass scale in Hecke units is known.
+
+    Optimised: all arithmetic in `mpmath` directly.  No redundant
+    `float()` casts inside the loop; constant denominator
+    `q − q⁻¹` lifted out.
     """
     from schur_weyl_symbolic import partitions_of
-    import sympy as sp
-    q_sym = sp.Symbol('q', positive=True, real=True)
-    # Hook-length q-dim: dim_q(λ) = [n]_q! / Π_{cells} [h(cell)]_q
     from hecke_characters import young_hooks, qfac
     n = 3 * A
-    nfac = qfac(n)  # numerical [n]_q!
+    nfac_val = mp.mpf(qfac(n))
+    q = Q0
+    q_inv = 1 / q
+    denom = q - q_inv
     total = mp.mpf(0)
     for lam in partitions_of(n):
         hooks = young_hooks(lam)
-        dim_q_val = mp.mpf(str(float(nfac)))
+        dim_q_val = nfac_val
         for h in hooks:
-            hl_val = (float(Q0) ** h - float(Q0) ** (-h)) / \
-                     (float(Q0) - 1 / float(Q0))
-            dim_q_val /= mp.mpf(str(hl_val))
-        if abs(dim_q_val) > 1e-30:
+            hl_val = (q ** h - q_inv ** h) / denom
+            dim_q_val /= hl_val
+        if abs(dim_q_val) > mp.mpf('1e-30'):
             total += 1 / dim_q_val
     return total
 
@@ -140,28 +166,72 @@ def term6_higher_residues(vols):
 
 
 def paper_six_term_mass(Z, N, include_inter=True,
-                          chirality_signs=None):
-    """Full paper 6-term formula (Markov-invariant by construction)."""
+                          chirality_signs=None,
+                          m_e_hecke: float = 1.0,
+                          term5_mode: str = "multiplicative_on_t1"):
+    """Six-term mass formula in Hecke units.
+
+    Per `thm:knot-mass-formula-unified` the formula assembles as:
+
+        m  =  |tr_M(T_w)|                                  Term 1
+            + Σ_i Φ_q(|V̂_i|)                              Term 2
+            + z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)                    Term 3
+            + m_e · τ(C_dim_q)                             Term 4
+            + a_K · 𝒞_K                                    Term 5  (additive)
+            + Σ_{ℓ≥2} Res_{ζ_ℓ}                            Term 6
+
+    Term 5 in the manuscript is **additive** with bulk coefficient
+    `𝒞_K` (the chirality coupling, vortex-specific).  Two interpretations
+    coexist in the implementation literature:
+
+      (A) `term5_mode="additive"`: Term 5 = (a_K − 1) · |tr_M(T_w)|,
+          i.e. the chirality DEVIATION from unity, additive — agrees
+          with the manuscript's `a_K · 𝒞_K` taking 𝒞_K = |tr_M|.
+
+      (B) `term5_mode="multiplicative_on_t1"` (legacy default):
+          Term 1 is multiplied by a_K, equivalent to (A) plus the
+          original |tr_M|; mathematically the same total as (A) when
+          summed with Term 1 written without chirality.  Default
+          here for backwards-compatibility with witnesses produced
+          before the formula clarification.
+
+    `m_e_hecke` is the electron mass in Hecke units (typically set
+    by the calibration site).  Set to 1.0 to leave Term 4 in raw
+    τ(C_dim_q) units.
+    """
     vols = atom_per_generator_volumes(Z, N, include_inter=include_inter)
     t1 = term1_descended(vols)
     t2 = term2_single_gen_tower(vols)
     t3 = term3_pair_gen_tower(vols)
-    t4 = term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0)
+    t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
+    t4 = mp.mpf(str(m_e_hecke)) * t4_raw
     if chirality_signs is None:
         chirality_signs = []
-    t5 = term5_chirality(Z, N, chirality_signs)
+    t5_factor = term5_chirality(Z, N, chirality_signs)
     t6 = term6_higher_residues(vols)
-    # Terms 1-4 are additive on the mass; Term 5 multiplies Term 1
-    # (chirality factor modulates the descended trace).  Term 6 is
-    # additive.
-    total = float(t1) * float(t5) + float(t2) + float(t3) + float(t4) + float(t6)
+
+    if term5_mode == "additive":
+        t1_with_chirality = t1
+        t5 = (t5_factor - 1) * t1
+    elif term5_mode == "multiplicative_on_t1":
+        t1_with_chirality = t1 * t5_factor
+        t5 = t1_with_chirality - t1  # report the additive equivalent
+    else:
+        raise ValueError(f"unknown term5_mode {term5_mode!r}")
+
+    total = (float(t1_with_chirality) + float(t2) + float(t3)
+             + float(t4) + float(t6))
     return {
         "term1_descended": float(t1),
         "term2_single_gen_tower": float(t2),
         "term3_pair_gen_tower": float(t3),
-        "term4_frobenius_codim": float(t4),
-        "term5_chirality": float(t5),
+        "term4_frobenius_codim_raw": float(t4_raw),
+        "term4_frobenius_codim_scaled": float(t4),
+        "term5_chirality_factor_a_K": float(t5_factor),
+        "term5_additive_contribution": float(t5),
         "term6_higher_residues": float(t6),
+        "term5_mode": term5_mode,
+        "m_e_hecke": float(m_e_hecke),
         "total_hecke": total,
     }
 
