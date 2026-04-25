@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-logarithm-unique",
   title: "Uniqueness of the $q$-logarithm primitive",
-  lean: {
-    decl: "QOU.QLogarithm.unique",
+  lean: { ref: "qou:QOU.QLogarithm.unique",
     validation: "not_checked",
   },
   uses: [

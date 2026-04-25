@@ -415,10 +415,54 @@ When a user request arrives, apply this decision tree to select skills:
 
 ## 13  Lean Formalization & Proof Linkages
 
-This manuscript has a parallel Lean 4 formalization in the `lean/` directory.
+This repository is a **root Lake workspace** (`/lakefile.toml`,
+`/lean-toolchain`) that aggregates one Lake package per paper:
+
+| Package | Paper directory | Library |
+|---------|-----------------|---------|
+| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+
+`lake build` at the repo root builds every paper; `lake build <lib>`
+builds a single library.  See `CLAUDE.md §0` for the full convention.
+
 Every theorem-like environment in `chapters/*.tex` is tracked in
-`proof-objects.json`, which maps LaTeX labels to Lean declarations (referenced
-by doc-gen4 URL).
+`proof-objects.json`, which maps LaTeX labels to Lean declarations.
+
+### Content-block `lean.ref` — package-qualified URIs
+
+Each content block manifest uses a single string URI to reference its
+Lean declaration:
+
+```ts
+lean: { ref: "qou:QOU.Torsion.lifting_exists" }
+lean: { ref: "ugb:UGB.GrobnerShirshov.Basis" }
+```
+
+- The `<package>` prefix must be registered in
+  `folio-assistant/schemas/lean-packages.ts` (`LEAN_PACKAGES`).
+- Use `parseLeanRef()` from that module when reading refs
+  programmatically — do not regex-split on `:`.
+- The legacy `lean: { decl, file? }` shape is **removed**.  Zod
+  validation fails on blocks that still use it.
+
+### Rebase / merge across the `lean.ref` migration — agent workflow
+
+If you are an agent working on an older branch and a rebase or merge
+surfaces `lean: { decl: "..." }` in content blocks, **run the
+idempotent migration script — do not hand-edit**:
+
+```bash
+cd content
+bun run migrate-lean-refs        # apply (writes in place)
+bun run migrate-lean-refs:dry    # preview only
+```
+
+The script is safe to re-run; it chooses the Lake package prefix
+from each block's paper directory via `LEAN_PACKAGES`.  Re-run
+`bun run validate` after the migration to confirm the schema is
+clean.  **Never add `decl` back to the schema to unblock a merge.**
 
 ### When reviewing LaTeX changes:
 - Check `proof-objects.json` for linked Lean declarations.
@@ -428,10 +472,13 @@ by doc-gen4 URL).
 
 ### LeanBlueprint macros:
 - `\lean{QOU.Namespace.decl_name}` — links to a Lean declaration.
+  (Blueprint macro uses the bare `<Decl>`, not the `<pkg>:<Decl>` URI.)
 - `\leanok` — claims the Lean proof is `sorry`-free.
 - `\uses{label1, label2}` — declares mathematical dependencies.
 - `\proves{thm:label}` — links a proof block to its statement.
 
 ### Lean file structure:
-One `.lean` file per chapter under `lean/QOU/`.  The `lakefile.lean`
-depends on `mathlib4`.  Stubs use `sorry` for incomplete proofs.
+`.lean` files live under each paper's Lake root (e.g.
+`content/quantum-observable-universe/lean/QOU/<Module>.lean`).
+Every paper's `lakefile.toml` pins `mathlib4` on the same commit.
+Stubs use `sorry` for incomplete proofs.

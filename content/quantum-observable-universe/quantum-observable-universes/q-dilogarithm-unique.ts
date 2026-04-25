@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-dilogarithm-unique",
   title: "Uniqueness of the $q$-dilogarithm",
-  lean: {
-    decl: "QOU.QDilogarithm.unique",
+  lean: { ref: "qou:QOU.QDilogarithm.unique",
     validation: "not_checked",
   },
   uses: [

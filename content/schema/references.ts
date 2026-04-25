@@ -2561,90 +2561,10 @@ export const references: CSLData[] = [
       "hypothesis in the mass-volume expansion.",
   }),
 
-  // ── Murakami & Murakami 2001 (volume conjecture) ─────────────
-  ref({
-    id: "murakami2001",
-    type: "article-journal",
-    title:
-      "The colored Jones polynomials and the simplicial volume of a knot",
-    author: [
-      { family: "Murakami", given: "Hitoshi" },
-      { family: "Murakami", given: "Jun" },
-    ],
-    "container-title": "Acta Mathematica",
-    volume: "186",
-    issue: "1",
-    page: "85-104",
-    issued: { "date-parts": [[2001]] },
-    DOI: "10.1007/BF02392716",
-    note:
-      "Formulation of the volume conjecture connecting colored " +
-      "Jones polynomials at roots of unity to hyperbolic volume. " +
-      "Underlies the quantum-dilogarithm semiclassical expansion " +
-      "used in the Frobenius-JSJ binding decomposition.",
-  }),
-
-  // ── Tate 1967 (Tate's 1950 Princeton thesis: adelic Fourier analysis) ──
-  ref({
-    id: "tate1967",
-    type: "chapter",
-    title: "Fourier Analysis in Number Fields and Hecke's Zeta-Functions",
-    author: [{ family: "Tate", given: "John T." }],
-    "container-title": "Algebraic Number Theory",
-    editor: [
-      { family: "Cassels", given: "J. W. S." },
-      { family: "Fröhlich", given: "A." },
-    ],
-    publisher: "Academic Press",
-    "publisher-place": "London",
-    issued: { "date-parts": [[1967]] },
-    page: "305-347",
-    note:
-      "Tate's thesis (Princeton 1950). Establishes adelic " +
-      "integration and the local-global decomposition of zeta " +
-      "functions used in QOU's adelic substrate.",
-  }),
-
-  // ── Kontsevich 1995 (Motivic integration, Orsay lecture) ────────
-  ref({
-    id: "kontsevich1995",
-    type: "speech",
-    title: "Lecture at Orsay",
-    author: [{ family: "Kontsevich", given: "Maxim" }],
-    issued: { "date-parts": [[1995, 12, 7]] },
-    "publisher-place": "Université Paris-Sud, Orsay",
-    note:
-      "Original introduction of motivic integration. Defines the " +
-      "motivic measure on arc spaces valued in the dimension-completed " +
-      "Grothendieck ring of varieties, and proves the change-of-variables " +
-      "formula for blow-ups used to compute QOU's topological mass.",
-  }),
-
-  // ── Denef-Loeser 2001 (Geometry on arc spaces) ─────────────────
-  ref({
-    id: "denef-loeser2001",
-    type: "paper-conference",
-    title: "Geometry on Arc Spaces of Algebraic Varieties",
-    author: [
-      { family: "Denef", given: "Jan" },
-      { family: "Loeser", given: "François" },
-    ],
-    "container-title":
-      "European Congress of Mathematics, Vol. I (Barcelona, 2000)",
-    "collection-title": "Progress in Mathematics",
-    volume: "201",
-    publisher: "Birkhäuser",
-    "publisher-place": "Basel",
-    issued: { "date-parts": [[2001]] },
-    page: "327-348",
-    DOI: "10.1007/978-3-0348-8268-2_19",
-    URL: "https://doi.org/10.1007/978-3-0348-8268-2_19",
-    note:
-      "Foundational survey of arc spaces L(X) = lim L_n(X) and " +
-      "motivic integration. Provides the change-of-variables " +
-      "formula for blow-ups and the motivic measure on cylindrical " +
-      "subsets of L(X).",
-  }),
+  // Note: a duplicate entry id "murakami2001" was removed here.
+  // The canonical key is `murakami-murakami2001` (defined above at
+  // line ~2393), following the `authorYEAR` hyphen convention for
+  // multiple authors (e.g. `kazhdan-lusztig1979`).
 
   // ── Conway 1976 (On Numbers and Games / surreal numbers) ──────
   ref({
@@ -2761,6 +2681,69 @@ export const references: CSLData[] = [
       "embedding every analytic regime into a single surreal " +
       "ambient.",
   }),
+
+  // ── Tate 1967 (Tate's 1950 Princeton thesis: adelic Fourier analysis) ──
+  ref({
+    id: "tate1967",
+    type: "chapter",
+    title: "Fourier Analysis in Number Fields and Hecke's Zeta-Functions",
+    author: [{ family: "Tate", given: "John T." }],
+    "container-title": "Algebraic Number Theory",
+    editor: [
+      { family: "Cassels", given: "J. W. S." },
+      { family: "Fröhlich", given: "A." },
+    ],
+    publisher: "Academic Press",
+    "publisher-place": "London",
+    issued: { "date-parts": [[1967]] },
+    page: "305-347",
+    note:
+      "Tate's thesis (Princeton 1950). Establishes adelic " +
+      "integration and the local-global decomposition of zeta " +
+      "functions used in QOU's adelic substrate.",
+  }),
+
+  // ── Kontsevich 1995 (Motivic integration, Orsay lecture) ────────
+  ref({
+    id: "kontsevich1995",
+    type: "speech",
+    title: "Lecture at Orsay",
+    author: [{ family: "Kontsevich", given: "Maxim" }],
+    issued: { "date-parts": [[1995, 12, 7]] },
+    "publisher-place": "Université Paris-Sud, Orsay",
+    note:
+      "Original introduction of motivic integration. Defines the " +
+      "motivic measure on arc spaces valued in the dimension-completed " +
+      "Grothendieck ring of varieties, and proves the change-of-variables " +
+      "formula for blow-ups used to compute QOU's topological mass.",
+  }),
+
+  // ── Denef-Loeser 2001 (Geometry on arc spaces) ─────────────────
+  ref({
+    id: "denef-loeser2001",
+    type: "paper-conference",
+    title: "Geometry on Arc Spaces of Algebraic Varieties",
+    author: [
+      { family: "Denef", given: "Jan" },
+      { family: "Loeser", given: "François" },
+    ],
+    "container-title":
+      "European Congress of Mathematics, Vol. I (Barcelona, 2000)",
+    "collection-title": "Progress in Mathematics",
+    volume: "201",
+    publisher: "Birkhäuser",
+    "publisher-place": "Basel",
+    issued: { "date-parts": [[2001]] },
+    page: "327-348",
+    DOI: "10.1007/978-3-0348-8268-2_19",
+    URL: "https://doi.org/10.1007/978-3-0348-8268-2_19",
+    note:
+      "Foundational survey of arc spaces L(X) = lim L_n(X) and " +
+      "motivic integration. Provides the change-of-variables " +
+      "formula for blow-ups and the motivic measure on cylindrical " +
+      "subsets of L(X).",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

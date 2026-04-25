@@ -16,26 +16,26 @@ Hahn field $\mathbb{R}((\omega^{\mathbf{No}}))$ [@ehrlich2012].
 For $x \neq 0$ define
 
 $$
-  \mathrm{ord}_\omega(x) := y_0, \qquad
+  \ordw(x) := y_0, \qquad
   \mathrm{lc}(x) := r_0.
 $$
 
-$\mathrm{ord}_\omega$ is a **group homomorphism** $(\mathbf{No}^\times,
+$\ordw$ is a **group homomorphism** $(\mathbf{No}^\times,
 \cdot) \to (\mathbf{No}, +)$:
 
 $$
-  \mathrm{ord}_\omega(x \cdot y) = \mathrm{ord}_\omega(x) + \mathrm{ord}_\omega(y).
+  \ordw(x \cdot y) = \ordw(x) + \ordw(y).
 $$
 
 It is the non-archimedean valuation associated to the valuation
 ring $\mathcal{O}$ of finite surreals
 ([valuation ring](#rem:valuation-ring-finite-surreals)):
 
-| Regime | Condition on $\mathrm{ord}_\omega(x)$ | Meaning |
+| Regime | Condition on $\ordw(x)$ | Meaning |
 |---|---|---|
-| $x$ infinitesimal | $\mathrm{ord}_\omega(x) < 0$ | $x \in \mathfrak{m}$ |
-| $x$ finite non-inf. | $\mathrm{ord}_\omega(x) = 0$ | $\mathrm{st}(x) \neq 0$ |
-| $x$ infinite | $\mathrm{ord}_\omega(x) > 0$ | $x \notin \mathcal{O}$ |
+| $x$ infinitesimal | $\ordw(x) < 0$ | $x \in \mathfrak{m}$ |
+| $x$ finite non-inf. | $\ordw(x) = 0$ | $\mathrm{st}(x) \neq 0$ |
+| $x$ infinite | $\ordw(x) > 0$ | $x \notin \mathcal{O}$ |
 
 ## Dictionary: Big-O / little-o $\leftrightarrow$ leading exponent
 
@@ -47,11 +47,11 @@ $f, g$ in the Hahn field):
 
 | Classical | Surreal | Proposed notation |
 |---|---|---|
-| $f = O(g)$ | $\mathrm{ord}_\omega(f) \leq \mathrm{ord}_\omega(g)$ | $f \preceq g$ |
-| $f = o(g)$ | $\mathrm{ord}_\omega(f) < \mathrm{ord}_\omega(g)$ | $f \prec g$ |
-| $f = \Theta(g)$ | $\mathrm{ord}_\omega(f) = \mathrm{ord}_\omega(g)$ | $f \asymp g$ |
-| $f \sim g$ | $\mathrm{ord}_\omega(f) = \mathrm{ord}_\omega(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
-| $f = g + O(h)$ | $\mathrm{ord}_\omega(f - g) \leq \mathrm{ord}_\omega(h)$ | $f \equiv g \pmod{\preceq h}$ |
+| $f = O(g)$ | $\ordw(f) \leq \ordw(g)$ | $f \preceq g$ |
+| $f = o(g)$ | $\ordw(f) < \ordw(g)$ | $f \prec g$ |
+| $f = \Theta(g)$ | $\ordw(f) = \ordw(g)$ | $f \asymp g$ |
+| $f \sim g$ | $\ordw(f) = \ordw(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
+| $f = g + O(h)$ | $\ordw(f - g) \leq \ordw(h)$ | $f \equiv g \pmod{\preceq h}$ |
 
 ## Why this is better than classical Big-O
 
@@ -68,19 +68,19 @@ Classical Big-O has three well-known pathologies:
 
 The surreal valuation replaces these with:
 
-1. **Clean inequality** $\mathrm{ord}_\omega(f) \leq \mathrm{ord}_\omega(g)$ on
+1. **Clean inequality** $\ordw(f) \leq \ordw(g)$ on
    elements of the ordered group $(\mathbf{No}, +)$.
 2. **Algebraic laws**:
    $$
-     \mathrm{ord}_\omega(f \cdot g) = \mathrm{ord}_\omega(f) + \mathrm{ord}_\omega(g),
+     \ordw(f \cdot g) = \ordw(f) + \ordw(g),
      \qquad
-     \mathrm{ord}_\omega(f + g) \leq \max(\mathrm{ord}_\omega(f), \mathrm{ord}_\omega(g))
+     \ordw(f + g) \leq \max(\ordw(f), \ordw(g))
    $$
    (ultrametric, with equality when leading exponents differ).
 3. **Strict refinement by birthday**: when two quantities share a
    leading exponent, the birthday of that exponent —
-   `$b(\mathrm{ord}_\omega(f))$` — gives an ordinal-valued depth gauge.
-   So $\mathrm{ord}_\omega(e^{-1/\varepsilon})$ and $\mathrm{ord}_\omega(\varepsilon^\omega)$
+   $b(\ordw(f))$ — gives an ordinal-valued depth gauge.
+   So $\ordw(e^{-1/\varepsilon})$ and $\ordw(\varepsilon^\omega)$
    are both negative infinite, but at *different birthdays*,
    distinguishing functions that classical Big-O cannot.
 
@@ -129,7 +129,7 @@ future revision, reserving $O, o, \Theta, \sim$ for legacy citations.
 A full formalisation of Conway normal form requires Hahn series
 with surreal-valued exponents — partially present in mathlib
 (`Mathlib.RingTheory.HahnSeries`) but not yet integrated with
-the `SurrealField` axiomatic class. The $\mathrm{ord}_\omega$ function
+the `SurrealField` axiomatic class. The $\ordw$ function
 as a group homomorphism can be stated once that integration
 lands; meanwhile the valuation-ring structure
 ([valuation ring](#rem:valuation-ring-finite-surreals)) gives

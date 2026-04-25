@@ -43,7 +43,6 @@ theorem minimal_z5_branch_size
   -- size-5-orbit-only; 4 is not admissible since b ≤ 2 and
   -- 5 · 0 + b ≤ 2 < 4).  Hence n ≥ 6.  Left as `sorry` pending
   -- Lean environment validation.
-  -- Ref: [bolza1887] https://doi.org/10.2307/2369402
-  sorry
+  sorry -- Ref: [bolza1887] https://doi.org/10.2307/2369402
 
 end QOU.X5Classification

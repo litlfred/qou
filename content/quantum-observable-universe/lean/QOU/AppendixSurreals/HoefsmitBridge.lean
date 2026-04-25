@@ -11,12 +11,19 @@ Mathlib's `Combinatorics.YoungTableau` does not yet expose the YJM
 (Young–Jucys–Murphy) extension as a rooted-tree structure, so the
 full bridge cannot be proved here.  This file provides:
 
-1. an abstract `TwoRowTableau` type matching the cardinality of
-   two-rowed standard tableaux of size `n`;
-2. an explicit bijection at small sizes (`n ≤ 2`), proving the
-   first non-trivial case of the bridge proposition;
-3. an axiomatic statement of the bridge in general, with the full
-   proof deferred to a future YJM-tree formalisation.
+1. an abstract `TwoRowTableau` type recording only the row sizes
+   `(row1, row2)` of a two-rowed Young shape.  This matches the
+   set of two-rowed *shapes* (one shape per partition), which
+   coincides with the set of two-rowed *standard tableaux* only
+   for `n ≤ 2`; for `n ≥ 3` distinct standard tableaux of the
+   same shape (e.g. the two tableaux of shape `(2, 1)` at `n = 3`)
+   are not distinguished by `TwoRowTableau`;
+2. an explicit injectivity proof at small sizes (`n ≤ 2`), the
+   first non-trivial cases of the bridge proposition;
+3. a typeclass formulation of the bridge in general (per
+   CLAUDE.md §3b), with the witness deferred to a future
+   entry-aware refactor of `TwoRowTableau` plus a YJM-tree
+   formalisation.
 
 ## References
 
@@ -85,15 +92,32 @@ end TwoRowTableau
                 (1,1)    ↦ -1 (downward extension: -q⁻¹-eigenchannel) -/
 -- Ref: [conway1976] §0
 -- Ref: [gonshor1986] §2
-def hoefsmitDyadic : ∀ {n : ℕ}, TwoRowTableau n → ℚ
+--
+-- IMPORTANT: the `TwoRowTableau n` structure used here records only
+-- row sizes (row1, row2), not the full entry data.  For `n ≥ 3` this
+-- is insufficient to distinguish distinct standard tableaux of the
+-- same shape (e.g. the two tableaux of shape (2,1) at n=3).
+--
+-- The definition is therefore given constructively only for `n ≤ 2`
+-- and deferred (via `sorry`, not a bogus `0` value) for `n ≥ 3`.
+-- Providing a non-zero value for `n ≥ 3` without distinguishing
+-- tableaux would produce an injectivity failure that directly
+-- contradicts `hoefsmit_is_surreal_construction`.
+--
+-- To discharge the deferred case, refactor `TwoRowTableau` to include
+-- the entry map (a bijection `Fin n → row-position`) and then:
+--   - define a YJM-extension recursion on the entry data, and
+--   - prove injectivity by induction on `n` using Gonshor's
+--     simplicity theorem.
+noncomputable def hoefsmitDyadic : ∀ {n : ℕ}, TwoRowTableau n → ℚ
   | 0, _ => 0
   | 1, _ => 0
   | 2, t =>
     if t.row2 = 0 then 1 else -1
   | n + 3, _ =>
-    -- General case: requires the YJM-extension recursion.
     -- Ref: [hoefsmit1974] PhD Thesis, UBC.
-    0
+    -- Ref: [gonshor1986] §2 — sign-sequence / YJM extension.
+    sorry
 
 /-- Bridge proposition for `n = 0`: trivial. -/
 theorem hoefsmit_bridge_zero :
@@ -136,21 +160,61 @@ theorem hoefsmit_bridge_two :
     cases t₁; cases t₂
     congr <;> omega
   · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1.
+    -- After simp, heq becomes `1 = -1` in ℚ; close via norm_num.
     simp [hoefsmitDyadic, h1, h2] at heq
-    -- heq : 1 = -1 in ℚ — contradiction.
-  · -- Symmetric: t₁ = (1,1), t₂ = (2,0).
+    exact absurd heq (by norm_num)
+  · -- Symmetric: t₁ = (1,1), t₂ = (2,0); heq : -1 = 1 in ℚ.
     simp [hoefsmitDyadic, h1, h2] at heq
+    exact absurd heq (by norm_num)
   · -- Both row2 = 1: same tableau (1, 1).
     cases t₁; cases t₂
     congr <;> omega
 
-/-- **Bridge proposition (axiom)**: for every `n`, the
-    Hoefsmit-to-dyadic map is injective.
+/-- **Bridge proposition as a conjecture class** (per CLAUDE.md §3b).
 
-    Proved for `n ≤ 2` (theorems above).  The general case requires
-    the YJM-extension recursion, which is not yet in mathlib. -/
+    Encodes the general-`n` injectivity of the Hoefsmit-to-dyadic
+    bijection as a typeclass.  The conjecture's full statement
+    references a hypothetical entry-aware refactor
+    `ExtendedTableau n`: a type equipped with (a) a map to
+    `TwoRowTableau n` (forgetting entries) and (b) an extended
+    Hoefsmit function agreeing with `hoefsmitDyadic` for `n ≤ 2`.
+    The conjecture asserts the existence of such a refactor with
+    globally injective extended-Hoefsmit.
+
+    The proved cases for the **current** partial definition are
+    `hoefsmit_bridge_zero`, `hoefsmit_bridge_one`,
+    `hoefsmit_bridge_two`.  The current partial `hoefsmitDyadic`
+    cannot satisfy general-`n` injectivity (size-3 tableaux of
+    shape (2,1) both map to `sorry`). -/
 -- Ref: [conway1976] §0, [gonshor1986] §2, [hoefsmit1974]
-axiom hoefsmit_is_surreal_construction (n : ℕ) :
-    Function.Injective (@hoefsmitDyadic n)
+class HoefsmitIsSurrealConstruction where
+  /-- There exists an entry-aware refactored tableau type for
+      which the Hoefsmit-to-dyadic map is globally injective, and
+      which agrees with the current `hoefsmitDyadic` on the
+      proved `n ≤ 2` cases.
+
+      Proving this requires the tableau-entry refactor plus the
+      inductive Gonshor-simplicity argument (see appendix §
+      `prop:hoefsmit-is-surreal-construction`).  Until that
+      infrastructure lands, an instance of this class is created
+      by `sorry` (understood per CLAUDE.md §3b as the conjecture). -/
+  exists_injective_extension :
+    ∃ (ExtendedTableau : ℕ → Type)
+      (forgetEntries : ∀ n, ExtendedTableau n → TwoRowTableau n)
+      (extendedHoefsmit : ∀ n, ExtendedTableau n → ℚ),
+      -- Global injectivity of the extended map:
+      (∀ n, Function.Injective (extendedHoefsmit n))
+      -- Compatibility for n ≤ 2: agrees with the base partial def.
+      ∧ (∀ (t : ExtendedTableau 0),
+          extendedHoefsmit 0 t = hoefsmitDyadic (forgetEntries 0 t))
+      ∧ (∀ (t : ExtendedTableau 1),
+          extendedHoefsmit 1 t = hoefsmitDyadic (forgetEntries 1 t))
+      ∧ (∀ (t : ExtendedTableau 2),
+          extendedHoefsmit 2 t = hoefsmitDyadic (forgetEntries 2 t))
+      -- Surjectivity at n = 2 onto the base codomain
+      -- (prevents trivial `Unit` inhabitation of ExtendedTableau):
+      ∧ (∀ (t : TwoRowTableau 2),
+          ∃ (t' : ExtendedTableau 2), forgetEntries 2 t' = t)
+  -- Ref: [gonshor1986] §2 — sign-sequence length = birthday.
 
 end QOU.AppendixSurreals

@@ -2,8 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:quantum-dilogarithm",
-  lean: {
-    decl: "QOU.Torsion.quantum_dilogarithm",
+  lean: { ref: "qou:QOU.Torsion.quantum_dilogarithm",
     validation: "not_checked",
   },
   title: "Quantum Dilogarithm as Localized Torsion Volume",

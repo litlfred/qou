@@ -3,8 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:skew-poisson-integrates",
   title: "Integration theorem",
-  lean: {
-    decl: "Fred2005.skew_poisson_integrates",
+  lean: { ref: "fred2005:Fred2005.skew_poisson_integrates",
     validation: "not_checked",
   },
   tags: ["integration", "formal-group", "main-theorem"],

@@ -11,8 +11,7 @@ export default theorem({
     "ribbon-category",
     "information-theory",
   ],
-  lean: {
-    decl: "QOU.Information.massEnergyEquivalence",
+  lean: { ref: "qou:QOU.Information.massEnergyEquivalence",
     validation: "not_checked",
   },
   uses: [

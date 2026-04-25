@@ -13,7 +13,7 @@ export default proposition({
   ],
   cites: ["kashaev1997", "murakami-murakami2001"],
   lean: {
-    decl: "QOU.BraidsKnots.VolThroughTau",
+    ref: "qou:QOU.BraidsKnots.VolThroughTau",
     validation: "not_checked",
   },
 });

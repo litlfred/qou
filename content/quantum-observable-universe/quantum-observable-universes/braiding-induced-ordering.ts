@@ -13,8 +13,7 @@ export default proposition({
     "temporal",
     "groebner",
   ],
-  lean: {
-    decl: "QOU.braiding_induced_ordering",
+  lean: { ref: "qou:QOU.braiding_induced_ordering",
     validation: "not_checked",
   },
   uses: [

@@ -12,8 +12,7 @@ export default conjecture({
     "groebner-shirshov",
     "mass-endomorphism",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.CrossingGradedMassExpansion",
+  lean: { ref: "qou:QOU.ParticleInteractions.CrossingGradedMassExpansion",
     validation: "not_checked",
   },
   uses: [

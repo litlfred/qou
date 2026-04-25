@@ -15,8 +15,7 @@ export default proposition({
     "trace",
     "partition",
   ],
-  lean: {
-    decl: "QOU.BraidKnot.wedderburn_trace_identity",
+  lean: { ref: "qou:QOU.BraidKnot.wedderburn_trace_identity",
     validation: "not_checked",
   },
   uses: [

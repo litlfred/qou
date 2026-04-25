@@ -5,8 +5,7 @@ export default proposition({
   title:
     "Knot--particle correspondence via $q$-Schur--Weyl duality",
   tags: ["knot", "particle", "dictionary", "schur-weyl", "markov-trace"],
-  lean: {
-    decl: "QOU.Braiding.knot_particle_correspondence",
+  lean: { ref: "qou:QOU.Braiding.knot_particle_correspondence",
     validation: "not_checked",
   },
   uses: [

@@ -13,8 +13,7 @@ export default proposition({
     "shell-transition",
     "crossing-number",
   ],
-  lean: {
-    decl: "QOU.Braiding.stability_pairs_correct",
+  lean: { ref: "qou:QOU.Braiding.stability_pairs_correct",
     validation: "not_checked",
   },
   uses: ["prop:orbital-fourier-decomposition"],

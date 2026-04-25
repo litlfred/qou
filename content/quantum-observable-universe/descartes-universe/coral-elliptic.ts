@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:coral-elliptic",
-  lean: {
-    decl: "QOU.Brings.coral_elliptic",
+  lean: { ref: "qou:QOU.Brings.coral_elliptic",
     validation: "not_checked",
   },
   title: "Coral fibre as an elliptic curve",

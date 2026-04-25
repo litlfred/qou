@@ -12,8 +12,7 @@ export default proposition({
     "dilogarithm",
     "crossing",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.thurstonVolumeAdditivity",
+  lean: { ref: "qou:QOU.ParticleInteractions.thurstonVolumeAdditivity",
     validation: "not_checked",
   },
   uses: [

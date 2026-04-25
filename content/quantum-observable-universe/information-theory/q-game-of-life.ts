@@ -15,8 +15,7 @@ export default proposition({
     "hadamard",
     "planck-time",
   ],
-  lean: {
-    decl: "QOU.Information.qGameOfLife",
+  lean: { ref: "qou:QOU.Information.qGameOfLife",
     validation: "not_checked",
   },
   uses: [

@@ -7,8 +7,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:co-molecular-braid",
   title: "Carbon monoxide $CO$ as a molecular braid",
-  lean: {
-    decl: "QOU.Molecular.COBraid",
+  lean: { ref: "qou:QOU.Molecular.COBraid",
     validation: "not_checked",
   },
   uses: [

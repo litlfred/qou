@@ -3,8 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:unit-root-iff-integrable",
   title: "Unit-root iff integrable",
-  lean: {
-    decl: "Fred2005.unit_root_iff_integrable",
+  lean: { ref: "fred2005:Fred2005.unit_root_iff_integrable",
     validation: "not_checked",
   },
   tags: ["f-crystal", "unit-root", "integrability", "equivalence"],

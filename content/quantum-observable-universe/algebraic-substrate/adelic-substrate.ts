@@ -9,7 +9,7 @@ export default definition({
   ],
   cites: ["tate1967"],
   lean: {
-    decl: "QOU.AlgebraicSubstrate.AdelicSubstrate",
+    ref: "qou:QOU.AlgebraicSubstrate.AdelicSubstrate",
     validation: "not_checked",
   },
 });

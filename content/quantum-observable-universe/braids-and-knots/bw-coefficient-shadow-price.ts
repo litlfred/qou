@@ -18,8 +18,7 @@ export default proposition({
   label: "prop:bw-coefficient-shadow-price",
   title:
     "BW coefficients as shadow prices of the Frobenius positivity constraints",
-  lean: {
-    decl: "QOU.BraidKnot.BWCoefficientShadowPrice",
+  lean: { ref: "qou:QOU.BraidKnot.BWCoefficientShadowPrice",
     validation: "not_checked",
   },
   uses: [

@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-exponential-unique",
   title: "Uniqueness of the $q$-exponential grouplike",
-  lean: {
-    decl: "QOU.QExponential.unique",
+  lean: { ref: "qou:QOU.QExponential.unique",
     validation: "not_checked",
   },
   uses: [

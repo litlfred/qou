@@ -12,8 +12,7 @@ export default proposition({
     "substrate-parameter",
     "valley-of-stability",
   ],
-  lean: {
-    decl: "QOU.Descartes.hadron_half_life",
+  lean: { ref: "qou:QOU.Descartes.hadron_half_life",
     validation: "not_checked",
   },
   uses: ["prop:integer-stability"],

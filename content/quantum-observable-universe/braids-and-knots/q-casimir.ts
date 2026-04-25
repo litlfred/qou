@@ -11,8 +11,7 @@ export default definition({
     "hopf-algebra",
     "q-deformed",
   ],
-  lean: {
-    decl: "QOU.QCasimir",
+  lean: { ref: "qou:QOU.QCasimir",
     validation: "not_checked",
   },
   uses: [

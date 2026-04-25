@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:unit-root-f-crystal",
   title: "Unit-root F-crystal",
-  lean: {
-    decl: "Fred2005.UnitRootFCrystal",
+  lean: { ref: "fred2005:Fred2005.UnitRootFCrystal",
     validation: "not_checked",
   },
   tags: ["f-crystal", "unit-root", "frobenius"],

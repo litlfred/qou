@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:incompleteness-implies-horizon",
   title:
     "Turing completeness with $\\mathbb{N}$-embedding implies non-empty computational horizon",
-  lean: {
-    decl: "QOU.IncompletenessHorizon.exists_noncomputable",
+  lean: { ref: "qou:QOU.IncompletenessHorizon.exists_noncomputable",
     validation: "not_checked",
   },
   tags: [

@@ -5,7 +5,7 @@ export default definition({
   title:
     "The substrate line bundle and the $\\mathbb{G}_m$-family of differentials",
   lean: {
-    decl: "QOU.FluidDynamics.SubstrateLineBundle",
+    ref: "qou:QOU.FluidDynamics.SubstrateLineBundle",
     validation: "not_checked",
   },
   uses: [

@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-q-connection-exists",
   title: "Existence of the categorical $q$-connection",
-  lean: {
-    decl: "QOU.CategoricalQConnection.exists",
+  lean: { ref: "qou:QOU.CategoricalQConnection.exists",
     validation: "not_checked",
   },
   uses: [

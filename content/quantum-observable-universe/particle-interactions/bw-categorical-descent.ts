@@ -18,8 +18,7 @@ export default proposition({
     "wedderburn",
     "quantum-dilogarithm",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.bw_categorical_descent",
+  lean: { ref: "qou:QOU.ParticleInteractions.bw_categorical_descent",
     validation: "not_checked",
   },
   uses: [

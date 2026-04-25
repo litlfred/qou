@@ -4,8 +4,7 @@ export default definition({
   label: "def:reeb-epsilon",
   title: "The Reeb infinitesimal $\\varepsilon$",
   lean: {
-    decl: "QOU.AlgebraicSubstrate.ReebEpsilon",
-    file: "lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean",
+    ref: "qou:QOU.AlgebraicSubstrate.ReebEpsilon",
     validation: "not_checked",
   },
   uses: [

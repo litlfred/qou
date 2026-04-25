@@ -5,8 +5,7 @@ export default proposition({
   title:
     "Closure of hadron operations under braiding, Hopf linking, skein action, and fusion",
   tags: ["hadron", "braiding", "hopf-link", "skein", "fusion", "closure"],
-  lean: {
-    decl: "QOU.Hadron.hadron_operations_closure",
+  lean: { ref: "qou:QOU.Hadron.hadron_operations_closure",
     validation: "not_checked",
   },
   uses: [

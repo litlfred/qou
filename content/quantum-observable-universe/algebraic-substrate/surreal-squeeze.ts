@@ -5,8 +5,7 @@ export default lemma({
   title:
     "Surreal squeeze: standard-scale cost dominates infinitesimal dissipation",
   lean: {
-    decl: "QOU.AlgebraicSubstrate.surreal_squeeze",
-    file: "lean/QOU/AlgebraicSubstrate/SurrealSqueeze.lean",
+    ref: "qou:QOU.AlgebraicSubstrate.surreal_squeeze",
     validation: "not_checked",
   },
   uses: ["prop:surreal-rate-calculus"],

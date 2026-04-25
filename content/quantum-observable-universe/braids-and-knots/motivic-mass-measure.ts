@@ -12,7 +12,7 @@ export default definition({
   ],
   cites: ["kontsevich1995", "denef-loeser2001"],
   lean: {
-    decl: "QOU.BraidsKnots.MotivicMassMeasure",
+    ref: "qou:QOU.BraidsKnots.MotivicMassMeasure",
     validation: "not_checked",
   },
 });

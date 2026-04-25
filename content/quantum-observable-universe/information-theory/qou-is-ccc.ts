@@ -7,8 +7,7 @@ export default proposition({
     "ccc", "aeon", "conformal-cyclic-cosmology",
     "penrose", "jet-horizon", "conformal-invariance",
   ],
-  lean: {
-    decl: "QOU.qou_is_ccc",
+  lean: { ref: "qou:QOU.qou_is_ccc",
     validation: "not_checked",
   },
   uses: [

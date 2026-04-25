@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:poisson-object",
   title: "Internal Poisson object",
-  lean: {
-    decl: "QOU.PoissonObject",
+  lean: { ref: "qou:QOU.PoissonObject",
     validation: "not_checked",
   },
   uses: [

@@ -12,7 +12,7 @@ export default definition({
   ],
   cites: ["tate1967", "kashaev1997", "murakami-murakami2001"],
   lean: {
-    decl: "QOU.BraidsKnots.ArchimedeanRealizationFunctor",
+    ref: "qou:QOU.BraidsKnots.ArchimedeanRealizationFunctor",
     validation: "not_checked",
   },
 });

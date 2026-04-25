@@ -4,8 +4,7 @@ export default definition({
   label: "def:categorical-laplace",
   title: "Categorical Laplace transform",
   tags: ["hopf-algebra", "grouplike", "monoidal-functor", "laplace"],
-  lean: {
-    decl: "QOU.CategoricalLaplace",
+  lean: { ref: "qou:QOU.CategoricalLaplace",
     validation: "not_checked",
   },
   uses: [
