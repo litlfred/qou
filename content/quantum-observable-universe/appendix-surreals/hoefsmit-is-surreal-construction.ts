@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:hoefsmit-is-surreal-construction",
   lean: {
-    decl: "QOU.AppendixSurreals.hoefsmit_is_surreal_construction",
+    ref: "qou:QOU.AppendixSurreals.hoefsmit_is_surreal_construction",
     validation: "not_checked",
   },
   title:

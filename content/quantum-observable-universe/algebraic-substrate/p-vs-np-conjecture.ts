@@ -5,8 +5,7 @@ export default conjecture({
   title:
     "P vs NP in the QOU: classical-limit separation of BQP-width classes",
   lean: {
-    decl: "QOU.AlgebraicSubstrate.PvsNPQou",
-    file: "lean/QOU/AlgebraicSubstrate/PvsNPQou.lean",
+    ref: "qou:QOU.AlgebraicSubstrate.PvsNPQou",
     validation: "not_checked",
   },
   uses: [

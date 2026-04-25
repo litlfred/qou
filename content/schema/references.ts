@@ -2797,28 +2797,6 @@ export const references: CSLData[] = [
       "\\ref{def:standard-part-functor}.",
   }),
 
-  // ── Ehrlich 2012 (absolute continuum) ──────────────────────
-  ref({
-    id: "ehrlich2012",
-    type: "article-journal",
-    title:
-      "The absolute arithmetic continuum and the unification of all " +
-      "numbers great and small",
-    author: [{ family: "Ehrlich", given: "Philip" }],
-    "container-title": "Bulletin of Symbolic Logic",
-    volume: "18",
-    issue: "1",
-    page: "1-45",
-    issued: { "date-parts": [[2012]] },
-    DOI: "10.2178/bsl/1327328438",
-    note:
-      "Demonstrates that $\\mathbf{No}$ contains all real-closed " +
-      "ordered fields as subfields, including the hyperreals " +
-      "$^*\\mathbb{R}$ and the Hahn series $\\mathbb{R}((t^G))$ for " +
-      "any divisible ordered abelian group $G$.  Justifies " +
-      "embedding every analytic regime into a single surreal " +
-      "ambient.",
-  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
