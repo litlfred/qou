@@ -97,22 +97,23 @@ theorem habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) := by
 
       p = C a₀ + (1 - X) * p₁.
 
-    The witness is `a₀ := p.eval 1` and
-    `p₁ := (p - C a₀) /ₘ (1 - X)` (exact polynomial division,
-    since `1 - X` divides `p - C (p.eval 1)` by the factor
-    theorem). -/
+    Proof sketch.  Let `a₀ := p.eval 1`.  The polynomial
+    `p - C a₀` satisfies `(p - C a₀).eval 1 = 0`, so by the
+    factor theorem `(X - 1) ∣ (p - C a₀)` in `ℤ[X]`.  Hence
+    there is `q : ℤ[X]` with `p - C a₀ = (X - 1) * q`.  Setting
+    `p₁ := -q` gives `p = C a₀ + (1 - X) * p₁` (since
+    `1 - X = -(X - 1)`).
+
+    Full Lean formalisation requires the Mathlib lemma
+    `Polynomial.dvd_iff_isRoot` for the integer-polynomial ring,
+    applied to the eval-at-1 condition. -/
 theorem habiro_step_zero (p : ℤ[X]) :
     ∃ (a₀ : ℤ) (p₁ : ℤ[X]),
       p = C a₀ + (1 - X) * p₁ := by
-  -- a₀ = p(1)
-  refine ⟨p.eval 1, (p - C (p.eval 1)) /ₘ (X - 1) * (-1), ?_⟩
-  -- (X - 1) is monic, and p - C(p(1)) evaluates to 0 at X = 1,
-  -- so (X - 1) divides it exactly by the factor theorem.
-  -- 1 - X = -(X - 1), so dividing by (1 - X) is the negative
-  -- of dividing by (X - 1).
-  sorry  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
-         -- Uses: Polynomial.X_sub_C_dvd_iff_eval_eq_zero,
-         -- Polynomial.divByMonic_spec for the monic divisor X - 1.
+  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
+  -- Proof via Mathlib: use `Polynomial.dvd_iff_isRoot` to get
+  -- (X - 1) ∣ (p - C (p.eval 1)), then take quotient and negate.
+  sorry
 
 /-- **Habiro expansion exists for every integer polynomial.**
 

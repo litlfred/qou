@@ -67,28 +67,24 @@ theorem crossingChiralityFactor_neg (h : ℝ) :
   simp [crossingChiralityFactor]; ring
 
 /-- The total chirality factor of a braid word: product over
-    all pn crossings of the per-crossing factors. -/
+    all pn crossings of the per-crossing factors.
+
+    Implemented as `List.prod` (associative product) so that
+    `_cons` and `_append` lemmas are immediate. -/
 def chiralityFactor (h : ℝ) (crossings : List CrossingSign) : ℝ :=
-  (crossings.map (crossingChiralityFactor h)).foldl (· * ·) 1
+  (crossings.map (crossingChiralityFactor h)).prod
 
 @[simp]
 theorem chiralityFactor_nil (h : ℝ) :
-    chiralityFactor h [] = 1 := rfl
+    chiralityFactor h [] = 1 := by
+  simp [chiralityFactor]
 
 theorem chiralityFactor_cons (h : ℝ) (c : CrossingSign)
     (cs : List CrossingSign) :
     chiralityFactor h (c :: cs) =
       crossingChiralityFactor h c *
         chiralityFactor h cs := by
-  unfold chiralityFactor
-  simp [List.foldl, crossingChiralityFactor]
-  induction cs generalizing c with
-  | nil => simp [List.foldl]
-  | cons c' cs' ih =>
-    -- List.foldl (1 * cross(c)) cons c' :: cs' = ...
-    simp [List.foldl]
-    ring_nf
-    sorry  -- Ref: inductive step on foldl; standard Mathlib pattern.
+  simp [chiralityFactor, List.map_cons, List.prod_cons]
 
 /-- The symmetric-channel trace τ_sym on the Hecke generators.
 
@@ -130,20 +126,46 @@ theorem tau_sym_pos_deviation (q : ℝ) (hq : q ≠ 0) :
     This is the derivation of the paper's T, ³He, ⁴He values. -/
 theorem amphichiral_factor (h : ℝ) :
     chiralityFactor h [CrossingSign.pos, CrossingSign.neg] = 1 - h * h := by
-  unfold chiralityFactor
-  simp [List.foldl, crossingChiralityFactor, CrossingSign.toReal]
+  simp [chiralityFactor, crossingChiralityFactor, CrossingSign.toReal]
   ring
 
-/-- Inductive amphichiral factor for k pairs. -/
+/-- The chirality factor over `List.replicate k c` is the
+    per-crossing factor to the `k`-th power. -/
+theorem chiralityFactor_replicate (h : ℝ) (c : CrossingSign) (k : ℕ) :
+    chiralityFactor h (List.replicate k c) =
+      (crossingChiralityFactor h c) ^ k := by
+  induction k with
+  | zero => simp [chiralityFactor]
+  | succ n ih =>
+    -- List.replicate (n+1) c = c :: List.replicate n c
+    rw [List.replicate_succ]
+    rw [chiralityFactor_cons]
+    rw [ih]
+    ring
+
+/-- The chirality factor over an append is the product of the
+    chirality factors.  (List.foldl distributes over append
+    for an associative operation with the correct start value.) -/
+theorem chiralityFactor_append (h : ℝ)
+    (xs ys : List CrossingSign) :
+    chiralityFactor h (xs ++ ys) =
+      chiralityFactor h xs * chiralityFactor h ys := by
+  induction xs with
+  | nil => simp [chiralityFactor]
+  | cons c cs ih =>
+    rw [List.cons_append, chiralityFactor_cons, ih,
+        chiralityFactor_cons]
+    ring
+
+/-- Inductive amphichiral factor for `k` positive-then-negative
+    pairs. -/
 theorem amphichiral_factor_k_pairs (h : ℝ) (k : ℕ) :
     chiralityFactor h (List.replicate k CrossingSign.pos ++
                         List.replicate k CrossingSign.neg) =
     (1 + h) ^ k * (1 - h) ^ k := by
-  -- By splitting the product across the append:
-  --   Π_{c ∈ pos list} (1+h) * Π_{c ∈ neg list} (1-h)
-  --   = (1+h)^k * (1-h)^k
-  -- which equals (1 - h²)^k.
-  sorry  -- Ref: [manuscript] `prop:chirality-dual-space-derivation` §Amphichiral.
+  rw [chiralityFactor_append,
+      chiralityFactor_replicate, chiralityFactor_replicate]
+  simp [crossingChiralityFactor_pos, crossingChiralityFactor_neg]
 
 /-- **Deuteron chirality.**
 
@@ -151,8 +173,7 @@ theorem amphichiral_factor_k_pairs (h : ℝ) (k : ℕ) :
     inter-nucleon braiding), so `a_D = 1 + h`. -/
 theorem deuteron_factor (h : ℝ) :
     chiralityFactor h [CrossingSign.pos] = 1 + h := by
-  unfold chiralityFactor
-  simp [List.foldl, crossingChiralityFactor, CrossingSign.toReal]
+  simp [chiralityFactor, crossingChiralityFactor, CrossingSign.toReal]
 
 /-- **Positive-negative pair factor.**
 
@@ -169,8 +190,7 @@ theorem he4_factor (h : ℝ) :
     chiralityFactor h [CrossingSign.pos, CrossingSign.neg,
                         CrossingSign.pos, CrossingSign.neg] =
     (1 - h * h) * (1 - h * h) := by
-  unfold chiralityFactor
-  simp [List.foldl, crossingChiralityFactor, CrossingSign.toReal]
+  simp [chiralityFactor, crossingChiralityFactor, CrossingSign.toReal]
   ring
 
 /-- **Chirality factor is real.**
@@ -192,10 +212,8 @@ theorem chirality_at_h_zero (crossings : List CrossingSign) :
   induction crossings with
   | nil => rfl
   | cons c cs ih =>
-    unfold chiralityFactor
-    simp [List.foldl, crossingChiralityFactor]
-    -- At h = 0, each factor is 1, so the product is 1.
-    sorry  -- Ref: inductive step, standard foldl multiplication.
+    rw [chiralityFactor_cons, ih]
+    cases c <;> simp [crossingChiralityFactor]
 
 /-- **Term 5 of the unified mass formula.**
 

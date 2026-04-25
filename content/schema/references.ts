@@ -1154,6 +1154,19 @@ export const references: CSLData[] = [
     note: "First circulated 2002",
   }),
 
+  ref({
+    id: "habiro2004",
+    type: "article-journal",
+    title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
+    author: [{ family: "Habiro", given: "Kazuo" }],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[2008]] },
+    volume: "171",
+    page: "1-81",
+    DOI: "10.1007/s00222-007-0071-0",
+    note: "Preprint 2004; introduces the Habiro ring cyclotomic expansion.",
+  }),
+
   // ── Nuclear shell model (Mayer–Jensen) ──────────────────────────
 
   ref({
