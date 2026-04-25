@@ -7,7 +7,7 @@
     "thm:frobenius-antipode-unifies-chirality-and-tower",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-04-25T00:06:56.739561+00:00",
+  "timestamp": "2026-04-25T02:46:03.013559+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "level_heuristic": "len(\u03bb) - 1 (diagram height - 1)"
@@ -37,7 +37,7 @@
           "sum_phi_q": 836.424002405885
         }
       },
-      "walltime_sec": 2.9273459911346436
+      "walltime_sec": 2.5444772243499756
     },
     "n": {
       "Z": 0,
@@ -63,7 +63,7 @@
           "sum_phi_q": 17870.950532298477
         }
       },
-      "walltime_sec": 0.00706791877746582
+      "walltime_sec": 0.01916813850402832
     },
     "D atom": {
       "Z": 1,
@@ -104,7 +104,7 @@
           "sum_phi_q": 2.387698189701972
         }
       },
-      "walltime_sec": 0.03573942184448242
+      "walltime_sec": 0.0650789737701416
     },
     "T atom": {
       "Z": 1,
@@ -160,7 +160,7 @@
           "sum_phi_q": 0.0037624404593184614
         }
       },
-      "walltime_sec": 0.30943918228149414
+      "walltime_sec": 0.4503011703491211
     },
     "3He atom": {
       "Z": 2,
@@ -216,7 +216,7 @@
           "sum_phi_q": 0.00017599169191433699
         }
       },
-      "walltime_sec": 0.28626275062561035
+      "walltime_sec": 0.3850729465484619
     }
   }
 }
