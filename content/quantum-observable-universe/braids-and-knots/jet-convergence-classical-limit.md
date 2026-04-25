@@ -66,11 +66,23 @@ reading its first $3$ entries, giving a SYT of shape $\mu$.
 The branching multiplicity $m_\mu^\lambda = \#\mathrm{SYT}(\lambda/\mu)$
 is $q$-independent.
 
-For the $q$-Plancherel measure $w_\lambda = d_q(\lambda)^2/[k]_q!$:
-the ``typical'' partition $\lambda$ (concentrating the measure)
-has $d_q(\lambda) \approx \dim(\lambda) \cdot (1 + O(h^2/k))$,
-so the weighted branching is dominated by the first-order
-$q$-correction to the classical Plancherel branching.
+For the $q$-Plancherel measure $w_\lambda = d_q(\lambda)^2/[k]_q!$,
+the branching fraction
+$f_\mu^{(k)} = \sum_\lambda w_\lambda m_\mu^\lambda /
+\sum_\lambda w_\lambda \sum_\nu m_\nu^\lambda$
+admits a **ratio cancellation**: writing $R(\lambda) =
+d_q(\lambda)/\dim(\lambda)$, the common $[k]_q!$-factor and one
+copy of $R$ in numerator and denominator cancel, leaving
+$$
+  f_\mu^{(k)}
+  = \frac{\sum_\lambda R(\lambda)^2 \dim(\lambda)^2 \, m_\mu^\lambda}
+         {\sum_\lambda R(\lambda)^2 \dim(\lambda)^2 \,
+          \sum_\nu m_\nu^\lambda}.
+$$
+Convergence to the classical limit therefore does **not** require a
+uniform per-partition bound on $R(\lambda) - 1$ (which would be
+false for hooks of length $\geq 5$ at $q_0$); it requires only that
+the weighted measures average the $R^2$ perturbations.
 
 The classical Plancherel branching gives
 $f_\mu^{(1)} = \dim(\mu)/4$, and the leading $q$-correction is
@@ -92,7 +104,9 @@ $p(\lambda \to \lambda \setminus c) = d_q(\lambda \setminus c)^2
 whose stationary distribution restricted to partitions of $3$ IS
 $d_q(\mu)/\sum d_q(\nu)$.  Character fluctuations have variance
 $O(1/k)$, giving $O(1/\sqrt{k})$ convergence.  Combined with
-the ratio perturbation lemma (proved in Lean):*
+the $R^2$ cancellation argument (formalised in
+`QHookBound.lean`, with the per-partition perturbation bound
+left as conjecture):*
 
 $$
   \bigl\lvert f_\mu^{(k)} - f_\mu^\infty \bigr\rvert

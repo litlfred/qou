@@ -24,8 +24,7 @@ export default proposition({
     "groebner-shirshov",
     "optimization",
   ],
-  lean: {
-    decl: "QOU.Interactions.nucleon_ordering_factorization",
+  lean: { ref: "qou:QOU.Interactions.nucleon_ordering_factorization",
     validation: "not_checked",
   },
   uses: [

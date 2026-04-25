@@ -35,8 +35,13 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
 z = 1.0 / (q0**0.5 + qi0**0.5)
 
-CATALAN_G = 0.915965594177219015054603514932
-ALPHA = me * 8 * CATALAN_G
+# E_0 calibration: free-neutron β-decay Q-value (MeV), per
+# prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.
+# This is the SINGLE archimedean calibration τ: R → ℝ from
+# categorical mass to MeV.  The former ALPHA = m_e · 8 · Catalan
+# convention (hyperbolic-volume heuristic) is removed — it was
+# not derivable from the mass-identity prescription.
+E_0_BETA_DECAY_Q_MEV = 0.782
 
 
 # ══════════════════════════════════════════════════════════════
@@ -294,7 +299,8 @@ def dim_q(shape):
     return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
 
 
-def compute_mass_at_level(Z, N, k=6, verbose=False):
+def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None,
+                            block_cache=None):
     """Compute atomic mass using ALL partitions at Hecke level k.
 
     For each partition λ of k:
@@ -302,8 +308,38 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
       2. Compute χ_λ(nuclear braid) by matrix multiplication
       3. Weight by w_λ = dim_q(λ)²/[k]_q!
 
-    The Markov trace = Σ_λ w_λ · χ_λ / dim(λ)
-    Binding = -ALPHA · ln|Markov trace|
+    The Markov trace = Σ_λ w_λ · χ_λ / dim(λ).  Binding is computed
+    via the categorical mass-identity prescription
+    (prop:categorical-mass-markov): at single-brane level,
+
+        B(Z, N) = E_0 · ( |tr_M(W_free)| − |tr_M(W_atom)| )
+
+    with E_0 = 0.782 MeV (free-neutron β-decay Q) — the SINGLE
+    archimedean calibration.  The former ALPHA = m_e · 8 · Catalan
+    convention is removed (it was a hyperbolic-volume heuristic, not
+    derivable from the mass-identity prescription).  Callers
+    wanting the full E_0-based binding should use the dedicated
+    ``mass_at_3A_proper.binding_3A`` module; the ``binding`` field
+    returned by this function is now the dimensionless categorical
+    mass defect ``|1 − |markov||`` — same information, no implicit
+    constant.
+
+    ``partition_filter``, if given, is a predicate ``λ → bool``; only
+    partitions for which it returns True contribute.  Useful for
+    audits (top-N by w_λ, etc.).  Default: include all partitions.
+
+    ``block_cache``, if given, must be a ``syt_prefix_cache.BlockCache``
+    pinned to the same q used for the seminormal-matrix build.  When
+    supplied, the per-partition loop routes through
+    ``syt_prefix_cache.build_seminormal_matrices_cached`` instead of
+    the uncached ``build_seminormal_matrices``, reusing Hoefsmit
+    content-distance arithmetic and the per-shape SYT→index map
+    across shapes.  Caller lifecycle: construct the cache once per
+    q (``BlockCache(q=Q)``), share across multiple
+    ``compute_mass_at_level`` / ``compute_mass_at_3A`` calls, discard
+    when q changes.  Default ``None`` preserves the legacy uncached
+    path.  Expected 5–20× speedup on heavy atoms (A ≥ 10, k = 3A
+    with p(3A) ≥ 5604 partitions and dim_λ up to ~1000).
 
     Returns: (M_predicted, details_dict)
     """
@@ -319,8 +355,17 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
     total_markov = 0.0
     partition_data = []
 
+    if block_cache is not None:
+        from syt_prefix_cache import build_seminormal_matrices_cached
+        _build = lambda shape: build_seminormal_matrices_cached(
+            shape, cache=block_cache)
+    else:
+        _build = build_seminormal_matrices
+
     for shape in partitions_of(k):
-        sigmas, dim, syts = build_seminormal_matrices(shape)
+        if partition_filter is not None and not partition_filter(shape):
+            continue
+        sigmas, dim, syts = _build(shape)
 
         if dim == 0:
             continue
@@ -344,19 +389,52 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
             'chi': chi, 'contribution': contribution,
         })
 
-    if abs(total_markov) < 1e-300:
-        B = 0.0
-    else:
-        B = -ALPHA * math.log(abs(total_markov))
+    # Dimensionless categorical mass defect relative to the Markov-
+    # trace identity (Σ w_λ = 1 at q = 1; at q₀ the identity sum is
+    # |1 − Σ w_λ · χ_λ(id)/d_λ|).  Use ``binding_defect`` for the
+    # dimensionless quantity; use mass_at_3A_proper.binding_3A for a
+    # MeV binding with the prop:categorical-mass-markov calibration
+    # E_0 = 0.782 MeV.
+    binding_defect = abs(1.0 - abs(total_markov))  # dimensionless
 
-    M_pred = Mfree - B
+    # M_pred is NOT converted to MeV here — the dimensionless defect
+    # has no meaningful sign or magnitude in MeV units.  Return
+    # M_pred = Mfree so the second slot of the return tuple is a
+    # well-defined MeV number (free-nucleon rest-mass sum).  Callers
+    # that need binding in MeV must use a proper calibration path.
+    M_pred = Mfree  # free rest-mass sum, MeV — no unit-mixed subtraction
 
     return M_pred, {
-        'binding': B,
+        'binding_defect_dimensionless': binding_defect,
+        'binding': binding_defect,  # legacy key; dimensionless
         'markov_trace': total_markov,
         'partitions': partition_data,
         'level': k,
     }
+
+
+def compute_mass_at_3A(Z, N, verbose=False, partition_filter=None,
+                          block_cache=None):
+    """Atomic mass summed over λ ⊢ 3A — the canonical H_{3A} Wedderburn form.
+
+    Replaces the per-generator H_3 weighting used in the tower formula
+    (hecke_core.atom_per_generator_volumes) with a full partition sum
+    at the atom-wide Iwahori–Hecke algebra H_{3A}(q).  This is the
+    principled form: the atom braid lives in H_{3A}, so weights should
+    be d_q(λ)²/[3A]_q! for λ ⊢ 3A — NOT a per-generator H_3 average.
+
+    A = Z + N.  Calls compute_mass_at_level(Z, N, k=3A).  For A ≥ 10
+    (p(3A) ≥ 5604) this is expensive; callers may pass a
+    ``partition_filter`` to restrict (audit mode), but the default
+    is the full sum — no Plancherel truncation.
+    """
+    A = Z + N
+    if A < 1:
+        return Z * M_P_MEV + N * M_N_MEV + Z * me, {
+            'binding': 0.0, 'markov_trace': 1.0, 'partitions': [], 'level': 0}
+    return compute_mass_at_level(Z, N, k=3 * A, verbose=verbose,
+                                   partition_filter=partition_filter,
+                                   block_cache=block_cache)
 
 
 # ══════════════════════════════════════════════════════════════

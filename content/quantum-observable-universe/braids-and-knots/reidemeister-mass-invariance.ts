@@ -13,8 +13,7 @@ export default proposition({
     "shell-transition",
     "writhe",
   ],
-  lean: {
-    decl: "QOU.Braiding.reidemeister_mass_invariance",
+  lean: { ref: "qou:QOU.Braiding.reidemeister_mass_invariance",
     validation: "not_checked",
   },
   uses: ["rem:hydrogen-orbitals"],

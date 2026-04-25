@@ -12,12 +12,12 @@ export default definition({
     "braid",
     "jones-wenzl",
   ],
-  lean: {
-    decl: "QOU.Descartes.QAngularMomentum",
+  lean: { ref: "qou:QOU.Descartes.QAngularMomentum",
     validation: "not_checked",
   },
   uses: [
     "def:q-momentum",
+    "def:q-casimir",
     "prop:nuclear-spin-parity",
   ],
 });

@@ -44,14 +44,13 @@ except ImportError:
 
 # ── Parameters ───────────────────────────────────────────────────
 
-Q = 1.110
-Q_INV = 1.0 / Q
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q, Q_INV, HA, S_SKEIN as SKEIN_AMP
+
 Q_HALF = Q**0.5
 Q_HALF_INV = 1.0 / Q_HALF
 DELTA = -(Q_HALF + Q_HALF_INV)          # TL loop value
 Z_MARKOV = 1.0 / (Q_HALF + Q_HALF_INV)  # = -1/δ = Markov parameter
-SKEIN_AMP = Q_HALF - Q_HALF_INV          # q^½ - q^{-½} (for Skein L_0)
-HA = Q - Q_INV                           # Hecke amplitude q - q⁻¹
 
 
 def quantum_int(n, q=Q):

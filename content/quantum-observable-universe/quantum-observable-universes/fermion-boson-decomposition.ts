@@ -4,8 +4,7 @@ export default definition({
   label: "def:fermion-boson-decomposition",
   title: "Fermion--Boson decomposition",
   tags: ["fermion", "boson", "particle"],
-  lean: {
-    decl: "QOU.Fermion",
+  lean: { ref: "qou:QOU.Fermion",
     validation: "leanok",
   },
   uses: ["def:q-harmonic-form"],

@@ -29,6 +29,8 @@ export default chapter({
       blocks: [
         "borromean-quark",
         "higgs-t28",
+        "s5-equivariant-torus-knots",
+        "symmetry-preserving-leptons",
       ],
     }),
 
@@ -111,6 +113,7 @@ export default chapter({
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
+        "ns-blowup-physical-evidence",
       ],
     }),
 
@@ -122,6 +125,7 @@ export default chapter({
         "valley-table",
         "golden-ratio-degeneration",
         "hydrogen-knot-structure",
+        "sdp-regime-switch",
       ],
     }),
 
@@ -223,6 +227,16 @@ export default chapter({
         "cp-violation-evidence",
         "cosmological-chirality-flip",
         "electron-immortality",
+      ],
+    }),
+
+    // ── Transcendence falsifiability signatures ──────────────────────
+    section({
+      title: "Transcendence Falsifiability Signatures",
+      label: "sec:transcendence-signatures",
+      blocks: [
+        "observables-algebraic-independence",
+        "observables-algebraic-dependence",
       ],
     }),
 

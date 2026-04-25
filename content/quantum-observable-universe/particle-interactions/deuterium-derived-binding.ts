@@ -12,8 +12,7 @@ export default proposition({
     "zero-parameter",
     "volume-integral",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.deuterium_derived_binding",
+  lean: { ref: "qou:QOU.ParticleInteractions.deuterium_derived_binding",
     validation: "not_checked",
   },
   uses: [

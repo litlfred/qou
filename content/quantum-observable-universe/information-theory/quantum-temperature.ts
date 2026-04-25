@@ -11,8 +11,7 @@ export default definition({
     "non-abelian-stokes",
     "surface-integral",
   ],
-  lean: {
-    decl: "QOU.Information.quantumTemperature",
+  lean: { ref: "qou:QOU.Information.quantumTemperature",
     validation: "not_checked",
   },
   uses: [
@@ -23,5 +22,6 @@ export default definition({
     "def:quantum-observable-universe",
     "def:yekutieli-triple",
     "def:q-energy",
+    "rem:kashaev-volume-density",
   ],
 });

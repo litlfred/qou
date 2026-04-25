@@ -1,3 +1,19 @@
+### Chern--Simons level from QOU existence
+
+The Chern--Simons level $k$ appearing in this proposition is not an
+independent input: by the existence proof for a quantum observable
+universe
+([QOU existence](#prop:quantum-observable-universe-exists)), choosing
+$q = e^{\pi i/(k + h^{\vee})}$ makes $\mathbf{C} = \mathbf{Rep}_{k}(\widehat{\mathfrak{g}})$
+the modular tensor category that simultaneously fixes (a) the braiding
+used in the Skein relation and (b) the CS-level partition function on
+the brane.  Therefore $k = \langle c_{2}(\mathrm{Ad}(P)), [M] \rangle$
+*determines* both the $q$-deformation of the force-carrier
+$q$-dimensions $[m]_{q}, [n]_{q}$ and the CS functional
+$\mathrm{CS}(T_{m, n})$ through the single RT construction.  The
+proposition's numerical prediction specialises the shared object rather
+than combining two independently postulated quantities.
+
 **Proposition.**
 *The fine structure constant receives corrections from the
 Chern–Simons invariants of the force-carrier torus knots
@@ -6,13 +22,15 @@ $T_{2,9}$ and $T_{3,5}$ on Bring's surface:*
 $$
   \frac{1}{\alpha_{\mathrm{EM}}}
   = q \cdot [9]_q \cdot [10]_q
-    \cdot \bigl(1 + c_1 + c_1^2 \cdot \kappa\bigr)
+    \cdot \bigl(1 + \delta_{\mathrm{CS}}
+                 + \delta_{\mathrm{CS}}^2 \cdot \kappa\bigr)
 $$
 
 *where:*
 
 $$
-  c_1 = \frac{\bigl(\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})\bigr)
+  \delta_{\mathrm{CS}}
+  = \frac{\bigl(\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})\bigr)
               \cdot \tfrac{[2]_q}{2} \cdot \hbar_q^2}
              {q \cdot [9]_q \cdot [10]_q}
 $$

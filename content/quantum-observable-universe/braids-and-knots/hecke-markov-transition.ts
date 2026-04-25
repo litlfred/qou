@@ -10,8 +10,7 @@ export default proposition({
     "idempotent",
     "memoryless",
   ],
-  lean: {
-    decl: "QOU.Braiding.SpectralIdempotentData",
+  lean: { ref: "qou:QOU.Braiding.SpectralIdempotentData",
     validation: "not_checked",
   },
   cites: ["diaconis-ram2000", "bufetov2020"],

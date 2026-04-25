@@ -22,6 +22,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from q_parameter import Q as q0, HA as HA_val, E_CROSS
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+
 from experimental_constants import M_E_MEV
 
 try:
@@ -43,14 +49,10 @@ from hecke_division import HeckeDivision, HeckeElement
 
 div = HeckeDivision(q_val=q0)
 HA = HA_val
-z = 1.0 / (q0**0.5 + q0**(-0.5))
-
-# H₃ NF basis (for single-nucleon computations)
-NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
+z = _PG_Z  # moved to pyhecke.gram
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
-TR_M_BASIS = [1.0, z, z, z**2, z**2, z**3]
-
-
+TR_M_BASIS = list(_PG_TR_M)  # moved to pyhecke.gram
 def hecke_mul(t1, t2):
     result = {}
     for w1, c1 in t1.items():

@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:local-substrate-q",
-  lean: {
-    decl: "QOU.Experimental.local_substrate_q",
+  lean: { ref: "qou:QOU.Experimental.local_substrate_q",
     validation: "not_checked",
   },
   title: "Local Value of the Substrate Parameter",

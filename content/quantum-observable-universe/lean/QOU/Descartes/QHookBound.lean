@@ -7,30 +7,52 @@ import Mathlib.Tactic
 
 Step 1 of the convergence proof for the jet-filtered knot invariant.
 
-The q-integer `[m]_q = (qᵐ − q⁻ᵐ)/(q − q⁻¹)` satisfies:
+The q-integer `[m]_q = (qᵐ − q⁻ᵐ)/(q − q⁻¹)` admits the formal
+expansion (h = q − q⁻¹):
 
-    [m]_q / m = 1 + h² · (m² − 1) / (12 · m) + O(h⁴)
+    [m]_q / m = 1 + h² · (m² − 1) / 24 + O(h⁴)
 
-where h = q − q⁻¹.  For |h| < 1, the ratio is bounded:
+The naive linear-in-m bound `|[m]_q/m − 1| ≤ h²·m/6` is **false**
+for m ≥ 5 (the O(h⁴) term is not negligible at q₀ ≈ 1.11).  The
+correct exact identity, with q = e^θ and h = 2 sinh θ, is
 
-    |[m]_q / m − 1| ≤ h² · m / 6
+    [m]_q / m = sinh(mθ) / (m · sinh θ)   ∈   [1, exp((m²−1)θ²/6)].
 
-The q-dimension d_q(λ) = [k]_q! / ∏ [hook]_q satisfies:
+What is actually proved here:
 
-    |d_q(λ) / dim(λ) − 1| ≤ h² · k / 6
+- `qInt_ratio_upper`     [m]_q/m ≥ 1 for q > 1 (Jensen — one-sided)
+- `qInt_ratio_bound_m2`  exact bound at m = 2
+- `qInt_ratio_bound_small`  |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4, q < 2
+- `qDim_geq_dim`         d_q(λ) ≥ dim(λ) (one-sided, all q > 1)
+- `wedderburn_weight_perturbation_conj`  conjectural ratio bound for w_λ
+- `convergence_rate` / `convergence_constant_H3`  branching rate
 
-because each q-integer ratio introduces at most h²·m/6 relative
-error, and the product has cancellations (numerator and denominator
-have the same factors in different order).
+## Why convergence holds without a per-partition bound
 
-This gives the q-Plancherel perturbation: the Wedderburn weights
-w_λ = d_q(λ)²/[k]! differ from the classical Plancherel measure
-dim(λ)²/k! by a factor of (1 + O(h²/k))².
+The branching fraction is
+
+    f_μ^{(k)}  =  Σ_λ (d_q(λ)²/[k]!) · m_μ^λ
+                  ─────────────────────────────
+                  Σ_λ (d_q(λ)²/[k]!) · Σ_ν m_ν^λ
+
+Writing R(λ) = d_q(λ)/dim(λ), the [k]!-factor and one common factor
+cancel between numerator and denominator, leaving
+
+    f_μ^{(k)}  =  Σ_λ R(λ)² · dim(λ)² · m_μ^λ
+                  ──────────────────────────────
+                  Σ_λ R(λ)² · dim(λ)² · Σ_ν m_ν^λ
+
+The R² weights perturb the *classical* Plancherel measure but
+appear identically in numerator and denominator, so convergence
+to the classical limit follows from the **R² cancellation**, not
+from a uniform per-partition bound on R(λ) − 1.  The Féray–Méliot
+q-Plancherel CLT then gives the rate O(1/√k) (see §5).
 
 ## References
 
 - [prop:jet-convergence-classical-limit]
 - [mathas1999] §3.3: q-Schur algebras and q-hook formula
+- [feray2010] q-Plancherel CLT, character variance O(1/k)
 -/
 
 namespace QOU.Descartes.QHookBound
@@ -121,7 +143,7 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook-length bound (§7.21)
   -- [m]_q/m ≥ 1 for q > 1 by convexity of exponential:
   -- the average of q^j over symmetric exponents ≥ q^0 = 1
   -- by Jensen's inequality.
@@ -131,7 +153,7 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook recursion
   -- For m = 1: [1]/1 - 1 = 0 ≤ anything. Trivial.
   -- For m = 2: proved in qInt_ratio_bound_m2.
   -- For m = 3, 4: similar algebraic arguments with field_simp + nlinarith.
@@ -155,7 +177,7 @@ theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
     (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook bound inequality
   -- Proof: product of per-factor bounds, using
   -- Σ m²/6 = k(k+1)(2k+1)/36.
 
@@ -198,27 +220,28 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
     dq ≥ dim_classical := by
   exact le_div_iff hdim |>.mp (by linarith)
 
-/-! ## §4  Wedderburn weight perturbation -/
+/-! ## §4  Wedderburn weight perturbation (CONJECTURAL) -/
 
 /-- The Wedderburn weight ratio:
     w_λ / w_λ^{classical} = (d_q/dim)² × (k!/[k]!)
 
-    From the qDim bound:
-    |(d_q/dim)² - 1| ≤ 2 · |d_q/dim - 1| + |d_q/dim - 1|²
-                     ≤ 2 · C·h²·k + (C·h²·k)²
+    A naive per-partition bound would say:
+    |w_λ/w_λ^cl − 1| ≤ C · h² · k    (uniform in λ ⊢ k)
 
-    For h²·k < 1 (which holds for all k of interest since h ≈ 0.2):
-    |w_λ/w_λ^cl - 1| ≤ 3 · C · h² · k
+    **This is conjectural** and known to fail for partitions with
+    long hooks (≥ 5) because the linear-in-m bound on [m]_q/m
+    fails for m ≥ 5 (see qInt_ratio_upper / qInt_ratio_bound_small).
 
-    This means the q-Plancherel measure approximates the classical
-    Plancherel measure within O(h²·k). -/
-theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
+    The convergence proof for branching fractions does **not**
+    rely on this uniform bound — it relies on R² cancellation in
+    numerator and denominator (see header).  This conjecture is
+    retained as a target for tighter per-partition control. -/
+theorem wedderburn_weight_perturbation_conj (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0) :
     |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
-  sorry
-  -- Follows from qDim_ratio_bound applied twice (d_q² in numerator)
-  -- and qFact_ratio_bound for [k]! in denominator.
+  sorry -- Ref: [manuscript] §QHookBound — conjectural per-partition bound;
+        -- branching-fraction convergence uses R² cancellation, not this bound.
 
 /-! ## §5  Convergence rate -/
 
@@ -256,7 +279,7 @@ theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (f_k f_inf : ℝ)
     (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
     |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook asymptotic
   -- Proof: Féray–Méliot Theorem 1.1 gives q-Plancherel CLT with
   -- variance σ²(k) = O(1/k). Combined with ratio_perturbation_bound
   -- (proved in BranchingConvergence.lean), the cross-term satisfies

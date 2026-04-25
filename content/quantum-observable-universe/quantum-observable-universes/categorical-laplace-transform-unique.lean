@@ -1,0 +1,30 @@
+/-!
+# QOU.CategoricalLaplace.unique — uniqueness of the categorical Laplace transform
+
+𝓛 is unique as the monoidal mate of Δ_q under the Frobenius pairing.
+
+LaTeX: `\label{prop:categorical-laplace-unique}`
+
+## References
+
+- [manuscript] §2-quantum-observable-universes/categorical-laplace-transform-unique
+- [kassel1995] Quantum Groups, §IV
+-/
+
+import QOU.Basic
+
+namespace QOU
+
+/-- **Uniqueness of the categorical Laplace transform.**
+
+    The Laplace transform is the monoidal mate of Δ_q under the
+    Frobenius pairing, hence unique up to canonical iso at the
+    `CategoricalLaplace A` type level. -/
+-- Ref: [kassel1995]
+theorem CategoricalLaplace.unique (A : Type*) :
+    Subsingleton (CategoricalLaplace A) := by
+  -- Mate of Δ_q is unique up to canonical iso.
+  -- Ref: [kassel1995]
+  sorry
+
+end QOU

@@ -7,8 +7,7 @@ export default definition({
     "horizon-functor", "aeon", "jet-horizon",
     "boundary", "connected-components",
   ],
-  lean: {
-    decl: "QOU.HorizonFunctor",
+  lean: { ref: "qou:QOU.HorizonFunctor",
     validation: "not_checked",
   },
   uses: [

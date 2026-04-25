@@ -7,8 +7,7 @@ export default definition({
     "aeon", "jet-horizon", "affine-chart",
     "light-cone", "cyclic-cosmology",
   ],
-  lean: {
-    decl: "QOU.Aeon",
+  lean: { ref: "qou:QOU.Aeon",
     validation: "not_checked",
   },
   uses: [

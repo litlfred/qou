@@ -2,8 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:spatial-realization-functor",
-  lean: {
-    decl: "QOU.SpatialRealizationFunctor",
+  lean: { ref: "qou:QOU.SpatialRealizationFunctor",
     validation: "not_checked",
   },
   title: "Spatial realization functor",

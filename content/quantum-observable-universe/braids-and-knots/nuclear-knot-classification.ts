@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:nuclear-knot-classification",
   title:
     "Nuclear knot classification: braid closure type determines binding scale",
-  lean: {
-    decl: "QOU.BraidKnot.nuclear_knot_classification",
+  lean: { ref: "qou:QOU.BraidKnot.nuclear_knot_classification",
     validation: "not_checked",
   },
   uses: [

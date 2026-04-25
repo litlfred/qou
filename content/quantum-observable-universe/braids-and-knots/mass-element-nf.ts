@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:mass-element-nf",
+export default conjecture({
+  label: "conj:mass-element-nf",
   title: "Normal form of the Hecke mass element",
   uses: [
     "def:hecke-mass-element",

@@ -11,11 +11,8 @@ export default definition({
   label: "def:viz-knot-complement",
   title: "Knot complement (SnapPea)",
   tags: ["visualizer", "knot-theory", "snappea", "hyperbolic"],
-  lean: {
-    decl: "QOU.KnotComplement",
-    file: "QOU/Knot/Complement.lean",
+  lean: { ref: "qou:QOU.KnotComplement",
     validation: "not_checked",
   },
-  status: "not_started",
   uses: [],
 });

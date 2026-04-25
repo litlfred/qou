@@ -64,6 +64,8 @@ section({
         "planck-scale-computation",
         "toffoli-transfer-matrix",
         "toffoli-q-and",
+        "toffoli-lp-stability",
+        "q-game-of-life",
         "substrate-computation",
         "quantum-computational-universality",
         "skein-turing-machine",
@@ -79,6 +81,16 @@ section({
         "p-vs-np-boundary",
         "p-vs-np-event-horizon",
         "qou-p-neq-np",
+      ],
+    }),
+    section({
+      title: "$q$-Heat kernel and spectral analysis",
+      label: "sec:q-heat-kernel-analysis",
+      blocks: [
+        "q-exponential-taylor",
+        "q-gaussian-solves-q-heat",
+        "q-heat-kernel-peter-weyl",
+        "q-heat-kernel-computational-fallback",
       ],
     }),
     section({

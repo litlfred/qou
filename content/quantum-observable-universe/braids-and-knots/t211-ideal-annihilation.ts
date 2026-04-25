@@ -12,9 +12,11 @@ export default remark({
     "prop:genus-filtration-ideal",
     "prop:vertex-algebra-jet-relations",
     "prop:shell-structure-eigenvalues",
-    "prop:nuclear-shell-intruder",
+    "prop:shell-transition-knot",
     "rem:fivefold-symmetry",
     "thm:embeddability-closure",
+    "prop:x5-bring-weight-identification",
+    "thm:hyperelliptic-z5-classification",
   ],
   cites: ["kassel1995", "jones1987"],
 });

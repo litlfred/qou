@@ -1,0 +1,21 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:jet-tower-convergence",
+  title:
+    "Geometric-series tail bound for the $\\hbar_q^2$ brane-tower sum",
+  lean: { ref: "qou:QOU.MassEndomorphism.jet_tower_tail_bound",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:mass-endomorphism-tower",
+    "rem:mass-endomorphism-jet-tower",
+    "def:recursive-brane-tower",
+    "prop:confinement-sdp",
+    "rem:conway-normal-form",
+    "rem:calculus-up-to-epsilon",
+    "def:surreal-blowup-calculus",
+    "rem:body-asymptotics-catalog",
+  ],
+  cites: ["leitner2026"],
+});

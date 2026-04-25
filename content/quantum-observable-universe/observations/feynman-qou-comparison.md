@@ -68,7 +68,7 @@ is encoded in the transfer matrix chain length.
 The $3\times$ accuracy gap corresponds to $O(10\;\mathrm{MeV})$
 in binding energy — the shell correction.  The $[n{-}2,2]$ hook
 representation (pion channel) vanishes exactly at magic numbers
-([nuclear shell intruder](#prop:nuclear-shell-intruder)), creating
+([shell-transition knot](#prop:shell-transition-knot)), creating
 discrete stability gaps that the three extremal channels miss.
 Including the hook channel would provide the missing shell structure.
 

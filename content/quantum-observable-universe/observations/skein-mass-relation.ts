@@ -3,8 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "prop:topological-mass-formula",
   label: "rem:skein-mass-relation",
-  lean: {
-    decl: "QOU.Experimental.skein_mass_relation",
+  lean: { ref: "qou:QOU.Experimental.skein_mass_relation",
     validation: "not_checked",
   },
   title: "$q$-Deformed Skein Relation (Observation)",

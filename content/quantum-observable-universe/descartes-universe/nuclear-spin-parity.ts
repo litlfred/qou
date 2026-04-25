@@ -14,8 +14,7 @@ export default proposition({
     "nitrogen-14",
     "statistics",
   ],
-  lean: {
-    decl: "QOU.Descartes.nuclear_spin_parity",
+  lean: { ref: "qou:QOU.Descartes.nuclear_spin_parity",
     validation: "not_checked",
   },
   uses: [

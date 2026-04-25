@@ -79,9 +79,11 @@ function validated<T>(schema: { parse: (v: unknown) => unknown }, data: T): T {
 export function definition(data: Omit<DefinitionBlock, "kind">): DefinitionBlock {
   // Provide default lean ref so partially-authored definitions
   // load instead of crashing the viewer/MCP server with Zod errors.
+  // Uses the qou package by default; callers working in other papers
+  // must pass an explicit `lean.ref`.
   const label = data.label || "def:unknown";
   const defaultDecl = "QOU." + label.replace(/^def:/, "").replace(/-./g, m => m[1].toUpperCase()).replace(/^./, c => c.toUpperCase());
-  if (!data.lean) (data as any).lean = { decl: defaultDecl };
+  if (!data.lean) (data as any).lean = { ref: `qou:${defaultDecl}` };
   return validated(DefinitionSchema, { kind: "definition" as const, ...data });
 }
 

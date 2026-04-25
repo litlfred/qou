@@ -9,8 +9,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:universal-ilp-algorithm",
   title: "Universal ILP algorithm for operator selection",
-  lean: {
-    decl: "QOU.Interactions.UniversalILP",
+  lean: { ref: "qou:QOU.Interactions.UniversalILP",
     validation: "not_checked",
   },
   uses: [
