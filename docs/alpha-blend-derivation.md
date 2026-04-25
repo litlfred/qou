@@ -160,56 +160,237 @@ $$
     + m_e \cdot \sum_\lambda \frac{1}{\dim_q(\lambda)}.
 $$
 
-## 5. Optimal α* and the Catalan candidate
+## 5. Optimal α* — high-precision determination (PSLQ)
 
-Numerical root-finding (sub-percent-precision brentq) gives:
+Bisection at `mp.dps = 50` gives:
 
 $$
-  \alpha^* = 0.305807430741241\ldots
+  \alpha^* = 0.3058074307412406188471065\ldots
 $$
 
-as the unique value making `m_n_predicted = m_n_CODATA` exactly.
+as the unique value making `m_n_predicted = m_n_CODATA` exactly
+([alpha_high_precision.py](#)).
 
-**Closest natural candidate**: **α = G/3 = 0.305321864725740…** where
-`G = 0.915965594177219…` is Catalan's constant.
+**PSLQ at 25-digit tolerance** with bases
+$\{1, G, \pi, 1/\pi, q_0, h_q\}$ and `maxcoeff = 10⁶` returns
+**no integer relation**. In particular:
 
-- `α = G/3` gives `m_n_predicted − m_n_CODATA = +0.01%` (≈100 ppm)
-- This is **paper-level accuracy**, comparable to T's +0.51% and
-  ³He's +0.86% predictions.
+| Candidate | Value | Δ from α* | rel ppm |
+|---|---|---|---|
+| `G/3 = Vol(𝓑_3)/24` | 0.305321864725740 | −0.000486 | **1588** |
+| `11/36` | 0.305555555555556 | −0.000252 | 824 |
+| `19/62` | 0.306451612903226 | +0.000644 | 2106 |
+| `1/π` | 0.318309886183791 | +0.012502 | 40883 |
 
-### 5.1 Geometric origin of G/3
+**Conclusion (corrected from prior draft)**: α* is **not** G/3,
+and not any simple rational combination of {G, π, q₀, h_q}.
+The earlier 0.16 % match between α* and G/3 was numerical
+coincidence at three-digit precision; high-precision PSLQ
+**falsifies** the closed-form `α = G/3` hypothesis.
 
-Catalan's constant appears throughout QOU:
-- `Vol(𝓑_3) = 8G` — Borromean rings hyperbolic volume ([borromean-baryon-interpretation.md])
-- ⁴He magic closure uses `α_{⁴He} = m_e · 8G`
+This means the 2-term blend `α·V̂_Frob + (1-α)·V̂_det` is **not
+a fundamental decomposition** of the std-channel value. A
+single phenomenological mixing parameter is the wrong ansatz —
+the missing degrees of freedom belong to the chirality channel
+already in the paper (see §6 below).
 
-The identification `G/3 = Vol(𝓑_3) / 24 = Vol(Borromean) / |S_4|` links:
-- Numerator: Borromean link volume (3-body inter-nucleon structure)
-- Denominator: S_4 order (symmetric group on 4-body configurations,
-  relevant for A ≥ 4)
+## 6. Pivot to the full 3-term Wedderburn formula (paper §wedderburn-mass-formula)
 
-This is **precisely the ratio appearing in the α-blend**: the
-Frobenius-averaged sector carries 3-body Borromean topology, blended
-with the matrix-invariant (det-based) sector at ratio `G/3`.
+The 2-term blend collapsed `(Φ_1, Φ_2, Φ_3) ↦ (V̂_Frob, V̂_det)`,
+discarding chirality. The paper's full formula
+([Wedderburn mass formula](../content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md))
+keeps all three log-magnitudes:
 
-### 5.2 Residual 0.16% correction
+$$
+  \mathcal{M}(Z, N) = Z \mathfrak{m}_{\mathfrak{p}} + N \mathfrak{m}_{\mathfrak{n}} + Z m_e + \alpha\bigl(\Phi_1 - 2[3]_q \Phi_2 + H_A^2 \Phi_3\bigr)
+$$
 
-`α* − G/3 = +0.000486` (0.16% of α*).
+with derived q-coefficients and prefactor
 
-Candidate explanations (unverified):
-- Level-2 jet correction at ℏ_q⁴ scale
-- Higher-order Catalan-like constant (q-deformed G)
-- Schur-Weyl correction from imperfect V⊗³ decomposition at q ≠ 1
+$$
+  \alpha = m_e \cdot 8G = m_e \cdot \mathrm{Vol}(\mathcal{B}_3)
+$$
 
-**Honest assessment**: the 100-ppm gap represents the current state
-of the derivation — α = G/3 is the best closed-form match, with a
-small remaining correction of unexplained origin.
+— the **B_3 (Borromean) prefactor in front of the np-pairing
+correction**.
 
-## 6. Extension to isotopes
+### 6.1 Three log-magnitudes are the three Wedderburn blocks
 
-The α-blend formula can be applied to isotope binding predictions
-by using the blended V̂^(α) in place of the original V̂^full in the
-full brane tower + Frobenius co-Casimir formula. Results pending.
+| Functional | Wedderburn block | Matrix quantity | Prefactor |
+|---|---|---|---|
+| `Φ₁ = log|tr|` | std (dim n−1) | Markov-weighted trace | $1$ |
+| `Φ₂ = log|det|` | sym × alt | product of eigenvalues | $-2[3]_q$ |
+| `Φ₃ = log|sym/alt|` | sym ÷ alt | chirality (eigenvalue ratio) | $H_A^2$ |
+
+The coefficients are derived structurally (not fitted):
+
+- **`1` for Φ₁**: leading trace in the std channel.
+- **`-2[3]_q` for Φ₂**: q-deformation of $\binom{3}{2} = 3$ quark
+  pair channels, doubled by the pn crossing convention. The
+  factor $[3]_q$ is the categorical Hecke level-3 weight
+  ([degree-2 weight](../content/quantum-observable-universe/braids-and-knots/degree-two-baryon-weight.md)).
+- **`H_A²` for Φ₃**: leading H_A-correction from chirality —
+  only quadratic in $H_A = q-q^{-1}$ because $\Phi_3$ vanishes
+  identically at $q = 1$ (sym = alt classically).
+
+### 6.2 Geom(K) and topological mass m = Vol(K)/ℏ_q²
+
+The whole construction is unified by the **topological mass
+formula** ([topological-mass-formula](../content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md)):
+
+$$
+  \mathfrak{m}(K) = \frac{\mathrm{Vol}(K)}{\hbar_q^2}
+$$
+
+where $\hbar_q = 1 - 1/q$ is the quantum Planck constant.
+This is **mass = energy density × volume**, with $1/\hbar_q^2$ as
+the energy density and $\mathrm{Vol}(K)$ as the geometric volume.
+The categorical functional underlying this identification is
+$\mathrm{Geom}(K)$
+([Geom universality](../content/quantum-observable-universe/braids-and-knots/geom-universality.md)),
+the unique trace functional on knot complements satisfying
+additivity, Frobenius–Hopf functoriality, and the
+$\mathrm{Geom}(4_1) = \mathrm{Vol}(4_1)/\hbar_q^2$ normalisation.
+
+### 6.3 The B_3 knot operator as a braid prefix
+
+The atomic braid for any nucleon is constructed by **prepending the
+Borromean braid word** B_3 to the typed quark crossings
+([atom_mass_volume.py](../folio-assistant/computations/atom_mass_volume.py)):
+
+$$
+  \beta_{\text{nucleon}} = \underbrace{(\sigma_1 \sigma_2^{-1})^3}_{B_3 \text{ prefix}} \cdot \underbrace{\sigma_{i_1}^{\epsilon_1} \sigma_{i_2}^{\epsilon_2} \sigma_{i_3}^{\epsilon_3}}_{\text{typed quark crossings}}
+$$
+
+In word form: `[1, -2, 1, -2, 1, -2, ε₁i₁, ε₂i₂, ε₃i₃]`. The
+closure of the prefix alone is the Borromean rings link
+$\mathcal{B}_3$ with hyperbolic volume $8G$. The typed crossings
+encode the np pairing.
+
+Under Geom(K) with K = closure of $\beta_{\text{nucleon}}$:
+
+$$
+  \mathrm{Geom}(K) = \mathrm{Vol}(B_3 \text{-prefix part}) + \delta_{\text{np-pairing}}
+                   = 8G + \delta_{\text{np}}(Z, N, q)
+$$
+
+— **Vol(B_3) = 8G is "in front of" the np-pairing correction**, exactly
+as the user's hint states. The remaining $\delta_{\text{np}}$ is
+captured by the three Wedderburn log-functionals $\Phi_1, \Phi_2, \Phi_3$.
+
+### 6.4 The 2-term collapse is FORCED by the Frobenius involution
+
+The reason the α-blend has only **two** terms (not three) is
+**not** an arbitrary choice — it is a structural consequence of
+S-symmetrization annihilating the chirality channel.
+
+**Lemma 6.4 (chirality is S-odd).** Under the Frobenius antipode
+$S \colon \sigma \leftrightarrow \sigma^{-1}$, the three log-functionals
+transform as:
+
+| Functional | S-action | Eigenvalue |
+|---|---|---|
+| $\Phi_1 = \log|tr|$ | invariant after Frob-avg | $+1$ (even) |
+| $\Phi_2 = \log|\det|$ | invariant per Lemma 3.2 | $+1$ (even) |
+| $\Phi_3 = \log|\chi_{\text{sym}}/\chi_{\text{alt}}|$ | **flips sign** | $-1$ (**odd**) |
+
+*Proof (for Φ_3).* By Lemma 3.1's chain analysis,
+$\chi_{\text{sym}}(S(\text{chain})) = \pm \chi_{\text{alt}}(\text{chain})$
+and $\chi_{\text{alt}}(S(\text{chain})) = \pm \chi_{\text{sym}}(\text{chain})$
+(sign depends on parity), so
+
+$$
+  \frac{\chi_{\text{sym}}(S(\text{chain}))}{\chi_{\text{alt}}(S(\text{chain}))}
+  = \frac{\chi_{\text{alt}}(\text{chain})}{\chi_{\text{sym}}(\text{chain})}
+  = \left(\frac{\chi_{\text{sym}}(\text{chain})}{\chi_{\text{alt}}(\text{chain})}\right)^{-1}
+$$
+
+so $\Phi_3(S(\text{chain})) = -\Phi_3(\text{chain})$. ∎
+
+**Consequence.** The Frobenius-symmetrized projection
+$V̂ \mapsto \tfrac12(V̂ + V̂(S(\cdot)))$ kills the chirality channel:
+
+$$
+  \tfrac12\bigl[\Phi_3(\text{chain}) + \Phi_3(S(\text{chain}))\bigr] = 0.
+$$
+
+Hence ANY S-symmetric ansatz — including our blend
+$\alpha V̂_{\text{Frob}} + (1-\alpha) V̂_{\det}$ — lives entirely in the
+S-invariant subspace and **cannot capture chirality**, regardless of α.
+
+This is why:
+- The blend has exactly TWO independent S-invariant pieces
+  (Frob-averaged trace and det, by Lemmas 3.1, 3.2).
+- The phenomenological $\alpha^*$ that "fits" the neutron is
+  absorbing what the chirality term should contribute, projected
+  back into the S-invariant subspace at the $(p, n)$ chain values.
+- $\alpha^*$ depends on chain composition (and $q_0$), not on a
+  universal constant — confirming the PSLQ negative result.
+
+### 6.5 Direct decomposition into S-eigenspaces
+
+To recover the full mass without phenomenological mixing, write any
+chain functional $V̂$ as
+
+$$
+  V̂(\text{chain}) = \underbrace{\tfrac12[V̂(\text{chain}) + V̂(S(\text{chain}))]}_{V̂^+ \text{ (S-even)}}
+                  + \underbrace{\tfrac12[V̂(\text{chain}) - V̂(S(\text{chain}))]}_{V̂^- \text{ (S-odd)}}.
+$$
+
+The α-blend captures only $V̂^+$. The missing $V̂^-$ is precisely the
+$H_A^2 \cdot \Phi_3$ chirality term in the paper's full formula —
+naturally vanishing as $H_A \to 0$ ($q \to 1$, classical Frobenius
+limit), explaining why the blend is asymptotically exact at $q = 1$
+but acquires an O($H_A^2$) error at finite $q$.
+
+**Resolution of α\* numerical value.** The blend coefficient $\alpha^*$
+is a function of the projection ratio between $V̂_{\text{Frob}}$ and
+$V̂_{\det}$ that best mimics the S-anti-invariant
+$V̂^-$ contribution after symmetrization. Since $V̂^-$ is a
+chain-dependent (and $q$-dependent) quantity, $\alpha^*$ has no
+closed form involving only universal constants — exactly what
+PSLQ confirms.
+
+## 7. Integrated formal derivation (everything together)
+
+The complete derivation chain, top-down:
+
+```
+Hecke H_n(q)  ─Wedderburn→  M_1(ℂ) ⊕ M_{n-1}(ℂ) ⊕ M_1(ℂ)  (sym, std, alt)
+       ↓ Markov trace tr_M
+Categorical mass functional  𝔪(β) = tr_M(ρ(β))                      (def: categorical-mass)
+       ↓ Geom(K) = unique trace via Yekutieli rigidity                (prop: geom-universality)
+       ↓ archimedean fibre functor τ
+Topological mass:  𝔪(K) = Vol(K) / ℏ_q²                                 (prop: topological-mass-formula)
+       ↓ K = closure(B_3-prefix · typed-quark-crossings)
+Borromean prefactor:  Vol(B_3) = 8G (Catalan)                            (prop: borromean-baryon-interpretation)
+       ↓ split into prefix (geometric) + crossings (algebraic)
+3-term Wedderburn formula:
+   M(Z,N) = Z·m_p + N·m_n + Z·m_e + (m_e · 8G) · (Φ_1 − 2[3]_q · Φ_2 + H_A²·Φ_3)
+       ↓ collapse Φ_3 → 0 approximation (drops chirality)
+2-term α-blend:  V̂_std ≈ α·V̂_Frob + (1-α)·V̂_det        (effective; α phenomenological)
+```
+
+**Status of each step:**
+
+| Step | Status | Reference |
+|---|---|---|
+| Wedderburn decomposition of H_n(q) | proved | three-parameters-wedderburn |
+| Markov trace as categorical mass | proved | categorical-mass-markov |
+| Geom(K) universality (Yekutieli) | proved | geom-universality |
+| 𝔪(K) = Vol(K)/ℏ_q² | proved (archimedean) | topological-mass-formula |
+| Vol(B_3) = 8G (hyperbolic) | known theorem (cited) | borromean-baryon-interpretation |
+| 3-term Wedderburn mass formula | proved | wedderburn-mass-formula |
+| α-blend reduction (this doc) | proved as 1-parameter family (Lemma 3.3) | this doc, §3 |
+| α* = G/3 (closed form) | **falsified** by PSLQ (this doc, §5) | alpha_high_precision.py |
+| α* as phenomenological residual | identified (this doc, §6.4) | this doc, §6.4 |
+
+The α-blend remains a useful 1-parameter ansatz for **diagnostic
+purposes** but should not appear in the paper as a fundamental
+identity. The proper paper-level formula is the 3-term Wedderburn
+expression with prefactor $m_e \cdot 8G$ — this is the formal
+mass formula, fully derived from Hecke + Borromean topology +
+archimedean Geom(K) without phenomenological coefficients.
 
 ## 7. Formal proofs (full rigor)
 
