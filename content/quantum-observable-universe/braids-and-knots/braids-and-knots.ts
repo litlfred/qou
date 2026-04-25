@@ -324,6 +324,7 @@ export default chapter({
         "wedderburn-mass-formula",
         "algebraic-quantum-volume",
         "habiro-ring",
+        "habiro-expansion-atomic",
         "algebraic-quantum-volume-specialization",
         "kashaev-volume-density",
         "quantum-bloch-group",
