@@ -170,19 +170,26 @@ achieved for all six terms.***
 **Remaining items (refinements, not gaps).**
 
 1. ~~*Verification of Habiro cyclotomic expansion coefficients
-   $a_m(K)$ for specific atomic braids.*~~ **Done for proton and
-   neutron** ($A = 1$): symbolic Markov trace
+   $a_m(K)$ for specific atomic braids.*~~ **Done for proton,
+   neutron, and deuteron** ($A \leq 2$): symbolic Markov trace
    $\mathrm{tr}_M(T_w, q)$ admits the expansion
    $\mathrm{tr}_M = \sum_m a_m(u) \cdot (u; u)_m$ with $u = q^{1/2}$.
-   Proton: 10 coefficients (terminates at $m = 9$), $\deg p(u) = 48$.
-   Neutron: 9 coefficients (terminates at $m = 8$), $\deg p(u) = 40$.
-   All $a_m(u) \in \mathbb{Z}[u]$ (integral) and $\sum_m a_m \cdot (u;u)_m$
-   exactly reconstructs $p(u)$.  Witness:
+
+   | Braid | $\deg p(u)$ | Habiro coefficients | $m_{\max}$ | Wall time |
+   |---|---|---|---|---|
+   | proton $(Z{=}1, N{=}0)$ | $48$ | $10$ | $9$ | $\sim 2\text{s}$ |
+   | neutron $(Z{=}0, N{=}1)$ | $40$ | $9$ | $8$ | $\sim 2\text{s}$ |
+   | deuteron $(Z{=}1, N{=}1)$ | $104$ | $14$ | $13$ | $\sim 16\text{s}$ |
+
+   All $a_m(u) \in \mathbb{Z}[u]$ (integral) with exact
+   reconstruction $\sum_m a_m \cdot (u;u)_m = p(u)$.  Witness:
    `habiro-coefficients-atomic.witness.json`.
-   Follow-up: deuteron ($A = 2$) is tractable in principle but
-   heavy in symbolic $q$ (>10 min) — needs a faster numerical-at-$q_0$
-   path or partial-symbolic optimisation; gated behind
-   `HABIRO_WITH_DEUTERON=1`.
+   Symbolic-pipeline speed came from replacing `sp.simplify` with
+   `sp.cancel` and caching Hoefsmit matrices — total speedup
+   $\sim 40\times$ vs. the initial implementation.  For $A \geq 3$,
+   a numerical-interpolation path (`habiro_coefficients_interpolate.py`)
+   is scaffolded: Hoefsmit in `mpmath` at rational sample points, then
+   Lagrange recovery of $p(u) \in \mathbb{Z}[u]$.
 2. *Complete Lean formalisation of all six derivations (currently
    only Term 4's `frobenius_codim_universal` has a sorry-free proof;
    Terms 1–3, 5, 6 need Lean implementations of their derivations).*

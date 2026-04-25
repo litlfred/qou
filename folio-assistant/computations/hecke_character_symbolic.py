@@ -38,6 +38,7 @@ Scope of this module:
 
 Witness: hecke-character-symbolic.witness.json
 """
+import functools
 import json
 import sys
 from pathlib import Path
@@ -108,13 +109,18 @@ def standard_young_tableaux(shape):
     return syts, cells, contents
 
 
-def hoefsmit_matrices_symbolic(shape, q):
-    """Build symbolic Hoefsmit matrices ρ_λ(T_1), ..., ρ_λ(T_{n-1})
-    for partition `shape`.  Entries are rational functions of q.
+@functools.lru_cache(maxsize=None)
+def _hoefsmit_cached(shape_key, q_name):
+    """Internal cache for Hoefsmit construction keyed by (shape, q symbol name).
+    `shape_key` must be a hashable tuple; `q_name` identifies the symbol so
+    calls with the same `q` share the cached matrices."""
+    q = sp.Symbol(q_name, positive=True, real=True)
+    return _hoefsmit_build(list(shape_key), q)
 
-    b is introduced as a formal sympy.sqrt — kept implicit; final
-    character trace on diagonal uses a + a_prime only (trace ignores b).
-    """
+
+def _hoefsmit_build(shape, q):
+    """Uncached Hoefsmit build (used by the cached wrapper and for
+    tests where q is not a named Symbol)."""
     n = sum(shape)
     syts, cells, contents = standard_young_tableaux(shape)
     dim = len(syts)
@@ -134,9 +140,8 @@ def hoefsmit_matrices_symbolic(shape, q):
             ci_k1 = syts[i][k + 1]
             rho = contents[ci_k1] - contents[ci_k]
 
-            # Diagonal entry a
-            a = h / (1 - q ** (-2 * rho))
-            a = sp.simplify(a)
+            # Diagonal entry a — `cancel` reduces the rational quickly.
+            a = sp.cancel(h / (1 - q ** (-2 * rho)))
 
             # Find swap partner
             swap_map = dict(syts[i])
@@ -150,15 +155,14 @@ def hoefsmit_matrices_symbolic(shape, q):
                     break
 
             if j is None:
-                # 1×1 block: eigenvalue is q (same row, rho=1) or -q^{-1}
+                # 1×1 block: eigenvalue q (same row, rho=1) or -q^{-1}
                 # (same column, rho=-1).
                 M[i, i] = a
                 processed.add(i)
             else:
                 # 2×2 block
-                a_prime = h / (1 - q ** (2 * rho))
-                a_prime = sp.simplify(a_prime)
-                b_sq = sp.simplify(a * a_prime + 1)
+                a_prime = sp.cancel(h / (1 - q ** (2 * rho)))
+                b_sq = sp.cancel(a * a_prime + 1)
                 b = sp.sqrt(b_sq)
                 M[i, i] = a
                 M[j, j] = a_prime
@@ -168,6 +172,18 @@ def hoefsmit_matrices_symbolic(shape, q):
                 processed.add(j)
         matrices.append(M)
     return matrices, dim, syts
+
+
+def hoefsmit_matrices_symbolic(shape, q):
+    """Build symbolic Hoefsmit matrices ρ_λ(T_1), ..., ρ_λ(T_{n-1})
+    for partition `shape`.  Entries are rational functions of q.
+
+    Cached when `q` is a named sympy Symbol; falls back to an uncached
+    build otherwise (e.g. when `q` is a concrete Rational for evaluation).
+    """
+    if isinstance(q, sp.Symbol):
+        return _hoefsmit_cached(tuple(shape), q.name)
+    return _hoefsmit_build(shape, q)
 
 
 def q_character_on_braid_word(shape, braid_crossings, q):
@@ -197,9 +213,11 @@ def q_character_on_braid_word(shape, braid_crossings, q):
         # crossing matrix = 1·σ + d·I
         cross = sigma + d_val * sp.eye(dim)
         M = M * cross
-        # Simplify per-step to avoid expression-size explosion
-        M = sp.simplify(M)
-    return sp.simplify(M.trace())
+        # `cancel` — polynomial-division on rationals — is 5–10×
+        # faster than `simplify` and sufficient to keep entry
+        # complexity bounded for Hecke-algebra traces.
+        M = M.applyfunc(sp.cancel)
+    return sp.cancel(M.trace())
 
 
 def atomic_braid_to_crossings(Z, N, include_inter=True):

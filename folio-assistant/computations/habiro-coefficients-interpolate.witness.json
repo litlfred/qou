@@ -1,0 +1,19 @@
+{
+  "computation": "habiro-coefficients-interpolate",
+  "description": "Numerical-interpolation prototype for Habiro / cyclotomic expansion.  Demonstrates that tr_M(T_w, q_0) can be evaluated in milliseconds via Hoefsmit numerical arithmetic, enabling interpolation recovery of the Laurent polynomial p(u) for higher A where symbolic evaluation is expensive.  Complements the symbolic path (habiro_coefficients_atomic.py).",
+  "reference_blocks": [
+    "def:habiro-ring",
+    "prop:full-pole-structure-mass-trace",
+    "thm:knot-mass-formula-unified"
+  ],
+  "timestamp": "2026-04-25T01:39:59.800147+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "engine": "mpmath 50-digit; Hoefsmit numerical per-point"
+  },
+  "pointwise_evaluations_at_q0": {
+    "proton_tr_M": "(2.1225825094527311239469976288132615946909349674906 + 0.0j)",
+    "neutron_tr_M": "(1.5893934459539054796335978700064411357588278886754 + 0.0j)",
+    "deuteron_tr_M": "(0.17743692421543220619542421371872040786391311640566 + 0.0j)"
+  }
+}

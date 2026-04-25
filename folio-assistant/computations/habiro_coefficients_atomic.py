@@ -181,7 +181,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
     print(f"  → p(u) := u^{shift} · denom · tr_M(u²), shift = u^{shift}, "
           f"denom (in u) = {denom}")
     print(f"     deg p(u) = {deg_p}")
-    coeffs = cyclotomic_expansion(p_u, u, max_m=12)
+    coeffs = cyclotomic_expansion(p_u, u, max_m=20)
     print(f"  Habiro coefficients (in u = q^{{1/2}}):")
     for entry in coeffs:
         flag = "✓" if entry["integral"] else "✗"
