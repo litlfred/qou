@@ -13,8 +13,7 @@ of freedom and produce interference.  A photon --- background flux on
 the exceptional divisor
 ([exceptional divisor](#def:exceptional-divisor)) --- is not a bare
 identity $\mathbf{1}$ but a **photon with color content**
-$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-+ \varphi_{01}\sigma_0\sigma_1$
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$
 ([color content](#rem:knot-basis-color-content)), where the Hecke
 generators $\sigma_0, \sigma_1$ encode horizontal and vertical
 polarisation and $\sigma_0\sigma_1$ is the Hopf link dressing.
