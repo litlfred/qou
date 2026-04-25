@@ -339,6 +339,7 @@ export default chapter({
         "braiding-unit-circle-convention",
         "sqrt-q-ribbon-structure",
         "i-as-braiding-orientation",
+        "affine-chart-origin-of-i-and-q",
       ],
     }),
 

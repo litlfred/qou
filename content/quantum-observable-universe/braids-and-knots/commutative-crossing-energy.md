@@ -80,6 +80,15 @@ are the two ways to escape the $q = 1$ degeneracy of $q - q^{-1}$.
 The three readings coincide because each computes the same categorical
 datum: a square root of $\lambda_-$ in $\mathrm{End}_{R[i]}(V)$.
 
+**Affine-chart origin.**  Both $q$ and $i$ arise from the
+chart-transition data of $\mathbb{P}(V)$
+([rem:affine-chart-origin-of-i-and-q](#rem:affine-chart-origin-of-i-and-q)):
+$q$ is literally the chart-transition coefficient $z\,w = q^{-1}$ on
+the quantum projective line $\mathbb{P}_q(V)$, while $i$ is the
+square root of the chart-swap involution $\iota: z \mapsto z^{-1}$
+that the transition collapses to at $q = 1$.  This is the same
+construction in two regimes of the deformation family.
+
 **Half-twist and ribbon structures.**  The ribbon element $v = q^{1/2}$
 is *not* required for the categorical-coordinate construction; it
 appears only when $\mathbf{C}$ is equipped with an additional ribbon
