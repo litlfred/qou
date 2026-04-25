@@ -71,40 +71,48 @@ theorem deuteronBindingFrobeniusCodim
   simp [Nat.min_def, show (1 + 1 : ℕ) = 2 from rfl]
   ring
 
-/-- **Bound: the Frobenius free-subtraction is small for any A.**
+/-- **Bound: the Frobenius free-subtraction is bounded by the
+    triangle inequality.**
 
-    By bounded-arithmetic facts on the q-hook sum (specifically
-    Σ_{λ⊢n} 1/dim_q(λ) lies in `[1, n!]` for q ≥ 1), the
-    free-subtracted Frobenius correction `deltaFrobeniusAtom`
-    cannot exceed `m_e · A!`.  In particular for D (A=2) the
-    correction is at most `2 · m_e ≈ 1.022 MeV`. -/
+    For any non-negative `Sigma_3`, `Sigma_3A` with explicit upper
+    bounds, the absolute value of the deuteron Frobenius
+    free-subtraction correction obeys
+
+      |deltaFrobeniusAtom| = m_e · |Sigma_3A − 2·Sigma_3|
+                           ≤ m_e · (|Sigma_3A| + 2·|Sigma_3|)
+                           ≤ m_e · (B_3A + 2·B_3),
+
+    where `B_3 ≥ Sigma_3` and `B_3A ≥ Sigma_3A` are the supplied
+    upper bounds.
+
+    This captures the genuine triangle-inequality bound (not a
+    spurious tighter constant).  At q_0, with Sigma_3 ≈ 2.50 and
+    Sigma_3A=Sigma_6 ≈ 3.20, the actual value of
+    |deltaFrobeniusAtom| / m_e is ≈ 1.79, well within
+    B_3A + 2·B_3 = 3.20 + 5.0 = 8.20 (using exact Sigma_3 ≤ 2.50
+    and Sigma_6 ≤ 3.21). -/
 theorem deltaFrobeniusAtom_bound
     (w : WignerData) (F : FrobeniusTraces)
     (h_me_pos : 0 ≤ w.m_e)
-    (h_3 : F.Sigma_3 ≤ 3) (h_6 : F.Sigma_3A ≤ 4)
-    (A : ℕ) (hA : A = 2) (h_3_pos : 0 ≤ F.Sigma_3) :
-    |deltaFrobeniusAtom w F A| ≤ w.m_e * 4 := by
+    (B_3 B_3A : ℝ)
+    (h_3_pos  : 0 ≤ F.Sigma_3)
+    (h_3A_pos : 0 ≤ F.Sigma_3A)
+    (h_3  : F.Sigma_3  ≤ B_3)
+    (h_3A : F.Sigma_3A ≤ B_3A)
+    (A : ℕ) (hA : A = 2) :
+    |deltaFrobeniusAtom w F A| ≤ w.m_e * (B_3A + 2 * B_3) := by
   unfold deltaFrobeniusAtom
   rw [hA]
-  -- |w.m_e| · |Sigma_6 - 2·Sigma_3|.  Both bounded; difference ≤ 4.
-  rw [abs_neg, abs_mul]
-  rw [abs_of_nonneg h_me_pos]
+  rw [abs_neg, abs_mul, abs_of_nonneg h_me_pos]
   apply mul_le_mul_of_nonneg_left _ h_me_pos
-  -- |Sigma_6 - 2·Sigma_3| ≤ |Sigma_6| + 2|Sigma_3| ≤ 4 + 6 = 10
-  -- (the bound 4 is loose; refine if needed)
-  -- For the purpose of this lemma we use |x - 2y| ≤ |x| + 2|y|
-  -- and the given bounds.  The conservative bound 4 is ≥ |Sigma_6| ≥ |x - 2y|
-  -- in the regime of interest (Sigma_3 ≈ 2.5, Sigma_6 ≈ 3.2).
-  -- Here we accept a loose bound for documentation purposes.
-  have : |F.Sigma_3A - 2 * F.Sigma_3| ≤ |F.Sigma_3A| + 2 * |F.Sigma_3| := by
+  -- |Sigma_3A − 2·Sigma_3| ≤ |Sigma_3A| + 2·|Sigma_3| ≤ B_3A + 2·B_3
+  have h_tri : |F.Sigma_3A - 2 * F.Sigma_3|
+                 ≤ |F.Sigma_3A| + 2 * |F.Sigma_3| := by
     calc |F.Sigma_3A - 2 * F.Sigma_3|
         ≤ |F.Sigma_3A| + |2 * F.Sigma_3| := abs_sub _ _
       _ = |F.Sigma_3A| + 2 * |F.Sigma_3| := by rw [abs_mul]; norm_num
-  -- |Sigma_6| ≤ 4, 2|Sigma_3| ≤ 6, but our bound is 4.  Loose -- accept.
-  -- Actually the lemma statement only needs ≤ 4, which is wrong if Sigma_6 ≤ 4.
-  -- Let's tighten: the actual bound we need is just |Sigma_6 - 2·Sigma_3| ≤ 4.
-  have h1 : |F.Sigma_3A| ≤ 4 := abs_le.mpr ⟨by linarith, h_6⟩
-  have h2 : |F.Sigma_3| ≤ 3 := abs_le.mpr ⟨by linarith [h_3_pos], h_3⟩
+  have h_abs_3A : |F.Sigma_3A| ≤ B_3A := abs_of_nonneg h_3A_pos ▸ h_3A
+  have h_abs_3  : |F.Sigma_3|  ≤ B_3  := abs_of_nonneg h_3_pos  ▸ h_3
   linarith
 
 end QOU.WedderburnMass
