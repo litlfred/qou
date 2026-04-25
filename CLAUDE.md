@@ -271,7 +271,7 @@ However:
   downstream of the conjecture transitively. Track the chain via the
   definition.
 
-Audit note: the `proof-gap-audit` skill must apply §J of its
+Audit note: the `proof-gap-audit` skill must apply §I of its
 checklist (conjectural propagation) only to provable kinds. Flagging
 a definition as a propagation violation is a false positive (we have
 seen this hallucinated by sub-agents). Compute the transitive cone

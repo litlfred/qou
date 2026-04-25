@@ -481,7 +481,7 @@ noncomputable def branchingFraction
     For our q₀ ≈ 1.110: C_q ≈ h² × [2]_q ≈ 0.088,
     so at k = 8: |error| ≤ 0.088/5 = 0.018,
     consistent with the numerical error of 0.008 at k = 9. -/
--- Ref: [vershikKerov1977] https://doi.org/10.1007/BF01106153 — classical
+-- Ref: [vershik-kerov1977] https://doi.org/10.1007/BF01106153 — classical
 --       Plancherel concentration / limit-shape argument being q-adapted
 -- Ref: [manuscript] §prop:jet-convergence-classical-limit — q-adaptation
 theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
@@ -507,7 +507,7 @@ theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
 
     So the knot invariant converges at the SAME rate as the
     branching fractions. -/
--- Ref: [vershikKerov1977] https://doi.org/10.1007/BF01106153 — classical
+-- Ref: [vershik-kerov1977] https://doi.org/10.1007/BF01106153 — classical
 --       Plancherel convergence argument being propagated through branching
 -- Ref: [manuscript] §conj:jet-filtered-knot-factor — q-adapted statement
 theorem knot_invariant_convergence

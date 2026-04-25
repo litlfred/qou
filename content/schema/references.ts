@@ -744,7 +744,7 @@ export const references: CSLData[] = [
 
   // ── Vershik-Kerov 1977 (Plancherel asymptotics / limit shape) ──
   ref({
-    id: "vershikKerov1977",
+    id: "vershik-kerov1977",
     type: "article-journal",
     title:
       "Asymptotic theory of characters of the symmetric group",
