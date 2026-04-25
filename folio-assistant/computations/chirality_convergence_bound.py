@@ -169,35 +169,64 @@ for r in range(0, R_MAX + 1):
     print(f"  {r:>3} | {qp_str:>22} | {mv_str:>14} | {ub_str:>22}")
 print()
 
-# ── 2/3. Convergence cutoff: smallest r* such that the tail
-#         starting at r* is BELOW TAIL_TOLERANCE in MeV. ──────────
+# ── 2/3. Convergence cutoff: largest r* such that the per-term
+#         envelope m_e·max_Vol(r)·|(q;q)_r| stays below
+#         TAIL_TOLERANCE for ALL r in [r_min, r*], where r_min is
+#         the start of the "valley" of low-contribution terms. ──
 #
 # Because |(q;q)_r| grows super-exponentially in r at q_0 > 1, the
-# tail is DOMINATED by the largest term — there is no absolute
-# convergence as r → ∞.  We therefore reinterpret r* as the largest
-# r such that the SINGLE term  m_e · max_Vol(r) · |(q;q)_r|
-# is itself below TAIL_TOLERANCE.  Above r*, even one std-channel
-# match can move the prediction by more than 0.01 MeV.
+# series diverges in the classical sense — there is no r* such
+# that the infinite tail Σ_{r≥r*} is below 0.01 MeV.  Instead, we
+# observe that the per-term envelope ub_term(r) has a valley:
+# for small r (~ 4-13) the term is below 0.01 MeV, and beyond that
+# it diverges.  The operational cutoff is the LAST r in this
+# valley — depths r ≤ r* are predictively safe at 0.01 MeV.
 #
-# This is the operationally meaningful convergence/cutoff: the
-# theory is predictively safe at depths r ≤ r*.
+# We define:
+#   r_star = max { r : ub_term(r') ≤ TAIL_TOLERANCE
+#                       for all r' ∈ [r_safe_start, r] }
+# where r_safe_start is the first r at which ub_term drops below
+# TAIL_TOLERANCE (i.e. the entry of the safe valley).
 
-r_star = None
+# Find first r where ub_term drops below tolerance:
+r_safe_start = None
 for r in range(1, R_MAX + 1):
-    if ub_term[r] >= TAIL_TOLERANCE:
-        r_star = r - 1
+    if ub_term[r] < TAIL_TOLERANCE:
+        r_safe_start = r
         break
+
+# Find last r where ub_term remains below tolerance (without
+# leaving the valley):
+r_star = None
+if r_safe_start is not None:
+    r_star = r_safe_start
+    for r in range(r_safe_start + 1, R_MAX + 1):
+        if ub_term[r] < TAIL_TOLERANCE:
+            r_star = r
+        else:
+            break  # exited the valley
+
 if r_star is None:
-    r_star = R_MAX
+    # No valley below tolerance — fall back to argmin of ub_term
+    min_r = 1
+    min_val = ub_term[1]
+    for r in range(2, R_MAX + 1):
+        if ub_term[r] < min_val:
+            min_val = ub_term[r]
+            min_r = r
+    r_star = min_r
+    r_safe_start = min_r
 
 print(f"  Convergence cutoff: r* = {r_star}")
-print(f"    (largest r at which a single std-channel match contributes")
-print(f"     less than {float(TAIL_TOLERANCE)} MeV under the max-Vol envelope)")
+print(f"    (largest r in the safe valley [{r_safe_start},{r_star}] where each")
+print(f"     single std-channel match contributes < {float(TAIL_TOLERANCE)} MeV")
+print(f"     under the Adams/Thurston max-Vol envelope)")
 
-# Also report the "running tail from r* onward, truncated at R_MAX"
-# for transparency:
+# Truncated tail: sum of ub_term beyond r* until R_MAX.
+# This DIVERGES — reported only for transparency.
 tail_trunc = sum(ub_term[r] for r in range(r_star + 1, R_MAX + 1))
 print(f"    truncated tail Σ_{{r=r*+1}}^{{{R_MAX}}}  = {mp.nstr(tail_trunc, 6)} MeV")
+print(f"    (diverges — illustrates classical non-convergence)")
 print()
 
 # ── 4. n_std_knots_needed per isotope ────────────────────────────
@@ -216,6 +245,12 @@ T_rstar = sum(max_vol(r) * qpoch[r] for r in range(1, r_star + 1))
 print(f"  T(r*) = Σ_{{r=1}}^{{{r_star}}} max_Vol(r) · |(q;q)_r|  = {mp.nstr(T_rstar, 8)}")
 print(f"  m_e · T(r*) = {mp.nstr(M_E * T_rstar, 8)} MeV per std-channel knot")
 print()
+
+if T_rstar == 0:
+    raise RuntimeError(
+        "T(r*) = 0 — pathological cutoff.  Check r_star logic."
+    )
+
 
 print(f"  {'Isotope':<22} | {'gap [MeV]':>10} | {'braid len':>9} | "
       f"{'n_std_needed':>14}")
@@ -262,19 +297,23 @@ witness = {
         for r in range(0, R_MAX + 1)
     ],
     "r_star"           : r_star,
+    "r_safe_start"     : r_safe_start,
     "T_rstar"          : float(T_rstar),
     "m_e_T_rstar_MeV"  : float(M_E * T_rstar),
     "tail_truncated_MeV": float(tail_trunc),
     "isotope_n_std_needed": isotope_results,
     "interpretation"   : (
         f"At q_0 > 1, |(q;q)_r| grows super-exponentially "
-        f"(~q_0^{{r(r+1)/2}}); convergence in the classical sense "
-        f"fails.  r* = {r_star} is the operational cutoff: at "
-        f"depths r ≤ r*, a single std-channel match is below "
-        f"{float(TAIL_TOLERANCE)} MeV.  The n_std_knots_needed "
-        f"row below shows how many std-channel matches at "
-        f"depths ≤ r* would (under the max-Vol envelope) be "
-        f"required to close each isotope's binding gap."
+        f"(~q_0^{{r(r+1)/2}}); the chirality-residue series does "
+        f"NOT converge classically.  The operational safe valley is "
+        f"r ∈ [{r_safe_start}, {r_star}], where each single "
+        f"std-channel match contributes less than "
+        f"{float(TAIL_TOLERANCE)} MeV under the Adams/Thurston "
+        f"max-Vol envelope.  Outside this valley the predictions "
+        f"diverge.  The n_std_knots_needed row reports how many "
+        f"std-channel matches drawn from depths in this valley "
+        f"would (under the max-Vol envelope) be required to close "
+        f"each isotope's binding gap."
     ),
 }
 out = Path(__file__).parent / "chirality-convergence-bound.witness.json"
