@@ -36,7 +36,7 @@ def conjugatePartition (λ : List ℕ) : List ℕ :=
   -- Standard Young-diagram transpose.  For each column position j, the
   -- j-th row of λ* has length = (# rows of λ with length > j).
   -- Stub: concrete implementation deferred.
-  sorry
+  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — Young-diagram conjugate (§7.1)
 
 
 /-- **Shell self-duality.**

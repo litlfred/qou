@@ -88,6 +88,11 @@ When a user request arrives, route to the right skill(s):
 | "review / check / audit Lean" | `local/lean-proof-review` | collaborator |
 | "status / tracking / manifest" | `local/proof-status-tracking` | reader |
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
+| "proof gap / missing step / unproved assertion / bridging lemma" | `local/proof-gap-audit` | reader |
+| "audit proofs / review proofs / proof editor / coordinate proof review" | `local/proof-editor` | collaborator |
+| "simplify exposition / revisit old proof / integrate new content" | `local/proof-exposition-review` | collaborator |
+| "lean vs narrative / do they prove the same thing / equivalence audit" | `local/proof-narrative-lean-equivalence` | collaborator |
+| "concise proof / tighten proof / cut verbose narrative / shorten human proof" | `local/proof-conciseness` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
 | "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "audit lean / completeness / coverage" | `local/lean-completeness-audit` | collaborator |
@@ -163,8 +168,8 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -243,6 +248,35 @@ previously proved theorems, axioms) may use provable block kinds.
   with `interprets: "conj:..."` (proof *sketches*, not proofs).
 - `remark` blocks may freely interpret conjectures (they make no
   logical claims).
+
+**Definitions and conjectures (clarification):** The propagation
+rule above applies to **provable claims** (`theorem`, `proposition`,
+`lemma`, `corollary`). It does **not** force `definition` blocks to
+become conjectures even if their `uses[]` includes a `conj:` label.
+A definition names a construction; whether the named construction
+is "the right one" may itself be a conjecture, but the act of naming
+is not a logical claim.
+
+However:
+
+- A `definition` whose well-formedness genuinely depends on a
+  conjecture (e.g. defining "the unique X with property P" when P's
+  uniqueness is conjectural) **should** carry an explicit narrative
+  note in its `.md` flagging the conjectural backing, and should
+  cite any computational witnesses available
+  (`folio-assistant/computations/*.witness.json`) so empirical
+  support is discoverable from the manifest.
+- Any `theorem`/`proposition`/`lemma`/`corollary` whose `uses[]`
+  cites such a definition **does** trigger propagation — it is
+  downstream of the conjecture transitively. Track the chain via the
+  definition.
+
+Audit note: the `proof-gap-audit` skill must apply §I of its
+checklist (conjectural propagation) only to provable kinds. Flagging
+a definition as a propagation violation is a false positive (we have
+seen this hallucinated by sub-agents). Compute the transitive cone
+from any provable block; if it touches a `conj:` via any path
+(including through definitions), demote the provable block.
 
 **Lean formalization of conjectures:** Conjectures *can* (and should,
 when feasible) have `.lean` files.  The convention is:
