@@ -467,6 +467,119 @@ chain-dependent (and $q$-dependent) quantity, $\alpha^*$ has no
 closed form involving only universal constants — exactly what
 PSLQ confirms.
 
+## 6.6 The 3A-partition formulation (atom-level Wedderburn)
+
+The treatment above used $H_3(q)$ — the per-nucleon Hecke algebra
+with three Wedderburn channels (sym, std, alt). The paper's actual
+atomic braid lives in $H_{3A}(q)$, with one strand per quark (3 per
+nucleon). The full Wedderburn-Artin decomposition is:
+
+$$
+  H_{3A}(q) \cong \bigoplus_{\lambda \vdash 3A} M_{\dim_q V_\lambda}(\mathbb{C})
+$$
+
+with **algebraic Wedderburn weights** (paper:
+[three-parameters-wedderburn](../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md),
+[confined-knot-binding](../content/quantum-observable-universe/braids-and-knots/confined-knot-binding.md)):
+
+$$
+  w_\lambda = \frac{(\dim_q V_\lambda)^2}{[3A]_q!}, \qquad
+  \dim_q V_\lambda = \frac{[3A]_q!}{\prod_{x \in \lambda} [h_x(\lambda)]_q}
+$$
+
+(q-deformed hook-length formula, sum-of-squares = $\dim H_{3A}(q) = (3A)!$).
+
+The full Markov trace giving the categorical mass:
+
+$$
+  \mathfrak{m}(\beta) = \mathrm{tr}_M(\rho(\beta)) = \sum_{\lambda \vdash 3A} w_\lambda \cdot \frac{\chi_\lambda(\beta)}{\dim_q V_\lambda}.
+$$
+
+**Partition counts**:
+
+| $A$ | $3A$ | # partitions $\lambda \vdash 3A$ | irreps |
+|---|---|---|---|
+| 1 | 3 | **3** | (3), (2,1), (1,1,1) — sym, std, alt |
+| 2 | 6 | 11 | … 11 channels for the deuteron |
+| 3 | 9 | 30 | … 30 channels for T or ³He |
+| 4 | 12 | 77 | … 77 channels for ⁴He |
+| 12 | 36 | 17,977 | … carbon-12 |
+
+For $A = 1$ the three partitions are exactly the (sym, std, alt)
+channels analysed throughout this document. For $A \ge 2$, additional
+non-extremal partitions appear and contribute their own $\chi_\lambda$
+to the Markov trace.
+
+### 6.6a S-eigenvalue classification of partitions
+
+Each partition $\lambda \vdash 3A$ has a transposed partition
+$\lambda'$ (swap rows/columns). The Frobenius involution acts on
+characters by:
+
+$$
+  \chi_\lambda(S(\beta)) = \chi_{\lambda'}(\beta) \cdot \mathrm{sgn}_q(\lambda),
+$$
+
+where $\mathrm{sgn}_q$ is the q-deformed sign character. The algebraic
+weights satisfy $w_\lambda = w_{\lambda'}$ (since $\dim_q V_\lambda
+= \dim_q V_{\lambda'}$ via the conjugate hook-length symmetry), so
+the **S-symmetrized** trace pairs partitions with their transpose:
+
+$$
+  \tfrac12\bigl[\chi_\lambda + \chi_\lambda \circ S\bigr]
+  = \tfrac12\bigl[\chi_\lambda(\beta) + \chi_{\lambda'}(\beta)\bigr]
+$$
+
+Three cases:
+
+| Partition class | Examples | S-action | S-eigenspace |
+|---|---|---|---|
+| Self-conjugate ($\lambda = \lambda'$) | (2,1), (3,1,1,1), (2,2) at A=2 | invariant individually | mixed, mostly even |
+| Conjugate pair ($\lambda \neq \lambda'$) | (3) ↔ (1,1,1), (4,2) ↔ (2,2,2) | $\chi_\lambda \leftrightarrow \chi_{\lambda'}$ | symmetric: $\chi_+ = (\chi_\lambda + \chi_{\lambda'})/2$ even; antisymmetric: $\chi_- = (\chi_\lambda - \chi_{\lambda'})/2$ odd |
+
+**At $A = 1$**: (3) and (1,1,1) form a conjugate pair (they swap under S);
+(2,1) is self-conjugate.
+
+- Sym channel = (3) and Alt channel = (1,1,1) are conjugate-paired.
+- $W_{\text{sym}} \chi_{\text{sym}} + W_{\text{alt}} \chi_{\text{alt}}$
+  with $W_{\text{sym}} = W_{\text{alt}}$ is the S-symmetrized
+  (sym+alt) sum from §3.
+- The standard channel (2,1) is self-conjugate; chirality $\Phi_3$
+  arises from the **internal** sym/alt decomposition of (2,1)'s
+  2×2 transfer matrix.
+
+**At $A \ge 2$**: there are many self-conjugate partitions
+($\lambda = \lambda'$) — these are the "Wigner partitions" that
+contribute T=0 isoscalar pairing. The (2,2) ⊢ 4 partition
+([wigner-np-pairing](../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md))
+is self-conjugate and contributes the empirical Wigner energy
+$\Delta_W \approx 6.3$ MeV via $H_q((2,2)) = [3]_q [2]_q^2$.
+
+This explains physically why **np pairing** (which IS the chirality
+channel) arises from **self-conjugate partitions**: they live in
+the S-invariant subspace structurally — they don't switch under
+the proton↔neutron Frobenius involution.
+
+### 6.6b Why the per-nucleon (sym, std, alt) restriction is sufficient
+
+The paper proves
+([three-parameters-wedderburn §"Why three suffices for all A"](../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md))
+that the **typed crossing operators** $C(\mathfrak{p},\mathfrak{p})$,
+$C(\mathfrak{p},\mathfrak{n})$, $C(\mathfrak{n},\mathfrak{n})$ — which
+are the only ingredients of the atomic braid — are determined entirely
+by the three $H_3(q)$ parameters. Therefore the H_{3A}(q) Wedderburn
+expansion REDUCES to repeated applications of the three H_3(q)
+weights along the atomic braid. The 3A-partition formulation is
+the most general correct algebraic statement; the H_3(q) reduction
+is the practical computational form.
+
+This justifies why:
+- The α-blend used per-nucleon (H_3 level) chains, not partitions of 3A.
+- The 3A-partition computation should give the SAME answer (modulo
+  branching multiplicities), but with much higher computational cost.
+- The partition-by-partition computation (`atom_mass_partition.py`)
+  can be used as an independent cross-check.
+
 ## 7. Integrated formal derivation (everything together)
 
 The complete derivation chain, top-down:
