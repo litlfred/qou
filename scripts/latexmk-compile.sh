@@ -25,8 +25,5 @@ if [ "${GITHUB_EVENT_NAME:-}" = "push" ] || [ "${GITHUB_EVENT_NAME:-}" = "workfl
   PDFLATEX_CMD="pdflatex -shell-escape %O %S"
 fi
 
-# Ensure TikZ cache directory exists (used by externalization when active)
-mkdir -p tikz-cache
-
-exec latexmk -pdf -interaction=nonstopmode -halt-on-error \
+exec latexmk -pdf -interaction=nonstopmode \
   -pdflatex="$PDFLATEX_CMD" "$@" "$TEX_FILE"

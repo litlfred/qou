@@ -1,13 +1,6 @@
 name: Lean Build & Proof Status
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'content/quantum-observable-universe/lean/**'
-      - 'chapters/**'
-      - 'proof-objects.json'
-      - 'glossary.json'
   workflow_dispatch:
 
 permissions:
