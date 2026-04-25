@@ -7,8 +7,7 @@ export default definition({
     "jet-horizon", "event-horizon", "degree-zero",
     "vanishing-ideal", "information-barrier",
   ],
-  lean: {
-    decl: "QOU.JetHorizon",
+  lean: { ref: "qou:QOU.JetHorizon",
     validation: "not_checked",
   },
   uses: [

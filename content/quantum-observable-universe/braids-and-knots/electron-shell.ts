@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:electron-shell",
   title: "Electron shell as cabled strands with SDP-selected binding",
-  lean: {
-    decl: "QOU.BraidKnot.ElectronShell",
+  lean: { ref: "qou:QOU.BraidKnot.ElectronShell",
     validation: "not_checked",
   },
   uses: [

@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-resolvent-unique",
   title: "Uniqueness of the $q$-resolvent",
-  lean: {
-    decl: "QOU.QResolvent.unique",
+  lean: { ref: "qou:QOU.QResolvent.unique",
     validation: "not_checked",
   },
   uses: [

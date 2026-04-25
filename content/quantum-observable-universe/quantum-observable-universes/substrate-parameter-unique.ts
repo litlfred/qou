@@ -4,7 +4,7 @@ export default theorem({
   label: "thm:substrate-parameter-unique",
   title: "Uniqueness of the substrate parameter",
   lean: {
-    decl: "QOU.SubstrateParameter.unique",
+    ref: "qou:QOU.SubstrateParameter.unique",
     validation: "not_checked",
   },
   uses: [

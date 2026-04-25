@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-neutron-unique",
   title: "Uniqueness of the categorical neutron up to braid isotopy",
-  lean: {
-    decl: "QOU.CategoricalNeutron.unique_up_to_isotopy",
+  lean: { ref: "qou:QOU.CategoricalNeutron.unique_up_to_isotopy",
     validation: "not_checked",
   },
   uses: [

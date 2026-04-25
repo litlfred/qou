@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:q-local-system",
-  lean: { decl: "QOU.QLocalSystem", validation: "not_checked" },
+  lean: { ref: "qou:QOU.QLocalSystem", validation: "not_checked" },
   title: "$q$-Local system",
   uses: [
     "def:categorical-q-connection",

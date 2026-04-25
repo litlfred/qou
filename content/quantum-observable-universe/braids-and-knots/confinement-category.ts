@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:confinement-category",
   title: "The confinement category $\\mathbf{Conf}$",
-  lean: {
-    decl: "QOU.BraidKnot.ConfinementCategory",
+  lean: { ref: "qou:QOU.BraidKnot.ConfinementCategory",
     validation: "not_checked",
   },
   uses: [

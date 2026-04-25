@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-self-duality",
-  lean: {
-    decl: "QOU.categorical_self_duality",
+  lean: { ref: "qou:QOU.categorical_self_duality",
     validation: "not_checked",
   },
   title: "Categorical self-duality",

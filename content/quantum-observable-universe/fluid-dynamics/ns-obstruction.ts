@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:ns-obstruction",
   title: "NS obstruction class $\\mathrm{NS}(A)$",
-  lean: {
-    decl: "QOU.FluidDynamics.NSObstruction",
+  lean: { ref: "qou:QOU.FluidDynamics.NSObstruction",
     validation: "not_checked",
   },
   uses: [

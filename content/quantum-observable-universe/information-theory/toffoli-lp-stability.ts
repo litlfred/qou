@@ -14,8 +14,7 @@ export default proposition({
     "hecke-algebra",
     "q-AND",
   ],
-  lean: {
-    decl: "QOU.Information.toffoli_lp_stable",
+  lean: { ref: "qou:QOU.Information.toffoli_lp_stable",
     validation: "not_checked",
   },
   uses: [

@@ -7,8 +7,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:covalent-bond-shared-trefoil",
   title: "Covalent bond as shared electron trefoil",
-  lean: {
-    decl: "QOU.Molecular.CovalentBond",
+  lean: { ref: "qou:QOU.Molecular.CovalentBond",
     validation: "not_checked",
   },
   uses: ["def:molecular-braid", "def:atomic-braid"],

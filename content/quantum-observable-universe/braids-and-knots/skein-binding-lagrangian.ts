@@ -12,8 +12,7 @@ export default definition({
     "strong-force",
     "pauli",
   ],
-  lean: {
-    decl: "QOU.Braiding.SkeinBindingLagrangian",
+  lean: { ref: "qou:QOU.Braiding.SkeinBindingLagrangian",
     validation: "not_checked",
   },
   uses: [

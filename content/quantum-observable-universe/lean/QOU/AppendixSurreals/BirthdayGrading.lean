@@ -7,11 +7,17 @@ and exhaustive.
 
 This module provides:
 
-- `BirthdayGrading` structure
-- the **archimedean part** = `filter ω`
-- the **first-order infinitesimal part** = `filter (ω + 1)` quotient
-  by `filter ω`
-- proof that the filtration is closed under sum / scalar action
+- the `BirthdayGrading` structure (filter family + monotonicity +
+  exhaustiveness fields);
+- helper definitions `archimedeanPart` (= `filter ω`) and
+  `firstOrderPart` (= `filter (ω + 1)`);
+- a few lattice lemmas (`archimedeanPart ≤ firstOrderPart`,
+  `filter α ≤ ⊤`, `⊥ ≤ filter α`, exhaustiveness extraction).
+
+Closure of `filter` under sum / scalar action is **not** proved
+here — these would require the additional arithmetic-on-birthdays
+lemmas from the surrounding `SurrealField` axioms and are deferred
+to a future expansion of this module.
 
 ## References
 

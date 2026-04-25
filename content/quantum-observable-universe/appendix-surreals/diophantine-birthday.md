@@ -1,8 +1,10 @@
 Liouville's theorem and Roth's theorem bound the approximability
 of an algebraic irrational by rationals: if $\alpha$ is algebraic of
 degree $d$, then $|\alpha - p/q| > c/q^d$ for sufficiently large
-$q$ (Liouville), and Roth improves the exponent to $2 +
-\varepsilon$ for any $\varepsilon > 0$.
+$q$ (Liouville), and Roth improves the exponent to $2 + \delta$ for
+any $\delta > 0$.  We use $\delta$ rather than $\varepsilon$ here
+to avoid collision with the surreal infinitesimal $\varepsilon =
+1/\omega$ used elsewhere in this appendix.
 
 These are analytic statements about approximation rates. The
 surreal framework suggests a **direct algebraic shadow**: algebraic
@@ -43,8 +45,8 @@ The birthday trajectory discriminates algebraic from transcendental:
    *super-logarithmically*, potentially approaching $\omega$ for
    Liouville-class numbers.
 
-3. **Roth threshold**: Roth's exponent $2 + \varepsilon$ corresponds
-   to the ordinal stratum at which any single $\varepsilon >0$
+3. **Roth threshold**: Roth's exponent $2 + \delta$ corresponds
+   to the ordinal stratum at which any single $\delta > 0$
    allows non-trivial birthday-trajectory growth for algebraic
    numbers — finite, bounded birthday depth.
 
@@ -140,9 +142,9 @@ algebraicity conjecture)**:
    $O(1/q^2)$, giving $b_\alpha(n) = O(\log n)$.
 
 4. For **higher algebraic degree**: use Roth's theorem to get
-   $|\alpha - p/q| > c/q^{2+\varepsilon}$, which bounds the
+   $|\alpha - p/q| > c/q^{2+\delta}$, which bounds the
    continued-fraction partial quotients by a power of $k$, giving
-   $b_\alpha(n) = O((\log n)^{1 + \delta})$ — still poly-log.
+   $b_\alpha(n) = O((\log n)^{1 + \delta'})$ — still poly-log.
 
 5. For **Liouville numbers**: $|\alpha - p/q| < 1/q^n$ for every
    $n$; this corresponds to unboundedly-growing partial quotients,

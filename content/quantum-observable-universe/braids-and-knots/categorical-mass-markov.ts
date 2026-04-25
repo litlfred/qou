@@ -16,8 +16,7 @@ export default proposition({
     "nakayama",
     "hecke-algebra",
   ],
-  lean: {
-    decl: "QOU.CategoricalMassMarkov",
+  lean: { ref: "qou:QOU.CategoricalMassMarkov",
     validation: "not_checked",
   },
 });

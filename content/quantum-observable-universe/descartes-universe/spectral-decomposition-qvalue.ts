@@ -19,8 +19,7 @@ export default corollary({
     "self-duality",
     "hilbert-space-completeness",
   ],
-  lean: {
-    decl: "QOU.Descartes.spectral_decomposition_qvalue",
+  lean: { ref: "qou:QOU.Descartes.spectral_decomposition_qvalue",
     validation: "not_checked",
   },
   uses: [

@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:confined-particle",
   title: "Confined particle",
-  lean: {
-    decl: "QOU.BraidKnot.ConfinedParticle",
+  lean: { ref: "qou:QOU.BraidKnot.ConfinedParticle",
     validation: "not_checked",
   },
   uses: [

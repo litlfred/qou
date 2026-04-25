@@ -13,8 +13,7 @@ export default definition({
     "kinetic-energy",
     "skein",
   ],
-  lean: {
-    decl: "QOU.Descartes.QValueTransition",
+  lean: { ref: "qou:QOU.Descartes.QValueTransition",
     validation: "not_checked",
   },
   uses: [

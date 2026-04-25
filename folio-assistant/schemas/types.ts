@@ -130,12 +130,38 @@
 
 // ── Lean linkage ─────────────────────────────────────────────────
 
-/** Reference to a Lean 4 declaration. */
+/**
+ * Reference to a Lean 4 declaration, addressed by a package-qualified URI.
+ *
+ * Format of `ref`: `"<package>:<Decl.Path>"`, where:
+ *   - `<package>` is the Lake package short-name as declared in the
+ *     root `lakefile.toml` (see `lean-packages.ts`).  Examples: `qou`,
+ *     `ugb`, `fred2005`.
+ *   - `<Decl.Path>` is the fully qualified Lean 4 declaration
+ *     (namespace + name), e.g. `QOU.Torsion.lifting_exists`.
+ *
+ * Examples:
+ *   - `"qou:QOU.CategoricalTransferMatrix"`
+ *   - `"ugb:UGB.GrobnerShirshov.Basis"`
+ *   - `"fred2005:Fred2005.FormalGroups.FormalGroupLaw"`
+ *
+ * The pipeline resolves `ref` to a `.lean` source file by:
+ *   1. Looking up the package in `LEAN_PACKAGES` (→ paper directory,
+ *      Lake root).
+ *   2. Falling back to the sibling `.lean` file next to the block's
+ *      `.ts` / `.md` when present.
+ *
+ * Rationale: a single URI is addressable in JSON Schema, cross-paper
+ * references, and Lake build commands without encoding filesystem
+ * paths into content.
+ */
 export interface LeanRef {
-  /** Fully qualified Lean 4 name (e.g. "QOU.QuantumUniverse"). */
-  decl: string;
-  /** Path to .lean file relative to lean/ directory (resolved from sibling if omitted). */
-  file?: string;
+  /**
+   * Package-qualified Lean 4 declaration URI
+   * (e.g. `"qou:QOU.QuantumUniverse"`).  See module docstring above
+   * for grammar.  Parse with `parseLeanRef` from `lean-packages.ts`.
+   */
+  ref: string;
   /** Whether the declaration is sorry-free. */
   sorryFree?: boolean;
   /** Related mathlib4 declaration names. */

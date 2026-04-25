@@ -15,8 +15,7 @@ export default proposition({
     "muon",
     "tau",
   ],
-  lean: {
-    decl: "QOU.Descartes.lepton_continuant_recurrence",
+  lean: { ref: "qou:QOU.Descartes.lepton_continuant_recurrence",
     validation: "not_checked",
   },
   uses: [

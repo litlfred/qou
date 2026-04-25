@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-heat-equation-unique",
   title: "Uniqueness of solutions of the $q$-heat equation",
-  lean: {
-    decl: "QOU.QHeatEquation.unique_solution",
+  lean: { ref: "qou:QOU.QHeatEquation.unique_solution",
     validation: "not_checked",
   },
   uses: [

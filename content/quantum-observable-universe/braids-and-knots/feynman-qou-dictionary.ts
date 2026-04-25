@@ -3,8 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "prop:feynman-categorical-trace",
   label: "rem:feynman-qou-dictionary",
-  lean: {
-    decl: "QOU.FeynmanPathIntegrals.FeynmanQOUDictionary",
+  lean: { ref: "qou:QOU.FeynmanPathIntegrals.FeynmanQOUDictionary",
     validation: "not_checked",
   },
   title: "Dictionary: Feynman path integral $\\leftrightarrow$ QOU categorical trace",
