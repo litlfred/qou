@@ -71,7 +71,10 @@ function walk(dir: string): string[] {
  */
 function packageForFile(absPath: string): string | undefined {
   const rel = relative(CONTENT_ROOT, absPath);
-  const paperDir = rel.split("/", 1)[0];
+  // Cross-platform: `relative()` returns `\` on Windows, `/` on POSIX.
+  // Split on either separator so the paper-directory lookup works on
+  // both platforms.
+  const paperDir = rel.split(/[\\/]/, 1)[0];
   return PAPER_TO_PACKAGE[paperDir] ?? EXTRA_DIR_TO_PACKAGE[paperDir];
 }
 
@@ -90,9 +93,13 @@ function packageForFile(absPath: string): string | undefined {
 function transform(src: string, pkg: string): { src: string; matches: number } {
   let matches = 0;
 
-  // Pass 1: single-line form
+  // Pass 1: single-line form on a single source line (no newlines).
   //   lean: { decl: "QOU.Foo", validation: "not_checked" },
-  const singleLine = /lean:\s*\{\s*decl:\s*"([^"]+)"([^}]*)\}/g;
+  // The character class `[^}\n]` deliberately excludes newlines so
+  // multi-line `lean: { ... }` objects are not matched here — they
+  // are handled by the dedicated multi-line pass below, which
+  // preserves indentation and ordering.
+  const singleLine = /lean:\s*\{\s*decl:\s*"([^"]+)"([^}\n]*)\}/g;
   src = src.replace(singleLine, (_m, decl: string, rest: string) => {
     matches += 1;
     // Strip any file: "..." fragment from the rest of the object body.

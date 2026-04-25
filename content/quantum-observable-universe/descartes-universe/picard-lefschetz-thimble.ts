@@ -4,7 +4,7 @@ export default definition({
   label: "def:picard-lefschetz-thimble",
   title: "Picard--Lefschetz thimble decomposition of the color-tube cubic",
   lean: {
-    decl: "QOU.Descartes.ThimbleData",
+    ref: "qou:QOU.Descartes.ThimbleData",
     validation: "not_checked",
   },
   tags: [
