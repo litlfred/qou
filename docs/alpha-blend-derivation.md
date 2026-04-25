@@ -675,6 +675,37 @@ Likely diagnosis: an additional partition correction beyond (2,2)⊢4
 is needed for fully-paired systems, or the $\Phi_1$ inter-only
 construction over-counts in symmetric cases.
 
+## 6.9 Self-conjugate partition corrections — negative finding
+
+Attempted to generalise the Wigner $(2,2)\vdash 4$ correction by
+summing over **all** self-conjugate $\lambda \vdash 3A$ partitions
+weighted by $H_q(\lambda) \cdot (\dim_q V_\lambda)^2$, normalised
+([`self_conjugate_partition_corrections.py`](../folio-assistant/computations/self_conjugate_partition_corrections.py)).
+
+**Catalogue:**
+
+| 3A | self-conjugate partitions | H_q values |
+|---|---|---|
+| 3 | (2,1) | 3.04 |
+| 6 | (3,2,1) | 48.4 |
+| 9 | (5,1,1,1,1), (3,3,3) | 6557, 10053 |
+| 12 | (6,2,1,1,1,1), (5,3,2,1,1), (4,4,2,2) | 350k, 88k, 246k |
+
+The hook products grow super-exponentially with strand count, giving
+unphysical corrections (⁴He: −30,341 MeV; T: −1295 MeV).
+
+**Diagnosis.** The Wigner $(2,2)\vdash 4$ correction is at **Hecke
+level $k = 4$**, not at level $3A$. Bridging the D and ⁴He sign-flip
+requires level-specific corrections at intermediate Hecke levels
+$k = 4, 6, 8, 10$ — each contributing through its own self-conjugate
+partition embedded in $H_{3A}(q)$ via branching, with its own
+occupancy factor. The 3A-partition decomposition does **not** directly
+generalise Wigner; the correct framework couples Hecke-level
+partitions to atomic occupancy via Schur-Weyl multiplicities.
+
+This refinement is a deferred research direction; the per-generator
++ (2,2)$\vdash 4$ Wigner formula remains the best-validated currently.
+
 ## 7. Integrated formal derivation (everything together)
 
 The complete derivation chain, top-down:
