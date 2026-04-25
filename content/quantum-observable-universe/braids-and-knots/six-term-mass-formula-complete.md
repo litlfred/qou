@@ -169,9 +169,18 @@ achieved for all six terms.***
 
 **Remaining items (refinements, not gaps).**
 
-1. *Verification of Habiro cyclotomic expansion coefficients $a_m(K)$
-   for specific atomic braids (numerical only; algebraic structure
-   already in place).*
+1. ~~*Verification of Habiro cyclotomic expansion coefficients
+   $a_m(K)$ for specific atomic braids.*~~ **Done for proton and
+   neutron** ($A = 1$): symbolic Markov trace
+   $\mathrm{tr}_M(T_w, q)$ admits the expansion
+   $\mathrm{tr}_M = \sum_{m=0}^{8} a_m(u) \cdot (u; u)_m$ with
+   $u = q^{1/2}$.  All $a_m(u) \in \mathbb{Z}[u]$ (integral) and the
+   expansion terminates at $m = 8$.  Witness:
+   `habiro-coefficients-atomic.witness.json`.
+   Follow-up: deuteron ($A = 2$, $\lambda = (4, 2)$) hits a
+   Hoefsmit-seminormal NaN at $b^2 = 0$ — a known degenerate-block
+   edge case requiring symbolic regularisation, not a structural
+   issue.
 2. *Complete Lean formalisation of all six derivations (currently
    only Term 4's `frobenius_codim_universal` has a sorry-free proof;
    Terms 1–3, 5, 6 need Lean implementations of their derivations).*

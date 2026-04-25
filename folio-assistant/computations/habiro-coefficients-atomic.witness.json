@@ -1,0 +1,176 @@
+{
+  "computation": "habiro-coefficients-atomic",
+  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) for atomic braids p, n, D. Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
+  "reference_blocks": [
+    "def:habiro-ring",
+    "prop:full-pole-structure-mass-trace",
+    "thm:knot-mass-formula-unified",
+    "prop:e-infinity-page-identifications"
+  ],
+  "timestamp": "2026-04-25T00:40:34.180810+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "engine": "sympy Poly + sequential cyclotomic division"
+  },
+  "results": {
+    "p (proton, A=1)": {
+      "Z": 1,
+      "N": 0,
+      "include_inter": false,
+      "tr_M_in_q": "(q**22 + q**21 + 2*q**20 + q**19 + q**18 + q**17 + 2*q**16 + 3*q**15 + 5*q**14 + 4*q**13 + 3*q**12 + q**11 - q**10 - q**9 - q**8 - q**4 - q**3 - 2*q**2 - q - 1)/(4*q**12 + 4*q**11 + 4*q**10)",
+      "shift": 0,
+      "denom_in_u": "4*u**24 + 4*u**22 + 4*u**20",
+      "p_in_u": "u**44 + u**42 + 2*u**40 + u**38 + u**36 + u**34 + 2*u**32 + 3*u**30 + 5*u**28 + 4*u**26 + 3*u**24 + u**22 - u**20 - u**18 - u**16 - u**8 - u**6 - 2*u**4 - u**2 - 1",
+      "deg_p_u": 44,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "16",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-344*u - 344",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "1711*u**2 + 1826*u + 1935",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-3704*u**3 - 4131*u**2 - 4505*u - 4988",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "4062*u**4 + 4644*u**3 + 5330*u**2 + 6050*u + 6887",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-2293*u**5 - 2719*u**4 - 3284*u**3 - 3862*u**2 - 4611*u - 5380",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "616*u**6 + 797*u**5 + 992*u**4 + 1259*u**3 + 1551*u**2 + 1937*u + 2363",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-62*u**7 - 92*u**6 - 122*u**5 - 174*u**4 - 226*u**3 - 311*u**2 - 399*u - 536",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "u**8 + u**7 + 3*u**6 + 4*u**5 + 9*u**4 + 12*u**3 + 21*u**2 + 29*u + 46",
+          "deg_a_m": 8,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "tr_M_at_q0": 3.0359603756290277
+    },
+    "n (neutron, A=1)": {
+      "Z": 0,
+      "N": 1,
+      "include_inter": false,
+      "tr_M_in_q": "(q**20 + 2*q**18 + 2*q**16 + q**15 + 2*q**14 + 2*q**13 + 4*q**12 + 2*q**11 + 3*q**10 + 2*q**9 + q**7 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**12 + 4*q**10 + 4*q**8)",
+      "shift": 0,
+      "denom_in_u": "4*u**24 + 4*u**20 + 4*u**16",
+      "p_in_u": "u**40 + 2*u**36 + 2*u**32 + u**30 + 2*u**28 + 2*u**26 + 4*u**24 + 2*u**22 + 3*u**20 + 2*u**18 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
+      "deg_p_u": 40,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "16",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-264*u - 264",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "1082*u**2 + 1169*u + 1253",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-1937*u**3 - 2207*u**2 - 2436*u - 2749",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "1751*u**4 + 2039*u**3 + 2396*u**2 + 2768*u + 3217",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-794*u**5 - 960*u**4 - 1199*u**3 - 1436*u**2 - 1765*u - 2099",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "157*u**6 + 214*u**5 + 274*u**4 + 365*u**3 + 460*u**2 + 597*u + 746",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-9*u**7 - 15*u**6 - 21*u**5 - 34*u**4 - 45*u**3 - 67*u**2 - 89*u - 128",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "u**4 + u**3 + 2*u**2 + 3*u + 7",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "tr_M_at_q0": 2.330740003088689
+    },
+    "D (deuteron, A=2)": {
+      "error": "RuntimeError: Markov trace symbolic failed at \u03bb = (4, 2) (A = 2): ValueError: NaN/Inf in \u03bb = (4, 2)"
+    }
+  }
+}
