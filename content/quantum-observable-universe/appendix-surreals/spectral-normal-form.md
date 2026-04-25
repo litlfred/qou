@@ -36,7 +36,7 @@ be the eigenvalues ordered by $\mathbf{No}$-magnitude. Define the
      c\,\varepsilon$ — generic first-order closure.
    - $\ordw(\Delta) = -n$ for $n \in \mathbb{N}$: gap closes
      polynomially of order $n$.
-   - $\ordw(\Delta) \in (-\omega, -\omega\cdot 2)$: gap closes
+   - $\ordw(\Delta) \in (-\omega\cdot 2,\, -\omega)$: gap closes
      *faster than any polynomial but slower than any exponential*
      — signals transcendental quantum-dilogarithm behaviour.
 

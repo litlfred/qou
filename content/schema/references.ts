@@ -1423,7 +1423,8 @@ export const references: CSLData[] = [
     type: "chapter",
     title: "QGoL: A Quantum Game of Life",
     author: [
-      { literal: "Peña et al." },
+      { family: "Pe\\~{n}a" },
+      { literal: "others" },
     ],
     "container-title":
       "Advances in Quantum Computation and Quantum Cellular Automata",
@@ -1684,10 +1685,14 @@ export const references: CSLData[] = [
     type: "book",
     title: "The Geometry and Topology of Three-Manifolds",
     author: [{ family: "Thurston", given: "William P." }],
-    publisher: "Princeton University",
-    note: "Lecture notes",
+    publisher: "Princeton University lecture notes",
     issued: { "date-parts": [[1978]] },
     URL: "https://www.msri.org/publications/books/gt3m/",
+    note:
+      "Original lecture notes establishing the ideal-tetrahedron " +
+      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
+      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
+      "expansion of the categorical mass endomorphism.",
   }),
 
   // ── Bring 1786 ────────────────────────────────────────────────
@@ -1699,6 +1704,51 @@ export const references: CSLData[] = [
     "container-title": "Promotionschrift, Lund",
     issued: { "date-parts": [[1786]] },
     URL: "https://en.wikipedia.org/wiki/Bring_radical",
+  }),
+
+  // ── Bolza 1887 ────────────────────────────────────────────────
+  ref({
+    id: "bolza1887",
+    type: "article-journal",
+    title: "On binary sextics with linear transformations into themselves",
+    author: [{ family: "Bolza", given: "Oskar" }],
+    "container-title": "American Journal of Mathematics",
+    issued: { "date-parts": [[1887]] },
+    volume: "10",
+    issue: "1",
+    page: "47-70",
+    DOI: "10.2307/2369402",
+  }),
+
+  // ── Moore and Seiberg 1989 ───────────────────────────────────
+  ref({
+    id: "moore-seiberg1989",
+    type: "article-journal",
+    title: "Classical and quantum conformal field theory",
+    author: [
+      { family: "Moore", given: "Gregory" },
+      { family: "Seiberg", given: "Nathan" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1989]] },
+    volume: "123",
+    issue: "2",
+    page: "177-254",
+    DOI: "10.1007/BF01238857",
+  }),
+
+  // ── Kitaev 2006 ───────────────────────────────────────────────
+  ref({
+    id: "kitaev2006",
+    type: "article-journal",
+    title: "Anyons in an exactly solved model and beyond",
+    author: [{ family: "Kitaev", given: "Alexei" }],
+    "container-title": "Annals of Physics",
+    issued: { "date-parts": [[2006]] },
+    volume: "321",
+    issue: "1",
+    page: "2-111",
+    DOI: "10.1016/j.aop.2005.10.005",
   }),
 
   // ── Deligne 2007 ──────────────────────────────────────────────
@@ -1844,7 +1894,7 @@ export const references: CSLData[] = [
     "publisher-place": "New York",
     issued: { "date-parts": [[2002]] },
     DOI: "10.1007/978-1-4757-6046-0",
-    collection_title: "Graduate Texts in Mathematics",
+    "collection-title": "Graduate Texts in Mathematics",
     volume: "210",
   }),
 
@@ -2493,23 +2543,6 @@ export const references: CSLData[] = [
       "proton-neutron pairing.",
   }),
 
-  // ── Thurston 1978 (hyperbolic geometry of 3-manifolds) ───────
-  ref({
-    id: "thurston1978",
-    type: "book",
-    title:
-      "The Geometry and Topology of Three-Manifolds",
-    author: [{ family: "Thurston", given: "William P." }],
-    publisher: "Princeton University lecture notes",
-    issued: { "date-parts": [[1978]] },
-    URL: "http://library.msri.org/books/gt3m/",
-    note:
-      "Original lecture notes establishing the ideal-tetrahedron " +
-      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
-      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
-      "expansion of the categorical mass endomorphism.",
-  }),
-
   // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
   ref({
     id: "kohno1987",
@@ -2525,34 +2558,132 @@ export const references: CSLData[] = [
     DOI: "10.5802/aif.1075",
     note:
       "Proves that monodromy of the Knizhnik-Zamolodchikov " +
-      "connection on the configuration space X_n coincides with " +
-      "the quantum-group R-matrix representation of U_q(g).  " +
+      "connection on the configuration space $X_n$ coincides with " +
+      "the quantum-group R-matrix representation of $U_q(g)$.  " +
       "Flatness of the KZ connection at generic q is the " +
       "mathematical content behind the lifted-crossing locality " +
       "hypothesis in the mass-volume expansion.",
   }),
 
-  // ── Murakami & Murakami 2001 (volume conjecture) ─────────────
+  // Note: a duplicate entry id "murakami2001" was removed here.
+  // The canonical key is `murakami-murakami2001` (defined above at
+  // line ~2393), following the `authorYEAR` hyphen convention for
+  // multiple authors (e.g. `kazhdan-lusztig1979`).
+
+  // ── Conway 1976 (On Numbers and Games / surreal numbers) ──────
   ref({
-    id: "murakami2001",
+    id: "conway1976",
+    type: "book",
+    title: "On Numbers and Games",
+    author: [{ family: "Conway", given: "John H." }],
+    publisher: "Academic Press",
+    "publisher-place": "London",
+    issued: { "date-parts": [[1976]] },
+    note:
+      "Original construction of the surreal numbers $\\mathbf{No}$ " +
+      "as a proper-class real-closed field via the recursive " +
+      "$\\{L \\mid R\\}$ construction.  Basis for the birthday " +
+      "filtration and sign-sequence grading used in the surreal " +
+      "appendix.",
+  }),
+
+  // ── Gonshor 1986 (sign-sequence construction) ────────────────
+  ref({
+    id: "gonshor1986",
+    type: "book",
+    title: "An Introduction to the Theory of Surreal Numbers",
+    author: [{ family: "Gonshor", given: "Harry" }],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1986]] },
+    ISBN: "978-0521312059",
+    DOI: "10.1017/CBO9780511629143",
+    note:
+      "Sign-sequence presentation of $\\mathbf{No}$: every surreal " +
+      "number is a function $\\alpha \\to \\{+,-\\}$ for some ordinal " +
+      "$\\alpha$.  Provides the canonical grading used to lift braid " +
+      "words to surreals via Hecke eigenspace choices.",
+  }),
+
+  // ── Alling 1987 (analysis over surreal fields) ──────────────
+  ref({
+    id: "alling1987",
+    type: "book",
+    title: "Foundations of Analysis over Surreal Number Fields",
+    author: [{ family: "Alling", given: "Norman L." }],
+    publisher: "North-Holland",
+    "publisher-place": "Amsterdam",
+    issued: { "date-parts": [[1987]] },
+    ISBN: "978-0444702265",
+    note:
+      "Systematic development of analytic structure on surreal " +
+      "number fields: ordered-field topology, formal power series, " +
+      "and the absence of a canonical Lebesgue measure.  Reference " +
+      "for what survives of classical analysis under surreal " +
+      "replacement.",
+  }),
+
+  // ── Robinson 1966 (non-standard analysis) ───────────────────
+  ref({
+    id: "robinson1966",
+    type: "book",
+    title: "Non-standard Analysis",
+    author: [{ family: "Robinson", given: "Abraham" }],
+    publisher: "North-Holland",
+    "publisher-place": "Amsterdam",
+    issued: { "date-parts": [[1966]] },
+    note:
+      "Original model-theoretic construction of the hyperreals " +
+      "$^*\\mathbb{R}$ and the standard-part map $\\mathrm{st}$.  " +
+      "The surreal appendix adopts Robinson's standard-part " +
+      "construction as the replacement for the broken classical-" +
+      "limit functor $q \\to 1$.",
+  }),
+
+  // ── Berarducci-Mantova 2018 (derivations on surreals) ──────
+  ref({
+    id: "berarducci-mantova2018",
+    type: "article-journal",
+    title: "Surreal numbers, derivations and transseries",
+    author: [
+      { family: "Berarducci", given: "Alessandro" },
+      { family: "Mantova", given: "Vincenzo" },
+    ],
+    "container-title": "Journal of the European Mathematical Society",
+    volume: "20",
+    issue: "2",
+    page: "339-390",
+    issued: { "date-parts": [[2018]] },
+    DOI: "10.4171/JEMS/769",
+    note:
+      "Construction of a natural derivation on the surreal numbers " +
+      "extending $d/dx$ on the reals, making $\\mathbf{No}$ a " +
+      "differential field.  Provides the Jackson-derivative lift " +
+      "$d_q$ with $q = 1 + \\varepsilon$ used in " +
+      "\\ref{def:standard-part-functor}.",
+  }),
+
+  // ── Ehrlich 2012 (absolute continuum) ──────────────────────
+  ref({
+    id: "ehrlich2012",
     type: "article-journal",
     title:
-      "The colored Jones polynomials and the simplicial volume of a knot",
-    author: [
-      { family: "Murakami", given: "Hitoshi" },
-      { family: "Murakami", given: "Jun" },
-    ],
-    "container-title": "Acta Mathematica",
-    volume: "186",
+      "The absolute arithmetic continuum and the unification of all " +
+      "numbers great and small",
+    author: [{ family: "Ehrlich", given: "Philip" }],
+    "container-title": "Bulletin of Symbolic Logic",
+    volume: "18",
     issue: "1",
-    page: "85-104",
-    issued: { "date-parts": [[2001]] },
-    DOI: "10.1007/BF02392716",
+    page: "1-45",
+    issued: { "date-parts": [[2012]] },
+    DOI: "10.2178/bsl/1327328438",
     note:
-      "Formulation of the volume conjecture connecting colored " +
-      "Jones polynomials at roots of unity to hyperbolic volume. " +
-      "Underlies the quantum-dilogarithm semiclassical expansion " +
-      "used in the Frobenius-JSJ binding decomposition.",
+      "Demonstrates that $\\mathbf{No}$ contains all real-closed " +
+      "ordered fields as subfields, including the hyperreals " +
+      "$^*\\mathbb{R}$ and the Hahn series $\\mathbb{R}((t^G))$ for " +
+      "any divisible ordered abelian group $G$.  Justifies " +
+      "embedding every analytic regime into a single surreal " +
+      "ambient.",
   }),
 
   // ── Conway 1976 (On Numbers and Games / surreal numbers) ──────

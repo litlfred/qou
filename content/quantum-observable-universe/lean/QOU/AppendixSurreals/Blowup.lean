@@ -2,8 +2,8 @@
 # QOU.AppendixSurreals.Blowup — Named infinite/infinitesimal surreals
 
 The first infinite surreal `ω` and the first positive infinitesimal
-`ε = 1/ω` are honest elements of any `SurrealField`.  This module
-axiomatises their existence and proves the basic relations.
+`ε = 1/ω` live as members of the `SurrealField` typeclass (see
+`Basic.lean`).  This module derives the basic relations.
 
 The full theory of named infinities (`ω², ω^ω`, hyperseries) is
 substantial [@conway1976; @ehrlich2012] and is left to mathlib's
@@ -28,18 +28,17 @@ universe u
 
 variable (K : Type u) [SurrealField K]
 
-/-- The **first infinite surreal** `ω`.
-
-    Conway's construction: `ω = {0, 1, 2, … | }` — the simplest surreal
-    larger than every natural.  Its existence in `K` follows from
-    `K` extending the ordinals via the canonical inclusion. -/
+/-- Alias for the `SurrealField.omegaSurreal` member, for
+    convenience in downstream files. -/
 -- Ref: [conway1976] §0
 -- Ref: [ehrlich2012] Theorem 12.5 (every ordinal embeds in 𝐍𝐨)
-axiom omegaSurreal : K
+abbrev omegaSurreal : K := SurrealField.omegaSurreal
 
 /-- `ω` is greater than every natural number. -/
 -- Ref: [conway1976] §0
-axiom omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < omegaSurreal K
+theorem omegaSurreal_gt_natCast (n : ℕ) :
+    (n : K) < omegaSurreal K :=
+  SurrealField.omegaSurreal_gt_natCast n
 
 /-- `ω` is positive. -/
 theorem omegaSurreal_pos : (0 : K) < omegaSurreal K := by

@@ -17,6 +17,7 @@ export default conjecture({
     "rem:conway-normal-form",
     "def:standard-part-functor",
     "conj:classical-limit-stpart",
+    "conj:hahn-substrate",
   ],
   cites: [
     "conway1976",

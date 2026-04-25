@@ -68,7 +68,7 @@ at each step, a vector decomposes into $p$ eigencomponents
 (rather than $2$) according to the cyclic-group action of
 $\mathbb{Z}/p$ on the truncated tensor power.
 
-## Where you can see this in char 0
+## Visibility in characteristic 0
 
 The $p$-ary structure at $q = \zeta_p$ is *not* purely modular —
 it is visible in characteristic $0$ as the limit behaviour of the

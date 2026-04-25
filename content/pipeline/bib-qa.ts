@@ -400,7 +400,7 @@ async function buildReport(): Promise<BibQAReport> {
     entries.push({
       id: entry.id,
       type: entry.type,
-      title: entry.title,
+      title: entry.title ?? "",
       authors: formatAuthors(entry),
       year: formatYear(entry),
       url,

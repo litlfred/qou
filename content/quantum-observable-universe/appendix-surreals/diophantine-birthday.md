@@ -102,13 +102,22 @@ The QOU substrate parameter $q_0$ satisfies a recursive equation
 from the paper's categorical structure (via fibre-functor
 rigidity, Tannaka-Krein, etc.). The conjecture predicts:
 
-- if $q_0$ is algebraic, its birthday is bounded (finite ordinal
-  $\leq \omega$);
-- if transcendental, its birthday reaches into the transfinite;
-- *which* birthday value $q_0$ lives at encodes the paper's
+- if $q_0$ is algebraic, its birthday *trajectory* $b_{q_0}(n)$
+  is logarithmic (bounded continued-fraction partial quotients, per
+  Lagrange/Roth);
+- if transcendental, the trajectory grows super-logarithmically
+  (approaching Liouville-class behaviour for certain exponentials);
+- *which* trajectory class $q_0$ lives in encodes the paper's
   "algebraic complexity".
 
-Computing $q_0$'s actual birthday would:
+**Note.** Every real number has birthday exactly $\omega$ (the
+dyadic rationals have finite birthday; every other real has
+birthday $\omega$ since it is the limit of a length-$\omega$ sign
+sequence).  The algebraic/transcendental distinction therefore
+cannot be read off the birthday of $q_0$ itself, only off the
+growth rate of its rational-approximation trajectory.
+
+Computing $q_0$'s actual birthday trajectory would:
 - decide its algebraic status (open in the main paper);
 - give a birthday-based characterisation of the QOU substrate.
 

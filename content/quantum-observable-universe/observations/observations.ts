@@ -29,6 +29,8 @@ export default chapter({
       blocks: [
         "borromean-quark",
         "higgs-t28",
+        "s5-equivariant-torus-knots",
+        "symmetry-preserving-leptons",
       ],
     }),
 

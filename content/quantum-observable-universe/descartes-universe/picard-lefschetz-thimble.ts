@@ -3,6 +3,10 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:picard-lefschetz-thimble",
   title: "Picard--Lefschetz thimble decomposition of the color-tube cubic",
+  lean: {
+    decl: "QOU.Descartes.ThimbleData",
+    validation: "not_checked",
+  },
   tags: [
     "picard-lefschetz",
     "thimble",
