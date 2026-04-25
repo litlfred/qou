@@ -1,0 +1,65 @@
+{
+  "computation": "branch-phase-fit-to-mass-tower-ratios",
+  "description": "Tests whether sums of 2|sin(2*pi*k/5)| at the five branch phases of X_5 (y^2=x^5-1) match the missing prefactor in approach_1_multi_brane (ratio = rho_derived/rho_observed). Hypothesis: at q->1 the Hecke energy q-q^{-1} replaced by commutative-limit form 2i sin(theta) at branch phases.",
+  "timestamp": "2026-04-25T00:45:03.273335+00:00",
+  "branch_phase_magnitudes": {
+    "k=0": 0.0,
+    "k=1": 1.902113032590307,
+    "k=2": 1.1755705045849465,
+    "k=3": 1.175570504584946,
+    "k=4": 1.9021130325903073
+  },
+  "distinct_values": {
+    "2|sin(72)|": 1.902113032590307,
+    "2|sin(144)|": 1.1755705045849465
+  },
+  "observed_ratios": {
+    "D": {
+      "A": 2,
+      "Z": 1,
+      "N": 1,
+      "ratio": 3.052012052160693
+    },
+    "T": {
+      "A": 3,
+      "Z": 1,
+      "N": 2,
+      "ratio": 3.4763537648638594
+    },
+    "3He": {
+      "A": 3,
+      "Z": 2,
+      "N": 1,
+      "ratio": 3.819245328124024
+    }
+  },
+  "candidates": {
+    "sum_all_distinct (sin72+sin144)": 3.0776835371752536,
+    "2*sin72": 3.804226065180614,
+    "2*sin144": 2.351141009169893,
+    "sin72 + 2*sin144": 4.2532540417602,
+    "2*sin72 + sin144": 4.97979656976556,
+    "(sin72+sin144) * phi/2": 2.4898982848827806,
+    "avg of 3.078 and 3.804": 3.440954801177934
+  },
+  "fits": {
+    "D": {
+      "observed": 3.052012052160693,
+      "best_candidate": "sum_all_distinct (sin72+sin144)",
+      "predicted": 3.0776835371752536,
+      "err_pct": 0.8411331467838146
+    },
+    "T": {
+      "observed": 3.4763537648638594,
+      "best_candidate": "avg of 3.078 and 3.804",
+      "predicted": 3.440954801177934,
+      "err_pct": -1.0182785205495861
+    },
+    "3He": {
+      "observed": 3.819245328124024,
+      "best_candidate": "2*sin72",
+      "predicted": 3.804226065180614,
+      "err_pct": -0.3932521127357677
+    }
+  }
+}
