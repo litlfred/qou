@@ -24,7 +24,7 @@ What is actually proved here:
 - `qInt_ratio_bound_m2`  exact bound at m = 2
 - `qInt_ratio_bound_small`  |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4, q < 2
 - `qDim_geq_dim`         d_q(λ) ≥ dim(λ) (one-sided, all q > 1)
-- `wedderburn_weight_perturbation`  ratio bound for w_λ
+- `wedderburn_weight_perturbation_conj`  conjectural ratio bound for w_λ
 - `convergence_rate` / `convergence_constant_H3`  branching rate
 
 ## Why convergence holds without a per-partition bound
@@ -220,27 +220,28 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
     dq ≥ dim_classical := by
   exact le_div_iff hdim |>.mp (by linarith)
 
-/-! ## §4  Wedderburn weight perturbation -/
+/-! ## §4  Wedderburn weight perturbation (CONJECTURAL) -/
 
 /-- The Wedderburn weight ratio:
     w_λ / w_λ^{classical} = (d_q/dim)² × (k!/[k]!)
 
-    From the qDim bound:
-    |(d_q/dim)² - 1| ≤ 2 · |d_q/dim - 1| + |d_q/dim - 1|²
-                     ≤ 2 · C·h²·k + (C·h²·k)²
+    A naive per-partition bound would say:
+    |w_λ/w_λ^cl − 1| ≤ C · h² · k    (uniform in λ ⊢ k)
 
-    For h²·k < 1 (which holds for all k of interest since h ≈ 0.2):
-    |w_λ/w_λ^cl - 1| ≤ 3 · C · h² · k
+    **This is conjectural** and known to fail for partitions with
+    long hooks (≥ 5) because the linear-in-m bound on [m]_q/m
+    fails for m ≥ 5 (see qInt_ratio_upper / qInt_ratio_bound_small).
 
-    This means the q-Plancherel measure approximates the classical
-    Plancherel measure within O(h²·k). -/
-theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
+    The convergence proof for branching fractions does **not**
+    rely on this uniform bound — it relies on R² cancellation in
+    numerator and denominator (see header).  This conjecture is
+    retained as a target for tighter per-partition control. -/
+theorem wedderburn_weight_perturbation_conj (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0) :
     |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook evaluation
-  -- Follows from qDim_ratio_bound applied twice (d_q² in numerator)
-  -- and qFact_ratio_bound for [k]! in denominator.
+  sorry -- Ref: [manuscript] §QHookBound — conjectural per-partition bound;
+        -- branching-fraction convergence uses R² cancellation, not this bound.
 
 /-! ## §5  Convergence rate -/
 
