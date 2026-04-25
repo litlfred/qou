@@ -140,7 +140,7 @@ to that conjecture via:
 
 **Required infrastructure**:
 - The five sub-conjectures above (or worked examples).
-- A `Functor` instance from `QOU_𝐍𝐨^ε` to `QOU_ℝ` in Lean.
+- A `Functor` instance from `QOU_No^ε` to `QOU_ℝ` in Lean.
 - `CategoryTheory.MonoidalFunctor` interaction with $\mathrm{St}$.
 
 **Falsification path**: exhibit an $\varepsilon$-relaxed surreal
