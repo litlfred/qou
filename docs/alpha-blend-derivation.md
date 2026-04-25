@@ -629,6 +629,52 @@ $\sum_{\lambda \text{ Wigner}} w_\lambda \chi_\lambda$ at each Hecke
 level $k = 4, 6, \ldots$ to capture pairing terms beyond the (sym,
 std, alt) projections.
 
+## 6.8 Refinement: inter-only Φ + Wigner partition correction
+
+Two refinements implemented in
+[`wedderburn_3term_inter_only.py`](../folio-assistant/computations/wedderburn_3term_inter_only.py):
+
+1. **Inter-nucleon-only Φ.** Subtract free-constituent intra-nucleon
+   contributions to avoid double-counting the quark confinement
+   self-energy already in CODATA $m_p, m_n$. By construction free
+   nucleons have $\Phi = 0$, so the formula reproduces CODATA $m_p$
+   and $m_n$ exactly for $A = 1$.
+2. **Wigner correction.** Add $\Delta_W = -m_e \cdot [3]_q [2]_q^2 \cdot \min(Z,N)/A$
+   from the self-conjugate $(2,2) \vdash 4$ partition (paper
+   [wigner-np-pairing](../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md)).
+   Numerically $\Delta_W^{\text{per pair}} = 6.29$ MeV at $q_0$.
+
+| Isotope | Φ_1 | Φ_2 | Φ_3 | binding | Δ_W | M_pred | err |
+|---|---|---|---|---|---|---|---|
+| ¹H | 0 | 0 | 0 | 0 | 0 | 938.78 | **0.000%** |
+| n | 0 | 0 | 0 | 0 | 0 | 939.57 | **0.000%** |
+| D | +1.40 | +0.011 | 0 | +4.99 | −3.14 | 1880.19 | +0.217% |
+| T | −1.30 | +0.022 | −0.21 | −5.38 | −2.10 | 2810.44 | **+0.036%** |
+| ³He | −1.12 | +0.022 | +0.21 | −4.65 | −2.10 | 2810.38 | **+0.035%** |
+| ⁴He | +3.14 | +0.044 | 0 | +10.77 | −3.14 | 3764.32 | +0.963% |
+
+**Headlines:**
+
+- **np splitting exact.** $M_{\text{pred}}(n) - M_{\text{pred}}(¹H) + m_e
+  = +1.293332$ MeV = CODATA. By construction, since inter-only $\Phi$
+  preserves constituent input.
+- **T, ³He sub-permille.** Both improve from ±0.25 % to ±0.04 % with
+  inter-only convention + Wigner.
+- **D, ⁴He still problematic.** Wrong-sign binding for even-A Z=N
+  systems. The $\Phi_1$ term flips sign for self-conjugate p-n
+  configurations.
+- **Φ_3 numerically negligible.** With inter-only chains, the chirality
+  contribution $\alpha H_A^2 \Phi_3$ is < 1 % of binding for all
+  isotopes. The chirality channel labels the S-odd subspace
+  conceptually but is not the numerical carrier of np splitting; the
+  splitting comes from constituent input + $\Phi_1$.
+
+**Open puzzle (D, ⁴He sign flip):** the per-generator $\Phi_1$ for
+self-conjugate (Z=N) atoms is positive, giving repulsive binding.
+Likely diagnosis: an additional partition correction beyond (2,2)⊢4
+is needed for fully-paired systems, or the $\Phi_1$ inter-only
+construction over-counts in symmetric cases.
+
 ## 7. Integrated formal derivation (everything together)
 
 The complete derivation chain, top-down:
