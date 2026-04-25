@@ -9,9 +9,6 @@ Adapt ALL responses accordingly:
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
-- **Queue, don't pivot.** When a new request arrives mid-task, add it to the
-  todo list and finish the current task first. Only switch if the user says
-  "pivot", "stop", "switch now", or similar explicit interrupt.
 
 This repository is a formal mathematics paper with:
 - **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source

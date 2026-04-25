@@ -148,6 +148,7 @@ def fit_single_level_dominance(level_data_by_iso, combined_rows):
     name_map = {
         "p": "p", "n": "n", "D atom": "D",
         "T atom": "T", "3He atom": "3He",
+        "4He atom": "4He", "6Li atom": "6Li", "7Li atom": "7Li",
     }
     rows_by_iso = {r["isotope"]: r for r in combined_rows}
 

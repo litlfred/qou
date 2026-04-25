@@ -1,7 +1,7 @@
 {
   "computation": "jsj-verification",
   "description": "Search SnapPy's LinkExteriors census for hyperbolic link manifolds whose volume matches atomic binding / density targets.  Tests two density hypotheses (m_e, 2m_e).  Identifies candidate JSJ-decomposition link representatives per atom.  The 2m_e density gives match A\u00b78G for doubly-magic atoms at high precision.",
-  "timestamp": "2026-04-23T23:37:18.856084+00:00",
+  "timestamp": "2026-04-20T16:36:07.971344+00:00",
   "parameters": {
     "m_e_MeV": 0.51099895,
     "Catalan_G": 0.915965594177219,
@@ -6540,120 +6540,105 @@
       "crossings": 6,
       "cusps": 1,
       "volume": 4.400832516123045,
-      "err_pct": 1.0903103596998822,
-      "volume_50digit": "4.4008325161230461014412038656409280339834854185165"
+      "err_pct": 1.0903103596998822
     },
     {
       "name": "8_20",
       "crossings": 8,
       "cusps": 1,
       "volume": 4.124903251807677,
-      "err_pct": -5.2479846935137155,
-      "volume_50digit": "4.1249032518076761555058998488693781629294776466641"
+      "err_pct": -5.2479846935137155
     },
     {
       "name": "7_3",
       "crossings": 7,
       "cusps": 1,
       "volume": 4.592125697027061,
-      "err_pct": 5.484453276167219,
-      "volume_50digit": "4.5921256970270625501966139946554737323543603265433"
+      "err_pct": 5.484453276167219
     },
     {
       "name": "6^2_2",
       "crossings": 6,
       "cusps": 2,
       "volume": 4.059766425638614,
-      "err_pct": -6.744224768352382,
-      "volume_50digit": "4.0597664256386145000848102170980811437667572301212"
+      "err_pct": -6.744224768352382
     },
     {
       "name": "7^2_1",
       "crossings": 7,
       "cusps": 2,
       "volume": 4.74949998187444,
-      "err_pct": 9.09945458320912,
-      "volume_50digit": "4.7494999818744385084980865556375718851941577840553"
+      "err_pct": 9.09945458320912
     },
     {
       "name": "8^2_2",
       "crossings": 8,
       "cusps": 2,
       "volume": 4.851170757332738,
-      "err_pct": 11.4349059342742,
-      "volume_50digit": "4.85117075733273756705832705211531247884528302777"
+      "err_pct": 11.4349059342742
     },
     {
       "name": "8_2",
       "crossings": 8,
       "cusps": 1,
       "volume": 4.935242678280655,
-      "err_pct": 13.366098850620014,
-      "volume_50digit": "4.9352426782806543574780677738418359866236234648238"
+      "err_pct": 13.366098850620014
     },
     {
       "name": "7^2_8",
       "crossings": 7,
       "cusps": 2,
       "volume": 3.6638623767088756,
-      "err_pct": -15.838427520295978,
-      "volume_50digit": "3.6638623767088760602184140597295364430965974971267"
+      "err_pct": -15.838427520295978
     },
     {
       "name": "8^2_15",
       "crossings": 8,
       "cusps": 2,
       "volume": 3.6638623767088756,
-      "err_pct": -15.838427520295978,
-      "volume_50digit": "3.6638623767088760602184140597295364430965974971267"
+      "err_pct": -15.838427520295978
     },
     {
       "name": "7_4",
       "crossings": 7,
       "cusps": 1,
       "volume": 5.137941201873416,
-      "err_pct": 18.022230749385564,
-      "volume_50digit": "5.1379412018734177698413483394748450356496750927357"
+      "err_pct": 18.022230749385564
     },
     {
       "name": "8_3",
       "crossings": 8,
       "cusps": 1,
       "volume": 5.23868410079844,
-      "err_pct": 20.33636810443272,
-      "volume_50digit": "5.2386841007984401554864731063661609234225336039123"
+      "err_pct": 20.33636810443272
     },
     {
       "name": "8_1",
       "crossings": 8,
       "cusps": 1,
       "volume": 3.4272052462740157,
-      "err_pct": -21.274613213991,
-      "volume_50digit": "3.4272052462740162198635395900533060307058393707238"
+      "err_pct": -21.274613213991
     },
     {
       "name": "6^2_3",
       "crossings": 6,
       "cusps": 2,
       "volume": 5.333489566898118,
-      "err_pct": 22.514118327078204,
-      "volume_50digit": "5.3334895668981195815934249252213000881967677771053"
+      "err_pct": 22.514118327078204
     },
     {
       "name": "6^3_1",
       "crossings": 6,
       "cusps": 3,
       "volume": 5.33348956689812,
-      "err_pct": 22.514118327078247,
-      "volume_50digit": "5.3334895668981195815934249252213000881967677771053"
+      "err_pct": 22.514118327078247
     },
     {
       "name": "8^2_16",
       "crossings": 8,
       "cusps": 2,
       "volume": 5.33348956689812,
-      "err_pct": 22.514118327078247,
-      "volume_50digit": "5.3334895668981195815934249252213000881967677771053"
+      "err_pct": 22.514118327078247
     },
     {
       "name": "8^3_8",
@@ -6662,10 +6647,5 @@
       "volume": 5.33348956689812,
       "err_pct": 22.514118327078247
     }
-  ],
-  "high_precision": {
-    "method": "SnapPy ManifoldHP.volume() via M.high_precision()",
-    "digits": 50,
-    "note": "volume_50digit field on each deuterium candidate carries the verified 50-digit hyperbolic volume when SnapPy is available; null otherwise."
-  }
+  ]
 }
