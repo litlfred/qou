@@ -43,6 +43,16 @@ is therefore identically zero in the classical limit, and the
 mass formula degenerates to the two surviving $S$-even invariants
 $\Phi_1$ (trace) and $\Phi_2$ (determinant).
 
+**Companion reading.**
+The crossing-energy interpretation of the commutative limit
+([commutative crossing energy](#rem:commutative-crossing-energy))
+shows that the same vanishing $H_A \to 0$ corresponds geometrically
+to the unit-circle parameterisation $q = e^{i\theta}$, where the
+crossing weight $q - q^{-1} = 2i\sin\theta$ becomes pure imaginary.
+The two readings agree: the chirality channel collapses to zero in
+the strict commutative limit, while a unit-circle deformation
+recovers a non-trivial $\mathrm{U}(1)$ phase.
+
 **Diagnostic application.**
 The commutative limit provides a structural test: any feature of
 the formula that persists as $q \to 1$ is independent of the

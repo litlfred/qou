@@ -14,5 +14,6 @@ export default proposition({
     "prop:frobenius-s-classification",
     "prop:three-parameters-wedderburn",
     "prop:confined-knot-binding",
+    "conj:shell-correction-term-seven",
   ],
 });

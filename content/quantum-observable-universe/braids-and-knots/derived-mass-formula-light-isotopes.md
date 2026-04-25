@@ -105,3 +105,12 @@ $[3]_q^2$ candidates (see witnesses
 but each such patch involves a discrete choice between several
 algebraically-natural variants — hence is technically fitted (model
 selection).
+
+**Structural extension to $A \geq 5$.**
+The shell-correction conjecture
+([Term 7 shell correction](#conj:shell-correction-term-seven))
+identifies the binding gap at $A \geq 5$ with the GB-filtration
+level $\ell = 5$ (height-6 partitions) of the brane-tower
+spectral sequence.  Adding the conjectural Term 7 to the formula
+above is expected to bridge the binding gap structurally; the
+specific shadow-price form is open research.

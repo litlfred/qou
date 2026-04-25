@@ -11,5 +11,6 @@ export default corollary({
     "prop:frobenius-s-classification",
     "thm:wedderburn-mass-formula",
     "def:commutative-qou",
+    "rem:commutative-crossing-energy",
   ],
 });
