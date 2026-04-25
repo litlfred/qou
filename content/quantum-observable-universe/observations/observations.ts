@@ -78,9 +78,6 @@ export default chapter({
         "terminal-resolution-proof",
         "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
-        "bw-mass-decomposition-dictionary",
-        "bw-empirical-misses",
-        "strutinsky-from-graded-trace",
       ],
     }),
 

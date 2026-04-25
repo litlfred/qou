@@ -23,4 +23,5 @@ export default remark({
     "def:hyperelliptic-quintic",
   ],
   interprets: "def:crossing-energy",
+  cites: ["satula1997"],
 });

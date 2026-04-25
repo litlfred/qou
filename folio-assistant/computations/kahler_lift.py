@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
 """
-DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
-
-See docs/phi-q-tower-deprecation.md.  Kähler lift on aggregated
-V̂_i(q) is legacy Φ_q-tower infrastructure.  Retained — may
-return for pentagon-defect work (Phase 2 of path-to-1ppb).
-
-─────────────────────────────────────────────────────────────────
-
 Proper Kähler-differential jet lift with analytic q-derivatives.
 
 Supersedes the Markov-stabilization stub lift_V_markov.  For the
@@ -277,11 +269,8 @@ if __name__ == "__main__":
                  a_lift["V1"], f_lift["V1"]),
                 ("Kähler-2nd (+ℏq²·(q²d²+qdV)/2)",
                  a_lift["V2"], f_lift["V2"])]:
-            # Level 1: transient only (prop:descended-level-zero).
-            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode,
-                                     include_desc=False)
-            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode,
-                                     include_desc=False)
+            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode)
+            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode)
             delta_1 = m_f - m_a
             # Apply ℏ_q² brane scaling (level 1)
             tower_1_MeV = E_0_BETA_DECAY_MEV * HBAR_Q_SQ * delta_1
@@ -310,11 +299,8 @@ if __name__ == "__main__":
             ("Kähler-2nd (+ℏq²·(q²d²+qdV)/2)",
              a_lift["V2"], f_lift["V2"], 5)]:
         for pair_mode in ["adjacent", "full"]:
-            # Level 1: transient only (prop:descended-level-zero).
-            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode,
-                                     include_desc=False)
-            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode,
-                                     include_desc=False)
+            m_a = tower_mass_level(V_a_lift, pair_mode=pair_mode)
+            m_f = tower_mass_level(V_f_lift, pair_mode=pair_mode)
             delta_1 = m_f - m_a
             tower_1_MeV = E_0_BETA_DECAY_MEV * HBAR_Q_SQ * delta_1
             B_total = canon_MeV + tower_1_MeV

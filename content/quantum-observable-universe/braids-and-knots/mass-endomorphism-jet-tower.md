@@ -19,7 +19,7 @@ in the prop: it is the intended content.
 
 $q$ calculations are not linear: the Hecke relation
 $\sigma_i^2 = H_A \sigma_i + 1$ is quadratic, and the pentagon
-identity of $\Phi_q$ ([quantum Bloch group](#rem:quantum-bloch-group))
+identity of $\Phi_q$ ([quantum Bloch group](#def:quantum-bloch-group))
 closes on pairs.  **Per jet level**, the transient contribution
 therefore contains:
 
@@ -39,9 +39,7 @@ $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat\tau_n$ (the modes
 with no pre-image at level $n$, cf.
 ([descent involution](#def:descent-involution))).  Including a
 separate descended product at every jet level would double-count
-the level-$0$ holonomy.  The explicit derivation — iterating the
-idempotent $\hat\tau_n$ down to the base — is given in
-([descended level-0 only](#prop:descended-level-zero)).
+the level-$0$ holonomy.
 
 A triple or quadruple interaction at level $n$ is not an
 independent order-3/4 term; it ascends to jet level $n+1$ as a
@@ -51,7 +49,7 @@ level-$(n{+}1)$ contribution in the tower sum.
 ## Pentagon ascension of higher-order interactions
 
 The quantum dilogarithm satisfies the **pentagon identity**
-([quantum Bloch group](#rem:quantum-bloch-group)): for operators
+([quantum Bloch group](#def:quantum-bloch-group)): for operators
 $u, v$ with $uv = q\,vu$,
 
 $$
@@ -119,10 +117,7 @@ by the Markov-trace factorization theorem
 
 Both cases support an independent blow-up centre at spectral
 coordinate $\hat V_i\hat V_j$, so $\mathcal{P}_n = \{(i,j) : i<j\}$
-at every level.  The stand-alone pair identity
-$\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$ for all $i < j$
-(adjacent or non-adjacent) is given by
-([all-pairs Markov pair](#prop:markov-pair-z2)).
+at every level.
 
 The empirical verification on stable atoms $A \geq 6$:
 
@@ -154,20 +149,14 @@ cubic terms at level $n$
    if $|\Delta^{(n)}| \leq \Delta_{\max}$ for all $n$, then the
    $N$-term truncation error is
    $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
-   An **explicit $\Delta_{\max}$** from operator-norm estimates
-   on the Hecke standard representation is given in
-   ([uniform $\Delta_{\max}$ bound](#prop:delta-max-uniform-bound)),
-   closing the conditional in the archimedean (SDP rank-1)
-   regime.  Empirically the bound also holds (roughly constant)
-   on light atoms and is saturated within a factor of 2 on
-   $\mathrm{D}, \mathrm{T}, {}^3\mathrm{He}$.
+   The remaining open piece is to prove the uniform bound on
+   $\Delta^{(n)}$ itself; empirically it holds (and is roughly
+   constant) on light atoms.
 2. **Pentagon $\to$ uv-commutation**: the pentagon identity as
-   stated requires $uv = q\,vu$.  The commutation is verified
-   on the $q$-eigenblock $B_\lambda^{\mathrm{trans}}$ via the
-   Hecke braid relation plus descent splitting in
-   ([pentagon $uv = q\,vu$](#prop:pentagon-uv-commutation)).
-   The std ($2\times 2$) block check and sharpness of the
-   residual $R_q$ remain open.
+   stated requires $uv = q\,vu$; verifying this relation for
+   traced volumes $\hat V$ at generic jet level needs explicit
+   check (expected to follow from the Hecke braid/commutation
+   on generators, but not written out).
 3. **Descent involution on pairs**: does $\hat\tau_n$ map some
    level-$(n+1)$ pairs back to level-$n$ singletons (or trivial)?
    The pentagon ascension gives an upper bound on the level-$n+1$

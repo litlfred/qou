@@ -140,6 +140,7 @@ export default chapter({
       blocks: [
         "crossing-energy",
         "crossing-energy-trefoil",
+        "commutative-crossing-energy",
         "coulomb-charge",
         "skein-crossing-asymmetry-prop",
         "skein-crossing-asymmetry",
@@ -418,6 +419,7 @@ export default chapter({
         "gram-matrix-spectral-connection",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
+        "shell-correction-term-seven",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
         "deuteron-first-principles",
@@ -453,7 +455,6 @@ export default chapter({
         "weight-identification-consequences",
         "u1-equivariant-reduction",
         "u1-phase-tube",
-        "commutative-crossing-energy",
         // ── Mirror bundle ───────────────────────────────────────────
         "descent-mirror-intro",
         "e-minus-one",

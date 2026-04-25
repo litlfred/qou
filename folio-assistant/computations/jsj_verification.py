@@ -40,23 +40,6 @@ CATALAN_G = 0.915965594177219015054603514932
 VOL_BORROMEAN = 8.0 * CATALAN_G
 M_E_MEV = 0.51099895
 
-
-def vol_high_precision(M, digits: int = 50):
-    """Return (float_vol, hp_str_or_None) for a SnapPy manifold.
-
-    Uses SnapPy's ManifoldHP via M.high_precision() when available, which
-    gives volumes verified to 50+ decimal digits (via interval arithmetic).
-    Falls back to the standard float when HP support is unavailable.
-    """
-    from hp_volume import hp_volume_of_manifold
-    try:
-        v_float = float(M.volume().real) if hasattr(M.volume(), "real") \
-            else float(M.volume())
-    except (AttributeError, RuntimeError, ValueError):
-        v_float = float("nan")
-    hp_str = hp_volume_of_manifold(M, digits=digits)
-    return v_float, hp_str
-
 # Candidate targets — B/m_e (density=m_e) and B/(2m_e) (pair-threshold)
 TARGETS = [
     ("D",    2.22456612,  2,),
@@ -185,19 +168,10 @@ if __name__ == "__main__":
                         )
             except Exception:
                 continue
-        # Recompute top candidates at 50-digit precision via ManifoldHP.
         for c in sorted(candidates_D,
                           key=lambda x: abs(x["volume"] - D_tgt))[:15]:
-            try:
-                Mhp = _snappy.Manifold(c["name"])
-                _, vol_50 = vol_high_precision(Mhp, digits=50)
-            except Exception:
-                vol_50 = None
-            c["volume_50digit"] = vol_50
-            hp_tag = f"  HP={vol_50}" if vol_50 else ""
             print(f"  {c['name']:>14} n_cusps={c['cusps']:>2}  "
-                  f"Vol={c['volume']:>9.4f}  err={c['err_pct']:+.3f}%"
-                  f"{hp_tag}")
+                  f"Vol={c['volume']:>9.4f}  err={c['err_pct']:+.3f}%")
 
     witness = {
         "computation": "jsj-verification",
@@ -226,15 +200,6 @@ if __name__ == "__main__":
         "matches_2me_density_tol_10pct": matches_2me,
         "deuterium_candidates": sorted(
             candidates_D, key=lambda x: abs(x["volume"] - D_tgt))[:30],
-        "high_precision": {
-            "method": "SnapPy ManifoldHP.volume() via M.high_precision()",
-            "digits": 50,
-            "note": (
-                "volume_50digit field on each deuterium candidate carries "
-                "the verified 50-digit hyperbolic volume when SnapPy is "
-                "available; null otherwise."
-            ),
-        },
     }
     out = Path(__file__).parent / "jsj-verification.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))

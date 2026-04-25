@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
 """
-DEPRECATED (2026-04-24) — Φ_q-tower path paused; use JSJ pipeline.
-
-See docs/phi-q-tower-deprecation.md.  Retained — may return for
-pentagon-defect work (Phase 2 of path-to-1ppb).
-
-─────────────────────────────────────────────────────────────────
-
 End-to-end atom binding table via FAST canonical Markov trace
 (Ocneanu ω_λ) + multi-brane Φ_q tower (ℏ_q² damping).
 
@@ -89,11 +82,8 @@ def binding_fast(Z: int, N: int, *, pair_mode: str = "full",
         n += 1
         V_a_n = lift_V_markov(V_atom_0, n)
         V_f_n = lift_V_markov(V_free_0, n)
-        # Level n ≥ 1: transient only (prop:descended-level-zero).
-        m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode,
-                                   include_desc=False)
-        m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode,
-                                   include_desc=False)
+        m_a_n = tower_mass_level(V_a_n, pair_mode=pair_mode)
+        m_f_n = tower_mass_level(V_f_n, pair_mode=pair_mode)
         delta_n = m_f_n - m_a_n
         scale_n = brane_scaling(n)
         term_n = scale_n * delta_n
