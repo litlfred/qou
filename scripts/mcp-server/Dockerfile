@@ -173,8 +173,15 @@ COPY .github/scripts/requirements.txt .github/scripts/requirements.txt
 COPY --from=hecke-build /hecke-bins/ /usr/local/bin/
 
 # Resolve dependencies and warm the Mathlib olean cache for the
-# whole folio workspace (QOU + UGB + Fred2005).
-RUN lake update && lake exe cache get || true
+# whole folio workspace (QOU + UGB + Fred2005).  Failures are
+# tolerated (project policy: the image must still build with TeX,
+# Bun, and hecke-engine usable even when Lean steps regress) but
+# we surface a loud warning so a silently un-warmed image is
+# obvious in the build log.
+RUN lake update \
+    || echo "WARNING: 'lake update' failed; manifest may be stale" >&2; \
+    lake exe cache get \
+    || echo "WARNING: 'lake exe cache get' failed; Mathlib oleans NOT pre-warmed — first lean_build inside the container will be slow" >&2
 RUN cd scripts/mcp-server && bun install
 RUN cd content && bun install
 
@@ -187,8 +194,12 @@ COPY . .
 
 # Build the entire folio workspace from the root. `lake build`
 # with no target builds `defaultTargets = ["QOU", "UGB", "Fred2005"]`,
-# baking oleans for every paper into the image.
-RUN lake build || true
+# baking oleans for every paper into the image.  Failures are
+# tolerated for the same project-policy reason as `lake update`
+# above, but we surface a loud warning so a partially-baked
+# image is obvious in the build log.
+RUN lake build \
+    || echo "WARNING: 'lake build' failed; one or more paper packages did NOT compile — image will publish without warm oleans for the failing target(s)" >&2
 
 # Verify lean-lsp-mcp works
 RUN uvx lean-lsp-mcp --help > /dev/null 2>&1 || echo "lean-lsp-mcp not yet cached"
