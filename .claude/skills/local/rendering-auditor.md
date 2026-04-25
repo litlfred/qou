@@ -102,7 +102,7 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 | All math symbols used are defined in the paper or glossary | **warning** | Extract symbols from math AST, cross-ref against glossary.json and notation remarks |
 | Notation register compliance (CLAUDE.md §7aa) | **error** | Verify font register: fraktur for particles/energy/mass, bold for categories, calligraphic for bundles, etc. |
 | No notation collisions | **error** | Check for `$c$` used as charm (should be `$\mathfrak{c}$`), `$E$` standalone (forbidden), `$\gamma$` for vortex (should be `$\varrho$`), `$m$` for categorical mass (should be `$\mathfrak{m}$`) |
-| Hecke-Skein convention (CLAUDE.md §7a) | **error** | Hecke generator is `$T$` not `$\sigma$` for the relation; Jones polynomial is `$J_K(q)$` not `$V_K(t)$` |
+| Hecke-Skein convention (CLAUDE.md §7a) | **error** | Hecke generator is `$\sigma_i$` (not `$T$`); same symbol serves braid generator in $B_n$ and its image in $H_n(q)$. Jones polynomial is `$J_K(q)$` not `$V_K(t)$` |
 | Category notation uses bold `$\mathbf{C}$` | **error** | Flag calligraphic `$\mathcal{C}$` for categories (reserved for sheaves/bundles) |
 | Fibre functor is `$\tau$` | **warning** | Flag `$\omega$` or `$U$` used as fibre functor |
 | QOU tuple is `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **warning** | Flag deprecated 5-tuple `$(M, \theta, G, P, E)$` |

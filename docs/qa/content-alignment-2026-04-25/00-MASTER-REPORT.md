@@ -23,13 +23,22 @@ The largest chapters (Ch 4 Braids 263 .md, Ch 9 Descartes 184 .md, Ch 2 QOU 205 
 
 | Severity | Count |
 |---|---|
-| **Blocker** (factual/notational error breaking a claim) | **7** |
-| **Major** (voice/alignment/notation violation a referee would catch) | **23** |
+| **Blocker** (factual/notational error breaking a claim) | **1** |
+| **Major** (voice/alignment/notation violation a referee would catch) | **17** |
 | **Minor** (stylistic, register ambiguity, hedge) | **40** |
 | **Simplification** (optional cleanup) | **55** |
-| **Total** | **125** |
+| **Total** | **113** |
 
 Plus 2 back-matter directories flagged for §4b notation-introduction review (low severity).
+
+> **Convention update (2026-04-25, post-audit):** CLAUDE.md §7a was flipped
+> to use **σ_i** (was **T**) for Hecke generators, matching standard
+> knot-theory convention. The 6 Ch 4 "blockers" (B-1..B-6) and the Ch 11
+> Hecke-σ major (M-14) recorded in the original audit were written
+> against the old rule. **Under the new convention they are correct as
+> written**, so they have been removed from the active issue list. A
+> bulk flip of stale `T_i` Hecke notation across 36 paper files was
+> applied in the same commit.
 
 ## Per-chapter scoreboard
 
@@ -39,20 +48,20 @@ Plus 2 back-matter directories flagged for §4b notation-introduction review (lo
 | Ch 1 Quantum Universes | 70 | 5 | 0 | 0 | 0 | 0 | **0** | clean ✓ |
 | Ch 2 Quantum Observable Universes | 205 | 21 | 0 | 1 | 28 | 10 | 39 | notation cleanup |
 | Ch 3 Lifting and Descent | 99 | 11 | 0 | 1 | 2 | 5 | 8 | minor |
-| Ch 4 Braids and Knots | 263 | 24 | **6** | 2 | 0 | 5 | 13 | **BLOCKERS** (Hecke σ→T) |
+| Ch 4 Braids and Knots | 263 | 24 | 0 | 2 | 0 | 5 | 7 | clean post-σ-flip; 2 majors |
 | Ch 5 Models of QOUs | 59 | 5 | 0 | 0 | 0 | 5 | 5 | clean (simp only) |
 | Ch — Algebraic Substrate | 62 | 5 | 0 | 5 | 0 | 4 | 9 | notation cleanup |
 | Ch — Fluid Dynamics | 56 | — | 0 | 0 | 3 | 3 | 6 | minor (γ→ϱ) |
 | Ch 8 Information Theory | 74 | 12 | 0 | 2 | 2 | 4 | 8 | stubs |
 | Ch 9 Descartes Universe | 184 | — | 0 | 0 | 1 | 5 | 6 | clean (simp only) |
 | Ch 10 Particle Interactions | 75 | 9 | 0 | 0 | 1 | 3 | 4 | minor |
-| Ch 11 Observations | 108 | 16 | 0 | 4 | 2 | 5 | 11 | **§7ab violations** |
+| Ch 11 Observations | 108 | 16 | 0 | 3 | 2 | 5 | 10 | §7ab violations |
 | Ch 12 Molecular Construction | 25 | 7 | **1** | 6 | 0 | 5 | 12 | **BLOCKER + bold-E** |
 | Ch q-Geometric Langlands | 27 | 6 | 0 | 0 | 0 | 0 | **0** | clean ✓ |
 | Back matter (glossary + appendices) | 92 | — | 0 | 0 | 0 | 0 | (2 review) | mostly compliant |
-| **TOTAL** | **~1402** | **— ** | **7** | **23** | **40** | **55** | **125** | |
+| **TOTAL** | **~1402** | **— ** | **1** | **17** | **40** | **55** | **113** | |
 
-Two chapters are publication-ready as-is (Ch 1, Ch 13 Langlands). Two carry blockers (Ch 4, Ch 12).
+Two chapters are publication-ready as-is (Ch 1, Ch 13 Langlands). One blocker remains (Ch 12 LaTeX rendering in JSDoc).
 
 ## Issue tracker (all blockers + majors)
 
@@ -60,13 +69,11 @@ Two chapters are publication-ready as-is (Ch 1, Ch 13 Langlands). Two carry bloc
 
 | ID | Chapter | File | Line | Issue | Fix |
 |---|---|---|---|---|---|
-| B-1 | Ch 4 | `hecke-normal-form.md` | 6 | Hecke relation written `\sigma_i^2 \to (q-q^{-1})\sigma_i + \mathbf{1}` | Replace with `T_i^2 = (q-q^{-1})T_i + \mathbf{1}` per `CLAUDE.md §7a` |
-| B-2 | Ch 4 | `feynman-qou-dictionary.md` | 41 | Same `\sigma_i^2` Hecke notation | Replace with `T_i^2` |
-| B-3 | Ch 4 | `gb-spectral-sequence.md` | 17 | Same | Replace with `T_i^2` |
-| B-4 | Ch 4 | `spectral-sequence-h3-explicit.md` | 55 | Same | Replace with `T_i^2` |
-| B-5 | Ch 4 | `atom-knot-unique.md` | 19 | Inline Hecke ref uses `\sigma_i^2` | Replace with `T_i^2` |
-| B-6 | Ch 4 | `quantum-bloch-group.md` | 21 | `\sigma_i^2 = H_A \sigma_i + 1` (also undefined `H_A`) | Replace with `T_i^2 = (q-q^{-1})T_i + 1` |
 | B-7 | Ch 12 | `molecular-construction.ts` | 12 | Molecular formulas (`H_2`, `C_6H_6`) in JSDoc not TeX-rendered | Wrap in `$...$` |
+
+> ~~B-1..B-6 (Ch 4 Hecke `\sigma_i^2`)~~ — **resolved by convention flip**.
+> CLAUDE.md §7a was changed to use `σ_i` for Hecke generators, matching
+> standard knot-theory convention. The paper was already correct.
 
 ### Majors
 
@@ -80,7 +87,7 @@ Two chapters are publication-ready as-is (Ch 1, Ch 13 Langlands). Two carry bloc
 | M-10 | Ch 4 | (chapter) | — | Transfer-matrix enumeration "7 on $\Sigma_4$" claimed in intent but never enumerated |
 | M-11 | Ch 4 | (chapter) | — | Mass formula categorical→volume bridge implicit; not worked step-by-step |
 | M-12, M-13 | Ch 8 | `planck-scale-computation.md`, Sec 12 (Quantum Geometry Variants) | — | Stubs marked as content blocks; develop or relegate |
-| M-14 | Ch 11 | `tritium-qvalue-audit.md` | 24 | Hecke relation in table calls `\sigma^{-1} = \sigma - h` "Hecke relation" — should use `T` per §7a |
+| ~~M-14~~ | ~~Ch 11~~ | `tritium-qvalue-audit.md` | 24 | ~~Hecke relation `\sigma^{-1} = \sigma - h`~~ — **resolved by σ-flip**: σ_i is now the canonical Hecke generator |
 | M-15 | Ch 11 | `neutron-proton-mass-splitting.md` | 54 | `\Delta m = 3.7445 \times 0.3476 = 1.302$ MeV` — derived value with `=`, no error term (§7ab) |
 | M-16 | Ch 11 | `qvalue-observation.md` | 28 | `\mathcal{Q}_{\mathrm{bare}} = 0.944$ MeV` — derived; needs `\approx` |
 | M-17 | Ch 11 | `tritium-qvalue-audit.md` | 121 | `\kappa_q = 0.018$ MeV` (table cell) — derived; needs `\approx` |
@@ -108,7 +115,7 @@ CLAUDE.md §7aa rules applied:
 | Categories `\mathbf{C}` | mostly clean | 28 bare `SU(2)` instances in Ch 2 should be `\mathrm{SU}(2)` |
 | Fibre functor `\tau` | clean | no `\omega`/`U` slips found |
 | QOU tuple `(\mathbf{C}, \theta, G, \mathcal{S})` | clean | no deprecated 5-tuple `(M, θ, G, P, E)` found |
-| Hecke generator `T` (§7a) | **violated** | 6 blockers in Ch 4 + 1 major in Ch 11 |
+| Hecke generator `σ_i` (§7a, post-flip) | clean | paper already used `σ_i`; bulk T_i→σ_i flip applied to 36 stale-notation files |
 | Jones polynomial `J_K(q)` | clean | no `V_K(t)` or bracket-`A` |
 | Hadron `\mathfrak{H}` | clean | |
 | Mass `\mathfrak{m}` | mostly clean | Ch 11 mixes `m_e` (CODATA) with `\mathfrak{m}` (categorical); register split needed |
