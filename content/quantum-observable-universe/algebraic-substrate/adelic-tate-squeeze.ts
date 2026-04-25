@@ -7,8 +7,6 @@ export default remark({
   interprets: "thm:hasse-weil-bound",
   uses: [
     "rem:bsd-surreal-bound",
-    "rem:fibre-functor-rigidity",
-    "def:standard-part-functor",
     "prop:vol-through-tau",
   ],
   tags: [
@@ -22,5 +20,5 @@ export default remark({
     "squeeze",
     "local-global",
   ],
-  cites: ["conway1976", "tate1967"],
+  cites: ["conway1976", "tate1967", "kontsevich1995", "denef-loeser2001"],
 });

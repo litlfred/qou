@@ -7,10 +7,7 @@ export default definition({
     ref: "qou:QOU.AlgebraicSubstrate.QFromEpsilon",
     validation: "not_checked",
   },
-  uses: [
-    "def:reeb-epsilon",
-    "conj:infinitesimal-frobenius",
-  ],
+  uses: ["def:reeb-epsilon"],
   tags: [
     "substrate-parameter",
     "surreal",
