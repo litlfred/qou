@@ -323,6 +323,7 @@ export default chapter({
         "binding-scale-catalan",
         "wedderburn-mass-formula",
         "frobenius-s-classification",
+        "commutative-chirality-vanishes",
         "algebraic-quantum-volume",
         "habiro-ring",
         "algebraic-quantum-volume-specialization",
