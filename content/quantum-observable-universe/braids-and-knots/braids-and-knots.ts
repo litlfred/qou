@@ -413,6 +413,7 @@ export default chapter({
         "weight-identification-consequences",
         "u1-equivariant-reduction",
         "u1-phase-tube",
+        "commutative-crossing-energy",
         // ── Mirror bundle ───────────────────────────────────────────
         "descent-mirror-intro",
         "e-minus-one",
