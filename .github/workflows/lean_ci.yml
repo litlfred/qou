@@ -26,27 +26,6 @@
 name: Lean CI
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'lakefile.toml'
-      - 'lean-toolchain'
-      - 'content/quantum-observable-universe/lean/**'
-      - 'content/unital-groebner-bases/lean/**'
-      - 'content/fred2005-formal-groups/lean/**'
-      - 'chapters/**'
-      - 'proof-objects.json'
-      - 'glossary.json'
-      - 'folio-assistant/schemas/**'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'lakefile.toml'
-      - 'lean-toolchain'
-      - 'content/quantum-observable-universe/lean/**'
-      - 'content/unital-groebner-bases/lean/**'
-      - 'content/fred2005-formal-groups/lean/**'
-      - 'chapters/**'
   workflow_dispatch:
 
 permissions:
