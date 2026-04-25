@@ -419,6 +419,7 @@ export default chapter({
         "gb-spectral-sequence",
         "curvature-rank-gb-stratification",
         "spectral-sequence-collapse",
+        "plancherel-term-7-formulation",
         "e-infinity-page-identifications",
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
