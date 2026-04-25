@@ -420,6 +420,7 @@ export default chapter({
         "curvature-rank-gb-stratification",
         "spectral-sequence-collapse",
         "plancherel-term-7-formulation",
+        "unified-curvature-rank-mass-formula",
         "e-infinity-page-identifications",
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
