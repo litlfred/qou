@@ -100,6 +100,25 @@ cd content && bun run pipeline/validate-tex.ts --compile
 cd content && bun run pipeline/validate-tex.ts --json
 ```
 
+## Post-rebase / merge: run the lean-ref migration first
+
+**Before** running validation after a rebase, merge, or cherry-pick
+from upstream, **always run** the idempotent `lean.ref` migration:
+
+```bash
+cd content && bun run migrate-lean-refs
+```
+
+Coexisting forks may have authored content blocks against the legacy
+`lean: { decl: "...", file? }` shape; the migration converts them to
+the package-qualified URI form `lean: { ref: "<pkg>:<Decl>" }` that
+the current Zod schema requires. Running validation first will fail
+with `Lean ref must be "<package>:<Decl.Path>"` errors that are
+trivially fixed by the migration. See CLAUDE.md §0b.
+
+When the schema's Zod error message names this script in its
+output, **do not hand-edit the failing block** — run the script.
+
 ## When to validate
 
 1. **Before commit**: Run validation on changed content objects
@@ -111,6 +130,9 @@ cd content && bun run pipeline/validate-tex.ts --json
 6. **After Lean changes**: Run `bun run scripts/lean-audit.ts` for sorry/trivial/witness audit
 7. **After computation changes**: Run `bun run scripts/witness-audit.ts` for staleness check
    MUST run `validate-tex.ts --file <path>` before considering the task complete
+8. **After rebase / merge from upstream**: **first** run
+   `bun run migrate-lean-refs` (see top of this section), then run
+   `bun run validate` to confirm the schema is clean
 
 ## Adding custom constraints
 

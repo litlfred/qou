@@ -18,6 +18,23 @@ tactic blocks.  It depends on the Ontologist skill having already produced
 a resolved glossary — every term used in theorems must have a unique type
 assignment before formalization can proceed.
 
+### Pre-flight: rebase + lean-ref migration
+
+Before authoring or editing `.lean` siblings, the working branch must
+be on the current `lean.ref` URI shape.  If the branch was rebased
+or merged from upstream, run the idempotent migration **first**:
+
+```bash
+cd content && bun run migrate-lean-refs
+```
+
+When authoring the `.ts` manifest for a new block, set
+`lean: { ref: "<pkg>:<Decl>" }` (never the legacy `decl:` / `file:`
+shape).  Use `<pkg>` from `LEAN_PACKAGES` in
+`folio-assistant/schemas/lean-packages.ts` (`qou`, `ugb`, `fred2005`,
+…).  See CLAUDE.md §0a for the URI grammar and §0b for the rebase
+workflow.
+
 ## When to Use This Skill
 
 - After the Ontologist has produced `glossary.json` and `Glossary.lean`
