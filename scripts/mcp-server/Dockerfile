@@ -108,6 +108,7 @@ FROM base AS hecke-build
 
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     build-essential \
+    m4 \
     libgmp-dev \
     libmpfr-dev \
     libmpc-dev \
