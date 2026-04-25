@@ -142,6 +142,7 @@ export default chapter({
       blocks: [
         "crossing-energy",
         "crossing-energy-trefoil",
+        "commutative-crossing-energy",
         "coulomb-charge",
       ],
     }),
