@@ -27,6 +27,37 @@ do not request external reviews until every earlier step has succeeded.
   result before continuing (`git add` + `git commit --amend --no-edit`
   on the topmost integration commit, or as a follow-up commit if the
   rebase was non-trivial).
+- **Verify** the migration is complete (all three counts must be 0):
+
+  ```bash
+  # 1. Dry-run reports nothing left to migrate
+  cd content && bun run migrate-lean-refs:dry | tail -3
+  # Expected: "Migrated 0 lean refs across 0 files."
+
+  # 2. No legacy `lean: { decl: ... }` shape remains
+  grep -rln 'lean:\s*{[^}]*decl:' content/*/*.ts 2>/dev/null \
+    | grep -v schema/ | grep -v pipeline/ | wc -l
+  # Expected: 0
+
+  # 3. Every `lean.ref` URI uses a registered package prefix
+  python3 -c "
+  import re, glob, json
+  pkgs = re.findall(r'name:\s*\"(\w+)\"', open('folio-assistant/schemas/lean-packages.ts').read())
+  bad = []
+  for f in glob.glob('content/*/*/*.ts'):
+      txt = open(f).read()
+      for m in re.finditer(r'ref:\s*\"([^:\"]+):', txt):
+          if m.group(1) not in pkgs: bad.append(f'{f} → {m.group(1)}')
+  print(f'Unregistered package prefixes: {len(bad)}')
+  for b in bad: print(f'  {b}')
+  "
+  # Expected: 0
+  ```
+
+- If any check is non-zero, **do not proceed to Step 2**. Either run
+  the migration with `--write`, register the missing package in
+  `folio-assistant/schemas/lean-packages.ts` + root `lakefile.toml`, or
+  fix the offending block before continuing.
 
 ## 2. Integrate new content from upstream
 
