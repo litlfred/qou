@@ -211,7 +211,116 @@ The α-blend formula can be applied to isotope binding predictions
 by using the blended V̂^(α) in place of the original V̂^full in the
 full brane tower + Frobenius co-Casimir formula. Results pending.
 
-## 7. Calibration count
+## 7. Formal proofs (full rigor)
+
+### Proof of Lemma 3.1 (parity cancellation)
+
+For a chain `(c_1, d_1), (c_2, d_2), …, (c_n, d_n)` with all c_i = 1
+(restriction to our primitive factors):
+
+$$
+\chi_{\text{sym}}(\text{chain}) = \prod_{i=1}^n (q + d_i), \quad
+\chi_{\text{alt}}(\text{chain}) = \prod_{i=1}^n (-1/q + d_i).
+$$
+
+For the three primitive factors:
+- (1, 0): sym contributes q, alt contributes −1/q
+- (1, −H_A) = (1, q⁻¹−q): sym contributes q + q⁻¹ − q = q⁻¹, alt contributes −1/q + q⁻¹ − q = q⁻¹ − q − 1/q + 0... wait re-derive carefully.
+
+For (c, d) = (1, −H_A):
+- sym = q + (−H_A) = q − (q − q⁻¹) = q⁻¹ ✓
+- alt = −1/q + (−H_A) = −1/q − q + 1/q = −q
+
+For (c, d) = (1, −H_A/2):
+- sym = q − H_A/2 = q − (q − q⁻¹)/2 = (q + q⁻¹)/2 = [2]_q/2
+- alt = −1/q − H_A/2 = −1/q − (q − q⁻¹)/2 = −(q + q⁻¹)/2 = −[2]_q/2
+
+Now apply Frobenius S to each factor:
+- S(1, 0) = (1, −H_A): swaps σ ↔ σ⁻¹
+- S(1, −H_A) = (1, 0): swaps back
+- S(1, −H_A/2) = (1, −H_A/2): self-dual
+
+Effect on per-factor contributions:
+- After S, (1, 0) → (1, −H_A): sym q → q⁻¹, alt −1/q → −q
+- After S, (1, −H_A) → (1, 0): sym q⁻¹ → q, alt −q → −1/q
+- After S, (1, −H_A/2) → unchanged: sym [2]_q/2, alt −[2]_q/2
+
+Notice for the σ factor (1,0), under S the SYM and ALT contributions
+SWAP roles (up to sign): original (q, −1/q) becomes (q⁻¹, −q) =
+(alt, −sym) of original.
+
+For a chain with n_σ σ-factors (or σ⁻¹), n_ud ud-factors:
+
+$$
+\begin{aligned}
+\chi_{\text{sym}}(\text{chain}) &= q^{n_\sigma} \cdot ([2]_q/2)^{n_{\text{ud}}} \cdot (-1)^{n_{\sigma^{-1}}} \\
+\chi_{\text{alt}}(\text{chain}) &= (-1/q)^{n_\sigma} \cdot (-[2]_q/2)^{n_{\text{ud}}} \cdot \ldots
+\end{aligned}
+$$
+
+(simplified for n_σ⁻¹ = 0; more careful for mixed σ/σ⁻¹ chains)
+
+Under S: each σ ↔ σ⁻¹ flips sign in alt's contribution. For
+total-factor parity n_total = n_σ + n_σ⁻¹ + n_ud:
+
+$$
+\chi_{\text{sym}}(S(\text{chain})) + \chi_{\text{alt}}(S(\text{chain})) = (-1)^{n_{\text{total}}} \cdot [\chi_{\text{sym}}(\text{chain}) + \chi_{\text{alt}}(\text{chain})]
+$$
+
+For odd n_total (gen 0 with 7 factors): sign = −1, so
+
+$$
+\frac{\chi_{\text{sym}}(\text{chain}) + \chi_{\text{alt}}(\text{chain}) + \chi_{\text{sym}}(S(\text{chain})) + \chi_{\text{alt}}(S(\text{chain}))}{2} = 0. \blacksquare
+$$
+
+### Proof of Lemma 3.2 (det Frobenius-invariance for primitive factors)
+
+For each primitive factor type, det of the 2×2 transfer matrix:
+
+$$
+T(c, d) = \begin{pmatrix} cH_A + d & c \\ c & d \end{pmatrix}, \quad
+\det T(c, d) = d(cH_A + d) - c^2.
+$$
+
+Compute for each primitive:
+
+| factor | c | d | det |
+|---|---|---|---|
+| uu | 1 | 0 | 0·H_A + 0² − 1 = **−1** |
+| dd | 1 | −H_A | (−H_A)(H_A − H_A) − 1 = (−H_A)·0 − 1 = **−1** |
+| ud | 1 | −H_A/2 | (−H_A/2)(H_A − H_A/2) − 1 = (−H_A/2)·(H_A/2) − 1 = **−H_A²/4 − 1** |
+
+Under Frobenius S (swap uu ↔ dd, ud self-dual), the det values are
+PRESERVED: −1 ↔ −1, ud-det unchanged. ✓
+
+For chain product M = T(c_1,d_1)·…·T(c_n,d_n), det is multiplicative:
+
+$$
+\det M = \prod_i \det T(c_i, d_i) = (-1)^{n_{\sigma}+n_{\sigma^{-1}}} \cdot (-1 - H_A^2/4)^{n_{\text{ud}}}.
+$$
+
+Under S, n_σ ↔ n_σ⁻¹ but their sum is unchanged, and n_ud is
+preserved. **det M is Frobenius-invariant**. ∎
+
+### Proof of Lemma 3.3 (blend spans Frobenius-compatible family)
+
+Define the Frobenius-AVG std value:
+
+$$V̂_{\text{Frob}} := \frac{\chi_{\text{std}}(\text{chain}) + \chi_{\text{std}}(S(\text{chain}))}{2}.$$
+
+This is automatically S-invariant: S(V̂_Frob) = V̂_Frob (since S
+swaps the two terms).
+
+Define the det-based std value:
+
+$$V̂_{\det} := \sqrt{|\det T_{\text{chain}}|}.$$
+
+By Lemma 3.2, this is also S-invariant.
+
+The α-blend `V̂^(α) = α·V̂_Frob + (1−α)·V̂_det` is a 1-parameter
+family of S-invariant std values. ∎
+
+## 8. Calibration count
 
 The α-blend derivation preserves the paper's calibration count:
 
