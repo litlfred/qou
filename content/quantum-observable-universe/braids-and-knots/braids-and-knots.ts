@@ -417,6 +417,7 @@ export default chapter({
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
         "gb-spectral-sequence",
+        "curvature-rank-gb-stratification",
         "e-infinity-page-identifications",
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
