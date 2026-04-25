@@ -23,3 +23,8 @@ level corresponds to one QCD loop order.*
 *At $k = 11$: the model error drops below the $q_0$ measurement
 uncertainty $\delta q/q = 1.22 \times 10^{-9}$.  Beyond $H_{11}$,
 improving the model requires better measurement of $m_\mu/m_e$.*
+
+*Formal asymptotic content. The geometric bound has
+$\ordw\bigl(\mathrm{MAE}(k)\bigr) = -(k-3)\,\ordw(r)$ in the
+surreal valuation; see [Big-O via $\ordw$](#rem:conway-normal-form)
+and the [body asymptotics catalog](#rem:body-asymptotics-catalog).*

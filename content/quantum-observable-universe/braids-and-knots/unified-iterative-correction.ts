@@ -6,9 +6,7 @@ export default proposition({
     "Unified iterative LP-dual correction: per-step Wedderburn " +
     "projection over all partitions $\\lambda \\vdash k$ for " +
     "$k = 2, \\ldots, K$, starting at $A = 1$ (no special cases)",
-  lean: {
-    decl:
-      "QOU.Descartes.ConfinedKnotBinding.Unified.unified_iterative_correction",
+  lean: { ref: "qou:QOU.Descartes.ConfinedKnotBinding.Unified.unified_iterative_correction",
     validation: "not_checked",
   },
   uses: [
@@ -19,6 +17,8 @@ export default proposition({
     "prop:bw-coefficient-shadow-price",
     "prop:mass-endomorphism-tower",
     "prop:nuclear-knot-classification",
+    "rem:conway-normal-form",
+    "rem:body-asymptotics-catalog",
   ],
   cites: [
     "kerov1996",

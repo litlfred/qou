@@ -5,8 +5,7 @@ export default proposition({
   title:
     "Fermion--boson classification by commutator with curvature",
   tags: ["fermion", "boson", "algebraic-filter", "curvature", "classification"],
-  lean: {
-    decl: "QOU.Torsion.algebraic_filter_classification",
+  lean: { ref: "qou:QOU.Torsion.algebraic_filter_classification",
     validation: "not_checked",
   },
   uses: ["rem:q-harmonic-basis-brane"],

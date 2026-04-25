@@ -11,8 +11,7 @@ export default proposition({
     "comparison",
     "beta-stability",
   ],
-  lean: {
-    decl: "QOU.Descartes.stable_neutron_max_error",
+  lean: { ref: "qou:QOU.Descartes.stable_neutron_max_error",
     validation: "not_checked",
   },
   uses: ["prop:integer-stability"],

@@ -15,8 +15,7 @@ export default proposition({
     "CFL",
     "fermi-gas",
   ],
-  lean: {
-    decl: "QOU.Descartes.eos_borromean_cfl",
+  lean: { ref: "qou:QOU.Descartes.eos_borromean_cfl",
     validation: "not_checked",
   },
   uses: [

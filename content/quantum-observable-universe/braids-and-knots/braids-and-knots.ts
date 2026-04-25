@@ -119,8 +119,6 @@ export default chapter({
         "q-casimir-unique-proof",
         "r-matrix-braiding-structure",
         "r-matrix-braiding",
-        "skein-crossing-asymmetry-prop",
-        "skein-crossing-asymmetry",
       ],
     }),
 
@@ -143,6 +141,8 @@ export default chapter({
         "crossing-energy",
         "crossing-energy-trefoil",
         "coulomb-charge",
+        "skein-crossing-asymmetry-prop",
+        "skein-crossing-asymmetry",
       ],
     }),
 
@@ -326,6 +326,12 @@ export default chapter({
         "commutative-chirality-vanishes",
         "derived-mass-formula-light-isotopes",
         "deuteron-binding-frobenius-codim",
+        "hoefsmit-seminormal-form",
+        "figure-eight-branching-rule",
+        "figure-eight-bw-coefficients",
+        "universal-braid-branching",
+        "hoefsmit-scattering-pipeline",
+        "hecke-convergence-bound",
         "algebraic-quantum-volume",
         "habiro-ring",
         "habiro-expansion-atomic",
@@ -447,6 +453,7 @@ export default chapter({
         "weight-identification-consequences",
         "u1-equivariant-reduction",
         "u1-phase-tube",
+        "commutative-crossing-energy",
         // ── Mirror bundle ───────────────────────────────────────────
         "descent-mirror-intro",
         "e-minus-one",

@@ -10,8 +10,7 @@ export default definition({
     "causal-structure",
     "q-connection",
   ],
-  lean: {
-    decl: "QOU.Information.speedOfLight",
+  lean: { ref: "qou:QOU.Information.speedOfLight",
     validation: "not_checked",
   },
   uses: [

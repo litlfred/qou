@@ -32,9 +32,26 @@ function hasCommand(cmd: string): boolean {
   }
 }
 
-/** Resolve the Lean project directory. content/quantum-observable-universe/lean/ is the default. */
+/**
+ * Resolve the Lean project (Lake) directory.
+ *
+ * Preference order:
+ *   1. Explicit `dir` argument (relative to repo root).
+ *   2. The repo-root Lake workspace (`/lakefile.toml`).
+ *   3. Legacy per-paper path `content/quantum-observable-universe/lean/`.
+ *   4. `LEAN_DIR` from paths.js as final fallback.
+ *
+ * The root workspace is preferred when present: `lake build` at the
+ * root builds every registered paper package (qou, ugb, fred2005).
+ */
 function leanProjectDir(dir?: string): string {
   if (dir) return resolve(REPO_ROOT, dir);
+  if (
+    existsSync(join(REPO_ROOT, "lakefile.toml")) ||
+    existsSync(join(REPO_ROOT, "lakefile.lean"))
+  ) {
+    return REPO_ROOT;
+  }
   const leanArchive = join(REPO_ROOT, "content/quantum-observable-universe/lean");
   if (existsSync(join(leanArchive, "lakefile.toml")) || existsSync(join(leanArchive, "lakefile.lean"))) {
     return leanArchive;
@@ -123,14 +140,16 @@ export function registerLeanTools(server: McpServer): void {
   server.tool(
     "lean_build",
     "Run `lake build` in the Lean project directory. Returns build output. " +
-    "Defaults to content/quantum-observable-universe/lean/ if it contains a lakefile.",
+    "Defaults to the repo-root Lake workspace (builds all paper packages: " +
+    "QOU, UGB, Fred2005); falls back to per-paper Lake dirs if no root " +
+    "lakefile is present.",
     {
       clean: z.boolean().default(false)
         .describe("Run `lake clean` first"),
       project: z.string().optional()
-        .describe("Specific library to build (e.g. 'QOU'). Default: build all."),
+        .describe("Specific library to build (e.g. 'QOU', 'UGB', 'Fred2005'). Default: build all libraries in the current workspace."),
       dir: z.string().optional()
-        .describe("Lean project directory relative to repo root (default: auto-detect content/quantum-observable-universe/lean/ or lean/)"),
+        .describe("Lean project directory relative to repo root (default: auto-detect repo-root workspace, then legacy per-paper lean/)"),
     },
     async ({ clean, project, dir }) => {
       if (!hasCommand("lake")) {

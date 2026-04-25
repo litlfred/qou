@@ -4,8 +4,7 @@ export default definition({
   label: "def:quantum-observable-universe",
   title: "Quantum Observable Universe",
   tags: ["quantum", "observable", "category-theory"],
-  lean: {
-    decl: "QOU.QuantumObservableUniverse",
+  lean: { ref: "qou:QOU.QuantumObservableUniverse",
     validation: "not_checked",
   },
   uses: ["def:quantum-universe", "unital-groebner-bases:def:admissible-system"],

@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-instanton-exists",
   title: "Existence of categorical instantons",
-  lean: {
-    decl: "QOU.CategoricalInstanton.exists",
+  lean: { ref: "qou:QOU.CategoricalInstanton.exists",
     validation: "not_checked",
   },
   uses: [

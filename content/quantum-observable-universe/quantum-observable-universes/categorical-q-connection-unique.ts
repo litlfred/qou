@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-q-connection-unique",
   title: "Uniqueness of the categorical $q$-connection",
-  lean: {
-    decl: "QOU.CategoricalQConnection.unique",
+  lean: { ref: "qou:QOU.CategoricalQConnection.unique",
     validation: "not_checked",
   },
   uses: [

@@ -4,8 +4,7 @@ export default definition({
   label: "def:categorical-dirac-operator",
   title: "Categorical Dirac operator",
   tags: ["dirac", "connection", "q-deformed"],
-  lean: {
-    decl: "QOU.CategoricalDiracOperator",
+  lean: { ref: "qou:QOU.CategoricalDiracOperator",
     validation: "not_checked",
   },
   uses: [

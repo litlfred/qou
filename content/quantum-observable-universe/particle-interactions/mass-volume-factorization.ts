@@ -12,8 +12,7 @@ export default conjecture({
     "jsj-decomposition",
     "categorical-action",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.MassVolumeFactorization",
+  lean: { ref: "qou:QOU.ParticleInteractions.MassVolumeFactorization",
     validation: "not_checked",
   },
   uses: [

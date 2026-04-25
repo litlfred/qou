@@ -15,7 +15,7 @@ export default proposition({
     "groebner-basis",
   ],
   lean: {
-    decl: "QOU.OptimalNF.optimal_nf_is_standard_basis",
+    ref: "qou:QOU.OptimalNF.optimal_nf_is_standard_basis",
     validation: "stub",
   },
   uses: [

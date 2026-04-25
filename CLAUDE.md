@@ -91,6 +91,11 @@ When a user request arrives, route to the right skill(s):
 | "review / check / audit Lean" | `local/lean-proof-review` | collaborator |
 | "status / tracking / manifest" | `local/proof-status-tracking` | reader |
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
+| "proof gap / missing step / unproved assertion / bridging lemma" | `local/proof-gap-audit` | reader |
+| "audit proofs / review proofs / proof editor / coordinate proof review" | `local/proof-editor` | collaborator |
+| "simplify exposition / revisit old proof / integrate new content" | `local/proof-exposition-review` | collaborator |
+| "lean vs narrative / do they prove the same thing / equivalence audit" | `local/proof-narrative-lean-equivalence` | collaborator |
+| "concise proof / tighten proof / cut verbose narrative / shorten human proof" | `local/proof-conciseness` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
 | "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "audit lean / completeness / coverage" | `local/lean-completeness-audit` | collaborator |
@@ -166,8 +171,8 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -197,6 +202,86 @@ usage for content changes.
 These rules apply whenever an agent creates or modifies a `.lean` file.
 Agents **must** follow all of them; violations will be caught by the
 `content-block-review` skill.
+
+### 0. Standardized root Lake workspace
+
+The repo uses a **single root Lake workspace** (`/lakefile.toml`,
+`/lean-toolchain`).  Each paper is a Lake **package** declared by
+`[[require]]` with a short-form name:
+
+| Package | Paper directory | Library module |
+|---------|-----------------|----------------|
+| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+
+**Preferred build commands** (always run from repo root):
+
+```bash
+lake build           # build every paper package
+lake build QOU       # single paper library
+lake exe cache get   # fetch Mathlib cache for the workspace
+```
+
+Per-paper `cd content/<paper>/lean && lake build` still works, but
+root-workspace commands are the standardized entry point used by CI
+(`lean_ci.yml`, `blueprint.yml`) and the MCP server (`lean_build`).
+
+### 0a. Content-block `lean.ref` is a package-qualified URI
+
+Every `lean:` field on a content block uses a package-qualified URI
+of the form `"<package>:<Decl.Path>"`:
+
+```ts
+// definition in the qou package
+lean: { ref: "qou:QOU.Torsion.lifting_exists" }
+
+// cross-paper reference (ugb package)
+lean: { ref: "ugb:UGB.GrobnerShirshov.Basis" }
+```
+
+- **Package prefix** must be one of `qou`, `ugb`, `fred2005` — see
+  `folio-assistant/schemas/lean-packages.ts` for the registry and
+  `parseLeanRef()` helper.
+- The legacy `decl:` / `file:` shape is **removed**.  Validation fails
+  on blocks that still use it.
+- The pipeline resolves a `.lean` source file by: (1) sibling
+  `<rootName>.lean`, (2) `<lakeRoot>/<Decl/Path>.lean` under the
+  package's Lake root, (3) grep fallback on current branch.
+
+To register a **new paper** as a Lake package: add a `[[require]]`
+stanza to the root `lakefile.toml`, append to `LEAN_PACKAGES` in
+`lean-packages.ts`, and add the library name to `defaultTargets`.
+
+### 0b. Rebasing across the `lean.ref` migration — instructions for agents
+
+If you are an agent working on an older branch and you **rebase or
+merge onto a commit that contains this standardization**, your
+content blocks may still use the legacy `lean: { decl: "...", file? }`
+shape.  Zod validation will fail with a message pointing at this
+procedure.  **Run the migration, do not hand-edit each block:**
+
+```bash
+cd content
+bun run migrate-lean-refs        # apply (writes in place)
+bun run migrate-lean-refs:dry    # preview only (no writes)
+```
+
+The script ([content/pipeline/migrate-lean-refs.ts](content/pipeline/migrate-lean-refs.ts))
+is **idempotent** — safe to re-run after any rebase, merge, or
+cherry-pick.  It rewrites every `lean: { decl: "<Decl>", file? }`
+into `lean: { ref: "<pkg>:<Decl>" }` using the paper directory to
+choose the Lake package prefix (see `LEAN_PACKAGES` in
+`folio-assistant/schemas/lean-packages.ts`).
+
+After the migration, re-run `bun run validate` to confirm the schema
+is clean before continuing your task.  **Do not add `decl` back** to
+unblock a merge — that field was removed from the schema on purpose.
+
+If new `.lean` files were added on your branch, their content-block
+`lean.ref` URIs must use the correct `<package>:` prefix for the
+paper they live under.  Agents authoring new blocks should always
+consult `LEAN_PACKAGES` for the list of valid prefixes.
 
 ### 1. Every `sorry` requires a bibliographic citation
 
@@ -246,6 +331,35 @@ previously proved theorems, axioms) may use provable block kinds.
   with `interprets: "conj:..."` (proof *sketches*, not proofs).
 - `remark` blocks may freely interpret conjectures (they make no
   logical claims).
+
+**Definitions and conjectures (clarification):** The propagation
+rule above applies to **provable claims** (`theorem`, `proposition`,
+`lemma`, `corollary`). It does **not** force `definition` blocks to
+become conjectures even if their `uses[]` includes a `conj:` label.
+A definition names a construction; whether the named construction
+is "the right one" may itself be a conjecture, but the act of naming
+is not a logical claim.
+
+However:
+
+- A `definition` whose well-formedness genuinely depends on a
+  conjecture (e.g. defining "the unique X with property P" when P's
+  uniqueness is conjectural) **should** carry an explicit narrative
+  note in its `.md` flagging the conjectural backing, and should
+  cite any computational witnesses available
+  (`folio-assistant/computations/*.witness.json`) so empirical
+  support is discoverable from the manifest.
+- Any `theorem`/`proposition`/`lemma`/`corollary` whose `uses[]`
+  cites such a definition **does** trigger propagation — it is
+  downstream of the conjecture transitively. Track the chain via the
+  definition.
+
+Audit note: the `proof-gap-audit` skill must apply §I of its
+checklist (conjectural propagation) only to provable kinds. Flagging
+a definition as a propagation violation is a false positive (we have
+seen this hallucinated by sub-agents). Compute the transitive cone
+from any provable block; if it touches a `conj:` via any path
+(including through definitions), demote the provable block.
 
 **Lean formalization of conjectures:** Conjectures *can* (and should,
 when feasible) have `.lean` files.  The convention is:
@@ -731,15 +845,20 @@ configured via `.mcp.json`. It provides Claude Code with:
 Prerequisites: `git`, `curl`.
 
 Use the `lean_setup` MCP tool (provided by paper-assistant). It installs:
-uv, elan, the Lean toolchain pinned in
-`content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache,
-ripgrep, and runs `lake build`.
+uv, elan, the Lean toolchain pinned in the **root** `lean-toolchain`,
+Mathlib cache, ripgrep, and runs `lake build` in the **root Lake
+workspace**.
 
 Alternatively, from the command line:
 
 ```bash
-cd content/quantum-observable-universe/lean
+# Build every paper at once from the root workspace
 lake exe cache get && lake build
+
+# Or build a single paper package
+lake build QOU        # quantum-observable-universe
+lake build UGB        # unital-groebner-bases
+lake build Fred2005   # fred2005-formal-groups
 ```
 
 ### Local Mathlib cache
@@ -827,7 +946,11 @@ tool rather than silently failing.
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
-| `content/quantum-observable-universe/lean/` | Lean 4 formalization (lakefile.toml, QOU/) |
+| `lakefile.toml`, `lean-toolchain` | **Root Lake workspace** — aggregates every paper package; `lake build` here builds all |
+| `content/quantum-observable-universe/lean/` | `qou` Lake package (lib: `QOU`) |
+| `content/unital-groebner-bases/lean/` | `ugb` Lake package (lib: `UGB`) |
+| `content/fred2005-formal-groups/lean/` | `fred2005` Lake package (lib: `Fred2005`) |
+| `folio-assistant/schemas/lean-packages.ts` | Registry mapping `lean.ref` URI prefixes → Lake packages |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
@@ -852,7 +975,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | Workflow | Artifacts deployed to gh-pages |
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `content/quantum-observable-universe/lean/` (source browser), `content/quantum-observable-universe/lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
+| `lean_ci.yml` | `lean/content/<paper>/lean/` (per-paper source browsers for QOU/UGB/Fred2005), `lean/.../docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
 | `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents

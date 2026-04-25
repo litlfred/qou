@@ -12,8 +12,7 @@ export default proposition({
     "hecke-algebra",
     "categorical",
   ],
-  lean: {
-    decl: "QOU.braiding_eigenvalue_extraction",
+  lean: { ref: "qou:QOU.braiding_eigenvalue_extraction",
     validation: "not_checked",
   },
   uses: [

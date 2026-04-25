@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:vertex-is-exceptional-divisor",
-  lean: {
-    decl: "QOU.vertex_is_exceptional_divisor",
+  lean: { ref: "qou:QOU.vertex_is_exceptional_divisor",
     validation: "not_checked",
   },
   title: "Vertex operators factor through the exceptional divisor",

@@ -48,8 +48,8 @@ spectral filter since $g(K) \leq 4$.  $\square$
 **Corollary.**
 The Descartes particle spectrum is *complete* over embeddable knots:
 every knot type with $g(K) \leq 4$ corresponds to a state in the
-physical Hilbert space $\mathcal{H}_{\mathrm{phys}}$.  No embeddable
-knot is excluded from the spectrum.
+physical state space $V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$.
+No embeddable knot is excluded from the spectrum.
 
 **Counting embeddable knots.**
 The number of distinct knot types with Seifert genus $\leq g$ grows

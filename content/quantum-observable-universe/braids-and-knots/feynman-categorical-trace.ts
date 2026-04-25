@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:feynman-categorical-trace",
-  lean: {
-    decl: "QOU.FeynmanPathIntegrals.FeynmanCategoricalTrace",
+  lean: { ref: "qou:QOU.FeynmanPathIntegrals.FeynmanCategoricalTrace",
     validation: "not_checked",
   },
   title: "Feynman transition amplitude as categorical trace",

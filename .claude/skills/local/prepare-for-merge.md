@@ -29,6 +29,55 @@ related content and applies the placement and density principles.
 
 ## Pre-Merge Workflow
 
+### Step 0 — Verify Lean is on the standardized Lake architecture
+
+Since the migration in PR #396, every content block uses a
+**package-qualified `lean.ref` URI** of the form
+`"<package>:<Decl.Path>"` (e.g. `"qou:QOU.Torsion.lifting_exists"`).
+The legacy `lean: { decl: "...", file? }` shape was removed from the
+schema. Branches that started before PR #396 — or that merged from
+older forks — will fail Zod validation with a message pointing here.
+
+**Always run the migration before any other pre-merge step.** It is
+idempotent and trivially safe to re-run after every rebase or merge:
+
+```bash
+cd content
+bun run migrate-lean-refs:dry    # preview
+bun run migrate-lean-refs        # apply
+```
+
+The script ([content/pipeline/migrate-lean-refs.ts](../../../content/pipeline/migrate-lean-refs.ts))
+rewrites every `lean: { decl: "<Decl>", file? }` into
+`lean: { ref: "<pkg>:<Decl>" }` using the paper directory to choose
+the Lake package prefix (see `LEAN_PACKAGES` in
+`folio-assistant/schemas/lean-packages.ts`).
+
+After running, confirm:
+
+```bash
+cd content && bun run validate    # must pass
+```
+
+If validation still complains about `lean:` shapes, **do not** add
+`decl` back to unblock — that field is removed by design. Instead:
+
+1. **New content blocks**: ensure their `lean.ref` uses a valid
+   `<package>:` prefix from `LEAN_PACKAGES`.
+2. **New papers**: register a new package by adding a `[[require]]`
+   stanza to the root `lakefile.toml`, appending to `LEAN_PACKAGES`,
+   and adding the library name to `defaultTargets` in `lakefile.toml`.
+3. **Lean-file location**: every `<Decl.Path>` in a `lean.ref` must
+   resolve under the corresponding package's Lake root (sibling
+   `<rootName>.lean`, or `<lakeRoot>/<Decl/Path>.lean`).
+
+**Quick sanity-check for unmigrated blocks** (should report 0):
+
+```bash
+grep -rln 'lean:\s*{[^}]*decl:' content/*/*.ts 2>/dev/null \
+  | grep -v schema/ | grep -v pipeline/ | wc -l
+```
+
 ### Step 1 — Identify new/changed content blocks on the branch
 
 ```bash
@@ -129,11 +178,15 @@ If Step 2 found related upstream blocks:
 
 Before approving the merge:
 
+- [ ] **Lean migrated to standardized Lake architecture** (Step 0):
+      `bun run migrate-lean-refs:dry` reports 0 changes
 - [ ] All new blocks pass the placement checklist (Steps 3–4)
 - [ ] `content-graph-analysis.py` reports no new HIGH findings
 - [ ] `docs/reorganization-map.md` updated if blocks moved
 - [ ] Branch rebased or merged with latest `main`
 - [ ] Content validates: `cd content && bun run validate`
+- [ ] Root Lake build succeeds: `lake build` from repo root (or per
+      paper: `lake build QOU`, `lake build UGB`, `lake build Fred2005`)
 
 ## Integration with other skills
 

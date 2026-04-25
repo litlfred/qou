@@ -4,8 +4,7 @@ export default definition({
   label: "def:observation",
   title: "Observation",
   tags: ["observation", "quantum"],
-  lean: {
-    decl: "QOU.Intent",
+  lean: { ref: "qou:QOU.Intent",
     validation: "not_checked",
   },
   uses: [

@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:unstable-atom",
   title: "Unstable atom (ILP infeasibility)",
-  lean: {
-    decl: "QOU.BraidKnot.UnstableAtom",
+  lean: { ref: "qou:QOU.BraidKnot.UnstableAtom",
     validation: "not_checked",
   },
   uses: [

@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mass-identity-unique",
   title: "Uniqueness of the inertial mass identity",
-  lean: {
-    decl: "QOU.MassIdentity.unique",
+  lean: { ref: "qou:QOU.MassIdentity.unique",
     validation: "not_checked",
   },
   uses: [

@@ -3,14 +3,12 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:quantum-observable-universe-exists",
   title: "Existence of quantum observable universes",
-  lean: {
-    decl: "QOU.QuantumObservableUniverse.exists_instance",
+  lean: { ref: "qou:QOU.QuantumObservableUniverse.exists_instance",
     validation: "not_checked",
   },
   uses: [
     "def:quantum-observable-universe",
     "def:quantum-universe",
-    "def:substrate-parameter",
     "ex:qou-su2",
     "ex:c-quantum-observable-universe",
   ],

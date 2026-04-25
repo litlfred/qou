@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:sdp-regime-switch",
   title:
     "Discrete regime switches in SDP cross-channel couplings across isotopes",
-  lean: {
-    decl: "QOU.Observations.SDPRegimeSwitch",
+  lean: { ref: "qou:QOU.Observations.SDPRegimeSwitch",
     validation: "not_checked",
   },
   uses: [

@@ -10,8 +10,7 @@ export default definition({
     "fibre-functor",
     "schur-weyl",
   ],
-  lean: {
-    decl: "QOU.Braiding.HeckeMassElement",
+  lean: { ref: "qou:QOU.Braiding.HeckeMassElement",
     validation: "not_checked",
   },
   uses: [

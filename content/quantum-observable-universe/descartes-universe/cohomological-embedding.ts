@@ -14,8 +14,7 @@ export default proposition({
     "magic-numbers",
     "shell-model",
   ],
-  lean: {
-    decl: "QOU.Descartes.cohomological_embedding",
+  lean: { ref: "qou:QOU.Descartes.cohomological_embedding",
     validation: "not_checked",
   },
   uses: [

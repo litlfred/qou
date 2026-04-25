@@ -116,6 +116,7 @@ export default chapter({
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
+        "ns-blowup-physical-evidence",
       ],
     }),
 
