@@ -27,24 +27,26 @@ namespace QOU.AlgebraicSubstrate
 
 /-- **PvsNPQou**: the QOU-framework P vs NP conjecture.
 
-    An instance of this class witnesses two combined properties:
-    - The strict inclusion `P ⊊ BQP_q` for every positive Reeb
-      infinitesimal `ε`.
-    - Non-compressibility of this strict inclusion under the
-      standard-part functor `ε → 0`.
-
     Encoded as an empty marker `Prop` class per CLAUDE.md §3b.
     The complexity classes `P`, `NP`, `BQP_q` are not yet
-    formalised in Lean, so the meaningful Prop content cannot be
-    written down at this layer.  An instance of this class is
-    the conjecture; downstream theorems take it as a typeclass
-    hypothesis and prove conditional consequences whose only
-    unproved input is the (eventual) PvsNPQou witness.
+    formalised in Lean, so the meaningful Prop content cannot
+    be written down at this layer; the class therefore carries
+    no fields and serves only as a typeclass hypothesis on
+    downstream conditional theorems.
 
     The narrative formulation lives in `conj:p-vs-np-qou` in the
-    `algebraic-substrate` chapter; the `Ow`-valuation reading
-    (cost > budget, `1 > -3`) is recorded in
-    `rem:p-vs-np-surreal-bound`.
+    `algebraic-substrate` chapter.  Informally, an instance of
+    this class is intended to witness:
+
+    * the strict inclusion `P ⊊ BQP_q` for every positive Reeb
+      infinitesimal `ε`, AND
+    * non-compressibility of this strict inclusion under the
+      standard-part functor `ε → 0`.
+
+    The `Ow`-valuation reading (cost > budget, `1 > -3`) is
+    recorded in `rem:p-vs-np-surreal-bound`.  Both bullet points
+    above will become explicit `Prop` fields once `P`, `NP`, and
+    `BQP_q` have Mathlib-level definitions.
 
     LaTeX: `\label{conj:p-vs-np-qou}` -/
 -- Ref: [cook1971] Cook's NP-completeness theorem

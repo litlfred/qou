@@ -12,7 +12,6 @@ export default definition({
     "def:frobenius-hopf-substrate",
     "rem:calculus-up-to-epsilon",
     "def:surreal-blowup-calculus",
-    "def:q-from-epsilon",
   ],
   tags: [
     "reeb",

@@ -9,9 +9,12 @@ as surreal-order inequalities:
 - Enstrophy ceiling `Z_q ≍ ε^(-4/3)` — transfinite of order 4/3.
 - Rogue-zero cost `E(δ) ≍ δ² · ε⁻¹` — transfinite scaled by `δ²`.
 
-Each is stated as an assumption on an abstract ordered field with a
-positive infinitesimal; downstream instances discharge by specialising
-to `𝐍𝐨` via `QOU.AppendixSurreals.StandardPart`.
+Each is stated as a leading-coefficient equation on an abstract
+field carrier `F`; downstream instances discharge by specialising
+to `𝐍𝐨` via `QOU.AppendixSurreals.StandardPart`.  The class
+requires only `[Field F]` — no ordering or positivity hypothesis;
+those are added by downstream interpretations that need them
+(e.g.\ to compare `Ow`-orders).
 
 LaTeX label: `prop:surreal-rate-calculus`.
 
@@ -37,14 +40,15 @@ universe u
     the rate table [`prop:surreal-rate-calculus`].  Under the surreal
     embedding `ε ↦ 1/ω`, these equations specialise to the
     `Ow`-valuations `Ow(Δ) = -3`, `Ow(Ω) = 1`, `Ow(Z) = 4/3`,
-    `Ow(E(δ)) = 1` for any standard real `δ ≠ 0`. -/
+    `Ow(E(δ)) = 1` whenever `δ ≠ 0` (the rogue-zero equation
+    `E(δ)·ε = δ²` holds for every `δ : F`; the `Ow = 1`
+    interpretation requires `δ ≠ 0`). -/
 -- Ref: [conway1976] On Numbers and Games §III
 -- Ref: [manuscript] Chapter 8 §5 (Surreal rate calculus)
 class SurrealRateCalculus (F : Type u) [Field F] where
-  /-- The Reeb infinitesimal embedded in `F`. -/
+  /-- The Reeb infinitesimal embedded in `F`.  Non-zero (forced
+      by `reebPeriod_order : reebPeriod · epsilon = 1` below). -/
   epsilon : F
-  /-- `epsilon` is non-zero (so `Ω = 1/ε` is well-defined). -/
-  epsilon_ne_zero : epsilon ≠ 0
   /-- The mass gap. -/
   massGap : F
   /-- The Reeb period. -/

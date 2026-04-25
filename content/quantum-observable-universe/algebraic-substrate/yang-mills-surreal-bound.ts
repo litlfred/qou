@@ -13,7 +13,6 @@ export default remark({
     "def:q-from-epsilon",
     "rem:conway-normal-form",
     "rem:calculus-up-to-epsilon",
-    "rem:ns-surreal-bound",
   ],
   tags: [
     "yang-mills",

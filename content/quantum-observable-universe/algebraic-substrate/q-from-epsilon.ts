@@ -16,8 +16,6 @@ export default definition({
     "def:surreal-blowup-calculus",
     "def:frobenius-hopf-substrate",
     "def:classical-limit-obstruction",
-    "prop:surreal-rate-calculus",
-    "lem:surreal-squeeze",
   ],
   tags: [
     "substrate-parameter",
