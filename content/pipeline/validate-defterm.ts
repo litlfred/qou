@@ -220,7 +220,7 @@ export function validateDefterms(
         if (definedHere.has(slug)) continue; // defterm site, skip
         if (wrappedSlugs.has(slug)) continue; // at least one refterm present
         // Word-boundary search to avoid false positives on substrings.
-        const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}\\b`);
+        const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`);
         if (re.test(haystack)) {
           issues.push({
             level: "warning",
