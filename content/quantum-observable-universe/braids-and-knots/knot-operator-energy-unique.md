@@ -1,6 +1,6 @@
 **Proposition.**
 *The knot operator energy
-$E(\lambda, q) = |y_\lambda(q)|$
+$E(\lambda, q) = |u_\lambda(q)|$
 ([knot operator energy](#def:knot-operator-energy)) is **uniquely
 determined** by:*
 
@@ -10,7 +10,7 @@ determined** by:*
 3. *the choice of absolute value $|\cdot|_v$ on $R$ (archimedean
    or non-archimedean).*
 
-*The shadow price $y_\lambda(q)$ itself is unique in $R$ by LP
+*The shadow price $u_\lambda(q)$ itself is unique in $R$ by LP
 duality (complementary slackness gives a unique dual variable per
 binding constraint).  The absolute value $|\cdot|_v$ is unique up
 to equivalence within each place by Ostrowski's theorem (over

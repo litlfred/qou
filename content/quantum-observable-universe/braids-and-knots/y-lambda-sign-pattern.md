@@ -1,19 +1,25 @@
-**Notation disambiguation.**
-The symbol $y_\lambda$ is used in this paper for two distinct
-objects:
+**Notation register (resolved collision).**
+This paper now uses two distinct symbols for what were previously
+both written $y_\lambda$:
 
-1. *Jones–Markov central coefficients* in the trace expansion
-   $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$
+1. *Jones–Markov central coefficients* — keeps $y_\lambda$.  These
+   appear in the trace expansion $\mathrm{tr}_M = \sum_\lambda
+   y_\lambda \chi_\lambda$
    ([procedure](#prop:alpha-k-derivation-procedure),
-   [explicit H_3](#prop:explicit-alpha-k-h3)).  Sign-indefinite
+   [explicit H_3](#prop:explicit-alpha-k-h3)).  **Sign-indefinite**
    — the subject of this remark.
-2. *Operator-selection LP dual variables* (shadow prices) in the
+2. *Operator-selection LP dual variables* (shadow prices) — written
+   $u_\lambda$ (Schrijver LP-duality convention) in the
    operator-selection LP
    ([BW shadow price](#prop:bw-coefficient-shadow-price)).
-   Non-negative by LP duality.
+   **Non-negative** by LP duality.
 
-The two are **unrelated quantities**.  In what follows, $y_\lambda$
-refers exclusively to sense 1 (Jones–Markov central coefficient).
+The two symbols denote unrelated quantities and should never be
+conflated.  In what follows, $y_\lambda$ refers exclusively to sense
+(1) (Jones–Markov central coefficient).  The choice $u_\lambda$ for
+LP shadow prices avoids collision with $\pi_\lambda$, already used
+in [BW shadow price](#prop:bw-coefficient-shadow-price) for the
+central idempotents of the Wedderburn block decomposition.
 
 **Empirical observation.**
 At the canonical Markov parameter $z = 1/(\sqrt q + 1/\sqrt q)$ and
