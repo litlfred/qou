@@ -1,7 +1,7 @@
 {
   "computation": "multi-level-sdp",
   "description": "Track C: multi-level quadratic SDP for levels 3-7. Each level adds PSD constraints: level 3 adjacent pairs, level 4 shell boundaries, level 5 cross-shell, level 6 electron shells, level 7 molecular bonds. Continuous SDP relaxation via cvxpy; integer solutions via enumeration from level-3 ILP cache.",
-  "timestamp": "2026-04-18T00:41:14.641216+00:00",
+  "computedAt": "2026-04-18T00:41:14.641216+00:00",
   "parameters": {
     "q": 1.1099785955541805
   },

@@ -2,7 +2,7 @@
   "computation": "gb-residue-tower",
   "description": "GB residue spectral sum: Mittag-Leffler mass formula at q_0. Sums residues of \u03a6_q \u00b7 tr_M at primitive n-th roots of unity (n=1,2,3) via small-circle contour integrals, weighted by the Cauchy kernel 1/(q_0 - \u03b6_n). Implements prop:gb-residue-spectral-sum.",
   "reference_block": "prop:gb-residue-spectral-sum",
-  "timestamp": "2026-04-24T20:06:13.227669+00:00",
+  "computedAt": "2026-04-24T20:06:13.227669+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "E_0_cat_MeV": "2.9870735228406935819581037855628208540991932883948",

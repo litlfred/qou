@@ -1,7 +1,7 @@
 {
   "computation": "residual-closed-form-search",
   "description": "Systematic search over small-depth closed forms in (q, q\u207b\u00b9, \u210f_q, [2]_q, [3]_q, H_A) for R_p = m_p(CODATA)/m_p(tower) and R_n analogues.  Zero-fit: each candidate's value at q_0 is computed and compared to the residual.",
-  "timestamp": "2026-04-24T13:21:54.528360+00:00",
+  "computedAt": "2026-04-24T13:21:54.528360+00:00",
   "q_0": 1.1099785955541805,
   "m_p_tower_MeV": 955.4916893413767,
   "m_p_codata_MeV": 938.27208816,

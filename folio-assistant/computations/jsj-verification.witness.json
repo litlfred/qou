@@ -1,7 +1,7 @@
 {
   "computation": "jsj-verification",
   "description": "Search SnapPy's LinkExteriors census for hyperbolic link manifolds whose volume matches atomic binding / density targets.  Tests two density hypotheses (m_e, 2m_e).  Identifies candidate JSJ-decomposition link representatives per atom.  The 2m_e density gives match A\u00b78G for doubly-magic atoms at high precision.",
-  "timestamp": "2026-04-20T16:36:07.971344+00:00",
+  "computedAt": "2026-04-20T16:36:07.971344+00:00",
   "parameters": {
     "m_e_MeV": 0.51099895,
     "Catalan_G": 0.915965594177219,

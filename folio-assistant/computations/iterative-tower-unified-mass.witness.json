@@ -1,7 +1,7 @@
 {
   "computation": "iterative-tower-unified-mass",
   "description": "Apply unified-curvature-rank-mass-formula iteratively per isotope.  Combines 6-term (calibrated) + Term 7 (universal m_e\u00b78G prefactor) and reports residual.  Demonstrates that current 6-term has non-Markov-invariant proxies that prevent universal-prefactor closure; the structural fix requires pyhecke Markov-trace replacement for Term 1 and Frobenius-antipode symmetrisation for Terms 2, 3 \u2014 at which point higher isotopes (\u2076Li, \u2077Li) become PREDICTIONS not fits.",
-  "timestamp_utc": "2026-04-25T23:29:49.112777+00:00",
+  "computedAt": "2026-04-25T23:29:49.112777+00:00",
   "alpha_term7_MeV": 3.74445965488548,
   "isotopes": [
     {

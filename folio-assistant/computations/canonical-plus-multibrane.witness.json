@@ -1,7 +1,7 @@
 {
   "computation": "canonical-plus-multibrane",
   "description": "Canonical Jones-Markov trace (level 0) PLUS multi-brane \u03a6_q tower (levels 1..N) per prop:categorical-mass-markov's full formula \ud835\udd2a = |tr_M| + \u03a3 \u2016\u03a6_q(z_i)\u2016.  Level 0 uses markov_trace_canonical.tr_M_element (7/7 prop-table values).  Levels 1..N use aggregated V\u0302 (\u03a3_\u03bb w_\u03bb V\u0302_i^\u03bb) with Markov-stabilization jet lift V\u0302^(n) = z^n V\u0302^(0).  Aggregated-BEFORE-\u03a6_q ordering matches the prop's letter (\u03a6_q nonlinearity breaks per-irrep-then-sum).  Proper K\u00e4hler-differential jet lift is open.",
-  "timestamp": "2026-04-18T12:19:59.067858+00:00",
+  "computedAt": "2026-04-18T12:19:59.067858+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782

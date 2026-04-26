@@ -1,7 +1,7 @@
 {
   "computation": "path-a-extended-light-isotopes",
   "description": "24a: Generalise Q_\u03b2 Path A extended (m_e\u00b7(\u03a3_n\u22121) + m_e\u00b7Vol(K)\u00b7|(q;q)_r| + m_e\u00b7|(q;q)_{r+1}|) to D, T, \u00b3He, \u2074He bindings.  Finding: the (q;q)_r damping suppresses the corrections to \u226a1% of leading \u03c1_F\u00b7Vol(K), so the naive 3-term form barely improves on mass_table_ppb's leading-term-only prediction.  The structural pattern (sym + chirality + tail) holds but Path A's amplitude (MeV) was tuned for Q_\u03b2 scale, not binding scale.  True ppb-class binding closure requires: (i) per-isotope r_chir from GB-jet-order knot tracker, (ii) higher-order (q;q)_r expansion, (iii) connection to F.1\u2194spectral reconciliation theorem (rational-vs-transcendental gap).",
-  "timestamp_utc": "2026-04-25T22:32:15.876494+00:00",
+  "computedAt": "2026-04-25T22:32:15.876494+00:00",
   "precision_dps": 50,
   "reference_n_to_p": {
     "Q_predicted_MeV": 0.7827623634816321,

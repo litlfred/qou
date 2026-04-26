@@ -1,7 +1,7 @@
 {
   "computation": "delta-mn-mp-spectral-ladder-extension",
   "description": "Closure of \u0394m_{n-p} to \u2264 100 ppb via spectral-sequence ladder extension on hecke-engine d915b31 baseline (\u0394m = m_e\u00b7\u03a3_3 + m_e\u00b7Vol(6_1)\u00b7|(q;q)_3|, error -0.16%). Three structural candidates tested: (A) universal rank-4 Pochhammer with fitted \u03b1\u2084, (B) rank-4 chirality knot, (C) two-term rank-4+rank-5 universal.  With one fitted parameter \u03b1\u2084 = 0.828, the ladder closes to \u2264 1 ppb. No simple closed form for \u03b1\u2084 was found in the q-arithmetic basis (closest 5/6 = 0.833, off 0.6%).  The fit is consistent with the 3-categorical-calibration framework.",
-  "timestamp_utc": "2026-04-25T22:53:17.142373+00:00",
+  "computedAt": "2026-04-25T22:53:17.142373+00:00",
   "precision_dps": 60,
   "baseline_3term": {
     "formula": "m_e\u00b7\u03a3_3 + m_e\u00b7Vol(6_1)\u00b7|(q;q)_3|",

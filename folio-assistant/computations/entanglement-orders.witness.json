@@ -1,7 +1,7 @@
 {
   "computation": "entanglement-orders",
   "description": "Entanglement energy tracked at all GB filtration orders (k = 0, 1, 2, ..., n_gens).  Each k-subset contribution weighted by z^(2\u00b7span) where span = max(i) - min(i) of the subset, reflecting the total number of crossings the k-entanglement spans.",
-  "timestamp": "2026-04-24T21:59:50.352865+00:00",
+  "computedAt": "2026-04-24T21:59:50.352865+00:00",
   "q_0": 1.1099785955541805,
   "z": 0.4993203340335982,
   "calibration_MeV_per_cat": 0.0007958232816978121,

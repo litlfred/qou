@@ -1,7 +1,7 @@
 {
   "computation": "tower-isotope-absolute",
   "description": "Pure tower computation of absolute M(isotope) \u2014 no CODATA m_p, m_n inputs.  Uses atom_per_generator_volumes(Z,N) to get V\u0302_i^full per generator, applies level-0 tower |\u03a0V\u0302| + \u03a3 \u03a6_q(V\u0302_i) + z\u00b2 \u03a3_adj \u03a6_q(V\u0302_iV\u0302_j), electron-calibrated, corrected by /(1+[2]_q\u00b7\u210f_q\u00b2), then compared against CODATA atomic masses.  Tests partition-sum hypothesis err = m_e \u00b7 \u03a3_\u03bb 1/d_\u03bb at n = 3A.",
-  "timestamp": "2026-04-24T18:06:24.021734+00:00",
+  "computedAt": "2026-04-24T18:06:24.021734+00:00",
   "q_0": 1.1099785955541805,
   "m_e_Hecke": "630.529268096592782708461711091",
   "isotopes": [
