@@ -16,6 +16,7 @@ import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
 import { remark } from "remark";
 import remarkMath from "remark-math";
+import remarkDirective from "remark-directive";
 // Selective GFM: exclude gfm-autolink-literal which causes OOM on
 // dotted Lean identifiers (e.g. "QOU.Descartes.Foo.bar").
 // Tables and strikethrough are loaded individually from the transitive
@@ -90,6 +91,7 @@ const mdParser = remark()
     gfmTableFromMarkdown(),
     gfmStrikethroughFromMarkdown(),
   ])
+  .use(remarkDirective)
   .use(remarkMath);
 
 /**
@@ -390,6 +392,32 @@ function renderMdastNode(node: any): string {
       // Non-table HTML: strip tags, escape for LaTeX
       return escapeLatex(html.replace(/<[^>]*>/g, ""));
     }
+
+    case "textDirective": {
+      // remark-directive inline node: :name[label]{#slug}
+      // We recognise :defterm[X] / :refterm[X] and emit \defterm{slug}{label}
+      // when label and slug differ; otherwise the single-arg \defterm{slug}.
+      // Unknown directives fall through to children rendering.
+      const name: string = node.name ?? "";
+      if (name === "defterm" || name === "refterm") {
+        const label = renderChildren(node).join("").trim();
+        const slug = (node.attributes && (node.attributes.id || node.attributes["#"])) || label;
+        const slugStr = String(slug).trim();
+        const macro = name === "defterm" ? "defterm" : "refterm";
+        if (!slugStr) return label;
+        if (label && label !== slugStr) {
+          return `\\${macro}{${slugStr}}{${label}}`;
+        }
+        return `\\${macro}{${slugStr}}`;
+      }
+      // Other text directives: render children only (don't drop content)
+      return renderChildren(node).join("");
+    }
+
+    case "leafDirective":
+    case "containerDirective":
+      // Non-inline directives are not currently used; render children if any.
+      return renderChildren(node).join("");
 
     default:
       // Unknown node — render children if any, otherwise empty

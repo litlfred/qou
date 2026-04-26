@@ -414,6 +414,22 @@ interface BlockBase {
   meta?: Record<string, unknown>;
   /** Reference to an interactive simulator (opens overlay with [simulate] button). */
   simulator?: SimulatorRef;
+  /**
+   * Glossary terms *defined* by this block. Each entry is a slug used to
+   * mint the LaTeX label `\label{term:<slug>}` and the HTML id `term-<slug>`.
+   *
+   * Authors mark the defining occurrence in the `.md` body with the remark
+   * directive `:defterm[<slug>]`, and every subsequent reference (in any
+   * block) with `:refterm[<slug>]`. Phase B validation will check that every
+   * `defines[]` entry has at least one `:defterm[<slug>]` in this block's
+   * markdown, and that every `:refterm[X]` resolves to some block's
+   * `defines[]`.
+   *
+   * Slugs should be lowercase, hyphen-separated; the visible label is the
+   * directive's bracket text and may differ from the slug only via the
+   * long-form `:refterm[Visible]{#slug}`.
+   */
+  defines?: string[];
 }
 
 // ── Blocks that REQUIRE Lean ─────────────────────────────────────
