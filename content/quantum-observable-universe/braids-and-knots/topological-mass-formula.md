@@ -54,16 +54,18 @@ on the curvature-rank stratification.  Summing over the $N$ blow-ups
 and using the dilogarithm identity
 $\sum_{i=1}^N \Phi_q(z_i) = (1/\hbar_q^{2} - 1)\,\mathrm{Vol}(K)$
 (Kashaev–Murakami volume conjecture restricted to the
-$q$-deformation; see the Lean target
-`qou:QOU.Torsion.transient_dilog_sum` and the witness computation
-`folio-assistant/computations/transient-dilog-sum.witness.json`):
+$q$-deformation; this is `Hypothesis 2 (Dilogarithm evaluation)`
+on the Lean structure
+[`qou:QOU.ArchimedeanMassFormula`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/ArchimedeanMassFormula.lean),
+field `exceptional_sum_eq`):
 $$
   \sum_{i=1}^{N} \Phi_q(z_i)
   \;=\; \mathrm{Vol}(K)\bigl(\hbar_q^{-2} - 1\bigr).
 $$
-This is the step where the Lean formalisation is currently the
-authoritative reference; the corresponding witness records the
-numeric agreement on the trefoil, figure-eight, and Borromean links.
+The Lean formalisation isolates this identity as a hypothesis on
+the archimedean structure rather than a derived theorem; the
+evaluation in Briggs–Klein coordinates is the categorical content
+the formula imports from the geometric side.
 
 **Step 3 — combine.**
 Adding the baseline and transient contributions and recognising
