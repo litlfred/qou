@@ -175,6 +175,30 @@ fn mn_chi(lambda: Vec<usize>, mu: Vec<usize>) -> i64 {
     seminormal_mn::mn_chi(&lambda, &mu)
 }
 
+/// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)`.
+///
+/// Computes the Hecke character of the canonical permutation braid
+/// `T_w ∈ H_n(q)` of cycle type `μ`, returning the result as a list
+/// of `(half_exponent, coefficient)` pairs encoding a Laurent
+/// polynomial in `q^{1/2}`.  The half-exponent `2k` represents
+/// `q^{k}`; `2k+1` represents `q^{(2k+1)/2}`.
+///
+/// At `q = 1` (sum of coefficients) this collapses to classical
+/// MN — verified by Rust unit tests.  Currently handles
+/// permutation-form braids only; mixed-sign generators (inverses)
+/// require Hecke-relation expansion (next milestone).
+///
+/// Returns `[(half_exp, coeff_str), ...]` where `coeff_str` is the
+/// BigInt rendered as decimal (callers parse via `int(s)`).
+#[pyfunction]
+fn mn_chi_q(lambda: Vec<usize>, mu: Vec<usize>) -> Vec<(i32, String)> {
+    let poly = seminormal_mn::chi_lambda_mn_qdef(&lambda, &mu);
+    poly.terms
+        .into_iter()
+        .map(|(he, c)| (he, c.to_string()))
+        .collect()
+}
+
 /// **Batch character evaluation across many partitions** (rayon-parallel).
 ///
 /// Evaluates `χ_λ(β)` for every partition in `shapes` in parallel using
@@ -249,6 +273,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
+    m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
