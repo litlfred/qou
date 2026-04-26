@@ -9,7 +9,7 @@ that definition.
 
 **Definition (Frobenius self-pairing chirality).**
 *Let $(A, \tau)$ be a self-dual Frobenius algebra (e.g., the Hecke
-algebra $H_n(q)$ under Markov trace
+algebra $H_n(R, q)$ under Markov trace
 ([Jones–Markov trace](#thm:jones-markov-trace))), and let
 $\beta \in A$ be a braid word.  Let $\beta^* \in A$ denote the
 image of $\beta$ under the algebra **antipode** (the anti-involution
@@ -57,7 +57,7 @@ $$
 
 *Under the Markov trace, $\tau(\sigma_i \sigma_i^{-1}) = \tau(1) = 1$
 (Hecke eigenvalue pair $q, -q^{-1}$ gives $\sigma_i \sigma_i^{-1} = 1$
-in $H_n(q)$).  Thus the identity braid has $a_K = 1$.*
+in $H_n(R, q)$).  Thus the identity braid has $a_K = 1$.*
 
 *For a **single positive crossing** $\beta = \sigma_i$:*
 
@@ -92,10 +92,10 @@ $$
 $$
 
 *in $\mathrm{SL}_2$, evaluated at $A = T_1, B = T_2^{-1}$ in the
-standard representation of $H_3(q)$.  This gives the figure-eight
+standard representation of $H_3(R, q)$.  This gives the figure-eight
 character $\chi_{4_1}((2,1)) = 2 - [3]_q = -1 - h^2$, from which
 $a_{4_1} = 1 - h^2$.  For satellite knots (e.g., $D$), the Fricke
-relation does not apply at $H_3$ level — one must work in $H_6(q)$
+relation does not apply at $H_3$ level — one must work in $H_6(R, q)$
 or larger, where the character-trace identities are more involved.*
 
 **Status: partial derivation, amphichiral case only.**

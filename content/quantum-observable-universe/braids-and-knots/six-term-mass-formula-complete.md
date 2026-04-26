@@ -85,7 +85,7 @@ $$
 *Status: **DERIVED** (with Lean proof).*
 
 - *Source: [Frobenius universal](#thm:frobenius-codim-universal)
-  (universal theorem); specialisation to $H_3(q)$ gives
+  (universal theorem); specialisation to $H_3(R, q)$ gives
   $(2 + 1/[2]_q) \cdot m_e$
   ([proton residual](#prop:partition-sum-proton-residual)).*
 - *Wedderburn-weight derivation: via
@@ -96,7 +96,7 @@ $$
   (no `sorry` in main statement).*
 - *Computation: `frobenius_partition_sum.py` (witness
   `frobenius-partition-sum.witness.json`);
-  `hochschild_h3.py` for $H_3(q)$ structure.*
+  `hochschild_h3.py` for $H_3(R, q)$ structure.*
 
 ---
 

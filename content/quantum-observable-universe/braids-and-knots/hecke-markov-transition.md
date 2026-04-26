@@ -1,4 +1,4 @@
-The algebraic machinery of the Hecke algebra $H_n(q)$ and the
+The algebraic machinery of the Hecke algebra $H_n(R, q)$ and the
 Jones--Markov trace
 ([Jones--Markov trace](#thm:jones-markov-trace)) has a direct
 probabilistic interpretation: **each Hecke generator $T_i$ is a
@@ -10,7 +10,7 @@ product of independent one-step expectations along a Markov chain.
 ## Statement
 
 **Proposition.**
-*Let $H_n(q)$ be the Iwahori--Hecke algebra with generators
+*Let $H_n(R, q)$ be the Iwahori--Hecke algebra with generators
 $T_1, \ldots, T_{n-1}$ satisfying $(T_i - q)(T_i + q^{-1}) = 0$
 ([Hecke relation](#rem:hecke-algebra-from-braiding)).*
 

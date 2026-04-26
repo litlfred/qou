@@ -1,5 +1,5 @@
 Let $\beta \in B_n$ be a braid on $n$ strands and let
-$\rho(\beta) \in H_n(q)$ be its image under the Hecke quotient
+$\rho(\beta) \in H_n(R, q)$ be its image under the Hecke quotient
 ([Jones--Markov trace](#thm:jones-markov-trace)).  After Hecke
 reduction, the element $\rho(\beta)$ decomposes as a product of
 **generator chains**: for each generator $\sigma_i$

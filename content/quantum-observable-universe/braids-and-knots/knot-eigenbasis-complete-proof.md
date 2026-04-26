@@ -1,6 +1,6 @@
 
 *Part (1).*  When $q$ is not a root of unity, the Iwahori--Hecke algebra
-$H_n(q)$ is isomorphic to $\mathbb{C}[S_n]$ as an abstract algebra
+$H_n(R, q)$ is isomorphic to $\mathbb{C}[S_n]$ as an abstract algebra
 (Jimbo's theorem), hence semisimple.  The $q$-Schur--Weyl
 decomposition of $V^{\otimes n}$ is the standard result for
 $\mathrm{SU}_q(2)$; see e.g. Chari--Pressley, Chapter 10.  The
@@ -10,9 +10,9 @@ two-rowed.
 
 *Part (2).*  Alexander's theorem guarantees surjectivity of the
 braid closure map $\beta \mapsto \hat{\beta}$.  The Markov trace on
-$H_n(q)$ is the unique trace satisfying the Markov property
+$H_n(R, q)$ is the unique trace satisfying the Markov property
 $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$ for
-$x \in H_n(q)$ and a parameter $z$ determined by $q$.  On each
+$x \in H_n(R, q)$ and a parameter $z$ determined by $q$.  On each
 irreducible summand $S_\lambda$, the trace restricts to a non-zero
 scalar multiple of the character, so every summand is detected by
 some braid closure.

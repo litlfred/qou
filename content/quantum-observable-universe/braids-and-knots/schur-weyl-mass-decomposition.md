@@ -36,7 +36,7 @@ $$
 $$
 
 **Three-channel regrouping for $A = 1$.**
-*When $A = 1$ (single nucleon, $H_3(q)$), the partitions of $3$
+*When $A = 1$ (single nucleon, $H_3(R, q)$), the partitions of $3$
 are $\{(3), (2,1), (1,1,1)\}$ corresponding respectively to the
 symmetric, standard, and antisymmetric Wedderburn blocks:*
 
@@ -60,7 +60,7 @@ approximation: for an $A$-nucleon atom it sums the $A=1$ weights
 $(w_{\mathrm{sym}}, w_{\mathrm{std}}, w_{\mathrm{alt}})$ over
 each of the $3A-1$ generators of $\mathcal{A}$.  This is exact
 only when the atomic braid factors through independent copies
-of $H_3(q)$, which is not the case in general:*
+of $H_3(R, q)$, which is not the case in general:*
 
 1. *For $A \geq 2$ the exact sum runs over all
    $p(3A)$ partitions of $3A$, not over $A$ copies of

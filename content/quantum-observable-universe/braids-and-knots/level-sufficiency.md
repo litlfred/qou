@@ -48,7 +48,7 @@ invariants.*
 *The Ocneanu–Jones Markov trace
 $\mathrm{tr}_M: H_\bullet(q) \to \mathbb{C}(q)$ is a compatible
 family along the Hecke tower
-$H_n(q) \hookrightarrow H_{n+1}(q)$, satisfying the Markov property
+$H_n(R, q) \hookrightarrow H_{n+1}(q)$, satisfying the Markov property
 $\mathrm{tr}_M \circ \iota = \mathrm{tr}_M$
 ([Jones 1987](https://doi.org/10.2307/1971403)).  Hypothesis
 $k_{\max}(P, q) \le n_0$ asserts that every Wedderburn block

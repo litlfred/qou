@@ -5,11 +5,11 @@ and the upstream **neutron tower closure** via
 `alpha_blend_tower.py` — use the **same algebraic operation**:
 the **Frobenius antipode**
 $S \colon \sigma \mapsto \sigma^{-1}$ on the Hecke algebra
-$H_n(q)$.  This unifies what appeared to be unrelated structural
+$H_n(R, q)$.  This unifies what appeared to be unrelated structural
 findings under a single categorical primitive.*
 
 **The Frobenius antipode.**
-*$H_n(q)$ is a self-dual Frobenius algebra
+*$H_n(R, q)$ is a self-dual Frobenius algebra
 ([Frobenius universal](#thm:frobenius-codim-universal)) with
 canonical antipode $S$:*
 

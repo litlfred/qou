@@ -102,7 +102,7 @@ does not rescale with $A$.  Rigorous determination is open.*
 **Specialisations by knot type.**
 
 *For a single braid generator ($n = 2$, electron candidate):*
-$\widehat{H_2(q)} = \{(2), (1,1)\}$ both with $\dim_q = 1$, so
+$\widehat{H_2(R, q)} = \{(2), (1,1)\}$ both with $\dim_q = 1$, so
 $\sum 1/\dim_q = 2$, giving Frobenius residual $2 m_e \approx
 1.022\;\mathrm{MeV}$.
 

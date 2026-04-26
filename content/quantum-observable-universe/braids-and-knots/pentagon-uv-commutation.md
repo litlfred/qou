@@ -21,7 +21,7 @@ $\hat V_\ell \equiv \hat V_\ell^{(n)}$ be the Markov-traced
 generator volumes
 ([Markov trace factorization](#thm:markov-trace-factorization)).
 Set $u = \hat V_i\hat V_j$ and $v = \hat V_k$.  In the
-Wedderburn block $B_\lambda \subset H_n(q)$ on which the
+Wedderburn block $B_\lambda \subset H_n(R, q)$ on which the
 standard-representation eigenvalue of the Hecke generator is
 $q$, the operator pair satisfies
 

@@ -86,7 +86,7 @@ where $\beta$ is the braid whose closure is the knot $K$.
 **Application to figure-eight BW coefficients.**
 The trace $\chi_{4_1}([2{,}1]) = \mathrm{tr}(\rho_{[2,1]}(T_1 T_2^{-1}
 T_1^{-1} T_2)) = 2 - [3]_q$ is computed by multiplying four $2 \times 2$
-Hoefsmit matrices in the standard representation of $H_3(q)$.  The
+Hoefsmit matrices in the standard representation of $H_3(R, q)$.  The
 result $2 - [3]_q = -1 - h^2$ lands on a $q$-integer expression
 because each matrix entry is a rational function of $q$, and the
 trace is a Laurent polynomial in $q$.

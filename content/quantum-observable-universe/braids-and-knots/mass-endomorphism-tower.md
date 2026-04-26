@@ -112,7 +112,7 @@ level ([jet-tower reformulation](#rem:mass-endomorphism-jet-tower))
 rather than appearing as explicit cubic terms.*
 
 *Proof.*
-The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) decomposes via the
 descent involution into descended and transient contributions.  The
 transient trace localises to blow-up centres $p$ in the brane tower
@@ -131,7 +131,7 @@ $$
 
 where $z_p$ is the spectral coordinate of the blow-up centre.
 
-The NF basis of $H_n(q)$ decomposes by generator content.  Each
+The NF basis of $H_n(R, q)$ decomposes by generator content.  Each
 subset $S \subseteq \{0,\dots,n-2\}$ contributes a blow-up centre
 with spectral coordinate $\prod_{i\in S}\hat{V}_i$ and Markov
 weight $z^{|S|}$; triples and higher generator subsets are not
@@ -144,7 +144,7 @@ pair sums above.
 For the adjacent pair $\{i, i+1\}$ the NF elements
 $\sigma_i\sigma_{i+1}$ and $\sigma_{i+1}\sigma_i$ share the same
 spectral support $\hat{V}_i\hat{V}_{i+1}$ (the same blow-up centre,
-distinct elements of $H_n(q)$ modulo Yang--Baxter); their combined
+distinct elements of $H_n(R, q)$ modulo Yang--Baxter); their combined
 weight is $z^2$, not $2z^2$.  For a non-adjacent pair
 $\{i, j\}$ with $\lvert i-j\rvert\geq 2$ far-commutativity gives
 $\sigma_i\sigma_j = \sigma_j\sigma_i$ and

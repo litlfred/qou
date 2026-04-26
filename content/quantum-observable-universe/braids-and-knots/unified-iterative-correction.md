@@ -40,7 +40,7 @@ $$
 - *$\mathbf{M}_\lambda^{(0..A)}$ is the Young-seminormal-form
   matrix product over all NF crossings introduced through
   step $A$, embedded into the Hecke generators
-  $\sigma_1, \ldots, \sigma_{k-1}$ of $H_k(q)$ with cyclic
+  $\sigma_1, \ldots, \sigma_{k-1}$ of $H_k(R, q)$ with cyclic
   generator index.*
 
 *One-dimensional representations have $w_\lambda / d_\lambda =

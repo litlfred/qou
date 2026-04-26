@@ -44,6 +44,6 @@ acquires a correction term at each step.  Concretely:
 
 The pattern is that Noether's theorem **survives the $q$-deformation**,
 but the conserved quantities are categorical — they live in the Hecke
-algebra $H_n(q)$, not in classical phase space.  The archimedean
+algebra $H_n(R, q)$, not in classical phase space.  The archimedean
 (numerical) values obtained by applying the fibre functor $\tau$ carry
 $q$-corrections that are measurable as anomalies in precision experiments.

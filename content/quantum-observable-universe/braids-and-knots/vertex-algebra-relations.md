@@ -1,7 +1,7 @@
 The vertex operator algebra $(V, Y, |0\rangle)$
 ([vertex operator](#def:vertex-operator)) inherits every QU and QUO
 axiom as a relation on the Hecke generators $T_1, \ldots, T_{n-1}$
-of $H_n(q)$.  Below we list each axiom and its explicit
+of $H_n(R, q)$.  Below we list each axiom and its explicit
 translation into **knot coordinates** — braid words in $T_i$,
 the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace
 $\mathrm{tr}_M$, and cup/cap morphisms
@@ -15,7 +15,7 @@ $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
 ### QU-1: Rigid braided monoidal structure
 
 The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke
-representation $\rho_n\colon B_n \to H_n(q)$ with
+representation $\rho_n\colon B_n \to H_n(R, q)$ with
 $T_i = \rho_n(\sigma_i)$.  Rigidity and braiding are encoded by
 three families of relations:
 
@@ -199,7 +199,7 @@ $$
   \mathrm{tr}_M\!\bigl(T_i \cdot w\bigr)
   = 
   \mathrm{tr}_M\!\bigl(w \cdot T_i\bigr)
-  \qquad \forall w \in H_n(q).
+  \qquad \forall w \in H_n(R, q).
 $$
 
 **(QU-3b) Markov property II** (stabilisation):
@@ -208,7 +208,7 @@ $$
   \mathrm{tr}_M\!\bigl(w \cdot T_n^{\pm 1}\bigr)
   = 
   \frac{1}{\delta} \mathrm{tr}_M(w)
-  \qquad \text{for } w \in H_n(q) \subset H_{n+1}(q),
+  \qquad \text{for } w \in H_n(R, q) \subset H_{n+1}(q),
 $$
 
 where $\delta = -(q + q^{-1})$ is the writhe normalisation.
@@ -219,7 +219,7 @@ $$
   \mathrm{tr}_M\!\bigl(\rho(\beta)\bigr) = 0
    \forall \beta \in B_n
   \quad\Longrightarrow\quad
-  \rho(\beta) = 0  \text{in } H_n(q).
+  \rho(\beta) = 0  \text{in } H_n(R, q).
 $$
 
 The fibre functor detects every nonzero morphism — equivalently,
@@ -281,7 +281,7 @@ $$
 
 Equivalently, the Gram matrix
 $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$
-over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(q)$ is
+over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is
 invertible.
 
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
@@ -340,7 +340,7 @@ bundle.
 
 The exterior power $\Lambda^2 V$ maps onto $\mathbf{1}$ via a
 non-degenerate epimorphism $\epsilon$ preserved by gauge
-automorphisms.  The antisymmetriser in $H_2(q)$ is:
+automorphisms.  The antisymmetriser in $H_2(R, q)$ is:
 
 $$
   \mathrm{Alt}_2
@@ -409,7 +409,7 @@ $$
 
 for all $\xi$-invariant states $a$ (those annihilated by the
 weight operator: $[\xi, a] = 0$, i.e.\ braid words in the
-centre of $H_n(q)$).
+centre of $H_n(R, q)$).
 
 ### C-2: $q$-Deformed obstruction to nilpotence ($d_q^2 \neq 0$)
 
@@ -495,7 +495,7 @@ at strand count $n$:
 $$
   \chi(A)
   = 
-  \mathrm{tr}_M(\mathrm{id}_{H_n(q)})
+  \mathrm{tr}_M(\mathrm{id}_{H_n(R, q)})
   = 
   [n]_q!
   = 
@@ -505,9 +505,9 @@ $$
 **Stability under jet prolongation** (C-4a):
 
 $$
-  \mathrm{tr}_M\!\bigl(\mathrm{id}_{J^1 H_n(q)}\bigr)
+  \mathrm{tr}_M\!\bigl(\mathrm{id}_{J^1 H_n(R, q)}\bigr)
   = 
-  \mathrm{tr}_M\!\bigl(\mathrm{id}_{H_n(q)}\bigr).
+  \mathrm{tr}_M\!\bigl(\mathrm{id}_{H_n(R, q)}\bigr).
 $$
 
 The translation operator $L_{-1}$ preserves the Euler
@@ -557,7 +557,7 @@ $$
 
 In Hecke generators: at every brane level, there exist braid
 words $\beta_{n+1} \in H_{n+1}(q)$ that cannot be written as
-$L_{-1}(\beta_n)$ for any $\beta_n \in H_n(q)$.  The jet
+$L_{-1}(\beta_n)$ for any $\beta_n \in H_n(R, q)$.  The jet
 corrections and the base obstruction live in complementary
 subgroups, so cancellation is impossible.
 
@@ -573,17 +573,17 @@ $$
   = 
   \dim_R
   \frac{
-    \ker\!\bigl(d\colon \Omega^k_{H_n(q)} \to \Omega^{k+1}_{H_n(q)}\bigr)
+    \ker\!\bigl(d\colon \Omega^k_{H_n(R, q)} \to \Omega^{k+1}_{H_n(R, q)}\bigr)
   }{
-    \mathrm{im}\!\bigl(d\colon \Omega^{k-1}_{H_n(q)} \to \Omega^k_{H_n(q)}\bigr)
+    \mathrm{im}\!\bigl(d\colon \Omega^{k-1}_{H_n(R, q)} \to \Omega^k_{H_n(R, q)}\bigr)
   },
 $$
 
-where $\Omega^k_{H_n(q)}$ is the space of degree-$k$ antisymmetric
+where $\Omega^k_{H_n(R, q)}$ is the space of degree-$k$ antisymmetric
 Hecke words:
 
 $$
-  \Omega^k_{H_n(q)}
+  \Omega^k_{H_n(R, q)}
   = 
   \mathrm{span}\!\bigl\{
     T_{i_1} T_{i_2} \cdots T_{i_k}
@@ -723,7 +723,7 @@ braid word $\sigma^{(m,n)} \in B_m$.
 
 **Completeness**: the $6 \times 5$ character matrix
 $M_{ij} = \chi_{\lambda_j}(T_{(r_i, s_i)})$
-over irreps $\lambda \vdash r$ of $H_2(q) \oplus H_3(q)$
+over irreps $\lambda \vdash r$ of $H_2(R, q) \oplus H_3(R, q)$
 has rank $5$.  Every knot observable on $\Sigma_4$ is a
 linear combination of evaluations of the $6$ torus-knot
 Hecke words.
@@ -741,7 +741,7 @@ $$
   \bigl(a^{(n)}_{jk}\bigr)^{-1},
 $$
 
-where $g^{(n)}_{ijk} \in H_n(q)$ is the transition braid word
+where $g^{(n)}_{ijk} \in H_n(R, q)$ is the transition braid word
 on triple overlaps and $a^{(n)}_{ij}$ are 2-morphism braid words.
 In Hecke generators, the cocycle condition becomes:
 
@@ -749,7 +749,7 @@ $$
   T_{g_{ijk}} \cdot T_{g_{jkl}}
   = 
   T_{a_{ij}} \cdot T_{g_{ikl}} \cdot T_{a_{kl}}^{-1}
-  \qquad\text{(in $H_n(q)$)},
+  \qquad\text{(in $H_n(R, q)$)},
 $$
 
 where $T_g = \rho(g)$ denotes the Hecke image of a braid word.
@@ -792,7 +792,7 @@ algebra on generators $\{T_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}
 | C-4a | $\chi(A_{n+1}) = \chi(A_n)$ | Euler stability |
 | C-4b | $\mathrm{tr}_M(\mathrm{id}) = -6$ | Descartes |
 | C-5 | $\kappa_n = \mathrm{tr}_M(\check{R}_{(n+1)} - L_{-1}\check{R}_{(n)}) \neq 0$ | Perpetual obstruction |
-| C-6 | $b_k = \dim(\ker d / \mathrm{im} d)$ on $\mathrm{Alt}_k \cdot H_n(q)$ | Betti numbers |
+| C-6 | $b_k = \dim(\ker d / \mathrm{im} d)$ on $\mathrm{Alt}_k \cdot H_n(R, q)$ | Betti numbers |
 | C-7 | $S([T_i,T_j])^* = [T_i,T_j]$ | Self-dual curvature |
 | C-7a | $\sum_{i<j}\mathrm{tr}_M([T_i,T_j][T_i,T_j]^\dagger) = c_2(A)$ | Bogomolny bound |
 | C-8 | $\Delta_q T_\beta = 0 \Leftrightarrow d_q T_\beta = \delta_q T_\beta = 0$ | Harmonic braids |

@@ -1,7 +1,7 @@
 **Proposition.**
 *For any braid $K$ on $3$ strands and any partition $\lambda \vdash k$
 with $k \geq 3$, the Frobenius character of $K$ in the irreducible
-representation $\rho_\lambda$ of $H_k(q)$ is:*
+representation $\rho_\lambda$ of $H_k(R, q)$ is:*
 
 $$
   \chi(K, \lambda)
@@ -23,9 +23,9 @@ seminormal form
 | *unknot (identity)* | *$1$* | *$2$* | *$1$* |
 
 *Proof.*
-The braid $K$ lives in $H_3(q)$ (generators $T_1, T_2$).  The
-representation $\rho_\lambda$ of $H_k(q)$ restricts to $H_3(q)$
-via the standard inclusion $H_3(q) \hookrightarrow H_k(q)$
+The braid $K$ lives in $H_3(R, q)$ (generators $T_1, T_2$).  The
+representation $\rho_\lambda$ of $H_k(R, q)$ restricts to $H_3(R, q)$
+via the standard inclusion $H_3(R, q) \hookrightarrow H_k(R, q)$
 (using the first two generators).  The branching rule gives:
 
 $$

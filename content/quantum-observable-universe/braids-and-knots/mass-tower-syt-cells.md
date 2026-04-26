@@ -8,7 +8,7 @@ is most naturally expressed in the JM / SYT cell basis.
 
 ## Jucys--Murphy elements
 
-For $H_n(q)$ with generators $T_1, \ldots, T_{n-1}$, the
+For $H_n(R, q)$ with generators $T_1, \ldots, T_{n-1}$, the
 **Jucys--Murphy (JM) elements** are
 
 $$
