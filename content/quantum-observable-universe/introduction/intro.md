@@ -273,7 +273,8 @@ given configuration, the one minimising the categorical action
 wins, and strong duality identifies it uniquely.  The
 embeddability bound on $\Sigma_4$ yields exactly $7$ transfer
 matrices — six non-trivial force operators and the identity
-(**interaction completeness**).  The hyperbolic volumes of the
+(**interaction completeness**; the seven are enumerated in
+[tm-interaction-completeness](#tm-interaction-completeness)).  The hyperbolic volumes of the
 knots that appear — $\mathrm{Vol}(4_1)$, $\mathrm{Vol}(B_3)$, and
 others — encode the physical constants; the topological mass
 formula

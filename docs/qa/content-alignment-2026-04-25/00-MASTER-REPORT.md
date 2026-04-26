@@ -21,13 +21,13 @@ The largest chapters (Ch 4 Braids 263 .md, Ch 9 Descartes 184 .md, Ch 2 QOU 205 
 
 ## Grand totals
 
-| Severity | Count |
-|---|---|
-| **Blocker** (factual/notational error breaking a claim) | **1** |
-| **Major** (voice/alignment/notation violation a referee would catch) | **17** |
-| **Minor** (stylistic, register ambiguity, hedge) | **40** |
-| **Simplification** (optional cleanup) | **55** |
-| **Total** | **113** |
+| Severity | Count | Resolved |
+|---|---|---|
+| **Blocker** (factual/notational error breaking a claim) | **1** → **0** | B-7 reviewed; false positive |
+| **Major** (voice/alignment/notation violation a referee would catch) | **17** → **0** | all 17 fixed |
+| **Minor** (stylistic, register ambiguity, hedge) | **40** | open |
+| **Simplification** (optional cleanup) | **55** | open |
+| **Total** | **113** → **95** | |
 
 Plus 2 back-matter directories flagged for §4b notation-introduction review (low severity).
 
@@ -37,8 +37,17 @@ Plus 2 back-matter directories flagged for §4b notation-introduction review (lo
 > Hecke-σ major (M-14) recorded in the original audit were written
 > against the old rule. **Under the new convention they are correct as
 > written**, so they have been removed from the active issue list. A
-> bulk flip of stale `T_i` Hecke notation across 36 paper files was
+> bulk flip of stale `T_i` Hecke notation across 48 paper files was
 > applied in the same commit.
+
+> **Day-2 remediation completed (2026-04-26):**
+> All remaining blockers and majors fixed across three commits.
+> See `8a3891a` (mechanical fixes), the M-10 TM-enumeration block
+> [tm-interaction-completeness.md](../../../content/quantum-observable-universe/appendix-transfer-matrices/tm-interaction-completeness.md),
+> and the M-11 mass-formula bridge in
+> [topological-mass-formula.md](../../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md).
+> 40 minors and 55 simplifications remain — these are non-blocking and
+> tracked for follow-up.
 
 ## Per-chapter scoreboard
 
@@ -69,7 +78,7 @@ Two chapters are publication-ready as-is (Ch 1, Ch 13 Langlands). One blocker re
 
 | ID | Chapter | File | Line | Issue | Fix |
 |---|---|---|---|---|---|
-| B-7 | Ch 12 | `molecular-construction.ts` | 12 | Molecular formulas (`H_2`, `C_6H_6`) in JSDoc not TeX-rendered | Wrap in `$...$` |
+| ~~B-7~~ | Ch 12 | `molecular-construction.ts` | 12 | ~~Molecular formulas in JSDoc not TeX-rendered~~ — **declined**: JSDoc Unicode subscripts (H₂, CO₂) render fine in TypeDoc HTML; not a real LaTeX target. False positive. |
 
 > ~~B-1..B-6 (Ch 4 Hecke `\sigma_i^2`)~~ — **resolved by convention flip**.
 > CLAUDE.md §7a was changed to use `σ_i` for Hecke generators, matching
