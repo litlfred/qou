@@ -191,17 +191,42 @@ fn perm_cycle_type(perm: &Perm) -> Vec<usize> {
 
 /// **F3.2.γ wiring**: compute `χ_λ(T_β; q)` for an arbitrary braid
 /// word by expanding `T_β = Σ c_w · T_w` in the Hecke basis and
-/// applying q-MN on each `T_w` (a class function of cycle type w).
+/// applying q-MN on each `T_w`.
 ///
 ///   χ_λ(T_β; q) = Σ_w c_w(q) · χ_λ(T_w; q)
-///                = Σ_w c_w(q) · χ_λ^MN(cycle_type(w); q)
 ///
-/// **Note on correctness**: the q-MN strip-weight currently used in
-/// `chi_lambda_mn_qdef` is the simplified `(−q⁻¹)^h · q^{k−1−h}`
-/// form, which is correct for size-1 strips but incomplete for
-/// general strips at q ≠ 1.  Cross-validation against Hoefsmit at
-/// q₀ will reveal where the simplified weight fails.  At q = 1 it
-/// must match exactly (collapses to classical MN).
+/// **CRITICAL CORRECTNESS NOTE — F3.2.γ is structurally incomplete.**
+///
+/// At q ≠ 1, two basis elements `T_w` and `T_{w'}` with the SAME
+/// cycle type but DIFFERENT lengths give DIFFERENT Hecke characters.
+/// This is NOT a class function on cycle type — it's a class
+/// function on `H_n(q)` (invariant under Hecke conjugation), which
+/// for symmetric-group permutations means: invariant ONLY among
+/// MINIMAL-LENGTH representatives of each conjugacy class.
+///
+/// Empirical verification (see q_mn_canonical.py cross-check):
+///   χ^(2,1)(T_{s_1};       q₀) ≈ +0.209  (length 1, minimal)
+///   χ^(2,1)(T_{s_1 s_2 s_1}; q₀) ≈ -0.000  (length 3, NOT minimal)
+///   Both have cycle type (2, 1).
+///
+/// The simplified q-MN treats both as the canonical-cycle-type
+/// character of the minimal-length representative — incorrect for
+/// non-minimal w.
+///
+/// **Two paths to a correct implementation (F3.2.δ):**
+///
+/// 1. **Geck-Pfeiffer cuspidal reduction**: for each `T_w` in the
+///    expansion, reduce w to its minimal-length representative
+///    `w_min` within its conjugacy class via "good conjugations"
+///    (s w s = w' with ℓ(w') ≤ ℓ(w) - 2), then apply q-MN to
+///    `cycle_type(w_min)`.  Reference: Geck-Pfeiffer 2000 §3.
+///
+/// 2. **Hoefsmit per T_w**: for each basis element, build the
+///    canonical reduced word `w_min` and evaluate via Hoefsmit
+///    seminormal.  Correct but no MN speedup.
+///
+/// At q = 1 the simplified path is correct (Hecke ↦ S_n; characters
+/// ARE class functions on cycle type alone).
 pub fn chi_lambda_via_geck_pfeiffer(
     lambda: &[usize],
     n: usize,
@@ -290,6 +315,42 @@ mod tests {
         let expected = Perm(vec![1, 2, 0]);
         assert_eq!(result.len(), 1);
         assert_eq!(result.get(&expected), Some(&LaurentPolyQ::one()));
+    }
+
+    /// **F3.2.γ correctness boundary at q = 1 (CORRECT) vs q ≠ 1 (FAILS).**
+    ///
+    /// The current chi_lambda_mn_qdef uses the SIMPLIFIED strip
+    /// weight `(−q⁻¹)^h · q^{k−1−h}` which collapses to `(−1)^h` at
+    /// q = 1 (correct classical MN) but is the wrong q-deformation
+    /// for general non-trivial irreps at q ≠ 1.
+    ///
+    /// Empirically: χ^(2,1)(T_{s_1}; q₀) ≈ +0.209 = h via Hoefsmit,
+    /// but our chi_lambda_via_geck_pfeiffer returns 0 because the
+    /// simplified MN gives 0 on cycle type (2,1) at any q (no
+    /// size-2 strips removable from (2,1) under the beta-number rule).
+    ///
+    /// At q = 1, classical MN says χ^(2,1)((2,1)-cycle) = 0 (the
+    /// 2D standard rep is "balanced" on transpositions).  My
+    /// formula correctly returns 0 here.  But h evaluates to 0 at
+    /// q=1 too, so this is consistent — h = q − q⁻¹ → 0 as q → 1.
+    ///
+    /// So: at q = 1 we get 0 (classical MN); at q ≠ 1 we ALSO get
+    /// 0 (still no size-2 strips), but the TRUE Hecke character is
+    /// h ≠ 0 at q ≠ 1.  The simplified MN under-counts.
+    #[test]
+    fn gp_correct_at_q_eq_one_only() {
+        use num_bigint::BigInt;
+        // CASE: σ_1 σ_2 σ_1 (length 3, cycle type (2,1) but NOT minimal).
+        // At q = 1, classical MN: χ^(2,1)((2,1)) = 0.
+        let chi = chi_lambda_via_geck_pfeiffer(
+            &[2, 1], 3, &[(1, 1), (1, 2), (1, 1)],
+        );
+        assert_eq!(chi.evaluate_at_one(), BigInt::from(0),
+                   "at q=1, χ^(2,1)((2,1)) = 0; got {}",
+                   chi.evaluate_at_one());
+        // We do NOT assert anything at q ≠ 1 — the simplified MN
+        // gives wrong values there; F3.2.δ (proper Ram-Wenzl arm-leg
+        // formula) is the next milestone.
     }
 
     /// chi_lambda_via_geck_pfeiffer matches direct chi_lambda_mn_qdef on
