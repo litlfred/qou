@@ -407,8 +407,13 @@ def discover_via_wedderburn_sdp(
         # partitions with the same depth would collide).
         for i, p_i in enumerate(partition):
             plancherel_sig[f"part_{i}"] = float(p_i)
+        # Cache-key fingerprint must be stable across feeder names —
+        # use the constant module identifier here, not the per-call
+        # `discovered_by` parameter (Copilot #r3143946...).  Per-call
+        # attribution is still recorded on the operation via
+        # `discovered_in` (handled by `cache.add_operation`).
         fingerprint = {
-            "feeder": discovered_by,
+            "feeder": "wedderburn_sdp",
             "n": str(n),
             "partition": partition_str,
         }

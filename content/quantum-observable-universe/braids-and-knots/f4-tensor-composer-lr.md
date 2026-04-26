@@ -59,9 +59,9 @@ Implemented in `folio-assistant/computations/knot_operation_cache.py`
 as `chi_via_factorization(lam, factorization, q)`.  Per-factor
 characters $\chi_{\mu_i}(T_{\beta_i}; q)$ are evaluated via the
 Hoefsmit seminormal kernel
-[`pyhecke_native.chi_lambda_braid`](https://github.com/litlfred/qou/blob/claude/f4-sdp-mpfr-content/tools/pyhecke-native/src/lib.rs);
+[`pyhecke_native.chi_lambda_braid`](https://github.com/litlfred/qou/blob/main/tools/pyhecke-native/src/lib.rs);
 LR coefficients $c^\lambda_{\mu\nu}$ via
-[`pyhecke_native.lr_coefficient`](https://github.com/litlfred/qou/blob/claude/f4-sdp-mpfr-content/tools/hecke-engine/src/littlewood_richardson.rs).
+[`pyhecke_native.lr_coefficient`](https://github.com/litlfred/qou/blob/main/tools/hecke-engine/src/littlewood_richardson.rs).
 The composition is a left-fold maintaining the partial vector
 $V_j[\tau] = \chi_\tau(T_{\beta_1 \otimes \cdots \otimes \beta_j})$
 over partitions $\tau$ of $n_1 + \cdots + n_j$.
@@ -76,9 +76,11 @@ Three precision tiers are exposed:
   expansion `chi_q_via_gp` per factor.
 
 Tensor-product factorizations are detected automatically by
-[`discover_factorization`](#prop:f4-wedderburn-sdp-shadow-price)
-when consecutive generator indices act on disjoint strand subsets;
-entangled braids fall through to the shadow-price path.
+`discover_factorization` (in
+`folio-assistant/computations/knot_operation_cache.py`) when
+consecutive generator indices act on disjoint strand subsets;
+entangled braids fall through to the
+[shadow-price path](#prop:f4-wedderburn-sdp-shadow-price).
 
 ## Verification
 

@@ -13,7 +13,7 @@ export default proposition({
     "prop:hoefsmit-seminormal-form",
     "prop:f4-tensor-composer-lr",
   ],
-  cites: ["stanley1999"],
+  cites: ["stanley1999", "boyd-vandenberghe-2004"],
   tags: [
     "f4",
     "wedderburn",

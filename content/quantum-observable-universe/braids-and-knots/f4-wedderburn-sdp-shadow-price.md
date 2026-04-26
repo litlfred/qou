@@ -22,34 +22,32 @@ $$
   \{ \lambda \vdash n : \chi_\lambda(T_\beta; q) \neq 0 \}.
 $$
 
-Consider the **shadow-price LP** in the Schrijver convention:
+We use the term **shadow price** informally for the per-block
+coefficients attached to the Wedderburn decomposition of
+$\operatorname{tr}_M(T_\beta)$ — namely, the products
+$y_\lambda \chi_\lambda(T_\beta; q)$ as $\lambda$ ranges over
+partitions of $n$.  In an LP-duality reading (Boyd–Vandenberghe
+2004 §5; Schrijver §7), one looks for the cheapest non-negative
+combination of these per-block weights that reproduces the trace,
+and the *active blocks* are the partitions where the dual price is
+strictly positive.
 
-$$
-\begin{aligned}
-  \text{(P)} \quad & \text{find}\; x \in \mathbb{R}_{\geq 0}^{|\Lambda|}
-   \text{ s.t. } \sum_\lambda x_\lambda \chi_\lambda(T_\beta; q) \geq c, \\
-  \text{(D)} \quad & \max_{u \in \mathbb{R}_{\geq 0}^{|\Lambda|}} c \cdot u
-   \text{ s.t. for every } \lambda, \sum_{\lambda} u_\lambda \, y_\lambda
-   \chi_\lambda(T_\beta; q) \leq y_\lambda \chi_\lambda(T_\beta; q),
-\end{aligned}
-$$
-
-where $\Lambda = \{\lambda \vdash n\}$ and $c$ is a target constraint.
-
-Then the support of any optimal dual $u^*$ equals
+The claim is that this active set is exactly
 $\operatorname{supp}_q(\beta)$.
 
 ## Proof sketch
 
-By LP duality (Schrijver §7), the dual variable $u^*_\lambda$
-is non-zero exactly at constraints that are tight at the primal
-optimum.  Since the primal feasibility constraint involves
-$\chi_\lambda(T_\beta; q)$ as a coefficient on $x_\lambda$,
-$\chi_\lambda = 0$ forces the corresponding column of the primal
-constraint matrix to vanish; complementary slackness then forces
-$u^*_\lambda = 0$.  Conversely, $\chi_\lambda \neq 0$ admits a
-feasible $x_\lambda > 0$, so the constraint can be made tight, and
-$u^*_\lambda > 0$ at any extreme dual optimum.
+A partition $\lambda \vdash n$ belongs to
+$\operatorname{supp}_q(\beta)$ exactly when
+$\chi_\lambda(T_\beta; q) \neq 0$.  If $\chi_\lambda = 0$, the
+$\lambda$-block contributes zero to the Wedderburn decomposition of
+$\operatorname{tr}_M(T_\beta)$ and any non-zero shadow price on
+that block can be reduced to zero without altering the trace —
+complementary slackness in any standard LP/SDP setup forces the
+dual price to vanish.  If $\chi_\lambda \neq 0$, the block does
+contribute, and any extremal dual solution must place positive
+mass on it to recover the corresponding term of the trace
+identity.
 
 Equivalently — and the form used by the F4 discovery feeder —
 $\operatorname{supp}_q(\beta)$ can be computed *directly* by
