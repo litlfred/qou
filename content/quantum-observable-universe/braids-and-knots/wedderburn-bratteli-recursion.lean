@@ -78,7 +78,8 @@ theorem wedderburn_bratteli_recursion
 theorem y_base_case (y : Partition → ℝ) (one : Partition)
     (hone : one.parts = [1]) :
     y one = 1 := by
-  sorry  -- Trivial: H_1(R, q) = R, tr_M = identity character.
+  sorry  -- Ref: [manuscript] thm:jones-markov-trace base case;
+         -- H_1(R, q) = R, tr_M = identity character, y_(1) = 1.
 
 /-- Plancherel completeness at every level: Σ y_λ · d_λ = 1 where
     d_λ = dim V_λ (hook-length formula).  This is the Markov-trace
