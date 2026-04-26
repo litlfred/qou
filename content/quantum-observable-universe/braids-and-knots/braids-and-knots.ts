@@ -440,6 +440,7 @@ export default chapter({
         "mass-formula-wedderburn-enumeration",
         "mass-tower-coefficient-stratification",
         "alpha-k-derivation-procedure",
+        "wenzl-bridge-y-lambda",
         "explicit-alpha-k-h3",
         "y-lambda-sign-pattern",
         "terms-2-6-higher-operations",
