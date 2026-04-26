@@ -369,23 +369,35 @@ fn mn_chi_rec_memo(
 /// **q-deformed character of an arbitrary braid word** via Hecke
 /// expansion of inverse generators.
 ///
-/// For a braid `β = σ_{i_1}^{ε_1} ... σ_{i_k}^{ε_k}` with mixed signs,
-/// each `σ_i^{-1}` is rewritten via the Hecke relation
-/// `σ_i^{-1} = σ_i − h`, where `h = q − q^{-1}`.  Expanding the
-/// product produces a sum of `2^{(#negatives)}` positive sub-braids,
-/// each weighted by `(−h)^{|deletions|}` where the deletions are the
-/// negative positions where we chose the `−h · 1` term instead of
-/// the `σ_i` term.
+/// **WARNING — fundamental algorithmic limitation, not just incomplete weight.**
 ///
-/// For each positive sub-braid, the underlying permutation is
-/// computed by composing transpositions; its cycle type μ feeds
-/// the q-MN recursion (`chi_lambda_mn_qdef`) which then returns a
-/// `LaurentPolyQ`.
+/// This function computes χ_λ for a positive sub-braid by extracting
+/// its underlying permutation's cycle type μ and calling
+/// `chi_lambda_mn_qdef(λ, μ)`.  This is **only correct when the
+/// sub-braid is a minimal-length permutation braid `T_w` (canonical
+/// form)**.  For an arbitrary positive braid word, two elements of
+/// `H_n(q)` with the same image in `S_n` (same cycle type) can have
+/// DIFFERENT q-characters — the q-character depends on the WORD,
+/// not just the cycle type.
 ///
-/// **Cost**: `O(2^{(#negatives)} · n²)` per character — practical
-/// for short atomic braids (D, T) but exponential in negative-
-/// generator count for larger isotopes.  For ⁴He where negatives
-/// ~ 10, this is ~1024 sub-braids per character × 77 partitions.
+/// At `q = 1` this distinction disappears (`H_n(1) = ℂ[S_n]`), so
+/// classical MN cross-validation succeeds.  At `q ≠ 1`, the
+/// cross-validation against Hoefsmit DIVERGES — see
+/// `folio-assistant/computations/qmn_vs_hoefsmit_cross_check.py`.
+///
+/// Two paths to fix (deferred to F3.2.γ):
+///
+/// 1. **Geck-Pfeiffer minimal-length reduction**: reduce arbitrary
+///    braid words to canonical `T_w` form via Knuth-class moves
+///    on Hecke generators.  This recovers cycle-type sufficiency.
+/// 2. **Direct seminormal evaluation**: bypass MN entirely for
+///    arbitrary words; use the Hoefsmit kernel (already exists in
+///    `seminormal.rs`).  No speedup over current path but correct.
+///
+/// For now `chi_lambda_braid_qdef` is **algorithmically usable for
+/// q = 1 only**.  At q ≠ 1 it returns a value that has the right
+/// q = 1 limit (matches classical MN exactly) but is the wrong
+/// q-deformation for non-minimal-length braid words.
 ///
 /// `n_strands`: number of strands the braid lives on.
 /// `word`: braid word as `[(sign, generator_1based), ...]`.

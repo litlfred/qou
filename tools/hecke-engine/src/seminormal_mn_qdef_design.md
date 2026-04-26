@@ -45,6 +45,68 @@ weight(μ → μ ∪ s) = (-1)^h · q^{(k - 1 - h - h')}
 where `h'` is a "co-height" (Ram 1991 §3, see also Aiston-Morton 1996
 for the skein-theoretic interpretation).
 
+## Critical insight (added in F3.2.β cross-validation)
+
+When the F3.2.α + F3.2.β commits cross-checked `chi_q_word` against
+the Hoefsmit f64 kernel at q₀ ≈ 1.10998 on real D / T atomic braids,
+they diverged by O(1) for non-trivial irreps.  Investigation:
+
+**Two elements of `H_n(q)` with the same image in `S_n` (same cycle
+type) can have DIFFERENT q-characters.**  The q-character depends on
+the WORD, not just the cycle type.
+
+Concretely, for two braid words `β₁, β₂` with `π(β₁) = π(β₂)`:
+- At q = 1: `χ_λ(T_{β₁}; 1) = χ_λ(T_{β₂}; 1)` because
+  `H_n(1) = ℂ[S_n]` and characters depend only on the conjugacy class.
+- At q ≠ 1: in general `χ_λ(T_{β₁}; q) ≠ χ_λ(T_{β₂}; q)`.
+
+The q-MN recursion (with the proper Ram weight) computes `χ_λ(T_w; q)`
+for the **canonical minimal-length permutation braid** `T_w`.
+Atomic braids are NOT in this canonical form — they're arbitrary
+products of generators including inverses.
+
+## Two paths to a correct implementation
+
+### Path A — Geck-Pfeiffer minimal-length reduction
+
+For each braid word β, reduce to canonical `T_w` form via Knuth-
+equivalence moves on Hecke generators.  Then apply q-MN on the
+resulting cycle type.  Correct + fast (poly-time reduction
+followed by O(n²) MN).
+
+References:
+- **Geck-Pfeiffer 2000** "Characters of finite Coxeter groups
+  and Iwahori-Hecke algebras" §3.2 (reduction algorithm).
+- **Geck-Kim-Pfeiffer 2000** "Minimal length elements of extended
+  affine Weyl groups" (related).
+
+### Path B — Direct skein recursion on the braid word
+
+Compute the Markov trace of `T_β ∈ H_n(q)` directly via the Hecke
+skein relations:
+
+  `T_σ = q · e_+ - q⁻¹ · e_-`  (idempotent decomposition)
+
+This gives the HOMFLY polynomial as the trace of the closure, which
+specializes to character-resolved values via the standard
+trace-irrep duality.
+
+Polynomial in crossings (~50 for atomic), no need for MN at all.
+
+References:
+- **Aiston-Morton 1996** "Idempotents of Hecke algebras of type A"
+- **Wenzl 1988** "Hecke algebras of type A_n and subfactors"
+  §3 (skein-theoretic Markov trace).
+
+## Decision
+
+Path A (Geck-Pfeiffer) preserves the F3.1 + F3.2 infrastructure and
+adds ~200 lines of Rust for the reduction algorithm.  Path B
+abandons MN entirely; ~500 lines for skein evaluation.
+
+Recommend **Path A** for F3.2.γ — keeps the q-MN backbone, adds
+the missing reduction layer.
+
 ## What's needed in code
 
 ### 1. q-arithmetic backend
