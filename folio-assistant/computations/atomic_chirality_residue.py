@@ -37,18 +37,15 @@ mp.mp.dps = 30
 
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV
-from hecke_characters import partitions_of, dim_q
+from hecke_characters import (
+    partitions_of, dim_q,
+    chi_lambda_braid as _shared_chi_lambda_braid,
+    _RUST_CHI_AVAILABLE as _RUST_AVAILABLE,
+)
 from hecke_core import _step_chain_generic
 from q_mpmath import set_q, qfac
 
 set_q(Q0_FLOAT)
-
-try:
-    import pyhecke_native as _pyn
-    _RUST_AVAILABLE = True
-except ImportError:
-    _pyn = None
-    _RUST_AVAILABLE = False
 
 Q0 = mp.mpf(str(Q0_FLOAT))
 QI = mp.mpf(1) / Q0
@@ -100,13 +97,7 @@ def _process(args):
     is_chir = is_chirality_cell(lam_t)
     depth = len(lam_t) - 1
     try:
-        if _RUST_AVAILABLE:
-            chi = _pyn.chi_lambda_braid(list(lam_t), word_marshalled, q0_float)
-        else:
-            from plancherel_term_7 import chi_lambda_at_q0
-            chi = chi_lambda_at_q0(lam_t, [
-                ('+' if s > 0 else '-', g) for s, g in word_marshalled
-            ])
+        chi = _shared_chi_lambda_braid(lam_t, word_marshalled, q_value=q0_float)
     except Exception:
         return None
     if chi == 0:
@@ -128,17 +119,24 @@ def main():
     print(f"  α = m_e · 8G = {float(alpha_bind):.4f} MeV")
     print()
 
+    # Coulomb-corrected B_nucl (MeV).  For Z ≥ 2, AME experimental
+    # binding plus Coulomb-energy estimate from the symmetric
+    # nuclear shell model.
     B_NUCL = {
         ('D',   1, 1): 2.22456612,
         ('T',   1, 2): 8.481798,
         ('3He', 2, 1): 8.59697,
         ('4He', 2, 2): 29.32700,
+        ('6Li', 3, 3): 33.57,    # AME 31.99 + Coulomb 1.58
+        ('7Li', 3, 4): 41.91,    # AME 39.244 + Coulomb 2.66
     }
     isotopes = [
         ('D',   1, 1, B_NUCL[('D',   1, 1)]),
         ('T',   1, 2, B_NUCL[('T',   1, 2)]),
         ('3He', 2, 1, B_NUCL[('3He', 2, 1)]),
         ('4He', 2, 2, B_NUCL[('4He', 2, 2)]),
+        ('6Li', 3, 3, B_NUCL[('6Li', 3, 3)]),
+        ('7Li', 3, 4, B_NUCL[('7Li', 3, 4)]),
     ]
 
     n_workers = max(1, cpu_count() - 1)

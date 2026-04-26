@@ -42,20 +42,15 @@ mp.mp.dps = 30
 
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
-from hecke_characters import partitions_of, dim_q, build_seminormal_matrices
+from hecke_characters import (
+    partitions_of, dim_q, build_seminormal_matrices,
+    chi_lambda_braid as _shared_chi_lambda_braid,
+    _RUST_CHI_AVAILABLE as _RUST_AVAILABLE,
+)
 from hecke_core import _step_chain_generic
 from q_mpmath import set_q, qint, qfac as _qfac_shared
 
 set_q(Q0_FLOAT)
-
-# Rust-accelerated character kernel (50–100× faster).
-# Falls back to pure-Python implementation if pyhecke_native missing.
-try:
-    import pyhecke_native as _pyhecke_native
-    _RUST_AVAILABLE = True
-except ImportError:
-    _pyhecke_native = None
-    _RUST_AVAILABLE = False
 
 Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
 me = mp.mpf(str(M_E_MEV))
@@ -125,10 +120,7 @@ def chi_lambda_at_q0(shape, word):
 
 def _chi_lambda_fast(lam_t, word, q0_float):
     """Character χ_λ(β) at q_0 — Rust kernel if available, else Python."""
-    if _RUST_AVAILABLE:
-        word_marshalled = [(1 if s == '+' else -1, g) for s, g in word]
-        return _pyhecke_native.chi_lambda_braid(list(lam_t), word_marshalled, q0_float)
-    return chi_lambda_at_q0(lam_t, word)
+    return _shared_chi_lambda_braid(lam_t, word, q_value=q0_float)
 
 
 def _process_partition(args):

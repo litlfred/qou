@@ -424,6 +424,7 @@ export default chapter({
         "alpha-em-categorical-trace",
         "plancherel-term-7-formulation",
         "unified-curvature-rank-mass-formula",
+        "chirality-residue-mass-term",
         "e-infinity-page-identifications",
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
