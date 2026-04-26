@@ -1,5 +1,433 @@
 {
   "operations": {
+    "op_n6_a561283dc261072d": {
+      "n": 6,
+      "braid_word_normal_form": [
+        [
+          1,
+          1
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.644539,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013634+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n6_1ab4e0c39e2ec226": {
+      "n": 6,
+      "braid_word_normal_form": [
+        [
+          1,
+          4
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.850471,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013703+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n6_88e96ae3663703a9": {
+      "n": 6,
+      "braid_word_normal_form": [
+        [
+          1,
+          3
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.757198,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013716+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n6_2d269ded486cf26e": {
+      "n": 6,
+      "braid_word_normal_form": [
+        [
+          1,
+          2
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.435111,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013725+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n6_f38440069e56b296": {
+      "n": 6,
+      "braid_word_normal_form": [
+        [
+          1,
+          5
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.809665,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013731+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_759a0536d8946a4d": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          1
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.644539,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013897+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_47579b875ea205dc": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.850471,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013907+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_dd11ef7391e6c6fe": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          3
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.757198,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013919+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_339fcb7beb302a56": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          6
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.863065,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013926+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_b2f4282073b7d76b": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          2
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.435111,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013932+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_9b23d2c9a999f1d1": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.809665,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.013938+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_3d5f18da31ecc8f0": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.644539,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014006+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_92d0d7ae4049af2c": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          7
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.850471,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014012+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_ffe3030b3f12680f": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.435111,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014026+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n9_527ea2b690cf59f1": {
+      "n": 9,
+      "braid_word_normal_form": [
+        [
+          1,
+          8
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.809665,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014032+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n12_c9a4cff520ccee35": {
+      "n": 12,
+      "braid_word_normal_form": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.644539,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014147+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n12_56de2d16989fc396": {
+      "n": 12,
+      "braid_word_normal_form": [
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.850471,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014156+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n12_9e3fc43750f2d4a9": {
+      "n": 12,
+      "braid_word_normal_form": [
+        [
+          1,
+          3
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.140138,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014162+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n12_ca60fdb483f53683": {
+      "n": 12,
+      "braid_word_normal_form": [
+        [
+          1,
+          6
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.757198,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014168+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n12_2b1151403ba7a5e7": {
+      "n": 12,
+      "braid_word_normal_form": [
+        [
+          1,
+          9
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.863065,
+        "n_generators_grouped": 1.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014175+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n12_47d88443162c597a": {
+      "n": 12,
+      "braid_word_normal_form": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.435111,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014181+00:00",
+      "physics_name_candidate": null
+    },
+    "op_n12_507eca851794659c": {
+      "n": 12,
+      "braid_word_normal_form": [
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "discovered_in": [
+        "wedderburn_discovery_feeder"
+      ],
+      "plancherel_signature": {
+        "channel_signature": 0.809665,
+        "n_generators_grouped": 2.0
+      },
+      "discovered_at": "2026-04-26T12:13:54.014189+00:00",
+      "physics_name_candidate": null
+    },
     "op_n6_52bc821c2e701195": {
       "n": 6,
       "braid_word_normal_form": [
@@ -17,7 +445,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.204773+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271408+00:00",
       "physics_name_candidate": null
     },
     "op_n6_0086b7ea5a458261": {
@@ -37,7 +465,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.204879+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271445+00:00",
       "physics_name_candidate": null
     },
     "op_n6_fee15dc68a96ec85": {
@@ -57,7 +485,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.204899+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271517+00:00",
       "physics_name_candidate": null
     },
     "op_n6_77614c6b7e61c828": {
@@ -77,7 +505,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.204920+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271535+00:00",
       "physics_name_candidate": null
     },
     "op_n6_439b61321f25f073": {
@@ -97,7 +525,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.204949+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271544+00:00",
       "physics_name_candidate": null
     },
     "op_n6_2461c2f9363bcc15": {
@@ -117,7 +545,7 @@
         "max_partition_depth": 0.0,
         "min_partition_depth": 0.0
       },
-      "discovered_at": "2026-04-26T12:10:56.204998+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271552+00:00",
       "physics_name_candidate": null
     },
     "op_n6_ef1d1dff3e52484b": {
@@ -137,7 +565,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.205044+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271581+00:00",
       "physics_name_candidate": null
     },
     "op_n6_f0040fb681660b4d": {
@@ -157,7 +585,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.205105+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271596+00:00",
       "physics_name_candidate": null
     },
     "op_n6_0ed0312ccaff75af": {
@@ -177,7 +605,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.205168+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271605+00:00",
       "physics_name_candidate": null
     },
     "op_n6_6fc628c1bb7ce467": {
@@ -197,7 +625,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:10:56.205213+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271613+00:00",
       "physics_name_candidate": null
     },
     "op_n6_a8f7cc60ff28db23": {
@@ -217,7 +645,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.205240+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271621+00:00",
       "physics_name_candidate": null
     },
     "op_n9_aeb1c3079c14b2d2": {
@@ -237,7 +665,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:10:56.211916+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278198+00:00",
       "physics_name_candidate": null
     },
     "op_n9_84cce37f6d46e0f0": {
@@ -257,7 +685,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212055+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278220+00:00",
       "physics_name_candidate": null
     },
     "op_n9_9e255c9e36bb28be": {
@@ -277,7 +705,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212187+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278259+00:00",
       "physics_name_candidate": null
     },
     "op_n9_c4bfa33b20ef1511": {
@@ -297,7 +725,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212604+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278292+00:00",
       "physics_name_candidate": null
     },
     "op_n9_19b35e39f20d5265": {
@@ -317,7 +745,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212715+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278306+00:00",
       "physics_name_candidate": null
     },
     "op_n9_8e056a87c8a6e5e6": {
@@ -337,7 +765,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212747+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278315+00:00",
       "physics_name_candidate": null
     },
     "op_n9_29f20bef6e53f5b9": {
@@ -357,7 +785,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212821+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278345+00:00",
       "physics_name_candidate": null
     },
     "op_n9_50841e39b8c6ebf0": {
@@ -377,7 +805,7 @@
         "max_partition_depth": 8.0,
         "min_partition_depth": 8.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212877+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278357+00:00",
       "physics_name_candidate": null
     },
     "op_n9_1e36beb8c20ea668": {
@@ -397,7 +825,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212914+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278365+00:00",
       "physics_name_candidate": null
     },
     "op_n9_da089703f751784a": {
@@ -417,7 +845,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:10:56.212973+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278393+00:00",
       "physics_name_candidate": null
     },
     "op_n9_82cc18ee70210706": {
@@ -437,7 +865,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213062+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278416+00:00",
       "physics_name_candidate": null
     },
     "op_n9_2e3ee3c86d43e0ab": {
@@ -457,7 +885,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213079+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278425+00:00",
       "physics_name_candidate": null
     },
     "op_n9_cf8bb5b18020c091": {
@@ -477,7 +905,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213162+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278433+00:00",
       "physics_name_candidate": null
     },
     "op_n9_eea55de6ed170f96": {
@@ -497,7 +925,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213225+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278440+00:00",
       "physics_name_candidate": null
     },
     "op_n9_5e2efd609378c1ab": {
@@ -517,7 +945,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213273+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278446+00:00",
       "physics_name_candidate": null
     },
     "op_n9_e5b458aa6e05d455": {
@@ -537,7 +965,7 @@
         "max_partition_depth": 0.0,
         "min_partition_depth": 0.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213319+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278452+00:00",
       "physics_name_candidate": null
     },
     "op_n9_014fc25d69c16884": {
@@ -557,7 +985,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213399+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278458+00:00",
       "physics_name_candidate": null
     },
     "op_n9_21e81fde2eb87ce1": {
@@ -577,7 +1005,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213447+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278464+00:00",
       "physics_name_candidate": null
     },
     "op_n9_87048952c09be1a9": {
@@ -597,7 +1025,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213536+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278471+00:00",
       "physics_name_candidate": null
     },
     "op_n9_5660c195fd57e934": {
@@ -617,7 +1045,7 @@
         "max_partition_depth": 7.0,
         "min_partition_depth": 7.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213575+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278477+00:00",
       "physics_name_candidate": null
     },
     "op_n9_5a11fc32f81d15ef": {
@@ -637,7 +1065,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213592+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278483+00:00",
       "physics_name_candidate": null
     },
     "op_n9_3e87618646338892": {
@@ -657,7 +1085,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213691+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278488+00:00",
       "physics_name_candidate": null
     },
     "op_n9_e056eb8dd533d3da": {
@@ -677,7 +1105,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213725+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278519+00:00",
       "physics_name_candidate": null
     },
     "op_n9_0855705555f5d246": {
@@ -697,7 +1125,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213757+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278533+00:00",
       "physics_name_candidate": null
     },
     "op_n9_eaa7938a1d3863ed": {
@@ -717,7 +1145,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213829+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278582+00:00",
       "physics_name_candidate": null
     },
     "op_n9_aada9d1938bdf697": {
@@ -737,7 +1165,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213869+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278591+00:00",
       "physics_name_candidate": null
     },
     "op_n9_954f8af5fca9f29a": {
@@ -757,7 +1185,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213888+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278598+00:00",
       "physics_name_candidate": null
     },
     "op_n9_5a87bb1e4895fd82": {
@@ -777,7 +1205,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.213953+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278631+00:00",
       "physics_name_candidate": null
     },
     "op_n9_995a314bbde27ab1": {
@@ -797,7 +1225,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.214020+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278643+00:00",
       "physics_name_candidate": null
     },
     "op_n9_9a17e35d8a48cee6": {
@@ -817,7 +1245,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.214035+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278652+00:00",
       "physics_name_candidate": null
     },
     "op_n9_4e6b891a95568afc": {
@@ -837,7 +1265,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219565+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282841+00:00",
       "physics_name_candidate": null
     },
     "op_n9_f6c814dd7386f464": {
@@ -857,7 +1285,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219588+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282859+00:00",
       "physics_name_candidate": null
     },
     "op_n9_7b52a1dfa9abac34": {
@@ -877,7 +1305,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219600+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282866+00:00",
       "physics_name_candidate": null
     },
     "op_n9_00580df8d0181ced": {
@@ -897,7 +1325,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219608+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282872+00:00",
       "physics_name_candidate": null
     },
     "op_n9_d71a14d5d1a62ed7": {
@@ -917,7 +1345,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219614+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282878+00:00",
       "physics_name_candidate": null
     },
     "op_n9_a5301f70faaca414": {
@@ -937,7 +1365,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219627+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282916+00:00",
       "physics_name_candidate": null
     },
     "op_n9_58a58a3dbc067cfa": {
@@ -957,7 +1385,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219636+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282929+00:00",
       "physics_name_candidate": null
     },
     "op_n9_edbfe8968415f480": {
@@ -977,7 +1405,7 @@
         "max_partition_depth": 8.0,
         "min_partition_depth": 8.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219645+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282937+00:00",
       "physics_name_candidate": null
     },
     "op_n9_3b2a31cd5e6412b2": {
@@ -997,7 +1425,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219654+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282944+00:00",
       "physics_name_candidate": null
     },
     "op_n9_4f2e2592e2f6d9f3": {
@@ -1017,7 +1445,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219661+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282951+00:00",
       "physics_name_candidate": null
     },
     "op_n9_f4df81ded49769a4": {
@@ -1037,7 +1465,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219667+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282980+00:00",
       "physics_name_candidate": null
     },
     "op_n9_a0fd71a1ec858383": {
@@ -1057,7 +1485,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219676+00:00",
+      "discovered_at": "2026-04-26T12:13:54.282993+00:00",
       "physics_name_candidate": null
     },
     "op_n9_44d77852d18aade0": {
@@ -1077,7 +1505,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219682+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283002+00:00",
       "physics_name_candidate": null
     },
     "op_n9_112a35dcbaf4f729": {
@@ -1097,7 +1525,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219689+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283035+00:00",
       "physics_name_candidate": null
     },
     "op_n9_749a5e3a48d96286": {
@@ -1117,7 +1545,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219695+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283045+00:00",
       "physics_name_candidate": null
     },
     "op_n9_024b906645364231": {
@@ -1137,7 +1565,7 @@
         "max_partition_depth": 0.0,
         "min_partition_depth": 0.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219701+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283053+00:00",
       "physics_name_candidate": null
     },
     "op_n9_a39fae85a57331bd": {
@@ -1157,7 +1585,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219708+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283060+00:00",
       "physics_name_candidate": null
     },
     "op_n9_a717dd2e18dbb72c": {
@@ -1177,7 +1605,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219713+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283066+00:00",
       "physics_name_candidate": null
     },
     "op_n9_aec9248a5c4f8948": {
@@ -1197,7 +1625,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219720+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283114+00:00",
       "physics_name_candidate": null
     },
     "op_n9_2b6fc2b8b09d3d59": {
@@ -1217,7 +1645,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219726+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283129+00:00",
       "physics_name_candidate": null
     },
     "op_n9_9117548fc56c854f": {
@@ -1237,7 +1665,7 @@
         "max_partition_depth": 7.0,
         "min_partition_depth": 7.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219743+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283136+00:00",
       "physics_name_candidate": null
     },
     "op_n9_a3e2cd06645b33a0": {
@@ -1257,7 +1685,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219775+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283142+00:00",
       "physics_name_candidate": null
     },
     "op_n9_b3d3bdec060ade93": {
@@ -1277,7 +1705,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219837+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283153+00:00",
       "physics_name_candidate": null
     },
     "op_n9_6f0501f88921d4eb": {
@@ -1297,7 +1725,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219909+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283168+00:00",
       "physics_name_candidate": null
     },
     "op_n9_89b99e35bb797e07": {
@@ -1317,7 +1745,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219926+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283174+00:00",
       "physics_name_candidate": null
     },
     "op_n9_85c3f1f0a99bc7af": {
@@ -1337,7 +1765,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:10:56.219981+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283181+00:00",
       "physics_name_candidate": null
     },
     "op_n9_baab10499de8ad5e": {
@@ -1357,7 +1785,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.220016+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283186+00:00",
       "physics_name_candidate": null
     },
     "op_n9_27db30f0818ee91e": {
@@ -1377,7 +1805,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:10:56.220031+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283193+00:00",
       "physics_name_candidate": null
     },
     "op_n9_ba2c494df248b14e": {
@@ -1397,7 +1825,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:10:56.220046+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283198+00:00",
       "physics_name_candidate": null
     },
     "op_n9_916b40b5746c5e60": {
@@ -1417,7 +1845,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:10:56.220092+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283204+00:00",
       "physics_name_candidate": null
     },
     "op_n12_b45fb70bdf0ade40": {
@@ -1437,7 +1865,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282208+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229400+00:00",
       "physics_name_candidate": null
     },
     "op_n12_2c4428a37c214877": {
@@ -1457,7 +1885,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282327+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229732+00:00",
       "physics_name_candidate": null
     },
     "op_n12_0a7e7748f71934d5": {
@@ -1477,7 +1905,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282338+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229741+00:00",
       "physics_name_candidate": null
     },
     "op_n12_1db2319338ac6e46": {
@@ -1497,7 +1925,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282345+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229749+00:00",
       "physics_name_candidate": null
     },
     "op_n12_95d268440648537a": {
@@ -1517,7 +1945,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282352+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229756+00:00",
       "physics_name_candidate": null
     },
     "op_n12_a2fc80c211727792": {
@@ -1537,7 +1965,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282365+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229766+00:00",
       "physics_name_candidate": null
     },
     "op_n12_d7805bae3adc2400": {
@@ -1557,7 +1985,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282372+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229773+00:00",
       "physics_name_candidate": null
     },
     "op_n12_44f7d461e1435b3c": {
@@ -1577,7 +2005,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282379+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229781+00:00",
       "physics_name_candidate": null
     },
     "op_n12_51203e50cfa8de58": {
@@ -1597,7 +2025,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282385+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229788+00:00",
       "physics_name_candidate": null
     },
     "op_n12_3c2964435fc7e951": {
@@ -1617,7 +2045,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282393+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229795+00:00",
       "physics_name_candidate": null
     },
     "op_n12_0ac4c9db24776982": {
@@ -1637,7 +2065,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282400+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229802+00:00",
       "physics_name_candidate": null
     },
     "op_n12_001e7139562859ca": {
@@ -1657,7 +2085,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282409+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229808+00:00",
       "physics_name_candidate": null
     },
     "op_n12_efdd1fa4bdbb9619": {
@@ -1677,7 +2105,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282416+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229817+00:00",
       "physics_name_candidate": null
     },
     "op_n12_b9b86b672ba2886a": {
@@ -1697,7 +2125,7 @@
         "max_partition_depth": 9.0,
         "min_partition_depth": 9.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282422+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229825+00:00",
       "physics_name_candidate": null
     },
     "op_n12_78bfeddd43681fa5": {
@@ -1717,7 +2145,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282429+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229832+00:00",
       "physics_name_candidate": null
     },
     "op_n12_2a860f55fdf0c947": {
@@ -1737,7 +2165,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282438+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229841+00:00",
       "physics_name_candidate": null
     },
     "op_n12_dbf0cf3069d7613b": {
@@ -1757,7 +2185,7 @@
         "max_partition_depth": 8.0,
         "min_partition_depth": 8.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282444+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229880+00:00",
       "physics_name_candidate": null
     },
     "op_n12_1a2484d507e93c47": {
@@ -1777,7 +2205,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282450+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229887+00:00",
       "physics_name_candidate": null
     },
     "op_n12_241f6bf3d0160a52": {
@@ -1797,7 +2225,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282457+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229894+00:00",
       "physics_name_candidate": null
     },
     "op_n12_e85897ff3bcdd8d2": {
@@ -1817,7 +2245,7 @@
         "max_partition_depth": 11.0,
         "min_partition_depth": 11.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282465+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229901+00:00",
       "physics_name_candidate": null
     },
     "op_n12_ce111796a1461903": {
@@ -1837,7 +2265,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282472+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229909+00:00",
       "physics_name_candidate": null
     },
     "op_n12_e9cb85916c6eb150": {
@@ -1857,7 +2285,7 @@
         "max_partition_depth": 7.0,
         "min_partition_depth": 7.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282478+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229916+00:00",
       "physics_name_candidate": null
     },
     "op_n12_edfb2e5907e1daa5": {
@@ -1877,7 +2305,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282484+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229922+00:00",
       "physics_name_candidate": null
     },
     "op_n12_fda9e319ea9fbc32": {
@@ -1897,7 +2325,7 @@
         "max_partition_depth": 7.0,
         "min_partition_depth": 7.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282490+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229929+00:00",
       "physics_name_candidate": null
     },
     "op_n12_adddf10569b8eec7": {
@@ -1917,7 +2345,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282496+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229936+00:00",
       "physics_name_candidate": null
     },
     "op_n12_d73a4451aa8eb5d4": {
@@ -1937,7 +2365,7 @@
         "max_partition_depth": 7.0,
         "min_partition_depth": 7.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282503+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229943+00:00",
       "physics_name_candidate": null
     },
     "op_n12_43942d4206add5ff": {
@@ -1957,7 +2385,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282546+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229950+00:00",
       "physics_name_candidate": null
     },
     "op_n12_54a0ac77874a69c2": {
@@ -1977,7 +2405,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282556+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229957+00:00",
       "physics_name_candidate": null
     },
     "op_n12_647b26ee48a3e5c8": {
@@ -1997,7 +2425,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282562+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229965+00:00",
       "physics_name_candidate": null
     },
     "op_n12_425155d569639ea5": {
@@ -2017,7 +2445,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282569+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229972+00:00",
       "physics_name_candidate": null
     },
     "op_n12_c21e68290914e87f": {
@@ -2037,7 +2465,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282574+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229980+00:00",
       "physics_name_candidate": null
     },
     "op_n12_63f44a04ee77439e": {
@@ -2057,7 +2485,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282580+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229986+00:00",
       "physics_name_candidate": null
     },
     "op_n12_876b20f7cec7c042": {
@@ -2077,7 +2505,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282586+00:00",
+      "discovered_at": "2026-04-26T12:14:05.229999+00:00",
       "physics_name_candidate": null
     },
     "op_n12_4900b3e513353d24": {
@@ -2097,7 +2525,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282592+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230011+00:00",
       "physics_name_candidate": null
     },
     "op_n12_5dec504ace0947a6": {
@@ -2117,7 +2545,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282598+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230018+00:00",
       "physics_name_candidate": null
     },
     "op_n12_0888a66778e1b515": {
@@ -2137,7 +2565,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282605+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230025+00:00",
       "physics_name_candidate": null
     },
     "op_n12_2dee871fe632c609": {
@@ -2157,7 +2585,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282610+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230042+00:00",
       "physics_name_candidate": null
     },
     "op_n12_135c45e4b89f6c44": {
@@ -2177,7 +2605,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282616+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230050+00:00",
       "physics_name_candidate": null
     },
     "op_n12_96000343d2d955f4": {
@@ -2197,7 +2625,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282623+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230056+00:00",
       "physics_name_candidate": null
     },
     "op_n12_2bf96264de3869b0": {
@@ -2217,7 +2645,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282630+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230063+00:00",
       "physics_name_candidate": null
     },
     "op_n12_193b739f9e368c42": {
@@ -2237,7 +2665,7 @@
         "max_partition_depth": 0.0,
         "min_partition_depth": 0.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282636+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230069+00:00",
       "physics_name_candidate": null
     },
     "op_n12_dad52731955ecd87": {
@@ -2257,7 +2685,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282642+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230076+00:00",
       "physics_name_candidate": null
     },
     "op_n12_ae99c0a6c19d019f": {
@@ -2277,7 +2705,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282648+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230083+00:00",
       "physics_name_candidate": null
     },
     "op_n12_bc461108d2f5ab9b": {
@@ -2297,7 +2725,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282656+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230089+00:00",
       "physics_name_candidate": null
     },
     "op_n12_fb94e9677fec3b72": {
@@ -2317,7 +2745,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282664+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230095+00:00",
       "physics_name_candidate": null
     },
     "op_n12_47da74f9c191071b": {
@@ -2337,7 +2765,7 @@
         "max_partition_depth": 8.0,
         "min_partition_depth": 8.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282670+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230101+00:00",
       "physics_name_candidate": null
     },
     "op_n12_43deb893cef0a086": {
@@ -2357,7 +2785,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282676+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230108+00:00",
       "physics_name_candidate": null
     },
     "op_n12_eacea60edf77ad93": {
@@ -2377,7 +2805,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282682+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230114+00:00",
       "physics_name_candidate": null
     },
     "op_n12_02e1804744ed8fe6": {
@@ -2397,7 +2825,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282690+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230122+00:00",
       "physics_name_candidate": null
     },
     "op_n12_e5ac03ac3d88a168": {
@@ -2417,7 +2845,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282698+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230130+00:00",
       "physics_name_candidate": null
     },
     "op_n12_c93c41b623302865": {
@@ -2437,7 +2865,7 @@
         "max_partition_depth": 6.0,
         "min_partition_depth": 6.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282703+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230136+00:00",
       "physics_name_candidate": null
     },
     "op_n12_1590afbdfaac7661": {
@@ -2457,7 +2885,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282711+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230142+00:00",
       "physics_name_candidate": null
     },
     "op_n12_ec876a4c0e7e35a5": {
@@ -2477,7 +2905,7 @@
         "max_partition_depth": 7.0,
         "min_partition_depth": 7.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282719+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230148+00:00",
       "physics_name_candidate": null
     },
     "op_n12_0663b579ff52f0d6": {
@@ -2497,7 +2925,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282727+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230154+00:00",
       "physics_name_candidate": null
     },
     "op_n12_df7edc8f613e5706": {
@@ -2517,7 +2945,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282781+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230161+00:00",
       "physics_name_candidate": null
     },
     "op_n12_f736554fbf0e8505": {
@@ -2537,7 +2965,7 @@
         "max_partition_depth": 7.0,
         "min_partition_depth": 7.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282787+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230169+00:00",
       "physics_name_candidate": null
     },
     "op_n12_b0ebdfb2d4b1ea20": {
@@ -2557,7 +2985,7 @@
         "max_partition_depth": 10.0,
         "min_partition_depth": 10.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282794+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230177+00:00",
       "physics_name_candidate": null
     },
     "op_n12_5258e7d212e57948": {
@@ -2577,7 +3005,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282800+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230184+00:00",
       "physics_name_candidate": null
     },
     "op_n12_9f441b12e72a234b": {
@@ -2597,7 +3025,7 @@
         "max_partition_depth": 8.0,
         "min_partition_depth": 8.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282806+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230192+00:00",
       "physics_name_candidate": null
     },
     "op_n12_4fc753701ebbdd55": {
@@ -2617,7 +3045,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282812+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230199+00:00",
       "physics_name_candidate": null
     },
     "op_n12_ed3d5b6a87f5a0b2": {
@@ -2637,7 +3065,7 @@
         "max_partition_depth": 9.0,
         "min_partition_depth": 9.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282818+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230205+00:00",
       "physics_name_candidate": null
     },
     "op_n12_51f1d12884cbd45c": {
@@ -2657,7 +3085,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282824+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230211+00:00",
       "physics_name_candidate": null
     },
     "op_n12_184c854de074db5e": {
@@ -2677,7 +3105,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282830+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230217+00:00",
       "physics_name_candidate": null
     },
     "op_n12_7e3d3ce3dd177413": {
@@ -2697,7 +3125,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282837+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230223+00:00",
       "physics_name_candidate": null
     },
     "op_n12_0f3da08baaad0072": {
@@ -2717,7 +3145,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282844+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230229+00:00",
       "physics_name_candidate": null
     },
     "op_n12_6153244955a84175": {
@@ -2737,7 +3165,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282850+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230235+00:00",
       "physics_name_candidate": null
     },
     "op_n12_05b447459592f2a7": {
@@ -2757,7 +3185,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282855+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230242+00:00",
       "physics_name_candidate": null
     },
     "op_n12_adf4546104499c9d": {
@@ -2777,7 +3205,7 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282862+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230248+00:00",
       "physics_name_candidate": null
     },
     "op_n12_b6d9696c28a98798": {
@@ -2797,7 +3225,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282868+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230255+00:00",
       "physics_name_candidate": null
     },
     "op_n12_6e3e3eec27ff3696": {
@@ -2817,7 +3245,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282875+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230262+00:00",
       "physics_name_candidate": null
     },
     "op_n12_8d64732c8ad6d4dd": {
@@ -2837,7 +3265,7 @@
         "max_partition_depth": 5.0,
         "min_partition_depth": 5.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282882+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230268+00:00",
       "physics_name_candidate": null
     },
     "op_n12_9bf4d20f0646ef5b": {
@@ -2857,7 +3285,7 @@
         "max_partition_depth": 4.0,
         "min_partition_depth": 4.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282888+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230273+00:00",
       "physics_name_candidate": null
     },
     "op_n12_a14409a22a84e54f": {
@@ -2877,7 +3305,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282894+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230280+00:00",
       "physics_name_candidate": null
     },
     "op_n12_4482852e1302e9ab": {
@@ -2897,7 +3325,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282900+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230286+00:00",
       "physics_name_candidate": null
     },
     "op_n12_2fdbcc2f67a99036": {
@@ -2917,7 +3345,7 @@
         "max_partition_depth": 3.0,
         "min_partition_depth": 3.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282906+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230292+00:00",
       "physics_name_candidate": null
     },
     "op_n12_8cd20e191737bc2a": {
@@ -2937,7 +3365,7 @@
         "max_partition_depth": 2.0,
         "min_partition_depth": 2.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282940+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230298+00:00",
       "physics_name_candidate": null
     },
     "op_n12_1b6ff234897d6f4f": {
@@ -2957,11 +3385,67 @@
         "max_partition_depth": 1.0,
         "min_partition_depth": 1.0
       },
-      "discovered_at": "2026-04-26T12:11:07.282958+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230304+00:00",
       "physics_name_candidate": null
     }
   },
   "factorizations": [
+    {
+      "parent_n": 6,
+      "parent_braid_id": "atom_Z1_N1_3A6",
+      "factors": [
+        "op_n6_a561283dc261072d",
+        "op_n6_1ab4e0c39e2ec226",
+        "op_n6_88e96ae3663703a9",
+        "op_n6_2d269ded486cf26e",
+        "op_n6_f38440069e56b296"
+      ],
+      "discovered_at": "2026-04-26T12:13:54.013736+00:00",
+      "discovered_by": "wedderburn_discovery_feeder"
+    },
+    {
+      "parent_n": 9,
+      "parent_braid_id": "atom_Z1_N2_3A9",
+      "factors": [
+        "op_n9_759a0536d8946a4d",
+        "op_n9_47579b875ea205dc",
+        "op_n9_dd11ef7391e6c6fe",
+        "op_n9_339fcb7beb302a56",
+        "op_n9_b2f4282073b7d76b",
+        "op_n9_9b23d2c9a999f1d1"
+      ],
+      "discovered_at": "2026-04-26T12:13:54.013942+00:00",
+      "discovered_by": "wedderburn_discovery_feeder"
+    },
+    {
+      "parent_n": 9,
+      "parent_braid_id": "atom_Z2_N1_3A9",
+      "factors": [
+        "op_n9_3d5f18da31ecc8f0",
+        "op_n9_92d0d7ae4049af2c",
+        "op_n9_dd11ef7391e6c6fe",
+        "op_n9_339fcb7beb302a56",
+        "op_n9_ffe3030b3f12680f",
+        "op_n9_527ea2b690cf59f1"
+      ],
+      "discovered_at": "2026-04-26T12:13:54.014034+00:00",
+      "discovered_by": "wedderburn_discovery_feeder"
+    },
+    {
+      "parent_n": 12,
+      "parent_braid_id": "atom_Z2_N2_3A12",
+      "factors": [
+        "op_n12_c9a4cff520ccee35",
+        "op_n12_56de2d16989fc396",
+        "op_n12_9e3fc43750f2d4a9",
+        "op_n12_ca60fdb483f53683",
+        "op_n12_2b1151403ba7a5e7",
+        "op_n12_47d88443162c597a",
+        "op_n12_507eca851794659c"
+      ],
+      "discovered_at": "2026-04-26T12:13:54.014193+00:00",
+      "discovered_by": "wedderburn_discovery_feeder"
+    },
     {
       "parent_n": 6,
       "parent_braid_id": "atom_Z1_N1_3A6_wblock_fp",
@@ -2978,7 +3462,7 @@
         "op_n6_6fc628c1bb7ce467",
         "op_n6_a8f7cc60ff28db23"
       ],
-      "discovered_at": "2026-04-26T12:10:56.205263+00:00",
+      "discovered_at": "2026-04-26T12:13:54.271627+00:00",
       "discovered_by": "wedderburn_block_fingerprint_feeder"
     },
     {
@@ -3016,7 +3500,7 @@
         "op_n9_995a314bbde27ab1",
         "op_n9_9a17e35d8a48cee6"
       ],
-      "discovered_at": "2026-04-26T12:10:56.214062+00:00",
+      "discovered_at": "2026-04-26T12:13:54.278658+00:00",
       "discovered_by": "wedderburn_block_fingerprint_feeder"
     },
     {
@@ -3054,7 +3538,7 @@
         "op_n9_ba2c494df248b14e",
         "op_n9_916b40b5746c5e60"
       ],
-      "discovered_at": "2026-04-26T12:10:56.220108+00:00",
+      "discovered_at": "2026-04-26T12:13:54.283210+00:00",
       "discovered_by": "wedderburn_block_fingerprint_feeder"
     },
     {
@@ -3139,9 +3623,9 @@
         "op_n12_8cd20e191737bc2a",
         "op_n12_1b6ff234897d6f4f"
       ],
-      "discovered_at": "2026-04-26T12:11:07.282971+00:00",
+      "discovered_at": "2026-04-26T12:14:05.230315+00:00",
       "discovered_by": "wedderburn_block_fingerprint_feeder"
     }
   ],
-  "saved_at": "2026-04-26T12:11:07.285915+00:00"
+  "saved_at": "2026-04-26T12:14:05.233120+00:00"
 }
