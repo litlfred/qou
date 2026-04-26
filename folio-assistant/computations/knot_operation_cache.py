@@ -245,44 +245,51 @@ def chi_via_factorization(
     """Compute χ_λ(β) where β = β_1 ⊗ β_2 ⊗ ... ⊗ β_k from a
     tensor-product factorization (Phase 2 of F4 / post-#428).
 
-    For each `op_i ∈ factorization` with non-empty
-    `braid_word_normal_form`, the character of the constituent
-    braid β_i is computed via the Hoefsmit seminormal kernel.  The
-    factors are then composed via Littlewood–Richardson:
-
-      χ_λ(β_1 ⊗ β_2) = Σ_{μ ⊢ n_1, ν ⊢ n_2} c^λ_{μν} χ_μ(β_1) χ_ν(β_2)
-
-    For k > 2 we fold left, maintaining a vector
-    `V[τ] = χ_τ(β_1 ⊗ ... ⊗ β_j)` for τ ⊢ Σ n_i (i ≤ j).
+    For each `op_i ∈ factorization` the character of the constituent
+    braid β_i (its `braid_word_normal_form`) is computed via the
+    Hoefsmit seminormal kernel — batched across all partitions
+    `τ ⊢ op_i.n` in a single Rust call (per Copilot review #r3145...).
+    The per-factor character vectors are then composed via
+    Littlewood–Richardson coefficients, delegating the LR fold to
+    `chi_via_factorization.compose_chi_lambda` (per Copilot review
+    #r3145... — keeps the LR composition logic in one place).
 
     Args:
       lam: outer partition λ (must satisfy |λ| = Σ_i n_i).
-      factorization: list of KnotOperation with non-empty
-        `braid_word_normal_form`.
+      factorization: list of `KnotOperation`.  Each entry must carry
+        concrete braid data: `braid_word_normal_form` may be empty
+        only when the entry represents the identity factor (i.e.
+        `fingerprint` is also empty).  `KnotOperation` entries
+        produced by discovery feeders (which carry only a
+        `fingerprint`, no NF) are rejected — build factor ops via
+        `factor_op_from_word()` instead.
       q: substrate parameter for Hoefsmit evaluation.
 
-    Returns: χ_λ(β) as float (Hoefsmit f64 path).  For high precision
-    use the mpfr variant `chi_via_factorization_mpfr` — not yet wired.
+    Returns: χ_λ(β) as float (Hoefsmit f64 path).  High-precision
+    evaluation is not yet exposed by this module.
 
     Raises:
-      ValueError: if |λ| != sum of factor strand counts, if any
-        factor has empty `braid_word_normal_form`, or if the
-        factorization list is empty.
+      ValueError: if `factorization` is empty, if `|λ|` does not
+        equal the sum of factor strand counts, or if any factor has
+        empty `braid_word_normal_form` *with* non-empty
+        `fingerprint` (a discovery-only op with no concrete braid).
     """
     if not factorization:
         raise ValueError("factorization is empty")
-    lam_list = list(lam)
+    # Normalize λ to canonical descending order (Gemini #r3145...).
+    # `compose_chi_lambda` looks up via `tuple(lam)` and partitions
+    # are conventionally sorted non-increasing; an unsorted λ would
+    # silently miss the entry and return 0.
+    lam_list = sorted((int(p_) for p_ in lam), reverse=True)
     n_lam = sum(lam_list)
     n_total = sum(op.n for op in factorization)
     if n_lam != n_total:
         raise ValueError(
             f"|λ|={n_lam} but factorization spans {n_total} strands"
         )
-    # An empty `braid_word_normal_form` is fine when the op
-    # represents the identity factor (no fingerprint metadata).
-    # Reject only the *discovery-fingerprint* case where NF is empty
-    # and `fingerprint` carries non-NF binning data — those ops have
-    # no concrete braid for χ-evaluation.
+    # Reject only discovery-fingerprint ops (empty NF + non-empty
+    # `fingerprint`).  An empty NF on an op with empty fingerprint
+    # is the legitimate identity-factor case.
     for i, op in enumerate(factorization):
         if not op.braid_word_normal_form and op.fingerprint:
             raise ValueError(
@@ -293,55 +300,49 @@ def chi_via_factorization(
                 "metadata. Build factor ops via factor_op_from_word()."
             )
 
-    # Lazy import — keeps the module loadable even without the wheel.
+    # Lazy imports — keeps this module loadable even without the
+    # wheel and without circular-import risk for the sibling module.
     import pyhecke_native as p  # type: ignore[import]
+    from chi_via_factorization import compose_chi_lambda
 
-    # Single-factor: direct Hoefsmit on the braid word.
-    if len(factorization) == 1:
-        op = factorization[0]
-        word = list(op.braid_word_normal_form)
-        return float(p.chi_lambda_braid(lam_list, word, q))
-
-    # Multi-factor: fold left, maintaining V[τ] over partitions of
-    # the running strand count.
+    # Per-factor character vectors via batched Rust call.  Memoized
+    # across calls by `(op.cache_key(), q)` so that recurring
+    # KnotOperations (the whole point of the cache) avoid repeating
+    # the Hoefsmit batch (Gemini #r3145...).
     def chars_for(op: KnotOperation) -> dict[tuple, float]:
-        """χ_τ(β_op) for every τ ⊢ op.n."""
-        out = {}
-        for tau in p.partitions_of(op.n):
-            tau_t = tuple(tau)
-            out[tau_t] = float(p.chi_lambda_braid(
-                list(tau), list(op.braid_word_normal_form), q,
-            ))
+        """χ_τ(β_op) for every τ ⊢ op.n, batched in one Rust call."""
+        key = (op.cache_key(), float(q))
+        cached = _CHARS_MEMO.get(key)
+        if cached is not None:
+            return cached
+        taus = [list(tau) for tau in p.partitions_of(op.n)]
+        if not taus:
+            return {}
+        word = list(op.braid_word_normal_form)
+        values = p.chi_lambdas_braid(taus, word, q)
+        out = {tuple(tau): float(v) for tau, v in zip(taus, values)}
+        _CHARS_MEMO[key] = out
         return out
 
-    # Initialize V from the first factor.
-    V = chars_for(factorization[0])
-    n_so_far = factorization[0].n
+    factors_p = [op.n for op in factorization]
+    factors_chi = [chars_for(op) for op in factorization]
+    return compose_chi_lambda(lam_list, factors_p, factors_chi)
 
-    for op in factorization[1:]:
-        n_j = op.n
-        V_j = chars_for(op)
-        n_new = n_so_far + n_j
-        # Compose: V'[τ] = Σ_{μ, ν} c^τ_{μν} V[μ] V_j[ν].
-        V_new: dict[tuple, float] = {}
-        for tau in p.partitions_of(n_new):
-            tau_l = list(tau)
-            tau_t = tuple(tau)
-            total = 0.0
-            for mu_t, chi_mu in V.items():
-                if chi_mu == 0.0:
-                    continue
-                for nu_t, chi_nu in V_j.items():
-                    if chi_nu == 0.0:
-                        continue
-                    c = p.lr_coefficient(tau_l, list(mu_t), list(nu_t))
-                    if c != 0:
-                        total += float(c) * chi_mu * chi_nu
-            V_new[tau_t] = total
-        V = V_new
-        n_so_far = n_new
 
-    return V.get(tuple(lam_list), 0.0)
+# Module-level cache keyed by `(cache_key, q)`.  The key is process-
+# scoped — a KnotOperation with the same cache_key (= same braid NF
+# at the same n) yields identical character vectors at fixed q.
+# Cleared explicitly via `clear_chi_memo()`; not auto-bounded since
+# realistic discovery-cache sizes (~10³ ops) × handful of q values
+# remain in low MB.
+_CHARS_MEMO: dict[tuple[str, float], dict[tuple, float]] = {}
+
+
+def clear_chi_memo() -> None:
+    """Drop the per-`(cache_key, q)` Hoefsmit-character cache used by
+    `chi_via_factorization`.  Intended for tests and long-running
+    pipelines that want to bound memory."""
+    _CHARS_MEMO.clear()
 
 
 def factor_op_from_word(
