@@ -1,4 +1,4 @@
-After [SU(2) emergence](#thm:su2-emergence) identifies
+After [$\mathrm{SU}(2)$ emergence](#thm:su2-emergence) identifies
 $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$, the abstract
 fundamental object $V$ acquires its concrete incarnation as the
 *spin-$\tfrac{1}{2}$ representation*:

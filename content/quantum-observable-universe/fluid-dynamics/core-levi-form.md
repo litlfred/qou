@@ -1,19 +1,19 @@
-Let $\gamma$ be a [geodesic vortex](#rem:geodesic-vortices) in
+Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
 the [state bundle](#def:state-bundle) $(\mathcal{S}, \theta)$
 with contact form $\theta$ and
 [Levi form](#rem:levi-form-defect)
 $\mathcal{L}_\theta(V, W) = -id\theta(V, \bar{W})$.  At each
-point $p \in \gamma$, let $N_p\gamma \subset \ker(\theta_p)$ be
+point $p \in \varrho$, let $N_p\varrho \subset \ker(\theta_p)$ be
 the horizontal normal plane.  Define:
 
 - $\lambda_\parallel(p)$, $\lambda_\perp(p)$: eigenvalues of
-  $\mathcal{L}_\theta|_{N_p\gamma}$ (the Levi form restricted to
+  $\mathcal{L}_\theta|_{N_p\varrho}$ (the Levi form restricted to
   the normal plane), with $\lambda_\parallel$ in the direction
   toward a second filament and $\lambda_\perp$ perpendicular to it.
 
 - $a_\parallel(p)$, $a_\perp(p)$: core radii of the vortex
   cross-section in the corresponding directions, defined as the
-  widths at half-maximum of $|\psi|^2$ in $N_p\gamma$.
+  widths at half-maximum of $|\psi|^2$ in $N_p\varrho$.
 
 Then:
 
@@ -28,7 +28,7 @@ $$
   \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
-**(b)** The Levi form condition number on $N_p\gamma$ is
+**(b)** The Levi form condition number on $N_p\varrho$ is
 
 $$
   \mathrm{cond}(\mathcal{L}_\theta|_{N_p})

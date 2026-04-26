@@ -1,4 +1,4 @@
-Continuing [maximal torus of SU(2)](#ex:maximal-torus-su2), we
+Continuing [maximal torus of $\mathrm{SU}(2)$](#ex:maximal-torus-su2), we
 construct the [weight decomposition](#def:weight-decomposition)
 explicitly, rather than invoking existence.
 

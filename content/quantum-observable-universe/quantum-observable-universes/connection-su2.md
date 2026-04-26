@@ -1,7 +1,7 @@
-Continuing [fibre adjoint on SU(2)](#ex:fiber-adjoint-su2), take
+Continuing [fibre adjoint on $\mathrm{SU}(2)$](#ex:fiber-adjoint-su2), take
 $A = \mathcal{O}(\mathrm{SU}(2))$ with its left-invariant calculus
 $\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$
-([higher forms on SU(2)](#ex:higher-forms-su2)). A
+([higher forms on $\mathrm{SU}(2)$](#ex:higher-forms-su2)). A
 connection is a covariant derivative
 $\nabla f = df + \mathcal{A} \cdot f$ for $f \in A$, where
 $\mathcal{A} = A_1\omega_1 + A_2\omega_2 + A_3\omega_3$ is the
