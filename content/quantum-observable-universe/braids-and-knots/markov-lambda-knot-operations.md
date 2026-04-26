@@ -1,17 +1,17 @@
 The Markov chain
 ([Hecke transition operator](#prop:hecke-markov-transition)),
 the knot-theoretic operations on a closed braid, and the
-partition $\lambda \vdash n$ labelling an irrep of $H_n(q)$
+partition $\lambda \vdash n$ labelling an irrep of $H_n(R, q)$
 are tied together by three explicit structural statements.
 This remark records the three ties and the traffic between
 $\lambda$-preserving and $\lambda$-changing moves.
 
 ## 1. $\lambda$-block decomposition (Wedderburn)
 
-Semisimplicity of $H_n(q)$ (generic $q$) gives a decomposition
+Semisimplicity of $H_n(R, q)$ (generic $q$) gives a decomposition
 
 $$
-  H_n(q)
+  H_n(R, q)
   \;\cong\;
   \bigoplus_{\lambda \vdash n}
     \mathrm{End}_R(V_\lambda),

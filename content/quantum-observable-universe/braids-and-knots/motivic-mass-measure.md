@@ -33,7 +33,7 @@ $$
 **Mass from blow-ups.** When the categorical
 Gröbner--Shirshov reduction
 ([three-parameter Wedderburn formula](#thm:wedderburn-mass-formula))
-processes a braid $\beta \in H_n(q)$, it performs a finite sequence
+processes a braid $\beta \in H_n(R, q)$, it performs a finite sequence
 of algebraic blow-ups of the brane variety $X$ along the crossing
 loci, producing exceptional divisors $E_1, \dots, E_r$ with
 multiplicities (or codimension weights) $d_1, \dots, d_r$. The

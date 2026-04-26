@@ -60,7 +60,7 @@ $$
 Per [CLAUDE.md §7a Hecke-Skein
 convention](https://github.com/litlfred/qou/blob/main/CLAUDE.md), the
 Hecke generator is **$\sigma_i$** (the same symbol serves both as
-braid generator in $B_n$ and its image in $H_n(q)$; context
+braid generator in $B_n$ and its image in $H_n(R, q)$; context
 disambiguates), satisfying the Hecke relation
 $\sigma_i^{2} = (q - q^{-1})\sigma_i + 1$ and the Skein relation
 $\sigma_i - \sigma_i^{-1} = q - q^{-1}$.  The two eigenchannels on

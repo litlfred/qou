@@ -1,5 +1,5 @@
 **Definition.**
-*The **Hecke normal form** of an element $h \in H_n(q)$ is the
+*The **Hecke normal form** of an element $h \in H_n(R, q)$ is the
 unique representative in the Gröbner--Shirshov canonical basis
 obtained by iterated application of three rewriting rules:*
 

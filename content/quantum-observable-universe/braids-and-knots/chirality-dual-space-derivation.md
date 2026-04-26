@@ -1,7 +1,7 @@
 **Proposition (chirality from symmetric-channel trace duality).**
 *The paper's chirality factors $a_K$ are derivable from the
 **symmetric-channel** trace structure of Hecke generators in
-$H_3(q)$.  For every pn crossing $c$ in the atomic braid,*
+$H_3(R, q)$.  For every pn crossing $c$ in the atomic braid,*
 
 $$
   a_K \;=\; \prod_{\substack{\text{pn crossings}\\ c \in \beta_K}}
@@ -78,9 +78,9 @@ the **Frobenius-dual pairing** of the deviation $\sigma - \sigma^{-1}$
 against the channel-projection cocycle $\tau_\lambda$.  In dual-space
 terms:*
 
-- *$\sigma - \sigma^{-1} = h \cdot \mathbf{1}$ in $H_n(q)$ (Hecke
+- *$\sigma - \sigma^{-1} = h \cdot \mathbf{1}$ in $H_n(R, q)$ (Hecke
   inverse identity).*
-- *The trace $\tau_\lambda$ is a linear functional on $H_n(q)$;
+- *The trace $\tau_\lambda$ is a linear functional on $H_n(R, q)$;
   paired against $\sigma - \sigma^{-1}$ gives the channel-specific
   $h$-content.*
 - *Symmetric-channel: $\tau_{\mathrm{sym}}(h \cdot \mathbf{1}) = h$

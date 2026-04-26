@@ -1,6 +1,6 @@
 **Definition.**
 *The **algebraic quantum volume** of a braid element
-$\beta \in H_n(q)$ is the product of traced volumes:*
+$\beta \in H_n(R, q)$ is the product of traced volumes:*
 
 $$
   \mathrm{Vol}_q(\beta)

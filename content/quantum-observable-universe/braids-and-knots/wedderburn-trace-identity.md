@@ -1,10 +1,10 @@
 The Wedderburn trace identity relates the $q$-dimensions of
-irreducible representations of the Hecke algebra $H_n(q)$ to the
+irreducible representations of the Hecke algebra $H_n(R, q)$ to the
 $q$-factorial, providing the combinatorial foundation for the
 descent decomposition of mass and coupling.
 
 **Proposition.**
-*For the Hecke algebra $H_n(q)$ over $\mathbb{C}$
+*For the Hecke algebra $H_n(R, q)$ over $R$
 with parameter $q \neq 0, \pm 1$, the sum of squared quantum
 dimensions equals the quantum factorial:*
 
@@ -25,7 +25,7 @@ of the mass endomorphism
 $\lambda$ contributes a weight proportional to
 $\dim_q(\lambda)^2 / [n]_q!$ to the total binding energy.
 
-For the three extremal partitions of $H_n(q)$ (symmetric $[n]$,
+For the three extremal partitions of $H_n(R, q)$ (symmetric $[n]$,
 standard $[n{-}1, 1]$, alternating $[1^n]$), the identity gives:
 
 $$
@@ -54,8 +54,8 @@ and $[n{-}2, 1^2]$ partitions at Hecke level $k = 5$.
 *Proof.*
 The Wedderburn-Artin decomposition
 $H_n(R, q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(R)$
-gives $\dim H_n(q) = \sum_\lambda d_\lambda^2$.  Since
-$\dim H_n(q) = n!$ classically (as a quotient of the group algebra
+gives $\dim H_n(R, q) = \sum_\lambda d_\lambda^2$.  Since
+$\dim H_n(R, q) = n!$ classically (as a quotient of the group algebra
 $\mathbb{C}[S_n]$), and the $q$-deformation replaces each factor
 $k$ in $n!$ by $[k]_q$, we obtain
 $\sum_\lambda \dim_q(\lambda)^2 = [n]_q!$.

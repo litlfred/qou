@@ -1,6 +1,6 @@
 **Remark.**
 *The deuteron $^2$H binding energy is computed from first principles
-using the full $H_6(q)$ Schur–Weyl sum
+using the full $H_6(R, q)$ Schur–Weyl sum
 ([Schur–Weyl mass decomposition](#prop:schur-weyl-mass-decomposition))
 over all $11$ partitions of $6$, with the paper's atomic-braid
 convention
@@ -33,7 +33,7 @@ No BW parameters.*
 | $Q_{\mathrm{cat}} = \mathrm{tr}_M(\mathfrak{n}) - \mathrm{tr}_M(\mathfrak{p})$ | $-0.24975$ |
 | $E_0$ | $3.1312\;\mathrm{MeV}/\text{cat.unit}$ |
 
-**A = 2 deuteron, $H_6(q)$ partition sum.**
+**A = 2 deuteron, $H_6(R, q)$ partition sum.**
 *All $11$ partitions of $6$ contribute to the $q$-character sum.
 Top six by magnitude for the atomic (with one pn inter-crossing):*
 

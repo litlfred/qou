@@ -124,12 +124,18 @@ def standard_young_tableaux(shape):
 # §2  SEMINORMAL REPRESENTATION MATRICES
 # ══════════════════════════════════════════════════════════════
 
-def build_seminormal_matrices(shape, sparse=None):
+def build_seminormal_matrices(shape, sparse=None, q=None):
     """Build representation matrices for σ₁..σ_{n-1} in the
     seminormal basis for partition `shape`.
 
     Returns: list of numpy/scipy arrays [σ₁, σ₂, ..., σ_{n-1}]
              (0-indexed: sigmas[0] = σ₁)
+
+    If `q` is supplied, build matrices at that q (override).  Otherwise
+    the module-level default `q0` from `q_parameter.py` is used.  The
+    override path enables CRT-style multi-q probing for q-rational
+    reconstruction (see prop:alpha-k-derivation-procedure
+    §"CRT-style q-rational reconstruction").
 
     If sparse=True (or sparse=None and dim > 500), uses scipy sparse
     CSR matrices. Each Hoefsmit matrix has at most 2 nonzeros per row
@@ -142,6 +148,10 @@ def build_seminormal_matrices(shape, sparse=None):
 
     if dim == 0:
         return [], dim, syts
+
+    # Resolve q (override or module default).  Derive amplitude h locally.
+    q_local = float(q0) if q is None else float(q)
+    h_local = q_local - 1.0 / q_local
 
     use_sparse = sparse if sparse is not None else (dim > 500)
 
@@ -161,7 +171,7 @@ def build_seminormal_matrices(shape, sparse=None):
             rho = contents[ci_k1] - contents[ci_k]
 
             # Diagonal element: a_ρ = h/(1-q^{-2ρ})
-            a = h / (1.0 - q0**(-2 * rho))
+            a = h_local / (1.0 - q_local**(-2 * rho))
 
             # Find swap partner: swap entries k and k+1
             swap_map = dict(syts[i])
@@ -183,7 +193,7 @@ def build_seminormal_matrices(shape, sparse=None):
                 processed.add(i)
             else:
                 # 2×2 block
-                a_prime = h / (1.0 - q0**(2 * rho))  # = a_{-ρ}
+                a_prime = h_local / (1.0 - q_local**(2 * rho))  # = a_{-ρ}
                 # b² = a·a' + 1 (from det = -1)
                 b_sq = a * a_prime + 1.0
                 b = math.sqrt(abs(b_sq))

@@ -27,7 +27,7 @@ negative crossings $\sigma_i^{\pm 1}$ project to the same
 transposition $(i, i+1)$.*
 
 **Origin of the loss of information.**
-*The Hecke algebra $H_n(q)$ has two eigenvalues for each Hecke
+*The Hecke algebra $H_n(R, q)$ has two eigenvalues for each Hecke
 generator: $\sigma_i$ has spectrum $\{q, -q^{-1}\}$.  The q-deformed
 character $\chi^\lambda_q(\sigma_w)$ distinguishes these eigenvalues
 through q-weighted ribbon tableaux — a positive crossing and a

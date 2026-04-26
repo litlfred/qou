@@ -7,7 +7,7 @@ selection LP.*
 *Proof.*
 The [operator selection LP](#prop:operator-selection-lp) at
 Hecke level $k$ selects the nuclear operator
-$\Phi = \sum_i x_i b_i \in H_k(q)$ by:
+$\Phi = \sum_i x_i b_i \in H_k(R, q)$ by:
 
 $$
   \min_x \; \sum_i t_i \, x_i

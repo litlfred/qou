@@ -59,7 +59,7 @@ the classical limit.*
 **Why the $q$-character sees the sign.**
 *A positive crossing $\sigma_i$ and a negative crossing $\sigma_i^{-1}$
 project to the same $S_n$ transposition (parity-blind at $q = 1$),
-but as elements of $H_n(q)$ they are distinct: $\sigma_i$ has
+but as elements of $H_n(R, q)$ they are distinct: $\sigma_i$ has
 eigenvalue $+q$ on the symmetric channel and $-q^{-1}$ on the
 antisymmetric channel, while $\sigma_i^{-1}$ has $q^{-1}$ and $-q$.
 The seminormal matrix for $\sigma_i$ and $\sigma_i^{-1}$ differ:*

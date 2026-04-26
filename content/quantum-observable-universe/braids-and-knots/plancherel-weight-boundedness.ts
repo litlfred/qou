@@ -1,0 +1,25 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:plancherel-weight-boundedness",
+  title:
+    "Plancherel weights define a probability distribution: $\\sum_\\lambda w_\\lambda = 1$, $0 \\leq w_\\lambda \\leq 1$",
+  lean: {
+    ref: "qou:QOU.BraidKnot.plancherel_weight_boundedness",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:wedderburn-trace-identity",
+    "prop:spectral-sequence-collapse",
+    "prop:unified-curvature-rank-mass-formula",
+    "prop:plancherel-term-7-formulation",
+  ],
+  tags: [
+    "plancherel",
+    "boundedness",
+    "probability-distribution",
+    "wedderburn",
+    "convergence",
+    "mass-tower",
+  ],
+});

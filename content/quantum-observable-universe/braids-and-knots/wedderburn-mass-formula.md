@@ -37,7 +37,7 @@ $$
 $$
 
 *The three invariants correspond to the three Wedderburn blocks of
-$H_n(q)$:*
+$H_n(R, q)$:*
 
 | Invariant | Wedderburn block | Matrix quantity |
 |:----------|:-----------------|:----------------|
@@ -46,7 +46,7 @@ $H_n(q)$:*
 | $\Phi_3$ | sym $/$ alt | ratio of eigenvalues (chirality) |
 
 *The three invariants correspond to the three **extremal** Wedderburn
-blocks of $H_n(q)$ (those associated with the symmetric, standard,
+blocks of $H_n(R, q)$ (those associated with the symmetric, standard,
 and alternating representations).  For $n \geq 4$, the Hecke algebra
 has additional irreducible representations (one per partition of $n$),
 producing additional invariants not captured by the $2 \times 2$
@@ -68,8 +68,8 @@ zero fitted parameters.*
 
 *Proof sketch.*
 The Wedderburn-Artin decomposition
-$H_n(q) \cong M_1(\mathbb{C}) \oplus M_{n-1}(\mathbb{C})
-\oplus M_1(\mathbb{C})$
+$H_n(R, q) \cong M_1(R) \oplus M_{n-1}(R)
+\oplus M_1(R)$
 ([three-parameter decomposition](#prop:three-parameters-wedderburn))
 gives three independent representations.  The crossing matrix
 $C = c \cdot \sigma_i + d \cdot \mathbf{1}$ has:

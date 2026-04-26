@@ -73,7 +73,7 @@ gas triggers $\mu \ge 2$ and raises the required level.*
 **Computational implication.**
 *For a non-magic atom with $A$ nucleons, the Hecke algebra
 dimension drops from $|H_{3A}(q)| = (3A)!$ (quark-level) to
-$|H_A(q)| = A!$ (nucleon-level).  Partition enumeration drops from
+$|H_A(R, q)| = A!$ (nucleon-level).  Partition enumeration drops from
 $p(3A)$ to $p(A)$: for $A = 20$, a factor of
 $p(60)/p(20) \approx 966{,}000/627 \approx 1540$.
 Default-coarse computation is not a performance heuristic — it is

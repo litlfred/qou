@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q_0$ and Hecke algebra $H_n(q)$ filtered by the
+substrate parameter $q_0$ and Hecke algebra $H_n(R, q)$ filtered by the
 confinement filtration $J^\bullet(q)$
 ([confinement level](#def:confinement-level)).  Let
 $\Phi_q(z) = \prod_{k\geq 1}(1 - q^{-k} z)^{-1}$ be the non-perturbative
@@ -32,10 +32,10 @@ confinement level of $\mathcal{K}$ at $q_0$.*
 **Why residues at roots of unity when $q_0 > 1$?**
 *The substrate parameter $q_0 \approx 1.11$ lies outside the unit
 circle, so the evaluation $\int_A T_w(q_0)$ is at a regular
-point of $\Phi_q$ and $H_n(q)$.  The poles of $\int_A$ and
+point of $\Phi_q$ and $H_n(R, q)$.  The poles of $\int_A$ and
 $\Phi_q$ lie at roots of unity $\zeta_\ell \in S^1$: these are the
 values of $q$ at which the $\ell$-th generator's Hecke eigenvalues
-$(q, -q^{-1})$ become equal in absolute value and $H_n(q)$ fails
+$(q, -q^{-1})$ become equal in absolute value and $H_n(R, q)$ fails
 to be semisimple.  A function $q \mapsto \int_A(T_w, q)$
 meromorphic on $\mathbb{C} \setminus \{\zeta_\ell\}$ admits a
 **Mittag-Leffler expansion**: its value at a regular point $q_0$
@@ -90,7 +90,7 @@ new terms missing from the regular-value tower.*
 **Cohomological interpretation.**
 *The filtration $J^\bullet(q)$ together with the rewriting differential
 $d$ induced by the three Gröbner–Shirshov rules (Hecke, far
-commutativity, Yang–Baxter) makes $H_n(q)$ a filtered differential
+commutativity, Yang–Baxter) makes $H_n(R, q)$ a filtered differential
 algebra.  The associated spectral sequence has*
 
 $$
@@ -98,7 +98,7 @@ $$
   \qquad
   E_\infty^{\ell,*}
     \;\Longrightarrow\;
-    \mathrm{gr}^\ell\,H_n(q),
+    \mathrm{gr}^\ell\,H_n(R, q),
 $$
 
 *and $\int_A$ is a closed linear functional with respect to $d$

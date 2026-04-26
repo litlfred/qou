@@ -8,11 +8,11 @@ By $q$-Schur--Weyl duality
 $V^{\otimes n}$ decomposes into irreducible summands labelled by
 partitions $\lambda \vdash n$.
 
-Then the Markov trace on $H_n(q)$ assigns to each irreducible summand
+Then the Markov trace on $H_n(R, q)$ assigns to each irreducible summand
 a knot type $K_\lambda$ (the closure of any braid representative),
 establishing a bijection between:
 
-- Irreducible summands of $V^{\otimes n}$ under the Iwahori--Hecke algebra $H_n(q)$, and
+- Irreducible summands of $V^{\otimes n}$ under the Iwahori--Hecke algebra $H_n(R, q)$, and
 - Knot/link types arising as closures of $n$-strand braids.
 
 In particular, each localized knot ([localized knot](#def:localized-knot))

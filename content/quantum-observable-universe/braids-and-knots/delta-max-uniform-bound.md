@@ -18,7 +18,7 @@ standard representation, closing the open hypothesis in the
 archimedean (SDP rank-1) regime.
 
 **Proposition.**  Let $\varrho$ have braid representative
-$\beta \in B_n$ with Hecke image $\rho(\beta) \in H_n(q)$ in
+$\beta \in B_n$ with Hecke image $\rho(\beta) \in H_n(R, q)$ in
 the standard representation.  Let
 
 $$
@@ -45,9 +45,9 @@ independent of the jet level $n$.
 ## Derivation
 
 *Step 1 — Operator-norm control of the Markov trace.*  The
-Markov trace $\mathrm{tr}_M \colon H_n(q) \to \mathbb{C}$ is
+Markov trace $\mathrm{tr}_M \colon H_n(R, q) \to \mathbb{C}$ is
 bounded with respect to the operator norm: for any
-$x \in H_n(q)$ acting on a Jones--Wenzl module $W$ of dimension
+$x \in H_n(R, q)$ acting on a Jones--Wenzl module $W$ of dimension
 $d_q$,
 
 $$

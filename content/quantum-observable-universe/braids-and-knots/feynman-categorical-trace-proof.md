@@ -18,10 +18,10 @@ $$
 
 where $V_\lambda$ is the irreducible $\mathrm{SU}_q(2)$-module of spin
 $j = (\lambda_1 - \lambda_2)/2$ and $S_\lambda$ is the irreducible
-$H_n(q)$-module.  The braid $\beta \in B_n$ acts on $V^{\otimes n}$
+$H_n(R, q)$-module.  The braid $\beta \in B_n$ acts on $V^{\otimes n}$
 via the braid group representation
 $\rho_n \colon B_n \to \mathrm{Aut}(V^{\otimes n})$, and on each
-$S_\lambda$ via the quotient map $B_n \to H_n(q)$.
+$S_\lambda$ via the quotient map $B_n \to H_n(R, q)$.
 
 The number of summands is $\lfloor n/2 \rfloor + 1$, corresponding to
 spins $j = n/2, n/2 - 1, \ldots, \epsilon/2$ where
@@ -46,14 +46,14 @@ irreducible summands.
 
 No regularisation is needed: the sum has finitely many terms because
 $V^{\otimes n}$ has finitely many irreducible summands (semisimplicity
-of $H_n(q)$ at non-root-of-unity $q$).
+of $H_n(R, q)$ at non-root-of-unity $q$).
 
 **Step 3 (Markov identification).**
-The Jones--Markov trace is the unique trace on $\bigcup_n H_n(q)$
+The Jones--Markov trace is the unique trace on $\bigcup_n H_n(R, q)$
 satisfying the Markov property
 $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
 ([Jones--Markov trace](#thm:jones-markov-trace)).
-By the Wedderburn-Artin decomposition of the semisimple algebra $H_n(q)$,
+By the Wedderburn-Artin decomposition of the semisimple algebra $H_n(R, q)$,
 every trace decomposes as a weighted sum of irreducible characters:
 
 $$

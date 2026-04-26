@@ -1,7 +1,7 @@
 The **Breit--Wheeler process** $\gamma\gamma \to e^-e^+$ is the
 creation of an electron--positron pair from two real photons.
 In the QOU the entire vertex is encoded in the Iwahori--Hecke algebra
-$H_n(q)$ acting on the exceptional divisor
+$H_n(R, q)$ acting on the exceptional divisor
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([exceptional divisor](#def:exceptional-divisor)).
 
@@ -34,7 +34,7 @@ the polarisation angle $\psi$ encoded in the ratio $v_1/v_2 \in
 ## The pair-creation vertex
 
 The two-photon state $\gamma_1 \otimes \gamma_2$ is a word in
-$H_n(q)$.  Three cases arise depending on the relative polarisation:
+$H_n(R, q)$.  Three cases arise depending on the relative polarisation:
 
 **Same generator (parallel polarisation).**
 $$

@@ -43,7 +43,7 @@ cyclotomic-division algorithm used in
 
 ### Step 1: Integrality of $p(u)$
 
-The Markov trace $\mathrm{tr}_M \colon H_n(q) \to \mathbb{Q}(q^{1/2})$
+The Markov trace $\mathrm{tr}_M \colon H_n(R, q) \to \mathbb{Q}(q^{1/2})$
 is characterised uniquely by Markov's axioms (I) and (II)
 \cite{jones1987, kassel1995}:
 

@@ -1,7 +1,7 @@
 **Proposition.**
 *For a nucleus with $Z$ protons and $N$ neutrons ($A = Z + N$),
 the symmetric channel eigenvalue product of the nuclear braid in the
-$[2{,}1]$ representation of $H_3(q)$ is:*
+$[2{,}1]$ representation of $H_3(R, q)$ is:*
 
 $$
   \Lambda_{\mathrm{sym}}

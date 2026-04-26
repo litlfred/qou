@@ -3,7 +3,7 @@
 ([universal Frobenius co-dimension](#thm:frobenius-codim-universal))*
 
 $$
-  \tau(C_{\dim_q}^{H_n(q)}) \;=\; \sum_{\lambda \,\vdash\, n} \frac{1}{\dim_q(\lambda)}
+  \tau(C_{\dim_q}^{H_n(R, q)}) \;=\; \sum_{\lambda \,\vdash\, n} \frac{1}{\dim_q(\lambda)}
 $$
 
 *has a striking limit structure across all $n$, with a clean

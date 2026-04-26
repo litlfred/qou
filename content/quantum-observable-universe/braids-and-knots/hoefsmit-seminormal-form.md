@@ -1,7 +1,7 @@
 **Proposition.**
 *For each partition $\lambda \vdash n$ and substrate parameter $q > 1$,
 the Hoefsmit seminormal form \cite{hoefsmit1974} gives an explicit
-matrix representation $\rho_\lambda\colon H_n(q) \to M_{d_\lambda}(\mathbb{C})$
+matrix representation $\rho_\lambda\colon H_n(R, q) \to M_{d_\lambda}(\mathbb{C})$
 where $d_\lambda = |\mathrm{SYT}(\lambda)|$ is the number of standard
 Young tableaux of shape $\lambda$.  The generator $\sigma_i$ acts on the
 basis of standard tableaux by:*
@@ -86,7 +86,7 @@ where $\beta$ is the braid whose closure is the knot $K$.
 **Application to figure-eight BW coefficients.**
 The trace $\chi_{4_1}([2{,}1]) = \mathrm{tr}(\rho_{[2,1]}(\sigma_1 \sigma_2^{-1}
 \sigma_1^{-1} \sigma_2)) = 2 - [3]_q$ is computed by multiplying four $2 \times 2$
-Hoefsmit matrices in the standard representation of $H_3(q)$.  The
+Hoefsmit matrices in the standard representation of $H_3(R, q)$.  The
 result $2 - [3]_q = -1 - h^2$ lands on a $q$-integer expression
 because each matrix entry is a rational function of $q$, and the
 trace is a Laurent polynomial in $q$.

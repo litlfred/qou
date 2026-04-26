@@ -9,7 +9,7 @@ quadratic with distinct roots $q \neq -q^{-1}$ to a quadratic with
 roots $\pm 1$.  The consequence is that the two eigenspaces
 $S^2 V$ (eigenvalue $q$) and $\Lambda^2 V$ (eigenvalue $-q^{-1}$)
 merge into the $+1$ and $-1$ eigenspaces of the symmetric group
-transposition.  The Hecke algebra $H_n(q)$, which at generic $q$ is a
+transposition.  The Hecke algebra $H_n(R, q)$, which at generic $q$ is a
 non-trivial deformation of $k[S_n]$, becomes $k[S_n]$ itself.
 
 **Loss of knot discrimination.**
@@ -21,7 +21,7 @@ constant at $q = 1$.  The complete knot-type eigenbasis
 degenerates: all knots become topologically trivial under the symmetric
 quotient $B_n \twoheadrightarrow S_n$.
 
-The irreducible $H_n(q)$-modules $S_\lambda$ become Specht modules of
+The irreducible $H_n(R, q)$-modules $S_\lambda$ become Specht modules of
 $S_n$.  These are indexed by the same partitions $\lambda \vdash n$
 with $\ell(\lambda) \leq 2$, corresponding to spins
 $j = 0, 1/2, 1, \ldots, n/2$.  This is the standard angular momentum

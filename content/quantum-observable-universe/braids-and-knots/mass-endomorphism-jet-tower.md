@@ -95,7 +95,7 @@ level $n$.
 An earlier version of [mass endomorphism tower](#prop:mass-endomorphism-tower)
 restricted $\mathcal{P}_n$ to adjacent pairs $\{(i,j) : |i-j|=1\}$
 on the grounds that far-commutativity of non-adjacent generators
-in $H_n(q)$ gives no independent blow-up centre.  That claim is
+in $H_n(R, q)$ gives no independent blow-up centre.  That claim is
 incorrect.  The Markov weight $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
 holds for every pair $i < j$:
 

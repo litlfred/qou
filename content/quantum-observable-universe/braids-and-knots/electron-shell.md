@@ -1,7 +1,7 @@
 **Definition.**
 *Let $P_{\mathrm{nuc}}$ be a [confined particle](#def:confined-particle)
 at level $\ell = 1$ (nucleon-level atom) with coarse braid
-$K_{\mathrm{nuc}} \in H_A(q)$.  An **electron shell of multiplicity
+$K_{\mathrm{nuc}} \in H_A(R, q)$.  An **electron shell of multiplicity
 $Z$** attached to $P_{\mathrm{nuc}}$ is a triple*
 
 $$
@@ -17,11 +17,11 @@ $$
    particles** — each $e_k$ is a confined particle
    $([\sigma_1^3]_M, 2)$ (trefoil on two strands, $\ell = 0$);*
 
-2. *$\iota: H_A(q) \hookrightarrow H_{A+Z}(q)$ is the **cabling
+2. *$\iota: H_A(R, q) \hookrightarrow H_{A+Z}(R, q)$ is the **cabling
    embedding** that extends the nucleon-level Hecke algebra by $Z$
    additional strands — one per electron;*
 
-3. *$W_{\mathrm{bind}} \in H_{A+Z}(q)$ is the **binding subword**,
+3. *$W_{\mathrm{bind}} \in H_{A+Z}(R, q)$ is the **binding subword**,
    a product of Hecke generators $\sigma_{i}^{\pm 1}$ selected by
    the [confinement SDP](#prop:confinement-sdp) solved at level
    $\ell = 6$ (atom-electron) of the multi-level hierarchy.*

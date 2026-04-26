@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a QOU, let $\varrho \colon \mathbf{1} \to A$
 be a vortex with braid representative $\beta \in B_n$, and let
-$\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$ be its Hecke mass element
+$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ be its Hecke mass element
 ([Hecke mass element](#def:hecke-mass-element)).
 
 **Proposition.**  The categorical mass
@@ -16,7 +16,7 @@ $$
 $$
 
 Moreover, the topological decomposition
-([topological mass](#thm:topological-mass)) descends to $H_n(q)$:
+([topological mass](#thm:topological-mass)) descends to $H_n(R, q)$:
 
 $$
   \mathrm{tr}_M\!\bigl(\Phi_{\mathrm{mass}}(\beta)\bigr)
@@ -30,19 +30,19 @@ $$
 *Proof.*  The fibre functor $\tau$ is exact and monoidal, so it
 commutes with $\Delta$, $\int_A$, and the categorical trace:
 
-1. **Particle image.**  $\tau(\varrho) = \rho(\beta) \in H_n(q)$
+1. **Particle image.**  $\tau(\varrho) = \rho(\beta) \in H_n(R, q)$
    by the Hecke quotient.
 
 2. **Frobenius--comultiplication image.**  Since $\tau$ preserves
    monoidal structure, $\tau\bigl((\int_A \otimes \mathrm{id})
    \circ \Delta\bigr)$ is an $\mathrm{SU}_q(2)$-equivariant
-   endomorphism of $V^{\otimes n}$, hence an element of $H_n(q)$
+   endomorphism of $V^{\otimes n}$, hence an element of $H_n(R, q)$
    by quantum Schur--Weyl duality.
 
 3. **Trace correspondence.**  The categorical trace
    $\mathrm{tr} \colon \mathrm{End}_{\mathbf{C}}(A) \to R$
    maps under $\tau$ to the Markov trace
-   $\mathrm{tr}_M \colon H_n(q) \to k$
+   $\mathrm{tr}_M \colon H_n(R, q) \to k$
    ([Jones--Markov trace](#thm:jones-markov-trace), uniqueness).
 
 4. **Norm preservation.**  Working over the same ground ring $R$,
