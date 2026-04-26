@@ -437,6 +437,7 @@ export default chapter({
         "mass-tower-coefficient-stratification",
         "alpha-k-derivation-procedure",
         "explicit-alpha-k-h3",
+        "y-lambda-sign-pattern",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
         "shell-correction-term-seven",
