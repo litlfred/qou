@@ -112,14 +112,27 @@ impl LaurentPolyQ {
     /// Substitute q = exact value (as f64) and return the result.
     /// Internal arithmetic done via repeated f64 multiplication —
     /// for high precision use `evaluate_mpfr`.
+    ///
+    /// **Panics** if any coefficient is not representable in f64
+    /// (overflows the f64 range or `BigInt::to_f64` returns `None`).
+    /// This surfaces invariant violations early instead of silently
+    /// producing wrong numeric results (Copilot review #r3143557490).
+    /// Callers requiring overflow-tolerance should use the mpfr path.
     pub fn evaluate_f64(&self, q: f64) -> f64 {
         let mut total = 0.0f64;
         for (&he, c) in &self.terms {
             // q^{he/2}: use sqrt + powi pattern.
             let exponent_doubled = he as f64 / 2.0;
             let term = q.powf(exponent_doubled);
-            // BigInt → f64 via num_traits::ToPrimitive (Gemini review #r3143554485).
-            let cf = c.to_f64().unwrap_or(0.0);
+            // BigInt → f64 via num_traits::ToPrimitive.  Panic on
+            // unrepresentable coefficients to avoid silent miscompute.
+            let cf = c.to_f64().unwrap_or_else(|| {
+                panic!(
+                    "LaurentPolyQ::evaluate_f64: coefficient {} (at q^{{{}/2}}) \
+                     is not representable in f64 — use mpfr path for full precision",
+                    c, he
+                )
+            });
             total += cf * term;
         }
         total
