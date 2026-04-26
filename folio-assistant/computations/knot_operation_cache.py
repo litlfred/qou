@@ -235,27 +235,126 @@ def discover_factorization(
     return [op]
 
 
-# ─── Composer interface (STUB) ───────────────────────────────────────
+# ─── Composer interface ──────────────────────────────────────────────
 
 def chi_via_factorization(
-    lam: tuple,
+    lam: tuple | list,
     factorization: list[KnotOperation],
     q: float,
 ) -> float:
-    """Compute χ_λ(β) where β = ⊗ factorization.
+    """Compute χ_λ(β) where β = β_1 ⊗ β_2 ⊗ ... ⊗ β_k from a
+    tensor-product factorization (Phase 2 of F4 / post-#428).
 
-    **STATUS: STUB.**
+    For each `op_i ∈ factorization` with non-empty
+    `braid_word_normal_form`, the character of the constituent
+    braid β_i is computed via the Hoefsmit seminormal kernel.  The
+    factors are then composed via Littlewood–Richardson:
 
-    The intended implementation: for a tensor-product factorization
-    `β = β_1 ⊗ β_2 ⊗ ...`, the character factors as
-    `χ_λ(β) = Σ_{λ_1 ⊗ λ_2 ⊗ ... ⊆ λ} χ_{λ_1}(β_1) · χ_{λ_2}(β_2) · ...`
-    where the sum is over Littlewood-Richardson decompositions.
+      χ_λ(β_1 ⊗ β_2) = Σ_{μ ⊢ n_1, ν ⊢ n_2} c^λ_{μν} χ_μ(β_1) χ_ν(β_2)
 
-    For non-tensor factorizations (e.g. inter-nucleon couplings),
-    the composition is more involved and uses Markov stabilization.
+    For k > 2 we fold left, maintaining a vector
+    `V[τ] = χ_τ(β_1 ⊗ ... ⊗ β_j)` for τ ⊢ Σ n_i (i ≤ j).
+
+    Args:
+      lam: outer partition λ (must satisfy |λ| = Σ_i n_i).
+      factorization: list of KnotOperation with non-empty
+        `braid_word_normal_form`.
+      q: substrate parameter for Hoefsmit evaluation.
+
+    Returns: χ_λ(β) as float (Hoefsmit f64 path).  For high precision
+    use the mpfr variant `chi_via_factorization_mpfr` — not yet wired.
+
+    Raises:
+      ValueError: if |λ| != sum of factor strand counts, if any
+        factor has empty `braid_word_normal_form`, or if the
+        factorization list is empty.
     """
-    raise NotImplementedError(
-        "chi_via_factorization is a stub — see F4 implementation roadmap"
+    if not factorization:
+        raise ValueError("factorization is empty")
+    lam_list = list(lam)
+    n_lam = sum(lam_list)
+    n_total = sum(op.n for op in factorization)
+    if n_lam != n_total:
+        raise ValueError(
+            f"|λ|={n_lam} but factorization spans {n_total} strands"
+        )
+    # An empty `braid_word_normal_form` is fine when the op
+    # represents the identity factor (no fingerprint metadata).
+    # Reject only the *discovery-fingerprint* case where NF is empty
+    # and `fingerprint` carries non-NF binning data — those ops have
+    # no concrete braid for χ-evaluation.
+    for i, op in enumerate(factorization):
+        if not op.braid_word_normal_form and op.fingerprint:
+            raise ValueError(
+                f"factor {i} has empty braid_word_normal_form but "
+                f"non-empty fingerprint metadata "
+                f"({sorted(op.fingerprint.keys())}) — the F4 composer "
+                "needs concrete braid data, not discovery-fingerprint "
+                "metadata. Build factor ops via factor_op_from_word()."
+            )
+
+    # Lazy import — keeps the module loadable even without the wheel.
+    import pyhecke_native as p  # type: ignore[import]
+
+    # Single-factor: direct Hoefsmit on the braid word.
+    if len(factorization) == 1:
+        op = factorization[0]
+        word = list(op.braid_word_normal_form)
+        return float(p.chi_lambda_braid(lam_list, word, q))
+
+    # Multi-factor: fold left, maintaining V[τ] over partitions of
+    # the running strand count.
+    def chars_for(op: KnotOperation) -> dict[tuple, float]:
+        """χ_τ(β_op) for every τ ⊢ op.n."""
+        out = {}
+        for tau in p.partitions_of(op.n):
+            tau_t = tuple(tau)
+            out[tau_t] = float(p.chi_lambda_braid(
+                list(tau), list(op.braid_word_normal_form), q,
+            ))
+        return out
+
+    # Initialize V from the first factor.
+    V = chars_for(factorization[0])
+    n_so_far = factorization[0].n
+
+    for op in factorization[1:]:
+        n_j = op.n
+        V_j = chars_for(op)
+        n_new = n_so_far + n_j
+        # Compose: V'[τ] = Σ_{μ, ν} c^τ_{μν} V[μ] V_j[ν].
+        V_new: dict[tuple, float] = {}
+        for tau in p.partitions_of(n_new):
+            tau_l = list(tau)
+            tau_t = tuple(tau)
+            total = 0.0
+            for mu_t, chi_mu in V.items():
+                if chi_mu == 0.0:
+                    continue
+                for nu_t, chi_nu in V_j.items():
+                    if chi_nu == 0.0:
+                        continue
+                    c = p.lr_coefficient(tau_l, list(mu_t), list(nu_t))
+                    if c != 0:
+                        total += float(c) * chi_mu * chi_nu
+            V_new[tau_t] = total
+        V = V_new
+        n_so_far = n_new
+
+    return V.get(tuple(lam_list), 0.0)
+
+
+def factor_op_from_word(
+    n: int, word: list[tuple[int, int]],
+    discovered_by: str = "factor_op_from_word",
+) -> KnotOperation:
+    """Convenience: build a KnotOperation directly from a braid word
+    (typically used by tests or by callers that don't go through the
+    discovery layer)."""
+    return KnotOperation(
+        n=n,
+        braid_word_normal_form=list(word),
+        discovered_in=[discovered_by],
     )
 
 
