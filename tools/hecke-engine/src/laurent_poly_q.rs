@@ -115,27 +115,34 @@ impl LaurentPolyQ {
     ///
     /// **Panics** if any coefficient is not representable in f64
     /// (overflows the f64 range or `BigInt::to_f64` returns `None`).
-    /// This surfaces invariant violations early instead of silently
-    /// producing wrong numeric results (Copilot review #r3143557490).
-    /// Callers requiring overflow-tolerance should use the mpfr path.
+    /// Convenience wrapper around [`Self::try_evaluate_f64`] for
+    /// callers that treat overflow as a programming bug.  For library
+    /// usage where overflow may be a routine condition, use
+    /// `try_evaluate_f64` and handle `None` (Gemini #r3143786237).
     pub fn evaluate_f64(&self, q: f64) -> f64 {
+        self.try_evaluate_f64(q).unwrap_or_else(|| {
+            panic!(
+                "LaurentPolyQ::evaluate_f64: a coefficient is not representable \
+                 in f64 — call try_evaluate_f64 to handle overflow gracefully, \
+                 or use the mpfr path for full precision"
+            )
+        })
+    }
+
+    /// Substitute q = exact value (as f64) and return the result, or
+    /// `None` if any coefficient overflows the f64 range.  Library-
+    /// friendly variant of `evaluate_f64` (Gemini #r3143786237).
+    pub fn try_evaluate_f64(&self, q: f64) -> Option<f64> {
         let mut total = 0.0f64;
         for (&he, c) in &self.terms {
             // q^{he/2}: use sqrt + powi pattern.
             let exponent_doubled = he as f64 / 2.0;
             let term = q.powf(exponent_doubled);
-            // BigInt → f64 via num_traits::ToPrimitive.  Panic on
-            // unrepresentable coefficients to avoid silent miscompute.
-            let cf = c.to_f64().unwrap_or_else(|| {
-                panic!(
-                    "LaurentPolyQ::evaluate_f64: coefficient {} (at q^{{{}/2}}) \
-                     is not representable in f64 — use mpfr path for full precision",
-                    c, he
-                )
-            });
+            // BigInt → f64 via num_traits::ToPrimitive.
+            let cf = c.to_f64()?;
             total += cf * term;
         }
-        total
+        Some(total)
     }
 
     /// Format as a string, useful for tests.

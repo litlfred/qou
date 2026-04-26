@@ -214,9 +214,13 @@ def discover_factorization(
 
     Currently returns a single KnotOperation wrapping the whole braid.
     """
+    # Per Copilot review #r3144...: do NOT sort braid_nf — sorting
+    # changes generator order, which generally changes the underlying
+    # braid/Hecke element. Preserve input order until a real
+    # order-preserving normal-form algorithm is implemented.
     op = KnotOperation(
         n=n,
-        braid_word_normal_form=sorted(braid_nf),
+        braid_word_normal_form=list(braid_nf),
         discovered_in=[discovered_by],
     )
     return [op]

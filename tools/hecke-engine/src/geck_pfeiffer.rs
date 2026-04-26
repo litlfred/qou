@@ -230,10 +230,14 @@ fn min_length_for_cycle_type(mu: &[usize]) -> usize {
 /// Returns a sequence of 0-indexed simple-reflection indices `[i_1, i_2, ...]`
 /// such that `w = s_{i_1} · s_{i_2} · ... · s_{i_k}` and `k = ℓ(w)`.
 ///
-/// Algorithm: while w is not identity, find the rightmost descent
-/// (largest i such that w(i) > w(i+1)), apply s_i (which removes
-/// that descent and sorts toward identity), and prepend i to the
-/// word.
+/// Algorithm: while w is not identity, find the **leftmost** descent
+/// (smallest i such that w(i) > w(i+1)), apply s_i on the right
+/// (i.e. swap positions i and i+1 — this removes that descent and
+/// strictly decreases inversion count), and prepend i to the word.
+/// Any descent gives a valid reduced word; we take the leftmost one
+/// for determinism.  Per Copilot review #r3144... the docstring used
+/// to say "rightmost" while the code took the leftmost — corrected
+/// to match the implementation.
 pub fn reduced_word(w: &Perm) -> Vec<u32> {
     let mut current = w.clone();
     let n = current.n();

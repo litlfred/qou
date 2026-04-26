@@ -67,65 +67,69 @@ pub fn lr_coefficient(lambda: &[usize], mu: &[usize], nu: &[usize]) -> i64 {
     // (top-to-bottom, right-to-left within row) and verify ballot.
 
     let mut filling: Vec<usize> = vec![0; cells.len()];
+    let mut remaining: Vec<usize> = nu.to_vec();
 
     let mut count: i64 = 0;
     enumerate_ssyt_full(
         &cells, lambda, mu, nu,
         &mut filling,
+        &mut remaining,
         0,
         &mut count,
     );
     count
 }
 
-/// Enumerate all SSYTs with content ν, then verify ballot property
-/// on the reverse reading word at each leaf.
+/// Enumerate SSYTs with content ν (incremental, pruned), and verify
+/// the ballot property on the reverse reading word at each leaf.
+///
+/// Pruning (Gemini #r3143786241 / Copilot #r3144...):  rather than
+/// recomputing content at the leaf, we maintain a `remaining[v-1]`
+/// counter and skip values that have already been fully placed.
+/// Once `cell_idx == cells.len()`, every entry of `remaining` is 0
+/// by construction — no separate content check required.
 fn enumerate_ssyt_full(
     cells: &[(usize, usize)],
     lambda: &[usize],
     mu: &[usize],
     nu: &[usize],
     filling: &mut [usize],
+    remaining: &mut [usize],
     cell_idx: usize,
     count: &mut i64,
 ) {
     if cell_idx == cells.len() {
-        // Verify content matches ν.
-        let mut content = vec![0usize; nu.len() + 1];
-        for &v in filling.iter() {
-            if v >= 1 && v <= nu.len() {
-                content[v] += 1;
-            }
+        // Build reverse reading word inline + verify ballot.
+        // Inline reverse iteration avoids per-row Vec allocation
+        // (Gemini #r3143786239); fixed-size stack array for prefix
+        // counts avoids per-leaf Vec allocation (Gemini #r3143786240).
+        // Bounded by MAX_PARTITION_PARTS ≥ practical n (~24).
+        const MAX_PARTITION_PARTS: usize = 32;
+        if nu.len() + 2 > MAX_PARTITION_PARTS {
+            // Fallback for unexpectedly large nu — shouldn't happen at n ≤ 24.
+            // Keep a heap allocation in the cold path.
+            let mut prefix_count = vec![0usize; nu.len() + 2];
+            return verify_ballot_heap(
+                cells, lambda, mu, nu, filling, &mut prefix_count, count
+            );
         }
-        for (v, &target) in nu.iter().enumerate() {
-            if content[v + 1] != target {
-                return;
-            }
-        }
-        // Build reverse reading word using an incrementing pointer
-        // since `cells` was populated in standard reading order
-        // (Gemini review #r3143554489).
-        let mut rrw: Vec<usize> = Vec::with_capacity(cells.len());
-        let mut cell_ptr = 0;
+        let mut prefix_count = [0usize; MAX_PARTITION_PARTS];
+        let mut cell_ptr = 0usize;
         for i in 0..lambda.len() {
             let start = if i < mu.len() { mu[i] } else { 0 };
-            let mut row_entries: Vec<usize> = Vec::with_capacity(lambda[i] - start);
-            for _ in start..lambda[i] {
-                row_entries.push(filling[cell_ptr]);
-                cell_ptr += 1;
-            }
-            row_entries.reverse();
-            rrw.extend(row_entries);
-        }
-        // Verify ballot: for every prefix, #(k) ≥ #(k+1) for all k.
-        let mut prefix_count = vec![0usize; nu.len() + 2];
-        for &v in &rrw {
-            prefix_count[v] += 1;
-            for k in 1..nu.len() {
-                if prefix_count[k] < prefix_count[k + 1] {
-                    return;
+            let row_len = lambda[i] - start;
+            // Iterate row right-to-left without intermediate Vec.
+            for k in (0..row_len).rev() {
+                let v = filling[cell_ptr + k];
+                prefix_count[v] += 1;
+                // Verify ballot: #(k) ≥ #(k+1) for all k after each placement.
+                for kk in 1..nu.len() {
+                    if prefix_count[kk] < prefix_count[kk + 1] {
+                        return;
+                    }
                 }
             }
+            cell_ptr += row_len;
         }
         *count += 1;
         return;
@@ -146,16 +150,49 @@ fn enumerate_ssyt_full(
         }
     }
     for v in lb..=max_v {
+        // Content pruning: skip values whose ν-quota is exhausted.
+        if remaining[v - 1] == 0 {
+            continue;
+        }
         filling[cell_idx] = v;
-        enumerate_ssyt_full(cells, lambda, mu, nu, filling,
+        remaining[v - 1] -= 1;
+        enumerate_ssyt_full(cells, lambda, mu, nu, filling, remaining,
                              cell_idx + 1, count);
+        remaining[v - 1] += 1;
     }
 }
 
-// (Legacy `enumerate_ssyt` (filling-order lattice check) and helpers
-// `mu_at`, `find_cell_idx` removed per Gemini review #r3143554491:
-// superseded by `enumerate_ssyt_full` which performs the correct
-// reverse-reading-word ballot check at each leaf.)
+/// Heap-allocated fallback for the ballot verification in
+/// `enumerate_ssyt_full` when `nu.len() + 2 > MAX_PARTITION_PARTS`.
+/// Functionally identical to the stack-array branch; kept separate so
+/// the hot path stays allocation-free.
+fn verify_ballot_heap(
+    cells: &[(usize, usize)],
+    lambda: &[usize],
+    mu: &[usize],
+    nu: &[usize],
+    filling: &[usize],
+    prefix_count: &mut [usize],
+    count: &mut i64,
+) {
+    let _ = cells;
+    let mut cell_ptr = 0usize;
+    for i in 0..lambda.len() {
+        let start = if i < mu.len() { mu[i] } else { 0 };
+        let row_len = lambda[i] - start;
+        for k in (0..row_len).rev() {
+            let v = filling[cell_ptr + k];
+            prefix_count[v] += 1;
+            for kk in 1..nu.len() {
+                if prefix_count[kk] < prefix_count[kk + 1] {
+                    return;
+                }
+            }
+        }
+        cell_ptr += row_len;
+    }
+    *count += 1;
+}
 
 #[inline]
 fn mu_at(mu: &[usize], i: usize) -> usize {

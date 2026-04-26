@@ -69,23 +69,34 @@ def discover_for_isotope(
         groups.setdefault(sig, []).append(i)
 
     # Each group becomes a candidate KnotOperation.
-    # Per Copilot review #r3144...: channel-signature is a fingerprint,
-    # not an NF.  Stored in fingerprint metadata; cache_key derives from
-    # (n, fingerprint) when braid_word_normal_form is empty.
+    # Per Copilot review #r3144... (round 3): the cache-key fingerprint
+    # must NOT include isotope-specific data (gen_indices), otherwise
+    # the same channel-signature observed in two different isotopes
+    # produces different keys and dedup fails.  Keep only feeder name +
+    # channel signature in the cache-key fingerprint; expose
+    # gen_indices and group size as non-key metadata in
+    # plancherel_signature.
     new_ops = []
     for sig, gen_indices in sorted(groups.items()):
         fingerprint = {
             "feeder": feeder_name,
             "channel_signature": sig,
-            "gen_indices": ",".join(str(i) for i in sorted(gen_indices)),
+        }
+        plancherel_sig = {
+            "channel_signature": _signature_hash_to_float(sig),
+            "n_generators_grouped": float(len(gen_indices)),
+            # Track per-isotope occurrence as float metadata (uses the
+            # bit-pattern of a stable hash so isotopes with different
+            # gen-index sets are still distinguishable in metadata
+            # while NOT contributing to the cache key).
+            "gen_indices_hash": _signature_hash_to_float(
+                ",".join(str(i) for i in sorted(gen_indices))
+            ),
         }
         op = KnotOperation(
             n=n_strands,
             braid_word_normal_form=[],
-            plancherel_signature={
-                "channel_signature": _signature_hash_to_float(sig),
-                "n_generators_grouped": float(len(gen_indices)),
-            },
+            plancherel_signature=plancherel_sig,
             fingerprint=fingerprint,
         )
         cache_key = cache.add_operation(op, discovered_in=feeder_name)

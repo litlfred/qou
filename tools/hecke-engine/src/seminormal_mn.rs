@@ -264,9 +264,18 @@ pub fn chi_lambda_braid_qdef(
     let n_neg = neg_positions.len();
     if n_neg > 20 {
         // Bail-out guard: 2^20 ≈ 10^6 sub-evaluations is the practical
-        // ceiling.  Caller should switch to seminormal_mpfr or seminormal
-        // f64 for words with >20 inverse generators.
-        return LaurentPolyQ::zero();
+        // ceiling.  Returning zero would silently give a WRONG result
+        // (Gemini #r3143786232).  Panic loudly so callers switch to the
+        // appropriate path: `seminormal_mpfr::chi_lambda_braid_mpfr`
+        // for high precision, or `seminormal::chi_lambda_braid` for
+        // direct f64 Hoefsmit on arbitrary words.
+        panic!(
+            "chi_lambda_braid_qdef: braid word has {} negative \
+             generators (> 20 cap = 2^20 ≈ 10^6 sub-braids); \
+             switch to chi_lambda_braid (Hoefsmit f64) or \
+             chi_lambda_braid_mpfr (high precision) for this input.",
+            n_neg
+        );
     }
     let n_subsets = 1usize << n_neg;
     let h = LaurentPolyQ::hecke_h();

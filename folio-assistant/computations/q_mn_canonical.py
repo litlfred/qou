@@ -66,7 +66,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import pyhecke_native as p  # type: ignore[import]
 
 
-def chi_q_canonical_T_w(lam, mu, q="symbolic"):
+def chi_q_canonical_T_w(lam, mu, q="symbolic", q_value=None):
     """Hecke character `χ^λ(T_w; q)` for w with cycle type μ.
 
     See module docstring for the canonical-T_w scope.
@@ -75,8 +75,21 @@ def chi_q_canonical_T_w(lam, mu, q="symbolic"):
       - "symbolic" / None         → returns list[(half_exp, coeff_str)]
                                     encoding the LaurentPolyQ result
       - "classical" / 1           → returns int (classical MN value)
-      - float / int (≥ 50 dps)   → returns float (q-polynomial evaluated)
-      - "mpfr_50dps" / 50          → mpmath.mpf at 50 dps (requires mpmath)
+      - float / int               → returns float (q-polynomial evaluated
+                                    at this numeric value)
+      - "mpfr_50dps", "mpfr_<N>dps" → mpmath.mpf evaluation at the
+                                      requested precision
+
+    `q_value` (NEW per Copilot review #r3144...): explicit numeric q
+    used in the "mpfr_*dps" path.  When `q_value=None` the legacy
+    behaviour is preserved (evaluates at the substrate parameter `Q0`
+    from `q_parameter.py`).  Pass a string / float / mpmath.mpf to
+    evaluate at any other point.
+
+    Previously the "mpfr_*dps" path silently ignored any numeric q in
+    the call site and always evaluated at `Q0`, which contradicted the
+    docstring promise that callers can "pass a numeric value for
+    evaluation".  The new `q_value` parameter restores that contract.
     """
     lam = list(lam)
     mu = list(mu)
@@ -93,9 +106,11 @@ def chi_q_canonical_T_w(lam, mu, q="symbolic"):
         if q.startswith("mpfr_") and q.endswith("dps"):
             dps = int(q[5:-3])
         mp.mp.dps = dps
-        from q_parameter import Q as Q0
+        if q_value is None:
+            from q_parameter import Q as Q0
+            q_value = Q0
         terms = p.mn_chi_q(lam, mu)
-        q_mpf = mp.mpf(str(Q0))
+        q_mpf = q_value if isinstance(q_value, mp.mpf) else mp.mpf(str(q_value))
         result = mp.mpf(0)
         for he, c in terms:
             result += mp.mpf(int(c)) * q_mpf ** (mp.mpf(he) / 2)

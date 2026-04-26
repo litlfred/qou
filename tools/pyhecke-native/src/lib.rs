@@ -232,7 +232,7 @@ fn chi_via_gp_hoefsmit(
     geck_pfeiffer::chi_lambda_via_gp_hoefsmit(&lambda, n, &word, q)
 }
 
-/// **F3.2.γ — q-character via Geck-Pfeiffer Hecke-basis expansion.**
+/// **F3.2.γ — q-character via Geck-Pfeiffer Hecke-basis expansion** *(EXPERIMENTAL).*
 ///
 /// Computes `χ_λ(T_β; q)` for an arbitrary braid word `β` by:
 ///   1. Expanding `T_β = Σ c_w(q) · T_w` in the canonical Hecke basis.
@@ -241,6 +241,27 @@ fn chi_via_gp_hoefsmit(
 ///   3. Summing `Σ c_w(q) · χ_λ(T_w; q)`.
 ///
 /// Returns the q-Laurent polynomial as `[(half_exp, coeff_str), ...]`.
+///
+/// **WARNING (Copilot review #r3144...): structurally incomplete at q ≠ 1.**
+/// The underlying [`geck_pfeiffer::chi_lambda_via_geck_pfeiffer`] is
+/// explicitly documented as incomplete: at q ≠ 1, two basis elements
+/// `T_w` and `T_{w'}` with the SAME cycle type but DIFFERENT lengths
+/// give DIFFERENT Hecke characters, so the q-MN-on-cycle-type step is
+/// only valid on minimal-length representatives.  The current
+/// implementation reduces basis elements via simple-reflection
+/// conjugation only — sufficient for many cases at n ≤ 6 but **not
+/// guaranteed minimal** without the full Geck-Pfeiffer 2000 §3.2
+/// "good cuspidal moves".  Empirically: D atomic braid (n=6) reduces
+/// to 145 basis elements of which 17 are minimal-length and 128 are
+/// not (see `geck_pfeiffer.rs` notes).
+///
+/// **At q = 1** the result is correct (Hecke ↦ S_n, characters are
+/// class functions on cycle type alone).
+///
+/// **For correct q ≠ 1 evaluation on arbitrary braids**, prefer
+/// [`chi_via_gp_hoefsmit`] (basis expansion + Hoefsmit per T_w —
+/// correct but no MN speedup) or the direct seminormal kernel
+/// [`chi_lambda_braid`] / [`chi_lambda_braid_mpfr`].
 ///
 /// **Cost**: worst-case O(n!) basis elements but typical sparse braid
 /// words give smaller spans.  At n = 6 (D atomic braid), basis can
@@ -294,9 +315,16 @@ fn lr_coefficient(lambda: Vec<usize>, mu: Vec<usize>, nu: Vec<usize>) -> i64 {
 /// [`chi_via_gp_hoefsmit`] (basis expansion + Hoefsmit per T_w) or
 /// the direct seminormal kernel [`chi_lambda_braid`].
 ///
-/// To avoid accidental misuse this binding rejects words containing
-/// negative generators (which trigger the unsupported `σ⁻¹ = σ − h`
-/// expansion).
+/// To avoid accidental misuse this binding rejects:
+///   1. Words containing negative generators (would require the
+///      unsupported `σ⁻¹ = σ − h` expansion).
+///   2. **Positive but non-reduced words** (Copilot review #r3144...),
+///      detected by comparing word length to the underlying
+///      permutation's inversion length.  E.g. `[σ_1, σ_2, σ_1]` (length
+///      3) is rejected because the underlying permutation of the
+///      braid `σ_1 σ_2 σ_1` is `(1 3)` with only 1 inversion → its
+///      reduced expression has length 1, so the q≠1 character is NOT
+///      a class function on cycle type for this 3-letter word.
 #[pyfunction]
 fn chi_q_word(
     lambda: Vec<usize>,
@@ -312,6 +340,36 @@ fn chi_q_word(
              evaluation on arbitrary braids.",
         ));
     }
+    // Reject positive non-reduced words: the underlying permutation
+    // of the braid (apply each generator on the right of the
+    // identity) must have inversion-count equal to the word length.
+    let mut perm: Vec<usize> = (0..n_strands).collect();
+    for &(_, gen) in &word {
+        let i = (gen as usize).saturating_sub(1);
+        if i + 1 < perm.len() {
+            perm.swap(i, i + 1);
+        }
+    }
+    let mut inversions = 0usize;
+    for i in 0..perm.len() {
+        for j in (i + 1)..perm.len() {
+            if perm[i] > perm[j] {
+                inversions += 1;
+            }
+        }
+    }
+    if inversions != word.len() {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "chi_q_word: input word has length {} but its underlying \
+             permutation has {} inversions — non-reduced words are not \
+             supported (q-character is not a class function of cycle \
+             type for non-canonical braids).  Reduce the word to a \
+             minimal-length expression of the same permutation, or use \
+             chi_via_gp_hoefsmit / chi_lambda_braid for correct \
+             evaluation on arbitrary braids.",
+            word.len(), inversions
+        )));
+    }
     let poly = seminormal_mn::chi_lambda_braid_qdef(&lambda, n_strands, &word);
     Ok(poly
         .terms
@@ -320,7 +378,7 @@ fn chi_q_word(
         .collect())
 }
 
-/// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)`.
+/// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)` *(EXPERIMENTAL).*
 ///
 /// Computes the Hecke character of the canonical permutation braid
 /// `T_w ∈ H_n(q)` of cycle type `μ`, returning the result as a list
@@ -328,10 +386,24 @@ fn chi_q_word(
 /// polynomial in `q^{1/2}`.  The half-exponent `2k` represents
 /// `q^{k}`; `2k+1` represents `q^{(2k+1)/2}`.
 ///
-/// At `q = 1` (sum of coefficients) this collapses to classical
-/// MN — verified by Rust unit tests.  Currently handles
-/// permutation-form braids only; mixed-sign generators (inverses)
-/// require Hecke-relation expansion (next milestone).
+/// **WARNING (Copilot review #r3144...): simplified q-deformation.**
+/// The underlying [`seminormal_mn::chi_lambda_mn_qdef`] is documented
+/// as a deliberately-simplified Halverson–Ram-style broken-strip
+/// q-deformation: at `q = 1` it agrees exactly with classical MN
+/// (verified across the full S_3, S_5 character tables), and on the
+/// trivial / sign irreps it agrees with Hoefsmit at `q ≠ 1`.  For
+/// *non-trivial* irreps at `q ≠ 1` it is **not** the canonical
+/// Ram–Wenzl q-MN — the broken-strip q-weight differs from the
+/// Ram–Wenzl 1992 weight on multi-row strips.  Treat output for such
+/// cases as a placeholder until the proper Ram–Wenzl recursion is
+/// wired in (next milestone).
+///
+/// For ground truth, evaluate via the Hoefsmit kernel
+/// [`chi_lambda_braid`] on a reduced word for `T_w`, or via the basis
+/// expansion + Hoefsmit path [`chi_via_gp_hoefsmit`].
+///
+/// Currently handles permutation-form `μ` only; mixed-sign generators
+/// (inverses) require Hecke-relation expansion (separate milestone).
 ///
 /// Returns `[(half_exp, coeff_str), ...]` where `coeff_str` is the
 /// BigInt rendered as decimal (callers parse via `int(s)`).
