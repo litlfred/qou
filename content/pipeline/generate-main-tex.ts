@@ -129,7 +129,7 @@ export function generateMainTex(
   } else {
     lines.push(`{\\large ${authorName}}\\\\[1em]`);
   }
-  lines.push(`{\\large ${paper.date ? escapeLatexMeta(paper.date) : "\\today"}}\\\\`);
+  lines.push(`{\\large ${paper.date ? escapeLatexMeta(paper.date) : "\\today"}}`);
   lines.push("\\vfill");
   lines.push("\\end{titlepage}");
   lines.push("");
