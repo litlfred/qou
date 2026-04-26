@@ -72,7 +72,13 @@ permissions:
 
 jobs:
   build-and-publish:
-    runs-on: ubuntu-latest
+    # Larger GitHub-hosted runner — the paper-assistant container image
+    # bakes in Mathlib oleans (~20 GB extracted). The default ubuntu-latest
+    # has ~14 GB free disk and runs out during `docker pull` before any
+    # step can clean up. Larger runners ship with ~150 GB.
+    # If this label isn't configured for the account, fail-fast and switch
+    # to a slim publish-only image (issue: tracked separately).
+    runs-on: ubuntu-latest-l
     outputs:
       head_ref: ${{ steps.deploy-vars.outputs.head_ref }}
       head_sha: ${{ steps.deploy-vars.outputs.head_sha }}
