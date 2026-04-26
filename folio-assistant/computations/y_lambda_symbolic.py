@@ -12,9 +12,15 @@ Solving this with q kept symbolic (sympy.Symbol) gives y_λ as exact
 q-rational functions — no numerical interpolation, no Padé
 ambiguity, no condition-number issue.
 
-Tractable for small n (n ≤ 5 in pure Python).  For larger n the
-scaling of the symbolic matmul becomes prohibitive; sibling Rust
-kernel handles those.
+Pure-Python sympy is feasible for n ≤ 4: n = 2, 3 finish in well
+under 10 s; n = 4 takes roughly a minute on commodity hardware
+(~60 s observed).  n = 5 is beyond pure sympy by both paths tested:
+  - `simplify_each=True`  (default): timed out after 20 min on the
+    7×7 character matrix with length-4 generator products.
+  - `simplify_each=False` (skip): sympy's HeuristicGCDFailed in the
+    later `Matrix.solve` simplification step.
+For n ≥ 5 the sibling Rust kernel
+(phase-b-heavy-rust-character-kernel) is preferred.
 
 References:
 - prop:alpha-k-derivation-procedure §"Symbolic linear-system solve"
@@ -94,14 +100,24 @@ def cycle_type_word(mu):
     return word
 
 
-def chi_lambda_symbolic(sigmas, dim, word):
-    """χ_λ(σ_w) symbolic: trace of Π σ_{w_i}."""
+def chi_lambda_symbolic(sigmas, dim, word, simplify_each=True):
+    """χ_λ(σ_w) symbolic: trace of Π σ_{w_i}.
+
+    Default `simplify_each=True` calls `sp.simplify` per character.
+    Setting it to False skips the per-character simplify, which
+    might in principle be faster, but at n=5 the unsimplified
+    polynomial expansion triggers sympy's HeuristicGCDFailed in
+    later linear-solve simplification.  Pure sympy for n ≥ 5 is
+    therefore not feasible by either path; use the sibling Rust
+    kernel.
+    """
     if dim == 0:
         return sp.Integer(0)
     M = sp.eye(dim)
     for idx in word:
         M = M * sigmas[idx - 1]
-    return sp.simplify(sp.trace(M))
+    tr = sp.trace(M)
+    return sp.simplify(tr) if simplify_each else tr
 
 
 def solve_y_symbolic(n: int, q):
@@ -136,19 +152,31 @@ def solve_y_symbolic(n: int, q):
 def main(ns: list[int]) -> None:
     q = sp.Symbol("q", positive=True)
     out_path = Path(__file__).parent / "y-lambda-symbolic-witness.json"
-    out: dict = {
-        "description": (
-            "Exact q-rational y_λ via symbolic linear-system solve "
-            "(sympy).  No interpolation, no Padé ambiguity — exact "
-            "Markov-trace block weights as elements of Q(q^{1/2})."
-        ),
-        "references": [
-            "prop:alpha-k-derivation-procedure",
-            "prop:explicit-alpha-k-h3",
-        ],
-        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "tables_by_n": {},
-    }
+    # Merge-aware: load existing witness so running with a subset of
+    # n's preserves entries for the others.  Running `y_lambda_symbolic.py 5`
+    # will keep n=2,3,4 entries intact rather than overwriting them.
+    if out_path.exists():
+        out: dict = json.loads(out_path.read_text())
+    else:
+        out = {"tables_by_n": {}}
+    out["description"] = (
+        "Exact q-rational y_λ via symbolic linear-system solve "
+        "(sympy).  No interpolation, no Padé ambiguity — exact "
+        "Markov-trace block weights as elements of Q(q^{1/2})."
+    )
+    out["references"] = [
+        "prop:alpha-k-derivation-procedure",
+        "prop:explicit-alpha-k-h3",
+    ]
+    out["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+    out.setdefault("tables_by_n", {})
+
+    preserved = sorted(
+        (k for k in out["tables_by_n"] if int(k) not in ns),
+        key=int,
+    )
+    if preserved:
+        print(f"Preserving existing entries for n in {preserved}\n")
     for n in ns:
         print(f"Solving y_λ symbolically at H_{n}(R, q) (n={n})...")
         ys = solve_y_symbolic(n, q)
@@ -172,6 +200,9 @@ def main(ns: list[int]) -> None:
 
 
 if __name__ == "__main__":
-    # Default: small n where symbolic solve is fast.
-    ns = [int(a) for a in sys.argv[1:]] or [2, 3, 4, 5]
+    # Default: small n where pure-Python sympy completes within a
+    # minute (n = 2, 3 in seconds; n = 4 ~60 s).  n = 5 is beyond the
+    # 20-min budget here and triggers HeuristicGCDFailed when the
+    # per-character simplify is skipped; use the sibling Rust kernel.
+    ns = [int(a) for a in sys.argv[1:]] or [2, 3, 4]
     main(ns)

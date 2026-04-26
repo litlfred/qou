@@ -1,0 +1,13 @@
+{
+  "computation": "tritium-q-spectral-extension",
+  "description": "26a: Test whether \u03b1\u2084 = 0.8272 (from n\u2192p single-nucleon fit) ALSO closes tritium Q via parent-daughter NF-difference baseline (branching factorization).  Tests four ans\u00e4tze: (1) frozen \u03b1\u2084 at various ranks, (2) raw Pochhammer no fit, (3) chirality knot + tail, (4) per-rank fitted \u03b1 to find which rank gives \u03b1 \u2248 0.8272 universal.",
+  "timestamp_utc": "2026-04-25T23:06:30.679234+00:00",
+  "Q_T_closed_form_MeV": 0.017932594439779282,
+  "Q_T_codata_MeV": 0.018592,
+  "err_closed_form_pct": -3.5467166535107433,
+  "residual_to_close_MeV": 0.0006594055602207174,
+  "alpha_4_from_np_fit": 0.8272227623,
+  "best_rank_for_universal_alpha": 6,
+  "best_fitted_alpha_at_that_rank": 0.445642230814458,
+  "alpha_match_pct": 46.127905187787654
+}

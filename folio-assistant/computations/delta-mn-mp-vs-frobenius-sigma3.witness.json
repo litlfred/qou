@@ -1,0 +1,38 @@
+{
+  "computation": "delta-mn-mp-vs-frobenius-sigma3",
+  "description": "T1.1 — High-precision test of cyFlQ-agent hypothesis: Δm_{n-p} ?= m_e · Σ_3 where Σ_3 = Σ_{λ⊢3} 1/dim_q V_λ = 2 + 1/[2]_q (Frobenius co-Casimir at n=3). Verified at 50 dps using repo-canonical q_0 from q_parameter.Q and CODATA 2022 m_e, m_p, m_n. Result: predicted Δm = 1.27611 MeV vs CODATA 1.29333 MeV; rel. err = -1.331 %, residual = -26 555 σ on CODATA Δm uncertainty. Hypothesis FALSIFIED in its simplest form — match is structural/leading-order only, not exact. Higher-tower correction of order 1.3 % is required to close the gap.",
+  "timestamp_utc": "2026-04-25T19:00:00Z",
+  "precision_dps": 50,
+  "inputs": {
+    "q_0": "1.1099785955541805",
+    "m_e_MeV": "0.51099895000",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052",
+    "sigma_m_n_MeV": "0.00000058",
+    "sigma_m_p_MeV": "0.00000029"
+  },
+  "derived": {
+    "two_q": "2.010896869118481675282573",
+    "Sigma_3_formula": "2 + 1/[2]_q",
+    "Sigma_3_value": "2.497290545008591478952270",
+    "Delta_codata_MeV": "1.29333236",
+    "Delta_predicted_MeV": "1.276112846344317986723557",
+    "abs_error_MeV": "-0.01721951365568201327644",
+    "rel_error": "-0.01331409617817968",
+    "ppb_error": "-1.33141e+7",
+    "sigma_combined_MeV": "6.4846e-7",
+    "residual_in_sigma_units": "-26554.5"
+  },
+  "verdict": "FALSIFIED",
+  "interpretation": "m_e · Σ_3 captures the leading order of Δm_{n-p} (gets 98.67%) but is 1.33% short. The 26 554 σ residual rules out any reading where this is an exact identity. The same magnitude (~1.27 MeV) coincidentally appears in three places: (i) Δm_{n-p}, (ii) the proton tower residual prop:partition-sum-proton-residual, (iii) m_e · Σ_3. All three agree to ~1 % but not better. Closing the 1.33 % gap requires higher-tower or pair-generator corrections, not just the Σ_3 sum. The 'one extra Frobenius co-Casimir' picture is approximately right but quantitatively incomplete.",
+  "next_steps": [
+    "Compute Δm via Markov-invariant pair-generator tower (canonical_isospin_pyhecke + antipode-symmetrised V̂); see if pair correction closes the 1.33% gap.",
+    "Check whether prop:partition-sum-proton-residual gives 1.27611 MeV at 50 dps independent of m_e·Σ_3; if so the two are the same algebraic object and the gap is real.",
+    "Test alt hypothesis: Δm_{n-p} = m_e · Σ_3 · (1 + h^2/[2]_q^2) where h = q - q^{-1} — check whether O(h^2) tower correction matches the missing 1.33%."
+  ],
+  "reference_blocks": [
+    "prop:partition-sum-proton-residual",
+    "thm:frobenius-codim-universal",
+    "calibration-inputs"
+  ]
+}

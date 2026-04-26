@@ -11,7 +11,7 @@ value of its LP-dual shadow price
 $$
   E(\lambda, q)
   \;:=\;
-  \bigl| y_\lambda(q) \bigr|
+  \bigl| u_\lambda(q) \bigr|
   \;=\;
   \left|
     \frac{w_\lambda(q)}{d_\lambda(q)}

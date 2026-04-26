@@ -30,7 +30,7 @@ with strict PSD margin).  Then:*
    - *the binding multiplicity
      $\mu(P, q) = |\mathcal{S}^*(P, q)|$ is constant;*
    - *the Frobenius stability index $\sigma_F(P, q) =
-     n_{\mathrm{target}} \cdot y_0^*(P, q)$ is continuous
+     n_{\mathrm{target}} \cdot u_0^*(P, q)$ is continuous
      (real-analytic in $q$ on the interior).*
 
 4. ***Scope of confinement statements.**  Every statement of
@@ -76,12 +76,12 @@ strata appearing at simultaneous vanishings.*
 *Claim (3) — Local constancy.
 On each component $\Omega_\alpha$, the active support
 $\mathcal{S}^*(P, q)$ is determined by the sign pattern of
-complementary-slackness dual variables $y_\lambda^*(q)$.  By
+complementary-slackness dual variables $u_\lambda^*(q)$.  By
 continuity of the SDP optimiser in $q$ (generic uniqueness from
 Slater strictness, [Boyd–Vandenberghe §5.5.3](https://doi.org/10.1017/CBO9780511804441))
 and by integer-valuedness of $|\mathcal{S}^*|$, the set
 $\mathcal{S}^*(P, q)$ cannot change within $\Omega_\alpha$: any
-change requires some $y_\lambda^*$ to pass through zero, which is
+change requires some $u_\lambda^*$ to pass through zero, which is
 precisely the phase-boundary condition.  Continuity of $\sigma_F$
 follows from continuity of the SDP optimal value under Slater
 regularity.*
@@ -100,7 +100,7 @@ the open stratum.*
 *Claim (5) — Phase transitions.
 A boundary crossing at $q_0$ is by definition either a Slater-loss
 event (primal strict PSD feasibility breaks → deconfinement) or an
-active-support transition (some $y_\lambda^*$ passes through zero
+active-support transition (some $u_\lambda^*$ passes through zero
 → regime switch with $\mu$-jump).  Both correspond to the
 discrete-regime-switch phenomenology already logged in
 [prop:parity-regime-selection](#thm:parity-regime-selection) and

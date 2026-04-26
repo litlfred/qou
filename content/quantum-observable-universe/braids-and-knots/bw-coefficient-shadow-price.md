@@ -38,29 +38,29 @@ $\lambda$-block and $\pi_\lambda$ is the central idempotent.
 **Dual program.**  The dual of the spectral LP is:
 
 $$
-  \max_{y_0, \, y_\lambda \geq 0} \;\; n_{\mathrm{target}} \cdot y_0
+  \max_{u_0, \, u_\lambda \geq 0} \;\; n_{\mathrm{target}} \cdot u_0
 $$
 
 $$
   \text{s.t.} \quad
-  y_0 + \frac{w_\lambda}{d_\lambda} \, y_\lambda
+  u_0 + \frac{w_\lambda}{d_\lambda} \, u_\lambda
   \leq \frac{w_\lambda}{d_\lambda}
   \quad \forall \, \lambda \vdash k
 $$
 
 By strong duality (the feasible set is non-empty and bounded),
 primal and dual optima coincide.  The optimal dual variables
-$y_\lambda^*$ satisfy complementary slackness:
+$u_\lambda^*$ satisfy complementary slackness:
 
 $$
-  y_\lambda^* \cdot \langle \Phi^*, \pi_\lambda \rangle_F = 0
+  u_\lambda^* \cdot \langle \Phi^*, \pi_\lambda \rangle_F = 0
 $$
 
 **Factorisation.**  For the nuclear braid $\Phi(Z,N)$, each
 dual variable factors as:
 
 $$
-  y_\lambda^*(Z,N) = C_\lambda \cdot S_\lambda(Z,N,A)
+  u_\lambda^*(Z,N) = C_\lambda \cdot S_\lambda(Z,N,A)
 $$
 
 where:
@@ -86,8 +86,8 @@ $$
            \cdot m_e
 $$
 
-Each BW "term" is one shadow price $y_\lambda^*$ (or the sum of
-a conjugate pair $y_\lambda^* + y_{\lambda'}^*$ when
+Each BW "term" is one shadow price $u_\lambda^*$ (or the sum of
+a conjugate pair $u_\lambda^* + u_{\lambda'}^*$ when
 $\lambda' = \lambda^\vee$).  The coefficient $C_\lambda \cdot m_e$
 is the shadow price evaluated at the normalisation point where
 $S_\lambda = 1$.
@@ -96,7 +96,7 @@ $S_\lambda = 1$.
 By the [Wedderburn trace identity](#prop:wedderburn-trace-identity),
 $\sum_\lambda \dim_q(\lambda)^2 = [k]_q!$.  This constrains the
 total shadow-price budget: the trace identity is the dual
-feasibility constraint ensuring all $y_\lambda^*$ are consistent.
+feasibility constraint ensuring all $u_\lambda^*$ are consistent.
 The budget at level $k$ is $[k]_q!$; the marginal budget from
 advancing $k \to k+1$ is $[k+1]_q! - [k]_q! = [k]_q! \cdot ([k+1]_q - 1)$.
 
