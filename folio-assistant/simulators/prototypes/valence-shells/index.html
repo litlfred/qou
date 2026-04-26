@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Valence shells — prototype (2D)</title>
+<style>
+  html,body { margin:0; height:100%; background:#070912; color:#dfe5f5;
+              font-family: ui-sans-serif, system-ui, sans-serif; overflow:hidden; }
+  #c { display:block; width:100vw; height:100vh; }
+  .panel { position:fixed; padding:12px 14px;
+        background:rgba(10,14,28,0.82); border:1px solid #2a3454;
+        border-radius:10px; backdrop-filter: blur(6px); font-size:12.5px; line-height:1.5; }
+  #ui { top:14px; left:14px; min-width:300px; }
+  #ui h1 { font-size:13px; margin:0 0 8px; color:#aac4ff; letter-spacing:.5px; }
+  #ui label { display:block; margin:8px 0 2px; color:#9aa6c4; font-size:11px;
+              text-transform:uppercase; letter-spacing:.6px; }
+  #ui .row { display:flex; align-items:center; gap:8px; }
+  #ui input[type=range] { flex:1; }
+  #ui select, #ui button { background:#1a2240; color:#dfe5f5; border:1px solid #2a3454;
+                            padding:4px 8px; border-radius:5px; font:inherit; }
+  #ui button.active { background:#2a4080; border-color:#5a7cd0; }
+  #ui .v { color:#ffd479; font-variant-numeric: tabular-nums; min-width:46px; text-align:right; }
+  #legend { bottom:14px; left:14px; }
+  #legend .sw { display:inline-block; width:10px; height:10px; margin-right:6px;
+                border-radius:2px; vertical-align:middle; }
+  #info { top:14px; right:14px; max-width:300px; }
+  #info .k { color:#aac4ff; }
+  #info .mono { font-family: ui-monospace, monospace; color:#ffd479; }
+  #title { bottom:14px; right:14px; font-size:11px; color:#7888aa; max-width:340px; text-align:right; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="ui" class="panel">
+  <h1>VALENCE SHELLS — GB filtration of a knot</h1>
+  <label>Atlas entry</label>
+  <select id="atlas">
+    <option value="proton">proton (σ₁³)  ·  H₃</option>
+    <option value="neutron">neutron (σ₁²σ₂)  ·  H₃</option>
+    <option value="alpha" selected>⁴He α  ·  H₁₂</option>
+    <option value="li7">⁷Li  ·  H₂₁</option>
+    <option value="c12">¹²C (3α)  ·  H₃₆</option>
+  </select>
+
+  <label>k_max — filtration cut-off <span class="v" id="kv">d</span></label>
+  <input id="kmax" type="range" min="0" max="6" step="1" value="6">
+
+  <label>scale s = q^(–1/2) <span class="v" id="sv">0.620</span></label>
+  <div class="row">
+    <input id="sc" type="range" min="0.30" max="0.95" step="0.005" value="0.620">
+    <button id="lockq" class="active" title="lock to q₀ = 1.1097">lock q</button>
+  </div>
+
+  <label>layout</label>
+  <div class="row">
+    <button id="modeNested" class="active">nested</button>
+    <button id="modeSplit">split</button>
+  </div>
+</div>
+
+<div id="info" class="panel">
+  <div><span class="k">braid:</span> <span class="mono" id="iBraid">σ₁³</span></div>
+  <div><span class="k">depth d:</span> <span id="iD">3</span></div>
+  <div><span class="k">levels shown:</span> <span id="iK">0…d</span></div>
+  <div><span class="k">scale s:</span> <span class="mono" id="iS">0.620</span></div>
+  <div style="margin-top:6px; font-size:11px; color:#8896b8;">
+    radius<sub>k</sub> = R₀·s<sup>k</sup>, &nbsp; q-weight = s<sup>k</sup> = q<sup>–k/2</sup>
+  </div>
+</div>
+
+<div id="legend" class="panel">
+  <span class="sw" style="background:#ffd479"></span>k=0 backbone &nbsp;
+  <span class="sw" style="background:#ff8ab0"></span>k=1 &nbsp;
+  <span class="sw" style="background:#7fc4ff"></span>k=2 &nbsp;
+  <span class="sw" style="background:#7fffb4"></span>k=3 &nbsp;
+  <span class="sw" style="background:#c79bff"></span>k=4 &nbsp;
+  <span class="sw" style="background:#ff9f67"></span>k=5 &nbsp;
+  <span class="sw" style="background:#ffffff"></span>core
+</div>
+
+<div id="title">
+  Each shell = the GB normal-form projection π<sub>k</sub>(NF β) onto F<sub>k</sub>/F<sub>k–1</sub>,
+  rendered as the closure of its sub-braid on radius R₀·s<sup>k</sup>.
+</div>
+
+<script>
+// ─── ATLAS: per-entry GB-filtration decomposition (stub data) ──────────────
+const ATLAS = {
+  proton:  { braid:'σ₁³', d:3, levels:[
+              {k:0, n:3, word:[],            mult:1, leading:'1'},
+              {k:1, n:3, word:[1],           mult:0, leading:'—'},
+              {k:2, n:3, word:[1,1],         mult:0, leading:'—'},
+              {k:3, n:3, word:[1,1,1],       mult:1, leading:'σ₁³'},
+            ]},
+  neutron: { braid:'σ₁²σ₂', d:3, levels:[
+              {k:0, n:3, word:[],            mult:1, leading:'1'},
+              {k:1, n:3, word:[2],           mult:0, leading:'—'},
+              {k:2, n:3, word:[1,1],         mult:0, leading:'—'},
+              {k:3, n:3, word:[1,1,2],       mult:1, leading:'σ₁²σ₂'},
+            ]},
+  alpha:   { braid:'(σ₁σ₂σ₃)⁴', d:4, levels:[
+              {k:0, n:4, word:[],            mult:1, leading:'1'},
+              {k:1, n:4, word:[1],           mult:3, leading:'3·σ₁'},
+              {k:2, n:4, word:[1,2],         mult:3, leading:'3·σ₁σ₂'},
+              {k:3, n:4, word:[1,2,3],       mult:2, leading:'2·σ₁σ₂σ₃'},
+              {k:4, n:4, word:[1,2,3,1],     mult:1, leading:'σ₁σ₂σ₃σ₁'},
+            ]},
+  li7:     { braid:'σ-word in H₂₁', d:5, levels:[
+              {k:0, n:7, word:[],            mult:1, leading:'1'},
+              {k:1, n:7, word:[1],           mult:6, leading:'6·σ₁'},
+              {k:2, n:5, word:[1,2],         mult:5, leading:'5·σ₁σ₂'},
+              {k:3, n:4, word:[1,2,3],       mult:3, leading:'3·σ₁σ₂σ₃'},
+              {k:4, n:4, word:[1,2,3,1],     mult:2, leading:'2·σ₁σ₂σ₃σ₁'},
+              {k:5, n:3, word:[1,1,1],       mult:1, leading:'σ₁³'},
+            ]},
+  c12:     { braid:'3α cluster', d:6, levels:[
+              {k:0, n:12,word:[],            mult:1, leading:'1'},
+              {k:1, n:12,word:[1],           mult:9, leading:'9·σ₁'},
+              {k:2, n:8, word:[1,2],         mult:9, leading:'9·σ₁σ₂'},
+              {k:3, n:6, word:[1,2,3],       mult:6, leading:'6·σ₁σ₂σ₃'},
+              {k:4, n:4, word:[1,2,3,1],     mult:3, leading:'3·σ₁σ₂σ₃σ₁'},
+              {k:5, n:4, word:[1,2,3,2],     mult:3, leading:'3·σ₁σ₂σ₃σ₂'},
+              {k:6, n:3, word:[1,1,1],       mult:1, leading:'σ₁³'},
+            ]},
+};
+const SHELL_COLORS = ['#ffd479','#ff8ab0','#7fc4ff','#7fffb4','#c79bff','#ff9f67','#ffffff'];
+
+// ─── canvas / state ────────────────────────────────────────────────────────
+const cvs = document.getElementById('c');
+const ctx = cvs.getContext('2d');
+let DPR = devicePixelRatio || 1;
+function resize() {
+  cvs.width  = innerWidth  * DPR;
+  cvs.height = innerHeight * DPR;
+  cvs.style.width  = innerWidth  + 'px';
+  cvs.style.height = innerHeight + 'px';
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+addEventListener('resize', () => { resize(); draw(); });
+
+let entry = 'alpha';
+let kmax  = 4;
+let s_scale = 0.620;
+let layout = 'nested';
+
+// ─── braid-closure drawing on a ring of radius R, centred at (cx,cy) ──────
+// Strands = n arcs at slightly different sub-radii (R ± lane offset).
+// The braid word causes strands to swap lanes — drawn as crossover wiggles.
+function drawShell(cx, cy, R, lev, color, alpha) {
+  const word = lev.word, n = lev.n;
+  const SEG = 480;
+  // tube/strand thickness shrinks with k
+  const lineW = Math.max(1.2, 5.0 * Math.pow(s_scale, lev.k * 0.7));
+  // lane offsets: spread strands across a band of width = R * 0.18
+  const band = Math.max(0.04*R, 0.012*R*n);
+  function laneR(lane) {
+    if (n === 1) return R;
+    return R - band/2 + (lane/(n-1)) * band;
+  }
+  // backbone (k=0): n concentric circles
+  if (word.length === 0 || lev.mult === 0) {
+    if (lev.mult === 0) return;
+    for (let s=0; s<n; s++) {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.globalAlpha = alpha;
+      ctx.lineWidth = lineW;
+      ctx.arc(cx, cy, laneR(s), 0, Math.PI*2);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    return;
+  }
+
+  // non-trivial word: n strands traversing the ring once, swapping lanes at L
+  // evenly spaced angular positions.
+  const L = word.length;
+  // build per-section permutation (lane[strand] at section l)
+  let lanes = []; for (let s=0;s<n;s++) lanes.push(s);
+  const sect = [lanes.slice()];
+  for (let l=0;l<L;l++) {
+    const gen = Math.abs(word[l]) - 1;
+    const next = lanes.slice();
+    if (gen >= 0 && gen < n-1) {
+      const t = next[gen]; next[gen] = next[gen+1]; next[gen+1] = t;
+    }
+    lanes = next; sect.push(lanes.slice());
+  }
+
+  // smooth lane interp (cubic) → produces a "twist" near each crossing
+  function strandRA(strandId, t) {
+    // t in [0, L]
+    const l = Math.min(L-1, Math.floor(t));
+    const local = t - l;
+    const laA = sect[l].indexOf(strandId);
+    const laB = sect[l+1].indexOf(strandId);
+    const u = local*local*(3 - 2*local);
+    const lane = laA + (laB - laA)*u;
+    // crossing "lift" — tiny radial bump so over/under is visible
+    const lift = (laA !== laB) ? Math.sin(local*Math.PI) * band * 0.35 *
+                                 (Math.sign(word[l]) || 1) : 0;
+    return { r: laneR(lane) + lift, ang: (t/L) * Math.PI*2, isCross: laA!==laB, sgn: Math.sign(word[l])||1, local };
+  }
+
+  // draw strands in order (over-under handled by lift)
+  for (let s=0; s<n; s++) {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.globalAlpha = alpha;
+    ctx.lineWidth = lineW;
+    ctx.lineCap = 'round';
+    let started = false;
+    for (let i=0;i<=SEG;i++) {
+      const t = (i/SEG)*L;
+      const p = strandRA(s, t);
+      const x = cx + p.r * Math.cos(p.ang);
+      const y = cy + p.r * Math.sin(p.ang);
+      // create a small under-gap: when the strand is in a crossing and is the
+      // "under" strand (negative sign), break the path briefly
+      if (!started) { ctx.moveTo(x,y); started=true; } else { ctx.lineTo(x,y); }
+    }
+    ctx.stroke();
+  }
+
+  // little white over-marks at crossings to indicate over/under
+  for (let l=0; l<L; l++) {
+    const ang = ((l + 0.5) / L) * Math.PI*2;
+    const x = cx + R * Math.cos(ang);
+    const y = cy + R * Math.sin(ang);
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.globalAlpha = alpha * 0.9;
+    ctx.arc(x, y, lineW * 0.35, 0, Math.PI*2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+}
+
+// faint guide ring + label
+function drawGuide(cx, cy, R, color, label) {
+  ctx.beginPath();
+  ctx.strokeStyle = color;
+  ctx.globalAlpha = 0.18;
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4,4]);
+  ctx.arc(cx, cy, R, 0, Math.PI*2);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.globalAlpha = 1;
+  // label
+  ctx.fillStyle = color;
+  ctx.globalAlpha = 0.85;
+  ctx.font = `${Math.max(10, R*0.06)}px ui-sans-serif, system-ui`;
+  ctx.textAlign = 'center';
+  ctx.fillText(label, cx, cy - R - 6);
+  ctx.globalAlpha = 1;
+}
+
+// ─── starfield backdrop ────────────────────────────────────────────────────
+const STARS = (() => {
+  const s = [];
+  for (let i=0;i<300;i++) s.push({x:Math.random(), y:Math.random(),
+                                   a:0.15 + Math.random()*0.45,
+                                   r:0.4 + Math.random()*1.2});
+  return s;
+})();
+function drawStars() {
+  ctx.fillStyle = '#ffffff';
+  for (const s of STARS) {
+    ctx.globalAlpha = s.a * 0.6;
+    ctx.fillRect(s.x*innerWidth, s.y*innerHeight, s.r, s.r);
+  }
+  ctx.globalAlpha = 1;
+}
+
+// ─── main draw ─────────────────────────────────────────────────────────────
+function draw() {
+  // backdrop
+  const grd = ctx.createRadialGradient(innerWidth*0.5, innerHeight*0.5, 50,
+                                        innerWidth*0.5, innerHeight*0.5, Math.max(innerWidth,innerHeight)*0.7);
+  grd.addColorStop(0, '#0c1228');
+  grd.addColorStop(1, '#040611');
+  ctx.fillStyle = grd;
+  ctx.fillRect(0,0,innerWidth,innerHeight);
+  drawStars();
+
+  const data = ATLAS[entry];
+  const usable = data.levels.filter(l => l.k <= kmax && l.mult > 0);
+
+  const cx = innerWidth*0.5;
+  const cy = innerHeight*0.55;
+  const Rmax = Math.min(innerWidth, innerHeight) * 0.34;
+  const R0 = Rmax;
+
+  if (layout === 'nested') {
+    // draw OUTSIDE-IN so inner shells overpaint guides cleanly,
+    // but draw guides first for ALL shells
+    usable.forEach(lev => {
+      const R = R0 * Math.pow(s_scale, lev.k);
+      drawGuide(cx, cy, R, SHELL_COLORS[lev.k % SHELL_COLORS.length],
+                `k=${lev.k}  ·  ${lev.leading}  ·  dim=${lev.mult}`);
+    });
+    usable.forEach(lev => {
+      const R = R0 * Math.pow(s_scale, lev.k);
+      const color = SHELL_COLORS[lev.k % SHELL_COLORS.length];
+      const alpha = Math.max(0.45, 1.0 - lev.k * 0.08);
+      drawShell(cx, cy, R, lev, color, alpha);
+    });
+  } else {
+    // SPLIT: explode shells into a row, sized by their natural radius
+    const radii = usable.map(l => R0 * Math.pow(s_scale, l.k));
+    const totalW = radii.reduce((a,r)=> a + 2*r, 0) + (radii.length-1)*16;
+    let cursor = cx - totalW/2;
+    usable.forEach((lev, i) => {
+      const R = radii[i];
+      const sx = cursor + R;
+      const color = SHELL_COLORS[lev.k % SHELL_COLORS.length];
+      drawGuide(sx, cy, R, color, `k=${lev.k}  ·  ${lev.leading}`);
+      const alpha = Math.max(0.45, 1.0 - lev.k * 0.08);
+      drawShell(sx, cy, R, lev, color, alpha);
+      // dim label below
+      ctx.fillStyle = '#7888aa';
+      ctx.font = '11px ui-sans-serif, system-ui';
+      ctx.textAlign = 'center';
+      ctx.fillText(`dim F_${lev.k}/F_${lev.k-1} = ${lev.mult}`, sx, cy + R + 18);
+      cursor += 2*R + 16;
+    });
+  }
+
+  // info readout sync
+  document.getElementById('iBraid').textContent = data.braid;
+  document.getElementById('iD').textContent = data.d;
+  document.getElementById('iK').textContent = `0…${Math.min(kmax, data.d)}`;
+  document.getElementById('iS').textContent = s_scale.toFixed(3);
+  document.getElementById('kv').textContent = (kmax >= data.d) ? `d=${data.d}` : kmax;
+  document.getElementById('sv').textContent = s_scale.toFixed(3);
+}
+
+// ─── controls ──────────────────────────────────────────────────────────────
+document.getElementById('atlas').addEventListener('change', e => {
+  entry = e.target.value;
+  const d = ATLAS[entry].d;
+  const km = document.getElementById('kmax');
+  km.max = d; km.value = d; kmax = d;
+  draw();
+});
+document.getElementById('kmax').addEventListener('input', e => { kmax = +e.target.value; draw(); });
+document.getElementById('sc').addEventListener('input', e => {
+  s_scale = +e.target.value;
+  document.getElementById('lockq').classList.remove('active');
+  draw();
+});
+document.getElementById('lockq').addEventListener('click', () => {
+  s_scale = 1/Math.sqrt(1.1097);
+  document.getElementById('sc').value = s_scale;
+  document.getElementById('lockq').classList.add('active');
+  draw();
+});
+document.getElementById('modeNested').addEventListener('click', () => {
+  layout='nested';
+  document.getElementById('modeNested').classList.add('active');
+  document.getElementById('modeSplit').classList.remove('active');
+  draw();
+});
+document.getElementById('modeSplit').addEventListener('click', () => {
+  layout='split';
+  document.getElementById('modeSplit').classList.add('active');
+  document.getElementById('modeNested').classList.remove('active');
+  draw();
+});
+
+// URL-param init for screenshotting
+(function init(){
+  resize();
+  const q = new URLSearchParams(location.search);
+  if (q.has('entry')) {
+    entry = q.get('entry');
+    document.getElementById('atlas').value = entry;
+  }
+  const d = ATLAS[entry].d;
+  document.getElementById('kmax').max = d;
+  kmax = q.has('kmax') ? +q.get('kmax') : d;
+  document.getElementById('kmax').value = kmax;
+  if (q.get('mode') === 'split') {
+    layout='split';
+    document.getElementById('modeSplit').classList.add('active');
+    document.getElementById('modeNested').classList.remove('active');
+  }
+  if (q.has('s')) {
+    s_scale = +q.get('s');
+    document.getElementById('sc').value = s_scale;
+    document.getElementById('lockq').classList.remove('active');
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
