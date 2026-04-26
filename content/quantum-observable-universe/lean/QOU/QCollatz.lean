@@ -107,8 +107,10 @@ theorem qInt3_lt_qInt2_sq (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
 theorem relative_margin (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
     qInt q 2 ^ 2 / qInt q 3 = 1 + q / qInt q 3 := by
   have h3 := qInt_three_pos q hq hq1
-  rw [← qInt_gap q hq1]
-  field_simp; ring
+  have h3ne : qInt q 3 ≠ 0 := ne_of_gt h3
+  have hgap := qInt_gap q hq1
+  field_simp
+  linarith
 
 -- ═══════════════════════════════════════════════════════════════
 -- §4. Contraction estimates
@@ -119,7 +121,7 @@ theorem contraction_ratio_lt_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
     qInt q 3 / qInt q 2 ^ 2 < 1 := by
   have h2sq_pos : (0 : ℝ) < qInt q 2 ^ 2 := by
     have := qInt_two_pos q hq hq1; positivity
-  exact div_lt_one_of_lt (qInt3_lt_qInt2_sq q hq hq1) (le_of_lt h2sq_pos)
+  exact (div_lt_one h2sq_pos).mpr (qInt3_lt_qInt2_sq q hq hq1)
 
 /-- The geometric mean contraction per cycle: `√([3]_q/[2]_q²) < 1`. -/
 -- Ref: [collatz1937]
@@ -140,7 +142,7 @@ theorem skein_convex_coeff (q : ℝ) (hq : q > 1) :
   constructor
   · positivity
   · rw [inv_pow]
-    exact div_lt_one_of_lt (by nlinarith) (by positivity)
+    exact (div_lt_one (by positivity)).mpr (by nlinarith)
 
 -- ═══════════════════════════════════════════════════════════════
 -- §5. No periodic Collatz cycles (coprimality of [2] and [3])
@@ -169,7 +171,7 @@ theorem qInt_coprime (q : ℝ) (hq : q ≠ 1) :
 -- §6. Uniqueness of Collatz in the (p₁^k₁, p₂^k₂) family
 -- ═══════════════════════════════════════════════════════════════
 
-/-- **Uniqueness of the (2,3) gap as a monomial.**
+/- **Uniqueness of the (2,3) gap as a monomial.**
 
     For the generalized Collatz family (a, a+1) with k₁=2, k₂=1:
     - (2,3): [2]² - [3] = q               (monomial, all q > 0)
@@ -191,14 +193,13 @@ theorem qInt_coprime (q : ℝ) (hq : q ≠ 1) :
 -- Ref: [manuscript] Ch 8 §5
 theorem qInt_gap_3_4 (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
     qInt q 3 ^ 2 - qInt q 4 > 0 := by
-  rw [qInt_three q hq1]
-  unfold qInt
   have hq1' : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
-  field_simp
-  -- (q²+q+1)²·(q-1) - (q⁴-1) > 0
-  -- = q⁵ + q⁴ + 2q³ + q² + q - (q⁴ + q³ + q² + q + 1)·...
-  -- This reduces to a polynomial with all positive coefficients for q > 0
-  nlinarith [sq_nonneg q, sq_nonneg (q - 1), sq_nonneg (q^2)]
+  have h4 : qInt q 4 = q ^ 3 + q ^ 2 + q + 1 := by
+    unfold qInt; field_simp; ring
+  rw [qInt_three q hq1, h4]
+  -- Goal: (q²+q+1)² - (q³+q²+q+1) > 0, i.e. q⁴+q³+2q²+q > 0 for q > 0.
+  nlinarith [hq, sq_nonneg q, mul_pos hq hq, mul_pos (mul_pos hq hq) hq,
+             mul_pos (mul_pos (mul_pos hq hq) hq) hq]
 
 /-- The (3,8) gap is NOT always positive: `[3]²  - [8]` has
     negative coefficients.  For large q, `[8] > [3]²`.
@@ -208,23 +209,23 @@ theorem qInt_gap_3_4 (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
 -- Ref: [manuscript] Ch 8 §5
 theorem qInt_gap_3_8_fails (q : ℝ) (hq : q > 2) (hq1 : q ≠ 1) :
     qInt q 3 ^ 2 < qInt q 8 := by
-  rw [qInt_three q hq1]
-  unfold qInt
   have hq1' : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
   have hqp : q > 0 := by linarith
-  field_simp
-  -- Need: (q²+q+1)² · (q-1) < q⁸ - 1
-  -- i.e., (q²+q+1)² · (q-1) < (q-1)(q⁷+q⁶+q⁵+q⁴+q³+q²+q+1)
-  -- Since q > 2 > 1, q-1 > 0, divide both sides:
-  -- (q²+q+1)² < q⁷+q⁶+q⁵+q⁴+q³+q²+q+1
-  -- LHS = q⁴+2q³+3q²+2q+1
-  -- RHS - LHS = q⁷+q⁶+q⁵+q⁴+q³+q²+q+1 - q⁴-2q³-3q²-2q-1
-  --           = q⁷+q⁶+q⁵+q³-2q³-2q² = q⁷+q⁶+q⁵-q³-2q²-q
-  --           = q(q⁶+q⁵+q⁴-q²-2q-1)
-  -- For q > 2: q⁶ > 64 and q²+2q+1 < q⁴, so this is positive.
-  nlinarith [sq_nonneg q, sq_nonneg (q - 1), sq_nonneg (q^2 - 1),
-             sq_nonneg (q^3), sq_nonneg (q^2 - q),
-             mul_pos hqp hqp, mul_pos (mul_pos hqp hqp) hqp]
+  have h8 : qInt q 8 = q^7 + q^6 + q^5 + q^4 + q^3 + q^2 + q + 1 := by
+    unfold qInt; field_simp; ring
+  rw [qInt_three q hq1, h8]
+  -- Goal: (q²+q+1)² < q⁷+q⁶+q⁵+q⁴+q³+q²+q+1
+  -- i.e. 0 < q⁷+q⁶+q⁵-q³-2q²-q  for q > 2.
+  -- Reduce to q⁵ > q³ + 2q² + q (then q⁷, q⁶ are pure positive bonus).
+  have h5 : q ^ 5 > q ^ 3 + 2 * q ^ 2 + q := by
+    nlinarith [hq, sq_nonneg (q - 2), sq_nonneg q, mul_pos hqp hqp,
+               mul_pos (mul_pos hqp hqp) hqp]
+  nlinarith [h5, hq, hqp, mul_pos hqp hqp,
+             mul_pos (mul_pos hqp hqp) hqp,
+             mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp,
+             mul_pos (mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp) hqp,
+             mul_pos (mul_pos (mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp) hqp) hqp,
+             mul_pos (mul_pos (mul_pos (mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp) hqp) hqp) hqp]
 
 -- ═══════════════════════════════════════════════════════════════
 -- §6. Contact threshold (supplementary — uses Real.log)
@@ -243,7 +244,7 @@ theorem contact_threshold_lt_two (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
   have h3pos : qInt q 3 > 0 := qInt_three_pos q hq hq1
   have h2gt1 : qInt q 2 > 1 := by rw [qInt_two q hq1]; linarith
   have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1
-  rw [div_lt_iff hlog2pos]
+  rw [div_lt_iff₀ hlog2pos]
   rw [← Real.log_pow]
   exact Real.log_lt_log (le_of_lt h3pos) (by rw [sq]; exact qInt3_lt_qInt2_sq q hq hq1)
 
