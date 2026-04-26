@@ -41,6 +41,9 @@ Q0 = mp.mpf(str(Q0_FLOAT)); QI = 1/Q0
 
 
 def q_int(n): return (Q0**n - QI**n)/(Q0 - QI)
+
+from functools import lru_cache
+@lru_cache(maxsize=None)
 def q_factorial(n):
     p = mp.mpf(1)
     for k in range(1, n+1): p *= q_int(k)

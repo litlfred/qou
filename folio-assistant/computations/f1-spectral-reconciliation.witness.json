@@ -1,18 +1,18 @@
 {
   "computation": "f1-spectral-reconciliation",
   "description": "Numerical-symbolic theorem connecting F.1 leading-order Q_\u03b2 formula to the spectral-sequence decomposition. F.1 (rational in q) and explicit chirality residue (transcendental via Vol(6_1)) cannot match exactly; F.1 captures the LEADING q-rational approximation. The 0.4% gap is the order at which Vol(6_1) deviates from its q-rational approximation.",
-  "timestamp_utc": "2026-04-25T22:12:34.524245+00:00",
+  "timestamp_utc": "2026-04-26T04:45:02.246929+00:00",
   "precision_dps": 60,
   "F1_minus_Sigma3_expr_factored": "-(2*q**4 - q**2*Abs(q**2 - 2*q - 2 + 2/q + q**(-2)) - 2*q - Abs(q**2 - 2*q - 2 + 2/q + q**(-2)))/(2*q*(q - 1)*(q**2 + 1))",
   "F1_minus_Sigma3_numerator": "-2*q**2*(q - 1) - 2*q*(q - 1)*(q**2 + 1) + (q**2 + 1)*Abs((q - 1/q)*(-q + 2 + 1/q))",
   "F1_minus_Sigma3_denominator": "2*q*(q - 1)*(q**2 + 1)",
   "values_at_q0": {
     "F1_Q_beta_MeV": 0.7836458028449502,
-    "spectral_baseline_minus_me_MeV": 0.7651138963443179,
-    "difference_MeV": 0.018531906500632245,
+    "spectral_baseline_minus_me_MeV": 0.765113896344318,
+    "difference_MeV": 0.01853190650063219,
     "explicit_chirality_MeV": 0.015165770469183413,
-    "ratio_diff_over_chir": 1.2219561504170702,
-    "extra_in_F1_MeV": 0.003366136031448834
+    "ratio_diff_over_chir": 1.2219561504170664,
+    "extra_in_F1_MeV": 0.0033661360314487764
   },
   "verdict": "F.1's |h(h-2)/2|/(q(q-1)) is rational in q; the spectral chirality residue m_e\u00b7Vol(6_1)\u00b7|(q;q)_3| is transcendental (Vol(6_1) \u2248 3.164 is a hyperbolic volume).  The 1.22 ratio shows F.1 absorbs the chirality to leading-order q-rational; it cannot match exactly without an additional q-rational correction term."
 }

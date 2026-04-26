@@ -84,14 +84,40 @@ consistency condition** for any candidate closed form $F_q$.
 | $\vdots$ | $\vdots$ |
 | $12$ | $1.0000000000$ |
 
-## Closed-form for $F_q$: status
+## Closed-form for $F_q$: now available
 
-The $q$-rational function $F_q(c, \mathrm{hooks}(\lambda))$ is **not yet
-in closed form** in this folio.  Wenzl ([wenzl1988]) gives an explicit
-formula for the analogous Jones–Markov weights via a content/hook
-product, but the precise expression in the present normalisation
-($z$-Markov instead of $\delta$-Jones) requires a one-step
-recalibration.  This is mechanical work, not a structural obstacle.
+The $q$-rational function $F_q$ is now **explicit in closed form** via
+the symbolic linear-system solve in
+[`y-lambda-symbolic-witness.json`](#) — produced by sympy in
+$\mathbb{Q}(q^{1/2})$.  Per-edge factors
+
+$$
+  F_q(c, \mathrm{hooks}(\lambda))
+  \;=\;
+  \frac{y_\lambda^{(\mathrm{symbolic})}}
+       {z \cdot y_\mu^{(\mathrm{symbolic})}}
+  \;\in\;
+  \mathbb{Q}(q^{1/2})
+$$
+
+are extractable as exact symbolic ratios.  Sample at $n = 2$:
+
+$$
+  y_{(2)}
+  \;=\;
+  \frac{q^{7/2} + q^{3/2} + q^3 + q^2 + q + 1}
+       {(q + 1)(q^2 + 1)^2},
+  \qquad
+  y_{(1,1)}
+  \;=\;
+  \frac{-q^{7/2} - q^{3/2} + q^5 + q^4 + q^3 + q^2}
+       {(q + 1)(q^2 + 1)^2}.
+$$
+
+Denominators factor through cyclotomic polynomials $\Phi_d(q)$ —
+the standard Schur-element pattern for Hecke algebras at generic
+$q$ ([Geck--Pfeiffer]).  Sympy and numerical witness agree to
+$10^{-16}$ at $q_0$.
 
 What is **already structurally fixed** without $F_q$ in closed form:
 
@@ -123,8 +149,14 @@ extracts per-edge ratios and tests candidate closed forms $F_q$.
 
 ## Open
 
-- **Closed-form $F_q$**: derive the Wenzl-style content/hook product
-  in $z$-Markov normalisation.  Mechanical (one re-derivation from
-  Hoefsmit eigenvalues + Markov condition).
+- **Sign pattern at $n \geq 4$**: $y_\lambda$ acquires negative
+  components at $n \geq 4$ (e.g.\ $y_{(1^4)} \approx -8 \times 10^{-4}$
+  at $q_0$); see [sign-pattern remark](#rem:y-lambda-sign-pattern)
+  for empirical table and explanation via cancellation across
+  Wedderburn blocks.  Implication: LP-positivity formulations of the
+  Jones–Markov weights are infeasible at $n \geq 4$; SDP/cvxpy
+  unconstrained least-squares cross-checks confirm the symbolic
+  values.
 - **Lean formalisation**: state the recursion in
-  `wedderburn-bratteli-recursion.lean` once $F_q$ is fixed.
+  `wedderburn-bratteli-recursion.lean` against the symbolic
+  $y_\lambda$ solutions.

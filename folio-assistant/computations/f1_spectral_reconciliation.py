@@ -60,9 +60,11 @@ print(f"  simplified = {sp.together(diff_expr)}")
 print(f"  factored   = {sp.factor(diff_expr)}")
 print()
 
-# Numerical: at q_0, evaluate
+# Numerical: at q_0, evaluate at full mp.mp.dps precision (no float roundtrip)
 def to_mp(expr, q):
-    return mp.mpf(str(float(expr.subs(qs, sp.Float(str(float(q)), 30)))))
+    q_sym = sp.Float(str(q), mp.mp.dps)
+    val = sp.N(expr.subs(qs, q_sym), mp.mp.dps)
+    return mp.mpf(str(val))
 
 F1_q0 = to_mp(F1_expr, Q0) * m_e
 Sigma3_minus_1_q0 = to_mp(Sigma_3_expr - 1, Q0) * m_e

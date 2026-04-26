@@ -111,10 +111,32 @@ is the Newton's-constant identification at the deep-tower stratum.
 
 ## Open
 
-- **$\alpha_1$ nonzero value.** The direct Markov pairing vanishes; a
-  higher Hochschild operation (Gerstenhaber bracket) is required to
-  extract a nonzero $\alpha_1$ value from the surviving cohomology
-  class $[\sigma_1 - \sigma_2]$.
+- **$\alpha_1$ disambiguation.**  Two distinct objects share the
+  symbol "$\alpha_1$":
+
+  *(i) Spectral-sequence $\alpha_1$* (this proposition): the Markov
+  pairing of $\mathrm{tr}_M$ with the alternating-pair representative
+  $[\sigma_1 - \sigma_2]$.  This vanishes by cyclicity of the Markov
+  trace ($\alpha_1 = 0$ exactly).  At generic $q$,
+  $\mathrm{HH}^k(H_n(R, q)) = 0$ for $k \geq 1$
+  ([spectral sequence collapse](#prop:spectral-sequence-collapse)),
+  so the Gerstenhaber bracket has empty target on the surviving
+  $\mathrm{HH}^0$ — the spectral-sequence $\alpha_1$ is
+  **structurally forced to zero**, not merely an artifact of
+  representative choice.
+
+  *(ii) Plancherel-mass depth-1 contribution* (in the unified mass
+  formula): the depth-1 stratum $\Lambda_1 = \{(n - 1, 1)\}$ has
+  Plancherel-mass weight $y_{(n-1, 1)} \neq 0$
+  ([procedure](#prop:alpha-k-derivation-procedure)).  At $H_3$:
+  $y_{(2, 1)} \approx 0.281$ — non-zero and structurally extracted
+  from the witness, contributing
+  $0.281 \cdot \chi_{(2, 1)}(\beta) \cdot \log|\chi_{(2, 1)}(\beta)|$
+  to the unified mass formula at every nucleon.
+
+  The unified mass formula uses sense (ii); the spectral-sequence
+  vanishing in sense (i) does **not** imply the depth-1 stratum is
+  empty.
 
 - **$\alpha_k$ at $H_n$ for $n \geq 6$.**  The analogous derivation
   for multi-nucleon Hecke algebras requires explicit $E_\infty^{p, *}$
