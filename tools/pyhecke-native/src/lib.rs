@@ -5,7 +5,7 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::{gram, seminormal};
+use hecke_engine::{gram, seminormal, seminormal_mpfr};
 use pyo3::prelude::*;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
@@ -159,6 +159,29 @@ fn partitions_of(n: usize) -> Vec<Vec<usize>> {
     seminormal::partitions_of(n)
 }
 
+/// **High-precision (MPFR) character `χ_λ(β)`.**
+///
+/// Computes the Hoefsmit seminormal character at `dps` decimal-precision
+/// using MPFR-backed arbitrary-precision arithmetic. Returns the result
+/// as a decimal string (callers should parse via `mpmath.mpf` or
+/// equivalent). Substantially slower than the `f64` path (~10–30×) but
+/// exact at the requested precision — no f64 rounding error.
+///
+/// `q_str`: substrate parameter as a decimal string (avoids f64 lossy
+///   conversion at the boundary).
+/// `dps`: requested decimal precision (default 50 if caller passes a
+///   smaller value, MPFR uses internal guard bits).
+#[pyfunction]
+#[pyo3(signature = (shape, word, q_str, dps=50))]
+fn chi_lambda_braid_mpfr(
+    shape: Vec<usize>,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> String {
+    seminormal_mpfr::chi_lambda_braid_mpfr(&shape, &word, &q_str, dps)
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -173,6 +196,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review

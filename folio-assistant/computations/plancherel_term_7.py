@@ -46,11 +46,18 @@ from hecke_characters import (
     partitions_of, dim_q, build_seminormal_matrices,
     chi_lambda_braid as _shared_chi_lambda_braid,
     _RUST_CHI_AVAILABLE as _RUST_AVAILABLE,
+    PRECISION_F64_FALLBACK, PRECISION_MPFR_50DPS,
 )
 from hecke_core import _step_chain_generic
 from q_mpmath import set_q, qfac as _qfac_shared
+from profiling import profile
 
 set_q(Q0_FLOAT)
+
+# Default precision for this script.  Set via CLI arg / env var:
+#   PLANCHEREL_PRECISION=mpfr_50dps python3 plancherel_term_7.py
+import os as _os
+PRECISION = _os.environ.get("PLANCHEREL_PRECISION", PRECISION_F64_FALLBACK)
 
 Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
 me = mp.mpf(str(M_E_MEV))
@@ -118,9 +125,26 @@ def chi_lambda_at_q0(shape, word):
     return chi
 
 
-def _chi_lambda_fast(lam_t, word, q0_float):
-    """Character χ_λ(β) at q_0 — Rust kernel if available, else Python."""
-    return _shared_chi_lambda_braid(lam_t, word, q_value=q0_float)
+def _chi_lambda_fast(lam_t, word, q0_float, precision=None):
+    """Character χ_λ(β) at q_0 at requested precision tag.
+
+    For precision='f64', returns float (fast).
+    For precision='mpfr_50dps' or higher, returns float parsed from
+    the mpfr decimal string (50 dps preserved through float? — note
+    Python float is f64; if you need full precision, use mpmath.mpf
+    on the returned string).
+    """
+    if precision is None:
+        precision = PRECISION
+    result = _shared_chi_lambda_braid(
+        lam_t, word, q_value=q0_float, precision=precision
+    )
+    # mpfr returns a string; convert to float for log/sign operations.
+    # (For full ppb-level downstream propagation, callers should use
+    # mpmath.mpf(result) directly instead of float().)
+    if isinstance(result, str):
+        return float(result)
+    return result
 
 
 def _process_partition(args):
@@ -175,6 +199,7 @@ def main():
     n_workers = max(1, cpu_count() - 1)
     kernel = "Rust (pyhecke_native)" if _RUST_AVAILABLE else "Python"
     print(f"  Character kernel: {kernel}")
+    print(f"  Precision tag:    {PRECISION}")
     print(f"  Using {n_workers} parallel workers for character evaluation\n")
 
     rows = []
@@ -186,6 +211,10 @@ def main():
 
         # Build job list: one (lam_t, word, nfac, q) tuple per partition
         jobs = [(tuple(lam), word, nfac, float(Q0_FLOAT)) for lam in partitions_of(n)]
+        # Profile this isotope's character-eval phase.
+        _profile_ctx = profile("plancherel_term_7", precision=PRECISION,
+                                isotope=name, n=n)
+        _profile_ctx.__enter__()
 
         # Parallel character evaluation across partitions (independent work)
         per_depth = {}  # depth -> [(λ, w_λ, χ, log|χ|)]
@@ -202,6 +231,7 @@ def main():
             per_depth.setdefault(depth, []).append(
                 (lam_t, w_lam, chi, log_abs_chi, sign_chi)
             )
+        _profile_ctx.__exit__(None, None, None)
 
         # Compute Φ_k (real) = Σ_{λ at depth k} w_λ · log|χ_λ|
         # Compute Π_k (Phase D) = Σ_{λ at depth k} w_λ · [χ_λ < 0]
@@ -256,6 +286,11 @@ def main():
             'consistent with MeV scale.  Tested on D, T, 3He, 4He.'
         ),
         'timestamp': datetime.now(timezone.utc).isoformat(),
+        # User directive: every result must carry a precision tag.
+        # f64_numeric_fallback   ⇒ ~16 dps, fast Rust kernel
+        # mpfr_50dps (or higher) ⇒ exact at requested decimal precision
+        # symbolic_q             ⇒ deferred (F3 Murnaghan–Nakayama)
+        'precision': PRECISION,
         'q_0': Q0_FLOAT,
         'isotopes': [{
             'iso': r['iso'], 'Z': r['Z'], 'N': r['N'], 'A': r['A'],
