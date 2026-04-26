@@ -478,14 +478,58 @@ pub fn chi_lambda_via_gp_hoefsmit(
 /// within MAX_CONJ_LEN = 3.  At q = 1 the original F3.2.ζ partial
 /// reduction was already sufficient (cycle type determines the
 /// character); at q ≠ 1 the §3.2 moves are required.
+///
+/// **Default budget**: this convenience wrapper runs the
+/// `try_reduce_basis_to_minimal_length` worklist with
+/// `max_conj_len = 3` and panics on `Err`.  Callers that need a
+/// different budget or want to handle the failure gracefully
+/// (without unwinding) should use the fallible variant directly.
 pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
+    match try_reduce_basis_to_minimal_length(x, 3) {
+        Ok(reduced) => reduced,
+        Err(e) => panic!(
+            "reduce_basis_to_minimal_length: failed to reduce {} basis \
+             element(s) within max_conj_len = {} — Geck-Pfeiffer §3.2 \
+             reduction invariant violated, downstream q-MN on cycle \
+             type would give wrong polynomials at q ≠ 1.  First \
+             unreduced perm: {:?}.  Use chi_lambda_via_gp_hoefsmit \
+             (Hoefsmit per T_w) for correct evaluation on this input, \
+             or try_reduce_basis_to_minimal_length with a larger \
+             max_conj_len.",
+            e.unreduced.len(),
+            e.max_conj_len,
+            e.unreduced.first().map(|p| p.0.clone()),
+        ),
+    }
+}
+
+/// Failure mode for [`try_reduce_basis_to_minimal_length`]: lists every
+/// basis element that the §3.2 cuspidal-moves search could not reduce
+/// within the requested `max_conj_len` budget.
+#[derive(Debug, Clone)]
+pub struct UnreducedBasisError {
+    pub unreduced: Vec<Perm>,
+    pub max_conj_len: usize,
+}
+
+/// **Fallible variant** of [`reduce_basis_to_minimal_length`] with a
+/// caller-controlled `max_conj_len` conjugator-search budget.  Returns
+/// `Ok(reduced)` if every basis element reaches minimal length;
+/// returns `Err(UnreducedBasisError)` listing the perms that did not
+/// (without panicking, so callers can fall back to
+/// `chi_lambda_via_gp_hoefsmit`).
+///
+/// `max_conj_len = 3` covers all S_n classes for n ≤ 6 empirically; if
+/// you push n ≥ 7+ you may want `max_conj_len = 4` or 5 (cost grows
+/// roughly like (n-1)^k).  `max_conj_len = 1` reproduces the legacy
+/// F3.2.ζ simple-reflection-only behaviour.
+pub fn try_reduce_basis_to_minimal_length(
+    x: &HeckeElement,
+    max_conj_len: usize,
+) -> Result<HeckeElement, UnreducedBasisError> {
     let mut current = x.clone();
 
     // Cache: Perm → (length, min_length_in_conjugacy_class).
-    // Both `length()` (O(n²) inversion count) and `cycle_type` /
-    // `min_length_for_cycle_type` are pure functions of the perm, so
-    // we memoize them once per encountered Perm and reuse across the
-    // worklist (Gemini #r3143786236).
     let mut info: HashMap<Perm, (usize, usize)> = HashMap::new();
 
     fn cached(
@@ -502,9 +546,6 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
         (len, min_len)
     }
 
-    // Worklist: non-minimal elements pending conjugation.  We may
-    // enqueue duplicates after a conjugation introduces an existing
-    // key — duplicates are filtered on pop via `current.contains_key`.
     let mut queue: VecDeque<Perm> = VecDeque::new();
     for w in current.keys() {
         let (len, min_len) = cached(w, &mut info);
@@ -513,76 +554,45 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
         }
     }
 
+    // Track keys we've abandoned (no conjugator within the budget).
+    // We must not re-enqueue them, otherwise the worklist would loop
+    // forever on each one.  After processing, these become the
+    // `unreduced` list in the Err.
+    let mut unreduced_set: std::collections::HashSet<Perm> = std::collections::HashSet::new();
+
     while let Some(target_w) = queue.pop_front() {
-        // Skip if conjugation already removed this key.
         if !current.contains_key(&target_w) {
+            continue;
+        }
+        if unreduced_set.contains(&target_w) {
             continue;
         }
         let (target_len, target_min_len) = cached(&target_w, &mut info);
         if target_len <= target_min_len {
-            // Already minimal (could happen if a previous
-            // conjugation transformed it).  Skip.
             continue;
         }
 
-        // Find any conjugator word `v` (length 1, 2, ..., MAX_CONJ_LEN)
-        // such that the *permutation* `v · target_w · v⁻¹` has length
-        // strictly less than `target_w`.  Length 1 covers the simple-
-        // reflection case (F3.2.ζ); lengths 2+ cover the §3.2
-        // cuspidal moves needed for non-trivial classes (F3.2.η_full).
-        // For S_n with n ≤ 6 (D / T atomic braids), the documented
-        // counterexample `[1, 3, 4, 5, 0, 2]` in the 6-cycle class is
-        // length 7 with minimal length 5 and *no* length-1 reducer —
-        // a length-2 conjugator suffices (verified by unit test).
-        const MAX_CONJ_LEN: usize = 3;
         let chosen_word = find_length_reducing_conjugator(
-            &target_w, target_len, MAX_CONJ_LEN,
+            &target_w, target_len, max_conj_len,
         );
-        let conj_word = chosen_word.unwrap_or_else(|| {
-            // No conjugator up to MAX_CONJ_LEN reduces length.  This
-            // means we cannot maintain the invariant that every basis
-            // element in `current` is reduced to minimal length before
-            // downstream character evaluation, so failing loudly is
-            // preferable to silently returning an incorrect polynomial
-            // (Copilot #r3143884885 / Gemini #r3145..., agreed).
-            //
-            // For n ≤ 6 this should not happen in any S_n conjugacy
-            // class — the search up to MAX_CONJ_LEN is sufficient
-            // (verified by `worklist_reduces_n6_counterexample_to_minimal`).
-            // If it does fire, the caller is operating beyond the
-            // current Geck-Pfeiffer §3.2 budget and should use the
-            // Hoefsmit-per-basis path (`chi_lambda_via_gp_hoefsmit`)
-            // instead.
-            panic!(
-                "reduce_basis_to_minimal_length: no length-reducing \
-                 conjugator found for w = {:?} (ℓ={}, min_ℓ={}) within \
-                 MAX_CONJ_LEN = {} — Geck-Pfeiffer §3.2 reduction \
-                 invariant violated, downstream q-MN on cycle type \
-                 would give wrong polynomials at q ≠ 1.  Use \
-                 chi_lambda_via_gp_hoefsmit (Hoefsmit per T_w) for \
-                 correct evaluation on this input.",
-                target_w.0, target_len, target_min_len, MAX_CONJ_LEN
-            );
-        });
+        let Some(conj_word) = chosen_word else {
+            // No conjugator within budget — record and continue.
+            unreduced_set.insert(target_w);
+            continue;
+        };
 
-        // Apply Hecke conjugation by T_v: replace c_w · T_w with
-        // c_w · (T_v · T_w · T_v⁻¹) in current.
         let coeff = current.remove(&target_w).unwrap_or_else(LaurentPolyQ::zero);
         let mut singleton: HeckeElement = BTreeMap::new();
         singleton.insert(target_w.clone(), coeff);
         let conjugated = hecke_conjugate_by_word(&singleton, &conj_word);
 
-        // Merge new keys; enqueue any newly-introduced non-minimal
-        // elements.  Existing keys whose coefficient changes do not
-        // need to be re-enqueued — their non-minimality is already
-        // tracked by an earlier `push_back`.
         for (v, c_v) in conjugated {
             let was_present = current.contains_key(&v);
             let entry = current.entry(v.clone()).or_insert_with(LaurentPolyQ::zero);
             *entry += &c_v;
             if !was_present {
                 let (len_v, min_v) = cached(&v, &mut info);
-                if len_v > min_v {
+                if len_v > min_v && !unreduced_set.contains(&v) {
                     queue.push_back(v);
                 }
             }
@@ -590,7 +600,21 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
         current.retain(|_, v| !v.is_zero());
     }
 
-    current
+    if unreduced_set.is_empty() {
+        Ok(current)
+    } else {
+        // Filter to only those still present in `current` — earlier
+        // conjugations may have already removed some abandoned keys.
+        let unreduced: Vec<Perm> = unreduced_set
+            .into_iter()
+            .filter(|w| current.contains_key(w))
+            .collect();
+        if unreduced.is_empty() {
+            Ok(current)
+        } else {
+            Err(UnreducedBasisError { unreduced, max_conj_len })
+        }
+    }
 }
 
 /// **F3.2.ε — Geck-Pfeiffer cuspidal reduction by simple-reflection conjugation.**
@@ -841,6 +865,40 @@ mod tests {
         assert_eq!(w_min.length(), 1,
                    "(2,1)-cycle minimal length should be 1; got {} from {:?}",
                    w_min.length(), w_min.0);
+    }
+
+    /// `try_reduce_basis_to_minimal_length(_, max_conj_len = 3)` on
+    /// the documented n=6 6-cycle counterexample succeeds (returns
+    /// `Ok`).
+    #[test]
+    fn try_reduce_n6_counterexample_ok_at_max_3() {
+        let target = Perm(vec![1, 3, 4, 5, 0, 2]);
+        let mut singleton: HeckeElement = BTreeMap::new();
+        singleton.insert(target.clone(), LaurentPolyQ::one());
+        let result = try_reduce_basis_to_minimal_length(&singleton, 3);
+        assert!(result.is_ok(),
+                "max_conj_len=3 must succeed on the documented n=6 case");
+    }
+
+    /// `try_reduce_basis_to_minimal_length(_, max_conj_len = 1)`
+    /// reproduces the legacy F3.2.ζ partial-reduction behaviour: for
+    /// the documented n=6 counterexample (no length-1 reducer
+    /// exists) it returns `Err(UnreducedBasisError)` containing the
+    /// target perm.  This is the boundary that motivated F3.2.η_full.
+    #[test]
+    fn try_reduce_at_max_1_fails_on_n6_counterexample() {
+        let target = Perm(vec![1, 3, 4, 5, 0, 2]);
+        let mut singleton: HeckeElement = BTreeMap::new();
+        singleton.insert(target.clone(), LaurentPolyQ::one());
+        let result = try_reduce_basis_to_minimal_length(&singleton, 1);
+        assert!(result.is_err(),
+                "max_conj_len=1 must fail on the documented n=6 case");
+        let err = result.unwrap_err();
+        assert_eq!(err.max_conj_len, 1);
+        assert!(err.unreduced.iter().any(|p| p.0 == target.0),
+                "Err should list {:?} as unreduced; got {:?}",
+                target.0,
+                err.unreduced.iter().map(|p| p.0.clone()).collect::<Vec<_>>());
     }
 
     /// **F3.2.η_full**: the documented n=6 counterexample —
