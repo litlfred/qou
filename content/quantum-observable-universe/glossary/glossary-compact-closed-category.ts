@@ -5,4 +5,5 @@ export default remark({
   title: "Compact closed category",
   tags: ["glossary", "category-theory", "monoidal", "duality"],
   uses: ["rem:glossary-symmetric-monoidal-category", "rem:glossary-rigid-category"],
+  defines: ["compact-closed-category"],
 });
