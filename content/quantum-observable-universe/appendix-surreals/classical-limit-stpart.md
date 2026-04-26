@@ -89,7 +89,7 @@ direct interest for QOU.
 
 ## Why this matters
 
-The QOU paper currently treats the $q \to 1$ classical limit
+The paper treats the $q \to 1$ classical limit
 *archimedean-topologically*: as a limit of real numbers in a
 topology on the parameter space. Under the surreal lift, the
 limit becomes a *literal evaluation at a specific surreal* — no

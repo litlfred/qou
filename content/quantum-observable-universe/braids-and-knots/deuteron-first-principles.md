@@ -141,7 +141,7 @@ neutron contribution, not the partition sum.  Paths forward:*
 |---|---|---|
 | D | chiral+ | $1 + h = 1.209$ |
 | T, $^3$He | amphichiral | $1 - h^2 = 0.956$ |
-| $^4$He | Borromean² | $(1 - h^2)^2 = 0.914$ |
+| $^4$He | Borromean${}^2$ | $(1 - h^2)^2 = 0.914$ |
 
 *with $h = q - q^{-1}$.  These factors modify the BW bulk term
 $B_{\mathrm{bulk}}$ per isotope, giving an $A$-dependent

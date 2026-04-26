@@ -55,4 +55,4 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
 **Lean status.** Independence is encoded as the class
 `QOU.Descartes.HyperbolicVolumeIndependence`; populating an instance
 requires a Nesterenko-type arithmetic theorem for the quantum
-dilogarithm $\mathrm{Li}_2^q$ at algebraic arguments --- currently open.
+dilogarithm $\mathrm{Li}_2^q$ at algebraic arguments --- open.

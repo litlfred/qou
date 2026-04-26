@@ -32,9 +32,7 @@ $q \mapsto q_0$ extends to an embedding of this ring into $\mathbb{R}$.
 In particular, the three volumes are algebraically independent over
 $\mathbb{Q}(q_0)$.
 
-**Status.**
-Even the irrationality of a single hyperbolic 3-manifold volume is
-open.  The Borel--Zagier conjecture concerns only
+*Remark.* Even the irrationality of a single hyperbolic 3-manifold volume is open.  The Borel--Zagier conjecture concerns only
 $\mathbb{Q}$-linear independence of volumes of non-commensurable
 manifolds --- a strictly weaker claim that is itself unresolved.
 Reid (1991) proved that $4_1$ is the unique arithmetic hyperbolic knot,

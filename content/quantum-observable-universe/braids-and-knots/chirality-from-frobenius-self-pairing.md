@@ -98,7 +98,7 @@ $a_{4_1} = 1 - h^2$.  For satellite knots (e.g., $D$), the Fricke
 relation does not apply at $H_3$ level — one must work in $H_6(R, q)$
 or larger, where the character-trace identities are more involved.*
 
-**Status: partial derivation, amphichiral case only.**
+**Scope.** This proposition derives only the amphichiral case.
 
 *This proposition gives a rigorous definition
 $a_K(\beta) = \tau(\beta \beta^*)$ that is categorical (monoidal-
