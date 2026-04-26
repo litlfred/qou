@@ -14,7 +14,7 @@ $$
   H_n(q)
   \;\cong\;
   \bigoplus_{\lambda \vdash n}
-    \mathrm{End}_{\mathbb{C}}(V_\lambda),
+    \mathrm{End}_R(V_\lambda),
   \qquad
   \dim V_\lambda = d_\lambda = |\mathrm{SYT}(\lambda)|,
 $$

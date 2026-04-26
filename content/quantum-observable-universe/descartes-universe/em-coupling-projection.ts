@@ -20,5 +20,9 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.em_coupling_projection",
     validation: "not_checked",
   },
-  uses: ["rem:force-knot-identification"],
+  uses: [
+    "rem:force-knot-identification",
+    "thm:em-spectral-completeness",
+    "prop:force-carrier-bring-uniqueness",
+  ],
 });

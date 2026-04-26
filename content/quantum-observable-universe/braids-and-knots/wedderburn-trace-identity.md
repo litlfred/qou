@@ -53,7 +53,7 @@ and $[n{-}2, 1^2]$ partitions at Hecke level $k = 5$.
 
 *Proof.*
 The Wedderburn-Artin decomposition
-$H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{C})$
+$H_n(R, q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(R)$
 gives $\dim H_n(q) = \sum_\lambda d_\lambda^2$.  Since
 $\dim H_n(q) = n!$ classically (as a quotient of the group algebra
 $\mathbb{C}[S_n]$), and the $q$-deformation replaces each factor

@@ -16,7 +16,7 @@ $$
 where $\lambda_\alpha$ are the eigenvalues and $v_\alpha$ the
 orthonormal eigenvectors.  Each eigenspace corresponds to a
 sector of the Wedderburn-Artin decomposition
-$H_A(q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{C})$.
+$H_A(R, q) \cong \bigoplus_\lambda M_{d_\lambda}(R)$.
 
 The Gram matrix is **not positive definite**: it has both
 positive and negative eigenvalues.  For $A = 4$
