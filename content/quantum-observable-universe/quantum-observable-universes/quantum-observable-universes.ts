@@ -111,6 +111,7 @@ export default chapter({
       blocks: [
         "quantum-universe-explication",
         "braiding-eigenvalue-extraction",
+        "spectral-chart-correspondence",
         "tannaka-krein-reconstruction",
         "substrate-parameter",
         "substrate-parameter-exists",
