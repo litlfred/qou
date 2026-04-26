@@ -48,6 +48,15 @@ from q_mpmath import set_q, qint, qfac as _qfac_shared
 
 set_q(Q0_FLOAT)
 
+# Rust-accelerated character kernel (50–100× faster).
+# Falls back to pure-Python implementation if pyhecke_native missing.
+try:
+    import pyhecke_native as _pyhecke_native
+    _RUST_AVAILABLE = True
+except ImportError:
+    _pyhecke_native = None
+    _RUST_AVAILABLE = False
+
 Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
 me = mp.mpf(str(M_E_MEV))
 G = mp.catalan
@@ -114,16 +123,24 @@ def chi_lambda_at_q0(shape, word):
     return chi
 
 
+def _chi_lambda_fast(lam_t, word, q0_float):
+    """Character χ_λ(β) at q_0 — Rust kernel if available, else Python."""
+    if _RUST_AVAILABLE:
+        word_marshalled = [(1 if s == '+' else -1, g) for s, g in word]
+        return _pyhecke_native.chi_lambda_braid(list(lam_t), word_marshalled, q0_float)
+    return chi_lambda_at_q0(lam_t, word)
+
+
 def _process_partition(args):
     """Worker for multiprocessing.Pool.
 
     Returns (lam_t, depth, w_lam, chi, log_abs_chi) or None on error/zero.
     Top-level (picklable) function so it works with Pool.map.
     """
-    lam_t, word, nfac = args
+    lam_t, word, nfac, q0_float = args
     depth = len(lam_t) - 1
     try:
-        chi = chi_lambda_at_q0(lam_t, word)
+        chi = _chi_lambda_fast(lam_t, word, q0_float)
     except Exception:
         return None
     if chi == 0:
@@ -157,6 +174,8 @@ def main():
     ]
 
     n_workers = max(1, cpu_count() - 1)
+    kernel = "Rust (pyhecke_native)" if _RUST_AVAILABLE else "Python"
+    print(f"  Character kernel: {kernel}")
     print(f"  Using {n_workers} parallel workers for character evaluation\n")
 
     rows = []
@@ -166,8 +185,8 @@ def main():
         word = atomic_braid_word(Z, N)
         nfac = float(qfac(n))
 
-        # Build job list: one (lam_t, word, nfac) tuple per partition
-        jobs = [(tuple(lam), word, nfac) for lam in partitions_of(n)]
+        # Build job list: one (lam_t, word, nfac, q) tuple per partition
+        jobs = [(tuple(lam), word, nfac, float(Q0_FLOAT)) for lam in partitions_of(n)]
 
         # Parallel character evaluation across partitions (independent work)
         per_depth = {}  # depth -> [(λ, w_λ, χ, log|χ|)]
