@@ -17,9 +17,11 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "def:quantum-observable-universe",
     "prop:braiding-eigenvalue-extraction",
     "def:projective-line-object",
     "def:contact-affine-chart",
     "def:commutative-qou",
+    "rem:affine-chart-origin-of-i-and-q",
   ],
 });

@@ -17,6 +17,7 @@ export default remark({
     "prop:spectral-chart-correspondence",
     "prop:braiding-eigenvalue-extraction",
     "rem:affine-chart-origin-of-i-and-q",
+    "rem:observation-fermion-action",
     "def:contact-affine-chart",
   ],
   interprets: "def:fermion-boson-decomposition",
