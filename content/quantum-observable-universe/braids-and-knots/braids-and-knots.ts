@@ -422,8 +422,6 @@ export default chapter({
         "confinement-categorical",
         "exterior-square-borromean",
         "alpha-em-categorical-trace",
-        "curvature-rank-delta-cs",
-        "gluon-octet-substrate-coupling",
         "plancherel-term-7-formulation",
         "unified-curvature-rank-mass-formula",
         "e-infinity-page-identifications",
