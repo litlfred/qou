@@ -548,6 +548,146 @@ def factor_op_from_word(
     )
 
 
+def chi_via_factorization_mpfr(
+    lam: tuple | list,
+    factorization: list[KnotOperation],
+    q_str: str,
+    dps: int = 50,
+):
+    """High-precision (MPFR) composer: χ_λ(β = ⊗ factors) at `dps` decimal-precision.
+
+    Parallels [`chi_via_factorization`] but routes per-factor character
+    evaluation through `pyhecke_native.chi_lambdas_braid_mpfr` and
+    composes the LR fold with `mpmath.mpf` arithmetic throughout.
+
+    `q_str`: substrate parameter as a decimal string (avoids f64 lossy
+        conversion at the boundary).
+    `dps`: requested decimal precision (default 50).
+
+    Returns `mpmath.mpf` (caller should keep `mp.mp.dps` ≥ `dps` if
+    further arithmetic is intended).
+
+    Per-factor character vectors are NOT cached across calls — the
+    cache key would need to include `(cache_key, q_str, dps)` and dps
+    can vary per call.  Add module-level memoization later if profiling
+    shows it's a hotspot.
+    """
+    from chi_via_factorization import compose_chi_lambda_generic
+    import pyhecke_native as p_native  # type: ignore[import]
+    import mpmath as mp  # type: ignore[import]
+
+    if not factorization:
+        raise ValueError("factorization is empty")
+    lam_list = sorted((int(p_) for p_ in lam), reverse=True)
+    n_lam = sum(lam_list)
+    n_total = sum(op.n for op in factorization)
+    if n_lam != n_total:
+        raise ValueError(
+            f"|λ|={n_lam} but factorization spans {n_total} strands"
+        )
+    for i, op in enumerate(factorization):
+        if not op.braid_word_normal_form and op.fingerprint:
+            raise ValueError(
+                f"factor {i} has empty braid_word_normal_form but "
+                f"non-empty fingerprint metadata "
+                f"({sorted(op.fingerprint.keys())})."
+            )
+
+    mp.mp.dps = max(mp.mp.dps, dps)
+
+    def chars_for(op: KnotOperation) -> dict[tuple, "mp.mpf"]:
+        taus = [list(tau) for tau in p_native.partitions_of(op.n)]
+        if not taus:
+            return {}
+        word = list(op.braid_word_normal_form)
+        values_str = p_native.chi_lambdas_braid_mpfr(taus, word, q_str, dps)
+        return {
+            tuple(tau): mp.mpf(v_str)
+            for tau, v_str in zip(taus, values_str)
+        }
+
+    factors_p = [op.n for op in factorization]
+    factors_chi = [chars_for(op) for op in factorization]
+    return compose_chi_lambda_generic(
+        lam_list, factors_p, factors_chi,
+        zero=mp.mpf(0),
+        is_zero=lambda x: x == 0,
+    )
+
+
+def chi_via_factorization_symbolic(
+    lam: tuple | list,
+    factorization: list[KnotOperation],
+):
+    """Symbolic-q composer: χ_λ(β = ⊗ factors) as a sympy expression
+    in `q` (Laurent polynomial in `q^{1/2}`).
+
+    Per-factor characters use `pyhecke_native.chi_q_via_gp` (which
+    delegates to the F3.2.η Geck-Pfeiffer Hecke-basis expansion +
+    Halverson-Ram broken-strip q-MN); the LR fold runs over sympy
+    expressions for `q`-arithmetic at full precision.
+
+    Returns a `sympy.Expr` in the symbol `q`.  At `q = 1` it
+    specializes to the classical-MN value (matches
+    `chi_via_factorization(lam, factorization, 1.0)`).
+
+    **Cost**: substantially slower than f64 / MPFR because sympy
+    polynomial multiplication is symbolic.  Use for high-precision
+    cross-validation or for cases where the exact polynomial in q is
+    needed (e.g., series expansion in q, identification of zeros).
+    """
+    from chi_via_factorization import compose_chi_lambda_generic
+    import pyhecke_native as p_native  # type: ignore[import]
+    import sympy as sp  # type: ignore[import]
+
+    if not factorization:
+        raise ValueError("factorization is empty")
+    lam_list = sorted((int(p_) for p_ in lam), reverse=True)
+    n_lam = sum(lam_list)
+    n_total = sum(op.n for op in factorization)
+    if n_lam != n_total:
+        raise ValueError(
+            f"|λ|={n_lam} but factorization spans {n_total} strands"
+        )
+    for i, op in enumerate(factorization):
+        if not op.braid_word_normal_form and op.fingerprint:
+            raise ValueError(
+                f"factor {i} has empty braid_word_normal_form but "
+                f"non-empty fingerprint metadata "
+                f"({sorted(op.fingerprint.keys())})."
+            )
+
+    q_sym = sp.symbols("q", positive=True)
+
+    def poly_from_terms(terms: list[tuple[int, str]]) -> sp.Expr:
+        """Convert list[(half_exp, coeff_str)] → sympy expression
+        Σ int(c) · q^(he/2)."""
+        total = sp.S.Zero
+        for he, c_str in terms:
+            total = total + sp.Integer(int(c_str)) * q_sym ** sp.Rational(he, 2)
+        return sp.expand(total)
+
+    def chars_for(op: KnotOperation) -> dict[tuple, sp.Expr]:
+        taus = [list(tau) for tau in p_native.partitions_of(op.n)]
+        if not taus:
+            return {}
+        out: dict[tuple, sp.Expr] = {}
+        for tau in taus:
+            terms = p_native.chi_q_via_gp(
+                list(tau), op.n, list(op.braid_word_normal_form),
+            )
+            out[tuple(tau)] = poly_from_terms(terms)
+        return out
+
+    factors_p = [op.n for op in factorization]
+    factors_chi = [chars_for(op) for op in factorization]
+    return compose_chi_lambda_generic(
+        lam_list, factors_p, factors_chi,
+        zero=sp.S.Zero,
+        is_zero=lambda x: x == 0 or x.equals(0) if hasattr(x, 'equals') else x == 0,
+    )
+
+
 if __name__ == "__main__":
     # Smoke test: load (empty) cache, print report.
     cache = KnotOperationCache()

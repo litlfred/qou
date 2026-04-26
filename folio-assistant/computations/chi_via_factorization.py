@@ -101,6 +101,78 @@ def compose_chi_lambda(
     )
 
 
+def compose_chi_lambda_generic(
+    lam: list,
+    factors_p: list[int],
+    factors_chi: list[dict],
+    *,
+    zero,
+    is_zero=lambda x: x == 0,
+):
+    """Generic LR fold parameterized by the coefficient ring.
+
+    Differs from `compose_chi_lambda` in that the per-factor character
+    values can be any type that supports `+`, `*`, and equality with
+    `zero` — including `mpmath.mpf`, `sympy` expressions, or a custom
+    Laurent-polynomial class.
+
+    `zero`: the additive identity in the coefficient ring (e.g.
+        `mpmath.mpf(0)`, `sympy.S.Zero`).
+    `is_zero`: predicate; the default `x == 0` works for most rings.
+    """
+    n = sum(lam)
+    if sum(factors_p) != n:
+        raise ValueError(f"sum(factors_p)={sum(factors_p)} ≠ |λ|={n}")
+    if not factors_p:
+        return zero  # χ_∅(empty product) = 0 (no irrep of size 0)
+    if len(factors_p) == 1:
+        return factors_chi[0].get(tuple(lam), zero)
+
+    # Two-factor base case.
+    if len(factors_p) == 2:
+        p1, p2 = factors_p
+        total = zero
+        for mu in partitions_of(p1):
+            chi_mu = factors_chi[0].get(tuple(mu), zero)
+            if is_zero(chi_mu):
+                continue
+            for nu in partitions_of(p2):
+                chi_nu = factors_chi[1].get(tuple(nu), zero)
+                if is_zero(chi_nu):
+                    continue
+                c = p.lr_coefficient(list(lam), list(mu), list(nu))
+                if c != 0:
+                    total = total + c * chi_mu * chi_nu
+        return total
+
+    # Iterative composition: merge first two factors then recurse.
+    p1, p2 = factors_p[0], factors_p[1]
+    merged_chis: dict = {}
+    for sigma in partitions_of(p1 + p2):
+        sigma_tuple = tuple(sigma)
+        val = zero
+        for mu in partitions_of(p1):
+            chi_mu = factors_chi[0].get(tuple(mu), zero)
+            if is_zero(chi_mu):
+                continue
+            for nu in partitions_of(p2):
+                chi_nu = factors_chi[1].get(tuple(nu), zero)
+                if is_zero(chi_nu):
+                    continue
+                c = p.lr_coefficient(list(sigma), list(mu), list(nu))
+                if c != 0:
+                    val = val + c * chi_mu * chi_nu
+        if not is_zero(val):
+            merged_chis[sigma_tuple] = val
+    return compose_chi_lambda_generic(
+        lam,
+        [p1 + p2] + factors_p[2:],
+        [merged_chis] + factors_chi[2:],
+        zero=zero,
+        is_zero=is_zero,
+    )
+
+
 # ── Smoke test ────────────────────────────────────────────────────
 
 def smoke_test():
