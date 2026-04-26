@@ -359,9 +359,11 @@ Update them after each triage pass.
 ## Content Object Integration
 
 Each formalizable item lives as a **triple**: `block.ts` (typed manifest with
-`kind`, `label`, `status`, `lean.decl`), `block.md` (narrative), and
+`kind`, `label`, and `lean.ref` URI), `block.md` (narrative), and
 `block.lean` (formalization). The `.ts` manifest is authoritative — it
-determines whether a block requires Lean and tracks formalization status.
+determines whether a block requires Lean. Formalization status is **not**
+stored in `.ts`; it is derived at build time and written to
+`proof-objects.json`.
 
 **Kind-aware filtering.** Only triage blocks whose `kind` requires Lean:
 - `definition`: `.lean` required — always triage if sorry present.

@@ -313,15 +313,18 @@ Scientific accuracy checks should leverage the content object triple
 architecture (`.ts` manifest + `.md` narrative + `.lean` formalization)
 for cross-validation.
 
-**Lean declaration verification.** The `lean.decl` field in each `.ts`
-manifest names the corresponding Lean declaration. Verify that:
+**Lean declaration verification.** The `lean.ref` URI (form
+`"<pkg>:<Decl>"`, parsed via `parseLeanRef()`) in each `.ts` manifest
+names the corresponding Lean declaration. Verify that:
 - The declaration exists in the `.lean` sibling file.
 - The Lean type signature matches the mathematical statement in `.md`.
-- The `status` field reflects reality (`proved` only if sorry-free).
+- Formalization status is derived at build time (not stored in `.ts`);
+  cross-check against `proof-objects.json`.
 
-**Formalization cross-check.** Use `lean_hover_info` on the `lean.decl`
-to confirm the Lean type matches the narrative claim. Numerical constants
-in `.md` blocks must match their `noncomputable def` values in `.lean`.
+**Formalization cross-check.** Use `lean_hover_info` on the declaration
+named by `lean.ref` to confirm the Lean type matches the narrative claim.
+Numerical constants in `.md` blocks must match their `noncomputable def`
+values in `.lean`.
 
 **Content object completeness.** For blocks with `kind: "definition"`,
 all three files must exist and be consistent. For `theorem`/`lemma`

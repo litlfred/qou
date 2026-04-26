@@ -160,8 +160,9 @@ Each Lean file under review is part of a **content object triple**: the
 Reviews must cross-check all three.
 
 **Manifest–Lean consistency.** Verify that:
-- The `lean.decl` field in the `.ts` manifest matches the actual Lean
-  declaration name in the `.lean` file.
+- The `lean.ref` URI in the `.ts` manifest (form `"<pkg>:<Decl>"`) names
+  the actual Lean declaration in the `.lean` file. Parse with
+  `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`.
 - The block `kind` matches the Lean content: `definition` blocks should
   contain `def` or `structure`; `theorem`/`lemma` blocks should contain
   `theorem` or `lemma`.

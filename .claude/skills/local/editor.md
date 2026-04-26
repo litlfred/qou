@@ -373,7 +373,7 @@ The review pass consists of:
    each changed `.md` to validate TeX snippets via remark AST parsing.
 5. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
    clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
-   confirm `lean.decl` fields match actual Lean declarations.
+   confirm `lean.ref` URIs match actual Lean declarations.
 6. **Tier escalation** — if steps 1–5 surface CRITICAL issues (unsupported
    claims, logical gaps, broken evidence chains), escalate per
    §External Academic Review: Tier 1 (`sci-critical-thinking`,

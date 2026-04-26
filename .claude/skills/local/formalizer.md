@@ -475,7 +475,9 @@ content/<paper>/<chapter>/
 2. **Check `uses[]`** to understand upstream dependencies — ensure they're
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
-4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed
+4. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
+   URI `"<pkg>:<Decl.Path>"` (per CLAUDE.md §0a; legacy `lean.decl` /
+   `lean.file` shape is removed)
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules
 

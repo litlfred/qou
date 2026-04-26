@@ -161,7 +161,7 @@ Chapter analysis should populate **content object triples**, not just
 extract items from LaTeX. Each narrative definition, theorem, lemma,
 proposition, example, or corollary becomes a triple:
 
-- `block-name.ts` — typed manifest with `kind`, `label`, `lean.decl`,
+- `block-name.ts` — typed manifest with `kind`, `label`, `lean.ref`,
   `status`, and `uses[]` referencing other content object labels.
 - `block-name.md` — narrative content (markdown with inline/display math).
 - `block-name.lean` — Lean formalization (required for `definition`,

@@ -316,7 +316,7 @@ Before completing an import:
 - [ ] `meta.source` populated on every imported block
 - [ ] CSL-JSON entry exists in `content/schema/references.ts` (or suggested to user)
 - [ ] Any `.lean` files have `sorry` with `-- Ref:` citations
-- [ ] `.ts` manifests have `lean.decl` set for definition blocks
+- [ ] `.ts` manifests have `lean.ref` URI set for definition blocks
 - [ ] Todo suggestions presented to user (NOT auto-created)
 - [ ] Chapter manifest references all blocks in order
 - [ ] Paper manifest added to `content/folio.ts` (or existing paper updated)
