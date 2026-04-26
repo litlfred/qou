@@ -1,4 +1,4 @@
-**Proposition (explicit $\alpha_3$ at $H_4(R, q)$).**
+**Proposition (explicit $\alpha_\lambda(H_4)$ — closed forms in $\mathbb{Q}(q)$).**
 *Let $z = 1/(\sqrt q + 1/\sqrt q)$ be the Markov parameter and
 $\{T_{w_C}\}_C$ canonical Hecke representatives of the $p(4) = 5$
 conjugacy classes of $S_4$:*
@@ -11,29 +11,36 @@ conjugacy classes of $S_4$:*
 | $C_3$ | $3 \cdot 1$ | $\sigma_1 \sigma_2$ | $2$ |
 | $C_4$ | $4$ | $\sigma_1 \sigma_2 \sigma_3$ | $3$ |
 
-*Then the depth-3 Wedderburn-orthogonal representative*
+*For each partition $\lambda \,\vdash\, 4$, the Wedderburn-orthogonal
+representative $r_\lambda = \sum_C c_C \cdot T_{w_C}$ satisfying
+$\chi_\mu(r_\lambda) = 0$ for every $\mu \neq \lambda$ has coefficients
+$c_C(\lambda) \in \mathbb{Q}(q)$ given by:*
 
-$$
-  \boxed{\;
-    r_3 \;=\; \sum_{C} c_C \cdot T_{w_C},
-    \qquad
-    \mathbf{c} \,=\,
-    (-0.3056, +1.4541, -0.6127, -1.5593, +1.0000)
-  \;}
-$$
+| $\lambda$ | $c_e$ | $c_{(12)}$ | $c_{(12)(34)}$ | $c_{(123)}$ | $c_{(1234)}$ |
+|--|--|--|--|--|--|
+| $(4)$ | $\dfrac{1}{q^3 \Phi_{(4)}}$ | $\dfrac{q^4 + 2q^2 + 3}{q^2 \Phi_{(4)}}$ | $\dfrac{1}{q(q^2+1)}$ | $\dfrac{q^4 + q^2 + 2}{q (q^4 + q^2 + 1)}$ | $1$ |
+| $(3,1)$ | $-\dfrac{1}{q(q^2+1)}$ | $\dfrac{1 - 2q^2 - q^4}{q^2 (q^2+1)}$ | $\dfrac{1}{q(q^2+1)}$ | $\dfrac{1 - q^2}{q}$ | $1$ |
+| $(2,2)$ | $-\dfrac{q^2}{(q^2+1)^2}$ | $\dfrac{q(1-q^2)}{(q^2+1)^2}$ | $-\dfrac{q^4 + q^2 + 1}{(q^2+1)^2}$ | $1$ | $0$ |
+| $(2,1,1)$ | $\dfrac{q^3}{q^2+1}$ | $\dfrac{q^4 - 2q^2 - 1}{q^2+1}$ | $-\dfrac{q^3}{q^2+1}$ | $\dfrac{1 - q^2}{q}$ | $1$ |
+| $(1^4)$ | $-\dfrac{q^9}{\Phi_{(4)}}$ | $\dfrac{q^4(3q^4 + 2q^2 + 1)}{\Phi_{(4)}}$ | $-\dfrac{q^3}{q^2+1}$ | $\dfrac{q(-2q^4 - q^2 - 1)}{q^4 + q^2 + 1}$ | $1$ |
 
-*satisfies $\chi_\lambda(r_3) = 0$ for every $\lambda \,\vdash\, 4$ with
-$\mathrm{depth}(\lambda) < 3$ (verified to $\sim 10^{-31}$), and pairs
-to*
+*where $\Phi_{(4)} = q^6 + 2q^4 + 2q^2 + 1$.*
 
-$$
-  \alpha_3(H_4)
-  \;=\; \mathrm{tr}_M(r_3)
-  \;=\; y_{(1^4)} \cdot \chi_{(1^4)}(r_3)
-  \;\approx\; +0.003463
-$$
+*The depth-stratum coefficients $\alpha_\lambda(H_4) := \mathrm{tr}_M(r_\lambda)
+= y_\lambda \cdot \chi_\lambda(r_\lambda)$ evaluate at the substrate
+value $q_0 \approx 1.110$ to:*
 
-*at the substrate value $q_0 \approx 1.110$.*
+| $\lambda$ | depth | $\alpha_\lambda(H_4)$ |
+|:--:|:--:|--:|
+| $(4)$ | $0$ | $+0.93506343$ |
+| $(3,1)$ | $1$ | $-0.77208134$ |
+| $(2,2)$ | $1$ | $-0.21145633$ |
+| $(2,1,1)$ | $2$ | $+0.09693702$ |
+| $(1^4)$ | $3$ | $+0.00346252$ |
+
+*All five closed forms verified to numerical precision against the Hoefsmit
+character matrix and Jones-Markov $y_\lambda$ values (consistency residual
+$< 10^{-15}$).*
 
 ## Proof
 
