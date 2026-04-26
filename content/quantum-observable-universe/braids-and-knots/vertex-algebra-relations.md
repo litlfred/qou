@@ -15,9 +15,10 @@ $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
 ### QU-1: Rigid braided monoidal structure
 
 The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke
-representation $\rho_n\colon B_n \to H_n(q)$ with
-$\sigma_i = \rho_n(\sigma_i)$.  Rigidity and braiding are encoded by
-three families of relations:
+representation $\rho_n\colon B_n \to H_n(q)$, where we write
+$\sigma_i$ both for the braid generator in $B_n$ and for its image
+$\rho_n(\sigma_i)$ in $H_n(q)$ (CLAUDE.md §7a).  Rigidity and
+braiding are encoded by three families of relations:
 
 **(QU-1a) Hecke relation** (quadratic):
 

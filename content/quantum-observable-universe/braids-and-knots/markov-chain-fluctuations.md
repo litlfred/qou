@@ -35,7 +35,7 @@ the generators satisfy the $q$-commutation $\sigma_i \sigma_{i+1} \sigma_i =
 = 0$.  However, the Bożejko--Speicher noncommutative $q$-Gaussian
 **does not apply** at the substrate value $q_0 \approx 1.11 > 1$:
 the Touchard pair-partition moments
-$\sigma_n(q_0) = \sum_\pi q_0^{\mathrm{cr}(\pi)}$ grow super-exponentially
+$T_n(q_0) = \sum_\pi q_0^{\mathrm{cr}(\pi)}$ grow super-exponentially
 in $n$, so no well-defined $q$-Gaussian distribution exists.
 This failure is documented in the computation layer
 (`folio-assistant/computations/hecke_core.py`), which selects the

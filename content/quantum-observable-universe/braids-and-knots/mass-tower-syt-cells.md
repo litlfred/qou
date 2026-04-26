@@ -12,7 +12,7 @@ For $H_n(q)$ with generators $\sigma_1, \ldots, \sigma_{n-1}$, the
 **Jucys--Murphy (JM) elements** are
 
 $$
-  L_k = T_{k-1} T_{k-2} \cdots \sigma_1 \sigma_1 \cdots T_{k-1},
+  L_k = \sigma_{k-1} \sigma_{k-2} \cdots \sigma_1 \sigma_1 \cdots \sigma_{k-1},
   \qquad k = 1, \ldots, n,
 $$
 

@@ -9,8 +9,9 @@ from neutron at every $q$.*
 
 **Hoefsmit seminormal form (symbolic).**
 *For a partition $\lambda \vdash n$ with standard Young tableaux
-$\sigma_1, \ldots, T_{f^\lambda}$, the Hecke generator $\sigma_i$ acts on the
-Specht module $S^\lambda$ by:*
+$T_1, \ldots, T_{f^\lambda}$ (indexing the Specht-module basis;
+distinct from the Hecke generator $\sigma_i$), the Hecke generator
+$\sigma_i$ acts on the Specht module $S^\lambda$ by:*
 
 - *If $i$ and $i+1$ are in the same row of $T$ (axial distance
   $\rho = 1$): $\rho_\lambda(\sigma_i)\,T = q \cdot T$.*

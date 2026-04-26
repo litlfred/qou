@@ -65,8 +65,9 @@ predictions from $q$.  The genuine $q$-predictions are mass *ratios*
 ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), $Q$-values
 ($\Delta\mathrm{net} \times E_0$), and half-life ratios via
 $\log_q(ft)$ spectroscopy.  The one external scaling ruler is
-$m_e \approx 0.51099895$ MeV (CODATA 2022), which converts
-dimensionless $q$-ratios to physical MeV.  All "Source" column
+$m_e = 0.51099895$ MeV (CODATA 2022 experimental input, not a
+QOU-derived value), which converts dimensionless $q$-ratios to
+physical MeV.  All "Source" column
 entries (CODATA, PDG, AME2020) refer to these external standards.
 
 *Isotope-level data (hecke-engine certificates, $A \leq 14$).*
