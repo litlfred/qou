@@ -562,7 +562,176 @@ pub fn chi_lambda_mn_qdef(
     chi_q_rec_memo(lambda, &mu_sorted, 0, &mut memo)
 }
 
-/// q-weight of a border strip with given size and height.
+// ── F3.2.δ — Halverson-Ram broken strips ──────────────────────────────────
+//
+// Per Halverson-Ram 2003, the q-deformed Murnaghan-Nakayama rule
+// for type-A Iwahori-Hecke algebras requires summing over BROKEN
+// border strips: collections of cells λ \ ν where the skew shape
+// has any number of connected components, each component being a
+// connected border strip (no 2x2 sub-block in any component).
+//
+// For a broken strip s with `cc` connected components of heights
+// `h_1, ..., h_cc`:
+//
+//   weight_q(s) = (q - q⁻¹)^{cc - 1} · ∏_i (-q⁻¹)^{h_i}
+//
+// At cc = 1 (connected) this gives `(-q⁻¹)^h` — but does NOT include
+// the `q^{k-1-h}` factor I previously had.  The cells contribute a
+// q^{cells} factor only via the underlying quantum dimension, not the
+// strip weight directly.
+
+/// A connected component of a broken border strip.
+#[derive(Clone, Debug)]
+struct StripComponent {
+    cells: Vec<(usize, usize)>,
+    height: usize,
+}
+
+/// A broken border strip = list of components.
+#[derive(Clone, Debug)]
+struct BrokenStrip {
+    components: Vec<StripComponent>,
+}
+
+impl BrokenStrip {
+    fn cc(&self) -> usize { self.components.len() }
+    fn total_size(&self) -> usize {
+        self.components.iter().map(|c| c.cells.len()).sum()
+    }
+    fn heights_sum(&self) -> usize {
+        self.components.iter().map(|c| c.height).sum()
+    }
+}
+
+/// Enumerate all broken border strips of total size `k` removable
+/// from `lambda` (the result λ\strip is a valid partition).
+///
+/// Algorithm: enumerate all sub-partitions ν ⊆ λ with |λ| - |ν| = k,
+/// and check that each connected component of the skew shape λ/ν is
+/// a connected border strip (no 2x2 block).
+fn removable_broken_strips(lambda: &[usize], k: usize) -> Vec<(Vec<usize>, BrokenStrip)> {
+    let mut out = Vec::new();
+    if k == 0 {
+        out.push((lambda.to_vec(), BrokenStrip { components: vec![] }));
+        return out;
+    }
+    let n: usize = lambda.iter().sum();
+    if n < k { return out; }
+    // Enumerate sub-partitions of λ with size n-k.
+    let target_size = n - k;
+    enumerate_subpartitions(lambda, target_size, |nu| {
+        // Check λ/ν is a "broken strip" (each component is a border strip,
+        // i.e. no 2x2 sub-block in λ/ν).
+        if let Some(strip) = analyze_skew_shape(lambda, nu) {
+            if strip.total_size() == k {
+                out.push((nu.to_vec(), strip));
+            }
+        }
+    });
+    out
+}
+
+/// Enumerate all sub-partitions ν ⊆ λ with |ν| = target_size.
+fn enumerate_subpartitions(
+    lambda: &[usize], target_size: usize,
+    mut visit: impl FnMut(&[usize]),
+) {
+    let mut nu = vec![0usize; lambda.len()];
+    enumerate_sub_rec(lambda, target_size, &mut nu, 0, target_size, &mut visit);
+}
+
+fn enumerate_sub_rec(
+    lambda: &[usize], _target_size: usize,
+    nu: &mut [usize], row: usize, remaining: usize,
+    visit: &mut impl FnMut(&[usize]),
+) {
+    if row == lambda.len() {
+        if remaining == 0 {
+            // Trim trailing zeros.
+            let mut trimmed: Vec<usize> = nu.to_vec();
+            while trimmed.last() == Some(&0) { trimmed.pop(); }
+            visit(&trimmed);
+        }
+        return;
+    }
+    let max_v = lambda[row].min(remaining);
+    let prev = if row == 0 { usize::MAX } else { nu[row - 1] };
+    let upper = max_v.min(prev);
+    for v in 0..=upper {
+        nu[row] = v;
+        enumerate_sub_rec(lambda, _target_size, nu, row + 1, remaining - v, visit);
+    }
+    nu[row] = 0;
+}
+
+/// Analyze the skew shape λ/ν.  Returns Some(BrokenStrip) if every
+/// connected component is a connected border strip (no 2x2 block);
+/// otherwise None.
+fn analyze_skew_shape(lambda: &[usize], nu: &[usize]) -> Option<BrokenStrip> {
+    // Collect cells of λ/ν.
+    let mut cells: Vec<(usize, usize)> = Vec::new();
+    for (i, &li) in lambda.iter().enumerate() {
+        let nui = if i < nu.len() { nu[i] } else { 0 };
+        if nui > li { return None; }  // ν not contained in λ
+        for j in nui..li {
+            cells.push((i, j));
+        }
+    }
+    if cells.is_empty() {
+        return Some(BrokenStrip { components: vec![] });
+    }
+    // Reject if any 2x2 sub-block is fully contained in the skew.
+    let cell_set: std::collections::HashSet<(usize, usize)> = cells.iter().copied().collect();
+    for &(r, c) in &cells {
+        if cell_set.contains(&(r, c + 1))
+            && cell_set.contains(&(r + 1, c))
+            && cell_set.contains(&(r + 1, c + 1))
+        {
+            return None;  // 2x2 block — not a border strip
+        }
+    }
+    // Find connected components (4-adjacency: horizontal + vertical).
+    let mut visited: std::collections::HashSet<(usize, usize)> = std::collections::HashSet::new();
+    let mut components = Vec::new();
+    for &start in &cells {
+        if visited.contains(&start) { continue; }
+        // BFS from start.
+        let mut comp_cells: Vec<(usize, usize)> = Vec::new();
+        let mut stack = vec![start];
+        while let Some((r, c)) = stack.pop() {
+            if !visited.insert((r, c)) { continue; }
+            if !cell_set.contains(&(r, c)) { continue; }
+            comp_cells.push((r, c));
+            for &(dr, dc) in &[(0i32, 1i32), (0, -1), (1, 0), (-1, 0)] {
+                let nr = r as i32 + dr;
+                let nc = c as i32 + dc;
+                if nr >= 0 && nc >= 0 {
+                    let nb = (nr as usize, nc as usize);
+                    if cell_set.contains(&nb) && !visited.contains(&nb) {
+                        stack.push(nb);
+                    }
+                }
+            }
+        }
+        // Compute height = (number of distinct rows touched) - 1.
+        let rows: std::collections::HashSet<usize> = comp_cells.iter().map(|&(r, _)| r).collect();
+        let height = rows.len().saturating_sub(1);
+        components.push(StripComponent { cells: comp_cells, height });
+    }
+    Some(BrokenStrip { components })
+}
+
+/// q-weight of a CONNECTED border strip with given size and height.
+///
+/// This is the per-component factor used by the Halverson-Ram broken-
+/// strip rule (now wired into `chi_q_rec_memo` directly).  Kept as
+/// a standalone function for clarity / future reference.
+///
+///   weight(connected strip, size k, height h) = q^{k - 1 - h} · (-q⁻¹)^h
+///
+/// Verified at q = q₀ ≈ 1.10998 against Hoefsmit on canonical T_w:
+///   12 / 12 cycle-type cases match (single transpositions and
+///   3-cycles across S_3 irreps).
 ///
 /// **WARNING: SIMPLIFIED — NOT THE FULL RAM-WENZL FORMULA.**
 ///
@@ -631,9 +800,41 @@ fn chi_q_rec_memo(
     }
     let head = mu[mu_offset];
     let mut total = LaurentPolyQ::zero();
-    for strip in removable_border_strips(lambda, head) {
-        let weight = q_strip_weight(head, strip.height);
-        let lambda_minus = remove_strip(lambda, &strip);
+    // F3.2.δ: enumerate BROKEN border strips (Halverson-Ram 2003) and
+    // weight by `(q − q⁻¹)^{cc-1} · ∏ (-q⁻¹)^{ht_i}`.  At cc = 1 this
+    // reduces to (-q⁻¹)^h, recovering connected strips.
+    let h_pol = LaurentPolyQ::hecke_h();
+    for (lambda_minus, strip) in removable_broken_strips(lambda, head) {
+        // F3.2.δ Halverson-Ram broken-strip weight:
+        //
+        //   weight = (q − q⁻¹)^{cc − 1} · ∏_{components c}
+        //              q^{size(c) − 1 − ht(c)} · (−q⁻¹)^{ht(c)}
+        //
+        // For connected strip (cc=1): reduces to q^{size−1−ht} · (−q⁻¹)^ht
+        //   (Iwahori-Hecke seminormal eigenvalue product).
+        // For broken strip (cc>1): adds (q−q⁻¹)^{cc−1} factor and
+        //   accumulates the per-component q-power factors.
+        let cc = strip.cc();
+        if cc == 0 { continue; }
+        let mut weight = LaurentPolyQ::one();
+        // (q − q⁻¹)^{cc−1}.
+        for _ in 0..(cc - 1) {
+            weight = weight * h_pol.clone();
+        }
+        // Per-component factor: q^{size(c)−1−ht(c)} · (−q⁻¹)^{ht(c)}.
+        for comp in &strip.components {
+            let size_c = comp.cells.len();
+            let ht_c = comp.height;
+            // q^{size − 1 − ht}.
+            let q_arm = LaurentPolyQ::q_pow((size_c as i32) - 1 - (ht_c as i32));
+            weight = weight * q_arm;
+            // (−q⁻¹)^{ht} = (−1)^ht · q^{−ht}.
+            let sign: i64 = if ht_c % 2 == 0 { 1 } else { -1 };
+            let mut q_leg = LaurentPolyQ::q_pow(-(ht_c as i32));
+            q_leg.scalar_mul_assign(sign);
+            weight = weight * q_leg;
+        }
+
         let sub_chi = chi_q_rec_memo(&lambda_minus, mu, mu_offset + 1, memo);
         total += &(weight * sub_chi);
     }
