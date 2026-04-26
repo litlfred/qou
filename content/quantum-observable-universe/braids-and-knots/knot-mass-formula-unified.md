@@ -1,6 +1,6 @@
 Let $\varrho \colon \mathbf{1} \to A$ be a vortex with braid
 representative $\beta \in B_n$ and Hecke mass element
-$T_w \in H_n(q)$
+$T_w \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)).  Let
 $\hat V_i^{\mathrm{full}}$ denote the additive-Wedderburn traced
 volume at generator $i$ of the braid word.  Let
@@ -20,19 +20,19 @@ $$
                + z^2 \sum_{0 \leq i < j \leq n-2}
                   \Phi_q\bigl(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|\bigr)}_{\text{brane tower}}
     \;+\;
-    \underbrace{m_e \cdot \mathrm{tr}_M\bigl(C_{\dim_q}^{H_n(q)}\bigr)}_{\text{Frobenius co-Casimir}}
+    \underbrace{m_e \cdot \mathrm{tr}_M\bigl(C_{\dim_q}^{H_n(R, q)}\bigr)}_{\text{Frobenius co-Casimir}}
   }
 $$
 
 *where*
 
 $$
-  C_{\dim_q}^{H_n(q)}
+  C_{\dim_q}^{H_n(R, q)}
   \;=\;
   \sum_{\lambda \,\vdash\, n}
     \frac{[n]_q!}{\dim_q(\lambda)^2 \cdot d_\lambda}
     \cdot e_\lambda
-  \;\in\; Z\bigl(H_n(q)\bigr)
+  \;\in\; Z\bigl(H_n(R, q)\bigr)
 $$
 
 *is the Frobenius co-Casimir element
@@ -40,7 +40,7 @@ $$
 with trace*
 
 $$
-  \mathrm{tr}_M\bigl(C_{\dim_q}^{H_n(q)}\bigr)
+  \mathrm{tr}_M\bigl(C_{\dim_q}^{H_n(R, q)}\bigr)
   \;=\;
   \sum_{\lambda \,\vdash\, n} \frac{1}{\dim_q(\lambda)}.
 $$
@@ -128,7 +128,7 @@ derivations:*
    derived from the quantum-dilogarithm resolution of the
    exceptional divisor.*
 3. *Frobenius correction — `thm:frobenius-codim-universal` (new),
-   derived from self-dual Frobenius structure of $H_n(q)$.*
+   derived from self-dual Frobenius structure of $H_n(R, q)$.*
 
 *This theorem combines them into a single three-term formula.
 Each term is independently derived; the sum is the total mass.*
@@ -137,8 +137,8 @@ Each term is independently derived; the sum is the total mass.*
 
 *The Frobenius correction $m_e \cdot \mathrm{tr}_M(C_{\dim_q})$
 **does not depend on the specific vortex $\varrho$** — only on
-the ambient Hecke algebra $H_n(q)$.  All trefoil-like vortices
-on $H_3(q)$ (proton, neutron, any quark configuration) get
+the ambient Hecke algebra $H_n(R, q)$.  All trefoil-like vortices
+on $H_3(R, q)$ (proton, neutron, any quark configuration) get
 the same additive offset $(2 + 1/[2]_q) \cdot m_e$.  Mass
 differences between such vortices therefore must come from
 the first two pieces (descended + brane tower).*
@@ -186,7 +186,7 @@ per upstream `pure_hecke_binding.py`.*
    tower collapses ($\Phi_1$ singular — handled by a separate
    classical-limit argument), Frobenius term reduces to $\sum
    1/d_\lambda$ (number of conjugacy classes / involutions).*
-2. *For the identity braid $T_e = 1 \in H_n(q)$:
+2. *For the identity braid $T_e = 1 \in H_n(R, q)$:
    $|\mathrm{tr}_M(1)| = 1$; brane tower vanishes (no crossings);
    Frobenius term is pure $\sum 1/\dim_q$ — this is the
    **vacuum mass** of the trivial vortex, consistent with

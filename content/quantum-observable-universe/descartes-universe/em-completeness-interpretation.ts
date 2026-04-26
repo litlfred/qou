@@ -9,6 +9,8 @@ export default remark({
     "thm:em-spectral-completeness",
     "cor:gauge-coupling-uniqueness",
     "prop:em-coupling-projection",
+    "prop:spectral-sequence-collapse",
+    "prop:confinement-categorical",
   ],
   tags: [
     "interpretation",

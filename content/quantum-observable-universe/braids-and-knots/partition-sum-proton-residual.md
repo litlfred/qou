@@ -9,10 +9,10 @@ denote the experimental proton mass.
 
 **Derivation via the Frobenius co-Casimir.**
 
-*The Hecke algebra $H_n(q)$ is a **self-dual Frobenius algebra**
+*The Hecke algebra $H_n(R, q)$ is a **self-dual Frobenius algebra**
 under the Markov-trace pairing $\langle x, y\rangle := \mathrm{tr}_M(xy)$
 ([Jones–Markov trace](#thm:jones-markov-trace)).  Self-duality
-identifies $H_n(q) \cong H_n(q)^*$ as bimodules; Wedderburn gives
+identifies $H_n(R, q) \cong H_n(R, q)^*$ as bimodules; Wedderburn gives
 $H_n(R, q) = \bigoplus_{\lambda \vdash n}\mathrm{Mat}_{\dim(\lambda)}(R)$
 with Plancherel weights $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$.*
 
@@ -25,7 +25,7 @@ $$
   \sum_{\lambda \,\vdash\, n}
     \frac{[n]_q!}{\dim_q(\lambda)^2 \cdot \dim(\lambda)}
     \cdot e_\lambda
-  \;\in\; Z\bigl(H_n(q)\bigr),
+  \;\in\; Z\bigl(H_n(R, q)\bigr),
 $$
 
 *where $e_\lambda$ is the central idempotent of block $\lambda$

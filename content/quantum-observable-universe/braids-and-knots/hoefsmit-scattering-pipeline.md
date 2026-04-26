@@ -114,7 +114,7 @@ Wedderburn--Artin decomposition $H_k(R, q) \cong \bigoplus_\lambda
 M_{d_\lambda}(R)$.  The weight $w_\lambda$ ensures that
 $\mathrm{tr}_M$ is the unique trace satisfying the Markov property
 $\mathrm{tr}_M(xT_k) = z \cdot \mathrm{tr}_M(x)$ for
-$x \in H_k(q)$.
+$x \in H_k(R, q)$.
 
 **Stage 3** is [Geom(K) alignment](#prop:geom-yekutieli-alignment).
 The observation frame $\tau$ is the fibre functor of the

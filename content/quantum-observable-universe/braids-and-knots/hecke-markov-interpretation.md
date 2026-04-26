@@ -2,7 +2,7 @@ Every algebraic construction in the preceding sections has a
 Markov chain counterpart
 ([Hecke transition operator](#prop:hecke-markov-transition)).
 The two descriptions are the same mathematical object
-viewed through different lenses: the Hecke algebra $H_n(q)$
+viewed through different lenses: the Hecke algebra $H_n(R, q)$
 is simultaneously an algebra of braid-group representations
 and a space of stochastic transition operators.
 
@@ -131,13 +131,13 @@ at crossing $i$ constrains the outcomes at crossings $i \pm 1$
 through the Yang--Baxter equation.
 
 Correlations between distant crossings arise from the
-algebraic structure of $H_n(q)$ --- the braid relations and
+algebraic structure of $H_n(R, q)$ --- the braid relations and
 their representation theory --- not from step-to-step memory.
 Each crossing is a **local, memoryless transition** whose
 outcome is determined by the eigenvalue structure
 $p_+, p_-$ alone.  The non-local correlations are
 representation-theoretic: they are consequences of the
-constraints that $H_n(q)$ imposes on any consistent
+constraints that $H_n(R, q)$ imposes on any consistent
 assignment of transition probabilities.
 
 ## Planck steps
@@ -176,7 +176,7 @@ which is the generator built from the transition operators
 $K_i$
 ([Hecke transition operator](#prop:hecke-markov-transition)).
 The ASEP is integrable because it inherits the algebraic
-structure of $H_n(q)$ and its quotient, the Temperley--Lieb
+structure of $H_n(R, q)$ and its quotient, the Temperley--Lieb
 algebra.  The stationary distribution is the Mallows measure
 $\pi(\sigma) \propto q^{\mathrm{inv}(\sigma)}$ --- the unique
 probability measure on $S_n$ that weights each permutation
