@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU with Frobenius--Hopf
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with Frobenius--Hopf
 object $A$.  The QOU is *strictly commutative* when the multiplication
 $\mu \colon A \otimes A \to A$ satisfies
 $\mu \circ c_{A,A} = \mu$ and, dually, the comultiplication

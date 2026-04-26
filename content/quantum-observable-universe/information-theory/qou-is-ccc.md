@@ -1,5 +1,5 @@
 **Proposition.**
-*Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU and let
+*Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU and let
 $U \subset M_0$ be an affine chart admitting a chain of
 adjacent aeons
 $\ldots, \mathcal{A}_{-1}, \mathcal{A}_0, \mathcal{A}_1, \ldots$

@@ -6,20 +6,20 @@ that are partially evaluated but not yet resolved to observable
 knots.
 
 **The variational origin of $G$.**
-The field equation $\mathrm{Ric}_{g_\theta} = T^{(q)}$
+The field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
 ([GR substrate geometry](#rem:gr-substrate-geometry)) arises from
 varying the $q$-Yang--Mills--Levi functional
 ([$q$-YM-Levi](#def:q-yang-mills-levi))
 
 $$
-  S_q[A, \theta]
+  S_q[A, \varTheta]
   =  \int_M q(p)\lVert F_A^+|_H \rVert^2
-  \theta \wedge (d\theta)^n
+  \varTheta \wedge (d\varTheta)^n
 $$
 
-with respect to the Levi form $L_\theta$.  The gravitational
+with respect to the Levi form $L_\varTheta$.  The gravitational
 coupling $G$ is the normalisation of this variation: it sets
-the ratio of curvature ($\mathrm{Ric}_{g_\theta}$) to
+the ratio of curvature ($\mathrm{Ric}_{g_\varTheta}$) to
 stress-energy ($T^{(q)}$).  In standard GR, this normalisation
 is postulated.  In the QOU, it is **determined by the information
 content of the brane tower at each fibre**.

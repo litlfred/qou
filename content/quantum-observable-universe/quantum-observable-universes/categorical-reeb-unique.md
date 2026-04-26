@@ -3,9 +3,9 @@ Let $(\mathbf{C}, A, \tau)$ be a
 maximal torus $T$ and weight decomposition $(\pi_H, \pi_V)$
 ([weight decomposition](#def:weight-decomposition)).  Any two
 [categorical Reeb derivations](#def:categorical-reeb)
-$(\xi_1, \theta_A^{(1)})$ and $(\xi_2, \theta_A^{(2)})$ on $A$
+$(\xi_1, \varTheta_A^{(1)})$ and $(\xi_2, \varTheta_A^{(2)})$ on $A$
 satisfying the vertical-generator and normalisation axioms coincide:
 
 $$
-  \xi_1 \;=\; \xi_2, \qquad \theta_A^{(1)} \;=\; \theta_A^{(2)}.
+  \xi_1 \;=\; \xi_2, \qquad \varTheta_A^{(1)} \;=\; \varTheta_A^{(2)}.
 $$

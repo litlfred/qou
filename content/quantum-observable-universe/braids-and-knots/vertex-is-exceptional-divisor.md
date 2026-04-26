@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU with
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with
 exceptional divisor $\mathcal{S}_p = \pi^{-1}(p) \cong \mathbb{P}^1(\mathbb{C})$
 at a brane point $p$
 ([exceptional divisor](#def:exceptional-divisor)), and let

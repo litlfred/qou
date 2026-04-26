@@ -85,7 +85,7 @@ This is the **Chebyshev recurrence**: powers of a matrix with
 two eigenvalues are always Chebyshev polynomials.  Precisely,
 $a_p = U_{p-1}(s/2)$, the Chebyshev polynomial of the second
 kind evaluated at $s/2$, where
-$U_n(\cos\theta) = \sin((n+1)\theta)/\sin\theta$.
+$U_n(\cos\varTheta) = \sin((n+1)\varTheta)/\sin\varTheta$.
 
 For odd $p$, only even powers of $s$ appear, so writing
 $u = s^2 = (q - q^{-1})^2$:

@@ -29,7 +29,7 @@ $$
 The second relation is the **Morgan–Voyce continuant** — a
 three-term recurrence with positive sign on $b_{n-1}$, in
 contrast to the Chebyshev polynomials of the second kind
-$U_n(\cos\theta)$ which have $b_{n+1} = 2\cos\theta \cdot
+$U_n(\cos\varTheta)$ which have $b_{n+1} = 2\cos\varTheta \cdot
 b_n - b_{n-1}$.
 
 The **net coefficient** (sum of all NF terms) is

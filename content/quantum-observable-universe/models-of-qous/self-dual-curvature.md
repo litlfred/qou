@@ -4,7 +4,7 @@ $\dim_{\mathbb{R}} H = 4$,
 every instanton connection $A$ on $P$ satisfies
 $F_A|_H = {*_H}F_A|_H$.  The categorical Yang--Mills functional
 $\int_A(\star_q(F_\nabla) \cdot F_\nabla)$ specialises to
-$\int_M \lVert F_A|_H \rVert^2\theta \wedge (d\theta)^2$.
+$\int_M \lVert F_A|_H \rVert^2\varTheta \wedge (d\varTheta)^2$.
 The Bogomolny trick decomposes
 $\lVert F_A|_H \rVert^2 = \lVert F_A^+ \rVert^2 + \lVert F_A^- \rVert^2$; since
 $\int \lVert F_A^+ \rVert^2$ is a topological invariant

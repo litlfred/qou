@@ -49,4 +49,4 @@ condition reduces to
 $H^0(M, \mathrm{Ad}(P)) = 0$ --- the classical requirement that the
 instanton connection admits no infinitesimal automorphisms, which is the
 gauge-theoretic manifestation of the contact (maximally non-integrable)
-geometry of $(M, \theta)$.
+geometry of $(M, \varTheta)$.

@@ -113,7 +113,7 @@ $1 + h$ factor for $D$ comes from the **closure** operation
 *A complete categorical derivation of all three cases requires
 tracking the **braid closure** (cylinder tensor product) in a
 braided monoidal category with ribbon structure.  The ribbon twist
-$\theta_X$ encodes writhe; its interaction with the Frobenius
+$\varTheta_X$ encodes writhe; its interaction with the Frobenius
 pairing produces the first-order $h$ contribution for chiral knots.
 This derivation is **open**; paper's empirical values
 $\{1+h, 1-h^2, (1-h^2)^2\}$ await a uniform categorical proof.*

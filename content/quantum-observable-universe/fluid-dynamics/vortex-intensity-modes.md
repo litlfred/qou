@@ -35,7 +35,7 @@ the classical Kelvin spectrum is recovered.
 
 **2. Superfluid vortex quantisation.**
 In superfluid helium and Bose--Einstein condensates, the
-macroscopic wave function $\psi = |\psi|e^{i\theta}$
+macroscopic wave function $\psi = |\psi|e^{i\varTheta}$
 forces circulation to be quantised:
 $\Gamma_n = n \cdot h/m$, $n \in \mathbb{Z}$.  This is a
 topological constraint — the phase must be single-valued around

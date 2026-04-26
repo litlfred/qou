@@ -37,7 +37,7 @@ jet-coaction equation
 ([Schrödinger jet coaction](#rem:schrodinger-jet-coaction))
 are **sibling dynamics** — the two real slices of a single complex
 evolution $(\partial_\tau - \Delta_q) u = 0$ with
-$\tau = t + i\theta$, a complex Reeb-time.
+$\tau = t + i\varTheta$, a complex Reeb-time.
 
 **What Wick rotation exchanges.**
 

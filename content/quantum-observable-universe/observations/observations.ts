@@ -220,6 +220,7 @@ export default chapter({
       title: "Complexity and Interpretation",
       label: "sec:complexity-interpretation",
       blocks: [
+        "fermion-boson-chart-localization",
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
         "crossing-energy-decomposition",

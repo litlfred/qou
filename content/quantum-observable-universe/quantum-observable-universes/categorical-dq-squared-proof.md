@@ -15,11 +15,11 @@ Then
 The first term vanishes because $d^2 = 0$ in the non-commutative
 de Rham complex.  The last term vanishes because $\pi_V$ is the projection onto the
 vertical (weight-$1$) summand of the Reeb decomposition
-$\Omega^k(A) = \Omega^k_H(A) \oplus \theta_A \wedge \Omega^{k-1}_H(A)$:
+$\Omega^k(A) = \Omega^k_H(A) \oplus \varTheta_A \wedge \Omega^{k-1}_H(A)$:
 the exterior derivative $d$ applied to a vertical form produces a form
-whose vertical component has weight $\geq 2$ in $\theta_A$, but the
-contact distribution forces $\theta_A \wedge \theta_A = 0$
-(since $\theta_A$ is a $1$-form), so $\pi_V(d(\pi_V\alpha)) = 0$.
+whose vertical component has weight $\geq 2$ in $\varTheta_A$, but the
+contact distribution forces $\varTheta_A \wedge \varTheta_A = 0$
+(since $\varTheta_A$ is a $1$-form), so $\pi_V(d(\pi_V\alpha)) = 0$.
 For the middle term, we first establish the key commutation relation.
 Since $\pi_V$ is the projection onto the non-zero-weight summand of
 the $T$-action on $\Omega^k(A)$, and $d$ is the universal derivation,

@@ -1,4 +1,4 @@
-Let $H = \ker\theta \subset TM$ be the horizontal distribution on the
+Let $H = \ker\varTheta \subset TM$ be the horizontal distribution on the
 CR manifold $M$.  A *$q$-torsion leaf* is a maximal integral
 submanifold $L \hookrightarrow M$ of $H$ that is invariant under the
 $q$-deformed Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow)):

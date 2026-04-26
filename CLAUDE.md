@@ -525,9 +525,9 @@ the paper introduces genuinely new axioms/structure, add a definition.
   Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
   is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
   explicitly used.
-- **QOU archimedean tuple**: `$(\mathbf{C}, \theta, G, \mathcal{S})$`.
-  The old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**.
-  - $M$ (base manifold) is subordinate to $\theta$ (its domain).
+- **QOU archimedean tuple**: `$(\mathbf{C}, \varTheta, G, \mathcal{S})$`.
+  The old 5-tuple $(M, \varTheta, G, P, E)$ is **deprecated**.
+  - $M$ (base manifold) is subordinate to $\varTheta$ (its domain).
   - $P$ (principal bundle) is subordinate to $\mathcal{S}$ (frame bundle
     of the state bundle under $G$). Mention $P$ only when discussing
     gauge structure directly.

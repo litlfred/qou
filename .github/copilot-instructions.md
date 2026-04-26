@@ -315,7 +315,7 @@ Following Herrlich–Strecker, categories are set in **bold upright**:
 | Monoidal unit | `$\mathbf{1}$` | (unchanged) |
 | Forgetful/fibre functor | `$\tau$` | Kept for Tannakian/trace/proper-time resonance (see `tau-notation.md`); minimise its appearance |
 | QOU categorical datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
-| QOU archimedean tuple | `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\theta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**. |
+| QOU archimedean tuple | `$(\mathbf{C}, \varTheta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\varTheta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \varTheta, G, P, E)$ is **deprecated**. |
 | State bundle | `$\mathcal{S}$` | The associated state bundle $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$; replaces $E$. Fibre at $p$: `$\mathcal{S}_p$` (never `$E_p$`). |
 | Elliptic curve | `$\mathcal{E}_q$` | Descartes elliptic curve (never `$E_q$`). |
 | Particles | fraktur | Quarks: `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$`. Nucleons: `$\mathfrak{p}, \mathfrak{n}$`. |
@@ -339,12 +339,12 @@ outside the introduction and Chapter 7 (Physical Observations).
 Geometry chapters use symbolic `$q$`.
 
 **Subordination rules for the archimedean tuple:**
-- $M$ is implicit — it is the domain of $\theta$. Write `$p \in M$` when
+- $M$ is implicit — it is the domain of $\varTheta$. Write `$p \in M$` when
   referring to points, but do not list $M$ in the tuple.
 - $P$ is implicit — it is the frame bundle of $\mathcal{S}$ under $G$.
   Mention $P$ only when discussing gauge structure directly.
-- The old 5-tuple $(M, \theta, G, P, E)$ must not appear in new content.
-  Existing occurrences should be migrated to $(\mathbf{C}, \theta, G, \mathcal{S})$.
+- The old 5-tuple $(M, \varTheta, G, P, E)$ must not appear in new content.
+  Existing occurrences should be migrated to $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 Where physics notation is more natural than category-theoretic notation
 (e.g.\ differential operators $d_q$, $\nabla$, $\star_q$, $\xi$),

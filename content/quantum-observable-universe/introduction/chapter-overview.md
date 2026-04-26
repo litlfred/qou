@@ -34,7 +34,7 @@ limitation of four on the state space.  The QOU is characterised
 by the archimedean tuple
 
 $$
-(\mathbf{C}, \theta, G, \mathcal{S}).
+(\mathbf{C}, \varTheta, G, \mathcal{S}).
 $$
 
 The categorical language identifies, as internal objects of the

@@ -1,7 +1,7 @@
 
 The proof proceeds in the rigid monoidal category underlying the quantum
 observable universe.  Let $A$ denote the Frobenius--Hopf object
-representing the gauge-bundle data of $(\mathbf{C}, \theta, G, \mathcal{S})$.
+representing the gauge-bundle data of $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 *Step 1: Categorical jet object.*
 The first jet bundle $J^1 \mathcal{S}$ is represented categorically by the object

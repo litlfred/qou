@@ -11,7 +11,7 @@ $$
 
 — the maximal torus of the gauge group $G$, viewed as a
 group scheme over $R$.  Over $\mathbb{C}$, this recovers
-$U(1) = \{e^{i\theta}\}$.  Over a general commutative ring
+$U(1) = \{e^{i\varTheta}\}$.  Over a general commutative ring
 $R$, it is the multiplicative group of norm-one elements
 in the rank-one weight lattice.
 
@@ -39,8 +39,8 @@ arising from the single datum $T \subset G$:
    The contact affine chart $U_\xi \subset \mathbb{P}(V)$
    ([contact affine chart](#def:contact-affine-chart)) is
    the complement of the $U_1(R)$-fixed locus.  The
-   contact form $\theta_A$ satisfies $\theta_A(\xi) = 1$
-   and $\iota_\xid\theta_A = 0$ — these are the defining
+   contact form $\varTheta_A$ satisfies $\varTheta_A(\xi) = 1$
+   and $\iota_\xid\varTheta_A = 0$ — these are the defining
    equations of a connection on the $U_1(R)$-bundle.
 
 4. **Commutative observation direction.**

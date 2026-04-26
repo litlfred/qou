@@ -25,28 +25,28 @@ displacement at each point of the trefoil.
 
 **Parametrisation.**
 
-Let $\theta \in [0, 2\pi)$ parametrise the trefoil
-$\varrho(\theta)$.  A section decomposes as
+Let $\varTheta \in [0, 2\pi)$ parametrise the trefoil
+$\varrho(\varTheta)$.  A section decomposes as
 
 $$
-  \sigma(\theta)
+  \sigma(\varTheta)
   = 
   \sum_{\ell=0}^{\infty}
   \bigl(
-    a_\ell \cos(\ell\theta) + b_\ell \sin(\ell\theta)
+    a_\ell \cos(\ell\varTheta) + b_\ell \sin(\ell\varTheta)
   \bigr)
-  \hat{n}_1(\theta)
+  \hat{n}_1(\varTheta)
   + 
   \sum_{\ell=0}^{\infty}
   \bigl(
-    c_\ell \cos(\ell\theta) + d_\ell \sin(\ell\theta)
+    c_\ell \cos(\ell\varTheta) + d_\ell \sin(\ell\varTheta)
   \bigr)
-  \hat{n}_2(\theta)
+  \hat{n}_2(\varTheta)
 $$
 
-where $\hat{n}_1(\theta), \hat{n}_2(\theta)$ are an
-orthonormal frame for $N_{\varrho(\theta)}$ that rotates
-smoothly as $\theta$ varies.
+where $\hat{n}_1(\varTheta), \hat{n}_2(\varTheta)$ are an
+orthonormal frame for $N_{\varrho(\varTheta)}$ that rotates
+smoothly as $\varTheta$ varies.
 
 The **total framing twist** is
 
@@ -54,7 +54,7 @@ $$
   k =  \mathrm{tw}(\sigma)
   = 
   \frac{1}{2\pi} \oint_{S^1}
-  \kappa(\sigma, \hat{n}_1)  d\theta
+  \kappa(\sigma, \hat{n}_1)  d\varTheta
 $$
 
 where $\kappa$ is the rotation angle of $\sigma$ relative to

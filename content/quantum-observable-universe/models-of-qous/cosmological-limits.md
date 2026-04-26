@@ -1,5 +1,5 @@
 **Conjectural interpretation.**
-Consider $M = S^3$ with the standard contact form $\theta$ and the
+Consider $M = S^3$ with the standard contact form $\varTheta$ and the
 standard instanton on the Hopf bundle.  As the instanton curvature
 concentrates near a point $p_0 \in S^3$, the substrate field $q$
 is expected to exhibit two simultaneous regimes:
