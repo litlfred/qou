@@ -12,8 +12,9 @@ Solving this with q kept symbolic (sympy.Symbol) gives y_λ as exact
 q-rational functions — no numerical interpolation, no Padé
 ambiguity, no condition-number issue.
 
-Tractable for small n in pure Python: n ≤ 4 completes in seconds.
-n = 5 is beyond pure sympy by both paths tested:
+Pure-Python sympy is feasible for n ≤ 4: n = 2, 3 finish in well
+under 10 s; n = 4 takes roughly a minute on commodity hardware
+(~60 s observed).  n = 5 is beyond pure sympy by both paths tested:
   - `simplify_each=True`  (default): timed out after 20 min on the
     7×7 character matrix with length-4 generator products.
   - `simplify_each=False` (skip): sympy's HeuristicGCDFailed in the
@@ -187,8 +188,9 @@ def main(ns: list[int]) -> None:
 
 
 if __name__ == "__main__":
-    # Default: small n where pure-Python sympy completes in seconds.
-    # n = 5 takes > 20 min and is beyond the budget here; pass it
-    # explicitly if you want to try.
+    # Default: small n where pure-Python sympy completes within a
+    # minute (n = 2, 3 in seconds; n = 4 ~60 s).  n = 5 is beyond the
+    # 20-min budget here and triggers HeuristicGCDFailed when the
+    # per-character simplify is skipped; use the sibling Rust kernel.
     ns = [int(a) for a in sys.argv[1:]] or [2, 3, 4]
     main(ns)
