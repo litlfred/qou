@@ -27,10 +27,31 @@ generates the `chapters/glossary.tex` chapter, and gates CI with
 |---------|---------|
 | `cd content && bun run pipeline/build-glossary.ts <paper-dir>` | Generate `glossary.json` + `chapters/glossary.tex` |
 | `cd content && bun run pipeline/build-glossary.ts <paper-dir> --check` | CI gate — non-zero exit on duplicates or out-of-date JSON |
+| `cd content && bun run pipeline/glossary-candidates.ts <paper-dir>` | Phase C: propose candidate owner blocks per slug → `glossary-candidates.json` (gitignored) |
+| `cd content && bun run pipeline/apply-glossary-curation.ts <paper-dir>` | Dry-run: show edits implied by `glossary-curation.json` |
+| `cd content && bun run pipeline/apply-glossary-curation.ts <paper-dir> --write` | Apply curated `defines: [...]` insertions to chosen `.ts` files (idempotent) |
 | `cd content && bun run pipeline/codemod-refterm.ts <chapter-dir>` | Dry-run: preview `:refterm[…]` backfill in a chapter |
 | `cd content && bun run pipeline/codemod-refterm.ts <chapter-dir> --write` | Apply backfill to disk |
 | `cd content && bun run validate <paper-dir>` | Includes the five glossary-term validation rules |
 | `cd content && bun run validate <paper-dir> --strict` | Adds `term-mention-coverage` (bare-text mentions) |
+
+### Curator web UI (Phase C)
+
+`/folio/glossary-curator.html?paper=<paper-dir>` is a propose-and-pick
+interface served by the folio-assistant HTTP server.
+
+- The page calls `GET /api/glossary/candidates` (which runs
+  `proposeCandidates()` and returns the same data as
+  `glossary-candidates.json`).
+- The author clicks one candidate per slug (or "skip for now"), then
+  hits **save** to `POST /api/glossary/curation`, persisting the
+  decisions to `<paper>/glossary-curation.json` (committed).
+- The agent then runs `apply-glossary-curation.ts --write` to insert
+  the chosen `defines: ["…"]` fields into each owner block's `.ts`
+  file, followed by `codemod-refterm.ts <chapter> --write` to backfill
+  `:refterm[…]` mentions.
+
+Roles: `GET` is open; `POST` requires `collaborator` or higher.
 
 ## Authoring contract
 
@@ -59,9 +80,27 @@ the slug appears in any `defines[]` list.
 
 ## CI integration (Phase E preview)
 
-The Lean tie-in (`Glossary.lean` regenerated from `glossary.json`) is
-gated by re-running `--check` in CI. Add the gate to the relevant
-workflow once the backfill has reached steady state.
+The Lean tie-in regenerates `Glossary.lean` from `glossary.json`,
+emitting `abbrev`s to Mathlib synonyms (owner-recorded decision):
+
+```lean
+-- Auto-generated from glossary.json — do not edit by hand.
+namespace QOU.Glossary
+open CategoryTheory
+abbrev MonoidalCategory := CategoryTheory.MonoidalCategory
+abbrev BraidedMonoidalCategory := CategoryTheory.BraidedMonoidalCategory
+-- For non-Mathlib synonyms, emit a `def ... := sorry` stub
+-- with a `-- Ref: [manuscript]` comment.
+end QOU.Glossary
+```
+
+`abbrev` is preferred over `def` so that elaboration sees the Mathlib
+type definitionally. `lean_ci.yml` should re-run `--check` after this
+file is regenerated to ensure the JSON-to-Lean mapping is in sync.
+
+The strict-mode validator (`--strict`) is enabled in CI **after** the
+first backfill batch lands, to avoid an avalanche of
+`term-mention-coverage` warnings on existing prose.
 
 ## See also
 
@@ -70,3 +109,7 @@ workflow once the backfill has reached steady state.
 - `content/pipeline/validate-defterm.ts` — validator implementation
 - `content/pipeline/build-glossary.ts` — builder implementation
 - `content/pipeline/codemod-refterm.ts` — backfill codemod
+- `content/pipeline/glossary-candidates.ts` — Phase C proposer
+- `content/pipeline/apply-glossary-curation.ts` — Phase C applier
+- `folio-assistant/ui/glossary-curator.html` — curator web UI
+- `folio-assistant/src/routes/glossary.ts` — curator API routes

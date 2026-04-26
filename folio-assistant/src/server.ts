@@ -20,6 +20,7 @@ import { getUserRole, getUserName, getUserEmail, hasRole, forbidden } from "./co
 import { handleBranchGet, handleBranchPost } from "./routes/branches.js";
 import { handleFeedbackGet, handleFeedbackPost } from "./routes/feedback.js";
 import { handleChatPost } from "./routes/chat.js";
+import { handleGlossaryGet, handleGlossaryPost } from "./routes/glossary.js";
 
 // ── MIME types for static serving ────────────────────────────────
 
@@ -140,6 +141,10 @@ export class FolioServer {
     const feedbackRes = handleFeedbackGet(url, this.feedbackStore);
     if (feedbackRes) return feedbackRes;
 
+    // Glossary curator routes
+    const glossaryRes = await handleGlossaryGet(url, { repoRoot: this.config.repoRoot });
+    if (glossaryRes) return glossaryRes;
+
     // Content adapter routes
     const adapterRes = await this.adapter.handleGet(url);
     if (adapterRes) return adapterRes;
@@ -157,6 +162,10 @@ export class FolioServer {
     // Feedback operations
     const feedbackRes = await handleFeedbackPost(url, req, this.feedbackStore, this.adapter);
     if (feedbackRes) return feedbackRes;
+
+    // Glossary curator operations
+    const glossaryRes = await handleGlossaryPost(url, req, { repoRoot: this.config.repoRoot });
+    if (glossaryRes) return glossaryRes;
 
     // Chat
     const chatRes = await handleChatPost(url, req, this.adapter, this.feedbackStore);
