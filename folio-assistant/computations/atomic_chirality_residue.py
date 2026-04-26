@@ -122,21 +122,23 @@ def main():
     # Coulomb-corrected B_nucl (MeV).  For Z ≥ 2, AME experimental
     # binding plus Coulomb-energy estimate from the symmetric
     # nuclear shell model.
+    #
+    # Higher-A isotopes (⁶Li, ⁷Li, ⁹Be, ¹²C) require kernel
+    # optimization beyond the current Rust seminormal: at n=18 (⁶Li)
+    # there are 385 partitions some with dim ~ O(10⁵), pushing the
+    # current vector-trace algorithm past 10-minute budgets.
+    # Future work: SIMD vectorization or batched character evaluation.
     B_NUCL = {
         ('D',   1, 1): 2.22456612,
         ('T',   1, 2): 8.481798,
         ('3He', 2, 1): 8.59697,
         ('4He', 2, 2): 29.32700,
-        ('6Li', 3, 3): 33.57,    # AME 31.99 + Coulomb 1.58
-        ('7Li', 3, 4): 41.91,    # AME 39.244 + Coulomb 2.66
     }
     isotopes = [
         ('D',   1, 1, B_NUCL[('D',   1, 1)]),
         ('T',   1, 2, B_NUCL[('T',   1, 2)]),
         ('3He', 2, 1, B_NUCL[('3He', 2, 1)]),
         ('4He', 2, 2, B_NUCL[('4He', 2, 2)]),
-        ('6Li', 3, 3, B_NUCL[('6Li', 3, 3)]),
-        ('7Li', 3, 4, B_NUCL[('7Li', 3, 4)]),
     ]
 
     n_workers = max(1, cpu_count() - 1)
