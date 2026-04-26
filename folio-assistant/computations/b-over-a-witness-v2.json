@@ -1,0 +1,163 @@
+{
+  "schema_version": "3.0.0",
+  "generated_at": "2026-04-26T23:48:57.173305+00:00",
+  "generator": "folio-assistant/computations/b_over_a_evaluator_v2.py (v3 logic)",
+  "block": "prop:b-over-a-spectral-decomposition (v3 \u2014 Hecke NF reduction)",
+  "supersedes": [
+    "b_over_a_evaluator.py (v1, |det|=1 std-block)",
+    "v2 (matrix-product \u03c7_std with arbitrary braid-word convention)"
+  ],
+  "constants": {
+    "q_0": 1.1099785955541805,
+    "h_q": 0.20906032198987945,
+    "z_markov": 0.4993203340335982,
+    "E_0_MeV": 4.18598082771484
+  },
+  "convention_free": "Crossings reduce in H_3 to NF basis {\u03b3, \u03c3_0, \u03c3_1, L_+, L_-, e^-} via Groebner-Shirshov rewriting (Diamond lemma).  Result is convention-free: any input ordering produces the same NF coefficients.",
+  "crossing_to_hecke": {
+    "pp": "\u03c3_0",
+    "nn": "\u03c3_0^{-1} = \u03c3_0 \u2212 h\u00b7\u03b3,  h := q \u2212 q\u207b\u00b9",
+    "pn": "(\u03c3_0 + \u03c3_0^{-1})/2 = \u03c3_0 \u2212 (h/2)\u00b7\u03b3"
+  },
+  "fit": {
+    "method": "c_S fit to 4He B/A AME2020 = 7.07391420 MeV (v3)",
+    "fitted_c_S": -507.93384188774104
+  },
+  "nuclei": [
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "crossing_counts_nuclear": [
+        1,
+        1,
+        4
+      ],
+      "crossing_counts_free": [
+        2,
+        2,
+        8
+      ],
+      "nuclear_nf_vector": {
+        "\u03b3": 1.021972498709757,
+        "\u03c3\u2080": 0.0,
+        "\u03c3\u2081": 0.0,
+        "L\u208a": 0.0,
+        "L\u208b": 0.0,
+        "e\u207b": 0.0
+      },
+      "free_nf_vector": {
+        "\u03b3": 1.0444277881190642,
+        "\u03c3\u2080": 0.0,
+        "\u03c3\u2081": 0.0,
+        "L\u208a": 0.0,
+        "L\u208b": 0.0,
+        "e\u207b": 0.0
+      },
+      "tr_nuclear": 1.021972498709757,
+      "tr_free": 1.0444277881190642,
+      "log_ratio": 0.021734582133499235,
+      "B_over_A_spectral_only_MeV": 0.022745136027305324,
+      "coulomb_correction_MeV": 0.22678020554817568,
+      "surface_correction_MeV": -7.27794926952087,
+      "c_S": -507.93384188774104,
+      "B_over_A_v3_predicted_MeV": 7.0739142,
+      "nucleus": "4He",
+      "B_over_A_AME2020_MeV": 7.0739142,
+      "residual_MeV": 0.0,
+      "residual_pct": 0.0,
+      "B_over_A_v1_spectral_only_MeV": 0.007432347460845902,
+      "B_over_A_v3_minus_v1_spectral": 0.015312788566459422
+    },
+    {
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "crossing_counts_nuclear": [
+        15,
+        15,
+        36
+      ],
+      "crossing_counts_free": [
+        6,
+        6,
+        24
+      ],
+      "nuclear_nf_vector": {
+        "\u03b3": 1.2160540592778455,
+        "\u03c3\u2080": -3.666180796920624e-12,
+        "\u03c3\u2081": 0.0,
+        "L\u208a": 0.0,
+        "L\u208b": 0.0,
+        "e\u207b": 0.0
+      },
+      "free_nf_vector": {
+        "\u03b3": 1.1392925422567077,
+        "\u03c3\u2080": 2.856209592609171e-14,
+        "\u03c3\u2081": 0.0,
+        "L\u208a": 0.0,
+        "L\u208b": 0.0,
+        "e\u207b": 0.0
+      },
+      "tr_nuclear": 1.216054059276015,
+      "tr_free": 1.139292542256722,
+      "log_ratio": -0.0652037463962396,
+      "B_over_A_spectral_only_MeV": -0.022745136025819963,
+      "coulomb_correction_MeV": 0.7862030615819098,
+      "surface_correction_MeV": -5.046248180174262,
+      "c_S": -507.93384188774104,
+      "B_over_A_v3_predicted_MeV": 4.237299982566531,
+      "nucleus": "12C",
+      "B_over_A_AME2020_MeV": 7.68014481,
+      "residual_MeV": -3.4428448274334684,
+      "residual_pct": -44.827863440161735,
+      "B_over_A_v1_spectral_only_MeV": -0.00743234746084595,
+      "B_over_A_v3_minus_v1_spectral": -0.015312788564974013
+    },
+    {
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "crossing_counts_nuclear": [
+        190,
+        190,
+        400
+      ],
+      "crossing_counts_free": [
+        20,
+        20,
+        80
+      ],
+      "nuclear_nf_vector": {
+        "\u03b3": -1.489440153119078e+47,
+        "\u03c3\u2080": -1.6532466893211173e+47,
+        "\u03c3\u2081": 0.0,
+        "L\u208a": 0.0,
+        "L\u208b": 0.0,
+        "e\u207b": 0.0
+      },
+      "free_nf_vector": {
+        "\u03b3": 1.544486768848309,
+        "\u03c3\u2080": 4.122186948066589e-08,
+        "\u03c3\u2081": 0.0,
+        "L\u208a": 0.0,
+        "L\u208b": 0.0,
+        "e\u207b": 0.0
+      },
+      "tr_nuclear": -2.3149398422708386e+47,
+      "tr_free": 1.5444867894312266,
+      "log_ratio": -108.62619139181868,
+      "B_over_A_spectral_only_MeV": -11.367678863845894,
+      "coulomb_correction_MeV": 1.9999788925379636,
+      "surface_correction_MeV": -3.3781248061008355,
+      "c_S": -507.93384188774104,
+      "B_over_A_v3_predicted_MeV": -9.989532950283023,
+      "nucleus": "40Ca",
+      "B_over_A_AME2020_MeV": 8.55130323,
+      "residual_MeV": -18.540836180283023,
+      "residual_pct": -216.81883663343115,
+      "B_over_A_v1_spectral_only_MeV": -0.05945877968676775,
+      "B_over_A_v3_minus_v1_spectral": -11.308220084159126
+    }
+  ]
+}
