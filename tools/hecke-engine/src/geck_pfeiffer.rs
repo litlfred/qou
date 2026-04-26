@@ -225,6 +225,75 @@ fn min_length_for_cycle_type(mu: &[usize]) -> usize {
     n - r
 }
 
+/// **Reduced word for a permutation** (lex-first reduced expression).
+///
+/// Returns a sequence of 0-indexed simple-reflection indices `[i_1, i_2, ...]`
+/// such that `w = s_{i_1} · s_{i_2} · ... · s_{i_k}` and `k = ℓ(w)`.
+///
+/// Algorithm: while w is not identity, find the rightmost descent
+/// (largest i such that w(i) > w(i+1)), apply s_i (which removes
+/// that descent and sorts toward identity), and prepend i to the
+/// word.
+pub fn reduced_word(w: &Perm) -> Vec<u32> {
+    let mut current = w.clone();
+    let n = current.n();
+    let mut word = Vec::new();
+    while current.length() > 0 {
+        // Find leftmost ascent in the current → identity reduction
+        // (= leftmost descent in current).
+        let mut found = None;
+        for i in 0..n.saturating_sub(1) {
+            if current.0[i] > current.0[i + 1] {
+                found = Some(i);
+                break;
+            }
+        }
+        match found {
+            Some(i) => {
+                current.0.swap(i, i + 1);
+                word.push((i + 1) as u32);  // 1-indexed
+            }
+            None => break,
+        }
+    }
+    word.reverse();
+    word
+}
+
+/// **F3.2.η — correct-but-slow chi via Hoefsmit per T_w.**
+///
+/// For each basis element T_w in the expansion of T_β, compute
+/// χ_λ(T_w; q) by finding a reduced word for w and evaluating
+/// the seminormal kernel on that word.  Sum: χ_λ(T_β) = Σ c_w · χ_λ(T_w).
+///
+/// **Trade-off**: correct at any q (matches Hoefsmit on β directly),
+/// but no MN speedup — cost is `O(|basis| · dim² · ℓ_max)` which
+/// is similar to direct Hoefsmit on β.  Useful as a CORRECTNESS
+/// BASELINE to validate the basis-expansion + LR composition
+/// infrastructure, even though F3.2.γ via q-MN would be faster
+/// once F3.2.η_full (proper Geck-Pfeiffer cuspidal moves) lands.
+pub fn chi_lambda_via_gp_hoefsmit(
+    lambda: &[usize],
+    n: usize,
+    word: &[(i32, u32)],
+    q: f64,
+) -> f64 {
+    let n_lambda: usize = lambda.iter().sum();
+    if n_lambda != n {
+        return 0.0;
+    }
+    let basis_expansion = braid_to_hecke(n, word);
+    let mut total = 0.0_f64;
+    for (w, c_w) in &basis_expansion {
+        let red_word = reduced_word(w);
+        let positive_word: Vec<(i32, u32)> = red_word.iter().map(|&g| (1, g)).collect();
+        let chi_w = crate::seminormal::chi_lambda_braid(lambda, &positive_word, q);
+        let c_w_f64 = c_w.evaluate_f64(q);
+        total += c_w_f64 * chi_w;
+    }
+    total
+}
+
 /// **F3.2.ζ — partial Hecke-conjugation reduction (simple-reflection only).**
 ///
 /// Given a Hecke element `x = Σ c_w · T_w`, repeatedly find a basis

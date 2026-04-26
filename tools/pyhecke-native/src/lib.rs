@@ -212,6 +212,26 @@ fn debug_reduced_basis(n: usize, word: Vec<(i32, u32)>) -> Vec<(Vec<usize>, usiz
     out
 }
 
+/// **F3.2.η — correct chi via basis expansion + Hoefsmit per T_w.**
+///
+/// Computes `χ_λ(T_β; q)` correctly at any q by:
+///   1. Expanding T_β = Σ c_w · T_w in the Hecke basis.
+///   2. For each basis element, finding a reduced word for w and
+///      evaluating Hoefsmit on it.
+///   3. Summing c_w · χ_λ(T_w) with c_w evaluated as f64 at q.
+///
+/// Returns f64 character value.  No MN speedup vs direct Hoefsmit
+/// but validates the basis-expansion infrastructure.
+#[pyfunction]
+fn chi_via_gp_hoefsmit(
+    lambda: Vec<usize>,
+    n: usize,
+    word: Vec<(i32, u32)>,
+    q: f64,
+) -> f64 {
+    geck_pfeiffer::chi_lambda_via_gp_hoefsmit(&lambda, n, &word, q)
+}
+
 /// **F3.2.γ — q-character via Geck-Pfeiffer Hecke-basis expansion.**
 ///
 /// Computes `χ_λ(T_β; q)` for an arbitrary braid word `β` by:
@@ -386,6 +406,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(lr_coefficient, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_via_gp, m)?)?;
     m.add_function(wrap_pyfunction!(debug_reduced_basis, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_via_gp_hoefsmit, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
