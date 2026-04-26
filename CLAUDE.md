@@ -539,13 +539,30 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
 
-### 7aa. Notation register (STRICT) — organized by introducing chapter
+### 7aa. Notation register (STRICT) — see content notation block
 
-Every mathematical symbol belongs to exactly one register.
-Agents **must** use the correct font for each concept.  The register
-is grouped by the chapter where the symbol is **first introduced**;
-chapters are listed in alphabetical-ish order.  Within each chapter,
-entries are sorted alphabetically by the concept name.
+The authoritative source for every mathematical symbol used in the
+paper is the front-matter **Notation** chapter, rendered into the
+PDF immediately after the table of contents:
+
+- **Per-chapter symbol tables**:
+  [`content/quantum-observable-universe/notation/notation-register.md`](content/quantum-observable-universe/notation/notation-register.md)
+- **Collision avoidances + conventions**:
+  [`content/quantum-observable-universe/notation/notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md)
+
+Agents **must** treat those `.md` files as authoritative when picking
+a font/symbol for a concept. When adding a new symbol convention,
+edit the content block — not this section. CLAUDE.md mirrors only a
+short summary below; the content block is what readers see in the
+PDF and what `rendering-auditor`, `ontologist`, and Gemini-style
+review tools should cite.
+
+#### Summary (for quick agent lookup)
+
+The register groups symbols by the chapter where each is **first
+introduced**; entries within a chapter are sorted alphabetically by
+concept name. Below is a flat per-chapter summary; for the full
+table with usage notes, open the content block above.
 
 #### algebraic-substrate
 

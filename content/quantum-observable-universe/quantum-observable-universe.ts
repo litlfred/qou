@@ -41,6 +41,9 @@ export default paper({
     ordw:  { tex: "\\mathrm{ord}_{\\omega}",  unicode: "ord_ω" },
   },
   chapters: [
+    // ── Front matter ────────────────────────────────────────────────
+    chapterRef({ dir: "notation" }),                          // Notation register (after TOC)
+
     // ── Part I: Foundations ──────────────────────────────────────────
     chapterRef({ dir: "introduction" }),
     chapterRef({ dir: "quantum-universes" }),                // QU axioms
