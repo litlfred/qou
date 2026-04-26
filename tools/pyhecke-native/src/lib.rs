@@ -177,6 +177,41 @@ fn mn_chi(lambda: Vec<usize>, mu: Vec<usize>) -> i64 {
     seminormal_mn::mn_chi(&lambda, &mu)
 }
 
+/// **Debug helper**: returns the reduced Hecke-basis expansion as a list
+/// of `(perm_one_line, length, cycle_type, coeff_terms)` for each
+/// basis element after `reduce_basis_to_minimal_length`.
+#[pyfunction]
+fn debug_reduced_basis(n: usize, word: Vec<(i32, u32)>) -> Vec<(Vec<usize>, usize, Vec<usize>, Vec<(i32, String)>)> {
+    let initial = geck_pfeiffer::braid_to_hecke(n, &word);
+    let reduced = geck_pfeiffer::reduce_basis_to_minimal_length(&initial);
+    let mut out = Vec::new();
+    for (w, c) in reduced {
+        let one_line = w.0.clone();
+        let len = w.length();
+        // cycle type
+        let n = w.n();
+        let mut visited = vec![false; n];
+        let mut cycles = Vec::new();
+        for start in 0..n {
+            if visited[start] { continue; }
+            let mut clen = 0;
+            let mut j = start;
+            while !visited[j] {
+                visited[j] = true;
+                j = w.0[j];
+                clen += 1;
+            }
+            cycles.push(clen);
+        }
+        cycles.sort_by(|a, b| b.cmp(a));
+        let coeff_terms: Vec<(i32, String)> = c.terms.into_iter()
+            .map(|(he, bi)| (he, bi.to_string()))
+            .collect();
+        out.push((one_line, len, cycles, coeff_terms));
+    }
+    out
+}
+
 /// **F3.2.γ — q-character via Geck-Pfeiffer Hecke-basis expansion.**
 ///
 /// Computes `χ_λ(T_β; q)` for an arbitrary braid word `β` by:
@@ -350,6 +385,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;
     m.add_function(wrap_pyfunction!(lr_coefficient, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_via_gp, m)?)?;
+    m.add_function(wrap_pyfunction!(debug_reduced_basis, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)

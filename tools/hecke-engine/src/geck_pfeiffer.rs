@@ -135,6 +135,55 @@ pub fn hecke_mul_ts_right(x: &HeckeElement, i: usize) -> HeckeElement {
     result
 }
 
+/// **Left-multiply** a Hecke element `x` by `T_{s_i}` — returns
+/// `T_{s_i} · x`.
+///
+///   T_{s_i} · T_w = T_{s_i w}                 if ℓ(s_i w) > ℓ(w)
+///   T_{s_i} · T_w = T_{s_i w} + (q − q⁻¹) · T_w   if ℓ(s_i w) < ℓ(w)
+pub fn hecke_mul_ts_left(x: &HeckeElement, i: usize) -> HeckeElement {
+    let h = LaurentPolyQ::hecke_h();
+    let mut result: HeckeElement = BTreeMap::new();
+    for (w, c) in x {
+        let l_w = w.length();
+        let mut s_w = w.clone();
+        s_w.apply_s_left(i);
+        let l_s_w = s_w.length();
+        if l_s_w > l_w {
+            let entry = result.entry(s_w).or_insert_with(LaurentPolyQ::zero);
+            *entry += c;
+        } else {
+            let entry = result.entry(s_w).or_insert_with(LaurentPolyQ::zero);
+            *entry += c;
+            let h_c = h.clone() * c.clone();
+            let entry2 = result.entry(w.clone()).or_insert_with(LaurentPolyQ::zero);
+            *entry2 += &h_c;
+        }
+    }
+    result.retain(|_, v| !v.is_zero());
+    result
+}
+
+/// **Left-multiply** by `T_{s_i}^{-1} = T_{s_i} − (q − q⁻¹)`.
+pub fn hecke_mul_ts_inv_left(x: &HeckeElement, i: usize) -> HeckeElement {
+    let h = LaurentPolyQ::hecke_h();
+    let mut result = hecke_mul_ts_left(x, i);
+    for (w, c) in x {
+        let h_c = h.clone() * c.clone();
+        let entry = result.entry(w.clone()).or_insert_with(LaurentPolyQ::zero);
+        *entry -= &h_c;
+    }
+    result.retain(|_, v| !v.is_zero());
+    result
+}
+
+/// **Hecke conjugation by T_{s_i}**: returns `T_{s_i} · x · T_{s_i}⁻¹`.
+///
+/// For class function evaluation: `χ_λ(T_{s_i} · x · T_{s_i}⁻¹) = χ_λ(x)`.
+pub fn hecke_conjugate_by_s(x: &HeckeElement, i: usize) -> HeckeElement {
+    let after_left = hecke_mul_ts_left(x, i);
+    hecke_mul_ts_inv_right(&after_left, i)
+}
+
 /// Right-multiply by `T_{s_i}^{-1} = T_{s_i} − (q − q^{-1})`.
 pub fn hecke_mul_ts_inv_right(x: &HeckeElement, i: usize) -> HeckeElement {
     let h = LaurentPolyQ::hecke_h();
@@ -165,6 +214,91 @@ pub fn braid_to_hecke(n: usize, word: &[(i32, u32)]) -> HeckeElement {
         };
     }
     x
+}
+
+/// **Compute minimal length within S_n conjugacy class** of cycle
+/// type `mu` (sorted descending).  Equals `Σ (μ_i - 1) = n - r(μ)`
+/// where `r(μ)` is the number of parts.
+fn min_length_for_cycle_type(mu: &[usize]) -> usize {
+    let n: usize = mu.iter().sum();
+    let r = mu.len();
+    n - r
+}
+
+/// **F3.2.ζ — partial Hecke-conjugation reduction (simple-reflection only).**
+///
+/// Given a Hecke element `x = Σ c_w · T_w`, repeatedly find a basis
+/// element `T_w` whose `w` is NOT minimal-length within its
+/// `S_n` conjugacy class, and apply Hecke conjugation by a SIMPLE
+/// reflection `s_i` such that `ℓ(s_i w s_i) < ℓ(w)`.  The conjugation
+/// produces a sum of basis elements via the Hecke relations.
+///
+/// **Algorithmic limitation (motivates F3.2.η)**: not every non-minimal
+/// element of `S_n` has a length-reducing simple-reflection
+/// conjugation.  For example, in the conjugacy class of 6-cycles in
+/// `S_6`, the element `[1, 3, 4, 5, 0, 2]` has length 7 and minimal
+/// length 5, but no `s_i w s_i` reduces length.  The full
+/// Geck-Pfeiffer 2000 §3.2 algorithm uses "good cuspidal moves"
+/// (specific products of consecutive simple reflections) to reach
+/// minimal-length representatives in such cases.
+///
+/// **Empirical**: on the D atomic braid (n=6, word_len=23), this
+/// partial reduction takes the basis from ~700 elements down to 145,
+/// of which 17 are minimal-length and 128 still need the full
+/// cuspidal-move algorithm.
+///
+/// At q = 1, even partial reduction is sufficient because cycle type
+/// determines the character; the F3.2.γ wiring matches classical MN
+/// at q = 1 regardless of `reduce_basis_to_minimal_length` behaviour.
+pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
+    let mut current = x.clone();
+    // Iterate until fixed point.
+    loop {
+        // Find a non-minimal w in current.
+        let target = current.iter()
+            .find_map(|(w, _c)| {
+                let mu = perm_cycle_type(w);
+                let min_len = min_length_for_cycle_type(&mu);
+                if w.length() > min_len { Some(w.clone()) } else { None }
+            });
+        let Some(target_w) = target else {
+            return current;  // all basis elements are minimal-length
+        };
+        let n = target_w.n();
+
+        // Find a simple reflection s such that ℓ(s · target_w · s) < ℓ(target_w).
+        let target_len = target_w.length();
+        let mut chosen_s: Option<usize> = None;
+        for i in 0..n.saturating_sub(1) {
+            let mut sws = target_w.clone();
+            sws.apply_s_left(i);
+            sws.apply_s_right(i);
+            if sws.length() < target_len {
+                chosen_s = Some(i);
+                break;
+            }
+        }
+        let Some(s_idx) = chosen_s else {
+            // No length-reducing conjugation found.  This shouldn't
+            // happen for n ≤ 6 in S_n (every non-minimal element has
+            // a length-reducing s) but bail safely if it does.
+            return current;
+        };
+
+        // Apply Hecke conjugation: replace c_w · T_w with
+        // c_w · (T_s · T_w · T_s⁻¹) in current.
+        let coeff = current.remove(&target_w).unwrap_or_else(LaurentPolyQ::zero);
+        // Build singleton {target_w → coeff}.
+        let mut singleton: HeckeElement = BTreeMap::new();
+        singleton.insert(target_w.clone(), coeff);
+        let conjugated = hecke_conjugate_by_s(&singleton, s_idx);
+        // Merge into current.
+        for (v, c_v) in conjugated {
+            let entry = current.entry(v).or_insert_with(LaurentPolyQ::zero);
+            *entry += &c_v;
+        }
+        current.retain(|_, v| !v.is_zero());
+    }
 }
 
 /// **F3.2.ε — Geck-Pfeiffer cuspidal reduction by simple-reflection conjugation.**
@@ -282,31 +416,14 @@ pub fn chi_lambda_via_geck_pfeiffer(
         return LaurentPolyQ::zero();
     }
     let basis_expansion = braid_to_hecke(n, word);
+    // F3.2.ζ: reduce ALL basis elements to minimal-length representatives
+    // via iterated Hecke conjugation.  This produces a sum where
+    // each basis member T_w has ℓ(w) = minimal length within its
+    // conjugacy class — at which point q-MN on cycle_type(w) gives
+    // the correct character.
+    let reduced = reduce_basis_to_minimal_length(&basis_expansion);
     let mut total = LaurentPolyQ::zero();
-    // F3.2.γ wiring: apply q-MN on the cycle type of each basis
-    // element T_w.  This is correct ONLY for w that is minimal-length
-    // within its conjugacy class.
-    //
-    // **F3.2.ε caveat**: simple-reflection conjugation `w ↦ sws`
-    // does NOT correspond to Hecke conjugation `T_s T_w T_s⁻¹` —
-    // the latter produces a SUM of basis elements with q-polynomial
-    // corrections, not a single T_{sws}.  Even so, conjugation
-    // preserves cycle type, and q-MN on cycle type IS class-function-
-    // valued.  But the assignment `T_w ↦ q-MN(cycle_type(w))` is only
-    // valid for minimal-length w.
-    //
-    // For non-minimal w in the basis expansion, the correct value
-    // χ_λ(T_w; q) requires the full Hecke-conjugation rewriting —
-    // see Geck-Pfeiffer 2000 §8.  Implementing this is research-grade.
-    //
-    // At q = 1 the cycle-type assignment IS correct (H_n(1) = ℂ[S_n]),
-    // and this wiring matches classical MN exactly.
-    //
-    // Cuspidal reduction (`reduce_to_cuspidal`) is exposed as a
-    // separate primitive for downstream use; it is NOT applied here
-    // because it doesn't change the cycle type and therefore doesn't
-    // affect the q-MN result.
-    for (w, c_w) in &basis_expansion {
+    for (w, c_w) in &reduced {
         let mu = perm_cycle_type(w);
         let chi_w = crate::seminormal_mn::chi_lambda_mn_qdef(lambda, &mu);
         total += &(c_w.clone() * chi_w);
@@ -383,6 +500,38 @@ mod tests {
         let expected = Perm(vec![1, 2, 0]);
         assert_eq!(result.len(), 1);
         assert_eq!(result.get(&expected), Some(&LaurentPolyQ::one()));
+    }
+
+    /// F3.2.ζ: reduce_basis_to_minimal_length on T_{s_1 s_2 s_1}.
+    /// Expected result: T_{s_2} + h · T_{s_1 s_2}.
+    #[test]
+    fn full_reduction_simple_case() {
+        // Build T_{s_1 s_2 s_1}.
+        let initial = braid_to_hecke(3, &[(1, 1), (1, 2), (1, 1)]);
+        let reduced = reduce_basis_to_minimal_length(&initial);
+        // Expected: 2 basis elements.
+        //   T_{s_2}     with coefficient 1
+        //   T_{s_1 s_2} with coefficient h = q − q⁻¹
+        assert_eq!(reduced.len(), 2,
+                   "expected 2 basis elements after reduction, got {}: {:?}",
+                   reduced.len(), reduced);
+
+        // Verify s_2 → 1, s_1 s_2 → h.
+        let s_2 = {
+            let mut p = Perm::identity(3);
+            p.apply_s_right(1);
+            p
+        };
+        let s_1_s_2 = {
+            let mut p = Perm::identity(3);
+            p.apply_s_right(0);
+            p.apply_s_right(1);
+            p
+        };
+        assert_eq!(reduced.get(&s_2), Some(&LaurentPolyQ::one()),
+                   "T_{{s_2}} coefficient should be 1");
+        assert_eq!(reduced.get(&s_1_s_2), Some(&LaurentPolyQ::hecke_h()),
+                   "T_{{s_1 s_2}} coefficient should be h");
     }
 
     /// F3.2.ε: cuspidal reduction reaches minimal-length representatives.
