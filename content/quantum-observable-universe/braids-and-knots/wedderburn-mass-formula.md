@@ -68,8 +68,8 @@ zero fitted parameters.*
 
 *Proof sketch.*
 The Wedderburn-Artin decomposition
-$H_n(R, q) \cong M_1(\mathbb{C}) \oplus M_{n-1}(\mathbb{C})
-\oplus M_1(\mathbb{C})$
+$H_n(R, q) \cong M_1(R) \oplus M_{n-1}(R)
+\oplus M_1(R)$
 ([three-parameter decomposition](#prop:three-parameters-wedderburn))
 gives three independent representations.  The crossing matrix
 $C = c \cdot \sigma_i + d \cdot \mathbf{1}$ has:

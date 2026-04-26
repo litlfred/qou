@@ -3,7 +3,10 @@
 Wedderburn-strata witness for H_n(R, q): for each n ∈ {3, 4, 5, 6, 9, 12},
 enumerate partitions of n, compute their depth = height - 1, classical
 hook-length dimension, q-deformed dimension at q_0, signed content
-(chirality marker), and Plancherel weight w_λ = dim_q²/[n]_q!.
+(chirality marker), and the canonical Plancherel weight
+w_λ = (dim_classical)²/n! (q-independent — sums to exactly 1).
+The q-deformed alternative dim_q²/[n]_q! is recorded as
+`q_deformed_weight` but does NOT sum to 1 at finite q ≠ 1.
 
 Output: wedderburn-strata-witness.json — used by sibling branches
 verify-mass-computation-k0DaZ and phase-b-heavy-rust-character-kernel
@@ -164,8 +167,11 @@ def main():
             "Wedderburn-strata enumeration for H_n(R, q) at q = q_0 ≈ 1.1097. "
             "For each n, lists every partition λ ⊢ n with depth, classical "
             "and q-deformed dimensions, signed content (chirality marker), "
-            "and Plancherel weight w_λ = dim_q²/[n]_q!. Strata are grouped "
-            "by curvature-rank depth = height(λ) - 1."
+            "the canonical Plancherel weight w_λ = (dim_classical)²/n! "
+            "(q-independent, sums to exactly 1), and the q-deformed "
+            "alternative dim_q²/[n]_q! recorded as `q_deformed_weight` "
+            "(does NOT sum to 1 at finite q ≠ 1). "
+            "Strata are grouped by curvature-rank depth = height(λ) - 1."
         ),
         "references": [
             "prop:plancherel-weight-boundedness",

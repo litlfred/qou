@@ -1,9 +1,14 @@
 /-!
 # QOU.BraidKnot.plancherel_weight_boundedness
 
-Plancherel weights `w_λ = dim_q²(V_λ) / [n]_q!` form a probability
+Plancherel weights `w_λ = (dim V_λ)² / n!` (with `dim V_λ` the
+classical, q-independent Hecke irrep dimension) form a probability
 distribution on partitions of `n`: each `w_λ ∈ [0, 1]` and
-`Σ_λ w_λ = 1`.
+`Σ_λ w_λ = 1` exactly.
+
+Remark: the q-deformed alternative `dim_q²/[n]_q!` does NOT sum to
+1 at finite `q ≠ 1` (empirical: ~1.51 at q₀ ≈ 1.1097, n = 12);
+it is recorded alongside but is not the probability measure.
 
 This formalises the convergence guarantee for the curvature-rank
 strata `Φ_k` and the universal Frobenius co-Casimir tail.

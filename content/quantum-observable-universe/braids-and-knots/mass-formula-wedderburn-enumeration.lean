@@ -35,7 +35,7 @@ theorem strata_partition (n : ℕ) :
   refine ⟨?_, ?_⟩
   · intro k k' μ hk hk'
     simp [Stratum] at hk hk'
-    omega
+    exact hk.2.symm.trans hk'.2
   · intro μ hμ
     simp [Stratum, hμ]
 

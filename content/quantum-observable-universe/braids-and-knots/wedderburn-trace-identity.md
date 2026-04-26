@@ -4,7 +4,7 @@ $q$-factorial, providing the combinatorial foundation for the
 descent decomposition of mass and coupling.
 
 **Proposition.**
-*For the Hecke algebra $H_n(R, q)$ over $\mathbb{C}$
+*For the Hecke algebra $H_n(R, q)$ over $R$
 with parameter $q \neq 0, \pm 1$, the sum of squared quantum
 dimensions equals the quantum factorial:*
 

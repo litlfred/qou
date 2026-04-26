@@ -208,7 +208,7 @@ $$
   \mathrm{tr}_M\!\bigl(w \cdot T_n^{\pm 1}\bigr)
   = 
   \frac{1}{\delta} \mathrm{tr}_M(w)
-  \qquad \text{for } w \in H_n(R, q) \subset H_{n+1}(q),
+  \qquad \text{for } w \in H_n(R, q) \subset H_{n+1}(R, q),
 $$
 
 where $\delta = -(q + q^{-1})$ is the writhe normalisation.

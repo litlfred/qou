@@ -1,5 +1,5 @@
 {
-  "description": "Wedderburn-strata enumeration for H_n(R, q) at q = q_0 \u2248 1.1097. For each n, lists every partition \u03bb \u22a2 n with depth, classical and q-deformed dimensions, signed content (chirality marker), and Plancherel weight w_\u03bb = dim_q\u00b2/[n]_q!. Strata are grouped by curvature-rank depth = height(\u03bb) - 1.",
+  "description": "Wedderburn-strata enumeration for H_n(R, q) at q = q_0 \u2248 1.1097. For each n, lists every partition \u03bb \u22a2 n with depth, classical and q-deformed dimensions, signed content (chirality marker), the canonical Plancherel weight w_\u03bb = (dim_classical)\u00b2/n! (q-independent, sums to exactly 1), and the q-deformed alternative dim_q\u00b2/[n]_q! recorded as `q_deformed_weight` (does NOT sum to 1 at finite q \u2260 1). Strata are grouped by curvature-rank depth = height(\u03bb) - 1.",
   "references": [
     "prop:plancherel-weight-boundedness",
     "prop:unified-curvature-rank-mass-formula",
