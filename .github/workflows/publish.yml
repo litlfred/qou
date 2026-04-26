@@ -68,17 +68,18 @@ concurrency:
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
-  packages:       read    # required to pull the paper-assistant container image
 
 jobs:
   build-and-publish:
-    # Larger GitHub-hosted runner — the paper-assistant container image
-    # bakes in Mathlib oleans (~20 GB extracted). The default ubuntu-latest
-    # has ~14 GB free disk and runs out during `docker pull` before any
-    # step can clean up. Larger runners ship with ~150 GB.
-    # If this label isn't configured for the account, fail-fast and switch
-    # to a slim publish-only image (issue: tracked separately).
-    runs-on: ubuntu-latest-l
+    # Standard GitHub-hosted runner. The previous `paper-assistant` Docker
+    # container baked Mathlib oleans (~20 GB extracted) for three papers,
+    # which exceeded the runner's free disk; the larger-runner attempt
+    # (`ubuntu-latest-l`) wasn't configured for this account, leaving
+    # dispatched jobs stuck in "Waiting for a runner". The simplest path
+    # is to drop the container and install TeX Live + bun + pandoc on
+    # the host directly. Slower per-build (~3-4 min apt) but always
+    # picks up a runner.
+    runs-on: ubuntu-latest
     outputs:
       head_ref: ${{ steps.deploy-vars.outputs.head_ref }}
       head_sha: ${{ steps.deploy-vars.outputs.head_sha }}
@@ -86,14 +87,6 @@ jobs:
     defaults:
       run:
         shell: bash
-    # Paper-assistant image — same image used by the folio MCP server.
-    # Pre-installs: TeX Live (full), Lean 4, Bun, pandoc, ripgrep, Python.
-    # Built by build-lean-mcp.yml → ghcr.io/litlfred/qou/paper-assistant.
-    container:
-      image: ghcr.io/${{ github.repository }}/paper-assistant:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -107,7 +100,19 @@ jobs:
       FEATURE_REF: ${{ inputs.feature_branch || '' }}
 
     steps:
-      # ── 0. Checkout ────────────────────────────────────────────────────────
+      # ── 0. Free disk space ─────────────────────────────────────────────────
+      # ubuntu-latest ships with ~14 GB free. TeX Live full + Mathlib local
+      # clones easily exhaust it, so reclaim ~30 GB before installing anything
+      # by removing pre-installed toolchains we don't need (Android, .NET, GHC,
+      # boost, agent toolcache).
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+                      /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"
+          sudo apt-get clean
+          df -h /
+
+      # ── 0a. Checkout ───────────────────────────────────────────────────────
       - name: Checkout source
         uses: actions/checkout@v4
         with:
@@ -147,13 +152,35 @@ jobs:
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
           git config --global --add safe.directory '*'
 
-      - name: Verify pre-installed tools
+      # ── 0b1. Install LaTeX + pandoc + latexdiff + latexpand on the host ──
+      # Replaces the pre-baked tools that used to come from the
+      # `paper-assistant` Docker image. apt's `texlive-full` covers the long
+      # tail of style files our chapters use; ~3 min cold install.
+      - name: Install TeX Live, pandoc, latexdiff, latexmk
         run: |
-          # All tools are pre-installed in the paper-assistant image
-          echo "bun $(bun --version)"
-          echo "pdflatex $(pdflatex --version | head -1)"
-          echo "pandoc $(pandoc --version | head -1)"
-          echo "lean $(lean --version 2>&1 | head -1 || echo 'not needed for this workflow')"
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+              texlive-full pandoc latexdiff latexmk \
+              graphviz ripgrep jq python3-pip
+          # Surface versions for the build log
+          pdflatex --version | head -1
+          pandoc --version | head -1
+          latexmk --version | head -1
+          latexdiff --version 2>&1 | head -1 || true
+
+      # ── 0b2. Install bun (content pipeline) ─────────────────────────────
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Verify tooling
+        run: |
+          echo "bun       $(bun --version)"
+          echo "pdflatex  $(pdflatex --version | head -1)"
+          echo "pandoc    $(pandoc --version | head -1)"
+          echo "node      $(node --version 2>/dev/null || echo 'not installed')"
+          echo "python3   $(python3 --version)"
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Cache bun dependencies
@@ -717,7 +744,7 @@ jobs:
           retention-days: 1
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
-      # gh CLI is pre-installed in the paper-assistant image.
+      # gh CLI is pre-installed on ubuntu-latest GitHub-hosted runners.
 
       - name: Comment preview link on PR
         if: env.HEAD_REF != 'main'
