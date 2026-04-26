@@ -109,7 +109,7 @@ whose dimension the QOU axioms collapse from arbitrary to one —
 controlled by the Euler characteristic $\chi(A) = -6$ and its
 Kummer divisibility.  The chapter formulates a $q$-deformed
 Birch and Swinnerton-Dyer conjecture \cite{birch1965}: the
-categorical Mordell–Weil group $\mathrm{Hom}(\mathbf{1}, E_q)$
+categorical Mordell–Weil group $\mathrm{Hom}(\mathbf{1}, \mathcal{E}_q)$
 is trivial (forced by the observability axiom and Tannaka–Krein),
 so $L(\mathcal{E}_q, 1) \neq 0$ at the $q$-scale.  Whether this
 non-vanishing survives the classical limit is obstructed by the

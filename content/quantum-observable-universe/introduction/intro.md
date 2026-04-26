@@ -46,7 +46,7 @@ the classical dictionary, but recovered as the unique construction
 the axioms allow.
 
 The consequences are broad in scope and specific in detail.  The
-symmetry group $\mathrm{SU}(2)$ is not assumed; it emerges from
+symmetry group $\mathrm{SU}_2(R)$ is not assumed; it emerges from
 the axioms.  The uncertainty principle is not postulated; it
 appears as the geometric signature of degrees of freedom not yet
 resolved.  Genus four is not chosen either; it is forced, and a

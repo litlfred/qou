@@ -1,5 +1,3 @@
 import { prose } from "../../schema/builders";
 
-export default prose({
-  label: "sec:authors-note",
-});
+export default prose();
