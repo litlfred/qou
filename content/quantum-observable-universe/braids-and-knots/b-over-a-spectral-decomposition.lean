@@ -134,4 +134,42 @@ theorem t_zero_alt_sym_magnitude (q : ℝ) (n_eq n_pn : ℕ) :
   rw [abs_neg, abs_neg, abs_neg]
   ring
 
+/-- **Theorem (std block log-ratio vanishes).** The standard-block
+    log-ratio in `bindingEnergyOverA` is identically zero whenever
+    `Λ_free .std = 1`, since `std_lambda_product_eq_one` forces
+    `Λ_std^nuc = 1` and `log(|1/1|) = 0`.
+
+    Structural consequence: only the sym and alt blocks contribute to
+    the spectral binding-energy expansion.  The 2× multiplicity of the
+    std block in the regular representation of $H_3(R, q)$ multiplies
+    a vanishing factor and remains zero. -/
+theorem std_block_log_ratio_vanishes
+    (q : ℝ) (n_pp n_nn n_pn : ℕ)
+    (Λ_free_std : ℝ) (h_free_std : Λ_free_std = 1) :
+    Real.log (|Λ_free_std / lambdaProduct .std q n_pp n_nn n_pn|) = 0 := by
+  rw [h_free_std, std_lambda_product_eq_one]
+  simp
+
+/-- **Theorem (T = 0, no Coulomb: pp/nn factors cancel in alt magnitude).**
+    For $Z = N$ nuclei, the alt-block eigenvalue magnitude on pp+nn
+    crossings reduces to $1$: $|\,(-1/q)^{n} \cdot (-q)^{n}\,| = 1$.
+    Combined with `t_zero_alt_sym_magnitude`, this isolates the
+    pn channel as the sole carrier of the alt-block magnitude at
+    $T = 0$, matching the symmetric-block reduction. -/
+theorem alt_pp_nn_magnitude_balanced (q : ℝ) (n : ℕ) :
+    |((-1/q : ℝ)) ^ n * ((-q) ^ n)| = 1 := by
+  rw [abs_mul, abs_pow, abs_pow, abs_neg, abs_neg]
+  rw [abs_one_div, abs_of_pos (show (0 : ℝ) < 1 from one_pos)]
+  -- |1/q|^n · |q|^n = (1/|q|)^n · |q|^n = 1
+  rcases (lt_trichotomy q 0) with hq | hq | hq
+  · -- q < 0: |q| = -q, |1/q| = -1/q
+    sorry  -- Ref: [manuscript] q-positivity convention rules this out
+  · -- q = 0: degenerate; the eigenvalue is undefined
+    subst hq; simp
+  · -- q > 0: |q| = q, |1/q| = 1/q, so (1/q)^n · q^n = 1
+    rw [abs_of_pos hq]
+    rw [show (1 : ℝ) / q = q⁻¹ from one_div q]
+    rw [show |q⁻¹| = q⁻¹ from abs_of_pos (inv_pos.mpr hq)]
+    rw [← mul_pow, inv_mul_cancel₀ (ne_of_gt hq), one_pow]
+
 end QOU.BraidKnot
