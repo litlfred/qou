@@ -79,6 +79,16 @@ class KnotOperation:
     Keys are partition strings like '(3,2,1)'.
     """
 
+    fingerprint: dict[str, str] = field(default_factory=dict)
+    """**Discovery-time fingerprint** (Copilot review #r3144...).
+    Holds non-NF binning identifiers used by feeders that don't
+    extract a real Hecke normal form (e.g., bin labels, channel
+    signatures, character magnitude bins).  Cache keys are derived
+    from `(n, fingerprint)` when `braid_word_normal_form` is empty,
+    so cache stability across binning tweaks is governed by this
+    field's contents, not the NF.
+    """
+
     discovered_at: str = ""
     """ISO-8601 timestamp of first discovery."""
 
@@ -86,9 +96,19 @@ class KnotOperation:
     """If a recognized physics structure (set by naming layer)."""
 
     def cache_key(self) -> str:
-        """Stable hash of (n, NF) for cross-script identification."""
-        nf_str = ",".join(f"{s}:{g}" for s, g in self.braid_word_normal_form)
-        h = hashlib.sha256(f"{self.n}|{nf_str}".encode()).hexdigest()[:16]
+        """Stable hash of `(n, NF or fingerprint)` for cross-script
+        identification.  When `braid_word_normal_form` is empty (a
+        feeder has only a fingerprint, not an NF), the fingerprint
+        contents are hashed instead so different bins still produce
+        different cache keys.
+        """
+        if self.braid_word_normal_form:
+            payload = ",".join(f"{s}:{g}" for s, g in self.braid_word_normal_form)
+        else:
+            payload = "fp|" + "|".join(
+                f"{k}={self.fingerprint[k]}" for k in sorted(self.fingerprint)
+            )
+        h = hashlib.sha256(f"{self.n}|{payload}".encode()).hexdigest()[:16]
         return f"op_n{self.n}_{h}"
 
 

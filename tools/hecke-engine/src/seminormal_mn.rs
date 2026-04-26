@@ -43,17 +43,20 @@
 
 use crate::seminormal::partitions_of;
 
-/// A border strip (rim hook) of a Young diagram.  Represented as the
-/// sorted list of removed cells (row, col).
+/// A border strip (rim hook) candidate used by the Murnaghan–Nakayama
+/// recursion.  Stores the **resulting partition** `lambda_minus` after
+/// strip removal, plus the strip height (= rows touched − 1).
 ///
-/// A border strip is a connected skew shape containing no 2×2 block,
-/// equivalently the strip's cells form a connected ribbon along the
-/// south-east boundary of a partition.
+/// The MN sign is `(-1)^height`.
 ///
-/// `height` = (number of rows touched − 1).  The MN sign is `(-1)^height`.
+/// (Per Gemini #r3143554494 / Copilot review: the previous version
+/// stored a `(beta_idx, k)` marker in a `cells` field documented as
+/// `(row, col)` coordinates — semantically misleading and forced
+/// `remove_strip` to recompute.  Now `lambda_minus` is stored
+/// directly and `remove_strip` is a thin getter.)
 #[derive(Clone, Debug)]
 pub struct BorderStrip {
-    pub cells: Vec<(usize, usize)>,
+    pub lambda_minus: Vec<usize>,
     pub height: usize,
 }
 
@@ -112,181 +115,25 @@ fn try_remove_hook(lambda: &[usize], idx: usize, k: usize) -> Option<(Vec<usize>
     Some((from_beta_numbers(&new_beta), height))
 }
 
-/// Old hook-coordinate signature kept around as a no-op alias —
-/// not used by the beta-number-based enumerator.
-#[allow(dead_code)]
-fn try_remove_hook_legacy(lambda: &[usize], i: usize, j: usize) -> Option<(Vec<usize>, usize)> {
-    if i >= lambda.len() || j >= lambda[i] {
-        return None;  // (i, j) not in λ
-    }
-    // Arm cells: (i, j+1), ..., (i, λ_i - 1).  Count: λ_i - 1 - j.
-    let arm_len = lambda[i] - 1 - j;
-    // Leg cells: (i+1, j), (i+2, j), ..., walking down column j as long
-    // as the cell (r, j) is in λ (i.e., λ_r > j).
-    let mut leg_len = 0;
-    for r in (i + 1).. {
-        if r >= lambda.len() || lambda[r] <= j {
-            break;
-        }
-        leg_len += 1;
-    }
-    // Hook size = arm + leg + 1 (the corner).
-    // Now build λ' by removing the hook.  The rule: for each row r
-    // touched by the leg, λ'_r = λ_{r+1} (the row below shifts up,
-    // dropping one cell at column j).  Equivalently:
-    //   λ'_i        = j + (cells in arm of row i+1 that are ≥ j) ?
-    // Standard formulation:
-    //   λ'_i        = (the column-j cell of row i+leg_len becomes
-    //                  the new last cell of row i)
-    // Simpler: collect the hook cells, remove them, then renormalize.
-    //
-    // Concrete (Cohn 2002 §I.1 style):
-    //   Hook removes the L-shape; new λ' is λ minus those cells.
-    //   For consistency with the partition shape, walk:
-    //   λ'_i = λ_{i+leg_len} - 1   if leg_len > 0
-    //        = j                    if leg_len == 0
-    //   λ'_{i+1} = λ_{i+1+leg_len} - 1  ... (etc) — basically the rows
-    //   below get "compressed up" by one.
-    //
-    // Cleanest: reconstruct the shape by removing arm cells and leg cells.
-    let mut shape: Vec<usize> = lambda.to_vec();
-    // Remove arm cells from row i: row i becomes length j.
-    shape[i] = j;
-    // Remove leg cells: each row r in (i+1..=i+leg_len) loses cell (r, j).
-    // Then "rotate": the new row i becomes λ_{i+leg_len} (after losing one cell).
-    // The classical hook-removal rule:
-    //   new_λ_i = λ_{i+leg_len} - 1    (for leg_len ≥ 1)
-    //   new_λ_r = λ_{r+1}               for i < r < i+leg_len
-    // i.e. shift the rows below the hook UP by one.
-    // Restore arm: add back arm cells to make row i correct length:
-    //   final λ'_i = (arm count remaining after rotation) + (column j stuff)
-    //
-    // Let me redo this properly.  The Murnaghan–Nakayama hook removal
-    // gives:
-    //   λ'_i = j  (the corner column is the new row length of row i)
-    //   λ'_{i+1} ... λ'_{i+leg_len-1} unchanged
-    //   λ'_{i+leg_len} = λ_{i+leg_len} - 1  (loses its column-j cell)
-    //   ... actually no, this is wrong too.
-    //
-    // The CORRECT rule (Stanley EC2 §7.17): a border strip of λ of
-    // size k corresponds to a HOOK of size k in λ (cell (i, j) with
-    // hook-length k).  Removing the strip gives λ' where:
-    //   λ'_r = λ_{r+1} - 1 + λ_{r+1}_offset
-    // ...
-    //
-    // Let me just brute-force this: remove the hook cells, then fix.
-    let _ = arm_len;  // unused; size = arm_len + leg_len + 1
-
-    // Hook cells:
-    let mut hook_cells: Vec<(usize, usize)> = Vec::new();
-    hook_cells.push((i, j));
-    for jj in (j + 1)..lambda[i] {
-        hook_cells.push((i, jj));
-    }
-    for r in (i + 1)..=(i + leg_len) {
-        hook_cells.push((r, j));
-    }
-    // After removing the hook, the resulting cells might NOT form a
-    // valid partition.  In the MN formulation, we apply a "rotation":
-    // for each leg cell (r, j), the row r loses a cell.  Then the rows
-    // are re-arranged: row (i+leg_len) becomes the new row i, etc.,
-    // EXCEPT this makes the partition "strict-decrease" issue.
-    //
-    // Simpler statement (Sagan 2001, "The Symmetric Group" Thm 4.10.4):
-    //   Let h_{ij}(λ) = hook length at (i,j).  Removing the rim hook
-    //   of length h_{ij} starting at (i,j) gives partition λ̃ where
-    //
-    //      λ̃_r = λ_r            for r < i,
-    //      λ̃_r = λ_{r+1} - 1   for i ≤ r < i + leg_len,
-    //                               (interpret λ_{n+1} as 0 if r = n - 1)
-    //      λ̃_{i+leg_len} = j  (the corner column),  (then the cells beyond λ are 0)
-    //      λ̃_r = λ_r            for r > i + leg_len.
-    //
-    // Wait, the rule is even simpler: just remove the hook cells, then
-    // observe that the shape obtained is a valid partition iff we
-    // SHIFT the rows below the hook up by appropriate amounts.
-
-    // Easier: enumerate hook removals via the bijection with border
-    // strips, returning the strip as a set of cells.  Then verify
-    // the resulting shape is a valid partition.
-    let mut new_shape: Vec<usize> = lambda.to_vec();
-    // Remove arm cells (row i, columns j+1 .. λ_i - 1):
-    new_shape[i] = j;
-    // For each leg cell (r, j), shift it: row r loses col j, but to
-    // keep partition shape, we remove the entire column-j cell.
-    for r in (i + 1)..=(i + leg_len) {
-        if new_shape[r] > 0 {
-            new_shape[r] -= 1;  // not quite: we want to remove (r, j).
-            // To remove (r, j) we need to shift cells (r, j+1), ..., (r, λ_r - 1)
-            // left by one.  But that breaks the row-length representation.
-        }
-    }
-    // The MN rim hook removal then rearranges so the shape is a
-    // partition.  The simplest correct statement:
-    //   After removing the hook, the remaining cells form a SKEW
-    //   shape that may or may not be a partition.  For MN, what
-    //   matters is the partition obtained by re-arranging.
-    //
-    // CORRECT formulation (Stanley EC2, eq 7.75): the partition λ̃
-    // obtained by hook removal at (i, j) has parts:
-    //
-    //      λ̃_k = λ_k            (k < i)
-    //      λ̃_k = λ_{k+1}        (i ≤ k < i + leg_len)   -- shift up
-    //      λ̃_{i + leg_len} = j  (the corner column becomes new row length)
-    //      λ̃_k = λ_k            (k > i + leg_len)
-    //
-    // Let's just use this directly.
-
-    let mut lam_prime: Vec<usize> = vec![0; lambda.len()];
-    for k in 0..i {
-        lam_prime[k] = lambda[k];
-    }
-    for k in i..(i + leg_len) {
-        if k + 1 < lambda.len() {
-            lam_prime[k] = lambda[k + 1];
-        }
-    }
-    if i + leg_len < lambda.len() {
-        lam_prime[i + leg_len] = j;
-    }
-    for k in (i + leg_len + 1)..lambda.len() {
-        lam_prime[k] = lambda[k];
-    }
-    // Trim trailing zeros.
-    while lam_prime.last() == Some(&0) {
-        lam_prime.pop();
-    }
-    // Verify partition shape: monotonic non-increasing.
-    for w in lam_prime.windows(2) {
-        if w[0] < w[1] {
-            return None;
-        }
-    }
-    Some((lam_prime, leg_len))
-}
 
 /// Enumerate all border strips of size `k` removable from partition
 /// `lambda` via the beta-number bijection: a strip of size `k`
 /// corresponds to choosing a β-number `β_j` such that `β_j − k` is a
 /// non-negative integer not already in the β-set.
 ///
-/// Returns one [`BorderStrip`] per removable strip.  The `cells`
-/// field is a placeholder marker `[(idx, k)]` (carries the β-index
-/// for downstream `remove_strip`); the `height` field is the actual
-/// strip height (rows touched − 1).
+/// Each returned [`BorderStrip`] carries the resulting partition
+/// `lambda_minus` directly (no recomputation in `remove_strip`).
 pub fn removable_border_strips(lambda: &[usize], k: usize) -> Vec<BorderStrip> {
     let mut strips = Vec::new();
     if k == 0 {
-        strips.push(BorderStrip { cells: vec![], height: 0 });
+        strips.push(BorderStrip { lambda_minus: lambda.to_vec(), height: 0 });
         return strips;
     }
     let beta = beta_numbers(lambda);
     for idx in 0..beta.len() {
-        if let Some((_, height)) = try_remove_hook(lambda, idx, k) {
-            // Encode the β-index in cells[0] so remove_strip can find it.
-            // cells[0] = (idx, k) is a marker, not a (row, col) pair.
+        if let Some((lam_minus, height)) = try_remove_hook(lambda, idx, k) {
             strips.push(BorderStrip {
-                cells: vec![(idx, k)],
+                lambda_minus: lam_minus,
                 height,
             });
         }
@@ -294,18 +141,10 @@ pub fn removable_border_strips(lambda: &[usize], k: usize) -> Vec<BorderStrip> {
     strips
 }
 
-/// Apply rim-hook removal.  `strip.cells[0] = (idx, k)` encodes the
-/// β-index and strip size.  Returns the resulting partition.
-fn remove_strip(lambda: &[usize], strip: &BorderStrip) -> Vec<usize> {
-    if strip.cells.is_empty() {
-        return lambda.to_vec();
-    }
-    let (idx, k) = strip.cells[0];
-    if let Some((lam_prime, _)) = try_remove_hook(lambda, idx, k) {
-        lam_prime
-    } else {
-        lambda.to_vec()
-    }
+/// Return the resulting partition after rim-hook removal.  Now a
+/// thin getter since `BorderStrip` carries `lambda_minus` directly.
+fn remove_strip(_lambda: &[usize], strip: &BorderStrip) -> Vec<usize> {
+    strip.lambda_minus.clone()
 }
 
 /// **Murnaghan–Nakayama character** χ^λ(μ) — irreducible character of
@@ -609,6 +448,15 @@ impl BrokenStrip {
 /// Algorithm: enumerate all sub-partitions ν ⊆ λ with |λ| - |ν| = k,
 /// and check that each connected component of the skew shape λ/ν is
 /// a connected border strip (no 2x2 block).
+///
+/// **Performance note (Gemini #r3143554484)**: this brute-force
+/// sub-partition enumeration is O(p(target_size)) per call and is
+/// the dominant cost for large `n`.  At `n ≤ 18` (4He / 6Li / smaller
+/// atomic-braid use cases) the cost is acceptable (≤ 385 partitions).
+/// For larger `n`, a rim-walking enumeration (cf. Halverson-Ram 2003
+/// §3) would reduce per-call cost from O(p(target)) to O(rim_length
+/// · #(broken-strip-shapes)) which is roughly O(n²).  Deferred until
+/// a use case requires `n ≥ 24`.
 fn removable_broken_strips(lambda: &[usize], k: usize) -> Vec<(Vec<usize>, BrokenStrip)> {
     let mut out = Vec::new();
     if k == 0 {

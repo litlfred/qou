@@ -130,30 +130,26 @@ def discover_for_isotope(
     # info (positive 32-bit ID) and `gen` is the partition's row count
     # (a stable per-partition statistic that disambiguates within a bin).
     new_ops = []
-    import hashlib
     for bin_label, entries in sorted(by_bin.items()):
         if bin_label == "0":
             continue  # vanishing-character bin is uninformative
-        bin_id = int(hashlib.sha256(bin_label.encode()).hexdigest()[:6], 16)
-        # NF marker: each entry contributes (bin_id, partition_height).
-        # Bin_id is constant within a bin → different bins → different NF.
-        # Encode bin_id mod (2^31 - 1) for sign field.
-        sign_value = (bin_id % (2**30)) + 1  # ensure positive, distinguishable
-        nf = sorted([
-            (sign_value, len(entry["lambda"]))
-            for entry in entries
-        ])
-        # Plancherel-like signature.
+        # Per Copilot review #r3144...: bin identity lives in the
+        # `fingerprint` metadata.  `braid_word_normal_form` stays
+        # empty since no real Hecke NF is computed for these bins.
         sig = {
-            "bin_label_hash": _bin_to_float(bin_label),
             "n_partitions_in_bin": float(len(entries)),
             "max_partition_depth": float(max(len(e["lambda"]) - 1 for e in entries)),
             "min_partition_depth": float(min(len(e["lambda"]) - 1 for e in entries)),
         }
+        fingerprint = {
+            "feeder": feeder_name,
+            "bin_label": bin_label,
+        }
         op = KnotOperation(
             n=fp["n"],
-            braid_word_normal_form=nf,
+            braid_word_normal_form=[],
             plancherel_signature=sig,
+            fingerprint=fingerprint,
         )
         cache_key = cache.add_operation(op, discovered_in=feeder_name)
         new_ops.append(cache_key)

@@ -8,7 +8,7 @@
 //! intermediate polynomials have few non-zero terms (≤ n).
 
 use num_bigint::BigInt;
-use num_traits::{One, Zero};
+use num_traits::{One, ToPrimitive, Zero};
 use std::collections::BTreeMap;
 use std::ops::{Add, AddAssign, Mul, MulAssign, Neg, Sub, SubAssign};
 
@@ -118,8 +118,8 @@ impl LaurentPolyQ {
             // q^{he/2}: use sqrt + powi pattern.
             let exponent_doubled = he as f64 / 2.0;
             let term = q.powf(exponent_doubled);
-            // BigInt → f64 via to_string parse (lossy; OK for f64 path).
-            let cf: f64 = c.to_string().parse().unwrap_or(0.0);
+            // BigInt → f64 via num_traits::ToPrimitive (Gemini review #r3143554485).
+            let cf = c.to_f64().unwrap_or(0.0);
             total += cf * term;
         }
         total

@@ -102,18 +102,18 @@ fn enumerate_ssyt_full(
                 return;
             }
         }
-        // Build reverse reading word.
+        // Build reverse reading word using an incrementing pointer
+        // since `cells` was populated in standard reading order
+        // (Gemini review #r3143554489).
         let mut rrw: Vec<usize> = Vec::with_capacity(cells.len());
+        let mut cell_ptr = 0;
         for i in 0..lambda.len() {
             let start = if i < mu.len() { mu[i] } else { 0 };
-            let mut row_entries: Vec<usize> = (start..lambda[i])
-                .map(|j| {
-                    let idx = cells.iter()
-                        .position(|&(r, c)| r == i && c == j)
-                        .unwrap();
-                    filling[idx]
-                })
-                .collect();
+            let mut row_entries: Vec<usize> = Vec::with_capacity(lambda[i] - start);
+            for _ in start..lambda[i] {
+                row_entries.push(filling[cell_ptr]);
+                cell_ptr += 1;
+            }
             row_entries.reverse();
             rrw.extend(row_entries);
         }
@@ -152,88 +152,10 @@ fn enumerate_ssyt_full(
     }
 }
 
-/// Recursive SSYT enumeration with lattice-property pruning.
-fn enumerate_ssyt(
-    cells: &[(usize, usize)],
-    lambda: &[usize],
-    mu: &[usize],
-    nu: &[usize],
-    filling: &mut [usize],
-    entry_count: &mut [usize],
-    cell_idx: usize,
-    count: &mut i64,
-) {
-    if cell_idx == cells.len() {
-        // Verify content matches ν exactly.
-        for (v, &target) in nu.iter().enumerate() {
-            if entry_count[v + 1] != target {
-                return;
-            }
-        }
-        *count += 1;
-        return;
-    }
-    let (r, c) = cells[cell_idx];
-    // Determine valid range of entries for cell (r, c):
-    //  - must be ≥ entry directly above (column-strictly-increasing)
-    //    Wait — actually for SSYT: row-weakly-increasing,
-    //    column-strictly-increasing.  So (r, c) entry > entry of (r-1, c).
-    //  - must be ≥ entry directly to the left (within the skew shape
-    //    — if (r, c-1) is in the skew, weakly increasing).
-
-    let max_v = nu.len();  // entries are in 1..=max_v
-
-    // Compute lower bound on entry for cell (r, c).
-    let mut lb = 1usize;
-    // Column-strict: must be > entry above (if above is in skew).
-    if r > 0 {
-        // Find (r-1, c) in cells.
-        if c >= mu_at(mu, r - 1) && c < lambda[r - 1] {
-            // (r-1, c) is in the skew; find its filling.
-            let above_idx = find_cell_idx(cells, r - 1, c);
-            if let Some(idx) = above_idx {
-                lb = lb.max(filling[idx] + 1);
-            }
-        }
-    }
-    // Row-weak: must be ≥ entry to the left (if left is in skew).
-    if c > mu_at(mu, r) {
-        // Find (r, c-1) in cells.
-        let left_idx = find_cell_idx(cells, r, c - 1);
-        if let Some(idx) = left_idx {
-            lb = lb.max(filling[idx]);
-        }
-    }
-
-    for v in lb..=max_v {
-        // Skip if we'd exceed nu[v-1].
-        if entry_count[v] >= nu[v - 1] {
-            continue;
-        }
-        // Lattice-property check: after placing this v in cell (r, c),
-        // for every entry value w < v at the same partial-fill state,
-        // we need entry_count[w] > entry_count[w+1] post-placement.
-        // Simplification: at every prefix of the reverse reading word
-        // (equivalent to filling order here), entry_count[1] >=
-        // entry_count[2] >= ... must hold AFTER placement.
-        entry_count[v] += 1;
-        // Lattice check: entry_count[v-1] >= entry_count[v].
-        // (For v=1 this is vacuously true.)
-        let mut lattice_ok = true;
-        for w in 2..=v {
-            if entry_count[w - 1] < entry_count[w] {
-                lattice_ok = false;
-                break;
-            }
-        }
-        if lattice_ok {
-            filling[cell_idx] = v;
-            enumerate_ssyt(cells, lambda, mu, nu, filling, entry_count,
-                           cell_idx + 1, count);
-        }
-        entry_count[v] -= 1;
-    }
-}
+// (Legacy `enumerate_ssyt` (filling-order lattice check) and helpers
+// `mu_at`, `find_cell_idx` removed per Gemini review #r3143554491:
+// superseded by `enumerate_ssyt_full` which performs the correct
+// reverse-reading-word ballot check at each leaf.)
 
 #[inline]
 fn mu_at(mu: &[usize], i: usize) -> usize {

@@ -279,28 +279,45 @@ fn lr_coefficient(lambda: Vec<usize>, mu: Vec<usize>, nu: Vec<usize>) -> i64 {
     littlewood_richardson::lr_coefficient(&lambda, &mu, &nu)
 }
 
-/// **q-deformed character of an arbitrary braid word** via Hecke
-/// expansion of inverse generators.
+/// **Experimental q-deformed character of a braid word.**
 ///
-/// `chi_q_word(lambda, n_strands, word)` computes `χ_λ(β; q)` for
-/// `β = product of (sign_i · σ_{gen_i})` returning a Laurent
-/// polynomial as `[(half_exp, coeff_str), ...]`.  See
-/// [`mn_chi_q`] for the polynomial encoding format.
+/// `chi_q_word(lambda, n_strands, word)` returns a Laurent polynomial
+/// as `[(half_exp, coeff_str), ...]`.  See [`mn_chi_q`] for the
+/// polynomial encoding format.
 ///
-/// Internally expands `σ⁻¹ = σ − h` for each negative generator
-/// (cost `2^(#negatives)` per character — practical for short
-/// atomic braids).
+/// **WARNING (Copilot review)**: the underlying
+/// `seminormal_mn::chi_lambda_braid_qdef` is correct at `q = 1`
+/// (collapses to classical MN) and on canonical/minimal-length
+/// permutation braids at `q ≠ 1`, but provides a deliberately
+/// simplified (and incorrect) q-deformation for non-minimal braid
+/// words.  For correct q ≠ 1 evaluation on arbitrary braids, use
+/// [`chi_via_gp_hoefsmit`] (basis expansion + Hoefsmit per T_w) or
+/// the direct seminormal kernel [`chi_lambda_braid`].
+///
+/// To avoid accidental misuse this binding rejects words containing
+/// negative generators (which trigger the unsupported `σ⁻¹ = σ − h`
+/// expansion).
 #[pyfunction]
 fn chi_q_word(
     lambda: Vec<usize>,
     n_strands: usize,
     word: Vec<(i32, u32)>,
-) -> Vec<(i32, String)> {
+) -> PyResult<Vec<(i32, String)>> {
+    if word.iter().any(|(sign, _)| *sign < 0) {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "chi_q_word is experimental for q != 1 and only supported \
+             for canonical/minimal-length permutation braids; words \
+             with negative generators are rejected. Use \
+             chi_via_gp_hoefsmit or chi_lambda_braid for correct \
+             evaluation on arbitrary braids.",
+        ));
+    }
     let poly = seminormal_mn::chi_lambda_braid_qdef(&lambda, n_strands, &word);
-    poly.terms
+    Ok(poly
+        .terms
         .into_iter()
         .map(|(he, c)| (he, c.to_string()))
-        .collect()
+        .collect())
 }
 
 /// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)`.

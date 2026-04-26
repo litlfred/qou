@@ -86,23 +86,23 @@ def discover_with_binner(
     for bin_label, items in sorted(by_bin.items()):
         if bin_label == "0":
             continue
-        # Encode bin into NF marker — but DON'T include per-partition
-        # data, so that the same bin label across different isotopes
-        # at the same n produces the same cache_key (enables cross-
-        # isotope sharing detection via discovered_in tracking).
-        bin_id = int(hashlib.sha256(bin_label.encode()).hexdigest()[:7], 16)
-        sign_value = (bin_id % (2**30)) + 1
-        # Single-element NF — bin id only, no partition heights.
-        nf = [(sign_value, 1)]
+        # Per Copilot review #r3144...: keep bin identity in the
+        # `fingerprint` metadata rather than overloading
+        # `braid_word_normal_form` (reserved for actual Hecke NFs).
+        # Cache_key derives from (n, fingerprint) when NF is empty.
         sig = {
-            "bin_label_hash": float(bin_id % 1_000_000) / 1_000_000.0,
             "n_partitions_in_bin": float(len(items)),
             "max_height": float(max(len(l) for l, _ in items)),
         }
+        fingerprint = {
+            "feeder": feeder_name,
+            "bin_label": bin_label,
+        }
         op = KnotOperation(
             n=n,
-            braid_word_normal_form=nf,
+            braid_word_normal_form=[],  # no real NF for coarse-bin entries
             plancherel_signature=sig,
+            fingerprint=fingerprint,
         )
         cache_key = cache.add_operation(op, discovered_in=feeder_name)
         new_ops.append(cache_key)

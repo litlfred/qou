@@ -69,20 +69,24 @@ def discover_for_isotope(
         groups.setdefault(sig, []).append(i)
 
     # Each group becomes a candidate KnotOperation.
+    # Per Copilot review #r3144...: channel-signature is a fingerprint,
+    # not an NF.  Stored in fingerprint metadata; cache_key derives from
+    # (n, fingerprint) when braid_word_normal_form is empty.
     new_ops = []
     for sig, gen_indices in sorted(groups.items()):
-        # Synthetic NF marker: 1-indexed generator + sign +1 (the
-        # discovery doesn't yet inspect the actual word; this is a
-        # placeholder for the recurring-position identification).
-        nf = sorted([(1, i + 1) for i in gen_indices])
-        # Canonicalize: smallest representative for the cache key.
+        fingerprint = {
+            "feeder": feeder_name,
+            "channel_signature": sig,
+            "gen_indices": ",".join(str(i) for i in sorted(gen_indices)),
+        }
         op = KnotOperation(
             n=n_strands,
-            braid_word_normal_form=nf,
+            braid_word_normal_form=[],
             plancherel_signature={
-                "channel_signature": _signature_to_dict(sig),
+                "channel_signature": _signature_hash_to_float(sig),
                 "n_generators_grouped": float(len(gen_indices)),
             },
+            fingerprint=fingerprint,
         )
         cache_key = cache.add_operation(op, discovered_in=feeder_name)
         new_ops.append(cache_key)
@@ -106,9 +110,12 @@ def discover_for_isotope(
     }
 
 
-def _signature_to_dict(sig: str) -> float:
+def _signature_hash_to_float(sig: str) -> float:
     """Hash the signature to a single float for plancherel_signature
     storage (KnotOperation.plancherel_signature requires float values).
+
+    Renamed from `_signature_to_dict` per Copilot review #r3143...
+    (the function returns a float, not a dict).
     """
     import hashlib
     h = int(hashlib.sha256(sig.encode()).hexdigest()[:8], 16)
