@@ -1,0 +1,72 @@
+{
+  "computation": "bw-lagrangian-prefactor-attempt",
+  "description": "Attempt to derive BW-Lagrangian prefactors \u03bb_V, \u03bb_S, \u03bb_C, \u03bb_Pauli, \u03bb_pair from (m_e, q_0) alone via structural building-block sweep.  No fitting allowed. Reports closest natural q-arithmetic candidate for each empirical BW constant.",
+  "timestamp_utc": "2026-04-26T00:10:14.887666+00:00",
+  "calibrations": {
+    "m_e_MeV": 0.51099895,
+    "q_0": 1.1099785955541805
+  },
+  "empirical_BW_targets": {
+    "\u03bb_V (15.75 MeV)": 15.75,
+    "\u03bb_S (17.8 MeV)": 17.8,
+    "\u03bb_C (0.71 MeV)": 0.71,
+    "\u03bb_Pauli (23.7 MeV)": 23.7,
+    "\u03bb_pair (12 MeV)": 12.0
+  },
+  "candidate_blocks_MeV": {
+    "m_e": 0.51099895,
+    "m_e \u00b7 [2]_q": 1.0275661886778316,
+    "m_e \u00b7 [3]_q": 1.5553306816242625,
+    "m_e \u00b7 [4]_q": 2.100043409444312,
+    "m_e \u00b7 [5]_q": 2.667640035440206,
+    "m_e \u00b7 [6]_q": 3.264305585757514,
+    "m_e \u00b7 [9]_q": 5.2957467664717,
+    "m_e \u00b7 [10]_q": 6.077962377969351,
+    "m_e \u00b7 8G": 3.74445965488548,
+    "m_e \u00b7 \u03c0\u00b2": 5.043357485872041,
+    "m_e \u00b7 4\u03c0": 6.421402189248393,
+    "m_e \u00b7 2\u03c0\u00b2": 10.086714971744081,
+    "m_e \u00b7 \u03a3_3": 1.276112846344318,
+    "m_e \u00b7 \u03a3_3 \u00b7 [10]_q": 15.178437979420796,
+    "m_e \u00b7 \u03a3_3 \u00b7 [9]_q": 13.225018328669597,
+    "m_e \u00b7 8G \u00b7 [4]_q": 15.388540074636897,
+    "m_e \u00b7 8G \u00b7 4": 14.97783861954192,
+    "m_e \u00b7 8G \u00b7 [5]_q": 19.547731920903406,
+    "m_e \u00b7 8G \u00b7 \u03c0": 11.763566943451597,
+    "m_e/(q-1)": 4.6463491138896975,
+    "m_e/(q-1)\u00b2": 42.24775821583113,
+    "m_e \u00b7 (q+1)/(q-1)": 9.803697177779394,
+    "m_e \u00b7 [2]_q\u00b2": 2.0663296316242623,
+    "m_e \u00b7 [3]_q\u00b2": 4.733969667064469,
+    "m_e \u00b7 h": 0.10682960502349025,
+    "m_e \u00b7 h\u00b2": 0.0223338316242625
+  },
+  "best_matches": {
+    "\u03bb_V (15.75 MeV)": {
+      "best_match": "m_e \u00b7 8G \u00b7 [4]_q",
+      "value": 15.388540074636897,
+      "err_pct": -2.2949836530990693
+    },
+    "\u03bb_S (17.8 MeV)": {
+      "best_match": "m_e \u00b7 8G \u00b7 [5]_q",
+      "value": 19.547731920903406,
+      "err_pct": 9.818718656760701
+    },
+    "\u03bb_C (0.71 MeV)": {
+      "best_match": "m_e",
+      "value": 0.51099895,
+      "err_pct": -28.028316901408456
+    },
+    "\u03bb_Pauli (23.7 MeV)": {
+      "best_match": "m_e \u00b7 8G \u00b7 [5]_q",
+      "value": 19.547731920903406,
+      "err_pct": -17.520118477200818
+    },
+    "\u03bb_pair (12 MeV)": {
+      "best_match": "m_e \u00b7 8G \u00b7 \u03c0",
+      "value": 11.763566943451597,
+      "err_pct": -1.9702754712366932
+    }
+  },
+  "verdict": "Sweep finds no exact closed forms.  BW prefactors are phenomenological \u2014 deriving them from 3 cals requires categorical structural work beyond block-sweeping.  Shell physics (Term 7) IS derivable; volume / surface / Coulomb / Pauli / pair sectors are OPEN."
+}

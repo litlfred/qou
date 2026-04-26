@@ -11,7 +11,7 @@ required for any value of $A$.*
 
 $$
   B_\lambda(Z, N)
-  = m_e \cdot H_q(\lambda) \cdot y_\lambda \cdot
+  = m_e \cdot H_q(\lambda) \cdot u_\lambda \cdot
     \big( \ln\big| \mathrm{tr}\, \mathbf{M}_\lambda^{(0..A)} \big|
           - \ln d_\lambda \big),
 $$
@@ -28,7 +28,7 @@ $$
   H_q(\lambda)$ — for $\lambda = (2,2)$ this is
   $[3]_q \cdot [2]_q^2 \approx 6.29$ MeV, the empirical Wigner
   scale \cite{satula1997});*
-- *$y_\lambda = w_\lambda / d_\lambda - 1/[k]_q!$ is the LP-dual
+- *$u_\lambda = w_\lambda / d_\lambda - 1/[k]_q!$ is the LP-dual
   shadow price of $\lambda$'s Frobenius positivity constraint
   ([prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price));
   the constant $1/[k]_q!$ is the dual variable of the
@@ -44,7 +44,7 @@ $$
   generator index.*
 
 *One-dimensional representations have $w_\lambda / d_\lambda =
-1/[k]_q!$ (so $y_\lambda = 0$); they contribute nothing to
+1/[k]_q!$ (so $u_\lambda = 0$); they contribute nothing to
 $B_{\mathrm{unified}}$.  Only mixing partitions
 ($d_\lambda \geq 2$) carry shadow-price weight.*
 
@@ -52,7 +52,7 @@ $B_{\mathrm{unified}}$.  Only mixing partitions
 
 $$
   \Delta B_\lambda(\mathrm{step}\ k)
-  = m_e \cdot H_q(\lambda) \cdot y_\lambda \cdot
+  = m_e \cdot H_q(\lambda) \cdot u_\lambda \cdot
     \Big( \ln\big| \mathrm{tr}\, \mathbf{M}_\lambda^{(0..k)} \big|
         - \ln\big| \mathrm{tr}\, \mathbf{M}_\lambda^{(0..k-1)} \big| \Big),
 $$
@@ -64,7 +64,7 @@ $(A, Z_k, N_k, \mathrm{nuc}, \{\Delta B_\lambda\}_\lambda,
 *Proof.*
 By [prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price),
 the BW coefficient of partition $\lambda$ is the LP-dual variable
-$y_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The
+$u_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The
 categorical scale $C_\lambda = m_e \cdot H_q(\lambda)$ (the
 $q$-hook product over the Young diagram of $\lambda$) is the
 universal constant determined by the partition algebra, with no

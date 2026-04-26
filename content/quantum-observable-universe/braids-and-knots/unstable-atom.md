@@ -51,7 +51,7 @@ isotope stability changes abruptly between adjacent $A$ values
 
 **Computational shortcut (phase interior).**
 *For an atom $K$ deep inside a phase — i.e.,
-$\min_\lambda |y_\lambda(q)| \gg 0$ at the operating $q$ —
+$\min_\lambda |u_\lambda(q)| \gg 0$ at the operating $q$ —
 the ILP is **strictly feasible** with a wide margin.  This means
 the per-generator $\hat V_i^{\mathrm{full}}$ values
 ([mass-endomorphism-tower](#prop:mass-endomorphism-tower)) are

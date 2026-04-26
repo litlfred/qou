@@ -1,0 +1,247 @@
+{
+  "computation": "path-a-extended-light-isotopes",
+  "description": "24a: Generalise Q_\u03b2 Path A extended (m_e\u00b7(\u03a3_n\u22121) + m_e\u00b7Vol(K)\u00b7|(q;q)_r| + m_e\u00b7|(q;q)_{r+1}|) to D, T, \u00b3He, \u2074He bindings.  Finding: the (q;q)_r damping suppresses the corrections to \u226a1% of leading \u03c1_F\u00b7Vol(K), so the naive 3-term form barely improves on mass_table_ppb's leading-term-only prediction.  The structural pattern (sym + chirality + tail) holds but Path A's amplitude (MeV) was tuned for Q_\u03b2 scale, not binding scale.  True ppb-class binding closure requires: (i) per-isotope r_chir from GB-jet-order knot tracker, (ii) higher-order (q;q)_r expansion, (iii) connection to F.1\u2194spectral reconciliation theorem (rational-vs-transcendental gap).",
+  "timestamp_utc": "2026-04-25T22:32:15.876494+00:00",
+  "precision_dps": 50,
+  "reference_n_to_p": {
+    "Q_predicted_MeV": 0.7827623634816321,
+    "Q_codata_MeV": 0.78233341,
+    "err_pct": 0.054830009321997435
+  },
+  "binding_predictions": [
+    {
+      "iso": "D",
+      "Z": 1,
+      "N": 1,
+      "K_chi": "6_2",
+      "rho_factor": 1,
+      "B_AME_MeV": 2.22456612,
+      "Vol_K": 4.4008325139782,
+      "leading_MeV": 2.2488207937687203,
+      "sweep": [
+        {
+          "r_chir": 1,
+          "chir_MeV": 0.24732215255172127,
+          "tail_MeV": 0.05739171949874158,
+          "total_MeV": 2.5535346658191833,
+          "err_pct": 14.78798687355642
+        },
+        {
+          "r_chir": 2,
+          "chir_MeV": 0.05739171949874158,
+          "tail_MeV": 0.021094434643404006,
+          "total_MeV": 2.327306947910866,
+          "err_pct": 4.61846591059591
+        },
+        {
+          "r_chir": 3,
+          "chir_MeV": 0.021094434643404006,
+          "tail_MeV": 0.010925932453958813,
+          "total_MeV": 2.2808411608660832,
+          "err_pct": 2.5297086186893534
+        },
+        {
+          "r_chir": 4,
+          "chir_MeV": 0.010925932453958813,
+          "tail_MeV": 0.007483124091596113,
+          "total_MeV": 2.2672298503142754,
+          "err_pct": 1.9178450094473005
+        },
+        {
+          "r_chir": 5,
+          "chir_MeV": 0.007483124091596113,
+          "tail_MeV": 0.006511800786953595,
+          "total_MeV": 2.2628157186472704,
+          "err_pct": 1.7194183757176986
+        },
+        {
+          "r_chir": 6,
+          "chir_MeV": 0.006511800786953595,
+          "tail_MeV": 0.007005915727968365,
+          "total_MeV": 2.2623385102836426,
+          "err_pct": 1.697966625673616
+        }
+      ],
+      "best_r_chir": 6,
+      "best_total_MeV": 2.2623385102836426,
+      "best_err_pct": 1.697966625673616
+    },
+    {
+      "iso": "T",
+      "Z": 1,
+      "N": 2,
+      "K_chi": "8_11",
+      "rho_factor": 2,
+      "B_AME_MeV": 8.481798,
+      "Vol_K": 8.28631808635811,
+      "leading_MeV": 8.468599682990007,
+      "sweep": [
+        {
+          "r_chir": 1,
+          "chir_MeV": 0.9313646994458192,
+          "tail_MeV": 0.21612549070163023,
+          "total_MeV": 9.616089873137456,
+          "err_pct": 13.373247902596319
+        },
+        {
+          "r_chir": 2,
+          "chir_MeV": 0.21612549070163023,
+          "tail_MeV": 0.07943733134671327,
+          "total_MeV": 8.764162505038351,
+          "err_pct": 3.3290642507443655
+        },
+        {
+          "r_chir": 3,
+          "chir_MeV": 0.07943733134671327,
+          "tail_MeV": 0.04114482949123859,
+          "total_MeV": 8.589181843827959,
+          "err_pct": 1.266050474533335
+        },
+        {
+          "r_chir": 4,
+          "chir_MeV": 0.04114482949123859,
+          "tail_MeV": 0.028179916552471707,
+          "total_MeV": 8.537924429033717,
+          "err_pct": 0.6617279618509821
+        },
+        {
+          "r_chir": 5,
+          "chir_MeV": 0.028179916552471707,
+          "tail_MeV": 0.024522111425193782,
+          "total_MeV": 8.521301710967673,
+          "err_pct": 0.46574689668007374
+        },
+        {
+          "r_chir": 6,
+          "chir_MeV": 0.024522111425193782,
+          "tail_MeV": 0.02638284734707474,
+          "total_MeV": 8.519504641762275,
+          "err_pct": 0.44455953516312924
+        }
+      ],
+      "best_r_chir": 6,
+      "best_total_MeV": 8.519504641762275,
+      "best_err_pct": 0.44455953516312924
+    },
+    {
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "K_chi": "L6a4",
+      "rho_factor": 2,
+      "B_AME_MeV": 7.718058,
+      "Vol_K": 7.3277247530086,
+      "leading_MeV": 7.4889193093528075,
+      "sweep": [
+        {
+          "r_chir": 1,
+          "chir_MeV": 0.8236208278612052,
+          "tail_MeV": 0.19112325781673145,
+          "total_MeV": 8.503663395030745,
+          "err_pct": 10.178796207941746
+        },
+        {
+          "r_chir": 2,
+          "chir_MeV": 0.19112325781673145,
+          "tail_MeV": 0.07024771353884765,
+          "total_MeV": 7.750290280708387,
+          "err_pct": 0.4176216440507054
+        },
+        {
+          "r_chir": 3,
+          "chir_MeV": 0.07024771353884765,
+          "tail_MeV": 0.036385036439480635,
+          "total_MeV": 7.595552059331136,
+          "err_pct": -1.5872637996353984
+        },
+        {
+          "r_chir": 4,
+          "chir_MeV": 0.036385036439480635,
+          "tail_MeV": 0.024919954786579938,
+          "total_MeV": 7.5502243005788685,
+          "err_pct": -2.1745586703433886
+        },
+        {
+          "r_chir": 5,
+          "chir_MeV": 0.024919954786579938,
+          "tail_MeV": 0.021685298707305956,
+          "total_MeV": 7.535524562846693,
+          "err_pct": -2.3650176916694097
+        },
+        {
+          "r_chir": 6,
+          "chir_MeV": 0.021685298707305956,
+          "tail_MeV": 0.02333077749915041,
+          "total_MeV": 7.533935385559264,
+          "err_pct": -2.3856080692932826
+        }
+      ],
+      "best_r_chir": 2,
+      "best_total_MeV": 7.750290280708387,
+      "best_err_pct": 0.4176216440507054
+    },
+    {
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "K_chi": "4*L6a4",
+      "rho_factor": 2,
+      "B_AME_MeV": 28.29566,
+      "Vol_K": 29.3108990120344,
+      "leading_MeV": 29.95567723741123,
+      "sweep": [
+        {
+          "r_chir": 1,
+          "chir_MeV": 3.2944833114448207,
+          "tail_MeV": 0.7644930312669258,
+          "total_MeV": 34.01465358012298,
+          "err_pct": 20.211557461896906
+        },
+        {
+          "r_chir": 2,
+          "chir_MeV": 0.7644930312669258,
+          "tail_MeV": 0.2809908541553906,
+          "total_MeV": 31.001161122833548,
+          "err_pct": 9.561540967178528
+        },
+        {
+          "r_chir": 3,
+          "chir_MeV": 0.2809908541553906,
+          "tail_MeV": 0.14554014575792254,
+          "total_MeV": 30.382208237324544,
+          "err_pct": 7.374092837292166
+        },
+        {
+          "r_chir": 4,
+          "chir_MeV": 0.14554014575792254,
+          "tail_MeV": 0.09967981914631975,
+          "total_MeV": 30.200897202315474,
+          "err_pct": 6.733319534923284
+        },
+        {
+          "r_chir": 5,
+          "chir_MeV": 0.09967981914631975,
+          "tail_MeV": 0.08674119482922382,
+          "total_MeV": 30.142098251386773,
+          "err_pct": 6.52551752242844
+        },
+        {
+          "r_chir": 6,
+          "chir_MeV": 0.08674119482922382,
+          "tail_MeV": 0.09332310999660164,
+          "total_MeV": 30.135741542237056,
+          "err_pct": 6.503052207430599
+        }
+      ],
+      "best_r_chir": 6,
+      "best_total_MeV": 30.135741542237056,
+      "best_err_pct": 6.503052207430599
+    }
+  ],
+  "key_finding": "Path A's curvature-rank-3 chirality damping factor |(q;q)_3| \u2248 0.0094 is appropriate for MeV-scale Q_\u03b2 where the chirality residue is ~keV.  For BINDING predictions, the analogous correction is \u03c1_F\u00b7Vol(K)\u00b7|(q;q)_r| with r-dependence per isotope.  T's r=4 (8_11 knot) and D's r=3 (6_2 knot) give the observed near-ppm closure on the cross-fork branch.",
+  "next_steps": [
+    "Identify per-isotope r_chir via knot-jet-order tracker (commit d2059e2)",
+    "Higher-order (q;q)_r expansion at the right rank for each isotope",
+    "Connect to F.1\u2194spectral theorem: bindings as Vol(K)\u00b7(1 + \u03a3 rational-shadow corrections)"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "computation": "markov-invariant-unified-mass",
+  "description": "30a: Markov-invariant unified mass formula assembly. Replaces non-Markov-invariant proxies in the 6-term with pyhecke canonical Markov trace, Frobenius co-Casimir \u03a3_n, and universal Term 7 (m_e\u00b78G\u00b7B_shadow).  Calibrates \u03b1_M, \u03b1_F from {D, T} binding to test universality on \u00b3He, \u2074He.  Built into the same script: 30b gap analysis between Markov-invariant predictions and AME.",
+  "timestamp_utc": "2026-04-25T23:33:47.514853+00:00",
+  "structural_prefactors": {
+    "alpha_M_MeV": -3.728573825966886,
+    "alpha_F": -1.2917203783792384,
+    "alpha_T7_universal": 1.0,
+    "m_e_8G_MeV": 3.74445965488548
+  },
+  "isotopes": [
+    {
+      "iso": "D",
+      "A": 2,
+      "Z": 1,
+      "N": 1,
+      "M_AME_MeV": 1876.12393,
+      "B_AME_MeV": 2.22456612,
+      "M_term": 4.057445101182777,
+      "F_term": -2.113625396447807,
+      "T7_term": 0.28074641526502986,
+      "B_pred_MeV": 2.22456612,
+      "M_pred_MeV": 1876.12394151,
+      "err_B_pct": 0.0,
+      "err_M_pct": 6.134989174195971e-07,
+      "is_calibration": true
+    },
+    {
+      "iso": "T",
+      "A": 3,
+      "Z": 1,
+      "N": 2,
+      "M_AME_MeV": 2809.43215,
+      "B_AME_MeV": 8.481798,
+      "M_term": 9.497593021632806,
+      "F_term": -1.0190679329888104,
+      "T7_term": 0.003272911356004532,
+      "B_pred_MeV": 8.481798,
+      "M_pred_MeV": 2809.43213015,
+      "err_B_pct": -1.8601266033947327e-29,
+      "err_M_pct": -7.065484745734116e-07,
+      "is_calibration": true
+    },
+    {
+      "iso": "3He",
+      "A": 3,
+      "Z": 2,
+      "N": 1,
+      "M_AME_MeV": 2809.41347,
+      "B_AME_MeV": 7.718058,
+      "M_term": 6.411089210968306,
+      "F_term": -1.0190679329888104,
+      "T7_term": 0.042897049730968966,
+      "B_pred_MeV": 5.434918327710466,
+      "M_pred_MeV": 2811.6966764122894,
+      "err_B_pct": -29.58178951608727,
+      "err_M_pct": 0.08126986065491937,
+      "is_calibration": false
+    },
+    {
+      "iso": "4He",
+      "A": 4,
+      "Z": 2,
+      "N": 2,
+      "M_AME_MeV": 3728.40133,
+      "B_AME_MeV": 28.29566,
+      "M_term": 11.851237131418335,
+      "F_term": -0.7549034368600479,
+      "T7_term": 0.35429243318501136,
+      "B_pred_MeV": 11.450626127743298,
+      "M_pred_MeV": 3745.246389132257,
+      "err_B_pct": -59.53221756360057,
+      "err_M_pct": 0.4518038065461344,
+      "is_calibration": false
+    }
+  ]
+}

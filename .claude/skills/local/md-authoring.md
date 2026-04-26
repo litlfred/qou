@@ -48,6 +48,36 @@ The HTML renderer converts `--` → `–` and `---` → `—`.
 **Do not** use Unicode en/em dash characters directly — they work
 but are less portable.
 
+### 3a. Multi-line display math: never start a line with `+`/`-`/`*`
+
+GitHub's markdown renderer parses `+ `, `- `, or `* ` at the start of
+a line as a bullet list — even inside a `$$...$$` block. The display
+math then breaks open and the continuation lines render as raw LaTeX
+with bullets. Always put the binary operator at the **end** of the
+preceding line:
+
+```md
+$$
+F(x) = a \;+\;
+       b \;+\;
+       c
+$$
+```
+
+**Wrong** (each `+ ` line becomes a bullet item on GitHub):
+
+```md
+$$
+F(x) = a
++ b
++ c
+$$
+```
+
+The LaTeX pipeline tolerates either form, but the GitHub blob view
+and the HTML viewer both break on the second. Verified by the
+`markdown-render-check` skill.
+
 ### 4. Display math: blank line before `$$`
 
 The `mdToHtml` regex for display math requires `$$` to be preceded
