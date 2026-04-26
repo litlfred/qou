@@ -2,8 +2,6 @@ import QOU.Basic
 import QOU.PathIntegrals
 import QOU.QuantumObservableUniverse.SubstrateParameter
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Defs
-import Mathlib.Data.Int.Defs
 import Mathlib.Data.Int.Lemmas
 import Mathlib.Data.Finset.Basic
 import Mathlib.Algebra.Order.Field.Basic

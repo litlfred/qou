@@ -1,3 +1,17 @@
+import QOU.Interactions.BetaReceptivity
+import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.CentralElement
+import QOU.Interactions.ConfinementLP
+import QOU.Interactions.ConfinementSDP
+import QOU.Interactions.DemandStability
+import QOU.Interactions.DerivedAtom
+import QOU.Interactions.GramIndefinite
+import QOU.Interactions.HeckeEngine
+import QOU.Interactions.NuclearOperatorRegimes
+import QOU.Interactions.NucleonNFWitness
+import QOU.Interactions.ProtonTrefoilSign
+import QOU.Interactions.TrefoilVanishing
+
 /-!
 # Interactions — Module Index
 
@@ -19,17 +33,3 @@ Re-exports all particle interaction formalization modules.
 - ProtonTrefoilSign: sign analysis of trefoil coefficient
 - TrefoilVanishing: B₃ trefoil coefficient = 0 (fully proved)
 -/
-
-import QOU.Interactions.BetaReceptivity
-import QOU.Interactions.BorromeanUnique
-import QOU.Interactions.CentralElement
-import QOU.Interactions.ConfinementLP
-import QOU.Interactions.ConfinementSDP
-import QOU.Interactions.DemandStability
-import QOU.Interactions.DerivedAtom
-import QOU.Interactions.GramIndefinite
-import QOU.Interactions.HeckeEngine
-import QOU.Interactions.NuclearOperatorRegimes
-import QOU.Interactions.NucleonNFWitness
-import QOU.Interactions.ProtonTrefoilSign
-import QOU.Interactions.TrefoilVanishing

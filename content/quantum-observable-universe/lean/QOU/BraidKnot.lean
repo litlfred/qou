@@ -1,3 +1,11 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ConfinementCategory
+import QOU.BraidKnot.ElectronShell
+import QOU.BraidKnot.DressedParticle
+import QOU.BraidKnot.LevelSufficiency
+import QOU.BraidKnot.ShellClosureStability
+import QOU.BraidKnot.ConfinementPhaseStratification
+
 /-!
 # BraidKnot — Module Index
 
@@ -16,11 +24,3 @@ and phase stratification.
 - ShellClosureStability: σ_F monotone, noble-gas terminality
 - ConfinementPhaseStratification: Ω(P) open, local μ constancy
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ConfinementCategory
-import QOU.BraidKnot.ElectronShell
-import QOU.BraidKnot.DressedParticle
-import QOU.BraidKnot.LevelSufficiency
-import QOU.BraidKnot.ShellClosureStability
-import QOU.BraidKnot.ConfinementPhaseStratification
