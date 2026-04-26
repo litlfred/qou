@@ -12,10 +12,14 @@ Solving this with q kept symbolic (sympy.Symbol) gives y_λ as exact
 q-rational functions — no numerical interpolation, no Padé
 ambiguity, no condition-number issue.
 
-Tractable for small n in pure Python: n ≤ 4 completes in seconds;
-n = 5 requires > 20 min of sympy matrix-arithmetic and is beyond the
-reasonable wall-clock budget here.  For n ≥ 5 the sibling Rust
-kernel (phase-b-heavy-rust-character-kernel) is preferred.
+Tractable for small n in pure Python: n ≤ 4 completes in seconds.
+n = 5 is beyond pure sympy by both paths tested:
+  - `simplify_each=True`  (default): timed out after 20 min on the
+    7×7 character matrix with length-4 generator products.
+  - `simplify_each=False` (skip): sympy's HeuristicGCDFailed in the
+    later `Matrix.solve` simplification step.
+For n ≥ 5 the sibling Rust kernel
+(phase-b-heavy-rust-character-kernel) is preferred.
 
 References:
 - prop:alpha-k-derivation-procedure §"Symbolic linear-system solve"
@@ -95,14 +99,24 @@ def cycle_type_word(mu):
     return word
 
 
-def chi_lambda_symbolic(sigmas, dim, word):
-    """χ_λ(σ_w) symbolic: trace of Π σ_{w_i}."""
+def chi_lambda_symbolic(sigmas, dim, word, simplify_each=True):
+    """χ_λ(σ_w) symbolic: trace of Π σ_{w_i}.
+
+    Default `simplify_each=True` calls `sp.simplify` per character.
+    Setting it to False skips the per-character simplify, which
+    might in principle be faster, but at n=5 the unsimplified
+    polynomial expansion triggers sympy's HeuristicGCDFailed in
+    later linear-solve simplification.  Pure sympy for n ≥ 5 is
+    therefore not feasible by either path; use the sibling Rust
+    kernel.
+    """
     if dim == 0:
         return sp.Integer(0)
     M = sp.eye(dim)
     for idx in word:
         M = M * sigmas[idx - 1]
-    return sp.simplify(sp.trace(M))
+    tr = sp.trace(M)
+    return sp.simplify(tr) if simplify_each else tr
 
 
 def solve_y_symbolic(n: int, q):
