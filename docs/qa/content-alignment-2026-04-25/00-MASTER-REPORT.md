@@ -56,10 +56,31 @@ Plus 2 back-matter directories flagged for §4b notation-introduction review (lo
 >
 > **Simplification sweep (2026-04-26):** Ch 5 `jones-polynomials.md`
 > stub expanded to motivating paragraphs on the $\mathrm{SU}_q(2)$ /
-> Markov-trace bridge to Ch 4. The remaining ~53 simplification items
-> (top of the section "Top expository simplification opportunities"
-> above) require author-level editorial judgment and are tracked as
-> follow-up work, not auto-applied.
+> Markov-trace bridge to Ch 4.
+>
+> **Themed simplification pass (2026-04-26, author-approved):**
+> Author selected 13 items across 4 themes for action. Items
+> completed in commits `c6316f0` and follow-up:
+> - **Theme 4 (in-block tightening):** Ch 0 intro ¶2 condensed;
+>   Ch 11 mass-comparison-table.md notes folded into a single
+>   footer block.
+> - **Theme 3 (visual scaffolding):** Ch 7
+>   `p3-blowup-yekutieli.md`, `q-aubin-lions.md`, `leray-profile.md`
+>   each got a 2-line summary box + section headings.  Ch 8
+>   `information-paradox-incompleteness.md` got an explicit
+>   "syntax boundary / semantic truth" pre-figure.  Ch 8
+>   `golden-ratio-transport.md` got a tikzpicture schematic of
+>   $\Pi(q_0)$ vs $\Pi(q_{\mathrm{gold}})$ degeneration.
+> - **Themes 1 & 2 (boilerplate factoring + section consolidation):**
+>   Sub-agents dispatched for these (Ch 4 knot-calc setup, Ch 9
+>   coord setup, Ch 12 molecular assembly, Ch 8 regime tables,
+>   Ch 6 Frobenius/Hochschild dedup, Ch 11 tritium-audit split)
+>   all hit a rate limit before producing output.  These items
+>   are deferred for follow-up after the rate-limit window resets.
+>
+> **Editor skill update:** `.claude/skills/local/editor.md`
+> §Responsibilities #4 expanded to surface the post-QA notation
+> hot-spots (σ_i Hecke, §7ab approximation, registers).
 
 ## Per-chapter scoreboard
 

@@ -1,3 +1,10 @@
+> **Summary.** A $q$-deformed Aubin–Lions compactness lemma:
+> the family $\{v_q\}_{q>1}$ of $q$-NS solutions admits a
+> subsequence converging strongly in $L^2(0,T; \mathcal{H})$ to a
+> classical-NS distributional solution as $q \to 1$.
+> Time derivatives are bounded uniformly in a weaker dual space,
+> giving the compactness needed to take the classical limit.
+
 The [counter-example construction](#conj:ns-counterexample)
 requires that the family of q-NS solutions $\{v_q\}_{q > 1}$
 converges to a distributional solution of the classical
