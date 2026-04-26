@@ -118,7 +118,7 @@ compute different quantities at different levels of description:
 |---|---|---|
 | Algebra | Per-nucleon $H_3(q)$ | Full quark-level $H_9(q)$ |
 | Dimensionless part | $|ab(a-b)| = 0.035$ | $|\Delta\mathrm{net}| = 0.449$ |
-| Energy scale | $m_e = 0.511$ MeV | $\kappa_q = 0.018$ MeV |
+| Energy scale | $m_e \approx 0.511$ MeV | $\kappa_q \approx 0.018$ MeV |
 | Inputs consumed | 2 ($q_0$, $m_e$) | 2 ($q_0$, $\kappa_q$) |
 
 The branching path uses the per-nucleon channel decomposition in

@@ -227,7 +227,7 @@ smoothness is located in a single cohomology class — offering an
 obstruction-based perspective on Navier–Stokes regularity.
 
 [Chapter 8](#chap:info-theory) addresses Wigner's mystery directly:
-the mechanics of a QOU turn out to be Turing complete — the
+the mechanics of a QOU are Turing complete — the
 combinatorics supporting logic and computation is a property of
 the algebraic substrate, not the medium.  The Gröbner–Shirshov
 basis makes this computation *confluent* — every reduction
@@ -352,7 +352,7 @@ parameter $q$ and are attached as witnesses to the proofs they
 support wherever appropriate.  The implementations in Rust and
 Python, together with the Lean sources, are available at
 [https://github.com/litlfred/qou](https://github.com/litlfred/qou).
-The author used large language models throughout the drafting and
+We used large language models throughout the drafting and
 formalisation process, both because a physical disability prevents
 sustained typing and to assist with Lean proof engineering.  Human
 adjudication of every line is not complete.
