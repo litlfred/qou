@@ -45,10 +45,14 @@ theorem mass_tower_split_by_predicate
     ∑ λ ∈ parts.filter P, alpha (λ.length - 1) * m_lambda λ
     + ∑ λ ∈ parts.filter (fun λ => ¬ P λ), alpha (λ.length - 1) * m_lambda λ
     := by
-  rw [← Finset.sum_filter_add_sum_filter_not parts P]
-  -- Ref: [manuscript] prop:chirality-residue-mass-term, Step 1
-  -- (structural refinement; no analytic content beyond the unified
-  -- mass formula proposition).
+  -- Ref: [manuscript] prop:chirality-residue-mass-term, Step 1.
+  -- Structural refinement; no analytic content beyond the unified
+  -- mass formula proposition.
+  simpa using
+    (Finset.sum_filter_add_sum_filter_not
+      (s := parts)
+      (p := P)
+      (f := fun lam => alpha (lam.length - 1) * m_lambda lam)).symm
 
 /-- **Chirality residue is the predicate split with `P = is_chirality`.** -/
 def chirality_residue

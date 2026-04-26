@@ -48,7 +48,7 @@ from hecke_characters import (
     _RUST_CHI_AVAILABLE as _RUST_AVAILABLE,
 )
 from hecke_core import _step_chain_generic
-from q_mpmath import set_q, qint, qfac as _qfac_shared
+from q_mpmath import set_q, qfac as _qfac_shared
 
 set_q(Q0_FLOAT)
 

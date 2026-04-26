@@ -254,6 +254,17 @@ def chi_lambda_braid(shape, word, q_value=None):
         return _pyn.chi_lambda_braid(list(shape), word_marshalled, float(q_value))
 
     # Python fallback: build seminormal matrices and multiply.
+    # `build_seminormal_matrices` is calibrated against the global
+    # substrate parameter `q0`/`h`, so the fallback is *only* valid at
+    # `q_value == q0`.  Reject non-default q_value here rather than
+    # silently returning an inconsistent character (Copilot review
+    # #r3142936624).
+    if not math.isclose(float(q_value), float(q0), rel_tol=0.0, abs_tol=0.0):
+        raise ValueError(
+            "chi_lambda_braid() Python fallback only supports "
+            "q_value == q0; install the Rust kernel (pyhecke_native) "
+            "for non-default q_value."
+        )
     sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
     if dim == 0:
         return 0.0

@@ -322,16 +322,22 @@ pub fn chi_lambda_braid(shape: &[usize], word: &[(i32, u32)], q: f64) -> f64 {
     let h = q - 1.0 / q;
 
     // Pre-marshal word into block references with sign, so the inner
-    // loop is allocation-free.
+    // loop is allocation-free.  Invalid generator indices panic loudly
+    // (Copilot review #r3142936635): silent dropping was a debugging
+    // hazard — caller bugs would silently compute the wrong character.
     let resolved: Vec<(i32, &[Block])> = word
         .iter()
-        .filter_map(|&(sign, gen)| {
-            let idx = (gen as usize).saturating_sub(1);
-            if idx < all_blocks.len() {
-                Some((sign, all_blocks[idx].as_slice()))
-            } else {
-                None
-            }
+        .map(|&(sign, gen)| {
+            assert!(
+                gen != 0 && (gen as usize) <= all_blocks.len(),
+                "chi_lambda_braid: invalid generator index {} for n = {} \
+                 (valid range: 1..={})",
+                gen,
+                n,
+                all_blocks.len()
+            );
+            let idx = gen as usize - 1;
+            (sign, all_blocks[idx].as_slice())
         })
         .collect();
 
@@ -400,7 +406,8 @@ mod tests {
     #[test]
     fn trivial_rep_character_is_q_to_word_count() {
         // Trivial rep V_(n): dim 1, all sigma act as q.  So
-        // chi_(n)(σ_1) = q, chi_(n)(σ_1²) = q², chi_(n)(σ_1⁻¹) = -1/q.
+        // chi_(n)(σ_1) = q, chi_(n)(σ_1²) = q², chi_(n)(σ_1⁻¹) = 1/q
+        // (since σ·σ⁻¹ = 1 and σ acts as q on the trivial rep).
         let q = 1.10998;
         let chi_pos = chi_lambda_braid(&[3], &[(1, 1)], q);
         assert!((chi_pos - q).abs() < 1e-10, "chi_(3)(σ₁) = q = {q}; got {chi_pos}");
