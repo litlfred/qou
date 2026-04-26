@@ -48,22 +48,38 @@ noncomputable def r_3_h4_coefficient : S4Class → ℝ
     Verified against y_(1^4) · χ_(1^4)(r_3) to ~10⁻¹⁷ numerical precision. -/
 noncomputable def alpha_3_H4 : ℝ := 0.0034625204
 
-/-- Lower-depth orthogonality: at H_4, χ_λ(r_3) = 0 for every λ ⊢ 4
-    with depth(λ) < 3.  Verified numerically to ~10⁻³¹ in the witness. -/
-theorem r_3_orthogonal_to_lower_depths : True := by
-  trivial -- Ref: explicit-alpha-k-h4.md proof; numerical verification
-          -- in wedderburn-orthogonal-r-3-h4.witness.json.
+/-- Abstract proposition: at H_4, χ_λ(r_3) = 0 for every λ ⊢ 4 with
+    depth(λ) < 3, where r_3 = Σ_C r_3_h4_coefficient(C) · T_{w_C}.
+    Stated as an opaque `Prop` since the full Hecke-trace formalisation
+    (representation theory of H_4(R, q), Hoefsmit characters, etc.) is
+    deferred. -/
+constant R3OrthogonalToLowerDepthsH4 : Prop
 
-/-- Markov pairing equality: tr_M(r_3) = y_(1^4) · χ_(1^4)(r_3) at H_4.
-    Both sides evaluate to ~+0.003463 at q_0 ≈ 1.110. -/
-theorem alpha_3_H4_markov_pairing : True := by
-  trivial -- Ref: explicit-alpha-k-h4.md proof; central character
-          -- expansion + orthogonality of lower-depth strata.
+/-- Lower-depth orthogonality witness for the explicit depth-3
+    element `r_3` in `H_4`. Verified numerically to ~10⁻³¹ in
+    `wedderburn-orthogonal-r-3-h4.witness.json`. -/
+theorem r_3_orthogonal_to_lower_depths : R3OrthogonalToLowerDepthsH4 := by
+  sorry -- Ref: explicit-alpha-k-h4.md proof; numerical verification
+        -- in wedderburn-orthogonal-r-3-h4.witness.json.
 
-/-- Closed-form expression for α_3(H_4) in Q(q^{1/2}) is open.
-    Numerical value at q_0 is +0.003463. -/
-theorem alpha_3_H4_value_at_q0 : True := by
-  trivial -- Ref: [manuscript] explicit-alpha-k-h4.md;
-          -- closed q-rational form remains open.
+/-- Abstract proposition: at H_4, the Markov pairing of r_3 reduces
+    to the depth-3 stratum contribution
+    tr_M(r_3) = y_(1^4) · χ_(1^4)(r_3) by orthogonality of lower
+    depths. -/
+constant Alpha3H4MarkovPairing : Prop
+
+/-- Markov pairing equality for the explicit depth-3 element `r_3`
+    in `H_4`. Both sides evaluate to ~+0.003463 at q_0 ≈ 1.110. -/
+theorem alpha_3_H4_markov_pairing : Alpha3H4MarkovPairing := by
+  sorry -- Ref: explicit-alpha-k-h4.md proof; central character
+        -- expansion + orthogonality of lower-depth strata.
+
+/-- The numerical value of `alpha_3_H4` at q_0 ≈ 1.110 is
+    +0.0034625204 by direct definitional unfolding. The closed-form
+    q-rational expression in Q(q^{1/2}) remains open. -/
+theorem alpha_3_H4_value_at_q0 :
+    alpha_3_H4 = 0.0034625204 := rfl
+  -- Ref: [manuscript] explicit-alpha-k-h4.md;
+  -- closed q-rational form remains open.
 
 end QOU.BraidsAndKnots

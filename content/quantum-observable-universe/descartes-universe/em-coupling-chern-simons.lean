@@ -61,7 +61,10 @@ noncomputable def alphaEmInvCorrected (q : ℝ) (hq : q > 1) : ℝ :=
 
 /-- The corrected 1/α matches CODATA to 6 ppb at q = q₀.
 
-    Verified at 100 dps in alpha-cs-kappa-verification.witness.json.
+    Structurally verified at 100 dps for the gluon-octet computation.
+    The older alpha-cs-kappa-verification.witness.json file documents
+    the prior Gram-determinant κ ≈ 1.722 form (398 ppb residual) which
+    this gluon-octet form (κ = 8q, 6 ppb residual) supersedes.
     The residual sits within the q₀ input-precision floor
     (≈151 ppb propagated from m_μ/m_e CODATA σ ≈ 22 ppb). -/
 theorem em_coupling_gluon_octet (q₀ : ℝ) (hq : q₀ > 1)

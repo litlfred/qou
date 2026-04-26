@@ -107,7 +107,8 @@ def compute_orthogonal_r_3():
 
     # Sanity: verify Σ_λ y_λ · χ_λ(T_w_C) == tr_M(T_w_C)
     print("\nSanity check: tr_M(T_{w_C}) vs Σ_λ y_λ · χ_λ(T_{w_C})")
-    W = json.load(open(Path(__file__).parent / "y-lambda-jones-markov-witness.json"))
+    with open(Path(__file__).parent / "y-lambda-jones-markov-witness.json") as f:
+        W = json.load(f)
     y4 = {tuple(w["partition"]): mp.mpf(str(w["y_lambda"]))
           for w in W["tables_by_n"]["4"]["weights"]}
 
