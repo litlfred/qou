@@ -137,6 +137,7 @@ When a user request arrives, route to the right skill(s):
 | "notation check / symbol audit / register compliance" | `local/rendering-auditor` (pass 2) + `local/ontologist` | reader |
 | "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
 | "check markdown render / GitHub view / proof markdown" | `local/markdown-render-check` | reader |
+| "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` | collaborator |
 
 ### External skill packages
 
@@ -170,7 +171,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`

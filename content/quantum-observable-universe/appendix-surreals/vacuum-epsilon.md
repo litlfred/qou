@@ -90,7 +90,7 @@ The most direct of the conjectures: pure computation.
 3. **Apply $\mathrm{St}$**: standard-part of
    $\mathfrak{m}(\mathfrak{H}) + \varepsilon \cdot c_{\mathfrak{H}}$
    equals $\mathfrak{m}(\mathfrak{H})$ — the original mass. So
-   archimedean predictions are unchanged. ✓
+   archimedean predictions are unchanged.
 
 4. **Verify Möbius regularisation absorbed**: show that the
    diagonal subtraction in
