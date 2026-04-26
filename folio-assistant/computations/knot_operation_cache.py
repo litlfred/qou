@@ -173,6 +173,15 @@ class KnotOperationCache:
         self, parent_n: int, parent_braid_id: str,
         factor_keys: list[str], discovered_by: str,
     ) -> None:
+        # Idempotency: a factorization is fully determined by
+        # (parent_braid_id, factor_keys, discovered_by).  Re-running a
+        # feeder must not append a duplicate witness — only the first
+        # occurrence's timestamp is kept.
+        for existing in self.factorizations:
+            if (existing.parent_braid_id == parent_braid_id
+                    and existing.factors == factor_keys
+                    and existing.discovered_by == discovered_by):
+                return
         self.factorizations.append(FactorizationWitness(
             parent_n=parent_n,
             parent_braid_id=parent_braid_id,
