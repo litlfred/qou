@@ -349,5 +349,7 @@
   "total_ln_phi_weighted": 59.342013538607766,
   "target": 4.353367301439661,
   "residual": 54.988646237168105,
-  "relative_err_ppb": 12631290316.115372
+  "relative_err_ppb": 12631290316.115372,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

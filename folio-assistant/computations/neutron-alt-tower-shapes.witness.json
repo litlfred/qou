@@ -62,5 +62,7 @@
       "m_p_std_MeV": 955.4916893413767,
       "err_pct": 1.8352460228402738
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -176,5 +176,7 @@
       "reconstruction_matches": true,
       "tr_M_at_q0": 1.5893934459539054
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

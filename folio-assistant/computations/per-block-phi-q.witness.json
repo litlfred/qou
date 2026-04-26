@@ -222,5 +222,7 @@
     "E0_BETA_DECAY": 0.782,
     "E0_PROTON_TOWER": 0.0007958232069470076,
     "E0_FROM_NET": 4.154925
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

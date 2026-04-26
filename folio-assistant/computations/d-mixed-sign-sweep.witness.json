@@ -362,5 +362,7 @@
       "err_pct_2m_e": -90.34723853901092
     },
     "hyperbolic_count": 9
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

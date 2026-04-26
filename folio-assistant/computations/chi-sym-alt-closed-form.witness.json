@@ -13,7 +13,7 @@
       "source": "atom_braid_word_3A + classify_factor"
     },
     {
-      "name": "D: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "name": "D: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
       "computed": -1.055839785327462,
       "expected": -1.0558397853274497,
       "passed": true,
@@ -29,7 +29,7 @@
       "source": "atom_braid_word_3A + classify_factor"
     },
     {
-      "name": "T: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "name": "T: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
       "computed": -1.079039223648286,
       "expected": -1.079039223648267,
       "passed": true,
@@ -45,7 +45,7 @@
       "source": "atom_braid_word_3A + classify_factor"
     },
     {
-      "name": "3He: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "name": "3He: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
       "computed": -1.0790392236482862,
       "expected": -1.079039223648267,
       "passed": true,
@@ -61,7 +61,7 @@
       "source": "atom_braid_word_3A + classify_factor"
     },
     {
-      "name": "4He: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "name": "4He: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
       "computed": -1.1027484115976813,
       "expected": -1.1027484115976558,
       "passed": true,
@@ -75,7 +75,7 @@
   "scriptFile": "chi_sym_alt_closed_form.py",
   "scriptHash": "1e2dc7c31e22",
   "scriptCommitSha": "",
-  "description": "Exact closed form χ_sym(β_atom)·χ_alt(β_atom) = −(1 + H_A²/4)^(2A+1) derived from eigenvalue algebra of Hecke factors + ud-factor counting in atom_braid_word_3A.",
+  "description": "Exact closed form \u03c7_sym(\u03b2_atom)\u00b7\u03c7_alt(\u03b2_atom) = \u2212(1 + H_A\u00b2/4)^(2A+1) derived from eigenvalue algebra of Hecke factors + ud-factor counting in atom_braid_word_3A.",
   "contentBlock": "rem:chi-sym-alt-closed-form",
   "parameters": {
     "q": 1.1099785955541805,
@@ -137,20 +137,22 @@
       }
     ],
     "factor_eigenvalue_algebra": {
-      "sym_eigenvalue": "c·q + d",
+      "sym_eigenvalue": "c\u00b7q + d",
       "alt_eigenvalue": "-c/q + d",
-      "per_factor_product": "d² − c² + c·d·H_A",
+      "per_factor_product": "d\u00b2 \u2212 c\u00b2 + c\u00b7d\u00b7H_A",
       "pure_sigma_product": -1.0,
       "pure_sigma_inv_product": -1.0,
-      "ud_product_symbolic": "-(1 + H_A²/4)"
+      "ud_product_symbolic": "-(1 + H_A\u00b2/4)"
     },
     "closed_form": {
       "formula": "chi_sym * chi_alt = -(1 + H_A^2/4)^(2A+1)",
       "equivalent": "-([2]_q / 2)^(4A+2)",
-      "ud_factor_count": "n_ud = 2A + 1 (2 per nucleon + 1 p→n transition)"
+      "ud_factor_count": "n_ud = 2A + 1 (2 per nucleon + 1 p\u2192n transition)"
     }
   },
   "caveats": [
-    "This is a structural identity (no fitting). It explains the numerical coincidence χ_sym·χ_alt ≈ −1.08 as a function of A alone, but does NOT explain the atom-dependent density deviation (D −1.1%, T +0.2%, ³He +3.1%, ⁴He −5.5%)."
-  ]
+    "This is a structural identity (no fitting). It explains the numerical coincidence \u03c7_sym\u00b7\u03c7_alt \u2248 \u22121.08 as a function of A alone, but does NOT explain the atom-dependent density deviation (D \u22121.1%, T +0.2%, \u00b3He +3.1%, \u2074He \u22125.5%)."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

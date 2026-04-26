@@ -86,5 +86,7 @@
     "delta_net_times_E0": 0.7823334100000222,
     "Q_observed": 0.7823334100000222,
     "match": true
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

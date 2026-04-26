@@ -12,5 +12,7 @@
   "rank4_T4_MeV": 0.0024826967214169548,
   "predicted_Qbeta_MeV": 0.7827623635349183,
   "codata_Qbeta_MeV": 0.7823334100000222,
-  "error_pct": 0.054830016130357845
+  "error_pct": 0.054830016130357845,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

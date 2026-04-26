@@ -109,5 +109,7 @@
         "proton_with_extra_sigma0": 0.9996588024131967
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

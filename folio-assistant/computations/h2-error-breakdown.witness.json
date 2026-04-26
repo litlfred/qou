@@ -40,5 +40,7 @@
     "(a) Refined knot Dehn-filling / mutant at Vol = V_target",
     "(b) Crossing-graded 1st-order correction with \u03b7_c fit",
     "(c) First-principles H_3(q) Markov trace from Hecke machinery"
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -355,5 +355,7 @@
       "abs_weight_q0": 0.000654115986597148
     }
   ],
-  "computation_time_s": 236.5
+  "computation_time_s": 236.5,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

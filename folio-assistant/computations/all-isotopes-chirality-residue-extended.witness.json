@@ -563,5 +563,7 @@
       ],
       "ame_binding": 39.24454
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

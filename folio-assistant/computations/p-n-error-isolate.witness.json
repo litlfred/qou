@@ -10,7 +10,7 @@
   "scriptFile": "p_n_error_isolate.py",
   "scriptHash": "c85d8c5c8e38",
   "scriptCommitSha": "",
-  "description": "Term-by-term breakdown of the proton and neutron tower masses, showing which tower term drives the neutron −55% undershoot and why a single geometric-series α cannot close it.",
+  "description": "Term-by-term breakdown of the proton and neutron tower masses, showing which tower term drives the neutron \u221255% undershoot and why a single geometric-series \u03b1 cannot close it.",
   "data": {
     "level_0": {
       "V_e": 0.5938490006705095,
@@ -49,25 +49,25 @@
       }
     },
     "per_term_asymmetry": {
-      "|V̂_0 V̂_1|": {
+      "|V\u0302_0 V\u0302_1|": {
         "p_Hecke": 0.9603954911881503,
         "n_Hecke": 0.8332902504795161,
         "delta_Hecke": -0.12710524070863416,
         "delta_MeV": -0.00010300972187647848
       },
-      "Φ_q(|V̂_0|)": {
+      "\u03a6_q(|V\u0302_0|)": {
         "p_Hecke": 671221.4103737363,
         "n_Hecke": 36047.91315102721,
         "delta_Hecke": -635173.4972227091,
         "delta_MeV": -514.7627660940096
       },
-      "Φ_q(|V̂_1|)": {
+      "\u03a6_q(|V\u0302_1|)": {
         "p_Hecke": 425756.9858019375,
         "n_Hecke": 475250.3602002083,
         "delta_Hecke": 49493.3743982708,
         "delta_MeV": 40.11084596567678
       },
-      "z² Φ_q(|V̂_0 V̂_1|)": {
+      "z\u00b2 \u03a6_q(|V\u0302_0 V\u0302_1|)": {
         "p_Hecke": 82016.16886541968,
         "n_Hecke": 6137.397714011542,
         "delta_Hecke": -75878.77115140813,
@@ -85,5 +85,7 @@
       "m_n_corrected": 411.22715938831794,
       "m_n_err_pct": -56.232195182244425
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

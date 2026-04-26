@@ -54,5 +54,7 @@
     "ppb_target": "1e-9",
     "limited_by": "CODATA m_\u03bc/m_e at \u03c3(q)/q \u2248 1.22e-09",
     "comment": "Internal arithmetic is at 50 digits.  The framework's DIMENSIONLESS predictions (ratios, equality of computed quantities) can be checked at 50-digit precision.  Absolute (MeV) predictions are bounded to the CODATA-propagated relative uncertainty above (~1.22e-9 with current m_\u03bc/m_e), which is already at 1-ppb-class."
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

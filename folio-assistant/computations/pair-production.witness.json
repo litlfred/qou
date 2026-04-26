@@ -339,5 +339,7 @@
       "E_pair": -11.024827346787026,
       "residual_percent": 1178.7524462415263
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

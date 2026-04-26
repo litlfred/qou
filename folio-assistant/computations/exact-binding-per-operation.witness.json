@@ -177,5 +177,7 @@
       "err_pct": -92.75997606680411,
       "precision_digits": 100
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

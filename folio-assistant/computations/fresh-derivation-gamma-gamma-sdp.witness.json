@@ -274,5 +274,7 @@
     "err_n_pct": -99.94607770954727,
     "ratio_pn_fresh": 0.9912734400171135,
     "ratio_pn_codata": 0.9986234781189752
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

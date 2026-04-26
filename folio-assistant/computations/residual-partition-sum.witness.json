@@ -87,5 +87,7 @@
   ],
   "sub_ppm_p_uMeV": 352.085,
   "sub_ppm_n_uMeV": 685.495,
-  "sub_ratio_n_over_p": 1.9469588309641137
+  "sub_ratio_n_over_p": 1.9469588309641137,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

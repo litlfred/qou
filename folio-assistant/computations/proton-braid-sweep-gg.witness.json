@@ -237,5 +237,7 @@
     }
   ],
   "best_variant": "baseline_11",
-  "best_err_pct": 1.8352833718332153
+  "best_err_pct": 1.8352833718332153,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

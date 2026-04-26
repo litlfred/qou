@@ -77,5 +77,7 @@
     "observation": "Nucleon-level \u0394_A \u2248 \u0394_q for all light nuclei: r \u2248 1. Q_pred(\u00b3H) \u2248 Q_NEUTRON, far above observed 0.019 MeV.",
     "root_cause": "With corrected Hecke inverse (c=1, d=-h), the matrices T_pp and T_nn differ only in the constant term. The nucleon-level \u0394_A is insensitive to nuclear binding. Binding suppression enters only at quark level (L1).",
     "next_step": "Quark-level (L1) computation for \u00b3H and 14C via Rust hecke-engine with corrected crossing convention."
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

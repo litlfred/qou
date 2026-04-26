@@ -353,5 +353,7 @@
         "err_pct": 0.22005736824205852
       }
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

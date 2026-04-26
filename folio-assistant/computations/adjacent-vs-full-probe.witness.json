@@ -382,5 +382,7 @@
       "dm_m_pct_all_subsets_noresonance": 4.037856464694355,
       "E0_all_subsets_noresonance": 0.007420947547292148
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -458,5 +458,7 @@
     "max_pct_3ch": 0.502,
     "max_pct_4ch": 0.502,
     "max_pct_5ch": Infinity
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

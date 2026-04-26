@@ -10,7 +10,7 @@
   "scriptFile": "explore_items_1_and_2.py",
   "scriptHash": "aebc7e056e77",
   "scriptCommitSha": "",
-  "description": "Two-part exploration: (1) level-2 brane-tower V̂^(2) for proton/neutron residuals; (2) alternative neutron braid structures — test whether any captures the factor-2 gap.",
+  "description": "Two-part exploration: (1) level-2 brane-tower V\u0302^(2) for proton/neutron residuals; (2) alternative neutron braid structures \u2014 test whether any captures the factor-2 gap.",
   "data": {
     "item_1_level_2": {
       "m_p_err_L0": 1.8352460228402738,
@@ -92,5 +92,7 @@
         }
       ]
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

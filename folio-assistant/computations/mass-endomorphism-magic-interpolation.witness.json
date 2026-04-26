@@ -249,5 +249,7 @@
       "is_anchor": true
     }
   ],
-  "scope": "Anchors are CALIBRATED from AME (3 datapoints used for r). Non-anchor atoms are PREDICTIONS via interpolation. Magic anchors: 4He (A=4), 16O (A=16), 40Ca (A=40). Light nuclei A < 4: extrapolation using r(4He)."
+  "scope": "Anchors are CALIBRATED from AME (3 datapoints used for r). Non-anchor atoms are PREDICTIONS via interpolation. Magic anchors: 4He (A=4), 16O (A=16), 40Ca (A=40). Light nuclei A < 4: extrapolation using r(4He).",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

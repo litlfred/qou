@@ -211,5 +211,7 @@
       }
     }
   ],
-  "status": "preserved \u2014 not used in authoritative predictions pending neutron-tower gap resolution"
+  "status": "preserved \u2014 not used in authoritative predictions pending neutron-tower gap resolution",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

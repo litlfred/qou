@@ -86,5 +86,7 @@
       "mass_MeV": 2328.803580828245,
       "err_pct": null
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -34,7 +34,7 @@
   "scriptFile": "h2-molecular-binding.py",
   "scriptHash": "a9f24ca06cbc",
   "scriptCommitSha": "54c633b3287db1e06b4ca7007e9d548e4a946da7",
-  "description": "H₂ molecular braid binding energy from LP dual. Enumerates all 24 strand orderings of H₄(q), finds optimal binding by comparing molecular Φ₁ with 2 isolated H atoms.",
+  "description": "H\u2082 molecular braid binding energy from LP dual. Enumerates all 24 strand orderings of H\u2084(q), finds optimal binding by comparing molecular \u03a6\u2081 with 2 isolated H atoms.",
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
     "q": 1.1099785955541805,
@@ -131,5 +131,7 @@
         "binding": 0.687012518457808
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

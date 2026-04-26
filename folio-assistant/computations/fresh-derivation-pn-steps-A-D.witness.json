@@ -416,5 +416,7 @@
         "manifold_name": "unnamed link"
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

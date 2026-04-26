@@ -130,5 +130,7 @@
   },
   "caveats": [
     "Suggestive partial fit, not a derivation. D and 3He fit at <1%; T fits via interpolation only. Per-nucleon scaling A=2 -> A=3 not derived from first principles."
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

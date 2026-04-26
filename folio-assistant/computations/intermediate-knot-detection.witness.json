@@ -5,7 +5,7 @@
   "commitSha": "8396fb23fd14e7e30ce3c5e78e348d9380d9c3be",
   "assertions": [
     {
-      "name": "knot_detected(³H)",
+      "name": "knot_detected(\u00b3H)",
       "computed": "trefoil",
       "expected": "trefoil",
       "passed": true,
@@ -14,7 +14,7 @@
       "source": "cosine_similarity=0.999"
     },
     {
-      "name": "knot_detected(⁴He)",
+      "name": "knot_detected(\u2074He)",
       "computed": "hopf",
       "expected": "hopf",
       "passed": true,
@@ -43,7 +43,7 @@
     ]
   },
   "data": {
-    "²H": [
+    "\u00b2H": [
       {
         "A": 1,
         "Z": 1,
@@ -53,7 +53,7 @@
         "cos_sim": 0.0486,
         "frob": 1.263,
         "min_Gx": 0.3463,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.489028,
         "stable": true
       },
@@ -66,7 +66,7 @@
         "cos_sim": 0.9779,
         "frob": 1.6086,
         "min_Gx": 0.403,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.75131,
         "stable": true
       },
@@ -74,17 +74,17 @@
         "A": 2,
         "Z": 1,
         "N": 1,
-        "nuc": "e⁻",
+        "nuc": "e\u207b",
         "knot": "inv_trefoil",
         "cos_sim": 0.0121,
         "frob": 0.4691,
         "min_Gx": 0.1381,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.290283,
         "stable": true
       }
     ],
-    "³H": [
+    "\u00b3H": [
       {
         "A": 1,
         "Z": 1,
@@ -94,7 +94,7 @@
         "cos_sim": 0.0486,
         "frob": 1.263,
         "min_Gx": 0.3463,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.489028,
         "stable": true
       },
@@ -107,7 +107,7 @@
         "cos_sim": 0.9779,
         "frob": 1.6086,
         "min_Gx": 0.403,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.75131,
         "stable": true
       },
@@ -120,7 +120,7 @@
         "cos_sim": 0.0321,
         "frob": 0.5769,
         "min_Gx": 0.2083,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.35698,
         "stable": true
       },
@@ -128,17 +128,17 @@
         "A": 3,
         "Z": 1,
         "N": 2,
-        "nuc": "e⁻",
+        "nuc": "e\u207b",
         "knot": "trefoil",
         "cos_sim": 0.9987,
         "frob": 1.5271,
         "min_Gx": 0.2083,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.715442,
         "stable": true
       }
     ],
-    "⁴He": [
+    "\u2074He": [
       {
         "A": 1,
         "Z": 1,
@@ -148,7 +148,7 @@
         "cos_sim": 0.0486,
         "frob": 1.263,
         "min_Gx": 0.3463,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.489028,
         "stable": true
       },
@@ -161,7 +161,7 @@
         "cos_sim": 0.9779,
         "frob": 1.6086,
         "min_Gx": 0.403,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.75131,
         "stable": true
       },
@@ -174,7 +174,7 @@
         "cos_sim": 0.1077,
         "frob": 1.7393,
         "min_Gx": 0.506,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.578315,
         "stable": true
       },
@@ -187,7 +187,7 @@
         "cos_sim": 0.9386,
         "frob": 3.0289,
         "min_Gx": 0.6804,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 1.589716,
         "stable": true
       },
@@ -195,17 +195,17 @@
         "A": 4,
         "Z": 2,
         "N": 2,
-        "nuc": "e⁻",
+        "nuc": "e\u207b",
         "knot": "hopf",
         "cos_sim": 0.965,
         "frob": 2.3626,
         "min_Gx": 0.5045,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 1.427904,
         "stable": true
       }
     ],
-    "⁶Li": [
+    "\u2076Li": [
       {
         "A": 1,
         "Z": 1,
@@ -215,7 +215,7 @@
         "cos_sim": 0.0486,
         "frob": 1.263,
         "min_Gx": 0.3463,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.489028,
         "stable": true
       },
@@ -228,7 +228,7 @@
         "cos_sim": 0.9779,
         "frob": 1.6086,
         "min_Gx": 0.403,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.75131,
         "stable": true
       },
@@ -241,7 +241,7 @@
         "cos_sim": 0.1077,
         "frob": 1.7393,
         "min_Gx": 0.506,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.578315,
         "stable": true
       },
@@ -254,7 +254,7 @@
         "cos_sim": 0.9386,
         "frob": 3.0289,
         "min_Gx": 0.6804,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 1.589716,
         "stable": true
       },
@@ -267,7 +267,7 @@
         "cos_sim": 0.2267,
         "frob": 6.8802,
         "min_Gx": 1.3123,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 1.429531,
         "stable": true
       },
@@ -280,7 +280,7 @@
         "cos_sim": 0.8589,
         "frob": 6.1516,
         "min_Gx": 1.3478,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": 1.616114,
         "stable": true
       },
@@ -288,17 +288,17 @@
         "A": 6,
         "Z": 3,
         "N": 3,
-        "nuc": "e⁻",
+        "nuc": "e\u207b",
         "knot": "inv_trefoil",
         "cos_sim": 0.1006,
         "frob": 2.592,
         "min_Gx": 0.6135,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.716198,
         "stable": true
       }
     ],
-    "¹²C": [
+    "\u00b9\u00b2C": [
       {
         "A": 1,
         "Z": 1,
@@ -308,7 +308,7 @@
         "cos_sim": 0.0486,
         "frob": 1.263,
         "min_Gx": 0.3463,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.489028,
         "stable": true
       },
@@ -321,7 +321,7 @@
         "cos_sim": 0.9779,
         "frob": 1.6086,
         "min_Gx": 0.403,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.75131,
         "stable": true
       },
@@ -334,7 +334,7 @@
         "cos_sim": 0.1077,
         "frob": 1.7393,
         "min_Gx": 0.506,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.578315,
         "stable": true
       },
@@ -347,7 +347,7 @@
         "cos_sim": 0.9386,
         "frob": 3.0289,
         "min_Gx": 0.6804,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 1.589716,
         "stable": true
       },
@@ -360,7 +360,7 @@
         "cos_sim": 0.2267,
         "frob": 6.8802,
         "min_Gx": 1.3123,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 1.429531,
         "stable": true
       },
@@ -373,7 +373,7 @@
         "cos_sim": 0.8589,
         "frob": 6.1516,
         "min_Gx": 1.3478,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": 1.616114,
         "stable": true
       },
@@ -386,7 +386,7 @@
         "cos_sim": 0.3517,
         "frob": 19.2362,
         "min_Gx": 2.287,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 2.287017,
         "stable": true
       },
@@ -399,7 +399,7 @@
         "cos_sim": 0.7206,
         "frob": 14.7283,
         "min_Gx": 2.322,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 2.917664,
         "stable": true
       },
@@ -412,7 +412,7 @@
         "cos_sim": 0.3656,
         "frob": 64.2541,
         "min_Gx": 4.8409,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 4.840947,
         "stable": true
       },
@@ -425,7 +425,7 @@
         "cos_sim": 0.6414,
         "frob": 37.9076,
         "min_Gx": 3.3018,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 3.301807,
         "stable": true
       },
@@ -438,7 +438,7 @@
         "cos_sim": 0.4464,
         "frob": 209.1946,
         "min_Gx": 7.9609,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 7.960897,
         "stable": true
       },
@@ -451,7 +451,7 @@
         "cos_sim": 0.5961,
         "frob": 104.9135,
         "min_Gx": 5.8328,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 7.131247,
         "stable": true
       },
@@ -459,17 +459,17 @@
         "A": 12,
         "Z": 6,
         "N": 6,
-        "nuc": "e⁻",
+        "nuc": "e\u207b",
         "knot": "B3",
         "cos_sim": 0.6666,
         "frob": 30.8375,
         "min_Gx": 2.8421,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 3.953645,
         "stable": true
       }
     ],
-    "¹⁶O": [
+    "\u00b9\u2076O": [
       {
         "A": 1,
         "Z": 1,
@@ -479,7 +479,7 @@
         "cos_sim": 0.0486,
         "frob": 1.263,
         "min_Gx": 0.3463,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.489028,
         "stable": true
       },
@@ -492,7 +492,7 @@
         "cos_sim": 0.9779,
         "frob": 1.6086,
         "min_Gx": 0.403,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.75131,
         "stable": true
       },
@@ -505,7 +505,7 @@
         "cos_sim": 0.1077,
         "frob": 1.7393,
         "min_Gx": 0.506,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.578315,
         "stable": true
       },
@@ -518,7 +518,7 @@
         "cos_sim": 0.9386,
         "frob": 3.0289,
         "min_Gx": 0.6804,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 1.589716,
         "stable": true
       },
@@ -531,7 +531,7 @@
         "cos_sim": 0.2267,
         "frob": 6.8802,
         "min_Gx": 1.3123,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 1.429531,
         "stable": true
       },
@@ -544,7 +544,7 @@
         "cos_sim": 0.8589,
         "frob": 6.1516,
         "min_Gx": 1.3478,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": 1.616114,
         "stable": true
       },
@@ -557,7 +557,7 @@
         "cos_sim": 0.3517,
         "frob": 19.2362,
         "min_Gx": 2.287,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 2.287017,
         "stable": true
       },
@@ -570,7 +570,7 @@
         "cos_sim": 0.7206,
         "frob": 14.7283,
         "min_Gx": 2.322,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 2.917664,
         "stable": true
       },
@@ -583,7 +583,7 @@
         "cos_sim": 0.3656,
         "frob": 64.2541,
         "min_Gx": 4.8409,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 4.840947,
         "stable": true
       },
@@ -596,7 +596,7 @@
         "cos_sim": 0.6414,
         "frob": 37.9076,
         "min_Gx": 3.3018,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 3.301807,
         "stable": true
       },
@@ -609,7 +609,7 @@
         "cos_sim": 0.4464,
         "frob": 209.1946,
         "min_Gx": 7.9609,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 7.960897,
         "stable": true
       },
@@ -622,7 +622,7 @@
         "cos_sim": 0.5961,
         "frob": 104.9135,
         "min_Gx": 5.8328,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 7.131247,
         "stable": true
       },
@@ -635,7 +635,7 @@
         "cos_sim": 0.4103,
         "frob": 710.2383,
         "min_Gx": 16.736,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 16.736024,
         "stable": true
       },
@@ -648,7 +648,7 @@
         "cos_sim": 0.6052,
         "frob": 312.3489,
         "min_Gx": 6.9339,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 6.933867,
         "stable": true
       },
@@ -661,7 +661,7 @@
         "cos_sim": 0.4379,
         "frob": 2448.6076,
         "min_Gx": 25.9128,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 25.912797,
         "stable": true
       },
@@ -674,7 +674,7 @@
         "cos_sim": 0.6579,
         "frob": 1177.0577,
         "min_Gx": 11.1403,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 25.812209,
         "stable": true
       },
@@ -682,17 +682,17 @@
         "A": 16,
         "Z": 8,
         "N": 8,
-        "nuc": "e⁻",
+        "nuc": "e\u207b",
         "knot": "B3",
         "cos_sim": 0.6033,
         "frob": 303.0547,
         "min_Gx": -0.7539,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 11.70068,
         "stable": false
       }
     ],
-    "⁴⁰Ca": [
+    "\u2074\u2070Ca": [
       {
         "A": 1,
         "Z": 1,
@@ -702,7 +702,7 @@
         "cos_sim": 0.0486,
         "frob": 1.263,
         "min_Gx": 0.3463,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.489028,
         "stable": true
       },
@@ -715,7 +715,7 @@
         "cos_sim": 0.9779,
         "frob": 1.6086,
         "min_Gx": 0.403,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 0.75131,
         "stable": true
       },
@@ -728,7 +728,7 @@
         "cos_sim": 0.1077,
         "frob": 1.7393,
         "min_Gx": 0.506,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 0.578315,
         "stable": true
       },
@@ -741,7 +741,7 @@
         "cos_sim": 0.9386,
         "frob": 3.0289,
         "min_Gx": 0.6804,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 1.589716,
         "stable": true
       },
@@ -754,7 +754,7 @@
         "cos_sim": 0.2267,
         "frob": 6.8802,
         "min_Gx": 1.3123,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 1.429531,
         "stable": true
       },
@@ -767,7 +767,7 @@
         "cos_sim": 0.8589,
         "frob": 6.1516,
         "min_Gx": 1.3478,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": 1.616114,
         "stable": true
       },
@@ -780,7 +780,7 @@
         "cos_sim": 0.3517,
         "frob": 19.2362,
         "min_Gx": 2.287,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 2.287017,
         "stable": true
       },
@@ -793,7 +793,7 @@
         "cos_sim": 0.7206,
         "frob": 14.7283,
         "min_Gx": 2.322,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 2.917664,
         "stable": true
       },
@@ -806,7 +806,7 @@
         "cos_sim": 0.3656,
         "frob": 64.2541,
         "min_Gx": 4.8409,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 4.840947,
         "stable": true
       },
@@ -819,7 +819,7 @@
         "cos_sim": 0.6414,
         "frob": 37.9076,
         "min_Gx": 3.3018,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 3.301807,
         "stable": true
       },
@@ -832,7 +832,7 @@
         "cos_sim": 0.4464,
         "frob": 209.1946,
         "min_Gx": 7.9609,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 7.960897,
         "stable": true
       },
@@ -845,7 +845,7 @@
         "cos_sim": 0.5961,
         "frob": 104.9135,
         "min_Gx": 5.8328,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 7.131247,
         "stable": true
       },
@@ -858,7 +858,7 @@
         "cos_sim": 0.4103,
         "frob": 710.2383,
         "min_Gx": 16.736,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 16.736024,
         "stable": true
       },
@@ -871,7 +871,7 @@
         "cos_sim": 0.6052,
         "frob": 312.3489,
         "min_Gx": 6.9339,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 6.933867,
         "stable": true
       },
@@ -884,7 +884,7 @@
         "cos_sim": 0.4379,
         "frob": 2448.6076,
         "min_Gx": 25.9128,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": 25.912797,
         "stable": true
       },
@@ -897,7 +897,7 @@
         "cos_sim": 0.6579,
         "frob": 1177.0577,
         "min_Gx": 11.1403,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 25.812209,
         "stable": true
       },
@@ -910,7 +910,7 @@
         "cos_sim": 0.4776,
         "frob": 8654.3611,
         "min_Gx": 47.6847,
-        "tight": "L₊",
+        "tight": "L\u208a",
         "tr_M": 65.769996,
         "stable": true
       },
@@ -923,7 +923,7 @@
         "cos_sim": 0.7252,
         "frob": 8859.1815,
         "min_Gx": -10.0358,
-        "tight": "γ",
+        "tight": "\u03b3",
         "tr_M": -10.035761,
         "stable": false
       },
@@ -936,7 +936,7 @@
         "cos_sim": 0.2387,
         "frob": 31141.1833,
         "min_Gx": 47.7439,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": 53.904433,
         "stable": true
       },
@@ -949,7 +949,7 @@
         "cos_sim": 0.5927,
         "frob": 178844.0799,
         "min_Gx": -99.6305,
-        "tight": "σ₀",
+        "tight": "\u03c3\u2080",
         "tr_M": 240.90233,
         "stable": false
       },
@@ -962,7 +962,7 @@
         "cos_sim": 0.3972,
         "frob": 104030.2576,
         "min_Gx": -304.8449,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 479.21247,
         "stable": false
       },
@@ -975,7 +975,7 @@
         "cos_sim": 0.6979,
         "frob": 7082290.116,
         "min_Gx": -1194.1054,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": -1145.651391,
         "stable": false
       },
@@ -988,7 +988,7 @@
         "cos_sim": 0.0829,
         "frob": -570911.0084,
         "min_Gx": -2293.3352,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": -1600.265415,
         "stable": false
       },
@@ -1001,7 +1001,7 @@
         "cos_sim": 0.5685,
         "frob": 456040570.9083,
         "min_Gx": -8009.0959,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 9980.841518,
         "stable": false
       },
@@ -1014,7 +1014,7 @@
         "cos_sim": 0.3634,
         "frob": -107879965.5784,
         "min_Gx": -37085.7893,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 18490.215559,
         "stable": false
       },
@@ -1027,7 +1027,7 @@
         "cos_sim": 0.6938,
         "frob": 46314819581.5504,
         "min_Gx": -102580.3136,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": -98475.078109,
         "stable": false
       },
@@ -1040,7 +1040,7 @@
         "cos_sim": 0.0644,
         "frob": -16725635548.3952,
         "min_Gx": -282499.88,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": -197453.282242,
         "stable": false
       },
@@ -1053,7 +1053,7 @@
         "cos_sim": 0.5694,
         "frob": 7391126407392.389,
         "min_Gx": -1071301.386,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 1243749.270257,
         "stable": false
       },
@@ -1066,7 +1066,7 @@
         "cos_sim": 0.3629,
         "frob": -3777024450574.243,
         "min_Gx": -6176555.1872,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 2804861.127023,
         "stable": false
       },
@@ -1079,7 +1079,7 @@
         "cos_sim": 0.6939,
         "frob": 1850374583551682.0,
         "min_Gx": -20365496.314,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": -19617439.536422,
         "stable": false
       },
@@ -1092,7 +1092,7 @@
         "cos_sim": 0.0696,
         "frob": -1289392138512998.2,
         "min_Gx": -72955330.873,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": -49454761.428142,
         "stable": false
       },
@@ -1105,7 +1105,7 @@
         "cos_sim": 0.5714,
         "frob": 7.25584562542005e+17,
         "min_Gx": -342361662.1855,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 387605048.676383,
         "stable": false
       },
@@ -1118,7 +1118,7 @@
         "cos_sim": 0.3641,
         "frob": -6.731717066515692e+17,
         "min_Gx": -2449512653.4998,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 1093256987.46341,
         "stable": false
       },
@@ -1131,7 +1131,7 @@
         "cos_sim": 0.6939,
         "frob": 4.449975983639656e+20,
         "min_Gx": -9920939638.554,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": -9580827547.832144,
         "stable": false
       },
@@ -1144,7 +1144,7 @@
         "cos_sim": 0.0729,
         "frob": -5.4072165081752784e+20,
         "min_Gx": -45451517879.5899,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": -30227047567.007473,
         "stable": false
       },
@@ -1157,7 +1157,7 @@
         "cos_sim": 0.5726,
         "frob": 4.262803518825131e+23,
         "min_Gx": -265865450482.1171,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 296070904363.46625,
         "stable": false
       },
@@ -1170,7 +1170,7 @@
         "cos_sim": 0.3648,
         "frob": -6.704874171528769e+23,
         "min_Gx": -2363146219485.925,
-        "tight": "e⁻",
+        "tight": "e\u207b",
         "tr_M": 1044607303791.4755,
         "stable": false
       },
@@ -1183,7 +1183,7 @@
         "cos_sim": 0.6938,
         "frob": 6.37090411708109e+26,
         "min_Gx": -11816324416190.082,
-        "tight": "σ₁",
+        "tight": "\u03c3\u2081",
         "tr_M": -11431218863846.322,
         "stable": false
       },
@@ -1196,7 +1196,7 @@
         "cos_sim": 0.075,
         "frob": -1.2859617329479112e+27,
         "min_Gx": -68610868485734.72,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": -45092452137571.31,
         "stable": false
       },
@@ -1209,7 +1209,7 @@
         "cos_sim": 0.5734,
         "frob": 1.4840462719287514e+30,
         "min_Gx": -500421932365054.1,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 551137299578937.5,
         "stable": false
       },
@@ -1217,15 +1217,17 @@
         "A": 40,
         "Z": 20,
         "N": 20,
-        "nuc": "e⁻",
+        "nuc": "e\u207b",
         "knot": "B3",
         "cos_sim": 0.3667,
         "frob": 1.434666511079183e+30,
         "min_Gx": -2386102380966119.0,
-        "tight": "L₋",
+        "tight": "L\u208b",
         "tr_M": 235764768257462.94,
         "stable": false
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

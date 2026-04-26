@@ -2200,5 +2200,7 @@
     "B_pred": 4.521106171052133,
     "V_pn_gen": 0.36867527658596944,
     "B_err": 2.296586171052133
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

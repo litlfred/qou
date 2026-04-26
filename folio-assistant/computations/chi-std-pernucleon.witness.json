@@ -33,5 +33,7 @@
   },
   "unified_form": "(H_A/4) \u00b7 ([m]_q + [m-2]_q + [m-4]_q + [m-8]_q)",
   "m_proton": 11,
-  "m_neutron": 9
+  "m_neutron": 9,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

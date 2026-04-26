@@ -39,5 +39,7 @@
     },
     "Q_exp": 0.01861,
     "Q_exp_err": 1e-05
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

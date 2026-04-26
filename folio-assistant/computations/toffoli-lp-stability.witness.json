@@ -336,5 +336,7 @@
       "Phi": 0.0,
       "note": "\u03a6(1) = 0 by construction (classical reversible Toffoli trivialises q-AND)"
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

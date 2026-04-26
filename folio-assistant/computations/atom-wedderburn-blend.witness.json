@@ -66,5 +66,7 @@
       "CODATA": 2809.41347,
       "err_pct": -99.84258903692177
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -294,5 +294,7 @@
     }
   },
   "best_family": "full",
-  "best_mean_err_pct": 0.6555277471963745
+  "best_mean_err_pct": 0.6555277471963745,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

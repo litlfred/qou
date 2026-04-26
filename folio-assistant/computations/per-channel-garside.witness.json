@@ -25,5 +25,7 @@
     "Q_MeV": -5.104704423903056,
     "Q_obs_MeV": 3.508,
     "error_pct": -245.5160896209537
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

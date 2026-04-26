@@ -17,27 +17,27 @@
   "data": {
     "binding_k3": {
       "C2H2": {
-        "formula": "C₂H₂",
+        "formula": "C\u2082H\u2082",
         "order": 5,
         "E_eV": 25.1387
       },
       "C2H4": {
-        "formula": "C₂H₄",
+        "formula": "C\u2082H\u2084",
         "order": 6,
         "E_eV": 32.0981
       },
       "C2H6": {
-        "formula": "C₂H₆",
+        "formula": "C\u2082H\u2086",
         "order": 7,
         "E_eV": 53.3712
       },
       "C6H6": {
-        "formula": "C₆H₆",
+        "formula": "C\u2086H\u2086",
         "order": 15,
         "E_eV": 73.4209
       },
       "CH4": {
-        "formula": "CH₄",
+        "formula": "CH\u2084",
         "order": 4,
         "E_eV": 30.4979
       },
@@ -47,22 +47,22 @@
         "E_eV": 9.8897
       },
       "CO2": {
-        "formula": "CO₂",
+        "formula": "CO\u2082",
         "order": 4,
         "E_eV": 3.2005
       },
       "H2": {
-        "formula": "H₂",
+        "formula": "H\u2082",
         "order": 1,
         "E_eV": 7.6245
       },
       "H2O": {
-        "formula": "H₂O",
+        "formula": "H\u2082O",
         "order": 2,
         "E_eV": 15.2489
       },
       "H2S": {
-        "formula": "H₂S",
+        "formula": "H\u2082S",
         "order": 2,
         "E_eV": 15.2489
       },
@@ -77,48 +77,48 @@
         "E_eV": 7.6245
       },
       "N2": {
-        "formula": "N₂",
+        "formula": "N\u2082",
         "order": 3,
         "E_eV": 9.8897
       },
       "NH3": {
-        "formula": "NH₃",
+        "formula": "NH\u2083",
         "order": 3,
         "E_eV": 22.8734
       },
       "O2": {
-        "formula": "O₂",
+        "formula": "O\u2082",
         "order": 2,
         "E_eV": 1.6002
       }
     },
     "confinement_k3": {
       "C2H2": {
-        "formula": "C₂H₂",
+        "formula": "C\u2082H\u2082",
         "stable": false,
         "demand": 3,
         "marginal": 0
       },
       "C2H4": {
-        "formula": "C₂H₄",
+        "formula": "C\u2082H\u2084",
         "stable": false,
         "demand": 1,
         "marginal": 0
       },
       "C2H6": {
-        "formula": "C₂H₆",
+        "formula": "C\u2082H\u2086",
         "stable": false,
         "demand": 3,
         "marginal": 0
       },
       "C6H6": {
-        "formula": "C₆H₆",
+        "formula": "C\u2086H\u2086",
         "stable": false,
         "demand": 3,
         "marginal": 0
       },
       "CH4": {
-        "formula": "CH₄",
+        "formula": "CH\u2084",
         "stable": false,
         "demand": 1,
         "marginal": 0
@@ -130,25 +130,25 @@
         "marginal": 0
       },
       "CO2": {
-        "formula": "CO₂",
+        "formula": "CO\u2082",
         "stable": false,
         "demand": 1,
         "marginal": 0
       },
       "H2": {
-        "formula": "H₂",
+        "formula": "H\u2082",
         "stable": false,
         "demand": 3,
         "marginal": 0
       },
       "H2O": {
-        "formula": "H₂O",
+        "formula": "H\u2082O",
         "stable": false,
         "demand": 1,
         "marginal": 0
       },
       "H2S": {
-        "formula": "H₂S",
+        "formula": "H\u2082S",
         "stable": false,
         "demand": 1,
         "marginal": 0
@@ -166,23 +166,25 @@
         "marginal": 0
       },
       "N2": {
-        "formula": "N₂",
+        "formula": "N\u2082",
         "stable": false,
         "demand": 3,
         "marginal": 0
       },
       "NH3": {
-        "formula": "NH₃",
+        "formula": "NH\u2083",
         "stable": false,
         "demand": 3,
         "marginal": 0
       },
       "O2": {
-        "formula": "O₂",
+        "formula": "O\u2082",
         "stable": false,
         "demand": 1,
         "marginal": 0
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

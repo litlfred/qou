@@ -182,5 +182,7 @@
       "max_nodes": 4096,
       "hit_node_limit": false
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

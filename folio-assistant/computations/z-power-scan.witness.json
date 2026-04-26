@@ -311,5 +311,7 @@
     "chi_std_proton": 1.8077033200981574,
     "chi_std_neutron": 1.2653010867739343,
     "D_tower_over_chi_std_proton": 1.0000456765304382
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }
