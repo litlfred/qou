@@ -33,7 +33,7 @@ The second follows from the ribbon category structure
 The third is the content of this proposition.
 
 **Physical picture.**
-The photon $\gamma$ (empty knot, zero crossings) approaches the
+The photon $\gamma$ ($\mathbf{1}_{B_4}$ 4-strand id, knot-trivial under Markov closure) approaches the
 hadron $\mathfrak{H}$.  To "measure" the hadron — to determine its mass — the
 photon must braid completely through $\mathfrak{H}$, moving from one side of
 the braid word to the other.

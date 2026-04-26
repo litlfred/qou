@@ -70,8 +70,10 @@ $$
 Particles that cross all three exceptional divisors (heavy
 quarks, $W$, $Z$) interact strongly with $T(2,8)$ and acquire
 large mass.  Particles confined to fewer divisors interact less.
-The photon ($\varnothing$, point) has zero crossings with
-$T(2,8)$ and remains massless.
+The photon ($\mathbf{1}_{B_4}$, 4-strand identity — knot-trivial
+under Markov closure; see
+[confined-particle](#def:confined-particle)) has zero crossings
+with $T(2, 8)$ and remains massless.
 
 **Why the Higgs is massive.**
 
