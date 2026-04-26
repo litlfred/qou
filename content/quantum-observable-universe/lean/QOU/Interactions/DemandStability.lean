@@ -1,3 +1,6 @@
+import QOU.Interactions.DerivedAtom
+import QOU.Descartes.GroundRing
+
 /-!
 # Demand stability: the demand profile determines nuclear stability
 
@@ -10,9 +13,6 @@ demand magnitude at fixed mass number A.
 - [prop:demand-stability]
 - [conj:periodic-table-demand]
 -/
-
-import QOU.Interactions.DerivedAtom
-import QOU.Descartes.GroundRing
 
 namespace QOU.Interactions
 

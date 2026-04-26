@@ -1,3 +1,6 @@
+import QOU.BraidKnot.ConfinedParticle
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # Confinement Category
 
@@ -11,9 +14,6 @@ extends to a functor `tr_M : Conf → R_q`.
 - [def:confined-particle]
 - [prop:level-sufficiency]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import Mathlib.CategoryTheory.Category.Basic
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,5 @@
+import QOU.AppendixSurreals.Basic
+
 /-!
 # QOU.AppendixSurreals.StandardPart — Robinson's standard-part map
 
@@ -19,8 +21,6 @@ This module provides:
 
 LaTeX label: `def:standard-part-functor`
 -/
-
-import QOU.AppendixSurreals.Basic
 
 namespace QOU.AppendixSurreals
 

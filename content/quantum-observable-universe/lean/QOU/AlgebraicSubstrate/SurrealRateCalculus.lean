@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Field.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.SurrealRateCalculus — rate table
 
@@ -24,8 +26,6 @@ LaTeX label: `prop:surreal-rate-calculus`.
 - [gonshor1986] Gonshor, *Introduction to the Theory of Surreal
   Numbers*. DOI:10.1017/CBO9780511629143.
 -/
-
-import Mathlib.Algebra.Field.Basic
 
 namespace QOU.AlgebraicSubstrate
 

@@ -1,3 +1,9 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ConfinementCategory
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.HeckeH3
+import QOU.Interactions.ConfinementLP
+
 /-!
 # Level Sufficiency
 
@@ -17,12 +23,6 @@ deeper level (quark-level) only when `k_max > n` forces it
 - [def:confinement-category]
 - [jones1987]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ConfinementCategory
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.HeckeH3
-import QOU.Interactions.ConfinementLP
 
 namespace QOU.BraidKnot
 

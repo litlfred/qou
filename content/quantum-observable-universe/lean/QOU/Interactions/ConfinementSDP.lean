@@ -1,3 +1,11 @@
+import QOU.Descartes.HeckeH3
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.GroundRing
+import QOU.Interactions.ConfinementLP
+import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.GramIndefinite
+import Mathlib.LinearAlgebra.Matrix.PosDef
+
 /-!
 # Confinement SDP: matrix Frobenius positivity
 
@@ -18,14 +26,6 @@ is structural, not exceptional.
 - [prop:frobenius-gram-matrix]
 - [boyd-vandenberghe-2004]
 -/
-
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
-import QOU.Interactions.ConfinementLP
-import QOU.Interactions.BorromeanUnique
-import QOU.Interactions.GramIndefinite
-import Mathlib.LinearAlgebra.Matrix.PosDef
 
 namespace QOU.Interactions
 

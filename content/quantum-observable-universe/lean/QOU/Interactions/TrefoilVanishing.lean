@@ -1,3 +1,5 @@
+import QOU.Descartes.GroundRing
+
 /-!
 # The e⁻ (trefoil) NF coefficient of B₃ is exactly zero
 
@@ -32,8 +34,6 @@ eliminate e⁻:
 
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Descartes.GroundRing
 
 namespace QOU.Interactions
 

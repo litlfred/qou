@@ -1,3 +1,8 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ElectronShell
+import QOU.BraidKnot.DressedParticle
+import QOU.Interactions.ConfinementSDP
+
 /-!
 # Shell-Closure Stability
 
@@ -24,11 +29,6 @@ principal-submatrix relationship.
 - [prop:confinement-sdp]
 - [boyd-vandenberghe-2004]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ElectronShell
-import QOU.BraidKnot.DressedParticle
-import QOU.Interactions.ConfinementSDP
 
 namespace QOU.BraidKnot
 

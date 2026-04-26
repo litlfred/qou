@@ -1,3 +1,5 @@
+import QOU.AlgebraicSubstrate.ReebEpsilon
+
 /-!
 # QOU.AlgebraicSubstrate.QFromEpsilon — `q := 1 + ε`
 
@@ -22,8 +24,6 @@ LaTeX label: `def:q-from-epsilon`.
   Numbers*.  DOI:10.1017/CBO9780511629143.
 - [manuscript] Chapter 8 §5 (Classical Limit).
 -/
-
-import QOU.AlgebraicSubstrate.ReebEpsilon
 
 namespace QOU.AlgebraicSubstrate
 

@@ -1,3 +1,11 @@
+import Mathlib.Algebra.Polynomial.Eval
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import QOU.AppendixSurreals.Basic
+import QOU.AppendixSurreals.StandardPart
+import QOU.AppendixSurreals.SignSequence
+import QOU.AppendixSurreals.Blowup
+import QOU.AppendixSurreals.BirthdayGrading
+
 /-!
 # QOU.AppendixSurreals.Conjectures — Open conjectures as classes
 
@@ -40,14 +48,6 @@ current small base.
   Bull. Symbolic Logic 18 (2012) 1–45.
   https://doi.org/10.2178/bsl/1327328438
 -/
-
-import Mathlib.Algebra.Polynomial.Eval
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import QOU.AppendixSurreals.Basic
-import QOU.AppendixSurreals.StandardPart
-import QOU.AppendixSurreals.SignSequence
-import QOU.AppendixSurreals.Blowup
-import QOU.AppendixSurreals.BirthdayGrading
 
 namespace QOU.AppendixSurreals
 

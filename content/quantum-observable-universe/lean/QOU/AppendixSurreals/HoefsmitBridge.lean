@@ -1,3 +1,7 @@
+import QOU.AppendixSurreals.Basic
+import QOU.AppendixSurreals.SignSequence
+import QOU.AppendixSurreals.BirthdayGrading
+
 /-!
 # QOU.AppendixSurreals.HoefsmitBridge — Hoefsmit ↔ Conway construction
 
@@ -35,10 +39,6 @@ full bridge cannot be proved here.  This file provides:
 
 LaTeX label: `prop:hoefsmit-is-surreal-construction`
 -/
-
-import QOU.AppendixSurreals.Basic
-import QOU.AppendixSurreals.SignSequence
-import QOU.AppendixSurreals.BirthdayGrading
 
 namespace QOU.AppendixSurreals
 

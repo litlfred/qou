@@ -1,3 +1,6 @@
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.GroundRing
+
 /-!
 # Derived atom construction A(Z, N)
 
@@ -13,9 +16,6 @@ is independent of photon polarization parameters.
 - [prop:four-term-pair-nucleon]
 - [prop:confinement-universality]
 -/
-
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
 
 namespace QOU.Interactions
 

@@ -1,3 +1,7 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.DressedParticle
+import Mathlib.Topology.Basic
+
 /-!
 # Confinement Phase Stratification
 
@@ -19,10 +23,6 @@ deconfinement or regime switches.
 - [prop:parity-regime-selection]
 - [boyd-vandenberghe-2004]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.DressedParticle
-import Mathlib.Topology.Basic
 
 namespace QOU.BraidKnot
 

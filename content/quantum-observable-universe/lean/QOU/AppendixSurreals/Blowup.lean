@@ -1,3 +1,5 @@
+import QOU.AppendixSurreals.Basic
+
 /-!
 # QOU.AppendixSurreals.Blowup — Named infinite/infinitesimal surreals
 
@@ -19,8 +21,6 @@ endpoints used by the appendix's blow-up calculus.
 
 LaTeX label: `def:surreal-blowup-calculus`
 -/
-
-import QOU.AppendixSurreals.Basic
 
 namespace QOU.AppendixSurreals
 

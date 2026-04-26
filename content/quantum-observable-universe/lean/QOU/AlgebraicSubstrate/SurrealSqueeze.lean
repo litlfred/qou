@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Order.Field.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.SurrealSqueeze — the squeeze lemma
 
@@ -20,8 +22,6 @@ LaTeX label: `lem:surreal-squeeze`.
 - [gonshor1986] Gonshor, *An Introduction to the Theory of Surreal
   Numbers*. DOI:10.1017/CBO9780511629143.
 -/
-
-import Mathlib.Algebra.Order.Field.Basic
 
 namespace QOU.AlgebraicSubstrate
 

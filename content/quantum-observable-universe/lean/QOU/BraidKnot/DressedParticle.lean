@@ -1,3 +1,7 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ElectronShell
+import QOU.BraidKnot.ConfinementCategory
+
 /-!
 # Dressed Particle
 
@@ -12,10 +16,6 @@ general invertible.
 - [def:confinement-category]
 - [def:electron-shell]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ElectronShell
-import QOU.BraidKnot.ConfinementCategory
 
 namespace QOU.BraidKnot
 

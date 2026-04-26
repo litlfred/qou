@@ -1,3 +1,5 @@
+import QOU.Descartes.GroundRing
+
 /-!
 # Verified Hecke NF Engine for H₃(q)
 
@@ -21,8 +23,6 @@ To verify an NF computation:
 
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Descartes.GroundRing
 
 namespace QOU.Interactions
 

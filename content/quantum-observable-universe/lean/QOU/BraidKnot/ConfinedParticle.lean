@@ -1,3 +1,7 @@
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.GroundRing
+import QOU.Interactions.ConfinementSDP
+
 /-!
 # Confined Particle
 
@@ -11,10 +15,6 @@ separate SDP-feasibility predicate tied to `QOU.Interactions.ConfinementSDP`.
 - [def:confined-particle]
 - [prop:confinement-sdp]
 -/
-
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
-import QOU.Interactions.ConfinementSDP
 
 namespace QOU.BraidKnot
 

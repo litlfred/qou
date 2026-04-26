@@ -1,3 +1,8 @@
+import Mathlib.Data.Rat.Defs
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
+import QOU.AppendixSurreals.Basic
+
 /-!
 # QOU.AppendixSurreals.SignSequence — Gonshor sign sequences
 
@@ -42,11 +47,6 @@ Examples (verified below):
 
 LaTeX label: `def:sign-sequence-of-braid`
 -/
-
-import Mathlib.Data.Rat.Defs
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.List.Basic
-import QOU.AppendixSurreals.Basic
 
 namespace QOU.AppendixSurreals
 
