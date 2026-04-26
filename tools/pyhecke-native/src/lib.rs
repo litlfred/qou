@@ -175,6 +175,30 @@ fn mn_chi(lambda: Vec<usize>, mu: Vec<usize>) -> i64 {
     seminormal_mn::mn_chi(&lambda, &mu)
 }
 
+/// **q-deformed character of an arbitrary braid word** via Hecke
+/// expansion of inverse generators.
+///
+/// `chi_q_word(lambda, n_strands, word)` computes `χ_λ(β; q)` for
+/// `β = product of (sign_i · σ_{gen_i})` returning a Laurent
+/// polynomial as `[(half_exp, coeff_str), ...]`.  See
+/// [`mn_chi_q`] for the polynomial encoding format.
+///
+/// Internally expands `σ⁻¹ = σ − h` for each negative generator
+/// (cost `2^(#negatives)` per character — practical for short
+/// atomic braids).
+#[pyfunction]
+fn chi_q_word(
+    lambda: Vec<usize>,
+    n_strands: usize,
+    word: Vec<(i32, u32)>,
+) -> Vec<(i32, String)> {
+    let poly = seminormal_mn::chi_lambda_braid_qdef(&lambda, n_strands, &word);
+    poly.terms
+        .into_iter()
+        .map(|(he, c)| (he, c.to_string()))
+        .collect()
+}
+
 /// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)`.
 ///
 /// Computes the Hecke character of the canonical permutation braid
@@ -274,6 +298,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)

@@ -366,6 +366,127 @@ fn mn_chi_rec_memo(
     total
 }
 
+/// **q-deformed character of an arbitrary braid word** via Hecke
+/// expansion of inverse generators.
+///
+/// For a braid `β = σ_{i_1}^{ε_1} ... σ_{i_k}^{ε_k}` with mixed signs,
+/// each `σ_i^{-1}` is rewritten via the Hecke relation
+/// `σ_i^{-1} = σ_i − h`, where `h = q − q^{-1}`.  Expanding the
+/// product produces a sum of `2^{(#negatives)}` positive sub-braids,
+/// each weighted by `(−h)^{|deletions|}` where the deletions are the
+/// negative positions where we chose the `−h · 1` term instead of
+/// the `σ_i` term.
+///
+/// For each positive sub-braid, the underlying permutation is
+/// computed by composing transpositions; its cycle type μ feeds
+/// the q-MN recursion (`chi_lambda_mn_qdef`) which then returns a
+/// `LaurentPolyQ`.
+///
+/// **Cost**: `O(2^{(#negatives)} · n²)` per character — practical
+/// for short atomic braids (D, T) but exponential in negative-
+/// generator count for larger isotopes.  For ⁴He where negatives
+/// ~ 10, this is ~1024 sub-braids per character × 77 partitions.
+///
+/// `n_strands`: number of strands the braid lives on.
+/// `word`: braid word as `[(sign, generator_1based), ...]`.
+pub fn chi_lambda_braid_qdef(
+    lambda: &[usize],
+    n_strands: usize,
+    word: &[(i32, u32)],
+) -> crate::laurent_poly_q::LaurentPolyQ {
+    use crate::laurent_poly_q::LaurentPolyQ;
+    let n_lambda: usize = lambda.iter().sum();
+    if n_lambda != n_strands {
+        return LaurentPolyQ::zero();
+    }
+    if word.is_empty() {
+        // χ_λ(1) = dim S^λ.
+        return LaurentPolyQ::from_scalar(mn_chi(lambda, &vec![1usize; n_strands]));
+    }
+    // Identify negative positions.
+    let neg_positions: Vec<usize> = word
+        .iter()
+        .enumerate()
+        .filter(|(_, (s, _))| *s < 0)
+        .map(|(i, _)| i)
+        .collect();
+    let n_neg = neg_positions.len();
+    if n_neg > 20 {
+        // Bail-out guard: 2^20 ≈ 10^6 sub-evaluations is the practical
+        // ceiling.  Caller should switch to seminormal_mpfr or seminormal
+        // f64 for words with >20 inverse generators.
+        return LaurentPolyQ::zero();
+    }
+    let n_subsets = 1usize << n_neg;
+    let h = LaurentPolyQ::hecke_h();
+    let mut total = LaurentPolyQ::zero();
+    for mask in 0..n_subsets {
+        // Build the positive sub-braid: for each negative position,
+        // if bit is set, use σ; else delete.
+        let mut sub_word: Vec<(i32, u32)> = Vec::with_capacity(word.len());
+        let mut n_deletions = 0usize;
+        let mut neg_idx = 0;
+        for (i, &(sign, gen)) in word.iter().enumerate() {
+            if sign >= 0 {
+                sub_word.push((1, gen));
+            } else {
+                // Negative: check the corresponding bit.
+                let bit = (mask >> neg_idx) & 1 == 1;
+                neg_idx += 1;
+                if bit {
+                    // Use σ in the sub-braid (with the deletion factor).
+                    sub_word.push((1, gen));
+                } else {
+                    // Delete this generator (replaced by -h · 1).
+                    n_deletions += 1;
+                }
+                let _ = i;
+            }
+        }
+        // Compute the cycle type of the positive sub-braid's permutation.
+        let cycle_type = positive_braid_cycle_type(n_strands, &sub_word);
+        let chi = chi_lambda_mn_qdef(lambda, &cycle_type);
+        // Weight: (-h)^{n_deletions}.
+        let mut weight = LaurentPolyQ::one();
+        for _ in 0..n_deletions {
+            weight = weight * (-h.clone());
+        }
+        total += &(weight * chi);
+    }
+    total
+}
+
+/// Compute the cycle type of the permutation obtained by composing
+/// transpositions for a positive braid word in `S_n`.
+fn positive_braid_cycle_type(n_strands: usize, word: &[(i32, u32)]) -> Vec<usize> {
+    // Permutation as `perm[i] = j` meaning slot i contains element j.
+    let mut perm: Vec<usize> = (0..n_strands).collect();
+    for &(_, gen) in word {
+        let i = gen as usize - 1;
+        if i + 1 < n_strands {
+            perm.swap(i, i + 1);
+        }
+    }
+    // Find cycle lengths.
+    let mut visited = vec![false; n_strands];
+    let mut cycles = Vec::new();
+    for start in 0..n_strands {
+        if visited[start] {
+            continue;
+        }
+        let mut len = 0;
+        let mut j = start;
+        while !visited[j] {
+            visited[j] = true;
+            j = perm[j];
+            len += 1;
+        }
+        cycles.push(len);
+    }
+    cycles.sort_by(|a, b| b.cmp(a));
+    cycles
+}
+
 /// **q-deformed Murnaghan-Nakayama** (Ram 1991, Wenzl 1988).
 ///
 /// Computes the Hecke character `χ^λ(T_w; q)` where `T_w ∈ H_n(q)` is
@@ -431,20 +552,37 @@ pub fn chi_lambda_mn_qdef(
 
 /// q-weight of a border strip with given size and height.
 ///
-/// Per Ram 1991 / Wenzl 1988, for a strip of total length `k` and
-/// row-extent `h+1` (height = h):
+/// **WARNING: SIMPLIFIED — NOT THE FULL RAM-WENZL FORMULA.**
 ///
-///   weight = (−q⁻¹)^h  · (q² − 1)^{?... } ... (simplified)
-///
-/// **Simplified form used here** (correct for size-1 strips and
-/// matches the seminormal sign convention for transpositions):
+/// Per Ram 1991 / Wenzl 1988, the correct q-weight for a border
+/// strip involves arm-leg statistics (not just height).  This
+/// simplified form:
 ///
 ///   weight(strip of size k, height h) = (−q⁻¹)^h · q^{k − 1 − h}
 ///
-/// At q = 1 this gives `(−1)^h`, recovering classical MN.
-/// For k = 1 (transposition): height = 0, weight = 1; or height ≥ 1
-/// gives weight = (−q⁻¹)^h, matching the seminormal eigenvalue
-/// ratio between symmetric (q) and anti-symmetric (−q⁻¹) channels.
+/// is correct for:
+///   - All cases at q = 1 (collapses to (−1)^h, classical MN).
+///   - Size-1 strips at any q (transpositions on the seminormal
+///     basis: q for symmetric, −q⁻¹ for anti-symmetric channels).
+///   - Trivial rep λ = (n) at any q (all strips have height 0
+///     within a single row, weight = q^{k-1}).
+///
+/// **It is NOT correct** for non-trivial irreps at q ≠ 1 with strips
+/// of size ≥ 2.  Cross-validation against Hoefsmit at q₀ ≈ 1.10998
+/// for D (n=6) and T (n=9) atomic braids shows differences of
+/// O(1) for the first 5 partitions of each isotope.
+///
+/// The full Ram-Wenzl weight requires:
+///
+///   1. For each strip cell, compute its arm and leg lengths within
+///      the strip.
+///   2. The weight factor for each cell is `q^{arm} · (−q⁻¹)^{leg}`.
+///   3. The total weight is the product over cells, possibly with
+///      a global `(q − q⁻¹)^?` correction.
+///
+/// See `seminormal_mn_qdef_design.md` for the implementation
+/// roadmap; the proper formula is the subject of the next F3.2
+/// commit.
 fn q_strip_weight(
     size: usize,
     height: usize,
@@ -561,6 +699,47 @@ mod tests {
             total += d * d;
         }
         assert_eq!(total, 120, "5! = 120");
+    }
+
+    /// Cycle-type extraction from a positive braid word.
+    #[test]
+    fn cycle_type_positive_braid() {
+        // σ_1 on 3 strands: swap (1,2); cycle type = (2, 1).
+        assert_eq!(positive_braid_cycle_type(3, &[(1, 1)]), vec![2, 1]);
+        // σ_1 σ_2 on 3 strands: 3-cycle (1 2 3).  cycle type = (3,).
+        assert_eq!(positive_braid_cycle_type(3, &[(1, 1), (1, 2)]), vec![3]);
+        // σ_1 σ_2 σ_1 on 3 strands: longest element, cycle type = (2, 1)
+        // (since (1 3) is a 2-cycle and 2 is fixed)
+        let ct = positive_braid_cycle_type(3, &[(1, 1), (1, 2), (1, 1)]);
+        assert_eq!(ct, vec![2, 1]);
+        // Identity word: all 1-cycles.
+        assert_eq!(positive_braid_cycle_type(4, &[]), vec![1, 1, 1, 1]);
+    }
+
+    /// q-MN braid expansion: positive single-generator word matches direct.
+    #[test]
+    fn q_mn_braid_positive_single_gen() {
+        // σ_1 on 3 strands at λ = (3): trivial rep, χ = q.
+        let chi = chi_lambda_braid_qdef(&[3], 3, &[(1, 1)]);
+        // Cycle type of σ_1 = (2, 1), so should equal chi_lambda_mn_qdef(λ, [2,1]).
+        let direct = chi_lambda_mn_qdef(&[3], &[2, 1]);
+        assert_eq!(chi, direct);
+    }
+
+    /// q-MN braid expansion: σ⁻¹ on trivial rep should give 1/q.
+    /// Hecke relation: σ⁻¹ = σ − h.
+    /// On trivial rep: χ_λ(σ) = q, χ_λ(1) = 1, so χ_λ(σ⁻¹) = q − h = q − (q − q⁻¹) = q⁻¹.
+    #[test]
+    fn q_mn_braid_inverse_trivial_rep() {
+        use num_bigint::BigInt;
+        // σ_1⁻¹ on 3 strands at λ = (3).
+        let chi = chi_lambda_braid_qdef(&[3], 3, &[(-1, 1)]);
+        // Expected: q^{-1}.
+        let expected = crate::laurent_poly_q::LaurentPolyQ::q_pow(-1);
+        assert_eq!(chi, expected,
+                   "χ_(3)(σ⁻¹) should be q^{{-1}}, got: {}", chi.pretty());
+        // Sanity: at q=1, value should be 1.
+        assert_eq!(chi.evaluate_at_one(), BigInt::from(1));
     }
 
     /// q-MN at q = 1 must equal classical MN (substitute q → 1).
