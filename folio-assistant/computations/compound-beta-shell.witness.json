@@ -91,5 +91,7 @@
       "anchor_B_over_rest": null,
       "ratio_y_to_B_over_rest": null
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

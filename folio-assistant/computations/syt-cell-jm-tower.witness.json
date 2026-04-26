@@ -194,5 +194,7 @@
       "JM_time_sec": 0.40989089012145996,
       "JM_SDP_time_sec": 0.44167637825012207
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

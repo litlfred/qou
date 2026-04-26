@@ -458,5 +458,7 @@
       "B_per_A_AME": 8.55125,
       "delta_m_over_m_pct": 0.9110538752490686
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

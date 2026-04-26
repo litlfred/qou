@@ -299,11 +299,11 @@
   "scriptFile": "channel_product_mass.py",
   "scriptHash": "e82186d514c2",
   "scriptCommitSha": "438b318d1bec1a7e1ff1b82718ab09869196301f",
-  "description": "Exact per-nucleon channel product mass formula. Uses the T_{2,3} eigendecomposition of H₃(q) to factor the nuclear Garside element as a product of per-nucleon channel sums: a = -HA/2 (proton), b = -3(q²-1)(q²+1)²/(4q³) (neutron). Mass = constituents - α·(Z·ln|a| + N·ln|b|) with α = m_e × 8G. Zero fitted parameters.",
+  "description": "Exact per-nucleon channel product mass formula. Uses the T_{2,3} eigendecomposition of H\u2083(q) to factor the nuclear Garside element as a product of per-nucleon channel sums: a = -HA/2 (proton), b = -3(q\u00b2-1)(q\u00b2+1)\u00b2/(4q\u00b3) (neutron). Mass = constituents - \u03b1\u00b7(Z\u00b7ln|a| + N\u00b7ln|b|) with \u03b1 = m_e \u00d7 8G. Zero fitted parameters.",
   "contentBlock": "rem:q-integer-mass-table",
   "parameters": {
-    "q₀": 1.1099785955541805,
-    "α (MeV)": 3.74445965488548,
+    "q\u2080": 1.1099785955541805,
+    "\u03b1 (MeV)": 3.74445965488548,
     "a (proton sum)": -0.10453016099493972,
     "b (neutron sum)": -0.6340338930118112,
     "ln|a|": -2.2582796272594314,
@@ -683,11 +683,13 @@
     "channel_sums": {
       "a_proton": -0.10453016099493972,
       "b_neutron": -0.6340338930118112,
-      "a_proton_formula": "-HA/2 = -(q-q⁻¹)/2",
-      "b_neutron_formula": "-3(q²-1)(q²+1)²/(4q³)"
+      "a_proton_formula": "-HA/2 = -(q-q\u207b\u00b9)/2",
+      "b_neutron_formula": "-3(q\u00b2-1)(q\u00b2+1)\u00b2/(4q\u00b3)"
     }
   },
   "caveats": [
-    "The channel sum factorization a^Z · b^N assumes independent nucleon contributions. This misses inter-nucleon correlations (surface, Coulomb, pairing, shell effects). The 7-term BW formula captures these corrections. A full computation would use the per-generator vertex volumes with inter-nucleon crossing matrices, not the summed factorization."
-  ]
+    "The channel sum factorization a^Z \u00b7 b^N assumes independent nucleon contributions. This misses inter-nucleon correlations (surface, Coulomb, pairing, shell effects). The 7-term BW formula captures these corrections. A full computation would use the per-generator vertex volumes with inter-nucleon crossing matrices, not the summed factorization."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

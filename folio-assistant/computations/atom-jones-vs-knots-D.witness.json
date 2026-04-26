@@ -282,5 +282,7 @@
       "consistent": false
     }
   ],
-  "matching_knots": []
+  "matching_knots": [],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

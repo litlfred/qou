@@ -20,7 +20,7 @@
   "scriptFile": "molecular_binding_level_k.py",
   "scriptHash": "ae6f4eb1a41c",
   "scriptCommitSha": "",
-  "description": "Molecular binding at Hecke levels k=3..10 via LP dual shadow prices. Bond character χ_λ(T⁻ⁿ) computed from Hoefsmit seminormal form. Single/double/triple bonds.",
+  "description": "Molecular binding at Hecke levels k=3..10 via LP dual shadow prices. Bond character \u03c7_\u03bb(T\u207b\u207f) computed from Hoefsmit seminormal form. Single/double/triple bonds.",
   "parameters": {
     "k_max": 10,
     "E_MOL_eV": 6.72933203541817
@@ -128,5 +128,7 @@
         "n_parts": 42
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

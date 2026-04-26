@@ -367,5 +367,7 @@
         "demand_magnitude": 0.6432709675763166
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

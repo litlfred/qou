@@ -19,7 +19,7 @@
   "scriptFile": "proton_neutron_mass_error.py",
   "scriptHash": "427b1d0fb537",
   "scriptCommitSha": "",
-  "description": "Explicit proton and neutron mass calculation via (A) Hecke Plancherel tower m = Σ w_λ χ_λ / d_λ and (B) Kashaev substrate m = Vol · ρ_q with ρ_q = 1/ℏ_q². Reports absolute predictions, the calibration-free m_n / m_p ratio, and the mass splitting.",
+  "description": "Explicit proton and neutron mass calculation via (A) Hecke Plancherel tower m = \u03a3 w_\u03bb \u03c7_\u03bb / d_\u03bb and (B) Kashaev substrate m = Vol \u00b7 \u03c1_q with \u03c1_q = 1/\u210f_q\u00b2. Reports absolute predictions, the calibration-free m_n / m_p ratio, and the mass splitting.",
   "parameters": {
     "q_0": 1.1099785955541805,
     "H_A": 0.20906032198987945,
@@ -51,5 +51,7 @@
       "Vol_Borromean_8G": 7.327724753417752,
       "rho_q_cat": 101.86215723850407
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

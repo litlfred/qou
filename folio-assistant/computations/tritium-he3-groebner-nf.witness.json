@@ -613,5 +613,7 @@
       "error_percent": -97.85820188982623
     },
     "note": "NF(neutron) = NF(tritium) and NF(proton) = NF(He-3) because both use [u,d,d]/[u,u,d] in H_3(q) with 3 strands."
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -188,5 +188,7 @@
     "from_alpha": -214.39517145085424,
     "vs_deuterons": -25.04312246110793,
     "unit": "Skein units (multiply by \u03bc\u2080 for MeV)"
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

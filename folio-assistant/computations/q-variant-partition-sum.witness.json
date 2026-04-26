@@ -72,5 +72,7 @@
       "diff_vs_gap_pct": -6.5287328402540865
     }
   },
-  "best": "(G) [5]_q/[2]_q \u2212 (q \u2212 q\u207b\u00b9)/2"
+  "best": "(G) [5]_q/[2]_q \u2212 (q \u2212 q\u207b\u00b9)/2",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

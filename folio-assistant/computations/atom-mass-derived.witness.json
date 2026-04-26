@@ -101,7 +101,7 @@
   "scriptFile": "atom_mass_derived.py",
   "scriptHash": "641e46e29632",
   "scriptCommitSha": "994036942644b73dd773eccd0326ed7f38d753b1",
-  "description": "DERIVED atomic mass Z=1-10 from B₃ confinement + typed crossings + Markov trace. No fitted Bethe-Weizsacker. One calibration: E₀ = m_p/tr_M(p).",
+  "description": "DERIVED atomic mass Z=1-10 from B\u2083 confinement + typed crossings + Markov trace. No fitted Bethe-Weizsacker. One calibration: E\u2080 = m_p/tr_M(p).",
   "contentBlock": "rem:atom-mass-full-hecke",
   "parameters": {
     "q0": "1.1099785955541805",
@@ -283,5 +283,7 @@
         "elapsed_s": 248.8166959285736
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

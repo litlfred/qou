@@ -9,5 +9,7 @@
   "chirality_residue_MeV": 0.015165770469183413,
   "predicted_np_splitting_MeV": 1.2912786168135013,
   "codata_np_splitting_MeV": 1.29333236,
-  "error_pct": -0.15879469578095154
+  "error_pct": -0.15879469578095154,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

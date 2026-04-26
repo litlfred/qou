@@ -72,5 +72,7 @@
     }
   ],
   "timestamp": "2026-04-12T09:07:26.547130+00:00",
-  "source": "markov-free-energy-qvalues.py"
+  "source": "markov-free-energy-qvalues.py",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

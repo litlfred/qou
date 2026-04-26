@@ -386,5 +386,7 @@
     "delta_max_abs_MeV": 12.09355426476885,
     "M_mean_abs_ppm": 514.4562781396669,
     "M_max_abs_ppm": 2081.545232995459
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

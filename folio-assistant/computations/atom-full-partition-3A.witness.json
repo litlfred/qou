@@ -113,5 +113,7 @@
       "CODATA_MeV": 3728.40133,
       "err_pct": 74.67160309912558
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

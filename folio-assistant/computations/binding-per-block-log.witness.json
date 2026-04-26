@@ -2269,5 +2269,7 @@
       "K_order": 2,
       "eps_bound_MeV": 0.0004970507165153309
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -13,5 +13,7 @@
   },
   "all_match": true,
   "symbolic_terms": 10,
-  "recovered_terms": 10
+  "recovered_terms": 10,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

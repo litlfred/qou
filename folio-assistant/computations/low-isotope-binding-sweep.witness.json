@@ -292,5 +292,7 @@
       "mean_abs_err_pct": 11.619497216661088,
       "max_abs_err_pct": 36.45330156657791
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -444,5 +444,7 @@
   "weighted_sum_float": 1.2660498583158213,
   "residual_vs_target": -3.08731744312384,
   "relative_error_pct": -70.91791777144239,
-  "relative_error_ppb": -709179177.714424
+  "relative_error_ppb": -709179177.714424,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -88,5 +88,7 @@
     "a_K": -0.5589999999999999,
     "B_pred_MeV": 2.2262448054339345,
     "err_pct": 0.07528670412415038
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

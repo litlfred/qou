@@ -143,5 +143,7 @@
   ],
   "only_proton_knots": [],
   "neutron_extra_sum_vol_damping": 4.79361756846635,
-  "codata_np_splitting_MeV": 1.2933323600000222
+  "codata_np_splitting_MeV": 1.2933323600000222,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

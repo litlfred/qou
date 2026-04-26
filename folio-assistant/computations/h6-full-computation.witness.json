@@ -56,5 +56,7 @@
     3.62933311677063,
     9.053424394784788
   ],
-  "subspace_dim": 32
+  "subspace_dim": 32,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -181,5 +181,7 @@
       "alpha_Phi_chir_total_MeV": 0.8717035443804666,
       "alpha_Phi_chir_high_MeV": 0.7825381525736039
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -166,5 +166,7 @@
       "B_AME_MeV": 160.65,
       "ratio_off_AME": 2.955627551815505
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

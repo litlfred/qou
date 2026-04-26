@@ -65,5 +65,7 @@
       "scalar_time_sec": 0.0030570030212402344,
       "content_time_sec": 8.259557247161865
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -204,5 +204,7 @@
       "err_pct_per_crossing": 4.731117325289072,
       "err_pct_paper": 4.731117325289072
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

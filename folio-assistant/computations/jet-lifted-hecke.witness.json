@@ -1292,5 +1292,7 @@
       "atom": "16O",
       "B_AME": 127.619
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

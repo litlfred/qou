@@ -171,5 +171,7 @@
       "B_pred_MeV": -11347.114629914768,
       "err_pct": -8991.399109783628
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

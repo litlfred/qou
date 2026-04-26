@@ -186,5 +186,7 @@
     },
     "asymmetry_net": 0.5489057655648448,
     "comment": "Positron NF has negative coefs on \u03bd, L\u208a, L\u208b; electron NF is pure +1 on e\u207b=\u03c3\u2080\u03c3\u2081\u03c3\u2080 basis element.  Dropping positron tracking = dropping the negative-coefficient sector of H_3(q)."
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -346,5 +346,7 @@
     "proton": 0.9991251252,
     "neutron": 0.8108345052,
     "delta_net": -0.18829061999999996
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

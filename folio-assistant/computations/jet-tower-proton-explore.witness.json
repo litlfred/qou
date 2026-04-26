@@ -10,7 +10,7 @@
   "scriptFile": "jet_tower_proton_explore.py",
   "scriptHash": "0e0dc1c73812",
   "scriptCommitSha": "",
-  "description": "Exploration of the +1.83% proton residual via tower-variant sensitivity (level 0) and jet-level-1 upper bound from prop:delta-max-uniform-bound.  Does not compute the explicit level-1 V̂_i^(1); only bounds its contribution.",
+  "description": "Exploration of the +1.83% proton residual via tower-variant sensitivity (level 0) and jet-level-1 upper bound from prop:delta-max-uniform-bound.  Does not compute the explicit level-1 V\u0302_i^(1); only bounds its contribution.",
   "data": {
     "level_0_variants": [
       {
@@ -50,5 +50,7 @@
       "hbar_q_sq_form_A_pct": 0.9817188513478667,
       "hbar_q_sq_form_B_pct": 3.5474315297583146
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

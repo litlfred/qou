@@ -12,5 +12,7 @@
   "m_p_MeV": Infinity,
   "m_n_MeV": Infinity,
   "m_n_sym_MeV": Infinity,
-  "m_n_geom_MeV": Infinity
+  "m_n_geom_MeV": Infinity,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

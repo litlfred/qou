@@ -10,7 +10,7 @@
   "scriptFile": "d_nf_knot_identification.py",
   "scriptHash": "4fbe853000d6",
   "scriptCommitSha": "",
-  "description": "Map the 32 NF basis words of D (from d-nf-weighted-vol.witness.json) to named hyperbolic knots via SnapPy census. Groups by V_hyp; reports Σ c_w(q₀) per unique volume class and the Thurston-additive prediction sum.",
+  "description": "Map the 32 NF basis words of D (from d-nf-weighted-vol.witness.json) to named hyperbolic knots via SnapPy census. Groups by V_hyp; reports \u03a3 c_w(q\u2080) per unique volume class and the Thurston-additive prediction sum.",
   "data": {
     "nf_volume_classes": [
       {
@@ -141,5 +141,7 @@
     "overall_sum_c_w_V": 1.2660498583158208,
     "target_vol": 4.353367301439661,
     "relative_error_pct": -70.91791777144239
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

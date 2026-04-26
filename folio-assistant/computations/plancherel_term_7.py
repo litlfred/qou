@@ -59,6 +59,12 @@ set_q(Q0_FLOAT)
 import os as _os
 PRECISION = _os.environ.get("PLANCHEREL_PRECISION", PRECISION_F64_FALLBACK)
 
+# F5: parameterized ε-cutoff on Plancherel weight w_λ.
+# Default 0.0 = no truncation = exact sum.  When > 0, partitions with
+# w_λ < EPS_CUTOFF are skipped; the result is labeled as truncated.
+# CLI: EPS_CUTOFF=1e-3 python3 plancherel_term_7.py
+EPS_CUTOFF = float(_os.environ.get("EPS_CUTOFF", "0.0"))
+
 Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
 me = mp.mpf(str(M_E_MEV))
 G = mp.catalan
@@ -258,6 +264,7 @@ def main():
 
         if chis is not None:
             # Aggregate batch results into per-depth structure.
+            n_skipped_eps = 0
             for (lam_t_arg, _, _, _), chi in zip(jobs, chis):
                 lam_t = lam_t_arg
                 if chi == 0:
@@ -265,11 +272,18 @@ def main():
                 depth = len(lam_t) - 1
                 dq = float(dim_q(lam_t))
                 w_lam = dq * dq / nfac
+                # F5: parameterized ε-cutoff (default 0 = no truncation).
+                if EPS_CUTOFF > 0 and w_lam < EPS_CUTOFF:
+                    n_skipped_eps += 1
+                    continue
                 log_abs_chi = float(np.log(abs(chi)))
                 sign_chi = 1 if chi > 0 else -1
                 per_depth.setdefault(depth, []).append(
                     (lam_t, w_lam, chi, log_abs_chi, sign_chi)
                 )
+            if EPS_CUTOFF > 0 and n_skipped_eps > 0:
+                print(f"    [eps-cutoff {EPS_CUTOFF:.1e}: skipped "
+                      f"{n_skipped_eps}/{len(chis)} partitions]")
             _profile_ctx.__exit__(None, None, None)
 
         # Compute Φ_k (real) = Σ_{λ at depth k} w_λ · log|χ_λ|
@@ -330,6 +344,10 @@ def main():
         # mpfr_50dps (or higher) ⇒ exact at requested decimal precision
         # symbolic_q             ⇒ deferred (F3 Murnaghan–Nakayama)
         'precision': PRECISION,
+        # F5: ε-cutoff (0 = no truncation = exact sum).  When > 0, the
+        # output is a TRUNCATED Plancherel sum; consumers should treat
+        # the binding-energy / Φ_k results as approximations.
+        'truncation_eps': EPS_CUTOFF,
         'q_0': Q0_FLOAT,
         'isotopes': [{
             'iso': r['iso'], 'Z': r['Z'], 'N': r['N'], 'A': r['A'],

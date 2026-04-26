@@ -111,5 +111,7 @@
       "closest_simple": "2",
       "closest_simple_err_pct": 9.263684176920483
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

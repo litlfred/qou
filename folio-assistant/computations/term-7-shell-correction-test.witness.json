@@ -397,5 +397,7 @@
     "m_e_sum_Hq_all_MeV": 4991338.919219796,
     "required_avg_occupancy_sc": 0.00015755493466285448,
     "required_avg_occupancy_all": 5.645030013247087e-06
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

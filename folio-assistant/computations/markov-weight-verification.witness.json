@@ -10,7 +10,7 @@
   "scriptFile": "markov_weight_verification.py",
   "scriptHash": "94a2b210a8f9",
   "scriptCommitSha": "9eeabafdca820175236c1e2b79b8c1bc0bde8259",
-  "description": "Verify whether Σ_λ (d_q²/[n]_q!)·χ_λ(σ_1) reproduces the Markov-trace value z = 1/(q^{1/2}+q^{-1/2}) for H_2(q) and H_3(q) at q=q_0.  Addresses gemini's HIGH-priority claim.",
+  "description": "Verify whether \u03a3_\u03bb (d_q\u00b2/[n]_q!)\u00b7\u03c7_\u03bb(\u03c3_1) reproduces the Markov-trace value z = 1/(q^{1/2}+q^{-1/2}) for H_2(q) and H_3(q) at q=q_0.  Addresses gemini's HIGH-priority claim.",
   "data": {
     "params": {
       "q_0": 1.1099785955541805,
@@ -99,5 +99,7 @@
         }
       ]
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

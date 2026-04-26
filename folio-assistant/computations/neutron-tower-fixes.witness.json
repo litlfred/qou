@@ -20,5 +20,7 @@
   "fix3_inter_cross": {
     "m_n_corr": null,
     "err_pct": null
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -84,5 +84,7 @@
       "scalar_time_sec": 0.0060024261474609375,
       "traced_time_sec": 346.6109583377838
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

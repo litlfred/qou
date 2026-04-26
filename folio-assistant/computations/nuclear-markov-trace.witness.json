@@ -153,5 +153,7 @@
       "tr_L0_direct": NaN,
       "tr_ei_context": NaN
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -169,6 +169,7 @@ export default chapter({
         "fine-structure-data",
         "color-confinement-observation",
         "confinement-curvature-rank",
+        "physics-names-knot-operations",
         "lepton-discrepancies",
         "lepton-anomalies-data",
       ],

@@ -289,5 +289,7 @@
       },
       "verdict": "no_clean_identification"
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

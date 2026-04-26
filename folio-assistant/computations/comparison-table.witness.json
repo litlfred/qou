@@ -279,5 +279,7 @@
   "lp_verification": {
     "feasible": true,
     "t23_unconditional": true
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

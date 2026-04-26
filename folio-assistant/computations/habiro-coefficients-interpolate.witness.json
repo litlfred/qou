@@ -41,5 +41,7 @@
       "tr_M_q0_numerical_60dps": "0.00506069341454955589063075401728950417098608921377008974710135",
       "walltime_sec": 13.221444129943848
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

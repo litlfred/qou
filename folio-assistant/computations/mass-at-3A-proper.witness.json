@@ -148,5 +148,7 @@
       "delta_m_over_m_pct": 123344.53554438328,
       "time_sec": 0.321319580078125
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

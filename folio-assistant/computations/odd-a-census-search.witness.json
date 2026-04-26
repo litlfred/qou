@@ -75,5 +75,7 @@
       "matches_me": [],
       "matches_2me": []
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

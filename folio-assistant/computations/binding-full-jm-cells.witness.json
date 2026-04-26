@@ -202,5 +202,7 @@
       "delta_err_pct": 0.20105042949927998,
       "time_sec": 1.1721932888031006
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -149,5 +149,7 @@
       "sum_inv_d": "282327329/119750400",
       "sum_inv_d_float": 2.3576316154267545
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

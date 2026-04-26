@@ -52,5 +52,7 @@
     "neutron_t35_trace": 1.1242676904436548,
     "delta_np_single": 0.026008037314654064,
     "delta_np_t35": 0.3559229612473265
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

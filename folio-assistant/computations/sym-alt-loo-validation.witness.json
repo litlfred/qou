@@ -76,5 +76,7 @@
     "c": -26.57276417741611
   },
   "mean_abs_residual_pct": 9.842835172732023,
-  "max_abs_residual_pct": 26.569890540058434
+  "max_abs_residual_pct": 26.569890540058434,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

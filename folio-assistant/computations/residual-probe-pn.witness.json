@@ -14,5 +14,7 @@
     "name": "1/(1 - \u210f_q\u00b2\u00b7[2]_q/10)",
     "val": "1.001978040283806743609864",
     "err": 0.0001995297886346969
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }
