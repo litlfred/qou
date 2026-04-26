@@ -1,8 +1,8 @@
 Every mathematical symbol used in this paper belongs to exactly one
 register. The tables below group symbols by the chapter where each is
 first introduced; within a chapter, entries are sorted alphabetically
-by concept name. This block is authoritative — internal style guides
-(`CLAUDE.md` §7aa, `.gemini/styleguide.md`) refer to it.
+by concept name. This block is authoritative — `CLAUDE.md` §7aa
+refers to it.
 
 ### Quantum universes (Chapter 1)
 

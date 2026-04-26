@@ -18,10 +18,11 @@ paper to keep them disambiguated:
   (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke /
   hook-length, always with argument).
 - **Numerical $q = 1.1097$** (or any specific value of the substrate
-  parameter) must not appear outside the introduction and Chapter 11
-  (Observations). Geometry chapters use symbolic $q$. Exception:
-  Chapter 8 (Information Theory) may use numerical $q$ for
-  falsifiability computations.
+  parameter) should not appear outside the introduction, Chapter 8
+  (Information Theory, for falsifiability computations), and
+  Chapter 11 (Observations). Geometry chapters should use symbolic
+  $q$. *(Currently violated in a handful of body chapters; tracked
+  for cleanup.)*
 
 **Approximation convention (derived / observed values).** Numerical
 values derived from the substrate parameter $q_0$ or compared to

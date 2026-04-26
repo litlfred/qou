@@ -173,11 +173,13 @@
 \makeatother
 
 % ── Book-style chapter / section formatting ────────────────────────────────
-% Each chapter starts on a new page. The chapter numeral is rendered very
-% large, left-aligned, with whitespace to the right — book convention. The
+% Chapter page breaks are handled by the renderer (it prepends \clearpage
+% to every \input chapter — see content/pipeline/render-latex.ts
+% renderChapter). The chapter numeral here is rendered very large,
+% left-aligned, with whitespace to the right — book convention. The
 % chapter title sits below the numeral. Sections and subsections stay
 % compact with normal-size fonts.
-\titleclass{\chapter}{top}            % chapters start a new page
+\titleclass{\chapter}{straight}       % renderer-driven page breaks
 \titleformat{\chapter}[display]%
   {\normalfont\bfseries\raggedright}%
   {%

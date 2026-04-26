@@ -13,12 +13,14 @@ export default chapter({
   sections: [
     section({
       title: "Symbols by introducing chapter",
+      label: "sec:notation-register-section",
       blocks: [
         "notation-register",
       ],
     }),
     section({
       title: "Key collision avoidances",
+      label: "sec:notation-collisions-section",
       blocks: [
         "notation-collisions",
       ],

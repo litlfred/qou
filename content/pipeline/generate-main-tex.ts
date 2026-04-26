@@ -167,10 +167,11 @@ export function generateMainTex(
   // Table of contents — depth limited to chapters + sections by preamble.
   // The notation register is the first chapter (\chapter*{Notation}) and
   // sits immediately after the TOC, so readers see symbol conventions
-  // before the introduction.
+  // before the introduction. The renderer prepends \clearpage to every
+  // chapter (see render-latex.ts renderChapter), so no extra \clearpage
+  // is needed here.
   lines.push("% ── Table of contents ─────────────────────────────────────────────────────");
   lines.push("\\tableofcontents");
-  lines.push("\\clearpage");
   lines.push("");
 
   // 4. Chapter includes (excluding standalone appendices)
