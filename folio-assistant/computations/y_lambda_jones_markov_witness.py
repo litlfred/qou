@@ -65,10 +65,18 @@ def cycle_type_word(mu: tuple[int, ...]) -> list[int]:
     return word
 
 
-def chi_lambda_with_cache(
-    sigmas: list[np.ndarray], d_lam: int, word: list[int]
-) -> float:
-    """Compute χ_λ(σ_{w_1} σ_{w_2} ⋯) given precomputed seminormal matrices."""
+def chi_lambda_with_cache(sigmas, d_lam: int, word: list[int]) -> float:
+    """Compute χ_λ(σ_{w_1} σ_{w_2} ⋯) given precomputed seminormal matrices.
+
+    Works for both dense numpy arrays and scipy sparse matrices (sparse
+    is preferred for large d_λ to keep memory feasible at n ≥ 11)."""
+    is_sparse = hasattr(sigmas[0], "toarray")
+    if is_sparse:
+        from scipy import sparse as sp_sparse
+        M = sp_sparse.eye(d_lam, format="csr")
+        for idx in word:
+            M = M @ sigmas[idx - 1]
+        return float(M.diagonal().sum())
     M = np.eye(d_lam)
     for idx in word:
         M = M @ sigmas[idx - 1]
@@ -80,12 +88,12 @@ def solve_jones_markov_weights(n: int) -> dict:
     parts = list(partitions_of(n))
     p_n = len(parts)
 
-    # Precompute seminormal matrices once per partition (densified).
+    # Precompute seminormal matrices once per partition.  The builder
+    # auto-selects sparse for dim > 500 (n ≥ 12 hits this bound), keeping
+    # memory feasible.  Force sparse here for any d_λ ≥ 200 to be safe.
     seminormal_cache: dict = {}
     for lam in parts:
-        sigmas, d_lam, _ = build_seminormal_matrices(lam)
-        if hasattr(sigmas[0], "toarray"):
-            sigmas = [s.toarray() for s in sigmas]
+        sigmas, d_lam, _ = build_seminormal_matrices(lam, sparse=True)
         seminormal_cache[lam] = (sigmas, d_lam)
 
     # Build the χ-matrix: rows = test elements (cycle-type reps),
