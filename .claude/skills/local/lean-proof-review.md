@@ -126,32 +126,24 @@ Google Gemini code review triggers on PRs.  To make it proof-aware:
 3. `.github/copilot-instructions.md` instructs Gemini to check linked Lean
    declarations when reviewing LaTeX changes
 
-## Current Codebase State (as of 2026-03-21)
+## Current codebase state — generated, not embedded
 
-**0 active sorry** | **0 admit** | **0 axiom** | **~107 substantive proofs** | **6 trivial (rfl/simp)**
+This skill **does not embed a state table**. Snapshots drift; current
+counts come from:
 
-### Categorical Stubs (new 2026-03-21)
+```bash
+bun run audit:lean
+```
 
-Eight new categorical structures added to `QuantumObservableUniverse.lean`:
+`audit/lean-indicators.md` lists `sorry` / `sorryUncited` / `axiom` /
+`admit` / `trivial` / LoC per block, with rollups at section,
+chapter, paper, and folio level. Each row carries git-blob SHAs of
+its inputs (the `.ts` manifest, `.lean` sibling, `.md` narrative) so
+reviewers can tell, file-by-file, whether the indicators are stale.
+See `audit/README.md`.
 
-| Lean identifier | Type | LaTeX label |
-|----------------|------|-------------|
-| `CategoricalQExtDeriv` | structure | `def:categorical-q-ext-deriv` |
-| `CategoricalInstanton` | structure | `def:categorical-instanton` |
-| `categorical_irreducible` | theorem | `lem:categorical-irreducible` |
-| `categorical_self_duality` | theorem | `prop:categorical-self-duality` |
-| `categorical_dq_squared` | theorem | `prop:categorical-dq-squared` |
-| `CategoricalJet` | structure | `def:categorical-jet` |
-| `categorical_jet_prolongation` | theorem | `prop:categorical-jet-prolongation` |
-| `CategoricalTransport` | structure | `def:categorical-transport` |
-
-### Known Patterns
-
-- All sorry stubs have been eliminated; former sorry-bearing files
-  (`FormalGroups.lean`, `PAdicQuantumGroups.lean`, `HadronicMass.lean`)
-  now have complete proofs or structural placeholders (`rfl`, `True`)
-- `BringsSurface.lean` trivial proofs (`by rfl`): these are definitional
-  equalities for genus/euler-char/etc. — correct and appropriate
+The review checklist at the bottom of this skill references those
+indicators rather than hard-coded numbers.
 
 ## Content Object Integration
 
@@ -181,6 +173,6 @@ dependencies. Missing imports suggest incomplete formalization.
 - [ ] All modified Lean files compile (`lake build`)
 - [ ] Review records include `reviewer_id`, `verdict`, `confidence`
 - [ ] Critical issues block merge
-- [ ] `sorry` count is accurately tracked (current: 0 active)
+- [ ] `sorry` count is accurately tracked (run `bun run audit:lean`; compare rollup hashes to the previously-committed `audit/lean-indicators.json` to confirm what changed)
 - [ ] Linked LaTeX content is consistent with Lean statements
 - [ ] All sorry stubs have bibliographic citations or blocking-reason comments

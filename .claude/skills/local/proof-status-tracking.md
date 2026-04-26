@@ -112,33 +112,22 @@ Key metrics:
 | Maximum sorry for publication | 0 in core theorems |
 | Confidence threshold | ≥ 0.7 average across agentic reviewers |
 
-## Current Snapshot (as of 2026-03-20)
+## Current state — generated, not embedded
 
-| Metric | Value |
-|--------|-------|
-| Total .lean files | 18 |
-| Total declarations | ~133 |
-| Substantive proofs | ~99 |
-| Active sorry stubs | 27 |
-| Trivial proofs (rfl/simp) | 6 |
-| Axiom declarations | 0 |
-| Admit statements | 0 |
+This skill **does not embed a snapshot table**. Embedded snapshots
+drift and become misleading within weeks. Instead, indicator counts
+and rollup hashes are produced on demand by:
 
-### Sorry distribution
+```bash
+bun run audit:lean
+```
 
-- `FormalGroups.lean`: 11 (external [fred2005])
-- `PAdicQuantumGroups.lean`: 4 (external [fred2005])
-- `QuantumObservableUniverse.lean`: 2 (core theory)
-- `HadronicMass.lean`: 2 (tactic limitation — `Real.rpow`)
-- `BringsSurface.lean`: 2 (deep math)
-- `DescartesUniverse.lean`: 1 (Tannaka–Krein rigidity)
-- `Torsion.lean`: 1 (commented out — inactive)
-
-### Consistency notes
-
-- All sorry stubs carry bibliographic citations — no orphaned stubs
-- No `axiom` or `admit` hacks masquerading as proofs
-- `FormalGroups.lean` documents its sorry-by-design policy in a file header
+This walks `folio → paper → chapter → section → block`, computes
+`sorry` / `sorryUncited` / `axiom` / `admit` / `trivial` / LoC per
+block, and emits content-addressable rollup hashes at every level.
+Outputs live in `audit/lean-indicators.{json,md}`. Each row carries
+git-blob SHAs of its inputs (`.ts` / `.lean` / `.md`) so staleness is
+detectable file-by-file. See `audit/README.md`.
 
 ## Content Object Integration
 

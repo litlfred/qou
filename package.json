@@ -6,6 +6,7 @@
     "validate": "cd content && bun run pipeline/validate.ts quantum-observable-universe/",
     "build:content": "cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
     "build:docs": "typedoc",
+    "audit:lean": "bun run scripts/lean-indicators.ts",
     "export-json": "cd content && bun run pipeline/export-json.ts",
     "generate-readme": "./scripts/generate-readme.sh"
   },
@@ -22,6 +23,7 @@
     "micromark-extension-gfm-table": "^2.1.1",
     "remark": "^15.0.1",
     "remark-math": "^6.0.0",
+    "tsx": "^4.21.0",
     "zod": "^4.3.6"
   }
 }

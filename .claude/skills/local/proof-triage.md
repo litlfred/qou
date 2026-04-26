@@ -254,52 +254,24 @@ In `glossary.json`, follow the existing notation conventions:
 - Use `textstylesum` not `sum` for summation notation
 - Check 2–3 neighboring entries for the prevailing style before adding new ones
 
-## Current Sorry Inventory (as of 2026-03-20, post-triage)
+## Current sorry inventory — generated, not embedded
 
-**11 active `sorry` statements** across 3 files (down from 27).
-0 `admit`, 0 `axiom` declarations.
+This skill **does not embed an inventory**. Snapshots drift; the
+inventory is regenerated on demand by:
 
-### Resolved (16 sorry eliminated)
+```bash
+bun run audit:lean
+```
 
-| File | Count | How resolved |
-|------|-------|-------------|
-| `BringsSurface.lean` | 2 | Goal was `True`; replaced `sorry` with `trivial` |
-| `DescartesUniverse.lean` | 1 | Goal was `True`; replaced `sorry` with `trivial` |
-| `QuantumObservableUniverse.lean` | 2 | Structural: `leibniz` RHS made explicit field; `obs_well_defined` given proper type |
-| `FormalGroups.lean` (defaults) | 5 | Removed `:= by sorry` defaults from structure fields; fields now required |
-| `Torsion.lean` | 1 | Was already commented out — not active |
+The output `audit/lean-indicators.md` lists every block with active
+`sorry`, broken down by section / chapter / paper. The companion
+`audit/lean-indicators.json` carries per-block git-blob SHAs of the
+inputs so staleness is detectable file-by-file, and rollup hashes at
+every level so you can tell exactly which subtree changed since the
+last run. See `audit/README.md`.
 
-### Remaining (11 sorry — all unresolvable without external input)
-
-| File | Count | Category | Why unresolvable |
-|------|-------|----------|-----------------|
-| `FormalGroups.lean` | 6 | External [fred2005] | Theorems from L. Fred's 2005 PhD thesis. Proofs require porting 200+ pages of formal-group theory into Lean 4. No shortcuts. |
-| `PAdicQuantumGroups.lean` | 3 | External [fred2005] | Same — Witt vector lift, Frobenius relation, unit-root equivalence all cite [fred2005]. |
-| `HadronicMass.lean` | 2 | `Real.rpow` blocked | `pair_skein_mass` uses `q ^ (1/2 : ℝ)` which `norm_num` cannot evaluate. Resolution requires ~80 lines of interval arithmetic bounding `Real.sqrt` between rational bounds. Numerically verified; not mathematically deep, just tedious. |
-
-### Why each remaining sorry cannot be resolved now
-
-**FormalGroups.lean (6 sorry):**
-- `skew_poisson_integrates` (L146) — Main Theorem of [fred2005]: existence of non-commutative formal group from skewed-Poisson data. Requires full integration construction.
-- `reduction_mod_p_commutative` (L163) — [fred2005, Main Theorem, item (1)]: reduction mod p recovers commutativity. Requires the explicit Gröbner–Shirshov deformation machinery.
-- `grobner_shirshov_basis_exists` (L198) — [fred2005, Proposition 3.8]: existence of the normal-form basis. Requires the composition lemma proof.
-- `strong_multiplicativity_holds` (L222) — [fred2005, Theorem 4.12]: Frobenius relation preserved under deformation. Core technical result of the thesis.
-- `witt_vector_lift_exists` (L254) — [fred2005, Main Theorem + §5]: existence of Witt vector lift. Combines all preceding results.
-- `unit_root_iff_integrable` (L295) — [fred2005, Corollary 5.3]: equivalence between unit-root F-crystal and integrability. Non-trivial direction (←) requires the full integration theorem.
-
-**PAdicQuantumGroups.lean (3 sorry):**
-- `padic_qou_lifts_from_finite_field` (L142) — [fred2005, Main Theorem] + Witt vector functor: existence of p-adic QOU from finite-field data.
-- `padic_frobenius_relation_preserved` (L157) — [fred2005, Theorem 4.12]: Frobenius/Verschiebung commutation in the lifted setting.
-- `unit_root_iff_skew_poisson_integrable` (L171) — [fred2005, Corollary 5.3]: surjectivity of Frobenius from integrability.
-
-**HadronicMass.lean (2 sorry):**
-- `proton_pair_skein_approx` (L390) — Needs `Real.sqrt 1.1097` bounded between `1053/1000` and `1054/1000` via `Real.sqrt_lt_sqrt`, then interval propagation through division. Difference ≈ 0.03 MeV.
-- `neutron_pair_skein_approx` (L400) — Same technique. Difference ≈ 0.05 MeV.
-
-### Trivial proofs (not sorry, but worth noting)
-
-6 single-tactic proofs (`by rfl`, `by simp`) in `BringsSurface.lean` and
-`Calculations.lean`. All are definitional equalities — legitimate, not placeholders.
+When triaging, sort the report's "Top blocks by uncited sorry" table
+and walk it top-down.
 
 ## Feedback & Iteration Notes
 
