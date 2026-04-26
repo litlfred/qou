@@ -83,40 +83,59 @@ def chi_lambda_with_cache(sigmas, d_lam: int, word: list[int]) -> float:
     return float(np.trace(M))
 
 
-def solve_jones_markov_weights(n: int) -> dict:
-    """Solve the linear system for y_λ at H_n(R, q) at q_0.
+# CRT-style probe points bracketing q_0 ≈ 1.1097, used for
+# Vandermonde reconstruction of y_λ as q-rational functions.
+PROBE_QS: list[float] = [1.02, 1.05, 1.08, 1.11, 1.15]
 
-    Note on CRT extension: the existing `crt_markov.py` infrastructure
-    fits log|tr_M| as a polynomial in log(q) by evaluating at multiple
-    q probe points.  Extending that approach to y_λ would require a
-    q-parameterised seminormal-matrix builder (the current
-    `build_seminormal_matrices` reads q from q_parameter.py at module
-    load time).  Sibling branches' Rust seminormal kernel
-    (`phase-b-heavy-rust-character-kernel`) parameterises q and can
-    produce multi-q probe data; the present witness records the
-    q_0-only solution as the canonical reference."""
-    parts = list(partitions_of(n))
+
+def _solve_at_q(parts: list[tuple[int, ...]], q_val: float, n: int) -> dict:
+    """Solve the y_λ linear system at a specific q value, using the
+    q-parameterised seminormal builder (override path)."""
+    z = 1.0 / (q_val ** 0.5 + q_val ** -0.5)
     p_n = len(parts)
-
-    # Force sparse seminormal matrices to keep memory bounded at large n
-    # (e.g. d_λ = 462 for partition (4,4,4) at n=12).
     seminormal_cache: dict = {}
     for lam in parts:
-        sigmas, d_lam, _ = build_seminormal_matrices(lam, sparse=True)
+        sigmas, d_lam, _ = build_seminormal_matrices(lam, sparse=True, q=q_val)
         seminormal_cache[lam] = (sigmas, d_lam)
-
     A = np.zeros((p_n, p_n))
     b = np.zeros(p_n)
     for i, mu in enumerate(parts):
         word = cycle_type_word(mu)
-        b[i] = float(Z_MARK ** (n - len(mu)))
+        b[i] = z ** (n - len(mu))
         for j, lam in enumerate(parts):
             sigmas, d_lam = seminormal_cache[lam]
             A[i, j] = chi_lambda_with_cache(sigmas, d_lam, word)
-
     y = np.linalg.solve(A, b)
-    cond = float(np.linalg.cond(A))
-    residual = float(np.max(np.abs(A @ y - b)))
+    return {
+        "q": q_val,
+        "z": z,
+        "y": [float(v) for v in y],
+        "cond": float(np.linalg.cond(A)),
+        "residual": float(np.max(np.abs(A @ y - b))),
+    }
+
+
+def solve_jones_markov_weights(n: int, do_crt_probes: bool = True) -> dict:
+    """Solve the linear system for y_λ at H_n(R, q) at q_0; if
+    `do_crt_probes` is true, also evaluate at PROBE_QS for q-rational
+    reconstruction by downstream consumers."""
+    parts = list(partitions_of(n))
+    p_n = len(parts)
+
+    # Canonical q_0 evaluation
+    canonical = _solve_at_q(parts, float(Q0), n)
+
+    probes: list[dict] = []
+    if do_crt_probes and n <= 10:
+        # CRT probes only for n ≤ 10: rebuilding seminormal matrices at
+        # each q is O(p(n) · max d_λ²); n ≥ 11 sees d_λ explode (≥ 200).
+        for q_probe in PROBE_QS:
+            if abs(q_probe - float(Q0)) < 1e-6:
+                continue
+            try:
+                probes.append(_solve_at_q(parts, q_probe, n))
+            except np.linalg.LinAlgError:
+                pass
 
     return {
         "n": n,
@@ -127,13 +146,14 @@ def solve_jones_markov_weights(n: int) -> dict:
             {
                 "partition": list(lam),
                 "depth": max(0, len(lam) - 1),
-                "y_lambda": float(y[j]),
+                "y_lambda": canonical["y"][j],
             }
             for j, lam in enumerate(parts)
         ],
+        "crt_probes": probes,
         "diagnostics": {
-            "condition_number": cond,
-            "linear_system_residual": residual,
+            "condition_number": canonical["cond"],
+            "linear_system_residual": canonical["residual"],
         },
     }
 

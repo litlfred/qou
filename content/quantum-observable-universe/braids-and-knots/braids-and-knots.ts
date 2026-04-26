@@ -436,6 +436,7 @@ export default chapter({
         "mass-formula-wedderburn-enumeration",
         "mass-tower-coefficient-stratification",
         "alpha-k-derivation-procedure",
+        "explicit-alpha-k-h3",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
         "shell-correction-term-seven",
