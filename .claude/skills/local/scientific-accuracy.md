@@ -329,6 +329,15 @@ blocks, a missing `.lean` sibling is a warning. The `uses[]` dependency
 graph helps trace which upstream definitions a claim relies on — verify
 those are formalized too.
 
+**Glossary terms (`:defterm` / `:refterm`).** Every term registered in
+any block's `defines: [...]` must appear wrapped at every mention —
+`:defterm[…]{#slug}` once, `:refterm[…]{#slug}` everywhere else (LaTeX:
+`\defterm{slug}` / `\refterm{slug}`). Bare-text or `\emph{}` mentions
+of a defined term are scientific-accuracy violations because they
+break the canonical-name → canonical-definition link the validator
+relies on. Run `bun run validate <paper> --strict` to catch
+`term-mention-coverage` warnings. See `local/glossary-build` skill.
+
 ## Mandatory fallback participation
 
 This skill is invoked automatically by the editor's **content-change fallback**

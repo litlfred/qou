@@ -224,3 +224,6 @@ If the author says "apply all" or "go ahead":
 - [ ] GitHub blob URLs included (`.md` default, `.lean` for formal gaps)
 - [ ] Author presented with numbered next-action choices
 - [ ] No edits made without explicit author approval
+- [ ] Glossary-term findings (defterm/refterm violations) routed to the
+      authoring skill (`md-authoring` or `scientific-accuracy`) plus
+      `local/glossary-build` for the codemod/build pass
