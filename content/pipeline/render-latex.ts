@@ -102,7 +102,7 @@ const mdParser = remark()
  */
 const MD_AST_CACHE_LIMIT = 512;
 const _mdAstCache = new Map<string, any>();
-function parseMdCached(md: string): any {
+export function parseMdCached(md: string): any {
   let tree = _mdAstCache.get(md);
   if (!tree) {
     tree = mdParser.parse(md);
