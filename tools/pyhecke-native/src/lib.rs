@@ -5,7 +5,7 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::{gram, seminormal, seminormal_mn, seminormal_mpfr};
+use hecke_engine::{gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr};
 use pyo3::prelude::*;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
@@ -175,6 +175,27 @@ fn mn_chi(lambda: Vec<usize>, mu: Vec<usize>) -> i64 {
     seminormal_mn::mn_chi(&lambda, &mu)
 }
 
+/// **Littlewood-Richardson coefficient `c^λ_{μν}`.**
+///
+/// Computes the multiplicity of the Specht module `S^λ` in the
+/// induced representation `Ind_{S_p × S_q}^{S_n} S^μ ⊠ S^ν`, equivalently
+/// the number of LR tableaux of skew shape `λ/μ` with content `ν`.
+///
+/// Used by the F4 composer (`chi_via_factorization`): for a tensor-
+/// product factorization β = β_1 ⊗ β_2,
+///
+///   χ_λ(β) = Σ_{μ ⊢ p, ν ⊢ q} c^λ_{μν} · χ_μ(β_1) · χ_ν(β_2)
+///
+/// `lambda`: outer partition λ.
+/// `mu`: inner partition μ (must satisfy μ ⊆ λ componentwise).
+/// `nu`: content partition ν.
+///
+/// Returns 0 if `|λ| ≠ |μ| + |ν|` or μ ⊄ λ.
+#[pyfunction]
+fn lr_coefficient(lambda: Vec<usize>, mu: Vec<usize>, nu: Vec<usize>) -> i64 {
+    littlewood_richardson::lr_coefficient(&lambda, &mu, &nu)
+}
+
 /// **q-deformed character of an arbitrary braid word** via Hecke
 /// expansion of inverse generators.
 ///
@@ -299,6 +320,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;
+    m.add_function(wrap_pyfunction!(lr_coefficient, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
