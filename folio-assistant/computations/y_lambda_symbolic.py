@@ -152,19 +152,31 @@ def solve_y_symbolic(n: int, q):
 def main(ns: list[int]) -> None:
     q = sp.Symbol("q", positive=True)
     out_path = Path(__file__).parent / "y-lambda-symbolic-witness.json"
-    out: dict = {
-        "description": (
-            "Exact q-rational y_λ via symbolic linear-system solve "
-            "(sympy).  No interpolation, no Padé ambiguity — exact "
-            "Markov-trace block weights as elements of Q(q^{1/2})."
-        ),
-        "references": [
-            "prop:alpha-k-derivation-procedure",
-            "prop:explicit-alpha-k-h3",
-        ],
-        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "tables_by_n": {},
-    }
+    # Merge-aware: load existing witness so running with a subset of
+    # n's preserves entries for the others.  Running `y_lambda_symbolic.py 5`
+    # will keep n=2,3,4 entries intact rather than overwriting them.
+    if out_path.exists():
+        out: dict = json.loads(out_path.read_text())
+    else:
+        out = {"tables_by_n": {}}
+    out["description"] = (
+        "Exact q-rational y_λ via symbolic linear-system solve "
+        "(sympy).  No interpolation, no Padé ambiguity — exact "
+        "Markov-trace block weights as elements of Q(q^{1/2})."
+    )
+    out["references"] = [
+        "prop:alpha-k-derivation-procedure",
+        "prop:explicit-alpha-k-h3",
+    ]
+    out["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+    out.setdefault("tables_by_n", {})
+
+    preserved = sorted(
+        (k for k in out["tables_by_n"] if int(k) not in ns),
+        key=int,
+    )
+    if preserved:
+        print(f"Preserving existing entries for n in {preserved}\n")
     for n in ns:
         print(f"Solving y_λ symbolically at H_{n}(R, q) (n={n})...")
         ys = solve_y_symbolic(n, q)
