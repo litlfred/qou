@@ -19,6 +19,16 @@ default.
 References:
 - prop:alpha-k-derivation-procedure
 - pyhecke_native.chi_lambda_braid_mpfr (tools/pyhecke-native)
+
+Performance ceiling:
+- n=3..11 at 50 dps complete in ~10 min total.
+- n=12 at 50 dps does not complete in 45 min wall-clock.
+- n=12 at 25 dps does not complete in 25 min wall-clock either.
+  Bottleneck: 462x462 sparse Hoefsmit MPFR matmul for partition (4,4,4).
+  Tractable n=12 high-precision would require block-sparse MPFR plus
+  rayon parallelism over partitions in the Rust kernel.
+  For now: f64 witness in y-lambda-jones-markov-witness.json
+  (already in main) covers n=12 at 64-bit precision.
 """
 from __future__ import annotations
 
