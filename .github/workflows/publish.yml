@@ -179,7 +179,7 @@ jobs:
           pdflatex --version | head -1
           pandoc --version | head -1
           latexmk --version | head -1
-          latexdiff --version 2>&1 | head -1 || true
+          latexdiff --version 2>&1 | head -1
           latexpand --version 2>&1 | head -1
 
       # ── 0b2. Install bun (content pipeline) ─────────────────────────────
