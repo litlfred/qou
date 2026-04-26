@@ -127,7 +127,7 @@ for k in 2..K_PARTITION_MAX:
     σ_1..σ_{k−1} = YSN matrices in λ
 for step = 1..A:
   for each partition λ:
-    M_λ      ← M_λ × ∏(c·σ_g + d·I) over new crossings at this step
+    M_λ      ← M_λ × ∏(c*σ_g + d*I) over new crossings at this step
     ΔB_λ     = m_e \cdot H_q(λ) \cdot y_λ \cdot (ln|Tr M_λ| − previous)
     cumulative_λ += ΔB_λ
     record witness row
