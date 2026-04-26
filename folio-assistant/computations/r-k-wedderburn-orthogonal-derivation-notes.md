@@ -245,3 +245,65 @@ matrix involves products of dim-5 sympy matrices.
   derivation-followups).
 
 Estimated effort for any of the three: 1–2 sessions.
+
+## H_5/H_6 RESOLVED via adaptive-gauge selection (added 2026-04-26)
+
+**`r_k_h5_h6_adaptive.py`**: for each partition λ ⊢ n, tries every possible
+gauge `c[k] = 1` (k = 0, …, p(n)-1) and picks the one minimising `|c|_∞`,
+then renormalizes so `|c|_∞ = 1` (canonical scale). This resolves the
+divergent-direction degeneracies hit by the c[last]=1 fixed gauge.
+
+**All 18 partitions** at H_5 (7) + H_6 (11) now extract cleanly:
+
+| n | partition | depth | α_λ at canonical gauge |
+|---|---|:--:|--:|
+| 5 | (5) | 0 | +0.5812 |
+| 5 | (4,1) | 1 | -0.5710 |
+| 5 | (3,2) | 1 | -0.2537 |
+| 5 | (3,1,1) | 2 | -0.0702 |
+| 5 | (2,2,1) | 2 | +0.0318 |
+| 5 | (2,1,1,1) | 3 | -0.0046 |
+| 5 | (1⁵) | 4 | -0.0003 |
+| 6 | (6) | 0 | +0.3727 |
+| 6 | (5,1) | 1 | -0.3766 |
+| 6 | (4,2) | 1 | -0.2103 |
+| 6 | (4,1,1) | 2 | -0.0588 |
+| 6 | (3,3) | 1 | +0.0984 |
+| 6 | (3,2,1) | 2 | +0.0382 |
+| 6 | (3,1,1,1) | 3 | +0.0041 |
+| 6 | (2,2,2) | 2 | -0.0042 |
+| 6 | (2,2,1,1) | 3 | +0.0018 |
+| 6 | (2,1⁴) | 4 | +0.0006 |
+| 6 | (1⁶) | 5 | +0.00005 |
+
+## Important: α_λ(H_n) is gauge-dependent
+
+The numerical α_λ values depend on the gauge fixing the scale of r_λ.
+Specifically, r_λ is determined only up to an overall multiplicative
+constant (the Wedderburn-orthogonal subspace is 1-dim; the gauge picks
+one of two unit vectors).
+
+Two natural gauge conventions:
+
+1. **Canonical scale** (`|c|_∞ = 1`): adaptive — picks the smallest-norm
+   solution. Most numerically stable; sign of α_λ is gauge-dependent.
+2. **Fixed-component** (`c[last] = 1`): used in the H_4 closed-form
+   table. Singular for non-hook shapes (the c[last]=1 direction
+   coincides with the null direction of the constraint matrix), hence
+   the original divergent values for (2,2) at H_4 numerically.
+
+**The structurally invariant quantity is `y_λ`** (Jones-Markov central
+coefficient), which is gauge-free by definition. The α_λ values are
+gauge-dependent rescalings of y_λ via χ_λ(r_λ). Specifically:
+
+$$
+  \alpha_\lambda(H_n) \;=\; \mathrm{tr}_M(r_\lambda)
+  \;=\; y_\lambda \cdot \chi_\lambda(r_\lambda)
+$$
+
+so different gauges scale α_λ by the gauge-dependent χ_λ(r_λ) factor.
+
+For the unified mass formula, the physically meaningful quantity is the
+combination y_λ · log|χ_λ(β)| evaluated at the specific braid β —
+gauge-independent because χ_λ(β) refers to the actual nuclear braid,
+not the abstract r_λ.
