@@ -1,8 +1,8 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 instanton $\nabla$ ([categorical instanton](#def:categorical-instanton)) and
 $q$-deformed exterior derivative $d_q$
-([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). The *categorical
-transport equation* for a section $\psi \in \tau(J^1(A))$
+([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). The
+:defterm[categorical transport equation]{#categorical-transport} for a section $\psi \in \tau(J^1(A))$
 ([categorical jet](#def:categorical-jet)) is
 
 ```tex

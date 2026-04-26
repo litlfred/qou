@@ -5,4 +5,5 @@ export default remark({
   title: "Hom-set",
   tags: ["glossary", "category-theory"],
   uses: [],
+  defines: ["hom-set"],
 });

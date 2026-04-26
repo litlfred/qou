@@ -21,4 +21,5 @@ export default definition({
   },
   uses: [],
   examples: [],
+  defines: ["exact-pairing"],
 });
