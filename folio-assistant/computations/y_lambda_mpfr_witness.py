@@ -141,21 +141,23 @@ def main(ns: list[int], dps: int = 50) -> None:
 
     q_str = str(Q0_FLOAT)
     for n in ns:
-        print(f"Solving y_λ at H_{n}(R, q) (n={n}) at {dps} dps...")
+        print(f"Solving y_λ at H_{n}(R, q) (n={n}) at {dps} dps...", flush=True)
         result = solve_y_lambda_mpfr(n, q_str, dps)
         result["cross_check_vs_f64"] = cross_check_against_f64(
             n, [w["y_lambda"] for w in result["weights"]]
         )
         out["tables_by_n"][str(n)] = result
+        # Incremental save so progress isn't lost on SIGTERM/timeout.
+        out_path.write_text(json.dumps(out, indent=2))
         diag = result["cross_check_vs_f64"]
         within = diag.get("all_within_1e-12")
         print(
-            f"  residual: {result['diagnostics']['linear_system_residual_str'][:30]}...  "
-            f"f64 cross-check within 1e-12: {within}"
+            f"  saved n={n}; residual: {result['diagnostics']['linear_system_residual_str'][:30]}...  "
+            f"f64 cross-check within 1e-12: {within}",
+            flush=True,
         )
 
-    out_path.write_text(json.dumps(out, indent=2))
-    print(f"\nWrote {out_path}")
+    print(f"\nFinal write to {out_path}")
 
 
 if __name__ == "__main__":
