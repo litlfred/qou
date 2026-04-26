@@ -13,7 +13,7 @@ denote the experimental proton mass.
 under the Markov-trace pairing $\langle x, y\rangle := \mathrm{tr}_M(xy)$
 ([Jones–Markov trace](#thm:jones-markov-trace)).  Self-duality
 identifies $H_n(q) \cong H_n(q)^*$ as bimodules; Wedderburn gives
-$H_n(q) = \bigoplus_{\lambda \vdash n}\mathrm{Mat}_{\dim(\lambda)}(\mathbb{C})$
+$H_n(R, q) = \bigoplus_{\lambda \vdash n}\mathrm{Mat}_{\dim(\lambda)}(R)$
 with Plancherel weights $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$.*
 
 **Frobenius co-Casimir.**

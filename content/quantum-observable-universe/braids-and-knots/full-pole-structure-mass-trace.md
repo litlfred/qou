@@ -9,12 +9,13 @@ information: the higher-order residues can interfere constructively
 or resonate.
 
 **Proposition (full pole enumeration).**
-*As a meromorphic function of $q \in \mathbb{C}^\times$, the
-Markov trace $q \mapsto \mathrm{tr}_M(T_w, q)$ has simple poles
-at every primitive root of unity $\zeta_n^{(j)}
-= e^{2\pi i j/n}$ for $\gcd(j, n) = 1$ and $n \geq 2$, arising
-from zeros of the $q$-integer factors $[k]_q
-= (q^k - q^{-k})/(q - q^{-1})$ in the denominators of the
+*Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ and
+specialising to a target ring $k$ with $q$ taking values in $k^\times$,
+the Markov trace $q \mapsto \mathrm{tr}_M(T_w, q)$ extends to a
+meromorphic function of $q$ with simple poles at every primitive
+root of unity $\zeta_n^{(j)} = e^{2\pi i j/n}$ for $\gcd(j, n) = 1$
+and $n \geq 2$, arising from zeros of the $q$-integer factors
+$[k]_q = (q^k - q^{-k})/(q - q^{-1})$ in the denominators of the
 Wedderburn weights $w_\lambda(q)$.*
 
 *The Mittag-Leffler expansion at $q_0$ is*
@@ -28,7 +29,7 @@ $$
     \frac{r_n^{(j)}(T_w)}{q_0 - \zeta_n^{(j)}},
 $$
 
-*with residues $r_n^{(j)}(T_w) \in \mathbb{C}$ and kernel
+*with residues $r_n^{(j)}(T_w) \in k$ and kernel
 $1/(q_0 - \zeta_n^{(j)})$.  The sum is absolutely convergent on
 the regular locus (Habiro's theorem,
 [Habiro ring](#def:habiro-ring)).*

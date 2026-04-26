@@ -36,7 +36,7 @@ continuous optimisation.
 *Let $n$ be the Hecke strand count at confinement level $\ell$ and
 let $(\pi_\lambda)_{\lambda \vdash k, k \le n}$ be the central
 idempotents projecting onto the Wedderburn blocks of $H_n(q)$.
-Let $T \in \mathrm{End}_{\mathbb{C}}(H_n(q))$ be the cost operator
+Let $T \in \mathrm{End}_R(H_n(R, q))$ be the cost operator
 (Markov-trace weighting, or the $q$-Laplacian resolvent).  The
 confined operator at $q$ is the solution $\Phi^* \succeq 0$ of:*
 
