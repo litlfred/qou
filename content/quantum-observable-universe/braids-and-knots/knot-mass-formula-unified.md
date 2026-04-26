@@ -31,7 +31,7 @@ $$
   \;=\;
   \sum_{\lambda \,\vdash\, n}
     \frac{[n]_q!}{\dim_q(\lambda)^2 \cdot d_\lambda}
-    \cdot p_\lambda
+    \cdot e_\lambda
   \;\in\; Z\bigl(H_n(q)\bigr)
 $$
 

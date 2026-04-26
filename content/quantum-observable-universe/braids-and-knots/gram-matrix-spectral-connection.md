@@ -62,9 +62,9 @@ $q = q_0$, $\det G \neq 0$ (generically), confirming the
 Frobenius property.*
 
 **Gram ↔ Wedderburn conjugation.**
-*In the central-idempotent basis $\{p_\lambda\}$, the Gram matrix
+*In the central-idempotent basis $\{e_\lambda\}$, the Gram matrix
 is **block-diagonal**: $G_{\lambda, \mu} = \delta_{\lambda \mu}
-\cdot \tau(p_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(p_\lambda)
+\cdot \tau(e_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(e_\lambda)
 = \delta_{\lambda \mu} \cdot \frac{\dim_q(\lambda) \cdot \dim(\lambda)}{[n]_q!}$.
 The inverse is
 $G^{-1}_{\lambda, \mu} = \delta_{\lambda \mu} \cdot \frac{[n]_q!}{\dim_q(\lambda) \cdot \dim(\lambda)}$.

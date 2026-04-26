@@ -10,7 +10,7 @@ and a space of stochastic transition operators.
 
 Fix an irrep $\lambda \vdash n$.  In the Hoefsmit seminormal
 form ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)),
-the irrep $\rho_\lambda \colon H_n(q) \to M_{d_\lambda}(\mathbb{C})$
+the irrep $\rho_\lambda \colon H_n(R, q) \to M_{d_\lambda}(R)$
 is built on the basis of **standard Young tableaux** of shape
 $\lambda$.  Each such tableau is a saturated chain
 

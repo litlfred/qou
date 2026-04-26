@@ -24,18 +24,18 @@ $$
   \;:=\;
   \sum_{\lambda \,\vdash\, n}
     \frac{[n]_q!}{\dim_q(\lambda)^2 \cdot \dim(\lambda)}
-    \cdot p_\lambda
+    \cdot e_\lambda
   \;\in\; Z\bigl(H_n(q)\bigr),
 $$
 
-*where $p_\lambda$ is the central idempotent of block $\lambda$
+*where $e_\lambda$ is the central idempotent of block $\lambda$
 (projector onto $S^\lambda$).  This is the **inverse-Plancherel-
 per-classical-dim** central element — the natural Frobenius
-partner of the unit $1 = \sum_\lambda p_\lambda$ under the
+partner of the unit $1 = \sum_\lambda e_\lambda$ under the
 Markov pairing.*
 
 **Trace identity (derived).**
-*Using $\mathrm{tr}_M(p_\lambda) = \dim_q(\lambda) \cdot \dim(\lambda)/[n]_q!$,*
+*Using $\mathrm{tr}_M(e_\lambda) = \dim_q(\lambda) \cdot \dim(\lambda)/[n]_q!$,*
 
 $$
   \mathrm{tr}_M(C_{\mathrm{Frob}})

@@ -11,6 +11,9 @@ export default remark({
     "prop:spectral-sequence-collapse",
     "prop:confinement-categorical",
     "prop:curvature-rank-gb-stratification",
+    "prop:wedderburn-trace-identity",
+    "prop:pauli-factor-wedderburn",
+    "prop:schur-weyl-mass-decomposition",
   ],
   tags: [
     "completeness",
