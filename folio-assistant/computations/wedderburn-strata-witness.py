@@ -161,10 +161,12 @@ def stratify(n, q0):
 
 
 def main():
-    q0 = 1.1097
+    import sys
+    sys.path.insert(0, str(Path(__file__).parent))
+    from q_parameter import Q as q0
     out = {
         "description": (
-            "Wedderburn-strata enumeration for H_n(R, q) at q = q_0 ≈ 1.1097. "
+            f"Wedderburn-strata enumeration for H_n(R, q) at q = q_0 ≈ {q0:.6f}. "
             "For each n, lists every partition λ ⊢ n with depth, classical "
             "and q-deformed dimensions, signed content (chirality marker), "
             "the canonical Plancherel weight w_λ = (dim_classical)²/n! "

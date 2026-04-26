@@ -20,9 +20,11 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 namespace QOU.BraidsAndKnots
 
-/-- Symmetric q-integer [k]_q = (q^k - q^(-k)) / (q - q^(-1)). -/
+/-- Symmetric q-integer [k]_q = (q^k - q^(-k)) / (q - q^(-1)).
+    Uses integer powers (zpow) for ℤ exponents to preserve algebraic
+    identities; requires q ≠ 0 implicitly via the denominator. -/
 noncomputable def qInt (q : ℝ) (k : ℤ) : ℝ :=
-  (q^(k : ℝ) - q^(-(k : ℝ))) / (q - 1/q)
+  (q ^ k - q ^ (-k)) / (q - 1/q)
 
 /-- Markov parameter z = 1/(q^(1/2) + q^(-1/2)). -/
 noncomputable def markovZ' (q : ℝ) : ℝ :=

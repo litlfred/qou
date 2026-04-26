@@ -10,7 +10,13 @@ from pathlib import Path
 import mpmath as mp
 
 mp.mp.dps = 30
-W = json.load(open(Path(__file__).parent / "y-lambda-jones-markov-witness.json"))
+
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q as Q0_FLOAT
+
+with open(Path(__file__).parent / "y-lambda-jones-markov-witness.json") as f:
+    W = json.load(f)
 
 # Build (n, λ_tuple) → y_λ lookup
 yl: dict = {}
@@ -18,7 +24,7 @@ for n_str, t in W["tables_by_n"].items():
     for ww in t["weights"]:
         yl[(int(n_str), tuple(ww["partition"]))] = mp.mpf(str(ww["y_lambda"]))
 
-q = mp.mpf("1.1099785955541805")
+q = mp.mpf(repr(Q0_FLOAT))
 z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
 
 

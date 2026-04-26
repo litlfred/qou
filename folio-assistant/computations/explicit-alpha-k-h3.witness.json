@@ -1,5 +1,7 @@
 {
   "computation": "explicit-alpha-k-h3",
+  "SUPERSEDED": "This witness used bare Plancherel weights w_\u03bb = (dim V_\u03bb)\u00b2/n! without z-normalization, producing values inconsistent with the closed forms (\u03b1_0=1, \u03b1_2=z\u00b2, \u03b1_3=h\u00b7z\u00b2+z). Superseded by alpha-k-jones-markov-h3.witness.json which solves the proper Jones-Markov linear system tr_M(1)=1, tr_M(\u03c3_i)=z, tr_M(\u03c3_i\u03c3_j)=z\u00b2. Retained for audit trail only. DO NOT USE for new work.",
+  "superseded_by": "alpha-k-jones-markov-h3.witness.json",
   "description": "Explicit \u03b1_k derivation at H_3 via direct Markov pairings on the surviving E_\u221e classes per prop:spectral-sequence-h3-explicit. Computes Hoefsmit characters per partition, sums Wedderburn-weighted to get Markov trace, then projects onto each E_\u221e class.",
   "timestamp_utc": "2026-04-26T00:39:38.017699+00:00",
   "q_0": 1.1099785955541805,

@@ -133,7 +133,7 @@ def main():
         t0 = time.time()
         try:
             tol = mp.mpf(10)**(-tol_dps)
-            relation = mp.pslq(basis_values, tol=tol, maxcoeff=mp.mpf(10)**40)
+            relation = mp.pslq(basis_values, tol=tol, maxcoeff=10**40)
             t1 = time.time()
             if relation is None:
                 print(f"  No relation found  ({t1-t0:.1f}s)")
