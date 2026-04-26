@@ -53,6 +53,7 @@ todos/
 
 # Local agent state (per-machine, not shared)
 .claude/local-state/
+.claude/worktrees/
 .qou-feedback/
 .qou-tmp/
 .folio-feedback/
