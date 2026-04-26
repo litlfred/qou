@@ -201,7 +201,7 @@ the pn-specific Wedderburn component would give $(1 + h)$.  A
 detailed derivation requires specifying the pn coupling in
 Schur–Weyl terms.*
 
-**Status: refined, not closed.**
+**Caveat.** Refined to leading order; closure is open.
 *The writhe-$h$ linearisation **concept** is correct — chirality
 factor is structurally first-order in $h$ for chiral knots,
 quadratic for amphichiral — but the **precise coefficient
@@ -256,8 +256,7 @@ dominates and gives $a_K = 1 - c_K h^2$
 ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)),
 matching the $4_1$ knot's $a_K = 1 - h^2$.*
 
-**Status: derivation complete to leading order, $\langle c\rangle$
-coefficient requires channel-by-channel computation.**
+**Result.** The derivation is complete to leading order; the $\langle c \rangle$ coefficient requires channel-by-channel computation.
 
 *The general formula $a_K = 1 + w(\beta)\langle c\rangle_\beta h
 + O(h^2)$ is derived.  The **specific** value

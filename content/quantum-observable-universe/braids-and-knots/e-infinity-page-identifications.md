@@ -236,7 +236,7 @@ $a_\ell(\beta_\ell^{\mathrm{GS}})$ to the jet product; the
 spectral-sequence identification says these factors are the
 higher-page pairings.*
 
-**Status: conjectural.**
+*Conjectural.*
 *Upstream attempts with wrong prefix conventions give
 essentially zero contribution
 ([jet-prefix GB filtration](#prop:jet-prefix-gb-filtration)).

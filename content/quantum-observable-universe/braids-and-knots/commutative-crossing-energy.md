@@ -208,8 +208,7 @@ algorithmic: computations and proofs do not change, but their
 ambient ring becomes a single named object instead of an ad-hoc
 complexification.
 
-**Status.**  Suggestive partial fit, not a derivation: the
-per-nucleon scaling between $A = 2$ and $A = 3$ remains underived.
+**Caveat.** The fit below is suggestive, not a derivation: the per-nucleon scaling between $A = 2$ and $A = 3$ remains underived.
 The categorical-coordinate identification $i = \sqrt{\lambda_-}$ is
 forced by the Hecke structure at $q = 1$ and is independent of this
 empirical fit.

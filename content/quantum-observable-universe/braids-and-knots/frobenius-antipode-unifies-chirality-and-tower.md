@@ -157,5 +157,4 @@ algebraic.*
   use the same antipode operation in the Wedderburn-symmetric
   channel.*
 
-**Status: Frobenius antipode unifies chirality + neutron closure;
-$\alpha^* = G/3$ approximation derived; exact $\alpha^*$ open.**
+**Summary.** The Frobenius antipode unifies chirality and the neutron-closure family; the $\alpha^* = G/3$ approximation is derived, while the exact $\alpha^*$ remains open.

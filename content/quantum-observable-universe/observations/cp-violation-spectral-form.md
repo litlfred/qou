@@ -64,8 +64,7 @@ The kaon system ($K_L \to \pi\pi$ at $\sim 2 \times 10^{-3}$,
 non-amphicheiral $\bar{u}s$ configuration) is the empirical test
 case.
 
-**Status.**
-The conjecture is downstream of
+*Remark.* This conjecture is downstream of
 ([complex chirality rotation](#conj:complex-chirality-rotation)),
 which is itself conjectural.  Promotion to a proposition requires:
 (a) a categorical proof that $R_\mathbb{C}$-enrichment is the

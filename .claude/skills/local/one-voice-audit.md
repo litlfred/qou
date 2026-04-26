@@ -12,8 +12,9 @@ third-person voice making claims about quantum observable universes.
 Anything that breaks that voice is a violation. Common breakages:
 
 1. **Status markers** in body prose — `✅ Done`, `(TODO)`, `(TBD)`,
-   `**Pending.**`, etc. These are work-tracker speech (CLAUDE.md §4a:
-   content TODOs live in `todos/`, not in the paper).
+   `**Pending.**`, etc. These are work-tracker speech
+   (`CLAUDE.md` §4a *TodoItem lifecycle rules*: content TODOs live
+   in `todos/`, not in the paper).
 2. **Emoji used as content** — `✅`, `❌`, `⚠`, `🔧`, `🚧` outside of
    tables. Even in tables, these belong only when used as compact
    comparison markers (✓ matches / ✗ diverges); never as work status.
@@ -54,8 +55,8 @@ grep -rEn "\*\*Done\*\*|\*\*Completed\*\*|\bDONE\b|\bCOMPLETED\b" \
 grep -rEn "\b(we'll add|I'll add|let me|needs more work|note to self|we should fix)\b" \
   "$CONTENT" --include="*.md"
 
-# Unicode chars that crash pdflatex
-grep -rln "↦\|⁻\|√\|─\|✅" "$CONTENT" --include="*.md"
+# Unicode chars that crash pdflatex (or render unreliably)
+grep -rEn "↦|⁻|√|─|✅|·|²" "$CONTENT" --include="*.md"
 ```
 
 ### 2. Triage by category
@@ -66,7 +67,7 @@ grep -rln "↦\|⁻\|√\|─\|✅" "$CONTENT" --include="*.md"
 | **B. Comparison-table marker** | `✓` / `✗` in a results table (one cell wide, replaces redundant prose) | **Keep — but only in tables.** ✓/✗ in body prose → replace with words ("matches", "diverges"). |
 | **C. Warning callout** | `⚠ *…*`, `**⚠ WARNING:**` | **Replace** with `**Caveat.**` or `**Warning.**` (no symbol). |
 | **D. Star marker** `★` | "best fit", "magic-receptive", "shell closure" | **Keep in tables when meaning is column-scoped.** In body prose → replace with explicit word. |
-| **E. Unicode crash** | `↦`, `⁻`, `√`, `─`, `✅` | Replace with LaTeX command in math (`\mapsto`, `^{-1}`, `\sqrt{}`) or strip box-drawing comments. Add to preamble's `\newunicodechar` list only if widely used. |
+| **E. Unicode crash** | `↦`, `⁻`, `√`, `─`, `✅`, `·`, `²` | Replace with LaTeX command in math (`\mapsto`, `^{-1}`, `\sqrt{}`, `\cdot`, `^{2}`) or strip box-drawing comments. Add to preamble's `\newunicodechar` list only if widely used. |
 | **F. First-person work tone** | "we'll add", "I'll fix" | **Rewrite in passive/scholarly voice.** Often a sign the sentence shouldn't exist at all. |
 
 ### 3. Apply mechanical fixes
@@ -110,8 +111,9 @@ Report back with:
   failures *before* push; complementary preventive skill.
 - `readability-editing` — broader prose tightening; one-voice is a
   subset.
-- `editor` §4a — invokes this skill as a sub-pass on content changes.
+- `editor` §4b — invokes this skill as a sub-pass on content changes
+  (§4a delegates to `markdown-render-check`; §4b is this skill).
 - `proof-conciseness` — for trimming proofs that contain work-tracker
   language disguised as expository structure.
-- `CLAUDE.md` §4a — content TODOs are external to paper; live in
-  `todos/`, never in `.md` content.
+- `CLAUDE.md` §4a *TodoItem lifecycle rules* — content TODOs are
+  external to paper; live in `todos/`, never in `.md` content.

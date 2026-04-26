@@ -64,7 +64,7 @@ formula.*
 |---|---|---|---|
 | D | $1$ positive | $(1 + h)^1$ | $1 + h \approx 1.209$ (best) |
 | T, $^3$He | $1+, 1-$ (amphichiral) | $(1+h)(1-h)$ | $1 - h^2 \approx 0.956$ (best) |
-| $^4$He | $2+, 2-$ (Borromean²) | $(1+h)^2(1-h)^2$ | $(1 - h^2)^2 \approx 0.914$ (best) |
+| $^4$He | $2+, 2-$ (Borromean${}^2$) | $(1+h)^2(1-h)^2$ | $(1 - h^2)^2 \approx 0.914$ (best) |
 
 *Symbolic verification: the per-crossing product $\prod_{pn}(1 + \mathrm{sign}\cdot h)$
 **exactly equals** paper's
@@ -96,7 +96,7 @@ $\sigma - \sigma^{-1} = h$.  The chirality factor specifically uses
 the **symmetric channel** because that is the unique 1-dim sector
 that reduces to the trivial algebra at $q = 1$.*
 
-**Status: Term 5 DERIVED.**
+**Result (Term 5).**
 
 *The chirality factor $a_K$ is now algebraically derived from
 Wedderburn-channel duality on the symmetric-trace pairing.  The
@@ -129,11 +129,7 @@ ribbon, no Hochschild cohomology, no q-Heisenberg Fock structure
 needed.  The Frobenius-dual pairing on the symmetric Wedderburn
 channel is sufficient.*
 
-**Updated overall completeness.**
-
-*With Term 5 now derived, **all six terms of the unified mass
-formula are algebraically derived** using paper's existing
-machinery:*
+**Coverage.** With Term 5 derived, all six terms of the unified mass formula are algebraically derived using the existing machinery:
 
 | term | derivation source |
 |---|---|

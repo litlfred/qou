@@ -25,7 +25,7 @@ semisimple.  A braid word $T_w$ defines a section of this bundle:*
 
 *The residue at $\zeta_\ell$ is precisely this monodromy, paired
 with the Markov trace.  In the notation of
-([rho, S³ holonomy](#rem:rho-s3-holonomy-exposition)), the
+([rho, $S^3$ holonomy](#rem:rho-s3-holonomy-exposition)), the
 residue is the $q$-deformed analogue of the Chern–Simons holonomy
 of a Wilson loop in $S^3$ around an obstruction divisor.*
 

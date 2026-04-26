@@ -172,7 +172,7 @@ verification of any closed form.  At $n \in \{11, 12\}$ only $q_0$ is
 recorded (probe-rebuild cost prohibitive in pure Python; defer to
 the Rust kernel for higher-$n$ probes).
 
-**Status of $\alpha_k$ across $n$.**
+**Closed forms for $\alpha_k$ across $n$.**
 
 | $n$ | $p(n)$ | $y_\lambda$ witness | $\alpha_k$ closed form |
 |---|---|---|---|

@@ -59,9 +59,7 @@ becomes the symmetric-group Specht-module dimension squared over
 $12!$, with different ranking — the "alpha particle" identification
 must be re-derived.*
 
-**Status.**
-
-*This table is the **interface** between the categorical machinery
+*Remark.* This table is the **interface** between the categorical machinery
 (`prop:em-spectral-completeness`, `prop:gauge-coupling-uniqueness`,
 `prop:chirality-residue-mass-term`, etc.) and the physics-language
 predictions in this chapter.  It will grow as the discovery cache

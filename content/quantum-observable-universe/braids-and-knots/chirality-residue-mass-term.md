@@ -73,10 +73,10 @@ binding energy via $\alpha = m_e \cdot 8G$ is:*
 
 | Isotope | $\alpha\,\mathfrak{m}^{\mathrm{chir}}$ (MeV) | $B_\mathrm{nucl}$ (MeV) | Ratio |
 |---|---|---|---|
-| ²H | ≈ 0.000 | 2.225 | < 0.01% |
-| ³H (T) | +0.072 | 8.482 | 0.85% |
-| ³He | +0.067 | 8.597 | 0.78% |
-| ⁴He | +0.872 | 29.327 | **2.97%** |
+| ${}^{2}\mathrm{H}$ | ≈ 0.000 | 2.225 | < 0.01% |
+| ${}^{3}\mathrm{H}$ (T) | +0.072 | 8.482 | 0.85% |
+| ${}^{3}\mathrm{He}$ | +0.067 | 8.597 | 0.78% |
+| ${}^{4}\mathrm{He}$ | +0.872 | 29.327 | **2.97%** |
 
 *Chirality cells are 4–7% of the total partition count but contribute
 disproportionately at deep strata: for $^4$He at depth $k = 4$ the
@@ -119,11 +119,7 @@ $\mathfrak{m}^{\mathrm{chir}, (k)}$ inherits this boundedness, and
 the cumulative chirality contribution
 $\mathfrak{m}^{\mathrm{chir}}_{q,\mathcal{K}}$ is convergent.*
 
-**Status.**
-
-*This proposition is a structural refinement of the unified mass
-formula.  No new analytic content is added; the split exists by
-inspection.  The numerical witness shows that the chirality channel
+*Remark.* This proposition is a structural refinement of the unified mass formula. No new analytic content is added; the split exists by inspection.  The numerical witness shows that the chirality channel
 is small in absolute terms (~3% of $B_\mathrm{nucl}$ at $^4$He) but
 is the dominant contribution at deep curvature-rank strata.  This
 provides direct empirical access to the $D_q^2 = 0$ kernel from

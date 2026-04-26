@@ -62,6 +62,6 @@ representation theory. Numerical scan
 proton--neutron mass splitting *vanishes* in the strict $q \to 1$
 limit (consistent with the chirality channel being the unique
 S-odd carrier), and that the wrong-sign binding for $Z = N$
-fully-paired atoms (D, ⁴He) is **not** a $q$-deformation artefact
+fully-paired atoms (D, ${}^{4}\mathrm{He}$) is **not** a $q$-deformation artefact
 but a structural feature of $\Phi_1$ in the symmetric group
 algebra $\mathbb{C}[S_n] = H_n(1)$.
