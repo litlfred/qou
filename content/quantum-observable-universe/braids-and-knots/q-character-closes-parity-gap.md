@@ -25,8 +25,10 @@ $\sigma_i$ acts on the Specht module $S^\lambda$ by:*
   $b^2 = a a' + 1$, $\rho = \mathrm{content}(c_{i+1}) -
   \mathrm{content}(c_i)$.*
 
-*Keeping $q$ as a sympy symbol, $\chi^\lambda_q(\sigma_w) =
-\operatorname{Tr}\bigl(\prod_{i \in w} \rho_\lambda(T_{\text{sign}_i} i)\bigr)$
+*Keeping $q$ as a sympy symbol,
+$\chi^\lambda_q(\sigma_w) =
+\operatorname{Tr}\bigl(\prod_{i \in w} \rho_\lambda(\sigma_i^{\,\varepsilon_i})\bigr)$,
+where $\varepsilon_i = \pm 1$ is the sign of the $i$-th letter in $w$,
 is an exact rational function of $q$.*
 
 **Numerical witness at $A = 1$ ($q_0 \approx 1.11$).**
