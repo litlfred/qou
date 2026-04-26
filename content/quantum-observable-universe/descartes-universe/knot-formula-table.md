@@ -69,8 +69,8 @@ to the base manifold.
 
 | Particle | Symbol | Knot formula | $g$ | Crossings |
 |----------|--------|-------------|:---:|:---------:|
-| Photon | $\gamma$ | $\varnothing$ (point) | $0$ | $0$ |
-| Neutrino | $\nu$ | $T_{1,0}$ | $0$ | $0$ |
+| Photon | $\gamma$ | $\mathbf{1}_{B_4}$ (4-strand id; closure $= 4 \cdot 0_1$) | $0$ | $0$ |
+| Neutrino | $\nu$ | $T_{1,0} = 0_1$ (1-strand) | $0$ | $0$ |
 | Electron | $e^-$ | $T_{2,3}$ | $1$ | $3$ |
 | Muon | $\mu^-$ | $T_{2,5}$ | $2$ | $5$ |
 | Tau | $\tau^-$ | $T_{2,7}$ | $3$ | $7$ |
